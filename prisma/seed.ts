@@ -5,45 +5,13 @@ import "dotenv/config";
 import { GeocodeStatus, Prisma, PrismaClient } from "@prisma/client";
 import { parse } from "csv-parse/sync";
 
+import { isWithinBarcelonaProvince } from "../lib/barcelona";
+import { CsvProducerRow, PreparedSeedProducer, parseCsvProducerRow } from "../lib/csv-producer";
 import {
-  buildGeocodingQuery,
   geocodeWithRetry,
   getGeocodingConfigFromEnv,
   sleep,
 } from "../lib/geocoding";
-import { isWithinBarcelonaProvince } from "../lib/barcelona";
-import {
-  buildSearchText,
-  extractCoordinatesFromGoogleMaps,
-  makeDedupeKey,
-  normalizeText,
-  normalizeUrl,
-  parseReviewed,
-  slugify,
-} from "../lib/producer-utils";
-
-type CsvProducerRow = {
-  nombre?: string;
-  "-- municipio"?: string;
-  categoria?: string;
-  subcategoria?: string;
-  direccion?: string;
-  descripcion?: string;
-  horario?: string;
-  telefono?: string;
-  correo?: string;
-  web?: string;
-  Facebook?: string;
-  Instagram?: string;
-  "Google Maps"?: string;
-  Revisado?: string;
-};
-
-type SeedProducer = {
-  data: Prisma.ProducerCreateManyInput;
-  geocodeQueryKey: string;
-  geocodeQueryText: string | null;
-};
 
 type GeocodingStats = {
   cacheHits: number;
@@ -98,15 +66,13 @@ function buildCityQueryCandidates(city: string): string[] {
     .filter((value) => value.length > 0)
     .filter((value, index, values) => values.indexOf(value) === index);
 
-  const queryCandidates = baseCandidates
+  return baseCandidates
     .flatMap((base) => [
       `${base}, Barcelona, Catalunya, España`,
       `${base}, Provincia de Barcelona, Catalunya, España`,
       `${base}, Catalunya, España`,
     ])
     .filter((value, index, values) => values.indexOf(value) === index);
-
-  return queryCandidates;
 }
 
 function hasCoordinates(producer: Prisma.ProducerCreateManyInput): boolean {
@@ -140,10 +106,10 @@ function toCacheLookup(row: {
   };
 }
 
-async function enrichCoordinates(producers: SeedProducer[]): Promise<GeocodingStats> {
+async function enrichCoordinates(producers: PreparedSeedProducer[]): Promise<GeocodingStats> {
   const config = getGeocodingConfigFromEnv();
 
-  const missingCoordinateProducers = producers.filter(
+  const pending = producers.filter(
     (producer) => !hasUsableCoordinates(producer.data) && producer.geocodeQueryText,
   );
 
@@ -156,11 +122,11 @@ async function enrichCoordinates(producers: SeedProducer[]): Promise<GeocodingSt
       cityFallbackAssignments: 0,
       notFound: 0,
       errors: 0,
-      skippedByLimit: missingCoordinateProducers.length,
+      skippedByLimit: pending.length,
     };
   }
 
-  if (missingCoordinateProducers.length === 0) {
+  if (pending.length === 0) {
     return {
       cacheHits: 0,
       remoteRequests: 0,
@@ -172,10 +138,10 @@ async function enrichCoordinates(producers: SeedProducer[]): Promise<GeocodingSt
     };
   }
 
-  const producerKeys = [...new Set(missingCoordinateProducers.map((producer) => producer.geocodeQueryKey))];
+  const producerKeys = [...new Set(pending.map((producer) => producer.geocodeQueryKey))];
   const cityKeys = new Set<string>();
 
-  for (const producer of missingCoordinateProducers) {
+  for (const producer of pending) {
     if (producer.data.city) {
       cityKeys.add(buildCityCacheKey(producer.data.city));
     }
@@ -283,7 +249,7 @@ async function enrichCoordinates(producers: SeedProducer[]): Promise<GeocodingSt
     const cityQueryCandidates = buildCityQueryCandidates(city);
 
     const memoized = cityResolution.get(cityCacheKey);
-    if (memoized && memoized.status === GeocodeStatus.SUCCESS) {
+    if (memoized?.status === GeocodeStatus.SUCCESS) {
       return memoized;
     }
 
@@ -330,7 +296,7 @@ async function enrichCoordinates(producers: SeedProducer[]): Promise<GeocodingSt
     return lastLookup;
   }
 
-  for (const producer of missingCoordinateProducers) {
+  for (const producer of pending) {
     const producerQueryText = producer.geocodeQueryText;
     const cachedProducerLookup = cacheByKey.get(producer.geocodeQueryKey);
 
@@ -447,93 +413,29 @@ async function main(): Promise<void> {
     skip_empty_lines: true,
   }) as CsvProducerRow[];
 
-  const byDedupeKey = new Map<string, SeedProducer>();
+  const byDedupeKey = new Map<string, PreparedSeedProducer>();
   const slugUsage = new Map<string, number>();
 
   let skippedNoName = 0;
   let duplicates = 0;
 
   for (const row of rows) {
-    const name = normalizeText(row.nombre);
-    if (!name) {
+    const parsedRow = parseCsvProducerRow(row);
+    if (!parsedRow) {
       skippedNoName += 1;
       continue;
     }
 
-    const city = normalizeText(row["-- municipio"]);
-    const category = normalizeText(row.categoria);
-    const subcategory = normalizeText(row.subcategoria);
-    const address = normalizeText(row.direccion);
-    const description = normalizeText(row.descripcion);
-    const openingHours = normalizeText(row.horario);
-    const phone = normalizeText(row.telefono);
-    const email = normalizeText(row.correo)?.toLowerCase() ?? null;
-    const website = normalizeUrl(row.web);
-    const facebook = normalizeUrl(row.Facebook);
-    const instagram = normalizeUrl(row.Instagram);
-    const googleMapsUrl = normalizeUrl(row["Google Maps"]);
-    const reviewed = parseReviewed(row.Revisado);
-    const extracted = extractCoordinatesFromGoogleMaps(googleMapsUrl);
-    const latitude =
-      extracted.latitude !== null &&
-      extracted.longitude !== null &&
-      isWithinBarcelonaProvince(extracted.latitude, extracted.longitude)
-        ? extracted.latitude
-        : null;
-    const longitude =
-      extracted.latitude !== null &&
-      extracted.longitude !== null &&
-      isWithinBarcelonaProvince(extracted.latitude, extracted.longitude)
-        ? extracted.longitude
-        : null;
-
-    const dedupeKey = makeDedupeKey(name, city, address);
-    if (byDedupeKey.has(dedupeKey)) {
+    if (byDedupeKey.has(parsedRow.dedupeKey)) {
       duplicates += 1;
       continue;
     }
 
-    const baseSlug = slugify([name, city].filter(Boolean).join("-"));
-    const seenCount = (slugUsage.get(baseSlug) ?? 0) + 1;
-    slugUsage.set(baseSlug, seenCount);
-    const slug = seenCount === 1 ? baseSlug : `${baseSlug}-${seenCount}`;
+    const seenCount = (slugUsage.get(parsedRow.baseSlug) ?? 0) + 1;
+    slugUsage.set(parsedRow.baseSlug, seenCount);
+    parsedRow.data.slug = seenCount === 1 ? parsedRow.baseSlug : `${parsedRow.baseSlug}-${seenCount}`;
 
-    const geocodeQueryText = address || city ? buildGeocodingQuery({ name, address, city }) : null;
-
-    byDedupeKey.set(dedupeKey, {
-      geocodeQueryKey: dedupeKey,
-      geocodeQueryText,
-      data: {
-        slug,
-        name,
-        city,
-        category,
-        subcategory,
-        address,
-        description,
-        openingHours,
-        phone,
-        email,
-        website,
-        facebook,
-        instagram,
-        googleMapsUrl,
-        reviewed,
-        latitude,
-        longitude,
-        dedupeKey,
-        searchText: buildSearchText([
-          name,
-          city,
-          category,
-          subcategory,
-          address,
-          description,
-          phone,
-          email,
-        ]),
-      },
-    });
+    byDedupeKey.set(parsedRow.dedupeKey, parsedRow);
   }
 
   const producers = [...byDedupeKey.values()];

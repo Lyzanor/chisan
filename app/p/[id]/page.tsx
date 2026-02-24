@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { getMapExternalLinks } from "@/lib/map-provider";
 import ProducerMiniMap from "@/components/producer-mini-map";
-import { getOsmDirectionsUrl, getOsmMapUrl } from "@/lib/osm";
 import { prisma } from "@/lib/prisma";
 
 type PageProps = {
@@ -66,8 +66,11 @@ export default async function ProducerDetailPage({ params }: PageProps) {
 
   const hasCoordinates = producer.latitude !== null && producer.longitude !== null;
   const fallbackQuery = [producer.name, producer.address, producer.city].filter(Boolean).join(", ");
-  const osmMapUrl = getOsmMapUrl(producer.latitude, producer.longitude, fallbackQuery || null);
-  const osmDirectionsUrl = getOsmDirectionsUrl(producer.latitude, producer.longitude, fallbackQuery || null);
+  const mapLinks = getMapExternalLinks(
+    producer.latitude,
+    producer.longitude,
+    fallbackQuery || null,
+  );
 
   const hasContact =
     producer.phone || producer.email || producer.website || producer.facebook || producer.instagram || producer.googleMapsUrl;
@@ -155,15 +158,15 @@ export default async function ProducerDetailPage({ params }: PageProps) {
             {/* Map actions */}
             <div className="flex flex-wrap gap-2">
               <a
-                href={osmMapUrl}
+                href={mapLinks.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
               >
-                Ver en OpenStreetMap
+                Ver en {mapLinks.providerLabel}
               </a>
               <a
-                href={osmDirectionsUrl}
+                href={mapLinks.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"

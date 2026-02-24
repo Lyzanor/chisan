@@ -4,8 +4,12 @@ const NOMINATIM_DEFAULT_BASE_URL = "https://nominatim.openstreetmap.org/search";
 const NOMINATIM_DEFAULT_TIMEOUT_MS = 15000;
 const NOMINATIM_DEFAULT_DELAY_MS = 1100;
 const NOMINATIM_DEFAULT_RETRIES = 3;
+const DEFAULT_GEOCODING_PROVIDER = "nominatim";
+
+export type GeocodingProvider = "nominatim";
 
 export type GeocodingConfig = {
+  provider: GeocodingProvider;
   enabled: boolean;
   baseUrl: string;
   userAgent: string;
@@ -20,19 +24,19 @@ export type GeocodingConfig = {
 export type GeocodeLookupResult =
   | {
       status: "SUCCESS";
-      source: "nominatim";
+      source: GeocodingProvider;
       queryText: string;
       latitude: number;
       longitude: number;
     }
   | {
       status: "NOT_FOUND";
-      source: "nominatim";
+      source: GeocodingProvider;
       queryText: string;
     }
   | {
       status: "ERROR";
-      source: "nominatim";
+      source: GeocodingProvider;
       queryText: string;
       error: string;
     };
@@ -117,9 +121,28 @@ function asErrorMessage(error: unknown): string {
   return "unknown geocoding error";
 }
 
-function normalizeBaseUrl(value: string | undefined): string {
-  if (!value) {
+function parseGeocodingProvider(value: string | undefined): GeocodingProvider {
+  const normalized = value?.trim().toLowerCase();
+  if (!normalized || normalized === "nominatim") {
+    return DEFAULT_GEOCODING_PROVIDER;
+  }
+
+  throw new Error(
+    `Unsupported GEOCODING_PROVIDER="${value}". Supported providers: nominatim`,
+  );
+}
+
+function getDefaultBaseUrl(provider: GeocodingProvider): string {
+  if (provider === "nominatim") {
     return NOMINATIM_DEFAULT_BASE_URL;
+  }
+
+  return NOMINATIM_DEFAULT_BASE_URL;
+}
+
+function normalizeBaseUrl(value: string | undefined, provider: GeocodingProvider): string {
+  if (!value) {
+    return getDefaultBaseUrl(provider);
   }
 
   return value;
@@ -134,7 +157,10 @@ function shouldUseStrictBarcelonaBounds(value: string | undefined): boolean {
   return !["0", "false", "no", "off"].includes(normalized);
 }
 
-async function geocodeOnce(queryText: string, config: GeocodingConfig): Promise<GeoPoint | null> {
+async function geocodeWithNominatim(
+  queryText: string,
+  config: GeocodingConfig,
+): Promise<GeoPoint | null> {
   const url = new URL(config.baseUrl);
   url.searchParams.set("q", queryText);
   url.searchParams.set("format", "jsonv2");
@@ -194,10 +220,22 @@ async function geocodeOnce(queryText: string, config: GeocodingConfig): Promise<
   }
 }
 
+async function geocodeOnce(queryText: string, config: GeocodingConfig): Promise<GeoPoint | null> {
+  if (config.provider === "nominatim") {
+    return geocodeWithNominatim(queryText, config);
+  }
+
+  return null;
+}
+
 export function getGeocodingConfigFromEnv(env: NodeJS.ProcessEnv = process.env): GeocodingConfig {
+  const provider = parseGeocodingProvider(env.GEOCODING_PROVIDER);
+  const baseUrlOverride = env.GEOCODING_BASE_URL ?? env.NOMINATIM_BASE_URL;
+
   return {
+    provider,
     enabled: shouldEnableGeocoding(env.GEOCODING_ENABLED),
-    baseUrl: normalizeBaseUrl(env.NOMINATIM_BASE_URL),
+    baseUrl: normalizeBaseUrl(baseUrlOverride, provider),
     userAgent:
       env.NOMINATIM_USER_AGENT?.trim() ||
       "km0-mapa-seed/1.0 (local import; contact: set NOMINATIM_EMAIL)",
@@ -242,14 +280,14 @@ export async function geocodeWithRetry(
       if (!coordinates) {
         return {
           status: "NOT_FOUND",
-          source: "nominatim",
+          source: config.provider,
           queryText,
         };
       }
 
       return {
         status: "SUCCESS",
-        source: "nominatim",
+        source: config.provider,
         queryText,
         latitude: coordinates.latitude,
         longitude: coordinates.longitude,
@@ -272,7 +310,7 @@ export async function geocodeWithRetry(
 
   return {
     status: "ERROR",
-    source: "nominatim",
+    source: config.provider,
     queryText,
     error: lastError ?? "geocoding request failed",
   };

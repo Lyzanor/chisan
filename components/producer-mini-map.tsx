@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 
+import { getMapTileLayerConfig } from "@/lib/map-provider";
+
 type ProducerMiniMapProps = {
   latitude: number;
   longitude: number;
@@ -16,6 +18,7 @@ const markerIcon = L.divIcon({
   iconAnchor: [9, 9],
   popupAnchor: [0, -8],
 });
+const mapTileConfig = getMapTileLayerConfig();
 
 export default function ProducerMiniMap({ latitude, longitude, label }: ProducerMiniMapProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -36,10 +39,15 @@ export default function ProducerMiniMap({ latitude, longitude, label }: Producer
       attributionControl: true,
     }).setView([latitude, longitude], 15);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
+    const tileLayerOptions: L.TileLayerOptions = {
+      maxZoom: mapTileConfig.maxZoom,
+      attribution: mapTileConfig.attribution,
+    };
+    if (mapTileConfig.subdomains) {
+      tileLayerOptions.subdomains = mapTileConfig.subdomains;
+    }
+
+    L.tileLayer(mapTileConfig.tileUrl, tileLayerOptions).addTo(map);
 
     const marker = L.marker([latitude, longitude], { icon: markerIcon, title: label });
     marker.addTo(map).bindPopup(label);

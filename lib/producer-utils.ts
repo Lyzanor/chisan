@@ -7,6 +7,10 @@ export type Coordinates = {
   longitude: number | null;
 };
 
+function isValidCoordinates(latitude: number, longitude: number): boolean {
+  return latitude >= -90 && latitude <= 90 && longitude >= -180 && longitude <= 180;
+}
+
 function safeDecode(value: string): string {
   try {
     return decodeURIComponent(value);
@@ -21,6 +25,25 @@ export function normalizeText(value: string | null | undefined): string | null {
   }
 
   const normalized = value.replace(MULTI_SPACE_REGEX, " ").trim();
+  return normalized.length > 0 ? normalized : null;
+}
+
+export function parseCoordinateValue(value: string | null | undefined): number | null {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return null;
+  }
+
+  const parsed = Number.parseFloat(normalized.replace(",", "."));
+  if (Number.isNaN(parsed)) {
+    return null;
+  }
+
+  return parsed;
+}
+
+export function normalizeSearchQuery(value: string | null | undefined): string | null {
+  const normalized = normalizeForKey(value);
   return normalized.length > 0 ? normalized : null;
 }
 
@@ -64,17 +87,10 @@ function parseCoordinatePair(candidate: string): Coordinates {
     return { latitude: null, longitude: null };
   }
 
-  const latitude = Number.parseFloat(match[1]);
-  const longitude = Number.parseFloat(match[2]);
+  const latitude = parseCoordinateValue(match[1]);
+  const longitude = parseCoordinateValue(match[2]);
 
-  if (
-    Number.isNaN(latitude) ||
-    Number.isNaN(longitude) ||
-    latitude < -90 ||
-    latitude > 90 ||
-    longitude < -180 ||
-    longitude > 180
-  ) {
+  if (latitude === null || longitude === null || !isValidCoordinates(latitude, longitude)) {
     return { latitude: null, longitude: null };
   }
 
@@ -118,10 +134,11 @@ export function extractCoordinatesFromGoogleMaps(url: string | null | undefined)
 
 export function buildSearchText(fields: Array<string | null>): string {
   return fields
-    .map((field) => normalizeText(field))
-    .filter((field): field is string => Boolean(field))
+    .map((field) => normalizeForKey(field))
+    .filter((field) => field.length > 0)
     .join(" ")
-    .toLowerCase();
+    .replace(MULTI_SPACE_REGEX, " ")
+    .trim();
 }
 
 export function normalizeUrl(value: string | null | undefined): string | null {

@@ -5,6 +5,7 @@ import L from "leaflet";
 import "leaflet.markercluster";
 
 import { BARCELONA_PROVINCE_LEAFLET_BOUNDS } from "@/lib/barcelona";
+import { getMapTileLayerConfig } from "@/lib/map-provider";
 import type { ProducerListItem } from "@/lib/types";
 
 type ProducersMapProps = {
@@ -22,6 +23,7 @@ const markerIcon = L.divIcon({
   iconAnchor: [9, 9],
   popupAnchor: [0, -8],
 });
+const mapTileConfig = getMapTileLayerConfig();
 
 function escapeHtml(value: string): string {
   return value
@@ -89,7 +91,7 @@ export default function ProducersMap({
     const map = L.map(mapContainerRef.current, {
       zoomControl: true,
       minZoom: 8,
-      maxZoom: 19,
+      maxZoom: mapTileConfig.maxZoom,
       maxBounds: provinceBounds,
       maxBoundsViscosity: 1,
     });
@@ -99,10 +101,15 @@ export default function ProducersMap({
       animate: false,
     });
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    const tileLayerOptions: L.TileLayerOptions = {
+      maxZoom: mapTileConfig.maxZoom,
+      attribution: mapTileConfig.attribution,
+    };
+    if (mapTileConfig.subdomains) {
+      tileLayerOptions.subdomains = mapTileConfig.subdomains;
+    }
+
+    L.tileLayer(mapTileConfig.tileUrl, tileLayerOptions).addTo(map);
 
     const emitBounds = () => {
       onBoundsChangeRef.current(boundsToBbox(map.getBounds()));

@@ -5,7 +5,7 @@ El mapa está acotado a la provincia de Barcelona y el buscador principal es cen
 
 ## Columnas detectadas en el CSV
 
-`nombre`, `-- municipio`, `categoria`, `subcategoria`, `direccion`, `descripcion`, `horario`, `telefono`, `correo`, `web`, `Facebook`, `Instagram`, `Google Maps`, `Revisado`
+`nombre`, `-- municipio`, `categoria`, `subcategoria`, `direccion`, `descripcion`, `horario`, `telefono`, `correo`, `web`, `Facebook`, `Instagram`, `Google Maps`, `lat`, `lon`, `Revisado`
 
 ## Stack
 
@@ -78,10 +78,59 @@ Formato de `bbox`: `minLng,minLat,maxLng,maxLat`.
 
 - La importación normaliza strings (`trim`, espacios múltiples).
 - Deduplicación por clave única razonable: `name + city + address`.
-- Si `Google Maps` contiene coordenadas, se guardan en `latitude/longitude`.
-- Si faltan coordenadas, el seed intenta geocodificar dirección/ciudad con Nominatim (OpenStreetMap).
+- Prioridad de coordenadas en seed: columnas `lat/lon` del CSV → coordenadas en `Google Maps` → geocoding de dirección/ciudad.
+- Si faltan coordenadas tras ese proceso, el seed intenta geocodificar dirección/ciudad con Nominatim (OpenStreetMap).
 - Si no encuentra una dirección concreta, aplica fallback por ciudad para maximizar cobertura de puntos.
 - La geocodificación usa caché persistente en tabla `GeocodeCache` para no repetir consultas entre seeds.
 - Regla estricta: solo se aceptan coordenadas dentro de la provincia de Barcelona (`GEOCODING_STRICT_BARCELONA_BOUNDS=true`).
 - `GEOCODING_MAX_REQUESTS` controla cuántas consultas remotas hacer por ejecución (`800` por defecto en `.env.example`).
 - Si faltan coordenadas, el productor sigue apareciendo en listados y fichas.
+
+Opcional para API: `GET /api/producers` acepta `includeNoCoordinates=true|false` (por defecto `true`) para incluir o excluir registros sin lat/lon en el listado.
+
+## Cambiar proveedor de mapas (sin tocar código)
+
+La app ya está desacoplada por configuración:
+- Capa `tiles` (mapa y mini-mapa)
+- Capa `links externos` (ficha: “Ver en …” y “Cómo llegar”)
+- Capa `geocoding` para seed
+
+Variables clave:
+- `NEXT_PUBLIC_MAP_PROVIDER` (`osm` o `custom`)
+- `NEXT_PUBLIC_MAP_TILE_URL`
+- `NEXT_PUBLIC_MAP_ATTRIBUTION`
+- `NEXT_PUBLIC_MAP_VIEW_URL_TEMPLATE`
+- `NEXT_PUBLIC_MAP_DIRECTIONS_URL_TEMPLATE`
+- `GEOCODING_PROVIDER` (actualmente `nominatim`)
+- `GEOCODING_BASE_URL` (opcional)
+
+Templates de links externos admiten placeholders:
+- `{lat}`, `{lon}`, `{query}` (URL encoded), `{query_raw}`
+
+## Subir a GitHub / Deploy Checklist
+
+1. Incluye en el repo:
+- Código fuente
+- `prisma/schema.prisma`
+- `prisma/migrations/*`
+- `prisma/seed.ts`
+- `docker-compose.yml`
+- `.env.example`
+- `README.md`
+- `pnpm-lock.yaml`
+
+2. No subas secretos:
+- No commitear `.env`
+- Si el proveedor nuevo requiere API key, dejar solo placeholders en `.env.example`
+
+3. Arranque tras clonar:
+- `docker-compose up -d`
+- `pnpm i`
+- `pnpm db:migrate`
+- `pnpm db:seed`
+- `pnpm dev`
+
+4. Producción:
+- Base PostgreSQL accesible
+- Variables de entorno configuradas
+- Ejecutar `pnpm db:migrate` en deploy
