@@ -174,6 +174,7 @@ export default function HomeMapView() {
   const [error, setError] = useState<string | null>(null);
   const [mobilePane, setMobilePane] = useState<MobilePaneMode>("map");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [isDesktopViewport, setIsDesktopViewport] = useState(true);
 
   const cardRefs = useRef<Record<number, HTMLElement | null>>({});
   const debouncedQuery = useDebouncedValue(query, 250);
@@ -205,6 +206,33 @@ export default function HomeMapView() {
 
     void loadTaxonomy();
     return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const updateViewport = () => {
+      setIsDesktopViewport(mediaQuery.matches);
+    };
+
+    updateViewport();
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateViewport);
+    } else {
+      mediaQuery.addListener(updateViewport);
+    }
+
+    return () => {
+      if (typeof mediaQuery.removeEventListener === "function") {
+        mediaQuery.removeEventListener("change", updateViewport);
+      } else {
+        mediaQuery.removeListener(updateViewport);
+      }
+    };
   }, []);
 
   const inferredCity = useMemo(() => {
@@ -497,7 +525,8 @@ export default function HomeMapView() {
       </header>
 
       <main className="km0-content">
-        <section className="km0-desktop-grid hidden lg:grid">
+        {isDesktopViewport ? (
+          <section className="km0-desktop-grid">
           <aside className="km0-panel km0-list-panel">
             <div className="km0-panel-section">
               <p className="km0-panel-title">Filtros</p>
@@ -626,9 +655,9 @@ export default function HomeMapView() {
               )}
             </div>
           </section>
-        </section>
-
-        <section className="km0-mobile-layout lg:hidden">
+          </section>
+        ) : (
+          <section className="km0-mobile-layout">
           <div className="km0-mobile-toolbar">
             <div className="km0-segmented" role="tablist" aria-label="Vista móvil">
               <button
@@ -735,7 +764,8 @@ export default function HomeMapView() {
               </div>
             )}
           </div>
-        </section>
+          </section>
+        )}
       </main>
 
       {mobileFiltersOpen && (

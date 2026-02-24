@@ -4,7 +4,10 @@ import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet.markercluster";
 
-import { BARCELONA_PROVINCE_LEAFLET_BOUNDS } from "@/lib/barcelona";
+import {
+  BARCELONA_PROVINCE,
+  BARCELONA_PROVINCE_LEAFLET_BOUNDS,
+} from "@/lib/barcelona";
 import { getMapTileLayerConfig } from "@/lib/map-provider";
 import type { ProducerListItem } from "@/lib/types";
 
@@ -24,6 +27,30 @@ const markerIcon = L.divIcon({
   popupAnchor: [0, -8],
 });
 const mapTileConfig = getMapTileLayerConfig();
+
+function safeClearCluster(cluster: L.MarkerClusterGroup | null | undefined): void {
+  if (!cluster) {
+    return;
+  }
+
+  try {
+    cluster.clearLayers();
+  } catch {
+    // Ignore cleanup race conditions during fast re-renders.
+  }
+}
+
+function safeRemoveLayer(map: L.Map | null, layer: L.Layer | null | undefined): void {
+  if (!map || !layer) {
+    return;
+  }
+
+  try {
+    map.removeLayer(layer);
+  } catch {
+    // Ignore cleanup race conditions during fast re-renders.
+  }
+}
 
 function escapeHtml(value: string): string {
   return value
@@ -53,7 +80,12 @@ function popupHtml(producer: ProducerListItem): string {
 }
 
 function boundsToBbox(bounds: L.LatLngBounds): string {
-  return [bounds.getWest(), bounds.getSouth(), bounds.getEast(), bounds.getNorth()]
+  const west = Math.max(bounds.getWest(), BARCELONA_PROVINCE.minLng);
+  const south = Math.max(bounds.getSouth(), BARCELONA_PROVINCE.minLat);
+  const east = Math.min(bounds.getEast(), BARCELONA_PROVINCE.maxLng);
+  const north = Math.min(bounds.getNorth(), BARCELONA_PROVINCE.maxLat);
+
+  return [west, south, east, north]
     .map((value) => value.toFixed(6))
     .join(",");
 }
@@ -94,12 +126,20 @@ export default function ProducersMap({
       maxZoom: mapTileConfig.maxZoom,
       maxBounds: provinceBounds,
       maxBoundsViscosity: 1,
+      zoomSnap: 0.25,
     });
 
-    map.fitBounds(provinceBounds, {
-      padding: [18, 18],
-      animate: false,
-    });
+    const fitToProvince = () => {
+      map.invalidateSize({ pan: false, animate: false });
+      const lockedMinZoom = map.getBoundsZoom(provinceBounds, true);
+      map.setMinZoom(lockedMinZoom);
+      map.fitBounds(provinceBounds, {
+        padding: [18, 18],
+        animate: false,
+      });
+    };
+
+    fitToProvince();
 
     const tileLayerOptions: L.TileLayerOptions = {
       maxZoom: mapTileConfig.maxZoom,
@@ -115,12 +155,20 @@ export default function ProducersMap({
       onBoundsChangeRef.current(boundsToBbox(map.getBounds()));
     };
 
+    map.on("resize", fitToProvince);
     map.on("moveend zoomend", emitBounds);
-    emitBounds();
+
+    requestAnimationFrame(() => {
+      fitToProvince();
+      emitBounds();
+    });
 
     mapRef.current = map;
 
     return () => {
+      safeClearCluster(clusterRef.current);
+      safeRemoveLayer(map, clusterRef.current);
+      map.off("resize", fitToProvince);
       map.off("moveend zoomend", emitBounds);
       map.remove();
       mapRef.current = null;
@@ -136,8 +184,8 @@ export default function ProducersMap({
     }
 
     if (clusterRef.current) {
-      clusterRef.current.clearLayers();
-      map.removeLayer(clusterRef.current);
+      safeClearCluster(clusterRef.current);
+      safeRemoveLayer(map, clusterRef.current);
       clusterRef.current = null;
     }
 
@@ -173,8 +221,8 @@ export default function ProducersMap({
     map.addLayer(cluster);
 
     return () => {
-      cluster.clearLayers();
-      map.removeLayer(cluster);
+      safeClearCluster(cluster);
+      safeRemoveLayer(map, cluster);
       if (clusterRef.current === cluster) {
         clusterRef.current = null;
       }
