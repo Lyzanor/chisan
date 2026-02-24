@@ -14,6 +14,11 @@ async function getProducer(id: number) {
   return prisma.producer.findUnique({ where: { id } });
 }
 
+type CsvField = {
+  key: string;
+  value: string | null;
+};
+
 function ContactLink({ label, href }: { label: string; href: string }) {
   const isExternal = href.startsWith("http");
   return (
@@ -28,14 +33,39 @@ function ContactLink({ label, href }: { label: string; href: string }) {
   );
 }
 
-function InfoRow({ label, value }: { label: string; value: string | null | undefined }) {
-  if (!value) return null;
+function FieldRow({ label, value }: { label: string; value: string | null }) {
+  if (!value) {
+    return (
+      <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-2" data-csv-field={label}>
+        <p className="text-[11px] font-medium uppercase tracking-wider text-gray-400">{label}</p>
+        <p className="mt-1 text-sm text-gray-500">Sin dato</p>
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <div className="rounded-lg border border-gray-100 bg-white px-3 py-2" data-csv-field={label}>
       <p className="text-[11px] font-medium uppercase tracking-wider text-gray-400">{label}</p>
-      <p className="mt-0.5 text-sm text-gray-700">{value}</p>
+      <p className="mt-1 text-sm text-gray-800">{value}</p>
     </div>
   );
+}
+
+function toTextOrNull(value: string | null | undefined): string | null {
+  if (!value) {
+    return null;
+  }
+
+  const normalized = value.trim();
+  return normalized.length > 0 ? normalized : null;
+}
+
+function formatCoordinates(latitude: number | null, longitude: number | null): string | null {
+  if (latitude === null || longitude === null) {
+    return null;
+  }
+
+  return `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -73,12 +103,65 @@ export default async function ProducerDetailPage({ params }: PageProps) {
   );
 
   const hasContact =
-    producer.phone || producer.email || producer.website || producer.facebook || producer.instagram || producer.googleMapsUrl;
+    producer.phone || producer.email || producer.website || producer.facebook || producer.instagram;
 
   const breadcrumb = [producer.city, producer.category, producer.subcategory].filter(Boolean).join(" · ");
+  const coordinatesText = formatCoordinates(producer.latitude, producer.longitude);
+
+  const csvFields: CsvField[] = [
+    { key: "nombre", value: toTextOrNull(producer.name) },
+    { key: "-- municipio", value: toTextOrNull(producer.city) },
+    { key: "categoria", value: toTextOrNull(producer.category) },
+    { key: "subcategoria", value: toTextOrNull(producer.subcategory) },
+    { key: "direccion", value: toTextOrNull(producer.address) },
+    { key: "descripcion", value: toTextOrNull(producer.description) },
+    { key: "horario", value: toTextOrNull(producer.openingHours) },
+    { key: "telefono", value: toTextOrNull(producer.phone) },
+    { key: "correo", value: toTextOrNull(producer.email) },
+    { key: "web", value: toTextOrNull(producer.website) },
+    { key: "Facebook", value: toTextOrNull(producer.facebook) },
+    { key: "Instagram", value: toTextOrNull(producer.instagram) },
+    { key: "Google Maps", value: toTextOrNull(producer.googleMapsUrl) },
+    { key: "lat", value: producer.latitude !== null ? producer.latitude.toString() : null },
+    { key: "lon", value: producer.longitude !== null ? producer.longitude.toString() : null },
+    { key: "Revisado", value: producer.reviewed ? "sí" : "no" },
+  ];
+
+  const csvSnapshot = Object.fromEntries(csvFields.map((field) => [field.key, field.value]));
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: producer.name,
+    address: producer.address ?? undefined,
+    description: producer.description ?? undefined,
+    telephone: producer.phone ?? undefined,
+    email: producer.email ?? undefined,
+    url: producer.website ?? undefined,
+    sameAs: [producer.facebook, producer.instagram].filter(Boolean),
+    geo:
+      producer.latitude !== null && producer.longitude !== null
+        ? {
+            "@type": "GeoCoordinates",
+            latitude: producer.latitude,
+            longitude: producer.longitude,
+          }
+        : undefined,
+    areaServed: producer.city ?? "Barcelona",
+    category: [producer.category, producer.subcategory].filter(Boolean).join(" / ") || undefined,
+  };
 
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/json"
+        id="producer-csv-snapshot"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(csvSnapshot) }}
+      />
       {/* Top bar */}
       <div className="border-b border-gray-100 bg-white px-4 py-3 lg:px-8">
         <div className="mx-auto flex max-w-3xl items-center gap-3">
@@ -112,6 +195,9 @@ export default async function ProducerDetailPage({ params }: PageProps) {
           <div className="min-w-0">
             <h1 className="text-2xl font-semibold leading-tight text-gray-900">{producer.name}</h1>
             {breadcrumb && <p className="mt-1 text-sm text-gray-500">{breadcrumb}</p>}
+            <p className="mt-2 inline-flex rounded-full border border-gray-200 px-2.5 py-1 text-[11px] font-medium text-gray-600">
+              Revisado: {producer.reviewed ? "sí" : "no"}
+            </p>
           </div>
         </div>
 
@@ -120,24 +206,75 @@ export default async function ProducerDetailPage({ params }: PageProps) {
         )}
 
         {/* Info + map grid */}
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_280px]">
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_300px]">
           <div className="space-y-6">
 
-            {/* Address + hours */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <InfoRow label="Dirección" value={producer.address} />
-              <InfoRow label="Horario" value={producer.openingHours} />
-              {!producer.address && !producer.openingHours && (
-                <p className="text-sm text-gray-400">Sin información de ubicación.</p>
-              )}
-            </div>
+            {/* Core data */}
+            <section>
+              <h2 className="mb-2 text-sm font-semibold text-gray-900">Información clave</h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <FieldRow label="Municipio" value={toTextOrNull(producer.city)} />
+                <FieldRow label="Categoría" value={toTextOrNull(producer.category)} />
+                <FieldRow label="Subcategoría" value={toTextOrNull(producer.subcategory)} />
+                <FieldRow label="Horario" value={toTextOrNull(producer.openingHours)} />
+                <FieldRow label="Dirección" value={toTextOrNull(producer.address)} />
+                <FieldRow label="Coordenadas" value={coordinatesText} />
+              </div>
+            </section>
 
-            {/* Divider */}
+            <div className="border-t border-gray-100" />
+
+            {/* Full CSV fields */}
+            <section>
+              <h2 className="mb-2 text-sm font-semibold text-gray-900">Campos CSV (completo)</h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {csvFields.map((field) => (
+                  <FieldRow key={field.key} label={field.key} value={field.value} />
+                ))}
+              </div>
+
+              <details className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-3">
+                <summary className="cursor-pointer text-xs font-medium text-gray-700">
+                  Ver JSON estructurado (útil para agentes IA)
+                </summary>
+                <pre className="mt-2 overflow-x-auto text-[11px] text-gray-700">
+                  {JSON.stringify(csvSnapshot, null, 2)}
+                </pre>
+              </details>
+            </section>
+
+            <div className="border-t border-gray-100" />
+
+            <section>
+              <h2 className="mb-2 text-sm font-semibold text-gray-900">Ubicación en mapa</h2>
+              <a
+                href={mapLinks.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
+              >
+                Abrir en {mapLinks.providerLabel}
+              </a>
+              {producer.googleMapsUrl && (
+                <p className="mt-2 text-xs text-gray-500">
+                  También disponible en:{" "}
+                  <a
+                    href={producer.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-gray-700 underline underline-offset-2"
+                  >
+                    Google Maps
+                  </a>
+                </p>
+              )}
+            </section>
+
             <div className="border-t border-gray-100" />
 
             {/* Contact */}
-            <div>
-              <p className="mb-2.5 text-[11px] font-medium uppercase tracking-wider text-gray-400">Contacto</p>
+            <section>
+              <h2 className="mb-2 text-sm font-semibold text-gray-900">Contacto y canales</h2>
               {hasContact ? (
                 <div className="flex flex-wrap gap-2">
                   {producer.phone && <ContactLink label={`Tel. ${producer.phone}`} href={`tel:${producer.phone}`} />}
@@ -145,39 +282,17 @@ export default async function ProducerDetailPage({ params }: PageProps) {
                   {producer.website && <ContactLink label="Web" href={producer.website} />}
                   {producer.facebook && <ContactLink label="Facebook" href={producer.facebook} />}
                   {producer.instagram && <ContactLink label="Instagram" href={producer.instagram} />}
-                  {producer.googleMapsUrl && <ContactLink label="Google Maps" href={producer.googleMapsUrl} />}
                 </div>
               ) : (
                 <p className="text-sm text-gray-400">Sin datos de contacto.</p>
               )}
-            </div>
+            </section>
 
-            {/* Divider */}
-            <div className="border-t border-gray-100" />
-
-            {/* Map actions */}
-            <div className="flex flex-wrap gap-2">
-              <a
-                href={mapLinks.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
-              >
-                Ver en {mapLinks.providerLabel}
-              </a>
-              <a
-                href={mapLinks.directionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"
-              >
-                Cómo llegar
-              </a>
-            </div>
           </div>
 
           {/* Mini map */}
-          <div>
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-wider text-gray-400">Mapa</p>
             {hasCoordinates ? (
               <ProducerMiniMap
                 latitude={producer.latitude as number}
@@ -188,6 +303,16 @@ export default async function ProducerDetailPage({ params }: PageProps) {
               <div className="flex h-48 items-center justify-center rounded-xl border border-dashed border-gray-200 px-4 text-center text-xs text-gray-400">
                 Sin coordenadas disponibles
               </div>
+            )}
+            {!hasCoordinates && producer.address && (
+              <a
+                href={mapLinks.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-emerald-500 hover:text-emerald-700"
+              >
+                Buscar por dirección en {mapLinks.providerLabel}
+              </a>
             )}
           </div>
         </div>
