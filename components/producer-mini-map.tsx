@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import L from "leaflet";
 
 import { getMapTileLayerConfig } from "@/lib/map-provider";
 
@@ -11,13 +10,6 @@ type ProducerMiniMapProps = {
   label: string;
 };
 
-const markerIcon = L.divIcon({
-  className: "km0-marker-pin",
-  html: "<span></span>",
-  iconSize: [18, 18],
-  iconAnchor: [9, 9],
-  popupAnchor: [0, -8],
-});
 const mapTileConfig = getMapTileLayerConfig();
 
 export default function ProducerMiniMap({ latitude, longitude, label }: ProducerMiniMapProps) {
@@ -28,33 +20,55 @@ export default function ProducerMiniMap({ latitude, longitude, label }: Producer
       return;
     }
 
-    const map = L.map(mapContainerRef.current, {
-      zoomControl: false,
-      dragging: false,
-      doubleClickZoom: false,
-      scrollWheelZoom: false,
-      boxZoom: false,
-      keyboard: false,
-      touchZoom: false,
-      attributionControl: true,
-    }).setView([latitude, longitude], 15);
+    let mounted = true;
+    let map: import("leaflet").Map | null = null;
+    let marker: import("leaflet").Marker | null = null;
 
-    const tileLayerOptions: L.TileLayerOptions = {
-      maxZoom: mapTileConfig.maxZoom,
-      attribution: mapTileConfig.attribution,
-    };
-    if (mapTileConfig.subdomains) {
-      tileLayerOptions.subdomains = mapTileConfig.subdomains;
+    async function initMap() {
+      const L = await import("leaflet");
+      if (!mounted || !mapContainerRef.current) {
+        return;
+      }
+
+      const markerIcon = L.divIcon({
+        className: "km0-marker-pin",
+        html: "<span></span>",
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+        popupAnchor: [0, -8],
+      });
+
+      map = L.map(mapContainerRef.current, {
+        zoomControl: false,
+        dragging: false,
+        doubleClickZoom: false,
+        scrollWheelZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        touchZoom: false,
+        attributionControl: true,
+      }).setView([latitude, longitude], 15);
+
+      const tileLayerOptions: import("leaflet").TileLayerOptions = {
+        maxZoom: mapTileConfig.maxZoom,
+        attribution: mapTileConfig.attribution,
+      };
+      if (mapTileConfig.subdomains) {
+        tileLayerOptions.subdomains = mapTileConfig.subdomains;
+      }
+
+      L.tileLayer(mapTileConfig.tileUrl, tileLayerOptions).addTo(map);
+
+      marker = L.marker([latitude, longitude], { icon: markerIcon, title: label });
+      marker.addTo(map).bindPopup(label);
     }
 
-    L.tileLayer(mapTileConfig.tileUrl, tileLayerOptions).addTo(map);
-
-    const marker = L.marker([latitude, longitude], { icon: markerIcon, title: label });
-    marker.addTo(map).bindPopup(label);
+    void initMap();
 
     return () => {
-      marker.remove();
-      map.remove();
+      mounted = false;
+      marker?.remove();
+      map?.remove();
     };
   }, [label, latitude, longitude]);
 
