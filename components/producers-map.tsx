@@ -134,6 +134,31 @@ export default function ProducersMap({
 
     L.tileLayer(mapTileConfig.tileUrl, tileLayerOptions).addTo(map);
 
+    const invalidateMapSize = () => {
+      if (disposed || mapRef.current !== map) {
+        return;
+      }
+
+      try {
+        map.invalidateSize({ animate: false });
+      } catch {
+        // Ignore map resize races during teardown.
+      }
+    };
+
+    const resizeObserver =
+      typeof window !== "undefined" && "ResizeObserver" in window
+        ? new ResizeObserver(() => invalidateMapSize())
+        : null;
+
+    if (resizeObserver) {
+      resizeObserver.observe(mapContainerRef.current);
+    }
+
+    map.whenReady(() => {
+      invalidateMapSize();
+    });
+
     const emitBounds = () => {
       if (disposed || mapRef.current !== map) {
         return;
@@ -155,6 +180,7 @@ export default function ProducersMap({
 
     return () => {
       disposed = true;
+      resizeObserver?.disconnect();
       safeClearLayerGroup(markersLayerRef.current);
       map.off("moveend zoomend", emitBounds);
       map.remove();

@@ -5,30 +5,12 @@ import { notFound } from "next/navigation";
 import ProducerMiniMap from "@/components/producer-mini-map";
 import { buildCsvFieldEntries, buildCsvSnapshot } from "@/lib/csv-schema";
 import { getMapExternalLinks } from "@/lib/map-provider";
+import { parseProducerRouteKey, type ProducerRouteKey } from "@/lib/producer-route";
 import { prisma } from "@/lib/prisma";
 
 type PageProps = {
   params: Promise<{ id: string }>;
 };
-
-type ProducerRouteKey = { id: number } | { slug: string };
-
-function parseProducerRouteKey(rawValue: string): ProducerRouteKey | null {
-  const normalized = rawValue.trim();
-  if (!normalized) {
-    return null;
-  }
-
-  if (/^\d+$/.test(normalized)) {
-    const parsedId = Number.parseInt(normalized, 10);
-    if (parsedId > 0) {
-      return { id: parsedId };
-    }
-    return null;
-  }
-
-  return { slug: normalized.toLowerCase() };
-}
 
 async function getProducer(routeKey: ProducerRouteKey) {
   if ("id" in routeKey) {

@@ -1,4 +1,10 @@
 export type QueryParams = Record<string, string | string[] | undefined>;
+export type ProducerFilters = {
+  query: string;
+  city: string;
+  category: string;
+  subcategory: string;
+};
 
 export function getSingleQueryParam(
   params: QueryParams,
@@ -13,16 +19,23 @@ export function getSingleQueryParam(
   return (value ?? "").trim();
 }
 
-export function readProducerFiltersFromParams(params: QueryParams): {
-  query: string;
-  city: string;
-  category: string;
-  subcategory: string;
-} {
+export function readProducerFiltersFromParams(params: QueryParams): ProducerFilters {
   return {
     query: getSingleQueryParam(params, "query"),
     city: getSingleQueryParam(params, "city"),
     category: getSingleQueryParam(params, "category"),
     subcategory: getSingleQueryParam(params, "subcategory"),
   };
+}
+
+export function buildProducerFiltersHref(basePath: string, filters: ProducerFilters): string {
+  const params = new URLSearchParams();
+
+  if (filters.query) params.set("query", filters.query);
+  if (filters.city) params.set("city", filters.city);
+  if (filters.category) params.set("category", filters.category);
+  if (filters.subcategory) params.set("subcategory", filters.subcategory);
+
+  const queryString = params.toString();
+  return queryString ? `${basePath}?${queryString}` : basePath;
 }

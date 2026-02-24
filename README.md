@@ -42,6 +42,8 @@ docker-compose up -d
 corepack enable
 ```
 
+Si no puedes activar pnpm globalmente (permisos), usa `npx pnpm` en todos los comandos.
+
 4. Instala dependencias:
 
 ```bash
@@ -75,6 +77,7 @@ App disponible en [http://localhost:3000](http://localhost:3000).
 - `pnpm dev`
 - `pnpm build`
 - `pnpm start`
+- `pnpm verify` (lint + build)
 - `pnpm db:migrate`
 - `pnpm db:seed`
 
@@ -161,3 +164,23 @@ Variables mínimas recomendadas en deploy:
 - `NEXT_PUBLIC_MAP_PROVIDER=maptiler`
 - `NEXT_PUBLIC_MAPTILER_KEY`
 - `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
+
+## Operación recomendada: Vercel + Supabase
+
+1. Configura en Vercel (entorno `Production`):
+- `DATABASE_URL` (Supabase pooler, con `pgbouncer=true&sslmode=require`)
+- `NEXT_PUBLIC_MAP_PROVIDER=maptiler`
+- `NEXT_PUBLIC_MAP_PROVIDER_LABEL=MapTiler`
+- `NEXT_PUBLIC_MAPTILER_KEY`
+- `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
+
+2. Antes de cada deploy relevante:
+```bash
+pnpm verify
+```
+
+3. Si cambias schema Prisma:
+```bash
+pnpm db:migrate
+```
+Ejecuta migraciones contra la base de producción antes o durante el despliegue.

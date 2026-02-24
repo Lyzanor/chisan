@@ -16,28 +16,12 @@ import {
 } from "@/components/home-map/helpers";
 import { IconSearch, IconX } from "@/components/home-map/icons";
 import { BARCELONA_PROVINCE_BBOX } from "@/lib/barcelona";
+import { buildProducerFiltersHref } from "@/lib/search-params";
 
 const ProducersMap = dynamic(() => import("@/components/producers-map"), {
   ssr: false,
   loading: () => <div className="h-full w-full bg-[rgba(15,143,103,0.04)]" />,
 });
-
-function buildSearchListHref(filters: {
-  query: string;
-  city: string;
-  category: string;
-  subcategory: string;
-}): string {
-  const params = new URLSearchParams();
-
-  if (filters.query) params.set("query", filters.query);
-  if (filters.city) params.set("city", filters.city);
-  if (filters.category) params.set("category", filters.category);
-  if (filters.subcategory) params.set("subcategory", filters.subcategory);
-
-  const queryString = params.toString();
-  return queryString ? `/buscar?${queryString}` : "/buscar";
-}
 
 type HomeMapViewProps = {
   initialFilters?: {
@@ -128,7 +112,7 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
 
   const listHref = useMemo(
     () =>
-      buildSearchListHref({
+      buildProducerFiltersHref("/buscar", {
         query: effectiveQuery,
         city: effectiveCity,
         category: effectiveCategory,
