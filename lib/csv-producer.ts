@@ -1,6 +1,7 @@
 import { Prisma } from "@prisma/client";
 
 import { isWithinBarcelonaProvince } from "./barcelona";
+import { CSV_PRODUCER_COLUMNS } from "./csv-schema";
 import { buildGeocodingQuery } from "./geocoding";
 import {
   buildSearchText,
@@ -13,45 +14,9 @@ import {
   slugify,
 } from "./producer-utils";
 
-export const CSV_PRODUCER_COLUMNS = {
-  name: "nombre",
-  city: "-- municipio",
-  category: "categoria",
-  subcategory: "subcategoria",
-  address: "direccion",
-  description: "descripcion",
-  openingHours: "horario",
-  phone: "telefono",
-  email: "correo",
-  website: "web",
-  facebook: "Facebook",
-  instagram: "Instagram",
-  googleMaps: "Google Maps",
-  latitude: "lat",
-  longitude: "lon",
-  reviewed: "Revisado",
-} as const;
-
-export const CSV_PRODUCER_COLUMN_LIST = Object.values(CSV_PRODUCER_COLUMNS);
-
-export type CsvProducerRow = {
-  nombre?: string;
-  "-- municipio"?: string;
-  categoria?: string;
-  subcategoria?: string;
-  direccion?: string;
-  descripcion?: string;
-  horario?: string;
-  telefono?: string;
-  correo?: string;
-  web?: string;
-  Facebook?: string;
-  Instagram?: string;
-  "Google Maps"?: string;
-  lat?: string;
-  lon?: string;
-  Revisado?: string;
-};
+export type CsvProducerRow = Partial<
+  Record<(typeof CSV_PRODUCER_COLUMNS)[keyof typeof CSV_PRODUCER_COLUMNS], string>
+>;
 
 export type PreparedSeedProducer = {
   dedupeKey: string;

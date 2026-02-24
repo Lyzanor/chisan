@@ -1,11 +1,17 @@
 import { NextRequest } from "next/server";
 
-import { jsonWithCache, parseBboxParam, parsePageParam } from "@/lib/api-utils";
+import {
+  jsonWithCache,
+  parseBboxParam,
+  parsePageParam,
+  parsePageSizeParam,
+} from "@/lib/api-utils";
 import { prisma } from "@/lib/prisma";
 import { buildProducerWhere, PRODUCER_LIST_SELECT } from "@/lib/producer-query";
 import { normalizeSearchQuery, normalizeText } from "@/lib/producer-utils";
 
-const PAGE_SIZE = 40;
+const DEFAULT_PAGE_SIZE = 40;
+const MAX_PAGE_SIZE = 300;
 
 function parseBoolean(value: string | null, defaultValue: boolean): boolean {
   if (value === null) {
@@ -24,6 +30,11 @@ export async function GET(request: NextRequest) {
   const subcategory = normalizeText(searchParams.get("subcategory"));
   const bbox = parseBboxParam(searchParams.get("bbox"));
   const page = parsePageParam(searchParams.get("page"), 1);
+  const pageSize = parsePageSizeParam(
+    searchParams.get("pageSize"),
+    DEFAULT_PAGE_SIZE,
+    MAX_PAGE_SIZE,
+  );
   const includeWithoutCoordinates = parseBoolean(
     searchParams.get("includeNoCoordinates"),
     true,
@@ -43,8 +54,8 @@ export async function GET(request: NextRequest) {
       prisma.producer.count({ where }),
       prisma.producer.findMany({
         where,
-        skip: (page - 1) * PAGE_SIZE,
-        take: PAGE_SIZE,
+        skip: (page - 1) * pageSize,
+        take: pageSize,
         orderBy: [{ city: "asc" }, { category: "asc" }, { name: "asc" }],
         select: PRODUCER_LIST_SELECT,
       }),
@@ -55,7 +66,7 @@ export async function GET(request: NextRequest) {
         items,
         total,
         page,
-        pageSize: PAGE_SIZE,
+        pageSize,
       },
       "public, s-maxage=30, stale-while-revalidate=120",
     );

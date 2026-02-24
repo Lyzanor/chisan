@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import L from "leaflet";
-import "leaflet.markercluster";
 
 import {
   BARCELONA_PROVINCE,
@@ -27,26 +26,19 @@ const markerIcon = L.divIcon({
   popupAnchor: [0, -8],
 });
 const mapTileConfig = getMapTileLayerConfig();
+const PROVINCE_CENTER: [number, number] = [
+  (BARCELONA_PROVINCE.minLat + BARCELONA_PROVINCE.maxLat) / 2,
+  (BARCELONA_PROVINCE.minLng + BARCELONA_PROVINCE.maxLng) / 2,
+];
+const INITIAL_ZOOM = 9;
 
-function safeClearCluster(cluster: L.MarkerClusterGroup | null | undefined): void {
-  if (!cluster) {
+function safeClearLayerGroup(layerGroup: L.LayerGroup | null | undefined): void {
+  if (!layerGroup) {
     return;
   }
 
   try {
-    cluster.clearLayers();
-  } catch {
-    // Ignore cleanup race conditions during fast re-renders.
-  }
-}
-
-function safeRemoveLayer(map: L.Map | null, layer: L.Layer | null | undefined): void {
-  if (!map || !layer) {
-    return;
-  }
-
-  try {
-    map.removeLayer(layer);
+    layerGroup.clearLayers();
   } catch {
     // Ignore cleanup race conditions during fast re-renders.
   }
@@ -74,7 +66,7 @@ function popupHtml(producer: ProducerListItem): string {
       <strong>${name}</strong>
       <p>${city}</p>
       ${category ? `<p>${category}</p>` : ""}
-      <a href="/p/${producer.id}">Ver ficha</a>
+      <a href="/p/${producer.slug}">Ver ficha</a>
     </div>
   `;
 }
@@ -99,7 +91,7 @@ export default function ProducersMap({
 }: ProducersMapProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
-  const clusterRef = useRef<L.MarkerClusterGroup | null>(null);
+  const markersLayerRef = useRef<L.LayerGroup | null>(null);
   const markersRef = useRef<Map<number, L.Marker>>(new Map());
 
   const onBoundsChangeRef = useRef(onBoundsChange);
@@ -118,28 +110,19 @@ export default function ProducersMap({
       return;
     }
 
+    let disposed = false;
     const provinceBounds = L.latLngBounds(BARCELONA_PROVINCE_LEAFLET_BOUNDS);
 
     const map = L.map(mapContainerRef.current, {
       zoomControl: true,
-      minZoom: 8,
+      minZoom: INITIAL_ZOOM,
       maxZoom: mapTileConfig.maxZoom,
       maxBounds: provinceBounds,
       maxBoundsViscosity: 1,
       zoomSnap: 0.25,
-    });
+    }).setView(PROVINCE_CENTER, INITIAL_ZOOM);
 
-    const fitToProvince = () => {
-      map.invalidateSize({ pan: false, animate: false });
-      const lockedMinZoom = map.getBoundsZoom(provinceBounds, true);
-      map.setMinZoom(lockedMinZoom);
-      map.fitBounds(provinceBounds, {
-        padding: [18, 18],
-        animate: false,
-      });
-    };
-
-    fitToProvince();
+    mapRef.current = map;
 
     const tileLayerOptions: L.TileLayerOptions = {
       maxZoom: mapTileConfig.maxZoom,
@@ -152,48 +135,42 @@ export default function ProducersMap({
     L.tileLayer(mapTileConfig.tileUrl, tileLayerOptions).addTo(map);
 
     const emitBounds = () => {
-      onBoundsChangeRef.current(boundsToBbox(map.getBounds()));
+      if (disposed || mapRef.current !== map) {
+        return;
+      }
+
+      try {
+        onBoundsChangeRef.current(boundsToBbox(map.getBounds()));
+      } catch {
+        // Ignore bounds reads while map is tearing down.
+      }
     };
 
-    map.on("resize", fitToProvince);
     map.on("moveend zoomend", emitBounds);
+    emitBounds();
 
-    requestAnimationFrame(() => {
-      fitToProvince();
-      emitBounds();
-    });
-
-    mapRef.current = map;
+    const layerGroup = L.layerGroup();
+    markersLayerRef.current = layerGroup;
+    map.addLayer(layerGroup);
 
     return () => {
-      safeClearCluster(clusterRef.current);
-      safeRemoveLayer(map, clusterRef.current);
-      map.off("resize", fitToProvince);
+      disposed = true;
+      safeClearLayerGroup(markersLayerRef.current);
       map.off("moveend zoomend", emitBounds);
       map.remove();
       mapRef.current = null;
-      clusterRef.current = null;
+      markersLayerRef.current = null;
       markersRef.current.clear();
     };
   }, []);
 
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map) {
+    const layerGroup = markersLayerRef.current;
+    if (!layerGroup) {
       return;
     }
 
-    if (clusterRef.current) {
-      safeClearCluster(clusterRef.current);
-      safeRemoveLayer(map, clusterRef.current);
-      clusterRef.current = null;
-    }
-
-    const cluster = L.markerClusterGroup({
-      showCoverageOnHover: false,
-      chunkedLoading: true,
-      maxClusterRadius: 46,
-    });
+    safeClearLayerGroup(layerGroup);
 
     const markers = new Map<number, L.Marker>();
 
@@ -213,20 +190,10 @@ export default function ProducersMap({
       });
 
       markers.set(producer.id, marker);
-      cluster.addLayer(marker);
+      layerGroup.addLayer(marker);
     }
 
     markersRef.current = markers;
-    clusterRef.current = cluster;
-    map.addLayer(cluster);
-
-    return () => {
-      safeClearCluster(cluster);
-      safeRemoveLayer(map, cluster);
-      if (clusterRef.current === cluster) {
-        clusterRef.current = null;
-      }
-    };
   }, [producers]);
 
   useEffect(() => {
@@ -236,16 +203,22 @@ export default function ProducersMap({
 
     const marker = markersRef.current.get(selectedProducerId);
     const map = mapRef.current;
-    const cluster = clusterRef.current;
+    const layerGroup = markersLayerRef.current;
 
-    if (!marker || !map || !cluster) {
+    if (!marker || !map || !layerGroup) {
       return;
     }
 
-    cluster.zoomToShowLayer(marker, () => {
+    if (!layerGroup.hasLayer(marker)) {
+      return;
+    }
+
+    try {
       marker.openPopup();
-      map.panTo(marker.getLatLng(), { animate: true, duration: 0.4 });
-    });
+      map.panTo(marker.getLatLng(), { animate: false });
+    } catch {
+      // Ignore stale marker operations when data updates mid-animation.
+    }
   }, [selectedProducerId]);
 
   return <div ref={mapContainerRef} className={className ?? "h-full w-full"} />;

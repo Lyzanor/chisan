@@ -15,6 +15,19 @@ export function parsePageParam(value: string | null, fallback = 1): number {
   return page;
 }
 
+export function parsePageSizeParam(
+  value: string | null,
+  fallback: number,
+  maxValue: number,
+): number {
+  const parsed = Number.parseInt(value ?? "", 10);
+  if (Number.isNaN(parsed) || parsed < 1) {
+    return fallback;
+  }
+
+  return Math.min(parsed, maxValue);
+}
+
 export function parseBboxParam(value: string | null): BoundingBox | null {
   if (!value) {
     return null;

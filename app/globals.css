@@ -1306,20 +1306,3 @@ a {
 .km0-popup a:hover {
   text-decoration: underline;
 }
-
-/* Leaflet cluster overrides */
-.marker-cluster-small,
-.marker-cluster-medium,
-.marker-cluster-large {
-  background-color: rgba(15, 143, 103, 0.16) !important;
-}
-
-.marker-cluster-small div,
-.marker-cluster-medium div,
-.marker-cluster-large div {
-  background-color: rgba(15, 143, 103, 0.84) !important;
-  color: #ffffff !important;
-  font-family: var(--font-manrope), "Segoe UI", sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-}

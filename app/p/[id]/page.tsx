@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import ProducerMiniMap from "@/components/producer-mini-map";
+import { buildCsvFieldEntries, buildCsvSnapshot } from "@/lib/csv-schema";
 import { getMapExternalLinks } from "@/lib/map-provider";
 import { prisma } from "@/lib/prisma";
 
@@ -10,13 +11,31 @@ type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-type CsvField = {
-  key: string;
-  value: string | null;
-};
+type ProducerRouteKey = { id: number } | { slug: string };
 
-async function getProducer(id: number) {
-  return prisma.producer.findUnique({ where: { id } });
+function parseProducerRouteKey(rawValue: string): ProducerRouteKey | null {
+  const normalized = rawValue.trim();
+  if (!normalized) {
+    return null;
+  }
+
+  if (/^\d+$/.test(normalized)) {
+    const parsedId = Number.parseInt(normalized, 10);
+    if (parsedId > 0) {
+      return { id: parsedId };
+    }
+    return null;
+  }
+
+  return { slug: normalized.toLowerCase() };
+}
+
+async function getProducer(routeKey: ProducerRouteKey) {
+  if ("id" in routeKey) {
+    return prisma.producer.findUnique({ where: { id: routeKey.id } });
+  }
+
+  return prisma.producer.findUnique({ where: { slug: routeKey.slug } });
 }
 
 function toTextOrNull(value: string | null | undefined): string | null {
@@ -64,16 +83,16 @@ function FieldRow({ label, value }: { label: string; value: string | null }) {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const producerId = Number.parseInt(id, 10);
+  const routeKey = parseProducerRouteKey(id);
 
-  if (Number.isNaN(producerId)) {
+  if (!routeKey) {
     return {
       title: "Productor no encontrado",
       description: "La ficha solicitada no está disponible.",
     };
   }
 
-  const producer = await getProducer(producerId);
+  const producer = await getProducer(routeKey);
   if (!producer) {
     return {
       title: "Productor no encontrado",
@@ -91,13 +110,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProducerDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const producerId = Number.parseInt(id, 10);
+  const routeKey = parseProducerRouteKey(id);
 
-  if (Number.isNaN(producerId) || producerId < 1) {
+  if (!routeKey) {
     notFound();
   }
 
-  const producer = await getProducer(producerId);
+  const producer = await getProducer(routeKey);
   if (!producer) {
     notFound();
   }
@@ -116,26 +135,8 @@ export default async function ProducerDetailPage({ params }: PageProps) {
   const breadcrumb = [producer.city, producer.category, producer.subcategory].filter(Boolean).join(" · ");
   const coordinatesText = formatCoordinates(producer.latitude, producer.longitude);
 
-  const csvFields: CsvField[] = [
-    { key: "nombre", value: toTextOrNull(producer.name) },
-    { key: "-- municipio", value: toTextOrNull(producer.city) },
-    { key: "categoria", value: toTextOrNull(producer.category) },
-    { key: "subcategoria", value: toTextOrNull(producer.subcategory) },
-    { key: "direccion", value: toTextOrNull(producer.address) },
-    { key: "descripcion", value: toTextOrNull(producer.description) },
-    { key: "horario", value: toTextOrNull(producer.openingHours) },
-    { key: "telefono", value: toTextOrNull(producer.phone) },
-    { key: "correo", value: toTextOrNull(producer.email) },
-    { key: "web", value: toTextOrNull(producer.website) },
-    { key: "Facebook", value: toTextOrNull(producer.facebook) },
-    { key: "Instagram", value: toTextOrNull(producer.instagram) },
-    { key: "Google Maps", value: toTextOrNull(producer.googleMapsUrl) },
-    { key: "lat", value: producer.latitude !== null ? producer.latitude.toString() : null },
-    { key: "lon", value: producer.longitude !== null ? producer.longitude.toString() : null },
-    { key: "Revisado", value: producer.reviewed ? "sí" : "no" },
-  ];
-
-  const csvSnapshot = Object.fromEntries(csvFields.map((field) => [field.key, field.value]));
+  const csvFields = buildCsvFieldEntries(producer);
+  const csvSnapshot = buildCsvSnapshot(producer);
 
   const structuredData = {
     "@context": "https://schema.org",

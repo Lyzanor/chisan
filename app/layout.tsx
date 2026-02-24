@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Manrope, Spectral } from "next/font/google";
 
 import "leaflet/dist/leaflet.css";
-import "leaflet.markercluster/dist/MarkerCluster.css";
-import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import "./globals.css";
 
 const manrope = Manrope({

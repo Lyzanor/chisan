@@ -1,28 +1,16 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import ActiveProducerOverlay from "@/components/home-map/active-producer-overlay";
 import { useProducerResults, useTaxonomyData } from "@/components/home-map/data-hooks";
 import FilterSelect from "@/components/home-map/filter-select";
-import {
-  classNames,
-  getCategoryGlyph,
-  inferExactMatch,
-  normalizeLookup,
-  useDebouncedValue,
-} from "@/components/home-map/helpers";
+import { inferExactMatch, normalizeLookup, useDebouncedValue } from "@/components/home-map/helpers";
 import { IconSearch, IconX } from "@/components/home-map/icons";
+import ProducerCard from "@/components/home-map/producer-card";
 import { BARCELONA_PROVINCE_BBOX } from "@/lib/barcelona";
 
-const ProducersMap = dynamic(() => import("@/components/producers-map"), {
-  ssr: false,
-  loading: () => <div className="h-full w-full bg-[rgba(15,143,103,0.04)]" />,
-});
-
-function buildSearchListHref(filters: {
+function buildMapHref(filters: {
   query: string;
   city: string;
   category: string;
@@ -36,10 +24,10 @@ function buildSearchListHref(filters: {
   if (filters.subcategory) params.set("subcategory", filters.subcategory);
 
   const queryString = params.toString();
-  return queryString ? `/buscar?${queryString}` : "/buscar";
+  return queryString ? `/?${queryString}` : "/";
 }
 
-type HomeMapViewProps = {
+type SearchListViewProps = {
   initialFilters?: {
     query?: string;
     city?: string;
@@ -48,32 +36,24 @@ type HomeMapViewProps = {
   };
 };
 
-export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
+export default function SearchListView({ initialFilters }: SearchListViewProps) {
   const [query, setQuery] = useState(() => initialFilters?.query ?? "");
   const [city, setCity] = useState(() => initialFilters?.city ?? "");
   const [category, setCategory] = useState(() => initialFilters?.category ?? "");
   const [subcategory, setSubcategory] = useState(() => initialFilters?.subcategory ?? "");
-  const [bbox, setBbox] = useState<string | null>(BARCELONA_PROVINCE_BBOX);
+  const [page, setPage] = useState(1);
   const [selectedProducerId, setSelectedProducerId] = useState<number | null>(null);
 
   const debouncedQuery = useDebouncedValue(query, 250);
-  const debouncedBbox = useDebouncedValue(bbox, 180);
-
-  const { taxonomy, loadingTaxonomy } = useTaxonomyData();
+  const { taxonomy } = useTaxonomyData();
 
   const inferredCity = useMemo(() => {
-    if (city) {
-      return "";
-    }
-
+    if (city) return "";
     return inferExactMatch(debouncedQuery, taxonomy.cities);
   }, [city, debouncedQuery, taxonomy.cities]);
 
   const inferredCategory = useMemo(() => {
-    if (category) {
-      return "";
-    }
-
+    if (category) return "";
     return inferExactMatch(debouncedQuery, taxonomy.categories);
   }, [category, debouncedQuery, taxonomy.categories]);
 
@@ -82,11 +62,12 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
 
   const effectiveQuery = useMemo(() => {
     const normalizedQuery = normalizeLookup(debouncedQuery);
-    if (!normalizedQuery) {
-      return "";
-    }
+    if (!normalizedQuery) return "";
 
-    const inferredNormalized = [inferredCity, inferredCategory].filter(Boolean).map(normalizeLookup);
+    const inferredNormalized = [inferredCity, inferredCategory]
+      .filter(Boolean)
+      .map(normalizeLookup);
+
     if (inferredNormalized.includes(normalizedQuery)) {
       return "";
     }
@@ -99,9 +80,9 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
     city: effectiveCity,
     category: effectiveCategory,
     subcategory,
-    bbox: debouncedBbox,
-    page: 1,
-    pageSize: 300,
+    bbox: BARCELONA_PROVINCE_BBOX,
+    page,
+    pageSize: 40,
   });
 
   const resolvedSelectedProducerId = useMemo(() => {
@@ -114,21 +95,21 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
       : null;
   }, [results.items, selectedProducerId]);
 
-  const activeProducer = useMemo(
-    () => results.items.find((producer) => producer.id === resolvedSelectedProducerId) ?? null,
-    [resolvedSelectedProducerId, results.items],
-  );
+  const paginationSummary = useMemo(() => {
+    if (results.total === 0) return "0 resultados";
 
-  const featuredCategories = useMemo(() => taxonomy.categories.slice(0, 8), [taxonomy.categories]);
+    const start = (results.page - 1) * results.pageSize + 1;
+    const end = Math.min(results.page * results.pageSize, results.total);
+    return `${start}–${end} de ${results.total}`;
+  }, [results.page, results.pageSize, results.total]);
 
-  const autoAppliedFilters = [
-    inferredCity ? `Ciudad: ${inferredCity}` : "",
-    inferredCategory ? `Categoría: ${inferredCategory}` : "",
-  ].filter(Boolean);
+  const hasPreviousPage = page > 1;
+  const hasNextPage = page * results.pageSize < results.total;
+  const hasActiveFilters = Boolean(query || city || category || subcategory);
 
-  const listHref = useMemo(
+  const mapHref = useMemo(
     () =>
-      buildSearchListHref({
+      buildMapHref({
         query: effectiveQuery,
         city: effectiveCity,
         category: effectiveCategory,
@@ -137,29 +118,33 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
     [effectiveCategory, effectiveCity, effectiveQuery, subcategory],
   );
 
-  const onMapBoundsChange = useCallback((nextBbox: string) => {
-    setBbox((prev) => (prev === nextBbox ? prev : nextBbox));
-  }, []);
-
   const onCategoryChange = useCallback((value: string) => {
     setCategory(value);
     setSubcategory("");
+    setPage(1);
   }, []);
 
-  const onToggleFeaturedCategory = useCallback(
-    (value: string) => {
-      const isActive = effectiveCategory === value;
-      setCategory(isActive ? "" : value);
-      setSubcategory("");
-    },
-    [effectiveCategory],
-  );
+  const onQueryChange = useCallback((value: string) => {
+    setQuery(value);
+    setPage(1);
+  }, []);
+
+  const onCityChange = useCallback((value: string) => {
+    setCity(value);
+    setPage(1);
+  }, []);
+
+  const onSubcategoryChange = useCallback((value: string) => {
+    setSubcategory(value);
+    setPage(1);
+  }, []);
 
   function clearAll() {
     setQuery("");
     setCity("");
     setCategory("");
     setSubcategory("");
+    setPage(1);
     setSelectedProducerId(null);
   }
 
@@ -171,7 +156,7 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
             <span className="km0-brand-mark">KM0</span>
             <span>
               <p className="km0-brand-title">Guía Local</p>
-              <p className="km0-brand-subtitle">Productores de Barcelona</p>
+              <p className="km0-brand-subtitle">Buscador de productores</p>
             </span>
           </Link>
 
@@ -180,69 +165,38 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
             <input
               type="search"
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => onQueryChange(event.target.value)}
               placeholder="Buscar por productor, categoría o municipio"
               className="km0-search-input"
               aria-label="Buscar productores"
             />
             {query && (
-              <button type="button" onClick={() => setQuery("")} className="km0-icon-btn" aria-label="Limpiar búsqueda">
+              <button type="button" onClick={() => onQueryChange("")} className="km0-icon-btn" aria-label="Limpiar búsqueda">
                 <IconX />
               </button>
             )}
           </div>
 
           <div className="km0-topbar-actions">
-            <Link href={listHref} className="km0-ghost-btn">
-              Ver listado
+            <Link href={mapHref} className="km0-ghost-btn">
+              Ver mapa
             </Link>
-          </div>
-        </div>
-
-        <div className="km0-topbar-sub">
-          <div className="km0-chip-row" aria-label="Categorías destacadas">
-            {!loadingTaxonomy && featuredCategories.length > 0
-              ? featuredCategories.map((bucket) => {
-                  const active = effectiveCategory === bucket.value;
-                  return (
-                    <button
-                      key={bucket.value}
-                      type="button"
-                      onClick={() => onToggleFeaturedCategory(bucket.value)}
-                      className={classNames("km0-chip", active && "is-active")}
-                      title={`${bucket.value} (${bucket.count})`}
-                    >
-                      <span aria-hidden="true">{getCategoryGlyph(bucket.value)}</span>
-                      {bucket.value}
-                    </button>
-                  );
-                })
-              : ["🍯", "🥖", "🧀", "🍷"].map((placeholder, index) => (
-                  <span key={index} className="km0-chip" aria-hidden="true">
-                    {placeholder} Cargando…
-                  </span>
-                ))}
-          </div>
-
-          <div className="km0-topbar-status">
-            <span>{loading ? "Cargando puntos…" : `${results.total} productores`}</span>
-            {autoAppliedFilters.length > 0 && <span className="km0-auto-filter">{autoAppliedFilters.join(" · ")}</span>}
           </div>
         </div>
       </header>
 
       <main className="km0-content">
-        <section className="km0-panel km0-map-panel flex flex-col overflow-hidden">
-          <div className="km0-panel-section border-b border-[var(--line-soft)]">
+        <section className="km0-panel km0-list-panel mx-auto flex min-h-[72dvh] w-full max-w-[1100px] flex-col">
+          <div className="km0-panel-section">
+            <p className="km0-panel-title">Filtros</p>
             <div className="km0-filter-grid">
               <FilterSelect
                 label="Municipio"
                 value={city}
                 allLabel="Todos"
                 options={taxonomy.cities}
-                onChange={setCity}
+                onChange={onCityChange}
               />
-
               <FilterSelect
                 label="Categoría"
                 value={category}
@@ -258,30 +212,60 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
                 value={subcategory}
                 allLabel="Todas"
                 options={taxonomy.subcategories}
-                onChange={setSubcategory}
+                onChange={onSubcategoryChange}
               />
             </div>
+          </div>
 
-            <div className="mt-3 flex items-center justify-between gap-3 text-sm text-[var(--text-soft)]">
-              <span>Usa los filtros o mueve el mapa para explorar productores.</span>
+          <div className="km0-list-toolbar">
+            <span>{loading ? "Actualizando…" : paginationSummary}</span>
+            {hasActiveFilters && (
               <button type="button" onClick={clearAll} className="km0-link-btn">
                 Limpiar filtros
               </button>
-            </div>
-
-            {error && <p className="km0-inline-error mt-3">{error}</p>}
+            )}
           </div>
 
-          <div className="km0-map-frame h-[70dvh] min-h-[540px]">
-            <ProducersMap
-              producers={results.items}
-              selectedProducerId={resolvedSelectedProducerId}
-              onSelectProducer={setSelectedProducerId}
-              onBoundsChange={onMapBoundsChange}
-              className="km0-map-canvas"
-            />
-            <div className="km0-map-glow" />
-            <ActiveProducerOverlay producer={activeProducer} actionLabel="Ver ficha" />
+          {error && <p className="km0-inline-error">{error}</p>}
+
+          <div className="km0-list-scroll">
+            {!loading && results.items.length === 0 ? (
+              <div className="km0-empty-state">
+                <p>Sin resultados con estos filtros.</p>
+                <p>Prueba con otra categoría o municipio.</p>
+              </div>
+            ) : (
+              <div className="km0-results-stack">
+                {results.items.map((producer) => (
+                  <ProducerCard
+                    key={producer.id}
+                    producer={producer}
+                    selected={resolvedSelectedProducerId === producer.id}
+                    onSelect={setSelectedProducerId}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="km0-pagination">
+            <button
+              type="button"
+              onClick={() => setPage((current) => Math.max(1, current - 1))}
+              disabled={!hasPreviousPage || loading}
+            >
+              ← Anterior
+            </button>
+
+            <span>{loading ? "…" : paginationSummary}</span>
+
+            <button
+              type="button"
+              onClick={() => setPage((current) => current + 1)}
+              disabled={!hasNextPage || loading}
+            >
+              Siguiente →
+            </button>
           </div>
         </section>
       </main>
