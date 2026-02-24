@@ -9,7 +9,7 @@ import type { ProducerListItem, ProducersApiResponse, TaxonomyResponse } from "@
 
 const ProducersMap = dynamic(() => import("@/components/producers-map"), {
   ssr: false,
-  loading: () => <div className="h-full w-full bg-gray-100" />,
+  loading: () => <div className="h-full w-full bg-[rgba(15,143,103,0.04)]" />,
 });
 
 const EMPTY_RESULTS: ProducersApiResponse = {
@@ -24,6 +24,26 @@ const EMPTY_TAXONOMY: TaxonomyResponse = {
   categories: [],
   subcategories: [],
 };
+
+type MobilePaneMode = "list" | "map";
+
+type CategoryGlyphRule = {
+  pattern: RegExp;
+  glyph: string;
+};
+
+const CATEGORY_GLYPHS: CategoryGlyphRule[] = [
+  { pattern: /vino|bodega/i, glyph: "🍷" },
+  { pattern: /ques/i, glyph: "🧀" },
+  { pattern: /pan|boll|horno|pastel/i, glyph: "🥖" },
+  { pattern: /miel/i, glyph: "🍯" },
+  { pattern: /cerve/i, glyph: "🍺" },
+  { pattern: /fruta|verdura|hort|agric/i, glyph: "🥕" },
+  { pattern: /aceite|oliva/i, glyph: "🫒" },
+  { pattern: /charcut|carne|embut/i, glyph: "🥩" },
+  { pattern: /pescado|marisc/i, glyph: "🐟" },
+  { pattern: /cafe|té|te/i, glyph: "☕" },
+];
 
 function useDebouncedValue<T>(value: T, delayMs: number): T {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -48,16 +68,38 @@ function normalizeLookup(value: string): string {
 function inferExactMatch(query: string, collection: Array<{ value: string }>): string {
   const normalizedQuery = normalizeLookup(query);
   if (!normalizedQuery) return "";
+
   const found = collection.find((item) => normalizeLookup(item.value) === normalizedQuery);
   return found?.value ?? "";
 }
 
-// ── Icons ─────────────────────────────────────────────────────────────────────
+function classNames(...parts: Array<string | false | null | undefined>): string {
+  return parts.filter(Boolean).join(" ");
+}
+
+function getCategoryGlyph(value: string | null | undefined): string {
+  if (!value) {
+    return "🧺";
+  }
+
+  for (const rule of CATEGORY_GLYPHS) {
+    if (rule.pattern.test(value)) {
+      return rule.glyph;
+    }
+  }
+
+  return "🧺";
+}
 
 function IconSearch() {
   return (
-    <svg className="h-4 w-4 flex-none text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    <svg className="h-4 w-4 flex-none text-[#7f9188]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.8}
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
     </svg>
   );
 }
@@ -78,7 +120,44 @@ function IconChevronRight() {
   );
 }
 
-// ── Main component ────────────────────────────────────────────────────────────
+function IconFilter() {
+  return (
+    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M3 4h18M6 12h12M10 20h4"
+      />
+    </svg>
+  );
+}
+
+function IconList() {
+  return (
+    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"
+      />
+    </svg>
+  );
+}
+
+function IconMap() {
+  return (
+    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2m0 18l6-3m-6 3V2m6 15l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 2"
+      />
+    </svg>
+  );
+}
 
 export default function HomeMapView() {
   const [query, setQuery] = useState("");
@@ -93,32 +172,41 @@ export default function HomeMapView() {
   const [loading, setLoading] = useState(true);
   const [loadingTaxonomy, setLoadingTaxonomy] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [mobilePane, setMobilePane] = useState<MobilePaneMode>("map");
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  const cardRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const cardRefs = useRef<Record<number, HTMLElement | null>>({});
   const debouncedQuery = useDebouncedValue(query, 250);
   const debouncedBbox = useDebouncedValue(bbox, 180);
 
-  // Load taxonomy once
   useEffect(() => {
     const controller = new AbortController();
+
     async function loadTaxonomy() {
       setLoadingTaxonomy(true);
       try {
-        const res = await fetch("/api/taxonomy", { signal: controller.signal, cache: "force-cache" });
+        const res = await fetch("/api/taxonomy", {
+          signal: controller.signal,
+          cache: "force-cache",
+        });
         if (!res.ok) throw new Error("taxonomy-failed");
         const data = (await res.json()) as TaxonomyResponse;
         setTaxonomy(data);
       } catch (err) {
-        if (!controller.signal.aborted) console.error(err);
+        if (!controller.signal.aborted) {
+          console.error(err);
+        }
       } finally {
-        if (!controller.signal.aborted) setLoadingTaxonomy(false);
+        if (!controller.signal.aborted) {
+          setLoadingTaxonomy(false);
+        }
       }
     }
-    loadTaxonomy();
+
+    void loadTaxonomy();
     return () => controller.abort();
   }, []);
 
-  // Smart inference
   const inferredCity = useMemo(() => {
     if (city) return "";
     return inferExactMatch(debouncedQuery, taxonomy.cities);
@@ -135,21 +223,31 @@ export default function HomeMapView() {
   const effectiveQuery = useMemo(() => {
     const norm = normalizeLookup(debouncedQuery);
     if (!norm) return "";
-    const inferredNorms = [inferredCity, inferredCategory].filter(Boolean).map(normalizeLookup);
-    if (inferredNorms.includes(norm)) return "";
+
+    const inferredNorms = [inferredCity, inferredCategory]
+      .filter(Boolean)
+      .map(normalizeLookup);
+
+    if (inferredNorms.includes(norm)) {
+      return "";
+    }
+
     return debouncedQuery;
   }, [debouncedQuery, inferredCategory, inferredCity]);
 
-  const featuredCategories = useMemo(() => taxonomy.categories.slice(0, 9), [taxonomy.categories]);
+  const featuredCategories = useMemo(() => taxonomy.categories.slice(0, 10), [taxonomy.categories]);
 
-  useEffect(() => { setPage(1); }, [debouncedBbox, effectiveCategory, effectiveCity, effectiveQuery, subcategory]);
+  useEffect(() => {
+    setPage(1);
+  }, [debouncedBbox, effectiveCategory, effectiveCity, effectiveQuery, subcategory]);
 
-  // Load producers
   useEffect(() => {
     const controller = new AbortController();
+
     async function loadResults() {
       setLoading(true);
       setError(null);
+
       const params = new URLSearchParams();
       if (effectiveQuery) params.set("query", effectiveQuery);
       if (effectiveCity) params.set("city", effectiveCity);
@@ -157,8 +255,12 @@ export default function HomeMapView() {
       if (subcategory) params.set("subcategory", subcategory);
       if (debouncedBbox) params.set("bbox", debouncedBbox);
       params.set("page", String(page));
+
       try {
-        const res = await fetch(`/api/producers?${params.toString()}`, { signal: controller.signal, cache: "no-store" });
+        const res = await fetch(`/api/producers?${params.toString()}`, {
+          signal: controller.signal,
+          cache: "no-store",
+        });
         if (!res.ok) throw new Error(`producers-failed:${res.status}`);
         setResults((await res.json()) as ProducersApiResponse);
       } catch (err) {
@@ -168,33 +270,64 @@ export default function HomeMapView() {
           setResults(EMPTY_RESULTS);
         }
       } finally {
-        if (!controller.signal.aborted) setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     }
-    loadResults();
+
+    void loadResults();
     return () => controller.abort();
   }, [debouncedBbox, effectiveCategory, effectiveCity, effectiveQuery, page, subcategory]);
 
-  // Scroll card into view when selected
   useEffect(() => {
     if (!selectedProducerId) return;
-    cardRefs.current[selectedProducerId]?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+
+    cardRefs.current[selectedProducerId]?.scrollIntoView({
+      block: "nearest",
+      behavior: "smooth",
+    });
   }, [selectedProducerId]);
 
-  // Clear selected if not in results
   useEffect(() => {
     if (!selectedProducerId) return;
-    if (!results.items.some((p) => p.id === selectedProducerId)) setSelectedProducerId(null);
+
+    if (!results.items.some((producer) => producer.id === selectedProducerId)) {
+      setSelectedProducerId(null);
+    }
   }, [results.items, selectedProducerId]);
+
+  useEffect(() => {
+    if (!mobileFiltersOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileFiltersOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileFiltersOpen]);
 
   const onMapBoundsChange = useCallback((nextBbox: string) => {
     setBbox((prev) => (prev === nextBbox ? prev : nextBbox));
   }, []);
 
-  const onSelectProducer = useCallback((id: number) => setSelectedProducerId(id), []);
+  const onSelectProducer = useCallback((id: number) => {
+    setSelectedProducerId(id);
+  }, []);
 
   const paginationSummary = useMemo(() => {
     if (results.total === 0) return "0 resultados";
+
     const start = (results.page - 1) * results.pageSize + 1;
     const end = Math.min(results.page * results.pageSize, results.total);
     return `${start}–${end} de ${results.total}`;
@@ -202,323 +335,520 @@ export default function HomeMapView() {
 
   const hasPreviousPage = page > 1;
   const hasNextPage = page * results.pageSize < results.total;
-  const hasActiveFilters = !!(query || city || category || subcategory);
+  const hasActiveFilters = Boolean(query || city || category || subcategory);
 
   const autoAppliedFilters = [
     inferredCity ? `Ciudad: ${inferredCity}` : "",
     inferredCategory ? `Categoría: ${inferredCategory}` : "",
   ].filter(Boolean);
 
+  const activeProducer = useMemo(
+    () => results.items.find((producer) => producer.id === selectedProducerId) ?? null,
+    [results.items, selectedProducerId],
+  );
+
   function clearAll() {
-    setQuery(""); setCity(""); setCategory(""); setSubcategory("");
+    setQuery("");
+    setCity("");
+    setCategory("");
+    setSubcategory("");
   }
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  function renderProducerCard(producer: ProducerListItem, compact = false) {
+    const isSelected = selectedProducerId === producer.id;
+    const categoryLabel = producer.category ?? "Sin categoría";
+    const cityLabel = producer.city ?? "Sin municipio";
+
+    return (
+      <article
+        key={producer.id}
+        ref={(node) => {
+          cardRefs.current[producer.id] = node;
+        }}
+        className={classNames("km0-result-card", isSelected && "is-active")}
+      >
+        <button
+          type="button"
+          onClick={() => setSelectedProducerId(producer.id)}
+          className="km0-result-main"
+          aria-label={`Seleccionar ${producer.name}`}
+        >
+          <div className="km0-result-head">
+            <span className="km0-glyph" aria-hidden="true">
+              {getCategoryGlyph(categoryLabel)}
+            </span>
+            <div className="min-w-0">
+              <p className="km0-result-title truncate">{producer.name}</p>
+              <p className="km0-result-meta truncate">
+                {cityLabel} · {categoryLabel}
+              </p>
+            </div>
+          </div>
+
+          {!compact && producer.description && (
+            <p className="km0-result-desc">{producer.description}</p>
+          )}
+
+          <div className="km0-tag-row">
+            <span className="km0-tag">{cityLabel}</span>
+            {producer.subcategory && <span className="km0-tag">{producer.subcategory}</span>}
+            <span className="km0-tag">
+              {producer.latitude !== null && producer.longitude !== null ? "Con mapa" : "Sin coordenadas"}
+            </span>
+          </div>
+        </button>
+
+        <Link href={`/p/${producer.id}`} className="km0-result-link">
+          Ver ficha <IconChevronRight />
+        </Link>
+      </article>
+    );
+  }
 
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <div className="km0-app-shell">
+      <header className="km0-topbar">
+        <div className="km0-topbar-inner">
+          <Link href="/" className="km0-brand" aria-label="Inicio KM0">
+            <span className="km0-brand-mark">KM0</span>
+            <span>
+              <p className="km0-brand-title">Guía Local</p>
+              <p className="km0-brand-subtitle">Productores de Barcelona</p>
+            </span>
+          </Link>
 
-      {/* ══════════════════════════════════════════
-          SIDEBAR — desktop only
-      ══════════════════════════════════════════ */}
-      <aside className="hidden lg:flex lg:flex-col w-80 flex-none border-r border-gray-100 bg-white">
-
-        {/* Brand header */}
-        <div className="flex-none border-b border-gray-100 px-5 py-4">
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-emerald-600">
-              <span className="text-[11px] font-bold text-white tracking-tight">K0</span>
-            </div>
-            <div>
-              <h1 className="text-sm font-semibold text-gray-900 leading-tight">Productores Km0</h1>
-              <p className="text-[11px] text-gray-400">Provincia de Barcelona</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Search input */}
-        <div className="flex-none px-4 pt-4 pb-2">
-          <div className="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 transition-colors focus-within:border-emerald-400 focus-within:bg-white">
+          <div className="km0-search-shell" role="search">
             <IconSearch />
             <input
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Productor, ciudad, categoría…"
-              className="min-w-0 flex-1 bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-400"
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Buscar por productor, categoría o municipio"
+              className="km0-search-input"
+              aria-label="Buscar productores"
             />
             {query && (
-              <button type="button" onClick={() => setQuery("")} className="flex-none text-gray-300 hover:text-gray-500 transition-colors">
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="km0-icon-btn"
+                aria-label="Limpiar búsqueda"
+              >
                 <IconX />
               </button>
             )}
           </div>
-        </div>
 
-        {/* Filter dropdowns */}
-        <div className="flex-none space-y-2 px-4 pb-3">
-          <div className="grid grid-cols-2 gap-2">
-            <select
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className="rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-2 text-xs text-gray-700 outline-none transition-colors focus:border-emerald-400 focus:bg-white"
+          <div className="km0-topbar-actions">
+            <button
+              type="button"
+              onClick={() => setMobileFiltersOpen(true)}
+              className="km0-ghost-btn lg:hidden"
             >
-              <option value="">Todas las ciudades</option>
-              {taxonomy.cities.map((b) => (
-                <option key={b.value} value={b.value}>{b.value} ({b.count})</option>
-              ))}
-            </select>
-            <select
-              value={category}
-              onChange={(e) => { setCategory(e.target.value); setSubcategory(""); }}
-              className="rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-2 text-xs text-gray-700 outline-none transition-colors focus:border-emerald-400 focus:bg-white"
-            >
-              <option value="">Todas las categorías</option>
-              {taxonomy.categories.map((b) => (
-                <option key={b.value} value={b.value}>{b.value} ({b.count})</option>
-              ))}
-            </select>
-          </div>
-
-          {taxonomy.subcategories.length > 0 && (
-            <select
-              value={subcategory}
-              onChange={(e) => setSubcategory(e.target.value)}
-              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-2 text-xs text-gray-700 outline-none transition-colors focus:border-emerald-400 focus:bg-white"
-            >
-              <option value="">Todas las subcategorías</option>
-              {taxonomy.subcategories.map((b) => (
-                <option key={b.value} value={b.value}>{b.value} ({b.count})</option>
-              ))}
-            </select>
-          )}
-
-          {/* Category quick chips */}
-          {!loadingTaxonomy && featuredCategories.length > 0 && (
-            <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-0.5">
-              {featuredCategories.map((b) => {
-                const active = effectiveCategory === b.value;
-                return (
-                  <button
-                    key={b.value}
-                    type="button"
-                    onClick={() => { setCategory(active ? "" : b.value); setSubcategory(""); }}
-                    className={`flex-none rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-                      active
-                        ? "border-emerald-600 bg-emerald-600 text-white"
-                        : "border-gray-200 bg-white text-gray-600 hover:border-emerald-300 hover:text-emerald-700"
-                    }`}
-                  >
-                    {b.value}
-                  </button>
-                );
-              })}
-            </div>
-          )}
-
-          {autoAppliedFilters.length > 0 && (
-            <p className="text-xs text-emerald-600">{autoAppliedFilters.join(" · ")}</p>
-          )}
-        </div>
-
-        {/* Results bar */}
-        <div className="flex-none flex items-center justify-between border-t border-gray-100 px-4 py-2.5">
-          <span className="text-xs text-gray-400">
-            {loading ? "Cargando…" : `${results.total} productores`}
-          </span>
-          {hasActiveFilters && (
-            <button type="button" onClick={clearAll} className="text-xs text-gray-400 hover:text-gray-700 transition-colors">
-              Limpiar filtros
+              <IconFilter /> Filtros
             </button>
-          )}
-        </div>
-
-        {error && (
-          <p className="mx-4 mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-600">{error}</p>
-        )}
-
-        {/* Producer list */}
-        <div className="flex-1 overflow-y-auto">
-          {!loading && results.items.length === 0 && (
-            <div className="px-4 py-10 text-center">
-              <p className="text-sm text-gray-400">Sin resultados</p>
-              <p className="mt-1 text-xs text-gray-300">Prueba con otros filtros o amplía el mapa</p>
-            </div>
-          )}
-
-          {results.items.map((producer) => {
-            const isSelected = selectedProducerId === producer.id;
-            return (
-              <div
-                key={producer.id}
-                ref={(node) => { cardRefs.current[producer.id] = node; }}
-                className={`group flex items-start gap-2 border-b border-gray-100 px-4 py-3 transition-colors ${
-                  isSelected ? "bg-emerald-50" : "hover:bg-gray-50"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setSelectedProducerId(producer.id)}
-                  className="min-w-0 flex-1 text-left"
-                >
-                  <p className={`truncate text-sm font-medium leading-snug ${isSelected ? "text-emerald-800" : "text-gray-900"}`}>
-                    {producer.name}
-                  </p>
-                  <p className="mt-0.5 truncate text-xs text-gray-500">
-                    {producer.city ?? "Sin ciudad"}
-                    {producer.category ? ` · ${producer.category}` : ""}
-                  </p>
-                  {producer.address && (
-                    <p className="mt-0.5 truncate text-xs text-gray-400">{producer.address}</p>
-                  )}
-                </button>
-
-                <Link
-                  href={`/p/${producer.id}`}
-                  title="Ver ficha"
-                  className={`mt-0.5 flex-none transition-colors ${
-                    isSelected ? "text-emerald-500" : "text-gray-300 group-hover:text-emerald-500"
-                  }`}
-                >
-                  <IconChevronRight />
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Pagination */}
-        <div className="flex-none flex items-center justify-between border-t border-gray-100 px-4 py-3">
-          <button
-            type="button"
-            onClick={() => setPage((p) => Math.max(1, p - 1))}
-            disabled={!hasPreviousPage || loading}
-            className="text-xs font-medium text-gray-500 transition-colors hover:text-gray-900 disabled:cursor-not-allowed disabled:opacity-30"
-          >
-            ← Anterior
-          </button>
-          <span className="text-xs text-gray-400">{loading ? "…" : paginationSummary}</span>
-          <button
-            type="button"
-            onClick={() => setPage((p) => p + 1)}
-            disabled={!hasNextPage || loading}
-            className="text-xs font-medium text-gray-500 transition-colors hover:text-gray-900 disabled:cursor-not-allowed disabled:opacity-30"
-          >
-            Siguiente →
-          </button>
-        </div>
-      </aside>
-
-      {/* ══════════════════════════════════════════
-          MAP + MOBILE UI
-      ══════════════════════════════════════════ */}
-      <div className="relative flex-1 overflow-hidden">
-        <ProducersMap
-          producers={results.items as ProducerListItem[]}
-          selectedProducerId={selectedProducerId}
-          onSelectProducer={onSelectProducer}
-          onBoundsChange={onMapBoundsChange}
-          className="h-full w-full"
-        />
-
-        {/* Mobile: floating search */}
-        <div className="absolute left-3 right-3 top-3 z-[1000] lg:hidden">
-          <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5 shadow-lg">
-            <IconSearch />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar productor, ciudad…"
-              className="min-w-0 flex-1 bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-400"
-            />
             {hasActiveFilters && (
-              <button type="button" onClick={clearAll} className="flex-none text-gray-300 hover:text-gray-500">
-                <IconX />
+              <button
+                type="button"
+                onClick={clearAll}
+                className="km0-ghost-btn hidden sm:inline-flex"
+              >
+                Limpiar
               </button>
             )}
           </div>
         </div>
 
-        {/* Mobile: bottom panel */}
-        <div className="absolute bottom-0 left-0 right-0 z-[900] lg:hidden">
-          <div className="rounded-t-2xl border-t border-gray-100 bg-white shadow-[0_-2px_24px_rgba(0,0,0,0.08)]">
-            <div className="flex justify-center pb-1 pt-3">
-              <div className="h-1 w-8 rounded-full bg-gray-200" />
+        <div className="km0-topbar-sub">
+          <div className="km0-chip-row" aria-label="Categorías destacadas">
+            {!loadingTaxonomy && featuredCategories.length > 0
+              ? featuredCategories.map((bucket) => {
+                  const active = effectiveCategory === bucket.value;
+                  return (
+                    <button
+                      key={bucket.value}
+                      type="button"
+                      onClick={() => {
+                        setCategory(active ? "" : bucket.value);
+                        setSubcategory("");
+                      }}
+                      className={classNames("km0-chip", active && "is-active")}
+                      title={`${bucket.value} (${bucket.count})`}
+                    >
+                      <span aria-hidden="true">{getCategoryGlyph(bucket.value)}</span>
+                      {bucket.value}
+                    </button>
+                  );
+                })
+              : ["🍯", "🥖", "🧀", "🍷"].map((placeholder, index) => (
+                  <span key={index} className="km0-chip" aria-hidden="true">
+                    {placeholder} Cargando…
+                  </span>
+                ))}
+          </div>
+
+          <div className="km0-topbar-status">
+            <span>{loading ? "Cargando resultados…" : `${results.total} productores`}</span>
+            {autoAppliedFilters.length > 0 && (
+              <span className="km0-auto-filter">{autoAppliedFilters.join(" · ")}</span>
+            )}
+          </div>
+        </div>
+      </header>
+
+      <main className="km0-content">
+        <section className="km0-desktop-grid hidden lg:grid">
+          <aside className="km0-panel km0-list-panel">
+            <div className="km0-panel-section">
+              <p className="km0-panel-title">Filtros</p>
+
+              <div className="km0-filter-grid">
+                <label className="km0-field">
+                  <span className="km0-field-label">Municipio</span>
+                  <select
+                    value={city}
+                    onChange={(event) => setCity(event.target.value)}
+                    className="km0-select"
+                  >
+                    <option value="">Todos</option>
+                    {taxonomy.cities.map((bucket) => (
+                      <option key={bucket.value} value={bucket.value}>
+                        {bucket.value} ({bucket.count})
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className="km0-field">
+                  <span className="km0-field-label">Categoría</span>
+                  <select
+                    value={category}
+                    onChange={(event) => {
+                      setCategory(event.target.value);
+                      setSubcategory("");
+                    }}
+                    className="km0-select"
+                  >
+                    <option value="">Todas</option>
+                    {taxonomy.categories.map((bucket) => (
+                      <option key={bucket.value} value={bucket.value}>
+                        {bucket.value} ({bucket.count})
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+
+              <label className="km0-field mt-2">
+                <span className="km0-field-label">Subcategoría</span>
+                <select
+                  value={subcategory}
+                  onChange={(event) => setSubcategory(event.target.value)}
+                  className="km0-select"
+                >
+                  <option value="">Todas</option>
+                  {taxonomy.subcategories.map((bucket) => (
+                    <option key={bucket.value} value={bucket.value}>
+                      {bucket.value} ({bucket.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
 
-            {/* Mobile filter row */}
-            <div className="grid grid-cols-2 gap-2 px-4 pb-2">
-              <select
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className="rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-2 text-xs text-gray-700 outline-none"
-              >
-                <option value="">Todas las ciudades</option>
-                {taxonomy.cities.map((b) => (
-                  <option key={b.value} value={b.value}>{b.value}</option>
-                ))}
-              </select>
-              <select
-                value={category}
-                onChange={(e) => { setCategory(e.target.value); setSubcategory(""); }}
-                className="rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-2 text-xs text-gray-700 outline-none"
-              >
-                <option value="">Todas las categorías</option>
-                {taxonomy.categories.map((b) => (
-                  <option key={b.value} value={b.value}>{b.value}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex items-center justify-between border-t border-gray-100 px-4 py-2">
-              <span className="text-xs text-gray-400">
-                {loading ? "Cargando…" : `${results.total} productores`}
-              </span>
+            <div className="km0-list-toolbar">
+              <span>{loading ? "Actualizando…" : paginationSummary}</span>
               {hasActiveFilters && (
-                <button type="button" onClick={clearAll} className="text-xs text-gray-400 hover:text-gray-700">
-                  Limpiar
+                <button type="button" onClick={clearAll} className="km0-link-btn">
+                  Limpiar filtros
                 </button>
               )}
             </div>
 
-            <div className="max-h-52 overflow-y-auto">
-              {!loading && results.items.length === 0 && (
-                <p className="px-4 py-4 text-center text-xs text-gray-400">Sin resultados</p>
+            {error && <p className="km0-inline-error">{error}</p>}
+
+            <div className="km0-list-scroll">
+              {!loading && results.items.length === 0 ? (
+                <div className="km0-empty-state">
+                  <p>Sin resultados en esta zona del mapa.</p>
+                  <p>Amplía el área o ajusta filtros.</p>
+                </div>
+              ) : (
+                <div className="km0-results-stack">
+                  {results.items.map((producer) => renderProducerCard(producer))}
+                </div>
               )}
-              {results.items.slice(0, 25).map((producer) => {
-                const isSelected = selectedProducerId === producer.id;
-                return (
-                  <div
-                    key={producer.id}
-                    className={`flex items-center gap-3 border-b border-gray-100 px-4 py-2.5 transition-colors ${
-                      isSelected ? "bg-emerald-50" : "hover:bg-gray-50"
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProducerId(producer.id)}
-                      className="min-w-0 flex-1 text-left"
-                    >
-                      <p className="truncate text-sm font-medium text-gray-900">{producer.name}</p>
-                      <p className="truncate text-xs text-gray-500">
-                        {producer.city ?? "Sin ciudad"}
-                        {producer.category ? ` · ${producer.category}` : ""}
-                      </p>
-                    </button>
-                    <Link
-                      href={`/p/${producer.id}`}
-                      className="flex-none text-xs font-semibold text-emerald-600 hover:text-emerald-700"
-                    >
-                      Ver →
+            </div>
+
+            <div className="km0-pagination">
+              <button
+                type="button"
+                onClick={() => setPage((current) => Math.max(1, current - 1))}
+                disabled={!hasPreviousPage || loading}
+              >
+                ← Anterior
+              </button>
+
+              <span>{loading ? "…" : paginationSummary}</span>
+
+              <button
+                type="button"
+                onClick={() => setPage((current) => current + 1)}
+                disabled={!hasNextPage || loading}
+              >
+                Siguiente →
+              </button>
+            </div>
+          </aside>
+
+          <section className="km0-panel km0-map-panel">
+            <div className="km0-map-frame">
+              <ProducersMap
+                producers={results.items}
+                selectedProducerId={selectedProducerId}
+                onSelectProducer={onSelectProducer}
+                onBoundsChange={onMapBoundsChange}
+                className="km0-map-canvas"
+              />
+              <div className="km0-map-glow" />
+
+              {activeProducer && (
+                <div className="km0-active-overlay">
+                  <p className="km0-active-title">{activeProducer.name}</p>
+                  <p className="km0-active-meta">
+                    {activeProducer.city ?? "Sin municipio"}
+                    {activeProducer.category ? ` · ${activeProducer.category}` : ""}
+                  </p>
+                  <Link href={`/p/${activeProducer.id}`} className="km0-result-link">
+                    Abrir ficha <IconChevronRight />
+                  </Link>
+                </div>
+              )}
+            </div>
+          </section>
+        </section>
+
+        <section className="km0-mobile-layout lg:hidden">
+          <div className="km0-mobile-toolbar">
+            <div className="km0-segmented" role="tablist" aria-label="Vista móvil">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={mobilePane === "list"}
+                data-active={mobilePane === "list"}
+                className="km0-segment-btn"
+                onClick={() => setMobilePane("list")}
+              >
+                <span className="inline-flex items-center gap-1.5">
+                  <IconList /> Lista
+                </span>
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={mobilePane === "map"}
+                data-active={mobilePane === "map"}
+                className="km0-segment-btn"
+                onClick={() => setMobilePane("map")}
+              >
+                <span className="inline-flex items-center gap-1.5">
+                  <IconMap /> Mapa
+                </span>
+              </button>
+            </div>
+
+            <button type="button" onClick={() => setMobileFiltersOpen(true)} className="km0-ghost-btn">
+              <IconFilter /> Filtros
+            </button>
+          </div>
+
+          <div className="km0-mobile-pane">
+            {mobilePane === "map" ? (
+              <div className="km0-mobile-map">
+                <ProducersMap
+                  producers={results.items}
+                  selectedProducerId={selectedProducerId}
+                  onSelectProducer={onSelectProducer}
+                  onBoundsChange={onMapBoundsChange}
+                  className="km0-map-canvas"
+                />
+                <div className="km0-map-glow" />
+
+                {activeProducer && (
+                  <div className="km0-active-overlay">
+                    <p className="km0-active-title">{activeProducer.name}</p>
+                    <p className="km0-active-meta">
+                      {activeProducer.city ?? "Sin municipio"}
+                      {activeProducer.category ? ` · ${activeProducer.category}` : ""}
+                    </p>
+                    <Link href={`/p/${activeProducer.id}`} className="km0-result-link">
+                      Ver ficha <IconChevronRight />
                     </Link>
                   </div>
-                );
-              })}
-            </div>
+                )}
+              </div>
+            ) : (
+              <div className="km0-mobile-list">
+                {error && <p className="km0-inline-error">{error}</p>}
+
+                <div className="km0-list-toolbar border-b border-[var(--line-soft)]">
+                  <span>{loading ? "Actualizando…" : paginationSummary}</span>
+                  {hasActiveFilters && (
+                    <button type="button" onClick={clearAll} className="km0-link-btn">
+                      Limpiar
+                    </button>
+                  )}
+                </div>
+
+                <div className="km0-mobile-list-scroll">
+                  {!loading && results.items.length === 0 ? (
+                    <div className="km0-empty-state">
+                      <p>No hay resultados con estos filtros.</p>
+                      <p>Prueba otra categoría o municipio.</p>
+                    </div>
+                  ) : (
+                    <div className="km0-results-stack">
+                      {results.items.map((producer) => renderProducerCard(producer, true))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="km0-pagination">
+                  <button
+                    type="button"
+                    onClick={() => setPage((current) => Math.max(1, current - 1))}
+                    disabled={!hasPreviousPage || loading}
+                  >
+                    ←
+                  </button>
+
+                  <span>{loading ? "…" : paginationSummary}</span>
+
+                  <button
+                    type="button"
+                    onClick={() => setPage((current) => current + 1)}
+                    disabled={!hasNextPage || loading}
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
+
+      {mobileFiltersOpen && (
+        <>
+          <button
+            type="button"
+            className="km0-filter-backdrop"
+            aria-label="Cerrar filtros"
+            onClick={() => setMobileFiltersOpen(false)}
+          />
+
+          <section className="km0-filter-sheet" role="dialog" aria-modal="true" aria-label="Filtros de búsqueda">
+            <header className="km0-filter-sheet-head">
+              <h2>Filtros</h2>
+              <button
+                type="button"
+                className="km0-icon-btn"
+                onClick={() => setMobileFiltersOpen(false)}
+                aria-label="Cerrar"
+              >
+                <IconX />
+              </button>
+            </header>
+
+            <div className="km0-filter-sheet-body">
+              <label className="km0-field">
+                <span className="km0-field-label">Municipio</span>
+                <select
+                  value={city}
+                  onChange={(event) => setCity(event.target.value)}
+                  className="km0-select"
+                >
+                  <option value="">Todos</option>
+                  {taxonomy.cities.map((bucket) => (
+                    <option key={bucket.value} value={bucket.value}>
+                      {bucket.value} ({bucket.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="km0-field">
+                <span className="km0-field-label">Categoría</span>
+                <select
+                  value={category}
+                  onChange={(event) => {
+                    setCategory(event.target.value);
+                    setSubcategory("");
+                  }}
+                  className="km0-select"
+                >
+                  <option value="">Todas</option>
+                  {taxonomy.categories.map((bucket) => (
+                    <option key={bucket.value} value={bucket.value}>
+                      {bucket.value} ({bucket.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="km0-field">
+                <span className="km0-field-label">Subcategoría</span>
+                <select
+                  value={subcategory}
+                  onChange={(event) => setSubcategory(event.target.value)}
+                  className="km0-select"
+                >
+                  <option value="">Todas</option>
+                  {taxonomy.subcategories.map((bucket) => (
+                    <option key={bucket.value} value={bucket.value}>
+                      {bucket.value} ({bucket.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <div className="km0-chip-row" aria-label="Categorías destacadas">
+                {featuredCategories.map((bucket) => {
+                  const active = effectiveCategory === bucket.value;
+
+                  return (
+                    <button
+                      key={bucket.value}
+                      type="button"
+                      onClick={() => {
+                        setCategory(active ? "" : bucket.value);
+                        setSubcategory("");
+                      }}
+                      className={classNames("km0-chip", active && "is-active")}
+                    >
+                      <span aria-hidden="true">{getCategoryGlyph(bucket.value)}</span>
+                      {bucket.value}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <footer className="km0-filter-sheet-foot">
+              <button type="button" onClick={clearAll} className="km0-btn-secondary">
+                Limpiar
+              </button>
+              <button
+                type="button"
+                onClick={() => setMobileFiltersOpen(false)}
+                className="km0-btn-primary"
+              >
+                Aplicar filtros
+              </button>
+            </footer>
+          </section>
+        </>
+      )}
     </div>
   );
 }

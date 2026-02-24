@@ -2,53 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { getMapExternalLinks } from "@/lib/map-provider";
 import ProducerMiniMap from "@/components/producer-mini-map";
+import { getMapExternalLinks } from "@/lib/map-provider";
 import { prisma } from "@/lib/prisma";
 
 type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-async function getProducer(id: number) {
-  return prisma.producer.findUnique({ where: { id } });
-}
-
 type CsvField = {
   key: string;
   value: string | null;
 };
 
-function ContactLink({ label, href }: { label: string; href: string }) {
-  const isExternal = href.startsWith("http");
-  return (
-    <a
-      href={href}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
-      className="inline-flex items-center rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"
-    >
-      {label}
-    </a>
-  );
-}
-
-function FieldRow({ label, value }: { label: string; value: string | null }) {
-  if (!value) {
-    return (
-      <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-2" data-csv-field={label}>
-        <p className="text-[11px] font-medium uppercase tracking-wider text-gray-400">{label}</p>
-        <p className="mt-1 text-sm text-gray-500">Sin dato</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="rounded-lg border border-gray-100 bg-white px-3 py-2" data-csv-field={label}>
-      <p className="text-[11px] font-medium uppercase tracking-wider text-gray-400">{label}</p>
-      <p className="mt-1 text-sm text-gray-800">{value}</p>
-    </div>
-  );
+async function getProducer(id: number) {
+  return prisma.producer.findUnique({ where: { id } });
 }
 
 function toTextOrNull(value: string | null | undefined): string | null {
@@ -68,17 +36,53 @@ function formatCoordinates(latitude: number | null, longitude: number | null): s
   return `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
 }
 
+function ContactLink({ label, href }: { label: string; href: string }) {
+  const isExternal = href.startsWith("http");
+
+  return (
+    <a
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      className="km0-contact-chip"
+    >
+      {label}
+    </a>
+  );
+}
+
+function FieldRow({ label, value }: { label: string; value: string | null }) {
+  const isEmpty = !value;
+
+  return (
+    <article className={`km0-info-card ${isEmpty ? "is-empty" : ""}`} data-csv-field={label}>
+      <p className="km0-info-label">{label}</p>
+      <p className={`km0-info-value ${isEmpty ? "is-empty" : ""}`}>{value ?? "Sin dato"}</p>
+    </article>
+  );
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const producerId = Number.parseInt(id, 10);
+
   if (Number.isNaN(producerId)) {
-    return { title: "Productor no encontrado", description: "La ficha solicitada no está disponible." };
+    return {
+      title: "Productor no encontrado",
+      description: "La ficha solicitada no está disponible.",
+    };
   }
+
   const producer = await getProducer(producerId);
   if (!producer) {
-    return { title: "Productor no encontrado", description: "La ficha solicitada no está disponible." };
+    return {
+      title: "Productor no encontrado",
+      description: "La ficha solicitada no está disponible.",
+    };
   }
+
   const subtitle = [producer.city, producer.category, producer.subcategory].filter(Boolean).join(" · ");
+
   return {
     title: producer.name,
     description: subtitle || producer.description || "Ficha de productor Km0",
@@ -89,10 +93,14 @@ export default async function ProducerDetailPage({ params }: PageProps) {
   const { id } = await params;
   const producerId = Number.parseInt(id, 10);
 
-  if (Number.isNaN(producerId) || producerId < 1) notFound();
+  if (Number.isNaN(producerId) || producerId < 1) {
+    notFound();
+  }
 
   const producer = await getProducer(producerId);
-  if (!producer) notFound();
+  if (!producer) {
+    notFound();
+  }
 
   const hasCoordinates = producer.latitude !== null && producer.longitude !== null;
   const fallbackQuery = [producer.name, producer.address, producer.city].filter(Boolean).join(", ");
@@ -152,7 +160,7 @@ export default async function ProducerDetailPage({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="km0-detail-shell">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -162,57 +170,55 @@ export default async function ProducerDetailPage({ params }: PageProps) {
         id="producer-csv-snapshot"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(csvSnapshot) }}
       />
-      {/* Top bar */}
-      <div className="border-b border-gray-100 bg-white px-4 py-3 lg:px-8">
-        <div className="mx-auto flex max-w-3xl items-center gap-3">
-          <Link
-            href="/"
-            className="flex items-center gap-1.5 text-xs font-medium text-gray-500 transition-colors hover:text-gray-900"
-          >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+      <header className="km0-detail-topbar">
+        <div className="km0-detail-container km0-detail-topbar-inner">
+          <Link href="/" className="km0-detail-back">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Volver al mapa
           </Link>
-          {breadcrumb && (
-            <>
-              <span className="text-gray-200">·</span>
-              <p className="truncate text-xs text-gray-400">{breadcrumb}</p>
-            </>
-          )}
+
+          <p className="km0-detail-breadcrumb" title={breadcrumb || undefined}>
+            {breadcrumb || "Productores Km0 · Barcelona"}
+          </p>
         </div>
-      </div>
+      </header>
 
-      <div className="mx-auto max-w-3xl px-4 py-8 lg:px-8">
+      <div className="km0-detail-container">
+        <section className="km0-detail-hero">
+          <div className="km0-detail-title-wrap">
+            <p className="km0-detail-eyebrow">Ficha de productor</p>
+            <h1 className="km0-detail-title">{producer.name}</h1>
+            {breadcrumb && <p className="km0-detail-subtitle">{breadcrumb}</p>}
 
-        {/* Header */}
-        <div className="flex items-start gap-4">
-          <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            <div className="km0-detail-pill-row">
+              {producer.category && <span className="km0-detail-pill">{producer.category}</span>}
+              {producer.subcategory && <span className="km0-detail-pill">{producer.subcategory}</span>}
+              <span className="km0-detail-pill is-reviewed">Revisado: {producer.reviewed ? "sí" : "no"}</span>
+            </div>
+
+            {producer.description && <p className="km0-detail-description">{producer.description}</p>}
+          </div>
+
+          <div className="km0-detail-hero-icon" aria-hidden="true">
+            <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.6}
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+              />
             </svg>
           </div>
-          <div className="min-w-0">
-            <h1 className="text-2xl font-semibold leading-tight text-gray-900">{producer.name}</h1>
-            {breadcrumb && <p className="mt-1 text-sm text-gray-500">{breadcrumb}</p>}
-            <p className="mt-2 inline-flex rounded-full border border-gray-200 px-2.5 py-1 text-[11px] font-medium text-gray-600">
-              Revisado: {producer.reviewed ? "sí" : "no"}
-            </p>
-          </div>
-        </div>
+        </section>
 
-        {producer.description && (
-          <p className="mt-5 text-sm leading-relaxed text-gray-600">{producer.description}</p>
-        )}
-
-        {/* Info + map grid */}
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_300px]">
-          <div className="space-y-6">
-
-            {/* Core data */}
-            <section>
-              <h2 className="mb-2 text-sm font-semibold text-gray-900">Información clave</h2>
-              <div className="grid gap-2 sm:grid-cols-2">
+        <section className="km0-detail-grid">
+          <article className="km0-detail-main">
+            <section className="km0-detail-section">
+              <h2>Información clave</h2>
+              <div className="km0-kpi-grid">
                 <FieldRow label="Municipio" value={toTextOrNull(producer.city)} />
                 <FieldRow label="Categoría" value={toTextOrNull(producer.category)} />
                 <FieldRow label="Subcategoría" value={toTextOrNull(producer.subcategory)} />
@@ -222,61 +228,10 @@ export default async function ProducerDetailPage({ params }: PageProps) {
               </div>
             </section>
 
-            <div className="border-t border-gray-100" />
-
-            {/* Full CSV fields */}
-            <section>
-              <h2 className="mb-2 text-sm font-semibold text-gray-900">Campos CSV (completo)</h2>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {csvFields.map((field) => (
-                  <FieldRow key={field.key} label={field.key} value={field.value} />
-                ))}
-              </div>
-
-              <details className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <summary className="cursor-pointer text-xs font-medium text-gray-700">
-                  Ver JSON estructurado (útil para agentes IA)
-                </summary>
-                <pre className="mt-2 overflow-x-auto text-[11px] text-gray-700">
-                  {JSON.stringify(csvSnapshot, null, 2)}
-                </pre>
-              </details>
-            </section>
-
-            <div className="border-t border-gray-100" />
-
-            <section>
-              <h2 className="mb-2 text-sm font-semibold text-gray-900">Ubicación en mapa</h2>
-              <a
-                href={mapLinks.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
-              >
-                Abrir en {mapLinks.providerLabel}
-              </a>
-              {producer.googleMapsUrl && (
-                <p className="mt-2 text-xs text-gray-500">
-                  También disponible en:{" "}
-                  <a
-                    href={producer.googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-gray-700 underline underline-offset-2"
-                  >
-                    Google Maps
-                  </a>
-                </p>
-              )}
-            </section>
-
-            <div className="border-t border-gray-100" />
-
-            {/* Contact */}
-            <section>
-              <h2 className="mb-2 text-sm font-semibold text-gray-900">Contacto y canales</h2>
+            <section className="km0-detail-section">
+              <h2>Contacto y canales</h2>
               {hasContact ? (
-                <div className="flex flex-wrap gap-2">
+                <div className="km0-contact-row">
                   {producer.phone && <ContactLink label={`Tel. ${producer.phone}`} href={`tel:${producer.phone}`} />}
                   {producer.email && <ContactLink label={producer.email} href={`mailto:${producer.email}`} />}
                   {producer.website && <ContactLink label="Web" href={producer.website} />}
@@ -284,38 +239,56 @@ export default async function ProducerDetailPage({ params }: PageProps) {
                   {producer.instagram && <ContactLink label="Instagram" href={producer.instagram} />}
                 </div>
               ) : (
-                <p className="text-sm text-gray-400">Sin datos de contacto.</p>
+                <p>Sin datos de contacto.</p>
               )}
             </section>
 
-          </div>
-
-          {/* Mini map */}
-          <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-400">Mapa</p>
-            {hasCoordinates ? (
-              <ProducerMiniMap
-                latitude={producer.latitude as number}
-                longitude={producer.longitude as number}
-                label={producer.name}
-              />
-            ) : (
-              <div className="flex h-48 items-center justify-center rounded-xl border border-dashed border-gray-200 px-4 text-center text-xs text-gray-400">
-                Sin coordenadas disponibles
+            <section className="km0-detail-section">
+              <h2>Campos CSV completos</h2>
+              <div className="km0-kpi-grid">
+                {csvFields.map((field) => (
+                  <FieldRow key={field.key} label={field.key} value={field.value} />
+                ))}
               </div>
-            )}
-            {!hasCoordinates && producer.address && (
-              <a
-                href={mapLinks.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-emerald-500 hover:text-emerald-700"
-              >
-                Buscar por dirección en {mapLinks.providerLabel}
+
+              <details className="km0-detail-json">
+                <summary>Ver JSON estructurado (útil para agentes IA)</summary>
+                <pre>{JSON.stringify(csvSnapshot, null, 2)}</pre>
+              </details>
+            </section>
+          </article>
+
+          <aside className="km0-detail-aside">
+            <div className="km0-detail-sticky">
+              <p className="km0-detail-map-head">Ubicación</p>
+
+              {hasCoordinates ? (
+                <ProducerMiniMap
+                  latitude={producer.latitude as number}
+                  longitude={producer.longitude as number}
+                  label={producer.name}
+                  className="h-56 w-full rounded-[16px] border border-[var(--line-soft)]"
+                />
+              ) : (
+                <div className="km0-detail-map-empty">Sin coordenadas disponibles para mostrar en el mapa.</div>
+              )}
+
+              <a href={mapLinks.mapUrl} target="_blank" rel="noopener noreferrer" className="km0-detail-map-btn">
+                Abrir en {mapLinks.providerLabel}
               </a>
-            )}
-          </div>
-        </div>
+
+              {producer.googleMapsUrl && (
+                <p className="km0-detail-map-note">
+                  Referencia original en{" "}
+                  <a href={producer.googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                    Google Maps
+                  </a>
+                  .
+                </p>
+              )}
+            </div>
+          </aside>
+        </section>
       </div>
     </main>
   );

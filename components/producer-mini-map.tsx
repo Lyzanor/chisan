@@ -8,11 +8,17 @@ type ProducerMiniMapProps = {
   latitude: number;
   longitude: number;
   label: string;
+  className?: string;
 };
 
 const mapTileConfig = getMapTileLayerConfig();
 
-export default function ProducerMiniMap({ latitude, longitude, label }: ProducerMiniMapProps) {
+export default function ProducerMiniMap({
+  latitude,
+  longitude,
+  label,
+  className,
+}: ProducerMiniMapProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -72,5 +78,10 @@ export default function ProducerMiniMap({ latitude, longitude, label }: Producer
     };
   }, [label, latitude, longitude]);
 
-  return <div ref={mapContainerRef} className="h-48 w-full rounded-xl border border-gray-200 lg:h-56" />;
+  return (
+    <div
+      ref={mapContainerRef}
+      className={className ?? "h-48 w-full rounded-xl border border-[var(--line-soft)] lg:h-56"}
+    />
+  );
 }
