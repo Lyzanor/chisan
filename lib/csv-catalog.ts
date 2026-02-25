@@ -12,6 +12,8 @@ export type ProducerCsvRow = {
   city: string;
   category: string;
   subcategory: string;
+  latitude: number | null;
+  longitude: number | null;
   fields: Record<string, string>;
   searchIndex: string;
 };
@@ -30,6 +32,57 @@ function normalizeSearch(value: string): string {
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeFieldKey(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "");
+}
+
+function findFieldValue(
+  fields: Record<string, string>,
+  candidateKeys: readonly string[],
+): string {
+  const normalizedCandidates = new Set(candidateKeys.map(normalizeFieldKey));
+
+  for (const [field, value] of Object.entries(fields)) {
+    if (normalizedCandidates.has(normalizeFieldKey(field))) {
+      return value;
+    }
+  }
+
+  return "";
+}
+
+function parseCoordinate(rawValue: string): number | null {
+  if (!rawValue.trim()) {
+    return null;
+  }
+
+  const normalized = rawValue.trim().replace(",", ".");
+  const value = Number.parseFloat(normalized);
+  return Number.isFinite(value) ? value : null;
+}
+
+function readLatitude(fields: Record<string, string>): number | null {
+  const value = parseCoordinate(findFieldValue(fields, ["lat", "latitude"]));
+  if (value === null) {
+    return null;
+  }
+  return value >= -90 && value <= 90 ? value : null;
+}
+
+function readLongitude(fields: Record<string, string>): number | null {
+  const value = parseCoordinate(
+    findFieldValue(fields, ["lon", "lng", "long", "longitude"]),
+  );
+  if (value === null) {
+    return null;
+  }
+  return value >= -180 && value <= 180 ? value : null;
 }
 
 function buildSearchIndex(fields: Record<string, string>): string {
@@ -65,6 +118,8 @@ const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
       city: fields.municipio || "Sin municipio",
       category: fields.categoria || "Sin categoría",
       subcategory: fields.subcategoria || "",
+      latitude: readLatitude(fields),
+      longitude: readLongitude(fields),
       searchIndex: buildSearchIndex(fields),
       fields,
     };

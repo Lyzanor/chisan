@@ -19,16 +19,19 @@ Aplicación mínima para visualizar `Km0-productores.csv`.
 
 1. `/` = buscador.
 2. El buscador filtra filas del CSV.
-3. Al hacer click en un resultado, abre `/p/[id]`.
-4. `/p/[id]` muestra esa fila completa (columna + valor).
+3. La portada pinta en mapa (Leaflet + OSM) los resultados con `lat/lon`.
+4. Al hacer click en un resultado, abre `/p/[id]`.
+5. `/p/[id]` muestra esa fila completa (columna + valor).
 
-No hay capa de mapa ni API intermedia en el flujo principal.
+No hay API intermedia en el flujo principal: CSV -> filtros -> mapa/listado -> ficha.
 
 ## Estructura
 
 - `app/page.tsx`: buscador y listado.
+- `components/map/*`: mapa desacoplado (Leaflet + OSM).
 - `app/p/[id]/page.tsx`: ficha de una fila del CSV.
 - `lib/csv-catalog.ts`: lectura, normalización y búsqueda del CSV.
+- `lib/producer-map.ts`: adaptación de filas a puntos del mapa.
 - `Km0-productores.csv`: fuente única de datos.
 
 ## Uso

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ProducersMap } from "@/components/map/producers-map";
 import { listCategoryBuckets, searchProducers } from "@/lib/csv-catalog";
+import { toProducerMapPoints } from "@/lib/producer-map";
 
 export const metadata: Metadata = {
   title: "Buscador",
@@ -64,6 +66,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   const visibleItems = items.slice(0, 500);
   const hasMore = items.length > visibleItems.length;
+  const mapPoints = toProducerMapPoints(visibleItems);
+  const visibleMapPoints = mapPoints.slice(0, 300);
+  const hiddenMapPoints = mapPoints.length - visibleMapPoints.length;
+  const rowsWithoutCoordinates = visibleItems.length - mapPoints.length;
 
   return (
     <main className="page-shell">
@@ -108,6 +114,20 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           {municipality ? ` · Municipio: ${municipality}` : ""}
           {category ? ` · Categoría: ${category}` : ""}
         </p>
+
+        <section className="map-section" aria-label="Mapa de productores">
+          <h2>Mapa</h2>
+          <p className="meta-line">
+            {visibleMapPoints.length} ubicaciones visibles
+            {rowsWithoutCoordinates > 0
+              ? ` · ${rowsWithoutCoordinates} resultados sin coordenadas`
+              : ""}
+            {hiddenMapPoints > 0
+              ? ` · ${hiddenMapPoints} ubicaciones ocultas para mantener rendimiento`
+              : ""}
+          </p>
+          <ProducersMap points={visibleMapPoints} />
+        </section>
 
         <ul className="result-list">
           {visibleItems.map((item) => (
