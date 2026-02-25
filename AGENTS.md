@@ -36,7 +36,7 @@
 
 ## Validation before finishing
 ```bash
-npx pnpm verify
+npx pnpm verify:ai
 ```
 
 ## Docs index

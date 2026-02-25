@@ -40,6 +40,9 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm start`
 - `npx pnpm verify` (lint + build)
 - `npx pnpm sync:csv` (alias de `verify` para validar tras cambios manuales del CSV)
+- `npx pnpm check:csv` (valida contrato de columnas del CSV)
+- `npx pnpm test:behavior` (test mínimo de `/` y `/p/[id]`)
+- `npx pnpm verify:ai` (verify + check:csv + test:behavior)
 
 ## Playwright automation
 

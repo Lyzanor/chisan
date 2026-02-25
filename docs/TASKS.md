@@ -4,7 +4,7 @@
 1. Edit `Km0-productores.csv`.
 2. Run:
 ```bash
-npx pnpm verify
+npx pnpm verify:ai
 ```
 3. Check `/` and `/p/[id]` manually.
 
@@ -13,7 +13,7 @@ npx pnpm verify
 2. Keep URL params stable: `municipio`, `categoria`.
 3. Run:
 ```bash
-npx pnpm verify
+npx pnpm verify:ai
 ```
 4. Validate:
 - Municipality input filters list.
@@ -25,7 +25,7 @@ npx pnpm verify
 2. Do not move data logic out of `lib/csv-catalog.ts`.
 3. Run:
 ```bash
-npx pnpm verify
+npx pnpm verify:ai
 ```
 
 ## 4) Add a CSV column to detail view
@@ -34,7 +34,7 @@ npx pnpm verify
 3. If the column should appear in list summary, update `app/page.tsx`.
 
 ## 5) Release checklist
-1. `npx pnpm verify`
+1. `npx pnpm verify:ai`
 2. Review changed files.
 3. Commit with clear message.
 4. Push to GitHub.
