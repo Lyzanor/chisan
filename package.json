@@ -8,39 +8,20 @@
     "start": "next start",
     "lint": "eslint",
     "verify": "pnpm lint && pnpm build",
-    "db:migrate": "prisma migrate deploy",
-    "db:seed": "tsx prisma/seed.ts",
-    "prisma:generate": "prisma generate",
-    "postinstall": "prisma generate"
+    "sync:csv": "pnpm verify"
   },
   "dependencies": {
-    "@prisma/client": "^6.18.0",
     "csv-parse": "^6.1.0",
-    "dotenv": "^17.3.1",
-    "leaflet": "^1.9.4",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/leaflet": "^1.9.21",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "prisma": "^6.18.0",
-    "tailwindcss": "^4",
-    "tsx": "^4.21.0",
     "typescript": "^5"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@prisma/client",
-      "@prisma/engines",
-      "prisma",
-      "esbuild"
-    ]
   }
 }
