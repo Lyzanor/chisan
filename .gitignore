@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# local automation artifacts
+/.playwright-cli/
+/output/
+
 # production
 /build
 

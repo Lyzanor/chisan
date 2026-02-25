@@ -2,6 +2,13 @@
 
 Aplicación mínima para visualizar `Km0-productores.csv`.
 
+## Para agentes de IA
+
+- Guía principal: `AGENTS.md`
+- Arquitectura: `docs/ARCHITECTURE.md`
+- Contrato de datos CSV: `docs/CSV_CONTRACT.md`
+- Tareas comunes: `docs/TASKS.md`
+
 ## Mecanismo core
 
 1. `/` = buscador.
@@ -33,3 +40,26 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm start`
 - `npx pnpm verify` (lint + build)
 - `npx pnpm sync:csv` (alias de `verify` para validar tras cambios manuales del CSV)
+
+## Playwright automation
+
+Workflow automatizado:
+1. Abre `/`.
+2. Busca por texto.
+3. Hace click en el primer resultado.
+4. Verifica navegación a `/p/[id]`.
+5. Captura artefactos en `output/playwright/`.
+
+Run steps:
+
+```bash
+# Terminal 1: levantar la app
+npx pnpm dev
+
+# Terminal 2: ejecutar workflow (URL opcional, query opcional)
+./scripts/playwright-km0-workflow.sh http://localhost:3000 chocolate
+```
+
+Si no pasas argumentos, usa por defecto:
+- URL: `http://localhost:3000`
+- Query: `chocolate`
