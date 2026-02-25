@@ -55,7 +55,6 @@ export default function ProducerCard({
 
         <div className="km0-tag-row">
           <span className="km0-tag">{cityLabel}</span>
-          {producer.subcategory && <span className="km0-tag">{producer.subcategory}</span>}
           <span className="km0-tag">
             {producer.latitude !== null && producer.longitude !== null ? "Con mapa" : "Sin coordenadas"}
           </span>

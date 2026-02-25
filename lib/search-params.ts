@@ -3,7 +3,6 @@ export type ProducerFilters = {
   query: string;
   city: string;
   category: string;
-  subcategory: string;
 };
 
 export function getSingleQueryParam(
@@ -24,7 +23,6 @@ export function readProducerFiltersFromParams(params: QueryParams): ProducerFilt
     query: getSingleQueryParam(params, "query"),
     city: getSingleQueryParam(params, "city"),
     category: getSingleQueryParam(params, "category"),
-    subcategory: getSingleQueryParam(params, "subcategory"),
   };
 }
 
@@ -34,7 +32,6 @@ export function buildProducerFiltersHref(basePath: string, filters: ProducerFilt
   if (filters.query) params.set("query", filters.query);
   if (filters.city) params.set("city", filters.city);
   if (filters.category) params.set("category", filters.category);
-  if (filters.subcategory) params.set("subcategory", filters.subcategory);
 
   const queryString = params.toString();
   return queryString ? `${basePath}?${queryString}` : basePath;

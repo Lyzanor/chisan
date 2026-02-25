@@ -16,7 +16,6 @@ type SearchListViewProps = {
     query?: string;
     city?: string;
     category?: string;
-    subcategory?: string;
   };
 };
 
@@ -24,7 +23,6 @@ export default function SearchListView({ initialFilters }: SearchListViewProps) 
   const [query, setQuery] = useState(() => initialFilters?.query ?? "");
   const [city, setCity] = useState(() => initialFilters?.city ?? "");
   const [category, setCategory] = useState(() => initialFilters?.category ?? "");
-  const [subcategory, setSubcategory] = useState(() => initialFilters?.subcategory ?? "");
   const [page, setPage] = useState(1);
   const [selectedProducerId, setSelectedProducerId] = useState<number | null>(null);
 
@@ -63,7 +61,6 @@ export default function SearchListView({ initialFilters }: SearchListViewProps) 
     query: effectiveQuery,
     city: effectiveCity,
     category: effectiveCategory,
-    subcategory,
     bbox: BARCELONA_PROVINCE_BBOX,
     page,
     pageSize: 40,
@@ -89,7 +86,7 @@ export default function SearchListView({ initialFilters }: SearchListViewProps) 
 
   const hasPreviousPage = page > 1;
   const hasNextPage = page * results.pageSize < results.total;
-  const hasActiveFilters = Boolean(query || city || category || subcategory);
+  const hasActiveFilters = Boolean(query || city || category);
 
   const mapHref = useMemo(
     () =>
@@ -97,14 +94,12 @@ export default function SearchListView({ initialFilters }: SearchListViewProps) 
         query: effectiveQuery,
         city: effectiveCity,
         category: effectiveCategory,
-        subcategory,
       }),
-    [effectiveCategory, effectiveCity, effectiveQuery, subcategory],
+    [effectiveCategory, effectiveCity, effectiveQuery],
   );
 
   const onCategoryChange = useCallback((value: string) => {
     setCategory(value);
-    setSubcategory("");
     setPage(1);
   }, []);
 
@@ -118,16 +113,10 @@ export default function SearchListView({ initialFilters }: SearchListViewProps) 
     setPage(1);
   }, []);
 
-  const onSubcategoryChange = useCallback((value: string) => {
-    setSubcategory(value);
-    setPage(1);
-  }, []);
-
   function clearAll() {
     setQuery("");
     setCity("");
     setCategory("");
-    setSubcategory("");
     setPage(1);
     setSelectedProducerId(null);
   }
@@ -187,16 +176,6 @@ export default function SearchListView({ initialFilters }: SearchListViewProps) 
                 allLabel="Todas"
                 options={taxonomy.categories}
                 onChange={onCategoryChange}
-              />
-            </div>
-
-            <div className="mt-2">
-              <FilterSelect
-                label="Subcategoría"
-                value={subcategory}
-                allLabel="Todas"
-                options={taxonomy.subcategories}
-                onChange={onSubcategoryChange}
               />
             </div>
           </div>

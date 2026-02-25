@@ -56,10 +56,7 @@ function escapeHtml(value: string): string {
 function popupHtml(producer: ProducerListItem): string {
   const name = escapeHtml(producer.name);
   const city = producer.city ? escapeHtml(producer.city) : "Sin ciudad";
-  const category = [producer.category, producer.subcategory]
-    .filter(Boolean)
-    .map((item) => escapeHtml(item as string))
-    .join(" · ");
+  const category = producer.category ? escapeHtml(producer.category) : "";
 
   return `
     <div class="km0-popup">

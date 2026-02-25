@@ -19,7 +19,7 @@ type UseProducerResultsArgs = {
   query: string;
   city: string;
   category: string;
-  subcategory: string;
+  subcategory?: string;
   bbox: string | null;
   page: number;
   pageSize?: number;

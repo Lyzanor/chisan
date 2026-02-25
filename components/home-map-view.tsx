@@ -28,7 +28,6 @@ type HomeMapViewProps = {
     query?: string;
     city?: string;
     category?: string;
-    subcategory?: string;
   };
 };
 
@@ -36,7 +35,6 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
   const [query, setQuery] = useState(() => initialFilters?.query ?? "");
   const [city, setCity] = useState(() => initialFilters?.city ?? "");
   const [category, setCategory] = useState(() => initialFilters?.category ?? "");
-  const [subcategory, setSubcategory] = useState(() => initialFilters?.subcategory ?? "");
   const [bbox, setBbox] = useState<string | null>(BARCELONA_PROVINCE_BBOX);
   const [selectedProducerId, setSelectedProducerId] = useState<number | null>(null);
 
@@ -82,7 +80,6 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
     query: effectiveQuery,
     city: effectiveCity,
     category: effectiveCategory,
-    subcategory,
     bbox: debouncedBbox,
     page: 1,
     pageSize: 300,
@@ -116,9 +113,8 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
         query: effectiveQuery,
         city: effectiveCity,
         category: effectiveCategory,
-        subcategory,
       }),
-    [effectiveCategory, effectiveCity, effectiveQuery, subcategory],
+    [effectiveCategory, effectiveCity, effectiveQuery],
   );
 
   const onMapBoundsChange = useCallback((nextBbox: string) => {
@@ -127,14 +123,12 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
 
   const onCategoryChange = useCallback((value: string) => {
     setCategory(value);
-    setSubcategory("");
   }, []);
 
   const onToggleFeaturedCategory = useCallback(
     (value: string) => {
       const isActive = effectiveCategory === value;
       setCategory(isActive ? "" : value);
-      setSubcategory("");
     },
     [effectiveCategory],
   );
@@ -143,7 +137,6 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
     setQuery("");
     setCity("");
     setCategory("");
-    setSubcategory("");
     setSelectedProducerId(null);
   }
 
@@ -235,17 +228,6 @@ export default function HomeMapView({ initialFilters }: HomeMapViewProps) {
                 onChange={onCategoryChange}
               />
             </div>
-
-            <div className="mt-2">
-              <FilterSelect
-                label="Subcategoría"
-                value={subcategory}
-                allLabel="Todas"
-                options={taxonomy.subcategories}
-                onChange={setSubcategory}
-              />
-            </div>
-
             <div className="mt-3 flex items-center justify-between gap-3 text-sm text-[var(--text-soft)]">
               <span>Usa los filtros o mueve el mapa para explorar productores.</span>
               <button type="button" onClick={clearAll} className="km0-link-btn">
