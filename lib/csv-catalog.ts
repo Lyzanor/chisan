@@ -36,6 +36,16 @@ function buildSearchIndex(fields: Record<string, string>): string {
   return normalizeSearch(Object.values(fields).join(" "));
 }
 
+export type ProducerSearchFilters = {
+  municipality: string;
+  category: string;
+};
+
+export type CategoryBucket = {
+  value: string;
+  count: number;
+};
+
 const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
   const csvRaw = await readFile(CSV_PATH, "utf8");
   const parsedRows = parse(csvRaw, {
@@ -71,13 +81,39 @@ export async function findProducerById(rawId: string): Promise<ProducerCsvRow | 
   return rows[id - 1] ?? null;
 }
 
-export async function searchProducers(rawQuery: string): Promise<ProducerCsvRow[]> {
+export async function listCategoryBuckets(): Promise<CategoryBucket[]> {
   const rows = await loadCsvRows();
-  const normalizedQuery = normalizeSearch(rawQuery);
+  const counts = new Map<string, number>();
 
-  if (!normalizedQuery) {
-    return rows;
+  for (const row of rows) {
+    const key = row.category.trim();
+    if (!key) {
+      continue;
+    }
+
+    counts.set(key, (counts.get(key) ?? 0) + 1);
   }
 
-  return rows.filter((row) => row.searchIndex.includes(normalizedQuery));
+  return [...counts.entries()]
+    .map(([value, count]) => ({ value, count }))
+    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value, "es"));
+}
+
+export async function searchProducers(
+  filters: ProducerSearchFilters,
+): Promise<ProducerCsvRow[]> {
+  const rows = await loadCsvRows();
+  const normalizedMunicipality = normalizeSearch(filters.municipality);
+  const normalizedCategory = normalizeSearch(filters.category);
+
+  return rows.filter((row) => {
+    const byMunicipality =
+      !normalizedMunicipality ||
+      normalizeSearch(row.city).includes(normalizedMunicipality);
+    const byCategory =
+      !normalizedCategory ||
+      normalizeSearch(row.category) === normalizedCategory;
+
+    return byMunicipality && byCategory;
+  });
 }

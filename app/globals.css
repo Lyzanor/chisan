@@ -65,6 +65,36 @@ a {
   cursor: pointer;
 }
 
+.category-row {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid #cfcfcf;
+  background: #fafafa;
+  border-radius: 999px;
+  padding: 0.38rem 0.62rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.category-chip:hover {
+  border-color: #999;
+}
+
+.category-chip.is-active {
+  border-color: #198754;
+  background: #eaf7ef;
+  font-weight: 600;
+}
+
 .meta-line {
   color: #555;
   font-size: 0.92rem;

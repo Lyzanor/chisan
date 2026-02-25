@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { searchProducers } from "@/lib/csv-catalog";
+import { listCategoryBuckets, searchProducers } from "@/lib/csv-catalog";
 
 export const metadata: Metadata = {
   title: "Buscador",
@@ -16,18 +16,52 @@ export const dynamic = "force-dynamic";
 
 function readQuery(
   params: Record<string, string | string[] | undefined>,
+  key: string,
 ): string {
-  const value = params.query;
+  const value = params[key];
   if (Array.isArray(value)) {
     return (value[0] ?? "").trim();
   }
   return (value ?? "").trim();
 }
 
+function getCategoryIcon(value: string): string {
+  if (/vino|bodega/i.test(value)) return "🍷";
+  if (/ques/i.test(value)) return "🧀";
+  if (/pan|boll|horno|pastel/i.test(value)) return "🥖";
+  if (/miel/i.test(value)) return "🍯";
+  if (/cerve/i.test(value)) return "🍺";
+  if (/fruta|verdura|hort|agric/i.test(value)) return "🥕";
+  if (/aceite|oliva/i.test(value)) return "🫒";
+  if (/charcut|carne|embut/i.test(value)) return "🥩";
+  if (/pescado|marisc/i.test(value)) return "🐟";
+  if (/cafe|té|te/i.test(value)) return "☕";
+  return "🧺";
+}
+
+function buildSearchHref(municipality: string, category: string): string {
+  const params = new URLSearchParams();
+  if (municipality) {
+    params.set("municipio", municipality);
+  }
+  if (category) {
+    params.set("categoria", category);
+  }
+
+  const queryString = params.toString();
+  return queryString ? `/?${queryString}` : "/";
+}
+
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
-  const query = readQuery(queryParams);
-  const items = await searchProducers(query);
+  const municipality = readQuery(queryParams, "municipio");
+  const category = readQuery(queryParams, "categoria");
+
+  const [items, categories] = await Promise.all([
+    searchProducers({ municipality, category }),
+    listCategoryBuckets(),
+  ]);
+
   const visibleItems = items.slice(0, 500);
   const hasMore = items.length > visibleItems.length;
 
@@ -35,21 +69,44 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     <main className="page-shell">
       <section className="panel">
         <h1>KM0 CSV Viewer</h1>
-        <p>Buscador simple: eliges una fila del CSV y abres su ficha.</p>
+        <p>Busca por municipio y luego filtra por categoría.</p>
 
         <form method="get" className="search-form">
+          <input type="hidden" name="categoria" value={category} />
           <input
             type="search"
-            name="query"
-            defaultValue={query}
-            placeholder="Buscar por nombre, municipio, categoría o cualquier campo"
-            aria-label="Buscar en CSV"
+            name="municipio"
+            defaultValue={municipality}
+            placeholder="Escribe un municipio"
+            aria-label="Municipio"
           />
           <button type="submit">Buscar</button>
         </form>
 
+        <div className="category-row" aria-label="Categorías">
+          <Link
+            href={buildSearchHref(municipality, "")}
+            className={`category-chip ${!category ? "is-active" : ""}`}
+          >
+            <span aria-hidden="true">📍</span>
+            Todas
+          </Link>
+          {categories.map((bucket) => (
+            <Link
+              key={bucket.value}
+              href={buildSearchHref(municipality, bucket.value)}
+              className={`category-chip ${category === bucket.value ? "is-active" : ""}`}
+            >
+              <span aria-hidden="true">{getCategoryIcon(bucket.value)}</span>
+              {bucket.value}
+            </Link>
+          ))}
+        </div>
+
         <p className="meta-line">
-          {query ? `${items.length} resultados` : `${items.length} filas en CSV`}
+          {items.length} resultados
+          {municipality ? ` · Municipio: ${municipality}` : ""}
+          {category ? ` · Categoría: ${category}` : ""}
         </p>
 
         <ul className="result-list">
