@@ -44,3 +44,4 @@ npx pnpm verify:ai
 - Do not add DB/API/migrations unless explicitly requested.
 - Prefer small, reversible edits.
 - Keep docs in sync if behavior changes.
+- Keep change proposals and task notes in Markdown.

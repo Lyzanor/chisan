@@ -9,6 +9,12 @@ Aplicación mínima para visualizar `Km0-productores.csv`.
 - Contrato de datos CSV: `docs/CSV_CONTRACT.md`
 - Tareas comunes: `docs/TASKS.md`
 
+## Comunicación y documentación
+
+- Usar Markdown por defecto para notas de cambio, propuestas y documentación técnica.
+- Escribir pasos en listas simples y comandos en bloques de código.
+- Referenciar siempre archivos concretos cuando se propongan cambios.
+
 ## Mecanismo core
 
 1. `/` = buscador.

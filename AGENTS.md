@@ -34,6 +34,11 @@
 - Keep functions small and explicit.
 - Avoid adding generic frameworks for a single use case.
 
+## Markdown-first communication
+- Write docs, change notes, and implementation plans in Markdown.
+- Prefer short sections, flat bullet lists, and fenced code blocks for commands.
+- When proposing changes, include file paths and concrete steps in Markdown.
+
 ## Validation before finishing
 ```bash
 npx pnpm verify:ai
