@@ -2,15 +2,9 @@ const OSM_TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const OSM_ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const OSM_HOME_URL = "https://www.openstreetmap.org";
-
-const MAPTILER_DEFAULT_STYLE = "streets-v2";
-const MAPTILER_HOME_URL = "https://www.maptiler.com/maps/";
-
-export type MapProviderId = "osm" | "maptiler";
+const OSM_PROVIDER_LABEL = "OpenStreetMap";
 
 export type MapTileLayerConfig = {
-  provider: MapProviderId;
-  providerLabel: string;
   tileUrl: string;
   attribution: string;
   maxZoom: number;
@@ -18,7 +12,6 @@ export type MapTileLayerConfig = {
 };
 
 export type MapExternalLinks = {
-  provider: MapProviderId;
   providerLabel: string;
   mapUrl: string;
 };
@@ -44,20 +37,6 @@ function parsePositiveInteger(value: string | undefined, fallback: number): numb
   }
 
   return parsed;
-}
-
-function parseProvider(value: string | undefined): MapProviderId {
-  const normalized = normalizeText(value)?.toLowerCase();
-
-  if (!normalized || normalized === "osm" || normalized === "openstreetmap") {
-    return "osm";
-  }
-
-  if (normalized === "maptiler") {
-    return "maptiler";
-  }
-
-  return "osm";
 }
 
 function parseSubdomains(value: string | undefined): string[] | undefined {
@@ -90,32 +69,6 @@ function applyTemplate(
     .replaceAll("{query_raw}", queryRaw);
 }
 
-function getMaptilerTileUrl(env: NodeJS.ProcessEnv): string | null {
-  const key = normalizeText(env.NEXT_PUBLIC_MAPTILER_KEY);
-  if (!key) {
-    return null;
-  }
-
-  const style = normalizeText(env.NEXT_PUBLIC_MAPTILER_STYLE) ?? MAPTILER_DEFAULT_STYLE;
-  return `https://api.maptiler.com/maps/${style}/{z}/{x}/{y}.png?key=${key}`;
-}
-
-function getMaptilerFallbackMapUrl(
-  latitude: number | null,
-  longitude: number | null,
-  fallbackQuery: string | null,
-): string {
-  if (latitude !== null && longitude !== null) {
-    return `https://www.maptiler.com/maps/#16/${latitude}/${longitude}`;
-  }
-
-  if (fallbackQuery) {
-    return `https://www.maptiler.com/maps/?query=${encodeURIComponent(fallbackQuery)}`;
-  }
-
-  return MAPTILER_HOME_URL;
-}
-
 function getOsmFallbackMapUrl(
   latitude: number | null,
   longitude: number | null,
@@ -132,35 +85,13 @@ function getOsmFallbackMapUrl(
   return OSM_HOME_URL;
 }
 
-function getProviderLabel(provider: MapProviderId, env: NodeJS.ProcessEnv): string {
-  const override = normalizeText(env.NEXT_PUBLIC_MAP_PROVIDER_LABEL);
-  if (override) {
-    return override;
-  }
-
-  if (provider === "maptiler") {
-    return "MapTiler";
-  }
-
-  return "OpenStreetMap";
-}
-
 export function getMapTileLayerConfig(env: NodeJS.ProcessEnv = process.env): MapTileLayerConfig {
-  const provider = parseProvider(env.NEXT_PUBLIC_MAP_PROVIDER);
-  const providerLabel = getProviderLabel(provider, env);
-
   const explicitTileUrl = normalizeText(env.NEXT_PUBLIC_MAP_TILE_URL);
-  const maptilerTileUrl = provider === "maptiler" ? getMaptilerTileUrl(env) : null;
-  const tileUrl = explicitTileUrl ?? maptilerTileUrl ?? OSM_TILE_URL;
-
   const explicitAttribution = normalizeText(env.NEXT_PUBLIC_MAP_ATTRIBUTION);
-  const attribution = explicitAttribution ?? OSM_ATTRIBUTION;
 
   return {
-    provider,
-    providerLabel,
-    tileUrl,
-    attribution,
+    tileUrl: explicitTileUrl ?? OSM_TILE_URL,
+    attribution: explicitAttribution ?? OSM_ATTRIBUTION,
     maxZoom: parsePositiveInteger(env.NEXT_PUBLIC_MAP_MAX_ZOOM, 19),
     subdomains: parseSubdomains(env.NEXT_PUBLIC_MAP_SUBDOMAINS),
   };
@@ -172,14 +103,10 @@ export function getMapExternalLinks(
   fallbackQuery: string | null,
   env: NodeJS.ProcessEnv = process.env,
 ): MapExternalLinks {
-  const provider = parseProvider(env.NEXT_PUBLIC_MAP_PROVIDER);
-  const providerLabel = getProviderLabel(provider, env);
-
   const viewTemplate = normalizeText(env.NEXT_PUBLIC_MAP_VIEW_URL_TEMPLATE);
   if (viewTemplate) {
     return {
-      provider,
-      providerLabel,
+      providerLabel: OSM_PROVIDER_LABEL,
       mapUrl: applyTemplate(viewTemplate, {
         latitude,
         longitude,
@@ -188,17 +115,8 @@ export function getMapExternalLinks(
     };
   }
 
-  if (provider === "maptiler") {
-    return {
-      provider,
-      providerLabel,
-      mapUrl: getMaptilerFallbackMapUrl(latitude, longitude, fallbackQuery),
-    };
-  }
-
   return {
-    provider,
-    providerLabel,
+    providerLabel: OSM_PROVIDER_LABEL,
     mapUrl: getOsmFallbackMapUrl(latitude, longitude, fallbackQuery),
   };
 }

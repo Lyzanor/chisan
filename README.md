@@ -18,7 +18,7 @@ El mapa está acotado a la provincia de Barcelona y el buscador principal priori
 - Next.js 16 (App Router) + TypeScript
 - TailwindCSS
 - PostgreSQL + Prisma
-- Leaflet + OpenStreetMap / MapTiler
+- Leaflet + OpenStreetMap
 - pnpm
 - Docker Compose (Postgres)
 
@@ -103,7 +103,7 @@ Formato de `bbox`: `minLng,minLat,maxLng,maxLat`.
 
 Opcional para API: `GET /api/producers` acepta `includeNoCoordinates=true|false` (por defecto `true`) para incluir o excluir registros sin lat/lon en el listado.
 
-## Proveedor de mapa (sin tocar código)
+## Mapa (Leaflet + OpenStreetMap)
 
 La app está desacoplada por configuración:
 - Capa de `tiles` (mapa principal y mini mapa de ficha)
@@ -114,9 +114,6 @@ Motor de mapa:
 - La app usa Leaflet en todos los mapas (principal y mini mapa).
 
 Variables clave:
-- `NEXT_PUBLIC_MAP_PROVIDER` (`osm` o `maptiler`)
-- `NEXT_PUBLIC_MAPTILER_KEY` (obligatoria si usas MapTiler)
-- `NEXT_PUBLIC_MAPTILER_STYLE` (ej. `streets-v2`)
 - `NEXT_PUBLIC_MAP_TILE_URL` (override manual opcional)
 - `NEXT_PUBLIC_MAP_ATTRIBUTION`
 - `NEXT_PUBLIC_MAP_VIEW_URL_TEMPLATE` (opcional, para sobreescribir link externo)
@@ -127,12 +124,7 @@ Template opcional de link externo admite placeholders:
 - `{lat}`, `{lon}`, `{query}` (URL encoded), `{query_raw}`
 
 Configuración mínima OSM (sin API key) en `.env`:
-- `NEXT_PUBLIC_MAP_PROVIDER=osm`
-
-Configuración opcional MapTiler en `.env`:
-- `NEXT_PUBLIC_MAP_PROVIDER=maptiler`
-- `NEXT_PUBLIC_MAPTILER_KEY=TU_API_KEY`
-- `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
+- `NEXT_PUBLIC_MAP_TILE_URL=` (vacío para usar OSM por defecto)
 
 ## Subir a GitHub / Deploy Checklist
 
@@ -148,7 +140,6 @@ Configuración opcional MapTiler en `.env`:
 
 2. No subas secretos:
 - No commitear `.env`
-- Si el proveedor nuevo requiere API key, dejar solo placeholders en `.env.example`
 - Configura claves reales únicamente como variables de entorno del proveedor de deploy (Vercel/Render/Railway/etc.)
 - Verifica antes de hacer push: `git status --short` (no debe aparecer `.env`)
 
@@ -167,14 +158,12 @@ Configuración opcional MapTiler en `.env`:
 
 Variables mínimas recomendadas en deploy:
 - `DATABASE_URL`
-- `NEXT_PUBLIC_MAP_PROVIDER=osm`
 
 ## Operación recomendada: Vercel + Supabase
 
 1. Configura en Vercel (entorno `Production`):
 - `DATABASE_URL` (Supabase pooler, con `pgbouncer=true&sslmode=require`)
-- `NEXT_PUBLIC_MAP_PROVIDER=osm` (o `maptiler` si quieres tiles de MapTiler)
-- Si usas MapTiler: `NEXT_PUBLIC_MAP_PROVIDER_LABEL=MapTiler`, `NEXT_PUBLIC_MAPTILER_KEY`, `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
+- Opcional: `NEXT_PUBLIC_MAP_TILE_URL` y `NEXT_PUBLIC_MAP_ATTRIBUTION` si quieres tiles personalizados
 
 2. Antes de cada deploy relevante:
 ```bash
