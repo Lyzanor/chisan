@@ -1,6 +1,6 @@
 export const CSV_PRODUCER_COLUMNS = {
   name: "nombre",
-  city: "-- municipio",
+  city: "municipio",
   category: "categoria",
   subcategory: "subcategoria",
   address: "direccion",
@@ -15,6 +15,11 @@ export const CSV_PRODUCER_COLUMNS = {
   latitude: "lat",
   longitude: "lon",
   reviewed: "Revisado",
+} as const;
+
+// Backward compatibility for previous CSV header naming.
+export const CSV_PRODUCER_LEGACY_COLUMNS = {
+  city: "-- municipio",
 } as const;
 
 export const CSV_PRODUCER_COLUMN_LIST = Object.values(CSV_PRODUCER_COLUMNS);

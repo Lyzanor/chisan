@@ -1,7 +1,7 @@
 import { Prisma } from "@prisma/client";
 
 import { isWithinBarcelonaProvince } from "./barcelona";
-import { CSV_PRODUCER_COLUMNS } from "./csv-schema";
+import { CSV_PRODUCER_COLUMNS, CSV_PRODUCER_LEGACY_COLUMNS } from "./csv-schema";
 import { buildGeocodingQuery } from "./geocoding";
 import {
   buildSearchText,
@@ -14,9 +14,11 @@ import {
   slugify,
 } from "./producer-utils";
 
-export type CsvProducerRow = Partial<
-  Record<(typeof CSV_PRODUCER_COLUMNS)[keyof typeof CSV_PRODUCER_COLUMNS], string>
->;
+type CsvProducerColumn =
+  | (typeof CSV_PRODUCER_COLUMNS)[keyof typeof CSV_PRODUCER_COLUMNS]
+  | (typeof CSV_PRODUCER_LEGACY_COLUMNS)[keyof typeof CSV_PRODUCER_LEGACY_COLUMNS];
+
+export type CsvProducerRow = Partial<Record<CsvProducerColumn, string>>;
 
 export type PreparedSeedProducer = {
   dedupeKey: string;
@@ -25,6 +27,22 @@ export type PreparedSeedProducer = {
   geocodeQueryText: string | null;
   data: Prisma.ProducerCreateManyInput;
 };
+
+function readColumnValue(
+  row: CsvProducerRow,
+  column: (typeof CSV_PRODUCER_COLUMNS)[keyof typeof CSV_PRODUCER_COLUMNS],
+  legacyColumn?: (typeof CSV_PRODUCER_LEGACY_COLUMNS)[keyof typeof CSV_PRODUCER_LEGACY_COLUMNS],
+): string | undefined {
+  if (row[column] !== undefined) {
+    return row[column];
+  }
+
+  if (legacyColumn && row[legacyColumn] !== undefined) {
+    return row[legacyColumn];
+  }
+
+  return undefined;
+}
 
 function toProvinceCoordinates(latitude: number | null, longitude: number | null) {
   if (latitude === null || longitude === null) {
@@ -65,7 +83,9 @@ export function parseCsvProducerRow(row: CsvProducerRow): PreparedSeedProducer |
     return null;
   }
 
-  const city = normalizeText(row[CSV_PRODUCER_COLUMNS.city]);
+  const city = normalizeText(
+    readColumnValue(row, CSV_PRODUCER_COLUMNS.city, CSV_PRODUCER_LEGACY_COLUMNS.city),
+  );
   const category = normalizeText(row[CSV_PRODUCER_COLUMNS.category]);
   const subcategory = normalizeText(row[CSV_PRODUCER_COLUMNS.subcategory]);
   const address = normalizeText(row[CSV_PRODUCER_COLUMNS.address]);

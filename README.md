@@ -11,7 +11,7 @@ El mapa está acotado a la provincia de Barcelona y el buscador principal priori
 
 ## Columnas detectadas en el CSV
 
-`nombre`, `-- municipio`, `categoria`, `subcategoria`, `direccion`, `descripcion`, `horario`, `telefono`, `correo`, `web`, `Facebook`, `Instagram`, `Google Maps`, `lat`, `lon`, `Revisado`
+`nombre`, `municipio`, `categoria`, `subcategoria`, `direccion`, `descripcion`, `horario`, `telefono`, `correo`, `web`, `Facebook`, `Instagram`, `Google Maps`, `lat`, `lon`, `Revisado`
 
 ## Stack
 
@@ -110,6 +110,9 @@ La app está desacoplada por configuración:
 - Link externo de mapa en la ficha
 - Geocoding del seed (independiente del proveedor visual)
 
+Motor de mapa:
+- La app usa Leaflet en todos los mapas (principal y mini mapa).
+
 Variables clave:
 - `NEXT_PUBLIC_MAP_PROVIDER` (`osm` o `maptiler`)
 - `NEXT_PUBLIC_MAPTILER_KEY` (obligatoria si usas MapTiler)
@@ -123,7 +126,10 @@ Variables clave:
 Template opcional de link externo admite placeholders:
 - `{lat}`, `{lon}`, `{query}` (URL encoded), `{query_raw}`
 
-Configuración mínima MapTiler en `.env`:
+Configuración mínima OSM (sin API key) en `.env`:
+- `NEXT_PUBLIC_MAP_PROVIDER=osm`
+
+Configuración opcional MapTiler en `.env`:
 - `NEXT_PUBLIC_MAP_PROVIDER=maptiler`
 - `NEXT_PUBLIC_MAPTILER_KEY=TU_API_KEY`
 - `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
@@ -161,18 +167,14 @@ Configuración mínima MapTiler en `.env`:
 
 Variables mínimas recomendadas en deploy:
 - `DATABASE_URL`
-- `NEXT_PUBLIC_MAP_PROVIDER=maptiler`
-- `NEXT_PUBLIC_MAPTILER_KEY`
-- `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
+- `NEXT_PUBLIC_MAP_PROVIDER=osm`
 
 ## Operación recomendada: Vercel + Supabase
 
 1. Configura en Vercel (entorno `Production`):
 - `DATABASE_URL` (Supabase pooler, con `pgbouncer=true&sslmode=require`)
-- `NEXT_PUBLIC_MAP_PROVIDER=maptiler`
-- `NEXT_PUBLIC_MAP_PROVIDER_LABEL=MapTiler`
-- `NEXT_PUBLIC_MAPTILER_KEY`
-- `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
+- `NEXT_PUBLIC_MAP_PROVIDER=osm` (o `maptiler` si quieres tiles de MapTiler)
+- Si usas MapTiler: `NEXT_PUBLIC_MAP_PROVIDER_LABEL=MapTiler`, `NEXT_PUBLIC_MAPTILER_KEY`, `NEXT_PUBLIC_MAPTILER_STYLE=streets-v2`
 
 2. Antes de cada deploy relevante:
 ```bash
