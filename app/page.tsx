@@ -65,7 +65,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   const visibleItems = items.slice(0, 500);
   const hasMore = items.length > visibleItems.length;
-  const mapPoints = toProducerMapPoints(visibleItems).slice(0, 300);
+  const mapPoints = toProducerMapPoints(items);
 
   return (
     <main className="page-shell">
