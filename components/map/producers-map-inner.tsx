@@ -6,25 +6,12 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+import { getCategoryEmoji } from "@/lib/category-emoji";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 // Below this threshold, show all points regardless of viewport (municipality searches).
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 200;
-
-function getCategoryEmoji(category: string): string {
-  if (/vino|bodega/i.test(category)) return "🍷";
-  if (/ques/i.test(category)) return "🧀";
-  if (/pan|boll|horno|pastel/i.test(category)) return "🥖";
-  if (/miel/i.test(category)) return "🍯";
-  if (/cerve/i.test(category)) return "🍺";
-  if (/fruta|verdura|hort|agric/i.test(category)) return "🥕";
-  if (/aceite|oliva/i.test(category)) return "🫒";
-  if (/charcut|carne|embut/i.test(category)) return "🥩";
-  if (/pescado|marisc/i.test(category)) return "🐟";
-  if (/cafe|té|te/i.test(category)) return "☕";
-  return "🧺";
-}
 
 function makeCategoryIcon(category: string): L.DivIcon {
   const emoji = getCategoryEmoji(category);

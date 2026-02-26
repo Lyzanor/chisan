@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ProducersMap } from "@/components/map/producers-map";
+import { getCategoryEmoji } from "@/lib/category-emoji";
 import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
 
 export const metadata: Metadata = {
@@ -26,19 +27,6 @@ function readQuery(
   return (value ?? "").trim();
 }
 
-function getCategoryIcon(value: string): string {
-  if (/vino|bodega/i.test(value)) return "🍷";
-  if (/ques/i.test(value)) return "🧀";
-  if (/pan|boll|horno|pastel/i.test(value)) return "🥖";
-  if (/miel/i.test(value)) return "🍯";
-  if (/cerve/i.test(value)) return "🍺";
-  if (/fruta|verdura|hort|agric/i.test(value)) return "🥕";
-  if (/aceite|oliva/i.test(value)) return "🫒";
-  if (/charcut|carne|embut/i.test(value)) return "🥩";
-  if (/pescado|marisc/i.test(value)) return "🐟";
-  if (/cafe|té|te/i.test(value)) return "☕";
-  return "🧺";
-}
 
 function buildSearchHref(municipality: string, category: string): string {
   const params = new URLSearchParams();
@@ -99,7 +87,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               href={buildSearchHref(municipality, cat)}
               className={`category-chip ${category === cat ? "is-active" : ""}`}
             >
-              <span aria-hidden="true">{getCategoryIcon(cat)}</span>
+              <span aria-hidden="true">{getCategoryEmoji(cat)}</span>
               {cat}
             </Link>
           ))}
