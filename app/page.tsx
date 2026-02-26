@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ProducersMap } from "@/components/map/producers-map";
-import { listCategoryBuckets, searchProducers } from "@/lib/csv-catalog";
-import { toProducerMapPoints } from "@/lib/producer-map";
+import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
 
 export const metadata: Metadata = {
   title: "Buscador",
@@ -61,15 +60,12 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   const [items, categories] = await Promise.all([
     searchProducers({ municipality, category }),
-    listCategoryBuckets(),
+    listCategories(),
   ]);
 
   const visibleItems = items.slice(0, 500);
   const hasMore = items.length > visibleItems.length;
-  const mapPoints = toProducerMapPoints(visibleItems);
-  const visibleMapPoints = mapPoints.slice(0, 300);
-  const hiddenMapPoints = mapPoints.length - visibleMapPoints.length;
-  const rowsWithoutCoordinates = visibleItems.length - mapPoints.length;
+  const mapPoints = toProducerMapPoints(visibleItems).slice(0, 300);
 
   return (
     <main className="page-shell">
@@ -97,14 +93,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             <span aria-hidden="true">📍</span>
             Todas
           </Link>
-          {categories.map((bucket) => (
+          {categories.map((cat) => (
             <Link
-              key={bucket.value}
-              href={buildSearchHref(municipality, bucket.value)}
-              className={`category-chip ${category === bucket.value ? "is-active" : ""}`}
+              key={cat}
+              href={buildSearchHref(municipality, cat)}
+              className={`category-chip ${category === cat ? "is-active" : ""}`}
             >
-              <span aria-hidden="true">{getCategoryIcon(bucket.value)}</span>
-              {bucket.value}
+              <span aria-hidden="true">{getCategoryIcon(cat)}</span>
+              {cat}
             </Link>
           ))}
         </div>
@@ -116,17 +112,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         </p>
 
         <section className="map-section" aria-label="Mapa de productores">
-          <h2>Mapa</h2>
-          <p className="meta-line">
-            {visibleMapPoints.length} ubicaciones visibles
-            {rowsWithoutCoordinates > 0
-              ? ` · ${rowsWithoutCoordinates} resultados sin coordenadas`
-              : ""}
-            {hiddenMapPoints > 0
-              ? ` · ${hiddenMapPoints} ubicaciones ocultas para mantener rendimiento`
-              : ""}
-          </p>
-          <ProducersMap points={visibleMapPoints} />
+          <ProducersMap points={mapPoints} />
         </section>
 
         <ul className="result-list">

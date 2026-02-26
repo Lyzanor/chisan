@@ -15,7 +15,15 @@ export type ProducerCsvRow = {
   latitude: number | null;
   longitude: number | null;
   fields: Record<string, string>;
-  searchIndex: string;
+};
+
+export type ProducerMapPoint = {
+  id: number;
+  name: string;
+  city: string;
+  category: string;
+  latitude: number;
+  longitude: number;
 };
 
 const CSV_PATH = path.resolve(process.cwd(), "Km0-productores.csv");
@@ -85,18 +93,9 @@ function readLongitude(fields: Record<string, string>): number | null {
   return value >= -180 && value <= 180 ? value : null;
 }
 
-function buildSearchIndex(fields: Record<string, string>): string {
-  return normalizeSearch(Object.values(fields).join(" "));
-}
-
 export type ProducerSearchFilters = {
   municipality: string;
   category: string;
-};
-
-export type CategoryBucket = {
-  value: string;
-  count: number;
 };
 
 const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
@@ -120,7 +119,6 @@ const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
       subcategory: fields.subcategoria || "",
       latitude: readLatitude(fields),
       longitude: readLongitude(fields),
-      searchIndex: buildSearchIndex(fields),
       fields,
     };
   });
@@ -136,22 +134,38 @@ export async function findProducerById(rawId: string): Promise<ProducerCsvRow | 
   return rows[id - 1] ?? null;
 }
 
-export async function listCategoryBuckets(): Promise<CategoryBucket[]> {
+export async function listCategories(): Promise<string[]> {
   const rows = await loadCsvRows();
   const counts = new Map<string, number>();
 
   for (const row of rows) {
     const key = row.category.trim();
-    if (!key) {
-      continue;
-    }
-
+    if (!key) continue;
     counts.set(key, (counts.get(key) ?? 0) + 1);
   }
 
   return [...counts.entries()]
-    .map(([value, count]) => ({ value, count }))
-    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value, "es"));
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "es"))
+    .map(([value]) => value);
+}
+
+export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] {
+  return rows.flatMap((row) => {
+    if (row.latitude === null || row.longitude === null) {
+      return [];
+    }
+
+    return [
+      {
+        id: row.id,
+        name: row.name,
+        city: row.city,
+        category: row.category,
+        latitude: row.latitude,
+        longitude: row.longitude,
+      },
+    ];
+  });
 }
 
 export async function searchProducers(

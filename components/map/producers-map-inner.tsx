@@ -6,7 +6,7 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import type { ProducerMapPoint } from "@/lib/producer-map";
+import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 type ProducersMapInnerProps = {
   points: ProducerMapPoint[];

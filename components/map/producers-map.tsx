@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-import type { ProducerMapPoint } from "@/lib/producer-map";
+import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
