@@ -41,9 +41,14 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
     zoomend: () => setViewBounds(map.getBounds()),
   });
 
-  // Only render markers visible in the current viewport
+  // Viewport filtering only kicks in when there are many points (global view).
+  // With few points (filtered search), always show all to avoid edge-case clipping.
+  const VIEWPORT_THRESHOLD = 200;
   const visible = useMemo(
-    () => points.filter((p) => viewBounds.contains([p.latitude, p.longitude])),
+    () =>
+      points.length > VIEWPORT_THRESHOLD
+        ? points.filter((p) => viewBounds.contains([p.latitude, p.longitude]))
+        : points,
     [points, viewBounds],
   );
 
