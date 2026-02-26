@@ -8,6 +8,10 @@ import "leaflet/dist/leaflet.css";
 
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
+// Below this threshold, show all points regardless of viewport (municipality searches).
+// Above it, filter by viewport to avoid rendering thousands of markers at once.
+const VIEWPORT_THRESHOLD = 200;
+
 const producerPinIcon = L.divIcon({
   className: "producer-map-pin",
   html: '<span class="producer-map-pin-dot"></span>',
@@ -35,15 +39,12 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
     setViewBounds(map.getBounds());
   }, [map, points]);
 
-  // Update viewport bounds on every pan/zoom
+  // moveend fires after every pan and after every zoom (Leaflet always fires
+  // moveend at the end of a zoom sequence), so zoomend is redundant here.
   useMapEvents({
     moveend: () => setViewBounds(map.getBounds()),
-    zoomend: () => setViewBounds(map.getBounds()),
   });
 
-  // Viewport filtering only kicks in when there are many points (global view).
-  // With few points (filtered search), always show all to avoid edge-case clipping.
-  const VIEWPORT_THRESHOLD = 200;
   const visible = useMemo(
     () =>
       points.length > VIEWPORT_THRESHOLD

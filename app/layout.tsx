@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "KM0 CSV Viewer",
-    template: "%s | Km0",
+    default: "KM0 Productores",
+    template: "%s | KM0",
   },
   description:
-    "Visualizador simple del CSV de productores locales.",
+    "Directorio de productores locales de kilómetro cero. Busca por municipio y categoría.",
 };
 
 export default function RootLayout({

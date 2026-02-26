@@ -5,8 +5,8 @@ import { ProducersMap } from "@/components/map/producers-map";
 import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
 
 export const metadata: Metadata = {
-  title: "Buscador",
-  description: "Busca una fila del CSV y abre la ficha del productor.",
+  title: "Buscador de productores",
+  description: "Encuentra productores locales por municipio y categoría.",
 };
 
 type HomePageProps = {
