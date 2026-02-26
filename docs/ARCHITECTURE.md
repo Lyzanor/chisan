@@ -9,7 +9,7 @@ flowchart TD
   A["Km0-productores.csv"] --> B["lib/csv-catalog.ts"]
   B --> C["app/page.tsx (/): filters by municipio + categoria"]
   C --> D["Result list"]
-  C --> E["Map points via lib/producer-map.ts"]
+  C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]
   D --> G["app/p/[id]/page.tsx"]
   G --> H["Row detail (field/value table)"]
@@ -22,10 +22,9 @@ flowchart TD
   - Reads coordinates (`lat/lon`) when present.
   - Exposes:
     - `searchProducers({ municipality, category })`
-    - `listCategoryBuckets()`
+    - `listCategories()`
     - `findProducerById(id)`
-- `lib/producer-map.ts`
-  - Adapts filtered rows into map points with valid coordinates.
+    - `toProducerMapPoints(rows)`
 - `app/page.tsx`
   - Reads URL params `municipio` and `categoria`.
   - Shows municipality input + category icon chips.

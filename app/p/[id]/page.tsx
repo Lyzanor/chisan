@@ -8,8 +8,6 @@ type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-export const dynamic = "force-dynamic";
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const producer = await findProducerById(id);
@@ -44,15 +42,15 @@ export default async function ProducerPage({ params }: PageProps) {
 
         <h1>{producer.name}</h1>
         <p>
-          Fila {producer.id} del CSV · {producer.city}
+          {producer.city} · {producer.category}
         </p>
 
         <div className="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Columna CSV</th>
-                <th>Valor</th>
+                <th>Campo</th>
+                <th>Información</th>
               </tr>
             </thead>
             <tbody>

@@ -12,13 +12,13 @@
 ## Out of scope (do not reintroduce)
 - No database, ORM, migrations, or seed process.
 - No API layer for producer search.
-- No map provider integration.
 - No complex service abstractions.
 
 ## Core files
-- `app/page.tsx`: search UI and result list.
+- `app/page.tsx`: search UI, map and result list.
 - `app/p/[id]/page.tsx`: producer detail page.
-- `lib/csv-catalog.ts`: CSV read, normalization, filters.
+- `lib/csv-catalog.ts`: CSV read, normalization, filters, map points.
+- `components/map/`: Leaflet map (SSR-safe, dynamic import).
 - `Km0-productores.csv`: source of truth.
 
 ## Invariants
