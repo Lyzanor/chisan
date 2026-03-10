@@ -186,6 +186,10 @@ a {
   background: var(--surface-soft);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 -1.5rem 0 0 color-mix(in srgb, var(--surface) 96%, white 4%);
 }
 
 .catalog-map-head {
