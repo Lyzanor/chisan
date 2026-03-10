@@ -60,8 +60,6 @@ export default async function ProducerPage({ params }: PageProps) {
             {producer.city} · {producer.category}
             {producer.subcategory ? ` · ${producer.subcategory}` : ""}
           </p>
-          <p className="detail-row">Fila {producer.id} del CSV</p>
-
           <div className="detail-links">
             {website ? (
               <a href={website} target="_blank" rel="noreferrer">

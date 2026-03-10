@@ -29,11 +29,15 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
 
     if (points.length === 1) {
       map.setView([points[0].latitude, points[0].longitude], 13, { animate: false });
-    } else {
+    } else if (points.length <= VIEWPORT_THRESHOLD) {
+      // Small result set (e.g. municipality filter): fit to points
       const bounds = L.latLngBounds(
         points.map((p) => [p.latitude, p.longitude] as [number, number]),
       );
       map.fitBounds(bounds.pad(0.2), { animate: false });
+    } else {
+      // Large result set: centre on Barcelona province
+      map.setView([41.42, 2.02], 10, { animate: false });
     }
 
   }, [map, points]);
@@ -76,8 +80,11 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
 export default function ProducersMapInner({ points }: { points: ProducerMapPoint[] }) {
   return (
     <MapContainer
-      center={[41.3902, 2.154]}
+      center={[41.42, 2.02]}
       zoom={10}
+      maxBounds={[[40.5, 0.1], [42.9, 3.4]]}
+      maxBoundsViscosity={0.9}
+      minZoom={8}
       className="producers-map-canvas"
       scrollWheelZoom
     >

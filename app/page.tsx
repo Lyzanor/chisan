@@ -174,7 +174,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                       ) : null}
                     </div>
                     <p className="producer-location">{item.city}</p>
-                    <p className="producer-row">Fila {item.id} del CSV</p>
                   </div>
 
                   <Link href={`/p/${item.id}`} className="producer-cta">
