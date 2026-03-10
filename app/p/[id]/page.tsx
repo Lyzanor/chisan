@@ -8,6 +8,14 @@ type PageProps = {
   params: Promise<{ id: string }>;
 };
 
+function getFieldValue(fields: Record<string, string>, key: string): string {
+  const match = Object.entries(fields).find(
+    ([field]) => field.toLocaleLowerCase() === key.toLocaleLowerCase(),
+  );
+
+  return (match?.[1] ?? "").trim();
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const producer = await findProducerById(id);
@@ -33,36 +41,62 @@ export default async function ProducerPage({ params }: PageProps) {
     notFound();
   }
 
+  const website = getFieldValue(producer.fields, "web");
+  const maps = getFieldValue(producer.fields, "Google Maps");
+  const email = getFieldValue(producer.fields, "correo");
+
   return (
-    <main className="page-shell">
-      <section className="panel">
-        <Link href="/" className="back-link">
+    <main className="detail-page">
+      <section className="detail-shell">
+        <Link href="/" className="detail-back-link">
           ← Volver al buscador
         </Link>
 
-        <h1>{producer.name}</h1>
-        <p>
-          {producer.city} · {producer.category}
-        </p>
+        <header className="detail-hero">
+          <p className="detail-eyebrow">Ficha de productor</p>
+          <h1>{producer.name}</h1>
+          <p className="detail-subtitle">
+            {producer.city} · {producer.category}
+            {producer.subcategory ? ` · ${producer.subcategory}` : ""}
+          </p>
+          <p className="detail-row">Fila {producer.id} del CSV</p>
 
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Campo</th>
-                <th>Información</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.entries(producer.fields).map(([key, value]) => (
-                <tr key={key}>
-                  <td>{key}</td>
-                  <td>{value || "—"}</td>
+          <div className="detail-links">
+            {website ? (
+              <a href={website} target="_blank" rel="noreferrer">
+                Web
+              </a>
+            ) : null}
+            {maps ? (
+              <a href={maps} target="_blank" rel="noreferrer">
+                Google Maps
+              </a>
+            ) : null}
+            {email ? <a href={`mailto:${email}`}>Correo</a> : null}
+          </div>
+        </header>
+
+        <section className="detail-table-card">
+          <h2>Campos del CSV</h2>
+          <div className="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Campo</th>
+                  <th>Información</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {Object.entries(producer.fields).map(([key, value]) => (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td>{value || "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
       </section>
     </main>
   );

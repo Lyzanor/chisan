@@ -6,22 +6,37 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+import { getCategoryEmoji } from "@/lib/category-emoji";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 // Below this threshold, show all points regardless of viewport (municipality searches).
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 200;
 
-const producerPinIcon = L.divIcon({
-  className: "producer-map-pin",
-  html: '<span class="producer-map-pin-dot"></span>',
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
-});
+function makeCategoryIcon(category: string): L.DivIcon {
+  const emoji = getCategoryEmoji(category);
+  return L.divIcon({
+    className: "producer-map-pin",
+    html: `<span class="producer-map-pin-emoji" aria-hidden="true">${emoji}</span>`,
+    iconSize: [26, 26],
+    iconAnchor: [13, 13],
+  });
+}
 
 function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
+
+  // Cache one icon per category to avoid recreating on every render
+  const iconsByCategory = useMemo(() => {
+    const cache = new Map<string, L.DivIcon>();
+    for (const point of points) {
+      if (!cache.has(point.category)) {
+        cache.set(point.category, makeCategoryIcon(point.category));
+      }
+    }
+    return cache;
+  }, [points]);
 
   // Fit map to all points whenever the point set changes
   useEffect(() => {
@@ -36,6 +51,7 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
       map.fitBounds(bounds.pad(0.2), { animate: false });
     }
 
+    setViewBounds(map.getBounds());
   }, [map, points]);
 
   // moveend fires after every pan and after every zoom (Leaflet always fires
@@ -58,7 +74,7 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
         <Marker
           key={point.id}
           position={[point.latitude, point.longitude]}
-          icon={producerPinIcon}
+          icon={iconsByCategory.get(point.category) ?? makeCategoryIcon(point.category)}
         >
           <Popup>
             <strong>{point.name}</strong>
@@ -82,8 +98,8 @@ export default function ProducersMapInner({ points }: { points: ProducerMapPoint
       scrollWheelZoom
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
       <BoundsAwareMarkers points={points} />
     </MapContainer>
