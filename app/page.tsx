@@ -60,6 +60,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
   const municipality = readQuery(queryParams, "municipio");
   const category = readQuery(queryParams, "categoria");
+  const highlight = readQuery(queryParams, "destacar");
 
   const [items, categories, allRows] = await Promise.all([
     searchProducers({ municipality, category }),
@@ -69,7 +70,12 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   const visibleItems = items.slice(0, 500);
   const hasMore = items.length > visibleItems.length;
-  const mapPoints = toProducerMapPoints(items);
+  const highlightedItem = highlight
+    ? items.find((i) => String(i.id) === highlight)
+    : undefined;
+  const mapPoints = highlightedItem
+    ? toProducerMapPoints([highlightedItem])
+    : toProducerMapPoints(items);
 
   return (
     <main className="catalog-page">
@@ -127,7 +133,13 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         <section className="catalog-map" aria-label="Mapa de productores">
           <div className="catalog-map-head">
             <h2>Mapa de productors</h2>
-            <p>{mapPoints.length} amb coordenades</p>
+            {highlightedItem ? (
+              <Link href={buildSearchHref(municipality, category)} className="catalog-chip is-active">
+                ✕ {highlightedItem.name} — Ver todos
+              </Link>
+            ) : (
+              <p>{mapPoints.length} amb coordenades</p>
+            )}
           </div>
           <ProducersMap points={mapPoints} />
         </section>
@@ -148,7 +160,13 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                   </div>
 
                   <div className="producer-main">
-                    <p className="producer-name">{item.name}</p>
+                    <Link
+                      href={`${buildSearchHref(municipality, category)}${buildSearchHref(municipality, category).includes("?") ? "&" : "?"}destacar=${item.id}`}
+                      className="producer-name"
+                      scroll={false}
+                    >
+                      {item.name}
+                    </Link>
                     <div className="producer-badges">
                       <span className="producer-badge">{getCategoryIcon(item.category)} {item.category}</span>
                       {item.subcategory ? (
