@@ -44,6 +44,7 @@ export default async function ProducerPage({ params }: PageProps) {
   const website = getFieldValue(producer.fields, "web");
   const maps = getFieldValue(producer.fields, "Google Maps");
   const email = getFieldValue(producer.fields, "correo");
+  const instagram = getFieldValue(producer.fields, "Instagram");
 
   return (
     <main className="detail-page">
@@ -73,6 +74,11 @@ export default async function ProducerPage({ params }: PageProps) {
               </a>
             ) : null}
             {email ? <a href={`mailto:${email}`}>Correo</a> : null}
+            {instagram ? (
+              <a href={instagram} target="_blank" rel="noreferrer">
+                Instagram
+              </a>
+            ) : null}
           </div>
         </header>
 
