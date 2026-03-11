@@ -1,11 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces } from "next/font/google";
+import { Fraunces, Roboto } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-fraunces",
+});
+
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
 });
 
 export const viewport: Viewport = {
@@ -30,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={fraunces.variable}>
+    <html lang="es" className={`${fraunces.variable} ${roboto.variable}`}>
       <body>{children}</body>
     </html>
   );
