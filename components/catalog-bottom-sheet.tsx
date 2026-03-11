@@ -113,28 +113,9 @@ export function CatalogBottomSheet({ summary, children }: CatalogBottomSheetProp
     }
   }
 
-  function handleToggle() {
-    setDragOffset(null);
-
-    if (sheetState === "peek") {
-      setSheetState("half");
-      return;
-    }
-
-    if (sheetState === "half") {
-      setSheetState("full");
-      return;
-    }
-
-    setSheetState("half");
-  }
-
   const dynamicStyle = dragOffset === null
     ? undefined
     : ({ transform: `translateY(${dragOffset}px)` } satisfies CSSProperties);
-
-  const toggleLabel =
-    sheetState === "full" ? "Contraer resultados" : "Expandir resultados";
 
   return (
     <section
@@ -158,9 +139,6 @@ export function CatalogBottomSheet({ summary, children }: CatalogBottomSheetProp
         </button>
         <div className="catalog-sheet__summary">
           <p>{summary}</p>
-          <button type="button" className="catalog-sheet__toggle" onClick={handleToggle}>
-            {toggleLabel}
-          </button>
         </div>
       </div>
       <div className="catalog-sheet__body">{children}</div>

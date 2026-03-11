@@ -890,8 +890,7 @@ tbody tr:hover {
   .md-app-bar__menu-btn,
   .md-drawer__close,
   .md-drawer__item,
-  .catalog-sheet,
-  .catalog-sheet__toggle {
+  .catalog-sheet {
     transition-duration: 0ms !important;
     animation-duration: 0ms !important;
   }
@@ -1412,8 +1411,7 @@ tbody tr:hover {
   .catalog-sheet__summary {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.8rem;
+    justify-content: flex-start;
     padding-bottom: 12px;
   }
 
@@ -1424,28 +1422,11 @@ tbody tr:hover {
     color: var(--text-main);
   }
 
-  .catalog-sheet__toggle {
-    border: 0;
-    background: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-    border-radius: var(--md-sys-shape-corner-full);
-    padding: 0.45rem 0.78rem;
-    font-size: 0.77rem;
-    font-weight: 600;
-    transition:
-      transform var(--md-sys-motion-duration-short2) ease,
-      box-shadow var(--md-sys-motion-duration-short2) ease,
-      background-color var(--md-sys-motion-duration-short2) ease;
-  }
-
-  .catalog-sheet__toggle:active {
-    transform: scale(var(--press-scale));
-  }
-
   .catalog-sheet__body {
     flex: 1;
     overflow-y: auto;
     overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
     padding: 12px 16px calc(24px + var(--safe-bottom));
   }
 

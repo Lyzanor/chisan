@@ -45,7 +45,11 @@ export function ViewTransitionLink({
     const navigate = () => router.push(href, { scroll });
 
     if (nextDocument.startViewTransition) {
-      nextDocument.startViewTransition(navigate);
+      try {
+        nextDocument.startViewTransition(navigate);
+      } catch {
+        navigate();
+      }
       return;
     }
 

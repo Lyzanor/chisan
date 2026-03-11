@@ -20,6 +20,7 @@ type HomePageProps = {
 };
 
 export const dynamic = "force-dynamic";
+const MAX_VISIBLE_RESULTS = 150;
 
 function parseCoordinateParam(value: string): number | undefined {
   if (!value) {
@@ -46,7 +47,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     listCategories(),
   ]);
 
-  const visibleItems = items.slice(0, 500);
+  const visibleItems = items.slice(0, MAX_VISIBLE_RESULTS);
   const hasMore = items.length > visibleItems.length;
   const highlightedItem = highlight
     ? items.find((i) => String(i.id) === highlight)

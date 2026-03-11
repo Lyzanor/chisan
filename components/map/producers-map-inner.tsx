@@ -12,10 +12,11 @@ import type { ProducerMapPoint } from "@/lib/csv-catalog";
 // Below this threshold, show all points regardless of viewport (municipality searches).
 // Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 600;
-const USER_FOCUS_LIMIT = 60;
+const MAX_VISIBLE_MARKERS = 120;
 const DEFAULT_CENTER: [number, number] = [41.42, 2.02];
 const DEFAULT_ZOOM = 10;
 const FOCUSED_ZOOM = 13;
+const USER_LOCATION_ZOOM = 12;
 
 const producerPinIcon = L.divIcon({
   className: "producer-map-pin",
@@ -100,6 +101,16 @@ function fitPointsInView(
   });
 }
 
+function distanceToCenterScore(
+  point: ProducerMapPoint,
+  center: L.LatLng,
+): number {
+  const latDelta = point.latitude - center.lat;
+  const lonDelta = point.longitude - center.lng;
+
+  return latDelta * latDelta + lonDelta * lonDelta;
+}
+
 function BoundsAwareMarkers({
   points,
   highlightedId,
@@ -138,11 +149,7 @@ function BoundsAwareMarkers({
     }
 
     if (userLocation) {
-      const focusPoints = points.length > VIEWPORT_THRESHOLD
-        ? points.slice(0, USER_FOCUS_LIMIT)
-        : points;
-
-      fitPointsInView(map, focusPoints, userLocation);
+      focusSinglePosition(map, [userLocation.lat, userLocation.lon], USER_LOCATION_ZOOM);
       return;
     }
 
@@ -166,13 +173,22 @@ function BoundsAwareMarkers({
     moveend: () => setViewBounds(map.getBounds()),
   });
 
-  const visible = useMemo(
-    () =>
+  const visible = useMemo(() => {
+    const inBounds =
       points.length > VIEWPORT_THRESHOLD
-        ? points.filter((p) => viewBounds.contains([p.latitude, p.longitude]))
-        : points,
-    [points, viewBounds],
-  );
+        ? points.filter((point) => viewBounds.contains([point.latitude, point.longitude]))
+        : points;
+
+    if (inBounds.length <= MAX_VISIBLE_MARKERS) {
+      return inBounds;
+    }
+
+    const center = map.getCenter();
+
+    return [...inBounds]
+      .sort((a, b) => distanceToCenterScore(a, center) - distanceToCenterScore(b, center))
+      .slice(0, MAX_VISIBLE_MARKERS);
+  }, [map, points, viewBounds]);
 
   return (
     <>
