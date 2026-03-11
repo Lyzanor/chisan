@@ -53,6 +53,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         categories={categories}
         currentCategory={category}
         municipality={municipality}
+        lat={latStr}
+        lon={lonStr}
       />
       <section className="catalog-shell">
         <section className="catalog-controls">

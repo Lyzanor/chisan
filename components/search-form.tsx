@@ -8,6 +8,28 @@ type SearchFormProps = {
   initialCategory: string;
 };
 
+function SearchIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M15.5 14h-.79l-.28-.27a6 6 0 1 0-.71.71l.27.28v.79L20 20.5 21.5 19l-6-5zm-5.5 0A4.5 4.5 0 1 1 10 5a4.5 4.5 0 0 1 0 9z"
+      />
+    </svg>
+  );
+}
+
+function LocateIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm8.94 3A9 9 0 0 0 13 3.06V1h-2v2.06A9 9 0 0 0 3.06 11H1v2h2.06A9 9 0 0 0 11 20.94V23h2v-2.06A9 9 0 0 0 20.94 13H23v-2zM12 19a7 7 0 1 1 7-7 7 7 0 0 1-7 7z"
+      />
+    </svg>
+  );
+}
+
 export function SearchForm({ initialMunicipality, initialCategory }: SearchFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -78,7 +100,6 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
     <div className="catalog-search-wrap">
       <form onSubmit={handleSubmit} className="catalog-search" role="search">
         <input type="hidden" name="categoria" value={initialCategory} />
-        <span aria-hidden="true">🔎</span>
         <input
           type="search"
           name="municipio"
@@ -86,21 +107,29 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
           placeholder="Cerca per municipi"
           aria-label="Municipio"
         />
-        <button 
-          onClick={handleLocate} 
-          disabled={isPending || isLocating}
-          className="catalog-btn-locate-icon"
-          type="button"
-          title="A prop meu"
-          aria-label="A prop meu"
-        >
-          <span aria-hidden="true">{isLocating ? "⏳" : "📍"}</span>
-        </button>
-        <button type="submit" disabled={isPending || isLocating}>
-          Buscar
-        </button>
+        <div className="catalog-search-actions">
+          <button
+            onClick={handleLocate}
+            disabled={isPending || isLocating}
+            className="catalog-btn-locate-icon"
+            type="button"
+            title="A prop meu"
+            aria-label="A prop meu"
+          >
+            <span aria-hidden="true">{isLocating ? "…" : <LocateIcon />}</span>
+          </button>
+          <button
+            type="submit"
+            disabled={isPending || isLocating}
+            className="catalog-btn-search-icon"
+            title="Buscar"
+            aria-label="Buscar"
+          >
+            <SearchIcon />
+          </button>
+        </div>
       </form>
-      {errorMsg && <p className="catalog-error-msg" style={{ marginTop: '0.5rem' }}>{errorMsg}</p>}
+      {errorMsg && <p className="catalog-error-msg">{errorMsg}</p>}
     </div>
   );
 }

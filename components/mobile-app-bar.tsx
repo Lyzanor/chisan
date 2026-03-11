@@ -22,10 +22,17 @@ function CloseIcon() {
   );
 }
 
-function buildSearchHref(municipality: string, category: string): string {
+function buildSearchHref(
+  municipality: string,
+  category: string,
+  lat?: string,
+  lon?: string,
+): string {
   const params = new URLSearchParams();
   if (municipality) params.set("municipio", municipality);
   if (category) params.set("categoria", category);
+  if (lat) params.set("lat", lat);
+  if (lon) params.set("lon", lon);
   const q = params.toString();
   return q ? `/?${q}` : "/";
 }
@@ -34,9 +41,17 @@ type MobileAppBarProps = {
   categories: string[];
   currentCategory: string;
   municipality: string;
+  lat?: string;
+  lon?: string;
 };
 
-export function MobileAppBar({ categories, currentCategory, municipality }: MobileAppBarProps) {
+export function MobileAppBar({
+  categories,
+  currentCategory,
+  municipality,
+  lat,
+  lon,
+}: MobileAppBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -99,7 +114,7 @@ export function MobileAppBar({ categories, currentCategory, municipality }: Mobi
             <nav className="md-drawer__section" aria-label="Filtrar per categoria">
               <p className="md-drawer__section-title">Filtrar per categoria</p>
               <Link
-                href={buildSearchHref(municipality, "")}
+                href={buildSearchHref(municipality, "", lat, lon)}
                 className={`md-drawer__item ${!currentCategory ? "is-active" : ""}`}
                 onClick={() => setMenuOpen(false)}
               >
@@ -111,7 +126,7 @@ export function MobileAppBar({ categories, currentCategory, municipality }: Mobi
               {categories.map((cat) => (
                 <Link
                   key={cat}
-                  href={buildSearchHref(municipality, cat)}
+                  href={buildSearchHref(municipality, cat, lat, lon)}
                   className={`md-drawer__item ${currentCategory === cat ? "is-active" : ""}`}
                   onClick={() => setMenuOpen(false)}
                 >
