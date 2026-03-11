@@ -19,7 +19,20 @@ const producerPinIcon = L.divIcon({
   iconAnchor: [7, 7],
 });
 
-function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
+const producerPinHighlightedIcon = L.divIcon({
+  className: "producer-map-pin producer-map-pin--highlighted",
+  html: '<span class="producer-map-pin-dot producer-map-pin-dot--highlighted"></span>',
+  iconSize: [22, 22],
+  iconAnchor: [11, 11],
+});
+
+function BoundsAwareMarkers({
+  points,
+  highlightedId,
+}: {
+  points: ProducerMapPoint[];
+  highlightedId?: string;
+}) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
 
@@ -62,7 +75,7 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
         <Marker
           key={point.id}
           position={[point.latitude, point.longitude]}
-          icon={producerPinIcon}
+          icon={highlightedId && String(point.id) === highlightedId ? producerPinHighlightedIcon : producerPinIcon}
         >
           <Popup>
             <strong>{point.name}</strong>
@@ -77,7 +90,13 @@ function BoundsAwareMarkers({ points }: { points: ProducerMapPoint[] }) {
   );
 }
 
-export default function ProducersMapInner({ points }: { points: ProducerMapPoint[] }) {
+export default function ProducersMapInner({
+  points,
+  highlightedId,
+}: {
+  points: ProducerMapPoint[];
+  highlightedId?: string;
+}) {
   return (
     <MapContainer
       center={[41.42, 2.02]}
@@ -92,7 +111,7 @@ export default function ProducersMapInner({ points }: { points: ProducerMapPoint
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <BoundsAwareMarkers points={points} />
+      <BoundsAwareMarkers points={points} highlightedId={highlightedId} />
     </MapContainer>
   );
 }

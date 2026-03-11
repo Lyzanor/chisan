@@ -141,7 +141,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               <p>{mapPoints.length} amb coordenades</p>
             )}
           </div>
-          <ProducersMap points={mapPoints} />
+          <ProducersMap points={mapPoints} highlightedId={highlightedItem ? String(highlightedItem.id) : undefined} />
         </section>
 
         <p className="catalog-results-meta">
