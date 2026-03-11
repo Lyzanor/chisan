@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MobileAppBar } from "@/components/mobile-app-bar";
 import { ProducersMap } from "@/components/map/producers-map";
 import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
+import { getCategoryIcon } from "@/lib/get-category-icon";
 
 export const metadata: Metadata = {
   title: "Buscador de productores",
@@ -25,23 +26,6 @@ function readQuery(
     return (value[0] ?? "").trim();
   }
   return (value ?? "").trim();
-}
-
-function getCategoryIcon(value: string): string {
-  if (/vino|bodega/i.test(value)) return "🍷";
-  if (/ques/i.test(value)) return "🧀";
-  if (/pan|boll|horno|pastel/i.test(value)) return "🍞";
-  if (/miel/i.test(value)) return "🍯";
-  if (/cerve/i.test(value)) return "🍺";
-  if (/fruta/i.test(value)) return "🍎";
-  if (/verdura|hort|agric/i.test(value)) return "🥦";
-  if (/aceite|oliva/i.test(value)) return "🫒";
-  if (/charcut|carne|embut/i.test(value)) return "🥩";
-  if (/pescado|marisc/i.test(value)) return "🐟";
-  if (/cafe|té|te/i.test(value)) return "☕";
-  if (/huevo|ave|granja/i.test(value)) return "🥚";
-  if (/hierb/i.test(value)) return "🌿";
-  return "🧺";
 }
 
 function buildSearchHref(municipality: string, category: string): string {

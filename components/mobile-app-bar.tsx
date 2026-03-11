@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-/* Material-style outline icons (24x24) */
+import { getCategoryIcon } from "@/lib/get-category-icon";
+
+/* Material-style outline icons (24x24) para app bar y botón cerrar */
 function MenuIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="md-icon">
@@ -16,22 +18,6 @@ function CloseIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="md-icon">
       <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-    </svg>
-  );
-}
-
-function CategoryIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="md-icon md-icon--item">
-      <path fill="currentColor" d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.86L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7a2.5 2.5 0 010-5 2.5 2.5 0 010 5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z" />
-    </svg>
-  );
-}
-
-function TotsIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="md-icon md-icon--item">
-      <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
     </svg>
   );
 }
@@ -96,7 +82,9 @@ export function MobileAppBar({ categories, currentCategory, municipality }: Mobi
           >
             <div className="md-drawer__header">
               <div className="md-drawer__title-row">
-                <CategoryIcon />
+                <span className="md-drawer__title-emoji" aria-hidden="true">
+                  🧺
+                </span>
                 <h2 className="md-drawer__title">Categories</h2>
               </div>
               <button
@@ -115,8 +103,8 @@ export function MobileAppBar({ categories, currentCategory, municipality }: Mobi
                 className={`md-drawer__item ${!currentCategory ? "is-active" : ""}`}
                 onClick={() => setMenuOpen(false)}
               >
-                <span className="md-drawer__item-icon">
-                  <TotsIcon />
+                <span className="md-drawer__item-emoji" aria-hidden="true">
+                  🌍
                 </span>
                 Tots
               </Link>
@@ -127,8 +115,8 @@ export function MobileAppBar({ categories, currentCategory, municipality }: Mobi
                   className={`md-drawer__item ${currentCategory === cat ? "is-active" : ""}`}
                   onClick={() => setMenuOpen(false)}
                 >
-                  <span className="md-drawer__item-icon">
-                    <CategoryIcon />
+                  <span className="md-drawer__item-emoji" aria-hidden="true">
+                    {getCategoryIcon(cat)}
                   </span>
                   {cat}
                 </Link>
