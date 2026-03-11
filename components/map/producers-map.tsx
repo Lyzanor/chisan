@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 
+import type { CatalogNavigationContext } from "@/lib/catalog-navigation";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
@@ -13,9 +14,15 @@ type ProducersMapProps = {
   points: ProducerMapPoint[];
   highlightedId?: string;
   userLocation?: { lat: number; lon: number };
+  detailContext?: CatalogNavigationContext;
 };
 
-export function ProducersMap({ points, highlightedId, userLocation }: ProducersMapProps) {
+export function ProducersMap({
+  points,
+  highlightedId,
+  userLocation,
+  detailContext,
+}: ProducersMapProps) {
   if (!points.length) {
     return (
       <div className="map-placeholder">
@@ -26,7 +33,12 @@ export function ProducersMap({ points, highlightedId, userLocation }: ProducersM
 
   return (
     <div className="map-shell">
-      <ProducersMapInner points={points} highlightedId={highlightedId} userLocation={userLocation} />
+      <ProducersMapInner
+        points={points}
+        highlightedId={highlightedId}
+        userLocation={userLocation}
+        detailContext={detailContext}
+      />
     </div>
   );
 }
