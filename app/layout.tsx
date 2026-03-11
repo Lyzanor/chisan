@@ -1,20 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Roboto } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
 import { AndroidBackHandler } from "@/components/android-back-handler";
 
-const fraunces = Fraunces({
+const manrope = Manrope({
+  weight: ["400", "500", "700", "800"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-fraunces",
-});
-
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-roboto",
+  variable: "--font-sans",
 });
 
 export const viewport: Viewport = {
@@ -39,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${fraunces.variable} ${roboto.variable}`}>
+    <html lang="es" className={manrope.variable}>
       <body>
         <AndroidBackHandler />
         {children}

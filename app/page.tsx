@@ -69,14 +69,38 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <section className="catalog-shell">
         <section className="catalog-controls">
           <header className="catalog-hero">
-            <div className="catalog-title-row">
-              <span className="catalog-title-icon" aria-hidden="true">
-                🌱
-              </span>
-              <div>
-                <h1>Productors Locals</h1>
-                <p>Àrea Metropolitana de Barcelona</p>
+            <div className="catalog-hero-grid">
+              <div className="catalog-hero-copy">
+                <p className="catalog-eyebrow">KM0 Barcelona</p>
+                <div className="catalog-title-row">
+                  <span className="catalog-title-icon" aria-hidden="true">
+                    🌱
+                  </span>
+                  <div>
+                    <h1>Productors Locals</h1>
+                    <p>Àrea Metropolitana de Barcelona</p>
+                  </div>
+                </div>
+                <p className="catalog-lead">
+                  Un directorio local, claro y ligero para encontrar productores de proximidad por
+                  municipio y categoría.
+                </p>
+                <p className="catalog-sustainability-note">
+                  Diseño sobrio, menos peso visual y una interfaz más eficiente para consultar
+                  rápido y consumir menos recursos.
+                </p>
               </div>
+              <aside className="catalog-hero-panel" aria-label="Resumen del catálogo">
+                <div className="catalog-hero-panel-block">
+                  <span>Productores</span>
+                  <strong>{items.length}</strong>
+                  <p>Resultados directos desde el CSV, sin capas ni consultas extra.</p>
+                </div>
+                <div className="catalog-hero-panel-block">
+                  <span>Sitio más ligero</span>
+                  <p>Menos adorno visual, menos elementos en pantalla y una navegación más limpia.</p>
+                </div>
+              </aside>
             </div>
 
             <SearchForm
@@ -116,6 +140,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
         <section className="catalog-map-stage">
           <section className="catalog-map" aria-label="Mapa de productores">
+            <div className="catalog-map-head">
+              <h2>Mapa local</h2>
+              <p>Enfoque cercano, menos ruido y puntos visibles relevantes.</p>
+            </div>
             <ProducersMap
               points={mapPoints}
               highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
