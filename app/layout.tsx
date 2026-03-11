@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Roboto } from "next/font/google";
 import "./globals.css";
 
+import { AndroidBackHandler } from "@/components/android-back-handler";
+
 const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
@@ -38,7 +40,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${fraunces.variable} ${roboto.variable}`}>
-      <body>{children}</body>
+      <body>
+        <AndroidBackHandler />
+        {children}
+      </body>
     </html>
   );
 }
