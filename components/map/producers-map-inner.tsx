@@ -26,18 +26,32 @@ const producerPinHighlightedIcon = L.divIcon({
   iconAnchor: [11, 11],
 });
 
+const userPinIcon = L.divIcon({
+  className: "producer-map-pin user-map-pin",
+  html: '<span class="producer-map-pin-dot user-map-pin-dot"></span>',
+  iconSize: [18, 18],
+  iconAnchor: [9, 9],
+});
+
 function BoundsAwareMarkers({
   points,
   highlightedId,
+  userLocation,
 }: {
   points: ProducerMapPoint[];
   highlightedId?: string;
+  userLocation?: { lat: number; lon: number };
 }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
 
   // Fit map to all points whenever the point set changes
   useEffect(() => {
+    if (userLocation) {
+      map.setView([userLocation.lat, userLocation.lon], 11, { animate: false });
+      return;
+    }
+
     if (points.length === 0) return;
 
     if (points.length === 1) {
@@ -71,6 +85,17 @@ function BoundsAwareMarkers({
 
   return (
     <>
+      {userLocation && (
+        <Marker
+          position={[userLocation.lat, userLocation.lon]}
+          icon={userPinIcon}
+          zIndexOffset={1000}
+        >
+          <Popup>
+            <strong>Tu ubicación</strong>
+          </Popup>
+        </Marker>
+      )}
       {visible.map((point) => (
         <Marker
           key={point.id}
@@ -93,13 +118,15 @@ function BoundsAwareMarkers({
 export default function ProducersMapInner({
   points,
   highlightedId,
+  userLocation,
 }: {
   points: ProducerMapPoint[];
   highlightedId?: string;
+  userLocation?: { lat: number; lon: number };
 }) {
   return (
     <MapContainer
-      center={[41.42, 2.02]}
+      center={userLocation ? [userLocation.lat, userLocation.lon] : [41.42, 2.02]}
       zoom={10}
       maxBounds={[[40.5, 0.1], [42.9, 3.4]]}
       maxBoundsViscosity={0.9}
@@ -111,7 +138,7 @@ export default function ProducersMapInner({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <BoundsAwareMarkers points={points} highlightedId={highlightedId} />
+      <BoundsAwareMarkers points={points} highlightedId={highlightedId} userLocation={userLocation} />
     </MapContainer>
   );
 }

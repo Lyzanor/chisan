@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { findProducerById } from "@/lib/csv-catalog";
+import { getFieldLabel } from "@/lib/field-labels";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -86,19 +87,19 @@ export default async function ProducerPage({ params }: PageProps) {
         </header>
 
         <section className="detail-table-card">
-          <h2>Campos del CSV</h2>
+          <h2>Información</h2>
           <div className="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Campo</th>
+                  <th>Dato</th>
                   <th>Información</th>
                 </tr>
               </thead>
               <tbody>
                 {Object.entries(producer.fields).map(([key, value]) => (
                   <tr key={key}>
-                    <td>{key}</td>
+                    <td>{getFieldLabel(key)}</td>
                     <td>{value || "—"}</td>
                   </tr>
                 ))}

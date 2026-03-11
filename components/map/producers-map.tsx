@@ -12,9 +12,10 @@ const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
 type ProducersMapProps = {
   points: ProducerMapPoint[];
   highlightedId?: string;
+  userLocation?: { lat: number; lon: number };
 };
 
-export function ProducersMap({ points, highlightedId }: ProducersMapProps) {
+export function ProducersMap({ points, highlightedId, userLocation }: ProducersMapProps) {
   if (!points.length) {
     return (
       <div className="map-placeholder">
@@ -25,7 +26,7 @@ export function ProducersMap({ points, highlightedId }: ProducersMapProps) {
 
   return (
     <div className="map-shell">
-      <ProducersMapInner points={points} highlightedId={highlightedId} />
+      <ProducersMapInner points={points} highlightedId={highlightedId} userLocation={userLocation} />
     </div>
   );
 }

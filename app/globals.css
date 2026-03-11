@@ -419,6 +419,16 @@ a {
     0 2px 8px rgba(47, 122, 79, 0.35);
 }
 
+.user-map-pin-dot {
+  width: 16px;
+  height: 16px;
+  background: #3b82f6; /* Blue 500 */
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #1d4ed8, 0 2px 8px rgba(59, 130, 246, 0.6);
+  border-radius: var(--md-sys-shape-corner-full);
+  display: block;
+}
+
 .catalog-results-meta,
 .meta-line {
   margin: 0.8rem 0 0.5rem;
