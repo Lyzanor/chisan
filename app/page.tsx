@@ -21,6 +21,15 @@ type HomePageProps = {
 
 export const dynamic = "force-dynamic";
 
+function parseCoordinateParam(value: string): number | undefined {
+  if (!value) {
+    return undefined;
+  }
+
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? parsed : undefined;
+}
+
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
   const municipality = readQueryParam(queryParams, "municipio");
@@ -29,8 +38,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const latStr = readQueryParam(queryParams, "lat");
   const lonStr = readQueryParam(queryParams, "lon");
 
-  const lat = latStr ? Number.parseFloat(latStr) : undefined;
-  const lon = lonStr ? Number.parseFloat(lonStr) : undefined;
+  const lat = parseCoordinateParam(latStr);
+  const lon = parseCoordinateParam(lonStr);
 
   const [items, categories] = await Promise.all([
     searchProducers({ municipality, category, lat, lon }),

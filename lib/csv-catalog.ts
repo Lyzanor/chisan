@@ -1,6 +1,5 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { cache } from "react";
 
 import { parse } from "csv-parse/sync";
 
@@ -101,6 +100,13 @@ export type ProducerSearchFilters = {
   lon?: number;
 };
 
+function hasValidCoordinates(
+  lat: number | undefined,
+  lon: number | undefined,
+): boolean {
+  return Number.isFinite(lat) && Number.isFinite(lon);
+}
+
 // Haversine formula
 function calculateDistance(
   lat1: number,
@@ -121,7 +127,7 @@ function calculateDistance(
   return R * c;
 }
 
-const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
+async function loadCsvRows(): Promise<ProducerCsvRow[]> {
   const csvRaw = await readFile(CSV_PATH, "utf8");
   const parsedRows = parse(csvRaw, {
     columns: true,
@@ -145,7 +151,7 @@ const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
       fields,
     };
   });
-});
+}
 
 export async function findProducerById(rawId: string): Promise<ProducerCsvRow | null> {
   const id = Number.parseInt(rawId, 10);
@@ -209,14 +215,17 @@ export async function searchProducers(
     return byMunicipality && byCategory;
   });
 
-  if (filters.lat !== undefined && filters.lon !== undefined) {
+  if (hasValidCoordinates(filters.lat, filters.lon)) {
+    const userLat = filters.lat as number;
+    const userLon = filters.lon as number;
+
     results = results.map((row) => {
       if (row.latitude !== null && row.longitude !== null) {
         return {
           ...row,
           distanceKm: calculateDistance(
-            filters.lat!,
-            filters.lon!,
+            userLat,
+            userLon,
             row.latitude,
             row.longitude
           ),
