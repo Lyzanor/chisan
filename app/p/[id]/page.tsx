@@ -48,8 +48,13 @@ export default async function ProducerPage({ params }: PageProps) {
 
   return (
     <main className="detail-page">
-      <section className="detail-shell">
+      <div className="detail-mobile-bar">
         <Link href="/" className="detail-back-link">
+          ← Volver al buscador
+        </Link>
+      </div>
+      <section className="detail-shell">
+        <Link href="/" className="detail-back-link detail-back-link--desktop">
           ← Volver al buscador
         </Link>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { MobileAppBar } from "@/components/mobile-app-bar";
 import { ProducersMap } from "@/components/map/producers-map";
 import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
 
@@ -79,6 +80,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   return (
     <main className="catalog-page">
+      <MobileAppBar
+        categories={categories}
+        currentCategory={category}
+        municipality={municipality}
+      />
       <section className="catalog-shell">
         <header className="catalog-hero">
           <div className="catalog-title-row">
