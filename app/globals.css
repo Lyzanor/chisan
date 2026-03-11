@@ -1290,15 +1290,15 @@ tbody tr:hover {
   }
 
   .catalog-page {
-    padding-top: 0;
+    padding-top: calc(var(--md-app-bar-height) + var(--safe-top));
     width: 100%;
     min-height: 100dvh;
     margin: 0;
   }
 
   .catalog-shell {
-    position: relative;
-    min-height: 100dvh;
+    position: static;
+    min-height: auto;
     margin: 0;
     padding: 0;
     border: 0;
@@ -1308,12 +1308,9 @@ tbody tr:hover {
   }
 
   .catalog-controls {
-    position: fixed;
-    top: calc(var(--md-app-bar-height) + var(--safe-top));
-    left: 0;
-    right: 0;
+    position: static;
     gap: 8px;
-    z-index: 120;
+    z-index: auto;
   }
 
   .catalog-highlight-banner {
@@ -1406,19 +1403,22 @@ tbody tr:hover {
   }
 
   .catalog-map-stage {
-    position: fixed;
-    inset: calc(var(--md-app-bar-height) + var(--safe-top)) 0 0;
+    position: static;
+    inset: auto;
     margin-top: 0;
   }
 
   .catalog-map {
-    position: absolute;
-    inset: 0;
+    position: static;
+    inset: auto;
     margin: 0;
     padding: 0;
-    border: 0;
+    border-top: 2px solid var(--line);
+    border-right: 0;
+    border-bottom: 2px solid var(--line);
+    border-left: 0;
     border-radius: 0;
-    background: transparent;
+    background: #ffffff;
     box-shadow: none;
   }
 
@@ -1427,16 +1427,16 @@ tbody tr:hover {
   }
 
   .map-shell {
-    height: 100%;
+    height: auto;
     border: 0;
     border-radius: 0;
-    background: transparent;
+    background: #ffffff;
   }
 
   .map-placeholder,
   .producers-map-canvas {
-    height: 100%;
-    min-height: 100%;
+    height: min(42dvh, 360px);
+    min-height: 280px;
     border: 0;
     border-radius: 0;
   }
@@ -1446,36 +1446,35 @@ tbody tr:hover {
   }
 
   .catalog-sheet {
-    position: absolute;
-    inset: 0;
-    z-index: 30;
-    display: flex;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.96);
-    border-top: 2px solid var(--line);
+    position: static;
+    inset: auto;
+    z-index: auto;
+    display: block;
+    background: transparent;
+    border-top: 0;
     border-radius: 0;
     box-shadow: none;
-    overflow: hidden;
-    transform: translateY(40%);
-    transition: transform var(--md-sys-motion-duration-medium2) ease;
+    overflow: visible;
+    transform: none;
+    transition: none;
   }
 
   .catalog-sheet[data-sheet-state="peek"] {
-    transform: translateY(68%);
+    transform: none;
   }
 
   .catalog-sheet[data-sheet-state="half"] {
-    transform: translateY(40%);
+    transform: none;
   }
 
   .catalog-sheet[data-sheet-state="full"] {
-    transform: translateY(6%);
+    transform: none;
   }
 
   .catalog-sheet__header {
-    display: block;
-    padding: 10px 16px 0;
-    border-bottom: 2px solid var(--line);
+    display: none;
+    padding: 0;
+    border-bottom: 0;
   }
 
   .catalog-sheet__handle {
@@ -1515,10 +1514,10 @@ tbody tr:hover {
   }
 
   .catalog-sheet__body {
-    flex: 1;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    -webkit-overflow-scrolling: touch;
+    flex: initial;
+    overflow: visible;
+    overscroll-behavior-y: auto;
+    -webkit-overflow-scrolling: auto;
     padding: 12px 16px calc(24px + var(--safe-bottom));
   }
 
