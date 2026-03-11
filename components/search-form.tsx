@@ -86,23 +86,21 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
           placeholder="Cerca per municipi"
           aria-label="Municipio"
         />
+        <button 
+          onClick={handleLocate} 
+          disabled={isPending || isLocating}
+          className="catalog-btn-locate-icon"
+          type="button"
+          title="A prop meu"
+          aria-label="A prop meu"
+        >
+          <span aria-hidden="true">{isLocating ? "⏳" : "📍"}</span>
+        </button>
         <button type="submit" disabled={isPending || isLocating}>
           Buscar
         </button>
       </form>
-
-      <div className="catalog-actions">
-        <button 
-          onClick={handleLocate} 
-          disabled={isPending || isLocating}
-          className="catalog-btn-locate"
-          type="button"
-        >
-          <span aria-hidden="true">📍</span>
-          {isLocating ? "Obteniendo ubicación..." : "A prop meu"}
-        </button>
-        {errorMsg && <p className="catalog-error-msg">{errorMsg}</p>}
-      </div>
+      {errorMsg && <p className="catalog-error-msg" style={{ marginTop: '0.5rem' }}>{errorMsg}</p>}
     </div>
   );
 }

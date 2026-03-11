@@ -53,10 +53,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const lat = latStr ? Number.parseFloat(latStr) : undefined;
   const lon = lonStr ? Number.parseFloat(lonStr) : undefined;
 
-  const [items, categories, allRows] = await Promise.all([
+  const [items, categories] = await Promise.all([
     searchProducers({ municipality, category, lat, lon }),
     listCategories(),
-    searchProducers({ municipality: "", category: "" }),
   ]);
 
   const visibleItems = items.slice(0, 500);
@@ -87,11 +86,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             </div>
           </div>
 
-          <div className="catalog-stats" aria-label="Resumen de resultados">
-            <p>{items.length} productors trobats</p>
-            <p>{allRows.length} en total</p>
-          </div>
-
           <SearchForm
             initialMunicipality={municipality}
             initialCategory={category}
@@ -119,16 +113,13 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         </nav>
 
         <section className="catalog-map" aria-label="Mapa de productores">
-          <div className="catalog-map-head">
-            <h2>Mapa de productors</h2>
-            {highlightedItem ? (
+          {highlightedItem && (
+            <div className="catalog-map-head">
               <Link href={buildSearchHref(municipality, category)} className="catalog-chip is-active">
                 ✕ {highlightedItem.name} — Ver todos
               </Link>
-            ) : (
-              <p>{mapPoints.length} amb coordenades</p>
-            )}
-          </div>
+            </div>
+          )}
           <ProducersMap
             points={mapPoints}
             highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
