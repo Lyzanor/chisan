@@ -67,7 +67,7 @@ function BoundsAwareMarkers({
       map.setView([41.42, 2.02], 10, { animate: false });
     }
 
-  }, [map, points]);
+  }, [map, points, userLocation]);
 
   // moveend fires after every pan and after every zoom (Leaflet always fires
   // moveend at the end of a zoom sequence), so zoomend is redundant here.

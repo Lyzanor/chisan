@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { findProducerById } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
+import { ExternalLink } from "@/components/external-link";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -68,20 +69,20 @@ export default async function ProducerPage({ params }: PageProps) {
           </p>
           <div className="detail-links">
             {website ? (
-              <a href={website} target="_blank" rel="noreferrer">
+              <ExternalLink href={website}>
                 Web
-              </a>
+              </ExternalLink>
             ) : null}
             {maps ? (
-              <a href={maps} target="_blank" rel="noreferrer">
+              <ExternalLink href={maps}>
                 Google Maps
-              </a>
+              </ExternalLink>
             ) : null}
             {email ? <a href={`mailto:${email}`}>Correo</a> : null}
             {instagram ? (
-              <a href={instagram} target="_blank" rel="noreferrer">
+              <ExternalLink href={instagram}>
                 Instagram
-              </a>
+              </ExternalLink>
             ) : null}
           </div>
         </header>
