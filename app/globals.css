@@ -246,6 +246,55 @@ a {
   background: color-mix(in srgb, var(--md-sys-color-primary) 80%, black 20%);
 }
 
+.catalog-search button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.catalog-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.catalog-btn-locate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface);
+  border-radius: var(--md-sys-shape-corner-full);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--md-sys-motion-duration-short2) ease;
+  align-self: flex-start;
+}
+
+.catalog-btn-locate:hover:not(:disabled) {
+  background: var(--md-sys-color-surface-container-highest);
+  border-color: var(--md-sys-color-outline);
+}
+
+.catalog-btn-locate:active:not(:disabled) {
+  background: var(--md-sys-color-surface-container);
+}
+
+.catalog-btn-locate:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.catalog-error-msg {
+  margin: 0;
+  color: #b3261e;
+  font-size: 0.8rem;
+}
+
 .catalog-categories {
   margin-top: 0.85rem;
   display: flex;
@@ -461,6 +510,13 @@ a {
   background: var(--md-sys-color-surface-container-high);
   border-color: var(--md-sys-color-outline-variant);
   color: var(--md-sys-color-on-surface-variant);
+}
+
+.producer-badge.is-distance {
+  background: #fdf2f8;
+  border-color: #fce7f3;
+  color: #9d174d;
+  font-weight: 600;
 }
 
 .producer-location,

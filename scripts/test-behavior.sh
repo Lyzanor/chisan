@@ -90,7 +90,7 @@ DETAIL_OK=0
 for _ in {1..20}; do
   HTML_DETAIL="$(curl -fsS "$BASE_URL/p/1")"
   HTML_DETAIL_CLEAN="$(printf '%s' "$HTML_DETAIL" | sed 's/<!-- -->//g')"
-  if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Fila 1 del CSV"* ]]; then
+  if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Campos del CSV"* ]]; then
     DETAIL_OK=1
     break
   fi

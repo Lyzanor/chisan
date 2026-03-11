@@ -14,6 +14,7 @@ export type ProducerCsvRow = {
   subcategory: string;
   latitude: number | null;
   longitude: number | null;
+  distanceKm?: number;
   fields: Record<string, string>;
 };
 
@@ -96,7 +97,29 @@ function readLongitude(fields: Record<string, string>): number | null {
 export type ProducerSearchFilters = {
   municipality: string;
   category: string;
+  lat?: number;
+  lon?: number;
 };
+
+// Haversine formula
+function calculateDistance(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+): number {
+  const R = 6371; // Earth radius in km
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
 
 const loadCsvRows = cache(async (): Promise<ProducerCsvRow[]> => {
   const csvRaw = await readFile(CSV_PATH, "utf8");
@@ -175,7 +198,7 @@ export async function searchProducers(
   const normalizedMunicipality = normalizeSearch(filters.municipality);
   const normalizedCategory = normalizeSearch(filters.category);
 
-  return rows.filter((row) => {
+  let results = rows.filter((row) => {
     const byMunicipality =
       !normalizedMunicipality ||
       normalizeSearch(row.city).includes(normalizedMunicipality);
@@ -185,4 +208,31 @@ export async function searchProducers(
 
     return byMunicipality && byCategory;
   });
+
+  if (filters.lat !== undefined && filters.lon !== undefined) {
+    results = results.map((row) => {
+      if (row.latitude !== null && row.longitude !== null) {
+        return {
+          ...row,
+          distanceKm: calculateDistance(
+            filters.lat!,
+            filters.lon!,
+            row.latitude,
+            row.longitude
+          ),
+        };
+      }
+      return row;
+    });
+
+    results.sort((a, b) => {
+      // Items without coordinates go to the bottom when sorting by distance
+      if (a.distanceKm === undefined && b.distanceKm === undefined) return 0;
+      if (a.distanceKm === undefined) return 1;
+      if (b.distanceKm === undefined) return -1;
+      return a.distanceKm - b.distanceKm;
+    });
+  }
+
+  return results;
 }

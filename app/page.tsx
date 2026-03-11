@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MobileAppBar } from "@/components/mobile-app-bar";
 import { ProducersMap } from "@/components/map/producers-map";
+import { SearchForm } from "@/components/search-form";
 import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
 import { getCategoryIcon } from "@/lib/get-category-icon";
 
@@ -46,9 +47,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const municipality = readQuery(queryParams, "municipio");
   const category = readQuery(queryParams, "categoria");
   const highlight = readQuery(queryParams, "destacar");
+  const latStr = readQuery(queryParams, "lat");
+  const lonStr = readQuery(queryParams, "lon");
+
+  const lat = latStr ? Number.parseFloat(latStr) : undefined;
+  const lon = lonStr ? Number.parseFloat(lonStr) : undefined;
 
   const [items, categories, allRows] = await Promise.all([
-    searchProducers({ municipality, category }),
+    searchProducers({ municipality, category, lat, lon }),
     listCategories(),
     searchProducers({ municipality: "", category: "" }),
   ]);
@@ -86,18 +92,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             <p>{allRows.length} en total</p>
           </div>
 
-          <form method="get" className="catalog-search" role="search">
-            <input type="hidden" name="categoria" value={category} />
-            <span aria-hidden="true">🔎</span>
-            <input
-              type="search"
-              name="municipio"
-              defaultValue={municipality}
-              placeholder="Cerca per municipi"
-              aria-label="Municipio"
-            />
-            <button type="submit">Buscar</button>
-          </form>
+          <SearchForm
+            initialMunicipality={municipality}
+            initialCategory={category}
+          />
         </header>
 
         <nav className="catalog-categories" aria-label="Categorías">
@@ -161,6 +159,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                       <span className="producer-badge">{getCategoryIcon(item.category)} {item.category}</span>
                       {item.subcategory ? (
                         <span className="producer-badge is-sub">{item.subcategory}</span>
+                      ) : null}
+                      {item.distanceKm !== undefined ? (
+                        <span className="producer-badge is-distance" aria-label="Distancia">
+                          📍 {item.distanceKm < 1 ? "< 1 km" : `${Math.round(item.distanceKm)} km`}
+                        </span>
                       ) : null}
                     </div>
                     <p className="producer-location">{item.city}</p>
