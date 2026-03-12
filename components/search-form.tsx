@@ -8,28 +8,6 @@ type SearchFormProps = {
   initialCategory: string;
 };
 
-function SearchIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M15.5 14h-.79l-.28-.27a6 6 0 1 0-.71.71l.27.28v.79L20 20.5 21.5 19l-6-5zm-5.5 0A4.5 4.5 0 1 1 10 5a4.5 4.5 0 0 1 0 9z"
-      />
-    </svg>
-  );
-}
-
-function LocateIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm8.94 3A9 9 0 0 0 13 3.06V1h-2v2.06A9 9 0 0 0 3.06 11H1v2h2.06A9 9 0 0 0 11 20.94V23h2v-2.06A9 9 0 0 0 20.94 13H23v-2zM12 19a7 7 0 1 1 7-7 7 7 0 0 1-7 7z"
-      />
-    </svg>
-  );
-}
-
 export function SearchForm({ initialMunicipality, initialCategory }: SearchFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -74,8 +52,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
         const params = new URLSearchParams(searchParams);
         params.set("lat", latitude.toString());
         params.set("lon", longitude.toString());
-        
-        // Clear text search if using GPS
+
         params.delete("municipio");
 
         startTransition(() => {
@@ -104,7 +81,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
           type="search"
           name="municipio"
           defaultValue={initialMunicipality}
-          placeholder="Cerca per municipi"
+          placeholder="Municipio"
           aria-label="Municipio"
         />
         <div className="catalog-search-actions">
@@ -113,10 +90,10 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
             disabled={isPending || isLocating}
             className="catalog-btn-locate-icon"
             type="button"
-            title="A prop meu"
-            aria-label="A prop meu"
+            title="Usar ubicación"
+            aria-label="Usar ubicación"
           >
-            <span aria-hidden="true">{isLocating ? "…" : <LocateIcon />}</span>
+            {isLocating ? "Buscando..." : "Ubicación"}
           </button>
           <button
             type="submit"
@@ -125,7 +102,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
             title="Buscar"
             aria-label="Buscar"
           >
-            <SearchIcon />
+            {isPending ? "Buscando..." : "Buscar"}
           </button>
         </div>
       </form>

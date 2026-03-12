@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { findProducerById } from "@/lib/csv-catalog";
-import { getFieldLabel } from "@/lib/field-labels";
-import { getCategoryIcon } from "@/lib/get-category-icon";
 import { ExternalLink } from "@/components/external-link";
 import { ViewTransitionLink } from "@/components/view-transition-link";
 import { buildCatalogHref, readQueryParam } from "@/lib/catalog-navigation";
+import { findProducerById } from "@/lib/csv-catalog";
+import { getFieldLabel } from "@/lib/field-labels";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -66,55 +65,23 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
 
   return (
     <main className="detail-page">
-      <div className="detail-mobile-bar">
+      <section className="detail-shell">
         <ViewTransitionLink href={backHref} className="detail-back-link">
           ← Volver al buscador
         </ViewTransitionLink>
-      </div>
-      <section className="detail-shell">
-        <ViewTransitionLink href={backHref} className="detail-back-link detail-back-link--desktop">
-          ← Volver al buscador
-        </ViewTransitionLink>
 
-        <header className="detail-hero">
-          <div className="detail-hero-top">
-            <div
-              className="detail-hero-mark"
-              aria-hidden="true"
-              style={{ viewTransitionName: `producer-mark-${producer.id}` }}
-            >
-              {getCategoryIcon(producer.category)}
-            </div>
-            <p className="detail-eyebrow">Ficha de productor</p>
-          </div>
+        <header className="detail-header">
+          <p className="detail-kicker">Ficha de productor</p>
           <h1 style={{ viewTransitionName: `producer-name-${producer.id}` }}>{producer.name}</h1>
-          <div className="detail-meta" aria-label="Resumen del productor">
-            <span className="detail-meta-pill">📍 {producer.city}</span>
-            <span className="detail-meta-pill">{producer.category}</span>
-            {producer.subcategory ? (
-              <span className="detail-meta-pill is-subtle">{producer.subcategory}</span>
-            ) : null}
-          </div>
-          <p className="detail-subtitle">
-            Consulta la información completa del CSV y abre sus enlaces principales.
+          <p className="detail-meta" aria-label="Resumen del productor">
+            {producer.city} · {producer.category}
+            {producer.subcategory ? ` · ${producer.subcategory}` : ""}
           </p>
-          <div className="detail-links">
-            {website ? (
-              <ExternalLink href={website}>
-                Web
-              </ExternalLink>
-            ) : null}
-            {maps ? (
-              <ExternalLink href={maps}>
-                Google Maps
-              </ExternalLink>
-            ) : null}
+          <div className="detail-links" aria-label="Enlaces del productor">
+            {website ? <ExternalLink href={website}>Web</ExternalLink> : null}
+            {maps ? <ExternalLink href={maps}>Google Maps</ExternalLink> : null}
             {email ? <a href={`mailto:${email}`}>Correo</a> : null}
-            {instagram ? (
-              <ExternalLink href={instagram}>
-                Instagram
-              </ExternalLink>
-            ) : null}
+            {instagram ? <ExternalLink href={instagram}>Instagram</ExternalLink> : null}
           </div>
         </header>
 
