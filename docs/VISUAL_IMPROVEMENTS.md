@@ -75,7 +75,7 @@ Resumen de la interfaz actual y propuestas concretas, ordenadas por impacto y es
 
 ---
 
-## 5. Página de detalle (/p/[id])
+## 5. Página de detalle (/p/[id]-[slug])
 
 **Estado:** Enlace “Volver”, hero con nombre y enlaces, tabla de campos CSV.
 

@@ -6,7 +6,7 @@
 ```bash
 npx pnpm verify:ai
 ```
-3. Check `/` and `/p/[id]` manually.
+3. Check `/` and `/p/[id]-[slug]` manually.
 
 ## 2) Change search behavior
 1. Edit filter logic in `lib/csv-catalog.ts`.

@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { ExternalLink } from "@/components/external-link";
 import { ViewTransitionLink } from "@/components/view-transition-link";
-import { buildCatalogHref, readQueryParam } from "@/lib/catalog-navigation";
+import {
+  buildCatalogHref,
+  buildProducerHref,
+  buildProducerPathSegment,
+  readQueryParam,
+} from "@/lib/catalog-navigation";
 import { findProducerById } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
 
@@ -34,6 +39,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: producer.name,
     description: `${producer.city} · ${producer.category}`,
+    alternates: {
+      canonical: `/p/${buildProducerPathSegment(producer.id, producer.slug)}`,
+    },
   };
 }
 
@@ -48,8 +56,20 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
 
   const municipality = readQueryParam(queryParams, "municipio");
   const category = readQueryParam(queryParams, "categoria");
+  const highlight = readQueryParam(queryParams, "destacar");
   const lat = readQueryParam(queryParams, "lat");
   const lon = readQueryParam(queryParams, "lon");
+  const canonicalSegment = buildProducerPathSegment(producer.id, producer.slug);
+
+  if (id !== canonicalSegment) {
+    redirect(
+      buildProducerHref(
+        { id: producer.id, slug: producer.slug },
+        { municipality, category, highlight, lat, lon },
+      ),
+    );
+  }
+
   const backHref = buildCatalogHref({
     municipality,
     category,

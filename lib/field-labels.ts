@@ -4,6 +4,7 @@
  */
 
 const LABELS: Record<string, string> = {
+  slug: "Slug",
   nombre: "Nombre",
   municipio: "Municipio",
   categoria: "Categoría",
@@ -19,7 +20,7 @@ const LABELS: Record<string, string> = {
   "google maps": "Google Maps",
   lat: "Latitud",
   lon: "Longitud",
-  revisado: "Revisado",
+  fecha_revision: "Fecha de revisión",
 };
 
 function normalizeKey(key: string): string {

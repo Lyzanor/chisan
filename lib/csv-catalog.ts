@@ -7,6 +7,7 @@ type RawCsvRow = Record<string, string | undefined>;
 
 export type ProducerCsvRow = {
   id: number;
+  slug: string;
   name: string;
   city: string;
   category: string;
@@ -19,6 +20,7 @@ export type ProducerCsvRow = {
 
 export type ProducerMapPoint = {
   id: number;
+  slug: string;
   name: string;
   city: string;
   category: string;
@@ -40,6 +42,25 @@ function normalizeSearch(value: string): string {
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function slugifySegment(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-+/g, "-");
+}
+
+function buildDefaultSlug(name: string, city: string, id: number): string {
+  const baseSlug = slugifySegment([name, city].filter(Boolean).join(" "));
+  return baseSlug || `productor-${id}`;
+}
+
+function readSlug(fields: Record<string, string>, name: string, city: string, id: number): string {
+  return slugifySegment(fields.slug || "") || buildDefaultSlug(name, city, id);
 }
 
 function normalizeFieldKey(value: string): string {
@@ -139,13 +160,22 @@ async function loadCsvRows(): Promise<ProducerCsvRow[]> {
     const fields = Object.fromEntries(
       Object.entries(row).map(([key, value]) => [cleanCell(key), cleanCell(value)]),
     );
+    const id = index + 1;
+    const name = fields.nombre || `Fila ${id}`;
+    const city = fields.municipio || "Sin municipio";
+    const category = fields.categoria || "Sin categoría";
+    const subcategory = fields.subcategoria || "";
+    const slug = readSlug(fields, name, city, id);
+
+    fields.slug = slug;
 
     return {
-      id: index + 1,
-      name: fields.nombre || `Fila ${index + 1}`,
-      city: fields.municipio || "Sin municipio",
-      category: fields.categoria || "Sin categoría",
-      subcategory: fields.subcategoria || "",
+      id,
+      slug,
+      name,
+      city,
+      category,
+      subcategory,
       latitude: readLatitude(fields),
       longitude: readLongitude(fields),
       fields,
@@ -153,9 +183,20 @@ async function loadCsvRows(): Promise<ProducerCsvRow[]> {
   });
 }
 
-export async function findProducerById(rawId: string): Promise<ProducerCsvRow | null> {
-  const id = Number.parseInt(rawId, 10);
+function parseProducerId(rawId: string): number | null {
+  const [candidate] = rawId.split("-", 1);
+  const id = Number.parseInt(candidate ?? "", 10);
+
   if (!Number.isInteger(id) || id < 1) {
+    return null;
+  }
+
+  return id;
+}
+
+export async function findProducerById(rawId: string): Promise<ProducerCsvRow | null> {
+  const id = parseProducerId(rawId);
+  if (id === null) {
     return null;
   }
 
@@ -187,6 +228,7 @@ export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] 
     return [
       {
         id: row.id,
+        slug: row.slug,
         name: row.name,
         city: row.city,
         category: row.category,

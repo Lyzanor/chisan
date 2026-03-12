@@ -11,7 +11,7 @@ flowchart TD
   C --> D["Result list"]
   C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]
-  D --> G["app/p/[id]/page.tsx"]
+  D --> G["app/p/[id]/page.tsx -> /p/[id]-[slug]"]
   G --> H["Row detail (field/value table)"]
 ```
 
@@ -23,7 +23,7 @@ flowchart TD
   - Exposes:
     - `searchProducers({ municipality, category })`
     - `listCategories()`
-    - `findProducerById(id)`
+    - `findProducerById(id|id-slug)`
     - `toProducerMapPoints(rows)`
 - `app/page.tsx`
   - Reads URL params `municipio` and `categoria`.
@@ -32,6 +32,7 @@ flowchart TD
   - Lists matching producers.
 - `app/p/[id]/page.tsx`
   - Resolves one row by index.
+  - Redirects legacy `/p/[id]` URLs to canonical `/p/[id]-[slug]`.
   - Renders all CSV columns and values.
 
 ## Design rules

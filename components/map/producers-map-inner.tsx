@@ -222,10 +222,13 @@ function BoundsAwareMarkers({
             {point.city} · {point.category}
             <br />
             <ViewTransitionLink
-              href={buildProducerHref(point.id, {
+              href={buildProducerHref(
+                { id: point.id, slug: point.slug },
+                {
                 ...detailContext,
                 highlight: point.id,
-              })}
+                },
+              )}
             >
               Ver ficha
             </ViewTransitionLink>

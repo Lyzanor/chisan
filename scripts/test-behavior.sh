@@ -23,11 +23,12 @@ if (!rows.length) {
 
 const first = rows[0];
 const payload = {
+  slug: (first.slug || "").trim(),
   name: (first.nombre || "").trim(),
   municipality: (first.municipio || "").trim(),
   category: (first.categoria || "").trim(),
 };
-if (!payload.name || !payload.municipality || !payload.category) {
+if (!payload.slug || !payload.name || !payload.municipality || !payload.category) {
   console.error("First CSV row is missing required fields for test fixture.");
   process.exit(1);
 }
@@ -57,6 +58,7 @@ cleanup() {
 trap cleanup EXIT
 
 FIXTURE_JSON="$(extract_sample)"
+SLUG="$(node -p "JSON.parse(process.argv[1]).slug" "$FIXTURE_JSON")"
 NAME="$(node -p "JSON.parse(process.argv[1]).name" "$FIXTURE_JSON")"
 MUNICIPALITY="$(node -p "JSON.parse(process.argv[1]).municipality" "$FIXTURE_JSON")"
 CATEGORY="$(node -p "JSON.parse(process.argv[1]).category" "$FIXTURE_JSON")"
@@ -86,9 +88,15 @@ if [[ "$HTML_NO_MATCH_CLEAN" != *"0 resultados"* ]]; then
   exit 1
 fi
 
+REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1")"
+if [[ "$REDIRECT_URL" != "$BASE_URL/p/1-$SLUG" ]]; then
+  echo "Error: expected /p/1 to redirect to /p/1-$SLUG, got '$REDIRECT_URL'." >&2
+  exit 1
+fi
+
 DETAIL_OK=0
 for _ in {1..20}; do
-  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/1")"
+  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/1-$SLUG")"
   HTML_DETAIL_CLEAN="$(printf '%s' "$HTML_DETAIL" | sed 's/<!-- -->//g')"
   if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Información"* ]]; then
     DETAIL_OK=1
@@ -98,7 +106,7 @@ for _ in {1..20}; do
 done
 
 if [[ "$DETAIL_OK" -ne 1 ]]; then
-  echo "Error: detail page /p/1 does not render expected content." >&2
+  echo "Error: detail page /p/1-$SLUG does not render expected content." >&2
   exit 1
 fi
 

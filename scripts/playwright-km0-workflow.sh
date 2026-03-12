@@ -111,7 +111,7 @@ printf '%s\n' "$profile_url_output" > "$ARTIFACT_DIR/profile-url.log"
 profile_url=$(printf '%s\n' "$profile_url_output" | extract_first_url)
 
 if [[ -z "$profile_url" || "$profile_url" != *"/p/"* ]]; then
-  echo "Error: Expected to navigate to /p/[id], got: $profile_url_output" >&2
+  echo "Error: Expected to navigate to a producer detail URL under /p/, got: $profile_url_output" >&2
   exit 1
 fi
 

@@ -156,13 +156,16 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                         Mapa
                       </Link>
                       <ViewTransitionLink
-                        href={buildProducerHref(item.id, {
+                        href={buildProducerHref(
+                          { id: item.id, slug: item.slug },
+                          {
                           municipality,
                           category,
                           highlight: item.id,
                           lat: latStr,
                           lon: lonStr,
-                        })}
+                          },
+                        )}
                         className="producer-inline-link is-primary"
                       >
                         Ficha

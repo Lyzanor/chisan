@@ -2,7 +2,7 @@
 
 ## Project in 2 lines
 - This app is a CSV viewer for `Km0-productores.csv`.
-- Users search producers on `/` and open one row in `/p/[id]`.
+- Users search producers on `/` and open one row in `/p/[id]-[slug]`.
 
 ## Scope (what this project does)
 - Reads the CSV from disk at request time.
@@ -16,7 +16,7 @@
 
 ## Core files
 - `app/page.tsx`: search UI, map and result list.
-- `app/p/[id]/page.tsx`: producer detail page.
+- `app/p/[id]/page.tsx`: producer detail page with canonical URL `/p/[id]-[slug]`.
 - `lib/csv-catalog.ts`: CSV read, normalization, filters, map points.
 - `components/map/`: Leaflet map (SSR-safe, dynamic import).
 - `Km0-productores.csv`: source of truth.
@@ -26,7 +26,8 @@
 - Keep URL filter params stable:
   - `municipio`
   - `categoria`
-- Keep `/p/[id]` 1-based (id `1` = first CSV row after header).
+- Keep the route `id` 1-based (id `1` = first CSV row after header).
+- Canonical producer URL format: `/p/[id]-[slug]`.
 
 ## Safe change policy
 - Prefer editing existing files over adding new layers.
