@@ -29,6 +29,48 @@ export type ProducerMapPoint = {
 };
 
 const CSV_PATH = path.resolve(process.cwd(), "Km0-productores.csv");
+const MAP_ADDRESS_FIELD_KEYS = ["direccion", "direccio", "address", "domicilio"] as const;
+const MAP_ADDRESS_HINT_KEYWORDS = [
+  "avinguda",
+  "avenida",
+  "avda",
+  "cami",
+  "calle",
+  "carrer",
+  "carretera",
+  "ctra",
+  "disseminat",
+  "finca",
+  "hostal",
+  "lonja",
+  "masia",
+  "mercabarna",
+  "paratge",
+  "passatge",
+  "passeig",
+  "placa",
+  "plaza",
+  "poligon",
+  "ronda",
+  "travessera",
+  "urbanizacion",
+  "urbanitzacio",
+] as const;
+const MAP_ADDRESS_PLACEHOLDER_MARKERS = [
+  "adreca no publica",
+  "contacte",
+  "contacto",
+  "distribucion",
+  "distribucio",
+  "nomada",
+  "no publica",
+  "servei a domicili",
+  "servicio por encargo",
+  "sin local fijo",
+  "sin local abierto al publico",
+  "venta ambulante",
+  "venta online",
+] as const;
 
 function cleanCell(value: string | undefined): string {
   return (value ?? "").replace(/\s+/g, " ").trim();
@@ -94,6 +136,10 @@ function parseCoordinate(rawValue: string): number | null {
   const normalized = rawValue.trim().replace(",", ".");
   const value = Number.parseFloat(normalized);
   return Number.isFinite(value) ? value : null;
+}
+
+function readAddress(fields: Record<string, string>): string {
+  return findFieldValue(fields, MAP_ADDRESS_FIELD_KEYS);
 }
 
 function readLatitude(fields: Record<string, string>): number | null {
@@ -219,9 +265,56 @@ export async function listCategories(): Promise<string[]> {
     .map(([value]) => value);
 }
 
+export function hasProducerMapPoint(
+  row: ProducerCsvRow,
+): row is ProducerCsvRow & { latitude: number; longitude: number } {
+  if (row.latitude === null || row.longitude === null) {
+    return false;
+  }
+
+  const rawAddress = readAddress(row.fields);
+  const normalizedAddress = normalizeSearch(rawAddress);
+
+  if (!normalizedAddress) {
+    return false;
+  }
+
+  const comparableValues = [
+    row.city,
+    row.category,
+    row.subcategory,
+    row.name,
+  ]
+    .map(normalizeSearch)
+    .filter(Boolean);
+
+  if (comparableValues.includes(normalizedAddress)) {
+    return false;
+  }
+
+  if (/@/.test(rawAddress)) {
+    return false;
+  }
+
+  if (/\d/.test(rawAddress) || /[,;/]/.test(rawAddress)) {
+    return true;
+  }
+
+  if (MAP_ADDRESS_HINT_KEYWORDS.some((keyword) => normalizedAddress.includes(keyword))) {
+    return true;
+  }
+
+  if (MAP_ADDRESS_PLACEHOLDER_MARKERS.some((marker) => normalizedAddress.includes(marker))) {
+    return false;
+  }
+
+  const tokenCount = normalizedAddress.split(" ").filter(Boolean).length;
+  return tokenCount >= 3 && normalizedAddress.length >= 18;
+}
+
 export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] {
   return rows.flatMap((row) => {
-    if (row.latitude === null || row.longitude === null) {
+    if (!hasProducerMapPoint(row)) {
       return [];
     }
 

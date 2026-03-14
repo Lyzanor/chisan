@@ -5,7 +5,12 @@ import { ProducersMap } from "@/components/map/producers-map";
 import { SearchForm } from "@/components/search-form";
 import { ViewTransitionLink } from "@/components/view-transition-link";
 import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
-import { listCategories, searchProducers, toProducerMapPoints } from "@/lib/csv-catalog";
+import {
+  hasProducerMapPoint,
+  listCategories,
+  searchProducers,
+  toProducerMapPoints,
+} from "@/lib/csv-catalog";
 
 export const metadata: Metadata = {
   title: "Buscador de productores",
@@ -49,8 +54,12 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const highlightedItem = highlight
     ? items.find((i) => String(i.id) === highlight)
     : undefined;
-  const mapPoints = highlightedItem
-    ? toProducerMapPoints([highlightedItem])
+  const highlightedMapItem =
+    highlightedItem && hasProducerMapPoint(highlightedItem)
+      ? highlightedItem
+      : undefined;
+  const mapPoints = highlightedMapItem
+    ? toProducerMapPoints([highlightedMapItem])
     : toProducerMapPoints(items);
   const resetHref = buildCatalogHref({ municipality, category, lat: latStr, lon: lonStr });
 
@@ -114,66 +123,72 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
           {visibleItems.length > 0 ? (
             <ul className="producer-list">
-              {visibleItems.map((item) => (
-                <li key={item.id}>
-                  <article className="producer-card">
-                    <div className="producer-main">
-                      <Link
-                        href={buildCatalogHref({
-                          municipality,
-                          category,
-                          highlight: item.id,
-                          lat: latStr,
-                          lon: lonStr,
-                        })}
-                        className="producer-name"
-                        scroll={false}
-                        style={{ viewTransitionName: `producer-name-${item.id}` }}
-                      >
-                        {item.name}
-                      </Link>
-                      <p className="producer-meta">
-                        {item.city} · {item.category}
-                        {item.subcategory ? ` · ${item.subcategory}` : ""}
-                        {item.distanceKm !== undefined
-                          ? ` · ${item.distanceKm < 1 ? "< 1 km" : `${Math.round(item.distanceKm)} km`}`
-                          : ""}
-                      </p>
-                    </div>
+              {visibleItems.map((item) => {
+                const canShowOnMap = hasProducerMapPoint(item);
 
-                    <div className="producer-actions">
-                      <Link
-                        href={buildCatalogHref({
-                          municipality,
-                          category,
-                          highlight: item.id,
-                          lat: latStr,
-                          lon: lonStr,
-                        })}
-                        className="producer-inline-link"
-                        scroll={false}
-                      >
-                        Mapa
-                      </Link>
-                      <ViewTransitionLink
-                        href={buildProducerHref(
-                          { id: item.id, slug: item.slug },
-                          {
-                          municipality,
-                          category,
-                          highlight: item.id,
-                          lat: latStr,
-                          lon: lonStr,
-                          },
-                        )}
-                        className="producer-inline-link is-primary"
-                      >
-                        Ficha
-                      </ViewTransitionLink>
-                    </div>
-                  </article>
-                </li>
-              ))}
+                return (
+                  <li key={item.id}>
+                    <article className="producer-card">
+                      <div className="producer-main">
+                        <Link
+                          href={buildCatalogHref({
+                            municipality,
+                            category,
+                            highlight: item.id,
+                            lat: latStr,
+                            lon: lonStr,
+                          })}
+                          className="producer-name"
+                          scroll={false}
+                          style={{ viewTransitionName: `producer-name-${item.id}` }}
+                        >
+                          {item.name}
+                        </Link>
+                        <p className="producer-meta">
+                          {item.city} · {item.category}
+                          {item.subcategory ? ` · ${item.subcategory}` : ""}
+                          {item.distanceKm !== undefined
+                            ? ` · ${item.distanceKm < 1 ? "< 1 km" : `${Math.round(item.distanceKm)} km`}`
+                            : ""}
+                        </p>
+                      </div>
+
+                      <div className="producer-actions">
+                        {canShowOnMap ? (
+                          <Link
+                            href={buildCatalogHref({
+                              municipality,
+                              category,
+                              highlight: item.id,
+                              lat: latStr,
+                              lon: lonStr,
+                            })}
+                            className="producer-inline-link"
+                            scroll={false}
+                          >
+                            Mapa
+                          </Link>
+                        ) : null}
+                        <ViewTransitionLink
+                          href={buildProducerHref(
+                            { id: item.id, slug: item.slug },
+                            {
+                              municipality,
+                              category,
+                              highlight: item.id,
+                              lat: latStr,
+                              lon: lonStr,
+                            },
+                          )}
+                          className="producer-inline-link is-primary"
+                        >
+                          Ficha
+                        </ViewTransitionLink>
+                      </div>
+                    </article>
+                  </li>
+                );
+              })}
             </ul>
           ) : (
             <p className="catalog-empty">
