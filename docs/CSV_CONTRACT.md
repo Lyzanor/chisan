@@ -10,7 +10,7 @@
 - `nombre`
 - `municipio`
 - `categoria`
-- `subcategoria`
+- `productos estrella`
 - `direccion`
 - `descripcion`
 - `horario`
@@ -28,7 +28,7 @@
 - Search by municipality: `municipio` (contains match, accent-insensitive).
 - Filter by category: `categoria` (exact normalized match).
 - Result title: `nombre`.
-- Result metadata: `municipio`, `categoria`, `subcategoria`.
+- Result metadata: `municipio`, `categoria`, `productos estrella`.
 - Detail page: shows all columns as table rows.
 
 ## Normalization rules

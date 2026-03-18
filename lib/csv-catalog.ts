@@ -11,7 +11,7 @@ export type ProducerCsvRow = {
   name: string;
   city: string;
   category: string;
-  subcategory: string;
+  featuredProducts: string;
   latitude: number | null;
   longitude: number | null;
   distanceKm?: number;
@@ -103,6 +103,10 @@ function buildDefaultSlug(name: string, city: string, id: number): string {
 
 function readSlug(fields: Record<string, string>, name: string, city: string, id: number): string {
   return slugifySegment(fields.slug || "") || buildDefaultSlug(name, city, id);
+}
+
+function readFeaturedProducts(fields: Record<string, string>): string {
+  return fields["productos estrella"] || fields.subcategoria || "";
 }
 
 function normalizeFieldKey(value: string): string {
@@ -210,7 +214,7 @@ async function loadCsvRows(): Promise<ProducerCsvRow[]> {
     const name = fields.nombre || `Fila ${id}`;
     const city = fields.municipio || "Sin municipio";
     const category = fields.categoria || "Sin categoría";
-    const subcategory = fields.subcategoria || "";
+    const featuredProducts = readFeaturedProducts(fields);
     const slug = readSlug(fields, name, city, id);
 
     fields.slug = slug;
@@ -221,7 +225,7 @@ async function loadCsvRows(): Promise<ProducerCsvRow[]> {
       name,
       city,
       category,
-      subcategory,
+      featuredProducts,
       latitude: readLatitude(fields),
       longitude: readLongitude(fields),
       fields,
@@ -282,7 +286,7 @@ export function hasProducerMapPoint(
   const comparableValues = [
     row.city,
     row.category,
-    row.subcategory,
+    row.featuredProducts,
     row.name,
   ]
     .map(normalizeSearch)

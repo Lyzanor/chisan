@@ -18,7 +18,7 @@ const required = [
   "nombre",
   "municipio",
   "categoria",
-  "subcategoria",
+  "productos estrella",
   "direccion",
   "descripcion",
   "horario",

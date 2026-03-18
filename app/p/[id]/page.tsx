@@ -17,6 +17,8 @@ type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
+const HIDDEN_DETAIL_FIELDS = new Set(["slug", "lat", "lon"]);
+
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
     ([field]) => field.toLocaleLowerCase() === key.toLocaleLowerCase(),
@@ -82,6 +84,9 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
   const maps = getFieldValue(producer.fields, "Google Maps");
   const email = getFieldValue(producer.fields, "correo");
   const instagram = getFieldValue(producer.fields, "Instagram");
+  const visibleFields = Object.entries(producer.fields).filter(
+    ([key]) => !HIDDEN_DETAIL_FIELDS.has(key.trim().toLocaleLowerCase()),
+  );
 
   return (
     <main className="detail-page">
@@ -95,7 +100,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
           <h1 style={{ viewTransitionName: `producer-name-${producer.id}` }}>{producer.name}</h1>
           <p className="detail-meta" aria-label="Resumen del productor">
             {producer.city} · {producer.category}
-            {producer.subcategory ? ` · ${producer.subcategory}` : ""}
+            {producer.featuredProducts ? ` · ${producer.featuredProducts}` : ""}
           </p>
           <div className="detail-links" aria-label="Enlaces del productor">
             {website ? <ExternalLink href={website}>Web</ExternalLink> : null}
@@ -116,7 +121,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(producer.fields).map(([key, value]) => (
+                {visibleFields.map(([key, value]) => (
                   <tr key={key}>
                     <td>{getFieldLabel(key)}</td>
                     <td>{value || "—"}</td>

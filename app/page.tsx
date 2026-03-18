@@ -146,7 +146,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                         </Link>
                         <p className="producer-meta">
                           {item.city} · {item.category}
-                          {item.subcategory ? ` · ${item.subcategory}` : ""}
+                          {item.featuredProducts ? ` · ${item.featuredProducts}` : ""}
                           {item.distanceKm !== undefined
                             ? ` · ${item.distanceKm < 1 ? "< 1 km" : `${Math.round(item.distanceKm)} km`}`
                             : ""}
