@@ -228,9 +228,36 @@ select {
 }
 
 .map-shell {
+  position: relative;
   border: 1px solid var(--line);
   overflow: hidden;
   background: var(--surface);
+}
+
+.map-summary {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 500;
+  display: grid;
+  gap: 0.15rem;
+  min-width: min(22rem, calc(100% - 1.7rem));
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(17, 17, 17, 0.08);
+}
+
+.map-summary strong {
+  font-size: 0.88rem;
+  letter-spacing: -0.02em;
+}
+
+.map-summary span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .map-placeholder {
@@ -248,40 +275,37 @@ select {
   height: 360px;
 }
 
-.producer-map-pin {
-  background: transparent;
-  border: 0;
+.leaflet-container {
+  font: inherit;
 }
 
-.producer-map-pin--highlighted {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.leaflet-popup-content-wrapper {
+  border-radius: 0;
+  box-shadow: 0 18px 34px rgba(17, 17, 17, 0.16);
 }
 
-.producer-map-pin-dot {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: var(--text);
-  border: 2px solid var(--surface);
+.leaflet-popup-content {
+  margin: 0;
 }
 
-.producer-map-pin-dot--highlighted {
-  width: 16px;
-  height: 16px;
-  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.15);
+.map-popup {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 12.5rem;
+  padding: 0.9rem;
 }
 
-.user-map-pin-dot {
-  display: block;
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  background: #2563eb;
-  border: 2px solid var(--surface);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+.map-popup strong {
+  font-size: 0.98rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.map-popup p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 .producer-list {
@@ -348,6 +372,7 @@ select {
   background: var(--surface);
   padding: 0.55rem 0.75rem;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .producer-inline-link.is-primary {
@@ -465,6 +490,13 @@ tbody tr:hover {
 
   .producers-map-canvas {
     height: 300px;
+  }
+
+  .map-summary {
+    top: 0.65rem;
+    left: 0.65rem;
+    min-width: calc(100% - 1.3rem);
+    padding: 0.65rem 0.75rem;
   }
 
   th,

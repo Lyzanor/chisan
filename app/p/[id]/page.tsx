@@ -17,6 +17,12 @@ type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
+type HighlightLink = {
+  href: string;
+  label: string;
+  kind: "external" | "email";
+};
+
 const HIDDEN_DETAIL_FIELDS = new Set(["slug", "lat", "lon"]);
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
@@ -84,6 +90,14 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
   const maps = getFieldValue(producer.fields, "Google Maps");
   const email = getFieldValue(producer.fields, "correo");
   const instagram = getFieldValue(producer.fields, "Instagram");
+  const facebook = getFieldValue(producer.fields, "Facebook");
+  const highlightLinks: HighlightLink[] = [
+    website ? { href: website, label: "Web", kind: "external" } : null,
+    maps ? { href: maps, label: "Google Maps", kind: "external" } : null,
+    email ? { href: `mailto:${email}`, label: "Correo", kind: "email" } : null,
+    instagram ? { href: instagram, label: "Instagram", kind: "external" } : null,
+    facebook ? { href: facebook, label: "Facebook", kind: "external" } : null,
+  ].filter((link): link is HighlightLink => link !== null);
   const visibleFields = Object.entries(producer.fields).filter(
     ([key]) => !HIDDEN_DETAIL_FIELDS.has(key.trim().toLocaleLowerCase()),
   );
@@ -102,12 +116,21 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
             {producer.city} · {producer.category}
             {producer.featuredProducts ? ` · ${producer.featuredProducts}` : ""}
           </p>
-          <div className="detail-links" aria-label="Enlaces del productor">
-            {website ? <ExternalLink href={website}>Web</ExternalLink> : null}
-            {maps ? <ExternalLink href={maps}>Google Maps</ExternalLink> : null}
-            {email ? <a href={`mailto:${email}`}>Correo</a> : null}
-            {instagram ? <ExternalLink href={instagram}>Instagram</ExternalLink> : null}
-          </div>
+          {highlightLinks.length > 0 ? (
+            <div className="detail-links" aria-label="Enlaces del productor">
+              {highlightLinks.map((link) =>
+                link.kind === "external" ? (
+                  <ExternalLink key={link.href} href={link.href}>
+                    {link.label}
+                  </ExternalLink>
+                ) : (
+                  <a key={link.href} href={link.href}>
+                    {link.label}
+                  </a>
+                ),
+              )}
+            </div>
+          ) : null}
         </header>
 
         <section className="detail-table-card">

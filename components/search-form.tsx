@@ -3,6 +3,8 @@
 import { useTransition, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
+import { buildCatalogHref } from "@/lib/catalog-navigation";
+
 type SearchFormProps = {
   initialMunicipality: string;
   initialCategory: string;
@@ -21,19 +23,8 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
     const mun = formData.get("municipio")?.toString() || "";
     const cat = formData.get("categoria")?.toString() || initialCategory;
 
-    const params = new URLSearchParams(searchParams);
-    if (mun) params.set("municipio", mun);
-    else params.delete("municipio");
-
-    if (cat) params.set("categoria", cat);
-    else params.delete("categoria");
-
-    // Clear GPS if performing text search
-    params.delete("lat");
-    params.delete("lon");
-
     startTransition(() => {
-      router.push(`/?${params.toString()}`);
+      router.push(buildCatalogHref({ municipality: mun, category: cat }));
     });
   }
 
@@ -49,14 +40,15 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const { latitude, longitude } = pos.coords;
-        const params = new URLSearchParams(searchParams);
-        params.set("lat", latitude.toString());
-        params.set("lon", longitude.toString());
-
-        params.delete("municipio");
 
         startTransition(() => {
-          router.push(`/?${params.toString()}`);
+          router.push(
+            buildCatalogHref({
+              category: searchParams.get("categoria") ?? "",
+              lat: latitude.toString(),
+              lon: longitude.toString(),
+            }),
+          );
         });
         setIsLocating(false);
       },
@@ -69,7 +61,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
         enableHighAccuracy: true,
         timeout: 10000,
         maximumAge: 0,
-      }
+      },
     );
   }
 

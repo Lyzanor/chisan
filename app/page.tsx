@@ -24,13 +24,18 @@ type HomePageProps = {
 export const dynamic = "force-dynamic";
 const MAX_VISIBLE_RESULTS = 150;
 
-function parseCoordinateParam(value: string): number | undefined {
+function parseCoordinateParam(value: string, min: number, max: number): number | undefined {
   if (!value) {
     return undefined;
   }
 
   const parsed = Number.parseFloat(value);
-  return Number.isFinite(parsed) ? parsed : undefined;
+
+  if (!Number.isFinite(parsed)) {
+    return undefined;
+  }
+
+  return parsed >= min && parsed <= max ? parsed : undefined;
 }
 
 export default async function HomePage({ searchParams }: HomePageProps) {
@@ -41,8 +46,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const latStr = readQueryParam(queryParams, "lat");
   const lonStr = readQueryParam(queryParams, "lon");
 
-  const lat = parseCoordinateParam(latStr);
-  const lon = parseCoordinateParam(lonStr);
+  const lat = parseCoordinateParam(latStr, -90, 90);
+  const lon = parseCoordinateParam(lonStr, -180, 180);
 
   const [items, categories] = await Promise.all([
     searchProducers({ municipality, category, lat, lon }),

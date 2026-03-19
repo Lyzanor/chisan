@@ -78,16 +78,31 @@ function matchesHost(hostname, matcher) {
 
 function isGoogleMapsUrl(url) {
   const host = url.hostname.toLowerCase();
+  const query = url.searchParams.get("query");
+  const placeId = url.searchParams.get("query_place_id");
+  const api = url.searchParams.get("api");
 
-  if (host === "maps.app.goo.gl") {
-    return true;
+  if (!host.includes("google.")) {
+    return "must point to a Google Maps host";
   }
 
-  if (host === "maps.google.com") {
-    return true;
+  if (!url.pathname.startsWith("/maps/search")) {
+    return "must use /maps/search";
   }
 
-  return host.includes("google.") && url.pathname.startsWith("/maps");
+  if (api !== "1") {
+    return "must include api=1";
+  }
+
+  if (!query) {
+    return "must include a non-empty query";
+  }
+
+  if (!placeId) {
+    return "must include a non-empty query_place_id";
+  }
+
+  return null;
 }
 
 const validators = {
@@ -97,7 +112,7 @@ const validators = {
   Instagram: (url) =>
     matchesHost(url.hostname, "instagram.com") ? null : "must point to instagram.com",
   "Google Maps": (url) =>
-    isGoogleMapsUrl(url) ? null : "must point to a Google Maps URL",
+    isGoogleMapsUrl(url),
 };
 
 const errors = [];

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Browser } from "@capacitor/browser";
+import { Capacitor } from "@capacitor/core";
 
 type ExternalLinkProps = {
   href: string;
@@ -11,17 +12,11 @@ type ExternalLinkProps = {
 
 export function ExternalLink({ href, children, className }: ExternalLinkProps) {
   const handleClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Check just-in-time if running natively
-    const isNativeApp =
-      typeof window !== "undefined" &&
-      !!(window as unknown as { Capacitor?: { isNative?: boolean } }).Capacitor?.isNative;
-
-    if (isNativeApp) {
+    if (Capacitor.isNativePlatform()) {
       e.preventDefault();
       try {
         await Browser.open({ url: href, presentationStyle: "popover" });
-      } catch (err) {
-        console.error("Failed to open external link cleanly:", err);
+      } catch {
         window.open(href, "_blank");
       }
     }

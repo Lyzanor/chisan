@@ -48,7 +48,16 @@
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must be valid `http://` or `https://` URLs.
 - `Facebook` must point to `facebook.com`.
 - `Instagram` must point to `instagram.com`.
-- `Google Maps` must point to a Google Maps URL (`google.* /maps...` or `maps.app.goo.gl`).
+- `Google Maps` must use the search URL format with `place_id`:
+
+```text
+https://www.google.com/maps/search/?api=1&query=<nombre_o_direccion>&query_place_id=<PLACE_ID>
+```
+
+- `Google Maps` must point to a Google Maps host and include:
+  - `api=1`
+  - a non-empty `query`
+  - a non-empty `query_place_id`
 
 ## Row identity
 - `id` in route `/p/[id]` is row index (1-based) after header.

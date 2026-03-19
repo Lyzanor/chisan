@@ -1,43 +1,65 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import L from "leaflet";
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
+import {
+  CircleMarker,
+  MapContainer,
+  Popup,
+  TileLayer,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 import { ViewTransitionLink } from "@/components/view-transition-link";
 import { buildProducerHref, type CatalogNavigationContext } from "@/lib/catalog-navigation";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
-// Below this threshold, show all points regardless of viewport (municipality searches).
-// Above it, filter by viewport to avoid rendering thousands of markers at once.
 const VIEWPORT_THRESHOLD = 600;
-const MAX_VISIBLE_MARKERS = 120;
 const DEFAULT_CENTER: [number, number] = [41.42, 2.02];
 const DEFAULT_ZOOM = 10;
 const FOCUSED_ZOOM = 13;
 const USER_LOCATION_ZOOM = 12;
+const MARKER_GRID_SIZES = [
+  { maxZoom: 9, cellSize: 48, maxMarkers: 34 },
+  { maxZoom: 10, cellSize: 42, maxMarkers: 46 },
+  { maxZoom: 11, cellSize: 36, maxMarkers: 62 },
+  { maxZoom: 12, cellSize: 30, maxMarkers: 84 },
+  { maxZoom: Infinity, cellSize: 24, maxMarkers: 120 },
+] as const;
+const PRODUCER_MARKER_STYLE = {
+  color: "#ffffff",
+  fillColor: "#111111",
+  fillOpacity: 0.82,
+  opacity: 1,
+  weight: 2,
+  radius: 6,
+};
+const HIGHLIGHTED_MARKER_STYLE = {
+  color: "#ffffff",
+  fillColor: "#b85731",
+  fillOpacity: 0.96,
+  opacity: 1,
+  weight: 3,
+  radius: 9,
+};
+const USER_MARKER_STYLE = {
+  color: "#ffffff",
+  fillColor: "#2563eb",
+  fillOpacity: 0.96,
+  opacity: 1,
+  weight: 3,
+  radius: 8,
+};
 
-const producerPinIcon = L.divIcon({
-  className: "producer-map-pin",
-  html: '<span class="producer-map-pin-dot"></span>',
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
-});
-
-const producerPinHighlightedIcon = L.divIcon({
-  className: "producer-map-pin producer-map-pin--highlighted",
-  html: '<span class="producer-map-pin-dot producer-map-pin-dot--highlighted"></span>',
-  iconSize: [22, 22],
-  iconAnchor: [11, 11],
-});
-
-const userPinIcon = L.divIcon({
-  className: "producer-map-pin user-map-pin",
-  html: '<span class="producer-map-pin-dot user-map-pin-dot"></span>',
-  iconSize: [18, 18],
-  iconAnchor: [9, 9],
-});
+export type MapVisibilitySummary = {
+  totalCount: number;
+  visibleCount: number;
+  renderedCount: number;
+  hiddenCount: number;
+  zoom: number;
+};
 
 function getMapOverlayOffsets(map: L.Map): {
   paddingTopLeft: L.Point;
@@ -101,14 +123,110 @@ function fitPointsInView(
   });
 }
 
-function distanceToCenterScore(
-  point: ProducerMapPoint,
-  center: L.LatLng,
-): number {
+function distanceToCenterScore(point: ProducerMapPoint, center: L.LatLng): number {
   const latDelta = point.latitude - center.lat;
   const lonDelta = point.longitude - center.lng;
 
   return latDelta * latDelta + lonDelta * lonDelta;
+}
+
+function getMarkerBudget(zoom: number) {
+  return MARKER_GRID_SIZES.find((entry) => zoom <= entry.maxZoom) ?? MARKER_GRID_SIZES.at(-1)!;
+}
+
+function distributeVisiblePoints(
+  map: L.Map,
+  points: readonly ProducerMapPoint[],
+  highlightedPoint: ProducerMapPoint | undefined,
+  zoom: number,
+): ProducerMapPoint[] {
+  const center = map.getCenter();
+  const { cellSize, maxMarkers } = getMarkerBudget(zoom);
+  const buckets = new Map<string, ProducerMapPoint>();
+
+  for (const point of points) {
+    if (highlightedPoint && point.id === highlightedPoint.id) {
+      continue;
+    }
+
+    const containerPoint = map.latLngToContainerPoint([point.latitude, point.longitude]);
+    const bucketKey = [
+      Math.floor(containerPoint.x / cellSize),
+      Math.floor(containerPoint.y / cellSize),
+    ].join(":");
+    const current = buckets.get(bucketKey);
+
+    if (!current) {
+      buckets.set(bucketKey, point);
+      continue;
+    }
+
+    if (distanceToCenterScore(point, center) < distanceToCenterScore(current, center)) {
+      buckets.set(bucketKey, point);
+    }
+  }
+
+  const candidates = [...buckets.values()].sort(
+    (a, b) => distanceToCenterScore(a, center) - distanceToCenterScore(b, center),
+  );
+  const budget = highlightedPoint ? maxMarkers - 1 : maxMarkers;
+  const distributed = candidates.slice(0, Math.max(budget, 1));
+
+  return highlightedPoint ? [highlightedPoint, ...distributed] : distributed;
+}
+
+function ProducerPoint({
+  point,
+  highlighted,
+  overlayOffsets,
+  detailContext,
+}: {
+  point: ProducerMapPoint;
+  highlighted: boolean;
+  overlayOffsets: ReturnType<typeof getMapOverlayOffsets>;
+  detailContext?: CatalogNavigationContext;
+}) {
+  const markerRef = useRef<L.CircleMarker | null>(null);
+
+  useEffect(() => {
+    if (highlighted) {
+      markerRef.current?.openPopup();
+      markerRef.current?.bringToFront();
+    }
+  }, [highlighted]);
+
+  return (
+    <CircleMarker
+      ref={markerRef}
+      center={[point.latitude, point.longitude]}
+      pathOptions={highlighted ? HIGHLIGHTED_MARKER_STYLE : PRODUCER_MARKER_STYLE}
+      radius={highlighted ? HIGHLIGHTED_MARKER_STYLE.radius : PRODUCER_MARKER_STYLE.radius}
+    >
+      <Popup
+        autoPanPaddingTopLeft={overlayOffsets.paddingTopLeft}
+        autoPanPaddingBottomRight={overlayOffsets.paddingBottomRight}
+      >
+        <div className="map-popup">
+          <strong>{point.name}</strong>
+          <p>
+            {point.city} · {point.category}
+          </p>
+          <ViewTransitionLink
+            href={buildProducerHref(
+              { id: point.id, slug: point.slug },
+              {
+                ...detailContext,
+                highlight: point.id,
+              },
+            )}
+            className="producer-inline-link is-primary"
+          >
+            Ver ficha
+          </ViewTransitionLink>
+        </div>
+      </Popup>
+    </CircleMarker>
+  );
 }
 
 function BoundsAwareMarkers({
@@ -116,20 +234,22 @@ function BoundsAwareMarkers({
   highlightedId,
   userLocation,
   detailContext,
+  onSummaryChange,
 }: {
   points: ProducerMapPoint[];
   highlightedId?: string;
   userLocation?: { lat: number; lon: number };
   detailContext?: CatalogNavigationContext;
+  onSummaryChange: (summary: MapVisibilitySummary) => void;
 }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const overlayOffsets = getMapOverlayOffsets(map);
   const highlightedPoint = highlightedId
     ? points.find((point) => String(point.id) === highlightedId)
     : undefined;
 
-  // Fit map to a sensible context whenever point selection or location changes.
   useEffect(() => {
     if (highlightedPoint) {
       if (userLocation) {
@@ -143,7 +263,7 @@ function BoundsAwareMarkers({
 
     if (points.length === 0) {
       if (userLocation) {
-        focusSinglePosition(map, [userLocation.lat, userLocation.lon], 11);
+        focusSinglePosition(map, [userLocation.lat, userLocation.lon], USER_LOCATION_ZOOM);
       }
       return;
     }
@@ -163,78 +283,63 @@ function BoundsAwareMarkers({
       return;
     }
 
-    // Full catalog or very broad filters: keep a stable regional frame and let viewport filtering do the rest.
     map.setView(DEFAULT_CENTER, DEFAULT_ZOOM, { animate: false });
   }, [highlightedPoint, map, points, userLocation]);
 
-  // moveend fires after every pan and after every zoom (Leaflet always fires
-  // moveend at the end of a zoom sequence), so zoomend is redundant here.
   useMapEvents({
-    moveend: () => setViewBounds(map.getBounds()),
+    moveend: () => {
+      setViewBounds(map.getBounds());
+      setZoom(map.getZoom());
+    },
   });
 
-  const visible = useMemo(() => {
-    const inBounds =
-      points.length > VIEWPORT_THRESHOLD
-        ? points.filter((point) => viewBounds.contains([point.latitude, point.longitude]))
-        : points;
+  const inView = useMemo(
+    () => points.filter((point) => viewBounds.pad(0.08).contains([point.latitude, point.longitude])),
+    [points, viewBounds],
+  );
 
-    if (inBounds.length <= MAX_VISIBLE_MARKERS) {
-      return inBounds;
-    }
+  const visiblePoints = useMemo(
+    () => distributeVisiblePoints(map, inView, highlightedPoint, zoom),
+    [highlightedPoint, inView, map, zoom],
+  );
 
-    const center = map.getCenter();
-
-    return [...inBounds]
-      .sort((a, b) => distanceToCenterScore(a, center) - distanceToCenterScore(b, center))
-      .slice(0, MAX_VISIBLE_MARKERS);
-  }, [map, points, viewBounds]);
+  useEffect(() => {
+    onSummaryChange({
+      totalCount: points.length,
+      visibleCount: inView.length,
+      renderedCount: visiblePoints.length,
+      hiddenCount: Math.max(inView.length - visiblePoints.length, 0),
+      zoom,
+    });
+  }, [inView.length, onSummaryChange, points.length, visiblePoints.length, zoom]);
 
   return (
     <>
-      {userLocation && (
-        <Marker
-          position={[userLocation.lat, userLocation.lon]}
-          icon={userPinIcon}
-          zIndexOffset={1000}
-        >
-          <Popup
-            autoPanPaddingTopLeft={overlayOffsets.paddingTopLeft}
-            autoPanPaddingBottomRight={overlayOffsets.paddingBottomRight}
-          >
-            <strong>Tu ubicación</strong>
-          </Popup>
-        </Marker>
-      )}
-      {visible.map((point) => (
-        <Marker
+      {visiblePoints.map((point) => (
+        <ProducerPoint
           key={point.id}
-          position={[point.latitude, point.longitude]}
-          icon={highlightedId && String(point.id) === highlightedId ? producerPinHighlightedIcon : producerPinIcon}
-          zIndexOffset={highlightedId && String(point.id) === highlightedId ? 800 : 0}
+          point={point}
+          highlighted={Boolean(highlightedPoint && point.id === highlightedPoint.id)}
+          overlayOffsets={overlayOffsets}
+          detailContext={detailContext}
+        />
+      ))}
+      {userLocation ? (
+        <CircleMarker
+          center={[userLocation.lat, userLocation.lon]}
+          pathOptions={USER_MARKER_STYLE}
+          radius={USER_MARKER_STYLE.radius}
         >
           <Popup
             autoPanPaddingTopLeft={overlayOffsets.paddingTopLeft}
             autoPanPaddingBottomRight={overlayOffsets.paddingBottomRight}
           >
-            <strong>{point.name}</strong>
-            <br />
-            {point.city} · {point.category}
-            <br />
-            <ViewTransitionLink
-              href={buildProducerHref(
-                { id: point.id, slug: point.slug },
-                {
-                ...detailContext,
-                highlight: point.id,
-                },
-              )}
-            >
-              Ver ficha
-            </ViewTransitionLink>
+            <div className="map-popup">
+              <strong>Tu ubicación</strong>
+            </div>
           </Popup>
-        </Marker>
-      ))}
+        </CircleMarker>
+      ) : null}
     </>
   );
 }
@@ -244,11 +349,13 @@ export default function ProducersMapInner({
   highlightedId,
   userLocation,
   detailContext,
+  onSummaryChange,
 }: {
   points: ProducerMapPoint[];
   highlightedId?: string;
   userLocation?: { lat: number; lon: number };
   detailContext?: CatalogNavigationContext;
+  onSummaryChange: (summary: MapVisibilitySummary) => void;
 }) {
   return (
     <MapContainer
@@ -259,6 +366,7 @@ export default function ProducersMapInner({
       minZoom={8}
       className="producers-map-canvas"
       scrollWheelZoom
+      preferCanvas
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -269,6 +377,7 @@ export default function ProducersMapInner({
         highlightedId={highlightedId}
         userLocation={userLocation}
         detailContext={detailContext}
+        onSummaryChange={onSummaryChange}
       />
     </MapContainer>
   );

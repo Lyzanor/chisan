@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "csv-parse/sync";
+import { cache } from "react";
 
 type RawCsvRow = Record<string, string | undefined>;
 
@@ -198,7 +199,7 @@ function calculateDistance(
   return R * c;
 }
 
-async function loadCsvRows(): Promise<ProducerCsvRow[]> {
+const loadCsvRows = cache(async function loadCsvRows(): Promise<ProducerCsvRow[]> {
   const csvRaw = await readFile(CSV_PATH, "utf8");
   const parsedRows = parse(csvRaw, {
     columns: true,
@@ -231,7 +232,7 @@ async function loadCsvRows(): Promise<ProducerCsvRow[]> {
       fields,
     };
   });
-}
+});
 
 function parseProducerId(rawId: string): number | null {
   const [candidate] = rawId.split("-", 1);

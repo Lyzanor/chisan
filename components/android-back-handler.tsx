@@ -3,17 +3,14 @@
 import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { App as CapacitorApp } from "@capacitor/app";
+import { Capacitor } from "@capacitor/core";
 
 export function AndroidBackHandler() {
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    const isNativeApp =
-      typeof window !== "undefined" &&
-      !!(window as unknown as { Capacitor?: { isNative?: boolean } }).Capacitor?.isNative;
-
-    if (!isNativeApp) return;
+    if (!Capacitor.isNativePlatform()) return;
 
     let listener: { remove: () => void } | null = null;
 
