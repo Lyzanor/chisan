@@ -63,7 +63,7 @@ NAME="$(node -p "JSON.parse(process.argv[1]).name" "$FIXTURE_JSON")"
 MUNICIPALITY="$(node -p "JSON.parse(process.argv[1]).municipality" "$FIXTURE_JSON")"
 CATEGORY="$(node -p "JSON.parse(process.argv[1]).category" "$FIXTURE_JSON")"
 
-npx --yes pnpm exec next dev --port "$PORT" >/tmp/km0-test-dev.log 2>&1 &
+./node_modules/.bin/next dev --port "$PORT" >/tmp/km0-test-dev.log 2>&1 &
 DEV_PID=$!
 
 wait_for_app
