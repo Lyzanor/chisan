@@ -20,6 +20,7 @@
 
 html {
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -202,6 +203,10 @@ select {
 .detail-table-card {
   display: grid;
   gap: 0.75rem;
+}
+
+.catalog-map-stage {
+  scroll-margin-top: 1.5rem;
 }
 
 .catalog-map-head {
