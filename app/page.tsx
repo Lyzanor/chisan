@@ -152,7 +152,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
                 return (
                   <li key={item.id}>
-                    <article className="producer-card">
+                    <article
+                      className={`producer-card ${highlightedItem?.id === item.id ? "is-highlighted" : ""}`}
+                    >
                       <div className="producer-main">
                         <Link
                           href={producerNameHref}
