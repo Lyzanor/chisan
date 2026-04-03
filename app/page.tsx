@@ -134,22 +134,29 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           {visibleItems.length > 0 ? (
             <ul className="producer-list">
               {visibleItems.map((item) => {
-                const canShowOnMap = hasProducerMapPoint(item);
+                const producerNameHref = hasProducerMapPoint(item)
+                  ? `${buildCatalogHref({
+                      municipality,
+                      category,
+                      highlight: item.id,
+                      lat: latStr,
+                      lon: lonStr,
+                    })}#${MAP_SECTION_ID}`
+                  : buildCatalogHref({
+                      municipality,
+                      category,
+                      highlight: item.id,
+                      lat: latStr,
+                      lon: lonStr,
+                    });
 
                 return (
                   <li key={item.id}>
                     <article className="producer-card">
                       <div className="producer-main">
                         <Link
-                          href={buildCatalogHref({
-                            municipality,
-                            category,
-                            highlight: item.id,
-                            lat: latStr,
-                            lon: lonStr,
-                          })}
+                          href={producerNameHref}
                           className="producer-name"
-                          scroll={false}
                           style={{ viewTransitionName: `producer-name-${item.id}` }}
                         >
                           {item.name}
@@ -164,20 +171,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                       </div>
 
                       <div className="producer-actions">
-                        {canShowOnMap ? (
-                          <Link
-                            href={`${buildCatalogHref({
-                              municipality,
-                              category,
-                              highlight: item.id,
-                              lat: latStr,
-                              lon: lonStr,
-                            })}#${MAP_SECTION_ID}`}
-                            className="producer-inline-link"
-                          >
-                            Mapa
-                          </Link>
-                        ) : null}
                         <ViewTransitionLink
                           href={buildProducerHref(
                             { id: item.id, slug: item.slug },
