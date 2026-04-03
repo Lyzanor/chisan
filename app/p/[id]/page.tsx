@@ -17,14 +17,36 @@ type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-type HighlightLink = {
+type ActionLink = {
   href: string;
   label: string;
   kind: "external" | "email";
 };
 
-const HIDDEN_DETAIL_FIELDS = new Set(["slug", "lat", "lon"]);
+type DetailItem = {
+  label: string;
+  value: string;
+};
+
 const MAP_SECTION_ID = "mapa";
+const SURFACED_DETAIL_FIELDS = new Set([
+  "slug",
+  "nombre",
+  "municipio",
+  "categoria",
+  "productos estrella",
+  "direccion",
+  "descripcion",
+  "horario",
+  "telefono",
+  "correo",
+  "web",
+  "facebook",
+  "instagram",
+  "google maps",
+  "lat",
+  "lon",
+]);
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
@@ -32,6 +54,16 @@ function getFieldValue(fields: Record<string, string>, key: string): string {
   );
 
   return (match?.[1] ?? "").trim();
+}
+
+function normalizeFieldName(field: string): string {
+  return field.trim().toLocaleLowerCase();
+}
+
+function buildDetailItems(items: Array<[string, string]>): DetailItem[] {
+  return items
+    .filter(([, value]) => value.trim())
+    .map(([label, value]) => ({ label, value: value.trim() }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -87,21 +119,51 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
     highlight: producer.id,
   })}#${MAP_SECTION_ID}`;
 
+  const description = getFieldValue(producer.fields, "descripcion");
+  const address = getFieldValue(producer.fields, "direccion");
+  const schedule = getFieldValue(producer.fields, "horario");
+  const phone = getFieldValue(producer.fields, "telefono");
+  const email = getFieldValue(producer.fields, "correo");
   const website = getFieldValue(producer.fields, "web");
   const maps = getFieldValue(producer.fields, "Google Maps");
-  const email = getFieldValue(producer.fields, "correo");
   const instagram = getFieldValue(producer.fields, "Instagram");
   const facebook = getFieldValue(producer.fields, "Facebook");
-  const highlightLinks: HighlightLink[] = [
+  const reviewDate = getFieldValue(producer.fields, "fecha_revision");
+
+  const actionLinks: ActionLink[] = [
     website ? { href: website, label: "Web", kind: "external" } : null,
     maps ? { href: maps, label: "Google Maps", kind: "external" } : null,
     email ? { href: `mailto:${email}`, label: "Correo", kind: "email" } : null,
     instagram ? { href: instagram, label: "Instagram", kind: "external" } : null,
     facebook ? { href: facebook, label: "Facebook", kind: "external" } : null,
-  ].filter((link): link is HighlightLink => link !== null);
-  const visibleFields = Object.entries(producer.fields).filter(
-    ([key]) => !HIDDEN_DETAIL_FIELDS.has(key.trim().toLocaleLowerCase()),
-  );
+  ].filter((link): link is ActionLink => link !== null);
+
+  const quickFacts = buildDetailItems([
+    ["Municipio", producer.city],
+    ["Categoría", producer.category],
+    ["Dirección", address],
+  ]);
+
+  const visitItems = buildDetailItems([
+    ["Dirección", address],
+    ["Horario", schedule],
+    ["Teléfono", phone],
+    ["Correo", email],
+  ]);
+
+  const extraItems = Object.entries(producer.fields)
+    .filter(
+      ([field, value]) =>
+        value.trim() && !SURFACED_DETAIL_FIELDS.has(normalizeFieldName(field)),
+    )
+    .map(([field, value]) => ({
+      label: getFieldLabel(field),
+      value: value.trim(),
+    }));
+
+  const introText =
+    description ||
+    `${producer.name} forma parte de la red KM0 en ${producer.city}, dentro de la categoría ${producer.category}.`;
 
   return (
     <main className="detail-page">
@@ -110,16 +172,25 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
           ← Volver al buscador
         </ViewTransitionLink>
 
-        <header className="detail-header">
+        <header className="detail-hero">
           <p className="detail-kicker">Ficha de productor</p>
           <h1 style={{ viewTransitionName: `producer-name-${producer.id}` }}>{producer.name}</h1>
           <p className="detail-meta" aria-label="Resumen del productor">
             {producer.city} · {producer.category}
-            {producer.featuredProducts ? ` · ${producer.featuredProducts}` : ""}
           </p>
-          {highlightLinks.length > 0 ? (
+          {quickFacts.length > 0 ? (
+            <dl className="detail-fact-grid">
+              {quickFacts.map((item) => (
+                <div key={item.label} className="detail-fact-card">
+                  <dt>{item.label}</dt>
+                  <dd>{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+          {actionLinks.length > 0 ? (
             <div className="detail-links" aria-label="Enlaces del productor">
-              {highlightLinks.map((link) =>
+              {actionLinks.map((link) =>
                 link.kind === "external" ? (
                   <ExternalLink key={link.href} href={link.href}>
                     {link.label}
@@ -134,27 +205,58 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
           ) : null}
         </header>
 
-        <section className="detail-table-card">
-          <h2>Datos del productor</h2>
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Dato</th>
-                  <th>Información</th>
-                </tr>
-              </thead>
-              <tbody>
-                {visibleFields.map(([key, value]) => (
-                  <tr key={key}>
-                    <td>{getFieldLabel(key)}</td>
-                    <td>{value || "—"}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="detail-layout">
+          <div className="detail-main">
+            <section className="detail-card">
+              <h2>Información del productor</h2>
+              <p className="detail-body">{introText}</p>
+            </section>
+
+            {producer.featuredProducts ? (
+              <section className="detail-card">
+                <h2>Qué ofrece</h2>
+                <p className="detail-body">{producer.featuredProducts}</p>
+              </section>
+            ) : null}
+
+            {extraItems.length > 0 ? (
+              <section className="detail-card">
+                <h2>Más información</h2>
+                <dl className="detail-list">
+                  {extraItems.map((item) => (
+                    <div key={item.label} className="detail-list-row">
+                      <dt>{item.label}</dt>
+                      <dd>{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
           </div>
-        </section>
+
+          <aside className="detail-sidebar">
+            {visitItems.length > 0 ? (
+              <section className="detail-card">
+                <h2>Visita y contacto</h2>
+                <dl className="detail-list">
+                  {visitItems.map((item) => (
+                    <div key={item.label} className="detail-list-row">
+                      <dt>{item.label}</dt>
+                      <dd>{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
+
+            {reviewDate ? (
+              <section className="detail-card detail-card-muted">
+                <h2>Revisión</h2>
+                <p className="detail-body">{reviewDate}</p>
+              </section>
+            ) : null}
+          </aside>
+        </div>
       </section>
     </main>
   );
