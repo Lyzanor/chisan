@@ -23,6 +23,7 @@ type HomePageProps = {
 
 export const dynamic = "force-dynamic";
 const MAX_VISIBLE_RESULTS = 150;
+const MAP_SECTION_ID = "mapa";
 
 function parseCoordinateParam(value: string, min: number, max: number): number | undefined {
   if (!value) {
@@ -107,7 +108,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           </p>
         )}
 
-        <section className="catalog-map-stage" aria-label="Mapa de productores">
+        <section
+          id={MAP_SECTION_ID}
+          className="catalog-map-stage"
+          aria-label="Mapa de productores"
+        >
           <div className="catalog-map-head">
             <h2>Mapa</h2>
             <p>{items.length} resultados</p>
@@ -161,15 +166,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                       <div className="producer-actions">
                         {canShowOnMap ? (
                           <Link
-                            href={buildCatalogHref({
+                            href={`${buildCatalogHref({
                               municipality,
                               category,
                               highlight: item.id,
                               lat: latStr,
                               lon: lonStr,
-                            })}
+                            })}#${MAP_SECTION_ID}`}
                             className="producer-inline-link"
-                            scroll={false}
                           >
                             Mapa
                           </Link>

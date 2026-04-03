@@ -24,6 +24,7 @@ type HighlightLink = {
 };
 
 const HIDDEN_DETAIL_FIELDS = new Set(["slug", "lat", "lon"]);
+const MAP_SECTION_ID = "mapa";
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
@@ -78,13 +79,13 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
     );
   }
 
-  const backHref = buildCatalogHref({
+  const backHref = `${buildCatalogHref({
     municipality,
     category,
     lat,
     lon,
     highlight: producer.id,
-  });
+  })}#${MAP_SECTION_ID}`;
 
   const website = getFieldValue(producer.fields, "web");
   const maps = getFieldValue(producer.fields, "Google Maps");
