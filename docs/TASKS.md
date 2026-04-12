@@ -8,6 +8,30 @@ npx pnpm verify:ai
 ```
 3. Check `/` and `/p/[id]-[slug]` manually.
 
+## 1b) Weekly CSV review
+1. Run the blocking contract audit:
+```bash
+npx pnpm check:csv
+```
+2. Run the data-quality audit:
+```bash
+npx pnpm check:csv:data-quality
+```
+3. Fix `error` items first in `Km0-productores.csv`.
+4. Fix `warning` items next:
+- empty key fields
+- stale `fecha_revision`
+- duplicates
+- inconsistent categories
+- weak map/address data
+5. Re-run the two CSV audits until contract errors are `0`.
+6. Run:
+```bash
+npx pnpm verify:ai
+```
+7. Validate `/` and a sample of `/p/[id]-[slug]`.
+8. Update `fecha_revision` only for rows actually reviewed or corrected.
+
 ## 2) Change search behavior
 1. Edit filter logic in `lib/csv-catalog.ts`.
 2. Keep URL params stable: `municipio`, `categoria`.
