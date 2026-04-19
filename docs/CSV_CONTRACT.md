@@ -8,7 +8,7 @@
   - `pnpm check:csv`: blocking technical contract audit
   - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings
 
-## Expected columns
+## Required columns
 - `slug`
 - `nombre`
 - `municipio`
@@ -27,12 +27,16 @@
 - `lon`
 - `fecha_revision`
 
+## Optional columns
+- `imagen`
+
 ## How the app uses columns
 - Search by municipality: `municipio` (contains match, accent-insensitive).
 - Filter by category: `categoria` (exact normalized match).
 - Result title: `nombre`.
 - Result metadata: `municipio`, `categoria`, `productos estrella`.
 - Detail page: shows all columns as table rows.
+- Detail image: `imagen` when present, otherwise a generic local placeholder.
 
 ## Normalization rules
 - Collapse repeated spaces.
@@ -55,6 +59,7 @@
 - `lat`, when present, must be numeric and between `-90` and `90`.
 - `lon`, when present, must be numeric and between `-180` and `180`.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
+- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/ejemplo.webp`.
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:
@@ -74,6 +79,7 @@
 
 ## Link validation
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must be valid `http://` or `https://` URLs.
+- `imagen` may be empty, but if present must be a root-relative path to an image under `public/` and use a supported extension (`.avif`, `.gif`, `.jpg`, `.jpeg`, `.png`, `.svg`, `.webp`).
 - `Facebook` must point to `facebook.com`.
 - `Instagram` must point to `instagram.com`.
 - `Google Maps` must use the search URL format with `place_id`:

@@ -19,6 +19,7 @@ const LABELS: Record<string, string> = {
   facebook: "Facebook",
   instagram: "Instagram",
   "google maps": "Google Maps",
+  imagen: "Imagen",
   lat: "Latitud",
   lon: "Longitud",
   fecha_revision: "Fecha de revisión",

@@ -13,6 +13,7 @@ export type ProducerCsvRow = {
   city: string;
   category: string;
   featuredProducts: string;
+  imageSrc: string;
   latitude: number | null;
   longitude: number | null;
   distanceKm?: number;
@@ -30,6 +31,7 @@ export type ProducerMapPoint = {
 };
 
 const CSV_PATH = path.resolve(process.cwd(), "Km0-productores.csv");
+const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 const MAP_ADDRESS_FIELD_KEYS = ["direccion", "direccio", "address", "domicilio"] as const;
 const MAP_ADDRESS_HINT_KEYWORDS = [
   "avinguda",
@@ -108,6 +110,16 @@ function readSlug(fields: Record<string, string>, name: string, city: string, id
 
 function readFeaturedProducts(fields: Record<string, string>): string {
   return fields["productos estrella"] || fields.subcategoria || "";
+}
+
+function readImageSrc(fields: Record<string, string>): string {
+  const imagePath = findFieldValue(fields, ["imagen"]);
+
+  if (!imagePath) {
+    return DEFAULT_PRODUCER_IMAGE_SRC;
+  }
+
+  return imagePath.startsWith("/") ? imagePath : `/${imagePath.replace(/^\/+/, "")}`;
 }
 
 function normalizeFieldKey(value: string): string {
@@ -216,6 +228,7 @@ const loadCsvRows = cache(async function loadCsvRows(): Promise<ProducerCsvRow[]
     const city = fields.municipio || "Sin municipio";
     const category = fields.categoria || "Sin categoría";
     const featuredProducts = readFeaturedProducts(fields);
+    const imageSrc = readImageSrc(fields);
     const slug = readSlug(fields, name, city, id);
 
     fields.slug = slug;
@@ -227,6 +240,7 @@ const loadCsvRows = cache(async function loadCsvRows(): Promise<ProducerCsvRow[]
       city,
       category,
       featuredProducts,
+      imageSrc,
       latitude: readLatitude(fields),
       longitude: readLongitude(fields),
       fields,

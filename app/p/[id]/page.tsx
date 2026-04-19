@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
 
 import { ExternalLink } from "@/components/external-link";
@@ -44,6 +45,7 @@ const SURFACED_DETAIL_FIELDS = new Set([
   "facebook",
   "instagram",
   "google maps",
+  "imagen",
   "lat",
   "lon",
 ]);
@@ -173,6 +175,17 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
         </ViewTransitionLink>
 
         <header className="detail-hero">
+          <div className="detail-media">
+            <Image
+              src={producer.imageSrc}
+              alt={`Imagen de ${producer.name}`}
+              width={1600}
+              height={1200}
+              className="detail-media-image"
+              priority
+              sizes="(max-width: 720px) calc(100vw - 2rem), 720px"
+            />
+          </div>
           <p className="detail-kicker">Ficha de productor</p>
           <h1 style={{ viewTransitionName: `producer-name-${producer.id}` }}>{producer.name}</h1>
           <p className="detail-meta" aria-label="Resumen del productor">

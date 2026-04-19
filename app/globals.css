@@ -428,6 +428,31 @@ textarea:focus-visible {
   gap: 1rem;
 }
 
+.detail-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 46%),
+    linear-gradient(180deg, #f6f2ea 0%, #ece7dc 100%);
+}
+
+.detail-media::after {
+  content: "";
+  position: absolute;
+  inset: 0.8rem;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  pointer-events: none;
+}
+
+.detail-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: clamp(0.9rem, 2vw, 1.5rem);
+}
+
 .detail-links {
   margin-top: 0.25rem;
 }

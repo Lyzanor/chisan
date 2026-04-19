@@ -210,6 +210,24 @@ function validateGoogleMapsUrl(url) {
   return null;
 }
 
+function validateImagePath(value) {
+  const cleaned = cleanCell(value);
+
+  if (!cleaned) {
+    return null;
+  }
+
+  if (!cleaned.startsWith("/")) {
+    return "must be a root-relative asset path under /public";
+  }
+
+  if (!/\.(avif|gif|jpe?g|png|svg|webp)$/i.test(cleaned)) {
+    return "must use a supported image extension";
+  }
+
+  return null;
+}
+
 function parseStrictDate(value) {
   const cleaned = cleanCell(value);
   if (!cleaned) {
@@ -390,6 +408,11 @@ function runContractAudit({ headers, rows, push }) {
       if (hostError) {
         push("error", line, id, slug, `${column}: ${hostError}`);
       }
+    }
+
+    const imagePathError = validateImagePath(fields.imagen);
+    if (imagePathError) {
+      push("error", line, id, slug, `imagen: ${imagePathError}`);
     }
   }
 }
