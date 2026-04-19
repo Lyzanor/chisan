@@ -175,22 +175,47 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
         </ViewTransitionLink>
 
         <header className="detail-hero">
-          <div className="detail-media">
-            <Image
-              src={producer.imageSrc}
-              alt={`Imagen de ${producer.name}`}
-              width={1600}
-              height={1200}
-              className="detail-media-image"
-              priority
-              sizes="(max-width: 720px) calc(100vw - 2rem), 720px"
-            />
+          <div className="detail-hero-top">
+            <div className="detail-avatar-shell" aria-hidden="true">
+              <div className="detail-avatar-ring">
+                <div className="detail-avatar">
+                  <Image
+                    src={producer.imageSrc}
+                    alt={`Imagen de ${producer.name}`}
+                    width={1600}
+                    height={1200}
+                    className="detail-avatar-image"
+                    priority
+                    sizes="(max-width: 720px) 112px, 144px"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="detail-hero-copy">
+              <p className="detail-kicker">Ficha de productor</p>
+              <h1 style={{ viewTransitionName: `producer-name-${producer.id}` }}>{producer.name}</h1>
+              <p className="detail-meta" aria-label="Resumen del productor">
+                {producer.city} · {producer.category}
+              </p>
+              {actionLinks.length > 0 ? (
+                <div className="detail-links" aria-label="Enlaces del productor">
+                  {actionLinks.map((link) =>
+                    link.kind === "external" ? (
+                      <ExternalLink key={link.href} href={link.href}>
+                        {link.label}
+                      </ExternalLink>
+                    ) : (
+                      <a key={link.href} href={link.href}>
+                        {link.label}
+                      </a>
+                    ),
+                  )}
+                </div>
+              ) : null}
+            </div>
           </div>
-          <p className="detail-kicker">Ficha de productor</p>
-          <h1 style={{ viewTransitionName: `producer-name-${producer.id}` }}>{producer.name}</h1>
-          <p className="detail-meta" aria-label="Resumen del productor">
-            {producer.city} · {producer.category}
-          </p>
+
           {quickFacts.length > 0 ? (
             <dl className="detail-fact-grid">
               {quickFacts.map((item) => (
@@ -200,21 +225,6 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
                 </div>
               ))}
             </dl>
-          ) : null}
-          {actionLinks.length > 0 ? (
-            <div className="detail-links" aria-label="Enlaces del productor">
-              {actionLinks.map((link) =>
-                link.kind === "external" ? (
-                  <ExternalLink key={link.href} href={link.href}>
-                    {link.label}
-                  </ExternalLink>
-                ) : (
-                  <a key={link.href} href={link.href}>
-                    {link.label}
-                  </a>
-                ),
-              )}
-            </div>
           ) : null}
         </header>
 
