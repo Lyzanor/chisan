@@ -141,7 +141,7 @@ function slugifySegment(value) {
     .replace(/-+/g, "-");
 }
 
-function parseCoordinate(rawValue) {
+function parseCoordinate(rawValue, maxAbs, integerDigits) {
   const cleaned = cleanCell(rawValue);
   if (!cleaned) {
     return null;
@@ -149,6 +149,33 @@ function parseCoordinate(rawValue) {
 
   const normalized = cleaned.replace(",", ".");
   const parsed = Number.parseFloat(normalized);
+
+  if (Number.isFinite(parsed) && Math.abs(parsed) <= maxAbs) {
+    return parsed;
+  }
+
+  const digits = cleaned.replace(/[^\d]/g, "");
+  const sign = cleaned.startsWith("-") ? -1 : 1;
+  const looksLikeGroupedCoordinate = /^-?\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?$/.test(cleaned);
+
+  if (!looksLikeGroupedCoordinate || !digits) {
+    return Number.isFinite(parsed) ? parsed : Number.NaN;
+  }
+
+  for (const wholeDigits of integerDigits) {
+    if (digits.length <= wholeDigits) {
+      continue;
+    }
+
+    const inferred = sign * Number.parseFloat(
+      `${digits.slice(0, wholeDigits)}.${digits.slice(wholeDigits)}`,
+    );
+
+    if (Number.isFinite(inferred) && Math.abs(inferred) <= maxAbs) {
+      return inferred;
+    }
+  }
+
   return Number.isFinite(parsed) ? parsed : Number.NaN;
 }
 
@@ -369,8 +396,8 @@ function runContractAudit({ headers, rows, push }) {
 
     const latRaw = cleanCell(fields.lat);
     const lonRaw = cleanCell(fields.lon);
-    const lat = parseCoordinate(latRaw);
-    const lon = parseCoordinate(lonRaw);
+    const lat = parseCoordinate(latRaw, 90, [2, 1, 3]);
+    const lon = parseCoordinate(lonRaw, 180, [1, 2, 3]);
 
     if ((latRaw && !lonRaw) || (!latRaw && lonRaw)) {
       push("error", line, id, slug, "lat and lon must both be present or both be empty");
@@ -438,8 +465,8 @@ function runQualityAudit({ rows, push }) {
     const instagram = cleanCell(fields.Instagram);
     const googleMaps = cleanCell(fields["Google Maps"]);
     const reviewDate = parseStrictDate(fields.fecha_revision);
-    const lat = parseCoordinate(fields.lat);
-    const lon = parseCoordinate(fields.lon);
+    const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
+    const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
     if (!name) {
       push("warning", line, id, slug, "nombre is empty");

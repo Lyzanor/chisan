@@ -8,13 +8,14 @@ import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catal
 import {
   hasProducerMapPoint,
   listCategories,
+  listMunicipalitySummaries,
   searchProducers,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
 
 export const metadata: Metadata = {
   title: "Buscador de productores",
-  description: "Encuentra productores locales por municipio y categoría.",
+  description: "Encuentra productores locales cercanos a tu ubicación o municipio.",
 };
 
 type HomePageProps = {
@@ -22,7 +23,9 @@ type HomePageProps = {
 };
 
 export const dynamic = "force-dynamic";
-const MAX_VISIBLE_RESULTS = 150;
+const MAX_LOCAL_RESULTS = 150;
+const MAX_NEARBY_RESULTS = 30;
+const START_MUNICIPALITY_LIMIT = 10;
 const MAP_SECTION_ID = "mapa";
 
 function parseCoordinateParam(value: string, min: number, max: number): number | undefined {
@@ -39,6 +42,18 @@ function parseCoordinateParam(value: string, min: number, max: number): number |
   return parsed >= min && parsed <= max ? parsed : undefined;
 }
 
+function formatResultCount(count: number): string {
+  return count === 1 ? "1 resultado" : `${count} resultados`;
+}
+
+function formatDistance(distanceKm: number): string {
+  if (distanceKm < 1) {
+    return "< 1 km";
+  }
+
+  return `${Math.round(distanceKm)} km`;
+}
+
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
   const municipality = readQueryParam(queryParams, "municipio");
@@ -49,14 +64,29 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   const lat = parseCoordinateParam(latStr, -90, 90);
   const lon = parseCoordinateParam(lonStr, -180, 180);
+  const hasLocation = lat !== undefined && lon !== undefined;
+  const hasMunicipality = Boolean(municipality);
+  const hasDiscoveryContext = hasLocation || hasMunicipality;
 
-  const [items, categories] = await Promise.all([
-    searchProducers({ municipality, category, lat, lon }),
+  const [items, categories, startMunicipalities] = await Promise.all([
+    hasDiscoveryContext
+      ? searchProducers({ municipality, category, lat, lon })
+      : Promise.resolve([]),
     listCategories(),
+    hasDiscoveryContext
+      ? Promise.resolve([])
+      : listMunicipalitySummaries(category, START_MUNICIPALITY_LIMIT),
   ]);
 
-  const visibleItems = items.slice(0, MAX_VISIBLE_RESULTS);
-  const hasMore = items.length > visibleItems.length;
+  const nearbyItems = hasLocation
+    ? items.filter((item) => item.distanceKm !== undefined)
+    : items;
+  const visibleItems = hasLocation
+    ? nearbyItems.slice(0, MAX_NEARBY_RESULTS)
+    : items.slice(0, MAX_LOCAL_RESULTS);
+  const hasMore = hasLocation
+    ? nearbyItems.length > visibleItems.length
+    : items.length > visibleItems.length;
   const highlightedItem = highlight
     ? items.find((i) => String(i.id) === highlight)
     : undefined;
@@ -66,17 +96,24 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       : undefined;
   const mapPoints = highlightedMapItem
     ? toProducerMapPoints([highlightedMapItem])
-    : toProducerMapPoints(items);
+    : toProducerMapPoints(visibleItems);
   const resetHref = buildCatalogHref({ municipality, category, lat: latStr, lon: lonStr });
+  const resultCount = hasLocation ? nearbyItems.length : items.length;
+  const resultCountLabel = formatResultCount(resultCount);
+  const resultSummary = hasLocation
+    ? `${resultCountLabel} con ubicación fiable, ordenados por cercanía${category ? ` · Categoría: ${category}` : ""}`
+    : municipality
+      ? `Municipio: ${municipality}${category ? ` · Categoría: ${category}` : " · Todas las categorías"}`
+      : "Elige una ubicación o municipio para ver productores cercanos";
 
   return (
     <main className="catalog-page">
       <section className="catalog-shell">
         <header className="catalog-header">
           <p className="catalog-kicker">KM0 Barcelona</p>
-          <h1>Productors locals</h1>
+          <h1>Productores cerca de ti</h1>
           <p className="catalog-description">
-            Busca por municipio o categoría y abre la ficha completa de cada productor.
+            Descubre productores locales de tu municipio o los que quedan más cerca.
           </p>
           <SearchForm initialMunicipality={municipality} initialCategory={category} />
         </header>
@@ -108,104 +145,133 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           </p>
         )}
 
-        <section
-          id={MAP_SECTION_ID}
-          className="catalog-map-stage"
-          aria-label="Mapa de productores"
-        >
-          <div className="catalog-map-head">
-            <h2>Mapa</h2>
-            <p>{items.length} resultados</p>
-          </div>
-          <ProducersMap
-            points={mapPoints}
-            highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
-            userLocation={lat !== undefined && lon !== undefined ? { lat, lon } : undefined}
-            detailContext={{ municipality, category, lat: latStr, lon: lonStr }}
-          />
-        </section>
-
-        <section className="catalog-results" aria-label="Resultados de búsqueda">
-          <p className="catalog-results-meta">
-            {municipality ? `Municipio: ${municipality}` : "Todos los municipios"}
-            {category ? ` · Categoría: ${category}` : " · Todas las categorías"}
-          </p>
-
-          {visibleItems.length > 0 ? (
-            <ul className="producer-list">
-              {visibleItems.map((item) => {
-                const producerNameHref = hasProducerMapPoint(item)
-                  ? `${buildCatalogHref({
-                      municipality,
-                      category,
-                      highlight: item.id,
-                      lat: latStr,
-                      lon: lonStr,
-                    })}#${MAP_SECTION_ID}`
-                  : buildCatalogHref({
-                      municipality,
-                      category,
-                      highlight: item.id,
-                      lat: latStr,
-                      lon: lonStr,
-                    });
-
-                return (
-                  <li key={item.id}>
-                    <article
-                      className={`producer-card ${highlightedItem?.id === item.id ? "is-highlighted" : ""}`}
+        {hasDiscoveryContext ? (
+          <section
+            id={MAP_SECTION_ID}
+            className="catalog-map-stage"
+            aria-label="Mapa de productores"
+          >
+            <div className="catalog-map-head">
+              <h2>{hasLocation ? "Cerca de ti" : "Zona seleccionada"}</h2>
+              <p>{resultCountLabel}</p>
+            </div>
+            <ProducersMap
+              points={mapPoints}
+              highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
+              userLocation={hasLocation ? { lat, lon } : undefined}
+              detailContext={{ municipality, category, lat: latStr, lon: lonStr }}
+            />
+          </section>
+        ) : (
+          <section className="catalog-start" aria-label="Inicio de descubrimiento">
+            <div className="catalog-start-copy">
+              <h2>Empieza por una zona concreta</h2>
+              <p>
+                Usa tu ubicación o entra por un municipio con productores disponibles.
+              </p>
+            </div>
+            {startMunicipalities.length > 0 && (
+              <div className="catalog-start-block">
+                <h3>{category ? `Municipios con ${category}` : "Municipios con más productores"}</h3>
+                <div className="catalog-start-grid">
+                  {startMunicipalities.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={buildCatalogHref({ municipality: item.name, category })}
+                      className="catalog-start-link"
                     >
-                      <div className="producer-main">
-                        <Link
-                          href={producerNameHref}
-                          className="producer-name"
-                          style={{ viewTransitionName: `producer-name-${item.id}` }}
-                        >
-                          {item.name}
-                        </Link>
-                        <p className="producer-meta">
-                          {item.city} · {item.category}
-                          {item.featuredProducts ? ` · ${item.featuredProducts}` : ""}
-                          {item.distanceKm !== undefined
-                            ? ` · ${item.distanceKm < 1 ? "< 1 km" : `${Math.round(item.distanceKm)} km`}`
-                            : ""}
-                        </p>
-                      </div>
+                      <strong>{item.name}</strong>
+                      <span>{formatResultCount(item.count)}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
 
-                      <div className="producer-actions">
-                        <ViewTransitionLink
-                          href={buildProducerHref(
-                            { id: item.id, slug: item.slug },
-                            {
-                              municipality,
-                              category,
-                              highlight: item.id,
-                              lat: latStr,
-                              lon: lonStr,
-                            },
-                          )}
-                          className="producer-inline-link is-primary"
-                        >
-                          Ficha
-                        </ViewTransitionLink>
-                      </div>
-                    </article>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p className="catalog-empty">
-              No hay resultados para la combinación actual. Prueba con otra categoría o municipio.
-            </p>
-          )}
+        {hasDiscoveryContext && (
+          <section className="catalog-results" aria-label="Resultados de búsqueda">
+            <p className="catalog-results-meta">{resultSummary}</p>
 
-          {hasMore && (
-            <p className="catalog-results-meta">
-              Mostrando los primeros {visibleItems.length} resultados.
-            </p>
-          )}
-        </section>
+            {visibleItems.length > 0 ? (
+              <ul className="producer-list">
+                {visibleItems.map((item) => {
+                  const producerNameHref = hasProducerMapPoint(item)
+                    ? `${buildCatalogHref({
+                        municipality,
+                        category,
+                        highlight: item.id,
+                        lat: latStr,
+                        lon: lonStr,
+                      })}#${MAP_SECTION_ID}`
+                    : buildCatalogHref({
+                        municipality,
+                        category,
+                        highlight: item.id,
+                        lat: latStr,
+                        lon: lonStr,
+                      });
+
+                  return (
+                    <li key={item.id}>
+                      <article
+                        className={`producer-card ${highlightedItem?.id === item.id ? "is-highlighted" : ""}`}
+                      >
+                        <div className="producer-main">
+                          <Link
+                            href={producerNameHref}
+                            className="producer-name"
+                            style={{ viewTransitionName: `producer-name-${item.id}` }}
+                          >
+                            {item.name}
+                          </Link>
+                          <p className="producer-meta">
+                            {item.city} · {item.category}
+                            {item.featuredProducts ? ` · ${item.featuredProducts}` : ""}
+                            {item.distanceKm !== undefined
+                              ? ` · ${formatDistance(item.distanceKm)}`
+                              : ""}
+                          </p>
+                        </div>
+
+                        <div className="producer-actions">
+                          <ViewTransitionLink
+                            href={buildProducerHref(
+                              { id: item.id, slug: item.slug },
+                              {
+                                municipality,
+                                category,
+                                highlight: item.id,
+                                lat: latStr,
+                                lon: lonStr,
+                              },
+                            )}
+                            className="producer-inline-link is-primary"
+                          >
+                            Ficha
+                          </ViewTransitionLink>
+                        </div>
+                      </article>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="catalog-empty">
+                {hasLocation
+                  ? "No hay productores cercanos para la combinación actual."
+                  : "No hay productores para la combinación actual."}
+              </p>
+            )}
+
+            {hasMore && (
+              <p className="catalog-results-meta">
+                Mostrando los primeros {visibleItems.length} resultados.
+              </p>
+            )}
+          </section>
+        )}
       </section>
     </main>
   );

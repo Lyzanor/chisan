@@ -176,20 +176,16 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
 
         <header className="detail-hero">
           <div className="detail-hero-top">
-            <div className="detail-avatar-shell" aria-hidden="true">
-              <div className="detail-avatar-ring">
-                <div className="detail-avatar">
-                  <Image
-                    src={producer.imageSrc}
-                    alt={`Imagen de ${producer.name}`}
-                    width={1600}
-                    height={1200}
-                    className="detail-avatar-image"
-                    priority
-                    sizes="(max-width: 720px) 112px, 144px"
-                  />
-                </div>
-              </div>
+            <div className="detail-image-panel">
+              <Image
+                src={producer.imageSrc}
+                alt={`Imagen de ${producer.name}`}
+                width={1600}
+                height={1200}
+                className="detail-producer-image"
+                priority
+                sizes="(max-width: 720px) calc(100vw - 3rem), 420px"
+              />
             </div>
 
             <div className="detail-hero-copy">

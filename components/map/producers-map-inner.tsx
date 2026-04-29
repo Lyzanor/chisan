@@ -21,6 +21,7 @@ const DEFAULT_CENTER: [number, number] = [41.42, 2.02];
 const DEFAULT_ZOOM = 10;
 const FOCUSED_ZOOM = 13;
 const USER_LOCATION_ZOOM = 12;
+const NEARBY_FIT_POINT_LIMIT = 12;
 const MARKER_GRID_SIZES = [
   { maxZoom: 9, cellSize: 48, maxMarkers: 34 },
   { maxZoom: 10, cellSize: 42, maxMarkers: 46 },
@@ -269,7 +270,7 @@ function BoundsAwareMarkers({
     }
 
     if (userLocation) {
-      focusSinglePosition(map, [userLocation.lat, userLocation.lon], USER_LOCATION_ZOOM);
+      fitPointsInView(map, points.slice(0, NEARBY_FIT_POINT_LIMIT), userLocation);
       return;
     }
 

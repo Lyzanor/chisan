@@ -73,7 +73,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
           type="search"
           name="municipio"
           defaultValue={initialMunicipality}
-          placeholder="Municipio"
+          placeholder="Tu municipio"
           aria-label="Municipio"
         />
         <div className="catalog-search-actions">
@@ -85,7 +85,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
             title="Usar ubicación"
             aria-label="Usar ubicación"
           >
-            {isLocating ? "Buscando..." : "Ubicación"}
+            {isLocating ? "Buscando..." : "Cerca de mí"}
           </button>
           <button
             type="submit"
@@ -94,7 +94,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
             title="Buscar"
             aria-label="Buscar"
           >
-            {isPending ? "Buscando..." : "Buscar"}
+            {isPending ? "Buscando..." : "Buscar municipio"}
           </button>
         </div>
       </form>

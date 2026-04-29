@@ -30,6 +30,11 @@ export type ProducerMapPoint = {
   longitude: number;
 };
 
+export type MunicipalitySummary = {
+  name: string;
+  count: number;
+};
+
 const CSV_PATH = path.resolve(process.cwd(), "Km0-productores.csv");
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 const MAP_ADDRESS_FIELD_KEYS = ["direccion", "direccio", "address", "domicilio"] as const;
@@ -145,14 +150,46 @@ function findFieldValue(
   return "";
 }
 
-function parseCoordinate(rawValue: string): number | null {
-  if (!rawValue.trim()) {
+function parseCoordinate(
+  rawValue: string,
+  maxAbs: number,
+  integerDigits: readonly number[],
+): number | null {
+  const cleaned = rawValue.trim();
+  if (!cleaned) {
     return null;
   }
 
-  const normalized = rawValue.trim().replace(",", ".");
-  const value = Number.parseFloat(normalized);
-  return Number.isFinite(value) ? value : null;
+  const normalized = cleaned.replace(",", ".");
+  const parsed = Number.parseFloat(normalized);
+
+  if (Number.isFinite(parsed) && Math.abs(parsed) <= maxAbs) {
+    return parsed;
+  }
+
+  const digits = cleaned.replace(/[^\d]/g, "");
+  const sign = cleaned.startsWith("-") ? -1 : 1;
+  const looksLikeGroupedCoordinate = /^-?\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?$/.test(cleaned);
+
+  if (!looksLikeGroupedCoordinate || !digits) {
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  for (const wholeDigits of integerDigits) {
+    if (digits.length <= wholeDigits) {
+      continue;
+    }
+
+    const inferred = sign * Number.parseFloat(
+      `${digits.slice(0, wholeDigits)}.${digits.slice(wholeDigits)}`,
+    );
+
+    if (Number.isFinite(inferred) && Math.abs(inferred) <= maxAbs) {
+      return inferred;
+    }
+  }
+
+  return Number.isFinite(parsed) ? parsed : null;
 }
 
 function readAddress(fields: Record<string, string>): string {
@@ -160,7 +197,7 @@ function readAddress(fields: Record<string, string>): string {
 }
 
 function readLatitude(fields: Record<string, string>): number | null {
-  const value = parseCoordinate(findFieldValue(fields, ["lat", "latitude"]));
+  const value = parseCoordinate(findFieldValue(fields, ["lat", "latitude"]), 90, [2, 1, 3]);
   if (value === null) {
     return null;
   }
@@ -170,6 +207,8 @@ function readLatitude(fields: Record<string, string>): number | null {
 function readLongitude(fields: Record<string, string>): number | null {
   const value = parseCoordinate(
     findFieldValue(fields, ["lon", "lng", "long", "longitude"]),
+    180,
+    [1, 2, 3],
   );
   if (value === null) {
     return null;
@@ -196,7 +235,7 @@ function calculateDistance(
   lat1: number,
   lon1: number,
   lat2: number,
-  lon2: number
+  lon2: number,
 ): number {
   const R = 6371; // Earth radius in km
   const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -282,6 +321,33 @@ export async function listCategories(): Promise<string[]> {
   return [...counts.entries()]
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "es"))
     .map(([value]) => value);
+}
+
+export async function listMunicipalitySummaries(
+  category = "",
+  limit = 12,
+): Promise<MunicipalitySummary[]> {
+  const rows = await loadCsvRows();
+  const normalizedCategory = normalizeSearch(category);
+  const counts = new Map<string, number>();
+
+  for (const row of rows) {
+    if (normalizedCategory && normalizeSearch(row.category) !== normalizedCategory) {
+      continue;
+    }
+
+    const municipality = row.city.trim();
+    if (!municipality) {
+      continue;
+    }
+
+    counts.set(municipality, (counts.get(municipality) ?? 0) + 1);
+  }
+
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "es"))
+    .slice(0, limit)
+    .map(([name, count]) => ({ name, count }));
 }
 
 export function hasProducerMapPoint(
@@ -374,14 +440,14 @@ export async function searchProducers(
     const userLon = filters.lon as number;
 
     results = results.map((row) => {
-      if (row.latitude !== null && row.longitude !== null) {
+      if (hasProducerMapPoint(row)) {
         return {
           ...row,
           distanceKm: calculateDistance(
             userLat,
             userLon,
             row.latitude,
-            row.longitude
+            row.longitude,
           ),
         };
       }
