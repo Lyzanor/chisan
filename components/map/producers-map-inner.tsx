@@ -17,7 +17,7 @@ import { buildProducerHref, type CatalogNavigationContext } from "@/lib/catalog-
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 const VIEWPORT_THRESHOLD = 600;
-const DEFAULT_CENTER: [number, number] = [41.42, 2.02];
+const FALLBACK_CENTER: [number, number] = [40.0, -3.7];
 const DEFAULT_ZOOM = 10;
 const FOCUSED_ZOOM = 13;
 const USER_LOCATION_ZOOM = 12;
@@ -284,7 +284,7 @@ function BoundsAwareMarkers({
       return;
     }
 
-    map.setView(DEFAULT_CENTER, DEFAULT_ZOOM, { animate: false });
+    map.setView(computeDefaultCenter(points), DEFAULT_ZOOM, { animate: false });
   }, [highlightedPoint, map, points, userLocation]);
 
   useMapEvents({
@@ -345,6 +345,22 @@ function BoundsAwareMarkers({
   );
 }
 
+function computeDefaultCenter(points: ProducerMapPoint[]): [number, number] {
+  if (points.length === 0) {
+    return FALLBACK_CENTER;
+  }
+
+  let sumLat = 0;
+  let sumLon = 0;
+
+  for (const point of points) {
+    sumLat += point.latitude;
+    sumLon += point.longitude;
+  }
+
+  return [sumLat / points.length, sumLon / points.length];
+}
+
 export default function ProducersMapInner({
   points,
   highlightedId,
@@ -358,13 +374,19 @@ export default function ProducersMapInner({
   detailContext?: CatalogNavigationContext;
   onSummaryChange: (summary: MapVisibilitySummary) => void;
 }) {
+  const defaultCenter = userLocation
+    ? [userLocation.lat, userLocation.lon] as [number, number]
+    : computeDefaultCenter(points);
+
+  // Use province from context as key to force remount when switching provinces
+  const mapKey = detailContext?.province ?? "";
+
   return (
     <MapContainer
-      center={userLocation ? [userLocation.lat, userLocation.lon] : DEFAULT_CENTER}
+      key={mapKey}
+      center={defaultCenter}
       zoom={DEFAULT_ZOOM}
-      maxBounds={[[40.5, 0.1], [42.9, 3.4]]}
-      maxBoundsViscosity={0.9}
-      minZoom={8}
+      minZoom={6}
       className="producers-map-canvas"
       scrollWheelZoom
       preferCanvas
