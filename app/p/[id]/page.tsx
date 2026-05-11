@@ -91,7 +91,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ProducerPage({ params, searchParams }: PageProps) {
   const { id } = await params;
   const queryParams = await searchParams;
-  const producer = await findProducerById(id);
+  const province = readQueryParam(queryParams, "provincia");
+  const producer = await findProducerById(id, province);
 
   if (!producer) {
     notFound();
@@ -108,7 +109,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
     redirect(
       buildProducerHref(
         { id: producer.id, slug: producer.slug },
-        { municipality, category, highlight, lat, lon },
+        { municipality, category, highlight, lat, lon, province },
       ),
     );
   }
@@ -119,6 +120,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
     lat,
     lon,
     highlight: producer.id,
+    province,
   })}#${MAP_SECTION_ID}`;
 
   const description = getFieldValue(producer.fields, "descripcion");

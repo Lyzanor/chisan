@@ -8,9 +8,10 @@ import { buildCatalogHref } from "@/lib/catalog-navigation";
 type SearchFormProps = {
   initialMunicipality: string;
   initialCategory: string;
+  province: string;
 };
 
-export function SearchForm({ initialMunicipality, initialCategory }: SearchFormProps) {
+export function SearchForm({ initialMunicipality, initialCategory, province }: SearchFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
@@ -24,7 +25,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
     const cat = formData.get("categoria")?.toString() || initialCategory;
 
     startTransition(() => {
-      router.push(buildCatalogHref({ municipality: mun, category: cat }));
+      router.push(buildCatalogHref({ municipality: mun, category: cat, province }));
     });
   }
 
@@ -44,6 +45,7 @@ export function SearchForm({ initialMunicipality, initialCategory }: SearchFormP
         startTransition(() => {
           router.push(
             buildCatalogHref({
+              province,
               category: searchParams.get("categoria") ?? "",
               lat: latitude.toString(),
               lon: longitude.toString(),

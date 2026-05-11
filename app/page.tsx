@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ProducersMap } from "@/components/map/producers-map";
+import { ProvinceSelector } from "@/components/province-selector";
 import { SearchForm } from "@/components/search-form";
 import { ViewTransitionLink } from "@/components/view-transition-link";
 import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
 import {
+  getProvinceLabel,
   hasProducerMapPoint,
   listCategories,
   listMunicipalitySummaries,
+  listProvinces,
   searchProducers,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
@@ -56,6 +59,7 @@ function formatDistance(distanceKm: number): string {
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
+  const province = readQueryParam(queryParams, "provincia");
   const municipality = readQueryParam(queryParams, "municipio");
   const category = readQueryParam(queryParams, "categoria");
   const highlight = readQueryParam(queryParams, "destacar");
@@ -68,14 +72,17 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const hasMunicipality = Boolean(municipality);
   const hasDiscoveryContext = hasLocation || hasMunicipality;
 
+  const provinces = listProvinces();
+  const provinceLabel = getProvinceLabel(province);
+
   const [items, categories, startMunicipalities] = await Promise.all([
     hasDiscoveryContext
-      ? searchProducers({ municipality, category, lat, lon })
+      ? searchProducers({ municipality, category, lat, lon }, province)
       : Promise.resolve([]),
-    listCategories(),
+    listCategories(province),
     hasDiscoveryContext
       ? Promise.resolve([])
-      : listMunicipalitySummaries(category, START_MUNICIPALITY_LIMIT),
+      : listMunicipalitySummaries(category, START_MUNICIPALITY_LIMIT, province),
   ]);
 
   const nearbyItems = hasLocation
@@ -97,7 +104,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const mapPoints = highlightedMapItem
     ? toProducerMapPoints([highlightedMapItem])
     : toProducerMapPoints(visibleItems);
-  const resetHref = buildCatalogHref({ municipality, category, lat: latStr, lon: lonStr });
+  const resetHref = buildCatalogHref({ municipality, category, lat: latStr, lon: lonStr, province });
   const resultCount = hasLocation ? nearbyItems.length : items.length;
   const resultCountLabel = formatResultCount(resultCount);
   const resultSummary = hasLocation
@@ -110,17 +117,18 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     <main className="catalog-page">
       <section className="catalog-shell">
         <header className="catalog-header">
-          <p className="catalog-kicker">KM0 Barcelona</p>
+          <p className="catalog-kicker">KM0 {provinceLabel}</p>
           <h1>Productores cerca de ti</h1>
+          <ProvinceSelector provinces={provinces} currentProvince={province} />
           <p className="catalog-description">
             Descubre productores locales de tu municipio o los que quedan más cerca.
           </p>
-          <SearchForm initialMunicipality={municipality} initialCategory={category} />
+          <SearchForm initialMunicipality={municipality} initialCategory={category} province={province} />
         </header>
 
         <nav className="catalog-categories" aria-label="Categorías">
           <Link
-            href={buildCatalogHref({ municipality, category: "", lat: latStr, lon: lonStr })}
+            href={buildCatalogHref({ municipality, category: "", lat: latStr, lon: lonStr, province })}
             className={`catalog-chip ${!category ? "is-active" : ""}`}
           >
             Tots
@@ -128,7 +136,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           {categories.map((cat) => (
             <Link
               key={cat}
-              href={buildCatalogHref({ municipality, category: cat, lat: latStr, lon: lonStr })}
+              href={buildCatalogHref({ municipality, category: cat, lat: latStr, lon: lonStr, province })}
               className={`catalog-chip ${category === cat ? "is-active" : ""}`}
             >
               {cat}
@@ -159,7 +167,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               points={mapPoints}
               highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
               userLocation={hasLocation ? { lat, lon } : undefined}
-              detailContext={{ municipality, category, lat: latStr, lon: lonStr }}
+              detailContext={{ municipality, category, lat: latStr, lon: lonStr, province }}
             />
           </section>
         ) : (
@@ -177,7 +185,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                   {startMunicipalities.map((item) => (
                     <Link
                       key={item.name}
-                      href={buildCatalogHref({ municipality: item.name, category })}
+                      href={buildCatalogHref({ municipality: item.name, category, province })}
                       className="catalog-start-link"
                     >
                       <strong>{item.name}</strong>
@@ -204,6 +212,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                         highlight: item.id,
                         lat: latStr,
                         lon: lonStr,
+                        province,
                       })}#${MAP_SECTION_ID}`
                     : buildCatalogHref({
                         municipality,
@@ -211,6 +220,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                         highlight: item.id,
                         lat: latStr,
                         lon: lonStr,
+                        province,
                       });
 
                   return (
@@ -245,6 +255,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                                 highlight: item.id,
                                 lat: latStr,
                                 lon: lonStr,
+                                province,
                               },
                             )}
                             className="producer-inline-link is-primary"
@@ -276,3 +287,4 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     </main>
   );
 }
+

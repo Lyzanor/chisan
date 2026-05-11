@@ -2,7 +2,6 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "csv-parse/sync";
-import { cache } from "react";
 
 type RawCsvRow = Record<string, string | undefined>;
 
@@ -35,7 +34,39 @@ export type MunicipalitySummary = {
   count: number;
 };
 
-const CSV_PATH = path.resolve(process.cwd(), "Km0-productores.csv");
+const PROVINCE_REGISTRY: Record<string, { label: string; csvFile: string }> = {
+  "": { label: "Barcelona", csvFile: "Km0-productores.csv" },
+  alicante: { label: "Alicante", csvFile: "Km0-productores-alicante.csv" },
+  castellon: { label: "Castellón", csvFile: "Km0-productores-castellon.csv" },
+  girona: { label: "Girona", csvFile: "Km0-productores-girona.csv" },
+  huesca: { label: "Huesca", csvFile: "Km0-productores-huesca.csv" },
+  lleida: { label: "Lleida", csvFile: "Km0-productores-lleida.csv" },
+  madrid: { label: "Madrid", csvFile: "Km0-productores-madrid.csv" },
+  murcia: { label: "Murcia", csvFile: "Km0-productores-murcia.csv" },
+  navarra: { label: "Navarra", csvFile: "Km0-productores-navarra.csv" },
+  tarragona: { label: "Tarragona", csvFile: "Km0-productores-tarragona.csv" },
+  teruel: { label: "Teruel", csvFile: "Km0-productores-teruel.csv" },
+  valencia: { label: "Valencia", csvFile: "Km0-productores-valencia.csv" },
+  zaragoza: { label: "Zaragoza", csvFile: "Km0-productores-zaragoza.csv" },
+};
+
+export type ProvinceOption = {
+  slug: string;
+  label: string;
+};
+
+function resolveProvinceCsvPath(province: string): string {
+  const entry = PROVINCE_REGISTRY[province] ?? PROVINCE_REGISTRY[""];
+  return path.resolve(process.cwd(), entry.csvFile);
+}
+
+export function getProvinceLabel(province: string): string {
+  return (PROVINCE_REGISTRY[province] ?? PROVINCE_REGISTRY[""]).label;
+}
+
+export function listProvinces(): ProvinceOption[] {
+  return Object.entries(PROVINCE_REGISTRY).map(([slug, { label }]) => ({ slug, label }));
+}
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 const MAP_ADDRESS_FIELD_KEYS = ["direccion", "direccio", "address", "domicilio"] as const;
 const MAP_ADDRESS_HINT_KEYWORDS = [
@@ -163,10 +194,6 @@ function parseCoordinate(
   const normalized = cleaned.replace(",", ".");
   const parsed = Number.parseFloat(normalized);
 
-  if (Number.isFinite(parsed) && Math.abs(parsed) <= maxAbs) {
-    return parsed;
-  }
-
   const digits = cleaned.replace(/[^\d]/g, "");
   const sign = cleaned.startsWith("-") ? -1 : 1;
   const looksLikeGroupedCoordinate = /^-?\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?$/.test(cleaned);
@@ -250,15 +277,24 @@ function calculateDistance(
   return R * c;
 }
 
-const loadCsvRows = cache(async function loadCsvRows(): Promise<ProducerCsvRow[]> {
-  const csvRaw = await readFile(CSV_PATH, "utf8");
+const csvCache = new Map<string, ProducerCsvRow[]>();
+
+async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
+  const cacheKey = province || "";
+  const cached = csvCache.get(cacheKey);
+  if (cached) {
+    return cached;
+  }
+
+  const csvPath = resolveProvinceCsvPath(cacheKey);
+  const csvRaw = await readFile(csvPath, "utf8");
   const parsedRows = parse(csvRaw, {
     columns: true,
     bom: true,
     skip_empty_lines: true,
   }) as RawCsvRow[];
 
-  return parsedRows.map((row, index) => {
+  const rows = parsedRows.map((row, index) => {
     const fields = Object.fromEntries(
       Object.entries(row).map(([key, value]) => [cleanCell(key), cleanCell(value)]),
     );
@@ -285,7 +321,10 @@ const loadCsvRows = cache(async function loadCsvRows(): Promise<ProducerCsvRow[]
       fields,
     };
   });
-});
+
+  csvCache.set(cacheKey, rows);
+  return rows;
+}
 
 function parseProducerId(rawId: string): number | null {
   const [candidate] = rawId.split("-", 1);
@@ -298,18 +337,18 @@ function parseProducerId(rawId: string): number | null {
   return id;
 }
 
-export async function findProducerById(rawId: string): Promise<ProducerCsvRow | null> {
+export async function findProducerById(rawId: string, province = ""): Promise<ProducerCsvRow | null> {
   const id = parseProducerId(rawId);
   if (id === null) {
     return null;
   }
 
-  const rows = await loadCsvRows();
+  const rows = await loadCsvRows(province);
   return rows[id - 1] ?? null;
 }
 
-export async function listCategories(): Promise<string[]> {
-  const rows = await loadCsvRows();
+export async function listCategories(province = ""): Promise<string[]> {
+  const rows = await loadCsvRows(province);
   const counts = new Map<string, number>();
 
   for (const row of rows) {
@@ -326,8 +365,9 @@ export async function listCategories(): Promise<string[]> {
 export async function listMunicipalitySummaries(
   category = "",
   limit = 12,
+  province = "",
 ): Promise<MunicipalitySummary[]> {
-  const rows = await loadCsvRows();
+  const rows = await loadCsvRows(province);
   const normalizedCategory = normalizeSearch(category);
   const counts = new Map<string, number>();
 
@@ -419,8 +459,9 @@ export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] 
 
 export async function searchProducers(
   filters: ProducerSearchFilters,
+  province = "",
 ): Promise<ProducerCsvRow[]> {
-  const rows = await loadCsvRows();
+  const rows = await loadCsvRows(province);
   const normalizedMunicipality = normalizeSearch(filters.municipality);
   const normalizedCategory = normalizeSearch(filters.category);
 
