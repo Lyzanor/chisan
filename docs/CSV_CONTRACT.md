@@ -6,7 +6,8 @@
 - Encoding: UTF-8 (BOM tolerated)
 - Header row is required.
 - Validation entrypoints:
-  - `pnpm check:csv`: blocking technical contract audit
+  - `pnpm check:csv`: blocking technical contract audit for every CSV
+  - `node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv`: blocking audit for one CSV
   - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings
 
 ## Required columns
@@ -30,6 +31,7 @@
 
 ## Optional columns
 - `imagen`
+- `verificacion`
 
 ## How the app uses columns
 - Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
@@ -41,6 +43,7 @@
 - External links: `web`, `Facebook`, `Instagram`, `Google Maps`.
 - Detail page: shows all columns as table rows.
 - Detail image: `imagen` when present, otherwise a generic local placeholder.
+- Verification level: `verificacion`, when present, records how checked the row is.
 
 ## Normalization rules
 - Collapse repeated spaces.
@@ -49,6 +52,23 @@
   - lower case
   - remove diacritics
   - keep letters/numbers, collapse separators
+
+## Preferred category labels
+- Keep category labels stable and prefer the Barcelona-style labels below when adding or correcting rows:
+  - `Lácteos y quesos` instead of `Quesos y lácteos` or `Lácteos`
+  - `Bodega` instead of `Vino`, `Vinos y bebidas`, or `Bodega y licores`
+  - `Pan y pastelería` instead of `Panadería`, `Panadería y repostería`, `Pastelería y panadería`, `Dulces y panadería`, `Pan y repostería`, or `Pan y bollería`
+- New category labels should be rare and should describe a materially different producer type.
+
+## Verification levels
+- `verificacion` is optional during migration, but recommended for CSVs that are actively edited.
+- Allowed values:
+  - `alta`: core data has been checked against a primary or clearly reliable source, and name, location and contact/link data are consistent.
+  - `media`: producer appears real and localized, but some fields are incomplete, inferred, or based mostly on secondary sources.
+  - `baja`: plausible row with weak verification.
+  - `pendiente`: added for catalog coverage, but still needs review.
+- Do not mark `alta` without a real `fecha_revision`.
+- `fecha_revision` should only change when the row was actually reviewed or corrected.
 
 ## Missing values
 - Missing cell values are represented as empty strings internally.
@@ -72,6 +92,11 @@
   - both `telefono` and `correo` empty
   - both `Facebook` and `Instagram` empty
   - `Google Maps` empty
+- Verification:
+  - missing `verificacion` column in actively edited CSVs
+  - empty `verificacion` when the column exists
+  - unsupported `verificacion` values
+  - `verificacion=alta` without `fecha_revision`
 - Review freshness:
   - `fecha_revision` older than `60` days = attention
   - `fecha_revision` older than `90` days = expired
@@ -79,6 +104,7 @@
   - duplicated `slug`
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization
+  - category labels that should use one of the preferred category labels
   - coordinates present but `direccion` not useful for location review
 
 ## Link validation

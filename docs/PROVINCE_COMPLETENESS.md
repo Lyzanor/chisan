@@ -38,18 +38,18 @@ Baseline snapshot:
 ## Planning Signal
 Run the completeness audit when you need a planning signal. It highlights obvious gaps, but it does not replace editorial judgment about validity, municipal spread, row quality, and source reliability.
 
-The initial bottom group by the mechanical score is:
+The current bottom group by the mechanical score is:
 
-1. `data/csv/pais-vasco/alava.csv`
-2. `data/csv/cantabria/cantabria.csv`
-3. `data/csv/comunitat-valenciana/alicante.csv`
-4. `data/csv/murcia/murcia.csv`
-5. `data/csv/castilla-y-leon/segovia.csv`
-6. `data/csv/castilla-y-leon/salamanca.csv`
-7. `data/csv/comunitat-valenciana/valencia.csv`
-8. `data/csv/castilla-la-mancha/guadalajara.csv`
-9. `data/csv/extremadura/badajoz.csv`
-10. `data/csv/comunitat-valenciana/castellon.csv`
+1. `data/csv/cantabria/cantabria.csv`
+2. `data/csv/catalunya/barcelona.csv`
+3. `data/csv/pais-vasco/alava.csv`
+4. `data/csv/comunitat-valenciana/alicante.csv`
+5. `data/csv/murcia/murcia.csv`
+6. `data/csv/castilla-y-leon/segovia.csv`
+7. `data/csv/castilla-y-leon/salamanca.csv`
+8. `data/csv/comunitat-valenciana/valencia.csv`
+9. `data/csv/castilla-la-mancha/guadalajara.csv`
+10. `data/csv/extremadura/badajoz.csv`
 
 ## Province Improvement Loop
 Use this loop for dedicated province work, not as a default requirement for unrelated tasks.

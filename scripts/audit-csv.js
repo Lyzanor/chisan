@@ -23,6 +23,21 @@ const REQUIRED_COLUMNS = [
 const DESCRIPTION_MIN_LENGTH = 30;
 const REVIEW_WARNING_DAYS = 60;
 const REVIEW_EXPIRED_DAYS = 90;
+const VERIFICATION_COLUMN = "verificacion";
+const VERIFICATION_LEVELS = new Set(["alta", "media", "baja", "pendiente"]);
+const PREFERRED_CATEGORY_ALIASES = new Map([
+  ["quesos y lacteos", "Lácteos y quesos"],
+  ["lacteos", "Lácteos y quesos"],
+  ["vino", "Bodega"],
+  ["vinos y bebidas", "Bodega"],
+  ["bodega y licores", "Bodega"],
+  ["panaderia", "Pan y pastelería"],
+  ["panaderia y reposteria", "Pan y pastelería"],
+  ["pasteleria y panaderia", "Pan y pastelería"],
+  ["dulces y panaderia", "Pan y pastelería"],
+  ["pan y reposteria", "Pan y pastelería"],
+  ["pan y bolleria", "Pan y pastelería"],
+]);
 const MAP_ADDRESS_HINT_KEYWORDS = [
   "avinguda",
   "avenida",
@@ -424,11 +439,22 @@ function runContractAudit({ headers, rows, push }) {
   }
 }
 
-function runQualityAudit({ rows, push }) {
+function runQualityAudit({ headers, rows, push }) {
   const now = new Date();
+  const hasVerificationColumn = headers.includes(VERIFICATION_COLUMN);
   const slugLines = new Map();
   const nameCityLines = new Map();
   const categoryVariants = new Map();
+
+  if (!hasVerificationColumn) {
+    push(
+      "warning",
+      1,
+      0,
+      "(header)",
+      "verificacion column is missing; add it when editing this CSV",
+    );
+  }
 
   for (const [index, fields] of rows.entries()) {
     const line = index + 2;
@@ -445,6 +471,8 @@ function runQualityAudit({ rows, push }) {
     const instagram = cleanCell(fields.Instagram);
     const googleMaps = cleanCell(fields["Google Maps"]);
     const reviewDate = parseStrictDate(fields.fecha_revision);
+    const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
+    const verification = normalizeSearch(verificationRaw);
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
     const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
@@ -458,6 +486,33 @@ function runQualityAudit({ rows, push }) {
 
     if (!category) {
       push("warning", line, id, slug, "categoria is empty");
+    } else {
+      const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
+      if (preferredCategory && category !== preferredCategory) {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          `categoria should use preferred label '${preferredCategory}' instead of '${category}'`,
+        );
+      }
+    }
+
+    if (hasVerificationColumn) {
+      if (!verificationRaw) {
+        push("warning", line, id, slug, "verificacion is empty");
+      } else if (!VERIFICATION_LEVELS.has(verification)) {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
+        );
+      } else if (verification === "alta" && reviewDate.empty) {
+        push("warning", line, id, slug, "verificacion alta requires fecha_revision");
+      }
     }
 
     if (!address) {
@@ -619,7 +674,7 @@ async function main() {
   runContractAudit({ headers, rows, push });
 
   if (mode === "quality") {
-    runQualityAudit({ rows, push });
+    runQualityAudit({ headers, rows, push });
   }
 
   printReport(mode, issues);

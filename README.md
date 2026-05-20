@@ -5,9 +5,11 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 ## Para agentes de IA
 
 - Guía principal: `AGENTS.md`
+- Claude/Gemini: `CLAUDE.md` y `GEMINI.md` solo redirigen a `AGENTS.md`.
 - Arquitectura: `docs/ARCHITECTURE.md`
 - Contrato de datos CSV: `docs/CSV_CONTRACT.md`
 - Tareas comunes: `docs/TASKS.md`
+- No recuperar scripts de generación/restauración antiguos: los CSV en `data/csv/**` son la base.
 
 ## Comunicación y documentación
 
@@ -31,7 +33,7 @@ No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 - `components/map/*`: mapa desacoplado (Leaflet + OSM).
 - `app/p/[id]/page.tsx`: ficha de una fila del CSV, con URL canónica `/p/[id]-[slug]`.
 - `lib/csv-catalog.ts`: lectura, normalización y búsqueda del CSV.
-- `lib/producer-map.ts`: adaptación de filas a puntos del mapa.
+- `lib/catalog-navigation.ts`: catálogo de comunidades/provincias.
 - `data/csv/catalunya/barcelona.csv`: CSV principal y fuente de Barcelona.
 - `data/csv/[comunidad]/[provincia].csv`: CSV del resto de provincias, agrupados por comunidad autónoma.
 - `public/productores/barcelona/`: imágenes específicas de Barcelona.
@@ -50,26 +52,22 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm build`
 - `npx pnpm start`
 - `npx pnpm verify` (lint + build)
-- `npx pnpm check:csv` (valida contrato de columnas del CSV)
+- `npx pnpm check:csv` (valida el contrato bloqueante de todos los CSV)
+- `npx pnpm check:csv:data-quality` (auditoría editorial con warnings)
+- `npx pnpm check:csv:completeness` (señal de planificación para ampliar provincias)
+- `npx pnpm test:csv-audit` (regresión de reglas CSV)
 - `npx pnpm test:behavior` (test mínimo de `/` y `/p/[id]-[slug]`)
-- `npx pnpm verify:ai` (verify + check:csv + test:behavior)
+- `npx pnpm verify:ai` (verify + contrato CSV + tests CSV + behavior)
 
-## Playwright automation
+## Publicar
 
-Workflow automatizado:
-1. Abre `/`.
-2. Hace click en la primera ficha.
-3. Verifica navegación a `/p/[id]-[slug]`.
-4. Captura artefactos en `output/playwright/`.
-
-Run steps:
+Orden recomendado:
 
 ```bash
-# Terminal 1: levantar la app
-npx pnpm dev
-
-# Terminal 2: ejecutar workflow (URL opcional)
-./scripts/playwright-km0-workflow.sh http://localhost:3000
+npx pnpm verify:ai
+git status --short
+git add .
+git commit -m "..."
+git push
+vercel deploy . --prod -y
 ```
-
-Si no pasas argumentos, usa `http://localhost:3000`.
