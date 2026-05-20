@@ -1,24 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { ProducersMap } from "@/components/map/producers-map";
 import { ProvinceSelector } from "@/components/province-selector";
-import { SearchForm } from "@/components/search-form";
-import { ViewTransitionLink } from "@/components/view-transition-link";
 import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
 import {
   getProvinceLabel,
-  hasProducerMapPoint,
   listCategories,
-  listMunicipalitySummaries,
-  listProvinces,
+  listProvinceGroups,
+  normalizeProvinceSlug,
   searchProducers,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
+import { getCategoryIcon } from "@/lib/get-category-icon";
 
 export const metadata: Metadata = {
-  title: "Buscador de productores",
-  description: "Encuentra productores locales cercanos a tu ubicación o municipio.",
+  title: "Mapa de productores KM0",
+  description: "Mapa y visualizador de productores locales por provincia.",
 };
 
 type HomePageProps = {
@@ -26,265 +25,138 @@ type HomePageProps = {
 };
 
 export const dynamic = "force-dynamic";
-const MAX_LOCAL_RESULTS = 150;
-const MAX_NEARBY_RESULTS = 30;
-const START_MUNICIPALITY_LIMIT = 10;
-const MAP_SECTION_ID = "mapa";
 
-function parseCoordinateParam(value: string, min: number, max: number): number | undefined {
-  if (!value) {
-    return undefined;
-  }
+function getFieldValue(fields: Record<string, string>, key: string): string {
+  const match = Object.entries(fields).find(
+    ([field]) => field.toLocaleLowerCase() === key.toLocaleLowerCase(),
+  );
 
-  const parsed = Number.parseFloat(value);
-
-  if (!Number.isFinite(parsed)) {
-    return undefined;
-  }
-
-  return parsed >= min && parsed <= max ? parsed : undefined;
-}
-
-function formatResultCount(count: number): string {
-  return count === 1 ? "1 resultado" : `${count} resultados`;
-}
-
-function formatDistance(distanceKm: number): string {
-  if (distanceKm < 1) {
-    return "< 1 km";
-  }
-
-  return `${Math.round(distanceKm)} km`;
+  return (match?.[1] ?? "").trim();
 }
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
-  const province = readQueryParam(queryParams, "provincia");
-  const municipality = readQueryParam(queryParams, "municipio");
+  const province = normalizeProvinceSlug(readQueryParam(queryParams, "provincia"));
   const category = readQueryParam(queryParams, "categoria");
-  const highlight = readQueryParam(queryParams, "destacar");
-  const latStr = readQueryParam(queryParams, "lat");
-  const lonStr = readQueryParam(queryParams, "lon");
+  const highlightedId = readQueryParam(queryParams, "destacar");
 
-  const lat = parseCoordinateParam(latStr, -90, 90);
-  const lon = parseCoordinateParam(lonStr, -180, 180);
-  const hasLocation = lat !== undefined && lon !== undefined;
-  const hasMunicipality = Boolean(municipality);
-  const hasDiscoveryContext = hasLocation || hasMunicipality;
-
-  const provinces = listProvinces();
-  const provinceLabel = getProvinceLabel(province);
-
-  const [items, categories, startMunicipalities] = await Promise.all([
-    hasDiscoveryContext
-      ? searchProducers({ municipality, category, lat, lon }, province)
-      : Promise.resolve([]),
+  const [items, categories, allRows] = await Promise.all([
+    searchProducers({ municipality: "", category }, province),
     listCategories(province),
-    hasDiscoveryContext
-      ? Promise.resolve([])
-      : listMunicipalitySummaries(category, START_MUNICIPALITY_LIMIT, province),
+    searchProducers({ municipality: "", category: "" }, province),
   ]);
 
-  const nearbyItems = hasLocation
-    ? items.filter((item) => item.distanceKm !== undefined)
-    : items;
-  const visibleItems = hasLocation
-    ? nearbyItems.slice(0, MAX_NEARBY_RESULTS)
-    : items.slice(0, MAX_LOCAL_RESULTS);
-  const hasMore = hasLocation
-    ? nearbyItems.length > visibleItems.length
-    : items.length > visibleItems.length;
-  const highlightedItem = highlight
-    ? items.find((i) => String(i.id) === highlight)
+  const highlightedItem = highlightedId
+    ? items.find((item) => String(item.id) === highlightedId)
     : undefined;
-  const highlightedMapItem =
-    highlightedItem && hasProducerMapPoint(highlightedItem)
-      ? highlightedItem
-      : undefined;
-  const mapPoints = highlightedMapItem
-    ? toProducerMapPoints([highlightedMapItem])
-    : toProducerMapPoints(visibleItems);
-  const resetHref = buildCatalogHref({ municipality, category, lat: latStr, lon: lonStr, province });
-  const resultCount = hasLocation ? nearbyItems.length : items.length;
-  const resultCountLabel = formatResultCount(resultCount);
-  const resultSummary = hasLocation
-    ? `${resultCountLabel} con ubicación fiable, ordenados por cercanía${category ? ` · Categoría: ${category}` : ""}`
-    : municipality
-      ? `Municipio: ${municipality}${category ? ` · Categoría: ${category}` : " · Todas las categorías"}`
-      : "Elige una ubicación o municipio para ver productores cercanos";
+  const mapPoints = toProducerMapPoints(items);
+  const visibleItems = items.slice(0, 500);
+  const provinceLabel = getProvinceLabel(province);
 
   return (
-    <main className="catalog-page">
-      <section className="catalog-shell">
-        <header className="catalog-header">
-          <p className="catalog-kicker">KM0 {provinceLabel}</p>
-          <h1>Productores cerca de ti</h1>
-          <ProvinceSelector provinces={provinces} currentProvince={province} />
-          <p className="catalog-description">
-            Descubre productores locales de tu municipio o los que quedan más cerca.
+    <main className="catalog-page catalog-page--simple">
+      <header className="catalog-simple-header">
+        <div>
+          <p className="catalog-kicker">KM0</p>
+          <h1>Mapa de productores</h1>
+          <p>
+            {provinceLabel} · {items.length} productores encontrados · {mapPoints.length} en el mapa
           </p>
-          <SearchForm initialMunicipality={municipality} initialCategory={category} province={province} />
-        </header>
+        </div>
 
-        <nav className="catalog-categories" aria-label="Categorías">
+        <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
+          <ProvinceSelector groups={listProvinceGroups()} currentProvince={province} />
+        </Suspense>
+      </header>
+
+      <nav className="catalog-simple-categories" aria-label="Categorías">
+        <Link
+          href={buildCatalogHref({ province })}
+          className={`catalog-chip ${!category ? "is-active" : ""}`}
+        >
+          Todas
+        </Link>
+        {categories.map((cat) => (
           <Link
-            href={buildCatalogHref({ municipality, category: "", lat: latStr, lon: lonStr, province })}
-            className={`catalog-chip ${!category ? "is-active" : ""}`}
+            key={cat}
+            href={buildCatalogHref({ province, category: cat })}
+            className={`catalog-chip ${category === cat ? "is-active" : ""}`}
           >
-            Tots
+            <span aria-hidden="true">{getCategoryIcon(cat)}</span>
+            {cat}
           </Link>
-          {categories.map((cat) => (
-            <Link
-              key={cat}
-              href={buildCatalogHref({ municipality, category: cat, lat: latStr, lon: lonStr, province })}
-              className={`catalog-chip ${category === cat ? "is-active" : ""}`}
-            >
-              {cat}
-            </Link>
-          ))}
-        </nav>
+        ))}
+      </nav>
 
-        {highlightedItem && (
-          <p className="catalog-results-meta">
-            Viendo <strong>{highlightedItem.name}</strong>.{" "}
-            <Link href={resetHref} className="producer-inline-link">
-              Ver todos
-            </Link>
-          </p>
-        )}
+      <section className="catalog-simple-layout">
+        <div className="catalog-simple-map" aria-label="Mapa de productores">
+          <ProducersMap
+            points={mapPoints}
+            province={province}
+            highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
+          />
+        </div>
 
-        {hasDiscoveryContext ? (
-          <section
-            id={MAP_SECTION_ID}
-            className="catalog-map-stage"
-            aria-label="Mapa de productores"
-          >
-            <div className="catalog-map-head">
-              <h2>{hasLocation ? "Cerca de ti" : "Zona seleccionada"}</h2>
-              <p>{resultCountLabel}</p>
-            </div>
-            <ProducersMap
-              points={mapPoints}
-              highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
-              userLocation={hasLocation ? { lat, lon } : undefined}
-              detailContext={{ municipality, category, lat: latStr, lon: lonStr, province }}
-            />
-          </section>
-        ) : (
-          <section className="catalog-start" aria-label="Inicio de descubrimiento">
-            <div className="catalog-start-copy">
-              <h2>Empieza por una zona concreta</h2>
-              <p>
-                Usa tu ubicación o entra por un municipio con productores disponibles.
-              </p>
-            </div>
-            {startMunicipalities.length > 0 && (
-              <div className="catalog-start-block">
-                <h3>{category ? `Municipios con ${category}` : "Municipios con más productores"}</h3>
-                <div className="catalog-start-grid">
-                  {startMunicipalities.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={buildCatalogHref({ municipality: item.name, category, province })}
-                      className="catalog-start-link"
-                    >
-                      <strong>{item.name}</strong>
-                      <span>{formatResultCount(item.count)}</span>
-                    </Link>
-                  ))}
-                </div>
+        <aside className="catalog-viewer" aria-label="Productores">
+          {highlightedItem ? (
+            <article className="catalog-featured-producer">
+              <p className="catalog-kicker">Seleccionado</p>
+              <h2>{highlightedItem.name}</h2>
+              <p>{highlightedItem.city} · {highlightedItem.category}</p>
+              <div className="catalog-featured-actions">
+                <Link href={buildCatalogHref({ province, category })}>Ver todos</Link>
+                <Link href={buildProducerHref(highlightedItem, { province })}>Abrir ficha</Link>
               </div>
-            )}
-          </section>
-        )}
+            </article>
+          ) : null}
 
-        {hasDiscoveryContext && (
-          <section className="catalog-results" aria-label="Resultados de búsqueda">
-            <p className="catalog-results-meta">{resultSummary}</p>
+          <div className="catalog-viewer-head">
+            <h2>Productores</h2>
+            <p>
+              Mostrando {visibleItems.length} de {items.length}
+              {allRows.length !== items.length ? ` · ${allRows.length} total en ${provinceLabel}` : ""}
+            </p>
+          </div>
 
-            {visibleItems.length > 0 ? (
-              <ul className="producer-list">
-                {visibleItems.map((item) => {
-                  const producerNameHref = hasProducerMapPoint(item)
-                    ? `${buildCatalogHref({
-                        municipality,
-                        category,
-                        highlight: item.id,
-                        lat: latStr,
-                        lon: lonStr,
-                        province,
-                      })}#${MAP_SECTION_ID}`
-                    : buildCatalogHref({
-                        municipality,
-                        category,
-                        highlight: item.id,
-                        lat: latStr,
-                        lon: lonStr,
-                        province,
-                      });
+          {visibleItems.length > 0 ? (
+            <ul className="producer-compact-list">
+              {visibleItems.map((item) => {
+                const subcategory = getFieldValue(item.fields, "subcategoria");
+                const address = getFieldValue(item.fields, "direccion");
 
-                  return (
-                    <li key={item.id}>
-                      <article
-                        className={`producer-card ${highlightedItem?.id === item.id ? "is-highlighted" : ""}`}
-                      >
-                        <div className="producer-main">
-                          <Link
-                            href={producerNameHref}
-                            className="producer-name"
-                            style={{ viewTransitionName: `producer-name-${item.id}` }}
-                          >
-                            {item.name}
-                          </Link>
-                          <p className="producer-meta">
-                            {item.city} · {item.category}
-                            {item.featuredProducts ? ` · ${item.featuredProducts}` : ""}
-                            {item.distanceKm !== undefined
-                              ? ` · ${formatDistance(item.distanceKm)}`
-                              : ""}
-                          </p>
-                        </div>
-
-                        <div className="producer-actions">
-                          <ViewTransitionLink
-                            href={buildProducerHref(
-                              { id: item.id, slug: item.slug },
-                              {
-                                municipality,
-                                category,
-                                highlight: item.id,
-                                lat: latStr,
-                                lon: lonStr,
-                                province,
-                              },
-                            )}
-                            className="producer-inline-link is-primary"
-                          >
-                            Ficha
-                          </ViewTransitionLink>
-                        </div>
-                      </article>
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
-              <p className="catalog-empty">
-                {hasLocation
-                  ? "No hay productores cercanos para la combinación actual."
-                  : "No hay productores para la combinación actual."}
-              </p>
-            )}
-
-            {hasMore && (
-              <p className="catalog-results-meta">
-                Mostrando los primeros {visibleItems.length} resultados.
-              </p>
-            )}
-          </section>
-        )}
+                return (
+                  <li key={item.id} className={highlightedItem?.id === item.id ? "is-selected" : ""}>
+                    <Link
+                      href={buildCatalogHref({ province, category, highlight: item.id })}
+                      scroll={false}
+                      className="producer-compact-link"
+                    >
+                      <span className="producer-compact-icon" aria-hidden="true">
+                        {getCategoryIcon(item.category)}
+                      </span>
+                      <span>
+                        <strong>{item.name}</strong>
+                        <small>
+                          {item.city} · {subcategory || item.category}
+                          {address ? ` · ${address}` : ""}
+                        </small>
+                      </span>
+                    </Link>
+                    <Link
+                      href={buildProducerHref(item, { province })}
+                      className="producer-compact-detail"
+                    >
+                      Ficha
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p className="catalog-empty">No hay productores en esta categoría para {provinceLabel}.</p>
+          )}
+        </aside>
       </section>
     </main>
   );
 }
-

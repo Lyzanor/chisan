@@ -1,21 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
+import { Fraunces, Roboto } from "next/font/google";
 import "./globals.css";
 
-import { AndroidBackHandler } from "@/components/android-back-handler";
-
-const manrope = Manrope({
-  weight: ["400", "500", "700", "800"],
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-fraunces",
+});
+
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#ffffff",
+  themeColor: "#2f7a4f",
 };
 
 export const metadata: Metadata = {
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | KM0",
   },
   description:
-    "Directorio de productores locales de kilómetro cero. Busca por municipio y categoría.",
+    "Mapa de productores locales de kilómetro cero por provincia y categoría.",
 };
 
 export default function RootLayout({
@@ -33,11 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={manrope.variable}>
-      <body>
-        <AndroidBackHandler />
-        {children}
-      </body>
+    <html lang="es" className={`${fraunces.variable} ${roboto.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

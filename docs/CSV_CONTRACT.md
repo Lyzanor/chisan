@@ -1,7 +1,8 @@
 # CSV Contract
 
 ## Source of truth
-- File: `Km0-productores.csv`
+- Default file: `data/csv/catalunya/barcelona.csv`
+- Additional province files: `data/csv/[comunidad]/[provincia].csv`
 - Encoding: UTF-8 (BOM tolerated)
 - Header row is required.
 - Validation entrypoints:
@@ -31,10 +32,13 @@
 - `imagen`
 
 ## How the app uses columns
-- Search by municipality: `municipio` (contains match, accent-insensitive).
+- Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
 - Filter by category: `categoria` (exact normalized match).
 - Result title: `nombre`.
 - Result metadata: `municipio`, `categoria`, `productos estrella`.
+- Map point: `lat`, `lon`.
+- Location cross-check: `direccion` should describe the same place as the coordinates.
+- External links: `web`, `Facebook`, `Instagram`, `Google Maps`.
 - Detail page: shows all columns as table rows.
 - Detail image: `imagen` when present, otherwise a generic local placeholder.
 
@@ -59,7 +63,7 @@
 - `lat`, when present, must be numeric and between `-90` and `90`.
 - `lon`, when present, must be numeric and between `-180` and `180`.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
-- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/ejemplo.webp`.
+- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/barcelona/ejemplo.webp`.
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:
@@ -75,26 +79,24 @@
   - duplicated `slug`
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization
-  - coordinates present but `direccion` not useful for map display
+  - coordinates present but `direccion` not useful for location review
 
 ## Link validation
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must be valid `http://` or `https://` URLs.
 - `imagen` may be empty, but if present must be a root-relative path to an image under `public/` and use a supported extension (`.avif`, `.gif`, `.jpg`, `.jpeg`, `.png`, `.svg`, `.webp`).
 - `Facebook` must point to `facebook.com`.
 - `Instagram` must point to `instagram.com`.
-- `Google Maps` must use the search URL format with `place_id`:
+- `Google Maps` is an optional external profile/location link, not a map dependency.
+- `Google Maps` must point to a Google Maps URL, for example:
 
 ```text
-https://www.google.com/maps/search/?api=1&query=<nombre_o_direccion>&query_place_id=<PLACE_ID>
+https://www.google.com/maps/place/...
+https://www.google.com/maps/search/?api=1&query=...
+https://maps.app.goo.gl/...
 ```
 
-- `Google Maps` must point to a Google Maps host and include:
-  - `api=1`
-  - a non-empty `query`
-  - a non-empty `query_place_id`
-
 ## Row identity
-- `id` in route `/p/[id]` is row index (1-based) after header.
-- Row order in CSV is meaningful for IDs.
+- `id` in route `/p/[id]` is row index (1-based) after header within the selected province CSV.
+- Row order in each province CSV is meaningful for IDs.
 - Canonical detail URL format is `/p/[id]-[slug]`.
 - `slug` should be lowercase ASCII with words separated by `-`.

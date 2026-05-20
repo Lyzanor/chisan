@@ -1,12 +1,12 @@
 # KM0 Agent Guide
 
 ## Project in 2 lines
-- This app is a CSV viewer for `Km0-productores.csv`.
-- Users search producers on `/` and open one row in `/p/[id]-[slug]`.
+- This app is a map viewer for province CSV files, with `data/csv/catalunya/barcelona.csv` as the default catalog.
+- Users browse producers on `/` and open one row in `/p/[id]-[slug]`.
 
 ## Scope (what this project does)
 - Reads the CSV from disk at request time.
-- Filters by municipality text and category.
+- Filters by province and category.
 - Renders one producer row as a field/value table.
 
 ## Out of scope (do not reintroduce)
@@ -15,17 +15,20 @@
 - No complex service abstractions.
 
 ## Core files
-- `app/page.tsx`: search UI, map and result list.
+- `app/page.tsx`: map and producer viewer.
 - `app/p/[id]/page.tsx`: producer detail page with canonical URL `/p/[id]-[slug]`.
 - `lib/csv-catalog.ts`: CSV read, normalization, filters, map points.
 - `components/map/`: Leaflet map (SSR-safe, dynamic import).
-- `Km0-productores.csv`: source of truth.
+- `data/csv/catalunya/barcelona.csv`: default and most complete source of truth.
+- `data/csv/[comunidad]/[provincia].csv`: source of truth for the rest of the catalogs.
+- `public/productores/barcelona/`: Barcelona producer images.
 
 ## Invariants
-- Keep flow simple: `CSV -> search -> row detail`.
+- Keep flow simple: `CSV -> map/list -> row detail`.
 - Keep URL filter params stable:
-  - `municipio`
+  - `provincia`
   - `categoria`
+  - `destacar`
 - Keep the route `id` 1-based (id `1` = first CSV row after header).
 - Canonical producer URL format: `/p/[id]-[slug]`.
 

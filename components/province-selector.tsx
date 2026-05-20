@@ -10,15 +10,22 @@ type ProvinceOption = {
   label: string;
 };
 
-type ProvinceSelectorProps = {
+type ProvinceGroup = {
+  slug: string;
+  label: string;
   provinces: ProvinceOption[];
+};
+
+type ProvinceSelectorProps = {
+  groups: ProvinceGroup[];
   currentProvince: string;
 };
 
-export function ProvinceSelector({ provinces, currentProvince }: ProvinceSelectorProps) {
+export function ProvinceSelector({ groups, currentProvince }: ProvinceSelectorProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
+  const selectedProvince = currentProvince || "barcelona";
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const province = e.target.value;
@@ -40,15 +47,19 @@ export function ProvinceSelector({ provinces, currentProvince }: ProvinceSelecto
       </label>
       <select
         id="province-select"
-        value={currentProvince}
+        value={selectedProvince}
         onChange={handleChange}
-        disabled={isPending}
-        className="province-selector-select"
+      disabled={isPending}
+      className="province-selector-select"
       >
-        {provinces.map((p) => (
-          <option key={p.slug} value={p.slug}>
-            {p.label}
-          </option>
+        {groups.map((group) => (
+          <optgroup key={group.slug} label={group.label}>
+            {group.provinces.map((province) => (
+              <option key={province.slug} value={province.slug}>
+                {province.label}
+              </option>
+            ))}
+          </optgroup>
         ))}
       </select>
     </div>

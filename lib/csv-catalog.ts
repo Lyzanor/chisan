@@ -34,82 +34,218 @@ export type MunicipalitySummary = {
   count: number;
 };
 
-const PROVINCE_REGISTRY: Record<string, { label: string; csvFile: string }> = {
-  "": { label: "Barcelona", csvFile: "Km0-productores.csv" },
-  alicante: { label: "Alicante", csvFile: "Km0-productores-alicante.csv" },
-  castellon: { label: "Castellón", csvFile: "Km0-productores-castellon.csv" },
-  girona: { label: "Girona", csvFile: "Km0-productores-girona.csv" },
-  huesca: { label: "Huesca", csvFile: "Km0-productores-huesca.csv" },
-  lleida: { label: "Lleida", csvFile: "Km0-productores-lleida.csv" },
-  madrid: { label: "Madrid", csvFile: "Km0-productores-madrid.csv" },
-  murcia: { label: "Murcia", csvFile: "Km0-productores-murcia.csv" },
-  navarra: { label: "Navarra", csvFile: "Km0-productores-navarra.csv" },
-  tarragona: { label: "Tarragona", csvFile: "Km0-productores-tarragona.csv" },
-  teruel: { label: "Teruel", csvFile: "Km0-productores-teruel.csv" },
-  valencia: { label: "Valencia", csvFile: "Km0-productores-valencia.csv" },
-  zaragoza: { label: "Zaragoza", csvFile: "Km0-productores-zaragoza.csv" },
-};
+const CSV_DATA_DIR = "data/csv";
+export const DEFAULT_PROVINCE_SLUG = "barcelona";
 
 export type ProvinceOption = {
   slug: string;
   label: string;
 };
 
+export type ProvinceGroup = {
+  slug: string;
+  label: string;
+  provinces: ProvinceOption[];
+};
+
+type ProvinceRegistryEntry = ProvinceOption & {
+  communitySlug: string;
+};
+
+const PROVINCE_GROUPS = [
+  {
+    slug: "andalucia",
+    label: "Andalucía",
+    provinces: [
+      { slug: "almeria", label: "Almería" },
+      { slug: "cadiz", label: "Cádiz" },
+      { slug: "cordoba", label: "Córdoba" },
+      { slug: "granada", label: "Granada" },
+      { slug: "huelva", label: "Huelva" },
+      { slug: "jaen", label: "Jaén" },
+      { slug: "malaga", label: "Málaga" },
+      { slug: "sevilla", label: "Sevilla" },
+    ],
+  },
+  {
+    slug: "asturias",
+    label: "Principado de Asturias",
+    provinces: [{ slug: "asturias", label: "Asturias" }],
+  },
+  {
+    slug: "cantabria",
+    label: "Cantabria",
+    provinces: [{ slug: "cantabria", label: "Cantabria" }],
+  },
+  {
+    slug: "castilla-y-leon",
+    label: "Castilla y León",
+    provinces: [
+      { slug: "avila", label: "Ávila" },
+      { slug: "burgos", label: "Burgos" },
+      { slug: "leon", label: "León" },
+      { slug: "palencia", label: "Palencia" },
+      { slug: "salamanca", label: "Salamanca" },
+      { slug: "segovia", label: "Segovia" },
+      { slug: "soria", label: "Soria" },
+      { slug: "valladolid", label: "Valladolid" },
+      { slug: "zamora", label: "Zamora" },
+    ],
+  },
+  {
+    slug: "castilla-la-mancha",
+    label: "Castilla-La Mancha",
+    provinces: [
+      { slug: "albacete", label: "Albacete" },
+      { slug: "ciudad-real", label: "Ciudad Real" },
+      { slug: "cuenca", label: "Cuenca" },
+      { slug: "guadalajara", label: "Guadalajara" },
+      { slug: "toledo", label: "Toledo" },
+    ],
+  },
+  {
+    slug: "aragon",
+    label: "Aragón",
+    provinces: [
+      { slug: "huesca", label: "Huesca" },
+      { slug: "teruel", label: "Teruel" },
+      { slug: "zaragoza", label: "Zaragoza" },
+    ],
+  },
+  {
+    slug: "catalunya",
+    label: "Catalunya",
+    provinces: [
+      { slug: "barcelona", label: "Barcelona" },
+      { slug: "girona", label: "Girona" },
+      { slug: "lleida", label: "Lleida" },
+      { slug: "tarragona", label: "Tarragona" },
+    ],
+  },
+  {
+    slug: "illes-balears",
+    label: "Illes Balears",
+    provinces: [{ slug: "baleares", label: "Baleares" }],
+  },
+  {
+    slug: "canarias",
+    label: "Canarias",
+    provinces: [
+      { slug: "las-palmas", label: "Las Palmas" },
+      { slug: "santa-cruz-de-tenerife", label: "Santa Cruz de Tenerife" },
+    ],
+  },
+  {
+    slug: "comunitat-valenciana",
+    label: "Comunitat Valenciana",
+    provinces: [
+      { slug: "alicante", label: "Alicante" },
+      { slug: "castellon", label: "Castellón" },
+      { slug: "valencia", label: "Valencia" },
+    ],
+  },
+  {
+    slug: "galicia",
+    label: "Galicia",
+    provinces: [
+      { slug: "a-coruna", label: "A Coruña" },
+      { slug: "lugo", label: "Lugo" },
+      { slug: "ourense", label: "Ourense" },
+      { slug: "pontevedra", label: "Pontevedra" },
+    ],
+  },
+  {
+    slug: "extremadura",
+    label: "Extremadura",
+    provinces: [
+      { slug: "badajoz", label: "Badajoz" },
+      { slug: "caceres", label: "Cáceres" },
+    ],
+  },
+  {
+    slug: "madrid",
+    label: "Comunidad de Madrid",
+    provinces: [{ slug: "madrid", label: "Madrid" }],
+  },
+  {
+    slug: "la-rioja",
+    label: "La Rioja",
+    provinces: [{ slug: "la-rioja", label: "La Rioja" }],
+  },
+  {
+    slug: "murcia",
+    label: "Región de Murcia",
+    provinces: [{ slug: "murcia", label: "Murcia" }],
+  },
+  {
+    slug: "navarra",
+    label: "Navarra",
+    provinces: [{ slug: "navarra", label: "Navarra" }],
+  },
+  {
+    slug: "pais-vasco",
+    label: "País Vasco",
+    provinces: [
+      { slug: "alava", label: "Álava" },
+      { slug: "guipuzcoa", label: "Guipúzcoa" },
+      { slug: "vizcaya", label: "Vizcaya" },
+    ],
+  },
+] as const satisfies readonly ProvinceGroup[];
+
+const PROVINCE_REGISTRY: Map<string, ProvinceRegistryEntry> = new Map(
+  PROVINCE_GROUPS.flatMap((group) =>
+    group.provinces.map((province) => [
+      province.slug,
+      { ...province, communitySlug: group.slug },
+    ]),
+  ),
+);
+
+export function normalizeProvinceSlug(province: string): string {
+  const slug = cleanCell(province)
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase();
+  const provinceAliases: Record<string, string> = {
+    logrono: "la-rioja",
+  };
+  const normalizedSlug = provinceAliases[slug] ?? slug;
+
+  return PROVINCE_REGISTRY.has(normalizedSlug) ? normalizedSlug : DEFAULT_PROVINCE_SLUG;
+}
+
 function resolveProvinceCsvPath(province: string): string {
-  const entry = PROVINCE_REGISTRY[province] ?? PROVINCE_REGISTRY[""];
-  return path.resolve(process.cwd(), entry.csvFile);
+  const normalizedProvince = normalizeProvinceSlug(province);
+  const registryEntry = PROVINCE_REGISTRY.get(normalizedProvince);
+
+  return path.resolve(
+    process.cwd(),
+    CSV_DATA_DIR,
+    registryEntry?.communitySlug ?? "catalunya",
+    `${normalizedProvince}.csv`,
+  );
 }
 
 export function getProvinceLabel(province: string): string {
-  return (PROVINCE_REGISTRY[province] ?? PROVINCE_REGISTRY[""]).label;
+  return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.label ?? "Barcelona";
 }
 
 export function listProvinces(): ProvinceOption[] {
-  return Object.entries(PROVINCE_REGISTRY).map(([slug, { label }]) => ({ slug, label }));
+  return PROVINCE_GROUPS.flatMap(({ provinces }) => provinces.map(({ slug, label }) => ({ slug, label })));
+}
+
+export function listProvinceGroups(): ProvinceGroup[] {
+  return PROVINCE_GROUPS.map(({ slug, label, provinces }) => ({
+    slug,
+    label,
+    provinces: provinces.map(({ slug: provinceSlug, label: provinceLabel }) => ({
+      slug: provinceSlug,
+      label: provinceLabel,
+    })),
+  }));
 }
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
-const MAP_ADDRESS_FIELD_KEYS = ["direccion", "direccio", "address", "domicilio"] as const;
-const MAP_ADDRESS_HINT_KEYWORDS = [
-  "avinguda",
-  "avenida",
-  "avda",
-  "cami",
-  "calle",
-  "carrer",
-  "carretera",
-  "ctra",
-  "disseminat",
-  "finca",
-  "hostal",
-  "lonja",
-  "masia",
-  "mercabarna",
-  "paratge",
-  "passatge",
-  "passeig",
-  "placa",
-  "plaza",
-  "poligon",
-  "ronda",
-  "travessera",
-  "urbanizacion",
-  "urbanitzacio",
-] as const;
-const MAP_ADDRESS_PLACEHOLDER_MARKERS = [
-  "adreca no publica",
-  "contacte",
-  "contacto",
-  "distribucion",
-  "distribucio",
-  "nomada",
-  "no publica",
-  "servei a domicili",
-  "servicio por encargo",
-  "sin local fijo",
-  "sin local abierto al publico",
-  "venta ambulante",
-  "venta online",
-] as const;
 
 function cleanCell(value: string | undefined): string {
   return (value ?? "").replace(/\s+/g, " ").trim();
@@ -219,10 +355,6 @@ function parseCoordinate(
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-function readAddress(fields: Record<string, string>): string {
-  return findFieldValue(fields, MAP_ADDRESS_FIELD_KEYS);
-}
-
 function readLatitude(fields: Record<string, string>): number | null {
   const value = parseCoordinate(findFieldValue(fields, ["lat", "latitude"]), 90, [2, 1, 3]);
   if (value === null) {
@@ -280,7 +412,7 @@ function calculateDistance(
 const csvCache = new Map<string, ProducerCsvRow[]>();
 
 async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
-  const cacheKey = province || "";
+  const cacheKey = normalizeProvinceSlug(province);
   const cached = csvCache.get(cacheKey);
   if (cached) {
     return cached;
@@ -397,44 +529,11 @@ export function hasProducerMapPoint(
     return false;
   }
 
-  const rawAddress = readAddress(row.fields);
-  const normalizedAddress = normalizeSearch(rawAddress);
-
-  if (!normalizedAddress) {
+  if (row.latitude === 0 && row.longitude === 0) {
     return false;
   }
 
-  const comparableValues = [
-    row.city,
-    row.category,
-    row.featuredProducts,
-    row.name,
-  ]
-    .map(normalizeSearch)
-    .filter(Boolean);
-
-  if (comparableValues.includes(normalizedAddress)) {
-    return false;
-  }
-
-  if (/@/.test(rawAddress)) {
-    return false;
-  }
-
-  if (/\d/.test(rawAddress) || /[,;/]/.test(rawAddress)) {
-    return true;
-  }
-
-  if (MAP_ADDRESS_HINT_KEYWORDS.some((keyword) => normalizedAddress.includes(keyword))) {
-    return true;
-  }
-
-  if (MAP_ADDRESS_PLACEHOLDER_MARKERS.some((marker) => normalizedAddress.includes(marker))) {
-    return false;
-  }
-
-  const tokenCount = normalizedAddress.split(" ").filter(Boolean).length;
-  return tokenCount >= 3 && normalizedAddress.length >= 18;
+  return true;
 }
 
 export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] {

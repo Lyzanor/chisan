@@ -4,12 +4,10 @@
  */
 
 const LABELS: Record<string, string> = {
-  slug: "Slug",
   nombre: "Nombre",
   municipio: "Municipio",
   categoria: "Categoría",
-  subcategoria: "Productos estrella",
-  "productos estrella": "Productos estrella",
+  subcategoria: "Subcategoría",
   direccion: "Dirección",
   descripcion: "Descripción",
   horario: "Horario",
@@ -19,10 +17,9 @@ const LABELS: Record<string, string> = {
   facebook: "Facebook",
   instagram: "Instagram",
   "google maps": "Google Maps",
-  imagen: "Imagen",
   lat: "Latitud",
   lon: "Longitud",
-  fecha_revision: "Fecha de revisión",
+  revisado: "Revisado",
 };
 
 function normalizeKey(key: string): string {

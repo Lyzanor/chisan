@@ -7,7 +7,7 @@ export default function NotFoundPage() {
         <h1>Página no encontrada</h1>
         <p>El productor o página que buscas no existe.</p>
         <Link href="/" className="back-link">
-          ← Volver al buscador
+          ← Volver al mapa
         </Link>
       </section>
     </main>

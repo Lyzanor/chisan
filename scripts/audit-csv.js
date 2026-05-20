@@ -67,7 +67,7 @@ const MAP_ADDRESS_PLACEHOLDER_MARKERS = [
 
 function parseArgs(argv, resolvePath) {
   let mode = "quality";
-  let csvPath = "Km0-productores.csv";
+  let csvPath = "data/csv/catalunya/barcelona.csv";
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
@@ -150,10 +150,6 @@ function parseCoordinate(rawValue, maxAbs, integerDigits) {
   const normalized = cleaned.replace(",", ".");
   const parsed = Number.parseFloat(normalized);
 
-  if (Number.isFinite(parsed) && Math.abs(parsed) <= maxAbs) {
-    return parsed;
-  }
-
   const digits = cleaned.replace(/[^\d]/g, "");
   const sign = cleaned.startsWith("-") ? -1 : 1;
   const looksLikeGroupedCoordinate = /^-?\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?$/.test(cleaned);
@@ -210,28 +206,12 @@ function matchesHost(hostname, matcher) {
 
 function validateGoogleMapsUrl(url) {
   const host = url.hostname.toLowerCase();
-  const query = url.searchParams.get("query");
-  const placeId = url.searchParams.get("query_place_id");
-  const api = url.searchParams.get("api");
+  const isGoogleMapsHost =
+    /^([a-z0-9-]+\.)*google\.[a-z.]+$/i.test(host) && url.pathname.startsWith("/maps");
+  const isGoogleMapsShortUrl = host === "maps.app.goo.gl";
 
-  if (!host.includes("google.")) {
-    return "must point to a Google Maps host";
-  }
-
-  if (!url.pathname.startsWith("/maps/search")) {
-    return "must use /maps/search";
-  }
-
-  if (api !== "1") {
-    return "must include api=1";
-  }
-
-  if (!query) {
-    return "must include a non-empty query";
-  }
-
-  if (!placeId) {
-    return "must include a non-empty query_place_id";
+  if (!isGoogleMapsHost && !isGoogleMapsShortUrl) {
+    return "must point to a Google Maps URL";
   }
 
   return null;
@@ -533,7 +513,7 @@ function runQualityAudit({ rows, push }) {
 
     if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {
       if (!hasUsefulAddress(fields)) {
-        push("warning", line, id, slug, "coordinates are present but direccion is not useful for map display");
+        push("warning", line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
     }
 

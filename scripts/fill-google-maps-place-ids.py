@@ -26,7 +26,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "csv_path",
         nargs="?",
-        default="Km0-productores.csv",
+        default="data/csv/catalunya/barcelona.csv",
         help="Path to the CSV file to update.",
     )
     parser.add_argument(

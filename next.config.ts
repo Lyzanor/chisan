@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   // Ensure the CSV is always bundled: readFile uses a dynamic path so
   // Next.js static analysis cannot detect it automatically.
   outputFileTracingIncludes: {
-    "/**": ["./Km0-productores.csv"],
+    "/**": ["./data/csv/**/*.csv"],
   },
 };
 

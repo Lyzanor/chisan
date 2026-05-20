@@ -1,6 +1,6 @@
-# KM0 CSV Viewer
+# KM0 Producer Map
 
-Aplicación mínima para visualizar `Km0-productores.csv`.
+Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 
 ## Para agentes de IA
 
@@ -17,22 +17,24 @@ Aplicación mínima para visualizar `Km0-productores.csv`.
 
 ## Mecanismo core
 
-1. `/` = buscador.
-2. El buscador filtra filas del CSV.
-3. La portada pinta en mapa (Leaflet + OSM) los resultados con `lat/lon`.
-4. Al hacer click en un resultado, abre `/p/[id]-[slug]`.
+1. `/` = mapa y visualizador de productores.
+2. La portada lee el CSV de la provincia seleccionada.
+3. El mapa pinta productores con `lat/lon`.
+4. El panel lateral permite seleccionar productores y abrir `/p/[id]-[slug]`.
 5. `/p/[id]-[slug]` muestra esa fila completa (columna + valor).
 
-No hay API intermedia en el flujo principal: CSV -> filtros -> mapa/listado -> ficha.
+No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 
 ## Estructura
 
-- `app/page.tsx`: buscador y listado.
+- `app/page.tsx`: mapa y visualizador.
 - `components/map/*`: mapa desacoplado (Leaflet + OSM).
 - `app/p/[id]/page.tsx`: ficha de una fila del CSV, con URL canónica `/p/[id]-[slug]`.
 - `lib/csv-catalog.ts`: lectura, normalización y búsqueda del CSV.
 - `lib/producer-map.ts`: adaptación de filas a puntos del mapa.
-- `Km0-productores.csv`: fuente única de datos.
+- `data/csv/catalunya/barcelona.csv`: CSV principal y fuente de Barcelona.
+- `data/csv/[comunidad]/[provincia].csv`: CSV del resto de provincias, agrupados por comunidad autónoma.
+- `public/productores/barcelona/`: imágenes específicas de Barcelona.
 
 ## Uso
 
@@ -48,7 +50,6 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm build`
 - `npx pnpm start`
 - `npx pnpm verify` (lint + build)
-- `npx pnpm sync:csv` (alias de `verify` para validar tras cambios manuales del CSV)
 - `npx pnpm check:csv` (valida contrato de columnas del CSV)
 - `npx pnpm test:behavior` (test mínimo de `/` y `/p/[id]-[slug]`)
 - `npx pnpm verify:ai` (verify + check:csv + test:behavior)
@@ -57,10 +58,9 @@ App en [http://localhost:3000](http://localhost:3000).
 
 Workflow automatizado:
 1. Abre `/`.
-2. Busca por texto.
-3. Hace click en el primer resultado.
-4. Verifica navegación a `/p/[id]-[slug]`.
-5. Captura artefactos en `output/playwright/`.
+2. Hace click en la primera ficha.
+3. Verifica navegación a `/p/[id]-[slug]`.
+4. Captura artefactos en `output/playwright/`.
 
 Run steps:
 
@@ -68,10 +68,8 @@ Run steps:
 # Terminal 1: levantar la app
 npx pnpm dev
 
-# Terminal 2: ejecutar workflow (URL opcional, query opcional)
-./scripts/playwright-km0-workflow.sh http://localhost:3000 chocolate
+# Terminal 2: ejecutar workflow (URL opcional)
+./scripts/playwright-km0-workflow.sh http://localhost:3000
 ```
 
-Si no pasas argumentos, usa por defecto:
-- URL: `http://localhost:3000`
-- Query: `chocolate`
+Si no pasas argumentos, usa `http://localhost:3000`.

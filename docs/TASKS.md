@@ -1,7 +1,7 @@
 # Common Tasks
 
 ## 1) Update data (manual CSV edit)
-1. Edit `Km0-productores.csv`.
+1. Edit the target province CSV, usually `data/csv/catalunya/barcelona.csv`.
 2. Run:
 ```bash
 npx pnpm verify:ai
@@ -17,7 +17,7 @@ npx pnpm check:csv
 ```bash
 npx pnpm check:csv:data-quality
 ```
-3. Fix `error` items first in `Km0-productores.csv`.
+3. Fix `error` items first in the target province CSV.
 4. Fix `warning` items next:
 - empty key fields
 - stale `fecha_revision`
@@ -32,17 +32,17 @@ npx pnpm verify:ai
 7. Validate `/` and a sample of `/p/[id]-[slug]`.
 8. Update `fecha_revision` only for rows actually reviewed or corrected.
 
-## 2) Change search behavior
-1. Edit filter logic in `lib/csv-catalog.ts`.
-2. Keep URL params stable: `municipio`, `categoria`.
+## 2) Change catalog behavior
+1. Edit catalog logic in `lib/csv-catalog.ts` or `app/page.tsx`.
+2. Keep URL params stable: `provincia`, `categoria`, `destacar`.
 3. Run:
 ```bash
 npx pnpm verify:ai
 ```
 4. Validate:
-- Municipality input filters list.
-- Category chips filter list.
-- Both filters together work.
+- Province selector switches CSV.
+- Category chips filter list and map.
+- Detail links preserve the selected province.
 
 ## 3) Change UI only
 1. Edit `app/page.tsx` and/or `app/globals.css`.

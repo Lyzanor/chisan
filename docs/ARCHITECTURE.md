@@ -1,15 +1,15 @@
 # Architecture
 
 ## Purpose
-Serve `Km0-productores.csv` as a location-first producer discovery catalog with map + simple detail page.
+Serve province CSV files as a map-first producer catalog with a simple row detail page. Barcelona is the default and most complete catalog.
 
 ## Runtime flow
 ```mermaid
 flowchart TD
-  A["Km0-productores.csv"] --> B["lib/csv-catalog.ts"]
-  B --> C["app/page.tsx (/): filters by municipio/categoria or sorts by lat/lon proximity"]
-  C --> D["Nearby/local result list"]
-  C --> E["Nearby/local map points (toProducerMapPoints)"]
+  A["data/csv/[comunidad]/[provincia].csv"] --> B["lib/csv-catalog.ts"]
+  B --> C["app/page.tsx (/): province/category selector"]
+  C --> D["Producer viewer"]
+  C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]
   D --> G["app/p/[id]/page.tsx -> /p/[id]-[slug]"]
   G --> H["Row detail (field/value table)"]
@@ -19,7 +19,8 @@ flowchart TD
 - `lib/csv-catalog.ts`
   - Reads CSV with `csv-parse/sync`.
   - Normalizes text for search.
-  - Reads coordinates (`lat/lon`) when present.
+  - Reads coordinates (`lat/lon`) when present and uses them for map points.
+  - Keeps `direccion` as the human-readable location reference that should match those coordinates.
   - Exposes:
     - `searchProducers({ municipality, category, lat, lon })`
     - `listCategories()`
@@ -27,20 +28,17 @@ flowchart TD
     - `findProducerById(id|id-slug)`
     - `toProducerMapPoints(rows)`
 - `app/page.tsx`
-  - Reads URL params `municipio`, `categoria`, `lat`, and `lon`.
-  - Shows municipality input, location action, and category chips.
-  - Shows a start screen with municipality suggestions on the default landing state.
-  - Avoids rendering a full-catalog map on that default landing state.
-  - With `lat/lon`, lists the closest producers with reliable map coordinates.
-  - With `municipio`, lists matching local producers.
-  - Renders a Leaflet map with OSM tiles for the visible local/nearby producers.
+  - Reads URL params `provincia`, `categoria`, and `destacar`.
+  - Shows province selector and category chips.
+  - Renders a Leaflet map with OSM tiles for producers with coordinates.
+  - Renders a compact producer viewer next to the map.
 - `app/p/[id]/page.tsx`
   - Resolves one row by index.
   - Redirects legacy `/p/[id]` URLs to canonical `/p/[id]-[slug]`.
   - Renders all CSV columns and values.
 
 ## Design rules
-- Keep one data source: CSV file on disk.
-- Keep search logic centralized in `lib/csv-catalog.ts`.
+- Keep one data source per province: CSV file on disk, grouped by autonomous community.
+- Keep CSV reading and normalization centralized in `lib/csv-catalog.ts`.
 - Keep pages thin and explicit.
 - Avoid hidden side effects or caching outside current module boundaries.

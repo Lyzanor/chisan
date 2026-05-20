@@ -46,7 +46,7 @@ cat >"$TMP_DIR/quality-warnings.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,fecha_revision
 fila-repetida,,Abrera,Bodega,Vino,,Corta,, , ,https://example.com,,,,41.1,2.1,
 fila-repetida,Masia Uno,Abrera,Carnicería,Vino,Venta online,Descripcion suficientemente larga para validar,,600000000,masia@example.com,https://example.com,,,,41.2,2.2,2025-12-01
-otra-fila,Masia Uno,Abrera,Carniceria,Vino,Carrer Major 4,Descripcion suficientemente larga para validar,,600000001,masia2@example.com,https://example.com,https://facebook.com/masia,,https://www.google.com/maps/search/?api=1&query=Masia%20Uno&query_place_id=xyz,41.3,2.3,2025-10-01
+otra-fila,Masia Uno,Abrera,Carniceria,Vino,Carrer Major 4,Descripcion suficientemente larga para validar,,600000001,masia2@example.com,https://example.com,https://facebook.com/masia,,https://www.google.com/maps/place/Masia%20Uno,41.3,2.3,2025-10-01
 CSV
 
 run_expect_failure "$TMP_DIR/out-missing.txt" \
@@ -72,7 +72,7 @@ grep -q "WARNING line 2 .* telefono and correo are both empty" "$TMP_DIR/out-qua
 grep -q "WARNING line 2 .* Google Maps is empty" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 2 .* fecha_revision is empty" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 2 .* slug is duplicated" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 3 .* coordinates are present but direccion is not useful for map display" "$TMP_DIR/out-quality.txt"
+grep -q "WARNING line 3 .* coordinates are present but direccion is not useful for location review" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 4 .* fecha_revision is expired" "$TMP_DIR/out-quality.txt"

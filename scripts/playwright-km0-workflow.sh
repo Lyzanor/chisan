@@ -15,7 +15,6 @@ if [[ ! -x "$PWCLI" ]]; then
 fi
 
 BASE_URL="${1:-http://localhost:3000}"
-QUERY="${2:-chocolate}"
 SESSION="${PLAYWRIGHT_CLI_SESSION:-km0-workflow}"
 ARTIFACT_DIR="output/playwright"
 mkdir -p "$ARTIFACT_DIR"
@@ -75,29 +74,9 @@ if [[ -z "$home_snapshot_path" || ! -f "$home_snapshot_path" ]]; then
   exit 1
 fi
 
-search_ref=$(extract_ref_by_pattern "$home_snapshot_path" 'searchbox "Buscar en CSV"')
-search_btn_ref=$(extract_ref_by_pattern "$home_snapshot_path" 'button "Buscar"')
-
-if [[ -z "$search_ref" || -z "$search_btn_ref" ]]; then
-  echo "Error: Could not resolve search input/button refs from snapshot $home_snapshot_path" >&2
-  exit 1
-fi
-
-run_pwcli fill "$search_ref" "$QUERY" > "$ARTIFACT_DIR/fill.log"
-run_pwcli click "$search_btn_ref" > "$ARTIFACT_DIR/search-click.log"
-
-results_snapshot_output=$(run_pwcli snapshot)
-printf '%s\n' "$results_snapshot_output" > "$ARTIFACT_DIR/snapshot-results.log"
-results_snapshot_path=$(printf '%s\n' "$results_snapshot_output" | extract_snapshot_path)
-
-if [[ -z "$results_snapshot_path" || ! -f "$results_snapshot_path" ]]; then
-  echo "Error: Could not resolve results snapshot path." >&2
-  exit 1
-fi
-
-first_result_ref=$(extract_first_result_ref "$results_snapshot_path")
+first_result_ref=$(extract_first_result_ref "$home_snapshot_path")
 if [[ -z "$first_result_ref" ]]; then
-  echo "Error: No result link found for query '$QUERY'." >&2
+  echo "Error: No producer detail link found in the catalog." >&2
   exit 1
 fi
 
@@ -119,6 +98,5 @@ run_pwcli screenshot > "$ARTIFACT_DIR/screenshot.log"
 
 printf 'Completed workflow successfully.\n'
 printf 'Base URL: %s\n' "$BASE_URL"
-printf 'Search query: %s\n' "$QUERY"
 printf 'Result URL: %s\n' "$profile_url"
 printf 'Artifacts: %s\n' "$ARTIFACT_DIR"

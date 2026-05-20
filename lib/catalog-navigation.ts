@@ -23,6 +23,10 @@ function appendParam(params: URLSearchParams, key: string, value?: string | numb
     return;
   }
 
+  if (key === "provincia" && value === "barcelona") {
+    return;
+  }
+
   params.set(key, String(value));
 }
 

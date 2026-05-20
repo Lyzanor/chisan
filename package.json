@@ -10,6 +10,7 @@
     "verify": "pnpm lint && pnpm build",
     "check:csv": "bash scripts/check-csv-contract.sh",
     "check:csv:data-quality": "node scripts/audit-csv.js --mode=quality",
+    "check:csv:completeness": "node scripts/audit-province-completeness.js",
     "test:csv-audit": "bash scripts/test-csv-audit.sh",
     "test:behavior": "bash scripts/test-behavior.sh",
     "verify:ai": "pnpm verify && pnpm check:csv && pnpm test:csv-audit && pnpm test:behavior"

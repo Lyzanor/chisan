@@ -37,8 +37,8 @@ async function run() {
     const fs = await import('node:fs');
     const path = await import('node:path');
     const { parse } = await import('csv-parse/sync');
-    const csvPath = path.join(__dirname, '..', 'Km0-productores.csv');
-    const othersCsvPath = path.join(__dirname, '..', 'Km0-productores-otros.csv');
+    const csvPath = path.join(__dirname, '..', 'data/csv/catalunya/barcelona.csv');
+    const othersCsvPath = path.join(__dirname, '..', 'data/csv/catalunya/otros.csv');
     const indicesPath = path.join(__dirname, '..', 'audit_indices.json');
     console.log('Fetching Spain Provinces GeoJSON...');
     const geoRes = await fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/spain-provinces.geojson');

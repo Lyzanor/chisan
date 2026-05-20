@@ -14,7 +14,7 @@ extract_sample() {
 const fs = require("node:fs");
 const { parse } = require("csv-parse/sync");
 
-const raw = fs.readFileSync("Km0-productores.csv", "utf8");
+const raw = fs.readFileSync("data/csv/catalunya/barcelona.csv", "utf8");
 const rows = parse(raw, { columns: true, bom: true, skip_empty_lines: true });
 if (!rows.length) {
   console.error("CSV has no rows.");
@@ -25,10 +25,9 @@ const first = rows[0];
 const payload = {
   slug: (first.slug || "").trim(),
   name: (first.nombre || "").trim(),
-  municipality: (first.municipio || "").trim(),
   category: (first.categoria || "").trim(),
 };
-if (!payload.slug || !payload.name || !payload.municipality || !payload.category) {
+if (!payload.slug || !payload.name || !payload.category) {
   console.error("First CSV row is missing required fields for test fixture.");
   process.exit(1);
 }
@@ -60,7 +59,6 @@ trap cleanup EXIT
 FIXTURE_JSON="$(extract_sample)"
 SLUG="$(node -p "JSON.parse(process.argv[1]).slug" "$FIXTURE_JSON")"
 NAME="$(node -p "JSON.parse(process.argv[1]).name" "$FIXTURE_JSON")"
-MUNICIPALITY="$(node -p "JSON.parse(process.argv[1]).municipality" "$FIXTURE_JSON")"
 CATEGORY="$(node -p "JSON.parse(process.argv[1]).category" "$FIXTURE_JSON")"
 
 ./node_modules/.bin/next dev --port "$PORT" >/tmp/km0-test-dev.log 2>&1 &
@@ -69,7 +67,6 @@ DEV_PID=$!
 wait_for_app
 
 HTML_FILTERED="$(curl -fsS --get "$BASE_URL/" \
-  --data-urlencode "municipio=$MUNICIPALITY" \
   --data-urlencode "categoria=$CATEGORY")"
 
 if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
@@ -78,12 +75,11 @@ if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
 fi
 
 HTML_NO_MATCH="$(curl -fsS --get "$BASE_URL/" \
-  --data-urlencode "municipio=$MUNICIPALITY" \
   --data-urlencode "categoria=__categoria_que_no_existe__")"
 
 HTML_NO_MATCH_CLEAN="$(printf '%s' "$HTML_NO_MATCH" | sed 's/<!-- -->//g')"
 
-if [[ "$HTML_NO_MATCH_CLEAN" != *"0 resultados"* ]]; then
+if [[ "$HTML_NO_MATCH_CLEAN" != *"No hay productores en esta categoría"* ]]; then
   echo "Error: expected 0 results for non-matching category." >&2
   exit 1
 fi
