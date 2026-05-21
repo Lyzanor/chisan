@@ -360,6 +360,8 @@ function createIssueCollector() {
 
 function runContractAudit({ headers, rows, push }) {
   const missing = REQUIRED_COLUMNS.filter((column) => !headers.includes(column));
+  const slugLines = new Map();
+
   for (const column of missing) {
     push("error", 1, 0, "(header)", `missing required CSV column '${column}'`);
   }
@@ -382,6 +384,12 @@ function runContractAudit({ headers, rows, push }) {
       push("error", line, id, slug, "slug is required");
     } else if (slugifySegment(slug) !== slug) {
       push("error", line, id, slug, "slug must be lowercase ASCII words separated by '-'");
+    }
+
+    if (slug) {
+      const lines = slugLines.get(slug) ?? [];
+      lines.push(line);
+      slugLines.set(slug, lines);
     }
 
     const reviewDate = parseStrictDate(fields.fecha_revision);
@@ -437,12 +445,19 @@ function runContractAudit({ headers, rows, push }) {
       push("error", line, id, slug, `imagen: ${imagePathError}`);
     }
   }
+
+  for (const [slug, lines] of slugLines.entries()) {
+    if (lines.length > 1) {
+      for (const line of lines) {
+        push("error", line, line - 1, slug, `slug is duplicated on lines ${lines.join(", ")}`);
+      }
+    }
+  }
 }
 
 function runQualityAudit({ headers, rows, push }) {
   const now = new Date();
   const hasVerificationColumn = headers.includes(VERIFICATION_COLUMN);
-  const slugLines = new Map();
   const nameCityLines = new Map();
   const categoryVariants = new Map();
 
@@ -572,12 +587,6 @@ function runQualityAudit({ headers, rows, push }) {
       }
     }
 
-    if (slug) {
-      const lines = slugLines.get(slug) ?? [];
-      lines.push(line);
-      slugLines.set(slug, lines);
-    }
-
     const normalizedNameCity = [normalizeSearch(name), normalizeSearch(city)]
       .filter(Boolean)
       .join("|");
@@ -594,14 +603,6 @@ function runQualityAudit({ headers, rows, push }) {
       lines.push(line);
       variants.set(category, lines);
       categoryVariants.set(normalizedCategory, variants);
-    }
-  }
-
-  for (const [slug, lines] of slugLines.entries()) {
-    if (lines.length > 1) {
-      for (const line of lines) {
-        push("warning", line, line - 1, slug, `slug is duplicated on lines ${lines.join(", ")}`);
-      }
     }
   }
 

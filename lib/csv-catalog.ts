@@ -20,7 +20,6 @@ export type ProducerCsvRow = {
 };
 
 export type ProducerMapPoint = {
-  id: number;
   slug: string;
   name: string;
   city: string;
@@ -458,25 +457,39 @@ async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
   return rows;
 }
 
-function parseProducerId(rawId: string): number | null {
-  const [candidate] = rawId.split("-", 1);
+function parseLegacyProducerId(rawSegment: string): number | null {
+  const candidate = rawSegment.trim();
   const id = Number.parseInt(candidate ?? "", 10);
 
-  if (!Number.isInteger(id) || id < 1) {
+  if (!/^\d+$/.test(candidate) || !Number.isInteger(id) || id < 1) {
     return null;
   }
 
   return id;
 }
 
-export async function findProducerById(rawId: string, province = ""): Promise<ProducerCsvRow | null> {
-  const id = parseProducerId(rawId);
-  if (id === null) {
+export async function findProducerBySlug(rawSegment: string, province = ""): Promise<ProducerCsvRow | null> {
+  const segment = slugifySegment(rawSegment);
+  if (!segment) {
     return null;
   }
 
   const rows = await loadCsvRows(province);
-  return rows[id - 1] ?? null;
+  const exactMatch = rows.find((row) => row.slug === segment);
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  const legacySlugMatch = segment.match(/^\d+-(.+)$/);
+  if (legacySlugMatch?.[1]) {
+    const producer = rows.find((row) => row.slug === legacySlugMatch[1]);
+    if (producer) {
+      return producer;
+    }
+  }
+
+  const legacyId = parseLegacyProducerId(segment);
+  return legacyId === null ? null : rows[legacyId - 1] ?? null;
 }
 
 export async function listCategories(province = ""): Promise<string[]> {
@@ -544,7 +557,6 @@ export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] 
 
     return [
       {
-        id: row.id,
         slug: row.slug,
         name: row.name,
         city: row.city,

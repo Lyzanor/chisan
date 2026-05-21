@@ -4,7 +4,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Project in 2 lines
 - This app is a map viewer for province CSV files, with `data/csv/catalunya/barcelona.csv` as the default catalog.
-- Users browse producers on `/` and open one row in `/p/[id]-[slug]`.
+- Users browse producers on `/` and open one row in `/p/[slug]`.
 
 ## Scope (what this project does)
 - Reads the CSV from disk at request time.
@@ -20,7 +20,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Core files
 - `app/page.tsx`: map and producer viewer.
-- `app/p/[id]/page.tsx`: producer detail page with canonical URL `/p/[id]-[slug]`.
+- `app/p/[slug]/page.tsx`: producer detail page with canonical URL `/p/[slug]`.
 - `lib/csv-catalog.ts`: CSV read, normalization, filters, map points.
 - `lib/catalog-navigation.ts`: province/community catalog discovery.
 - `components/map/`: Leaflet map (SSR-safe, dynamic import).
@@ -42,12 +42,11 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Keep URL filter params stable:
   - `provincia`
   - `categoria`
-  - `destacar`
-- Keep the route `id` 1-based (id `1` = first CSV row after header).
-- Canonical producer URL format: `/p/[id]-[slug]`.
-- Published province CSVs are append-first files: add new producers at the end.
-- Do not reorder existing rows unless the task explicitly accepts URL/id changes.
-- Keep `slug` stable; it is the safest future identity if row-based URLs ever need migration.
+  - `destacar` (producer `slug`)
+- Producer identity is `slug`; row order must not affect detail URLs.
+- Canonical producer URL format: `/p/[slug]`.
+- CSVs may be reordered by editorial criteria such as municipality, category, or data quality when useful.
+- Keep `slug` stable and unique; it is the public identity for each producer.
 - Do not update `fecha_revision` unless the row was actually reviewed or corrected.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 
@@ -58,6 +57,10 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Avoid adding generic frameworks for a single use case.
 - Delete stale one-off tooling instead of preserving paths that can revive outdated data.
 - If a script is not wired from `package.json`, documented here, or broadly reusable for CSV work, do not rely on it.
+
+## Province expansion judgment
+- Treat province expansion as editorial research, not a rote requirement for every task.
+- When adding producers, use the provincial capital, comarca seats, and smaller food-tradition municipalities as discovery anchors; search by category, verify with web/Google Maps/social or reliable listings, and add only real producers with stable unique `slug`, normalized category, coordinates, Google Maps, contact or web when available, and `fecha_revision` only when actually reviewed.
 
 ## Markdown-first communication
 - Write docs, change notes, and implementation plans in Markdown.

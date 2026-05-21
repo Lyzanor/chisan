@@ -9,12 +9,12 @@ import {
   buildProducerPathSegment,
   readQueryParam,
 } from "@/lib/catalog-navigation";
-import { findProducerById, listCategories, normalizeProvinceSlug } from "@/lib/csv-catalog";
+import { findProducerBySlug, listCategories, normalizeProvinceSlug } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
 import { ExternalLink } from "@/components/external-link";
 
 type PageProps = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
@@ -34,15 +34,15 @@ function buildPhoneHref(phone: string): string {
 }
 
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
-  const { id } = await params;
+  const { slug } = await params;
   const query = await searchParams;
   const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
-  const producer = await findProducerById(id, province);
+  const producer = await findProducerBySlug(slug, province);
 
   if (!producer) {
     return {
       title: "Productor no encontrado",
-      description: "No existe esa fila en el CSV.",
+      description: "No existe ese productor en el CSV.",
     };
   }
 
@@ -53,11 +53,11 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
 }
 
 export default async function ProducerPage({ params, searchParams }: PageProps) {
-  const { id } = await params;
+  const { slug } = await params;
   const query = await searchParams;
   const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
   const [producer, categories] = await Promise.all([
-    findProducerById(id, province),
+    findProducerBySlug(slug, province),
     listCategories(province),
   ]);
 
@@ -70,14 +70,21 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
   const highlight = readQueryParam(query, "destacar");
   const lat = readQueryParam(query, "lat");
   const lon = readQueryParam(query, "lon");
-  const canonicalSegment = buildProducerPathSegment(producer.id, producer.slug);
-  const backHref = buildCatalogHref({ province, category, highlight: producer.id });
+  const canonicalSegment = buildProducerPathSegment(producer.slug);
+  const backHref = buildCatalogHref({ province, category, highlight: producer.slug });
 
-  if (id !== canonicalSegment) {
+  if (slug !== canonicalSegment) {
     redirect(
       buildProducerHref(
-        { id: producer.id, slug: producer.slug },
-        { municipality, category, highlight, lat, lon, province },
+        producer,
+        {
+          municipality,
+          category,
+          highlight: highlight ? producer.slug : undefined,
+          lat,
+          lon,
+          province,
+        },
       ),
     );
   }

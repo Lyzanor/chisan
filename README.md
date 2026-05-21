@@ -22,8 +22,8 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 1. `/` = mapa y visualizador de productores.
 2. La portada lee el CSV de la provincia seleccionada.
 3. El mapa pinta productores con `lat/lon`.
-4. El panel lateral permite seleccionar productores y abrir `/p/[id]-[slug]`.
-5. `/p/[id]-[slug]` muestra esa fila completa (columna + valor).
+4. El panel lateral permite seleccionar productores y abrir `/p/[slug]`.
+5. `/p/[slug]` muestra esa fila completa (columna + valor).
 
 No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 
@@ -31,7 +31,7 @@ No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 
 - `app/page.tsx`: mapa y visualizador.
 - `components/map/*`: mapa desacoplado (Leaflet + OSM).
-- `app/p/[id]/page.tsx`: ficha de una fila del CSV, con URL canónica `/p/[id]-[slug]`.
+- `app/p/[slug]/page.tsx`: ficha de un productor del CSV, con URL canónica `/p/[slug]`.
 - `lib/csv-catalog.ts`: lectura, normalización y búsqueda del CSV.
 - `lib/catalog-navigation.ts`: catálogo de comunidades/provincias.
 - `data/csv/catalunya/barcelona.csv`: CSV principal y fuente de Barcelona.
@@ -56,7 +56,7 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm check:csv:data-quality` (auditoría editorial con warnings)
 - `npx pnpm check:csv:completeness` (señal de planificación para ampliar provincias)
 - `npx pnpm test:csv-audit` (regresión de reglas CSV)
-- `npx pnpm test:behavior` (test mínimo de `/` y `/p/[id]-[slug]`)
+- `npx pnpm test:behavior` (test mínimo de `/` y `/p/[slug]`)
 - `npx pnpm verify:ai` (verify + contrato CSV + tests CSV + behavior)
 
 ## Publicar

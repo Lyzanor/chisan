@@ -2,8 +2,8 @@
 
 ## 1) Update data (manual CSV edit)
 1. Edit the target province CSV, usually `data/csv/catalunya/barcelona.csv`.
-2. Add new producers at the end of the CSV.
-3. Keep existing row order unless you are intentionally accepting URL/id changes.
+2. Add new producers with a stable unique `slug`.
+3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
 4. Set `verificacion` when the column exists:
    - `alta`: checked against a primary or clearly reliable source.
    - `media`: real and localized, but not fully checked.
@@ -14,7 +14,7 @@
 ```bash
 npx pnpm verify:ai
 ```
-7. Check `/` and `/p/[id]-[slug]` manually.
+7. Check `/` and `/p/[slug]` manually.
 
 ## 1b) Weekly CSV review
 1. Run the blocking contract audit:
@@ -40,12 +40,12 @@ npx pnpm check:csv:data-quality
 ```bash
 npx pnpm verify:ai
 ```
-7. Validate `/` and a sample of `/p/[id]-[slug]`.
+7. Validate `/` and a sample of `/p/[slug]`.
 8. Update `fecha_revision` only for rows actually reviewed or corrected.
 
 ## 2) Change catalog behavior
 1. Edit catalog logic in `lib/csv-catalog.ts` or `app/page.tsx`.
-2. Keep URL params stable: `provincia`, `categoria`, `destacar`.
+2. Keep URL params stable: `provincia`, `categoria`, `destacar` (`slug` del productor).
 3. Run:
 ```bash
 npx pnpm verify:ai
@@ -82,7 +82,7 @@ vercel deploy . --prod -y
 1. Read `AGENTS.md` before changing code or data.
 2. Treat `data/csv/**` as the source of truth.
 3. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
-4. Keep new producer rows append-first.
+4. Keep producer `slug` values stable and unique.
 5. Run:
 ```bash
 npx pnpm verify:ai
@@ -92,8 +92,8 @@ npx pnpm verify:ai
 ## Guardrails
 - Do not add DB/API/migrations unless explicitly requested.
 - Prefer small, reversible edits.
-- Treat published province CSVs as append-first files: add new rows at the end and avoid reordering.
-- Keep `slug` stable; it is the safest future identity if row-based URLs ever need migration.
+- CSV row order is editorial: keep it easy to sort by the criterion that matters for the task.
+- Keep `slug` stable and unique; it is the public producer identity.
 - Keep `AGENTS.md`, `README.md`, and this file aligned when changing workflow.
 - Keep docs in sync if behavior changes.
 - Keep change proposals and task notes in Markdown.

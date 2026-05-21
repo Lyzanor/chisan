@@ -78,6 +78,7 @@
 ## Blocking rules (`check:csv`)
 - Required header columns must exist exactly once.
 - `slug` is required and must be lowercase ASCII words separated by `-`.
+- `slug` must be unique within its province CSV.
 - `fecha_revision`, when present, must be a real `YYYY-MM-DD` date.
 - `lat` and `lon` must both be present or both be empty.
 - `lat`, when present, must be numeric and between `-90` and `90`.
@@ -101,7 +102,6 @@
   - `fecha_revision` older than `60` days = attention
   - `fecha_revision` older than `90` days = expired
 - Consistency:
-  - duplicated `slug`
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization
   - category labels that should use one of the preferred category labels
@@ -121,8 +121,9 @@ https://www.google.com/maps/search/?api=1&query=...
 https://maps.app.goo.gl/...
 ```
 
-## Row identity
-- `id` in route `/p/[id]` is row index (1-based) after header within the selected province CSV.
-- Row order in each province CSV is meaningful for IDs.
-- Canonical detail URL format is `/p/[id]-[slug]`.
-- `slug` should be lowercase ASCII with words separated by `-`.
+## Producer identity
+- `slug` is the primary identity for producer detail pages.
+- Row order in each province CSV is editorial and may change without changing producer URLs.
+- Canonical detail URL format is `/p/[slug]`.
+- Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]` when resolvable.
+- `slug` should be lowercase ASCII with words separated by `-`, unique within the province CSV, and stable across row reordering.

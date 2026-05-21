@@ -50,17 +50,17 @@ export function buildCatalogHref(context: CatalogNavigationContext): string {
   return queryString ? `/?${queryString}` : "/";
 }
 
-export function buildProducerPathSegment(id: number, slug: string): string {
-  return `${id}-${slug}`;
+export function buildProducerPathSegment(slug: string): string {
+  return slug;
 }
 
 export function buildProducerHref(
-  producer: { id: number | string; slug: string },
+  producer: { slug: string },
   context: CatalogNavigationContext,
 ): string {
   const params = buildContextParams(context);
   const queryString = params.toString();
-  const path = `/p/${buildProducerPathSegment(Number(producer.id), producer.slug)}`;
+  const path = `/p/${buildProducerPathSegment(producer.slug)}`;
 
   return queryString ? `${path}?${queryString}` : path;
 }

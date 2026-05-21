@@ -65,12 +65,12 @@ const userPinIcon = L.divIcon({
 function BoundsAwareMarkers({
   points,
   province,
-  highlightedId,
+  highlightedSlug,
   userLocation,
 }: {
   points: ProducerMapPoint[];
   province: string;
-  highlightedId?: string;
+  highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
 }) {
   const map = useMap();
@@ -131,9 +131,9 @@ function BoundsAwareMarkers({
       )}
       {visible.map((point) => (
         <Marker
-          key={point.id}
+          key={point.slug}
           position={[point.latitude, point.longitude]}
-          icon={highlightedId && String(point.id) === highlightedId ? producerPinHighlightedIcon : producerPinIcon}
+          icon={highlightedSlug === point.slug ? producerPinHighlightedIcon : producerPinIcon}
         >
           <Popup>
             <strong>{point.name}</strong>
@@ -151,12 +151,12 @@ function BoundsAwareMarkers({
 export default function ProducersMapInner({
   points,
   province,
-  highlightedId,
+  highlightedSlug,
   userLocation,
 }: {
   points: ProducerMapPoint[];
   province: string;
-  highlightedId?: string;
+  highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
 }) {
   const initialCenter = getInitialCenter(points, userLocation);
@@ -176,7 +176,7 @@ export default function ProducersMapInner({
       <BoundsAwareMarkers
         points={points}
         province={province}
-        highlightedId={highlightedId}
+        highlightedSlug={highlightedSlug}
         userLocation={userLocation}
       />
     </MapContainer>

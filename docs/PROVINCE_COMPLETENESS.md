@@ -64,18 +64,20 @@ node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
 ```
 
 2. Fix blocking contract errors first.
-3. Fill or correct `Google Maps`, `lat`, and `lon`.
-4. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
-5. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
-6. Add images only as local assets under `public/productores/[provincia]/`.
-7. Update `fecha_revision` for rows touched in that pass.
-8. Run:
+3. For expansion passes, look for candidates from the provincial capital, comarca seats, and smaller municipalities with food tradition; search by category and keep only producers verified through web, Google Maps, social profiles, or reliable institutional listings.
+4. Add new verified producers with stable unique `slug`, normalized `categoria`, `Google Maps`, `lat`, `lon`, and contact or `web` when available; place them according to the current ordering criterion.
+5. Fill or correct `Google Maps`, `lat`, and `lon`.
+6. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
+7. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
+8. Add images only as local assets under `public/productores/[provincia]/`.
+9. Update `fecha_revision` only for rows actually reviewed or corrected in that pass.
+10. Run:
 ```bash
 npx pnpm verify:ai
 ```
 
 ## Notes
 - Do not add a database or API layer for this work.
-- Keep row order stable unless deliberately removing or merging duplicate rows.
+- Row order is editorial; keep `slug` stable so sorting or duplicate cleanup does not change producer URLs.
 - Prefer empty cells over invented data.
 - If a source cannot be verified, leave the field empty and move on.

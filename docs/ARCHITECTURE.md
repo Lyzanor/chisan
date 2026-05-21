@@ -11,7 +11,7 @@ flowchart TD
   C --> D["Producer viewer"]
   C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]
-  D --> G["app/p/[id]/page.tsx -> /p/[id]-[slug]"]
+  D --> G["app/p/[slug]/page.tsx -> /p/[slug]"]
   G --> H["Row detail (field/value table)"]
 ```
 
@@ -25,16 +25,16 @@ flowchart TD
     - `searchProducers({ municipality, category, lat, lon })`
     - `listCategories()`
     - `listMunicipalitySummaries(category?)`
-    - `findProducerById(id|id-slug)`
+    - `findProducerBySlug(slug|legacy-id|legacy-id-slug)`
     - `toProducerMapPoints(rows)`
 - `app/page.tsx`
-  - Reads URL params `provincia`, `categoria`, and `destacar`.
+  - Reads URL params `provincia`, `categoria`, and `destacar` (producer `slug`).
   - Shows province selector and category chips.
   - Renders a Leaflet map with OSM tiles for producers with coordinates.
   - Renders a compact producer viewer next to the map.
-- `app/p/[id]/page.tsx`
-  - Resolves one row by index.
-  - Redirects legacy `/p/[id]` URLs to canonical `/p/[id]-[slug]`.
+- `app/p/[slug]/page.tsx`
+  - Resolves one producer by stable `slug`.
+  - Redirects legacy `/p/[id]` and `/p/[id]-[slug]` URLs to canonical `/p/[slug]`.
   - Renders all CSV columns and values.
 
 ## Design rules

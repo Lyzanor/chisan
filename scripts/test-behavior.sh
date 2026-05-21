@@ -85,14 +85,20 @@ if [[ "$HTML_NO_MATCH_CLEAN" != *"No hay productores en esta categoría"* ]]; th
 fi
 
 REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1")"
-if [[ "$REDIRECT_URL" != "$BASE_URL/p/1-$SLUG" ]]; then
-  echo "Error: expected /p/1 to redirect to /p/1-$SLUG, got '$REDIRECT_URL'." >&2
+if [[ "$REDIRECT_URL" != "$BASE_URL/p/$SLUG" ]]; then
+  echo "Error: expected /p/1 to redirect to /p/$SLUG, got '$REDIRECT_URL'." >&2
+  exit 1
+fi
+
+LEGACY_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1-$SLUG")"
+if [[ "$LEGACY_REDIRECT_URL" != "$BASE_URL/p/$SLUG" ]]; then
+  echo "Error: expected /p/1-$SLUG to redirect to /p/$SLUG, got '$LEGACY_REDIRECT_URL'." >&2
   exit 1
 fi
 
 DETAIL_OK=0
 for _ in {1..20}; do
-  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/1-$SLUG")"
+  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/$SLUG")"
   HTML_DETAIL_CLEAN="$(printf '%s' "$HTML_DETAIL" | sed 's/<!-- -->//g')"
   if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Información"* ]]; then
     DETAIL_OK=1
@@ -102,7 +108,7 @@ for _ in {1..20}; do
 done
 
 if [[ "$DETAIL_OK" -ne 1 ]]; then
-  echo "Error: detail page /p/1-$SLUG does not render expected content." >&2
+  echo "Error: detail page /p/$SLUG does not render expected content." >&2
   exit 1
 fi
 

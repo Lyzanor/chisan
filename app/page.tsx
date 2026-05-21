@@ -38,7 +38,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
   const province = normalizeProvinceSlug(readQueryParam(queryParams, "provincia"));
   const category = readQueryParam(queryParams, "categoria");
-  const highlightedId = readQueryParam(queryParams, "destacar");
+  const highlightedSlug = readQueryParam(queryParams, "destacar");
 
   const [items, categories, allRows] = await Promise.all([
     searchProducers({ municipality: "", category }, province),
@@ -46,8 +46,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     searchProducers({ municipality: "", category: "" }, province),
   ]);
 
-  const highlightedItem = highlightedId
-    ? items.find((item) => String(item.id) === highlightedId)
+  const highlightedItem = highlightedSlug
+    ? items.find((item) => item.slug === highlightedSlug) ??
+      items.find((item) => String(item.id) === highlightedSlug)
     : undefined;
   const mapPoints = toProducerMapPoints(items);
   const visibleItems = items.slice(0, 500);
@@ -93,7 +94,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           <ProducersMap
             points={mapPoints}
             province={province}
-            highlightedId={highlightedItem ? String(highlightedItem.id) : undefined}
+            highlightedSlug={highlightedItem?.slug}
           />
         </div>
 
@@ -125,9 +126,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 const address = getFieldValue(item.fields, "direccion");
 
                 return (
-                  <li key={item.id} className={highlightedItem?.id === item.id ? "is-selected" : ""}>
+                  <li key={item.slug} className={highlightedItem?.slug === item.slug ? "is-selected" : ""}>
                     <Link
-                      href={buildCatalogHref({ province, category, highlight: item.id })}
+                      href={buildCatalogHref({ province, category, highlight: item.slug })}
                       scroll={false}
                       className="producer-compact-link"
                     >
