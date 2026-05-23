@@ -26,6 +26,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `components/map/`: Leaflet map (SSR-safe, dynamic import).
 - `data/csv/catalunya/barcelona.csv`: default and most complete source of truth.
 - `data/csv/[comunidad]/[provincia].csv`: source of truth for the rest of the catalogs.
+- `data/reference/municipios.json`: Wikidata-sourced municipality centroids used by the geo-check warning. Reference data, not producer data.
 - `public/productores/barcelona/`: Barcelona producer images.
 
 ## Active scripts
@@ -36,6 +37,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `npx pnpm test:csv-audit`: regression tests for the CSV audit rules.
 - `npx pnpm test:behavior`: minimal route behavior test.
 - `scripts/fill-google-maps-place-ids.py`: optional helper only when `GOOGLE_MAPS_API_KEY` is available; it must not invent producers.
+- `scripts/build-municipio-centroids.js`: regenerate `data/reference/municipios.json` from Wikidata (self-contained, ~30 s). Run when the lookup may be stale or a real municipio seems missing.
 
 ## Invariants
 - Keep flow simple: `CSV -> map/list -> row detail`.

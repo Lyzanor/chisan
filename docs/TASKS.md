@@ -31,6 +31,7 @@ npx pnpm check:csv:data-quality
    - inconsistent categories
    - category labels that should use preferred labels such as `Lácteos y quesos`, `Bodega`, or `Pan y pastelería`
    - weak map/address data
+   - geography: `lat`/`lon` flagged as far from the `municipio` centroid — cross-check with Google Maps and either correct the coordinates or update `municipio` if the producer is actually in a neighbouring town. Distance and centroid label are printed in the warning.
 5. Re-run the two CSV audits until contract errors are `0`.
 6. Run:
 ```bash

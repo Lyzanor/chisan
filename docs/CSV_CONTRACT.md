@@ -3,13 +3,19 @@
 ## Source of truth
 - Default file: `data/csv/catalunya/barcelona.csv`
 - Additional province files: `data/csv/[comunidad]/[provincia].csv`
-- Reference data: `data/reference/municipios.json` (municipality centroids from Wikidata, used by the geography warning). This is reference data for the audit, not producer data.
 - Encoding: UTF-8 (BOM tolerated)
 - Header row is required.
 - Validation entrypoints:
   - `pnpm check:csv`: blocking technical contract audit for every CSV
   - `node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv`: blocking audit for one CSV
   - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings
+
+## Reference data
+- `data/reference/municipios.json` is a Wikidata-sourced lookup of Spanish municipality centroids (~8.300 entries with multilingual aliases). The geography warning rule uses it; nothing else in the app depends on it.
+- Covered: every entity classified as a municipality of Spain in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
+- Not covered: pedanías, núcleos and other sub-municipal localities (e.g. Alpatró inside La Vall de Gallinera, El Alquián inside Almería). The audit silently skips rows whose `municipio` is not in the lookup; the row is still subject to every other warning.
+- Compound names: if Wikidata uses the official compound form (e.g. `Aínsa-Sobrarbe`) and the CSV uses the short form (e.g. `Aínsa`), the lookup may miss. Prefer the official form in the `municipio` column when known.
+- Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~30 seconds. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs.
 
 ## Required columns
 - `slug`
