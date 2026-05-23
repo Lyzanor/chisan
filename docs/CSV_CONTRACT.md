@@ -27,7 +27,6 @@
 - `Google Maps`
 - `lat`
 - `lon`
-- `fecha_revision`
 
 ## Optional columns
 - `imagen`
@@ -67,19 +66,15 @@
   - `media`: producer appears real and localized, but some fields are incomplete, inferred, or based mostly on secondary sources.
   - `baja`: plausible row with weak verification.
   - `pendiente`: added for catalog coverage, but still needs review.
-- Do not mark `alta` without a real `fecha_revision`.
-- `fecha_revision` should only change when the row was actually reviewed or corrected.
 
 ## Missing values
 - Missing cell values are represented as empty strings internally.
 - Detail table renders empty values as `—`.
-- `fecha_revision` should use `YYYY-MM-DD` when present, or remain empty if unknown.
 
 ## Blocking rules (`check:csv`)
 - Required header columns must exist exactly once.
 - `slug` is required and must be lowercase ASCII words separated by `-`.
 - `slug` must be unique within its province CSV.
-- `fecha_revision`, when present, must be a real `YYYY-MM-DD` date.
 - `lat` and `lon` must both be present or both be empty.
 - `lat`, when present, must be numeric and between `-90` and `90`.
 - `lon`, when present, must be numeric and between `-180` and `180`.
@@ -88,7 +83,7 @@
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:
-  - `nombre`, `municipio`, `categoria`, `direccion`, `fecha_revision`
+  - `nombre`, `municipio`, `categoria`, `direccion`
   - `descripcion` empty or shorter than `30` characters
   - both `telefono` and `correo` empty
   - both `Facebook` and `Instagram` empty
@@ -97,10 +92,6 @@
   - missing `verificacion` column in actively edited CSVs
   - empty `verificacion` when the column exists
   - unsupported `verificacion` values
-  - `verificacion=alta` without `fecha_revision`
-- Review freshness:
-  - `fecha_revision` older than `60` days = attention
-  - `fecha_revision` older than `90` days = expired
 - Consistency:
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization

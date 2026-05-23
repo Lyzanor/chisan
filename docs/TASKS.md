@@ -9,12 +9,11 @@
    - `media`: real and localized, but not fully checked.
    - `baja`: plausible but weakly checked.
    - `pendiente`: added for coverage and still needs review.
-5. Update `fecha_revision` only for rows actually reviewed or corrected.
-6. Run:
+5. Run:
 ```bash
 npx pnpm verify:ai
 ```
-7. Check `/` and `/p/[slug]` manually.
+6. Check `/` and `/p/[slug]` manually.
 
 ## 1b) Weekly CSV review
 1. Run the blocking contract audit:
@@ -28,9 +27,7 @@ npx pnpm check:csv:data-quality
 3. Fix `error` items first in the target province CSV.
 4. Fix `warning` items next:
    - empty key fields
-   - stale `fecha_revision`
    - missing, empty, or invalid `verificacion`
-   - `verificacion=alta` without a real review date
    - duplicates
    - inconsistent categories
    - category labels that should use preferred labels such as `Lácteos y quesos`, `Bodega`, or `Pan y pastelería`
@@ -41,7 +38,6 @@ npx pnpm check:csv:data-quality
 npx pnpm verify:ai
 ```
 7. Validate `/` and a sample of `/p/[slug]`.
-8. Update `fecha_revision` only for rows actually reviewed or corrected.
 
 ## 2) Change catalog behavior
 1. Edit catalog logic in `lib/csv-catalog.ts` or `app/page.tsx`.

@@ -35,11 +35,6 @@ const METRICS = [
     count: (row) => hasValue(row.lat) && hasValue(row.lon),
   },
   {
-    key: "revision",
-    label: "Revision",
-    count: (row) => hasValue(row.fecha_revision),
-  },
-  {
     key: "imagen",
     label: "Imagen",
     count: (row) => hasValue(row.imagen),

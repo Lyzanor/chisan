@@ -19,7 +19,6 @@ Baseline snapshot:
 - Social: `52.8%`
 - Google Maps: `100.0%`
 - Coordinates: `100.0%`
-- Fecha revision: `10.4%`
 - Imagen: `14.1%`
 - Completeness score: `58.5`
 
@@ -30,7 +29,6 @@ Baseline snapshot:
 - `web` exists for at least the Barcelona baseline share of rows, and only when the domain resolves and belongs to the producer or a reliable official listing.
 - `Facebook` or `Instagram` exists for at least the Barcelona baseline share of rows.
 - `imagen` reaches at least the Barcelona baseline share where local assets are available.
-- `fecha_revision` is updated only for rows actually reviewed or corrected.
 - Coverage is fine-grained across municipalities, not just concentrated in provincial capitals or a few well-known towns.
 - Row count should grow from verified producers, not filler entries.
 - Product descriptions should be specific enough to distinguish producers.
@@ -70,8 +68,7 @@ node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
 6. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
 7. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
 8. Add images only as local assets under `public/productores/[provincia]/`.
-9. Update `fecha_revision` only for rows actually reviewed or corrected in that pass.
-10. Run:
+9. Run:
 ```bash
 npx pnpm verify:ai
 ```

@@ -281,4 +281,4 @@ Revisión editorial de los 138 productores que quedaron como `missing` tras cruz
 ## Siguiente pase recomendado
 - Empezar por provincias con más `Añadir`: Ciudad Real, Toledo, Zamora, Navarra, Badajoz y Las Palmas con nombres normalizados.
 - En Las Palmas, crear nombres canónicos de queserías, no filas con el Cabildo como productor.
-- Antes de CSV, verificar web o Google Maps, coordenadas, contacto y `Google Maps`; no actualizar `fecha_revision` hasta revisar cada fila.
+- Antes de CSV, verificar web o Google Maps, coordenadas, contacto y `Google Maps`.

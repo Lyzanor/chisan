@@ -17,12 +17,9 @@ const REQUIRED_COLUMNS = [
   "Google Maps",
   "lat",
   "lon",
-  "fecha_revision",
 ];
 
 const DESCRIPTION_MIN_LENGTH = 30;
-const REVIEW_WARNING_DAYS = 60;
-const REVIEW_EXPIRED_DAYS = 90;
 const VERIFICATION_COLUMN = "verificacion";
 const VERIFICATION_LEVELS = new Set(["alta", "media", "baja", "pendiente"]);
 const PREFERRED_CATEGORY_ALIASES = new Map([
@@ -250,35 +247,6 @@ function validateImagePath(value) {
   return null;
 }
 
-function parseStrictDate(value) {
-  const cleaned = cleanCell(value);
-  if (!cleaned) {
-    return { empty: true, date: null };
-  }
-
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(cleaned)) {
-    return { empty: false, error: "must use YYYY-MM-DD" };
-  }
-
-  const [year, month, day] = cleaned.split("-").map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
-
-  if (
-    date.getUTCFullYear() !== year ||
-    date.getUTCMonth() !== month - 1 ||
-    date.getUTCDate() !== day
-  ) {
-    return { empty: false, error: "is not a real calendar date" };
-  }
-
-  return { empty: false, date };
-}
-
-function daysSince(date, now) {
-  const diffMs = now.getTime() - date.getTime();
-  return Math.floor(diffMs / 86400000);
-}
-
 function hasUsefulAddress(fields) {
   const rawAddress = cleanCell(fields.direccion);
   const normalizedAddress = normalizeSearch(rawAddress);
@@ -392,11 +360,6 @@ function runContractAudit({ headers, rows, push }) {
       slugLines.set(slug, lines);
     }
 
-    const reviewDate = parseStrictDate(fields.fecha_revision);
-    if (reviewDate.error) {
-      push("error", line, id, slug, `fecha_revision ${reviewDate.error}`);
-    }
-
     const latRaw = cleanCell(fields.lat);
     const lonRaw = cleanCell(fields.lon);
     const lat = parseCoordinate(latRaw, 90, [2, 1, 3]);
@@ -456,7 +419,6 @@ function runContractAudit({ headers, rows, push }) {
 }
 
 function runQualityAudit({ headers, rows, push }) {
-  const now = new Date();
   const hasVerificationColumn = headers.includes(VERIFICATION_COLUMN);
   const nameCityLines = new Map();
   const categoryVariants = new Map();
@@ -485,7 +447,6 @@ function runQualityAudit({ headers, rows, push }) {
     const facebook = cleanCell(fields.Facebook);
     const instagram = cleanCell(fields.Instagram);
     const googleMaps = cleanCell(fields["Google Maps"]);
-    const reviewDate = parseStrictDate(fields.fecha_revision);
     const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
     const verification = normalizeSearch(verificationRaw);
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
@@ -525,8 +486,6 @@ function runQualityAudit({ headers, rows, push }) {
           slug,
           `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
         );
-      } else if (verification === "alta" && reviewDate.empty) {
-        push("warning", line, id, slug, "verificacion alta requires fecha_revision");
       }
     }
 
@@ -556,29 +515,6 @@ function runQualityAudit({ headers, rows, push }) {
 
     if (!googleMaps) {
       push("warning", line, id, slug, "Google Maps is empty");
-    }
-
-    if (reviewDate.empty) {
-      push("warning", line, id, slug, "fecha_revision is empty");
-    } else if (reviewDate.date) {
-      const reviewAgeDays = daysSince(reviewDate.date, now);
-      if (reviewAgeDays > REVIEW_EXPIRED_DAYS) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `fecha_revision is expired (${reviewAgeDays} days old, threshold ${REVIEW_EXPIRED_DAYS})`,
-        );
-      } else if (reviewAgeDays > REVIEW_WARNING_DAYS) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `fecha_revision needs attention (${reviewAgeDays} days old, threshold ${REVIEW_WARNING_DAYS})`,
-        );
-      }
     }
 
     if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {
