@@ -22,6 +22,8 @@ const REQUIRED_COLUMNS = [
 const DESCRIPTION_MIN_LENGTH = 30;
 const VERIFICATION_COLUMN = "verificacion";
 const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
+const CENTROID_MAX_DISTANCE_KM = 15;
+const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
 const PREFERRED_CATEGORY_ALIASES = new Map([
   ["quesos y lacteos", "Lácteos y quesos"],
   ["lacteos", "Lácteos y quesos"],
@@ -247,6 +249,32 @@ function validateImagePath(value) {
   return null;
 }
 
+function haversineKm(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const toRad = (degrees) => (degrees * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+}
+
+async function loadCentroids() {
+  const { fs, path } = await getDependencies();
+  const filePath = path.join(__dirname, "..", CENTROIDS_RELATIVE_PATH);
+  if (!fs.existsSync(filePath)) return null;
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function lookupCentroid(centroids, municipio) {
+  if (!centroids || !municipio) return null;
+  const stripped = municipio.split(" - ")[0].trim();
+  const key1 = normalizeSearch(municipio);
+  const key2 = normalizeSearch(stripped);
+  return centroids[key1] || centroids[key2] || null;
+}
+
 function hasUsefulAddress(fields) {
   const rawAddress = cleanCell(fields.direccion);
   const normalizedAddress = normalizeSearch(rawAddress);
@@ -418,7 +446,7 @@ function runContractAudit({ headers, rows, push }) {
   }
 }
 
-function runQualityAudit({ headers, rows, push }) {
+function runQualityAudit({ headers, rows, push, centroids }) {
   const hasVerificationColumn = headers.includes(VERIFICATION_COLUMN);
   const nameCityLines = new Map();
   const categoryVariants = new Map();
@@ -538,6 +566,20 @@ function runQualityAudit({ headers, rows, push }) {
       if (!hasUsefulAddress(fields)) {
         push("warning", line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
+
+      const centroid = lookupCentroid(centroids, city);
+      if (centroid) {
+        const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
+        if (distance > CENTROID_MAX_DISTANCE_KM) {
+          push(
+            "warning",
+            line,
+            id,
+            slug,
+            `lat/lon is ${distance.toFixed(1)} km from ${centroid.label} centroid (threshold ${CENTROID_MAX_DISTANCE_KM} km)`,
+          );
+        }
+      }
     }
 
     const normalizedNameCity = [normalizeSearch(name), normalizeSearch(city)]
@@ -628,7 +670,8 @@ async function main() {
   runContractAudit({ headers, rows, push });
 
   if (mode === "quality") {
-    runQualityAudit({ headers, rows, push });
+    const centroids = await loadCentroids();
+    runQualityAudit({ headers, rows, push, centroids });
   }
 
   printReport(mode, issues);

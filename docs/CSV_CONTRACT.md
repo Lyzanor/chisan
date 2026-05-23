@@ -3,6 +3,7 @@
 ## Source of truth
 - Default file: `data/csv/catalunya/barcelona.csv`
 - Additional province files: `data/csv/[comunidad]/[provincia].csv`
+- Reference data: `data/reference/municipios.json` (municipality centroids from Wikidata, used by the geography warning). This is reference data for the audit, not producer data.
 - Encoding: UTF-8 (BOM tolerated)
 - Header row is required.
 - Validation entrypoints:
@@ -98,6 +99,8 @@
   - near-duplicate `categoria` variants after normalization
   - category labels that should use one of the preferred category labels
   - coordinates present but `direccion` not useful for location review
+- Geography:
+  - `lat`/`lon` more than `15 km` from the `municipio` centroid (looked up in `data/reference/municipios.json`). Rows whose `municipio` is not in the lookup are skipped silently.
 
 ## Link validation
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must be valid `http://` or `https://` URLs.
