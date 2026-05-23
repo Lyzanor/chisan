@@ -21,7 +21,7 @@ const REQUIRED_COLUMNS = [
 
 const DESCRIPTION_MIN_LENGTH = 30;
 const VERIFICATION_COLUMN = "verificacion";
-const VERIFICATION_LEVELS = new Set(["alta", "media", "baja", "pendiente"]);
+const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
 const PREFERRED_CATEGORY_ALIASES = new Map([
   ["quesos y lacteos", "Lácteos y quesos"],
   ["lacteos", "Lácteos y quesos"],
@@ -486,6 +486,23 @@ function runQualityAudit({ headers, rows, push }) {
           slug,
           `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
         );
+      } else if (verification === "verificado") {
+        const hasCoords =
+          !Number.isNaN(lat) &&
+          !Number.isNaN(lon) &&
+          (cleanCell(fields.lat) || cleanCell(fields.lon));
+        const hasExternalLink = Boolean(
+          cleanCell(fields.web) || googleMaps || facebook || instagram,
+        );
+        if (!hasCoords || !hasExternalLink) {
+          push(
+            "warning",
+            line,
+            id,
+            slug,
+            "verificacion verificado requires coordinates and at least one external link",
+          );
+        }
       }
     }
 

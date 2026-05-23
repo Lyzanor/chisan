@@ -60,12 +60,12 @@
 - New category labels should be rare and should describe a materially different producer type.
 
 ## Verification levels
-- `verificacion` is optional during migration, but recommended for CSVs that are actively edited.
+- `verificacion` is optional, but recommended for CSVs that are actively edited. It is the single reliability indicator for each row.
 - Allowed values:
-  - `alta`: core data has been checked against a primary or clearly reliable source, and name, location and contact/link data are consistent.
-  - `media`: producer appears real and localized, but some fields are incomplete, inferred, or based mostly on secondary sources.
-  - `baja`: plausible row with weak verification.
   - `pendiente`: added for catalog coverage, but still needs review.
+  - `parcial`: producer exists and is localized, but some fields are inferred or based on secondary sources.
+  - `verificado`: name, municipio, location and contact/link data have been cross-checked against a primary or clearly reliable source.
+- A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The audit warns when this is not the case.
 
 ## Missing values
 - Missing cell values are represented as empty strings internally.
@@ -92,6 +92,7 @@
   - missing `verificacion` column in actively edited CSVs
   - empty `verificacion` when the column exists
   - unsupported `verificacion` values
+  - `verificacion=verificado` without coordinates or any external link
 - Consistency:
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization

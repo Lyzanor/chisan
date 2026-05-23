@@ -5,10 +5,9 @@
 2. Add new producers with a stable unique `slug`.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
 4. Set `verificacion` when the column exists:
-   - `alta`: checked against a primary or clearly reliable source.
-   - `media`: real and localized, but not fully checked.
-   - `baja`: plausible but weakly checked.
    - `pendiente`: added for coverage and still needs review.
+   - `parcial`: real and localized, but some data is inferred or not fully checked.
+   - `verificado`: cross-checked against a primary or clearly reliable source; requires coordinates and at least one external link.
 5. Run:
 ```bash
 npx pnpm verify:ai
