@@ -37,6 +37,13 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   const { slug } = await params;
   const query = await searchParams;
   const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
+  if (!province) {
+    return {
+      title: "Selecciona provincia",
+      description: "La ficha necesita una provincia para resolver el CSV correcto.",
+    };
+  }
+
   const producer = await findProducerBySlug(slug, province);
 
   if (!producer) {
@@ -56,6 +63,10 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
   const { slug } = await params;
   const query = await searchParams;
   const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
+  if (!province) {
+    redirect("/");
+  }
+
   const [producer, categories] = await Promise.all([
     findProducerBySlug(slug, province),
     listCategories(province),

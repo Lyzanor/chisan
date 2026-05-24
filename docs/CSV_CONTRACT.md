@@ -1,8 +1,8 @@
 # CSV Contract
 
 ## Source of truth
-- Default file: `data/csv/catalunya/barcelona.csv`
-- Additional province files: `data/csv/[comunidad]/[provincia].csv`
+- Province files: `data/csv/[comunidad]/[provincia].csv`
+- Barcelona file: `data/csv/catalunya/barcelona.csv`
 - Encoding: UTF-8 (BOM tolerated)
 - Header row is required.
 - Validation entrypoints:
@@ -124,6 +124,7 @@ https://maps.app.goo.gl/...
 ## Producer identity
 - `slug` is the primary identity for producer detail pages.
 - Row order in each province CSV is editorial and may change without changing producer URLs.
-- Canonical detail URL format is `/p/[slug]`.
-- Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]` when resolvable.
+- Canonical detail path format is `/p/[slug]`.
+- Detail URLs must include `provincia=[provincia]`, including Barcelona, because slugs are unique within a province CSV rather than globally.
+- Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]?provincia=[provincia]` when resolvable.
 - `slug` should be lowercase ASCII with words separated by `-`, unique within the province CSV, and stable across row reordering.

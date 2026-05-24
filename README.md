@@ -19,11 +19,11 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 
 ## Mecanismo core
 
-1. `/` = mapa y visualizador de productores.
-2. La portada lee el CSV de la provincia seleccionada.
+1. `/` solicita elegir provincia.
+2. `/?provincia=[provincia]` = mapa y visualizador de productores.
 3. El mapa pinta productores con `lat/lon`.
-4. El panel lateral permite seleccionar productores y abrir `/p/[slug]`.
-5. `/p/[slug]` muestra esa fila completa (columna + valor).
+4. El panel lateral permite seleccionar productores y abrir `/p/[slug]?provincia=[provincia]`.
+5. `/p/[slug]?provincia=[provincia]` muestra esa fila completa (columna + valor).
 
 No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 
@@ -31,11 +31,11 @@ No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 
 - `app/page.tsx`: mapa y visualizador.
 - `components/map/*`: mapa desacoplado (Leaflet + OSM).
-- `app/p/[slug]/page.tsx`: ficha de un productor del CSV, con URL canónica `/p/[slug]`.
+- `app/p/[slug]/page.tsx`: ficha de un productor del CSV, con path canónico `/p/[slug]` y `provincia` en query.
 - `lib/csv-catalog.ts`: lectura, normalización y búsqueda del CSV.
 - `lib/catalog-navigation.ts`: catálogo de comunidades/provincias.
-- `data/csv/catalunya/barcelona.csv`: CSV principal y fuente de Barcelona.
-- `data/csv/[comunidad]/[provincia].csv`: CSV del resto de provincias, agrupados por comunidad autónoma.
+- `data/csv/catalunya/barcelona.csv`: CSV de Barcelona.
+- `data/csv/[comunidad]/[provincia].csv`: CSV de cada provincia, agrupados por comunidad autónoma.
 - `public/productores/barcelona/`: imágenes específicas de Barcelona.
 
 ## Uso
@@ -56,7 +56,7 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm check:csv:data-quality` (auditoría editorial con warnings para todos los CSV)
 - `npx pnpm check:csv:completeness` (señal de planificación para ampliar provincias)
 - `npx pnpm test:csv-audit` (regresión de reglas CSV)
-- `npx pnpm test:behavior` (test mínimo de `/` y `/p/[slug]`)
+- `npx pnpm test:behavior` (test mínimo de `/`, `/?provincia=...` y `/p/[slug]?provincia=...`)
 - `npx pnpm verify:ai` (verify + contrato CSV + tests CSV + behavior)
 
 ## Publicar

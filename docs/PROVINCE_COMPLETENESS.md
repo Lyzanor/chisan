@@ -5,7 +5,7 @@ Long-term: bring every province catalog toward the Barcelona level of usefulness
 
 This is not a required gate for every task. Use it when planning data-expansion work, auditing a province, or deciding which province to improve next.
 
-Barcelona is the default catalog and current baseline:
+Barcelona is not an implicit app default, but it remains the current completeness baseline:
 
 ```bash
 npx pnpm check:csv:completeness

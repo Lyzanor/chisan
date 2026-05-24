@@ -1,7 +1,7 @@
 # Architecture
 
 ## Purpose
-Serve province CSV files as a map-first producer catalog with a simple row detail page. Barcelona is the default and most complete catalog.
+Serve province CSV files as a map-first producer catalog with a simple row detail page. The app has no implicit default province; `/` asks for a province before reading a CSV.
 
 ## Runtime flow
 ```mermaid
@@ -11,7 +11,7 @@ flowchart TD
   C --> D["Producer viewer"]
   C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]
-  D --> G["app/p/[slug]/page.tsx -> /p/[slug]"]
+  D --> G["app/p/[slug]/page.tsx -> /p/[slug]?provincia=[provincia]"]
   G --> H["Row detail (field/value table)"]
 ```
 
@@ -29,12 +29,14 @@ flowchart TD
     - `toProducerMapPoints(rows)`
 - `app/page.tsx`
   - Reads URL params `provincia`, `categoria`, and `destacar` (producer `slug`).
+  - Renders the province chooser when `provincia` is missing or unknown.
   - Shows province selector and category chips.
   - Renders a Leaflet map with OSM tiles for producers with coordinates.
   - Renders a compact producer viewer next to the map.
 - `app/p/[slug]/page.tsx`
-  - Resolves one producer by stable `slug`.
-  - Redirects legacy `/p/[id]` and `/p/[id]-[slug]` URLs to canonical `/p/[slug]`.
+  - Resolves one producer by stable `slug` plus `provincia`.
+  - Redirects legacy `/p/[id]` and `/p/[id]-[slug]` URLs to canonical `/p/[slug]?provincia=[provincia]`.
+  - Redirects detail requests without `provincia` back to `/` because producer slugs are province-scoped.
   - Renders all CSV columns and values.
 
 ## Design rules

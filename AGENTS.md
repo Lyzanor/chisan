@@ -3,8 +3,8 @@
 This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, and any other AI assistant working in this repository.
 
 ## Project in 2 lines
-- This app is a map viewer for province CSV files, with `data/csv/catalunya/barcelona.csv` as the default catalog.
-- Users browse producers on `/` and open one row in `/p/[slug]`.
+- This app is a map viewer for province CSV files; `/` first asks the user to choose a province.
+- Users browse producers on `/?provincia=[provincia]` and open one row in `/p/[slug]?provincia=[provincia]`.
 
 ## Scope (what this project does)
 - Reads the CSV from disk at request time.
@@ -20,12 +20,12 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Core files
 - `app/page.tsx`: map and producer viewer.
-- `app/p/[slug]/page.tsx`: producer detail page with canonical URL `/p/[slug]`.
+- `app/p/[slug]/page.tsx`: producer detail page with canonical path `/p/[slug]` and province query.
 - `lib/csv-catalog.ts`: CSV read, normalization, filters, map points.
 - `lib/catalog-navigation.ts`: province/community catalog discovery.
 - `components/map/`: Leaflet map (SSR-safe, dynamic import).
-- `data/csv/catalunya/barcelona.csv`: default and most complete source of truth.
-- `data/csv/[comunidad]/[provincia].csv`: source of truth for the rest of the catalogs.
+- `data/csv/catalunya/barcelona.csv`: Barcelona source of truth.
+- `data/csv/[comunidad]/[provincia].csv`: source of truth for every province catalog.
 - `data/reference/municipios.json`: Wikidata-sourced municipality centroids used by the geo-check warning. Reference data, not producer data.
 - `public/productores/barcelona/`: Barcelona producer images.
 
@@ -45,10 +45,10 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
   - `provincia`
   - `categoria`
   - `destacar` (producer `slug`)
-- Producer identity is `slug`; row order must not affect detail URLs.
-- Canonical producer URL format: `/p/[slug]`.
+- Producer identity is `slug` within a province; row order must not affect detail URLs.
+- Canonical producer path format: `/p/[slug]`; detail URLs must include `provincia`, including Barcelona.
 - CSVs may be reordered by editorial criteria such as municipality, category, or data quality when useful.
-- Keep `slug` stable and unique; it is the public identity for each producer.
+- Keep `slug` stable and unique within its province; it is the public identity for each producer.
 - Every row must include `verificacion` with one of `pendiente`, `parcial`, or `verificado`; old labels such as `alta`, `media`, and `baja` are invalid.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 

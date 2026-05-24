@@ -34,7 +34,6 @@ export type MunicipalitySummary = {
 };
 
 const CSV_DATA_DIR = "data/csv";
-export const DEFAULT_PROVINCE_SLUG = "barcelona";
 
 export type ProvinceOption = {
   slug: string;
@@ -211,23 +210,27 @@ export function normalizeProvinceSlug(province: string): string {
   };
   const normalizedSlug = provinceAliases[slug] ?? slug;
 
-  return PROVINCE_REGISTRY.has(normalizedSlug) ? normalizedSlug : DEFAULT_PROVINCE_SLUG;
+  return PROVINCE_REGISTRY.has(normalizedSlug) ? normalizedSlug : "";
 }
 
 function resolveProvinceCsvPath(province: string): string {
   const normalizedProvince = normalizeProvinceSlug(province);
   const registryEntry = PROVINCE_REGISTRY.get(normalizedProvince);
 
+  if (!registryEntry) {
+    throw new Error(`Unknown province '${province}'.`);
+  }
+
   return path.resolve(
     process.cwd(),
     CSV_DATA_DIR,
-    registryEntry?.communitySlug ?? "catalunya",
+    registryEntry.communitySlug,
     `${normalizedProvince}.csv`,
   );
 }
 
 export function getProvinceLabel(province: string): string {
-  return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.label ?? "Barcelona";
+  return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.label ?? "";
 }
 
 export function listProvinces(): ProvinceOption[] {
@@ -412,6 +415,10 @@ const csvCache = new Map<string, ProducerCsvRow[]>();
 
 async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
   const cacheKey = normalizeProvinceSlug(province);
+  if (!cacheKey) {
+    return [];
+  }
+
   const cached = csvCache.get(cacheKey);
   if (cached) {
     return cached;

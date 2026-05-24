@@ -25,10 +25,12 @@ export function ProvinceSelector({ groups, currentProvince }: ProvinceSelectorPr
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
-  const selectedProvince = currentProvince || "barcelona";
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const province = e.target.value;
+    if (!province) {
+      return;
+    }
 
     startTransition(() => {
       router.push(
@@ -47,11 +49,14 @@ export function ProvinceSelector({ groups, currentProvince }: ProvinceSelectorPr
       </label>
       <select
         id="province-select"
-        value={selectedProvince}
+        value={currentProvince}
         onChange={handleChange}
-      disabled={isPending}
-      className="province-selector-select"
+        disabled={isPending}
+        className="province-selector-select"
       >
+        <option value="" disabled>
+          Selecciona una provincia
+        </option>
         {groups.map((group) => (
           <optgroup key={group.slug} label={group.label}>
             {group.provinces.map((province) => (

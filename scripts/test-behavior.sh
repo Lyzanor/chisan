@@ -66,7 +66,16 @@ DEV_PID=$!
 
 wait_for_app
 
+HTML_HOME="$(curl -fsS "$BASE_URL/")"
+HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"
+
+if [[ "$HTML_HOME_CLEAN" != *"Elige provincia"* ]]; then
+  echo "Error: home page should ask for an initial province selection." >&2
+  exit 1
+fi
+
 HTML_FILTERED="$(curl -fsS --get "$BASE_URL/" \
+  --data-urlencode "provincia=barcelona" \
   --data-urlencode "categoria=$CATEGORY")"
 
 if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
@@ -75,6 +84,7 @@ if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
 fi
 
 HTML_NO_MATCH="$(curl -fsS --get "$BASE_URL/" \
+  --data-urlencode "provincia=barcelona" \
   --data-urlencode "categoria=__categoria_que_no_existe__")"
 
 HTML_NO_MATCH_CLEAN="$(printf '%s' "$HTML_NO_MATCH" | sed 's/<!-- -->//g')"
@@ -84,21 +94,27 @@ if [[ "$HTML_NO_MATCH_CLEAN" != *"No hay productores en esta categoría"* ]]; th
   exit 1
 fi
 
-REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1")"
-if [[ "$REDIRECT_URL" != "$BASE_URL/p/$SLUG" ]]; then
-  echo "Error: expected /p/1 to redirect to /p/$SLUG, got '$REDIRECT_URL'." >&2
+REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1?provincia=barcelona")"
+if [[ "$REDIRECT_URL" != "$BASE_URL/p/$SLUG?provincia=barcelona" ]]; then
+  echo "Error: expected /p/1?provincia=barcelona to redirect to /p/$SLUG?provincia=barcelona, got '$REDIRECT_URL'." >&2
   exit 1
 fi
 
-LEGACY_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1-$SLUG")"
-if [[ "$LEGACY_REDIRECT_URL" != "$BASE_URL/p/$SLUG" ]]; then
-  echo "Error: expected /p/1-$SLUG to redirect to /p/$SLUG, got '$LEGACY_REDIRECT_URL'." >&2
+LEGACY_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1-$SLUG?provincia=barcelona")"
+if [[ "$LEGACY_REDIRECT_URL" != "$BASE_URL/p/$SLUG?provincia=barcelona" ]]; then
+  echo "Error: expected /p/1-$SLUG?provincia=barcelona to redirect to /p/$SLUG?provincia=barcelona, got '$LEGACY_REDIRECT_URL'." >&2
+  exit 1
+fi
+
+MISSING_PROVINCE_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/$SLUG")"
+if [[ "$MISSING_PROVINCE_REDIRECT_URL" != "$BASE_URL/" ]]; then
+  echo "Error: expected /p/$SLUG without provincia to redirect to /, got '$MISSING_PROVINCE_REDIRECT_URL'." >&2
   exit 1
 fi
 
 DETAIL_OK=0
 for _ in {1..20}; do
-  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/$SLUG")"
+  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/$SLUG?provincia=barcelona")"
   HTML_DETAIL_CLEAN="$(printf '%s' "$HTML_DETAIL" | sed 's/<!-- -->//g')"
   if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Información"* ]]; then
     DETAIL_OK=1
@@ -108,7 +124,7 @@ for _ in {1..20}; do
 done
 
 if [[ "$DETAIL_OK" -ne 1 ]]; then
-  echo "Error: detail page /p/$SLUG does not render expected content." >&2
+  echo "Error: detail page /p/$SLUG?provincia=barcelona does not render expected content." >&2
   exit 1
 fi
 

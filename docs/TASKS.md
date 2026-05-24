@@ -1,7 +1,7 @@
 # Common Tasks
 
 ## 1) Update data (manual CSV edit)
-1. Edit the target province CSV, usually `data/csv/catalunya/barcelona.csv`.
+1. Edit the target province CSV under `data/csv/[comunidad]/[provincia].csv`.
 2. Add new producers with a stable unique `slug`.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
 4. Set `verificacion`:
@@ -12,7 +12,7 @@
 ```bash
 npx pnpm verify:ai
 ```
-6. Check `/` and `/p/[slug]` manually.
+6. Check `/`, `/?provincia=[provincia]`, and `/p/[slug]?provincia=[provincia]` manually.
 
 ## 1b) Weekly CSV review
 1. Run the blocking contract audit:
@@ -36,7 +36,7 @@ npx pnpm check:csv:data-quality
 ```bash
 npx pnpm verify:ai
 ```
-7. Validate `/` and a sample of `/p/[slug]`.
+7. Validate `/`, `/?provincia=[provincia]`, and a sample of `/p/[slug]?provincia=[provincia]`.
 
 ## 2) Change catalog behavior
 1. Edit catalog logic in `lib/csv-catalog.ts` or `app/page.tsx`.
