@@ -32,7 +32,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 ## Active scripts
 - `npx pnpm verify:ai`: required before finishing changes.
 - `npx pnpm check:csv`: validates the blocking CSV contract for every CSV file.
-- `npx pnpm check:csv:data-quality`: warning audit for data-quality review.
+- `npx pnpm check:csv:data-quality`: warning audit for data-quality review across every CSV.
 - `npx pnpm check:csv:completeness`: planning signal for province expansion.
 - `npx pnpm test:csv-audit`: regression tests for the CSV audit rules.
 - `npx pnpm test:behavior`: minimal route behavior test.
@@ -49,6 +49,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Canonical producer URL format: `/p/[slug]`.
 - CSVs may be reordered by editorial criteria such as municipality, category, or data quality when useful.
 - Keep `slug` stable and unique; it is the public identity for each producer.
+- Every row must include `verificacion` with one of `pendiente`, `parcial`, or `verificado`; old labels such as `alta`, `media`, and `baja` are invalid.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 
 ## Safe change policy
@@ -61,7 +62,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Province expansion judgment
 - Treat province expansion as editorial research, not a rote requirement for every task.
-- When adding producers, use the provincial capital, comarca seats, and smaller food-tradition municipalities as discovery anchors; search by category, verify with web/Google Maps/social or reliable listings, and add only real producers with stable unique `slug`, normalized category, coordinates, Google Maps, and contact or web when available.
+- When adding producers, use the provincial capital, comarca seats, and smaller food-tradition municipalities as discovery anchors; search by category, verify with web/Google Maps/social or reliable listings, and add only real producers with stable unique `slug`, normalized category, coordinates, Google Maps, `verificacion`, and contact or web when available.
 
 ## Markdown-first communication
 - Write docs, change notes, and implementation plans in Markdown.

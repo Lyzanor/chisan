@@ -8,7 +8,8 @@
 - Validation entrypoints:
   - `pnpm check:csv`: blocking technical contract audit for every CSV
   - `node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv`: blocking audit for one CSV
-  - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings
+  - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings for every CSV
+  - `node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv`: detailed warning audit for one CSV
 
 ## Reference data
 - `data/reference/municipios.json` is a Wikidata-sourced lookup of Spanish municipality centroids (~8.300 entries with multilingual aliases). The geography warning rule uses it; nothing else in the app depends on it.
@@ -34,10 +35,10 @@
 - `Google Maps`
 - `lat`
 - `lon`
+- `verificacion`
 
 ## Optional columns
 - `imagen`
-- `verificacion`
 
 ## How the app uses columns
 - Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
@@ -49,7 +50,7 @@
 - External links: `web`, `Facebook`, `Instagram`, `Google Maps`.
 - Detail page: shows all columns as table rows.
 - Detail image: `imagen` when present, otherwise a generic local placeholder.
-- Verification level: `verificacion`, when present, records how checked the row is.
+- Verification level: `verificacion`, records how checked the row is.
 
 ## Normalization rules
 - Collapse repeated spaces.
@@ -67,12 +68,13 @@
 - New category labels should be rare and should describe a materially different producer type.
 
 ## Verification levels
-- `verificacion` is optional, but recommended for CSVs that are actively edited. It is the single reliability indicator for each row.
+- `verificacion` is required for every row. It is the single reliability indicator for agents and editors.
 - Allowed values:
   - `pendiente`: added for catalog coverage, but still needs review.
   - `parcial`: producer exists and is localized, but some fields are inferred or based on secondary sources.
   - `verificado`: name, municipio, location and contact/link data have been cross-checked against a primary or clearly reliable source.
-- A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The audit warns when this is not the case.
+- Legacy values such as `alta`, `media`, and `baja` are invalid. Use `verificado`, `parcial`, and `pendiente`.
+- A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The blocking audit fails when this is not the case.
 
 ## Missing values
 - Missing cell values are represented as empty strings internally.
@@ -87,6 +89,8 @@
 - `lon`, when present, must be numeric and between `-180` and `180`.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
 - `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/barcelona/ejemplo.webp`.
+- `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
+- `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:
@@ -95,11 +99,6 @@
   - both `telefono` and `correo` empty
   - both `Facebook` and `Instagram` empty
   - `Google Maps` empty
-- Verification:
-  - missing `verificacion` column in actively edited CSVs
-  - empty `verificacion` when the column exists
-  - unsupported `verificacion` values
-  - `verificacion=verificado` without coordinates or any external link
 - Consistency:
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization

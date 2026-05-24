@@ -4,7 +4,7 @@
 1. Edit the target province CSV, usually `data/csv/catalunya/barcelona.csv`.
 2. Add new producers with a stable unique `slug`.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
-4. Set `verificacion` when the column exists:
+4. Set `verificacion`:
    - `pendiente`: added for coverage and still needs review.
    - `parcial`: real and localized, but some data is inferred or not fully checked.
    - `verificado`: cross-checked against a primary or clearly reliable source; requires coordinates and at least one external link.
@@ -19,14 +19,13 @@ npx pnpm verify:ai
 ```bash
 npx pnpm check:csv
 ```
-2. Run the data-quality audit:
+2. Run the data-quality audit across every CSV:
 ```bash
 npx pnpm check:csv:data-quality
 ```
 3. Fix `error` items first in the target province CSV.
 4. Fix `warning` items next:
    - empty key fields
-   - missing, empty, or invalid `verificacion`
    - duplicates
    - inconsistent categories
    - category labels that should use preferred labels such as `Lácteos y quesos`, `Bodega`, or `Pan y pastelería`

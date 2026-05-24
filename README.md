@@ -53,7 +53,7 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm start`
 - `npx pnpm verify` (lint + build)
 - `npx pnpm check:csv` (valida el contrato bloqueante de todos los CSV)
-- `npx pnpm check:csv:data-quality` (auditoría editorial con warnings)
+- `npx pnpm check:csv:data-quality` (auditoría editorial con warnings para todos los CSV)
 - `npx pnpm check:csv:completeness` (señal de planificación para ampliar provincias)
 - `npx pnpm test:csv-audit` (regresión de reglas CSV)
 - `npx pnpm test:behavior` (test mínimo de `/` y `/p/[slug]`)

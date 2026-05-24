@@ -9,7 +9,7 @@
     "lint": "eslint",
     "verify": "pnpm lint && pnpm build",
     "check:csv": "bash scripts/check-csv-contract.sh",
-    "check:csv:data-quality": "node scripts/audit-csv.js --mode=quality",
+    "check:csv:data-quality": "bash scripts/check-csv-quality.sh",
     "check:csv:completeness": "node scripts/audit-province-completeness.js",
     "test:csv-audit": "bash scripts/test-csv-audit.sh",
     "test:behavior": "bash scripts/test-behavior.sh",

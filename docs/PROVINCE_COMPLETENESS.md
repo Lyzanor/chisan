@@ -24,6 +24,7 @@ Baseline snapshot:
 
 ## What Good Looks Like
 - Every row keeps the required CSV contract valid.
+- Every row has an evidence-based `verificacion` value: `pendiente`, `parcial`, or `verificado`.
 - `Google Maps`, `lat`, and `lon` are present and point to the same producer/location.
 - `telefono` or `correo` exists for at least the Barcelona baseline share of rows.
 - `web` exists for at least the Barcelona baseline share of rows, and only when the domain resolves and belongs to the producer or a reliable official listing.
@@ -63,7 +64,7 @@ node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
 
 2. Fix blocking contract errors first.
 3. For expansion passes, look for candidates from the provincial capital, comarca seats, and smaller municipalities with food tradition; search by category and keep only producers verified through web, Google Maps, social profiles, or reliable institutional listings.
-4. Add new verified producers with stable unique `slug`, normalized `categoria`, `Google Maps`, `lat`, `lon`, and contact or `web` when available; place them according to the current ordering criterion.
+4. Add new verified producers with stable unique `slug`, normalized `categoria`, `Google Maps`, `lat`, `lon`, `verificacion`, and contact or `web` when available; place them according to the current ordering criterion.
 5. Fill or correct `Google Maps`, `lat`, and `lon`.
 6. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
 7. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.

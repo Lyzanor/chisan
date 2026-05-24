@@ -17,6 +17,7 @@ const REQUIRED_COLUMNS = [
   "Google Maps",
   "lat",
   "lon",
+  "verificacion",
 ];
 
 const DESCRIPTION_MIN_LENGTH = 30;
@@ -82,6 +83,7 @@ const MAP_ADDRESS_PLACEHOLDER_MARKERS = [
 function parseArgs(argv, resolvePath) {
   let mode = "quality";
   let csvPath = "data/csv/catalunya/barcelona.csv";
+  let summaryOnly = false;
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
@@ -94,6 +96,11 @@ function parseArgs(argv, resolvePath) {
 
     if (arg.startsWith("--mode=")) {
       mode = arg.slice("--mode=".length);
+      continue;
+    }
+
+    if (arg === "--summary-only") {
+      summaryOnly = true;
       continue;
     }
 
@@ -110,6 +117,7 @@ function parseArgs(argv, resolvePath) {
   return {
     mode,
     csvPath: resolvePath(csvPath),
+    summaryOnly,
   };
 }
 
@@ -392,6 +400,8 @@ function runContractAudit({ headers, rows, push }) {
     const lonRaw = cleanCell(fields.lon);
     const lat = parseCoordinate(latRaw, 90, [2, 1, 3]);
     const lon = parseCoordinate(lonRaw, 180, [1, 2, 3]);
+    const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
+    const verification = normalizeSearch(verificationRaw);
 
     if ((latRaw && !lonRaw) || (!latRaw && lonRaw)) {
       push("error", line, id, slug, "lat and lon must both be present or both be empty");
@@ -435,6 +445,38 @@ function runContractAudit({ headers, rows, push }) {
     if (imagePathError) {
       push("error", line, id, slug, `imagen: ${imagePathError}`);
     }
+
+    if (!verificationRaw) {
+      push("error", line, id, slug, "verificacion is required");
+    } else if (!VERIFICATION_LEVELS.has(verification)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
+      );
+    } else if (verification === "verificado") {
+      const hasCoords =
+        !Number.isNaN(lat) &&
+        !Number.isNaN(lon) &&
+        Boolean(latRaw || lonRaw);
+      const hasExternalLink = Boolean(
+        cleanCell(fields.web) ||
+          cleanCell(fields["Google Maps"]) ||
+          cleanCell(fields.Facebook) ||
+          cleanCell(fields.Instagram),
+      );
+      if (!hasCoords || !hasExternalLink) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          "verificacion verificado requires coordinates and at least one external link",
+        );
+      }
+    }
   }
 
   for (const [slug, lines] of slugLines.entries()) {
@@ -446,20 +488,9 @@ function runContractAudit({ headers, rows, push }) {
   }
 }
 
-function runQualityAudit({ headers, rows, push, centroids }) {
-  const hasVerificationColumn = headers.includes(VERIFICATION_COLUMN);
+function runQualityAudit({ rows, push, centroids }) {
   const nameCityLines = new Map();
   const categoryVariants = new Map();
-
-  if (!hasVerificationColumn) {
-    push(
-      "warning",
-      1,
-      0,
-      "(header)",
-      "verificacion column is missing; add it when editing this CSV",
-    );
-  }
 
   for (const [index, fields] of rows.entries()) {
     const line = index + 2;
@@ -475,8 +506,6 @@ function runQualityAudit({ headers, rows, push, centroids }) {
     const facebook = cleanCell(fields.Facebook);
     const instagram = cleanCell(fields.Instagram);
     const googleMaps = cleanCell(fields["Google Maps"]);
-    const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
-    const verification = normalizeSearch(verificationRaw);
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
     const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
@@ -500,37 +529,6 @@ function runQualityAudit({ headers, rows, push, centroids }) {
           slug,
           `categoria should use preferred label '${preferredCategory}' instead of '${category}'`,
         );
-      }
-    }
-
-    if (hasVerificationColumn) {
-      if (!verificationRaw) {
-        push("warning", line, id, slug, "verificacion is empty");
-      } else if (!VERIFICATION_LEVELS.has(verification)) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
-        );
-      } else if (verification === "verificado") {
-        const hasCoords =
-          !Number.isNaN(lat) &&
-          !Number.isNaN(lon) &&
-          (cleanCell(fields.lat) || cleanCell(fields.lon));
-        const hasExternalLink = Boolean(
-          cleanCell(fields.web) || googleMaps || facebook || instagram,
-        );
-        if (!hasCoords || !hasExternalLink) {
-          push(
-            "warning",
-            line,
-            id,
-            slug,
-            "verificacion verificado requires coordinates and at least one external link",
-          );
-        }
       }
     }
 
@@ -636,7 +634,7 @@ function runQualityAudit({ headers, rows, push, centroids }) {
   }
 }
 
-function printReport(mode, issues) {
+function printReport(mode, issues, { summaryOnly = false } = {}) {
   const errors = issues.filter((issue) => issue.severity === "error");
   const warnings = issues.filter((issue) => issue.severity === "warning");
   const title =
@@ -651,6 +649,10 @@ function printReport(mode, issues) {
     return;
   }
 
+  if (summaryOnly) {
+    return;
+  }
+
   console.log("");
   for (const issue of issues) {
     console.log(
@@ -661,7 +663,7 @@ function printReport(mode, issues) {
 
 async function main() {
   const { path } = await getDependencies();
-  const { mode, csvPath } = parseArgs(process.argv.slice(2), (targetPath) =>
+  const { mode, csvPath, summaryOnly } = parseArgs(process.argv.slice(2), (targetPath) =>
     path.resolve(process.cwd(), targetPath),
   );
   const { headers, rows } = await readCsv(csvPath);
@@ -674,7 +676,7 @@ async function main() {
     runQualityAudit({ headers, rows, push, centroids });
   }
 
-  printReport(mode, issues);
+  printReport(mode, issues, { summaryOnly });
 
   const errorCount = issues.filter((issue) => issue.severity === "error").length;
   process.exit(errorCount > 0 ? 1 : 0);
