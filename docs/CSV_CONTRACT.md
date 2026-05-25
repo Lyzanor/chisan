@@ -30,6 +30,7 @@
 - `telefono`
 - `correo`
 - `web`
+- `Venta online`
 - `Facebook`
 - `Instagram`
 - `Google Maps`
@@ -48,6 +49,7 @@
 - Map point: `lat`, `lon`.
 - Location cross-check: `direccion` should describe the same place as the coordinates.
 - External links: `web`, `Facebook`, `Instagram`, `Google Maps`.
+- Online sales status: `Venta online`, records whether the producer sells online through its own site or a concrete known channel.
 - Detail page: shows all columns as table rows.
 - Detail image: `imagen` when present, otherwise a generic local placeholder.
 - Verification level: `verificacion`, records how checked the row is.
@@ -76,6 +78,14 @@
 - Legacy values such as `alta`, `media`, and `baja` are invalid. Use `verificado`, `parcial`, and `pendiente`.
 - A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The blocking audit fails when this is not the case.
 
+## Online sales
+- `Venta online` is required for every row.
+- Allowed values:
+  - `sí`: the producer sells online through its own site or through a concrete, identified sales channel.
+  - `no`: online sales have been checked and no online sales channel was found.
+  - `no comprobado`: default value until the row is reviewed for online sales.
+- Do not infer `sí` from having a `web` link. Use `sí` only when the site or channel clearly supports online purchase or order.
+
 ## Missing values
 - Missing cell values are represented as empty strings internally.
 - Detail table renders empty values as `—`.
@@ -91,6 +101,7 @@
 - `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/barcelona/ejemplo.webp`.
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
 - `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
+- `Venta online` is required and must be one of `sí`, `no`, or `no comprobado`.
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:

@@ -50,6 +50,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - CSVs may be reordered by editorial criteria such as municipality, category, or data quality when useful.
 - Keep `slug` stable and unique within its province; it is the public identity for each producer.
 - Every row must include `verificacion` with one of `pendiente`, `parcial`, or `verificado`; old labels such as `alta`, `media`, and `baja` are invalid.
+- Every row must include `Venta online` with one of `sí`, `no`, or `no comprobado`; use `no comprobado` by default until that producer has been reviewed.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 
 ## Safe change policy
@@ -62,7 +63,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Province expansion judgment
 - Treat province expansion as editorial research, not a rote requirement for every task.
-- When adding producers, use the provincial capital, comarca seats, and smaller food-tradition municipalities as discovery anchors; search by category, verify with web/Google Maps/social or reliable listings, and add only real producers with stable unique `slug`, normalized category, coordinates, Google Maps, `verificacion`, and contact or web when available.
+- When adding producers, use the provincial capital, comarca seats, and smaller food-tradition municipalities as discovery anchors; search by category, verify with web/Google Maps/social or reliable listings, and add only real producers with stable unique `slug`, normalized category, coordinates, Google Maps, `verificacion`, `Venta online`, and contact or web when available.
 
 ## Markdown-first communication
 - Write docs, change notes, and implementation plans in Markdown.

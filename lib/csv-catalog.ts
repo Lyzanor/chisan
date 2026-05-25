@@ -248,6 +248,8 @@ export function listProvinceGroups(): ProvinceGroup[] {
   }));
 }
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
+const ONLINE_SALES_COLUMN = "Venta online";
+const DEFAULT_ONLINE_SALES_VALUE = "no comprobado";
 
 function cleanCell(value: string | undefined): string {
   return (value ?? "").replace(/\s+/g, " ").trim();
@@ -436,6 +438,9 @@ async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
     const fields = Object.fromEntries(
       Object.entries(row).map(([key, value]) => [cleanCell(key), cleanCell(value)]),
     );
+    if (!fields[ONLINE_SALES_COLUMN]) {
+      fields[ONLINE_SALES_COLUMN] = DEFAULT_ONLINE_SALES_VALUE;
+    }
     const id = index + 1;
     const name = fields.nombre || `Fila ${id}`;
     const city = fields.municipio || "Sin municipio";

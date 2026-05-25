@@ -8,11 +8,15 @@
    - `pendiente`: added for coverage and still needs review.
    - `parcial`: real and localized, but some data is inferred or not fully checked.
    - `verificado`: cross-checked against a primary or clearly reliable source; requires coordinates and at least one external link.
-5. Run:
+5. Set `Venta online`:
+   - `sí`: confirmed online sales through the producer site or a concrete known channel.
+   - `no`: checked and no online sales channel found.
+   - `no comprobado`: default until reviewed.
+6. Run:
 ```bash
 npx pnpm verify:ai
 ```
-6. Check `/`, `/?provincia=[provincia]`, and `/p/[slug]?provincia=[provincia]` manually.
+7. Check `/`, `/?provincia=[provincia]`, and `/p/[slug]?provincia=[provincia]` manually.
 
 ## 1b) Weekly CSV review
 1. Run the blocking contract audit:
@@ -29,6 +33,7 @@ npx pnpm check:csv:data-quality
    - duplicates
    - inconsistent categories
    - category labels that should use preferred labels such as `Lácteos y quesos`, `Bodega`, or `Pan y pastelería`
+   - invalid `Venta online` values; use `no comprobado` until the online sales channel is checked
    - weak map/address data
    - geography: `lat`/`lon` flagged as far from the `municipio` centroid — cross-check with Google Maps and either correct the coordinates or update `municipio` if the producer is actually in a neighbouring town. Distance and centroid label are printed in the warning.
 5. Re-run the two CSV audits until contract errors are `0`.

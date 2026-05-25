@@ -12,6 +12,7 @@ const REQUIRED_COLUMNS = [
   "telefono",
   "correo",
   "web",
+  "Venta online",
   "Facebook",
   "Instagram",
   "Google Maps",
@@ -23,6 +24,9 @@ const REQUIRED_COLUMNS = [
 const DESCRIPTION_MIN_LENGTH = 30;
 const VERIFICATION_COLUMN = "verificacion";
 const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
+const ONLINE_SALES_COLUMN = "Venta online";
+const ONLINE_SALES_VALUES = new Set(["si", "no", "no comprobado"]);
+const ONLINE_SALES_DISPLAY_VALUES = "sí, no, no comprobado";
 const CENTROID_MAX_DISTANCE_KM = 15;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
 const PREFERRED_CATEGORY_ALIASES = new Map([
@@ -402,6 +406,8 @@ function runContractAudit({ headers, rows, push }) {
     const lon = parseCoordinate(lonRaw, 180, [1, 2, 3]);
     const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
     const verification = normalizeSearch(verificationRaw);
+    const onlineSalesRaw = cleanCell(fields[ONLINE_SALES_COLUMN]);
+    const onlineSales = normalizeSearch(onlineSalesRaw);
 
     if ((latRaw && !lonRaw) || (!latRaw && lonRaw)) {
       push("error", line, id, slug, "lat and lon must both be present or both be empty");
@@ -476,6 +482,18 @@ function runContractAudit({ headers, rows, push }) {
           "verificacion verificado requires coordinates and at least one external link",
         );
       }
+    }
+
+    if (!onlineSalesRaw) {
+      push("error", line, id, slug, "Venta online is required");
+    } else if (!ONLINE_SALES_VALUES.has(onlineSales)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `Venta online must be one of: ${ONLINE_SALES_DISPLAY_VALUES}`,
+      );
     }
   }
 

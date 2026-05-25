@@ -20,6 +20,11 @@ const METRICS = [
     count: (row) => hasValue(row.web),
   },
   {
+    key: "ventaOnline",
+    label: "Venta online",
+    count: (row) => isOnlineSalesReviewed(row["Venta online"]),
+  },
+  {
     key: "social",
     label: "Social",
     count: (row) => hasValue(row.Facebook) || hasValue(row.Instagram),
@@ -43,6 +48,22 @@ const METRICS = [
 
 function hasValue(value) {
   return String(value ?? "").trim().length > 0;
+}
+
+function normalizeSearch(value) {
+  return String(value ?? "")
+    .trim()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isOnlineSalesReviewed(value) {
+  const normalized = normalizeSearch(value);
+  return normalized === "si" || normalized === "no";
 }
 
 function parseArgs(argv) {

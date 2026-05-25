@@ -14,6 +14,7 @@ const LABELS: Record<string, string> = {
   telefono: "Teléfono",
   correo: "Correo",
   web: "Web",
+  "venta online": "Venta online",
   facebook: "Facebook",
   instagram: "Instagram",
   "google maps": "Google Maps",
