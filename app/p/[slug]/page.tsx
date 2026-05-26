@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
@@ -123,36 +124,49 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
         </Link>
 
         <header id="detail-hero" className="detail-hero">
-          <p className="detail-eyebrow">Ficha de productor</p>
-          <h1>{producer.name}</h1>
-          <p className="detail-subtitle">
-            {producer.city} · {producer.category}
-            {subcategory ? ` · ${subcategory}` : ""}
-          </p>
-          <div className="detail-links">
-            {website ? (
-              <ExternalLink href={website}>
-                Sitio web
-              </ExternalLink>
-            ) : null}
-            {maps ? (
-              <ExternalLink href={maps}>
-                Cómo llegar
-              </ExternalLink>
-            ) : null}
-            {phone && phoneHref ? <a href={phoneHref}>Teléfono</a> : null}
-            {email ? <a href={`mailto:${email}`}>Correo</a> : null}
-            {instagram ? (
-              <ExternalLink href={instagram}>
-                Instagram
-              </ExternalLink>
-            ) : null}
-            {facebook ? (
-              <ExternalLink href={facebook}>
-                Facebook
-              </ExternalLink>
-            ) : null}
+          <div className="detail-hero-copy">
+            <p className="detail-eyebrow">Ficha de productor</p>
+            <h1>{producer.name}</h1>
+            <p className="detail-subtitle">
+              {producer.city} · {producer.category}
+              {subcategory ? ` · ${subcategory}` : ""}
+            </p>
+            <div className="detail-links">
+              {website ? (
+                <ExternalLink href={website}>
+                  Sitio web
+                </ExternalLink>
+              ) : null}
+              {maps ? (
+                <ExternalLink href={maps}>
+                  Cómo llegar
+                </ExternalLink>
+              ) : null}
+              {phone && phoneHref ? <a href={phoneHref}>Teléfono</a> : null}
+              {email ? <a href={`mailto:${email}`}>Correo</a> : null}
+              {instagram ? (
+                <ExternalLink href={instagram}>
+                  Instagram
+                </ExternalLink>
+              ) : null}
+              {facebook ? (
+                <ExternalLink href={facebook}>
+                  Facebook
+                </ExternalLink>
+              ) : null}
+            </div>
           </div>
+          <figure className="detail-hero-media">
+            <Image
+              src={producer.imageSrc}
+              alt={`Imagen de ${producer.name}`}
+              width={640}
+              height={480}
+              sizes="(max-width: 980px) calc(100vw - 2.75rem), 330px"
+              priority
+              className="detail-hero-image"
+            />
+          </figure>
         </header>
 
         <section id="detail-info" className="detail-table-card">

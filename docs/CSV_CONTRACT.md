@@ -132,6 +132,49 @@ https://www.google.com/maps/search/?api=1&query=...
 https://maps.app.goo.gl/...
 ```
 
+## Producer image guidelines
+These are editorial conventions for the asset that the `imagen` column points to. They are not enforced by `check:csv` (which only validates path shape and extension), but new and modified producer images should follow them so the catalog stays visually consistent with the Barcelona baseline.
+
+### Format and dimensions
+- Final asset: **1600×1200 WebP** (4:3 landscape), quality `≥ 88`, saved at `/productores/<provincia>/<slug>.webp`.
+- The 1600×1200 dimensions match the existing `public/productores/barcelona/*.webp` files. Treat Barcelona as the visual reference.
+- Other supported extensions (`.png`, `.jpg`, `.avif`, …) remain valid per the blocking contract, but prefer `.webp` for new assets.
+
+### Background and composition
+- Background colour: **`#F3F0E8`** cream (sampled from Barcelona). Use it as a flat fill across the full 1600×1200 canvas.
+- Logo centred with ~10% padding per side. The longest side of the logo should target ≤ 960 px (i.e. ~80% of the 1200 px short side).
+- Leave the cream background visible around the logo. Avoid stretching the logo to fill the canvas.
+
+### Subject preference
+- Prefer **logo / imagotipo** ("avatar" style) over product photography. A recognisable brand mark distinguishes producers in the same category better than a generic product shot.
+- Fall back to product or place photography only when no usable logo asset exists, or when the photo is itself the brand's iconic image (e.g. founder portrait used in the brand's own materials).
+- Do not use stock imagery, AI-generated likenesses, or images from competing producers.
+
+### Sourcing priority
+When picking a source for a new image, check in this order and stop at the first usable asset:
+1. Logo PNG/JPG on the producer's official site (header, footer, theme assets).
+2. Open Graph image (`og:image` meta tag) of the official site, when it shows the brand mark.
+3. Instagram or Facebook profile picture for the producer's official account.
+4. High-resolution favicon variants (e.g. WordPress `cropped-*-270x270.png`).
+5. Other reputable sources (DOP/IGP councils, regional tourism portals, press) only when the producer's own channels offer nothing usable.
+
+### Rescaling and quality
+- Cap upscaling at **3×** the source's longest side. Beyond that, blur becomes visible and no sharpening recovers it.
+- After any upscale with scale `> 1.2×`, apply an unsharp mask (e.g. Pillow `ImageFilter.UnsharpMask(radius=1.2, percent=110, threshold=2)`) to recover perceived edge sharpness.
+- For logos delivered as JPG without alpha, convert near-white pixels (`R, G, B ≥ 240`) to transparent before composing on the cream canvas. This prevents a white rectangle from appearing around the logo.
+- Do **not** apply the white→transparent chromakey to photographic subjects: it eats skin tones, white garments, sky, and similar areas.
+
+### Source resolution floor
+- When the only available source is below ~200 px on the longest side, do not silently upscale to fill the canvas. Either:
+  - Keep the logo small but sharp inside the cream canvas, or
+  - Replace the subject with a representative brand-owned photograph (founder portrait, signature product) per the rules above.
+- Flag this in the change description so editors can revisit when a better source appears.
+
+### Naming
+- File name must equal the producer `slug` (the same value used in the CSV's `slug` column) followed by the extension.
+- Path: `/productores/<provincia>/<slug>.webp`, mirroring the `imagen` column value.
+- One image per producer. Do not store unused variants or originals in `public/`. Keep working originals outside the repo.
+
 ## Producer identity
 - `slug` is the primary identity for producer detail pages.
 - Row order in each province CSV is editorial and may change without changing producer URLs.
