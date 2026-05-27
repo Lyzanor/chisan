@@ -30,6 +30,13 @@
 // - The script overwrites data/reference/municipios.json in place; commit
 //   the result if it differs.
 // - Two SPARQL requests, ~30 seconds total on a normal connection.
+// - Cross-language label collisions (e.g. Catalan "Figueres" → both real
+//   Figueres in Girona and Higueras in Castellón) cause one entity to win
+//   the key arbitrarily. Known collisions are disambiguated via
+//   data/reference/municipios-overrides.json, which is loaded by
+//   scripts/audit-csv.js after this file and resolves the match using the
+//   autonomous-community slug inferred from the CSV path. This file is not
+//   touched by the rebuild.
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
 const USER_AGENT = "km0-municipio-centroids/1.0 (https://github.com/Lyzanor/km0)";

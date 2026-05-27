@@ -29,6 +29,7 @@ const ONLINE_SALES_VALUES = new Set(["si", "no", "no comprobado"]);
 const ONLINE_SALES_DISPLAY_VALUES = "sí, no, no comprobado";
 const CENTROID_MAX_DISTANCE_KM = 15;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
+const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipios-overrides.json";
 const PREFERRED_CATEGORY_ALIASES = new Map([
   ["quesos y lacteos", "Lácteos y quesos"],
   ["lacteos", "Lácteos y quesos"],
@@ -274,17 +275,40 @@ function haversineKm(lat1, lon1, lat2, lon2) {
 
 async function loadCentroids() {
   const { fs, path } = await getDependencies();
-  const filePath = path.join(__dirname, "..", CENTROIDS_RELATIVE_PATH);
-  if (!fs.existsSync(filePath)) return null;
-  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const mainPath = path.join(__dirname, "..", CENTROIDS_RELATIVE_PATH);
+  if (!fs.existsSync(mainPath)) return null;
+  const main = JSON.parse(fs.readFileSync(mainPath, "utf8"));
+  const overridesPath = path.join(__dirname, "..", CENTROIDS_OVERRIDES_RELATIVE_PATH);
+  const overrides = fs.existsSync(overridesPath)
+    ? JSON.parse(fs.readFileSync(overridesPath, "utf8"))
+    : {};
+  return { main, overrides };
 }
 
-function lookupCentroid(centroids, municipio) {
+function inferCommunitySlug(csvPath) {
+  const normalized = String(csvPath ?? "").replace(/\\/g, "/");
+  const match = /(?:^|\/)data\/csv\/([^/]+)\//.exec(normalized);
+  return match ? match[1] : null;
+}
+
+function pickCandidate(entry, communityHint) {
+  if (Array.isArray(entry)) {
+    if (!communityHint) return null;
+    return entry.find((c) => c.community === communityHint) ?? null;
+  }
+  return entry;
+}
+
+function lookupCentroid(centroids, municipio, communityHint) {
   if (!centroids || !municipio) return null;
   const stripped = municipio.split(" - ")[0].trim();
   const key1 = normalizeSearch(municipio);
   const key2 = normalizeSearch(stripped);
-  return centroids[key1] || centroids[key2] || null;
+  const override = centroids.overrides[key1] || centroids.overrides[key2];
+  if (override) {
+    return pickCandidate(override, communityHint);
+  }
+  return centroids.main[key1] || centroids.main[key2] || null;
 }
 
 function hasUsefulAddress(fields) {
@@ -506,7 +530,7 @@ function runContractAudit({ headers, rows, push }) {
   }
 }
 
-function runQualityAudit({ rows, push, centroids }) {
+function runQualityAudit({ rows, push, centroids, communityHint }) {
   const nameCityLines = new Map();
   const categoryVariants = new Map();
 
@@ -583,7 +607,7 @@ function runQualityAudit({ rows, push, centroids }) {
         push("warning", line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
 
-      const centroid = lookupCentroid(centroids, city);
+      const centroid = lookupCentroid(centroids, city, communityHint);
       if (centroid) {
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
         if (distance > CENTROID_MAX_DISTANCE_KM) {
@@ -691,7 +715,8 @@ async function main() {
 
   if (mode === "quality") {
     const centroids = await loadCentroids();
-    runQualityAudit({ headers, rows, push, centroids });
+    const communityHint = inferCommunitySlug(csvPath);
+    runQualityAudit({ headers, rows, push, centroids, communityHint });
   }
 
   printReport(mode, issues, { summaryOnly });

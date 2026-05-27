@@ -1,0 +1,10 @@
+{
+  "figueres": [
+    {"lat": 42.26667, "lon": 2.95, "label": "Figueres", "community": "catalunya"},
+    {"lat": 39.9843, "lon": -0.50174, "label": "Higueras", "community": "comunitat-valenciana"}
+  ],
+  "figueras": [
+    {"lat": 42.26667, "lon": 2.95, "label": "Figueres", "community": "catalunya"},
+    {"lat": 39.9843, "lon": -0.50174, "label": "Higueras", "community": "comunitat-valenciana"}
+  ]
+}
