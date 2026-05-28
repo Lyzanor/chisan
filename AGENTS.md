@@ -32,6 +32,8 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Active scripts
 - `npx pnpm verify:ai`: required before finishing changes.
+- `npx pnpm list:province [provincia]`: compact roster (slug, nombre, municipio, categoria, verificacion, Venta online) for one province; use it to de-duplicate before discovery and to browse a catalog without loading the whole CSV. Supports `--categoria "X"` and `--pendientes`.
+- `npx pnpm check:csv:changed`: runs the blocking contract audit only on CSVs changed in the working tree (staged, unstaged, untracked). Use it while working; run full `verify:ai` before finishing.
 - `npx pnpm check:csv`: validates the blocking CSV contract for every CSV file.
 - `npx pnpm check:csv:data-quality`: warning audit for data-quality review across every CSV.
 - `npx pnpm check:csv:completeness`: planning signal for province expansion.
@@ -64,9 +66,23 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Delete stale one-off tooling instead of preserving paths that can revive outdated data.
 - If a script is not wired from `package.json`, documented here, or broadly reusable for CSV work, do not rely on it.
 
+## Editing large CSVs (token discipline)
+- Do not read a whole province CSV into context to change one row. Barcelona alone is ~3.000 rows.
+- Surgical edit flow: `grep -n "<slug-or-name>" data/csv/<comunidad>/<provincia>.csv` to find the line, read only that window with an offset/limit, then edit that line.
+- To survey a province cheaply (de-dup, pick targets), use `npx pnpm list:province [provincia]` instead of opening the file.
+- While iterating, validate with `npx pnpm check:csv:changed` (only your touched CSVs); run full `verify:ai` once before finishing.
+- For audit output, prefer `node scripts/audit-csv.js --mode=quality --summary-only <path>` when you only need counts.
+
 ## Province expansion judgment
 - Treat province expansion as editorial research, not a rote requirement for every task.
 - When adding producers, use the provincial capital, comarca seats, and smaller food-tradition municipalities as discovery anchors; search by category, verify with web/Google Maps/social or reliable listings, and add only real producers with stable unique `slug`, normalized category, coordinates, Google Maps, `verificacion`, `Venta online`, and contact or web when available.
+
+## Discovery protocol (find producers that fit, never invent)
+- **Start from authoritative registries, not from memory.** Good sources: DOP/IGP regulatory councils, regional "alimentos de calidad" / artisan-food registries, cooperative federations, Slow Food and farmers'-market directories, comarca and tourism food portals. These yield real businesses with verifiable names.
+- **Never invent or guess producer names.** A plausible-sounding name is not a producer. If a candidate appears only inside generic category listings ("quesos de la zona", a dish or product name like "Cocido Montañés") and you cannot find that specific business with its own web, social profile, or Google Maps entry, do not add it.
+- **De-duplicate before researching.** Run `npx pnpm list:province [provincia]` (optionally `--categoria`) first and grep the candidate name; many real producers are already in the CSV under a slightly different name, so verifying them again is wasted effort.
+- **Target the gaps.** Use `npx pnpm check:csv:completeness` to find under-covered municipios and categories, and aim discovery there instead of densifying already-covered areas.
+- **Do not trust speculative candidate lists.** Past `docs/*_CANDIDATES.md` files mixed already-integrated real producers with hallucinated names (0% of one batch was integrable). If you keep a working list, verify every entry by web before integrating and prune the doc once resolved.
 
 ## Markdown-first communication
 - Write docs, change notes, and implementation plans in Markdown.
