@@ -17,6 +17,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - No complex service abstractions.
 - No one-off province generators, restorers, or correction scripts as the source of truth.
 - No hidden data source outside `data/csv/**`.
+- No province-specific image enrichment scripts; use the shared `scripts/enrich-producer-images.py` workflow.
 
 ## Core files
 - `app/page.tsx`: map and producer viewer.
@@ -34,6 +35,8 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `npx pnpm check:csv`: validates the blocking CSV contract for every CSV file.
 - `npx pnpm check:csv:data-quality`: warning audit for data-quality review across every CSV.
 - `npx pnpm check:csv:completeness`: planning signal for province expansion.
+- `npx pnpm check:images`: validates that referenced producer image paths exist; reports editorial image warnings.
+- `npx pnpm enrich:images --provincia [provincia]`: dry-run producer image enrichment from official websites; use `--apply` only after reviewing candidates.
 - `npx pnpm test:csv-audit`: regression tests for the CSV audit rules.
 - `npx pnpm test:behavior`: minimal route behavior test.
 - `scripts/fill-google-maps-place-ids.py`: optional helper only when `GOOGLE_MAPS_API_KEY` is available; it must not invent producers.

@@ -175,6 +175,23 @@ When picking a source for a new image, check in this order and stop at the first
 - Path: `/productores/<provincia>/<slug>.webp`, mirroring the `imagen` column value.
 - One image per producer. Do not store unused variants or originals in `public/`. Keep working originals outside the repo.
 
+### Image enrichment tooling
+- Use the shared dry-run script instead of province-specific scripts:
+  ```bash
+  npx pnpm enrich:images --provincia cuenca
+  ```
+- Install the optional Python image tooling before running it locally:
+  ```bash
+  python3 -m pip install -r scripts/requirements-image-tools.txt
+  ```
+- The script writes nothing by default. Review the candidate source, score, dimensions, and URL first; then rerun with `--apply` to save `/productores/<provincia>/<slug>.webp` and update the CSV.
+- Non-logo Open Graph/Twitter photos are skipped unless `--allow-photos` is provided. Use this only when a brand-owned photo is the intended fallback.
+- Social networks, link hubs, blog hosts, and known aggregator domains are skipped by default to avoid assigning a portal logo to a producer.
+- Run the image audit before finishing image-related changes:
+  ```bash
+  npx pnpm check:images
+  ```
+
 ## Producer identity
 - `slug` is the primary identity for producer detail pages.
 - Row order in each province CSV is editorial and may change without changing producer URLs.
