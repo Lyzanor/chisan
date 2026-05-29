@@ -102,6 +102,7 @@
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
 - `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
 - `Venta online` is required and must be one of `sí`, `no`, or `no comprobado`.
+- `categoria`, when present, must exactly match one of the registered/valid categories officially whitelisted in the audit tool.
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:

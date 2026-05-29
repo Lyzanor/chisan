@@ -100,7 +100,7 @@ run_expect_failure "$TMP_DIR/out-online-sales.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/invalid-online-sales.csv"
 grep -q "Venta online must be one of: sí, no, no comprobado" "$TMP_DIR/out-online-sales.txt"
 
-run_expect_success "$TMP_DIR/out-quality.txt" \
+run_expect_failure "$TMP_DIR/out-quality.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/quality-warnings.csv"
 grep -q "WARNING line 2 .* nombre is empty" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 2 .* telefono and correo are both empty" "$TMP_DIR/out-quality.txt"
@@ -110,7 +110,7 @@ grep -q "WARNING line 3 .* coordinates are present but direccion is not useful f
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
 
-run_expect_success "$TMP_DIR/out-categories.txt" \
+run_expect_failure "$TMP_DIR/out-categories.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/category-preferences.csv"
 grep -q "WARNING line 2 .* categoria should use preferred label 'Lácteos y quesos' instead of 'Quesos y lácteos'" "$TMP_DIR/out-categories.txt"
 grep -q "WARNING line 3 .* categoria should use preferred label 'Bodega' instead of 'Vino'" "$TMP_DIR/out-categories.txt"
