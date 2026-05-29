@@ -28,10 +28,7 @@ function getFieldValue(fields: Record<string, string>, key: string): string {
 }
 
 function buildPhoneHref(phone: string): string {
-  const firstPhone = phone.split("/")[0] ?? phone;
-  const normalizedPhone = firstPhone.replace(/[^\d+]/g, "");
-
-  return normalizedPhone ? `tel:${normalizedPhone}` : "";
+  return phone ? `tel:${phone}` : "";
 }
 
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {

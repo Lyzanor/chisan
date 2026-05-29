@@ -631,6 +631,17 @@ function runContractAudit({ headers, rows, push }) {
     if (category && !VALID_CATEGORIES.has(category)) {
       push("error", line, id, slug, `categoria '${category}' is not a valid category`);
     }
+
+    const phoneRaw = cleanCell(fields.telefono);
+    if (phoneRaw && !/^\+\d{7,15}$/.test(phoneRaw)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `telefono: '${phoneRaw}' must be in strict E.164 format (e.g. +34600112233)`,
+      );
+    }
   }
 
   for (const [slug, lines] of slugLines.entries()) {

@@ -103,6 +103,7 @@
 - `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
 - `Venta online` is required and must be one of `sí`, `no`, or `no comprobado`.
 - `categoria`, when present, must exactly match one of the registered/valid categories officially whitelisted in the audit tool.
+- `telefono` may be empty, but if present must be in strict E.164 format (e.g. `+34600112233`).
 
 ## Warning rules (`check:csv:data-quality`)
 - Empty or weak content:
