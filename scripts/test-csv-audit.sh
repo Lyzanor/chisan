@@ -65,6 +65,13 @@ fila-repetida-dos,Masia Uno,Abrera,Carnicería,Vino,Venta online,Descripcion suf
 otra-fila,Masia Uno,Abrera,Carniceria,Vino,Carrer Major 4,Descripcion suficientemente larga para validar,,600000001,masia2@example.com,https://example.com,no comprobado,https://facebook.com/masia,,https://www.google.com/maps/place/Masia%20Uno,41.3,2.3,pendiente
 CSV
 
+cat >"$TMP_DIR/sales-channel.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Canal de venta,Facebook,Instagram,Google Maps,lat,lon,verificacion
+canal-ok,Masia Ok,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,sí,ecommerce|whatsapp,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,verificado
+canal-bad,Masia Bad,Abrera,Bodega,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,sí,ecommerce|tienda,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,verificado
+canal-estado,Masia Estado,Abrera,Bodega,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,no,whatsapp,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,verificado
+CSV
+
 cat >"$TMP_DIR/category-preferences.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
 lacteos-uno,La Formatgeria,Abrera,Quesos y lácteos,Queso,Carrer Major 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,https://example.com,no comprobado,https://facebook.com/uno,https://instagram.com/uno,https://www.google.com/maps/place/La%20Formatgeria,41.1,2.1,pendiente
@@ -109,6 +116,15 @@ grep -q "WARNING line 2 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-
 grep -q "WARNING line 3 .* coordinates are present but direccion is not useful for location review" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
+
+run_expect_success "$TMP_DIR/out-sales-channel.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/sales-channel.csv"
+grep -q "WARNING line 3 .* Canal de venta has invalid value.*'tienda'" "$TMP_DIR/out-sales-channel.txt"
+grep -q "WARNING line 4 .* Canal de venta is set but Venta online is not" "$TMP_DIR/out-sales-channel.txt"
+if grep -q "line 2 .* Canal de venta" "$TMP_DIR/out-sales-channel.txt"; then
+  echo "Error: valid multichannel row should not raise a Canal de venta warning" >&2
+  exit 1
+fi
 
 run_expect_failure "$TMP_DIR/out-categories.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/category-preferences.csv"

@@ -40,6 +40,7 @@
 
 ## Optional columns
 - `imagen`
+- `Canal de venta`
 
 ## How the app uses columns
 - Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
@@ -50,6 +51,7 @@
 - Location cross-check: `direccion` should describe the same place as the coordinates.
 - External links: `web`, `Facebook`, `Instagram`, `Google Maps`.
 - Online sales status: `Venta online`, records whether the producer sells online through its own site or a concrete known channel.
+- Order channel: `Canal de venta`, optional typology of how to place an order (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`), pipe-separated when several apply; meaningful only when `Venta online = sí`.
 - Detail page: shows all columns as table rows.
 - Detail image: `imagen` when present, otherwise a generic local placeholder.
 - Verification level: `verificacion`, records how checked the row is.
@@ -86,6 +88,20 @@
   - `no comprobado`: default value until the row is reviewed for online sales.
 - Do not infer `sí` from having a `web` link. Use `sí` only when the site or channel clearly supports online purchase or order.
 
+## Sales channel
+- `Canal de venta` is optional and complements `Venta online`. `Venta online` answers *whether* there is online sale; `Canal de venta` answers *how* an order is placed, so an agent knows which mechanism to use.
+- It only carries meaning when `Venta online = sí`. Leave it empty when `Venta online` is `no` or `no comprobado`.
+- Allowed tokens:
+  - `ecommerce`: own online shop with a checkout / payment gateway.
+  - `whatsapp`: orders through WhatsApp chat or catalogue.
+  - `email`: orders by sending a product list to the `correo` address.
+  - `telefono`: orders by phone call to the `telefono` number.
+  - `suscripcion`: recurring box / subscription model (e.g. weekly basket).
+  - `marketplace`: sells through a third-party platform or aggregator.
+- A producer may use several channels at once: join tokens with `|`, e.g. `ecommerce|whatsapp`. Order is not significant.
+- An empty value means the channel has not been classified yet; it does **not** assert "no channel".
+- Validation is a non-blocking warning today (`check:csv:data-quality`): if present, every token must be in the allowed set and `Venta online` should be `sí`. It is intentionally **not** part of the blocking `check:csv` contract yet, so the column can be backfilled incrementally without failing `verify:ai`. Promote it to a blocking rule once coverage is high enough.
+
 ## Missing values
 - Missing cell values are represented as empty strings internally.
 - Detail table renders empty values as `—`.
@@ -112,6 +128,9 @@
   - both `telefono` and `correo` empty
   - both `Facebook` and `Instagram` empty
   - `Google Maps` empty
+- Sales channel:
+  - `Canal de venta` present with a token outside the allowed set (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`)
+  - `Canal de venta` set while `Venta online` is not `sí`
 - Consistency:
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization

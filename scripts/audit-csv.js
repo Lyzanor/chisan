@@ -27,6 +27,18 @@ const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
 const ONLINE_SALES_COLUMN = "Venta online";
 const ONLINE_SALES_VALUES = new Set(["si", "no", "no comprobado"]);
 const ONLINE_SALES_DISPLAY_VALUES = "sí, no, no comprobado";
+const SALES_CHANNEL_COLUMN = "Canal de venta";
+const SALES_CHANNEL_SEPARATOR = "|";
+const SALES_CHANNEL_VALUES = new Set([
+  "ecommerce",
+  "whatsapp",
+  "email",
+  "telefono",
+  "suscripcion",
+  "marketplace",
+]);
+const SALES_CHANNEL_DISPLAY_VALUES =
+  "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
 const CENTROID_MAX_DISTANCE_KM = 15;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipios-overrides.json";
@@ -671,6 +683,8 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     const facebook = cleanCell(fields.Facebook);
     const instagram = cleanCell(fields.Instagram);
     const googleMaps = cleanCell(fields["Google Maps"]);
+    const onlineSales = normalizeSearch(cleanCell(fields[ONLINE_SALES_COLUMN]));
+    const salesChannelRaw = cleanCell(fields[SALES_CHANNEL_COLUMN]);
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
     const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
@@ -723,6 +737,36 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
 
     if (!googleMaps) {
       push("warning", line, id, slug, "Google Maps is empty");
+    }
+
+    if (salesChannelRaw) {
+      const tokens = salesChannelRaw
+        .split(SALES_CHANNEL_SEPARATOR)
+        .map((token) => token.trim())
+        .filter(Boolean);
+      const invalid = tokens.filter(
+        (token) => !SALES_CHANNEL_VALUES.has(normalizeSearch(token)),
+      );
+      if (invalid.length) {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          `Canal de venta has invalid value(s) ${invalid
+            .map((value) => `'${value}'`)
+            .join(", ")} (allowed: ${SALES_CHANNEL_DISPLAY_VALUES})`,
+        );
+      }
+      if (onlineSales !== "si") {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          "Canal de venta is set but Venta online is not 'sí'",
+        );
+      }
     }
 
     if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {

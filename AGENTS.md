@@ -56,6 +56,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Keep `slug` stable and unique within its province; it is the public identity for each producer.
 - Every row must include `verificacion` with one of `pendiente`, `parcial`, or `verificado`; old labels such as `alta`, `media`, and `baja` are invalid.
 - Every row must include `Venta online` with one of `sí`, `no`, or `no comprobado`; use `no comprobado` by default until that producer has been reviewed.
+- `Canal de venta` is optional and complements `Venta online`: when present it lists one or more of `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace` (pipe-separated, e.g. `ecommerce|whatsapp`), and only when `Venta online` is `sí`. It is warning-only today (`check:csv:data-quality`), not blocking; backfill it incrementally. See `docs/CSV_CONTRACT.md`.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 
 ## Safe change policy
