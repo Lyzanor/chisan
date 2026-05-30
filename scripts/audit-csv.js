@@ -685,19 +685,27 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     const googleMaps = cleanCell(fields["Google Maps"]);
     const onlineSales = normalizeSearch(cleanCell(fields[ONLINE_SALES_COLUMN]));
     const salesChannelRaw = cleanCell(fields[SALES_CHANNEL_COLUMN]);
+    const verification = normalizeSearch(cleanCell(fields[VERIFICATION_COLUMN]));
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
     const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
+    // Absence warnings (an optional field is empty) are noise once a human has
+    // reviewed the row: `verificado` means the gap is known, not unreviewed. They
+    // are downgraded to "suppressed" so verifying a row clears its own noise.
+    // Correctness warnings (bad coordinates, duplicates, invalid values) keep
+    // firing regardless of verification status because they flag real defects.
+    const presence = verification === "verificado" ? "suppressed" : "warning";
+
     if (!name) {
-      push("warning", line, id, slug, "nombre is empty");
+      push(presence, line, id, slug, "nombre is empty");
     }
 
     if (!city) {
-      push("warning", line, id, slug, "municipio is empty");
+      push(presence, line, id, slug, "municipio is empty");
     }
 
     if (!category) {
-      push("warning", line, id, slug, "categoria is empty");
+      push(presence, line, id, slug, "categoria is empty");
     } else {
       const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
       if (preferredCategory && category !== preferredCategory) {
@@ -712,14 +720,14 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     }
 
     if (!address) {
-      push("warning", line, id, slug, "direccion is empty");
+      push(presence, line, id, slug, "direccion is empty");
     }
 
     if (!description) {
-      push("warning", line, id, slug, "descripcion is empty");
+      push(presence, line, id, slug, "descripcion is empty");
     } else if (description.length < DESCRIPTION_MIN_LENGTH) {
       push(
-        "warning",
+        presence,
         line,
         id,
         slug,
@@ -728,15 +736,15 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     }
 
     if (!phone && !email) {
-      push("warning", line, id, slug, "telefono and correo are both empty");
+      push(presence, line, id, slug, "telefono and correo are both empty");
     }
 
     if (!facebook && !instagram) {
-      push("warning", line, id, slug, "Facebook and Instagram are both empty");
+      push(presence, line, id, slug, "Facebook and Instagram are both empty");
     }
 
     if (!googleMaps) {
-      push("warning", line, id, slug, "Google Maps is empty");
+      push(presence, line, id, slug, "Google Maps is empty");
     }
 
     if (salesChannelRaw) {
@@ -771,7 +779,7 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
 
     if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {
       if (!hasUsefulAddress(fields)) {
-        push("warning", line, id, slug, "coordinates are present but direccion is not useful for location review");
+        push(presence, line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
 
       const centroid = lookupCentroid(centroids, city, communityHint);
@@ -846,14 +854,21 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
 function printReport(mode, issues, { summaryOnly = false } = {}) {
   const errors = issues.filter((issue) => issue.severity === "error");
   const warnings = issues.filter((issue) => issue.severity === "warning");
+  const suppressed = issues.filter((issue) => issue.severity === "suppressed");
+  const visible = issues.filter((issue) => issue.severity !== "suppressed");
   const title =
     mode === "contract" ? "CSV contract audit" : "CSV data-quality audit";
 
   console.log(`${title} summary`);
   console.log(`- errors: ${errors.length}`);
   console.log(`- warnings: ${warnings.length}`);
+  if (suppressed.length) {
+    console.log(
+      `- suppressed (absent optional fields on verificado rows): ${suppressed.length}`,
+    );
+  }
 
-  if (!issues.length) {
+  if (!visible.length) {
     console.log("- status: OK");
     return;
   }
@@ -863,7 +878,7 @@ function printReport(mode, issues, { summaryOnly = false } = {}) {
   }
 
   console.log("");
-  for (const issue of issues) {
+  for (const issue of visible) {
     console.log(
       `${issue.severity.toUpperCase()} line ${issue.line} · id ${issue.id} · slug ${issue.slug}: ${issue.message}`,
     );

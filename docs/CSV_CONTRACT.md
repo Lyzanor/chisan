@@ -16,6 +16,7 @@
 - Covered: every entity classified as a municipality of Spain in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
 - Not covered: pedanías, núcleos and other sub-municipal localities (e.g. Alpatró inside La Vall de Gallinera, El Alquián inside Almería). The audit silently skips rows whose `municipio` is not in the lookup; the row is still subject to every other warning.
 - Compound names: if Wikidata uses the official compound form (e.g. `Aínsa-Sobrarbe`) and the CSV uses the short form (e.g. `Aínsa`), the lookup may miss. Prefer the official form in the `municipio` column when known.
+- `data/reference/municipios-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipios.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, community}` candidates; the audit picks the one whose `community` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another province (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia).
 - Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~30 seconds. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs.
 
 ## Required columns
@@ -122,21 +123,26 @@
 - `telefono` may be empty, but if present must be in strict E.164 format (e.g. `+34600112233`).
 
 ## Warning rules (`check:csv:data-quality`)
-- Empty or weak content:
-  - `nombre`, `municipio`, `categoria`, `direccion`
+
+Warnings come in two tiers:
+
+- **Absence warnings** flag an empty optional field. They are *suppressed on `verificado` rows*: once a human has reviewed a producer, a missing Facebook or website is a known gap, not an unreviewed one. The summary reports the count as `suppressed (absent optional fields on verificado rows)` instead of listing them, so verifying a row clears its own noise and the remaining warning list is a real worklist of unreviewed rows.
+- **Correctness warnings** flag a probable defect (bad coordinates, duplicate, invalid value). They fire regardless of `verificacion`, because a verified row can still hold wrong data.
+
+Absence warnings (suppressed on `verificado`):
+  - `nombre`, `municipio`, `categoria`, `direccion` empty
   - `descripcion` empty or shorter than `30` characters
   - both `telefono` and `correo` empty
   - both `Facebook` and `Instagram` empty
   - `Google Maps` empty
-- Sales channel:
+  - coordinates present but `direccion` not useful for location review
+
+Correctness warnings (always fire):
   - `Canal de venta` present with a token outside the allowed set (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`)
   - `Canal de venta` set while `Venta online` is not `sí`
-- Consistency:
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization
   - category labels that should use one of the preferred category labels
-  - coordinates present but `direccion` not useful for location review
-- Geography:
   - `lat`/`lon` more than `15 km` from the `municipio` centroid (looked up in `data/reference/municipios.json`). Rows whose `municipio` is not in the lookup are skipped silently.
 
 ## Link validation

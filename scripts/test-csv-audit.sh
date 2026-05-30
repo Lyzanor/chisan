@@ -79,6 +79,12 @@ bodega-uno,Celler Uno,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientement
 pan-uno,Forn Uno,Abrera,Panadería y repostería,Pan,Carrer Major 3,Descripcion suficientemente larga para validar,,600000002,tres@example.com,https://example.com,no comprobado,https://facebook.com/tres,https://instagram.com/tres,https://www.google.com/maps/place/Forn%20Uno,41.3,2.3,pendiente
 CSV
 
+cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
+verif-sin-contacto,Masia Verif,Abrera,Bodega,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,no comprobado,,,https://www.google.com/maps/place/Verif,41.51,1.90,verificado
+verif-geo-malo,Masia Lejos,Abrera,Bodega,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,no comprobado,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,40.0,-3.7,verificado
+CSV
+
 run_expect_failure "$TMP_DIR/out-missing.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/missing-column.csv"
 grep -q "missing required CSV column 'Venta online'" "$TMP_DIR/out-missing.txt"
@@ -131,5 +137,20 @@ run_expect_failure "$TMP_DIR/out-categories.txt" \
 grep -q "WARNING line 2 .* categoria should use preferred label 'Lácteos y quesos' instead of 'Quesos y lácteos'" "$TMP_DIR/out-categories.txt"
 grep -q "WARNING line 3 .* categoria should use preferred label 'Bodega' instead of 'Vino'" "$TMP_DIR/out-categories.txt"
 grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y pastelería' instead of 'Panadería y repostería'" "$TMP_DIR/out-categories.txt"
+
+run_expect_success "$TMP_DIR/out-verificado-suppression.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/verificado-suppression.csv"
+# Absence warnings on a verificado row are suppressed, not listed.
+if grep -q "Facebook and Instagram are both empty" "$TMP_DIR/out-verificado-suppression.txt"; then
+  echo "Error: absence warning should be suppressed on a verificado row" >&2
+  exit 1
+fi
+if grep -q "telefono and correo are both empty" "$TMP_DIR/out-verificado-suppression.txt"; then
+  echo "Error: absence warning should be suppressed on a verificado row" >&2
+  exit 1
+fi
+grep -q "suppressed (absent optional fields on verificado rows)" "$TMP_DIR/out-verificado-suppression.txt"
+# Correctness warnings still fire on verificado rows.
+grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-suppression.txt"
 
 echo "CSV audit tests OK."
