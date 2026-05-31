@@ -67,6 +67,16 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Delete stale one-off tooling instead of preserving paths that can revive outdated data.
 - If a script is not wired from `package.json`, documented here, or broadly reusable for CSV work, do not rely on it.
 
+## Multi-agent coordination
+- `AGENTS.md` is the shared contract for every agent. Agent-specific files such as `CLAUDE.md` may summarize it, but must not override it or create a separate workflow.
+- Before changing data, run `git status --short` and identify which province CSVs, image folders, or candidate notes are already being edited. Do not overwrite or reformat another agent's active work.
+- Work by province when possible. One agent owns one province expansion or cleanup pass at a time; avoid parallel edits to the same `data/csv/[comunidad]/[provincia].csv` unless the user explicitly asks for a merge.
+- Keep scratch research in `docs/candidates/` using shared province files, not in agent-private folders. Candidate notes are temporary evidence, never a source of truth.
+- Before adding a candidate from notes, de-duplicate against the CSV with `npx pnpm list:province [provincia]` and verify the producer through reliable public sources.
+- When a candidate is accepted, rejected, or already present, update or prune the shared note in the same change so other agents do not repeat the same research.
+- Validate only the files you touched while iterating with `npx pnpm check:csv:changed`, then run `npx pnpm verify:ai` before finishing.
+- If you inherit a dirty worktree, preserve unrelated changes. Mention any relevant pre-existing changes in the handoff instead of silently folding them into your own work.
+
 ## Editing large CSVs (token discipline)
 - Do not read a whole province CSV into context to change one row. Barcelona alone is ~3.000 rows.
 - Surgical edit flow: `grep -n "<slug-or-name>" data/csv/<comunidad>/<provincia>.csv` to find the line, read only that window with an offset/limit, then edit that line.

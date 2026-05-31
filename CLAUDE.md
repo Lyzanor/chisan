@@ -4,6 +4,9 @@ Read and follow `AGENTS.md` first. It is the shared source of truth for this rep
 
 Key points:
 - CSV files in `data/csv/**` are the data source.
+- `AGENTS.md` is the shared multi-agent contract; do not create Claude-only data workflows or private sources of truth.
+- Check `git status --short` before editing and avoid overwriting another agent's active CSV, image, or candidate-note changes.
+- Use shared candidate notes in `docs/candidates/`, not agent-private folders, and prune/update notes once resolved.
 - Do not add a database, API search layer, seed process, or one-off data generator.
 - Keep producer slugs stable and unique; row order is editorial.
 - Keep `verificacion` present on every row with `pendiente`, `parcial`, or `verificado`.
