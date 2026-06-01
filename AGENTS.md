@@ -108,6 +108,7 @@ npx pnpm verify:ai
 ```
 - Commit CSV/data-contract changes together when they depend on each other.
 - Push committed changes before production deploys, so Git and Vercel stay aligned.
+- Any deploy to Vercel is a production deploy: "Vercel" / "deploy" means production, there is no separate preview/staging target in this workflow.
 - Production deploy command:
 ```bash
 vercel deploy . --prod -y
