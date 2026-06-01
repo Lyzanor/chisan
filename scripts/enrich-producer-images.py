@@ -42,6 +42,7 @@ except ModuleNotFoundError:
 
 CANVAS_SIZE = (1600, 1200)
 BACKGROUND_RGBA = (243, 240, 232, 255)
+LOW_CONTRAST_LOGO_RGBA = (73, 68, 60, 255)
 TARGET_LOGO_LONG_EDGE = 960
 MAX_LOGO_UPSCALE = 3.0
 MIN_SOURCE_LONG_EDGE = 200
@@ -83,7 +84,28 @@ BLOCKED_DOMAINS = {
 
 LOGO_HINTS = ("logo", "brand", "marca", "logotipo", "imagotipo", "isotipo")
 PHOTO_HINTS = ("hero", "banner", "slider", "background", "bg-", "cabecera", "portada")
-BAD_ASSET_HINTS = ("sprite", "placeholder", "blank", "loader", "loading", "pixel")
+BAD_ASSET_HINTS = (
+    "accessibility",
+    "brcgs",
+    "camara-comercio",
+    "cert_",
+    "cert-",
+    "digitalizadores",
+    "feder",
+    "gdpr",
+    "kit-digital",
+    "logo-europa",
+    "logo-kit",
+    "loader",
+    "loading",
+    "onetap",
+    "placeholder",
+    "pixel",
+    "sprite",
+    "trustpilot",
+    "union-europea",
+    "whatsapp",
+)
 
 
 @dataclass(frozen=True)
@@ -176,7 +198,7 @@ def score_candidate(source: str, url: str, subject: str) -> int:
     if path_contains_any(url, LOGO_HINTS):
         score += 5
     if path_contains_any(url, BAD_ASSET_HINTS):
-        score -= 30
+        score -= 120
     if extension in {".ico", ".gif"}:
         score -= 5
 
@@ -227,6 +249,13 @@ def pick_largest_srcset_url(srcset: str | None) -> str | None:
     return best_url
 
 
+def first_asset_url(*raw_urls: str | None) -> str | None:
+    for raw_url in raw_urls:
+        if raw_url and raw_url.strip() and not raw_url.strip().startswith("data:"):
+            return raw_url
+    return None
+
+
 def add_candidate(candidates: list[Candidate], seen: set[str], candidate: Candidate | None) -> None:
     if not candidate or candidate.url in seen:
         return
@@ -274,11 +303,14 @@ def get_image_candidates(web_url: str, timeout: float) -> tuple[list[Candidate],
             continue
 
         src = (
-            pick_largest_srcset_url(img.get("srcset"))
-            or img.get("src")
-            or img.get("data-src")
-            or img.get("data-lazy-src")
-            or img.get("data-original")
+            first_asset_url(
+                pick_largest_srcset_url(img.get("srcset")),
+                pick_largest_srcset_url(img.get("data-srcset")),
+                img.get("src"),
+                img.get("data-src"),
+                img.get("data-lazy-src"),
+                img.get("data-original"),
+            )
         )
         evidence = " ".join(
             filter(
@@ -350,6 +382,34 @@ def chromakey_near_white(image: Image.Image) -> Image.Image:
     return image
 
 
+def needs_low_contrast_tint(image: Image.Image) -> bool:
+    visible_pixels = [
+        (red, green, blue)
+        for red, green, blue, alpha in image.getdata()
+        if alpha > 32
+    ]
+    if not visible_pixels:
+        return False
+
+    near_white = sum(
+        1
+        for red, green, blue in visible_pixels
+        if red >= 220 and green >= 220 and blue >= 220
+    )
+    return near_white / len(visible_pixels) >= 0.85
+
+
+def tint_low_contrast_logo(image: Image.Image) -> Image.Image:
+    pixels = []
+    for red, green, blue, alpha in image.getdata():
+        if alpha > 0 and red >= 210 and green >= 210 and blue >= 210:
+            pixels.append((LOW_CONTRAST_LOGO_RGBA[0], LOW_CONTRAST_LOGO_RGBA[1], LOW_CONTRAST_LOGO_RGBA[2], alpha))
+        else:
+            pixels.append((red, green, blue, alpha))
+    image.putdata(pixels)
+    return image
+
+
 def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
     original_width, original_height = image.size
     had_alpha = has_alpha(image)
@@ -359,6 +419,11 @@ def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image,
     bbox = image.getbbox()
     if bbox:
         image = image.crop(bbox)
+
+    low_contrast_tint_applied = False
+    if candidate.subject == "logo" and had_alpha and needs_low_contrast_tint(image):
+        image = tint_low_contrast_logo(image)
+        low_contrast_tint_applied = True
 
     logo_width, logo_height = image.size
     source_long_edge = max(original_width, original_height)
@@ -391,6 +456,7 @@ def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image,
         "rendered_width": new_width,
         "rendered_height": new_height,
         "chromakey_applied": candidate.subject == "logo" and not had_alpha,
+        "low_contrast_tint_applied": low_contrast_tint_applied,
     }
 
 
@@ -609,6 +675,7 @@ def main() -> int:
             continue
 
         selected = None
+        selected_below_floor = None
         candidate_count = 0
         for candidate in candidates:
             if candidate.score < args.threshold:
@@ -628,16 +695,25 @@ def main() -> int:
                 print_candidate_summary(candidate_info)
                 if ok:
                     row["imagen"] = public_image_path(asset_province, slug)
+                    if candidate_info.get("source_below_floor"):
+                        selected_below_floor = candidate_info
+                        continue
+
                     selected = candidate_info
-                    updated += 1
-                    row_report["status"] = "updated"
-                    row_report["selected"] = candidate_info
-                    print(f"  selected -> {row['imagen']}")
                     break
             else:
                 candidate_info = inspect_candidate(candidate, args.timeout)
                 row_report["candidates"].append(candidate_info)
                 print_candidate_summary(candidate_info)
+
+        if args.apply and selected is None and selected_below_floor is not None:
+            selected = selected_below_floor
+
+        if args.apply and selected is not None:
+            updated += 1
+            row_report["status"] = "updated"
+            row_report["selected"] = selected
+            print(f"  selected -> {row['imagen']}")
 
         if not row_report["candidates"]:
             print("  no acceptable candidates after filtering")
