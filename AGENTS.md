@@ -38,7 +38,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `npx pnpm check:csv:data-quality`: warning audit for data-quality review across every CSV.
 - `npx pnpm check:csv:completeness`: planning signal for province expansion.
 - `npx pnpm check:images`: validates that referenced producer image paths exist; reports editorial image warnings.
-- `npx pnpm enrich:images --provincia [provincia]`: dry-run producer image enrichment from official websites; use `--apply` only after reviewing candidates.
+- `npx pnpm enrich:images --provincia [provincia]`: dry-run producer image enrichment from official websites; use `--apply` only after reviewing candidates. The scorer often ranks junk above the real brand logo (cookie-consent, accessibility, "Kit Digital" subsidy banners, Instagram-icon PNGs) and `--apply` saves the first acceptable candidate, so apply per producer (`--apply --slug <slug>`) only when its top candidate is the genuine logo; otherwise leave `imagen` blank.
 - `npx pnpm test:csv-audit`: regression tests for the CSV audit rules.
 - `npx pnpm test:behavior`: minimal route behavior test.
 - `scripts/fill-google-maps-place-ids.py`: optional helper only when `GOOGLE_MAPS_API_KEY` is available; it must not invent producers.
@@ -83,6 +83,8 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - To survey a province cheaply (de-dup, pick targets), use `npx pnpm list:province [provincia]` instead of opening the file.
 - While iterating, validate with `npx pnpm check:csv:changed` (only your touched CSVs); run full `verify:ai` once before finishing.
 - For audit output, prefer `node scripts/audit-csv.js --mode=quality --summary-only <path>` when you only need counts.
+- The physical column order in a CSV may differ from the logical order in `docs/CSV_CONTRACT.md` (e.g. `imagen`/`Venta online`/`Canal de venta` placement varies). Read the actual header before adding or moving columns; never assume positions.
+- `categoria` must match the closed `VALID_CATEGORIES` set in `scripts/audit-csv.js`; do not invent new labels. If none fits, pick the closest valid one and flag it rather than failing the contract.
 
 ## Province expansion judgment
 - Treat province expansion as editorial research, not a rote requirement for every task.
@@ -90,9 +92,11 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Discovery protocol (find producers that fit, never invent)
 - **Start from authoritative registries, not from memory.** Good sources: DOP/IGP regulatory councils, regional "alimentos de calidad" / artisan-food registries, cooperative federations, Slow Food and farmers'-market directories, comarca and tourism food portals. These yield real businesses with verifiable names.
+- **Registries confirm existence, not current status.** They can be stale (closed businesses, no longer selling online). Listing supports at most `verificacion=parcial`; for a dynamic claim like `Venta online=sí` confirm a live checkout on the producer's own site today, not just presence in a registry/marketplace.
 - **Never invent or guess producer names.** A plausible-sounding name is not a producer. If a candidate appears only inside generic category listings ("quesos de la zona", a dish or product name like "Cocido Montañés") and you cannot find that specific business with its own web, social profile, or Google Maps entry, do not add it.
 - **De-duplicate before researching.** Run `npx pnpm list:province [provincia]` (optionally `--categoria`) first and grep the candidate name; many real producers are already in the CSV under a slightly different name, so verifying them again is wasted effort.
 - **Target the gaps.** Use `npx pnpm check:csv:completeness` to find under-covered municipios and categories, and aim discovery there instead of densifying already-covered areas.
+- **A failing fetch is not a dead site.** WebFetch forces HTTPS, so http-only or bad-SSL producer sites fail there but work in a browser; confirm via web search before acting, and do not blank a `web` URL just because the fetch failed.
 - **Do not trust speculative candidate lists.** Past `docs/*_CANDIDATES.md` files mixed already-integrated real producers with hallucinated names (0% of one batch was integrable). If you keep a working list, verify every entry by web before integrating and prune the doc once resolved.
 
 ## Markdown-first communication
