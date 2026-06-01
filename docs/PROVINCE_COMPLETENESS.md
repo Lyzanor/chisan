@@ -5,23 +5,13 @@ Long-term: bring every province catalog toward the Barcelona level of usefulness
 
 This is not a required gate for every task. Use it when planning data-expansion work, auditing a province, or deciding which province to improve next.
 
-Barcelona is not an implicit app default, but it remains the current completeness baseline:
+Barcelona is not an implicit app default, but it remains the comparison baseline because it is the largest mature catalog. Treat the audit output as the source of truth; do not copy a dated snapshot into this document.
 
 ```bash
 npx pnpm check:csv:completeness
 ```
 
-Baseline snapshot:
-- Rows: `3051`
-- Horario: `46.4%`
-- Contacto: `86.3%`
-- Web: `58.0%`
-- Venta online: `0.0%`
-- Social: `52.8%`
-- Google Maps: `100.0%`
-- Coordinates: `100.0%`
-- Imagen: `14.1%`
-- Completeness score: `57.2`
+The audit prints the current Barcelona baseline, then ranks every province by a mechanical score. Those numbers change whenever CSV rows, links, coordinates, images, or online-sale fields are updated.
 
 ## What Good Looks Like
 - Every row keeps the required CSV contract valid.
@@ -39,18 +29,18 @@ Baseline snapshot:
 ## Planning Signal
 Run the completeness audit when you need a planning signal. It highlights obvious gaps, but it does not replace editorial judgment about validity, municipal spread, row quality, and source reliability.
 
-The current bottom group by the mechanical score is:
+Use the lowest-scoring rows as a starting point, then inspect the columns listed under `Below Barcelona` to decide the actual work:
 
-1. `data/csv/cantabria/cantabria.csv`
-2. `data/csv/comunitat-valenciana/alicante.csv`
-3. `data/csv/pais-vasco/alava.csv`
-4. `data/csv/murcia/murcia.csv`
-5. `data/csv/castilla-y-leon/salamanca.csv`
-6. `data/csv/castilla-y-leon/segovia.csv`
-7. `data/csv/castilla-la-mancha/guadalajara.csv`
-8. `data/csv/comunitat-valenciana/valencia.csv`
-9. `data/csv/extremadura/badajoz.csv`
-10. `data/csv/catalunya/barcelona.csv`
+- `horario`: schedules are missing or sparse.
+- `contacto`: `telefono` and `correo` coverage is weak.
+- `web`: official or reliable web links are missing.
+- `ventaOnline`: online-sale status still needs review.
+- `social`: Facebook or Instagram coverage is weak.
+- `maps`: Google Maps links are missing.
+- `coords`: coordinates are missing or incomplete.
+- `imagen`: local producer images are missing.
+
+Do not choose the next province from score alone. A province with fewer rows but strong verified coverage can be a better catalog than a larger one filled with weak, duplicate, or poorly sourced entries.
 
 ## Province Improvement Loop
 Use this loop for dedicated province work, not as a default requirement for unrelated tasks.

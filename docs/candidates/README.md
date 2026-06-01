@@ -14,6 +14,12 @@ Recommended naming:
 - `docs/candidates/[provincia]-[topic].md` only when a focused pass would make
   the main file hard to review.
 
+Do not keep candidate notes directly under `docs/` as
+`docs/[provincia]_candidates.md`. If you find one, move it here and rename it
+to the shared province file before continuing, unless `git status --short`
+shows another agent is actively working that province. In that case, leave the
+file untouched and call it out in the handoff.
+
 Before adding any producer to `data/csv/**`:
 
 1. Run `npx pnpm list:province [provincia]` to check existing rows.

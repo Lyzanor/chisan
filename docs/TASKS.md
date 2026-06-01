@@ -81,13 +81,14 @@ vercel deploy . --prod -y
 ## 6) Agent handoff checklist
 1. Read `AGENTS.md` before changing code or data.
 2. Treat `data/csv/**` as the source of truth.
-3. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
-4. Keep producer `slug` values stable and unique.
-5. Run:
+3. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
+4. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
+5. Keep producer `slug` values stable and unique.
+6. Run:
 ```bash
 npx pnpm verify:ai
 ```
-6. If shipping, commit, push, then deploy.
+7. If shipping, commit, push, then deploy.
 
 ## Guardrails
 - Do not add DB/API/migrations unless explicitly requested.

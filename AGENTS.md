@@ -71,7 +71,8 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `AGENTS.md` is the shared contract for every agent. Agent-specific files such as `CLAUDE.md` may summarize it, but must not override it or create a separate workflow.
 - Before changing data, run `git status --short` and identify which province CSVs, image folders, or candidate notes are already being edited. Do not overwrite or reformat another agent's active work.
 - Work by province when possible. One agent owns one province expansion or cleanup pass at a time; avoid parallel edits to the same `data/csv/[comunidad]/[provincia].csv` unless the user explicitly asks for a merge.
-- Keep scratch research in `docs/candidates/` using shared province files, not in agent-private folders. Candidate notes are temporary evidence, never a source of truth.
+- Keep scratch research in `docs/candidates/` using shared province files, not in agent-private folders or loose `docs/*_candidates.md` files. Candidate notes are temporary evidence, never a source of truth.
+- If you find legacy candidate notes in the `docs/` root, move them to `docs/candidates/[provincia].md` before editing them, unless another agent is actively working that province; in that case leave the file untouched and mention it in the handoff.
 - Before adding a candidate from notes, de-duplicate against the CSV with `npx pnpm list:province [provincia]` and verify the producer through reliable public sources.
 - When a candidate is accepted, rejected, or already present, update or prune the shared note in the same change so other agents do not repeat the same research.
 - Validate only the files you touched while iterating with `npx pnpm check:csv:changed`, then run `npx pnpm verify:ai` before finishing.
@@ -97,7 +98,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - **De-duplicate before researching.** Run `npx pnpm list:province [provincia]` (optionally `--categoria`) first and grep the candidate name; many real producers are already in the CSV under a slightly different name, so verifying them again is wasted effort.
 - **Target the gaps.** Use `npx pnpm check:csv:completeness` to find under-covered municipios and categories, and aim discovery there instead of densifying already-covered areas.
 - **A failing fetch is not a dead site.** WebFetch forces HTTPS, so http-only or bad-SSL producer sites fail there but work in a browser; confirm via web search before acting, and do not blank a `web` URL just because the fetch failed.
-- **Do not trust speculative candidate lists.** Past `docs/*_CANDIDATES.md` files mixed already-integrated real producers with hallucinated names (0% of one batch was integrable). If you keep a working list, verify every entry by web before integrating and prune the doc once resolved.
+- **Do not trust speculative candidate lists.** Past candidate files mixed already-integrated real producers with hallucinated names (0% of one batch was integrable). Candidate notes belong in `docs/candidates/`; verify every entry by web before integrating and prune the doc once resolved.
 
 ## Markdown-first communication
 - Write docs, change notes, and implementation plans in Markdown.
