@@ -46,19 +46,29 @@ and 2 kept rows whose `imagen` points to the dropped twin's filename
 `cordomi-duatis-berta` -> `berta-cordomi-duatis-*.webp`): rename the files to the
 kept slug or repoint `imagen`.
 
-## 2026-06-02 - OPEN: more contaminated rows + junk social columns
+## 2026-06-02 - RESOLVED: more contaminated rows
 
 More geo-flagged rows with the same fingerprint (rural municipio, address in
 Barcelona city or a neighbouring town = scraped/home address, not the farm).
-Left untouched pending verification (could be home vs farm):
-`monferrer-claramonte-monica-remei-pujalt` (dir Barcelona 08025),
-`jordi-fort-perez-calonge-de-segarra` (Barcelona 08015),
-`josep-i-ricard-scp-tavernoles` (Barcelona 08011),
-`masana-nadal-francesc-pujalt` (Casa Mestres - Vilamajor),
-`cal-marcal-codina-carol-sant-boi-de-llobregat` (L'Hospitalet),
-`cal-senyoret-joan-domenech-sant-boi-de-llobregat` (Viladecans),
-`explotacions-agricoles-ramaderes-picas-scp-lluca` (Gurb),
-`germans-freixa-sl-orista` (Berga).
+Cleaned: coords→municipio centroid + cleared the junk the bad pass inserted,
+confirmed by webs pointing to unrelated businesses (a car mechanic for
+`germans-freixa-sl-orista`, a podiatrist for `josep-i-ricard-scp-tavernoles`,
+a doctor/`montseferrermasague.com` for `monferrer-claramonte-monica-remei-pujalt`,
+the town site for `cordomi-duatis-berta-fogars-de-montclus`) and
+`Nota de ubicación: Eixample` artifacts:
+`monferrer-claramonte-monica-remei-pujalt`, `jordi-fort-perez-calonge-de-segarra`,
+`josep-i-ricard-scp-tavernoles`, `germans-freixa-sl-orista`,
+`cordomi-duatis-berta-fogars-de-montclus` (cleared dir/desc/web/gmaps);
+`masana-nadal-francesc-pujalt`, `explotacions-agricoles-ramaderes-picas-scp-lluca`
+(cleared junk gmaps, kept real desc/dir).
+
+The two Sant Boi rows had REAL data (parcagrari.cat directory + genuine
+descriptions) — only coordinates were wrong, so coords→Sant Boi and everything
+else kept: `cal-marcal-codina-carol-sant-boi-de-llobregat`,
+`cal-senyoret-joan-domenech-sant-boi-de-llobregat`.
+
+Still open ("leave & mark"): `francisco-aguilar-sanchez-saldes`,
+`claramunt-estruch-javier-sant-esteve-sesrovires` (top of file).
 
 Social-columns junk: RESOLVED — cleared 31 Facebook + 11 Instagram links that
 pointed to non-pages (search/top, photo.php, plugins/page.php, share.php, sharer,
