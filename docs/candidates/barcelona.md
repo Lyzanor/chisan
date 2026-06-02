@@ -46,6 +46,26 @@ and 2 kept rows whose `imagen` points to the dropped twin's filename
 `cordomi-duatis-berta` -> `berta-cordomi-duatis-*.webp`): rename the files to the
 kept slug or repoint `imagen`.
 
+## 2026-06-02 - OPEN: more contaminated rows + junk social columns
+
+More geo-flagged rows with the same fingerprint (rural municipio, address in
+Barcelona city or a neighbouring town = scraped/home address, not the farm).
+Left untouched pending verification (could be home vs farm):
+`monferrer-claramonte-monica-remei-pujalt` (dir Barcelona 08025),
+`jordi-fort-perez-calonge-de-segarra` (Barcelona 08015),
+`josep-i-ricard-scp-tavernoles` (Barcelona 08011),
+`masana-nadal-francesc-pujalt` (Casa Mestres - Vilamajor),
+`cal-marcal-codina-carol-sant-boi-de-llobregat` (L'Hospitalet),
+`cal-senyoret-joan-domenech-sant-boi-de-llobregat` (Viladecans),
+`explotacions-agricoles-ramaderes-picas-scp-lluca` (Gurb),
+`germans-freixa-sl-orista` (Berga).
+
+New finding: the junk also reached `web`/`Facebook`/`Instagram` beyond what was
+cleared. E.g. `cordomi-duatis-berta-fogars-de-montclus` has web
+`fogarsdemontclus.cat` (town site) + FB/IG `xarxadeparcs` (natural-parks network),
+and gmaps query "Croda". A pass over Facebook/Instagram columns for institutional
+handles (xarxadeparcs, ajuntament, diba, gencat) is warranted, same as the web pass.
+
 ## 2026-06-02 - Resolved
 
 ### Contaminated location cluster (rural producer geocoded to Barcelona city)
