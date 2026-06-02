@@ -136,7 +136,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
               ) : null}
               {maps ? (
                 <ExternalLink href={maps}>
-                  Cómo llegar
+                  Google Maps
                 </ExternalLink>
               ) : null}
               {phone && phoneHref ? <a href={phoneHref}>Teléfono</a> : null}
