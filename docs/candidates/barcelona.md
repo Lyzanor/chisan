@@ -60,11 +60,16 @@ Left untouched pending verification (could be home vs farm):
 `explotacions-agricoles-ramaderes-picas-scp-lluca` (Gurb),
 `germans-freixa-sl-orista` (Berga).
 
-New finding: the junk also reached `web`/`Facebook`/`Instagram` beyond what was
-cleared. E.g. `cordomi-duatis-berta-fogars-de-montclus` has web
-`fogarsdemontclus.cat` (town site) + FB/IG `xarxadeparcs` (natural-parks network),
-and gmaps query "Croda". A pass over Facebook/Instagram columns for institutional
-handles (xarxadeparcs, ajuntament, diba, gencat) is warranted, same as the web pass.
+Social-columns junk: RESOLVED — cleared 31 Facebook + 11 Instagram links that
+pointed to non-pages (search/top, photo.php, plugins/page.php, share.php, sharer,
+WordPresscom) or to the wrong entity (ajuntament*, Turisme*, bisbat de Terrassa,
+xarxa de parcs, Westfield La Maquinista mall, the shared Mercat de la Independència
+page reassigned to 6 stalls). Kept real multi-branch brand handles (Baluard, Chok,
+Serra Xarcuters, Can Rosell) and valid facebook profile.php links.
+
+Still pending: the per-row `web`/gmaps junk on the 8 contaminated rows listed above
+(e.g. `cordomi-duatis-berta-fogars-de-montclus` web `fogarsdemontclus.cat`, gmaps
+query "Croda") — fix together with their location decision.
 
 ## 2026-06-02 - Resolved
 
