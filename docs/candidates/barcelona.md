@@ -29,31 +29,45 @@ interpretations conflict (sede social/home vs. actual production site).
   `lleida.csv` if real); if genuinely in Sant Esteve Sesrovires, set coords there.
   Geo-check warns ~110 km.
 
-## 2026-06-02 - Contaminated cluster: junk web + wrong address/coords
+## 2026-06-02 - OPEN: 119 name-reorder duplicate pairs (bad auto-fill)
 
-A group of rows share a systemic pattern: `web` points to an unrelated business
-(architect, painter, industrial supplier, street-art map), `direccion` is in a
-different municipio than the row's `municipio` (often Barcelona city, Vilafranca,
-Igualada, or Lleida), and coords match neither. Looks like a bad auto-fill import.
-Do NOT geocode these to the municipio centroid blindly — the municipio itself may
-be wrong. Verify each producer (or drop the junk `web`) before fixing coords:
+The same automated pass that produced junk web/coords also created the SAME
+producer twice per municipio under both name orders — `Surname, Name` and
+`Name Surname` (e.g. `esteve-lloret-francesc-...` ↔ `francesc-esteve-lloret-...`,
+`pont-bancell-monica-sagas` ↔ `monica-pont-bancell-sagas`). Detected 119 such
+pairs across Barcelona by normalizing nombre tokens within municipio.
 
-- `marquez-cervera-josep-maria-sant-marti-de-centelles` — dir Cervera (Lleida 25200), web weare93.com
-- `enric-font-font-lluca` — dir Barcelona 08028, web streetartcities.com
-- `enric-campillo-robles-capolat` — dir Vilafranca 08720, web enricregull.com
-- `explotaciones-agricola-ganaderas-nua-sant-celoni` — dir Vilafranca 08720, web tigsa.com
-- `monica-pont-bancell-sagas` — dir Barcelona 08029, web lamodel.barcelona
-- `emma-mirapeix-janita-saldes` — dir Castellar del Vallès 08211, web emmamirapeix.com (painter)
-- `pere-quintana-puig-oris` — dir Igualada 08700, web perepuigarquitecte.com (architect)
-- `masana-nadal-pere-pujalt` — dir Barcelona 08038
-- `masana-canela-jaume-pujalt` / `jaume-masana-canela-pujalt` — dir Barcelona 08013 (same name, possible dup)
-- `jaume-font-vinas-collsuspina` — dir Sant Pere de Ribes 08810, web jaumefont.com
+Not yet deduped (removing ~119 rows is high-stakes and needs a merge rule).
+Proposed approach for a dedicated pass: for each pair, keep one slug, union the
+non-empty fields (one twin often has the contact/desc the other lacks), prefer
+the canonical `Surname, Name` nombre, and drop the redundant row. Re-run
+`verify:ai` and confirm no slug churn breaks detail URLs.
 
-Also `jaume-juscafresa-sant-boi-de-llobregat` (market stall: address says Sant Feliu
-de Llobregat, municipio says Sant Boi) and `lhort-den-josep-barcelona` (Parc Agrari
-del Baix Llobregat, broad area) need a location decision rather than a centroid.
+To regenerate the list: normalize `nombre` (lowercase, strip punctuation/accents,
+sort tokens) + `municipio`, group, and report groups with >1 slug.
 
-## 2026-06-02 - Resolved (no action needed)
+## 2026-06-02 - Resolved
+
+### Contaminated location cluster (rural producer geocoded to Barcelona city)
+Rows had `web` = name-coincidence/institutional page, `direccion` in a different
+municipio, and coords to match (often a Barcelona neighborhood, per a
+`Nota de ubicación: Eixample/Les Corts/...` artifact). Cleaned: cleared junk web
++ garbage address + artifact location-notes, set coords to the municipio centroid:
+`enric-font-font-lluca`, `pere-quintana-puig-oris`, `masana-nadal-pere-pujalt`,
+`masana-canela-jaume-pujalt`, `monica-pont-bancell-sagas`, `emma-mirapeix-janita-saldes`,
+`explotaciones-agricola-ganaderas-nua-sant-celoni`,
+`marquez-cervera-josep-maria-sant-marti-de-centelles`, `jaume-font-vinas-collsuspina`,
+`jaume-juscafresa-sant-boi-de-llobregat`, `lhort-den-josep-barcelona`.
+Removed 2 exact contaminated duplicates: `enric-campillo-robles-capolat` (clean twin
+`campillo-robles-enric-capolat` kept) and empty `jaume-masana-canela-pujalt`
+(twin `masana-canela-jaume-pujalt` kept).
+
+### Junk web (45 rows)
+Cleared institutional/portal/name-coincidence web URLs. Left
+`calfargasturismerural.cat` (`costa-garet-josep-santa-maria-de-merles`) for manual
+review — could be a genuine rural-tourism producer site.
+
+### Out-of-province winery duplicates
 - `vinyes-dolivardots-sl-alella` and `vall-de-baldomar-sl-barcelona-horta-guinardo`
   were misfiled duplicates of out-of-province wineries already correct in
   `girona.csv` (`vinyes-d-olivardots-capmany`) and `lleida.csv`
