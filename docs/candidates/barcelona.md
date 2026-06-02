@@ -29,22 +29,22 @@ interpretations conflict (sede social/home vs. actual production site).
   `lleida.csv` if real); if genuinely in Sant Esteve Sesrovires, set coords there.
   Geo-check warns ~110 km.
 
-## 2026-06-02 - OPEN: 119 name-reorder duplicate pairs (bad auto-fill)
+## 2026-06-02 - RESOLVED: 119 name-reorder duplicate pairs deduped
 
-The same automated pass that produced junk web/coords also created the SAME
-producer twice per municipio under both name orders — `Surname, Name` and
-`Name Surname` (e.g. `esteve-lloret-francesc-...` ↔ `francesc-esteve-lloret-...`,
-`pont-bancell-monica-sagas` ↔ `monica-pont-bancell-sagas`). Detected 119 such
-pairs across Barcelona by normalizing nombre tokens within municipio.
+The bad auto-fill pass created the SAME producer twice per municipio under both
+name orders — `Surname, Name` and `Name Surname`. Found 119 such pairs (all
+exactly 2 rows) by normalizing nombre tokens within municipio.
 
-Not yet deduped (removing ~119 rows is high-stakes and needs a merge rule).
-Proposed approach for a dedicated pass: for each pair, keep one slug, union the
-non-empty fields (one twin often has the contact/desc the other lacks), prefer
-the canonical `Surname, Name` nombre, and drop the redundant row. Re-run
-`verify:ai` and confirm no slug churn breaks detail URLs.
+Deduped with user authorization: for each pair kept the more complete row
+(tie-break: canonical `Surname, Name`), unioned the twin's non-empty fields into
+it, dropped the redundant row. 119 rows removed (CSV 3084 -> 2965). verify:ai OK.
 
-To regenerate the list: normalize `nombre` (lowercase, strip punctuation/accents,
-sort tokens) + `municipio`, group, and report groups with >1 slug.
+Follow-up (image hygiene, warning-only): 2 orphan assets to delete
+(`albert-presas-escobet-castellbisbal.webp`, `enric-campillo-robles-capolat.webp`)
+and 2 kept rows whose `imagen` points to the dropped twin's filename
+(`castan-escolano-juan` -> `juan-castan-escolano-*.webp`,
+`cordomi-duatis-berta` -> `berta-cordomi-duatis-*.webp`): rename the files to the
+kept slug or repoint `imagen`.
 
 ## 2026-06-02 - Resolved
 
