@@ -31,9 +31,11 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `public/productores/barcelona/`: Barcelona producer images.
 
 ## Active scripts
-- `npx pnpm verify:ai`: required before finishing changes.
+- **Which gate to run before finishing:** data/reference/image-only change → `npx pnpm verify:data` (fast: contract + image checks, no build); change that touches code (`app/`, `lib/`, `components/`, `scripts/`) → full `npx pnpm verify:ai`. CSVs are read at request time, so a data-only change cannot break the build — skip it.
+- `npx pnpm verify:data`: cheap data gate = `check:csv` + `check:images`. ~6 s, no Next build. Use for the common province-data subida.
+- `npx pnpm verify:ai`: full gate (lint + build + contract + images + audit tests + behavior). Required only when you changed code.
 - `npx pnpm list:province [provincia]`: compact roster (slug, nombre, municipio, categoria, verificacion, Venta online) for one province; use it to de-duplicate before discovery and to browse a catalog without loading the whole CSV. Supports `--categoria "X"` and `--pendientes`.
-- `npx pnpm check:csv:changed`: runs the blocking contract audit only on CSVs changed in the working tree (staged, unstaged, untracked). Use it while working; run full `verify:ai` before finishing.
+- `npx pnpm check:csv:changed`: runs the blocking contract audit only on CSVs changed in the working tree (staged, unstaged, untracked). Use it while iterating; run `verify:data` (or `verify:ai` for code) before finishing.
 - `npx pnpm check:csv`: validates the blocking CSV contract for every CSV file.
 - `npx pnpm check:csv:data-quality`: warning audit for data-quality review across every CSV.
 - `npx pnpm check:csv:completeness`: planning signal for province expansion.
@@ -76,15 +78,15 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - If you find legacy candidate notes in the `docs/` root, move them to `docs/candidates/[provincia].md` before editing them, unless another agent is actively working that province; in that case leave the file untouched and mention it in the handoff.
 - Before adding a candidate from notes, de-duplicate against the CSV with `npx pnpm list:province [provincia]` and verify the producer through reliable public sources.
 - When a candidate is accepted, rejected, or already present, update or prune the shared note in the same change so other agents do not repeat the same research.
-- Validate only the files you touched while iterating with `npx pnpm check:csv:changed`, then run `npx pnpm verify:ai` before finishing.
+- Validate only the files you touched while iterating with `npx pnpm check:csv:changed`, then run `npx pnpm verify:data` (data-only) or `npx pnpm verify:ai` (code) before finishing.
 - If you inherit a dirty worktree, preserve unrelated changes. Mention any relevant pre-existing changes in the handoff instead of silently folding them into your own work.
 
 ## Editing large CSVs (token discipline)
 - Do not read a whole province CSV into context to change one row. Barcelona alone is ~3.000 rows.
 - Surgical edit flow: `grep -n "<slug-or-name>" data/csv/<comunidad>/<provincia>.csv` to find the line, read only that window with an offset/limit, then edit that line.
 - To survey a province cheaply (de-dup, pick targets), use `npx pnpm list:province [provincia]` instead of opening the file.
-- While iterating, validate with `npx pnpm check:csv:changed` (only your touched CSVs); run full `verify:ai` once before finishing.
-- For audit output, prefer `node scripts/audit-csv.js --mode=quality --summary-only <path>` when you only need counts.
+- While iterating, validate with `npx pnpm check:csv:changed` (only your touched CSVs); run `verify:data` (data-only) or full `verify:ai` (code) once before finishing.
+- For audit output, prefer `node scripts/audit-csv.js --mode=quality --summary-only <path>` when you only need counts. Do not loop the raw audit over every file and pipe it to `grep` — `check:csv` / `check:csv:data-quality` already aggregate all 50 files into one summary; reach for a per-file loop only when chasing one concrete row.
 - The physical column order in a CSV may differ from the logical order in `docs/CSV_CONTRACT.md` (e.g. `imagen`/`Venta online`/`Canal de venta` placement varies). Read the actual header before adding or moving columns; never assume positions.
 - `categoria` must match the closed `VALID_CATEGORIES` set in `scripts/audit-csv.js`; do not invent new labels. If none fits, pick the closest valid one and flag it rather than failing the contract.
 
@@ -108,21 +110,19 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Git and release discipline
 - Keep `main` deployable.
-- Before committing, run:
+- Before committing, run the matching gate (not always the full one):
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data   # data/reference/image-only change (fast, no build)
+npx pnpm verify:ai     # only when you touched code (app/lib/components/scripts)
 ```
 - Commit CSV/data-contract changes together when they depend on each other.
-- Push committed changes before production deploys, so Git and Vercel stay aligned.
-- Any deploy to Vercel is a production deploy: "Vercel" / "deploy" means production, there is no separate preview/staging target in this workflow.
-- Production deploy command:
-```bash
-vercel deploy . --prod -y
-```
+- Deploy to production = push the commit to `main`; the GitHub→Vercel integration builds and deploys prod automatically. No separate deploy command, no preview/staging target. (`vercel deploy . --prod -y` exists only as a manual fallback.)
+- Don't poll the deploy: the `git push` output confirms it triggered. Avoid listing all deployments — it returns a large payload.
 
 ## Validation before finishing
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data   # data-only (default for province work)
+npx pnpm verify:ai     # code changes
 ```
 
 ## Docs index

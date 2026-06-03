@@ -17,6 +17,7 @@
     "enrich:images": "python3 scripts/enrich-producer-images.py",
     "test:csv-audit": "bash scripts/test-csv-audit.sh",
     "test:behavior": "bash scripts/test-behavior.sh",
+    "verify:data": "pnpm check:csv && pnpm check:images",
     "verify:ai": "pnpm verify && pnpm check:csv && pnpm check:images && pnpm test:csv-audit && pnpm test:behavior"
   },
   "dependencies": {

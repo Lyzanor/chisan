@@ -12,4 +12,4 @@ Key points:
 - Keep `verificacion` present on every row with `pendiente`, `parcial`, or `verificado`.
 - Keep `Venta online` present on every row with `sí`, `no`, or `no comprobado`; default to `no comprobado`.
 - `Canal de venta` is optional (complements `Venta online`): pipe-separated subset of `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`, only when `Venta online = sí`; warning-only, not blocking.
-- Run `npx pnpm verify:ai` before finishing.
+- Before finishing, run the matching gate: `npx pnpm verify:data` for data/reference/image-only changes (fast, no build), or `npx pnpm verify:ai` when you touched code. Deploy = push to `main` (Vercel auto-deploys); don't poll deployments.
