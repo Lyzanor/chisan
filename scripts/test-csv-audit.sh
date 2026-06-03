@@ -82,7 +82,12 @@ CSV
 cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
 verif-sin-contacto,Masia Verif,Abrera,Bodega,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,no comprobado,,,https://www.google.com/maps/place/Verif,41.51,1.90,verificado
-verif-geo-malo,Masia Lejos,Abrera,Bodega,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,no comprobado,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,40.0,-3.7,verificado
+verif-geo-malo,Masia Lejos,Abrera,Bodega,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,no comprobado,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,verificado
+CSV
+
+cat >"$TMP_DIR/geo-blocking.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
+geo-lejisimos,Masia Lejisimos,Abrera,Bodega,Vino,Carrer Major 12,Descripcion suficientemente larga para validar,,+34600000000,lejisimos@example.com,https://example.com,no comprobado,https://facebook.com/lejisimos,https://instagram.com/lejisimos,https://www.google.com/maps/place/Lejisimos,40.0,-3.7,pendiente
 CSV
 
 run_expect_failure "$TMP_DIR/out-missing.txt" \
@@ -122,6 +127,11 @@ grep -q "WARNING line 2 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-
 grep -q "WARNING line 3 .* coordinates are present but direccion is not useful for location review" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
+
+# Coordinates far enough to belong to another municipio are a blocking error.
+run_expect_failure "$TMP_DIR/out-geo-blocking.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/geo-blocking.csv"
+grep -q "ERROR line 2 .* km from Abrera centroid (threshold 100 km)" "$TMP_DIR/out-geo-blocking.txt"
 
 run_expect_success "$TMP_DIR/out-sales-channel.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/sales-channel.csv"

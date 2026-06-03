@@ -114,6 +114,7 @@
 - `lat` and `lon` must both be present or both be empty.
 - `lat`, when present, must be numeric and between `-90` and `90`.
 - `lon`, when present, must be numeric and between `-180` and `180`.
+- `lat`/`lon` must not be more than `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond that the point belongs to a different town: almost always a swapped/wrong coordinate or a wrong `municipio`. The `15–100 km` band is a warning, not an error; rows whose `municipio` is not in the lookup are skipped.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
 - `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/barcelona/ejemplo.webp`.
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
@@ -143,7 +144,7 @@ Correctness warnings (always fire):
   - duplicated normalized `nombre + municipio`
   - near-duplicate `categoria` variants after normalization
   - category labels that should use one of the preferred category labels
-  - `lat`/`lon` more than `15 km` from the `municipio` centroid (looked up in `data/reference/municipios.json`). Rows whose `municipio` is not in the lookup are skipped silently.
+  - `lat`/`lon` between `15 km` and `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond `100 km` it is a blocking error instead (see Blocking rules). The message names the closest centroid — `closest centroid is X (Y km)` — so you can tell whether the `municipio` or the `lat`/`lon` is the wrong field. Rows whose `municipio` is not in the lookup are skipped silently.
 
 ## Link validation
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must be valid `http://` or `https://` URLs.

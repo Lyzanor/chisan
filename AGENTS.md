@@ -27,7 +27,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `components/map/`: Leaflet map (SSR-safe, dynamic import).
 - `data/csv/catalunya/barcelona.csv`: Barcelona source of truth.
 - `data/csv/[comunidad]/[provincia].csv`: source of truth for every province catalog.
-- `data/reference/municipios.json`: Wikidata-sourced municipality centroids used by the geo-check warning. Reference data, not producer data.
+- `data/reference/municipios.json` (+ `municipios-overrides.json`): Wikidata-sourced municipality centroids used by the geo-check. `lat`/`lon` >15 km from the `municipio` centroid is a warning; >100 km is a **blocking** error (`check:csv`). Reference data, not producer data. For cross-community homonyms (same `municipio` name in two provinces) add an override; see `docs/CSV_CONTRACT.md`.
 - `public/productores/barcelona/`: Barcelona producer images.
 
 ## Active scripts
@@ -58,6 +58,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Every row must include `Venta online` with one of `sí`, `no`, or `no comprobado`; use `no comprobado` by default until that producer has been reviewed.
 - `Canal de venta` is optional and complements `Venta online`: when present it lists one or more of `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace` (pipe-separated, e.g. `ecommerce|whatsapp`), and only when `Venta online` is `sí`. It is warning-only today (`check:csv:data-quality`), not blocking; backfill it incrementally. See `docs/CSV_CONTRACT.md`.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
+- `lat`/`lon` must be within `100 km` of the `municipio` centroid (blocking); the `15–100 km` band is a warning. If a whole municipio's producers land far from a same-named town in another province, it is a centroid homonym — add an override, do not move the producers. See `docs/CSV_CONTRACT.md`.
 
 ## Safe change policy
 - Prefer editing existing files over adding new layers.

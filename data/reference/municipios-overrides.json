@@ -394,5 +394,111 @@
       "label": "San Adrián",
       "community": "navarra"
     }
+  ],
+  "zuera": [
+    {
+      "lat": 41.87,
+      "lon": -0.7886,
+      "label": "Zuera",
+      "community": "aragon"
+    },
+    {
+      "lat": 39.95194,
+      "lon": -0.33167,
+      "label": "Sueras",
+      "community": "comunitat-valenciana"
+    }
+  ],
+  "armuna": [
+    {
+      "lat": 41.0775,
+      "lon": -4.3207,
+      "label": "Armuña (Segovia)",
+      "community": "castilla-y-leon"
+    },
+    {
+      "lat": 40.53194,
+      "lon": -3.03028,
+      "label": "Armuña de Tajuña",
+      "community": "castilla-la-mancha"
+    }
+  ],
+  "portillo": [
+    {
+      "lat": 41.4774,
+      "lon": -4.5882,
+      "label": "Portillo",
+      "community": "castilla-y-leon"
+    },
+    {
+      "lat": 40.05944,
+      "lon": -4.22389,
+      "label": "Portillo de Toledo",
+      "community": "castilla-la-mancha"
+    }
+  ],
+  "palazuelos": [
+    {
+      "lat": 41.0564,
+      "lon": -2.7051,
+      "label": "Palazuelos (Guadalajara)",
+      "community": "castilla-la-mancha"
+    },
+    {
+      "lat": 40.93028,
+      "lon": -4.06111,
+      "label": "Palazuelos de Eresma",
+      "community": "castilla-y-leon"
+    }
+  ],
+  "palacios": [
+    {
+      "lat": 40.5427,
+      "lon": -4.8502,
+      "label": "Palacios (Ávila)",
+      "community": "castilla-y-leon"
+    }
+  ],
+  "salcedo": [
+    {
+      "lat": 42.7342,
+      "lon": -2.9639,
+      "label": "Salcedo (Lantarón, Álava)",
+      "community": "pais-vasco"
+    },
+    {
+      "lat": 42.41139,
+      "lon": -8.6475,
+      "label": "Salcedo",
+      "community": "galicia"
+    }
+  ],
+  "fresneda": [
+    {
+      "lat": 42.8756,
+      "lon": -3.055,
+      "label": "Fresneda (Valdegovía, Álava)",
+      "community": "pais-vasco"
+    },
+    {
+      "lat": 40.92789,
+      "lon": 0.07426,
+      "label": "La Fresneda",
+      "community": "aragon"
+    }
+  ],
+  "alins": [
+    {
+      "lat": 42.5478,
+      "lon": 1.3081,
+      "label": "Alins (Pallars Sobirà, Lleida)",
+      "community": "catalunya"
+    },
+    {
+      "lat": 41.97417,
+      "lon": 0.31222,
+      "label": "Azanuy-Alins",
+      "community": "aragon"
+    }
   ]
 }

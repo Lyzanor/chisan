@@ -40,6 +40,9 @@ const SALES_CHANNEL_VALUES = new Set([
 const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
 const CENTROID_MAX_DISTANCE_KM = 15;
+// Beyond this, the gap is no longer "edge of a large municipal term" but a
+// different municipio: a blocking error (wrong lat/lon or wrong municipio).
+const CENTROID_BLOCKING_DISTANCE_KM = 100;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipios-overrides.json";
 const PREFERRED_CATEGORY_ALIASES = new Map([
@@ -430,6 +433,53 @@ function lookupCentroid(centroids, municipio, communityHint) {
   return centroids.main[key1] || centroids.main[key2] || null;
 }
 
+function flattenCentroids(centroids) {
+  if (!centroids) return [];
+  if (centroids._flat) return centroids._flat;
+  const flat = [];
+  const collect = (entry) => {
+    if (!entry) return;
+    if (Array.isArray(entry)) {
+      for (const candidate of entry) {
+        if (candidate && typeof candidate.lat === "number") flat.push(candidate);
+      }
+    } else if (typeof entry.lat === "number") {
+      flat.push(entry);
+    }
+  };
+  for (const value of Object.values(centroids.main || {})) collect(value);
+  for (const value of Object.values(centroids.overrides || {})) collect(value);
+  Object.defineProperty(centroids, "_flat", { value: flat, enumerable: false });
+  return flat;
+}
+
+// Closest municipio centroid to a coordinate. Used to turn a "far from the
+// declared municipio" warning into an actionable "this pin actually sits in X".
+function findNearestCentroid(centroids, lat, lon) {
+  let best = null;
+  let bestKm = Infinity;
+  for (const candidate of flattenCentroids(centroids)) {
+    const km = haversineKm(lat, lon, candidate.lat, candidate.lon);
+    if (km < bestKm) {
+      bestKm = km;
+      best = candidate;
+    }
+  }
+  return best ? { centroid: best, distance: bestKm } : null;
+}
+
+// Shared message for the "coords far from the declared municipio" checks. Adds
+// the closest municipio centroid when it differs, so an editor can tell which
+// field (municipio or lat/lon) is wrong.
+function describeCentroidGap(centroids, lat, lon, declared, distance, limitKm) {
+  const nearest = findNearestCentroid(centroids, lat, lon);
+  const nearestNote =
+    nearest && normalizeSearch(nearest.centroid.label) !== normalizeSearch(declared.label)
+      ? `; closest centroid is ${nearest.centroid.label} (${nearest.distance.toFixed(1)} km) — check whether municipio or lat/lon is wrong`
+      : "";
+  return `lat/lon is ${distance.toFixed(1)} km from ${declared.label} centroid (threshold ${limitKm} km)${nearestNote}`;
+}
+
 function hasUsefulAddress(fields) {
   const rawAddress = cleanCell(fields.direccion);
   const normalizedAddress = normalizeSearch(rawAddress);
@@ -509,7 +559,7 @@ function createIssueCollector() {
   return { issues, push };
 }
 
-function runContractAudit({ headers, rows, push }) {
+function runContractAudit({ headers, rows, push, centroids, communityHint }) {
   const missing = REQUIRED_COLUMNS.filter((column) => !headers.includes(column));
   const slugLines = new Map();
 
@@ -569,6 +619,24 @@ function runContractAudit({ headers, rows, push }) {
         push("error", line, id, slug, "lon is not a valid coordinate");
       } else if (lon < -180 || lon > 180) {
         push("error", line, id, slug, "lon must be between -180 and 180");
+      }
+    }
+
+    // Coordinates so far from the declared municipio that they belong to a
+    // different town: almost always a swapped/wrong lat/lon or a wrong municipio.
+    if (centroids && latRaw && lonRaw && !Number.isNaN(lat) && !Number.isNaN(lon)) {
+      const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), communityHint);
+      if (centroid) {
+        const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
+        if (distance > CENTROID_BLOCKING_DISTANCE_KM) {
+          push(
+            "error",
+            line,
+            id,
+            slug,
+            describeCentroidGap(centroids, lat, lon, centroid, distance, CENTROID_BLOCKING_DISTANCE_KM),
+          );
+        }
       }
     }
 
@@ -785,13 +853,18 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
       const centroid = lookupCentroid(centroids, city, communityHint);
       if (centroid) {
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
-        if (distance > CENTROID_MAX_DISTANCE_KM) {
+        // Beyond the blocking distance the contract audit raises an error, so
+        // this warning covers only the "edge of term vs. neighbour" band.
+        if (
+          distance > CENTROID_MAX_DISTANCE_KM &&
+          distance <= CENTROID_BLOCKING_DISTANCE_KM
+        ) {
           push(
             "warning",
             line,
             id,
             slug,
-            `lat/lon is ${distance.toFixed(1)} km from ${centroid.label} centroid (threshold ${CENTROID_MAX_DISTANCE_KM} km)`,
+            describeCentroidGap(centroids, lat, lon, centroid, distance, CENTROID_MAX_DISTANCE_KM),
           );
         }
       }
@@ -893,11 +966,12 @@ async function main() {
   const { headers, rows } = await readCsv(csvPath);
   const { issues, push } = createIssueCollector();
 
-  runContractAudit({ headers, rows, push });
+  const centroids = await loadCentroids();
+  const communityHint = inferCommunitySlug(csvPath);
+
+  runContractAudit({ headers, rows, push, centroids, communityHint });
 
   if (mode === "quality") {
-    const centroids = await loadCentroids();
-    const communityHint = inferCommunitySlug(csvPath);
     runQualityAudit({ headers, rows, push, centroids, communityHint });
   }
 
