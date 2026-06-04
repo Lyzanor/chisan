@@ -43,7 +43,6 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `npx pnpm enrich:images --provincia [provincia]`: dry-run producer image enrichment from official websites; use `--apply` only after reviewing candidates. The scorer often ranks junk above the real brand logo (cookie-consent, accessibility, "Kit Digital" subsidy banners, Instagram-icon PNGs) and `--apply` saves the first acceptable candidate, so apply per producer (`--apply --slug <slug>`) only when its top candidate is the genuine logo; otherwise leave `imagen` blank.
 - `npx pnpm test:csv-audit`: regression tests for the CSV audit rules.
 - `npx pnpm test:behavior`: minimal route behavior test.
-- `scripts/fill-google-maps-place-ids.py`: optional helper only when `GOOGLE_MAPS_API_KEY` is available; it must not invent producers.
 - `scripts/build-municipio-centroids.js`: regenerate `data/reference/municipios.json` from Wikidata (self-contained, ~30 s). Run when the lookup may be stale or a real municipio seems missing.
 
 ## Invariants
