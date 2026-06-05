@@ -72,6 +72,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 ## Multi-agent coordination
 - `AGENTS.md` is the shared contract for every agent. Agent-specific files such as `CLAUDE.md` may summarize it, but must not override it or create a separate workflow.
 - Before changing data, run `git status --short` and identify which province CSVs, image folders, or candidate notes are already being edited. Do not overwrite or reformat another agent's active work.
+- Treat a dirty worktree as normal multi-agent context, not as a blocker. Mention it only when it affects the current province, candidate note, image folder, shared reference file, or validation result.
 - Work by province when possible. One agent owns one province expansion or cleanup pass at a time; avoid parallel edits to the same `data/csv/[comunidad]/[provincia].csv` unless the user explicitly asks for a merge.
 - Keep scratch research in `docs/candidates/` using shared province files, not in agent-private folders or loose `docs/*_candidates.md` files. Candidate notes are temporary evidence, never a source of truth.
 - If you find legacy candidate notes in the `docs/` root, move them to `docs/candidates/[provincia].md` before editing them, unless another agent is actively working that province; in that case leave the file untouched and mention it in the handoff.
