@@ -1,4 +1,12 @@
 {
+  "arroyomolinos": [
+    {
+      "lat": 40.27861,
+      "lon": -3.91167,
+      "label": "Arroyomolinos",
+      "community": "madrid"
+    }
+  ],
   "figueres": [
     {
       "lat": 42.26667,
