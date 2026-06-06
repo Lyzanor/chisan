@@ -107,6 +107,14 @@
       "community": "asturias"
     }
   ],
+  "lezama amurrio": [
+    {
+      "lat": 43.0266218,
+      "lon": -2.9566506,
+      "label": "Lezama-Amurrio",
+      "community": "pais-vasco"
+    }
+  ],
   "valverde": [
     {
       "lat": 27.8031,
