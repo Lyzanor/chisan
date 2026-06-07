@@ -128,5 +128,6 @@ npx pnpm verify:ai     # code changes
 ## Docs index
 - `docs/ARCHITECTURE.md`
 - `docs/CSV_CONTRACT.md`
+- `docs/VERIFICATION_TECHNIQUES.md` — registros (DAR/REGA), enlaces autogenerados poco fiables, dedup sin acentos, gap-fill de coords, edición CRLF-safe
 - `docs/TASKS.md`
 - `docs/PROVINCE_COMPLETENESS.md`
