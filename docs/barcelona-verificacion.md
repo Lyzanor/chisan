@@ -15,13 +15,12 @@
 
 ## Estado actual (2026-06-07)
 
-- Filas: **2.960** · `verificado` **94** · `parcial` **24** · `pendiente` **2.842**
+- Filas: **2.960** · `verificado` **152** · `parcial` **40** · `pendiente` **2.768**
 - Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han purgado 13 filas y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~115 lotes estimados.
-- **Cerrados al 100%:** Lote 1 (Eixample) y Lote 2 (Ciutat Vella). 0 pendientes en ambos.
-- **Siguiente:** Lote 3 = **Barcelona - Gràcia** (32 pendientes → 2 sub-lotes).
-- Último push: commit en `main` con lotes 1-2; la decisión del cluster está en working tree
-  (pendiente de push según el flujo bajo demanda).
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~103 lotes estimados.
+- **Cerrados:** Lotes 1-5 (Eixample, Ciutat Vella, Gràcia, Sant Martí, Sants-Montjuïc). Flags acumulados abajo.
+- **Siguiente:** Lote 6 = **Barcelona (resto)** (22 pendientes → 1 sub-lote).
+- Último push: lotes 1-5 + cluster + manual en `main`.
 
 ## Cómo retomar en 1 minuto
 
@@ -165,6 +164,24 @@ Cotejadas contra DAR `xmyy-7xqi`:
 
 ## Casos flageados (pendientes de una pasada futura)
 
+- ✅ `exalta-chocolat-barcelona-gracia`: RESUELTO en 3b — reubicada a `municipio`=Sant Antoni de Vilamajor
+  (coords ya correctas), dirección a nivel localidad, web `exaltachocolate.com`, tienda online confirmada →
+  `verificado`/`sí`. (El slug conserva "gracia" por estabilidad; el municipio manda.)
+- ⚠️ `bodega-la-riera-barcelona-gracia` (`pendiente`): **bar-celler** de Vallcarca que sirve/revende vinos
+  y vermut catalanes (no produce). Real pero **probablemente no es un productor Km0** → decidir: purgar
+  (como Can Burbo) o recategorizar. Dejada en `pendiente`.
+- ⚠️ `cesc-jk-cerveses-eco-bio-barcelona-sant-marti` (`pendiente`): **DUPLICADO** de
+  `la-cervesera-del-poblenou-barcelona-sant-marti` (la misma cervecera elabora las marcas CESC i JK; misma
+  dirección/coords). Candidata a **borrar** (la canónica La Cervesera del Poblenou ya está `verificado`).
+- ⚠️ `corpen-barcelona-sant-marti` (`verificado`): es una **destilería de gin** (marca Llevant), no una
+  bodega de vino. No hay categoría de destilados; `categoria=Bodega` es imprecisa → recategorizar (¿`Otros`?).
+- `hoppiness-barcelona-sant-marti` (`parcial`): **bar** de cervezas rotativas de terceros (no elabora) →
+  como Bodega La Riera, decidir si es productor Km0.
+- 🗑️ **Candidatas a purga — Sants-Montjuïc** (sin DAR, sin presencia real, fruta/verdura revendedora o
+  fantasma; webs falsas ya limpiadas): `mas-de-vicenta-cb-…`, `castelroc-sa-…`, `fruites-maria-…`,
+  `agrima-…` (web era de maquinaria agrícola), `sabrina-comisso-…` (web era un hotel; su gemela de Eixample
+  ya se purgó). Pendientes de confirmación para borrar en bloque (misma lógica que el cluster de lotes 1-2).
+
 - ⚠️ `agricola-poma-sl-barcelona-eixample` (`parcial`): el DAR dice que es **aceite (marca LOMASOLI)** en
   **Gran Via Carles III 133**, no "manzanas" en Gran Via Corts 501. Corregir categoría/productos/dirección/
   coords (re-geocodificar) en una pasada dedicada.
@@ -179,9 +196,9 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 |---|---|---|---|---|---|---|
 | 1 | Barcelona - Eixample | 0 | — | ✅ | 2026-06-07 | 29 verif + 4 parcial (DAR); 9 purgadas |
 | 2 | Barcelona - Ciutat Vella | 0 | — | ✅ | 2026-06-07 | 30 verif + 1 parcial (DAR); 4 purgadas |
-| 3 | Barcelona - Gràcia | 32 | 2 | ⬜ | | **SIGUIENTE** |
-| 4 | Barcelona - Sant Martí | 26 | 2 | ⬜ | | +1 verif (Ogham reubicado aquí) |
-| 5 | Barcelona - Sants-Montjuïc | 23 | 1 | ⬜ | | |
+| 3 | Barcelona - Gràcia | 1 (flag) | — | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni; 1 flag (Bodega La Riera) |
+| 4 | Barcelona - Sant Martí | 1 (flag) | — | ✅ | 2026-06-07 | 20 verif + 5 parcial (DAR); 1 flag (CESC JK dup) |
+| 5 | Barcelona - Sants-Montjuïc | 5 (flags) | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 candidatas a purga (cluster) |
 | 6 | Barcelona (resto) | 22 | 1 | ⬜ | | |
 | 7 | Terrassa | 57 | 3 | ⬜ | | |
 | 8 | Sabadell | 45 | 2 | ⬜ | | |
@@ -218,3 +235,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-07 | Ciutat Vella 2a | 25 | 25 | — | Todos reales (El Magnífico, Fargas, Bubó, Hofmann…) |
 | 2026-06-07 | Ciutat Vella 2b | 11 | 5 | 1 parcial · 5 cluster | Tiramisús (Glovo); Forn Boix +web/FB; Ma Condimentos web hijack |
 | 2026-06-07 | Cluster (DAR) | 18 | — | 5 parcial · 13 purgadas | Cotejo DAR xmyy-7xqi; +4 imágenes huérfanas borradas |
+| 2026-06-07 | Gràcia 3a | 25 | 23 | 1 parcial · 1 flag | Establecimientos reales; Exalta mal fichada (es de Sant Antoni de Vilamajor) |
+| 2026-06-07 | Gràcia 3b | 8 | 4 | 3 parcial (DAR) · 1 flag | De Abreu/Cerdan/Brugarol en DAR→parcial; Exalta reubicada+verificada; Bodega La Riera flag |
+| 2026-06-07 | Sant Martí 4a | 25 | 20 | 4 parcial · 1 flag | Poblenou (Nomad, Väcka, Bioma, El Tío Che…); CESC JK=La Cervesera del Poblenou dup; Hoppiness=bar; Corpen=gin |
+| 2026-06-07 | Sant Martí 4b | 1 | 0 | 1 parcial (DAR) | Blue Zafir Invest SL en DAR→parcial |
+| 2026-06-07 | Sants-Montjuïc 5 | 23 | 11 | 7 parcial · 5 flag-purga | DAR: Palaudo/Calvet/Prats→parcial; 5 sin DAR→candidatas purga (webs falsas limpiadas) |
