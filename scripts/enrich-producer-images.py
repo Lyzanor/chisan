@@ -224,14 +224,36 @@ def pick_largest_srcset_url(srcset: str | None) -> str | None:
     if not srcset:
         return None
 
+    # Parse per the HTML srcset grammar: a candidate is a URL (a run of
+    # non-whitespace, so commas inside the URL itself — e.g. Wix transform
+    # paths like ".../w_640,h_480,al_c/x.jpg" — do not split it) optionally
+    # followed by a "640w" / "2x" descriptor, terminated by a comma. Splitting
+    # naively on "," shreds such URLs; splitting only on ", " loses candidates
+    # separated by a bare comma. Tokenizing handles both.
+    text = " ".join(srcset.split())
     best_url = None
     best_score = -1.0
-    for part in srcset.split(","):
-        bits = part.strip().split()
-        if not bits:
+    i, n = 0, len(text)
+    while i < n:
+        while i < n and (text[i].isspace() or text[i] == ","):
+            i += 1
+        if i >= n:
+            break
+        start = i
+        while i < n and not text[i].isspace():
+            i += 1
+        url = text[start:i].rstrip(",")
+        while i < n and text[i].isspace():
+            i += 1
+        desc_start = i
+        while i < n and text[i] != ",":
+            i += 1
+        desc_tokens = text[desc_start:i].split()
+        if i < n:
+            i += 1  # consume the candidate-separating comma
+        if not url:
             continue
-        url = bits[0]
-        descriptor = bits[1] if len(bits) > 1 else ""
+        descriptor = desc_tokens[0] if desc_tokens else ""
         score = 1.0
         if descriptor.endswith("w"):
             try:
