@@ -1,77 +1,186 @@
-# Barcelona · seguimiento de verificación
+# Barcelona · verificación profunda — manual + estado
 
-> Ledger compartido (AGENTS.md) para la verificación **profunda** campo a campo de los productores de
-> `data/csv/catalunya/barcelona.csv`. Cualquier sesión/agente retoma desde aquí sin re-descubrir.
-> Es evidencia temporal, **no** una fuente de verdad: la verdad es el CSV + `verificacion`.
+> Ledger reanudable de la verificación campo a campo de `data/csv/catalunya/barcelona.csv`.
+> Una sesión nueva (sin memoria de la anterior) debe poder retomar **solo con este archivo**.
+> Es evidencia de trabajo, no fuente de verdad: la verdad es el CSV + la columna `verificacion`.
+>
+> **Principio rector (no negociable):** dar peso a la **verificación real** y a la **solidez del CSV**.
+> - Evidencia > afirmaciones. No te fíes de lo que ya pone la fila: hay `sí/ecommerce`, webs,
+>   redes y GMaps **mal auto-rellenados**. Confírmalo o corrígelo.
+> - Niveles honestos: `verificado` solo con cotejo contra fuente primaria/fiable; `parcial` si solo
+>   hay fuente secundaria o registro; `pendiente` si no se ha revisado.
+> - Nunca inventes un productor ni un dato. Mejor vacío que falso.
+> - Elimina desinformación (enlaces a entidades ajenas) aunque implique dejar el campo vacío.
+> - Purga/borra filas solo con evidencia fuerte (cotejo de registro + ausencia de presencia real).
 
-## Estado (snapshot inicial: 2026-06-07)
+## Estado actual (2026-06-07)
 
-- Snapshot inicial: `verificado` 35 · `parcial` 16 · `pendiente` 2.922
-- **Última actualización (2026-06-07, tras lotes 1 y 2 completos):** `verificado` 94 · `parcial` 19 · `pendiente` 2.860
-- Modo acordado: **verificación profunda** (~25 filas/lote), **lote a lote bajo demanda**.
-- Estimación: ~117 lotes para cubrir la provincia.
+- Filas: **2.960** · `verificado` **94** · `parcial` **24** · `pendiente` **2.842**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han purgado 13 filas y verificado/parcial el resto).
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~115 lotes estimados.
+- **Cerrados al 100%:** Lote 1 (Eixample) y Lote 2 (Ciutat Vella). 0 pendientes en ambos.
+- **Siguiente:** Lote 3 = **Barcelona - Gràcia** (32 pendientes → 2 sub-lotes).
+- Último push: commit en `main` con lotes 1-2; la decisión del cluster está en working tree
+  (pendiente de push según el flujo bajo demanda).
 
-## Unidad de trabajo
+## Cómo retomar en 1 minuto
 
-- **1 lote = 1 municipio**, tope ~25 filas. Municipios grandes se parten por categoría (sub-lote a/b/c).
-- Dentro del lote: primero filas con web/Instagram (confirmación barata), luego solo-GoogleMaps.
-- Orden global: por impacto (capitales de comarca + distritos de Barcelona primero).
+1. Lee este archivo entero (estado + patrones + gotchas).
+2. Elige el siguiente municipio de la **worklist** (más abajo) en orden de impacto.
+3. Extrae sus pendientes priorizando los que tienen web/IG (baratos):
+   ```bash
+   python3 - <<'PY'
+   import csv
+   M="Barcelona - Gràcia"   # <-- municipio objetivo
+   rows=list(csv.DictReader(open('data/csv/catalunya/barcelona.csv',encoding='utf-8')))
+   p=[r for r in rows if r['municipio'].strip()==M and r['verificacion'].strip()=='pendiente']
+   p.sort(key=lambda r:-((r['web'].strip()!='')*2+(r['Instagram'].strip()!='')))
+   for r in p[:25]:
+       print(r['slug'],'|',r['categoria'],'|',r['nombre'],'| web=',r['web'][:35])
+   PY
+   ```
+4. Verifica cada fila por web (ver **protocolo** y **patrones**).
+5. Edita con el **script column-aware CRLF-safe** (plantilla más abajo). Nunca a mano fila a fila.
+6. Valida: `npx pnpm check:csv:changed` → `npx pnpm verify:data`. Actualiza este ledger.
+
+## ⚠️ Gotchas técnicos (leer antes de editar)
+
+- **El CSV es CRLF (`\r\n`).** Un `open().read()/write()` de Python en modo texto lo convierte a LF
+  y reescribe el fichero entero (diff de ~3.000 líneas, ruido y conflicto con otros agentes).
+  **Siempre** abrir con `newline=""`, conservar el `\r\n`/`\n` de cada línea, y al final comprobar:
+  ```bash
+  python3 -c "b=open('data/csv/catalunya/barcelona.csv','rb').read(); print('CRLF ok' if b.count(b'\r\n')==b.count(b'\n') and b'\r\r' not in b else 'PROBLEMA')"
+  ```
+- **No reescribas todo el fichero.** Modifica solo las líneas cuyo `slug` está en tu lote; el resto
+  byte-idéntico. Esto preserva el trabajo de otros agentes y mantiene el diff pequeño.
+- **Multiagente:** toca solo `barcelona.csv`, este ledger y `public/productores/**/barcelona/`.
+  **No toques** `girona.csv`, `lleida.csv`, `tarragona.csv` ni `scripts/enrich-producer-images.py`
+  (otros agentes). Al commitear, haz `git add` explícito de tus rutas; nunca `git add -A`/`git checkout` del CSV.
+- **Orden de columnas (0-based):** 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella ·
+  5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram ·
+  13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
+- **Contrato:** `verificado` exige coords + ≥1 enlace (web/GMaps/IG/FB) — el audit lo bloquea si no.
+  `Venta online` ∈ {sí, no, no comprobado}. `Canal de venta` solo si `Venta online=sí`.
+- Al borrar una fila con imagen, borra también su `.webp` (queda huérfana → warning en `check:images`).
+
+### Plantilla de edición column-aware (CRLF-safe)
+```python
+import csv, io
+PATH="data/csv/catalunya/barcelona.csv"
+CHANGES={ "slug-aqui": {17:"verificado", 18:"sí", 19:"ecommerce"} }   # idx_columna: valor
+DELETE=set()                                                          # slugs a borrar
+with open(PATH,encoding="utf-8",newline="") as f: lines=f.readlines()
+out=[]
+for line in lines:
+    eol="\r\n" if line.endswith("\r\n") else ("\n" if line.endswith("\n") else "")
+    body=line[:-len(eol)] if eol else line
+    slug=body.split(",",1)[0]
+    if slug in DELETE: continue
+    if slug in CHANGES:
+        f0=next(csv.reader(io.StringIO(body)))
+        for i,v in CHANGES[slug].items(): f0[i]=v
+        o=io.StringIO(); csv.writer(o,lineterminator="").writerow(f0); body=o.getvalue()
+    out.append(body+eol)
+open(PATH,"w",encoding="utf-8",newline="").writelines(out)
+```
 
 ## Protocolo por fila (verificación profunda)
 
-Contrastar cada fila contra **fuente primaria** (web propia + Google Maps) y **registro oficial**
-(DAR venda de proximitat / opendata-cat), confirmando `Venta online` con checkout vivo HOY:
+Contrasta cada fila contra **fuente primaria** (web propia + Google Maps) y, para nombres de registro,
+contra el **DAR** (ver más abajo). Confirma `Venta online` con un canal de pedido vivo HOY.
 
-- [ ] `nombre` / `municipio` coinciden con la fuente
+- [ ] `nombre` / `municipio` coinciden con la fuente (ojo: la dirección/coords pueden delatar otro municipio)
 - [ ] `categoria` ∈ `VALID_CATEGORIES` (`scripts/audit-csv.js`)
 - [ ] `direccion` + `lat`/`lon` coherentes (geo-check ≤15 km)
-- [ ] `telefono` / `correo` / `web` vivos y correctos (fetch fallido ≠ web muerta)
+- [ ] `telefono` / `correo` / `web` vivos y **del productor** (no de un tercero)
 - [ ] `Instagram` / `Facebook` = perfil oficial real
+- [ ] `Google Maps` apunta al sitio correcto (no a otro negocio)
 - [ ] `imagen` = logo/imagotipo (nunca `enrich:images --apply` en bloque)
-- [ ] `Venta online` = `sí` solo con checkout vivo hoy; si no `no` / `no comprobado`
-- [ ] `Canal de venta` si `Venta online = sí`
-- [ ] `verificacion` → `verificado` si todo cuadra; `parcial` si solo fuente secundaria
+- [ ] `Venta online` + `Canal de venta` (ver regla)
+- [ ] `verificacion` → `verificado` (todo cuadra) / `parcial` (solo secundaria o registro) / `pendiente`
 
-### Comandos del lote
+## Regla de `Venta online` / `Canal de venta`
 
+Decisión por **canal de pedido online real**, confirmado hoy:
+- **`sí`** si hay: tienda web con carrito/checkout (`ecommerce`); o pedido por **Glovo/UberEats/Bakering**
+  u otro marketplace (`marketplace`); o **"pedir online" por WhatsApp** (`whatsapp`); email/teléfono de
+  pedido (`email`/`telefono`). Varios → pipe: `marketplace|whatsapp`.
+- **`no`** si solo hay web informativa, "en construcción", o solo tienda física.
+- **`no comprobado`** si no puedes confirmarlo (p. ej. tienda caída temporalmente, o no ves checkout
+  pero el dato previo decía `sí`). **No** afirmes `sí` sin evidencia; **no** degrades a `no` a la ligera.
+- Corrige `sí/ecommerce` erróneos (visto: catálogo sin carrito marcado como `sí`).
+
+## Catálogo de patrones por productor (cada uno tiene el suyo)
+
+Reconoce el patrón y actúa en consecuencia:
+
+1. **Marca consolidada con web propia** (Escribà, Fargas, Cacao Sampaka…): `WebFetch` su web →
+   confirma negocio + checkout → `verificado` + `Venta online` según regla. ~1 fetch.
+2. **Solo IG / sin web** (panaderías, heladerías de barrio): `WebSearch` para confirmar existencia,
+   dirección y si vende online. Si es real → `verificado`; suele ser `Venta online=no`.
+3. **Marca con varias sedes**: comprueba a qué sede apuntan **dirección + coords** y corrige `municipio`
+   si no cuadra (visto: Ogham con coords en Sant Martí pero `municipio`=Eixample → corregido).
+4. **Punto de consumo, no productor** (café que sirve café de terceros; taproom-colab que no elabora
+   in situ): existe pero no es productor/elaborador → `parcial`, `Venta online=no`.
+5. **Web muerta vs web secuestrada:**
+   - Fetch falla por SSL/http/timeout/ECONNREFUSED → **NO** borres la web (AGENTS: un fetch fallido no
+     es un sitio muerto); confirma por búsqueda.
+   - La web **carga pero muestra un negocio ajeno** (gestoría, dominio de apuestas, parked 402) →
+     **blanquea la web** (es desinformación) y baja a `parcial`/`pendiente` según el resto.
+6. **Enlaces cruzados auto-rellenados**: web/IG/FB/GMaps apuntan a entidades ajenas (ICAB, Diputació,
+   joyería, "Solsona Leather", "POMA ARQUITECTURA"…). Límpialos. Si además es nombre de registro → patrón 7.
+7. **Fila de registro (`COGNOM1 COGNOM2, NOM` o `… SL`)** sin presencia propia: candidata a cluster.
+   Cotéjala con el **DAR** (abajo). Match exacto → `parcial`; sin match + sin web → **purgar**.
+8. **Mal fichada**: provincia/categoría equivocada (bodega de Tarragona en Barcelona; restaurante como
+   "Fruta y verdura"; sin datos) → **purgar** (o flag para mover, sin tocar el CSV de otra provincia).
+9. **Web del CSV obsoleta pero el productor es real** (Forn Sant Josep, Forn Boix): **actualiza** la web
+   al dominio correcto y añade redes/imagen que falten.
+
+## Cotejo con el registro DAR (venda de proximitat)
+
+Para filas de registro (patrón 7). Dataset Socrata oficial, consultable por `curl`:
 ```bash
-grep -n "<municipio>" data/csv/catalunya/barcelona.csv   # localizar filas
-npx pnpm list:province barcelona --pendientes            # roster pendiente
-# verificación web por fila → edición quirúrgica línea a línea
-npx pnpm check:csv:changed                                # validar solo lo tocado
-npx pnpm verify:data                                     # gate de cierre
-# actualizar este ledger + git push (Vercel auto-deploy)
+curl -s "https://analisi.transparenciacatalunya.cat/resource/xmyy-7xqi.csv?\$limit=5000" -o /tmp/dar.csv
 ```
+- Columnas: `nom_productor` (`COGNOM1 COGNOM2, NOM`), `num_acreditacio`, `nif`, `adreca`, `codipostal`,
+  `municipi`, `comarca`, `productes`, `venda_directa`, `venda_circuit_curt`, `tel_fon`, `correu`, `marca_comercial`.
+- Grep **normalizando acentos** y exige **match de entidad** (mismos apellidos **y** `municipi`), no solo
+  apellido compartido. Match → `parcial` (registro confirma existencia, **no** venta online); aprovecha para
+  corregir `tel`/`correu`/`productes`/`marca` con los datos oficiales.
+- **Caveat:** el dataset solo trae quienes consintieron publicarse; "no constar" no prueba inexistencia,
+  pero junto a la ausencia de web propia justifica la purga.
 
-## Pasada 0 — saneamiento sin web (HECHA: 2026-06-07, sin ediciones)
+## Cluster — RESUELTO (2026-06-07)
 
-Investigada y cerrada. **No hay ningún arreglo seguro a ciegas:**
+18 filas de registro entre Eixample y Ciutat Vella, con enlaces auto-rellenados a entidades ajenas.
+Cotejadas contra DAR `xmyy-7xqi`:
+- **Mantenidas `parcial` (5, constan en DAR Barcelona):** `royo-gutierrez-daniel-…-ciutat-vella`,
+  `agropecuaria-de-moya-sl-…-eixample` (contacto actualizado, marca LA ROVIRA),
+  `gerundense-agricola-y-pecuaria-sl-…-eixample`, `agricola-de-agell-sl-…-eixample`,
+  `agricola-poma-sl-…-eixample`.
+- **Purgadas (13):** grupo A mal fichado (`bodega-el-grial-sl` = bodega de El Perelló/Tarragona;
+  `can-burbo-sa` = restaurante; `tamarit-barrull-maria` = sin datos) + 10 sin match DAR (Comisso,
+  Castan Escolano, Fabrega Lagarde, Antonio Carola, Cristina Casar, Ma Luisa Diaz-Aguado, Daniel Solsona,
+  Tusell Fruitos, Goñi Beltran, Zain Maitreya). Sus 4 imágenes huérfanas también borradas.
 
-- **0 errores bloqueantes** (estructura limpia).
-- **Avisos geo (15–100 km, soft):** los municipios afectados tienen los productores **dispersos**
-  (spread 18–75 km), no agrupados → el centroide es correcto; son **coordenadas individuales mal
-  puestas** en 1–4 filas outlier por municipio. No procede override en bloque. Cada caso necesita
-  su dirección real (web) → se resuelve en el lote de su municipio.
-- **96 `direccion` "no útil":** en su mayoría campo vacío o ruido (`(Avià)`, `Barcelona (sin local
-  fijo)`); rellenar exige fuente real (web) → también al lote.
+## Casos flageados (pendientes de una pasada futura)
 
-**Regla operativa para cada lote:** antes de cerrar, correr el audit filtrado al municipio y dejar a 0
-sus flags geo + dirección:
-
-```bash
-node scripts/audit-csv.js --mode=quality data/csv/catalunya/barcelona.csv 2>&1 | grep -i "<municipio>"
-```
+- ⚠️ `agricola-poma-sl-barcelona-eixample` (`parcial`): el DAR dice que es **aceite (marca LOMASOLI)** en
+  **Gran Via Carles III 133**, no "manzanas" en Gran Via Corts 501. Corregir categoría/productos/dirección/
+  coords (re-geocodificar) en una pasada dedicada.
+- `bodega-el-grial-sl`: purgada de Barcelona; si interesa, que el agente de Tarragona la añada a
+  `tarragona.csv` (bodega real en El Perelló).
 
 ## Worklist priorizada (pendientes por municipio)
 
-Leyenda estado: ⬜ pendiente · 🟨 en curso · ✅ hecho
+Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin tocar = snapshot inicial.)
 
-| # | Municipio | Pendientes | Sub-lotes | Estado | Fecha | Verificados |
+| # | Municipio | Pendientes | Sub-lotes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|---|
-| 1 | Barcelona - Eixample | 13 (cluster) | — | ✅ | 2026-06-07 | 29 (1a+1b) + 5 parcial; 13 pendientes = cluster a decidir |
-| 2 | Barcelona - Ciutat Vella | 5 (cluster) | — | ✅ | 2026-06-07 | 30 (2a+2b); 5 pendientes = cluster |
-| 3 | Barcelona - Gràcia | 32 | 2 | ⬜ | | |
-| 4 | Barcelona - Sant Martí | 26 | 2 | ⬜ | | |
+| 1 | Barcelona - Eixample | 0 | — | ✅ | 2026-06-07 | 29 verif + 4 parcial (DAR); 9 purgadas |
+| 2 | Barcelona - Ciutat Vella | 0 | — | ✅ | 2026-06-07 | 30 verif + 1 parcial (DAR); 4 purgadas |
+| 3 | Barcelona - Gràcia | 32 | 2 | ⬜ | | **SIGUIENTE** |
+| 4 | Barcelona - Sant Martí | 26 | 2 | ⬜ | | +1 verif (Ogham reubicado aquí) |
 | 5 | Barcelona - Sants-Montjuïc | 23 | 1 | ⬜ | | |
 | 6 | Barcelona (resto) | 22 | 1 | ⬜ | | |
 | 7 | Terrassa | 57 | 3 | ⬜ | | |
@@ -98,49 +207,14 @@ Leyenda estado: ⬜ pendiente · 🟨 en curso · ✅ hecho
 | 28 | Castellbisbal | 21 | 1 | ⬜ | | |
 | 29 | Prat de Llobregat | 21 | 1 | ⬜ | | |
 | 30 | Masnou | 20 | 1 | ⬜ | | |
-| — | _resto (369 municipios)_ | 1.939 | ~78 | ⬜ | | |
-
-## Cluster a decidir (editorial)
-
-Filas de **Eixample con nombre personal (formato registro DAR)** y enlaces basura auto-rellenados
-(apuntaban a entidades ajenas: gestoría, Colegio de Abogacía, joyería, restaurante, iluminación).
-No verificables como productores reales con presencia propia. Enlaces falsos **ya limpiados**;
-quedan en `pendiente`. **Decisión pendiente:** cotejar contra el registro DAR venda de proximitat
-(¿son operadores reales con dirección fiscal en Eixample?) o eliminar.
-
-Los 13 (enlaces ya limpiados, en `pendiente`):
-
-- `comisso-sabrina-barcelona-eixample` (Charcutería, Tamarit 99)
-- `castan-escolano-juan-barcelona-eixample` (Despensa, Aragó 207) — **coords mal** (~10 km, zona Hospitalet)
-- `fabrega-lagarde-jordi-barcelona-eixample` (Despensa, Consell de Cent 289) — web era una gestoría
-- `antonio-carola-diaz-aguado-barcelona-eixample` (Fruta y verdura, Mallorca 283) — web era el ICAB
-- `cristina-casar-fernandez-barcelona-eixample` (Fruta y verdura, Diagonal 413) — web era joyería (Tamborero)
-- `ma-luisa-diaz-aguado-neyra-barcelona-eixample` (Fruta y verdura, Rambla Catalunya 126) — FB/IG eran la Diputació
-- `daniel-solsona-maria-barcelona-eixample` (Otros/Blat Tou, Pau Claris 161) — GMaps era "Solsona Leather"
-- `tamarit-barrull-maria-barcelona-eixample` (Despensa, Tamarit 162) — sin datos; GMaps era "Tamarit Beach" → **candidata a eliminar**
-- `agropecuaria-de-moya-sl-barcelona-eixample` (Charcutería, Ronda Universitat 14) — SL, sin web/social
-- `gerundense-agricola-y-pecuaria-sl-barcelona-eixample` (Charcutería, Mallorca 272) — SL; GMaps era "Agropecuaria Casas"
-- `agricola-de-agell-sl-barcelona-eixample` (Fruta y verdura, Diagonal 433) — SL; GMaps era "Lluis Agell SL"
-- `agricola-poma-sl-barcelona-eixample` (Fruta y verdura, Gran Via 501) — SL; GMaps era "POMA ARQUITECTURA"
-
-Cluster **Ciutat Vella** (mismo patrón; enlaces dañinos ya blanqueados donde los había):
-
-- `royo-gutierrez-daniel-barcelona-ciutat-vella` (Fruta y verdura/Horta) — nombre de registro, sin presencia
-- `tusell-fruitos-nolasc-barcelona-ciutat-vella` (Fruta y verdura) — nombre de registro, sin presencia
-- `goni-beltran-de-garizuieta-teresa-barcelona-ciutat-vella` (Otros/oli) — nombre de registro, sin presencia
-- `zain-maitreya-sl-barcelona-ciutat-vella` (Fruta y verdura, Boqueria 33) — web era `sanovation.co` (parked 402) → blanqueada
-- `can-burbo-sa-barcelona-ciutat-vella` (Fruta y verdura, Joan de Borbó 50) — web caída + horario de restaurante; **categoría dudosa**, posible restaurante
-- `ma-condimentos-vivos-de-asia-barcelona-ciutat-vella` (Despensa) — **NO es cluster** pero su web `macondiments.com` servía un sitio chino de apuestas (dominio caducado/secuestrado) → web blanqueada, queda `parcial` con IG
-
-**Caso aparte — `bodega-el-grial-sl-barcelona-eixample`** (Bodega): productor **real pero ubicado en El Perelló
-(Tarragona)**, DO Catalunya, no en Eixample. Web real añadida (`bodegaselgrial.com`). Decisión: ¿mover a
-`tarragona.csv` (lo edita otro agente ahora — NO tocar) o eliminar de Barcelona? Dejada en `pendiente`.
+| — | _resto (369 municipios)_ | 1.939 | ~78 | ⬜ | | recomputar al llegar |
 
 ## Registro de lotes cerrados
 
-| Fecha | Municipio / sub-lote | Filas | → verificado | → pendiente (limpiado) | Notas |
+| Fecha | Lote | Filas | → verificado | otros | Notas |
 |---|---|---|---|---|---|
-| 2026-06-07 | Barcelona - Eixample 1a | 25 | 21 | 4 | Ogham reubicado a Sant Martí; Forn Sant Josep web→fornsantjosep1913.com; 4 del cluster con enlaces limpiados |
-| 2026-06-07 | Barcelona - Eixample 1b | 19 | 8 (+2 parcial) | 9 | Rooftop/Ferment9/22:22 con tienda online; El Grial flag (Tarragona); 9 del cluster limpiados |
-| 2026-06-07 | Barcelona - Ciutat Vella 2a | 25 | 25 | 0 | Todos reales (El Magnífico, Fargas, Bubó, Hofmann…); regla Venta online = canal pedido real (web/Glovo/WhatsApp) |
-| 2026-06-07 | Barcelona - Ciutat Vella 2b | 11 | 5 (+1 parcial) | 5 | Tiramisús (Glovo); Forn Boix +web/FB; Ma Condimentos web hijack blanqueada; 5 cluster pendientes |
+| 2026-06-07 | Eixample 1a | 25 | 21 | 4 limpiados | Ogham→Sant Martí; Forn Sant Josep web→fornsantjosep1913.com |
+| 2026-06-07 | Eixample 1b | 19 | 8 | 2 parcial · 9 limpiados | Rooftop/Ferment9/22:22 con tienda; El Grial flag |
+| 2026-06-07 | Ciutat Vella 2a | 25 | 25 | — | Todos reales (El Magnífico, Fargas, Bubó, Hofmann…) |
+| 2026-06-07 | Ciutat Vella 2b | 11 | 5 | 1 parcial · 5 cluster | Tiramisús (Glovo); Forn Boix +web/FB; Ma Condimentos web hijack |
+| 2026-06-07 | Cluster (DAR) | 18 | — | 5 parcial · 13 purgadas | Cotejo DAR xmyy-7xqi; +4 imágenes huérfanas borradas |
