@@ -15,10 +15,10 @@
 
 ## Estado actual (2026-06-07)
 
-- Filas: **2.960** · `verificado` **152** · `parcial` **40** · `pendiente` **2.768**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han purgado 13 filas y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~103 lotes estimados.
-- **Cerrados:** Lotes 1-5 (Eixample, Ciutat Vella, Gràcia, Sant Martí, Sants-Montjuïc). Flags acumulados abajo.
+- Filas: **2.952** · `verificado` **152** · `parcial` **39** · `pendiente` **2.761**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 21 filas** y verificado/parcial el resto).
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~102 lotes estimados.
+- **Cerrados:** Lotes 1-5 (Eixample, Ciutat Vella, Gràcia, Sant Martí, Sants-Montjuïc) — **sin flags pendientes**.
 - **Siguiente:** Lote 6 = **Barcelona (resto)** (22 pendientes → 1 sub-lote).
 - Último push: lotes 1-5 + cluster + manual en `main`.
 
@@ -162,30 +162,17 @@ Cotejadas contra DAR `xmyy-7xqi`:
   Castan Escolano, Fabrega Lagarde, Antonio Carola, Cristina Casar, Ma Luisa Diaz-Aguado, Daniel Solsona,
   Tusell Fruitos, Goñi Beltran, Zain Maitreya). Sus 4 imágenes huérfanas también borradas.
 
-## Casos flageados (pendientes de una pasada futura)
+## Flags — RESUELTOS (2026-06-07)
 
-- ✅ `exalta-chocolat-barcelona-gracia`: RESUELTO en 3b — reubicada a `municipio`=Sant Antoni de Vilamajor
-  (coords ya correctas), dirección a nivel localidad, web `exaltachocolate.com`, tienda online confirmada →
-  `verificado`/`sí`. (El slug conserva "gracia" por estabilidad; el municipio manda.)
-- ⚠️ `bodega-la-riera-barcelona-gracia` (`pendiente`): **bar-celler** de Vallcarca que sirve/revende vinos
-  y vermut catalanes (no produce). Real pero **probablemente no es un productor Km0** → decidir: purgar
-  (como Can Burbo) o recategorizar. Dejada en `pendiente`.
-- ⚠️ `cesc-jk-cerveses-eco-bio-barcelona-sant-marti` (`pendiente`): **DUPLICADO** de
-  `la-cervesera-del-poblenou-barcelona-sant-marti` (la misma cervecera elabora las marcas CESC i JK; misma
-  dirección/coords). Candidata a **borrar** (la canónica La Cervesera del Poblenou ya está `verificado`).
-- ⚠️ `corpen-barcelona-sant-marti` (`verificado`): es una **destilería de gin** (marca Llevant), no una
-  bodega de vino. No hay categoría de destilados; `categoria=Bodega` es imprecisa → recategorizar (¿`Otros`?).
-- `hoppiness-barcelona-sant-marti` (`parcial`): **bar** de cervezas rotativas de terceros (no elabora) →
-  como Bodega La Riera, decidir si es productor Km0.
-- 🗑️ **Candidatas a purga — Sants-Montjuïc** (sin DAR, sin presencia real, fruta/verdura revendedora o
-  fantasma; webs falsas ya limpiadas): `mas-de-vicenta-cb-…`, `castelroc-sa-…`, `fruites-maria-…`,
-  `agrima-…` (web era de maquinaria agrícola), `sabrina-comisso-…` (web era un hotel; su gemela de Eixample
-  ya se purgó). Pendientes de confirmación para borrar en bloque (misma lógica que el cluster de lotes 1-2).
-
-- ⚠️ `agricola-poma-sl-barcelona-eixample` (`parcial`): el DAR dice que es **aceite (marca LOMASOLI)** en
-  **Gran Via Carles III 133**, no "manzanas" en Gran Via Corts 501. Corregir categoría/productos/dirección/
-  coords (re-geocodificar) en una pasada dedicada.
-- `bodega-el-grial-sl`: purgada de Barcelona; si interesa, que el agente de Tarragona la añada a
+- ✅ `exalta-chocolat-barcelona-gracia`: reubicada a Sant Antoni de Vilamajor, `verificado`/`sí` (en 3b).
+- ✅ **Purgadas (8):** `bodega-la-riera-…-gracia` (bar-celler, revende) y `hoppiness-…-sant-marti` (bar de
+  cervezas de terceros) — no son productores; `cesc-jk-…-sant-marti` (duplicado de
+  `la-cervesera-del-poblenou-…`, que queda como canónica); y las 5 de Sants-Montjuïc sin DAR ni presencia
+  (`mas-de-vicenta-cb`, `castelroc-sa`, `fruites-maria`, `agrima`, `sabrina-comisso`). +4 imágenes huérfanas.
+- ✅ `corpen-barcelona-sant-marti`: recategorizada `Bodega` → `Otros` (es destilería de gin, no bodega).
+- ✅ `agricola-poma-sl` (`parcial`): corregida con datos DAR — `Despensa artesanal` / Aceite de oliva /
+  Gran Via de Carles III 133 / `municipio`=Barcelona - Les Corts / coords re-geocodificadas / contacto LOMASOLI.
+- (Histórico) `bodega-el-grial-sl`: purgada antes; si interesa, que el agente de Tarragona la añada a
   `tarragona.csv` (bodega real en El Perelló).
 
 ## Worklist priorizada (pendientes por municipio)
@@ -196,9 +183,9 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 |---|---|---|---|---|---|---|
 | 1 | Barcelona - Eixample | 0 | — | ✅ | 2026-06-07 | 29 verif + 4 parcial (DAR); 9 purgadas |
 | 2 | Barcelona - Ciutat Vella | 0 | — | ✅ | 2026-06-07 | 30 verif + 1 parcial (DAR); 4 purgadas |
-| 3 | Barcelona - Gràcia | 1 (flag) | — | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni; 1 flag (Bodega La Riera) |
-| 4 | Barcelona - Sant Martí | 1 (flag) | — | ✅ | 2026-06-07 | 20 verif + 5 parcial (DAR); 1 flag (CESC JK dup) |
-| 5 | Barcelona - Sants-Montjuïc | 5 (flags) | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 candidatas a purga (cluster) |
+| 3 | Barcelona - Gràcia | 0 | — | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni; Bodega La Riera purgada |
+| 4 | Barcelona - Sant Martí | 0 | — | ✅ | 2026-06-07 | 20 verif + 5 parcial; CESC JK (dup) y Hoppiness (bar) purgados |
+| 5 | Barcelona - Sants-Montjuïc | 0 | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
 | 6 | Barcelona (resto) | 22 | 1 | ⬜ | | |
 | 7 | Terrassa | 57 | 3 | ⬜ | | |
 | 8 | Sabadell | 45 | 2 | ⬜ | | |
@@ -240,3 +227,4 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-07 | Sant Martí 4a | 25 | 20 | 4 parcial · 1 flag | Poblenou (Nomad, Väcka, Bioma, El Tío Che…); CESC JK=La Cervesera del Poblenou dup; Hoppiness=bar; Corpen=gin |
 | 2026-06-07 | Sant Martí 4b | 1 | 0 | 1 parcial (DAR) | Blue Zafir Invest SL en DAR→parcial |
 | 2026-06-07 | Sants-Montjuïc 5 | 23 | 11 | 7 parcial · 5 flag-purga | DAR: Palaudo/Calvet/Prats→parcial; 5 sin DAR→candidatas purga (webs falsas limpiadas) |
+| 2026-06-07 | Flags resueltos | 10 | — | 8 purgadas · 2 corregidas | Purga (bares/dup/cluster) +4 imgs; Corpen→Otros; Agrícola Poma→aceite LOMASOLI/Les Corts |
