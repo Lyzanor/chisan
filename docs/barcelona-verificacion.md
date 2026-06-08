@@ -13,14 +13,18 @@
 > - Elimina desinformación (enlaces a entidades ajenas) aunque implique dejar el campo vacío.
 > - Purga/borra filas solo con evidencia fuerte (cotejo de registro + ausencia de presencia real).
 
-## Estado actual (2026-06-07)
+## Estado actual (2026-06-08)
 
-- Filas: **2.952** · `verificado` **152** · `parcial` **39** · `pendiente` **2.761**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 21 filas** y verificado/parcial el resto).
+- Filas: **2.951** · `verificado` **201** · `parcial` **44** · `pendiente` **2.706**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 22 filas** y verificado/parcial el resto).
 - Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~102 lotes estimados.
 - **Cerrados:** Lotes 1-5 (Eixample, Ciutat Vella, Gràcia, Sant Martí, Sants-Montjuïc) — **sin flags pendientes**.
-- **Siguiente:** Lote 6 = **Barcelona (resto)** (22 pendientes → 1 sub-lote).
-- Último push: lotes 1-5 + cluster + manual en `main`.
+- **En curso:** Lote 6 = **Barcelona (resto)** = la ciudad menos los 5 distritos cerrados. OJO: el
+  worklist lo estimaba en 22 (solo `municipio==Barcelona`), pero el alcance real eran **113 pendientes**
+  (incluye Sarrià-Sant Gervasi, Horta-Guinardó, Sant Andreu, Nou Barris, Les Corts y variantes con barrio).
+  Hechos sub-lotes **6a (filas con web, lote 1)** y **6b (filas con web, lote 2)** → **55 resueltas**
+  (49 verif + 5 parcial + 1 purga). **Quedan 58 pendientes:** 11 solo-IG (6c) + 47 de registro/cruzadas (6d, cotejo DAR).
+- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a+6b.
 
 ## Cómo retomar en 1 minuto
 
@@ -186,7 +190,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 3 | Barcelona - Gràcia | 0 | — | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni; Bodega La Riera purgada |
 | 4 | Barcelona - Sant Martí | 0 | — | ✅ | 2026-06-07 | 20 verif + 5 parcial; CESC JK (dup) y Hoppiness (bar) purgados |
 | 5 | Barcelona - Sants-Montjuïc | 0 | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
-| 6 | Barcelona (resto) | 22 | 1 | ⬜ | | |
+| 6 | Barcelona (resto) | 113 | ~5 | 🟨 | 2026-06-08 | 6a+6b hechos (55 res.); quedan 58: 11 IG + 47 registro/DAR |
 | 7 | Terrassa | 57 | 3 | ⬜ | | |
 | 8 | Sabadell | 45 | 2 | ⬜ | | |
 | 9 | Mataró | 50 | 2 | ⬜ | | |
@@ -228,3 +232,5 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-07 | Sant Martí 4b | 1 | 0 | 1 parcial (DAR) | Blue Zafir Invest SL en DAR→parcial |
 | 2026-06-07 | Sants-Montjuïc 5 | 23 | 11 | 7 parcial · 5 flag-purga | DAR: Palaudo/Calvet/Prats→parcial; 5 sin DAR→candidatas purga (webs falsas limpiadas) |
 | 2026-06-07 | Flags resueltos | 10 | — | 8 purgadas · 2 corregidas | Purga (bares/dup/cluster) +4 imgs; Corpen→Otros; Agrícola Poma→aceite LOMASOLI/Les Corts |
+| 2026-06-08 | Barcelona-resto 6a | 25 | 22 | 2 parcial · 1 purga | Web propia (Les Corts/Ciutat Vella/Horta…). Purga: The Milk and Coffee = Milk Bar & Bistro (restaurante) +img. Oggi web .it (Udine) blanqueada; Yellow Bakery/Cèlia dominios en venta → web corregida/blanqueada; Artemis=centro estética (parcial); La Cantina Solar food-truck (parcial) |
+| 2026-06-08 | Barcelona-resto 6b | 30 | 27 | 3 parcial | Web propia (Sant Andreu/Sarrià-SG/Nou Barris…). Productores reales (Salazones Moreno, Exotic Sal, LOV Ferments, Cyclic, Almogàver, Panes Creativos, Pasta Spada, Suca'l, Baixas, Blasi…). Suca'l web→sucal.es; Blasi web→raíz. Parcial: Ous Susana + Formatgeria Ireneu (distribuidores/reseller), Blasi (web caída, no comprobado) |
