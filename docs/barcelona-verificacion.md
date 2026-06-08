@@ -15,14 +15,15 @@
 
 ## Estado actual (2026-06-08)
 
-- Filas: **2.932** · `verificado` **273** · `parcial` **113** · `pendiente` **2.546**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 41 filas** y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~96 lotes estimados.
-- **Cerrados:** Lotes 1-8. Lote 6 Barcelona-resto (113), Lote 7 Terrassa (57, 0 purgas),
-  **Lote 8 = Sabadell** COMPLETO (45 pend en 8a-8d: 24 verif + 19 parcial + 2 purgas). DAR confirmó
-  7 productores reales de Sabadell; relocalizados a Terrassa Delightcious y Forn del Progrés (eran de allí).
-- **Siguiente:** Lote 9 = **Mataró** (50 pendientes → ~2 sub-lotes).
-- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a-6d + 7a-7d + 8a-8d.
+- Filas: **2.928** · `verificado` **302** · `parcial` **130** · `pendiente` **2.496**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 45 filas** y verificado/parcial el resto).
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~94 lotes estimados.
+- **Cerrados:** Lotes 1-9. Lote 6 Barcelona-resto (113), Lote 7 Terrassa (57), Lote 8 Sabadell (45),
+  **Lote 9 = Mataró** COMPLETO (50 pend en 9a-9d: 29 verif + 17 parcial + 4 purgas). DAR confirmó muchos
+  pagesos del Maresme (Can Gallard, Can Redeu, Horta Pera, Ayter, Can Bleda) y destapó 2 dups
+  (Chamarro=Can Margarida, Santana Flores=Brèscat).
+- **Siguiente:** Lote 10 = **Manresa** (45 pendientes → ~2 sub-lotes).
+- Último push: lotes 6-8 en `main` (ff00310). Pendiente de push: 9a-9d.
 
 ## Cómo retomar en 1 minuto
 
@@ -191,7 +192,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 6 | Barcelona (resto) | 113 | 4 | ✅ | 2026-06-08 | 6a-6d; ~96 verif/parcial + 17 purgas; 0 pendientes |
 | 7 | Terrassa | 57 | 4 | ✅ | 2026-06-08 | 7a-7d; 30 verif + 27 parcial; 0 purgas |
 | 8 | Sabadell | 45 | 4 | ✅ | 2026-06-08 | 8a-8d; 24 verif + 19 parcial + 2 purgas |
-| 9 | Mataró | 50 | 2 | ⬜ | | |
+| 9 | Mataró | 50 | 4 | ✅ | 2026-06-08 | 9a-9d; 29 verif + 17 parcial + 4 purgas |
 | 10 | Manresa | 45 | 2 | ⬜ | | |
 | 11 | Vic | 46 | 2 | ⬜ | | |
 | 12 | Vilanova i la Geltrú | 40 | 2 | ⬜ | | |
@@ -240,3 +241,6 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-08 | Sabadell 8a+8b | 14 | 14 | — | Webs propias. Sanmy no aplica (Terrassa). Reales: 0x100 Gluten/Krum, Artbo (1969), Cafès Pont (1952, tostador), Mateu (1925), Jové Xarcuters, La Crème, Mas Avícola, Moreno Antolinos (1951), Coco y Canela, Brunni (parada Mercat Central!), Mussons (enoteca Sabadell 2010), Valero, Xocolates Genescà (1928), La Fem (obrador Sant Cugat). Webs cruzadas: canbanach=mascotas, vallriberanoray=arquitecto, jsalvado=admin. fincas |
 | 2026-06-08 | Sabadell 8c | 10 | 8 | 1 parcial · 1 purga | Medran (1958), La Micro/Or i Plata (cervesers 2011), Llegums Roca (web→elsllegumsroca.com, +ecommerce), Fleca E.Valls (1971), Sant Marc (1976), Benet Forners (1962). Delightcious y Forn del Progrés relocalizados a Terrassa (mal fichados). Umami parcial (¿Rubí?). Purga: Finca Alavedra (jsalvado=admin. fincas, no productor) |
 | 2026-06-08 | Sabadell 8d | 21 | 2 | 18 parcial · 1 purga | Cluster registro. Cotejo DAR (7 reales Sabadell): Domingo Garcia (Can Ustrell), Gabarrón (Jadeverd), Gaoxing (cogombre→recat), Girbau Solà (vins), Moliner (Remeiets→recat), Rosell Canals (Hort del Catre), Vallribera Tubau (ous, web arquitecto blanqueada). Verif: Cal Blau (embotits 1945), La Palma Pastissers. Forn Viñas/Domènec/Villaró parecen de Castellar (parcial). Purga: Guiu Aran (sin datos ni DAR) |
+| 2026-06-08 | Mataró 9a+9b | 27 | 23 | 2 parcial · 2 hold | Webs propias. Verif venta online: Can Gladiador, Can Serrat (1954), Casa Graupera (neulers 1895), El Cigró Salat (bacallaneria), L'Hort d'en Dídac, Mūn Kombucha, Sweet Dreams. Sin VO: Can Tria, Flors Noè, Granja Caralt, La Klosca (ous→recat Huevos), Nougat, Stick Art, Can Maresma (WhatsApp). Banderas: fornnoe.com=Hostalric (Forn Noé Mataró sí existe, web blanqueada); clubcoc.com=COC Vilassar (Coc Ludoteca=espai tallers, parcial). Formatgeria=cremier (parcial) |
+| 2026-06-08 | Mataró 9c | 18 | 14 | 4 parcial · 1 purga | Webs directorio + solo-IG. Verif: Pastisseria Uñó (1967), Dehum Cervesers (Mataró Grape Ale), Synera/Molta Malta, Meleix (mel eco, web→meleix.cat), S'ha Acabat el Bròquil (coop verdura), Can Kiku (+kikupa.com), el7et gelats, Petits Délices (+web), Xarcuteries Miguel i Begoña (1977), parades Mercat Cuba (Can Margarida, Polleria Leo i Merche 60a, Eva i Oscar, El forn de la Nona, Les Rovires). Parcial: Can Grau, Brèscat (mel), 5 Pebrots. Purga: Safont-Tria (web ifs.cat=clínica reproducció) |
+| 2026-06-08 | Mataró 9d | 15 | 0 | 12 parcial · 3 purga | Cluster registro. DAR confirma pagesos Maresme→parcial: Ayter (patata), Can Bleda (patata→recat), González García (Can Gallard, cargols), Horta Pera, Jordi Graupera (Can Redeu). Parcial sin DAR: Aviram Ros, Can Bastons, Confraria Pescadors (llotja), Cantallops, Floriach, Pastisseria Roselló/Sacher. Purgas: Chamarro=Can Margarida (dup, mismo tel/correu), Santana Flores=Brèscat (dup DAR, mateixa adreça Garbí 2), Martin Rosell (sense dades) |
