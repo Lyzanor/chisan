@@ -15,14 +15,14 @@
 
 ## Estado actual (2026-06-08)
 
-- Filas: **2.934** · `verificado` **249** · `parcial` **94** · `pendiente` **2.591**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 39 filas** y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~98 lotes estimados.
-- **Cerrados:** Lotes 1-7. **Lote 6 = Barcelona (resto)** COMPLETO (113 pend en 6a-6d: ~96 verif/parcial
-  + 17 purgas). **Lote 7 = Terrassa** COMPLETO (57 pend en 7a-7d: 30 verif + 27 parcial, **0 purgas** —
-  el DAR rescató Jardineria El Roure y otros como productores reales).
-- **Siguiente:** Lote 8 = **Sabadell** (45 pendientes → ~2 sub-lotes).
-- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a-6d + 7a-7d.
+- Filas: **2.932** · `verificado` **273** · `parcial` **113** · `pendiente` **2.546**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 41 filas** y verificado/parcial el resto).
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~96 lotes estimados.
+- **Cerrados:** Lotes 1-8. Lote 6 Barcelona-resto (113), Lote 7 Terrassa (57, 0 purgas),
+  **Lote 8 = Sabadell** COMPLETO (45 pend en 8a-8d: 24 verif + 19 parcial + 2 purgas). DAR confirmó
+  7 productores reales de Sabadell; relocalizados a Terrassa Delightcious y Forn del Progrés (eran de allí).
+- **Siguiente:** Lote 9 = **Mataró** (50 pendientes → ~2 sub-lotes).
+- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a-6d + 7a-7d + 8a-8d.
 
 ## Cómo retomar en 1 minuto
 
@@ -190,7 +190,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 5 | Barcelona - Sants-Montjuïc | 0 | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
 | 6 | Barcelona (resto) | 113 | 4 | ✅ | 2026-06-08 | 6a-6d; ~96 verif/parcial + 17 purgas; 0 pendientes |
 | 7 | Terrassa | 57 | 4 | ✅ | 2026-06-08 | 7a-7d; 30 verif + 27 parcial; 0 purgas |
-| 8 | Sabadell | 45 | 2 | ⬜ | | |
+| 8 | Sabadell | 45 | 4 | ✅ | 2026-06-08 | 8a-8d; 24 verif + 19 parcial + 2 purgas |
 | 9 | Mataró | 50 | 2 | ⬜ | | |
 | 10 | Manresa | 45 | 2 | ⬜ | | |
 | 11 | Vic | 46 | 2 | ⬜ | | |
@@ -237,3 +237,6 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-08 | Terrassa 7a+7b | 30 | 17→ | — | Webs propias. 18 escritas en bloque (alba, albert-morera, caran GF, casanovas ×2 [2 sedes reales 1906], la-xicra, les-saveurs, orxateria-ribera, núria, turull, ricardo-i-montse, Sanmy [refrescos 1895], zaguirre, prats-mercader, els-xixonencs, embotits-sanchez, tantagana). Webs cruzadas detectadas: canbanach.com=tienda mascotas (parcial), fornsantjordi.cat=Granollers, fornturull.cat≠Armengol, pont-aurell=industria |
 | 2026-06-08 | Terrassa 7c | 23 | 12 | 11 parcial | Solo-IG + parades Mercat Independència + SSL caídos. Verif: El Rebost Casa Pau, Sant Pere Coffee, Obrador La Portella, Projecte Geosmina, Forn Armengol (web→fornarmengol.com), Forn Carné, Forn Turull, Bolets&Co, Cervesa La Resclosa (oro EBS24), Areny/Gamisans/L'Enxaneta (Mercat). Parcial: Casé, Planas, Melsana, Altamon (mel), Fermentum (tel falso), Forn Sant Jordi (web=Granollers), Tot Teca (Forn Gotés Sabadell, tancat), Saludes/Cresol/Marcos/Páez (Mercat) |
 | 2026-06-08 | Terrassa 7d | 16 | 1 | 15 parcial · 0 purga | Cluster registro. Cotejo DAR: Explotacions Molle (Casa Nadal), Farre Colom (Coop d'Ivars), **Jardineria El Roure** (¡productor de verdura!→recat. Fruta i verdura), Santa Magdalena SAT (carn), Violeta Zafra (safrà→recat. Despensa), Simó Aynés (Els Campaners). Lleonart/Avícola=ous reals. Forn Anglada-Cal Forner verif (web calforner.com, des 1875). Webs cruzadas blanqueadas (pont-aurell, aoberta) |
+| 2026-06-08 | Sabadell 8a+8b | 14 | 14 | — | Webs propias. Sanmy no aplica (Terrassa). Reales: 0x100 Gluten/Krum, Artbo (1969), Cafès Pont (1952, tostador), Mateu (1925), Jové Xarcuters, La Crème, Mas Avícola, Moreno Antolinos (1951), Coco y Canela, Brunni (parada Mercat Central!), Mussons (enoteca Sabadell 2010), Valero, Xocolates Genescà (1928), La Fem (obrador Sant Cugat). Webs cruzadas: canbanach=mascotas, vallriberanoray=arquitecto, jsalvado=admin. fincas |
+| 2026-06-08 | Sabadell 8c | 10 | 8 | 1 parcial · 1 purga | Medran (1958), La Micro/Or i Plata (cervesers 2011), Llegums Roca (web→elsllegumsroca.com, +ecommerce), Fleca E.Valls (1971), Sant Marc (1976), Benet Forners (1962). Delightcious y Forn del Progrés relocalizados a Terrassa (mal fichados). Umami parcial (¿Rubí?). Purga: Finca Alavedra (jsalvado=admin. fincas, no productor) |
+| 2026-06-08 | Sabadell 8d | 21 | 2 | 18 parcial · 1 purga | Cluster registro. Cotejo DAR (7 reales Sabadell): Domingo Garcia (Can Ustrell), Gabarrón (Jadeverd), Gaoxing (cogombre→recat), Girbau Solà (vins), Moliner (Remeiets→recat), Rosell Canals (Hort del Catre), Vallribera Tubau (ous, web arquitecto blanqueada). Verif: Cal Blau (embotits 1945), La Palma Pastissers. Forn Viñas/Domènec/Villaró parecen de Castellar (parcial). Purga: Guiu Aran (sin datos ni DAR) |
