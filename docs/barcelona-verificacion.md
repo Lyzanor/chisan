@@ -25,7 +25,7 @@
   **empresas ajenas auto-enriquecidas** (Molins Solucions Industrials, Borrós Interiorisme, UManresa,
   Manel Tatje electricista, CDIB diagnosi mèdica, Mon Digital). nil-puig reubicado a Castellbell i el Vilar.
 - **Siguiente:** Lote 11 = **Vic** (46 pendientes → ~2 sub-lotes).
-- Último push: lotes 6-9 en `main` (8e94446). Pendiente de push: **lote 10 (Manresa)**.
+- Último push: lote 10 en `main` (43bcb88). Pendiente de push: ninguno.
 
 ## Cómo retomar en 1 minuto
 
