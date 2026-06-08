@@ -15,15 +15,17 @@
 
 ## Estado actual (2026-06-08)
 
-- Filas: **2.928** · `verificado` **302** · `parcial` **130** · `pendiente` **2.496**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 45 filas** y verificado/parcial el resto).
+- Filas: **2.915** · `verificado` **323** · `parcial` **141** · `pendiente` **2.451**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 58 filas** y verificado/parcial el resto).
 - Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~94 lotes estimados.
-- **Cerrados:** Lotes 1-9. Lote 6 Barcelona-resto (113), Lote 7 Terrassa (57), Lote 8 Sabadell (45),
-  **Lote 9 = Mataró** COMPLETO (50 pend en 9a-9d: 29 verif + 17 parcial + 4 purgas). DAR confirmó muchos
-  pagesos del Maresme (Can Gallard, Can Redeu, Horta Pera, Ayter, Can Bleda) y destapó 2 dups
-  (Chamarro=Can Margarida, Santana Flores=Brèscat).
-- **Siguiente:** Lote 10 = **Manresa** (45 pendientes → ~2 sub-lotes).
-- Último push: lotes 6-8 en `main` (ff00310). Pendiente de push: 9a-9d.
+- **Cerrados:** Lotes 1-10. Lote 7 Terrassa (57), Lote 8 Sabadell (45), Lote 9 Mataró (50),
+  **Lote 10 = Manresa** COMPLETO (45 pend en una pasada: 21 verif + 11 parcial + 13 purgas). DAR Bages
+  destapó 5 dups de marca↔razón social (Tanegram=Oller del Mas, Rosiñol Tarres SCP=Mas Rossinyol,
+  Sola Cantó=Cal Climent, Les Arnaules=Agropecuària Casasayas, Silverio=Cal Codony) y 6 filas que eran
+  **empresas ajenas auto-enriquecidas** (Molins Solucions Industrials, Borrós Interiorisme, UManresa,
+  Manel Tatje electricista, CDIB diagnosi mèdica, Mon Digital). nil-puig reubicado a Castellbell i el Vilar.
+- **Siguiente:** Lote 11 = **Vic** (46 pendientes → ~2 sub-lotes).
+- Último push: lotes 6-9 en `main` (8e94446). Pendiente de push: **lote 10 (Manresa)**.
 
 ## Cómo retomar en 1 minuto
 
@@ -193,7 +195,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 7 | Terrassa | 57 | 4 | ✅ | 2026-06-08 | 7a-7d; 30 verif + 27 parcial; 0 purgas |
 | 8 | Sabadell | 45 | 4 | ✅ | 2026-06-08 | 8a-8d; 24 verif + 19 parcial + 2 purgas |
 | 9 | Mataró | 50 | 4 | ✅ | 2026-06-08 | 9a-9d; 29 verif + 17 parcial + 4 purgas |
-| 10 | Manresa | 45 | 2 | ⬜ | | |
+| 10 | Manresa | 45 | 1 | ✅ | 2026-06-08 | 21 verif + 11 parcial + 13 purgas; DAR Bages; nil-puig→Castellbell |
 | 11 | Vic | 46 | 2 | ⬜ | | |
 | 12 | Vilanova i la Geltrú | 40 | 2 | ⬜ | | |
 | 13 | Vilafranca del Penedès | 38 | 2 | ⬜ | | |
@@ -244,3 +246,4 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-08 | Mataró 9a+9b | 27 | 23 | 2 parcial · 2 hold | Webs propias. Verif venta online: Can Gladiador, Can Serrat (1954), Casa Graupera (neulers 1895), El Cigró Salat (bacallaneria), L'Hort d'en Dídac, Mūn Kombucha, Sweet Dreams. Sin VO: Can Tria, Flors Noè, Granja Caralt, La Klosca (ous→recat Huevos), Nougat, Stick Art, Can Maresma (WhatsApp). Banderas: fornnoe.com=Hostalric (Forn Noé Mataró sí existe, web blanqueada); clubcoc.com=COC Vilassar (Coc Ludoteca=espai tallers, parcial). Formatgeria=cremier (parcial) |
 | 2026-06-08 | Mataró 9c | 18 | 14 | 4 parcial · 1 purga | Webs directorio + solo-IG. Verif: Pastisseria Uñó (1967), Dehum Cervesers (Mataró Grape Ale), Synera/Molta Malta, Meleix (mel eco, web→meleix.cat), S'ha Acabat el Bròquil (coop verdura), Can Kiku (+kikupa.com), el7et gelats, Petits Délices (+web), Xarcuteries Miguel i Begoña (1977), parades Mercat Cuba (Can Margarida, Polleria Leo i Merche 60a, Eva i Oscar, El forn de la Nona, Les Rovires). Parcial: Can Grau, Brèscat (mel), 5 Pebrots. Purga: Safont-Tria (web ifs.cat=clínica reproducció) |
 | 2026-06-08 | Mataró 9d | 15 | 0 | 12 parcial · 3 purga | Cluster registro. DAR confirma pagesos Maresme→parcial: Ayter (patata), Can Bleda (patata→recat), González García (Can Gallard, cargols), Horta Pera, Jordi Graupera (Can Redeu). Parcial sin DAR: Aviram Ros, Can Bastons, Confraria Pescadors (llotja), Cantallops, Floriach, Pastisseria Roselló/Sacher. Purgas: Chamarro=Can Margarida (dup, mismo tel/correu), Santana Flores=Brèscat (dup DAR, mateixa adreça Garbí 2), Martin Rosell (sense dades) |
+| 2026-06-08 | Manresa 10 | 45 | 21 | 11 parcial · 13 purga | Una pasada. **Verif web propia + venta online:** Celler el Molí/Collbaix (vi eco DO Pla de Bages, ecommerce+club), Oller del Mas, Cerveses Hoppit, AlEco (botiga eco), Forn de Pa Jorba (enviament ES), Delícies Sense Gluten (web→deliciessensegluten.com, era celiacscatalunya; botiga online), Mas Rossinyol (cistella WhatsApp), nil-puig/Hort del Puig (senalles+suscripció, **→Castellbell i el Vilar**), Llengua de Gat (obrador WhatsApp). **Verif sin VO:** L'Aroma (Café Arabo), EcoPallareta (ous CCPAE), Cal Climent, Granja Cal Porta (llet, DAR=Manresa), El Forn Antic, Forn Coma, L'Obradora (coop obrador), Viver Serra, Xarcuteria Casa Coll (+casacoll.cat), Outer Gin (ginebra, recat→Destilados), The Goats (brewpub), Les Arnaules (Horta de Viladordis). **DAR Bages parcial:** Xavier Torras, Gomez Carrascal (Xicuxai), Oliveras Alsina (Cal Andreu, contacto DAR), Tarrés Rosiñol (Cal Codony), Tatjé Masachs (Viladordis). Otros parcial: Salelles (coop pinsos→recat Productos ecológicos), Granja Poal, Verdura Collida Avui (domini viu, no llegit), Serra Fornell (=El Manel, web-IG blanq.), L'horta que brota, Horta Mas d'en Pla. **13 purgas:** 5 dups marca↔SL (Tanegram=Oller del Mas, Rosiñol Tarres SCP=Mas Rossinyol, Sola Cantó=Cal Climent, Agropecuària Casasayas=Les Arnaules, Silverio T.R.=Cal Codony [datos Transmarsol]); 6 empresas ajenas auto-enriquecidas (Molins=Molins Solucions Industrials, Borros=Borrós Interiorisme +img, Ileana=UManresa, Tatje Casajuana=Manel Tatje electricista, Jose Torrents=CDIB, Moncunill=Mon Digital); 2 noms pelats sense DAR (Oliveres Pinto, Gerard Font Català=dup EcoPallareta). DAR Manresa sin tocar (candidatos futuros): AMPANS/Urpina, Calafell/Can Calafell, CCAgrària/Can Poc Oli |
