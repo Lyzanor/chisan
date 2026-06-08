@@ -15,16 +15,16 @@
 
 ## Estado actual (2026-06-08)
 
-- Filas: **2.951** · `verificado` **201** · `parcial` **44** · `pendiente` **2.706**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 22 filas** y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~102 lotes estimados.
-- **Cerrados:** Lotes 1-5 (Eixample, Ciutat Vella, Gràcia, Sant Martí, Sants-Montjuïc) — **sin flags pendientes**.
-- **En curso:** Lote 6 = **Barcelona (resto)** = la ciudad menos los 5 distritos cerrados. OJO: el
-  worklist lo estimaba en 22 (solo `municipio==Barcelona`), pero el alcance real eran **113 pendientes**
-  (incluye Sarrià-Sant Gervasi, Horta-Guinardó, Sant Andreu, Nou Barris, Les Corts y variantes con barrio).
-  Hechos sub-lotes **6a (filas con web, lote 1)** y **6b (filas con web, lote 2)** → **55 resueltas**
-  (49 verif + 5 parcial + 1 purga). **Quedan 58 pendientes:** 11 solo-IG (6c) + 47 de registro/cruzadas (6d, cotejo DAR).
-- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a+6b.
+- Filas: **2.934** · `verificado` **219** · `parcial` **67** · `pendiente` **2.648**
+- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 39 filas** y verificado/parcial el resto).
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~100 lotes estimados.
+- **Cerrados:** Lotes 1-6. **Lote 6 = Barcelona (resto)** (la ciudad menos los 5 distritos) **COMPLETO**:
+  el worklist lo estimaba en 22 pero el alcance real eran **113 pendientes** (Sarrià-SG, Horta-Guinardó,
+  Sant Andreu, Nou Barris, Les Corts + variantes con barrio). Resueltas en 4 sub-lotes 6a-6d →
+  **0 pendientes** en Barcelona-resto. Saldo lote 6: ~96 verif/parcial + **17 purgas** (mal fichadas
+  fuera de provincia, no-productores, duplicados de registro, sin datos).
+- **Siguiente:** Lote 7 = **Terrassa** (57 pendientes → ~3 sub-lotes).
+- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a-6d.
 
 ## Cómo retomar en 1 minuto
 
@@ -190,7 +190,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 3 | Barcelona - Gràcia | 0 | — | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni; Bodega La Riera purgada |
 | 4 | Barcelona - Sant Martí | 0 | — | ✅ | 2026-06-07 | 20 verif + 5 parcial; CESC JK (dup) y Hoppiness (bar) purgados |
 | 5 | Barcelona - Sants-Montjuïc | 0 | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
-| 6 | Barcelona (resto) | 113 | ~5 | 🟨 | 2026-06-08 | 6a+6b hechos (55 res.); quedan 58: 11 IG + 47 registro/DAR |
+| 6 | Barcelona (resto) | 113 | 4 | ✅ | 2026-06-08 | 6a-6d; ~96 verif/parcial + 17 purgas; 0 pendientes |
 | 7 | Terrassa | 57 | 3 | ⬜ | | |
 | 8 | Sabadell | 45 | 2 | ⬜ | | |
 | 9 | Mataró | 50 | 2 | ⬜ | | |
@@ -234,3 +234,5 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-07 | Flags resueltos | 10 | — | 8 purgadas · 2 corregidas | Purga (bares/dup/cluster) +4 imgs; Corpen→Otros; Agrícola Poma→aceite LOMASOLI/Les Corts |
 | 2026-06-08 | Barcelona-resto 6a | 25 | 22 | 2 parcial · 1 purga | Web propia (Les Corts/Ciutat Vella/Horta…). Purga: The Milk and Coffee = Milk Bar & Bistro (restaurante) +img. Oggi web .it (Udine) blanqueada; Yellow Bakery/Cèlia dominios en venta → web corregida/blanqueada; Artemis=centro estética (parcial); La Cantina Solar food-truck (parcial) |
 | 2026-06-08 | Barcelona-resto 6b | 30 | 27 | 3 parcial | Web propia (Sant Andreu/Sarrià-SG/Nou Barris…). Productores reales (Salazones Moreno, Exotic Sal, LOV Ferments, Cyclic, Almogàver, Panes Creativos, Pasta Spada, Suca'l, Baixas, Blasi…). Suca'l web→sucal.es; Blasi web→raíz. Parcial: Ous Susana + Formatgeria Ireneu (distribuidores/reseller), Blasi (web caída, no comprobado) |
+| 2026-06-08 | Barcelona-resto 6c | 11 | 8 | 2 parcial · 1 purga | Solo-IG. Confirmados por búsqueda (Artchur, Carn+carn, Forn del Passeig-Horta +web, Forn Vall d'Hebron, Alpuente, Argilés, Roquetes +web, Valentina e Pasqualina +web). Sant Croi: tiendas físicas cerradas pero gelats online (parcial, +santcroi.com). Apamate parcial (IG coincide, sin 2ª fuente). Purga: L'Hort d'en Josep (IG no coincide + Parc Agrari etiquetado Barcelona + sin rastro) |
+| 2026-06-08 | Barcelona-resto 6d | 47 | 10 | 21 parcial · 16 purga | Cluster de registro. Cotejo DAR xmyy-7xqi: 10 en DAR-Barcelona→parcial (Celler de l'Era, Debresca, Oli Cometes, La Mielada, Mels del Montnegre, Safrà de Montserrat, Petits Remeis, Fontcalda, Prats Espar, Macau). Forns/charcuterías confirmados por Ajuntament/Mercat/web→10 verif (ARTPA, Sant Honorat, Montbau, L'Amic, Padró Canals, Glòria, Samsó, Bareche, Fruben, L'Exquisita). **17 purgas** (con 6c): mal fichados fuera de provincia (Carretero Ariza=El Perelló, Gurria=Cadaqués, Mesura=Mijas/Málaga, Recasens/Farré/Verdallar/Díaz-Aguado fuera de BCN), no-productores (Fundación Rokpa=centre budista, Consultores Tècnics 3000=consultoria), dups (García Moll ×2) y sin datos (Butzbach, Adell, Mora). +8 imágenes huérfanas |
