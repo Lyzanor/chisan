@@ -15,16 +15,14 @@
 
 ## Estado actual (2026-06-08)
 
-- Filas: **2.934** · `verificado` **219** · `parcial` **67** · `pendiente` **2.648**
+- Filas: **2.934** · `verificado` **249** · `parcial` **94** · `pendiente` **2.591**
 - Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 39 filas** y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~100 lotes estimados.
-- **Cerrados:** Lotes 1-6. **Lote 6 = Barcelona (resto)** (la ciudad menos los 5 distritos) **COMPLETO**:
-  el worklist lo estimaba en 22 pero el alcance real eran **113 pendientes** (Sarrià-SG, Horta-Guinardó,
-  Sant Andreu, Nou Barris, Les Corts + variantes con barrio). Resueltas en 4 sub-lotes 6a-6d →
-  **0 pendientes** en Barcelona-resto. Saldo lote 6: ~96 verif/parcial + **17 purgas** (mal fichadas
-  fuera de provincia, no-productores, duplicados de registro, sin datos).
-- **Siguiente:** Lote 7 = **Terrassa** (57 pendientes → ~3 sub-lotes).
-- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a-6d.
+- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~98 lotes estimados.
+- **Cerrados:** Lotes 1-7. **Lote 6 = Barcelona (resto)** COMPLETO (113 pend en 6a-6d: ~96 verif/parcial
+  + 17 purgas). **Lote 7 = Terrassa** COMPLETO (57 pend en 7a-7d: 30 verif + 27 parcial, **0 purgas** —
+  el DAR rescató Jardineria El Roure y otros como productores reales).
+- **Siguiente:** Lote 8 = **Sabadell** (45 pendientes → ~2 sub-lotes).
+- Último push: lotes 1-5 + cluster + manual en `main`. Pendiente de push: 6a-6d + 7a-7d.
 
 ## Cómo retomar en 1 minuto
 
@@ -191,7 +189,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 4 | Barcelona - Sant Martí | 0 | — | ✅ | 2026-06-07 | 20 verif + 5 parcial; CESC JK (dup) y Hoppiness (bar) purgados |
 | 5 | Barcelona - Sants-Montjuïc | 0 | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
 | 6 | Barcelona (resto) | 113 | 4 | ✅ | 2026-06-08 | 6a-6d; ~96 verif/parcial + 17 purgas; 0 pendientes |
-| 7 | Terrassa | 57 | 3 | ⬜ | | |
+| 7 | Terrassa | 57 | 4 | ✅ | 2026-06-08 | 7a-7d; 30 verif + 27 parcial; 0 purgas |
 | 8 | Sabadell | 45 | 2 | ⬜ | | |
 | 9 | Mataró | 50 | 2 | ⬜ | | |
 | 10 | Manresa | 45 | 2 | ⬜ | | |
@@ -236,3 +234,6 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin 
 | 2026-06-08 | Barcelona-resto 6b | 30 | 27 | 3 parcial | Web propia (Sant Andreu/Sarrià-SG/Nou Barris…). Productores reales (Salazones Moreno, Exotic Sal, LOV Ferments, Cyclic, Almogàver, Panes Creativos, Pasta Spada, Suca'l, Baixas, Blasi…). Suca'l web→sucal.es; Blasi web→raíz. Parcial: Ous Susana + Formatgeria Ireneu (distribuidores/reseller), Blasi (web caída, no comprobado) |
 | 2026-06-08 | Barcelona-resto 6c | 11 | 8 | 2 parcial · 1 purga | Solo-IG. Confirmados por búsqueda (Artchur, Carn+carn, Forn del Passeig-Horta +web, Forn Vall d'Hebron, Alpuente, Argilés, Roquetes +web, Valentina e Pasqualina +web). Sant Croi: tiendas físicas cerradas pero gelats online (parcial, +santcroi.com). Apamate parcial (IG coincide, sin 2ª fuente). Purga: L'Hort d'en Josep (IG no coincide + Parc Agrari etiquetado Barcelona + sin rastro) |
 | 2026-06-08 | Barcelona-resto 6d | 47 | 10 | 21 parcial · 16 purga | Cluster de registro. Cotejo DAR xmyy-7xqi: 10 en DAR-Barcelona→parcial (Celler de l'Era, Debresca, Oli Cometes, La Mielada, Mels del Montnegre, Safrà de Montserrat, Petits Remeis, Fontcalda, Prats Espar, Macau). Forns/charcuterías confirmados por Ajuntament/Mercat/web→10 verif (ARTPA, Sant Honorat, Montbau, L'Amic, Padró Canals, Glòria, Samsó, Bareche, Fruben, L'Exquisita). **17 purgas** (con 6c): mal fichados fuera de provincia (Carretero Ariza=El Perelló, Gurria=Cadaqués, Mesura=Mijas/Málaga, Recasens/Farré/Verdallar/Díaz-Aguado fuera de BCN), no-productores (Fundación Rokpa=centre budista, Consultores Tècnics 3000=consultoria), dups (García Moll ×2) y sin datos (Butzbach, Adell, Mora). +8 imágenes huérfanas |
+| 2026-06-08 | Terrassa 7a+7b | 30 | 17→ | — | Webs propias. 18 escritas en bloque (alba, albert-morera, caran GF, casanovas ×2 [2 sedes reales 1906], la-xicra, les-saveurs, orxateria-ribera, núria, turull, ricardo-i-montse, Sanmy [refrescos 1895], zaguirre, prats-mercader, els-xixonencs, embotits-sanchez, tantagana). Webs cruzadas detectadas: canbanach.com=tienda mascotas (parcial), fornsantjordi.cat=Granollers, fornturull.cat≠Armengol, pont-aurell=industria |
+| 2026-06-08 | Terrassa 7c | 23 | 12 | 11 parcial | Solo-IG + parades Mercat Independència + SSL caídos. Verif: El Rebost Casa Pau, Sant Pere Coffee, Obrador La Portella, Projecte Geosmina, Forn Armengol (web→fornarmengol.com), Forn Carné, Forn Turull, Bolets&Co, Cervesa La Resclosa (oro EBS24), Areny/Gamisans/L'Enxaneta (Mercat). Parcial: Casé, Planas, Melsana, Altamon (mel), Fermentum (tel falso), Forn Sant Jordi (web=Granollers), Tot Teca (Forn Gotés Sabadell, tancat), Saludes/Cresol/Marcos/Páez (Mercat) |
+| 2026-06-08 | Terrassa 7d | 16 | 1 | 15 parcial · 0 purga | Cluster registro. Cotejo DAR: Explotacions Molle (Casa Nadal), Farre Colom (Coop d'Ivars), **Jardineria El Roure** (¡productor de verdura!→recat. Fruta i verdura), Santa Magdalena SAT (carn), Violeta Zafra (safrà→recat. Despensa), Simó Aynés (Els Campaners). Lleonart/Avícola=ous reals. Forn Anglada-Cal Forner verif (web calforner.com, des 1875). Webs cruzadas blanqueadas (pont-aurell, aoberta) |
