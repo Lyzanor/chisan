@@ -31,7 +31,7 @@
   Torelló). **3 purgas:** Cartró Parera (empresa ajena), Marra Poch Jaume (dup persona, enlaces de Cava
   Giró), Cava Canals i Munné (dup vacío de Canals & Munné).
 - **Siguiente:** Lote 15 = **Igualada** (32 pendientes → ~2 sub-lotes).
-- Último push: lote 12 en `main`. **Pendiente de push: lotes 13 y 14** (commits locales hechos).
+- Último push: **lotes 13 y 14 en `main`** (Vercel desplegando). Pendiente de push: ninguno.
 
 ## Cómo retomar en 1 minuto
 
