@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.772** · verificado **849** · parcial **411** · pendiente **1.512**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **201 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-49** (worklist).
-- **Siguiente: Lote 50** — Argentona (14 pendientes).
-- Último push: lotes 1-40 en `main` (2026-06-10).
+- Filas: **2.770** · verificado **858** · parcial **414** · pendiente **1.498**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **203 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-50** (worklist).
+- **Siguiente: Lote 51** — Avinyonet del Penedès, Centelles, Olesa de Montserrat, Pineda de Mar o Sant Vicenç dels Horts (14 c/u).
+- Último push: lotes 1-40 en `main` (2026-06-10); lotes 41-50 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -212,6 +212,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 47 | Palafolls | 0 | ✅ | 2026-06-10 | 9 verif + 3 parcial + 3 purgas (dups Can Tortós↔Cultius SL y Petit Pla↔Recent Fet i Llest fusionados; Alenyà sin rastro); Horta Soms rescatada (web propia, GMaps de Casa Oms restaurant blanqueado); GMaps ajenos en Maria Riera (estética) y Pol Riera (Riera Car) |
 | 48 | Prats de Lluçanès | 0 | ✅ | 2026-06-10 | 9 verif + 1 parcial + 5 purgas (3 filas Soler fusionadas en "El Soler de n'Hug"; Busoms dup de Noir et Blanc; Joan Vall=Casal del Jovent del ajuntament; Capdevila sin rastro); Noir et Blanc y Olivas Caseras ecommerce; coords Noir et Blanc apuntaban a Vic |
 | 49 | Arenys de Mar | 0 | ✅ | 2026-06-10 | 12 verif + 1 parcial + 2 purgas (Rossell=Sóc Pagès y Saurí=Can Terrades, dups registre↔marca por email); Horta Moragas (90 años, mercat) con GMaps de vil·la ajena; Juanitas coords en St. Iscle corregidas; Salvà Cot y Juanitas encàrrecs tel |
+| 50 | Argentona | 0 | ✅ | 2026-06-10 | 9 verif + 3 parcial + 2 purgas (SAT 5188 genérica; Garriga solo existe en Mataró); Can Valls 200 años (IG de restaurant blanqueado); La Nansa con web/GMaps/imagen de La Sala municipal→limpiados, web real lanansa.cat; Castañé=botiga vins naturals (parcial); Fleca Casas whatsapp, Tastets email |
 | — | _resto (335 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -249,6 +250,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Palafolls:** Navarro Sanchez, Juan Manuel (préssecs/pomes/olives; DAR 660562171) · Pla Urrea, Antoni (pastanaga/horta; DAR 629351781)
 - **Prats de Lluçanès:** Aragües Carrera, David (xai; DAR 626165004) · Coop. Mas Les Vinyes SCCL (horta+xai+mel, agroforestal)
 - **Arenys de Mar:** Hortalisses Tuto SCP (horta; DAR 637855410) · Sala Martinez, Lluís (carxofa/fava; DAR 629303780) · Can Maresma SL (ous/fruita/verdura, parada 14/16 mercat)
+- **Argentona:** Oliveras Guiñon, Jose (all/mongeta/tomàquet; DAR 639261000)
 
 ## Para otros agentes / a vigilar
 
