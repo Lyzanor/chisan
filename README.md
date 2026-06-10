@@ -10,7 +10,6 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 - Contrato de datos CSV: `docs/CSV_CONTRACT.md`
 - Tareas comunes: `docs/TASKS.md`
 - Completitud provincial: `docs/PROVINCE_COMPLETENESS.md`
-- App Android/WebView: `docs/ANDROID_APP.md`
 - Notas temporales de candidatos: `docs/candidates/README.md`
 - No recuperar scripts de generación/restauración antiguos: los CSV en `data/csv/**` son la base.
 
