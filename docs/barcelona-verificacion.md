@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.811** · verificado **713** · parcial **373** · pendiente **1.725**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **162 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-36** (worklist).
-- **Siguiente: Lote 37 = Sant Martí Sarroca** (19 pendientes).
+- Filas: **2.806** · verificado **723** · parcial **377** · pendiente **1.706**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **167 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-37** (worklist).
+- **Siguiente: Lote 38 = Cabrera de Mar** (18 pendientes).
 - Último push: lotes 1-32 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -199,7 +199,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 34 | Molins de Rei | 0 | ✅ | 2026-06-10 | 7 verif + 6 parcial + 6 purgas; 3 dups registre↔marca (Fisas→Can Fisas, Figueras→La Pagesa, Cuscó×2); lapagesa.es secuestrada→lapagesa.cat |
 | 35 | Rubí | 0 | ✅ | 2026-06-10 | 11 verif + 5 parcial + 3 purgas (Milà cerrada 2022+SL extinguida, Cal Tastet y Mas Jornet sin rastro); Montse→Coques Tastet (rebranding mismo local/tel) |
 | 36 | Sant Celoni | 0 | ✅ | 2026-06-10 | 12 verif + 3 parcial + 4 purgas; dup Armora→Ous del Mas; mercat con pedidos online (delmercatacasa diba) |
-| 37 | Sant Martí Sarroca | 19 | ⬜ | | |
+| 37 | Sant Martí Sarroca | 0 | ✅ | 2026-06-10 | 10 verif (6 cellers, 4 ecommerce) + 4 parcial DAR + 5 purgas (dup Torres→Pacs, Galimany=coop Covides, Tuyà=casa rural, Mata Coll y Cuevas ajenas); Jovani→Castellví de la Marca |
 | 38 | Cabrera de Mar | 18 | ⬜ | | |
 | 39 | Gavà | 18 | ⬜ | | |
 | 40 | Sant Feliu de Llobregat | 18 | ⬜ | | |
@@ -228,6 +228,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
+- **Sant Martí Sarroca:** Greenhort SCP (horta) · Molí de Calabuig SL (olives/ordi) · Ràfols Baqués Josep (conserves) · Vidal Bolet Jesús (fruita/horta) · Cellers Montserrat (vins)
 
 ## Para otros agentes / a vigilar
 
