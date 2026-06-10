@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.786** · verificado **783** · parcial **401** · pendiente **1.602**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **187 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-43** (worklist).
-- **Siguiente: Lote 44** — Santa Coloma de Gramenet (16 pendientes).
+- Filas: **2.784** · verificado **797** · parcial **401** · pendiente **1.586**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **189 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-44** (worklist).
+- **Siguiente: Lote 45** — Castelldefels (15 pendientes).
 - Último push: lotes 1-40 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -206,6 +206,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 41 | Sant Pere de Ribes | 0 | ✅ | 2026-06-10 | 13 verif + 0 parcial + 4 purgas (Puig Batet SL y Ferret Mestre dups registre↔marca, Bartra i Roig=empresa de Vega de Ribes, Can Miret=patrimonio); Greco→Charcutería+ecommerce; Horta Casetes coords en Garraf corregidas; bouquetdhort.com→tienda Grupdem |
 | 42 | Torelló | 0 | ✅ | 2026-06-10 | 12 verif + 2 parcial + 3 purgas (Ojeda dup de La Mel d'en Pere por tel; Calverons y Simon Font sin rastro, este con web de librería); Racó del Panarra→Vic (marketplace OsonaTerra), Postres Masgrau→Sant Vicenç de Torelló; flecaxanat.com parked |
 | 43 | Granollers | 0 | ✅ | 2026-06-10 | 11 verif + 2 parcial + 3 purgas (Ortega Puigoriol links de hospital/BM, Ca Puxi web de camping + GMaps Aluminios, Torrents GMaps farmacia); Tòfona Catalana datos propios restaurados (tenía Fonda Europa/Tributària); 5 ecommerce (Jijonero, Xocolates, Crit d'Or, Krüm, Tòfona) |
+| 44 | Santa Coloma de Gramenet | 0 | ✅ | 2026-06-10 | 14 verif + 0 parcial + 2 purgas (Pardes y Hervas, basura enlazada por email con links de mercería); forndepapadro.com era el forn de Nou Barris→blanqueado; 6 con venta (Paredes/Sant Ramon/Dulciurile whatsapp, TotCarbó tel, Glass ecommerce, Colombia ecommerce+Glovo) |
 | — | _resto (335 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -238,6 +239,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Sant Pere de Ribes:** La Piotxa SCCL (préssecs, espàrrec, espelta; DAR 656577327)
 - **Torelló:** Agrària de Torelló SCCL (Patates del Bufet d'Orís; DAR 617331898) · Les Gambires Torelló SL (El Rebost de les Gambires, pollastre; DAR 626305631) · Espai Natura (parada eco al Mercat Municipal, collita pròpia)
 - **Granollers:** Figuls Tuset, Pere (Can Figuls, enciam/mongeta; DAR 645932199) · Ventosa Asturgo, Isidro (llet i formatges; DAR 647466330)
+- **Santa Coloma de Gramenet:** Horticultura Meya SL (DAR 670246579; probablemente la mateixa família que la fila Horta Meya ja verificada — comprovar abans d'afegir)
 
 ## Para otros agentes / a vigilar
 
