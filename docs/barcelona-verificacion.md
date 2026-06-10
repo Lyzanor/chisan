@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.779** · verificado **829** · parcial **409** · pendiente **1.541**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **194 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-47** (worklist).
-- **Siguiente: Lote 48** — Prats de Lluçanès (15 pendientes).
+- Filas: **2.774** · verificado **838** · parcial **410** · pendiente **1.526**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **199 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-48** (worklist).
+- **Siguiente: Lote 49** — Arenys de Mar (14 pendientes).
 - Último push: lotes 1-40 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -210,6 +210,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 45 | Castelldefels | 0 | ✅ | 2026-06-10 | 13 verif + 2 parcial + 0 purgas; 8 con venta online (Right Side suscripción, Finca/Lara/BlackCake/CasaBlanca/Luciérnaga/Zitarrosa/PaulaFranco ecommerce, Hache whatsapp); Arenols→Can Arenols (pagès Parc Agrari, links+imagen de ATROZ gastrobar limpiados); Pañella=DAR Mercabarna |
 | 46 | Esparreguera | 0 | ✅ | 2026-06-10 | 10 verif + 3 parcial + 2 purgas (Alves Pardo sin rastro; Jorba Comelles fusionado en fila única del forn, obrador central 1890 con pedidos online); Caviaroli y Cal Ferran ecommerce; Boletruff=distribuidor micológico (parcial); Serra Xarcuters obrador en Martorell |
 | 47 | Palafolls | 0 | ✅ | 2026-06-10 | 9 verif + 3 parcial + 3 purgas (dups Can Tortós↔Cultius SL y Petit Pla↔Recent Fet i Llest fusionados; Alenyà sin rastro); Horta Soms rescatada (web propia, GMaps de Casa Oms restaurant blanqueado); GMaps ajenos en Maria Riera (estética) y Pol Riera (Riera Car) |
+| 48 | Prats de Lluçanès | 0 | ✅ | 2026-06-10 | 9 verif + 1 parcial + 5 purgas (3 filas Soler fusionadas en "El Soler de n'Hug"; Busoms dup de Noir et Blanc; Joan Vall=Casal del Jovent del ajuntament; Capdevila sin rastro); Noir et Blanc y Olivas Caseras ecommerce; coords Noir et Blanc apuntaban a Vic |
 | — | _resto (335 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -245,6 +246,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Santa Coloma de Gramenet:** Horticultura Meya SL (DAR 670246579; probablemente la mateixa família que la fila Horta Meya ja verificada — comprovar abans d'afegir)
 - **Esparreguera:** Masia Can Claramunt (verdures i producte de proximitat, masiacanclaramunt.com)
 - **Palafolls:** Navarro Sanchez, Juan Manuel (préssecs/pomes/olives; DAR 660562171) · Pla Urrea, Antoni (pastanaga/horta; DAR 629351781)
+- **Prats de Lluçanès:** Aragües Carrera, David (xai; DAR 626165004) · Coop. Mas Les Vinyes SCCL (horta+xai+mel, agroforestal)
 
 ## Para otros agentes / a vigilar
 
