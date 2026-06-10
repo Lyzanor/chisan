@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.824** · verificado **683** · parcial **359** · pendiente **1.782**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **149 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-33** (worklist).
-- **Siguiente: Lote 34 = Molins de Rei** (19 pendientes).
+- Filas: **2.818** · verificado **690** · parcial **365** · pendiente **1.763**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **155 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-34** (worklist).
+- **Siguiente: Lote 35 = Rubí** (19 pendientes).
 - Último push: lotes 1-32 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -196,7 +196,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 31 | Arenys de Munt | 0 | ✅ | 2026-06-10 | 9 verif + 8 parcial + 2 purgas; dups Talcomraja y AgroSalichs |
 | 32 | Cardedeu | 0 | ✅ | 2026-06-10 | 9 verif + 5 parcial + 5 purgas; 3 dups, Ferro→Tremp, Mercat Vallès extinguida |
 | 33 | Garriga | 0 | ✅ | 2026-06-10 | 13 verif + 1 parcial + 5 purgas (dup Nualart, Latorre/Pérez ajenas, par O. Prats); Can Viver (Bigues) verificada de rebote |
-| 34 | Molins de Rei | 19 | ⬜ | | |
+| 34 | Molins de Rei | 0 | ✅ | 2026-06-10 | 7 verif + 6 parcial + 6 purgas; 3 dups registre↔marca (Fisas→Can Fisas, Figueras→La Pagesa, Cuscó×2); lapagesa.es secuestrada→lapagesa.cat |
 | 35 | Rubí | 19 | ⬜ | | |
 | 36 | Sant Celoni | 19 | ⬜ | | |
 | 37 | Sant Martí Sarroca | 19 | ⬜ | | |
