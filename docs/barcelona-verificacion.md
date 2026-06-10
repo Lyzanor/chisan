@@ -78,30 +78,31 @@
    PY
    ```
 4. Verifica cada fila por web (ver **protocolo** y **patrones**).
-5. Edita con el **script column-aware CRLF-safe** (plantilla más abajo). Nunca a mano fila a fila.
+5. Edita con el **script column-aware EOL-safe** (plantilla más abajo). Nunca a mano fila a fila.
 6. Valida: `npx pnpm check:csv:changed` → `npx pnpm verify:data`. Actualiza este ledger.
 
 ## ⚠️ Gotchas técnicos (leer antes de editar)
 
-- **El CSV es CRLF (`\r\n`).** Un `open().read()/write()` de Python en modo texto lo convierte a LF
-  y reescribe el fichero entero (diff de ~3.000 líneas, ruido y conflicto con otros agentes).
-  **Siempre** abrir con `newline=""`, conservar el `\r\n`/`\n` de cada línea, y al final comprobar:
+- **EOL: LF (`\n`), como todos los CSV del repo** (norma global desde 2026-06-10, forzada por
+  `.gitattributes`; antes este fichero era CRLF — si ves `\r` es que algo lo ha reintroducido).
+  Abre siempre con `newline=""`, conserva el EOL de cada línea, y al final comprueba:
   ```bash
-  python3 -c "b=open('data/csv/catalunya/barcelona.csv','rb').read(); print('CRLF ok' if b.count(b'\r\n')==b.count(b'\n') and b'\r\r' not in b else 'PROBLEMA')"
+  python3 -c "b=open('data/csv/catalunya/barcelona.csv','rb').read(); print('LF ok' if b.count(b'\r')==0 else 'PROBLEMA: se ha colado CRLF')"
   ```
 - **No reescribas todo el fichero.** Modifica solo las líneas cuyo `slug` está en tu lote; el resto
   byte-idéntico. Esto preserva el trabajo de otros agentes y mantiene el diff pequeño.
 - **Multiagente:** toca solo `barcelona.csv`, este ledger y `public/productores/**/barcelona/`.
   **No toques** `girona.csv`, `lleida.csv`, `tarragona.csv` ni `scripts/enrich-producer-images.py`
   (otros agentes). Al commitear, haz `git add` explícito de tus rutas; nunca `git add -A`/`git checkout` del CSV.
-- **Orden de columnas (0-based):** 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella ·
-  5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram ·
-  13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
+- **Orden de columnas (0-based), 20 columnas (cabecera canónica del repo):** 0 slug · 1 nombre ·
+  2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario ·
+  8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon ·
+  16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
 - **Contrato:** `verificado` exige coords + ≥1 enlace (web/GMaps/IG/FB) — el audit lo bloquea si no.
   `Venta online` ∈ {sí, no, no comprobado}. `Canal de venta` solo si `Venta online=sí`.
 - Al borrar una fila con imagen, borra también su `.webp` (queda huérfana → warning en `check:images`).
 
-### Plantilla de edición column-aware (CRLF-safe)
+### Plantilla de edición column-aware (EOL-safe)
 ```python
 import csv, io
 PATH="data/csv/catalunya/barcelona.csv"

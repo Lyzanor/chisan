@@ -4,7 +4,19 @@
 - Province files: `data/csv/[comunidad]/[provincia].csv`
 - Barcelona file: `data/csv/catalunya/barcelona.csv`
 - Encoding: UTF-8 (BOM tolerated)
+- Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
 - Header row is required.
+
+## Canonical header (physical structure)
+Every province CSV shares the exact same 20-column header, in this order:
+
+```text
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+```
+
+- All 50 files carry all 20 columns physically; "optional" below means the *value* may be empty, never that the column may be missing.
+- Do not add, remove, or reorder columns in a single province. A structural change applies to every CSV at once, in a solo commit, with `verify:data` before and after.
+- 0-based indices for column-aware scripts: 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
 - Validation entrypoints:
   - `pnpm check:csv`: blocking technical contract audit for every CSV
   - `node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv`: blocking audit for one CSV
@@ -42,6 +54,8 @@
 ## Optional columns
 - `imagen`
 - `Canal de venta`
+
+Optional = the value may be empty. The column headers themselves are present in every CSV (see Canonical header).
 
 ## How the app uses columns
 - Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
@@ -116,7 +130,7 @@
 - `lon`, when present, must be numeric and between `-180` and `180`.
 - `lat`/`lon` must not be more than `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond that the point belongs to a different town: almost always a swapped/wrong coordinate or a wrong `municipio`. The `15–100 km` band is a warning, not an error; rows whose `municipio` is not in the lookup are skipped.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
-- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/barcelona/ejemplo.webp`.
+- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/catalunya/barcelona/ejemplo.webp`.
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
 - `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
 - `Venta online` is required and must be one of `sí`, `no`, or `no comprobado`.
@@ -164,8 +178,8 @@ https://maps.app.goo.gl/...
 These are editorial conventions for the asset that the `imagen` column points to. They are not enforced by `check:csv` (which only validates path shape and extension), but new and modified producer images should follow them so the catalog stays visually consistent with the Barcelona baseline.
 
 ### Format and dimensions
-- Final asset: **1600×1200 WebP** (4:3 landscape), quality `≥ 88`, saved at `/productores/<provincia>/<slug>.webp`.
-- The 1600×1200 dimensions match the existing `public/productores/barcelona/*.webp` files. Treat Barcelona as the visual reference.
+- Final asset: **1600×1200 WebP** (4:3 landscape), quality `≥ 88`, saved at `/productores/<comunidad>/<provincia>/<slug>.webp`.
+- The 1600×1200 dimensions match the existing `public/productores/catalunya/barcelona/*.webp` files. Treat Barcelona as the visual reference.
 - Other supported extensions (`.png`, `.jpg`, `.avif`, …) remain valid per the blocking contract, but prefer `.webp` for new assets.
 
 ### Background and composition
@@ -200,7 +214,8 @@ When picking a source for a new image, check in this order and stop at the first
 
 ### Naming
 - File name must equal the producer `slug` (the same value used in the CSV's `slug` column) followed by the extension.
-- Path: `/productores/<provincia>/<slug>.webp`, mirroring the `imagen` column value.
+- Path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the `imagen` column value and the CSV layout `data/csv/<comunidad>/<provincia>.csv` (Madrid: `/productores/madrid/madrid/` because comunidad and provincia share the name).
+- Legacy top-level folders (`/productores/caceres/`, `/productores/las-palmas/`, `/productores/valencia/`) predate this convention; migrate their assets to the canonical path when touching those rows, updating `imagen` in the same change.
 - One image per producer. Do not store unused variants or originals in `public/`. Keep working originals outside the repo.
 
 ### Image enrichment tooling
@@ -208,6 +223,7 @@ When picking a source for a new image, check in this order and stop at the first
   ```bash
   npx pnpm enrich:images --provincia cuenca
   ```
+- The script's default asset folder is the CSV stem at the top level (`/productores/<provincia>/`); pass `--asset-provincia <comunidad>/<provincia>` so new assets land on the canonical path.
 - Install the optional Python image tooling before running it locally:
   ```bash
   python3 -m pip install -r scripts/requirements-image-tools.txt

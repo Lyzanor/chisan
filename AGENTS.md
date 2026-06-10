@@ -28,7 +28,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `data/csv/catalunya/barcelona.csv`: Barcelona source of truth.
 - `data/csv/[comunidad]/[provincia].csv`: source of truth for every province catalog.
 - `data/reference/municipios.json` (+ `municipios-overrides.json`): Wikidata-sourced municipality centroids used by the geo-check. `lat`/`lon` >15 km from the `municipio` centroid is a warning; >100 km is a **blocking** error (`check:csv`). Reference data, not producer data. For cross-community homonyms (same `municipio` name in two provinces) add an override; see `docs/CSV_CONTRACT.md`.
-- `public/productores/barcelona/`: Barcelona producer images.
+- `public/productores/[comunidad]/[provincia]/`: producer images, mirroring the CSV layout (Barcelona: `public/productores/catalunya/barcelona/`). Three legacy top-level folders (`caceres`, `las-palmas`, `valencia`) are pending migration.
 
 ## Active scripts
 - **Which gate to run before finishing:** data/reference/image-only change → `npx pnpm verify:data` (fast: contract + image checks, no build); change that touches code (`app/`, `lib/`, `components/`, `scripts/`) → full `npx pnpm verify:ai`. CSVs are read at request time, so a data-only change cannot break the build — skip it.
@@ -47,6 +47,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Invariants
 - Keep flow simple: `CSV -> map/list -> row detail`.
+- Every province CSV shares the same physical structure: the canonical 20-column header (`slug,…,Venta online,Canal de venta`, see `docs/CSV_CONTRACT.md`) and **LF** line endings (enforced by `.gitattributes`). Never add, remove, or reorder columns in one province only; structural changes apply to all 50 CSVs in a solo commit.
 - Keep URL filter params stable:
   - `provincia`
   - `categoria`
@@ -57,7 +58,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - Keep `slug` stable and unique within its province; it is the public identity for each producer.
 - Every row must include `verificacion` with one of `pendiente`, `parcial`, or `verificado`; old labels such as `alta`, `media`, and `baja` are invalid.
 - Every row must include `Venta online` with one of `sí`, `no`, or `no comprobado`; use `no comprobado` by default until that producer has been reviewed.
-- `Canal de venta` is optional and complements `Venta online`: when present it lists one or more of `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace` (pipe-separated, e.g. `ecommerce|whatsapp`), and only when `Venta online` is `sí`. It is warning-only today (`check:csv:data-quality`), not blocking; backfill it incrementally. See `docs/CSV_CONTRACT.md`.
+- `Canal de venta`: the column exists in every CSV; its value is optional and complements `Venta online`. When present it lists one or more of `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace` (pipe-separated, e.g. `ecommerce|whatsapp`), and only when `Venta online` is `sí`. It is warning-only today (`check:csv:data-quality`), not blocking; backfill it incrementally. See `docs/CSV_CONTRACT.md`.
 - Prefer the category labels documented in `docs/CSV_CONTRACT.md`: especially `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 - `lat`/`lon` must be within `100 km` of the `municipio` centroid (blocking); the `15–100 km` band is a warning. If a whole municipio's producers land far from a same-named town in another province, it is a centroid homonym — add an override, do not move the producers. See `docs/CSV_CONTRACT.md`.
 
@@ -87,7 +88,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - To survey a province cheaply (de-dup, pick targets), use `npx pnpm list:province [provincia]` instead of opening the file.
 - While iterating, validate with `npx pnpm check:csv:changed` (only your touched CSVs); run `verify:data` (data-only) or full `verify:ai` (code) once before finishing.
 - For audit output, prefer `node scripts/audit-csv.js --mode=quality --summary-only <path>` when you only need counts. Do not loop the raw audit over every file and pipe it to `grep` — `check:csv` / `check:csv:data-quality` already aggregate all 50 files into one summary; reach for a per-file loop only when chasing one concrete row.
-- The physical column order in a CSV may differ from the logical order in `docs/CSV_CONTRACT.md` (e.g. `imagen`/`Venta online`/`Canal de venta` placement varies). Read the actual header before adding or moving columns; never assume positions.
+- All 50 CSVs share the canonical 20-column header in the same physical order (see `docs/CSV_CONTRACT.md` for the 0-based index map), so column-aware scripts can use fixed positions. If a header ever differs, treat it as a defect to fix repo-wide, not a local convention to adapt to.
 - `categoria` must match the closed `VALID_CATEGORIES` set in `scripts/audit-csv.js`; do not invent new labels. If none fits, pick the closest valid one and flag it rather than failing the contract.
 
 ## Province expansion judgment

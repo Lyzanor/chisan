@@ -55,7 +55,8 @@ pone la fila; muchos campos vienen auto-rellenados y mal. Ejemplo trabajado: `do
 
 ## Disciplina al editar CSV grandes
 
-- Los CSV pueden ser **CRLF**: edítalos preservando el fin de línea de cada fila (Python con `newline=""`),
-  modifica solo las líneas de tu lote y deja el resto byte-idéntico (un `read()/write()` en modo texto
-  reescribe todo el fichero). Valida con `git diff --numstat` que el nº de líneas tocadas es el esperado.
+- Todos los CSV son **LF** (norma global desde 2026-06-10, forzada por `.gitattributes`): edítalos
+  preservando el fin de línea de cada fila (Python con `newline=""`), modifica solo las líneas de tu
+  lote y deja el resto byte-idéntico. Si aparece un `\r`, algo lo ha reintroducido — no lo commitees.
+  Valida con `git diff --numstat` que el nº de líneas tocadas es el esperado.
 - Script efímero en `/tmp`, **no commitear** (AGENTS prohíbe generadores como fuente de verdad).

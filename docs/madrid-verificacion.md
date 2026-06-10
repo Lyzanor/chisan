@@ -62,8 +62,9 @@
 
 ## ⚠️ Gotchas técnicos (leer antes de editar)
 
-- **El CSV es LF (`\n`), no CRLF** (al contrario que Barcelona). La plantilla de edición de abajo
-  preserva el EOL de cada línea, así que sirve igual; al terminar comprueba que sigue LF puro:
+- **EOL: LF (`\n`), como todos los CSV del repo** (norma global desde 2026-06-10, forzada por
+  `.gitattributes`). La plantilla de edición de abajo preserva el EOL de cada línea; al terminar
+  comprueba que sigue LF puro:
   ```bash
   python3 -c "b=open('data/csv/madrid/madrid.csv','rb').read(); print('LF ok' if b.count(b'\r')==0 else 'PROBLEMA: se ha colado CRLF')"
   ```
@@ -71,10 +72,10 @@
   byte-idéntico. Preserva el trabajo de otros agentes y mantiene el diff pequeño.
 - **Multiagente:** toca solo `madrid.csv`, este ledger y `public/productores/madrid/madrid/`.
   Al commitear, `git add` explícito de tus rutas; nunca `git add -A`/`git checkout` del CSV.
-- **Orden de columnas (0-based), 19 columnas:** 0 slug · 1 nombre · 2 municipio · 3 categoria ·
-  4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web ·
-  11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion ·
-  18 Venta online. **No existe `Canal de venta`** (ver Lote 0 opcional).
+- **Orden de columnas (0-based), 20 columnas (cabecera canónica del repo):** 0 slug · 1 nombre ·
+  2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario ·
+  8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon ·
+  16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
 - **`Google Maps` autogenerado NO es evidencia.** El audit acepta cualquier GMaps no vacío como
   "enlace externo" para `verificado`, pero aquí todos son `maps/search/?api=1&query=…`. Regla del
   manual (más estricta que el audit): para `verificado` exige **web/IG/FB reales del productor** o
@@ -87,14 +88,11 @@
   Al borrar una fila con imagen, borra también su `.webp` (huérfana → warning en `check:images`).
   Preferir logo/imagotipo a foto de producto; nunca `enrich:images --apply` en bloque.
 
-### Lote 0 (opcional, estructural): columna `Canal de venta`
+### Lote 0 (estructural): columna `Canal de venta` — ✅ HECHO (2026-06-10)
 
-Madrid aún no tiene la columna `Canal de venta` (solo Barcelona la tiene; es opcional y warning-only,
-backfill incremental según AGENTS). Merece la pena añadirla **antes** de empezar los lotes, porque
-aquí se van a confirmar/desmentir 126 `VO=sí`. Añadirla = header + una coma final en las 227 líneas
-→ **diff de fichero completo**: hazlo en un commit en solitario, con `git status --short` limpio de
-otros agentes sobre `madrid.csv`, y pasa `verify:data` antes y después. Si no se hace, los lotes
-funcionan igual (la regla de canal simplemente no se anota).
+Resuelto por la unificación de estructura de todo el repo: los 50 CSV comparten ahora la cabecera
+canónica de 20 columnas con `Canal de venta` al final (vacía = sin clasificar). El valor sigue
+siendo opcional y warning-only; anótalo en los lotes cuando confirmes `VO=sí`.
 
 ### Plantilla de edición column-aware (EOL-safe)
 ```python
@@ -130,7 +128,7 @@ contra los **registros madrileños** (ver más abajo). Confirma `Venta online` c
 - [ ] `Instagram` / `Facebook` = perfil oficial real
 - [ ] `Google Maps`: si verificas, intenta sustituir el search-query por la ficha real
 - [ ] `imagen` = logo/imagotipo (nunca `enrich:images --apply` en bloque)
-- [ ] `Venta online` (+ `Canal de venta` si ya existe la columna)
+- [ ] `Venta online` + `Canal de venta` (ver regla)
 - [ ] `verificacion` → `verificado` (todo cuadra) / `parcial` (solo secundaria o registro) / `pendiente`
 
 ## Regla de `Venta online` / `Canal de venta`

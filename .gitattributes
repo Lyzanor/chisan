@@ -1,0 +1,2 @@
+# Province CSVs are always LF. Do not reintroduce CRLF files.
+*.csv text eol=lf
