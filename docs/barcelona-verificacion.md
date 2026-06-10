@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.806** · verificado **723** · parcial **377** · pendiente **1.706**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **167 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-37** (worklist).
-- **Siguiente: Lote 38 = Cabrera de Mar** (18 pendientes).
+- Filas: **2.803** · verificado **731** · parcial **384** · pendiente **1.688**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **170 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-38** (worklist).
+- **Siguiente: Lote 39 = Gavà** (18 pendientes).
 - Último push: lotes 1-32 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -200,7 +200,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 35 | Rubí | 0 | ✅ | 2026-06-10 | 11 verif + 5 parcial + 3 purgas (Milà cerrada 2022+SL extinguida, Cal Tastet y Mas Jornet sin rastro); Montse→Coques Tastet (rebranding mismo local/tel) |
 | 36 | Sant Celoni | 0 | ✅ | 2026-06-10 | 12 verif + 3 parcial + 4 purgas; dup Armora→Ous del Mas; mercat con pedidos online (delmercatacasa diba) |
 | 37 | Sant Martí Sarroca | 0 | ✅ | 2026-06-10 | 10 verif (6 cellers, 4 ecommerce) + 4 parcial DAR + 5 purgas (dup Torres→Pacs, Galimany=coop Covides, Tuyà=casa rural, Mata Coll y Cuevas ajenas); Jovani→Castellví de la Marca |
-| 38 | Cabrera de Mar | 18 | ⬜ | | |
+| 38 | Cabrera de Mar | 0 | ✅ | 2026-06-10 | 8 verif + 7 parcial + 3 purgas (dup Ribosa, Vinyals=ornamental, "De Mar"=artefacto); Cal Mamà rescatada de links Badalona/Flax&Kale |
 | 39 | Gavà | 18 | ⬜ | | |
 | 40 | Sant Feliu de Llobregat | 18 | ⬜ | | |
 | — | _resto (336 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
@@ -229,6 +229,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
 - **Sant Martí Sarroca:** Greenhort SCP (horta) · Molí de Calabuig SL (olives/ordi) · Ràfols Baqués Josep (conserves) · Vidal Bolet Jesús (fruita/horta) · Cellers Montserrat (vins)
+- **Cabrera de Mar:** Cultius Jaume's Noe SCP (horta, DAR) · Roig Vins (celler i botiga gourmet nova)
 
 ## Para otros agentes / a vigilar
 
