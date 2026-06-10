@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.834** · verificado **660** · parcial **353** · pendiente **1.821**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **139 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-31** (worklist).
-- **Siguiente: Lote 32 = Cardedeu** (19 pendientes).
-- Último push: lotes 1-31 en `main` (2026-06-10).
+- Filas: **2.829** · verificado **669** · parcial **358** · pendiente **1.802**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **144 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-32** (worklist).
+- **Siguiente: Lote 33 = Garriga** (19 pendientes).
+- Último push: lotes 1-32 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
 
@@ -194,8 +194,9 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 29 | Prat de Llobregat | 0 | ✅ | 2026-06-10 | 10 verif + 7 parcial + 8 purgas; 5 dups registre↔marca, 3 filas ajenas/no productor |
 | 30 | Masnou | 0 | ✅ | 2026-06-10 | 15 verif + 4 parcial + 1 purga; Aurora dup, Botànic→Argentona |
 | 31 | Arenys de Munt | 0 | ✅ | 2026-06-10 | 9 verif + 8 parcial + 2 purgas; dups Talcomraja y AgroSalichs |
-| 32 | Cardedeu | 19 | ⬜ | | |
-| — | _resto (344 municipios)_ | 1.802 | ⬜ | | recomputar al llegar |
+| 32 | Cardedeu | 0 | ✅ | 2026-06-10 | 9 verif + 5 parcial + 5 purgas; 3 dups, Ferro→Tremp, Mercat Vallès extinguida |
+| 33 | Garriga | 19 | ⬜ | | |
+| — | _resto (344 municipios)_ | 1.783 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -219,6 +220,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Viladecans:** Heretat Mas Tinell (vins) · Vilaeco SL · Ximalls SAT
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
+- **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
 
 ## Para otros agentes / a vigilar
 
@@ -228,6 +230,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - Girona: **Hort Viu** (hortviu.com, verdura eco, Les Planes d'Hostoles/Cogolls, Garrotxa; cistelles +
   mercat KMOsona de Manlleu) — real, candidata a `girona.csv`; se purgó de Manlleu la fila de registro
   "Macia Parris, Maria del Mar" que llevaba su email.
+- Lleida: **Ferro Falgueras, Francesc Xavier** figura en el DAR actual como productor de miel de
+  Tremp; se purgó la fila contaminada de Cardedeu y queda como candidato para `lleida.csv`.
 
 ## Historial
 
