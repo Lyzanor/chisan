@@ -27,6 +27,11 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 fila-1,Uno,Abrera,Bodega,Vino,Carrer 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,https://example.com,https://facebook.com/uno,https://instagram.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,pendiente
 CSV
 
+cat >"$TMP_DIR/duplicate-header.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
+fila-1,Uno,Abrera,Bodega,Vino,Carrer 1,Descripcion suficientemente larga para validar,,+34600000000,uno@example.com,https://old.example.com,https://example.com,no comprobado,https://facebook.com/uno,https://instagram.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,pendiente
+CSV
+
 cat >"$TMP_DIR/invalid-links.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
 fila-1,Uno,Abrera,Bodega,Vino,Carrer 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,https://example.com,no comprobado,https://example.com/uno,https://instagram.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,pendiente
@@ -66,10 +71,18 @@ otra-fila,Masia Uno,Abrera,Carniceria,Vino,Carrer Major 4,Descripcion suficiente
 CSV
 
 cat >"$TMP_DIR/sales-channel.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Canal de venta,Facebook,Instagram,Google Maps,lat,lon,verificacion
-canal-ok,Masia Ok,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,sí,ecommerce|whatsapp,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,verificado
-canal-bad,Masia Bad,Abrera,Bodega,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,sí,ecommerce|tienda,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,verificado
-canal-estado,Masia Estado,Abrera,Bodega,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,no,whatsapp,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,verificado
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+canal-ok,Masia Ok,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp
+canal-bad,Masia Bad,Abrera,Bodega,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,,verificado,sí,ecommerce|tienda
+canal-estado,Masia Estado,Abrera,Bodega,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,verificado,no,whatsapp
+CSV
+
+# Same canonical content as sales-channel.csv but with CRLF line endings.
+sed 's/$/\r/' "$TMP_DIR/sales-channel.csv" >"$TMP_DIR/crlf.csv"
+
+cat >"$TMP_DIR/wrong-order-header.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Instagram,Facebook,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+fila-1,Uno,Abrera,Bodega,Vino,Carrer 1,Descripcion suficientemente larga para validar,,+34600000000,uno@example.com,https://example.com,https://instagram.com/uno,https://facebook.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,,pendiente,no comprobado,
 CSV
 
 cat >"$TMP_DIR/category-preferences.csv" <<'CSV'
@@ -80,9 +93,9 @@ pan-uno,Forn Uno,Abrera,Panadería y repostería,Pan,Carrer Major 3,Descripcion 
 CSV
 
 cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
-verif-sin-contacto,Masia Verif,Abrera,Bodega,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,no comprobado,,,https://www.google.com/maps/place/Verif,41.51,1.90,verificado
-verif-geo-malo,Masia Lejos,Abrera,Bodega,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,no comprobado,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,verificado
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+verif-sin-contacto,Masia Verif,Abrera,Bodega,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,verificado,no comprobado,
+verif-geo-malo,Masia Lejos,Abrera,Bodega,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,,verificado,no comprobado,
 CSV
 
 cat >"$TMP_DIR/geo-blocking.csv" <<'CSV'
@@ -93,6 +106,23 @@ CSV
 run_expect_failure "$TMP_DIR/out-missing.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/missing-column.csv"
 grep -q "missing required CSV column 'Venta online'" "$TMP_DIR/out-missing.txt"
+
+run_expect_failure "$TMP_DIR/out-duplicate-header.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/duplicate-header.csv"
+grep -q "duplicated CSV column 'web'" "$TMP_DIR/out-duplicate-header.txt"
+
+# The exact canonical 20-column header passes contract mode.
+run_expect_success "$TMP_DIR/out-canonical-header.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/sales-channel.csv"
+
+# All 20 columns present but out of order is a blocking error.
+run_expect_failure "$TMP_DIR/out-wrong-order-header.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/wrong-order-header.csv"
+grep -q "header is not the canonical 20-column header (column 12 is 'Instagram' instead of 'Facebook')" "$TMP_DIR/out-wrong-order-header.txt"
+
+run_expect_failure "$TMP_DIR/out-crlf.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/crlf.csv"
+grep -q "line endings must be LF, found CR/CRLF" "$TMP_DIR/out-crlf.txt"
 
 run_expect_failure "$TMP_DIR/out-links.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/invalid-links.csv"

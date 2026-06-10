@@ -122,6 +122,9 @@ Optional = the value may be empty. The column headers themselves are present in 
 - Detail table renders empty values as `—`.
 
 ## Blocking rules (`check:csv`)
+- The header must be exactly the canonical 20-column header, in canonical order (see Canonical header).
+- No duplicated header columns.
+- Line endings must be LF (no CR/CRLF anywhere in the file).
 - Required header columns must exist exactly once.
 - `slug` is required and must be lowercase ASCII words separated by `-`.
 - `slug` must be unique within its province CSV.

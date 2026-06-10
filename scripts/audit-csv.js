@@ -21,6 +21,31 @@ const REQUIRED_COLUMNS = [
   "verificacion",
 ];
 
+// Exact 20-column header shared by all province CSVs, in this order.
+// Documented in docs/CSV_CONTRACT.md, section "Canonical header".
+const CANONICAL_HEADER = [
+  "slug",
+  "nombre",
+  "municipio",
+  "categoria",
+  "productos estrella",
+  "direccion",
+  "descripcion",
+  "horario",
+  "telefono",
+  "correo",
+  "web",
+  "Facebook",
+  "Instagram",
+  "Google Maps",
+  "lat",
+  "lon",
+  "imagen",
+  "verificacion",
+  "Venta online",
+  "Canal de venta",
+];
+
 const DESCRIPTION_MIN_LENGTH = 30;
 const VERIFICATION_COLUMN = "verificacion";
 const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
@@ -559,12 +584,42 @@ function createIssueCollector() {
   return { issues, push };
 }
 
-function runContractAudit({ headers, rows, push, centroids, communityHint }) {
+function runContractAudit({ raw, headers, rows, push, centroids, communityHint }) {
+  const headerCounts = new Map();
   const missing = REQUIRED_COLUMNS.filter((column) => !headers.includes(column));
   const slugLines = new Map();
 
+  for (const column of headers) {
+    headerCounts.set(column, (headerCounts.get(column) ?? 0) + 1);
+  }
+
   for (const column of missing) {
     push("error", 1, 0, "(header)", `missing required CSV column '${column}'`);
+  }
+
+  for (const [column, count] of headerCounts.entries()) {
+    if (count > 1) {
+      push("error", 1, 0, "(header)", `duplicated CSV column '${column || "(empty)"}'`);
+    }
+  }
+
+  const mismatchIndex = CANONICAL_HEADER.findIndex((column, index) => headers[index] !== column);
+  if (mismatchIndex !== -1 || headers.length !== CANONICAL_HEADER.length) {
+    const detail =
+      mismatchIndex === -1
+        ? `it has ${headers.length} columns instead of ${CANONICAL_HEADER.length}`
+        : `column ${mismatchIndex + 1} is '${headers[mismatchIndex] ?? "(missing)"}' instead of '${CANONICAL_HEADER[mismatchIndex]}'`;
+    push(
+      "error",
+      1,
+      0,
+      "(header)",
+      `header is not the canonical ${CANONICAL_HEADER.length}-column header (${detail}); see docs/CSV_CONTRACT.md`,
+    );
+  }
+
+  if (/\r/.test(raw ?? "")) {
+    push("error", 1, 0, "(file)", "line endings must be LF, found CR/CRLF (see .gitattributes)");
   }
 
   const validators = {
@@ -963,13 +1018,13 @@ async function main() {
   const { mode, csvPath, summaryOnly } = parseArgs(process.argv.slice(2), (targetPath) =>
     path.resolve(process.cwd(), targetPath),
   );
-  const { headers, rows } = await readCsv(csvPath);
+  const { raw, headers, rows } = await readCsv(csvPath);
   const { issues, push } = createIssueCollector();
 
   const centroids = await loadCentroids();
   const communityHint = inferCommunitySlug(csvPath);
 
-  runContractAudit({ headers, rows, push, centroids, communityHint });
+  runContractAudit({ raw, headers, rows, push, centroids, communityHint });
 
   if (mode === "quality") {
     runQualityAudit({ headers, rows, push, centroids, communityHint });
