@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.829** · verificado **669** · parcial **358** · pendiente **1.802**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **144 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-32** (worklist).
-- **Siguiente: Lote 33 = Garriga** (19 pendientes).
+- Filas: **2.824** · verificado **683** · parcial **359** · pendiente **1.782**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **149 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-33** (worklist).
+- **Siguiente: Lote 34 = Molins de Rei** (19 pendientes).
 - Último push: lotes 1-32 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -195,8 +195,15 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 30 | Masnou | 0 | ✅ | 2026-06-10 | 15 verif + 4 parcial + 1 purga; Aurora dup, Botànic→Argentona |
 | 31 | Arenys de Munt | 0 | ✅ | 2026-06-10 | 9 verif + 8 parcial + 2 purgas; dups Talcomraja y AgroSalichs |
 | 32 | Cardedeu | 0 | ✅ | 2026-06-10 | 9 verif + 5 parcial + 5 purgas; 3 dups, Ferro→Tremp, Mercat Vallès extinguida |
-| 33 | Garriga | 19 | ⬜ | | |
-| — | _resto (344 municipios)_ | 1.783 | ⬜ | | recomputar al llegar |
+| 33 | Garriga | 0 | ✅ | 2026-06-10 | 13 verif + 1 parcial + 5 purgas (dup Nualart, Latorre/Pérez ajenas, par O. Prats); Can Viver (Bigues) verificada de rebote |
+| 34 | Molins de Rei | 19 | ⬜ | | |
+| 35 | Rubí | 19 | ⬜ | | |
+| 36 | Sant Celoni | 19 | ⬜ | | |
+| 37 | Sant Martí Sarroca | 19 | ⬜ | | |
+| 38 | Cabrera de Mar | 18 | ⬜ | | |
+| 39 | Gavà | 18 | ⬜ | | |
+| 40 | Sant Feliu de Llobregat | 18 | ⬜ | | |
+| — | _resto (336 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
