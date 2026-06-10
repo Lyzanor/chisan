@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.849** · verificado **597** · parcial **323** · pendiente **1.929**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **124 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-26** (worklist).
-- **Siguiente: Lote 27 = Manlleu** (22 pendientes).
+- Filas: **2.848** · verificado **614** · parcial **327** · pendiente **1.907**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **125 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-27** (worklist).
+- **Siguiente: Lote 28 = Castellbisbal** (21 pendientes).
 - Último push: lotes 1-26 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -189,7 +189,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 24 | Berga | 0 | ✅ | 2026-06-09 | 10 verif + 14 parcial + 1 purga |
 | 25 | Vilassar de Mar | 0 | ✅ | 2026-06-10 | 10 verif + 9 parcial + 5 purgas; clúster floricultors DAR |
 | 26 | Viladecans | 0 | ✅ | 2026-06-10 | 9 verif + 11 parcial + 3 purgas; Parc Agrari |
-| 27 | Manlleu | 22 | ⬜ | | |
+| 27 | Manlleu | 0 | ✅ | 2026-06-10 | 17 verif + 4 parcial + 1 purga; cancerilles.com secuestrada, fila Capdevila contaminada con CF Ametlla |
 | 28 | Castellbisbal | 21 | ⬜ | | |
 | 29 | Prat de Llobregat | 21 | ⬜ | | |
 | 30 | Masnou | 20 | ⬜ | | |
@@ -221,6 +221,9 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - Tarragona: `bodega-el-grial-sl` (bodega real de El Perelló) se purgó de Barcelona; candidata a
   `tarragona.csv`.
 - Vilafranca: posible dup Forn Sant Joan vs Pastisseria Trens (mismo C/ Sant Joan 9).
+- Girona: **Hort Viu** (hortviu.com, verdura eco, Les Planes d'Hostoles/Cogolls, Garrotxa; cistelles +
+  mercat KMOsona de Manlleu) — real, candidata a `girona.csv`; se purgó de Manlleu la fila de registro
+  "Macia Parris, Maria del Mar" que llevaba su email.
 
 ## Historial
 
