@@ -1,41 +1,44 @@
 # Madrid · verificación profunda — manual + estado
 
 > Ledger reanudable de la verificación campo a campo de `data/csv/madrid/madrid.csv`.
-> Una sesión nueva (sin memoria de la anterior) debe poder retomar **solo con este archivo**.
-> Es evidencia de trabajo, no fuente de verdad: la verdad es el CSV + la columna `verificacion`.
-> Hermano del proceso de Barcelona (`docs/barcelona-verificacion.md`), adaptado a los patrones de Madrid.
->
-> **Principio rector (no negociable):** dar peso a la **verificación real** y a la **solidez del CSV**.
-> - Evidencia > afirmaciones. No te fíes de lo que ya pone la fila: hay `Venta online=sí`, webs y
->   GMaps **mal auto-rellenados**. Confírmalo o corrígelo.
-> - Niveles honestos: `verificado` solo con cotejo contra fuente primaria/fiable; `parcial` si solo
->   hay fuente secundaria o registro; `pendiente` si no se ha revisado.
-> - Nunca inventes un productor ni un dato. Mejor vacío que falso.
-> - Elimina desinformación (enlaces a entidades ajenas) aunque implique dejar el campo vacío.
-> - Purga/borra filas solo con evidencia fuerte (cotejo de registro + ausencia de presencia real).
+> Una sesión nueva debe poder retomar **solo con este archivo**. No es fuente de verdad: la verdad
+> es el CSV (columna `verificacion`). Hermano del proceso de Barcelona
+> (`docs/barcelona-verificacion.md`); el detalle histórico vive en el git log de este archivo.
+
+## Reglas duras (no negociables)
+
+1. Evidencia > afirmaciones. No te fíes de lo que ya pone la fila: hay `Venta online=sí`, webs y
+   GMaps **mal auto-rellenados**. Confírmalo o corrígelo.
+2. Nunca inventes un productor ni un dato. Mejor vacío que falso.
+3. Enlace que apunta a una entidad ajena = desinformación → **blanquéalo**, aunque el campo quede vacío.
+4. Borra una fila solo con evidencia fuerte: sin match en registro **y** sin presencia real.
+5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
+   antes de blanquear una web.
+6. **GMaps de Madrid no cuenta como enlace para `verificado`**: los 227 son search-queries
+   autogeneradas (`maps/search/?api=1&query=…`). El audit las acepta; este manual no. Para
+   `verificado` exige web/IG/FB reales del productor, o sustituye el GMaps por su ficha real.
+   El search-query puede quedarse (no es desinformación), pero no es "el ≥1 enlace".
 
 ## Estado actual (2026-06-10)
 
-- Filas: **227** · `verificado` **0** · `parcial` **177** · `pendiente` **50**.
-- Modo: **verificación profunda por zonas**, lote a lote bajo demanda (~25 filas/lote, ~9-11 sub-lotes).
-- **Cerrados:** ninguno. **Siguiente:** Lote 1 = Las Vegas y Sureste, sub-lote 1a.
-- Herencia (contexto que explica el estado, ver `git log -- data/csv/madrid/madrid.csv`):
-  - 2026-06-05 (`e52d661`): pasada de **geolocalización + Google Places** (237→227): coords 100%,
-    direcciones reales ~210, municipios normalizados, 24 place_ids ajenos saneados, 3 dups fusionados,
-    7 cierres purgados. **Ojo:** ese `parcial` masivo = "existe en Google Places", **no** verificación web.
-  - Los 50 `pendiente` vienen en su mayoría de la **integración de candidatos** (`e7cf459` y posteriores):
-    0 teléfonos, 0 Instagram, y webs tipo `https://www.<nombre>.com` plausibles pero **sin comprobar**
-    (los docs de candidatos mezclaban productores reales con inventados).
-  - `Venta online`: **126 `sí`** heredados sin confirmar checkout (104 parcial + 22 pendiente),
-    99 `no comprobado`, solo 2 `no`. Trátalo como auto-rellenado: hay que confirmarlo fila a fila.
-  - `Google Maps`: **227/227 son URLs de búsqueda autogeneradas** (`maps/search/?api=1&query=…`),
-    no enlaces a la ficha real. El audit las acepta como "enlace", este manual **no** (ver gotchas).
+- Filas: **227** · verificado **0** · parcial **177** · pendiente **50**.
+- Modo: por zonas (7 zonas, ~9-11 sub-lotes de ~25), lote a lote bajo demanda.
+- **Cerrados: ninguno. Siguiente: Lote 1 = Las Vegas y Sureste, sub-lote 1a.**
+- Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
+  - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
+    "existe en Places", **no** verificación web. Coords 100% validadas (geo-check ≤15 km): no las
+    toques salvo que corrijas dirección/municipio; entonces re-geocodifica y pasa el geo-check.
+  - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
+    `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
+    reales con inventados). Máximo riesgo.
+  - `Venta online`: **126 `sí` heredados sin confirmar** (104 parcial + 22 pendiente), 99
+    `no comprobado`, 2 `no`. Trátalo como auto-rellenado: confirmar fila a fila.
 
-## Cómo retomar en 1 minuto
+## Procedimiento (cada lote)
 
-1. Lee este archivo entero (estado + patrones + gotchas).
-2. Elige la siguiente zona de la **worklist** (más abajo) en orden de impacto.
-3. Extrae su lote priorizando riesgo (pendientes primero, luego `VO=sí` sin confirmar):
+1. Lee este archivo entero.
+2. Toma la primera zona ⬜ de la **worklist** (más abajo).
+3. Lista su lote priorizando riesgo (pendientes primero, luego `VO=sí` sin confirmar):
    ```bash
    python3 - <<'PY'
    import csv
@@ -56,50 +59,39 @@
        print(r['slug'],'|',r['verificacion'],'| VO=',r['Venta online'],'|',r['categoria'],'|',r['municipio'],'| web=',r['web'][:38])
    PY
    ```
-4. Verifica cada fila por web (ver **protocolo** y **patrones**).
-5. Edita con el **script column-aware EOL-safe** (plantilla más abajo). Nunca a mano fila a fila.
-6. Valida: `npx pnpm check:csv:changed` → `npx pnpm verify:data`. Actualiza este ledger.
+4. Verifica cada fila por web y contra los registros madrileños → "Decisión por fila", "Patrones"
+   y "Fuentes de cotejo".
+5. Aplica los cambios con la plantilla Python → sección "Edición del CSV". Nunca a mano fila a fila.
+6. Valida: `npx pnpm check:csv:changed` y después `npx pnpm verify:data`.
+7. Actualiza este archivo: bloque "Estado actual" + fila de la worklist (✅, fecha, nota de 1 línea).
 
-## ⚠️ Gotchas técnicos (leer antes de editar)
+## Edición del CSV
 
-- **EOL: LF (`\n`), como todos los CSV del repo** (norma global desde 2026-06-10, forzada por
-  `.gitattributes`). La plantilla de edición de abajo preserva el EOL de cada línea; al terminar
-  comprueba que sigue LF puro:
+- **EOL = LF** en todos los CSV del repo (forzado por `.gitattributes`). Abre con `newline=""`.
+  Comprobación final:
   ```bash
   python3 -c "b=open('data/csv/madrid/madrid.csv','rb').read(); print('LF ok' if b.count(b'\r')==0 else 'PROBLEMA: se ha colado CRLF')"
   ```
-- **No reescribas todo el fichero.** Modifica solo las líneas cuyo `slug` está en tu lote; el resto
-  byte-idéntico. Preserva el trabajo de otros agentes y mantiene el diff pequeño.
-- **Multiagente:** toca solo `madrid.csv`, este ledger y `public/productores/madrid/madrid/`.
-  Al commitear, `git add` explícito de tus rutas; nunca `git add -A`/`git checkout` del CSV.
-- **Orden de columnas (0-based), 20 columnas (cabecera canónica del repo):** 0 slug · 1 nombre ·
-  2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario ·
-  8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon ·
-  16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
-- **`Google Maps` autogenerado NO es evidencia.** El audit acepta cualquier GMaps no vacío como
-  "enlace externo" para `verificado`, pero aquí todos son `maps/search/?api=1&query=…`. Regla del
-  manual (más estricta que el audit): para `verificado` exige **web/IG/FB reales del productor** o
-  sustituye el GMaps por el enlace a la **ficha real** del negocio. El search-query puede quedarse
-  (no es desinformación), pero no cuenta como el "≥1 enlace".
-- **Coords ya validadas** (pasada Places 06/2026, geo-check ≤15 km). No las toques salvo que
-  corrijas la dirección/municipio; en ese caso re-geocodifica y pasa el geo-check.
-- **Teléfonos en E.164 estricto** (`+34…`): el audit bloquea otros formatos.
-- **Imágenes:** ruta canónica `/productores/madrid/madrid/<slug>.webp` (140/227 filas la tienen).
-  Al borrar una fila con imagen, borra también su `.webp` (huérfana → warning en `check:images`).
-  Preferir logo/imagotipo a foto de producto; nunca `enrich:images --apply` en bloque.
+- Modifica **solo** las líneas cuyo `slug` está en tu lote; el resto byte-idéntico.
+- Multiagente: toca solo `madrid.csv`, este ledger y `public/productores/madrid/madrid/`.
+  `git add` explícito de tus rutas; nunca `git add -A` ni `git checkout` del CSV.
+- Columnas (0-based, cabecera canónica): 0 slug · 1 nombre · 2 municipio · 3 categoria ·
+  4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web ·
+  11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion ·
+  18 Venta online · 19 Canal de venta.
+- Contrato: `verificado` exige coords + ≥1 enlace **real** (regla dura 6); `categoria` ∈
+  `VALID_CATEGORIES` de `scripts/audit-csv.js`; `telefono` E.164 (`+34…`).
+- Imágenes: ruta canónica `/productores/madrid/madrid/<slug>.webp` (~140/227 filas la tienen).
+  Al borrar una fila con `imagen`, borra también su `.webp`. Logo/imagotipo antes que foto;
+  nunca `enrich:images --apply` en bloque.
 
-### Lote 0 (estructural): columna `Canal de venta` — ✅ HECHO (2026-06-10)
+### Plantilla de edición (column-aware, EOL-safe)
 
-Resuelto por la unificación de estructura de todo el repo: los 50 CSV comparten ahora la cabecera
-canónica de 20 columnas con `Canal de venta` al final (vacía = sin clasificar). El valor sigue
-siendo opcional y warning-only; anótalo en los lotes cuando confirmes `VO=sí`.
-
-### Plantilla de edición column-aware (EOL-safe)
 ```python
 import csv, io
 PATH="data/csv/madrid/madrid.csv"
-CHANGES={ "slug-aqui": {17:"verificado", 18:"sí"} }   # idx_columna: valor
-DELETE=set()                                           # slugs a borrar
+CHANGES={ "slug-aqui": {17:"verificado", 18:"sí", 19:"ecommerce"} }   # idx_columna: valor
+DELETE=set()                                                          # slugs a borrar
 with open(PATH,encoding="utf-8",newline="") as f: lines=f.readlines()
 out=[]
 for line in lines:
@@ -115,104 +107,99 @@ for line in lines:
 open(PATH,"w",encoding="utf-8",newline="").writelines(out)
 ```
 
-## Protocolo por fila (verificación profunda)
+## Decisión por fila
 
-Contrasta cada fila contra **fuente primaria** (web propia + ficha real de Google) y, cuando aplique,
-contra los **registros madrileños** (ver más abajo). Confirma `Venta online` con un canal de pedido vivo HOY.
+Comprueba campo a campo contra la fuente (web propia + ficha real de Google):
 
-- [ ] `nombre` / `municipio` coinciden con la fuente (la dirección/coords pueden delatar otro municipio)
-- [ ] `categoria` ∈ `VALID_CATEGORIES` (`scripts/audit-csv.js`)
-- [ ] `direccion` + `lat`/`lon` coherentes (geo-check ≤15 km)
-- [ ] `telefono` / `correo` / `web` vivos y **del productor** (no de un tercero) — en pendientes, la web
-      puede ser **inventada**: dominio vivo no basta, tiene que ser *su* dominio
-- [ ] `Instagram` / `Facebook` = perfil oficial real
-- [ ] `Google Maps`: si verificas, intenta sustituir el search-query por la ficha real
-- [ ] `imagen` = logo/imagotipo (nunca `enrich:images --apply` en bloque)
-- [ ] `Venta online` + `Canal de venta` (ver regla)
-- [ ] `verificacion` → `verificado` (todo cuadra) / `parcial` (solo secundaria o registro) / `pendiente`
+- `nombre`/`municipio` coinciden con la fuente (la dirección/coords pueden delatar otro municipio).
+- `direccion` + `lat`/`lon` coherentes (geo-check ≤15 km); coords ya validadas, no tocar sin motivo.
+- `telefono`/`correo`/`web` vivos y **del productor** — en `pendiente` la web puede ser **inventada**:
+  que el dominio cargue no basta, tiene que ser *su* dominio.
+- `Instagram`/`Facebook` = perfil oficial real.
+- `Google Maps`: si verificas, intenta sustituir el search-query por la ficha real.
+- `imagen` = logo/imagotipo.
+- `Venta online` + `Canal de venta` → regla de abajo.
 
-## Regla de `Venta online` / `Canal de venta`
+Después clasifica:
 
-Decisión por **canal de pedido online real**, confirmado hoy:
-- **`sí`** si hay: tienda web con carrito/checkout (`ecommerce`); pedido por marketplace/Glovo
-  (`marketplace`); "pedir online" por WhatsApp (`whatsapp`); email/teléfono de pedido (`email`/`telefono`);
-  cestas por suscripción (`suscripcion`). Varios → pipe: `ecommerce|whatsapp`.
-- **`no`** si solo hay web informativa, "en construcción", o solo tienda física / venta en mercados.
-- **`no comprobado`** si no puedes confirmarlo. **No** afirmes `sí` sin evidencia; **no** degrades
-  a `no` a la ligera (web caída temporal ≠ no vende).
-- **Alerta Madrid:** hay 126 `sí` heredados sin confirmar. Espera corregir muchos a `no`/`no comprobado`
-  (visto en Barcelona: catálogo sin carrito marcado como `sí`).
+| Lo que encuentras | Acción |
+|---|---|
+| Fuente primaria cuadra (web propia, ficha real, perfil oficial) | `verificacion=verificado` |
+| Solo registro (M Producto/CAEM/DO) o fuente secundaria; o existe pero no elabora (revende/sirve) | `verificacion=parcial` |
+| No has podido revisarla | déjala `pendiente` |
+| Sin rastro + sin registro; o dup; o mal fichada (fuera de la Comunidad, no productor) | **purgar** la fila (+ su `.webp`) |
 
-## Catálogo de patrones por productor (los de Madrid)
+## Venta online / Canal de venta
 
-1. **Marca consolidada con web propia** (bodegas DO, cerveceras artesanas, queserías, tostadores):
-   `WebFetch` su web → confirma negocio + checkout → `verificado` + `Venta online` según regla. ~1 fetch.
-2. **Candidato integrado con web plausible** (la mayoría de los 50 `pendiente`: sin tel, sin IG, web
-   `https://www.<nombre>.com`): los docs de candidatos mezclaban reales con **inventados**. Verifica que
-   el dominio carga **y** es del productor. Inventada/parked → blanquéala y busca la real; sin rastro
-   alguno (ni registro, ni Google, ni prensa local) → **purgar**.
-3. **`Venta online=sí` auto-rellenado**: web viva pero sin carrito ni canal de pedido → corrige a
+Decide por **canal de pedido online vivo HOY**:
+
+- `sí` + canal: carrito/checkout propio → `ecommerce`; marketplace/Glovo → `marketplace`;
+  pedido por WhatsApp → `whatsapp`; pedido por email/teléfono → `email`/`telefono`;
+  cestas recurrentes → `suscripcion`. Varios → pipe: `ecommerce|whatsapp`.
+- `no`: solo web informativa, "en construcción", o solo tienda física / venta en mercados.
+- `no comprobado`: no puedes confirmarlo (web caída temporal ≠ no vende).
+- No afirmes `sí` sin evidencia; no degrades a `no` a la ligera. Los 126 `sí` heredados se
+  confirman o se corrigen uno a uno.
+- `Canal de venta` solo cuando `Venta online=sí`; si no, vacío.
+
+## Patrones (reconoce y actúa)
+
+1. **Marca consolidada con web propia** (bodegas DO, cerveceras, queserías, tostadores) → fetch web,
+   confirma negocio + checkout → `verificado`.
+2. **Candidato integrado con web plausible** (la mayoría de los 50 `pendiente`: sin tel, sin IG,
+   web `https://www.<nombre>.com`) → verifica que el dominio carga **y** es del productor.
+   Inventada/parked → blanquear y buscar la real; sin rastro alguno → purgar.
+3. **`Venta online=sí` auto-rellenado** → web viva pero sin carrito ni canal de pedido → corrige a
    `no`/`no comprobado` aunque la fila diga `sí`.
-4. **Web = directorio o tercero** (esmadrid.com, guías turísticas, ayuntamientos, revistas): no es la
-   web del productor → blanquea y busca la propia. Si además no hay rastro propio → patrón 7/purga.
-5. **Elaborador urbano de la capital** (tostadores de café, cerveceras, obradores, chocolaterías):
-   elabora in situ → es productor, `verificado` si la fuente cuadra. La cafetería/bar que **solo sirve**
-   producto de terceros no lo es → `parcial`, `Venta online=no`, candidata a purga si ni elabora ni vende.
-6. **Tienda/frutería que revende** (incl. paradas de mercado sin obrador ni cultivo propio): existe
-   pero no es productor → `parcial` y anotar; purga si claramente solo distribución.
-7. **Productor de registro sin presencia web** (figura en M Producto Certificado / CAEM / DO pero sin
-   web propia): match de entidad (nombre + municipio) → `parcial`; aprovecha para corregir
-   productos/contacto con los datos del registro. Sin match + sin presencia → **purgar**.
-8. **Mal fichada**: fuera de la Comunidad, categoría equivocada, o granja/explotación no vendible →
-   **purgar** (o flag para mover, sin tocar el CSV de otra provincia).
-9. **Web muerta vs web secuestrada:**
-   - Fetch falla por SSL/http/timeout/ECONNREFUSED → **NO** borres la web (un fetch fallido no es un
-     sitio muerto); confirma por búsqueda.
-   - La web **carga pero muestra un negocio ajeno** (parked, dominio en venta, spam) → **blanquéala**
-     (es desinformación) y baja a `parcial`/`pendiente` según el resto.
+4. **Web = directorio o tercero** (esmadrid.com, guías, ayuntamientos, revistas) → blanquear y
+   buscar la propia; sin rastro propio → patrón 7 / purga.
+5. **Elaborador urbano de la capital** (tostador, cervecera, obrador, chocolatería): elabora in situ
+   → es productor. El café/bar que **solo sirve** producto de terceros no lo es → `parcial`, `VO=no`,
+   candidata a purga si ni elabora ni vende.
+6. **Tienda/frutería que revende** (incl. paradas de mercado sin obrador ni cultivo propio) →
+   `parcial` y anotar; purga si claramente solo distribución.
+7. **Productor de registro sin presencia web** (consta en M Producto/CAEM/DO) → match de entidad
+   (nombre + municipio) → `parcial` + corrige productos/contacto con el registro. Sin match + sin
+   presencia → purgar.
+8. **Mal fichada** (fuera de la Comunidad, categoría equivocada, explotación no vendible) → purgar;
+   si es real en otra provincia, flag sin tocar su CSV.
+9. **Web muerta vs secuestrada**: fetch falla → NO borres (regla dura 5); web carga pero muestra un
+   negocio ajeno (parked, en venta, spam) → blanquear + bajar a `parcial`/`pendiente`.
 
 ## Fuentes de cotejo madrileñas (el "DAR" de Madrid)
 
-No hay (de momento) un dataset descargable tipo Socrata como el DAR catalán; el cotejo es por buscador
-web. Si aparece un dataset consultable (datos.comunidad.madrid / datos.gob.es), crear un
-`scripts/match-madrid.mjs` análogo a `scripts/match-dar.mjs`.
+No hay dataset descargable tipo Socrata; el cotejo es por buscador. Si aparece uno
+(datos.comunidad.madrid / datos.gob.es), crear `scripts/match-madrid.mjs` análogo a `match-dar.mjs`.
 
-- **M Producto Certificado** (marca de garantía "Alimentos de Madrid", ~505 empresas): buscador por
-  municipio/producto/marca en `comunidad.madrid/info/productores` (portada:
-  `comunidad.madrid/m-producto-certificado`). Match de entidad → `parcial` mínimo; corrige
-  productos/contacto con la ficha.
-- **CAEM** (Comité de Agricultura Ecológica de la Comunidad de Madrid): listado de operadores
-  certificados en `caem.es/operadores/`; complementa con el directorio europeo TRACES de operadores eco.
-  Útil para huertas/cestas eco (Rivas, Aranjuez, Sierra Norte…).
-- **D.O. Vinos de Madrid** (`vinosdemadrid.es`): bodegas adscritas por subzona — **Arganda** (~28
-  bodegas), **Navalcarnero** (~5), **San Martín de Valdeiglesias** (~18), **El Molar** (desde 2019).
-  Cruza las 34 filas `Bodega` con su subzona; bodega que dice DO y no consta → sospecha.
-- **Denominaciones menores** (cotejar por búsqueda, sin URL fija verificada): marca de garantía
-  **Aceitunas de Campo Real**, **Aceite de Madrid** (AOVE), IGP **Carne de la Sierra de Guadarrama**,
-  D.G. **Anís de Chinchón**. Refuerzan los clústeres de Campo Real, Las Vegas y la Sierra.
+- **M Producto Certificado** (~505 empresas): buscador en `comunidad.madrid/info/productores`.
+  Match de entidad → `parcial` mínimo; corrige productos/contacto con la ficha.
+- **CAEM** (agricultura ecológica): operadores en `caem.es/operadores/`; complementa con TRACES.
+  Útil para huertas/cestas eco (Rivas, Aranjuez, Sierra Norte).
+- **D.O. Vinos de Madrid** (`vinosdemadrid.es`): subzonas Arganda (~28 bodegas), Navalcarnero (~5),
+  San Martín de Valdeiglesias (~18), El Molar. Bodega que dice DO y no consta → sospecha.
+- **Denominaciones menores** (por búsqueda): Aceitunas de Campo Real, Aceite de Madrid (AOVE),
+  IGP Carne de la Sierra de Guadarrama, Anís de Chinchón.
 - **Mercados de productores** (secundarias): Día de Mercado de la Cámara Agraria, Mercado de
-  Productores del Planetario, mercados agroecológicos municipales — confirman que el productor vende
-  directo (no confirman venta online).
-- **Caveat general:** no constar en un registro voluntario no prueba inexistencia; pero junto a la
-  ausencia total de presencia web/Google justifica la purga.
+  Productores del Planetario, mercados agroecológicos — confirman venta directa, no venta online.
+- No constar en un registro voluntario no prueba inexistencia; pero sin registro **y** sin
+  presencia web/Google, justifica la purga.
 
-## Worklist priorizada (por zonas)
+## Worklist (por zonas)
 
-Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. La asignación municipio→zona es la del script de
-"Cómo retomar" (104 municipios, suma 227 filas). Dentro de cada lote: pendientes primero, luego
-`VO=sí` sin confirmar, luego el resto.
+Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del procedimiento
+(104 municipios, 227 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
 
 | # | Zona | Filas | Pend. | VO=sí | Sub-lotes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Las Vegas y Sureste | 59 | 11 | 36 | 3 (1a-1c) | ⬜ | | Aceitunas Campo Real, DO Arganda, huerta Aranjuez/Rivas, Chinchón |
-| 2 | Sierra Norte y Jarama | 52 | 13 | 27 | 2 (2a-2b) | ⬜ | | Miel, carne, quesos, huerta; Torremocha/Bustarviejo; IGP Guadarrama |
-| 3 | Capital | 34 | 3 | 19 | 2 (3a-3b) | ⬜ | | Tostadores, cerveceras urbanas, obradores; ojo webs-directorio (esmadrid) |
-| 4 | Sierra Oeste y Suroeste | 28 | 9 | 13 | 1 | ⬜ | | DO subzona San Martín de Valdeiglesias + Navalcarnero; vino de garnacha |
-| 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ⬜ | | Obradores y cerveceras de Fuenlabrada/Móstoles/Humanes/Leganés |
+| 2 | Sierra Norte y Jarama | 52 | 13 | 27 | 2 (2a-2b) | ⬜ | | Miel, carne, quesos, huerta; IGP Guadarrama |
+| 3 | Capital | 34 | 3 | 19 | 2 (3a-3b) | ⬜ | | Tostadores, cerveceras, obradores; ojo webs-directorio (esmadrid) |
+| 4 | Sierra Oeste y Suroeste | 28 | 9 | 13 | 1 | ⬜ | | DO San Martín de Valdeiglesias + Navalcarnero; garnacha |
+| 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ⬜ | | Obradores y cerveceras (Fuenlabrada/Móstoles/Humanes/Leganés) |
 | 6 | Henares y Este | 16 | 8 | 8 | 1 | ⬜ | | **50% pendiente** — máximo riesgo de candidatos inventados |
-| 7 | Guadarrama y Noroeste | 13 | 2 | 7 | 1 | ⬜ | | Sierra oeste residencial; quesos/carne/cerveza |
+| 7 | Guadarrama y Noroeste | 13 | 2 | 7 | 1 | ⬜ | | Quesos/carne/cerveza |
 
-## Registro de lotes cerrados
+## Historial
 
-| Fecha | Lote | Filas | → verificado | otros | Notas |
-|---|---|---|---|---|---|
+Cada lote cerrado deja su línea en la worklist (✅, fecha, nota de 1 línea); la evidencia fina va en
+el mensaje de commit del lote. Detalle histórico: `git log --follow -p -- docs/madrid-verificacion.md`.

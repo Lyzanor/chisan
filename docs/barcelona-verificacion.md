@@ -1,108 +1,73 @@
 # Barcelona · verificación profunda — manual + estado
 
 > Ledger reanudable de la verificación campo a campo de `data/csv/catalunya/barcelona.csv`.
-> Una sesión nueva (sin memoria de la anterior) debe poder retomar **solo con este archivo**.
-> Es evidencia de trabajo, no fuente de verdad: la verdad es el CSV + la columna `verificacion`.
->
-> **Principio rector (no negociable):** dar peso a la **verificación real** y a la **solidez del CSV**.
-> - Evidencia > afirmaciones. No te fíes de lo que ya pone la fila: hay `sí/ecommerce`, webs,
->   redes y GMaps **mal auto-rellenados**. Confírmalo o corrígelo.
-> - Niveles honestos: `verificado` solo con cotejo contra fuente primaria/fiable; `parcial` si solo
->   hay fuente secundaria o registro; `pendiente` si no se ha revisado.
-> - Nunca inventes un productor ni un dato. Mejor vacío que falso.
-> - Elimina desinformación (enlaces a entidades ajenas) aunque implique dejar el campo vacío.
-> - Purga/borra filas solo con evidencia fuerte (cotejo de registro + ausencia de presencia real).
+> Una sesión nueva debe poder retomar **solo con este archivo**. No es fuente de verdad: la verdad
+> es el CSV (columna `verificacion`). El detalle de cada lote cerrado vive en el historial git de
+> este archivo (`git log --follow -p -- docs/barcelona-verificacion.md`) y en los commits del CSV.
+
+## Reglas duras (no negociables)
+
+1. Evidencia > afirmaciones. No te fíes de lo que ya pone la fila: hay `sí/ecommerce`, webs, redes
+   y GMaps **mal auto-rellenados**. Confírmalo o corrígelo.
+2. Nunca inventes un productor ni un dato. Mejor vacío que falso.
+3. Enlace que apunta a una entidad ajena = desinformación → **blanquéalo**, aunque el campo quede vacío.
+4. Borra una fila solo con evidencia fuerte: sin match en registro **y** sin presencia real.
+5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
+   antes de blanquear una web.
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.849** · `verificado` **597** · `parcial` **323** · `pendiente` **1.929**
-- Snapshot inicial era 2.973 · 35 · 16 · 2.922 (se han **purgado 124 filas** y verificado/parcial el resto).
-- Modo: **verificación profunda**, **lote a lote bajo demanda** (~25 filas/lote). ~90 lotes estimados.
-- **Herramienta (lote 22+):** `node scripts/match-dar.mjs "<municipio>"` cruza las filas `pendiente`
-  del municipio contra el DAR por **tel/email/cognoms** (municipi-agnóstic → caza cross-municipi y dups
-  registre↔marca), y lista candidatos DAR no casados. Acelera el triaje; NO sustituye la verificación web.
-- **Cerrados:** Lotes 1-26.
-  **Lote 26 = Viladecans** COMPLETO (23 pend en una pasada: 9 verif + 11 parcial + 3 purgas).
-  Baix Llobregat, mitad Parc Agrari (fichas parcagrari.cat) + comerç. **Verif:** Cal Xim-Xim (masia centenària,
-  ecommerce), Bakery by Noelia (Shopify), Forn de la Plaça, Santacreu (comandes tel 72h), Soulblim (camps propis
-  Parc Agrari, B2B), La Fábrica de Churros (obrador 1976, adreça→Santa Isabel 4), Carnívors (parada Mercat
-  Constitució), Tugas i Companyia (**→Sant Climent de Llobregat**, cistelles eco, +web), L'horta amb Alegria
-  (coop 2021 Borja+Oriol, DAR×2+parcagrari). **Parcial DAR/parcagrari:** Kopgavà/Onaveggies, Garrigosa (mel),
-  Vila Gelabert (=CAL DELAILA, **recat→Fruta y verdura**, GMaps "La salchicha" blanquejat), Farrés Magem
-  (web/IG/tel de l'**Ajuntament** blanquejats), Calbet/Cal Cot, Sampera (coords Mercabarna→corregides),
-  Horta Viladecans SCCL (coop 10 pagesos, ven a Mercabarna), Juvitu (tel DAR), La Paradeta (=AGRO-ANDI),
-  L'Amanida (recat→Fruta y verdura, marketplace Mercagavà), Sarita (fruiteria revèn). **3 purgues:**
-  Ubeda García Oriol (**dup registre↔marca d'Horta amb Alegria**), Amat Serrano (=Fruites i Verdures AMAT SA,
-  **majorista AGEM Mercabarna** + Almería, no km0), Gelats Segura (sense cap rastre). +1 img.
-  **Lote 25 = Vilassar de Mar** COMPLETO (24 pend en una pasada: 10 verif + 9 parcial + 5 purgas).
-  Maresme: capital de la flor (clúster DAR de floricultors a Cases de Camp) + comerç de poble. **Verif:**
-  Espinaler (1896, tienda.espinaler.com), Can Pocurull (1945, WhatsApp), Carns Montserrat (1978, tel/email),
-  Carns Boher (1969; web `carnsboher.cat` **segrestada amb spam → blanquejada**), Horta i Obrador Ytchart
-  (hortadeproximitat.cat, botiga+WhatsApp), Formatges Vilatzara (Vaccru llet crua), Original Churros (fabricant
-  B2B), Floricultura Llorenç Vila (via Poleplants), Pastisseries Falgueras (1911, relleu abril 2026, **adreça→
-  Plaça de l'Era** +web), El Petit Bané (eco, cistelles online). **Parcial DAR (9):** Aimsat, Corbalan Torrents
-  (recat→Fruta y verdura, GMaps perruqueria blanquejat), Cultius Floriach/Itxart/Ramon, Granja Blava
-  (=Green in Blue aquaponia, +web, recat→Fruta y verdura), Plantes Bada (BADAORIGEN), Ribas Mateu (coords
-  +25km→corregides), Ribas Muro (coriandre, recat→Aromáticas). **5 purgues:** Tuaperitivo (botiga online
-  d'aperitius/reseller morta, domini en venda), Ve de Gust (web=negoci de Segur de Calafell, cap rastre),
-  Torrents Serra Concepcion (dup familiar de Corbalan, mateix email; web=Transdistserra transports),
-  Euromaresme SL (només directori), Plantes Ytchart SCP (dup registre↔marca d'Horta Ytchart). +2 imgs.
-  **Lote 24 = Berga** COMPLETO (25 pend en una pasada: 10 verif + 14 parcial + 1 purga).
-  Berguedà, comerç de poble (forns, pastisseries, cansaladeries; pocs al DAR: 4). **Verif:** Aromes del
-  Queralt (=Destil·leries Vila, licors des de 1917, **recat Bodega→Destilados y licores**), Cansaladeria
-  Marmi (obrador propi 1975, ecommerce), Dolceria Pujol (1858, ecommerce), Ramaders de Muntanya del Berguedà
-  (coop carn, DAR), Càrniques Valldan, Embotits Pirineu, La Silvestre, Passeig 40, Cal Guitart, L'Escairador
-  (=Costa Ferrer, farines, DAR, **recat Otros→Harinas y cereales**). **Parcial:** Baraldes Canal (DAR Vedella
-  Vilosiu), Carnisseria Gonfaus (DAR SAT Gonfaus; web `gonfaus.com`=**Instal·lacions Isaac Gonfaus** fontaner
-  **blanquejada** +img esborrada), Vidalba (**pizzeria**+vermut artesà), i forns/cansaladeries locals (Colell,
-  Cal Torán, Traserra, Tubau, Guixé, Cal Pasteleru, Can Curtichs, del Roser, Espelt, Font del Ros, L'Espurna).
-  **1 purga:** Monbolet (bolets, sense tel/web/IG/DAR). DAR Berga candidat futur: Ramaderia Marmi (=ja inclòs
-  com Cansaladeria Marmi).
-- **Siguiente:** Lote 27 = **Manlleu** (22 pendientes → 1 sub-lote).
-- Último push: **lotes 1-26 en `main`** (push 2026-06-10).
+- Filas: **2.849** · verificado **597** · parcial **323** · pendiente **1.929**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **124 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-26** (worklist).
+- **Siguiente: Lote 27 = Manlleu** (22 pendientes).
+- Último push: lotes 1-26 en `main` (2026-06-10).
 
-## Cómo retomar en 1 minuto
+## Procedimiento (cada lote)
 
-1. Lee este archivo entero (estado + patrones + gotchas).
-2. Elige el siguiente municipio de la **worklist** (más abajo) en orden de impacto.
-3. Extrae sus pendientes priorizando los que tienen web/IG (baratos):
+1. Lee este archivo entero.
+2. Toma el primer municipio ⬜ de la **worklist** (más abajo).
+3. Lista sus pendientes (primero los que tienen web/IG, son más baratos):
    ```bash
    python3 - <<'PY'
    import csv
-   M="Barcelona - Gràcia"   # <-- municipio objetivo
-   rows=list(csv.DictReader(open('data/csv/catalunya/barcelona.csv',encoding='utf-8')))
+   M="Manlleu"   # <-- municipio objetivo
+   rows=list(csv.DictReader(open('data/csv/catalunya/barcelona.csv',encoding='utf-8',newline='')))
    p=[r for r in rows if r['municipio'].strip()==M and r['verificacion'].strip()=='pendiente']
    p.sort(key=lambda r:-((r['web'].strip()!='')*2+(r['Instagram'].strip()!='')))
    for r in p[:25]:
        print(r['slug'],'|',r['categoria'],'|',r['nombre'],'| web=',r['web'][:35])
    PY
    ```
-4. Verifica cada fila por web (ver **protocolo** y **patrones**).
-5. Edita con el **script column-aware EOL-safe** (plantilla más abajo). Nunca a mano fila a fila.
-6. Valida: `npx pnpm check:csv:changed` → `npx pnpm verify:data`. Actualiza este ledger.
+4. Si hay filas de registro (`COGNOM1 COGNOM2, NOM` o `… SL`), haz primero el triaje DAR
+   (sección "Cotejo DAR").
+5. Verifica cada fila por web → sección "Decisión por fila" y "Patrones".
+6. Aplica los cambios con la plantilla Python → sección "Edición del CSV". Nunca a mano fila a fila.
+7. Valida: `npx pnpm check:csv:changed` y después `npx pnpm verify:data`.
+8. Actualiza este archivo: bloque "Estado actual" + fila de la worklist (✅, fecha, nota de 1 línea).
 
-## ⚠️ Gotchas técnicos (leer antes de editar)
+## Edición del CSV
 
-- **EOL: LF (`\n`), como todos los CSV del repo** (norma global desde 2026-06-10, forzada por
-  `.gitattributes`; antes este fichero era CRLF — si ves `\r` es que algo lo ha reintroducido).
-  Abre siempre con `newline=""`, conserva el EOL de cada línea, y al final comprueba:
+- **EOL = LF** en todos los CSV del repo (forzado por `.gitattributes`). Abre con `newline=""`.
+  Comprobación final:
   ```bash
   python3 -c "b=open('data/csv/catalunya/barcelona.csv','rb').read(); print('LF ok' if b.count(b'\r')==0 else 'PROBLEMA: se ha colado CRLF')"
   ```
-- **No reescribas todo el fichero.** Modifica solo las líneas cuyo `slug` está en tu lote; el resto
-  byte-idéntico. Esto preserva el trabajo de otros agentes y mantiene el diff pequeño.
-- **Multiagente:** toca solo `barcelona.csv`, este ledger y `public/productores/**/barcelona/`.
-  **No toques** `girona.csv`, `lleida.csv`, `tarragona.csv` ni `scripts/enrich-producer-images.py`
-  (otros agentes). Al commitear, haz `git add` explícito de tus rutas; nunca `git add -A`/`git checkout` del CSV.
-- **Orden de columnas (0-based), 20 columnas (cabecera canónica del repo):** 0 slug · 1 nombre ·
-  2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario ·
-  8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon ·
-  16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
-- **Contrato:** `verificado` exige coords + ≥1 enlace (web/GMaps/IG/FB) — el audit lo bloquea si no.
-  `Venta online` ∈ {sí, no, no comprobado}. `Canal de venta` solo si `Venta online=sí`.
-- Al borrar una fila con imagen, borra también su `.webp` (queda huérfana → warning en `check:images`).
+- Modifica **solo** las líneas cuyo `slug` está en tu lote; el resto byte-idéntico (diff pequeño,
+  no pisa a otros agentes).
+- Multiagente: toca solo `barcelona.csv`, este ledger y `public/productores/catalunya/barcelona/`.
+  No toques `girona.csv`/`lleida.csv`/`tarragona.csv` ni `scripts/enrich-producer-images.py`.
+  `git add` explícito de tus rutas; nunca `git add -A` ni `git checkout` del CSV.
+- Columnas (0-based, cabecera canónica): 0 slug · 1 nombre · 2 municipio · 3 categoria ·
+  4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web ·
+  11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion ·
+  18 Venta online · 19 Canal de venta.
+- Contrato: `verificado` exige coords + ≥1 enlace (web/GMaps/IG/FB); `categoria` ∈ `VALID_CATEGORIES`
+  de `scripts/audit-csv.js`; `telefono` E.164 (`+34…`).
+- Al borrar una fila con `imagen`, borra también su `.webp` (huérfana = warning en `check:images`).
 
-### Plantilla de edición column-aware (EOL-safe)
+### Plantilla de edición (column-aware, EOL-safe)
+
 ```python
 import csv, io
 PATH="data/csv/catalunya/barcelona.csv"
@@ -123,178 +88,143 @@ for line in lines:
 open(PATH,"w",encoding="utf-8",newline="").writelines(out)
 ```
 
-## Protocolo por fila (verificación profunda)
+## Decisión por fila
 
-Contrasta cada fila contra **fuente primaria** (web propia + Google Maps) y, para nombres de registro,
-contra el **DAR** (ver más abajo). Confirma `Venta online` con un canal de pedido vivo HOY.
+Comprueba campo a campo contra la fuente (web propia + ficha real de Google Maps):
 
-- [ ] `nombre` / `municipio` coinciden con la fuente (ojo: la dirección/coords pueden delatar otro municipio)
-- [ ] `categoria` ∈ `VALID_CATEGORIES` (`scripts/audit-csv.js`)
-- [ ] `direccion` + `lat`/`lon` coherentes (geo-check ≤15 km)
-- [ ] `telefono` / `correo` / `web` vivos y **del productor** (no de un tercero)
-- [ ] `Instagram` / `Facebook` = perfil oficial real
-- [ ] `Google Maps` apunta al sitio correcto (no a otro negocio)
-- [ ] `imagen` = logo/imagotipo (nunca `enrich:images --apply` en bloque)
-- [ ] `Venta online` + `Canal de venta` (ver regla)
-- [ ] `verificacion` → `verificado` (todo cuadra) / `parcial` (solo secundaria o registro) / `pendiente`
+- `nombre`/`municipio` coinciden con la fuente (la dirección/coords pueden delatar otro municipio).
+- `direccion` + `lat`/`lon` coherentes (geo-check ≤15 km).
+- `telefono`/`correo`/`web` vivos y **del productor**, no de un tercero.
+- `Instagram`/`Facebook` = perfil oficial real.
+- `Google Maps` apunta a su ficha, no a otro negocio.
+- `imagen` = logo/imagotipo; nunca `enrich:images --apply` en bloque.
+- `Venta online` + `Canal de venta` → regla de abajo.
 
-## Regla de `Venta online` / `Canal de venta`
+Después clasifica:
 
-Decisión por **canal de pedido online real**, confirmado hoy:
-- **`sí`** si hay: tienda web con carrito/checkout (`ecommerce`); o pedido por **Glovo/UberEats/Bakering**
-  u otro marketplace (`marketplace`); o **"pedir online" por WhatsApp** (`whatsapp`); email/teléfono de
-  pedido (`email`/`telefono`). Varios → pipe: `marketplace|whatsapp`.
-- **`no`** si solo hay web informativa, "en construcción", o solo tienda física.
-- **`no comprobado`** si no puedes confirmarlo (p. ej. tienda caída temporalmente, o no ves checkout
-  pero el dato previo decía `sí`). **No** afirmes `sí` sin evidencia; **no** degrades a `no` a la ligera.
-- Corrige `sí/ecommerce` erróneos (visto: catálogo sin carrito marcado como `sí`).
+| Lo que encuentras | Acción |
+|---|---|
+| Fuente primaria cuadra (web propia, ficha GMaps real, perfil oficial) | `verificacion=verificado` |
+| Solo registro (DAR) o fuente secundaria; o existe pero no elabora (revende/sirve) | `verificacion=parcial` |
+| No has podido revisarla | déjala `pendiente` |
+| Sin rastro + sin DAR; o dup; o mal fichada (otra provincia, no productor) | **purgar** la fila (+ su `.webp`) |
 
-## Catálogo de patrones por productor (cada uno tiene el suyo)
+## Venta online / Canal de venta
 
-Reconoce el patrón y actúa en consecuencia:
+Decide por **canal de pedido online vivo HOY**:
 
-1. **Marca consolidada con web propia** (Escribà, Fargas, Cacao Sampaka…): `WebFetch` su web →
-   confirma negocio + checkout → `verificado` + `Venta online` según regla. ~1 fetch.
-2. **Solo IG / sin web** (panaderías, heladerías de barrio): `WebSearch` para confirmar existencia,
-   dirección y si vende online. Si es real → `verificado`; suele ser `Venta online=no`.
-3. **Marca con varias sedes**: comprueba a qué sede apuntan **dirección + coords** y corrige `municipio`
-   si no cuadra (visto: Ogham con coords en Sant Martí pero `municipio`=Eixample → corregido).
-4. **Punto de consumo, no productor** (café que sirve café de terceros; taproom-colab que no elabora
-   in situ): existe pero no es productor/elaborador → `parcial`, `Venta online=no`.
-5. **Web muerta vs web secuestrada:**
-   - Fetch falla por SSL/http/timeout/ECONNREFUSED → **NO** borres la web (AGENTS: un fetch fallido no
-     es un sitio muerto); confirma por búsqueda.
-   - La web **carga pero muestra un negocio ajeno** (gestoría, dominio de apuestas, parked 402) →
-     **blanquea la web** (es desinformación) y baja a `parcial`/`pendiente` según el resto.
-6. **Enlaces cruzados auto-rellenados**: web/IG/FB/GMaps apuntan a entidades ajenas (ICAB, Diputació,
-   joyería, "Solsona Leather", "POMA ARQUITECTURA"…). Límpialos. Si además es nombre de registro → patrón 7.
-7. **Fila de registro (`COGNOM1 COGNOM2, NOM` o `… SL`)** sin presencia propia: candidata a cluster.
-   Cotéjala con el **DAR** (abajo). Match exacto → `parcial`; sin match + sin web → **purgar**.
-8. **Mal fichada**: provincia/categoría equivocada (bodega de Tarragona en Barcelona; restaurante como
-   "Fruta y verdura"; sin datos) → **purgar** (o flag para mover, sin tocar el CSV de otra provincia).
-9. **Web del CSV obsoleta pero el productor es real** (Forn Sant Josep, Forn Boix): **actualiza** la web
-   al dominio correcto y añade redes/imagen que falten.
+- `sí` + canal: carrito/checkout propio → `ecommerce`; Glovo/UberEats/agregador → `marketplace`;
+  pedido por WhatsApp → `whatsapp`; pedido por email/teléfono → `email`/`telefono`;
+  cestas recurrentes → `suscripcion`. Varios → pipe: `marketplace|whatsapp`.
+- `no`: solo web informativa, "en construcción", o solo tienda física.
+- `no comprobado`: no puedes confirmarlo (p. ej. tienda caída temporalmente).
+- No afirmes `sí` sin evidencia; no degrades a `no` a la ligera; corrige `sí/ecommerce` erróneos
+  (visto: catálogo sin carrito marcado `sí`).
+- `Canal de venta` solo cuando `Venta online=sí`; si no, vacío.
 
-## Cotejo con el registro DAR (venda de proximitat)
+## Patrones (reconoce y actúa)
 
-Para filas de registro (patrón 7). Dataset Socrata oficial, consultable por `curl`:
-```bash
-curl -s "https://analisi.transparenciacatalunya.cat/resource/xmyy-7xqi.csv?\$limit=5000" -o /tmp/dar.csv
-```
-- Columnas: `nom_productor` (`COGNOM1 COGNOM2, NOM`), `num_acreditacio`, `nif`, `adreca`, `codipostal`,
-  `municipi`, `comarca`, `productes`, `venda_directa`, `venda_circuit_curt`, `tel_fon`, `correu`, `marca_comercial`.
-- Grep **normalizando acentos** y exige **match de entidad** (mismos apellidos **y** `municipi`), no solo
-  apellido compartido. Match → `parcial` (registro confirma existencia, **no** venta online); aprovecha para
-  corregir `tel`/`correu`/`productes`/`marca` con los datos oficiales.
-- **Caveat:** el dataset solo trae quienes consintieron publicarse; "no constar" no prueba inexistencia,
-  pero junto a la ausencia de web propia justifica la purga.
+1. **Marca consolidada con web propia** → fetch web, confirma negocio + checkout → `verificado`.
+2. **Solo IG / sin web** (comercio de barrio) → búsqueda confirma existencia → `verificado`,
+   normalmente `Venta online=no`.
+3. **Varias sedes** → comprueba a qué sede apuntan dirección + coords y corrige `municipio`.
+4. **Punto de consumo, no productor** (café/bar que sirve producto de terceros) → `parcial`, `VO=no`.
+5. **Web muerta vs secuestrada**: fetch falla → NO borres (regla dura 5); web carga pero muestra un
+   negocio ajeno (gestoría, parked, spam) → blanquear + bajar a `parcial`/`pendiente`.
+6. **Enlaces cruzados auto-rellenados** (web/IG/FB/GMaps de entidades ajenas, a menudo por apellido
+   compartido) → límpialos; si además es nombre de registro → patrón 7.
+7. **Fila de registro** (`COGNOM1 COGNOM2, NOM` / `… SL`) sin presencia propia → cotejo DAR.
+   Match de entidad → `parcial`; sin match + sin web → purgar. Ojo a **dups registre↔marca**
+   (misma persona/tel/email que una fila de marca ya existente → purgar la de registro).
+8. **Mal fichada** (otra provincia, categoría imposible, sin datos) → purgar; si es real en otra
+   provincia, anótalo en "Para otros agentes" sin tocar su CSV.
+9. **Web obsoleta pero productor real** → actualiza la web al dominio correcto y añade redes/imagen.
 
-## Cluster — RESUELTO (2026-06-07)
+## Cotejo DAR (venda de proximitat)
 
-18 filas de registro entre Eixample y Ciutat Vella, con enlaces auto-rellenados a entidades ajenas.
-Cotejadas contra DAR `xmyy-7xqi`:
-- **Mantenidas `parcial` (5, constan en DAR Barcelona):** `royo-gutierrez-daniel-…-ciutat-vella`,
-  `agropecuaria-de-moya-sl-…-eixample` (contacto actualizado, marca LA ROVIRA),
-  `gerundense-agricola-y-pecuaria-sl-…-eixample`, `agricola-de-agell-sl-…-eixample`,
-  `agricola-poma-sl-…-eixample`.
-- **Purgadas (13):** grupo A mal fichado (`bodega-el-grial-sl` = bodega de El Perelló/Tarragona;
-  `can-burbo-sa` = restaurante; `tamarit-barrull-maria` = sin datos) + 10 sin match DAR (Comisso,
-  Castan Escolano, Fabrega Lagarde, Antonio Carola, Cristina Casar, Ma Luisa Diaz-Aguado, Daniel Solsona,
-  Tusell Fruitos, Goñi Beltran, Zain Maitreya). Sus 4 imágenes huérfanas también borradas.
+- Triaje rápido de un municipio: `node scripts/match-dar.mjs "<municipio>"` — cruza las filas
+  `pendiente` contra el DAR por tel/email/apellidos (caza cross-municipi y dups registre↔marca) y
+  lista candidatos DAR no casados. Acelera el triaje; **no sustituye** la verificación web.
+- Dataset completo:
+  ```bash
+  curl -s "https://analisi.transparenciacatalunya.cat/resource/xmyy-7xqi.csv?\$limit=5000" -o /tmp/dar.csv
+  ```
+  Columnas útiles: `nom_productor` (`COGNOM1 COGNOM2, NOM`), `nif`, `adreca`, `municipi`, `comarca`,
+  `productes`, `tel_fon`, `correu`, `marca_comercial`.
+- Grep **normalizando acentos**; exige match de entidad (apellidos **y** municipi), no solo apellido.
+- Match DAR = existe (→ `parcial`), **no** prueba venta online. Aprovecha para corregir
+  tel/correo/productos/marca con los datos oficiales.
+- No constar en el DAR no prueba inexistencia (registro voluntario); pero sin DAR **y** sin web
+  propia, justifica la purga.
 
-## Flags — RESUELTOS (2026-06-07)
+## Worklist (pendientes por municipio)
 
-- ✅ `exalta-chocolat-barcelona-gracia`: reubicada a Sant Antoni de Vilamajor, `verificado`/`sí` (en 3b).
-- ✅ **Purgadas (8):** `bodega-la-riera-…-gracia` (bar-celler, revende) y `hoppiness-…-sant-marti` (bar de
-  cervezas de terceros) — no son productores; `cesc-jk-…-sant-marti` (duplicado de
-  `la-cervesera-del-poblenou-…`, que queda como canónica); y las 5 de Sants-Montjuïc sin DAR ni presencia
-  (`mas-de-vicenta-cb`, `castelroc-sa`, `fruites-maria`, `agrima`, `sabrina-comisso`). +4 imágenes huérfanas.
-- ✅ `corpen-barcelona-sant-marti`: recategorizada `Bodega` → `Otros` (es destilería de gin, no bodega).
-- ✅ `agricola-poma-sl` (`parcial`): corregida con datos DAR — `Despensa artesanal` / Aceite de oliva /
-  Gran Via de Carles III 133 / `municipio`=Barcelona - Les Corts / coords re-geocodificadas / contacto LOMASOLI.
-- (Histórico) `bodega-el-grial-sl`: purgada antes; si interesa, que el agente de Tarragona la añada a
-  `tarragona.csv` (bodega real en El Perelló).
+Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin tocar = snapshot inicial.
 
-## Worklist priorizada (pendientes por municipio)
-
-Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. (Cifras de municipios sin tocar = snapshot inicial.)
-
-| # | Municipio | Pendientes | Sub-lotes | Estado | Fecha | Notas |
-|---|---|---|---|---|---|---|
-| 1 | Barcelona - Eixample | 0 | — | ✅ | 2026-06-07 | 29 verif + 4 parcial (DAR); 9 purgadas |
-| 2 | Barcelona - Ciutat Vella | 0 | — | ✅ | 2026-06-07 | 30 verif + 1 parcial (DAR); 4 purgadas |
-| 3 | Barcelona - Gràcia | 0 | — | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni; Bodega La Riera purgada |
-| 4 | Barcelona - Sant Martí | 0 | — | ✅ | 2026-06-07 | 20 verif + 5 parcial; CESC JK (dup) y Hoppiness (bar) purgados |
-| 5 | Barcelona - Sants-Montjuïc | 0 | — | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
-| 6 | Barcelona (resto) | 113 | 4 | ✅ | 2026-06-08 | 6a-6d; ~96 verif/parcial + 17 purgas; 0 pendientes |
-| 7 | Terrassa | 57 | 4 | ✅ | 2026-06-08 | 7a-7d; 30 verif + 27 parcial; 0 purgas |
-| 8 | Sabadell | 45 | 4 | ✅ | 2026-06-08 | 8a-8d; 24 verif + 19 parcial + 2 purgas |
-| 9 | Mataró | 50 | 4 | ✅ | 2026-06-08 | 9a-9d; 29 verif + 17 parcial + 4 purgas |
-| 10 | Manresa | 45 | 1 | ✅ | 2026-06-08 | 21 verif + 11 parcial + 13 purgas; DAR Bages; nil-puig→Castellbell |
-| 11 | Vic | 46 | 1 | ✅ | 2026-06-08 | 30 verif + 9 parcial + 7 purgas; DAR Osona; Corretja→Sta Eulàlia Riuprimer |
-| 12 | Vilanova i la Geltrú | 40 | 1 | ✅ | 2026-06-08 | 20 verif + 11 parcial + 9 purgas; DAR Garraf; webs cruzadas por apellido |
-| 13 | Vilafranca del Penedès | 38 | 1 | ✅ | 2026-06-09 | 28 verif + 10 parcial + 0 purgas; DAR Alt Penedès; muchas webs cruzadas; Valliser→Vilobí (membrillo) |
-| 14 | Sant Sadurní d'Anoia | 50 | 1 | ✅ | 2026-06-09 | 43 verif + 4 parcial + 3 purgas; capital del cava; casi todo real con botiga; sub-marcas Gramona/J&C/Recaredo |
-| 15 | Igualada | 32 | 1 | ✅ | 2026-06-09 | 23 verif + 7 parcial + 2 purgas; DAR Anoia (Entrebosc/Can Vich/Can Vilaseca); Mercat Masuca; Cal Vicens→Montbui |
-| 16 | Badalona | 31 | 1 | ✅ | 2026-06-09 | 23 verif + 5 parcial + 3 purgas; Anís del Mono (recat licor); 3 cross-link basura purgats; DAR Badalona |
-| 17 | Sant Boi de Llobregat | 34 | 1 | ✅ | 2026-06-09 | 10 verif + 15 parcial + 9 purgas; clúster Parc Agrari; DAR + directori parcagrari.cat; 4 dups registre↔marca |
-| 18 | Sant Cugat del Vallès | 26 | 1 | ✅ | 2026-06-09 | 20 verif + 5 parcial + 1 purga; comerç de ciutat amb web pròpia/ecommerce; Tocat de l'Ala→rostisseria (recat); Melvida→Miel |
-| 19 | Moià | 38 | 1 | ✅ | 2026-06-09 | 9 verif + 24 parcial + 5 purga; capital Moianès; DAR Moianès (12); recats Biobastona/Nadolç/La Moianesa/Bach Oller; dup Molins Paronella=Alpines Les Feixes |
-| 20 | Caldes de Montbui | 31 | 1 | ✅ | 2026-06-09 | 10 verif + 16 parcial + 5 purga; DAR Caldes (10) + guia Ajuntament; 2 dups registre↔marca (Xerona, Picanyol); Pastes Sanmartí 1700 |
-| 21 | Piera | 28 | 1 | ✅ | 2026-06-09 | 12 verif + 12 parcial + 4 purga; Anoia, molts cavas/cellers; DAR Piera (8); recats Bedous→Huevos, Poch Samsó→Fruta; 4 mis-fichades BCN purgades |
-| 22 | Subirats | 28 | 1 | ✅ | 2026-06-09 | 11 verif + 14 parcial + 3 purga; Alt Penedès vinícola; triaje con match-dar.mjs (13/28 DAR); 3 mis-fichades/dup purgades |
-| 23 | Tordera | 28 | 1 | ✅ | 2026-06-09 | 6 verif + 16 parcial + 6 purga; Maresme hortícola; match-dar.mjs (16/28); cross-links El Rusc/CF Tordera/El Camí blanquejats; 3 dups + 2 sin datos |
-| 24 | Berga | 25 | 1 | ✅ | 2026-06-09 | 10 verif + 14 parcial + 1 purga; Berguedà comerç de poble; recats Destil·leries Vila→licores, Escairador→harinas; gonfaus.com=fontaner blanquejat |
-| 25 | Vilassar de Mar | 24 | 1 | ✅ | 2026-06-10 | 10 verif + 9 parcial + 5 purga; clúster floricultors DAR Cases de Camp; carnsboher.cat segrestada; 2 dups |
-| 26 | Viladecans | 23 | 1 | ✅ | 2026-06-10 | 9 verif + 11 parcial + 3 purga; Parc Agrari + DAR; Tugas→Sant Climent; Amat=majorista Mercabarna purgat |
-| 27 | Manlleu | 22 | 1 | ⬜ | | |
-| 28 | Castellbisbal | 21 | 1 | ⬜ | | |
-| 29 | Prat de Llobregat | 21 | 1 | ⬜ | | |
-| 30 | Masnou | 20 | 1 | ⬜ | | |
-| — | _resto (369 municipios)_ | 1.939 | ~78 | ⬜ | | recomputar al llegar |
-
-## Registro de lotes cerrados
-
-| Fecha | Lote | Filas | → verificado | otros | Notas |
+| # | Municipio | Pendientes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|
-| 2026-06-07 | Eixample 1a | 25 | 21 | 4 limpiados | Ogham→Sant Martí; Forn Sant Josep web→fornsantjosep1913.com |
-| 2026-06-07 | Eixample 1b | 19 | 8 | 2 parcial · 9 limpiados | Rooftop/Ferment9/22:22 con tienda; El Grial flag |
-| 2026-06-07 | Ciutat Vella 2a | 25 | 25 | — | Todos reales (El Magnífico, Fargas, Bubó, Hofmann…) |
-| 2026-06-07 | Ciutat Vella 2b | 11 | 5 | 1 parcial · 5 cluster | Tiramisús (Glovo); Forn Boix +web/FB; Ma Condimentos web hijack |
-| 2026-06-07 | Cluster (DAR) | 18 | — | 5 parcial · 13 purgadas | Cotejo DAR xmyy-7xqi; +4 imágenes huérfanas borradas |
-| 2026-06-07 | Gràcia 3a | 25 | 23 | 1 parcial · 1 flag | Establecimientos reales; Exalta mal fichada (es de Sant Antoni de Vilamajor) |
-| 2026-06-07 | Gràcia 3b | 8 | 4 | 3 parcial (DAR) · 1 flag | De Abreu/Cerdan/Brugarol en DAR→parcial; Exalta reubicada+verificada; Bodega La Riera flag |
-| 2026-06-07 | Sant Martí 4a | 25 | 20 | 4 parcial · 1 flag | Poblenou (Nomad, Väcka, Bioma, El Tío Che…); CESC JK=La Cervesera del Poblenou dup; Hoppiness=bar; Corpen=gin |
-| 2026-06-07 | Sant Martí 4b | 1 | 0 | 1 parcial (DAR) | Blue Zafir Invest SL en DAR→parcial |
-| 2026-06-07 | Sants-Montjuïc 5 | 23 | 11 | 7 parcial · 5 flag-purga | DAR: Palaudo/Calvet/Prats→parcial; 5 sin DAR→candidatas purga (webs falsas limpiadas) |
-| 2026-06-07 | Flags resueltos | 10 | — | 8 purgadas · 2 corregidas | Purga (bares/dup/cluster) +4 imgs; Corpen→Otros; Agrícola Poma→aceite LOMASOLI/Les Corts |
-| 2026-06-08 | Barcelona-resto 6a | 25 | 22 | 2 parcial · 1 purga | Web propia (Les Corts/Ciutat Vella/Horta…). Purga: The Milk and Coffee = Milk Bar & Bistro (restaurante) +img. Oggi web .it (Udine) blanqueada; Yellow Bakery/Cèlia dominios en venta → web corregida/blanqueada; Artemis=centro estética (parcial); La Cantina Solar food-truck (parcial) |
-| 2026-06-08 | Barcelona-resto 6b | 30 | 27 | 3 parcial | Web propia (Sant Andreu/Sarrià-SG/Nou Barris…). Productores reales (Salazones Moreno, Exotic Sal, LOV Ferments, Cyclic, Almogàver, Panes Creativos, Pasta Spada, Suca'l, Baixas, Blasi…). Suca'l web→sucal.es; Blasi web→raíz. Parcial: Ous Susana + Formatgeria Ireneu (distribuidores/reseller), Blasi (web caída, no comprobado) |
-| 2026-06-08 | Barcelona-resto 6c | 11 | 8 | 2 parcial · 1 purga | Solo-IG. Confirmados por búsqueda (Artchur, Carn+carn, Forn del Passeig-Horta +web, Forn Vall d'Hebron, Alpuente, Argilés, Roquetes +web, Valentina e Pasqualina +web). Sant Croi: tiendas físicas cerradas pero gelats online (parcial, +santcroi.com). Apamate parcial (IG coincide, sin 2ª fuente). Purga: L'Hort d'en Josep (IG no coincide + Parc Agrari etiquetado Barcelona + sin rastro) |
-| 2026-06-08 | Barcelona-resto 6d | 47 | 10 | 21 parcial · 16 purga | Cluster de registro. Cotejo DAR xmyy-7xqi: 10 en DAR-Barcelona→parcial (Celler de l'Era, Debresca, Oli Cometes, La Mielada, Mels del Montnegre, Safrà de Montserrat, Petits Remeis, Fontcalda, Prats Espar, Macau). Forns/charcuterías confirmados por Ajuntament/Mercat/web→10 verif (ARTPA, Sant Honorat, Montbau, L'Amic, Padró Canals, Glòria, Samsó, Bareche, Fruben, L'Exquisita). **17 purgas** (con 6c): mal fichados fuera de provincia (Carretero Ariza=El Perelló, Gurria=Cadaqués, Mesura=Mijas/Málaga, Recasens/Farré/Verdallar/Díaz-Aguado fuera de BCN), no-productores (Fundación Rokpa=centre budista, Consultores Tècnics 3000=consultoria), dups (García Moll ×2) y sin datos (Butzbach, Adell, Mora). +8 imágenes huérfanas |
-| 2026-06-08 | Terrassa 7a+7b | 30 | 17→ | — | Webs propias. 18 escritas en bloque (alba, albert-morera, caran GF, casanovas ×2 [2 sedes reales 1906], la-xicra, les-saveurs, orxateria-ribera, núria, turull, ricardo-i-montse, Sanmy [refrescos 1895], zaguirre, prats-mercader, els-xixonencs, embotits-sanchez, tantagana). Webs cruzadas detectadas: canbanach.com=tienda mascotas (parcial), fornsantjordi.cat=Granollers, fornturull.cat≠Armengol, pont-aurell=industria |
-| 2026-06-08 | Terrassa 7c | 23 | 12 | 11 parcial | Solo-IG + parades Mercat Independència + SSL caídos. Verif: El Rebost Casa Pau, Sant Pere Coffee, Obrador La Portella, Projecte Geosmina, Forn Armengol (web→fornarmengol.com), Forn Carné, Forn Turull, Bolets&Co, Cervesa La Resclosa (oro EBS24), Areny/Gamisans/L'Enxaneta (Mercat). Parcial: Casé, Planas, Melsana, Altamon (mel), Fermentum (tel falso), Forn Sant Jordi (web=Granollers), Tot Teca (Forn Gotés Sabadell, tancat), Saludes/Cresol/Marcos/Páez (Mercat) |
-| 2026-06-08 | Terrassa 7d | 16 | 1 | 15 parcial · 0 purga | Cluster registro. Cotejo DAR: Explotacions Molle (Casa Nadal), Farre Colom (Coop d'Ivars), **Jardineria El Roure** (¡productor de verdura!→recat. Fruta i verdura), Santa Magdalena SAT (carn), Violeta Zafra (safrà→recat. Despensa), Simó Aynés (Els Campaners). Lleonart/Avícola=ous reals. Forn Anglada-Cal Forner verif (web calforner.com, des 1875). Webs cruzadas blanqueadas (pont-aurell, aoberta) |
-| 2026-06-08 | Sabadell 8a+8b | 14 | 14 | — | Webs propias. Sanmy no aplica (Terrassa). Reales: 0x100 Gluten/Krum, Artbo (1969), Cafès Pont (1952, tostador), Mateu (1925), Jové Xarcuters, La Crème, Mas Avícola, Moreno Antolinos (1951), Coco y Canela, Brunni (parada Mercat Central!), Mussons (enoteca Sabadell 2010), Valero, Xocolates Genescà (1928), La Fem (obrador Sant Cugat). Webs cruzadas: canbanach=mascotas, vallriberanoray=arquitecto, jsalvado=admin. fincas |
-| 2026-06-08 | Sabadell 8c | 10 | 8 | 1 parcial · 1 purga | Medran (1958), La Micro/Or i Plata (cervesers 2011), Llegums Roca (web→elsllegumsroca.com, +ecommerce), Fleca E.Valls (1971), Sant Marc (1976), Benet Forners (1962). Delightcious y Forn del Progrés relocalizados a Terrassa (mal fichados). Umami parcial (¿Rubí?). Purga: Finca Alavedra (jsalvado=admin. fincas, no productor) |
-| 2026-06-08 | Sabadell 8d | 21 | 2 | 18 parcial · 1 purga | Cluster registro. Cotejo DAR (7 reales Sabadell): Domingo Garcia (Can Ustrell), Gabarrón (Jadeverd), Gaoxing (cogombre→recat), Girbau Solà (vins), Moliner (Remeiets→recat), Rosell Canals (Hort del Catre), Vallribera Tubau (ous, web arquitecto blanqueada). Verif: Cal Blau (embotits 1945), La Palma Pastissers. Forn Viñas/Domènec/Villaró parecen de Castellar (parcial). Purga: Guiu Aran (sin datos ni DAR) |
-| 2026-06-08 | Mataró 9a+9b | 27 | 23 | 2 parcial · 2 hold | Webs propias. Verif venta online: Can Gladiador, Can Serrat (1954), Casa Graupera (neulers 1895), El Cigró Salat (bacallaneria), L'Hort d'en Dídac, Mūn Kombucha, Sweet Dreams. Sin VO: Can Tria, Flors Noè, Granja Caralt, La Klosca (ous→recat Huevos), Nougat, Stick Art, Can Maresma (WhatsApp). Banderas: fornnoe.com=Hostalric (Forn Noé Mataró sí existe, web blanqueada); clubcoc.com=COC Vilassar (Coc Ludoteca=espai tallers, parcial). Formatgeria=cremier (parcial) |
-| 2026-06-08 | Mataró 9c | 18 | 14 | 4 parcial · 1 purga | Webs directorio + solo-IG. Verif: Pastisseria Uñó (1967), Dehum Cervesers (Mataró Grape Ale), Synera/Molta Malta, Meleix (mel eco, web→meleix.cat), S'ha Acabat el Bròquil (coop verdura), Can Kiku (+kikupa.com), el7et gelats, Petits Délices (+web), Xarcuteries Miguel i Begoña (1977), parades Mercat Cuba (Can Margarida, Polleria Leo i Merche 60a, Eva i Oscar, El forn de la Nona, Les Rovires). Parcial: Can Grau, Brèscat (mel), 5 Pebrots. Purga: Safont-Tria (web ifs.cat=clínica reproducció) |
-| 2026-06-08 | Mataró 9d | 15 | 0 | 12 parcial · 3 purga | Cluster registro. DAR confirma pagesos Maresme→parcial: Ayter (patata), Can Bleda (patata→recat), González García (Can Gallard, cargols), Horta Pera, Jordi Graupera (Can Redeu). Parcial sin DAR: Aviram Ros, Can Bastons, Confraria Pescadors (llotja), Cantallops, Floriach, Pastisseria Roselló/Sacher. Purgas: Chamarro=Can Margarida (dup, mismo tel/correu), Santana Flores=Brèscat (dup DAR, mateixa adreça Garbí 2), Martin Rosell (sense dades) |
-| 2026-06-08 | Manresa 10 | 45 | 21 | 11 parcial · 13 purga | Una pasada. **Verif web propia + venta online:** Celler el Molí/Collbaix (vi eco DO Pla de Bages, ecommerce+club), Oller del Mas, Cerveses Hoppit, AlEco (botiga eco), Forn de Pa Jorba (enviament ES), Delícies Sense Gluten (web→deliciessensegluten.com, era celiacscatalunya; botiga online), Mas Rossinyol (cistella WhatsApp), nil-puig/Hort del Puig (senalles+suscripció, **→Castellbell i el Vilar**), Llengua de Gat (obrador WhatsApp). **Verif sin VO:** L'Aroma (Café Arabo), EcoPallareta (ous CCPAE), Cal Climent, Granja Cal Porta (llet, DAR=Manresa), El Forn Antic, Forn Coma, L'Obradora (coop obrador), Viver Serra, Xarcuteria Casa Coll (+casacoll.cat), Outer Gin (ginebra, recat→Destilados), The Goats (brewpub), Les Arnaules (Horta de Viladordis). **DAR Bages parcial:** Xavier Torras, Gomez Carrascal (Xicuxai), Oliveras Alsina (Cal Andreu, contacto DAR), Tarrés Rosiñol (Cal Codony), Tatjé Masachs (Viladordis). Otros parcial: Salelles (coop pinsos→recat Productos ecológicos), Granja Poal, Verdura Collida Avui (domini viu, no llegit), Serra Fornell (=El Manel, web-IG blanq.), L'horta que brota, Horta Mas d'en Pla. **13 purgas:** 5 dups marca↔SL (Tanegram=Oller del Mas, Rosiñol Tarres SCP=Mas Rossinyol, Sola Cantó=Cal Climent, Agropecuària Casasayas=Les Arnaules, Silverio T.R.=Cal Codony [datos Transmarsol]); 6 empresas ajenas auto-enriquecidas (Molins=Molins Solucions Industrials, Borros=Borrós Interiorisme +img, Ileana=UManresa, Tatje Casajuana=Manel Tatje electricista, Jose Torrents=CDIB, Moncunill=Mon Digital); 2 noms pelats sense DAR (Oliveres Pinto, Gerard Font Català=dup EcoPallareta). DAR Manresa sin tocar (candidatos futuros): AMPANS/Urpina, Calafell/Can Calafell, CCAgrària/Can Poc Oli |
-| 2026-06-08 | Vic 11 | 46 | 30 | 9 parcial · 7 purga | Capital d'embotits (Plaça dels Màrtirs). **Verif xarcuteries web propia:** Casa Riera Ordeix (1852, ecommerce), Can Vilada (Duroc, ecommerce+WhatsApp), Casa Sendra (Splendid Foods), Can Molas (1982), Solà (WhatsApp), Ca la Teresona (1837), Carnisseria Girbau (tel+envío), Aliemsa (+aliemsa.net), Coll-fred (+collfred.cat), Xarcuteria Salvans→parcial. **Verif dolç/xoco:** Eukarya (Lluc Crusellas, bean-to-bar), Brunni Bomboneria, Sant Cacau (obrador, web-dir blanq.), XixoVic (1944, torrons), Carol Tòfones (recat→Trufa y setas), Carlamel (+web), La Coca d'Anís=Pastisseria Sant Antoni (+web), Pastisseria Masramon (1969, +web), El Bruguer, Pastisseria Lladó. **Verif forns:** Artipà (David Rovira, eco), PAVIC, El Pastador, Forn Riera (web-dir blanq.), L'Espiga d'Or (1923 emblemàtic), Delícies SG Vic, 0% Gluten. **Verif altres:** Farines Ylla 1878 (molí), Planes Bones (rostisseria+horta, DAR Saborit), Làctics Ubach (Sta Eugènia de Berga, mantingut Vic), Granja La Riera (ous eco, DAR La Riera Eco SCP). **Parcial:** Mengem Osona (assoc. consum), Can Fornell (jubilació 28/6/2025), Horta Gamisans (IG @gastroteca.cat errònia blanq.), Fleca Divina Pastora + DAR Osona (Quirante Sales=La Casanova, Raurell Casany, Biomil=Masó Bagué). **7 purgas:** 2 dups DAR (Verdures Planes Bones=Planes Bones, Masó Bagué=Biomil), Serrabassa Puntí (correu=La Riera, sense DAR), Mas Torrenegra (fàbrica de pinsos, no xarcuteria), Vial 3,25 SL (sense rastre), Antoni Vidal Ribas (sense dades), Escalé Escalé Benet (sense DAR/web). Sebastià Corretja→Santa Eulàlia de Riuprimer (botifarra de Riuprimer). DAR Osona candidatos futuros: Apícola Morató (Mel Morató), Pujalt Quero (Xai Torrents del Prat), Tarres Alcalde (L'Esquellot del Montseny) |
-| 2026-06-09 | Badalona 16 | 31 | 23 | 5 parcial · 3 purga | Comerç de ciutat (Barcelonès), una pasada. **Verif amb VO sí:** Anís del Mono (**recat Bodega/vino→Destilados y licores**; botiga via Osborne), Amauta Coffee i Cafès Bofarull (tostadors, ecommerce), Maresme Brewery (botiga), Gramola Lab (xocolata, ecommerce+WhatsApp), Ca La María Obrador (sense gluten), Fontisi (Shopify), Forn Bertran (botiga), Fragola by Ferita (reserves+WhatsApp), Pastisseria Comas. **Verif sense shop→VO no/no comprobado:** Sikaru (cervesa Fundació Badalona Capaç), Bomboneria Almera (cert error), Artesans Soler (gelats 1969 B2B), Can Soler (gelats propis), Gelateria Fillol (orxata des de 1929), Lillo Picó (torrons/gelats), Forn de Pa Mireia (cert error), Forn Sant Pere (forn de llenya), Pastelería Fidelia (horeca), TAART by Carles Mampel (alta pastisseria d'autor), Boheme (forn franquícia), Fleca Gisbert (20+ anys), Forn de Llenya Riera (SL extinguida però actiu; **coords lluny→corregides**). **Parcial:** Ous La Salut (parada que **selecciona/revèn** ous, no productor; té botiga→VO sí), Bodega Castillo (sense rastre, probable despatx de vins), DAR Badalona→ Balart Fernández=**NOUS** (recat Huevos→Frutos secos), Giró Claraso=**plantes aromàtiques** (recat Fruta→Aromáticas y condimentos), Confraria de Pescadors (llotja). **3 purgas (cross-link a entitat aliena + sense DAR + conserves falses):** Giralt Colell→`digest.cat`=clínica dental, Horta de Santa Clara→`alteuaire.es`=espai de festes infantils (Al Teu Aire), Mansol Projectes→`mansol.cat`=Centre Especial de Treball (destrucció documents/muntatges). +3 imatges esborrades. DAR Badalona altres: Abellan Moya (vins), Conreu Sereny SCCL (horta) |
-| 2026-06-10 | Viladecans 26 | 23 | 9 | 11 parcial · 3 purga | Baix Llobregat: meitat **Parc Agrari** (fitxes parcagrari.cat per a Calbet/Cal Cot, Sampera, Horta Viladecans SCCL, L'horta amb Alegria) + DAR Viladecans (Garrigosa, Vila Gelabert, Farrés, Ubeda, Agro-Andi, Juvitu). **Verif amb VO sí:** Cal Xim-Xim (masia centenària, Natalia Perni, Producte FRESC, web ecommerce calximxim.cat [520 Cloudflare al fetch, viva] + Mercat de Pagès dimecres), Bakery by Noelia (Shopify: tartes, cursos, Bakery Club; la botiga de la Rambla tancada, ara obrador), Santacreu (fleca amb obrador, comandes tel 72h), Tugas i Companyia (collita eco 4a gen, cistelles setmanals; **municipi Viladecans→Sant Climent de Llobregat**, Plaça de la Vila 12, coords re-geocodificades, +web tugasicompanyia.cat [ECONNREFUSED al fetch, indexada viva]). **Verif VO no:** Forn de la Plaça (obrador propi, Plaça de la Vila 8), Soulblim (camps propis al Parc Agrari + productors adherits, distribució B2B a restaurants), La Fábrica de Churros (obrador artesà des de 1976, **adreça "Viladecans s/n"→C/ Santa Isabel 4** [coords ja correctes], venda directa dissabtes/diumenges, B2B a forns/cafeteries), Carnívors (parada del Mercat de la Constitució, elaboració diària hamburgueses/embotits, repartiment a domicili; VO no comprobado), L'horta amb Alegria (coop agroecològica 2021 de Borja Torres [DAR Gavà] + Oriol Ubeda [DAR Viladecans], marca HORTA AMB ALEGRIA; mercat de pagès Cornellà + cistelles via Libera Butiko; +tel/correu DAR; VO no comprobado). **Parcial:** Kopgavà Agro Km0/ONAVEGGIES (DAR Barcelona-Mercabarna, web onaveggies.com viva, grup Gavà Grup; seu comercial a Mercabarna), Garrigosa Andreu (DAR mel/pol·len/pròpoli, venda directa), Vila Gelabert (DAR marca **CAL DELAILA**, horta/maduixa/calçots → **recat Despensa→Fruta y verdura** + productes; email castellcoop + GMaps "La salchicha peleona" **blanquejats**, contacte DAR), Farrés Magem (DAR; web `viladecans.cat`+IG `@viladecans.ig`+tel 936351800 = **Ajuntament, blanquejats**, tel→DAR 676304883), Calbet Soler/­Cal Cot Horts Calbet (fitxa parcagrari: hidropònic+figues, NO venda directa → via coop i Mercabarna), Sampera Ferrer (fitxa parcagrari; **coords a Mercabarna→re-geocodificades** a Mare de Déu de Sales 12), Horta Viladecans SCCL (coop sense ànim de lucre, 10 pagesos, ven només a la parada de Mercabarna; coords errònies→Mercabarna), Juvitu SL (DAR Viladecans, +tel 620251972; web=vídeo FB agriculturacat **blanquejat**), La Paradeta del Camí Ral (DAR tel = **AGRO-ANDI**, +email), L'Amanida SAT 1488 (parada amb botiga online a `mercagava.online` [cert caducat avui]; productes "canelons/croquetes" **inventats** → **recat Comida preparada→Fruta y verdura**), Hortalisses i Fruites Sarita (fruiteria 2008 Rambla Modolell, **revèn** producte local → no productora, VO no). **3 purgues:** Ubeda García Oriol (**dup registre↔marca de L'horta amb Alegria**: DAR marca HORTA AMB ALEGRIA, mateix tel/email), Amat Serrano Joan (=Fruites i Verdures AMAT SA, **majorista AGEM a Mercabarna** Pavelló C, barreja Baix Llobregat+Almería — no productor km0; email fvamat@agem.mercabarna.com, coords Mercabarna), Gelats Segura (cap rastre: ni directoris locals [xarxacomercial, compra08840] ni cerca; només query GMaps autogenerada). +1 imatge esborrada (Gelats Segura). DAR Viladecans candidats futurs: Agricola Xim-Xim SCP (=família Cal Xim-Xim), Heretat Mas Tinell (vins), Vilaeco SL, Ximalls SAT. |
-| 2026-06-10 | Vilassar de Mar 25 | 24 | 10 | 9 parcial · 5 purga | Maresme, **capital de la flor**: clúster DAR de floricultors/horta al veïnat de Cases de Camp (triaje `match-dar.mjs`: 12/24 casats). **Verif amb VO sí:** Espinaler (1896, vermut+salsa+conserves, tienda.espinaler.com ecommerce), Can Pocurull (carnisseria-xarcuteria-càtering 1945, comandes WhatsApp), Carns Montserrat (1978, 2 botigues+rostisseria, comandes tel/email), Horta i Obrador Ytchart (verdures cuites a baixa temperatura envasades al buit, botiga online+WhatsApp; DAR Plantes Ytchart), El Petit Bané (horta eco 2013, 3ha vora platja, cistelles online+subscripció, +web elpetitbane.com). **Verif VO no:** Carns Boher (1969, delicatessen; web `carnsboher.cat` **segrestada amb spam porno + 520 → blanquejada**, IG+directoris confirmen), Formatges Vilatzara (formatgeria artesana 2002, llet crua de vaca, Vaccru; productes corregits), Original Churros (fabricant de churros congelats B2B, premis Bellavita 2023), Floricultura Llorenç Vila (1986, 4,5ha, via comercialitzadora Poleplants; adreça→Camí del Crist Km 1), Pastisseries Falgueras (1911, 3a gen; jubilació Rosa Falgueras 04/2026 **amb relleu (Marc)**; botiga de Sant Joan tancada 2017 → **adreça corregida a Plaça de l'Era** [coords ja hi eren], +web pastisseriesfalgueras.com, tel→937590691). **Parcial DAR (9):** Aimsat Ltda 924 Cat, Corbalan Torrents Anna (patata/fonoll/mongeta → **recat Otros→Fruta y verdura**; GMaps=perruqueria Hair Blonde **blanquejat**), Cultius Floriach, Cultius Itxart, Cultius Ramon, Granja Blava SLU (=**Green in Blue**, enciam/aromàtiques en aquaponia B2B, +web greeninblue.es, **recat Otros→Fruta y verdura**), Plantes Bada (marca BADAORIGEN), Ribas Mateu (flor tallada; **coords a Llinars +25km → corregides** a Cases de Camp), Ribas Muro Juan (coriandre, **recat Otros→Aromáticas y condimentos**, GMaps mercat aliè blanquejat). **5 purgues:** Tuaperitivo (era botiga online d'aperitius gourmet — conserves gallegues/vermut Miró, **reseller no productor**; domini en venda GoDaddy; GMaps=TINOI espai aliè), Ve de Gust (web `vedegust.es`=**menjar per emportar de Segur de Calafell**; cap rastre a directoris d'orxateries/gelateries ni cerca; l'orxateria real de Vilassar és La JIJO), Torrents Serra Concepcion (**dup familiar de Corbalan Torrents Anna**: mateix email annacoto@hotmail.com, sense DAR propi; web `serratransports.com`=**Transdistserra transports** cross-link per cognom), Euromaresme SL (només llistat al directori emaresme.com, sense DAR/web/presència), Plantes Ytchart SCP (**dup registre↔marca** d'Horta i Obrador Ytchart: mateix tel 627436200, adreça Casa de Camp 4 i coords). +2 imatges esborrades (Ve de Gust, Torrents Serra). DAR Vilassar candidat futur: **Agrícola de Vilassar de Mar SCCL** (coop 1918, agrobotiga; peres/alvocat/aromàtiques, tel 606578950). |
-| 2026-06-09 | Berga 24 | 25 | 10 | 14 parcial · 1 purga | Berguedà, comerç de poble (forns/pastisseries/cansaladeries), una pasada. Pocs al DAR (4). **Verif:** Aromes del Queralt (=Destil·leries Vila, licors/ratafia des de 1917, **recat Bodega→Destilados y licores**), Cansaladeria Marmi (=Ramaderia Marmi, obrador propi 1975, ecommerce), Dolceria Pujol (pastisseria 1858, ecommerce), Ramaders de Muntanya del Berguedà (coop carn vedella/pollastre, DAR Boixadera SCP), Càrniques Valldan (3 gen embotits), Embotits Pirineu (1989, distribució), La Silvestre (pastisseria, comandes tel/WhatsApp), Passeig 40 (forn, cert TLS), Cal Guitart (cansaladeria obrador propi), L'Escairador (=Costa Ferrer Maria, farines/cereals/espelta, DAR, **recat Otros→Harinas y cereales**, +web escairador.cat). **Parcial DAR:** Baraldes Canal (=Vedella Ecològica Valls de Vilosiu/Vila Formiu), Carnisseria Gonfaus (=SAT Gonfaus, Vedella de Casa Nostra; web `gonfaus.com`=**Instal·lacions Isaac Gonfaus** [fontaner/electricista] **blanquejada**, +img esborrada [logo erroni]). **Parcial local:** Vidalba (és **pizzeria** de forn de llenya + vermut artesà Vidalba; comandes per tel), Cansaladeria Colell, Cal Torán (Rosell), Traserra, Tubau, Guixé, Dolceria Alberich (Cal Pasteleru), Forn Can Curtichs, Forn del Roser, Forn Espelt, Forn Font del Ros, Forn L'Espurna. **1 purga:** Monbolet (bolets/setes, sense tel/web/IG/DAR — sense dades). +1 imatge esborrada (Gonfaus). |
-| 2026-06-09 | Tordera 23 | 28 | 6 | 16 parcial · 6 purga | Maresme hortícola (mongeta del ganxet, horta), una pasada. Triaje `match-dar.mjs`: **16/28 casats al DAR**. **Verif:** CUICK (sofritos/picadas naturals, ecommerce >25€), Can Ricastell (=Eduardo Sánchez Iniesta, agroecològic, llegums), Agrària Baixa Tordera (coop, DAR; cert TLS), Carnisseria Can Freixas (403, web+IG propis), Ecotràmec (verdura eco, cistella; DAR), Ramaderia Jordi Torres (carn boví, cert caducat; DAR). **Parcial DAR:** Galli Francesca (SALACE, vins), Masó Martínez (=HORTA MASÓ → **recat Bodega→Fruta y verdura**), Monfulleda (=Can Bibot, carn xai), Goula Ferrer (mel+ametlles+kiwi → **recat Despensa→Miel**), Joan Manresa (mongeta → **recat Despensa→Legumbres**), Juli Centellas (Hort d'en Gallina), Mateu Méndez (Quim i Miriam), Santi Manresa (fava/mongeta), Unió Puig (Can Saleta), Cal Mexica (ous; DAR via Jordi Matas/Blanes), Mas Muñoz (=Hortalisses Mas → **recat Legumbres→Fruta y verdura**). **Parcial local:** Turón Montràs (celler veïnat Sant Daniel), Jofre Bellido (verdures, tel/email), Sagrera Diéguez (llegums, IG), Vicenç Bigas i Fills SCP (web blanquejat), Can Verdum (xarcuteria, blogspot). **Cross-links blanquejats:** Joan Manresa `elrusc.cat`=**Fundació El Rusc** (L'Arche, discapacitat; mateix Veïnat Sant Ponç) +tel DAR 669293060; Santi Manresa + Vicenç Bigas CB `cftordera.cat`=**C.F. Tordera (club de futbol)**; Vicenç Bigas SCP `elcamitordera.cat`=**centre de psicologia**. **6 purgues:** 3 dups registre↔marca/persona (Rosell Vergés=Ecotràmec [tel 629900806+DAR], Eduardo Sánchez Iniesta=Can Ricastell, Jose Jofre Masagur=Jofre Bellido [email jofremasagur60]), Vicenç Bigas i Fills CB (dup d'SCP, web=club futbol), + 2 sense dades (Serra Vila Montserrat, Vilajeliu Serra Joan). Sense imatges òrfenes. DAR Tordera candidats futurs: Colldeforns Soler, Llavina Parés (Horta Llavina), Jordi Manresa (farines), Ramaderia Can Thos (llet), Lluís Sagrera (patata). |
-| 2026-06-09 | Subirats 22 | 28 | 11 | 14 parcial · 3 purga | Alt Penedès, **zona vinícola** (gairebé tot cellers/cava), una pasada. **Estrena `scripts/match-dar.mjs`** (triaje DAR por tel/email/cognoms: 13/28 casats). **Verif VO sí/ecommerce:** Can Bas (vins de finca pròpia), Eudald Massana Noya (botiga.massananoya.com), Sabaté i Coca/Castellroig (1885, Corpinnat, shop.sabateicoca.com), Cava Bertha (compra a preu de celler), Sumarroca (+web sumarroca.es, eClub), El Tros d'Ordal (eco, eltrosdordal.com→verdures.cat/botiga), Les Filós (melmelades/almívars artesans, Casa Olivella Lavern). **Verif VO no:** Júlia Bernet (Vinyes de Muntanya), Oliver Viticultors (eco), Esteve i Gibert (Cal Panxa, 8a gen), Carles de Lavern (cert TLS, celler real). **Parcial DAR Subirats:** Massana Ràfols (=Caves Felix Massana, vins+oli), Ozcariz Raventós, Saumell Vallès (vins+conserves), Familia Esteve Ràfols (fruita→**recat Despensa→Fruta**), Mallofré Massana (=MEL CAN MALLOFRÉ→**recat Miel**), Manel Massana (préssec d'Ordal; web punycode directori blanquejat), Ràfols Raventós (=CAL JAN, fruita→**recat Fruta**, coords BCN→Subirats), Cerclemon (oli+magranes+llimones), Olivella Font Clara (=DAR Olivella Rosell Josep, +tel/correu, prod→préssec d'Ordal). **Parcial local:** Olivariana (oli, **recat Aceite**, ECONNREFUSED), Maset del Lleó (marca real, fila prima), Mas Pujadó (web suspesa "Account suspended"), Finca Ca la Font de Jui (celler, tel), Josep Guilera (cava Subirats, IG). **3 purgues:** Amell Bertran Matilde (web `anaamell.com`=**psicoterapeuta de BCN**; email ferreamell=celler del **Baix Penedès/Tarragona**, coords a la costa → fora de província), Raventós Vendrell Lluís (web `raventos.com`=**Raventós i Blanc** de Sant Sadurní, ja cobert al lote 14; registre + cross-link a marca gran), Josep Olivella Rossell (**dup d'Olivella Font Clara**: DAR OLIVELLA ROSELL JOSEP, mateix domini olivellafontclara). +1 imatge esborrada (Raventós Vendrell). DAR Subirats candidats futurs: Castell de Subirats SA (Olivé Batllori), Heretat Guilera SL, Mas Gori, Ràfols Vendrell (Cal Pau Jan). |
-| 2026-06-09 | Piera 21 | 28 | 12 | 12 parcial · 4 purga | Anoia (frontera Alt Penedès), molta "Bodega"/cava, una pasada. Fuente clave: **DAR Piera** (8 filas). **Verif cavas/cellers VO sí/ecommerce:** Cava Gabarró, Cava Pagès Entrena (1950), Celler Mas del Vidre, Torrens Moliner (La Fortesa). **VO sí/whatsapp:** Clot de les Soleres (vins naturals, comandes WhatsApp/email + enviament), Turrai Pastisseria (comandes WhatsApp). **VO no:** Cava Maria Casanovas (1984, sense shop), Molí d'Oli Cal Sadurní (**recat Despensa→Aceite**), Torrents Viñas Fruits (préssecs, DAR + web pressecs.cat). **Altres verif:** Cafès Mama Same (torrador de cafè, shop.cafesmamasame.com), Fruits Secs Termens=Aperitius Catalans (fruits secs/ametlla, **recat Despensa→Frutos secos**, botiga online). **Recats importants:** Bedous era "Pan y pastelería" → **granja ecològica d'ous CCPAE** (recat **Huevos**, web ecobedous.cat); Poch Samsó era "Bodega" amb web `samsoembotits.com` (=embotits BCN) → DAR diu **marca POCH, préssecs/olives** (recat **Fruta y verdura**, blanquejat web/IG, coords BCN→Piera, contacte DAR, **+img esborrada** [logo Samsó BCN]); Torrens Martí "Otros" → **Fruta** (DAR marca FORDAL). **Parcial DAR:** Torres Álvarez (=Torres de la Serra, vins+oli), Duran Duran (=Masia de Santa Creu, conserves; coords BCN→Piera), De la Maria Eco (horta eco). **Parcial local:** Bonans SCP (celler, Ca n'Orpí), Cal Biel (fruiteria de collita pròpia, Ajuntament/directori; web calbiel.cat 404), Masia Can Sagristà (horta eco; web directori blanquejat), Xarcuteria Carme (web totguia blanquejat), L'Obrador de l'Anna, JM Pastisser (web directori blanquejat), Molí d'Oli Cal Nasi (**recat Aceite**). **4 purgues (mis-fichades BCN + cross-links + dup):** Canti Marrugat (web `vpiera.com`=**Vicenç Piera material de belles arts** BCN, dir Còrsega 298, sense DAR), Josep Llop Vallverdú (web `casapiera.com`=**Casa Piera Belles Arts** BCN Raval, sense DAR), Rovira Duran Maria (**dup de De la Maria Eco**: DAR "LA DE LA MARIA ECO", mateix tel 607252467/email; fila amb coords BCN + web graciadivina.com), Centro AMMA (**centre espiritual** Mata Amritanandamayi; ven una mica d'oli de l'ashram però no és un productor — precedent Fundació Rokpa). +2 imatges esborrades (Poch Samsó cross-link, Centro AMMA). DAR Piera candidats futurs: Borràs Puiggròs (préssecs), Vallverdú Garriga Roser (oli). |
-| 2026-06-09 | Caldes de Montbui 20 | 31 | 10 | 16 parcial · 5 purga | Comerç de poble (Vallès Oriental), una pasada. Fuentes: **DAR Caldes** (10 filas) + **guia agrària de l'Ajuntament** (caldesdemontbui.cat). **Verif VO sí/ecommerce:** Unika Beer (microcervesera, botiga+enviament), Abel Artesans Xarcuters (xarcuteria des de 1890, botiga online), Embotits Pedragosa (100a, enviament >30€), Agrícola Mas Curró (EVOO Vera del Vallès/Arbequina, premis, botiga; **recat Despensa→Aceite**), Umai Pastisseria (comandes online 48h + repartiment). **Verif VO no/no comprobado:** Olis La Xerona (EVOO, sense shop; **recat Despensa→Aceite**), Pastes Sanmartí (**fàbrica de pasta des de 1700**, aigua termal, 52 varietats; recat Despensa→**Pasta artesana**; venuda a madeinspain/mentta), Espiga Blanca (obrador, email delicat.org), Fleca i Pastisseria Turón (cert TLS, web pròpia), Can Orjusa (formatgeria artesana 1987, mató; ACREFA + Patrimoni Cultural DIBA). **Parcial DAR Caldes:** Bonet Mauri (=Can Bonet, horta), Casino Bueno (carn/embotits; web `casinodecaldes.cat`=**casino social blanquejat**, +tel/correu DAR), Granja Ecològica Sassorba (ous eco), Tantiña Riera (olives/carxofa/horta → **recat Charcutería→Fruta y verdura**), Ullar Berenguer (carn boví, Prat de Dalt), Verdura Masclans (+tel/correu DAR). **Parcial (guia Ajuntament/local):** Agro-Picanyol (=Picanyol Traveria DAR, oli+horta; web `agricaldes.com`=**garden center blanquejat**, VO sí era erroni→no comprobado), Els Gatells (granja de llet B2B), Agrovitae (horta+fruita+oli eco, +tel guia), Formatgeria El 27 (formatgeria/delicatessen), Matafaluga (herbes, email), Vallsmadella Cruells (conserves), Ca l'Amàlia, La Parada de la Carn, Pastisseria Alexandre, Pastisseria L'Obrador. **5 purgues:** 2 **dups registre↔marca (DAR):** Ayguasanosa Grauges=XERONA (=Olis La Xerona, Sant Pau 112) i Picanyol Traveria=PICANYOL (=Agro-Picanyol, agropicanyol@gmail.com); + Manubens Ramoneda (web=parròquia bisbatdeterrassa, coords +30km, sense DAR/guia), Martínez Sànchez (web/IG=perruqueria anastilistes + email de Can Orjusa, sense DAR/guia), Soler Panadés (web=majorista HVAC Soler Teselen, sense DAR/guia). +1 imatge òrfena esborrada (Soler Panadés). DAR Caldes candidat futur: Vicente López Pablo (horta). |
-| 2026-06-09 | Moià 19 | 38 | 9 | 24 parcial · 5 purga | **Capital del Moianès**, comerç de poble, una pasada. Fuente clave: **DAR Moianès** (12 confirmades). **Recats per web/DAR:** Biobastona "Pan y pastelería"→**vedella eco+cereals** (recat Productos ecológicos; web=ramaderia, no forn), Nadolç/Productes del Moianès "Despensa/mel"→**lactis eco** iogurt/kèfir 30a (recat Lácteos y quesos), La Moianesa "Charcutería"→**fàbrica de pasta** des de 1880, 140a (recat Pasta artesana, +web lamoianesa.com), Agrícola Bach Oller "Huevos"→**NOUS** eco (recat Frutos secos; marca Nous El Soler, família Bach Oller 2014, CCPAE, +web nouselsoler.com, ecommerce), Delícia de Mel (DAR Ruaix/Calders) i Garriga Molviedro (DAR Mels Cal Pastoret)→**Miel**. **Verif VO sí/ecommerce:** Formatges Montbrú (formatge artesà, botiga online), Nous El Soler. **Verif VO no (sense shop):** Cal Vives (cansaladers des de 1901, 4 gen), Cal Noc (1917, 3 gen, *millor botifarra d'ou de Catalunya*), Pastisseria Àger ("ni enviem ni distribuïm"), Alpines Les Feixes (Granja Lleteria, cabres alpines, formatges). **Parcial DAR Moianès:** Vall-Llosana (embotits), Padrisa Prieto (cabra), Serracarbasa-Sala (cabra), Vila Busoms (=Magadins Vell, ous), Brot Agrològic (=Brotada Rural, horta eco, Granera), Horta 3sols (=Esteva Monforte, horta eco, Castellterçol), La Granoia (=Homs Castany, llegums; web moia.cat **blanquejat**). **Parcial local (carnisseries/forns/fruiteries/despensa sense font forta):** Cal Maties, Arcos, Carnisseria Suriñach, Lluel, El Gai (pollastres), Casa Sala (xocolates), Delícies del Moianès, Homs Gastronomia, JR Pizzes, Ca la Teresa, La Fruiteria de Cal Sens, Padrisa (fruites), Cal Xaconet, Forn de Dalt + Cal Tià (web `calbou1885.com`=Forn Cal Bou, altra adreça → **blanquejat**). **5 purgues:** Cuesta Terricabras (bodega fantasma: web moia.cat + tel 938300000 ajuntament, sense DAR ni celler real al Moianès), Roca Iglesias (web/email/tel del ajuntament, registre, sense presència), Illa Alibés (web agronet.org junk, registre, sense DAR), **Molins Paronella = dup d'Alpines Les Feixes** (mateixa granja Les Feixes, Francesc, tel 622808267), SAT N.716 Granja La Gonima (sense cap dada). Sense imatges òrfenes. DAR Moianès candidats futurs (altres municipis): Vins Colltor + Celler Sant Miquel (Sta Maria d'Oló), La Cabreria/Bardissa (formatges Oló), Granja La Bassola (Castellterçol). |
-| 2026-06-09 | Sant Cugat del Vallès 18 | 26 | 20 | 5 parcial · 1 purga | **Comerç de ciutat adinerada** (forns/pastisseries, xarcuteries, xocolata, cervesa), una pasada. Gairebé tot real amb web pròpia. **Verif VO sí/ecommerce:** La Fem (cervesa, sedes SCugat+Sabadell), Obrador Griful (=Xarcuteries Feliu Griful, 65a, enviament), Clorawfila (bean-to-bar, medalles Int. Chocolate Awards), Carns Corella (×2 sedes: Centre Comercial+Poble, "Comanda Online"), Carlota's (galetes), Famatina (obrador argentí), La Rústica, OMG sense gluten, Yann Duytsche ("Tienda online"), Rabassaires (celler urbà del Vallès, vins eco; +web rabassaires.com/tel 680780133/correu). **Verif VO sí/marketplace:** Bacallaneria H. Antón (Hermanos Antón, 37a bacallà d'Islàndia, elaboració pròpia; ven a `botiga.mercattorreblanca.cat`; web→pàgina de venedor, FB/IG genèrics del mercat blanquejats). **Verif VO no:** Bonaparte Pa i Dolç (moltes sedes, web informativa), Serrajòrdia (1964), Pastisseria Sàbat ×2 (1951, web cert caducat), Cap al Forn (obrador Volpelleres, "50 Panaderos Top España 2024" per Aaron Pedrera; web del CSV=directori `santcugatcomerc.cat` **blanquejat**, IG real), Family Bakery (forn+obrador propi, FB +reviews), Melvida (mel crua Serra de Collserola, segell Producte de Collserola, **recat Despensa artesanal→Miel**, +web melvida.cat; venda directa sense shop). **Recat:** Tocat de l'Ala era "Fruta y verdura" → és **rostisseria** (pollastre a l'ast, xef Marc Blasco, parada Mercat Volpelleres)→recat **Platos preparados**, +tel 638825293/FB. **Parcial:** Agrícola Domènech Dunfoy (=Can Domènech, família pagesa 40a, fruita/verdura eco, catàleg payesia Collserola, venda directa+mercat), Masia Can Bell (masia històrica 1158 + tel, venedora sense confirmar), Gasull & Claramunt (llegums cuits, parada Mercat Mira-sol), Xarcuteria Cristóbal (parada 9 Mercat Mira-sol), Téo/Théobroma (xocolater, només IG @teoxocolater, web=IG dup blanquejat). **1 purga:** Barbero Iserna Eric = dup de Melvida (Eric Barbero=apicultor fundador, mateix correu melvida.info@gmail.com, coords +25km errònies). Sense imatges òrfenes. |
-| 2026-06-09 | Sant Boi de Llobregat 17 | 34 | 10 | 15 parcial · 9 purga | **Clúster del Parc Agrari del Baix Llobregat** (tot "Fruta y verdura"), una pasada. Fonts: DAR `xmyy-7xqi`, directori `parcagrari.cat/pagesia/productors/<slug>` (registre→parcial), fitxes `santboi.cat/<nom>`. **Verif amb VO sí:** Coop. Agrària Santboiana (web `negocio.site` 404→`agrariasantboiana.cat`, botiga online cistelles), Cal Peretó (eco CCPAE, germans Carol Colominas, botiga cistelles +correu pereto.scp@gmail.com), Bierboi (cervesa, ecommerce). **Verif sense VO:** Cal Coracero (1754, +tel DAR 629114664), Cal Pastera Eco (horta eco SBoi+SVdH), Cal Notari (eco 2012, +tel/correu DAR), El Nano Farinetes (=Germán Domínguez, premsa: serveix a restaurants Michelin; +tel/correu DAR), Cuina Justa (Fund. Cassià Just, catering social→**recat Platos preparados**), Mas Llopis (=Capdevila Gibert, 4a gen, +web masllopis.com/FB/correu DAR; VO no comprobado), Brot Nou (1925, parada Mercabarna; tenia `sí/ecommerce` **erroni**→VO no, +tel/correu DAR). **Parcial (directori Parc Agrari):** Canillo Joaquim ("rei de la carxofa" 50ha, canal coop), Cal Marçal (=Horta Codina SCP DAR, +correu), Cal Senyoret (Domènech Magem), Joan Fisas, Josep i Antoni Torrents, Les Ràfoles (=Vidal Iniesta/Cal Cases DAR), Verdures Viscarri (3a gen bleda; **recat Otros→Fruta y verdura**, +web parcagrari). **Parcial (DAR):** Cal Xecu, Herrero Rabella, Verdures i Més. **Parcial (contacte propi/IG):** Cal Nyet (=Lluís Solanas, president coop, pagès SBoi per IG), Jaume Juscafresa (parada Mercat de Pagès Torreblanca + FB), Bruach Galian, Marieges Busquets, Ros Prat Eduard (web/FB/IG de **concessionari Dacia** blanquejats). **4 dups registre↔marca (DAR) purgats:** Bou Samsó=Cal Coracero, Chantry=Cal Notari, Domínguez Farrés=El Nano Farinetes, Chaabi Carrilero=Cal Pastera Eco. **5 purgues sense rastre (DAR+web absents):** Cal Penyasco (toponim=viver Garden l'Aralia, no productor), Blecamp SL (sense dades), Hortofrutícola Obiols (sense dades), Ricard Ros Puig (sense dades, coords +40km), Joan Solé Balagué (només links del ajuntament). Sense imatges òrfenes. DAR Sant Boi candidat futur: Central Parc del Baix Llobregat SCCL |
-| 2026-06-09 | Igualada 15 | 32 | 23 | 7 parcial · 2 purga | Comerç de poble (Anoia), una pasada. **Verif amb VO sí:** Rec Brew (ecommerce), Agro Igualada Coop (botiga oli), Cal Vicens (obrador làctic, **→Santa Margarida de Montbui**). **Verif sense shop→VO no/no comprobado:** Els Minairons (microcerveseria, comandes per pack), La Lenta (cerveseria nòmada, cert caducat), Xarcuteria Ibáñez (web=club fidelització, no checkout; lligada a Càrnics Anoia), Domènech Xarcuter, Bona Cuina Selecta (canelons des de 1990→recat **Platos preparados**), De Bona Pasta (parada Masuca), L'Hort de l'Avi (fruita km0 cultiu propi des de 1964), Làctics La Tossa (formatger artesà 1986), Delícies Sense Gluten (fleca), Forn Alemany (web→fornalemany.cat) + Forn l'Espiga (mateix grup), Pastisseria Fidel Serra (**`fidelserra.com`=parking SEO blanquejat**; FB/IG reals), Pastisseria Pla (cert error), Targarona (conn refused), Forn de Pa Isabel (**coords lluny→corregides**), Jaume i Vicenç (+fornjaumeivicens.com), Òscar Pastisser, Forn del Poble Sec, Carnisseria Gallego (parada Masuca), Esquius. **Parcial:** DAR Anoia→ Forn Codina=celler **ENTREBOSC** (oli/vins; **coords lluny→corregides**), Galtes Olivella=**Can Vilaseca** (lactis), Vich Sastre=**Can Vich** (vins), Casas Jorba=**NOUS** (recat→Frutos secos). Agrícola Ramadera Vinfaro SL (carn xai/cabra, venda proximitat; +adreça). Carnisseria Duran (parada Masuca sense confirmar). Chocolat-Box (**cafè de postres**, no elaborador). **2 purgas:** La Benzinera (bar/taproom street food que serveix cervesa de La Lenta, no elabora; +img esborrada), Carnisseria i Xarcuteria Esquius (dup de esquius-mercat-de-la-masuca: mateix email/web/coords). DAR Anoia candidats futurs (altres municipis): Eixarcolant (Jorba), La Beneta (Hostalets), Cigronet de Cal Farrés (Calonge), Embotits Cal Travé (Llacuna) |
-| 2026-06-09 | Sant Sadurní d'Anoia 14 | 50 | 43 | 4 parcial · 3 purga | **Capital del cava**, una pasada. **Verif cava/celler con botiga propia→VO sí:** Codorníu (no comprobado: SSL al fetch), Freixenet (Club Cuvée, store oficial del grup), Juvé&Camps (shop.juveycamps.com), Recaredo (shop.recaredo.com), Raventós i Blanc (/botiga), Mestres (shop.mestres.es), Agustí Torelló/Celler Kripta (shop.cellerkripta.com; IG typo `agustilorello`→`agustitorello`), Vilarnau (tienda González Byass), Blancher, Cava Varias, Celler Vell (Estruch), Ventura Soler, Castelo de Pedregosa, Solà Raventós, Montesquius, Torre-Blanca/Llàgrima d'Or, Vins El Cep, Canals&Munné, Jaume Giró (**nombre "(Celler Kripta)" erróneo→corregit**; Pati de Cal Rei és el seu enoturisme), Mata i Coloma/Pere Mata (+web matacoloma.com). **Verif sin botiga→VO no/no comprobado:** Gramona (enoteca, sense checkout propi), Codorníu, Pere Ventura, Maria Rigol Ordi (punts de venda), Conde de Valicourt, Anima Mundi/AT Roca, Celler Credo (web→.com; Recaredo), Finca Espiells (=J&C), Mas Escorpí (=Gramona), Castellblanch (403, Freixenet group), Can Quetu (cava des de 1954, +canquetu.com), Canals & Domingo (1957, +canalsdomingo.com), Caves Soler-Jové (1985, +solerjove.com/tel/dir), COVIDES (coop, +covides.com), Unió Cellers del Noya (1982, +tel), Francisco Domínguez=**Molí Parellada** (L'Avernó), Masia Ginebreda (DO Cava, +correu). **Verif comida:** Simón Coll (xocolata 1840, shop), Forn de l'Arseni (1951, shop.calarseni1951.cat), Cal Miqueló (1896, comanda WhatsApp/tel→sí, web→.com), Camins del Nord (formatger llet crua pròpia, sense shop), Pastisseria Sant Jordi (cert error→no comprobado), Xarcuteria Rovira, Pastisseria Carafí (1926). **Parcial:** Vins per Estimar el Vi (celler real però fila amb **tel de Gramona**→blanquejat), Explotacions Agrícoles 23 (DAR ceba/calçot), Pastisseria Forn de Sant Joan (coords a **Barcelona ciutat**→corregides a SSd'A; sense altres fonts), Jaume Marra Poch (pagès Can Catassús). **3 purgas:** Cartró Parera (web=Maquinària Moderna + tel=Parera Assessors, no celler, sense DAR), Marra Poch Jaume (dup de Jaume Marra Poch, mateix correu, enllaços de Cava Giró), Cava Canals i Munné (fila buida, dup de Canals & Munné). Sense imatges òrfenes. DAR Sant Sadurní candidats futurs: Can Font de Muntanya (horta), Mas Casas Cruïlles (formatges ovella), Mir CB (embotits), Ca l'Obaga (verdura), Arboreco |
-| 2026-06-09 | Vilafranca del Penedès 13 | 38 | 28 | 10 parcial · 0 purga | Capital del Penedès. **Verif web propia + VO:** Mascaró (cava/brandy, ecommerce), Pinord (shop.pinord.com OK pese a banner "gairebé a punt"), Estel d'Argent (compra per WhatsApp/tel 677182347), Mastinell (shop.mastinell.com), BeerCat (cervesa, tienda online; web 403 al fetch, confirmada per cerca), Mulet Viticultors (vi eco, botiga), Xerigots (formatger afinador, botiga.xerigots.cat), Carnisseria Vilafranca (comanda WhatsApp). **Verif sin VO:** Xarcuteries Cal Valls (obrador St Julià), Catànies Via (bombons 1977), Fleca Parés, Forn J. Rius (1922), Pastisseria Galí, Pastes La Forja (recat→Pasta artesana; possible Holacampo), Cal Vives (embotits propis; **web `calvives.com`=Moià blanq.**, img era logo de Moià dup. → esborrada), Gelats Xixona M.Mira (**web→`botigatorrons.com`**, la del CSV era la de Reus; pedido per tel), Carns Toni Vives (=Cal Toni SL), Forn de pa Mitjans, Pastisseria Bertran (100+a), Pastisseria Trens, Forn Sant Joan, Forn de Pa Casa Celis (web=IG dup blanq.). **Verif cellers DO (registre/sense web):** Trias Batlle (1932, només resellers→VO no comprobado), Tarrida i Sibil (DO Penedès), Soler Gatell (Gatell Estate/Mas Gatell), El Mas Pujó SA; Vins de Sinèrgia (Carles Morgades, projecte del Viver de Cellers, primers vins 2024, confirmat per RTV Vilafranca). **Parcial — DAR Alt Penedès→parcial:** Domènech Rovira (ROSA DOMENECH, ceba/calçot), Mascaró Figuerola (patata), Gol Llenas (POMES; web/IG/img eren **Escola Sant Josep**→netejats, img esborrada, tel→639043272). Venda proximitat (PDF gencat)→parcial: Joan Ferran Roses Vila (VP/P/0688/2013 peres/raïm; web `smp.cat`=clínica blanq., tel→609326222). Pascual Leon=**Suc de Vida** (most ecològic Daniel Pascual; web=constructora blanq., recat→Mostos y zumos)→parcial. Altres parcial: Granja Avícola Montserrat SL (1966, avícola), Forn de Pa Sant Jordi (SL "extinguida", op. actual sense confirmar), Sant Pau Coffee & Bakery (sense font forta), Obrador Russell (FB; coords ~19km errònies→corregides a Vilafranca; possible confusió amb García Sirvent), Horts Biopenedès (=lloguer d'horts per autoconsum, no venda km0). **0 purgas** (poble real ple de comerços reals). Possible dup a vigilar: Forn Sant Joan vs Pastisseria Trens (mateix C/ Sant Joan 9, tels 938920155/938820155). DAR Alt Penedès candidats futurs: Coop. Vinícola del Penedès, Marquès Ros (Cal Sis Dits, Vilobí), Pons Ametller (olives, Vilobí) |
-| 2026-06-08 | Vilanova i la Geltrú 12 | 40 | 20 | 11 parcial · 9 purga | Garraf. **Verif web propia:** 7 Pams (vi eco), JövőBrew (cervesa, ecommerce), Bodega Jaume Serra (cava, ecommerce), Obrador Frumento (massa mare, ecommerce), Marendins (peixateria+salaons, ecommerce), Cornet 1945 + Canelons Pubill (botiga **demo**→VO=no), Jordi Morera/L'Espiga d'Or, Forn de la Rambla, Passions (web→.com), Forn Sant Onofre (+web), Artic Gelat. **Verif obrador/parada:** Kinkakau (web=life-coach blanq.), Pastisseria Abraham (business.site 404 blanq.), Pastisseria 180ºC, Fer.Ment (massa mare), La Pastaia (recat→Pasta artesana), Cal Tupí d'Olives (eco horta, recat→Fruta), Sínia Sant Gervasi (Remei Gimeno, web-dir blanq.), Xarcuteria Margarida. **Parcial DAR Garraf:** Borrero (Els Hortells), Celler Viticultors SAT 22, Família Torrents Sabaté, Sánchez Barbero (Vila Aurora +web), Josep Alsina (Sínia Alsina). Otros parcial: El Chalet (formatgeria francesa revén), Queso con Chocolate, Confraria Pescadors, Cansaladeries Cal Terés + Martínez, Torrents Miró (vinya). **9 purgas:** dups DAR (Gimeno Remei + Gimeno Jaume = Sínia Sant Gervasi; Alsina Soler = Sínia Alsina; Jaume Torrents = Torrents Miró) + webs cruzadas por cognom sense DAR (Antonio Ferrer=Ametller Origen, Aviño Rius=Finques Rius, Marce Sabadell=Banc Sabadell) + Anguela Rosell (sense dades) + Terres i Llars Inmobles SL (immobiliària). +1 img òrfena (Aviño). DAR Garraf candidat futur: Agrovilanova SAT (Claramunt Food Service) |
+| 1 | Barcelona - Eixample | 0 | ✅ | 2026-06-07 | 29 verif + 4 parcial (DAR); 9 purgadas |
+| 2 | Barcelona - Ciutat Vella | 0 | ✅ | 2026-06-07 | 30 verif + 1 parcial (DAR); 4 purgadas |
+| 3 | Barcelona - Gràcia | 0 | ✅ | 2026-06-07 | 27 verif + 4 parcial; Exalta→Sant Antoni de Vilamajor |
+| 4 | Barcelona - Sant Martí | 0 | ✅ | 2026-06-07 | 20 verif + 5 parcial; 2 purgas (dup, bar) |
+| 5 | Barcelona - Sants-Montjuïc | 0 | ✅ | 2026-06-07 | 11 verif + 7 parcial; 5 cluster purgadas |
+| 6 | Barcelona (resto) | 0 | ✅ | 2026-06-08 | ~96 verif/parcial + 17 purgas (cluster DAR 6d) |
+| 7 | Terrassa | 0 | ✅ | 2026-06-08 | 30 verif + 27 parcial; 0 purgas |
+| 8 | Sabadell | 0 | ✅ | 2026-06-08 | 24 verif + 19 parcial + 2 purgas |
+| 9 | Mataró | 0 | ✅ | 2026-06-08 | 29 verif + 17 parcial + 4 purgas |
+| 10 | Manresa | 0 | ✅ | 2026-06-08 | 21 verif + 11 parcial + 13 purgas (5 dups registre↔marca) |
+| 11 | Vic | 0 | ✅ | 2026-06-08 | 30 verif + 9 parcial + 7 purgas; capital d'embotits |
+| 12 | Vilanova i la Geltrú | 0 | ✅ | 2026-06-08 | 20 verif + 11 parcial + 9 purgas; webs cruzadas por apellido |
+| 13 | Vilafranca del Penedès | 0 | ✅ | 2026-06-09 | 28 verif + 10 parcial + 0 purgas |
+| 14 | Sant Sadurní d'Anoia | 0 | ✅ | 2026-06-09 | 43 verif + 4 parcial + 3 purgas; capital del cava |
+| 15 | Igualada | 0 | ✅ | 2026-06-09 | 23 verif + 7 parcial + 2 purgas |
+| 16 | Badalona | 0 | ✅ | 2026-06-09 | 23 verif + 5 parcial + 3 purgas; Anís del Mono recat |
+| 17 | Sant Boi de Llobregat | 0 | ✅ | 2026-06-09 | 10 verif + 15 parcial + 9 purgas; Parc Agrari, 4 dups |
+| 18 | Sant Cugat del Vallès | 0 | ✅ | 2026-06-09 | 20 verif + 5 parcial + 1 purga |
+| 19 | Moià | 0 | ✅ | 2026-06-09 | 9 verif + 24 parcial + 5 purgas; DAR Moianès |
+| 20 | Caldes de Montbui | 0 | ✅ | 2026-06-09 | 10 verif + 16 parcial + 5 purgas; 2 dups registre↔marca |
+| 21 | Piera | 0 | ✅ | 2026-06-09 | 12 verif + 12 parcial + 4 purgas |
+| 22 | Subirats | 0 | ✅ | 2026-06-09 | 11 verif + 14 parcial + 3 purgas; estreno match-dar.mjs |
+| 23 | Tordera | 0 | ✅ | 2026-06-09 | 6 verif + 16 parcial + 6 purgas |
+| 24 | Berga | 0 | ✅ | 2026-06-09 | 10 verif + 14 parcial + 1 purga |
+| 25 | Vilassar de Mar | 0 | ✅ | 2026-06-10 | 10 verif + 9 parcial + 5 purgas; clúster floricultors DAR |
+| 26 | Viladecans | 0 | ✅ | 2026-06-10 | 9 verif + 11 parcial + 3 purgas; Parc Agrari |
+| 27 | Manlleu | 22 | ⬜ | | |
+| 28 | Castellbisbal | 21 | ⬜ | | |
+| 29 | Prat de Llobregat | 21 | ⬜ | | |
+| 30 | Masnou | 20 | ⬜ | | |
+| — | _resto (369 municipios)_ | 1.939 | ⬜ | | recomputar al llegar |
+
+## Candidatos futuros (vistos en el DAR, no integrados)
+
+Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo tras verificación
+(protocolo de AGENTS.md). No son cola obligatoria.
+
+- **Manresa/Bages:** AMPANS/Urpina · Calafell (Can Calafell) · CCAgrària (Can Poc Oli)
+- **Vic/Osona:** Apícola Morató (Mel Morató) · Pujalt Quero (Xai Torrents del Prat) · Tarres Alcalde (L'Esquellot del Montseny)
+- **Badalona:** Abellan Moya (vins) · Conreu Sereny SCCL (horta)
+- **Sant Boi:** Central Parc del Baix Llobregat SCCL
+- **Sant Sadurní d'Anoia:** Can Font de Muntanya (horta) · Mas Casas Cruïlles (formatges ovella) · Mir CB (embotits) · Ca l'Obaga (verdura) · Arboreco
+- **Anoia:** Eixarcolant (Jorba) · La Beneta (Hostalets) · Cigronet de Cal Farrés (Calonge) · Embotits Cal Travé (Llacuna)
+- **Alt Penedès:** Coop. Vinícola del Penedès · Marquès Ros (Cal Sis Dits, Vilobí) · Pons Ametller (olives, Vilobí)
+- **Garraf:** Agrovilanova SAT (Claramunt Food Service)
+- **Subirats:** Castell de Subirats SA · Heretat Guilera SL · Mas Gori · Ràfols Vendrell (Cal Pau Jan)
+- **Piera:** Borràs Puiggròs (préssecs) · Vallverdú Garriga Roser (oli)
+- **Caldes de Montbui:** Vicente López Pablo (horta)
+- **Moianès:** Vins Colltor + Celler Sant Miquel (Sta Maria d'Oló) · La Cabreria/Bardissa (formatges, Oló) · Granja La Bassola (Castellterçol)
+- **Tordera:** Colldeforns Soler · Llavina Parés (Horta Llavina) · Jordi Manresa (farines) · Ramaderia Can Thos (llet) · Lluís Sagrera (patata)
+- **Vilassar de Mar:** Agrícola de Vilassar de Mar SCCL (coop 1918, agrobotiga)
+- **Viladecans:** Heretat Mas Tinell (vins) · Vilaeco SL · Ximalls SAT
+
+## Para otros agentes / a vigilar
+
+- Tarragona: `bodega-el-grial-sl` (bodega real de El Perelló) se purgó de Barcelona; candidata a
+  `tarragona.csv`.
+- Vilafranca: posible dup Forn Sant Joan vs Pastisseria Trens (mismo C/ Sant Joan 9).
+
+## Historial
+
+El detalle por lote (qué se verificó, qué se purgó y por qué) se registró aquí hasta el lote 26 y
+está en el historial git de este archivo: `git log --follow -p -- docs/barcelona-verificacion.md`.
+Desde ahora, cada lote cerrado deja solo su línea en la worklist; la evidencia fina va en el mensaje
+de commit del lote.
