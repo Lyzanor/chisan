@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.796** · verificado **747** · parcial **397** · pendiente **1.652**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **177 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-40** (worklist).
-- **Siguiente: Lote 41** — recomputar municipio con más pendientes al llegar (Granollers y Santa Coloma de Gramenet ~16 c/u).
+- Filas: **2.792** · verificado **760** · parcial **397** · pendiente **1.635**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **181 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-41** (worklist).
+- **Siguiente: Lote 42** — Torelló (17 pendientes); después Granollers y Santa Coloma de Gramenet (16 c/u).
 - Último push: lotes 1-40 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -203,6 +203,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 38 | Cabrera de Mar | 0 | ✅ | 2026-06-10 | 8 verif + 7 parcial + 3 purgas (dup Ribosa, Vinyals=ornamental, "De Mar"=artefacto); Cal Mamà rescatada de links Badalona/Flax&Kale |
 | 39 | Gavà | 0 | ✅ | 2026-06-10 | 7 verif + 9 parcial + 2 purgas (Estapé Figueras dup↔Hort de Proximitat SLU, Taberner sin rastro); marcas DAR recuperadas (Parada del Camí Ral, Horta amb Alegria) |
 | 40 | Sant Feliu de Llobregat | 0 | ✅ | 2026-06-10 | 9 verif + 4 parcial + 5 purgas (3 dups internos: Cordú↔Cortès, Saladrigas×2, Ollé Palet×2; Piñol y Blanco sin rastro); elspagesos.com=music bar blanqueada |
+| 41 | Sant Pere de Ribes | 0 | ✅ | 2026-06-10 | 13 verif + 0 parcial + 4 purgas (Puig Batet SL y Ferret Mestre dups registre↔marca, Bartra i Roig=empresa de Vega de Ribes, Can Miret=patrimonio); Greco→Charcutería+ecommerce; Horta Casetes coords en Garraf corregidas; bouquetdhort.com→tienda Grupdem |
 | — | _resto (335 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -232,6 +233,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Cabrera de Mar:** Cultius Jaume's Noe SCP (horta, DAR) · Roig Vins (celler i botiga gourmet nova)
 - **Gavà (Mercat de Pagès):** Cal Xim Xim (Mauri Bosch, 30 ha) · Vila Eco by Enric ECO (Xavier Estrada) · Can Arenols (des de 1979) · Ivern Borrut Josep (DAR)
 - **Sant Feliu de Llobregat:** La Rural de Collserola SCCL (Can Ferriol, DAR; horts a la Rierada-Molins ja citats al lote 34)
+- **Sant Pere de Ribes:** La Piotxa SCCL (préssecs, espàrrec, espelta; DAR 656577327)
 
 ## Para otros agentes / a vigilar
 
