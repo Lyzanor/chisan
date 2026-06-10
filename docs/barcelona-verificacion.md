@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.848** · verificado **614** · parcial **327** · pendiente **1.907**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **125 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-27** (worklist).
-- **Siguiente: Lote 28 = Castellbisbal** (21 pendientes).
-- Último push: lotes 1-26 en `main` (2026-06-10).
+- Filas: **2.845** · verificado **625** · parcial **334** · pendiente **1.886**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **128 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-28** (worklist).
+- **Siguiente: Lote 29 = Prat de Llobregat** (21 pendientes).
+- Último push: lotes 1-28 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
 
@@ -190,7 +190,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 25 | Vilassar de Mar | 0 | ✅ | 2026-06-10 | 10 verif + 9 parcial + 5 purgas; clúster floricultors DAR |
 | 26 | Viladecans | 0 | ✅ | 2026-06-10 | 9 verif + 11 parcial + 3 purgas; Parc Agrari |
 | 27 | Manlleu | 0 | ✅ | 2026-06-10 | 17 verif + 4 parcial + 1 purga; cancerilles.com secuestrada, fila Capdevila contaminada con CF Ametlla |
-| 28 | Castellbisbal | 21 | ⬜ | | |
+| 28 | Castellbisbal | 0 | ✅ | 2026-06-10 | 11 verif + 7 parcial + 3 purgas (2 dups registre↔marca; Quitxalla = vi de Ca l'Esteve) |
 | 29 | Prat de Llobregat | 21 | ⬜ | | |
 | 30 | Masnou | 20 | ⬜ | | |
 | — | _resto (369 municipios)_ | 1.939 | ⬜ | | recomputar al llegar |
@@ -215,6 +215,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Tordera:** Colldeforns Soler · Llavina Parés (Horta Llavina) · Jordi Manresa (farines) · Ramaderia Can Thos (llet) · Lluís Sagrera (patata)
 - **Vilassar de Mar:** Agrícola de Vilassar de Mar SCCL (coop 1918, agrobotiga)
 - **Viladecans:** Heretat Mas Tinell (vins) · Vilaeco SL · Ximalls SAT
+- **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 
 ## Para otros agentes / a vigilar
 
