@@ -215,7 +215,6 @@ When picking a source for a new image, check in this order and stop at the first
 ### Naming
 - File name must equal the producer `slug` (the same value used in the CSV's `slug` column) followed by the extension.
 - Path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the `imagen` column value and the CSV layout `data/csv/<comunidad>/<provincia>.csv` (Madrid: `/productores/madrid/madrid/` because comunidad and provincia share the name).
-- Legacy top-level folders (`/productores/caceres/`, `/productores/las-palmas/`, `/productores/valencia/`) predate this convention; migrate their assets to the canonical path when touching those rows, updating `imagen` in the same change.
 - One image per producer. Do not store unused variants or originals in `public/`. Keep working originals outside the repo.
 
 ### Image enrichment tooling
