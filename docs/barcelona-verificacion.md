@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.792** · verificado **760** · parcial **397** · pendiente **1.635**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **181 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-41** (worklist).
-- **Siguiente: Lote 42** — Torelló (17 pendientes); después Granollers y Santa Coloma de Gramenet (16 c/u).
+- Filas: **2.789** · verificado **772** · parcial **399** · pendiente **1.618**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **184 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-42** (worklist).
+- **Siguiente: Lote 43** — Granollers (16 pendientes); después Santa Coloma de Gramenet (16).
 - Último push: lotes 1-40 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -204,6 +204,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 39 | Gavà | 0 | ✅ | 2026-06-10 | 7 verif + 9 parcial + 2 purgas (Estapé Figueras dup↔Hort de Proximitat SLU, Taberner sin rastro); marcas DAR recuperadas (Parada del Camí Ral, Horta amb Alegria) |
 | 40 | Sant Feliu de Llobregat | 0 | ✅ | 2026-06-10 | 9 verif + 4 parcial + 5 purgas (3 dups internos: Cordú↔Cortès, Saladrigas×2, Ollé Palet×2; Piñol y Blanco sin rastro); elspagesos.com=music bar blanqueada |
 | 41 | Sant Pere de Ribes | 0 | ✅ | 2026-06-10 | 13 verif + 0 parcial + 4 purgas (Puig Batet SL y Ferret Mestre dups registre↔marca, Bartra i Roig=empresa de Vega de Ribes, Can Miret=patrimonio); Greco→Charcutería+ecommerce; Horta Casetes coords en Garraf corregidas; bouquetdhort.com→tienda Grupdem |
+| 42 | Torelló | 0 | ✅ | 2026-06-10 | 12 verif + 2 parcial + 3 purgas (Ojeda dup de La Mel d'en Pere por tel; Calverons y Simon Font sin rastro, este con web de librería); Racó del Panarra→Vic (marketplace OsonaTerra), Postres Masgrau→Sant Vicenç de Torelló; flecaxanat.com parked |
 | — | _resto (335 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -234,6 +235,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Gavà (Mercat de Pagès):** Cal Xim Xim (Mauri Bosch, 30 ha) · Vila Eco by Enric ECO (Xavier Estrada) · Can Arenols (des de 1979) · Ivern Borrut Josep (DAR)
 - **Sant Feliu de Llobregat:** La Rural de Collserola SCCL (Can Ferriol, DAR; horts a la Rierada-Molins ja citats al lote 34)
 - **Sant Pere de Ribes:** La Piotxa SCCL (préssecs, espàrrec, espelta; DAR 656577327)
+- **Torelló:** Agrària de Torelló SCCL (Patates del Bufet d'Orís; DAR 617331898) · Les Gambires Torelló SL (El Rebost de les Gambires, pollastre; DAR 626305631) · Espai Natura (parada eco al Mercat Municipal, collita pròpia)
 
 ## Para otros agentes / a vigilar
 
