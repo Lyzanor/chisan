@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.784** · verificado **797** · parcial **401** · pendiente **1.586**
+- Filas: **2.784** · verificado **810** · parcial **403** · pendiente **1.571**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **189 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-44** (worklist).
-- **Siguiente: Lote 45** — Castelldefels (15 pendientes).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-45** (worklist).
+- **Siguiente: Lote 46** — Esparreguera (15 pendientes).
 - Último push: lotes 1-40 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -207,6 +207,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 42 | Torelló | 0 | ✅ | 2026-06-10 | 12 verif + 2 parcial + 3 purgas (Ojeda dup de La Mel d'en Pere por tel; Calverons y Simon Font sin rastro, este con web de librería); Racó del Panarra→Vic (marketplace OsonaTerra), Postres Masgrau→Sant Vicenç de Torelló; flecaxanat.com parked |
 | 43 | Granollers | 0 | ✅ | 2026-06-10 | 11 verif + 2 parcial + 3 purgas (Ortega Puigoriol links de hospital/BM, Ca Puxi web de camping + GMaps Aluminios, Torrents GMaps farmacia); Tòfona Catalana datos propios restaurados (tenía Fonda Europa/Tributària); 5 ecommerce (Jijonero, Xocolates, Crit d'Or, Krüm, Tòfona) |
 | 44 | Santa Coloma de Gramenet | 0 | ✅ | 2026-06-10 | 14 verif + 0 parcial + 2 purgas (Pardes y Hervas, basura enlazada por email con links de mercería); forndepapadro.com era el forn de Nou Barris→blanqueado; 6 con venta (Paredes/Sant Ramon/Dulciurile whatsapp, TotCarbó tel, Glass ecommerce, Colombia ecommerce+Glovo) |
+| 45 | Castelldefels | 0 | ✅ | 2026-06-10 | 13 verif + 2 parcial + 0 purgas; 8 con venta online (Right Side suscripción, Finca/Lara/BlackCake/CasaBlanca/Luciérnaga/Zitarrosa/PaulaFranco ecommerce, Hache whatsapp); Arenols→Can Arenols (pagès Parc Agrari, links+imagen de ATROZ gastrobar limpiados); Pañella=DAR Mercabarna |
 | — | _resto (335 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -234,7 +235,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
 - **Sant Martí Sarroca:** Greenhort SCP (horta) · Molí de Calabuig SL (olives/ordi) · Ràfols Baqués Josep (conserves) · Vidal Bolet Jesús (fruita/horta) · Cellers Montserrat (vins)
 - **Cabrera de Mar:** Cultius Jaume's Noe SCP (horta, DAR) · Roig Vins (celler i botiga gourmet nova)
-- **Gavà (Mercat de Pagès):** Cal Xim Xim (Mauri Bosch, 30 ha) · Vila Eco by Enric ECO (Xavier Estrada) · Can Arenols (des de 1979) · Ivern Borrut Josep (DAR)
+- **Gavà (Mercat de Pagès):** Cal Xim Xim (Mauri Bosch, 30 ha) · Vila Eco by Enric ECO (Xavier Estrada) · Ivern Borrut Josep (DAR). ~~Can Arenols~~ → integrado como fila de Castelldefels (lote 45, parcial; confirmar municipi del camp) |
 - **Sant Feliu de Llobregat:** La Rural de Collserola SCCL (Can Ferriol, DAR; horts a la Rierada-Molins ja citats al lote 34)
 - **Sant Pere de Ribes:** La Piotxa SCCL (préssecs, espàrrec, espelta; DAR 656577327)
 - **Torelló:** Agrària de Torelló SCCL (Patates del Bufet d'Orís; DAR 617331898) · Les Gambires Torelló SL (El Rebost de les Gambires, pollastre; DAR 626305631) · Espai Natura (parada eco al Mercat Municipal, collita pròpia)
