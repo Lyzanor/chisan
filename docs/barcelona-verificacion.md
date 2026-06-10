@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.803** · verificado **731** · parcial **384** · pendiente **1.688**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **170 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-38** (worklist).
-- **Siguiente: Lote 39 = Gavà** (18 pendientes).
+- Filas: **2.801** · verificado **738** · parcial **393** · pendiente **1.670**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **172 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-39** (worklist).
+- **Siguiente: Lote 40 = Sant Feliu de Llobregat** (18 pendientes).
 - Último push: lotes 1-32 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
@@ -201,7 +201,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 36 | Sant Celoni | 0 | ✅ | 2026-06-10 | 12 verif + 3 parcial + 4 purgas; dup Armora→Ous del Mas; mercat con pedidos online (delmercatacasa diba) |
 | 37 | Sant Martí Sarroca | 0 | ✅ | 2026-06-10 | 10 verif (6 cellers, 4 ecommerce) + 4 parcial DAR + 5 purgas (dup Torres→Pacs, Galimany=coop Covides, Tuyà=casa rural, Mata Coll y Cuevas ajenas); Jovani→Castellví de la Marca |
 | 38 | Cabrera de Mar | 0 | ✅ | 2026-06-10 | 8 verif + 7 parcial + 3 purgas (dup Ribosa, Vinyals=ornamental, "De Mar"=artefacto); Cal Mamà rescatada de links Badalona/Flax&Kale |
-| 39 | Gavà | 18 | ⬜ | | |
+| 39 | Gavà | 0 | ✅ | 2026-06-10 | 7 verif + 9 parcial + 2 purgas (Estapé Figueras dup↔Hort de Proximitat SLU, Taberner sin rastro); marcas DAR recuperadas (Parada del Camí Ral, Horta amb Alegria) |
 | 40 | Sant Feliu de Llobregat | 18 | ⬜ | | |
 | — | _resto (336 municipios)_ | 1.652 | ⬜ | | recomputar al llegar |
 
@@ -230,6 +230,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
 - **Sant Martí Sarroca:** Greenhort SCP (horta) · Molí de Calabuig SL (olives/ordi) · Ràfols Baqués Josep (conserves) · Vidal Bolet Jesús (fruita/horta) · Cellers Montserrat (vins)
 - **Cabrera de Mar:** Cultius Jaume's Noe SCP (horta, DAR) · Roig Vins (celler i botiga gourmet nova)
+- **Gavà (Mercat de Pagès):** Cal Xim Xim (Mauri Bosch, 30 ha) · Vila Eco by Enric ECO (Xavier Estrada) · Can Arenols (des de 1979) · Ivern Borrut Josep (DAR)
 
 ## Para otros agentes / a vigilar
 
