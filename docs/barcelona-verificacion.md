@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-10)
 
-- Filas: **2.845** · verificado **625** · parcial **334** · pendiente **1.886**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **128 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-28** (worklist).
-- **Siguiente: Lote 29 = Prat de Llobregat** (21 pendientes).
-- Último push: lotes 1-28 en `main` (2026-06-10).
+- Filas: **2.834** · verificado **660** · parcial **353** · pendiente **1.821**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **139 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-31** (worklist).
+- **Siguiente: Lote 32 = Cardedeu** (19 pendientes).
+- Último push: lotes 1-31 en `main` (2026-06-10).
 
 ## Procedimiento (cada lote)
 
@@ -191,9 +191,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 26 | Viladecans | 0 | ✅ | 2026-06-10 | 9 verif + 11 parcial + 3 purgas; Parc Agrari |
 | 27 | Manlleu | 0 | ✅ | 2026-06-10 | 17 verif + 4 parcial + 1 purga; cancerilles.com secuestrada, fila Capdevila contaminada con CF Ametlla |
 | 28 | Castellbisbal | 0 | ✅ | 2026-06-10 | 11 verif + 7 parcial + 3 purgas (2 dups registre↔marca; Quitxalla = vi de Ca l'Esteve) |
-| 29 | Prat de Llobregat | 21 | ⬜ | | |
-| 30 | Masnou | 20 | ⬜ | | |
-| — | _resto (369 municipios)_ | 1.939 | ⬜ | | recomputar al llegar |
+| 29 | Prat de Llobregat | 0 | ✅ | 2026-06-10 | 10 verif + 7 parcial + 8 purgas; 5 dups registre↔marca, 3 filas ajenas/no productor |
+| 30 | Masnou | 0 | ✅ | 2026-06-10 | 15 verif + 4 parcial + 1 purga; Aurora dup, Botànic→Argentona |
+| 31 | Arenys de Munt | 0 | ✅ | 2026-06-10 | 9 verif + 8 parcial + 2 purgas; dups Talcomraja y AgroSalichs |
+| 32 | Cardedeu | 19 | ⬜ | | |
+| — | _resto (344 municipios)_ | 1.802 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -216,6 +218,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Vilassar de Mar:** Agrícola de Vilassar de Mar SCCL (coop 1918, agrobotiga)
 - **Viladecans:** Heretat Mas Tinell (vins) · Vilaeco SL · Ximalls SAT
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
+- **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 
 ## Para otros agentes / a vigilar
 
