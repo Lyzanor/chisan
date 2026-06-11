@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.720** · verificado **1.008** · parcial **484** · pendiente **1.228**
+- Filas: **2.720** · verificado **1.019** · parcial **484** · pendiente **1.217**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **253 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-71** (worklist).
-- **Siguiente: Lote 72** — Cerdanyola del Vallès (11).
-- Último push: lotes 1-70 en `main` (2026-06-11); lote 71 pendiente de push.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-72** (worklist).
+- **Siguiente: Lote 73** — Cubelles (11).
+- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-72 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -234,7 +234,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 69 | Begues | 0 | ✅ | 2026-06-11 | 6 verif + 1 parcial + 4 purgas (Rusc d'Or dup↔FR Apicultors y Marlet dup↔Vendrell Viñas, ambos por DAR; Cal Banato y Monmany sin rastro, este con links de escola); Marcel ecommerce confirmado; Montau de Sadurní VO marketplace (wirwinzer.de); Forn Núria en guía municipal |
 | 70 | Castellar del Vallès | 0 | ✅ | 2026-06-11 | 3 verif + 4 parcial + 4 purgas (Domínguez dup↔Horta Can Manent por DAR; Soler Mir=coach con web propia ajena al campo; La Mel y Can Pèlacs sin rastro); Gercasa rescatada vía DAR (datos de un Gercasa SL de BCN blanqueados); Farré→Ecogranja La Roca (St. Llorenç Savall); El Sabater Vell confirmado por el mapa agroecològic de l'Ateneu |
 | 71 | Castellví de la Marca | 0 | ✅ | 2026-06-11 | 6 verif + 2 parcial + 3 purgas (SAT Mas Lluet dup↔Caves Bolet por email; Sole&Gallego=registro DAR de L'Hort de la Carmeta con links de Sol Group; Roses Alsina sin rastro y GMaps de Alsina&Sardà); 3 ecommerce (Bolet, Carmeta, Aymar→aymarwines.com); Olivella=Masia Ca la Gori (DAR) |
-| — | _resto (316 municipios)_ | 1.382 | ⬜ | | recomputar al llegar |
+| 72 | Cerdanyola del Vallès | 0 | ✅ | 2026-06-11 | 11 verif + 0 parcial + 0 purgas; 5 con venta (Chocoletters, Ecopizza, Pekatum ecommerce; Montse y Fleca el Molí via botiga online del Mercat de Serraperera=marketplace, paradas confirmadas en la plataforma); Superbloom Wines real con distribución internacional; Jaleo con GMaps de "Bee Love" blanqueado |
+| — | _resto (315 municipios)_ | 1.371 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
