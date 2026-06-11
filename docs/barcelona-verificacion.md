@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.736** · verificado **978** · parcial **461** · pendiente **1.297**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **237 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-65** (worklist).
-- **Siguiente: Lote 66** — Castellfollit del Boix (12).
-- Último push: lotes 1-62 en `main` (2026-06-11); lotes 63-65 pendientes de push.
+- Filas: **2.735** · verificado **982** · parcial **468** · pendiente **1.285**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **238 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-66** (worklist).
+- **Siguiente: Lote 67** — la Roca del Vallès (12).
+- Último push: lotes 1-62 en `main` (2026-06-11); lotes 63-66 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -228,7 +228,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 63 | Santa Coloma de Cervelló | 0 | ✅ | 2026-06-11 | 5 verif + 5 parcial + 3 purgas (Cal Rajoler y Ribas Pau dups↔Fruits Olivé SCP por email/tel DAR; Pere Tugas registro dup↔Les Marines con web del CB Montpedrós); Morral limpiado del restaurante Racó de Can Valentí; Cal Cabré FB propio; coords ajenas (Tiana/Vallès) corregidas a centroide |
 | 64 | Taradell | 0 | ✅ | 2026-06-11 | 7 verif + 4 parcial + 2 purgas (Cabanas Sola dup↔Mas Casablanca; Cellviosona sin rastro + GMaps de Triskel Telecom); Casa Oms→Balenyà; Vilamala con web carniquesvilamala.com; Mas Casablanca=masia-museu (no xarcuteria); Exeo Ipsum=marca Les Seviques; El Reguer y El Genero parciales DAR (Carne) |
 | 65 | Torrelavit | 0 | ✅ | 2026-06-11 | 9 verif + 1 parcial + 3 purgas (Can Nadal dup↔Nadal; J. Lluc dup↔Vinya Escudé de St. Quintí ya en CSV; Font Estruch=viticultor sin marca vendible); 6 ecommerce (Nadal, Naveran, Segura Viudas, Joan Segura, Molí Parellada, Cal Cisco+whatsapp); Alemany Duran limpiado de links de la UPC (era oli/fruita, no bodega) |
-| — | _resto (322 municipios)_ | 1.451 | ⬜ | | recomputar al llegar |
+| 66 | Castellfollit del Boix | 0 | ✅ | 2026-06-11 | 4 verif + 7 parcial + 1 purga (Vins Grau dup↔Celler Grau i Grau, mismo tel/web); Cal Callu=Ous de Maians (llevaba web/redes/imagen de Cal Jep); Venys con tel/web de Formatges Cuirols del Berguedà limpiados; Cal Jep→Caracoles (VO whatsapp); Obiol=apicultora Cal Meler; associació mongeta parcial con venta directa |
+| — | _resto (321 municipios)_ | 1.439 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -276,6 +277,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Palau-solità i Plegamans:** Estrada Llargues, Isidro (mongeta; DAR 659999473)
 - **Sallent:** Guitart Quintana, Josep (Essència d'Oli de Cabrianes; DAR 617375377) · La Tomakera SCP (horta; DAR 649195293) · Santasusagna SCP (xai; DAR 617405951)
 - **Torrelavit:** Cols Canals, Lluís (Cal Cols, vins+oli; DAR 653162580) · Ruiz Molina, Anna (préssecs; DAR 648725583)
+- **Castellfollit del Boix:** Cornellas Prat, Jordi (Cal Rei, conserves; DAR 618762888) · Lladó Oliva, Joan (cigró/mongeta; DAR 608691406)
 
 ## Para otros agentes / a vigilar
 
