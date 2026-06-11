@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.741** · verificado **962** · parcial **456** · pendiente **1.323**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **232 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-63** (worklist).
-- **Siguiente: Lote 64** — Taradell (13).
-- Último push: lotes 1-62 en `main` (2026-06-11); lote 63 pendiente de push.
+- Filas: **2.739** · verificado **969** · parcial **460** · pendiente **1.310**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **234 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-64** (worklist).
+- **Siguiente: Lote 65** — Torrelavit (13).
+- Último push: lotes 1-62 en `main` (2026-06-11); lotes 63-64 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -226,7 +226,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 61 | Palau-solità i Plegamans | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 1 purga (mercat setmanal=equipamiento, no productor); 3 filas DAR limpiadas de links de Generali/parroquia/clínica (Duran, Rios, Perramon); La Rostisseria de Palau→La Teka de Palau; Rosa Mari viva (GMaps "Cerrado" basura blanqueado); Grau Vila=botiga de la fàbrica de Barberà |
 | 62 | Sallent | 0 | ✅ | 2026-06-11 | 5 verif + 4 parcial + 4 purgas (Guitart Luis dup↔SLU con links del Hotel Guitart; Agrofresc dup↔La Torre, misma masía/email; Aguilera y Viorica sin rastro); Celler Sanmartí (web .cat real) y Casa Coll=SAT N 1077 (huevos, web propia) renombradas; Els Ous de l'Oriol con web; Ànima Essències ecommerce confirmado |
 | 63 | Santa Coloma de Cervelló | 0 | ✅ | 2026-06-11 | 5 verif + 5 parcial + 3 purgas (Cal Rajoler y Ribas Pau dups↔Fruits Olivé SCP por email/tel DAR; Pere Tugas registro dup↔Les Marines con web del CB Montpedrós); Morral limpiado del restaurante Racó de Can Valentí; Cal Cabré FB propio; coords ajenas (Tiana/Vallès) corregidas a centroide |
-| — | _resto (324 municipios)_ | 1.477 | ⬜ | | recomputar al llegar |
+| 64 | Taradell | 0 | ✅ | 2026-06-11 | 7 verif + 4 parcial + 2 purgas (Cabanas Sola dup↔Mas Casablanca; Cellviosona sin rastro + GMaps de Triskel Telecom); Casa Oms→Balenyà; Vilamala con web carniquesvilamala.com; Mas Casablanca=masia-museu (no xarcuteria); Exeo Ipsum=marca Les Seviques; El Reguer y El Genero parciales DAR (Carne) |
+| — | _resto (323 municipios)_ | 1.464 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
