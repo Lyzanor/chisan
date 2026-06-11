@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.710** · verificado **1.044** · parcial **494** · pendiente **1.172**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **263 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-76** (worklist).
-- **Siguiente: Lote 77** — Martorell (11).
+- Filas: **2.708** · verificado **1.052** · parcial **495** · pendiente **1.161**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **265 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-77** (worklist).
+- **Siguiente: Lote 78** — Mollet del Vallès (11).
 - Último push: lotes 1-75 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
@@ -239,6 +239,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 74 | Font-rubí | 0 | ✅ | 2026-06-11 | 9 verif + 1 parcial + 2 purgas (Castell de Grabuac dup societario↔Can Suriol; El Mas 1770 dup↔Molí d'Oli Lluch por email); 7 ecommerce (Suriol, MontRubí, U Més U, Moió, Ca la Madrona, Ferret Guasch +Lluch pendiente cert); Vinares 1909 con FB de Família Ametller blanqueado y grafía Font-Rubí normalizada; Molinaris=Cal Guarda (DAR) |
 | 75 | Llinars del Vallès | 0 | ✅ | 2026-06-11 | 5 verif + 4 parcial + 2 purgas (Casa Farré Nou y Christian Ferrero sin rastro); Barcelona Beer Company ecommerce; Can Colomer=marca Ple de Verd (coop Tres Terres, BCN Agrària); Payetas con datos DAR; Novell=Can Clavell; GMaps ajenos (Can Corder de Osona, Casa Pratginestós, Centre Cívic, Can Pins) blanqueados |
 | 76 | Malgrat de Mar | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Fors Campeny y Verdures Gelat sin DAR ni rastro, este con GMaps de Verdures Malgrat de Blanes; Arias Homs dup registre↔marca d'El Tros de l'Uri) + purga extra Horta Soms (Josep Soms)/Palafolls, dup de la marca de Malgrat (web sitúa l'horta al Pla de Grau); El Tros de l'Uri ecommerce (eltrosdeluri.cat); ST ROCH activa 2025 pese a cierre registral SL, GMaps de The Anchor blanqueado; Botigueta whatsapp|tel|email; Massaguer ficha Espai Agrari Baixa Tordera |
+| 77 | Martorell | 0 | ✅ | 2026-06-12 | 8 verif + 1 parcial + 2 purgas (Tio Arnaus dup registre↔marca de Cal Tió, misma dirección Mur 85; parada Serra del Mercat Les Bòbiles no figura en la web actual de Serra, fusionada en la fila del obrador +.webp borrado); Cal Tió con GMaps de Casa Tió/Unió Integral Alimentària y coords de Cardedeu corregidos; Vira Brands SL extinguida→renombrada Kokoa Origens (sucesora, grupo PCS, mismo Monturiol 5); Chellaf=La Merienda; VO: Dulce Emy y Can Rosell ecommerce, Grau whatsapp|email, Armand marketplace (Too Good To Go) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
