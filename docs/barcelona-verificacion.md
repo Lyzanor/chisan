@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.716** · verificado **1.035** · parcial **487** · pendiente **1.194**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **257 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-74** (worklist).
-- **Siguiente: Lote 75** — Llinars del Vallès (11).
-- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-74 pendientes de push.
+- Filas: **2.714** · verificado **1.040** · parcial **491** · pendiente **1.183**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **259 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-75** (worklist).
+- **Siguiente: Lote 76** — Malgrat de Mar (11).
+- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-75 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -237,7 +237,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 72 | Cerdanyola del Vallès | 0 | ✅ | 2026-06-11 | 11 verif + 0 parcial + 0 purgas; 5 con venta (Chocoletters, Ecopizza, Pekatum ecommerce; Montse y Fleca el Molí via botiga online del Mercat de Serraperera=marketplace, paradas confirmadas en la plataforma); Superbloom Wines real con distribución internacional; Jaleo con GMaps de "Bee Love" blanqueado |
 | 73 | Cubelles | 0 | ✅ | 2026-06-11 | 7 verif + 2 parcial + 2 purgas (Carreras Massó sin rastro con GMaps de la UAB; Forn Soler dup↔Casas, mismo tel y GMaps); Delicati VO whatsapp|email; Verdures Carreras→Vilanova (parada del Mercat del Centre); Peixateria Mar=punto de venta (parcial) |
 | 74 | Font-rubí | 0 | ✅ | 2026-06-11 | 9 verif + 1 parcial + 2 purgas (Castell de Grabuac dup societario↔Can Suriol; El Mas 1770 dup↔Molí d'Oli Lluch por email); 7 ecommerce (Suriol, MontRubí, U Més U, Moió, Ca la Madrona, Ferret Guasch +Lluch pendiente cert); Vinares 1909 con FB de Família Ametller blanqueado y grafía Font-Rubí normalizada; Molinaris=Cal Guarda (DAR) |
-| — | _resto (313 municipios)_ | 1.349 | ⬜ | | recomputar al llegar |
+| 75 | Llinars del Vallès | 0 | ✅ | 2026-06-11 | 5 verif + 4 parcial + 2 purgas (Casa Farré Nou y Christian Ferrero sin rastro); Barcelona Beer Company ecommerce; Can Colomer=marca Ple de Verd (coop Tres Terres, BCN Agrària); Payetas con datos DAR; Novell=Can Clavell; GMaps ajenos (Can Corder de Osona, Casa Pratginestós, Centre Cívic, Can Pins) blanqueados |
+| — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
