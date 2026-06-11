@@ -15,12 +15,12 @@
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
 
-## Estado actual (2026-06-11)
+## Estado actual (2026-06-12)
 
-- Filas: **2.714** · verificado **1.040** · parcial **491** · pendiente **1.183**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **259 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-75** (worklist).
-- **Siguiente: Lote 76** — Malgrat de Mar (11).
+- Filas: **2.710** · verificado **1.044** · parcial **494** · pendiente **1.172**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **263 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-76** (worklist).
+- **Siguiente: Lote 77** — Martorell (11).
 - Último push: lotes 1-75 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
@@ -238,6 +238,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 73 | Cubelles | 0 | ✅ | 2026-06-11 | 7 verif + 2 parcial + 2 purgas (Carreras Massó sin rastro con GMaps de la UAB; Forn Soler dup↔Casas, mismo tel y GMaps); Delicati VO whatsapp|email; Verdures Carreras→Vilanova (parada del Mercat del Centre); Peixateria Mar=punto de venta (parcial) |
 | 74 | Font-rubí | 0 | ✅ | 2026-06-11 | 9 verif + 1 parcial + 2 purgas (Castell de Grabuac dup societario↔Can Suriol; El Mas 1770 dup↔Molí d'Oli Lluch por email); 7 ecommerce (Suriol, MontRubí, U Més U, Moió, Ca la Madrona, Ferret Guasch +Lluch pendiente cert); Vinares 1909 con FB de Família Ametller blanqueado y grafía Font-Rubí normalizada; Molinaris=Cal Guarda (DAR) |
 | 75 | Llinars del Vallès | 0 | ✅ | 2026-06-11 | 5 verif + 4 parcial + 2 purgas (Casa Farré Nou y Christian Ferrero sin rastro); Barcelona Beer Company ecommerce; Can Colomer=marca Ple de Verd (coop Tres Terres, BCN Agrària); Payetas con datos DAR; Novell=Can Clavell; GMaps ajenos (Can Corder de Osona, Casa Pratginestós, Centre Cívic, Can Pins) blanqueados |
+| 76 | Malgrat de Mar | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Fors Campeny y Verdures Gelat sin DAR ni rastro, este con GMaps de Verdures Malgrat de Blanes; Arias Homs dup registre↔marca d'El Tros de l'Uri) + purga extra Horta Soms (Josep Soms)/Palafolls, dup de la marca de Malgrat (web sitúa l'horta al Pla de Grau); El Tros de l'Uri ecommerce (eltrosdeluri.cat); ST ROCH activa 2025 pese a cierre registral SL, GMaps de The Anchor blanqueado; Botigueta whatsapp|tel|email; Massaguer ficha Espai Agrari Baixa Tordera |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -289,6 +290,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Castellfollit del Boix:** Cornellas Prat, Jordi (Cal Rei, conserves; DAR 618762888) · Lladó Oliva, Joan (cigró/mongeta; DAR 608691406)
 - **Cubelles:** Poch Lleó, Ciril (oli/horta; DAR 636808594)
 - **Font-rubí:** Aranda González, Agustín (oli/pebrot; DAR 639333948) · Celler Cal Costas SL (DAR 654127597) · Ràfols Petit, Jordi (Magna Hortum, horta; DAR 625810165) · Ros Marina Viticultors (Mas Uberni; DAR 686501262)
+- **Malgrat de Mar:** Xaubet SCP (horta; DAR 629006100) · Josep Maynou y Bona Verdura (directorio Espai Agrari Baixa Tordera, espaiagraribaixatordera.cat — fuente útil para todo el Alt Maresme/Baixa Tordera)
 
 ## Para otros agentes / a vigilar
 
