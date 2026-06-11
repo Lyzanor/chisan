@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.727** · verificado **999** · parcial **478** · pendiente **1.250**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **246 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-69** (worklist).
-- **Siguiente: Lote 70** — Castellar del Vallès (11).
-- Último push: lotes 1-62 en `main` (2026-06-11); lotes 63-69 pendientes de push.
+- Filas: **2.723** · verificado **1.002** · parcial **482** · pendiente **1.239**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **250 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-70** (worklist).
+- **Siguiente: Lote 71** — Castellví de la Marca, Cerdanyola, Cubelles, Font-rubí, Llinars o Malgrat (11 c/u).
+- Último push: lotes 1-70 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
 
@@ -232,7 +232,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 67 | la Roca del Vallès | 0 | ✅ | 2026-06-11 | 3 verif + 6 parcial + 3 purgas (3 dups registre↔marca: Martínez Rus↔Mel de la Roca, Pont Cullell↔Can Jep, Grau Ganduxé con web de Grau Maquinària); Milfulls verificado (GMaps de la pastisseria homónima de St. Cugat blanqueado); In·Vita=vi kosher DO Alella de Solar del Líbano, parcial con ecommerce; coords de Palamós/Girona corregidas |
 | 68 | Sant Quirze del Vallès | 0 | ✅ | 2026-06-11 | 8 verif + 3 parcial + 1 purga (2º local de Pastisseria Mix fusionado en la fila del obrador); Xarcuteria Marta VO ecommerce|whatsapp y Pa i Punt VO whatsapp; La Julita con GMaps de Mahalo Coffee blanqueado; Oliva Folgueiras (DAR) limpiado del Restaurant L'Oliva |
 | 69 | Begues | 0 | ✅ | 2026-06-11 | 6 verif + 1 parcial + 4 purgas (Rusc d'Or dup↔FR Apicultors y Marlet dup↔Vendrell Viñas, ambos por DAR; Cal Banato y Monmany sin rastro, este con links de escola); Marcel ecommerce confirmado; Montau de Sadurní VO marketplace (wirwinzer.de); Forn Núria en guía municipal |
-| — | _resto (318 municipios)_ | 1.404 | ⬜ | | recomputar al llegar |
+| 70 | Castellar del Vallès | 0 | ✅ | 2026-06-11 | 3 verif + 4 parcial + 4 purgas (Domínguez dup↔Horta Can Manent por DAR; Soler Mir=coach con web propia ajena al campo; La Mel y Can Pèlacs sin rastro); Gercasa rescatada vía DAR (datos de un Gercasa SL de BCN blanqueados); Farré→Ecogranja La Roca (St. Llorenç Savall); El Sabater Vell confirmado por el mapa agroecològic de l'Ateneu |
+| — | _resto (317 municipios)_ | 1.393 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
