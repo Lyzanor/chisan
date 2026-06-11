@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.700** · verificado **1.057** · parcial **504** · pendiente **1.139**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **273 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-79** (worklist).
-- **Siguiente: Lote 80** — Santa Margarida i els Monjos (11).
-- Último push: lotes 1-75 en `main` (2026-06-11).
+- Filas: **2.698** · verificado **1.062** · parcial **508** · pendiente **1.128**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **275 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-80** (worklist).
+- **Siguiente: Lote 81** — Seva (11).
+- Último push: lotes 1-80 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
 
@@ -242,6 +242,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 77 | Martorell | 0 | ✅ | 2026-06-12 | 8 verif + 1 parcial + 2 purgas (Tio Arnaus dup registre↔marca de Cal Tió, misma dirección Mur 85; parada Serra del Mercat Les Bòbiles no figura en la web actual de Serra, fusionada en la fila del obrador +.webp borrado); Cal Tió con GMaps de Casa Tió/Unió Integral Alimentària y coords de Cardedeu corregidos; Vira Brands SL extinguida→renombrada Kokoa Origens (sucesora, grupo PCS, mismo Monturiol 5); Chellaf=La Merienda; VO: Dulce Emy y Can Rosell ecommerce, Grau whatsapp|email, Armand marketplace (Too Good To Go) |
 | 78 | Mollet del Vallès | 0 | ✅ | 2026-06-12 | 1 verif + 7 parcial + 3 purgas (Teruel Aragones "Bodega"=quimera con links de la recicladora Santos Jorge SA y email de La SAO; Pilar Boada con links de coach PNI + IG de empanadas; Magdalena Ferrer con links de la psicóloga Gemma Ferrer — los 3 .webp borrados); zona Gallecs: La SAO, EGAM Gallecs, Molist Vila (Can Xambrers), Molist Sanz, López Barreto parciales DAR con links de restaurante/escola blanqueados y datos DAR restaurados; Altayó-Ripoll=Altayó Ros Carnissers (mismo tel) verif; Ràfols (parades 70-71) y Floreta parciales, mercat online aprop.online migrado a niar.app (VO no comprobado) |
 | 79 | Papiol | 0 | ✅ | 2026-06-12 | 4 verif + 2 parcial + 5 purgas (Figueras Garriga Pere dup registre↔marca de Cal Figueras con links del bufete figueras.legal; Jaume Olivé Parra dup persona↔marca de La Vinya de Can Font; Mongetes creperia sin rastro con links de 3 negocios distintos; ELADIET=solo complementos dietéticos, no productor agroalimentario; AGRI-MA sin DAR ni rastro con datos de BCN); Batzachs rescatada: microceller 1920 de Anna Estruch, web batzachs.cat ecommerce; Cal Figueras verif (catàleg Collserola+IG propio, venda a domicili→tel); Can Font parcial enriquecida (Jaume Olivé, Rebrot Pagès); GMaps ajenos blanqueados (Casa Evarist Juncosa, Cal Figueres del Penedès, Instal·lacions Pellicer) |
+| 80 | Sta. Margarida i els Monjos | 0 | ✅ | 2026-06-12 | 5 verif + 4 parcial + 2 purgas (Llobet Guix dup registre↔marca de Mel Castell de Penyafort; Oliest sin rastro y con GMaps de D'Oliciós, marca ajena); Mel Penyafort verif con web/FB/IG propios (Xavier Llobet, des de 1979); Mallofré=Vins Mallofré (Masia La Sanabra, 1898, DO Penedès eco; VO marketplace via Clubdevins/Plataforma Ecològica); Soler Guillen=Cal Vicari (serveis vitícoles, web propia); Agro-Freixedes=Can Amadeu (oli, DAR); Forn Valls (La Ràpita), Forn Esplugas i 4 Barres verif; Espitlles parcial (gastroteca, raça penedesenca); GMaps ajenos blanqueados (punt d'info turística, assessoria, castell-monument, Freixedas Vinícola) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -296,6 +297,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Malgrat de Mar:** Xaubet SCP (horta; DAR 629006100) · Josep Maynou y Bona Verdura (directorio Espai Agrari Baixa Tordera, espaiagraribaixatordera.cat — fuente útil para todo el Alt Maresme/Baixa Tordera)
 - **Mollet del Vallès (Gallecs):** Alsina Cusco, Pere Joan (sègol/civada/horta; DAR 679333948) · Butjosa i Boada Gallecs SCP (marca Ous de Gallecs / "Ou de Gallecs", Laura Blasco; DAR 652303577) · Hereus Can Jornet SL (Can Jornet, farines; DAR 689509161) · Agrobotiga de Gallecs (punt de venda col·lectiu dels pagesos, espairuralgallecs.cat — web http-only, https con cert roto)
 - **Papiol:** grup Rebrot Pagès (6 pagesos eco del Papiol; Can Font ya integrado, identificar el resto) · catàleg de productors del Parc Natural de Collserola (parcnaturalcollserola.cat) y programa de la Festa de la Cirera — fuentes útiles. Figueras Garriga Ramon (DAR 606701734) ya cubierto por la fila Cal Figueras (hermanos)
+- **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
 
 ## Para otros agentes / a vigilar
 
