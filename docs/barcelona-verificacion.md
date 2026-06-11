@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.720** · verificado **1.019** · parcial **484** · pendiente **1.217**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **253 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-72** (worklist).
-- **Siguiente: Lote 73** — Cubelles (11).
-- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-72 pendientes de push.
+- Filas: **2.718** · verificado **1.026** · parcial **486** · pendiente **1.206**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **255 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-73** (worklist).
+- **Siguiente: Lote 74** — Font-rubí (12, incl. una fila con grafía "Font-Rubí").
+- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-73 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -235,7 +235,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 70 | Castellar del Vallès | 0 | ✅ | 2026-06-11 | 3 verif + 4 parcial + 4 purgas (Domínguez dup↔Horta Can Manent por DAR; Soler Mir=coach con web propia ajena al campo; La Mel y Can Pèlacs sin rastro); Gercasa rescatada vía DAR (datos de un Gercasa SL de BCN blanqueados); Farré→Ecogranja La Roca (St. Llorenç Savall); El Sabater Vell confirmado por el mapa agroecològic de l'Ateneu |
 | 71 | Castellví de la Marca | 0 | ✅ | 2026-06-11 | 6 verif + 2 parcial + 3 purgas (SAT Mas Lluet dup↔Caves Bolet por email; Sole&Gallego=registro DAR de L'Hort de la Carmeta con links de Sol Group; Roses Alsina sin rastro y GMaps de Alsina&Sardà); 3 ecommerce (Bolet, Carmeta, Aymar→aymarwines.com); Olivella=Masia Ca la Gori (DAR) |
 | 72 | Cerdanyola del Vallès | 0 | ✅ | 2026-06-11 | 11 verif + 0 parcial + 0 purgas; 5 con venta (Chocoletters, Ecopizza, Pekatum ecommerce; Montse y Fleca el Molí via botiga online del Mercat de Serraperera=marketplace, paradas confirmadas en la plataforma); Superbloom Wines real con distribución internacional; Jaleo con GMaps de "Bee Love" blanqueado |
-| — | _resto (315 municipios)_ | 1.371 | ⬜ | | recomputar al llegar |
+| 73 | Cubelles | 0 | ✅ | 2026-06-11 | 7 verif + 2 parcial + 2 purgas (Carreras Massó sin rastro con GMaps de la UAB; Forn Soler dup↔Casas, mismo tel y GMaps); Delicati VO whatsapp|email; Verdures Carreras→Vilanova (parada del Mercat del Centre); Peixateria Mar=punto de venta (parcial) |
+| — | _resto (314 municipios)_ | 1.360 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -284,6 +285,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Sallent:** Guitart Quintana, Josep (Essència d'Oli de Cabrianes; DAR 617375377) · La Tomakera SCP (horta; DAR 649195293) · Santasusagna SCP (xai; DAR 617405951)
 - **Torrelavit:** Cols Canals, Lluís (Cal Cols, vins+oli; DAR 653162580) · Ruiz Molina, Anna (préssecs; DAR 648725583)
 - **Castellfollit del Boix:** Cornellas Prat, Jordi (Cal Rei, conserves; DAR 618762888) · Lladó Oliva, Joan (cigró/mongeta; DAR 608691406)
+- **Cubelles:** Poch Lleó, Ciril (oli/horta; DAR 636808594)
+- **Font-rubí:** Aranda González, Agustín (oli/pebrot; DAR 639333948) · Celler Cal Costas SL (DAR 654127597) · Ràfols Petit, Jordi (Magna Hortum, horta; DAR 625810165) · Ros Marina Viticultors (Mas Uberni; DAR 686501262)
 
 ## Para otros agentes / a vigilar
 
