@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.766** · verificado **866** · parcial **416** · pendiente **1.484**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **207 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-51** (worklist).
-- **Siguiente: Lote 52** — Centelles, Olesa de Montserrat, Pineda de Mar o Sant Vicenç dels Horts (14 c/u).
+- Filas: **2.764** · verificado **875** · parcial **419** · pendiente **1.470**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **209 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-52** (worklist).
+- **Siguiente: Lote 53** — Olesa de Montserrat, Pineda de Mar o Sant Vicenç dels Horts (14 c/u).
 - Último push: lotes 1-40 en `main` (2026-06-10); lotes 41-50 pendientes de push.
 
 ## Procedimiento (cada lote)
@@ -214,7 +214,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 49 | Arenys de Mar | 0 | ✅ | 2026-06-10 | 12 verif + 1 parcial + 2 purgas (Rossell=Sóc Pagès y Saurí=Can Terrades, dups registre↔marca por email); Horta Moragas (90 años, mercat) con GMaps de vil·la ajena; Juanitas coords en St. Iscle corregidas; Salvà Cot y Juanitas encàrrecs tel |
 | 50 | Argentona | 0 | ✅ | 2026-06-10 | 9 verif + 3 parcial + 2 purgas (SAT 5188 genérica; Garriga solo existe en Mataró); Can Valls 200 años (IG de restaurant blanqueado); La Nansa con web/GMaps/imagen de La Sala municipal→limpiados, web real lanansa.cat; Castañé=botiga vins naturals (parcial); Fleca Casas whatsapp, Tastets email |
 | 51 | Avinyonet del Penedès | 0 | ✅ | 2026-06-11 | 8 verif + 2 parcial + 4 purgas (Cal Jeroni=agroturisme, Jeroni Cuscó=Materials Cuscó, Marcé Casas Joan=restaurant Can Joan La Curva, Esteve Lloret dup↔Préssec d'Ordal); Artcava y Caves Avinyó rescatadas con web; 4 ecommerce (Artcava, Avinyó, Cuscó Berga, Mas Comtal) |
-| — | _resto (334 municipios)_ | 1.638 | ⬜ | | recomputar al llegar |
+| 52 | Centelles | 0 | ✅ | 2026-06-11 | 9 verif + 3 parcial + 2 purgas (Capdevila=fila contaminada con escola Carles Capdevila; Oliver Oliva dup↔Pla de la Garga por email DAR); Pla de la Garga era pollastres eco en St. Martí de Centelles (no formatgeria); Mas Calm→Mas Agrobotiga, Rovira→Mas Vinyoles (vedella, VO email|tel); La Lola web lalola.cat |
+| — | _resto (333 municipios)_ | 1.624 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
