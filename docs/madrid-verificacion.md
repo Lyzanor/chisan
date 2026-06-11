@@ -22,8 +22,8 @@
 ## Estado actual (2026-06-11)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: verificación zonal y cierre residual agotados (11 lotes, 15 sub-lotes).
-- **Cerrados: Lotes 1-11. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: verificación zonal, cierre residual y auditoría transversal agotados (12 lotes, 16 sub-lotes).
+- **Cerrados: Lotes 1-12. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
   - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
@@ -32,7 +32,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los diez lotes: **151 `sí`**, 19 `no comprobado`, 53 `no`.
+  - `Venta online` tras los doce lotes: **151 `sí`**, 19 `no comprobado`, 53 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -202,6 +202,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 9 | Cierre residual | 8 | 0 | 0 | 1 | ✅ | 2026-06-11 | Elimina Vino de ARRÉN: Agroalimentaria Torremocha S.L. consta extinguida desde 2023; conserva 7 parciales con evidencia registral o secundaria, sin forzar verificaciones |
 | 10 | Segunda pasada residual | 7 | 0 | 0 | 1 | ✅ | 2026-06-11 | Verifica Virgen de la Oliva y Gigorro; corrige José Carlos Velasco a Villaconejos; elimina CIDED tras la revocación de su NIF y la desaparición de sus canales; quedan 4 parciales |
 | 11 | Cierre de evidencia residual | 4 | 0 | 0 | 1 | ✅ | 2026-06-11 | Mantiene 4 parciales: Lavandas y La Cabaña Blanca constan en mercados de 2026; Té y Vida conserva dominio en mantenimiento; Melones Velasco tiene actividad pública reciente, pero ninguno aporta presencia primaria propia verificable |
+| 12 | Auditoría transversal de enlaces y contacto | 223 | 0 | 151 | 1 | ✅ | 2026-06-11 | Revisa 188 webs; retira 5 dominios NXDOMAIN sin borrar productores activos, repara 3 URLs y completa contacto y horario de Panic y Pan.Delirio; sin cambios de verificación |
 
 ## Historial
 
