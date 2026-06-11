@@ -14,17 +14,17 @@
 4. Borra una fila solo con evidencia fuerte: sin match en registro **y** sin presencia real.
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
-6. **GMaps de Madrid no cuenta como enlace para `verificado`**: los 224 son search-queries
+6. **GMaps de Madrid no cuenta como enlace para `verificado`**: 220 de 223 enlaces son search-queries
    autogeneradas (`maps/search/?api=1&query=…`). El audit las acepta; este manual no. Para
    `verificado` exige web/IG/FB reales del productor, o sustituye el GMaps por su ficha real.
    El search-query puede quedarse (no es desinformación), pero no es "el ≥1 enlace".
 
 ## Estado actual (2026-06-11)
 
-- Filas: **224** · verificado **217** · parcial **7** · pendiente **0**.
-- Modo: verificación zonal y pasada residual cerradas (9 lotes, 13 sub-lotes).
-- **Cerrados: Lotes 1-9. No quedan filas pendientes; 7 registros permanecen `parcial` por falta
-  de presencia primaria propia.**
+- Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
+- Modo: verificación zonal y cierre residual agotados (11 lotes, 15 sub-lotes).
+- **Cerrados: Lotes 1-11. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+  de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
   - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
     "existe en Places", **no** verificación web. Coords 100% validadas (geo-check ≤15 km): no las
@@ -32,7 +32,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los nueve lotes: **150 `sí`**, 22 `no comprobado`, 52 `no`.
+  - `Venta online` tras los diez lotes: **151 `sí`**, 19 `no comprobado`, 53 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -187,7 +187,7 @@ No hay dataset descargable tipo Socrata; el cotejo es por buscador. Si aparece u
 ## Worklist (por zonas)
 
 Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del procedimiento
-(104 municipios, 224 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
+(104 municipios, 223 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
 
 | # | Zona | Filas | Pend. | VO=sí | Sub-lotes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|---|---|---|
@@ -200,6 +200,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 7 | Guadarrama y Noroeste | 12 | 0 | 10 | 1 | ✅ | 2026-06-11 | 12 verificadas; elimina Cervecera Madrileña por duplicar Amiga/MAD91 y corrige ubicación de Gin Monti, contactos y canales |
 | 8 | Residual de parciales | 14 | 0 | 1 | 1 | ✅ | 2026-06-11 | 6 verificadas y 8 parciales registrales; corrige el dominio secuestrado de Finca Mariscalas y añade perfiles propios de Artbread, Cuerda Larga y El Guinda |
 | 9 | Cierre residual | 8 | 0 | 0 | 1 | ✅ | 2026-06-11 | Elimina Vino de ARRÉN: Agroalimentaria Torremocha S.L. consta extinguida desde 2023; conserva 7 parciales con evidencia registral o secundaria, sin forzar verificaciones |
+| 10 | Segunda pasada residual | 7 | 0 | 0 | 1 | ✅ | 2026-06-11 | Verifica Virgen de la Oliva y Gigorro; corrige José Carlos Velasco a Villaconejos; elimina CIDED tras la revocación de su NIF y la desaparición de sus canales; quedan 4 parciales |
+| 11 | Cierre de evidencia residual | 4 | 0 | 0 | 1 | ✅ | 2026-06-11 | Mantiene 4 parciales: Lavandas y La Cabaña Blanca constan en mercados de 2026; Té y Vida conserva dominio en mantenimiento; Melones Velasco tiene actividad pública reciente, pero ninguno aporta presencia primaria propia verificable |
 
 ## Historial
 
