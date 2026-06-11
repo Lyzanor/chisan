@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.718** · verificado **1.026** · parcial **486** · pendiente **1.206**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **255 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-73** (worklist).
-- **Siguiente: Lote 74** — Font-rubí (12, incl. una fila con grafía "Font-Rubí").
-- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-73 pendientes de push.
+- Filas: **2.716** · verificado **1.035** · parcial **487** · pendiente **1.194**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **257 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-74** (worklist).
+- **Siguiente: Lote 75** — Llinars del Vallès (11).
+- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-74 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -236,7 +236,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 71 | Castellví de la Marca | 0 | ✅ | 2026-06-11 | 6 verif + 2 parcial + 3 purgas (SAT Mas Lluet dup↔Caves Bolet por email; Sole&Gallego=registro DAR de L'Hort de la Carmeta con links de Sol Group; Roses Alsina sin rastro y GMaps de Alsina&Sardà); 3 ecommerce (Bolet, Carmeta, Aymar→aymarwines.com); Olivella=Masia Ca la Gori (DAR) |
 | 72 | Cerdanyola del Vallès | 0 | ✅ | 2026-06-11 | 11 verif + 0 parcial + 0 purgas; 5 con venta (Chocoletters, Ecopizza, Pekatum ecommerce; Montse y Fleca el Molí via botiga online del Mercat de Serraperera=marketplace, paradas confirmadas en la plataforma); Superbloom Wines real con distribución internacional; Jaleo con GMaps de "Bee Love" blanqueado |
 | 73 | Cubelles | 0 | ✅ | 2026-06-11 | 7 verif + 2 parcial + 2 purgas (Carreras Massó sin rastro con GMaps de la UAB; Forn Soler dup↔Casas, mismo tel y GMaps); Delicati VO whatsapp|email; Verdures Carreras→Vilanova (parada del Mercat del Centre); Peixateria Mar=punto de venta (parcial) |
-| — | _resto (314 municipios)_ | 1.360 | ⬜ | | recomputar al llegar |
+| 74 | Font-rubí | 0 | ✅ | 2026-06-11 | 9 verif + 1 parcial + 2 purgas (Castell de Grabuac dup societario↔Can Suriol; El Mas 1770 dup↔Molí d'Oli Lluch por email); 7 ecommerce (Suriol, MontRubí, U Més U, Moió, Ca la Madrona, Ferret Guasch +Lluch pendiente cert); Vinares 1909 con FB de Família Ametller blanqueado y grafía Font-Rubí normalizada; Molinaris=Cal Guarda (DAR) |
+| — | _resto (313 municipios)_ | 1.349 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
