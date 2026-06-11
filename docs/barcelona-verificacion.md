@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.732** · verificado **985** · parcial **474** · pendiente **1.273**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **241 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-67** (worklist).
-- **Siguiente: Lote 68** — Sant Quirze del Vallès (12).
-- Último push: lotes 1-62 en `main` (2026-06-11); lotes 63-67 pendientes de push.
+- Filas: **2.731** · verificado **993** · parcial **477** · pendiente **1.261**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **242 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-68** (worklist).
+- **Siguiente: Lote 69** — Begues (11).
+- Último push: lotes 1-62 en `main` (2026-06-11); lotes 63-68 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -230,7 +230,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 65 | Torrelavit | 0 | ✅ | 2026-06-11 | 9 verif + 1 parcial + 3 purgas (Can Nadal dup↔Nadal; J. Lluc dup↔Vinya Escudé de St. Quintí ya en CSV; Font Estruch=viticultor sin marca vendible); 6 ecommerce (Nadal, Naveran, Segura Viudas, Joan Segura, Molí Parellada, Cal Cisco+whatsapp); Alemany Duran limpiado de links de la UPC (era oli/fruita, no bodega) |
 | 66 | Castellfollit del Boix | 0 | ✅ | 2026-06-11 | 4 verif + 7 parcial + 1 purga (Vins Grau dup↔Celler Grau i Grau, mismo tel/web); Cal Callu=Ous de Maians (llevaba web/redes/imagen de Cal Jep); Venys con tel/web de Formatges Cuirols del Berguedà limpiados; Cal Jep→Caracoles (VO whatsapp); Obiol=apicultora Cal Meler; associació mongeta parcial con venta directa |
 | 67 | la Roca del Vallès | 0 | ✅ | 2026-06-11 | 3 verif + 6 parcial + 3 purgas (3 dups registre↔marca: Martínez Rus↔Mel de la Roca, Pont Cullell↔Can Jep, Grau Ganduxé con web de Grau Maquinària); Milfulls verificado (GMaps de la pastisseria homónima de St. Cugat blanqueado); In·Vita=vi kosher DO Alella de Solar del Líbano, parcial con ecommerce; coords de Palamós/Girona corregidas |
-| — | _resto (320 municipios)_ | 1.427 | ⬜ | | recomputar al llegar |
+| 68 | Sant Quirze del Vallès | 0 | ✅ | 2026-06-11 | 8 verif + 3 parcial + 1 purga (2º local de Pastisseria Mix fusionado en la fila del obrador); Xarcuteria Marta VO ecommerce|whatsapp y Pa i Punt VO whatsapp; La Julita con GMaps de Mahalo Coffee blanqueado; Oliva Folgueiras (DAR) limpiado del Restaurant L'Oliva |
+| — | _resto (319 municipios)_ | 1.415 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
