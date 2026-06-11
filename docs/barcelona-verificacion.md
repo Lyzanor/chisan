@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.744** · verificado **957** · parcial **451** · pendiente **1.336**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **229 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-62** (worklist).
-- **Siguiente: Lote 63** — Santa Coloma de Cervelló (13).
-- Último push: lotes 1-62 en `main` (2026-06-11).
+- Filas: **2.741** · verificado **962** · parcial **456** · pendiente **1.323**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **232 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-63** (worklist).
+- **Siguiente: Lote 64** — Taradell (13).
+- Último push: lotes 1-62 en `main` (2026-06-11); lote 63 pendiente de push.
 
 ## Procedimiento (cada lote)
 
@@ -225,7 +225,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 60 | Lliçà d'Amunt | 0 | ✅ | 2026-06-11 | 9 verif + 2 parcial + 2 purgas (Canadell Parera dup registre↔marca de Horta Canadell, dirección de la ferretería; Gassó 1885=quimera con web/IG de la pastelería homónima de Granollers); Tarabal VO whatsapp (no ecommerce); fila Clúster→Reptilian Brewery (fàbrica a Can Malé, datos del clúster blanqueados); Can Quimet Gall y Can Joans (DAR) verificadas |
 | 61 | Palau-solità i Plegamans | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 1 purga (mercat setmanal=equipamiento, no productor); 3 filas DAR limpiadas de links de Generali/parroquia/clínica (Duran, Rios, Perramon); La Rostisseria de Palau→La Teka de Palau; Rosa Mari viva (GMaps "Cerrado" basura blanqueado); Grau Vila=botiga de la fàbrica de Barberà |
 | 62 | Sallent | 0 | ✅ | 2026-06-11 | 5 verif + 4 parcial + 4 purgas (Guitart Luis dup↔SLU con links del Hotel Guitart; Agrofresc dup↔La Torre, misma masía/email; Aguilera y Viorica sin rastro); Celler Sanmartí (web .cat real) y Casa Coll=SAT N 1077 (huevos, web propia) renombradas; Els Ous de l'Oriol con web; Ànima Essències ecommerce confirmado |
-| — | _resto (325 municipios)_ | 1.490 | ⬜ | | recomputar al llegar |
+| 63 | Santa Coloma de Cervelló | 0 | ✅ | 2026-06-11 | 5 verif + 5 parcial + 3 purgas (Cal Rajoler y Ribas Pau dups↔Fruits Olivé SCP por email/tel DAR; Pere Tugas registro dup↔Les Marines con web del CB Montpedrós); Morral limpiado del restaurante Racó de Can Valentí; Cal Cabré FB propio; coords ajenas (Tiana/Vallès) corregidas a centroide |
+| — | _resto (324 municipios)_ | 1.477 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
