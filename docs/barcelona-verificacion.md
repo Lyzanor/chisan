@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.753** · verificado **926** · parcial **439** · pendiente **1.388**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **220 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-58** (worklist).
-- **Siguiente: Lote 59** — Gurb o Lliçà d'Amunt (13 c/u).
-- Último push: lotes 1-58 en `main` (2026-06-11).
+- Filas: **2.751** · verificado **936** · parcial **440** · pendiente **1.375**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **222 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-59** (worklist).
+- **Siguiente: Lote 60** — Lliçà d'Amunt (13).
+- Último push: lotes 1-58 en `main` (2026-06-11); lote 59 pendiente de push.
 
 ## Procedimiento (cada lote)
 
@@ -221,7 +221,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 56 | Sitges | 0 | ✅ | 2026-06-11 | 12 verif + 0 parcial + 2 purgas (Celler Güell=edifici Gaudí amb restaurant tancat, no productor; Rull Rentero=web rent-a-car + GMaps de masajista, sin rastro); 5 con venta (Celler Hospital/Sitgetana/Wylie ecommerce, Järvi email|tel, Moreno a domicilio); Forn 9 web propia añadida; sencies.com 403=bot-block, viva |
 | 57 | Barberà del Vallès | 0 | ✅ | 2026-06-11 | 12 verif + 1 parcial + 0 purgas; 5 con venta (Barberenca y Solé ecommerce, Casa Ramírez whatsapp|tel, Gasull&Claramunt tel); Groots coords de Martorell corregidas + web groots.eco; Eva=parada real del mercat con GMaps de la parada Montse blanqueado; webs de terceros (untappd, gastroteca, FB del mercat) blanqueadas |
 | 58 | Granollers (Palou) | 0 | ✅ | 2026-06-11 | 3 verif + 8 parcial + 2 purgas (Can Mariné dup interno fusionado; F.X. Tor sin rastro ni en la lista Palou); Can Pep Julià (1r pollastre eco CCPAE de Granollers, web añadida) y Mel l'Abella Reina (GMaps de Dolça Abella/Girona blanqueado, coords corregidas) verificadas; parciales contrastados con la lista oficial Productes de Palou; Catafal salvado por el documental 'Flor i tavella' |
-| — | _resto (328 municipios)_ | 1.542 | ⬜ | | recomputar al llegar |
+| 59 | Gurb | 0 | ✅ | 2026-06-11 | 10 verif + 1 parcial + 2 purgas (Parés Codina=datos del Eixample BCN sin rastro; Dcaseco dominio caído y cero huella); El Circell (DAR omitido por el matcher) y Botanic&Fruits ecommerce; Botanic→Vic y Mas Jalech→Balenyà (sedes reales); Plana de Vic compra por whatsapp; Alonso Bofarull=marca Els Felius (parcial) |
+| — | _resto (327 municipios)_ | 1.529 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
