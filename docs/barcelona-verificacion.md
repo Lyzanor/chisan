@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.755** · verificado **923** · parcial **431** · pendiente **1.401**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **218 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-57** (worklist).
-- **Siguiente: Lote 58** — Granollers (Palou), Gurb o Lliçà d'Amunt (13 c/u).
-- Último push: lotes 1-55 en `main` (2026-06-11); lotes 56-57 pendientes de push.
+- Filas: **2.753** · verificado **926** · parcial **439** · pendiente **1.388**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **220 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-58** (worklist).
+- **Siguiente: Lote 59** — Gurb o Lliçà d'Amunt (13 c/u).
+- Último push: lotes 1-58 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
 
@@ -220,7 +220,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 55 | Sant Vicenç dels Horts | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 2 purgas (López Aymeriich dup registre↔marca de Pilar la Pagesa; Badosa=GMaps del RC Tennis BCN, sin rastro); Cal Pocoll y Cal Reverter rescatadas con ficha Parc Agrari (tel/email coinciden); Cal Rosset cistelles email|suscripcion; Can Coll=B2B pa ultracongelat; Saperas sin venda directa (coop+Mercabarna) |
 | 56 | Sitges | 0 | ✅ | 2026-06-11 | 12 verif + 0 parcial + 2 purgas (Celler Güell=edifici Gaudí amb restaurant tancat, no productor; Rull Rentero=web rent-a-car + GMaps de masajista, sin rastro); 5 con venta (Celler Hospital/Sitgetana/Wylie ecommerce, Järvi email|tel, Moreno a domicilio); Forn 9 web propia añadida; sencies.com 403=bot-block, viva |
 | 57 | Barberà del Vallès | 0 | ✅ | 2026-06-11 | 12 verif + 1 parcial + 0 purgas; 5 con venta (Barberenca y Solé ecommerce, Casa Ramírez whatsapp|tel, Gasull&Claramunt tel); Groots coords de Martorell corregidas + web groots.eco; Eva=parada real del mercat con GMaps de la parada Montse blanqueado; webs de terceros (untappd, gastroteca, FB del mercat) blanqueadas |
-| — | _resto (329 municipios)_ | 1.555 | ⬜ | | recomputar al llegar |
+| 58 | Granollers (Palou) | 0 | ✅ | 2026-06-11 | 3 verif + 8 parcial + 2 purgas (Can Mariné dup interno fusionado; F.X. Tor sin rastro ni en la lista Palou); Can Pep Julià (1r pollastre eco CCPAE de Granollers, web añadida) y Mel l'Abella Reina (GMaps de Dolça Abella/Girona blanqueado, coords corregidas) verificadas; parciales contrastados con la lista oficial Productes de Palou; Catafal salvado por el documental 'Flor i tavella' |
+| — | _resto (328 municipios)_ | 1.542 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -262,6 +263,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Pineda de Mar:** Cuní Baltrons, Juan (horta; DAR 660364608)
 - **Olesa de Montserrat:** Fruits del Bosc Petras SL (marca Fruits del Bosc, aromàtiques; DAR 624073697) — probablement la mateixa família que Bolets Petràs (ya verificada), comprovar abans d'afegir.
 - **Barberà del Vallès:** Pons Pujol SCP (vedella; DAR 680947310)
+- **Granollers (Palou):** de la lista oficial Productes de Palou, no integrados: Hort de Can Tabaquet (horta eco) · L'Horta de la Tuka (horta+mel) · Can Nicolau SAT (carn) · Els Bardissots (vi) · Fem Horting
 
 ## Para otros agentes / a vigilar
 
