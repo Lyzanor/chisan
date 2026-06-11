@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.748** · verificado **952** · parcial **447** · pendiente **1.349**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **225 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-61** (worklist).
-- **Siguiente: Lote 62** — Sallent o Santa Coloma de Cervelló (13 c/u).
-- Último push: lotes 1-58 en `main` (2026-06-11); lotes 59-61 pendientes de push.
+- Filas: **2.744** · verificado **957** · parcial **451** · pendiente **1.336**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **229 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-62** (worklist).
+- **Siguiente: Lote 63** — Santa Coloma de Cervelló (13).
+- Último push: lotes 1-62 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
 
@@ -224,7 +224,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 59 | Gurb | 0 | ✅ | 2026-06-11 | 10 verif + 1 parcial + 2 purgas (Parés Codina=datos del Eixample BCN sin rastro; Dcaseco dominio caído y cero huella); El Circell (DAR omitido por el matcher) y Botanic&Fruits ecommerce; Botanic→Vic y Mas Jalech→Balenyà (sedes reales); Plana de Vic compra por whatsapp; Alonso Bofarull=marca Els Felius (parcial) |
 | 60 | Lliçà d'Amunt | 0 | ✅ | 2026-06-11 | 9 verif + 2 parcial + 2 purgas (Canadell Parera dup registre↔marca de Horta Canadell, dirección de la ferretería; Gassó 1885=quimera con web/IG de la pastelería homónima de Granollers); Tarabal VO whatsapp (no ecommerce); fila Clúster→Reptilian Brewery (fàbrica a Can Malé, datos del clúster blanqueados); Can Quimet Gall y Can Joans (DAR) verificadas |
 | 61 | Palau-solità i Plegamans | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 1 purga (mercat setmanal=equipamiento, no productor); 3 filas DAR limpiadas de links de Generali/parroquia/clínica (Duran, Rios, Perramon); La Rostisseria de Palau→La Teka de Palau; Rosa Mari viva (GMaps "Cerrado" basura blanqueado); Grau Vila=botiga de la fàbrica de Barberà |
-| — | _resto (326 municipios)_ | 1.503 | ⬜ | | recomputar al llegar |
+| 62 | Sallent | 0 | ✅ | 2026-06-11 | 5 verif + 4 parcial + 4 purgas (Guitart Luis dup↔SLU con links del Hotel Guitart; Agrofresc dup↔La Torre, misma masía/email; Aguilera y Viorica sin rastro); Celler Sanmartí (web .cat real) y Casa Coll=SAT N 1077 (huevos, web propia) renombradas; Els Ous de l'Oriol con web; Ànima Essències ecommerce confirmado |
+| — | _resto (325 municipios)_ | 1.490 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -270,6 +271,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Gurb:** Agrícola Terricabras Colom SL (marca ACTUS, ceba/calçot/enciam/patata; DAR 606877466)
 - **Granollers (ciutat):** Gassó Artesans 1885 (pastisseria gourmet, Cal Ros dels Ocells 4C, gassoartesans.com) — marca real purgada de Lliçà d'Amunt donde figuraba como cansaladeria
 - **Palau-solità i Plegamans:** Estrada Llargues, Isidro (mongeta; DAR 659999473)
+- **Sallent:** Guitart Quintana, Josep (Essència d'Oli de Cabrianes; DAR 617375377) · La Tomakera SCP (horta; DAR 649195293) · Santasusagna SCP (xai; DAR 617405951)
 
 ## Para otros agentes / a vigilar
 
