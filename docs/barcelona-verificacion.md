@@ -21,7 +21,7 @@
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **259 purgadas**).
 - Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-75** (worklist).
 - **Siguiente: Lote 76** — Malgrat de Mar (11).
-- Último push: lotes 1-70 en `main` (2026-06-11); lotes 71-75 pendientes de push.
+- Último push: lotes 1-75 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
 
