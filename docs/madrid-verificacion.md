@@ -21,9 +21,9 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **226** · verificado **161** · parcial **51** · pendiente **14**.
+- Filas: **226** · verificado **186** · parcial **30** · pendiente **10**.
 - Modo: por zonas (7 zonas, ~9-11 sub-lotes de ~25), lote a lote bajo demanda.
-- **Cerrados: Lotes 1-4. Siguiente: Lote 5 = Sur metropolitano.**
+- **Cerrados: Lotes 1-5. Siguiente: Lote 6 = Henares y Este.**
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
   - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
     "existe en Places", **no** verificación web. Coords 100% validadas (geo-check ≤15 km): no las
@@ -195,7 +195,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 2 | Sierra Norte y Jarama | 52 | 13 | 27 | 2 (2a-2b) | ✅ | 2026-06-11 | 2a-2b: 49 verificados, 3 parciales; 2b corrige dominios, sede de Ganademad y canales; sin borrados |
 | 3 | Capital | 33 | 3 | 19 | 2 (3a-3b) | ✅ | 2026-06-11 | 32 verificados, 1 parcial; corrige contactos, dominios, canales y coords de La Caníbal; Fábrica Maravillas eliminada como duplicado |
 | 4 | Sierra Oeste y Suroeste | 28 | 9 | 13 | 1 | ✅ | 2026-06-11 | 24 verificadas, 4 parciales; corrige Ca' di Mat a Pelayos, reclasifica El Huerto de San Martín y repara contactos/canales; sin borrados |
-| 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ⬜ | | Obradores y cerveceras (Fuenlabrada/Móstoles/Humanes/Leganés) |
+| 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ✅ | 2026-06-11 | 25 verificadas; confirma tiendas/canales, corrige dominios y contactos y aclara la tienda de Vaca Negra en Arroyomolinos; sin borrados |
 | 6 | Henares y Este | 16 | 8 | 8 | 1 | ⬜ | | **50% pendiente** — máximo riesgo de candidatos inventados |
 | 7 | Guadarrama y Noroeste | 13 | 2 | 7 | 1 | ⬜ | | Quesos/carne/cerveza |
 
