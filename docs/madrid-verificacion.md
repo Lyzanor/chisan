@@ -196,7 +196,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 3 | Capital | 33 | 3 | 19 | 2 (3a-3b) | ✅ | 2026-06-11 | 32 verificados, 1 parcial; corrige contactos, dominios, canales y coords de La Caníbal; Fábrica Maravillas eliminada como duplicado |
 | 4 | Sierra Oeste y Suroeste | 28 | 9 | 13 | 1 | ✅ | 2026-06-11 | 24 verificadas, 4 parciales; corrige Ca' di Mat a Pelayos, reclasifica El Huerto de San Martín y repara contactos/canales; sin borrados |
 | 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ✅ | 2026-06-11 | 25 verificadas; confirma tiendas/canales, corrige dominios y contactos y aclara la tienda de Vaca Negra en Arroyomolinos; sin borrados |
-| 6 | Henares y Este | 16 | 8 | 8 | 1 | ⬜ | | **50% pendiente** — máximo riesgo de candidatos inventados |
+| 6 | Henares y Este | 16 | 8 | 8 | 1 | ✅ | 2026-06-11 | 13 verificados, 3 parciales; corrige Las Abejas de Emilio a El Vellón, Maps de Camuy, dominios, contactos y canales; sin borrados |
 | 7 | Guadarrama y Noroeste | 13 | 2 | 7 | 1 | ⬜ | | Quesos/carne/cerveza |
 
 ## Historial
