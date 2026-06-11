@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.755** · verificado **911** · parcial **430** · pendiente **1.414**
+- Filas: **2.755** · verificado **923** · parcial **431** · pendiente **1.401**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **218 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-56** (worklist).
-- **Siguiente: Lote 57** — Barberà del Vallès, Granollers (Palou), Gurb o Lliçà d'Amunt (13 c/u).
-- Último push: lotes 1-55 en `main` (2026-06-11); lote 56 pendiente de push.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-57** (worklist).
+- **Siguiente: Lote 58** — Granollers (Palou), Gurb o Lliçà d'Amunt (13 c/u).
+- Último push: lotes 1-55 en `main` (2026-06-11); lotes 56-57 pendientes de push.
 
 ## Procedimiento (cada lote)
 
@@ -219,7 +219,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 54 | Pineda de Mar | 0 | ✅ | 2026-06-11 | 7 verif + 4 parcial + 3 purgas (Esparza=links del ajuntament/Endesa, Casas Zambrano y Cassola sin rastro); Vitae Kombucha y Alatria ecommerce; Mallol/Piponas/Sonia Aurea encargos whatsapp; Màrquez Horticultors→Calella (DAR+CCM); Bio Prasad VO marketplace (Pagesia a Casa); coop "el Sindicat" verificada |
 | 55 | Sant Vicenç dels Horts | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 2 purgas (López Aymeriich dup registre↔marca de Pilar la Pagesa; Badosa=GMaps del RC Tennis BCN, sin rastro); Cal Pocoll y Cal Reverter rescatadas con ficha Parc Agrari (tel/email coinciden); Cal Rosset cistelles email|suscripcion; Can Coll=B2B pa ultracongelat; Saperas sin venda directa (coop+Mercabarna) |
 | 56 | Sitges | 0 | ✅ | 2026-06-11 | 12 verif + 0 parcial + 2 purgas (Celler Güell=edifici Gaudí amb restaurant tancat, no productor; Rull Rentero=web rent-a-car + GMaps de masajista, sin rastro); 5 con venta (Celler Hospital/Sitgetana/Wylie ecommerce, Järvi email|tel, Moreno a domicilio); Forn 9 web propia añadida; sencies.com 403=bot-block, viva |
-| — | _resto (329 municipios)_ | 1.568 | ⬜ | | recomputar al llegar |
+| 57 | Barberà del Vallès | 0 | ✅ | 2026-06-11 | 12 verif + 1 parcial + 0 purgas; 5 con venta (Barberenca y Solé ecommerce, Casa Ramírez whatsapp|tel, Gasull&Claramunt tel); Groots coords de Martorell corregidas + web groots.eco; Eva=parada real del mercat con GMaps de la parada Montse blanqueado; webs de terceros (untappd, gastroteca, FB del mercat) blanqueadas |
+| — | _resto (329 municipios)_ | 1.555 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -260,6 +261,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Avinyonet del Penedès:** Marcé Medialdea, Martí (Martí Marcé, préssecs; DAR 677507426). Los Cuscó Esteve (Joan/Jordi/Lluís) son la família de Cuscó Berga, no añadir.
 - **Pineda de Mar:** Cuní Baltrons, Juan (horta; DAR 660364608)
 - **Olesa de Montserrat:** Fruits del Bosc Petras SL (marca Fruits del Bosc, aromàtiques; DAR 624073697) — probablement la mateixa família que Bolets Petràs (ya verificada), comprovar abans d'afegir.
+- **Barberà del Vallès:** Pons Pujol SCP (vedella; DAR 680947310)
 
 ## Para otros agentes / a vigilar
 
