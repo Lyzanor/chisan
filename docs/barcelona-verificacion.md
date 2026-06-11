@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.757** · verificado **899** · parcial **430** · pendiente **1.428**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **216 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-55** (worklist).
-- **Siguiente: Lote 56** — Sitges (14) o Barberà del Vallès / Granollers (Palou) / Gurb / Lliçà d'Amunt (13 c/u).
-- Último push: lotes 1-55 en `main` (2026-06-11).
+- Filas: **2.755** · verificado **911** · parcial **430** · pendiente **1.414**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **218 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-56** (worklist).
+- **Siguiente: Lote 57** — Barberà del Vallès, Granollers (Palou), Gurb o Lliçà d'Amunt (13 c/u).
+- Último push: lotes 1-55 en `main` (2026-06-11); lote 56 pendiente de push.
 
 ## Procedimiento (cada lote)
 
@@ -218,7 +218,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 53 | Olesa de Montserrat | 0 | ✅ | 2026-06-11 | 10 verif + 2 parcial + 2 purgas (Campos Sarroca dup↔Cal Campos/E.Campos; Magí Tobella sin DAR ni rastro, links de manicura/mago); Petras→Bolets Petràs, Jobé→Fruites Jobé (FB); lallimona.es parked blanqueada; molí d'oli=Fundació+SAT Palomar (Oulesa), ambas reales; VO ecommerce falso de Cansaladeria Montserrat corregido |
 | 54 | Pineda de Mar | 0 | ✅ | 2026-06-11 | 7 verif + 4 parcial + 3 purgas (Esparza=links del ajuntament/Endesa, Casas Zambrano y Cassola sin rastro); Vitae Kombucha y Alatria ecommerce; Mallol/Piponas/Sonia Aurea encargos whatsapp; Màrquez Horticultors→Calella (DAR+CCM); Bio Prasad VO marketplace (Pagesia a Casa); coop "el Sindicat" verificada |
 | 55 | Sant Vicenç dels Horts | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 2 purgas (López Aymeriich dup registre↔marca de Pilar la Pagesa; Badosa=GMaps del RC Tennis BCN, sin rastro); Cal Pocoll y Cal Reverter rescatadas con ficha Parc Agrari (tel/email coinciden); Cal Rosset cistelles email|suscripcion; Can Coll=B2B pa ultracongelat; Saperas sin venda directa (coop+Mercabarna) |
-| — | _resto (330 municipios)_ | 1.582 | ⬜ | | recomputar al llegar |
+| 56 | Sitges | 0 | ✅ | 2026-06-11 | 12 verif + 0 parcial + 2 purgas (Celler Güell=edifici Gaudí amb restaurant tancat, no productor; Rull Rentero=web rent-a-car + GMaps de masajista, sin rastro); 5 con venta (Celler Hospital/Sitgetana/Wylie ecommerce, Järvi email|tel, Moreno a domicilio); Forn 9 web propia añadida; sencies.com 403=bot-block, viva |
+| — | _resto (329 municipios)_ | 1.568 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
