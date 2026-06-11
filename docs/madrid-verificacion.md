@@ -19,11 +19,11 @@
    `verificado` exige web/IG/FB reales del productor, o sustituye el GMaps por su ficha real.
    El search-query puede quedarse (no es desinformación), pero no es "el ≥1 enlace".
 
-## Estado actual (2026-06-11)
+## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **CERRADO** tras verificación zonal, cierre residual y auditoría transversal (13 lotes, 17 sub-lotes).
-- **Cerrados: Lotes 1-13. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **CERRADO** tras verificación zonal, cierre residual y auditorías transversales (20 lotes, 24 sub-lotes).
+- **Cerrados: Lotes 1-20. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
 - Reabrir Madrid solo ante nueva evidencia primaria, alta/baja real de productor o mantenimiento
   periódico de enlaces; no quedan lotes editoriales abiertos.
@@ -34,7 +34,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los trece lotes: **150 `sí`**, 20 `no comprobado`, 53 `no`.
+  - `Venta online` tras los veinte lotes: **159 `sí`**, 11 `no comprobado`, 53 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -206,6 +206,13 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 11 | Cierre de evidencia residual | 4 | 0 | 0 | 1 | ✅ | 2026-06-11 | Mantiene 4 parciales: Lavandas y La Cabaña Blanca constan en mercados de 2026; Té y Vida conserva dominio en mantenimiento; Melones Velasco tiene actividad pública reciente, pero ninguno aporta presencia primaria propia verificable |
 | 12 | Auditoría transversal de enlaces y contacto | 223 | 0 | 151 | 1 | ✅ | 2026-06-11 | Revisa 188 webs; retira 5 dominios NXDOMAIN sin borrar productores activos, repara 3 URLs y completa contacto y horario de Panic y Pan.Delirio; sin cambios de verificación |
 | 13 | Cierre final | 223 | 0 | 150 | 1 | ✅ | 2026-06-11 | Revisa títulos, redirecciones, duplicados, canales y las 4 parciales; retira de Granja Colmenar una web ajena de León, corrige su WhatsApp, depura el canal obsoleto de Cuerda Larga y completa el correo de Tenta; Madrid queda cerrado |
+| 14 | Auditoría profunda de venta no comprobada | 20 | 0 | 0 | 1 | ✅ | 2026-06-11 | Revisa las 20 filas `no comprobado`; confirma ecommerce propio de Finca Mariscalas, ecommerce de Bodega San Andrés en Recespaña y pedidos por correo de Huertos Vega del Tajuña; conserva 17 sin canal vigente demostrable |
+| 15 | Segunda auditoría profunda de venta pendiente | 17 | 0 | 0 | 1 | ✅ | 2026-06-11 | Confirma marketplace activo para 4 Monos y Ca' di Mat, y venta a grupos por teléfono de Vega Fértil; migra Huevos El Hortelano a su perfil social vigente; quedan 14 sin canal actual demostrable |
+| 16 | Bodegas con venta pendiente | 3 | 0 | 0 | 1 | ✅ | 2026-06-12 | Recupera la web oficial vigente de Pedro García y comprueba su catálogo: el checkout solo vende experiencias, no vino; Mario Sampedro y VegaLuna siguen sin pedido remoto demostrado |
+| 17 | Venta directa por redes y contacto | 3 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma pedidos por WhatsApp de Las Abejas de Emilio, reservas y reparto telefónico de Huevos El Hortelano y venta a domicilio por teléfono de Cuerda Larga |
+| 18 | Consolidación de perfiles y contacto | 3 | 0 | 0 | 1 | ✅ | 2026-06-12 | Completa teléfono, correo y Facebook de El Huerto de San Martín; añade el perfil propio de Melones Velasco y teléfono/Facebook vigentes de El Hortelano |
+| 19 | Aceites, mieles y parciales | 5 | 0 | 0 | 1 | ✅ | 2026-06-12 | Revisa Santa Lucía, Santo Cristo, La Cabaña Blanca, Lavandas y Té y Vida; conserva `no comprobado`: hay venta o actividad, pero no un canal remoto actual atribuible |
+| 20 | Cierre cruzado de venta pendiente | 11 | 0 | 0 | 1 | ✅ | 2026-06-12 | Contrasta perfiles, registros, dominios, stock y canales de los 11 supervivientes; no fuerza `no` ni `sí` sin evidencia y cierra Madrid en 159 `sí`, 11 `no comprobado` y 53 `no` |
 
 ## Historial
 
