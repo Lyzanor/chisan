@@ -22,8 +22,8 @@
 ## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **CERRADO** tras verificación zonal, cierre residual y auditorías transversales (20 lotes, 24 sub-lotes).
-- **Cerrados: Lotes 1-20. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **CERRADO** tras verificación zonal, cierre residual y auditorías transversales (25 lotes, 29 sub-lotes).
+- **Cerrados: Lotes 1-25. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
 - Reabrir Madrid solo ante nueva evidencia primaria, alta/baja real de productor o mantenimiento
   periódico de enlaces; no quedan lotes editoriales abiertos.
@@ -34,7 +34,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los veinte lotes: **159 `sí`**, 11 `no comprobado`, 53 `no`.
+  - `Venta online` tras los veinticinco lotes: **178 `sí`**, 11 `no comprobado`, 34 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -213,6 +213,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 18 | Consolidación de perfiles y contacto | 3 | 0 | 0 | 1 | ✅ | 2026-06-12 | Completa teléfono, correo y Facebook de El Huerto de San Martín; añade el perfil propio de Melones Velasco y teléfono/Facebook vigentes de El Hortelano |
 | 19 | Aceites, mieles y parciales | 5 | 0 | 0 | 1 | ✅ | 2026-06-12 | Revisa Santa Lucía, Santo Cristo, La Cabaña Blanca, Lavandas y Té y Vida; conserva `no comprobado`: hay venta o actividad, pero no un canal remoto actual atribuible |
 | 20 | Cierre cruzado de venta pendiente | 11 | 0 | 0 | 1 | ✅ | 2026-06-12 | Contrasta perfiles, registros, dominios, stock y canales de los 11 supervivientes; no fuerza `no` ni `sí` sin evidencia y cierra Madrid en 159 `sí`, 11 `no comprobado` y 53 `no` |
+| 21 | Auditoría profunda de `Venta online=no` (1/5) | 11 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma ecommerce propio de Trampero y Tenta, reparto telefónico de Granja Vega Alberche y marketplace activo para Don Picón; conserva 7 sin pedido remoto vigente |
+| 22 | Auditoría profunda de `Venta online=no` (2/5) | 11 | 0 | 0 | 1 | ✅ | 2026-06-12 | Recupera el pedido online de Biopan, envío telefónico de Peña Rubia y La Pastora, y marketplaces de CCVK y Valleyglesias; conserva 6 sin canal demostrable |
+| 23 | Auditoría profunda de `Venta online=no` (3/5) | 11 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma encargos telefónicos de Pastelería Jericó y ecommerce propio de Bernabeleva; descarta como evidencia tiendas vacías, catálogos sin checkout y pedidos históricos |
+| 24 | Auditoría profunda de `Venta online=no` (4/5) | 10 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma pedidos por correo de Saavedra y Prados Montes, más marketplaces activos para Miel San Galindo y Suerte Ampanera; conserva 6 sin canal actual |
+| 25 | Auditoría profunda de `Venta online=no` (5/5) | 10 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma pedido directo de Santo Mamés y Miel de Verdad, marketplace de Licinia y ecommerce de Novo Mundo; conserva 6 y cierra Madrid en 178 `sí`, 11 `no comprobado` y 34 `no` |
 
 ## Historial
 
