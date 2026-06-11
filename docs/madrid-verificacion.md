@@ -14,16 +14,17 @@
 4. Borra una fila solo con evidencia fuerte: sin match en registro **y** sin presencia real.
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
-6. **GMaps de Madrid no cuenta como enlace para `verificado`**: los 227 son search-queries
+6. **GMaps de Madrid no cuenta como enlace para `verificado`**: los 224 son search-queries
    autogeneradas (`maps/search/?api=1&query=…`). El audit las acepta; este manual no. Para
    `verificado` exige web/IG/FB reales del productor, o sustituye el GMaps por su ficha real.
    El search-query puede quedarse (no es desinformación), pero no es "el ≥1 enlace".
 
 ## Estado actual (2026-06-11)
 
-- Filas: **226** · verificado **186** · parcial **30** · pendiente **10**.
-- Modo: por zonas (7 zonas, ~9-11 sub-lotes de ~25), lote a lote bajo demanda.
-- **Cerrados: Lotes 1-5. Siguiente: Lote 6 = Henares y Este.**
+- Filas: **224** · verificado **217** · parcial **7** · pendiente **0**.
+- Modo: verificación zonal y pasada residual cerradas (9 lotes, 13 sub-lotes).
+- **Cerrados: Lotes 1-9. No quedan filas pendientes; 7 registros permanecen `parcial` por falta
+  de presencia primaria propia.**
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
   - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
     "existe en Places", **no** verificación web. Coords 100% validadas (geo-check ≤15 km): no las
@@ -31,8 +32,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online`: **126 `sí` heredados sin confirmar** (104 parcial + 22 pendiente), 99
-    `no comprobado`, 2 `no`. Trátalo como auto-rellenado: confirmar fila a fila.
+  - `Venta online` tras los nueve lotes: **150 `sí`**, 22 `no comprobado`, 52 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -187,7 +187,7 @@ No hay dataset descargable tipo Socrata; el cotejo es por buscador. Si aparece u
 ## Worklist (por zonas)
 
 Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del procedimiento
-(104 municipios, 226 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
+(104 municipios, 224 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
 
 | # | Zona | Filas | Pend. | VO=sí | Sub-lotes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|---|---|---|
@@ -197,7 +197,9 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 4 | Sierra Oeste y Suroeste | 28 | 9 | 13 | 1 | ✅ | 2026-06-11 | 24 verificadas, 4 parciales; corrige Ca' di Mat a Pelayos, reclasifica El Huerto de San Martín y repara contactos/canales; sin borrados |
 | 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ✅ | 2026-06-11 | 25 verificadas; confirma tiendas/canales, corrige dominios y contactos y aclara la tienda de Vaca Negra en Arroyomolinos; sin borrados |
 | 6 | Henares y Este | 16 | 8 | 8 | 1 | ✅ | 2026-06-11 | 13 verificados, 3 parciales; corrige Las Abejas de Emilio a El Vellón, Maps de Camuy, dominios, contactos y canales; sin borrados |
-| 7 | Guadarrama y Noroeste | 13 | 2 | 7 | 1 | ⬜ | | Quesos/carne/cerveza |
+| 7 | Guadarrama y Noroeste | 12 | 0 | 10 | 1 | ✅ | 2026-06-11 | 12 verificadas; elimina Cervecera Madrileña por duplicar Amiga/MAD91 y corrige ubicación de Gin Monti, contactos y canales |
+| 8 | Residual de parciales | 14 | 0 | 1 | 1 | ✅ | 2026-06-11 | 6 verificadas y 8 parciales registrales; corrige el dominio secuestrado de Finca Mariscalas y añade perfiles propios de Artbread, Cuerda Larga y El Guinda |
+| 9 | Cierre residual | 8 | 0 | 0 | 1 | ✅ | 2026-06-11 | Elimina Vino de ARRÉN: Agroalimentaria Torremocha S.L. consta extinguida desde 2023; conserva 7 parciales con evidencia registral o secundaria, sin forzar verificaciones |
 
 ## Historial
 
