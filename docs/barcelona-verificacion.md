@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **2.759** · verificado **892** · parcial **425** · pendiente **1.442**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **214 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-54** (worklist).
-- **Siguiente: Lote 55** — Sant Vicenç dels Horts (14).
-- Último push: lotes 1-40 en `main` (2026-06-10); lotes 41-50 pendientes de push.
+- Filas: **2.757** · verificado **899** · parcial **430** · pendiente **1.428**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **216 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-55** (worklist).
+- **Siguiente: Lote 56** — Sitges (14) o Barberà del Vallès / Granollers (Palou) / Gurb / Lliçà d'Amunt (13 c/u).
+- Último push: lotes 1-55 en `main` (2026-06-11).
 
 ## Procedimiento (cada lote)
 
@@ -217,7 +217,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 52 | Centelles | 0 | ✅ | 2026-06-11 | 9 verif + 3 parcial + 2 purgas (Capdevila=fila contaminada con escola Carles Capdevila; Oliver Oliva dup↔Pla de la Garga por email DAR); Pla de la Garga era pollastres eco en St. Martí de Centelles (no formatgeria); Mas Calm→Mas Agrobotiga, Rovira→Mas Vinyoles (vedella, VO email|tel); La Lola web lalola.cat |
 | 53 | Olesa de Montserrat | 0 | ✅ | 2026-06-11 | 10 verif + 2 parcial + 2 purgas (Campos Sarroca dup↔Cal Campos/E.Campos; Magí Tobella sin DAR ni rastro, links de manicura/mago); Petras→Bolets Petràs, Jobé→Fruites Jobé (FB); lallimona.es parked blanqueada; molí d'oli=Fundació+SAT Palomar (Oulesa), ambas reales; VO ecommerce falso de Cansaladeria Montserrat corregido |
 | 54 | Pineda de Mar | 0 | ✅ | 2026-06-11 | 7 verif + 4 parcial + 3 purgas (Esparza=links del ajuntament/Endesa, Casas Zambrano y Cassola sin rastro); Vitae Kombucha y Alatria ecommerce; Mallol/Piponas/Sonia Aurea encargos whatsapp; Màrquez Horticultors→Calella (DAR+CCM); Bio Prasad VO marketplace (Pagesia a Casa); coop "el Sindicat" verificada |
-| — | _resto (331 municipios)_ | 1.596 | ⬜ | | recomputar al llegar |
+| 55 | Sant Vicenç dels Horts | 0 | ✅ | 2026-06-11 | 7 verif + 5 parcial + 2 purgas (López Aymeriich dup registre↔marca de Pilar la Pagesa; Badosa=GMaps del RC Tennis BCN, sin rastro); Cal Pocoll y Cal Reverter rescatadas con ficha Parc Agrari (tel/email coinciden); Cal Rosset cistelles email|suscripcion; Can Coll=B2B pa ultracongelat; Saperas sin venda directa (coop+Mercabarna) |
+| — | _resto (330 municipios)_ | 1.582 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -256,6 +257,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Arenys de Mar:** Hortalisses Tuto SCP (horta; DAR 637855410) · Sala Martinez, Lluís (carxofa/fava; DAR 629303780) · Can Maresma SL (ous/fruita/verdura, parada 14/16 mercat)
 - **Argentona:** Oliveras Guiñon, Jose (all/mongeta/tomàquet; DAR 639261000)
 - **Avinyonet del Penedès:** Marcé Medialdea, Martí (Martí Marcé, préssecs; DAR 677507426). Los Cuscó Esteve (Joan/Jordi/Lluís) son la família de Cuscó Berga, no añadir.
+- **Pineda de Mar:** Cuní Baltrons, Juan (horta; DAR 660364608)
+- **Olesa de Montserrat:** Fruits del Bosc Petras SL (marca Fruits del Bosc, aromàtiques; DAR 624073697) — probablement la mateixa família que Bolets Petràs (ya verificada), comprovar abans d'afegir.
 
 ## Para otros agentes / a vigilar
 
