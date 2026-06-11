@@ -21,9 +21,9 @@
 
 ## Estado actual (2026-06-11)
 
-- Filas: **227** · verificado **105** · parcial **96** · pendiente **26**.
+- Filas: **226** · verificado **137** · parcial **66** · pendiente **23**.
 - Modo: por zonas (7 zonas, ~9-11 sub-lotes de ~25), lote a lote bajo demanda.
-- **Cerrados: Lotes 1-2. Siguiente: Lote 3 = Capital, sub-lote 3a.**
+- **Cerrados: Lotes 1-3. Siguiente: Lote 4 = Sierra Oeste y Suroeste.**
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
   - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
     "existe en Places", **no** verificación web. Coords 100% validadas (geo-check ≤15 km): no las
@@ -187,13 +187,13 @@ No hay dataset descargable tipo Socrata; el cotejo es por buscador. Si aparece u
 ## Worklist (por zonas)
 
 Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del procedimiento
-(104 municipios, 227 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
+(104 municipios, 226 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
 
 | # | Zona | Filas | Pend. | VO=sí | Sub-lotes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Las Vegas y Sureste | 59 | 11 | 36 | 3 (1a-1c) | ✅ | 2026-06-10 | 1a-1c: 56 verificados, 3 parciales; 1c corrige contactos, canales y 4 direcciones; sin borrados |
 | 2 | Sierra Norte y Jarama | 52 | 13 | 27 | 2 (2a-2b) | ✅ | 2026-06-11 | 2a-2b: 49 verificados, 3 parciales; 2b corrige dominios, sede de Ganademad y canales; sin borrados |
-| 3 | Capital | 34 | 3 | 19 | 2 (3a-3b) | ⬜ | | Tostadores, cerveceras, obradores; ojo webs-directorio (esmadrid) |
+| 3 | Capital | 33 | 3 | 19 | 2 (3a-3b) | ✅ | 2026-06-11 | 32 verificados, 1 parcial; corrige contactos, dominios, canales y coords de La Caníbal; Fábrica Maravillas eliminada como duplicado |
 | 4 | Sierra Oeste y Suroeste | 28 | 9 | 13 | 1 | ⬜ | | DO San Martín de Valdeiglesias + Navalcarnero; garnacha |
 | 5 | Sur metropolitano | 25 | 4 | 16 | 1 | ⬜ | | Obradores y cerveceras (Fuenlabrada/Móstoles/Humanes/Leganés) |
 | 6 | Henares y Este | 16 | 8 | 8 | 1 | ⬜ | | **50% pendiente** — máximo riesgo de candidatos inventados |
