@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.674** · verificado **1.124** · parcial **536** · pendiente **1.014**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **299 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-91** (worklist).
-- **Siguiente: Lote 92** — Teià (10).
-- Último push: lotes 1-88 en `main` (2026-06-12).
+- Filas: **2.671** · verificado **1.130** · parcial **537** · pendiente **1.004**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **302 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-92** (worklist).
+- **Siguiente: Lote 93** — Bigues i Riells (9).
+- Último push: lotes 1-92 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
 
@@ -254,6 +254,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 89 | Pacs del Penedès | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Germans Seguí-García sin rastro, con web/tel/horario del ajuntament y GMaps de Parés Baltà); AT Roca reubicada a Avinyonet del Penedès (instalaciones nuevas; atroca.com parked blanqueada; VO marketplace via Petit Celler); Parés Baltà ecommerce confirmado; Familia Torres VO marketplace (tienda online=petitceller.com); Caves Bundó renombrada (Google Site propio + DAR); Colet, La Xarmada (web añadida; viver de celleristes) y Plana d'en Jan (celler mínimo desde 1895) verif; Cal Tinons parcial (Mercat Arrels, Maria Grau; GMaps de Cal Ton de Vilafranca blanqueado); Olmit Inversions parcial DAR |
 | 90 | Ripollet | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Mireia Cardona sin rastro); Cal Pastera reubicada a Sant Vicenç dels Horts (horta eco CCPAE con cistelles, ni Ripollet ni Lácteos; blog WP + IG propios); Apassiona't VO ecommerce|whatsapp (tienda online de pedidos confirmada); La Iaia Artesana verif con web de Pekatum (Cerdanyola, ajena) blanqueada; Xurreria Marina, Forn Call-2000, Planas y Obrador Navarro verif; Gurri Taverna parcial (bar con cerveza de marca propia; web birrapedia e IG personal blanqueados); Ripodul SL parcial (web caída) |
 | 91 | Sta. Eulàlia de Ronçana | 0 | ✅ | 2026-06-12 | 5 verif + 1 parcial + 4 purgas (Huguet Risquez dup persona↔marca d'El Molí d'en Vendrell por email DAR, con GMaps de perruqueria; Zafra=quimera con grúas + Cinco Monos BCN; Cunill=quimera con terapeuta Gestalt, .webp borrado; Margenat solo consta como president dels regants, sin actividad comercial); El Molí d'en Vendrell verif con datos DAR fusionados; Can Burguès (avellana DOP Garriga; SAT en DAR), Can Galderic (texto corrupto reparado), Estació Vegana (catering per encàrrec→VO no) y Parc de les Olors/El Serrat (seu central; →Aromáticas) verif; Alsina Cusco reubicado a Mollet/Gallecs (era el candidato DAR del lote 78, estaba aquí mal ubicado con web de Can Farell) |
+| 92 | Teià | 0 | ✅ | 2026-06-12 | 6 verif + 1 parcial + 3 purgas (Aurora del Camp SCP dup del proyecto ya integrado en El Masnou —campos entre ambos municipios, DAR Aurora Agrícola SL—; Homs Alsina=quimera de Materials Homs SA y Garro Rovira=quimera de BigMat Garro + cerrajería Vargas, ambos .webp borrados); L'Hort d'en Pau verif (DAR Pau Gutierrez; botiga online + WhatsApp + repartiment a 8 pobles → ecommerce|whatsapp; camps a Alella, botiga a Teià); J. Mónico (IG propio), Marcual (web propia, cert roto), Flors Bertran Mas, Forn Nou (web=FB dup blanqueada) y Pastisseria Biel verif; Nova Plant 2000 parcial (ornamental) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
