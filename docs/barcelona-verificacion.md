@@ -17,12 +17,13 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.665** · verificado **1.140** · parcial **539** · pendiente **986**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **308 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-94** (worklist).
-- **Siguiente: Lote 95** — Calders (9).
+- Filas: **2.661** · verificado **1.144** · parcial **540** · pendiente **977**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **312 purgadas**). Verificadas > pendientes desde el lote 85;
+  pendientes por debajo de 1.000 desde el lote 95.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-95** (worklist).
+- **Siguiente: Lote 96** — Castellterçol (9).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Último push: lotes 1-92 en `main` (2026-06-12).
+- Último push: lotes 1-95 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
 
@@ -258,6 +259,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 92 | Teià | 0 | ✅ | 2026-06-12 | 6 verif + 1 parcial + 3 purgas (Aurora del Camp SCP dup del proyecto ya integrado en El Masnou —campos entre ambos municipios, DAR Aurora Agrícola SL—; Homs Alsina=quimera de Materials Homs SA y Garro Rovira=quimera de BigMat Garro + cerrajería Vargas, ambos .webp borrados); L'Hort d'en Pau verif (DAR Pau Gutierrez; botiga online + WhatsApp + repartiment a 8 pobles → ecommerce|whatsapp; camps a Alella, botiga a Teià); J. Mónico (IG propio), Marcual (web propia, cert roto), Flors Bertran Mas, Forn Nou (web=FB dup blanqueada) y Pastisseria Biel verif; Nova Plant 2000 parcial (ornamental) |
 | 93 | Bigues i Riells | 0 | ✅ | 2026-06-12 | 3 verif + 2 parcial + 4 purgas (Granja Subirats SL fusionada en Subirats Carns —email gsubirats—; I-Magina Divulgació SL=empresa del Parc de les Olors ya verificado en lote 91; Guiu=Guiu Motors con web que era una URL de búsqueda de Google; Ana Martinez sin rastro y GMaps de otra persona); la lista de productors locals del ajuntament resolvió el lote: Can Duran rescatada (horta+oli+vi; web de un forn de Palafrugell blanqueada, FB propio), El Rull-Can Maspons=granja pionera del huevo eco (1996, →Huevos), Subirats Carns verif; Jaume Roger Garriga RESCATADO de quimera (productor real de verduras en la lista; links de Garriga Grup obres + VO falso limpiados, .webp borrado); Fornet del Fai parcial (GMaps d'Argemí blanqueado y sin más links → no puede ser verif por contrato) |
 | 94 | Calaf | 0 | ✅ | 2026-06-12 | 7 verif + 0 parcial + 2 purgas (2 dups internos: Cunicula Pilar SCP bare → fusionada en Euroconills; Ous de Calaf ↔ Avícola Frauca misma web/IG → fusionadas, .webp renombrado al slug que queda); Xais Adoració reubicada a Sant Martí Sesgueioles (DAR Josep Lloret + ficha diba "Apropant el mercat"; xai i cigrons, →Carne; web xcc.cat ajena y VO ecommerce falso limpiados); La Vedella, Cal Gatells (web=guia municipal blanqueada), Embotits Closa y Forn Fitó (Cal Fidel) verif; Ous de Calaf=parades patentades als mercats de BCN, VO no (web informativa) |
+| 95 | Calders | 0 | ✅ | 2026-06-12 | 4 verif + 1 parcial + 4 purgas (Serra Coma dup registre↔marca de Vedella de Trullàs; Hostal Calders=restaurant del Grup Llobet; Picanyol=quimera con estudio de fotografía; Productes El Canadell SL=sin rastro de carquinyolis, la masia es restaurant y elcanadell.cat ahora es una làctia de Agrofresc en Sta. M. d'Oló — 3 .webp borrados); Mas Reixac rescatada (vedella eco CCPAE, FB propio + catàleg del Moianès + carnisseria l'Hostal); Trullàs verif (GMaps de la Vedella del Pedraforca ajena blanqueado); Nous El Soler ecommerce confirmado (2.000 noguers eco, email con typo corregido); Caterí whatsapp|email; Ruaix=Delícia de Mel parcial DAR (GMaps de Cicles Ruaix blanqueado, coords al centroide) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
