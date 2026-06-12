@@ -22,11 +22,13 @@
 ## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (45 lotes, 49 sub-lotes).
-- **Cerrados: Lotes 1-45. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (50 lotes, 54 sub-lotes).
+- **Cerrados: Lotes 1-50. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
-- Auditoría profunda de `Venta online=sí`: **177/177 filas actualmente en `sí` revisadas** en orden
-  del CSV; se auditaron 178 registros y uno pasó a `no comprobado`. Auditoría completa.
+- Auditoría profunda de `Venta online=sí`: **178/178 filas actualmente en `sí` revisadas** en orden
+  del CSV; se auditaron 179 registros y uno pasó a `no comprobado`. Auditoría completa.
+- Segunda auditoría profunda de `Venta online=no`: **34/34 filas revisadas**; Trilujo pasó a `sí`
+  por pedidos vigentes por WhatsApp y las otras 33 conservan `no` sin forzar canales ambiguos.
 - Fuera de esa auditoría de mantenimiento, reabrir Madrid solo ante nueva evidencia primaria o una
   alta/baja real de productor; no quedan lotes de verificación editorial abiertos.
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
@@ -36,7 +38,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los cuarenta y cinco lotes: **177 `sí`**, 12 `no comprobado`, 34 `no`.
+  - `Venta online` tras los cincuenta lotes: **178 `sí`**, 12 `no comprobado`, 33 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -240,6 +242,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 43 | Auditoría profunda de `Venta online=sí` (18) | 6 | 0 | 6 | 1 | ✅ | 2026-06-12 | Confirma los 6 canales de carne y venta directa; completa el horario de la tienda de La Poveda en Santa María |
 | 44 | Auditoría profunda de `Venta online=sí` (19) | 5 | 0 | 5 | 1 | ✅ | 2026-06-12 | Confirma los 5 canales; actualiza el correo de Obrador Abantos y retira de Babette un WhatsApp estacional sin evidencia actual |
 | 45 | Auditoría profunda de `Venta online=sí` (20) | 5 | 0 | 5 | 1 | ✅ | 2026-06-12 | Confirma los 5 canales y cierra la auditoría completa; añade teléfono y Facebook de Bernabé y mantiene en blanco el dominio antiguo de Mademi, hoy ajeno |
+| 46 | Segunda auditoría profunda de `Venta online=no` (1/5) | 7 | 0 | 0 | 1 | ✅ | 2026-06-12 | Mantiene los 7 en `no`: Maltacaballar solo vende para llevar en fábrica y ACID anuncia pedido online «próximamente»; el resto no ofrece canal remoto vigente |
+| 47 | Segunda auditoría profunda de `Venta online=no` (2/5) | 7 | 0 | 0 | 1 | ✅ | 2026-06-12 | Mantiene los 7 en `no`; la tienda de Joint solo ofrece entrada y merchandising, no cerveza, y completa su correo oficial |
+| 48 | Segunda auditoría profunda de `Venta online=no` (3/5) | 7 | 0 | 0 | 1 | ✅ | 2026-06-12 | Mantiene los 7 en `no`: Panirest conserva condiciones legales sin producto comprable y las webs de bodega, pan y carne son catálogos o contacto |
+| 49 | Segunda auditoría profunda de `Venta online=no` (4/5) | 7 | 0 | 0 | 1 | ✅ | 2026-06-12 | Mantiene los 7 en `no`; descarta pedidos históricos y marketplaces no demostrables hoy, y confirma que Miel Tía Pili vende en tienda física |
+| 50 | Segunda auditoría profunda de `Venta online=no` (5/5) | 6 | 0 | 0 | 1 | ✅ | 2026-06-12 | Trilujo pasa a `sí` por pedidos vigentes por WhatsApp y añade su Facebook oficial; conserva 5 sin canal remoto actual demostrable |
 
 ## Historial
 
