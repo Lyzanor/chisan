@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.695** · verificado **1.067** · parcial **511** · pendiente **1.117**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **278 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-81** (worklist).
-- **Siguiente: Lote 82** — Torrelles de Foix (11).
+- Filas: **2.692** · verificado **1.072** · parcial **514** · pendiente **1.106**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **281 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-82** (worklist).
+- **Siguiente: Lote 83** — Torrelles de Llobregat (11).
 - Último push: lotes 1-80 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
@@ -244,6 +244,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 79 | Papiol | 0 | ✅ | 2026-06-12 | 4 verif + 2 parcial + 5 purgas (Figueras Garriga Pere dup registre↔marca de Cal Figueras con links del bufete figueras.legal; Jaume Olivé Parra dup persona↔marca de La Vinya de Can Font; Mongetes creperia sin rastro con links de 3 negocios distintos; ELADIET=solo complementos dietéticos, no productor agroalimentario; AGRI-MA sin DAR ni rastro con datos de BCN); Batzachs rescatada: microceller 1920 de Anna Estruch, web batzachs.cat ecommerce; Cal Figueras verif (catàleg Collserola+IG propio, venda a domicili→tel); Can Font parcial enriquecida (Jaume Olivé, Rebrot Pagès); GMaps ajenos blanqueados (Casa Evarist Juncosa, Cal Figueres del Penedès, Instal·lacions Pellicer) |
 | 80 | Sta. Margarida i els Monjos | 0 | ✅ | 2026-06-12 | 5 verif + 4 parcial + 2 purgas (Llobet Guix dup registre↔marca de Mel Castell de Penyafort; Oliest sin rastro y con GMaps de D'Oliciós, marca ajena); Mel Penyafort verif con web/FB/IG propios (Xavier Llobet, des de 1979); Mallofré=Vins Mallofré (Masia La Sanabra, 1898, DO Penedès eco; VO marketplace via Clubdevins/Plataforma Ecològica); Soler Guillen=Cal Vicari (serveis vitícoles, web propia); Agro-Freixedes=Can Amadeu (oli, DAR); Forn Valls (La Ràpita), Forn Esplugas i 4 Barres verif; Espitlles parcial (gastroteca, raça penedesenca); GMaps ajenos blanqueados (punt d'info turística, assessoria, castell-monument, Freixedas Vinícola) |
 | 81 | Seva | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Molins Sala dup registre↔marca de Pollastre del Montseny; Casasas Matabacas dup persona↔marca de Mel Llàgrimes de Ra con links de la botiga del club UE Sant Andreu y VO ecommerce falso; Molins Ferrer="pagès i renda cotxes" en la guia municipal, sin producto, productos inventados); Muns Criville→Casanova de Figarolas (vedella Angus, web propia, VO tel; llevaba links de Las Muns empanadas BCN, .webp borrado); Pollastre del Montseny verif con web propia (VO ecommerce|whatsapp; GMaps del Pollastre de pagès de Centelles ajeno blanqueado); Viubé=Granjas Ecológicas SLU (ecommerce confirmado); ERRE de Vic y Fleca Pujadas verif; Can Bullit parcial (SL en liquidació, obrador des de 1959); Cabrum Les Tres Torres parcial DAR (GMaps d'assessoria blanqueado) |
+| 82 | Torrelles de Foix | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Civill Miret dup persona↔marca de Can Cruset por email DAR; Canals Marimon fusionado en Cal Xullat —misma dirección/web/tel, su oli DAR anotado en la fila—; Escofet Romagosa quimera con links de Esco Fresc de St. Joan Despí); Formatge Bages=Làctics Foix (granja 80 vaques, botiga, IG; iogurt Km0 a Bonpreu); Can Cruset verif (agroturisme + oli eco DAR, recategorizado Aceite); Cal Xullat verif (cansaladeria+estanc+queviures, embotits propis); Can Pardo verif con web propia; Josep Masachs verif pero VO sí/ecommerce falso corregido a no (web sin carrito); Figueras Comas=Penedès +500 parcial (links de Figueras Legal otra vez, .webp borrado); Vives Marti=Ca la Sisca (préssecs, no Bodega) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -300,6 +301,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Papiol:** grup Rebrot Pagès (6 pagesos eco del Papiol; Can Font ya integrado, identificar el resto) · catàleg de productors del Parc Natural de Collserola (parcnaturalcollserola.cat) y programa de la Festa de la Cirera — fuentes útiles. Figueras Garriga Ramon (DAR 606701734) ya cubierto por la fila Cal Figueras (hermanos)
 - **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
 - **Seva:** Blansac 2015 SL (marca Formatge Bauma, formatges de llet crua; DAR 617386155) · guia d'empreses de l'ajuntament (seva.cat) — fuente útil
+- **Torrelles de Foix:** Heretat Laverna (celler dels Escofet des de 1342, vins eco DO Penedès, primera anyada 2021, ancestrals.cat; vil·la romana a la finca) — no está en el CSV, candidata clara
 
 ## Para otros agentes / a vigilar
 
