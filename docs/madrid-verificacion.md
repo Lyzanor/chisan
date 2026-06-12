@@ -22,12 +22,11 @@
 ## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (40 lotes, 44 sub-lotes).
-- **Cerrados: Lotes 1-40. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (45 lotes, 49 sub-lotes).
+- **Cerrados: Lotes 1-45. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
-- Auditoría profunda de `Venta online=sí`: **149/177 filas actualmente en `sí` revisadas** en orden
-  del CSV; se han auditado 150 registros y uno pasó a `no comprobado`. El siguiente lote empieza
-  en `bodegas-licinia-morata-de-tajuna`.
+- Auditoría profunda de `Venta online=sí`: **177/177 filas actualmente en `sí` revisadas** en orden
+  del CSV; se auditaron 178 registros y uno pasó a `no comprobado`. Auditoría completa.
 - Fuera de esa auditoría de mantenimiento, reabrir Madrid solo ante nueva evidencia primaria o una
   alta/baja real de productor; no quedan lotes de verificación editorial abiertos.
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
@@ -37,7 +36,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los cuarenta lotes: **177 `sí`**, 12 `no comprobado`, 34 `no`.
+  - `Venta online` tras los cuarenta y cinco lotes: **177 `sí`**, 12 `no comprobado`, 34 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -236,6 +235,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 38 | Auditoría profunda de `Venta online=sí` (13) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma nueve canales, incluidos Enigma y Ecolactis pese a fallos transitorios; Aceites Oro pasa a `no comprobado` por catálogo íntegramente agotado y ficha averiada |
 | 39 | Auditoría profunda de `Venta online=sí` (14) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales: checkout propio en ocho productores y pedidos vigentes por teléfono o correo de Gigorro y Prados Montes; sin cambios |
 | 40 | Auditoría profunda de `Venta online=sí` (15) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales, incluidos pedidos remotos de Huertos Vega, Cuerda Larga y Santo Mamés; actualiza el teléfono publicado para pedidos de El Horno de Ángeles |
+| 41 | Auditoría profunda de `Venta online=sí` (16) | 6 | 0 | 6 | 1 | ✅ | 2026-06-12 | Confirma los 6 canales; completa el teléfono de La Quince y los correos publicados por Campo Real y La Huerta de Aranjuez |
+| 42 | Auditoría profunda de `Venta online=sí` (17) | 6 | 0 | 6 | 1 | ✅ | 2026-06-12 | Confirma pedidos y reparto en los 6 proyectos de huerta; completa la dirección de Semillando y no enlaza su web por la inyección SEO ajena detectada |
+| 43 | Auditoría profunda de `Venta online=sí` (18) | 6 | 0 | 6 | 1 | ✅ | 2026-06-12 | Confirma los 6 canales de carne y venta directa; completa el horario de la tienda de La Poveda en Santa María |
+| 44 | Auditoría profunda de `Venta online=sí` (19) | 5 | 0 | 5 | 1 | ✅ | 2026-06-12 | Confirma los 5 canales; actualiza el correo de Obrador Abantos y retira de Babette un WhatsApp estacional sin evidencia actual |
+| 45 | Auditoría profunda de `Venta online=sí` (20) | 5 | 0 | 5 | 1 | ✅ | 2026-06-12 | Confirma los 5 canales y cierra la auditoría completa; añade teléfono y Facebook de Bernabé y mantiene en blanco el dominio antiguo de Mademi, hoy ajeno |
 
 ## Historial
 
