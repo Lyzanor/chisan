@@ -14,21 +14,24 @@
 4. Borra una fila solo con evidencia fuerte: sin match en registro **y** sin presencia real.
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
-6. **GMaps de Madrid no cuenta como enlace para `verificado`**: 220 de 223 enlaces son search-queries
+6. **GMaps de Madrid no cuenta como enlace para `verificado`**: 219 de 222 enlaces son search-queries
    autogeneradas (`maps/search/?api=1&query=…`). El audit las acepta; este manual no. Para
    `verificado` exige web/IG/FB reales del productor, o sustituye el GMaps por su ficha real.
    El search-query puede quedarse (no es desinformación), pero no es "el ≥1 enlace".
 
 ## Estado actual (2026-06-12)
 
-- Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
+- Filas: **222** · verificado **218** · parcial **4** · pendiente **0**.
 - Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (50 lotes, 54 sub-lotes).
 - **Cerrados: Lotes 1-50. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
-- Auditoría profunda de `Venta online=sí`: **178/178 filas actualmente en `sí` revisadas** en orden
-  del CSV; se auditaron 179 registros y uno pasó a `no comprobado`. Auditoría completa.
-- Segunda auditoría profunda de `Venta online=no`: **34/34 filas revisadas**; Trilujo pasó a `sí`
-  por pedidos vigentes por WhatsApp y las otras 33 conservan `no` sin forzar canales ambiguos.
+- Auditoría profunda de `Venta online=sí`: **177/177 filas actualmente en `sí` revisadas** en orden
+  del CSV; se auditaron 179 registros y dos pasaron a `no comprobado`. Auditoría completa.
+- Segunda auditoría profunda de `Venta online=no`: **34/34 filas revisadas**; Trilujo pasó a `sí`,
+  MAD91 se purgó como segunda marca duplicada del mismo productor y las otras 32 conservan `no`.
+- Retrospectiva completa de los lotes 1-50 cerrada el 2026-06-12: corrige un duplicado, un canal
+  sobreafirmado, el selector zonal de El Vellón, nueve referencias de horario y tres centroides
+  sustituibles por geocodificación de dirección. **No constituye un lote 51.**
 - Fuera de esa auditoría de mantenimiento, reabrir Madrid solo ante nueva evidencia primaria o una
   alta/baja real de productor; no quedan lotes de verificación editorial abiertos.
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
@@ -38,11 +41,13 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los cincuenta lotes: **178 `sí`**, 12 `no comprobado`, 33 `no`.
+  - `Venta online` tras la retrospectiva: **177 `sí`**, 13 `no comprobado`, 32 `no`.
 
 ## Procedimiento (cada lote)
 
 1. Lee este archivo entero.
+   Para el cierre transversal aplica también la pauta genérica de
+   `docs/VERIFICATION_TECHNIQUES.md`, sección «Pasada de consistencia antes de cerrar una provincia».
 2. Toma la primera zona ⬜ de la **worklist** (más abajo).
 3. Lista su lote priorizando riesgo (pendientes primero, luego `VO=sí` sin confirmar):
    ```bash
@@ -51,7 +56,7 @@
    ZONA="Las Vegas y Sureste"   # <-- zona objetivo
    Z={
    'Capital':['Madrid','Madrid - Arganzuela','Madrid - Carabanchel','Madrid - Centro','Madrid - Chamartín','Madrid - Fuencarral','Madrid - Latina','Madrid - Puente de Vallecas','Madrid - Retiro','Madrid - Salamanca','Madrid - San Blas-Canillejas','Madrid - Tetuán'],
-   'Sierra Norte y Jarama':['Braojos','Buitrago del Lozoya','Bustarviejo','Colmenar Viejo','El Molar','Fuente el Saz de Jarama','Gargantilla del Lozoya','Guadalix de la Sierra','La Hiruela','Lozoya','Madarcos','Manzanares el Real','Miraflores de la Sierra','Montejo de la Sierra','Navarredonda y San Mamés','Puebla de la Sierra','Rascafría','Robledillo de la Jara','Soto del Real','Talamanca de Jarama','Torrelaguna','Torremocha de Jarama','Venturada','Tres Cantos','Alcobendas','San Sebastián de los Reyes'],
+   'Sierra Norte y Jarama':['Braojos','Buitrago del Lozoya','Bustarviejo','Colmenar Viejo','El Molar','El Vellón','Fuente el Saz de Jarama','Gargantilla del Lozoya','Guadalix de la Sierra','La Hiruela','Lozoya','Madarcos','Manzanares el Real','Miraflores de la Sierra','Montejo de la Sierra','Navarredonda y San Mamés','Puebla de la Sierra','Rascafría','Robledillo de la Jara','Soto del Real','Talamanca de Jarama','Torrelaguna','Torremocha de Jarama','Venturada','Tres Cantos','Alcobendas','San Sebastián de los Reyes'],
    'Guadarrama y Noroeste':['Alpedrete','Becerril de la Sierra','El Boalo','Collado Villalba','Guadarrama','Los Molinos','Moralzarzal','San Lorenzo de El Escorial','Valdemorillo','Las Rozas de Madrid','Villanueva del Pardillo'],
    'Sierra Oeste y Suroeste':['San Martín de Valdeiglesias','Cadalso de los Vidrios','Cenicientos','Pelayos de la Presa','Villa del Prado','Navas del Rey','Aldea del Fresno','Villamantilla','Colmenar del Arroyo','Fresnedillas de la Oliva','Santa María de la Alameda','Navalcarnero','Brunete'],
    'Las Vegas y Sureste':['Aranjuez','Arganda del Rey','Belmonte de Tajo','Campo Real','Carabaña','Chinchón','Ciempozuelos','Colmenar de Oreja','Fuentidueña de Tajo','Morata de Tajuña','Perales de Tajuña','Rivas-Vaciamadrid','San Martín de la Vega','Tielmes','Titulcia','Valdelaguna','Valdilecha','Valdemoro','Villaconejos','Villarejo de Salvanés','Loeches'],
@@ -87,7 +92,7 @@
   18 Venta online · 19 Canal de venta.
 - Contrato: `verificado` exige coords + ≥1 enlace **real** (regla dura 6); `categoria` ∈
   `VALID_CATEGORIES` de `scripts/audit-csv.js`; `telefono` E.164 (`+34…`).
-- Imágenes: ruta canónica `/productores/madrid/madrid/<slug>.webp` (~140/227 filas la tienen).
+- Imágenes: ruta canónica `/productores/madrid/madrid/<slug>.webp` (140/222 filas la tienen).
   Al borrar una fila con `imagen`, borra también su `.webp`. Logo/imagotipo antes que foto;
   nunca `enrich:images --apply` en bloque.
 
@@ -193,7 +198,8 @@ No hay dataset descargable tipo Socrata; el cotejo es por buscador. Si aparece u
 ## Worklist (por zonas)
 
 Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del procedimiento
-(104 municipios, 223 filas). Dentro de cada lote: pendientes primero, luego `VO=sí` sin confirmar.
+(105 etiquetas municipales contempladas; 104 presentes en 222 filas). Dentro de cada lote:
+pendientes primero, luego `VO=sí` sin confirmar.
 
 | # | Zona | Filas | Pend. | VO=sí | Sub-lotes | Estado | Fecha | Notas |
 |---|---|---|---|---|---|---|---|---|
@@ -247,6 +253,36 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 48 | Segunda auditoría profunda de `Venta online=no` (3/5) | 7 | 0 | 0 | 1 | ✅ | 2026-06-12 | Mantiene los 7 en `no`: Panirest conserva condiciones legales sin producto comprable y las webs de bodega, pan y carne son catálogos o contacto |
 | 49 | Segunda auditoría profunda de `Venta online=no` (4/5) | 7 | 0 | 0 | 1 | ✅ | 2026-06-12 | Mantiene los 7 en `no`; descarta pedidos históricos y marketplaces no demostrables hoy, y confirma que Miel Tía Pili vende en tienda física |
 | 50 | Segunda auditoría profunda de `Venta online=no` (5/5) | 6 | 0 | 0 | 1 | ✅ | 2026-06-12 | Trilujo pasa a `sí` por pedidos vigentes por WhatsApp y añade su Facebook oficial; conserva 5 sin canal remoto actual demostrable |
+
+## Auditoría retrospectiva de los lotes 1-50
+
+No es un lote nuevo. El 2026-06-12 se conciliaron los recuentos de cada commit y se revisaron las
+222 filas resultantes con controles de contrato, fuentes, duplicados, canales y enlaces:
+
+- **Duplicado corregido:** Amiga y MAD91 eran dos marcas de Cervecera Madrileña Independiente en
+  la misma fábrica, con idénticos dirección, teléfono y correo. Se conserva el `slug` estable de
+  Amiga, se integran ambas marcas en esa ficha y se elimina la fila redundante de MAD91.
+- **Canal corregido:** Gigorro conserva `verificado` por su ficha real y evidencia pública como
+  quesería, pero pasa a `no comprobado`; no hay fuente primaria actual que demuestre pedido remoto.
+- **Cobertura zonal corregida:** Las Abejas de Emilio se movió de Meco a El Vellón en el lote 6,
+  pero El Vellón no se añadió al selector de Sierra Norte. La fila sí fue revisada; faltaba el
+  municipio en el procedimiento reanudable.
+- **Duplicados descartados:** Recespaña/Bodega San Andrés se conservan como secciones productivas
+  con ubicación y categoría distintas; Ganados García del Valle/Ganademad como explotación
+  individual y cooperativa. Las coincidencias no son filas redundantes.
+- **Enlaces y venta:** se recorrieron las 186 webs y los 127 canales `ecommerce`; cuatro fallos
+  transitorios o de TLS no se usaron para borrar enlaces. Los diez casos sin señal en portada se
+  confirmaron mediante su tienda o ficha de compra vigente.
+- **Consistencia entre campos:** nueve horarios remitían a una `web` vacía. Siete pasan a la red
+  social realmente disponible y los dos registros parciales sin fuente pública dejan el horario vacío.
+- **Precisión geográfica:** Nominatim resolvió la dirección concreta de Tenta Brewing y las dos
+  explotaciones de garbanzo de Daganzo, por lo que sustituyen sus centroides municipales. Se mantienen
+  como coincidencias legítimas la dirección base de Siguín/Ca' di Mat con unidades diferenciadas,
+  el Parque Soto del Grillo, el edificio de Nuestras Huertas/La Caperuza y los centroides de
+  Bustarviejo que no resolvieron.
+- **Proximidad revisada:** negocios contiguos de la misma categoría, como Trilujo/Guinda Oliva, se
+  conservaron tras confirmar identidades, teléfonos y domicilios distintos. Compartir edificio,
+  polígono o mercado es una alerta de revisión, no una orden de fusión.
 
 ## Historial
 
