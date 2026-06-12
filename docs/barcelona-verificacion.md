@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.667** · verificado **1.133** · parcial **539** · pendiente **995**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **306 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-93** (worklist).
-- **Siguiente: Lote 94** — Calaf (9).
+- Filas: **2.665** · verificado **1.140** · parcial **539** · pendiente **986**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **308 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-94** (worklist).
+- **Siguiente: Lote 95** — Calders (9).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-92 en `main` (2026-06-12).
 
@@ -257,6 +257,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 91 | Sta. Eulàlia de Ronçana | 0 | ✅ | 2026-06-12 | 5 verif + 1 parcial + 4 purgas (Huguet Risquez dup persona↔marca d'El Molí d'en Vendrell por email DAR, con GMaps de perruqueria; Zafra=quimera con grúas + Cinco Monos BCN; Cunill=quimera con terapeuta Gestalt, .webp borrado; Margenat solo consta como president dels regants, sin actividad comercial); El Molí d'en Vendrell verif con datos DAR fusionados; Can Burguès (avellana DOP Garriga; SAT en DAR), Can Galderic (texto corrupto reparado), Estació Vegana (catering per encàrrec→VO no) y Parc de les Olors/El Serrat (seu central; →Aromáticas) verif; Alsina Cusco reubicado a Mollet/Gallecs (era el candidato DAR del lote 78, estaba aquí mal ubicado con web de Can Farell) |
 | 92 | Teià | 0 | ✅ | 2026-06-12 | 6 verif + 1 parcial + 3 purgas (Aurora del Camp SCP dup del proyecto ya integrado en El Masnou —campos entre ambos municipios, DAR Aurora Agrícola SL—; Homs Alsina=quimera de Materials Homs SA y Garro Rovira=quimera de BigMat Garro + cerrajería Vargas, ambos .webp borrados); L'Hort d'en Pau verif (DAR Pau Gutierrez; botiga online + WhatsApp + repartiment a 8 pobles → ecommerce|whatsapp; camps a Alella, botiga a Teià); J. Mónico (IG propio), Marcual (web propia, cert roto), Flors Bertran Mas, Forn Nou (web=FB dup blanqueada) y Pastisseria Biel verif; Nova Plant 2000 parcial (ornamental) |
 | 93 | Bigues i Riells | 0 | ✅ | 2026-06-12 | 3 verif + 2 parcial + 4 purgas (Granja Subirats SL fusionada en Subirats Carns —email gsubirats—; I-Magina Divulgació SL=empresa del Parc de les Olors ya verificado en lote 91; Guiu=Guiu Motors con web que era una URL de búsqueda de Google; Ana Martinez sin rastro y GMaps de otra persona); la lista de productors locals del ajuntament resolvió el lote: Can Duran rescatada (horta+oli+vi; web de un forn de Palafrugell blanqueada, FB propio), El Rull-Can Maspons=granja pionera del huevo eco (1996, →Huevos), Subirats Carns verif; Jaume Roger Garriga RESCATADO de quimera (productor real de verduras en la lista; links de Garriga Grup obres + VO falso limpiados, .webp borrado); Fornet del Fai parcial (GMaps d'Argemí blanqueado y sin más links → no puede ser verif por contrato) |
+| 94 | Calaf | 0 | ✅ | 2026-06-12 | 7 verif + 0 parcial + 2 purgas (2 dups internos: Cunicula Pilar SCP bare → fusionada en Euroconills; Ous de Calaf ↔ Avícola Frauca misma web/IG → fusionadas, .webp renombrado al slug que queda); Xais Adoració reubicada a Sant Martí Sesgueioles (DAR Josep Lloret + ficha diba "Apropant el mercat"; xai i cigrons, →Carne; web xcc.cat ajena y VO ecommerce falso limpiados); La Vedella, Cal Gatells (web=guia municipal blanqueada), Embotits Closa y Forn Fitó (Cal Fidel) verif; Ous de Calaf=parades patentades als mercats de BCN, VO no (web informativa) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
