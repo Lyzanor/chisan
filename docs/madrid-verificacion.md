@@ -22,11 +22,12 @@
 ## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (35 lotes, 39 sub-lotes).
-- **Cerrados: Lotes 1-35. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (40 lotes, 44 sub-lotes).
+- **Cerrados: Lotes 1-40. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
-- Auditoría profunda de `Venta online=sí`: **100/178 filas revisadas** en orden del CSV, diez por lote.
-  El siguiente lote empieza después de `vinos-jeromin-villarejo-de-salvanes`.
+- Auditoría profunda de `Venta online=sí`: **149/177 filas actualmente en `sí` revisadas** en orden
+  del CSV; se han auditado 150 registros y uno pasó a `no comprobado`. El siguiente lote empieza
+  en `bodegas-licinia-morata-de-tajuna`.
 - Fuera de esa auditoría de mantenimiento, reabrir Madrid solo ante nueva evidencia primaria o una
   alta/baja real de productor; no quedan lotes de verificación editorial abiertos.
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
@@ -36,7 +37,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los treinta y cinco lotes: **178 `sí`**, 11 `no comprobado`, 34 `no`.
+  - `Venta online` tras los cuarenta lotes: **177 `sí`**, 12 `no comprobado`, 34 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -230,6 +231,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 33 | Auditoría profunda de `Venta online=sí` (8) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; completa el correo de Las Moradas y sustituye el marketplace de Valleyglesias por su pedido oficial por WhatsApp |
 | 34 | Auditoría profunda de `Venta online=sí` (9) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; actualiza los WhatsApp de pedidos de Vega de San Martín y Alicia Tabernero, y corrige el canal de Vega |
 | 35 | Auditoría profunda de `Venta online=sí` (10) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales, incluidos Oleum y la tienda de Vinos Laguna tras su control de edad; completa el correo de Viña Bardela |
+| 36 | Auditoría profunda de `Venta online=sí` (11) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales: ocho tiendas activas y pedidos directos por teléfono o correo de Granjas Villarreal y Cafés Otero; sin cambios |
+| 37 | Auditoría profunda de `Venta online=sí` (12) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales, incluidos pedidos telefónicos de Jericó y Muñoz Martín; sustituye el dominio de Cero Coffee por su URL canónica |
+| 38 | Auditoría profunda de `Venta online=sí` (13) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma nueve canales, incluidos Enigma y Ecolactis pese a fallos transitorios; Aceites Oro pasa a `no comprobado` por catálogo íntegramente agotado y ficha averiada |
+| 39 | Auditoría profunda de `Venta online=sí` (14) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales: checkout propio en ocho productores y pedidos vigentes por teléfono o correo de Gigorro y Prados Montes; sin cambios |
+| 40 | Auditoría profunda de `Venta online=sí` (15) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales, incluidos pedidos remotos de Huertos Vega, Cuerda Larga y Santo Mamés; actualiza el teléfono publicado para pedidos de El Horno de Ángeles |
 
 ## Historial
 
