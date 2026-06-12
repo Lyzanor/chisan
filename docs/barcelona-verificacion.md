@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.680** · verificado **1.105** · parcial **531** · pendiente **1.044**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **293 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-88** (worklist).
-- **Siguiente: Lote 89** — Pacs del Penedès (10).
+- Filas: **2.679** · verificado **1.112** · parcial **533** · pendiente **1.034**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **294 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-89** (worklist).
+- **Siguiente: Lote 90** — Ripollet (10).
 - Último push: lotes 1-88 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
@@ -251,6 +251,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 86 | Montcada i Reixac | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 2 purgas (Diaz Mañosa=quimera con email de excavaciones y GMaps de concesionario; Agrària Can Viver=entidad DAR de Terrassa/Torrebonica que elabora para Hort del Silenci, sin rastro como viver de Montcada, GMaps de escola); Harmony Coffee Roasters verif (microtostador, VO ecommerce|suscripcion); Leo Boeck verif (frankfurts des de 1927, ecommerce confirmado); Gumi's, Jaime Bou (industrial 40 años) y Vilalta (FB añadido) verif; Gimoka España parcial (oficinas del grupo italiano, shop via caffeteas.es→marketplace); Arroyofrío parcial (SL real; GMaps/coords de Leo Boeck blanqueados); ACEC parcial (mayorista encurtidos 1993) |
 | 87 | Òdena | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 2 purgas (Puig d'Aguilera estaba TRIPLICADA: registro Jorba Cañellas con datos del pueblo de Jorba + 2 filas de marca con el mismo place_id → fusionadas en una, verif con IG propio); Bodegas Puiggròs verif (ecommerce confirmado); Cava Bohigas verif (web JS, VO no comprobado); Mel Família Riba verif (IG propio + DAR; GMaps de suministros RIBA blanqueado); Cal Llobet verif (guía municipal + Alta Anoia, caragols vinyala, recategorizada Caracoles); Cal Llacuna parcial (masía ganadera 400 años, família Torras; recategorizada Carne); Domenech Rabell parcial DAR (GMaps de Domenech Legal blanqueado, tel DAR restaurado); Griselda Planas parcial (CCPAE; GMaps de Servisimó blanqueado) |
 | 88 | Olost | 0 | ✅ | 2026-06-12 | 6 verif + 2 parcial + 2 purgas (Cal Terrisco=casa rural de 1714 del pastor Josep Salvans, sin producto alimentario —el match DAR era de Llorenç del Penedès—; Germans Palomera Casals sin rastro); Kibus verif (kibus.cat ES la botiga online, ecommerce); Betara verif (obrador Perafita + granja St. Boi + maduración/botiga Olost); Reixagó, Cal Serrat (IG propio), Cal Parra (ecommerce confirmado) y Forn Sant Adjutori verif; Garduixeres parcial (granja 50 frisonas, formatge al obrador col·lectiu; GMaps d'El Teixell blanqueado); Impasto di Mamma parcial (web/IG de la Gastroteca blanqueados) |
+| 89 | Pacs del Penedès | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Germans Seguí-García sin rastro, con web/tel/horario del ajuntament y GMaps de Parés Baltà); AT Roca reubicada a Avinyonet del Penedès (instalaciones nuevas; atroca.com parked blanqueada; VO marketplace via Petit Celler); Parés Baltà ecommerce confirmado; Familia Torres VO marketplace (tienda online=petitceller.com); Caves Bundó renombrada (Google Site propio + DAR); Colet, La Xarmada (web añadida; viver de celleristes) y Plana d'en Jan (celler mínimo desde 1895) verif; Cal Tinons parcial (Mercat Arrels, Maria Grau; GMaps de Cal Ton de Vilafranca blanqueado); Olmit Inversions parcial DAR |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
