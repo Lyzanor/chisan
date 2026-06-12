@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.682** · verificado **1.099** · parcial **529** · pendiente **1.054**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **291 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-87** (worklist).
-- **Siguiente: Lote 88** — Olost (10).
-- Último push: lotes 1-83 en `main` (2026-06-12).
+- Filas: **2.680** · verificado **1.105** · parcial **531** · pendiente **1.044**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **293 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-88** (worklist).
+- **Siguiente: Lote 89** — Pacs del Penedès (10).
+- Último push: lotes 1-88 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
 
@@ -250,6 +250,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 85 | Badia del Vallès | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Xarcuteria CCC sin rastro tras 2 búsquedas y GMaps de la Carnisseria Cristina Ramacisa, negocio distinto); municipio sin campo: todo paradas del mercat y obradores urbanos, 0 DAR; Moreno Antolinos (1951, VO marketplace via plataformas de los mercats) y Els Fogons (VO ecommerce|whatsapp, paradas en 4 municipios) con venta online; Aviram Guasch (38 años, web propia), Carnes Serrano (cadena 1959 con granja propia), Xurreria Glòria, Forn Oporto y Més que Pa (IG propio, GMaps de "+ Quin pa!" ajeno blanqueado) verif; Qué hay de comer y Pescados Ana parciales |
 | 86 | Montcada i Reixac | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 2 purgas (Diaz Mañosa=quimera con email de excavaciones y GMaps de concesionario; Agrària Can Viver=entidad DAR de Terrassa/Torrebonica que elabora para Hort del Silenci, sin rastro como viver de Montcada, GMaps de escola); Harmony Coffee Roasters verif (microtostador, VO ecommerce|suscripcion); Leo Boeck verif (frankfurts des de 1927, ecommerce confirmado); Gumi's, Jaime Bou (industrial 40 años) y Vilalta (FB añadido) verif; Gimoka España parcial (oficinas del grupo italiano, shop via caffeteas.es→marketplace); Arroyofrío parcial (SL real; GMaps/coords de Leo Boeck blanqueados); ACEC parcial (mayorista encurtidos 1993) |
 | 87 | Òdena | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 2 purgas (Puig d'Aguilera estaba TRIPLICADA: registro Jorba Cañellas con datos del pueblo de Jorba + 2 filas de marca con el mismo place_id → fusionadas en una, verif con IG propio); Bodegas Puiggròs verif (ecommerce confirmado); Cava Bohigas verif (web JS, VO no comprobado); Mel Família Riba verif (IG propio + DAR; GMaps de suministros RIBA blanqueado); Cal Llobet verif (guía municipal + Alta Anoia, caragols vinyala, recategorizada Caracoles); Cal Llacuna parcial (masía ganadera 400 años, família Torras; recategorizada Carne); Domenech Rabell parcial DAR (GMaps de Domenech Legal blanqueado, tel DAR restaurado); Griselda Planas parcial (CCPAE; GMaps de Servisimó blanqueado) |
+| 88 | Olost | 0 | ✅ | 2026-06-12 | 6 verif + 2 parcial + 2 purgas (Cal Terrisco=casa rural de 1714 del pastor Josep Salvans, sin producto alimentario —el match DAR era de Llorenç del Penedès—; Germans Palomera Casals sin rastro); Kibus verif (kibus.cat ES la botiga online, ecommerce); Betara verif (obrador Perafita + granja St. Boi + maduración/botiga Olost); Reixagó, Cal Serrat (IG propio), Cal Parra (ecommerce confirmado) y Forn Sant Adjutori verif; Garduixeres parcial (granja 50 frisonas, formatge al obrador col·lectiu; GMaps d'El Teixell blanqueado); Impasto di Mamma parcial (web/IG de la Gastroteca blanqueados) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -309,6 +310,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Torrelles de Foix:** Heretat Laverna (celler dels Escofet des de 1342, vins eco DO Penedès, primera anyada 2021, ancestrals.cat; vil·la romana a la finca) — no está en el CSV, candidata clara
 - **Badia del Vallès:** Carnisseria Cristina Ramacisa SL (Mercat de Badia, Av. Via de la Plata 8) — real en directorios; el ajuntament publica la lista de parades con servei a domicili (badiadelvalles.cat)
 - **Terrassa:** Hort del Silenci (hortdelsilenci.com; agricultores y elaboradores eco con almacén en Terrassa; su obrador es la Masia Can Viver de Torrebonica = Agrària Can Viver SL del DAR, fila quimera purgada de Montcada) — no está en el CSV
+- **Lluçanès:** portales llucanesataula.cat y turisme.llucanes.cat/tasta/productors-elaboradors — fuentes útiles para toda la comarca; Formatges de Lluçà (Lluçà) y el obrador col·lectiu/formatgeria del Lluçanès (Anna Puig, BCN Agrària) como pistas
 
 ## Para otros agentes / a vigilar
 
