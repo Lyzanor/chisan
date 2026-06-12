@@ -22,11 +22,11 @@
 ## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (30 lotes, 34 sub-lotes).
-- **Cerrados: Lotes 1-30. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (35 lotes, 39 sub-lotes).
+- **Cerrados: Lotes 1-35. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
-- Auditoría profunda de `Venta online=sí`: **50/178 filas revisadas** en orden del CSV, diez por lote.
-  El siguiente lote empieza después de `lacteas-del-jarama-grupo-albe-fuente-el-saz-de-jarama`.
+- Auditoría profunda de `Venta online=sí`: **100/178 filas revisadas** en orden del CSV, diez por lote.
+  El siguiente lote empieza después de `vinos-jeromin-villarejo-de-salvanes`.
 - Fuera de esa auditoría de mantenimiento, reabrir Madrid solo ante nueva evidencia primaria o una
   alta/baja real de productor; no quedan lotes de verificación editorial abiertos.
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
@@ -36,7 +36,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los treinta lotes: **178 `sí`**, 11 `no comprobado`, 34 `no`.
+  - `Venta online` tras los treinta y cinco lotes: **178 `sí`**, 11 `no comprobado`, 34 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -225,6 +225,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 28 | Auditoría profunda de `Venta online=sí` (3) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; actualiza traslado, contacto, horario editorial, Maps y coordenadas de Kaicao y conserva Yam Yam ante un timeout transitorio |
 | 29 | Auditoría profunda de `Venta online=sí` (4) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma checkout o canal remoto vigente en las 10 filas, incluida la tienda actual de Capaz; sin cambios editoriales necesarios |
 | 30 | Auditoría profunda de `Venta online=sí` (5) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; renueva teléfonos de Jesús Díaz y La Cabezuela y sustituye dos redirecciones de Facebook por sus perfiles canónicos |
+| 31 | Auditoría profunda de `Venta online=sí` (6) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales, incluidos marketplace de Don Picón y pedidos remotos de Peña Rubia y Carmelitanas; sin cambios editoriales |
+| 32 | Auditoría profunda de `Venta online=sí` (7) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales y sustituye la redirección antigua de Facebook de Cuarto Lote por su perfil canónico vigente |
+| 33 | Auditoría profunda de `Venta online=sí` (8) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; completa el correo de Las Moradas y sustituye el marketplace de Valleyglesias por su pedido oficial por WhatsApp |
+| 34 | Auditoría profunda de `Venta online=sí` (9) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; actualiza los WhatsApp de pedidos de Vega de San Martín y Alicia Tabernero, y corrige el canal de Vega |
+| 35 | Auditoría profunda de `Venta online=sí` (10) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales, incluidos Oleum y la tienda de Vinos Laguna tras su control de edad; completa el correo de Viña Bardela |
 
 ## Historial
 
