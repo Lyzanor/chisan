@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.692** · verificado **1.072** · parcial **514** · pendiente **1.106**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **281 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-82** (worklist).
-- **Siguiente: Lote 83** — Torrelles de Llobregat (11).
-- Último push: lotes 1-80 en `main` (2026-06-12).
+- Filas: **2.688** · verificado **1.076** · parcial **517** · pendiente **1.095**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **285 purgadas**).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-83** (worklist).
+- **Siguiente: Lote 84** — Ullastrell (11).
+- Último push: lotes 1-83 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
 
@@ -245,6 +245,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 80 | Sta. Margarida i els Monjos | 0 | ✅ | 2026-06-12 | 5 verif + 4 parcial + 2 purgas (Llobet Guix dup registre↔marca de Mel Castell de Penyafort; Oliest sin rastro y con GMaps de D'Oliciós, marca ajena); Mel Penyafort verif con web/FB/IG propios (Xavier Llobet, des de 1979); Mallofré=Vins Mallofré (Masia La Sanabra, 1898, DO Penedès eco; VO marketplace via Clubdevins/Plataforma Ecològica); Soler Guillen=Cal Vicari (serveis vitícoles, web propia); Agro-Freixedes=Can Amadeu (oli, DAR); Forn Valls (La Ràpita), Forn Esplugas i 4 Barres verif; Espitlles parcial (gastroteca, raça penedesenca); GMaps ajenos blanqueados (punt d'info turística, assessoria, castell-monument, Freixedas Vinícola) |
 | 81 | Seva | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Molins Sala dup registre↔marca de Pollastre del Montseny; Casasas Matabacas dup persona↔marca de Mel Llàgrimes de Ra con links de la botiga del club UE Sant Andreu y VO ecommerce falso; Molins Ferrer="pagès i renda cotxes" en la guia municipal, sin producto, productos inventados); Muns Criville→Casanova de Figarolas (vedella Angus, web propia, VO tel; llevaba links de Las Muns empanadas BCN, .webp borrado); Pollastre del Montseny verif con web propia (VO ecommerce|whatsapp; GMaps del Pollastre de pagès de Centelles ajeno blanqueado); Viubé=Granjas Ecológicas SLU (ecommerce confirmado); ERRE de Vic y Fleca Pujadas verif; Can Bullit parcial (SL en liquidació, obrador des de 1959); Cabrum Les Tres Torres parcial DAR (GMaps d'assessoria blanqueado) |
 | 82 | Torrelles de Foix | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Civill Miret dup persona↔marca de Can Cruset por email DAR; Canals Marimon fusionado en Cal Xullat —misma dirección/web/tel, su oli DAR anotado en la fila—; Escofet Romagosa quimera con links de Esco Fresc de St. Joan Despí); Formatge Bages=Làctics Foix (granja 80 vaques, botiga, IG; iogurt Km0 a Bonpreu); Can Cruset verif (agroturisme + oli eco DAR, recategorizado Aceite); Cal Xullat verif (cansaladeria+estanc+queviures, embotits propis); Can Pardo verif con web propia; Josep Masachs verif pero VO sí/ecommerce falso corregido a no (web sin carrito); Figueras Comas=Penedès +500 parcial (links de Figueras Legal otra vez, .webp borrado); Vives Marti=Ca la Sisca (préssecs, no Bodega) |
+| 83 | Torrelles de Llobregat | 0 | ✅ | 2026-06-12 | 4 verif + 3 parcial + 4 purgas (3 dups registre↔marca: Molner↔Forneret mismo tel/web, García Molina↔Cireres Bernabé Santi y fila duplicada de Fruits Montmany con .webp de campo genérico borrado; Font Vendrell era el registro de Can Balasch contaminado con datos de Torrelles de FOIX); Cireres Bernabé Santi ecommerce (botiga thecommerce.es); Forneret verif (forn eco des de 1918); Can Balasch verif con web canbalasch.cat (IG del restaurant Can Balasch de Baix —negocio ajeno— blanqueado); Ous de Can Reinal parcial (granja eco en guías de turisme); GMaps ajenos blanqueados (Ruta Can Roig, Botiga Ca La Maria, Riera Arquitectes) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
