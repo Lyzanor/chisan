@@ -22,11 +22,13 @@
 ## Estado actual (2026-06-12)
 
 - Filas: **223** · verificado **219** · parcial **4** · pendiente **0**.
-- Modo: **CERRADO** tras verificación zonal, cierre residual y auditorías transversales (25 lotes, 29 sub-lotes).
-- **Cerrados: Lotes 1-25. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
+- Modo: **MANTENIMIENTO TRANSVERSAL** tras verificación zonal y cierre residual (30 lotes, 34 sub-lotes).
+- **Cerrados: Lotes 1-30. No quedan filas pendientes; 4 registros permanecen `parcial` por techo
   de evidencia y no deben promoverse sin una nueva fuente primaria propia.**
-- Reabrir Madrid solo ante nueva evidencia primaria, alta/baja real de productor o mantenimiento
-  periódico de enlaces; no quedan lotes editoriales abiertos.
+- Auditoría profunda de `Venta online=sí`: **50/178 filas revisadas** en orden del CSV, diez por lote.
+  El siguiente lote empieza después de `lacteas-del-jarama-grupo-albe-fuente-el-saz-de-jarama`.
+- Fuera de esa auditoría de mantenimiento, reabrir Madrid solo ante nueva evidencia primaria o una
+  alta/baja real de productor; no quedan lotes de verificación editorial abiertos.
 - Herencia (por qué el estado es así; detalle en `git log -- data/csv/madrid/madrid.csv`):
   - El `parcial` masivo (177) viene de la pasada Google Places 2026-06-05 (`e52d661`): significa
     "existe en Places", **no** verificación web. Coords 100% validadas (geo-check ≤15 km): no las
@@ -34,7 +36,7 @@
   - Los 50 `pendiente` vienen de la integración de candidatos: 0 teléfonos, 0 Instagram, webs tipo
     `https://www.<nombre>.com` plausibles pero **sin comprobar** (los docs de candidatos mezclaban
     reales con inventados). Máximo riesgo.
-  - `Venta online` tras los veinticinco lotes: **178 `sí`**, 11 `no comprobado`, 34 `no`.
+  - `Venta online` tras los treinta lotes: **178 `sí`**, 11 `no comprobado`, 34 `no`.
 
 ## Procedimiento (cada lote)
 
@@ -218,6 +220,11 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Zonas según el script del
 | 23 | Auditoría profunda de `Venta online=no` (3/5) | 11 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma encargos telefónicos de Pastelería Jericó y ecommerce propio de Bernabeleva; descarta como evidencia tiendas vacías, catálogos sin checkout y pedidos históricos |
 | 24 | Auditoría profunda de `Venta online=no` (4/5) | 10 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma pedidos por correo de Saavedra y Prados Montes, más marketplaces activos para Miel San Galindo y Suerte Ampanera; conserva 6 sin canal actual |
 | 25 | Auditoría profunda de `Venta online=no` (5/5) | 10 | 0 | 0 | 1 | ✅ | 2026-06-12 | Confirma pedido directo de Santo Mamés y Miel de Verdad, marketplace de Licinia y ecommerce de Novo Mundo; conserva 6 y cierra Madrid en 178 `sí`, 11 `no comprobado` y 34 `no` |
+| 26 | Auditoría profunda de `Venta online=sí` (1) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; actualiza los correos publicados por El Regajal y La Magdalena de Proust y corrige el dominio del correo de Gabarrera |
+| 27 | Auditoría profunda de `Venta online=sí` (2) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales y añade el correo oficial de Cristo del Humilladero; conserva Marlon tras comprobar que un fallo puntual de conexión no prueba una baja |
+| 28 | Auditoría profunda de `Venta online=sí` (3) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; actualiza traslado, contacto, horario editorial, Maps y coordenadas de Kaicao y conserva Yam Yam ante un timeout transitorio |
+| 29 | Auditoría profunda de `Venta online=sí` (4) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma checkout o canal remoto vigente en las 10 filas, incluida la tienda actual de Capaz; sin cambios editoriales necesarios |
+| 30 | Auditoría profunda de `Venta online=sí` (5) | 10 | 0 | 10 | 1 | ✅ | 2026-06-12 | Confirma los 10 canales; renueva teléfonos de Jesús Díaz y La Cabezuela y sustituye dos redirecciones de Facebook por sus perfiles canónicos |
 
 ## Historial
 
