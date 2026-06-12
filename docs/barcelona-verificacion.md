@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.687** · verificado **1.082** · parcial **521** · pendiente **1.084**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **286 purgadas**).
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-84** (worklist).
-- **Siguiente: Lote 85** — Badia del Vallès (10).
+- Filas: **2.686** · verificado **1.089** · parcial **523** · pendiente **1.074**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **287 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-85** (worklist).
+- **Siguiente: Lote 86** — Montcada i Reixac (10).
 - Último push: lotes 1-83 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
@@ -247,6 +247,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 82 | Torrelles de Foix | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 3 purgas (Civill Miret dup persona↔marca de Can Cruset por email DAR; Canals Marimon fusionado en Cal Xullat —misma dirección/web/tel, su oli DAR anotado en la fila—; Escofet Romagosa quimera con links de Esco Fresc de St. Joan Despí); Formatge Bages=Làctics Foix (granja 80 vaques, botiga, IG; iogurt Km0 a Bonpreu); Can Cruset verif (agroturisme + oli eco DAR, recategorizado Aceite); Cal Xullat verif (cansaladeria+estanc+queviures, embotits propis); Can Pardo verif con web propia; Josep Masachs verif pero VO sí/ecommerce falso corregido a no (web sin carrito); Figueras Comas=Penedès +500 parcial (links de Figueras Legal otra vez, .webp borrado); Vives Marti=Ca la Sisca (préssecs, no Bodega) |
 | 83 | Torrelles de Llobregat | 0 | ✅ | 2026-06-12 | 4 verif + 3 parcial + 4 purgas (3 dups registre↔marca: Molner↔Forneret mismo tel/web, García Molina↔Cireres Bernabé Santi y fila duplicada de Fruits Montmany con .webp de campo genérico borrado; Font Vendrell era el registro de Can Balasch contaminado con datos de Torrelles de FOIX); Cireres Bernabé Santi ecommerce (botiga thecommerce.es); Forneret verif (forn eco des de 1918); Can Balasch verif con web canbalasch.cat (IG del restaurant Can Balasch de Baix —negocio ajeno— blanqueado); Ous de Can Reinal parcial (granja eco en guías de turisme); GMaps ajenos blanqueados (Ruta Can Roig, Botiga Ca La Maria, Riera Arquitectes) |
 | 84 | Ullastrell | 0 | ✅ | 2026-06-12 | 6 verif + 4 parcial + 1 purga (Amat Mercader dup registre↔marca de Cal Masvalls: el tel DAR es el de la parada del Mercat de la Independència); Can Morral del Molí verif (web cellercanmorral.cat 403=bot-block; vi Martialis + oli becaruda; VO marketplace via aguita.club); Els Campaners verif (CSA con carrito → ecommerce|suscripcion; DAR Elena Simó); La Botiga d'Ullastrell (coop 1939, molí en marxa) y Mató d'U/Granja Núria verif — grupo MIM detrás de ambas (MIM Foods/MIM Cheese); Avícola Lleonart y Forn Josep Puig verif; Fruites Xavi/Can Rodó y Cal Masvalls parciales (parades en Terrassa, web mim-foods y GMaps ajenos blanqueados; VO sí/ecommerce falsos corregidos); El Jardí de Collbarra reubicada a Sant Llorenç Savall (DAR Thomas Andrieu, horta no mel) |
+| 85 | Badia del Vallès | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Xarcuteria CCC sin rastro tras 2 búsquedas y GMaps de la Carnisseria Cristina Ramacisa, negocio distinto); municipio sin campo: todo paradas del mercat y obradores urbanos, 0 DAR; Moreno Antolinos (1951, VO marketplace via plataformas de los mercats) y Els Fogons (VO ecommerce|whatsapp, paradas en 4 municipios) con venta online; Aviram Guasch (38 años, web propia), Carnes Serrano (cadena 1959 con granja propia), Xurreria Glòria, Forn Oporto y Més que Pa (IG propio, GMaps de "+ Quin pa!" ajeno blanqueado) verif; Qué hay de comer y Pescados Ana parciales |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -304,6 +305,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
 - **Seva:** Blansac 2015 SL (marca Formatge Bauma, formatges de llet crua; DAR 617386155) · guia d'empreses de l'ajuntament (seva.cat) — fuente útil
 - **Torrelles de Foix:** Heretat Laverna (celler dels Escofet des de 1342, vins eco DO Penedès, primera anyada 2021, ancestrals.cat; vil·la romana a la finca) — no está en el CSV, candidata clara
+- **Badia del Vallès:** Carnisseria Cristina Ramacisa SL (Mercat de Badia, Av. Via de la Plata 8) — real en directorios; el ajuntament publica la lista de parades con servei a domicili (badiadelvalles.cat)
 
 ## Para otros agentes / a vigilar
 
