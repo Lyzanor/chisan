@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.678** · verificado **1.119** · parcial **535** · pendiente **1.024**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **295 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-90** (worklist).
-- **Siguiente: Lote 91** — Santa Eulàlia de Ronçana (10).
+- Filas: **2.674** · verificado **1.124** · parcial **536** · pendiente **1.014**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **299 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-91** (worklist).
+- **Siguiente: Lote 92** — Teià (10).
 - Último push: lotes 1-88 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
@@ -253,6 +253,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 88 | Olost | 0 | ✅ | 2026-06-12 | 6 verif + 2 parcial + 2 purgas (Cal Terrisco=casa rural de 1714 del pastor Josep Salvans, sin producto alimentario —el match DAR era de Llorenç del Penedès—; Germans Palomera Casals sin rastro); Kibus verif (kibus.cat ES la botiga online, ecommerce); Betara verif (obrador Perafita + granja St. Boi + maduración/botiga Olost); Reixagó, Cal Serrat (IG propio), Cal Parra (ecommerce confirmado) y Forn Sant Adjutori verif; Garduixeres parcial (granja 50 frisonas, formatge al obrador col·lectiu; GMaps d'El Teixell blanqueado); Impasto di Mamma parcial (web/IG de la Gastroteca blanqueados) |
 | 89 | Pacs del Penedès | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Germans Seguí-García sin rastro, con web/tel/horario del ajuntament y GMaps de Parés Baltà); AT Roca reubicada a Avinyonet del Penedès (instalaciones nuevas; atroca.com parked blanqueada; VO marketplace via Petit Celler); Parés Baltà ecommerce confirmado; Familia Torres VO marketplace (tienda online=petitceller.com); Caves Bundó renombrada (Google Site propio + DAR); Colet, La Xarmada (web añadida; viver de celleristes) y Plana d'en Jan (celler mínimo desde 1895) verif; Cal Tinons parcial (Mercat Arrels, Maria Grau; GMaps de Cal Ton de Vilafranca blanqueado); Olmit Inversions parcial DAR |
 | 90 | Ripollet | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Mireia Cardona sin rastro); Cal Pastera reubicada a Sant Vicenç dels Horts (horta eco CCPAE con cistelles, ni Ripollet ni Lácteos; blog WP + IG propios); Apassiona't VO ecommerce|whatsapp (tienda online de pedidos confirmada); La Iaia Artesana verif con web de Pekatum (Cerdanyola, ajena) blanqueada; Xurreria Marina, Forn Call-2000, Planas y Obrador Navarro verif; Gurri Taverna parcial (bar con cerveza de marca propia; web birrapedia e IG personal blanqueados); Ripodul SL parcial (web caída) |
+| 91 | Sta. Eulàlia de Ronçana | 0 | ✅ | 2026-06-12 | 5 verif + 1 parcial + 4 purgas (Huguet Risquez dup persona↔marca d'El Molí d'en Vendrell por email DAR, con GMaps de perruqueria; Zafra=quimera con grúas + Cinco Monos BCN; Cunill=quimera con terapeuta Gestalt, .webp borrado; Margenat solo consta como president dels regants, sin actividad comercial); El Molí d'en Vendrell verif con datos DAR fusionados; Can Burguès (avellana DOP Garriga; SAT en DAR), Can Galderic (texto corrupto reparado), Estació Vegana (catering per encàrrec→VO no) y Parc de les Olors/El Serrat (seu central; →Aromáticas) verif; Alsina Cusco reubicado a Mollet/Gallecs (era el candidato DAR del lote 78, estaba aquí mal ubicado con web de Can Farell) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -305,7 +306,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Cubelles:** Poch Lleó, Ciril (oli/horta; DAR 636808594)
 - **Font-rubí:** Aranda González, Agustín (oli/pebrot; DAR 639333948) · Celler Cal Costas SL (DAR 654127597) · Ràfols Petit, Jordi (Magna Hortum, horta; DAR 625810165) · Ros Marina Viticultors (Mas Uberni; DAR 686501262)
 - **Malgrat de Mar:** Xaubet SCP (horta; DAR 629006100) · Josep Maynou y Bona Verdura (directorio Espai Agrari Baixa Tordera, espaiagraribaixatordera.cat — fuente útil para todo el Alt Maresme/Baixa Tordera)
-- **Mollet del Vallès (Gallecs):** Alsina Cusco, Pere Joan (sègol/civada/horta; DAR 679333948) · Butjosa i Boada Gallecs SCP (marca Ous de Gallecs / "Ou de Gallecs", Laura Blasco; DAR 652303577) · Hereus Can Jornet SL (Can Jornet, farines; DAR 689509161) · Agrobotiga de Gallecs (punt de venda col·lectiu dels pagesos, espairuralgallecs.cat — web http-only, https con cert roto)
+- **Mollet del Vallès (Gallecs):** ~~Alsina Cusco~~ (integrado en lote 91, reubicado desde Sta. Eulàlia) · Butjosa i Boada Gallecs SCP (marca Ous de Gallecs / "Ou de Gallecs", Laura Blasco; DAR 652303577) · Hereus Can Jornet SL (Can Jornet, farines; DAR 689509161) · Agrobotiga de Gallecs (punt de venda col·lectiu dels pagesos, espairuralgallecs.cat — web http-only, https con cert roto)
+- **Sta. Eulàlia de Ronçana:** Monràs Passeta, Alan (Mels Can Monràs Nou; DAR 618094396)
 - **Papiol:** grup Rebrot Pagès (6 pagesos eco del Papiol; Can Font ya integrado, identificar el resto) · catàleg de productors del Parc Natural de Collserola (parcnaturalcollserola.cat) y programa de la Festa de la Cirera — fuentes útiles. Figueras Garriga Ramon (DAR 606701734) ya cubierto por la fila Cal Figueras (hermanos)
 - **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
 - **Seva:** Blansac 2015 SL (marca Formatge Bauma, formatges de llet crua; DAR 617386155) · guia d'empreses de l'ajuntament (seva.cat) — fuente útil
