@@ -17,10 +17,10 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.684** · verificado **1.094** · parcial **526** · pendiente **1.064**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **289 purgadas**). Verificadas > pendientes desde el lote 85.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-86** (worklist).
-- **Siguiente: Lote 87** — Òdena (10).
+- Filas: **2.682** · verificado **1.099** · parcial **529** · pendiente **1.054**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **291 purgadas**). Verificadas > pendientes desde el lote 85.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-87** (worklist).
+- **Siguiente: Lote 88** — Olost (10).
 - Último push: lotes 1-83 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
@@ -249,6 +249,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 84 | Ullastrell | 0 | ✅ | 2026-06-12 | 6 verif + 4 parcial + 1 purga (Amat Mercader dup registre↔marca de Cal Masvalls: el tel DAR es el de la parada del Mercat de la Independència); Can Morral del Molí verif (web cellercanmorral.cat 403=bot-block; vi Martialis + oli becaruda; VO marketplace via aguita.club); Els Campaners verif (CSA con carrito → ecommerce|suscripcion; DAR Elena Simó); La Botiga d'Ullastrell (coop 1939, molí en marxa) y Mató d'U/Granja Núria verif — grupo MIM detrás de ambas (MIM Foods/MIM Cheese); Avícola Lleonart y Forn Josep Puig verif; Fruites Xavi/Can Rodó y Cal Masvalls parciales (parades en Terrassa, web mim-foods y GMaps ajenos blanqueados; VO sí/ecommerce falsos corregidos); El Jardí de Collbarra reubicada a Sant Llorenç Savall (DAR Thomas Andrieu, horta no mel) |
 | 85 | Badia del Vallès | 0 | ✅ | 2026-06-12 | 7 verif + 2 parcial + 1 purga (Xarcuteria CCC sin rastro tras 2 búsquedas y GMaps de la Carnisseria Cristina Ramacisa, negocio distinto); municipio sin campo: todo paradas del mercat y obradores urbanos, 0 DAR; Moreno Antolinos (1951, VO marketplace via plataformas de los mercats) y Els Fogons (VO ecommerce|whatsapp, paradas en 4 municipios) con venta online; Aviram Guasch (38 años, web propia), Carnes Serrano (cadena 1959 con granja propia), Xurreria Glòria, Forn Oporto y Més que Pa (IG propio, GMaps de "+ Quin pa!" ajeno blanqueado) verif; Qué hay de comer y Pescados Ana parciales |
 | 86 | Montcada i Reixac | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 2 purgas (Diaz Mañosa=quimera con email de excavaciones y GMaps de concesionario; Agrària Can Viver=entidad DAR de Terrassa/Torrebonica que elabora para Hort del Silenci, sin rastro como viver de Montcada, GMaps de escola); Harmony Coffee Roasters verif (microtostador, VO ecommerce|suscripcion); Leo Boeck verif (frankfurts des de 1927, ecommerce confirmado); Gumi's, Jaime Bou (industrial 40 años) y Vilalta (FB añadido) verif; Gimoka España parcial (oficinas del grupo italiano, shop via caffeteas.es→marketplace); Arroyofrío parcial (SL real; GMaps/coords de Leo Boeck blanqueados); ACEC parcial (mayorista encurtidos 1993) |
+| 87 | Òdena | 0 | ✅ | 2026-06-12 | 5 verif + 3 parcial + 2 purgas (Puig d'Aguilera estaba TRIPLICADA: registro Jorba Cañellas con datos del pueblo de Jorba + 2 filas de marca con el mismo place_id → fusionadas en una, verif con IG propio); Bodegas Puiggròs verif (ecommerce confirmado); Cava Bohigas verif (web JS, VO no comprobado); Mel Família Riba verif (IG propio + DAR; GMaps de suministros RIBA blanqueado); Cal Llobet verif (guía municipal + Alta Anoia, caragols vinyala, recategorizada Caracoles); Cal Llacuna parcial (masía ganadera 400 años, família Torras; recategorizada Carne); Domenech Rabell parcial DAR (GMaps de Domenech Legal blanqueado, tel DAR restaurado); Griselda Planas parcial (CCPAE; GMaps de Servisimó blanqueado) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
