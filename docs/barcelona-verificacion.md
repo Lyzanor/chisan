@@ -17,11 +17,11 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.657** · verificado **1.162** · parcial **545** · pendiente **950**
+- Filas: **2.657** · verificado **1.170** · parcial **546** · pendiente **941**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **316 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-98** (worklist).
-- **Siguiente: Lote 99** — l'Hospitalet de Llobregat (9).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-99** (worklist).
+- **Siguiente: Lote 100** — Montornès del Vallès (9).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-96 en `main` (2026-06-12).
 
@@ -263,6 +263,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 96 | Castellterçol | 0 | ✅ | 2026-06-12 | 7 verif + 1 parcial + 1 purga (Dirk Madriles Helm=duplicado vacío de La Ginebreda: la masia La Ginebreda ES la explotación de Dirk Madriles, ramader eco d'oví/cabrum, no "mel i espelmes" como decía la fila → renombrada La Ginebreda (Dirk Madriles), →Carne, GMaps de "Tolls de la Ginebreda" landmark blanqueado); Granja El Rocall SL=marca Granja La Bassola (DAR, vedella, →Carne, municipi Barcelona→Castellterçol); Naturaliment Suquipà=plats vegetals rostits, NO pa → recategorizada Comida preparada; Cafè Fantini (GMaps de Cafès del Bages d'altre municipi blanqueado), Cal Bou (DAR de Sant Boi falso, real per diba), Miró (adreça Pabordia 12) verif; Mas Brugarolas parcial (agroturisme + ramaderia CCPAE); Nutrition&Santé/Natursoy parcial (planta industrial, coords de BCN→centroide) |
 | 97 | Cervelló | 0 | ✅ | 2026-06-12 | 4 verif + 3 parcial + 2 purgas (EA Especialidades Aromáticas SL=aromas B2B para la industria y EMSA Esencias Moles SA=fragancias/perfumes desde 1953, ambas mal fichadas como "Flores/plantas ornamentales", fuera de ámbito km0 → purgadas + 2 .webp); Carns Fresques Font, Rostisseria Cervelló, Fleca El Llonguet y Pastisseria Permanyer verif (comercios de poble, Carrer Major); Cafès Balanzó parcial (torrador absorbido por Cafès Candelas, web redirige; FB/IG de candelas blanqueados); Carns Cervelló=Carnisseria i Xarcuteria Cervelló parcial (GMaps "La Carnívora" ajeno blanqueado, sin enlace propio); Peixateria La Platjeta parcial (punto de venta) |
 | 98 | Esplugues de Llobregat | 0 | ✅ | 2026-06-13 | 8 verif + 0 parcial + 1 purga (Bofill de la Fuente=quimera del estudio de arquitectura Ricardo Bofill: web bofill.com, IG bofillarquitectura y GMaps "Bofill Taller d'Arquitectura"); urbano, todo obradores de barrio; VO online: Cansaladeria Ortiz (parada del Mercat Can Vidalet con carrito + locker en jocomproaesplugues.cat → marketplace), Forn Can Rosell y Puntosmile (obrador sin gluten certificado, pedidos online → ecommerce); MILA, Forn el Molí, Forn Tinyol, Pastisseria Fíguls y Pastisseria Sant Jordi (match DAR de Avícola Sant Jordi de Sant Jordi Desvalls=falso) verif |
+| 99 | l'Hospitalet de Llobregat | 0 | ✅ | 2026-06-13 | 8 verif + 1 parcial + 0 purgas; urbano, sin DAR. Animal Coffee (tostador propio, ecommerce confirmado), Tibidabo Brewing (cervesera+taproom, ecommerce) y Panarra (obrador massa mare, ecommerce) con venta online; Xurreria L'Àvia, Grenya, Dtast, Aviram Cristina Martín (Mercat del Centre; IG del mercat blanqueado) y Obrador Riera Blanca (coords del Vallès→centroide) verif; Xarcuteries Bosch (1863, Mestres Artesans) parcial: su web solo lista puntos en Barcelona y Montgat, presencia en el Mercat Santa Eulàlia a confirmar (GMaps genérico del mercat blanqueado) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
