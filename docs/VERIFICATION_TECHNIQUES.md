@@ -1,109 +1,236 @@
-# Técnicas de verificación y enriquecimiento (CSVs de provincia)
+# Técnicas de verificación de catálogos provinciales
 
-Notas transversales destiladas de varias pasadas por provincias. Amplían el *Discovery protocol* de
-`AGENTS.md`. **Principio: peso a la verificación real y a la solidez del CSV** — no te fíes de lo que ya
-pone la fila; muchos campos vienen auto-rellenados y mal. Ejemplo trabajado: `docs/barcelona-verificacion.md`.
+Manual operativo para revisar `data/csv/[comunidad]/[provincia].csv`. `AGENTS.md` y
+`docs/CSV_CONTRACT.md` contienen el contrato; aquí se define el criterio editorial.
 
-## Los enlaces autogenerados NO son fiables — verifica, no confíes
+La fuente de verdad es el CSV. Un ledger provincial, si existe, solo guarda fuentes locales,
+excepciones y progreso.
 
-- La columna `Google Maps` lleva un `query_place_id` que con frecuencia apunta a **otro negocio**
-  (visto: "POMA ARQUITECTURA" para un productor de aceite; un audiólogo / pediatra / una carretera en
-  filas de Madrid — ~25 de 211). Igual con `web`/`Instagram`/`Facebook` auto-rellenados (vistos apuntando
-  a una gestoría, la Diputació, una joyería, la página *privacy* de Facebook, un dominio de apuestas).
-- Antes de dar por bueno un enlace, confirma que es de **ese** productor y municipio. Si apunta a una
-  entidad ajena, **blanquéalo** (no dejes desinformación). Pero: un *fetch* que falla por SSL/http/timeout
-  ≠ sitio muerto — confirma por búsqueda antes de borrar; solo blanquea si la web **carga** y muestra otro
-  negocio (o dominio caducado/parked).
+## Cómo usar este documento
 
-## Deduplicar sin que los acentos rompan el match
+Lee siempre **Reglas duras**, **Flujo mínimo** y **Decisión por fila**. Consulta las demás secciones
+solo cuando el lote incluya venta online, duplicados, ubicación, imágenes o cierre provincial.
 
-- `grep -i` **no pliega acentos** (`garcia` ≠ `García`) → se pierden duplicados ya presentes. Normaliza
-  (NFD + quitar marcas) antes de comparar.
-- Deduplica por **dominio web normalizado** (sin `https`/`www`) **+ teléfono en dígitos** (sin `+34`), no
-  por nombre. Un grupo puede esconder dos marcas; dos productores pueden compartir teléfono/finca sin ser
-  el mismo.
+El agente puede elegir herramientas, fuentes, orden y tamaño de lote. Debe emplear el método menos
+costoso que produzca evidencia suficiente y detener la investigación cuando la decisión ya sea sólida.
+Solo las reglas duras, los valores del contrato y la validación son obligatorios; prioridades y
+técnicas son heurísticas que el agente puede adaptar al caso.
+
+## Reglas duras
+
+1. **No confíes en los datos heredados.** Web, redes, Maps y venta pueden estar autocompletados o mal.
+2. **No inventes.** Vacío es mejor que falso.
+3. **Elimina enlaces ajenos.** Un HTTP 200 de otra entidad es desinformación.
+4. **Un fallo técnico no prueba una baja.** Contrasta timeout, TLS, DNS o bloqueo por otra vía.
+5. **No purgues con evidencia débil.** Exige duplicidad, fuera de alcance/provincia, baja clara o
+   ausencia suficientemente contrastada.
+6. **Las afirmaciones dinámicas requieren evidencia actual.** Especialmente actividad y venta.
+7. **No inventes precisión geográfica.** Un centroide honesto es preferible a un punto conjeturado.
+8. **Mantén estable el `slug`.** Solo desaparece al purgar o fusionar justificadamente.
+
+## Flujo mínimo
+
+1. **Protege el trabajo existente**
+
+   ```bash
+   git status --short
+   npx pnpm list:province [provincia]   # acótalo en provincias grandes (ver Disciplina de contexto)
+   ```
+
+   Evita abrir en paralelo una provincia ya activa. Para una fila concreta, localízala con `rg` y lee
+   solo su ventana; no cargues el CSV completo.
+
+2. **Define un lote útil**
+
+   Agrupa por municipio, zona, categoría, fuente o riesgo. No hay tamaño obligatorio: usa el menor lote
+   que permita compartir contexto sin mezclar decisiones.
+
+3. **Prioriza**
+
+   - duplicados, enlaces ajenos, fuera de provincia y no productores;
+   - pendientes con fuente propia fácil de comprobar;
+   - `Venta online=sí` no demostrada;
+   - filas de registro o sin presencia propia;
+   - residuales `parcial` y `no comprobado`.
+
+4. **Investiga hasta evidencia suficiente**
+
+   Empieza por la fuente más directa disponible. La mayoría de filas se cierran con una sola fuente
+   primaria que confirme identidad, actividad y municipio: ése es el coste esperado por fila. Amplía
+   —más búsquedas, redes o registros— solo ante contradicción, riesgo de purga o una afirmación
+   dinámica (actividad o venta) aún sin demostrar. No recopiles datos opcionales que no cambien la
+   decisión ni el encargo.
+
+5. **Edita quirúrgicamente**
+
+   Usa un parser CSV, preserva LF y toca solo los `slug` del lote. Al purgar, elimina su imagen
+   referenciada y actualiza la nota de candidatos afectada.
+
+6. **Valida**
+
+   ```bash
+   npx pnpm check:csv:changed
+   git diff --check
+   git diff -- data/csv/[comunidad]/[provincia].csv
+   ```
+
+   Al cerrar trabajo de datos, ejecuta `npx pnpm verify:data`.
+
+## Evidencia suficiente
+
+La fuente adecuada depende de la afirmación:
+
+| Afirmación | Evidencia preferida | No basta por sí solo |
+|---|---|---|
+| Identidad y actividad | Web/perfil oficial o ficha individual fiable | Snippet, búsqueda genérica o dominio plausible |
+| Existencia registral | Registro oficial o consejo regulador con match de entidad | Coincidencia parcial de nombre |
+| Ubicación | Dirección oficial o ficha individual coherente | Centroide o URL de búsqueda |
+| Contacto | Canal publicado por la propia entidad | Directorio sin fecha |
+| Venta online | Pedido remoto vigente y utilizable | Web, catálogo, precios o texto legal |
+
+Los registros pueden estar desactualizados. Confirman como máximo lo que publican: no prueban actividad
+actual, elaboración para consumidor ni venta remota. No aparecer en un registro voluntario tampoco
+prueba inexistencia.
+
+Para hacer match de entidad combina nombre o razón social con municipio y, cuando existan, marca,
+teléfono, correo o dirección. No prolongues la búsqueda si una fuente primaria ya resuelve esos puntos
+sin contradicciones.
+
+## Decisión por fila
+
+Revisa únicamente lo necesario para responder:
+
+1. ¿Existe y está activa?
+2. ¿Produce o elabora, en vez de limitarse a revender o servir?
+3. ¿Corresponde a esta provincia y municipio?
+4. ¿Los enlaces y datos que se conservan pertenecen a esa entidad?
+5. ¿La venta remota está correctamente clasificada?
+
+| Resultado | Acción |
+|---|---|
+| Identidad, actividad productora, municipio y datos principales contrastados | `verificado` |
+| Existe, pero solo hay registro/fuente secundaria o queda una duda material | `parcial` |
+| No se ha podido revisar suficientemente | `pendiente` |
+| Duplicado, no productor, otra provincia, entidad inexistente o baja definitiva probada | Purgar |
+
+`parcial` es un cierre válido cuando existe un techo real de evidencia. No promociones para vaciar
+la cola. El contrato acepta enlaces externos válidos, pero una URL
+`maps/search/?api=1&query=...` no demuestra editorialmente la identidad.
+
+### Campos
+
+- Corrige `nombre`, `municipio`, categoría, productos y descripción solo con evidencia.
+- `direccion`, teléfono y correo deben estar publicados y pertenecer a la entidad.
+- Usa categorías válidas y teléfono E.164.
+- No mantengas horarios que remitan a una web, red o teléfono inexistente.
+- Web y redes deben ser oficiales; un artículo, guía o ayuntamiento no es la web del productor.
+- Una tienda, restaurante, distribuidor o explotación registrada no entra por defecto: debe producir
+  o elaborar dentro del alcance del catálogo.
+
+## Venta online
+
+Audítala aparte de la identidad:
+
+- `sí`: existe hoy un pedido remoto concreto y utilizable.
+- `no`: se ha revisado y solo hay venta física o información sin aceptación de pedidos.
+- `no comprobado`: la evidencia es insuficiente o el canal puede estar fallando temporalmente.
+
+`Canal de venta` solo se rellena con `sí`:
+
+- `ecommerce`: carrito y checkout funcional;
+- `whatsapp`, `email` o `telefono`: la entidad acepta pedidos explícitamente por ese medio;
+- `suscripcion`: cesta o entrega recurrente activa;
+- `marketplace`: ficha vigente y comprable en un tercero.
+
+Combina canales con `|`. No prueban venta remota una web, catálogo, precios, tienda vacía, texto legal,
+publicación histórica, tienda física ni venta exclusiva de visitas o merchandising.
+
+Revisa todos los `sí`. En cierres profundos revisa también `no` y `no comprobado`, porque pueden ocultar
+pedidos por contacto directo. Un fallo temporal justifica `no comprobado`, no necesariamente `no`.
+
+## Deduplicación
+
+Normaliza acentos, mayúsculas y separadores. Compara nombre/marca, dominio, teléfono, correo, dirección,
+coordenadas, `place_id` y razón social.
+
+Coincidir en varios identificadores suele señalar una entidad o dos marcas del mismo operador. Conserva
+el `slug` más estable y fusiona solo si representan la misma unidad productiva.
+
+No fusiones automáticamente cooperativa y socio, secciones productivas distintas, negocios contiguos
+o productores que comparten finca, mercado o centroide. `grep -i` no pliega acentos y no sirve como
+único control.
+
+## Ubicación
+
+- Contrasta `municipio`, `direccion`, `lat` y `lon` conjuntamente.
+- Si geocodificas, limita a España, respeta el servicio usado y valida contra el centroide municipal.
+- Hasta 15 km es la banda esperada; 15–100 km requiere revisión; más de 100 km bloquea el contrato.
+- Si el centroide corresponde a un homónimo territorial, corrige
+  `data/reference/municipios-overrides.json`; no muevas productores correctos.
+- Si una dirección no resuelve, conserva el centroide. Coordenadas iguales o próximas son una alerta,
+  no una orden de fusionar.
+
+## Imágenes
+
+Revísalas después de estabilizar identidad y `slug`. Prefiere logo o imagotipo oficial.
+
+`npx pnpm enrich:images --provincia [provincia]` sirve para explorar. Usa `--apply --slug [slug]` solo
+tras inspeccionar el candidato. No aceptes banners, iconos, ayudas públicas, imágenes ajenas ni el
+primer resultado por puntuación.
+
+## Disciplina de contexto
+
+- No leas todo el CSV para editar unas filas.
+- El roster `list:province` de una provincia grande (Barcelona, Madrid) también llena el contexto:
+  acótalo con `--categoria`/`--pendientes` o `rg`, no lo vuelques entero.
+- No releas este documento completo en cada lote; conserva solo las secciones aplicables.
+- Consulta `docs/CSV_CONTRACT.md` solo para dudas estructurales o valores permitidos.
+- Busca una entidad por nombre + municipio; añade categoría, teléfono o dominio solo si hay homónimos.
+- Reutiliza una fuente común para todo el lote sin repetir su explicación por fila.
+- No abras todas las redes si una fuente primaria ya resuelve la identidad.
+- No persigas campos opcionales vacíos salvo que el encargo sea enriquecimiento.
+- Registra excepciones y decisiones difíciles; no narres comprobaciones rutinarias.
+- Usa scripts efímeros en `/tmp` para tareas mecánicas; no los conviertas en una capa permanente.
+
+Estas son pautas de eficiencia, no límites de investigación. Amplía el trabajo cuando haya
+contradicciones, riesgo de purga, duplicidad o una afirmación dinámica dudosa.
+
+## Trazabilidad
+
+El mensaje de commit o ledger, si existe, debe permitir reanudar sin copiar la investigación:
+
+- lote y fecha;
+- verificadas, parciales y purgas;
+- fusiones o correcciones relevantes;
+- residuales y motivo.
+
+No enumeres cada fuente rutinaria. Documenta evidencia fina solo para purgas, fusiones, dudas
+residuales y excepciones que otro agente podría interpretar de forma distinta.
 
 ## Pasada de consistencia antes de cerrar una provincia
 
-Esta pasada es distinta de verificar fuentes fila a fila. Busca contradicciones internas y errores
-transversales que sobreviven aunque cada productor se haya revisado por separado.
+Esta pasada es provincial, no necesaria tras cada lote:
 
-1. **Estructura física y contrato**
-   - Confirma cabecera canónica de 20 columnas, `slug` único, LF, UTF-8/NFC, ausencia de espacios
-     exteriores y valores cerrados válidos.
-   - Itera con `npx pnpm check:csv:changed`; el cierre de una provincia de datos es
-     `npx pnpm verify:data`.
-2. **Concilia los recuentos**
-   - Recalcula filas, estados de `verificacion`, valores de `Venta online`, canales e imágenes.
-   - Compara esos totales con el ledger provincial. Un recuento antiguo suele delatar una baja,
-     duplicado o cambio de estado no documentado.
-3. **Cruza campos dependientes**
-   - `Venta online=sí` exige `Canal de venta`; cualquier otro estado exige canal vacío.
-   - `ecommerce` necesita `web`; `email`, `correo`; `telefono`/`whatsapp`, `telefono`.
-   - Un `horario` como `Consultar web`, `Consultar Instagram` o `Consultar teléfono` solo es válido
-     si el campo referido existe. Si no hay fuente pública, deja el horario vacío.
-   - `verificado` necesita evidencia de identidad real. Una URL autogenerada
-     `maps/search/?api=1&query=...` facilita la búsqueda, pero no demuestra por sí sola que la ficha
-     pertenezca al productor.
-4. **Deduplica por capas**
-   - Compara nombre sin acentos, teléfono, correo, dominio, dirección, coordenadas y `place_id`.
-   - Misma dirección + teléfono + correo suele ser una sola entidad o varias marcas del mismo
-     operador: conserva un `slug` estable y reúne las marcas si representan la misma unidad productiva.
-   - No fusiones automáticamente cooperativa y socio, secciones productivas distintas, negocios en
-     naves contiguas ni productores que comparten mercado, finca o edificio. Exige evidencia de
-     operador común.
-5. **Revisa colisiones geográficas**
-   - Lista coordenadas idénticas y pares muy próximos (por ejemplo, ≤100 m). Son señal de triaje,
-     no error automático: pueden ser un centroide de municipio, un polígono, un mercado o una finca
-     compartida.
-   - Si hay dirección concreta y Nominatim la resuelve dentro de 15 km del centroide municipal,
-     sustituye el centroide por esa geocodificación. Si no resuelve, conserva el centroide honesto;
-     no inventes precisión.
-6. **Audita semántica y enlaces**
-   - Recorre webs/redes por identidad, no solo por respuesta HTTP. Un 200 de otro negocio es peor que
-     un campo vacío; un timeout o TLS fallido no basta para borrar.
-   - Para `Venta online=sí`, confirma hoy el mecanismo real de pedido. Catálogo, menú, tienda vacía,
-     marketplace histórico o texto legal no prueban compra vigente.
-7. **Cierra con trazabilidad**
-   - Documenta duplicados fusionados y coincidencias conservadas, incluidas las razones.
-   - Registra los fallos transitorios que no causaron bajas, las coordenadas de respaldo mantenidas y
-     cualquier techo de evidencia que deje filas en `parcial` o `no comprobado`.
-   - Revisa `git diff --check`, el diff completo y el estado de Git antes del commit.
+1. Concilia filas, estados, venta, canales e imágenes.
+2. Comprueba dependencias: `sí`/canal; `ecommerce`/web; `email`/correo;
+   `telefono|whatsapp`/teléfono; horarios/campo referido.
+3. Repite deduplicación y revisa colisiones geográficas.
+4. Audita identidad de enlaces y todos los `Venta online=sí`.
+5. Revisa residuales `parcial` y `no comprobado`.
+6. Revisa diff, LF, imágenes y ejecuta `npx pnpm verify:data`.
 
-## Registros catalanes
+Una provincia está cerrada cuando no quedan `pendiente`, cada residual tiene una razón conocida y las
+afirmaciones dinámicas se han comprobado. Después entra en mantenimiento.
 
-### DAR — venda de proximitat (productores de venta directa)
-- Dataset Socrata legible por máquina `xmyy-7xqi`:
-  `curl "https://analisi.transparenciacatalunya.cat/resource/xmyy-7xqi.csv?$limit=5000"`.
-  Columnas: `nom_productor` (`COGNOM1 COGNOM2, NOM`), `num_acreditacio`, `nif`, `adreca`, `municipi`,
-  `comarca`, `productes`, `tel_fon`, `correu`, `marca_comercial`, etc.
-- Úsalo para confirmar que una fila de registro es un productor real. Exige **match de entidad exacto**
-  (apellidos **y** `municipi`), no solo apellido. Match → como mucho `parcial` (registro ≠ venta online
-  viva); aprovecha para corregir `tel`/`correu`/`productes`/`marca`. **Caveat:** solo se publican quienes
-  consintieron, así que "no constar" no prueba inexistencia.
+## Documento provincial opcional
 
-### REGA — explotacions ramaderes (NO son productores vendibles)
-- Algunas provincias se rellenaron con explotaciones ganaderas del REGA. Señal: la descripció contiene
-  *"inscrita en el Registre d'explotacions ramaderes"*; suelen ser `Lácteos y quesos`, `pendiente`, **sin
-  contacto**, pero **con coordenadas → salen en el mapa como si vendieran**.
-- Constar en REGA prueba que la granja existe, no que venda al público (triaje en Girona: 0/12 con venta
-  directa verificable; la mayoría entregan a cooperativas). Trátalas como **candidatas a poda**; conserva
-  solo las que demuestren obrador + venta directa. Al rescatar una, confirma que su web/red es del mismo
-  negocio y municipio (trampa de homónimos).
+Crea `docs/[provincia]-verificacion.md` solo si el CSV y este manual no bastan para reanudar. Incluye:
 
-## Rellenar `lat`/`lon` faltantes (Nominatim)
+- snapshot y worklist;
+- fuentes locales y sus límites;
+- excepciones territoriales;
+- residuales justificados;
+- referencia al historial Git.
 
-- Geocodifica `direccion + municipio + ", España"` con Nominatim (rate-limit ~1,1 s, `countrycodes=es`,
-  User-Agent propio). **Valida** cada pin contra el centroide del municipio en
-  `data/reference/municipios.json` (haversine): ≤15 km → usa el geocode; >15 km o falla → **fallback al
-  centroide** (ubicación honesta a nivel localidad); ni uno ni otro → déjalo en blanco.
-- No hay `GOOGLE_MAPS_API_KEY` en el proyecto: `place_id`/coords no se autogeneran (por eso los place_id
-  heredados son poco fiables, ver arriba).
-
-## Disciplina al editar CSV grandes
-
-- Todos los CSV son **LF** (norma global desde 2026-06-10, forzada por `.gitattributes`): edítalos
-  preservando el fin de línea de cada fila (Python con `newline=""`), modifica solo las líneas de tu
-  lote y deja el resto byte-idéntico. Si aparece un `\r`, algo lo ha reintroducido — no lo commitees.
-  Valida con `git diff --numstat` que el nº de líneas tocadas es el esperado.
-- Script efímero en `/tmp`, **no commitear** (AGENTS prohíbe generadores como fuente de verdad).
+No copies este manual ni conviertas el ledger en otra base de datos. Las pistas no aceptadas siguen en
+`docs/candidates/[provincia].md`.
