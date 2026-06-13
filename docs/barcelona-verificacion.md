@@ -17,13 +17,13 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.657** · verificado **1.170** · parcial **546** · pendiente **941**
+- Filas: **2.657** · verificado **1.178** · parcial **547** · pendiente **932**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **316 purgadas**). Verificadas > pendientes desde el lote 85;
-  pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-99** (worklist).
-- **Siguiente: Lote 100** — Montornès del Vallès (9).
+  pendientes por debajo de 1.000 desde el lote 95. **Hito: lote 100 cerrado.**
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-100** (worklist).
+- **Siguiente: Lote 101** — Sant Andreu de la Barca (9).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Último push: lotes 1-96 en `main` (2026-06-12).
+- Último push: lotes 1-100 en `main` (2026-06-13).
 
 ## Procedimiento (cada lote)
 
@@ -264,6 +264,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 97 | Cervelló | 0 | ✅ | 2026-06-12 | 4 verif + 3 parcial + 2 purgas (EA Especialidades Aromáticas SL=aromas B2B para la industria y EMSA Esencias Moles SA=fragancias/perfumes desde 1953, ambas mal fichadas como "Flores/plantas ornamentales", fuera de ámbito km0 → purgadas + 2 .webp); Carns Fresques Font, Rostisseria Cervelló, Fleca El Llonguet y Pastisseria Permanyer verif (comercios de poble, Carrer Major); Cafès Balanzó parcial (torrador absorbido por Cafès Candelas, web redirige; FB/IG de candelas blanqueados); Carns Cervelló=Carnisseria i Xarcuteria Cervelló parcial (GMaps "La Carnívora" ajeno blanqueado, sin enlace propio); Peixateria La Platjeta parcial (punto de venta) |
 | 98 | Esplugues de Llobregat | 0 | ✅ | 2026-06-13 | 8 verif + 0 parcial + 1 purga (Bofill de la Fuente=quimera del estudio de arquitectura Ricardo Bofill: web bofill.com, IG bofillarquitectura y GMaps "Bofill Taller d'Arquitectura"); urbano, todo obradores de barrio; VO online: Cansaladeria Ortiz (parada del Mercat Can Vidalet con carrito + locker en jocomproaesplugues.cat → marketplace), Forn Can Rosell y Puntosmile (obrador sin gluten certificado, pedidos online → ecommerce); MILA, Forn el Molí, Forn Tinyol, Pastisseria Fíguls y Pastisseria Sant Jordi (match DAR de Avícola Sant Jordi de Sant Jordi Desvalls=falso) verif |
 | 99 | l'Hospitalet de Llobregat | 0 | ✅ | 2026-06-13 | 8 verif + 1 parcial + 0 purgas; urbano, sin DAR. Animal Coffee (tostador propio, ecommerce confirmado), Tibidabo Brewing (cervesera+taproom, ecommerce) y Panarra (obrador massa mare, ecommerce) con venta online; Xurreria L'Àvia, Grenya, Dtast, Aviram Cristina Martín (Mercat del Centre; IG del mercat blanqueado) y Obrador Riera Blanca (coords del Vallès→centroide) verif; Xarcuteries Bosch (1863, Mestres Artesans) parcial: su web solo lista puntos en Barcelona y Montgat, presencia en el Mercat Santa Eulàlia a confirmar (GMaps genérico del mercat blanqueado) |
+| 100 | Montornès del Vallès | 0 | ✅ | 2026-06-13 | 8 verif + 1 parcial + 0 purgas (Esquís Nicolau parcial: productor DAR de civada con GMaps de la tienda de esquí "IGLUSHOP" de BCN —falso match por la palabra "esquís"— blanqueado y coords corregidas); El Rebost de la Carn y Pastisseria Viñallonga (1974, Mestre Artesà) ecommerce confirmado; Mongetes del Ganxet Puig rescatada (família >50 anys, web mongetesdelganxetpuig.com añadida); Belcan (bollería industrial IFS), Cal Forner (Mestre Artesà 2021), Forn la Bóbila, Pastisseria Elena y Xurreria Ca la Maria verif |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -320,6 +321,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Sta. Eulàlia de Ronçana:** Monràs Passeta, Alan (Mels Can Monràs Nou; DAR 618094396)
 - **Castellterçol:** Esteva Monforte, Enric (horta/col-i-flor/tomàquet; DAR 608925270) · Vall-llosana SCP (vedella; DAR 666545870) · Granja La Bassola SAT (paralela a El Rocall SL ya integrada; DAR 629134275, comprovar si és la mateixa entitat abans d'afegir)
 - **Cervelló:** Soldevilla Alonso, Jordi (cireres; DAR 627418908)
+- **Montornès del Vallès:** Vallès Oriental = zona DOP de mongeta del ganxet (Montornès, les Franqueses, la Roca); coop Agrària Vallès (agrariavalles.coop) como fuente
 - **Bigues i Riells del Fai:** de la lista de productors de l'ajuntament, no integrados: Hortícola Vila (tomàquets/calçots a domicili; elflix@elflix.com, 687083451) · Can Quimet (mongetes i calçots) · Chiva Valls (cereals). Can Sapera y Embotits Guinó (Lliçà de Vall) ya están en el CSV
 - **Papiol:** grup Rebrot Pagès (6 pagesos eco del Papiol; Can Font ya integrado, identificar el resto) · catàleg de productors del Parc Natural de Collserola (parcnaturalcollserola.cat) y programa de la Festa de la Cirera — fuentes útiles. Figueras Garriga Ramon (DAR 606701734) ya cubierto por la fila Cal Figueras (hermanos)
 - **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
