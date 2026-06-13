@@ -17,13 +17,13 @@
 
 ## Estado actual (2026-06-12)
 
-- Filas: **2.661** · verificado **1.144** · parcial **540** · pendiente **977**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **312 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.660** · verificado **1.150** · parcial **542** · pendiente **968**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **313 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-95** (worklist).
-- **Siguiente: Lote 96** — Castellterçol (9).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-96** (worklist).
+- **Siguiente: Lote 97** — Cervelló (9).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Último push: lotes 1-95 en `main` (2026-06-12).
+- Último push: lotes 1-96 en `main` (2026-06-12).
 
 ## Procedimiento (cada lote)
 
@@ -260,6 +260,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 93 | Bigues i Riells | 0 | ✅ | 2026-06-12 | 3 verif + 2 parcial + 4 purgas (Granja Subirats SL fusionada en Subirats Carns —email gsubirats—; I-Magina Divulgació SL=empresa del Parc de les Olors ya verificado en lote 91; Guiu=Guiu Motors con web que era una URL de búsqueda de Google; Ana Martinez sin rastro y GMaps de otra persona); la lista de productors locals del ajuntament resolvió el lote: Can Duran rescatada (horta+oli+vi; web de un forn de Palafrugell blanqueada, FB propio), El Rull-Can Maspons=granja pionera del huevo eco (1996, →Huevos), Subirats Carns verif; Jaume Roger Garriga RESCATADO de quimera (productor real de verduras en la lista; links de Garriga Grup obres + VO falso limpiados, .webp borrado); Fornet del Fai parcial (GMaps d'Argemí blanqueado y sin más links → no puede ser verif por contrato) |
 | 94 | Calaf | 0 | ✅ | 2026-06-12 | 7 verif + 0 parcial + 2 purgas (2 dups internos: Cunicula Pilar SCP bare → fusionada en Euroconills; Ous de Calaf ↔ Avícola Frauca misma web/IG → fusionadas, .webp renombrado al slug que queda); Xais Adoració reubicada a Sant Martí Sesgueioles (DAR Josep Lloret + ficha diba "Apropant el mercat"; xai i cigrons, →Carne; web xcc.cat ajena y VO ecommerce falso limpiados); La Vedella, Cal Gatells (web=guia municipal blanqueada), Embotits Closa y Forn Fitó (Cal Fidel) verif; Ous de Calaf=parades patentades als mercats de BCN, VO no (web informativa) |
 | 95 | Calders | 0 | ✅ | 2026-06-12 | 4 verif + 1 parcial + 4 purgas (Serra Coma dup registre↔marca de Vedella de Trullàs; Hostal Calders=restaurant del Grup Llobet; Picanyol=quimera con estudio de fotografía; Productes El Canadell SL=sin rastro de carquinyolis, la masia es restaurant y elcanadell.cat ahora es una làctia de Agrofresc en Sta. M. d'Oló — 3 .webp borrados); Mas Reixac rescatada (vedella eco CCPAE, FB propio + catàleg del Moianès + carnisseria l'Hostal); Trullàs verif (GMaps de la Vedella del Pedraforca ajena blanqueado); Nous El Soler ecommerce confirmado (2.000 noguers eco, email con typo corregido); Caterí whatsapp|email; Ruaix=Delícia de Mel parcial DAR (GMaps de Cicles Ruaix blanqueado, coords al centroide) |
+| 96 | Castellterçol | 0 | ✅ | 2026-06-12 | 7 verif + 1 parcial + 1 purga (Dirk Madriles Helm=duplicado vacío de La Ginebreda: la masia La Ginebreda ES la explotación de Dirk Madriles, ramader eco d'oví/cabrum, no "mel i espelmes" como decía la fila → renombrada La Ginebreda (Dirk Madriles), →Carne, GMaps de "Tolls de la Ginebreda" landmark blanqueado); Granja El Rocall SL=marca Granja La Bassola (DAR, vedella, →Carne, municipi Barcelona→Castellterçol); Naturaliment Suquipà=plats vegetals rostits, NO pa → recategorizada Comida preparada; Cafè Fantini (GMaps de Cafès del Bages d'altre municipi blanqueado), Cal Bou (DAR de Sant Boi falso, real per diba), Miró (adreça Pabordia 12) verif; Mas Brugarolas parcial (agroturisme + ramaderia CCPAE); Nutrition&Santé/Natursoy parcial (planta industrial, coords de BCN→centroide) |
 | — | _resto (312 municipios)_ | 1.338 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
@@ -314,6 +315,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Malgrat de Mar:** Xaubet SCP (horta; DAR 629006100) · Josep Maynou y Bona Verdura (directorio Espai Agrari Baixa Tordera, espaiagraribaixatordera.cat — fuente útil para todo el Alt Maresme/Baixa Tordera)
 - **Mollet del Vallès (Gallecs):** ~~Alsina Cusco~~ (integrado en lote 91, reubicado desde Sta. Eulàlia) · Butjosa i Boada Gallecs SCP (marca Ous de Gallecs / "Ou de Gallecs", Laura Blasco; DAR 652303577) · Hereus Can Jornet SL (Can Jornet, farines; DAR 689509161) · Agrobotiga de Gallecs (punt de venda col·lectiu dels pagesos, espairuralgallecs.cat — web http-only, https con cert roto)
 - **Sta. Eulàlia de Ronçana:** Monràs Passeta, Alan (Mels Can Monràs Nou; DAR 618094396)
+- **Castellterçol:** Esteva Monforte, Enric (horta/col-i-flor/tomàquet; DAR 608925270) · Vall-llosana SCP (vedella; DAR 666545870) · Granja La Bassola SAT (paralela a El Rocall SL ya integrada; DAR 629134275, comprovar si és la mateixa entitat abans d'afegir)
 - **Bigues i Riells del Fai:** de la lista de productors de l'ajuntament, no integrados: Hortícola Vila (tomàquets/calçots a domicili; elflix@elflix.com, 687083451) · Can Quimet (mongetes i calçots) · Chiva Valls (cereals). Can Sapera y Embotits Guinó (Lliçà de Vall) ya están en el CSV
 - **Papiol:** grup Rebrot Pagès (6 pagesos eco del Papiol; Can Font ya integrado, identificar el resto) · catàleg de productors del Parc Natural de Collserola (parcnaturalcollserola.cat) y programa de la Festa de la Cirera — fuentes útiles. Figueras Garriga Ramon (DAR 606701734) ya cubierto por la fila Cal Figueras (hermanos)
 - **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
