@@ -17,12 +17,12 @@
 
 ## Estado actual (2026-06-14)
 
-- Filas: **2.648** · verificado **1.202** · parcial **568** · pendiente **878**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **325 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.646** · verificado **1.209** · parcial **568** · pendiente **869**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **327 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-106** (worklist).
-- **Siguiente: Lote 107** — Tiana (9); después grupo a 8 (Santa Susanna, Cabrils, Calella,
-  Calldetenes, Canet de Mar, Canovelles). Recomputar al llegar.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-107** (worklist).
+- **Siguiente: Lote 108** — grupo a 8 (Cabrils, Calella, Canet de Mar, Santa Susanna,
+  Calldetenes, Canovelles, Cardona, Casserres, Gelida). Recomputar al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -272,7 +272,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 104 | Sant Just Desvern | 0 | ✅ | 2026-06-14 | 5 verif + 4 parcial + 0 purgas; urbà, 5 filas són parades del Mercat Municipal (mercat.santjust.net només directori, sense venda online). C&V Rostisserie (tienda.cvrostisserie.com ecommerce), BS Chocolat=Barrachina Salas Chocolat SL (2021, web bschocolat.com afegida, tienda-online → ecommerce), Paula Franco (2 locals SJD+Castelldefels, paulafrancopastry.com amb carret/PayPal → ecommerce; web afegida), Leopoldo's i La Llar del Bacallà (IG propi; coords de BCN 2.169→centroide) verif; Cansaladeria Cardona, Cansaladeria Fosalva, Carns Mari (parades sense enllaç propi) i Horticultura Isart SL (DAR, planta ornamental) parcials |
 | 105 | Santa Maria d'Oló | 0 | ✅ | 2026-06-14 | 3 verif + 2 parcial + 4 purgas (Moianès rural); 2 dups: Vives Tarres Marc=el formatger de La Cabreria (DAR marca LA CABRERIA; portava web ajena mastorigues.com, .webp borrat) i Bardissa Júlia Casanellas=mateix DAR/email/tel que Bardissa Mas Berengueres (coords a 42.04, .webp borrat); + 2 purgas sense rastre ni DAR: Montcabrer SCP (només masia patrimonial, zero contacte) i Aymerich Oliveda Roser (no és cap celler conegut d'Oló, email d'altre nom "Codina Portet"). La Cabreria (web lacabreria.com+IG, ECONNREFUSED viu), Celler Sant Miquel d'Oló (IG+manresaturisme, web santmiquelolo.com afegida) i Vins Colltor (masia 1710 DO Pla de Bages, web vinoscolltor.com afegida, VO marketplace via wonderfulwines/todowine) verif; Bardissa (formatges de cabra) i Mas Rojans SCP (vedella+embotits) parcials DAR |
 | 106 | Sentmenat | 0 | ✅ | 2026-06-14 | 3 verif + 6 parcial + 0 purgas (Vallès Occidental, masies). Cal Vivet (carnisseria amb elaboració pròpia, calvivet.cat amb botiga online beta + comandes per email → ecommerce|email, tel/email afegits), Cal Miquel (el seu IG és cal_miquel_xarcuteria→recat de Lácteos a Charcutería; el match DAR era Mel Cal Miqueló de Masquefa, fals) i RocadelCor=Roca del Cor de Can Padró (granja de cabres eco, formatges/mató/iogurt en vidre retornable, IG propi) verif; Costa Cenoz (DAR cigró/mongeta; web ajena costaecotextil.com blanquejada), Crusellas Cuyas (DAR vedella+embotits), Scharlau Agrícola SL (DAR oli+horta →Aceite), Rusiñol Vidal (DAR horta, El Sindicat), Garcia Santacruz (DAR oli →Aceite) i Can Fruitós (masia activa amb telèfon, fruita i verdura, sense DAR ni venda online) parcials |
-| — | _resto (306 municipios)_ | 1.284 | ⬜ | | recomputar al llegar |
+| 107 | Tiana | 0 | ✅ | 2026-06-14 | 7 verif + 0 parcial + 2 purgas (DO Alella). Purgas: Restaurant Can Roca (és un restaurant, no productor; restaurantcanroca.com segrestada=spam adult) i Mirgin SCP (zero dades, sense rastre ni DAR). Celler Quim Batlle (marca Foranell, vinosdealella.com=web pròpia amb carret → ecommerce), Parxet (cava DO Alella; cert error ≠ morta → VO no comprobado), Els Horts de l'Alegria (Carlos Mulero, IG; DAR el registra a Cabrera de Mar però adreça/coords a Tiana; web 404 → VO no comprobado), Melmelària (Cristina Martorell, melmelades artesanes, venudes online via La Botiga de la iaia/vegeital → marketplace), Ca l'Elias (pagès, IG caleliastiana afegit), Forn Aixelà i Forn Germans Solà (IG propi) verif |
+| — | _resto (305 municipios)_ | 1.275 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
