@@ -7,8 +7,8 @@ Ledger mínimo para reanudar la revisión profunda de
 
 - Inicio: 2026-06-14.
 - Snapshot inicial: 243 filas; 0 `verificado`, 139 `parcial`, 104 `pendiente`.
-- Revisadas: 16.
-- Resultado acumulado: 16 `verificado`, 0 purgas, 0 fusiones.
+- Revisadas: 24.
+- Resultado acumulado: 23 `verificado`, 1 `parcial`, 0 purgas, 0 fusiones.
 
 ## Lote 1: conservas de L'Escala y arroz de Pals
 
@@ -92,3 +92,41 @@ condiciones de compra y mecanismos de pedido.
 - <https://mooma.cat/condicions-generals-de-compra/>
 - <https://perelada.com/>
 - <https://chocolatestorras.com/>
+
+## Lote 3: bodegas del Alt Empordà
+
+Revisado el 2026-06-14 con las webs oficiales, las tiendas de vino y, para
+Espelt, el consejo regulador y un marketplace vigente.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `celler-la-vinyeta-mollet-de-peralada`, `celler-mas-vida-cistella`, `cooperativa-agricola-de-garriguella-garriguella`, `vinyes-d-olivardots-capmany`, `vinyes-dels-aspres-cantallops` |
+| `verificado`, sin venta online de producto demostrada | `celler-d-en-guilla-rabos`, `celler-mas-llunes-garriguella` |
+| `parcial`, venta por `marketplace` | `celler-espelt-vilajuiga` |
+
+### Excepciones y residuales
+
+- `celler-espelt-vilajuiga`: el dominio oficial redirige correctamente de
+  `www` al dominio raíz, pero el servidor no respondió en varios intentos. La
+  identidad y ubicación quedan respaldadas por el Consejo Regulador de la DO
+  Empordà y el directorio público de industria; se confirma venta actual en
+  marketplace, pero la fila queda `parcial` hasta revisar de nuevo la web.
+- `celler-mas-llunes-garriguella`: la web usa WooCommerce y muestra carrito,
+  pero los vinos no tienen precio ni formulario de compra. El checkout está
+  destinado a reservas y experiencias, por lo que se conserva `Venta
+  online=no` para producto.
+- `celler-d-en-guilla-rabos`: la web publica una tienda física y su horario,
+  sin mecanismo vigente de pedido remoto. El `sí` heredado se corrige a `no`.
+
+### Fuentes principales
+
+- <https://www.cellersdenguilla.com/el-celler/>
+- <https://www.cellersdenguilla.com/el-celler/la-botiga/>
+- <https://www.doemporda.cat/es/las-bodegas/l/92-espelt-viticultors.html>
+- <https://www.vinissimus.com/es/bodega/espelt-viticultors-de-l-emporda/>
+- <https://www.lavinyeta.es/ca/els-productes>
+- <https://masllunes.es/vins/>
+- <https://www.bodegasmasvida.com/es/tienda/vida/>
+- <https://www.cooperativagarriguella.com/ca/botiga-online/>
+- <https://olivardots.com/botiga-online/>
+- <https://botiga.vinyesdelsaspres.cat/es/tienda.html>
