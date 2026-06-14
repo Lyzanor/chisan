@@ -17,12 +17,12 @@
 
 ## Estado actual (2026-06-14)
 
-- Filas: **2.646** · verificado **1.215** · parcial **570** · pendiente **861**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **327 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.643** · verificado **1.219** · parcial **571** · pendiente **853**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **330 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-108** (worklist).
-- **Siguiente: Lote 109** — grupo a 8 (Calella, Canet de Mar, Santa Susanna,
-  Calldetenes, Canovelles, Cardona, Casserres, Gelida). Recomputar al llegar.
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-109** (worklist).
+- **Siguiente: Lote 110** — grupo a 8 (Canet de Mar, Santa Susanna, Calldetenes,
+  Canovelles, Cardona, Casserres, Gelida). Recomputar al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -274,7 +274,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 106 | Sentmenat | 0 | ✅ | 2026-06-14 | 3 verif + 6 parcial + 0 purgas (Vallès Occidental, masies). Cal Vivet (carnisseria amb elaboració pròpia, calvivet.cat amb botiga online beta + comandes per email → ecommerce|email, tel/email afegits), Cal Miquel (el seu IG és cal_miquel_xarcuteria→recat de Lácteos a Charcutería; el match DAR era Mel Cal Miqueló de Masquefa, fals) i RocadelCor=Roca del Cor de Can Padró (granja de cabres eco, formatges/mató/iogurt en vidre retornable, IG propi) verif; Costa Cenoz (DAR cigró/mongeta; web ajena costaecotextil.com blanquejada), Crusellas Cuyas (DAR vedella+embotits), Scharlau Agrícola SL (DAR oli+horta →Aceite), Rusiñol Vidal (DAR horta, El Sindicat), Garcia Santacruz (DAR oli →Aceite) i Can Fruitós (masia activa amb telèfon, fruita i verdura, sense DAR ni venda online) parcials |
 | 107 | Tiana | 0 | ✅ | 2026-06-14 | 7 verif + 0 parcial + 2 purgas (DO Alella). Purgas: Restaurant Can Roca (és un restaurant, no productor; restaurantcanroca.com segrestada=spam adult) i Mirgin SCP (zero dades, sense rastre ni DAR). Celler Quim Batlle (marca Foranell, vinosdealella.com=web pròpia amb carret → ecommerce), Parxet (cava DO Alella; cert error ≠ morta → VO no comprobado), Els Horts de l'Alegria (Carlos Mulero, IG; DAR el registra a Cabrera de Mar però adreça/coords a Tiana; web 404 → VO no comprobado), Melmelària (Cristina Martorell, melmelades artesanes, venudes online via La Botiga de la iaia/vegeital → marketplace), Ca l'Elias (pagès, IG caleliastiana afegit), Forn Aixelà i Forn Germans Solà (IG propi) verif |
 | 108 | Cabrils | 0 | ✅ | 2026-06-14 | 6 verif + 2 parcial + 0 purgas (Maresme). Celler Testuan (testuan.com botiga online → ecommerce), Mel de les Vinyes/Apicultura Maresme (Pere Nubiola, RIAAC; botiga+WhatsApp → ecommerce|whatsapp), Dunam Kimchi (kimchi artesà, comandes per email/tel → email|telefono), Can Sellés (embotits propis des de 1973, només física → VO no), Casa Barba (ECONNREFUSED≠morta; IG+dominio, web casabarba.cat afegida, VO no comprobado) i Forn Vias "Ca la Rosi" (FB+IG fornviascalarosi afegit, guia cabrils.cat) verif; Cultivos Las Resclosas SL (marca Mónplant) i Sola Blanchart Eduard, vivers ornamentals DAR, parcials |
-| — | _resto (304 municipios)_ | 1.267 | ⬜ | | recomputar al llegar |
+| 109 | Calella | 0 | ✅ | 2026-06-14 | 3 verif + 2 parcial + 3 purgas + 1 reubicada (Maresme, maduixes). Purgas: Marquez Horticultors (dup de Agrogust —mateixes coords/negoci, "Laris/Larys"=Joan Màrquez Tarrés), Miss Coqueta Gourmet (restaurant sense gluten, no productor) i L'Hort de Can Talleda (sense rastre, coords a 40km). Can Vives (carnisseria des de 1840, obrador propi, botiga online+WhatsApp → ecommerce|whatsapp), Agrogust=marca de Joan Màrquez "Larys" (agrogust.com botiga → ecommerce) i UMAC=Unió de Maduixaires de Calella SAT 1321 (des de 1977, web uniomaduxairescalella.com afegida → VO no majorista) verif; Pla Jubany Joan (DAR fava →Fruta y verdura) parcial; **Ginesta Verges Joaquim reubicada a Montcada i Reixac** (adreça/web ginestamontcada.cat de Montcada, fruits secs; coords corregides al centroide, verif) |
+| — | _resto (303 municipios)_ | 1.259 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
