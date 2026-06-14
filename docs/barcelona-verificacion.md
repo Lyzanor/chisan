@@ -17,12 +17,12 @@
 
 ## Estado actual (2026-06-14)
 
-- Filas: **2.652** · verificado **1.191** · parcial **556** · pendiente **905**
+- Filas: **2.652** · verificado **1.196** · parcial **560** · pendiente **896**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **321 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-103** (worklist).
-- **Siguiente: Lote 104** — empatados a 9 pendientes: Sant Just Desvern /
-  Santa Maria d'Oló / Sentmenat / Tiana (elegir uno; recomputar al llegar).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-104** (worklist).
+- **Siguiente: Lote 105** — empatados a 9 pendientes: Santa Maria d'Oló / Sentmenat / Tiana
+  (elegir uno; recomputar al llegar).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -269,7 +269,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 101 | Sant Andreu de la Barca | 0 | ✅ | 2026-06-14 | 5 verif + 1 parcial + 3 purgas (clúster Vivami: canals-vives y pere-vives dups registre↔marca de Fruites i Verdures Vivami —mismo DAR Canals Vives Jaume, tel 650281265/jaume.cv@hotmail.com—; Grau Garcia Roger=quimera de Industrias Garcia Grau SA, fàbrica metàl·lica de BCN amb indgarcia.cat, DAR fals Bellet Garcia/Torregrossa, .webp borrado); Vall del Riu SAT recat como **Vins i Cava Piteus** (→Bodega; web del Teatre Núria Espert + GMaps del teatre blanqueados; canpaletpiteus.com ecommerce, tel/email DAR, FB/IG propios; celler a Corbera, SAT registrada a SAB); Vivami ecommerce (vivami.cat/botiga; web=FB "Fernandez" y GMaps "Fruites Juan y Sofi" ajenos blanqueados); Pastisseria Arenas VO whatsapp; Rostisseria Ramírez y Forn de l'Avi Josep VO no; Hort Municipal (Fundació Futur) parcial (projecte agroecològic municipal amb venda directa, GMaps "Hort de la Font Trobada"/Montjuïc i coords de BCN corregits, FB menjafuturbcn de la fundació conservat) |
 | 102 | Sant Climent de Llobregat | 0 | ✅ | 2026-06-14 | 3 verif + 5 parcial + 1 purga (Alaball Condeminas Jose=el pare fundador d'Alaball Berros, dup registre↔marca per email enric.alaball@gmail.com, adreça/coords a BCN); municipi de cireres i horta del Parc Agrari, gairebé tot productors DAR. Vila ECO (vilaeco.com, eco, botiga online+WhatsApp+repartiment → ecommerce|whatsapp), Alaball Berros (creixens, web 403 bot-block viva, B2B restaurants/distribuïdors → VO no) i L'Hortet del Baix (família Torras 5 gen., cistelles online hortetdelbaix.com → ecommerce; botiga a Viladecans, SAT a SC) verif; Fulquet Comas (Fruites Maria i Verdures Juana), Cal Sacot (Llusa Font), Llusa Montserrat (tel/email del DAR restaurats, abans els de l'ajuntament), Esteve Arcs (coords al Montseny→centroide, →Fruta y verdura) i Tugas Molins (→Aceite) parcials DAR |
 | 103 | Sant Joan Despí | 0 | ✅ | 2026-06-14 | 5 verif + 3 parcial + 1 purga (Rocío i Rafael dup de Navarro Serrat Rafael, mateix tel 650467266 i DAR); urbà. Blanxart (xocolata bean-to-bar des de 1954, tienda.blanxart.com → ecommerce), Forn de Pa LUNA, Forn La Plaça i Forn de Pa Crostó (forns de barri amb FB/IG propi) verif; Max Grup SL renombrada **Oli del Barranc (Ecotros)** (finca eco CCPAE, web ecotros.cat afegida, →Aceite, botiga amb login→VO no comprobado); Carnisseries Cano parcial amb VO sí (parada Mercat de les Planes, enviament a domicili ≥50€ per telèfon/WhatsApp via promodespi); Navarro Serrat Rafael i Fruits Rovira (Rovira Lozano, →Fruta y verdura) parcials DAR |
-| — | _resto (309 municipios)_ | 1.311 | ⬜ | | recomputar al llegar |
+| 104 | Sant Just Desvern | 0 | ✅ | 2026-06-14 | 5 verif + 4 parcial + 0 purgas; urbà, 5 filas són parades del Mercat Municipal (mercat.santjust.net només directori, sense venda online). C&V Rostisserie (tienda.cvrostisserie.com ecommerce), BS Chocolat=Barrachina Salas Chocolat SL (2021, web bschocolat.com afegida, tienda-online → ecommerce), Paula Franco (2 locals SJD+Castelldefels, paulafrancopastry.com amb carret/PayPal → ecommerce; web afegida), Leopoldo's i La Llar del Bacallà (IG propi; coords de BCN 2.169→centroide) verif; Cansaladeria Cardona, Cansaladeria Fosalva, Carns Mari (parades sense enllaç propi) i Horticultura Isart SL (DAR, planta ornamental) parcials |
+| — | _resto (308 municipios)_ | 1.302 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
