@@ -17,12 +17,12 @@
 
 ## Estado actual (2026-06-14)
 
-- Filas: **2.654** · verificado **1.183** · parcial **548** · pendiente **923**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **319 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.653** · verificado **1.186** · parcial **553** · pendiente **914**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **320 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-101** (worklist).
-- **Siguiente: Lote 102** — empatados a 9 pendientes: Sant Climent de Llobregat / Sant Joan Despí /
-  Sant Just Desvern / Santa Maria d'Oló / Sentmenat / Tiana (elegir uno; recomputar al llegar).
+- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-102** (worklist).
+- **Siguiente: Lote 103** — empatados a 9 pendientes: Sant Joan Despí / Sant Just Desvern /
+  Santa Maria d'Oló / Sentmenat / Tiana (elegir uno; recomputar al llegar).
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -267,7 +267,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 99 | l'Hospitalet de Llobregat | 0 | ✅ | 2026-06-13 | 8 verif + 1 parcial + 0 purgas; urbano, sin DAR. Animal Coffee (tostador propio, ecommerce confirmado), Tibidabo Brewing (cervesera+taproom, ecommerce) y Panarra (obrador massa mare, ecommerce) con venta online; Xurreria L'Àvia, Grenya, Dtast, Aviram Cristina Martín (Mercat del Centre; IG del mercat blanqueado) y Obrador Riera Blanca (coords del Vallès→centroide) verif; Xarcuteries Bosch (1863, Mestres Artesans) parcial: su web solo lista puntos en Barcelona y Montgat, presencia en el Mercat Santa Eulàlia a confirmar (GMaps genérico del mercat blanqueado) |
 | 100 | Montornès del Vallès | 0 | ✅ | 2026-06-13 | 8 verif + 1 parcial + 0 purgas (Esquís Nicolau parcial: productor DAR de civada con GMaps de la tienda de esquí "IGLUSHOP" de BCN —falso match por la palabra "esquís"— blanqueado y coords corregidas); El Rebost de la Carn y Pastisseria Viñallonga (1974, Mestre Artesà) ecommerce confirmado; Mongetes del Ganxet Puig rescatada (família >50 anys, web mongetesdelganxetpuig.com añadida); Belcan (bollería industrial IFS), Cal Forner (Mestre Artesà 2021), Forn la Bóbila, Pastisseria Elena y Xurreria Ca la Maria verif |
 | 101 | Sant Andreu de la Barca | 0 | ✅ | 2026-06-14 | 5 verif + 1 parcial + 3 purgas (clúster Vivami: canals-vives y pere-vives dups registre↔marca de Fruites i Verdures Vivami —mismo DAR Canals Vives Jaume, tel 650281265/jaume.cv@hotmail.com—; Grau Garcia Roger=quimera de Industrias Garcia Grau SA, fàbrica metàl·lica de BCN amb indgarcia.cat, DAR fals Bellet Garcia/Torregrossa, .webp borrado); Vall del Riu SAT recat como **Vins i Cava Piteus** (→Bodega; web del Teatre Núria Espert + GMaps del teatre blanqueados; canpaletpiteus.com ecommerce, tel/email DAR, FB/IG propios; celler a Corbera, SAT registrada a SAB); Vivami ecommerce (vivami.cat/botiga; web=FB "Fernandez" y GMaps "Fruites Juan y Sofi" ajenos blanqueados); Pastisseria Arenas VO whatsapp; Rostisseria Ramírez y Forn de l'Avi Josep VO no; Hort Municipal (Fundació Futur) parcial (projecte agroecològic municipal amb venda directa, GMaps "Hort de la Font Trobada"/Montjuïc i coords de BCN corregits, FB menjafuturbcn de la fundació conservat) |
-| — | _resto (311 municipios)_ | 1.329 | ⬜ | | recomputar al llegar |
+| 102 | Sant Climent de Llobregat | 0 | ✅ | 2026-06-14 | 3 verif + 5 parcial + 1 purga (Alaball Condeminas Jose=el pare fundador d'Alaball Berros, dup registre↔marca per email enric.alaball@gmail.com, adreça/coords a BCN); municipi de cireres i horta del Parc Agrari, gairebé tot productors DAR. Vila ECO (vilaeco.com, eco, botiga online+WhatsApp+repartiment → ecommerce|whatsapp), Alaball Berros (creixens, web 403 bot-block viva, B2B restaurants/distribuïdors → VO no) i L'Hortet del Baix (família Torras 5 gen., cistelles online hortetdelbaix.com → ecommerce; botiga a Viladecans, SAT a SC) verif; Fulquet Comas (Fruites Maria i Verdures Juana), Cal Sacot (Llusa Font), Llusa Montserrat (tel/email del DAR restaurats, abans els de l'ajuntament), Esteve Arcs (coords al Montseny→centroide, →Fruta y verdura) i Tugas Molins (→Aceite) parcials DAR |
+| — | _resto (310 municipios)_ | 1.320 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
