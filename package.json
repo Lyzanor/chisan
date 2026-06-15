@@ -11,14 +11,19 @@
     "check:csv": "bash scripts/check-csv-contract.sh",
     "check:csv:changed": "bash scripts/check-csv-changed.sh",
     "check:csv:data-quality": "bash scripts/check-csv-quality.sh",
+    "check:evidence": "node scripts/check-evidence.mjs",
+    "check:evidence:changed": "node scripts/check-evidence-changed.mjs",
     "list:province": "node scripts/list-province.js",
     "check:csv:completeness": "node scripts/audit-province-completeness.js",
     "check:images": "node scripts/check-images.mjs",
     "enrich:images": "python3 scripts/enrich-producer-images.py",
     "test:csv-audit": "bash scripts/test-csv-audit.sh",
+    "test:evidence-contract": "node scripts/test-evidence-contract.mjs",
+    "test:editorial-policy": "node scripts/test-editorial-policy.mjs",
+    "test:intelligence": "pnpm test:evidence-contract && pnpm test:editorial-policy",
     "test:behavior": "bash scripts/test-behavior.sh",
-    "verify:data": "pnpm check:csv && pnpm check:images",
-    "verify:ai": "pnpm verify && pnpm check:csv && pnpm check:images && pnpm test:csv-audit && pnpm test:behavior"
+    "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence",
+    "verify:ai": "pnpm verify && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm test:csv-audit && pnpm test:intelligence && pnpm test:behavior"
   },
   "dependencies": {
     "@capacitor/android": "^8.2.0",

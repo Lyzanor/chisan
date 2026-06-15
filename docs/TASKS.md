@@ -12,11 +12,12 @@
    - `sí`: confirmed online sales through the producer site or a concrete known channel.
    - `no`: checked and no online sales channel found.
    - `no comprobado`: default until reviewed.
-6. Run:
+6. Add or update the matching record in `data/evidence/[comunidad]/[provincia].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
+7. Run:
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data
 ```
-7. Check `/`, `/?provincia=[provincia]`, and `/p/[slug]?provincia=[provincia]` manually.
+8. No build or manual route check is required for a data/evidence/image-only change.
 
 ## 1b) Weekly CSV review
 1. Run the blocking contract audit:
@@ -39,9 +40,8 @@ npx pnpm check:csv:data-quality
 5. Re-run the two CSV audits until contract errors are `0`.
 6. Run:
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data
 ```
-7. Validate `/`, `/?provincia=[provincia]`, and a sample of `/p/[slug]?provincia=[provincia]`.
 
 ## 2) Change catalog behavior
 1. Edit catalog logic in `lib/csv-catalog.ts` or `app/page.tsx`.
@@ -64,31 +64,32 @@ npx pnpm verify:ai
 ```
 
 ## 4) Add a CSV column to detail view
-1. Ensure column exists in CSV header.
-2. No extra code is needed for detail table: it renders all fields.
-3. If the column should appear in list summary, update `app/page.tsx`.
+1. Update the canonical header and contract in `docs/CSV_CONTRACT.md`.
+2. Apply the structural change to all 50 province CSVs in one dedicated commit; never add a column to one province only.
+3. No extra code is needed for the detail table: it renders all fields.
+4. If the column should appear in list summary, update `app/page.tsx`.
+5. Run `npx pnpm verify:ai` because a structural change normally affects validators or application behavior.
 
 ## 5) Release checklist
-1. `npx pnpm verify:ai`
+1. Run `npx pnpm verify:data` for data/reference/evidence/image-only changes, or `npx pnpm verify:ai` when code or scripts changed.
 2. Review changed files with `git status --short` and `git diff --stat`.
 3. Commit with a clear message.
-4. Push to GitHub before deploying.
-5. Deploy to Vercel production:
-```bash
-vercel deploy . --prod -y
-```
+4. Push the commit to `main`; GitHub→Vercel deploys production automatically.
+5. Use `vercel deploy . --prod -y` only as a manual fallback.
 
 ## 6) Agent handoff checklist
 1. Read `AGENTS.md` before changing code or data.
 2. Treat `data/csv/**` as the source of truth.
-3. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
-4. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
-5. Keep producer `slug` values stable and unique.
-6. Run:
+3. Treat `data/evidence/**` as decision provenance, not a second producer catalog.
+4. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
+5. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
+6. Keep producer `slug` values stable and unique.
+7. Run the matching gate:
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data   # data/reference/evidence/images
+npx pnpm verify:ai     # code/scripts/policy
 ```
-7. If shipping, commit, push, then deploy.
+8. If shipping, commit and push to `main`; do not run a second deploy by default.
 
 ## Guardrails
 - Do not add DB/API/migrations unless explicitly requested.

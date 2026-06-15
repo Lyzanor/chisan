@@ -8,6 +8,8 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 - Claude/Gemini: `CLAUDE.md` y `GEMINI.md` solo redirigen a `AGENTS.md`.
 - Arquitectura: `docs/ARCHITECTURE.md`
 - Contrato de datos CSV: `docs/CSV_CONTRACT.md`
+- Contrato de evidencia: `docs/EVIDENCE_CONTRACT.md`
+- Política editorial y evaluaciones: `docs/EDITORIAL_POLICY.md`
 - Tareas comunes: `docs/TASKS.md`
 - Completitud provincial: `docs/PROVINCE_COMPLETENESS.md`
 - Notas temporales de candidatos: `docs/candidates/README.md`
@@ -38,7 +40,9 @@ No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 - `lib/catalog-navigation.ts`: catálogo de comunidades/provincias.
 - `data/csv/catalunya/barcelona.csv`: CSV de Barcelona.
 - `data/csv/[comunidad]/[provincia].csv`: CSV de cada provincia, agrupados por comunidad autónoma.
-- `public/productores/barcelona/`: imágenes específicas de Barcelona.
+- `data/evidence/[comunidad]/[provincia].jsonl`: procedencia estructurada de decisiones editoriales; la app no la lee.
+- `data/evals/editorial-policy-cases.json`: casos sintéticos para evitar deriva de criterios.
+- `public/productores/[comunidad]/[provincia]/`: imágenes locales de productores.
 
 ## Uso
 
@@ -57,11 +61,14 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm check:csv` (valida el contrato bloqueante de todos los CSV)
 - `npx pnpm check:csv:data-quality` (auditoría editorial con warnings para todos los CSV)
 - `npx pnpm check:csv:completeness` (avance provincial frente a objetivos editoriales fijos; no compara provincias entre sí)
+- `npx pnpm check:evidence` (valida fuente, fecha, claims y paridad de decisiones con el CSV)
 - `npx pnpm check:images` (valida rutas de imágenes referenciadas y avisa de desviaciones editoriales)
 - `npx pnpm enrich:images --provincia cuenca` (dry-run para encontrar imágenes oficiales; añadir `--apply` solo tras revisar)
 - `npx pnpm test:csv-audit` (regresión de reglas CSV)
+- `npx pnpm test:intelligence` (contrato de evidencia + casos editoriales sintéticos)
 - `npx pnpm test:behavior` (test mínimo de `/`, `/?provincia=...` y `/p/[slug]?provincia=...`)
-- `npx pnpm verify:ai` (verify + contrato CSV + imágenes + tests CSV + behavior)
+- `npx pnpm verify:data` (CSV + imágenes + evidencia; sin build)
+- `npx pnpm verify:ai` (lint/build + todos los contratos y tests)
 
 ## Publicar
 
@@ -72,6 +79,8 @@ npx pnpm verify:ai
 git status --short
 git add .
 git commit -m "..."
-git push
-vercel deploy . --prod -y
+git push origin main
 ```
+
+El push a `main` activa el despliegue de producción mediante la integración
+GitHub→Vercel. `vercel deploy . --prod -y` queda solo como fallback manual.

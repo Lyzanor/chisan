@@ -27,15 +27,19 @@ Before adding any producer to `data/csv/**`:
    reliable public source.
 3. Add only real producers with a stable `slug`, normalized `categoria`,
    coordinates, `Google Maps`, `verificacion`, and `Venta online`.
-4. Run `npx pnpm check:csv:changed` while iterating.
-5. Run `npx pnpm verify:ai` before finishing.
+4. Add the accepted decision to the matching `data/evidence/**` JSONL ledger.
+5. Run `npx pnpm check:csv:changed` while iterating.
+6. Run `npx pnpm verify:data` before finishing.
 
 Prune or update these notes once candidates are accepted, rejected, or already
 present in the catalog.
 
-For each candidate, keep enough evidence for another agent to continue without
-restarting:
+For unresolved candidates, keep enough evidence for another agent to continue
+without restarting:
 - status: `unverified`, `accepted`, `rejected`, or `already-present`
 - source URL or search route used
 - duplicate check result
 - final slug when accepted or already present
+
+Once accepted, structured provenance belongs in `data/evidence/**`; prune
+routine source detail from candidate notes.

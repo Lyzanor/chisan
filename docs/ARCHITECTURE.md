@@ -15,6 +15,23 @@ flowchart TD
   G --> H["Row detail (field/value table)"]
 ```
 
+`data/evidence/**` and `data/evals/**` are editorial control inputs only. The
+runtime does not read them, so provenance and policy validation cannot become a
+hidden application data source.
+
+## Editorial control flow
+
+```mermaid
+flowchart TD
+  A["Public sources and registries"] --> B["Editorial policy"]
+  B --> C["data/csv/** current state"]
+  B --> D["data/evidence/** provenance"]
+  E["data/evals/** synthetic cases"] --> B
+  C --> F["check:csv"]
+  D --> G["check:evidence"]
+  E --> H["test:editorial-policy"]
+```
+
 ## Components
 - `lib/csv-catalog.ts`
   - Reads CSV with `csv-parse/sync`.
@@ -41,6 +58,8 @@ flowchart TD
 
 ## Design rules
 - Keep one data source per province: CSV file on disk, grouped by autonomous community.
+- Keep decision provenance in matching JSONL evidence ledgers; never read them from application code.
+- Keep stable editorial outcomes covered by synthetic evaluation cases.
 - Keep CSV reading and normalization centralized in `lib/csv-catalog.ts`.
 - Keep pages thin and explicit.
 - Avoid hidden side effects or caching outside current module boundaries.

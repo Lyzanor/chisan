@@ -1,29 +1,29 @@
 # Verificación provincial de Girona
 
-Ledger mínimo para reanudar la revisión profunda de
-`data/csv/catalunya/girona.csv`. El CSV sigue siendo la fuente de verdad.
+Ledger de la revisión profunda de `data/csv/catalunya/girona.csv`. El CSV es la
+fuente de verdad; la procedencia estructurada (fuente, fecha, claims y decisión
+por fila) vive en `data/evidence/catalunya/girona.jsonl`. Aquí quedan solo el
+resumen de cada lote y las excepciones, residuales y decisiones difíciles que el
+JSONL no captura.
 
 ## Estado
 
 - Inicio: 2026-06-14.
+- Estado editorial: **pasada profunda cerrada el 2026-06-15**; el CSV pasa a
+  mantenimiento continuo y no se da por «cerrado» (catálogo vivo).
 - Snapshot inicial: 243 filas; 0 `verificado`, 139 `parcial`, 104 `pendiente`.
-- Snapshot tras el lote 15 y la pasada de consistencia: 240 filas; 98
-  `verificado`, 142 `parcial`, 0
-  `pendiente`.
-- Revisadas: 109.
-- Resultado acumulado: 98 `verificado`, 8 `parcial`, 2 purgas, 1 fusión.
+- Snapshot tras los lotes 17–27: 241 filas; 239
+  `verificado`, 2 `parcial`, 0 `pendiente`.
+- Los lotes 17–27 reexaminaron las 132 fichas parciales que quedaban tras el
+  lote 16 y la nueva alta concurrente de `celler-mas-patiras-forallac`.
+- Resultado de la pasada: 125 promociones a `verificado`, 2 residuales
+  `parcial` y 6 purgas.
+- Cambios estructurales acumulados desde el inicio: 8 purgas, 1 fusión y 7
+  altas concurrentes procedentes del cruce de las Rutas del Vi.
 
 ## Lote 1: conservas de L'Escala y arroz de Pals
 
-Revisado el 2026-06-14 con las webs oficiales, sus páginas de contacto y sus
-mecanismos de pedido.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `anxoves-callol-serrats-l-escala`, `anxoves-de-l-escala-soles-l-escala`, `arros-mas-pla-pals` |
-| `verificado`, venta por `email` | `arros-estany-de-pals-pals`, `arros-avi-trias-pals` |
-| `verificado`, sin venta online demostrada | `anxoves-el-xillu-l-escala`, `anxoves-de-l-escala-sa-l-escala` |
-| `verificado`, venta `no comprobado` | `arros-moli-de-pals-pals` |
+Revisado 2026-06-14: 8 verificado.
 
 ### Excepciones y residuales
 
@@ -43,30 +43,9 @@ mecanismos de pedido.
   oficiales muestran producto, contacto y venta física, pero no un mecanismo
   vigente de pedido remoto.
 
-### Fuentes principales
-
-- <https://www.callolserrats.com/>
-- <https://www.anxoves-soles.com/>
-- <https://www.anxoveselxillu.com/>
-- <https://www.anxovesdelescala.es/>
-- <https://www.arrosestanydepals.cat/>
-- <https://www.arrosmolidepals.com/>
-- <https://www.arrosmaspla.com/>
-- <http://www.arrosdepals.com/>
-- <https://disbesa.com/es/contacto/>
-
 ## Lote 2: productores consolidados con datos heredados
 
-Revisado el 2026-06-14 con las webs oficiales, sus páginas de contacto,
-condiciones de compra y mecanismos de pedido.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `galetes-trias-santa-coloma-de-farners`, `mooma-palau-sator`, `xocolates-torras-cornella-del-terri` |
-| `verificado`, venta por `ecommerce` y `suscripcion` | `cafes-cornella-fornells-de-la-selva` |
-| `verificado`, venta por `marketplace` | `la-fageda-santa-pau` |
-| `verificado`, sin venta online demostrada | `confraria-de-pescadors-de-palamos-palamos`, `perelada-peralada` |
-| `verificado`, venta `no comprobado` | `aigua-de-sant-aniol-sant-aniol-de-finestres` |
+Revisado 2026-06-14: 8 verificado.
 
 ### Excepciones y residuales
 
@@ -82,30 +61,9 @@ condiciones de compra y mecanismos de pedido.
 - Se retiraron horarios heredados de fábrica, visitas o restauración que no
   describían de forma fiable la atención comercial del productor.
 
-### Fuentes principales
-
-- <https://www.santaniol.com/es/contacto-sant-aniol/>
-- <https://www.santaniol.com/es/venta-de-agua-a-domicilio/>
-- <https://www.cafescornella.coffee/>
-- <https://shop.cafescornella.coffee/>
-- <https://www.confraria.cat/>
-- <https://www.triasbiscuits.com/>
-- <https://www.fageda.com/es/preguntas-frecuentes/>
-- <https://www.fageda.com/es/donde-comprar/>
-- <https://mooma.cat/condicions-generals-de-compra/>
-- <https://perelada.com/>
-- <https://chocolatestorras.com/>
-
 ## Lote 3: bodegas del Alt Empordà
 
-Revisado el 2026-06-14 con las webs oficiales, las tiendas de vino y, para
-Espelt, el consejo regulador y un marketplace vigente.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `celler-la-vinyeta-mollet-de-peralada`, `celler-mas-vida-cistella`, `cooperativa-agricola-de-garriguella-garriguella`, `vinyes-d-olivardots-capmany`, `vinyes-dels-aspres-cantallops` |
-| `verificado`, sin venta online de producto demostrada | `celler-d-en-guilla-rabos`, `celler-mas-llunes-garriguella` |
-| `parcial`, venta por `marketplace` | `celler-espelt-vilajuiga` |
+Revisado 2026-06-14: 7 verificado, 1 parcial.
 
 ### Excepciones y residuales
 
@@ -121,29 +79,9 @@ Espelt, el consejo regulador y un marketplace vigente.
 - `celler-d-en-guilla-rabos`: la web publica una tienda física y su horario,
   sin mecanismo vigente de pedido remoto. El `sí` heredado se corrige a `no`.
 
-### Fuentes principales
-
-- <https://www.cellersdenguilla.com/el-celler/>
-- <https://www.cellersdenguilla.com/el-celler/la-botiga/>
-- <https://www.doemporda.cat/es/las-bodegas/l/92-espelt-viticultors.html>
-- <https://www.vinissimus.com/es/bodega/espelt-viticultors-de-l-emporda/>
-- <https://www.lavinyeta.es/ca/els-productes>
-- <https://masllunes.es/vins/>
-- <https://www.bodegasmasvida.com/es/tienda/vida/>
-- <https://www.cooperativagarriguella.com/ca/botiga-online/>
-- <https://olivardots.com/botiga-online/>
-- <https://botiga.vinyesdelsaspres.cat/es/tienda.html>
-
 ## Lote 4: bodegas pendientes con presencia propia
 
-Revisado el 2026-06-15 con las webs oficiales, páginas de contacto y tiendas
-de producto.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `clos-d-agon-calonge-i-sant-antoni`, `eccocivi-sant-marti-vell`, `empordalia-pau`, `finca-bell-lloc-palamos`, `hugas-de-batlle-colera` |
-| `verificado`, sin venta online demostrada | `celler-arche-pages-capmany`, `celler-can-sais-vall-llobrega` |
-| `verificado`, venta `no comprobado` | `martin-faixo-cadaques` |
+Revisado 2026-06-15: 8 verificado.
 
 ### Excepciones y residuales
 
@@ -161,30 +99,9 @@ de producto.
   las referencias de vino revisadas figuraban como no disponibles. Se corrige
   el `sí` heredado a `no comprobado`.
 
-### Fuentes principales
-
-- <http://ca.cellerarchepages.com/>
-- <http://cellercansais.com/>
-- <https://closdagon.com/en/shop/>
-- <https://eccocivi.com/en/producto/els-boscals-negre-2023/>
-- <https://empordalia.com/>
-- <https://botiga.empordalia.com/>
-- <https://brugarol.com/winery/>
-- <https://brugarol.com/product/mestis/>
-- <https://cellerhugasdebatlle.cat/>
-- <https://cellerhugasdebatlle.cat/vins/>
-- <https://www.martinfaixo.com/es/bodega-mf/>
-- <https://www.martinfaixo.com/es/tienda-online/vinos/>
-
 ## Lote 5: cierre de bodegas pendientes
 
-Revisado el 2026-06-15 con las webs oficiales, sus páginas de contacto,
-catálogos y disponibilidad de producto.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `mas-oller-torrent`, `terra-remota-sant-climent-sescebes`, `clos-de-basella-siurana` |
-| `verificado`, venta física directa | `mas-molla-calonge-i-sant-antoni` |
+Revisado 2026-06-15: 4 verificado.
 
 ### Excepciones y residuales
 
@@ -201,30 +118,9 @@ catálogos y disponibilidad de producto.
   relevo de la familia Parés i Grau en 2024 y la certificación ecológica desde
   2007.
 
-### Fuentes principales
-
-- <http://www.masmolla.com/ca/mas-molla-celler-calonge-costa-brava>
-- <http://www.masmolla.com/ca/avis-legal>
-- <https://www.masoller.cat/>
-- <https://www.masoller.cat/category/all-products>
-- <https://www.masoller.cat/blank-4>
-- <https://www.terraremota.com/una-identidad/>
-- <https://www.terraremota.com/contact/>
-- <https://bodega.terraremota.com/tienda/>
-- <https://closdebasella.com/ca/celler>
-- <https://closdebasella.com/contact-ns>
-- <https://closdebasella.com/vins-organics-biodinamics/selene>
-
 ## Lote 6: cerveceras pendientes
 
-Revisado el 2026-06-15 con las webs oficiales, catálogos, carritos y
-disponibilidad de producto.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `cervesa-marina-blanes`, `cerveses-moska-sarria-de-ter`, `doskiwis-brewing-rupia`, `la-calavera-sant-joan-de-les-abadesses`, `cervesa-lava-olot`, `pochs-cervesa-artesana-castellfollit-de-la-roca`, `cervesa-artesana-minera-sant-joan-de-les-abadesses`, `soma-beer-cornella-del-terri` |
-| `verificado`, venta por `ecommerce` y `whatsapp` | `bdegust-cervesa-compromesa-caldes-de-malavella` |
-| `verificado`, sin venta online de producto demostrada | `gro-brewers-girona`, `dual-lab-brewery-girona` |
+Revisado 2026-06-15: 11 verificado.
 
 ### Excepciones y residuales
 
@@ -238,33 +134,9 @@ disponibilidad de producto.
 - `la-calavera-sant-joan-de-les-abadesses`: la API de la tienda mostraba
   producto publicado en junio de 2026, con precio y disponibilidad.
 
-### Fuentes principales
-
-- <https://cervesamarina.com/tienda-online/>
-- <https://www.moskabeer.com/>
-- <https://moskabeer.com/botiga/es/>
-- <https://doskiwisbrewing.com/collections/beer>
-- <https://lacalavera.cat/es/>
-- <https://lacalavera.cat/es/tienda/>
-- <https://lavabeer.cat/tienda/>
-- <https://www.cervesapochs.com/>
-- <https://minera.cat/botiga/>
-- <https://es.bdegust.beer/>
-- <https://bdegustshop.ecwid.com/>
-- <https://www.grobrewers.com/?lang=es>
-- <https://soma-beer.com/collections/catalogo-cervezas>
-- <https://dual-lab.club/>
-
 ## Lote 7: lácteos con presencia propia
 
-Revisado el 2026-06-15 con páginas oficiales de producto, tiendas, condiciones
-de envío y datos de contacto.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `la-xiquella-la-vall-d-en-bas`, `cal-vigata-la-vall-d-en-bas`, `mas-claperol-sant-feliu-de-pallerols`, `llet-nostra-monells`, `mas-el-lladre-les-llosses`, `formatgeria-muuu-beee-ripoll`, `mas-casas-cruilles-cruilles` |
-| `verificado`, pedidos por `whatsapp` | `japet-dels-bous-borrassa` |
-| `verificado`, venta física directa | `mas-la-coromina-la-vall-d-en-bas`, `recuits-nuri-ullastret` |
+Revisado 2026-06-15: 10 verificado.
 
 ### Excepciones y residuales
 
@@ -282,30 +154,9 @@ de envío y datos de contacto.
   comarcas gerundenses y algunas ciudades del área de Barcelona, pero el
   checkout de producto es vigente.
 
-### Fuentes principales
-
-- <https://japetdelsbous.com/>
-- <https://www.laxiquella.com/es/>
-- <https://www.maslacoromina.cat/visites-per-a-grups/>
-- <https://www.recuitsnuri.com/botiga/>
-- <https://calvigata.cat/botiga/>
-- <https://www.masclaperol.com/els-nostres-productes.html>
-- <https://botiga.lletnostra.cat/>
-- <https://www.masellladre.cat/shop>
-- <https://muuubeee.com/botiga-online/>
-- <https://mascasascruilles.cat/es/producto/assortit-lactics-dovella/>
-
 ## Lote 8: lácteos con evidencia limitada
 
-Revisado el 2026-06-15 contrastando webs propias, páginas de producto,
-contactos, puntos de venta y actividad pública reciente.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, pedidos por `whatsapp` | `mas-marce-siurana-d-emporda` |
-| `verificado`, venta `no comprobado` | `recuits-de-fonteta-forallac` |
-| `verificado`, sin venta online de producto demostrada | `formatgeria-la-balda-sant-marti-de-llemena`, `formatgeria-mas-alba-terradelles`, `la-selvatana-campllong`, `lactics-el-mont-maia-de-montcal`, `formatgeria-xauxa-les-preses`, `granja-mas-bes-vilobi-d-onyar` |
-| `parcial`, sin venta online demostrada | `mas-eusebi-forallac`, `le-bolut-vilademuls` |
+Revisado 2026-06-15: 8 verificado, 2 parcial.
 
 ### Excepciones y residuales
 
@@ -322,30 +173,9 @@ contactos, puntos de venta y actividad pública reciente.
 - `granja-mas-bes-vilobi-d-onyar`: la web actual confirma venta en la
   agrobotiga todos los días; no muestra envío de producto.
 
-### Fuentes principales
-
-- <https://www.labalda.com/>
-- <https://www.masalba.cat/ca/formatgeria/on-comprar-i-tastar/>
-- <https://www.laselvatana.net/ca/productes/>
-- <https://www.peraladamasmarce.com/ca/>
-- <https://www.recuitsfonteta.com/ca/>
-- <https://www.lacticselmont.cat/>
-- <https://dones.gencat.cat/web/.content/03_ambits/mon-laboral/mon-rural/Dones-Rurals-de-Girona/DONESRURALS_accessible_web.pdf>
-- <https://formatgeriaxauxa.cat/>
-- <https://acrefa.cat/formatgers-artesans/le-bolut/>
-- <https://www.masbes.com/agrobotiga/>
-
 ## Lote 9: charcutería, dulces y pan
 
-Revisado el 2026-06-15 con webs oficiales, catálogos, carritos, condiciones
-de entrega, páginas de contacto y actividad reciente.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `embotits-d-oix-montagut-i-oix`, `embotits-artesans-gori-la-vall-d-en-bas`, `carnisseria-planaguma-olot`, `porcs-casolans-corominas-olot`, `gluki-olot` |
-| `verificado`, venta por `ecommerce` y `whatsapp` | `angust-mieres` |
-| `verificado`, sin venta online de producto demostrada | `galetes-ca-l-enric-castellfollit-de-la-roca`, `pastisseria-ferrer-olot`, `fleca-la-fogaina-les-preses` |
-| `parcial`, sin venta online demostrada | `can-calet-sant-joan-les-fonts`, `mus-pastisseria-besalu` |
+Revisado 2026-06-15: 9 verificado, 2 parcial.
 
 ### Excepciones y residuales
 
@@ -362,31 +192,9 @@ de entrega, páginas de contacto y actividad reciente.
 - `angust-mieres`: además del checkout refrigerado, la web ofrece piezas por
   encargo mediante WhatsApp.
 
-### Fuentes principales
-
-- <https://embotitsdoix.com/>
-- <https://embotitsgori.com/productes/>
-- <https://www.angust.cat/botiga-online/>
-- <https://cancalet.com/>
-- <https://carnisseriaplanaguma.com/botiga/>
-- <https://www.calenric.com/es/>
-- <https://gustdegarrotxa.com/botiga/>
-- <https://delitgastronomic.cat/mus-pastisseria/>
-- <https://gluki.cat/ca/>
-- <https://www.pastisseriaferrer.cat/>
-- <https://www.lafogaina.com/qui-som>
-
 ## Lote 10: huerta, pesca, fruta, miel, aceite y otros
 
-Revisado el 2026-06-15 con webs oficiales, tiendas, catálogos, datos de
-producción y contraste específico del encaje como productor.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `can-moragues-riudarenes`, `mas-entreserra-corca`, `abellaires-empordanesos-garriguella`, `oli-fontclara-fontclara` |
-| `verificado`, pedidos por `telefono` | `trull-ylla-cabanes` |
-| `verificado`, sin venta online de producto demostrada | `confraria-de-pescadors-de-roses-roses`, `fruticola-emporda-sant-pere-pescador`, `giropoma-costa-brava-ulla`, `ratafia-russet-olot` |
-| Eliminados por no ser productores | `trull-d-en-francesc-boadella-i-les-escaules`, `can-gombau-girona` |
+Revisado 2026-06-15: 9 verificado, 2 purga.
 
 ### Excepciones y residuales
 
@@ -405,32 +213,9 @@ producción y contraste específico del encaje como productor.
   integradas en la web del proyecto; la producción propia son las mermeladas
   y salsas ecológicas del obrador social.
 
-### Fuentes principales
-
-- <https://www.canmoragues.org/ca/el-projecte/>
-- <https://www.canmoragues.org/ca/botiga/melmelades-i-salses-can-moragues/>
-- <https://confrariapescadorsroses.cat/>
-- <https://www.fructicolaemporda.com/en/>
-- <https://www.giropoma.com/products?lang=en>
-- <https://masentreserra.com/>
-- <https://www.russet.cat/>
-- <https://www.trull-boadella.com/>
-- <https://www.trull-ylla.cat/ca/inici/la-botiga/>
-- <https://www.abellaires.com/>
-- <https://www.fontclara.es/tienda/>
-- <https://surtdecasa.cat/girona/menjar-i-beure/el-vermutet-de-can-gombau-el-vermut-ritme-de-rumba>
-
 ## Lote 11: Garrotxa, Cerdanya y Ripollès norte
 
-Revisado el 2026-06-15 con webs oficiales, tiendas, páginas de venta,
-directorios sectoriales actuales y comprobación técnica de dominios.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, pedidos por `whatsapp` | `formatges-del-pujol-orra-les-llosses` |
-| `verificado`, venta por `ecommerce` y `whatsapp` | `formatgeria-roura-soler-sant-pau-de-seguries` |
-| `verificado`, venta `no comprobado` | `moli-de-ger-productes-lactics-ger` |
-| `parcial`, sin venta online demostrada | `lactics-ecologics-raphel-llado-maia-de-montcal` |
+Revisado 2026-06-15: 3 verificado, 1 parcial.
 
 ### Excepciones y residuales
 
@@ -448,25 +233,9 @@ directorios sectoriales actuales y comprobación técnica de dominios.
   productos, pero el dominio y el correo heredados carecen de DNS. Se
   eliminan ambos y la fila queda `parcial`.
 
-### Fuentes principales
-
-- <https://www.formatgesdelpujolorra.cat/>
-- <https://es.formatgeriarourasoler.cat/>
-- <https://molideger.com/>
-- <https://molideger.com/punts-de-venda/>
-- <https://www.firasantermengol.cat/fira-de-formatges-artesans-del-pirineu/formatgers-participants/>
-- <https://www.gironaexcellent.cat/en/item/lactics-2021/>
-- <https://setmanabio.cat/recursos-online/>
-
 ## Lote 12: Ripollès sur y Vall de Llémena
 
-Revisado el 2026-06-15 con fuentes turísticas oficiales, ferias profesionales,
-ACREFA, actividad social y comprobación de los enlaces heredados.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, sin venta online demostrada | `formatgeria-palou-campdevanol`, `l-arbreda-s-l-sant-marti-de-llemena` |
-| `parcial`, sin venta online demostrada | `lactics-de-la-vall-de-ribes-ribes-de-freser` |
+Revisado 2026-06-15: 2 verificado, 1 parcial.
 
 ### Excepciones y residuales
 
@@ -482,23 +251,9 @@ ACREFA, actividad social y comprobación de los enlaces heredados.
   de Mas Ca l'Esteve, pero el dominio y el correo heredados no resuelven y no
   se localizó una presencia propia reciente. Se cierra como `parcial`.
 
-### Fuentes principales
-
-- <https://www.firasantermengol.cat/fira-de-formatges-artesans-del-pirineu/formatgers-participants/>
-- <https://benvingutsapages.cat/establiment/116/>
-- <https://www.catalunya.com/es/continguts/propostes/visita-formatgeria-palou-ripolles-1765981786252>
-- <https://acrefa.cat/formatgers-artesans/laubreda-formatgeria/>
-- <https://dev.vicfires.cat/lactium-la-festa-del-formatge-catala-2026/expositors>
-- <https://www.gastroteca.cat/en/on-comprar/lactics-de-la-vall-de-ribes/>
-
 ## Lote 13: cooperativas y granjas de leche
 
-Revisado el 2026-06-15 con las fuentes corporativas actuales de Lletera
-Campllong y ATO Natura, contrastando entidad, municipio y función productiva.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, sin venta online demostrada | `lletera-campllong-campllong`, `sat-sant-mer-vilademuls`, `can-costa-de-manol-llado`, `can-violant-cassa-de-la-selva` |
+Revisado 2026-06-15: 4 verificado.
 
 ### Excepciones y residuales
 
@@ -512,23 +267,9 @@ Campllong y ATO Natura, contrastando entidad, municipio y función productiva.
   identifica la explotación como `Riera i Riera`, sitúa Can Violant en el
   Veïnat de Mont-roig y confirma quinta generación y producción de leche.
 
-### Fuentes principales
-
-- <https://lleteracampllong.com/>
-- <https://lleteracampllong.com/la-cooperativa/>
-- <https://lleteracampllong.com/les-nostres-granges/>
-- <https://www.ato.cat/granges-100-catalanes/>
-
 ## Lote 14: Selva, Gironès y Alt Empordà
 
-Revisado el 2026-06-15 con web y condiciones de venta oficiales, fuentes
-municipales de 2026, ATO Natura y publicaciones sectoriales recientes.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `mas-borni-llagostera` |
-| `verificado`, sin venta online demostrada | `circus-granja-familiar-sant-hilari-sacalm`, `granja-el-trevol-vilobi-d-onyar` |
-| `parcial`, sin venta online demostrada | `lactics-tramuntana-cabanelles` |
+Revisado 2026-06-15: 3 verificado, 1 parcial.
 
 ### Excepciones y residuales
 
@@ -546,25 +287,9 @@ municipales de 2026, ATO Natura y publicaciones sectoriales recientes.
   propia ni evidencia suficiente para validar todos los datos heredados. Se
   cierra como `parcial`.
 
-### Fuentes principales
-
-- <https://formatgeriamasborni.com/tienda/>
-- <https://formatgeriamasborni.com/condiciones-generales-de-venta/>
-- <https://www.santhilari.cat/noticies/el-cicle-periferia-cultural-arriba-a-sant-hilari-amb-un-concert-de-tomeu-penya-i-guillamino/>
-- <https://lesguillerieskm0.cat/ca/gastronomia/el-formatge-de-la-granja-circus/>
-- <https://www.ato.cat/granges-100-catalanes/>
-- <https://utemporda.com/storage/881ddb84a911f3d36453970ca262a47a.pdf>
-
 ## Lote 15: obradores y heladerías
 
-Revisado el 2026-06-15 con webs oficiales, tiendas, obradores, actividad de la
-temporada 2026 y comprobación específica de la venta remota.
-
-| Resultado | Slugs |
-|---|---|
-| `verificado`, venta por `ecommerce` | `obrador-rocambolesc-girona` |
-| `verificado`, sin venta online demostrada | `gelats-galiana-el-port-de-la-selva`, `la-lletera-girona` |
-| `verificado`, venta `no comprobado` | `gelats-enxaneta-palafrugell` |
+Revisado 2026-06-15: 4 verificado.
 
 ### Excepciones y residuales
 
@@ -580,18 +305,6 @@ temporada 2026 y comprobación específica de la venta remota.
 - `gelats-enxaneta-palafrugell`: la web y la actividad 2025–2026 confirman
   obrador y gelaterías, pero la tienda online figura cerrada por
   mantenimiento. Se cambia de `no` a `no comprobado`.
-
-### Fuentes principales
-
-- <https://rocambolesc.com/es/obrador-rocambolesc>
-- <https://rocambolesc.com/es>
-- <https://rocambolesc.com/en/contact-us>
-- <https://www.gelatsgaliana.com/>
-- <https://www.facebook.com/GelatsGaliana/videos/-ja-ha-arribat-la-temporada-2026-com-podeu-veure-hem-fet-un-petit-rentat-de-cara/1260612926260058/>
-- <https://www.lalletera.cat/>
-- <https://www.enxaneta.cat/>
-- <https://www.enxaneta.cat/about-3>
-- <https://www.enxaneta.cat/shoponline>
 
 ## Pasada de consistencia tras el lote 15
 
@@ -612,8 +325,188 @@ entre campos.
   permanecen como deuda editorial warning-only fuera de estos lotes. No se
   infieren canales sin evidencia.
 
-### Fuentes principales
+## Lote 16: bodegas históricas del Alt Empordà
 
-- <https://www.aecoctrade.es/es/empresa/wW1BBUoBe7uuEFBfVknxVS>
-- <https://www.einforma.com/informacion-empresa/boscos-catalans>
-- <https://rocambolesc.com/en/contact-us>
+Revisado 2026-06-15: 10 verificado.
+
+### Excepciones y residuales
+
+- `masia-serra-cantallops`: la bodega comunicó su salida de la DO Empordà.
+  Se retira la adscripción DO heredada, pero se mantiene la identidad,
+  actividad y venta en la tienda propia.
+- `celler-maria-pages-capmany`: la web publica vinos de la añada 2025,
+  dirección y contacto actuales. El Consejo Regulador indica expresamente
+  pedidos por correo o teléfono.
+- `mas-estela-la-selva-de-mar`: la web oficial ofrece WhatsApp para pedir
+  información, no para encargar producto. Se actualizan teléfono y horario,
+  se retira el correo heredado no publicado y se mantiene `Venta online=no`.
+- `celler-pujol-cargol-masarac`: la web propia confirma identidad y dirección;
+  la actividad reciente queda respaldada por la DO y vinos de añada 2025
+  comprables en un marketplace.
+- `celler-cooperatiu-d-espolla-espolla`: la web oficial remite a
+  Agrobotigues, donde hay vinos y aceite disponibles con carrito y checkout.
+- `av-bodeguers-vilamaniscle`: se sustituyen el teléfono y la dirección
+  heredados por los publicados actualmente en la web oficial.
+
+## Lote 17: bodegas restantes
+
+Revisado 2026-06-15: 7 verificado, 3 parcial. Incorpora la alta concurrente de
+Mas Patiràs sin alterar la decisión ya documentada por el otro agente.
+
+Los tres residuales (`llivins-llivia`, `pere-guardiola-capmany`,
+`celler-mas-patiras-forallac`) carecen de una presencia propia actual
+suficiente o mantienen una ficha demasiado indirecta. No se infiere actividad
+ni venta a partir del registro sectorial.
+
+## Lote 18: cervezas, licores y destilados
+
+Revisado 2026-06-15: 13 verificado, 2 parcial.
+
+Quevall queda correctamente ubicado en Llançà: el slug histórico conserva
+`llanars`, pero la identidad pública, dirección y municipio del CSV son
+Llançà. Popaire y La Brava permanecen parciales por falta de una presencia
+propia actual que permita cerrar actividad y canal.
+
+## Lote 19: pan, pastelería y dulces
+
+Revisado 2026-06-15: 16 verificado, 3 parcial.
+
+Cal Flequer se corrige desde Girona al obrador central publicado en Cornellà
+del Terri, con dirección, mapa y coordenadas nuevas. La web de Padrés ya no
+resuelve y se retira del CSV; la actividad no se da por cerrada sin otra
+fuente concluyente.
+
+## Lotes 20–21: charcutería, carne y pato
+
+Revisado 2026-06-15: 18 verificado, 5 parcial.
+
+Se retira la web inactiva de Embotits Eugeni. Jaume Abras confirma venta a
+profesionales y recogida física para particulares, no venta online.
+
+## Lote 22: lácteos y quesos
+
+Revisado 2026-06-15: 10 verificado, 6 parcial, 2 purga.
+
+Mar de Formatges figura como comercio, no como productor. La Formatgeria de
+Llívia es actualmente un restaurante instalado en una antigua fábrica de
+quesos; se elimina también su imagen huérfana.
+
+## Lote 23: aceites, miel y frutos secos
+
+Revisado 2026-06-15: 18 verificado, 2 parcial.
+
+Can Solivera conserva señales públicas contradictorias sobre continuidad.
+Gozos Mundanos no aporta evidencia actual suficiente de producción oleícola.
+Las tiendas sin referencias comprables se dejan en `no comprobado`.
+
+## Lote 24: fruta, huerta, mermeladas, conservas y salsas
+
+Revisado 2026-06-15: 10 verificado, 1 parcial.
+
+La tienda anunciada por Quim Matas aún no acepta pedidos. Red Passion Berries
+mantiene actividad social reciente, pero su dominio no respondió y no se
+pudo demostrar el canal de venta heredado; permanece parcial.
+
+## Lote 25: elaborados, pescado, caracoles, bebidas y aromáticas
+
+Revisado 2026-06-15: 15 verificado, 1 parcial, 1 purga.
+
+La ficha Cargol Bover no tenía nombre empresarial, contacto, web, red social
+ni fuente pública específica que acreditara la granja descrita. Se elimina
+en lugar de conservar una entidad plausible pero no demostrada.
+
+## Lote 26: cierre de residuales con actividad reciente
+
+Revisado 2026-06-15: 14 verificado. Incluye la segunda revisión de la alta
+concurrente de Mas Patiràs.
+
+### Excepciones y residuales
+
+- `red-passion-berries-viladrau`: mantiene actividad confirmada en 2026 y
+  elaboración propia, pero el dominio no respondió y no se conserva el canal
+  de tienda heredado sin poder probar el pedido.
+- `celler-mas-patiras-forallac`: la DO Empordà, su perfil propio y actividades
+  de 2025–2026 confirman bodega y vinos; no se ha demostrado venta remota.
+- `gozos-mundanos-roses`: el negocio actual es también un bistró, pero su
+  presencia propia se identifica como elaborador de vinos y AOVE y sigue
+  mostrando su aceite Argudell. Se conserva únicamente por esa actividad
+  productora.
+- Permanecen `parcial` `cervesa-popaire-blanes`,
+  `can-calet-sant-joan-les-fonts`,
+  `lactics-ecologics-raphel-llado-maia-de-montcal`,
+  `lactics-de-la-vall-de-ribes-ribes-de-freser`,
+  `lactics-tramuntana-cabanelles`, `cervesa-la-brava-forallac`,
+  `can-solivera-forallac`, `gelats-janeret-banyoles` y `llivins-llivia`.
+  Sus límites son presencia propia ausente o antigua, dominios caídos,
+  continuidad contradictoria o falta de evidencia directa de elaboración.
+
+## Lote 27: resolución individual de los nueve residuales
+
+Revisado 2026-06-15: 4 verificado, 2 parcial, 3 purga.
+
+### Decisiones
+
+- `cervesa-popaire-blanes`: se elimina. La sociedad figura en la resolución
+  de revocación de NIF de 2023, el dominio está aparcado y no aparece una
+  actividad productora actual que contradiga el cierre.
+- `can-calet-sant-joan-les-fonts`: se elimina. En enero de 2026 Embotits Calet
+  cambió su denominación a Establiments Calet, trasladó el domicilio y cambió
+  el objeto social a alojamientos turísticos.
+- `cervesa-la-brava-forallac`: se elimina. El BORME documenta concurso,
+  conclusión por insuficiencia de masa activa y extinción de La Brava Beer
+  SL; no se localiza una productora sucesora vigente.
+- `lactics-ecologics-raphel-llado-maia-de-montcal`: pasa a `verificado`. La
+  ficha pública vigente confirma explotación ecológica, transformación
+  láctea y venta directa en Can Garriga.
+- `lactics-de-la-vall-de-ribes-ribes-de-freser`: pasa a `verificado` y adopta
+  el nombre actual `Ca l'Esteve`. Se corrige la descripción: desde 2023 el
+  obrador continúa elaborando lácteos, pero ya compra la leche a otra granja
+  del Ripollès.
+- `gelats-janeret-banyoles`: pasa a `verificado` como `Golafreria Janeret`.
+  Se actualizan dirección, teléfono y redes a la Plaça Major; el perfil propio
+  mantiene actividad en junio de 2026.
+- `llivins-llivia`: pasa a `verificado`. El perfil propio mantiene actividad
+  en junio de 2026 y publica el teléfono de enoturismo; la venta remota sigue
+  como `no comprobado`.
+- `lactics-tramuntana-cabanelles`: permanece `parcial`. Gastroteca y una guía
+  territorial de 2024 sostienen la existencia y la actividad láctea, pero la
+  última actividad propia localizada es de 2020.
+- `can-solivera-forallac`: permanece `parcial`. El portal turístico local aún
+  publica visitas y catas, pero la web propia es una página de alojamiento,
+  el perfil social ya no existe y las fuentes empresariales son
+  contradictorias sobre la continuidad.
+
+## Cierre de la pasada provincial
+
+Cierra la pasada profunda, no el CSV: la provincia entra en mantenimiento
+continuo y sigue siendo un catálogo vivo cuyas afirmaciones dinámicas y
+evidencia se revisan en el futuro. Pasada final de consistencia realizada el
+2026-06-15.
+
+- Procedencia estructurada de estas decisiones en
+  `data/evidence/catalunya/girona.jsonl` (241 `keep` + 6 tombstones de purga).
+  El CSV sigue siendo la fuente de verdad; la provincia no está en cobertura
+  estricta (`data/evidence/coverage.json`), así que la evidencia puede ampliarse
+  sin bloquear.
+- Catálogo final: 241 filas con la cabecera canónica de 20 columnas; 239
+  `verificado`, 2 `parcial` y 0 `pendiente`.
+- No hay duplicados de `slug`, nombre + municipio, dominio web, teléfono,
+  correo, perfil social ni `place_id`.
+- Se revisaron 16 grupos de coordenadas compartidas. Corresponden a centroides
+  municipales o de núcleo usados de forma prudente por productores distintos;
+  las identidades, contactos y direcciones no justifican ninguna fusión.
+- Las 125 filas con `Venta online=sí` tienen un canal declarado y las
+  dependencias necesarias: web para `ecommerce`, correo para `email` y teléfono
+  para `telefono` o `whatsapp`.
+- Se completó el correo y el horario de `formatges-mas-farro-la-vall-de-bianya`
+  desde su web oficial, que indica expresamente cómo confirmar pedidos grandes.
+- Las 17 filas con venta `no comprobado` tienen decisión documentada en este
+  ledger o, para las altas de las Rutas del Vi, en
+  `docs/candidates/girona.md`.
+- Los únicos residuales son `lactics-tramuntana-cabanelles` y
+  `can-solivera-forallac`; ambos conservan `parcial` por límites de evidencia
+  actuales ya descritos en el lote 27.
+- La señal de completitud queda en 99,2 % únicamente porque el objetivo
+  editorial penaliza `no comprobado`; no representa un incumplimiento del
+  contrato ni una cola sin revisar.
+- `docs/candidates/girona.md` no contiene candidatos pendientes.

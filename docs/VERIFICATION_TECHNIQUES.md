@@ -1,10 +1,11 @@
 # Técnicas de verificación de catálogos provinciales
 
-Manual operativo para revisar `data/csv/[comunidad]/[provincia].csv`. `AGENTS.md` y
-`docs/CSV_CONTRACT.md` contienen el contrato; aquí se define el criterio editorial.
+Manual operativo para revisar `data/csv/[comunidad]/[provincia].csv`. `AGENTS.md`,
+`docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`
+contienen los contratos; aquí se define cómo investigar con eficiencia.
 
-La fuente de verdad es el CSV. Un ledger provincial, si existe, solo guarda fuentes locales,
-excepciones y progreso.
+La fuente de verdad del productor es el CSV. El JSONL de evidencia guarda procedencia estructurada;
+un ledger provincial, si existe, solo conserva fuentes locales, excepciones y progreso.
 
 ## Cómo usar este documento
 
@@ -37,8 +38,8 @@ técnicas son heurísticas que el agente puede adaptar al caso.
    npx pnpm list:province [provincia]   # acótalo en provincias grandes (ver Disciplina de contexto)
    ```
 
-   Evita abrir en paralelo una provincia ya activa. Para una fila concreta, localízala con `rg` y lee
-   solo su ventana; no cargues el CSV completo.
+   Evita abrir en paralelo una provincia ya activa. Para una fila concreta, localízala con `rg` en el
+   CSV y en su JSONL de evidencia; lee solo esas ventanas.
 
 2. **Define un lote útil**
 
@@ -63,15 +64,19 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 
 5. **Edita quirúrgicamente**
 
-   Usa un parser CSV, preserva LF y toca solo los `slug` del lote. Al purgar, elimina su imagen
-   referenciada y actualiza la nota de candidatos afectada.
+   Usa un parser CSV, preserva LF y toca solo los `slug` del lote. Añade o sustituye una línea JSONL
+   para cada alta, cambio de `verificacion`, decisión de venta, purga o fusión. Al purgar, elimina su
+   imagen referenciada y actualiza la nota de candidatos afectada.
 
 6. **Valida**
 
    ```bash
    npx pnpm check:csv:changed
+   npx pnpm check:evidence
+   npx pnpm check:evidence:changed   # warning-only: ¿alguna decisión sin evidencia?
    git diff --check
    git diff -- data/csv/[comunidad]/[provincia].csv
+   git diff -- data/evidence/[comunidad]/[provincia].jsonl
    ```
 
    Al cerrar trabajo de datos, ejecuta `npx pnpm verify:data`.
@@ -96,6 +101,9 @@ Para hacer match de entidad combina nombre o razón social con municipio y, cuan
 teléfono, correo o dirección. No prolongues la búsqueda si una fuente primaria ya resuelve esos puntos
 sin contradicciones.
 
+Registra la fuente con los claims concretos que demuestra. Una URL no hereda autoridad sobre todos los
+campos: por ejemplo, un marketplace puede probar venta activa sin probar municipio.
+
 ## Decisión por fila
 
 Revisa únicamente lo necesario para responder:
@@ -116,6 +124,9 @@ Revisa únicamente lo necesario para responder:
 `parcial` es un cierre válido cuando existe un techo real de evidencia. No promociones para vaciar
 la cola. El contrato acepta enlaces externos válidos, pero una URL
 `maps/search/?api=1&query=...` no demuestra editorialmente la identidad.
+
+La matriz normativa y sus casos sintéticos viven en `docs/EDITORIAL_POLICY.md`; este manual no debe
+crear criterios provinciales alternativos.
 
 ### Campos
 
@@ -181,6 +192,7 @@ primer resultado por puntuación.
 ## Disciplina de contexto
 
 - No leas todo el CSV para editar unas filas.
+- No leas ni reformatees todo el JSONL: busca el `slug` y sustituye una sola línea.
 - El roster `list:province` de una provincia grande (Barcelona, Madrid) también llena el contexto:
   acótalo con `--categoria`/`--pendientes` o `rg`, no lo vuelques entero.
 - No releas este documento completo en cada lote; conserva solo las secciones aplicables.
@@ -197,30 +209,36 @@ contradicciones, riesgo de purga, duplicidad o una afirmación dinámica dudosa.
 
 ## Trazabilidad
 
-El mensaje de commit o ledger, si existe, debe permitir reanudar sin copiar la investigación:
+El JSONL registra de forma estructurada fuente, fecha, claims y decisión. El mensaje de commit o ledger
+provincial debe limitarse a lo necesario para reanudar:
 
 - lote y fecha;
 - verificadas, parciales y purgas;
 - fusiones o correcciones relevantes;
 - residuales y motivo.
 
-No enumeres cada fuente rutinaria. Documenta evidencia fina solo para purgas, fusiones, dudas
-residuales y excepciones que otro agente podría interpretar de forma distinta.
+No dupliques en narrativa cada fuente rutinaria que ya está en el JSONL. Documenta explicación fina
+solo para purgas, fusiones, dudas residuales y excepciones que otro agente podría interpretar de forma
+distinta.
 
-## Pasada de consistencia antes de cerrar una provincia
+## Pasada de consistencia al cerrar una pasada provincial
 
 Esta pasada es provincial, no necesaria tras cada lote:
 
-1. Concilia filas, estados, venta, canales e imágenes.
+1. Concilia filas, estados, venta, canales, imágenes y evidencia.
 2. Comprueba dependencias: `sí`/canal; `ecommerce`/web; `email`/correo;
    `telefono|whatsapp`/teléfono; horarios/campo referido.
 3. Repite deduplicación y revisa colisiones geográficas.
 4. Audita identidad de enlaces y todos los `Venta online=sí`.
 5. Revisa residuales `parcial` y `no comprobado`.
-6. Revisa diff, LF, imágenes y ejecuta `npx pnpm verify:data`.
+6. Revisa diff, LF, imágenes, evidencia y ejecuta `npx pnpm verify:data`.
 
-Una provincia está cerrada cuando no quedan `pendiente`, cada residual tiene una razón conocida y las
-afirmaciones dinámicas se han comprobado. Después entra en mantenimiento.
+Una **pasada** de revisión se cierra cuando no quedan `pendiente`, cada residual tiene una razón
+conocida y las afirmaciones dinámicas se han comprobado; entonces la provincia entra en mantenimiento.
+El CSV nunca se «cierra» ni se da por terminado: es un catálogo vivo. Las afirmaciones dinámicas
+(actividad, cierre, venta online) y la frescura de la evidencia se vuelven a comprobar durante el
+mantenimiento. Añadir la provincia a `data/evidence/coverage.json` fija el estándar de procedencia
+—la cobertura pasa a ser bloqueante—, pero no congela el catálogo ni cierra el CSV.
 
 ## Documento provincial opcional
 

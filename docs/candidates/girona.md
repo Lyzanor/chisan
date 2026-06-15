@@ -12,6 +12,7 @@
 - [x] **Tocat de l'Ala** (Mollet de Peralada) — `tocat-de-lala-mollet-de-peralada` (`verificado`, sí/ecommerce).
 - [x] **Aldea de Buscarós** (Darnius) — `aldea-de-buscaros-darnius` (`verificado`; projecte Les Vinyes; venta online no comprobada).
 - [x] **Celler Mas Patiràs** (Forallac / Fonteta) — `celler-mas-patiras-forallac`
-  (`parcial`: sin web ni ficha propia de Google Maps; ubicado en els Jardins de l'Empordà, solo teléfono + registro DO).
+  (`verificado`, venta online `no comprobado`; actividad 2025–2026 confirmada
+  por la DO Empordà, perfil propio y ferias locales).
 
 > Coordenadas y datos obtenidos de Google Maps (place + ficha) y de las webs oficiales de cada celler.

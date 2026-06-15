@@ -47,7 +47,7 @@
 
 1. Lee este archivo entero.
    Para el cierre transversal aplica también la pauta genérica de
-   `docs/VERIFICATION_TECHNIQUES.md`, sección «Pasada de consistencia antes de cerrar una provincia».
+   `docs/VERIFICATION_TECHNIQUES.md`, sección «Pasada de consistencia al cerrar una pasada provincial».
 2. Toma la primera zona ⬜ de la **worklist** (más abajo).
 3. Lista su lote priorizando riesgo (pendientes primero, luego `VO=sí` sin confirmar):
    ```bash

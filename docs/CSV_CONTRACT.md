@@ -3,6 +3,7 @@
 ## Source of truth
 - Province files: `data/csv/[comunidad]/[provincia].csv`
 - Barcelona file: `data/csv/catalunya/barcelona.csv`
+- Structured provenance: `data/evidence/[comunidad]/[provincia].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
 - Encoding: UTF-8 (BOM tolerated)
 - Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
 - Header row is required.
@@ -87,6 +88,7 @@ Optional = the value may be empty. The column headers themselves are present in 
 - New category labels should be rare and should describe a materially different producer type.
 
 ## Verification levels
+- The decision model — how to choose `pendiente`/`parcial`/`verificado`, online sales, and the edge cases — lives in `docs/EDITORIAL_POLICY.md`. This section owns only the structural contract: allowed values and blocking rules.
 - `verificacion` is required for every row. It is the single reliability indicator for agents and editors.
 - Allowed values:
   - `pendiente`: added for catalog coverage, but still needs review.
@@ -94,6 +96,7 @@ Optional = the value may be empty. The column headers themselves are present in 
   - `verificado`: name, municipio, location and contact/link data have been cross-checked against a primary or clearly reliable source.
 - Legacy values such as `alta`, `media`, and `baja` are invalid. Use `verificado`, `parcial`, and `pendiente`.
 - A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The blocking audit fails when this is not the case.
+- For new and re-reviewed decisions, the matching evidence ledger records source URLs, inspection dates and supported claims. Provinces migrate progressively; strict coverage is controlled by `data/evidence/coverage.json`.
 
 ## Online sales
 - `Venta online` is required for every row.
