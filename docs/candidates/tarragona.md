@@ -11,7 +11,15 @@
 > Generado el 2026-06-15.
 
 
-**Total candidatos en este archivo: 214**
+**Total inicial: 214 · revisado 2026-06-15.**
+
+## Estado de revisión (cribado 2026-06-15)
+- **DO Terra Alta: HECHA.** 17 integradas en `tarragona.csv` (todas `verificado`): Bàrbara Forés, Bielsa Ruano, Arrufí, Bernaví, Frisach, Josep Vicens, La Botera, Xavier Clua, Cellers Tarroné, Coma d'en Bonet, Edetària, Essència de Lluna, Herència Altés, Sant Josep Vins, Vins del Tros, Les Vinyes del Convent, Celler Menescal. **Descartadas 2:** *Catedral del Vi* = Cooperativa Pinellense (ya estaba) y *Comebé* = consorci Memorial Batalla de l'Ebre (no es celler).
+- **Ya las teníamos (quitar de Conca):** *Agrícola de la Conca* (= fila Montblanc) y *Agrícola de Barberà* (= Coop. Agrícola de Barberà de la Conca).
+- **Duplicados entre DOs (contar 1 vez):** Castell d'Or (Conca+Tgn), Clos Mogador (Priorat+Montsant), Josep Grau Viticultor (Priorat+Montsant), Noguerals (Priorat+Montsant).
+- **Slugs de web → nombre real (Priorat):** `www-arethealpriorat-com`=Aretheal Priorat · `https-closalkio-com`=Clos Alkio · `www-vinyesforermassard-com`=Les Vinyes Forer Massard.
+- **Dudoso encaje (revisar):** Bodegas Embotelladoras (DO Tgn, ¿embotellador?), Unió Fruits SCCL (Priorat, coop de fruta).
+- **Pendiente:** DO Tarragona (~11), Conca de Barberà (~22), DO Montsant (~43), DOQ Priorat (~108).
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  26 candidatos
@@ -231,7 +239,7 @@ Fuente: https://www.dotarragona.cat/
 - [ ] **Vinya Janine** — DO Tarragona
 
 
-## Ruta del Vi DO Terra Alta  ·  19 candidatos
+## Ruta del Vi DO Terra Alta  ·  ✅ HECHA (17 integradas, 2 descartadas — ver «Estado de revisión» arriba)
 
 - [ ] **Barbara Fores** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/barbara-fores/>
 - [ ] **Bielsa Ruano** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/bielsa-ruano/>
