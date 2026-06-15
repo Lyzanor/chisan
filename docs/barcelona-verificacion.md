@@ -17,15 +17,15 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.625** · verificado **1.278** · parcial **600** · pendiente **747**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **348 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.617** · verificado **1.287** · parcial **604** · pendiente **726**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **356 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
 - Modo: lote a lote bajo demanda, ~25 filas/lote (ahora grupos de municipis petits a 8), ~90 lotes
-  estimados. **Cerrados: lotes 1-110 + grupo 111 (Santa Susanna, Calldetenes, Canovelles, Cardona,
-  Casserres, Gelida) + grupo 112 (Abrera, Alella, Alpens, Ametlla del Vallès, Artés) + grupo 113
-  (Aguilar de Segarra, Argençola, Avinyó, Avià, Bagà)** (worklist).
-- **Siguiente: Lote 114** — grupo de municipis petits (Balenyà, Balsareny, Bellaterra,
-  Berga (la Valldan), Bellprat…). Recomputar al llegar.
+  estimados. **Cerrados: lotes 1-110 + grupos 111 (Santa Susanna…Gelida), 112 (Abrera…Artés),
+  113 (Aguilar de Segarra…Bagà) y 114 (Balenyà, Balsareny, Bellaterra, Berga la Valldan,
+  Bigues i Riells del Fai, Borredà, Cabrera d'Anoia/d'Igualada, Cabrianes, Cal Rosal)** (worklist).
+- **Siguiente: Lote 115** — grupo de municipis petits (Caldes d'Estrac, Callús, Calonge de Segarra,
+  Canyelles, Capellades…). Recomputar al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -295,7 +295,16 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 124 | Avinyó | 0 | ✅ | 2026-06-16 | 2 verif + 2 parcial + 0 purgas (Pla de Bages); Abadal (vinotecaorigen ecommerce) i Les Acàcies (ecommerce) verif; SAT 4768 = **Roqueta Origen** (grup darrere d'Abadal; web afegida) i Corominas Palomo = Granja Corominas (porcí) parcials DAR |
 | 125 | Avià | 0 | ✅ | 2026-06-16 | 4 verif + 2 parcial + 1 purga (Berguedà); pere-muxi-rubio dup d'Ibertruf (mateix Pere Muxí, nous+tòfona, web ibertruf.com) purgat; Mel La Caseta (ecommerce), Cal Serrador (làctics), Ibertruf i Ous Dachs (=Dachs Sabata, web ousdachs.com afegida) verif; Cal Faneca (horta) i Macià-Costa (llet de cabra) parcials DAR |
 | 126 | Bagà | 0 | ✅ | 2026-06-16 | 4 verif + 0 parcial + 1 purga; garcia-canal-lluis = dup de Carn del Cadí-Moixeró (Ricard Garcia Canal/Cal Negre, links del Parc Natural ajenos) purgat; Ecoavícola (pollastres eco, encàrrec), Formatgeria Tiraval, Embotits Ca la Masa (des de 1870) i Carn del Cadí-Moixeró/Carnisseria Cal Negre (web carndelcadimoixero.com afegida) verif |
-| — | _resto (249 municipios)_ | 747 | ⬜ | | recomputar al llegar |
+| 127 | Balenyà | 0 | ✅ | 2026-06-16 | 1 verif; Bolets de Soca (cultiu de bolets: troncs inoculats, shiitake/gírgola, ecommerce, Els Hostalets de Balenyà) verif |
+| 128 | Balsareny | 0 | ✅ | 2026-06-16 | 1 parcial; Explotacions Capdevila Alsina SCP (cabrum, DAR) parcial |
+| 129 | Bellaterra | 0 | ✅ | 2026-06-16 | 1 verif + 1 purga; Restaurant Marcs = restaurant (no productor) purgat; Bonaparte Pa i Dolç (cadena de forns amb obrador) verif |
+| 130 | Berga (la Valldan) | 0 | ✅ | 2026-06-16 | 1 parcial; Bolets Pirineus = distribuïdor majorista de bolets/producte de proximitat per a hostaleria (no productor, botiga en proves) parcial |
+| 131 | Bigues i Riells del Fai | 0 | ✅ | 2026-06-16 | 1 verif + 1 parcial + 3 purgas; Can Camp = web de l'Associació de Veïns de Can Camp (no productor), Mas la Pineda i Les Rassades sense rastre ni al directori municipal → purgades; Can Sapera (celler/molí d'oli, botiga online) verif; Pa de Xeixa (=Xeixa, forn de pa artesà a Can Feliuà, confirmat però sense enllaç propi) parcial |
+| 132 | Borredà | 0 | ✅ | 2026-06-16 | 1 verif + 1 parcial + 2 purgas; granja-puigcercos dup de SAT Puigcercós i Josep Tubau sense rastre → purgats; Formatge Bauma (=Blansac 2015 SL, formatge de cabra) verif; SAT Puigcercós (vedella Ramaders de Muntanya del Berguedà, →Carne) parcial DAR |
+| 133 | Cabrera d'Anoia (i d'Igualada) | 0 | ✅ | 2026-06-16 | 3 verif + 1 purga (Penedès/Anoia); can-gallego-viticultors-scp (Cabrera d'Igualada, nom antic) = dup de Mas dels Clavers/Finca Can Gallego (mateixes coords + email) purgat; Can Feixes/Huguet (Corpinnat), Mas dels Clavers i Vinyes que Atrapen (ecommerce) verif |
+| 134 | Cabrianes (i Sallent) | 0 | ✅ | 2026-06-16 | 1 verif + 1 purga; els-ous-de-loriol-cabrianes = dup d'Els Ous de l'Oriol ja verificat a Sallent (comallonga-gavalda-oriol, mateix tel/email) purgat; La Tomakera (horta eco, cistelles, ecommerce|whatsapp; DAR Sallent) verif |
+| 135 | Cal Rosal (Berga) | 0 | ✅ | 2026-06-16 | 1 verif; L'Escairador (molí recuperat, farines/cereals/llegums, →Despensa, ecommerce; DAR Maria Costa Ferrer) verif |
+| — | _resto (238 municipios)_ | 726 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
