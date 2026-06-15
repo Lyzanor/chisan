@@ -17,14 +17,15 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.630** · verificado **1.266** · parcial **595** · pendiente **769**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **343 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.625** · verificado **1.278** · parcial **600** · pendiente **747**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **348 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
 - Modo: lote a lote bajo demanda, ~25 filas/lote (ahora grupos de municipis petits a 8), ~90 lotes
   estimados. **Cerrados: lotes 1-110 + grupo 111 (Santa Susanna, Calldetenes, Canovelles, Cardona,
-  Casserres, Gelida) + grupo 112 (Abrera, Alella, Alpens, Ametlla del Vallès, Artés)** (worklist).
-- **Siguiente: Lote 113** — grupo de municipis petits (Aguilar de Segarra 2, Argençola 4,
-  Avinyó 4, Avià 7, Bagà 5). Recomputar al llegar.
+  Casserres, Gelida) + grupo 112 (Abrera, Alella, Alpens, Ametlla del Vallès, Artés) + grupo 113
+  (Aguilar de Segarra, Argençola, Avinyó, Avià, Bagà)** (worklist).
+- **Siguiente: Lote 114** — grupo de municipis petits (Balenyà, Balsareny, Bellaterra,
+  Berga (la Valldan), Bellprat…). Recomputar al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -289,7 +290,12 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 119 | Alpens | 0 | ✅ | 2026-06-16 | 4 verif + 0 parcial + 1 purga (El Quall = obrador-formatgeria comunitari del Consorci del Lluçanès, instal·lació/incubadora, no productor); Embotits Cruells, Embotits Vilardaga, Forn Cal Jolis i Melmelades Cal Benet (coords mal a 37 km→corregides a Alpens) verif |
 | 120 | Ametlla del Vallès | 0 | ✅ | 2026-06-16 | 1 verif + 1 parcial + 2 purgas; L'Espigall = consultoria agroambiental de Lladó (Girona), no productor de horta → purgat (mal fichat de província); Mas Draper = masia patrimonial BCIN sin rastre productiu → purgat; Can Gual (agroturisme + ous, DAR) verif; SAT 759 Granja el Prat (formatges de vaca, DAR) parcial |
 | 121 | Artés | 0 | ✅ | 2026-06-16 | 5 verif + 1 parcial + 1 purga (Bages); roca-serna-marc = SAT les Torres / Ramaderia La Pedra SL (mateix tel 649993866) purgat com a dup; Artium (coop 1908, ecommerce), Solergibert (vinya eco; FB era AxiomThemes theme→blanquejat), Caves Gibert, Formatges Gavarresa i La Girgola (bolets de Josep M. Vidal) verif; SAT les Torres (vedella/embotits boví) parcial DAR |
-| — | _resto (254 municipios)_ | 769 | ⬜ | | recomputar al llegar |
+| 122 | Aguilar de Segarra | 0 | ✅ | 2026-06-16 | 0 verif + 0 parcial + 2 purgas; les 2 files són quimeres: Estruch Nadal (web/tel/coords del **neuròleg Miquel Aguilar de Sabadell**, DAR fals de Calonge, email "serragallarda"=nom d'un dolmen) i Salat Mestres (IG de Mestres Fruiters de Sant Adrià, sense DAR ni rastre). Candidat real: Cal Figuera (ous) |
+| 123 | Argençola | 0 | ✅ | 2026-06-16 | 2 verif + 1 parcial + 1 purga; Antonio Castillo = quimera amb links de l'ajuntament (argencola.cat, IG ajuntamentargl), DAR fals (coop Ivars de Tàrrega) → purgat; Can Mestre (llegums/cereals/farines eco CCPAE, comandes per formulari) i Cal Serrats (xai/cabrit eco, →Carne) verif; Taixe Vilana (cabrum/xai) parcial DAR |
+| 124 | Avinyó | 0 | ✅ | 2026-06-16 | 2 verif + 2 parcial + 0 purgas (Pla de Bages); Abadal (vinotecaorigen ecommerce) i Les Acàcies (ecommerce) verif; SAT 4768 = **Roqueta Origen** (grup darrere d'Abadal; web afegida) i Corominas Palomo = Granja Corominas (porcí) parcials DAR |
+| 125 | Avià | 0 | ✅ | 2026-06-16 | 4 verif + 2 parcial + 1 purga (Berguedà); pere-muxi-rubio dup d'Ibertruf (mateix Pere Muxí, nous+tòfona, web ibertruf.com) purgat; Mel La Caseta (ecommerce), Cal Serrador (làctics), Ibertruf i Ous Dachs (=Dachs Sabata, web ousdachs.com afegida) verif; Cal Faneca (horta) i Macià-Costa (llet de cabra) parcials DAR |
+| 126 | Bagà | 0 | ✅ | 2026-06-16 | 4 verif + 0 parcial + 1 purga; garcia-canal-lluis = dup de Carn del Cadí-Moixeró (Ricard Garcia Canal/Cal Negre, links del Parc Natural ajenos) purgat; Ecoavícola (pollastres eco, encàrrec), Formatgeria Tiraval, Embotits Ca la Masa (des de 1870) i Carn del Cadí-Moixeró/Carnisseria Cal Negre (web carndelcadimoixero.com afegida) verif |
+| — | _resto (249 municipios)_ | 747 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -361,6 +367,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Gelida:** Cartró Parera, Vicenç (prunes/figues/préssecs/peres, DAR 606249984)
 - **Abrera:** Sències (agricultura i ramaderia eco en 3 masies d'Abrera/Sitges/Masquefa)
 - **Alella:** Bouquet d'Alella SL (marca Bouquet, vins/caves; DAR 670275054)
+- **Aguilar de Segarra:** Cal Figuera (ous; citat a directoris del Bages)
+- **Avinyó:** Torras Salvans, Ricard (marca Salers el Vinyes, vedella; DAR 620962240)
 
 ## Para otros agentes / a vigilar
 
