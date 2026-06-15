@@ -19,9 +19,9 @@
 - **Duplicados entre DOs (contar 1 vez):** Castell d'Or (Conca+Tgn), Clos Mogador (Priorat+Montsant), Josep Grau Viticultor (Priorat+Montsant), Noguerals (Priorat+Montsant).
 - **Slugs de web → nombre real (Priorat):** `www-arethealpriorat-com`=Aretheal Priorat · `https-closalkio-com`=Clos Alkio · `www-vinyesforermassard-com`=Les Vinyes Forer Massard.
 - **DO Tarragona: HECHA.** 10 integradas (`verificado`): Biopaumerà, Castell d'Or, Coop. Vila-rodona, Celler 9+, Caves Magrinyà Calaf, Celler Pedrola (Camí de Sirga), Coop. Sant Isidre de Vilabella, Estol Verd, Terra Cellars, Vinya Janine. **Descartadas 2:** *Bodegas Embotelladoras* (sin ficha, nombre de embotellador, no verificable como KM0) y *Mas dels Frares* (bodega experimental de la Facultat d'Enologia URV, no es productor de consumo). *Castell d'Or* integrada aquí resuelve también el duplicado de Conca.
-- **Conca de Barberà: HECHA.** 18 integradas en `tarragona.csv` (`verificado`): Aymar, Carles Andreu, Clos Montblanc, Costador, La Llena, Mas Foraster (Josep Foraster), Pla de la Masó, Mas de la Sabatera, Rendé Masdéu, Rosa Maria Torres, Sanstravé, Vega Aixalà, Vins de Pedra, Cellers Domenys, Família Torres-Milmanda, Gabor, Gerida, Succés Vinícola. **Descartadas:** Bodegas 1898 (sin ficha), Single Vineyards Collectors (sin ficha, négoci), Vins i Caves Portell (= Coop. Vinícola de Sarral, ya presente). **A lleida.csv (provincia Lleida, no Tarragona):** *Cara Nord Celler* (El Vilosell, 41.3825/0.9473, web caranordceller.com, sí/ecommerce) — pendiente de añadir a `lleida.csv`. **Diferidas (sin ficha Google localizable):** Abadia de Poblet (marca de Celler Tintoré, Vimbodí), Celler Mas de la Creu (Barberà), Celler Mas de la Pansa (Barberà).
+- **Conca de Barberà: HECHA.** 18 integradas en `tarragona.csv` (`verificado`): Aymar, Carles Andreu, Clos Montblanc, Costador, La Llena, Mas Foraster (Josep Foraster), Pla de la Masó, Mas de la Sabatera, Rendé Masdéu, Rosa Maria Torres, Sanstravé, Vega Aixalà, Vins de Pedra, Cellers Domenys, Família Torres-Milmanda, Gabor, Gerida, Succés Vinícola. **Descartadas:** Bodegas 1898 (sin ficha), Single Vineyards Collectors (sin ficha, négoci), Vins i Caves Portell (= Coop. Vinícola de Sarral, ya presente). **Movida a lleida.csv (provincia Lleida, no Tarragona):** *Cara Nord Celler* (`cara-nord-celler-el-vilosell`). **Diferidas (sin ficha Google localizable):** Abadia de Poblet (marca de Celler Tintoré, Vimbodí), Celler Mas de la Creu (Barberà), Celler Mas de la Pansa (Barberà).
 - **Dudoso encaje pendiente (Priorat):** Unió Fruits SCCL (coop de fruta).
-- **Pendiente:** DO Montsant (~43), DOQ Priorat (~108). Cara Nord (Lleida) + 3 diferidas de Conca.
+- **Pendiente:** DO Montsant (~43), DOQ Priorat (~108) + 3 diferidas de Conca.
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  ✅ HECHA (18 integradas; ver «Estado de revisión» arriba)
@@ -32,7 +32,7 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [ ] **Abadia de Poblet (Vimbodí i Poblet)** — DO Conca de Barberà
 - [ ] **Aymar Vitivinícoles (Vimbodí i Poblet)** — DO Conca de Barberà
 - [ ] **Bodegas 1898 (Horta d'Avinyó)** — DO Conca de Barberà
-- [ ] **Cara Nord Celler (El Vilosell)** — DO Conca de Barberà
+- [x] **Cara Nord Celler (El Vilosell)** — movida a `lleida.csv` como `cara-nord-celler-el-vilosell`
 - [ ] **Castell d'Or (L'Espluga de Francolí)** — DO Conca de Barberà
 - [ ] **Celler Carles Andreu (Pira)** — DO Conca de Barberà
 - [ ] **Celler Clos Montblanc (Barberà de la Conca)** — DO Conca de Barberà

@@ -502,11 +502,12 @@ evidencia se revisan en el futuro. Pasada final de consistencia realizada el
   desde su web oficial, que indica expresamente cómo confirmar pedidos grandes.
 - Las 17 filas con venta `no comprobado` tienen decisión documentada en este
   ledger o, para las altas de las Rutas del Vi, en
-  `docs/candidates/girona.md`.
+  `data/evidence/catalunya/girona.jsonl`.
 - Los únicos residuales son `lactics-tramuntana-cabanelles` y
   `can-solivera-forallac`; ambos conservan `parcial` por límites de evidencia
   actuales ya descritos en el lote 27.
 - La señal de completitud queda en 99,2 % únicamente porque el objetivo
   editorial penaliza `no comprobado`; no representa un incumplimiento del
   contrato ni una cola sin revisar.
-- `docs/candidates/girona.md` no contiene candidatos pendientes.
+- La nota temporal de candidates de Girona quedó cerrada; sus altas ya viven
+  en evidence estructurada.
