@@ -15,14 +15,16 @@
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
 
-## Estado actual (2026-06-14)
+## Estado actual (2026-06-15)
 
-- Filas: **2.642** · verificado **1.223** · parcial **574** · pendiente **845**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **331 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.634** · verificado **1.248** · parcial **589** · pendiente **797**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **339 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote, ~90 lotes estimados. **Cerrados: lotes 1-110** (worklist).
-- **Siguiente: Lote 111** — grupo a 8 (Santa Susanna, Calldetenes, Canovelles, Cardona,
-  Casserres, Gelida). Recomputar al llegar.
+- Modo: lote a lote bajo demanda, ~25 filas/lote (ahora grupos de municipis petits a 8), ~90 lotes
+  estimados. **Cerrados: lotes 1-110 + grupo 111 (6 municipis: Santa Susanna, Calldetenes,
+  Canovelles, Cardona, Casserres, Gelida)** (worklist).
+- **Siguiente: Lote 112** — grupo de municipis petits (Abrera 5, Alella 7, Alpens 5,
+  Ametlla del Vallès 4, Artés 7). Recomputar al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -276,7 +278,13 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 108 | Cabrils | 0 | ✅ | 2026-06-14 | 6 verif + 2 parcial + 0 purgas (Maresme). Celler Testuan (testuan.com botiga online → ecommerce), Mel de les Vinyes/Apicultura Maresme (Pere Nubiola, RIAAC; botiga+WhatsApp → ecommerce|whatsapp), Dunam Kimchi (kimchi artesà, comandes per email/tel → email|telefono), Can Sellés (embotits propis des de 1973, només física → VO no), Casa Barba (ECONNREFUSED≠morta; IG+dominio, web casabarba.cat afegida, VO no comprobado) i Forn Vias "Ca la Rosi" (FB+IG fornviascalarosi afegit, guia cabrils.cat) verif; Cultivos Las Resclosas SL (marca Mónplant) i Sola Blanchart Eduard, vivers ornamentals DAR, parcials |
 | 109 | Calella | 0 | ✅ | 2026-06-14 | 3 verif + 2 parcial + 3 purgas + 1 reubicada (Maresme, maduixes). Purgas: Marquez Horticultors (dup de Agrogust —mateixes coords/negoci, "Laris/Larys"=Joan Màrquez Tarrés), Miss Coqueta Gourmet (restaurant sense gluten, no productor) i L'Hort de Can Talleda (sense rastre, coords a 40km). Can Vives (carnisseria des de 1840, obrador propi, botiga online+WhatsApp → ecommerce|whatsapp), Agrogust=marca de Joan Màrquez "Larys" (agrogust.com botiga → ecommerce) i UMAC=Unió de Maduixaires de Calella SAT 1321 (des de 1977, web uniomaduxairescalella.com afegida → VO no majorista) verif; Pla Jubany Joan (DAR fava →Fruta y verdura) parcial; **Ginesta Verges Joaquim reubicada a Montcada i Reixac** (adreça/web ginestamontcada.cat de Montcada, fruits secs; coords corregides al centroide, verif) |
 | 110 | Canet de Mar | 0 | ✅ | 2026-06-14 | 4 verif + 3 parcial + 1 purga (Maresme). Purga: Aguilar Rodriguez Jordi=quimera d'un bufet d'advocats (web bufeteaguilar.es, IG ca_abogados_barcelona, adreça a Montcada; .webp borrat). La Canetenca (cervesa artesana; web canetenca.cat ECONNREFUSED≠morta + FB/IG → VO no comprobado), Pastisseria Campassol (mestres artesans des de 1953, només física), El Desig Pastissers (IG) i Forn d'en Txus (IG) verif; Aguilar Mora Joan Ramon (DAR maduixot; web ajena tecnimak4 blanquejada, tel/email del DAR), Can Catà-Fruits del Sol (maduixes, Mercat de Pagès) i Forn Masvidal (pa artesà massa mare) parcials —reals però sense enllaç propi |
-| — | _resto (302 municipios)_ | 1.251 | ⬜ | | recomputar al llegar |
+| 111 | Santa Susanna | 0 | ✅ | 2026-06-15 | 4 verif + 2 parcial + 2 purgas (Can Virgili sin rastre i coords a 16 km; Tresserras Gibert sin DAR ni rastre, coords a BCN); Flors Pons (únic productor de roses de Catalunya per Sant Jordi; gastroteca.cat blanquejada) i Hortplant (viver propi 20 a.) verif; Hortalisses Pi (slug ...arenys, ja reubicada) i L'Hort d'en Ripoll verif; Sierra Alias (DAR Martí Sierra) i Buch plantes (viver ornamental) parcials |
+| 112 | Calldetenes | 0 | ✅ | 2026-06-15 | 3 verif + 2 parcial + 3 purgas; **Mas El Pujol** fusiona 3 files (el-pujol marca + Sola Arumí registre + Alsina Rovira/Pep Alsina = la mateixa granja de llet amb màquina de llet fresca, →Lácteos); Barniol Franquesa = Casa Altarriba (mateix tel 649234250, web era escola Sant Marc) purgat; Saborit (comandes tel) i Cervesa Cingles (web cervesacingles.com) verif; SAT Caseta d'en Grau (La Caseta, llet) parcial |
+| 113 | Canovelles | 0 | ✅ | 2026-06-15 | 4 verif + 2 parcial + 2 purgas; La Kosturica (coop agroecològica de Maria Giner, cistelles) verif → giner-gomez-maria (mateix tel 646036757) purgat com a dup; Jose Garcia Lopez = quimera d'una asesoria de BCN purgat; Arderiu (botiga online arderiu.net, ecommerce), Formatgeria La Cleda (ecommerce) i Xais i Cabrits Canyelles (oví/cabrum eco) verif; Pous Marin i Oliveras Pujadas parcials DAR |
+| 114 | Cardona | 0 | ✅ | 2026-06-15 | 4 verif + 4 parcial + 0 purgas; Cafès Gener (torrefactor 1950, mercatdaqui marketplace), Simats-Gallines Boscanes (= Duran Castelló, simats.cat, dpagès), Ca la Pili (ex-Aviram Pili, whatsapp) i Pastisseria Montserrat (ecommerce) verif; Celler del Miracle (Jordi Molner, web afegida; pot ser de Riner/Solsonès→Lleida) i Jané Fernández (vedella del col·lectiu Cal Pepitu, →Carne) parcials; Espel Palà = agroturisme Palà de Coma; Jovellanet parcial DAR |
+| 115 | Casserres | 0 | ✅ | 2026-06-15 | 3 verif + 3 parcial + 2 purgas; Barbats NO és celler → **Casa Barbats** agroturisme + vedella (Ramaders de Muntanya del Berguedà, →Carne) parcial, i ramon-m-pellicer (mateixa persona) purgat com a dup; Simon Garros sin DAR ni rastre purgat; Cal Caleio = Carn i Bestiar Prat SL (botiga virtual, ecommerce), Casa Enfruns i Puig-Fitó (puigfito.com) verif; El Soler de Sant Pau = pèsol negre del Berguedà (→Legumbres); Llumà Corominas (Xais del Miquel) parcial DAR |
+| 116 | Gelida | 0 | ✅ | 2026-06-15 | 6 verif + 1 parcial + 1 purga; Torelló, Can Pasqual (marca Oxigen) i Celler Viader (Muscàndia) verif → francesc-pascual-subirana (mateixa persona que Can Pasqual) purgat com a dup; Embotits Can Coma, Forn de pa Marí (1912) i Pastisseria La Confiança (1856, la més antiga de Catalunya) verif; Can Miquel de les Planes (finca de Pere Parera / Vins el Cep, marca a Sant Sadurní) parcial |
+| — | _resto (259 municipios)_ | 797 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -341,6 +349,11 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Badia del Vallès:** Carnisseria Cristina Ramacisa SL (Mercat de Badia, Av. Via de la Plata 8) — real en directorios; el ajuntament publica la lista de parades con servei a domicili (badiadelvalles.cat)
 - **Terrassa:** Hort del Silenci (hortdelsilenci.com; agricultores y elaboradores eco con almacén en Terrassa; su obrador es la Masia Can Viver de Torrebonica = Agrària Can Viver SL del DAR, fila quimera purgada de Montcada) — no está en el CSV
 - **Lluçanès:** portales llucanesataula.cat y turisme.llucanes.cat/tasta/productors-elaboradors — fuentes útiles para toda la comarca; Formatges de Lluçà (Lluçà) y el obrador col·lectiu/formatgeria del Lluçanès (Anna Puig, BCN Agrària) como pistas
+- **Santa Susanna:** Agrícola de Santa Susanna SCCL (coop) · Hortalisses Pascual SCP (DAR 636644433) · L'Hort d'en Pol (Pol Pi Pujol, DAR 691857326) · Campeny Solà, Angel (aromàtiques, DAR 685270784)
+- **Calldetenes:** Roca Rovira, Antonino (ceba/calçot, DAR 658910605)
+- **Cardona:** Cal Pepitu (carnisseria de Cardona amb botiga online lavalldelcardener.cat; vedella, el col·lectiu de Josep Jané/Guillem Flores/Mar Barons — el ramader Jané ja és fila parcial) · Tòfona del Clot de Coma (Josep Malagarriga, DAR 687847550)
+- **Casserres:** Casa Barbats Agrícola i Ramadera SL (vedella, Ramaders de Muntanya del Berguedà; DAR 620942009 — ja integrada com a fila "Casa Barbats" parcial) · Cal Trumfet (casa rural amb productes locals)
+- **Gelida:** Cartró Parera, Vicenç (prunes/figues/préssecs/peres, DAR 606249984)
 
 ## Para otros agentes / a vigilar
 
@@ -352,6 +365,10 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
   "Macia Parris, Maria del Mar" que llevaba su email.
 - Lleida: **Ferro Falgueras, Francesc Xavier** figura en el DAR actual como productor de miel de
   Tremp; se purgó la fila contaminada de Cardedeu y queda como candidato para `lleida.csv`.
+- Lleida (Solsonès): **Celler del Miracle** (Jordi Molner Canal, cellerdelmiracle.cat; vinyes al
+  Santuari del Miracle). El DAR lo registra en Cardona y el CP es 08261, pero el Santuari del Miracle
+  está en **Riner (Solsonès, prov. Lleida)**. Se dejó como fila parcial en `barcelona.csv`; revisar si
+  debe moverse a `lleida.csv`.
 
 ## Historial
 
