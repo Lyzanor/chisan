@@ -38,7 +38,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `npx pnpm check:csv:changed`: runs the blocking contract audit only on CSVs changed in the working tree (staged, unstaged, untracked). Use it while iterating; run `verify:data` (or `verify:ai` for code) before finishing.
 - `npx pnpm check:csv`: validates the blocking CSV contract for every CSV file.
 - `npx pnpm check:csv:data-quality`: warning audit for data-quality review across every CSV.
-- `npx pnpm check:csv:completeness`: planning signal for province expansion.
+- `npx pnpm check:csv:completeness`: planning signal against fixed editorial targets; provinces are not benchmarks for one another.
 - `npx pnpm check:images`: validates that referenced producer image paths exist; reports editorial image warnings.
 - `npx pnpm enrich:images --provincia [provincia]`: dry-run producer image enrichment from official websites; use `--apply` only after reviewing candidates. The scorer often ranks junk above the real brand logo (cookie-consent, accessibility, "Kit Digital" subsidy banners, Instagram-icon PNGs) and `--apply` saves the first acceptable candidate, so apply per producer (`--apply --slug <slug>`) only when its top candidate is the genuine logo; otherwise leave `imagen` blank.
 - `npx pnpm test:csv-audit`: regression tests for the CSV audit rules.
@@ -100,7 +100,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - **Registries confirm existence, not current status.** They can be stale (closed businesses, no longer selling online). Listing supports at most `verificacion=parcial`; for a dynamic claim like `Venta online=sí` confirm a live checkout on the producer's own site today, not just presence in a registry/marketplace.
 - **Never invent or guess producer names.** A plausible-sounding name is not a producer. If a candidate appears only inside generic category listings ("quesos de la zona", a dish or product name like "Cocido Montañés") and you cannot find that specific business with its own web, social profile, or Google Maps entry, do not add it.
 - **De-duplicate before researching.** Run `npx pnpm list:province [provincia]` (optionally `--categoria`) first and grep the candidate name; many real producers are already in the CSV under a slightly different name, so verifying them again is wasted effort.
-- **Target the gaps.** Use `npx pnpm check:csv:completeness` to find under-covered municipios and categories, and aim discovery there instead of densifying already-covered areas.
+- **Target the gaps.** Use `npx pnpm check:csv:completeness` to find weak field coverage, then inspect municipal and category coverage directly and aim discovery there instead of densifying already-covered areas.
 - **A failing fetch is not a dead site.** WebFetch forces HTTPS, so http-only or bad-SSL producer sites fail there but work in a browser; confirm via web search before acting, and do not blank a `web` URL just because the fetch failed.
 - **Do not trust speculative candidate lists.** Past candidate files mixed already-integrated real producers with hallucinated names (0% of one batch was integrable). Candidate notes belong in `docs/candidates/`; verify every entry by web before integrating and prune the doc once resolved.
 

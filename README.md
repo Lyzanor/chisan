@@ -56,7 +56,7 @@ App en [http://localhost:3000](http://localhost:3000).
 - `npx pnpm verify` (lint + build)
 - `npx pnpm check:csv` (valida el contrato bloqueante de todos los CSV)
 - `npx pnpm check:csv:data-quality` (auditoría editorial con warnings para todos los CSV)
-- `npx pnpm check:csv:completeness` (señal de planificación para ampliar provincias)
+- `npx pnpm check:csv:completeness` (avance provincial frente a objetivos editoriales fijos; no compara provincias entre sí)
 - `npx pnpm check:images` (valida rutas de imágenes referenciadas y avisa de desviaciones editoriales)
 - `npx pnpm enrich:images --provincia cuenca` (dry-run para encontrar imágenes oficiales; añadir `--apply` solo tras revisar)
 - `npx pnpm test:csv-audit` (regresión de reglas CSV)

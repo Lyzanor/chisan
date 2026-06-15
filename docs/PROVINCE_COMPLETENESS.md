@@ -1,27 +1,42 @@
 # Province Completeness
 
 ## Goal
-Long-term: bring every province catalog toward the Barcelona level of usefulness, while improving factual validity, municipal coverage, producer detail, and row volume province by province.
+Long-term: make every province catalog progressively more useful and reliable, while allowing each province to improve at its own pace.
 
 This is not a required gate for every task. Use it when planning data-expansion work, auditing a province, or deciding which province to improve next.
 
-Barcelona is not an implicit app default, but it remains the comparison baseline because it is the largest mature catalog. Treat the audit output as the source of truth; do not copy a dated snapshot into this document.
+No province CSV is the reference or target for another. Completeness is measured against shared, fixed editorial criteria, and progress should be evaluated against the previous state of the same province.
 
 ```bash
 npx pnpm check:csv:completeness
 ```
 
-The audit prints the current Barcelona baseline, then ranks every province by a mechanical score. Those numbers change whenever CSV rows, links, coordinates, images, or online-sale fields are updated.
+The audit prints the fixed targets and one mechanical progress score per province. It lists provinces by path rather than ranking them against each other. The score is a planning signal, not a release gate or a substitute for source verification.
+
+## Fixed Planning Targets
+
+| Metric | Target | Meaning |
+| --- | ---: | --- |
+| `verificacion` | 100% | Rows reviewed as `parcial` or `verificado`; `pendiente` remains work to do. |
+| `Venta online` | 100% | Status reviewed as `sí` or `no`; keep `no comprobado` until researched. |
+| `Google Maps` | 100% | A usable producer/location link is present. |
+| `lat` + `lon` | 100% | Both coordinates are present and pass the geographic checks. |
+| `telefono` or `correo` | 90% | At least one direct contact route is present. |
+| `web` | 75% | An official or reliable producer page is present. |
+| `Facebook` or `Instagram` | 60% | At least one relevant social profile is present. |
+| `imagen` | 60% | A reviewed local image asset is present. |
+| `horario` | 50% | Useful public hours are present where they exist. |
+
+These percentages are stable editorial planning targets, not claims that every producer has a website, social profile, image, or public opening hours. Empty is preferable to invented or irrelevant data.
 
 ## What Good Looks Like
 - Every row keeps the required CSV contract valid.
 - Every row has an evidence-based `verificacion` value: `pendiente`, `parcial`, or `verificado`.
 - `Google Maps`, `lat`, and `lon` are present and point to the same producer/location.
-- `telefono` or `correo` exists for at least the Barcelona baseline share of rows.
-- `web` exists for at least the Barcelona baseline share of rows, and only when the domain resolves and belongs to the producer or a reliable official listing.
+- `telefono` or `correo` exists when a reliable public contact route can be found.
+- `web` exists only when the domain resolves and belongs to the producer or a reliable official listing.
 - `Venta online` is reviewed as `sí` or `no` when the producer site or a concrete known sales channel makes the status clear; keep `no comprobado` otherwise.
-- `Facebook` or `Instagram` exists for at least the Barcelona baseline share of rows.
-- `imagen` reaches at least the Barcelona baseline share where local assets are available.
+- `Facebook`, `Instagram`, and `imagen` are added when reliable and useful, without filling cells for score alone.
 - Coverage is fine-grained across municipalities, not just concentrated in provincial capitals or a few well-known towns.
 - Row count should grow from verified producers, not filler entries.
 - Product descriptions should be specific enough to distinguish producers.
@@ -29,7 +44,7 @@ The audit prints the current Barcelona baseline, then ranks every province by a 
 ## Planning Signal
 Run the completeness audit when you need a planning signal. It highlights obvious gaps, but it does not replace editorial judgment about validity, municipal spread, row quality, and source reliability.
 
-Use the lowest-scoring rows as a starting point, then inspect the columns listed under `Below Barcelona` to decide the actual work:
+Choose the province from the current editorial plan, then inspect its `Gaps to target` columns to decide the actual work:
 
 - `horario`: schedules are missing or sparse.
 - `contacto`: `telefono` and `correo` coverage is weak.
@@ -39,8 +54,9 @@ Use the lowest-scoring rows as a starting point, then inspect the columns listed
 - `maps`: Google Maps links are missing.
 - `coords`: coordinates are missing or incomplete.
 - `imagen`: local producer images are missing.
+- `verificacion`: rows remain `pendiente`.
 
-Do not choose the next province from score alone. A province with fewer rows but strong verified coverage can be a better catalog than a larger one filled with weak, duplicate, or poorly sourced entries.
+Compare a province with its own earlier state when assessing progress. Do not choose the next province from score alone: editorial ownership, active candidate research, municipal gaps, and data validity matter more than cross-province ordering.
 
 ## Province Improvement Loop
 Use this loop for dedicated province work, not as a default requirement for unrelated tasks.
@@ -60,10 +76,10 @@ node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
 5. Fill or correct `Google Maps`, `lat`, and `lon`.
 6. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
 7. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
-8. Add images only as local assets under `public/productores/[provincia]/`.
+8. Add images only as local assets under `public/productores/[comunidad]/[provincia]/`.
 9. Run:
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data
 ```
 
 ## Notes

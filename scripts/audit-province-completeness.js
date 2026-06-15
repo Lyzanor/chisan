@@ -1,48 +1,61 @@
 #!/usr/bin/env node
 
 const CSV_ROOT = "data/csv";
-const DEFAULT_BASELINE = "data/csv/catalunya/barcelona.csv";
 
 const METRICS = [
   {
     key: "horario",
     label: "Horario",
+    target: 50,
     count: (row) => hasValue(row.horario),
   },
   {
     key: "contacto",
     label: "Contacto",
+    target: 90,
     count: (row) => hasValue(row.telefono) || hasValue(row.correo),
   },
   {
     key: "web",
     label: "Web",
+    target: 75,
     count: (row) => hasValue(row.web),
   },
   {
     key: "ventaOnline",
     label: "Venta online",
+    target: 100,
     count: (row) => isOnlineSalesReviewed(row["Venta online"]),
   },
   {
     key: "social",
     label: "Social",
+    target: 60,
     count: (row) => hasValue(row.Facebook) || hasValue(row.Instagram),
   },
   {
     key: "maps",
     label: "Maps",
+    target: 100,
     count: (row) => hasValue(row["Google Maps"]),
   },
   {
     key: "coords",
     label: "Coords",
+    target: 100,
     count: (row) => hasValue(row.lat) && hasValue(row.lon),
   },
   {
     key: "imagen",
     label: "Imagen",
+    target: 60,
     count: (row) => hasValue(row.imagen),
+  },
+  {
+    key: "verificacion",
+    label: "Verificación",
+    target: 100,
+    count: (row) => isVerificationReviewed(row.verificacion),
   },
 ];
 
@@ -66,30 +79,23 @@ function isOnlineSalesReviewed(value) {
   return normalized === "si" || normalized === "no";
 }
 
+function isVerificationReviewed(value) {
+  const normalized = normalizeSearch(value);
+  return normalized === "parcial" || normalized === "verificado";
+}
+
 function parseArgs(argv) {
   const args = {
-    baseline: DEFAULT_BASELINE,
     format: "table",
   };
 
-  for (let index = 0; index < argv.length; index += 1) {
-    const arg = argv[index];
-
-    if (arg === "--baseline" && argv[index + 1]) {
-      args.baseline = argv[index + 1];
-      index += 1;
-      continue;
-    }
-
-    if (arg.startsWith("--baseline=")) {
-      args.baseline = arg.slice("--baseline=".length);
-      continue;
-    }
-
+  for (const arg of argv) {
     if (arg === "--json") {
       args.format = "json";
       continue;
     }
+
+    throw new Error(`Unknown argument: ${arg}`);
   }
 
   return args;
@@ -135,7 +141,7 @@ function percentage(count, total) {
   return Math.round((count / total) * 1000) / 10;
 }
 
-function auditFile(csvPath, dependencies, baselinePercentages = null) {
+function auditFile(csvPath, dependencies) {
   const rows = readRows(csvPath, dependencies.fs, dependencies.parse);
   const total = rows.length;
   const counts = Object.fromEntries(
@@ -150,22 +156,23 @@ function auditFile(csvPath, dependencies, baselinePercentages = null) {
       percentage(counts[metric.key], total),
     ]),
   );
-  const score =
-    METRICS.reduce((sum, metric) => sum + percentages[metric.key], 0) /
-    METRICS.length;
-  const belowBaseline = baselinePercentages
-    ? METRICS.filter(
-        (metric) => percentages[metric.key] < baselinePercentages[metric.key],
-      ).map((metric) => metric.key)
-    : [];
+  const progress =
+    METRICS.reduce(
+      (sum, metric) =>
+        sum + Math.min(percentages[metric.key] / metric.target, 1) * 100,
+      0,
+    ) / METRICS.length;
+  const gaps = METRICS.filter(
+    (metric) => percentages[metric.key] < metric.target,
+  ).map((metric) => metric.key);
 
   return {
     file: csvPath,
     rows: total,
     counts,
     percentages,
-    score: Math.round(score * 10) / 10,
-    belowBaseline,
+    progress: Math.round(progress * 10) / 10,
+    gaps,
   };
 }
 
@@ -173,20 +180,19 @@ function formatPercent(value) {
   return `${value.toFixed(1)}%`;
 }
 
-function printTable(results, baseline) {
-  console.log(`Baseline: ${baseline.file}`);
+function printTable(results) {
   console.log(
-    `Baseline score: ${baseline.score} · rows: ${baseline.rows} · ${METRICS.map(
-      (metric) => `${metric.key} ${formatPercent(baseline.percentages[metric.key])}`,
+    `Targets: ${METRICS.map(
+      (metric) => `${metric.key} ${formatPercent(metric.target)}`,
     ).join(" · ")}`,
   );
   console.log("");
   console.log(
     [
-      "Score",
+      "Progress",
       "Rows",
       "CSV",
-      "Below Barcelona",
+      "Gaps to target",
       ...METRICS.map((metric) => metric.label),
     ].join("\t"),
   );
@@ -194,10 +200,10 @@ function printTable(results, baseline) {
   for (const result of results) {
     console.log(
       [
-        result.score.toFixed(1),
+        result.progress.toFixed(1),
         String(result.rows),
         result.file,
-        result.belowBaseline.length ? result.belowBaseline.join(",") : "-",
+        result.gaps.length ? result.gaps.join(",") : "-",
         ...METRICS.map((metric) =>
           formatPercent(result.percentages[metric.key]),
         ),
@@ -209,25 +215,21 @@ function printTable(results, baseline) {
 async function main() {
   const dependencies = await getDependencies();
   const args = parseArgs(process.argv.slice(2));
-  const baselinePath = dependencies.path.normalize(args.baseline);
 
-  if (!dependencies.fs.existsSync(baselinePath)) {
-    console.error(`Baseline CSV not found: ${baselinePath}`);
-    process.exit(1);
-  }
-
-  const baseline = auditFile(baselinePath, dependencies);
   const files = listCsvFiles(CSV_ROOT, dependencies.fs, dependencies.path);
   const results = files
-    .map((file) => auditFile(file, dependencies, baseline.percentages))
-    .sort((a, b) => a.score - b.score || a.file.localeCompare(b.file));
+    .map((file) => auditFile(file, dependencies))
+    .sort((a, b) => a.file.localeCompare(b.file));
+  const targets = Object.fromEntries(
+    METRICS.map((metric) => [metric.key, metric.target]),
+  );
 
   if (args.format === "json") {
-    console.log(JSON.stringify({ baseline, results }, null, 2));
+    console.log(JSON.stringify({ targets, results }, null, 2));
     return;
   }
 
-  printTable(results, baseline);
+  printTable(results);
 }
 
 main().catch((error) => {

@@ -193,4 +193,33 @@ grep -q "suppressed (absent optional fields on verificado rows)" "$TMP_DIR/out-v
 # Correctness warnings still fire on verificado rows.
 grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-suppression.txt"
 
+# Province completeness uses fixed targets and does not expose a CSV baseline.
+run_expect_success "$TMP_DIR/out-completeness.json" \
+  node "$ROOT_DIR/scripts/audit-province-completeness.js" --json
+node - "$TMP_DIR/out-completeness.json" <<'NODE'
+const fs = require("node:fs");
+const report = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+
+if ("baseline" in report) {
+  throw new Error("completeness report must not expose a province baseline");
+}
+if (!report.targets || report.targets.verificacion !== 100) {
+  throw new Error("completeness report must expose fixed editorial targets");
+}
+if (!Array.isArray(report.results) || report.results.length === 0) {
+  throw new Error("completeness report must include province results");
+}
+if (
+  report.results.some(
+    (result) =>
+      typeof result.progress !== "number" ||
+      result.progress < 0 ||
+      result.progress > 100 ||
+      !Array.isArray(result.gaps),
+  )
+) {
+  throw new Error("completeness results must include bounded progress and gaps");
+}
+NODE
+
 echo "CSV audit tests OK."
