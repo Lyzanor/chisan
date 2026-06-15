@@ -18,8 +18,9 @@
 - **Ya las teníamos (quitar de Conca):** *Agrícola de la Conca* (= fila Montblanc) y *Agrícola de Barberà* (= Coop. Agrícola de Barberà de la Conca).
 - **Duplicados entre DOs (contar 1 vez):** Castell d'Or (Conca+Tgn), Clos Mogador (Priorat+Montsant), Josep Grau Viticultor (Priorat+Montsant), Noguerals (Priorat+Montsant).
 - **Slugs de web → nombre real (Priorat):** `www-arethealpriorat-com`=Aretheal Priorat · `https-closalkio-com`=Clos Alkio · `www-vinyesforermassard-com`=Les Vinyes Forer Massard.
-- **Dudoso encaje (revisar):** Bodegas Embotelladoras (DO Tgn, ¿embotellador?), Unió Fruits SCCL (Priorat, coop de fruta).
-- **Pendiente:** DO Tarragona (~11), Conca de Barberà (~22), DO Montsant (~43), DOQ Priorat (~108).
+- **DO Tarragona: HECHA.** 10 integradas (`verificado`): Biopaumerà, Castell d'Or, Coop. Vila-rodona, Celler 9+, Caves Magrinyà Calaf, Celler Pedrola (Camí de Sirga), Coop. Sant Isidre de Vilabella, Estol Verd, Terra Cellars, Vinya Janine. **Descartadas 2:** *Bodegas Embotelladoras* (sin ficha, nombre de embotellador, no verificable como KM0) y *Mas dels Frares* (bodega experimental de la Facultat d'Enologia URV, no es productor de consumo). *Castell d'Or* integrada aquí resuelve también el duplicado de Conca.
+- **Dudoso encaje pendiente (Priorat):** Unió Fruits SCCL (coop de fruta).
+- **Pendiente:** Conca de Barberà (~21, sin Castell d'Or ni los 2 ya-presentes), DO Montsant (~43), DOQ Priorat (~108).
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  26 candidatos
@@ -220,7 +221,7 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [ ] **Vinyes Domenech** — DO Montsant — <https://www.domontsant.com/celler/vinyes-domenech/>
 
 
-## Ruta del Vi DO Tarragona  ·  12 candidatos
+## Ruta del Vi DO Tarragona  ·  ✅ HECHA (10 integradas, 2 descartadas — ver «Estado de revisión» arriba)
 
 Fuente: https://www.dotarragona.cat/
 
