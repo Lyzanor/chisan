@@ -7,10 +7,11 @@ Ledger mínimo para reanudar la revisión profunda de
 
 - Inicio: 2026-06-14.
 - Snapshot inicial: 243 filas; 0 `verificado`, 139 `parcial`, 104 `pendiente`.
-- Snapshot tras el lote 10: 241 filas; 82 `verificado`, 140 `parcial`, 19
+- Snapshot tras el lote 15 y la pasada de consistencia: 240 filas; 98
+  `verificado`, 142 `parcial`, 0
   `pendiente`.
-- Revisadas: 89.
-- Resultado acumulado: 82 `verificado`, 5 `parcial`, 2 purgas, 0 fusiones.
+- Revisadas: 109.
+- Resultado acumulado: 98 `verificado`, 8 `parcial`, 2 purgas, 1 fusión.
 
 ## Lote 1: conservas de L'Escala y arroz de Pals
 
@@ -418,3 +419,201 @@ producción y contraste específico del encaje como productor.
 - <https://www.abellaires.com/>
 - <https://www.fontclara.es/tienda/>
 - <https://surtdecasa.cat/girona/menjar-i-beure/el-vermutet-de-can-gombau-el-vermut-ritme-de-rumba>
+
+## Lote 11: Garrotxa, Cerdanya y Ripollès norte
+
+Revisado el 2026-06-15 con webs oficiales, tiendas, páginas de venta,
+directorios sectoriales actuales y comprobación técnica de dominios.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, pedidos por `whatsapp` | `formatges-del-pujol-orra-les-llosses` |
+| `verificado`, venta por `ecommerce` y `whatsapp` | `formatgeria-roura-soler-sant-pau-de-seguries` |
+| `verificado`, venta `no comprobado` | `moli-de-ger-productes-lactics-ger` |
+| `parcial`, sin venta online demostrada | `lactics-ecologics-raphel-llado-maia-de-montcal` |
+
+### Excepciones y residuales
+
+- `formatges-del-pujol-orra-les-llosses`: la web ofrece un lote con envío a
+  toda Cataluña y encargo expreso por WhatsApp. Se registra únicamente ese
+  canal, no `ecommerce`.
+- `formatgeria-roura-soler-sant-pau-de-seguries`: mantiene referencias en
+  stock, carrito, pago con tarjeta o PayPal, gastos de envío y un enlace de
+  WhatsApp operativo.
+- `moli-de-ger-productes-lactics-ger`: la web oficial dirige la venta online
+  a Mercat Arrels, pero no se pudo confirmar una ficha vigente y comprable
+  del productor. Se conserva como `no comprobado`.
+- `lactics-ecologics-raphel-llado-maia-de-montcal`: registros ecológicos,
+  Girona Excel·lent y fuentes gastronómicas respaldan la explotación y sus
+  productos, pero el dominio y el correo heredados carecen de DNS. Se
+  eliminan ambos y la fila queda `parcial`.
+
+### Fuentes principales
+
+- <https://www.formatgesdelpujolorra.cat/>
+- <https://es.formatgeriarourasoler.cat/>
+- <https://molideger.com/>
+- <https://molideger.com/punts-de-venda/>
+- <https://www.firasantermengol.cat/fira-de-formatges-artesans-del-pirineu/formatgers-participants/>
+- <https://www.gironaexcellent.cat/en/item/lactics-2021/>
+- <https://setmanabio.cat/recursos-online/>
+
+## Lote 12: Ripollès sur y Vall de Llémena
+
+Revisado el 2026-06-15 con fuentes turísticas oficiales, ferias profesionales,
+ACREFA, actividad social y comprobación de los enlaces heredados.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, sin venta online demostrada | `formatgeria-palou-campdevanol`, `l-arbreda-s-l-sant-marti-de-llemena` |
+| `parcial`, sin venta online demostrada | `lactics-de-la-vall-de-ribes-ribes-de-freser` |
+
+### Excepciones y residuales
+
+- `formatgeria-palou-campdevanol`: la Fira de Sant Ermengol 2025 y las
+  propuestas oficiales de turismo confirman actividad, rebaño propio,
+  elaboración, contacto y municipio. Se elimina del campo `web` la ficha
+  externa de Producte del Ripollès y se conservan sus redes.
+- `l-arbreda-s-l-sant-marti-de-llemena`: se actualiza la marca editorial a
+  `Mas L'Arbreda`, la dirección del obrador y la gama. ACREFA y Lactium 2026
+  prueban actividad actual; se retira el directorio de World Cheese Awards
+  como web del productor.
+- `lactics-de-la-vall-de-ribes-ribes-de-freser`: Gastroteca mantiene la ficha
+  de Mas Ca l'Esteve, pero el dominio y el correo heredados no resuelven y no
+  se localizó una presencia propia reciente. Se cierra como `parcial`.
+
+### Fuentes principales
+
+- <https://www.firasantermengol.cat/fira-de-formatges-artesans-del-pirineu/formatgers-participants/>
+- <https://benvingutsapages.cat/establiment/116/>
+- <https://www.catalunya.com/es/continguts/propostes/visita-formatgeria-palou-ripolles-1765981786252>
+- <https://acrefa.cat/formatgers-artesans/laubreda-formatgeria/>
+- <https://dev.vicfires.cat/lactium-la-festa-del-formatge-catala-2026/expositors>
+- <https://www.gastroteca.cat/en/on-comprar/lactics-de-la-vall-de-ribes/>
+
+## Lote 13: cooperativas y granjas de leche
+
+Revisado el 2026-06-15 con las fuentes corporativas actuales de Lletera
+Campllong y ATO Natura, contrastando entidad, municipio y función productiva.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, sin venta online demostrada | `lletera-campllong-campllong`, `sat-sant-mer-vilademuls`, `can-costa-de-manol-llado`, `can-violant-cassa-de-la-selva` |
+
+### Excepciones y residuales
+
+- `lletera-campllong-campllong`: la web confirma que la cooperativa produce y
+  comercializa leche procedente de granjas familiares asociadas. No dispone
+  de venta directa en línea; remite a comercios físicos.
+- `sat-sant-mer-vilademuls` y `can-costa-de-manol-llado`: ATO mantiene
+  perfiles individualizados con historia, continuidad familiar, ubicación y
+  producción lechera.
+- `can-violant-cassa-de-la-selva`: la página de granjas de Lletera Campllong
+  identifica la explotación como `Riera i Riera`, sitúa Can Violant en el
+  Veïnat de Mont-roig y confirma quinta generación y producción de leche.
+
+### Fuentes principales
+
+- <https://lleteracampllong.com/>
+- <https://lleteracampllong.com/la-cooperativa/>
+- <https://lleteracampllong.com/les-nostres-granges/>
+- <https://www.ato.cat/granges-100-catalanes/>
+
+## Lote 14: Selva, Gironès y Alt Empordà
+
+Revisado el 2026-06-15 con web y condiciones de venta oficiales, fuentes
+municipales de 2026, ATO Natura y publicaciones sectoriales recientes.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `mas-borni-llagostera` |
+| `verificado`, sin venta online demostrada | `circus-granja-familiar-sant-hilari-sacalm`, `granja-el-trevol-vilobi-d-onyar` |
+| `parcial`, sin venta online demostrada | `lactics-tramuntana-cabanelles` |
+
+### Excepciones y residuales
+
+- `mas-borni-llagostera`: la tienda ofrece productos disponibles, cesta,
+  finalización de compra, pago y envío a domicilio. Se incorpora
+  `Canal de venta=ecommerce`.
+- `circus-granja-familiar-sant-hilari-sacalm`: el Ayuntamiento de Sant Hilari
+  publicó en mayo de 2026 una actividad gastronómica con producto de Granja
+  Circus y sus redes tuvieron actividad a finales de 2025. El dominio
+  heredado no tiene DNS y se elimina.
+- `granja-el-trevol-vilobi-d-onyar`: ATO confirma continuidad de la segunda
+  generación, dirección y producción lechera.
+- `lactics-tramuntana-cabanelles`: una publicación territorial 2024–2025 y
+  su perfil social respaldan producción y municipio, pero no se localizó web
+  propia ni evidencia suficiente para validar todos los datos heredados. Se
+  cierra como `parcial`.
+
+### Fuentes principales
+
+- <https://formatgeriamasborni.com/tienda/>
+- <https://formatgeriamasborni.com/condiciones-generales-de-venta/>
+- <https://www.santhilari.cat/noticies/el-cicle-periferia-cultural-arriba-a-sant-hilari-amb-un-concert-de-tomeu-penya-i-guillamino/>
+- <https://lesguillerieskm0.cat/ca/gastronomia/el-formatge-de-la-granja-circus/>
+- <https://www.ato.cat/granges-100-catalanes/>
+- <https://utemporda.com/storage/881ddb84a911f3d36453970ca262a47a.pdf>
+
+## Lote 15: obradores y heladerías
+
+Revisado el 2026-06-15 con webs oficiales, tiendas, obradores, actividad de la
+temporada 2026 y comprobación específica de la venta remota.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `obrador-rocambolesc-girona` |
+| `verificado`, sin venta online demostrada | `gelats-galiana-el-port-de-la-selva`, `la-lletera-girona` |
+| `verificado`, venta `no comprobado` | `gelats-enxaneta-palafrugell` |
+
+### Excepciones y residuales
+
+- `obrador-rocambolesc-girona`: la web actual confirma el obrador de Girona,
+  elaboración artesanal, leche ecológica, helados, sorbetes y polos; la
+  tienda mantiene carrito y productos propios comprables. La ficha queda
+  vinculada al obrador de Riera Garrap, no a la gelatería de Santa Clara.
+- `gelats-galiana-el-port-de-la-selva`: la campaña 2026 confirma actividad y
+  elaboración diaria en el obrador. No se localizó un sistema de pedido
+  remoto.
+- `la-lletera-girona`: la web confirma elaboración in situ y un único local
+  activo en el Barri Vell, sin venta remota demostrada.
+- `gelats-enxaneta-palafrugell`: la web y la actividad 2025–2026 confirman
+  obrador y gelaterías, pero la tienda online figura cerrada por
+  mantenimiento. Se cambia de `no` a `no comprobado`.
+
+### Fuentes principales
+
+- <https://rocambolesc.com/es/obrador-rocambolesc>
+- <https://rocambolesc.com/es>
+- <https://rocambolesc.com/en/contact-us>
+- <https://www.gelatsgaliana.com/>
+- <https://www.facebook.com/GelatsGaliana/videos/-ja-ha-arribat-la-temporada-2026-com-podeu-veure-hem-fet-un-petit-rentat-de-cara/1260612926260058/>
+- <https://www.lalletera.cat/>
+- <https://www.enxaneta.cat/>
+- <https://www.enxaneta.cat/about-3>
+- <https://www.enxaneta.cat/shoponline>
+
+## Pasada de consistencia tras el lote 15
+
+Realizada el 2026-06-15 sobre identidad, contactos, ubicación y dependencias
+entre campos.
+
+- Se fusiona `vins-de-taller-siurana-d-emporda` en
+  `clos-de-basella-siurana`: comparten sociedad, teléfono y proyecto
+  vitivinícola. Se conserva el slug ya verificado de Clos de Basella, se
+  incorpora la marca Vins de Taller a su descripción y se elimina la imagen
+  duplicada.
+- `obrador-rocambolesc-girona` pasa de la dirección comercial de Santa Clara
+  a la dirección oficial del obrador en Riera Garrap, 38. También se
+  actualizan teléfono, horario, mapa y coordenadas.
+- La consulta de Google Maps de `l-arbreda-s-l-sant-marti-de-llemena` se
+  alinea con el nombre y la dirección actuales.
+- Las filas históricas con `Venta online=sí` pero sin `Canal de venta`
+  permanecen como deuda editorial warning-only fuera de estos lotes. No se
+  infieren canales sin evidencia.
+
+### Fuentes principales
+
+- <https://www.aecoctrade.es/es/empresa/wW1BBUoBe7uuEFBfVknxVS>
+- <https://www.einforma.com/informacion-empresa/boscos-catalans>
+- <https://rocambolesc.com/en/contact-us>
