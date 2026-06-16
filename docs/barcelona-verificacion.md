@@ -27,7 +27,9 @@
   Òrrius, Pujalt, Sant Esteve Sesrovires, Sant Fost de Campsentelles, Collbató, Cornellà de Llobregat…
   Recomputar pendientes con `list:province` al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Último push: lotes 1-100 en `main` (2026-06-13).
+- Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
+  worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
+  de filas (p. ej. «lotes 149-155»), nunca con un número de batch suelto que desfase la tabla.
 
 ## Procedimiento (cada lote)
 
