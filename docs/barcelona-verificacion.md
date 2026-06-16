@@ -17,14 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.591** · verificado **1.359** · parcial **629** · pendiente **603**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **382 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.589** · verificado **1.364** · parcial **629** · pendiente **596**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **384 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-156** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-156 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-157** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-157 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~7-8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 157** — Gironella (municipios gruesos restantes: Matadepera, Orís, Sant Martí de Tous,
-  Roda de Ter, Rupit i Pruit, Masquefa, Mura, Santa Maria de Palautordera, Santa Perpètua de Mogoda…). Recomputar con `list:province`.
+- **Siguiente: Lote 158** — Matadepera (municipios gruesos restantes: Orís, Sant Martí de Tous, Roda de Ter,
+  Rupit i Pruit, Masquefa, Mura, Santa Maria de Palautordera, Santa Perpètua de Mogoda, Sant Salvador de Guardiola…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -326,7 +326,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 154 | Sant Fost de Campsentelles | 0 | ✅ | 2026-06-16 | 5 verif + 2 parcial + 1 purga (Vallès Oriental); Frutas Sánchez S.C.P.=quimera (tel 932621293 i GMaps «Frutas E. Sánchez» són del majorista de Mercabarna FRUTAS E. SÁNCHEZ SL, cap productor a Sant Fost) purgada; Can Matons (celler Raventós Codorníu, DO Alella, Pansa Blanca) verif: web 15bodegas.com/CanMatons=404 blanquejada, IG @canmatons (real, abans @15bodegas=retailer), VO marketplace (Petit Celler/Grauonline/Vivino) —**el celler-seu és a Sta. Maria de Martorelles** (zona Codex), aquí les vinyes/parcel·les de Sant Fost—; Cafés Montañá=Torrefactora del Vallés (1923, torrefactor B2B, web http tfvalles.com informativa) verif VO=no +correu; Rostibò (comida preparada+càtering/domicili des de 2002) verif VO telefono +web+FB; Forn de Pa Gaba (1996, 251 ress.) i Forn i Pastisseria Corbalan (forn de llenya, 193 ress.) verif VO=no; Carns Aguilar Heredia (carnisseria +FB) i Embutidos Artesans La Alhambra de Granada (SL, només directoris) parcials —elaboració pròpia sense confirmar |
 | 155 | Collbató | 0 | ✅ | 2026-06-16 | 3 verif + 3 parcial + 1 purga; Jordi Tomás Sabaté=quimera/dup (jordisabat.com és l'estudi de **disseny gràfic Jordi Sàbat** de BCN; el «Jordi Tomás» real és el pagès de l'Hort de Montserrat) purgada +webp; l'Hort de Montserrat SL verif (web pròpia hortdemontserrat.cat «altres venen, nosaltres cultivem», botiga online + IG/FB/TikTok/YT, DAR) VO ecommerce; La Cuineta verif (rostisseria/plats cuinats, pollastre a la llenya + repartiment gratuït) VO telefono —web lacuineta.cat era **La Cuineta d'Olot** (Girona) blanquejada, +FB Collbató—; El Forn del Poble verif VO=no (web=URL admin de FB blanquejada, FB+IG propis); Masia Cal Po parcial (agroturisme 1540 + venda d'oli/infusions, GMaps de «Llenya de Montserrat» ajè blanquejat); Carnisseria Devesa=Devesa Bacarises (carnisseria de poble, sense enllaç propi) parcial; Olle Cuello Raimon→**Ous Ecològics Les Tafaneres** (DAR + IG @tafaneres, coop La Dotzena) parcial —marca lligada a Sora/Osona però DAR/coords a Collbató |
 | 156 | Cornellà de Llobregat | 0 | ✅ | 2026-06-16 | 4 verif + 1 parcial + 2 purgas (urbà, Baix Llobregat); Tecsalsa=**Centre Especial de Treball de jardineria/manipulats** (no productor agrícola, sense venda) purgada +webp; Associació Pastinaca=**associació de consum/Slow** (promou consum conscient, no productora) purgada; García Frutos Secos verif (tostador al forn de llenya des de 1978, e-commerce propi) VO ecommerce +recat Frutos secos; Pastisseria Vicenç Puig verif (obrador 1997 + e-commerce de comandes) VO ecommerce; Cal Moliner=Moliner Xarcuteria SL verif (elaboració pròpia: botifarra/hamburgueses/croquetes, web JS viva) VO no comprobado; Forn Pla verif (obrador propi 2 botigues, web informativa) VO=no; Cruz García→**UCHUS** (ají/pebrot andí DAR, venda directa+circuit curt, sense web) parcial +recat Fruta y verdura, GMaps d'assegurances ajè blanquejat |
-| — | _resto (217 municipios)_ | 603 | ⬜ | | recomputar al llegar |
+| 157 | Gironella | 0 | ✅ | 2026-06-16 | 4 verif + 2 purgas + 1 reubicada (Berguedà); **Ratafia l'Avi Guillem reubicada a Esparreguera** (el productor real és la família Moya a Camí Ral 14, Esparreguera; recat Bodega/vino→**Destilados y licores**, productes a ratafia, tel/IG/coords corregits, web ratafiesaviguillem.cat) verif VO ecommerce; Tubau Castañe Mercè=la persona de **Cal Rafilat** (mateix tel 938250161/adreça, coords a 30 km mal) purgada dup; Ca la Margaret sense rastre (ni DAR ni cap directori del Berguedà, a diferència de la resta) purgada; Cal Rafilat=Cansaladeria Mercè (des de 1929, elaboració pròpia, **botiga online calrafilat.cat**) verif VO ecommerce +web; Formatges Blancafort (formatgeria artesana, Garrotxa/Ferrús, Lactium d'Or 2021, e-commerce) verif VO ecommerce; Pastisseria el Globus (artesana, +IG/FB) i Forn Vilalta (forn, cert SSL caducat≠mort, IG @cruixent.gironella) verif VO=no |
+| — | _resto (216 municipios)_ | 596 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
