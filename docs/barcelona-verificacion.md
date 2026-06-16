@@ -17,15 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.617** · verificado **1.301** · parcial **611** · pendiente **705**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **356 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.615** · verificado **1.307** · parcial **611** · pendiente **697**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **358 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda, ~25 filas/lote (ahora grupos de municipis petits a 8), ~90 lotes
-  estimados. **Cerrados: lotes 1-110 + grupos 111 (Santa Susanna…Gelida), 112 (Abrera…Artés),
-  113 (Aguilar de Segarra…Bagà), 114 (Balenyà…Cal Rosal) y 115 (Caldes d'Estrac, Callús, Calonge
-  de Segarra, Campins, Canet de Fals, Canet de Mar/Calella, Canyelles, Capellades)** (worklist).
-- **Siguiente: Lote 116** — grupo de municipis petits (Capolat, Carme, Castelladral, Castellar de
-  n'Hug, Castellbell i el Vilar, Castellcir…). Recomputar al llegar.
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-143** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto»). Desde el lote **144** arranca una
+  pasada más ambiciosa: municipios gruesos (~8 pendientes) uno por lote, fila a fila a fondo.
+- **Siguiente: Lote 145** — La Llagosta (pasada de municipios gruesos: La Granada ✓144, La Llagosta,
+  Montmeló, Parets del Vallès, Vilassar de Dalt…). Recomputar pendientes al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -312,7 +311,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 141 | Canet de Mar / Calella | 0 | ✅ | 2026-06-16 | 1 verif; La Montnegre cervesera SCCL (entre Calella i Canet, 5 referències premiades) verif |
 | 142 | Canyelles | 0 | ✅ | 2026-06-16 | 3 verif + 1 parcial (Garraf); Cellers Grau Dòria (cava), Aceite Alzina (Finca Las Botas) i Pastisseria Hidalgo verif; Fleca Bertran (forn 3 gen. amb forn de llenya; web canyelles.cat blanquejada) parcial |
 | 143 | Capellades | 0 | ✅ | 2026-06-16 | 2 verif + 2 parcial; Pla de Morei (=Sanguesa Millan, vins eco de l'Anoia, web afegida, ecommerce; el celler és a la Torre de Claramunt) i Forn Sabater (web fornsabater.com) verif; L'Espiga (Angel Perez SL) i Fermí Guasch (forns sense enllaç propi) parcials |
-| — | _resto (230 municipios)_ | 705 | ⬜ | | recomputar al llegar |
+| 144 | La Granada | 0 | ✅ | 2026-06-16 | 6 verif + 0 parcial + 2 purgas (Alt Penedès, cava/vi); roca-puig-maria-dolors = mateixa persona/marca que Fruita de Cal Roca (DAR tel 670312615, marca FRUITA CAL ROCA) → purgat com a dup (+.webp); Caves Masia El Mas = fila fantasma sense web/tel/DAR, el GMaps apuntava a **Caves El Mas Ferrer (Subirats)** → purgat (mal fichat); 5 cellers ecommerce (Miquel Pons amb web corregida cavamiquelpons.com, Cooperativa La Granada, Cellers Maset=maset.com centre de visites a La Granada, Ferré i Catasús=La Granada confirmat + productes OSM corregits); Fruita de Cal Roca verif (granja 4 gen., només venda directa/mercats → VO no); Pastisseria Degustació (Antonio, turismelagranada.com) verif |
+| — | _resto (229 municipios)_ | 697 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -327,7 +327,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Anoia:** Eixarcolant (Jorba) · La Beneta (Hostalets) · Cigronet de Cal Farrés (Calonge) · Embotits Cal Travé (Llacuna)
 - **Alt Penedès:** Coop. Vinícola del Penedès · Marquès Ros (Cal Sis Dits, Vilobí) · Pons Ametller (olives, Vilobí)
 - **Garraf:** Agrovilanova SAT (Claramunt Food Service)
-- **Subirats:** Castell de Subirats SA · Heretat Guilera SL · Mas Gori · Ràfols Vendrell (Cal Pau Jan)
+- **Subirats:** Castell de Subirats SA · Heretat Guilera SL · Mas Gori · Ràfols Vendrell (Cal Pau Jan) · Caves El Mas Ferrer (Ca l'Avi, cava mètode tradicional des de 1979, elmasferrer.com; la fila «Caves Masia El Mas» mal fichada a La Granada es va purgar al lote 144)
 - **Piera:** Borràs Puiggròs (préssecs) · Vallverdú Garriga Roser (oli)
 - **Caldes de Montbui:** Vicente López Pablo (horta)
 - **Moianès:** Vins Colltor + Celler Sant Miquel (Sta Maria d'Oló) · La Cabreria/Bardissa (formatges, Oló) · Granja La Bassola (Castellterçol)
