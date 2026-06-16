@@ -17,15 +17,15 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.617** · verificado **1.287** · parcial **604** · pendiente **726**
+- Filas: **2.617** · verificado **1.301** · parcial **611** · pendiente **705**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **356 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
 - Modo: lote a lote bajo demanda, ~25 filas/lote (ahora grupos de municipis petits a 8), ~90 lotes
   estimados. **Cerrados: lotes 1-110 + grupos 111 (Santa Susanna…Gelida), 112 (Abrera…Artés),
-  113 (Aguilar de Segarra…Bagà) y 114 (Balenyà, Balsareny, Bellaterra, Berga la Valldan,
-  Bigues i Riells del Fai, Borredà, Cabrera d'Anoia/d'Igualada, Cabrianes, Cal Rosal)** (worklist).
-- **Siguiente: Lote 115** — grupo de municipis petits (Caldes d'Estrac, Callús, Calonge de Segarra,
-  Canyelles, Capellades…). Recomputar al llegar.
+  113 (Aguilar de Segarra…Bagà), 114 (Balenyà…Cal Rosal) y 115 (Caldes d'Estrac, Callús, Calonge
+  de Segarra, Campins, Canet de Fals, Canet de Mar/Calella, Canyelles, Capellades)** (worklist).
+- **Siguiente: Lote 116** — grupo de municipis petits (Capolat, Carme, Castelladral, Castellar de
+  n'Hug, Castellbell i el Vilar, Castellcir…). Recomputar al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -304,7 +304,15 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 133 | Cabrera d'Anoia (i d'Igualada) | 0 | ✅ | 2026-06-16 | 3 verif + 1 purga (Penedès/Anoia); can-gallego-viticultors-scp (Cabrera d'Igualada, nom antic) = dup de Mas dels Clavers/Finca Can Gallego (mateixes coords + email) purgat; Can Feixes/Huguet (Corpinnat), Mas dels Clavers i Vinyes que Atrapen (ecommerce) verif |
 | 134 | Cabrianes (i Sallent) | 0 | ✅ | 2026-06-16 | 1 verif + 1 purga; els-ous-de-loriol-cabrianes = dup d'Els Ous de l'Oriol ja verificat a Sallent (comallonga-gavalda-oriol, mateix tel/email) purgat; La Tomakera (horta eco, cistelles, ecommerce|whatsapp; DAR Sallent) verif |
 | 135 | Cal Rosal (Berga) | 0 | ✅ | 2026-06-16 | 1 verif; L'Escairador (molí recuperat, farines/cereals/llegums, →Despensa, ecommerce; DAR Maria Costa Ferrer) verif |
-| — | _resto (238 municipios)_ | 726 | ⬜ | | recomputar al llegar |
+| 136 | Caldes d'Estrac | 0 | ✅ | 2026-06-16 | 3 verif + 2 parcial; Espai del Silenci/Ghee (ghee eco premiat, ecommerce), Fleca Serra (Cal Forner, forn històric) i Xarcuteria Ca l'Adela (web caladela.com afegida) verif; Can Piu (web caldetes.cat blanquejada) i Carnisseria Anna Solà (centenària) parcials —parades del mercat sense enllaç propi |
+| 137 | Callús | 0 | ✅ | 2026-06-16 | 1 parcial; Duopich SL (horta, DAR) parcial |
+| 138 | Calonge de Segarra | 0 | ✅ | 2026-06-16 | 3 verif + 1 parcial; Cal Ros (Centellas, conserves/melmelades/ametlles, agroturisme+DAR), Cal Prat (Prat Torra, llegums/cereals Fruits del Secà, DAR) i Cal Farrés (ous + Cigronet de Cal Farrés, DAR) verif; Jordi Fort (ous, Finca Cal Badal Nou, sense DAR ni web però amb contacte) parcial |
+| 139 | Campins | 0 | ✅ | 2026-06-16 | 1 verif; Cor del Montseny (Marissa Peláez, conserves/càtering del Montseny, ecommerce) verif |
+| 140 | Canet de Fals (Fonollosa) | 0 | ✅ | 2026-06-16 | 1 verif; Més que Paraules (celler de l'Anoia/Bages, Finca Jaumandreu, vins Mandó/Picapoll, ecommerce) verif |
+| 141 | Canet de Mar / Calella | 0 | ✅ | 2026-06-16 | 1 verif; La Montnegre cervesera SCCL (entre Calella i Canet, 5 referències premiades) verif |
+| 142 | Canyelles | 0 | ✅ | 2026-06-16 | 3 verif + 1 parcial (Garraf); Cellers Grau Dòria (cava), Aceite Alzina (Finca Las Botas) i Pastisseria Hidalgo verif; Fleca Bertran (forn 3 gen. amb forn de llenya; web canyelles.cat blanquejada) parcial |
+| 143 | Capellades | 0 | ✅ | 2026-06-16 | 2 verif + 2 parcial; Pla de Morei (=Sanguesa Millan, vins eco de l'Anoia, web afegida, ecommerce; el celler és a la Torre de Claramunt) i Forn Sabater (web fornsabater.com) verif; L'Espiga (Angel Perez SL) i Fermí Guasch (forns sense enllaç propi) parcials |
+| — | _resto (230 municipios)_ | 705 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
