@@ -17,16 +17,16 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.580** · verificado **1.370** · parcial **635** · pendiente **575**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **393 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.578** · verificado **1.373** · parcial **637** · pendiente **568**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **395 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-160** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-160 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-161** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-161 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~7-8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 161** — Sant Salvador de Guardiola (municipios gruesos restantes con 7: Sant Vicenç de Castellet,
-  Santa Maria de Palautordera, Santa Perpètua de Mogoda; con 6: Masquefa, Mura, Roda de Ter, Rupit i Pruit, Sant Adrià de Besòs, Sant Andreu de Llavaneres, Sant Fruitós de Bages, Sant Llorenç d'Hortons…). Recomputar con `list:province`.
+- **Siguiente: Lote 162** — Sant Vicenç de Castellet (municipios gruesos restantes con 7: Santa Maria de Palautordera,
+  Santa Perpètua de Mogoda; con 6: Masquefa, Mura, Roda de Ter, Rupit i Pruit, Sant Adrià de Besòs, Sant Andreu de Llavaneres, Sant Fruitós de Bages, Sant Llorenç d'Hortons…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
+- Último push: lotes 1-161 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
   de filas (p. ej. «lotes 149-155»), nunca con un número de batch suelto que desfase la tabla.
 
@@ -330,7 +330,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 158 | Matadepera | 0 | ✅ | 2026-06-16 | 2 verif + 1 parcial + 4 purgas (Vallès Occidental, lot ple de registres sense corroborar); Viñas Sarria Emma Alba=**Turó de les Nou Cabres** (mateixa persona Emma Viñas, mateix email turodelesnoucabres@gmail.com/tel 637028011; el registre estava mal categoritzat Charcutería/xai quan és formatge de cabra) purgada dup; La Vall SCP (coords a un col·legi, sense DAR ni rastre, «La Vall formatgeria» és d'Ontinyent), Ángel Illa Arnau (sense cap contacte ni rastre ni DAR) i Escalona Bertran Alba (formatge d'ovella sense DAR ni rastre extern —implausible un obrador lacti sense registre sanitari—, +webp) purgades; Turó de les Nou Cabres (projecte d'Emma Viñas, 500 cabres/ovelles a Sant Llorenç, formatge artesà en obrador mòbil, web turodelesnoucabres.cat, km0 a domicili) verif VO telefono +tel/email/web; Cal Trapet (xarcuteria pròpia des de 1890, IG @cal_trapet+FB, mogut a Sant Joan 62) verif; Centre Jardineria L'Heura=CET de jardineria/ornamental (garden center, revèn+serveis) parcial |
 | 159 | Orís | 0 | ✅ | 2026-06-16 | 0 verif + 3 parcial + 4 purgas (Osona, lot ple de registres contaminats); Teixidor Palomera Joan=quimera (FB/IG @especiesteixidor + tel 93 són d'**Espècies Teixidor SL**, especiera de Sant Salvador de Guardiola/BCN, no cap xarcuteria d'Orís), A.R. Soldevila SCP=quimera (adreça/coords a **Badalona** + web dsarq.cat d'arquitectura), Fontferri SCP (adreça a Sant Hipòlit de Voltregà, coords a 25 km, sense DAR ni rastre) i Quintana Puig Pere (mel, sense DAR ni directori apícola d'Osona, GMaps d'«El Forn» ajè) purgades; Crous Cutrina SL (granja de llet de vaca real, Sant Genís d'Orís; +tel) parcial —elaboració de formatge sense confirmar—; Oriol SCP→**L'Oriol** (DAR, vedella/embotits boví, venda directa; +tel) parcial; Jaime Toneu i Toneu (pagès real, **regidor de Pagesia d'Orís**, zona patata del bufet; venda sense concretar) parcial |
 | 160 | Sant Martí de Tous | 0 | ✅ | 2026-06-16 | 4 verif + 2 parcial + 1 purga (Anoia, lot molt DAR); Aribau Lopez Jordi=la persona de **La Caseta de Fillol** (mateix tel 679729374/email/marca, coords a 40 km mal) purgada dup; La Caseta de Fillol verif (finca 10 ha secà —ametller, cereal, vinya, horta, ous, mel, oli—, DAR+IG; web era el perfil de la plataforma La Masuca blanquejat, productes Setas/Legumbres corregits) VO=no; Mas Buret=Oliva Codina (web masburet.com, **apicultors** «dels nostres ruscs a la teva taula», sense e-commerce; tel/email DAR corregits, abans tel de BCN) verif VO=no; Tousec=Masia Cal Cardó (fruits secs artesans, Josep Marsal, ajuntament+naturalocal+qdq; +email, recat Frutos secos) verif; Cal Codina de Tous (**Llonganissa de Tous**, web+IG, coords a 15 km corregides al centroide) verif VO no comprobado; Vidal Vilaseca Marti→**Can Aubareda** (DAR oli/horta/llenties) i Elias Regordosa Jordi→**Cal Serralet** (DAR ametlles, GMaps de joieria ajè blanquejat, recat Frutos secos) parcials |
-| — | _resto (213 municipios)_ | 575 | ⬜ | | recomputar al llegar |
+| 161 | Sant Salvador de Guardiola | 0 | ✅ | 2026-06-16 | 3 verif + 2 parcial + 2 purgas (Bages); Iglesias Servitja Alba=la persona de **Cal Masses** (mateix email/marca DAR) purgada dup; Mas Brunet (Jordi de Marimon)=**restaurant El Brunet** (masia a Castellbell i el Vilar, no productor; categoria/municipi/DAR falsos —el match era castanyes de Mont-ral—) purgada; Vins Urpina (Fundació AMPANS, DO Pla de Bages, 6 vins) i Formatges Muntanyola (AMPANS, formatgeria 30+ anys) verif VO ecommerce (botigaampans.cat); Cal Masses (finca eco recuperada, horta+vi, DAR+ajuntament; +web calmasses.cat) verif; Altimira Jordana Mariano→**Casa Botiguera** (DAR horta, venda directa) i Coll Parra Susanna→**Bedous** (DAR ous, venda directa+circuit curt) parcials. Candidat DAR no integrat: Fargas Fargas Joaquim (vins) |
+| — | _resto (212 municipios)_ | 568 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
