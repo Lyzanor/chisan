@@ -17,14 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.613** · verificado **1.318** · parcial **614** · pendiente **681**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **360 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.611** · verificado **1.325** · parcial **613** · pendiente **673**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **362 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-146** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-146 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-147** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-147 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 147** — Parets del Vallès (pasada de municipios gruesos: La Granada ✓144, La Llagosta
-  ✓145, Montmeló ✓146, Parets del Vallès, Vilassar de Dalt…). Recomputar pendientes al llegar.
+- **Siguiente: Lote 148** — Vilassar de Dalt (pasada de municipios gruesos: La Granada ✓144, La Llagosta
+  ✓145, Montmeló ✓146, Parets del Vallès ✓147, Vilassar de Dalt…). Recomputar pendientes al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -314,7 +314,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 144 | La Granada | 0 | ✅ | 2026-06-16 | 6 verif + 0 parcial + 2 purgas (Alt Penedès, cava/vi); roca-puig-maria-dolors = mateixa persona/marca que Fruita de Cal Roca (DAR tel 670312615, marca FRUITA CAL ROCA) → purgat com a dup (+.webp); Caves Masia El Mas = fila fantasma sense web/tel/DAR, el GMaps apuntava a **Caves El Mas Ferrer (Subirats)** → purgat (mal fichat); 5 cellers ecommerce (Miquel Pons amb web corregida cavamiquelpons.com, Cooperativa La Granada, Cellers Maset=maset.com centre de visites a La Granada, Ferré i Catasús=La Granada confirmat + productes OSM corregits); Fruita de Cal Roca verif (granja 4 gen., només venda directa/mercats → VO no); Pastisseria Degustació (Antonio, turismelagranada.com) verif |
 | 145 | La Llagosta | 0 | ✅ | 2026-06-16 | 5 verif + 2 parcial + 1 purga (Vallès Oriental, urbà, sense DAR); Azúcares Especiales SAES = envasador **industrial B2B** de sucre en porcions (PortionPack Group, multinacional, sense venda al públic) → purgat fora d'àmbit km0 (+.webp); Pastisseria Pi = pastisseria pròpia (tel 935602561) amb web/FB/IG de **Pa Artesà del Vallès** (obrador de Santa Perpètua) mal creuats → blanquejats, verif; Cárnicas Pocre (1991, elabora salaó càrnic propi a La Llagosta; productes corregits fuet→salaó, →Carne) verif; Fleca La Florida, Croissanteria Petit i Bo (1986) i Forn Ribas (forns/pastisseries de barri, web informativa o IG) verif —tots VO=no; Damilaura (fruiteria/distribuïdor, coords a 7,5 km→centroide) i Alrus (delicatessen de salmó/caviar, no proximitat) parcials |
 | 146 | Montmeló | 0 | ✅ | 2026-06-16 | 6 verif + 1 parcial + 1 purga (Vallès Oriental, urbà); Panadería París = fila mal fichada (GMaps+coords a lon 2.02 = **Pastisseria París de Terrassa**, cap forn «París» confirmat a Montmeló) → purgada; 3 ecommerce reals confirmats amb carret (Carnisseria Manils elaboració pròpia des de 1966; Pastisseria Viñallonga; Rachel's Cake Shopify+WhatsApp); La Tenda Tintó-Carolà (cansaladeria botifarres pròpies, top-3 de Montmeló), Forn Ca la Txell i Forn Farriol verif (VO=no); Raico Agro Tech SL (SL industrial al Polígon Circuit, grup Vitae, DAR venda directa però sense web/consumidor) parcial |
-| — | _resto (227 municipios)_ | 681 | ⬜ | | recomputar al llegar |
+| 147 | Parets del Vallès | 0 | ✅ | 2026-06-16 | 6 verif + 0 parcial + 2 purgas (Vallès Oriental); Ginesta Flaqué Jaume = quimera (web/IG del grup escolta **AEiG Sant Jaume**, sense DAR ni rastre de cansaladeria) purgada; La Saó Vallès = dup d'Albert Teruel/La SAO ja a Mollet (lote 78, mateix tel/email) → purgada i la fila de Mollet enriquida (web lasaovalles.cat + IG) i pujada a **verificat**; Carns Roca (elaboració pròpia des de 1950, botiga online amb cistella + repartiment) verif ecommerce; Artigas Matheu = **Torremalla** (Josep Artigas, horta/calçots/ganxet, web torremalla.com afegida, DAR) verif; La Noria Bakery, Le Caramel (tel/email afegits), Dahlia (IG afegit) i Pastisseria Joan verif —forns d'encàrrec, VO=no |
+| — | _resto (226 municipios)_ | 673 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -361,6 +362,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Granollers (ciutat):** Gassó Artesans 1885 (pastisseria gourmet, Cal Ros dels Ocells 4C, gassoartesans.com) — marca real purgada de Lliçà d'Amunt donde figuraba como cansaladeria
 - **Palau-solità i Plegamans:** Estrada Llargues, Isidro (mongeta; DAR 659999473)
 - **Santa Perpètua de Mogoda:** Pa Artesà del Vallès (obrador 40 anys, Pol. Can Roca, paartesadelvalles.com + restaurant Cal Jaume; els seus enllaços estaven mal posats a la fila Pastisseria Pi de La Llagosta, purgats d'allà al lote 145)
+- **Parets del Vallès:** Mestresses S.C. (horta, blat tou, ordi; DAR 661350810)
 - **Sallent:** Guitart Quintana, Josep (Essència d'Oli de Cabrianes; DAR 617375377) · La Tomakera SCP (horta; DAR 649195293) · Santasusagna SCP (xai; DAR 617405951)
 - **Torrelavit:** Cols Canals, Lluís (Cal Cols, vins+oli; DAR 653162580) · Ruiz Molina, Anna (préssecs; DAR 648725583)
 - **Castellfollit del Boix:** Cornellas Prat, Jordi (Cal Rei, conserves; DAR 618762888) · Lladó Oliva, Joan (cigró/mongeta; DAR 608691406)
