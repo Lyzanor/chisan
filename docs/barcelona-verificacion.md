@@ -17,14 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.571** · verificado **1.378** · parcial **639** · pendiente **554**
+- Filas: **2.571** · verificado **1.384** · parcial **640** · pendiente **547**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **402 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-163** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-163 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-164** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-164 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~7-8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 164** — Santa Perpètua de Mogoda (municipios gruesos restantes con 6: Masquefa, Mura,
-  Roda de Ter, Rupit i Pruit, Sant Adrià de Besòs, Sant Andreu de Llavaneres, Sant Fruitós de Bages, Sant Llorenç d'Hortons…). Recomputar con `list:province`.
+- **Siguiente: Lote 165** — Masquefa (municipios gruesos restantes con 6: Mura, Roda de Ter, Rupit i Pruit,
+  Sant Adrià de Besòs, Sant Andreu de Llavaneres, Sant Fruitós de Bages, Sant Llorenç d'Hortons…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-161 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -333,7 +333,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 161 | Sant Salvador de Guardiola | 0 | ✅ | 2026-06-16 | 3 verif + 2 parcial + 2 purgas (Bages); Iglesias Servitja Alba=la persona de **Cal Masses** (mateix email/marca DAR) purgada dup; Mas Brunet (Jordi de Marimon)=**restaurant El Brunet** (masia a Castellbell i el Vilar, no productor; categoria/municipi/DAR falsos —el match era castanyes de Mont-ral—) purgada; Vins Urpina (Fundació AMPANS, DO Pla de Bages, 6 vins) i Formatges Muntanyola (AMPANS, formatgeria 30+ anys) verif VO ecommerce (botigaampans.cat); Cal Masses (finca eco recuperada, horta+vi, DAR+ajuntament; +web calmasses.cat) verif; Altimira Jordana Mariano→**Casa Botiguera** (DAR horta, venda directa) i Coll Parra Susanna→**Bedous** (DAR ous, venda directa+circuit curt) parcials. Candidat DAR no integrat: Fargas Fargas Joaquim (vins) |
 | 162 | Sant Vicenç de Castellet | 0 | ✅ | 2026-06-16 | 3 verif + 1 parcial + 3 purgas (Bages); 2 dups interns: Làctics Casanueva SL (coords mal a BCN, +webp) = **Artelac – Làctics Casanueva** (mateixa formatgeria) purgada, i Lopez Carrasco Susana (email el.terros@) = **El Terrós** purgada; Osete Balletbó Ana Maria=quimera (web/IG d'una entitat escolar cesvcastellet, sense DAR ni rastre) purgada; Artelac – Làctics Casanueva (formatgeria eco de cabra des de 1969, Les Boades, «Formatge del Bages», +web artelaclacticscasanueva.com) verif; El Terrós (horta biodinàmica de Susana López, comandes per email/WhatsApp + recollida a finca; coords corregides, +email) verif VO email|whatsapp; Can Postres (pastisseria, web+FB+IG, ECONNREFUSED≠morta) verif; Pladellorens Salles→**Cal Papa** (DAR oli/horta, venda directa+circuit curt) parcial |
 | 163 | Santa Maria de Palautordera | 0 | ✅ | 2026-06-16 | 1 verif + 2 parcial + 4 purgas (Vallès Oriental, Baix Montseny); **Llet de Debò (Granja El Prat)=dup de SAT 759 Granja el Prat** (mateix place_id+coords, Finca Can Ciurans a l'Ametlla del Vallès; marca «Llet de Debò» sense rastre propi, web caiguda) purgada +webp → la fila d'Ametlla (lote 120) enriquida amb web granjaelprat.cat (e-commerce, ~150 vaques) i pujada a **verificat** VO ecommerce; Farre Masip Jaume=quimera (web/IG/GMaps de la **Farmàcia Major**, no productor) purgada; Can Turró=quimera (no hi ha cap forn; és l'**aula d'entorn rural Can Turró**, masia educativa, categoria Pan y pastelería falsa) purgada; Ecohort Montseny (sense contacte ni DAR ni rastre) purgada; Garrapinyades Can Faba (garrapinyades artesanes, IG propi) verif; Agrícola i Ramadera Can Lluís (projecte agro-ramader del **Viver de Bell-lloc**/CET amb agrobotiga) i Ramos Salrach Marc (DAR horta/maduixa, venda directa; GMaps de restaurant ajè blanquejat) parcials. Candidat DAR no integrat: Buendia Heredia Isaac (Planeta Vegetal, horta) |
-| — | _resto (210 municipios)_ | 554 | ⬜ | | recomputar al llegar |
+| 164 | Santa Perpètua de Mogoda | 0 | ✅ | 2026-06-16 | 6 verif + 1 parcial + 0 purgas (Vallès Occidental, urbà, lot sòlid); **Hanaivegana reubicada a Barcelona - Ciutat Vella (Born)** (obrador vegà sense gluten amb botigues al Born i Gràcia + tenda online; estava mal fichada a SPM amb coords de BCN) verif VO ecommerce; Mas Malta Cervecera (obrador cerveser + botiga online de maltes/llúpols/equips + brew service) verif VO ecommerce; Delikatessen 1999 (forn massa mare des de 1999, e-commerce) verif VO ecommerce; Xarcuteria Subirats (des de 1926, obrador propi marca Subirats) i Xarcuteria i Celler Viñallonga (des de 1976, botifarres pròpies) verif VO=no (sense carret); Pastisseria Delicious (mestre Ramón, obrador, IG; +tel) verif; Granja Ca n'Oller (masia patrimonial + polígon, activitat lletera no confirmada, sense DAR ni web) parcial. Candidat DAR no integrat: Folguera Altimira Jaume (Bodega Folguera, vins) |
+| — | _resto (209 municipios)_ | 547 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
