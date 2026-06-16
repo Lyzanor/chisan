@@ -17,14 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.608** · verificado **1.334** · parcial **617** · pendiente **657**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **365 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.607** · verificado **1.338** · parcial **620** · pendiente **649**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **366 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-149** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-149 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-150** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-150 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 150** — Sant Esteve Sesrovires (municipios gruesos restantes: Olvan, Òrrius, Pujalt,
-  Sant Fost de Campsentelles, Collbató, Cornellà de Llobregat…). Recomputar pendientes con `list:province`.
+- **Siguiente: Lote 151** — Olvan (municipios gruesos restantes: Òrrius, Pujalt, Sant Fost de
+  Campsentelles, Collbató, Cornellà de Llobregat, Gironella, Matadepera…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -319,7 +319,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 147 | Parets del Vallès | 0 | ✅ | 2026-06-16 | 6 verif + 0 parcial + 2 purgas (Vallès Oriental); Ginesta Flaqué Jaume = quimera (web/IG del grup escolta **AEiG Sant Jaume**, sense DAR ni rastre de cansaladeria) purgada; La Saó Vallès = dup d'Albert Teruel/La SAO ja a Mollet (lote 78, mateix tel/email) → purgada i la fila de Mollet enriquida (web lasaovalles.cat + IG) i pujada a **verificat**; Carns Roca (elaboració pròpia des de 1950, botiga online amb cistella + repartiment) verif ecommerce; Artigas Matheu = **Torremalla** (Josep Artigas, horta/calçots/ganxet, web torremalla.com afegida, DAR) verif; La Noria Bakery, Le Caramel (tel/email afegits), Dahlia (IG afegit) i Pastisseria Joan verif —forns d'encàrrec, VO=no |
 | 148 | Vilassar de Dalt | 0 | ✅ | 2026-06-16 | 5 verif + 3 parcial + 0 purgas (Maresme, DO Alella); Oriol Artigas (artigas-sanchez-oriol = viticultor natural reconegut, ~12 ha sauló, distribució internacional) verif renombrat, VO marketplace (Vinissimus/Decántalo); Formatges Can Pujol (formatgeria artesana des de 1980, formatge Nevat, web TLS≠morta) verif VO marketplace (formatgeacasa.cat); Forn Cal Mosso (6 gen. des de 1838, millor pa de pagès 2021), Forn Cros (cancros.cat→foodlus) i Pastisseria Mª Teresa (botiga+carret, recollida a botiga→ecommerce) verif; Campins Martinez = **Fruites Campins** (fruiteria des de 1962, no mel; recat Fruta y verdura + IG) parcial; Formatges Artefor (avui assessoria/afinatge a BCN Poble-sec, no elabora) i Nassari SA (espècies industrials B2B, Polígon les Sedes; coords corregides) parcials |
 | 149 | Montseny | 0 | ✅ | 2026-06-16 | 4 verif + 1 parcial + 3 purgas (massís del Montseny); Alfons Planas Jubany = quimera del **restaurant Can Jubany** (Nandu Jubany, Calldetenes; web/IG/GMaps/coords ajenos) purgada (+webp); SAT Pastures del Montseny = dup de Formatgeria del Montseny (mateix email/domini, la SAT és l'entitat de la formatgeria) purgada; Ferreras Saura Xavier = dup de **Segimona** (mateix tel 607447835) purgada; Formatgeria del Montseny (formatge de cabra crua + carn de cabrit, carret) verif ecommerce; Segimona (horta de Xavier Ferreras, web/IG; recat Fruta y verdura) i Embotits Artesans Ca la Petita (SL 1995, guia ajuntament) verif VO=no; Barbena Pous = **La Cort del Montseny** (conserves/melmelades, Aram Reserva Biosfera; GMaps de Can Barrina ajè blanquejat; →Despensa) parcial; **Can Teixidor Cultius Ecològics reubicat a Sant Esteve de Palautordera** (CCPAE, agrobotiga+horta+ous; adreça 08461 SEdP, blog propi) verif |
-| — | _resto (224 municipios)_ | 657 | ⬜ | | recomputar al llegar |
+| 150 | Sant Esteve Sesrovires | 0 | ✅ | 2026-06-16 | 4 verif + 3 parcial + 1 purga (Baix Llobregat, DO Penedès, zona de cava); 4 caves verif: Can Casals (1805, 11 ha, propi), Finca Ca n'Estella (shop-fincacanestella.com → ecommerce), Roger Goulart (mètode tradicional, grup CVNE → ecommerce), Masia Bach (Raventós Codorníu; bach.es cert≠morta → marketplace); Galup Torne Ramon = la web/FB eren de **Logtravi** (transports del polígon, ajè) i el DAR diu **préssecs** no vi → recat Fruta y verdura, links blanquejats, tel DAR, parcial; Casal Subirana Olga (marca Arrels, vins+oli, DAR) i Ecological Dynamics SL (horta, DAR; recat Fruta y verdura) parcials; Izquierdo Jiménez (cargols, sense tel/web/DAR/adreça ni rastre) purgada |
+| — | _resto (223 municipios)_ | 649 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -367,6 +368,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Palau-solità i Plegamans:** Estrada Llargues, Isidro (mongeta; DAR 659999473)
 - **Santa Perpètua de Mogoda:** Pa Artesà del Vallès (obrador 40 anys, Pol. Can Roca, paartesadelvalles.com + restaurant Cal Jaume; els seus enllaços estaven mal posats a la fila Pastisseria Pi de La Llagosta, purgats d'allà al lote 145)
 - **Parets del Vallès:** Mestresses S.C. (horta, blat tou, ordi; DAR 661350810)
+- **Sant Esteve Sesrovires:** Juscafresa Ferrer, Eugeni (horta/taronges/carxofa; DAR 660823944) · López Cabello, Manel (horta; DAR 693063652)
 - **Sallent:** Guitart Quintana, Josep (Essència d'Oli de Cabrianes; DAR 617375377) · La Tomakera SCP (horta; DAR 649195293) · Santasusagna SCP (xai; DAR 617405951)
 - **Torrelavit:** Cols Canals, Lluís (Cal Cols, vins+oli; DAR 653162580) · Ruiz Molina, Anna (préssecs; DAR 648725583)
 - **Castellfollit del Boix:** Cornellas Prat, Jordi (Cal Rei, conserves; DAR 618762888) · Lladó Oliva, Joan (cigró/mongeta; DAR 608691406)
