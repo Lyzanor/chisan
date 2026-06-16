@@ -17,15 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.611** · verificado **1.330** · parcial **616** · pendiente **665**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **362 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.608** · verificado **1.334** · parcial **617** · pendiente **657**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **365 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-148** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-148 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-149** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-149 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 149** — seguir con municipios gruesos restantes (~8 pendientes): Montseny, Olvan,
-  Òrrius, Pujalt, Sant Esteve Sesrovires, Sant Fost de Campsentelles, Collbató, Cornellà de Llobregat…
-  Recomputar pendientes con `list:province` al llegar.
+- **Siguiente: Lote 150** — Sant Esteve Sesrovires (municipios gruesos restantes: Olvan, Òrrius, Pujalt,
+  Sant Fost de Campsentelles, Collbató, Cornellà de Llobregat…). Recomputar pendientes con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -319,7 +318,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 146 | Montmeló | 0 | ✅ | 2026-06-16 | 6 verif + 1 parcial + 1 purga (Vallès Oriental, urbà); Panadería París = fila mal fichada (GMaps+coords a lon 2.02 = **Pastisseria París de Terrassa**, cap forn «París» confirmat a Montmeló) → purgada; 3 ecommerce reals confirmats amb carret (Carnisseria Manils elaboració pròpia des de 1966; Pastisseria Viñallonga; Rachel's Cake Shopify+WhatsApp); La Tenda Tintó-Carolà (cansaladeria botifarres pròpies, top-3 de Montmeló), Forn Ca la Txell i Forn Farriol verif (VO=no); Raico Agro Tech SL (SL industrial al Polígon Circuit, grup Vitae, DAR venda directa però sense web/consumidor) parcial |
 | 147 | Parets del Vallès | 0 | ✅ | 2026-06-16 | 6 verif + 0 parcial + 2 purgas (Vallès Oriental); Ginesta Flaqué Jaume = quimera (web/IG del grup escolta **AEiG Sant Jaume**, sense DAR ni rastre de cansaladeria) purgada; La Saó Vallès = dup d'Albert Teruel/La SAO ja a Mollet (lote 78, mateix tel/email) → purgada i la fila de Mollet enriquida (web lasaovalles.cat + IG) i pujada a **verificat**; Carns Roca (elaboració pròpia des de 1950, botiga online amb cistella + repartiment) verif ecommerce; Artigas Matheu = **Torremalla** (Josep Artigas, horta/calçots/ganxet, web torremalla.com afegida, DAR) verif; La Noria Bakery, Le Caramel (tel/email afegits), Dahlia (IG afegit) i Pastisseria Joan verif —forns d'encàrrec, VO=no |
 | 148 | Vilassar de Dalt | 0 | ✅ | 2026-06-16 | 5 verif + 3 parcial + 0 purgas (Maresme, DO Alella); Oriol Artigas (artigas-sanchez-oriol = viticultor natural reconegut, ~12 ha sauló, distribució internacional) verif renombrat, VO marketplace (Vinissimus/Decántalo); Formatges Can Pujol (formatgeria artesana des de 1980, formatge Nevat, web TLS≠morta) verif VO marketplace (formatgeacasa.cat); Forn Cal Mosso (6 gen. des de 1838, millor pa de pagès 2021), Forn Cros (cancros.cat→foodlus) i Pastisseria Mª Teresa (botiga+carret, recollida a botiga→ecommerce) verif; Campins Martinez = **Fruites Campins** (fruiteria des de 1962, no mel; recat Fruta y verdura + IG) parcial; Formatges Artefor (avui assessoria/afinatge a BCN Poble-sec, no elabora) i Nassari SA (espècies industrials B2B, Polígon les Sedes; coords corregides) parcials |
-| — | _resto (225 municipios)_ | 665 | ⬜ | | recomputar al llegar |
+| 149 | Montseny | 0 | ✅ | 2026-06-16 | 4 verif + 1 parcial + 3 purgas (massís del Montseny); Alfons Planas Jubany = quimera del **restaurant Can Jubany** (Nandu Jubany, Calldetenes; web/IG/GMaps/coords ajenos) purgada (+webp); SAT Pastures del Montseny = dup de Formatgeria del Montseny (mateix email/domini, la SAT és l'entitat de la formatgeria) purgada; Ferreras Saura Xavier = dup de **Segimona** (mateix tel 607447835) purgada; Formatgeria del Montseny (formatge de cabra crua + carn de cabrit, carret) verif ecommerce; Segimona (horta de Xavier Ferreras, web/IG; recat Fruta y verdura) i Embotits Artesans Ca la Petita (SL 1995, guia ajuntament) verif VO=no; Barbena Pous = **La Cort del Montseny** (conserves/melmelades, Aram Reserva Biosfera; GMaps de Can Barrina ajè blanquejat; →Despensa) parcial; **Can Teixidor Cultius Ecològics reubicat a Sant Esteve de Palautordera** (CCPAE, agrobotiga+horta+ous; adreça 08461 SEdP, blog propi) verif |
+| — | _resto (224 municipios)_ | 657 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
