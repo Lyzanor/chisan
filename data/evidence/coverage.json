@@ -1,4 +1,6 @@
 {
   "version": 1,
-  "strictProvinces": []
+  "strictProvinces": [
+    "pais-vasco/alava"
+  ]
 }
