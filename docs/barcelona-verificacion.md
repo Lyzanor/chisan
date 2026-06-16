@@ -17,14 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.594** · verificado **1.352** · parcial **625** · pendiente **617**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **379 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.593** · verificado **1.355** · parcial **628** · pendiente **610**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **380 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-154** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-154 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-155** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-155 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~7-8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 155** — Collbató (municipios gruesos restantes: Cornellà de Llobregat, Gironella,
-  Matadepera, Orís, Sant Martí de Tous, Roda de Ter, Rupit i Pruit, Masquefa, Mura…). Recomputar con `list:province`.
+- **Siguiente: Lote 156** — Cornellà de Llobregat (municipios gruesos restantes: Gironella, Matadepera,
+  Orís, Sant Martí de Tous, Roda de Ter, Rupit i Pruit, Masquefa, Mura…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -324,7 +324,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 152 | Òrrius | 0 | ✅ | 2026-06-16 | 4 verif + 1 parcial + 3 purgas (Maresme, poble petit); dos clústers de dups: El Mosaic (el-mosaic-horta-orrius dup per tel/email/web purgat) i El Niu d'Ous (lopez-mestre-marta dup per email purgat); a més marta-lopez-mestre = **quimera** (web martalopez.booksy.com + adreça a Barcelona Rambla de Badal, una altra Marta López Mestre) purgada; El Mosaic (granja eco Can Femades/Turó d'en Rompons, horta+làctics A2+ous, botiga online amb carret) verif ecommerce; El Niu d'Ous (ous eco, DAR), Cansaladeria Cal Truch i Forn César Díaz (patrocinadors de L'Orrienca) verif VO=no; Roque Prat Xavier (horta, DAR) parcial |
 | 153 | Pujalt | 0 | ✅ | 2026-06-16 | 1 verif + 2 parcial + 5 purgas (Alta Anoia, lot ple de registres); clúster Torres/Monferrer: Monferrer Claramonte + Torres Avellana (mateix email minat_20, la parella) = dups de **Agroramadera Torres i Monferrer SCP** (embotits boví/xai, gencat venda proximitat) → purgats, la SCP queda parcial amb adreça corregida (deia La Roca del Vallès→Cal Millet/Vilamajor) + coords; clúster Masana: **Francesc Masana = Casa Mestres** (Cigronet de l'Alta Anoia, DAR; →Legumbres) verif, **Pere Masana** (conserves/llenties, DAR; tel/email DAR) parcial; Agromasana (sense contacte/DAR/rastre, possible marca familiar) i Masana Canela Jaume (links d'agroenginy + bar restaurant, quimera) purgats; **Cal Senyoret = casa rural** (BCIN, Conill) no productor → purgada |
 | 154 | Sant Fost de Campsentelles | 0 | ✅ | 2026-06-16 | 5 verif + 2 parcial + 1 purga (Vallès Oriental); Frutas Sánchez S.C.P.=quimera (tel 932621293 i GMaps «Frutas E. Sánchez» són del majorista de Mercabarna FRUTAS E. SÁNCHEZ SL, cap productor a Sant Fost) purgada; Can Matons (celler Raventós Codorníu, DO Alella, Pansa Blanca) verif: web 15bodegas.com/CanMatons=404 blanquejada, IG @canmatons (real, abans @15bodegas=retailer), VO marketplace (Petit Celler/Grauonline/Vivino) —**el celler-seu és a Sta. Maria de Martorelles** (zona Codex), aquí les vinyes/parcel·les de Sant Fost—; Cafés Montañá=Torrefactora del Vallés (1923, torrefactor B2B, web http tfvalles.com informativa) verif VO=no +correu; Rostibò (comida preparada+càtering/domicili des de 2002) verif VO telefono +web+FB; Forn de Pa Gaba (1996, 251 ress.) i Forn i Pastisseria Corbalan (forn de llenya, 193 ress.) verif VO=no; Carns Aguilar Heredia (carnisseria +FB) i Embutidos Artesans La Alhambra de Granada (SL, només directoris) parcials —elaboració pròpia sense confirmar |
-| — | _resto (219 municipios)_ | 617 | ⬜ | | recomputar al llegar |
+| 155 | Collbató | 0 | ✅ | 2026-06-16 | 3 verif + 3 parcial + 1 purga; Jordi Tomás Sabaté=quimera/dup (jordisabat.com és l'estudi de **disseny gràfic Jordi Sàbat** de BCN; el «Jordi Tomás» real és el pagès de l'Hort de Montserrat) purgada +webp; l'Hort de Montserrat SL verif (web pròpia hortdemontserrat.cat «altres venen, nosaltres cultivem», botiga online + IG/FB/TikTok/YT, DAR) VO ecommerce; La Cuineta verif (rostisseria/plats cuinats, pollastre a la llenya + repartiment gratuït) VO telefono —web lacuineta.cat era **La Cuineta d'Olot** (Girona) blanquejada, +FB Collbató—; El Forn del Poble verif VO=no (web=URL admin de FB blanquejada, FB+IG propis); Masia Cal Po parcial (agroturisme 1540 + venda d'oli/infusions, GMaps de «Llenya de Montserrat» ajè blanquejat); Carnisseria Devesa=Devesa Bacarises (carnisseria de poble, sense enllaç propi) parcial; Olle Cuello Raimon→**Ous Ecològics Les Tafaneres** (DAR + IG @tafaneres, coop La Dotzena) parcial —marca lligada a Sora/Osona però DAR/coords a Collbató |
+| — | _resto (218 municipios)_ | 610 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
