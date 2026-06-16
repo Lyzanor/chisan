@@ -17,14 +17,15 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.611** · verificado **1.325** · parcial **613** · pendiente **673**
+- Filas: **2.611** · verificado **1.330** · parcial **616** · pendiente **665**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **362 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-147** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-147 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-148** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-148 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 148** — Vilassar de Dalt (pasada de municipios gruesos: La Granada ✓144, La Llagosta
-  ✓145, Montmeló ✓146, Parets del Vallès ✓147, Vilassar de Dalt…). Recomputar pendientes al llegar.
+- **Siguiente: Lote 149** — seguir con municipios gruesos restantes (~8 pendientes): Montseny, Olvan,
+  Òrrius, Pujalt, Sant Esteve Sesrovires, Sant Fost de Campsentelles, Collbató, Cornellà de Llobregat…
+  Recomputar pendientes con `list:province` al llegar.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-100 en `main` (2026-06-13).
 
@@ -315,7 +316,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 145 | La Llagosta | 0 | ✅ | 2026-06-16 | 5 verif + 2 parcial + 1 purga (Vallès Oriental, urbà, sense DAR); Azúcares Especiales SAES = envasador **industrial B2B** de sucre en porcions (PortionPack Group, multinacional, sense venda al públic) → purgat fora d'àmbit km0 (+.webp); Pastisseria Pi = pastisseria pròpia (tel 935602561) amb web/FB/IG de **Pa Artesà del Vallès** (obrador de Santa Perpètua) mal creuats → blanquejats, verif; Cárnicas Pocre (1991, elabora salaó càrnic propi a La Llagosta; productes corregits fuet→salaó, →Carne) verif; Fleca La Florida, Croissanteria Petit i Bo (1986) i Forn Ribas (forns/pastisseries de barri, web informativa o IG) verif —tots VO=no; Damilaura (fruiteria/distribuïdor, coords a 7,5 km→centroide) i Alrus (delicatessen de salmó/caviar, no proximitat) parcials |
 | 146 | Montmeló | 0 | ✅ | 2026-06-16 | 6 verif + 1 parcial + 1 purga (Vallès Oriental, urbà); Panadería París = fila mal fichada (GMaps+coords a lon 2.02 = **Pastisseria París de Terrassa**, cap forn «París» confirmat a Montmeló) → purgada; 3 ecommerce reals confirmats amb carret (Carnisseria Manils elaboració pròpia des de 1966; Pastisseria Viñallonga; Rachel's Cake Shopify+WhatsApp); La Tenda Tintó-Carolà (cansaladeria botifarres pròpies, top-3 de Montmeló), Forn Ca la Txell i Forn Farriol verif (VO=no); Raico Agro Tech SL (SL industrial al Polígon Circuit, grup Vitae, DAR venda directa però sense web/consumidor) parcial |
 | 147 | Parets del Vallès | 0 | ✅ | 2026-06-16 | 6 verif + 0 parcial + 2 purgas (Vallès Oriental); Ginesta Flaqué Jaume = quimera (web/IG del grup escolta **AEiG Sant Jaume**, sense DAR ni rastre de cansaladeria) purgada; La Saó Vallès = dup d'Albert Teruel/La SAO ja a Mollet (lote 78, mateix tel/email) → purgada i la fila de Mollet enriquida (web lasaovalles.cat + IG) i pujada a **verificat**; Carns Roca (elaboració pròpia des de 1950, botiga online amb cistella + repartiment) verif ecommerce; Artigas Matheu = **Torremalla** (Josep Artigas, horta/calçots/ganxet, web torremalla.com afegida, DAR) verif; La Noria Bakery, Le Caramel (tel/email afegits), Dahlia (IG afegit) i Pastisseria Joan verif —forns d'encàrrec, VO=no |
-| — | _resto (226 municipios)_ | 673 | ⬜ | | recomputar al llegar |
+| 148 | Vilassar de Dalt | 0 | ✅ | 2026-06-16 | 5 verif + 3 parcial + 0 purgas (Maresme, DO Alella); Oriol Artigas (artigas-sanchez-oriol = viticultor natural reconegut, ~12 ha sauló, distribució internacional) verif renombrat, VO marketplace (Vinissimus/Decántalo); Formatges Can Pujol (formatgeria artesana des de 1980, formatge Nevat, web TLS≠morta) verif VO marketplace (formatgeacasa.cat); Forn Cal Mosso (6 gen. des de 1838, millor pa de pagès 2021), Forn Cros (cancros.cat→foodlus) i Pastisseria Mª Teresa (botiga+carret, recollida a botiga→ecommerce) verif; Campins Martinez = **Fruites Campins** (fruiteria des de 1962, no mel; recat Fruta y verdura + IG) parcial; Formatges Artefor (avui assessoria/afinatge a BCN Poble-sec, no elabora) i Nassari SA (espècies industrials B2B, Polígon les Sedes; coords corregides) parcials |
+| — | _resto (225 municipios)_ | 665 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
