@@ -17,14 +17,14 @@
 
 ## Estado actual (2026-06-16)
 
-- Filas: **2.603** · verificado **1.342** · parcial **620** · pendiente **641**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **370 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.600** · verificado **1.346** · parcial **621** · pendiente **633**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **373 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-151** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-151 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-152** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-152 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 152** — Òrrius (municipios gruesos restantes: Pujalt, Sant Fost de Campsentelles,
-  Collbató, Cornellà de Llobregat, Gironella, Matadepera…). Recomputar con `list:province`.
+- **Siguiente: Lote 153** — Pujalt (municipios gruesos restantes: Sant Fost de Campsentelles, Collbató,
+  Cornellà de Llobregat, Gironella, Matadepera…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Último push: lotes 1-148 en `main` (2026-06-16). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -321,7 +321,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 149 | Montseny | 0 | ✅ | 2026-06-16 | 4 verif + 1 parcial + 3 purgas (massís del Montseny); Alfons Planas Jubany = quimera del **restaurant Can Jubany** (Nandu Jubany, Calldetenes; web/IG/GMaps/coords ajenos) purgada (+webp); SAT Pastures del Montseny = dup de Formatgeria del Montseny (mateix email/domini, la SAT és l'entitat de la formatgeria) purgada; Ferreras Saura Xavier = dup de **Segimona** (mateix tel 607447835) purgada; Formatgeria del Montseny (formatge de cabra crua + carn de cabrit, carret) verif ecommerce; Segimona (horta de Xavier Ferreras, web/IG; recat Fruta y verdura) i Embotits Artesans Ca la Petita (SL 1995, guia ajuntament) verif VO=no; Barbena Pous = **La Cort del Montseny** (conserves/melmelades, Aram Reserva Biosfera; GMaps de Can Barrina ajè blanquejat; →Despensa) parcial; **Can Teixidor Cultius Ecològics reubicat a Sant Esteve de Palautordera** (CCPAE, agrobotiga+horta+ous; adreça 08461 SEdP, blog propi) verif |
 | 150 | Sant Esteve Sesrovires | 0 | ✅ | 2026-06-16 | 4 verif + 3 parcial + 1 purga (Baix Llobregat, DO Penedès, zona de cava); 4 caves verif: Can Casals (1805, 11 ha, propi), Finca Ca n'Estella (shop-fincacanestella.com → ecommerce), Roger Goulart (mètode tradicional, grup CVNE → ecommerce), Masia Bach (Raventós Codorníu; bach.es cert≠morta → marketplace); Galup Torne Ramon = la web/FB eren de **Logtravi** (transports del polígon, ajè) i el DAR diu **préssecs** no vi → recat Fruta y verdura, links blanquejats, tel DAR, parcial; Casal Subirana Olga (marca Arrels, vins+oli, DAR) i Ecological Dynamics SL (horta, DAR; recat Fruta y verdura) parcials; Izquierdo Jiménez (cargols, sense tel/web/DAR/adreça ni rastre) purgada |
 | 151 | Olvan | 0 | ✅ | 2026-06-16 | 4 verif + 0 parcial + 4 purgas (Berguedà, lot ple de registres); 3 dups registre↔marca confirmats per DAR (tel/email) purgats: Bardés Soler Sergi→**La Mel de l'Avi Joan**, Explotació Agroramadera→**La Parada d'Olvan**, Anglerill Giné Marià→**Xai de Ferreres** (aquest amb coords a 40 km mal); Bruna del Pirineu SL = **Federació Catalana de la Raça Bruna dels Pirineus (FEBRUPI)**, federació de raça amb seu a Berga (no productor; cat «Fruta y verdura» absurda) purgada (+webp); Casabella Natura (conserves/cremes eco pròpies des de 2008, germanes Àngels i Rosa) verif VO=no; La Mel de l'Avi Joan (web .cat 403=bot-block, DAR) verif ecommerce; La Parada d'Olvan (xai+vedella Bruna, IG+elbergueda) i Xai de Ferreres (DAR marca, +tel/email del registre) verif VO=no |
-| — | _resto (222 municipios)_ | 641 | ⬜ | | recomputar al llegar |
+| 152 | Òrrius | 0 | ✅ | 2026-06-16 | 4 verif + 1 parcial + 3 purgas (Maresme, poble petit); dos clústers de dups: El Mosaic (el-mosaic-horta-orrius dup per tel/email/web purgat) i El Niu d'Ous (lopez-mestre-marta dup per email purgat); a més marta-lopez-mestre = **quimera** (web martalopez.booksy.com + adreça a Barcelona Rambla de Badal, una altra Marta López Mestre) purgada; El Mosaic (granja eco Can Femades/Turó d'en Rompons, horta+làctics A2+ous, botiga online amb carret) verif ecommerce; El Niu d'Ous (ous eco, DAR), Cansaladeria Cal Truch i Forn César Díaz (patrocinadors de L'Orrienca) verif VO=no; Roque Prat Xavier (horta, DAR) parcial |
+| — | _resto (221 municipios)_ | 633 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
