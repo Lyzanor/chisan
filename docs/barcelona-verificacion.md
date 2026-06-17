@@ -17,16 +17,17 @@
 
 ## Estado actual (2026-06-17)
 
-- Filas: **2.566** · verificado **1.397** · parcial **652** · pendiente **517**
+- Filas: **2.566** · verificado **1.401** · parcial **654** · pendiente **511**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **407 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-169** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-169 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-170** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-170 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~6-8 pendientes) uno por lote, fila a fila a fondo.
-- **Siguiente: Lote 170** — Sant Andreu de Llavaneres (municipios gruesos restantes con 6: Sant Fruitós de
-  Bages, Sant Llorenç d'Hortons, Sant Pere de Torelló, Sant Quintí de Mediona…). Recomputar con `list:province`.
+- **Siguiente: Lote 171** — Sant Fruitós de Bages (resto de municipios con 6: Sant Llorenç d'Hortons,
+  Sant Pere de Torelló, Sant Quintí de Mediona, Sant Vicenç de Torelló, Vacarisses, Les Franqueses del
+  Vallès). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Último push: lotes 1-169 en `main` (2026-06-17). Convención (post-realineado): **1 municipio = 1 fila de
+- Último push: lotes 1-170 en `main` (2026-06-17). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
   de filas (p. ej. «lotes 149-155»), nunca con un número de batch suelto que desfase la tabla.
 
@@ -339,6 +340,7 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 167 | Roda de Ter | 0 | ✅ | 2026-06-16 | 2 verif + 1 parcial + 3 purgas (Osona); Pujols Parramon Miquel=quimera (web/email del **Bufet Agroambiental**, consultoria, no charcuteria) purgada; BANC de Llavors de Roda de Ter=**banc de llavors** (iniciativa de llavors, no productor) purgada; Dinamic Rural SL=empresa B2B d'**integració ramadera** (mal fichada Fruta y verdura, sense DAR ni venda a consumidor) purgada; Mallen Almirall Pol→**Oli del Tros** (EVOO arbequina, web olideltros.com + botiga online + FB + DAR; GMaps d'institut ajè blanquejat) verif VO ecommerce, recat Aceite; Pastisseria Prat «Can Carriel» (des de 1900, 4a gen., millor croissant de mantega d'Espanya 2017+2023; +web+FB) verif; Formatges La Planeta (formatge de cabra, IG propi + Finca La Planeta, sense corroboració externa) parcial. Candidat DAR no integrat: La Lluçanesa SL (vedella/embotits boví) |
 | 168 | Rupit i Pruit | 0 | ✅ | 2026-06-17 | 2 verif + 4 parcial + 0 purgas (Osona, Collsacabra); Embotits Maria Carme (embotits artesans propis, web embotitsderupit.cat + IG; «fer una comanda» sense carret) verif VO=no; Forn de Pa L'Era (forn tradicional des de 1969, web fornderupit.com + IG, sense carret) verif VO=no; 4 files registre DAR confirmades a Rupit → parcial: Colom Alibes Joan (carn/embotits xai, +tel +email), Molas Plana Maria Dolores (marca DAR «Torrents», boví; +email, marca no verificada per web), Vaquer Abril Xavier (xai, +email), SAT 1509 Las Vilas de Collsacabra (carn de xai; recat **Fruta y verdura→Carne**, +tel +email). Candidat DAR no integrat: Fatjó-Vilàs March Joan Pròsper (xai) |
 | 169 | Sant Adrià de Besòs | 0 | ✅ | 2026-06-17 | 3 verif + 3 parcial + 0 purgas (Barcelonès, urbà, sense DAR); Caravelle Brewery (cervesa artesana pròpia, web+carret PayPal/ApplePay+IG) verif VO ecommerce; Pujadó Solano (conserves de peix estil Santoña, marca pròpia + web amb botiga product-category —403 anti-bot, viu— + IG+FB) verif VO ecommerce; Macxipan/Dialypa SL (forn familiar des de 1903, obrador propi, web+IG; «a casa» sense carret confirmat) verif VO no comprobado; La Baklava (rebosteria àrab artesana, IG+FB+TooGoodToGo, sense web pròpia) parcial; L'Obrador d'en Pau (obrador rebosteria/pastissos de noces, directoris+tel, sense web/social) parcial; Panificio Artesania y Nutrición SLU (forn, C/Balmes 182, registre empresarial confirmat, sense web/social) parcial |
+| 170 | Sant Andreu de Llavaneres | 0 | ✅ | 2026-06-17 | 4 verif + 2 parcial + 0 purgas (Maresme, capital del pèsol garrofal); Pastisseria Sala (web pastisseriasala.com des de 1867, «Coca de Llavaneres», encàrrecs per mail sense carret; +correo) verif VO=no; Horta Graupera (horta pròpia, pèsol garrofal+poma camosa per al «Relleno», IG+FB+botiga Plaça de la Vila) verif VO=no; **Horta Pera Viván** (pèsol garrofal amb marca de qualitat, Francesc Pera proveeix El Celler de Can Roca; GMaps creuat a Xavier Amat → corregit) verif VO no comprobado; **Horta Xavier Amat** (pèsol garrofal, 17è Pèsol d'Or; ajuntament confirma «Comandes per WhatsApp» + IG @horta_xavier_amat) verif VO=sí whatsapp; Horta Oller SLU (DAR venda circuit curt, tomàquet/cogombre) parcial; Sala Vives (pastisseria família Sala, mateixa **Pastisseria Sala Vives SL**; confirmada per ajuntament+directoris, sense web pròpia) parcial. **Ojo**: Pera Viván i Xavier Amat comparteixen lat/lon idèntica (copy artifact, adreces distintes) i Sala Vives podria ser dup/degustació de Pastisseria Sala — revisar en pasada de neteja |
 | — | _resto (204 municipios)_ | 517 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
