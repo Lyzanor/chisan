@@ -30,8 +30,16 @@ medida que se revise cada lote.
   `pendiente`. Venta online: 49 `sí`, 38 `no`, 94 `no comprobado`; 31 filas
   con canal. `data/evidence/pais-vasco/vizcaya.jsonl` tiene 84 registros
   `keep`, 2 `merge` y 5 `purge`.
-- Modo: primera pasada profunda en curso. Lotes 1-12 cubren las 188 filas
-  iniciales sin solaparse; el lote 13 es auditoría transversal de cierre.
+- Tras los lotes 7-12: 176 filas; 125 `verificado`, 51 `parcial`, 0
+  `pendiente`. Venta online: 63 `sí`, 58 `no`, 55 `no comprobado`; 63 filas
+  con canal. `data/evidence/pais-vasco/vizcaya.jsonl` tiene 176 registros
+  `keep`, 3 `merge` y 9 `purge`.
+- Tras el lote 13: 175 filas; 128 `verificado`, 47 `parcial`, 0 `pendiente`.
+  Venta online: 62 `sí`, 58 `no`, 55 `no comprobado`; 62 filas con canal.
+  `data/evidence/pais-vasco/vizcaya.jsonl` tiene 175 registros `keep`, 3
+  `merge` y 10 `purge`; Vizcaya queda añadida a cobertura estricta en
+  `data/evidence/coverage.json`.
+- Modo: primera pasada profunda cerrada; la provincia entra en mantenimiento.
 
 El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces conservados, venta
@@ -156,13 +164,13 @@ Leyenda: `⬜` pendiente, `🟨` en curso, `✅` hecho. Los lotes 1-12 cubren la
 | 4 | Bodegas parciales y vermut | 15 | 0 | 15 | 0 | 4 | ✅ | 2026-06-18: 9 `verificado`, 6 `parcial`; se reauditan todos los `sí`. Lvre Wines actualiza Bizkai Barne y Lapazaran pasa de Durango a Muxika. |
 | 5 | Sidra | 8 | 0 | 8 | 0 | 2 | ✅ | 2026-06-18: 3 `verificado`, 5 `parcial`; Etxerriaga baja a `no` porque la tienda heredada no tiene checkout de producto. |
 | 6 | Pescado y conservas | 19 | 12 | 7 | 0 | 6 | ✅ | 2026-06-18: 14 `verificado`, 1 `parcial`, 4 purgas por no productor; 11 ventas online con canal. |
-| 7 | Pan y pastelería | 17 | 10 | 7 | 0 | 2 | ⬜ | Confirmar obrador propio y venta remota; cuidado con panaderías/despachos sin producción verificable. |
-| 8 | Dulces | 19 | 10 | 9 | 0 | 3 | ⬜ | Bilbao concentra muchas filas; verificar continuidad, obrador y canales en pastelerías, heladerías y turronerías. |
-| 9 | Fruta, verdura y legumbres | 17 | 5 | 12 | 0 | 6 | ⬜ | Revisar explotación propia, ecológico/Eusko Label, cestas o marketplace. Incluye `legumbres-guillermo-mungia`. |
-| 10 | Miel, huevos y caracoles | 15 | 6 | 9 | 0 | 2 | ⬜ | Fuentes sectoriales pueden dejar residuales `parcial`; comprobar canales directos antes de mantener `sí` o `no`. |
-| 11 | Charcutería y despensa artesanal | 14 | 8 | 6 | 0 | 3 | ⬜ | Riesgo alto de comercios o restauración. Confirmar elaboración propia, obrador, matadero o producto transformado. |
-| 12 | Cerveza, café, destilados y licores | 15 | 9 | 6 | 0 | 2 | ⬜ | Cerveceras, tostadores y destilería: revisar producción local y si la tienda vende producto, no solo hostelería o eventos. |
-| 13 | Cierre transversal provincial | 188 | 104 | 84 | 0 | 32 | ⬜ | Revisar residuales `parcial`, todos los `Venta online=sí`, canales, duplicados, imágenes, evidencia y posible cobertura estricta. |
+| 7 | Pan y pastelería | 17 | 10 | 7 | 0 | 2 | ✅ | 2026-06-18: 12 `verificado`, 5 `parcial`; 2 ventas remotas con canal. Se retiran dominios heredados ajenos en Pan Menesa y Tasty. |
+| 8 | Dulces | 19 | 10 | 9 | 0 | 3 | ✅ | 2026-06-18: 16 `verificado`, 3 `parcial`; 7 ventas remotas con canal. Se corrigen webs finales y tiendas sin checkout activo. |
+| 9 | Fruta, verdura y legumbres | 17 | 5 | 12 | 0 | 6 | ✅ | 2026-06-18: 15 `verificado`, 1 `parcial`, 1 purga; 6 ventas remotas con canal. Frutas Olmos sale por mayorista/distribuidor. |
+| 10 | Miel, huevos y caracoles | 15 | 6 | 9 | 0 | 2 | ✅ | 2026-06-18: 8 `verificado`, 5 `parcial`, 1 merge y 1 purga; 5 ventas remotas con canal. Estia Miel se fusiona en Miel Natural Cruda. |
+| 11 | Charcutería y despensa artesanal | 14 | 8 | 6 | 0 | 3 | ✅ | 2026-06-18: 8 `verificado`, 4 `parcial`, 2 purgas; 4 ventas remotas con canal. Laneko pasa a `Sidra`; Herci y FJZ salen de alcance. |
+| 12 | Cerveza, café, destilados y licores | 15 | 9 | 6 | 0 | 2 | ✅ | 2026-06-18: 11 `verificado`, 4 `parcial`; 10 ventas remotas con canal. ARVO queda residual de alcance para cierre. |
+| 13 | Cierre transversal provincial | 188 | 104 | 84 | 0 | 32 | ✅ | 2026-06-18: 3 promociones finales, 1 purga por no productor, 1 venta remota degradada a `no comprobado`, dependencias de canal corregidas, duplicados/contactos revisados y cobertura estricta activada. |
 
 ## Criterios de cierre de la pasada
 
@@ -365,3 +373,189 @@ confundir conservera con pescadería, mayorista o distribuidor.
   confirma conservera, pero no se localizó checkout ni pedido remoto vigente.
 - `karmelo-toja-bermeo`: conserva venta remota por formulario/contacto y se
   registra como `email|telefono`, no `ecommerce`.
+
+## Lote 7: pan y pastelería
+
+Revisado el 2026-06-18 con webs propias, perfiles oficiales, Google Maps,
+directorios locales, Basque Label/Euskal Ogia y prensa local cuando la web
+propia falló o no existía.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `bizkarra-galdakao` |
+| `verificado`, venta por `telefono` | `tahona-jardines-bilbao` |
+| `verificado`, venta `no` | `errotaetxe-amorebieta-etxano`, `labeko-okindegia-bilbao`, `cafe-obrador-okapi-bilbao`, `noho-bilbao`, `amasarte-labea-getxo` |
+| `verificado`, venta `no comprobado` | `panaderia-zubizarreta-zaldibar`, `karis-pasteleria-bilbao`, `helen-okindegia-basauri`, `crosta-okindegia-zalla`, `berteiz-eta-mendiondo-mungia` |
+| `parcial`, venta `no comprobado` | `pan-menesa-trapagaran`, `panaderia-el-minero-gallarta`, `jatera-berria-bi-by-jatera-bilbao`, `tasty-coffee-bakery-bilbao`, `amatxo-maitea-getxo` |
+
+### Excepciones
+
+- `pan-menesa-trapagaran` y `tasty-coffee-bakery-bilbao`: se eliminan dominios
+  heredados que apuntaban a directorio/spam o a un sitio ajeno. Quedan
+  `parcial` con evidencia local o social.
+- `tahona-jardines-bilbao`: se conserva `Venta online=sí`, pero como
+  `telefono`; no hay carrito activo.
+- `amatxo-maitea-getxo`: baja de `sí` a `no comprobado` porque la web propia
+  devolvió error y no se pudo confirmar tienda vigente.
+
+## Lote 8: dulces
+
+Revisado el 2026-06-18 contrastando obrador propio, continuidad de tienda y
+canales reales en pastelerías, heladerías y turronerías.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `pasteleria-arrese-bilbao`, `turroneria-ivanez-bilbao`, `gelati-gelati-bilbao`, `obrador-maneko-mallabia`, `bohemian-lane-bilbao` |
+| `verificado`, venta por `ecommerce|whatsapp` | `cookies-and-bites-bilbao` |
+| `verificado`, venta por `whatsapp|email|telefono` | `arantzazu-pasteleria-orduna` |
+| `verificado`, venta `no` | `pasteleria-don-manuel-bilbao`, `martina-de-zuricalday-bilbao`, `heladeria-nossi-be-bilbao`, `pasteleria-onenak-basurto-bilbao`, `pasteleria-gernika-bilbao`, `pasteleria-iparralde-basauri`, `helados-lopez-lekeitio`, `la-veneciana-barakaldo` |
+| `verificado`, venta `no comprobado` | `charamel-gozotegia-bilbao` |
+| `parcial`, venta `no` | `pasteleria-felipe-bilbao` |
+| `parcial`, venta `no comprobado` | `santi-gozotegia-lekeitio`, `pasteleria-zuricalday-getxo` |
+
+### Excepciones
+
+- `pasteleria-iparralde-basauri`: se marca `verificado`, pero `Venta online=no`
+  porque la estructura Shopify no mostraba productos reales ni checkout activo.
+- `gelati-gelati-bilbao`: se conserva venta remota por el portal de pedido
+  publicado en la web, aunque parece orientado a clientes.
+- `charamel-gozotegia-bilbao` y `pasteleria-zuricalday-getxo`: sus webs
+  fallaron o bloquearon la revisión; no se declara venta remota sin confirmarla.
+
+## Lote 9: fruta, verdura y legumbres
+
+Revisado el 2026-06-18 separando explotación o cooperativa productora de
+mayorista, frutería o distribuidor.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `legumbres-guillermo-mungia`, `lurbeko-loiu`, `bizkai-berries-galdames` |
+| `verificado`, venta por `ecommerce|whatsapp` | `gaiaberry-karrantza` |
+| `verificado`, venta por `whatsapp|email` | `areitz-soroa-galdames` |
+| `verificado`, venta `no` | `premium-organics-leioa`, `barrenetxe-etxebarria`, `ekorlegi-sopelana`, `garaia-koop-mungia`, `lurkoi-baserria-bermeo`, `gasadi-baserria-gamiz-fika`, `bioarandio-erandio`, `aristieta-ajangiz`, `lapikote-baserria-kortezubi` |
+| `verificado`, venta `no comprobado` | `ekosumendi-alonsotegi` |
+| `parcial`, venta `no` | `kiwilur-arratzu` |
+| `purge` | `frutas-olmos-basauri` |
+
+### Excepciones
+
+- `frutas-olmos-basauri`: se elimina como `not-producer`; las fuentes lo
+  presentan como mayorista/distribuidor de fruta en Mercabilbao.
+- `legumbres-guillermo-mungia`: se mantiene por evidencia de cultivo,
+  selección, envasado y tienda online, aunque el catálogo mezcla producto
+  propio, nacional e internacional.
+- `lapikote-baserria-kortezubi`: se promueve a `verificado` por fuente propia
+  de Kortezubi Frutadenda y fuentes locales que identifican el caserío productor;
+  no se cuenta venta online.
+
+## Lote 10: miel, huevos y caracoles
+
+Revisado el 2026-06-18 con webs propias, marketplaces, directorios de
+productores y fuentes sectoriales de apicultura.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `eztikidetza-galdames`, `erleak-artzentales` |
+| `verificado`, venta por `email|telefono` | `miel-natural-cruda-zeanuri` |
+| `verificado`, venta por `whatsapp|email|telefono` | `miel-urikoa-amorebieta-etxano` |
+| `verificado`, venta `no` | `colmenas-apierlea-mendata`, `pagaikoak-zeanuri`, `zabale-baserria-busturia`, `granja-uriagereka-mungia` |
+| `parcial`, venta `no` | `oizpe-erlezaintza-atxondo`, `barraskibide-orduna` |
+| `parcial`, venta `no comprobado` | `aberaska-eztia-gernika-lumo`, `gure-eztia-markina-xemein`, `miel-de-arrazola-atxondo` |
+| `merge` | `estia-miel-zeanuri` -> `miel-natural-cruda-zeanuri` |
+| `purge` | `avicola-olloki-etxebarri` |
+
+### Excepciones
+
+- `estia-miel-zeanuri`: se fusiona en `miel-natural-cruda-zeanuri` y la fila
+  superviviente pasa a `Estia Miel - Miel Natural Cruda`.
+- `avicola-olloki-etxebarri`: se elimina como `not-producer`; las fuentes lo
+  presentan como mayorista/distribuidor de huevos y productos avícolas.
+- `colmenas-apierlea-mendata`: baja de `sí` a `no`; la tienda propia vende
+  material apícola, no la miel catalogada.
+
+## Lote 11: charcutería y despensa artesanal
+
+Revisado el 2026-06-18 con especial atención a la frontera entre obrador,
+carnicería, distribuidor, tienda gourmet y elaborador.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `delicass-larrabetzu`, `la-gilda-del-norte-lezama`, `la-moderna-thate-bilbao`, `lombera-de-carranza-karrantza` |
+| `verificado`, venta `no` | `nanike-kortezubi`, `carniceria-sierra-balmaseda` |
+| `verificado`, venta `no comprobado` | `caserio-itturbaltza-gamiz-fika`, `tologorri-orduna` |
+| `parcial`, venta `no` | `laneko-koop-ispaster` |
+| `parcial`, venta `no comprobado` | `servicarfres-bilbao`, `ateun-harategia-markina-xemein`, `olatxuko-laboreak-gamiz-fika` |
+| `purge` | `herci-bilbao`, `fjz-zuazaga-bilbao` |
+
+### Excepciones
+
+- `laneko-koop-ispaster`: se corrige de `Despensa artesanal` a `Sidra`; queda
+  `parcial` porque la fuente fuerte es el consejo/directorio sectorial.
+- `herci-bilbao` y `fjz-zuazaga-bilbao`: se eliminan como `not-producer`;
+  las fuentes propias los describen como distribuidor alimentario y tienda de
+  especias/tripas/útiles.
+- `servicarfres-bilbao`: no se purga en esta pasada porque hay registro que
+  menciona elaboración, pero queda `parcial` por el peso de fuentes de
+  distribución/mayorista.
+- `olatxuko-laboreak-gamiz-fika` y `tologorri-orduna`: se corrige el `sí`
+  heredado a `no comprobado`; no se localizó compra remota activa.
+
+## Lote 12: cerveza, café, destilados y licores
+
+Revisado el 2026-06-18 separando cervecera/tostador/destilería de hostelería o
+perfil de cafetería sin producción propia.
+
+| Resultado | Slugs |
+|---|---|
+| `verificado`, venta por `ecommerce` | `laugar-brewery-gordexola`, `boga-garagardoa-mungia`, `la-salve-bilbao`, `drunken-bros-zamudio`, `cafes-baque-iurreta`, `cafes-el-abra-arrankudiaga`, `cafe-fortaleza-bilbao`, `la-txika-de-la-cerveza-bilbao`, `bilbao-biscay-distillery-bedia` |
+| `verificado`, venta por `marketplace` | `basquery-bilbao` |
+| `verificado`, venta `no comprobado` | `etxeandia-garardauak-urduliz` |
+| `parcial`, venta `no comprobado` | `arvo-specialty-coffee-bilbao`, `tito-blas-gorliz`, `urban-beer-zamudio`, `txorierri-garagardoa-sondika` |
+
+### Excepciones
+
+- `arvo-specialty-coffee-bilbao`: queda `parcial`; se confirma cafetería de
+  especialidad, pero no producción o tostado propio en Bizkaia.
+- `urban-beer-zamudio`: se elimina el dominio aparcado heredado y queda
+  `parcial`; no hay prueba suficiente para declararlo cerrado.
+- `txorierri-garagardoa-sondika`: la web propia no respondió, pero se conserva
+  por fuentes sectoriales y sociales, sin venta remota comprobada.
+
+## Lote 13: cierre transversal provincial
+
+Revisado el 2026-06-18 como pasada de consistencia sobre toda la provincia:
+residuales `parcial`, `Venta online=sí`, canales, contactos, duplicados
+obvios, imágenes, evidence y cobertura estricta.
+
+| Resultado | Slugs |
+|---|---|
+| Promoción a `verificado`, venta `no comprobado` | `santi-gozotegia-lekeitio`, `panaderia-el-minero-gallarta`, `pasteleria-zuricalday-getxo` |
+| `Venta online=sí` corregido a `no comprobado` | `cafes-el-abra-arrankudiaga` |
+| Canal/contacto corregido | `zabala-txakolina-bakio`, `miel-urikoa-amorebieta-etxano`, `areitz-soroa-galdames` |
+| `purge` | `arvo-specialty-coffee-bilbao` |
+| Cobertura estricta | `pais-vasco/vizcaya` añadido a `data/evidence/coverage.json` |
+
+### Excepciones
+
+- `arvo-specialty-coffee-bilbao` se elimina como `not-producer`: las fuentes
+  revisadas lo presentan como cafetería de especialidad que trabaja con cafés
+  seleccionados de tostadores externos, sin producción o tostado propio en
+  Bizkaia. Se elimina también su imagen.
+- `cafes-el-abra-arrankudiaga`: se mantiene `verificado` por historia y
+  producción de Cafés El Abra/Cafento, pero se retira el `ecommerce`; el dominio
+  de compra de cápsulas publicado en fuente social no resolvió durante el
+  cierre y no se localizó checkout alternativo actual.
+- `zabala-txakolina-bakio`: conserva `Venta online=sí` por página de pedidos,
+  pero queda solo como `telefono`, no `email`, porque el CSV no conserva correo
+  publicado.
+- `miel-urikoa-amorebieta-etxano` y `areitz-soroa-galdames`: se completan
+  correo/teléfono publicados para que los canales registrados tengan respaldo
+  de contacto en el CSV.
+- Se revisaron colisiones cercanas de coordenadas y contactos duplicados. No se
+  fusionan `conservas-arroyabe-bermeo`/`anchoas-royo-bermeo`,
+  `drunken-bros-zamudio`/`urban-beer-zamudio` ni las parejas con centroide
+  compartido porque representan entidades distintas o no hay evidencia de
+  duplicidad suficiente.
+- Los 47 residuales `parcial` quedan con evidencia válida y motivo conocido:
+  fuente sectorial/directorio sin fuente propia, web caída o bloqueo temporal,
+  duda de alcance que no justifica purga, o venta remota no comprobable.
