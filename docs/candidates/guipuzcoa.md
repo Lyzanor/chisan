@@ -50,14 +50,15 @@
 | Lote | Alcance | Filas | Pendiente | Parcial | Venta online `no comprobado` | Riesgo inicial |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | 1 | Bodega / txakoli | 22 | 8 | 14 | 12 | Cerrado 2026-06-18; 22 `verificado` |
-| 2 | Sidra | 38 | 16 | 22 | 33 | bloque grande; dividir por municipios sidreros |
-| 3 | Lácteos y quesos | 51 | 38 | 13 | 44 | mayor carga pendiente; 12 sin web, 32 sin imagen |
-| 4 | Mar y sal | 10 | 4 | 6 | 6 | revisar cofradías, conserveras y venta directa |
-| 5 | Vegetal / despensa | 21 | 10 | 11 | 14 | piparras, huerta, legumbre, aceite y eco |
+| 2 | Sidra | 38 | 16 | 22 | 33 | Cerrado 2026-06-18; 35 `verificado`, 3 `parcial` |
+| 3 | Lácteos y quesos | 51 | 38 | 13 | 44 | Cerrado 2026-06-18; 48 filas conservadas y 3 fusiones |
+| 4 | Mar y sal | 10 | 4 | 6 | 6 | Cerrado 2026-06-18; 9 `verificado`, 1 `parcial` |
+| 5 | Vegetal / despensa | 21 | 10 | 11 | 14 | Cerrado 2026-06-18; 11 `verificado`, 10 `parcial` |
 | 6 | Cárnicos / huevos / patés | 11 | 8 | 3 | 10 | 4 sin web; alto riesgo de directorio antiguo |
 | 7 | Obradores / cerveza / miel | 21 | 7 | 14 | 13 | varias ventas online; confirmar canales y actividad |
 
-Total: 174 filas.
+Total inicial: 174 filas. Tras cerrar los lotes 2-5 quedan 171 filas por las
+3 fusiones documentadas en lácteos y quesos.
 
 ## Lote 1 - Bodega / txakoli
 
@@ -89,6 +90,10 @@ Notas de cierre:
 
 Estado inicial: 38 filas, 16 pendientes, 22 parciales, 33 con `Venta online=no comprobado`, 5 sin web, 14 sin imagen.
 
+Estado 2026-06-18: cerrado. Las 38 filas quedaron revisadas; 35 `verificado`
+y 3 `parcial`. Venta online: 23 `sí`, 12 `no`, 3 `no comprobado`; los 23
+`sí` tienen `Canal de venta`.
+
 Subdividir para no mezclar decisiones:
 
 - 2A: Astigarraga (9), Hernani (5), Donostia / San Sebastián (4).
@@ -103,14 +108,24 @@ npx pnpm list:province guipuzcoa --categoria "Sidra"
 
 Trabajo:
 
-- Verificar actividad real de sidrería/productor, no solo restaurante de temporada.
-- Separar venta de botella/productos de reserva de mesa; reserva no justifica `Venta online=sí`.
-- Usar Euskal Sagardoa y web oficial como fuente primaria cuando existan.
-- Las filas sin web requieren confirmación con Google Maps, directorio sectorial o fuente municipal fiable; si solo queda un listado genérico, mantener `parcial`.
+- [x] Verificar actividad real de sidrería/productor, no solo restaurante de temporada.
+- [x] Separar venta de botella/productos de reserva de mesa; reserva no justifica `Venta online=sí`.
+- [x] Usar Euskal Sagardoa y web oficial como fuente primaria cuando existan.
+- [x] Las filas sin web requieren confirmación con Google Maps, directorio sectorial o fuente municipal fiable; si solo queda un listado genérico, mantener `parcial`.
+
+Notas de cierre:
+
+- `sarasola-asteasu`, `alorrenea-sagardotegia-astigarraga` e `itxasburu-sagardotegia-hernani` quedan `parcial/no comprobado` por falta de fuente primaria suficiente o web no concluyente.
+- La venta de botella en Sagardoa Route/Euskal Sagardoa se codificó como `marketplace`; tiendas propias como `ecommerce`.
+- Las webs de restaurante/reserva sin compra remota de producto quedaron `Venta online=no`.
 
 ## Lote 3 - Lácteos y quesos
 
 Estado inicial: 51 filas, 38 pendientes, 13 parciales, 44 con `Venta online=no comprobado`, 12 sin web, 32 sin imagen.
+
+Estado 2026-06-18: cerrado. Se conservan 48 filas y se documentan 3 fusiones.
+Resultado de las filas conservadas: 25 `verificado`, 23 `parcial`, 15 con
+`Venta online=sí` y canal cumplimentado.
 
 Subdividir por concentración:
 
@@ -126,14 +141,24 @@ npx pnpm list:province guipuzcoa --categoria "Lácteos y quesos"
 
 Trabajo:
 
-- Contrastar DOP Idiazabal/Artzai Gazta cuando el producto estrella lo menciona.
-- Revisar si son productores con elaboración propia o solo tiendas/espacios de venta.
-- Resolver las 12 filas sin web con fuentes oficiales o sectoriales; si no hay actividad actual, marcar para baja/fusión.
-- No completar imágenes en bloque con `--apply`: revisar candidato por productor y aplicar solo logos/fotos de marca reales.
+- [x] Contrastar DOP Idiazabal/Artzai Gazta cuando el producto estrella lo menciona.
+- [x] Revisar si son productores con elaboración propia o solo tiendas/espacios de venta.
+- [x] Resolver las 12 filas sin web con fuentes oficiales o sectoriales; si no hay actividad actual, marcar para baja/fusión.
+- [ ] No completar imágenes en bloque con `--apply`: revisar candidato por productor y aplicar solo logos/fotos de marca reales.
+
+Notas de cierre:
+
+- Fusionados como duplicados: `ander-barandiaran-mujika-idiazabal` -> `gaztanaditxulo-gaztandegia-idiazabal`, `eneko-goiburu-segura` -> `ondarre-gazta-segura` y `berastegi-elkartea-sc-azpeitia` -> `xoxote-gazta-azpeitia`.
+- Las fuentes de registro sectorial sin web oficial actual se mantienen `parcial`; las webs/tiendas oficiales pasan a `verificado` cuando sostienen identidad, actividad y municipio.
+- No se aplicaron imágenes en este pase.
 
 ## Lote 4 - Mar y sal
 
 Incluye `Pescado y conservas`, `Pescado y marisco` y `Sal`: 10 filas, 4 pendientes, 6 parciales.
+
+Estado 2026-06-18: cerrado. Las 10 filas quedaron revisadas; 9 `verificado`
+y 1 `parcial`. Venta online: 8 `sí`, 1 `no`, 1 `no comprobado`; los 8 `sí`
+tienen canal.
 
 Comandos:
 
@@ -145,13 +170,23 @@ npx pnpm list:province guipuzcoa --categoria "Sal"
 
 Trabajo:
 
-- Confirmar que la fila representa productor/obrador/cofradía con producto propio, no solo comercio o restaurante.
-- En conserveras, distinguir tienda online propia de marketplace o catálogo sin compra.
-- Revisar coordenadas de puerto/obrador cuando la dirección sea genérica.
+- [x] Confirmar que la fila representa productor/obrador/cofradía con producto propio, no solo comercio o restaurante.
+- [x] En conserveras, distinguir tienda online propia de marketplace o catálogo sin compra.
+- [x] Revisar coordenadas de puerto/obrador cuando la dirección sea genérica.
+
+Notas de cierre:
+
+- `itsasoko-lasarte-oria` mantiene el slug estable, pero queda como `Itsasoko / Txangu2 Gourmet` con sede corregida a Irun.
+- `conservas-oliveri-getaria` queda `parcial/no comprobado`: hay web del grupo, pero no fuente suficiente para cerrar venta remota actual de conserva propia.
+- Sal de Dorleta queda `sí/marketplace` por la venta enlazada desde la web oficial del museo.
 
 ## Lote 5 - Vegetal / despensa
 
 Incluye `Fruta y verdura`, `Despensa artesanal`, `Conservas vegetales`, `Productos ecológicos`, `Legumbres` y `Aceite`: 21 filas, 10 pendientes, 11 parciales.
+
+Estado 2026-06-18: cerrado. Las 21 filas quedaron revisadas; 11 `verificado`
+y 10 `parcial`. Venta online: 9 `sí`, 5 `no`, 7 `no comprobado`; los 9 `sí`
+tienen canal.
 
 Comandos:
 
@@ -163,9 +198,15 @@ npx pnpm list:province guipuzcoa --categoria "Legumbres"
 
 Trabajo:
 
-- Revisar piparras/Ibarra y alubia de Tolosa contra fuentes sectoriales o municipales.
-- Confirmar si las huertas/eco tienen venta directa, feria, suscripcion, WhatsApp o ecommerce.
-- No elevar a `verificado` una explotación que solo aparece en una noticia antigua sin fuente actual.
+- [x] Revisar piparras/Ibarra y alubia de Tolosa contra fuentes sectoriales o municipales.
+- [x] Confirmar si las huertas/eco tienen venta directa, feria, suscripcion, WhatsApp o ecommerce.
+- [x] No elevar a `verificado` una explotación que solo aparece en una noticia antigua sin fuente actual.
+
+Notas de cierre:
+
+- Productores con fuentes oficiales recientes, como Lizardi, Beraseta, Ibarlur, Txumitxa, Zubelzu o Karabeleko, quedaron cerrados con canal cuando procedía.
+- Alubia de Tolosa y algunos baserris documentados por fuente municipal, feria o prensa quedan `parcial` si no hay canal propio actual.
+- No se aplicaron imágenes en este pase.
 
 ## Lote 6 - Cárnicos / huevos / patés
 
@@ -252,3 +293,7 @@ npx pnpm verify:data
 | --- | --- | --- | --- |
 | 2026-06-18 | Plan inicial | abierto | Documento creado desde CSV actual; sin verificación web nueva. |
 | 2026-06-18 | 1 - Bodega / txakoli | cerrado | 22 filas revisadas; evidencia creada en `data/evidence/pais-vasco/guipuzcoa.jsonl`. |
+| 2026-06-18 | 2 - Sidra | cerrado | 38 filas revisadas; 35 `verificado`, 3 `parcial`, sin pendientes. |
+| 2026-06-18 | 3 - Lácteos y quesos | cerrado | 48 filas conservadas y 3 fusiones documentadas; sin pendientes. |
+| 2026-06-18 | 4 - Mar y sal | cerrado | 10 filas revisadas; venta online/canal cerrado salvo Oliveri `no comprobado`. |
+| 2026-06-18 | 5 - Vegetal / despensa | cerrado | 21 filas revisadas; 9 canales de venta completados, sin pendientes. |
