@@ -17,17 +17,18 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.490** · verificado **1.667** · parcial **764** · pendiente **59**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **483 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.489** · verificado **1.672** · parcial **764** · pendiente **53**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **484 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
 - Modo: lote a lote bajo demanda. **Cerrados: lotes 1-310** (1-110 individuales + grupos 111-115 de
   municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-310 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ja **només queden municipis amb 1 pendent** (59 municipis = 59 pendents); cada lote = 1 municipi.
-- **Siguiente: Lote 311** — Gallecs (Parets) i la resta de municipis amb 1 pendent (Granera, Gósol,
-  Hostalets de Pierola, L'Espunyola, La Llacuna…). Recomputar con `list:province`.
-  (Ull grafía: «Subirats»/«…(Els Casots)»/«…(Ordal)»/«…(Sant Pau d'Ordal)», «Gallecs (Mollet)»/«Gallecs
-  (Parets)»; unificar/revisar en pasada futura.)
+  Ja **només queden municipis amb 1 pendent** (53 municipis = 53 pendents); cada lote = 1 municipi
+  (excepte grafies duplicades, p.ex. L'Espunyola portava 2 pendents «L'Espunyola»/«l'Espunyola»).
+- **Siguiente: Lote 316** — La Floresta (Sant Cugat del Vallès) i la resta (La Llacuna, La Pobla de
+  Lillet, La Torre de Claramunt, Lavern (Subirats), Les Cabanyes…). Recomputar con `list:province`.
+  (Ull grafía: «Subirats»/«…(Els Casots/Ordal/Sant Pau d'Ordal/Lavern)», «Gallecs (Mollet/Parets)»,
+  «Espunyola»/«l'Espunyola»/«L'Espunyola»; unificar/revisar en pasada futura.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
 - Ojo grafías **Font-rubí**: conviuen 5 variants del mateix municipi — «Font-rubí» (11), «Font-rubí (Guardiola de Font-rubí)» (3), «Guardiola de Font-Rubí» (2), «Guardiola de Font-rubí» (1), «Font-rubí (Grabuac)» (1). Unificar en una pasada futura.
@@ -486,7 +487,12 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 308 | Cànoves i Samalús | 0 | ✅ | 2026-06-19 | La Tavella (granja ecològica Ecogrup + ecomercat amb cistelles a domicili) verif VO ecommerce |
 | 309 | El Montmell | 0 | ✅ | 2026-06-19 | **1 purga** — **Bodega Can Marlès** és de **Tarragona** (Baix Penedès, El Montmell, CP 43812 Can Ferrer de la Cogullada) mal fichada; purgada (.webp borrat), anotada per a tarragona.csv |
 | 310 | Font-rubí (Grabuac) | 0 | ✅ | 2026-06-19 | Celler Ludens/Masia Grabuach (cava de producció tradicional, web+IG) verif VO=no comprobado |
-| — | _resto (94 municipios)_ | 59 | ⬜ | | recomputar al llegar |
+| 311 | Gallecs (Parets) | 0 | ✅ | 2026-06-19 | Torre Malla (llegums ecològics —cigró, mongetes—, IG) verif VO=no comprobado |
+| 312 | Granera | 0 | ✅ | 2026-06-19 | Brotada Rural SCCL/Brot Agrologic (horta de temporada DAR, web; **coords de Barcelona ciutat corregides a Granera**, GMaps creuat blanquejat, +email) verif VO=no comprobado |
+| 313 | Gósol | 0 | ✅ | 2026-06-19 | **1 purga** — **Cal Andreuet** és de **província de Lleida** (Gósol, CP 25716) mal fichat; purgat, anotat per a lleida.csv. (Gósol = únic municipi del Berguedà a Lleida.) |
+| 314 | Hostalets de Pierola | 0 | ✅ | 2026-06-19 | La Beneta Cooperativa SCCL (fruita eco, ametlla i oli DAR, IG; web latavella.cat=distribuïdor blanquejada, +tel/email) verif VO=no comprobado |
+| 315 | L'Espunyola | 0 | ✅ | 2026-06-19 | 2 verif (grafía duplicada); Apeuderoques-Peu de Roques (conserves vegetals i bolets, IG; recat Despensa→Conservas y mermeladas) verif VO=no comprobado; Masia Fontirons (formatges i iogurt de vaca DAR, web+IG; servei a domicili) verif VO=no |
+| — | _resto (53 municipios, 1 pendent c/u)_ | 53 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -522,6 +528,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Vallgorguina:** Plana Perxachs, Maria Carme (cabrum) — DAR no casat
 - **Viver i Serrateix:** Gamisans Solà, Carles · Les Cots de Sant Joan SCP (vedella de Ramaders de Muntanya del Berguedà) — DAR no casats
 - **Para otros agentes — Tarragona (Baix Penedès), per a `tarragona.csv`:** **Cellers Avgvstvs Forvm** (vins i vinagres Forvm, avgvstvsforvm.com) i **Jané Ventura** (celler ecològic, cava, janeventura.com) — estaven mal fichats a barcelona.csv (El Vendrell, CP 43700), purgats al lote 264. **Bodega Can Marlès** (celler del Penedès + enoturisme, canmarles.com) — mal fichada (El Montmell, CP 43812 Can Ferrer de la Cogullada), purgada al lote 309.
+- **Para otros agentes — Lleida, per a `lleida.csv`:** **Cal Andreuet** (explotació agrícola/ramadera ecològica d'alta muntanya: pèsol negre, patates de muntanya, suc de poma; calandreuet.com, IG cal_andreuet) — mal fichat a barcelona.csv (Gósol, CP 25716, província de Lleida), purgat al lote 313. Gósol té més productors al DAR (Morales García, Prathumthong, Riu Bosoms, Solé Fígols) per a lleida.csv.
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
