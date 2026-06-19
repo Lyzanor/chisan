@@ -17,20 +17,19 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.532** · verificado **1.489** · parcial **695** · pendiente **348**
+- Filas: **2.532** · verificado **1.496** · parcial **696** · pendiente **340**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **441 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-201** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-201 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-202** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-202 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
   Ya **no quedan municipios con 5 pendientes**; el máximo es 4.
-- **Siguiente: Lote 202** — l'Esquirol (cola de 4: Guardiola de Berguedà, Jorba, La Palma de Cervelló,
-  Lluçà, Montgat, Muntanyola, Olesa de Bonesvalls…). Recomputar con `list:province`. Ojo grafía:
-  unificar "Esquirol"→"l'Esquirol" al cerrarlo.
+- **Siguiente: Lote 203** — Guardiola de Berguedà (cola de 4: Jorba, La Palma de Cervelló, Lluçà,
+  Montgat, Muntanyola, Olesa de Bonesvalls, Oristà…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Ojo grafías: también mezcla "Esquirol"/"l'Esquirol" (unificar a "l'Esquirol"); "Vilobi"/"Vilobí del Penedès" ya unificado en el lote 200.
-- Heredado del worktree (sesión `codex-candidates-2026-06`, sin commitear): `data/evidence/catalunya/barcelona.jsonl` (2 altas de las Rutes del Vi) + borrado de `docs/candidates/barcelona.md`. Unidad completa y coherente; preservada, no la pliego en mis commits de lote.
-- Último push: lotes 1-200 en `main` (2026-06-17); **lote 201 commiteado en local, pendiente de push** (batch). Convención (post-realineado): **1 municipio = 1 fila de
+- Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
+- Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
+- Último push: lotes 1-202 en `main` (2026-06-19). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
   de filas (p. ej. «lotes 149-155»), nunca con un número de batch suelto que desfase la tabla.
 
@@ -375,7 +374,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 199 | Vilanova del Vallès | 0 | ✅ | 2026-06-17 | 1 verif + 4 parcial (Vallès Or.); L'Horta de la Tuka (mel + verdura biodinàmica, diba Parc a Taula + Productes de Palou + FB/IG; recat→Miel) verif; Badacabres SL (DAR carn/llet de cabra) parcial; Pizza A Punt, Vilanova Casa de Menjars i Rostisseria Milenium (menjars preparats/punt d'elaboració-consum, web/IG propis) parcials VO no comprobado |
 | 200 | Vilobí del Penedès | 0 | ✅ | 2026-06-17 | 5 verif + 1 parcial (Penedès, cellers); Can Descregut/Mont d'Àrac, Loxarel (vins naturals), Vallformosa (cava) i Celler MontPicolis (+web) tots amb botiga online → verif VO ecommerce; Celler Planas Albareda (família 3 gen., DO Penedès+Cava; estava com a «Vilobi» sense accent → unificat; web ECONNREFUSED≠morta) verif VO no comprobado; Jaime Pons Ametller (DAR olives; links d'**Ametller Origen** —cadena de súper, per cognom— blanquejats, +contacte DAR; recat→Aceitunas) parcial |
 | 201 | Castellet i la Gornal | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Alt Penedès, Sant Marçal); Cava Oriol Rossell (finca Cal Cassanyes, botiga online) i Emendis (DO Penedès, tenda online) verif VO ecommerce; **Martí Agrícola = Agrícola Cal Martí SCP** (granja 4 gen., préssec de secà/meló/calçots, ADV Fordal; web/FB/IG/tel/adreça del distribuïdor homònim martiagricola.com blanquejats → +FB AgricolaCalMarti + tel/email DAR, .webp borrat) verif VO no comprobado; **Caralt Planas, Brigitte → Parc de les Olors de Sant Marçal** (aromàtiques agroecològiques de Brigitte Caralt; recat Bodega→**Aromáticas**, +web parcdelesolors.com, GMaps de «Castellet Encantat» corregit, coords a Sant Marçal) parcial VO no comprobado |
-| — | _resto (203 municipios)_ | 348 | ⬜ | | recomputar al llegar |
+| 202 | l'Esquirol | 0 | ✅ | 2026-06-19 | 6 verif + 1 parcial + 0 purgas + 2 reubicades (Collsacabra; municipi sencer, grafies «Esquirol»/«l'Esquirol»/«(Cantonigròs)» unificades a **l'Esquirol**). ENSO Ferments (L'Horta Ferments SL, kombutxa+lactoferments a Sant Martí Sescorts, botiga online; recat Otros→**Conservas vegetales**) verif VO ecommerce; El Serradet de Barneres (SCCL d'ovella lletera, formatges+embotits+xai, encàrrec tel+repartiment; recat Charcutería→**Lácteos y quesos**, +tel DAR) verif VO sí/telefono; Formatgeria de Cantonigròs (web pròpia ECONNREFUSED≠morta+IG+email) verif VO no comprobado; El Forn (forn de poble Carrer Major 89, IG @elforndelesquirol; web=dup IG blanquejat) verif VO=no; Embotits del Collsacabra (família, Cantonigròs; +IG @embotits_del_collsacabra +tel, guia ajuntament+fetaosona) verif VO=no; Rierola Comajoan Ignasi (DAR boví, Mas Puigdauret) parcial. **Reubicades:** El Rebost de les Gambires→**Sant Vicenç de Torelló** (granja Mas Joanet de Pujols, botiga.lesgambires.cat ecommerce; l'adreça/tel de l'Esquirol eren d'una botiga no confirmada) verif VO ecommerce; **Forn Sant Sebastià (Antic Forn Nogué Aulet)→Taradell** (Psg. Domènec Sert 13, des de 1994; coords ja eren a Taradell, +tel 938800553, IG/web incerts blanquejats) verif VO=no |
+| — | _resto (202 municipios)_ | 340 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
