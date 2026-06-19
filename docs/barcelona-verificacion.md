@@ -15,20 +15,22 @@
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
 
-## Estado actual (2026-06-17)
+## Estado actual (2026-06-19)
 
-- Filas: **2.532** · verificado **1.486** · parcial **694** · pendiente **352**
+- Filas: **2.532** · verificado **1.489** · parcial **695** · pendiente **348**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **441 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-200** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-200 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-201** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-201 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
   Ya **no quedan municipios con 5 pendientes**; el máximo es 4.
-- **Siguiente: Lote 201** — Castellet i la Gornal (cola de 4: Esquirol, Guardiola de Berguedà, Jorba,
-  La Palma de Cervelló, Castellfollit de Riubregós…). Recomputar con `list:province`.
+- **Siguiente: Lote 202** — l'Esquirol (cola de 4: Guardiola de Berguedà, Jorba, La Palma de Cervelló,
+  Lluçà, Montgat, Muntanyola, Olesa de Bonesvalls…). Recomputar con `list:province`. Ojo grafía:
+  unificar "Esquirol"→"l'Esquirol" al cerrarlo.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: también mezcla "Esquirol"/"l'Esquirol" (unificar a "l'Esquirol"); "Vilobi"/"Vilobí del Penedès" ya unificado en el lote 200.
-- Último push: lotes 1-200 en `main` (2026-06-17). Convención (post-realineado): **1 municipio = 1 fila de
+- Heredado del worktree (sesión `codex-candidates-2026-06`, sin commitear): `data/evidence/catalunya/barcelona.jsonl` (2 altas de las Rutes del Vi) + borrado de `docs/candidates/barcelona.md`. Unidad completa y coherente; preservada, no la pliego en mis commits de lote.
+- Último push: lotes 1-200 en `main` (2026-06-17); **lote 201 commiteado en local, pendiente de push** (batch). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
   de filas (p. ej. «lotes 149-155»), nunca con un número de batch suelto que desfase la tabla.
 
@@ -372,7 +374,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 198 | Tona | 0 | ✅ | 2026-06-17 | 2 verif + 2 parcial + 1 purga (Osona); Mas el Garet (formatges de cabra eco CCPAE, botiga online) verif VO ecommerce; La Barretina (forn/pastisseria, fetaosona) verif VO=no; Mauri Puig Lluís→**Capripuig (Mas el Garet)** (DAR carn de cabra, mateixa masia línia distinta) i L'Aranyó (DAR llet de cabra SCP) parcials; **Isidre Sala Sala purgada** (adreça a **Guardiola de Font-Rubí**, municipi Tona contradictori, sense DAR ni rastre) |
 | 199 | Vilanova del Vallès | 0 | ✅ | 2026-06-17 | 1 verif + 4 parcial (Vallès Or.); L'Horta de la Tuka (mel + verdura biodinàmica, diba Parc a Taula + Productes de Palou + FB/IG; recat→Miel) verif; Badacabres SL (DAR carn/llet de cabra) parcial; Pizza A Punt, Vilanova Casa de Menjars i Rostisseria Milenium (menjars preparats/punt d'elaboració-consum, web/IG propis) parcials VO no comprobado |
 | 200 | Vilobí del Penedès | 0 | ✅ | 2026-06-17 | 5 verif + 1 parcial (Penedès, cellers); Can Descregut/Mont d'Àrac, Loxarel (vins naturals), Vallformosa (cava) i Celler MontPicolis (+web) tots amb botiga online → verif VO ecommerce; Celler Planas Albareda (família 3 gen., DO Penedès+Cava; estava com a «Vilobi» sense accent → unificat; web ECONNREFUSED≠morta) verif VO no comprobado; Jaime Pons Ametller (DAR olives; links d'**Ametller Origen** —cadena de súper, per cognom— blanquejats, +contacte DAR; recat→Aceitunas) parcial |
-| — | _resto (204 municipios)_ | 517 | ⬜ | | recomputar al llegar |
+| 201 | Castellet i la Gornal | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Alt Penedès, Sant Marçal); Cava Oriol Rossell (finca Cal Cassanyes, botiga online) i Emendis (DO Penedès, tenda online) verif VO ecommerce; **Martí Agrícola = Agrícola Cal Martí SCP** (granja 4 gen., préssec de secà/meló/calçots, ADV Fordal; web/FB/IG/tel/adreça del distribuïdor homònim martiagricola.com blanquejats → +FB AgricolaCalMarti + tel/email DAR, .webp borrat) verif VO no comprobado; **Caralt Planas, Brigitte → Parc de les Olors de Sant Marçal** (aromàtiques agroecològiques de Brigitte Caralt; recat Bodega→**Aromáticas**, +web parcdelesolors.com, GMaps de «Castellet Encantat» corregit, coords a Sant Marçal) parcial VO no comprobado |
+| — | _resto (203 municipios)_ | 348 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
