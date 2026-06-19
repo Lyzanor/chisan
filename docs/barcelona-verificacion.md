@@ -17,16 +17,18 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.492** · verificado **1.650** · parcial **754** · pendiente **88**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **481 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.491** · verificado **1.660** · parcial **762** · pendiente **69**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **482 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-290** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-290 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-300** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-300 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ya **no quedan municipios con 3 pendientes**; el màxim és **2** (79 municipis amb 1-2 pendents).
-- **Siguiente: Lote 291** — Sobremunt (cola de 2: Subirats (Els Casots), Subirats (Ordal), Tavertet,
-  Vallgorguina, Vallromanes…). Recomputar con `list:province`. (Ull grafía: conviuen «Subirats»,
-  «Subirats (Els Casots)», «Subirats (Ordal)», «Subirats (Sant Pau d'Ordal)»; unificar en pasada futura.)
+  Ja **només queden municipis amb 1 pendent** (69 municipis = 69 pendents); es poden agrupar diversos
+  per lote a partir d'aquí.
+- **Siguiente: Lote 301** — Avinyonet del Penedès (L'Arboçar) i la resta de municipis amb 1 pendent
+  (Avinyó, Avià (Graugés), Castellar del Riu, Castelltallat…). Recomputar con `list:province`.
+  (Ull grafía: «Subirats»/«…(Els Casots)»/«…(Ordal)»/«…(Sant Pau d'Ordal)» i «Castellterçol / Terrassa»;
+  unificar/revisar en pasada futura.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
 - Ojo grafías **Font-rubí**: conviuen 5 variants del mateix municipi — «Font-rubí» (11), «Font-rubí (Guardiola de Font-rubí)» (3), «Guardiola de Font-Rubí» (2), «Guardiola de Font-rubí» (1), «Font-rubí (Grabuac)» (1). Unificar en una pasada futura.
@@ -465,7 +467,17 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 288 | Sant Pere de Riudebitlles | 0 | ✅ | 2026-06-19 | 2 verif (Alt Penedès); Cerveses Bripau (microcervesera artesana) verif VO=no comprobado; Ros Marina Viticultors/Mas Uberni (vins de collita pròpia, botiga online; **municipi corregit a Font-rubí** per DAR+web, +tel/email/web) verif VO ecommerce |
 | 289 | Santa Maria de Besora | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Osona); Mas Clarella (vins de muntanya, web+IG) verif VO=no comprobado; Hilari Soy Sola (carn de xai DAR; recat Fruta/verdura→Carne, web de turisme municipal blanquejada) parcial |
 | 290 | Santa Maria de Martorelles | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Vallès Or.); HOBAC Cervesa Artesana (microcervecera des de 2016) verif VO=no comprobado; C.E.E. Castell de Sant Foix (centre d'educació especial amb viver de plantes ornamentals) parcial |
-| — | _resto (114 municipios)_ | 88 | ⬜ | | recomputar al llegar |
+| 291 | Sobremunt | 0 | ✅ | 2026-06-19 | 1 verif + 1 purga (Osona); Pim Pam Pastisseria by Irene (pastisseria artesana, +IG/tel) verif VO=no comprobado; **Aubracs del Sorreig purgada** (dup del Villazala Rived/Aubracs del Sorreigs de Montesquiu, lote 238) |
+| 292 | Subirats (Els Casots) | 0 | ✅ | 2026-06-19 | 2 verif (Alt Penedès); Llopart (cava/Corpinnat, viticultors des de 1385) verif VO=no comprobado; Finca Batllori/Olivé Batllori (cava, botiga online) verif VO ecommerce |
+| 293 | Subirats (Ordal) | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Alt Penedès); Forn i Pastisseria Cal Pelegrí (forn artesà d'Ordal, web+IG) verif VO=no comprobado; Cal Baldiri/Joan Marcé (préssec d'Ordal, pagesia) parcial |
+| 294 | Tavertet | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Osona, Collsacabra); Myco Life/Mycelio (bolets eco shiitake/nameko/reishi + substrats; recat Despensa→Setas y hongos) verif VO=no; Wagyucat SL (vedella Wagyu DAR; recat Charcutería→Carne) parcial |
+| 295 | Vallgorguina | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Vallès Or.); Can Plana (finca agrícola, web+IG) verif VO=no comprobado; Salicru Gairalt (horta DAR + vivers) parcial |
+| 296 | Vallromanes | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Vallès Or.); Forn de Pa Maria (panaderia, +IG) verif VO=no comprobado; Salagros 1497/Mas Salagros EcoResort (hotel-restaurant ecològic, **no productor**) parcial |
+| 297 | Vilanova de Sau | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Osona); Herbolari de Sau (cultiu propi d'infusions i botànics, IG; recat Despensa→Infusiones) verif VO=no comprobado; Arrom Sanglas (cabrum/xai + horta DAR; recat Fruta/verdura→Carne, GMaps creuat blanquejat) parcial |
+| 298 | Viver i Serrateix | 0 | ✅ | 2026-06-19 | 2 parcial (Berguedà); Rial Flores (formatge de cabra; web calrebotit.com era l'allotjament rural → blanquejada) parcial; Pujol Pagerols/Casa Bechs (embotits de porc DAR) parcial |
+| 299 | l'Estany | 0 | ✅ | 2026-06-19 | 2 verif (Moianès); Melmelades del Bosc (melmelades de fruits del bosc, IG; recat Despensa→Conservas y mermeladas) verif VO=no comprobado; Cal Forner (forn de pa de poble) verif VO=no comprobado |
+| 300 | Argentona / Cabrera de Mar | 0 | ✅ | 2026-06-19 | 1 parcial; Jaume Font Collet = **Verdures Font SCP** (horta/pèsol DAR, venda al Mercat de la Plaça de Cuba de Mataró; **municipi corregit a Argentona**) parcial |
+| — | _resto (104 municipios)_ | 69 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -497,6 +509,9 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Martorelles:** Masia Can Roda Vinyes i Vins SL (So de Can Roda, vins) — DAR no casat
 - **Montmajor:** Calabuig Agropecuària SL (carn de boví) — DAR no casat
 - **Rajadell:** Fer i Refer SL (Masiets & Perich, pollastre) — DAR no casat
+- **Sobremunt:** Agrícola Ramadera Mas Reixach SC (xai) — DAR no casat
+- **Vallgorguina:** Plana Perxachs, Maria Carme (cabrum) — DAR no casat
+- **Viver i Serrateix:** Gamisans Solà, Carles · Les Cots de Sant Joan SCP (vedella de Ramaders de Muntanya del Berguedà) — DAR no casats
 - **Para otros agentes — Tarragona (Baix Penedès), per a `tarragona.csv`:** **Cellers Avgvstvs Forvm** (vins i vinagres Forvm, avgvstvsforvm.com) i **Jané Ventura** (celler ecològic, cava, janeventura.com) — estaven mal fichats a barcelona.csv (El Vendrell, CP 43700), purgats al lote 264.
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
