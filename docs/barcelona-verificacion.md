@@ -17,15 +17,15 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.517** · verificado **1.541** · parcial **712** · pendiente **264**
+- Filas: **2.517** · verificado **1.545** · parcial **712** · pendiente **260**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **456 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-221** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-221 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-222** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-222 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
   Ya **no quedan municipios con 5 pendientes**; el máximo es 4.
-- **Siguiente: Lote 222** — Sant Quirze de Besora (cola de 4: Santa Margarida de Montbui, Subirats
-  (Sant Pau d'Ordal), Tavèrnoles, Vallirana…). Recomputar con `list:province`.
+- **Siguiente: Lote 223** — Santa Margarida de Montbui (cola de 4: Subirats (Sant Pau d'Ordal),
+  Tavèrnoles, Vallirana…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
 - Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
@@ -394,7 +394,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 219 | Sant Iscle de Vallalta | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Maresme, Montnegre); Murgó Formatges (formatges cabra/vaca eco des de 2014, venda via mola/formatgeacasa) verif VO marketplace; Fumont (conserves i fumats artesans + restaurant; recat Despensa→**Conservas**) verif VO no comprobado; El Racó de la Maria (carnisseria amb elaboració pròpia) verif VO=no; Dosmons/Laia i Miquel (ous, IG @dosmons_stiscle) parcial |
 | 220 | Sant Pol de Mar | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Maresme); Sauleda Pastissers (des de 1969, botiga online) i Melmelades Calada (>30 melmelades artesanes, botiga online; recat Fruta/verdura→**Mermeladas**) verif VO ecommerce; Can Ginesta (maduixes Vall de Golinons, Joaquim Ginesta, gastroteca) verif VO no comprobado; Maduixes Vall de Golinons (maduixaire del mateix vall, sense web pròpia) parcial |
 | 221 | Sant Quirze Safaja | 0 | ✅ | 2026-06-19 | 2 verif + 2 parcial + 0 purgas (Moianès); **fila «Comercial Safaja (Bolets Petràs)» descontaminada**: portava dades de Bolets Petràs (setes, **Olesa de Montserrat** — pol. Can Singla) sobreposades; reconstruïda com a **Comercial Safaja** (plats precuinats artesans, safaja.com, recat Fruta/verdura→**Comida preparada**) verif VO=no, IG bolets_petras i .webp del logo Petràs esborrats; FAI Natur SL (fabricant de preparats solubles/infusions/cacau per a HORECA, fainatur.com + directori ajuntament; recat→**Otros**, +email, tel secuencial fabricat blanquejat) verif VO no comprobado; Madagascar Tastes SL (importadora/distribuïdora de vainilla de Madagascar, marca Vanille Lavany; recat→**Especias**, web ajena francesa + tel fabricat blanquejats) parcial; Conserves Coll SL (conserves artesanes de bolets/tòfona, IG @conservas_coll + tel local, web caiguda; recat Despensa→**Conservas y mermeladas**) parcial |
-| — | _resto (183 municipios)_ | 264 | ⬜ | | recomputar al llegar |
+| 222 | Sant Quirze de Besora | 0 | ✅ | 2026-06-19 | 4 verif + 0 parcial + 0 purgas (Osona, el Bisaura); Embotits Can Pedret (xarcuters familiars 40+ anys, botiga online pròpia compracanpedret.com) verif VO ecommerce; Destil·leries Bosch = **Ratafia Bosch** (destil·leria històrica 1892, 6 generacions de ratafiaires; recat Bodega→**Destilados y licores**, productos vi→ratafia/anís/licors, +web ratafiabosch.cat amb botiga WooCommerce, tel/email/IG alineats a la web viva, el dom .com estava caigut) verif VO ecommerce; Forn Can Coma (forn de llenya des de 1930, massa mare) i Casa Portell (carnisseria/cansaladeria familiar des de 1970) verif VO=no, «web» de directori (fetaosona) blanquejada i IG propi conservat |
+| — | _resto (182 municipios)_ | 260 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
