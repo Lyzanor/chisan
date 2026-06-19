@@ -17,19 +17,19 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.532** · verificado **1.496** · parcial **696** · pendiente **340**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **441 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.527** · verificado **1.516** · parcial **703** · pendiente **308**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **446 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-202** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-202 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-210** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-210 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
   Ya **no quedan municipios con 5 pendientes**; el máximo es 4.
-- **Siguiente: Lote 203** — Guardiola de Berguedà (cola de 4: Jorba, La Palma de Cervelló, Lluçà,
-  Montgat, Muntanyola, Olesa de Bonesvalls, Oristà…). Recomputar con `list:province`.
+- **Siguiente: Lote 211** — Pallejà (cola de 4: Pontons, Premià de Mar, Puig-reig, Sagàs, Sant Antoni
+  de Vilamajor, Sant Cugat Sesgarrigues, Sant Feliu de Codines…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
 - Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
-- Último push: lotes 1-202 en `main` (2026-06-19). Convención (post-realineado): **1 municipio = 1 fila de
+- Último push: lotes 1-210 en `main` (2026-06-19). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
   de filas (p. ej. «lotes 149-155»), nunca con un número de batch suelto que desfase la tabla.
 
@@ -375,7 +375,15 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 200 | Vilobí del Penedès | 0 | ✅ | 2026-06-17 | 5 verif + 1 parcial (Penedès, cellers); Can Descregut/Mont d'Àrac, Loxarel (vins naturals), Vallformosa (cava) i Celler MontPicolis (+web) tots amb botiga online → verif VO ecommerce; Celler Planas Albareda (família 3 gen., DO Penedès+Cava; estava com a «Vilobi» sense accent → unificat; web ECONNREFUSED≠morta) verif VO no comprobado; Jaime Pons Ametller (DAR olives; links d'**Ametller Origen** —cadena de súper, per cognom— blanquejats, +contacte DAR; recat→Aceitunas) parcial |
 | 201 | Castellet i la Gornal | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Alt Penedès, Sant Marçal); Cava Oriol Rossell (finca Cal Cassanyes, botiga online) i Emendis (DO Penedès, tenda online) verif VO ecommerce; **Martí Agrícola = Agrícola Cal Martí SCP** (granja 4 gen., préssec de secà/meló/calçots, ADV Fordal; web/FB/IG/tel/adreça del distribuïdor homònim martiagricola.com blanquejats → +FB AgricolaCalMarti + tel/email DAR, .webp borrat) verif VO no comprobado; **Caralt Planas, Brigitte → Parc de les Olors de Sant Marçal** (aromàtiques agroecològiques de Brigitte Caralt; recat Bodega→**Aromáticas**, +web parcdelesolors.com, GMaps de «Castellet Encantat» corregit, coords a Sant Marçal) parcial VO no comprobado |
 | 202 | l'Esquirol | 0 | ✅ | 2026-06-19 | 6 verif + 1 parcial + 0 purgas + 2 reubicades (Collsacabra; municipi sencer, grafies «Esquirol»/«l'Esquirol»/«(Cantonigròs)» unificades a **l'Esquirol**). ENSO Ferments (L'Horta Ferments SL, kombutxa+lactoferments a Sant Martí Sescorts, botiga online; recat Otros→**Conservas vegetales**) verif VO ecommerce; El Serradet de Barneres (SCCL d'ovella lletera, formatges+embotits+xai, encàrrec tel+repartiment; recat Charcutería→**Lácteos y quesos**, +tel DAR) verif VO sí/telefono; Formatgeria de Cantonigròs (web pròpia ECONNREFUSED≠morta+IG+email) verif VO no comprobado; El Forn (forn de poble Carrer Major 89, IG @elforndelesquirol; web=dup IG blanquejat) verif VO=no; Embotits del Collsacabra (família, Cantonigròs; +IG @embotits_del_collsacabra +tel, guia ajuntament+fetaosona) verif VO=no; Rierola Comajoan Ignasi (DAR boví, Mas Puigdauret) parcial. **Reubicades:** El Rebost de les Gambires→**Sant Vicenç de Torelló** (granja Mas Joanet de Pujols, botiga.lesgambires.cat ecommerce; l'adreça/tel de l'Esquirol eren d'una botiga no confirmada) verif VO ecommerce; **Forn Sant Sebastià (Antic Forn Nogué Aulet)→Taradell** (Psg. Domènec Sert 13, des de 1994; coords ja eren a Taradell, +tel 938800553, IG/web incerts blanquejats) verif VO=no |
-| — | _resto (202 municipios)_ | 340 | ⬜ | | recomputar al llegar |
+| 203 | Guardiola de Berguedà | 0 | ✅ | 2026-06-19 | 3 verif + 0 parcial + 1 purga (Berguedà); Cal Saus (carnisseria+embotits artesans, Turisme Berguedà/Parcs Naturals, IG) → **Carnisseria i Xarcuteria Saus purgada** (dup mateixa Ctra Ribes 13); Forn Cal Lluïset (forners artesans 2015, IG @forncalluiset) i Panaderia La Fleca (=Fleca Argente, Carrer Comerç) verif; tots VO=no |
+| 204 | Jorba | 0 | ✅ | 2026-06-19 | 4 verif + 0 purgas (Anoia); ecosistema **Eixarcolant**: Eixarcolant Llavors (banc de llavors + botiga online, recat Fruta/verdura→**Productos ecológicos**) i El Forn de Jorba (forn de llenya 1930 reprès pel col·lectiu, web=dup IG blanquejat) verif; Fruits Secs Torra (torrat a foc de llenya des de 1972, botiga online, recat→**Frutos secos**) i Molí d'Oli Can Gibert (molí 1880 Sant Genís, botiga online, recat→**Aceite**) verif VO ecommerce; 2 falsos matches DAR descartats (Tosal d'Almenar, Cal Viudo del Perelló) |
+| 205 | La Palma de Cervelló | 0 | ✅ | 2026-06-19 | 2 verif + 0 parcial + 2 purgas; La Palmarenca (obrador de plats preparats des de 1968, comandes WhatsApp) verif VO whatsapp; Pastisseria Lluís Pascual verif VO=no; **Foscka Ratafia purgada** (SL extinguida, foscka.cat caigut, mal fitxada Bodega) i **Panificadora del Baix Llobregat SA purgada** (SA extinguida, industrial, sense rastre; fals match DAR Central Parc) |
+| 206 | Lluçà | 0 | ✅ | 2026-06-19 | 1 verif + 3 parcial + 0 purgas (Lluçanès); Formatges de Lluçà/La Cardiguera (formatges de cabra de llet crua, ramat propi; sense carret→VO no) verif; 3 parcials DAR: Enric Font Font (carn de **poltre**, recat Fruta/verdura→Carne; IG @streetartcities quimera i GMaps de fontana blanquejats, +contacte DAR), Garet Bosch Pere (xai, +tel DAR, GMaps «Pantà Garet» corregit) i Explotacions Ramaderes Picas SCP (ramat transhumant real de Sta Eulàlia de Puig-oriol) |
+| 207 | Montgat | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Maresme); Licors Onalic (licors artesans de Maria Serra, botiga online; recat Bodega→**Licores**) verif VO ecommerce; Andreu Argudo (formatger artesà real, web no carrega→VO no comprobado; GMaps «Jamones Argudo SL» corregit) i Panificadora Montgat (forn artesà, farines eco/sense gluten) verif; Integraciones Panaderas (Pastinova) parcial (massa ultracongelada industrial B2B, +web pastinova.com) |
+| 208 | Muntanyola | 0 | ✅ | 2026-06-19 | 2 verif + 1 parcial + 1 purga (Osona); Les Cabres d'en Peyu (formatges de cabra, botiga online) i La Rocassa=Agromunter SL (carn de porc, botiga online amb repartiment) verif VO ecommerce → **Colonques Lopez Mireia purgada** (dup registre↔marca de Les Cabres d'en Peyu, mateixa persona/tel); Ares Puigsasllosas Pere (xai DAR, Can Lleó; GMaps «ARES Solucions» i coords a 35 km corregides) parcial |
+| 209 | Olesa de Bonesvalls | 0 | ✅ | 2026-06-19 | 2 verif + 1 parcial + 1 purga (Garraf); VallDolina=masia Can Tutusaus (vins/caves DO Penedès eco CCPAE, botiga online) verif VO ecommerce → **«Elaboradors» purgada** (dup de VallDolina: mateixa web/FB/IG/Plaça de la Creu, .webp borrat); Forn de pa La Penya (+web fornlapenya.cat) verif VO=no; El Zagalico by La Salaita (deli+menjars per emportar) parcial |
+| 210 | Oristà | 0 | ✅ | 2026-06-19 | 3 verif + 1 parcial + 0 purgas (Lluçanès); Germans Freixa=**La Granja de Cal Toni** (vedella regenerativa des de 1975, La Torre d'Oristà, botiga online per lots; recat Fruta/verdura→**Carne**, +web granjacaltoni.cat) verif VO ecommerce; Queviures Ordeig (botiga+embotits propis, IG) i Forn d'Oristà (fleca de pa de blat forment, Turisme Lluçanès) verif VO=no; Mas Terricabras=Terricabras SCP (farines/cigró, recat Charcutería→**Harinas y cereales**) parcial |
+| — | _resto (194 municipios)_ | 308 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -452,6 +460,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Alella:** Bouquet d'Alella SL (marca Bouquet, vins/caves; DAR 670275054)
 - **Aguilar de Segarra:** Cal Figuera (ous; citat a directoris del Bages)
 - **Avinyó:** Torras Salvans, Ricard (marca Salers el Vinyes, vedella; DAR 620962240)
+- **Oristà:** Puig Orriols, Albert (carn de conill; DAR 626898877)
 
 ## Para otros agentes / a vigilar
 
