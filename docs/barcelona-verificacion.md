@@ -17,18 +17,17 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.491** · verificado **1.660** · parcial **762** · pendiente **69**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **482 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.490** · verificado **1.667** · parcial **764** · pendiente **59**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **483 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-300** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-300 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-310** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-310 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ja **només queden municipis amb 1 pendent** (69 municipis = 69 pendents); es poden agrupar diversos
-  per lote a partir d'aquí.
-- **Siguiente: Lote 301** — Avinyonet del Penedès (L'Arboçar) i la resta de municipis amb 1 pendent
-  (Avinyó, Avià (Graugés), Castellar del Riu, Castelltallat…). Recomputar con `list:province`.
-  (Ull grafía: «Subirats»/«…(Els Casots)»/«…(Ordal)»/«…(Sant Pau d'Ordal)» i «Castellterçol / Terrassa»;
-  unificar/revisar en pasada futura.)
+  Ja **només queden municipis amb 1 pendent** (59 municipis = 59 pendents); cada lote = 1 municipi.
+- **Siguiente: Lote 311** — Gallecs (Parets) i la resta de municipis amb 1 pendent (Granera, Gósol,
+  Hostalets de Pierola, L'Espunyola, La Llacuna…). Recomputar con `list:province`.
+  (Ull grafía: «Subirats»/«…(Els Casots)»/«…(Ordal)»/«…(Sant Pau d'Ordal)», «Gallecs (Mollet)»/«Gallecs
+  (Parets)»; unificar/revisar en pasada futura.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
 - Ojo grafías **Font-rubí**: conviuen 5 variants del mateix municipi — «Font-rubí» (11), «Font-rubí (Guardiola de Font-rubí)» (3), «Guardiola de Font-Rubí» (2), «Guardiola de Font-rubí» (1), «Font-rubí (Grabuac)» (1). Unificar en una pasada futura.
@@ -477,7 +476,17 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 298 | Viver i Serrateix | 0 | ✅ | 2026-06-19 | 2 parcial (Berguedà); Rial Flores (formatge de cabra; web calrebotit.com era l'allotjament rural → blanquejada) parcial; Pujol Pagerols/Casa Bechs (embotits de porc DAR) parcial |
 | 299 | l'Estany | 0 | ✅ | 2026-06-19 | 2 verif (Moianès); Melmelades del Bosc (melmelades de fruits del bosc, IG; recat Despensa→Conservas y mermeladas) verif VO=no comprobado; Cal Forner (forn de pa de poble) verif VO=no comprobado |
 | 300 | Argentona / Cabrera de Mar | 0 | ✅ | 2026-06-19 | 1 parcial; Jaume Font Collet = **Verdures Font SCP** (horta/pèsol DAR, venda al Mercat de la Plaça de Cuba de Mataró; **municipi corregit a Argentona**) parcial |
-| — | _resto (104 municipios)_ | 69 | ⬜ | | recomputar al llegar |
+| 301 | Avinyonet del Penedès (L'Arboçar) | 0 | ✅ | 2026-06-19 | Vins de Foresta (celler orgànic del Garraf, botiga online) verif VO ecommerce |
+| 302 | Avinyó | 0 | ✅ | 2026-06-19 | Xarrup (begudes espirituoses macerades KM0, botiga online; recat Bodega→Destilados y licores, **municipi corregit** «Avinyó (I Manresa Comarca)»→Avinyó) verif VO ecommerce |
+| 303 | Avià (Graugés) | 0 | ✅ | 2026-06-19 | Ous Dachs (ous de gallines en llibertat DAR, web+IG) verif VO=no comprobado |
+| 304 | Castellar del Riu | 0 | ✅ | 2026-06-19 | Soler Nieto/Masia Puigventós (patata DAR; recat Otros→Fruta y verdura) parcial |
+| 305 | Castelltallat | 0 | ✅ | 2026-06-19 | Casa Biosca (pa artesà i farines, Rebost del Bages; web de directori blanquejada) verif VO=no comprobado |
+| 306 | Castellterçol | 0 | ✅ | 2026-06-19 | Natursoy/Ca n'Arnella (marca industrial de tofu i vegetarians, grup Nutrition & Santé — no artesà; recat Charcutería→Otros, **municipi corregit** «Castellterçol / Terrassa»→Castellterçol per coords) parcial |
+| 307 | Castellví de la Marca (La Múnia) | 0 | ✅ | 2026-06-19 | Terra de Marca (celler familiar del Penedès des de 2002, web+IG) verif VO=no comprobado |
+| 308 | Cànoves i Samalús | 0 | ✅ | 2026-06-19 | La Tavella (granja ecològica Ecogrup + ecomercat amb cistelles a domicili) verif VO ecommerce |
+| 309 | El Montmell | 0 | ✅ | 2026-06-19 | **1 purga** — **Bodega Can Marlès** és de **Tarragona** (Baix Penedès, El Montmell, CP 43812 Can Ferrer de la Cogullada) mal fichada; purgada (.webp borrat), anotada per a tarragona.csv |
+| 310 | Font-rubí (Grabuac) | 0 | ✅ | 2026-06-19 | Celler Ludens/Masia Grabuach (cava de producció tradicional, web+IG) verif VO=no comprobado |
+| — | _resto (94 municipios)_ | 59 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -512,7 +521,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Sobremunt:** Agrícola Ramadera Mas Reixach SC (xai) — DAR no casat
 - **Vallgorguina:** Plana Perxachs, Maria Carme (cabrum) — DAR no casat
 - **Viver i Serrateix:** Gamisans Solà, Carles · Les Cots de Sant Joan SCP (vedella de Ramaders de Muntanya del Berguedà) — DAR no casats
-- **Para otros agentes — Tarragona (Baix Penedès), per a `tarragona.csv`:** **Cellers Avgvstvs Forvm** (vins i vinagres Forvm, avgvstvsforvm.com) i **Jané Ventura** (celler ecològic, cava, janeventura.com) — estaven mal fichats a barcelona.csv (El Vendrell, CP 43700), purgats al lote 264.
+- **Para otros agentes — Tarragona (Baix Penedès), per a `tarragona.csv`:** **Cellers Avgvstvs Forvm** (vins i vinagres Forvm, avgvstvsforvm.com) i **Jané Ventura** (celler ecològic, cava, janeventura.com) — estaven mal fichats a barcelona.csv (El Vendrell, CP 43700), purgats al lote 264. **Bodega Can Marlès** (celler del Penedès + enoturisme, canmarles.com) — mal fichada (El Montmell, CP 43812 Can Ferrer de la Cogullada), purgada al lote 309.
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
