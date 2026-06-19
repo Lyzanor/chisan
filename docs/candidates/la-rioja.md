@@ -71,11 +71,21 @@
 | 6 | Conservas / huerta / fruta / legumbres | 21 | 0 | 0 | 21 | 0 | 0 | 6 | Cerrado el 2026-06-19; 16 con venta online confirmada y 5 sin canal remoto. |
 | 7 | Lácteos y quesos | 18 | 0 | 7 | 11 | 7 | 8 | 14 | Cerrado el 2026-06-19; quedan parciales sin fuente primaria actual. |
 | 8 | Charcutería / cárnicos | 22 | 0 | 3 | 19 | 3 | 6 | 9 | Cerrado el 2026-06-19; corregidas webs aparcadas, redes e imágenes cruzadas. |
-| 9 | Aceite / frutos secos | 18 | 18 | 0 | 0 | 18 | 6 | 6 | Varios trujales sin web; confirmar actividad actual. |
-| 10 | Obradores, helados, chocolate y café | 20 | 19 | 0 | 1 | 19 | 5 | 8 | Distinguir obrador propio de tienda/hostelería. |
-| 11 | Cerveza, miel e hidromiel | 14 | 14 | 0 | 0 | 14 | 5 | 6 | Categorías pequeñas; cerrar con fuentes oficiales o sociales activas. |
+| 9 | Aceite / frutos secos | 18 | 0 | 10 | 8 | 10 | 6 | 7 | Cerrado el 2026-06-19; verificadas tiendas claras y parciales donde solo hay Maps/fuente no primaria. |
+| 10 | Obradores, helados, chocolate y café | 20 | 0 | 10 | 10 | 11 | 6 | 11 | Cerrado el 2026-06-19; retiradas webs no propias e imágenes placeholder. |
+| 11 | Cerveza, miel e hidromiel | 14 | 0 | 10 | 4 | 10 | 9 | 9 | Cerrado el 2026-06-19; canales online solo en miel/hidromiel con fuente oficial. |
 
 Total: 416 filas.
+
+## Cierre final
+
+Cierre 2026-06-19:
+
+- Provincia completa: 416 filas revisadas, 0 `pendiente`, 303 `verificado` y 113 `parcial`.
+- Venta online final: 156 `sí`, 146 `no` y 114 `no comprobado`; todos los `sí` tienen `Canal de venta`.
+- Evidencia completa: 416 registros `keep` en `data/evidence/la-rioja/la-rioja.jsonl`.
+- Se añade `la-rioja/la-rioja` a cobertura estricta de evidencia.
+- Limpieza de imágenes: se eliminaron 37 assets de La Rioja que ya no referenciaba el CSV tras retirar placeholders, imágenes cruzadas, iconos de redes, logos de certificación o financiación pública.
 
 ## Lote 1 - Bodega Rioja Alta / Haro-Sonsierra-Tirón
 
@@ -287,6 +297,15 @@ Trabajo:
 
 Incluye `Aceite` y `Frutos secos`: 18 filas.
 
+Cierre 2026-06-19:
+
+- 18 filas revisadas: 8 `verificado`, 10 `parcial` y 0 `pendiente`.
+- Venta online: 6 `sí`, 2 `no` y 10 `no comprobado`; todos los `sí` tienen `Canal de venta`.
+- Cobertura residual: 6 sin web y 7 sin imagen.
+- Evidencia escrita para las 18 filas en `data/evidence/la-rioja/la-rioja.jsonl`.
+- Fuentes de trabajo: webs oficiales, tiendas online, Google Maps y fuentes de apoyo cuando no existía fuente primaria revisable.
+- Correcciones editoriales: se retiró la imagen falsa de certificación en `andres-garcia-e-hijos-s-l-quel`; quedan `parcial` los trujales y aceites sin fuente primaria actual o con web no revisable en este pase.
+
 Comandos:
 
 ```bash
@@ -296,13 +315,22 @@ npx pnpm list:province la-rioja --categoria "Frutos secos"
 
 Trabajo:
 
-- [ ] Contrastar almazaras y trujales con DOP Aceite de La Rioja o fuentes oficiales.
-- [ ] Validar frutos secos con web/registro/fuente local fiable y ubicación.
-- [ ] Revisar si la venta remota es tienda propia, contacto por teléfono/email o marketplace.
+- [x] Contrastar almazaras y trujales con DOP Aceite de La Rioja o fuentes oficiales.
+- [x] Validar frutos secos con web/registro/fuente local fiable y ubicación.
+- [x] Revisar si la venta remota es tienda propia, contacto por teléfono/email o marketplace.
 
 ## Lote 10 - Obradores, helados, chocolate y café
 
 Incluye `Dulces y repostería`, `Pan y pastelería`, `Helados`, `Chocolate` y `Café`: 20 filas.
+
+Cierre 2026-06-19:
+
+- 20 filas revisadas: 10 `verificado`, 10 `parcial` y 0 `pendiente`.
+- Venta online: 6 `sí`, 3 `no` y 11 `no comprobado`; todos los `sí` tienen `Canal de venta`.
+- Cobertura residual: 6 sin web y 11 sin imagen.
+- Evidencia escrita o conservada para las 20 filas en `data/evidence/la-rioja/la-rioja.jsonl`.
+- Fuentes de trabajo: webs oficiales, tiendas online, redes existentes, Google Maps y fuentes de apoyo para obradores sin web propia.
+- Correcciones editoriales: `cumpanis-panaderia-ecologica-logrono` pierde una web no propia y una imagen de financiación pública; se retiraron imágenes falsas de `pasteleria-la-clavelina-arnedo` y `chocolates-artesanos-penaquel-quel`; `mazapanes-de-soto-vda-de-manuel-redondo-soto-en-cameros` queda verificado con ecommerce, pero se anota que su web contiene enlaces spam ajenos.
 
 Comandos:
 
@@ -314,14 +342,23 @@ npx pnpm list:province la-rioja --categoria "Helados"
 
 Trabajo:
 
-- [ ] Mantener `heladeria-della-sera-logrono` como referencia de evidencia completa.
-- [ ] Confirmar obrador propio antes de `verificado`.
-- [ ] Resolver `Venta online` con especial cuidado: encargos por teléfono/email pueden ser `sí` solo si la fuente lo sostiene.
-- [ ] Revisar panes/dulces tradicionales con fuentes oficiales o del propio productor, no solo turismo genérico.
+- [x] Mantener `heladeria-della-sera-logrono` como referencia de evidencia completa.
+- [x] Confirmar obrador propio antes de `verificado`.
+- [x] Resolver `Venta online` con especial cuidado: encargos por teléfono/email pueden ser `sí` solo si la fuente lo sostiene.
+- [x] Revisar panes/dulces tradicionales con fuentes oficiales o del propio productor, no solo turismo genérico.
 
 ## Lote 11 - Cerveza, miel e hidromiel
 
 Incluye `Cerveza artesana`, `Miel` e `Hidromiel`: 14 filas.
+
+Cierre 2026-06-19:
+
+- 14 filas revisadas: 4 `verificado`, 10 `parcial` y 0 `pendiente`.
+- Venta online: 4 `sí`, 0 `no` y 10 `no comprobado`; todos los `sí` tienen `Canal de venta`.
+- Cobertura residual: 9 sin web y 9 sin imagen.
+- Evidencia escrita para las 14 filas en `data/evidence/la-rioja/la-rioja.jsonl`.
+- Fuentes de trabajo: webs oficiales de apicultores e hidromiel, tiendas online, redes sociales cuando eran el único canal localizado y Google Maps.
+- Correcciones editoriales: `la-marmita-microcerveceria-artesanal-camprovin`, `miel-penabeja-ochanduri` y `el-praeno-santa-marina` mueven redes sociales fuera de `web`; `miel-la-panda-sorzano` pierde enlaces de Mentta que no pertenecían al productor; se retiraron imágenes de iconos o marketplace.
 
 Comandos:
 
@@ -333,9 +370,9 @@ npx pnpm list:province la-rioja --categoria "Hidromiel"
 
 Trabajo:
 
-- [ ] Confirmar actividad actual con web oficial o redes activas.
-- [ ] Revisar apicultores sin web con fuentes recientes; si no hay fuente primaria, mantener `parcial`.
-- [ ] Separar hidromiel/cerveza con ecommerce real de formularios informativos.
+- [x] Confirmar actividad actual con web oficial o redes activas.
+- [x] Revisar apicultores sin web con fuentes recientes; si no hay fuente primaria, mantener `parcial`.
+- [x] Separar hidromiel/cerveza con ecommerce real de formularios informativos.
 
 ## Orden recomendado
 

@@ -2,6 +2,7 @@
   "version": 1,
   "strictProvinces": [
     "pais-vasco/alava",
-    "pais-vasco/vizcaya"
+    "pais-vasco/vizcaya",
+    "la-rioja/la-rioja"
   ]
 }
