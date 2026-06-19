@@ -17,18 +17,19 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.499** · verificado **1.611** · parcial **739** · pendiente **149**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **474 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.496** · verificado **1.623** · parcial **745** · pendiente **128**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **477 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-260** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-260 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-270** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-270 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ya **no quedan municipios con 3 pendientes**; el màxim és **2** (110 municipis amb 1-2 pendents).
-- **Siguiente: Lote 261** — Cercs (cola de 2: Copons, El Bruc, Figaró-Montmany, Fogars de la Selva…).
-  Recomputar con `list:province`. **Ull:** apareix «El Vendrell» (Tarragona) entre els pendents — revisar
-  si és fila mal fichada d'una altra província.
+  Ya **no quedan municipios con 3 pendientes**; el màxim és **2** (99 municipis amb 1-2 pendents).
+- **Siguiente: Lote 271** — Manresa (Viladordis) (cola de 2: Martorelles, Montclar, Montmajor,
+  Montmaneu, Navarcles…). Recomputar con `list:province`. (El «El Vendrell» que apareixia era de
+  Tarragona: purgat al lote 264, anotat per a tarragona.csv.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
+- Ojo grafías **Font-rubí**: conviuen 5 variants del mateix municipi — «Font-rubí» (11), «Font-rubí (Guardiola de Font-rubí)» (3), «Guardiola de Font-Rubí» (2), «Guardiola de Font-rubí» (1), «Font-rubí (Grabuac)» (1). Unificar en una pasada futura.
 - Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
 - Último push: lotes 1-220 en `main` (2026-06-19). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
@@ -434,7 +435,17 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 258 | Castelladral (Navàs) | 0 | ✅ | 2026-06-19 | 2 verif (Bages); Can Serra dels Exibis/Exibis i La Diferenta Viticultors (cellers amb elaboració pròpia, varietats antigues) verif VO=no/no comprobado |
 | 259 | Castellar de n'Hug | 0 | ✅ | 2026-06-19 | 1 parcial + 1 purga (Berguedà); Josefa Vilalta/La Closa (allotjament rural + restaurant de muntanya, no productor) parcial VO=no; **Gintònic.cat/Ginatge purgada** (web=cocteleria d'esdeveniments, no productor; mal fichada a Avià; .webp borrat) |
 | 260 | Castellolí | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Anoia); Can Mabres (carn ecològica vedella/porc, botiga online + cistelles; recat Charcutería→Carne) verif VO ecommerce|suscripcion; Folque Sole SCP (**Horta Cal Quim** DAR; +tel/email) parcial |
-| — | _resto (144 municipios)_ | 149 | ⬜ | | recomputar al llegar |
+| 261 | Cercs | 0 | ✅ | 2026-06-19 | 2 verif (Berguedà); Delícies del Berguedà (iogurts artesans, Fundació Horitzó, botiga online) verif VO ecommerce; Forn de Ca l'Agustí (forn 100+ anys, «coca de Cercs») verif VO=no comprobado |
+| 262 | Copons | 0 | ✅ | 2026-06-19 | 2 verif (Anoia); Celler Anna Rosell (celler artesà, botiga online) verif VO ecommerce; Aliment Humà (granja diversificada + associació agroecològica: ous/llet de cabra eco; recat Fruta/verdura→Huevos y granja) verif VO=no |
+| 263 | El Bruc | 0 | ✅ | 2026-06-19 | 2 verif (Anoia); Oli Montbruc (oli de finques pròpies, DAR; recat Despensa→Aceite, web sense carrito) verif VO=no; L'Hortet del Bruc (horta eco DAR) verif VO=no comprobado |
+| 264 | El Vendrell | 0 | ✅ | 2026-06-19 | **2 purgues** — municipi de **Tarragona** (Baix Penedès, CP 43700) mal fichat a barcelona.csv: **Cellers Avgvstvs Forvm** i **Jané Ventura** purgats (.webp borrats); anotats per a tarragona.csv |
+| 265 | Figaró-Montmany | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Vallès Or.); Pa i Pastissos Can Girabent (forn de poble, elaboració pròpia) verif VO=no comprobado; Sanz Garcia Montserrat (Horta de Vallcarquera, DAR) parcial |
+| 266 | Fogars de la Selva | 0 | ✅ | 2026-06-19 | 2 parcial (Selva marítima); tots DAR venda directa sense web: Caros Mateo (carn de boví, Can Oller de Ramio; recat Charcutería→Carne); Torres Diaz (**Xai de Fogars**; recat→Carne) |
+| 267 | Gallecs (Mollet) | 0 | ✅ | 2026-06-19 | 2 parcial (Espai Natural de Gallecs); L'Ou de Gallecs (ous eco a Can Castellà; tret «(Can Jornet)» del nom, GMaps creuat blanquejat); Hereus de Can Jornet (cereals antics i llegums/mongeta del ganxet, DAR) |
+| 268 | Guardiola de Font-Rubí | 0 | ✅ | 2026-06-19 | 2 verif + 1 purga (Alt Penedès, 3 pendents per variant de grafía); Heretat Baltà de Cela (celler+oli, botiga online) i Bodega Miquel Jané (Celler Cal Costas SL, vinya eco, botiga online) verif VO ecommerce; **Llopart Güell purgada** (dup de `jaume-llopart-alemany`, mateixa web/email) |
+| 269 | Lliçà de Vall | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial (Vallès Or.); Embotits Guinó (embotits artesans des de 1988, IG) verif VO=no comprobado; Obra Tutelar Agrària (fundació social amb horta, DAR) parcial |
+| 270 | Lluçà (Santa Eulàlia de Puig-Oriol) | 0 | ✅ | 2026-06-19 | 2 verif (Lluçanès); Can Salada (carnisseria amb embotits propis, IG; «web» de directori llucanesataula blanquejada) verif VO=no; Postres Artesanes Santa Eulàlia (obrador de postres, IG) verif VO=no comprobado |
+| — | _resto (134 municipios)_ | 128 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -462,6 +473,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Santpedor/Bages:** Mas Graner, SCCL (xai)
 - **Prats de Lluçanès:** Aragües Carrera, David (xai) — desplaçat del lote 249 (fila buida a Sta Maria de Merlès)
 - **Avià/Berguedà:** Ginatge (ginebra London Dry de Jordi Millán) — purgat del lote 259; la web gintonic.cat ara és cocteleria d'esdeveniments, cal confirmar si segueix produint el gin abans de reintegrar
+- **Figaró-Montmany:** Salvat López de Padilla, Clara (horta: patata, enciam, carabassa, ceba) — DAR no casat
+- **Para otros agentes — Tarragona (Baix Penedès), per a `tarragona.csv`:** **Cellers Avgvstvs Forvm** (vins i vinagres Forvm, avgvstvsforvm.com) i **Jané Ventura** (celler ecològic, cava, janeventura.com) — estaven mal fichats a barcelona.csv (El Vendrell, CP 43700), purgats al lote 264.
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
