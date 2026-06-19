@@ -17,15 +17,15 @@
 
 ## Estado actual (2026-06-19)
 
-- Filas: **2.512** · verificado **1.562** · parcial **718** · pendiente **232**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **461 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.510** · verificado **1.581** · parcial **727** · pendiente **202**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **463 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-230** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-230 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-240** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-240 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
   Ya **no quedan municipios con 4 pendientes**; el máximo es 3.
-- **Siguiente: Lote 231** — Collsuspina (cola de 3: Dosrius, El Pla del Penedès, Fogars de Montclús,
-  Font-rubí (Guardiola de Font-rubí), Gallifa…). Recomputar con `list:province`.
+- **Siguiente: Lote 241** — Polinyà (cola de 3: Sant Feliu Sasserra, Sant Joan de Vilatorrada,
+  Sant Martí Sesgueioles, Sant Miquel de Balenyà, Sant Pere Sallavinera…). Recomputar con `list:province`.
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
 - Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
 - Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
@@ -403,7 +403,17 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 228 | Castellgalí | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial + 1 purga (Bages); Vinyes de Castellgalí (celler familiar, 4 vins propis, enòleg Carles Playà; sense carrito) verif VO=no; Ca l'Auguets (horta i llegums de Joan Auguets, Cal Boades; GMaps creuat a «Ca l'Agustí» blanquejat) parcial; **Ecològica Oller Pons purgada** (mal fichada: adreça a Castellfollit del Boix ≠ municipi i sense rastre/contacte) |
 | 229 | Castellnou de Bages | 0 | ✅ | 2026-06-19 | 2 verif + 1 parcial (Bages); La Brolla (làctics amb ramat propi de cabres/ovelles; sense carrito → VO sí→no comprobado) verif; Kin Pollastre/Kins Ous (Agropecuària Cal Flequer, pollastre i ous ecològics; DAR fort + IG + domini propi) verif VO=no comprobado; Les Cases d'Argençola SCP (SCP a la ctra. Súria-Balsareny, sense web) parcial |
 | 230 | Castellví de Rosanes | 0 | ✅ | 2026-06-19 | 2 verif + 1 purga (Baix Llobregat); Celler Ramon Canals (celler familiar 3 gen., botiga online, DO Cava/Penedès/Priorat/Montsant) verif VO ecommerce; Fruits Capellades (cirera/préssec/oli ecològic, DAR venda directa + FB/IG; GMaps creuat a «Fruiteria Mari» blanquejat) verif VO=no comprobado; **Capellades Mitjans Jaume purgada** (dup, marca DAR=Fruits Capellades, mateix email/tel) |
-| — | _resto (174 municipios)_ | 232 | ⬜ | | recomputar al llegar |
+| 231 | Collsuspina | 0 | ✅ | 2026-06-19 | 2 verif + 1 purga (Moianès); Mas Casanova (masia + agrobotiga, **cria pròpia de xai** segons DAR; recat Otros→**Carne**, +tel/email) verif VO=no; Forn de Collsuspina (forn de llenya tradicional, C/ Major 10) verif VO=no; **Jaume Font Viñas purgada** (dup registre↔marca: marca DAR=Mas Casanova, mateix tel/email; .webp borrat) |
+| 232 | Dosrius | 0 | ✅ | 2026-06-19 | 1 verif + 2 parcial (Maresme); Granja Sant Llop/Sonsorta SA (granja d'ous camperos 40+ anys, Josep M Baqués; +web granjasantllop.cat) verif VO=no comprobado; Granja Can Gel (granja de llet frisona des de 1910 però els làctics venuts són marca **Pastoret** + visites) parcial; Rosello Picañol Juan (mongeta DAR venda directa, GMaps creuat blanquejat; recat Otros→Fruta y verdura) parcial |
+| 233 | El Pla del Penedès | 0 | ✅ | 2026-06-19 | 3 verif (Alt Penedès); Parató Vins i Caves, Alsina & Sardà i Bodegas Capità Vidal (cellers DO Penedès/Cava amb elaboració pròpia i botiga online) verif VO ecommerce |
+| 234 | Fogars de Montclús | 0 | ✅ | 2026-06-19 | 3 parcial (Vallès Or., Montseny); tots DAR venda directa sense web pròpia: Parejo Ortega Jose (xai, Can Villena; GMaps creuat blanquejat); Cordomi Duatis Berta (**La Botigueta de Mosqueroles**: conserves/melmelades/salses; recat Despensa→Conservas y mermeladas); Produccions Làctiques Masferrer SCP (**Granja del Montseny**: formatges de vaca) |
+| 235 | Font-rubí (Guardiola de Font-rubí) | 0 | ✅ | 2026-06-19 | 3 verif (Alt Penedès); Rexach Baqués i Cavas Olivella Galimany (cellers/caves familiars, web informativa sense carrito) verif VO=no; Xarcuteria Cal Serra (xarcuteria amb elaboració pròpia, 4.8★) verif VO=no |
+| 236 | Gallifa | 0 | ✅ | 2026-06-19 | 2 verif + 1 parcial (Vallès Occ.); Granja la Soleia (ramaderia ecològica de boví, carn pròpia, botiga online; recat Charcutería→**Carne**) verif VO ecommerce; Granja Ferreria SL (granja d'ous, Federació Avícola) verif VO=no comprobado; La Catxaruda (**horta ecològica de Can Bosch** des de 2013; la fila portava web/IG/.webp de «Gatuari» de Gràcia → blanquejats + coords corregides a Gallifa) parcial |
+| 237 | Mediona | 0 | ✅ | 2026-06-19 | 3 verif (Alt Penedès); Celler Can Vich i Mas Rodó Vitivinícola (cellers DO Penedès amb botiga online) verif VO ecommerce; Masia Agullons/Ales Agullons (cervesa artesana, sense botiga online) verif VO=no |
+| 238 | Montesquiu | 0 | ✅ | 2026-06-19 | 2 verif + 1 parcial (Osona); Xarcuteria Cooperativa L'Amistat i Xarcuteria Empar (xarcuteries amb elaboració pròpia; «web» de directori fetaosona blanquejada) verif VO=no; Villazala Rived Àngel Marc (**Aubracs del Sorreigs**: vedella raça Aubrac DAR; recat Charcutería→Carne, GMaps creuat blanquejat) parcial |
+| 239 | Olivella | 0 | ✅ | 2026-06-19 | 1 verif + 1 parcial + 1 purga (Garraf); Masia de la Roqua (celler ecològic amb vinya pròpia i botiga online) verif VO ecommerce; La Fassina de Jafre (masia al Parc del Garraf: melmelades/licors/crispetes d'horta pròpia + activitats i bar; recat Fruta/verdura→Despensa artesanal) parcial; **Camps Rovirosa Josep purgada** (fragment sense web/adreça/DAR, email cansuriol@ → mateixa explotació Can Suriol/Masia de la Roqua) |
+| 240 | Olèrdola (Moja) | 0 | ✅ | 2026-06-19 | 2 verif + 1 parcial (Alt Penedès); Bombons Cudié (Catànies®, obrador propi des de 1946, botiga online) i Cavas Hill (cava històric de Moja, botiga online via Grup Ferrer) verif VO ecommerce; Cafés Flor de Yateras (importació i torrefacció de cafè a Moja; GMaps creuat blanquejat + coords corregides) parcial |
+| — | _resto (164 municipios)_ | 202 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
@@ -426,6 +436,8 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Vilassar de Mar:** Agrícola de Vilassar de Mar SCCL (coop 1918, agrobotiga)
 - **Viladecans:** Heretat Mas Tinell (vins) · Vilaeco SL · Ximalls SAT
 - **Olesa de Montserrat:** Bolets Petràs (setes fresques/silvestres/seques, Llorenç Petràs «el rei dels bolets» de La Boqueria; pol. ind. Can Singla, boletspetras.com, IG @bolets_petras) — desplaçat del lote 221, on s'havia sobreposat erròniament a Comercial Safaja (SQS)
+- **Collsuspina/Moianès:** Ciuró Torras, Albert (conserves vegetals) · Torras Clos, Pere (La Verdella, carn de boví)
+- **Mediona/Alt Penedès:** Torres Murgades, Jordi (oli d'oliva i olives)
 - **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
 - **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
 - **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
