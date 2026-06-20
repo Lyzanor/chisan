@@ -17,16 +17,16 @@
 
 ## Estado actual (2026-06-20)
 
-- Filas: **2.485** · verificado **1.699** · parcial **768** · pendiente **18**
+- Filas: **2.485** · verificado **1.700** · parcial **768** · pendiente **17**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **488 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-350** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-350 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-351** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-351 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ja **només queden municipis amb 1 pendent** (18 municipis = 18 pendents); cada lote = 1 municipi
+  Ja **només queden municipis amb 1 pendent** (17 municipis = 17 pendents); cada lote = 1 municipi
   (excepte grafies duplicades, p.ex. L'Espunyola portava 2 pendents «L'Espunyola»/«l'Espunyola»).
-- **Siguiente: Lote 351** — Sant Martí Sarroca (la Bleda) i la resta (Sant Martí d'Albars,
-  Santa Cecília de Voltregà, Santa Eulàlia de Riuprimer, Santa Magdalena de Montbui…). Recomputar con `list:province`.
+- **Siguiente: Lote 352** — Sant Martí d'Albars i la resta (Santa Cecília de Voltregà,
+  Santa Eulàlia de Riuprimer, Santa Magdalena de Montbui, Segur de Veciana…). Recomputar con `list:province`.
 - Ojo dup pendent de pasada: «Domingo Garcia, Josep Oriol» (Sabadell, parcial) sembla la mateixa
   explotació que «Ca n'Ustrell Agricultura» (Sabadell-Sant Julià) — mateixa masia Ca n'Ustrell + email
   cuagricultura@gmail.com, GMaps contaminat (Centre Teràpia Manual). Fusionar/purgar en pasada futura.
@@ -530,7 +530,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 348 | Sant Julià de Vilatorta | 0 | ✅ | 2026-06-20 | Pastisseria Crossandra (forn/pastisseria real, ajuntament + 4.7/220 ressenyes) verif; web `lacrossandra.com`+email eren del negoci de **canelons** Crossandra (Vic/Granollers/BCN) → web corregida a pavic.cat/crossandra, email blanquejat; VO sí→no comprobado |
 | 349 | Sant Llorenç D'hortons (la Beguda Baixa) | 0 | ✅ | 2026-06-20 | Castell d'Age (família Junyent, cava i vi ecològic DO, >50 anys vinyes pròpies) verif; comandes per email/telèfon/WhatsApp → VO=sí whatsapp|email |
 | 350 | Sant Llorenç d'Hortons | 0 | ✅ | 2026-06-20 | Celler Sant Joannes / Agrícola Hortóns SL (vins ecològics Penedès des de 1853, Decanter 2022; carret+checkout) verif VO=sí ecommerce |
-| — | _resto (18 municipios, 1 pendent c/u)_ | 18 | ⬜ | | recomputar al llegar |
+| 351 | Sant Martí Sarroca (la Bleda) | 0 | ✅ | 2026-06-20 | Green Hort SCP (horta ecològica de proximitat a La Bleda; **DAR «GreenHort SCP»** aromàtiques+hortícoles, web Wix pròpia + GMaps «Pere GreenHort») verif; web amb secció «Venda on line» però sense carret confirmable → VO=no comprobado |
+| — | _resto (17 municipios, 1 pendent c/u)_ | 17 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
