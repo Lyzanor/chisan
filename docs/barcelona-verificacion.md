@@ -17,16 +17,19 @@
 
 ## Estado actual (2026-06-20)
 
-- Filas: **2.487** · verificado **1.684** · parcial **765** · pendiente **38**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **486 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.485** · verificado **1.699** · parcial **768** · pendiente **18**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **488 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-330** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-330 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-350** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-350 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ja **només queden municipis amb 1 pendent** (38 municipis = 38 pendents); cada lote = 1 municipi
+  Ja **només queden municipis amb 1 pendent** (18 municipis = 18 pendents); cada lote = 1 municipi
   (excepte grafies duplicades, p.ex. L'Espunyola portava 2 pendents «L'Espunyola»/«l'Espunyola»).
-- **Siguiente: Lote 331** — Olèrdola / Vilafranca del Penedès i la resta (Ordal (Subirats),
-  Oristà (la Torre d'Oristà), Palafolls (Sant Genís), Parc Agrari del Baix Llobregat…). Recomputar con `list:province`.
+- **Siguiente: Lote 351** — Sant Martí Sarroca (la Bleda) i la resta (Sant Martí d'Albars,
+  Santa Cecília de Voltregà, Santa Eulàlia de Riuprimer, Santa Magdalena de Montbui…). Recomputar con `list:province`.
+- Ojo dup pendent de pasada: «Domingo Garcia, Josep Oriol» (Sabadell, parcial) sembla la mateixa
+  explotació que «Ca n'Ustrell Agricultura» (Sabadell-Sant Julià) — mateixa masia Ca n'Ustrell + email
+  cuagricultura@gmail.com, GMaps contaminat (Centre Teràpia Manual). Fusionar/purgar en pasada futura.
   (Ull grafía: «Subirats»/«…(Els Casots/Ordal/Sant Pau d'Ordal/Lavern)», «Gallecs (Mollet/Parets)»,
   «Espunyola»/«l'Espunyola»/«L'Espunyola»; unificar/revisar en pasada futura.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
@@ -507,7 +510,27 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 328 | Monistrol de Montserrat | 0 | ✅ | 2026-06-20 | Les Mil Butis (xarcuteria) — **parcial**: IG @les_mil_butis i fitxa GMaps actius (existeix), però cap font confirma elaboració pròpia → parcial, VO=no comprobado |
 | 329 | Navàs (Castelladral) | 0 | ✅ | 2026-06-20 | Mel Cal Fuster (mel artesana eco a Castelladral, web Wix + IG; «la parada») verif; VO=no comprobado |
 | 330 | Navàs (el Mujal) | 0 | ✅ | 2026-06-20 | Formatgeria Cal Músic (formatges artesans cabra/vaca eco, Lourdes/Martí; «Tou del Mujal» millor formatge català Lactium 2025) verif; FB truncat i IG erroni (@formatgeriacalmusic) corregits a @calmusicformatgeria + pàgina FB real; VO=no comprobado |
-| — | _resto (38 municipios, 1 pendent c/u)_ | 38 | ⬜ | | recomputar al llegar |
+| 331 | Olèrdola / Vilafranca del Penedès | 0 | ✅ | 2026-06-20 | Càrniques Masó SA (embotits + cash de carns des de 1940 a Sant Pere Molanta, FB/IG) verif; VO=no comprobado |
+| 332 | Ordal (Subirats) | 0 | ✅ | 2026-06-20 | Casa Ravella (celler familiar des de 1567, vins+caves, ecommerce actiu; .com→.es) verif VO=sí ecommerce |
+| 333 | Oristà (la Torre d'Oristà) | 0 | ✅ | 2026-06-20 | 100% Conill (Albert Puig, llonganissa de conill, 2 granges; 2 premis Gastronomic Forum 2023 innovació+biodiversitat; Xarxa Productes Terra) verif VO=no comprobado |
+| 334 | Palafolls (Sant Genís) | 0 | ✅ | 2026-06-20 | Carpier Ahumados (Carlos Piernas del Amor SL, salmó fumat des de 1995; «Colmado Online» shop.carpier.es) verif VO=sí ecommerce |
+| 335 | Parc Agrari del Baix Llobregat → Sant Boi de Llobregat | 0 | ✅ | 2026-06-20 | Cal Marcelino (Josep Fabró Solanes) **parcial** — DAR «Fabró Produccions» (ceba/calçot/carxofa/horta); municipi placeholder corregit a Sant Boi, productes ajustats, GMaps genèric del Parc Agrari blanquejat; cistelles a domicili; VO=no comprobado |
+| 336 | Parets del Vallès / Mollet del Vallès | 0 | ✅ | 2026-06-20 | Gallecs / Producte de Gallecs (associació agroecològica CCPAE: farines de cereals antics, mongeta ganxet, cigró, cervesa d'espelta; agrobotiga a l'ermita de Sta Maria de Gallecs) verif; VO=no (agrobotiga física) |
+| 337 | Piera (Fortesa) | 0 | ✅ | 2026-06-20 | Josep Vives Font (préssec de la Fortesa) **parcial** — sense DAR/web/listing; només pin GMaps de coords + tel a la zona del préssec; producció activa no confirmada (no purgat: possible péssecaire real) |
+| 338 | Pont de Vilomara i Rocafort | 0 | ✅ | 2026-06-20 | **1 purga** — «Comajuncosas Baraldes, Juan Carlos» (categoritzat «Legumbres/Garbanzos») és al DAR com **VIVERS ANGLE que produeix LLENYA** (no aliments); web/FB/adreça eren de l'**Ajuntament** (elpont.cat, Plaça Ajuntament 1) → purgat |
+| 339 | Puig Reig | 0 | ✅ | 2026-06-20 | Cervesa Grenyut (David Garcia/Rosa Palomas, des de 2015→Puig-reig 2019; Untappd/Birrapedia) verif; **web/tel/email FALSOS corregits**: web grenyut.com→grenyut.cat, tel placeholder ...123456→+34658860960, email→grenyut@grenyut.cat; VO=no comprobado |
+| 340 | Puig-Reig (Colònia Pons) | 0 | ✅ | 2026-06-20 | Neules Artesanes Sant Tirs SL (obrador de neules/cubanos/tulipes, també sense gluten/eco) verif; venda **només B2B** (Ankorstore), sense carret B2C → VO=no; productes ajustats (eren «Chocolate artesano») |
+| 341 | Sabadell (Sant Julià) | 0 | ✅ | 2026-06-20 | Ca n'Ustrell Agricultura (masia s.XIII, horta i fruita ecològica de venda directa) verif; +web canustrellagricultura.com; VO=no comprobado (ull dup «Domingo Garcia» a Sabadell, veure nota) |
+| 342 | Salelles (Manresa) | 0 | ✅ | 2026-06-20 | Celler Fargas Fargas / Cal Quico (Pla de Bages, picapoll; carret «AFEGEIX al cistell» + checkout) verif VO=sí ecommerce |
+| 343 | Sant Bartomeu del Grau | 0 | ✅ | 2026-06-20 | Mas Rogers **parcial** — DAR «Els Rogers SCP» (venda proximitat a St. Bartomeu); sense web, elaboració de formatge no confirmada |
+| 344 | Sant Boi de Lluçanès | 0 | ✅ | 2026-06-20 | Forn Cal Pujals (forn de llenya des dels anys 40, cereals antics, Ruta del Pa del Lluçanès; Daniel Pla) verif; adreça corregida «Plaça va»→«Plaça Nova, 4»; VO=no |
+| 345 | Sant Cugat del Vallès (Valldoreix) | 0 | ✅ | 2026-06-20 | Cava Àngel (cava 100% natural sense licors d'expedició, carret+checkout, enviaments internacionals) verif VO=sí ecommerce |
+| 346 | Sant Esteve de Palautordera | 0 | ✅ | 2026-06-20 | Vallflorida Xocolaters (obrador des de 1983, bean-to-bar, panettone premiat; tenda online amb preus) verif VO=sí ecommerce |
+| 347 | Sant Hipòlit de Voltregà | 0 | ✅ | 2026-06-20 | **1 purga** — «Burgaya Nogue, Fernando» (cat. «Fruta y verdura») **sense match al DAR**; GMaps de **Rostidoria Burgaya** (Masies de Voltregà) i adreça a Vic; cap productor d'horta real → purgat |
+| 348 | Sant Julià de Vilatorta | 0 | ✅ | 2026-06-20 | Pastisseria Crossandra (forn/pastisseria real, ajuntament + 4.7/220 ressenyes) verif; web `lacrossandra.com`+email eren del negoci de **canelons** Crossandra (Vic/Granollers/BCN) → web corregida a pavic.cat/crossandra, email blanquejat; VO sí→no comprobado |
+| 349 | Sant Llorenç D'hortons (la Beguda Baixa) | 0 | ✅ | 2026-06-20 | Castell d'Age (família Junyent, cava i vi ecològic DO, >50 anys vinyes pròpies) verif; comandes per email/telèfon/WhatsApp → VO=sí whatsapp|email |
+| 350 | Sant Llorenç d'Hortons | 0 | ✅ | 2026-06-20 | Celler Sant Joannes / Agrícola Hortóns SL (vins ecològics Penedès des de 1853, Decanter 2022; carret+checkout) verif VO=sí ecommerce |
+| — | _resto (18 municipios, 1 pendent c/u)_ | 18 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
