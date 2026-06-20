@@ -15,9 +15,9 @@
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
 
-## Estado actual (2026-06-19)
+## Estado actual (2026-06-20)
 
-- Filas: **2.489** · verificado **1.672** · parcial **764** · pendiente **53**
+- Filas: **2.489** · verificado **1.673** · parcial **764** · pendiente **52**
   (snapshot inicial 2.973 · 35 · 16 · 2.922; **484 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
 - Modo: lote a lote bajo demanda. **Cerrados: lotes 1-310** (1-110 individuales + grupos 111-115 de
@@ -25,8 +25,8 @@
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
   Ja **només queden municipis amb 1 pendent** (53 municipis = 53 pendents); cada lote = 1 municipi
   (excepte grafies duplicades, p.ex. L'Espunyola portava 2 pendents «L'Espunyola»/«l'Espunyola»).
-- **Siguiente: Lote 316** — La Floresta (Sant Cugat del Vallès) i la resta (La Llacuna, La Pobla de
-  Lillet, La Torre de Claramunt, Lavern (Subirats), Les Cabanyes…). Recomputar con `list:province`.
+- **Siguiente: Lote 317** — La Llacuna i la resta (La Pobla de Lillet, La Torre de Claramunt,
+  Lavern (Subirats), Les Cabanyes, Les Masies de Roda…). Recomputar con `list:province`.
   (Ull grafía: «Subirats»/«…(Els Casots/Ordal/Sant Pau d'Ordal/Lavern)», «Gallecs (Mollet/Parets)»,
   «Espunyola»/«l'Espunyola»/«L'Espunyola»; unificar/revisar en pasada futura.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
@@ -492,7 +492,8 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 313 | Gósol | 0 | ✅ | 2026-06-19 | **1 purga** — **Cal Andreuet** és de **província de Lleida** (Gósol, CP 25716) mal fichat; purgat, anotat per a lleida.csv. (Gósol = únic municipi del Berguedà a Lleida.) |
 | 314 | Hostalets de Pierola | 0 | ✅ | 2026-06-19 | La Beneta Cooperativa SCCL (fruita eco, ametlla i oli DAR, IG; web latavella.cat=distribuïdor blanquejada, +tel/email) verif VO=no comprobado |
 | 315 | L'Espunyola | 0 | ✅ | 2026-06-19 | 2 verif (grafía duplicada); Apeuderoques-Peu de Roques (conserves vegetals i bolets, IG; recat Despensa→Conservas y mermeladas) verif VO=no comprobado; Masia Fontirons (formatges i iogurt de vaca DAR, web+IG; servei a domicili) verif VO=no |
-| — | _resto (53 municipios, 1 pendent c/u)_ | 53 | ⬜ | | recomputar al llegar |
+| 316 | La Floresta (Sant Cugat del Vallès) | 0 | ✅ | 2026-06-20 | Florestina Cervesa Artesana (microcervecera amb obrador propi a La Floresta, web+IG+Untappd, «primera cervesa 100% Collserola»; FB de perfil personal corregit a la pàgina de marca facebook.com/cervezaflorestina) verif; web només aparador sense carret → VO=no |
+| — | _resto (52 municipios, 1 pendent c/u)_ | 52 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
