@@ -17,16 +17,16 @@
 
 ## Estado actual (2026-06-20)
 
-- Filas: **2.489** · verificado **1.673** · parcial **764** · pendiente **52**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **484 purgadas**). Verificadas > pendientes desde el lote 85;
+- Filas: **2.487** · verificado **1.684** · parcial **765** · pendiente **38**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **486 purgadas**). Verificadas > pendientes desde el lote 85;
   pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-310** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-310 pasada ambiciosa). Desde el
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-330** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-330 pasada ambiciosa). Desde el
   lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ja **només queden municipis amb 1 pendent** (53 municipis = 53 pendents); cada lote = 1 municipi
+  Ja **només queden municipis amb 1 pendent** (38 municipis = 38 pendents); cada lote = 1 municipi
   (excepte grafies duplicades, p.ex. L'Espunyola portava 2 pendents «L'Espunyola»/«l'Espunyola»).
-- **Siguiente: Lote 317** — La Llacuna i la resta (La Pobla de Lillet, La Torre de Claramunt,
-  Lavern (Subirats), Les Cabanyes, Les Masies de Roda…). Recomputar con `list:province`.
+- **Siguiente: Lote 331** — Olèrdola / Vilafranca del Penedès i la resta (Ordal (Subirats),
+  Oristà (la Torre d'Oristà), Palafolls (Sant Genís), Parc Agrari del Baix Llobregat…). Recomputar con `list:province`.
   (Ull grafía: «Subirats»/«…(Els Casots/Ordal/Sant Pau d'Ordal/Lavern)», «Gallecs (Mollet/Parets)»,
   «Espunyola»/«l'Espunyola»/«L'Espunyola»; unificar/revisar en pasada futura.)
 - Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
@@ -493,7 +493,21 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 314 | Hostalets de Pierola | 0 | ✅ | 2026-06-19 | La Beneta Cooperativa SCCL (fruita eco, ametlla i oli DAR, IG; web latavella.cat=distribuïdor blanquejada, +tel/email) verif VO=no comprobado |
 | 315 | L'Espunyola | 0 | ✅ | 2026-06-19 | 2 verif (grafía duplicada); Apeuderoques-Peu de Roques (conserves vegetals i bolets, IG; recat Despensa→Conservas y mermeladas) verif VO=no comprobado; Masia Fontirons (formatges i iogurt de vaca DAR, web+IG; servei a domicili) verif VO=no |
 | 316 | La Floresta (Sant Cugat del Vallès) | 0 | ✅ | 2026-06-20 | Florestina Cervesa Artesana (microcervecera amb obrador propi a La Floresta, web+IG+Untappd, «primera cervesa 100% Collserola»; FB de perfil personal corregit a la pàgina de marca facebook.com/cervezaflorestina) verif; web només aparador sense carret → VO=no |
-| — | _resto (52 municipios, 1 pendent c/u)_ | 52 | ⬜ | | recomputar al llegar |
+| 317 | La Llacuna | 0 | ✅ | 2026-06-20 | Formatgeria Ancosa (formatges d'ovella de llet crua des de 2014, Tina Bunyol/Frederic Herrero; Pam a Pam + Anoia Turisme) verif; `web` corregida del FB duplicat al domini propi formatgeriaancosa.cat; VO=no comprobado |
+| 318 | La Pobla de Lillet | 0 | ✅ | 2026-06-20 | L'Aranyonet (obrador propi de conserves vegetals/melmelades a l'Alt Berguedà, botiga online amb carret, enviaments Catalunya) verif VO=sí ecommerce; +correu +IG |
+| 319 | La Torre de Claramunt | 0 | ✅ | 2026-06-20 | Cal Vilaseca Fruits del Camp (km0, 3a generació Jaume Riba, calçots/AOVE/horta; Anoia Turisme + Natura Local) verif; +FB +correu; web calvilaseca.cat redirigeix a OrderCAF (no confirmable en directe) → VO=no comprobado |
+| 320 | Lavern (Subirats) | 0 | ✅ | 2026-06-20 | Cava Guilera/Heretat Guilera SL (cava de guarda superior + vi ecològic, ecommerce «Comprar Cava» actiu) verif VO=sí ecommerce |
+| 321 | Les Cabanyes | 0 | ✅ | 2026-06-20 | Forn de Pa Cal Roc (forn de poble des de 1933, l'establiment més antic; Eva Roig, guia ajuntament) verif; +FB; VO=no (física) |
+| 322 | Les Masies de Roda | 0 | ✅ | 2026-06-20 | La Musona (vedella 100% Aberdeen Angus, finca El Macià; botiga online amb carret + entregues cícliques mensuals) verif VO=sí ecommerce |
+| 323 | Maians | 0 | ✅ | 2026-06-20 | **1 purga** — Grau i Grau = **dup literal** de `celler-grau-i-grau-castellfollit-del-boix` (mateix tel/web/place_id/coords; Maians és nucli de Castellfollit del Boix); correu+IG bolcats a la fila canònica abans de purgar (+webp) |
+| 324 | Malla | 0 | ✅ | 2026-06-20 | **1 purga** — «Serra Rifa, Carles» (Charcutería) és **fila fantasma**: web serrarifa.com + GMaps + coords són de **Serra Rifà SL, empresa metal·lúrgica** de Manlleu (soldadura, des de 1989); cap charcutería real, mal fichada a Malla → purgat (+webp) |
+| 325 | Manresa (els Comtals) | 0 | ✅ | 2026-06-20 | Obaga de l'Agneta (AOVE ecològic d'oliveres centenàries Corbella/Verdal, finca 500 anys + oleoturisme) verif; venda d'oli per telèfon/email → VO=sí email|telefono |
+| 326 | Moja | 0 | ✅ | 2026-06-20 | La Granja Foods 1959 SL — **recategoritzada**: el CSV la tenia com «Fruta y verdura / Tomates, Lechugas» però és un **obrador de pastisseria/bolleria** (des de 1959, magdalenes de l'àvia Rosario; Pàg. Amarillas «Pastelerías»); categoria→Pan y pastelería, productes i descripció corregits; VO sí→no comprobado (B2B, web 403) |
+| 327 | Monistrol de Calders | 0 | ✅ | 2026-06-20 | Forn i Pastisseria Catot SL (forn de poble, pa/pastisseria artesana; guia ajuntament + llistats) verif; VO=no (física) |
+| 328 | Monistrol de Montserrat | 0 | ✅ | 2026-06-20 | Les Mil Butis (xarcuteria) — **parcial**: IG @les_mil_butis i fitxa GMaps actius (existeix), però cap font confirma elaboració pròpia → parcial, VO=no comprobado |
+| 329 | Navàs (Castelladral) | 0 | ✅ | 2026-06-20 | Mel Cal Fuster (mel artesana eco a Castelladral, web Wix + IG; «la parada») verif; VO=no comprobado |
+| 330 | Navàs (el Mujal) | 0 | ✅ | 2026-06-20 | Formatgeria Cal Músic (formatges artesans cabra/vaca eco, Lourdes/Martí; «Tou del Mujal» millor formatge català Lactium 2025) verif; FB truncat i IG erroni (@formatgeriacalmusic) corregits a @calmusicformatgeria + pàgina FB real; VO=no comprobado |
+| — | _resto (38 municipios, 1 pendent c/u)_ | 38 | ⬜ | | recomputar al llegar |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
