@@ -11,17 +11,20 @@
 > Generado el 2026-06-15.
 
 
-**Total inicial: 214 · revisado 2026-06-15.**
+**Total inicial: 214 · cribado editorial 2026-06-15 · deduplicado local 2026-06-16.**
 
 ## Estado de revisión (cribado 2026-06-15)
 - **DO Terra Alta: HECHA.** 17 integradas en `tarragona.csv` (todas `verificado`): Bàrbara Forés, Bielsa Ruano, Arrufí, Bernaví, Frisach, Josep Vicens, La Botera, Xavier Clua, Cellers Tarroné, Coma d'en Bonet, Edetària, Essència de Lluna, Herència Altés, Sant Josep Vins, Vins del Tros, Les Vinyes del Convent, Celler Menescal. **Descartadas 2:** *Catedral del Vi* = Cooperativa Pinellense (ya estaba) y *Comebé* = consorci Memorial Batalla de l'Ebre (no es celler).
 - **Ya las teníamos (quitar de Conca):** *Agrícola de la Conca* (= fila Montblanc) y *Agrícola de Barberà* (= Coop. Agrícola de Barberà de la Conca).
 - **Duplicados entre DOs (contar 1 vez):** Castell d'Or (Conca+Tgn), Clos Mogador (Priorat+Montsant), Josep Grau Viticultor (Priorat+Montsant), Noguerals (Priorat+Montsant).
-- **Slugs de web → nombre real (Priorat):** `www-arethealpriorat-com`=Aretheal Priorat · `https-closalkio-com`=Clos Alkio · `www-vinyesforermassard-com`=Les Vinyes Forer Massard.
+- **Alias de web → nombre real (Priorat):** `www-arethealpriorat-com`=Aretheal Priorat · `https-closalkio-com`=Clos Alkio · `www-vinyesforermassard-com`=Les Vinyes Forer Massard.
 - **DO Tarragona: HECHA.** 10 integradas (`verificado`): Biopaumerà, Castell d'Or, Coop. Vila-rodona, Celler 9+, Caves Magrinyà Calaf, Celler Pedrola (Camí de Sirga), Coop. Sant Isidre de Vilabella, Estol Verd, Terra Cellars, Vinya Janine. **Descartadas 2:** *Bodegas Embotelladoras* (sin ficha, nombre de embotellador, no verificable como KM0) y *Mas dels Frares* (bodega experimental de la Facultat d'Enologia URV, no es productor de consumo). *Castell d'Or* integrada aquí resuelve también el duplicado de Conca.
 - **Conca de Barberà: HECHA.** 18 integradas en `tarragona.csv` (`verificado`): Aymar, Carles Andreu, Clos Montblanc, Costador, La Llena, Mas Foraster (Josep Foraster), Pla de la Masó, Mas de la Sabatera, Rendé Masdéu, Rosa Maria Torres, Sanstravé, Vega Aixalà, Vins de Pedra, Cellers Domenys, Família Torres-Milmanda, Gabor, Gerida, Succés Vinícola. **Descartadas:** Bodegas 1898 (sin ficha), Single Vineyards Collectors (sin ficha, négoci), Vins i Caves Portell (= Coop. Vinícola de Sarral, ya presente). **Movida a lleida.csv (provincia Lleida, no Tarragona):** *Cara Nord Celler* (`cara-nord-celler-el-vilosell`). **Diferidas (sin ficha Google localizable):** Abadia de Poblet (marca de Celler Tintoré, Vimbodí), Celler Mas de la Creu (Barberà), Celler Mas de la Pansa (Barberà).
+- **DO Montsant: HECHA + VERIFICADA (2026-06-21).** 44 filas nuevas en `tarragona.csv` (`Bodega`): **41 `verificado`, 3 `parcial`** (Spectacle Vins, Viñas del Montsant/Morlanda, El Vi dels 20 — sin web/canal comprobable hoy). Coordenadas afinadas (29 precisas Nominatim/web, 14 a centroide); `Venta online` comprobada producto a producto (**15 `sí`** con botiga propia o marketplace; resto `no`/`no comprobado`). Incluye los 3 `dup-of` canónicos en Priorat (Clos Mogador, Josep Grau, Noguerals). **Sin fila nueva:** *Venus la Universal – Sindicat la Figuera* (mismo productor, fusionado en `venus-la-universal-falset`) y *Agricola Ulldemolins* (ya presente como Aceite). **Homónimo:** override `el molar`→Priorat en `municipios-overrides.json`.
 - **Dudoso encaje pendiente (Priorat):** Unió Fruits SCCL (coop de fruta).
-- **Pendiente:** DO Montsant (~43), DOQ Priorat (~108) + 3 diferidas de Conca.
+- **Revisión local de duplicados 2026-06-16:** comparado contra `npx pnpm list:province tarragona` y `npx pnpm list:province tarragona --categoria Bodega`. Las secciones cerradas quedan con casillas `[x]` y `already-present`, `rejected`, `moved` o `dup-of` para no reabrirlas.
+- **Fusión resuelta (2026-06-21):** *Agricola Ulldemolins* = `agricola-dulldemolins-ulldemolins` (`Aceite`, `parcial`), cuya fila ya recoge "vinos DO Montsant"; no se crea fila nueva.
+- **Pendiente útil:** DOQ Priorat (~108, ya descontados los 3 `dup-of` integrados vía Montsant) + 3 diferidas de Conca. Al integrar Priorat, resolver primero los alias de web ya anotados.
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  ✅ HECHA (18 integradas; ver «Estado de revisión» arriba)
@@ -29,35 +32,37 @@
 Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 
 
-- [ ] **Abadia de Poblet (Vimbodí i Poblet)** — DO Conca de Barberà
-- [ ] **Aymar Vitivinícoles (Vimbodí i Poblet)** — DO Conca de Barberà
-- [ ] **Bodegas 1898 (Horta d'Avinyó)** — DO Conca de Barberà
+- [ ] **Abadia de Poblet (Vimbodí i Poblet)** — deferred: posible marca de Celler Tintoré; sin ficha Google localizable. Reconfirmar antes de crear fila.
+- [x] **Aymar Vitivinícoles (Vimbodí i Poblet)** — already-present: `aymar-vitivinicoles-vimbodi-i-poblet`
+- [x] **Bodegas 1898 (Horta d'Avinyó)** — rejected: sin ficha verificable como productor local
 - [x] **Cara Nord Celler (El Vilosell)** — movida a `lleida.csv` como `cara-nord-celler-el-vilosell`
-- [ ] **Castell d'Or (L'Espluga de Francolí)** — DO Conca de Barberà
-- [ ] **Celler Carles Andreu (Pira)** — DO Conca de Barberà
-- [ ] **Celler Clos Montblanc (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Celler Costador Terroirs Mediterranis (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Celler La Llena (Vilanova de Prades)** — DO Conca de Barberà
-- [ ] **Celler Mas de la Creu (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Celler Mas de la Pansa (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Celler Mas de la Sabatera (Montblanc)** — DO Conca de Barberà
-- [ ] **Celler Mas Foraster (Montblanc)** — DO Conca de Barberà
-- [ ] **Celler Pla de la Masó (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Celler Rendé Masdéu (L'Espluga de Francolí)** — DO Conca de Barberà
-- [ ] **Celler Rosa Mª Torres (Sarral)** — DO Conca de Barberà
-- [ ] **Celler Sanstravé (Solivella)** — DO Conca de Barberà
-- [ ] **Celler Vega Aixalà  (Vilanova de Prades)** — DO Conca de Barberà
-- [ ] **Celler Vins de Pedra (Montblanc)** — DO Conca de Barberà
-- [ ] **Cellers Domenys i Secció de Crèdit (Blancafort, Pira i Rocafort de Queralt)** — DO Conca de Barberà
-- [ ] **Familia Torres (Vimbodí i Poblet)** — DO Conca de Barberà
-- [ ] **Gabor Celler (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Gerida Viticultors (Blancafort)** — DO Conca de Barberà
-- [ ] **Single Vineyards Collectors (Barberà de la Conca)** — DO Conca de Barberà
-- [ ] **Succés Vinícola (Pira)** — DO Conca de Barberà
-- [ ] **Vins i Caves Portell (Sarral)** — DO Conca de Barberà
+- [x] **Castell d'Or (L'Espluga de Francolí)** — already-present: `castell-dor-lespluga-de-francoli`
+- [x] **Celler Carles Andreu (Pira)** — already-present: `celler-carles-andreu-pira`
+- [x] **Celler Clos Montblanc (Barberà de la Conca)** — already-present: `clos-montblanc-barbera-de-la-conca`
+- [x] **Celler Costador Terroirs Mediterranis (Barberà de la Conca)** — already-present: `celler-costador-barbera-de-la-conca`
+- [x] **Celler La Llena (Vilanova de Prades)** — already-present: `celler-la-llena-vilanova-de-prades`
+- [ ] **Celler Mas de la Creu (Barberà de la Conca)** — deferred: sin ficha Google localizable. Reconfirmar existencia/ubicación antes de crear fila.
+- [ ] **Celler Mas de la Pansa (Barberà de la Conca)** — deferred: sin ficha Google localizable. Reconfirmar existencia/ubicación antes de crear fila.
+- [x] **Celler Mas de la Sabatera (Montblanc)** — already-present: `celler-mas-de-la-sabatera-montblanc`
+- [x] **Celler Mas Foraster (Montblanc)** — already-present: `celler-mas-foraster-montblanc`
+- [x] **Celler Pla de la Masó (Barberà de la Conca)** — already-present: `celler-pla-de-la-maso-barbera-de-la-conca`
+- [x] **Celler Rendé Masdéu (L'Espluga de Francolí)** — already-present: `celler-rende-masdeu-lespluga-de-francoli`
+- [x] **Celler Rosa Mª Torres (Sarral)** — already-present: `celler-rosa-maria-torres-sarral`
+- [x] **Celler Sanstravé (Solivella)** — already-present: `celler-sanstrave-solivella`
+- [x] **Celler Vega Aixalà  (Vilanova de Prades)** — already-present: `celler-vega-aixala-vilanova-de-prades`
+- [x] **Celler Vins de Pedra (Montblanc)** — already-present: `celler-vins-de-pedra-montblanc`
+- [x] **Cellers Domenys i Secció de Crèdit (Blancafort, Pira i Rocafort de Queralt)** — already-present: `cellers-domenys-pira`
+- [x] **Familia Torres (Vimbodí i Poblet)** — already-present: `familia-torres-milmanda-vimbodi-i-poblet`
+- [x] **Gabor Celler (Barberà de la Conca)** — already-present: `gabor-celler-barbera-de-la-conca`
+- [x] **Gerida Viticultors (Blancafort)** — already-present: `gerida-viticultors-blancafort`
+- [x] **Single Vineyards Collectors (Barberà de la Conca)** — rejected: sin ficha verificable y perfil de négoci
+- [x] **Succés Vinícola (Pira)** — already-present: `succes-vinicola-pira`
+- [x] **Vins i Caves Portell (Sarral)** — dup-of: `cooperativa-vinicola-de-sarral-sarral`
 
 
 ## Ruta del Vi DOQ Priorat – DO Montsant · cellers DOQ Priorat  ·  111 candidatos
+
+Estado por defecto: `unverified`. No integrar sin nueva comprobación de actividad, ubicación y venta online. Las líneas `canonical-dup` son la entrada que debe sobrevivir si también aparece en DO Montsant.
 
 - [ ] **Adrets del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/adrets-del-priorat/>
 - [ ] **Adria Domenech Simo** — DOQ Priorat — <https://www.doqpriorat.org/cellers/adria-domenech-simo/>
@@ -113,7 +118,7 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [ ] **Clos Dominic** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-dominic-sl/>
 - [ ] **Clos Figueras** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-figueras-sa/>
 - [ ] **Clos i Terrasses** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-i-terrasses/>
-- [ ] **Clos Mogador** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-mogador-sl/>
+- [x] **Clos Mogador** — DOQ Priorat — already-present (vía DO Montsant): `clos-mogador-gratallops`; <https://www.doqpriorat.org/cellers/clos-mogador-sl/>
 - [ ] **Clos Pachem** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-pachem/>
 - [ ] **Costers del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/costers-del-priorat/>
 - [ ] **Devinssi** — DOQ Priorat — <https://www.doqpriorat.org/cellers/devinssi-sl/>
@@ -129,9 +134,9 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [ ] **Gran Clos** — DOQ Priorat — <https://www.doqpriorat.org/cellers/gran-clos/>
 - [ ] **Gratavinum** — DOQ Priorat — <https://www.doqpriorat.org/cellers/gratavinum-sl/>
 - [ ] **Hidalgo Albert** — DOQ Priorat — <https://www.doqpriorat.org/cellers/hidalgo-albert/>
-- [ ] **«https-closalkio-com» (verificar nom)** — DOQ Priorat
+- [ ] **Clos Alkio** — DOQ Priorat — alias-resolved: `https-closalkio-com`; confirmar nombre legal/ficha antes de integrar
 - [ ] **Joan Ametller** — DOQ Priorat — <https://www.doqpriorat.org/cellers/joan-ametller-sl/>
-- [ ] **Josep Grau Viticultors** — DOQ Priorat — <https://www.doqpriorat.org/cellers/josep-grau-viticultors-sl/>
+- [x] **Josep Grau Viticultors** — DOQ Priorat — already-present (vía DO Montsant): `josep-grau-viticultor-capcanes`; <https://www.doqpriorat.org/cellers/josep-grau-viticultors-sl/>
 - [ ] **La Cassola del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/la-cassola-del-priorat-sl/>
 - [ ] **La Conreria Dscala Dei** — DOQ Priorat — <https://www.doqpriorat.org/cellers/la-conreria-dscala-dei-sl/>
 - [ ] **Maius Viticultors** — DOQ Priorat — <https://www.doqpriorat.org/cellers/maius-viticultors-scp/>
@@ -146,7 +151,7 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [ ] **Merum Priorati** — DOQ Priorat — <https://www.doqpriorat.org/cellers/merum-priorati-sl/>
 - [ ] **Miguel Caldentey Cabre** — DOQ Priorat — <https://www.doqpriorat.org/cellers/miguel-caldentey-cabre/>
 - [ ] **Mussons Vins** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mussons-vins-sl/>
-- [ ] **Noguerals** — DOQ Priorat — <https://www.doqpriorat.org/cellers/noguerals-scp/>
+- [x] **Noguerals** — DOQ Priorat — already-present (vía DO Montsant): `celler-noguerals-cornudella-de-montsant`; <https://www.doqpriorat.org/cellers/noguerals-scp/>
 - [ ] **Peters Plot Hodgkinson Mas del Habanero** — DOQ Priorat — <https://www.doqpriorat.org/cellers/peters-plot-sl-hodgkinson-mas-del-habanero/>
 - [ ] **Pinord Mas Blanc** — DOQ Priorat — <https://www.doqpriorat.org/cellers/pinord-mas-blanc/>
 - [ ] **Portal del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/portal-del-priorat-sl/>
@@ -162,103 +167,104 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [ ] **Terra Dominicata** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terra-dominicata-slu/>
 - [ ] **Terres de Vidalba** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terres-de-vidalba-sl/>
 - [ ] **Terroir Al Limit** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terroir-al-limit-sl/>
-- [ ] **Torres Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/torres-priorat-sl/>
+- [ ] **Torres Priorat** — DOQ Priorat — not-auto-duplicate: relacionado con Torres, pero no fusionar con `familia-torres-milmanda-vimbodi-i-poblet` sin verificar sede y productor; <https://www.doqpriorat.org/cellers/torres-priorat-sl/>
 - [ ] **Trossos del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/trossos-del-priorat/>
-- [ ] **Unio Fruits** — DOQ Priorat — <https://www.doqpriorat.org/cellers/unio-fruits-sccl/>
+- [ ] **Unio Fruits** — DOQ Priorat — dudoso: coop de fruta; revisar encaje KM0 antes de integrar; <https://www.doqpriorat.org/cellers/unio-fruits-sccl/>
 - [ ] **Vinicola del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/vinicola-del-priorat-sccl/>
 - [ ] **Viticultors del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/viticultors-del-priorat-sl/>
 - [ ] **Viticultors Mas den Gil** — DOQ Priorat — <https://www.doqpriorat.org/cellers/viticultors-mas-den-gil-sl/>
-- [ ] **«www-arethealpriorat-com» (verificar nom)** — DOQ Priorat
-- [ ] **«www-vinyesforermassard-com» (verificar nom)** — DOQ Priorat
+- [ ] **Aretheal Priorat** — DOQ Priorat — alias-resolved: `www-arethealpriorat-com`; confirmar nombre legal/ficha antes de integrar
+- [ ] **Les Vinyes Forer Massard** — DOQ Priorat — alias-resolved: `www-vinyesforermassard-com`; confirmar nombre legal/ficha antes de integrar
 
 
-## Ruta del Vi DOQ Priorat – DO Montsant · cellers DO Montsant  ·  46 candidatos
+## Ruta del Vi DOQ Priorat – DO Montsant · cellers DO Montsant  ·  ✅ HECHA + VERIFICADA (44 filas: 41 verificado / 3 parcial; 2 sin fila — ver «Estado de revisión» arriba)
 
-- [ ] **Acustic Celler** — DO Montsant — <https://www.domontsant.com/celler/acustic-celler/>
-- [ ] **Agricola Ulldemolins** — DO Montsant — <https://www.domontsant.com/celler/agricola-ulldemolins/>
-- [ ] **Alfredo Arribas** — DO Montsant — <https://www.domontsant.com/celler/alfredo-arribas/>
-- [ ] **Bell Cros** — DO Montsant — <https://www.domontsant.com/celler/bell-cros/>
-- [ ] **Celler Aibar** — DO Montsant — <https://www.domontsant.com/celler/celler-aibar/>
-- [ ] **Celler Anguera Domenech** — DO Montsant — <https://www.domontsant.com/celler/celler-anguera-domenech/>
-- [ ] **Celler Cairats** — DO Montsant — <https://www.domontsant.com/celler/celler-cairats/>
-- [ ] **Celler Cal Besso** — DO Montsant — <https://www.domontsant.com/celler/celler-cal-besso/>
-- [ ] **Celler Cedo Anguera** — DO Montsant — <https://www.domontsant.com/celler/celler-cedo-anguera/>
-- [ ] **Celler Clos Mesorah** — DO Montsant — <https://www.domontsant.com/celler/celler-clos-mesorah/>
-- [ ] **Celler Comunica** — DO Montsant — <https://www.domontsant.com/celler/celler-comunica/>
-- [ ] **Celler Cooperatiu de Cornudella** — DO Montsant — <https://www.domontsant.com/celler/celler-cooperatiu-de-cornudella/>
-- [ ] **Celler Cooperatiu el Molar** — DO Montsant — <https://www.domontsant.com/celler/celler-cooperatiu-el-molar/>
-- [ ] **Celler de Capcanes** — DO Montsant — <https://www.domontsant.com/celler/celler-de-capcanes/>
-- [ ] **Celler de Lera Mas de les Moreres** — DO Montsant — <https://www.domontsant.com/celler/celler-de-lera-mas-de-les-moreres/>
-- [ ] **Celler Dosterras** — DO Montsant — <https://www.domontsant.com/celler/celler-dosterras/>
-- [ ] **Celler Gritelles** — DO Montsant — <https://www.domontsant.com/celler/celler-gritelles/>
-- [ ] **Celler la Placeta** — DO Montsant — <https://www.domontsant.com/celler/celler-la-placeta/>
-- [ ] **Celler Laurona** — DO Montsant — <https://www.domontsant.com/celler/celler-laurona/>
-- [ ] **Celler Mas de les Vinyes** — DO Montsant — <https://www.domontsant.com/celler/celler-mas-de-les-vinyes/>
-- [ ] **Celler Noguerals** — DO Montsant — <https://www.domontsant.com/celler/celler-noguerals/>
-- [ ] **Celler Pascona** — DO Montsant — <https://www.domontsant.com/celler/celler-pascona/>
-- [ ] **Celler Ronadelles** — DO Montsant — <https://www.domontsant.com/celler/celler-ronadelles/>
-- [ ] **Celler Serra Major** — DO Montsant — <https://www.domontsant.com/celler/celler-serra-major/>
-- [ ] **Celler Vendrell Rived** — DO Montsant — <https://www.domontsant.com/celler/celler-vendrell-rived/>
-- [ ] **Cellers Can Blau** — DO Montsant — <https://www.domontsant.com/celler/cellers-can-blau/>
-- [ ] **Cellers Sant Rafel** — DO Montsant — <https://www.domontsant.com/celler/cellers-sant-rafel/>
-- [ ] **Cingles Blaus** — DO Montsant — <https://www.domontsant.com/celler/cingles-blaus/>
-- [ ] **Clos Maria** — DO Montsant — <https://www.domontsant.com/celler/clos-maria/>
-- [ ] **Clos Mogador** — DO Montsant — <https://www.domontsant.com/celler/clos-mogador/>
-- [ ] **Coca i Fito** — DO Montsant — <https://www.domontsant.com/celler/coca-i-fito/>
-- [ ] **Companyia Viticola Sileo** — DO Montsant — <https://www.domontsant.com/celler/companyia-viticola-sileo/>
-- [ ] **El Vi dels 20** — DO Montsant — <https://www.domontsant.com/celler/el-vi-dels-20/>
-- [ ] **Estones Vins** — DO Montsant — <https://www.domontsant.com/celler/estones-vins/>
-- [ ] **Josep Grau Viticultor** — DO Montsant — <https://www.domontsant.com/celler/josep-grau-viticultor/>
-- [ ] **Mas de Labundancia** — DO Montsant — <https://www.domontsant.com/celler/mas-de-labundancia/>
-- [ ] **Orto Vins** — DO Montsant — <https://www.domontsant.com/celler/orto-vins/>
-- [ ] **Serra i Barcelo** — DO Montsant — <https://www.domontsant.com/celler/serra-i-barcelo/>
-- [ ] **Spectacle Vins** — DO Montsant — <https://www.domontsant.com/celler/spectacle-vins/>
-- [ ] **Terravinyada** — DO Montsant — <https://www.domontsant.com/celler/terravinyada/>
-- [ ] **Terroir Sense Fronteres** — DO Montsant — <https://www.domontsant.com/celler/terroir-sense-fronteres/>
-- [ ] **Venus la Universal** — DO Montsant — <https://www.domontsant.com/celler/venus-la-universal/>
-- [ ] **Venus la Universal Sindicat la Figuera** — DO Montsant — <https://www.domontsant.com/celler/venus-la-universal-sindicat-la-figuera/>
-- [ ] **Vinas del Montsant** — DO Montsant — <https://www.domontsant.com/celler/vinas-del-montsant/>
-- [ ] **Vinyes den Gabriel** — DO Montsant — <https://www.domontsant.com/celler/vinyes-den-gabriel/>
-- [ ] **Vinyes Domenech** — DO Montsant — <https://www.domontsant.com/celler/vinyes-domenech/>
+Fuente: https://www.domontsant.com/ + webs propias  ·  Integradas y **verificadas** 2026-06-21: **41 `verificado` / 3 `parcial`** (Spectacle Vins, Viñas del Montsant–Morlanda y El Vi dels 20: sin web/canal propio comprobable hoy). Coordenadas afinadas (29 precisas vía Nominatim/web, 14 a centroide de municipi). `Venta online` comprobada celler a celler: **15 `sí`** (botiga propia o marketplace). Los 3 `dup-of` (canónicos en DOQ Priorat) se resolvieron creando la fila aquí.
 
+- [x] **Acustic Celler** — integrated: `acustic-celler-marca`
+- [x] **Agricola Ulldemolins** — already-present (Aceite): `agricola-dulldemolins-ulldemolins` ya recoge "vinos DO Montsant"; sin fila nueva
+- [x] **Alfredo Arribas** — integrated: `alfredo-arribas-vins-nus-falset` (marca Vins Nus)
+- [x] **Bell Cros** — integrated: `bell-cros-falset`
+- [x] **Celler Aibar** — integrated: `celler-aibar-darmos`
+- [x] **Celler Anguera Domenech** — integrated: `celler-anguera-domenech-darmos`
+- [x] **Celler Cairats** — integrated: `celler-cairats-darmos`
+- [x] **Celler Cal Besso** — integrated: `celler-cal-besso-els-guiamets`
+- [x] **Celler Cedo Anguera** — integrated: `celler-cedo-anguera-la-serra-dalmos`
+- [x] **Celler Clos Mesorah** — integrated: `celler-clos-mesorah-marca`
+- [x] **Celler Comunica** — integrated: `celler-comunica-falset`
+- [x] **Celler Cooperatiu de Cornudella** — integrated: `celler-cooperatiu-de-cornudella-cornudella-de-montsant`
+- [x] **Celler Cooperatiu el Molar** — integrated: `celler-cooperatiu-el-molar-el-molar` (homónimo: override `el molar`→Priorat)
+- [x] **Celler de Capcanes** — integrated: `celler-de-capcanes-capcanes`
+- [x] **Celler de Lera Mas de les Moreres** — integrated: `celler-de-lera-cornudella-de-montsant`
+- [x] **Celler Dosterras** — integrated: `celler-dosterras-marca`
+- [x] **Celler Gritelles** — integrated: `celler-gritelles-cornudella-de-montsant`
+- [x] **Celler la Placeta** — integrated: `celler-la-placeta-els-guiamets`
+- [x] **Celler Laurona** — integrated: `celler-laurona-falset`
+- [x] **Celler Mas de les Vinyes** — integrated: `celler-mas-de-les-vinyes-cabaces`
+- [x] **Celler Noguerals** — dup-of resuelto: integrated `celler-noguerals-cornudella-de-montsant`
+- [x] **Celler Pascona** — integrated: `celler-pascona-falset`
+- [x] **Celler Ronadelles** — integrated: `celler-ronadelles-cornudella-de-montsant` (marca Cap de Ruc)
+- [x] **Celler Serra Major** — integrated: `celler-serra-major-ulldemolins` (marca Sarroges)
+- [x] **Celler Vendrell Rived** — integrated: `celler-vendrell-rived-marca`
+- [x] **Cellers Can Blau** — integrated: `cellers-can-blau-el-molar` (Gil Family Estates)
+- [x] **Cellers Sant Rafel** — integrated: `cellers-sant-rafel-pradell-de-la-teixeta`
+- [x] **Cingles Blaus** — integrated: `cingles-blaus-cornudella-de-montsant`
+- [x] **Clos Maria** — integrated: `clos-maria-cornudella-de-montsant`
+- [x] **Clos Mogador** — dup-of resuelto: integrated `clos-mogador-gratallops`
+- [x] **Coca i Fito** — integrated: `coca-i-fito-el-masroig`
+- [x] **Companyia Viticola Sileo** — integrated: `companyia-viticola-sileo-cornudella-de-montsant` (marca Atroca)
+- [x] **El Vi dels 20** — integrated: `el-vi-dels-20-falset`
+- [x] **Estones Vins** — integrated: `estones-vins-falset`
+- [x] **Josep Grau Viticultor** — dup-of resuelto: integrated `josep-grau-viticultor-capcanes`
+- [x] **Mas de Labundancia** — integrated: `mas-de-labundancia-el-masroig`
+- [x] **Orto Vins** — integrated: `orto-vins-el-masroig`
+- [x] **Serra i Barcelo** — integrated: `serra-i-barcelo-els-guiamets`
+- [x] **Spectacle Vins** — integrated: `spectacle-vins-falset` (família Barbier / Clos Mogador)
+- [x] **Terravinyada** — integrated: `terravinyada-falset`
+- [x] **Terroir Sense Fronteres** — integrated: `terroir-sense-fronteres-torroja-del-priorat`
+- [x] **Venus la Universal** — integrated: `venus-la-universal-falset`
+- [x] **Venus la Universal Sindicat la Figuera** — merged: mismo productor (Sara Pérez/René Barbier), celler de La Figuera; sin fila nueva → `venus-la-universal-falset`
+- [x] **Vinas del Montsant** — integrated: `vinas-del-montsant-marca` (marca Morlanda)
+- [x] **Vinyes den Gabriel** — integrated: `vinyes-den-gabriel-darmos`
+- [x] **Vinyes Domenech** — integrated: `vinyes-domenech-capcanes`
 
 ## Ruta del Vi DO Tarragona  ·  ✅ HECHA (10 integradas, 2 descartadas — ver «Estado de revisión» arriba)
 
 Fuente: https://www.dotarragona.cat/
 
 
-- [ ] **Biopaumerà** — DO Tarragona
-- [ ] **Bodegas Embotelladoras** — DO Tarragona
-- [ ] **Castell d'Or** — DO Tarragona
-- [ ] **Celler 9+** — DO Tarragona
-- [ ] **Celler Cooperatiu de Vila-Rodona** — DO Tarragona
-- [ ] **Celler Magrinyà Calaf** — DO Tarragona
-- [ ] **Celler Mas dels Frares - URV** — DO Tarragona
-- [ ] **Celler Pedrola** — DO Tarragona
-- [ ] **Cooperativa Sant Isidre de Vilabella** — DO Tarragona
-- [ ] **Estol Verd Celler** — DO Tarragona
-- [ ] **Terra Cellars** — DO Tarragona
-- [ ] **Vinya Janine** — DO Tarragona
+- [x] **Biopaumerà** — already-present: `biopaumera-rasquera`
+- [x] **Bodegas Embotelladoras** — rejected: sin ficha de productor local verificable
+- [x] **Castell d'Or** — already-present: `castell-dor-lespluga-de-francoli`
+- [x] **Celler 9+** — already-present: `celler-9-mes-la-nou-de-gaia`
+- [x] **Celler Cooperatiu de Vila-Rodona** — already-present: `celler-cooperatiu-vila-rodona`
+- [x] **Celler Magrinyà Calaf** — already-present: `caves-magrinya-calaf-nulles`
+- [x] **Celler Mas dels Frares - URV** — rejected: bodega experimental universitaria, no productor de consumo
+- [x] **Celler Pedrola** — already-present: `celler-pedrola-miravet`
+- [x] **Cooperativa Sant Isidre de Vilabella** — already-present: `cooperativa-sant-isidre-vilabella`
+- [x] **Estol Verd Celler** — already-present: `estol-verd-celler-rodonya`
+- [x] **Terra Cellars** — already-present: `terra-cellars-les-borges-del-camp`
+- [x] **Vinya Janine** — already-present: `vinya-janine-rodonya`
 
 
 ## Ruta del Vi DO Terra Alta  ·  ✅ HECHA (17 integradas, 2 descartadas — ver «Estado de revisión» arriba)
 
-- [ ] **Barbara Fores** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/barbara-fores/>
-- [ ] **Bielsa Ruano** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/bielsa-ruano/>
-- [ ] **Catedral del Vi Modernista Celler** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/catedral-del-vi-modernista-celler/>
-- [ ] **Celler Arrufi** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-arrufi/>
-- [ ] **Celler Bernavi** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-bernavi/>
-- [ ] **Celler Cal Menescal** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-cal-menescal/>
-- [ ] **Celler Frisach** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-frisach/>
-- [ ] **Celler Josep Vicens** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-josep-vicens/>
-- [ ] **Celler la Botera** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-la-botera/>
-- [ ] **Celler Xavier Clua** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-xavier-clua/>
-- [ ] **Cellers Tarrone** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/cellers-tarrone/>
-- [ ] **Coma den Bonet** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/coma-den-bonet/>
-- [ ] **Comebe** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/comebe/>
-- [ ] **Edetaria** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/edetaria/>
-- [ ] **Essencia de Lluna** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/essencia-de-lluna/>
-- [ ] **Herencia Altes** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/herencia-altes/>
-- [ ] **Les Vinyes del Convent** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/les-vinyes-del-convent/>
-- [ ] **Sant Josep Vins** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/sant-josep-vins/>
-- [ ] **Vins del Tros** — DO Terra Alta — <https://www.doterraalta.com/rutadoterraalta/listing-type/vins-del-tros/>
+- [x] **Barbara Fores** — already-present: `celler-barbara-fores-gandesa` — <https://www.doterraalta.com/rutadoterraalta/listing-type/barbara-fores/>
+- [x] **Bielsa Ruano** — already-present: `bielsa-ruano-vilalba-dels-arcs` — <https://www.doterraalta.com/rutadoterraalta/listing-type/bielsa-ruano/>
+- [x] **Catedral del Vi Modernista Celler** — dup-of: `cooperativa-agricola-pinellense-el-pinell-de-brai` — <https://www.doterraalta.com/rutadoterraalta/listing-type/catedral-del-vi-modernista-celler/>
+- [x] **Celler Arrufi** — already-present: `celler-arrufi-batea` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-arrufi/>
+- [x] **Celler Bernavi** — already-present: `celler-bernavi-vilalba-dels-arcs` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-bernavi/>
+- [x] **Celler Cal Menescal** — already-present: `celler-menescal-bot` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-cal-menescal/>
+- [x] **Celler Frisach** — already-present: `celler-frisach-corbera-debre` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-frisach/>
+- [x] **Celler Josep Vicens** — already-present: `celler-josep-vicens-gandesa` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-josep-vicens/>
+- [x] **Celler la Botera** — already-present: `celler-la-botera-batea` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-la-botera/>
+- [x] **Celler Xavier Clua** — already-present: `celler-xavier-clua-vilalba-dels-arcs` — <https://www.doterraalta.com/rutadoterraalta/listing-type/celler-xavier-clua/>
+- [x] **Cellers Tarrone** — already-present: `cellers-tarrone-batea` — <https://www.doterraalta.com/rutadoterraalta/listing-type/cellers-tarrone/>
+- [x] **Coma den Bonet** — already-present: `celler-coma-den-bonet-gandesa` — <https://www.doterraalta.com/rutadoterraalta/listing-type/coma-den-bonet/>
+- [x] **Comebe** — rejected: consorci Memorial Batalla de l'Ebre, no celler productor — <https://www.doterraalta.com/rutadoterraalta/listing-type/comebe/>
+- [x] **Edetaria** — already-present: `edetaria-gandesa` — <https://www.doterraalta.com/rutadoterraalta/listing-type/edetaria/>
+- [x] **Essencia de Lluna** — already-present: `essencia-de-lluna-gandesa` — <https://www.doterraalta.com/rutadoterraalta/listing-type/essencia-de-lluna/>
+- [x] **Herencia Altes** — already-present: `herencia-altes-batea` — <https://www.doterraalta.com/rutadoterraalta/listing-type/herencia-altes/>
+- [x] **Les Vinyes del Convent** — already-present: `les-vinyes-del-convent-horta-de-sant-joan` — <https://www.doterraalta.com/rutadoterraalta/listing-type/les-vinyes-del-convent/>
+- [x] **Sant Josep Vins** — already-present: `sant-josep-vins-bot` — <https://www.doterraalta.com/rutadoterraalta/listing-type/sant-josep-vins/>
+- [x] **Vins del Tros** — already-present: `vins-del-tros-vilalba-dels-arcs` — <https://www.doterraalta.com/rutadoterraalta/listing-type/vins-del-tros/>

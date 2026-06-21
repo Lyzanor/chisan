@@ -7,6 +7,20 @@
       "community": "madrid"
     }
   ],
+  "el molar": [
+    {
+      "lat": 41.16352,
+      "lon": 0.70604,
+      "label": "El Molar (Priorat)",
+      "community": "catalunya"
+    },
+    {
+      "lat": 40.735,
+      "lon": -3.58139,
+      "label": "El Molar",
+      "community": "madrid"
+    }
+  ],
   "artieda": [
     {
       "lat": 42.58659,
