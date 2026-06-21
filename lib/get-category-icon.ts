@@ -12,7 +12,11 @@ export function getCategoryIcon(value: string): string {
   if (/aceite|oliva/i.test(value)) return "🫒";
   if (/charcut|carne|embut/i.test(value)) return "🥩";
   if (/pescado|marisc/i.test(value)) return "🐟";
-  if (/cafe|té|te/i.test(value)) return "☕";
+  if (/chocolate|cacao|bombon/i.test(value)) return "🍫";
+  if (/caf[eé]|infus/i.test(value)) return "☕";
+  if (/sidra/i.test(value)) return "🍏";
+  if (/zumo|mosto/i.test(value)) return "🧃";
+  if (/helado/i.test(value)) return "🍨";
   if (/huevo|ave|granja/i.test(value)) return "🥚";
   if (/hierb/i.test(value)) return "🌿";
   return "🧺";
