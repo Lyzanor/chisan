@@ -7,6 +7,20 @@
       "community": "madrid"
     }
   ],
+  "artieda": [
+    {
+      "lat": 42.58659,
+      "lon": -0.98368,
+      "label": "Artieda",
+      "community": "aragon"
+    },
+    {
+      "lat": 42.715,
+      "lon": -1.326,
+      "label": "Artieda (Urraúl Bajo)",
+      "community": "navarra"
+    }
+  ],
   "figueres": [
     {
       "lat": 42.26667,
