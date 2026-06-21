@@ -54,11 +54,12 @@
 | 3 | Lácteos y quesos | 51 | 38 | 13 | 44 | Cerrado 2026-06-18; 48 filas conservadas y 3 fusiones |
 | 4 | Mar y sal | 10 | 4 | 6 | 6 | Cerrado 2026-06-18; 9 `verificado`, 1 `parcial` |
 | 5 | Vegetal / despensa | 21 | 10 | 11 | 14 | Cerrado 2026-06-18; 11 `verificado`, 10 `parcial` |
-| 6 | Cárnicos / huevos / patés | 11 | 8 | 3 | 10 | 4 sin web; alto riesgo de directorio antiguo |
-| 7 | Obradores / cerveza / miel | 21 | 7 | 14 | 13 | varias ventas online; confirmar canales y actividad |
+| 6 | Cárnicos / huevos / patés | 11 | 8 | 3 | 10 | Cerrado 2026-06-19; 5 `verificado`, 6 `parcial` |
+| 7 | Obradores / cerveza / miel | 21 | 7 | 14 | 13 | Cerrado 2026-06-19; 19 conservadas y 2 bajas |
 
 Total inicial: 174 filas. Tras cerrar los lotes 2-5 quedan 171 filas por las
-3 fusiones documentadas en lácteos y quesos.
+3 fusiones documentadas en lácteos y quesos. Tras cerrar los lotes 6-7 quedan
+169 filas: 122 `verificado`, 47 `parcial` y 0 `pendiente`.
 
 ## Lote 1 - Bodega / txakoli
 
@@ -212,6 +213,10 @@ Notas de cierre:
 
 Incluye `Charcutería`, `Huevos` y `Patés`: 11 filas, 8 pendientes, 3 parciales, 4 sin web.
 
+Estado 2026-06-19: cerrado. Las 11 filas quedaron revisadas; 5 `verificado`
+y 6 `parcial`. Venta online: 3 `sí`, 3 `no`, 5 `no comprobado`; los 3
+`sí` tienen `Canal de venta`.
+
 Comandos:
 
 ```bash
@@ -222,13 +227,24 @@ npx pnpm list:province guipuzcoa --categoria "Patés"
 
 Trabajo:
 
-- Separar productor/ganadero de carnicería minorista sin producción propia.
-- Confirmar carne Eusko Label, granja, obrador o elaboración propia con fuente fiable.
-- Las filas sin web requieren especial cuidado: Google Maps y directorio local no bastan para `verificado` si no prueban producción propia.
+- [x] Separar productor/ganadero de carnicería minorista sin producción propia.
+- [x] Confirmar carne Eusko Label, granja, obrador o elaboración propia con fuente fiable.
+- [x] Las filas sin web requieren especial cuidado: Google Maps y directorio local no bastan para `verificado` si no prueban producción propia.
+
+Notas de cierre:
+
+- `oihanalde-irun`, `ezkurtxerri-getaria` y `basatxerri-zestoa` quedan con `Venta online=sí`; los dos primeros se cierran con tienda oficial y Basatxerri queda `parcial` por depender de BaserriaKm0/Maps para la identidad.
+- `euskaber-zaldibia`, `borda-baserria-olaberria` y `pates-zubia-eskoriatza` se cierran con fuente oficial y contacto actualizado.
+- `okelgintza-zestoa`, `huevos-gorrotxategi-idiazabal`, `etxezarreta-harategia-lasarte-oria`, `munagorri-harategia-tolosa` y `pineda-harategia-hernani` quedan `parcial/no comprobado` por falta de fuente primaria concluyente.
 
 ## Lote 7 - Obradores / cerveza / miel
 
 Incluye `Pan y pastelería`, `Dulces`, `Chocolate`, `Helados`, `Miel` y `Cerveza artesana`: 21 filas, 7 pendientes, 14 parciales.
+
+Estado 2026-06-19: cerrado. De 21 filas iniciales se conservan 19 y se
+documentan 2 bajas por `other-province`. Resultado de las filas conservadas:
+15 `verificado`, 4 `parcial`; venta online: 10 `sí`, 5 `no`, 4
+`no comprobado`; los 10 `sí` tienen `Canal de venta`.
 
 Comandos:
 
@@ -240,19 +256,31 @@ npx pnpm list:province guipuzcoa --categoria "Miel"
 
 Trabajo:
 
-- Confirmar elaboración propia frente a tienda/cafetería.
-- Revisar tiendas online de obradores y cerveceras; si hay venta, rellenar `Canal de venta`.
-- Para miel, priorizar apicultor/marca propia y evitar fichas comerciales sin trazabilidad.
+- [x] Confirmar elaboración propia frente a tienda/cafetería.
+- [x] Revisar tiendas online de obradores y cerveceras; si hay venta, rellenar `Canal de venta`.
+- [x] Para miel, priorizar apicultor/marca propia y evitar fichas comerciales sin trazabilidad.
+
+Notas de cierre:
+
+- Bajas documentadas: `mala-gissona-oiartzun` y `bidassoa-basque-brewery-irun`, porque las fuentes actuales sitúan la producción en Noáin, Navarra; la presencia guipuzcoana vigente es taproom/bar, no productor provincial.
+- `cervezas-olaneta-errenteria` se conserva como `Destilería Licorera Vasca Olañeta` y pasa de `Cerveza artesana` a `Licores`.
+- `lurka-chocolate-donostia-san-sebastian` queda `parcial/no comprobado`: la marca está respaldada por prensa reciente, pero la web propia aparece suspendida.
+- `galparsoro-okindegia-donostia-san-sebastian` sube a `verificado/sí` tras confirmar fuente oficial con compra online para recogida.
+- `mellifera-larraul` sube a `verificado/no comprobado` tras recuperar fuente oficial activa de apicultura sostenible y productos de la colmena.
+- `pagoa-basque-beer-oiartzun` y `cervezas-olaneta-errenteria` siguen `parcial/no comprobado` para un pase futuro con fuente primaria.
 
 ## Pases transversales
 
 ### Venta online y canal
 
-Hay 26 filas con `Venta online=sí` y `Canal de venta` vacío. Al cerrar cada lote, corregir el canal en la misma edición. Si el canal no se puede confirmar, bajar `Venta online` a `no comprobado` y documentar evidencia.
+Al cierre principal hay 85 filas con `Venta online=sí` y todas tienen
+`Canal de venta`. Si en un pase futuro no se puede confirmar un canal, bajar
+`Venta online` a `no comprobado` y documentar evidencia.
 
 ### Evidencia
 
-Crear `data/evidence/pais-vasco/guipuzcoa.jsonl` al empezar el primer lote real. Cada fila resuelta debe tener evidencia para:
+`data/evidence/pais-vasco/guipuzcoa.jsonl` recoge las decisiones de este pase.
+Cada fila resuelta debe tener evidencia para:
 
 - existencia o actividad del productor;
 - pertenencia a DOP/IGP/Eusko Label/directorio cuando sea el soporte principal;
@@ -261,7 +289,7 @@ Crear `data/evidence/pais-vasco/guipuzcoa.jsonl` al empezar el primer lote real.
 
 ### Imágenes
 
-80 filas no tienen `imagen`. El cierre de provincia no necesita forzar imagen para todas, pero cada lote debe:
+Tras el cierre principal, 77 filas no tienen `imagen`. El cierre de provincia no necesita forzar imagen para todas, pero cada lote debe:
 
 - validar que las imágenes existentes siguen apuntando a archivos reales;
 - buscar imagen solo si hay candidato oficial claro;
@@ -297,3 +325,6 @@ npx pnpm verify:data
 | 2026-06-18 | 3 - Lácteos y quesos | cerrado | 48 filas conservadas y 3 fusiones documentadas; sin pendientes. |
 | 2026-06-18 | 4 - Mar y sal | cerrado | 10 filas revisadas; venta online/canal cerrado salvo Oliveri `no comprobado`. |
 | 2026-06-18 | 5 - Vegetal / despensa | cerrado | 21 filas revisadas; 9 canales de venta completados, sin pendientes. |
+| 2026-06-19 | 6 - Cárnicos / huevos / patés | cerrado | 11 filas revisadas; 5 `verificado`, 6 `parcial`, sin pendientes. |
+| 2026-06-19 | 7 - Obradores / cerveza / miel | cerrado | 19 filas conservadas y 2 bajas `other-province`; sin pendientes. |
+| 2026-06-19 | Cierre principal | cerrado | Guipúzcoa queda en 169 filas, 122 `verificado`, 47 `parcial` y sin `pendiente`; entra en cobertura estricta. |
