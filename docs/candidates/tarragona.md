@@ -24,7 +24,7 @@
 - **Dudoso encaje pendiente (Priorat):** Unió Fruits SCCL (coop de fruta).
 - **Revisión local de duplicados 2026-06-16:** comparado contra `npx pnpm list:province tarragona` y `npx pnpm list:province tarragona --categoria Bodega`. Las secciones cerradas quedan con casillas `[x]` y `already-present`, `rejected`, `moved` o `dup-of` para no reabrirlas.
 - **Fusión resuelta (2026-06-21):** *Agricola Ulldemolins* = `agricola-dulldemolins-ulldemolins` (`Aceite`, `parcial`), cuya fila ya recoge "vinos DO Montsant"; no se crea fila nueva.
-- **Pendiente útil:** DOQ Priorat (~108, ya descontados los 3 `dup-of` integrados vía Montsant) + 3 diferidas de Conca. Al integrar Priorat, resolver primero los alias de web ya anotados.
+- **DOQ Priorat: HECHA (2026-06-22).** 106 cellers integrados en `tarragona.csv` (lotes 1-12), con evidencia en `data/evidence/catalunya/tarragona.jsonl`. **1 diferido:** Gason Expert (= Totó Marqués, municipi/web no fiables). **1 dup-of:** Unió Fruits = `cellers-unio-reus`. Alias de web resueltos (Aretheal, Les Vinyes Forer Massard, Clos Alkio) y nombres reales tras alias (Clos de Lobac=Costers del Siurana, Clos de Lona=Clos de l'Ona, Domini de la Cartoixa=Clos Galena). **Pendiente:** 3 diferidas de Conca (Abadia de Poblet, Mas de la Creu, Mas de la Pansa) + reconfirmar online de los `no comprobado`.
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  ✅ HECHA (18 integradas; ver «Estado de revisión» arriba)
@@ -138,43 +138,43 @@ Estado por defecto: `unverified`. No integrar sin nueva comprobación de activid
 - [x] **Joan Ametller** — integrated: `celler-joan-ametller-la-morera-de-montsant` (verificado) — <https://www.doqpriorat.org/cellers/joan-ametller-sl/>
 - [x] **Josep Grau Viticultors** — DOQ Priorat — already-present (vía DO Montsant): `josep-grau-viticultor-capcanes`; <https://www.doqpriorat.org/cellers/josep-grau-viticultors-sl/>
 - [x] **La Cassola del Priorat** — integrated: `la-cassola-del-priorat-gratallops` (restaurant-celler, Gratallops; verificado) — <https://www.doqpriorat.org/cellers/la-cassola-del-priorat-sl/>
-- [ ] **La Conreria Dscala Dei** — DOQ Priorat — <https://www.doqpriorat.org/cellers/la-conreria-dscala-dei-sl/>
-- [ ] **Maius Viticultors** — DOQ Priorat — <https://www.doqpriorat.org/cellers/maius-viticultors-scp/>
-- [ ] **Marco Abella** — DOQ Priorat — <https://www.doqpriorat.org/cellers/marco-abella-sl/>
-- [ ] **Mas dels Estels** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mas-dels-estels/>
-- [ ] **Mas Igneus** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mas-igneus/>
-- [ ] **Mas la Mola** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mas-la-mola/>
-- [ ] **Mas Martinet Assessoraments** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mas-martinet-assessoraments-sl/>
-- [ ] **Mas Martinet Viticultors** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mas-martinet-viticultors-sl/>
-- [ ] **Mas Perinet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mas-perinet-sl/>
-- [ ] **Meritxell Palleja** — DOQ Priorat — <https://www.doqpriorat.org/cellers/meritxell-palleja-slu/>
-- [ ] **Merum Priorati** — DOQ Priorat — <https://www.doqpriorat.org/cellers/merum-priorati-sl/>
-- [ ] **Miguel Caldentey Cabre** — DOQ Priorat — <https://www.doqpriorat.org/cellers/miguel-caldentey-cabre/>
-- [ ] **Mussons Vins** — DOQ Priorat — <https://www.doqpriorat.org/cellers/mussons-vins-sl/>
+- [x] **La Conreria Dscala Dei** — integrated: `la-conreria-dscala-dei-la-morera-de-montsant` (Escaladei; verificado) — <https://www.doqpriorat.org/cellers/la-conreria-dscala-dei-sl/>
+- [x] **Maius Viticultors** — integrated: `maius-viticultors-poboleda` (Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/maius-viticultors-scp/>
+- [x] **Marco Abella** — integrated: `marco-abella-porrera` (Porrera; verificado, botiga online) — <https://www.doqpriorat.org/cellers/marco-abella-sl/>
+- [x] **Mas dels Estels** — integrated: `mas-dels-estels-falset` (parcial; ctra. Falset-Bellmunt, municipi aprox. Falset) — <https://www.doqpriorat.org/cellers/mas-dels-estels/>
+- [x] **Mas Igneus** — integrated: `mas-igneus-gratallops` (Gratallops; verificado) — <https://www.doqpriorat.org/cellers/mas-igneus/>
+- [x] **Mas la Mola** — integrated: `mas-la-mola-poboleda` (Poboleda; verificado) — <https://www.doqpriorat.org/cellers/mas-la-mola/>
+- [x] **Mas Martinet Assessoraments** — integrated: `mas-martinet-assessoraments-falset` (marca Les Cousins; Falset; verificado) — <https://www.doqpriorat.org/cellers/mas-martinet-assessoraments-sl/>
+- [x] **Mas Martinet Viticultors** — integrated: `mas-martinet-viticultors-falset` (Sara Pérez, Clos Martinet; Falset; verificado) — <https://www.doqpriorat.org/cellers/mas-martinet-viticultors-sl/>
+- [x] **Mas Perinet** — integrated: `mas-perinet-poboleda` (Perinet Winery, Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/mas-perinet-sl/>
+- [x] **Meritxell Palleja** — integrated: `meritxell-palleja-gratallops` (marca Nita, Gratallops; verificado) — <https://www.doqpriorat.org/cellers/meritxell-palleja-slu/>
+- [x] **Merum Priorati** — integrated: `merum-priorati-porrera` (Porrera, grup Pere Ventura; verificado) — <https://www.doqpriorat.org/cellers/merum-priorati-sl/>
+- [x] **Miguel Caldentey Cabre** — integrated: `miguel-caldentey-gratallops` (Quod Agis, Gratallops; parcial, sense web) — <https://www.doqpriorat.org/cellers/miguel-caldentey-cabre/>
+- [x] **Mussons Vins** — integrated: `mussons-vins-poboleda` (Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/mussons-vins-sl/>
 - [x] **Noguerals** — DOQ Priorat — already-present (vía DO Montsant): `celler-noguerals-cornudella-de-montsant`; <https://www.doqpriorat.org/cellers/noguerals-scp/>
-- [ ] **Peters Plot Hodgkinson Mas del Habanero** — DOQ Priorat — <https://www.doqpriorat.org/cellers/peters-plot-sl-hodgkinson-mas-del-habanero/>
-- [ ] **Pinord Mas Blanc** — DOQ Priorat — <https://www.doqpriorat.org/cellers/pinord-mas-blanc/>
-- [ ] **Portal del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/portal-del-priorat-sl/>
-- [ ] **Ritme Celler** — DOQ Priorat — <https://www.doqpriorat.org/cellers/ritme-celler/>
-- [ ] **Roca de les Dotze** — DOQ Priorat — <https://www.doqpriorat.org/cellers/roca-de-les-dotze/>
-- [ ] **Rotllan Terrones Celler Rotllan Torra** — DOQ Priorat — <https://www.doqpriorat.org/cellers/rotllan-terrones-sl-celler-rotllan-torra/>
-- [ ] **Sabate i Mur Vinaters** — DOQ Priorat — <https://www.doqpriorat.org/cellers/sabate-i-mur-vinaters/>
-- [ ] **Sandra Doix Celler** — DOQ Priorat — <https://www.doqpriorat.org/cellers/sandra-doix-celler/>
-- [ ] **Sangenis i Vaque** — DOQ Priorat — <https://www.doqpriorat.org/cellers/sangenis-i-vaque/>
-- [ ] **Sao del Coster** — DOQ Priorat — <https://www.doqpriorat.org/cellers/sao-del-coster/>
-- [ ] **Sola Classic** — DOQ Priorat — <https://www.doqpriorat.org/cellers/sola-classic/>
-- [ ] **Terra del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terra-del-priorat/>
-- [ ] **Terra Dominicata** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terra-dominicata-slu/>
-- [ ] **Terres de Vidalba** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terres-de-vidalba-sl/>
-- [ ] **Terroir Al Limit** — DOQ Priorat — <https://www.doqpriorat.org/cellers/terroir-al-limit-sl/>
-- [ ] **Torres Priorat** — DOQ Priorat — not-auto-duplicate: relacionado con Torres, pero no fusionar con `familia-torres-milmanda-vimbodi-i-poblet` sin verificar sede y productor; <https://www.doqpriorat.org/cellers/torres-priorat-sl/>
-- [ ] **Trossos del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/trossos-del-priorat/>
-- [ ] **Unio Fruits** — DOQ Priorat — dudoso: coop de fruta; revisar encaje KM0 antes de integrar; <https://www.doqpriorat.org/cellers/unio-fruits-sccl/>
-- [ ] **Vinicola del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/vinicola-del-priorat-sccl/>
-- [ ] **Viticultors del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/viticultors-del-priorat-sl/>
-- [ ] **Viticultors Mas den Gil** — DOQ Priorat — <https://www.doqpriorat.org/cellers/viticultors-mas-den-gil-sl/>
-- [ ] **Aretheal Priorat** — DOQ Priorat — alias-resolved: `www-arethealpriorat-com`; confirmar nombre legal/ficha antes de integrar
-- [ ] **Les Vinyes Forer Massard** — DOQ Priorat — alias-resolved: `www-vinyesforermassard-com`; confirmar nombre legal/ficha antes de integrar
+- [x] **Peters Plot Hodgkinson Mas del Habanero** — integrated: `hodgkinson-mas-del-habanero-falset` (parcial; finca entre Falset i Gratallops, municipi aprox. Falset) — <https://www.doqpriorat.org/cellers/peters-plot-sl-hodgkinson-mas-del-habanero/>
+- [x] **Pinord Mas Blanc** — integrated: `mas-blanc-pinord-falset` (finca Mas Blanc, Falset; verificado, botiga online) — <https://www.doqpriorat.org/cellers/pinord-mas-blanc/>
+- [x] **Portal del Priorat** — integrated: `portal-del-priorat-gratallops` (Alfredo Arribas, Clos del Portal/El Lloar, oficina Gratallops; verificado) — <https://www.doqpriorat.org/cellers/portal-del-priorat-sl/>
+- [x] **Ritme Celler** — integrated: `ritme-celler-la-vilella-alta` (Albert Jané/Acústic, La Vilella Alta; verificado, botiga online) — <https://www.doqpriorat.org/cellers/ritme-celler/>
+- [x] **Roca de les Dotze** — integrated: `roca-de-les-dotze-la-vilella-alta` (La Vilella Alta; verificado) — <https://www.doqpriorat.org/cellers/roca-de-les-dotze/>
+- [x] **Rotllan Terrones Celler Rotllan Torra** — integrated: `celler-rotllan-torra-torroja-del-priorat` (Torroja; verificado) — <https://www.doqpriorat.org/cellers/rotllan-terrones-sl-celler-rotllan-torra/>
+- [x] **Sabate i Mur Vinaters** — integrated: `sabate-i-mur-vinaters-torroja-del-priorat` (Torroja, biodinàmic; verificado) — <https://www.doqpriorat.org/cellers/sabate-i-mur-vinaters/>
+- [x] **Sandra Doix Celler** — integrated: `sandra-doix-poboleda` (parcial; projecte Marla, Poboleda) — <https://www.doqpriorat.org/cellers/sandra-doix-celler/>
+- [x] **Sangenis i Vaque** — integrated: `sangenis-i-vaque-porrera` (Porrera; verificado, botiga online) — <https://www.doqpriorat.org/cellers/sangenis-i-vaque/>
+- [x] **Sao del Coster** — integrated: `sao-del-coster-gratallops` (Gratallops, biodinàmic; verificado) — <https://www.doqpriorat.org/cellers/sao-del-coster/>
+- [x] **Sola Classic** — integrated: `sola-classic-bellmunt-del-priorat` (Bellmunt, Mas Hereu; verificado) — <https://www.doqpriorat.org/cellers/sola-classic/>
+- [x] **Terra del Priorat** — integrated: `terra-del-priorat-cornudella-de-montsant` (Cornudella de Montsant; verificado, vinoteca online) — <https://www.doqpriorat.org/cellers/terra-del-priorat/>
+- [x] **Terra Dominicata** — integrated: `terra-dominicata-la-morera-de-montsant` (hotel-celler, La Morera; verificado) — <https://www.doqpriorat.org/cellers/terra-dominicata-slu/>
+- [x] **Terres de Vidalba** — integrated: `terres-de-vidalba-poboleda` (Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/terres-de-vidalba-sl/>
+- [x] **Terroir Al Limit** — integrated: `terroir-al-limit-torroja-del-priorat` (Dominik Huber, Torroja; verificado) — <https://www.doqpriorat.org/cellers/terroir-al-limit-sl/>
+- [x] **Torres Priorat** — integrated: `torres-priorat-el-lloar` (verificado; bodega Perpetual a El Lloar, distinta de `familia-torres-milmanda-vimbodi-i-poblet`) — <https://www.doqpriorat.org/cellers/torres-priorat-sl/>
+- [x] **Trossos del Priorat** — integrated: `trossos-del-priorat-gratallops` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/trossos-del-priorat/>
+- [x] **Unio Fruits** — dup-of: `cellers-unio-reus` (= Grup/Cellers Unió, gran cooperativa multi-DO amb seu a Reus, ja present); sense fila nova — <https://www.doqpriorat.org/cellers/unio-fruits-sccl/>
+- [x] **Vinicola del Priorat** — integrated: `vinicola-del-priorat-gratallops` (cooperativa, Gratallops, marca Ònix; verificado) — <https://www.doqpriorat.org/cellers/vinicola-del-priorat-sccl/>
+- [x] **Viticultors del Priorat** — integrated: `viticultors-del-priorat-bellmunt-del-priorat` (marca Morlanda, Bellmunt; verificado) — <https://www.doqpriorat.org/cellers/viticultors-del-priorat-sl/>
+- [x] **Viticultors Mas den Gil** — integrated: `viticultors-mas-den-gil-bellmunt-del-priorat` (Bellmunt; verificado, botiga online) — <https://www.doqpriorat.org/cellers/viticultors-mas-den-gil-sl/>
+- [x] **Aretheal Priorat** — integrated: `aretheal-priorat-falset` (Marc Aguiló, Colls de Porrera/Falset; verificado) — alias `www-arethealpriorat-com` resuelto
+- [x] **Les Vinyes Forer Massard** — integrated: `les-vinyes-forer-massard-poboleda` (David Forer MW & Franck Massard, Poboleda; verificado, botiga online) — alias `www-vinyesforermassard-com` resuelto
 
 
 ## Ruta del Vi DOQ Priorat – DO Montsant · cellers DO Montsant  ·  ✅ HECHA + VERIFICADA (44 filas: 41 verificado / 3 parcial; 2 sin fila — ver «Estado de revisión» arriba)
