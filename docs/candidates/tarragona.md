@@ -64,24 +64,24 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 
 Estado por defecto: `unverified`. No integrar sin nueva comprobación de actividad, ubicación y venta online. Las líneas `canonical-dup` son la entrada que debe sobrevivir si también aparece en DO Montsant.
 
-- [ ] **Adrets del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/adrets-del-priorat/>
-- [ ] **Adria Domenech Simo** — DOQ Priorat — <https://www.doqpriorat.org/cellers/adria-domenech-simo/>
-- [ ] **Alicia i Josep Viticultors** — DOQ Priorat — <https://www.doqpriorat.org/cellers/alicia-i-josep-viticultors-sl/>
-- [ ] **Alvarez Duran Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/alvarez-duran-priorat-slu/>
-- [ ] **Alvaro Palacios** — DOQ Priorat — <https://www.doqpriorat.org/cellers/alvaro-palacios-sl/>
-- [ ] **Arrels del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/arrels-del-priorat-scp/>
-- [ ] **Atavus Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/atavus-priorat/>
-- [ ] **Balaguer i Cabre** — DOQ Priorat — <https://www.doqpriorat.org/cellers/balaguer-i-cabre-sl/>
-- [ ] **Balmaprat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/balmaprat/>
-- [ ] **Bodega Bravo Escos** — DOQ Priorat — <https://www.doqpriorat.org/cellers/bodega-bravo-escos-sl/>
-- [ ] **Bodegas Bg** — DOQ Priorat — <https://www.doqpriorat.org/cellers/bodegas-bg/>
-- [ ] **Bodegas Mas Alta** — DOQ Priorat — <https://www.doqpriorat.org/cellers/bodegas-mas-alta-sa/>
-- [ ] **Bodegas Y Vinedos Cal Grau** — DOQ Priorat — <https://www.doqpriorat.org/cellers/bodegas-y-vinedos-cal-grau/>
-- [ ] **Buil Gine** — DOQ Priorat — <https://www.doqpriorat.org/cellers/buil-gine-sl/>
-- [ ] **Burgos Porta** — DOQ Priorat — <https://www.doqpriorat.org/cellers/burgos-porta/>
-- [ ] **Cal Batllet Celler Ripoll Sans** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cal-batllet-celler-ripoll-sans/>
-- [ ] **Casa Gran del Siurana** — DOQ Priorat — <https://www.doqpriorat.org/cellers/casa-gran-del-siurana-sl/>
-- [ ] **Castelo de Pedregosa** — DOQ Priorat — <https://www.doqpriorat.org/cellers/castelo-de-pedregosa-sl/>
+- [x] **Adrets del Priorat** — integrated: `adrets-del-priorat-torroja-del-priorat` (parcial; Torroja, sense web pròpia localitzable) — <https://www.doqpriorat.org/cellers/adrets-del-priorat/>
+- [x] **Adria Domenech Simo** — integrated: `celler-lantic-magatzem-porrera` (nom comercial Celler l'Antic Magatzem, Porrera) — <https://www.doqpriorat.org/cellers/adria-domenech-simo/>
+- [x] **Alicia i Josep Viticultors** — integrated: `alicia-i-josep-viticultors-porrera` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/alicia-i-josep-viticultors-sl/>
+- [x] **Alvarez Duran Priorat** — integrated: `alvarez-duran-porrera` (verificado; Sal·lustià Àlvarez) — <https://www.doqpriorat.org/cellers/alvarez-duran-priorat-slu/>
+- [x] **Alvaro Palacios** — integrated: `alvaro-palacios-gratallops` (verificado; venda per assignació, sense botiga) — <https://www.doqpriorat.org/cellers/alvaro-palacios-sl/>
+- [x] **Arrels del Priorat** — integrated: `arrels-del-priorat-gratallops` (parcial; vins rancis, sense web pròpia) — <https://www.doqpriorat.org/cellers/arrels-del-priorat-scp/>
+- [x] **Atavus Priorat** — integrated: `atavus-priorat-gratallops` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/atavus-priorat/>
+- [x] **Balaguer i Cabre** — integrated: `balaguer-i-cabre-gratallops` (verificado; monovarietals garnatxa) — <https://www.doqpriorat.org/cellers/balaguer-i-cabre-sl/>
+- [x] **Balmaprat** — integrated: `celler-balmaprat-porrera` (verificado; petit celler 2008) — <https://www.doqpriorat.org/cellers/balmaprat/>
+- [x] **Bodega Bravo Escos** — integrated: `bravo-escos-torroja-del-priorat` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/bodega-bravo-escos-sl/>
+- [x] **Bodegas Bg** — integrated: `bodegas-bg-gratallops` (Bordalás García, Gratallops; verificado) — <https://www.doqpriorat.org/cellers/bodegas-bg/>
+- [x] **Bodegas Mas Alta** — integrated: `bodegas-mas-alta-la-vilella-alta` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/bodegas-mas-alta-sa/>
+- [x] **Bodegas Y Vinedos Cal Grau** — integrated: `bodegas-vinedos-cal-grau-el-molar` (parcial; El Molar, grup Vinos Iberian) — <https://www.doqpriorat.org/cellers/bodegas-y-vinedos-cal-grau/>
+- [x] **Buil Gine** — integrated: `buil-gine-gratallops` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/buil-gine-sl/>
+- [x] **Burgos Porta** — integrated: `burgos-porta-mas-sinen-poboleda` (Mas Sinén, Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/burgos-porta/>
+- [x] **Cal Batllet Celler Ripoll Sans** — integrated: `cal-batllet-ripoll-sans-gratallops` (verificado; Marc Ripoll Sans) — <https://www.doqpriorat.org/cellers/cal-batllet-celler-ripoll-sans/>
+- [x] **Casa Gran del Siurana** — integrated: `casa-gran-del-siurana-bellmunt-del-priorat` (Bellmunt; grup Perelada; verificado) — <https://www.doqpriorat.org/cellers/casa-gran-del-siurana-sl/>
+- [x] **Castelo de Pedregosa** — integrated: `castelo-de-pedregosa-bellmunt-del-priorat` (parcial; casa de cava del Penedès amb projecte Celler Nûr a Bellmunt) — <https://www.doqpriorat.org/cellers/castelo-de-pedregosa-sl/>
 - [ ] **Celler Ardevol i Associats** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-ardevol-i-associats-sl/>
 - [ ] **Celler Cal Pla** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-cal-pla-sl/>
 - [ ] **Celler Castellet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-castellet/>
