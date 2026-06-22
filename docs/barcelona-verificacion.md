@@ -15,18 +15,16 @@
 5. Un fetch fallido (SSL/http/timeout/ECONNREFUSED) **no** es un sitio muerto: confirma por búsqueda
    antes de blanquear una web.
 
-## Estado actual (2026-06-20)
+## Estado actual (2026-06-22)
 
-- Filas: **2.485** · verificado **1.700** · parcial **768** · pendiente **17**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **488 purgadas**). Verificadas > pendientes desde el lote 85;
-  pendientes por debajo de 1.000 desde el lote 95.
-- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-351** (1-110 individuales + grupos 111-115 de
-  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-351 pasada ambiciosa). Desde el
-  lote **144** la pasada ataca municipios gruesos (~4-8 pendientes) uno por lote, fila a fila a fondo.
-  Ja **només queden municipis amb 1 pendent** (17 municipis = 17 pendents); cada lote = 1 municipi
-  (excepte grafies duplicades, p.ex. L'Espunyola portava 2 pendents «L'Espunyola»/«l'Espunyola»).
-- **Siguiente: Lote 352** — Sant Martí d'Albars i la resta (Santa Cecília de Voltregà,
-  Santa Eulàlia de Riuprimer, Santa Magdalena de Montbui, Segur de Veciana…). Recomputar con `list:province`.
+- Filas: **2.484** · verificado **1.709** · parcial **775** · pendiente **0** — ✅ **PASADA COMPLETA**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **489 purgadas**). 0 pendientes desde el lote 368.
+  Reparto final: 68% verificado · 31% parcial · 0% pendiente; `check:csv`/`verify:data` en verde.
+- Modo: lote a lote bajo demanda. **Cerrados: lotes 1-368** (1-110 individuales + grupos 111-115 de
+  municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-351 pasada ambiciosa +
+  **352-368 los 17 municipis finals d'1 pendent c/u**). Tota la cua de `pendiente` està tancada.
+- **Siguiente: —— no quedan pendientes.** Mantenimiento futuro (no bloqueante): unificar grafías
+  duplicadas y resolver los dups marcados abajo. Recomputar con `list:province` si entran altas nuevas.
 - Ojo dup pendent de pasada: «Domingo Garcia, Josep Oriol» (Sabadell, parcial) sembla la mateixa
   explotació que «Ca n'Ustrell Agricultura» (Sabadell-Sant Julià) — mateixa masia Ca n'Ustrell + email
   cuagricultura@gmail.com, GMaps contaminat (Centre Teràpia Manual). Fusionar/purgar en pasada futura.
@@ -531,7 +529,23 @@ Leyenda: ⬜ pendiente · 🟨 en curso · ✅ hecho. Cifras de municipios sin t
 | 349 | Sant Llorenç D'hortons (la Beguda Baixa) | 0 | ✅ | 2026-06-20 | Castell d'Age (família Junyent, cava i vi ecològic DO, >50 anys vinyes pròpies) verif; comandes per email/telèfon/WhatsApp → VO=sí whatsapp|email |
 | 350 | Sant Llorenç d'Hortons | 0 | ✅ | 2026-06-20 | Celler Sant Joannes / Agrícola Hortóns SL (vins ecològics Penedès des de 1853, Decanter 2022; carret+checkout) verif VO=sí ecommerce |
 | 351 | Sant Martí Sarroca (la Bleda) | 0 | ✅ | 2026-06-20 | Green Hort SCP (horta ecològica de proximitat a La Bleda; **DAR «GreenHort SCP»** aromàtiques+hortícoles, web Wix pròpia + GMaps «Pere GreenHort») verif; web amb secció «Venda on line» però sense carret confirmable → VO=no comprobado |
-| — | _resto (17 municipios, 1 pendent c/u)_ | 17 | ⬜ | | recomputar al llegar |
+| 352 | Sant Martí d'Albars | 0 | ✅ | 2026-06-22 | Mas Les Vinyes (SCCL, fruita/verdura/ous/xai eco; web pròpia + DAR, tel/email DAR afegits) verif VO=no |
+| 353 | Santa Cecília de Voltregà | 0 | ✅ | 2026-06-22 | Mas El Guiu = **plats cuinats** 100% naturals, NO charcutería → recat **Comida preparada**; web catàleg sense carret, verif VO=no |
+| 354 | Santa Eulàlia de Riuprimer | 0 | ✅ | 2026-06-22 | **1 purga**: «Anglada Puigcerver, Manuel» quimera (el nom és un porter d'hoquei retirat / directiu a Tona; sense DAR, sense rastre de cansaladeria, ni al directori Osona; tel 933 de BCN) |
+| 355 | Santa Margarida de Montbui | 0 | ✅ | 2026-06-22 | Mas Buret (apicultors 4a gen.); **municipi corregit** «Santa Magdalena»→«Santa Margarida de Montbui» + recat Despensa→**Miel**; web informativa, verif VO=no |
+| 356 | Segur de Veciana | 0 | ✅ | 2026-06-22 | Formatges Veciana (cabra Murciano-Granadina, ramat propi, coves d'afinat; web acrefa + IG); venuda a formatgeacasa.cat → verif VO=sí marketplace |
+| 357 | Subirats (Can Cartró) | 0 | ✅ | 2026-06-22 | Cellers Carol Vallès (celler familiar Penedès, carret+checkout) verif VO=sí ecommerce |
+| 358 | Subirats (Can Rossell) | 0 | ✅ | 2026-06-22 | Família Catasús Vilamós (Pere Catasús, productor #003 Préssec d'Ordal; email corregit `pere.catasus@`) parcial VO=no |
+| 359 | Subirats (Nucli de Can Cartró) | 0 | ✅ | 2026-06-22 | Carns Can Cartró SL (carnisseria real, Firmania + domini/email propis; web "launching soon") parcial VO=no |
+| 360 | Subirats (Sant Pau d'Ordal) | 0 | ✅ | 2026-06-22 | Mel Can Mallofré (DAR Mallofré Massana Salvador, marca MEL CAN MALLOFRÉ; recat **Miel** + tel/email DAR) parcial VO=no |
+| 361 | Talamanca | 0 | ✅ | 2026-06-22 | Tarin Macarulla Josep (DAR horta; tel/email ja correctes) parcial VO=no |
+| 362 | Torrelavit (Lavit) | 0 | ✅ | 2026-06-22 | Fleca Cal Camilo (Òscar Tubella, premi Andreu Llargués; guia ajuntament) verif VO=no |
+| 363 | Vallbona d'Anoia | 0 | ✅ | 2026-06-22 | D'melis Hidromel (Bernardo Gil; recat Bodega→**Hidromiel**); web SSL self-signed = viva (regla 5), carret no confirmable, verif VO=no comprobado |
+| 364 | Vallcebre | 0 | ✅ | 2026-06-22 | Calves Ferrer Jordi → **Mel l'Abella del Berguedà (Jordi Calves)** (DAR mel, recat **Miel** + tel/email DAR; venuda a elformiguer.cat) parcial VO=no |
+| 365 | Valls de Torroella | 0 | ✅ | 2026-06-22 | Cervesa Guineu (ca l'Arenys, cervesera vora el Cardener; carret) verif VO=sí ecommerce (web també llista adreça comercial a St. Miquel de Balenyà; municipi heretat conservat) |
+| 366 | Vidrà | 0 | ✅ | 2026-06-22 | Fleca de Vidrà (forn de llenya des de 1992) verif VO=no |
+| 367 | Viladecavalls | 0 | ✅ | 2026-06-22 | El Toc d'Or (Let's Live Sauces): domini propi caigut (ECONNREFUSED, regla 5) + IG + GMaps, sense font viva confirmable, parcial VO=no comprobado |
+| 368 | Viladecavalls / Granollers | 0 | ✅ | 2026-06-22 | Èric Pastisser (Èric Lloberes): només IG propi; **municipi fixat a Granollers** per coords; parcial VO=no comprobado |
 
 ## Candidatos futuros (vistos en el DAR, no integrados)
 
