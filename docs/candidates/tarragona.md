@@ -109,35 +109,35 @@ Estado por defecto: `unverified`. No integrar sin nueva comprobación de activid
 - [x] **Cellers de la Cartoixa de Montsalvat** — integrated: `cartoixa-de-montsalvat-la-vilella-alta` (La Vilella Alta; verificado) — <https://www.doqpriorat.org/cellers/cellers-de-la-cartoixa-de-montsalvat-sl/>
 - [x] **Cellers de Scala Dei** — integrated: `cellers-de-scala-dei-la-morera-de-montsant` (Escaladei; verificado, botiga online) — <https://www.doqpriorat.org/cellers/cellers-de-scala-dei-sa/>
 - [x] **Cellers Melis** — integrated: `cellers-melis-torroja-del-priorat` (Torroja, ecològic; verificado) — <https://www.doqpriorat.org/cellers/cellers-melis/>
-- [ ] **Cellers Sabate Franquet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-sabate-franquet-sl/>
-- [ ] **Cellers Tane** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-tane/>
-- [ ] **Cims de Porrera** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cims-de-porrera/>
-- [ ] **Clos Berenguer** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-berenguer-sl/>
-- [ ] **Clos de Lobac** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-de-lobac/>
-- [ ] **Clos de Lona** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-de-lona/>
-- [ ] **Clos Dominic** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-dominic-sl/>
-- [ ] **Clos Figueras** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-figueras-sa/>
-- [ ] **Clos i Terrasses** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-i-terrasses/>
+- [x] **Cellers Sabate Franquet** — integrated: `cellers-sabate-franquet-torroja-del-priorat` (Torroja; verificado) — <https://www.doqpriorat.org/cellers/cellers-sabate-franquet-sl/>
+- [x] **Cellers Tane** — integrated: `cellers-tane-poboleda` (Poboleda; verificado) — <https://www.doqpriorat.org/cellers/cellers-tane/>
+- [x] **Cims de Porrera** — integrated: `cims-de-porrera-porrera` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/cims-de-porrera/>
+- [x] **Clos Berenguer** — integrated: `clos-berenguer-el-molar` (El Molar; verificado, botiga online) — <https://www.doqpriorat.org/cellers/clos-berenguer-sl/>
+- [x] **Clos de Lobac** — integrated: `costers-del-siurana-gratallops` (= Costers del Siurana / Clos de l'Obac, Gratallops; verificado) — <https://www.doqpriorat.org/cellers/clos-de-lobac/>
+- [x] **Clos de Lona** — integrated: `clos-de-lona-gratallops` (= Clos de l'Ona, Joan Farreras; parcial, sense web) — <https://www.doqpriorat.org/cellers/clos-de-lona/>
+- [x] **Clos Dominic** — integrated: `clos-dominic-porrera` (Porrera; parcial, sense web pròpia) — <https://www.doqpriorat.org/cellers/clos-dominic-sl/>
+- [x] **Clos Figueras** — integrated: `clos-figueras-gratallops` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/clos-figueras-sa/>
+- [x] **Clos i Terrasses** — integrated: `clos-i-terrasses-gratallops` (= Clos Erasmus, Gratallops; parcial) — <https://www.doqpriorat.org/cellers/clos-i-terrasses/>
 - [x] **Clos Mogador** — DOQ Priorat — already-present (vía DO Montsant): `clos-mogador-gratallops`; <https://www.doqpriorat.org/cellers/clos-mogador-sl/>
-- [ ] **Clos Pachem** — DOQ Priorat — <https://www.doqpriorat.org/cellers/clos-pachem/>
-- [ ] **Costers del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/costers-del-priorat/>
-- [ ] **Devinssi** — DOQ Priorat — <https://www.doqpriorat.org/cellers/devinssi-sl/>
-- [ ] **Domaines Magrez Espagne** — DOQ Priorat — <https://www.doqpriorat.org/cellers/domaines-magrez-espagne-sl/>
-- [ ] **Domini de la Cartoixa** — DOQ Priorat — <https://www.doqpriorat.org/cellers/domini-de-la-cartoixa-sl/>
-- [ ] **Els Villusionistes** — DOQ Priorat — <https://www.doqpriorat.org/cellers/els-villusionistes/>
-- [ ] **En Numeros Vermells** — DOQ Priorat — <https://www.doqpriorat.org/cellers/en-numeros-vermells/>
-- [ ] **Estriacus** — DOQ Priorat — <https://www.doqpriorat.org/cellers/estriacus-sl/>
-- [ ] **Ferrer Bobet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/ferrer-bobet/>
-- [ ] **Gason Expert** — DOQ Priorat — <https://www.doqpriorat.org/cellers/gason-expert-slu/>
-- [ ] **Genium Celler** — DOQ Priorat — <https://www.doqpriorat.org/cellers/genium-celler-sl/>
-- [ ] **Giol Porrera** — DOQ Priorat — <https://www.doqpriorat.org/cellers/giol-porrera/>
-- [ ] **Gran Clos** — DOQ Priorat — <https://www.doqpriorat.org/cellers/gran-clos/>
-- [ ] **Gratavinum** — DOQ Priorat — <https://www.doqpriorat.org/cellers/gratavinum-sl/>
-- [ ] **Hidalgo Albert** — DOQ Priorat — <https://www.doqpriorat.org/cellers/hidalgo-albert/>
-- [ ] **Clos Alkio** — DOQ Priorat — alias-resolved: `https-closalkio-com`; confirmar nombre legal/ficha antes de integrar
-- [ ] **Joan Ametller** — DOQ Priorat — <https://www.doqpriorat.org/cellers/joan-ametller-sl/>
+- [x] **Clos Pachem** — integrated: `clos-pachem-gratallops` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/clos-pachem/>
+- [x] **Costers del Priorat** — integrated: `costers-del-priorat-el-molar` (El Molar; verificado, botiga online) — <https://www.doqpriorat.org/cellers/costers-del-priorat/>
+- [x] **Devinssi** — integrated: `celler-devinssi-gratallops` (verificado) — <https://www.doqpriorat.org/cellers/devinssi-sl/>
+- [x] **Domaines Magrez Espagne** — integrated: `domaines-magrez-espagne-porrera` (Porrera; parcial, sense web pròpia) — <https://www.doqpriorat.org/cellers/domaines-magrez-espagne-sl/>
+- [x] **Domini de la Cartoixa** — integrated: `domini-de-la-cartoixa-el-molar` (= Clos Galena, El Molar; verificado, botiga online) — <https://www.doqpriorat.org/cellers/domini-de-la-cartoixa-sl/>
+- [x] **Els Villusionistes** — integrated: `els-villusionistes-la-vilella-baixa` (La Vilella Baixa; verificado) — <https://www.doqpriorat.org/cellers/els-villusionistes/>
+- [x] **En Numeros Vermells** — integrated: `en-numeros-vermells-gratallops` (Gratallops, vins naturals; verificado) — <https://www.doqpriorat.org/cellers/en-numeros-vermells/>
+- [x] **Estriacus** — integrated: `estriacus-el-molar` (El Molar, Mas dels Frares; verificado) — <https://www.doqpriorat.org/cellers/estriacus-sl/>
+- [x] **Ferrer Bobet** — integrated: `ferrer-bobet-falset` (Falset; verificado) — <https://www.doqpriorat.org/cellers/ferrer-bobet/>
+- [ ] **Gason Expert** — deferred: `gason-expert-slu` = Bodegas Totó Marqués; única adreça localitzable és la del consell (placeholder) i vincle amb Prades (fora de les 9 viles DOQ). Reconfirmar municipi/web abans d'integrar — <https://www.doqpriorat.org/cellers/gason-expert-slu/>
+- [x] **Genium Celler** — integrated: `genium-celler-poboleda` (Poboleda; verificado) — <https://www.doqpriorat.org/cellers/genium-celler-sl/>
+- [x] **Giol Porrera** — integrated: `giol-porrera-porrera` (verificado, botiga online) — <https://www.doqpriorat.org/cellers/giol-porrera/>
+- [x] **Gran Clos** — integrated: `gran-clos-bellmunt-del-priorat` (Bellmunt; verificado, botiga online) — <https://www.doqpriorat.org/cellers/gran-clos/>
+- [x] **Gratavinum** — integrated: `gratavinum-gratallops` (Gratallops, no Torroja; verificado, botiga online) — <https://www.doqpriorat.org/cellers/gratavinum-sl/>
+- [x] **Hidalgo Albert** — integrated: `celler-hidalgo-albert-poboleda` (Poboleda; verificado) — <https://www.doqpriorat.org/cellers/hidalgo-albert/>
+- [x] **Clos Alkio** — integrated: `clos-alkio-gratallops` (Gratallops, Mikko Alkio; verificado, botiga online) — alias `https-closalkio-com` resuelto
+- [x] **Joan Ametller** — integrated: `celler-joan-ametller-la-morera-de-montsant` (verificado) — <https://www.doqpriorat.org/cellers/joan-ametller-sl/>
 - [x] **Josep Grau Viticultors** — DOQ Priorat — already-present (vía DO Montsant): `josep-grau-viticultor-capcanes`; <https://www.doqpriorat.org/cellers/josep-grau-viticultors-sl/>
-- [ ] **La Cassola del Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/la-cassola-del-priorat-sl/>
+- [x] **La Cassola del Priorat** — integrated: `la-cassola-del-priorat-gratallops` (restaurant-celler, Gratallops; verificado) — <https://www.doqpriorat.org/cellers/la-cassola-del-priorat-sl/>
 - [ ] **La Conreria Dscala Dei** — DOQ Priorat — <https://www.doqpriorat.org/cellers/la-conreria-dscala-dei-sl/>
 - [ ] **Maius Viticultors** — DOQ Priorat — <https://www.doqpriorat.org/cellers/maius-viticultors-scp/>
 - [ ] **Marco Abella** — DOQ Priorat — <https://www.doqpriorat.org/cellers/marco-abella-sl/>
