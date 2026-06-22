@@ -82,33 +82,33 @@ Estado por defecto: `unverified`. No integrar sin nueva comprobación de activid
 - [x] **Cal Batllet Celler Ripoll Sans** — integrated: `cal-batllet-ripoll-sans-gratallops` (verificado; Marc Ripoll Sans) — <https://www.doqpriorat.org/cellers/cal-batllet-celler-ripoll-sans/>
 - [x] **Casa Gran del Siurana** — integrated: `casa-gran-del-siurana-bellmunt-del-priorat` (Bellmunt; grup Perelada; verificado) — <https://www.doqpriorat.org/cellers/casa-gran-del-siurana-sl/>
 - [x] **Castelo de Pedregosa** — integrated: `castelo-de-pedregosa-bellmunt-del-priorat` (parcial; casa de cava del Penedès amb projecte Celler Nûr a Bellmunt) — <https://www.doqpriorat.org/cellers/castelo-de-pedregosa-sl/>
-- [ ] **Celler Ardevol i Associats** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-ardevol-i-associats-sl/>
-- [ ] **Celler Cal Pla** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-cal-pla-sl/>
-- [ ] **Celler Castellet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-castellet/>
-- [ ] **Celler Cecilio** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-cecilio-sl/>
-- [ ] **Celler Cesca Vicent** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-cesca-vicent-sa/>
-- [ ] **Celler Clos 93 Priorat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-clos-93-priorat-sl/>
-- [ ] **Celler Cristian Frances Breton** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-cristian-frances-breton/>
-- [ ] **Celler Crivelle i Valls** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-crivelle-i-valls-sl/>
-- [ ] **Celler de Lencastell** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-de-lencastell/>
-- [ ] **Celler Escoda Palleja** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-escoda-palleja/>
-- [ ] **Celler Familia Nin Ortiz** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-familia-nin-ortiz-sl/>
-- [ ] **Celler Familia Sedo Barcelo** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-familia-sedo-barcelo/>
-- [ ] **Celler Joan Simo** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-joan-simo-sl/>
-- [ ] **Celler Jordi Domenech** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-jordi-domenech/>
-- [ ] **Celler Lo** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-lo/>
-- [ ] **Celler Mas de les Pereres** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-mas-de-les-pereres-sl/>
-- [ ] **Celler Mas den Blei** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-mas-den-blei/>
-- [ ] **Celler Mas Doix** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-mas-doix-sl/>
-- [ ] **Celler Pasanau** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-pasanau/>
-- [ ] **Celler Pol Grifoll Declara** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-pol-grifoll-declara/>
-- [ ] **Celler Rosa Ma Bartolome Vernet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-rosa-ma-bartolome-vernet/>
-- [ ] **Celler Sabate** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-sabate/>
-- [ ] **Celler Xavier Artiol** — DOQ Priorat — <https://www.doqpriorat.org/cellers/celler-xavier-artiol/>
-- [ ] **Cellers Capafons Osso** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-capafons-osso-sl/>
-- [ ] **Cellers de la Cartoixa de Montsalvat** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-de-la-cartoixa-de-montsalvat-sl/>
-- [ ] **Cellers de Scala Dei** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-de-scala-dei-sa/>
-- [ ] **Cellers Melis** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-melis/>
+- [x] **Celler Ardevol i Associats** — integrated: `celler-ardevol-i-associats-porrera` (verificado) — <https://www.doqpriorat.org/cellers/celler-ardevol-i-associats-sl/>
+- [x] **Celler Cal Pla** — integrated: `celler-cal-pla-porrera` (verificado; Porrera des de 1814) — <https://www.doqpriorat.org/cellers/celler-cal-pla-sl/>
+- [x] **Celler Castellet** — integrated: `celler-castellet-porrera` (verificado) — <https://www.doqpriorat.org/cellers/celler-castellet/>
+- [x] **Celler Cecilio** — integrated: `celler-cecilio-gratallops` (verificado, botiga online; des de 1942) — <https://www.doqpriorat.org/cellers/celler-cecilio-sl/>
+- [x] **Celler Cesca Vicent** — integrated: `celler-cesca-vicent-gratallops` (verificado; Gratallops, ecològic) — <https://www.doqpriorat.org/cellers/celler-cesca-vicent-sa/>
+- [x] **Celler Clos 93 Priorat** — integrated: `celler-clos-93-el-lloar` (El Lloar; verificado, botiga online) — <https://www.doqpriorat.org/cellers/celler-clos-93-priorat-sl/>
+- [x] **Celler Cristian Frances Breton** — integrated: `celler-cristian-frances-breto-torroja-del-priorat` (parcial; Torroja, sense web pròpia) — <https://www.doqpriorat.org/cellers/celler-cristian-frances-breton/>
+- [x] **Celler Crivelle i Valls** — integrated: `celler-crivelle-i-valls-poboleda` (Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/celler-crivelle-i-valls-sl/>
+- [x] **Celler de Lencastell** — integrated: `celler-de-lencastell-porrera` (Roquers de Porrera; verificado, botiga online) — <https://www.doqpriorat.org/cellers/celler-de-lencastell/>
+- [x] **Celler Escoda Palleja** — integrated: `celler-escoda-palleja-torroja-del-priorat` (parcial; Torroja, micro-celler) — <https://www.doqpriorat.org/cellers/celler-escoda-palleja/>
+- [x] **Celler Familia Nin Ortiz** — integrated: `celler-familia-nin-ortiz-falset` (Falset, Finca Les Planetes; verificado, biodinàmic) — <https://www.doqpriorat.org/cellers/celler-familia-nin-ortiz-sl/>
+- [x] **Celler Familia Sedo Barcelo** — integrated: `celler-familia-sedo-barcelo-bellmunt-del-priorat` (Bellmunt; verificado) — <https://www.doqpriorat.org/cellers/celler-familia-sedo-barcelo/>
+- [x] **Celler Joan Simo** — integrated: `celler-joan-simo-porrera` (verificado; Porrera, Les Eres) — <https://www.doqpriorat.org/cellers/celler-joan-simo-sl/>
+- [x] **Celler Jordi Domenech** — integrated: `celler-jordi-domenech-poboleda` (parcial; Poboleda, Clos Penat) — <https://www.doqpriorat.org/cellers/celler-jordi-domenech/>
+- [x] **Celler Lo** — integrated: `celler-lo-la-vilella-baixa` (verificado; La Vilella Baixa) — <https://www.doqpriorat.org/cellers/celler-lo/>
+- [x] **Celler Mas de les Pereres** — integrated: `celler-mas-de-les-pereres-poboleda` (Dirk Hoet / Nunci, Poboleda; verificado) — <https://www.doqpriorat.org/cellers/celler-mas-de-les-pereres-sl/>
+- [x] **Celler Mas den Blei** — integrated: `celler-mas-den-blei-la-morera-de-montsant` (La Morera de Montsant; verificado, botiga online) — <https://www.doqpriorat.org/cellers/celler-mas-den-blei/>
+- [x] **Celler Mas Doix** — integrated: `celler-mas-doix-poboleda` (Poboleda; verificado, botiga online) — <https://www.doqpriorat.org/cellers/celler-mas-doix-sl/>
+- [x] **Celler Pasanau** — integrated: `celler-pasanau-la-morera-de-montsant` (verificado) — <https://www.doqpriorat.org/cellers/celler-pasanau/>
+- [x] **Celler Pol Grifoll Declara** — integrated: `cellers-grifoll-declara-el-molar` (El Molar; verificado) — <https://www.doqpriorat.org/cellers/celler-pol-grifoll-declara/>
+- [x] **Celler Rosa Ma Bartolome Vernet** — integrated: `celler-bartolome-bellmunt-del-priorat` (nom comercial Celler Bartolomé, Bellmunt; verificado) — <https://www.doqpriorat.org/cellers/celler-rosa-ma-bartolome-vernet/>
+- [x] **Celler Sabate** — integrated: `celler-sabate-la-vilella-baixa` (La Vilella Baixa, des de 1910; verificado) — <https://www.doqpriorat.org/cellers/celler-sabate/>
+- [x] **Celler Xavier Artiol** — integrated: `celler-xavier-artiol-falset` (parcial; Vins Mas Carlets, Falset) — <https://www.doqpriorat.org/cellers/celler-xavier-artiol/>
+- [x] **Cellers Capafons Osso** — integrated: `cellers-capafons-osso-falset` (Falset; verificado) — <https://www.doqpriorat.org/cellers/cellers-capafons-osso-sl/>
+- [x] **Cellers de la Cartoixa de Montsalvat** — integrated: `cartoixa-de-montsalvat-la-vilella-alta` (La Vilella Alta; verificado) — <https://www.doqpriorat.org/cellers/cellers-de-la-cartoixa-de-montsalvat-sl/>
+- [x] **Cellers de Scala Dei** — integrated: `cellers-de-scala-dei-la-morera-de-montsant` (Escaladei; verificado, botiga online) — <https://www.doqpriorat.org/cellers/cellers-de-scala-dei-sa/>
+- [x] **Cellers Melis** — integrated: `cellers-melis-torroja-del-priorat` (Torroja, ecològic; verificado) — <https://www.doqpriorat.org/cellers/cellers-melis/>
 - [ ] **Cellers Sabate Franquet** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-sabate-franquet-sl/>
 - [ ] **Cellers Tane** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cellers-tane/>
 - [ ] **Cims de Porrera** — DOQ Priorat — <https://www.doqpriorat.org/cellers/cims-de-porrera/>
