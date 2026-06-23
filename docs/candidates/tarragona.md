@@ -9,6 +9,13 @@
 > antes de integrarlo hay que (1) re-deduplicar con `npx pnpm list:province tarragona`,
 > (2) confirmar web/ubicación/actividad y (3) decidir `verificacion` y `Venta online`.
 > Generado el 2026-06-15.
+>
+> **⮕ Cierre (2026-06-23):** completada la verificación profunda de `tarragona.csv`
+> (68 `pendiente` legacy → 0; estado y lotes en `docs/tarragona-verificacion.md`).
+> Resueltos los diferidos de Conca: **Mas de la Pansa integrado**, **Mas de la Creu**
+> confirmado real (municipio por fijar), **Abadia de Poblet** rechazado (marca de
+> Tintoré). Duplicado **Mas Martinet** fusionado. Esta nota queda como histórico de
+> la expansión de vino; no es cola de revisión.
 
 
 **Total inicial: 214 · cribado editorial 2026-06-15 · deduplicado local 2026-06-16.**
@@ -19,12 +26,12 @@
 - **Duplicados entre DOs (contar 1 vez):** Castell d'Or (Conca+Tgn), Clos Mogador (Priorat+Montsant), Josep Grau Viticultor (Priorat+Montsant), Noguerals (Priorat+Montsant).
 - **Alias de web → nombre real (Priorat):** `www-arethealpriorat-com`=Aretheal Priorat · `https-closalkio-com`=Clos Alkio · `www-vinyesforermassard-com`=Les Vinyes Forer Massard.
 - **DO Tarragona: HECHA.** 10 integradas (`verificado`): Biopaumerà, Castell d'Or, Coop. Vila-rodona, Celler 9+, Caves Magrinyà Calaf, Celler Pedrola (Camí de Sirga), Coop. Sant Isidre de Vilabella, Estol Verd, Terra Cellars, Vinya Janine. **Descartadas 2:** *Bodegas Embotelladoras* (sin ficha, nombre de embotellador, no verificable como KM0) y *Mas dels Frares* (bodega experimental de la Facultat d'Enologia URV, no es productor de consumo). *Castell d'Or* integrada aquí resuelve también el duplicado de Conca.
-- **Conca de Barberà: HECHA.** 18 integradas en `tarragona.csv` (`verificado`): Aymar, Carles Andreu, Clos Montblanc, Costador, La Llena, Mas Foraster (Josep Foraster), Pla de la Masó, Mas de la Sabatera, Rendé Masdéu, Rosa Maria Torres, Sanstravé, Vega Aixalà, Vins de Pedra, Cellers Domenys, Família Torres-Milmanda, Gabor, Gerida, Succés Vinícola. **Descartadas:** Bodegas 1898 (sin ficha), Single Vineyards Collectors (sin ficha, négoci), Vins i Caves Portell (= Coop. Vinícola de Sarral, ya presente). **Movida a lleida.csv (provincia Lleida, no Tarragona):** *Cara Nord Celler* (`cara-nord-celler-el-vilosell`). **Diferidas (sin ficha Google localizable):** Abadia de Poblet (marca de Celler Tintoré, Vimbodí), Celler Mas de la Creu (Barberà), Celler Mas de la Pansa (Barberà).
+- **Conca de Barberà: HECHA.** 18 integradas en `tarragona.csv` (`verificado`): Aymar, Carles Andreu, Clos Montblanc, Costador, La Llena, Mas Foraster (Josep Foraster), Pla de la Masó, Mas de la Sabatera, Rendé Masdéu, Rosa Maria Torres, Sanstravé, Vega Aixalà, Vins de Pedra, Cellers Domenys, Família Torres-Milmanda, Gabor, Gerida, Succés Vinícola. **Descartadas:** Bodegas 1898 (sin ficha), Single Vineyards Collectors (sin ficha, négoci), Vins i Caves Portell (= Coop. Vinícola de Sarral, ya presente). **Movida a lleida.csv (provincia Lleida, no Tarragona):** *Cara Nord Celler* (`cara-nord-celler-el-vilosell`). **Diferidas → resueltas (2026-06-23):** Mas de la Pansa integrado (`mas-de-la-pansa-barbera-de-la-conca`); Mas de la Creu confirmado real (Vidbertus, municipio por fijar); Abadia de Poblet rechazado (marca de Celler Tintoré).
 - **DO Montsant: HECHA + VERIFICADA (2026-06-21).** 44 filas nuevas en `tarragona.csv` (`Bodega`): **41 `verificado`, 3 `parcial`** (Spectacle Vins, Viñas del Montsant/Morlanda, El Vi dels 20 — sin web/canal comprobable hoy). Coordenadas afinadas (29 precisas Nominatim/web, 14 a centroide); `Venta online` comprobada producto a producto (**15 `sí`** con botiga propia o marketplace; resto `no`/`no comprobado`). Incluye los 3 `dup-of` canónicos en Priorat (Clos Mogador, Josep Grau, Noguerals). **Sin fila nueva:** *Venus la Universal – Sindicat la Figuera* (mismo productor, fusionado en `venus-la-universal-falset`) y *Agricola Ulldemolins* (ya presente como Aceite). **Homónimo:** override `el molar`→Priorat en `municipios-overrides.json`.
 - **Dudoso encaje pendiente (Priorat):** Unió Fruits SCCL (coop de fruta).
 - **Revisión local de duplicados 2026-06-16:** comparado contra `npx pnpm list:province tarragona` y `npx pnpm list:province tarragona --categoria Bodega`. Las secciones cerradas quedan con casillas `[x]` y `already-present`, `rejected`, `moved` o `dup-of` para no reabrirlas.
 - **Fusión resuelta (2026-06-21):** *Agricola Ulldemolins* = `agricola-dulldemolins-ulldemolins` (`Aceite`, `parcial`), cuya fila ya recoge "vinos DO Montsant"; no se crea fila nueva.
-- **DOQ Priorat: HECHA (2026-06-22).** 106 cellers integrados en `tarragona.csv` (lotes 1-12), con evidencia en `data/evidence/catalunya/tarragona.jsonl`. **1 diferido:** Gason Expert (= Totó Marqués, municipi/web no fiables). **1 dup-of:** Unió Fruits = `cellers-unio-reus`. Alias de web resueltos (Aretheal, Les Vinyes Forer Massard, Clos Alkio) y nombres reales tras alias (Clos de Lobac=Costers del Siurana, Clos de Lona=Clos de l'Ona, Domini de la Cartoixa=Clos Galena). **Pendiente:** 3 diferidas de Conca (Abadia de Poblet, Mas de la Creu, Mas de la Pansa) + reconfirmar online de los `no comprobado`.
+- **DOQ Priorat: HECHA (2026-06-22).** 106 cellers integrados en `tarragona.csv` (lotes 1-12), con evidencia en `data/evidence/catalunya/tarragona.jsonl`. **1 diferido:** Gason Expert (= Totó Marqués, municipi/web no fiables). **1 dup-of:** Unió Fruits = `cellers-unio-reus`. Alias de web resueltos (Aretheal, Les Vinyes Forer Massard, Clos Alkio) y nombres reales tras alias (Clos de Lobac=Costers del Siurana, Clos de Lona=Clos de l'Ona, Domini de la Cartoixa=Clos Galena). **Resuelto (2026-06-23):** diferidas de Conca cerradas (Pansa integrado, Creu confirmado/municipio por fijar, Abadia rechazado). Repaso de `no comprobado` del vino iniciado (Lote 8 en `docs/tarragona-verificacion.md`): ~20 revisados, 11→`sí`; ~58 con web quedan como backfill de mantenimiento (no bloqueante).
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  ✅ HECHA (18 integradas; ver «Estado de revisión» arriba)
@@ -32,7 +39,7 @@
 Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 
 
-- [ ] **Abadia de Poblet (Vimbodí i Poblet)** — deferred: posible marca de Celler Tintoré; sin ficha Google localizable. Reconfirmar antes de crear fila.
+- [x] **Abadia de Poblet (Vimbodí i Poblet)** — rejected (2026-06-23): es una marca/línea de Celler Tintoré, no un productor independiente. No se crea fila.
 - [x] **Aymar Vitivinícoles (Vimbodí i Poblet)** — already-present: `aymar-vitivinicoles-vimbodi-i-poblet`
 - [x] **Bodegas 1898 (Horta d'Avinyó)** — rejected: sin ficha verificable como productor local
 - [x] **Cara Nord Celler (El Vilosell)** — movida a `lleida.csv` como `cara-nord-celler-el-vilosell`
@@ -41,8 +48,8 @@ Fuente: https://www.doconcadebarbera.com/cellers-de-la-d-o-conca-de-barbera/
 - [x] **Celler Clos Montblanc (Barberà de la Conca)** — already-present: `clos-montblanc-barbera-de-la-conca`
 - [x] **Celler Costador Terroirs Mediterranis (Barberà de la Conca)** — already-present: `celler-costador-barbera-de-la-conca`
 - [x] **Celler La Llena (Vilanova de Prades)** — already-present: `celler-la-llena-vilanova-de-prades`
-- [ ] **Celler Mas de la Creu (Barberà de la Conca)** — deferred: sin ficha Google localizable. Reconfirmar existencia/ubicación antes de crear fila.
-- [ ] **Celler Mas de la Pansa (Barberà de la Conca)** — deferred: sin ficha Google localizable. Reconfirmar existencia/ubicación antes de crear fila.
+- [~] **Celler Mas de la Creu** — confirmado real (2026-06-23): es Celler Vidbertus, DO Conca de Barberà (web `masdelacreu.com`, IG `@cellermasdelacreu`). **Municipio por confirmar antes de crear fila:** el mas histórico (1860) figura en l'Espluga de Francolí, pero la vinificación se hace en el Viver de Celleristes de Barberà de la Conca y la DO lo lista en Barberà. Resolver sede/coords (vía `masdelacreu.com`) antes de insertar.
+- [x] **Celler Mas de la Pansa (Barberà de la Conca)** — INTEGRADO (2026-06-23) como `mas-de-la-pansa-barbera-de-la-conca` (`parcial`, `Venta online=sí`/marketplace). Celler d'Imma Soler (des de 2016), vins ecològics; coords precisas (Nominatim), comprable en Bodeboca/Mentta.
 - [x] **Celler Mas de la Sabatera (Montblanc)** — already-present: `celler-mas-de-la-sabatera-montblanc`
 - [x] **Celler Mas Foraster (Montblanc)** — already-present: `celler-mas-foraster-montblanc`
 - [x] **Celler Pla de la Masó (Barberà de la Conca)** — already-present: `celler-pla-de-la-maso-barbera-de-la-conca`
