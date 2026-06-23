@@ -31,12 +31,18 @@
   (Família Catasús→centroide Subirats; Masia Fontirons/l'Espunyola, 39 km, +web masiafontirons.com→verif).
   Dedup **Ca n'Ustrell**: purgada la fila-registro «Domingo Garcia, Josep Oriol» (mateixa masia + email
   cuagricultura@, GMaps de Centre Teràpia Manual); email traspasado a «Ca n'Ustrell Agricultura» (verif).
-- Pendiente (mismo patrón, no señalado antes): inconsistencias bare↔paréntesis en **Olèrdola (Moja/Sant
-  Pere Molanta)**, **Cabrianes↔Sallent**, **Castelladral↔Navàs**, **Sant Miquel de Balenyà (Seva)** y
-  **Cal Rosal (Berga/Olvan)**; + formas con barra (Canet de Mar/Calella, Olèrdola/Vilafranca,
-  Parets/Mollet). Los «Municipi (nucli)» de forma única y consistente (Granollers (Palou), Valldoreix…)
-  son intencionados, no se tocan.
-- Ojo grafías ya unificadas: "Esquirol"→"l'Esquirol" (lote 202); "Vilobi"/"Vilobí del Penedès" (lote 200); Subirats / Font-rubí / l'Espunyola / Bigues i Riells del Fai / Gallecs (2026-06-22, ver arriba).
+- ✅ **2ª tanda de normalización (2026-06-22)**: resueltas las inconsistencias bare↔paréntesis →
+  **Olèrdola** (Moja/Sant Pere Molanta/Vilafranca, 7), **Castelladral** (3) + **Navàs** (el Mujal, 1),
+  **Sallent** (Cabrianes, 3), **Seva** (EMD Sant Miquel de Balenyà, 5), **Berga**/**Olvan** (Cal Rosal,
+  según el lado real de cada fila), **Canet de Mar** (La Montnegre) y **Mollet del Vallès** (Gallecs).
+  + canonicalizadas 4 municipios sin artículo (no geo-resolvían): **la Garriga** (14), **la Roca del
+  Vallès** (9), **el Papiol** (6), **la Nou de Berguedà** (3). Todo dentro de 15 km del centroide.
+- No tocados a propósito: «Municipi (nucli)» de forma única y consistente (Granollers (Palou),
+  Sant Cugat (Valldoreix), Salelles (Manresa)…) y núcleos/EMD con identidad propia donde el productor
+  es conocido por el núcleo (Segur de Veciana, Valls de Torroella, Bellaterra, Castelltallat). No son
+  duplicados; mapearlos al municipio padre restaría findability. Los «Barcelona - <districte>» geo-resuelven
+  vía el split por « - » de `lookupCentroid`.
+- Ojo grafías ya unificadas: "Esquirol"→"l'Esquirol" (lote 202); "Vilobi"/"Vilobí del Penedès" (lote 200); Subirats / Font-rubí / l'Espunyola / Bigues i Riells del Fai / Gallecs + Olèrdola / Castelladral / Sallent / Seva / Cal Rosal / la Garriga / la Roca del Vallès / el Papiol / la Nou de Berguedà (2026-06-22, ver arriba).
 - Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
 - Último push: lotes 1-220 en `main` (2026-06-19). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
