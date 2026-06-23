@@ -17,22 +17,26 @@
 
 ## Estado actual (2026-06-22)
 
-- Filas: **2.484** · verificado **1.709** · parcial **775** · pendiente **0** — ✅ **PASADA COMPLETA**
-  (snapshot inicial 2.973 · 35 · 16 · 2.922; **489 purgadas**). 0 pendientes desde el lote 368.
-  Reparto final: 68% verificado · 31% parcial · 0% pendiente; `check:csv`/`verify:data` en verde.
+- Filas: **2.483** · verificado **1.710** · parcial **773** · pendiente **0** — ✅ **PASADA COMPLETA**
+  (snapshot inicial 2.973 · 35 · 16 · 2.922; **490 purgadas**). 0 pendientes desde el lote 368.
+  Reparto: 69% verificado · 31% parcial · 0% pendiente; `check:csv`/`verify:data` en verde.
 - Modo: lote a lote bajo demanda. **Cerrados: lotes 1-368** (1-110 individuales + grupos 111-115 de
   municipis petits + lotes 116-143 alfabéticos de la cola «resto» + 144-351 pasada ambiciosa +
   **352-368 los 17 municipis finals d'1 pendent c/u**). Tota la cua de `pendiente` està tancada.
-- **Siguiente: —— no quedan pendientes.** Mantenimiento futuro (no bloqueante): unificar grafías
-  duplicadas y resolver los dups marcados abajo. Recomputar con `list:province` si entran altas nuevas.
-- Ojo dup pendent de pasada: «Domingo Garcia, Josep Oriol» (Sabadell, parcial) sembla la mateixa
-  explotació que «Ca n'Ustrell Agricultura» (Sabadell-Sant Julià) — mateixa masia Ca n'Ustrell + email
-  cuagricultura@gmail.com, GMaps contaminat (Centre Teràpia Manual). Fusionar/purgar en pasada futura.
-  (Ull grafía: «Subirats»/«…(Els Casots/Ordal/Sant Pau d'Ordal/Lavern)», «Gallecs (Mollet/Parets)»,
-  «Espunyola»/«l'Espunyola»/«L'Espunyola»; unificar/revisar en pasada futura.)
-- Ojo: el CSV mezcla "Bigues i Riells" y "Bigues i Riells del Fai" (nombre oficial desde 2021) como municipios distintos; unificar grafía en una pasada futura.
-- Ojo grafías: "Esquirol"→"l'Esquirol" ya unificado (lote 202); "Vilobi"/"Vilobí del Penedès" unificado en el lote 200.
-- Ojo grafías **Font-rubí**: conviuen 5 variants del mateix municipi — «Font-rubí» (11), «Font-rubí (Guardiola de Font-rubí)» (3), «Guardiola de Font-Rubí» (2), «Guardiola de Font-rubí» (1), «Font-rubí (Grabuac)» (1). Unificar en una pasada futura.
+- **Siguiente: —— no quedan pendientes.** Recomputar con `list:province` si entran altas nuevas.
+- ✅ **Normalización de grafías + dedup (2026-06-22)**: unificados a la grafía canónica **Subirats** (40),
+  **Font-rubí** (18; «Guardiola de Font-rubí/-Rubí» y paréntesis Grabuac/Guardiola colapsados),
+  **l'Espunyola** (5; antes Espunyola/L'Espunyola) y **Bigues i Riells del Fai** (8, nombre oficial 2021);
+  «Gallecs (Mollet/Parets)» reatribuido a **Mollet/Parets del Vallès**. Corregidas 2 coords malas
+  (Família Catasús→centroide Subirats; Masia Fontirons/l'Espunyola, 39 km, +web masiafontirons.com→verif).
+  Dedup **Ca n'Ustrell**: purgada la fila-registro «Domingo Garcia, Josep Oriol» (mateixa masia + email
+  cuagricultura@, GMaps de Centre Teràpia Manual); email traspasado a «Ca n'Ustrell Agricultura» (verif).
+- Pendiente (mismo patrón, no señalado antes): inconsistencias bare↔paréntesis en **Olèrdola (Moja/Sant
+  Pere Molanta)**, **Cabrianes↔Sallent**, **Castelladral↔Navàs**, **Sant Miquel de Balenyà (Seva)** y
+  **Cal Rosal (Berga/Olvan)**; + formas con barra (Canet de Mar/Calella, Olèrdola/Vilafranca,
+  Parets/Mollet). Los «Municipi (nucli)» de forma única y consistente (Granollers (Palou), Valldoreix…)
+  son intencionados, no se tocan.
+- Ojo grafías ya unificadas: "Esquirol"→"l'Esquirol" (lote 202); "Vilobi"/"Vilobí del Penedès" (lote 200); Subirats / Font-rubí / l'Espunyola / Bigues i Riells del Fai / Gallecs (2026-06-22, ver arriba).
 - Heredado integrado: la unidad de la sesión `codex-candidates-2026-06` (`data/evidence/catalunya/barcelona.jsonl` con 2 altas de las Rutes del Vi + borrado de `docs/candidates/barcelona.md`) se commiteó aparte (`d58771d`).
 - Último push: lotes 1-220 en `main` (2026-06-19). Convención (post-realineado): **1 municipio = 1 fila de
   worklist = 1 commit = 1 «lote N»**; si se agrupan municipis petits, titular el commit con el rango real
