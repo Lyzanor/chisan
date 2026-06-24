@@ -674,3 +674,24 @@ El detalle por lote (qué se verificó, qué se purgó y por qué) se registró 
 está en el historial git de este archivo: `git log --follow -p -- docs/barcelona-verificacion.md`.
 Desde ahora, cada lote cerrado deja solo su línea en la worklist; la evidencia fina va en el mensaje
 de commit del lote.
+
+## Imágenes / logos (P3) — 2026-06-24
+
+Tanda de imágenes con `scripts/enrich-producer-images.py` (dry-run `--report` →
+triaje por slug + contact sheets → `--apply` solo de logos verificados a ojo,
+`--asset-provincia "catalunya/barcelona"`; reconvertir CRLF→LF tras el apply).
+512 filas inspeccionables (sin imagen + con web).
+
+**Apoyo de triaje a escala:** detección de URL duplicadas. Un mismo asset en
+varias marcas distintas = basura compartida (se purgó: `parc_logo.png` en 20
+productores del Prat = logo del Parc Agrari, logos de mercado/favicon
+compartidos…, 47 slugs); el mismo asset en varias sedes de la *misma* marca
+(can-rosell, carns-corella, delicies-sense-gluten) se conserva.
+
+- **Tanda 1 (STRONG): +107 logos. Cobertura 962 → 1069 / 2483 (39 % → 43 %).**
+  Rechazados 19 que el scorer da como "logo": badge D.O. Cava, Vanity Fair y
+  Bodegas Señorío de Líbano (Rioja) por marca ajena, SumUp, Too Good To Go, tira
+  de tarjetas de pago, PRTR/NextGenEU/red.es, ayuntamientos y fundación Catalunya
+  La Pedrera, asociación de comerciantes (acist), `logos_oficials`, y campañas
+  regionales compartidas (Parc dels Olors, Horta de Proximitat). 1 fallo de red
+  (`font-catala-gerard`). QA final desde los `.webp` guardados: 0 basura colada.
