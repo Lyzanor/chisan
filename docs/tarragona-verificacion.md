@@ -238,3 +238,38 @@ sin revisar individualmente esta pasada (muchas con age-gate/Cloudflare). Son fi
 ya `verificado` de identidad; la mayoría son probablemente comprables vía marketplace.
 Es un repaso de mantenimiento que puede continuar por tandas; no es `pendiente`.
 Las otras tres provincias catalanas también conservan `no comprobado` residual.
+
+## Imágenes / logos (P3) — 2026-06-24
+
+Primera tanda de la brecha de imágenes (Tarragona era la peor: 29 %). Método:
+`scripts/enrich-producer-images.py` en dry-run con `--report`, triaje por slug y
+`--apply` **solo** de los logos verificados a ojo, con
+`--asset-provincia "catalunya/tarragona"` (la ruta canónica; el script escribe
+top-level por defecto). **Aviso:** el `csv.writer` del script reescribe el CSV con
+CRLF; hay que reconvertir a LF tras el `--apply` (`perl -i -pe 's/\r\n/\n/g'`) o
+`check:csv` falla. Verificado que el diff solo toca la columna `imagen` (110 altas,
+0 cambios en otros campos).
+
+- **Cobertura: 91 → 201 / 314 (29 % → 64 %).** +110 logos, todos revisados en su
+  canvas final (contact sheets); ninguno es basura.
+- **27 candidatos rechazados** (el scorer los rankea alto como "logo"; se dejan en
+  blanco a propósito): 11 sellos PRTR «Pla/Plan de Recuperación», bandera UE
+  (`cellers-domenys`), euro-hoja eco (`maius-viticultors`), Generalitat
+  (`vinicola-del-priorat`), CCPAE ×3 (`celler-cesca-vicent`, `celler-hidalgo-albert`,
+  `vinya-janine`), DOQ Priorat ×2 (`cellers-de-scala-dei`, `cartoixa-de-montsalvat`),
+  Premis Vinari (`castell-dor`), International Wine Challenge (`celler-de-lera`),
+  PDR.cat (`sant-josep-vins`), CookieYes (`celler-devinssi`), Wine in Moderation
+  (`alvarez-duran`), «Logos-Publicidad/Candidatura» (`celler-crivelle-i-valls`,
+  `celler-mas-de-les-vinyes`), foto de barricas (`celler-balmaprat`), y logos de
+  **otra marca**: La Cistella del Ebre (`celler-pedrola`), Vinitum (`mas-la-mola`),
+  Bodegas Iberian (`bodegas-vinedos-cal-grau`).
+- **2 residuales reintentables** (logo real, fallo de red puntual, no se tocó `web`):
+  `costers-del-siurana` (TLS caducado en obac.es) y `terres-de-vidalba`
+  (read timeout en terresdevidalba.com).
+- **Posible duplicado detectado:** `vinas-del-montsant-marca` (Viñas del Montsant) y
+  `viticultors-del-priorat-bellmunt-del-priorat` (Viticultors del Priorat) comparten
+  `web=morlanda.com` y el mismo logo Morlanda. Revisar en una pasada de verificación
+  (fuera del alcance de imágenes).
+- Quedan ~75 filas sin imagen: 36 sin `web`, ~39 sin candidato aceptable
+  (favicon/404/solo foto). Gate `verify:data` OK. Pendiente: Barcelona (39 %) y
+  Lleida (46 %).
