@@ -988,3 +988,28 @@ cerrado el bloque 1-50. El snapshot final de Lleida queda en 204 filas: 163
 
 Fuentes principales: <https://caranordceller.com/> y
 <https://caranordceller.com/tienda/>.
+
+## Imágenes / logos (P3) — 2026-06-24
+
+Tanda de imágenes con `scripts/enrich-producer-images.py` (dry-run `--report` →
+triaje por slug con contact sheets → `--apply` solo de logos verificados a ojo,
+`--asset-provincia "catalunya/lleida"`). Tras `--apply` hay que reconvertir CRLF→LF
+(`perl -i -pe 's/\r\n/\n/g'`) y comprobar que el diff solo toca `imagen`.
+
+- **Cobertura: 93 → 134 / 204 (46 % → 66 %).** +41 logos netos, todos revisados en
+  su canvas final.
+- **16 candidatos rechazados** (dejados en blanco): Kit Digital/red.es ×2
+  (`formatgeria-taull`, `sanui-fruits`), logo de plataforma agrobotigues
+  (`cooperativa-de-la-granadella`), badge DOP (`cooperativa-del-soleras`), CCPAE/eco
+  (`cooperativa-de-vinaixa`), tira de certificados (`herbes-de-l-alt-pirineu`), tira
+  de patrocinadores Vicens/RAC1/SJD (`torrons-l-agramuntina`, `torrons-angel-lluch`),
+  logo de Google (`celler-petit-duran`), WordPress (`formatge-barida`,
+  `la-fraternal-de-l-albages`), icono genérico (`vall-de-baldomar`), foto de masía
+  (`masia-perdigues`), favicons 16-42 px (`ruser-export`, `granja-godall`,
+  `cal-senzill`), logo ilegible 78×13 px (`farre-vidal-tofones`).
+- **Nota de método:** el QA final renderizando los `.webp` **guardados** (no las URL)
+  fue clave: el `--apply` reintenta candidatos y, si el #1 falla, guarda el #2 sin
+  avisar — así colaron WordPress (`la-fraternal`) y la tira de patrocinadores
+  (`torrons-l-agramuntina`), que se detectaron y purgaron tras el apply.
+- Gate `verify:data` OK. Quedan ~70 sin imagen (sin web o sin candidato aceptable).
+  Pendiente en P3: Barcelona (39 %).
