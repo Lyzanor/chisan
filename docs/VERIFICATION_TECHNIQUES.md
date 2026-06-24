@@ -66,7 +66,11 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 
    Usa un parser CSV, preserva LF y toca solo los `slug` del lote. Añade o sustituye una línea JSONL
    para cada alta, cambio de `verificacion`, decisión de venta, purga o fusión. Al purgar, elimina su
-   imagen referenciada y actualiza la nota de candidatos afectada.
+   imagen referenciada y actualiza la nota de candidatos afectada. Si reescribes el registro de una fila
+   `verificado` (p. ej. para fijar solo `Venta online`), conserva en sus fuentes los claims
+   `identity`/`producer-activity`/`municipality`: `check:evidence` rechaza un `verificado` cuya evidencia
+   solo aporta `online-sales`. Tras un lote, reconcilia evidencia↔CSV (decisión = `verificacion`/`Venta
+   online`/`Canal de venta`) antes de validar.
 
 6. **Valida**
 
@@ -151,13 +155,22 @@ Audítala aparte de la identidad:
 - `ecommerce`: carrito y checkout funcional;
 - `whatsapp`, `email` o `telefono`: la entidad acepta pedidos explícitamente por ese medio;
 - `suscripcion`: cesta o entrega recurrente activa;
-- `marketplace`: ficha vigente y comprable en un tercero.
+- `marketplace`: ficha vigente y comprable en la tienda **propia del productor o
+  en la oficial de su DO/colectivo**. La reventa por tiendas de terceros
+  independientes (vinotecas, marketplaces genéricos como Vinissimus/Bodeboca) **no**
+  basta para `sí` → `no comprobado` salvo que se confirme canal propio o colectivo.
 
 Combina canales con `|`. No prueban venta remota una web, catálogo, precios, tienda vacía, texto legal,
 publicación histórica, tienda física ni venta exclusiva de visitas o merchandising.
 
 Revisa todos los `sí`. En cierres profundos revisa también `no` y `no comprobado`, porque pueden ocultar
 pedidos por contacto directo. Un fallo temporal justifica `no comprobado`, no necesariamente `no`.
+
+**Confirmar venta en webs difíciles.** Muchas webs de productor —cellers de vino en especial— bloquean
+WebFetch por age-gate, Cloudflare o TLS; un fetch fallido no prueba que no haya tienda. Antes de cerrar en
+`no`/`no comprobado`, confirma con WebSearch (`"<nombre>" tienda online comprar`) y busca la tienda en un
+**dominio o subdominio de marca aparte** (p. ej. `adernats.cat`→`adernats-shop.com`, `botiga.<marca>.com`,
+`<marca>-shop.com`). Distingue el canal propio del de terceros al rellenar `Canal de venta`.
 
 ## Deduplicación
 

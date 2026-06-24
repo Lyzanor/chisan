@@ -52,6 +52,7 @@ export function evaluateEditorialFacts(facts) {
       "checked-none",
       "temporary-failure",
       "not-checked",
+      "reseller-only",
     ]),
     "onlineSalesEvidence",
   );

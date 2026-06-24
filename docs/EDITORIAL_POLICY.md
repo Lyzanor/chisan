@@ -56,10 +56,22 @@ Identity verification does not imply online sales.
 `Canal de venta` records the demonstrated mechanism. A web page, product
 catalog, price list, legal text or abandoned cart is not sufficient by itself.
 
+A usable remote ordering channel must be operated **by or on behalf of the
+producer**: its own shop or agrobotiga, its own `whatsapp`/`email`/`telefono`
+ordering, or the official online shop of its DO or cooperative collective. A
+product merely **resold by independent third-party retailers** (generic wine
+shops, marketplaces not acting for the producer) does not by itself establish
+the producer's online sale: classify it `no comprobado` unless an own or
+collective channel is confirmed. Use the `marketplace` channel only for the
+producer's own or official-collective listing.
+
 ## Stable edge-case rules
 
 - **Related entities:** shared ownership or address does not imply duplicate;
   merge only the same productive unit.
+- **Third-party resale:** independent retailers stocking the product do not
+  prove the producer sells online; `Venta online=sí` needs an own or official
+  collective channel, otherwise `no comprobado`.
 - **Brand vs. legal entity:** preserve the public stable `slug`; use identifiers
   and productive-unit identity to decide merges.
 - **Geographic uncertainty:** use an honest centroid rather than invented

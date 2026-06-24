@@ -67,6 +67,41 @@ Residuales no bloqueantes (mantenimiento):
   vino; `Canal` es warning-only y se backfillea de forma incremental por contrato).
 - **Mas de la Creu** pendiente de alta cuando se fije el municipio.
 
+## Criterio de Venta online + repaso del vino (2026-06-24)
+
+Se fija el criterio **"canal propio o colectivo"** para `Venta online=sí`: vale la
+tienda propia/agrobotiga, el `whatsapp`/`email`/`telefono` del propio productor o la
+tienda oficial de su DO/cooperativa. La **reventa por tiendas de terceros
+independientes** (vinotecas, marketplaces genéricos como Vinissimus/Bodeboca) **no**
+basta → `no comprobado`. Formalizado en `docs/EDITORIAL_POLICY.md`,
+`docs/VERIFICATION_TECHNIQUES.md`, el evaluador `scripts/editorial-policy.mjs`
+(valor `reseller-only`) y un caso en `data/evals/editorial-policy-cases.json`
+(`verify:ai` verde, 15 casos).
+
+Aplicación a Tarragona:
+
+- **`marketplace` queda solo en canales colectivos:** `celler-laurona-falset` y
+  `estones-vins-falset` (botiga oficial DO Montsant). Revertidas a `no comprobado`
+  por ser solo reventa independiente: oli-cocons, mel-de-gratallops, cervesa-rosita,
+  vendrell-rived, joan-ametller, mas-martinet, terroir-al-limit, mas-la-mola,
+  mas-de-la-pansa. `celler-pasanau` → `ecommerce` (tienda propia `shop.cellerpasanau.com`).
+- **Backfill de los 21 `sí` sin `Canal`:** 20 con `ecommerce` (tienda propia o
+  agrobotiga colectiva; Mel de Cal Mare vía coop Fet a la Conca; Lafou vía la tienda
+  del grupo Roqueta `vinotecaorigen.com`; Molí de Rué `ecommerce|whatsapp`). El
+  re-audit cazó **Altavins** (su "Shop" es un enlace roto) → `no comprobado`.
+- **Repaso del residual (muestra de 8):** `les-vinyes-del-convent` → `sí`/ecommerce;
+  los demás (pinellense, pallarades, terra-de-vinyaters, sileo, bernaví…) se quedan
+  `no comprobado` (solo info/contacto). El ~25 % de flip confirma que el residual es
+  mayormente correcto bajo el criterio.
+
+Estado tras el repaso: **242 `verificado` / 72 `parcial` / 0 `pendiente`**;
+`Venta online`: **151 `sí` / 44 `no` / 119 `no comprobado`**.
+
+**Residual de mantenimiento (no bloqueante):** ~56 `Bodega no comprobado` con web por
+auditar una a una bajo el criterio (esperable que solo una minoría tenga canal propio).
+El criterio ya está formalizado, así que cualquier agente puede continuarlo de forma
+consistente.
+
 ## Lotes
 
 <!-- Cada lote se documenta abajo a medida que se cierra. -->
