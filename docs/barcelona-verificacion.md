@@ -695,3 +695,13 @@ compartidos…, 47 slugs); el mismo asset en varias sedes de la *misma* marca
   La Pedrera, asociación de comerciantes (acist), `logos_oficials`, y campañas
   regionales compartidas (Parc dels Olors, Horta de Proximitat). 1 fallo de red
   (`font-catala-gerard`). QA final desde los `.webp` guardados: 0 basura colada.
+- **Tanda 2 (GOOD, candidatos pequeños/og/icon): +23 logos. Cobertura 1069 →
+  1092 / 2483 (43 % → 44 %).** Bucket mucho más ruidoso: de 74 candidatos solo 23
+  válidos. Rechazados WordPress ×4, TripAdvisor, OLX, app "we", FOODLUS, carrito,
+  taza/engranajes genéricos, fotos de escaparate, escudo de ayuntamiento y
+  favicons 16-48 px. La QA desde los `.webp` guardados volvió a ser clave: pilló 2
+  fallbacks que el parser del log no vio (WordPress en `planes-bones`, icono
+  genérico de gorro en `obrador-la-nena`), purgados tras el apply.
+- **Total imágenes Barcelona esta sesión: +130 logos (962 → 1092, 39 % → 44 %).**
+  Quedan ~250 inspeccionables sin resolver (sin candidato limpio) + ~1000 sin web.
+  Gate `verify:data` OK.
