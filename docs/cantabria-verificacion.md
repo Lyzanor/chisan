@@ -197,15 +197,15 @@ ya tocadas.
 | # | Lote | Filas | Pend. | Parcial | Verif. | VO=sí | Estado | Notas iniciales |
 |---|---|---:|---:|---:|---:|---:|---|---|
 | 1 | Bodega, orujos, sidra, cerveza y café | 37 | 0 | 1 | 30 | 23 | ✅ | Cerrado el 2026-06-21: 31 filas activas, 6 purgas (`Bodega río Miera`, `Bodegas Cantabras`, `Bodegas Hermanos Ruiz`, `Bodegas Monasterio`, `Café El Milagro`, `Cafés Cantabria`). Queda parcial `Bodegas Behetría`; `Pedales Beer` baja de `sí` a `no comprobado` por falta de canal remoto vigente. |
-| 2 | Lácteos y quesos I | 27 | 27 | 0 | 0 | 0 | ⬜ | De `andia-lacteos-de-cantabria` a `queseria-artesanal-siete-villas`. Priorizar DOP/IGP, granjas y queserías con web propia. |
-| 3 | Lácteos y quesos II | 27 | 22 | 5 | 0 | 3 | ⬜ | De `queseria-ecologica-los-tiemblos` a `delicatessen-la-ermita`. Revisar duplicados de Ruesga y Javier Campo/Casa Campo. |
-| 4 | Pescado y conservas I | 27 | 27 | 0 | 0 | 0 | ⬜ | De `anchoas-dobleuve` a `conservas-lolin`. Confirmar conservera real frente a marca, tienda o distribuidor. |
-| 5 | Pescado y conservas II | 27 | 20 | 7 | 0 | 5 | ⬜ | De `conservas-lotamar` a `consorcio-espanol-conservero`. Reauditar todos los `sí` y el posible duplicado Sanfilippo. |
-| 6 | Charcutería I | 28 | 28 | 0 | 0 | 0 | ⬜ | De `carnicas-campurriana-sl` a `carniceria-fermin`. Alto riesgo de carnicerías sin elaboración propia. |
-| 7 | Charcutería II | 28 | 28 | 0 | 0 | 0 | ⬜ | De `carniceria-fernando` a `carniceria-mariana`. Revisar nombres genéricos y filas sin web/red. |
-| 8 | Charcutería III | 28 | 28 | 0 | 0 | 0 | ⬜ | De `carniceria-mary` a `charcuteria-charo-y-juan`. Priorizar duplicados de municipios y pruebas de obrador. |
-| 9 | Charcutería IV | 28 | 27 | 1 | 0 | 1 | ⬜ | De `charcuteria-joel-pastor` a `ganaderia-la-lejuca`. Incluye más fábricas/embutidos y la única venta heredada del bloque. |
-| 10 | Fruta, verdura, huevos y legumbres | 33 | 27 | 3 | 3 | 4 | ⬜ | Incluye arándanos, huerta, huevos, legumbres y tres verificados heredados. Revisar ecológico y ventas por contacto. |
+| 2 | Lácteos y quesos I | 24 | 0 | 2 | 22 | 11 | ✅ | Cerrado el 2026-06-21: 24 filas activas, 2 parciales, 22 verificadas, 3 bajas/merge y canales normalizados en las ventas confirmadas. |
+| 3 | Lácteos y quesos II | 24 | 0 | 1 | 23 | 20 | ✅ | Cerrado el 2026-06-22: 24 filas activas, 1 parcial (`queseria-penalon`), 23 verificadas y 3 bajas/merge. |
+| 4 | Pescado y conservas I | 26 | 0 | 1 | 25 | 24 | ✅ | Cerrado el 2026-06-22: 26 filas activas, 1 parcial (`conservas-del-norte`), 25 verificadas y 1 baja por cierre. |
+| 5 | Pescado y conservas II | 23 | 0 | 1 | 22 | 15 | ✅ | Cerrado el 2026-06-22: 23 filas activas, 1 parcial (`conservas-crespo`), 22 verificadas y 4 bajas/merge. |
+| 6 | Charcutería I | 13 | 0 | 1 | 12 | 7 | ✅ | Cerrado el 2026-06-26: 13 filas activas, 15 purgas por comercio minorista/no productor o ficha genérica. Queda parcial `carnicas-patino-carniceria` por sala de despiece sin fuente propia actual. |
+| 7 | Charcutería II | 7 | 0 | 0 | 7 | 4 | ✅ | Cerrado el 2026-06-26: 7 productores activos y 21 purgas por carnicería minorista/ficha sin prueba productora. |
+| 8 | Charcutería III | 8 | 0 | 2 | 6 | 2 | ✅ | Cerrado el 2026-06-26: 8 activos, 19 purgas y 1 merge (`carniceria-pepin` -> `carniceria-jon-y-nagore`). `casa-el-macho` pasa a panadería/pastelería. |
+| 9 | Charcutería IV | 10 | 0 | 1 | 9 | 4 | ✅ | Cerrado el 2026-06-26: 10 activos y 18 purgas; `ganaderia-la-lejuca` baja de venta online heredada a `no comprobado`. |
+| 10 | Fruta, verdura, huevos y legumbres | 26 | 0 | 6 | 20 | 12 | ✅ | Cerrado el 2026-06-26: 26 activos de 34 revisados, 8 purgas por vivero/servicio/tienda fuera de alcance o no productor. |
 | 11 | Despensa artesanal y chocolate | 20 | 16 | 3 | 1 | 4 | ⬜ | Incluye patatas, mermeladas, fermentados, salsas, chocolate y despensa. Separar productor de tienda/marca. |
 | 12 | Miel | 16 | 13 | 3 | 0 | 2 | ⬜ | Revisar DOP Miel de Liébana, apicultores personales, asociaciones y canales de pedido. |
 | 13 | Pan y pastelería I | 29 | 29 | 0 | 0 | 0 | ⬜ | De `confiteria-blanco-hojaldres-de-torrelavega` a `panaderia-angel`. Mezcla de confiterías, obradores y primeras panaderías. |
@@ -271,3 +271,121 @@ Snapshot tras lote 2:
 - Verificación: 58 verificados, 35 parciales, 367 pendientes
 - Venta online: 56 sí, 8 no, 396 no comprobado
 - Canal de venta informado: 34/56 productores con `Venta online=sí`
+
+## Lote 3 - Lácteos y quesos (segundo bloque)
+
+Revisión del segundo bloque de 27 fichas de `Lácteos y quesos`. Resultado editorial: 24 productores activos, 23 verificados, 1 parcial, 20 con venta online y 3 bajas/merge.
+
+Decisiones relevantes:
+
+- Fusionados duplicados: `herederos-de-tomas-ruiz-s-l-la-cavada` -> `la-pasiega-de-pena-pelada`; `quesos-de-ruesga-s-l-la-estela-pena-quebrada` -> `quesos-de-ruesga`.
+- Eliminado por no productor verificado: `queseria-la-castrena`, documentada como tienda/minorista sin obrador propio probado.
+- Queda parcial `queseria-penalon` por falta de fuente propia actual, aunque hay rastro sectorial histórico.
+- Se normalizan canales de venta para queserías con tienda propia o marketplace local.
+
+## Lote 4 - Pescado y conservas (primer bloque)
+
+Revisión de 27 fichas de pescado/conservas desde `anchoas-dobleuve` hasta `conservas-lolin`. Resultado editorial: 26 productores activos, 25 verificados, 1 parcial, 24 con venta online y 1 baja.
+
+Decisiones relevantes:
+
+- Eliminado `conservas-islas-cies` por cierre/subasta de la fábrica de El Astillero.
+- `conservas-del-norte` queda parcial: solo se localiza ficha de lugar, sin fuente propia actual.
+- La mayoría de conserveras mantienen actividad productora con tienda propia o pedido remoto; `conservas-hoyo-laredo` queda sin venta online comprobada.
+
+## Lote 5 - Pescado y conservas (segundo bloque)
+
+Revisión de 27 fichas de pescado/conservas desde `conservas-lotamar` hasta `consorcio-espanol-conservero`. Resultado editorial: 23 productores activos, 22 verificados, 1 parcial, 15 con venta online y 4 bajas/merge.
+
+Decisiones relevantes:
+
+- Fusionados duplicados: `conservas-sollagua` -> `conservas-velmar-sl`; `conservas-san-filippo` -> `anchoas-sanfilippo`.
+- Eliminados: `conservas-maria-pilar-miguel-albo` por sociedad extinguida y `pescados-y-conservas-vegomar-s-l` por distribuidor/mayorista sin elaboración propia demostrada.
+- `conservas-crespo` queda parcial porque consta como fabricante pero la nave quedó calcinada en 2025 y falta confirmar continuidad operativa.
+- Se normalizan canales de venta para Don Bocarte, Casa Santoña, Consorcio, Las Toñas, Linda Playa, Montebuciero, Pujadó Solano y otras conserveras con tienda propia.
+
+Snapshot tras lote 5:
+
+- Filas CSV: 452
+- Verificación: 128 verificados, 26 parciales, 298 pendientes
+- Venta online: 107 sí, 7 no, 338 no comprobado
+- Canal de venta informado: 93/107 productores con `Venta online=sí`
+- Evidencia Cantabria: 145 registros JSONL
+
+## Lote 6 - Charcutería (primer bloque)
+
+Revisión de 28 fichas de charcutería desde `carnicas-campurriana-sl` hasta `carniceria-fermin`. Resultado editorial: 13 productores activos, 12 verificados, 1 parcial, 7 con venta online y 15 purgas.
+
+Decisiones relevantes:
+
+- Conservados como productores o elaboradores: `carnicas-campurriana-sl`, `carnicas-sito`, `carniceria-abel`, `carniceria-alberto`, `carniceria-angel-entrambasaguas`, `carniceria-anton`, `carniceria-charcuteria-la-venta`, `carniceria-cuca-santiurde`, `carniceria-ecologica-las-nieves`, `carniceria-en-santander-la-alqueria`, `carniceria-eno` y `carniceria-equina-fidel-navarro`.
+- Queda parcial `carnicas-patino-carniceria`: consta como carnicería con sala de despiece, pero no se localizó fuente propia actual para verificar elaboración vigente.
+- Eliminadas 15 filas de carnicería minorista o ficha insuficiente: `carnicas-merino`, `carniceria`, `carniceria-aurora`, `carniceria-avelino-hoyuela`, `carniceria-bra`, `carniceria-carlos-charcuteria`, `carniceria-charcuteria-castillo`, `carniceria-charcuteria-jesus`, `carniceria-charcuteria-jesus-castillo`, `carniceria-cupido-charcuteria`, `carniceria-diaz`, `carniceria-e-laso`, `carniceria-el-pasiego-geli-matamorosa`, `carniceria-ennour-halal` y `carniceria-fermin`.
+- Venta remota confirmada: ecommerce en Ángel, La Venta y Cuca; teléfono en Antón y Las Nieves; ecommerce/WhatsApp en La Alquería; ecommerce/teléfono en Fidel Navarro.
+- Se borra la imagen de `carniceria-charcuteria-jesus-castillo` al purgar la fila que la referenciaba.
+
+Snapshot tras lote 6:
+
+- Filas CSV: 437
+- Verificación: 140 verificados, 27 parciales, 270 pendientes
+- Venta online: 114 sí, 7 no, 316 no comprobado
+- Canal de venta informado: 100/114 productores con `Venta online=sí`
+- Evidencia Cantabria: 173 registros JSONL
+
+## Lote 7 - Charcutería (segundo bloque)
+
+Revisión de 28 fichas desde `carniceria-fernando` hasta `carniceria-mariana`. Resultado editorial: 7 productores activos, todos verificados, 4 con venta online y 21 purgas.
+
+Decisiones relevantes:
+
+- Conservados con fuente propia productora: `carniceria-guillermo`, `carniceria-javier`, `carniceria-jon-y-nagore`, `carniceria-juan-teran`, `carniceria-la-rivera`, `carniceria-lomillos` y `carniceria-los-arroyones`.
+- Venta remota confirmada: ecommerce en Javier, Juan Terán y Los Arroyones; teléfono en La Rivera.
+- `carniceria-lomillos` se conserva por elaborados propios, pero queda con venta online `no comprobado` porque la web no permitió confirmar pedido remoto vigente.
+- Eliminadas 21 filas de carnicería minorista o ficha insuficiente, incluidas las carnicerías genéricas sin web/red propia ni prueba de obrador.
+- Se borra la imagen de `carniceria-manolo` al purgar la fila que la referenciaba.
+
+## Lote 8 - Charcutería (tercer bloque)
+
+Revisión de 28 fichas desde `carniceria-mary` hasta `charcuteria-charo-y-juan`. Resultado editorial: 8 productores activos, 6 verificados, 2 parciales, 2 con venta online, 19 purgas y 1 merge.
+
+Decisiones relevantes:
+
+- Conservados como productores o elaboradores: `carniceria-pedro-2`, `carniceria-quintana`, `carniceria-rafa-colindres`, `carniceria-siglo-xxi`, `carniceria-y-charcuteria-jaime` y `casa-el-macho`.
+- Quedan parciales `carniceria-miguel-2` y `carniceria-rivero`: hay rastro local específico, pero falta una fuente propia actual para verificarlas.
+- Fusionado `carniceria-pepin` -> `carniceria-jon-y-nagore` por compartir web y ámbito comercial con la unidad productora ya verificada.
+- `casa-el-macho` pasa de `Charcutería` a `Pan y pastelería`; es obrador de sobaos y quesadas con tienda online, no productor cárnico.
+- Venta remota confirmada: ecommerce en `carniceria-quintana` y `casa-el-macho`.
+- Se borra la imagen de `carniceria-pepin` al fusionar la fila.
+
+## Lote 9 - Charcutería (cuarto bloque)
+
+Revisión de 28 fichas de charcutería desde `charcuteria-joel-pastor` hasta `ganaderia-la-lejuca`. Resultado editorial: 10 productores activos, 9 verificados, 1 parcial, 4 con venta online y 18 purgas.
+
+Decisiones relevantes:
+
+- Conservados con fuente propia o rastro productor suficiente: `elaboracion-de-productos-carnicos-la-casona`, `embutidos-alto-del-cerro`, `embutidos-la-pepita-s-l`, `embutidos-meli-s-l`, `embutidos-pedro-y-ana-productos-tipicos-de-cantabria`, `fabrica-de-embutidos-el-lebaniego`, `fabrica-de-embutidos-jose-fernandez`, `pueblo-de-picos-productos-carnicos-de-cantabria` y `ganaderia-la-lejuca`.
+- Queda parcial `embutidos-la-salada`: hay ficha específica, pero no fuente propia actual.
+- Venta remota confirmada: ecommerce en Alto del Cerro, Pedro y Ana, El Lebaniego y José Fernández/Fermartín.
+- `ganaderia-la-lejuca` sube a `verificado`, pero baja de `Venta online=sí` a `no comprobado` porque la hoja de pedido vigente aparecía cerrada/obsoleta.
+- Eliminadas tiendas gourmet, charcuterías minoristas, restaurante/gastrojamón y filas sin prueba productora.
+- Se borran las imágenes de `charcuteria-joel-pastor`, `charcuteria-yanis`, `charcuterias-mayte-s-l` y `la-antigua-embutidos-y-alimentacion-s-l`.
+
+## Lote 10 - Fruta, verdura, huevos y legumbres
+
+Revisión de 34 fichas de arándanos, huerta, huevos y legumbres. Resultado editorial: 26 productores activos, 20 verificados, 6 parciales, 12 con venta online y 8 purgas.
+
+Decisiones relevantes:
+
+- Conservados y verificados con fuente propia: Aranberry, El Valle de Machucón, Forestaciones Los Llanos/Forberry, Arándanos San Jorge, Arándanos Vallecillo, Hortalizas de Liébana, La Tierra del Norte, La Huerta de Manolita, Menguante, Pas Berry, Tarruco, Huevos Camperos del Asón, Granja AVH, Granja Avícola La Encina, Granja Brenas, La Huerta de Chaves, Finca Ecológica La Garita, Las Lindes, Silió Berries y Eco-Tierra Mojada.
+- Quedan parciales `arandanos-finca-casares`, `arandanos-imanol`, `ekoberry-arandanos-ecologicos`, `hortalizas-de-los-valles-de-buelna-y-toranzo`, `huerta-ecologica-castaneda` y `huevos-la-gallinuca` por falta de fuente propia actual o web caída.
+- Venta remota confirmada: ecommerce en Aranberry, El Valle de Machucón, Forestaciones Los Llanos, La Tierra del Norte y Silió Berries; marketplace en Tarruco; teléfono/WhatsApp en Menguante, Pas Berry, Huevos Camperos del Asón, La Huerta de Chaves, La Garita y Las Lindes.
+- Eliminados por fuera de alcance o no productor alimentario directo: `cooperativa-valles-unidos-del-ason`, `huertas-ecologicas-de-soto-de-la-marina`, `la-huerta-de-manrique`, `avicola-cantabria`, `huevos-caseros`, `legumbres-el-leones`, `los-caricos` y `vivero-barbas`.
+- Se borran las imágenes de `cooperativa-valles-unidos-del-ason`, `legumbres-el-leones` y `vivero-barbas`.
+
+Snapshot tras lote 10:
+
+- Filas CSV: 370
+- Verificación: 178 verificados, 32 parciales, 160 pendientes
+- Venta online: 131 sí, 5 no, 234 no comprobado
+- Canal de venta informado: 122/131 productores con `Venta online=sí`
+- Evidencia Cantabria: 290 registros JSONL
