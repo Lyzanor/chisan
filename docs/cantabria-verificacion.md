@@ -206,7 +206,7 @@ ya tocadas.
 | 8 | Charcutería III | 8 | 0 | 2 | 6 | 2 | ✅ | Cerrado el 2026-06-26: 8 activos, 19 purgas y 1 merge (`carniceria-pepin` -> `carniceria-jon-y-nagore`). `casa-el-macho` pasa a panadería/pastelería. |
 | 9 | Charcutería IV | 10 | 0 | 1 | 9 | 4 | ✅ | Cerrado el 2026-06-26: 10 activos y 18 purgas; `ganaderia-la-lejuca` baja de venta online heredada a `no comprobado`. |
 | 10 | Fruta, verdura, huevos y legumbres | 26 | 0 | 6 | 20 | 12 | ✅ | Cerrado el 2026-06-26: 26 activos de 34 revisados, 8 purgas por vivero/servicio/tienda fuera de alcance o no productor. |
-| 11 | Despensa artesanal y chocolate | 20 | 16 | 3 | 1 | 4 | ⬜ | Incluye patatas, mermeladas, fermentados, salsas, chocolate y despensa. Separar productor de tienda/marca. |
+| 11 | Despensa artesanal y chocolate | 15 | 0 | 1 | 14 | 13 | ✅ | Cerrado el 2026-06-27: 15 activos, 14 verificados, 1 parcial (`madacake-bakery`), 4 purgas y 1 merge (`vega-pelayo` -> `sobaos-y-quesadas-vega-pas`). Canales normalizados en todos los `sí`. |
 | 12 | Miel | 16 | 13 | 3 | 0 | 2 | ⬜ | Revisar DOP Miel de Liébana, apicultores personales, asociaciones y canales de pedido. |
 | 13 | Pan y pastelería I | 29 | 29 | 0 | 0 | 0 | ⬜ | De `confiteria-blanco-hojaldres-de-torrelavega` a `panaderia-angel`. Mezcla de confiterías, obradores y primeras panaderías. |
 | 14 | Pan y pastelería II | 29 | 29 | 0 | 0 | 0 | ⬜ | De `panaderia-avin` a `panaderia-menesa`. Muchas panaderías sin web; comprobar obrador antes de conservar. |
@@ -389,3 +389,44 @@ Snapshot tras lote 10:
 - Venta online: 131 sí, 5 no, 234 no comprobado
 - Canal de venta informado: 122/131 productores con `Venta online=sí`
 - Evidencia Cantabria: 290 registros JSONL
+
+## Lote 11 - Despensa artesanal y chocolate
+
+Revisión de 20 fichas de patatas, mermeladas, fermentados, salsas, chocolate y despensa. Resultado editorial: 15 productores activos, 14 verificados, 1 parcial, 13 con venta online, 4 purgas y 1 merge.
+
+Decisiones relevantes:
+
+- Conservados y verificados con fuente propia: `chocolateria-aliva`, `ecologicos-de-cantabria-s-coop`, `la-flor-de-limon`, `la-lleldiria-fermenteria-de-los-valles-pasiegos`, `liebanartesana-confituras-y-mermeladas`, `magna-apis-mermelada-artesana`, `mermeladas-el-bosque-encantado`, `mermeladas-la-artesana`, `monper-chocolate`, `patatas-vallucas`, `salsason`, `finca-socueva`, `como-una-manzana` y `acasyna`.
+- Queda parcial `madacake-bakery`: se corrige a `Pan y pastelería`, pero la web propia estaba en pausa por baja médica y no permite confirmar actividad vigente con fuente fuerte.
+- Cambios de categoría/municipio: `chocolateria-aliva` y `madacake-bakery` pasan a `Pan y pastelería`; `ecologicos-de-cantabria-s-coop` pasa a `Fruta y verdura`; `la-lleldiria-fermenteria-de-los-valles-pasiegos` pasa a `Lácteos y quesos` y municipio `San Roque de Riomiera`; `patatas-vallucas` pasa a municipio `Valderredible`; `salsason` pasa a municipio `Ruesga`.
+- Eliminados por no ser productor o no tener entidad productora verificable: `almacen-de-patatas-familia-gomez`, `almacen-de-patatas-puente`, `la-casa-vinagre` y `la-despensa-de-sergio`. Se borra la imagen de `la-despensa-de-sergio`.
+- Fusionado `vega-pelayo` -> `sobaos-y-quesadas-vega-pas`: Vega Pelayo S.L. es la razón/obrador detrás de la ficha Vega Pas ya activa.
+- Venta remota confirmada: ecommerce en Ecológicos de Cantabria, La Flor de Limón, La Lleldiría, La Artesana, Monper, Patatas Vallucas, Salsasón, Finca Socueva y Como una Manzana; email/teléfono en Liebanartesana, El Bosque Encantado y Acasyna; marketplace en Magna Apis. `chocolateria-aliva` queda con `Venta online=no`.
+
+Snapshot tras lote 11:
+
+- Filas CSV: 365
+- Verificación: 191 verificados, 30 parciales, 144 pendientes
+- Venta online: 140 sí, 6 no, 219 no comprobado
+- Canal de venta informado: 135/140 productores con `Venta online=sí`
+- Evidencia Cantabria: 310 registros JSONL
+
+## Lote 12 - Miel
+
+Revisión de 16 fichas de miel y apicultura. Resultado editorial: 16 productores activos, 9 verificados, 7 parciales, 9 con venta online y 0 purgas.
+
+Decisiones relevantes:
+
+- Conservados y verificados con fuente propia, canal social propio o tienda activa: `apisair-miel`, `apiturismo-y-miel-liebana-dulce`, `miel-colmenares-de-vendejo-miel-de-liebana-beexperience-turismo-apicola`, `miel-de-brezo-ecologica`, `miel-el-secreto-de-las-abejas`, `miel-valle-estrecho`, `mieleria-secretos-de-abejas`, `apicola-tejedor` y `miel-reina`.
+- Quedan parciales `apicam-asoc-de-apicultores-campurrianos`, `la-mieleria-de-sara-sierra-del-dobra`, `la-mieluca-del-pas`, `miel-de-la-colina`, `miel-el-colmenar-de-las-donas`, `miel-valle-del-nansa` y `miel-brana-jana` por fuente indirecta, web en pausa o falta de fuente propia actual suficiente.
+- Correcciones de municipio por localidades: San Pedro de Bedoya -> `Cillorigo de Liébana`, Quijano -> `Piélagos`, La Cantolla -> `Miera`, Enterrías -> `Vega de Liébana`, Entrepuentes -> `Ramales de la Victoria`, Pesués -> `Val de San Vicente` y Cahecho -> `Cabezón de Liébana`.
+- Venta remota confirmada: email/WhatsApp en Apisair; marketplace en Liébana Dulce; email/teléfono en Brezomiel; ecommerce en La Mielería de Sara, El Secreto de las Abejas, Valle Estrecho, Mielería Secretos de Abejas, Apícola Tejedor y Miel Reina.
+- `miel-colmenares-de-vendejo-miel-de-liebana-beexperience-turismo-apicola` sube a `verificado` por Instagram oficial y ficha local; el dominio propio devolvió error 500 durante la revisión, por lo que queda con `Venta online=no comprobado`.
+
+Snapshot tras lote 12:
+
+- Filas CSV: 365
+- Verificación: 200 verificados, 34 parciales, 131 pendientes
+- Venta online: 147 sí, 6 no, 212 no comprobado
+- Canal de venta informado: 144/147 productores con `Venta online=sí`
+- Evidencia Cantabria: 326 registros JSONL
