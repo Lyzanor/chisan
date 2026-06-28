@@ -23,16 +23,24 @@ evidencia estructurada por fila debe vivir en
   4 avisos suprimidos por opcionales ausentes en filas verificadas. Los avisos
   son mayoritariamente falta de redes, contacto o descripciones cortas; no son
   bloqueo, pero orientan la revisión.
-- Evidencia inicial: no existe `data/evidence/cantabria/cantabria.jsonl` y
-  Cantabria no está en cobertura estricta (`data/evidence/coverage.json`
-  contiene Álava, Vizcaya, Guipúzcoa, La Rioja y Navarra).
+- Evidencia inicial: no existía `data/evidence/cantabria/cantabria.jsonl` y
+  Cantabria no estaba en cobertura estricta.
 - Tras lote 1 (2026-06-21): 463 filas activas; 36 `verificado`, 33
   `parcial`, 394 `pendiente`. Venta online: 45 `sí`, 8 `no`, 410
   `no comprobado`; 23/45 `sí` ya tienen `Canal de venta`. Evidencia:
   37 registros en `data/evidence/cantabria/cantabria.jsonl` (31 `keep`,
   6 `purge`).
-- Modo: primera pasada profunda pendiente. Prioridad: cerrar calidad de las
-  469 filas heredadas antes de añadir candidatos nuevos.
+- Cierre provincial (2026-06-28): 360 filas activas; 268 `verificado`,
+  92 `parcial`, 0 `pendiente`.
+- Venta online final: 178 `sí`, 2 `no`, 180 `no comprobado`; 178/178 filas
+  con `Venta online=sí` tienen `Canal de venta` informado.
+- Cobertura de evidencia final: 360/360 filas activas con `keep`;
+  Cantabria queda promovida a cobertura estricta en
+  `data/evidence/coverage.json`.
+- Enlaces finales: 252/360 con `web`, 164/360 con `Instagram`, 360/360 con
+  `Google Maps`; imágenes referenciadas: 190/360.
+- Modo: pasada profunda cerrada. No añadir nuevos candidatos en este ledger;
+  cualquier ampliación posterior debe abrir un nuevo lote de expansión.
 
 El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces conservados, venta
@@ -210,10 +218,10 @@ ya tocadas.
 | 12 | Miel | 16 | 0 | 7 | 9 | 9 | ✅ | Cerrado el 2026-06-27: 16 activos, sin purgas; varios municipios normalizados de localidad a municipio. |
 | 13 | Pan y pastelería I | 26 | 0 | 7 | 19 | 8 | ✅ | Cerrado el 2026-06-28: de `confiteria-blanco-hojaldres-de-torrelavega` a `panaderia-ajo`, 1 merge y 1 purga. |
 | 14 | Pan y pastelería II | 27 | 0 | 24 | 3 | 0 | ✅ | Cerrado el 2026-06-28: de `panaderia-angel` a `panaderia-maria-begona-ortiz-sainz-maza`, 1 merge y muchas panaderías parciales sin fuente propia. |
-| 15 | Pan y pastelería III | 31 | 31 | 0 | 0 | 0 | ⬜ | De `panaderia-martin-degustacion` a `pasteleria-casa-vejo`. Revisar cadenas, sedes y comercios con cafetería. |
-| 16 | Pan y pastelería IV | 29 | 29 | 0 | 0 | 0 | ⬜ | De `pasteleria-delicatessen-sucre` a `sobaos-arce`. Entra el bloque de pastelerías y empieza sobaos/quesadas. |
-| 17 | Pan y pastelería V | 27 | 15 | 10 | 2 | 3 | ⬜ | De `sobaos-casa-ibanez` a `panificadora-buelna`. Reauditar IGP Sobao Pasiego, verificados heredados y todos los `sí`. |
-| 18 | Cierre transversal provincial | 469 | 423 | 40 | 6 | 28 | ⬜ | Recalcular tras lotes 1-17. Revisar duplicados, municipios/localidades, canales, evidencia completa, imágenes residuales y cobertura estricta. |
+| 15 | Pan y pastelería III | 31 | 31 | 0 | 0 | 0 | ✅ | Cerrado el 2026-06-28: 29 fichas activas, 14 verificadas, 15 parciales y 2 merges de sucursales Sordo. |
+| 16 | Pan y pastelería IV | 29 | 29 | 0 | 0 | 0 | ✅ | Cerrado el 2026-06-28: 29 fichas activas, 12 verificadas, 17 parciales y venta online normalizada en pastelerías con tienda. |
+| 17 | Pan y pastelería V | 15 | 15 | 0 | 0 | 0 | ✅ | Cerrado el 2026-06-28: 15 fichas activas, 12 verificadas, 3 parciales y 9 ecommerce/marketplaces confirmados. |
+| 18 | Cierre transversal provincial | 360 | 0 | 92 | 268 | 178 | ✅ | Cerrado el 2026-06-28: 0 pendientes, 360/360 con evidencia `keep`, 178/178 ventas online con canal y cobertura estricta. |
 
 ## Criterios de cierre de la pasada
 
@@ -472,3 +480,152 @@ Snapshot tras lote 14:
 - Venta online: 155 sí, 6 no, 201 no comprobado
 - Canal de venta informado: 152/155 productores con `Venta online=sí`
 - Evidencia Cantabria: 382 registros JSONL
+
+## Lote 15 - Pan y pastelería (tercer bloque)
+
+Revisión de 31 fichas desde `panaderia-martin-degustacion` hasta
+`pasteleria-casa-vejo`. Resultado editorial: 29 productores activos, 14
+verificados, 15 parciales, 2 ventas online confirmadas y 2 merges.
+
+Decisiones relevantes:
+
+- Conservados y verificados con web propia: Pan de Orzales/Joaquín Ruiz,
+  Panadería Oslé, PAN NAN, Panamor, Panadería Parte, Panadería Patrocinio,
+  Peter & Pan, Panadería Piélagos, Puente Asnil, Saiper, Díaz Pan, Panaderías
+  Sordo, Pastelería Bergua y Casa Vejo.
+- Quedan parciales las panaderías y pastelerías con solo ficha Maps o rastro
+  indirecto: Martín Degustación, Menesa, Nel, Ojedo, Pasión por el Pan, Los
+  Arcos, Quop-Cotolino, Santa Fe, Seles, Las Quintas, Nuevas de Santander,
+  Anais, Asuetto y Wences 1929.
+- Fusionadas `panaderia-sordo-nueva-ciudad` y
+  `panaderia-sordo-santiago-de-cartes` -> `panaderias-sordo`: son sucursales de
+  la misma red/obrador y no unidades productoras independientes.
+- Correcciones de municipio/localidad: Orzales -> `Campoo de Yuso`, Gajano ->
+  `Marina de Cudeyo`, Maliaño -> `Camargo`, Ojedo ->
+  `Cillorigo de Liébana`, Turieno -> `Camaleño`, Queveda ->
+  `Santillana del Mar` y Guarnizo -> `Astillero`.
+- Venta online confirmada: ecommerce en `panaderia-puente-asnil` y
+  `pasteleria-artesanal-bergua`. Varias webs confirman obrador, pero quedan
+  `no comprobado` cuando no hay carrito, condiciones de compra o canal remoto
+  vigente.
+
+Snapshot tras lote 15:
+
+- Filas CSV: 360
+- Verificación: 236 verificados, 80 parciales, 44 pendientes
+- Evidencia Cantabria: 413 registros JSONL
+
+## Lote 16 - Pan y pastelería (cuarto bloque)
+
+Revisión de 29 fichas desde `pasteleria-delicatessen-sucre` hasta
+`sobaos-arce`. Resultado editorial: 29 productores activos, 12 verificados, 17
+parciales y 10 ventas online confirmadas.
+
+Decisiones relevantes:
+
+- Verificados con tienda propia o web fuerte: Sucré, Delices, Confitería
+  Francesa Obrador, Gloria, HnasPuente/Amelia, Rego, Sabor a Hogar, Sacher,
+  Valtierra, Revuelta, Seyglo y Sobaos Arce.
+- Venta online confirmada por ecommerce en Sucré, Delices, HnasPuente, Rego,
+  Revuelta y Sobaos Arce; por teléfono en Confitería Francesa y Gloria; por
+  marketplace en Valtierra; por email/teléfono en Seyglo.
+- `pasteleria-el-copo-de-nieve` conserva web en el CSV, pero el dominio no
+  devolvió contenido verificable durante la revisión; queda parcial.
+- `pasteleria-valtierra` cambia el Instagram genérico heredado por el perfil
+  propio de Pastelerías Valtierra y mantiene la venta por marketplace al existir
+  productos con carrito en De Galizano.
+- Correcciones de municipio/localidad: Sarón -> `Santa María de Cayón`,
+  Candolias -> `Vega de Pas` y Rubayo -> `Marina de Cudeyo`.
+
+Snapshot tras lote 16:
+
+- Filas CSV: 360
+- Verificación: 248 verificados, 97 parciales, 15 pendientes
+- Evidencia Cantabria: 442 registros JSONL
+
+## Lote 17 - Sobaos y quesadas
+
+Revisión de las 15 fichas pendientes de sobaos y quesadas desde
+`sobaos-casa-ibanez` hasta `sobaos-y-quesadas-rosi`. Resultado editorial: 15
+productores activos, 12 verificados, 3 parciales y 9 ventas online
+confirmadas.
+
+Decisiones relevantes:
+
+- Verificados con tienda propia o fuente fuerte: Casa Ibáñez, El Andral,
+  Etelvina Sañudo, Loidi Cavada, La Zapita, Los Pasiegos de Diego, Casa Olmo,
+  Bienve, La Braniza, Luca, R. Figueras y Rosi.
+- Quedan parciales `sobaos-hermanos-ruiz`, `sobaos-y-quesadas-abascal` y
+  `sobaos-y-quesadas-figueras` por falta de fuente propia actual suficiente.
+- `sobaos-la-zapita` conserva la ficha por Instagram/Maps, pero se elimina el
+  dominio porque devolvía contenido de spam/apuestas.
+- Correcciones de municipio/localidad: Rioseco -> `Guriezo`; Ontaneda,
+  Alceda-Ontaneda y Villegar -> `Corvera de Toranzo`.
+- Venta online confirmada: ecommerce en El Andral, Etelvina, Los Pasiegos de
+  Diego, Casa Olmo, Luca, R. Figueras y Rosi; marketplace en Bienve y La
+  Braniza.
+
+Snapshot tras lote 17:
+
+- Filas CSV: 360
+- Verificación: 260 verificados, 100 parciales, 0 pendientes
+- Evidencia Cantabria: 457 registros JSONL
+
+## Lote 18 - Cierre transversal
+
+Auditoría final de Cantabria una vez cerrados los lotes 1-17. Objetivo:
+comprobar que la provincia queda sin pendientes, sin ventas online sin canal y
+con evidencia completa por fila activa.
+
+Decisiones relevantes:
+
+- Se completa `Canal de venta=ecommerce` en `escojo-artesanos`,
+  `corbatas-sanbar` y `panteff`; además `corbatas-sanbar` y `panteff` suben a
+  `verificado` por tienda oficial actual.
+- Se cierran las 9 fichas heredadas sin `keep` JSONL: `sobaos-serafina`,
+  `sobaos-el-estanco`, `confiteria-hojaldres`,
+  `sobaos-y-quesadas-vega-pas`, `regma`,
+  `sobaos-y-quesadas-ortiz-sanudo`, `bellapan`, `panaderia-acebo` y
+  `panificadora-buelna`.
+- Promociones finales a `verificado`: Sobaos Serafina, Confitería Hojaldres,
+  Regma, Ortiz-Sañudo, Bellapan y Panificadora Buelna, además de Sanbar y
+  Panteff en el backfill de canales.
+- Cambios conservadores de venta: `sobaos-el-estanco` y
+  `sobaos-y-quesadas-ortiz-sanudo` pasan de `no` a `no comprobado` porque no
+  se localizó fuente actual suficiente para afirmar ausencia de pedido remoto.
+- Cantabria pasa a cobertura estricta en `data/evidence/coverage.json`.
+
+Snapshot final:
+
+- Filas CSV: 360
+- Verificación: 268 verificados, 92 parciales, 0 pendientes
+- Venta online: 178 sí, 2 no, 180 no comprobado
+- Canal de venta informado: 178/178 productores con `Venta online=sí`
+- Evidencia Cantabria: 469 registros JSONL; 360/360 filas activas con `keep`
+- Estado de evidencia: `npx pnpm report:evidence cantabria` marca
+  `falta-keep=0`
+- Validación final: `npx pnpm verify:data` pasa con CSV, imágenes y evidencia
+  sin errores
+
+## Lecciones aprendidas
+
+- La provincia no se puede cerrar solo por estado `verificado/parcial`: el
+  cierre real exige revisar también canales de venta heredados y cobertura
+  JSONL fila a fila.
+- En panaderías y pastelerías conviene tratar sucursales como duplicados de la
+  ficha matriz cuando la fuente propia describe una red/obrador común; esto
+  evitó mantener varias fichas Sordo y La Artesana como productores distintos.
+- Los topónimos heredados suelen ser barrios o localidades, no municipios. Las
+  correcciones más frecuentes fueron Maliaño/Camargo, Gajano/Marina de Cudeyo,
+  Sarón/Santa María de Cayón, Ontaneda/Corvera de Toranzo y Rioseco/Guriezo.
+- Un dominio activo no es necesariamente una fuente válida: La Zapita devolvía
+  contenido de spam; Gallofa y Casa Vejo tenían tienda o texto de compra pero
+  no permitían confirmar venta vigente en ese momento.
+- `Venta online=no` necesita tanta cautela como `sí`: si no hay fuente actual
+  fuerte que confirme ausencia de venta remota, es mejor `no comprobado`.
+- Los marketplaces son útiles para probar venta vigente y a veces actividad de
+  producto, pero no sustituyen por sí solos a una fuente propia cuando se exige
+  verificar municipio o identidad completa.
+- La revisión transversal final debe buscar expresamente: `pendiente`, `sí`
+  sin canal, filas activas sin `keep`, dominios sospechosos, duplicados por
+  marca/sucursal y cambios de municipio que puedan afectar al geo-check.
