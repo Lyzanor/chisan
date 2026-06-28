@@ -207,10 +207,10 @@ ya tocadas.
 | 9 | Charcutería IV | 10 | 0 | 1 | 9 | 4 | ✅ | Cerrado el 2026-06-26: 10 activos y 18 purgas; `ganaderia-la-lejuca` baja de venta online heredada a `no comprobado`. |
 | 10 | Fruta, verdura, huevos y legumbres | 26 | 0 | 6 | 20 | 12 | ✅ | Cerrado el 2026-06-26: 26 activos de 34 revisados, 8 purgas por vivero/servicio/tienda fuera de alcance o no productor. |
 | 11 | Despensa artesanal y chocolate | 15 | 0 | 1 | 14 | 13 | ✅ | Cerrado el 2026-06-27: 15 activos, 14 verificados, 1 parcial (`madacake-bakery`), 4 purgas y 1 merge (`vega-pelayo` -> `sobaos-y-quesadas-vega-pas`). Canales normalizados en todos los `sí`. |
-| 12 | Miel | 16 | 13 | 3 | 0 | 2 | ⬜ | Revisar DOP Miel de Liébana, apicultores personales, asociaciones y canales de pedido. |
-| 13 | Pan y pastelería I | 29 | 29 | 0 | 0 | 0 | ⬜ | De `confiteria-blanco-hojaldres-de-torrelavega` a `panaderia-angel`. Mezcla de confiterías, obradores y primeras panaderías. |
-| 14 | Pan y pastelería II | 29 | 29 | 0 | 0 | 0 | ⬜ | De `panaderia-avin` a `panaderia-menesa`. Muchas panaderías sin web; comprobar obrador antes de conservar. |
-| 15 | Pan y pastelería III | 29 | 29 | 0 | 0 | 0 | ⬜ | De `panaderia-nel` a `pasteleria-casa-vejo`. Revisar cadenas, sedes y comercios con cafetería. |
+| 12 | Miel | 16 | 0 | 7 | 9 | 9 | ✅ | Cerrado el 2026-06-27: 16 activos, sin purgas; varios municipios normalizados de localidad a municipio. |
+| 13 | Pan y pastelería I | 26 | 0 | 7 | 19 | 8 | ✅ | Cerrado el 2026-06-28: de `confiteria-blanco-hojaldres-de-torrelavega` a `panaderia-ajo`, 1 merge y 1 purga. |
+| 14 | Pan y pastelería II | 27 | 0 | 24 | 3 | 0 | ✅ | Cerrado el 2026-06-28: de `panaderia-angel` a `panaderia-maria-begona-ortiz-sainz-maza`, 1 merge y muchas panaderías parciales sin fuente propia. |
+| 15 | Pan y pastelería III | 31 | 31 | 0 | 0 | 0 | ⬜ | De `panaderia-martin-degustacion` a `pasteleria-casa-vejo`. Revisar cadenas, sedes y comercios con cafetería. |
 | 16 | Pan y pastelería IV | 29 | 29 | 0 | 0 | 0 | ⬜ | De `pasteleria-delicatessen-sucre` a `sobaos-arce`. Entra el bloque de pastelerías y empieza sobaos/quesadas. |
 | 17 | Pan y pastelería V | 27 | 15 | 10 | 2 | 3 | ⬜ | De `sobaos-casa-ibanez` a `panificadora-buelna`. Reauditar IGP Sobao Pasiego, verificados heredados y todos los `sí`. |
 | 18 | Cierre transversal provincial | 469 | 423 | 40 | 6 | 28 | ⬜ | Recalcular tras lotes 1-17. Revisar duplicados, municipios/localidades, canales, evidencia completa, imágenes residuales y cobertura estricta. |
@@ -430,3 +430,45 @@ Snapshot tras lote 12:
 - Venta online: 147 sí, 6 no, 212 no comprobado
 - Canal de venta informado: 144/147 productores con `Venta online=sí`
 - Evidencia Cantabria: 326 registros JSONL
+
+## Lote 13 - Pan y pastelería (primer bloque)
+
+Revisión de 28 fichas desde `confiteria-blanco-hojaldres-de-torrelavega` hasta `panaderia-ajo`. Resultado editorial: 26 productores activos, 19 verificados, 7 parciales, 8 con venta online, 1 merge y 1 purga.
+
+Decisiones relevantes:
+
+- Conservados y verificados con fuente propia, tienda o perfil oficial: `confiteria-blanco-hojaldres-de-torrelavega`, `confiteria-milhojas`, `confiteria-romanos`, `confiteria-san-miguel`, `confiteria-santos-obrador`, `confiteria-vega`, `confiterias-gomez`, `de-rosa-obrador`, `ecopanaderia-el-pan-de-la-vida`, `el-obrador-de-maria`, `el-obrador-de-moncobe`, `fermento-casa-de-panaderos`, `flava-obrador`, `horno-san-jose`, `jireh-obrador-de-pan-y-pasteleria-s-l`, `joselin-sobaos-pasiegos-y-quesadas`, `la-canuta-panaderia`, `la-sabrosita-panaderia-colombiana` y `las-marias-pasteleria-y-panaderia`.
+- Quedan parciales `confiteria-cafeteria-carma`, `confiteria-maria-luisa-sl`, `el-horno-de-luisa`, `kurrusku-panaderia`, `la-cabana-sobaos-pasiegos-y-quesadas`, `la-escanda-horno-de-pan` y `panaderia-ajo` por falta de fuente propia actual suficiente.
+- Correcciones de municipio/localidad: `de-rosa-obrador` pasa de Liencres a `Piélagos`, `el-obrador-de-maria` de Rivero a `San Felices de Buelna` y `la-cabana-sobaos-pasiegos-y-quesadas` de Candolias a `Vega de Pas`.
+- `horno-san-jose` pasa de `Pan y pastelería` a `Despensa artesanal`: la fuente propia presenta cafés, chocolates, cacao, harinas y derivados, no un obrador de pan.
+- Fusionado `lasuncion-obrador` -> `panaderia-lasuncion` por duplicar la misma unidad productora de Torrelavega; la ficha superviviente queda para un lote posterior.
+- Eliminado `meson-el-horno-de-selaya`: la fuente disponible identifica un mesón/hostería y no se acreditó obrador de pan, repostería o elaboración alimentaria dentro del alcance.
+- Venta remota confirmada: ecommerce en Confitería Blanco, Confitería Santos, Confiterías Gómez, Ecopanadería El Pan de la Vida y Sobaos Joselín; teléfono/formulario en Milhojas; email/teléfono en Confitería Vega; WhatsApp en FLAVA.
+
+Snapshot tras lote 13:
+
+- Filas CSV: 363
+- Verificación: 219 verificados, 41 parciales, 103 pendientes
+- Venta online: 155 sí, 6 no, 202 no comprobado
+- Canal de venta informado: 152/155 productores con `Venta online=sí`
+- Evidencia Cantabria: 354 registros JSONL
+
+## Lote 14 - Pan y pastelería (segundo bloque)
+
+Revisión de 28 fichas desde `panaderia-angel` hasta `panaderia-maria-begona-ortiz-sainz-maza`. Resultado editorial: 27 productores activos, 3 verificados, 24 parciales, 0 con venta online confirmada y 1 merge.
+
+Decisiones relevantes:
+
+- Conservados y verificados con fuente propia o perfil oficial: `panaderia-gallofa-co`, `panaderia-la-antigua` y `panaderia-lasuncion`.
+- Quedan parciales `panaderia-angel`, `panaderia-avin`, `panaderia-cisneros-17`, `panaderia-cruce`, `panaderia-de-vieda`, `panaderia-dona-croqueta`, `panaderia-el-molino`, `panaderia-galizano`, `panaderia-gustos`, `panaderia-hermanos-ortiz`, `panaderia-hijos-de-antonio-ruiz-sl`, `panaderia-hijos-de-juan-carral`, `panaderia-ismael-saiz-garcia-s-l`, `panaderia-jelu`, `panaderia-la-costera`, `panaderia-la-pasiega`, `panaderia-la-pesa-s-c`, `panaderia-la-positiva`, `panaderia-la-tahona`, `panaderia-la-vega`, `panaderia-los-arcos`, `panaderia-los-arcos-hermanos-cobo`, `panaderia-los-marineros` y `panaderia-maria-begona-ortiz-sainz-maza` por falta de fuente propia actual suficiente.
+- Correcciones de municipio/localidad: `panaderia-galizano` pasa a `Ribamontán al Mar`, `panaderia-hermanos-ortiz` pasa de Marrón a `Ampuero` y `panaderia-hijos-de-antonio-ruiz-sl` pasa de Orzales a `Campoo de Yuso`.
+- Fusionado `panaderia-la-artesana-2` -> `panaderia-pielagos`: la web agrupa Panadería Piélagos y las panaderías La Artesana como la misma marca/red de obradores. Se borra la imagen de la sucursal fusionada.
+- `panaderia-gallofa-co` sube a `verificado`, pero queda con `Venta online=no comprobado` porque la página de tienda online aparecía en obras durante la revisión.
+
+Snapshot tras lote 14:
+
+- Filas CSV: 362
+- Verificación: 222 verificados, 65 parciales, 75 pendientes
+- Venta online: 155 sí, 6 no, 201 no comprobado
+- Canal de venta informado: 152/155 productores con `Venta online=sí`
+- Evidencia Cantabria: 382 registros JSONL
