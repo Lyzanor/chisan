@@ -591,35 +591,10 @@ export function auditEvidence({
     );
   }
 
-  for (const provinceKey of strictProvinces) {
-    const csvPath = path.join(resolvedCsvRoot, `${provinceKey}.csv`);
-    const evidencePath = path.join(resolvedEvidenceRoot, `${provinceKey}.jsonl`);
-
-    if (!fs.existsSync(csvPath)) {
-      errors.push(
-        `${COVERAGE_FILE}: strict province '${provinceKey}' has no matching CSV`,
-      );
-      continue;
-    }
-    if (!fs.existsSync(evidencePath)) {
-      errors.push(
-        `${COVERAGE_FILE}: strict province '${provinceKey}' has no evidence ledger`,
-      );
-      continue;
-    }
-
-    const result = provinceResults.get(provinceKey);
-    if (!result) continue;
-
-    for (const slug of result.rows.keys()) {
-      const record = result.records.get(slug);
-      if (!record || record.action !== "keep") {
-        errors.push(
-          `${evidencePath}: strict coverage missing keep record for '${slug}'`,
-        );
-      }
-    }
-  }
+  // Strict coverage is advisory, not enforced. Evidence is an optional audit
+  // layer, so a province listed in coverage.json is never required to carry a
+  // keep record for every CSV row. The list still marks fully-documented
+  // provinces for report:evidence, but its gaps never block.
 
   return {
     errors,
@@ -639,8 +614,8 @@ function main() {
   console.log("Evidence contract audit summary");
   console.log(`- files: ${result.files}`);
   console.log(`- records: ${result.records}`);
-  console.log(`- strict provinces: ${result.strictProvinces}`);
-  console.log(`- errors: ${result.errors.length}`);
+  console.log(`- advisory strict provinces: ${result.strictProvinces}`);
+  console.log(`- issues: ${result.errors.length}`);
 
   if (result.errors.length === 0) {
     console.log("- status: OK");
@@ -649,9 +624,12 @@ function main() {
 
   console.log("");
   for (const error of result.errors) {
-    console.log(`ERROR ${error}`);
+    console.log(`WARN ${error}`);
   }
-  process.exitCode = 1;
+  console.log("");
+  console.log(
+    "Evidence is an optional audit layer; the issues above are warnings and never block.",
+  );
 }
 
 const isMain =

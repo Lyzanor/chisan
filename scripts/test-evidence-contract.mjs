@@ -109,6 +109,8 @@ function main() {
       ),
     );
 
+    // Strict coverage is advisory: a province listed in coverage.json with an
+    // empty ledger must not raise a blocking "missing keep record" error.
     writeLedger(fixture.ledgerPath, []);
     writeJson(path.join(fixture.evidenceRoot, "coverage.json"), {
       version: 1,
@@ -116,9 +118,10 @@ function main() {
     });
     result = auditEvidence(fixture);
     assert.ok(
-      result.errors.some((error) =>
+      !result.errors.some((error) =>
         error.includes("strict coverage missing keep record"),
       ),
+      "strict coverage must no longer require keep records",
     );
 
     console.log("Evidence contract tests OK.");

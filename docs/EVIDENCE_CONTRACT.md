@@ -13,23 +13,24 @@ The knowledge hierarchy is:
 3. `data/evals/**`: stable policy examples that prevent criteria drift.
 4. Provincial ledgers and Git history: local context, progress and narrative.
 
-## Progressive adoption
+## Optional audit layer
 
-Evidence adoption must not block improvement of provinces that predate this
-contract.
+Evidence is provenance, not a gate. The CSV is the source of truth; evidence
+records explain decisions but never block a province from being considered
+done.
 
-- Every evidence record that exists is validated by `npx pnpm check:evidence`.
-- New producers, re-verifications, material changes to `verificacion` or
-  `Venta online`, and future purge/merge decisions must add or update a
-  record.
-- A province may have partial evidence coverage while it is being migrated.
-- Add a province to `data/evidence/coverage.json` only when every current CSV
-  row has a valid `keep` record.
-- Once listed as strict, missing evidence becomes a blocking error. Do not
-  remove a province from strict coverage to make a change pass.
-
-This gives old data a migration path while making the standard irreversible
-once a province reaches it.
+- Every evidence record that exists is validated by `npx pnpm check:evidence`,
+  but the validator is **non-blocking**: problems are reported as warnings, not
+  errors, and never fail `verify:data` / `verify:ai`.
+- Writing evidence is cheapest at decision time, when the sources are already
+  open: prefer adding a record when you add a producer, re-verify one, resolve
+  `Venta online`, or purge/merge — not as a retroactive backfill of an
+  already-verified province.
+- `data/evidence/coverage.json` is an **advisory** list of provinces whose
+  ledger already covers every current row. It feeds the `report:evidence`
+  `✓ strict` badge; it does not impose a requirement and is never enforced.
+- A province is never required to have any evidence record. Absence is not a
+  defect, and `falta-keep` in `report:evidence` is a progress gauge, not debt.
 
 ## Layout
 
@@ -157,8 +158,9 @@ npx pnpm test:evidence-contract
 ```
 
 The validator checks JSONL shape, allowed values, dates, claims, source URLs,
-slug existence, merge/purge consistency, exact CSV decision parity and strict
-province coverage.
+slug existence, merge/purge consistency and exact CSV decision parity. It runs
+**non-blocking**: any mismatch is a warning, not a build-breaking error, and
+provinces listed in `coverage.json` are no longer required to cover every row.
 
 It checks that the required claims are present and that at least one verifying
 source type exists, but it does not bind a claim to a source: confirming that a

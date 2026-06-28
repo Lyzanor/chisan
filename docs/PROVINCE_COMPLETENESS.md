@@ -32,7 +32,7 @@ These percentages are stable editorial planning targets, not claims that every p
 ## What Good Looks Like
 - Every row keeps the required CSV contract valid.
 - Every row has an evidence-based `verificacion` value: `pendiente`, `parcial`, or `verificado`.
-- New and re-reviewed decisions have structured source/date/claim provenance; a mature province is listed under strict evidence coverage.
+- New and re-reviewed decisions have structured source/date/claim provenance where it helps; evidence is an optional audit layer, not a maturity bar.
 - `Google Maps`, `lat`, and `lon` are present and point to the same producer/location.
 - `telefono` or `correo` exists when a reliable public contact route can be found.
 - `web` exists only when the domain resolves and belongs to the producer or a reliable official listing.
