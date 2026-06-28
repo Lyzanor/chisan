@@ -150,13 +150,19 @@ grep -q "Venta online must be one of: sÃ­, no, no comprobado" "$TMP_DIR/out-onli
 
 run_expect_failure "$TMP_DIR/out-quality.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/quality-warnings.csv"
+# Core-field gaps and correctness issues stay as warnings.
 grep -q "WARNING line 2 .* nombre is empty" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 2 .* telefono and correo are both empty" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 2 .* Google Maps is empty" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 2 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 3 .* coordinates are present but direccion is not useful for location review" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
+# Optional-field gaps are suppressed (tracked by check:csv:completeness), never warnings.
+for needle in "telefono and correo are both empty" "Google Maps is empty" "coordinates are present but direccion is not useful"; do
+  if grep -q "WARNING .* ${needle}" "$TMP_DIR/out-quality.txt"; then
+    echo "Error: optional-field gap '${needle}' must be suppressed, not a warning" >&2
+    exit 1
+  fi
+done
+grep -q "suppressed (absent optional fields" "$TMP_DIR/out-quality.txt"
 
 # Coordinates far enough to belong to another municipio are a blocking error.
 run_expect_failure "$TMP_DIR/out-geo-blocking.txt" \
@@ -180,16 +186,16 @@ grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y pastelerÃ
 
 run_expect_success "$TMP_DIR/out-verificado-suppression.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/verificado-suppression.csv"
-# Absence warnings on a verificado row are suppressed, not listed.
+# Optional-field gaps are suppressed, not listed (whatever the verification status).
 if grep -q "Facebook and Instagram are both empty" "$TMP_DIR/out-verificado-suppression.txt"; then
-  echo "Error: absence warning should be suppressed on a verificado row" >&2
+  echo "Error: optional-field gap should be suppressed" >&2
   exit 1
 fi
 if grep -q "telefono and correo are both empty" "$TMP_DIR/out-verificado-suppression.txt"; then
-  echo "Error: absence warning should be suppressed on a verificado row" >&2
+  echo "Error: optional-field gap should be suppressed" >&2
   exit 1
 fi
-grep -q "suppressed (absent optional fields on verificado rows)" "$TMP_DIR/out-verificado-suppression.txt"
+grep -q "suppressed (absent optional fields; tracked by check:csv:completeness)" "$TMP_DIR/out-verificado-suppression.txt"
 # Correctness warnings still fire on verificado rows.
 grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-suppression.txt"
 

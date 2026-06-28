@@ -147,18 +147,19 @@ Optional = the value may be empty. The column headers themselves are present in 
 
 Warnings come in two tiers:
 
-- **Absence warnings** flag an empty optional field. They are *suppressed on `verificado` rows*: once a human has reviewed a producer, a missing Facebook or website is a known gap, not an unreviewed one. The summary reports the count as `suppressed (absent optional fields on verificado rows)` instead of listing them, so verifying a row clears its own noise and the remaining warning list is a real worklist of unreviewed rows.
-- **Correctness warnings** flag a probable defect (bad coordinates, duplicate, invalid value). They fire regardless of `verificacion`, because a verified row can still hold wrong data.
+- **Optional-field gaps** flag an empty *optional* field. They are **always suppressed**: editorial policy treats empty as valid, and `check:csv:completeness` already tracks their coverage as a percentage. The summary reports the count as `suppressed (absent optional fields; tracked by check:csv:completeness)` instead of listing them, so the warning list stays a real worklist of actionable issues. Use `check:csv:completeness` to plan filling these gaps.
+- **Actionable warnings** flag a probable defect (missing core field, bad coordinates, duplicate, invalid value). They always fire, because they need a fix regardless of `verificacion`.
 
-Absence warnings (suppressed on `verificado`):
-  - `nombre`, `municipio`, `categoria`, `direccion` empty
+Optional-field gaps (always suppressed → see `check:csv:completeness`):
+  - `direccion` empty
   - `descripcion` empty or shorter than `30` characters
   - both `telefono` and `correo` empty
   - both `Facebook` and `Instagram` empty
   - `Google Maps` empty
   - coordinates present but `direccion` not useful for location review
 
-Correctness warnings (always fire):
+Actionable warnings (always fire):
+  - `nombre`, `municipio` or `categoria` empty (a core field is missing)
   - `Canal de venta` present with a token outside the allowed set (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`)
   - `Canal de venta` set while `Venta online` is not `sí`
   - duplicated normalized `nombre + municipio`

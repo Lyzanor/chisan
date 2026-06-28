@@ -808,27 +808,26 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     const googleMaps = cleanCell(fields["Google Maps"]);
     const onlineSales = normalizeSearch(cleanCell(fields[ONLINE_SALES_COLUMN]));
     const salesChannelRaw = cleanCell(fields[SALES_CHANNEL_COLUMN]);
-    const verification = normalizeSearch(cleanCell(fields[VERIFICATION_COLUMN]));
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
     const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
-    // Absence warnings (an optional field is empty) are noise once a human has
-    // reviewed the row: `verificado` means the gap is known, not unreviewed. They
-    // are downgraded to "suppressed" so verifying a row clears its own noise.
-    // Correctness warnings (bad coordinates, duplicates, invalid values) keep
-    // firing regardless of verification status because they flag real defects.
-    const presence = verification === "verificado" ? "suppressed" : "warning";
+    // Core-field gaps are real defects and always warn. Optional-field gaps
+    // (address, description, contact, social, Google Maps) are not defects:
+    // editorial policy treats empty as valid, and check:csv:completeness already
+    // tracks their coverage as a percentage. They are pushed as "suppressed" so
+    // they never add per-row noise here, whatever the verification status.
+    const optionalGap = "suppressed";
 
     if (!name) {
-      push(presence, line, id, slug, "nombre is empty");
+      push("warning", line, id, slug, "nombre is empty");
     }
 
     if (!city) {
-      push(presence, line, id, slug, "municipio is empty");
+      push("warning", line, id, slug, "municipio is empty");
     }
 
     if (!category) {
-      push(presence, line, id, slug, "categoria is empty");
+      push("warning", line, id, slug, "categoria is empty");
     } else {
       const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
       if (preferredCategory && category !== preferredCategory) {
@@ -843,14 +842,14 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     }
 
     if (!address) {
-      push(presence, line, id, slug, "direccion is empty");
+      push(optionalGap, line, id, slug, "direccion is empty");
     }
 
     if (!description) {
-      push(presence, line, id, slug, "descripcion is empty");
+      push(optionalGap, line, id, slug, "descripcion is empty");
     } else if (description.length < DESCRIPTION_MIN_LENGTH) {
       push(
-        presence,
+        optionalGap,
         line,
         id,
         slug,
@@ -859,15 +858,15 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     }
 
     if (!phone && !email) {
-      push(presence, line, id, slug, "telefono and correo are both empty");
+      push(optionalGap, line, id, slug, "telefono and correo are both empty");
     }
 
     if (!facebook && !instagram) {
-      push(presence, line, id, slug, "Facebook and Instagram are both empty");
+      push(optionalGap, line, id, slug, "Facebook and Instagram are both empty");
     }
 
     if (!googleMaps) {
-      push(presence, line, id, slug, "Google Maps is empty");
+      push(optionalGap, line, id, slug, "Google Maps is empty");
     }
 
     if (salesChannelRaw) {
@@ -902,7 +901,7 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
 
     if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {
       if (!hasUsefulAddress(fields)) {
-        push(presence, line, id, slug, "coordinates are present but direccion is not useful for location review");
+        push(optionalGap, line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
 
       const centroid = lookupCentroid(centroids, city, communityHint);
@@ -992,7 +991,7 @@ function printReport(mode, issues, { summaryOnly = false } = {}) {
   console.log(`- warnings: ${warnings.length}`);
   if (suppressed.length) {
     console.log(
-      `- suppressed (absent optional fields on verificado rows): ${suppressed.length}`,
+      `- suppressed (absent optional fields; tracked by check:csv:completeness): ${suppressed.length}`,
     );
   }
 
