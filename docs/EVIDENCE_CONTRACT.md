@@ -27,10 +27,10 @@ done.
   `Venta online`, or purge/merge — not as a retroactive backfill of an
   already-verified province.
 - `data/evidence/coverage.json` is an **advisory** list of provinces whose
-  ledger already covers every current row. It feeds the `report:evidence`
-  `✓ strict` badge; it does not impose a requirement and is never enforced.
-- A province is never required to have any evidence record. Absence is not a
-  defect, and `falta-keep` in `report:evidence` is a progress gauge, not debt.
+  ledger already covers every current row. It records that fact for humans; it
+  does not impose a requirement and is never enforced.
+- A province is never required to have any evidence record. Missing records are
+  not a defect or a debt.
 
 ## Layout
 

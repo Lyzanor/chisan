@@ -594,7 +594,7 @@ export function auditEvidence({
   // Strict coverage is advisory, not enforced. Evidence is an optional audit
   // layer, so a province listed in coverage.json is never required to carry a
   // keep record for every CSV row. The list still marks fully-documented
-  // provinces for report:evidence, but its gaps never block.
+  // provinces, but its gaps never block.
 
   return {
     errors,

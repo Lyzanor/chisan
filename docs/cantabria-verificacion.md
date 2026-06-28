@@ -602,8 +602,7 @@ Snapshot final:
 - Venta online: 178 sí, 2 no, 180 no comprobado
 - Canal de venta informado: 178/178 productores con `Venta online=sí`
 - Evidencia Cantabria: 469 registros JSONL; 360/360 filas activas con `keep`
-- Estado de evidencia: `npx pnpm report:evidence cantabria` marca
-  `falta-keep=0`
+- Estado de evidencia: 360/360 filas activas con registro `keep` (cobertura completa)
 - Validación final: `npx pnpm verify:data` pasa con CSV, imágenes y evidencia
   sin errores
 

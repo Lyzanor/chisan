@@ -250,8 +250,8 @@ Una **pasada** de revisión se cierra cuando no quedan `pendiente`, cada residua
 conocida y las afirmaciones dinámicas se han comprobado; entonces la provincia entra en mantenimiento.
 El CSV nunca se «cierra» ni se da por terminado: es un catálogo vivo. Las afirmaciones dinámicas
 (actividad, cierre, venta online) y la frescura de la evidencia se vuelven a comprobar durante el
-mantenimiento. Añadir la provincia a `data/evidence/coverage.json` fija el estándar de procedencia
-—la cobertura pasa a ser bloqueante—, pero no congela el catálogo ni cierra el CSV.
+mantenimiento. Añadir la provincia a `data/evidence/coverage.json` la marca como cobertura completa
+de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálogo ni cierra el CSV.
 
 ## Documento provincial opcional
 
