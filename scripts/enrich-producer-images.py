@@ -572,8 +572,11 @@ def find_csv_path(root: Path, province: str | None, csv_path: str | None) -> Pat
 
 def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> None:
     temp_path = path.with_suffix(f"{path.suffix}.tmp")
+    # Force LF: csv.writer defaults to CRLF (\r\n), which breaks the repo's
+    # LF-only CSV contract (.gitattributes / check:csv). newline="" keeps the
+    # writer's lineterminator from being translated again on write.
     with temp_path.open("w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer = csv.DictWriter(file, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     temp_path.replace(path)
