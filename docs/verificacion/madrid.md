@@ -3,7 +3,7 @@
 > Ledger reanudable de la verificación campo a campo de `data/csv/madrid/madrid.csv`.
 > Una sesión nueva debe poder retomar **solo con este archivo**. No es fuente de verdad: la verdad
 > es el CSV (columna `verificacion`). Hermano del proceso de Barcelona
-> (`docs/barcelona-verificacion.md`); el detalle histórico vive en el git log de este archivo.
+> (`docs/verificacion/barcelona.md`); el detalle histórico vive en el git log de este archivo.
 
 ## Reglas duras (no negociables)
 
@@ -287,4 +287,4 @@ No es un lote nuevo. El 2026-06-12 se conciliaron los recuentos de cada commit y
 ## Historial
 
 Cada lote cerrado deja su línea en la worklist (✅, fecha, nota de 1 línea); la evidencia fina va en
-el mensaje de commit del lote. Detalle histórico: `git log --follow -p -- docs/madrid-verificacion.md`.
+el mensaje de commit del lote. Detalle histórico: `git log --follow -p -- docs/verificacion/madrid.md`.

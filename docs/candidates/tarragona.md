@@ -11,7 +11,7 @@
 > Generado el 2026-06-15.
 >
 > **⮕ Cierre (2026-06-23):** completada la verificación profunda de `tarragona.csv`
-> (68 `pendiente` legacy → 0; estado y lotes en `docs/tarragona-verificacion.md`).
+> (68 `pendiente` legacy → 0; estado y lotes en `docs/verificacion/tarragona.md`).
 > Resueltos los diferidos de Conca: **Mas de la Pansa integrado**, **Mas de la Creu**
 > confirmado real (municipio por fijar), **Abadia de Poblet** rechazado (marca de
 > Tintoré). Duplicado **Mas Martinet** fusionado. Esta nota queda como histórico de
@@ -31,7 +31,7 @@
 - **Dudoso encaje pendiente (Priorat):** Unió Fruits SCCL (coop de fruta).
 - **Revisión local de duplicados 2026-06-16:** comparado contra `npx pnpm list:province tarragona` y `npx pnpm list:province tarragona --categoria Bodega`. Las secciones cerradas quedan con casillas `[x]` y `already-present`, `rejected`, `moved` o `dup-of` para no reabrirlas.
 - **Fusión resuelta (2026-06-21):** *Agricola Ulldemolins* = `agricola-dulldemolins-ulldemolins` (`Aceite`, `parcial`), cuya fila ya recoge "vinos DO Montsant"; no se crea fila nueva.
-- **DOQ Priorat: HECHA (2026-06-22).** 106 cellers integrados en `tarragona.csv` (lotes 1-12), con evidencia en `data/evidence/catalunya/tarragona.jsonl`. **1 diferido:** Gason Expert (= Totó Marqués, municipi/web no fiables). **1 dup-of:** Unió Fruits = `cellers-unio-reus`. Alias de web resueltos (Aretheal, Les Vinyes Forer Massard, Clos Alkio) y nombres reales tras alias (Clos de Lobac=Costers del Siurana, Clos de Lona=Clos de l'Ona, Domini de la Cartoixa=Clos Galena). **Resuelto (2026-06-23):** diferidas de Conca cerradas (Pansa integrado, Creu confirmado/municipio por fijar, Abadia rechazado). Repaso de `no comprobado` del vino iniciado (Lote 8 en `docs/tarragona-verificacion.md`): ~20 revisados, 11→`sí`; ~58 con web quedan como backfill de mantenimiento (no bloqueante).
+- **DOQ Priorat: HECHA (2026-06-22).** 106 cellers integrados en `tarragona.csv` (lotes 1-12), con evidencia en `data/evidence/catalunya/tarragona.jsonl`. **1 diferido:** Gason Expert (= Totó Marqués, municipi/web no fiables). **1 dup-of:** Unió Fruits = `cellers-unio-reus`. Alias de web resueltos (Aretheal, Les Vinyes Forer Massard, Clos Alkio) y nombres reales tras alias (Clos de Lobac=Costers del Siurana, Clos de Lona=Clos de l'Ona, Domini de la Cartoixa=Clos Galena). **Resuelto (2026-06-23):** diferidas de Conca cerradas (Pansa integrado, Creu confirmado/municipio por fijar, Abadia rechazado). Repaso de `no comprobado` del vino iniciado (Lote 8 en `docs/verificacion/tarragona.md`): ~20 revisados, 11→`sí`; ~58 con web quedan como backfill de mantenimiento (no bloqueante).
 
 
 ## Ruta del Trepat i Vins de la Conca de Barberà  ·  ✅ HECHA (18 integradas; ver «Estado de revisión» arriba)

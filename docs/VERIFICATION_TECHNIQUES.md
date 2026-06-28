@@ -255,7 +255,7 @@ de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálo
 
 ## Documento provincial opcional
 
-Crea `docs/[provincia]-verificacion.md` solo si el CSV y este manual no bastan para reanudar. Incluye:
+Crea `docs/verificacion/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Incluye:
 
 - snapshot y worklist;
 - fuentes locales y sus límites;

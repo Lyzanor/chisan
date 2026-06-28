@@ -3,7 +3,7 @@
 > Ledger reanudable de la verificación campo a campo de `data/csv/catalunya/barcelona.csv`.
 > Una sesión nueva debe poder retomar **solo con este archivo**. No es fuente de verdad: la verdad
 > es el CSV (columna `verificacion`). El detalle de cada lote cerrado vive en el historial git de
-> este archivo (`git log --follow -p -- docs/barcelona-verificacion.md`) y en los commits del CSV.
+> este archivo (`git log --follow -p -- docs/verificacion/barcelona.md`) y en los commits del CSV.
 
 ## Reglas duras (no negociables)
 
@@ -671,7 +671,7 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 ## Historial
 
 El detalle por lote (qué se verificó, qué se purgó y por qué) se registró aquí hasta el lote 26 y
-está en el historial git de este archivo: `git log --follow -p -- docs/barcelona-verificacion.md`.
+está en el historial git de este archivo: `git log --follow -p -- docs/verificacion/barcelona.md`.
 Desde ahora, cada lote cerrado deja solo su línea en la worklist; la evidencia fina va en el mensaje
 de commit del lote.
 

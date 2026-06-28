@@ -4,7 +4,7 @@
 // Cruza las filas de UN municipio de un CSV de provincia contra el dataset
 // DAR "venda de proximitat" de la Generalitat (Socrata `xmyy-7xqi`) por
 // teléfono / email / apellidos normalizados. Acelera la verificación profunda
-// de Barcelona (ver docs/barcelona-verificacion.md): confirma existencia
+// de Barcelona (ver docs/verificacion/barcelona.md): confirma existencia
 // (→ parcial), detecta dups registre↔marca y sugiere recats vía `productes`.
 //
 // El match por tel/email es municipi-agnóstico (caza productores fichados en
