@@ -50,6 +50,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 - `npx pnpm test:intelligence`: validates the evidence contract fixtures and synthetic editorial policy cases.
 - `npx pnpm test:behavior`: minimal route behavior test.
 - `scripts/build-municipio-centroids.js`: regenerate `data/reference/municipios.json` from Wikidata (self-contained, ~30 s). Run when the lookup may be stale or a real municipio seems missing.
+- `node scripts/match-dar.mjs "<municipio>" [--csv <path>] [--all]`: Catalonia-only verification helper (not wired in `package.json`). Cross-references a province CSV's `municipio` rows against the Generalitat DAR "venda de proximitat" registry (Socrata `xmyy-7xqi`) by phone/email/surname to confirm existence (→ `parcial`), flag registry↔brand duplicates, and surface unmatched DAR producers as candidates. Confirms existence, never online sales; not a source of truth. Defaults to `data/csv/catalunya/barcelona.csv`.
 
 ## Invariants
 - Keep flow simple: `CSV -> map/list -> row detail`.
@@ -109,6 +110,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 ## Discovery protocol (find producers that fit, never invent)
 - **Start from authoritative registries, not from memory.** Good sources: DOP/IGP regulatory councils, regional "alimentos de calidad" / artisan-food registries, cooperative federations, Slow Food and farmers'-market directories, comarca and tourism food portals. These yield real businesses with verifiable names.
 - **Registries confirm existence, not current status.** They can be stale (closed businesses, no longer selling online). Listing supports at most `verificacion=parcial`; for a dynamic claim like `Venta online=sí` confirm a live checkout on the producer's own site today, not just presence in a registry/marketplace.
+- **A registry is not always a producer list.** A livestock-holding registry like REGA ("Registre d'explotacions ramaderes") lists *explotaciones*, not sellable producers — triage those rows and prune, do not keep them as catalog entries. For Catalonia, the Generalitat DAR "venda de proximitat" registry does confirm existence and locality; `scripts/match-dar.mjs` cross-references it against a province CSV.
 - **Never invent or guess producer names.** A plausible-sounding name is not a producer. If a candidate appears only inside generic category listings ("quesos de la zona", a dish or product name like "Cocido Montañés") and you cannot find that specific business with its own web, social profile, or Google Maps entry, do not add it.
 - **De-duplicate before researching.** Run `npx pnpm list:province [provincia]` (optionally `--categoria`) first and grep the candidate name; many real producers are already in the CSV under a slightly different name, so verifying them again is wasted effort.
 - **Target the gaps.** Use `npx pnpm check:csv:completeness` to find weak field coverage, then inspect municipal and category coverage directly and aim discovery there instead of densifying already-covered areas.
@@ -130,12 +132,6 @@ npx pnpm verify:ai     # code, scripts, validators, or policy changes
 - Commit CSV/data-contract changes together when they depend on each other.
 - Deploy to production = push the commit to `main`; the GitHub→Vercel integration builds and deploys prod automatically. No separate deploy command, no preview/staging target. (`vercel deploy . --prod -y` exists only as a manual fallback.)
 - Don't poll the deploy: the `git push` output confirms it triggered. Avoid listing all deployments — it returns a large payload.
-
-## Validation before finishing
-```bash
-npx pnpm verify:data   # data-only (default for province work)
-npx pnpm verify:ai     # code changes
-```
 
 ## Docs index
 Each fact has one canonical owner; other docs link to it instead of restating it.
