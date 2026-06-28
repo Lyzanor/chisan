@@ -43,6 +43,11 @@ y `docs/EDITORIAL_POLICY.md`.
 - Tras lote 2 (2026-06-28): 160 filas (1 merge); 55 `verificado`, 4 `parcial`,
   101 `pendiente`. Venta online: 79 `sí`, 61 `no`, 20 `no comprobado`; 20/79
   `sí` con `Canal de venta`. Evidencia: 40 registros (39 `keep`, 1 `merge`).
+- Tras lotes 3-5 (2026-06-28): 160 filas; 97 `verificado`, 9 `parcial`, 54
+  `pendiente`. Venta online: 76 `sí`, 37 `no`, 47 `no comprobado`; 39/76 `sí`
+  con `Canal de venta`. Evidencia: 93 registros. Pendientes restantes:
+  Charcutería 11, Fruta y verdura 13, Miel 7, Lácteos y quesos 7, Trufa y setas
+  6, Pescado 6, Café 2, Huevos 2.
 - Modo: primera pasada profunda en curso. Prioridad: cerrar la calidad de las
   filas heredadas antes de añadir candidatos nuevos.
 
@@ -146,9 +151,9 @@ El lote 11 es auditoría transversal y puede revisar filas ya tocadas.
 |---|---|---:|---:|---:|---:|---:|---|---|
 | 1 | Aceite | 21 | 0 | 2 | 19 | 12 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 1 - Aceite». 0 purgas; 2 parcial (solo directorio). Flip `no`→`sí`: Organia Oleum. 4 demociones `sí`→`no comprobado`. |
 | 2 | Bodega | 18 | 0 | 1 | 17 | 8 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 2 - Bodega». 1 merge (Ildum→Bellmunt), 1 parcial (Castillo de la Duquesa), enlace ajeno `banus.eu` corregido. 8 sí (ecommerce); resto `no comprobado` (cellers con web caída/age-gate). |
-| 3 | Otros | 19 | 18 | 0 | 1 | 11 | ⬜ | Cajón heterogéneo, casi todo pendiente. Triar producto/elaborador real vs no productor; clasificar bien la categoría. |
-| 4 | Pan y pastelería | 18 | 13 | 1 | 4 | 5 | ⬜ | Obrador vs despacho/cafetería/franquicia. Solo 5 `sí`, pero 13 `no` a reauditar (pedido por contacto). |
-| 5 | Cerveza artesana + Licores | 16 | 16 | 0 | 0 | 6 | ⬜ | Confirmar elaborador real y canal. Herbero/licores artesanos; cerveceras con tienda propia vs solo distribución. |
+| 3 | Otros | 19 | 0 | 2 | 17 | 7 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 3 - Otros». 6 aguas (mayoría B2B `no`/`no comprobado`), turrones, mermeladas, snacks. 2 parcial (Cereza Simó, Turrones San Luis). Sin purgas. |
+| 4 | Pan y pastelería | 18 | 0 | 0 | 18 | 5 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 4 - Pan y pastelería». Todos obradores reales. Horno Estellés sube de parcial a verificado (venta vía Mercat Central). |
+| 5 | Cerveza artesana + Licores | 16 | 0 | 4 | 12 | 7 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 5». Castelló Beer Factory `no`→`sí`; Gin Zeit pedido por email. 4 parcial por duda de actividad. |
 | 6 | Charcutería | 13 | 11 | 0 | 2 | 7 | ⬜ | Embotits de Morella, cecina, curados. Explotación/obrador vs carnicería minorista sin elaboración propia. |
 | 7 | Fruta y verdura | 13 | 13 | 0 | 0 | 8 | ⬜ | Cítricos de La Plana: productor/cooperativa elaboradora vs comercializadora/exportadora. DOP Carxofa de Benicarló. |
 | 8 | Miel | 13 | 7 | 0 | 6 | 10 | ⬜ | Mieles del Maestrat. 10 `sí` a confirmar con canal; reauditar verificados heredados. |
@@ -287,3 +292,73 @@ Snapshot tras lote 2:
 - Venta online: 79 sí, 61 no, 20 no comprobado
 - Canal de venta informado: 20/79 productores con `Venta online=sí`
 - Evidencia Castellón: 40 registros JSONL (39 keep, 1 merge)
+
+## Lote 3 - Otros
+
+Revisión de las 19 fichas de `Otros` (2026-06-28): 17 `verificado`, 2 `parcial`,
+0 purgas; venta online 7 `sí`, 3 `no`, 9 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Flip `no`→`sí`**: `blasco-de-cati-cati` (turronero artesano desde 1915;
+  pedidos por WhatsApp/teléfono → `whatsapp|telefono`).
+- **`parcial`**: `cereza-ecologica-enrique-simo-la-jana` (productor confirmado
+  solo por prensa) y `turrones-san-luis-cabanes` (web caída + sociedad "en
+  liquidación" en registro: duda de actividad).
+- **Enlaces ajenos corregidos**: `turrones-barbera-…` tenía web/IG de
+  DePenyagolosa (marketplace de la coop, no propios) → borrados. `agua-de-chovar`
+  y aguas: web de marca conservada.
+- **Webs/datos**: web propia a `la-posteta-figueroles`; municipio `Benlloc`→
+  `Benlloch` en `agut-de-benlloch`.
+- **Venta online confirmada (ecommerce)**: Agua de Benassal (`ecommerce|
+  suscripcion`), Belluga Gourmet, Pobill Ecològics, Artesanos Gil, Croquellanas,
+  Papas J. García.
+- **Aguas minerales**: envasadoras reales; las grandes B2B (Cortes/Importaco,
+  Orotana, Chóvar/Manantiales del Portell) quedan `no`; Bejís y L'Avellà
+  `no comprobado`.
+
+Snapshot tras lote 3: 161 filas; 61 verificado, 6 parcial, 94 pendiente; VO 86
+sí, 64 no, 11 no comprobado; canal 27/86; evidencia 59.
+
+## Lote 4 - Pan y pastelería
+
+Revisión de las 18 fichas (2026-06-28): 18 `verificado`, 0 `parcial`, 0 purgas;
+venta online 5 `sí`, 2 `no`, 11 `no comprobado`.
+
+Decisiones relevantes:
+
+- `horno-estelles` sube de `parcial` a `verificado` (venta + reparto vía la
+  plataforma del Mercat Central de Castelló → `marketplace`).
+- `forn-carrer-morella-morella`: confirmado obrador premiado en **Sant Mateu**
+  (el slug heredado dice "morella"); se añade IG oficial.
+- **Venta online (ecommerce)**: Forn Rosa Elvira, Dulces La Cartuja, Aima
+  Rosquilletas, Morente Panaderos.
+- `la-adelina-harinas-santamaria` (molino B2B) y `forn-garcia` quedan `no`; el
+  resto de obradores locales sin e-commerce, `no comprobado`.
+
+Snapshot tras lote 4: 160 filas; 79 verificado, 5 parcial, 76 pendiente; VO 81
+sí, 39 no, 40 no comprobado; canal 32/81; evidencia 77.
+
+## Lote 5 - Cerveza artesana + Licores
+
+Revisión de las 16 fichas (2026-06-28): 12 `verificado`, 4 `parcial`, 0 purgas;
+venta online 7 `sí`, 1 `no`, 8 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Flip `no`→`sí`**: `castello-beer-factory-…` (tienda propia `/shop`; +web).
+- **Canal email**: `gin-zeit-argelita` (botón "Realizar pedido" por correo).
+- **Enlace de directorio corregido**: `serrabirra-la-serratella` tenía
+  `web=birrapedia.com` (catálogo de cervezas) → borrado.
+- **`parcial` por duda de actividad**: `cerveza-la-tipica-…` (¿cerveza de un
+  bar?), `cervesa-montmira-…` (rastro de cierre + dominio reaprovechado),
+  `cerveza-cullana-…` (en crowdfunding para relanzar), `cervezas-brancal-…`
+  (presencia muy débil).
+- **Venta online (ecommerce)**: Badúm, Licor Nelet, Carmelitano, Licora, La
+  Somniada. Webs/IG añadidos a Isanbeer, Licores Artesanos de Burriana y
+  Castelló Beer Factory.
+- Coordenadas de `iepa-…` fijadas al centroide de La Mata de Morella (requisito
+  de `verificado`).
+
+Snapshot tras lote 5: 160 filas; 97 verificado, 9 parcial, 54 pendiente; VO 76
+sí, 37 no, 47 no comprobado; canal 39/76; evidencia 93.
