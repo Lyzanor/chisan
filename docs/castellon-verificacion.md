@@ -40,8 +40,11 @@ y `docs/EDITORIAL_POLICY.md`.
   `pendiente`. Venta online: 81 `sí`, 70 `no`, 10 `no comprobado`; 12/81 `sí`
   con `Canal de venta`. Evidencia: 21 registros en
   `data/evidence/comunitat-valenciana/castellon.jsonl` (todos `keep`).
+- Tras lote 2 (2026-06-28): 160 filas (1 merge); 55 `verificado`, 4 `parcial`,
+  101 `pendiente`. Venta online: 79 `sí`, 61 `no`, 20 `no comprobado`; 20/79
+  `sí` con `Canal de venta`. Evidencia: 40 registros (39 `keep`, 1 `merge`).
 - Modo: primera pasada profunda en curso. Prioridad: cerrar la calidad de las
-  161 filas heredadas antes de añadir candidatos nuevos.
+  filas heredadas antes de añadir candidatos nuevos.
 
 ## Reglas duras para Castellón
 
@@ -142,7 +145,7 @@ El lote 11 es auditoría transversal y puede revisar filas ya tocadas.
 | # | Lote | Filas | Pend. | Parcial | Verif. | VO=sí | Estado | Notas iniciales |
 |---|---|---:|---:|---:|---:|---:|---|---|
 | 1 | Aceite | 21 | 0 | 2 | 19 | 12 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 1 - Aceite». 0 purgas; 2 parcial (solo directorio). Flip `no`→`sí`: Organia Oleum. 4 demociones `sí`→`no comprobado`. |
-| 2 | Bodega | 19 | 12 | 1 | 6 | 10 | ⬜ | DO Castelló. Cellers bloquean WebFetch; buscar tienda en subdominio de marca antes de cerrar `no`/`no comprobado`. |
+| 2 | Bodega | 18 | 0 | 1 | 17 | 8 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 2 - Bodega». 1 merge (Ildum→Bellmunt), 1 parcial (Castillo de la Duquesa), enlace ajeno `banus.eu` corregido. 8 sí (ecommerce); resto `no comprobado` (cellers con web caída/age-gate). |
 | 3 | Otros | 19 | 18 | 0 | 1 | 11 | ⬜ | Cajón heterogéneo, casi todo pendiente. Triar producto/elaborador real vs no productor; clasificar bien la categoría. |
 | 4 | Pan y pastelería | 18 | 13 | 1 | 4 | 5 | ⬜ | Obrador vs despacho/cafetería/franquicia. Solo 5 `sí`, pero 13 `no` a reauditar (pedido por contacto). |
 | 5 | Cerveza artesana + Licores | 16 | 16 | 0 | 0 | 6 | ⬜ | Confirmar elaborador real y canal. Herbero/licores artesanos; cerveceras con tienda propia vs solo distribución. |
@@ -245,3 +248,42 @@ Snapshot tras lote 1:
 - Venta online: 81 sí, 70 no, 10 no comprobado
 - Canal de venta informado: 12/81 productores con `Venta online=sí`
 - Evidencia Castellón: 21 registros JSONL
+
+## Lote 2 - Bodega
+
+Revisión de las 19 fichas de `Bodega` (2026-06-28). Resultado editorial: 18
+filas activas, 17 `verificado`, 1 `parcial`, 1 merge; venta online 8 `sí` (todas
+`ecommerce`), 10 `no comprobado`, 0 `no`. URL y claims por fila en
+`data/evidence/comunitat-valenciana/castellon.jsonl`.
+
+Decisiones relevantes:
+
+- **Merge** `ildum-vinarius-cabanes` → `bellmunt-oliver-viticultors-cabanes`:
+  misma unidad productiva (titular Víctor Bellmunt, C/ Escultor Maurat 22,
+  Cabanes, mismo teléfono). Ildum Vinarius es la marca/razón (Vitivinícola de
+  Cabanes SLU). Se borró su imagen.
+- **Enlace ajeno corregido**: `bodegas-castillo-de-la-duquesa-benlloch` tenía
+  `web=banus.eu`, hoy un portal turístico de Mallorca (dominio reaprovechado).
+  Sustituida por `bodegasvaldelomar.es` (dominio del propio correo, sin
+  certificado verificable en la revisión). Baja a `parcial`: identidad/municipio
+  solo por directorios sectoriales, sin fuente propia operativa.
+- **Webs propias añadidas/corregidas**: `la-canetana-bodega-…` (lacanetana.es),
+  `bodega-vilafames-…` (bodegavilafames.com) y `mayo-casanova-…-magnanimvs-…`
+  (mayogarcia.com → magnanimvs.com, su tienda real).
+- **Venta online confirmada (ecommerce propio)**: Alcovi, Bodega Flors (tienda
+  en clotas.com), Barón d'Alba, Bellmunt i Oliver, Besalduch Valls & Bellmunt,
+  Mas de Rander, Magnànimvs y Vinya Natura.
+- **`no comprobado`** (productor real, canal propio no confirmado): cellers con
+  web caída, age-gate o solo reventa de terceros (Les Useres, L'Estanquer,
+  Barranc dels Cirers, La Canetana, Vizuecos, Castells i Montoliu, Vega Palancia,
+  El Mollet, Bodega Vilafamés). Reauditar en el cierre transversal.
+- Sin más duplicados: Besalduch Valls & **Bellmunt** (Sant Mateu, desde 1952) es
+  distinta de Bellmunt i Oliver (Cabanes), pese al apellido común.
+
+Snapshot tras lote 2:
+
+- Filas CSV: 160
+- Verificación: 55 verificado, 4 parcial, 101 pendiente
+- Venta online: 79 sí, 61 no, 20 no comprobado
+- Canal de venta informado: 20/79 productores con `Venta online=sí`
+- Evidencia Castellón: 40 registros JSONL (39 keep, 1 merge)
