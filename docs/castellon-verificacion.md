@@ -1,0 +1,247 @@
+# Verificación provincial de Castellón
+
+Ledger inicial para planificar y reanudar la revisión profunda de
+`data/csv/comunitat-valenciana/castellon.csv`. El CSV es la fuente de verdad. La
+evidencia estructurada por fila debe vivir en
+`data/evidence/comunitat-valenciana/castellon.jsonl` a medida que se revise cada
+lote (el fichero aún no existe; se crea en el lote 1).
+
+El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento no
+lo duplica, solo fija el snapshot, las particularidades de Castellón y el plan de
+lotes. Los contratos viven en `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md`
+y `docs/EDITORIAL_POLICY.md`.
+
+## Estado
+
+- Inicio: 2026-06-28.
+- Snapshot inicial: **161 filas**; 32 `verificado`, 3 `parcial`, 126 `pendiente`.
+- Venta online inicial: **84 `sí`, 75 `no`, 2 `no comprobado`**.
+- `Canal de venta`: **0/161 filas informado**. Los 84 `sí` deben reauditarse y
+  quedar con canal (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion` o
+  `marketplace`) o corregirse.
+- **Anomalía de venta online (clave del plan).** Que solo haya 2 `no comprobado`
+  frente a 84 `sí` y 75 `no` delata un relleno automático/heurístico, no una
+  revisión real. En esta provincia **se reauditan los `sí` y también los `no`**:
+  los `sí` quedan en cuarentena editorial hasta confirmar un pedido remoto
+  vigente con canal; los `no` pueden ocultar pedido por contacto directo o estar
+  mal puestos por defecto (el valor por defecto del contrato es `no comprobado`).
+- Imágenes: 111/161 con `imagen`, 50 sin. Revisar imágenes **después** de
+  estabilizar identidad, `slug`, fusiones y purgas.
+- Enlaces iniciales: 115/161 con `web`, 79/161 con `Instagram`, 161/161 con
+  `Google Maps`, 141/161 con `telefono`, 161/161 con `direccion`.
+- Calidad inicial: `node scripts/audit-csv.js --mode=quality --summary-only
+  data/csv/comunitat-valenciana/castellon.csv` devuelve 0 errores, 84 warnings y
+  14 avisos suprimidos por opcionales ausentes en filas verificadas. Los warnings
+  orientan (faltan redes, contacto o descripción), no bloquean.
+- Evidencia inicial: no existe `data/evidence/comunitat-valenciana/castellon.jsonl`
+  y Castellón **no** está en cobertura estricta (`data/evidence/coverage.json`:
+  Álava, Vizcaya, Guipúzcoa, La Rioja, Navarra, Girona y Lleida).
+- Tras lote 1 (2026-06-28): 161 filas; 44 `verificado`, 4 `parcial`, 113
+  `pendiente`. Venta online: 81 `sí`, 70 `no`, 10 `no comprobado`; 12/81 `sí`
+  con `Canal de venta`. Evidencia: 21 registros en
+  `data/evidence/comunitat-valenciana/castellon.jsonl` (todos `keep`).
+- Modo: primera pasada profunda en curso. Prioridad: cerrar la calidad de las
+  161 filas heredadas antes de añadir candidatos nuevos.
+
+## Reglas duras para Castellón
+
+1. No dar por buenas las 32 filas `verificado` ni las 3 `parcial` heredadas: se
+   reauditan cuando llegue su lote o en el cierre transversal.
+2. **Venta online en cuarentena doble.** Ningún `sí` tiene canal: hasta confirmar
+   un mecanismo de pedido remoto vigente y utilizable, el `sí` no se da por bueno.
+   Los `no` también se comprueban porque la distribución sugiere relleno
+   automático; un `no` sin revisar no es prueba de ausencia de venta.
+3. **Bilingüismo valencià/castellano.** Nombres y municipios aparecen en ambas
+   lenguas (Castelló de la Plana / Castellón, Vinaròs, Les Useres, Vall d'Alba,
+   Atzeneta, frente a Villafranca del Cid, Segorbe, Bejís). Al deduplicar y al
+   casar entidad, normaliza acentos **y** variante lingüística; no trates dos
+   grafías del mismo municipio o marca como entidades distintas.
+4. **Geo-homónimos.** `Cabanes` existe en Castellón y en Girona; vigila además
+   municipios pequeños del interior. Si un bloque cae lejos de su centroide por
+   homónimo, corrige `data/reference/municipios-overrides.json`; no muevas
+   productores correctos. Ejecuta `check:csv` para detectar saltos >100 km.
+5. **Aceite.** Distinguir almazara/elaborador de olivareros sueltos, cooperativas
+   solo comercializadoras y marcas sin molino propio. DOP Aceite de la C.V. y el
+   oli millenari del Sénia/Maestrat apoyan existencia, no actividad ni venta.
+6. **Bodega y licores.** Confirmar elaborador real (DO Castelló u otra) y canal
+   de pedido. Visita, cata, catálogo o tienda física no prueban venta online. Los
+   cellers suelen bloquear WebFetch (age-gate, Cloudflare, TLS): antes de cerrar
+   en `no`/`no comprobado`, busca tienda en dominio o subdominio de marca aparte.
+7. **Fruta y verdura / cítricos.** La Plana es zona citrícola: separa el productor
+   o cooperativa elaboradora de la mera comercializadora, exportadora o almacén.
+   Para alcachofa, contrastar con la DOP Carxofa de Benicarló; para cítricos, la
+   IGP Cítrics Valencians apoya pertenencia, no es la web del productor.
+8. **Pan y pastelería.** Distinguir obrador/elaborador (pastissets, flaó,
+   casquetes, coca) de despacho, cafetería, franquicia o tienda sin obrador
+   propio demostrado.
+9. **Charcutería.** Embotits de Morella, cecina y curados: una explotación,
+   matadero u obrador entra; una carnicería minorista solo si hay elaboración o
+   cría propia demostrada.
+10. **Lácteos y quesos.** Quesos del Maestrat (Catí y comarca). Registros y ferias
+    apoyan existencia o pertenencia, pero no sustituyen una fuente propia, ficha
+    individual fuerte o perfil oficial para `verificado`.
+11. **Trufa y setas / pescado.** En trufa, separar truficultor/elaborador de
+    feria, restaurante o experiencia (Fira de la Trufa de Morella). En pescado
+    (Vinaròs, Benicarló, Peñíscola), separar conservera/elaborador de lonja,
+    cofradía, pescadería o distribuidor; `Langostino de Vinaròs` es marca
+    colectiva, no un productor.
+12. Un sitio HTTP, certificado roto, timeout o bloqueo no prueba baja. Contrastar
+    con búsqueda, perfil oficial, Maps, registro o fuente local antes de borrar
+    web, venta o fila.
+13. No añadir candidatos nuevos durante esta primera pasada salvo decisión
+    explícita. Primero cerrar la calidad de las 161 filas heredadas.
+
+## Fuentes de cotejo iniciales
+
+Orientan la búsqueda; no sustituyen la comprobación de una fuente propia o ficha
+real cuando la decisión sea `verificado`. Confirma el dominio oficial al citarlo.
+
+- **Castelló Ruta de Sabor** (marca gastronómica de la Diputació de Castelló):
+  directorio de productores y elaboradores de la provincia; buen ancla de
+  descubrimiento y cotejo.
+- **DOP Aceite de la Comunitat Valenciana** (consell regulador): almazaras y
+  marcas amparadas.
+- **Territori Sénia / Taula del Sénia**: oli millenari del Maestrat i els Ports;
+  olivos milenarios y almazaras adheridas.
+- **DO Castelló** (vinos): bodegas/cellers inscritos.
+- **DOP Carxofa de Benicarló** e **IGP Cítrics Valencians**: hortícolas y
+  citrícolas amparados.
+- **CAECV** (Comité d'Agricultura Ecològica de la Comunitat Valenciana): buscador
+  de operadores ecológicos.
+- Comarcas y turismo: Els Ports, Alt/Baix Maestrat, Alt Palància, La Plana, Alt
+  Millars; portales gastronómicos y ferias (trufa de Morella, fira del Maestrat).
+- Contexto local secundario: ayuntamientos, prensa local reciente, Google Maps y
+  redes oficiales; nunca como sustituto único de actividad productora si queda
+  duda material.
+
+## Plan de ejecución
+
+Lotes agrupados por sector para reutilizar fuentes (consells reguladors, marca
+Ruta de Sabor) y aplicar la regla dura correspondiente. Tamaño 12–21 filas. Los
+lotes 1–10 cubren el snapshot de 161 sin solaparse; el 11 es cierre transversal.
+
+1. Lotes 1–2 (Aceite, Bodega): sectores con consell regulador y muchos
+   `Venta online=sí` sin canal. Objetivo: crear el primer JSONL y limpiar ventas.
+2. Lote 3 (Otros): triaje del cajón heterogéneo; separar productor de no productor.
+3. Lotes 4–5 (Pan y pastelería; Cerveza + Licores): obrador vs despacho;
+   elaborador vs marca; comprobar canal real.
+4. Lotes 6–9 (Charcutería, Fruta y verdura, Miel, Lácteos y quesos): núcleo
+   agroalimentario; cítricos/comercializadoras, embotits, quesos del Maestrat.
+5. Lote 10 (Trufa y setas + Pescado + Café + Huevos): los sectores pequeños.
+6. Lote 11: cierre transversal. Objetivo: 0 pendientes, `Canal de venta` en todos
+   los `sí`, evidencia para todas las filas activas y provincia lista para
+   cobertura estricta.
+
+## Worklist inicial
+
+Leyenda: `⬜` pendiente, `🟨` en curso, `✅` hecho. Los lotes parten por categoría
+en el orden actual del CSV; **congela los `slug` al iniciar cada lote**. Si un
+lote fusiona o purga filas, recalcula los bloques siguientes antes de iniciarlos.
+El lote 11 es auditoría transversal y puede revisar filas ya tocadas.
+
+| # | Lote | Filas | Pend. | Parcial | Verif. | VO=sí | Estado | Notas iniciales |
+|---|---|---:|---:|---:|---:|---:|---|---|
+| 1 | Aceite | 21 | 0 | 2 | 19 | 12 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 1 - Aceite». 0 purgas; 2 parcial (solo directorio). Flip `no`→`sí`: Organia Oleum. 4 demociones `sí`→`no comprobado`. |
+| 2 | Bodega | 19 | 12 | 1 | 6 | 10 | ⬜ | DO Castelló. Cellers bloquean WebFetch; buscar tienda en subdominio de marca antes de cerrar `no`/`no comprobado`. |
+| 3 | Otros | 19 | 18 | 0 | 1 | 11 | ⬜ | Cajón heterogéneo, casi todo pendiente. Triar producto/elaborador real vs no productor; clasificar bien la categoría. |
+| 4 | Pan y pastelería | 18 | 13 | 1 | 4 | 5 | ⬜ | Obrador vs despacho/cafetería/franquicia. Solo 5 `sí`, pero 13 `no` a reauditar (pedido por contacto). |
+| 5 | Cerveza artesana + Licores | 16 | 16 | 0 | 0 | 6 | ⬜ | Confirmar elaborador real y canal. Herbero/licores artesanos; cerveceras con tienda propia vs solo distribución. |
+| 6 | Charcutería | 13 | 11 | 0 | 2 | 7 | ⬜ | Embotits de Morella, cecina, curados. Explotación/obrador vs carnicería minorista sin elaboración propia. |
+| 7 | Fruta y verdura | 13 | 13 | 0 | 0 | 8 | ⬜ | Cítricos de La Plana: productor/cooperativa elaboradora vs comercializadora/exportadora. DOP Carxofa de Benicarló. |
+| 8 | Miel | 13 | 7 | 0 | 6 | 10 | ⬜ | Mieles del Maestrat. 10 `sí` a confirmar con canal; reauditar verificados heredados. |
+| 9 | Lácteos y quesos | 12 | 7 | 0 | 5 | 6 | ⬜ | Quesos del Maestrat (Catí). Registro/feria no sustituye fuente propia para `verificado`. |
+| 10 | Trufa y setas + Pescado + Café + Huevos | 17 | 16 | 0 | 1 | 6 | ⬜ | Truficultor vs feria/restaurante; conservera/elaborador vs lonja/cofradía/pescadería. Langostino de Vinaròs = marca colectiva. Los 6 `Pescado` están en `no`: reauditar. |
+| 11 | Cierre transversal provincial | 161 | 126 | 3 | 32 | 84 | ⬜ | Recalcular tras lotes 1–10. Duplicados (bilingüe), geo-homónimos, canales en todos los `sí`, evidencia completa, imágenes residuales y cobertura estricta. |
+
+## Flujo por lote (resumen)
+
+Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
+
+1. `git status --short` y `npx pnpm list:province castellon` (acota con
+   `--categoria` para el lote).
+2. Congelar los `slug` del lote en el orden actual del CSV.
+3. Priorizar: duplicados/no productores → `pendiente` con fuente propia fácil →
+   `Venta online=sí` sin canal → `no` sospechosos → enlaces/municipios dudosos.
+4. Investigar hasta evidencia suficiente; no recolectar opcionales que no cambien
+   la decisión.
+5. Editar quirúrgicamente el CSV (parser, LF, solo los `slug` del lote).
+6. Crear/actualizar una línea en
+   `data/evidence/comunitat-valenciana/castellon.jsonl` por cada alta de
+   evidencia, cambio de `verificacion`, cambio de `Venta online`/canal, purga o
+   fusión.
+7. Validar al iterar: `npx pnpm check:csv:changed` y `npx pnpm check:evidence:changed`.
+8. Cerrar el lote: `npx pnpm verify:data`.
+9. Actualizar este ledger: snapshot si cambia, estado del lote, fecha y nota
+   corta (verificadas, parciales, purgas/fusiones, residuales).
+
+## Criterios de cierre de la pasada
+
+- 0 filas `pendiente`, salvo razón explícita documentada para pausar.
+- Cada residual `parcial` tiene motivo conocido y evidencia JSONL coherente.
+- Cada fila activa tiene evidencia `keep`; cada purga/fusión tiene registro
+  `purge`/`merge`.
+- Cada `Venta online=sí` tiene `Canal de venta` y evidencia de pedido remoto
+  vigente; cada `no`/`no comprobado` revisado tiene razón clara.
+- No quedan enlaces ajenos, dominios aparcados, fichas Maps genéricas como prueba
+  fuerte ni horarios que remitan a canales inexistentes.
+- No quedan duplicados aparentes (incluida variante valencià/castellano) sin
+  decisión explícita; sin colisiones geográficas por homónimo sin override.
+- Las imágenes se revisan solo tras estabilizar identidad y `slug`; al purgar una
+  fila con `imagen`, se elimina el archivo referenciado si no lo usa otra fila.
+- `npx pnpm verify:data` pasa antes de cerrar cada lote y antes del cierre
+  provincial.
+- Cuando las 161 filas iniciales queden cerradas, añadir
+  `comunitat-valenciana/castellon` a `data/evidence/coverage.json` en el mismo
+  cambio que complete la evidencia provincial.
+
+## Decisiones que deben quedar especialmente anotadas
+
+- Promociones desde registro/feria/DOP a `verificado`: qué fuente propia, perfil
+  oficial o ficha individual supera el techo de `parcial`.
+- Cualquier productor sin web propia que quede `verificado`: la fuente concreta.
+- Almazaras, cooperativas citrícolas y comercializadoras: por qué entran como
+  elaborador/productor dentro de alcance o por qué se purgan.
+- Obradores vs despachos/cafeterías en pan y pastelería.
+- Cambios de `Venta online` heredado (`sí`→`no`/`no comprobado`, o `no`→`sí`).
+- Purgas por no productor, cierre, duplicado, otra provincia o entidad sin rastro
+  suficiente.
+- Overrides de centroide creados para homónimos (p. ej. Cabanes).
+
+## Lote 1 - Aceite
+
+Revisión de las 21 fichas de `Aceite` (2026-06-28). Resultado editorial: 21
+filas activas (0 purgas), 19 `verificado`, 2 `parcial`; venta online 12 `sí`
+(todas `ecommerce`), 1 `no`, 8 `no comprobado`. Las URL y claims por fila están
+en `data/evidence/comunitat-valenciana/castellon.jsonl`.
+
+Decisiones relevantes:
+
+- **Flip `no`→`sí`** confirmado: `aceites-organia-oleum-sant-mateu` (marca Finca
+  Varona la Vella, Organia Oleum SL) tiene tienda propia con checkout
+  (`varonalavella.com/tienda`). Ejemplo claro del relleno automático erróneo.
+- **Demociones `sí`→`no comprobado`** por canal propio no funcional: `oliquina-…`
+  (solo formulario), `olis-cuquello-la-jana` (web plantilla; solo reventa de
+  terceros), `almazara-sierra-espadan-artana` y `cooperativa-la-divina-pastora-jerica`
+  (enlace de tienda sin checkout funcional confirmado).
+- **`parcial`** (techo por solo directorio, sin fuente propia verificadora):
+  `almazara-baix-maestrat-benicarlo` (baja de `verificado` heredado) y
+  `cooperativa-de-vilafames` (posible vínculo con la Oleícola del Penyagolosa).
+- **Webs añadidas** (marca oficial): `aceites-mas-del-senor-peniscola`
+  (fincamasdelsenor.com), `almazara-vicente-della-traiguera` (olidelmas.com,
+  marca Oli del Mas) y `aceites-organia-oleum-sant-mateu` (varonalavella.com).
+  Sus sitios propios fallaron en la revisión (ECONNREFUSED / cert / 500), tratados
+  como fallo técnico, no como baja.
+- **Venta online confirmada (ecommerce propio)**: Bardomus, Segorbe Nostrum,
+  Lo Canetà, Coop Viver, Cervol, Coop Sant Pau (Coop Nostra), DePenyagolosa,
+  Coop Bejís, Molí la Barona, Oro de Altura, Aceites Peset y Varona la Vella.
+- **`no` confirmado**: `cooperativa-de-vall-d-alba` (web catálogo sin carrito).
+- Sin duplicados: los tres de Traiguera (Vicente Dellà/Oli del Mas, Cervol, Peset)
+  y los dos de Vall d'Alba (Coop, Molí la Barona) son entidades distintas.
+
+Snapshot tras lote 1:
+
+- Filas CSV: 161
+- Verificación: 44 verificado, 4 parcial, 113 pendiente
+- Venta online: 81 sí, 70 no, 10 no comprobado
+- Canal de venta informado: 12/81 productores con `Venta online=sí`
+- Evidencia Castellón: 21 registros JSONL
