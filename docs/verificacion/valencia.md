@@ -54,6 +54,15 @@ lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
   `pendiente`. Venta online: 100 `sí`, 60 `no`, 35 `no comprobado`; 92/100
   `sí` con `Canal de venta`. Evidencia: 171 registros JSONL (170 `keep`, 1
   `purge`).
+- Tras lotes 11-12 (2026-06-29): 194 filas; 151 `verificado`, 43 `parcial`, 0
+  `pendiente`. Venta online: 101 `sí`, 61 `no`, 32 `no comprobado`; 101/101
+  `sí` con `Canal de venta`. Evidencia: 196 registros JSONL (194 `keep`, 2
+  `purge`).
+- Tras lote 13/cierre transversal (2026-06-29): 194 filas; 151 `verificado`,
+  43 `parcial`, 0 `pendiente`. Venta online: 101 `sí`, 61 `no`, 32
+  `no comprobado`; 101/101 `sí` con `Canal de venta`. Evidencia completa:
+  196 registros JSONL (194 `keep`, 2 `purge`) y Valencia añadida a
+  `data/evidence/coverage.json`.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 196 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -172,9 +181,9 @@ auditoría transversal y puede revisar filas ya tocadas.
 | 8 | Miel + trufa | 14 | 0 | 2 | 12 | 11 | hecho | Cerrado 2026-06-29. 0 purgas; Javalturia se conserva como marca comercializadora de trufa; 11 `sí` con canal. |
 | 9 | Fruta, zumos y frutos secos | 21 | 0 | 8 | 13 | 12 | hecho | Cerrado 2026-06-29. 0 purgas; 12 `sí` con canal; La Imperfecta queda `parcial` por falta de coordenadas. |
 | 10 | Lácteos y quesos + huevos | 11 | 0 | 6 | 5 | 3 | hecho | Cerrado 2026-06-29. 0 purgas; 3 `sí` con canal; 3 `no`; 5 `no comprobado`. |
-| 11 | Charcutería + pescado | 16 | 5 | 11 | 0 | 1 | pendiente | Embutidos de Requena/Bocairent/Ademuz/Ontinyent; Salazones CIGES. |
-| 12 | Café, chocolate + otros restantes | 9 | 8 | 1 | 0 | 7 | pendiente | Tostadores, obradores de chocolate, espirulina, Jalancina, Groguetes y Esperiega Casa Antiga. |
-| 13 | Cierre transversal provincial | 195 | 13 | 43 | 139 | 100 | pendiente | Recalcular tras lotes 1-12. Duplicados, bilingüismo, pedanías, canales, evidencia, imágenes y cobertura. |
+| 11 | Charcutería + pescado | 16 | 0 | 11 | 5 | 2 | hecho | Cerrado 2026-06-29. 0 purgas; 2 `sí` con canal; 13 `no`; 1 `no comprobado`. |
+| 12 | Café, chocolate + otros restantes | 8 | 0 | 1 | 7 | 7 | hecho | Cerrado 2026-06-29. 1 purga (`cafes-valiente-valencia`); 7 `sí` con canal; 1 `no comprobado`. |
+| 13 | Cierre transversal provincial | 194 | 0 | 43 | 151 | 101 | hecho | Cerrado 2026-06-29. 0 pendientes; 101/101 `sí` con canal; evidencia completa; Valencia añadida a cobertura estricta. |
 
 ## Flujo por lote
 
@@ -567,3 +576,98 @@ Snapshot tras lote 10:
 - Venta online: 100 `sí`, 60 `no`, 35 `no comprobado`
 - Canal de venta informado: 92/100 productores con `Venta online=sí`
 - Evidencia Valencia: 171 registros JSONL
+
+## Lote 11 - Charcutería + pescado
+
+Revisión de 15 carnicerías, obradores y marcas de embutido, más Salazones CIGES
+(2026-06-29). Resultado editorial: 16 filas activas (0 purgas), 5
+`verificado`, 11 `parcial`; venta online 2 `sí` (1 `ecommerce`, 1
+`ecommerce|whatsapp`), 13 `no`, 1 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada:** `embutidos-encarna-requena` por tienda propia
+  WooCommerce y `casa-toribio-xirivella` por shop propio con carrito y WhatsApp
+  del obrador.
+- **`verificado` sin venta remota:** `jomar-productos-artesanos-gestalgar`,
+  `embutidos-pimar-ontinyent` y `salazones-ciges-sollana` tienen fuente propia
+  suficiente de actividad/producto y ubicación, pero no tienda ni pedido remoto
+  confirmado.
+- **`parcial` por fuente local o social:** `carnes-jose-y-maria-serra`,
+  `embutidos-el-ponton-requena`, `carniceria-donat-ontinyent`,
+  `embutidos-emilia-requena`, `embutidos-isabel-requena`,
+  `carniceria-hermanos-lance-tuejar`, `carniceria-colau-bocairent`,
+  `carniceria-paco-i-fills-bocairent`, `carnicas-silvestre-bocairent` y
+  `carniceria-la-cerrada-ademuz` quedan localizados, pero sin fuente primaria
+  fuerte suficiente para subirlos a `verificado`.
+- **`no comprobado`:** `embutidos-el-serrano-requena`; el dominio heredado no
+  respondió durante la revisión y no se confirma canal remoto vigente.
+
+## Lote 12 - Café, chocolate + otros restantes
+
+Revisión de cafés, chocolates y otros productores heterogéneos pendientes
+(2026-06-29). Resultado editorial: 8 filas activas y 1 purga; 7 `verificado`,
+1 `parcial`; venta online 7 `sí` (todas `ecommerce`) y 1 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada (`ecommerce`):** `jalancina-jalance`,
+  `delicia-esperiega-casa-antiga-castielfabib`, `ecoespirulina-serra`,
+  `bluebell-coffee-roasters-valencia`, `utopick-cacao-valencia`,
+  `chocolates-comes-sueca` y `trufas-martinez-valencia`.
+- **Dominio corregido:** `delicia-esperiega-casa-antiga-castielfabib` pasa de
+  `deliciaesperiega.es` a `deliciaesperiega.com`, la web viva con tienda online.
+- **Enlace erróneo retirado:** `chocolates-comes-sueca` elimina el Instagram
+  heredado `instagram.com/wordpress/`, que no pertenecía al productor.
+- **`no comprobado`:** `groguetes-olocau`; el dominio heredado no resuelve y se
+  conserva por redes/ficha local, sin canal remoto actual confirmado.
+- **Purga:** `cafes-valiente-valencia` se elimina como `out-of-scope`; la fuente
+  viva lo presenta como marca de Cafento, no como productor valenciano actual.
+
+Snapshot tras lote 12:
+
+- Filas CSV: 194
+- Verificación: 151 `verificado`, 43 `parcial`, 0 `pendiente`
+- Venta online: 101 `sí`, 61 `no`, 32 `no comprobado`
+- Canal de venta informado: 101/101 productores con `Venta online=sí`
+- Evidencia Valencia: 196 registros JSONL
+
+## Lote 13 - Cierre transversal provincial
+
+Auditoría final de Valencia (2026-06-29). Resultado editorial: 194 filas
+activas, 151 `verificado`, 43 `parcial`, 0 `pendiente`; venta online 101 `sí`
+(todas con canal), 61 `no`, 32 `no comprobado`. La evidencia cubre todas las
+filas activas y las dos purgas; Valencia queda añadida a
+`data/evidence/coverage.json`.
+
+Decisiones relevantes:
+
+- **Cobertura cerrada:** 194 filas activas con registro `keep` en
+  `data/evidence/comunitat-valenciana/valencia.jsonl`; 2 tombstones `purge`
+  (`turrones-ramos-valencia` y `cafes-valiente-valencia`).
+- **Canales cerrados:** no queda ningún `Venta online=sí` sin `Canal de venta`.
+- **Corrección transversal:** `dehesa-de-la-albufera-silla` conserva slug por
+  estabilidad, pero pasa de municipio `Silla` a `Alboraya`; la fuente propia
+  sostiene la sede en C/ Joan Lluís Vives 4, Alboraya, y no una ubicación
+  productiva verificable en Silla.
+- **Warnings de geografía aceptados:** quedan 5 avisos `15-100 km` en
+  `check:csv:data-quality`, todos revisados y no bloqueantes:
+  `horno-carmen-los-pedrones-requena`, `queseria-hoya-de-la-iglesia-requena`
+  y `bodegas-haya-requena` están en pedanías o núcleos rurales de Requena;
+  `horno-artesano-a-lena-la-marieta-venta-del-moro` está documentado por
+  Saborigen como Venta del Moro; `arroz-tartana-sollana` mantiene municipio
+  Valencia porque la fuente oficial sitúa la finca arrocera en El Palmar
+  (Valencia), aunque el punto esté más cerca del centroide de Sollana.
+- **Dudas residuales documentadas:** las 43 filas `parcial` y las 32
+  `no comprobado` no bloquean el cierre; todas tienen evidencia actual que
+  explica si dependen de ficha local, red social, dominio caído, directorio o
+  tienda no verificable.
+
+Snapshot final:
+
+- Filas CSV: 194
+- Verificación: 151 `verificado`, 43 `parcial`, 0 `pendiente`
+- Venta online: 101 `sí`, 61 `no`, 32 `no comprobado`
+- Canal de venta informado: 101/101 productores con `Venta online=sí`
+- Evidencia Valencia: 196 registros JSONL
+- Cobertura estricta/advisory: `comunitat-valenciana/valencia`
