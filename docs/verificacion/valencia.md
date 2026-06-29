@@ -50,6 +50,10 @@ lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
 - Tras lotes 3-5 (2026-06-29): 195 filas; 87 `verificado`, 57 `parcial`, 51
   `pendiente`. Venta online: 96 `sí`, 66 `no`, 33 `no comprobado`; 50/96 `sí`
   con `Canal de venta`. Evidencia: 91 registros JSONL (90 `keep`, 1 `purge`).
+- Tras lotes 6-10 (2026-06-29): 195 filas; 139 `verificado`, 43 `parcial`, 13
+  `pendiente`. Venta online: 100 `sí`, 60 `no`, 35 `no comprobado`; 92/100
+  `sí` con `Canal de venta`. Evidencia: 171 registros JSONL (170 `keep`, 1
+  `purge`).
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 196 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -163,14 +167,14 @@ auditoría transversal y puede revisar filas ya tocadas.
 | 3 | Bodega II - Fontanars/Moixent/interior DO Valencia | 18 | 0 | 0 | 18 | 10 | hecho | Cerrado 2026-06-29. 0 purgas; 10 `sí`, 4 `no`, 4 `no comprobado`. Corregidos Corazón del Mediterráneo, Polo Monleón, 2L, Sivaris/Alforins-style canales. |
 | 4 | Arroz + xufa/horchata/Albufera | 18 | 0 | 0 | 18 | 9 | hecho | Cerrado 2026-06-29. 0 purgas; 9 `sí`, 8 `no`, 1 `no comprobado`. Dominios corregidos para Tartana y Sivaris; Dacsa/Santo Tomás pasan a ecommerce. |
 | 5 | Pan y pastelería I - Valencia/Horta/Casinos | 10 | 0 | 0 | 10 | 5 | hecho | Cerrado 2026-06-29. 1 purga (`turrones-ramos-valencia`), 5 `sí`, 3 `no`, 2 `no comprobado`. Webs aparcadas/404 eliminadas. |
-| 6 | Pan y pastelería II - comarcas | 12 | 5 | 7 | 0 | 3 | pendiente | Requena, Venta del Moro, Titaguas, Alberic, Alzira, Ademuz, Torrebaja, Xàtiva, Chelva, Gandía. |
-| 7 | Cerveza artesana + licores | 22 | 11 | 11 | 0 | 13 | pendiente | Microcervecera/destilería vs bar, marca o distribuidor. Revisar tiendas y pedidos por contacto. |
-| 8 | Miel + trufa | 14 | 4 | 10 | 0 | 9 | pendiente | Ayora y apicultores; Javalturia como único `Trufa y setas`. |
-| 9 | Fruta, zumos y frutos secos | 21 | 13 | 8 | 0 | 11 | pendiente | Cítricos, kaki, manzana esperiega, cooperativas y ecommerce agrícola. |
-| 10 | Lácteos y quesos + huevos | 11 | 5 | 6 | 0 | 2 | pendiente | Queserías/granjas frente a distribución; huevos de Sinarcas. |
+| 6 | Pan y pastelería II - comarcas | 12 | 0 | 6 | 6 | 4 | hecho | Cerrado 2026-06-29. 0 purgas; 4 `sí` con canal; 7 `no`; 1 `no comprobado`. |
+| 7 | Cerveza artesana + licores | 22 | 0 | 6 | 16 | 12 | hecho | Cerrado 2026-06-29. 0 purgas; 12 `sí` con canal; 3 `no`; 7 `no comprobado`. Fernández Pons pasa a `Bodega`. |
+| 8 | Miel + trufa | 14 | 0 | 2 | 12 | 11 | hecho | Cerrado 2026-06-29. 0 purgas; Javalturia se conserva como marca comercializadora de trufa; 11 `sí` con canal. |
+| 9 | Fruta, zumos y frutos secos | 21 | 0 | 8 | 13 | 12 | hecho | Cerrado 2026-06-29. 0 purgas; 12 `sí` con canal; La Imperfecta queda `parcial` por falta de coordenadas. |
+| 10 | Lácteos y quesos + huevos | 11 | 0 | 6 | 5 | 3 | hecho | Cerrado 2026-06-29. 0 purgas; 3 `sí` con canal; 3 `no`; 5 `no comprobado`. |
 | 11 | Charcutería + pescado | 16 | 5 | 11 | 0 | 1 | pendiente | Embutidos de Requena/Bocairent/Ademuz/Ontinyent; Salazones CIGES. |
 | 12 | Café, chocolate + otros restantes | 9 | 8 | 1 | 0 | 7 | pendiente | Tostadores, obradores de chocolate, espirulina, Jalancina, Groguetes y Esperiega Casa Antiga. |
-| 13 | Cierre transversal provincial | 196 | 93 | 103 | 0 | 96 | pendiente | Recalcular tras lotes 1-12. Duplicados, bilingüismo, pedanías, canales, evidencia, imágenes y cobertura. |
+| 13 | Cierre transversal provincial | 195 | 13 | 43 | 139 | 100 | pendiente | Recalcular tras lotes 1-12. Duplicados, bilingüismo, pedanías, canales, evidencia, imágenes y cobertura. |
 
 ## Flujo por lote
 
@@ -438,3 +442,128 @@ Snapshot tras lote 5:
 - Venta online: 96 `sí`, 66 `no`, 33 `no comprobado`
 - Canal de venta informado: 50/96 productores con `Venta online=sí`
 - Evidencia Valencia: 91 registros JSONL
+
+## Lote 6 - Pan y pastelería II - comarcas
+
+Revisión de 12 hornos, panaderías y pastelerías de Requena, Los Pedrones,
+Titaguas, Alberic, Alzira, Ademuz, Torrebaja, Xàtiva, Chelva y Gandía
+(2026-06-29). Resultado editorial: 12 filas activas (0 purgas), 6
+`verificado`, 6 `parcial`; venta online 4 `sí` (3 `ecommerce`, 1
+`whatsapp`), 7 `no`, 1 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada:** `horno-de-lena-el-puente-chiva`,
+  `panquemados-moscardo-alberic` y `dulces-campos-xativa` por ecommerce propio;
+  `pastisseria-tano-gandia` por pedido oficial vía WhatsApp.
+- **`no` confirmado o conservador:** `horno-iranzo-requena` tiene web propia
+  informativa sin tienda; los hornos sin web propia (`horno-carmen-los-pedrones-requena`,
+  `horno-artesano-a-lena-la-marieta-venta-del-moro`,
+  `horno-la-marcona-titaguas`, `panaderia-elvira-ademuz`,
+  `panaderia-canizares-torrebaja` y `horno-hermanos-sevilla-chelva`) quedan
+  `parcial` y `no` por ausencia de canal remoto confirmado.
+- **`no comprobado`:** `pasteleria-llopis-alzira` queda `verificado` por fuente
+  propia, pero sin venta remota activa confirmada durante el traslado temporal
+  de obrador.
+- **Enlaces corregidos:** `horno-artesano-a-lena-la-marieta-venta-del-moro`
+  elimina Facebook e Instagram heredados de Horno El Puente; la evidencia queda
+  apoyada en su ficha Saborigen.
+
+## Lote 7 - Cerveza artesana + licores
+
+Revisión de 22 microcerveceras, destilerías y marcas de licores (2026-06-29).
+Resultado editorial: 22 filas activas (0 purgas), 16 `verificado`, 6
+`parcial`; venta online 12 `sí` (10 `ecommerce`, 2 `marketplace`), 3 `no`, 7
+`no comprobado`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada:** Tyris, Zeta, Antiga, Alegría, Bodegas
+  Urbanas/Fernández Pons, EMI, Galana, Destilerías Cerveró, Baronía de Turís y
+  Destilerías Plà por ecommerce; `castrum-brewery-meliana` por marketplace
+  PROAVA; `53-covetes-bocairent` por marketplace Vinos Valencianos.
+- **Correcciones de clasificación y enlaces:** `fernandez-pons-godella` pasa de
+  `Cerveza artesana` a `Bodega` y actualiza web a `bodegasurbanas.es`;
+  `destilerias-pla-pucol` normaliza el dominio HTTPS actual.
+- **`no` confirmado:** `cerveza-la-socarrada-xativa`, `destilerias-ferri-bellreguard`
+  y `destilerias-rios-silla`; en Rios la propia web declara que la tienda es de
+  demostración y no completa pedidos.
+- **`no comprobado`:** `birra-blues-massalfassar`, `obsidiana-brewing-turis`,
+  `tercer-tiempo-la-pobla-de-vallbona`, `valentivm-cerveza-artesana-llombai`,
+  `artelicor-san-antonio-de-requena`, `bodegas-reymos-cheste` y
+  `69brosses-villanueva-de-castellon` quedan con identidad localizada, pero sin
+  canal remoto vigente confirmado.
+
+## Lote 8 - Miel + trufa
+
+Revisión de 13 apicultores/marcas de miel y la ficha de trufa de Javalturia
+(2026-06-29). Resultado editorial: 14 filas activas (0 purgas), 12
+`verificado`, 2 `parcial`; venta online 11 `sí` (10 `ecommerce`, 1
+`telefono`), 1 `no`, 2 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Javalturia se conserva:** la fuente propia de Truficultura Técnica identifica
+  Javalturia como marca para comercializar trufa cultivada y silvestre de la
+  Serranía/Alto Turia; queda `verificado`, con venta por teléfono.
+- **Venta online confirmada (`ecommerce`):** ANAE, Campos de Ayora, Miel El
+  Corta, Miel del Parpalló, Miel J. Regal, Miel la Calderona, Miel Flor de
+  Flor, Muusat, Rosamiel y Mieles La Travina.
+- **`no` confirmado:** `apicultura-cerda-ayora` tiene web propia informativa y
+  contacto, pero no tienda ni pedido remoto.
+- **`no comprobado`:** `miel-y-punto-ayora` y `mieles-bimiel-bicorp`; las webs
+  heredadas fallaron o devolvieron 404, por lo que no se confirma canal remoto.
+- **Dominio corregido:** ANAE actualiza de `anaemiel.com` a `anaemiel.net`.
+
+## Lote 9 - Fruta, zumos y frutos secos
+
+Revisión de 21 productores de fruta, cítricos, zumos, manzana esperiega y frutos
+secos (2026-06-29). Resultado editorial: 21 filas activas (0 purgas), 13
+`verificado`, 8 `parcial`; venta online 12 `sí` (11 `ecommerce`, 1
+`whatsapp`), 8 `no`, 1 `no comprobado`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada (`ecommerce`):** Frutos Secos Lozano, Pomme Brun,
+  La Imperfecta, Naranjas del Carmen, Naranjas Ribera del Júcar, Naranja
+  Tradicional de Gandia, Huerto Ribera, Naranjas Ché, Naranjas Lola, Naranjas
+  de Cullera y Vircoop/manzana esperiega.
+- **Pedido directo por WhatsApp:** `naranjas-y-pomelos-del-turia-alcublas`
+  declara venta directa, envíos a domicilio y WhatsApp en su web propia.
+- **`no` confirmado:** Fernando Belda, ARASCOOP, Frutas Las Niñas, Serviagro
+  Rivera, The Green Experience, Lorenzo García, Dario Guillardini y Magropor no
+  tienen canal remoto propio confirmado.
+- **`no comprobado`:** `mericana-algimia-d-alfara`, por fallo TLS del dominio
+  Jimdo heredado.
+- **Dominio corregido:** `pomme-brun-ademuz` normaliza a `pommebrun.com` y
+  `vircoop-ademuz` pasa a la tienda oficial `manzanasesperiegas.com`.
+- **Límite de verificación:** `la-imperfecta-cullera` queda `parcial` pese a
+  tener tienda oficial, porque el CSV aún no tiene coordenadas fiables para
+  cumplir el contrato de `verificado`.
+
+## Lote 10 - Lácteos y quesos + huevos
+
+Revisión de 9 queserías/granjas lácteas y 2 productores de huevos
+(2026-06-29). Resultado editorial: 11 filas activas (0 purgas), 5
+`verificado`, 6 `parcial`; venta online 3 `sí` (todas `ecommerce`), 3 `no`, 5
+`no comprobado`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada (`ecommerce`):** `queseria-hoya-de-la-iglesia-requena`,
+  `granja-el-parral-barxeta` y `quesos-jamesa-la-llosa-de-ranes`.
+- **`no` confirmado:** `sinarcas-avicola-sinarcas` y `huevos-monterde-sinarcas`
+  tienen webs propias de actividad/producto sin tienda; `queserias-romero-gozalbez-s-l-la-llosa-de-ranes`
+  queda `parcial` con directorio y sin canal propio.
+- **`no comprobado`:** `granja-rinya-albal`, `heretat-de-pere-quatretonda`,
+  `queseria-artesana-la-vall-ontinyent`, `quesos-belda-l-alcudia-de-crespins`
+  y `arte-lactico-caprino-chiva` por dominios caídos, errores o falta de canal
+  remoto verificable.
+
+Snapshot tras lote 10:
+
+- Filas CSV: 195
+- Verificación: 139 `verificado`, 43 `parcial`, 13 `pendiente`
+- Venta online: 100 `sí`, 60 `no`, 35 `no comprobado`
+- Canal de venta informado: 92/100 productores con `Venta online=sí`
+- Evidencia Valencia: 171 registros JSONL
