@@ -69,7 +69,11 @@ y `docs/EDITORIAL_POLICY.md`.
 - Tras lote 10 (2026-06-29): 152 filas (6 purgas); 137 `verificado`, 15 `parcial`,
   **0 `pendiente`**. Venta online: 68 `sí`, 7 `no`, 77 `no comprobado`; **68/68
   `sí` con canal**. Evidencia: 161 registros (152 `keep`, 1 `merge`, 8 `purge`).
-  Cerrada la primera pasada profunda; solo resta el lote 11 (cierre transversal).
+- Tras lote 11 / cierre (2026-06-29): 150 filas (2 purgas de provincia); 137
+  `verificado`, 13 `parcial`, **0 `pendiente`**. Venta online: 67 `sí`, 7 `no`, 76
+  `no comprobado`; **67/67 `sí` con canal**. Evidencia: 161 registros (150 `keep`,
+  1 `merge`, 10 `purge`). **Primera pasada profunda CERRADA**; provincia añadida a
+  `data/evidence/coverage.json` y en mantenimiento.
 - Modo: primera pasada profunda en curso. Prioridad: cerrar la calidad de las
   filas heredadas antes de añadir candidatos nuevos.
 
@@ -181,7 +185,7 @@ El lote 11 es auditoría transversal y puede revisar filas ya tocadas.
 | 8 | Miel | 13 | 0 | 2 | 11 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 8 - Miel». 2 parcial (Mel Mas de l'Argila; Miel Mayem, duda de provincia). Hidromiel La Vikinga → «Hidromiel». Miel Las Dehesas: web caducada eliminada. 9 `sí`, todos con canal. |
 | 9 | Lácteos y quesos | 12 | 0 | 0 | 12 | 6 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 9 - Lácteos y quesos». Todas queserías reales con leche propia. Flips no→sí: Pastor de Morella (tienda + Mercat dels Ports) y Quesería La Abuela. |
 | 10 | Trufa y setas + Pescado + Café + Huevos | 11 | 0 | 1 | 10 | 3 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 10». 6 purgas (5 cofradías de pescadores + Tòfona de Vistabella). 1 parcial (Farré Vidal, cultivo en Lleida). Conservas Coarvi = conservera real; Agrotrufa → Castelló; Cafés Balancilla (typo). |
-| 11 | Cierre transversal provincial | 152 | 0 | 15 | 137 | 68 | ⬜ | Recalcular hecho tras lote 10. Pendiente: dudas de provincia (Miel Mayem, Farré Vidal), residuales `parcial`/`no comprobado`, duplicados bilingües, geo-homónimos, imágenes residuales y cobertura estricta. |
+| 11 | Cierre transversal provincial | 150 | 0 | 13 | 137 | 67 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 11 - Cierre». 2 purgas de provincia (Miel Mayem→Valencia, Farré Vidal→Lleida). Sin duplicados reales (tel. Lo Canetà/Roca Sola = misma familia, 2 marcas; coords compartidas = centroides de municipio). Geo OK. Castellón añadido a `coverage.json`. |
 
 ## Flujo por lote (resumen)
 
@@ -561,3 +565,43 @@ Decisiones relevantes:
 Snapshot tras lote 10: 152 filas; 137 verificado, 15 parcial, 0 pendiente; VO 68
 sí, 7 no, 77 no comprobado; canal 68/68; evidencia 161 (152 keep, 1 merge, 8
 purge).
+
+## Lote 11 - Cierre transversal
+
+Pasada de consistencia y cierre de la primera pasada profunda (2026-06-29). No se
+añaden productores nuevos; se resuelven dudas y se concilia el conjunto.
+
+Decisiones relevantes:
+
+- **Dudas de provincia resueltas → 2 purgas (`other-province`)**:
+  - `miel-mayem`: su web sitúa domicilio fiscal y envasado en L'Alcúdia (Valencia),
+    colmenas transhumantes (Cuenca, Valencia); sin instalación en Cabanes. Es
+    productor de Valencia → fuera de `castellon.csv`.
+  - `farre-vidal-trufas`: empresa de trufa de Lleida (cultivo en el sur de Les
+    Garrigues, junto al Montsant; Facebook y tienda comprartrufa.shop la sitúan en
+    Lleida, listada en gastroteca.cat). Sin operación real en Vilafranca del Cid →
+    fuera de `castellon.csv`.
+  - Ambas imágenes eliminadas; sus registros de evidencia pasan de `keep` a `purge`.
+- **Deduplicación (transversal)**: sin duplicados reales. El único teléfono
+  compartido (`+34619247558`, Lo Canetà / Roca Sola, Canet lo Roig) es legítimo:
+  son dos marcas de la misma familia (Roca / Martí Roca ecològic) con productos
+  distintos (aceite vs cerezas) y categorías distintas → se mantienen ambas. Las
+  coordenadas repetidas son centroides de municipio (Morella, Albocàsser, Artana,
+  Canet lo Roig) compartidos por entidades distintas, no duplicados.
+- **Geo**: `check:csv` sin errores; ningún salto >100 km ni homónimo a corregir.
+- **Residuales `parcial` (13)**, todos con motivo y evidencia: techo por solo
+  directorio/registro o duda material (p. ej. Almazara Baix Maestrat, Coop de
+  Vilafamés, Castillo de la Duquesa, Cereza Simó, Turrones San Luis, las cuatro
+  cervezas de duda de actividad, Carn Natural, Carnicería Català, Cítricos Natanael
+  Bort, Mel Mas de l'Argila).
+- **Cobertura de evidencia completa**: 150 filas activas con `keep`, más
+  tombstones `merge`/`purge`. Se añade `comunitat-valenciana/castellon` a
+  `data/evidence/coverage.json` (advisory).
+
+Cierre: la primera pasada profunda queda **cerrada**. El CSV sigue vivo: las
+afirmaciones dinámicas (actividad, venta online, frescura) se revisan en
+mantenimiento, no se «congela».
+
+Snapshot tras lote 11 (cierre): 150 filas; 137 verificado, 13 parcial, 0
+pendiente; VO 67 sí, 7 no, 76 no comprobado; canal 67/67; evidencia 161 (150 keep,
+1 merge, 10 purge).
