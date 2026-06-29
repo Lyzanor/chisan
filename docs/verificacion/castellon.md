@@ -59,6 +59,17 @@ y `docs/EDITORIAL_POLICY.md`.
   4 filas recategorizadas fuera de «Fruta y verdura» (ver «Lote 7»). Pendientes
   restantes: Miel 7, Lácteos y quesos 7, Trufa y setas 6, Pescado 6, Café 2,
   Huevos 2.
+- Tras lote 8 (2026-06-29): 158 filas; 121 `verificado`, 14 `parcial`, 23
+  `pendiente`. Venta online: 71 `sí`, 23 `no`, 64 `no comprobado`; 59/71 `sí` con
+  canal. Evidencia: 132 registros. Hidromiel La Vikinga recategorizada a
+  «Hidromiel»; Miel Las Dehesas: web caducada eliminada.
+- Tras lote 9 (2026-06-29): 158 filas; 128 `verificado`, 14 `parcial`, 16
+  `pendiente`. Venta online: 71 `sí`, 18 `no`, 69 `no comprobado`; 65/71 `sí` con
+  canal. Evidencia: 144 registros.
+- Tras lote 10 (2026-06-29): 152 filas (6 purgas); 137 `verificado`, 15 `parcial`,
+  **0 `pendiente`**. Venta online: 68 `sí`, 7 `no`, 77 `no comprobado`; **68/68
+  `sí` con canal**. Evidencia: 161 registros (152 `keep`, 1 `merge`, 8 `purge`).
+  Cerrada la primera pasada profunda; solo resta el lote 11 (cierre transversal).
 - Modo: primera pasada profunda en curso. Prioridad: cerrar la calidad de las
   filas heredadas antes de añadir candidatos nuevos.
 
@@ -167,10 +178,10 @@ El lote 11 es auditoría transversal y puede revisar filas ya tocadas.
 | 5 | Cerveza artesana + Licores | 16 | 0 | 4 | 12 | 7 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 5». Castelló Beer Factory `no`→`sí`; Gin Zeit pedido por email. 4 parcial por duda de actividad. |
 | 6 | Charcutería | 12 | 0 | 2 | 10 | 6 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 6 - Charcutería». 1 purga (Carnes Frescas SA, mayorista B2B). 2 parcial (Carn Natural coop; Carnicería Català, sin web propia tras quitar enlaces ajenos de Aldaia). 6 `sí`, todos con canal. |
 | 7 | Fruta y verdura | 12 | 0 | 1 | 11 | 5 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 7 - Fruta y verdura». 1 purga (Alcachofa de Benicarló = Consejo Regulador DOP). 1 parcial (Cítricos Natanael Bort). 4 recategorizadas fuera (Papas Maribel→Snacks; Rafinade→Bebidas; Frusema y Coop Benasalense→Frutos secos). 5 `sí`, todas con canal. |
-| 8 | Miel | 13 | 7 | 0 | 6 | 10 | ⬜ | Mieles del Maestrat. 10 `sí` a confirmar con canal; reauditar verificados heredados. |
-| 9 | Lácteos y quesos | 12 | 7 | 0 | 5 | 6 | ⬜ | Quesos del Maestrat (Catí). Registro/feria no sustituye fuente propia para `verificado`. |
-| 10 | Trufa y setas + Pescado + Café + Huevos | 17 | 16 | 0 | 1 | 6 | ⬜ | Truficultor vs feria/restaurante; conservera/elaborador vs lonja/cofradía/pescadería. Langostino de Vinaròs = marca colectiva. Los 6 `Pescado` están en `no`: reauditar. |
-| 11 | Cierre transversal provincial | 161 | 126 | 3 | 32 | 84 | ⬜ | Recalcular tras lotes 1–10. Duplicados (bilingüe), geo-homónimos, canales en todos los `sí`, evidencia completa, imágenes residuales y cobertura estricta. |
+| 8 | Miel | 13 | 0 | 2 | 11 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 8 - Miel». 2 parcial (Mel Mas de l'Argila; Miel Mayem, duda de provincia). Hidromiel La Vikinga → «Hidromiel». Miel Las Dehesas: web caducada eliminada. 9 `sí`, todos con canal. |
+| 9 | Lácteos y quesos | 12 | 0 | 0 | 12 | 6 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 9 - Lácteos y quesos». Todas queserías reales con leche propia. Flips no→sí: Pastor de Morella (tienda + Mercat dels Ports) y Quesería La Abuela. |
+| 10 | Trufa y setas + Pescado + Café + Huevos | 11 | 0 | 1 | 10 | 3 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 10». 6 purgas (5 cofradías de pescadores + Tòfona de Vistabella). 1 parcial (Farré Vidal, cultivo en Lleida). Conservas Coarvi = conservera real; Agrotrufa → Castelló; Cafés Balancilla (typo). |
+| 11 | Cierre transversal provincial | 152 | 0 | 15 | 137 | 68 | ⬜ | Recalcular hecho tras lote 10. Pendiente: dudas de provincia (Miel Mayem, Farré Vidal), residuales `parcial`/`no comprobado`, duplicados bilingües, geo-homónimos, imágenes residuales y cobertura estricta. |
 
 ## Flujo por lote (resumen)
 
@@ -468,3 +479,85 @@ Decisiones relevantes:
 
 Snapshot tras lote 7: 158 filas; 116 verificado, 12 parcial, 30 pendiente; VO 72
 sí, 26 no, 60 no comprobado; canal 50/72; evidencia 119.
+
+## Lote 8 - Miel
+
+Revisión de las 13 fichas de `Miel` (2026-06-29): 11 `verificado`, 2 `parcial`, 0
+purgas; venta online 9 `sí` (todas con canal), 0 `no`, 4 `no comprobado`. Una
+recategorización (Hidromiel La Vikinga → «Hidromiel»).
+
+Decisiones relevantes:
+
+- **Web caducada eliminada**: `miel-las-dehesas-peniscola` tenía
+  `lasdehesasmiel.com`, hoy redirige a expireddomains.com (apex y www). Productor
+  real (empresa social de inserción, taller en Peñíscola, IG activo) → `verificado`
+  por Instagram; `sí`→`no comprobado` (venta en taller, sin canal remoto vigente).
+- **Recategorización**: `hidromiel-la-vikinga` (bodega de hidromiel) Miel →
+  **Hidromiel**; +Facebook; `verificado` por redes/directorios.
+- **`parcial`**: `mel-mas-de-l-argila-benlloc` (4 generaciones, 600 colmenas, pero
+  solo prensa/directorio, sin web/redes; +coordenadas de Benlloc) y
+  `miel-mayem` (heredada): tienda online + WhatsApp reales (`sí`,
+  `ecommerce|whatsapp`) pero **duda de provincia** (web sitúa instalaciones/envasado
+  en L'Alcúdia, Valencia; base en Cabanes sin confirmar) → a resolver en lote 11.
+- **Venta online confirmada con canal**: Mos de Bresca, Miel El Molinar, Pepe Miel
+  (`ecommerce|whatsapp`), Mieles Amuza (web → mielamuza.com), Casa Miel Hassan,
+  Casa Guimerà, Miel Sierra Espadán y Flor d'en Costa (`ecommerce`).
+- **`no comprobado`** sin tienda (web catálogo/contacto): Mieles La Alquería
+  (+web/IG). Casa Guimerà es productor híbrido (miel propia + quesos/embutidos).
+
+Snapshot tras lote 8: 158 filas; 121 verificado, 14 parcial, 23 pendiente; VO 71
+sí, 23 no, 64 no comprobado; canal 59/71; evidencia 132.
+
+## Lote 9 - Lácteos y quesos
+
+Revisión de las 12 fichas de `Lácteos y quesos` (2026-06-29): 12 `verificado`, 0
+`parcial`, 0 purgas; venta online 6 `sí` (todas con canal), 0 `no`, 6
+`no comprobado`. Todas son queserías reales con leche/ganadería propia.
+
+Decisiones relevantes:
+
+- **Flips `no`/`no comprobado`→`sí`**: `pastor-de-morella` (rescate de ficha
+  fina sin web: quesería de Morella con rebaños propios, +web propia +Facebook,
+  tienda online + Mercat dels Ports → `ecommerce|marketplace`) y
+  `queseria-la-abuela-original` (+web, tienda online → `ecommerce`).
+- **Venta online (ecommerce)**: Quesos de Benassal (1939), Quesos Vall de Catí
+  (coop, leche propia), Quesería Los Corrales (`ecommerce|whatsapp`) y Lácteos
+  Serbogar. Correos añadidos a varias.
+- **`sí`/`no`→`no comprobado`** (sin tienda confirmada): Tot de Poble, Formatgeria
+  La Planeta (botiga sin checkout), Masía Els Masets (HORECA/visitas), La Caseta
+  d'Espadà (+FB) y Sabores del Llosar (+IG). Quesos Almassora (6 World Cheese
+  Awards) sin checkout propio.
+
+Snapshot tras lote 9: 158 filas; 128 verificado, 14 parcial, 16 pendiente; VO 71
+sí, 18 no, 69 no comprobado; canal 65/71; evidencia 144.
+
+## Lote 10 - Trufa y setas + Pescado + Café + Huevos
+
+Revisión de las 17 fichas (2026-06-29): 10 `verificado`, 1 `parcial`, 6 purgas;
+venta online 3 `sí` (todas con canal), 0 `no`, 8 `no comprobado`. Tras este lote la
+provincia queda con **0 pendientes** y **todos los `sí` con canal (68/68)**.
+
+Decisiones relevantes:
+
+- **Purgas (no productor)**: las 5 cofradías de pescadores (San Telmo de Benicarló,
+  Burriana, San Pedro de Peñíscola, San Pedro de Vinaròs, San Pedro del Grau de
+  Castelló) son gremios/lonjas, no productores Km0 → fuera de alcance.
+  `tofona-de-vistabella` se purga por no ser un negocio identificable (corresponde
+  a las Jornades de la Tòfona/área; teléfono duplicado del de Demetrio Trufa). 2
+  imágenes eliminadas (Burriana, Vinaròs).
+- **Pescado real**: `conservas-coarvi-vinaros` (conservera artesana de anchoa y
+  boquerón) → `verificado`, `no comprobado` (catálogo + contacto, sin carrito).
+- **`parcial` por duda de provincia**: `farre-vidal-trufas` (heredada): dirección
+  en Vilafranca del Cid pero **cultivo principal en Les Garrigues, Lleida** y web
+  caída → `parcial`/`no comprobado`; resolver en lote 11.
+- **Correcciones**: `agrotrufa` municipio Borriol → **Castelló de la Plana** (sede
+  Av. de l'Alcora) + dirección; `cafes-barancilla` nombre **Cafés Balancilla**
+  (typo) + web; +coordenadas (Demetrio Trufa) y web/redes (Granja Boverals,
+  Demetrio Trufa, Huevos Sant Pau).
+- **Venta online con canal**: Cafés B+o (`ecommerce`), Fruits de la Terra
+  (`ecommerce|whatsapp`), Segortrufa (`whatsapp`). Resto de truficultores
+  (Demetrio, Quercus) y granjas/tostadores sin tienda B2C → `no comprobado`.
+
+Snapshot tras lote 10: 152 filas; 137 verificado, 15 parcial, 0 pendiente; VO 68
+sí, 7 no, 77 no comprobado; canal 68/68; evidencia 161 (152 keep, 1 merge, 8
+purge).
