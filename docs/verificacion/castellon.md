@@ -48,6 +48,17 @@ y `docs/EDITORIAL_POLICY.md`.
   con `Canal de venta`. Evidencia: 93 registros. Pendientes restantes:
   Charcutería 11, Fruta y verdura 13, Miel 7, Lácteos y quesos 7, Trufa y setas
   6, Pescado 6, Café 2, Huevos 2.
+- Tras lote 6 (2026-06-28): 159 filas (1 purga); 105 `verificado`, 11 `parcial`,
+  43 `pendiente`. Venta online: 75 `sí`, 31 `no`, 53 `no comprobado`; 45/75 `sí`
+  con `Canal de venta`. Evidencia: 106 registros (104 `keep`, 1 `merge`, 1 `purge`).
+  Pendientes restantes: Fruta y verdura 13, Miel 7, Lácteos y quesos 7, Trufa y
+  setas 6, Pescado 6, Café 2, Huevos 2.
+- Tras lote 7 (2026-06-29): 158 filas (1 purga); 116 `verificado`, 12 `parcial`,
+  30 `pendiente`. Venta online: 72 `sí`, 26 `no`, 60 `no comprobado`; 50/72 `sí`
+  con `Canal de venta`. Evidencia: 119 registros (116 `keep`, 1 `merge`, 2 `purge`).
+  4 filas recategorizadas fuera de «Fruta y verdura» (ver «Lote 7»). Pendientes
+  restantes: Miel 7, Lácteos y quesos 7, Trufa y setas 6, Pescado 6, Café 2,
+  Huevos 2.
 - Modo: primera pasada profunda en curso. Prioridad: cerrar la calidad de las
   filas heredadas antes de añadir candidatos nuevos.
 
@@ -154,8 +165,8 @@ El lote 11 es auditoría transversal y puede revisar filas ya tocadas.
 | 3 | Otros | 19 | 0 | 2 | 17 | 7 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 3 - Otros». 6 aguas (mayoría B2B `no`/`no comprobado`), turrones, mermeladas, snacks. 2 parcial (Cereza Simó, Turrones San Luis). Sin purgas. |
 | 4 | Pan y pastelería | 18 | 0 | 0 | 18 | 5 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 4 - Pan y pastelería». Todos obradores reales. Horno Estellés sube de parcial a verificado (venta vía Mercat Central). |
 | 5 | Cerveza artesana + Licores | 16 | 0 | 4 | 12 | 7 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 5». Castelló Beer Factory `no`→`sí`; Gin Zeit pedido por email. 4 parcial por duda de actividad. |
-| 6 | Charcutería | 13 | 11 | 0 | 2 | 7 | ⬜ | Embotits de Morella, cecina, curados. Explotación/obrador vs carnicería minorista sin elaboración propia. |
-| 7 | Fruta y verdura | 13 | 13 | 0 | 0 | 8 | ⬜ | Cítricos de La Plana: productor/cooperativa elaboradora vs comercializadora/exportadora. DOP Carxofa de Benicarló. |
+| 6 | Charcutería | 12 | 0 | 2 | 10 | 6 | ✅ | Cerrado 2026-06-28. Detalle en «Lote 6 - Charcutería». 1 purga (Carnes Frescas SA, mayorista B2B). 2 parcial (Carn Natural coop; Carnicería Català, sin web propia tras quitar enlaces ajenos de Aldaia). 6 `sí`, todos con canal. |
+| 7 | Fruta y verdura | 12 | 0 | 1 | 11 | 5 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 7 - Fruta y verdura». 1 purga (Alcachofa de Benicarló = Consejo Regulador DOP). 1 parcial (Cítricos Natanael Bort). 4 recategorizadas fuera (Papas Maribel→Snacks; Rafinade→Bebidas; Frusema y Coop Benasalense→Frutos secos). 5 `sí`, todas con canal. |
 | 8 | Miel | 13 | 7 | 0 | 6 | 10 | ⬜ | Mieles del Maestrat. 10 `sí` a confirmar con canal; reauditar verificados heredados. |
 | 9 | Lácteos y quesos | 12 | 7 | 0 | 5 | 6 | ⬜ | Quesos del Maestrat (Catí). Registro/feria no sustituye fuente propia para `verificado`. |
 | 10 | Trufa y setas + Pescado + Café + Huevos | 17 | 16 | 0 | 1 | 6 | ⬜ | Truficultor vs feria/restaurante; conservera/elaborador vs lonja/cofradía/pescadería. Langostino de Vinaròs = marca colectiva. Los 6 `Pescado` están en `no`: reauditar. |
@@ -362,3 +373,98 @@ Decisiones relevantes:
 
 Snapshot tras lote 5: 160 filas; 97 verificado, 9 parcial, 54 pendiente; VO 76
 sí, 37 no, 47 no comprobado; canal 39/76; evidencia 93.
+
+## Lote 6 - Charcutería
+
+Revisión de las 13 fichas de `Charcutería` (2026-06-28): 10 `verificado`, 2
+`parcial`, 1 purga; venta online 6 `sí` (todas con canal), 0 `no`, 6
+`no comprobado`. URL y claims por fila en
+`data/evidence/comunitat-valenciana/castellon.jsonl`.
+
+Decisiones relevantes:
+
+- **Purga (fuera de alcance)**: `carnes-frescas-sa-almassora`. Es un
+  **mayorista/distribuidor B2B** de carne fresca de cordero y vacuno (suministro
+  a empresas, logística de distribución), no un elaborador ni venta a consumidor
+  final. Imagen eliminada.
+- **Enlace ajeno corregido**: `carniceria-catala-morella` tenía `web`
+  (`carniceriacatala.es`) y `Facebook` (`carniceria.catala`) de **otra Carnicería
+  Català en Aldaia, Valencia** (homónimo: razón, teléfono 676838605 y dirección
+  distintos). Ambos borrados. La de Morella (obrador propio de embutidos curados,
+  cecina y cordero Km0; Marquesa de Fuente el Sol 7, tel 673464526) es real pero
+  sin web/redes propias → `parcial`; sin canal remoto propio → `sí`→`no comprobado`.
+- **`parcial`** (techo por falta de fuente propia verificadora):
+  `carn-natural-morella` (cooperativa que gestiona el matadero de Morella y
+  despieza/comercializa carne de Els Ports; sin web, FB oficial; su página en
+  Mercat dels Ports da 404) y `carniceria-catala-morella`.
+- **Democión `sí`→`no comprobado`**: `carniceria-catala-morella` (el único canal
+  era la web ajena de Aldaia).
+- **`no`→`no comprobado`** al reauditar: `carn-natural-morella`,
+  `carnisseria-rosa-amelia-forcall`, `carns-noel-morella` (tienda online propia
+  *fuera de servicio temporalmente*), `carniceria-r-gallego-jerica` (web con
+  certificado caducado, catálogo sin checkout) y `carnes-alto-palancia-segorbe`
+  (web sin tienda; posible tienda hermana Jamones del Alto Palancia). Ningún `no`
+  superviviente en el lote.
+- **Rescate de minorista con elaboración propia**: `carnisseria-rosa-amelia-forcall`
+  (marca Rossamelia / Forcall Gourmet) no es carnicería pelada: elabora
+  **sobrassada trufada** (~100 kg/mes), cecina y embutidos con trufa → entra como
+  productor (`verificado`). Añadidos IG `@forcallgourmet` y Facebook; dirección a
+  Plaza Mayor 1.
+- **Venta online confirmada con canal**: Embutidos Ferreres (`whatsapp|email`),
+  Porcellet (`whatsapp|email|telefono`, +correo), La Cabanenca (`whatsapp`;
+  dirección corregida a Av. Corts Valencianes 36, +correo), Bolíssim
+  (`marketplace` vía Mercat dels Ports, marketplace comprable del colectivo de Els
+  Ports), Embutidos San Vicente (`ecommerce`) y Jamones Alfredo Monfort
+  (`ecommerce|marketplace`; tienda propia jamonesalfredomonfort.es + Mercat dels
+  Ports). San Vicente y Alfredo Monfort reauditados (heredados `verificado`).
+- **Categoría**: `Bolíssim` se mantiene en `Charcutería` (elabora Bolo de
+  Castelló, güeña y conservas de cerdo, junto a platos preparados).
+- Sin duplicados pese a misma calle en Morella: `carns-noel-morella` (Marquesa de
+  Fuente el Sol 12) y `carniceria-catala-morella` (nº 7) son entidades distintas
+  (nombres, teléfonos y webs propios diferentes).
+
+Snapshot tras lote 6: 159 filas; 105 verificado, 11 parcial, 43 pendiente; VO 75
+sí, 31 no, 53 no comprobado; canal 45/75; evidencia 106.
+
+## Lote 7 - Fruta y verdura
+
+Revisión de las 13 fichas de `Fruta y verdura` (2026-06-29): 11 `verificado`, 1
+`parcial`, 1 purga; venta online 5 `sí` (todas con canal), 0 `no`, 6
+`no comprobado`. URL y claims por fila en
+`data/evidence/comunitat-valenciana/castellon.jsonl`.
+
+Decisiones relevantes:
+
+- **Purga (no productor)**: `alcachofa-de-benicarlo-benicarlo`. No es un productor:
+  es el **Consejo Regulador de la DOP Alcachofa de Benicarló** (C/ César Cataldo 2;
+  el tel 964461674 de la ficha coincide con el del consell). Marca colectiva, fuera
+  de alcance. Imagen eliminada.
+- **Recategorizaciones** (categoría errónea heredada; fila correcta, recategorizada
+  y verificada): `papas-maribel-altura` Fruta y verdura→**Snacks artesanos**
+  (patatas fritas artesanas desde 1969); `rafinade-castello-de-la-plana` →
+  **Bebidas** (soda gastronómica de fruta para hostelería, no "fruta
+  deshidratada"; descripción corregida); `frutos-secos-del-maestrazgo-albocasser`
+  y `cooperativa-agricola-benasalense-benassal` → **Frutos secos** (almendra /
+  avellana Negreta de Benassal).
+- **`parcial`** (solo directorio, sin web propia ni fuente verificadora):
+  `citricos-natanael-bort-cabanes` (citricultor de Cabanes; contacto gmail).
+- **Venta online confirmada con canal** (productores con cultivo/elaboración
+  propia): Naranjas Marisa (`ecommerce`), Naranjas de Castellón / Cítricos Oroplana
+  (`ecommerce|whatsapp`), Benihort (`ecommerce`, tienda.benihort.com), Frutos Secos
+  del Maestrazgo / Frusema (`ecommerce` vía su marca B2C **ALSANE**) y Finca
+  Fulletes (`ecommerce`).
+- **`sí`→`no comprobado`** al reauditar: `aguacates-de-la-plana` (tienda sin
+  checkout; pedido por contacto no confirmado), `roca-sola-cerezas-ecologicas`
+  (envía cajas a casa pero web con TLS roto y cereza fuera de temporada) y
+  `rafinade` (B2B hostelería; web 403). **`no`→`no comprobado`**: `papas-maribel`,
+  `citricos-natanael-bort`, `nature-tasty` y `cooperativa-agricola-benasalense`
+  (mayoristas/B2B sin tienda B2C confirmada). Ningún `no` superviviente.
+- **Webs/teléfonos añadidos**: web propia a `nature-tasty` (naturetasty.com);
+  teléfono a `aguacates-de-la-plana` y `cooperativa-agricola-benasalense`; correo a
+  `papas-maribel`.
+- **Nature Tasty** (Nature Tropical Fruits SLU): productor real de aguacate/mango
+  con fincas propias + guacamole/aceite, pero perfil mayorista/export/horeca →
+  `verificado` con `no comprobado`.
+
+Snapshot tras lote 7: 158 filas; 116 verificado, 12 parcial, 30 pendiente; VO 72
+sí, 26 no, 60 no comprobado; canal 50/72; evidencia 119.
