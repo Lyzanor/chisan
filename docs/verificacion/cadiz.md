@@ -51,6 +51,21 @@ necesitas releer el manual entero por lote.
   comprobado`**; 20/34 `sí` con `Canal de venta`. Evidencia: **34 registros**. Dos
   recategorizaciones Bodega→**Licores** (Rives, Destilerías Pico): Bodega baja a 50,
   Licores sube a 4.
+- Tras lote 3 / Bodega Sierra+resto (2026-06-30): Bodega cierra los 3 lotes del
+  Marco/Tierra de Cádiz. 16 `verificado`, 2 `parcial` (Bodega Ambrosio, Hermanos
+  Holgado). 3 municipios corregidos de «Cádiz» a su pueblo real (Guardi→Arcos,
+  Miguel Domecq→Jerez, las coords ya estaban allí).
+- Tras lote 4 / Pescado (2026-06-30): **1 purga** (Frigoríficos Costa Sur,
+  mayorista de congelados) y **1 fusión** (Salpesca SL = razón social de La Chanca).
+  16 filas activas; almadraba/conservas de Barbate. Gadira y El Rey de Oros = misma
+  empresa (Productos de Almadraba S.L.), se mantienen como marcas hermanas.
+- Tras lote 5 / Lácteos y quesos (2026-06-30): quesos payoyo de la Sierra. 1
+  recategorización Lácteos→**Despensa artesanal** (Finca Arcadia: era «Huevos», en
+  realidad ajo negro ecológico). 4 queserías artesanas sin web → `parcial`. Andazul:
+  `sí` heredado demotido a `no comprobado` (sin tienda propia).
+- Snapshot tras lotes 3-5: **160 filas** (−2); **93 `verificado`, 8 `parcial`, 59
+  `pendiente`**; VO **61 `sí`, 0 `no`, 99 `no comprobado`**; 52/61 `sí` con canal;
+  evidencia **87 registros**.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -187,9 +202,9 @@ del lote**, no el resultado; se actualizan al cerrar cada lote (como en
 |---|---|---:|---|---|
 | 1 | Bodega · Sanlúcar + Chipiona + Trebujena | 17 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 1». 16 `verificado`, 1 `parcial` (La Mayetería), 0 purgas. 12 `sí` (todas `ecommerce`), de ellas 8 flips `no comprobado`→`sí`. JSONL creado (17 reg.). Enlaces ajenos corregidos: Argüeso (dominio caducado→prepmo.com), Yuste (ECONNREFUSED→yustebodegas.com), Cota 45 y La Mayetería (web=directorio gustocadiz), Herencia Yacente (FB de fotógrafo), Vinos de Albarizas (IG vacío). |
 | 2 | Bodega · Jerez de la Frontera + El Puerto de Santa María | 17 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 2». 17 `verificado`, 0 purgas. 8 `sí` (ecommerce), de ellas 7 flips. 2 demociones `sí`→`no comprobado` (Faustino González y Santa Petronila: solo reventa de terceros). 2 recategorizaciones Bodega→Licores (Rives, Destilerías Pico). Enlaces corregidos: Faustino González (DNS muerto→bodegasfaustinogonzalez.com), Emilio Hidalgo (.htm 404→apex), 4 Ojos (web aparcada→eliminada, IG→@bodega4ojoswines). |
-| 3 | Bodega · Sierra de Cádiz y resto | 18 | ⬜ | Arcos, Chiclana (viña), Prado del Rey, Cádiz, Olvera, San Fernando, Rota, Vejer, Setenil. Vinos de la Tierra de Cádiz, mostos. `sí`: Manuel Aragón, Coop. Viticultores Chiclaneros, Coop. Virgen de Palomares. |
-| 4 | Pescado | 18 | ⬜ | Barbate (9: atún de almadraba, mojama, salazones), Conil, Chiclana, El Puerto, Chipiona, Sanlúcar, Tarifa. Conservera vs cofradía/lonja. `sí`: Esteros Lubimar, Rey de Oros. |
-| 5 | Lácteos y quesos | 17 | ⬜ | Queso payoyo de la Sierra (Villaluenga, Benaocaz, Grazalema, El Bosque, Ubrique). Quesería con leche propia vs marca. `sí`: Quesos Andazul. |
+| 3 | Bodega · Sierra de Cádiz y resto | 18 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 3». 16 `verificado`, 2 `parcial` (Bodega Ambrosio, Hermanos Holgado), 0 purgas. 11 `sí` (ecommerce). Municipios corregidos: Guardi→Arcos, Miguel Domecq→Jerez (coords ya correctas). Webs ajenas/typos: Ambrosio (gustocadiz), Vinificate (aparcada), Primitivo Collantes (typo), Vinos Oceánicos (vinoteca ajena→raulmorenoyague). |
+| 4 | Pescado | 18 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 4». **1 purga** (Frigoríficos Costa Sur = mayorista congelados) + **1 fusión** (Salpesca SL→La Chanca). 16 activas, 13 `verificado`, 1 `parcial` (Perumasa). 11 `sí` (ecommerce). Gadira/El Rey de Oros = misma empresa (Productos de Almadraba), marcas hermanas. |
+| 5 | Lácteos y quesos | 17 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 5». 12 `verificado`, 4 `parcial` (queserías sin web: Mangana, La Covacha, El Saltillo, Como los de antes). 10 `sí` (ecommerce). Finca Arcadia recategorizada→Despensa artesanal (era «Huevos», es ajo negro). Andazul `sí`→`no comprobado`. Doña Casilda municipio→San José del Valle. |
 | 6 | Aceite | 15 | ⬜ | DOP Sierra de Cádiz (Olvera, Zahara, Setenil, Algodonales). Almazara vs comercializadora. `sí`: Molino de Taramilla, Agrosetenil. |
 | 7 | Pan y pastelería + Dulces y repostería | 21 | ⬜ | Obradores, conventos, IGP Alfajor de Medina Sidonia, tortas, pestiños. Obrador vs despacho. `sí`: Panes y Picos Sidonia, Convento del Espíritu Santo. |
 | 8 | Charcutería + Despensa artesanal | 17 | ⬜ | Chacinas de la Sierra y retinto; cajón heterogéneo «Despensa artesanal». `sí`: Sabores de Grazalema, Algaeca. |
@@ -385,3 +400,91 @@ Snapshot tras lote 2:
 - Venta online: 34 sí, 0 no, 128 no comprobado
 - Canal de venta informado: 20/34 productores con `Venta online=sí`
 - Evidencia Cádiz: 34 registros JSONL (todos `keep`)
+
+## Lote 3 - Bodega · Sierra de Cádiz y resto
+
+Revisión de las 18 fichas de `Bodega` fuera del Marco (Arcos 4, Chiclana 3, Prado
+del Rey 3, Cádiz 3, Olvera, San Fernando, Rota, Vejer, Setenil) (2026-06-30).
+Resultado: 18 filas activas (0 purgas), **16 `verificado`, 2 `parcial`**; venta
+online **11 `sí` (ecommerce), 0 `no`, 7 `no comprobado`**. Cierra el sector Bodega
+(lotes 1-3). +18 registros.
+
+Decisiones relevantes:
+
+- **Municipios corregidos de «Cádiz» a su pueblo real** (las coordenadas ya
+  apuntaban allí; solo la etiqueta estaba mal): `guardi-wines`→Arcos de la Frontera
+  (Finca El Higueral), `miguel-domecq`→Jerez de la Frontera (campo de Jerez). Los
+  `slug` se mantienen estables. `vinos-oceanicos` se queda en Cádiz (coords en la
+  capital).
+- **Enlaces ajenos / dominios rotos**: `bodega-ambrosio` y la `web` heredada era el
+  directorio gustocadiz.com → eliminada; `bodega-vinificate` web aparcada
+  (→lajoyeriawines) → eliminada; `primitivo-collantes` web con typo y TLD erróneo
+  (bodegasprimtivocollantes.com) → bodegaprimitivocollantes.es; `vinos-oceanicos`
+  web bacovinoteca.com (vinoteca ajena) → raulmorenoyague.com (Raúl Moreno Yagüe).
+- **`parcial`**: `bodega-ambrosio` (primer blanco ecológico de Cádiz, perruno,
+  Olvera; sin web/redes propias) y `vinos-hermanos-holgado` (vino de pajarete de
+  Prado del Rey; web con TLS roto, sin fuente propia; comparte teléfono y correo
+  `info@quesospajarete.com` con Quesos Pajarete = mismo operador familiar).
+- **Venta online (ecommerce propio)**: Regantío Viejo, Tesalia, El Gato (Rota,
+  1957), Etu-vino, Finca Las Mesetas (híbrido ibéricos+vino), Guardi, Miguel Domecq,
+  Ibargüen, Manuel Aragón, Coop. Viticultores Chiclaneros y Finca Moncloa (tienda
+  oficial de González Byass). `huerta-de-albala` queda `no comprobado` (tienda en
+  versión dev; pedidos por tel/email sin confirmar). Rivero y Vinificate
+  `no comprobado` (web caída/aparcada, reventa por terceros).
+
+## Lote 4 - Pescado
+
+Revisión de las 18 fichas de `Pescado` (Barbate 9, Conil, Chiclana, El Puerto,
+Chipiona, Sanlúcar, Tarifa) (2026-06-30). Resultado: **16 filas activas** (1 purga,
+1 fusión), **13 `verificado`, 1 `parcial`**; venta online **11 `sí` (ecommerce), 0
+`no`, 4 `no comprobado`**. +18 registros (16 keep, 1 purge, 1 merge).
+
+Decisiones relevantes:
+
+- **Purga (out-of-scope)**: `frigorificos-costa-sur` (Fricosur). Mayorista/
+  distribuidor de congelados multi-categoría (CNAE 4638; verduras, carne, marisco,
+  helados de «las mejores marcas del sector»), no productor Km0. Imagen eliminada.
+- **Fusión**: `salpesca-sl` → `la-chanca-barbate`. Salpesca S.L. es la razón social
+  de La Chanca (Barbate); misma unidad productiva. La web heredada de Salpesca era
+  el directorio gustodelsur.es (ajeno). Imagen eliminada.
+- **Marcas hermanas, no duplicados**: `gadira` y `conservas-el-rey-de-oros` son dos
+  marcas de **Productos de Almadraba S.L.** (Barbate, mismo dominio/tienda/teléfono);
+  se mantienen ambas como marcas distintas (atún rojo vs conservas).
+- **`parcial`**: `perumasa` (ahumados de Barbate; web perumasa.es no resuelve por
+  DNS y confirmación pública débil).
+- **Venta online (ecommerce propio)**: Petaca Chico (atunrojoalmadraba.com), Herpac,
+  La Chanca, Conservera de Tarifa, El Ronqueo, Gadira/El Rey de Oros, Esteros
+  Lubimar, Plancton Marino, Conservas Senra, Congelados Amar y Ubago (planta en
+  Barbate; tienda del grupo). `no comprobado`: Del'aqua (esteros propios, pedido por
+  contacto), Congelados Caromar (procesador sin tienda) y Viandas Cádiz (platos de
+  pescado B2B hostelería).
+
+## Lote 5 - Lácteos y quesos
+
+Revisión de las 17 fichas de `Lácteos y quesos` (queso payoyo de la Sierra:
+Villaluenga, Benaocaz, Grazalema, El Bosque, Ubrique, etc.) (2026-06-30). Resultado:
+**16 filas activas** (1 recategorización fuera), **12 `verificado`, 4 `parcial`**;
+venta online **10 `sí` (ecommerce), 0 `no`, 6 `no comprobado`**. +17 registros.
+
+Decisiones relevantes:
+
+- **Recategorización Lácteos→`Despensa artesanal`**: `finca-arcadia-sl`. No es
+  «Huevos» ni lácteo: produce **ajo negro ecológico** (desde 1999, Jerez). Productos
+  corregidos; tienda propia → `sí`.
+- **`parcial` (queserías artesanas sin web propia)**: `queseria-hermanos-mangana`,
+  `quesos-la-covacha`, `quesos-el-saltillo` y `quesos-como-los-de-antes` (todas
+  payoya real de la Sierra, confirmadas por directorio de queserías payoya y prensa;
+  techo por falta de fuente propia operativa).
+- **Cuarentena**: `quesos-andazul` (`sí` heredado) → `no comprobado` (queso azul
+  premiado, pero web sin tienda, solo contacto). Ubrique queda `no comprobado`
+  (venta presencial).
+- **Municipio corregido**: `dona-casilda`→San José del Valle (coords ya allí).
+- **Webs corregidas**: `quesos-el-bosqueno` typo de dominio (quesoselboque.com →
+  quesoselbosque.com).
+- **Venta online (ecommerce propio)**: Queso Payoyo, Montealva, El Gazul, Puerto
+  Carrillo, La Pastora de Grazalema, El Bosqueño, Pajarete, Doña Casilda, Finca
+  Arcadia. `no comprobado`: El Cabrero de Bolonia (200 cabras propias, sin tienda) y
+  La Abuela Agustina (web caída por DNS, identidad por redes).
+- **Operador compartido**: Quesos Pajarete (Villamartín) y Bodega Hermanos Holgado
+  (Prado del Rey, lote 3) comparten teléfono y correo → misma familia, dos productos
+  (queso vs vino); se mantienen ambas filas.
