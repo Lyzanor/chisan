@@ -78,6 +78,11 @@ fuentes de cotejo (DOP/IGP/DO de la Comunitat Valenciana) y criterios.
   Venta online: 31 `sí`, 0 `no`, 69 `no comprobado`; **31/31 `sí` con canal** (29
   `ecommerce`, 2 `marketplace`). Coordenadas: 87/100. Evidencia: 53 registros (48
   `keep`, 3 `merge`, 2 `purge`). **Resueltos los 2 pares de teléfono detectados al inicio.**
+- Tras lote 5 (2026-06-29): 100 filas; 54 `verificado`, 9 `parcial`, 37
+  `pendiente`. Venta online: 40 `sí`, 0 `no`, 60 `no comprobado`; **40/40 `sí` con
+  canal** (38 `ecommerce`, 2 `marketplace`). Coordenadas: 92/100. Evidencia: 68
+  registros. 4 webs ajenas/aparcadas corregidas a la oficial (1880, Pablo Garrigós,
+  Clavileño, Helados Alacant); confirmado Turrones Picó ≠ Hijos de Manuel Picó.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 104 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -218,7 +223,7 @@ tocadas.
 | 2 | Bodega + Licores | 15 | 0 | 0 | 15 | 11 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 2». 0 purgas; 15 verif; 11 `sí` (10 ecommerce, 1 marketplace Algueña), 4 no comprobado. Pepe Mendoza→Llíber; Algueña web .com→.es; +tel Mendoza/Bocopa/Xaló; Las Virtudes geocodificada. Casa Carmen entra por licor Cirereta. |
 | 3 | Fruta y verdura I — Vega Baja, Vinalopó y Elche | 14 | 3 | 5 | 6 | 5 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 3». 1 purga (Mateo e Hijo=servicios), 5 `sí` ecommerce. 3 pendientes sin rastro (M. Rosario García, Carla Aguilera/vínculo Agrofitovial, Frutas SIN). Medi Natural→Bodega. |
 | 4 | Fruta y verdura II — Marina/Comtat + Frutos secos | 12 | 1 | 3 | 6 | 3 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 4». 2 merges (Joan Bellod→Bine i Xama; Rosa Gil→L'Olivateria), 1 purga (Riera d'Agres=albergue rural). 3 `sí` ecommerce. 1 pendiente (Finca El Serrat). IGP Cerezas Montaña. |
-| 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 15 | 0 | 0 | 0 | ⬜ | Turrón Jijona 6 (Picó ≠ Hijos de Manuel Picó; 1880, El Artesano, Primitivo Rovira, Garrigós), Chocolate Villajoyosa 3, Pan 4, Helados Alacant 1, Salinitas 1. IGP Jijona. |
+| 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 0 | 0 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 5». 15 verif, 0 purgas; 9 `sí` ecommerce. Picó≠Hijos de Manuel Picó confirmado. 4 webs ajenas/aparcadas corregidas (1880, Garrigós, Clavileño, Helados Alacant). |
 | 6 | Lácteos y quesos + Miel | 16 | 16 | 0 | 0 | 0 | ⬜ | Lácteos 9 (queserías Comtat/costa: Mutxamel, Callosa, Monóvar, Tibi, Alcoy, Elche ×3, Santa Pola), Miel 7 (Salinas, Elche ×2, Xaló, Orihuela, L'Alqueria d'Asnar, El Ràfol). |
 | 7 | Cerveza, café, conservas, charcutería, pescado y otros | 17 | 17 | 0 | 0 | 0 | ⬜ | Cerveza 4, Café 2 (D'Origen, Jurado), Conservas 3 (incl. `l-olivateria` par de tel. con Rosa Gil L4), Charcutería 2, Pescado 2 (salazones), Otros 4 (mermeladas, Helix caracoles, espirulina, ganadería cabra). |
 | 8 | Cierre transversal provincial | 104 | — | — | — | — | ⬜ | Duplicados (2 pares de tel.), bilingüismo, homónimos, canales en todos los `sí`, geocoding de las 25 sin coords, evidencia completa, imágenes y decisión de cobertura estricta. |
@@ -467,3 +472,41 @@ Decisiones relevantes:
 Snapshot tras lote 4: 100 filas; 39 `verificado`, 9 `parcial`, 52 `pendiente`;
 venta online 31 `sí`, 0 `no`, 69 `no comprobado`; canal 31/31; evidencia 53
 registros (48 `keep`, 3 `merge`, 2 `purge`).
+
+## Lote 5 - Turrón + chocolate + pan/pastelería + helados + aperitivos
+
+Revisión de 15 fichas (6 turroneros de Jijona, 3 chocolateros de Villajoyosa, 4
+pan/pastelería, 1 helados, 1 aperitivos) el 2026-06-29. Resultado editorial: **15
+`verificado`, 0 purgas**; venta online 9 `sí` (todas `ecommerce`), 0 `no`, 6 `no
+comprobado`. Todos son fabricantes/obradores reales. URL y claims por fila en
+`data/evidence/comunitat-valenciana/alicante.jsonl`.
+
+Decisiones relevantes:
+
+- **Turrón de Jijona (IGP):** confirmado que **Turrones Picó (1920) e Hijos de
+  Manuel Picó (1770) son empresas distintas** (no se fusionan). Con tienda propia:
+  El Artesano (Mira y Llorens SA, tienda tiendaturron.com), 1880 (Almendra y Miel
+  SA), Primitivo Rovira (1850, la más antigua), Pablo Garrigós Ibáñez e Hijos de
+  Manuel Picó. Picó queda `no comprobado` (web informativa sin carrito).
+- **Chocolate de Villajoyosa:** Valor (fábrica propia) y Marcos Tonda (1793, tienda
+  /carrito) con `ecommerce`; Clavileño (1882) `no comprobado` (perfil de suministro
+  a retail/industrial, sin tienda B2C).
+- **4 webs ajenas/aparcadas corregidas a la oficial:** `1880.es` (aparcada) →
+  `turron1880.com`; `turronesydulces.com` (distribuidor ajeno "Turrones Fabián") →
+  `pablogarrigos.com`; `clavileno.com` (plataforma educativa de matemáticas) →
+  `chocolatesclavileno.com`; `helados-alacant.com` (blog, domain squatting) →
+  `heladosalacant.com`. Además `turronespico.com` → `turronpico.com` (redirect).
+- **Pan y pastelería:** Raúl Asencio (1758, Aspe; tienda /tienda-online) con
+  `ecommerce`; Better Pan (masa madre, Alicante), Roque Artesanos (1972, Castalla) y
+  Le Pain Tranquille (Orba) quedan `verificado`/`no comprobado` (obradores sin
+  tienda online).
+- **Otros:** Helados Alacant (Grupo Alacant, fábrica en San Vicente del Raspeig;
+  fabricante industrial sin tienda B2C → `no comprobado`); Salinitas Artesanos
+  (snacks horneados, Callosa de Segura; tienda salinitas.shop → `ecommerce`).
+- **Geocodificación (centroide):** Hijos de Manuel Picó (Jijona), Le Pain Tranquille
+  (Orba), Better Pan (Alicante), Roque Artesanos (Castalla) y Salinitas (Callosa de
+  Segura).
+
+Snapshot tras lote 5: 100 filas; 54 `verificado`, 9 `parcial`, 37 `pendiente`;
+venta online 40 `sí`, 0 `no`, 60 `no comprobado`; canal 40/40; evidencia 68
+registros (63 `keep`, 3 `merge`, 2 `purge`).
