@@ -83,6 +83,16 @@ fuentes de cotejo (DOP/IGP/DO de la Comunitat Valenciana) y criterios.
   canal** (38 `ecommerce`, 2 `marketplace`). Coordenadas: 92/100. Evidencia: 68
   registros. 4 webs ajenas/aparcadas corregidas a la oficial (1880, Pablo Garrigós,
   Clavileño, Helados Alacant); confirmado Turrones Picó ≠ Hijos de Manuel Picó.
+- Tras lote 6 (2026-06-29): 100 filas; 69 `verificado`, 9 `parcial`, 22
+  `pendiente`. Venta online: 49 `sí`, 0 `no`, 51 `no comprobado`; **49/49 `sí` con
+  canal** (47 `ecommerce`, 2 `marketplace`). Coordenadas: 94/100. Evidencia: 83
+  registros. Queserías y apicultores con leche/colmenas propias; 1 pendiente sin
+  rastro (María Rosario Ortega, miel Salinas).
+- Tras lote 7 (2026-06-29): 99 filas (1 purga: Cervezas Spigha, cerrada); 84
+  `verificado`, 10 `parcial`, 5 `pendiente`. Venta online: 58 `sí`, 0 `no`, 41 `no
+  comprobado`; **58/58 `sí` con canal** (56 `ecommerce`, 2 `marketplace`).
+  Coordenadas: 94/99. Evidencia: 100 registros. **Lotes de sector 1-7 cerrados;
+  quedan solo 5 pendientes residuales (sin rastro) para el cierre transversal.**
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 104 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -224,8 +234,8 @@ tocadas.
 | 3 | Fruta y verdura I — Vega Baja, Vinalopó y Elche | 14 | 3 | 5 | 6 | 5 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 3». 1 purga (Mateo e Hijo=servicios), 5 `sí` ecommerce. 3 pendientes sin rastro (M. Rosario García, Carla Aguilera/vínculo Agrofitovial, Frutas SIN). Medi Natural→Bodega. |
 | 4 | Fruta y verdura II — Marina/Comtat + Frutos secos | 12 | 1 | 3 | 6 | 3 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 4». 2 merges (Joan Bellod→Bine i Xama; Rosa Gil→L'Olivateria), 1 purga (Riera d'Agres=albergue rural). 3 `sí` ecommerce. 1 pendiente (Finca El Serrat). IGP Cerezas Montaña. |
 | 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 0 | 0 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 5». 15 verif, 0 purgas; 9 `sí` ecommerce. Picó≠Hijos de Manuel Picó confirmado. 4 webs ajenas/aparcadas corregidas (1880, Garrigós, Clavileño, Helados Alacant). |
-| 6 | Lácteos y quesos + Miel | 16 | 16 | 0 | 0 | 0 | ⬜ | Lácteos 9 (queserías Comtat/costa: Mutxamel, Callosa, Monóvar, Tibi, Alcoy, Elche ×3, Santa Pola), Miel 7 (Salinas, Elche ×2, Xaló, Orihuela, L'Alqueria d'Asnar, El Ràfol). |
-| 7 | Cerveza, café, conservas, charcutería, pescado y otros | 17 | 17 | 0 | 0 | 0 | ⬜ | Cerveza 4, Café 2 (D'Origen, Jurado), Conservas 3 (incl. `l-olivateria` par de tel. con Rosa Gil L4), Charcutería 2, Pescado 2 (salazones), Otros 4 (mermeladas, Helix caracoles, espirulina, ganadería cabra). |
+| 6 | Lácteos y quesos + Miel | 16 | 1 | 0 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 6». 15 verif, 0 purgas; 9 `sí` ecommerce. 1 pendiente (María Rosario Ortega). Melífera web→melibera.es. |
+| 7 | Cerveza, café, conservas, charcutería, pescado y otros | 17 | 0 | 1 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 7». 1 purga (Spigha=cerrada), 1 parcial (Aitana Espirulina=cesó producción). 9 `sí` ecommerce. L'Olivateria recibió el merge de Rosa Gil. |
 | 8 | Cierre transversal provincial | 104 | — | — | — | — | ⬜ | Duplicados (2 pares de tel.), bilingüismo, homónimos, canales en todos los `sí`, geocoding de las 25 sin coords, evidencia completa, imágenes y decisión de cobertura estricta. |
 
 ## Flujo por lote (resumen)
@@ -510,3 +520,66 @@ Decisiones relevantes:
 Snapshot tras lote 5: 100 filas; 54 `verificado`, 9 `parcial`, 37 `pendiente`;
 venta online 40 `sí`, 0 `no`, 60 `no comprobado`; canal 40/40; evidencia 68
 registros (63 `keep`, 3 `merge`, 2 `purge`).
+
+## Lote 6 - Lácteos y quesos + Miel
+
+Revisión de 16 fichas (9 queserías, 7 miel) el 2026-06-29. Resultado editorial:
+**15 `verificado`, 1 `pendiente`, 0 purgas**; venta online 9 `sí` (todas
+`ecommerce`), 0 `no`, 6 `no comprobado` (verificados). Todas las queserías y
+apicultores activos son productores reales con leche o colmenas propias. URL y
+claims por fila en `data/evidence/comunitat-valenciana/alicante.jsonl`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada (`ecommerce`, tienda propia):** La Vaquería del Camp
+  d'Elx (~140 vacas propias), Quesería San Antonio (Queronsa), Quesos Muñoz,
+  Alcaprone, Quesos Cantó d'Elx; Melíbera (miel de Elche), El Serralet (apicultura
+  +80 años), L'Abella Mel (4ª generación) y Orimiel (Huerta de Orihuela).
+- **`verificado` sin venta remota (`no comprobado`):** El de Sereix (premios World
+  Cheese Awards, sin tienda), Lácteos Segarra (B2B: Mercadona/Carrefour/El Corte
+  Inglés), Quesería Los Molinos, Quesería del Valle de Tibi; en miel, Israel Martínez
+  (apicultor con FB/IG propios) y Bona Mel Organic (web en reconstrucción).
+- **Pendiente residual (sin rastro):** `maria-rosario-ortega-perez-salinas` (miel,
+  Salinas; sin web ni redes). A reinvestigar en el cierre.
+- **Correcciones:** web de Melífera `meliferaelche.es`→`melibera.es` (redirect) y
+  Facebook roto eliminado; geocodificadas (centroide) Alcaprone (Alcoy) y Orimiel
+  (Orihuela).
+
+Snapshot tras lote 6: 100 filas; 69 `verificado`, 9 `parcial`, 22 `pendiente`;
+venta online 49 `sí`, 0 `no`, 51 `no comprobado`; canal 49/49; evidencia 83
+registros (78 `keep`, 3 `merge`, 2 `purge`).
+
+## Lote 7 - Cerveza, café, conservas, charcutería, pescado y otros atípicos
+
+Revisión de 17 fichas (4 cerveza, 2 café, 3 conservas, 2 charcutería, 2 pescado, 4
+«Otros» atípicos) el 2026-06-29. Resultado editorial: **15 `verificado`, 1
+`parcial`, 1 purga**; venta online 9 `sí` (todas `ecommerce`), 0 `no`, 7 `no
+comprobado`. URL y claims por fila en
+`data/evidence/comunitat-valenciana/alicante.jsonl`.
+
+Decisiones relevantes:
+
+- **Purga (cierre):** `cervezas-spigha-alcoy`. La Cervecería Alcoiana (Cervezas
+  Spigha) **cerró definitivamente** tras casi 10 años (prensa sectorial). Fuera de
+  alcance.
+- **`parcial` por cese de actividad:** `aitana-espirulina-guadalest`. Según su propia
+  web **ya no produce espirulina comercialmente** (ahora talleres, visitas y
+  educación); actividad productora actual cesada → techo `parcial`, `no comprobado`.
+- **Venta online confirmada (`ecommerce`):** Cerveza Gorgos, Cervezas Althaia
+  (web→cervezasalthaia.com), D·Origen Coffee, Tomachaf/Ibarra Abadía (web→tomachaf.es),
+  L'Olivateria (recibió el merge de Rosa Gil del lote 4), La Capsana (embutidos
+  1920), Salazones Vicente Romá, El Capricho del Abuelo (salazones) y El Rincón de
+  las Mermeladas / El Perolet.
+- **`verificado` sin venta remota (`no comprobado`):** Cerveza Santa Faz (su dominio
+  cervezasantafaz.com está en venta → web eliminada), Cafés Jurado (tostadero 1912,
+  sin carrito propio), La Vieja Dolores (conservas de alcachofa, venta vía terceros),
+  Embutidos Hortanatura, Ganadería La Cabrera (caprina regenerativa, web inactiva) y
+  Hélix Donaire (caracoles ecológicos).
+- **Correcciones:** webs corregidas (Althaia, Tomachaf, El Rincón de las Mermeladas),
+  web eliminada (Santa Faz, dominio en venta), Facebook roto fuera (Hortanatura),
+  teléfono a Salazones Romá; Ganadería La Cabrera geocodificada (centroide Elche).
+
+Snapshot tras lote 7: 99 filas; 84 `verificado`, 10 `parcial`, 5 `pendiente`; venta
+online 58 `sí`, 0 `no`, 41 `no comprobado`; canal 58/58; evidencia 100 registros
+(93 `keep`, 3 `merge`, 4 `purge`). Lotes de sector cerrados; restan 5 pendientes
+residuales para el cierre transversal (lote 8).
