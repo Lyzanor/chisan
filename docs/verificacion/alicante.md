@@ -60,6 +60,11 @@ fuentes de cotejo (DOP/IGP/DO de la Comunitat Valenciana) y criterios.
   con canal** (11 `ecommerce`, 1 `marketplace`). Coordenadas: 82/104 (geocodificadas
   Castell de la Costurera, Joan Bellod y La Rectoria de Pego con centroide). Creado
   `data/evidence/comunitat-valenciana/alicante.jsonl`: 15 registros (todos `keep`).
+- Tras lote 2 (2026-06-29): 104 filas; 27 `verificado`, 3 `parcial`, 74
+  `pendiente`. Venta online: 23 `sí`, 0 `no`, 81 `no comprobado`; **23/23 `sí`
+  con canal** (21 `ecommerce`, 2 `marketplace`). Coordenadas: 83/104 (geocodificada
+  Bodega Las Virtudes). Evidencia: 30 registros. Municipio de Casa Agrícola Pepe
+  Mendoza corregido `L'Alfàs del Pi`→`Llíber` (unidad productiva real).
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 104 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -197,7 +202,7 @@ tocadas.
 | # | Lote | Filas | Pend. | Parcial | Verif. | VO=sí | Estado | Notas iniciales |
 |---|---|---:|---:|---:|---:|---:|---|---|
 | 1 | Aceite + Aceitunas/encurtidos + Aromáticas | 15 | 0 | 3 | 12 | 12 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 1». 0 purgas; 12 verif, 3 parcial (Joan Bellod, La Rectoria de Pego, Selma); 12 `sí` (11 ecommerce, 1 marketplace). Web OR d'Olea .net→.com; FB rotos eliminados (Terol, Rontonar); dirección+tel de Carmencita. |
-| 2 | Bodega + Licores | 15 | 15 | 0 | 0 | 0 | ⬜ | Bodega 12 (DO Alicante: Bocopa, Mendoza, Volver, Monóvar, Xaló, Faelo, Las Virtudes…), Licores 3 (Alonso, Casa Carmen, Tenis/anís). Age-gate/TLS en cellers. |
+| 2 | Bodega + Licores | 15 | 0 | 0 | 15 | 11 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 2». 0 purgas; 15 verif; 11 `sí` (10 ecommerce, 1 marketplace Algueña), 4 no comprobado. Pepe Mendoza→Llíber; Algueña web .com→.es; +tel Mendoza/Bocopa/Xaló; Las Virtudes geocodificada. Casa Carmen entra por licor Cirereta. |
 | 3 | Fruta y verdura I — Vega Baja, Vinalopó y Elche | 14 | 14 | 0 | 0 | 0 | ⬜ | Orihuela ×4, Elche ×6 (dátil/granada/palmera), Algueña, La Romana, Hondón, Agost (uva de mesa Vinalopó). DOP Granada Mollar, Uva Embolsada, IGP Cítricos. |
 | 4 | Fruta y verdura II — Marina/Comtat + Frutos secos | 12 | 12 | 0 | 0 | 0 | ⬜ | FV norte 10 (Vall de Gallinera ×2 cerezas, Pedreguer, Benidoleig, Relleu, Adsubia, Agres, Almudaina=`rosa-gil`, Canyada, Sanet) + Frutos secos 2 (Bine i Xama, Vall de Seta). DOP Cerezas Montaña. |
 | 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 15 | 0 | 0 | 0 | ⬜ | Turrón Jijona 6 (Picó ≠ Hijos de Manuel Picó; 1880, El Artesano, Primitivo Rovira, Garrigós), Chocolate Villajoyosa 3, Pan 4, Helados Alacant 1, Salinitas 1. IGP Jijona. |
@@ -317,4 +322,47 @@ Decisiones relevantes:
 
 Snapshot tras lote 1: 104 filas; 12 `verificado`, 3 `parcial`, 89 `pendiente`;
 venta online 12 `sí`, 0 `no`, 92 `no comprobado`; canal 12/12; evidencia 15
+registros (todos `keep`).
+
+## Lote 2 - Bodega + Licores
+
+Revisión de las 15 fichas (12 `Bodega`, 3 `Licores`) el 2026-06-29. Resultado
+editorial: 15 filas activas (0 purgas, 0 fusiones), **15 `verificado`, 0
+`parcial`**; venta online **11 `sí`** (10 `ecommerce`, 1 `marketplace`), 0 `no`, 4
+`no comprobado`. URL y claims por fila en
+`data/evidence/comunitat-valenciana/alicante.jsonl`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada (`ecommerce`, tienda propia con carrito):** Fondillón
+  Luis XIV (Toneles Centenarios), Enrique Mendoza, Bocopa, Volver (tienda en
+  vinosbodegasvolver.com), Casa Agrícola Pepe Mendoza, Monóvar (tienda del grupo
+  MGWines), Bodegas Xaló, Faelo (tienda vinosladama.com), Destilerías Tenis (tienda
+  palomatenis.es) y Las Virtudes.
+- **Venta online (`marketplace`):** `vinos-de-alguena-alguena` (Bodega Cooperativa
+  de Algueña), vía La Despensa de Alicante; su web propia tiene age-gate y el
+  dominio `.com` no respondía.
+- **`verificado` sin venta remota (`no comprobado`):** La Cueva de Baco (Bizum solo
+  para reservas de visita, sin carrito), Cup de la Muntanya/Celler de Planes (venta
+  directa y catas), Licores Alonso (botón de tienda no operativo) y Casa Carmen.
+- **Corrección de municipio:** `casa-agricola-pepe-mendoza-l-alfas-del-pi` →
+  **Llíber**. Pepe Mendoza Casa Agrícola SLU (proyecto independiente del hijo,
+  distinto de Bodegas Enrique Mendoza, **no se fusiona**) elabora en la Finca de
+  Abargues, Pla de Lliber; las coordenadas del CSV caían a 1,8 km del centroide de
+  Llíber, no de L'Alfàs (donde está solo la sede fiscal).
+- **Casa Carmen (Alpatró, Vall de Gallinera):** entra como productora por el licor
+  de cereza **Cirereta** que elabora con cerezas propias, además de ser tienda de
+  productos de proximidad.
+- **Fallos técnicos tratados como tales (no baja):** certificado TLS inválido
+  (Bodegas Monóvar) o caducado (Bodegas Faelo), `.com` con ECONNREFUSED y age-gate
+  (Algueña). En los tres se confirmó actividad y canal por fuentes alternativas.
+- **Correcciones de enlaces/contacto:** Algueña web `.com`→`.es` (dominio
+  operativo) y Facebook roto eliminado; teléfonos añadidos a Enrique Mendoza
+  (+34965888639), Bocopa (+34966950489) y Xaló (+34966480034); dirección de Celler
+  de Planes completada (Carrer del Vi).
+- **Geocodificación:** Bodega Las Virtudes (centroide de Villena, requisito de
+  `verificado`). Quedan 21/104 filas sin coordenadas.
+
+Snapshot tras lote 2: 104 filas; 27 `verificado`, 3 `parcial`, 74 `pendiente`;
+venta online 23 `sí`, 0 `no`, 81 `no comprobado`; canal 23/23; evidencia 30
 registros (todos `keep`).
