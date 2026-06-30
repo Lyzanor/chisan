@@ -544,5 +544,19 @@
       "label": "Azanuy-Alins",
       "community": "aragon"
     }
+  ],
+  "vera": [
+    {
+      "lat": 37.2475942,
+      "lon": -1.8681961,
+      "label": "Vera",
+      "community": "andalucia"
+    },
+    {
+      "lat": 43.27833,
+      "lon": -1.6825,
+      "label": "Vera de Bidasoa",
+      "community": "navarra"
+    }
   ]
 }

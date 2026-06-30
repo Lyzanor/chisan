@@ -41,6 +41,12 @@ estructurada por fila debe vivir en
   66 `pendiente`. Venta online: 21 `sí`, 0 `no`, 81 `no comprobado`; 21/21
   filas con `Venta online=sí` tienen canal. Evidencia: 36 registros. Calidad:
   0 errores, 7 warnings y 48 opcionales suprimidos.
+- Tras lotes 3-5 (2026-06-30): 101 filas activas; 67 `verificado`, 23
+  `parcial`, 11 `pendiente`. Venta online: 43 `sí`, 13 `no`, 45
+  `no comprobado`; 43/43 filas con `Venta online=sí` tienen canal. Evidencia:
+  91 registros. Calidad: 0 errores, 4 warnings y 43 opcionales suprimidos.
+  Se purga `cubisol-almeria-sl-dalias` por fuera de alcance y se añade el
+  override de municipio `vera` para resolver el homónimo Vera/Vera de Bidasoa.
 
 El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces conservados, venta
@@ -197,11 +203,11 @@ transversal de cierre y puede revisar filas ya tocadas.
 |---|---|---|---:|---:|---:|---:|---:|---|---|
 | 1 | Lácteos, miel, pan, pescado y despensa | `Lácteos y quesos`, `Miel`, `Pan y pastelería`, `Pescado`, `Despensa artesanal`, `Helados` | 16 | 0 | 6 | 10 | 7 | ✅ | Cerrado el 2026-06-30: 10 verificadas, 6 parciales, 7 ecommerce confirmados. Corrige categorías de La Tautila, La Velezana, El Castillico, Guada, Pichote y Salinas; retira webs no verificables o ajenas; Salinas mantiene geo-warning documentado. |
 | 2 | Aceite, frutos secos y encurtidos | `Aceite`, `Frutos secos`, `Aceitunas y encurtidos` | 20 | 0 | 3 | 17 | 14 | ✅ | Cerrado el 2026-06-30: 17 verificadas, 3 parciales, 14 ventas remotas confirmadas. Corrige Castillo de Tabernas a almazara de Tabernas, Luxeapers a Nacimiento, Productos Robles a `Aceite y frutos secos` y Natural Crunch/Vitasnack a `Aperitivos`; La Zalea y Frutos Secos Martínez retiran directorio institucional del campo `web`; Verde Calas queda como canal `telefono`. |
-| 3 | Bodega, cerveza y bebidas | `Bodega`, `Cerveza artesana` | 23 | 23 | 0 | 0 | 0 | ⬜ | Incluye warnings de `antigua-alcoholera-almeria`, `bodega-lauricius-almeria` y `bodega-palomillo-almeria`. |
-| 4 | Charcutería y jamón | `Charcutería` | 17 | 17 | 0 | 0 | 0 | ⬜ | Separar secaderos/fábricas de carnicerías; revisar concentración de Serón, María, Campohermoso y El Hijate. |
-| 5 | Fruta y verdura | `Fruta y verdura` | 15 | 15 | 0 | 0 | 0 | ⬜ | Revisar cooperativas, centrales y marcas B2B; incluye warning de `huertaiberika-almeria`. |
+| 3 | Bodega, cerveza y bebidas | `Bodega`, `Cerveza artesana` | 23 | 0 | 8 | 15 | 11 | ✅ | Cerrado el 2026-06-30: 15 verificadas, 8 parciales y 11 ventas remotas. Corrige Antigua Alcoholera a Adra/`Destilados y licores`, AlveFresh a `Productos ecológicos`, Lauricius a Abrucena, Palomillo a Vélez-Rubio, Sierra Almagrera a Cuevas del Almanzora, García Gil a Oria, Cervezas El Cabo a Vera y Cortijo El Cura a web propia; retira directorios de Rincón Postrero y Torole. |
+| 4 | Charcutería y jamón | `Charcutería` | 17 | 0 | 3 | 14 | 11 | ✅ | Cerrado el 2026-06-30: 14 verificadas, 3 parciales y 11 ventas remotas. Normaliza Los Amadeos, Segura, Pedro Castaño, Dmarca y Diego Molina; retira webs rotas de Águila, Dmarca y Sierra María; Campohermoso y Fco. Montes quedan con `Venta online=no`. |
+| 5 | Fruta y verdura | `Fruta y verdura` | 15 | 0 | 3 | 11 | 0 | ✅ | Cerrado el 2026-06-30: 11 verificadas, 3 parciales, 1 purga por fuera de alcance y 0 ventas remotas. Corrige Aceitunas Claudio a `Aceitunas y encurtidos`, Ecosur/Primaflor/Shybari a webs oficiales y limpia artefactos de Agroponiente Natural y Bio Sierranevada; Huertaiberika mantiene geo-warning para cierre. |
 | 6 | Conservas y elaborados vegetales | `Conservas` | 11 | 11 | 0 | 0 | 0 | ⬜ | Incluye warnings de `la-gergalena-almeria` y `umai-quinto-sabor-almeria`; revisar elaborador real vs marca/comercializadora. |
-| 7 | Cierre transversal provincial | Todas | 102 | 102 | 0 | 0 | 1 | ⬜ | Auditar duplicados, canales, enlaces ajenos, imágenes, evidencia, geo-warnings residuales y criterios de cierre. |
+| 7 | Cierre transversal provincial | Todas | 101 | 11 | 23 | 67 | 43 | ⬜ | Auditar lote 6, duplicados, canales, enlaces ajenos, imágenes, evidencia, geo-warnings residuales y criterios de cierre. |
 
 ## Criterios de cierre de la pasada
 
