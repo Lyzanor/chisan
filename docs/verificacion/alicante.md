@@ -65,6 +65,13 @@ fuentes de cotejo (DOP/IGP/DO de la Comunitat Valenciana) y criterios.
   con canal** (21 `ecommerce`, 2 `marketplace`). Coordenadas: 83/104 (geocodificada
   Bodega Las Virtudes). Evidencia: 30 registros. Municipio de Casa Agrícola Pepe
   Mendoza corregido `L'Alfàs del Pi`→`Llíber` (unidad productiva real).
+- Tras lote 3 (2026-06-29): 103 filas (1 purga: Mateo e Hijo, empresa de
+  servicios agrícolas, no productor); 33 `verificado`, 7 `parcial`, 63
+  `pendiente` (3 residuales sin rastro: M. Rosario García, Carla Aguilera, Frutas
+  SIN). Venta online: 28 `sí`, 0 `no`, 75 `no comprobado`; **28/28 `sí` con canal**
+  (26 `ecommerce`, 2 `marketplace`). Coordenadas: 84/103. Evidencia: 42 registros
+  (40 `keep`, 1 `merge`, 1 `purge`). Medi Natural recategorizado a `Bodega`;
+  slug de casa-agricola realineado a `-lliber`.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 104 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -203,7 +210,7 @@ tocadas.
 |---|---|---:|---:|---:|---:|---:|---|---|
 | 1 | Aceite + Aceitunas/encurtidos + Aromáticas | 15 | 0 | 3 | 12 | 12 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 1». 0 purgas; 12 verif, 3 parcial (Joan Bellod, La Rectoria de Pego, Selma); 12 `sí` (11 ecommerce, 1 marketplace). Web OR d'Olea .net→.com; FB rotos eliminados (Terol, Rontonar); dirección+tel de Carmencita. |
 | 2 | Bodega + Licores | 15 | 0 | 0 | 15 | 11 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 2». 0 purgas; 15 verif; 11 `sí` (10 ecommerce, 1 marketplace Algueña), 4 no comprobado. Pepe Mendoza→Llíber; Algueña web .com→.es; +tel Mendoza/Bocopa/Xaló; Las Virtudes geocodificada. Casa Carmen entra por licor Cirereta. |
-| 3 | Fruta y verdura I — Vega Baja, Vinalopó y Elche | 14 | 14 | 0 | 0 | 0 | ⬜ | Orihuela ×4, Elche ×6 (dátil/granada/palmera), Algueña, La Romana, Hondón, Agost (uva de mesa Vinalopó). DOP Granada Mollar, Uva Embolsada, IGP Cítricos. |
+| 3 | Fruta y verdura I — Vega Baja, Vinalopó y Elche | 14 | 3 | 5 | 6 | 5 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 3». 1 purga (Mateo e Hijo=servicios), 5 `sí` ecommerce. 3 pendientes sin rastro (M. Rosario García, Carla Aguilera/vínculo Agrofitovial, Frutas SIN). Medi Natural→Bodega. |
 | 4 | Fruta y verdura II — Marina/Comtat + Frutos secos | 12 | 12 | 0 | 0 | 0 | ⬜ | FV norte 10 (Vall de Gallinera ×2 cerezas, Pedreguer, Benidoleig, Relleu, Adsubia, Agres, Almudaina=`rosa-gil`, Canyada, Sanet) + Frutos secos 2 (Bine i Xama, Vall de Seta). DOP Cerezas Montaña. |
 | 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 15 | 0 | 0 | 0 | ⬜ | Turrón Jijona 6 (Picó ≠ Hijos de Manuel Picó; 1880, El Artesano, Primitivo Rovira, Garrigós), Chocolate Villajoyosa 3, Pan 4, Helados Alacant 1, Salinitas 1. IGP Jijona. |
 | 6 | Lácteos y quesos + Miel | 16 | 16 | 0 | 0 | 0 | ⬜ | Lácteos 9 (queserías Comtat/costa: Mutxamel, Callosa, Monóvar, Tibi, Alcoy, Elche ×3, Santa Pola), Miel 7 (Salinas, Elche ×2, Xaló, Orihuela, L'Alqueria d'Asnar, El Ràfol). |
@@ -345,7 +352,7 @@ Decisiones relevantes:
 - **`verificado` sin venta remota (`no comprobado`):** La Cueva de Baco (Bizum solo
   para reservas de visita, sin carrito), Cup de la Muntanya/Celler de Planes (venta
   directa y catas), Licores Alonso (botón de tienda no operativo) y Casa Carmen.
-- **Corrección de municipio:** `casa-agricola-pepe-mendoza-l-alfas-del-pi` →
+- **Corrección de municipio:** `casa-agricola-pepe-mendoza-lliber` →
   **Llíber**. Pepe Mendoza Casa Agrícola SLU (proyecto independiente del hijo,
   distinto de Bodegas Enrique Mendoza, **no se fusiona**) elabora en la Finca de
   Abargues, Pla de Lliber; las coordenadas del CSV caían a 1,8 km del centroide de
@@ -366,3 +373,52 @@ Decisiones relevantes:
 Snapshot tras lote 2: 104 filas; 27 `verificado`, 3 `parcial`, 74 `pendiente`;
 venta online 23 `sí`, 0 `no`, 81 `no comprobado`; canal 23/23; evidencia 30
 registros (todos `keep`).
+
+## Lote 3 - Fruta y verdura I (Vega Baja, Vinalopó y Elche)
+
+Revisión de las 14 fichas de `Fruta y verdura` del sur (Orihuela ×4, Elche ×6,
+Algueña, La Romana, Hondón de las Nieves, Agost) el 2026-06-29. Resultado
+editorial: **6 `verificado`, 4 `parcial`, 3 `pendiente`, 1 purga**; venta online
+5 `sí` (todas `ecommerce`), 0 `no`, resto `no comprobado`. URL y claims por fila en
+`data/evidence/comunitat-valenciana/alicante.jsonl`.
+
+Decisiones relevantes:
+
+- **Purga (no productor):** `mateo-e-hijo-orihuela`. Su web (mateoehijo.com)
+  revela una **empresa de servicios** agrícolas (plantación, injerto, poda,
+  transporte con grúas, construcción y ferretería industrial) en La Murada, no un
+  productor de fruta. Fuera de alcance; imagen eliminada.
+- **Venta online confirmada (`ecommerce`):** Finca La Mollaneta (Greenmandarin,
+  cítricos eco/biodinámicos DEMETER, 18 ha, tienda citricosecologicos.eu), Eco-Citric
+  (cítricos eco CAAE, Orihuela), Vivir la Tierra (coop agroecológica, cestas a
+  domicilio), Serrano Valero (dátiles/licores de la palmera de Elche, +140 años) y
+  TodoPalmera (dátiles eco; ésta queda `parcial`).
+- **`parcial` (4):** TodoPalmera (negocio mixto dátiles + jardinería/servicios;
+  cultivo propio no confirmado), Uvas Amaia (uva embolsada del Vinalopó, Agost; web
+  vacía/en construcción), Finca El Poliol (granada Mollar DOP, CAECV, Elche; sin
+  fuente propia verificadora, el FB es un grupo) y Medi Natural (ver recategorización).
+- **`verificado` sin venta remota (`no comprobado`):** Biograna SAT (granada Mollar
+  eco; compra solo por formulario + transferencia, sin checkout; estacional) y Uvas
+  Cabrera (uva moscatel de mesa, 5 generaciones desde 1895; web con ECONNREFUSED en
+  la revisión, fallo técnico tratado como tal).
+- **Pendientes residuales (3, sin rastro suficiente, a reinvestigar en el cierre):**
+  `m-rosario-garcia-elche` (sin web ni rastro), `carla-aguilera-s-l-orihuela`
+  (su contacto es Agrofitovial, distribuidora de fitosanitarios; sin rastro como
+  productor de fruta) y `frutas-sin-orihuela` (rastro indirecto de cítricos
+  naturales en La Murada, sin fuente citable). Quedan `pendiente`/`no comprobado`,
+  sin registro de evidencia.
+- **Recategorización:** `medi-natural-alguena` Fruta y verdura → **Bodega** (es una
+  marca de vino tinto ecológico DO Alicante elaborado en Algueña; solo FB + Verema
+  → `parcial`).
+- **Correcciones de enlaces/contacto:** web Eco-Citric `eco-citric.es`→`ecocitric.es`;
+  Facebook roto (`profile.php`) eliminado en Greenmandarin y Vivir la Tierra; web de
+  Vivir la Tierra → `vivirlatierra.es`; correo ajeno eliminado en Uvas Cabrera.
+- **Slug realineado (por agente paralelo):** `casa-agricola-pepe-mendoza-l-alfas-del-pi`
+  → `casa-agricola-pepe-mendoza-lliber` (slug + imagen + tombstone `merge`), para
+  alinear con el municipio Llíber corregido en el lote 2.
+- **Geocodificación (centroide):** Biograna SAT (Elche, requisito de `verificado`) y
+  Medi Natural (Algueña). Las 3 filas `pendiente` quedan sin coordenadas.
+
+Snapshot tras lote 3: 103 filas; 33 `verificado`, 7 `parcial`, 63 `pendiente`;
+venta online 28 `sí`, 0 `no`, 75 `no comprobado`; canal 28/28; evidencia 42
+registros (40 `keep`, 1 `merge`, 1 `purge`).
