@@ -72,6 +72,12 @@ fuentes de cotejo (DOP/IGP/DO de la Comunitat Valenciana) y criterios.
   (26 `ecommerce`, 2 `marketplace`). Coordenadas: 84/103. Evidencia: 42 registros
   (40 `keep`, 1 `merge`, 1 `purge`). Medi Natural recategorizado a `Bodega`;
   slug de casa-agricola realineado a `-lliber`.
+- Tras lote 4 (2026-06-29): 100 filas (3 bajas: 2 fusiones —joan-bellod→bine-i-xama,
+  rosa-gil→l-olivateria— y 1 purga —Riera d'Agres, albergue rural). 39
+  `verificado`, 9 `parcial`, 52 `pendiente` (residual sin rastro: Finca El Serrat).
+  Venta online: 31 `sí`, 0 `no`, 69 `no comprobado`; **31/31 `sí` con canal** (29
+  `ecommerce`, 2 `marketplace`). Coordenadas: 87/100. Evidencia: 53 registros (48
+  `keep`, 3 `merge`, 2 `purge`). **Resueltos los 2 pares de teléfono detectados al inicio.**
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 104 filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -211,7 +217,7 @@ tocadas.
 | 1 | Aceite + Aceitunas/encurtidos + Aromáticas | 15 | 0 | 3 | 12 | 12 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 1». 0 purgas; 12 verif, 3 parcial (Joan Bellod, La Rectoria de Pego, Selma); 12 `sí` (11 ecommerce, 1 marketplace). Web OR d'Olea .net→.com; FB rotos eliminados (Terol, Rontonar); dirección+tel de Carmencita. |
 | 2 | Bodega + Licores | 15 | 0 | 0 | 15 | 11 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 2». 0 purgas; 15 verif; 11 `sí` (10 ecommerce, 1 marketplace Algueña), 4 no comprobado. Pepe Mendoza→Llíber; Algueña web .com→.es; +tel Mendoza/Bocopa/Xaló; Las Virtudes geocodificada. Casa Carmen entra por licor Cirereta. |
 | 3 | Fruta y verdura I — Vega Baja, Vinalopó y Elche | 14 | 3 | 5 | 6 | 5 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 3». 1 purga (Mateo e Hijo=servicios), 5 `sí` ecommerce. 3 pendientes sin rastro (M. Rosario García, Carla Aguilera/vínculo Agrofitovial, Frutas SIN). Medi Natural→Bodega. |
-| 4 | Fruta y verdura II — Marina/Comtat + Frutos secos | 12 | 12 | 0 | 0 | 0 | ⬜ | FV norte 10 (Vall de Gallinera ×2 cerezas, Pedreguer, Benidoleig, Relleu, Adsubia, Agres, Almudaina=`rosa-gil`, Canyada, Sanet) + Frutos secos 2 (Bine i Xama, Vall de Seta). DOP Cerezas Montaña. |
+| 4 | Fruta y verdura II — Marina/Comtat + Frutos secos | 12 | 1 | 3 | 6 | 3 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 4». 2 merges (Joan Bellod→Bine i Xama; Rosa Gil→L'Olivateria), 1 purga (Riera d'Agres=albergue rural). 3 `sí` ecommerce. 1 pendiente (Finca El Serrat). IGP Cerezas Montaña. |
 | 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 15 | 0 | 0 | 0 | ⬜ | Turrón Jijona 6 (Picó ≠ Hijos de Manuel Picó; 1880, El Artesano, Primitivo Rovira, Garrigós), Chocolate Villajoyosa 3, Pan 4, Helados Alacant 1, Salinitas 1. IGP Jijona. |
 | 6 | Lácteos y quesos + Miel | 16 | 16 | 0 | 0 | 0 | ⬜ | Lácteos 9 (queserías Comtat/costa: Mutxamel, Callosa, Monóvar, Tibi, Alcoy, Elche ×3, Santa Pola), Miel 7 (Salinas, Elche ×2, Xaló, Orihuela, L'Alqueria d'Asnar, El Ràfol). |
 | 7 | Cerveza, café, conservas, charcutería, pescado y otros | 17 | 17 | 0 | 0 | 0 | ⬜ | Cerveza 4, Café 2 (D'Origen, Jurado), Conservas 3 (incl. `l-olivateria` par de tel. con Rosa Gil L4), Charcutería 2, Pescado 2 (salazones), Otros 4 (mermeladas, Helix caracoles, espirulina, ganadería cabra). |
@@ -422,3 +428,42 @@ Decisiones relevantes:
 Snapshot tras lote 3: 103 filas; 33 `verificado`, 7 `parcial`, 63 `pendiente`;
 venta online 28 `sí`, 0 `no`, 75 `no comprobado`; canal 28/28; evidencia 42
 registros (40 `keep`, 1 `merge`, 1 `purge`).
+
+## Lote 4 - Fruta y verdura II (Marina/Comtat + Frutos secos)
+
+Revisión de 12 fichas (10 `Fruta y verdura` del norte + 2 `Frutos secos`) el
+2026-06-29. Resultado editorial: **6 `verificado`, 3 `parcial`, 1 `pendiente`, 2
+fusiones, 1 purga**; venta online 3 `sí` (todas `ecommerce`). URL y claims por fila
+en `data/evidence/comunitat-valenciana/alicante.jsonl`.
+
+Decisiones relevantes:
+
+- **Fusiones (resuelven los 2 pares de teléfono del snapshot inicial):**
+  - `joan-bellod-paya-beneixama` (Aceite, lote 1) → **`bine-i-xama-beneixama`**
+    (Frutos secos): misma unidad productiva (titular Joan Bellod Payà, C/ Nueva de la
+    Aurora 76, mismo teléfono y correo; Bine i Xama SL en registro). Bine i Xama
+    queda `parcial` (sin web ni tienda).
+  - `rosa-gil-almudaina` (Fruta y verdura) → **`l-olivateria-bio-olives-almudaina`**
+    (Conservas, se verifica en el lote 7): Rosa Gil es la titular de L'Olivateria
+    (mismo teléfono +34670225122, misma Almudaina; cultiva fruta y elabora olivas).
+- **Purga (no productor):** `riera-d-agres-alberg-rural-agres` es un **albergue
+  rural / agroturismo** (alojamiento) en Agres; los productos locales que ofrece se
+  compran en tiendas. Fuera de alcance.
+- **Venta online confirmada (`ecommerce`):** Cerezas de Alicante (coop, IGP Cerezas
+  Montaña de Alicante; tienda + marketplace), Naranjas Masil (citricultor 3ª gen.) y
+  Planeta ECO (finca eco, tienda Shopify).
+- **`verificado` sin venta remota (`no comprobado`):** Mas del Masero (Fruitec SL,
+  fruticultor eco desde 1950, Canyada), Agrivall (cereza eco, Vall de Gallinera) y
+  Vall de Seta agroalimentaria (frutos secos, Quatretondeta). Webs con fallo técnico
+  (ECONNREFUSED/TLS) tratadas como tal, no como baja.
+- **`parcial`:** Bine i Xama (ver fusión), Roberto Daniel Mayordomo (fruta/cítricos
+  en Adsubia; solo FB/IG) y L'Hort de Neli (horticultura eco certificada en
+  Pedreguer; solo directorio Molt de Gust + prensa, sin fuente propia verificadora).
+- **Pendiente residual (sin rastro, a reinvestigar en el cierre):** `finca-el-serrat-relleu`.
+- **Correcciones:** web de Planeta ECO limpiada (fbclid); dirección de L'Hort de Neli
+  a Partida la Xara 30; geocodificadas (centroide) Bine i Xama, Vall de Seta, Mas del
+  Masero, Roberto Daniel Mayordomo y L'Hort de Neli.
+
+Snapshot tras lote 4: 100 filas; 39 `verificado`, 9 `parcial`, 52 `pendiente`;
+venta online 31 `sí`, 0 `no`, 69 `no comprobado`; canal 31/31; evidencia 53
+registros (48 `keep`, 3 `merge`, 2 `purge`).
