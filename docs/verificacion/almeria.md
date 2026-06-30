@@ -47,6 +47,13 @@ estructurada por fila debe vivir en
   91 registros. Calidad: 0 errores, 4 warnings y 43 opcionales suprimidos.
   Se purga `cubisol-almeria-sl-dalias` por fuera de alcance y se añade el
   override de municipio `vera` para resolver el homónimo Vera/Vera de Bidasoa.
+- Tras lote 6 (2026-06-30): 101 filas activas; 76 `verificado`, 25
+  `parcial`, 0 `pendiente`. Venta online: 47 `sí`, 13 `no`, 41
+  `no comprobado`; 47/47 filas con `Venta online=sí` tienen canal. Evidencia:
+  102 registros. Calidad: 0 errores, 2 warnings y 43 opcionales suprimidos.
+  Se corrigen los municipios de `la-gergalena-almeria` a Gérgal y
+  `umai-quinto-sabor-almeria` a Abla; quedan warnings residuales en
+  `huertaiberika-almeria` y `salinas-de-cabo-de-gata-nijar`.
 
 El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces conservados, venta
@@ -206,8 +213,8 @@ transversal de cierre y puede revisar filas ya tocadas.
 | 3 | Bodega, cerveza y bebidas | `Bodega`, `Cerveza artesana` | 23 | 0 | 8 | 15 | 11 | ✅ | Cerrado el 2026-06-30: 15 verificadas, 8 parciales y 11 ventas remotas. Corrige Antigua Alcoholera a Adra/`Destilados y licores`, AlveFresh a `Productos ecológicos`, Lauricius a Abrucena, Palomillo a Vélez-Rubio, Sierra Almagrera a Cuevas del Almanzora, García Gil a Oria, Cervezas El Cabo a Vera y Cortijo El Cura a web propia; retira directorios de Rincón Postrero y Torole. |
 | 4 | Charcutería y jamón | `Charcutería` | 17 | 0 | 3 | 14 | 11 | ✅ | Cerrado el 2026-06-30: 14 verificadas, 3 parciales y 11 ventas remotas. Normaliza Los Amadeos, Segura, Pedro Castaño, Dmarca y Diego Molina; retira webs rotas de Águila, Dmarca y Sierra María; Campohermoso y Fco. Montes quedan con `Venta online=no`. |
 | 5 | Fruta y verdura | `Fruta y verdura` | 15 | 0 | 3 | 11 | 0 | ✅ | Cerrado el 2026-06-30: 11 verificadas, 3 parciales, 1 purga por fuera de alcance y 0 ventas remotas. Corrige Aceitunas Claudio a `Aceitunas y encurtidos`, Ecosur/Primaflor/Shybari a webs oficiales y limpia artefactos de Agroponiente Natural y Bio Sierranevada; Huertaiberika mantiene geo-warning para cierre. |
-| 6 | Conservas y elaborados vegetales | `Conservas` | 11 | 11 | 0 | 0 | 0 | ⬜ | Incluye warnings de `la-gergalena-almeria` y `umai-quinto-sabor-almeria`; revisar elaborador real vs marca/comercializadora. |
-| 7 | Cierre transversal provincial | Todas | 101 | 11 | 23 | 67 | 43 | ⬜ | Auditar lote 6, duplicados, canales, enlaces ajenos, imágenes, evidencia, geo-warnings residuales y criterios de cierre. |
+| 6 | Conservas y elaborados vegetales | `Conservas` | 11 | 0 | 2 | 9 | 4 | ✅ | Cerrado el 2026-06-30: 9 verificadas, 2 parciales y 4 ecommerce confirmados. Corrige La Gergaleña a Gérgal y Umai a Abla, retira webs rotas o institucionales de NDH, Pulpí Eya y Umai, recategoriza NDH como `Productos ecológicos` y deja Pulpí Eya/NDH en parcial por falta de fuente propia vigente. |
+| 7 | Cierre transversal provincial | Todas | 101 | 0 | 25 | 76 | 47 | ⬜ | Auditar duplicados, canales, enlaces ajenos, imágenes, evidencia, geo-warnings residuales (`huertaiberika-almeria`, `salinas-de-cabo-de-gata-nijar`) y criterios de cierre. |
 
 ## Criterios de cierre de la pasada
 
