@@ -93,8 +93,17 @@ fuentes de cotejo (DOP/IGP/DO de la Comunitat Valenciana) y criterios.
   comprobado`; **58/58 `sí` con canal** (56 `ecommerce`, 2 `marketplace`).
   Coordenadas: 94/99. Evidencia: 100 registros. **Lotes de sector 1-7 cerrados;
   quedan solo 5 pendientes residuales (sin rastro) para el cierre transversal.**
-- Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 104 filas
-  heredadas antes de añadir candidatos nuevos.
+- Tras lote 8 / cierre (2026-06-29): 98 filas (1 purga: Carla Aguilera SL, vínculo
+  con distribuidora de fitosanitarios, no productor). **84 `verificado`, 10
+  `parcial`, 4 `pendiente`**. Venta online: 58 `sí`, 0 `no`, 40 `no comprobado`;
+  **58/58 `sí` con canal** (56 `ecommerce`, 2 `marketplace`). **Coordenadas: 98/98**.
+  Imágenes: 47/98. Evidencia: 101 registros (94 `keep`, 3 `merge`, 4 `purge`).
+  Dedup transversal sin duplicados; geo sin saltos >100 km. **PRIMERA PASADA
+  PROFUNDA CERRADA.** No se añade a `coverage.json` por 4 pendientes residuales sin
+  rastro digital (productores particulares a confirmar en campo/mantenimiento).
+- Modo: primera pasada profunda **cerrada** (2026-06-29). El CSV sigue vivo: las
+  afirmaciones dinámicas (actividad, venta online) se revisan en mantenimiento. Los
+  4 pendientes residuales y los candidatos nuevos quedan para pasadas futuras.
 
 ## Reglas duras para Alicante
 
@@ -236,7 +245,7 @@ tocadas.
 | 5 | Turrón + chocolate + pan/pastelería + helados + aperitivos | 15 | 0 | 0 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 5». 15 verif, 0 purgas; 9 `sí` ecommerce. Picó≠Hijos de Manuel Picó confirmado. 4 webs ajenas/aparcadas corregidas (1880, Garrigós, Clavileño, Helados Alacant). |
 | 6 | Lácteos y quesos + Miel | 16 | 1 | 0 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 6». 15 verif, 0 purgas; 9 `sí` ecommerce. 1 pendiente (María Rosario Ortega). Melífera web→melibera.es. |
 | 7 | Cerveza, café, conservas, charcutería, pescado y otros | 17 | 0 | 1 | 15 | 9 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 7». 1 purga (Spigha=cerrada), 1 parcial (Aitana Espirulina=cesó producción). 9 `sí` ecommerce. L'Olivateria recibió el merge de Rosa Gil. |
-| 8 | Cierre transversal provincial | 104 | — | — | — | — | ⬜ | Duplicados (2 pares de tel.), bilingüismo, homónimos, canales en todos los `sí`, geocoding de las 25 sin coords, evidencia completa, imágenes y decisión de cobertura estricta. |
+| 8 | Cierre transversal provincial | 98 | 4 | 10 | 84 | 58 | ✅ | Cerrado 2026-06-29. Detalle en «Lote 8». 1 purga (Carla Aguilera=fitosanitarios). Dedup OK, geo OK, 98/98 coords. 4 pendientes residuales sin rastro. No añadido a `coverage.json`. |
 
 ## Flujo por lote (resumen)
 
@@ -581,5 +590,41 @@ Decisiones relevantes:
 
 Snapshot tras lote 7: 99 filas; 84 `verificado`, 10 `parcial`, 5 `pendiente`; venta
 online 58 `sí`, 0 `no`, 41 `no comprobado`; canal 58/58; evidencia 100 registros
-(93 `keep`, 3 `merge`, 4 `purge`). Lotes de sector cerrados; restan 5 pendientes
+(94 `keep`, 3 `merge`, 3 `purge`). Lotes de sector cerrados; restan 5 pendientes
 residuales para el cierre transversal (lote 8).
+
+## Lote 8 - Cierre transversal provincial
+
+Pasada de consistencia y cierre de la primera pasada profunda (2026-06-29). No se
+añaden productores nuevos; se concilia el conjunto.
+
+- **Pares de teléfono:** ya resueltos en el lote 4 (Joan Bellod→Bine i Xama; Rosa
+  Gil→L'Olivateria). Dedup transversal final: **0 teléfonos y 0 dominios web
+  duplicados** en las 98 filas.
+- **Geo:** `check:csv` sin errores; ningún salto >100 km ni homónimo a corregir
+  (Canyada, Salinas y los municipios del Comtat caen en su sitio). **Geocodificadas
+  por centroide las 4 filas que quedaban sin coordenadas → 98/98 con `lat`/`lon`.**
+- **Pendientes residuales (4), documentados:** `maria-rosario-ortega-perez-salinas`
+  (miel), `m-rosario-garcia-elche`, `finca-el-serrat-relleu` y `frutas-sin-orihuela`.
+  Son productores particulares **sin ningún rastro digital** (ni web, ni redes
+  oficiales, ni directorio) tras búsquedas exhaustivas. No se verifican ni
+  parcializan (no hay fuente externa) ni se purgan (ausencia de web ≠ inexistencia;
+  cf. regla dura 14): quedan `pendiente` para confirmación en campo/mantenimiento.
+- **Purga (no productor):** `carla-aguilera-s-l-orihuela`. Su único rastro
+  (teléfono y correo) es Agrofitovial SL, distribuidora mayorista de fitosanitarios
+  en Orihuela; sin rastro de actividad productora de fruta → fuera de alcance.
+- **Imágenes:** `check:images` sin errores ni huérfanos atribuibles a esta pasada
+  (47/98 filas con imagen; su revisión/ampliación queda para mantenimiento).
+- **Cobertura:** **no** se añade `comunitat-valenciana/alicante` a
+  `data/evidence/coverage.json`: con 4 filas `pendiente` sin registro, el ledger no
+  cubre todavía cada fila activa (coverage es advisory y exige cobertura completa).
+  Se añadirá cuando se resuelvan los 4 residuales.
+
+Cierre: la primera pasada profunda queda **cerrada**. Resultado global desde el
+snapshot inicial (104 filas, todo `pendiente`/`no comprobado`): 98 filas activas,
+**84 `verificado`, 10 `parcial`, 4 `pendiente`**; 58 `sí` con canal; 6 bajas (4
+purgas + 2 fusiones); 101 registros de evidencia.
+
+Snapshot tras lote 8 (cierre): 98 filas; 84 `verificado`, 10 `parcial`, 4
+`pendiente`; venta online 58 `sí`, 0 `no`, 40 `no comprobado`; canal 58/58;
+evidencia 101 registros (94 `keep`, 3 `merge`, 4 `purge`).
