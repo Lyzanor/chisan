@@ -55,6 +55,17 @@ los contratos de `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` ni
   0 `no`, 84 `no comprobado`**. Evidencia Córdoba: **100 registros**. Calidad
   Córdoba: 0 errores, **1 warning** y 42 opcionales suprimidos; sigue pendiente
   solo el warning de `granja-ahuevo-cordoba` para el lote 9.
+- Tras lotes 7-8 / Lácteos, quesos, miel, helados y chocolate (2026-07-01):
+  **141 filas** tras 4 purgas; **116 `verificado`, 5 `parcial`, 20
+  `pendiente`**. Venta online: **77 `sí`, 0 `no`, 64 `no comprobado`**.
+  Evidencia Córdoba: **134 registros**. Calidad Córdoba: 0 errores, **1
+  warning** y 30 opcionales suprimidos; queda pendiente el lote 9 final y el
+  warning de `granja-ahuevo-cordoba`.
+- Tras lote 9 final / varios pequeños (2026-07-01): **138 filas** tras 2 purgas
+  y 1 fusión adicionales; **130 `verificado`, 8 `parcial`, 0 `pendiente`**.
+  Venta online: **88 `sí`, 0 `no`, 50 `no comprobado`**. Evidencia Córdoba:
+  **154 registros**. Calidad Córdoba: 0 errores, **0 warnings** y 28 opcionales
+  suprimidos. Los 5 geo-warnings iniciales quedan resueltos.
 
 Reparto por categoría del snapshot inicial:
 
@@ -183,10 +194,10 @@ iniciarlos.
 | 4 | Charcutería I | Primeras 16 filas de `Charcutería` en orden CSV | 16 | 0 | 2 | 7 | 5 | Hecho | Cerrado 2026-07-01. 7 purgas por tienda/no productor u otra provincia; Familia Moreno se corrige a Villanueva de Córdoba y `megustaeljamon...` a Hinojosa del Duque. |
 | 5 | Charcutería II | Resto de `Charcutería` | 17 | 0 | 0 | 16 | 13 | Hecho | Cerrado 2026-07-01. 1 purga (`Nemesio`) por falta de productor; 13 ventas remotas confirmadas y 3 productores quedan `no comprobado`. |
 | 6 | Pan y pastelería | `Pan y pastelería` | 22 | 0 | 1 | 20 | 8 | Hecho | Cerrado 2026-07-01. 1 fusión de duplicado (`horno-de-lena-la-tradicion-cordoba` -> `la-tradicion-cordoba`); Pastelería Nati queda `parcial`; 8 ventas remotas confirmadas. |
-| 7 | Lácteos, quesos y miel | `Lácteos y quesos`, `Miel` | 21 | 21 | 0 | 0 | 0 | Pendiente | Queserías de Subbética/Los Pedroches y apícolas. Aceptar techo `parcial` si solo hay directorio o registro sin fuente propia. |
-| 8 | Helados y chocolate | `Helados`, `Chocolate` | 13 | 13 | 0 | 0 | 0 | Pendiente | Mayoría en Córdoba capital. Confirmar elaboración propia; no verificar heladerías/cafeterías que solo revenden. |
-| 9 | Varios pequeños | `Aceitunas y encurtidos`, `Legumbres`, `Huevos`, `Despensa artesanal`, `Aperitivos`, `Fruta y verdura`, `Pescado` | 20 | 20 | 0 | 0 | 0 | Pendiente | Lote de triaje. Resolver `granja-ahuevo`; revisar riesgo de distribuidora, marca sin producción o producto genérico. |
-| 10 | Cierre transversal provincial | Todas | 145 | 54 | 5 | 86 | 61 | Pendiente | 0 pendientes, evidencia completa para filas activas, purgas/fusiones documentadas, geo e imágenes revisadas. |
+| 7 | Lácteos, quesos y miel | `Lácteos y quesos`, `Miel` | 21 | 0 | 0 | 19 | 14 | Hecho | Cerrado 2026-07-01. 2 purgas: Miel de San Benito por otra provincia y Miel Valle de los Pedroches por derivar a tienda de material apícola sin productor alimentario actual. 14 ventas remotas confirmadas. |
+| 8 | Helados y chocolate | `Helados`, `Chocolate` | 13 | 0 | 0 | 11 | 2 | Hecho | Cerrado 2026-07-01. 2 purgas por cafetería/tienda sin obrador productor: La Fábrica de Chocolate y Sabor a Chocolate. D'Torres queda con WhatsApp y Montalbán con ecommerce. |
+| 9 | Varios pequeños | `Aceitunas y encurtidos`, `Legumbres`, `Huevos`, `Despensa artesanal`, `Aperitivos`, `Fruta y verdura`, `Pescado` | 20 | 0 | 3 | 14 | 11 | Hecho | Cerrado 2026-07-01. 2 purgas (`campina-verde...`, `supramar...`) y 1 fusión (`granja-ahuevo-cordoba` -> `productos-moreno...`). Se resuelve el warning de `granja-ahuevo`. |
+| 10 | Cierre transversal provincial | Todas | 138 | 0 | 8 | 130 | 88 | Hecho | Córdoba queda cerrada: 0 pendientes, 0 warnings de calidad, evidencia coherente y assets huérfanos retirados. |
 
 ## Lote 1 - Aceite I
 
@@ -336,6 +347,110 @@ Snapshot tras lote 6:
 - Evidencia Córdoba: 100 registros JSONL
 - Calidad Córdoba: 0 errores, 1 warning; queda `granja-ahuevo-cordoba` para el
   lote 9.
+
+## Lote 7 - Lácteos, Quesos y Miel
+
+Revisión de `Lácteos y quesos` y `Miel` (2026-07-01). Resultado: **19 filas
+activas**, **19 `verificado`**, **2 purgas**; venta online **14 `sí`** y 5
+`no comprobado`. Se añaden 19 registros `keep` y 2 tombstones `purge`.
+
+Decisiones relevantes:
+
+- **Queserías verificadas**: El Palancar, Marqués del Valle, Calaveruela, La
+  Chacha Sebastiana, Fuente La Sierra, Cortijo La Calzada, Plazuelo y Los
+  Balanchares. Se limpian enlaces genéricos heredados y se normalizan webs
+  canónicas cuando había tienda propia.
+- **Venta online confirmada**: El Palancar, Marqués del Valle, Calaveruela,
+  Fuente La Sierra, Plazuelo, Los Balanchares, Reina de la Subbética, Corduba
+  Miel, Fuentecillas, Moramiel Oro, Apioliva, Caprichos del Guadalquivir,
+  VerdeMiel y Mielinizate.
+- **Purgas**: `miel-de-san-benito-el-viso` queda fuera por otra provincia; las
+  fuentes localizan Miel de San Benito en Almodóvar del Campo / Valle de
+  Alcudia. `miel-valle-de-los-pedroches-pozoblanco` queda fuera porque el
+  dominio heredado redirige a Apícola Los Pedroches, tienda de material apícola,
+  sin evidencia actual de productor alimentario de miel.
+- **Sin imagen huérfana**: se elimina
+  `public/productores/andalucia/cordoba/miel-valle-de-los-pedroches-pozoblanco.webp`
+  al purgar la fila.
+
+## Lote 8 - Helados y Chocolate
+
+Revisión de `Helados` y `Chocolate` (2026-07-01). Resultado: **11 filas
+activas**, **11 `verificado`**, **2 purgas**; venta online **2 `sí`** y 9
+`no comprobado`. Se añaden 11 registros `keep` y 2 tombstones `purge`.
+
+Decisiones relevantes:
+
+- **Heladerías verificadas**: Buonisssimo, Cremería di Vaniglia, D'Torres,
+  Escoda, Jijona de Córdoba, La Flor de Levante 1934, Nocciolata, Piamonte
+  D'Ambrosio, Piacerino y Heladería de Montalbán. Se exige obrador/fabricación
+  propia o fuente oficial equivalente, no solo ficha de Maps.
+- **Venta online confirmada**: D'Torres por encargos en WhatsApp y Heladería de
+  Montalbán por tienda con carrito/pedido.
+- **Chocolate**: queda Vescera Délice, verificada por perfil oficial y Sabor a
+  Córdoba 2025 como productor de bombones con base de dátil. La venta remota
+  queda `no comprobado`.
+- **Purgas**: `la-fabrica-de-chocolate-cordoba` y
+  `sabor-a-chocolate-cordoba` quedan fuera por no acreditar obrador/productor:
+  las fuentes las describen como cafetería o tienda/churrería.
+
+Snapshot tras lotes 7-8:
+
+- Filas CSV: 141
+- Verificación: 116 verificado, 5 parcial, 20 pendiente
+- Venta online: 77 sí, 0 no, 64 no comprobado
+- Canal de venta informado: 77/77 productores con `Venta online=sí`
+- Evidencia Córdoba: 134 registros JSONL
+- Calidad Córdoba: 0 errores, 1 warning; queda `granja-ahuevo-cordoba` para el
+  lote 9 final.
+
+## Lote 9 - Varios Pequeños
+
+Revisión de `Aceitunas y encurtidos`, `Legumbres`, `Huevos`, `Despensa
+artesanal`, `Aperitivos`, `Fruta y verdura` y `Pescado` (2026-07-01).
+Resultado: **17 filas activas**, **14 `verificado`**, **3 `parcial`**, **2
+purgas** y **1 fusión**; venta online **11 `sí`** y 6 `no comprobado`. Se
+añaden 17 registros `keep`, 2 tombstones `purge` y 1 registro `merge`.
+
+Decisiones relevantes:
+
+- **Venta online confirmada**: Aceitunas Torrent, Brigantes Benamejí, Productos
+  Moreno / Granja Ahuevo, Aceitunas El Rinconcillo, Hermisenda, Legumbres Manuel
+  Baena Cañadas, Vega de la Breña, Membrillo San Lorenzo, Snack Adara, Membrillo
+  El Quijote y Membrillo La Góndola. Los canales quedan diferenciados entre
+  `ecommerce`, `marketplace`, `whatsapp`, `telefono` y `email`.
+- **`parcial` por techo de evidencia**: Legumbres Ortiz, Legumbres Manuel Baena
+  Cañadas y Aceitunas Lanzas. Se conservan por fuente individual/marketplace o
+  directorio fiable, pero sin fuente propia operativa suficiente para cierre
+  fuerte.
+- **Fusión y geo-warning resuelto**: `granja-ahuevo-cordoba` se fusiona en
+  `productos-moreno-granja-a-huevo-castro-del-rio`. Ambas fuentes apuntan a la
+  misma unidad de Castro del Río; la fila duplicada era la que arrastraba el
+  warning geográfico inicial.
+- **Purgas por no productor**: `campina-verde-ecosol-s-l-cordoba`, por ser
+  comercializadora/exportadora de frutas y hortalizas ecológicas de terceros, y
+  `supramar-pozoblanco`, por ser marisquería/selección y entrega de pescado y
+  marisco sin producción o elaboración propia.
+- **Correcciones de datos**: Membrillo San Lorenzo corrige la lectura heredada
+  de `Guadix` a Ctra. Estepa-Guadix, km 18,3, Puente Genil; La Góndola corrige
+  dirección a Bailén 9; Brigantes, Chips by Raquel, Legumbres Baena, Snack Adara
+  y otros normalizan contacto y webs canónicas.
+- **Sin assets huérfanos**: se eliminan las imágenes de `granja-ahuevo-cordoba`
+  y `supramar-pozoblanco` junto con la fila fusionada/purgada.
+
+## Cierre Provincial
+
+Snapshot final tras los lotes 1-9:
+
+- Filas CSV: 138
+- Verificación: 130 verificado, 8 parcial, 0 pendiente
+- Venta online: 88 sí, 0 no, 50 no comprobado
+- Canal de venta informado: 88/88 productores con `Venta online=sí`
+- Evidencia Córdoba: 154 registros JSONL
+- Calidad Córdoba: 0 errores, 0 warnings
+- Imágenes: sin errores ni warnings en `check:images`
+- Estado: primera pasada profunda cerrada; futuras tareas pueden centrarse en
+  ampliación, mantenimiento de parciales o enriquecimiento selectivo de imágenes.
 
 ## Flujo por lote
 
