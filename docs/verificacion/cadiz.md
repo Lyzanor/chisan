@@ -84,6 +84,11 @@ necesitas releer el manual entero por lote.
   **145 `verificado`, 14 `parcial`, 0 `pendiente`**; VO **96 `sí`, 0 `no`, 63 `no
   comprobado`**; **96/96 `sí` con `Canal de venta`**; evidencia **162 registros**.
   Solo queda el lote 10 (cierre transversal) antes de `coverage.json`.
+- **Lote 10 / cierre transversal cerrado (2026-07-01) — PASADA COMPLETA**: 0
+  pendientes; municipios señalados verificados (correctos); web ajena de Destraperlo
+  eliminada; dedup limpio; geo OK (1 aviso rústico no bloqueante); evidencia 159/159;
+  `andalucia/cadiz` añadida a `data/evidence/coverage.json`. `verify:data` verde.
+  Cádiz queda con la primera pasada **cerrada de extremo a extremo**.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -227,7 +232,7 @@ del lote**, no el resultado; se actualizan al cerrar cada lote (como en
 | 7 | Pan y pastelería + Dulces y repostería | 21 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 7». 0 purgas: 17 verificado (9 `sí`/ecommerce, 8 `no comprobado`) + 4 `parcial` (conventos de clausura sin web propia: torno). Web corregida: Cienpalacios (aparcada→cienpalacios.es). |
 | 8 | Charcutería + Despensa artesanal | 17 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 8». 0 purgas, todas verificado: 11 `sí`/ecommerce, 6 `no comprobado`. Recat. Despensa→Licores (Indi&Co, destilería). Algaeca `sí`→`no comprobado` (B2B). Web: Embutidos Gazules (.com→.es). |
 | 9 | Cerveza + Miel + Fruta y verdura + Sal + Licores | 22 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 9». 0 purgas: 20 verificado (12 `sí`/ecommerce, 8 `no comprobado`) + 2 `parcial` (Salina de La Esperanza=salina UCA; Licores Grazalemeños sin web). Anomalía corregida: Licores Grazalemeños `sí`→`no comprobado`. Web: Cerveza Besaro (www muerto→apex). |
-| 10 | Cierre transversal provincial | 159 | ⬜ | **0 pendientes ya alcanzado**. Falta: revisar municipios señalados (La Kombuchería, Hermanillas, La Pedriza), dedup/geo final, imágenes, web de Destraperlo (spam casino), y añadir `andalucia/cadiz` a `coverage.json`. |
+| 10 | Cierre transversal provincial | 159 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 10». 0 pendientes; municipios señalados verificados (Kombuchería/Hermanillas/La Pedriza correctos por dirección+coords); web ajena de Destraperlo eliminada (dominio secuestrado con spam de casino); dedup limpio (3 casos de marcas hermanas ya documentados); geo OK (1 aviso rústico: Miguel Domecq); evidencia 162 reg. (159/159 filas activas); `andalucia/cadiz` añadida a `coverage.json`. |
 
 Reparto por categoría (snapshot inicial, para cuadrar los lotes): Bodega 52
 (lotes 1–3), Pescado 18 (4), Lácteos y quesos 17 (5), Aceite 15 (6), Dulces y
@@ -642,3 +647,45 @@ Decisiones relevantes:
   anomalía `sí`→`no comprobado`).
 - **Municipios a revisar** (cierre): Hermanillas (web: Pueblo Nuevo/San Roque; CSV =
   Los Barrios), La Pedriza (web: Alcalá; CSV = Chiclana).
+
+## Lote 10 - Cierre transversal provincial
+
+Auditoría transversal final (2026-07-01). Cierra la primera pasada de Cádiz de
+extremo a extremo: **159 filas, 145 `verificado`, 14 `parcial`, 0 `pendiente`**; VO
+**96 `sí` (96/96 con `Canal de venta`), 0 `no`, 63 `no comprobado`**; evidencia **162
+registros** que cubren las **159/159** filas activas (más 2 `purge` y 1 `merge`).
+
+Comprobaciones y resoluciones:
+
+- **Municipios señalados verificados como correctos** (dirección + coordenadas
+  coherentes con el municipio del CSV, sin salto de geo): La Kombuchería (Av. de los
+  Albañiles, 11140 **Conil**), Hermanillas (Autovía, 11370 **Los Barrios**), La
+  Pedriza (Tr.ª Alameda de Solano, 11130 **Chiclana**; Alimentos La Pedriza S.L. está
+  en Chiclana desde 1990 aunque se fundó en Alcalá en 1949 — web propia correcta). No
+  se cambia ningún municipio.
+- **Web ajena eliminada**: `destraperlo-comando-cervecero-jerez` tenía como `web` el
+  dominio `destraperlo.es`, **secuestrado** y sirviendo spam de casino en portada y
+  subpáginas. Se blanquea la `web`; la cervecera (cooperativa Comando Cervecero) sigue
+  siendo real y su canal oficial es el Instagram ya presente. Evidencia actualizada
+  (claim `link-ownership`).
+- **Dedup limpio**: los únicos identificadores compartidos son casos ya documentados
+  de marcas hermanas / mismo operador: Gadira + El Rey de Oros (Productos de Almadraba,
+  lote 4), Argüeso + Yuste (mismo titular, lote 1) y Quesos Pajarete + Hnos. Holgado
+  (misma familia, lotes 3/5). No hay duplicados nuevos.
+- **Geo**: `check:csv` sin errores bloqueantes; único aviso de banda 15-100 km =
+  Miguel Domecq (finca del campo de Jerez, 19,2 km del centroide urbano; ubicación
+  rústica real, municipio correcto). Se deja.
+- **Imágenes**: `check:images` sin errores ni refs rotas; 107/159 con `imagen`, 52
+  sin. El enriquecimiento de las 52 restantes queda como tarea opcional futura (no
+  bloquea el cierre; el scorer de `enrich:images` requiere revisión por slug).
+- **`coverage.json`**: añadida `andalucia/cadiz` a `strictProvinces` (cobertura
+  orgánica 159/159, `check:evidence` 0 issues).
+
+Residuales conocidos (no bloquean; para futuras pasadas):
+
+- 14 `parcial` con motivo documentado: 4 queserías payoya (lote 5), Bodega Ambrosio +
+  Hnos. Holgado (lote 3), La Mayetería (lote 1), 4 conventos de clausura (lote 7),
+  Perumasa (lote 4), Salina de La Esperanza y Licores Grazalemeños (lote 9).
+- 52 filas sin `imagen`.
+- `Venta online=no comprobado` en 63 filas: productores reales sin tienda propia
+  (venta presencial, B2B o reventa por terceros); revisable si abren canal propio.
