@@ -66,6 +66,15 @@ necesitas releer el manual entero por lote.
 - Snapshot tras lotes 3-5: **160 filas** (−2); **93 `verificado`, 8 `parcial`, 59
   `pendiente`**; VO **61 `sí`, 0 `no`, 99 `no comprobado`**; 52/61 `sí` con canal;
   evidencia **87 registros**.
+- Tras lote 6 / Aceite (2026-07-01): DOP Sierra de Cádiz + Tierra de Cádiz. **1
+  purga** (Guadaceite = envasador/distribuidor de aceites comestibles para
+  hostelería, sin almazara propia). De las 14 activas: 10 flips `no comprobado`→`sí`
+  (almazara + tienda propia) y 2 cuarentenas resueltas (Taramilla, Agrosetenil →
+  canal ecommerce); 2 quedan `no comprobado` (Los Horgazales, Molino El Vínculo:
+  reales, sin tienda propia). 2 webs corregidas (Almazara las Pilas, Los Horgazales).
+- Snapshot tras lote 6: **159 filas** (−1); **104 `verificado`, 8 `parcial`, 47
+  `pendiente`**; VO **71 `sí`, 0 `no`, 88 `no comprobado`**; 64/71 `sí` con canal;
+  evidencia **102 registros**.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -205,7 +214,7 @@ del lote**, no el resultado; se actualizan al cerrar cada lote (como en
 | 3 | Bodega · Sierra de Cádiz y resto | 18 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 3». 16 `verificado`, 2 `parcial` (Bodega Ambrosio, Hermanos Holgado), 0 purgas. 11 `sí` (ecommerce). Municipios corregidos: Guardi→Arcos, Miguel Domecq→Jerez (coords ya correctas). Webs ajenas/typos: Ambrosio (gustocadiz), Vinificate (aparcada), Primitivo Collantes (typo), Vinos Oceánicos (vinoteca ajena→raulmorenoyague). |
 | 4 | Pescado | 18 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 4». **1 purga** (Frigoríficos Costa Sur = mayorista congelados) + **1 fusión** (Salpesca SL→La Chanca). 16 activas, 13 `verificado`, 1 `parcial` (Perumasa). 11 `sí` (ecommerce). Gadira/El Rey de Oros = misma empresa (Productos de Almadraba), marcas hermanas. |
 | 5 | Lácteos y quesos | 17 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 5». 12 `verificado`, 4 `parcial` (queserías sin web: Mangana, La Covacha, El Saltillo, Como los de antes). 10 `sí` (ecommerce). Finca Arcadia recategorizada→Despensa artesanal (era «Huevos», es ajo negro). Andazul `sí`→`no comprobado`. Doña Casilda municipio→San José del Valle. |
-| 6 | Aceite | 15 | ⬜ | DOP Sierra de Cádiz (Olvera, Zahara, Setenil, Algodonales). Almazara vs comercializadora. `sí`: Molino de Taramilla, Agrosetenil. |
+| 6 | Aceite | 15 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 6». **1 purga** (Guadaceite = envasador/distribuidor de aceites comestibles, sin almazara). 14 activas: **12 `verificado`/`sí`/ecommerce** (10 flips + 2 cuarentenas resueltas: Taramilla, Agrosetenil) y **2 `verificado`/`no comprobado`** (Los Horgazales, El Vínculo: reales, sin tienda propia). Webs corregidas: Almazara las Pilas (301→aceitemolinolaspilas.com), Los Horgazales (→almazaraloshorgazales.com). |
 | 7 | Pan y pastelería + Dulces y repostería | 21 | ⬜ | Obradores, conventos, IGP Alfajor de Medina Sidonia, tortas, pestiños. Obrador vs despacho. `sí`: Panes y Picos Sidonia, Convento del Espíritu Santo. |
 | 8 | Charcutería + Despensa artesanal | 17 | ⬜ | Chacinas de la Sierra y retinto; cajón heterogéneo «Despensa artesanal». `sí`: Sabores de Grazalema, Algaeca. |
 | 9 | Cerveza + Miel + Fruta y verdura + Sal + Licores | 22 | ⬜ | Sectores pequeños. Salinas artesanas (flor de sal Bahía de Cádiz), mieles de la Sierra, cerveceras. `sí`: SCA Frusana, Weisshorn, Licores Grazalemeños. |
@@ -488,3 +497,60 @@ Decisiones relevantes:
 - **Operador compartido**: Quesos Pajarete (Villamartín) y Bodega Hermanos Holgado
   (Prado del Rey, lote 3) comparten teléfono y correo → misma familia, dos productos
   (queso vs vino); se mantienen ambas filas.
+
+## Lote 6 - Aceite
+
+Revisión de las 15 fichas de `Aceite` (DOP Sierra de Cádiz: Olvera, Zahara, Setenil,
+Algodonales, Espera, Alcalá del Valle; + Tierra de Cádiz: Vejer, Chiclana, Conil,
+Jerez, Villamartín, Prado del Rey) (2026-07-01). Resultado: **14 filas activas** (1
+purga), **14 `verificado`, 0 `parcial`**; venta online **12 `sí` (ecommerce), 0 `no`,
+2 `no comprobado`**. +15 registros (14 keep, 1 purge).
+
+Sector muy sólido: casi todas son almazaras/cooperativas olivareras con molino y
+producción propios y tienda online funcional. El trabajo fue confirmar la tienda
+propia (frente a reventa por terceros), separar la almazara del mero
+envasador/distribuidor y limpiar dos webs.
+
+Decisiones relevantes:
+
+- **Purga (out-of-scope)**: `guadaceite-chiclana-de-la-frontera` (marca Puerta del
+  Sur). No es almazara: es **envasadora/distribuidora de aceites comestibles** para
+  hostelería (AOVE, oliva refinado, girasol, semillas, alto oleico, orujo) + mayonesa
+  y harinas, sin molino ni producción propia (dominio real `puertasur.es`). Fuera de
+  alcance Km0 → purga. Imagen eliminada.
+- **Cuarentena de venta resuelta (2 `sí` heredados → canal `ecommerce`)**:
+  `molino-de-taramilla-prado-del-rey` (almazara propia, extracción en frío, envasado
+  bajo pedido) y `agrosetenil-setenil-de-las-bodegas` (S.C.A. El Agro, 1958, molino
+  propio). Ambas con tienda online propia confirmada.
+- **Venta online confirmada con tienda propia (`ecommerce`) — 10 flips
+  `no comprobado`→`sí`**: Algodoliva (coop. olivarera ecológica CAAE, `/tienda`),
+  Almazara las Pilas/Molino las Pilas (>200 años), Bodega Almazara Sancha Pérez
+  (bodega-almazara ecológica), Coop. los Remedios-Picasat (almazara + envasado, DOP;
+  tienda en dominio hermano `aceitelosremedios.com`), Molino de Espera (molino de 1771,
+  familia Vega), Molino el Salado (olivar de montaña, DO Sierra de Cádiz), Oleoconil
+  (primer AOVE ecológico de Conil), Oleum Viride (Almazara El Manzanillo, `/tienda`),
+  Olivar del Lentisquillo (familiar ecológico CAAE) y SCA Europeos (coop., marca
+  Espasierra).
+- **`verificado`/`no comprobado`** (almazara propia real, pero **sin tienda online
+  propia**; solo contacto y/o reventa por terceros):
+  - `los-horgazales-villamartin` (Hacienda Los Horgazales, familia Bonilla; marcas
+    Señorío de Villamartín/Oleovilla; primer molino turístico de la provincia). Sin
+    carrito propio; reventa por terceros (Alándalus Club) + pedido por tel/email.
+  - `almazara-el-vinculo-zahara-de-la-sierra` (molino histórico, molturando desde
+    1640, sistema tradicional de prensa y capachos; muy documentado en prensa y
+    andalucia.org). Venta en tienda física propia y reventa por terceros (Ronda
+    Gourmet, Oliva Oliva); su web propia carga vacía. `verificado` sostenido por
+    prensa + Facebook oficial + directorio institucional.
+- **Webs corregidas**:
+  - `almazara-las-pilas-olvera`: dominio heredado `almazaralaspilas.com` hace 301 al
+    dominio activo `aceitemolinolaspilas.com` → corregido.
+  - `los-horgazales-villamartin`: web heredada `loshorgazales.com` (http, sin https,
+    versión antigua) → dominio activo `almazaraloshorgazales.com`.
+
+Snapshot tras lote 6:
+
+- Filas CSV: 159 (−1 purga)
+- Verificación: 104 verificado, 8 parcial, 47 pendiente
+- Venta online: 71 sí, 0 no, 88 no comprobado
+- Canal de venta informado: 64/71 productores con `Venta online=sí`
+- Evidencia Cádiz: 102 registros JSONL (99 keep, 2 purge, 1 merge)
