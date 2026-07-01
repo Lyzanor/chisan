@@ -50,6 +50,11 @@ los contratos de `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` ni
   **78 registros**. Calidad Córdoba: 0 errores, **1 warning** y 50 opcionales
   suprimidos; queda solo `granja-ahuevo-cordoba` para el lote 9. Se resuelve el
   warning de `megustaeljamon...` corrigiendo el municipio a Hinojosa del Duque.
+- Tras lote 6 / Pan y pastelería (2026-07-01): **145 filas** tras 1 fusión;
+  **86 `verificado`, 5 `parcial`, 54 `pendiente`**. Venta online: **61 `sí`,
+  0 `no`, 84 `no comprobado`**. Evidencia Córdoba: **100 registros**. Calidad
+  Córdoba: 0 errores, **1 warning** y 42 opcionales suprimidos; sigue pendiente
+  solo el warning de `granja-ahuevo-cordoba` para el lote 9.
 
 Reparto por categoría del snapshot inicial:
 
@@ -177,11 +182,11 @@ iniciarlos.
 | 3 | Bodega, licores y cerveza | `Bodega`, `Licores`, `Cerveza artesana` | 17 | 0 | 1 | 16 | 12 | Hecho | Cerrado 2026-07-01. Bodegas Montes y Compañía queda `parcial`; 12 ventas remotas confirmadas entre tiendas propias y ecommerce. |
 | 4 | Charcutería I | Primeras 16 filas de `Charcutería` en orden CSV | 16 | 0 | 2 | 7 | 5 | Hecho | Cerrado 2026-07-01. 7 purgas por tienda/no productor u otra provincia; Familia Moreno se corrige a Villanueva de Córdoba y `megustaeljamon...` a Hinojosa del Duque. |
 | 5 | Charcutería II | Resto de `Charcutería` | 17 | 0 | 0 | 16 | 13 | Hecho | Cerrado 2026-07-01. 1 purga (`Nemesio`) por falta de productor; 13 ventas remotas confirmadas y 3 productores quedan `no comprobado`. |
-| 6 | Pan y pastelería | `Pan y pastelería` | 22 | 22 | 0 | 0 | 0 | Pendiente | Córdoba capital concentra el riesgo de despachos sin obrador; Rute y Villanueva pueden requerir fuentes locales o redes oficiales. |
+| 6 | Pan y pastelería | `Pan y pastelería` | 22 | 0 | 1 | 20 | 8 | Hecho | Cerrado 2026-07-01. 1 fusión de duplicado (`horno-de-lena-la-tradicion-cordoba` -> `la-tradicion-cordoba`); Pastelería Nati queda `parcial`; 8 ventas remotas confirmadas. |
 | 7 | Lácteos, quesos y miel | `Lácteos y quesos`, `Miel` | 21 | 21 | 0 | 0 | 0 | Pendiente | Queserías de Subbética/Los Pedroches y apícolas. Aceptar techo `parcial` si solo hay directorio o registro sin fuente propia. |
 | 8 | Helados y chocolate | `Helados`, `Chocolate` | 13 | 13 | 0 | 0 | 0 | Pendiente | Mayoría en Córdoba capital. Confirmar elaboración propia; no verificar heladerías/cafeterías que solo revenden. |
 | 9 | Varios pequeños | `Aceitunas y encurtidos`, `Legumbres`, `Huevos`, `Despensa artesanal`, `Aperitivos`, `Fruta y verdura`, `Pescado` | 20 | 20 | 0 | 0 | 0 | Pendiente | Lote de triaje. Resolver `granja-ahuevo`; revisar riesgo de distribuidora, marca sin producción o producto genérico. |
-| 10 | Cierre transversal provincial | Todas | 146 | 76 | 4 | 66 | 53 | Pendiente | 0 pendientes, evidencia completa para filas activas, purgas/fusiones documentadas, geo e imágenes revisadas. |
+| 10 | Cierre transversal provincial | Todas | 145 | 54 | 5 | 86 | 61 | Pendiente | 0 pendientes, evidencia completa para filas activas, purgas/fusiones documentadas, geo e imágenes revisadas. |
 
 ## Lote 1 - Aceite I
 
@@ -294,6 +299,41 @@ Snapshot tras lotes 2-5:
 - Venta online: 53 sí, 0 no, 93 no comprobado
 - Canal de venta informado: 53/53 productores con `Venta online=sí`
 - Evidencia Córdoba: 78 registros JSONL
+- Calidad Córdoba: 0 errores, 1 warning; queda `granja-ahuevo-cordoba` para el
+  lote 9.
+
+## Lote 6 - Pan y Pastelería
+
+Revisión de las 22 filas iniciales de `Pan y pastelería` (2026-07-01).
+Resultado: **21 filas activas**, **20 `verificado`**, **1 `parcial`**, **1
+fusión**; venta online **8 `sí`** y 13 `no comprobado`. Se añaden 21 registros
+`keep` y 1 registro `merge` al JSONL.
+
+Decisiones relevantes:
+
+- **Fusión de duplicado**: `horno-de-lena-la-tradicion-cordoba` se fusiona en
+  `la-tradicion-cordoba`. Las fuentes oficiales de La Tradición publican las
+  sedes de Manolete y Vista Alegre como el mismo obrador/productor.
+- **`parcial`**: Pastelería Artesana Nati. Sabor a Córdoba 2025 la lista con
+  producto, contacto y web, pero el dominio publicado devolvía HTTP 500 durante
+  la revisión; queda conservada sin fuente propia operativa.
+- **Venta online confirmada**: Paulina Martos, Cooperativa Guadajoz, Horno La
+  Tradición, Obrador San Rafael, Pastelerías Roldán, Pan El Vacar, Castillo de
+  Moriles y La Flor de Rute. El canal es `ecommerce` salvo La Tradición
+  (`telefono`) y Pan El Vacar (`marketplace`).
+- **Correcciones de localización/enlaces**: Cañadú pasa a Calle Vázquez Aroca;
+  Ruano's pasa al Obrador Artesano David Ruano en Rafael de la Hoz Arderius; se
+  limpian enlaces sociales genéricos de Dulcisan, Ruano's y Rosypan.
+- **Sin purgas de imagen**: la fila fusionada no tenía `imagen`, por lo que no
+  genera asset huérfano.
+
+Snapshot tras lote 6:
+
+- Filas CSV: 145
+- Verificación: 86 verificado, 5 parcial, 54 pendiente
+- Venta online: 61 sí, 0 no, 84 no comprobado
+- Canal de venta informado: 61/61 productores con `Venta online=sí`
+- Evidencia Córdoba: 100 registros JSONL
 - Calidad Córdoba: 0 errores, 1 warning; queda `granja-ahuevo-cordoba` para el
   lote 9.
 
