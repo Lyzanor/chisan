@@ -75,6 +75,15 @@ necesitas releer el manual entero por lote.
 - Snapshot tras lote 6: **159 filas** (−1); **104 `verificado`, 8 `parcial`, 47
   `pendiente`**; VO **71 `sí`, 0 `no`, 88 `no comprobado`**; 64/71 `sí` con canal;
   evidencia **102 registros**.
+- Tras lotes 7-9 (2026-07-01): cerrados Pan+Dulces, Charcutería+Despensa y
+  Cerveza+Miel+Fruta+Sal+Licores. **0 purgas**; 1 recategorización (Indi&Co
+  Despensa→Licores); 2 anomalías `sí`→`no comprobado` (Algaeca, Licores
+  Grazalemeños); 6 `parcial` nuevos (4 conventos de clausura, salina UCA, licores
+  sin web). Detalle en «Lote 7/8/9».
+- **Snapshot tras lote 9 — primera pasada de contenido cerrada**: **159 filas**;
+  **145 `verificado`, 14 `parcial`, 0 `pendiente`**; VO **96 `sí`, 0 `no`, 63 `no
+  comprobado`**; **96/96 `sí` con `Canal de venta`**; evidencia **162 registros**.
+  Solo queda el lote 10 (cierre transversal) antes de `coverage.json`.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las filas
   heredadas antes de añadir candidatos nuevos.
 
@@ -215,10 +224,10 @@ del lote**, no el resultado; se actualizan al cerrar cada lote (como en
 | 4 | Pescado | 18 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 4». **1 purga** (Frigoríficos Costa Sur = mayorista congelados) + **1 fusión** (Salpesca SL→La Chanca). 16 activas, 13 `verificado`, 1 `parcial` (Perumasa). 11 `sí` (ecommerce). Gadira/El Rey de Oros = misma empresa (Productos de Almadraba), marcas hermanas. |
 | 5 | Lácteos y quesos | 17 | ✅ | Cerrado 2026-06-30. Detalle en «Lote 5». 12 `verificado`, 4 `parcial` (queserías sin web: Mangana, La Covacha, El Saltillo, Como los de antes). 10 `sí` (ecommerce). Finca Arcadia recategorizada→Despensa artesanal (era «Huevos», es ajo negro). Andazul `sí`→`no comprobado`. Doña Casilda municipio→San José del Valle. |
 | 6 | Aceite | 15 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 6». **1 purga** (Guadaceite = envasador/distribuidor de aceites comestibles, sin almazara). 14 activas: **12 `verificado`/`sí`/ecommerce** (10 flips + 2 cuarentenas resueltas: Taramilla, Agrosetenil) y **2 `verificado`/`no comprobado`** (Los Horgazales, El Vínculo: reales, sin tienda propia). Webs corregidas: Almazara las Pilas (301→aceitemolinolaspilas.com), Los Horgazales (→almazaraloshorgazales.com). |
-| 7 | Pan y pastelería + Dulces y repostería | 21 | ⬜ | Obradores, conventos, IGP Alfajor de Medina Sidonia, tortas, pestiños. Obrador vs despacho. `sí`: Panes y Picos Sidonia, Convento del Espíritu Santo. |
-| 8 | Charcutería + Despensa artesanal | 17 | ⬜ | Chacinas de la Sierra y retinto; cajón heterogéneo «Despensa artesanal». `sí`: Sabores de Grazalema, Algaeca. |
-| 9 | Cerveza + Miel + Fruta y verdura + Sal + Licores | 22 | ⬜ | Sectores pequeños. Salinas artesanas (flor de sal Bahía de Cádiz), mieles de la Sierra, cerveceras. `sí`: SCA Frusana, Weisshorn, Licores Grazalemeños. |
-| 10 | Cierre transversal provincial | 162 | ⬜ | 0 pendientes, `Canal de venta` en todos los `sí`, dedup, geo, evidencia completa, candidata a `coverage.json`. |
+| 7 | Pan y pastelería + Dulces y repostería | 21 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 7». 0 purgas: 17 verificado (9 `sí`/ecommerce, 8 `no comprobado`) + 4 `parcial` (conventos de clausura sin web propia: torno). Web corregida: Cienpalacios (aparcada→cienpalacios.es). |
+| 8 | Charcutería + Despensa artesanal | 17 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 8». 0 purgas, todas verificado: 11 `sí`/ecommerce, 6 `no comprobado`. Recat. Despensa→Licores (Indi&Co, destilería). Algaeca `sí`→`no comprobado` (B2B). Web: Embutidos Gazules (.com→.es). |
+| 9 | Cerveza + Miel + Fruta y verdura + Sal + Licores | 22 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 9». 0 purgas: 20 verificado (12 `sí`/ecommerce, 8 `no comprobado`) + 2 `parcial` (Salina de La Esperanza=salina UCA; Licores Grazalemeños sin web). Anomalía corregida: Licores Grazalemeños `sí`→`no comprobado`. Web: Cerveza Besaro (www muerto→apex). |
+| 10 | Cierre transversal provincial | 159 | ⬜ | **0 pendientes ya alcanzado**. Falta: revisar municipios señalados (La Kombuchería, Hermanillas, La Pedriza), dedup/geo final, imágenes, web de Destraperlo (spam casino), y añadir `andalucia/cadiz` a `coverage.json`. |
 
 Reparto por categoría (snapshot inicial, para cuadrar los lotes): Bodega 52
 (lotes 1–3), Pescado 18 (4), Lácteos y quesos 17 (5), Aceite 15 (6), Dulces y
@@ -554,3 +563,82 @@ Snapshot tras lote 6:
 - Venta online: 71 sí, 0 no, 88 no comprobado
 - Canal de venta informado: 64/71 productores con `Venta online=sí`
 - Evidencia Cádiz: 102 registros JSONL (99 keep, 2 purge, 1 merge)
+
+## Lote 7 - Pan y pastelería + Dulces y repostería
+
+Revisión de las 21 fichas (Pan y pastelería 10, Dulces y repostería 11)
+(2026-07-01). Resultado: **0 purgas**, **17 `verificado`** (9 `sí`/ecommerce, 8 `no
+comprobado`) + **4 `parcial`**. +21 registros. Sector de obradores familiares e IGP
+Alfajor de Medina Sidonia; núcleo del trabajo: separar obrador con tienda propia de
+obrador sin e-commerce y de convento de clausura sin fuente propia.
+
+Decisiones relevantes:
+
+- **`sí`/ecommerce (obrador propio + tienda propia)**: Abuelo Bread (sin gluten),
+  Picos Yeyé (Panificadora Cohollero), Pastelería La Tarifeña, Aromas de Medina,
+  Confitería Ntra. Sra. de la Paz, Sobrina de las Trejas (1852) y Tres Martínez
+  (1886) + **cuarentenas resueltas**: Panes y Picos Sidonia y Monasterio del Espíritu
+  Santo (tienda monástica con envío a España).
+- **`verificado`/`no comprobado` (obrador propio con web, sin tienda online)**:
+  Pastelería Bernal (1910), La Rosa de Oro (1928), La Exquisita (Galván, FB propio),
+  Panadería La Hoya (IG propio), Pastelería Jesús (tienda de terceros apanymantel),
+  Pan de Pelayo (1939), Cienpalacios (solo formulario) y Postres La Cobijada (tienda
+  en mantenimiento).
+- **`parcial` (convento de clausura elaborador, sin web/redes propias; solo torno)**:
+  Monasterio de la Piedad (Cádiz), Santa María de Gracia/Santa Rita (Jerez; reparto
+  local por WhatsApp), Jesús Nazareno (Chiclana, Torta de las Monjas) y Jesús, María
+  y José (Medina-Sidonia).
+- **Web corregida**: Cienpalacios (`cienpalacios.com` aparcada en GoDaddy →
+  `cienpalacios.es`).
+
+## Lote 8 - Charcutería + Despensa artesanal
+
+Revisión de las 17 fichas activas (Charcutería 9, Despensa artesanal 8; Finca Arcadia
+ya cerrada en lote 5) (2026-07-01). Resultado: **0 purgas**, **todas `verificado`**
+(11 `sí`/ecommerce, 6 `no comprobado`). +17 registros.
+
+Decisiones relevantes:
+
+- **Charcutería `sí`/ecommerce**: Chacinas El Bosque, Chacinas Méndez, El Bucarito
+  (ganadería propia cabra+ibérico), Embutidos Gazules, Montesierra (curado en Jerez) y
+  Sabores de Grazalema (cuarentena resuelta). **`no comprobado`**: Chacinas Piñero
+  (web 404), La Serrana, Sabores de Paterna (web en construcción, reventa terceros).
+- **Despensa `sí`/ecommerce**: Cantizano (conservas vegetales), Conservas Artesanales
+  Contigo, La Kombuchería (BioKombucha), PatríaPura (limonadas), Suralgas (algas).
+  **`no comprobado`**: Moyseafood (pulpo B2B) y **Algaeca** (cultivo de algas B2B;
+  `sí` heredado corregido a `no comprobado`).
+- **Recategorización Despensa→`Licores`**: Indi&Co (`indi-drinks`), destilería
+  artesanal de ginebra/tónicas de El Puerto; web aparcada → `no comprobado`.
+- **Web corregida**: Embutidos Gazules (`.com` con certificado erróneo →
+  `embutidosgazules.es`).
+- **Municipio a revisar** (cierre): La Kombuchería (web sitúa sede en La Zorrera,
+  Cádiz; CSV = Conil).
+
+## Lote 9 - Cerveza + Miel + Fruta y verdura + Sal + Licores
+
+Revisión de las 22 fichas (Cerveza 6, Miel 5, Fruta y verdura 5, Sal 4, Licores 2
+pendientes) (2026-07-01). Resultado: **0 purgas**, **20 `verificado`** (12
+`sí`/ecommerce, 8 `no comprobado`) + **2 `parcial`**. +22 registros. Cierra la
+primera pasada de contenido (0 pendientes).
+
+Decisiones relevantes:
+
+- **Cerveza**: `sí`/ecommerce La Piñonera, Malandar Brewing y Besaro (web `www`
+  muerto → apex `cervezabesaro.com/es`). `no comprobado`: Maier (venta en recepción
+  de apartamentos), Sherry Beer (venta vía encopa.es) y **Destraperlo** (cooperativa
+  Comando Cervecero real, pero su dominio `destraperlo.es` sirve **spam de casino** en
+  portada — identidad por IG/prensa, web a revisar en el cierre).
+- **Miel**: las 5 son apicultores con colmenas y tienda propias → `sí`/ecommerce
+  (Apícola Patiño, Rancho Cortesano, Hermanillas, Las Bravías, Miel El Pinsapar).
+- **Fruta y verdura**: `sí` Frusana (cuarentena resuelta). `no comprobado`: La
+  Pedriza y Legumbres Pedro (fabricantes sin e-commerce) y las coops Las Virtudes y
+  Virgen del Rocío (B2B/socios).
+- **Sal**: `sí`/ecommerce GoldSal y Salinas de Chiclana (salina propia + tienda).
+  `no comprobado`: EcoSal/San Vicente (sin tienda confirmada). **`parcial`**: Salina
+  de La Esperanza (salina de investigación de la UCA; flor de sal recolectada bajo
+  marcas de terceros, sin fuente comercial propia).
+- **Licores**: `sí` Weisshorn/Soundcask (cuarentena resuelta). **`parcial`**: Licores
+  Grazalemeños (productor familiar real sin web/redes; solo reventa por terceros;
+  anomalía `sí`→`no comprobado`).
+- **Municipios a revisar** (cierre): Hermanillas (web: Pueblo Nuevo/San Roque; CSV =
+  Los Barrios), La Pedriza (web: Alcalá; CSV = Chiclana).
