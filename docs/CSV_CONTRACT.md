@@ -15,14 +15,15 @@ Every province CSV shares the exact same 20-column header, in this order:
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
 ```
 
-- All 50 files carry all 20 columns physically; "optional" below means the *value* may be empty, never that the column may be missing.
+- All 50 files carry all 20 columns physically; "optional" means the *value* may be empty, never that the column may be missing.
 - Do not add, remove, or reorder columns in a single province. A structural change applies to every CSV at once, in a solo commit, with `verify:data` before and after.
 - 0-based indices for column-aware scripts: 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
-- Validation entrypoints:
+- Validation and inspection entrypoints:
   - `pnpm check:csv`: blocking technical contract audit for every CSV
   - `node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv`: blocking audit for one CSV
   - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings for every CSV
   - `node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv`: detailed warning audit for one CSV
+  - `pnpm list:categories`: print the current valid `categoria` set
 
 ## Reference data
 - `data/reference/municipios.json` is a Wikidata-sourced lookup of Spanish municipality centroids (~8.300 entries with multilingual aliases). The geography warning rule uses it; nothing else in the app depends on it.
@@ -32,31 +33,15 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 - `data/reference/municipios-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipios.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, community}` candidates; the audit picks the one whose `community` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another province (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia).
 - Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~30 seconds. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs.
 
-## Required columns
-- `slug`
-- `nombre`
-- `municipio`
-- `categoria`
-- `productos estrella`
-- `direccion`
-- `descripcion`
-- `horario`
-- `telefono`
-- `correo`
-- `web`
-- `Venta online`
-- `Facebook`
-- `Instagram`
-- `Google Maps`
-- `lat`
-- `lon`
-- `verificacion`
+## Column value requirements
 
-## Optional columns
-- `imagen`
-- `Canal de venta`
+All 20 canonical columns are physically present in every CSV. A column being present does not mean every row must have a non-empty value.
 
-Optional = the value may be empty. The column headers themselves are present in every CSV (see Canonical header).
+- Blocking non-empty values: `slug`, `verificacion`, `Venta online`.
+- Blocking controlled values: `slug` format, `verificacion`, `Venta online`, `categoria` when present, `telefono` when present.
+- Paired values: `lat` and `lon` must both be present or both be empty.
+- Optional-value fields: `imagen` and `Canal de venta`.
+- Other empty values are allowed by the contract but may appear in `check:csv:data-quality` or `check:csv:completeness`.
 
 ## How the app uses columns
 - Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
@@ -80,30 +65,34 @@ Optional = the value may be empty. The column headers themselves are present in 
   - remove diacritics
   - keep letters/numbers, collapse separators
 
-## Preferred category labels
-- Keep category labels stable and prefer the Barcelona-style labels below when adding or correcting rows:
-  - `Lácteos y quesos` instead of `Quesos y lácteos` or `Lácteos`
-  - `Bodega` instead of `Vino`, `Vinos y bebidas`, or `Bodega y licores`
-  - `Pan y pastelería` instead of `Panadería`, `Panadería y repostería`, `Pastelería y panadería`, `Dulces y panadería`, `Pan y repostería`, or `Pan y bollería`
-- New category labels should be rare and should describe a materially different producer type.
+## Categories
+- The valid `categoria` set lives in `data/reference/categories.json` (`categories`) and is enforced by `check:csv`.
+- Inspect the current set with:
+  ```bash
+  npx pnpm list:categories
+  ```
+- `categoria`, when present, must exactly match one value from that set.
+- Preferred aliases live in the same file (`preferredAliases`) and are reported by `check:csv:data-quality`; examples include `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
+- Add a category only when no existing label fits a materially different producer type. Update `data/reference/categories.json`, docs, and validator tests together.
 
 ## Verification levels
-- The decision model — how to choose `pendiente`/`parcial`/`verificado`, online sales, and the edge cases — lives in `docs/EDITORIAL_POLICY.md`. This section owns only the structural contract: allowed values and blocking rules.
+- The decision model — how to choose `pendiente`/`parcial`/`verificado`, online sales, and edge cases — lives in `docs/EDITORIAL_POLICY.md`. This section owns only allowed values and blocking rules.
 - `verificacion` is required for every row. It is the single reliability indicator for agents and editors.
 - Allowed values:
-  - `pendiente`: added for catalog coverage, but still needs review.
-  - `parcial`: producer exists and is localized, but some fields are inferred or based on secondary sources.
-  - `verificado`: name, municipio, location and contact/link data have been cross-checked against a primary or clearly reliable source.
+  - `pendiente`
+  - `parcial`
+  - `verificado`
 - Legacy values such as `alta`, `media`, and `baja` are invalid. Use `verificado`, `parcial`, and `pendiente`.
 - A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The blocking audit fails when this is not the case.
 - For new and re-reviewed decisions, the matching evidence ledger records source URLs, inspection dates and supported claims. Provinces migrate progressively; strict coverage is controlled by `data/evidence/coverage.json`.
 
 ## Online sales
+- The decision model for choosing among these values lives in `docs/EDITORIAL_POLICY.md`.
 - `Venta online` is required for every row.
 - Allowed values:
-  - `sí`: the producer sells online through its own site or through a concrete, identified sales channel.
-  - `no`: online sales have been checked and no online sales channel was found.
-  - `no comprobado`: default value until the row is reviewed for online sales.
+  - `sí`
+  - `no`
+  - `no comprobado`
 - Do not infer `sí` from having a `web` link. Use `sí` only when the site or channel clearly supports online purchase or order.
 
 ## Sales channel
@@ -128,7 +117,7 @@ Optional = the value may be empty. The column headers themselves are present in 
 - The header must be exactly the canonical 20-column header, in canonical order (see Canonical header).
 - No duplicated header columns.
 - Line endings must be LF (no CR/CRLF anywhere in the file).
-- Required header columns must exist exactly once.
+- All canonical header columns must exist exactly once.
 - `slug` is required and must be lowercase ASCII words separated by `-`.
 - `slug` must be unique within its province CSV.
 - `lat` and `lon` must both be present or both be empty.
@@ -181,66 +170,12 @@ https://www.google.com/maps/search/?api=1&query=...
 https://maps.app.goo.gl/...
 ```
 
-## Producer image guidelines
-These are editorial conventions for the asset that the `imagen` column points to. They are not enforced by `check:csv` (which only validates path shape and extension), but new and modified producer images should follow them so the catalog stays visually consistent with the Barcelona baseline.
-
-### Format and dimensions
-- Final asset: **1600×1200 WebP** (4:3 landscape), quality `≥ 88`, saved at `/productores/<comunidad>/<provincia>/<slug>.webp`.
-- The 1600×1200 dimensions match the existing `public/productores/catalunya/barcelona/*.webp` files. Treat Barcelona as the visual reference.
-- Other supported extensions (`.png`, `.jpg`, `.avif`, …) remain valid per the blocking contract, but prefer `.webp` for new assets.
-
-### Background and composition
-- Background colour: **`#F3F0E8`** cream (sampled from Barcelona). Use it as a flat fill across the full 1600×1200 canvas.
-- Logo centred with ~10% padding per side. The longest side of the logo should target ≤ 960 px (i.e. ~80% of the 1200 px short side).
-- Leave the cream background visible around the logo. Avoid stretching the logo to fill the canvas.
-
-### Subject preference
-- Prefer **logo / imagotipo** ("avatar" style) over product photography. A recognisable brand mark distinguishes producers in the same category better than a generic product shot.
-- Fall back to product or place photography only when no usable logo asset exists, or when the photo is itself the brand's iconic image (e.g. founder portrait used in the brand's own materials).
-- Do not use stock imagery, AI-generated likenesses, or images from competing producers.
-
-### Sourcing priority
-When picking a source for a new image, check in this order and stop at the first usable asset:
-1. Logo PNG/JPG on the producer's official site (header, footer, theme assets).
-2. Open Graph image (`og:image` meta tag) of the official site, when it shows the brand mark.
-3. Instagram or Facebook profile picture for the producer's official account.
-4. High-resolution favicon variants (e.g. WordPress `cropped-*-270x270.png`).
-5. Other reputable sources (DOP/IGP councils, regional tourism portals, press) only when the producer's own channels offer nothing usable.
-
-### Rescaling and quality
-- Cap upscaling at **3×** the source's longest side. Beyond that, blur becomes visible and no sharpening recovers it.
-- After any upscale with scale `> 1.2×`, apply an unsharp mask (e.g. Pillow `ImageFilter.UnsharpMask(radius=1.2, percent=110, threshold=2)`) to recover perceived edge sharpness.
-- For logos delivered as JPG without alpha, convert near-white pixels (`R, G, B ≥ 240`) to transparent before composing on the cream canvas. This prevents a white rectangle from appearing around the logo.
-- Do **not** apply the white→transparent chromakey to photographic subjects: it eats skin tones, white garments, sky, and similar areas.
-
-### Source resolution floor
-- When the only available source is below ~200 px on the longest side, do not silently upscale to fill the canvas. Either:
-  - Keep the logo small but sharp inside the cream canvas, or
-  - Replace the subject with a representative brand-owned photograph (founder portrait, signature product) per the rules above.
-- Flag this in the change description so editors can revisit when a better source appears.
-
-### Naming
-- File name must equal the producer `slug` (the same value used in the CSV's `slug` column) followed by the extension.
-- Path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the `imagen` column value and the CSV layout `data/csv/<comunidad>/<provincia>.csv` (Madrid: `/productores/madrid/madrid/` because comunidad and provincia share the name).
-- One image per producer. Do not store unused variants or originals in `public/`. Keep working originals outside the repo.
-
-### Image enrichment tooling
-- Use the shared dry-run script instead of province-specific scripts:
-  ```bash
-  npx pnpm enrich:images --provincia cuenca
-  ```
-- The script's default asset folder is the CSV stem at the top level (`/productores/<provincia>/`); pass `--asset-provincia <comunidad>/<provincia>` so new assets land on the canonical path.
-- Install the optional Python image tooling before running it locally:
-  ```bash
-  python3 -m pip install -r scripts/requirements-image-tools.txt
-  ```
-- The script writes nothing by default. Review the candidate source, score, dimensions, and URL first; then rerun with `--apply` to save `/productores/<provincia>/<slug>.webp` and update the CSV.
-- Non-logo Open Graph/Twitter photos are skipped unless `--allow-photos` is provided. Use this only when a brand-owned photo is the intended fallback.
-- Social networks, link hubs, blog hosts, and known aggregator domains are skipped by default to avoid assigning a portal logo to a producer.
-- Run the image audit before finishing image-related changes:
-  ```bash
-  npx pnpm check:images
-  ```
+## Producer image contract
+- `imagen` may be empty.
+- When present, it must be a root-relative path to an asset under `public/`, for example `/productores/catalunya/barcelona/ejemplo.webp`.
+- Preferred path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/madrid/madrid/`).
+- The file must exist and pass `npx pnpm check:images`.
+- Visual composition, sourcing, naming conventions, and enrichment workflow live in `docs/VERIFICATION_TECHNIQUES.md#imágenes`.
 
 ## Producer identity
 - `slug` is the primary identity for producer detail pages.

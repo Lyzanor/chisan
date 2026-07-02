@@ -13,6 +13,7 @@
     "check:csv:data-quality": "bash scripts/check-csv-quality.sh",
     "check:evidence": "node scripts/check-evidence.mjs",
     "check:evidence:changed": "node scripts/check-evidence-changed.mjs",
+    "list:categories": "node scripts/list-categories.js",
     "list:province": "node scripts/list-province.js",
     "check:csv:completeness": "node scripts/audit-province-completeness.js",
     "check:images": "node scripts/check-images.mjs",

@@ -70,125 +70,8 @@ const CENTROID_MAX_DISTANCE_KM = 15;
 const CENTROID_BLOCKING_DISTANCE_KM = 100;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipios-overrides.json";
-const PREFERRED_CATEGORY_ALIASES = new Map([
-  ["quesos y lacteos", "Lácteos y quesos"],
-  ["lacteos", "Lácteos y quesos"],
-  ["vino", "Bodega"],
-  ["vinos y bebidas", "Bodega"],
-  ["bodega y licores", "Bodega"],
-  ["panaderia", "Pan y pastelería"],
-  ["panaderia y reposteria", "Pan y pastelería"],
-  ["pasteleria y panaderia", "Pan y pastelería"],
-  ["dulces y panaderia", "Pan y pastelería"],
-  ["pan y reposteria", "Pan y pastelería"],
-  ["pan y bolleria", "Pan y pastelería"],
-]);
-
-const VALID_CATEGORIES = new Set([
-  "Aceite",
-  "Aceite y bodega",
-  "Aceite y frutos secos",
-  "Aceite y vino",
-  "Aceitunas y encurtidos",
-  "Agua mineral natural",
-  "Aperitivos",
-  "Aromáticas",
-  "Aromáticas y condimentos",
-  "Arroz",
-  "Arroz ecológico",
-  "Aves y arroz",
-  "Azafrán",
-  "Bebidas",
-  "Bodega",
-  "Café",
-  "Calçots y aceite",
-  "Caracoles",
-  "Carne",
-  "Carnes",
-  "Cerveza artesana",
-  "Charcutería",
-  "Chocolate",
-  "Chocolate y cacao",
-  "Chocolate y dulces",
-  "Churrería",
-  "Comida preparada",
-  "Condimentos",
-  "Congelados",
-  "Conservas",
-  "Conservas vegetales",
-  "Conservas y huerta",
-  "Conservas y mermeladas",
-  "Despensa artesanal",
-  "Despensa ecológica",
-  "Destilados y derivados",
-  "Destilados y licores",
-  "Dulces",
-  "Dulces y repostería",
-  "Encurtidos",
-  "Especias",
-  "Flores",
-  "Fruta",
-  "Fruta y aceite",
-  "Fruta y huerta",
-  "Fruta y verdura",
-  "Fruta, verdura y granja",
-  "Frutos rojos",
-  "Frutos secos",
-  "Harinas y cereales",
-  "Harinas, arroz y legumbres",
-  "Helados",
-  "Helados y postres",
-  "Hidromiel",
-  "Horchata",
-  "Huerta y frutos secos",
-  "Huerta y granja",
-  "Huevos",
-  "Huevos y granja",
-  "Infusiones",
-  "Infusiones y especias",
-  "Legumbres",
-  "Legumbres y cereales",
-  "Licores",
-  "Licores y vermut",
-  "Lácteos y quesos",
-  "Lúpulo",
-  "Mermeladas",
-  "Miel",
-  "Miel y apicultura",
-  "Miel y chocolates",
-  "Miel y dulces",
-  "Miel y mermeladas",
-  "Mostos y zumos",
-  "Otros",
-  "Pan y pastelería",
-  "Pasta artesana",
-  "Pato y derivados",
-  "Patés",
-  "Pescado",
-  "Pescado y acuicultura",
-  "Pescado y caviar",
-  "Pescado y conservas",
-  "Pescado y marisco",
-  "Pimentón y especias",
-  "Platos preparados",
-  "Productos ecológicos",
-  "Repostería artesana",
-  "Sal",
-  "Sal y condimentos",
-  "Salsas",
-  "Setas y hongos",
-  "Sidra",
-  "Snacks artesanos",
-  "Trufa",
-  "Trufa y setas",
-  "Turrones",
-  "Varios",
-  "Vermut",
-  "Vermut y vinos de licor",
-  "Vino y conservas",
-  "Vino y frutos secos",
-  "Zumos"
-]);
+let PREFERRED_CATEGORY_ALIASES = new Map();
+let VALID_CATEGORIES = new Set();
 
 const MAP_ADDRESS_HINT_KEYWORDS = [
   "avinguda",
@@ -275,17 +158,27 @@ function parseArgs(argv, resolvePath) {
 
 let dependenciesPromise;
 
+function loadCategoryConfig(fs, path) {
+  const configPath = path.resolve(__dirname, "../data/reference/categories.json");
+  const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+  PREFERRED_CATEGORY_ALIASES = new Map(Object.entries(config.preferredAliases));
+  VALID_CATEGORIES = new Set(config.categories);
+}
+
 async function getDependencies() {
   if (!dependenciesPromise) {
     dependenciesPromise = Promise.all([
       import("node:fs"),
       import("node:path"),
       import("csv-parse/sync"),
-    ]).then(([fs, path, csvParse]) => ({
-      fs,
-      path,
-      parse: csvParse.parse,
-    }));
+    ]).then(([fs, path, csvParse]) => {
+      loadCategoryConfig(fs, path);
+      return {
+        fs,
+        path,
+        parse: csvParse.parse,
+      };
+    });
   }
 
   return dependenciesPromise;

@@ -20,7 +20,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Provincial ledgers, candidate notes, and Git history: narrative context and work planning, not producer truth.
 
 ## Canonical Docs
-- `docs/CSV_CONTRACT.md`: CSV header, columns, allowed values, blocking/warning rules, image guidelines, reference centroid data.
+- `docs/CSV_CONTRACT.md`: CSV header, columns, allowed values, blocking/warning rules, image path contract, reference centroid data.
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types, purge/merge records.
 - `docs/EDITORIAL_POLICY.md`: decision model for `verificado`/`parcial`/purge/online sales.
 - `docs/VERIFICATION_TECHNIQUES.md`: efficient investigation workflow, sufficient evidence, deduplication, location, images, context discipline.
@@ -46,6 +46,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch missing provenance signals.
 - Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`; completeness planning: `npx pnpm check:csv:completeness`.
 - Province roster/de-dup: `npx pnpm list:province [provincia]` with `--categoria "X"` or `--pendientes` when useful.
+- Valid categories: `npx pnpm list:categories`.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
 
 ## Data Workflow
