@@ -98,7 +98,7 @@ Cierre 2026-06-19:
 - Cobertura residual: 18 sin web y 28 sin imagen.
 - Evidencia escrita para las 84 filas en `data/evidence/la-rioja/la-rioja.jsonl`.
 - Fuentes de trabajo: [DOCa Rioja](https://riojawine.com/es/), [directorio de operadores certificados 2025](https://riojawine.com/wp-content/uploads/2025/07/20250721-dp1003-0-directorio-de-operadores-certificados.pdf), webs oficiales, tiendas online y Google Maps.
-- Correcciones editoriales: `bolumburu-ormaechea-carlos-haro` se corrigió a Gimileo conservando el slug; se retiraron enlaces o imágenes cruzadas de `vinos-pinedo-anguciana`, `castillo-perez-domingo-briones`, `jesus-fernando-gomez-cruzado-briones`, `muga-foncea-cesar-oscar-haro` y `mendoza-lardi-s-l-bodegas-san-vicente-de-la-sonsierra`.
+- Correcciones editoriales: `bolumburu-ormaechea-carlos-gimileo` se corrigió a Gimileo conservando el slug; se retiraron enlaces o imágenes cruzadas de `vinos-pinedo-anguciana`, `castillo-perez-domingo-briones`, `jesus-fernando-gomez-cruzado-briones`, `muga-foncea-cesar-oscar-haro` y `mendoza-lardi-s-l-bodegas-san-vicente-de-la-sonsierra`.
 
 Subdividir:
 

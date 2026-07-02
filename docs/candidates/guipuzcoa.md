@@ -83,7 +83,7 @@ Trabajo:
 
 Notas de cierre:
 
-- `bodega-gorosti-flysch-txakolina-zumaia`: se mantiene el slug estable, pero el municipio/dirección pasan a Deba porque web oficial y DO lo sitúan en Elorriaga / Itziar-Deba.
+- `bodega-gorosti-flysch-txakolina-deba`: municipio/dirección pasan a Deba porque web oficial y DO lo sitúan en Elorriaga / Itziar-Deba; el slug queda alineado con ese municipio.
 - `bodega-elkano-getaria`: queda `verificado` con DO + social oficial, pero `Venta online=no comprobado` porque la web propia no respondió y no se localizó canal remoto fiable.
 - Los canales con carrito se codificaron como `ecommerce`; los formularios o pedidos por contacto se codificaron como `email`/`telefono`.
 
@@ -177,7 +177,7 @@ Trabajo:
 
 Notas de cierre:
 
-- `itsasoko-lasarte-oria` mantiene el slug estable, pero queda como `Itsasoko / Txangu2 Gourmet` con sede corregida a Irun.
+- `itsasoko-txangu2-gourmet-irun` queda como `Itsasoko / Txangu2 Gourmet` con sede corregida a Irun y slug alineado.
 - `conservas-oliveri-getaria` queda `parcial/no comprobado`: hay web del grupo, pero no fuente suficiente para cerrar venta remota actual de conserva propia.
 - Sal de Dorleta queda `sí/marketplace` por la venta enlazada desde la web oficial del museo.
 

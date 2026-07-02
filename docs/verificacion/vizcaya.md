@@ -213,7 +213,7 @@ fuentes recientes cuando había riesgo de baja o duplicidad.
 | `verificado`, venta por `ecommerce` | `mantequerias-santi-zamudio`, `queseria-lusuri-orozko` |
 | `verificado`, venta por `telefono` | `vascolac-zamudio` |
 | `verificado`, venta `no` | `santana-esnekiak-kortezubi`, `askibil-igorre` |
-| `verificado`, venta `no comprobado` | `bizkaia-esnea-karrantza`, `lacteas-karrantza-ambasaguas`, `quesos-amalur-karrantza`, `larruz-markina-xemein`, `txikinena-berriatua`, `isusi-anaiak-guenes`, `onandi-mallabia` |
+| `verificado`, venta `no comprobado` | `bizkaia-esnea-karrantza`, `lacteas-karrantza`, `quesos-amalur-karrantza`, `larruz-markina-xemein`, `txikinena-berriatua`, `isusi-anaiak-guenes`, `onandi-mallabia` |
 | `parcial`, venta `no comprobado` | `vista-alegre-baserria-karrantza`, `baskaran-barinako-esnekixek-markina-xemein`, `barroeta-gazta-markina-xemein`, `quesos-malatsa-orozko`, `errotik-amorebieta-etxano`, `queso-padilla-otxandio`, `otxauntz-otxandio`, `queseria-ipinaburu-zeanuri`, `txonde-areatza`, `ulibarri-artzaiak-gordexola`, `altunosteko-gaztaitegia-zeanuri`, `mugarra-izurtza`, `queseria-azkueta-zeberio` |
 | `merge` | `santamane-elkartea-s-l-markina-xemein` → `baskaran-barinako-esnekixek-markina-xemein`; `queseria-gallastegi-mallabia` → `onandi-mallabia` |
 | `purge` | `kerixara-otxandio` por otra provincia; la ficha alavesa `quesos-kerixara-oleta` ya existe. |
@@ -256,7 +256,7 @@ Artzai Gazta, DOP Idiazabal, Esnekigileak y directorios comarcales.
 
 ### Excepciones
 
-- `queseria-anbe-abadino`: se conserva el slug público, pero el nombre visible
+- `queseria-anbe-abadino`: el slug queda alineado, pero el nombre visible
   pasa a `Urien-Anbe`; se reemplaza el dominio heredado sin resolver por la web
   oficial `urienanbe.com`.
 - `unzalu-ingunza-abadino`: queda `parcial` porque no se localizó fuente propia.
@@ -307,16 +307,16 @@ casos con identidad antigua o web de directorio.
 | `verificado`, venta por `marketplace|telefono|email` | `vermut-txurrut-sopuerta` |
 | `verificado`, venta `no` | `erdikoetxe-lezama`, `garena-txakolina-dima`, `ados-basarte-bakio`, `txakoli-uriarte-gamiz-fika` |
 | `parcial`, venta `no` | `abio-txakolina-bakio`, `bodega-elizalde-mendraka-elorrio`, `bodega-merrutxu-ibarrangelu` |
-| `parcial`, venta `no comprobado` | `bodega-bikandi-durango`, `bodega-bizkai-barne-orozko`, `bodegas-lapazaran-durango`, `txakoli-sasines-larrabetzu` |
+| `parcial`, venta `no comprobado` | `bodega-bikandi-durango`, `bodega-bizkai-barne-orozko`, `bodegas-lapazaran-muxika`, `txakoli-sasines-larrabetzu` |
 
 ### Excepciones
 
 - `bodega-bizkai-barne-orozko`: el consejo regulador redirige la ficha antigua
   a `Lvre Wines`. Se actualiza nombre, web y contacto, manteniendo el slug
   estable.
-- `bodegas-lapazaran-durango`: el municipio heredado era incorrecto; se corrige
+- `bodegas-lapazaran-muxika`: el municipio heredado era incorrecto; se corrige
   a `Muxika` y se conserva el slug por estabilidad pública.
-- `bodega-bikandi-durango` y `bodegas-lapazaran-durango`: las webs propias
+- `bodega-bikandi-durango` y `bodegas-lapazaran-muxika`: las webs propias
   fallaron durante la revisión, pero no se borran por ese motivo; quedan
   `parcial` con fuente reguladora.
 - `txakoli-sasines-larrabetzu`: queda pendiente de una revisión específica de

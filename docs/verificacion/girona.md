@@ -362,9 +362,8 @@ ni venta a partir del registro sectorial.
 
 Revisado 2026-06-15: 13 verificado, 2 parcial.
 
-Quevall queda correctamente ubicado en Llançà: el slug histórico conserva
-`llanars`, pero la identidad pública, dirección y municipio del CSV son
-Llançà. Popaire y La Brava permanecen parciales por falta de una presencia
+Quevall queda correctamente ubicado en Llançà: el slug queda alineado con el
+municipio del CSV. Popaire y La Brava permanecen parciales por falta de una presencia
 propia actual que permita cerrar actividad y canal.
 
 ## Lote 19: pan, pastelería y dulces

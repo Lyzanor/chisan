@@ -252,7 +252,7 @@ contactos y un marketplace minorista.
 | Resultado | Slugs |
 |---|---|
 | `verificado`, venta por `marketplace` | `pastisseria-patet-mollerussa` |
-| `verificado`, venta `no` | `nufri-mollerussa`, `ruser-export-mollerussa`, `llet-el-castillo-mollerussa` |
+| `verificado`, venta `no` | `nufri-mollerussa`, `ruser-export-albatarrec`, `llet-el-castillo-mollerussa` |
 | `verificado`, venta `no comprobado` | `carniques-del-pla-mollerussa` |
 
 ### Excepciones
@@ -707,7 +707,7 @@ Fuentes principales: <https://caltomas.cat/es/tienda/>,
 
 | Resultado | Slugs |
 |---|---|
-| `verificado`, venta por `ecommerce` | `cal-monegal-sant-llorenc-de-morunys`, `biolord-sant-llorenc-de-morunys`, `bec-dor-oden-masia-guerres` |
+| `verificado`, venta por `ecommerce` | `cal-monegal-olius`, `biolord-sant-llorenc-de-morunys`, `bec-dor-oden-masia-guerres` |
 | `verificado`, venta `no comprobado` | `antiga-casa-jaume-bellver-de-la-cerdanya` |
 
 Antiga Casa Jaume tenía coordenadas heredadas de Valencia; se corrige a
@@ -809,7 +809,7 @@ Fuentes principales: <https://parcsnaturals.gencat.cat/es/detalls/Article/MelOss
 
 | Resultado | Slugs |
 |---|---|
-| `verificado`, venta por `ecommerce` | `cal-valls-vilanova-de-bellpuig`, `la-cistella-de-montgai-montgai`, `hort-de-ca-la-cistellera-juneda`, `nous-de-palau-lleida` |
+| `verificado`, venta por `ecommerce` | `cal-valls-vilanova-de-bellpuig`, `la-cistella-de-montgai-montgai`, `hort-de-ca-la-cistellera-juneda`, `nous-de-palau-el-palau-d-anglesola` |
 | `verificado`, venta `no comprobado` | `sanui-fruits-lleida` |
 
 Nous de Palau se corrige de Lleida a `El Palau d'Anglesola`, con dirección y
@@ -905,11 +905,11 @@ Fuentes principales: <https://embotitsobach.com/>,
 
 | Resultado | Slugs |
 |---|---|
-| `parcial`, venta `no comprobado` | `safra-de-les-garrigues-cervia-de-les-garrigues`, `forn-frias-lleida`, `mel-mino-vilanova-de-meia` |
+| `parcial`, venta `no comprobado` | `safra-de-les-garrigues-cervia-de-les-garrigues`, `forn-frias-lleida`, `mel-mino-tarrega` |
 
 Safrà de les Garrigues mantiene web propia pero antigua; Forn Frias no resolvió
 una fuente propia actual suficiente. Mel Minó se corrige de Vilanova de Meià a
-Tàrrega por la ficha de Gastroteca, conservando el slug estable.
+Tàrrega por la ficha de Gastroteca, con el slug alineado.
 
 Fuentes principales: <https://safracat.cat/>,
 <https://www.gastroteca.cat/es/on-comprar/mel-mino/> y

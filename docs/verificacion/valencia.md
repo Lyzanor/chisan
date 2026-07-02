@@ -320,17 +320,17 @@ Decisiones relevantes:
   `dominio-de-la-vega-requena` y `bodega-sierra-norte-requena`.
 - **`no` confirmado:** `bodegas-pigar-requena`,
   `bodega-sexto-elemento-venta-del-moro`,
-  `vinos-y-sabores-ecologicos-los-isidros`, `bodegas-vibe-requena`,
+  `vinos-y-sabores-ecologicos-la-portera`, `bodegas-vibe-requena`,
   `bodega-ferrer-gallego-venta-del-moro`,
-  `bodegas-proexa-venta-del-moro` y `aranleon-requena` tienen fuente propia
+  `bodegas-proexa-venta-del-moro` y `aranleon-venta-del-moro` tienen fuente propia
   suficiente, pero no tienda ni pedido remoto verificado.
 - **`no comprobado`:** `finca-san-blas-requena` deriva la venta online a
   Voravins, distribuidor externo que no basta como canal propio/colectivo;
   `bodegas-murviedro-requena` conserva productos y contacto, pero la ruta de
   tienda falla y no se confirmó compra usable.
-- **Correcciones de municipio/pedanía:** `aranleon-requena` pasa de Requena a
+- **Correcciones de municipio/pedanía:** `aranleon-venta-del-moro` pasa de Requena a
   Venta del Moro por la ubicación oficial en Los Marcos, manteniendo slug
-  estable; `vinos-y-sabores-ecologicos-los-isidros` pasa de Los Isidros a La
+  estable; `vinos-y-sabores-ecologicos-la-portera` pasa de Los Isidros a La
   Portera por la dirección oficial.
 - **Contactos y enlaces corregidos desde fuente oficial:** Haya, Sinarcas,
   Marsilea, Novos, Vinos y Sabores Ecológicos, Dussart Pedrón, Vibe,
@@ -391,19 +391,19 @@ Revisión de 8 arroceras/molinos y 10 productores u obradores de xufa/horchata
 Decisiones relevantes:
 
 - **Venta online confirmada (`ecommerce`):** `arroz-dacsa-almassera`,
-  `arroces-de-lucia-sueca`, `dehesa-de-la-albufera-silla`,
+  `arroces-de-lucia-sueca`, `dehesa-de-la-albufera-alboraya`,
   `arroz-santo-tomas-sollana`, `mon-orxata-alboraya`,
   `horchateria-daniel-alboraya`, `terra-i-xufa-albuixech`,
   `l-obrador-de-bou-alboraya` y `sequer-lo-blanch-alboraya`.
-- **`no` confirmado:** `arroz-tartana-sollana`, `sivaris-algemesi`,
-  `molino-roca-meliana`, `albufera-foods-sollana`,
+- **`no` confirmado:** `arroz-tartana-valencia`, `sivaris-sollana`,
+  `molino-roca-quart-de-poblet`, `albufera-foods-sollana`,
   `horchateria-vida-alboraya`, `horchateria-panach-alboraya`,
   `horchateria-els-sariers-valencia` y
   `horchateria-santa-catalina-valencia`.
 - **`no comprobado`:** `horchateria-subies-almassera`; la web usa el lema
   "Horchatas en casa", pero no muestra producto comprable ni checkout.
-- **Dominios corregidos:** `arroz-tartana-sollana` pasa de `arroztartana.com`
-  a `ricetartana.com`; `sivaris-algemesi` pasa de `sivaris.com` aparcado a
+- **Dominios corregidos:** `arroz-tartana-valencia` pasa de `arroztartana.com`
+  a `ricetartana.com`; `sivaris-sollana` pasa de `sivaris.com` aparcado a
   `sivaris.eu`; `terra-i-xufa-albuixech` normaliza a `terraixufa.com`.
 - **Criterio aplicado:** las horchaterías se conservan solo cuando la fuente
   propia sostiene elaboración/obrador o chufa propia; la hostelería sin canal
@@ -497,7 +497,7 @@ Decisiones relevantes:
 - **`no` confirmado:** `cerveza-la-socarrada-xativa`, `destilerias-ferri-bellreguard`
   y `destilerias-rios-silla`; en Rios la propia web declara que la tienda es de
   demostración y no completa pedidos.
-- **`no comprobado`:** `birra-blues-massalfassar`, `obsidiana-brewing-turis`,
+- **`no comprobado`:** `birra-blues-alboraya`, `obsidiana-brewing-turis`,
   `tercer-tiempo-la-pobla-de-vallbona`, `valentivm-cerveza-artesana-llombai`,
   `artelicor-san-antonio-de-requena`, `bodegas-reymos-cheste` y
   `69brosses-villanueva-de-castellon` quedan con identidad localizada, pero sin
@@ -646,8 +646,8 @@ Decisiones relevantes:
   `data/evidence/comunitat-valenciana/valencia.jsonl`; 2 tombstones `purge`
   (`turrones-ramos-valencia` y `cafes-valiente-valencia`).
 - **Canales cerrados:** no queda ningún `Venta online=sí` sin `Canal de venta`.
-- **Corrección transversal:** `dehesa-de-la-albufera-silla` conserva slug por
-  estabilidad, pero pasa de municipio `Silla` a `Alboraya`; la fuente propia
+- **Corrección transversal:** `dehesa-de-la-albufera-alboraya` pasa de
+  municipio `Silla` a `Alboraya` y deja el slug alineado; la fuente propia
   sostiene la sede en C/ Joan Lluís Vives 4, Alboraya, y no una ubicación
   productiva verificable en Silla.
 - **Warnings de geografía aceptados:** quedan 5 avisos `15-100 km` en
@@ -655,7 +655,7 @@ Decisiones relevantes:
   `horno-carmen-los-pedrones-requena`, `queseria-hoya-de-la-iglesia-requena`
   y `bodegas-haya-requena` están en pedanías o núcleos rurales de Requena;
   `horno-artesano-a-lena-la-marieta-venta-del-moro` está documentado por
-  Saborigen como Venta del Moro; `arroz-tartana-sollana` mantiene municipio
+  Saborigen como Venta del Moro; `arroz-tartana-valencia` mantiene municipio
   Valencia porque la fuente oficial sitúa la finca arrocera en El Palmar
   (Valencia), aunque el punto esté más cerca del centroide de Sollana.
 - **Dudas residuales documentadas:** las 43 filas `parcial` y las 32

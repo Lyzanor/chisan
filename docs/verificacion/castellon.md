@@ -355,8 +355,8 @@ Decisiones relevantes:
 
 - `horno-estelles` sube de `parcial` a `verificado` (venta + reparto vía la
   plataforma del Mercat Central de Castelló → `marketplace`).
-- `forn-carrer-morella-morella`: confirmado obrador premiado en **Sant Mateu**
-  (el slug heredado dice "morella"); se añade IG oficial.
+- `forn-carrer-morella-sant-mateu`: confirmado obrador premiado en **Sant Mateu**
+  (Morella forma parte del nombre de la calle/marca, no del municipio); se añade IG oficial.
 - **Venta online (ecommerce)**: Forn Rosa Elvira, Dulces La Cartuja, Aima
   Rosquilletas, Morente Panaderos.
 - `la-adelina-harinas-santamaria` (molino B2B) y `forn-garcia` quedan `no`; el
@@ -455,7 +455,7 @@ Decisiones relevantes:
   el tel 964461674 de la ficha coincide con el del consell). Marca colectiva, fuera
   de alcance. Imagen eliminada.
 - **Recategorizaciones** (categoría errónea heredada; fila correcta, recategorizada
-  y verificada): `papas-maribel-altura` Fruta y verdura→**Snacks artesanos**
+  y verificada): `papas-maribel-castellnovo` Fruta y verdura→**Snacks artesanos**
   (patatas fritas artesanas desde 1969); `rafinade-castello-de-la-plana` →
   **Bebidas** (soda gastronómica de fruta para hostelería, no "fruta
   deshidratada"; descripción corregida); `frutos-secos-del-maestrazgo-albocasser`
