@@ -73,6 +73,15 @@ necesitas releer el manual entero por lote.
   lotes). Evidencia: **19 registros** `keep` en
   `data/evidence/andalucia/granada.jsonl` (fichero creado). **0 purgas**; los 5
   `parcial` heredados del lote promovidos a `verificado`.
+- Tras lotes 2-5 / Aceite completo + Bodega completo (2026-07-02): **274 filas**
+  (−4: 2 purgas por no-productor —FIRMVM restaurante, Alquería de los Lentos hotel—,
+  1 purga industrial —IFFCO— y 1 fusión —OMED Venchipa→O-Med—). **88 `verificado`,
+  40 `parcial`, 146 `pendiente`**. Venta online: **71 `sí`, 0 `no`, 203 `no
+  comprobado`**; 70/71 `sí` con canal (falta solo Segral, lote 16). Evidencia:
+  **100 registros**. Los sectores Aceite (lotes 1-3) y Bodega (4-5) quedan
+  cerrados; 16 recategorizaciones sacaron el ruido del cajón «Bodega» (Licores 8,
+  Bebidas 2, Hidromiel 1, Mostos y zumos 1, Conservas +1, Despensa +1, Fruta +1) y
+  Cerveza artesana sube a 6 (Selva-GR).
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 278 filas
   heredadas (incluidos los 51 `parcial`) antes de añadir candidatos nuevos.
 
@@ -263,10 +272,10 @@ lote**, no el resultado; se actualizan al cerrar cada lote (como en `cadiz.md`).
 | # | Lote | Filas | Estado | Notas iniciales |
 |---|---|---:|---|---|
 | 1 | Aceite · DOP Montes de Granada + Guadix/Marquesado | 19 | ✅ | Cerrado 2026-07-01. Detalle en «Lote 1». 16 `verificado` (5 `parcial` heredados promovidos) + 3 `parcial` nuevos, **0 purgas**; 14 `sí`/ecommerce. JSONL creado (19 reg.). Web Echinac→aceitesechinac.es. |
-| 2 | Aceite · DOP Poniente de Granada (Loja/Montefrío/Íllora/Huétor Tájar) | 19 | ⬜ | Coops olivareras del Poniente; tienda propia vs reventa. |
-| 3 | Aceite · Vega + Alpujarra/Lecrín + Alhama + Costa + resto | 18 | ⬜ | Aquí caen sospechosos industriales (IFFCO, restaurante-firmvm). |
-| 4 | Bodega · Vega + Poniente + Montes/Norte (DOP Granada) | 22 | ⬜ | Viña propia vs distribuidor; destilerías→Licores. |
-| 5 | Bodega · Contraviesa-Alpujarra + Costa Tropical + Guadix/Baza | 22 | ⬜ | Vino de altura; ron de caña de Motril; `frutas-los-cursos`→Fruta. |
+| 2 | Aceite · Poniente + El Temple/Alhama | 17 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 2». **1 purga** (IFFCO = multinacional B2B) + **1 fusión** (OMED Venchipa→O-Med, misma Venchipa S.L.). 15 activas: 15 `verificado`, 14 `sí` (13 ecommerce + AOVE Baby whatsapp). Municipio Santa Ana Loja→Salar. |
+| 3 | Aceite · Vega + Alpujarra/Lecrín + Alhama + Costa + Altiplano | 20 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 3». **1 purga** (FIRMVM = restaurante). 19 activas: 17 `verificado` + 2 `parcial` (B.olivar, Calanté); 14 `sí`/ecommerce. Municipio «Costa»→Almuñécar (Tropicual); webs Sulayr/Cortijo Los Almendros corregidas, basura «http://.» fuera. |
+| 4 | Bodega · Vega/Temple/Lecrín + Guadix/Marquesado | 22 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 4». **1 purga** (Alquería de los Lentos = hotel rural). 21 activas: 20 `verificado` + 1 `parcial` (Caballo, web aparcada); 14 `sí`/ecommerce. **10 recategorizaciones** (5 Licores, Víver→Despensa, Espadafor+Retornable→Bebidas, Juan Ranas→Conservas, Granadajuice→Mostos y zumos). Municipios: Ginevia→Alhama de Granada, Liber Lecrin→Padul, Señorío de Nevada Cónchar→Villamena. |
+| 5 | Bodega · Altiplano + Contraviesa-Alpujarra + Costa | 22 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 5». 0 purgas: 20 `verificado` + 2 `parcial` (Grupo Collados = hotel-restaurante sin producción confirmada; Los Barrancos sin fuente propia); 14 `sí`/ecommerce. **6 recategorizaciones** (El Mondero+Ron Montero+Rosas→Licores, La Runa→Hidromiel, Frutas Los Cursos→Fruta y verdura con su `sí` heredado resuelto, Selva-GR→Cerveza artesana con web añadida). |
 | 6 | Charcutería · IGP Jamón de Trevélez + Alpujarra/Lecrín | 17 | ⬜ | Secaderos de Trevélez; secadero vs carnicería-despacho. |
 | 7 | Charcutería · Vega + Poniente + Altiplano (Cordero Segureño) + Guadix | 16 | ⬜ | Embutido del Altiplano; obrador con curado propio. |
 | 8 | Fruta y verdura · Costa Tropical (DOP Chirimoya, aguacate, mango) | 15 | ⬜ | Productor/coop vs manipulador-exportador B2B. |
@@ -406,3 +415,168 @@ Snapshot tras lote 1:
 - Venta online: 16 sí, 0 no, 262 no comprobado
 - Canal de venta informado: 14/16 productores con `Venta online=sí`
 - Evidencia Granada: 19 registros JSONL (todos `keep`; fichero creado)
+
+## Lote 2 — Aceite · Poniente + El Temple/Alhama
+
+Revisión de las 17 fichas de `Aceite` del Poniente (Loja ×3, Salar, Zagra,
+Villanueva Mesía, Íllora ×3 + Alomartes, Pinos Puente) y El Temple/Alhama (Ventas
+de Huelma, Ácula, La Malahá, Escúzar, Alhama de Granada, Alhendín) (2026-07-02).
+Resultado: **15 filas activas** (1 purga + 1 fusión), **15 `verificado`, 0
+`parcial`**; venta online **14 `sí` (13 `ecommerce` + 1 `whatsapp`), 0 `no`, 1 `no
+comprobado`**. +17 registros (15 keep, 1 purge, 1 merge).
+
+Decisiones relevantes:
+
+- **Purga (out-of-scope) — primer padding industrial confirmado**:
+  `iffco-iberia-alhama` (planta en Escúzar). Filial del grupo multinacional IFFCO
+  (34 plantas, 12 países): refinador/envasador B2B sin venta minorista ni producto
+  Km0. Imagen eliminada.
+- **Fusión**: `omed-venchipa-s-l-acula` → `o-med-aceites-ventas-de-huelma`.
+  Venchipa S.L. es la razón social de O-Med (misma dirección Ctra. Ácula-Ventas de
+  Huelma km 1, mismos IG/FB); la fila duplicada apuntaba a su web de oleoturismo
+  (experienciasomedoil.com, sin tienda).
+- **Municipio corregido**: Santa Ana de Salar, etiqueta Loja→**Salar** (cooperativa
+  fundada por olivareros de Salar; coords a ~7 km de Salar y ~19 de Loja).
+- **Venta online (13 ecommerce)**: Loxa, Santa Ana de Salar, Cerro Gordo (Ventorros
+  de San José), Oleosalar (Don Emilio/Inena), San Lorenzo de Zagra (Castillo de
+  Zahra, DOP Poniente), Aceites Morales (Escóznar), Lucio Milenium, Roldán Oliva
+  (1895; su web da timeouts, tienda confirmada por búsqueda), Propios del Guadiana,
+  O-Med, Torres Morente/Maeva, Los Tajos (promovida de `parcial`) y La Purísima.
+  **AOVE Baby** = primer canal `whatsapp` de la provincia (almazara CAAE/Kosher en
+  Villanueva Mesía; segunda sede en Cárchel, Jaén; pedido por botones de WhatsApp
+  en su propia web).
+- **Alcance de las grandes**: Torres Morente/Aceites Maeva entra como
+  productor-envasador integrado (molino de origen 1930), análogo a las casas
+  grandes de Cádiz; anotado el matiz de escala en la evidencia.
+- **`no comprobado`**: Casería de la Virgen (Alomartes; DOP Poniente, ecológica,
+  4 generaciones; su web dio timeout y no hay tienda confirmada).
+
+## Lote 3 — Aceite · Vega + Alpujarra/Lecrín + Costa + Altiplano + resto
+
+Revisión de las 20 fichas de `Aceite` restantes (Alfacar, Almuñécar, Castril,
+Cortes de Baza, «Costa», Cájar, Dílar, Freila, Granada ×2, Gójar, Huéscar, Jun,
+Lentegí, Monachil, Nigüelas, Padul, Pinos del Valle, Puebla de Don Fadrique,
+Órgiva) (2026-07-02). Resultado: **19 filas activas** (1 purga), **17 `verificado`,
+2 `parcial`**; venta online **14 `sí` (ecommerce), 0 `no`, 5 `no comprobado`**.
+Cierra el sector Aceite (lotes 1-3). +20 registros (19 keep, 1 purge).
+
+Decisiones relevantes:
+
+- **Purga (not-producer)**: `restaurante-firmvm-almunecar`. Es un restaurante de
+  Almuñécar (así lo cubre la prensa local), sin rastro de finca/almazara/marca
+  propia; categoría Aceite heredada errónea.
+- **Municipio inválido corregido**: `mangrove-studios-sl-costa` tenía municipio
+  «Costa» (no existe) → **Almuñécar** (C. Amapola 3, CP 18690; coords en La
+  Herradura). Es **Tropicual** (Tropicual Mangrove S.L.), productor ecológico real
+  de AOVE picual con olivares en Cuevas del Campo y Jaén → `verificado`/`no
+  comprobado` (venta por contacto, sin carrito).
+- **Webs corregidas**: Finca Sulayr («http://Finca.sulayr.com» malformada →
+  fincasulayr.com, con tienda), Cortijo Los Almendros (www no resuelve → apex) y
+  B.olivar (web basura «http://.» eliminada).
+- **`parcial`**: `b-olivar-granada` (solo ficha Maps con place_id en la Chana) y
+  `calante-padul` (dirección en Sabor Granada, sin web). Revisar/purgar en cierre.
+- **Venta online (14 ecommerce)**: San Sebastián de Alfacar (Albojaira, DOP
+  Montes), Coop. Castril (Suerte Somera, promovida), Habitat AOVE (AlVelAl,
+  promovida), Quaryat Dillar, Verdefrey (Freila), Alma de Luna (fundación con
+  olivos propios en Chauchina), Reyes Rivero, La Soledad de Huéscar (tienda en
+  dominio hermano .es, promovida), Picón de Murillo, Aneas (Lentegí), Finca Sulayr,
+  Navarro García (Nigüelas), Orovalle/San Roque (Pinos del Valle) y Arkilakis.
+- **`no comprobado` con motivo**: Tropicual y Cortijo Los Almendros (sin carrito
+  confirmado), La Flor de la Alpujarra (web 503; coop. real de Órgiva con almazara
+  desde 2009; reventa por tiendas comarcales).
+
+## Lote 4 — Bodega · Vega/Temple/Lecrín + Guadix/Marquesado
+
+Revisión de 22 fichas de `Bodega` (Albolote, Alhama, Arenas del Rey, Atarfe ×2,
+Cijuela, Cónchar, Deifontes, Granada ×3, La Malahá, Lecrín, Nigüelas + Benalúa,
+Cogollos de Guadix, Dólar, Gorafe, La Peza, Polícar ×2, Caniles) (2026-07-02).
+Resultado: **21 filas activas** (1 purga), **20 `verificado`, 1 `parcial`**; venta
+online **14 `sí` (ecommerce; Víver además `suscripcion`), 0 `no`, 7 `no
+comprobado`**. +22 registros (21 keep, 1 purge).
+
+El cajón «Bodega» del volcado era en realidad un mixto de destilerías, kombucha,
+zumos y hoteles: **10 recategorizaciones** y 3 municipios corregidos.
+
+Decisiones relevantes:
+
+- **Purga (not-producer)**: `niwalas-rural-s-l-niguelas` (Alquería de los Lentos).
+  Hotel rural de 2 estrellas con restaurante/spa en un molino del s. XVI; ni bodega
+  ni producción propia. Imagen eliminada.
+- **Recategorizaciones**: Bodega→**Licores** ×5 (Gin-Zarí, Ginevia, Destilerías
+  Joaquín Alonso, By Curro Premium, Destilerías Liber); →**Despensa artesanal**
+  (Víver, kombucha/kéfir, como La Kombuchería de Cádiz); →**Bebidas** ×2
+  (Industrias Espadafor 1939 —GINSIN/Champín, planta propia de 37.500 m²— y La
+  Retornable —bebidas vegetales eco retornables km0, Cijuela—); →**Conservas**
+  (Juan Ranas/Pura Salsa S.L., tomate frito de Arenas del Rey); →**Mostos y
+  zumos** (Granadajuice, zumo de granada HPP en Mercagranada).
+- **Municipios corregidos**: Ginevia «Alhama»→Alhama de Granada (normalización);
+  Liber «Lecrin»→**Padul** (Pol. La Paloma, CP 18640, coords junto a Padul);
+  Señorío de Nevada «Cónchar»→**Villamena** (Cónchar es núcleo de Villamena).
+- **Webs corregidas**: Víver (301→viverdrinks.com), Señorío de Nevada
+  (senoriodenevada.com con certificado ajeno→senoriodenevada.es), Al Zagal
+  (.es→.com), Vertijana (vertijana.com muerta→bodegasvertijana.es), Pago de
+  Almaraes (mayúsculas→https minúsculas), Bodegas Caballo (dominio aparcado/en
+  venta→eliminada).
+- **DOP Granada, venta online (ecommerce)**: Señorío de Nevada (boutique propia),
+  Fontedei, Anchurón (finca en Darro, oficina de la fila en Granada), Pago de
+  Almaraes, Al Zagal (Rey Zagal; su web bloquea el fetch con 403, tienda confirmada
+  por búsqueda), Méndez Moya (promovida; eco vegana sin sulfitos), Muñana (200 ha a
+  1.188 m), Vilaplana (promovida) + Ginevia, By Curro (marcas propias Vermú de
+  Garage/Road 78, elaboración en Liber; nota de alcance por su rama distribuidora),
+  Granadajuice, Espadafor, Liber (tiendaliber.com) y Víver.
+- **`parcial`**: Bodegas Caballo (Polícar; real según Peñín y directorios, pero
+  dominio aparcado y sin fuente propia operativa).
+- **`no comprobado`**: Gin-Zarí, Joaquín Alonso, Juan Ranas (certificado caducado),
+  La Retornable (venta en tiendas eco físicas), Cerro de las Cruces y Vertijana
+  (sin tienda).
+
+## Lote 5 — Bodega · Altiplano + Contraviesa-Alpujarra + Costa
+
+Revisión de las 22 fichas de `Bodega` restantes (Galera ×3, Baza, Huéscar, Puebla
+de Don Fadrique + Albondón, Albuñol ×2, Cádiar, Cástaras, Lobras, Murtas, Polopos,
+Torvizcón ×2, Ugíjar, Lanjarón + Almuñécar, Jete, Lobres, Motril) (2026-07-02).
+Resultado: 22 filas activas (**0 purgas**), **20 `verificado`, 2 `parcial`**; venta
+online **14 `sí` (ecommerce), 0 `no`, 8 `no comprobado`**. Cierra el sector Bodega
+(lotes 4-5). +22 registros keep.
+
+Decisiones relevantes:
+
+- **Anomalía `sí` heredada resuelta**: `frutas-los-cursos-sl-almunecar` no es
+  bodega: es fruta tropical de la Costa (chirimoya DOP, línea premium Dulzonea) →
+  recategorizada a **Fruta y verdura**, `verificado`, y su `sí` queda confirmado
+  con tienda propia (`ecommerce`).
+- **Recategorizaciones**: →**Licores** ×3 (Destilerías Rosas de Baza, Bodegas El
+  Mondero —ron de caña de Lobres— y Ron Montero —destilería emblemática de Motril,
+  1963, tienda oficial en subdominio—); →**Hidromiel** (La Runa S.C.A., Lanjarón);
+  →**Cerveza artesana** (Selva-GR, Huéscar: cervecera en una antigua bodega de
+  vino con manantial propio; **web añadida** https://selva-gr.es, la fila no tenía).
+- **Contraviesa-Alpujarra, viñedo propio de altura**: Los Martos (promovida;
+  tienda en /info), Poeta en Nueva York (Rambla Huarea, «la bodega más pequeña de
+  España», tienda propia), Cuatro Vientos, Haza del Lino (restaurante-bodega con
+  cosecha propia), La Divisa y Piedras Blancas (Torvizcón, eco/veganas, tienda),
+  Dominio de Buenavista/Vinos Veleta (promovida, tienda). **Barranco Oscuro**
+  (referente del vino natural, viñedos más altos de Europa) y **García de
+  Verdevique** promovidas a `verificado` pero `no comprobado` (la compra de
+  Barranco Oscuro remite a gourmethunters = reventa de terceros; Verdevique solo
+  contacto). **Nazaríes** (1979, Cerro del Gato) promovida; su https da error TLS
+  (no prueba baja).
+- **`parcial` (2)**: Grupo Collados (Puebla de Don Fadrique; las fuentes lo ligan
+  al hotel-restaurante Collados de la Sagra, web muerta, sin producción propia
+  confirmada → candidato a purga en el cierre) y Bodega Los Barrancos (Lobras; 8 ha
+  eco bien documentadas por prensa, pero sin web/redes propias ni ficha Maps con
+  place_id → techo parcial, como La Mayetería en Cádiz).
+- **Costa**: Calvente (Jete, tienda), El Mondero y Ron Montero con tienda propia.
+- **Altiplano**: Carayol y Castellar (Los Pedros, tienda), Jaraíz (17 ha,
+  promovida, sin tienda), Domingo y Quiles (web mínima propia, `no comprobado`).
+
+Snapshot tras lotes 2-5 (sectores Aceite y Bodega cerrados):
+
+- Filas CSV: 274 (−4: 3 purgas + 1 fusión)
+- Verificación: 88 verificado, 40 parcial, 146 pendiente
+- Venta online: 71 sí, 0 no, 203 no comprobado
+- Canal de venta informado: 70/71 (falta solo Segral, se resuelve en el lote 16)
+- Evidencia Granada: 100 registros JSONL (96 keep, 3 purge, 1 merge)
+- Categorías tras recats: Aceite 53, Charcutería 33, Fruta y verdura 30, Pan 28,
+  Bodega 27, Lácteos 26, Aperitivos 16, Miel 13, Despensa 11, Conservas 9,
+  Licores 8, Comida preparada 8, Cerveza artesana 6, Bebidas 2, Chocolate 2,
+  Mostos y zumos 1, Hidromiel 1
