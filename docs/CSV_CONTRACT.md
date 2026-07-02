@@ -248,4 +248,4 @@ When picking a source for a new image, check in this order and stop at the first
 - Canonical detail path format is `/p/[slug]`.
 - Detail URLs must include `provincia=[provincia]`, including Barcelona, because slugs are unique within a province CSV rather than globally.
 - Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]?provincia=[provincia]` when resolvable.
-- `slug` should be lowercase ASCII with words separated by `-`, unique within the province CSV, and stable across row reordering.
+- `slug` should be lowercase ASCII with words separated by `-`, unique within the province CSV, and stable across row reordering. Keep a correct slug stable, but correct one that materially encodes the wrong identity, municipality, duplicate or misleading typo; preserve the history with evidence/docs updates.

@@ -72,8 +72,9 @@ producer's own or official-collective listing.
 - **Third-party resale:** independent retailers stocking the product do not
   prove the producer sells online; `Venta online=sí` needs an own or official
   collective channel, otherwise `no comprobado`.
-- **Brand vs. legal entity:** preserve the public stable `slug`; use identifiers
-  and productive-unit identity to decide merges.
+- **Brand vs. legal entity:** preserve a correct public `slug`; use identifiers
+  and productive-unit identity to decide merges. Correct a slug that materially
+  encodes the wrong identity or municipality.
 - **Geographic uncertainty:** use an honest centroid rather than invented
   precision. Correct reference overrides for territorial homonyms.
 - **Broken source:** timeout, TLS, DNS or blocked fetch is uncertainty, not a

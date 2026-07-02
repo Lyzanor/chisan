@@ -27,7 +27,9 @@ técnicas son heurísticas que el agente puede adaptar al caso.
    ausencia suficientemente contrastada.
 6. **Las afirmaciones dinámicas requieren evidencia actual.** Especialmente actividad y venta.
 7. **No inventes precisión geográfica.** Un centroide honesto es preferible a un punto conjeturado.
-8. **Mantén estable el `slug`.** Solo desaparece al purgar o fusionar justificadamente.
+8. **Mantén correcto el `slug`.** Conserva un slug correcto, pero cámbialo si codifica
+   una identidad o municipio erróneo, un duplicado, una errata engañosa o una corrección
+   explícita del usuario. Si el slug existía en Git, deja un registro `merge` del antiguo al nuevo.
 
 ## Flujo mínimo
 
@@ -105,6 +107,10 @@ Para hacer match de entidad combina nombre o razón social con municipio y, cuan
 teléfono, correo o dirección. No prolongues la búsqueda si una fuente primaria ya resuelve esos puntos
 sin contradicciones.
 
+Para Cataluña, `node scripts/match-dar.mjs "<municipio>" [--csv <path>] [--all]` cruza un CSV con el
+registro DAR de venda de proximitat por teléfono, correo y apellidos. Confirma existencia/localidad
+(`parcial`), sugiere duplicados o candidatos y nunca prueba venta online ni sustituye al CSV.
+
 Registra la fuente con los claims concretos que demuestra. Una URL no hereda autoridad sobre todos los
 campos: por ejemplo, un marketplace puede probar venta activa sin probar municipio.
 
@@ -178,7 +184,7 @@ Normaliza acentos, mayúsculas y separadores. Compara nombre/marca, dominio, tel
 coordenadas, `place_id` y razón social.
 
 Coincidir en varios identificadores suele señalar una entidad o dos marcas del mismo operador. Conserva
-el `slug` más estable y fusiona solo si representan la misma unidad productiva.
+el `slug` correcto más estable y fusiona solo si representan la misma unidad productiva.
 
 No fusiones automáticamente cooperativa y socio, secciones productivas distintas, negocios contiguos
 o productores que comparten finca, mercado o centroide. `grep -i` no pliega acentos y no sirve como

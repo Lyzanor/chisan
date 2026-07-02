@@ -51,7 +51,7 @@ flowchart TD
   - Renders a Leaflet map with OSM tiles for producers with coordinates.
   - Renders a compact producer viewer next to the map.
 - `app/p/[slug]/page.tsx`
-  - Resolves one producer by stable `slug` plus `provincia`.
+  - Resolves one producer by current `slug` plus `provincia`.
   - Redirects legacy `/p/[id]` and `/p/[id]-[slug]` URLs to canonical `/p/[slug]?provincia=[provincia]`.
   - Redirects detail requests without `provincia` back to `/` because producer slugs are province-scoped.
   - Renders all CSV columns and values.

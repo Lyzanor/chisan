@@ -2,7 +2,7 @@
 
 ## 1) Update data (manual CSV edit)
 1. Edit the target province CSV under `data/csv/[comunidad]/[provincia].csv`.
-2. Add new producers with a stable unique `slug`.
+2. Add new producers with a correct unique `slug`; keep existing correct slugs stable, but fix materially wrong ones with evidence.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
 4. Set `verificacion`:
    - `pendiente`: added for coverage and still needs review.
@@ -83,7 +83,7 @@ npx pnpm verify:ai
 3. Treat `data/evidence/**` as decision provenance, not a second producer catalog.
 4. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
 5. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
-6. Keep producer `slug` values stable and unique.
+6. Keep correct producer `slug` values stable and unique; fix materially wrong slugs with the CSV/image/docs/evidence updates described in `AGENTS.md`.
 7. Run the matching gate:
 ```bash
 npx pnpm verify:data   # data/reference/evidence/images
@@ -95,7 +95,7 @@ npx pnpm verify:ai     # code/scripts/policy
 - Do not add DB/API/migrations unless explicitly requested.
 - Prefer small, reversible edits.
 - CSV row order is editorial: keep it easy to sort by the criterion that matters for the task.
-- Keep `slug` stable and unique; it is the public producer identity.
+- Keep correct `slug` values stable and unique; a materially wrong slug is an editorial defect to fix, not a URL to preserve mechanically.
 - Keep `AGENTS.md`, `README.md`, and this file aligned when changing workflow.
 - Keep docs in sync if behavior changes.
 - Keep change proposals and task notes in Markdown.
