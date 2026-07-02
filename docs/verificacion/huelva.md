@@ -3,8 +3,8 @@
 Ledger inicial para planificar y reanudar la revisión profunda de
 `data/csv/andalucia/huelva.csv`. El CSV es la fuente de verdad. La evidencia
 estructurada por fila debe vivir en `data/evidence/andalucia/huelva.jsonl` a
-medida que se revise cada lote (el fichero aún no existe; se crea en el lote 1
-que cierre decisiones).
+medida que se revise cada lote (el fichero se creó en el lote 1 y se amplía en
+cada cierre).
 
 El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento no
 lo duplica, solo fija el snapshot, las particularidades de Huelva y el plan de
@@ -73,6 +73,24 @@ curso; no necesitas releer el manual entero por lote.
   informados. Evidencia: **14 registros** en
   `data/evidence/andalucia/huelva.jsonl` (13 `keep` + 1 `merge`). Calidad Huelva:
   0 errores, **5 warnings** residuales, todos en lotes posteriores.
+- Tras lote 2 / Fruta y verdura Costa occidental + Condado disperso
+  (2026-07-02): **132 filas** tras 1 purga (`sonrojas-palos-de-la-frontera`);
+  **25 `verificado`, 4 `parcial`, 103 `pendiente`**. Venta online: **1 `sí`**
+  (`freson-de-palos-palos-de-la-frontera`, canal `ecommerce`), 0 `no`, **131
+  `no comprobado`**. Evidencia: **31 registros** en
+  `data/evidence/andalucia/huelva.jsonl` (29 `keep` + 1 `merge` + 1 `purge`).
+  Se corrige Green Valley Berries a Villablanca, Valle Ancho sale de
+  `Fruta y verdura` a `Legumbres y cereales`, y permanecen 4 filas parciales por
+  falta de fuente propia fuerte.
+- Tras lotes 3-5 / cierre de `Fruta y verdura` y `Pan y pastelería`
+  (2026-07-02): **127 filas** tras 3 purgas y 2 fusiones adicionales;
+  **48 `verificado`, 12 `parcial`, 67 `pendiente`**. Venta online: **11 `sí`**,
+  0 `no`, **116 `no comprobado`**; todos los `sí` tienen canal informado.
+  Evidencia: **67 registros** en `data/evidence/andalucia/huelva.jsonl` (60
+  `keep` + 2 `merge` + 5 `purge`). No quedan filas pendientes en `Fruta y
+  verdura` ni en `Pan y pastelería`. Quedan 4 warnings de calidad: 2
+  geo-warnings leves en fincas de Almonte y 2 de lotes posteriores
+  (`oro-de-ostur-huelva`, `pesasur-s-a-huelva`).
 
 ## Zonas de Huelva para lotear
 
@@ -291,17 +309,17 @@ tocadas.
 | # | Lote | Filas | Estado | Notas iniciales |
 |---|---|---:|---|---|
 | 1 | Fruta y verdura · Doñana/Moguer/Lucena/Bonares | 14 | ✅ | Cerrado 2026-07-01. 13 filas activas `verificado`, 0 `parcial`, 0 purgas, 1 fusión (`Berrynest SAT` -> `Bionest / Berrynest SAT`). Todas quedan `Venta online=no comprobado`; sin tienda directa a consumidor confirmada. JSONL creado con 14 registros. |
-| 2 | Fruta y verdura · Costa occidental + Condado disperso | 17 | ⬜ | Aljaraque, El Campillo, Gibraleón, Lepe, Palos de la Frontera, Rociana y San Juan del Puerto. Revisar cooperativas, marcas B2B y venta directa. |
-| 3 | Fruta y verdura · Huelva capital | 7 | ⬜ | Lote pequeño por riesgo: `berries-los-mimbrales-s-l-huelva` y `frutas-borja-sl-huelva` tienen geo-warning hacia Almonte; revisar municipio/unidad productiva. |
-| 4 | Pan y pastelería I | 15 | ⬜ | Primeras 15 filas de `Pan y pastelería` en orden CSV. Obrador vs despacho/cafetería; muchas sin imagen ni web. |
-| 5 | Pan y pastelería II | 14 | ⬜ | Resto de `Pan y pastelería`. Incluye pueblos y `panaderia-la-artesana-del-condado-huelva`, cuyo geo-warning apunta a Bollullos Par del Condado. |
+| 2 | Fruta y verdura · Costa occidental + Condado disperso | 17 | ✅ | Cerrado 2026-07-02. 12 `verificado`, 4 `parcial`, 1 purga (`SONROJAS`) y 1 venta online confirmada (`Fresón de Palos`, `ecommerce`). Green Valley Berries se corrige a Villablanca; Valle Ancho se recategoriza fuera de fruta. |
+| 3 | Fruta y verdura · Huelva capital | 7 | ✅ | Cerrado 2026-07-02. 3 `verificado`, 1 `parcial`, 3 purgas (`FRUTEVA`, `Jesús Kiko`, `Surberry`), sin nuevos `sí` de venta online. Los Mimbrales y Frutas Borja se corrigen a Almonte. |
+| 4 | Pan y pastelería I | 15 | ✅ | Cerrado 2026-07-02. 13 filas activas: 9 `verificado`, 4 `parcial`, 2 fusiones (`Guillén Navarro` -> `Confitería Guillén`; `Panadería Gaspar Huelva` -> `Panadería Gaspar San Juan`). 5 nuevos `sí`. |
+| 5 | Pan y pastelería II | 14 | ✅ | Cerrado 2026-07-02. 11 `verificado`, 3 `parcial`, 0 purgas/fusiones. `panaderia-la-artesana-del-condado-huelva` se corrige a Bollullos Par del Condado. 5 nuevos `sí`. |
 | 6 | Aceite | 16 | ⬜ | Almazaras/cooperativas del Condado, Sierra y Andévalo. Resolver `oro-de-ostur-huelva` (geo-warning hacia Manzanilla) y revisar `Aceitunas Ropero` como posible recategorización. |
 | 7 | Charcutería | 12 | ⬜ | DOP Jabugo, secaderos y marcas ibéricas. Revisar duplicados de Vázquez, rutas/turismo y marcas con tiendas frente a fábrica/secadero. |
 | 8 | Pescado | 9 | ⬜ | Mojama, salazones, conservas, acuicultura y mayoristas. Revisar USISA tienda/fabricante y `pesasur-s-a-huelva` (geo-warning hacia Ayamonte). |
 | 9 | Bodega + Legumbres | 9 | ⬜ | Bodegas del Condado y Garbanzo de Escacena. Distinguir bodega/cooperativa/productor de consejo o sello colectivo. |
 | 10 | Miel + Lácteos y quesos | 10 | ⬜ | Apicultores, queserías y actividades educativas. `Apimundi` puede ser educación ambiental si no acredita producto alimentario. |
 | 11 | Helados + Cerveza artesana | 11 | ⬜ | Obrador/fábrica frente a heladería minorista o restaurante. Revisar `Restaurante & Brewery Ruben's` como brewpub real o restaurante. |
-| 12 | Cierre transversal provincial | 134 | ⬜ | 0 pendientes; canales en todos los `sí`; evidencia coherente; dedup; geo-warnings resueltos/aceptados; imágenes sin errores; posible `coverage.json`. |
+| 12 | Cierre transversal provincial | 127 | ⬜ | 0 pendientes; canales en todos los `sí`; evidencia coherente; dedup; geo-warnings resueltos/aceptados; imágenes sin errores; posible `coverage.json`. |
 
 ## Lote 1 - Fruta y verdura Doñana/Moguer/Lucena/Bonares
 
@@ -327,6 +345,116 @@ Decisiones relevantes:
 - **Sin `sí` de venta online**: todos los productores son reales, pero las webs
   revisadas son corporativas/B2B o formularios de contacto; no se confirmó
   ecommerce ni pedido remoto directo de consumidor final.
+
+## Lote 2 - Fruta y verdura Costa occidental + Condado disperso
+
+Revisión de 17 filas iniciales de fruta/berries/cítricos en Aljaraque, El
+Campillo, Gibraleón, Lepe, Palos de la Frontera, Rociana del Condado, San Juan
+del Puerto y Villablanca (2026-07-02).
+
+Resultado: **16 filas activas**, **12 `verificado`**, **4 `parcial`** y **1
+purga**. Venta online: **1 `sí`** (`Fresón de Palos`, canal `ecommerce`) y el
+resto `no comprobado`. Se añaden 17 registros de evidencia (16 `keep` + 1
+`purge`).
+
+Decisiones relevantes:
+
+- **Purga**: `sonrojas-palos-de-la-frontera` se elimina porque las fuentes
+  disponibles describen a Ernesto Rojas / SONROJAS como intermediación y comercio
+  mayorista, no como productor con unidad productiva propia.
+- **Venta online confirmada**: `freson-de-palos-palos-de-la-frontera` pasa a
+  `Venta online=sí` y `Canal de venta=ecommerce`; la tienda oficial mantiene
+  productos con carrito, envíos y pago seguro.
+- **Parciales por evidencia débil**:
+  `empresa-fresas-tres-palos-palos-fra-palos-de-la-frontera`,
+  `frescarily-sl-palos-de-la-frontera`,
+  `spain-berries-palos-de-la-frontera` y
+  `valle-ancho-s-coop-andaluza-san-juan-del-puerto` quedan `parcial` por depender
+  de Maps, directorios o registros sin fuente propia suficiente.
+- **Corrección de municipio/categoría**: `green-valley-berries-lepe` conserva el
+  slug estable pero pasa a municipio **Villablanca**; `valle-ancho...` sale de
+  `Fruta y verdura` y queda en `Legumbres y cereales`.
+- **Normalizaciones**: se corrigen nombres, webs HTTPS, correos y descripciones
+  para Plus Berries, Rio Tinto Organic Citrus, Frescitrus, AgroMartín, Berries
+  Costaluz, Green Valley Berries, Masiá Ciscar, Gorofres, Lujovi, Perlahuelva y
+  SAT Condado. También se retiran enlaces heredados genéricos de Facebook en
+  Berries Costaluz y Gorofres.
+
+## Lote 3 - Fruta y verdura Huelva capital
+
+Revisión de 7 filas iniciales de berries/fruta con sede o ficha en Huelva
+capital (2026-07-02).
+
+Resultado: **4 filas activas**, **3 `verificado`**, **1 `parcial`** y **3
+purgas**. Venta online: todas las filas activas quedan `no comprobado`. Se
+añaden 7 registros de evidencia (4 `keep` + 3 `purge`).
+
+Decisiones relevantes:
+
+- **Purgas**: `fruteva-huelva` se elimina por ser tienda/reparto online de fruta,
+  no productor; `frutas-huelva-la-luz-s-l-jesus-kiko-huelva` y
+  `surberry-huelva` se eliminan por evidencia de actividad mayorista o
+  comercializadora sin unidad productora propia acreditada.
+- **Corrección de municipio**: `berries-los-mimbrales-s-l-huelva` y
+  `frutas-borja-sl-huelva` pasan de Huelva a **Almonte** por dirección/finca
+  oficial. Quedan en warning leve de distancia por ubicación de finca, no por
+  municipio heredado incorrecto.
+- **Parcial conservador**: `berryworld-huelva` queda `parcial`; hay equipo local,
+  red de productores y centro I+D en Huelva, pero no una unidad productora propia
+  claramente acreditada.
+- **Verificados**: Los Mimbrales, Frutas Borja y Onubafruit quedan como
+  productores/cooperativa reales; ninguna fuente confirmó pedido directo a
+  consumidor.
+
+## Lote 4 - Pan y pastelería I
+
+Revisión de las primeras 15 filas de `Pan y pastelería` en el orden congelado
+del CSV (2026-07-02).
+
+Resultado: **13 filas activas**, **9 `verificado`**, **4 `parcial`** y **2
+fusiones**. Venta online: **5 `sí`** con canales `whatsapp`, `telefono`,
+`marketplace` o `ecommerce` según fuente. Se añaden 15 registros de evidencia
+(13 `keep` + 2 `merge`).
+
+Decisiones relevantes:
+
+- **Fusión de marca/sucursal**: `confiteria-guillen-navarro-s-l-huelva` se
+  fusiona en `confiteria-guillen-huelva`; la fuente oficial presenta dos
+  despachos y obrador bajo la misma Confitería Guillén.
+- **Fusión de punto de venta**: `panaderia-gaspar-huelva` se fusiona en
+  `panaderia-gaspar-san-juan-del-puerto`; Huelva queda documentado como punto de
+  venta/sucursal de la panadería de San Juan del Puerto.
+- **Ventas remotas confirmadas**: Obrador Moito Bom (`whatsapp`), La Grosera
+  (`whatsapp|telefono|marketplace`), Confitería Guillén (`telefono`), Dulce
+  Pecado Bakery (`whatsapp`) y Jacuaçu (`ecommerce`).
+- **Parciales por falta de obrador fuerte**: El Horno de Ana, La Dulcería de
+  Santa Bárbara, Panadería Artesanal y Panadería La Antigua quedan `parcial`.
+- **Verificados sin venta online**: La Repostería de Pi, Confitería Alvarado,
+  Nova Ruiz y Horno San Ramón acreditan obrador/elaboración, pero no pedido
+  remoto vigente de consumidor.
+
+## Lote 5 - Pan y pastelería II
+
+Revisión de las 14 filas restantes de `Pan y pastelería`, incluyendo pueblos y
+el geo-warning de La Artesana del Condado (2026-07-02).
+
+Resultado: **14 filas activas**, **11 `verificado`**, **3 `parcial`**, 0 purgas
+y 0 fusiones. Venta online: **5 `sí`**. Se añaden 14 registros de evidencia
+(`keep`).
+
+Decisiones relevantes:
+
+- **Corrección de municipio**: `panaderia-la-artesana-del-condado-huelva` pasa a
+  **Bollullos Par del Condado** con dirección normalizada de la fábrica de picos
+  y regañás.
+- **Ventas remotas confirmadas**: Abuela Canalla (`ecommerce|marketplace`), El
+  Buen Gusto (`ecommerce|marketplace`), Tartería Las Alemanas (`telefono`),
+  DulcesCake.sj (`whatsapp`) y Panadería Gaspar (`whatsapp`).
+- **Verificados sin venta online**: Dioni, El Olam, La Artesana del Condado, San
+  José, Horno Santa Inés y Tody acreditan elaboración/obrador, pero no un canal
+  de pedido directo que se haya marcado como `sí`.
+- **Parciales por evidencia insuficiente de obrador propio**: La Espiga,
+  Pastelería Yugoslava Emilia y El Capricho de Mayra.
 
 ## Cierre esperado
 
