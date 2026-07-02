@@ -87,10 +87,19 @@ curso; no necesitas releer el manual entero por lote.
   **48 `verificado`, 12 `parcial`, 67 `pendiente`**. Venta online: **11 `sí`**,
   0 `no`, **116 `no comprobado`**; todos los `sí` tienen canal informado.
   Evidencia: **67 registros** en `data/evidence/andalucia/huelva.jsonl` (60
-  `keep` + 2 `merge` + 5 `purge`). No quedan filas pendientes en `Fruta y
+  `keep` + 3 `merge` + 4 `purge`). No quedan filas pendientes en `Fruta y
   verdura` ni en `Pan y pastelería`. Quedan 4 warnings de calidad: 2
   geo-warnings leves en fincas de Almonte y 2 de lotes posteriores
   (`oro-de-ostur-huelva`, `pesasur-s-a-huelva`).
+- Tras lotes 6-7 / `Aceite` y `Charcutería` (2026-07-02): **125 filas** tras 2
+  fusiones adicionales; **71 `verificado`, 15 `parcial`, 39 `pendiente`**.
+  Venta online: **30 `sí`**, 0 `no`, **95 `no comprobado`**; todos los `sí`
+  tienen canal informado. Evidencia: **95 registros** en
+  `data/evidence/andalucia/huelva.jsonl` (86 `keep` + 5 `merge` + 4 `purge`).
+  No quedan filas pendientes en `Fruta y verdura`, `Pan y pastelería`, `Aceite`
+  ni `Charcutería`. El geo-warning de `oro-de-ostur-huelva` queda resuelto al
+  corregirse a **Manzanilla**; quedan 3 warnings de calidad: dos fincas de
+  Almonte y `pesasur-s-a-huelva`.
 
 ## Zonas de Huelva para lotear
 
@@ -313,13 +322,13 @@ tocadas.
 | 3 | Fruta y verdura · Huelva capital | 7 | ✅ | Cerrado 2026-07-02. 3 `verificado`, 1 `parcial`, 3 purgas (`FRUTEVA`, `Jesús Kiko`, `Surberry`), sin nuevos `sí` de venta online. Los Mimbrales y Frutas Borja se corrigen a Almonte. |
 | 4 | Pan y pastelería I | 15 | ✅ | Cerrado 2026-07-02. 13 filas activas: 9 `verificado`, 4 `parcial`, 2 fusiones (`Guillén Navarro` -> `Confitería Guillén`; `Panadería Gaspar Huelva` -> `Panadería Gaspar San Juan`). 5 nuevos `sí`. |
 | 5 | Pan y pastelería II | 14 | ✅ | Cerrado 2026-07-02. 11 `verificado`, 3 `parcial`, 0 purgas/fusiones. `panaderia-la-artesana-del-condado-huelva` se corrige a Bollullos Par del Condado. 5 nuevos `sí`. |
-| 6 | Aceite | 16 | ⬜ | Almazaras/cooperativas del Condado, Sierra y Andévalo. Resolver `oro-de-ostur-huelva` (geo-warning hacia Manzanilla) y revisar `Aceitunas Ropero` como posible recategorización. |
-| 7 | Charcutería | 12 | ⬜ | DOP Jabugo, secaderos y marcas ibéricas. Revisar duplicados de Vázquez, rutas/turismo y marcas con tiendas frente a fábrica/secadero. |
+| 6 | Aceite | 16 | ✅ | Cerrado 2026-07-02. 15 filas activas: 13 `verificado`, 2 `parcial`, 1 fusión (`Oleodiel` -> `Cooperativa Nuestra Señora de la Oliva / Oleodiel`). 10 nuevos `sí`. `Oro de Ostur` se corrige a Manzanilla; `Aceitunas Ropero` se recategoriza fuera de aceite. |
+| 7 | Charcutería | 12 | ✅ | Cerrado 2026-07-02. 11 filas activas: 10 `verificado`, 1 `parcial`, 1 fusión (`Jamones y Embutidos Vázquez` -> `Ibéricos Vázquez`). 9 nuevos `sí`. |
 | 8 | Pescado | 9 | ⬜ | Mojama, salazones, conservas, acuicultura y mayoristas. Revisar USISA tienda/fabricante y `pesasur-s-a-huelva` (geo-warning hacia Ayamonte). |
 | 9 | Bodega + Legumbres | 9 | ⬜ | Bodegas del Condado y Garbanzo de Escacena. Distinguir bodega/cooperativa/productor de consejo o sello colectivo. |
 | 10 | Miel + Lácteos y quesos | 10 | ⬜ | Apicultores, queserías y actividades educativas. `Apimundi` puede ser educación ambiental si no acredita producto alimentario. |
 | 11 | Helados + Cerveza artesana | 11 | ⬜ | Obrador/fábrica frente a heladería minorista o restaurante. Revisar `Restaurante & Brewery Ruben's` como brewpub real o restaurante. |
-| 12 | Cierre transversal provincial | 127 | ⬜ | 0 pendientes; canales en todos los `sí`; evidencia coherente; dedup; geo-warnings resueltos/aceptados; imágenes sin errores; posible `coverage.json`. |
+| 12 | Cierre transversal provincial | 125 | ⬜ | 0 pendientes; canales en todos los `sí`; evidencia coherente; dedup; geo-warnings resueltos/aceptados; imágenes sin errores; posible `coverage.json`. |
 
 ## Lote 1 - Fruta y verdura Doñana/Moguer/Lucena/Bonares
 
@@ -455,6 +464,60 @@ Decisiones relevantes:
   de pedido directo que se haya marcado como `sí`.
 - **Parciales por evidencia insuficiente de obrador propio**: La Espiga,
   Pastelería Yugoslava Emilia y El Capricho de Mayra.
+
+## Lote 6 - Aceite
+
+Revisión de 16 filas de `Aceite` en almazaras y cooperativas del Condado,
+Campiña, Sierra y Andévalo (2026-07-02).
+
+Resultado: **15 filas activas**, **13 `verificado`**, **2 `parcial`** y **1
+fusión**. Venta online: **10 `sí`** con canales `ecommerce`,
+`ecommerce|telefono` o `ecommerce|whatsapp`. Se añaden 16 registros de evidencia
+(15 `keep` + 1 `merge`).
+
+Decisiones relevantes:
+
+- **Fusión**: `oleodiel-gibraleon` se fusiona en
+  `cooperativa-nuestra-senora-de-la-oliva-gibraleon`; la fila canónica queda
+  como `Oleodiel / Cooperativa Nuestra Señora de la Oliva`.
+- **Corrección de municipio**: `oro-de-ostur-huelva` pasa de Huelva a
+  **Manzanilla**, resolviendo el geo-warning inicial.
+- **Recategorización**: `aceitunas-ropero-huelva` sale de `Aceite` y queda en
+  `Aceitunas y encurtidos`, `parcial`, por falta de fuente propia fuerte sobre
+  elaboración.
+- **Ventas online confirmadas**: Raigal, Aceites Candón, Olibeas, Oleodiel, Oro
+  de Ostur, Olipaterna, Torre de Oliva, Oleocampiña, Aceites Calderay y
+  OleoBlanca.
+- **Verificados sin venta online**: Olionuba, Oleosierra y Olivar de Huelva
+  acreditan actividad oleícola, pero no un canal actual de pedido directo.
+- **Parcial conservador**: Villaoliva / Cooperativa Agrícola Olivarera de
+  Villarrasa queda `parcial` porque la evidencia localizada procede de
+  directorios sectoriales y no de fuente propia.
+
+## Lote 7 - Charcutería
+
+Revisión de 12 filas de `Charcutería` en Sierra de Aracena, Jabugo, Cortegana,
+Corteconcepción, Huelva capital y Andévalo (2026-07-02).
+
+Resultado: **11 filas activas**, **10 `verificado`**, **1 `parcial`** y **1
+fusión**. Venta online: **9 `sí`** con canales `ecommerce`,
+`ecommerce|telefono|email`. Se añaden 12 registros de evidencia (11 `keep` + 1
+`merge`).
+
+Decisiones relevantes:
+
+- **Fusión**: `jamones-y-embutidos-vazquez-aracena` se fusiona en
+  `ibericos-vazquez-fabrica-y-secadero-de-jamones-de-bellota-aracena`; la fila
+  canónica queda como `Ibéricos Vázquez / Jamones y Embutidos Vázquez`.
+- **Ventas online confirmadas**: Jamones Sierra de Arias Montano, Ibéricos
+  Vázquez, Niño Manuel, Segundín, Jamones Eíriz, La Serranía de Macías, Jamones
+  Tartessos, Jamones Tomás Castaño y Jamones Carvajal.
+- **Verificado sin venta online**: Jamones Asensio acredita secadero/tienda en
+  Villanueva de los Castillejos, pero no se confirmó flujo actual de compra
+  directa.
+- **Parcial conservador**: `secadero-aracena-aracena` queda `parcial`; hay
+  identidad y localización, pero no fuente propia fuerte de actividad productora
+  actual.
 
 ## Cierre esperado
 
