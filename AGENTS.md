@@ -2,6 +2,11 @@
 
 This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, and any other AI assistant working in this repository.
 
+## Editorial priority
+- The CSV is the product: optimize for real producers, correct identity, location, category, contact, sales status, and usable public data.
+- Decision order: factual correctness > traceability > URL stability > mechanical consistency.
+- Validators enforce structure; they do not prove editorial truth.
+
 ## Project in 2 lines
 - This app is a map viewer for province CSV files; `/` first asks the user to choose a province.
 - Users browse producers on `/?provincia=[provincia]` and open one row in `/p/[slug]?provincia=[provincia]`.
@@ -60,10 +65,9 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
   - `provincia`
   - `categoria`
   - `destacar` (producer `slug`)
-- Producer identity is `slug` within a province; row order must not affect detail URLs.
+- Producer identity is `slug` within a province; row order must not affect detail URLs. Keep a correct slug stable, but correct it when it encodes a wrong identity/municipality, duplicate, misleading typo, or explicit user-requested correction. When changing a slug, update CSV references, image filenames, docs/evidence, and add an evidence `merge` record from old slug to new slug when the old slug existed in Git.
 - Canonical producer path format: `/p/[slug]`; detail URLs must include `provincia`, including Barcelona.
 - CSVs may be reordered by editorial criteria such as municipality, category, or data quality when useful.
-- Keep `slug` stable and unique within its province; it is the public identity for each producer.
 - Every row must include `verificacion` with one of `pendiente`, `parcial`, or `verificado`; old labels such as `alta`, `media`, and `baja` are invalid.
 - Every row must include `Venta online` with one of `sí`, `no`, or `no comprobado`; use `no comprobado` by default until that producer has been reviewed.
 - `Canal de venta`: the column exists in every CSV; its value is optional and complements `Venta online`. When present it lists one or more of `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace` (pipe-separated, e.g. `ecommerce|whatsapp`), and only when `Venta online` is `sí`. It is warning-only today (`check:csv:data-quality`), not blocking; backfill it incrementally. See `docs/CSV_CONTRACT.md`.
@@ -124,11 +128,7 @@ This is the shared operating contract for Codex, Claude, Gemini, Antigravity, Co
 
 ## Git and release discipline
 - Keep `main` deployable.
-- Before committing, run the matching gate (not always the full one):
-```bash
-npx pnpm verify:data   # data/reference/evidence/image-only change (no build)
-npx pnpm verify:ai     # code, scripts, validators, or policy changes
-```
+- Before committing, run the matching gate described in Active scripts.
 - Commit CSV/data-contract changes together when they depend on each other.
 - Deploy to production = push the commit to `main`; the GitHub→Vercel integration builds and deploys prod automatically. No separate deploy command, no preview/staging target. (`vercel deploy . --prod -y` exists only as a manual fallback.)
 - Don't poll the deploy: the `git push` output confirms it triggered. Avoid listing all deployments — it returns a large payload.
