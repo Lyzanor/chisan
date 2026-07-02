@@ -100,6 +100,23 @@ curso; no necesitas releer el manual entero por lote.
   ni `Charcutería`. El geo-warning de `oro-de-ostur-huelva` queda resuelto al
   corregirse a **Manzanilla**; quedan 3 warnings de calidad: dos fincas de
   Almonte y `pesasur-s-a-huelva`.
+- Tras lotes 8-11 / cierre sectorial pendiente (2026-07-02): **120 filas** tras
+  3 purgas y 2 fusiones adicionales; **99 `verificado`, 21 `parcial`, 0
+  `pendiente`**. Venta online: **48 `sí`**, 0 `no`, **72 `no comprobado`**;
+  todos los `sí` tienen canal informado. Evidencia: **134 registros** en
+  `data/evidence/andalucia/huelva.jsonl` (120 `keep` + 7 `merge` + 7 `purge`).
+  No quedan lotes sectoriales pendientes; queda solo el lote 12 de cierre
+  transversal. El geo-warning de `pesasur-s-a-huelva` queda resuelto al corregirse
+  a **Ayamonte**; quedan 2 warnings de calidad en fincas de Almonte.
+- Tras lote 12 / cierre transversal final (2026-07-02): Huelva queda cerrada en
+  **120 filas**, **99 `verificado`**, **21 `parcial`**, **0 `pendiente`**.
+  Venta online se mantiene en **48 `sí`**, 0 `no`, **72 `no comprobado`**, con
+  canal informado en todos los `sí` y sin canales en filas no comprobadas.
+  Evidencia completa: **134 registros** (120 `keep` + 7 `merge` + 7 `purge`).
+  Se añade `andalucia/huelva` a `data/evidence/coverage.json`. Los dos warnings
+  residuales (`berries-los-mimbrales-s-l-huelva` y `frutas-borja-sl-huelva`) se
+  aceptan como fincas reales de Almonte en banda leve 15-100 km, muy por debajo
+  del bloqueo de 100 km.
 
 ## Zonas de Huelva para lotear
 
@@ -324,11 +341,11 @@ tocadas.
 | 5 | Pan y pastelería II | 14 | ✅ | Cerrado 2026-07-02. 11 `verificado`, 3 `parcial`, 0 purgas/fusiones. `panaderia-la-artesana-del-condado-huelva` se corrige a Bollullos Par del Condado. 5 nuevos `sí`. |
 | 6 | Aceite | 16 | ✅ | Cerrado 2026-07-02. 15 filas activas: 13 `verificado`, 2 `parcial`, 1 fusión (`Oleodiel` -> `Cooperativa Nuestra Señora de la Oliva / Oleodiel`). 10 nuevos `sí`. `Oro de Ostur` se corrige a Manzanilla; `Aceitunas Ropero` se recategoriza fuera de aceite. |
 | 7 | Charcutería | 12 | ✅ | Cerrado 2026-07-02. 11 filas activas: 10 `verificado`, 1 `parcial`, 1 fusión (`Jamones y Embutidos Vázquez` -> `Ibéricos Vázquez`). 9 nuevos `sí`. |
-| 8 | Pescado | 9 | ⬜ | Mojama, salazones, conservas, acuicultura y mayoristas. Revisar USISA tienda/fabricante y `pesasur-s-a-huelva` (geo-warning hacia Ayamonte). |
-| 9 | Bodega + Legumbres | 9 | ⬜ | Bodegas del Condado y Garbanzo de Escacena. Distinguir bodega/cooperativa/productor de consejo o sello colectivo. |
-| 10 | Miel + Lácteos y quesos | 10 | ⬜ | Apicultores, queserías y actividades educativas. `Apimundi` puede ser educación ambiental si no acredita producto alimentario. |
-| 11 | Helados + Cerveza artesana | 11 | ⬜ | Obrador/fábrica frente a heladería minorista o restaurante. Revisar `Restaurante & Brewery Ruben's` como brewpub real o restaurante. |
-| 12 | Cierre transversal provincial | 125 | ⬜ | 0 pendientes; canales en todos los `sí`; evidencia coherente; dedup; geo-warnings resueltos/aceptados; imágenes sin errores; posible `coverage.json`. |
+| 8 | Pescado | 9 | ✅ | Cerrado 2026-07-02. 7 filas activas: 6 `verificado`, 1 `parcial`, 1 purga (`Fripesa`) y 1 fusión (`Tienda USISA` -> `Unión Salazonera Isleña`). 5 nuevos `sí`. `PESASUR` se corrige a Ayamonte. |
+| 9 | Bodega + Legumbres | 9 | ✅ | Cerrado 2026-07-02. 8 filas activas: 8 `verificado`, 1 purga (`Garbanzo de Escacena IGP`) por sello/no productor. 8 nuevos `sí`. |
+| 10 | Miel + Lácteos y quesos | 10 | ✅ | Cerrado 2026-07-02. 9 filas activas: 6 `verificado`, 3 `parcial`, 1 purga (`Apimundi`) y recategorización de `Ambrosio` a `Pan y pastelería`. 5 nuevos `sí`. |
+| 11 | Helados + Cerveza artesana | 11 | ✅ | Cerrado 2026-07-02. 10 filas activas: 8 `verificado`, 2 `parcial`, 1 fusión (`Xhambit` -> `Heladería Valenciana Costa de la Luz / Xhambit`). Sin nuevos `sí`. |
+| 12 | Cierre transversal provincial | 120 | ✅ | Cerrado 2026-07-02. 0 pendientes, evidencia completa, 48 `sí` con canal, 7 fusiones/purgas documentadas, imágenes sin errores y `andalucia/huelva` añadido a `coverage.json`. Se aceptan 2 geo-warnings leves de fincas de Almonte. |
 
 ## Lote 1 - Fruta y verdura Doñana/Moguer/Lucena/Bonares
 
@@ -519,16 +536,138 @@ Decisiones relevantes:
   identidad y localización, pero no fuente propia fuerte de actividad productora
   actual.
 
-## Cierre esperado
+## Lote 8 - Pescado
 
-La primera pasada se considera completa cuando:
+Revisión de 9 filas de pescado, acuicultura, conservas y salazones de Ayamonte,
+Cartaya, Huelva, Isla Cristina y Lepe (2026-07-02).
+
+Resultado: **7 filas activas**, **6 `verificado`**, **1 `parcial`**, **1
+purga** y **1 fusión**. Venta online: **5 `sí`** con canal `ecommerce`. Se
+añaden 9 registros de evidencia (7 `keep` + 1 `merge` + 1 `purge`).
+
+Decisiones relevantes:
+
+- **Purga**: `fripesa-s-a-huelva` se elimina porque la fuente oficial la presenta
+  como comercializadora/distribuidora, no como productor o elaborador.
+- **Fusión**: `tienda-usisa-isla-cristina-isla-cristina` se fusiona en
+  `union-salazonera-islena-s-a-usisa-isla-cristina`; la tienda es un punto de
+  venta de la misma USISA, no un productor separado.
+- **Corrección de municipio**: `pesasur-s-a-huelva` pasa a **Ayamonte**,
+  resolviendo el geo-warning inicial.
+- **Ventas online confirmadas**: Huelvamar/Gambalucía, Conservas Concepción,
+  PESASUR, USISA y Salazones del Terrón.
+- **Parcial conservador**: CAIM queda `parcial` porque la evidencia disponible
+  procede de directorios/Maps y no de una fuente propia pública fuerte.
+- **Recategorizaciones**: acuicultura y alguicultura pasan a
+  `Pescado y acuicultura`; conserveras y salazoneras a `Pescado y conservas`.
+
+## Lote 9 - Bodega + Legumbres
+
+Revisión de 9 filas de bodegas del Condado de Huelva y Garbanzo de Escacena
+(2026-07-02).
+
+Resultado: **8 filas activas**, todas `verificado`, **1 purga** y **8 nuevos
+`sí`** de venta online, todos con canal `ecommerce`. Se añaden 9 registros de
+evidencia (8 `keep` + 1 `purge`).
+
+Decisiones relevantes:
+
+- **Purga**: `garbanzo-de-escacena-igp-escacena-del-campo` se elimina porque
+  representaba el sello/IGP, no un productor. La cooperativa operadora queda en
+  `cooperativa-andaluza-campo-de-tejada-escacena-del-campo`.
+- **Bodegas verificadas con ecommerce**: Andrade, Iglesias, Oliveros, Privilegio
+  del Condado / Vinícola del Condado, Sauci, Infante y Contreras Ruiz.
+- **Legumbre verificada con ecommerce**: Campo de Tejada S.C.A. queda como
+  productor/comercializador de Garbanzo de Escacena IGP con tienda online.
+
+## Lote 10 - Miel + Lácteos y Quesos
+
+Revisión de 10 filas de apicultura, miel y queserías, incluyendo actividades
+educativas vinculadas a abejas (2026-07-02).
+
+Resultado: **9 filas activas**, **6 `verificado`**, **3 `parcial`** y **1
+purga**. Venta online: **5 `sí`**; EscomsMiel queda con
+`ecommerce|whatsapp`, Ambrosio con `whatsapp` y las tres queserías con
+`ecommerce`. Se añaden 10 registros de evidencia (9 `keep` + 1 `purge`).
+
+Decisiones relevantes:
+
+- **Purga**: `apimundi-educacion-ambiental-a-traves-de-las-abejas-cortegana` se
+  elimina porque sus canales oficiales acreditan educación ambiental/conservación
+  de abejas, no producción alimentaria catalogable.
+- **Recategorización**: `ambrosio-huelva` sale de `Miel` y queda en
+  `Pan y pastelería` como `Ambrosio 1985`; las fuentes oficiales lo identifican
+  como obrador/panadería artesanal con pedidos por WhatsApp/teléfono.
+- **Ventas online confirmadas**: EscomsMiel, Ambrosio 1985, Monte Robledo,
+  Quesos Doñana y Quesería Dehesa Dos Hermanas.
+- **Parciales por fuente débil**: Miel Sierra de Aracena / Apifersa, Miel La
+  Encarnación y Elías Moreno Sorni / MF Apicultura.
+- **Verificado sin venta online**: Mieles La Madroña acredita explotación apícola
+  y contacto local, pero no se confirmó canal de compra remota actual.
+
+## Lote 11 - Helados + Cerveza Artesana
+
+Revisión de 11 filas de heladerías con posible elaboración propia y cervezas
+artesanas/brewpubs (2026-07-02).
+
+Resultado: **10 filas activas**, **8 `verificado`**, **2 `parcial`** y **1
+fusión**. No se confirma ningún nuevo `sí` de venta online. Se añaden 11
+registros de evidencia (10 `keep` + 1 `merge`).
+
+Decisiones relevantes:
+
+- **Fusión**: `xhambit-huelva` se fusiona en
+  `heladeria-valenciana-costa-de-la-luz-s-l-huelva`; la fila canónica queda como
+  `Heladería Valenciana Costa de la Luz / Xhambit`.
+- **Heladerías verificadas**: Porto Bello, Pura Vida, Heladería Valenciana /
+  Xhambit, El Artesano y Heladería Vega acreditan elaboración propia o actividad
+  artesana con fuentes propias/sectoriales suficientes.
+- **Parciales por evidencia limitada de obrador**: Caprichos de la Ibense y
+  Heladería La Artesana.
+- **Cervezas verificadas**: Folks Bier, Ruben's Beer / La Ruben's Brewery &
+  Restaurant y Cerveza Odiel acreditan producción cervecera artesana; ninguna
+  pasa a `Venta online=sí`.
+
+## Lote 12 - Cierre Transversal Provincial
+
+Auditoría final de la primera pasada profunda de Huelva (2026-07-02).
+
+Resultado: **provincia cerrada** con **120 filas activas**, **99 `verificado`**,
+**21 `parcial`** y **0 `pendiente`**. Venta online queda en **48 `sí`**, 0 `no`
+y **72 `no comprobado`**. Se añade `andalucia/huelva` a
+`data/evidence/coverage.json` porque el ledger cubre todas las filas actuales y
+las purgas/fusiones heredadas de la revisión.
+
+Comprobaciones de cierre:
+
+- **Evidencia**: 134 registros en `data/evidence/andalucia/huelva.jsonl` (120
+  `keep`, 7 `merge`, 7 `purge`), coherentes con el CSV actual.
+- **Venta online**: los 48 `sí` tienen `Canal de venta`; no quedan canales en
+  filas con `Venta online=no comprobado`.
+- **Deduplicación**: las 7 fusiones quedan documentadas con `targetSlug`; no se
+  detectan duplicados sectoriales pendientes en la primera pasada.
+- **Purgas**: las 7 filas retiradas tienen tombstone con motivo y fuente.
+- **Geo-check**: corregidos los warnings iniciales de `oro-de-ostur-huelva`,
+  `panaderia-la-artesana-del-condado-huelva` y `pesasur-s-a-huelva`. Quedan
+  aceptados 2 warnings leves:
+  `berries-los-mimbrales-s-l-huelva` (16,9 km del centroide de Almonte) y
+  `frutas-borja-sl-huelva` (19,6 km), ambos por coordenadas de finca dentro de la
+  banda warning 15-100 km y por debajo del bloqueo de 100 km.
+- **Imágenes**: las imágenes de filas purgadas/fusionadas se eliminan y el gate
+  de imágenes pasa sin errores ni warnings.
+- **Candidatos nuevos**: no se añaden candidatos durante esta primera pasada; el
+  objetivo era cerrar el snapshot heredado.
+
+## Cierre completado
+
+La primera pasada queda completa porque:
 
 - no queda ninguna fila `pendiente`;
 - cada fila activa tiene evidencia JSONL coherente con `verificacion`, `Venta
   online` y `Canal de venta`;
 - todas las purgas/fusiones tienen tombstone en evidencia;
 - no queda `Canal de venta` en filas sin `Venta online=sí`;
-- los 5 geo-warnings iniciales se han corregido o aceptado con motivo;
+- los geo-warnings iniciales se han corregido o aceptado con motivo;
 - `npx pnpm verify:data` pasa;
-- el ledger refleja el snapshot final y, solo si la cobertura es completa, se
-  decide si añadir `andalucia/huelva` a `data/evidence/coverage.json`.
+- el ledger refleja el snapshot final y `andalucia/huelva` queda en
+  `data/evidence/coverage.json`.
