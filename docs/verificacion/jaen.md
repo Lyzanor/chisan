@@ -126,6 +126,68 @@ Reparto por categoría del snapshot inicial:
     Cabañas, Oleocampo, Bravoleum, Toledano/La Fábrica, Carnes J. Madrid y
     Embutidos Gómez.
 
+## Avance tras lotes 6-11
+
+- Lotes 6-11 cerrados: 2026-07-03.
+- Snapshot tras lotes 6-11: **145 filas**; **118 `verificado`**, **27
+  `parcial`** y **0 `pendiente`**.
+- Venta online tras lotes 6-11: **78 `sí`**, 0 `no` y **67 `no comprobado`**.
+- `Canal de venta`: **78/145 filas informado** y no queda ningún `sí` sin canal.
+- Evidencia tras lotes 6-11: **147 registros JSONL** en
+  `data/evidence/andalucia/jaen.jsonl` (145 `keep` activos + 2 correcciones de
+  slug/identidad).
+- Decisiones clave:
+  - Pan y pastelería: 19/25 filas `verificado`, 6 `parcial`, 7 ventas online
+    resueltas; `pasteleria-pascuala-navas-de-san-juan` queda con
+    `Canal de venta=ecommerce`.
+  - Aperitivos: 13/14 filas `verificado`, 1 `parcial`, 6 ventas online
+    resueltas; se corrige la dirección de `patatas-fritas-el-artesano-de-martos-martos`
+    a Martos.
+  - Lácteos, quesos, miel y chocolates: 10/14 filas `verificado`, 4 `parcial`,
+    6 ventas online resueltas; `artechoc-baeza`, `apisierra-miel-y-chocolates-pozo-alcon`
+    y `chocolivate-sabiote` se recategorizan fuera de `Miel` genérico.
+  - Bodega/bebidas/café: 10/10 filas `verificado`, 7 ventas online resueltas;
+    `vermut-papatan-torreperogil` y `vermut-loa-ubeda` pasan a `Vermut`, y
+    `aguas-sierra-cazorla-villanueva-del-arzobispo` pasa a
+    `Agua mineral natural`.
+  - Conservas/aromáticas/fruta: 9/11 filas `verificado`, 2 `parcial`, 5 ventas
+    online resueltas; `la-mar-sala-jaen` pasa a `Pescado y marisco` y
+    `llano-la-venta-peal-de-becerro` corrige la dirección heredada de Cazorla a
+    Peal de Becerro.
+  - `panaderia-panciencia-segura-de-la-sierra` se corrige a
+    `panaderia-panciencia-genave`; la fuente oficial y la dirección corresponden
+    a Génave. Con ello desaparece su geo-warning.
+  - Se eliminan enlaces no válidos o tomados por contenido ajeno:
+    `panaderiaminutos.es` en La Morenita, `pasteleriaexcelsior.es` en Excelsior
+    y el blogspot heredado de Garrapiñadas Vega.
+  - Queda un único warning de calidad, ya documentado desde el lote 2:
+    `mo-molina-olivares-jaen`.
+
+## Cierre total tras lote 12
+
+- Lote 12 cerrado: 2026-07-03.
+- Snapshot final de la pasada: **145 filas**; **118 `verificado`**, **27
+  `parcial`** y **0 `pendiente`**.
+- Venta online final: **78 `sí`**, 0 `no` y **67 `no comprobado`**. Todas las
+  ventas `sí` tienen `Canal de venta`.
+- Evidencia final: **147 registros JSONL**; 145 `keep` activos y 2 correcciones
+  de slug/identidad (`s-c-a-san-antonio-abad-carcheles` ->
+  `s-c-a-san-antonio-abad-arquillos` y
+  `panaderia-panciencia-segura-de-la-sierra` -> `panaderia-panciencia-genave`).
+- `data/evidence/coverage.json` incluye `andalucia/jaen`: la cobertura de
+  evidencia queda marcada como estricta/advisory para la provincia.
+- Deduplicación final: sin duplicados normalizados `nombre + municipio` ni webs
+  repetidas en Jaén.
+- Calidad final: 0 errores y 1 warning aceptado/documentado:
+  `mo-molina-olivares-jaen`. Degusta Jaén publica `C/ Encinas 34, Jaén` y la
+  ficha institucional mantiene municipio Jaén, pero el enlace Maps heredado cae
+  cerca de Alcaudete y no se encontró geocodificación pública fiable para mover
+  coordenadas. Se normaliza la dirección textual a `C/ Encinas 34` y se conserva
+  el warning hasta tener fuente de localización mejor.
+- Completitud: quedan gaps planificados en `web`, `Venta online` e `imagen`;
+  no bloquean el cierre editorial. Las imágenes siguen a 0/145 por decisión
+  explícita de no enriquecer hasta estabilizar identidad y `slug`.
+
 ## Zonas de Jaén para lotear
 
 - **Sierra Sur y Alcalá**: Alcalá la Real, Alcaudete, Frailes, Noalejo,
@@ -153,10 +215,10 @@ Reparto por categoría del snapshot inicial:
    `parcial`, pero solo una fila tiene evidencia JSONL. Cuando llegue su lote,
    cada una debe quedar con evidencia `keep`, mantenerse/ajustarse o degradarse si
    la fuente no sostiene identidad, actividad productora y municipio.
-2. **Resolver los 3 `sí` heredados.** `los-tres-manantiales-marmolejo` ya tiene
-   canal y evidencia, pero puede revalidarse en Aceite III. `La Abuela Laura` y
-   `Pastelería Pascuala` no pueden seguir como `sí` sin `Canal de venta`: confirmar
-   canal vigente o volver a `no comprobado`.
+2. **No admitir `sí` sin canal.** Los 3 `sí` heredados ya están resueltos:
+   `los-tres-manantiales-marmolejo`, `embutidos-artesanos-la-abuela-laura-frailes`
+   y `pasteleria-pascuala-navas-de-san-juan` tienen evidencia y `Canal de venta`.
+   En el cierre final, cualquier nuevo `sí` debe entrar con canal demostrado.
 3. **Aceite domina la provincia.** Entran almazaras, cooperativas con actividad
    oleícola real, fincas/productores con elaboración propia o marcas ligadas a
    molino. Distinguir de envasador, comercializadora, distribuidor, marca blanca o
@@ -185,11 +247,12 @@ Reparto por categoría del snapshot inicial:
 10. **Miel, chocolate y aromáticas requieren productor real.** Confirmar apicultor
     con colmenas propias, elaborador de chocolate/confitería, cultivo/envasado de
     aromáticas o actividad agrícola propia; no basta un comercio gourmet.
-11. **Resolver los dos geo-warnings en su lote.** Si la coordenada apunta a un
-    municipio real distinto, corregir `municipio`; si es un caso de centroide,
-    documentarlo o añadir override. No mover coordenadas a ojo.
+11. **Geo-warnings.** `panaderia-panciencia-genave` quedó corregida a Génave.
+    El único warning activo es `mo-molina-olivares-jaen`, ya documentado; si el
+    cierre final localiza geocodificación exacta, corregir con fuente, no a ojo.
 12. **No añadir candidatos nuevos durante esta pasada** salvo decisión explícita.
-    Primero cerrar las 145 filas heredadas, evidencia y deduplicación.
+    Primero cerrar las 145 filas heredadas, evidencia, deduplicación y preparación
+    de imágenes.
 
 ## Fuentes de cotejo iniciales
 
@@ -262,13 +325,13 @@ lote**, no el resultado; se actualizan al cerrar cada lote.
 | 3 | Aceite III | Resto de `Aceite` | 15 | 0 | 1 | 14 | 12 | Hecho | Cerrado el 2026-07-03: `senorio-de-las-almenas-ubeda` queda `parcial`; `los-tres-manantiales-marmolejo` revalidado; 0 purgas. |
 | 4 | Charcutería I | Primeras 14 filas de `Charcutería` | 14 | 0 | 5 | 9 | 7 | Hecho | Cerrado el 2026-07-03: La Abuela Laura queda `sí` vía `marketplace`; carnicerías sin fuente fuerte quedan `parcial`; 0 purgas. |
 | 5 | Charcutería II | Resto de `Charcutería` congelado al inicio | 14 | 0 | 8 | 6 | 5 | Hecho | Cerrado el 2026-07-03: San Marcos recategorizado a `Fruta y verdura`; carnicerías sin fuente fuerte quedan `parcial`; 0 purgas. |
-| 6 | Pan y pastelería I | Primeras 13 filas de `Pan y pastelería` | 13 | 13 | 0 | 0 | 0 | Pendiente | Jaén capital, Guarromán, Jódar y Linares inicial; obrador vs despacho. |
-| 7 | Pan y pastelería II | Resto de `Pan y pastelería` | 12 | 12 | 0 | 0 | 1 | Pendiente | Resolver `pasteleria-pascuala-navas-de-san-juan` (`sí` sin canal) y `panaderia-panciencia-segura-de-la-sierra` geo-warning. |
-| 8 | Aperitivos | `Aperitivos` | 14 | 14 | 0 | 0 | 0 | Pendiente | Patatas, aceitunas, pistachos, snacks y garrapiñadas; triaje de industria/grupo vs productor local. |
-| 9 | Lácteos, quesos y miel | `Lácteos y quesos`, `Miel` | 14 | 6 | 2 | 6 | 0 | Pendiente | Reauditar todos los no pendientes; revisar `Heladería Lalola`, `Artechoc` y `Chocolivate` por posible recategorización. |
-| 10 | Bodega, cerveza y café | `Bodega`, `Cerveza artesana`, `Café` | 10 | 10 | 0 | 0 | 0 | Pendiente | Bodegas, vermuts, cerveza, café y `Aguas Sierra Cazorla`; recategorizar cuando el producto real no sea bodega. |
-| 11 | Conservas, aromáticas y fruta | `Conservas`, `Aromáticas y condimentos`, `Fruta y verdura` | 11 | 10 | 1 | 0 | 0 | Pendiente | Gazpacho, aceitunas/conservas, stevia, aromáticas, ajo, hortícola y San Marcos; confirmar productor/elaborador real. |
-| 12 | Cierre transversal provincial | Todas | 145 | 65 | 17 | 63 | 48 | Pendiente | 0 pendientes; evidencia completa; ventas online con canal; dedup; geo; imágenes preparadas para fase posterior; decidir `coverage.json`. |
+| 6 | Pan y pastelería I | Primeras 13 filas de `Pan y pastelería` | 13 | 0 | 3 | 10 | 4 | Hecho | Cerrado el 2026-07-03: recategorizadas La Cremería (`Helados`), Salinas Don Diego (`Sal`) y Churro Fácil (`Churrería`); La Morenita y Barranco quedan `parcial`; 0 purgas. |
+| 7 | Pan y pastelería II | Resto de `Pan y pastelería` | 12 | 0 | 3 | 9 | 3 | Hecho | Cerrado el 2026-07-03: Pascuala queda `sí` con `ecommerce`; Panciencia se corrige a Génave; Excelsior pierde web comprometida; 0 purgas. |
+| 8 | Aperitivos | `Aperitivos` | 14 | 0 | 1 | 13 | 6 | Hecho | Cerrado el 2026-07-03: Santo Reino validado como fábrica jiennense de Grupo Apex; El Artesano corrige dirección a Martos; Supli queda `parcial`; 0 purgas. |
+| 9 | Lácteos, quesos y miel | `Lácteos y quesos`, `Miel` | 14 | 0 | 4 | 10 | 6 | Hecho | Cerrado el 2026-07-03: Lalola pasa a `Helados`; Artechoc a `Chocolate y dulces`; Apisierra/Chocolivate a `Miel y chocolates`; 0 purgas. |
+| 10 | Bodega, cerveza y café | `Bodega`, `Cerveza artesana`, `Café` | 10 | 0 | 0 | 10 | 7 | Hecho | Cerrado el 2026-07-03: Papatán y LOA pasan a `Vermut`; Aguas Sierra Cazorla pasa a `Agua mineral natural`; 0 purgas. |
+| 11 | Conservas, aromáticas y fruta | `Conservas`, `Aromáticas y condimentos`, `Fruta y verdura` | 11 | 0 | 2 | 9 | 5 | Hecho | Cerrado el 2026-07-03: La Mar Salá pasa a `Pescado y marisco`; Llano la Venta corrige dirección a Peal; San Marcos se mantiene `parcial`; 0 purgas. |
+| 12 | Cierre transversal provincial | Todas | 145 | 0 | 27 | 118 | 78 | Hecho | Cerrado el 2026-07-03: 0 pendientes, cobertura de evidencia estricta, deduplicación limpia, único warning aceptado (`mo-molina-olivares-jaen`) e imágenes pospuestas para fase posterior. |
 
 ## Flujo por lote
 
@@ -349,9 +412,9 @@ lote**, no el resultado; se actualizan al cerrar cada lote.
 - No quedan duplicados aparentes sin decisión explícita.
 - Las imágenes se enriquecen solo después de estabilizar identidad y `slug`.
 - `npx pnpm verify:data` pasa antes del cierre provincial.
-- Cuando las 145 filas iniciales queden cerradas y la evidencia cubra filas
-  activas, purgas y fusiones, decidir si añadir `andalucia/jaen` a
-  `data/evidence/coverage.json` en el mismo cambio.
+- Las 145 filas iniciales quedan cerradas y la evidencia cubre filas activas,
+  purgas y fusiones; `andalucia/jaen` queda añadido a
+  `data/evidence/coverage.json`.
 
 ## Decisiones que deben quedar especialmente anotadas
 
