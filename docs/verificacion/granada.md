@@ -82,6 +82,17 @@ necesitas releer el manual entero por lote.
   cerrados; 16 recategorizaciones sacaron el ruido del cajón «Bodega» (Licores 8,
   Bebidas 2, Hidromiel 1, Mostos y zumos 1, Conservas +1, Despensa +1, Fruta +1) y
   Cerveza artesana sube a 6 (Selva-GR).
+- Tras lotes 6-14 / Charcutería + Fruta y verdura + Pan + Lácteos + Aperitivos
+  (2026-07-02): **267 filas** (−7 en estos lotes: 6 purgas + 0; total provincial 10
+  purgas + 1 merge). **200 `verificado`, 23 `parcial`, 44 `pendiente`**. Venta
+  online: **121 `sí`, 0 `no`, 146 `no comprobado`**; 120/121 `sí` con canal (falta
+  solo Segral). Evidencia: **225 registros** (214 keep, 10 purge, 1 merge). Sectores
+  cerrados: Charcutería (6-7), Fruta y verdura (8-9), Pan y pastelería (10-11),
+  Lácteos y quesos (12-13). Lote 14 (Aperitivos+Chocolate) **parcial 9/18** (los 9
+  restantes bloqueados por límite temporal de la API web; se retoman tras el reset).
+  Nuevas categorías creadas al recategorizar el ruido del volcado: **Pescado**
+  (Cobasal, Leivamar), **Carnes** (El Moralejo, Cárnicas Luján, Cosegur), **Helados**
+  (×4) y **Huevos** (Jabalcón, Aviguardal, Ecotemple).
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 278 filas
   heredadas (incluidos los 51 `parcial`) antes de añadir candidatos nuevos.
 
@@ -276,15 +287,11 @@ lote**, no el resultado; se actualizan al cerrar cada lote (como en `cadiz.md`).
 | 3 | Aceite · Vega + Alpujarra/Lecrín + Alhama + Costa + Altiplano | 20 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 3». **1 purga** (FIRMVM = restaurante). 19 activas: 17 `verificado` + 2 `parcial` (B.olivar, Calanté); 14 `sí`/ecommerce. Municipio «Costa»→Almuñécar (Tropicual); webs Sulayr/Cortijo Los Almendros corregidas, basura «http://.» fuera. |
 | 4 | Bodega · Vega/Temple/Lecrín + Guadix/Marquesado | 22 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 4». **1 purga** (Alquería de los Lentos = hotel rural). 21 activas: 20 `verificado` + 1 `parcial` (Caballo, web aparcada); 14 `sí`/ecommerce. **10 recategorizaciones** (5 Licores, Víver→Despensa, Espadafor+Retornable→Bebidas, Juan Ranas→Conservas, Granadajuice→Mostos y zumos). Municipios: Ginevia→Alhama de Granada, Liber Lecrin→Padul, Señorío de Nevada Cónchar→Villamena. |
 | 5 | Bodega · Altiplano + Contraviesa-Alpujarra + Costa | 22 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 5». 0 purgas: 20 `verificado` + 2 `parcial` (Grupo Collados = hotel-restaurante sin producción confirmada; Los Barrancos sin fuente propia); 14 `sí`/ecommerce. **6 recategorizaciones** (El Mondero+Ron Montero+Rosas→Licores, La Runa→Hidromiel, Frutas Los Cursos→Fruta y verdura con su `sí` heredado resuelto, Selva-GR→Cerveza artesana con web añadida). |
-| 6 | Charcutería · IGP Jamón de Trevélez + Alpujarra/Lecrín | 17 | ⬜ | Secaderos de Trevélez; secadero vs carnicería-despacho. |
-| 7 | Charcutería · Vega + Poniente + Altiplano (Cordero Segureño) + Guadix | 16 | ⬜ | Embutido del Altiplano; obrador con curado propio. |
-| 8 | Fruta y verdura · Costa Tropical (DOP Chirimoya, aguacate, mango) | 15 | ⬜ | Productor/coop vs manipulador-exportador B2B. |
-| 9 | Fruta y verdura · Vega + IGP Espárrago Huétor-Tájar + Altiplano legumbres | 14 | ⬜ | Espárrago IGP; legumbres del Altiplano. |
-| 10 | Pan y pastelería · IGP Pan de Alfacar + Vega + piononos de Santa Fe | 15 | ⬜ | 9 filas de Alfacar (IGP); obrador con horno propio. |
-| 11 | Pan y pastelería · Alpujarra + Costa + Poniente + Altiplano + Guadix | 13 | ⬜ | Obradores de comarca; despacho vs obrador. |
-| 12 | Lácteos y quesos · Alpujarra + Costa + Vega + Lecrín | 13 | ⬜ | Cabra de la Alpujarra; leche propia vs marca. |
-| 13 | Lácteos y quesos · Poniente (Montefrío) + Montes + Altiplano + Guadix | 13 | ⬜ | Queso de Montefrío; quesería con ganadería propia. |
-| 14 | Aperitivos + Chocolate | 18 | ⬜ | Frutos secos (almendra/pistacho), tostaderos; elaborador vs B2B. |
+| 6-7 | Charcutería (Trevélez IGP + Altiplano Segureño) | 33 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 6-7». **2 purgas** (Tu Jamón al Corte = cortador de eventos; Jamones Nicolás = en liquidación + dominio secuestrado). 31 activas: 29 verif + 2 parcial (Mariscal, El Zalandro); 22 `sí`/eco. Recat Cobasal→Pescado. Municipio Zurita Juncaril→Albolote; webs Puente Viejo/Al-Andaluzza. |
+| 8-9 | Fruta y verdura (Costa DOP Chirimoya + Vega/Altiplano IGP Espárrago) | 30 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 8-9». **3 purgas** (Agrologística Alborán en liquidación, OPP pesquera, Llano Fresh Trade = trader sin fincas). 26 activas: 24 verif + 2 parcial (Adania, COVECOL); 9 `sí`. **5 recats** (Leivamar→Pescado; El Moralejo/Cárnicas Luján/Cosegur→Carnes; El Chango→Charcutería). Municipios Costa→Los Guájares, Vega→Valderrubio, Loja→Huétor Tájar. Web Los Fresnos (casino) fuera. |
+| 10-11 | Pan y pastelería (IGP Pan de Alfacar + comarcas) | 28 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 10-11». **1 purga** (Grupo Abades = hostelería/áreas de servicio). 27 activas todas verif; 5 `sí`/eco. Rey Fernando (piononos Santa Fe) llega en L12-13 (estaba en Lácteos). 5 obradores IGP de Alfacar sin web promovidos por registro IGP. Municipio Magda→Padul; webs Bonachera/Artesa fuera. |
+| 12-13 | Lácteos y quesos (cabra Alpujarra + Montefrío) | 26 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 12-13». **1 purga** (Puleva = industria Lactalis). 25 activas todas verif; 10 `sí`/eco. **8 recats** (4 helados→Helados; Rey Fernando→Pan; Jabalcón/Aviguardal/Ecotemple→Huevos). Municipio Aserradero Salar→Alhama de Granada, Jabalcón→Benamaurel; webs Montefrieño/Jabalcón/Aviguardal fuera. |
+| 14 | Aperitivos + Chocolate | 18 | 🟨 | **Parcial 9/18** (2026-07-02). 9 cerradas: 7 verif (Pistachos Luna, Almendras Alhambra, Peñagallo, EYMA, La Cometa, Chocolates Sierra Nevada, Almendras Donaire) + 2 parcial (Bioartesa mayorista eco, Swiss Agro filial suiza B2B); 6 `sí`/eco. Municipio Donaire Alhama→Escúzar. **9 pendientes** por límite de API web: Patatas La Rivera, El Elefante Rosa, Conservas Toro López (aceitunas), Tapia, Higuera Alpujarreña (higos), Dr. Salsas, Tostaderos Sol de Alba, SAT Pistalgra, Chocolates Abuela Ili. |
 | 15 | Miel + Conservas | 21 | ⬜ | Miel de Granada; apicultor con colmenas propias. |
 | 16 | Despensa artesanal + Comida preparada + Cerveza artesana | 23 | ⬜ | Cajón heterogéneo; `segral-cerveza`→resolver `sí`. |
 | 17 | Cierre transversal provincial | 278 | ⬜ | 0 pendientes; canal en todos los `sí`; evidencia completa; geo/dedup; `coverage.json`. |
@@ -580,3 +587,130 @@ Snapshot tras lotes 2-5 (sectores Aceite y Bodega cerrados):
   Bodega 27, Lácteos 26, Aperitivos 16, Miel 13, Despensa 11, Conservas 9,
   Licores 8, Comida preparada 8, Cerveza artesana 6, Bebidas 2, Chocolate 2,
   Mostos y zumos 1, Hidromiel 1
+
+## Lote 6-7 — Charcutería (IGP Jamón de Trevélez + Cordero Segureño del Altiplano)
+
+Revisión de las 33 fichas de `Charcutería` (2026-07-02). Resultado: **31 filas
+activas** (2 purgas), **29 `verificado`, 2 `parcial`**; venta online **22 `sí`
+(ecommerce), 0 `no`, 7 `no comprobado`**. +33 registros (31 keep, 2 purge).
+
+- **Núcleo IGP Jamón de Trevélez / Alpujarra** (secaderos de altura, todos
+  `verificado`): Nevadensis, Puente Viejo (web lasoleratrevelez.com→jamonespuenteviejo.es),
+  Vallejo (Mejor Serrano de España 2018), Antonio Álvarez (Tienda Maruja), Juviles
+  (>10.000 m² de secaderos, eco), Diego Martín (Pórtugos), Muñoz (Yegen), Jamonzar
+  (Dúrcal, granja propia), Casa Rosendo (Capileira), El Mirador (Güéjar Sierra),
+  Granadul (Guadix). Casi todos con tienda propia (`sí`); El Mirador, Granadul y
+  Casa Rosendo `no comprobado` (sin e-commerce propio / reventa por terceros).
+- **Altiplano / Cordero Segureño y embutido**: Familia Piernas, Doña Carmen (1940),
+  Quesada Carpio y Granadinos (Baza/Caniles), Pili y Manolo, Entre-Sierras (halal),
+  La Sagra, Al-Andaluzza (embutido halal de ternera), Carnicería Molina, Loli.
+- **Purga (not-producer)**: `tu-jamon-al-corte-maracena` (servicio de corte de jamón
+  para eventos + reventa de terceros, no elabora).
+- **Purga (closed)**: `jamones-nicolas-s-l-gojar` (secadero histórico **en
+  liquidación** según registro; su dominio sirve contenido pornográfico — secuestrado,
+  patrón Destraperlo).
+- **Recategorización**: `salazones-cobasal-s-l-baza` (sardina en salazón/ahumados) →
+  **Pescado**.
+- **`parcial`**: Mariscal Delicatessen (web «en construcción», perfil de tienda
+  delicatessen sin producción propia) y El Zalandro (Puebla de Don Fadrique; sin
+  rastro como productor, web muerta → eliminada).
+- **Municipio**: Cárnicas Zurita «Juncaril» (polígono)→Albolote. Webs: Al-Andaluzza
+  añadida; Puente Viejo corregida.
+
+## Lote 8-9 — Fruta y verdura (Costa Tropical + Vega/Altiplano)
+
+Revisión de las 30 fichas de `Fruta y verdura` (2026-07-02). Resultado: **26 filas
+activas** (3 purgas + 1 ya cerrada en L5), **24 `verificado`, 2 `parcial`**; venta
+online **9 `sí`, 0 `no`, 17 `no comprobado`**. +29 registros (26 keep, 3 purge).
+
+- **Costa Tropical (chirimoya DOP, aguacate, mango)**: Villa Frutas Tropicales,
+  Finca El Pinero, Ecoaguacates, Agrojete, El Grupo S.C.A., Frutas Fajardo, Bio
+  Procam (coop eco, tienda procam.bio), Finca del Edén, Arraigo (Los Guájares). Los
+  con finca propia + tienda → `sí`; coops/manipuladores B2B → `no comprobado`.
+- **Vega + IGP Espárrago de Huétor-Tájar + Altiplano**: Los Fresnos, Los Gallombares
+  (líder europeo del espárrago verde), COSAFRA, Neparola, Neva Ajos, Nude Fruit
+  Lovers, Hortoventas (SAT), Benafru (mayor melocotón eco de España), Maitena del
+  Genil (cereza), Las Torcas. Predominan coops/SAT B2B → `verificado`/`no comprobado`.
+- **Purga (closed)**: Agrologística Alborán (comercializadora **en liquidación**).
+- **Purga (not-producer)**: OPP de Productores Pesqueros de Motril (entidad asociativa
+  pesquera, no productor).
+- **Purga (out-of-scope)**: Llano Fresh Trade (trader/exportador sin fincas propias).
+- **Recategorizaciones**: Leivamar (pescado con barco propio)→**Pescado**; El Moralejo
+  (ternera eco) y Cárnicas Luján (pajuna de Sierra Nevada)→**Carnes**; Cosegur (coop
+  de Cordero Segureño IGP)→**Carnes**; Carnicería El Chango (embutido propio)→**Charcutería**.
+- **`parcial`**: Adania Fruit (e-commerce sin confirmar finca propia) y COVECOL (coop
+  citada, web ajena acrol.com → eliminada).
+- **Municipios**: Arraigo «Guájar-Fondón»→Los Guájares; Neva Ajos «Vega»→Valderrubio;
+  COSAFRA Loja→Huétor Tájar. Web Los Fresnos (dominio secuestrado con spam de casino)
+  eliminada.
+
+## Lote 10-11 — Pan y pastelería (IGP Pan de Alfacar + comarcas)
+
+Revisión de las 28 fichas de `Pan y pastelería` (2026-07-02). Resultado: **27 filas
+activas** (1 purga), **27 `verificado`, 0 `parcial`**; venta online **5 `sí`
+(ecommerce), 0 `no`, 22 `no comprobado`**. +28 registros (27 keep, 1 purge).
+
+- **IGP Pan de Alfacar** (obradores de Alfacar/Víznar; masa madre, agua de la fuente,
+  horno de solera): San Juan (1910, distribuidor), Eduardo Vílchez, Enrique Fernández,
+  Horno de Gabriel, Geni, Diego Fernández e Hijos, Zarina (obrador + academia). Los 5
+  sin web se promueven por el registro del consejo regulador IGP + ficha Maps.
+- **Obradores de comarca (`verificado`)**: Pan de mi Pueblo (Dílar, tienda), La Tarta
+  de la Madre de Cris (tartas de queso, tienda), La Gracia de Dios (1920, CAAE), Horno
+  del Progreso (1987), Soto (Guadix), La Victoria y El Campillero (Huéscar), Flor de
+  Vainilla (galletas de diseño), Balada, Al-Andalus Delicatessen (Lanjarón), Bonachera
+  y Repostería Lojeña (Roscos de Loja, ambos obradores autorizados), Panadería Molino
+  (Motril), Maritoñi (Ogíjares, tienda), Miguel el Dulcero (Válor, turrón, tienda),
+  Gerardo (Órgiva, CAAE), Manolín (Alhama), Peinado (Chauchina), Magda Sweet Cakes,
+  Artesa Food (Baza).
+- **`sí`/ecommerce**: Pan de mi Pueblo, La Tarta de la Madre de Cris, Repostería
+  Lojeña, Maritoñi, Miguel el Dulcero.
+- **Purga (not-producer)**: Grupo Abades (grupo de hostelería/áreas de servicio, no
+  obrador).
+- **Municipio**: Magda Sweet Cakes Granada→Padul; La Victoria «Huescar»→Huéscar. Webs:
+  Bonachera (era un email)→roscosdeloja.com; Artesa Food (dominio muerto) eliminada.
+
+## Lote 12-13 — Lácteos y quesos (cabra de la Alpujarra + Montefrío)
+
+Revisión de las 26 fichas de `Lácteos y quesos` (2026-07-02). Resultado: **25 filas
+activas** (1 purga), **25 `verificado`, 0 `parcial`**; venta online **10 `sí`
+(ecommerce), 0 `no`, 15 `no comprobado`**. +26 registros (25 keep, 1 purge). Fuerte
+recategorización: el cajón mezclaba queserías con heladerías y granjas de huevos.
+
+- **Queserías de cabra/oveja (17)**: Júrtiga (1.400 cabras propias), Vico, Los
+  Pastoreros (coop, vaca), Granja Maravillas (vaquería propia), De Leyva (finca
+  propia), Collados, La Vieja Buchaca (eco), La Peza, Las RRR (7 Super-Gold WCA), Los
+  Teatinos, Maíta, Cortijo El Aserradero, Montefrieño (Montes Occidentales), Quesería
+  Motril (La Montejaqueña), Casa GonAy, La Cueva del Torilejo (cueva, leche cruda),
+  Venta del Chaleco. Con tienda propia → `sí`; sin e-commerce/reventa → `no comprobado`.
+- **Recategorización → Helados**: Helados Granada, Nordwik, La Perla (1932),
+  IberGelato (municipio «Vega»→Atarfe). Todas fabricación propia; sin e-commerce.
+- **Recategorización → Pan y pastelería**: Rey Fernando (Santa Fe) — obrador de
+  **piononos de Santa Fe** con tienda propia (pionono.eu), `sí`/ecommerce.
+- **Recategorización → Huevos**: Granja Jabalcón (huevos de oca; municipio «Cuevas del
+  Barranco»→Benamaurel; dominio caducado/en venta eliminado), Aviguardal (huevos eco;
+  web muerta eliminada), Ecotemple (huevos eco, no queso).
+- **Purga (out-of-scope)**: Puleva (industria láctea del grupo Lactalis).
+- **Municipio/web**: Aserradero Salar→Alhama de Granada; Montefrieño (ficha ajena
+  gff.co.uk)→quesomontefrieno.es.
+
+## Lote 14 — Aperitivos + Chocolate (PARCIAL 9/18)
+
+Revisión parcial (2026-07-02): 9 de 18 fichas cerradas; las 9 restantes quedan
+`pendiente` por agotarse el límite temporal de la API de búsqueda/fetch web (se
+retoman tras el reset). Resultado de las 9: **7 `verificado`, 2 `parcial`**; venta
+online **6 `sí` (ecommerce), 3 `no comprobado`**. +9 registros keep.
+
+- **`verificado`/`sí` (elaborador con tienda propia)**: Pistachos Luna (Baza,
+  producción propia, Shopify), Almendras Alhambra (coop 1980, ~1.095 socios),
+  Peñagallo (patatas fritas de Dúrcal, 1988), Frutos Secos EYMA (Gójar) y La Cometa
+  (Huéscar), Chocolates Sierra Nevada (Pitres, obrador).
+- **`verificado`/`no comprobado`**: Almendras Donaire (elaborador de almendra ibérica;
+  municipio Alhama→**Escúzar**, CITAI; sin tienda, B2B).
+- **`parcial`**: Bioartesa (Castilléjar; comercio mayorista de eco de terceros, sin
+  confirmar elaboración propia) y Swiss Agro (filial del grupo suizo Swiss Gourmet,
+  pistacho B2B sin venta directa). Ambas a revisar/definir alcance en el cierre.
+- **Pendientes (9, siguiente pasada)**: Patatas La Rivera (Baza), El Elefante Rosa
+  (Guadix), Conservas Toro López / Aceitunas Vega Toro (Huétor Tájar, probable recat
+  a Aceitunas/Conservas), Tapia (Lecrín), Higuera Alpujarreña (higos secos, Motril),
+  Dr. Salsas (Ogíjares), Tostaderos Sol de Alba (Peligros), SAT Pistalgra (Benamaurel,
+  pistacho, sin web), Chocolates Abuela Ili (Pampaneira).
