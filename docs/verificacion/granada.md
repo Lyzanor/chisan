@@ -304,11 +304,9 @@ lote**, no el resultado; se actualizan al cerrar cada lote (como en `cadiz.md`).
 | 10-11 | Pan y pastelería (IGP Pan de Alfacar + comarcas) | 28 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 10-11». **1 purga** (Grupo Abades = hostelería/áreas de servicio). 27 activas todas verif; 5 `sí`/eco. Rey Fernando (piononos Santa Fe) llega en L12-13 (estaba en Lácteos). 5 obradores IGP de Alfacar sin web promovidos por registro IGP. Municipio Magda→Padul; webs Bonachera/Artesa fuera. |
 | 12-13 | Lácteos y quesos (cabra Alpujarra + Montefrío) | 26 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 12-13». **1 purga** (Puleva = industria Lactalis). 25 activas todas verif; 10 `sí`/eco. **8 recats** (4 helados→Helados; Rey Fernando→Pan; Jabalcón/Aviguardal/Ecotemple→Huevos). Municipio Aserradero Salar→Alhama de Granada, Jabalcón→Benamaurel; webs Montefrieño/Jabalcón/Aviguardal fuera. |
 | 14 | Aperitivos + Chocolate | 18 | ✅ | Cerrado 2026-07-02 (parte 2ª tras reset). 0 purgas; 16 verif + 2 parcial (Bioartesa mayorista eco, Swiss Agro filial suiza B2B); 9 `sí`/eco. Recat Conservas Toro López→Aceitunas y encurtidos. Municipio Donaire→Escúzar; webs Patatas La Rivera (muerta) fuera, Sol de Alba typo. |
-| 15 | Miel + Conservas | 21 | 🟨 | Cerrado salvo 3 (2026-07-02). Miel: apicultores con colmenas propias (Arana, Garciolo, El Purche, Apivera, El Abuelo Rafael, Finca La Patrona, Apipadul whatsapp) + **recats** (Rufino→Conservas, Loma y Vega/Cruz del Viso→Mermeladas, Valle y Vega→Fruta y verdura). Conservas: Riofrío Caviar→Pescado, Granada La Palma→Fruta y verdura, La Frubense/Centro Sur/La Pauleña. **Pend.: jomail, dekum, mieleria-la-duquesa.** |
-| 16 | Despensa + Comida preparada + Cerveza | 23 | 🟨 | Cerrado salvo 6 (2026-07-02). Cafés (La Malicia, Sol y Crema), té (Granada Tea), azafrán (Oasis), churros (KingChurro), croquetas (Mi Croqueta, Olé Mis Croquetas), cerveceras (Segral resuelto, San Torcuato, Portolobo, Albayzinera). **Fusión** Salsas Sierra Nevada→Dr. Salsas. **Recats** Ruca→Especias, Eduardo Sanz→Fruta y verdura. Mariscos Apolo→parcial. **Pend.: granada-beer, deshidratados-isa-rus, zenesur, el-hesillero, veggins, churros-guillen.** |
-| 15 | Miel + Conservas | 21 | ⬜ | Miel de Granada; apicultor con colmenas propias. |
-| 16 | Despensa artesanal + Comida preparada + Cerveza artesana | 23 | ⬜ | Cajón heterogéneo; `segral-cerveza`→resolver `sí`. |
-| 17 | Cierre transversal provincial | 278 | ⬜ | 0 pendientes; canal en todos los `sí`; evidencia completa; geo/dedup; `coverage.json`. |
+| 15 | Miel + Conservas | 21 | ✅ | Cerrado 2026-07-02/03. Miel: apicultores con colmenas propias (Arana, Garciolo, El Purche, Apivera, El Abuelo Rafael, Finca La Patrona, Apipadul whatsapp, La Duquesa) + **recats** (Rufino→Conservas, Loma y Vega/Cruz del Viso→Mermeladas, Valle y Vega→Fruta y verdura). Conservas: Riofrío Caviar→Pescado, Granada La Palma→Fruta y verdura, La Frubense/Centro Sur/La Pauleña/Jomail. Dekum→parcial (sin rastro). |
+| 16 | Despensa + Comida preparada + Cerveza | 23 | ✅ | Cerrado 2026-07-02/03. Cafés (La Malicia, Sol y Crema), té (Granada Tea), azafrán (Oasis), churros (KingChurro/Guillén), croquetas (Mi Croqueta, Olé Mis Croquetas), veganos (Veggins), moringa (El Hesillero), cerveceras (Segral resuelto, San Torcuato, Portolobo, Albayzinera, Granada Beer). **Fusión** Salsas Sierra Nevada→Dr. Salsas. **Recats** Ruca/Zenesur→Especias, Eduardo Sanz→Fruta y verdura. Mariscos Apolo→parcial. |
+| 17 | Cierre transversal provincial | 266 | ✅ | Cerrado 2026-07-03. Detalle en «Lote 17». 9 pendientes resueltas (8 verif + Dekum parcial); 0 pendientes; 154/154 `sí` con canal; evidencia 266/266; geo/dedup OK; **`andalucia/granada` en coverage.json**. |
 
 Reparto por categoría (snapshot inicial, para cuadrar los lotes): Aceite 56
 (lotes 1–3), Bodega 44 (4–5), Charcutería 33 (6–7), Fruta y verdura 29 (8–9),
@@ -795,3 +793,50 @@ Snapshot tras lotes 15-16 (+ flecos del 14):
 - Verificación: 242 verificado, 15 parcial, 9 pendiente
 - Venta online: 153 sí (153/153 con canal), 0 no, 113 no comprobado
 - Evidencia Granada: 269 registros JSONL (257 keep, 10 purge, 2 merge)
+
+## Lote 17 — Cierre transversal provincial
+
+Auditoría transversal final (2026-07-03). Cierra la primera pasada de Granada de
+extremo a extremo: **266 filas, 250 `verificado`, 16 `parcial`, 0 `pendiente`**; VO
+**154 `sí` (154/154 con `Canal de venta`), 0 `no`, 112 `no comprobado`**; evidencia
+**278 registros** que cubren las **266/266** filas activas (+10 `purge`, 2 `merge`).
+
+- **9 pendientes resueltas** (webs muertas / búsqueda tras reset): **verificado** →
+  Granada Beer Company (web→apex), Deshidratados Isa Rus (web añadida), Zenesur
+  Iberia (recat→Especias), El Hesillero (moringa), Jomail 1973 (caracoles, recat
+  →Comida preparada), Veggins (comida vegetal), Churros Guillén (churros
+  congelados), Mielería La Duquesa (miel trashumante, web→propia, `sí`); **parcial**
+  → Dekum (sin rastro digital como productor; candidato a purga).
+- **Geo**: `check:csv` sin errores bloqueantes ni saltos >100 km.
+- **Dedup**: único identificador compartido = teléfono +34958340615 entre Neparola
+  S.L. y Neva Ajos S.L. (dos S.L. de ajo/espárrago de Valderrubio con oficina común);
+  se mantienen ambas como entidades hermanas. Las webs `instagram.com` compartidas
+  son cuentas distintas (falso positivo). Merges ya aplicados: OMED Venchipa→O-Med;
+  Salsas y Especias Sierra Nevada→Doctor Salsas.
+- **Imágenes**: `check:images` sin errores ni refs rotas; 81/266 con `imagen`
+  pendiente (tarea opcional futura; el scorer de `enrich:images` requiere revisión
+  por slug).
+- **`coverage.json`**: añadida `andalucia/granada` a `strictProvinces` (cobertura
+  orgánica 266/266, `check:evidence` 0 issues).
+
+Residuales conocidos (no bloquean; para 2ª pasada):
+
+- **16 `parcial`** con motivo documentado, varios candidatos a purga: Grupo Collados
+  (hotel-restaurante), Mariscos Apolo (distribuidor con cocedero), Mariscal
+  Delicatessen (tienda gourmet), B.olivar, Campo de Aviación, El Zalandro, Dekum
+  (sin rastro), COVECOL, Bioartesa (mayorista eco), Swiss Agro (filial suiza B2B),
+  Adania Fruit (e-commerce sin finca confirmada); y `parcial` de fuente propia débil:
+  Salvoreta, Calanté, Molino de Carrilla, Bodegas Caballo, Los Barrancos.
+- **81 filas sin `imagen`**.
+- **`Venta online=no comprobado` en 112 filas**: productores reales sin tienda
+  propia (venta presencial, B2B, cooperativas exportadoras o reventa por terceros);
+  revisable si abren canal propio.
+
+**Resumen de la pasada.** De 278 filas iniciales (0 verificado) a **266 activas con
+250 verificado / 16 parcial / 0 pendiente**. **10 purgas** (industriales/no
+productores: IFFCO, Puleva, Grupo Abades, Jamones Nicolás —en liquidación—, FIRMVM,
+Alquería de los Lentos, Agrologística Alborán, OPP pesquera de Motril, Llano Fresh
+Trade, Restaurante FIRMVM) + **2 merges** (OMED, Salsas Sierra Nevada). El grueso
+del trabajo fue **limpiar el ruido de categorías del volcado**, que creó nuevas
+categorías en la provincia: **Pescado, Carnes, Helados, Huevos, Aceitunas y
+encurtidos, Mermeladas, Especias, Bebidas, Licores, Hidromiel, Mostos y zumos**.
