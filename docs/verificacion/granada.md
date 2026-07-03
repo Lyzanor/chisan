@@ -93,6 +93,18 @@ necesitas releer el manual entero por lote.
   Nuevas categorías creadas al recategorizar el ruido del volcado: **Pescado**
   (Cobasal, Leivamar), **Carnes** (El Moralejo, Cárnicas Luján, Cosegur), **Helados**
   (×4) y **Huevos** (Jabalcón, Aviguardal, Ecotemple).
+- Tras lotes 15-16 + flecos del 14 / Miel + Conservas + Despensa + Comida
+  preparada + Cerveza + Aperitivos restantes (2026-07-02): **266 filas** (−1: 1
+  merge; total provincial 10 purgas + 2 merge). **242 `verificado`, 15 `parcial`,
+  9 `pendiente`**. Venta online: **153 `sí` (153/153 con canal), 0 `no`, 113 `no
+  comprobado`**. Evidencia: **269 registros** (257 keep, 10 purge, 2 merge). Todos
+  los sectores del snapshot inicial revisados; solo restan **9 filas `pendiente`**
+  bloqueadas por webs muertas + límite de la API de búsqueda (reset), a cerrar en
+  la pasada de cierre: `granada-beer-company`, `deshidratados-isa-rus`,
+  `churros-guillen`, `mieleria-la-duquesa`, `jomail-1973`, `veggins`, `zenesur-iberia`,
+  `el-hesillero`, `dekum`. Nuevas recats crean **Aceitunas y encurtidos**,
+  **Mermeladas** y **Especias**; el sí heredado de Segral queda resuelto (0 `sí`
+  sin canal). Nueva fusión: Salsas y Especias Sierra Nevada → Doctor Salsas.
 - Modo: primera pasada profunda. Prioridad: cerrar la calidad de las 278 filas
   heredadas (incluidos los 51 `parcial`) antes de añadir candidatos nuevos.
 
@@ -291,7 +303,9 @@ lote**, no el resultado; se actualizan al cerrar cada lote (como en `cadiz.md`).
 | 8-9 | Fruta y verdura (Costa DOP Chirimoya + Vega/Altiplano IGP Espárrago) | 30 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 8-9». **3 purgas** (Agrologística Alborán en liquidación, OPP pesquera, Llano Fresh Trade = trader sin fincas). 26 activas: 24 verif + 2 parcial (Adania, COVECOL); 9 `sí`. **5 recats** (Leivamar→Pescado; El Moralejo/Cárnicas Luján/Cosegur→Carnes; El Chango→Charcutería). Municipios Costa→Los Guájares, Vega→Valderrubio, Loja→Huétor Tájar. Web Los Fresnos (casino) fuera. |
 | 10-11 | Pan y pastelería (IGP Pan de Alfacar + comarcas) | 28 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 10-11». **1 purga** (Grupo Abades = hostelería/áreas de servicio). 27 activas todas verif; 5 `sí`/eco. Rey Fernando (piononos Santa Fe) llega en L12-13 (estaba en Lácteos). 5 obradores IGP de Alfacar sin web promovidos por registro IGP. Municipio Magda→Padul; webs Bonachera/Artesa fuera. |
 | 12-13 | Lácteos y quesos (cabra Alpujarra + Montefrío) | 26 | ✅ | Cerrado 2026-07-02. Detalle en «Lote 12-13». **1 purga** (Puleva = industria Lactalis). 25 activas todas verif; 10 `sí`/eco. **8 recats** (4 helados→Helados; Rey Fernando→Pan; Jabalcón/Aviguardal/Ecotemple→Huevos). Municipio Aserradero Salar→Alhama de Granada, Jabalcón→Benamaurel; webs Montefrieño/Jabalcón/Aviguardal fuera. |
-| 14 | Aperitivos + Chocolate | 18 | 🟨 | **Parcial 9/18** (2026-07-02). 9 cerradas: 7 verif (Pistachos Luna, Almendras Alhambra, Peñagallo, EYMA, La Cometa, Chocolates Sierra Nevada, Almendras Donaire) + 2 parcial (Bioartesa mayorista eco, Swiss Agro filial suiza B2B); 6 `sí`/eco. Municipio Donaire Alhama→Escúzar. **9 pendientes** por límite de API web: Patatas La Rivera, El Elefante Rosa, Conservas Toro López (aceitunas), Tapia, Higuera Alpujarreña (higos), Dr. Salsas, Tostaderos Sol de Alba, SAT Pistalgra, Chocolates Abuela Ili. |
+| 14 | Aperitivos + Chocolate | 18 | ✅ | Cerrado 2026-07-02 (parte 2ª tras reset). 0 purgas; 16 verif + 2 parcial (Bioartesa mayorista eco, Swiss Agro filial suiza B2B); 9 `sí`/eco. Recat Conservas Toro López→Aceitunas y encurtidos. Municipio Donaire→Escúzar; webs Patatas La Rivera (muerta) fuera, Sol de Alba typo. |
+| 15 | Miel + Conservas | 21 | 🟨 | Cerrado salvo 3 (2026-07-02). Miel: apicultores con colmenas propias (Arana, Garciolo, El Purche, Apivera, El Abuelo Rafael, Finca La Patrona, Apipadul whatsapp) + **recats** (Rufino→Conservas, Loma y Vega/Cruz del Viso→Mermeladas, Valle y Vega→Fruta y verdura). Conservas: Riofrío Caviar→Pescado, Granada La Palma→Fruta y verdura, La Frubense/Centro Sur/La Pauleña. **Pend.: jomail, dekum, mieleria-la-duquesa.** |
+| 16 | Despensa + Comida preparada + Cerveza | 23 | 🟨 | Cerrado salvo 6 (2026-07-02). Cafés (La Malicia, Sol y Crema), té (Granada Tea), azafrán (Oasis), churros (KingChurro), croquetas (Mi Croqueta, Olé Mis Croquetas), cerveceras (Segral resuelto, San Torcuato, Portolobo, Albayzinera). **Fusión** Salsas Sierra Nevada→Dr. Salsas. **Recats** Ruca→Especias, Eduardo Sanz→Fruta y verdura. Mariscos Apolo→parcial. **Pend.: granada-beer, deshidratados-isa-rus, zenesur, el-hesillero, veggins, churros-guillen.** |
 | 15 | Miel + Conservas | 21 | ⬜ | Miel de Granada; apicultor con colmenas propias. |
 | 16 | Despensa artesanal + Comida preparada + Cerveza artesana | 23 | ⬜ | Cajón heterogéneo; `segral-cerveza`→resolver `sí`. |
 | 17 | Cierre transversal provincial | 278 | ⬜ | 0 pendientes; canal en todos los `sí`; evidencia completa; geo/dedup; `coverage.json`. |
@@ -714,3 +728,70 @@ online **6 `sí` (ecommerce), 3 `no comprobado`**. +9 registros keep.
   a Aceitunas/Conservas), Tapia (Lecrín), Higuera Alpujarreña (higos secos, Motril),
   Dr. Salsas (Ogíjares), Tostaderos Sol de Alba (Peligros), SAT Pistalgra (Benamaurel,
   pistacho, sin web), Chocolates Abuela Ili (Pampaneira).
+
+## Lote 14 (cierre) + Lote 15 — Aperitivos restantes, Miel, Conservas
+
+Cierre de los flecos de Aperitivos/Chocolate (bloqueados en la 1ª parte) y del lote
+15 (Miel + Conservas) (2026-07-02). En estas categorías el volcado vuelve a
+esconder productos mal etiquetados: buena parte de «Miel» eran conservas/mermeladas
+y buena parte de «Conservas» eran fruta/pescado.
+
+- **Aperitivos (frutos secos y snacks, `verificado`)**: Pistachos Luna, Almendras
+  Alhambra (coop), Peñagallo (patatas de Dúrcal), EYMA, La Cometa, Tapia (almendra),
+  El Elefante Rosa (tienda hermana), Almendras Donaire (Escúzar), SAT Pistalgra
+  (Benamaurel), Patatas La Rivera (Baza, web muerta), Tostaderos Sol de Alba (typo
+  web corregido). **Dr. Salsas** (chiles propios, tienda) absorbe la razón social
+  hermana Salsas y Especias Sierra Nevada (fusión). **Chocolate**: Abuela Ili
+  (obrador, Pampaneira) y Sierra Nevada (Pitres). Parciales heredados que se
+  mantienen: Bioartesa (mayorista eco) y Swiss Agro (filial suiza B2B).
+- **Recat Aperitivos→Aceitunas y encurtidos**: Conservas Toro López / Vegatoro.
+- **Miel (apicultores con colmenas propias, `verificado`)**: Arana Miel, Martín
+  Garciolo, Miel El Purche, Apivera, El Abuelo Rafael (4ª gen.), Finca La Patrona
+  (miel+pistacho+AOVE), Apipadul (DOP Miel de Granada, canal whatsapp), Feysol
+  Nature (1944, sin tienda).
+- **Recats desde «Miel»**: Rufino 1949 (conservas artesanas)→Conservas; Loma y Vega
+  (mermeladas subtropicales) y La Cruz del Viso (mermeladas)→Mermeladas; Valle y
+  Vega (coop agroecológica)→Fruta y verdura.
+- **Conservas (`verificado`)**: La Frubense (deshidratados eco), Centro Sur (IGP
+  Espárrago de Huétor-Tájar + conservas Los Monteros/Cesurca), La Pauleña
+  (mermeladas del Lecrín), Indesfal/Trezesferas (perlas gourmet, B2B, `no
+  comprobado`).
+- **Recats desde «Conservas»**: **Riofrío Caviar** (piscifactoría propia de
+  esturión, primer caviar eco del mundo)→Pescado; **Granada La Palma** (coop del
+  tomate, 710 socios, Adora/Amela)→Fruta y verdura.
+- **Pendientes (bloqueadas)**: Jomail 1973 (caracoles; web muerta), Dekum (Lecrín;
+  certificado caducado), Mielería La Duquesa (Cájar; solo Instagram).
+
+## Lote 16 — Despensa artesanal + Comida preparada + Cerveza artesana
+
+Revisión (2026-07-02). Cajón heterogéneo de cafés, especias, azafrán, churros y
+croquetas + cerveceras.
+
+- **Despensa artesanal (`verificado`/tienda propia)**: Granada Tea Company
+  (blending propio de té, Aromas de Al-Ándalus), Grupo La Malicia y Cafés Sol&Crema
+  (tostadores de café), Azafrán del Oasis (coop del Altiplano), KingChurro (churros
+  ultracongelados), Castril Natural (AOVE eco + cosmética natural, promovida).
+- **Comida preparada**: Caña Nature (gazpacho/salmorejo HPP; municipio Alhama→
+  **Escúzar**), Olé Mis Croquetas / Cárnicas Genil, Mi Croqueta (Una de Croquetas).
+  Todas con tienda propia. **Mariscos Apolo** → `parcial` (distribuidor de congelado
+  con cocedero propio; perfil dominante de distribuidor, revisar/purgar en cierre).
+- **Recats desde «Comida preparada»**: Productos Ruca (especias para industria
+  cárnica)→Especias; Eduardo Sanz (productor de patata + IV/V gama)→Fruta y verdura
+  (municipio «Vega»→Granada).
+- **Fusión**: Salsas y Especias Sierra Nevada S.L. → Doctor Salsas (misma empresa,
+  301; ficha en Aperitivos).
+- **Cerveza artesana (`verificado`)**: **Segral** (Almuñécar; resuelve el `sí`
+  heredado del snapshot, ahora con canal), San Torcuato / Sotarez (Benalúa, brew
+  hub), La Albayzinera (Granada, promovida) con tienda; Portolobo (Huétor Santillán;
+  age-gate bloqueó la tienda → `no comprobado`).
+- **Pendientes (bloqueadas)**: Granada Beer Company (web muerta), Deshidratados Isa
+  Rus (Baza; sin web), Zenesur Iberia (Guadix; web muerta), El Hesillero (Huétor
+  Tájar; sin web), Veggins (Granada; error de certificado), Churros Guillén
+  (Benamaurel; sin web).
+
+Snapshot tras lotes 15-16 (+ flecos del 14):
+
+- Filas CSV: 266 (−1 merge)
+- Verificación: 242 verificado, 15 parcial, 9 pendiente
+- Venta online: 153 sí (153/153 con canal), 0 no, 113 no comprobado
+- Evidencia Granada: 269 registros JSONL (257 keep, 10 purge, 2 merge)
