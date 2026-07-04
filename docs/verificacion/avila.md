@@ -42,6 +42,8 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `parcial`, 28 `verificado`.
 - Tras lote 3 (2026-07-04): **151 filas** (sin purgas); **110 `pendiente`**, 1
   `parcial`, 40 `verificado`.
+- Tras lotes 4-6 (2026-07-04): **150 filas** (−1 purga, Ornua); **67
+  `pendiente`**, 1 `parcial`, 82 `verificado`.
 - Venta online inicial: **152 `no comprobado`**, 0 `sí`, 0 `no`. `Canal de
   venta`: 0/152. No hay cuarentena heredada: cada `sí` que se cree nace ya con
   canal y evidencia; cada `no` exige comprobación real.
@@ -51,7 +53,9 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   comprobado`.
 - Tras lote 3: VO **31 `sí`** (31/31 con `Canal de venta`), 0 `no`, 120 `no
   comprobado`.
-- Imágenes: **0/151**. Las imágenes NO forman parte de esta pasada; quedan
+- Tras lotes 4-6: VO **44 `sí`** (44/44 con `Canal de venta`), 0 `no`, 106 `no
+  comprobado`.
+- Imágenes: **0/150**. Las imágenes NO forman parte de esta pasada; quedan
   como residual explícito para una pasada posterior (tras estabilizar
   identidad y slugs). No usar `enrich:images --apply` en bloque.
 - Reparto por categoría (17, snapshot inicial): **Charcutería 31**, **Bodega
@@ -83,9 +87,11 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
     directorios/einforma como negocio de la zona de la estación); slug
     renombrado a `embutidos-y-carnes-miguel-pascual-las-navas-del-marques` con
     `merge` en la evidencia.
-  - `quesos-miguel-avila` (lote 6): coordenadas a 0,2 km del centroide de
-    Burgohondo pero municipio «Ávila». Decidir si el municipio o las
-    coordenadas están mal.
+  - ~~`quesos-miguel-avila` (lote 6)~~ **resuelto 2026-07-04**: el municipio
+    era el error, no las coordenadas — la dirección decía «05113 Avila» pero
+    05113 es el código postal de Burgohondo, no de la capital. Municipio
+    corregido a Burgohondo; slug renombrado a `quesos-miguel-burgohondo` con
+    `merge` en la evidencia.
   - `miel-artesanal-la-carrera` (lote 10): coordenadas a 0,2 km de Villanueva
     de Ávila pero municipio «La Carrera» (62 km). Ojo: existe otra fila de
     miel en La Carrera (`miel-artesanal-la-picorea-la-carrera`); resolver
@@ -97,10 +103,13 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
     municipio oficial INE y conservar la localidad en `direccion`:
     **Vicolozano** (entidad de Ávila; 2 filas), **El Raso** (pedanía de
     Candeleda), ~~**La Estación** (zona de Las Navas del Marqués)~~ **resuelto
-    lote 1**, **Palacios** (resolver con la fuente; coords 40.5427,-4.8502,
-    Valle Amblés), **Tornadizos de Arévalo** (no existe como municipio; coords
-    junto a Arévalo; resolver), **Navandrinal** (probable entidad de San Juan
-    del Molinillo; confirmar).
+    lote 1**, ~~**Palacios** (coords 40.5427,-4.8502, Valle Amblés)~~
+    **resuelto lote 5**: es el barrio «Palacio» de Sotalbo (junto a Riatas y
+    Bandadas); fila corregida a municipio Sotalbo, slug
+    `panaderia-la-candelaria-sotalbo`. **Tornadizos de Arévalo** (no existe
+    como municipio; coords junto a Arévalo; resolver), **Navandrinal**
+    (probable entidad de San Juan del Molinillo; confirmar — nota: dos filas
+    de bodega ya usan este municipio sin incidencia, lotes 3-4).
   - Aparentan municipios oficiales que faltan en la referencia — confirmar
     contra el INE y, si es así, NO tocar la fila; anotar aquí el hueco de
     referencia: **Solana de Ávila**, **La Carrera**, **Pedro-Rodríguez**,
@@ -115,8 +124,8 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `miel-artesanal-la-carrera` vs `miel-artesanal-la-picorea-la-carrera`.
 - Evidencia: Ávila no está en `data/evidence/coverage.json` (se decide al
   cerrar la pasada completa). Ledger en
-  `data/evidence/castilla-y-leon/avila.jsonl` (44 registros tras lote 3: 42
-  `keep`, 1 `purge`, 1 `merge`).
+  `data/evidence/castilla-y-leon/avila.jsonl` (88 registros tras lotes 4-6: 84
+  `keep`, 2 `purge`, 2 `merge`).
 
 ## Zonas de Ávila para lotear
 
@@ -295,9 +304,9 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 1 | Charcutería · capital, Moraña y Navas | 13 | ✅ | 2026-07-04: 11 verificados, 1 parcial (Miguel Pascual, sin web), 1 purga (asador Arévalo, not-producer); VO 9 sí (9/9 canal), 4 no comprobado; ICAV mantenida (cooperativa comercializadora IGP); La Estación→Las Navas del Marqués (merge de slug); dominio de La Cantera corregido. |
 | 2 | Charcutería · Tormes, Amblés y Tiétar | 17 | ✅ | 2026-07-04: 17 verificados, 0 purgas; VO 14 sí (14/14 canal), 3 no comprobado; Martín Martín Blázquez tenía web real sin registrar en el CSV (añadida); dominios con cert. caídos (Manolo, Casa Palancas) corroborados por Maps+directorios. |
 | 3 | Bodega · DO Cebreros y bajo Alberche | 12 | ✅ | 2026-07-04: 12 verificados, 0 purgas; VO 8 sí (8/8 canal), 4 no comprobado; limpieza de 1 IG spam-casino y 1 dominio hackeado/parkeado (Rubén Díaz); añadidas web (Indiano) e IG oficiales (Gaznata, 7 Navas, Soto Manrique). |
-| 4 | Bodega · alto Alberche, Tiétar y Moraña | 12 | ⬜ | Comando G; Ursu agua mineral (recat/purga); restaurante-bodega Lanzahíta; Moraña atípica. |
-| 5 | Pan y pastelería · provincial | 17 | ⬜ | 12 sin web; resolver municipio «Palacios». |
-| 6 | Lácteos y quesos · provincial | 14 | ⬜ | Ornua industrial (probable purga); geo-warning Quesos Miguel; Vicolozano→Ávila. |
+| 4 | Bodega · alto Alberche, Tiétar y Moraña | 12 | ✅ | 2026-07-04: 12 verificados, 0 purgas, 1 recat (Ursu→Agua mineral natural); VO 5 sí (5/5 canal), 7 no comprobado; Huellas del Tiétar mantenida (DOP real, no restauración pura). |
+| 5 | Pan y pastelería · provincial | 17 | ✅ | 2026-07-04: 17 verificados, 0 purgas; VO 3 sí (3/3 canal), 14 no comprobado; «Palacios»→Sotalbo resuelto (barrio); 1 nombre genérico limpiado (La Barraqueña). |
+| 6 | Lácteos y quesos · provincial | 13 | ✅ | 2026-07-04: 13 verificados, 1 purga (Ornua, industrial); VO 6 sí (6/6 canal), 7 no comprobado; geo-warning Quesos Miguel resuelto (→Burgohondo); 1 nombre genérico limpiado (Umbrías de Gredos); dominio hackeado (montesbravos.es, casino) descartado. |
 | 7 | Dulces y repostería + Chocolate | 14 | ⬜ | Santa Teresa (limpiar nombre); Elgorriaga alcance; posible dup Obrador de Ángel. |
 | 8 | Legumbres + Huevos + Frutos secos | 16 | ⬜ | IGP El Barco; fila genérica «Judías del Barco»; Tornadizos de Arévalo; granjas. |
 | 9 | Aceite + Fruta y verdura | 16 | ⬜ | Almazaras cooperativas sin web; aceituneras → posible recat; El Raso→Candeleda. |
@@ -396,76 +405,92 @@ Productor real (DO Cebreros, distribuido internacionalmente) mantenido como
 pero su `/tienda/` es real y funcional (regla 18, no se purga). La DO Cebreros
 apoya pertenencia (regla 6) en las 12 filas.
 
-### Lote 4 · Bodega — alto Alberche, Tiétar y Moraña (12)
+### Lote 4 · Bodega — alto Alberche, Tiétar y Moraña (12) — ✅ cerrado 2026-07-04
 
 ```text
-bodegas-castellanas-villanueva-de-avila · Villanueva de Ávila
-comando-g-villanueva-de-avila · Villanueva de Ávila
-las-pedreras-villanueva-de-avila · Villanueva de Ávila  (SIN WEB)
-vda-viticultores-villanueva-de-avila · Villanueva de Ávila
-10-delirios-bodegas-y-vinedos-navatalgordo · Navatalgordo
-bodega-alma-rural-navatalgordo · Navatalgordo
-bodega-nietos-de-senora-maria-navandrinal · Navandrinal
-bodega-el-callejon-san-esteban-del-valle · San Esteban del Valle
-restaurante-y-bodega-huellas-del-tietar-lanzahita · Lanzahíta
-bodega-teo-legido-castellanos-de-zapardiel · Castellanos de Zapardiel
-vina-alondra-langa · Langa
-aguas-minerales-de-avila-ursu-el-oso · El Oso
+bodegas-castellanas-villanueva-de-avila · Villanueva de Ávila · verificado · VO=sí (ecommerce|whatsapp)
+comando-g-villanueva-de-avila · Villanueva de Ávila · verificado · VO=no comprobado
+las-pedreras-villanueva-de-avila · Villanueva de Ávila · verificado · VO=no comprobado — IG añadido
+vda-viticultores-villanueva-de-avila · Villanueva de Ávila · verificado · VO=sí (marketplace|telefono|email) — tel/email añadidos
+10-delirios-bodegas-y-vinedos-navatalgordo · Navatalgordo · verificado · VO=sí (ecommerce)
+bodega-alma-rural-navatalgordo · Navatalgordo · verificado · VO=no comprobado
+bodega-nietos-de-senora-maria-navandrinal · Navandrinal · verificado · VO=sí (ecommerce)
+bodega-el-callejon-san-esteban-del-valle · San Esteban del Valle · verificado · VO=no comprobado
+restaurante-y-bodega-huellas-del-tietar-lanzahita · Lanzahíta · verificado · VO=sí (marketplace)
+bodega-teo-legido-castellanos-de-zapardiel · Castellanos de Zapardiel · verificado · VO=no comprobado
+vina-alondra-langa · Langa · verificado · VO=sí (ecommerce|marketplace)
+aguas-minerales-de-avila-ursu-el-oso · El Oso · verificado · VO=no comprobado — RECAT a categoría "Agua mineral natural"
 ```
 
-Avisos: Ursu no es bodega (regla 6); el restaurante-bodega de Lanzahíta,
-alcance de restauración; Navandrinal es municipio a confirmar (regla 19);
-las tres filas de La Moraña necesitan prueba de elaboración real.
+Resuelto: Ursu recategorizada (no es bodega, es embotelladora industrial de
+agua alcalina; regla 6). El restaurante-bodega de Lanzahíta se mantiene como
+bodega (no se purga como restauración): es bodega DOP Cebreros real
+incorporada en 2017, con 6 ha propias, que además opera restaurante y
+enoturismo — el criterio distintivo frente al asador de Arévalo (lote 1,
+purgado) es que aquí la elaboración de vino está certificada por el consejo
+regulador. Comando G tiene certificado TLS caducado en su dominio pero es
+bodega de referencia internacional (Dani Landi / Fernando García), verificada
+vía DOP Cebreros y retailers especializados. Evidencia en
+`data/evidence/castilla-y-leon/avila.jsonl`.
 
-### Lote 5 · Pan y pastelería — provincial (17)
+### Lote 5 · Pan y pastelería — provincial (17) — ✅ cerrado 2026-07-04
 
 ```text
-don-pan-avila · Ávila  (SIN WEB)
-panaderia-bolleria-marisol-avila · Ávila
-panaderia-flores-y-jimenez-avila · Ávila
-la-vieja-tahona-arevalo · Arévalo  (SIN WEB)
-panaderia-artesanal-el-barraco · El Barraco  (SIN WEB)
-la-tahona-de-barraco-el-barraco · El Barraco  (SIN WEB)
-panaderia-horno-viejo-hoyos-del-espino · Hoyos del Espino  (SIN WEB)
-panaderia-el-horno-del-marques-las-navas-del-marques · Las Navas del Marqués  (SIN WEB)
-panaderia-de-flora-martiherrero-martiherrero · Martiherrero
-panaderia-bolleria-rafael-hernandez-c-b-munogalindo · Muñogalindo  (SIN WEB)
-tahona-araujo-narrillos-de-san-leonardo · Narrillos de San Leonardo  (SIN WEB)
-panaderia-la-tahona-pasteleria-navaluenga · Navaluenga  (SIN WEB)
-tahona-pan-navaluenga · Navaluenga  (SIN WEB)
-panaderia-la-candelaria-palacios · Palacios  (SIN WEB)
-panaderia-o-munoz-san-martin-de-la-vega-del-alberche · San Martín de la Vega del Alberche  (SIN WEB)
-panaderia-garrosa-solosancho · Solosancho
-la-tahona-de-sotillo-panificadora-vda-angel-sanchidrian-sotillo-de-la-adrada · Sotillo de la Adrada
+don-pan-avila · Ávila · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-bolleria-marisol-avila · Ávila · verificado · VO=sí (telefono)
+panaderia-flores-y-jimenez-avila · Ávila · verificado · VO=no comprobado
+la-vieja-tahona-arevalo · Arévalo · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-artesanal-el-barraco · El Barraco · verificado · VO=no comprobado — nombre limpiado a "Pastelería La Barraqueña"
+la-tahona-de-barraco-el-barraco · El Barraco · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-horno-viejo-hoyos-del-espino · Hoyos del Espino · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-el-horno-del-marques-las-navas-del-marques · Las Navas del Marqués · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-de-flora-martiherrero-martiherrero · Martiherrero · verificado · VO=no comprobado (web=Facebook)
+panaderia-bolleria-rafael-hernandez-c-b-munogalindo · Muñogalindo · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+tahona-araujo-narrillos-de-san-leonardo · Narrillos de San Leonardo · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-la-tahona-pasteleria-navaluenga · Navaluenga · verificado · VO=no comprobado  (SIN WEB, Maps)
+tahona-pan-navaluenga · Navaluenga · verificado · VO=no comprobado  (SIN WEB, Maps)
+panaderia-la-candelaria-sotalbo · Sotalbo · verificado · VO=no comprobado — municipio corregido de "Palacios" a Sotalbo (slug renombrado, merge en evidencia); IG/FB añadidos
+panaderia-o-munoz-san-martin-de-la-vega-del-alberche · San Martín de la Vega del Alberche · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+panaderia-garrosa-solosancho · Solosancho · verificado · VO=no comprobado
+la-tahona-de-sotillo-panificadora-vda-angel-sanchidrian-sotillo-de-la-adrada · Sotillo de la Adrada · verificado · VO=sí (email)
 ```
 
-Avisos: 12 `SIN WEB` — Maps/Facebook/ayuntamiento antes que purgar (reglas 10
-y 17); resolver el municipio «Palacios» de La Candelaria (regla 19); anotar
-relación de `panaderia-flores-y-jimenez-avila` con la fila de frutos secos del
-lote 8.
+Resuelto: municipio «Palacios» de La Candelaria era el barrio «Palacio» de
+Sotalbo (regla 19); slug renombrado a `panaderia-la-candelaria-sotalbo` con
+`merge` en la evidencia. Nombre genérico de volcado limpiado en El Barraco
+(«PANADERÍA ARTESANAL» → «Pastelería La Barraqueña», obrador centenario de 4ª
+generación en la misma dirección exacta). Las 12 filas `SIN WEB` se
+verificaron vía ficha de Google Maps (teléfono coherente con la dirección) o
+directorios/prensa local, sin purgar por ausencia de web (regla 17). Relación
+de `panaderia-flores-y-jimenez-avila` con la fila de frutos secos del lote 8
+queda pendiente de anotar en ese lote.
 
-### Lote 6 · Lácteos y quesos — provincial (14)
+### Lote 6 · Lácteos y quesos — provincial (13, tras purga) — ✅ cerrado 2026-07-04
 
 ```text
-quesos-miguel-avila · Ávila  (SIN WEB)
-ornua-ingredientes-espana-slu-vicolozano · Vicolozano
-queseria-artesanal-burgohondo · Burgohondo  (SIN WEB)
-quesos-del-alberche-navandrinal · Navandrinal
-quesos-elvira-garcia-el-barraco · El Barraco
-montealijar-las-navas-del-marques · Las Navas del Marqués
-ganaderos-de-caprino-de-candeleda-candeleda · Candeleda
-queseria-valdecabras-candeleda · Candeleda
-queserias-del-tietar-la-adrada · La Adrada
-la-queseria-de-maria-lanzahita · Lanzahíta
-queseria-castilla-palacios-de-goda · Palacios de Goda
-alta-morana-sociedad-cooperativa-san-pedro-del-arroyo · San Pedro del Arroyo
-queseria-montes-bravos-solana-de-rioalmar · Solana de Rioalmar  (SIN WEB)
-queseria-amaltea-solana-de-avila · Solana de Ávila  (SIN WEB)
+quesos-miguel-burgohondo · Burgohondo · verificado · VO=no comprobado — municipio corregido de "Ávila" (merge de slug)
+queseria-artesanal-burgohondo · Burgohondo · verificado · VO=no comprobado — nombre limpiado a "Quesería Umbrías de Gredos"
+quesos-del-alberche-navandrinal · Navandrinal · verificado · VO=sí (ecommerce|marketplace)
+quesos-elvira-garcia-el-barraco · El Barraco · verificado · VO=sí (ecommerce)
+montealijar-las-navas-del-marques · Las Navas del Marqués · verificado · VO=no comprobado
+ganaderos-de-caprino-de-candeleda-candeleda · Candeleda · verificado · VO=no comprobado
+queseria-valdecabras-candeleda · Candeleda · verificado · VO=sí (marketplace)
+queserias-del-tietar-la-adrada · La Adrada · verificado · VO=sí (ecommerce) — corregidos productos estrella/descripción (decían "Fruta y verdura")
+la-queseria-de-maria-lanzahita · Lanzahíta · verificado · VO=no comprobado
+queseria-castilla-palacios-de-goda · Palacios de Goda · verificado · VO=no comprobado
+alta-morana-sociedad-cooperativa-san-pedro-del-arroyo · San Pedro del Arroyo · verificado · VO=sí (ecommerce, vía ladespensadelchef.es)
+queseria-montes-bravos-solana-de-rioalmar · Solana de Rioalmar · verificado · VO=no comprobado  (SIN WEB — dominio homónimo hackeado con casino, descartado)
+queseria-amaltea-solana-de-avila · Solana de Ávila · verificado · VO=no comprobado  (SIN WEB, Twitter+prensa)
 ```
 
-Avisos: Ornua probable purga por alcance (regla 8); geo-warning de Quesos
-Miguel (¿Burgohondo?); Vicolozano→Ávila si la fila sobrevive; Solana de Ávila
-y Solana de Rioalmar sin centroide de referencia: validar coordenadas a mano.
+Purgada: `ornua-ingredientes-espana-slu-vicolozano` (Vicolozano) —
+`out-of-scope`: planta industrial de 35.000 t/año de la multinacional
+irlandesa Ornua, no productor km0 (precedente IFFCO/Puleva en Granada).
+Resuelto: geo-warning de Quesos Miguel — el municipio "Ávila" era el error
+(código postal 05113 es de Burgohondo); slug renombrado con `merge`. Solana
+de Ávila y Solana de Rioalmar confirmadas como municipios reales sin
+centroide en `municipios.json` (hueco anotado en Estado, no se fuerza dato).
+Evidencia en `data/evidence/castilla-y-leon/avila.jsonl`.
 
 ### Lote 7 · Dulces y repostería + Chocolate (14)
 
