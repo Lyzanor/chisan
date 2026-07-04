@@ -1,5 +1,10 @@
 # Candidatos — Cellers de la Xarxa de Rutes del Vi de Catalunya
 
+> Nota (2026-07-04): pasada transversal de **Lácteos y quesos** cerrada en
+> [lacteos-y-quesos.md](lacteos-y-quesos.md): Formatgeria Punta Calda **integrada**
+> (`formatgeria-punta-calda-lametlla-de-mar`, `parcial`); Cingle Vermell rechazada
+> (asociación cultural, no productor).
+
 > Origen: cruce de los cellers de las 9 Rutas del Vi de Catalunya (proyecto Xarxa de
 > Rutes del Vi, govern.cat, jun-2026) contra `tarragona.csv`. Lista obtenida de las webs
 > oficiales de cada DO / consejo regulador (registro completo, más amplio que el
