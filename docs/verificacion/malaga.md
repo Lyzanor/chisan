@@ -32,6 +32,19 @@ curso; no necesitas releer el manual entero por lote.
   y **298 `pendiente`**. Venta online: **45 `sí`**, **34 `no`** y **325 `no
   comprobado`**. El lote 2 añade 9 `sí` con canal y corrige 2 `no` heredados
   (`Nevaillo` a `sí` y `Sierra de Tejeda` a `no comprobado`).
+- Tras lotes 3-6 (2026-07-04): **403 filas** por 1 fusión
+  (`quinto-toro-el-burgo` -> `aceite-oliburgo-el-burgo`); **155 `verificado`**,
+  **13 `parcial`** y **235 `pendiente`**. Venta online: **77 `sí`**, **27
+  `no`** y **299 `no comprobado`**. Todos los `sí` revisados en estos lotes
+  quedan con `Canal de venta`. Se corrigen los slugs/municipios
+  `aceite-finca-rosa-alta-archidona` y `lagar-del-chorro-alora`, resolviendo 2
+  warnings geográficos; la auditoría de calidad actual queda en **0 errores y 7
+  warnings**.
+- Tras lote 7 (2026-07-04): **403 filas**; **168 `verificado`**, **13
+  `parcial`** y **222 `pendiente`**. Venta online: **82 `sí`**, **26 `no`** y
+  **295 `no comprobado`**. El lote cierra las 15 filas restantes de bodega:
+  15/15 `verificado`, 6 `Venta online=sí` con canal y `Bodegas Sánchez Rosado`
+  pasa de `no` heredado a `no comprobado`.
 - **Anomalía clave: provincia enorme con verificados heredados sin evidencia.**
   Málaga tiene más filas que Granada y una mezcla de 65 `verificado`, 6
   `parcial` y 25 `Venta online=sí`, pero no existe ledger de evidencia
@@ -64,8 +77,8 @@ curso; no necesitas releer el manual entero por lote.
     data/csv/andalucia/malaga.csv` devuelve **0 errores, 9 warnings** y 120
     avisos suprimidos por opcionales ausentes.
 - Warnings iniciales de geo-check o ubicación:
-  - `aceite-finca-rosa-alta-malaga`: 45,0 km de Málaga; centroide más cercano
-    Archidona.
+  - `aceite-finca-rosa-alta-malaga` -> `aceite-finca-rosa-alta-archidona`:
+    resuelto en lote 3; el municipio correcto es Archidona.
   - `aceites-cortijo-el-solano-antequera`: 15,5 km de Antequera; centroide más
     cercano Humilladero.
   - `frutos-secos-esteban-fuengirola`: 22,4 km de Fuengirola; centroide más
@@ -76,8 +89,8 @@ curso; no necesitas releer el manual entero por lote.
     Faraján.
   - `la-huertezuela-alozaina`: 30,3 km de Alozaina; centroide más cercano
     Alhaurín de la Torre.
-  - `lagar-del-chorro-torremolinos`: 38,0 km de Torremolinos; centroide más
-    cercano Valle de Abdalajís.
+  - `lagar-del-chorro-torremolinos` -> `lagar-del-chorro-alora`: resuelto en
+    lote 3; la finca de AOVE está en El Chorro/Álora.
   - `nueces-de-ronda-malaga`: 62,7 km de Málaga; centroide más cercano Arriate.
   - `panaderia-nuestra-senora-de-las-nieves-gaucin`: 83,4 km de Gaucín;
     centroide más cercano Málaga.
@@ -139,8 +152,9 @@ curso; no necesitas releer el manual entero por lote.
 5. **Aceite (74) = DOP Antequera + almazaras dispersas.** Entra la almazara,
    cooperativa olivarera o marca ligada a molturación/elaboración propia.
    Distingue del olivarero sin unidad elaboradora, envasador, distribuidor o marca
-   comercial. Los warnings `aceite-finca-rosa-alta-malaga` y
-   `aceites-cortijo-el-solano-antequera` se resuelven en los lotes de aceite.
+   comercial. El warning de `aceite-finca-rosa-alta-malaga` queda resuelto como
+   `aceite-finca-rosa-alta-archidona`; `aceites-cortijo-el-solano-antequera`
+   sigue pendiente de su lote de aceite.
 6. **Bodega (61) = DOP Málaga, Sierras de Málaga y Pasas de Málaga.** Separar
    bodega con viña/crianza/elaboración propia de vinoteca, distribuidor, vermut o
    destilería. El consejo regulador apoya pertenencia, no venta online. Ronda
@@ -285,11 +299,11 @@ no el resultado; se actualizan al cerrar cada lote.
 |---|---|---:|---|---|---|
 | 1 | Aceite · Antequera/Nororma/Guadalteba | 29 | 25 / 0 / 4 / 0 | ✅ | Cerrado 2026-07-03: 28 activas (25 `verificado`, 3 `parcial`), 1 merge `aove-tesoro-espanol-campillos` -> `garo-campillos`, 12 `Venta online=sí` con canal. Recategorizadas: Hutesa, El Carrero, Sabores Caseros y Ribera del Genil. |
 | 2 | Aceite · Axarquía/Montes orientales | 14 | 11 / 0 / 3 / 1 | ✅ | Cerrado 2026-07-04: 14 activas (13 `verificado`, 1 `parcial`), 9 `Venta online=sí` con canal. Recategorizadas: Hijos de Cordobilla y Tortas Carmen Lupiáñez a `Pan y pastelería`, Lujo del Paladar a `Despensa artesanal`. |
-| 3 | Aceite · Guadalhorce/Sierra de las Nieves/Costa | 22 | 22 / 0 / 0 / 0 | ⬜ | Coín, Alhaurín, Cártama, Pizarra, El Burgo, Ardales, Casabermeja, Torremolinos. Resolver `aceite-finca-rosa-alta-malaga` y `lagar-del-chorro-torremolinos`. |
-| 4 | Aceite · Serranía de Ronda + capital/flecos | 9 | 9 / 0 / 0 / 0 | ⬜ | Ronda, Montejaque, Benalauría/Benarrabá y Málaga capital; vigilar recategorización de `jamones-y-embutidos-andres-ramos-benarraba`. |
-| 5 | Bodega · Ronda y Serranía | 25 | 15 / 1 / 9 / 5 | ⬜ | DOP Sierras de Málaga/Ronda; mucha cuarentena de venta online heredada. Revisar `bodega-ramos-paul-ronda` (`parcial`). |
-| 6 | Bodega · Málaga capital + Axarquía | 21 | 17 / 0 / 4 / 1 | ⬜ | Vino Málaga, pasas, vermut, moscatel y destilados posibles. Revisar categoría de `gin-alboran-velez-malaga`, `la-huerta-de-carolina-velez-malaga` y `vermu-krauel-malaga`. |
-| 7 | Bodega · Antequera/Mollina/Guadalhorce/Manilva | 15 | 13 / 0 / 2 / 1 | ⬜ | Mollina, Manilva, Cártama, Coín y Norte. Revisar `con-sabor-tradicional-v-gama-la-cruz-de-piedra-coin` y `jamones-alameda-alameda`. |
+| 3 | Aceite · Guadalhorce/Sierra de las Nieves/Costa | 22 | 22 / 0 / 0 / 0 | ✅ | Cerrado 2026-07-04: 21 activas (20 `verificado`, 1 `parcial`), 1 merge `quinto-toro-el-burgo` -> `aceite-oliburgo-el-burgo`, 11 `Venta online=sí`. Slugs corregidos: `aceite-finca-rosa-alta-archidona` y `lagar-del-chorro-alora`. Recategorizadas: Aceites Esenciales Eva, Familia Hevilla, Guadalhorce Ecológico, La Huerta de Carmen, NONNA y Productos Marcos. |
+| 4 | Aceite · Serranía de Ronda + capital/flecos | 9 | 9 / 0 / 0 / 0 | ✅ | Cerrado 2026-07-04: 9 activas (8 `verificado`, 1 `parcial`), 5 `Venta online=sí`. Recategorizadas: Al-Jaque y La Molienda Verde a `Conservas y mermeladas`; Andrés Ramos a `Charcutería`. Montexaquez queda `parcial` sin web propia usable. |
+| 5 | Bodega · Ronda y Serranía | 25 | 15 / 1 / 9 / 5 | ✅ | Cerrado 2026-07-04: 25 activas (23 `verificado`, 2 `parcial`), 11 `Venta online=sí`. Se resuelve la cuarentena de `sí` heredados: Descalzos Viejos y Los Aguilares mantienen canal; Los Frutales, Vinos Conrad y Samsara pasan a `no comprobado`. Recategorizadas: Destilerías El Tajo y El Cerdito Andaluz. |
+| 6 | Bodega · Málaga capital + Axarquía | 21 | 17 / 0 / 4 / 1 | ✅ | Cerrado 2026-07-04: 21 activas (21 `verificado`), 11 `Venta online=sí`. Se corrige Dimobe a `sí`; Sedella queda `sí` por email/teléfono; Vermú Krauel pasa a `no comprobado`. Recategorizadas: Alacena del Ángel, Campo de Benamayor, El Reloj, Gin Alborán, Hermanos Montañez, La Huerta de Carolina, Licores de la Abuela, Sabor a Mango, Turbojam y Krauel. |
+| 7 | Bodega · Antequera/Mollina/Guadalhorce/Manilva | 15 | 13 / 0 / 2 / 1 | ✅ | Cerrado 2026-07-04: 15 activas (15 `verificado`), 6 `Venta online=sí` con canal. Se añade canal a Carpe Diem, se corrige Sánchez Rosado a `no comprobado` y se recategorizan Capricho Helado a `Helados`, V-Gama La Cruz de Piedra a `Comida preparada` y Jamones Alameda a `Charcutería`. |
 | 8 | Pan y pastelería · Antequera/Nororma | 20 | 17 / 1 / 2 / 1 | ⬜ | Molletes, mantecados y obradores; revisar `mantecados-la-aguilera-antequera` (`parcial`) y el `sí` de Sancho Melero. |
 | 9 | Pan y pastelería · Málaga capital/metropolitana | 17 | 15 / 0 / 2 / 0 | ⬜ | Obradores urbanos, panificadoras y pastelerías; exigir obrador propio y limpiar enlaces o categorías urbanas dudosas. |
 | 10 | Pan y pastelería · Axarquía/Guadalhorce/Serranía | 25 | 20 / 0 / 5 / 2 | ⬜ | Panaderías rurales, obradores, Ronda y Coín. Resolver geo-warning de `panaderia-nuestra-senora-de-las-nieves-gaucin`; revisar `encurtidos-almario-ronda`. |
@@ -313,10 +327,12 @@ Fruta y verdura 31 (13-14), Lácteos y quesos 31 (15-16), Despensa artesanal 29
 Cerveza artesana 13 + Café 8 (20), Aceitunas y encurtidos 11 + Huevos 11 +
 Chocolate 6 (21). Total 405.
 
-Reparto actual tras lote 2: Aceite 66, Pan y pastelería 66, Bodega 61,
-Charcutería 41, Despensa artesanal 31, Fruta y verdura 31, Lácteos y quesos 31,
+Reparto actual tras lote 7: Pan y pastelería 68, Aceite 56, Bodega 46,
+Charcutería 44, Fruta y verdura 36, Despensa artesanal 31, Lácteos y quesos 31,
 Miel 19, Cerveza artesana 13, Aceitunas y encurtidos 12, Huevos 11, Café 8,
-Chocolate 6, Aromáticas y condimentos 4, Helados 2, Pescado 2. Total 404.
+Chocolate 6, Aromáticas y condimentos 5, Helados 4, Conservas y mermeladas 3,
+Comida preparada 2, Destilados y licores 2, Pescado 2, Aromáticas 1, Licores 1,
+Mermeladas 1, Vermut 1. Total 403.
 
 ## Flujo por lote
 
