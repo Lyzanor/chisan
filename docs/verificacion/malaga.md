@@ -45,6 +45,16 @@ curso; no necesitas releer el manual entero por lote.
   **295 `no comprobado`**. El lote cierra las 15 filas restantes de bodega:
   15/15 `verificado`, 6 `Venta online=sí` con canal y `Bodegas Sánchez Rosado`
   pasa de `no` heredado a `no comprobado`.
+- Tras lotes 8-12 (2026-07-04): **402 filas** por 1 fusión
+  (`grupo-sancho-melero-antequera` -> `mantecados-sancho-melero-antequera`);
+  **240 `verificado`**, **30 `parcial`** y **132 `pendiente`**. Venta online:
+  **125 `sí`**, **18 `no`** y **259 `no comprobado`**. La pasada conjunta
+  cierra 102 filas activas de pan/pastelería y charcutería: 84 `verificado`,
+  18 `parcial`, 47 `Venta online=sí` con canal y 3 merges registrados
+  (`grupo-sancho-melero`, `padepan-mollina`, `ibericos-langenal-farajan`). Se
+  resuelven los geo-warnings de `panaderia-nuestra-senora-de-las-nieves-gaucin`
+  e `ibericos-langenal-farajan`; la auditoría de calidad queda en **0 errores y
+  5 warnings**.
 - **Anomalía clave: provincia enorme con verificados heredados sin evidencia.**
   Málaga tiene más filas que Granada y una mezcla de 65 `verificado`, 6
   `parcial` y 25 `Venta online=sí`, pero no existe ledger de evidencia
@@ -55,12 +65,14 @@ curso; no necesitas releer el manual entero por lote.
   quedar cuando se haya comprobado que no hay mecanismo de pedido remoto vigente.
   Si la revisión no permite cerrarlo, degradar a `no comprobado`. Un `sí` nuevo o
   heredado exige canal y evidencia actual.
-- Reparto por categoría (16): **Aceite 74**, **Pan y pastelería 62**, **Bodega
-  61**, **Charcutería 41**, **Fruta y verdura 31**, **Lácteos y quesos 31**,
-  **Despensa artesanal 29**, **Miel 19**, **Cerveza artesana 13**, **Aceitunas y
-  encurtidos 11**, **Huevos 11**, **Café 8**, **Chocolate 6**, **Aromáticas y
-  condimentos 4**, **Helados 2**, **Pescado 2**. Aceite, pan y bodega suman
-  197/405 = 49% del catálogo.
+- Reparto por categoría actual (25): **Pan y pastelería 64**, **Aceite 56**,
+  **Bodega 46**, **Charcutería 38**, **Fruta y verdura 36**, **Despensa
+  artesanal 31**, **Lácteos y quesos 31**, **Miel 19**, **Cerveza artesana 13**,
+  **Aceitunas y encurtidos 13**, **Huevos 11**, **Aromáticas y condimentos 9**,
+  **Café 8**, **Chocolate 6**, **Helados 4**, **Conservas y mermeladas 4**,
+  **Comida preparada 3**, **Pescado 2**, **Destilados y licores 2** y categorías
+  unitarias: Aromáticas, Licores, Mermeladas, Pasta artesana, Pescado y
+  conservas y Vermut.
 - Territorio muy concentrado en cabeceras pero con cola larga: **Málaga 66**,
   **Ronda 36**, **Vélez-Málaga 33**, **Antequera 32**, **Coín 23**, Alhaurín el
   Grande 14, Alhaurín de la Torre 8, Cártama 8, Colmenar 8, Arriate 7,
@@ -85,15 +97,17 @@ curso; no necesitas releer el manual entero por lote.
     cercano Málaga.
   - `gazpacheria-malaguena-pizarra`: 26,1 km de Pizarra; centroide más cercano
     Málaga.
-  - `ibericos-langenal-arriate`: 22,1 km de Arriate; centroide más cercano
-    Faraján.
+  - `ibericos-langenal-arriate` -> `ibericos-langenal-farajan`: resuelto en
+    lote 11; la fuente institucional y la dirección Casa de Guadarrín sitúan la
+    unidad en Faraján.
   - `la-huertezuela-alozaina`: 30,3 km de Alozaina; centroide más cercano
     Alhaurín de la Torre.
   - `lagar-del-chorro-torremolinos` -> `lagar-del-chorro-alora`: resuelto en
     lote 3; la finca de AOVE está en El Chorro/Álora.
   - `nueces-de-ronda-malaga`: 62,7 km de Málaga; centroide más cercano Arriate.
-  - `panaderia-nuestra-senora-de-las-nieves-gaucin`: 83,4 km de Gaucín;
-    centroide más cercano Málaga.
+  - `panaderia-nuestra-senora-de-las-nieves-gaucin`: resuelto en lote 10; se
+    corrige dirección a C/ Tenería 25 (Gaucín) y se sustituye la coordenada
+    heredada de Málaga capital por coordenada municipal honesta.
 - Fila sin coordenadas: `agasur-s-c-a-el-taraja`. Revisar si `El Taraja` debe
   mantenerse como localidad submunicipal, corregirse a municipio oficial o quedar
   con centroide honesto.
@@ -304,11 +318,11 @@ no el resultado; se actualizan al cerrar cada lote.
 | 5 | Bodega · Ronda y Serranía | 25 | 15 / 1 / 9 / 5 | ✅ | Cerrado 2026-07-04: 25 activas (23 `verificado`, 2 `parcial`), 11 `Venta online=sí`. Se resuelve la cuarentena de `sí` heredados: Descalzos Viejos y Los Aguilares mantienen canal; Los Frutales, Vinos Conrad y Samsara pasan a `no comprobado`. Recategorizadas: Destilerías El Tajo y El Cerdito Andaluz. |
 | 6 | Bodega · Málaga capital + Axarquía | 21 | 17 / 0 / 4 / 1 | ✅ | Cerrado 2026-07-04: 21 activas (21 `verificado`), 11 `Venta online=sí`. Se corrige Dimobe a `sí`; Sedella queda `sí` por email/teléfono; Vermú Krauel pasa a `no comprobado`. Recategorizadas: Alacena del Ángel, Campo de Benamayor, El Reloj, Gin Alborán, Hermanos Montañez, La Huerta de Carolina, Licores de la Abuela, Sabor a Mango, Turbojam y Krauel. |
 | 7 | Bodega · Antequera/Mollina/Guadalhorce/Manilva | 15 | 13 / 0 / 2 / 1 | ✅ | Cerrado 2026-07-04: 15 activas (15 `verificado`), 6 `Venta online=sí` con canal. Se añade canal a Carpe Diem, se corrige Sánchez Rosado a `no comprobado` y se recategorizan Capricho Helado a `Helados`, V-Gama La Cruz de Piedra a `Comida preparada` y Jamones Alameda a `Charcutería`. |
-| 8 | Pan y pastelería · Antequera/Nororma | 20 | 17 / 1 / 2 / 1 | ⬜ | Molletes, mantecados y obradores; revisar `mantecados-la-aguilera-antequera` (`parcial`) y el `sí` de Sancho Melero. |
-| 9 | Pan y pastelería · Málaga capital/metropolitana | 17 | 15 / 0 / 2 / 0 | ⬜ | Obradores urbanos, panificadoras y pastelerías; exigir obrador propio y limpiar enlaces o categorías urbanas dudosas. |
-| 10 | Pan y pastelería · Axarquía/Guadalhorce/Serranía | 25 | 20 / 0 / 5 / 2 | ⬜ | Panaderías rurales, obradores, Ronda y Coín. Resolver geo-warning de `panaderia-nuestra-senora-de-las-nieves-gaucin`; revisar `encurtidos-almario-ronda`. |
-| 11 | Charcutería · Serranía/Genal + Antequera | 15 | 13 / 0 / 2 / 1 | ⬜ | Benaoján, Arriate, Ronda, Genal y Antequera. Foco secadero/obrador vs carnicería; resolver `ibericos-langenal-arriate`. |
-| 12 | Charcutería · Málaga/Axarquía/Guadalhorce/Costa | 26 | 25 / 0 / 1 / 0 | ⬜ | Carnicerías y cárnicas de capital, Axarquía, Coín, Cártama, Álora y costa; muchas sin web, no purgar sin contraste fuerte. |
+| 8 | Pan y pastelería · Antequera/Nororma | 20 | 17 / 1 / 2 / 1 | ✅ | Cerrado 2026-07-04 dentro de pasada 8-12: `grupo-sancho-melero-antequera` se fusiona en `mantecados-sancho-melero-antequera`; `padepan-antequera` pasa a `padepan-mollina`; `mantecados-la-aguilera-antequera` queda `verificado` con tienda online. |
+| 9 | Pan y pastelería · Málaga capital/metropolitana | 17 | 15 / 0 / 2 / 0 | ✅ | Cerrado 2026-07-04: obradores urbanos revisados; `tres-espigas-malaga` gana web propia, `postres-truffel-malaga` pierde dominio aparcado y los `no` heredados sin prueba pasan a `no comprobado` o `sí` con canal. |
+| 10 | Pan y pastelería · Axarquía/Guadalhorce/Serranía | 25 | 20 / 0 / 5 / 2 | ✅ | Cerrado 2026-07-04: se corrige el geo-warning de Gaucín, `encurtidos-almario-ronda` pasa a `Aceitunas y encurtidos`, `safrante-alhaurin-de-la-torre` a `Aromáticas y condimentos` y `spiga-negra-humilladero` a `Pasta artesana`. |
+| 11 | Charcutería · Serranía/Genal + Antequera | 15 | 13 / 0 / 2 / 1 | ✅ | Cerrado 2026-07-04: `ibericos-langenal-arriate` pasa a `ibericos-langenal-farajan`; se canalizan ventas online de Icarben, Ibéricos ARO, Dehesa Monteros y Alto Genal; `rondasal-ronda` queda `parcial`. |
+| 12 | Charcutería · Málaga/Axarquía/Guadalhorce/Costa | 26 | 25 / 0 / 1 / 0 | ✅ | Cerrado 2026-07-04: `aupa-gourmet-alhaurin-de-la-torre` pasa a `Comida preparada`, `cadelmar-antequera` a `Pescado y conservas`, Especias Pedroza/Lucas Sánchez/Productos Laure a `Aromáticas y condimentos` y `trafrut-cano-pizarra` a `Conservas y mermeladas`; Beatriz y La Victoria quedan `parcial` sin purga. |
 | 13 | Fruta y verdura · Axarquía tropical + costa | 12 | 9 / 0 / 3 / 2 | ⬜ | Aguacate, mango, pasas/fruta tropical y cooperativas. Resolver `tropicado`, `MANCATE`, `S.C.A. San Isidro de El Borge` y posible venta online. |
 | 14 | Fruta y verdura · Guadalhorce/Málaga/Ronda/Antequera | 19 | 18 / 0 / 1 / 1 | ⬜ | Huerta, cítricos, berries/frutos secos y geo-warnings: `frutos-secos-esteban-fuengirola`, `nueces-de-ronda-malaga`, `la-huertezuela-alozaina`. |
 | 15 | Lácteos y quesos · Antequera/Serranía | 9 | 6 / 0 / 3 / 0 | ⬜ | Queserías de cabra, Norte y Serranía; revisar Cabraline, Rey Cabra, La Arriateña y fuentes sin web. |
