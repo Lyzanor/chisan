@@ -38,10 +38,14 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   cero dentro de su lote.
 - Tras lote 1 (2026-07-04): **151 filas** (−1 purga); **139 `pendiente`**, 1
   `parcial`, 11 `verificado`.
+- Tras lote 2 (2026-07-04): **151 filas** (sin purgas); **122 `pendiente`**, 1
+  `parcial`, 28 `verificado`.
 - Venta online inicial: **152 `no comprobado`**, 0 `sí`, 0 `no`. `Canal de
   venta`: 0/152. No hay cuarentena heredada: cada `sí` que se cree nace ya con
   canal y evidencia; cada `no` exige comprobación real.
 - Tras lote 1: VO **9 `sí`** (9/9 con `Canal de venta`), 0 `no`, 142 `no
+  comprobado`.
+- Tras lote 2: VO **23 `sí`** (23/23 con `Canal de venta`), 0 `no`, 128 `no
   comprobado`.
 - Imágenes: **0/151**. Las imágenes NO forman parte de esta pasada; quedan
   como residual explícito para una pasada posterior (tras estabilizar
@@ -106,9 +110,9 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `embutidos-la-serrota-sl-solosancho`;
   `miel-artesanal-la-carrera` vs `miel-artesanal-la-picorea-la-carrera`.
 - Evidencia: Ávila no está en `data/evidence/coverage.json` (se decide al
-  cerrar la pasada completa). Ledger creado en
-  `data/evidence/castilla-y-leon/avila.jsonl` al cerrar el lote 1 (15
-  registros: 13 `keep`, 1 `purge`, 1 `merge`).
+  cerrar la pasada completa). Ledger en
+  `data/evidence/castilla-y-leon/avila.jsonl` (32 registros tras lote 2: 30
+  `keep`, 1 `purge`, 1 `merge`).
 
 ## Zonas de Ávila para lotear
 
@@ -285,7 +289,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | # | Lote | Filas | Estado | Notas iniciales |
 |---|---|---:|---|---|
 | 1 | Charcutería · capital, Moraña y Navas | 13 | ✅ | 2026-07-04: 11 verificados, 1 parcial (Miguel Pascual, sin web), 1 purga (asador Arévalo, not-producer); VO 9 sí (9/9 canal), 4 no comprobado; ICAV mantenida (cooperativa comercializadora IGP); La Estación→Las Navas del Marqués (merge de slug); dominio de La Cantera corregido. |
-| 2 | Charcutería · Tormes, Amblés y Tiétar | 17 | ⬜ | Clúster El Barco (4); morcillas de Sotillo (nombres con ruido); industriales Roal/Carhesan. |
+| 2 | Charcutería · Tormes, Amblés y Tiétar | 17 | ✅ | 2026-07-04: 17 verificados, 0 purgas; VO 14 sí (14/14 canal), 3 no comprobado; Martín Martín Blázquez tenía web real sin registrar en el CSV (añadida); dominios con cert. caídos (Manolo, Casa Palancas) corroborados por Maps+directorios. |
 | 3 | Bodega · DO Cebreros y bajo Alberche | 12 | ⬜ | 3 sin web; Daniel Ramos, 7 Navas, Fuentegalana. |
 | 4 | Bodega · alto Alberche, Tiétar y Moraña | 12 | ⬜ | Comando G; Ursu agua mineral (recat/purga); restaurante-bodega Lanzahíta; Moraña atípica. |
 | 5 | Pan y pastelería · provincial | 17 | ⬜ | 12 sin web; resolver municipio «Palacios». |
@@ -331,31 +335,35 @@ Carnicería La Cantera en el CSV estaba caído/mal escrito y se corrigió a
 `lacanteracarniceria.es`. Evidencia en
 `data/evidence/castilla-y-leon/avila.jsonl`.
 
-### Lote 2 · Charcutería — Tormes, Amblés y Tiétar (17)
+### Lote 2 · Charcutería — Tormes, Amblés y Tiétar (17) — ✅ cerrado 2026-07-04
 
 ```text
-embutidos-jimenez-sl-jmj-el-barco-de-avila · El Barco de Ávila
-embutidos-y-jamones-chopo-el-barco-de-avila · El Barco de Ávila
-jamones-lazaro-s-l-el-barco-de-avila · El Barco de Ávila
-lorana-jamones-y-embutidos-el-barco-de-avila · El Barco de Ávila
-embutidos-del-rio-becedas · Becedas  (SIN WEB)
-jamones-garrudo-garrudo-benito-sl-piedrahita · Piedrahíta
-jamones-y-embutidos-sanchez-diaz-s-l-santa-maria-del-berrocal · Santa María del Berrocal
-industrias-carnicas-roal-s-l-la-torre · La Torre
-carhesan-embutidos-herraez-munana · Muñana
-martin-martin-blazquez-fabrica-de-embutidos-y-jamones-munana · Muñana  (SIN WEB)
-embutidos-la-serrota-sl-solosancho · Solosancho
-carnes-y-embutidos-manolo-burgohondo · Burgohondo
-embutidos-gomez-s-l-candeleda · Candeleda
-morcillas-de-arroz-j-n-casavieja · Casavieja
-embutidos-degano-s-l-san-esteban-del-valle · San Esteban del Valle  (SIN WEB)
-carniceria-casa-palancas-artesanos-morcilleros-desde-1939-morcillas-en-sotillo-sotillo-de-la-adrada · Sotillo de la Adrada
-morcillas-de-sotillo-pablo-diaz-las-autenticas-morcillas-de-sotillo-sotillo-de-la-adrada · Sotillo de la Adrada
+embutidos-jimenez-sl-jmj-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
+embutidos-y-jamones-chopo-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
+jamones-lazaro-s-l-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (telefono|email)
+lorana-jamones-y-embutidos-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
+embutidos-del-rio-becedas · Becedas · verificado · VO=no comprobado (sin web propia)
+jamones-garrudo-garrudo-benito-sl-piedrahita · Piedrahíta · verificado · VO=sí (ecommerce)
+jamones-y-embutidos-sanchez-diaz-s-l-santa-maria-del-berrocal · Santa María del Berrocal · verificado · VO=sí (ecommerce|telefono|email)
+industrias-carnicas-roal-s-l-la-torre · La Torre · verificado · VO=sí (ecommerce, vía latiendaderoal.com)
+carhesan-embutidos-herraez-munana · Muñana · verificado · VO=no comprobado
+martin-martin-blazquez-fabrica-de-embutidos-y-jamones-munana · Muñana · verificado · VO=sí (ecommerce) — web y teléfono añadidos (no estaban en el CSV)
+embutidos-la-serrota-sl-solosancho · Solosancho · verificado · VO=sí (ecommerce)
+carnes-y-embutidos-manolo-burgohondo · Burgohondo · verificado · VO=no comprobado
+embutidos-gomez-s-l-candeleda · Candeleda · verificado · VO=sí (ecommerce)
+morcillas-de-arroz-j-n-casavieja · Casavieja · verificado · VO=sí (ecommerce|marketplace)
+embutidos-degano-s-l-san-esteban-del-valle · San Esteban del Valle · verificado · VO=no comprobado (dominio antiguo caído)
+carniceria-casa-palancas-artesanos-morcilleros-desde-1939-morcillas-en-sotillo-sotillo-de-la-adrada · Sotillo de la Adrada · verificado · VO=no comprobado
+morcillas-de-sotillo-pablo-diaz-las-autenticas-morcillas-de-sotillo-sotillo-de-la-adrada · Sotillo de la Adrada · verificado · VO=sí (ecommerce)
 ```
 
-Avisos: limpiar los dos nombres de morcillas de Sotillo (regla 20) y comprobar
-que son dos obradores distintos; el clúster de El Barco se coteja bien con la
-IGP Carne de Ávila y fuentes locales.
+Resuelto: los dos nombres de morcillas de Sotillo (Casa Palancas y Pablo
+Díaz) son dos obradores distintos e independientes, confirmado por fuentes
+propias/directorios; no hay dedup. El clúster de El Barco cotejó bien con
+fuentes propias. Dos dominios con certificado TLS roto (`carnesmanolo.com`,
+`casapalancas.com`) se aceptaron vía Google Maps + directorios independientes
+(regla 18, no se purga por dificultad de acceso). Evidencia añadida en
+`data/evidence/castilla-y-leon/avila.jsonl`.
 
 ### Lote 3 · Bodega — DO Cebreros y bajo Alberche (12)
 
