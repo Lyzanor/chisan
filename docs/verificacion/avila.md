@@ -40,12 +40,16 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `parcial`, 11 `verificado`.
 - Tras lote 2 (2026-07-04): **151 filas** (sin purgas); **122 `pendiente`**, 1
   `parcial`, 28 `verificado`.
+- Tras lote 3 (2026-07-04): **151 filas** (sin purgas); **110 `pendiente`**, 1
+  `parcial`, 40 `verificado`.
 - Venta online inicial: **152 `no comprobado`**, 0 `sí`, 0 `no`. `Canal de
   venta`: 0/152. No hay cuarentena heredada: cada `sí` que se cree nace ya con
   canal y evidencia; cada `no` exige comprobación real.
 - Tras lote 1: VO **9 `sí`** (9/9 con `Canal de venta`), 0 `no`, 142 `no
   comprobado`.
 - Tras lote 2: VO **23 `sí`** (23/23 con `Canal de venta`), 0 `no`, 128 `no
+  comprobado`.
+- Tras lote 3: VO **31 `sí`** (31/31 con `Canal de venta`), 0 `no`, 120 `no
   comprobado`.
 - Imágenes: **0/151**. Las imágenes NO forman parte de esta pasada; quedan
   como residual explícito para una pasada posterior (tras estabilizar
@@ -111,7 +115,7 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `miel-artesanal-la-carrera` vs `miel-artesanal-la-picorea-la-carrera`.
 - Evidencia: Ávila no está en `data/evidence/coverage.json` (se decide al
   cerrar la pasada completa). Ledger en
-  `data/evidence/castilla-y-leon/avila.jsonl` (32 registros tras lote 2: 30
+  `data/evidence/castilla-y-leon/avila.jsonl` (44 registros tras lote 3: 42
   `keep`, 1 `purge`, 1 `merge`).
 
 ## Zonas de Ávila para lotear
@@ -290,7 +294,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 |---|---|---:|---|---|
 | 1 | Charcutería · capital, Moraña y Navas | 13 | ✅ | 2026-07-04: 11 verificados, 1 parcial (Miguel Pascual, sin web), 1 purga (asador Arévalo, not-producer); VO 9 sí (9/9 canal), 4 no comprobado; ICAV mantenida (cooperativa comercializadora IGP); La Estación→Las Navas del Marqués (merge de slug); dominio de La Cantera corregido. |
 | 2 | Charcutería · Tormes, Amblés y Tiétar | 17 | ✅ | 2026-07-04: 17 verificados, 0 purgas; VO 14 sí (14/14 canal), 3 no comprobado; Martín Martín Blázquez tenía web real sin registrar en el CSV (añadida); dominios con cert. caídos (Manolo, Casa Palancas) corroborados por Maps+directorios. |
-| 3 | Bodega · DO Cebreros y bajo Alberche | 12 | ⬜ | 3 sin web; Daniel Ramos, 7 Navas, Fuentegalana. |
+| 3 | Bodega · DO Cebreros y bajo Alberche | 12 | ✅ | 2026-07-04: 12 verificados, 0 purgas; VO 8 sí (8/8 canal), 4 no comprobado; limpieza de 1 IG spam-casino y 1 dominio hackeado/parkeado (Rubén Díaz); añadidas web (Indiano) e IG oficiales (Gaznata, 7 Navas, Soto Manrique). |
 | 4 | Bodega · alto Alberche, Tiétar y Moraña | 12 | ⬜ | Comando G; Ursu agua mineral (recat/purga); restaurante-bodega Lanzahíta; Moraña atípica. |
 | 5 | Pan y pastelería · provincial | 17 | ⬜ | 12 sin web; resolver municipio «Palacios». |
 | 6 | Lácteos y quesos · provincial | 14 | ⬜ | Ornua industrial (probable purga); geo-warning Quesos Miguel; Vicolozano→Ávila. |
@@ -365,25 +369,32 @@ fuentes propias. Dos dominios con certificado TLS roto (`carnesmanolo.com`,
 (regla 18, no se purga por dificultad de acceso). Evidencia añadida en
 `data/evidence/castilla-y-leon/avila.jsonl`.
 
-### Lote 3 · Bodega — DO Cebreros y bajo Alberche (12)
+### Lote 3 · Bodega — DO Cebreros y bajo Alberche (12) — ✅ cerrado 2026-07-04
 
 ```text
-bodega-llano-las-navas-cebreros · Cebreros  (SIN WEB)
-indiano-gredos-la-bodega-azul-cebreros · Cebreros  (SIN WEB)
-ruben-diaz-viticultor-vinadores-de-gredos-sl-cebreros · Cebreros
-soto-manrique-vina-y-olivo-cebreros · Cebreros  (SIN WEB)
-tierras-de-cebreros-cebreros · Cebreros
-daniel-ramos-el-tiemblo · El Tiemblo
-bodega-don-juan-del-aguila-el-barraco · El Barraco
-bodega-7-navas-garnacha-alto-alberche-navaluenga · Navaluenga
-bodega-clemente-peral-san-juan-de-la-nava · San Juan de la Nava
-rico-nuevo-viticultores-burgohondo · Burgohondo
-bodega-finca-fuentegalana-navahondilla · Navahondilla
-chato-ganan-navahondilla · Navahondilla
+bodega-llano-las-navas-cebreros · Cebreros · verificado · VO=sí (marketplace, tienda.avilaautentica.es)
+indiano-gredos-la-bodega-azul-cebreros · Cebreros · verificado · VO=sí (ecommerce) — web añadida (indianowines.com)
+ruben-diaz-viticultor-vinadores-de-gredos-sl-cebreros · Cebreros · verificado · VO=no comprobado — web e IG retirados (ver aviso)
+soto-manrique-vina-y-olivo-cebreros · Cebreros · verificado · VO=no comprobado — Facebook añadido
+tierras-de-cebreros-cebreros · Cebreros · verificado · VO=sí (ecommerce)
+daniel-ramos-el-tiemblo · El Tiemblo · verificado · VO=sí (ecommerce)
+bodega-don-juan-del-aguila-el-barraco · El Barraco · verificado · VO=no comprobado — Instagram añadido (@gaznata)
+bodega-7-navas-garnacha-alto-alberche-navaluenga · Navaluenga · verificado · VO=no comprobado — Instagram añadido
+bodega-clemente-peral-san-juan-de-la-nava · San Juan de la Nava · verificado · VO=sí (ecommerce)
+rico-nuevo-viticultores-burgohondo · Burgohondo · verificado · VO=sí (ecommerce)
+bodega-finca-fuentegalana-navahondilla · Navahondilla · verificado · VO=sí (ecommerce)
+chato-ganan-navahondilla · Navahondilla · verificado · VO=sí (ecommerce)
 ```
 
-Avisos: la DO Cebreros apoya pertenencia (regla 6); para los `SIN WEB`
-buscar perfil oficial o ficha del consejo antes de degradar.
+Higiene de datos: `ruben-diaz-viticultor-vinadores-de-gredos-sl-cebreros` tenía
+un Instagram ajeno de spam de casino (`vavada.inst`, sin relación con la
+bodega) y su web (`rubendiazviticultor.com`) ahora redirige (301) a un sitio
+de golf en Málaga (dominio caducado/aparcado): ambos enlaces se eliminaron.
+Productor real (DO Cebreros, distribuido internacionalmente) mantenido como
+`verificado`, VO degradado a `no comprobado` al perder su canal propio.
+`riconuevovinos.es` tiene spam de casino inyectado en páginas/idiomas ajenos
+pero su `/tienda/` es real y funcional (regla 18, no se purga). La DO Cebreros
+apoya pertenencia (regla 6) en las 12 filas.
 
 ### Lote 4 · Bodega — alto Alberche, Tiétar y Moraña (12)
 
