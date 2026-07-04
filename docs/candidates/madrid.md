@@ -13,6 +13,13 @@ Alcance de esta nota: triage para incorporaciones al CSV de Madrid.
 > distrito Fuencarral-El Pardo). `Venta online=sí` (canal `marketplace`, Glovo/Uber Eats/Just Eat) en
 > Brando, Kalúa, La Gelateria Italiana y Bibì e Bibò; el resto quedó `no comprobado`.
 > Pendientes (10) y descartes siguen abajo para una futura pasada.
+>
+> **Imágenes (2026-07-03):** 8 de las 9 con logo oficial compuesto (WebP 1600x1200, fondo `#F3F0E8`)
+> en `public/productores/madrid/madrid/`. Fuentes: logo de la web oficial (Gelato Lab, Di Angelo,
+> La Gelateria, Bibì e Bibò), logo SVG (Kalúa), marca-scoop/favicon (Fré), icono de marca (Calero) y
+> wordmark blanco recoloreado a carbón para que sea legible (Brando). Descartados por basura del scorer:
+> iconos Instagram/Uber/Glovo (Brando), logos de prensa El País/El Español (Gelato Lab) y tira Kit
+> Digital/UE (Calero). **Dolce Palatino queda sin imagen**: sólo tiene Instagram, sin logo web usable.
 
 ## Criterio usado
 
