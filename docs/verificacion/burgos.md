@@ -58,6 +58,20 @@ tarea.
   no se fuerzan coordenadas, es un artefacto esperado de usar un único
   centroide para un municipio-merindad extenso, igual que otros casos ya
   documentados (Arlanza, Vizcarra...).
+- Snapshot tras lote 3 (2026-07-06): **330 filas** (−4: 3 purgas + 1 fusión);
+  **257 `pendiente`**, 22 `parcial`, 51 `verificado`. Venta online: **37 `sí`**
+  (21 con canal: 11 previos + 10 nuevos: 7 `ecommerce`, 1 `marketplace`, 1
+  `telefono|email`, 1 `telefono`), 24 `no`, 269 `no comprobado`. Imágenes:
+  163/330 (borrada 1 huérfana de la purga del IGP Lechazo). Purgas: I.G.P.
+  Lechazo de Castilla y León (`not-producer`), matadero de La Cueva de Roa
+  (`out-of-scope`, criterio ICAV), Embutidos Duque de Lerma (`closed`,
+  extinguida 08/11/2024). Fusión: Cárnicas Cuevas Aranda + Morcilla Cuevas
+  Aranda (mismo tel/correo, misma empresa desde 1970; nombre unificado).
+  Páramo del Cid: municipio corregido de Aranda de Duero (sede
+  administrativa) a Caleruega (granja real, slug renombrado
+  `paramo-del-cid-caleruega`), recategorizado a Carnes. La Fonda del Prado
+  recategorizada a Conservas (granja + conservas de aves, no embutidos).
+  Gumiel del Mercado normalizado a Gumiel de Mercado (grafía oficial + slug).
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -420,7 +434,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 |---|---|---:|---|---|
 | 1 | Charcutería · Burgos capital | 14 | ✅ 2026-07-06 | 7 verificadas, 2 parciales, 6 purgas (asociación morcilla, IGP morcilla, cortadores de jamón, COBUR cerrada/absorbida por Uvesa, Incarsa B2B), 1 fusión (Hnos. González → `embutidos-hermanos-gonzalez-merindad-de-rio-ubierna`, renombrado en lote 2). VO: 4 nuevos `sí` con canal (marketplace/ecommerce), 1 `no`. Geo-warning de la asociación resuelto. |
 | 2 | Charcutería · alfoz y Arlanza norte | 11 | ✅ 2026-07-06 | 9 verificadas (2 ya lo estaban), 1 fusión (`morcillas-de-cardena` → `embutidos-de-cardena-cardenadijo`, mismo tel/dirección, la web vieja redirige 301 a la actual). Sotopalacios ×3 → `Merindad de Río Ubierna` (slugs renombrados); Villafuertes/Vizmalo confirman hueco de referencia (sin forzar coords). VO: 7 nuevos `sí` con canal (todo ecommerce salvo Zael: marketplace\|whatsapp\|email), 2 quedan `no comprobado` por prudencia (Águeda, Hermanos Masa). `granja-zael-zael` recategorizada Charcutería→Carnes. |
-| 3 | Charcutería · Ribera del Duero y Lerma | 16 | ⬜ | Fila IGP Lechazo (purga probable); matadero y comercializadoras (alcance); par Cuevas (Aranda); «fonda» del Prado (¿restauración?). |
+| 3 | Charcutería · Ribera del Duero y Lerma | 14 | ✅ 2026-07-06 | 11 verificadas, 1 parcial, 3 purgas (IGP Lechazo regional, matadero de La Cueva de Roa por alcance, Duque de Lerma extinguida 2024), 1 fusión (Cárnicas/Morcilla Cuevas Aranda). Recategorizadas: Páramo del Cid → Carnes (y municipio Aranda de Duero → Caleruega, sede vs granja real), La Fonda del Prado → Conservas. Gumiel del Mercado → Gumiel de Mercado (grafía + slug). VO: 10 nuevos `sí` con canal (7 ecommerce, 1 marketplace, 1 telefono\|email, 1 telefono), 2 quedan `no comprobado` por prudencia. |
 | 4 | Charcutería · Merindades, Bureba y Demanda | 17 | ⬜ | Asociación potro + fila gemela (resolver juntas); Ríos comparte tel con asoc. morcilla (lote 1); La Villarcayesa cuarentena VO; grafía Salas. |
 | 5 | Bodega · Roa y ribera del Riaza | 18 | ⬜ | Roa de Duero→Roa (7 slugs con merge); 3 cuarentenas VO (Condado de Haza, Alonso del Yerro…); DO Ribera como ancla. |
 | 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ⬜ | Errata «Predrosa»; Quintanamanvirgo a resolver (Rodero); par Linaje Garsea/El Ventorro (lote 13). |
@@ -485,26 +499,28 @@ santa-rosalia-gourmet-vizmalo · Vizmalo — verificado, VO sí (ecommerce). Fin
 granja-zael-zael · Zael — verificado, VO sí (marketplace|whatsapp|email). Recategorizada Charcutería → Carnes (venden cortes de vacuno, no son elaboradores de embutidos)
 ```
 
-### Lote 3 · Charcutería — Ribera del Duero y Lerma (16) — ⬜
+### Lote 3 · Charcutería — Ribera del Duero y Lerma (16→14) — ✅ 2026-07-06
 
 ```text
-carnicas-chico-aranda-de-duero · Aranda de Duero
-carnicas-cuevas-aranda-aranda-de-duero · Aranda de Duero — tel compartido con `morcilla-cuevas-aranda-de-duero`: ¿misma empresa, dos filas?
-colear-aranda-de-duero · Aranda de Duero — ¿comercializadora de lechazo? alcance (regla 8)
-cortadores-de-jamon-delincex-aranda-de-duero · Aranda de Duero — servicio de corte: alcance (regla 8)
-i-g-p-lechazo-de-castilla-y-leon-aranda-de-duero · Aranda de Duero — PURGA PROBABLE not-producer (IGP regional como fila); web como fuente
-lecoa-aranda-aranda-de-duero · Aranda de Duero — SIN WEB; ¿comercializadora? alcance
-morcilla-cuevas-aranda-de-duero · Aranda de Duero — tel compartido con `carnicas-cuevas-aranda-aranda-de-duero`
-morcillas-el-revillano-aranda-de-duero · Aranda de Duero — SIN WEB
-paramo-del-cid-aranda-de-duero · Aranda de Duero
-embutidos-la-dehesilla-gumiel-del-mercado · Gumiel del Mercado — SIN WEB; grafía: confirmar oficial «Gumiel de Mercado»
-matadero-frigorifico-ribera-del-duero-la-cueva-de-roa · La Cueva de Roa — dominio compartido con `quesos-la-cueva-de-vadorrey-la-cueva-de-roa` (lote 15); matadero: alcance (regla 8)
-embutidos-duque-de-lerma-lerma · Lerma
-morcilla-artesana-de-lerma-lerma · Lerma — SIN WEB
-paradilla-143-pardilla · Pardilla — nombre raro: resolver identidad real
-morcillas-la-ribera-sotillo-de-la-ribera · Sotillo de la Ribera
-la-fonda-del-prado-villalba-de-duero · Villalba de Duero — «fonda»: ¿restauración? alcance
+carnicas-chico-aranda-de-duero · Aranda de Duero — verificado, VO sí (ecommerce, carnicaschico.com)
+morcilla-cuevas-aranda-de-duero · Aranda de Duero — verificado, VO sí (ecommerce). Nombre corregido a "Cárnicas Cuevas Aranda"; fusión con carnicas-cuevas-aranda-aranda-de-duero (mismo tel/correo, "Morcilla de Aranda" es solo su línea de morcilla, no otra empresa); se retira el dominio .es (certificado de un sitio ajeno) y se conserva cuevasaranda.com
+colear-aranda-de-duero · Aranda de Duero — verificado, VO sí (ecommerce). Cooperativa con tienda online propia de producto envasado: entra (criterio ICAV)
+cortadores-de-jamon-delincex-aranda-de-duero · Aranda de Duero — verificado, VO sí (telefono|email). No es solo cortador: elaborador integral de jamón ibérico (Delincex); nombre corregido, FB roto retirado
+lecoa-aranda-aranda-de-duero · Aranda de Duero — verificado, VO sí (marketplace, vinosribera.com). Sin web propia
+morcillas-el-revillano-aranda-de-duero · Aranda de Duero — verificado, VO sí (ecommerce). Web propia añadida (elrevillano.com)
+paramo-del-cid-caleruega · Caleruega (antes Aranda de Duero; slug renombrado) — verificado, VO sí (telefono). Sede administrativa vs granja real: municipio y coordenadas corregidos a Caleruega (centroide); recategorizado Charcutería → Carnes
+embutidos-la-dehesilla-gumiel-de-mercado · Gumiel de Mercado (antes Gumiel del Mercado; slug renombrado) — parcial, VO no comprobado. Solo fuentes registrales (estado contradictorio activa/extinguida), sin web/redes propias
+morcilla-artesana-de-lerma-lerma · Lerma — verificado, VO no comprobado. Web propia añadida (morcilladelerma.com), sin tienda activa confirmada
+paradilla-143-pardilla · Pardilla — verificado, VO sí (ecommerce). Identidad resuelta: ganadería familiar Abad, juego de palabras con el km 143 de la N-I
+morcillas-la-ribera-sotillo-de-la-ribera · Sotillo de la Ribera — verificado, VO sí (ecommerce, lariberagourmetonline.com)
+la-fonda-del-prado-villalba-de-duero · Villalba de Duero — verificado, VO sí (ecommerce). No es restaurante puro: granja propia + conservas de aves; recategorizado Charcutería → Conservas
 ```
+
+Purgas y fusiones del lote:
+- `i-g-p-lechazo-de-castilla-y-leon-aranda-de-duero` — purga `not-producer` (IGP regional, no productor; imagen huérfana borrada).
+- `matadero-frigorifico-ribera-del-duero-la-cueva-de-roa` — purga `out-of-scope` (matadero/comercializadora B2B, sin venta directa; criterio ICAV). Su dominio compartido con `quesos-la-cueva-de-vadorrey-la-cueva-de-roa` (lote 15) queda resuelto: la quesería sigue en solitario.
+- `embutidos-duque-de-lerma-lerma` — purga `closed` (Registro Mercantil: extinguida 08/11/2024; dominio caído).
+- `carnicas-cuevas-aranda-aranda-de-duero` — fusión en `morcilla-cuevas-aranda-de-duero` (mismo tel/correo, misma empresa).
 
 ### Lote 4 · Charcutería — Merindades, Bureba y Demanda (17) — ⬜
 
@@ -755,7 +771,7 @@ lacteas-flor-de-burgos-burgos · Burgos
 lacteos-angulo-quesera-burgalesa-burgos · Burgos
 quesos-la-casona-de-los-pisones-burgos · Burgos
 quesos-mostelares-hinestrosa · Hinestrosa — municipio sin centroide → Castrojeriz; tel compartido con `quesos-ilujor-palacios-de-benaver`: ¿misma quesería, dos marcas?
-quesos-la-cueva-de-vadorrey-la-cueva-de-roa · La Cueva de Roa — dominio compartido con `matadero-frigorifico-ribera-del-duero-la-cueva-de-roa` (lote 3): resolver relación
+quesos-la-cueva-de-vadorrey-la-cueva-de-roa · La Cueva de Roa — dominio compartido con `matadero-frigorifico-ribera-del-duero-la-cueva-de-roa` (lote 3, purgado 2026-07-06 por alcance: matadero B2B, no vende envasado a particulares); quesería resuelta en solitario en este lote
 comercial-altoesgueva-oquillas · Oquillas — dominio compartido con `lechazo-y-quesos-del-vidal-oquillas`: «comercial» = ¿brazo comercializador? probable fusión
 lechazo-y-quesos-del-vidal-oquillas · Oquillas — dominio compartido con `comercial-altoesgueva-oquillas`
 quesos-ilujor-palacios-de-benaver · Palacios de Benaver — municipio sin centroide → resolver INE; tel compartido con `quesos-mostelares-hinestrosa`
