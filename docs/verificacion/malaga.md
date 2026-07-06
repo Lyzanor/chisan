@@ -55,6 +55,16 @@ curso; no necesitas releer el manual entero por lote.
   resuelven los geo-warnings de `panaderia-nuestra-senora-de-las-nieves-gaucin`
   e `ibericos-langenal-farajan`; la auditoría de calidad queda en **0 errores y
   5 warnings**.
+- Tras lotes 13-16 (2026-07-06): **400 filas** por 1 fusión
+  (`agasur-s-c-a-el-taraja` -> `agammasur-s-c-a-colmenar`) y 1 purga
+  (`productos-de-la-cabra-malaguena-casabermeja`); **281 `verificado`**, **38
+  `parcial`** y **81 `pendiente`**. Venta online: **147 `sí`**, **11 `no`** y
+  **242 `no comprobado`**. La pasada cierra 60 filas activas de fruta, frutos
+  secos, snacks, lácteos, queserías, helados y obradores recategorizados: 51
+  `verificado`, 9 `parcial`, 25 `Venta online=sí` con canal y 64 decisiones de
+  evidencia. Se corrigen los slugs/municipios `frutos-secos-esteban-malaga` y
+  `nueces-de-ronda-ronda`; la auditoría de calidad queda en **0 errores y 3
+  warnings**.
 - **Anomalía clave: provincia enorme con verificados heredados sin evidencia.**
   Málaga tiene más filas que Granada y una mezcla de 65 `verificado`, 6
   `parcial` y 25 `Venta online=sí`, pero no existe ledger de evidencia
@@ -65,23 +75,23 @@ curso; no necesitas releer el manual entero por lote.
   quedar cuando se haya comprobado que no hay mecanismo de pedido remoto vigente.
   Si la revisión no permite cerrarlo, degradar a `no comprobado`. Un `sí` nuevo o
   heredado exige canal y evidencia actual.
-- Reparto por categoría actual (25): **Pan y pastelería 64**, **Aceite 56**,
-  **Bodega 46**, **Charcutería 38**, **Fruta y verdura 36**, **Despensa
-  artesanal 31**, **Lácteos y quesos 31**, **Miel 19**, **Cerveza artesana 13**,
+- Reparto por categoría actual (27): **Pan y pastelería 70**, **Aceite 56**,
+  **Bodega 46**, **Charcutería 38**, **Despensa artesanal 31**, **Fruta y
+  verdura 26**, **Lácteos y quesos 21**, **Miel 19**, **Cerveza artesana 13**,
   **Aceitunas y encurtidos 13**, **Huevos 11**, **Aromáticas y condimentos 9**,
-  **Café 8**, **Chocolate 6**, **Helados 4**, **Conservas y mermeladas 4**,
-  **Comida preparada 3**, **Pescado 2**, **Destilados y licores 2** y categorías
-  unitarias: Aromáticas, Licores, Mermeladas, Pasta artesana, Pescado y
-  conservas y Vermut.
-- Territorio muy concentrado en cabeceras pero con cola larga: **Málaga 66**,
-  **Ronda 36**, **Vélez-Málaga 33**, **Antequera 32**, **Coín 23**, Alhaurín el
-  Grande 14, Alhaurín de la Torre 8, Cártama 8, Colmenar 8, Arriate 7,
-  Campillos 7 y después muchos municipios con 1-6 filas.
-- Imágenes: **245/405 con `imagen`, 160 sin**. Revisar imágenes solo después de
+  **Café 8**, **Frutos secos 7**, **Chocolate 6**, **Helados 6**, **Conservas y
+  mermeladas 4**, **Comida preparada 3**, **Pescado 2**, **Destilados y licores
+  2**, **Snacks artesanos 2** y categorías unitarias: Aromáticas, Despensa
+  ecológica, Licores, Mermeladas, Pasta artesana, Pescado y conservas y Vermut.
+- Territorio muy concentrado en cabeceras pero con cola larga: **Málaga 65**,
+  **Ronda 37**, **Vélez-Málaga 33**, **Antequera 30**, **Coín 23**, Alhaurín el
+  Grande 14, Alhaurín de la Torre 8, Cártama 8, Colmenar 8, Álora 7, Arriate 6,
+  Campillos 6 y después muchos municipios con 1-5 filas.
+- Imágenes: **244/400 con `imagen`, 156 sin**. Revisar imágenes solo después de
   estabilizar identidad, `slug`, fusiones y purgas.
-- Enlaces iniciales: **web 345/405**, `Instagram` 213/405, `Facebook` 232/405,
-  `Google Maps` 405/405, `telefono` 401/405, `correo` 400/405, `direccion`
-  405/405, `lat`/`lon` 404/405.
+- Enlaces actuales: **web 319/400**, `Instagram` 215/400, `Facebook` 236/400,
+  `Google Maps` 400/400, `telefono` 397/400, `correo` 396/400, `direccion`
+  400/400, `lat`/`lon` 400/400.
 - Calidad inicial:
   - `node scripts/audit-csv.js --mode=contract data/csv/andalucia/malaga.csv`
     devuelve **0 errores, 0 warnings, status OK**.
@@ -93,8 +103,9 @@ curso; no necesitas releer el manual entero por lote.
     resuelto en lote 3; el municipio correcto es Archidona.
   - `aceites-cortijo-el-solano-antequera`: 15,5 km de Antequera; centroide más
     cercano Humilladero.
-  - `frutos-secos-esteban-fuengirola`: 22,4 km de Fuengirola; centroide más
-    cercano Málaga.
+  - `frutos-secos-esteban-fuengirola` -> `frutos-secos-esteban-malaga`:
+    resuelto en lote 14; la dirección y ficha conservadas sitúan la unidad en
+    Málaga capital.
   - `gazpacheria-malaguena-pizarra`: 26,1 km de Pizarra; centroide más cercano
     Málaga.
   - `ibericos-langenal-arriate` -> `ibericos-langenal-farajan`: resuelto en
@@ -104,13 +115,13 @@ curso; no necesitas releer el manual entero por lote.
     Alhaurín de la Torre.
   - `lagar-del-chorro-torremolinos` -> `lagar-del-chorro-alora`: resuelto en
     lote 3; la finca de AOVE está en El Chorro/Álora.
-  - `nueces-de-ronda-malaga`: 62,7 km de Málaga; centroide más cercano Arriate.
+  - `nueces-de-ronda-malaga` -> `nueces-de-ronda-ronda`: resuelto en lote 14;
+    la finca La Molinilla está en Ronda.
   - `panaderia-nuestra-senora-de-las-nieves-gaucin`: resuelto en lote 10; se
     corrige dirección a C/ Tenería 25 (Gaucín) y se sustituye la coordenada
     heredada de Málaga capital por coordenada municipal honesta.
-- Fila sin coordenadas: `agasur-s-c-a-el-taraja`. Revisar si `El Taraja` debe
-  mantenerse como localidad submunicipal, corregirse a municipio oficial o quedar
-  con centroide honesto.
+- Fila sin coordenadas heredada `agasur-s-c-a-el-taraja`: resuelta en lote 16
+  por fusión en `agammasur-s-c-a-colmenar`.
 - Evidencia inicial: no existía `data/evidence/andalucia/malaga.jsonl`; se creó
   en lote 1 con 29 decisiones. Málaga no está en cobertura estricta
   (`data/evidence/coverage.json`).
@@ -191,7 +202,8 @@ curso; no necesitas releer el manual entero por lote.
 10. **Lácteos y quesos (31) = cabra malagueña y queserías artesanas.** Entra la
     quesería con elaboración propia y, si procede, ganadería/leche local. Premios,
     asociación o catálogo de quesos apoyan existencia, pero no venta online.
-    Revisar `agasur-s-c-a-el-taraja` por municipio/coordenadas ausentes.
+    `agasur-s-c-a-el-taraja` quedó resuelta en lote 16 por fusión en
+    `agammasur-s-c-a-colmenar`.
 11. **Aceituna Aloreña y encurtidos.** Distingue aceitunera/elaborador de punto de
     venta, distribuidor o tienda gourmet. La DOP Aloreña de Málaga es apoyo de
     operador/producto; no sustituye fuente propia ni prueba venta remota.
@@ -323,10 +335,10 @@ no el resultado; se actualizan al cerrar cada lote.
 | 10 | Pan y pastelería · Axarquía/Guadalhorce/Serranía | 25 | 20 / 0 / 5 / 2 | ✅ | Cerrado 2026-07-04: se corrige el geo-warning de Gaucín, `encurtidos-almario-ronda` pasa a `Aceitunas y encurtidos`, `safrante-alhaurin-de-la-torre` a `Aromáticas y condimentos` y `spiga-negra-humilladero` a `Pasta artesana`. |
 | 11 | Charcutería · Serranía/Genal + Antequera | 15 | 13 / 0 / 2 / 1 | ✅ | Cerrado 2026-07-04: `ibericos-langenal-arriate` pasa a `ibericos-langenal-farajan`; se canalizan ventas online de Icarben, Ibéricos ARO, Dehesa Monteros y Alto Genal; `rondasal-ronda` queda `parcial`. |
 | 12 | Charcutería · Málaga/Axarquía/Guadalhorce/Costa | 26 | 25 / 0 / 1 / 0 | ✅ | Cerrado 2026-07-04: `aupa-gourmet-alhaurin-de-la-torre` pasa a `Comida preparada`, `cadelmar-antequera` a `Pescado y conservas`, Especias Pedroza/Lucas Sánchez/Productos Laure a `Aromáticas y condimentos` y `trafrut-cano-pizarra` a `Conservas y mermeladas`; Beatriz y La Victoria quedan `parcial` sin purga. |
-| 13 | Fruta y verdura · Axarquía tropical + costa | 12 | 9 / 0 / 3 / 2 | ⬜ | Aguacate, mango, pasas/fruta tropical y cooperativas. Resolver `tropicado`, `MANCATE`, `S.C.A. San Isidro de El Borge` y posible venta online. |
-| 14 | Fruta y verdura · Guadalhorce/Málaga/Ronda/Antequera | 19 | 18 / 0 / 1 / 1 | ⬜ | Huerta, cítricos, berries/frutos secos y geo-warnings: `frutos-secos-esteban-fuengirola`, `nueces-de-ronda-malaga`, `la-huertezuela-alozaina`. |
-| 15 | Lácteos y quesos · Antequera/Serranía | 9 | 6 / 0 / 3 / 0 | ⬜ | Queserías de cabra, Norte y Serranía; revisar Cabraline, Rey Cabra, La Arriateña y fuentes sin web. |
-| 16 | Lácteos y quesos · Málaga/Axarquía/Guadalhorce/Sierra Nieves | 22 | 18 / 1 / 3 / 0 | ⬜ | Queserías y posibles dulces mal categorizados. Resolver `agasur-s-c-a-el-taraja`, `quesos-sierra-de-las-nieves-alozaina` (`parcial`) y recats. |
+| 13 | Fruta y verdura · Axarquía tropical + costa | 12 | 9 / 0 / 3 / 2 | ✅ | Cerrado 2026-07-06 dentro de pasada 13-16: tropicales principales verificados; `tropicado` y `tropicsur` bajan a `no comprobado`, `MANCATE` queda `sí` por teléfono y `S.C.A. San Isidro de El Borge` queda con tienda online. |
+| 14 | Fruta y verdura · Guadalhorce/Málaga/Ronda/Antequera | 19 | 18 / 0 / 1 / 1 | ✅ | Cerrado 2026-07-06: se corrigen `frutos-secos-esteban-malaga` y `nueces-de-ronda-ronda`; `Cítricos Valero`, `Cítrica de Pizarra` y `Frutas Rocío` quedan `parcial`; recats a `Frutos secos`, `Snacks artesanos` y `Despensa ecológica`. |
+| 15 | Lácteos y quesos · Antequera/Serranía | 9 | 6 / 0 / 3 / 0 | ✅ | Cerrado 2026-07-06: `Cabraline` y `La Arriateña` quedan `verificado` sin venta online cerrada; `Rey Cabra` y `El Arquillo` quedan `parcial`; `Agasur` se fusiona en `Agammasur`. |
+| 16 | Lácteos y quesos · Málaga/Axarquía/Guadalhorce/Sierra Nieves | 22 | 18 / 1 / 3 / 0 | ✅ | Cerrado 2026-07-06: se purga `Productos de la Cabra Malagueña` por asociación sectorial, se recategorizan obradores y heladerías, y `El Albarejo` / `Sierra de las Nieves` quedan `parcial` sin fuente propia viva. |
 | 17 | Despensa artesanal · Axarquía + Málaga | 14 | 14 / 0 / 0 / 0 | ⬜ | Gazpachos, mermeladas, pastas, conservas y despensa urbana; revisar enlaces, categoría y productor real. |
 | 18 | Despensa artesanal · Guadalhorce/Serranía/Antequera + Pescado/Helados | 19 | 19 / 0 / 0 / 0 | ⬜ | Despensa de Coín/Antequera/Ronda, 2 pescados y 2 helados. Resolver `gazpacheria-malaguena-pizarra` y riesgo de distribuidor en pescado. |
 | 19 | Miel + aromáticas/condimentos | 23 | 12 / 2 / 9 / 5 | ⬜ | Apicultura, miel de caña, mermeladas y aromáticas. Resolver 5 `sí` heredados, `miel-piedra-solana-colmenar` y `miel-la-melifera-mijas` (`parcial`). |
@@ -341,12 +353,13 @@ Fruta y verdura 31 (13-14), Lácteos y quesos 31 (15-16), Despensa artesanal 29
 Cerveza artesana 13 + Café 8 (20), Aceitunas y encurtidos 11 + Huevos 11 +
 Chocolate 6 (21). Total 405.
 
-Reparto actual tras lote 7: Pan y pastelería 68, Aceite 56, Bodega 46,
-Charcutería 44, Fruta y verdura 36, Despensa artesanal 31, Lácteos y quesos 31,
-Miel 19, Cerveza artesana 13, Aceitunas y encurtidos 12, Huevos 11, Café 8,
-Chocolate 6, Aromáticas y condimentos 5, Helados 4, Conservas y mermeladas 3,
-Comida preparada 2, Destilados y licores 2, Pescado 2, Aromáticas 1, Licores 1,
-Mermeladas 1, Vermut 1. Total 403.
+Reparto actual tras lotes 13-16: Pan y pastelería 70, Aceite 56, Bodega 46,
+Charcutería 38, Despensa artesanal 31, Fruta y verdura 26, Lácteos y quesos 21,
+Miel 19, Cerveza artesana 13, Aceitunas y encurtidos 13, Huevos 11, Aromáticas y
+condimentos 9, Café 8, Frutos secos 7, Chocolate 6, Helados 6, Conservas y
+mermeladas 4, Comida preparada 3, Destilados y licores 2, Pescado 2, Snacks
+artesanos 2, Aromáticas 1, Despensa ecológica 1, Licores 1, Mermeladas 1, Pasta
+artesana 1, Pescado y conservas 1, Vermut 1. Total 400.
 
 ## Flujo por lote
 
