@@ -49,6 +49,13 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   Barco→Coronado—; los otros 2 merges de esta tanda no reducen el total
   porque solo renombran slug); **21 `pendiente`**, 6 `parcial`, 120
   `verificado`.
+- **Cierre 1ª pasada (lote 11, 2026-07-06): 145 filas, 137 `verificado`, 8
+  `parcial`, 0 `pendiente`; VO 63 `sí` (63/63 canal) / 0 `no` / 82 `no
+  comprobado`. `verify:data` verde; Ávila en `coverage.json` (advisory
+  strict). Evidencia: 160 registros (145 keep, 5 purge, 10 merge), cubre las
+  145 filas. 0 duplicados, 0 geo-warnings, 0 huecos reales de
+  municipios.json.** Residual para 2ª pasada: 8 `parcial` (motivo anotado),
+  imágenes 0/145.
 - Tras lote 10 (2026-07-04): **145 filas**; **0 `pendiente`**, 8 `parcial`,
   137 `verificado`. **Las 152 filas originales quedan todas revisadas**
   (152 iniciales − 4 purgas: Ornua, Marugán, Sabores de Gredos, La Casa de
@@ -115,40 +122,34 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
     05113 es el código postal de Burgohondo, no de la capital. Municipio
     corregido a Burgohondo; slug renombrado a `quesos-miguel-burgohondo` con
     `merge` en la evidencia.
-  - `miel-artesanal-la-carrera` (lote 10): coordenadas a 0,2 km de Villanueva
-    de Ávila pero municipio «La Carrera» (62 km). Ojo: existe otra fila de
-    miel en La Carrera (`miel-artesanal-la-picorea-la-carrera`); resolver
-    identidad de ambas a la vez.
-- **Municipios que no están en `data/reference/municipios.json`** (12): estas
-  filas no tienen protección del geo-check (se saltan en silencio), así que
-  hay que validar sus coordenadas a mano en su lote.
-  - Probables pedanías o nombres no oficiales — corregir `municipio` al
-    municipio oficial INE y conservar la localidad en `direccion`:
-    **Vicolozano** (entidad de Ávila; 2 filas), **El Raso** (pedanía de
-    Candeleda), ~~**La Estación** (zona de Las Navas del Marqués)~~ **resuelto
-    lote 1**, ~~**Palacios** (coords 40.5427,-4.8502, Valle Amblés)~~
-    **resuelto lote 5**: es el barrio «Palacio» de Sotalbo (junto a Riatas y
-    Bandadas); fila corregida a municipio Sotalbo, slug
-    `panaderia-la-candelaria-sotalbo`. **Tornadizos de Arévalo** (no existe
-    como municipio; coords junto a Arévalo; resolver), **Navandrinal**
-    (probable entidad de San Juan del Molinillo; confirmar — nota: dos filas
-    de bodega ya usan este municipio sin incidencia, lotes 3-4).
-  - Aparentan municipios oficiales que faltan en la referencia — confirmar
-    contra el INE y, si es así, NO tocar la fila; anotar aquí el hueco de
-    referencia: **Solana de Ávila**, **La Carrera**, **Pedro-Rodríguez**,
-    **San Esteban de los Patos**, **Cabezas de Alambre**, **Salvadiós**.
-- Duplicados: sin duplicados exactos por nombre. Sospechas a resolver en su
-  lote: `obrador-de-angel-las-navas-del-marques` vs
-  `pasteleria-obrador-de-angel-luanje-avila` (lote 7);
-  `frutos-secos-loli-flores-y-jimenez-avila` vs
-  `panaderia-flores-y-jimenez-avila` (mismo grupo familiar, ¿misma unidad?);
-  `agropecuaria-la-serrota-santa-maria-del-arroyo` vs
-  `embutidos-la-serrota-sl-solosancho`;
-  `miel-artesanal-la-carrera` vs `miel-artesanal-la-picorea-la-carrera`.
-- Evidencia: Ávila no está en `data/evidence/coverage.json` (se decide al
-  cerrar la pasada completa). Ledger en
-  `data/evidence/castilla-y-leon/avila.jsonl` (156 registros tras lote 10:
-  145 `keep`, 5 `purge`, 6 `merge`). Cubre las 145 filas actuales del CSV.
+  - ~~`miel-artesanal-la-carrera` (lote 10)~~ **resuelto 2026-07-04**: era la
+    misma empresa que `miel-artesanal-la-picorea-la-carrera` (mismo teléfono y
+    web) con una ficha de Maps mal geolocalizada a 62 km; fusionada.
+- **Municipios que no estaban en `data/reference/municipios.json`**: ✅
+  **cerrado 2026-07-06**. En el cierre transversal, con la normalización real
+  del audit (que colapsa guiones/acentos a espacio) **los 145 municipios del
+  CSV están en la referencia**: 0 huecos reales, geo-check protege las 145
+  filas.
+  - Pedanías/anejos corregidos al municipio oficial INE (localidad conservada
+    en `direccion`, slug renombrado con `merge`): **Vicolozano**→Ávila (lotes
+    6/9), **El Raso**→Candeleda (lote 9), **La Estación**→Las Navas del
+    Marqués (lote 1), **Palacios**→Sotalbo (lote 5), **Tornadizos de
+    Arévalo**→Palacios de Goda (lote 11), **Navandrinal**→San Juan del
+    Molinillo (×2, lote 11), **Narrillos de San Leonardo**→Ávila (lote 11).
+  - Sospechas de hueco que resultaron estar en la referencia (no se tocó la
+    fila): **Solana de Ávila**, **La Carrera**, **San Esteban de los Patos**,
+    **Cabezas de Alambre**, **Salvadiós** y **Pedro-Rodríguez** (esta última
+    bajo la clave normalizada `pedro rodriguez`).
+- Duplicados: ✅ 0 tras el cierre. Sospechas resueltas: los dos «Obrador de
+  Ángel» (lote 7) y las dos «La Serrota» (Agropecuaria vs Embutidos) son
+  negocios distintos; `frutos-secos-loli-flores-y-jimenez` y
+  `panaderia-flores-y-jimenez` comparten dominio pero son dos unidades del
+  mismo grupo familiar (direcciones/teléfonos distintos); las dos mieles de La
+  Carrera eran la misma empresa (fusionada, lote 10).
+- Evidencia: ✅ Ávila **añadida a `data/evidence/coverage.json`** (advisory
+  strict) el 2026-07-06. Ledger en `data/evidence/castilla-y-leon/avila.jsonl`
+  (160 registros tras lote 11: 145 `keep`, 5 `purge`, 10 `merge`); cubre las
+  145 filas actuales del CSV.
 
 ## Zonas de Ávila para lotear
 
@@ -353,7 +354,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 8 | Legumbres + Huevos + Frutos secos | 15 | ✅ | 2026-07-04: 14 verificados, 1 parcial, 1 merge (Judías del Barco→Coronado, mismo teléfono/web); VO 6 sí (6/6 canal), 9 no comprobado; Granjas San Antonio recat a Charcutería (es porcino, no huevos). |
 | 9 | Aceite + Fruta y verdura | 15 | ✅ | 2026-07-04: 12 verificados, 3 parcial, 1 purga (Sabores de Gredos, marketplace no productor), 2 merges (Simón→Ávila, Capra Hispánica→Candeleda); VO 5 sí (5/5 canal), 10 no comprobado; 3 aceituneras recat a "Aceitunas y encurtidos". |
 | 10 | Miel + Despensa + Aromáticas + Cerveza + Helados + Otros | 18 | ✅ | 2026-07-04: 16 verificados, 2 parcial, 1 purga (La Casa de Pilar, marketplace), 1 merge (mieles de La Carrera); VO 9 sí (9/9 canal), 9 no comprobado; Cronoble→Platos preparados, Dehesa de la Serna→Carnes. |
-| 11 | Cierre transversal provincial | 152 | ⬜ | Dedup, VO completo, municipios/geo resueltos, evidencia coherente, `verify:data`, decidir `coverage.json`. |
+| 11 | Cierre transversal provincial | 145 | ✅ | 2026-07-06: 0 duplicados; 4 pedanías/anejos corregidos al municipio INE (Tornadizos→Palacios de Goda, Navandrinal×2→San Juan del Molinillo, Narrillos de San Leonardo→Ávila) con merge; 0 huecos de municipios.json (Pedro-Rodríguez sí estaba); Kerbest recat a Carnes; Ávila añadida a `coverage.json`; `verify:data` verde. **1ª PASADA COMPLETA.** |
 
 ## Alcance exacto de cada lote (slugs congelados el 2026-07-04)
 
@@ -456,7 +457,7 @@ las-pedreras-villanueva-de-avila · Villanueva de Ávila · verificado · VO=no 
 vda-viticultores-villanueva-de-avila · Villanueva de Ávila · verificado · VO=sí (marketplace|telefono|email) — tel/email añadidos
 10-delirios-bodegas-y-vinedos-navatalgordo · Navatalgordo · verificado · VO=sí (ecommerce)
 bodega-alma-rural-navatalgordo · Navatalgordo · verificado · VO=no comprobado
-bodega-nietos-de-senora-maria-navandrinal · Navandrinal · verificado · VO=sí (ecommerce)
+bodega-nietos-de-senora-maria-navandrinal · Navandrinal · verificado · VO=sí (ecommerce) — [lote 11: municipio→San Juan del Molinillo, slug→bodega-nietos-de-senora-maria-san-juan-del-molinillo]
 bodega-el-callejon-san-esteban-del-valle · San Esteban del Valle · verificado · VO=no comprobado
 restaurante-y-bodega-huellas-del-tietar-lanzahita · Lanzahíta · verificado · VO=sí (marketplace)
 bodega-teo-legido-castellanos-de-zapardiel · Castellanos de Zapardiel · verificado · VO=no comprobado
@@ -488,7 +489,7 @@ panaderia-horno-viejo-hoyos-del-espino · Hoyos del Espino · verificado · VO=n
 panaderia-el-horno-del-marques-las-navas-del-marques · Las Navas del Marqués · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
 panaderia-de-flora-martiherrero-martiherrero · Martiherrero · verificado · VO=no comprobado (web=Facebook)
 panaderia-bolleria-rafael-hernandez-c-b-munogalindo · Muñogalindo · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
-tahona-araujo-narrillos-de-san-leonardo · Narrillos de San Leonardo · verificado · VO=no comprobado  (SIN WEB, Maps+tel)
+tahona-araujo-narrillos-de-san-leonardo · Narrillos de San Leonardo · verificado · VO=no comprobado  (SIN WEB, Maps+tel) — [lote 11: municipio→Ávila (anejo), slug→tahona-araujo-avila]
 panaderia-la-tahona-pasteleria-navaluenga · Navaluenga · verificado · VO=no comprobado  (SIN WEB, Maps)
 tahona-pan-navaluenga · Navaluenga · verificado · VO=no comprobado  (SIN WEB, Maps)
 panaderia-la-candelaria-sotalbo · Sotalbo · verificado · VO=no comprobado — municipio corregido de "Palacios" a Sotalbo (slug renombrado, merge en evidencia); IG/FB añadidos
@@ -512,7 +513,7 @@ queda pendiente de anotar en ese lote.
 ```text
 quesos-miguel-burgohondo · Burgohondo · verificado · VO=no comprobado — municipio corregido de "Ávila" (merge de slug)
 queseria-artesanal-burgohondo · Burgohondo · verificado · VO=no comprobado — nombre limpiado a "Quesería Umbrías de Gredos"
-quesos-del-alberche-navandrinal · Navandrinal · verificado · VO=sí (ecommerce|marketplace)
+quesos-del-alberche-navandrinal · Navandrinal · verificado · VO=sí (ecommerce) — [lote 11: municipio→San Juan del Molinillo, slug→quesos-del-alberche-san-juan-del-molinillo]
 quesos-elvira-garcia-el-barraco · El Barraco · verificado · VO=sí (ecommerce)
 montealijar-las-navas-del-marques · Las Navas del Marqués · verificado · VO=no comprobado
 ganaderos-de-caprino-de-candeleda-candeleda · Candeleda · verificado · VO=no comprobado
@@ -570,7 +571,7 @@ campesina-tormes-el-barco-de-avila · El Barco de Ávila · verificado · VO=no 
 legumbres-vaquero-tienda-en-el-barco-de-avila-el-barco-de-avila · El Barco de Ávila · parcial · VO=no comprobado — nombre limpiado, es tienda/droguería
 legumbres-coronado-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
 legumbres-herederos-judias-de-el-barco-de-avila-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
-legumbres-el-rua-tornadizos-de-arevalo · Tornadizos de Arévalo · verificado · VO=sí (ecommerce)
+legumbres-el-rua-tornadizos-de-arevalo · Tornadizos de Arévalo · verificado · VO=sí (ecommerce) — [lote 11: municipio→Palacios de Goda (pedanía), slug→legumbres-el-rua-palacios-de-goda]
 legumbres-julian-munoz-e-hijos-velayos · Velayos · verificado · VO=no comprobado  (SIN WEB)
 legumbres-nuestra-senora-del-rosario-velayos · Velayos · verificado · VO=no comprobado  (SIN WEB)
 para-legumbres-la-castellana-velayos · Velayos · verificado · VO=no comprobado  (SIN WEB)
@@ -640,7 +641,7 @@ pimenton-el-sequero · Candeleda · verificado · VO=sí (ecommerce)
 cerveza-tupa-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
 cerveza-gredos-hoyocasero · Hoyocasero · verificado · VO=sí (ecommerce)
 alimentos-ecologicos-biogredos-mombeltran · Mombeltrán · verificado · VO=sí (ecommerce)
-agropecuaria-la-serrota-santa-maria-del-arroyo · Santa María del Arroyo · verificado · VO=no comprobado — ver aviso Kerbest
+agropecuaria-la-serrota-santa-maria-del-arroyo · Santa María del Arroyo · verificado · VO=no comprobado — [lote 11: recat Despensa artesanal→Carnes; nombre→"Agropecuaria La Serrota (Kerbest)", grupo cárnico real de Ávila]
 cronoble-avila-s-l-avila · Ávila · verificado · VO=sí (ecommerce) — RECAT a Platos preparados
 dehesa-de-la-serna-avila · Ávila · verificado · VO=sí (ecommerce) — RECAT a Carnes
 la-heladeria-artesana-arenas-de-san-pedro · Arenas de San Pedro · verificado · VO=no comprobado
@@ -662,10 +663,37 @@ purga por evidencia débil; queda anotado para el cierre transversal. Cronoble
 recategorizada a "Platos preparados" y Dehesa de la Serna a "Carnes"
 (regla 16, ambas eran "Despensa artesanal" por error de categorización).
 
-### Lote 11 · Cierre transversal provincial (152)
+### Lote 11 · Cierre transversal provincial — ✅ cerrado 2026-07-06
 
-Sin lista propia: repasa el CSV completo con los criterios de cierre de la
-pasada y resuelve residuales de los lotes 1-10.
+Sin lista propia: repaso del CSV completo con los criterios de cierre. Qué se
+hizo:
+
+- **Duplicados: 0.** Cruce por teléfono, dominio y nombre normalizados en las
+  145 filas. El único dominio compartido (`floresyjimenez.com`) son dos
+  unidades reales del mismo grupo familiar (panadería + tienda de frutos
+  secos, direcciones y teléfonos distintos), ya documentado. Las sospechas
+  heredadas quedaron resueltas en sus lotes.
+- **Municipios/geo: 0 huecos, 0 warnings.** Con la normalización real del
+  audit los 145 municipios están en `municipios.json`. Cuatro filas seguían
+  con pedanía/anejo como municipio y se corrigieron al oficial INE (localidad
+  conservada en `direccion`, slug renombrado con `merge`): Tornadizos de
+  Arévalo→Palacios de Goda, Navandrinal→San Juan del Molinillo (×2), Narrillos
+  de San Leonardo→Ávila. Pedro-Rodríguez resultó estar ya en la referencia
+  (clave `pedro rodriguez`), no era hueco.
+- **Recategorización pendiente resuelta:** `agropecuaria-la-serrota-...`
+  (marca Kerbest) pasó de «Despensa artesanal» a «Carnes» — es un grupo
+  cárnico real de Ávila (cerdo, wagyu, avicultura; PYME del año), no se purga
+  por escala (criterio ICAV/Elgorriaga).
+- **Venta online:** 63 `sí` (63/63 con canal), 0 `no`, 82 `no comprobado`. Sin
+  cuarentena; cada `sí` con evidencia de pedido remoto vigente.
+- **Evidencia:** 160 registros (145 keep, 5 purge, 10 merge) que cubren las
+  145 filas; Ávila añadida a `data/evidence/coverage.json`.
+- **`npx pnpm verify:data` en verde.**
+
+Residual explícito para 2ª pasada (no bloquea el cierre): 8 filas `parcial`
+(cada una con motivo en la evidencia: Miguel Pascual, Yemas de Ávila, Legumbres
+Vaquero, La Casa de la Miel, La Mielesa y las huertas de Rodri/Col/Xelo) e
+imágenes 0/145.
 
 ## Flujo por lote
 
