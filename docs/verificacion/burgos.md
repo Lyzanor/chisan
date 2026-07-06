@@ -45,6 +45,19 @@ tarea.
   (4 con canal: `marketplace`, 3×`ecommerce`), 24 `no`, 291 `no comprobado`.
   Charcutería baja de 58 a 51 filas (6 purgas + 1 fusión, todas del sector).
   Imágenes: 165/335 (se borraron 3 huérfanas de filas purgadas).
+- Snapshot tras lote 2 (2026-07-06): **334 filas** (−1: 1 fusión, `morcillas-de-cardena-cardenadijo`
+  → `embutidos-de-cardena-cardenadijo`); **273 `pendiente`**, 21 `parcial`,
+  40 `verificado`. Venta online: **27 `sí`** (11 con canal: 4 previos +
+  7 nuevos, todos `ecommerce` salvo Zael en `marketplace|whatsapp|email`),
+  24 `no`, 283 `no comprobado`. Imágenes: 164/334 (renombradas 2 al normalizar
+  slug, borrada 1 huérfana de la fusión). `granja-zael-zael` recategorizada de
+  Charcutería a Carnes (venden cortes de vacuno, no elaboran embutidos).
+  Sotopalacios (3 filas) renombrado a Merindad de Río Ubierna: nuevo
+  geo-warning de ~20 km frente al centroide de esa merindad (agregación de
+  muchos pueblos; el centroide más cercano real es Quintanaortuño a ~1 km) —
+  no se fuerzan coordenadas, es un artefacto esperado de usar un único
+  centroide para un municipio-merindad extenso, igual que otros casos ya
+  documentados (Arlanza, Vizcarra...).
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -146,7 +159,7 @@ tarea.
   | San Llorente de la Vega | pedanía de Melgar de Fernamental | 20 |
   | San Mamés de Abar, Basconcillos del Tozo, Burgos | limpiar valor → Basconcillos del Tozo | 19 |
   | Santa Gadea de Alfoz | municipio Alfoz de Santa Gadea | 4 |
-  | Sotopalacios | pedanía de Merindad de Río Ubierna | 2, 12, 16 |
+  | Sotopalacios | pedanía de Merindad de Río Ubierna — **resuelto 2026-07-06 en lote 2** (3 slugs renombrados); genera geo-warning ~20 km esperado, ver Estado | 12, 16 |
   | Valdenoceda | pedanía de Merindad de Valdivielso | 14 |
   | Villafuertes | municipio real; probable hueco | 2 |
   | Villamayor del Río | municipio real; probable hueco | 4 |
@@ -405,8 +418,8 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 
 | # | Lote | Filas | Estado | Notas iniciales |
 |---|---|---:|---|---|
-| 1 | Charcutería · Burgos capital | 14 | ✅ 2026-07-06 | 7 verificadas, 2 parciales, 6 purgas (asociación morcilla, IGP morcilla, cortadores de jamón, COBUR cerrada/absorbida por Uvesa, Incarsa B2B), 1 fusión (Hnos. González → `embutidos-hermanos-gonzalez-sotopalacios`, lote 2). VO: 4 nuevos `sí` con canal (marketplace/ecommerce), 1 `no`. Geo-warning de la asociación resuelto. |
-| 2 | Charcutería · alfoz y Arlanza norte | 11 | ⬜ | Sotopalacios ×3 → Merindad de Río Ubierna; par Cardeñadijo (morcillas/embutidos, mismo tel); Vizmalo/Villafuertes sin centroide. |
+| 1 | Charcutería · Burgos capital | 14 | ✅ 2026-07-06 | 7 verificadas, 2 parciales, 6 purgas (asociación morcilla, IGP morcilla, cortadores de jamón, COBUR cerrada/absorbida por Uvesa, Incarsa B2B), 1 fusión (Hnos. González → `embutidos-hermanos-gonzalez-merindad-de-rio-ubierna`, renombrado en lote 2). VO: 4 nuevos `sí` con canal (marketplace/ecommerce), 1 `no`. Geo-warning de la asociación resuelto. |
+| 2 | Charcutería · alfoz y Arlanza norte | 11 | ✅ 2026-07-06 | 9 verificadas (2 ya lo estaban), 1 fusión (`morcillas-de-cardena` → `embutidos-de-cardena-cardenadijo`, mismo tel/dirección, la web vieja redirige 301 a la actual). Sotopalacios ×3 → `Merindad de Río Ubierna` (slugs renombrados); Villafuertes/Vizmalo confirman hueco de referencia (sin forzar coords). VO: 7 nuevos `sí` con canal (todo ecommerce salvo Zael: marketplace\|whatsapp\|email), 2 quedan `no comprobado` por prudencia (Águeda, Hermanos Masa). `granja-zael-zael` recategorizada Charcutería→Carnes. |
 | 3 | Charcutería · Ribera del Duero y Lerma | 16 | ⬜ | Fila IGP Lechazo (purga probable); matadero y comercializadoras (alcance); par Cuevas (Aranda); «fonda» del Prado (¿restauración?). |
 | 4 | Charcutería · Merindades, Bureba y Demanda | 17 | ⬜ | Asociación potro + fila gemela (resolver juntas); Ríos comparte tel con asoc. morcilla (lote 1); La Villarcayesa cuarentena VO; grafía Salas. |
 | 5 | Bodega · Roa y ribera del Riaza | 18 | ⬜ | Roa de Duero→Roa (7 slugs con merge); 3 cuarentenas VO (Condado de Haza, Alonso del Yerro…); DO Ribera como ancla. |
@@ -457,20 +470,19 @@ morcillas-lesmes-burgos · Burgos
 viandas-casa-felipe-burgos · Burgos — SIN WEB
 ```
 
-### Lote 2 · Charcutería — alfoz y Arlanza norte (11) — ⬜
+### Lote 2 · Charcutería — alfoz y Arlanza norte (11→10) — ✅ 2026-07-06
 
 ```text
-embutidos-de-cardena-cardenadijo · Cardeñadijo — HEREDADO parcial; tel compartido con `morcillas-de-cardena-cardenadijo`: ¿misma empresa, dos filas?
-morcillas-de-cardena-cardenadijo · Cardeñadijo — tel compartido con `embutidos-de-cardena-cardenadijo`
-morcillas-tere-quintanilla-vivar · Quintanilla Vivar
-embutidos-hermanos-gonzalez-sotopalacios · Sotopalacios — **resuelto 2026-07-06 desde lote 1**: `morcillas-hermanos-gonzalez-burgos` era duplicado (municipio mal cargado) y se fusionó aquí; fila ya `verificado`/VO=`no` con web propia corregida (embutidosgonzalez.info). Pendiente solo la normalización de municipio → Merindad de Río Ubierna (junto con sus vecinas de este lote)
-morcillas-agueda-sotopalacios · Sotopalacios — municipio sin centroide → Merindad de Río Ubierna
-morcillas-miguel-y-conchi-sotopalacios · Sotopalacios — municipio sin centroide → Merindad de Río Ubierna
-embutidos-artesanos-de-villafuertes-villafuertes · Villafuertes — municipio sin centroide → resolver INE
-hermanos-masa-villalbilla-de-burgos · Villalbilla de Burgos
-morcillas-la-primi-villalbilla-de-burgos · Villalbilla de Burgos
-santa-rosalia-gourmet-vizmalo · Vizmalo — municipio sin centroide → resolver INE
-granja-zael-zael · Zael — SIN WEB
+embutidos-de-cardena-cardenadijo · Cardeñadijo — verificado, VO sí (ecommerce). Fusión con `morcillas-de-cardena-cardenadijo` (misma tienda: morcilladeburgos.com redirige 301 a xn--cardeafood-x9a.es); se completan correo/Facebook heredados.
+morcillas-tere-quintanilla-vivar · Quintanilla Vivar — verificado, VO sí (ecommerce)
+embutidos-hermanos-gonzalez-merindad-de-rio-ubierna · Merindad de Río Ubierna (antes Sotopalacios; slug renombrado) — verificado (heredado de lote 1), VO no. Municipio normalizado: Sotopalacios es la cabecera/pedanía de Merindad de Río Ubierna
+morcillas-agueda-merindad-de-rio-ubierna · Merindad de Río Ubierna (antes Sotopalacios; slug renombrado) — verificado, VO no comprobado (web con TLS caducado, sin confirmar mecanismo de pedido vigente)
+morcillas-miguel-y-conchi-merindad-de-rio-ubierna · Merindad de Río Ubierna (antes Sotopalacios; slug renombrado) — verificado, VO sí (ecommerce)
+embutidos-artesanos-de-villafuertes-villafuertes · Villafuertes — verificado, VO sí (ecommerce). Villafuertes confirmado municipio real sin centroide en la referencia (hueco, no se fuerza)
+hermanos-masa-villalbilla-de-burgos · Villalbilla de Burgos — verificado, VO no comprobado (tienda con carrito pero sin pasarela de pago confirmada, uso mixto B2B)
+morcillas-la-primi-villalbilla-de-burgos · Villalbilla de Burgos — verificado, VO sí (ecommerce). Web corregida: morcillaslaprimi.com (blog, TLS caducado) → morcillaslaprimi.es (tienda activa)
+santa-rosalia-gourmet-vizmalo · Vizmalo — verificado, VO sí (ecommerce). Finca de wagyu/perdiz/vino con elaborados propios (morcilla de wagyu, patés); Vizmalo confirmado municipio real sin centroide (hueco, no se fuerza)
+granja-zael-zael · Zael — verificado, VO sí (marketplace|whatsapp|email). Recategorizada Charcutería → Carnes (venden cortes de vacuno, no son elaboradores de embutidos)
 ```
 
 ### Lote 3 · Charcutería — Ribera del Duero y Lerma (16) — ⬜
