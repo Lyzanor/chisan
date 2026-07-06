@@ -44,6 +44,11 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `parcial`, 40 `verificado`.
 - Tras lotes 4-6 (2026-07-04): **150 filas** (−1 purga, Ornua); **67
   `pendiente`**, 1 `parcial`, 82 `verificado`.
+- Tras lotes 7-9 (2026-07-04): **147 filas** (−3: 2 purgas más —Marugán
+  cerrada, Sabores de Gredos marketplace—, 1 merge neto —Judías del
+  Barco→Coronado—; los otros 2 merges de esta tanda no reducen el total
+  porque solo renombran slug); **21 `pendiente`**, 6 `parcial`, 120
+  `verificado`.
 - Venta online inicial: **152 `no comprobado`**, 0 `sí`, 0 `no`. `Canal de
   venta`: 0/152. No hay cuarentena heredada: cada `sí` que se cree nace ya con
   canal y evidencia; cada `no` exige comprobación real.
@@ -53,9 +58,17 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   comprobado`.
 - Tras lote 3: VO **31 `sí`** (31/31 con `Canal de venta`), 0 `no`, 120 `no
   comprobado`.
-- Tras lotes 4-6: VO **44 `sí`** (44/44 con `Canal de venta`), 0 `no`, 106 `no
+- Tras lotes 4-6: VO **42 `sí`** (42/42 con `Canal de venta`), 0 `no`, 108 `no
+  comprobado`. (Nota: bajó de 44 a 42 porque, al revisar lotes 7-9, se
+  descubrió que la plataforma **Ávila Market** (avilamarket.es) cesó su
+  actividad; se corrigieron retroactivamente `restaurante-y-bodega-huellas-
+  del-tietar-lanzahita` y `queseria-valdecabras-candeleda`, que solo citaban
+  ese canal, a `no comprobado`. `vda-viticultores-villanueva-de-avila`,
+  `morcillas-de-arroz-j-n-casavieja` y `quesos-del-alberche-navandrinal`
+  conservaron `sí` porque tenían un canal propio adicional.)
+- Tras lotes 7-9: VO **58 `sí`** (58/58 con `Canal de venta`), 0 `no`, 89 `no
   comprobado`.
-- Imágenes: **0/150**. Las imágenes NO forman parte de esta pasada; quedan
+- Imágenes: **0/147**. Las imágenes NO forman parte de esta pasada; quedan
   como residual explícito para una pasada posterior (tras estabilizar
   identidad y slugs). No usar `enrich:images --apply` en bloque.
 - Reparto por categoría (17, snapshot inicial): **Charcutería 31**, **Bodega
@@ -124,8 +137,8 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `miel-artesanal-la-carrera` vs `miel-artesanal-la-picorea-la-carrera`.
 - Evidencia: Ávila no está en `data/evidence/coverage.json` (se decide al
   cerrar la pasada completa). Ledger en
-  `data/evidence/castilla-y-leon/avila.jsonl` (88 registros tras lotes 4-6: 84
-  `keep`, 2 `purge`, 2 `merge`).
+  `data/evidence/castilla-y-leon/avila.jsonl` (136 registros tras lotes 7-9:
+  127 `keep`, 4 `purge`, 5 `merge`).
 
 ## Zonas de Ávila para lotear
 
@@ -155,6 +168,25 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   Mombeltrán, San Esteban del Valle, Arenas de San Pedro, Candeleda, El Raso.
   Quesos de cabra, pimentón de Candeleda, higos, kiwi, olivar del Tiétar,
   miel, morcillas de Sotillo.
+
+## Hallazgo transversal: plataformas de venta caídas o comprometidas
+
+Detectado en lotes 3-9 (2026-07-04), aplica a cualquier lote pendiente:
+
+- **Ávila Market (avilamarket.es)**: cesó su actividad ("proyecto finalizado
+  a 31 de diciembre"). No usar como canal `marketplace` aunque la web del
+  productor lo mencione; si es el único canal citado, `Venta online` baja a
+  `no comprobado`.
+- **Dominios hackeados/parkeados con spam de casino**: al menos tres casos
+  (`vavada.inst` en Instagram y `rubendiazviticultor.com` en lote 3;
+  `montesbravos.es` en lote 6; spam inyectado pero tienda real en
+  `riconuevovinos.es`, lote 4). Antes de citar un enlace del CSV o de una
+  búsqueda, comprobar que el contenido real corresponde al productor; si un
+  dominio está aparcado o redirige a un sitio ajeno, retirarlo del CSV
+  (regla 18: la dificultad de acceso no prueba nada negativo, pero un
+  contenido claramente ajeno sí).
+- **Ávila Auténtica (tienda.avilaautentica.es)** sigue activa: no confundir
+  con Ávila Market.
 
 ## Reglas duras para Ávila
 
@@ -307,9 +339,9 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 4 | Bodega · alto Alberche, Tiétar y Moraña | 12 | ✅ | 2026-07-04: 12 verificados, 0 purgas, 1 recat (Ursu→Agua mineral natural); VO 5 sí (5/5 canal), 7 no comprobado; Huellas del Tiétar mantenida (DOP real, no restauración pura). |
 | 5 | Pan y pastelería · provincial | 17 | ✅ | 2026-07-04: 17 verificados, 0 purgas; VO 3 sí (3/3 canal), 14 no comprobado; «Palacios»→Sotalbo resuelto (barrio); 1 nombre genérico limpiado (La Barraqueña). |
 | 6 | Lácteos y quesos · provincial | 13 | ✅ | 2026-07-04: 13 verificados, 1 purga (Ornua, industrial); VO 6 sí (6/6 canal), 7 no comprobado; geo-warning Quesos Miguel resuelto (→Burgohondo); 1 nombre genérico limpiado (Umbrías de Gredos); dominio hackeado (montesbravos.es, casino) descartado. |
-| 7 | Dulces y repostería + Chocolate | 14 | ⬜ | Santa Teresa (limpiar nombre); Elgorriaga alcance; posible dup Obrador de Ángel. |
-| 8 | Legumbres + Huevos + Frutos secos | 16 | ⬜ | IGP El Barco; fila genérica «Judías del Barco»; Tornadizos de Arévalo; granjas. |
-| 9 | Aceite + Fruta y verdura | 16 | ⬜ | Almazaras cooperativas sin web; aceituneras → posible recat; El Raso→Candeleda. |
+| 7 | Dulces y repostería + Chocolate | 13 | ✅ | 2026-07-04: 12 verificados, 1 parcial, 1 purga (Marugán, cerrada desde 1970); VO 5 sí (5/5 canal), 8 no comprobado; Santa Teresa (nombre limpiado); Elgorriaga mantenida (fábrica real 1979, no multinacional satélite); Obrador de Ángel Ávila↔Navas resuelto (FB mal enlazado, no dup). |
+| 8 | Legumbres + Huevos + Frutos secos | 15 | ✅ | 2026-07-04: 14 verificados, 1 parcial, 1 merge (Judías del Barco→Coronado, mismo teléfono/web); VO 6 sí (6/6 canal), 9 no comprobado; Granjas San Antonio recat a Charcutería (es porcino, no huevos). |
+| 9 | Aceite + Fruta y verdura | 15 | ✅ | 2026-07-04: 12 verificados, 3 parcial, 1 purga (Sabores de Gredos, marketplace no productor), 2 merges (Simón→Ávila, Capra Hispánica→Candeleda); VO 5 sí (5/5 canal), 10 no comprobado; 3 aceituneras recat a "Aceitunas y encurtidos". |
 | 10 | Miel + Despensa + Aromáticas + Cerveza + Helados + Otros | 20 | ⬜ | Geo-warning miel La Carrera; pimentón de Candeleda; caracoles; heladerías. |
 | 11 | Cierre transversal provincial | 152 | ⬜ | Dedup, VO completo, municipios/geo resueltos, evidencia coherente, `verify:data`, decidir `coverage.json`. |
 
@@ -492,83 +524,98 @@ de Ávila y Solana de Rioalmar confirmadas como municipios reales sin
 centroide en `municipios.json` (hueco anotado en Estado, no se fuerza dato).
 Evidencia en `data/evidence/castilla-y-leon/avila.jsonl`.
 
-### Lote 7 · Dulces y repostería + Chocolate (14)
+### Lote 7 · Dulces y repostería + Chocolate (13, tras purga) — ✅ cerrado 2026-07-04
 
 ```text
-alma-dulce-avila-avila · Ávila  (SIN WEB)
-dulces-santo-tomas-avila · Ávila  (SIN WEB)
-hermanas-clarisas-de-avila-dulces-artesanos-avila · Ávila
-pasteleria-obrador-de-angel-luanje-avila · Ávila
-santa-teresa-gourmet-oficinas-y-fabrica-no-venta-avila · Ávila
-yemas-de-avila-avila · Ávila  (SIN WEB)
-mil-momentos-pasteleria-y-obrador-luis-miguel-garcia-barbero-las-navas-del-marques · Las Navas del Marqués
-obrador-de-angel-las-navas-del-marques · Las Navas del Marqués  (SIN WEB)
-panaderia-artesano-dulces-caseros-mombeltran · Mombeltrán  (SIN WEB)
-dulces-gredos-navarredondilla · Navarredondilla
-dulces-sanchidrian-desde-1912-sotillo-de-la-adrada · Sotillo de la Adrada
-elgorriaga-brands-s-a-avila · Ávila
-fabrica-de-chocolates-marugan-mingorria · Mingorría  (SIN WEB)
-el-barco-delice-chocolates-el-barco-de-avila · El Barco de Ávila
+alma-dulce-avila-avila · Ávila · verificado · VO=no comprobado  (SIN WEB, heladería)
+dulces-santo-tomas-avila · Ávila · verificado · VO=no comprobado  (SIN WEB)
+hermanas-clarisas-de-avila-dulces-artesanos-avila · Ávila · verificado · VO=sí (ecommerce)
+pasteleria-obrador-de-angel-luanje-avila · Ávila · verificado · VO=no comprobado — FB ajeno retirado
+santa-teresa-gourmet-oficinas-y-fabrica-no-venta-avila · Ávila · verificado · VO=sí (ecommerce) — nombre limpiado
+yemas-de-avila-avila · Ávila · parcial · VO=no comprobado  (SIN WEB, ficha genérica)
+mil-momentos-pasteleria-y-obrador-luis-miguel-garcia-barbero-las-navas-del-marques · Las Navas del Marqués · verificado · VO=no comprobado
+obrador-de-angel-las-navas-del-marques · Las Navas del Marqués · verificado · VO=no comprobado — FB añadido (movido desde la fila de Ávila)
+panaderia-artesano-dulces-caseros-mombeltran · Mombeltrán · verificado · VO=no comprobado  (SIN WEB)
+dulces-gredos-navarredondilla · Navarredondilla · verificado · VO=sí (whatsapp|email)
+dulces-sanchidrian-desde-1912-sotillo-de-la-adrada · Sotillo de la Adrada · verificado · VO=sí (ecommerce)
+elgorriaga-brands-s-a-avila · Ávila · verificado · VO=no comprobado — fábrica real 1979, se mantiene
+el-barco-delice-chocolates-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
 ```
 
-Avisos: limpiar nombre de Santa Teresa Gourmet (regla 20; sigue siendo la
-fábrica real de yemas); Elgorriaga = alcance industrial a decidir (regla 9);
-¿los dos «Obrador de Ángel» son el mismo negocio? (dedup); `yemas-de-avila`
-sin web puede ser ficha genérica.
+Purgada: `fabrica-de-chocolates-marugan-mingorria` (Mingorría) — `closed`:
+cerrada desde 1970, hoy es un punto de interés turístico/patrimonial, no un
+productor activo. Resuelto: los dos «Obrador de Ángel» son negocios reales
+e independientes (fundadores de Las Navas venían de la Pastelería Luanje de
+Ávila), no un duplicado — el error era que el CSV enlazaba el Facebook de
+Las Navas en la fila de Ávila; se corrigió. Elgorriaga se mantiene: fábrica
+real y activa desde 1979 (47.000 kg/día), no una planta satélite reciente
+como Ornua. Santa Teresa Gourmet: nombre limpiado (regla 20) y corregidos
+"productos estrella"/descripción que decían "Fruta y verdura" por error de
+volcado.
 
-### Lote 8 · Legumbres + Huevos + Frutos secos (16)
+### Lote 8 · Legumbres + Huevos + Frutos secos (15, tras merge) — ✅ cerrado 2026-07-04
 
 ```text
-campesina-tormes-el-barco-de-avila · El Barco de Ávila
-judias-del-barco-de-avila-el-barco-de-avila · El Barco de Ávila
-legumbres-vaquero-tienda-en-el-barco-de-avila-el-barco-de-avila · El Barco de Ávila
-legumbres-coronado-el-barco-de-avila · El Barco de Ávila
-legumbres-herederos-judias-de-el-barco-de-avila-el-barco-de-avila · El Barco de Ávila
-legumbres-el-rua-tornadizos-de-arevalo · Tornadizos de Arévalo
-legumbres-julian-munoz-e-hijos-velayos · Velayos  (SIN WEB)
-legumbres-nuestra-senora-del-rosario-velayos · Velayos  (SIN WEB)
-para-legumbres-la-castellana-velayos · Velayos  (SIN WEB)
-granja-avicola-redondo · El Barraco
-granjas-san-antonio-pajares-de-adaja · Pajares de Adaja
-granjas-teco-pedro-rodriguez · Pedro-Rodríguez
-la-granja-de-ibai · Riofrío
-aves-y-huevos-sanchez-avila · Ávila
-frutos-secos-loli-flores-y-jimenez-avila · Ávila
-frutos-secos-luis-avila · Ávila
+campesina-tormes-el-barco-de-avila · El Barco de Ávila · verificado · VO=no comprobado
+legumbres-vaquero-tienda-en-el-barco-de-avila-el-barco-de-avila · El Barco de Ávila · parcial · VO=no comprobado — nombre limpiado, es tienda/droguería
+legumbres-coronado-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
+legumbres-herederos-judias-de-el-barco-de-avila-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
+legumbres-el-rua-tornadizos-de-arevalo · Tornadizos de Arévalo · verificado · VO=sí (ecommerce)
+legumbres-julian-munoz-e-hijos-velayos · Velayos · verificado · VO=no comprobado  (SIN WEB)
+legumbres-nuestra-senora-del-rosario-velayos · Velayos · verificado · VO=no comprobado  (SIN WEB)
+para-legumbres-la-castellana-velayos · Velayos · verificado · VO=no comprobado  (SIN WEB)
+granja-avicola-redondo · El Barraco · verificado · VO=sí (ecommerce|email)
+granjas-san-antonio-pajares-de-adaja · Pajares de Adaja · verificado · VO=sí (ecommerce) — RECAT a Charcutería (es porcino)
+granjas-teco-pedro-rodriguez · Pedro-Rodríguez · verificado · VO=sí (ecommerce)
+la-granja-de-ibai · Riofrío · verificado · VO=no comprobado
+aves-y-huevos-sanchez-avila · Ávila · verificado · VO=no comprobado
+frutos-secos-loli-flores-y-jimenez-avila · Ávila · verificado · VO=no comprobado
+frutos-secos-luis-avila · Ávila · verificado · VO=no comprobado
 ```
 
-Avisos: resolver la fila genérica «Judías del Barco de Ávila» (regla 7);
-Legumbres Vaquero se anuncia como tienda (limpiar nombre + alcance);
-«Tornadizos de Arévalo» no existe como municipio (regla 19); frutos secos de
-capital: ¿tostadero o tienda? (regla 16); tres slugs sin sufijo de municipio
-(`granja-avicola-redondo`, `la-granja-de-ibai`, `granjas-teco-...`): el slug
-NO se cambia por eso.
+Resuelto: `judias-del-barco-de-avila-el-barco-de-avila` fusionada en
+`legumbres-coronado-el-barco-de-avila` (mismo teléfono y web exactos, ~1 km
+de distancia — segunda ubicación de la misma empresa, la web nunca usa
+"Judías del Barco de Ávila" como marca propia). Legumbres Vaquero: nombre
+limpiado (regla 20) y degradada a `parcial` — es una tienda/droguería que
+revende legumbres locales, no un productor/envasador propio (regla 7).
+`granjas-san-antonio-pajares-de-adaja` recategorizada de Huevos a
+Charcutería: es una granja de cerdo ecológico con elaborados cárnicos, no
+una explotación avícola. «Tornadizos de Arévalo» sigue sin resolver como
+municipio (queda para el cierre transversal).
 
-### Lote 9 · Aceite + Fruta y verdura (16)
+### Lote 9 · Aceite + Fruta y verdura (15, tras purga) — ✅ cerrado 2026-07-04
 
 ```text
-aceite-los-llanos-de-gredos-arenas-de-san-pedro · Arenas de San Pedro
-cooperativa-de-cosecheros-de-aceitunas-el-puente-arenas-de-san-pedro · Arenas de San Pedro
-almazara-comarcal-cooperativa-del-alberche-cebreros · Cebreros  (SIN WEB)
-almazara-la-beltraneja-sociedad-cooperativa-del-campo-mombeltran · Mombeltrán  (SIN WEB)
-almazara-la-moraleda-cooperativa-san-pedro-bautista-san-esteban-del-valle · San Esteban del Valle  (SIN WEB)
-aceitunas-ovidio-s-l-serranillos · Serranillos
-aceitunas-simon-e-hijos-s-l-vicolozano · Vicolozano
-aceitunas-serranillo-avila · Ávila  (SIN WEB)
-la-huerta-de-rodri-arenas-de-san-pedro · Arenas de San Pedro  (SIN WEB)
-el-ingenio-de-la-huerta-sl-cabezas-de-alambre · Cabezas de Alambre  (SIN WEB)
-sabores-de-gredos-candeleda · Candeleda
-la-huerta-de-miguel-huertos-ecologicos-casillas · Casillas  (SIN WEB)
-cooperativa-capra-hispanica-higo-de-gredos-el-raso · El Raso  (SIN WEB)
-huerta-col-despoblado-de-caniclosa-salvadios · Salvadiós  (SIN WEB)
-la-solanilla-san-esteban-de-los-patos · San Esteban de los Patos
-la-huerta-de-xelo-san-esteban-del-valle · San Esteban del Valle  (SIN WEB)
+aceite-los-llanos-de-gredos-arenas-de-san-pedro · Arenas de San Pedro · verificado · VO=sí (ecommerce)
+cooperativa-de-cosecheros-de-aceitunas-el-puente-arenas-de-san-pedro · Arenas de San Pedro · verificado · VO=sí (ecommerce)
+almazara-comarcal-cooperativa-del-alberche-cebreros · Cebreros · verificado · VO=no comprobado  (SIN WEB)
+almazara-la-beltraneja-sociedad-cooperativa-del-campo-mombeltran · Mombeltrán · verificado · VO=no comprobado  (SIN WEB)
+almazara-la-moraleda-cooperativa-san-pedro-bautista-san-esteban-del-valle · San Esteban del Valle · verificado · VO=sí (ecommerce) — web añadida (coopsanpedro.com)
+aceitunas-ovidio-s-l-serranillos · Serranillos · verificado · VO=no comprobado — RECAT a Aceitunas y encurtidos
+aceitunas-simon-e-hijos-s-l-avila · Ávila · verificado · VO=no comprobado — RECAT a Aceitunas y encurtidos; municipio corregido de Vicolozano (merge)
+aceitunas-serranillo-avila · Ávila · verificado · VO=no comprobado — RECAT a Aceitunas y encurtidos  (SIN WEB, FB añadido)
+la-huerta-de-rodri-arenas-de-san-pedro · Arenas de San Pedro · parcial · VO=no comprobado  (SIN WEB)
+el-ingenio-de-la-huerta-sl-cabezas-de-alambre · Cabezas de Alambre · verificado · VO=no comprobado  (SIN WEB)
+la-huerta-de-miguel-huertos-ecologicos-casillas · Casillas · verificado · VO=no comprobado — web añadida
+cooperativa-capra-hispanica-higo-de-gredos-candeleda · Candeleda · verificado · VO=no comprobado — municipio corregido de El Raso (merge)
+huerta-col-despoblado-de-caniclosa-salvadios · Salvadiós · parcial · VO=no comprobado  (SIN WEB, identidad difusa)
+la-solanilla-san-esteban-de-los-patos · San Esteban de los Patos · verificado · VO=no comprobado
+la-huerta-de-xelo-san-esteban-del-valle · San Esteban del Valle · parcial · VO=no comprobado  (SIN WEB)
 ```
 
-Avisos: aceituneras → posible recat a `Aceitunas y encurtidos` (regla 11);
-Vicolozano→Ávila y El Raso→Candeleda si las filas sobreviven (regla 19); las
-almazaras cooperativas sin web se cotejan con ayuntamiento/prensa; Capra
-Hispánica mezcla caprino e higos: decidir categoría dominante con fuente.
+Purgada: `sabores-de-gredos-candeleda` — `not-producer`: es un
+marketplace/distribuidor regional de mermeladas y conservas de terceros
+("trabajamos con productores de pueblos como Candeleda, El Raso, Guisando o
+Arenas de San Pedro"), no un elaborador propio. Resuelto: 3 aceituneras
+(Ovidio, Simón, Serranillo) recategorizadas de Aceite a **Aceitunas y
+encurtidos** (regla 11, categoría ya existente en la taxonomía);
+Vicolozano→Ávila (Simón) y El Raso→Candeleda (Capra Hispánica) resueltos con
+`merge` de slug (regla 19). Tres huertas sin web ni corroboración externa
+(Rodri, Huerta Col, Xelo) degradadas a `parcial` por identidad difusa, sin
+purgar (regla 17). La Solanilla: su web es la escuela de formación de los
+mismos dueños (agricultura regenerativa), no una tienda — identidad real
+confirmada igualmente.
 
 ### Lote 10 · Miel + Despensa + Aromáticas + Cerveza + Helados + Otros (20)
 
