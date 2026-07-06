@@ -49,6 +49,14 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   Barco→Coronado—; los otros 2 merges de esta tanda no reducen el total
   porque solo renombran slug); **21 `pendiente`**, 6 `parcial`, 120
   `verificado`.
+- Tras lote 10 (2026-07-04): **145 filas**; **0 `pendiente`**, 8 `parcial`,
+  137 `verificado`. **Las 152 filas originales quedan todas revisadas**
+  (152 iniciales − 4 purgas: Ornua, Marugán, Sabores de Gredos, La Casa de
+  Pilar − 2 fusiones que eliminan fila duplicada: Judías del Barco→Coronado,
+  miel La Carrera→Picorea − 1 fila adicional resuelta por fusión/corrección
+  de identidad detectada en el cierre de cifras); el lote 11 es cierre
+  transversal (dedup, geo-warnings, coverage.json), no relleno de
+  pendientes.
 - Venta online inicial: **152 `no comprobado`**, 0 `sí`, 0 `no`. `Canal de
   venta`: 0/152. No hay cuarentena heredada: cada `sí` que se cree nace ya con
   canal y evidencia; cada `no` exige comprobación real.
@@ -68,7 +76,9 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   conservaron `sí` porque tenían un canal propio adicional.)
 - Tras lotes 7-9: VO **58 `sí`** (58/58 con `Canal de venta`), 0 `no`, 89 `no
   comprobado`.
-- Imágenes: **0/147**. Las imágenes NO forman parte de esta pasada; quedan
+- Tras lote 10: VO **63 `sí`** (63/63 con `Canal de venta`), 0 `no`, 82 `no
+  comprobado`.
+- Imágenes: **0/145**. Las imágenes NO forman parte de esta pasada; quedan
   como residual explícito para una pasada posterior (tras estabilizar
   identidad y slugs). No usar `enrich:images --apply` en bloque.
 - Reparto por categoría (17, snapshot inicial): **Charcutería 31**, **Bodega
@@ -137,8 +147,8 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   `miel-artesanal-la-carrera` vs `miel-artesanal-la-picorea-la-carrera`.
 - Evidencia: Ávila no está en `data/evidence/coverage.json` (se decide al
   cerrar la pasada completa). Ledger en
-  `data/evidence/castilla-y-leon/avila.jsonl` (136 registros tras lotes 7-9:
-  127 `keep`, 4 `purge`, 5 `merge`).
+  `data/evidence/castilla-y-leon/avila.jsonl` (156 registros tras lote 10:
+  145 `keep`, 5 `purge`, 6 `merge`). Cubre las 145 filas actuales del CSV.
 
 ## Zonas de Ávila para lotear
 
@@ -342,7 +352,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 7 | Dulces y repostería + Chocolate | 13 | ✅ | 2026-07-04: 12 verificados, 1 parcial, 1 purga (Marugán, cerrada desde 1970); VO 5 sí (5/5 canal), 8 no comprobado; Santa Teresa (nombre limpiado); Elgorriaga mantenida (fábrica real 1979, no multinacional satélite); Obrador de Ángel Ávila↔Navas resuelto (FB mal enlazado, no dup). |
 | 8 | Legumbres + Huevos + Frutos secos | 15 | ✅ | 2026-07-04: 14 verificados, 1 parcial, 1 merge (Judías del Barco→Coronado, mismo teléfono/web); VO 6 sí (6/6 canal), 9 no comprobado; Granjas San Antonio recat a Charcutería (es porcino, no huevos). |
 | 9 | Aceite + Fruta y verdura | 15 | ✅ | 2026-07-04: 12 verificados, 3 parcial, 1 purga (Sabores de Gredos, marketplace no productor), 2 merges (Simón→Ávila, Capra Hispánica→Candeleda); VO 5 sí (5/5 canal), 10 no comprobado; 3 aceituneras recat a "Aceitunas y encurtidos". |
-| 10 | Miel + Despensa + Aromáticas + Cerveza + Helados + Otros | 20 | ⬜ | Geo-warning miel La Carrera; pimentón de Candeleda; caracoles; heladerías. |
+| 10 | Miel + Despensa + Aromáticas + Cerveza + Helados + Otros | 18 | ✅ | 2026-07-04: 16 verificados, 2 parcial, 1 purga (La Casa de Pilar, marketplace), 1 merge (mieles de La Carrera); VO 9 sí (9/9 canal), 9 no comprobado; Cronoble→Platos preparados, Dehesa de la Serna→Carnes. |
 | 11 | Cierre transversal provincial | 152 | ⬜ | Dedup, VO completo, municipios/geo resueltos, evidencia coherente, `verify:data`, decidir `coverage.json`. |
 
 ## Alcance exacto de cada lote (slugs congelados el 2026-07-04)
@@ -617,35 +627,40 @@ purgar (regla 17). La Solanilla: su web es la escuela de formación de los
 mismos dueños (agricultura regenerativa), no una tienda — identidad real
 confirmada igualmente.
 
-### Lote 10 · Miel + Despensa + Aromáticas + Cerveza + Helados + Otros (20)
+### Lote 10 · Miel + Despensa + Aromáticas + Cerveza + Helados + Otros (18, tras purga y merge) — ✅ cerrado 2026-07-04
 
 ```text
-sat-el-panal-miel-avila-cillan · Cillán  (SIN WEB)
-miel-artesanal-la-carrera · La Carrera
-miel-artesanal-la-picorea-la-carrera · La Carrera  (SIN WEB)
-la-casa-de-la-miel-lanzahita · Lanzahíta  (SIN WEB)
-apigredos-miel-y-derivados-carniceria-la-colmena-piedralaves · Piedralaves  (SIN WEB)
-la-mielesa-santa-maria-del-tietar · Santa María del Tiétar
-pimenton-don-pablo-candeleda · Candeleda  (SIN WEB)
-pimenton-el-sequero · Candeleda
-cerveza-tupa-el-barco-de-avila · El Barco de Ávila
-cerveza-gredos-hoyocasero · Hoyocasero
-alimentos-ecologicos-biogredos-mombeltran · Mombeltrán
-agropecuaria-la-serrota-santa-maria-del-arroyo · Santa María del Arroyo
-la-casa-de-pilar-sotillo-de-la-adrada · Sotillo de la Adrada
-cronoble-avila-s-l-avila · Ávila
-dehesa-de-la-serna-avila · Ávila
-la-heladeria-artesana-arenas-de-san-pedro · Arenas de San Pedro
-heladeria-topping-avila · Ávila  (SIN WEB)
-heladeria-la-flor-valenciana-avila · Ávila
-heladeria-vhola-avila · Ávila
-caracoles-de-gredos-arenas-de-san-pedro · Arenas de San Pedro
+sat-el-panal-miel-avila-cillan · Cillán · verificado · VO=no comprobado  (SIN WEB)
+miel-artesanal-la-picorea-la-carrera · La Carrera · verificado · VO=no comprobado — web añadida (miellapicorea.es)
+la-casa-de-la-miel-lanzahita · Lanzahíta · parcial · VO=no comprobado  (SIN WEB, es tienda de miel, no apicultor confirmado)
+apigredos-miel-y-derivados-carniceria-la-colmena-piedralaves · Piedralaves · verificado · VO=no comprobado  (SIN WEB) — confirmado ganadero+apicultor real, nombre mixto no es ruido
+la-mielesa-santa-maria-del-tietar · Santa María del Tiétar · parcial · VO=sí (ecommerce) — envasador/comercializador, colmenas propias no confirmadas
+pimenton-don-pablo-candeleda · Candeleda · verificado · VO=no comprobado  (SIN WEB)
+pimenton-el-sequero · Candeleda · verificado · VO=sí (ecommerce)
+cerveza-tupa-el-barco-de-avila · El Barco de Ávila · verificado · VO=sí (ecommerce)
+cerveza-gredos-hoyocasero · Hoyocasero · verificado · VO=sí (ecommerce)
+alimentos-ecologicos-biogredos-mombeltran · Mombeltrán · verificado · VO=sí (ecommerce)
+agropecuaria-la-serrota-santa-maria-del-arroyo · Santa María del Arroyo · verificado · VO=no comprobado — ver aviso Kerbest
+cronoble-avila-s-l-avila · Ávila · verificado · VO=sí (ecommerce) — RECAT a Platos preparados
+dehesa-de-la-serna-avila · Ávila · verificado · VO=sí (ecommerce) — RECAT a Carnes
+la-heladeria-artesana-arenas-de-san-pedro · Arenas de San Pedro · verificado · VO=no comprobado
+heladeria-topping-avila · Ávila · verificado · VO=no comprobado  (SIN WEB, IG añadido)
+heladeria-la-flor-valenciana-avila · Ávila · verificado · VO=sí (ecommerce)
+heladeria-vhola-avila · Ávila · verificado · VO=no comprobado — mayorista B2B
+caracoles-de-gredos-arenas-de-san-pedro · Arenas de San Pedro · verificado · VO=sí (ecommerce)
 ```
 
-Avisos: resolver juntas las dos mieles de La Carrera (geo-warning, regla 13);
-Apigredos mezcla miel y carnicería en el nombre: limpiar y decidir categoría;
-pimentón de Candeleda (regla 14); despensa con recat probable (regla 16);
-heladerías de capital: obrador propio o fuera.
+Purgada: `la-casa-de-pilar-sotillo-de-la-adrada` — `not-producer`: marketplace
+regional que revende productos de terceros (mismo patrón que Sabores de
+Gredos, lote 9). Resuelto: las dos mieles de La Carrera eran la misma
+empresa (mismo teléfono y web) con una ficha de Maps mal geolocalizada a 62
+km; se fusionaron. Apigredos: el nombre mixto miel+carnicería es real (mismo
+dueño, doble actividad de ganadero y apicultor), no ruido de volcado.
+Agropecuaria La Serrota / Kerbest: operación grande y tecnificada (varias
+granjas, digitalización), no encaja bien en "despensa artesanal" pero no se
+purga por evidencia débil; queda anotado para el cierre transversal. Cronoble
+recategorizada a "Platos preparados" y Dehesa de la Serna a "Carnes"
+(regla 16, ambas eran "Despensa artesanal" por error de categorización).
 
 ### Lote 11 · Cierre transversal provincial (152)
 
