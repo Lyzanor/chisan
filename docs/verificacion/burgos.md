@@ -40,6 +40,11 @@ tarea.
   filas heredadas. No existe `docs/candidates/burgos.md`.
 - Snapshot inicial: **342 filas**; **297 `pendiente`**, 20 `parcial`, 25
   `verificado`.
+- Snapshot tras lote 1 (2026-07-06): **335 filas** (−7: 6 purgas + 1 fusión);
+  **282 `pendiente`**, 22 `parcial`, 31 `verificado`. Venta online: **20 `sí`**
+  (4 con canal: `marketplace`, 3×`ecommerce`), 24 `no`, 291 `no comprobado`.
+  Charcutería baja de 58 a 51 filas (6 purgas + 1 fusión, todas del sector).
+  Imágenes: 165/335 (se borraron 3 huérfanas de filas purgadas).
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -83,9 +88,9 @@ tarea.
     → **0 errores, 7 warnings** (todos geo) y 255 avisos suprimidos por
     opcionales ausentes.
 - Warnings de geo-check iniciales (los 7, con su lote):
-  - `asociacion-de-fabricantes-de-morcilla-de-burgos-burgos` (lote 1): 65,6
-    km; más cercano Villarcayo (sede de Embutidos Ríos, con quien comparte
-    teléfono). Probable purga; el warning muere con ella.
+  - ~~`asociacion-de-fabricantes-de-morcilla-de-burgos-burgos` (lote 1): 65,6
+    km~~ — **resuelto 2026-07-06**: purgada (`not-producer`, asociación
+    sectorial), el warning desaparece con la fila.
   - `bodegas-arlanza-burgos` y `bodegas-sierra-burgos` (lote 11): 33,5 km;
     ambas junto al centroide de Villalmanzo. Patrón sede fiscal en capital vs
     bodega real: corregir municipio (y slug, con `merge`) hacia donde está la
@@ -400,7 +405,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 
 | # | Lote | Filas | Estado | Notas iniciales |
 |---|---|---:|---|---|
-| 1 | Charcutería · Burgos capital | 14 | ⬜ | Asociación morcilla + fila IGP (2 purgas probables); cortadores de jamón (alcance); Hnos. González comparte tel con Sotopalacios (lote 2). |
+| 1 | Charcutería · Burgos capital | 14 | ✅ 2026-07-06 | 7 verificadas, 2 parciales, 6 purgas (asociación morcilla, IGP morcilla, cortadores de jamón, COBUR cerrada/absorbida por Uvesa, Incarsa B2B), 1 fusión (Hnos. González → `embutidos-hermanos-gonzalez-sotopalacios`, lote 2). VO: 4 nuevos `sí` con canal (marketplace/ecommerce), 1 `no`. Geo-warning de la asociación resuelto. |
 | 2 | Charcutería · alfoz y Arlanza norte | 11 | ⬜ | Sotopalacios ×3 → Merindad de Río Ubierna; par Cardeñadijo (morcillas/embutidos, mismo tel); Vizmalo/Villafuertes sin centroide. |
 | 3 | Charcutería · Ribera del Duero y Lerma | 16 | ⬜ | Fila IGP Lechazo (purga probable); matadero y comercializadoras (alcance); par Cuevas (Aranda); «fonda» del Prado (¿restauración?). |
 | 4 | Charcutería · Merindades, Bureba y Demanda | 17 | ⬜ | Asociación potro + fila gemela (resolver juntas); Ríos comparte tel con asoc. morcilla (lote 1); La Villarcayesa cuarentena VO; grafía Salas. |
@@ -433,7 +438,7 @@ Formato: `slug · municipio — flags`. `SIN WEB` = sin dominio propio en el CSV
 `Venta online=sí` sin canal. Si un flag dice `PURGA PROBABLE`, confírmalo
 antes de ejecutar la purga (regla 6).
 
-### Lote 1 · Charcutería — Burgos capital (14) — ⬜
+### Lote 1 · Charcutería — Burgos capital (14) — ✅ 2026-07-06
 
 ```text
 asociacion-de-fabricantes-de-morcilla-de-burgos-burgos · Burgos — SIN WEB; GEO-WARNING 65,6 km (junto a Villarcayo); PURGA PROBABLE not-producer; tel compartido con `embutidos-rios-villarcayo` (lote 4)
@@ -458,7 +463,7 @@ viandas-casa-felipe-burgos · Burgos — SIN WEB
 embutidos-de-cardena-cardenadijo · Cardeñadijo — HEREDADO parcial; tel compartido con `morcillas-de-cardena-cardenadijo`: ¿misma empresa, dos filas?
 morcillas-de-cardena-cardenadijo · Cardeñadijo — tel compartido con `embutidos-de-cardena-cardenadijo`
 morcillas-tere-quintanilla-vivar · Quintanilla Vivar
-embutidos-hermanos-gonzalez-sotopalacios · Sotopalacios — municipio sin centroide → Merindad de Río Ubierna; tel compartido con `morcillas-hermanos-gonzalez-burgos` (lote 1)
+embutidos-hermanos-gonzalez-sotopalacios · Sotopalacios — **resuelto 2026-07-06 desde lote 1**: `morcillas-hermanos-gonzalez-burgos` era duplicado (municipio mal cargado) y se fusionó aquí; fila ya `verificado`/VO=`no` con web propia corregida (embutidosgonzalez.info). Pendiente solo la normalización de municipio → Merindad de Río Ubierna (junto con sus vecinas de este lote)
 morcillas-agueda-sotopalacios · Sotopalacios — municipio sin centroide → Merindad de Río Ubierna
 morcillas-miguel-y-conchi-sotopalacios · Sotopalacios — municipio sin centroide → Merindad de Río Ubierna
 embutidos-artesanos-de-villafuertes-villafuertes · Villafuertes — municipio sin centroide → resolver INE
