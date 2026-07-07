@@ -93,6 +93,22 @@ tarea.
   online real en villarcayesa.com/tienda/, sede confirmada en Villarcayo vía
   registro mercantil pese a directorios desactualizados que la sitúan en
   Cantabria).
+- Snapshot tras lote 5 (2026-07-07): **326 filas** (sin cambio de conteo: los 7
+  renombres de slug son la misma entidad, no duplicados). **227 `pendiente`**,
+  22 `parcial`, 77 `verificado`. Venta online: **53 `sí`** (40 con canal: 28
+  previos + 12 nuevos, 11 `ecommerce` + 1 `ecommerce|whatsapp`: Dominio de
+  Calogía), 23 `no`, 250 `no comprobado`. Imágenes: 163/326 (6 renombradas por
+  los merges de slug, ninguna huérfana). Roa de Duero → Roa: 7 slugs
+  renombrados con `merge` (nombre oficial INE confirmado en Wikipedia; el
+  ayuntamiento conserva "Roa de Duero" solo como dominio web). Cuarentenas
+  resueltas: Bodega Condado de Haza y Viñedos Alonso del Yerro (`sí` sin canal
+  → `sí` ecommerce vía tienda propia). Bodegas Hercal reauditada: promovida de
+  `HEREDADO parcial` a `verificado` y VO re-derivado de `no` a `sí` (ecommerce,
+  fuente propia). Bodegas Raíz y Quesos Páramo de Guzmán: nombre mixto
+  confirmado real (continuación del proyecto de quesos Páramo de Guzmán desde
+  1985 más bodega propia desde 1998); se mantiene en categoría Bodega. San
+  Martín de Rubiales: grafía normalizada (tilde), slug sin cambios. Sin
+  purgas ni parciales residuales en este lote.
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -190,7 +206,7 @@ tarea.
   | Quintanaseca | pedanía de Frías | 17 |
   | Quintanilla del Agua | municipio Quintanilla del Agua y Tordueles | 10 |
   | Rioseco (Valle de Manzanedo) | limpiar valor → Valle de Manzanedo | 14 |
-  | Roa de Duero | municipio oficial «Roa»; renombrar 7 slugs con merge | 5 |
+  | ~~Roa de Duero~~ | municipio oficial «Roa» (confirmado en Wikipedia) — **resuelto 2026-07-07**: 7 slugs renombrados con merge en el lote 5 | 5 |
   | San Llorente de la Vega | pedanía de Melgar de Fernamental | 20 |
   | San Mamés de Abar, Basconcillos del Tozo, Burgos | limpiar valor → Basconcillos del Tozo | 19 |
   | ~~Santa Gadea de Alfoz~~ | municipio Alfoz de Santa Gadea — **resuelto 2026-07-07**: `carne-de-la-buena-santa-gadea-de-alfoz` renombrada a `carne-de-la-buena-alfoz-de-santa-gadea` (centroide confirmado en municipios.json, coords del CSV ya cuadraban) | 4 |
@@ -457,7 +473,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 2 | Charcutería · alfoz y Arlanza norte | 11 | ✅ 2026-07-06 | 9 verificadas (2 ya lo estaban), 1 fusión (`morcillas-de-cardena` → `embutidos-de-cardena-cardenadijo`, mismo tel/dirección, la web vieja redirige 301 a la actual). Sotopalacios ×3 → `Merindad de Río Ubierna` (slugs renombrados); Villafuertes/Vizmalo confirman hueco de referencia (sin forzar coords). VO: 7 nuevos `sí` con canal (todo ecommerce salvo Zael: marketplace\|whatsapp\|email), 2 quedan `no comprobado` por prudencia (Águeda, Hermanos Masa). `granja-zael-zael` recategorizada Charcutería→Carnes. |
 | 3 | Charcutería · Ribera del Duero y Lerma | 14 | ✅ 2026-07-06 | 11 verificadas, 1 parcial, 3 purgas (IGP Lechazo regional, matadero de La Cueva de Roa por alcance, Duque de Lerma extinguida 2024), 1 fusión (Cárnicas/Morcilla Cuevas Aranda). Recategorizadas: Páramo del Cid → Carnes (y municipio Aranda de Duero → Caleruega, sede vs granja real), La Fonda del Prado → Conservas. Gumiel del Mercado → Gumiel de Mercado (grafía + slug). VO: 10 nuevos `sí` con canal (7 ecommerce, 1 marketplace, 1 telefono\|email, 1 telefono), 2 quedan `no comprobado` por prudencia. |
 | 4 | Charcutería · Merindades, Bureba y Demanda | 17→14 | ✅ 2026-07-07 | 11 verificadas (1 ya lo estaba), 1 parcial, 2 purgas (asociación de criadores de potro `not-producer` + su gemela "Grupo Amicar 8" `closed`, sociedad extinguida), 1 fusión (Productos El Peñedo → Sabores de Quintanar, mismo negocio renombrado), 1 purga más (Embutidos La Castellana `closed`, concurso de acreedores 2019). VO: 6 nuevos `sí` con canal (ecommerce salvo Casalba ecommerce\|marketplace) + cuarentena de La Villarcayesa resuelta (sí, ecommerce). Carne de la Buena: municipio/slug renombrado a Alfoz de Santa Gadea. Jamones el Pelayo: grafía de municipio normalizada. |
-| 5 | Bodega · Roa y ribera del Riaza | 18 | ⬜ | Roa de Duero→Roa (7 slugs con merge); 3 cuarentenas VO (Condado de Haza, Alonso del Yerro…); DO Ribera como ancla. |
+| 5 | Bodega · Roa y ribera del Riaza | 18 | ✅ 2026-07-07 | 18 verificadas (9 ya lo estaban: 4 HEREDADO + 5 nuevas), 0 parciales, 0 purgas. Roa de Duero→Roa: 7 slugs renombrados con merge (nombre oficial INE es «Roa», confirmado en Wikipedia; «Roa de Duero» solo pervive como dominio del ayuntamiento). San Martín de Rubiales: grafía normalizada (tilde), slug sin cambios. VO: 12 `sí` con canal (11 ecommerce + 1 ecommerce\|whatsapp: Dominio de Calogía), 6 `no comprobado` (Valreinas, Briones Abad/Cantamuda, Francisco Barona, Lambuena, Hornillos Ballesteros, SEI Solo: solo contacto directo, sin carrito ni pedido anunciado). Cuarentenas resueltas: Condado de Haza y Alonso del Yerro (sí sin canal → sí ecommerce), Hercal (HEREDADO parcial + VO=no → verificado + sí ecommerce, promovida con fuente propia). Bodegas Raíz y Quesos Páramo de Guzmán: nombre mixto confirmado real (continúa proyecto de quesos 1985 + bodega 1998), se mantiene en Bodega. Milénico vende por tienda propia de marca "Iberian Winds" (misma dirección/teléfono, no reventa ajena). 6 imágenes renombradas por los merges de slug. |
 | 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ⬜ | Errata «Predrosa»; Quintanamanvirgo a resolver (Rodero); par Linaje Garsea/El Ventorro (lote 13). |
 | 7 | Bodega · La Horra, Pidio y Sotillo | 20 | ⬜ | 3 cuarentenas VO en La Horra; Copaboca bicéfala (con lote 10); Cillar de Silos/Dominio del Pidio mismo grupo; grafía SOTILLO. |
 | 8 | Bodega · Aranda de Duero | 18 | ⬜ | Consorcio Ruta del Vino (purga probable); Montegaredo geo-warning; La Aguilera→Aranda; Izquierdo comparte tel con apícola (lote 18); grafía ARANDA. |
@@ -567,27 +583,27 @@ Purgas y fusiones del lote:
 - `embutidos-la-castellana-villarcayo` — purga `closed` (concurso de acreedores desde 2019, en liquidación, sin cuentas depositadas desde 2017).
 - `productos-el-penedo-quintanar-de-la-sierra` — fusión en `sabores-de-quintanar-quintanar-de-la-sierra` (mismo teléfono y dirección; nombre anterior de la misma empresa).
 
-### Lote 5 · Bodega — Roa y ribera del Riaza (18) — ⬜
+### Lote 5 · Bodega — Roa y ribera del Riaza (18) — ✅ 2026-07-07
 
 ```text
-paramo-de-corcos-moradillo-de-roa · Moradillo de Roa
-bodegas-y-vinedos-monteabellon-nava-de-roa · Nava de Roa
-valreinas-vinedo-y-bodega-nava-de-roa · Nava de Roa
-bodega-briones-abad-roa · Roa
-bodega-condado-de-haza-roa · Roa — HEREDADO verificado; VO=sí SIN canal (cuarentena); sin Maps
-bodegas-duron-roa · Roa — HEREDADO verificado; sin Maps
-bodegas-hercal-roa · Roa — HEREDADO parcial; VO=no heredado (re-derivar); sin Maps
-bodegas-raiz-y-quesos-paramo-de-guzman-roa · Roa — nombre mixto bodega+quesos: resolver alcance real
-vinedos-alonso-del-yerro-roa · Roa — HEREDADO verificado; VO=sí SIN canal (cuarentena); sin Maps
-bodegas-francisco-barona-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-bodegas-lambuena-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-bodegas-lopez-cristobal-s-l-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-bodegas-rauda-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-dominio-de-calogia-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-hornillos-ballesteros-vinos-mibal-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-sei-solo-bodegas-y-vinedos-roa-de-duero · Roa de Duero — municipio → Roa (slug con merge)
-milenico-san-martin-de-rubiales · San Martin de Rubiales — grafía: «San Martín de Rubiales»
-pomar-vinedos-valdezate · Valdezate
+paramo-de-corcos-moradillo-de-roa · Moradillo de Roa — verificado, VO=sí (ecommerce)
+bodegas-y-vinedos-monteabellon-nava-de-roa · Nava de Roa — verificado, VO=sí (ecommerce)
+valreinas-vinedo-y-bodega-nava-de-roa · Nava de Roa — verificado, VO=no comprobado
+bodega-briones-abad-roa · Roa — verificado, VO=no comprobado
+bodega-condado-de-haza-roa · Roa — verificado, cuarentena resuelta: VO=sí (ecommerce)
+bodegas-duron-roa · Roa — verificado, VO=sí (ecommerce)
+bodegas-hercal-roa · Roa — promovida a verificado (era HEREDADO parcial), VO=sí re-derivado (ecommerce)
+bodegas-raiz-y-quesos-paramo-de-guzman-roa · Roa — nombre mixto confirmado real, verificado, VO=sí (ecommerce)
+vinedos-alonso-del-yerro-roa · Roa — verificado, cuarentena resuelta: VO=sí (ecommerce)
+bodegas-francisco-barona-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=no comprobado
+bodegas-lambuena-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=no comprobado
+bodegas-lopez-cristobal-s-l-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=sí (ecommerce)
+bodegas-rauda-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=sí (ecommerce)
+dominio-de-calogia-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=sí (ecommerce|whatsapp)
+hornillos-ballesteros-vinos-mibal-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=no comprobado
+sei-solo-bodegas-y-vinedos-roa · Roa — renombrada desde `-roa-de-duero` (merge); verificado, VO=no comprobado
+milenico-san-martin-de-rubiales · San Martín de Rubiales — grafía normalizada (tilde), verificado, VO=sí (ecommerce)
+pomar-vinedos-valdezate · Valdezate — verificado, VO=sí (ecommerce)
 ```
 
 ### Lote 6 · Bodega — ribera oeste, Pedrosa–Fuentecén (16) — ⬜
