@@ -24,8 +24,6 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types, purge/merge records.
 - `docs/EDITORIAL_POLICY.md`: decision model for `verificado`/`parcial`/purge/online sales.
 - `docs/VERIFICATION_TECHNIQUES.md`: efficient investigation workflow — province start-up, sufficient evidence, deduplication, location, images, maintenance passes, context discipline.
-- `docs/TASKS.md`: task recipes, release checklist, handoff checklist.
-- `docs/PROVINCE_COMPLETENESS.md`: planning targets; provinces are not benchmarks for one another.
 - `docs/ARCHITECTURE.md`: app flow and runtime design rules.
 
 ## Hard Invariants
@@ -43,8 +41,9 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 ## Commands
 - Data/reference/evidence/image-only change: `npx pnpm verify:data`.
 - Code, scripts, validators, policy, or behavior change: `npx pnpm verify:ai`.
+- After catalog or UI changes, hand-check: province selector switches CSV, category chips filter list and map, detail links keep `provincia`.
 - While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch missing provenance signals.
-- Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`; completeness planning: `npx pnpm check:csv:completeness`.
+- Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`; completeness planning: `npx pnpm check:csv:completeness` (prints its fixed targets; a planning signal, not a gate — provinces are not benchmarks for one another).
 - Province roster/de-dup: `npx pnpm list:province [provincia]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories: `npx pnpm list:categories`.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
@@ -64,6 +63,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Registries confirm what they publish, often existence or certification, but not necessarily current activity or online sales. A listing normally supports at most `parcial`.
 - Some registries are not producer lists. Livestock-holding registries such as REGA list explotaciones, not sellable producers; triage and prune instead of keeping them by default.
 - Never invent or guess producer names. A plausible category, dish, or place name is not a producer without a concrete business source.
+- Grow row count from verified producers spread across municipalities, not filler concentrated in the capital.
 - Dynamic claims need current evidence: especially activity, closure, and `Venta online=sí`.
 - A failed fetch is not a dead site. Confirm HTTP-only, TLS, DNS, blocking, or timeout failures by another route before deleting or downgrading a URL.
 - Do not trust speculative candidate lists; verify each item and prune resolved notes.

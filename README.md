@@ -11,8 +11,6 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 - Contrato de evidencia: `docs/EVIDENCE_CONTRACT.md`
 - Política editorial y evaluaciones: `docs/EDITORIAL_POLICY.md`
 - Técnicas de verificación: `docs/VERIFICATION_TECHNIQUES.md`
-- Tareas comunes: `docs/TASKS.md`
-- Completitud provincial: `docs/PROVINCE_COMPLETENESS.md`
 - Notas temporales de candidatos: `docs/candidates/README.md`
 - No recuperar scripts de generación/restauración antiguos: los CSV en `data/csv/**` son la base.
 
