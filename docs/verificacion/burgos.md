@@ -72,6 +72,27 @@ tarea.
   `paramo-del-cid-caleruega`), recategorizado a Carnes. La Fonda del Prado
   recategorizada a Conservas (granja + conservas de aves, no embutidos).
   Gumiel del Mercado normalizado a Gumiel de Mercado (grafía oficial + slug).
+- Snapshot tras lote 4 (2026-07-07): **326 filas** (−4: 3 purgas + 1 fusión);
+  **241 `pendiente`**, 23 `parcial`, 62 `verificado`. Venta online: **43
+  `sí`** (28 con canal: 21 previos + 7 nuevos, todos `ecommerce` salvo Casalba
+  en `ecommerce|marketplace`), 24 `no`, 259 `no comprobado`. Imágenes:
+  163/326 (sin huérfanas: ninguna fila purgada/fusionada tenía `imagen`).
+  Purgas: la asociación de criadores de potro hispano-bretón (`not-producer`,
+  organiza la Feria de San Marcos, no vende) y su fila gemela "Grupo Amicar 8"
+  / carnedepotrohispanobreton.com (`closed`, sociedad extinguida en el
+  registro mercantil, los tres dominios del sector ya no resuelven); Embutidos
+  La Castellana (`closed`, concurso de acreedores desde 2019, en liquidación).
+  Fusión: Productos El Peñedo → Sabores de Quintanar (mismo tel/dirección,
+  nombre anterior de la misma empresa, hoy premiada en el Mundial del
+  Chorizo). Carne de la Buena: municipio corregido de "Santa Gadea de Alfoz"
+  a "Alfoz de Santa Gadea" (oficial INE), slug renombrado
+  `carne-de-la-buena-alfoz-de-santa-gadea`, se mantiene en `parcial` (sin
+  rastro digital propio, pero sin evidencia para purgar). Jamones el Pelayo:
+  grafía de municipio normalizada ("Salas de Los Infantes" →
+  "Salas de los Infantes"). Cuarentena VO resuelta: La Villarcayesa (tienda
+  online real en villarcayesa.com/tienda/, sede confirmada en Villarcayo vía
+  registro mercantil pese a directorios desactualizados que la sitúan en
+  Cantabria).
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -146,7 +167,7 @@ tarea.
   | Ahedo del Butrón | pedanía de Los Altos | 19 |
   | Barcina de los Montes | pedanía de Oña | 14 |
   | Boada de Roa | municipio real; probable hueco de la referencia | 6 |
-  | Cabanas de Virtus / Cabañas de Virtus | pedanía de Valle de Valdebezana; unificar grafía | 4 |
+  | ~~Cabanas de Virtus / Cabañas de Virtus~~ | pedanía de Valle de Valdebezana — **resuelto 2026-07-07**: las 2 filas con ese municipio se purgaron en el lote 4 (asociación de criadores + Grupo Amicar 8, ambas extintas/sin venta), no queda ninguna fila que lo use | 4 |
   | Castrillo Solarana | municipio real; probable hueco | 10 |
   | Cilleruelo de Bezana | pedanía de Valle de Valdebezana | 11 |
   | Cubillo del Butrón | pedanía de Los Altos | 17 |
@@ -172,11 +193,11 @@ tarea.
   | Roa de Duero | municipio oficial «Roa»; renombrar 7 slugs con merge | 5 |
   | San Llorente de la Vega | pedanía de Melgar de Fernamental | 20 |
   | San Mamés de Abar, Basconcillos del Tozo, Burgos | limpiar valor → Basconcillos del Tozo | 19 |
-  | Santa Gadea de Alfoz | municipio Alfoz de Santa Gadea | 4 |
+  | ~~Santa Gadea de Alfoz~~ | municipio Alfoz de Santa Gadea — **resuelto 2026-07-07**: `carne-de-la-buena-santa-gadea-de-alfoz` renombrada a `carne-de-la-buena-alfoz-de-santa-gadea` (centroide confirmado en municipios.json, coords del CSV ya cuadraban) | 4 |
   | Sotopalacios | pedanía de Merindad de Río Ubierna — **resuelto 2026-07-06 en lote 2** (3 slugs renombrados); genera geo-warning ~20 km esperado, ver Estado | 12, 16 |
   | Valdenoceda | pedanía de Merindad de Valdivielso | 14 |
   | Villafuertes | municipio real; probable hueco | 2 |
-  | Villamayor del Río | municipio real; probable hueco | 4 |
+  | Villamayor del Río | municipio real; hueco confirmado 2026-07-07 (no está en municipios.json), coords del CSV no se tocan | 4 |
   | Villasilos | pedanía de Castrojeriz | 15 |
   | Vivar del Cid | pedanía de Quintanilla Vivar | 22 |
   | Vizmalo | municipio real; probable hueco | 2 |
@@ -435,7 +456,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 1 | Charcutería · Burgos capital | 14 | ✅ 2026-07-06 | 7 verificadas, 2 parciales, 6 purgas (asociación morcilla, IGP morcilla, cortadores de jamón, COBUR cerrada/absorbida por Uvesa, Incarsa B2B), 1 fusión (Hnos. González → `embutidos-hermanos-gonzalez-merindad-de-rio-ubierna`, renombrado en lote 2). VO: 4 nuevos `sí` con canal (marketplace/ecommerce), 1 `no`. Geo-warning de la asociación resuelto. |
 | 2 | Charcutería · alfoz y Arlanza norte | 11 | ✅ 2026-07-06 | 9 verificadas (2 ya lo estaban), 1 fusión (`morcillas-de-cardena` → `embutidos-de-cardena-cardenadijo`, mismo tel/dirección, la web vieja redirige 301 a la actual). Sotopalacios ×3 → `Merindad de Río Ubierna` (slugs renombrados); Villafuertes/Vizmalo confirman hueco de referencia (sin forzar coords). VO: 7 nuevos `sí` con canal (todo ecommerce salvo Zael: marketplace\|whatsapp\|email), 2 quedan `no comprobado` por prudencia (Águeda, Hermanos Masa). `granja-zael-zael` recategorizada Charcutería→Carnes. |
 | 3 | Charcutería · Ribera del Duero y Lerma | 14 | ✅ 2026-07-06 | 11 verificadas, 1 parcial, 3 purgas (IGP Lechazo regional, matadero de La Cueva de Roa por alcance, Duque de Lerma extinguida 2024), 1 fusión (Cárnicas/Morcilla Cuevas Aranda). Recategorizadas: Páramo del Cid → Carnes (y municipio Aranda de Duero → Caleruega, sede vs granja real), La Fonda del Prado → Conservas. Gumiel del Mercado → Gumiel de Mercado (grafía + slug). VO: 10 nuevos `sí` con canal (7 ecommerce, 1 marketplace, 1 telefono\|email, 1 telefono), 2 quedan `no comprobado` por prudencia. |
-| 4 | Charcutería · Merindades, Bureba y Demanda | 17 | ⬜ | Asociación potro + fila gemela (resolver juntas); Ríos comparte tel con asoc. morcilla (lote 1); La Villarcayesa cuarentena VO; grafía Salas. |
+| 4 | Charcutería · Merindades, Bureba y Demanda | 17→14 | ✅ 2026-07-07 | 11 verificadas (1 ya lo estaba), 1 parcial, 2 purgas (asociación de criadores de potro `not-producer` + su gemela "Grupo Amicar 8" `closed`, sociedad extinguida), 1 fusión (Productos El Peñedo → Sabores de Quintanar, mismo negocio renombrado), 1 purga más (Embutidos La Castellana `closed`, concurso de acreedores 2019). VO: 6 nuevos `sí` con canal (ecommerce salvo Casalba ecommerce\|marketplace) + cuarentena de La Villarcayesa resuelta (sí, ecommerce). Carne de la Buena: municipio/slug renombrado a Alfoz de Santa Gadea. Jamones el Pelayo: grafía de municipio normalizada. |
 | 5 | Bodega · Roa y ribera del Riaza | 18 | ⬜ | Roa de Duero→Roa (7 slugs con merge); 3 cuarentenas VO (Condado de Haza, Alonso del Yerro…); DO Ribera como ancla. |
 | 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ⬜ | Errata «Predrosa»; Quintanamanvirgo a resolver (Rodero); par Linaje Garsea/El Ventorro (lote 13). |
 | 7 | Bodega · La Horra, Pidio y Sotillo | 20 | ⬜ | 3 cuarentenas VO en La Horra; Copaboca bicéfala (con lote 10); Cillar de Silos/Dominio del Pidio mismo grupo; grafía SOTILLO. |
@@ -522,27 +543,29 @@ Purgas y fusiones del lote:
 - `embutidos-duque-de-lerma-lerma` — purga `closed` (Registro Mercantil: extinguida 08/11/2024; dominio caído).
 - `carnicas-cuevas-aranda-aranda-de-duero` — fusión en `morcilla-cuevas-aranda-de-duero` (mismo tel/correo, misma empresa).
 
-### Lote 4 · Charcutería — Merindades, Bureba y Demanda (17) — ⬜
+### Lote 4 · Charcutería — Merindades, Bureba y Demanda (17→14) — ✅ 2026-07-07
 
 ```text
-morcilla-ortega-briviesca · Briviesca
-asociacion-de-carne-de-potro-hispano-breton-de-burgos-cabanas-de-virtus · Cabañas de Virtus — PURGA PROBABLE not-producer; municipio sin centroide → Valle de Valdebezana; tel compartido con la fila gemela; resolver ambas juntas
-carne-de-potro-hispano-breton-de-burgos-cabanas-de-virtus · Cabanas de Virtus — municipio sin centroide → Valle de Valdebezana; tel compartido con la asociación: ¿hay operador real que venda?
-que-te-den-morcilla-espinosa-de-los-monteros · Espinosa de los Monteros
-embutidos-mari-paz-ona · Oña
-embutidos-de-poza-de-la-sal-poza-de-la-sal · Poza de la Sal
-embutidos-contreras-pradanos-de-bureba · Prádanos de Bureba
-jamones-el-gemelo-pradoluengo · Pradoluengo
-productos-el-penedo-quintanar-de-la-sierra · Quintanar de la Sierra — tel compartido con `sabores-de-quintanar-quintanar-de-la-sierra`: ¿misma empresa?
-sabores-de-quintanar-quintanar-de-la-sierra · Quintanar de la Sierra — tel compartido con `productos-el-penedo-quintanar-de-la-sierra`
-adolfo-martinez-piernavieja-salas-de-los-infantes · Salas de los Infantes
-jamones-el-pelayo-salas-de-los-infantes · Salas de Los Infantes — grafía → «Salas de los Infantes»
-carne-de-la-buena-santa-gadea-de-alfoz · Santa Gadea de Alfoz — SIN WEB; municipio sin centroide → Alfoz de Santa Gadea
-casalba-villamayor-del-rio · Villamayor del Río — municipio sin centroide → resolver INE
-embutidos-la-castellana-villarcayo · Villarcayo — SIN WEB
-embutidos-rios-villarcayo · Villarcayo — tel compartido con `asociacion-de-fabricantes-de-morcilla-de-burgos-burgos` (lote 1)
-la-villarcayesa-villarcayo · Villarcayo — HEREDADO verificado; VO=sí SIN canal (cuarentena)
+morcilla-ortega-briviesca · Briviesca — verificado, VO no comprobado (web propia, contacto sin carrito confirmado)
+que-te-den-morcilla-espinosa-de-los-monteros · Espinosa de los Monteros — verificado, VO no comprobado
+embutidos-mari-paz-ona · Oña — verificado, VO no comprobado (tienda.html sin catálogo funcional)
+embutidos-de-poza-de-la-sal-poza-de-la-sal · Poza de la Sal — verificado, VO sí (ecommerce)
+embutidos-contreras-pradanos-de-bureba · Prádanos de Bureba — verificado, VO no comprobado
+jamones-el-gemelo-pradoluengo · Pradoluengo — verificado, VO sí (ecommerce)
+sabores-de-quintanar-quintanar-de-la-sierra · Quintanar de la Sierra — verificado, VO sí (ecommerce). Fusión con `productos-el-penedo-quintanar-de-la-sierra` (mismo tel/dirección; "Productos El Peñedo" es el nombre anterior de la misma empresa, hoy Sabores de Quintanar)
+adolfo-martinez-piernavieja-salas-de-los-infantes · Salas de los Infantes — verificado, VO no comprobado
+jamones-el-pelayo-salas-de-los-infantes · Salas de los Infantes (grafía normalizada) — verificado, VO sí (ecommerce)
+carne-de-la-buena-alfoz-de-santa-gadea · Alfoz de Santa Gadea (antes Santa Gadea de Alfoz; slug renombrado) — parcial, VO no comprobado. Sin web ni rastro digital independiente; se mantiene con nota (regla 16)
+casalba-villamayor-del-rio · Villamayor del Río — verificado, VO sí (ecommerce|marketplace). Villamayor del Río confirmado municipio real sin centroide (hueco, no se fuerza)
+embutidos-rios-villarcayo · Villarcayo — verificado, VO sí (ecommerce). Tel compartido con la asociación de fabricantes de morcilla (lote 1, ya purgada): sin conflicto
+la-villarcayesa-villarcayo · Villarcayo — verificado (heredado), VO sí (ecommerce). Cuarentena resuelta: tienda online real confirmada
 ```
+
+Purgas y fusiones del lote:
+- `asociacion-de-carne-de-potro-hispano-breton-de-burgos-cabanas-de-virtus` — purga `not-producer` (asociación de criadores, organiza la Feria de San Marcos, no vende directamente).
+- `carne-de-potro-hispano-breton-de-burgos-cabanas-de-virtus` — purga `closed` (fila comercial "Grupo Amicar 8"; sociedad extinguida en el registro mercantil, los tres dominios del sector ya no resuelven). Ambas filas gemelas resueltas juntas: ninguna sobrevive.
+- `embutidos-la-castellana-villarcayo` — purga `closed` (concurso de acreedores desde 2019, en liquidación, sin cuentas depositadas desde 2017).
+- `productos-el-penedo-quintanar-de-la-sierra` — fusión en `sabores-de-quintanar-quintanar-de-la-sierra` (mismo teléfono y dirección; nombre anterior de la misma empresa).
 
 ### Lote 5 · Bodega — Roa y ribera del Riaza (18) — ⬜
 
