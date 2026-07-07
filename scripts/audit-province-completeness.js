@@ -28,6 +28,14 @@ const METRICS = [
     count: (row) => isOnlineSalesReviewed(row["Venta online"]),
   },
   {
+    key: "canal",
+    label: "Canal",
+    target: 100,
+    base: (row) => isOnlineSalesYes(row["Venta online"]),
+    count: (row) =>
+      isOnlineSalesYes(row["Venta online"]) && hasValue(row["Canal de venta"]),
+  },
+  {
     key: "social",
     label: "Social",
     target: 60,
@@ -82,6 +90,10 @@ function isOnlineSalesReviewed(value) {
 function isVerificationReviewed(value) {
   const normalized = normalizeSearch(value);
   return normalized === "parcial" || normalized === "verificado";
+}
+
+function isOnlineSalesYes(value) {
+  return normalizeSearch(value) === "si";
 }
 
 function parseArgs(argv) {
@@ -144,6 +156,12 @@ function percentage(count, total) {
 function auditFile(csvPath, dependencies) {
   const rows = readRows(csvPath, dependencies.fs, dependencies.parse);
   const total = rows.length;
+  const bases = Object.fromEntries(
+    METRICS.map((metric) => [
+      metric.key,
+      metric.base ? rows.filter((row) => metric.base(row)).length : total,
+    ]),
+  );
   const counts = Object.fromEntries(
     METRICS.map((metric) => [
       metric.key,
@@ -153,7 +171,11 @@ function auditFile(csvPath, dependencies) {
   const percentages = Object.fromEntries(
     METRICS.map((metric) => [
       metric.key,
-      percentage(counts[metric.key], total),
+      // A metric with its own base (e.g. canal over `sí` rows) is trivially
+      // met when the base is empty.
+      metric.base && bases[metric.key] === 0
+        ? 100
+        : percentage(counts[metric.key], bases[metric.key]),
     ]),
   );
   const progress =
@@ -170,6 +192,7 @@ function auditFile(csvPath, dependencies) {
     file: csvPath,
     rows: total,
     counts,
+    bases,
     percentages,
     progress: Math.round(progress * 10) / 10,
     gaps,

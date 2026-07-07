@@ -342,8 +342,9 @@ Añadir la provincia a `data/evidence/coverage.json` la marca como cobertura com
 ## Mantenimiento y pasadas sucesivas
 
 El CSV nunca se «cierra»: es un catálogo vivo. Una pasada sobre provincia ya revisada refresca lo que
-caduca sin re-derivar lo estable, con la misma mecánica de lotes, flags y validación (los residuales
-son la worklist):
+caduca sin re-derivar lo estable, con la misma mecánica de lotes, flags y validación. La worklist se
+imprime: `npx pnpm check:evidence:freshness` ordena las filas por riesgo y antigüedad de evidencia, y
+`npx pnpm check:links --provincia [provincia]` hace el triaje de enlaces (ambos solo informan):
 
 - **Lee la evidencia antes de re-investigar.** La línea JSONL dice qué se comprobó, con qué fuente y
   cuándo. Identidad y municipio se reutilizan salvo señal de cambio; lo que envejece es actividad,

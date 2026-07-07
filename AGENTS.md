@@ -47,6 +47,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Province roster/de-dup: `npx pnpm list:province [provincia]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories: `npx pnpm list:categories`.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
+- Maintenance worklists (report-only, network/date dependent, not part of any gate): stale-evidence queue `npx pnpm check:evidence:freshness`; link-rot triage `npx pnpm check:links --provincia [provincia]`.
 
 ## Data Workflow
 1. Run `git status --short` before changing data and identify active province CSVs, evidence files, image folders, candidate notes, and ledgers.
