@@ -9,13 +9,16 @@ un ledger provincial, si existe, solo conserva fuentes locales, excepciones y pr
 
 ## Cómo usar este documento
 
-Lee siempre **Reglas duras**, **Flujo mínimo** y **Decisión por fila**. Consulta las demás secciones
-solo cuando el lote incluya venta online, duplicados, ubicación, imágenes o cierre provincial.
+Lee siempre **Reglas duras**, **Flujo mínimo** y **Decisión por fila**. Al abrir una provincia añade
+**Arranque de provincia**; al volver sobre una ya pasada, **Mantenimiento y pasadas sucesivas**.
+Consulta las demás secciones solo cuando el lote incluya venta online, duplicados, ubicación, imágenes
+o cierre provincial.
 
-El agente puede elegir herramientas, fuentes, orden y tamaño de lote. Debe emplear el método menos
-costoso que produzca evidencia suficiente y detener la investigación cuando la decisión ya sea sólida.
-Solo las reglas duras, los valores del contrato y la validación son obligatorios; prioridades y
-técnicas son heurísticas que el agente puede adaptar al caso.
+Lo único obligatorio son las reglas duras, los valores del contrato y la validación. Todo lo demás
+—prioridades, orden, tamaño de lote, técnicas— describe el camino barato ya probado, no el único
+válido: usa el método menos costoso que produzca evidencia suficiente, detente cuando la decisión sea
+sólida y desvíate del manual cuando tu criterio lo mejore, dejando constancia si la desviación afecta
+a cómo otro agente reanudaría el trabajo.
 
 ## Reglas duras
 
@@ -46,7 +49,8 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 2. **Define un lote útil**
 
    Agrupa por municipio, zona, categoría, fuente o riesgo. No hay tamaño obligatorio: usa el menor lote
-   que permita compartir contexto sin mezclar decisiones.
+   que permita compartir contexto sin mezclar decisiones. Si el doc provincial define lotes con slugs
+   congelados, tu lote es esa lista: no edites filas ajenas ni «de paso»; anota el hallazgo y sigue.
 
 3. **Prioriza**
 
@@ -86,6 +90,40 @@ técnicas son heurísticas que el agente puede adaptar al caso.
    ```
 
    Al cerrar trabajo de datos, ejecuta `npx pnpm verify:data`.
+
+## Arranque de provincia (primera pasada)
+
+Léelo al abrir una provincia, no en cada lote. Una pasada profunda rinde más si empieza con un plan,
+dimensionado con criterio: en un catálogo pequeño bastan el snapshot y un par de lotes. Los
+invariantes son cubrir todas las filas, decidir cada una con evidencia y poder reanudar en cualquier
+punto; el resto es adaptable.
+
+- **Snapshot y flags.** Cuenta filas, estados, venta/canales e imágenes, y detecta de una vez las
+  anomalías mecánicas (grafías de municipio, geo-warnings, dominios o teléfonos compartidos entre
+  filas, `sí` sin canal, purgas probables) como flags por fila: el flag es tarea, no decisión.
+- **Lotes con slugs congelados.** Agrupa por sector y zona para reutilizar fuentes (8-20 filas suele
+  funcionar), sin solapes y con un cierre transversal al final. Publica slugs y flags por lote en el
+  doc provincial: cualquier agente ejecuta su lote leyendo solo eso, y toda fila acaba decidida.
+- **La herencia se reaudita.** Estados y venta previos a la pasada son datos heredados: un
+  `verificado`/`parcial` antiguo es un `pendiente` con ventaja (suele tener web), y los `sí` —sobre
+  todo sin canal— entran en cuarentena hasta re-derivar el mecanismo de pedido.
+- **Mapa de fuentes provinciales.** Localiza antes de empezar directorios institucionales, DO/IGP,
+  marcas de garantía y prensa local, y anota su techo: como fuente única suelen capar en `parcial`.
+- **Sin altas nuevas.** La pasada decide lo que ya hay; los descubrimientos van a
+  `docs/candidates/[provincia].md`, no al CSV, salvo encargo explícito.
+
+### Señales de triaje
+
+Trampas recurrentes de los volcados; valen también al reauditar:
+
+| Señal | Acción probable |
+|---|---|
+| Dominio caducado, aparcado o con contenido ajeno | Retirar la web; por sí solo no prueba baja |
+| Mismo dominio sectorial (DO, asociación) en varias filas | Retirarlo de todas: es fuente de cotejo, no web propia |
+| Consejo regulador, IGP/M.G., asociación, feria, gran grupo | Purga (`not-producer` u `out-of-scope`) salvo operador real que elabore con esa marca; no convertir la fila en otro productor «parecido» |
+| `Venta online=sí` en bloque y sin canal (volcado de Maps) | Cuarentena: re-derivar el mecanismo antes de conservar |
+| Ruido de volcado en `nombre` o en la categoría | Corregir con evidencia; el `slug` no se toca por limpiar el nombre |
+| `municipio` = sede administrativa o dirección postal | Corregir al municipio de la unidad productiva |
 
 ## Evidencia suficiente
 
@@ -169,14 +207,14 @@ Audítala aparte de la identidad:
 Combina canales con `|`. No prueban venta remota una web, catálogo, precios, tienda vacía, texto legal,
 publicación histórica, tienda física ni venta exclusiva de visitas o merchandising.
 
-Revisa todos los `sí`. En cierres profundos revisa también `no` y `no comprobado`, porque pueden ocultar
-pedidos por contacto directo. Un fallo temporal justifica `no comprobado`, no necesariamente `no`.
+Revisa todos los `sí`; los heredados sin canal están en cuarentena (ver Arranque de provincia). En
+cierres profundos revisa también `no` y `no comprobado`, porque pueden ocultar pedidos por contacto
+directo. Un fallo temporal justifica `no comprobado`, no necesariamente `no`.
 
-**Confirmar venta en webs difíciles.** Muchas webs de productor —cellers de vino en especial— bloquean
-WebFetch por age-gate, Cloudflare o TLS; un fetch fallido no prueba que no haya tienda. Antes de cerrar en
-`no`/`no comprobado`, confirma con WebSearch (`"<nombre>" tienda online comprar`) y busca la tienda en un
-**dominio o subdominio de marca aparte** (p. ej. `adernats.cat`→`adernats-shop.com`, `botiga.<marca>.com`,
-`<marca>-shop.com`). Distingue el canal propio del de terceros al rellenar `Canal de venta`.
+**Webs difíciles.** Muchas webs de productor —cellers en especial— bloquean el fetch por age-gate,
+Cloudflare o TLS; un fetch fallido no prueba que no haya tienda. Antes de cerrar en `no`/`no
+comprobado`, busca `"<nombre>" tienda online comprar` y prueba dominios de marca aparte
+(`botiga.<marca>.com`, `<marca>-shop.com`). Distingue canal propio de terceros al rellenar el canal.
 
 ## Deduplicación
 
@@ -193,8 +231,12 @@ o productores que comparten finca, mercado o centroide. `grep -i` no pliega acen
 ## Ubicación
 
 - Contrasta `municipio`, `direccion`, `lat` y `lon` conjuntamente.
+- `municipio` es el de la unidad productiva —no la sede administrativa o postal— y usa el nombre
+  oficial INE; pedanías y localidades van a su municipio (la localidad cabe en `direccion`). Si el
+  slug codifica la grafía corregida, renómbralo con registro `merge`.
 - Si geocodificas, limita a España, respeta el servicio usado y valida contra el centroide municipal.
-- Hasta 15 km es la banda esperada; 15–100 km requiere revisión; más de 100 km bloquea el contrato.
+- Hasta 15 km es la banda esperada; 15–100 km requiere revisión —en municipios extensos puede ser
+  artefacto del centroide único: anótalo, no fuerces coordenadas—; más de 100 km bloquea el contrato.
 - Si el centroide corresponde a un homónimo territorial, corrige
   `data/reference/municipios-overrides.json`; no muevas productores correctos.
 - Si una dirección no resuelve, conserva el centroide. Coordenadas iguales o próximas son una alerta,
@@ -210,14 +252,11 @@ primer resultado por puntuación.
 
 ### Formato y composición
 
-- Activo final preferido: **1600x1200 WebP** (4:3 horizontal), calidad `>= 88`,
-  en `/productores/<comunidad>/<provincia>/<slug>.webp`.
-- Fondo plano `#F3F0E8`; logo centrado con alrededor de 10% de margen por lado.
-  El lado más largo del logo debería quedar en torno a 960 px o menos.
-- Mantén visible el fondo alrededor del logo. No estires el logo para rellenar
-  el lienzo.
-- Otros formatos válidos por contrato (`.png`, `.jpg`, `.avif`, etc.) siguen
-  siendo aceptables, pero usa `.webp` para activos nuevos.
+- Activo preferido: **1600x1200 WebP** (4:3 horizontal), calidad `>= 88`, en
+  `/productores/<comunidad>/<provincia>/<slug>.webp`. Otros formatos del contrato valen, pero usa
+  `.webp` en activos nuevos.
+- Fondo plano `#F3F0E8`; logo centrado con ~10% de margen por lado y lado largo en torno a 960 px o
+  menos. No estires el logo para rellenar el lienzo.
 
 ### Fuente visual
 
@@ -229,39 +268,25 @@ Prioridad de búsqueda, deteniéndote en el primer activo usable:
 4. Favicon de alta resolución.
 5. Fuentes reputadas (DOP/IGP, turismo, prensa) solo si los canales propios no ofrecen nada usable.
 
-Prefiere marca sobre foto de producto. Usa foto propia del productor solo si no
-hay logo usable o si esa foto es parte reconocible de la identidad. No uses
-stock, IA, competidores ni imágenes de portales genéricos.
+Prefiere marca sobre foto de producto; foto propia solo si no hay logo usable o si es parte
+reconocible de la identidad. Nada de stock, IA, competidores ni portales genéricos.
 
 ### Calidad y tratamiento
 
-- No escales más de **3x** el lado largo original; por encima de eso el resultado
-  se ve borroso.
-- Tras escalar más de `1.2x`, aplica enfoque suave.
-- En logos JPG sin alfa, puedes convertir blancos casi puros (`R,G,B >= 240`) a
-  transparente antes de componer. No apliques este cromado a fotografías.
-- Si la única fuente tiene menos de unos 200 px en el lado largo, deja el logo
-  pequeño pero nítido o usa una foto propia representativa; anótalo en el cambio.
+- No escales más de **3x** el lado largo (se ve borroso); tras superar `1.2x`, aplica enfoque suave.
+- En logos JPG sin alfa puedes volver transparente el blanco casi puro (`R,G,B >= 240`) antes de
+  componer; nunca en fotografías.
+- Fuente menor de ~200 px de lado largo: deja el logo pequeño pero nítido o usa foto propia
+  representativa; anótalo en el cambio.
 
 ### Naming y tooling
 
-- El nombre del archivo debe coincidir con el `slug` del CSV y el path debe
-  reflejar la provincia: `/productores/<comunidad>/<provincia>/<slug>.webp`.
-- Un activo por productor. No guardes variantes ni originales de trabajo en
-  `public/`.
-- Usa el script compartido en dry-run:
-  ```bash
-  npx pnpm enrich:images --provincia [provincia]
-  ```
-- Si el destino canónico no coincide con el CSV stem, pasa
+- Archivo = `slug` del CSV y path por provincia (ver Formato). Un activo por productor; sin variantes
+  ni originales de trabajo en `public/`. Si el destino canónico no coincide con el CSV stem, pasa
   `--asset-provincia <comunidad>/<provincia>`.
-- Instala las herramientas opcionales solo cuando vayas a usar enriquecimiento:
-  ```bash
-  python3 -m pip install -r scripts/requirements-image-tools.txt
-  ```
-- El script no escribe nada por defecto. Revisa candidato, score, dimensiones y
-  URL; aplica solo por `--slug`. Usa `--allow-photos` únicamente cuando una foto
-  propia sea el fallback buscado.
+- El script no escribe nada por defecto: revisa candidato, score, dimensiones y URL; aplica solo por
+  `--slug`, y `--allow-photos` únicamente cuando una foto propia sea el fallback buscado.
+- Herramientas opcionales, solo al enriquecer: `python3 -m pip install -r scripts/requirements-image-tools.txt`.
 - Cierra cambios de imagen con `npx pnpm check:images`.
 
 ## Disciplina de contexto
@@ -271,6 +296,7 @@ stock, IA, competidores ni imágenes de portales genéricos.
 - El roster `list:province` de una provincia grande (Barcelona, Madrid) también llena el contexto:
   acótalo con `--categoria`/`--pendientes` o `rg`, no lo vuelques entero.
 - No releas este documento completo en cada lote; conserva solo las secciones aplicables.
+- De un doc provincial con plan de lotes, lee estado, reglas provinciales y tu lote; no el ledger entero.
 - Consulta `docs/CSV_CONTRACT.md` solo para dudas estructurales o valores permitidos.
 - Busca una entidad por nombre + municipio; añade categoría, teléfono o dominio solo si hay homónimos.
 - Reutiliza una fuente común para todo el lote sin repetir su explicación por fila.
@@ -310,16 +336,31 @@ Esta pasada es provincial, no necesaria tras cada lote:
 
 Una **pasada** de revisión se cierra cuando no quedan `pendiente`, cada residual tiene una razón
 conocida y las afirmaciones dinámicas se han comprobado; entonces la provincia entra en mantenimiento.
-El CSV nunca se «cierra» ni se da por terminado: es un catálogo vivo. Las afirmaciones dinámicas
-(actividad, cierre, venta online) y la frescura de la evidencia se vuelven a comprobar durante el
-mantenimiento. Añadir la provincia a `data/evidence/coverage.json` la marca como cobertura completa
-de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálogo ni cierra el CSV.
+Añadir la provincia a `data/evidence/coverage.json` la marca como cobertura completa de evidencia
+(advisory: `check:evidence` no bloquea), pero no congela el catálogo ni cierra el CSV.
+
+## Mantenimiento y pasadas sucesivas
+
+El CSV nunca se «cierra»: es un catálogo vivo. Una pasada sobre provincia ya revisada refresca lo que
+caduca sin re-derivar lo estable, con la misma mecánica de lotes, flags y validación (los residuales
+son la worklist):
+
+- **Lee la evidencia antes de re-investigar.** La línea JSONL dice qué se comprobó, con qué fuente y
+  cuándo. Identidad y municipio se reutilizan salvo señal de cambio; lo que envejece es actividad,
+  venta, enlaces e imágenes.
+- **Orden por defecto**, por riesgo y antigüedad de la evidencia: residuales `parcial` (primero con
+  candidato de purga anotado); `sí` con evidencia más vieja y `sí` sin canal; `no comprobado` con web
+  o contacto propio; enlaces que ya no pertenezcan a la entidad; backlog de imágenes.
+- **Re-auditoría completa solo con disparador:** contradicción con la evidencia previa, cambio de
+  dominio o titularidad, señal de cierre. Un refresco de venta no re-prueba identidad: conserva los
+  claims previos al reescribir el registro (Flujo mínimo, paso 5).
 
 ## Documento provincial opcional
 
-Crea `docs/verificacion/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Incluye:
+Para una pasada provincial completa, crea `docs/verificacion/[provincia].md` con el plan de lotes;
+para trabajos menores, solo si el CSV y este manual no bastan para reanudar. Incluye:
 
-- snapshot y worklist;
+- snapshot y plan de lotes (slugs congelados y flags por fila);
 - fuentes locales y sus límites;
 - excepciones territoriales;
 - residuales justificados;
