@@ -158,9 +158,8 @@ npx pnpm test:evidence-contract
 ```
 
 The validator checks JSONL shape, allowed values, dates, claims, source URLs,
-slug existence, merge/purge consistency and exact CSV decision parity. It runs
-**non-blocking**: any mismatch is a warning, not a build-breaking error, and
-provinces listed in `coverage.json` are no longer required to cover every row.
+slug existence, merge/purge consistency and exact CSV decision parity — always
+as warnings, never as build-breaking errors (see Optional audit layer).
 
 It checks that the required claims are present and that at least one verifying
 source type exists, but it does not bind a claim to a source: confirming that a

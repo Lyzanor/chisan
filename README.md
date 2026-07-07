@@ -10,6 +10,7 @@ Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
 - Contrato de datos CSV: `docs/CSV_CONTRACT.md`
 - Contrato de evidencia: `docs/EVIDENCE_CONTRACT.md`
 - Política editorial y evaluaciones: `docs/EDITORIAL_POLICY.md`
+- Técnicas de verificación: `docs/VERIFICATION_TECHNIQUES.md`
 - Tareas comunes: `docs/TASKS.md`
 - Completitud provincial: `docs/PROVINCE_COMPLETENESS.md`
 - Notas temporales de candidatos: `docs/candidates/README.md`
@@ -75,12 +76,15 @@ App en [http://localhost:3000](http://localhost:3000).
 Orden recomendado:
 
 ```bash
-npx pnpm verify:ai
+npx pnpm verify:data   # o verify:ai si cambió código/scripts
 git status --short
-git add .
+git add [solo tus archivos]
 git commit -m "..."
 git push origin main
 ```
+
+El árbol de trabajo es compartido entre agentes: no uses `git add .`, otro
+agente puede tener trabajo en curso sin commitear.
 
 El push a `main` activa el despliegue de producción mediante la integración
 GitHub→Vercel. `vercel deploy . --prod -y` queda solo como fallback manual.

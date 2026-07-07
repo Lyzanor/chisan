@@ -23,7 +23,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `docs/CSV_CONTRACT.md`: CSV header, columns, allowed values, blocking/warning rules, image path contract, reference centroid data.
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types, purge/merge records.
 - `docs/EDITORIAL_POLICY.md`: decision model for `verificado`/`parcial`/purge/online sales.
-- `docs/VERIFICATION_TECHNIQUES.md`: efficient investigation workflow, sufficient evidence, deduplication, location, images, context discipline.
+- `docs/VERIFICATION_TECHNIQUES.md`: efficient investigation workflow — province start-up, sufficient evidence, deduplication, location, images, maintenance passes, context discipline.
 - `docs/TASKS.md`: task recipes, release checklist, handoff checklist.
 - `docs/PROVINCE_COMPLETENESS.md`: planning targets; provinces are not benchmarks for one another.
 - `docs/ARCHITECTURE.md`: app flow and runtime design rules.

@@ -1,19 +1,18 @@
 # Province Completeness
 
 ## Goal
-Long-term: make every province catalog progressively more useful and reliable, while allowing each province to improve at its own pace.
-
-This is not a required gate for every task. Use it when planning data-expansion work, auditing a province, or deciding which province to improve next.
-
-No province CSV is the reference or target for another. Completeness is measured against shared, fixed editorial criteria, and progress should be evaluated against the previous state of the same province.
+Make every province catalog progressively more useful and reliable, at its own pace. This is a
+planning tool for data-expansion work, not a gate for every task: no province is the benchmark for
+another, and progress is measured against the same province's earlier state.
 
 ```bash
 npx pnpm check:csv:completeness
 ```
 
-The audit prints the fixed targets and one mechanical progress score per province. It lists provinces by path rather than ranking them against each other. The score is a planning signal, not a release gate or a substitute for source verification.
+The audit prints the fixed targets and one mechanical progress score per province. The score is a
+planning signal, not a release gate or a substitute for source verification.
 
-## Fixed Planning Targets
+## Fixed planning targets
 
 | Metric | Target | Meaning |
 | --- | ---: | --- |
@@ -27,65 +26,28 @@ The audit prints the fixed targets and one mechanical progress score per provinc
 | `imagen` | 60% | A reviewed local image asset is present. |
 | `horario` | 50% | Useful public hours are present where they exist. |
 
-These percentages are stable editorial planning targets, not claims that every producer has a website, social profile, image, or public opening hours. Empty is preferable to invented or irrelevant data.
+These percentages are stable planning targets, not claims that every producer has a website, social
+profile, image, or public hours. Empty is preferable to invented or irrelevant data.
 
-## What Good Looks Like
-- Every row keeps the required CSV contract valid.
-- Every row has an evidence-based `verificacion` value: `pendiente`, `parcial`, or `verificado`.
-- New and re-reviewed decisions have structured source/date/claim provenance where it helps; evidence is an optional audit layer, not a maturity bar.
-- `Google Maps`, `lat`, and `lon` are present and point to the same producer/location.
-- `telefono` or `correo` exists when a reliable public contact route can be found.
-- `web` exists only when the domain resolves and belongs to the producer or a reliable official listing.
-- `Venta online` is reviewed as `sí` or `no` when the producer site or a concrete known sales channel makes the status clear; keep `no comprobado` otherwise.
-- `Facebook`, `Instagram`, and `imagen` are added when reliable and useful, without filling cells for score alone.
-- Coverage is fine-grained across municipalities, not just concentrated in provincial capitals or a few well-known towns.
-- Row count should grow from verified producers, not filler entries.
-- Product descriptions should be specific enough to distinguish producers.
+Beyond the percentages, quality means coverage spread across municipalities rather than concentrated
+in capitals, row growth from verified producers rather than filler, and descriptions specific enough
+to distinguish producers.
 
-## Planning Signal
-Run the completeness audit when you need a planning signal. It highlights obvious gaps, but it does not replace editorial judgment about validity, municipal spread, row quality, and source reliability.
+## Reading the audit
 
-Choose the province from the current editorial plan, then inspect its `Gaps to target` columns to decide the actual work:
+`Gaps to target` columns map to fields: `horario` (schedules), `contacto` (`telefono`/`correo`),
+`web`, `ventaOnline` (status still `no comprobado`), `social` (`Facebook`/`Instagram`), `maps`
+(`Google Maps`), `coords` (`lat`/`lon`), `imagen`, `verificacion` (rows still `pendiente`).
 
-- `horario`: schedules are missing or sparse.
-- `contacto`: `telefono` and `correo` coverage is weak.
-- `web`: official or reliable web links are missing.
-- `ventaOnline`: online-sale status still needs review.
-- `social`: Facebook or Instagram coverage is weak.
-- `maps`: Google Maps links are missing.
-- `coords`: coordinates are missing or incomplete.
-- `imagen`: local producer images are missing.
-- `verificacion`: rows remain `pendiente`.
+Do not choose the next province from score alone: editorial ownership, active candidate research,
+municipal gaps, and data validity matter more than cross-province ordering.
 
-Compare a province with its own earlier state when assessing progress. Do not choose the next province from score alone: editorial ownership, active candidate research, municipal gaps, and data validity matter more than cross-province ordering.
+## Improvement loop
 
-## Province Improvement Loop
-Use this loop for dedicated province work, not as a default requirement for unrelated tasks.
-
-For each selected province:
-
-1. Run:
-```bash
-npx pnpm check:csv:completeness
-node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv
-node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
-```
-
-2. Fix blocking contract errors first.
-3. For expansion passes, look for candidates from the provincial capital, comarca seats, and smaller municipalities with food tradition; search by category and keep only producers verified through web, Google Maps, social profiles, or reliable institutional listings.
-4. Add new verified producers with stable unique `slug`, normalized `categoria`, `Google Maps`, `lat`, `lon`, `verificacion`, `Venta online`, and contact or `web` when available; place them according to the current ordering criterion.
-5. Add or update matching structured evidence records for accepted decisions.
-6. Fill or correct `Google Maps`, `lat`, and `lon`.
-7. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
-8. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
-9. Add images only as local assets under `public/productores/[comunidad]/[provincia]/`.
-10. Run:
-```bash
-npx pnpm verify:data
-```
-
-## Notes
-- Do not add a database or API layer for this work.
-- Row order is editorial; keep `slug` stable so sorting or duplicate cleanup does not change producer URLs.
-- Prefer empty cells over invented data.
-- If a source cannot be verified, leave the field empty and move on.
+1. Run the completeness audit plus the per-CSV audits
+   (`node scripts/audit-csv.js --mode=contract|quality data/csv/[comunidad]/[provincia].csv`).
+2. Fix blocking contract errors first; then work the gaps with the workflow in `AGENTS.md` and
+   `docs/VERIFICATION_TECHNIQUES.md`.
+3. For expansion, look beyond the provincial capital — comarca seats and smaller municipalities with
+   food tradition — and verify every candidate through reliable public sources before adding.
+4. Close with `npx pnpm verify:data`.
