@@ -164,6 +164,42 @@ tarea.
   normalizado: `bodega-rubiejo-sotillo-de-la-ribera` de «SOTILLO DE LA
   RIBERA» a «Sotillo de la Ribera» (grafía, slug sin cambios). Sin purgas en
   este lote.
+- Snapshot tras lote 8 (2026-07-08): **325 filas** (−1: purga del Consorcio
+  Ruta del Vino Ribera del Duero, `not-producer`). **177 `pendiente`**, 25
+  `parcial`, 123 `verificado`. Venta online: **84 `sí`** (74 con canal: 61
+  previos + 13 nuevos — 11 `ecommerce`, 1 `telefono` en Montegaredo y 1
+  `email` en Viña Buena, tienda «Próximamente» con pedido explícito por
+  correo), 23 `no`, 218 `no comprobado`. Imágenes: 163/325 (5 renombradas por
+  merges de slug: Montegaredo, Dominio de Cair, Nabal, Roberik y Zapata; el
+  consorcio purgado no tenía imagen). Cuatro filas resultaron ser el patrón
+  «sede fiscal vs bodega real» (dirección/CIF en Aranda de Duero, bodega o
+  finca real en otro municipio), tres de ellas sin flag previo del lote:
+  Montegaredo → **Pedrosa de Duero** (Boada de Roa, E.L.M.; geo-warning de
+  24,8 km resuelto), Bodegas Nabal → **Gumiel de Izán** (la propia web da A-1
+  salida 168, Valle de Nabal), Bodegas y Viñedos Roberik → **Milagros**
+  (registro oficial de la DO Ribera del Duero: C/Palencia 5, Polígono
+  Industrial Alto Milagros, confirmado por prensa especializada) y Bodegas
+  Zapata → **La Horra** (la propia descripción heredada del CSV y la web ya
+  decían «bodega boutique ubicada en el municipio de La Horra, Triángulo de
+  Oro»; nuevo geo-warning de 17,7 km aceptado, mismo patrón que
+  Villalmanzo/Mambrilla del lote 11). Bodegas Dominio de Cair: La Aguilera
+  (pedanía) → Aranda de Duero, resuelto solo para esta fila (la fila del lote
+  22 en La Aguilera sigue pendiente). Raimundo Izquierdo García confirmado
+  productor real (responsable de la bodega Solira 2002 S.L., marca Vega
+  Privanza y otras) pero se queda en `parcial`: el dominio vegaprivanza.net
+  no resuelve (tampoco .com), sin fuente verificadora propia, `web` retirada
+  del CSV. Altos del Terral se queda en `parcial`: identidad muy bien
+  documentada en el registro de la DO y en prensa especializada, pero
+  altosdelterral.com devolvió error 500/404 en todas las rutas probadas en
+  esta sesión. El resto del lote (Vino Feliz —antes «Feliz», nombre
+  limpiado—, Junciera Jiné, Bodega Tierra Aranda, Bodega Finca Cantaburros,
+  Bodegas Martín Berdugo, Bodegas Vetusta, Dani Mabe Wines, Viñedos la Nava y
+  Bodegas el Lagar de Isilla de Aranda) verificado con tienda propia o
+  pedido explícito. Notas cruzadas anotadas para los lotes 9 (Lagar de Isilla
+  de La Vid, instalación distinta y real del mismo grupo), 10 (Bodegas
+  Lerma/Nabal, misma familia con dos bodegas reales), 13 (Pastelería
+  Tudanca/Viñedos la Nava, mismo Grupo Tudanca) y 18 (Apícola Izquierdo,
+  misma persona con viña y miel).
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -216,8 +252,15 @@ tarea.
     bodega.
   - `bodegas-vizcarra-burgos` (lote 11): 78,7 km; junto a Mambrilla de
     Castrejón (donde Vizcarra tiene la bodega). Mismo patrón.
-  - `montegaredo-s-l-aranda-de-duero` (lote 8): 24,8 km; junto a Pedrosa de
-    Duero (Boada de Roa/Guzmán es su finca). Resolver municipio real.
+  - ~~`montegaredo-s-l-aranda-de-duero` (lote 8): 24,8 km~~ — **resuelto
+    2026-07-08**: municipio corregido a Pedrosa de Duero (Boada de Roa,
+    E.L.M., confirmado por la propia web), slug renombrado con merge; el
+    warning desaparece (nuevas coordenadas a 1,8 km del centroide). Nuevo
+    warning aceptado en el mismo lote: `bodegas-zapata-la-horra` (antes
+    `bodegas-zapata-aranda-de-duero`), 17,7 km junto a Aranda de Duero (su
+    sede fiscal); mismo patrón sede-vs-bodega que Villalmanzo/Mambrilla
+    (lote 11), municipio corregido a La Horra con fuente propia y la propia
+    descripción heredada del CSV.
   - `apimara-arconada` (lote 19): 85,4 km del centroide de «Arconada».
     Sospecha de homónimo (Arconada es municipio de Palencia); resolver si el
     municipio burgalés real es otro (¿Arconada de Bureba?) o si la fila es de
@@ -245,7 +288,7 @@ tarea.
   | Dobro | pedanía de Los Altos | 14 |
   | Hinestrosa | pedanía de Castrojeriz | 15 |
   | Hinojar del Rey | pedanía de Huerta de Rey | 9 |
-  | La Aguilera | pedanía de Aranda de Duero | 8, 22 |
+  | La Aguilera | pedanía de Aranda de Duero — **lote 8 resuelto 2026-07-08** (`bodegas-dominio-de-cair-la-aguilera` → `bodegas-dominio-de-cair-aranda-de-duero`, merge); la fila del lote 22 en La Aguilera sigue pendiente | 22 |
   | La Vid | municipio La Vid y Barrios | 9 |
   | Las Machorras, Espinosa de los Monteros 09566 | limpiar valor → Espinosa de los Monteros | 14 |
   | Lastras de Teza | pedanía de Valle de Losa | 20 |
@@ -275,7 +318,10 @@ tarea.
   | Zaballa | resolver (¿Valle de Losa? ¿Álava?) | 14 |
 
 - Grafías a normalizar dentro de sus lotes (sin cambiar identidad):
-  «ARANDA DE DUERO» (lote 8), ~~«SOTILLO DE LA RIBERA» (lote 7)~~ —
+  ~~«ARANDA DE DUERO» (lote 8)~~ — **resuelto 2026-07-08**: la fila
+  (`bodegas-zapata-…`) terminó con municipio distinto, La Horra, por el
+  hallazgo sede-fiscal-vs-bodega-real (ver Estado), no por una simple
+  normalización de mayúsculas, ~~«SOTILLO DE LA RIBERA» (lote 7)~~ —
   **resuelto 2026-07-08**: `bodega-rubiejo-sotillo-de-la-ribera` normalizado a
   «Sotillo de la Ribera» (solo municipio, slug sin cambios), «GUMIEL DE
   IZÁN» (lote 9), «Salas de Los Infantes»→«Salas de los Infantes» (lote 4) y
@@ -533,7 +579,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 5 | Bodega · Roa y ribera del Riaza | 18 | ✅ 2026-07-07 | 18 verificadas (9 ya lo estaban: 4 HEREDADO + 5 nuevas), 0 parciales, 0 purgas. Roa de Duero→Roa: 7 slugs renombrados con merge (nombre oficial INE es «Roa», confirmado en Wikipedia; «Roa de Duero» solo pervive como dominio del ayuntamiento). San Martín de Rubiales: grafía normalizada (tilde), slug sin cambios. VO: 12 `sí` con canal (11 ecommerce + 1 ecommerce\|whatsapp: Dominio de Calogía), 6 `no comprobado` (Valreinas, Briones Abad/Cantamuda, Francisco Barona, Lambuena, Hornillos Ballesteros, SEI Solo: solo contacto directo, sin carrito ni pedido anunciado). Cuarentenas resueltas: Condado de Haza y Alonso del Yerro (sí sin canal → sí ecommerce), Hercal (HEREDADO parcial + VO=no → verificado + sí ecommerce, promovida con fuente propia). Bodegas Raíz y Quesos Páramo de Guzmán: nombre mixto confirmado real (continúa proyecto de quesos 1985 + bodega 1998), se mantiene en Bodega. Milénico vende por tienda propia de marca "Iberian Winds" (misma dirección/teléfono, no reventa ajena). 6 imágenes renombradas por los merges de slug. |
 | 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ✅ 2026-07-08 | 16 verificadas, 0 parciales, 0 purgas. 3 renombres con merge a Pedrosa de Duero (Viyuela desde Boada de Roa, Rodero desde Quintanamanvirgo, Traslascuestas desde la errata «Predrosa»: su web dice Valcavado de Roa). Ortega Fournier → Dominio Fournier (comprada por González Byass en 2019; web dominiofournier.com, email antiguo retirado). VO: 7 nuevos `sí` con canal (6 ecommerce + Abadía de Acón ecommerce\|suscripcion; Linaje Garsea vende vía elventorro.com y Traslascuestas vía tienda.pierola.com, tiendas del propio negocio/grupo), 9 `no comprobado` (solo catálogo/contacto). |
 | 7 | Bodega · La Horra, Pidio y Sotillo | 20 | ✅ 2026-07-08 | 19 verificadas (4 ya lo estaban), 1 parcial (Valdaya, web propia caída), 0 purgas. 3 cuarentenas resueltas: Asenjo-Manso y Balbás → `sí` ecommerce, Fuentenarro → `no comprobado` (sin carrito real). Cillar de Silos/Dominio del Pidio: dos bodegas reales de la familia Aragón, se mantienen ambas. Copaboca Ribera confirmada como instalación real y distinta de Villalmanzo (nota para lote 10). Grafía SOTILLO normalizada. VO: 14 nuevos `sí` con canal (13 ecommerce + 1 marketplace: Tinto Arroyo/Catatú). 2 dominios corregidos por rotos (Los Olmos, Valle de Monzón) + 2 por redirect 301 (Figuero, Copaboca). |
-| 8 | Bodega · Aranda de Duero | 18 | ⬜ | Consorcio Ruta del Vino (purga probable); Montegaredo geo-warning; La Aguilera→Aranda; Izquierdo comparte tel con apícola (lote 18); grafía ARANDA. |
+| 8 | Bodega · Aranda de Duero | 18→17 | ✅ 2026-07-08 | 15 verificadas, 2 parciales (Raimundo Izquierdo García, Altos del Terral), 1 purga (Consorcio Ruta del Vino, `not-producer`). 5 renombres con merge por sede fiscal vs bodega real: Montegaredo→Pedrosa de Duero, Bodegas Nabal→Gumiel de Izán, Roberik→Milagros, Bodegas Zapata→La Horra (estos 3 últimos sin flag previo del lote) y Dominio de Cair (La Aguilera→Aranda de Duero, pedanía). «Feliz» renombrada a «Vino Feliz» (regla 20). VO: 13 nuevos `sí` con canal (11 ecommerce, 1 telefono, 1 email). |
 | 9 | Bodega · Gumiel, Fuentelcésped y sureste | 18 | ⬜ | Díaz Bayo ×2 (¿fusión?); Milvus/San Andrés mismo tel (¿marca de la coop?); grafía GUMIEL; Hinojar del Rey y La Vid sin centroide. |
 | 10 | Bodega · Arlanza, eje Lerma | 17 | ⬜ | Consejo DO Arlanza (purga probable) + 5 bodegas con web=arlanza.org y VO=no en bloque (re-derivar); Lerma/Nabal mismo tel. Hallazgo del lote 7: `copaboca-arlanza-villalmanzo` comparte dominio/tel con `copaboca-ribera-sotillo-de-la-ribera` (ya verificada); copaboca.com confirma Villalmanzo como instalación real y distinta ("nuestra última adquisición", D.O. Arlanza) — no purgar como duplicado, verificar con fuente propia igualmente. |
 | 11 | Bodega · Arlanza este, capital y atípicas | 17 | ⬜ | 3 geo-warnings sede-vs-bodega (Arlanza, Sierra, Vizcarra); El Ternero (enclave, no purgar de oficio); Agua de Corconte recat; vermutería (trío Victoria); 3 web=arlanza.org. |
@@ -722,28 +768,47 @@ pero corresponde a una adquisición posterior y distinta según la propia web
 del grupo, así que tampoco debería fusionarse por defecto, aunque conviene
 verificarla con fuente propia en su lote.
 
-### Lote 8 · Bodega — Aranda de Duero (18) — ⬜
+### Lote 8 · Bodega — Aranda de Duero (18→17) — ✅ 2026-07-08
 
 ```text
-altos-del-terral-aranda-de-duero · Aranda de Duero
-bodega-finca-cantaburros-aranda-de-duero · Aranda de Duero
-bodega-tierra-aranda-aranda-de-duero · Aranda de Duero
-bodega-vina-buena-aranda-de-duero · Aranda de Duero
-bodegas-el-lagar-de-isilla-aranda-de-duero · Aranda de Duero — relación con `lagar-de-isilla-la-vid` (lote 9): mismo grupo, resolver si son dos filas legítimas
-bodegas-martin-berdugo-aranda-de-duero · Aranda de Duero
-bodegas-nabal-aranda-de-duero · Aranda de Duero — tel compartido con `bodegas-lerma-lerma` (lote 10): ¿mismo grupo?
-bodegas-vetusta-aranda-de-duero · Aranda de Duero
-bodegas-y-vinedos-roberik-aranda-de-duero · Aranda de Duero
-bodegas-zapata-aranda-de-duero · ARANDA DE DUERO — grafía → «Aranda de Duero»
-consorcio-ruta-del-vino-ribera-del-duero-aranda-de-duero · Aranda de Duero — PURGA PROBABLE not-producer (consorcio); web como fuente
-dani-mabe-wines-aranda-de-duero · Aranda de Duero
-feliz-aranda-de-duero · Aranda de Duero — nombre corto/dudoso: resolver identidad
-junciera-jine-aranda-de-duero · Aranda de Duero
-montegaredo-s-l-aranda-de-duero · Aranda de Duero — GEO-WARNING 24,8 km (junto a Pedrosa de Duero): resolver municipio real
-raimundo-izquierdo-garcia-aranda-de-duero · Aranda de Duero — tel compartido con `apicola-izquierdo-aranda-de-duero` (lote 18): ¿misma persona, viña+miel? resolver categorías
-vinedos-la-nava-s-l-aranda-de-duero · Aranda de Duero — dominio compartido con `pasteleria-tudanca-aranda-de-duero` (lote 13): grupo Tudanca, ambas pueden ser reales
-bodegas-dominio-de-cair-la-aguilera · La Aguilera — municipio sin centroide → Aranda de Duero (pedanía), slug con merge
+altos-del-terral-aranda-de-duero · Aranda de Duero — parcial (no promovida), VO=no comprobado. Bodega real (Paco Casas, enólogo desde 1996) muy documentada en el registro de la DO y en prensa/retailers especializados, pero altosdelterral.com dio error 500/404 en todas las rutas probadas; sin fuente propia operativa ni redes propias en el CSV, techo parcial (regla 5). Solo terceros revenden el vino, no es canal propio
+bodega-finca-cantaburros-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, tienda.cantaburros.es con carrito y precios reales)
+bodega-tierra-aranda-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, vinotierraranda.es con ficha de producto, precio y «Añadir al carrito» funcionales)
+bodega-vina-buena-aranda-de-duero · Aranda de Duero — verificado, VO=sí (email). Tienda online «Próximamente» sin carrito, pero la propia página invita explícitamente a pedir por correo a marketing@vinabuena.com mientras se termina
+bodegas-el-lagar-de-isilla-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, tiendaellagardeisilla.com). Es la bodega histórica del s. XV bajo el Restaurante El Lagar de Isilla (origen del grupo en 1995, familia Zapatero Pinto); instalación real y distinta de `lagar-de-isilla-la-vid` (lote 9, elaboración actual del grupo) — no duplicado, mismo criterio que Copaboca (lote 7); nota para el lote 9
+bodegas-martin-berdugo-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, martinberdugo.com/shop-online/ con carrito, precios y envío gratis desde 50€)
+bodegas-nabal-gumiel-de-izan · Gumiel de Izán (antes Aranda de Duero; slug renombrado con merge, sede fiscal vs bodega real, sin flag previo) — verificado, VO=no comprobado. La propia web da A-1 salida 168, Valle de Nabal, 09370 Gumiel de Izán (la dirección del CSV ya mencionaba «Gumiel de Izán» antes del sufijo erróneo). Tel compartido con `bodegas-lerma-lerma` (lote 10): misma familia Navarro Balbás, fundó Lerma en 1998 y Nabal en 2014 — dos bodegas reales, no fusionar; nota para el lote 10
+bodegas-vetusta-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, tiendabodegasvetusta.com con carrito, precios y envío gratis desde 60€)
+bodegas-y-vinedos-roberik-milagros · Milagros (antes Aranda de Duero; slug renombrado con merge, sede fiscal vs bodega real, sin flag previo) — verificado, VO=no comprobado. El registro oficial de la DO Ribera del Duero da C/Palencia 5, Nave 1, 09460 Milagros, y prensa especializada confirma que la bodega ocupa una nave del Polígono Industrial Alto Milagros desde 2015; la dirección del CSV (C/Ávila 3, Aranda de Duero) no se sostiene con fuente propia. Página de productos con un precio de promoción pero sin carrito/checkout confirmado
+bodegas-zapata-la-horra · La Horra (antes Aranda de Duero «ARANDA DE DUERO»; slug renombrado con merge, sede fiscal vs bodega real, sin flag previo — solo se esperaba grafía) — verificado, VO=sí (ecommerce, bodegaszapata.com/vinos con botón «Comprar», precios reales y «Mi carrito»). La propia descripción heredada del CSV y la web ya decían «bodega boutique ubicada en el municipio de La Horra, Triángulo de Oro»; C/Bajada al Molino 15, Aranda de Duero, es domicilio social/fiscal (einforma.com, datoscif.es). Coordenadas sin tocar: nuevo geo-warning de 17,7 km aceptado (mismo patrón que Villalmanzo/Mambrilla, lote 11)
+consorcio-ruta-del-vino-ribera-del-duero-aranda-de-duero · Aranda de Duero — PURGADA `not-producer`. Consorcio turístico-promocional (101 municipios adheridos, 242 servicios); su dirección (Pz. del Trigo 10-3ª) y dominio riberate.com coinciden con el CSV pero no es productor. riberate.com no respondió a la conexión directa; su naturaleza institucional está confirmada por fuentes independientes (regla 17)
+dani-mabe-wines-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, danimabewines.com con carrito y precios 23,50-29€). Proyecto personal de Daniel Mabe (ex técnico de Dominio de Cair); viñedos ecológicos propios en Quemada, bodega/oficina en Aranda de Duero (coincide con el CSV, sin corrección de municipio)
+feliz-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, «Comprar Feliz» con carrito y precios). Nombre limpiado de «Feliz» a «Vino Feliz» (regla 20, slug sin tocar): proyecto de Félix Marina, Plaza Santa María 2
+junciera-jine-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, junciera-jine.es con carrito y precios 12-90€). Familia Cristóbal Miguel, viñedos propios de hasta 200 años, vinos sin sulfitos añadidos
+montegaredo-s-l-pedrosa-de-duero · Pedrosa de Duero (antes Aranda de Duero; slug renombrado con merge, geo-warning de 24,8 km resuelto) — verificado, VO=sí (telefono: la web anuncia explícitamente «Teléfono Pedidos vino Ribera del Duero»). Bodega pirámide semienterrada en Boada de Roa (E.L.M. de Pedrosa de Duero)
+raimundo-izquierdo-garcia-aranda-de-duero · Aranda de Duero — parcial (no promovida), VO=no comprobado. Identidad resuelta: es el responsable de la bodega Solira 2002 S.L. (marca Vega Privanza y otras: Dulzaina de Castilla, Vega Vieja, Urbión, El Brujo, Terroyales, Gran Mester), mismo teléfono que el CSV; elabora vino propio, se mantiene en categoría Bodega. Dominio vegaprivanza.net/.com no resuelve por DNS, `web` retirada del CSV; solo fuente de directorio (laesenciadelvino.com), techo parcial (regla 5). Tel compartido con `apicola-izquierdo-aranda-de-duero` (lote 18): misma persona/familia con viña y miel, no fusionar; nota para el lote 18
+vinedos-la-nava-s-l-aranda-de-duero · Aranda de Duero — verificado, VO=sí (ecommerce, grupotudanca.com/tienda con carrito, cajas «Tudanca Tres Maris» 38,70-177€). Es la unidad vitivinícola de Grupo Tudanca (36 ha, marca «La Nava By Tudanca» confirmada en empresite.eleconomista.es); mismo dominio que `pasteleria-tudanca-aranda-de-duero` (lote 13) — dos unidades reales del mismo grupo, no fusionar; nota para el lote 13
+bodegas-dominio-de-cair-aranda-de-duero · Aranda de Duero (antes La Aguilera; slug renombrado con merge, pedanía de Aranda de Duero) — verificado, VO=sí (ecommerce, familialuiscanas.com/web/cair con carrito, precios 13,50-1.497€ y pasarela de pago). Bodega del grupo Familia Luis Cañas en La Aguilera (Ctra. Aranda-La Aguilera km 9)
 ```
+
+Notas del lote: **cuatro sede-fiscal-vs-bodega-real, tres sin flag previo**
+— Montegaredo ya venía flageada con su geo-warning exacto (24,8 km), pero
+Bodegas Nabal (→ Gumiel de Izán), Bodegas y Viñedos Roberik (→ Milagros) y
+Bodegas Zapata (→ La Horra) no tenían ningún flag en este lote; se
+detectaron leyendo la web propia y, en el caso de Zapata, la propia
+descripción heredada del CSV, que ya decía «bodega boutique ubicada en el
+municipio de La Horra». Zapata y Roberik/Nabal ilustran variantes del mismo
+patrón: Montegaredo y Zapata dejan coordenadas sin tocar y aceptan un
+geo-warning (regla 18); Nabal y Roberik quedan dentro del margen de 15 km
+sin generar warning nuevo. **Grupos familiares con dos bodegas reales, sin
+fusionar** (precedente Flores y Jiménez de Ávila y Cillar de
+Silos/Dominio del Pidio del lote 7): Bodegas Nabal/Bodegas Lerma (lote 10,
+familia Navarro Balbás), Lagar de Isilla Aranda/Lagar de Isilla La Vid (lote
+9, mismo grupo con bodega histórica + elaboración actual), Viñedos la
+Nava/Pastelería Tudanca (lote 13, Grupo Tudanca) y Raimundo Izquierdo
+García/Apícola Izquierdo (lote 18, misma persona con viña y miel). Ninguno
+de los cuatro pares se fusiona: son unidades de negocio reales y distintas
+del mismo grupo o familia.
 
 ### Lote 9 · Bodega — Gumiel, Fuentelcésped y sureste (18) — ⬜
 
@@ -760,7 +825,7 @@ bodegas-vinum-vitae-gumiel-de-izan · Gumiel de Izán
 dominio-basconcillos-gumiel-de-izan · Gumiel de Izán
 ferratus-gumiel-de-izan · Gumiel de Izán
 hinojar-wines-hinojar-del-rey · Hinojar del Rey — municipio sin centroide → resolver INE (¿Huerta de Rey?)
-lagar-de-isilla-la-vid · La Vid — municipio sin centroide → La Vid y Barrios; relación con `bodegas-el-lagar-de-isilla-aranda-de-duero` (lote 8)
+lagar-de-isilla-la-vid · La Vid — municipio sin centroide → La Vid y Barrios; relación con `bodegas-el-lagar-de-isilla-aranda-de-duero` (lote 8, resuelta 2026-07-08): mismo Grupo Lagar de Isilla — la de Aranda es la bodega histórica del s. XV bajo el restaurante (origen 1995), esta es la elaboración actual del grupo; no son duplicado, confirmar con fuente propia
 bodega-la-milagrosa-milagros · Milagros
 bodegas-altos-de-enebro-milagros · Milagros
 bodegas-valdubon-milagros · Milagros — SIN WEB
@@ -775,7 +840,7 @@ bodegas-carrillo-de-albornoz-avellanosa-de-muno · Avellanosa de Muñó
 bodegas-monte-aman-castrillo-solarana · Castrillo Solarana — municipio sin centroide → resolver INE (probable hueco)
 vina-y-tia-cilleruelo-de-abajo · Cilleruelo de Abajo — HEREDADO parcial; VO=no heredado (re-derivar); web=arlanza.org AJENA (retirar y buscar propia); sin Maps
 alonso-angulo-lerma · Lerma — HEREDADO parcial; VO=no heredado (re-derivar); web=arlanza.org AJENA; sin Maps
-bodegas-lerma-lerma · Lerma — tel compartido con `bodegas-nabal-aranda-de-duero` (lote 8)
+bodegas-lerma-lerma · Lerma — tel compartido con `bodegas-nabal-gumiel-de-izan` (antes `bodegas-nabal-aranda-de-duero`, lote 8, resuelta 2026-07-08): misma familia Navarro Balbás, fundó Lerma en 1998 y Nabal en 2014 en Gumiel de Izán — dos bodegas reales, no fusionar
 consejo-regulador-de-d-o-arlanza-lerma · Lerma — PURGA PROBABLE not-producer (consejo regulador como fila); su web arlanza.org es fuente del sector
 decorus-lerma · Lerma
 sabinares-y-vinas-lerma · Lerma — HEREDADO parcial; sin Maps
@@ -840,7 +905,7 @@ panaderia-ordonez-tardajos · Tardajos
 magdalenas-de-las-heras-aranda-de-duero · Aranda de Duero
 panaderia-panaranda-aranda-de-duero · Aranda de Duero — HEREDADO verificado; VO=no heredado (re-derivar)
 panaderia-serendipia-aranda-de-duero · Aranda de Duero — HEREDADO parcial; VO=no heredado (re-derivar); SIN WEB
-pasteleria-tudanca-aranda-de-duero · Aranda de Duero — HEREDADO verificado; VO=no heredado (re-derivar); dominio compartido con `vinedos-la-nava-s-l-aranda-de-duero` (lote 8, grupo Tudanca)
+pasteleria-tudanca-aranda-de-duero · Aranda de Duero — HEREDADO verificado; VO=no heredado (re-derivar); dominio compartido con `vinedos-la-nava-s-l-aranda-de-duero` (lote 8, resuelta 2026-07-08): confirmado mismo Grupo Tudanca (empresite.eleconomista.es liga ambas marcas), dos unidades reales (pastelería + viñedos), no fusionar
 el-ventorro-castrillo-de-la-vega · Castrillo de la Vega — tel compartido con `bodegas-y-vinedos-del-linaje-garsea-castrillo-de-la-vega` (lote 6): resolver relación
 panaderia-antonio-de-las-heras-la-horra · La Horra — SIN WEB
 panaderia-artesana-labrador-lerma · Lerma
@@ -927,7 +992,7 @@ avicola-alvarez-villadiego · Villadiego — si es granja avícola, valorar reca
 ### Lote 18 · Miel — capital, Demanda y Arlanza (14) — ⬜
 
 ```text
-apicola-izquierdo-aranda-de-duero · Aranda de Duero — SIN WEB; tel compartido con `raimundo-izquierdo-garcia-aranda-de-duero` (lote 8): ¿misma persona viña+miel? resolver juntos
+apicola-izquierdo-aranda-de-duero · Aranda de Duero — SIN WEB; tel compartido con `raimundo-izquierdo-garcia-aranda-de-duero` (lote 8, resuelta 2026-07-08): confirmado mismo Raimundo Izquierdo García, responsable de la bodega Solira 2002/Vega Privanza (parcial) además de esta línea de miel — misma persona/familia con dos negocios, no fusionar
 apicast-barbadillo-del-mercado · Barbadillo del Mercado — HEREDADO parcial; VO=no heredado (re-derivar)
 hernando-hurtado-barbadillo-del-mercado · Barbadillo del Mercado
 abeja-burgalesa-burgos · Burgos
