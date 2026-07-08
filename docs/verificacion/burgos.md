@@ -109,6 +109,23 @@ tarea.
   1985 más bodega propia desde 1998); se mantiene en categoría Bodega. San
   Martín de Rubiales: grafía normalizada (tilde), slug sin cambios. Sin
   purgas ni parciales residuales en este lote.
+- Snapshot tras lote 6 (2026-07-08): **326 filas** (sin cambio de conteo: los 3
+  renombres de slug son la misma entidad). **211 `pendiente`**, 22 `parcial`,
+  93 `verificado`. Venta online: **60 `sí`** (47 con canal: 40 previos + 7
+  nuevos, 6 `ecommerce` + 1 `ecommerce|suscripcion`: Abadía de Acón), 23 `no`,
+  243 `no comprobado`. Imágenes: 163/326 (3 renombradas por los merges de
+  slug, ninguna huérfana). Los tres valores raros de municipio del lote eran
+  Pedrosa de Duero: Boada de Roa y Quintanamanvirgo son entidades locales
+  menores de ese municipio y «Predrosa» era errata (la web de Traslascuestas
+  sitúa la bodega en Valcavado de Roa, también E.L.M. de Pedrosa de Duero);
+  3 slugs renombrados con `merge` (Viyuela, Rodero, Traslascuestas). Ortega
+  Fournier renombrada a **Dominio Fournier**: González Byass compró la bodega
+  de Finca El Pinar (Berlangas de Roa) en 2019 y ofournier.com redirige 301 a
+  dominiofournier.com (nombre y web actualizados, email antiguo retirado; el
+  slug no se toca por rebranding, regla 20). Linaje Garsea vende por la
+  tienda del propio negocio familiar elventorro.com (tel compartido con la
+  fila de lote 13, precedente Milénico). Sin purgas ni parciales en este
+  lote.
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -182,7 +199,7 @@ tarea.
   |---|---|---|
   | Ahedo del Butrón | pedanía de Los Altos | 19 |
   | Barcina de los Montes | pedanía de Oña | 14 |
-  | Boada de Roa | municipio real; probable hueco de la referencia | 6 |
+  | ~~Boada de Roa~~ | entidad local menor de Pedrosa de Duero (no era hueco) — **resuelto 2026-07-08 en lote 6**: `bodegas-viyuela` renombrada a `-pedrosa-de-duero` con merge, localidad conservada en la dirección | 6 |
   | ~~Cabanas de Virtus / Cabañas de Virtus~~ | pedanía de Valle de Valdebezana — **resuelto 2026-07-07**: las 2 filas con ese municipio se purgaron en el lote 4 (asociación de criadores + Grupo Amicar 8, ambas extintas/sin venta), no queda ninguna fila que lo use | 4 |
   | Castrillo Solarana | municipio real; probable hueco | 10 |
   | Cilleruelo de Bezana | pedanía de Valle de Valdebezana | 11 |
@@ -198,11 +215,11 @@ tarea.
   | Medianas de Mena | pedanía de Valle de Mena | 14 |
   | Nava Ordunte | pedanía de Valle de Mena | 22 |
   | Palacios de Benaver | resolver (¿municipio propio o pedanía?) | 15 |
-  | Predrosa | errata; resolver (¿Pedrosa de Duero?) | 6 |
+  | ~~Predrosa~~ | errata de Pedrosa de Duero — **resuelto 2026-07-08 en lote 6**: la web de Traslascuestas sitúa la bodega en Valcavado de Roa (E.L.M. de Pedrosa de Duero); slug renombrado con merge, dirección y descripción corregidas | 6 |
   | Quincoces de Yuso | pedanía de Valle de Losa | 19 |
   | Quintana Martín Galíndez | pedanía de Valle de Tobalina | 17 |
   | Quintanalara | resolver (¿municipio propio?) | 23 |
-  | Quintanamanvirgo | resolver (Bodegas Rodero se asocia a Pedrosa de Duero) | 6 |
+  | ~~Quintanamanvirgo~~ | entidad local menor de Pedrosa de Duero — **resuelto 2026-07-08 en lote 6**: la web de Rodero da Ctra. Boada s/n, 09314 Pedrosa de Duero; slug renombrado con merge, localidad conservada en la dirección | 6 |
   | Quintanaseca | pedanía de Frías | 17 |
   | Quintanilla del Agua | municipio Quintanilla del Agua y Tordueles | 10 |
   | Rioseco (Valle de Manzanedo) | limpiar valor → Valle de Manzanedo | 14 |
@@ -474,7 +491,7 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 3 | Charcutería · Ribera del Duero y Lerma | 14 | ✅ 2026-07-06 | 11 verificadas, 1 parcial, 3 purgas (IGP Lechazo regional, matadero de La Cueva de Roa por alcance, Duque de Lerma extinguida 2024), 1 fusión (Cárnicas/Morcilla Cuevas Aranda). Recategorizadas: Páramo del Cid → Carnes (y municipio Aranda de Duero → Caleruega, sede vs granja real), La Fonda del Prado → Conservas. Gumiel del Mercado → Gumiel de Mercado (grafía + slug). VO: 10 nuevos `sí` con canal (7 ecommerce, 1 marketplace, 1 telefono\|email, 1 telefono), 2 quedan `no comprobado` por prudencia. |
 | 4 | Charcutería · Merindades, Bureba y Demanda | 17→14 | ✅ 2026-07-07 | 11 verificadas (1 ya lo estaba), 1 parcial, 2 purgas (asociación de criadores de potro `not-producer` + su gemela "Grupo Amicar 8" `closed`, sociedad extinguida), 1 fusión (Productos El Peñedo → Sabores de Quintanar, mismo negocio renombrado), 1 purga más (Embutidos La Castellana `closed`, concurso de acreedores 2019). VO: 6 nuevos `sí` con canal (ecommerce salvo Casalba ecommerce\|marketplace) + cuarentena de La Villarcayesa resuelta (sí, ecommerce). Carne de la Buena: municipio/slug renombrado a Alfoz de Santa Gadea. Jamones el Pelayo: grafía de municipio normalizada. |
 | 5 | Bodega · Roa y ribera del Riaza | 18 | ✅ 2026-07-07 | 18 verificadas (9 ya lo estaban: 4 HEREDADO + 5 nuevas), 0 parciales, 0 purgas. Roa de Duero→Roa: 7 slugs renombrados con merge (nombre oficial INE es «Roa», confirmado en Wikipedia; «Roa de Duero» solo pervive como dominio del ayuntamiento). San Martín de Rubiales: grafía normalizada (tilde), slug sin cambios. VO: 12 `sí` con canal (11 ecommerce + 1 ecommerce\|whatsapp: Dominio de Calogía), 6 `no comprobado` (Valreinas, Briones Abad/Cantamuda, Francisco Barona, Lambuena, Hornillos Ballesteros, SEI Solo: solo contacto directo, sin carrito ni pedido anunciado). Cuarentenas resueltas: Condado de Haza y Alonso del Yerro (sí sin canal → sí ecommerce), Hercal (HEREDADO parcial + VO=no → verificado + sí ecommerce, promovida con fuente propia). Bodegas Raíz y Quesos Páramo de Guzmán: nombre mixto confirmado real (continúa proyecto de quesos 1985 + bodega 1998), se mantiene en Bodega. Milénico vende por tienda propia de marca "Iberian Winds" (misma dirección/teléfono, no reventa ajena). 6 imágenes renombradas por los merges de slug. |
-| 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ⬜ | Errata «Predrosa»; Quintanamanvirgo a resolver (Rodero); par Linaje Garsea/El Ventorro (lote 13). |
+| 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ✅ 2026-07-08 | 16 verificadas, 0 parciales, 0 purgas. 3 renombres con merge a Pedrosa de Duero (Viyuela desde Boada de Roa, Rodero desde Quintanamanvirgo, Traslascuestas desde la errata «Predrosa»: su web dice Valcavado de Roa). Ortega Fournier → Dominio Fournier (comprada por González Byass en 2019; web dominiofournier.com, email antiguo retirado). VO: 7 nuevos `sí` con canal (6 ecommerce + Abadía de Acón ecommerce\|suscripcion; Linaje Garsea vende vía elventorro.com y Traslascuestas vía tienda.pierola.com, tiendas del propio negocio/grupo), 9 `no comprobado` (solo catálogo/contacto). |
 | 7 | Bodega · La Horra, Pidio y Sotillo | 20 | ⬜ | 3 cuarentenas VO en La Horra; Copaboca bicéfala (con lote 10); Cillar de Silos/Dominio del Pidio mismo grupo; grafía SOTILLO. |
 | 8 | Bodega · Aranda de Duero | 18 | ⬜ | Consorcio Ruta del Vino (purga probable); Montegaredo geo-warning; La Aguilera→Aranda; Izquierdo comparte tel con apícola (lote 18); grafía ARANDA. |
 | 9 | Bodega · Gumiel, Fuentelcésped y sureste | 18 | ⬜ | Díaz Bayo ×2 (¿fusión?); Milvus/San Andrés mismo tel (¿marca de la coop?); grafía GUMIEL; Hinojar del Rey y La Vid sin centroide. |
@@ -606,25 +623,25 @@ milenico-san-martin-de-rubiales · San Martín de Rubiales — grafía normaliza
 pomar-vinedos-valdezate · Valdezate — verificado, VO=sí (ecommerce)
 ```
 
-### Lote 6 · Bodega — ribera oeste, Pedrosa–Fuentecén (16) — ⬜
+### Lote 6 · Bodega — ribera oeste, Pedrosa–Fuentecén (16) — ✅ 2026-07-08
 
 ```text
-bodegas-y-vinedos-gallego-zapatero-s-anguix · Anguix
-bodegas-y-vinedos-ortega-fournier-berlangas-de-roa · Berlangas de Roa
-bodegas-viyuela-boada-de-roa · Boada de Roa — municipio sin centroide → resolver INE (probable hueco)
-abadia-de-acon-s-l-castrillo-de-la-vega · Castrillo de la Vega
-bodega-san-roque-de-la-encina-castrillo-de-la-vega · Castrillo de la Vega
-bodegas-y-vinedos-del-linaje-garsea-castrillo-de-la-vega · Castrillo de la Vega — tel compartido con `el-ventorro-castrillo-de-la-vega` (lote 13)
-bodega-doble-r-fuentecen · Fuentecén
-bodegas-hemar-fuentecen · Fuentecén
-bodegas-torrederos-s-l-fuentelisendo · Fuentelisendo
-bodegas-vina-mambrilla-mambrilla-de-castrejon · Mambrilla de Castrejón
-pagos-de-matanegra-olmedillo-de-roa · Olmedillo de Roa
-ramos-ducher-olmedillo-de-roa · Olmedillo de Roa
-bodegas-hnos-paramo-arroyo-pedrosa-de-duero · Pedrosa de Duero
-bodegas-hnos-perez-pascuas-vina-pedrosa-pedrosa-de-duero · Pedrosa de Duero
-bodegas-traslascuestas-predrosa · Predrosa — errata de municipio: resolver (¿Pedrosa de Duero?), slug con merge si cambia
-bodegas-rodero-quintanamanvirgo · Quintanamanvirgo — municipio sin centroide: resolver (Rodero se asocia a Pedrosa de Duero)
+bodegas-y-vinedos-gallego-zapatero-s-anguix · Anguix — verificado, VO=sí (ecommerce, tienda propia con carrito)
+bodegas-y-vinedos-ortega-fournier-berlangas-de-roa · Berlangas de Roa — verificado, VO=no comprobado. Renombrada a "Dominio Fournier": González Byass compró la bodega de Finca El Pinar en 2019; ofournier.com redirige 301 a dominiofournier.com (web actualizada, email antiguo retirado; slug estable por regla 20)
+bodegas-viyuela-pedrosa-de-duero · Pedrosa de Duero (antes Boada de Roa; slug renombrado con merge) — verificado, VO=no comprobado (tienda.html es plantilla sin precios ni carrito). Boada de Roa es E.L.M. de Pedrosa de Duero, no hueco de la referencia
+abadia-de-acon-s-l-castrillo-de-la-vega · Castrillo de la Vega — verificado, VO=sí (ecommerce|suscripcion: tienda propia + Club Abadía)
+bodega-san-roque-de-la-encina-castrillo-de-la-vega · Castrillo de la Vega — verificado, VO=sí (ecommerce, pinadillo.com/tienda/). Cooperativa elaboradora (1956), marca Monte Pinadillo: entra por regla 7
+bodegas-y-vinedos-del-linaje-garsea-castrillo-de-la-vega · Castrillo de la Vega — verificado, VO=sí (ecommerce vía elventorro.com, tienda del propio negocio familiar; tel compartido con lote 13 resuelto: mismo grupo, dos unidades)
+bodega-doble-r-fuentecen · Fuentecén — verificado, VO=no comprobado (solo catálogo y contacto)
+bodegas-hemar-fuentecen · Fuentecén — verificado, VO=no comprobado (solo catálogo y contacto)
+bodegas-torrederos-s-l-fuentelisendo · Fuentelisendo — verificado, VO=sí (ecommerce, torrederos.com/tienda/)
+bodegas-vina-mambrilla-mambrilla-de-castrejon · Mambrilla de Castrejón — verificado, VO=no comprobado (vinos Alidis, sin tienda)
+pagos-de-matanegra-olmedillo-de-roa · Olmedillo de Roa — verificado, VO=sí (ecommerce, pagosdematanegra.es/web/tienda/)
+ramos-ducher-olmedillo-de-roa · Olmedillo de Roa — verificado, VO=no comprobado (solo catálogo)
+bodegas-hnos-paramo-arroyo-pedrosa-de-duero · Pedrosa de Duero — verificado, VO=no comprobado (ecológicos, sin carrito)
+bodegas-hnos-perez-pascuas-vina-pedrosa-pedrosa-de-duero · Pedrosa de Duero — verificado, VO=no comprobado (tienda.perezpascuas.com ya no resuelve)
+bodegas-traslascuestas-pedrosa-de-duero · Pedrosa de Duero (antes errata «Predrosa»; slug renombrado con merge) — verificado, VO=sí (ecommerce vía tienda.pierola.com, tienda del propio grupo Fernández de Piérola con sección Bodega Traslascuestas). Su web sitúa la bodega en Valcavado de Roa (E.L.M. de Pedrosa de Duero); dirección y descripción corregidas
+bodegas-rodero-pedrosa-de-duero · Pedrosa de Duero (antes Quintanamanvirgo; slug renombrado con merge) — verificado, VO=no comprobado (web informativa/enoturismo, sin tienda). Su web da Ctra. Boada s/n, 09314 Pedrosa de Duero
 ```
 
 ### Lote 7 · Bodega — La Horra, Quintana del Pidio y Sotillo (20) — ⬜
