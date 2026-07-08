@@ -126,6 +126,44 @@ tarea.
   tienda del propio negocio familiar elventorro.com (tel compartido con la
   fila de lote 13, precedente Milénico). Sin purgas ni parciales en este
   lote.
+- Snapshot tras lote 7 (2026-07-08): **326 filas** (sin cambio de conteo: el
+  par Cillar de Silos/Dominio del Pidio son dos bodegas reales de la misma
+  familia, no se fusionan). **195 `pendiente`**, 23 `parcial`, 108
+  `verificado`. Venta online: **71 `sí`** (61 con canal: 47 previos + 14
+  nuevos, 13 `ecommerce` + 1 `marketplace`: Bodegas S. Arroyo/Tinto Arroyo vía
+  Catatú), 23 `no`, 232 `no comprobado`. Imágenes: 163/326 (sin cambios: no
+  hubo purgas, fusiones ni renombres de slug en este lote). Las 3 cuarentenas
+  de La Horra resueltas: Asenjo-Manso (marca Ceres) y Balbás confirmaron
+  tienda propia con carrito → `sí` ecommerce; Fuentenarro no tiene carrito
+  real (solo "consultar precios" por email/teléfono) → degradada a `no
+  comprobado`. Cillar de Silos y Dominio del Pidio: confirmado por prensa
+  (sobremesa.es, spanishwinelover.com) que son dos bodegas reales de la
+  familia Aragón — Dominio del Pidio es el segundo proyecto, lanzado en 2014,
+  con bodegas-cueva propias restauradas y vinos exclusivamente municipales;
+  se mantienen ambas filas (comparten teléfono por ser el mismo grupo,
+  precedente Flores y Jiménez en Ávila). Copaboca Ribera (Sotillo de la
+  Ribera): instalación real y distinta de Villalmanzo confirmada por la
+  propia web del grupo (noticia de placas solares nombra "Tordesillas,
+  Sotillo de la Ribera y Torrecilla" como sus bodegas) — nota para el lote
+  10: Villalmanzo también es instalación real ("nuestra última adquisición"),
+  no purgar como duplicado. Dos correcciones de dominio por web rota/errónea:
+  `bodega-los-olmos-quintana-del-pidio` (el CSV traía
+  `bodegaslosolmos.com`, que no resuelve DNS; corregido a
+  `bodegalosolmos.com`) y `bodegas-valle-de-monzon-quintana-del-pidio`
+  (`vallemonzon.com` da error TLS persistente; corregido al espejo
+  `valledemonzon.es`, mismo contenido/dirección/teléfono). `web` de
+  `bodegas-garcia-figuero-la-horra` actualizada de tintofiguero.com (redirige
+  301) a figuero.es (rebranding a Bodegas Figuero), y la de
+  `copaboca-ribera-sotillo-de-la-ribera` de copaboca.es (redirige 301) a
+  copaboca.com. `bodegas-valdaya-sotillo-de-la-ribera` se queda en `parcial`:
+  su web propia da error de certificado TLS apuntando a un hosting ajeno
+  (`*.srv.cat`) en todas las rutas probadas; identidad y municipio sostenidos
+  solo por el registro oficial de la DO Ribera del Duero (techo `parcial`,
+  regla 5), sin fuente propia operativa. Nombre limpiado de ruido de volcado:
+  «DOMINIO DE MONTELAHORRA.» → «Dominio de Montelahorra». Municipio
+  normalizado: `bodega-rubiejo-sotillo-de-la-ribera` de «SOTILLO DE LA
+  RIBERA» a «Sotillo de la Ribera» (grafía, slug sin cambios). Sin purgas en
+  este lote.
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
@@ -237,7 +275,9 @@ tarea.
   | Zaballa | resolver (¿Valle de Losa? ¿Álava?) | 14 |
 
 - Grafías a normalizar dentro de sus lotes (sin cambiar identidad):
-  «ARANDA DE DUERO» (lote 8), «SOTILLO DE LA RIBERA» (lote 7), «GUMIEL DE
+  «ARANDA DE DUERO» (lote 8), ~~«SOTILLO DE LA RIBERA» (lote 7)~~ —
+  **resuelto 2026-07-08**: `bodega-rubiejo-sotillo-de-la-ribera` normalizado a
+  «Sotillo de la Ribera» (solo municipio, slug sin cambios), «GUMIEL DE
   IZÁN» (lote 9), «Salas de Los Infantes»→«Salas de los Infantes» (lote 4) y
   «Gumiel del Mercado»→confirmar oficial «Gumiel de Mercado» (lote 3).
 - Filas que son **entidades de promoción/registro, no productores** (purga
@@ -492,10 +532,10 @@ purgas/fusiones/VO resueltos) y la sección Estado si cambia el snapshot.
 | 4 | Charcutería · Merindades, Bureba y Demanda | 17→14 | ✅ 2026-07-07 | 11 verificadas (1 ya lo estaba), 1 parcial, 2 purgas (asociación de criadores de potro `not-producer` + su gemela "Grupo Amicar 8" `closed`, sociedad extinguida), 1 fusión (Productos El Peñedo → Sabores de Quintanar, mismo negocio renombrado), 1 purga más (Embutidos La Castellana `closed`, concurso de acreedores 2019). VO: 6 nuevos `sí` con canal (ecommerce salvo Casalba ecommerce\|marketplace) + cuarentena de La Villarcayesa resuelta (sí, ecommerce). Carne de la Buena: municipio/slug renombrado a Alfoz de Santa Gadea. Jamones el Pelayo: grafía de municipio normalizada. |
 | 5 | Bodega · Roa y ribera del Riaza | 18 | ✅ 2026-07-07 | 18 verificadas (9 ya lo estaban: 4 HEREDADO + 5 nuevas), 0 parciales, 0 purgas. Roa de Duero→Roa: 7 slugs renombrados con merge (nombre oficial INE es «Roa», confirmado en Wikipedia; «Roa de Duero» solo pervive como dominio del ayuntamiento). San Martín de Rubiales: grafía normalizada (tilde), slug sin cambios. VO: 12 `sí` con canal (11 ecommerce + 1 ecommerce\|whatsapp: Dominio de Calogía), 6 `no comprobado` (Valreinas, Briones Abad/Cantamuda, Francisco Barona, Lambuena, Hornillos Ballesteros, SEI Solo: solo contacto directo, sin carrito ni pedido anunciado). Cuarentenas resueltas: Condado de Haza y Alonso del Yerro (sí sin canal → sí ecommerce), Hercal (HEREDADO parcial + VO=no → verificado + sí ecommerce, promovida con fuente propia). Bodegas Raíz y Quesos Páramo de Guzmán: nombre mixto confirmado real (continúa proyecto de quesos 1985 + bodega 1998), se mantiene en Bodega. Milénico vende por tienda propia de marca "Iberian Winds" (misma dirección/teléfono, no reventa ajena). 6 imágenes renombradas por los merges de slug. |
 | 6 | Bodega · ribera oeste (Pedrosa–Fuentecén) | 16 | ✅ 2026-07-08 | 16 verificadas, 0 parciales, 0 purgas. 3 renombres con merge a Pedrosa de Duero (Viyuela desde Boada de Roa, Rodero desde Quintanamanvirgo, Traslascuestas desde la errata «Predrosa»: su web dice Valcavado de Roa). Ortega Fournier → Dominio Fournier (comprada por González Byass en 2019; web dominiofournier.com, email antiguo retirado). VO: 7 nuevos `sí` con canal (6 ecommerce + Abadía de Acón ecommerce\|suscripcion; Linaje Garsea vende vía elventorro.com y Traslascuestas vía tienda.pierola.com, tiendas del propio negocio/grupo), 9 `no comprobado` (solo catálogo/contacto). |
-| 7 | Bodega · La Horra, Pidio y Sotillo | 20 | ⬜ | 3 cuarentenas VO en La Horra; Copaboca bicéfala (con lote 10); Cillar de Silos/Dominio del Pidio mismo grupo; grafía SOTILLO. |
+| 7 | Bodega · La Horra, Pidio y Sotillo | 20 | ✅ 2026-07-08 | 19 verificadas (4 ya lo estaban), 1 parcial (Valdaya, web propia caída), 0 purgas. 3 cuarentenas resueltas: Asenjo-Manso y Balbás → `sí` ecommerce, Fuentenarro → `no comprobado` (sin carrito real). Cillar de Silos/Dominio del Pidio: dos bodegas reales de la familia Aragón, se mantienen ambas. Copaboca Ribera confirmada como instalación real y distinta de Villalmanzo (nota para lote 10). Grafía SOTILLO normalizada. VO: 14 nuevos `sí` con canal (13 ecommerce + 1 marketplace: Tinto Arroyo/Catatú). 2 dominios corregidos por rotos (Los Olmos, Valle de Monzón) + 2 por redirect 301 (Figuero, Copaboca). |
 | 8 | Bodega · Aranda de Duero | 18 | ⬜ | Consorcio Ruta del Vino (purga probable); Montegaredo geo-warning; La Aguilera→Aranda; Izquierdo comparte tel con apícola (lote 18); grafía ARANDA. |
 | 9 | Bodega · Gumiel, Fuentelcésped y sureste | 18 | ⬜ | Díaz Bayo ×2 (¿fusión?); Milvus/San Andrés mismo tel (¿marca de la coop?); grafía GUMIEL; Hinojar del Rey y La Vid sin centroide. |
-| 10 | Bodega · Arlanza, eje Lerma | 17 | ⬜ | Consejo DO Arlanza (purga probable) + 5 bodegas con web=arlanza.org y VO=no en bloque (re-derivar); Lerma/Nabal mismo tel. |
+| 10 | Bodega · Arlanza, eje Lerma | 17 | ⬜ | Consejo DO Arlanza (purga probable) + 5 bodegas con web=arlanza.org y VO=no en bloque (re-derivar); Lerma/Nabal mismo tel. Hallazgo del lote 7: `copaboca-arlanza-villalmanzo` comparte dominio/tel con `copaboca-ribera-sotillo-de-la-ribera` (ya verificada); copaboca.com confirma Villalmanzo como instalación real y distinta ("nuestra última adquisición", D.O. Arlanza) — no purgar como duplicado, verificar con fuente propia igualmente. |
 | 11 | Bodega · Arlanza este, capital y atípicas | 17 | ⬜ | 3 geo-warnings sede-vs-bodega (Arlanza, Sierra, Vizcarra); El Ternero (enclave, no purgar de oficio); Agua de Corconte recat; vermutería (trío Victoria); 3 web=arlanza.org. |
 | 12 | Pan y pastelería · capital, Bureba y norte | 17 | ⬜ | Par Cámara/El Horno de Burgos (mismo grupo); Maltranilla a resolver; varios SIN WEB (Maps/redes). |
 | 13 | Pan y pastelería · Ribera, Arlanza y oeste | 15 | ⬜ | La Torta de Aranda con municipio Valladolid (¿otra provincia?); Tudanca (grupo con bodega, lote 8); herencia Aranda con VO=no a re-derivar. |
@@ -644,30 +684,43 @@ bodegas-traslascuestas-pedrosa-de-duero · Pedrosa de Duero (antes errata «Pred
 bodegas-rodero-pedrosa-de-duero · Pedrosa de Duero (antes Quintanamanvirgo; slug renombrado con merge) — verificado, VO=no comprobado (web informativa/enoturismo, sin tienda). Su web da Ctra. Boada s/n, 09314 Pedrosa de Duero
 ```
 
-### Lote 7 · Bodega — La Horra, Quintana del Pidio y Sotillo (20) — ⬜
+### Lote 7 · Bodega — La Horra, Quintana del Pidio y Sotillo (20) — ✅ 2026-07-08
 
 ```text
-bodega-marques-de-velilla-la-horra · La Horra
-bodegas-asenjo-manso-la-horra · La Horra — HEREDADO verificado; VO=sí SIN canal (cuarentena); sin Maps
-bodegas-balbas-la-horra · La Horra — HEREDADO verificado; VO=sí SIN canal (cuarentena); sin Maps
-bodegas-fuentenarro-la-horra · La Horra — HEREDADO verificado; VO=sí SIN canal (cuarentena); sin Maps
-bodegas-garcia-figuero-la-horra · La Horra
-bodegas-la-horra-la-horra · La Horra — HEREDADO verificado; sin Maps
-dominio-de-montelahorra-la-horra · La Horra
-vina-sastre-la-horra · La Horra
-bodega-los-olmos-quintana-del-pidio · Quintana del Pidio
-bodegas-casajus-quintana-del-pidio · Quintana del Pidio
-bodegas-cillar-de-silos-quintana-del-pidio · Quintana del Pidio — tel compartido con `dominio-del-pidio-quintana-del-pidio`: mismo grupo familiar, ¿dos proyectos reales?
-bodegas-prado-de-olmedo-quintana-del-pidio · Quintana del Pidio
-bodegas-valle-de-monzon-quintana-del-pidio · Quintana del Pidio
-dominio-del-pidio-quintana-del-pidio · Quintana del Pidio — tel compartido con `bodegas-cillar-de-silos-quintana-del-pidio`
-bodega-rubiejo-sotillo-de-la-ribera · SOTILLO DE LA RIBERA — grafía → «Sotillo de la Ribera»
-bodegas-ismael-arroyo-sotillo-de-la-ribera · Sotillo de la Ribera
-bodegas-s-arroyo-sotillo-de-la-ribera · Sotillo de la Ribera
-bodegas-valdaya-sotillo-de-la-ribera · Sotillo de la Ribera
-copaboca-ribera-sotillo-de-la-ribera · Sotillo de la Ribera — dominio y tel compartidos con `copaboca-arlanza-villalmanzo` (lote 10): ¿dos instalaciones reales o una empresa con dos filas?
-bodegas-abadia-la-arroyada-terradillos-de-esgueva · Terradillos de Esgueva
+bodega-marques-de-velilla-la-horra · La Horra — verificado, VO=sí (ecommerce, tienda propia con carrito). Instalación única en Ctra. de Sotillo s/n, La Horra (oficinas de exportación en Madrid no son bodega)
+bodegas-asenjo-manso-la-horra · La Horra — verificado, VO=sí (ecommerce, tienda.asenjo-manso.com con carrito y precios). Cuarentena resuelta: heredaba `sí` sin canal. Marca comercial Ceres Bodegas y Viñedos, La Horra desde 1908
+bodegas-balbas-la-horra · La Horra — verificado, VO=sí (ecommerce, balbas.es/e-shop-balbas/ con carrito y precios). Cuarentena resuelta: heredaba `sí` sin canal. Bodega desde 1777
+bodegas-fuentenarro-la-horra · La Horra — verificado, VO=no comprobado. Cuarentena degradada: heredaba `sí` sin canal, pero /tienda/ solo pide contactar por email/teléfono para "consultar precios y condiciones" (sin carrito ni pedido remoto anunciado)
+bodegas-garcia-figuero-la-horra · La Horra — verificado, VO=sí (ecommerce, figuero.es/tienda/ con carrito). Web actualizada: tintofiguero.com redirigía 301 a figuero.es (rebranding a Bodegas Figuero)
+bodegas-la-horra-la-horra · La Horra — verificado (reauditado), VO=no comprobado. Bodega del grupo Roda (marca Corimbo), fundada 2009; sin tienda online, solo visitas/catas y Club Roda
+dominio-de-montelahorra-la-horra · La Horra — verificado, VO=sí (ecommerce, delariberavinos.com, tienda propia autodeclarada que vende en exclusiva sus líneas). Nombre limpiado de ruido de volcado: «DOMINIO DE MONTELAHORRA.» → «Dominio de Montelahorra»
+vina-sastre-la-horra · La Horra — verificado, VO=no comprobado. Bodegas Hermanos Sastre (1992); su único botón de compra apunta a market.tierradesabor.es/products?search=sastre, que da 404 (plataforma caída) — no se degrada a `no`, se mantiene no comprobado
+bodega-los-olmos-quintana-del-pidio · Quintana del Pidio — verificado, VO=sí (ecommerce, bodegalosolmos.com/tienda/ con carrito). Web corregida: el CSV traía `bodegaslosolmos.com` (no resuelve DNS); dominio real es `bodegalosolmos.com` (singular)
+bodegas-casajus-quintana-del-pidio · Quintana del Pidio — verificado, VO=sí (ecommerce, tienda propia integrada). Familia Calvo Casajús desde 1993
+bodegas-cillar-de-silos-quintana-del-pidio · Quintana del Pidio — verificado, VO=sí (ecommerce, cillardesilos.es/shop/ WooCommerce). Familia Aragón (fundada 1994). Comparte teléfono con `dominio-del-pidio-quintana-del-pidio`: confirmado por prensa que son dos bodegas reales de la misma familia (ver nota abajo), se mantienen ambas filas
+bodegas-prado-de-olmedo-quintana-del-pidio · Quintana del Pidio — verificado, VO=sí (ecommerce, tienda.pradodeolmedo.com con carrito y precios). Familia Fernández Gil, 46 ha propias
+bodegas-valle-de-monzon-quintana-del-pidio · Quintana del Pidio — verificado, VO=no comprobado (sitio informativo, solo contacto). Web corregida: vallemonzon.com da error TLS persistente en todos los protocolos; confirmado por el espejo valledemonzon.es (mismo contenido/dirección/teléfono) y por el registro oficial de la DO Ribera del Duero
+dominio-del-pidio-quintana-del-pidio · Quintana del Pidio — verificado, VO=sí (ecommerce, tienda.dominiodelpidio.com con carrito). Segunda bodega real de la familia Aragón (lanzada 2014, bodegas-cueva propias restauradas, vinos exclusivamente municipales de Quintana del Pidio); comparte teléfono con Cillar de Silos por ser el mismo grupo, no se fusiona (precedente Flores y Jiménez, Ávila)
+bodega-rubiejo-sotillo-de-la-ribera · Sotillo de la Ribera (municipio normalizado desde «SOTILLO DE LA RIBERA»; slug sin cambios) — verificado, VO=sí (ecommerce, rubiejo.com/tienda-online/ con carrito)
+bodegas-ismael-arroyo-sotillo-de-la-ribera · Sotillo de la Ribera — verificado, VO=sí (ecommerce, valsotillo.com/tienda/ con carrito, precios 6,55-68,50€, envío gratis desde 60€). Familia Arroyo desde 1979
+bodegas-s-arroyo-sotillo-de-la-ribera · Sotillo de la Ribera — verificado, VO=sí (marketplace, Catatú: tintoarroyo.com designa explícitamente ese marketplace como "Tienda online"/"Comprar Online" en cabecera y pie, sin carrito propio)
+bodegas-valdaya-sotillo-de-la-ribera · Sotillo de la Ribera — **parcial** (no promovida a verificado), VO=no comprobado. valdaya.com da error de certificado TLS apuntando a un hosting ajeno (`*.srv.cat`) en todas las rutas probadas; identidad, dirección y teléfono confirmados solo por el registro oficial de la DO Ribera del Duero (techo `parcial`, regla 5); el enlace de venta online de ese registro (dehaanaltes.com) redirige a una bodega distinta de Terra Alta (herenciaaltes.com), enlace obsoleto
+copaboca-ribera-sotillo-de-la-ribera · Sotillo de la Ribera — verificado, VO=sí (ecommerce, copaboca.com/tienda/ con carrito y precios). Web actualizada: copaboca.es redirigía 301 a copaboca.com. Instalación real y propia en Sotillo confirmada por la propia web del grupo (noticia de placas solares nombra "Tordesillas, Sotillo de la Ribera y Torrecilla") y por terranostrum.es (Antigua Fábrica de Quesos, Avda. Cid Campeador, coincide con el CSV); distinta de Villalmanzo (D.O. Arlanza, "nuestra última adquisición") — dos bodegas reales del mismo grupo, se mantienen ambas filas (ver nota lote 10)
+bodegas-abadia-la-arroyada-terradillos-de-esgueva · Terradillos de Esgueva — verificado, VO=no comprobado. Identidad, dirección y teléfono confirmados por la web propia; sin tienda online
 ```
+
+Notas del lote: **Cillar de Silos / Dominio del Pidio** — no es una fila
+duplicada. La prensa especializada (sobremesa.es, spanishwinelover.com,
+unvino.es) confirma que Dominio del Pidio es la segunda bodega que lanzó la
+familia Aragón en 2014, con cinco lagares y siete bodegas-cueva restauradas
+del barrio histórico de Quintana del Pidio, dedicada en exclusiva a vinos
+municipales — un proyecto real y diferenciado de Cillar de Silos aunque
+comparta teléfono y parte de la gestión (precedente Flores y Jiménez en
+Ávila). **Copaboca** — la fila de Sotillo de la Ribera queda verificada con
+instalación real propia; la de Villalmanzo (lote 10) comparte dominio/tel
+pero corresponde a una adquisición posterior y distinta según la propia web
+del grupo, así que tampoco debería fusionarse por defecto, aunque conviene
+verificarla con fuente propia en su lote.
 
 ### Lote 8 · Bodega — Aranda de Duero (18) — ⬜
 
