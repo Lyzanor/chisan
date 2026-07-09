@@ -194,7 +194,7 @@ ordenado por tamaño de hueco (18–26).
 | 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (**domontesdetoledo.com**), almazaras/envasadoras | ✅ 2026-07-09 (30 certificados → 7 ya en CSV + 5 son de Ciudad Real → 19 Toledo escritos; pista CR anotada para lote 19) |
 | 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejo Montes de Toledo + **coop. 2º grado Campo de Montiel** (el consejo no publica registro) | ✅ 2026-07-09 (**hueco menor del estimado**: 7 netos — 2 Montes de Toledo + 5 socias Campo de Montiel con ⚠ maquila; +3 pistas fuera de DOP; Montes Norte excluido) |
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | `queixotetilla.org/nuestros-elaboradores/` (**arzua-ulloa.org muerto**) | ✅ 2026-07-09 (**sin hueco real**: 10 coruñesas en Tetilla → 7 ya en CSV, 1 gran grupo → **2 escritas**; Arzúa-Ulloa sin registro público; +3 pistas otras provincias) |
-| 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (quesomanchego.es), queserías inscritas; solo Cuenca | pendiente |
+| 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (`quesomanchego.es/en/manufacturers/`, JSON en `wp-json/…/pages/10148`) | ✅ 2026-07-09 (65 inscritas 4 prov. → 12 Cuenca → 7 en CSV + **2 alias** → **3 escritas**; +7 correcciones a filas y pistas Toledo 7 / CR 4 / Albacete 5) |
 | 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | Consejos insulares / Casa del Vino de Tenerife | pendiente |
 | 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (sección nueva) | Consejo (navarrawine.com), bodegas inscritas | pendiente |
 | 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | Consejos de las tres DO | pendiente |
@@ -444,6 +444,24 @@ candidatos.
   esta pasada. **→ Hecha el mismo día**: ver `docs/candidates/festa-do-queixo.md`
   (96 expositores, 27 ya en CSV, 7 altas gallegas; la feria resultó **nacional**,
   no coruñesa, y deja ~34 pistas de productores de otras comunidades).
+- 2026-07-09: **lote 21 (DOP Queso Manchego, Cuenca) cerrado.** `cuenca.md`
+  creado. Fuente óptima: `/en/manufacturers/` (las rutas `/queserias/` y
+  `/fabricantes/` dan 404); la lista es un mapa Leaflet, pero el array `places`
+  con **las 65 inscritas** (razón social, municipio, **provincia**, CP, tel, email,
+  web, coords) viaja dentro del `content.rendered` de
+  `wp-json/wp/v2/pages/10148`. Cuenca: 12 → 7 ya en CSV, **2 alias**, **3 netas**
+  (Piqmar, San Pedro de Magaceda, López Espada). Aprendizajes: (a) **el aviso (d)
+  de la worklist se cumplió, pero por alias, no por homónimos**: el consejo lista
+  **razones sociales** y el CSV **marcas** → *S.A.T. Oveman* = Quesería Villadharo
+  y *Poves Redondo S.L.L.* = Quesos La Aldea; cruzar siempre razón social ↔ marca
+  (email de contacto lo delató); (b) el cruce destapó **7 correcciones a filas de
+  `cuenca.csv`**: dos webs apuntan a un directorio ajeno (`gff.co.uk`), y
+  `quesera-campo-rus-s-l-cuenca` tiene **slug y municipio mal** (es Santa María del
+  Campo Rus); (c) como el JSON trae las 4 provincias, quedan anotadas pistas ya
+  deduplicadas: **Toledo 7**, **Ciudad Real 4** (⚠ Despaña/Rocinante) y **Albacete
+  5** (⚠ Lactalis y Mantequerías Arias, grandes grupos) — sin abrir esas
+  provincias. Tercer lote seguido (19, 20, 21) en que **el hueco medido era mucho
+  mayor que el real**: el diagnóstico contó filas de categoría, no operadores DOP.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
