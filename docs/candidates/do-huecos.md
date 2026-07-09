@@ -188,9 +188,9 @@ ordenado por tamaño de hueco (18–26).
 | Lote | Denominación / cola | Provincia → destino | Fuente de partida | Estado |
 |---|---|---|---|---|
 | 14 | DO Ribeira Sacra — adegas de Lugo (cola lote 11) | Lugo → `lugo.md` (sección nueva) | CSV oficial ya volcado (`ribeirasacra.org/bodegas_csv.php`) | ✅ 2026-07-09 (88 brutos → 70 en Lugo → 48 tras dedup → 24 escritas; ~23 colleiteiros en corte 2, Damm excluida) |
-| 15 | Aceite Bajo Aragón + Melocotón de Calanda — empresas de Zaragoza (cola lote 13) | Zaragoza → `zaragoza.md` (nuevo) | Datos capturados en lote 13 (aceitedelbajoaragon.es, melocotondecalanda.com) | pendiente |
-| 16 | DO Ribeiro — corte 2 (colleiteiros restantes, ~59) | Ourense → `ourense.md` | Fichas `ribeiro.wine` (método fetch del lote 9) | pendiente |
-| 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | pendiente |
+| 15 | Aceite Bajo Aragón + Melocotón de Calanda — empresas de Zaragoza (cola lote 13) | Zaragoza → `zaragoza.md` (nuevo) | Datos capturados en lote 13 (aceitedelbajoaragon.es, melocotondecalanda.com) | ✅ 2026-07-09 (11 aceite + 6 melocotón Zaragoza → 7 ya en CSV → 8 escritas; comarca ya bastante cubierta) |
+| 16 | DO Ribeiro — corte 2 (colleiteiros restantes, ~59) | Ourense → `ourense.md` | Fichas `ribeiro.wine` (método fetch del lote 9) | ✅ 2026-07-09 (89 registro − 30 tratados = 59 → 24 con web propia escritas; ~34 sin dominio en nota corte 3) |
+| 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | ◐ 2026-07-09 (Monterrei resto 13 escritas; **Valdeorras resto ~19 DIFERIDO** — listado JS/age-gate, necesita PDF o navegador) |
 | 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (mtoledo.org), almazaras/envasadoras | pendiente |
 | 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejos de ambas DOP | pendiente |
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | Consejos (arzua-ulloa.org, queixotetilla.org); solo operadores de A Coruña | pendiente |
@@ -366,6 +366,26 @@ candidatos.
   comercial (muchas filas del CSV usan la marca, no la razón social); (c) ⚠
   colisión de marca «Castro Candaz» entre Virxen dos Remedios, Bodegas
   CastroCandaz y Martín Códax → resolver titularidad al verificar.
+- 2026-07-09: **lotes 15, 16 y 17 abiertos** (colas de la primera ola).
+  **Lote 15 (Zaragoza)**: `zaragoza.md` creado. Registros del Consejo Aceite del
+  Bajo Aragón (`aceitedelbajoaragon.es/productores/`, 11 empresas zaragozanas) y
+  Melocotón de Calanda (`melocotondecalanda.com/autenticos-productores/`, 6). La
+  comarca Caspe/Maella/Belchite ya está bastante en CSV → 7 ya presentes, 8
+  escritas. Solapan aceite↔melocotón: Coop. San Lorenzo/Magalia (ya en CSV) y
+  Frutícola Maellana/Fruma (nueva). **Lote 16 (Ribeiro corte 2)**: reusado el
+  `fetch` de fichas del lote 9 sobre las 59 restantes de
+  `ribeiro.wine/es/bodegas-y-colleiteiros`; 24 con dominio propio escritas, ~34
+  colleiteiros sin web propia (solo enlace footer `wineinmoderation.eu`) en nota
+  corte 3; Dominio do Bibei fuera (es Ribeira Sacra). **Lote 17 (Monterrei/
+  Valdeorras corte 2)**: Monterrei resto 13 escritas (12 de la nota + Valderello
+  nueva) con teléfono de ficha `/bodegas/<slug>/`; ⚠ Minius = marca de Adegas
+  Valmiñor. **Valdeorras resto ~19 diferido**: `dovaldeorras.gal/bodegas/` es JS
+  puro tras age-gate (sin nombres en HTML ni `wp-json`, no hay CPT) → reabrir con
+  el PDF del consejo o navegador. Aprendizajes: (a) Calanda expone las empresas en
+  `/autenticos-productores/` (HTML) aunque `/empresas/` sea JS; (b) las fichas de
+  Monterrei muestran la dirección/web del **consejo**, no la de la adega (solo el
+  teléfono es propio); (c) el enlace `wineinmoderation.eu` en las fichas del
+  Ribeiro es del footer, no la web de la bodega.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,

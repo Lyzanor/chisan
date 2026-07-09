@@ -68,6 +68,61 @@
 > propia + venta. ⚠ **Dominio do Bibei** aparece en el registro Ribeiro pero es
 > sobre todo **Ribeira Sacra** → tratar en el lote 11, cuidar duplicado.
 
+## DO Ribeiro — corte 2 (lote 16 de do-huecos)
+
+> Continúa el lote 9: de las ≈59 fichas restantes del directorio
+> `ribeiro.wine/es/bodegas-y-colleiteiros` (89 en total; 24 escritas en el lote 9,
+> 6 ya en CSV), este corte escribe las **24 con web comercial propia**. Método del
+> lote 9: `fetch` same-origin de cada ficha → nombre, concello (de la dirección
+> real) y dominio propio (descartando el enlace genérico `wineinmoderation.eu` del
+> pie). Dedup contra `ourense.csv` el 2026-07-09: las 24 son netas. Estado:
+> **`unverified`**. Las ~34 fichas sin dominio propio (colleiteiros pequeños)
+> quedan en **nota corte 3**.
+
+- [ ] **Adega Catro Ferrados** — Bodega. Ribadavia. <http://www.vinoribeiro4ferrados.com/>.
+- [ ] **Adega do Demo** — Bodega. Ribadavia. <http://www.adegadodemo.wine>.
+- [ ] **Adega Manuel Rojo** — Bodega/colleiteiro. A Arnoia. <https://www.adegamanuelrojo.com>.
+- [ ] **Adega Pousadoiro** — Bodega. Castrelo de Miño. <https://pousadoiro.wine>.
+- [ ] **Adegas Celme** (Adegas Celme, S.L.) — Bodega. Castrelo de Miño. <http://www.adegascelme.com/>.
+- [ ] **Terra Minei** (Adegas Francisco Fernández Sousa) — Bodega. Castrelo de
+  Miño. <http://www.terraminei.com/>.
+- [ ] **Adegas Maleiga** — Bodega. Beade. <https://maleiga.com/>.
+- [ ] **Quinta do Avelino** (Adegas Parente García) — Bodega. Cenlle. <http://www.parentegarcia.com>.
+- [ ] **Tear dos Dodi** (Amalia Diéguez Martínez) — Bodega/colleiteiro. A Arnoia.
+  <http://www.teardosdodi.com>.
+- [ ] **Boas Vides** (Antonio Míguez Amil) — Bodega/colleiteiro. Ribadavia. <http://www.boasvides.com>.
+- [ ] **Bodegas Loeda** (Bodegas Loeda, S.L.) — Bodega. Ribadavia. <http://www.bodegasloeda.com/>.
+- [ ] **Bodegas Peña** (marca **Lancero**) — Bodega. Castrelo de Miño. <http://www.lancero.es>.
+- [ ] **Bodegas Villanueva** — Bodega. Castrelo de Miño. <http://www.bodegasvillanueva.com>.
+- [ ] **Castro Rei** (Castro Rei, S.L.) — Bodega. Ribadavia. <http://www.bodegacastrorei.com>.
+- [ ] **Dominio de Razamonde** — Bodega. Cenlle. <https://www.dominioderazamonde.com/>.
+- [ ] **Eduardo Bravo** — Bodega/colleiteiro. Ribadavia. <http://www.eduardobravo.es/>.
+- [ ] **Eloi Lorenzo** — Bodega/colleiteiro. A Arnoia. <http://www.eloilorenzo.es/>.
+- [ ] **Granxa D'Outeiro** — Bodega. Ribadavia. <https://www.granxadouteiro.com/>.
+- [ ] **Iria Otero** (Iria Otero Mazoy) — Bodega/colleiteiro. Leiro. <http://www.iriaotero.com>.
+- [ ] **Pateiro Vinos de Guarda** (Iván Vázquez Pateiro) — Bodega. Ribadavia.
+  <http://www.pateirovinosdeguarda.com>.
+- [ ] **Lagar do Meréns** — Bodega. A Arnoia. <http://www.lagardomerens.com/>.
+- [ ] **Mauro Estévez** — Bodega/colleiteiro. A Arnoia. <http://mauroestevez.com/>.
+- [ ] **Adega Gandarela** (Penedo Estévez, Manuel) — Bodega/colleiteiro.
+  Ribadavia. <http://gandarela.es/>.
+- [ ] **Adega O Cotarelo** — Bodega/colleiteiro. Cenlle.
+  <https://adega-o-cotarelo.negocio.site>. ⚠ web ligera (Google Business), confirmar venta.
+
+> **Corte 3 (resto ~34, sin dominio propio en la ficha — solo enlace genérico
+> `wineinmoderation.eu`):** colleiteiros pequeños del mismo directorio, p. ej.
+> Adega As Pegas, Adega do Cesteiro, Adega do Veleiro, Adega Viña Carpazal,
+> Adegas Cenlle, Adegas do Rexurdir, Adegas Laudes, Ameijeiras Vázquez,
+> Xulia Bande (`sondearrieiro`), Bodegas Gómez Sanmartín, Brixón, Bruno López,
+> Casal do Canteiro, César M. García, Elisa Collarte, D'Vagar Adegas, Emilio
+> Docampo, Eulogio Collarte, Fernando Cibeira, Adega do Moucho (Francisco
+> García), Heredeiros de Avelino Lorenzo, Agás do Tempo (Jesús Freijido), Javier
+> Estévez, La Chica de Ayer, Montero & Rey, Viña San Esteban (Rodríguez
+> Domínguez), Arco da Vella (Benito Eladio Rodríguez), Secretos de Familia,
+> Sotelo Barroso, Bodegas Uceira, Viña do Penedo, Adega Joaquín Vázquez… Buscar
+> web fuera del registro en un corte posterior. ⚠ **Dominio do Bibei** queda
+> fuera (es Ribeira Sacra, tratado en el lote 11).
+
 ## DO Valdeorras + DO Monterrei (lote 10 de do-huecos)
 
 > Fuentes de partida (vía navegador): listado oficial de bodegas DO Valdeorras
@@ -193,3 +248,52 @@
   Marcas «Corga», «Erea». · 607 504 115. Web propia a confirmar.
 - [ ] **Os Pacios** — Bodega/colleiteiro. A Teixeira (Abeleda, Ribeiras do Sil).
   · 684 037 926. Producción pequeña (5.000 kg); confirmar marca propia y venta.
+
+## DO Valdeorras + DO Monterrei — corte 2 (lote 17 de do-huecos)
+
+> Continúa el lote 10. **Monterrei**: escritas las 13 adegas del directorio
+> `domonterrei.wine/adegas/` que faltaban (12 de la nota del lote 10 + **Valderello**,
+> nueva). Teléfono propio extraído de cada ficha `/bodegas/<slug>/` (la web y la
+> dirección que muestran son las **del consejo** en Verín — como ya avisó el lote
+> 10, la ficha no expone web/concello propios → a buscar en verificación).
+> Comarca de Monterrei (concellos Verín/Monterrei/Oímbra/Castrelo do Val/Riós/
+> Cualedro/Vilardevós). Dedup contra `ourense.csv` el 2026-07-09: las 13 son
+> netas. Estado: **`unverified`**.
+>
+> **Valdeorras resto (~19): DIFERIDO.** El listado de `dovaldeorras.gal/bodegas/`
+> se renderiza 100% por JS tras un age-gate (ni en el HTML ni en `wp-json`
+> aparecen los nombres; no hay custom post type). El lote 10 usó el **PDF oficial**
+> del consejo para 24 bodegas; el resto necesita ese PDF o navegador → reabrir con
+> Chrome/Control Chrome en una sesión con navegador disponible.
+
+### DO Monterrei — resto (13)
+
+- [ ] **Abeledos** — Bodega. Comarca de Monterrei (concello a confirmar).
+  · 616 571 938. Web propia a confirmar.
+- [ ] **Couto Mixto** — Bodega. Comarca de Monterrei. · 636 762 200. Web propia a
+  confirmar. ⚠ nombre = territorio histórico (Couto Mixto: Baltar/Calvos/Rubiás);
+  confirmar concello y que no sea marca de otra adega.
+- [ ] **Daniel Fernández** — Bodega/colleiteiro. Comarca de Monterrei.
+  · 988 590 864. Web propia a confirmar.
+- [ ] **Madrevella** — Bodega. Monterrei (Tamagos). · 678 755 070. Familiar;
+  blancos y tintos. Web propia a confirmar.
+- [ ] **Manuel Vázquez Losada** — Bodega/colleiteiro. Comarca de Monterrei.
+  · 686 764 371. Web propia a confirmar.
+- [ ] **Minius** — Bodega. Oímbra. Web propia a confirmar. ⚠ marca «Minius
+  Godello» elaborada/comercializada por **Adegas Valmiñor** (grupo de Rías
+  Baixas); confirmar si es entidad con venta propia o solo marca de grupo.
+- [ ] **Quinta Soutullo** — Bodega. Oímbra. · 651 488 915. Familia Rivero Pardo,
+  desde 2017, >5 ha propias. Web propia a confirmar.
+- [ ] **Ramón Bigotes** — Bodega/colleiteiro (Alejandro Ramón Blanco Dijkhoff).
+  Comarca de Monterrei. · 634 787 078. Web propia a confirmar.
+- [ ] **Serra de Alén** — Bodega. Comarca de Monterrei. · 676 966 322. Web propia
+  a confirmar.
+- [ ] **Tapias Mariñán** — Bodega. Comarca de Monterrei. · 988 411 693. Web propia
+  a confirmar. ⚠ posible relación con Pazo das Tapias/Pazo de Valdeconde (marcas
+  «Tapias»); cuidar duplicado al verificar.
+- [ ] **Terra de Godello** — Bodega. Comarca de Monterrei. · 608 774 747. Web
+  propia a confirmar.
+- [ ] **Valderello** — Bodega. Comarca de Monterrei. · 988 411 199. No estaba en
+  la nota del lote 10 (alta reciente del registro). Web propia a confirmar.
+- [ ] **Vinos Lara** (Bodega Lara) — Bodega. Verín. · 988 413 831. Familiar
+  (Godello/Treixadura/Mencía/Arauxa); marca «Lara Godello». Web propia a confirmar.
