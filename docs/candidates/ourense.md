@@ -67,3 +67,83 @@
 > corte: extraer web/municipio de la ficha (como en este lote) y triar por marca
 > propia + venta. ⚠ **Dominio do Bibei** aparece en el registro Ribeiro pero es
 > sobre todo **Ribeira Sacra** → tratar en el lote 11, cuidar duplicado.
+
+## DO Valdeorras + DO Monterrei (lote 10 de do-huecos)
+
+> Fuentes de partida (vía navegador): listado oficial de bodegas DO Valdeorras
+> (PDF del consejo, <https://dovaldeorras.gal/en/bodegas/> → «Registered
+> vineyards», 24 bodegas con web; el registro completo son ~43, el resto por
+> volcar) + directorio DO Monterrei (<https://www.domonterrei.wine/en/wineries/>,
+> 29 adegas; municipio por CP de cada ficha, web propia buscada aparte). Dedup
+> 2026-07-09. **Ya en el CSV (excluidas):** Valdeorras — A Coroa, Alan de Val,
+> Quinta da Peza, Godeval, Joaquín Rebolledo, Rafael Palacios, Roandi, Viña
+> Somoza, Virxe de Galir/Pagos de Galir; Monterrei — Gargalo, Ladairo, Crego e
+> Monaguillo, Pazo das Tapias, Fragas do Lecer/Boo Rivero, Vía Arxéntea, Pazos del
+> Rey.
+>
+> **Corte del lote (regla de tope 15–25):** ~37 net-new. Escritas 15 Valdeorras
+> (con web) + 10 Monterrei; el resto de Monterrei y las Valdeorras fuera del PDF
+> quedan en la nota final.
+
+### DO Valdeorras (15)
+
+> Concello por bodega a confirmar en integración (comarca de Valdeorras: A Rúa,
+> O Barco, Vilamartín, Petín, Larouco, Rubiá, O Bolo, Carballeda). Web del PDF
+> oficial → casi todas con venta/tienda, confirmar `Venta online`.
+
+- [ ] **Valdesil** — Bodega. Vilamartín de Valdeorras. <https://www.valdesil.com/>.
+  Referencia del godello de Valdeorras.
+- [ ] **Viñaredo (Viña Redo)** — Bodega. Valdeorras (confirmar concello).
+  <https://www.vinaredo.com/>.
+- [ ] **Bodegas Carballal** — Bodega. Valdeorras (confirmar).
+  <https://www.bodegascarballal.com/>.
+- [ ] **Adega Melillas** — Bodega. Valdeorras (confirmar).
+  <https://www.adegamelillas.com/>.
+- [ ] **Adega Avelina** — Bodega. Valdeorras (confirmar).
+  <https://www.adegaavelina.com/>.
+- [ ] **Cepado** — Bodega. Valdeorras (confirmar). <https://www.cepado.com/>.
+- [ ] **Adega da Pinguela** — Bodega. Valdeorras (confirmar).
+  <https://www.adegadapinguela.com/>.
+- [ ] **Casal Novo** — Bodega. Valdeorras (confirmar). <https://www.casalnovo.es/>.
+- [ ] **Ladera Sagrada** — Bodega. Valdeorras (confirmar).
+  <https://www.laderasagrada.es/>.
+- [ ] **Manuel Corzo** — Bodega. Valdeorras (confirmar).
+  <https://www.manuelcorzo.es/>.
+- [ ] **Vinos Ruchel** — Bodega. Valdeorras (confirmar).
+  <https://www.vinosruchel.com/>.
+- [ ] **Sampayolo** — Bodega. Valdeorras (confirmar). <https://www.sampayolo.com/>.
+- [ ] **Bodegas D. Berna** — Bodega. Valdeorras (confirmar).
+  <https://www.bodegasdberna.com/>.
+- [ ] **Bodegas Eladio Santalla** — Bodega. Valdeorras (confirmar).
+  <https://www.bodegaseladiosantalla.com/>.
+- [ ] **Jorge Ordóñez (proyecto Valdeorras)** — Bodega. Valdeorras (confirmar).
+  <https://www.jorgeordonez.es/>. ⚠ Négociant/grupo Jorge Ordóñez (Málaga) con
+  proyectos en varias DO; confirmar bodega/marca propia de Valdeorras y encaje.
+
+### DO Monterrei (10)
+
+- [ ] **Quinta da Muradella** — Bodega. Verín. Referencia de Monterrei (José Luis
+  Mateo, ecológico desde 2005). Web propia a confirmar (vende vía distribuidores).
+- [ ] **Quinta do Buble** — Bodega. Oímbra (Casas dos Montes).
+  <https://www.quintadobuble.com/> · 988 422 960.
+- [ ] **Adega Trasdovento** — Bodega. Oímbra (Casas dos Montes).
+  <https://adegatrasdovento.es/>. Marcas Trasdovento, Quérote, Alto do Bocelo.
+- [ ] **Bodega Tabú** — Bodega. Oímbra (O Rosal). <https://bodegastabu.com/>.
+- [ ] **Pazo de Valdeconde** — Bodega. Monterrei (Mourazos).
+  <https://pazodevaldeconde.es/>. Enoturismo.
+- [ ] **Franco Basalo** — Bodega. Castrelo do Val (confirmar).
+  <https://www.francobasalo.es/>. Vino «Estela do Val».
+- [ ] **Castro de Lobarzán** — Bodega. Monterrei (Vilaza). Marcas «Lobarzán» /
+  «Lobarzán IS». Web propia a confirmar.
+- [ ] **Triay** — Bodega. Monterrei. Web propia a confirmar.
+- [ ] **Father 1943** — Bodega. Comarca de Monterrei (concello a confirmar, CP
+  32627). Web propia a confirmar. Bodega certificada recientemente por la DO.
+- [ ] **Terras do Cigarrón** — Bodega. Monterrei (Albarellos). ⚠ Marca
+  comercializada por el grupo Adegas Galegas / Martín Códax; confirmar si es
+  entidad con venta propia o solo marca de grupo antes de crear fila.
+
+> **Resto (siguiente(s) corte(s), datos en las fuentes):** Monterrei —
+> Abeledos, Couto Mixto, Daniel Fdez., Madrevella, Manuel Vázquez Losada, Minius
+> (O Cabildo), Quinta Soutullo, Ramón Bigotes, Serra de Alén, Tapias Mariñán,
+> Terra de Godello, Vinos Lara. Valdeorras — las bodegas del registro completo
+> (~43) que no están en el PDF resumido (volcar del listado oficial del consejo).

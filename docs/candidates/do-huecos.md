@@ -150,7 +150,7 @@ EOF
 | 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | ✅ 2026-07-09 (18 brutos → 16 tras dedup → 16 escritos) |
 | 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | ✅ 2026-07-09 (34 brutos → 30 tras dedup → 25 escritos + 4 resto + 1 excluido; corte por tope) |
 | 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | ✅ 2026-07-09 (89 brutos → 83 tras dedup → 24 escritas con web; ≈59 en nota) |
-| 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | pendiente |
+| 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | ✅ 2026-07-09 (≈53 brutos → ~37 tras dedup → 25 escritas; resto en nota) |
 | 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | pendiente |
 | 12 | DOP Jamón de Teruel | Teruel → `teruel.md` (sección nueva) | Consejo (jamondeteruel.com), secaderos | pendiente |
 | 13 | DOP Aceite del Bajo Aragón + Melocotón de Calanda | Teruel → `teruel.md` (sección nueva) | Consejos de ambas DOP | pendiente |
@@ -251,6 +251,16 @@ EOF
   Vide** es del Grupo Matarromera y **GRM** es Grupo Reboreda-Morgadío (grupos
   grandes) → marcados; (c) ⚠ **Dominio do Bibei** figura en Ribeiro pero es
   sobre todo Ribeira Sacra → lote 11, cuidar dup.
+- 2026-07-09: **lote 10 (DO Valdeorras + DO Monterrei) cerrado.** Valdeorras:
+  el listado web carga por JS con age-gate → usado el **PDF oficial** (24 bodegas
+  con web; registro completo ~43, resto por volcar). Monterrei: directorio web
+  (29 adegas), municipio por CP de cada ficha; las fichas **no** traen web propia
+  (solo la ruta del vino) → webs buscadas aparte para las 10 escritas. 25 escritas
+  (15 Valdeorras + 10 Monterrei), resto en nota. Aprendizajes: (a) concello por
+  bodega de Valdeorras quedó a confirmar (el PDF no lo da limpio); (b) ⚠ **Jorge
+  Ordóñez** (négociant/grupo Málaga) y **Terras do Cigarrón** (grupo Adegas
+  Galegas/Martín Códax) marcados por posible grupo; (c) Tabú es de Oímbra (no
+  Verín), corregido.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
