@@ -193,7 +193,7 @@ ordenado por tamaño de hueco (18–26).
 | 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | ◐ 2026-07-09 (Monterrei resto 13 escritas; **Valdeorras resto ~19 DIFERIDO** — listado JS/age-gate, necesita PDF o navegador) |
 | 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (**domontesdetoledo.com**), almazaras/envasadoras | ✅ 2026-07-09 (30 certificados → 7 ya en CSV + 5 son de Ciudad Real → 19 Toledo escritos; pista CR anotada para lote 19) |
 | 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejo Montes de Toledo + **coop. 2º grado Campo de Montiel** (el consejo no publica registro) | ✅ 2026-07-09 (**hueco menor del estimado**: 7 netos — 2 Montes de Toledo + 5 socias Campo de Montiel con ⚠ maquila; +3 pistas fuera de DOP; Montes Norte excluido) |
-| 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | Consejos (arzua-ulloa.org, queixotetilla.org); solo operadores de A Coruña | pendiente |
+| 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | `queixotetilla.org/nuestros-elaboradores/` (**arzua-ulloa.org muerto**) | ✅ 2026-07-09 (**sin hueco real**: 10 coruñesas en Tetilla → 7 ya en CSV, 1 gran grupo → **2 escritas**; Arzúa-Ulloa sin registro público; +3 pistas otras provincias) |
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (quesomanchego.es), queserías inscritas; solo Cuenca | pendiente |
 | 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | Consejos insulares / Casa del Vino de Tenerife | pendiente |
 | 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (sección nueva) | Consejo (navarrawine.com), bodegas inscritas | pendiente |
@@ -422,6 +422,26 @@ candidatos.
   falsos positivos, comprobar municipio siempre; (c) 3 almazaras reales fuera de
   ambas DOP (Olivapalacios/Bolaños, Pago Piedrabuena/Ballesteros, COLIVAL/
   Valdepeñas) anotadas como pista provincial, no como candidatas del lote.
+- 2026-07-09: **lote 20 (Arzúa-Ulloa + Queixo Tetilla, A Coruña) cerrado.**
+  `a-coruna.md` creado. **Sin hueco real** (el diagnóstico esperaba ~20 queserías
+  DOP vs 19 filas; la realidad es que ya estaban). *Tetilla*: registro excelente en
+  `queixotetilla.org/nuestros-elaboradores/` (24 elaboradores de toda Galicia con
+  dirección, CP+concello, tel, contacto y email) → 10 coruñeses, **7 ya en CSV**
+  (Barral, Queizuar/Bama, Queinaga, Brexeo, Terra de Melide, Eume, Campo Capela),
+  1 excluido por gran grupo → **2 escritos** (Bo-Queixo/Boqueixón, Lácteos Algra/
+  As Somozas). *Arzúa-Ulloa*: **no hay registro público** — `arzua-ulloa.org` da
+  500 en todas las rutas y el dominio fue **reutilizado por una academia** (visto
+  en Wayback); MAPA/AGACAL/`queixosdegalicia.com` solo dan producto y contacto.
+  Sus 15 inscritas se solapan con las de Tetilla y con el CSV. Aprendizajes:
+  (a) ⚠ **Grupo TGT** (mayor quesero de España) posee **Lácteos Ferrado Verde**
+  (excluido) **y Quesería Ruta Xacobea** (O Pino) → esta última **ya es fila del
+  CSV** (`alimentos-ruta-xacobea-o-pino`): revisarla con el mismo criterio de
+  tamaño; (b) el registro de Tetilla sirve de paso como censo quesero gallego →
+  pistas net-new para Lugo (Queixos de Galicia S.L., ⚠ García Baquero),
+  Pontevedra (Cobideza) y Ourense (Quesos da Montaña de Entrimo); (c) la **Festa
+  do Queixo de Arzúa** (`festadoqueixo.org`, 80 queixarías inscritas en 2025) es
+  mucho mejor cantera para A Coruña que las DOP → merece lote propio fuera de
+  esta pasada.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
