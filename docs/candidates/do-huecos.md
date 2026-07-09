@@ -187,7 +187,7 @@ ordenado por tamaño de hueco (18–26).
 
 | Lote | Denominación / cola | Provincia → destino | Fuente de partida | Estado |
 |---|---|---|---|---|
-| 14 | DO Ribeira Sacra — adegas de Lugo (cola lote 11) | Lugo → `lugo.md` (sección nueva) | CSV oficial ya volcado (`ribeirasacra.org/bodegas_csv.php`) | pendiente |
+| 14 | DO Ribeira Sacra — adegas de Lugo (cola lote 11) | Lugo → `lugo.md` (sección nueva) | CSV oficial ya volcado (`ribeirasacra.org/bodegas_csv.php`) | ✅ 2026-07-09 (88 brutos → 70 en Lugo → 48 tras dedup → 24 escritas; ~23 colleiteiros en corte 2, Damm excluida) |
 | 15 | Aceite Bajo Aragón + Melocotón de Calanda — empresas de Zaragoza (cola lote 13) | Zaragoza → `zaragoza.md` (nuevo) | Datos capturados en lote 13 (aceitedelbajoaragon.es, melocotondecalanda.com) | pendiente |
 | 16 | DO Ribeiro — corte 2 (colleiteiros restantes, ~59) | Ourense → `ourense.md` | Fichas `ribeiro.wine` (método fetch del lote 9) | pendiente |
 | 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | pendiente |
@@ -350,6 +350,22 @@ candidatos.
   (Segura, envasadoras Priego, coops Condado/Montilla) NO abren lote: se
   resuelven en integración. Reglas duras y flujo por lote: los mismos de la
   primera ola.
+- 2026-07-09: **lote 14 (Ribeira Sacra, adegas lucenses) cerrado.** Reusado el
+  endpoint CSV del consejo (lote 11): 88 brutos → 70 en Lugo (18 de Ourense, ya
+  tratadas). Dedup mejorado (sufijos societarios S.L./C.B./S.A.T. + marca sin
+  acentos): 22 ya en `lugo.csv` (Algueira, Tear, Petrón, Finca Míllara, Proencia,
+  Guímaro, Moure/Abadía da Cova, Regina Viarum, Rectoral de Amandi, Nogueira,
+  Cabo do Mundo, Val de Quiroga, Lareu, Vía Romana, Alma das Donas, Casa
+  Moreiras, Don Bernardino, Adega Cruceiro, Pazo de la Cuesta, Atrium Vitis,
+  Lucenza, Condado de Sequeiras) → 48 net-new. Escritas **24** (con web/marca
+  consolidada) en `lugo.md`; ~23 micro-colleiteiros de nombre personal sin web
+  en nota «corte 2» (repesca futura). **Adega Damm** (grupo Estrella Damm)
+  excluida. Aprendizajes: (a) el header del CSV trae entidades HTML con `;`
+  (`DIRECCI&OACUTE;N`) que rompen el split → cabecera manual; (b) el dedup de
+  Ribeira Sacra necesita plegar sufijos societarios y comparar por marca
+  comercial (muchas filas del CSV usan la marca, no la razón social); (c) ⚠
+  colisión de marca «Castro Candaz» entre Virxen dos Remedios, Bodegas
+  CastroCandaz y Martín Códax → resolver titularidad al verificar.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,

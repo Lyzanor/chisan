@@ -1,0 +1,157 @@
+# Candidatos — Lugo
+
+> Origen: pasada de cobertura de capitales 2026-07-08 (la capital tiene 4 filas:
+> Aloumiña, Bubela, Cafés Candelas, Confitería Madarro). Resultado honesto: **no salió
+> ninguna alta nueva de capital** — los dos productores potentes del concello/entorno
+> ya estaban en el CSV. **Estado: `unverified`** — deduplicado contra `lugo.csv` el
+> 2026-07-08.
+
+## Notas sobre filas existentes (no son altas)
+
+- **Torre de Núñez** (fila en O Corgo): la sede y planta principal están en
+  **Conturiz, Ctra. N-VI km 497, concello de Lugo** (la de O Corgo es la segunda
+  planta). Valorar si el municipio de la fila debería ser Lugo; si se mantiene
+  O Corgo, documentarlo. Tienda online <https://torredenunez.com/tienda/> → revisar
+  `Venta online`.
+- **Cárnicas Teijeiro** (fila en Sarria): correcto — San Lázaro 15, Sarria (el barrio
+  San Lázaro es de Sarria, no de Lugo ciudad). Porco celta desde 1963/2003.
+
+## Provincia — 6 candidatos
+
+- [ ] **As Fadegas** — Fruta y verdura (horta ecolóxica). Ribadeo, a carón do río
+  Grande; 5 invernadoiros (1.800 m² cubertos) + 1 ha; pioneira en ecolóxico, 40 anos,
+  con relevo generacional. Fuente:
+  <https://www.campogalego.gal/as-fadegas-relevo-xeneracional-nunha-explotacion-de-horta-pioneira-que-cumpre-40-anos/>.
+- [ ] **Panadería Fraga** — Pan y pastelería. Palas de Rei, desde 1995. Vende con
+  envío vía SondeLugo (<https://sondelugo.com/gl/brand/10-panaderia-fraga>) → pista
+  `Venta online=sí` (marketplace).
+- [ ] **Pingas de Gaia** — Miel. Vilalba.
+- [ ] **Embutidos Hermelino** — Charcutería (porco celta). O Valadouro; granja
+  familiar, +80 años. En SondeLugo:
+  <https://sondelugo.com/es/productos/241-salchichon-de-cerdo-celta-hermelino.html>.
+- [ ] **Céltico (Mario Rouco Rey)** — Charcutería (porco celta). Muras; granja propia
+  desde 2015, marca desde ~2019; chorizo, lomo, salchichón elaborados en Muras.
+  Fuente: <https://deputacionlugo.gal/es/node/76611> y Campo Galego.
+- [ ] **Maruxas de Nata** — Dulces (galletas de nata eco). ⚠ **Provincia por
+  decidir:** granja en Monterroso (Lugo) pero obradoiro y tienda en A Garita s/n,
+  Santa Mariña do Monte, San Sadurniño (**A Coruña**). Si manda el obrador, va a
+  `a-coruna.csv`. <https://maruxasdenata.com/>; venden en Bigcrafters/Mentta → pista
+  `Venta online=sí`.
+
+## Descartados en esta pasada (no repasar)
+
+- *O Bandullo Ecolóxico / Mercado da Terra*: asociación/mercado, no productor.
+- *A Cova da Terra*: cooperativa de consumo, no productor.
+- *La Casa de las Empanadas* (Lugo): obrador-tienda de hostelería/minorista.
+
+## Ya presentes en `lugo.csv` (comprobado 2026-07-08)
+
+Arqueixal (Palas de Rei) · Queixería Don Gabino (Vilalba) · Mel Casa da Torre
+(Cervantes) · A Horta da SancoVeiga (Vilalba) · Torre de Núñez (O Corgo) · Cárnicas
+Teijeiro (Sarria).
+
+## DO Ribeira Sacra — adegas lucenses (lote 14 de do-huecos)
+
+> Origen: **cola del lote 11**. Registro oficial del Consejo Regulador vía su
+> endpoint CSV (`ribeirasacra.org/bodegas_csv.php?idioma=es`, delimitador `;`,
+> provincia embebida en la dirección). Del volcado: 88 adegas totales → **70 en
+> Lugo** (18 son de Ourense, ya tratadas en el lote 11). Dedup contra `lugo.csv`
+> el 2026-07-09 (por dominio, teléfono normalizado y nombre/marca sin acentos y
+> sin sufijos societarios): **22 ya presentes**, 48 net-new. Este corte escribe
+> **24** (las consolidadas / con web / marca reconocida); las ~24 restantes,
+> micro-colleiteiros de nombre personal sin web, quedan en **nota «corte 2»**.
+> Estado: **`unverified`**. Subzona anotada entre paréntesis. La marca comercial
+> es la del registro; el municipio es el de producción (dirección del registro),
+> no la sede del consejo.
+
+- [ ] **Adega Saiñas** (Adega Saiñas C.B.) — Bodega (Ribeiras do Miño). Pantón.
+  Tel 982 456 228 · web www.saiñas.com. Marca: Saiñas / Javier Fernández.
+- [ ] **Alouviño** — Bodega (Amandi). Sober. Tel 667 396 548 ·
+  <http://www.alouvino.com>. Marcas: 22º, Albarda, Serán, Ukiyo.
+- [ ] **Adegas Amedo** — Bodega (Chantada). Chantada. Tel 982 184 488 ·
+  <http://www.adegasamedo.com>. Marcas: Amedo, As Glorias, Pero Bernal.
+- [ ] **Bodega Soutelo** — Bodega (Amandi). Sober. Tel 600 700 136 ·
+  <http://www.bodegasoutelo.es>. Marca: Cardenal Rodrigo de Castro.
+- [ ] **Dominio Marcelino** (Marcelino Tierra y Vinos S.L.) — Bodega (Amandi).
+  Sober. Tel 647 164 040 · www.dominiomarcelino.com. Marca: Marcelino I.
+- [ ] **Bodega Pincelo** — Bodega (Chantada). Chantada. Tel 982 441 660 ·
+  <http://www.bodegapincelo.com>. Marcas: Pincelo, Momentum, Viña Portotide.
+- [ ] **Régoa** (Régoa C.B.) — Bodega (Amandi). Sober. Tel 649 101 555 ·
+  <http://www.regoa.es>. Marcas: Régoa, Régoa Iria, Régoa TN.
+- [ ] **Val da Lenda** (Rodríguez López, Víctor Manuel) — Bodega (Amandi).
+  Sober. Tel 982 460 504 · www.valdalenda.com. Marca: Val da Lenda.
+- [ ] **Virxen dos Remedios** (S.A.T. Virxen dos Remedios 837 XUGA) — Bodega
+  (Ribeiras do Miño). O Saviñao. Tel 982 171 720 ·
+  <http://www.virxendosremedios.es>. Marcas: Castro Candaz, Demo, Pazo de Bexán.
+  ⚠ marca «Castro Candaz» comparte nombre con Bodegas CastroCandaz (Quiroga) y
+  con la línea homónima de Martín Códax → verificar titularidad de la marca.
+- [ ] **Diego de Lemos** (Teijeiro Lemos S.L.) — Bodega (Chantada). Chantada.
+  Tel 982 171 666 · <http://bodegadiegodelemos.blogspot.com>. Marca: Diego de Lemos.
+- [ ] **Cividade** (Verao López, Brais) — Bodega (Amandi). Sober.
+  Tel 982 152 981 · <http://www.cividades.com>. Marca: Cividade.
+- [ ] **Aborixe** — Bodega (Amandi). Sober. Tel 609 660 019. Sin web en registro
+  (viño natural, buscar en verificación).
+- [ ] **Bodega Ribada** — Bodega (Chantada). Chantada. Tel 982 441 579.
+  Marcas: Ribada, Ribada Selección, Viña Ribada.
+- [ ] **Alvaredos-Hobbs** (Fructuoso-Hobbs S.L.) — Bodega (Quiroga-Bibei).
+  Quiroga. Tel 982 155 721. Marca: Alvaredos-Hobbs (proyecto de Paul Hobbs).
+- [ ] **Tolo do Xisto** — Bodega (Quiroga-Bibei). Monforte de Lemos.
+  Tel 667 797 177. Marca: Tolo do Xisto.
+- [ ] **Regal López, Roberto** — Bodega (Chantada). Taboada. Tel 982 031 093.
+  Marcas: Gaela, Mission, Neno da Ponte, Manifestación (muchas referencias).
+- [ ] **Albarduxe** (Albarduxe S.C.) — Bodega (Chantada). Chantada.
+  Tel 666 472 839. Marcas: Albarduxe, 18 Monasterios, Alboroque, Massimo.
+- [ ] **Bodega Losada Fernández** — Bodega (Ribeiras do Miño). Pantón.
+  Tel 982 456 213. Marcas: Don Ventura, Pena do Lobo, Viña Caneiro.
+- [ ] **Rectoral de Gundivós** — Bodega (Amandi). Sober. Tel 609 660 019 /
+  626 966 280. Marcas: Ámboa, Ímbrice, Adobe.
+- [ ] **Fusco / Finca Cuarta** (Moure Fernández, Rubén) — Bodega (Amandi /
+  Ribeiras do Miño). Sober / Pantón. Tel 638 380 222. Marcas: Fusco, Finca
+  Cuarta por Rubén Moure, Priscillvs, Nai (viñateiro reconocido; el registro lo
+  lista en dos subzonas → una sola ficha).
+- [ ] **Finca A Figueira** (Finca y Bodega A Figueira S.L.) — Bodega (Chantada).
+  Chantada ⚠ (confirmar concello). Tel 986 483 313. Marca: Finca Figueira.
+- [ ] **Bodegas CastroCandaz** — Bodega (Quiroga-Bibei). Quiroga.
+  Tel 696 621 531. ⚠ colisión de marca «Castro Candaz» (ver Virxen dos Remedios).
+- [ ] **Terrazas de Outeiro** — Bodega (Quiroga-Bibei). Quiroga. Tel 637 895 831.
+  Sin marca en registro (confirmar producto y venta).
+- [ ] **Adegas Salvadur** — Bodega (Quiroga-Bibei). A Pobra do Brollón.
+  Tel 669 850 034. Sin marca en registro (confirmar).
+
+### Notas del lote 14
+
+- **Excluida por grupo grande**: *Adega Damm S.L.* (Amandi, Sober) — proyecto de
+  Ribeira Sacra del grupo cervecero Estrella Damm → fuera por regla dura (gran
+  grupo industrial). Confirmar en verificación por si tuviera marca propia
+  vendible al público.
+- **Corte 2 (cola, ~23 micro-colleiteiros de nombre personal sin web)**: por el
+  tope de lote quedan sin escribir, a repescar en un lote/pasada posterior. Del
+  registro (subzona · concello · tel · marca notable si la hay): A Man de Prado
+  (Amandi·Sober·617 776 392); Álvarez Rodríguez, Óscar (Amandi·Sober); Alvarín
+  Losada, Mª Gloria (Ribeiras do Miño·Monforte·*Ciudaseis*); Carnero Fiuza, Jorge
+  (Amandi·Sober·*Viña Cazoga*); Castro Sesse, José María (Ribeiras do
+  Miño·Sober); D´Fran S.C. (Amandi·Sober·*Essencia*); Díaz Ferreiro, Mª
+  Purificación (Quiroga-Bibei·Pobra do Brollón·*Val do Frade*); Domínguez
+  González, Edelmiro (Chantada·Carballedo·*Calexotes*); ED V 2015 (Quiroga-Bibei·
+  Quiroga·*Don Cosme, Fusco*); Fernández Pedreira, José Luis (Chantada·Chantada·
+  *Castrofiz*); Fernández Prado, Isabel (Amandi·Sober·*Gullufre*); Fernández
+  Rodríguez, Carlos (Amandi·Sober·*Viña Frieira*); López Vázquez, Maximino
+  (Ribeiras do Miño·Pantón·*Terras Mouras*); Méndez Arias, Javier (Amandi·Sober·
+  *Adega Barbado, As Muras*); Pérez Pérez, José Luis (Ribeiras do Miño·O
+  Saviñao); Pérez Rodríguez, Óscar (Ribeiras do Miño·Sober·*Naz*); Pilares de
+  Belesar (Ribeiras do Miño·O Saviñao·*Asolagados*); Rabelas Renovables
+  (Chantada·Chantada·*Os Cipreses*); Trigo Fernández, Mª del Carmen (Amandi·
+  Sober·*Décima*); Vázquez Rodríguez, Araceli (Ribeiras do Miño·Sober·*Broa,
+  Malcavada*); Vidal López, José Manuel (Amandi·Sober·*Viña Mezquita*). (Muchos
+  con marca comercial registrada → probablemente vendibles, solo falta web.)
+- **Método**: mismo endpoint CSV del consejo del lote 11; recordar que el
+  header trae entidades HTML con `;` embebido (`DIRECCI&OACUTE;N`) que rompen el
+  split — usar cabecera manual y unescape por campo.
+
+## Pistas sin explorar (capital)
+
+- **Mercado da Terra** (martes 17-20 h, Mercado Municipal Quiroga Ballesteros,
+  organiza O Bandullo Ecolóxico): cantera directa de hortelanos/apicultores del
+  concello de Lugo — la vía más realista para subir la capital.
+- Directorio de empresas del polígono O Ceao: <https://ceaogandaras.org/empresas>
+  (filtrar elaboración artesana vs. mayoristas).
