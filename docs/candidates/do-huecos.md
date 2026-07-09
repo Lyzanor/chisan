@@ -195,7 +195,7 @@ ordenado por tamaño de hueco (18–26).
 | 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejo Montes de Toledo + **coop. 2º grado Campo de Montiel** (el consejo no publica registro) | ✅ 2026-07-09 (**hueco menor del estimado**: 7 netos — 2 Montes de Toledo + 5 socias Campo de Montiel con ⚠ maquila; +3 pistas fuera de DOP; Montes Norte excluido) |
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | `queixotetilla.org/nuestros-elaboradores/` (**arzua-ulloa.org muerto**) | ✅ 2026-07-09 (**sin hueco real**: 10 coruñesas en Tetilla → 7 ya en CSV, 1 gran grupo → **2 escritas**; Arzúa-Ulloa sin registro público; +3 pistas otras provincias) |
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (`quesomanchego.es/en/manufacturers/`, JSON en `wp-json/…/pages/10148`) | ✅ 2026-07-09 (65 inscritas 4 prov. → 12 Cuenca → 7 en CSV + **2 alias** → **3 escritas**; +7 correcciones a filas y pistas Toledo 7 / CR 4 / Albacete 5) |
-| 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | Consejos insulares / Casa del Vino de Tenerife | pendiente |
+| 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | `tacovin.com`, `dovalleorotava.com`, `vinosvalleguimar.com`, `vinosdeabona.com` + portal Cabildo `vinosdetenerife.es` | ✅ corte 1, 2026-07-09 (**hueco grande y real**: 89 inscritas → 11 en CSV → **78 netas**; 25 escritas con web; **53 en cortes 2-3** con municipio+tel ya capturados) |
 | 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (sección nueva) | Consejo (navarrawine.com), bodegas inscritas | pendiente |
 | 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | Consejos de las tres DO | pendiente |
 | 25 | DO Utiel-Requena + DOP Arroz de Valencia | Valencia → `valencia.md` (nuevo) | Consejos (utielrequena.org, arrozdevalencia.org) | pendiente |
@@ -462,6 +462,27 @@ candidatos.
   5** (⚠ Lactalis y Mantequerías Arias, grandes grupos) — sin abrir esas
   provincias. Tercer lote seguido (19, 20, 21) en que **el hueco medido era mucho
   mayor que el real**: el diagnóstico contó filas de categoría, no operadores DOP.
+- 2026-07-09: **lote 22 (5 DO insulares de Tenerife) — corte 1 cerrado.** **El
+  único hueco grande y real de la segunda ola hasta ahora.** El diagnóstico decía
+  «28 bodegas vs ~80-100 inscritas» y acertó, pero por una razón que no había
+  anotado: el CSV es **provincial**, y de esas 28 bodegas **solo 16 son de la isla
+  de Tenerife** (12 son de La Palma, La Gomera y El Hierro). Registros: 89 bodegas
+  → 11 en CSV → **78 netas**; escritas **25 con web**, **53 documentadas** con
+  municipio y teléfono para cortes 2-3. Aprendizajes: (a) **3 de los 5 dominios de
+  la worklist estaban mal**: Tacoronte-Acentejo es `tacovin.com` (no
+  `tacoronteacentejo.com`), Güímar es `vinosvalleguimar.com` **sin el «de»** (y
+  `valledeguimar.es` es un periódico local), e `ycoden.com` tiene el **HTTPS
+  caído** → su listado salió del **portal del Cabildo `vinosdetenerife.es`**, que
+  publica por DO una tabla *Nombre · Marcas · Dirección · Web* (cubre 4 de 5, falta
+  Güímar); (b) las fichas de **Abona y Güímar** publican «**Venta en bodega:
+  Sí/No**», visitas y horarios → dato directo para las columnas de canal, no visto
+  en ningún otro consejo de esta pasada; (c) **el patrón de alias del lote 21 se
+  repite y ya es regla**: *Mesur S.L.* = Bodega Frontos, *Arautava* = Bodegas El
+  Penitente, *Bodega Calius* (Güímar) = Cándido Hernández Pío (Tacoronte, misma
+  bodega en dos DO) — pero *Jottocar S.L.* = Mencey Chasna **sí** es alta; (d)
+  pista gorda: existe una **sexta DO regional, `DOP Islas Canarias`**, con ~9
+  bodegas tinerfeñas netas (Ferrera, Piedra Fluida, Pago de los Cercados, Finca El
+  Ancón, Tabares 4, Envínate…) → corte propio.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
