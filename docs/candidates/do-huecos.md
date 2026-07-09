@@ -143,8 +143,8 @@ EOF
 |---|---|---|---|---|
 | 1 | DO Montilla-Moriles | Córdoba → `cordoba.md` | Consejo Regulador (montillamoriles.es), registro de bodegas | ✅ 2026-07-09 (54 brutos → 45 tras dedup → 24 escritos) |
 | 2 | DOP Baena + Priego de Córdoba (aceite) | Córdoba → `cordoba.md` | Consejos DOP Baena y DOP Priego de Córdoba | ✅ 2026-07-09 (33 brutos → 29 tras dedup → 24 escritos; 4 envasadoras Priego diferidas) |
-| 3 | DOP Montoro-Adamuz + Lucena (aceite) | Córdoba → `cordoba.md` | Consejos de ambas DOP | pendiente |
-| 4 | DOP Los Pedroches (jamón) | Córdoba → `cordoba.md` | Consejo DOP Los Pedroches, operadores inscritos | pendiente |
+| 3 | DOP Montoro-Adamuz + Lucena (aceite) | Córdoba → `cordoba.md` | Consejos de ambas DOP | ✅ 2026-07-09 (~15 brutos → 11 tras dedup → 11 escritos) |
+| 4 | DOP Los Pedroches (jamón) | Córdoba → `cordoba.md` | Consejo DOP Los Pedroches, operadores inscritos | ✅ 2026-07-09 (20 brutos → 8 tras dedup → 8 escritos) |
 | 5 | DOP Jabugo + secaderos Sierra de Aracena | Huelva → `huelva.md` | Consejo DOP Jabugo, industrias inscritas | pendiente |
 | 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | pendiente |
 | 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | pendiente |
@@ -184,6 +184,21 @@ EOF
   Cordobesa de Montilla ya en CSV) → cuidar slug; (c) 4 envasadoras/
   comercializadoras de Priego (Vizcántar, Legatum, Olivasi, XY) diferidas como
   nota, a triar por producción propia (posible corte siguiente).
+- 2026-07-09: **lote 3 (DOP Aceite de Lucena + DOP Montoro-Adamuz) cerrado.**
+  Lucena: registro `dolucena.es` (8 inscritas); Montoro-Adamuz sin listado web
+  limpio, reconstruido de fuentes del consejo/DCOOP. 11 escritos. Aprendizajes:
+  (a) **Aceites Fuente Grande (Lucena) = grupo Gomeoliva** (ya en CSV) → excluida;
+  (b) 5 de las 7 cooperativas de Montoro-Adamuz son del **grupo DCOOP/Cordoliva**
+  (granel/B2B): confirmar marca de consumo propia antes de integrar (Madre del Sol
+  es la más fuerte, marca «Olivar de Sierra»); (c) «La Unión de Montilla» cruza con
+  el lote 1 (misma coop hace vino y aceite) → decidir 1 o 2 filas.
+- 2026-07-09: **lote 4 (DOP Los Pedroches, jamón) cerrado.** Fuente:
+  «Industrias adscritas» del consejo (20 con web). **Comarca ya muy cubierta**:
+  12/20 ya en CSV → solo 8 net-new escritos. Aprendizajes: (a) dedup por dominio
+  fue decisivo (nombres razón social ≠ nombre CSV); (b) **COVAP** es gran grupo
+  cooperativo con marca de consumo fuerte → listado con ⚠, decisión de tamaño
+  diferida a integración; (c) «La Embajada del Jamón» posible comercializadora,
+  confirmar secadero propio.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,

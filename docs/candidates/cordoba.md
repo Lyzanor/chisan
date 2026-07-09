@@ -165,3 +165,90 @@
 > si producen con marca propia y venden al consumidor; excluir las que sean solo
 > envasado/comercialización B2B. «Muela-Olives» del registro es la envasadora del
 > mismo grupo que Mueloliva (no duplicar).
+
+## DOP Aceite de Lucena + DOP Montoro-Adamuz (aceite, lote 3 de do-huecos)
+
+> Fuentes de partida: registro DOP Aceite de Lucena (<http://dolucena.es/>, 8
+> inscritas) + cooperativas inscritas en DOP Montoro-Adamuz
+> (<https://montoro-adamuz.org/>; el consejo no publica listado web limpio, lista
+> reconstruida de fuentes del consejo/DCOOP). Dedup 2026-07-09 por dominio/nombre.
+> **Ya en el CSV / mismo grupo (excluidas):** Gomeoliva (Priego) y **Aceites
+> Fuente Grande S.A.** (Lucena) — Fuente Grande es la sociedad agraria del mismo
+> grupo que Gomeoliva, que ya está en CSV; Almazaras de la Subbética (Carcabuey,
+> ya en CSV vía lote 2); La Aurora (Montilla, ya en CSV). Municipio = donde está
+> la almazara.
+>
+> ⚠ **Aviso de grupo DCOOP (Montoro-Adamuz):** cinco de las inscritas (Madre del
+> Sol, Olivarera de Montoro, Ntra. Sra. de la Merced, del Guadiato, San Antonio
+> Abad) son cooperativas del **grupo DCOOP/Cordoliva**, que comercializa buena
+> parte del aceite a granel/B2B. Entran **solo** si venden con **marca de consumo
+> propia** (tienda física/online); si solo aportan aceituna/granel a DCOOP,
+> excluir. Confirmar caso a caso.
+
+### DOP Aceite de Lucena (4)
+
+- [ ] **Cooperativa Olivarera de Lucena S.C.A.** — Aceite. Lucena.
+  <https://cooperativalucena.es/> · tienda <https://cooperativalucena.es/tienda/>.
+  Marca propia y tienda online → pista `Venta online=sí`.
+- [ ] **Cooperativa Olivarera Ntra. Sra. de Araceli S.C.A.** — Aceite. Lucena.
+  <https://www.cooperativaaraceli.es/>. Marcas propias «Araceli» y «Pagos de
+  Aras» (gourmet); confirmar venta al público.
+- [ ] **Cooperativa Olivarera de San José 'Oleollanos' S.C.A.** — Aceite.
+  Los Llanos de Rute (Rute). Confirmar web y venta.
+- [ ] **Cooperativa Agrícola La Unión de Montilla S.C.A.** — Aceite. Montilla.
+  ⚠ Cruce con lote 1: la misma cooperativa figura como «Bodegas La Unión (C)» en
+  Montilla-Moriles; si se integra, decidir si una fila (aceite + vino) o dos.
+  Confirmar marca de consumo propia.
+
+### DOP Montoro-Adamuz (7)
+
+- [ ] **S.C.A. Agrícola Ntra. Madre del Sol** — Aceite. Adamuz. Marca «Olivar de
+  Sierra»; la mayor y más premiada de la DOP. ⚠ Comercializa vía Cordoliva/DCOOP:
+  confirmar venta con marca propia al consumidor. Portal:
+  <https://madredelsol.sbportal.es/>.
+- [ ] **S.C.A. Olivarera de Montoro** — Aceite. Montoro. ⚠ Grupo DCOOP; confirmar
+  marca de consumo propia.
+- [ ] **S.C.A. Olivarera Ntra. Sra. de la Merced** — Aceite. Villafranca de
+  Córdoba (confirmar). ⚠ Grupo DCOOP.
+- [ ] **S.C.A. del Campo San Antonio Abad** — Aceite. Villaviciosa de Córdoba
+  (confirmar). ⚠ Grupo DCOOP.
+- [ ] **S.C.A. Olivarera San Rafael** — Aceite. Villanueva del Rey (confirmar).
+  Confirmar web/venta. (No confundir con la pastelería «San Rafael 1920» de
+  Córdoba, ya en CSV.)
+- [ ] **S.C.A. Olivarera Santiago** — Aceite. Montoro (confirmar). Confirmar
+  web/venta.
+- [ ] **S.C.A. Olivarera del Guadiato** — Aceite. Espiel (confirmar). ⚠ Grupo
+  DCOOP.
+
+## DOP Los Pedroches (jamón, lote 4 de do-huecos)
+
+> Fuente de partida: «Industrias adscritas» del Consejo Regulador
+> (<https://www.jamondolospedroches.es/industrias-adscritas-2/>, 20 industrias con
+> web). Dedup 2026-07-09 por dominio/nombre: **la comarca ya está muy cubierta en
+> el CSV** — 12 de las 20 ya presentes (Belloterra/Jamón de Los Pedroches, La
+> Encina, Ibéricos de Cardeña, Familia Moreno, IBESA, La Finojosa, MajadaPedroche,
+> Camilo Ríos, Señorío de Los Pedroches, Rodríguez Barbancho, David del Valle,
+> Dehesas Reunidas). Quedan **8 net-new**. Municipio = donde está el secadero
+> (comarca de Los Pedroches, norte de Córdoba).
+
+- [ ] **Jamones Era Alta S.L.** — Charcutería (jamón ibérico DOP). Villanueva de
+  Córdoba (confirmar). <https://jamoneseraalta.es/>.
+- [ ] **Navalpedroche S.L.** — Charcutería (jamón ibérico DOP). Villanueva de
+  Córdoba (confirmar). <https://navalpedroche.com/>.
+- [ ] **Dehesa de Campo Alto S.L.** — Charcutería (jamón ibérico DOP). Confirmar
+  municipio. <https://dehesadecampoalto.es/>.
+- [ ] **Agroibérica de Pozoblanco S.L.** — Charcutería (jamón ibérico DOP).
+  Pozoblanco. <https://agroibericadepozoblanco.es/>.
+- [ ] **Jamón Jarote S.L.** — Charcutería (jamón ibérico DOP). Confirmar
+  municipio. <https://jamonjarote.com/>.
+- [ ] **MIO 1898 S.L.** — Charcutería (jamón ibérico DOP). Confirmar municipio.
+  <https://mio1898.com/>.
+- [ ] **COVAP, S.C.A.** — Charcutería (jamón ibérico DOP) / lácteos. Pozoblanco.
+  <https://www.covap.es/>. Marca de consumo propia y tienda online → pista
+  `Venta online=sí`. ⚠ **Gran grupo cooperativo** (Valle de los Pedroches, también
+  lácteos/piensos): la regla dura excluye grandes grupos industriales; decidir en
+  integración si su fuerte marca de consumo justifica una fila pese al tamaño.
+- [ ] **Delicias Ibéricas por el Mundo S.L. (La Embajada del Jamón)** —
+  Charcutería (jamón ibérico DOP). Confirmar municipio.
+  <https://laembajadadeljamon.com/>. ⚠ Nombre comercial de tienda/comercializadora:
+  confirmar que elabora con secadero propio y no es solo venta.
