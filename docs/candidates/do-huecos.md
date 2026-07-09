@@ -191,7 +191,7 @@ ordenado por tamaño de hueco (18–26).
 | 15 | Aceite Bajo Aragón + Melocotón de Calanda — empresas de Zaragoza (cola lote 13) | Zaragoza → `zaragoza.md` (nuevo) | Datos capturados en lote 13 (aceitedelbajoaragon.es, melocotondecalanda.com) | ✅ 2026-07-09 (11 aceite + 6 melocotón Zaragoza → 7 ya en CSV → 8 escritas; comarca ya bastante cubierta) |
 | 16 | DO Ribeiro — corte 2 (colleiteiros restantes, ~59) | Ourense → `ourense.md` | Fichas `ribeiro.wine` (método fetch del lote 9) | ✅ 2026-07-09 (89 registro − 30 tratados = 59 → 24 con web propia escritas; ~34 sin dominio en nota corte 3) |
 | 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | ◐ 2026-07-09 (Monterrei resto 13 escritas; **Valdeorras resto ~19 DIFERIDO** — listado JS/age-gate, necesita PDF o navegador) |
-| 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (mtoledo.org), almazaras/envasadoras | pendiente |
+| 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (**domontesdetoledo.com**), almazaras/envasadoras | ✅ 2026-07-09 (30 certificados → 7 ya en CSV + 5 son de Ciudad Real → 19 Toledo escritos; pista CR anotada para lote 19) |
 | 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejos de ambas DOP | pendiente |
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | Consejos (arzua-ulloa.org, queixotetilla.org); solo operadores de A Coruña | pendiente |
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (quesomanchego.es), queserías inscritas; solo Cuenca | pendiente |
@@ -386,6 +386,19 @@ candidatos.
   Monterrei muestran la dirección/web del **consejo**, no la de la adega (solo el
   teléfono es propio); (c) el enlace `wineinmoderation.eu` en las fichas del
   Ribeiro es del footer, no la web de la bodega.
+- 2026-07-09: **lote 18 (DOP Montes de Toledo, aceite — parte toledana) cerrado.**
+  `toledo.md` creado. El dominio de la worklist (`mtoledo.org`) no resuelve; el
+  real es **`domontesdetoledo.com`** (bloquea sin UA de navegador). Fuente limpia:
+  «Empresas certificadas» (30 en vigor) + ficha `/slug/` por empresa con dirección
+  completa, web y email. De 30: 7 ya en CSV, **5 son de Ciudad Real** (Malagón,
+  Grupo Montes Norte, El Progreso/Villarrubia, Dehesa El Molinillo/Retuerta,
+  Judisan-Moraga → anotados como pista para el lote 19, que comparte esta DOP) y
+  **19 escritos de Toledo**. Aprendizajes: (a) la DOP cruza provincia → filtrar por
+  municipio de la ficha, no por el consejo; (b) ⚠ IFAMA es del grupo Arzuaga
+  Navarro; (c) ⚠ el consejo enlaza la ficha de «Aceites Toledo S.A.» (Los Yébenes)
+  bajo la entrada «Coop. Ntra. Sra. de la Antigua de Mora» → escrito con aviso de
+  verificar si es operador propio; (d) homónimos de cooperativas «San Sebastián» y
+  «Ntra. Sra. de la Antigua» en varios municipios → cuidar slug/municipio.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
