@@ -142,7 +142,7 @@ EOF
 | Lote | Denominación | Provincia → destino | Fuente de partida (confirmar dominio) | Estado |
 |---|---|---|---|---|
 | 1 | DO Montilla-Moriles | Córdoba → `cordoba.md` | Consejo Regulador (montillamoriles.es), registro de bodegas | ✅ 2026-07-09 (54 brutos → 45 tras dedup → 24 escritos) |
-| 2 | DOP Baena + Priego de Córdoba (aceite) | Córdoba → `cordoba.md` | Consejos DOP Baena y DOP Priego de Córdoba | pendiente |
+| 2 | DOP Baena + Priego de Córdoba (aceite) | Córdoba → `cordoba.md` | Consejos DOP Baena y DOP Priego de Córdoba | ✅ 2026-07-09 (33 brutos → 29 tras dedup → 24 escritos; 4 envasadoras Priego diferidas) |
 | 3 | DOP Montoro-Adamuz + Lucena (aceite) | Córdoba → `cordoba.md` | Consejos de ambas DOP | pendiente |
 | 4 | DOP Los Pedroches (jamón) | Córdoba → `cordoba.md` | Consejo DOP Los Pedroches, operadores inscritos | pendiente |
 | 5 | DOP Jabugo + secaderos Sierra de Aracena | Huelva → `huelva.md` | Consejo DOP Jabugo, industrias inscritas | pendiente |
@@ -172,6 +172,18 @@ EOF
   aviso de **grupo Pérez Barquero** (Gracia Hermanos / Cía. Vinícola del Sur /
   Tomás García) — resolver marcas antes de crear varias filas; (c) 6 cooperativas
   (C) y Navisa (graneles) quedan como triaje aparte en fase de integración.
+- 2026-07-09: **lote 2 (DOP Baena + DOP Priego de Córdoba, aceite) cerrado.**
+  Fuentes limpias con web por entidad: `dobaena.com/nuestras-empresas-y-marcas/`
+  (17) y `dopriegodecordoba.es/empresas-aove/` (10 almazaras + 6 envasadoras).
+  Dedup por dominio+nombre: 4 ya en CSV (Peña de Baena, Guadalupe, Almazaras de
+  la Subbética, Gomeoliva). Escritas 24 almazaras con producción propia (15
+  Baena + 9 Priego) en `cordoba.md`. Aprendizajes: (a) casi todas son
+  cooperativas olivareras con marca propia → entran, pero confirmar que no sean
+  solo graneles/servicios; (b) dos homónimos «Olivarera San Isidro» (Baena vs
+  Fuente Tójar) y colisión de marca «Monteoliva» (Cabra DOP Baena vs Monteoliva
+  Cordobesa de Montilla ya en CSV) → cuidar slug; (c) 4 envasadoras/
+  comercializadoras de Priego (Vizcántar, Legatum, Olivasi, XY) diferidas como
+  nota, a triar por producción propia (posible corte siguiente).
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,

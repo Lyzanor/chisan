@@ -85,3 +85,83 @@
 > crear fila; excluir las que sean sección de servicios/graneles.
 > ⚠ **Navisa** (Montilla) es industrial/graneles: verificar si tiene marca de
 > consumo antes de considerarla.
+
+## DOP Baena + DOP Priego de Córdoba (aceite, lote 2 de do-huecos)
+
+> Fuente de partida: registro de empresas del Consejo Regulador DOP Baena
+> (<https://www.dobaena.com/nuestras-empresas-y-marcas/>, 17 entidades con web) +
+> registro AOVE del Consejo Regulador DOP Priego de Córdoba
+> (<https://www.dopriegodecordoba.es/empresas-aove/>, 10 almazaras + 6
+> envasadoras/comercializadoras). Dedup 2026-07-09 por dominio y nombre
+> normalizado. **Ya en el CSV (excluidas):** Peña de Baena, Olivarera Ntra. Sra.
+> de Guadalupe (Baena), Almazaras de la Subbética (Carcabuey), Gomeoliva (Priego).
+> Casi todas las inscritas son cooperativas olivareras que **sí** entran (venden
+> con marca propia en tienda de almazara/online), pero hay que **confirmar caso a
+> caso** que no sean solo sección de graneles/servicios. Municipio = donde está la
+> almazara. **Corte del lote:** escritas las 24 almazaras con producción propia;
+> las envasadoras/comercializadoras puras de Priego quedan como nota al pie para
+> triar por producción propia (posible siguiente corte).
+
+### DOP Baena — almazaras/olivareras (15)
+
+- [ ] **S.C.A. Olivarera Ntra. Sra. del Rosario** — Aceite. Nueva Carteya.
+  <https://aceitedelrosario.es/>. Cooperativa con marca propia; pista tienda →
+  `Venta online` a confirmar.
+- [ ] **S.C.A. Olivarera Ntra. Sra. de la Consolación (El Henazar)** — Aceite.
+  Doña Mencía. <https://tienda.elhenazar.es/>. Tienda online → pista `Venta online=sí`.
+- [ ] **S.C.A. Olivarera Almazara de Luque** — Aceite. Luque.
+  <https://almazaradeluque.com/>.
+- [ ] **Sucesores de Hnos. López, S.A.** — Aceite. Baena. <https://aceiteshl.com/>.
+- [ ] **S.C.A. Olivarera Ntra. Sra. del Perpetuo Socorro (Zuheroliva)** — Aceite.
+  Zuheros. <https://zuheroliva.com/>.
+- [ ] **Orobaena, S.A.T.** — Aceite. Baena. <https://orobaena.es/>.
+- [ ] **S.C.A. Olivarera San Isidro** — Aceite. Baena.
+  <https://olivarerasanisidro.es/>. ⚠ Homónimo con «Olivarera San Isidro» de
+  Fuente Tójar (DOP Priego, abajo): entidades distintas, cuidar slug/municipio.
+- [ ] **Núñez de Prado Oliva Virgen S.L.** — Aceite. Baena.
+  <https://nunezdeprado.com/>. Marca histórica (aceite «flor», ecológico).
+- [ ] **S.C.A. Olivarera Germán Baena** — Aceite. Baena. <https://germanbaenascoa.es/>.
+- [ ] **S.C.A. de Labradores y Ganaderos (Aceites Albendín)** — Aceite.
+  Albendín (Baena). <https://aceitesalbendin.es/>.
+- [ ] **S.C.A. Nuestra Sra. de la Salud** — Aceite. Castro del Río (confirmar).
+  <https://aceitesdelasalud.com/>.
+- [ ] **Cortijo de Suerte Alta S.L.** — Aceite. Baena. <https://suertealta.es/>.
+  Aceite ecológico de finca; pista `Venta online`.
+- [ ] **S.C.A.O. Virgen de la Sierra (Monteoliva)** — Aceite. Cabra.
+  <https://monteoliva.com/>. ⚠ Colisión de nombre de marca con «Monteoliva
+  Cordobesa S.L.» (Montilla), ya en CSV: entidades distintas (esta es Cabra, DOP
+  Baena), cuidar slug.
+- [ ] **Capricho Andaluz S.L.** — Aceite. Baena (confirmar).
+  <https://caprichoandaluz.com/>.
+- [ ] **Aceite la niña de mis ojos** — Aceite. Confirmar municipio.
+  <https://osaceite.es/>.
+
+### DOP Priego de Córdoba — almazaras (9)
+
+- [ ] **Almazara de Muela / Mueloliva, S.L.** — Aceite. Priego de Córdoba.
+  <https://www.mueloliva.es/>. Marca «Venta del Barón», premiada; tienda → pista
+  `Venta online=sí`.
+- [ ] **D3Olivo Biotechnology (Aroden)** — Aceite. Carcabuey.
+  <https://www.aroden.com/>.
+- [ ] **Manuel Molina Muñoz e Hijos** — Aceite. Almedinilla.
+  <https://www.aceitesmanuelmolina.com/>.
+- [ ] **Marín Serrano El Lagar, S.L.** — Aceite. Carcabuey. <https://www.ellagar.es/>.
+- [ ] **S.C.A. Ntra. Sra. del Carmen de Almedinilla (Olibracana)** — Aceite.
+  Almedinilla. <https://www.olibracana.es/>.
+- [ ] **S.C.A. Olivarera La Purísima** — Aceite. Priego de Córdoba.
+  <https://www.coopurisimapriego.com/>.
+- [ ] **S.C.A. Olivarera Ntra. Sra. del Carmen (Zamoranos)** — Aceite. Zamoranos
+  (Priego de Córdoba). <https://www.cooperativazamoranos.com/>.
+- [ ] **S.C.A. Olivarera San Isidro (Toxar)** — Aceite. Fuente Tójar.
+  <https://www.cooperativatoxar.es/>. ⚠ Ver homónimo San Isidro de Baena arriba.
+- [ ] **Sucesores de Morales Morales, S.L.** — Aceite. Priego de Córdoba.
+  <https://www.sucesoresdemorales.com/>.
+
+> ⚠ **Envasadoras/comercializadoras de DOP Priego (triar por producción propia
+> antes de crear fila — posible siguiente corte):** «Aceites Vizcántar»
+> (<https://www.aceitesvizcantar.com/>), «Magna Legatum / Legatum AOVE»
+> (<https://www.legatumaove.com/>), «Sponex / Olivasi» (<https://www.olivasi.com/>),
+> «X 37 Grados Norte / XY Aceite» (<https://www.xyaceitedeoliva.com/>). Entran solo
+> si producen con marca propia y venden al consumidor; excluir las que sean solo
+> envasado/comercialización B2B. «Muela-Olives» del registro es la envasadora del
+> mismo grupo que Mueloliva (no duplicar).
