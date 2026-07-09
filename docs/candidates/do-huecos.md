@@ -146,7 +146,7 @@ EOF
 | 3 | DOP Montoro-Adamuz + Lucena (aceite) | Córdoba → `cordoba.md` | Consejos de ambas DOP | ✅ 2026-07-09 (~15 brutos → 11 tras dedup → 11 escritos) |
 | 4 | DOP Los Pedroches (jamón) | Córdoba → `cordoba.md` | Consejo DOP Los Pedroches, operadores inscritos | ✅ 2026-07-09 (20 brutos → 8 tras dedup → 8 escritos) |
 | 5 | DOP Jabugo + secaderos Sierra de Aracena | Huelva → `huelva.md` | Consejo DOP Jabugo, industrias inscritas | ✅ 2026-07-09 (28 brutos → 26 tras dedup → 16 escritos; ~10 grupos/mataderos excluidos) |
-| 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | ✅ 2026-07-09 (31 brutos → 24 tras dedup → 16 escritos + 8 coops en nota) |
+| 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | ✅ 2026-07-09 (31 brutos → 24 tras dedup → 13 escritos + 8 coops + 3 dudosas en nota; enriquecido) |
 | 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | ✅ 2026-07-09 (18 brutos → 16 tras dedup → 16 escritos) |
 | 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | pendiente |
 | 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | pendiente |
@@ -216,6 +216,18 @@ EOF
   cooperativas van en nota (confirmar marca vs granel). (c) **lote 7 Sierra
   Mágina** — casi todo cooperativas con marca propia de AOVE; listadas con su
   marca comercial para facilitar encontrar web en verificación.
+- 2026-07-09: **pasada de enriquecimiento** (Chrome ya disponible) sobre los
+  lotes 5, 6 y 7. Se añadieron web + teléfono + marca comercial a **todos** los
+  candidatos de Jabugo (16/16) y Sierra Mágina (16/16), casi todos con tienda
+  online (pista `Venta online=sí`). Hallazgos que cambian el triaje: (a) **Hnos
+  Castaño Fernández** (Jabugo) usa la marca «Tartessos» → **probable duplicado**
+  de «Jamones Tartessos» ya en CSV (verificar; corregiría municipio a Cumbres
+  Mayores); (b) Condado: **Clemente Neble** está **extinguida** (excluida),
+  **Doñana** y **Espina** parecen marcas de bodegas ya en CSV (Privilegio del
+  Condado y Sauci) → movidas a nota de dudosas; (c) **Jamones Benito e Hijos**
+  (Jabugo) sin web confirmada (posible confusión con Ibéricos Benito de Arahal).
+  Las bodegas pequeñas de Bollullos (Camacho, Acosta, Juncales, J. y M. Martín,
+  Escolar, Manzanillera) no tienen web localizable: marcadas «sin web, confirmar».
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,

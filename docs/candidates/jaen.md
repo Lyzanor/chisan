@@ -19,34 +19,43 @@
 > almazara/online) → entran, pero confirmar caso a caso que no sean solo sección
 > de graneles. Municipio = donde está la almazara.
 
+> Webs/teléfonos añadidos en la pasada de enriquecimiento 2026-07-09 (búsqueda web
+> + fichas del consejo). **Todas tienen tienda online propia → pista
+> `Venta online=sí`** salvo donde se indique.
+
 - [ ] **Cooperativa Stmo. Cristo de la Misericordia** — Aceite. Jódar. Marca «La
-  Quinta Esencia». Confirmar web/venta.
-- [ ] **Cooperativa Bedmarense** — Aceite. Bedmar. Marca «Oro Magnasur».
-  Confirmar web/venta.
-- [ ] **Oleozumo S.L.** — Aceite. Bedmar. Marca «Orozumo Selección». Confirmar
-  web/venta.
+  Quinta Esencia». <https://laquintaesencia.com/>.
+- [ ] **Cooperativa Bedmarense** — Aceite. Bedmar. Marcas «Magnasur» / «Oro
+  Magnasur». <https://magnasur.com/>.
+- [ ] **Oleozumo S.L.** — Aceite. Bedmar. Marca «Orozumo». <https://www.oleozumo.com/>.
 - [ ] **Cooperativa Ntra. Sra. de la Paz** — Aceite. Bélmez de la Moraleda. Marca
-  «La Perla de Mágina». Confirmar web/venta.
-- [ ] **Cooperativa San Francisco** — Aceite. Albanchez de Mágina. Marca «Reino de
-  Jaén»; cooperativa centenaria. Confirmar web/venta.
+  «La Perla de Mágina». <https://laperlademagina.es/> · 953 394 052.
+- [ ] **Cooperativa San Francisco** — Aceite. Albanchez de Mágina. Marcas «Reino
+  de Jaén», «Aznaitín», «Molino la Unión». <https://www.aovesierramagina.com/> ·
+  953 358 353. Cooperativa centenaria (1919).
 - [ ] **Cooperativa La Unión del Santo Cristo** — Aceite. Cabra del Santo Cristo.
-  Marca «Salud Sierra». Confirmar web/venta.
+  Marca «Salud Sierra». <https://saludsierra.es/>.
 - [ ] **Cooperativa Unión Oleícola Cambil** — Aceite. Cambil. Marca «Esmeralda de
-  Mágina». Confirmar web/venta.
+  Mágina». <https://esmeraldamagina.es/> · 953 300 355.
 - [ ] **Cooperativa Trujal de Mágina** — Aceite (ecológico). Cambil. Marca «Verde
-  Salud»; fundada 1998. Confirmar web/venta.
-- [ ] **Cooperativa Ntra. Sra. de la Cabeza** — Aceite. Campillo de Arenas. Marca
-  «Vergilia». Confirmar web/venta.
+  Salud» (registrada 1998, cert. CAAE). <https://www.scatrujaldemagina.com/> ·
+  953 300 567.
+- [ ] **Cooperativa Ntra. Sra. de la Cabeza** — Aceite. Campillo de Arenas. Marcas
+  «Vergilia» / «Oro Puerta de Arenas».
+  <https://cooperativacampillodearenas.com/> · 953 309 027.
 - [ ] **Cooperativa San Isidro Labrador** — Aceite. Huelma. Marca «Santuario de
-  Mágina». Confirmar web/venta.
+  Mágina»; mayor productora de la comarca. <https://www.scasanisidro.es/> ·
+  953 390 110.
 - [ ] **Cooperativa Ntra. Sra. del Rosario** — Aceite. Arbuniel (Cambil). Marca
-  «Sierra de Arbuniel». Confirmar web/venta.
+  «Sierra de Arbuniel». <https://www.aceitesierradearbuniel.com/> · 953 304 407.
 - [ ] **Cooperativa San Antonio Abad** — Aceite. Cárchel (Cárcheles). Marca
-  «Solana de Cárchel». Confirmar web/venta.
-- [ ] **Cooperativa San Roque** — Aceite. Carchelejo (Cárcheles). Marca «Tierras
-  del Marquesado». Confirmar web/venta.
+  «Solana de Cárchel». <https://www.aceitesolanadecarchel.com/> · 953 302 332.
+- [ ] **Cooperativa San Roque** — Aceite. Carchelejo (Cárcheles). Marcas «Tierras
+  del Marquesado» (picual) y «Emblema» (manzanillo). <https://scasanroque.com/>.
 - [ ] **Cooperativa San Sebastián** — Aceite. La Guardia de Jaén. Marca «Señorío
-  de Mesía». Confirmar web/venta.
-- [ ] **Finca Alamillos del Prior** — Aceite. Jimena. Almazara de finca (AOVE).
-  Confirmar web/venta.
-- [ ] **El Torito Bravo** — Aceite. Campillo de Arenas. Confirmar web/venta.
+  de Mesía». <https://senoriodemesia.es/>.
+- [ ] **Finca Alamillos del Prior** — Aceite (+ mermeladas de higo). Jimena.
+  Almazara de finca (olivos centenarios al pie del Aznaitín).
+  <https://www.fincaalamillosdelprior.com/>. También en Correos Market.
+- [ ] **El Torito Bravo** — Aceite (cosecha temprana, picual). Campillo de Arenas
+  (paraje «Los Praillos»). <https://www.eltoritobravo.com/>.
