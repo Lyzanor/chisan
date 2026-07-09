@@ -152,8 +152,8 @@ EOF
 | 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | ✅ 2026-07-09 (89 brutos → 83 tras dedup → 24 escritas con web; ≈59 en nota) |
 | 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | ✅ 2026-07-09 (≈53 brutos → ~37 tras dedup → 25 escritas; resto en nota) |
 | 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | ✅ 2026-07-09 (CSV oficial 89 → 16 en Ourense → 13 escritas; ~73 son de Lugo) |
-| 12 | DOP Jamón de Teruel | Teruel → `teruel.md` (sección nueva) | Consejo (jamondeteruel.com), secaderos | pendiente |
-| 13 | DOP Aceite del Bajo Aragón + Melocotón de Calanda | Teruel → `teruel.md` (sección nueva) | Consejos de ambas DOP | pendiente |
+| 12 | DOP Jamón de Teruel | Teruel → `teruel.md` (sección nueva) | Consejo (jamondeteruel.com), secaderos | ✅ 2026-07-09 (47 marcas → 23 secaderos escritos; distribuidores/grandes grupos excluidos) |
+| 13 | DOP Aceite del Bajo Aragón + Melocotón de Calanda | Teruel → `teruel.md` (sección nueva) | Consejos de ambas DOP | ✅ 2026-07-09 (27 aceite→15 Teruel + 2 melocotón; 10 aceite y 3 melocotón son de Zaragoza) |
 
 ## Estado
 
@@ -270,6 +270,19 @@ EOF
   **Dominio do Bibei** es Ribeira Sacra (Manzaneda), tratado aquí. ⚠ Colisión de
   marca «Alodio» entre Bodegas Costoya y Adega Cachín (ambas A Teixeira). Truco:
   muchos consejos exponen un CSV/endpoint de descarga aunque la web sea JS.
+- 2026-07-09: **lotes 12 y 13 (Teruel) cerrados → primera ola COMPLETA (1–13).**
+  Lote 12: «Nuestra Gente» del consejo del jamón trae las marcas con web; 47
+  enlaces → filtrados distribuidores y grandes grupos (Espuña, Noel, Vall
+  Companys, Eroski, Térvalis-Airesano, Arco Iris, La Garriga, Los Alcores…) y los
+  ya listados (Rokelin, Las Torres, Albarracín, La Serranía, Aragonia, Sierra
+  Palomera) → 23 secaderos net-new con web (municipio a confirmar en su mayoría).
+  ⚠ **Centelles y Buj** aparece en Jamón de Teruel y en DOP Jabugo (lote 5):
+  cuidar duplicado entre provincias. Lote 13: página de productores del Aceite del
+  Bajo Aragón con dirección/tel/marca → 15 almazaras de Teruel (10 son de
+  Zaragoza, pista para `zaragoza.md`); melocotón comparte cooperativas con el
+  aceite (una sola fila) + 2 frutícolas específicas; 3 comercializadoras de
+  melocotón son de Zaragoza. `teruel.md` (que estaba sin commitear de la pasada de
+  capitales) queda versionado con estas dos secciones nuevas.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
