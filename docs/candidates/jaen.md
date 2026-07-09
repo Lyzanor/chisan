@@ -59,3 +59,98 @@
   <https://www.fincaalamillosdelprior.com/>. También en Correos Market.
 - [ ] **El Torito Bravo** — Aceite (cosecha temprana, picual). Campillo de Arenas
   (paraje «Los Praillos»). <https://www.eltoritobravo.com/>.
+
+## DOP Sierra de Segura + DOP Sierra de Cazorla (aceite, lote 8 de do-huecos)
+
+> Fuentes de partida (leídas del registro oficial vía navegador): directorio de
+> almazaras DOP Sierra de Segura
+> (<https://dosierradesegura.com/directory-asociados/categories/almazaras/>, 24
+> almazaras con municipio y teléfono) + almazaras DOP Sierra de Cazorla
+> (<https://www.desierracazorla.es/almazaras/>, 10 almazaras con web y teléfono).
+> Dedup 2026-07-09 por nombre/dominio. **Dups reales:** Potosí 10 (Orcera, Segura);
+> Ntra. Sra. de la Encarnación (Peal), Aceites Vadolivo/Hacienda Vadolivo y La
+> Bética Aceitera (Cazorla). Municipio = donde está la almazara.
+>
+> ⚠ **Homónimos (el dedup por nombre da falsos positivos; son entidades
+> distintas):** «S.C.A. La Vicaría» (almazara, Puente de Génave) ≠ «Quesería
+> Cortijo La Vicaría» (ya en CSV, mismo pueblo); los dos «San Isidro Labrador»
+> (Benatae y Siles) ≠ el de Huelma (Sierra Mágina, ya en CSV); «San Marcos» (Beas)
+> ≠ «Coop. Hortofrutícola San Marcos» (Torres, ya en CSV); «San Francisco» (Arroyo
+> del Ojanco) ≠ «Oleícola San Francisco» (Begíjar, ya en CSV) ≠ «San Francisco»
+> (Albanchez, lote 7). Cuidar slug/municipio al integrar.
+>
+> **Corte del lote (regla de tope 15–25):** 30 net-new (23 Segura + 7 Cazorla).
+> Escritos 25 (7 Cazorla + 18 Segura); el resto de Segura queda en la nota final.
+
+### DOP Sierra de Cazorla (7)
+
+- [ ] **S.C.A. Santo Tomás Apóstol** — Aceite. Santo Tomé. Marcas «La Vega Santo
+  Tomé» / «Estados Santo Tomé». <https://www.cooperativasantotomas.es/> ·
+  953 736 010.
+- [ ] **S.C.A. Aceites Cazorla** — Aceite. Cazorla. Marca «Azorla».
+  <https://aceitescazorla.com/> · 953 724 031.
+- [ ] **Aceites Guadalentín S.L.** — Aceite. Pozo Alcón. Marca «Olizumo».
+  <https://www.aceitesguadalentin.com/> · 953 738 035.
+- [ ] **S.C.A. La Unión de Chilluévar** — Aceite. Chilluévar. Marca «Cañamares».
+  <https://www.scalauniondechilluevar.com/> · 953 717 016.
+- [ ] **Casería de Santa Julia (Aceitex)** — Aceite. Peal de Becerro.
+  <https://aceitexp.com/> · 953 243 195.
+- [ ] **Almazara Rotalaya (Explot. Agro. Trame)** — Aceite. Quesada.
+  <https://www.aceitesrotalaya.com/> · 953 281 584.
+- [ ] **S.C.A. Ntra. Sra. de la Cabeza** — Aceite. Huesa. Marca «Hueoliva».
+  <https://tienda.aceitehueoliva.es/> · 953 715 403. Tienda online →
+  `Venta online=sí`.
+
+### DOP Sierra de Segura (18)
+
+> Teléfonos del registro del consejo; web añadida en enriquecimiento para las
+> marcas con dominio propio localizado (el resto, «web: confirmar»).
+
+- [ ] **Oro Tradicional S.L.** — Aceite (cosecha temprana, olivar de montaña).
+  Beas de Segura. <https://orotradicional.com/> · 600 314 591. Tienda online →
+  `Venta online=sí`.
+- [ ] **S.C.A. San Juan de la Cruz** — Aceite. Beas de Segura. 953 424 803. Web:
+  confirmar.
+- [ ] **S.C.A. San Marcos** — Aceite. Beas de Segura. 953 424 805. Web: confirmar.
+- [ ] **S.C.A. Santa Teresa de Jesús** — Aceite. Beas de Segura. 628 904 574. Web:
+  confirmar.
+- [ ] **S.C.A. Agrícola Ntra. Sra. Virgen del Campo** — Aceite. Génave.
+  953 493 224. Web: confirmar.
+- [ ] **Sierra de Génave S.C.A.** — Aceite (ecológico, cert. CAAE). Génave. Marca
+  «Oro de Génave». <https://www.sierradegenave.com/> · 953 493 153. ⚠ Comercializa
+  vía la cooperativa de 2º grado Olivar de Segura; confirmar venta con marca
+  propia.
+- [ ] **S.C.A. San Juan Bautista** — Aceite. Puente de Génave. 953 435 316. Web:
+  confirmar.
+- [ ] **S.C.A. La Vicaría** — Aceite. Puente de Génave. 953 435 129. Web:
+  confirmar. (⚠ homónimo con la quesería del mismo pueblo, ver arriba.)
+- [ ] **S.C.A. San Isidro Labrador (Benatae)** — Aceite. Benatae. 953 482 010.
+  Web: confirmar.
+- [ ] **S.C.A. San Isidro Labrador (Siles)** — Aceite. Siles. 953 490 054. Web:
+  confirmar.
+- [ ] **Aceites el Carrascal S.A.** — Aceite. Torres de Albanchez. 656 904 570.
+  Web: confirmar.
+- [ ] **S.C.A. Virgen del Campo (Chorro de Oro)** — Aceite. Torres de Albanchez.
+  Marca «Chorro de Oro». <https://aceiteschorrodeoro.es/>.
+- [ ] **Oleofer S.L.** — Aceite. La Puerta de Segura. 953 487 173. Web: confirmar.
+- [ ] **S.C.A. Agrosegura** — Aceite. La Puerta de Segura. 953 486 423. Web:
+  confirmar.
+- [ ] **S.C.A. San Francisco** — Aceite. Arroyo del Ojanco. 953 420 104. Web:
+  confirmar.
+- [ ] **Cortijo La Zarza** — Aceite (finca, picual). Arroyo del Ojanco.
+  <https://cortijolazarza.com/> · 651 505 486.
+- [ ] **S.C.A. Gutamarta** — Aceite. Cortijos Nuevos (Segura de la Sierra).
+  953 496 279. Web: confirmar.
+- [ ] **The Green Gold Olive Oil Company** — Aceite (premium). Hornos de Segura.
+  Marca «Oh!». <https://ggoliveoilcompany.com/>.
+
+> **Resto de Segura (siguiente corte — datos ya capturados):**
+> «S.C.A San Bartolomé» (Villarrodrigo, 953 484 158; tag solo «Almazaras»,
+> confirmar marca propia), «S.C.A Ntra. Sra. de los Milagros» (municipio a
+> confirmar), «S.C.A. Ntra. Sra. De la Asunción» (municipio a confirmar),
+> «S.C.A Ntra. Sra. de Nazaret» (Chiclana de Segura, 953 466 016).
+>
+> ⚠ **Excluido (gran grupo):** «Jaencoop Grupo Cooperativo» (Puente de Génave) es
+> el mayor grupo cooperativo aceitero de la provincia (2º grado); regla dura de
+> grandes grupos industriales → no crear fila (sus cooperativas de base sí pueden
+> entrar por separado si venden con marca propia).

@@ -148,7 +148,7 @@ EOF
 | 5 | DOP Jabugo + secaderos Sierra de Aracena | Huelva → `huelva.md` | Consejo DOP Jabugo, industrias inscritas | ✅ 2026-07-09 (28 brutos → 26 tras dedup → 16 escritos; ~10 grupos/mataderos excluidos) |
 | 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | ✅ 2026-07-09 (31 brutos → 24 tras dedup → 13 escritos + 8 coops + 3 dudosas en nota; enriquecido) |
 | 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | ✅ 2026-07-09 (18 brutos → 16 tras dedup → 16 escritos) |
-| 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | pendiente |
+| 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | ✅ 2026-07-09 (34 brutos → 30 tras dedup → 25 escritos + 4 resto + 1 excluido; corte por tope) |
 | 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | pendiente |
 | 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | pendiente |
 | 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | pendiente |
@@ -228,6 +228,19 @@ EOF
   (Jabugo) sin web confirmada (posible confusión con Ibéricos Benito de Arahal).
   Las bodegas pequeñas de Bollullos (Camacho, Acosta, Juncales, J. y M. Martín,
   Escolar, Manzanillera) no tienen web localizable: marcadas «sin web, confirmar».
+- 2026-07-09: **lote 8 (DOP Sierra de Segura + DOP Sierra de Cazorla) cerrado.**
+  Registros leídos del **directorio oficial vía navegador** (Chrome): Segura
+  `dosierradesegura.com` (24 almazaras con municipio+tel) y Cazorla
+  `desierracazorla.es` (10 con web+tel). 30 net-new → escritos 25 (7 Cazorla +
+  18 Segura), 4 Segura en «resto» y Jaencoop excluido (gran grupo). Aprendizajes:
+  (a) el dedup por nombre da **muchos falsos positivos por homónimos** en Jaén
+  (varios «San Isidro Labrador», «San Francisco», «San Marcos», «La Vicaría» en
+  municipios distintos) → verificados uno a uno, dup real solo Potosí 10 (Segura)
+  y Encarnación/Vadolivo/La Bética (Cazorla); (b) las almazaras de Cazorla traen
+  web propia en el registro (10/10); las de Segura solo tel, enriquecidas las
+  marcas notables (Oro Tradicional, Sierra de Génave, Cortijo La Zarza, The Green
+  Gold «Oh!», Chorro de Oro); (c) municipio de The Green Gold resuelto: Hornos de
+  Segura.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
