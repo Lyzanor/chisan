@@ -149,7 +149,7 @@ EOF
 | 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | ✅ 2026-07-09 (31 brutos → 24 tras dedup → 13 escritos + 8 coops + 3 dudosas en nota; enriquecido) |
 | 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | ✅ 2026-07-09 (18 brutos → 16 tras dedup → 16 escritos) |
 | 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | ✅ 2026-07-09 (34 brutos → 30 tras dedup → 25 escritos + 4 resto + 1 excluido; corte por tope) |
-| 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | pendiente |
+| 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | ✅ 2026-07-09 (89 brutos → 83 tras dedup → 24 escritas con web; ≈59 en nota) |
 | 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | pendiente |
 | 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | pendiente |
 | 12 | DOP Jamón de Teruel | Teruel → `teruel.md` (sección nueva) | Consejo (jamondeteruel.com), secaderos | pendiente |
@@ -241,6 +241,16 @@ EOF
   marcas notables (Oro Tradicional, Sierra de Génave, Cortijo La Zarza, The Green
   Gold «Oh!», Chorro de Oro); (c) municipio de The Green Gold resuelto: Hornos de
   Segura.
+- 2026-07-09: **lote 9 (DO Ribeiro) cerrado.** `ourense.md` creado. Registro
+  grande (89 adegas/colleiteiros en `ribeiro.wine`); leído vía navegador y
+  **enriquecido en el mismo paso**: web propia, municipio (de la dirección real,
+  no la sede del consejo) y coordenadas extraídos de cada ficha con `fetch`
+  same-origin en lote. Escritas 24 adegas consolidadas con web; ≈59 (colleiteiros)
+  en nota para cortes siguientes. Aprendizajes: (a) las fichas del consejo traen
+  web+dirección+coords → gran atajo para enriquecer Galicia; (b) ⚠ **Casar de
+  Vide** es del Grupo Matarromera y **GRM** es Grupo Reboreda-Morgadío (grupos
+  grandes) → marcados; (c) ⚠ **Dominio do Bibei** figura en Ribeiro pero es
+  sobre todo Ribeira Sacra → lote 11, cuidar dup.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
