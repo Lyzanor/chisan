@@ -145,9 +145,9 @@ EOF
 | 2 | DOP Baena + Priego de Córdoba (aceite) | Córdoba → `cordoba.md` | Consejos DOP Baena y DOP Priego de Córdoba | ✅ 2026-07-09 (33 brutos → 29 tras dedup → 24 escritos; 4 envasadoras Priego diferidas) |
 | 3 | DOP Montoro-Adamuz + Lucena (aceite) | Córdoba → `cordoba.md` | Consejos de ambas DOP | ✅ 2026-07-09 (~15 brutos → 11 tras dedup → 11 escritos) |
 | 4 | DOP Los Pedroches (jamón) | Córdoba → `cordoba.md` | Consejo DOP Los Pedroches, operadores inscritos | ✅ 2026-07-09 (20 brutos → 8 tras dedup → 8 escritos) |
-| 5 | DOP Jabugo + secaderos Sierra de Aracena | Huelva → `huelva.md` | Consejo DOP Jabugo, industrias inscritas | pendiente |
-| 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | pendiente |
-| 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | pendiente |
+| 5 | DOP Jabugo + secaderos Sierra de Aracena | Huelva → `huelva.md` | Consejo DOP Jabugo, industrias inscritas | ✅ 2026-07-09 (28 brutos → 26 tras dedup → 16 escritos; ~10 grupos/mataderos excluidos) |
+| 6 | DO Condado de Huelva (vino y vinagre) | Huelva → `huelva.md` | Consejo Regulador Condado de Huelva | ✅ 2026-07-09 (31 brutos → 24 tras dedup → 16 escritos + 8 coops en nota) |
+| 7 | DOP Sierra Mágina (aceite) | Jaén → `jaen.md` | Consejo (sierramagina.org), almazaras | ✅ 2026-07-09 (18 brutos → 16 tras dedup → 16 escritos) |
 | 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | pendiente |
 | 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | pendiente |
 | 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | pendiente |
@@ -199,6 +199,23 @@ EOF
   cooperativo con marca de consumo fuerte → listado con ⚠, decisión de tamaño
   diferida a integración; (c) «La Embajada del Jamón» posible comercializadora,
   confirmar secadero propio.
+- 2026-07-09: **lotes 5, 6 y 7 cerrados** (Huelva y Jaén; `huelva.md` y `jaen.md`
+  creados). **Nota de método:** los registros oficiales de estos tres consejos
+  (`dopjabugo.es`, `docondadodehuelva.es`, `sierramagina.org`) bloquean el fetch
+  anónimo (403/404) y los dos MCP de navegador no estaban disponibles (extensión
+  Chrome sin conectar; Control Chrome sin permiso de automatización de macOS). Se
+  reconstruyeron desde: la página `/en/bodegas/` de Jabugo (sí responde, 28
+  empresas), directorio Apolo y Baco para el Condado (31 bodegas) y buscador +
+  `degustajaen`/`aove.sierramagina.org` para Sierra Mágina (16 marcas).
+  Aprendizajes: (a) **lote 5 Jabugo** — muchas inscritas son **grandes grupos**
+  (ElPozo, Cinco Jotas/Sánchez Romero Carvajal, Loriente Piqueras, Montesierra,
+  Industrias Reunidas) o **mataderos** B2B → excluidos por regla dura; quedan 16
+  secaderos familiares. Falso positivo de dedup: «Jamones Lazo» matcheó USISA por
+  «sa**lazo**nera» (es NEW). (b) **lote 6 Condado** — el consejo ampara también
+  Vinagre y Vino Naranja del Condado (mismas bodegas): anotar al verificar; 8
+  cooperativas van en nota (confirmar marca vs granel). (c) **lote 7 Sierra
+  Mágina** — casi todo cooperativas con marca propia de AOVE; listadas con su
+  marca comercial para facilitar encontrar web en verificación.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
