@@ -38,11 +38,8 @@ a confirmar al abrir cada lote.
 | DOP Jamón de Teruel | Teruel | 10 charcuterías en toda la provincia | ~30 secaderos |
 | DOP Aceite del Bajo Aragón + Melocotón de Calanda | Teruel | 7 aceites (1 en núcleo) | ~40 almazaras |
 
-Segunda ola (huecos medios, no abrir hasta cerrar la primera): Utiel-Requena y
-Arroz de Valencia (Valencia), Montes de Toledo (Toledo/Ciudad Real),
-Arzúa-Ulloa/Tetilla (A Coruña), queso manchego de Cuenca, DO Navarra (rural),
-DOs insulares de Tenerife, Ribera del Duero soriana, Cariñena/Campo de
-Borja/Calatayud (Zaragoza).
+Segunda ola: planificada el 2026-07-09 tras cerrar la primera (lotes 1–13).
+Ver **Diagnóstico segunda ola** y **Worklist de lotes (segunda ola)** más abajo.
 
 Bien cubiertas — no buscar por ahí: Rioja, Ribera del Duero burgalesa, Toro,
 Bierzo, Rías Baixas, Priorat/Montsant (Rutes del Vi ya encolado), Penedès/Cava,
@@ -154,6 +151,65 @@ EOF
 | 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | ✅ 2026-07-09 (CSV oficial 89 → 16 en Ourense → 13 escritas; ~73 son de Lugo) |
 | 12 | DOP Jamón de Teruel | Teruel → `teruel.md` (sección nueva) | Consejo (jamondeteruel.com), secaderos | ✅ 2026-07-09 (47 marcas → 23 secaderos escritos; distribuidores/grandes grupos excluidos) |
 | 13 | DOP Aceite del Bajo Aragón + Melocotón de Calanda | Teruel → `teruel.md` (sección nueva) | Consejos de ambas DOP | ✅ 2026-07-09 (27 aceite→15 Teruel + 2 melocotón; 10 aceite y 3 melocotón son de Zaragoza) |
+
+## Diagnóstico segunda ola (snapshot 2026-07-09)
+
+Medido sobre `data/csv/**` al cerrar la primera ola. Mismas reglas duras y mismo
+flujo por lote que la primera; los tamaños de registro son aproximados, a
+confirmar al abrir cada lote.
+
+| Hueco | Provincia | Cobertura actual | Registro aprox. |
+|---|---|---|---|
+| DOP Montes de Toledo (aceite) | Toledo | 9 aceites en toda la provincia | ~50 almazaras (parte toledana) |
+| DOP Montes de Toledo + Aceite Campo de Montiel | Ciudad Real | 7 aceites | decenas |
+| DOP Arzúa-Ulloa + Queixo Tetilla | A Coruña | 19 queserías (15 filas en comarca Arzúa-Melide) | ~20 queserías DOP en la provincia |
+| DOP Queso Manchego (parte conquense) | Cuenca | 13 queserías | decenas inscritas |
+| 5 DO insulares (Tacoronte-Acentejo, Valle Güímar, Valle Orotava, Ycoden-Daute-Isora, Abona) | S.C. Tenerife | 28 bodegas | ~80–100 inscritas |
+| DO Navarra (bodegas, huecos rurales) | Navarra | 30 bodegas | ~90 inscritas |
+| DO Cariñena + Campo de Borja + Calatayud | Zaragoza | 40 bodegas (las grandes ya están) | ~100 entre las tres |
+| DO Utiel-Requena + DOP Arroz de Valencia | Valencia | 42 filas en la zona U-R (todas las categorías); 8 menciones de arroz | ~90 bodegas + molinos de arroz |
+| Ribera del Duero soriana | Soria | 17 bodegas | ~25 en la parte soriana |
+
+Colas de la primera ola con **datos ya en mano** (lotes baratos): Ribeira Sacra
+de Lugo (~73 adegas del CSV oficial volcado en el lote 11), empresas zaragozanas
+del Bajo Aragón/Melocotón (13, capturadas en el lote 13), corte 2 del Ribeiro
+(~59 colleiteiros), resto de Valdeorras (~19) y Monterrei (12).
+
+**Mini-colas que NO abren lote** (ya están anotadas con datos en su fichero de
+candidatos; se resuelven en fase de integración): resto Segura (4, en `jaen.md`),
+envasadoras de Priego (4, en `cordoba.md`), cooperativas del Condado (8, en
+`huelva.md`), cooperativas de Montilla-Moriles (6, en `cordoba.md`).
+
+## Worklist de lotes (segunda ola)
+
+Primero las colas con datos en mano (14–17), después descubrimiento nuevo
+ordenado por tamaño de hueco (18–26).
+
+| Lote | Denominación / cola | Provincia → destino | Fuente de partida | Estado |
+|---|---|---|---|---|
+| 14 | DO Ribeira Sacra — adegas de Lugo (cola lote 11) | Lugo → `lugo.md` (sección nueva) | CSV oficial ya volcado (`ribeirasacra.org/bodegas_csv.php`) | pendiente |
+| 15 | Aceite Bajo Aragón + Melocotón de Calanda — empresas de Zaragoza (cola lote 13) | Zaragoza → `zaragoza.md` (nuevo) | Datos capturados en lote 13 (aceitedelbajoaragon.es, melocotondecalanda.com) | pendiente |
+| 16 | DO Ribeiro — corte 2 (colleiteiros restantes, ~59) | Ourense → `ourense.md` | Fichas `ribeiro.wine` (método fetch del lote 9) | pendiente |
+| 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | pendiente |
+| 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (mtoledo.org), almazaras/envasadoras | pendiente |
+| 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejos de ambas DOP | pendiente |
+| 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | Consejos (arzua-ulloa.org, queixotetilla.org); solo operadores de A Coruña | pendiente |
+| 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (quesomanchego.es), queserías inscritas; solo Cuenca | pendiente |
+| 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | Consejos insulares / Casa del Vino de Tenerife | pendiente |
+| 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (sección nueva) | Consejo (navarrawine.com), bodegas inscritas | pendiente |
+| 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | Consejos de las tres DO | pendiente |
+| 25 | DO Utiel-Requena + DOP Arroz de Valencia | Valencia → `valencia.md` (nuevo) | Consejos (utielrequena.org, arrozdevalencia.org) | pendiente |
+| 26 | Ribera del Duero soriana — resto del registro | Soria → `soria.md` (nuevo) | Consejo Ribera del Duero, filtro municipios sorianos | pendiente |
+
+Avisos ya conocidos para esta ola: (a) lote 14 — cruzar contra `lugo.md`
+existente (pasada de capitales, aún sin commitear) antes de escribir; (b) lote
+15/24 comparten destino `zaragoza.md`: el que abra segundo añade sección sin
+tocar la del primero; (c) lote 20 — Tetilla ampara toda Galicia: solo operadores
+de A Coruña, anotar el resto como pista sin abrir; (d) lote 21 — riesgo alto de
+homónimos de queserías manchegas entre Cuenca/Toledo/Ciudad Real/Albacete
+(cuidar slug y provincia); (e) lote 26 — hueco menor: si al abrir el registro la
+parte soriana ya está ≥80% cubierta, cerrarlo como «sin hueco real» y no forzar
+candidatos.
 
 ## Estado
 
@@ -283,6 +339,17 @@ EOF
   aceite (una sola fila) + 2 frutícolas específicas; 3 comercializadoras de
   melocotón son de Zaragoza. `teruel.md` (que estaba sin commitear de la pasada de
   capitales) queda versionado con estas dos secciones nuevas.
+- 2026-07-09: **segunda ola planificada** (lotes 14–26, ningún lote abierto).
+  Diagnóstico medido sobre los CSV: los huecos grandes son aceite de Montes de
+  Toledo (9 aceites en Toledo, 7 en CR), quesos Arzúa-Ulloa/Tetilla (A Coruña),
+  manchego de Cuenca y las 5 DO insulares de Tenerife (28 bodegas vs ~80–100
+  inscritas). Utiel-Requena resultó **más cubierto de lo esperado** (42 filas en
+  la zona) → baja prioridad (lote 25); Ribera soriana ya tiene 17 bodegas →
+  lote 26 con permiso explícito de cerrarse como «sin hueco real». Lotes 14–17
+  son colas de la primera ola con datos en mano (baratos). Las mini-colas
+  (Segura, envasadoras Priego, coops Condado/Montilla) NO abren lote: se
+  resuelven en integración. Reglas duras y flujo por lote: los mismos de la
+  primera ola.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
