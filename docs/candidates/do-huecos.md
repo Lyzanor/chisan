@@ -151,7 +151,7 @@ EOF
 | 8 | DOP Sierra de Segura + Sierra de Cazorla (aceite) | Jaén → `jaen.md` | Consejos de ambas DOP | ✅ 2026-07-09 (34 brutos → 30 tras dedup → 25 escritos + 4 resto + 1 excluido; corte por tope) |
 | 9 | DO Ribeiro | Ourense → `ourense.md` | Consejo (ribeiro.wine), adegas inscritas | ✅ 2026-07-09 (89 brutos → 83 tras dedup → 24 escritas con web; ≈59 en nota) |
 | 10 | DO Valdeorras + DO Monterrei | Ourense → `ourense.md` | Consejos de ambas DO | ✅ 2026-07-09 (≈53 brutos → ~37 tras dedup → 25 escritas; resto en nota) |
-| 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | pendiente |
+| 11 | DO Ribeira Sacra (solo municipios ourensanos) | Ourense → `ourense.md` | Consejo Ribeira Sacra; cruzar con `lugo.md` sin abrir Lugo | ✅ 2026-07-09 (CSV oficial 89 → 16 en Ourense → 13 escritas; ~73 son de Lugo) |
 | 12 | DOP Jamón de Teruel | Teruel → `teruel.md` (sección nueva) | Consejo (jamondeteruel.com), secaderos | pendiente |
 | 13 | DOP Aceite del Bajo Aragón + Melocotón de Calanda | Teruel → `teruel.md` (sección nueva) | Consejos de ambas DOP | pendiente |
 
@@ -261,6 +261,15 @@ EOF
   Ordóñez** (négociant/grupo Málaga) y **Terras do Cigarrón** (grupo Adegas
   Galegas/Martín Códax) marcados por posible grupo; (c) Tabú es de Oímbra (no
   Verín), corregido.
+- 2026-07-09: **lote 11 (DO Ribeira Sacra, municipios ourensanos) cerrado.**
+  Chrome se cayó a mitad, pero se localizó el **endpoint CSV oficial del consejo**
+  (`ribeirasacra.org/bodegas_csv.php?idioma=es`, delimitador `;`, provincia
+  embebida en la dirección). Filtrado a Ourense: 16 adegas (subzonas Ribeiras do
+  Sil, Quiroga-Bibei y 2 en A Peroxa); 3 dups → 13 escritas. **~73 adegas son de
+  Lugo** → pista para `lugo.md`, sin abrirlo. Resuelto el cruce del lote 9:
+  **Dominio do Bibei** es Ribeira Sacra (Manzaneda), tratado aquí. ⚠ Colisión de
+  marca «Alodio» entre Bodegas Costoya y Adega Cachín (ambas A Teixeira). Truco:
+  muchos consejos exponen un CSV/endpoint de descarga aunque la web sea JS.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,

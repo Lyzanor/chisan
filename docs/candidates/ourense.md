@@ -147,3 +147,49 @@
 > (O Cabildo), Quinta Soutullo, Ramón Bigotes, Serra de Alén, Tapias Mariñán,
 > Terra de Godello, Vinos Lara. Valdeorras — las bodegas del registro completo
 > (~43) que no están en el PDF resumido (volcar del listado oficial del consejo).
+
+## DO Ribeira Sacra — municipios ourensanos (lote 11 de do-huecos)
+
+> Fuente de partida: **CSV oficial del Consello Regulador** (descarga
+> `ribeirasacra.org/bodegas_csv.php`, ~89 adegas con dirección, subzona, marcas,
+> web y teléfono). Filtrado a **provincia de Ourense** (concellos con «(Ourense)»
+> en la dirección): 16 adegas, casi todas en la subzona **Ribeiras do Sil** (más
+> Quiroga-Bibei y un par en A Peroxa). Dedup 2026-07-09. **Ya en el CSV
+> (excluidas):** Adega Ponte da Boga (Castro Caldelas), Adega Vella (A Teixeira),
+> Ronsel do Sil (Parada de Sil). Quedan **13 net-new**. El resto del registro
+> (~73 adegas) es de **provincia de Lugo** → no se abre aquí; anotar como pista
+> para `lugo.md` sin tocarlo.
+
+- [ ] **Dominio do Bibei** — Bodega. Manzaneda (subzona Quiroga-Bibei).
+  <https://www.dominiodobibei.com/> · 670 704 028. Marcas Lacima, Lalama, Lapola,
+  Lapena… Referencia de alta gama. ⚠ Resuelve el cruce del lote 9: figuraba en el
+  registro Ribeiro pero su casa está aquí (Ribeira Sacra) → tratar en esta fila,
+  no duplicar con Ribeiro.
+- [ ] **Envínate** — Bodega. A Teixeira (Ribeiras do Sil). <https://envinate.es/> ·
+  682 207 160. Marcas «Lousas» (proyecto de referencia); equipo también en
+  Canarias/Almansa, la base gallega es A Teixeira.
+- [ ] **Adega do Mollón** — Bodega. Nogueira de Ramuín (Ribeiras do Sil).
+  <https://www.pombares.com/> (marca «Pombares») · 988 222 272.
+- [ ] **Bodegas Costoya (Temera)** — Bodega. A Teixeira (Ribeiras do Sil).
+  <https://www.temera.com/> · 600 417 273. Marcas Alodio (varias), Fraga Fonda,
+  Noite Pecha. ⚠ Ojo colisión de marca «Alodio» con Adega Cachín (abajo).
+- [ ] **Adega Cachín** — Bodega. A Teixeira (Ribeiras do Sil).
+  <https://www.adegacachin.es/> · 619 859 281. Marcas Peza do Rei, Do Pereira,
+  Alodio.
+- [ ] **Caneiro Núñez, Carlos** — Bodega. Parada de Sil (Ribeiras do Sil).
+  <https://sites.google.com/view/bodegacaneiro/inicio> · 646 009 744. Marcas
+  Costa do Sil, Viña Dariz.
+- [ ] **Spanish Wines by Carlos Rodríguez (Aba Solleira)** — Bodega. A Peroxa.
+  <https://www.abasolleira.com/> · 653 328 458. Marca «Aba Solleira».
+- [ ] **Seoane Novelle, Javier (Fazenda Prádio)** — Bodega. A Peroxa.
+  <https://www.fazendapradio.com/> · 626 554 003.
+- [ ] **Alvarez Rodríguez, Juan Alberto (Adega Sollío)** — Bodega. A Teixeira
+  (Ribeiras do Sil). Marca «Sollío». · 639 787 637. Web propia a confirmar.
+- [ ] **Vázquez Rodríguez, José** — Bodega. A Teixeira (Ribeiras do Sil). Marcas
+  «Século», «Triscelle». · 629 818 701. Web propia a confirmar.
+- [ ] **Leirabella** — Bodega. Parada de Sil (Sacardebois, Ribeiras do Sil).
+  Marcas «Bellaleira», «Martín Lagarón». · 630 882 558. Web propia a confirmar.
+- [ ] **Pereimos 2007 (A Corga)** — Bodega. A Pobra de Trives (Quiroga-Bibei).
+  Marcas «Corga», «Erea». · 607 504 115. Web propia a confirmar.
+- [ ] **Os Pacios** — Bodega/colleiteiro. A Teixeira (Abeleda, Ribeiras do Sil).
+  · 684 037 926. Producción pequeña (5.000 kg); confirmar marca propia y venta.
