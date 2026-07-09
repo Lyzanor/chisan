@@ -192,7 +192,7 @@ ordenado por tamaño de hueco (18–26).
 | 16 | DO Ribeiro — corte 2 (colleiteiros restantes, ~59) | Ourense → `ourense.md` | Fichas `ribeiro.wine` (método fetch del lote 9) | ✅ 2026-07-09 (89 registro − 30 tratados = 59 → 24 con web propia escritas; ~34 sin dominio en nota corte 3) |
 | 17 | DO Valdeorras (registro completo, resto ~19) + DO Monterrei resto (12) | Ourense → `ourense.md` | Consejo Valdeorras (listado completo) + fichas Monterrei | ◐ 2026-07-09 (Monterrei resto 13 escritas; **Valdeorras resto ~19 DIFERIDO** — listado JS/age-gate, necesita PDF o navegador) |
 | 18 | DOP Montes de Toledo (aceite) — parte toledana | Toledo → `toledo.md` (nuevo) | Consejo (**domontesdetoledo.com**), almazaras/envasadoras | ✅ 2026-07-09 (30 certificados → 7 ya en CSV + 5 son de Ciudad Real → 19 Toledo escritos; pista CR anotada para lote 19) |
-| 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejos de ambas DOP | pendiente |
+| 19 | DOP Montes de Toledo (parte CR) + DOP Aceite Campo de Montiel | Ciudad Real → `ciudad-real.md` (nuevo) | Consejo Montes de Toledo + **coop. 2º grado Campo de Montiel** (el consejo no publica registro) | ✅ 2026-07-09 (**hueco menor del estimado**: 7 netos — 2 Montes de Toledo + 5 socias Campo de Montiel con ⚠ maquila; +3 pistas fuera de DOP; Montes Norte excluido) |
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | Consejos (arzua-ulloa.org, queixotetilla.org); solo operadores de A Coruña | pendiente |
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (quesomanchego.es), queserías inscritas; solo Cuenca | pendiente |
 | 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | Consejos insulares / Casa del Vino de Tenerife | pendiente |
@@ -399,6 +399,29 @@ candidatos.
   bajo la entrada «Coop. Ntra. Sra. de la Antigua de Mora» → escrito con aviso de
   verificar si es operador propio; (d) homónimos de cooperativas «San Sebastián» y
   «Ntra. Sra. de la Antigua» en varios municipios → cuidar slug/municipio.
+- 2026-07-09: **lote 19 (Montes de Toledo parte CR + Campo de Montiel) cerrado.**
+  `ciudad-real.md` creado. **Hueco muy menor del estimado** (el diagnóstico decía
+  «decenas»; salen 7 netos). Montes de Toledo: de los 5 certificados de CR
+  (capturados ya en el lote 18), 1 en CSV (Aceites Malagón), 1 excluido por gran
+  grupo (**Grupo Montes Norte**, ~50 M kg/año, 8 coops), 1 ya presente como bodega
+  (**Coop. El Progreso**, Villarrubia — doble faceta vino/aceite, decidir fila) →
+  **2 netos** (Aceites Moraga/Judisan en Fuente el Fresno; Dehesa El Molinillo en
+  Retuerta del Bullaque). Campo de Montiel: **el consejo no publica registro**
+  (`dopaceitecampodemontiel.es` con «Listado de almazaras» y «Envasadores» vacíos
+  desde 2018; JCCM caída; MAPA solo da la asociación). Vía que funcionó: la
+  **cooperativa de 2º grado** (`campodemontiel.com/socios/`), que agrupa las 6
+  almazaras de la comarca y **comercializa el aceite de todas** → 1 ya en CSV
+  (Fábrica de Aceites San Sebastián) y **5 socias escritas con ⚠ fuerte**: la marca
+  y la tienda son de la 2º grado (ya en CSV), así que probablemente son maquila/B2B
+  → confirmar marca propia antes de integrar o descartarlas por regla dura.
+  Aprendizajes: (a) cuando el consejo no publica registro, la **cooperativa de 2º
+  grado / comercializadora comarcal** es el mejor sustituto, pero cuidado: revela
+  justo que las socias pueden no ser vendibles; (b) **homónimos graves en CR**:
+  «San Gregorio» (Almedina vs Arenales de San Gregorio) y «San Isidro (Labrador)»
+  (Villanueva de la Fuente vs Torrenueva vs Pedro Muñoz) → el dedup por nombre da
+  falsos positivos, comprobar municipio siempre; (c) 3 almazaras reales fuera de
+  ambas DOP (Olivapalacios/Bolaños, Pago Piedrabuena/Ballesteros, COLIVAL/
+  Valdepeñas) anotadas como pista provincial, no como candidatas del lote.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
