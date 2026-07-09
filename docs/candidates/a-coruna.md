@@ -28,10 +28,11 @@
   · 619 604 895 · boqueixoboqueixo@gmail.com. Elaboradora de **Tetilla** y también
   de **Arzúa-Ulloa DOP** (se vende en tiendas gourmet, p. ej. lerueste.com). Sin
   web propia localizada → confirmar canal de venta.
-- [ ] **Lácteos Algra** (Lácteos Algra, S.L.U.) — Lácteos y quesos. As Somozas
-  (Polígono Industrial As Somozas, P-4). · 639 259 430 · info@lacteosalgra.gal.
-  ⚠ el dominio `lacteosalgra.gal` **no resuelve** ahora mismo → buscar web/tienda
-  al verificar.
+- [ ] **Lácteos Algra** (Lácteos Algra, S.L.U.), marca **Queixos Brigantia** —
+  Lácteos y quesos. As Somozas (Polígono Industrial As Somozas, P-4). ·
+  639 259 430 · info@lacteosalgra.gal · <https://queixosbrigantia.es/>.
+  (El dominio `lacteosalgra.gal` del registro de Tetilla no resuelve; la web viva
+  es la de la marca — dato aportado por la pasada `festa-do-queixo.md`, stand B24.)
 
 ### Notas del lote 20
 
@@ -52,6 +53,39 @@
   Arzúa** (`festadoqueixo.org`) reunió en 2025 **80 queixarías inscritas** (de 125
   solicitudes) — muchas más que las DOP. Es la vía realista para ampliar el
   catálogo quesero coruñés; merecería lote propio fuera de esta pasada.
+
+## Festa do Queixo de Arzúa — queixerías coruñesas (pasada `festa-do-queixo.md`)
+
+> Fuente: listaxe oficial de expositores de la **51ª Festa do Queixo** (Arzúa,
+> feb-mar 2026), PDF del Concello en `festadoqueixo.org` (razón social + marca +
+> stand). 96 expositores → 27 ya en CSV gallego. Dedup contra `a-coruna.csv` el
+> 2026-07-09 (cruzando **razón social y marca**, plegando acentos). Estado:
+> **`unverified`**. Ver el ledger de la pasada para las cifras, los excluidos y
+> las pistas de fuera de Galicia.
+
+- [ ] **Queixos Verbas** (Lactear S.A.T.) — Lácteos y quesos. Arzúa (A Curiscada,
+  s/n, 15819). Stand B12.
+- [ ] **Lácteos Bretón** — Lácteos y quesos (**requeixo** artesano, desde 1990).
+  Irixoa (parroquia de Mántaras, lugar de Follente).
+  <http://www.lacteosbreton.com/>. Stand B11 (Natalia Bretón Roca).
+- [ ] **Lácteos O Casal** (Lácteos O'Casal, S.L.) — Lácteos y quesos. San
+  Sadurniño (Ferrolterra). <https://www.lacteosocasal.es/>. Empresa familiar desde
+  1982; la web tiene página de **puntos de venta** → confirmar `Venta online` y
+  canal. Stand B18.
+- [ ] **Queixo Fresco Sillobre** (Mª Alejandra Romero Dopico y Eloy Seijas) —
+  Lácteos y quesos (queixo fresco). Fene (parroquia de Sillobre). Proyecto joven
+  (montado desde cero, ~2024); tiene su propia Festa do Queixo en Sillobre. Sin
+  web propia localizada. Stand B31.
+- [ ] **Granxa Lourán**, marca **Restrebas** — Lácteos y quesos (**requeixo** de
+  vacas en pastoreo del val de Xestoso, desde 2016). Monfero. Se vende vía
+  `seitura.gal`. Web propia a confirmar. Stand B49.
+
+> **Sin rastro digital (zona C de la feria, queixeiros pequeños)** — anotados con
+> lo único que da el PDF; confirmar existencia, concello y venta antes de
+> integrar, o descartar: *José Manuel Vázquez Vázquez* (C1) · *Queixos Celsa*
+> (Guadalupe Doamo Casanova, C2) · *José M. Costoya* (José Manuel Costoya
+> Salgado, C3). Ninguno aparece en buscadores; probablemente artesanos de la
+> comarca de Arzúa-Melide sin presencia web.
 
 ### Pistas para otras provincias (Tetilla ampara toda Galicia)
 

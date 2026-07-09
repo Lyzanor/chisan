@@ -297,3 +297,19 @@
   la nota del lote 10 (alta reciente del registro). Web propia a confirmar.
 - [ ] **Vinos Lara** (Bodega Lara) — Bodega. Verín. · 988 413 831. Familiar
   (Godello/Treixadura/Mencía/Arauxa); marca «Lara Godello». Web propia a confirmar.
+
+## Festa do Queixo de Arzúa (pasada `festa-do-queixo.md`)
+
+> Fuente: listaxe oficial de expositores de la 51ª Festa do Queixo (Arzúa, 2026),
+> PDF del Concello en `festadoqueixo.org`. Dedup contra `ourense.csv` el
+> 2026-07-09 (cruzando razón social y marca): **ya en CSV** — Quesos Feijoo
+> (Celanova), Lácteos da Limia / «Galicia Gourmets» (Xinzo de Limia) y Mel Aialma
+> (Laza). Neto: **1**. Estado: **`unverified`**.
+
+- [ ] **Queixería Gaia** (Queixería Gaia S. Coop. Galega), marca **Gaia Gourmets**
+  — Lácteos y quesos. Xinzo de Limia. <https://gaiagourmets.com/>. Cooperativa
+  desde 2020; **quesos de cabra artesanos** (fresco, confitado, curado, añejo) y
+  quesos de vaca de tradición venezolana. Tiene packs/experiencias en tienda →
+  pista `Venta online=sí`. ⚠ «Gaia Gourmets» nace de la unión de la queixería con
+  la comercializadora *Ysabelle Gourmet* → confirmar que la fila es el productor,
+  no la comercializadora. Stand P4 de la feria.

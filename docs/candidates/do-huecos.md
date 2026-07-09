@@ -441,7 +441,9 @@ candidatos.
   Pontevedra (Cobideza) y Ourense (Quesos da Montaña de Entrimo); (c) la **Festa
   do Queixo de Arzúa** (`festadoqueixo.org`, 80 queixarías inscritas en 2025) es
   mucho mejor cantera para A Coruña que las DOP → merece lote propio fuera de
-  esta pasada.
+  esta pasada. **→ Hecha el mismo día**: ver `docs/candidates/festa-do-queixo.md`
+  (96 expositores, 27 ya en CSV, 7 altas gallegas; la feria resultó **nacional**,
+  no coruñesa, y deja ~34 pistas de productores de otras comunidades).
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
