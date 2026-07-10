@@ -77,27 +77,41 @@
 > `vinosdeabona.com/bodegas-y-vinos/` (16) · DO Ycoden-Daute-Isora vía **portal del
 > Cabildo** `vinosdetenerife.es` (8; su web propia está caída).
 
-### DO Tacoronte-Acentejo (9)
+### DO Tacoronte-Acentejo (9) — ✅ integradas 2026-07-10 (lote 1.1a de `integracion.md`)
 
-- [ ] **Bodegas Cándido Hernández Pío** — Bodega. La Matanza de Acentejo.
-  · 922 513 288 · <https://bodegaschp.es>. Marcas: Balcón Canario, Viña Riquelas,
-  Punta del Sol. ⚠ **La misma empresa figura también en la DO Valle de Güímar como
-  «Bodega Calius»** (mismo teléfono y web) → una sola fila.
-- [ ] **Bodegas Domínguez Cuarta Generación** — Bodega. Tacoronte. · 922 572 435 ·
-  <https://bodegasdominguez.es>.
-- [ ] **Bodega El Mocanero** — Bodega. Tacoronte. · 922 560 762 ·
-  <https://bodegaelmocanero.com>. Marcas: El Mocanero (tinto, maceración carbónica,
-  blanco seco y afrutado).
-- [ ] **Bodega La Isleta** — Bodega. Tegueste. · 922 541 805 · <https://laisleta.es>.
-- [ ] **Bodega Linaje del Pago** — Bodega. El Sauzal. · 687 968 597 ·
-  <https://linajedelpago.com>.
-- [ ] **Bodegas Marba** — Bodega. Tegueste. · 922 638 400 · <https://bodegasmarba.com>.
-- [ ] **Bodega Presas Ocampo** — Bodega. Tacoronte. · 922 571 689 ·
-  <https://presasocampo.com>.
-- [ ] **Winery Burgmann Tenerife** — Bodega. Tacoronte. · 610 750 437 ·
-  <https://burgmannwinery.com>.
-- [ ] **Bodega Zacatín** — Bodega. Santa Úrsula. · 922 301 399 ·
-  <https://bodegazacatin.com>.
+- [x] **Bodegas Cándido Hernández Pío** — **accepted →
+  `bodegas-candido-hernandez-pio-la-matanza-de-acentejo`** (`verificado`,
+  `no comprobado`). La Matanza de Acentejo (C/ Las Limeras 51). La web propia
+  **confirma que Calius es su marca** en la DO Valle de Güímar → **NO se crea fila
+  Calius** (resuelto el ⚠). Sin tienda propia vista.
+- [x] **Bodegas Domínguez Cuarta Generación** — **accepted →
+  `bodegas-dominguez-cuarta-generacion-tacoronte`** (`verificado`,
+  `no comprobado`). C/ Calvario 79, Tacoronte. Web confirma tradición s.XIX.
+- [x] **Bodega El Mocanero** — **accepted → `bodega-el-mocanero-tacoronte`**
+  (`parcial`, `no comprobado`). Los Naranjeros (Tacoronte), desde 1989. Web
+  oficial viva pero solo devuelve cabecera (frames antiguos, /vinos y /contacto
+  dan 404) → sin primario legible.
+- [x] **Bodega La Isleta** — **accepted → `bodega-la-isleta-tegueste`**
+  (`parcial`, `no comprobado`). Web «EN DESARROLLO»: confirma nombre/municipio/
+  contacto, no producción. Tel. corregido al de la web (678 760 156).
+- [x] **Bodega Linaje del Pago** — **accepted →
+  `bodega-linaje-del-pago-el-sauzal`** (`parcial`, `no comprobado`). C/ Herrera
+  85, El Sauzal. Web sobre todo de catas/enoturismo; actividad vía registro DO.
+  Tel. corregido (640 379 564).
+- [x] **Bodegas Marba** — **accepted → `bodegas-marba-tegueste`** (`verificado`,
+  **`Venta online=sí`, `ecommerce`**). Tienda propia funcional (carrito+checkout,
+  Visa/MasterCard/transferencia). Activa desde 1993. Tel. web 639 065 015.
+- [x] **Bodega Presas Ocampo** — **accepted → `bodega-presas-ocampo-tacoronte`**
+  (`verificado`, `no comprobado`). Referente de Tacoronte (1998, viñedos
+  propios). Su web tiene el **certificado TLS mal configurado** (fallo técnico,
+  no baja); vende vía marketplaces de terceros → eso **no** es VO propia.
+- [x] **Winery Burgmann Tenerife** — **accepted →
+  `winery-burgmann-tenerife-tacoronte`** (`verificado`, `no comprobado`). Camino
+  las Viñas 20, Tacoronte, desde 2020; «Shop» del menú = «dónde encontrar», no
+  tienda propia. Tel. corregido al de la web (682 420 064).
+- [x] **Bodega Zacatín** — **accepted → `bodega-zacatin-santa-ursula`**
+  (`parcial`, `no comprobado`). C/ Canal 11, Santa Úrsula; también guachinche.
+  Web propia con conexión rechazada (fallo técnico, enlace conservado).
 
 ### DO Valle de La Orotava (5)
 

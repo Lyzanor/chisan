@@ -63,9 +63,24 @@
 
 ## Worklist
 
-Tamaño objetivo ~12-16 candidatos por lote; los cortes exactos se deciden al
-abrir cada provincia siguiendo sus secciones. Estados: `pendiente` /
+Tamaño objetivo **~10-12 candidatos por lote** (bajado desde 12-16 tras la ronda
+0: cada bodega/almazara cuesta ~3 fetches —identidad+actividad, checkout,
+municipio— más geocodificación, y ~⅔ de las notas de fase A traen algún dato
+erróneo o una decisión no anticipada, así que no se pueden integrar en bloque).
+Los cortes exactos se deciden al abrir cada provincia. Estados: `pendiente` /
 `en curso` / `hecho (fecha, conteos)`.
+
+**Reglas de orden (ronda 0 → aprendizaje):**
+- **Barato antes que voluminoso.** Priorizar ficheros con alta tasa de web
+  propia (verificación rápida, más `verificado`) y las provincias que cierran
+  fichero. El volumen puro es mal criterio de arranque.
+- **Trampas al final.** Los ficheros con muchos ⚠ (grupos sin resolver,
+  municipios «a confirmar») van después, con más oficio acumulado.
+- **Separar «con web» de «sin web» dentro de cada provincia.** Los candidatos
+  sin rastro digital caen casi siempre en `parcial` con solo contacto; agruparlos
+  en el **último lote** de su provincia (o diferirlos) en vez de repartirlos.
+- **Vigilar el equilibrio de categorías del CSV destino** antes de volcar una DO
+  entera: ver la nota de Ourense en la ronda 1.
 
 ### Ronda 0 — pilotos y ficheros pequeños (cierran fichero)
 
@@ -83,13 +98,25 @@ revisar** — es una decisión de purga/mantener sobre una fila existente, no un
 candidato; va a la 2ª pasada junto con los 3 queixeiros «sin rastro digital» de
 la zona C de la feria (`a-coruna.md`).
 
-### Ronda 1 — prioridad 1 del traspaso (volumen, datos ya resueltos)
+### Ronda 1 — reordenada 2026-07-10 (barato→caro, no por volumen)
+
+Orden anterior era Ourense→Córdoba→Tenerife (por volumen). Reordenada a
+**Tenerife→Ourense→Córdoba**: Tenerife tiene 30/31 con web y cierra fichero;
+Córdoba concentra las trampas (19 bloques con ⚠, grupo Pérez Barquero sin
+resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 1.1 | Ourense | Ribeiro corte 1 (24) → 2 lotes; Ribeiro corte 2 (24) → 2; Valdeorras (15) → 1; Monterrei (10+13) → 2; Ribeira Sacra (13) → 1; +1 Festa. Corrección: `pazo-das-tapias-monterrei` | 100 | ~8 | pendiente |
-| 1.2 | Córdoba | Montilla-Moriles (8+14) → 2 lotes (⚠ resolver grupo Pérez Barquero antes de crear filas); Baena (15) → 1; Priego (9) + Lucena (4) → 1; Montoro-Adamuz (7) + Pedroches (8) → 1 | 65 | ~5 | pendiente |
-| 1.3 | S.C. Tenerife | Tacoronte (9) + Orotava (5) → 1 lote; Güímar (4) + Abona (4) + Ycoden (3) + capital (5) + provincia (1) → 1-2. Correcciones: `aguita` (municipio), `bodegas-insulares-licores-tacoronte`, El Penitente→Arautava | 31 | ~2 | pendiente |
+| 1.1 | S.C. Tenerife | **1.1a Tacoronte-Acentejo (9) hecho**; falta 1.1b Orotava (5)+Güímar (4)+Ycoden (3) y 1.1c Abona (4)+capital (6)+correcciones (`aguita` munic., `bodegas-insulares-licores`, El Penitente→Arautava) | 31 | ~3 (1/3) | en curso |
+| 1.2 | Ourense | ⚠ **decisión de producto tomada**: integrar entera pero **por orden de valor** (bodegas con web+tienda primero), asumiendo a conciencia que el CSV pasa a 71% bodegas (125/175). «Sin web» (25) al final. Ribeiro corte 1 (24)→2; corte 2 (24)→2; Valdeorras (15)→1-2; Monterrei (10+13)→2; Ribeira Sacra (13)→1; +1 Festa. Corrección: `pazo-das-tapias-monterrei` | 100 | ~9 | pendiente |
+| 1.3 | Córdoba | Empezar por «Bodegas con web/venta confirmada» (8) → 1; Baena (15)→1-2; Priego (9)+Lucena (4)→1; Montoro-Adamuz (7)+Pedroches (8)→1; «Bodegas del registro, municipio a confirmar» (14, sin web) al final. ⚠ resolver grupo Pérez Barquero antes de crear filas de Montilla-Moriles | 65 | ~6 | pendiente |
+
+> **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
+> El CSV está hoy en 75 filas (26 bodegas, 35%); tras integrar quedaría en 175
+> con 125 bodegas = **71% del catálogo provincial**. Es fiel a la realidad
+> (4 DO, ~300 bodegas inscritas) pero convierte el mapa sin filtrar en una guía
+> de vino. Decisión del usuario (2026-07-10): **integrar entera**, priorizando
+> por valor de compra (bodega con tienda online antes que ficha de registro).
 
 ### Ronda 2 — prioridad 2 del traspaso
 
@@ -123,6 +150,15 @@ la zona C de la feria (`a-coruna.md`).
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.1a — Tenerife, DO Tacoronte-Acentejo (9 bodegas)**: 9
+  altas (4 `verificado`, 5 `parcial`; solo Marba con `Venta online=sí`). Ledger
+  `canarias/santa-cruz-de-tenerife.jsonl` creado (dir `data/evidence/canarias/`
+  nuevo). Resuelto el ⚠ Calius = marca de Cándido Hernández Pío → 1 sola fila.
+  Aprendizajes: muchas webs de bodega isleña son placeholders o JS antiguo
+  (El Mocanero, La Isleta) → `parcial` honesto; fallos TLS/conexión (Presas
+  Ocampo, Zacatín) son técnicos, no bajas (enlace conservado); reventa en
+  marketplaces de terceros ≠ VO propia (Presas Ocampo). Corregidos 3 teléfonos
+  usando el de la web sobre el del registro DO.
 - 2026-07-10 — Plan creado; arranca lote 0.1 (Cuenca) como piloto del flujo.
 - 2026-07-10 — **Lote 0.1 Cuenca hecho**: 3 altas (2 `verificado` + 1 `parcial`;
   Piqmar, Magaceda, López Espada), 7 correcciones aplicadas (1 ya estaba:
