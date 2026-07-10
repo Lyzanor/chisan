@@ -9,6 +9,81 @@
 > **descubrimiento** (fase A); la verificación e integración al CSV es fase
 > aparte y sigue los 6 pasos del README de esta carpeta.
 
+## ⚑ PASADA CERRADA — traspaso a integración (2026-07-10)
+
+Las dos olas (lotes 1–26) están completas y **limpias** (re-dedup contra los CSV
+a 2026-07-10: 8 entradas marcadas `already-present`, 1 duplicado interno y 1
+cruce de provincia corregidos). Quedan **463 candidatos `unverified`** listos
+para la fase de integración (6 pasos del `README.md` de esta carpeta). Los
+aprendizajes de método están destilados en ese mismo README, sección «Cómo
+encontrar el registro real de una DO/DOP».
+
+### Qué integrar, por dónde empezar
+
+| Prioridad | Provincia | Fichero | Abiertos | Por qué |
+|---|---|---|---|---|
+| 1 | Ourense | `ourense.md` | 100 | Mayor volumen; Ribeiro/Valdeorras/Monterrei/R. Sacra con web y concello ya resueltos |
+| 1 | Córdoba | `cordoba.md` | 65 | Montilla-Moriles + 4 DOP de aceite; ⚠ resolver grupo Pérez Barquero antes de crear filas |
+| 1 | S.C. Tenerife | `santa-cruz-de-tenerife.md` | 31 | Hueco más desproporcionado (16 bodegas de la isla vs 89 inscritas); +53 en cola con datos |
+| 2 | Teruel | `teruel.md` | 51 | Jamón DOP + aceite; municipios «a confirmar» en varios secaderos |
+| 2 | Jaén | `jaen.md` | 38 | 3 DOP de aceite; ojo homónimos de cooperativas «San …» |
+| 2 | Lugo | `lugo.md` | 30 | Ribeira Sacra con marcas del CSV oficial del consejo |
+| 2 | Huelva | `huelva.md` | 28 | Jabugo + Condado; 6 bodegas de Bollullos «sin web, confirmar» |
+| 2 | Navarra | `navarra.md` | 26 | Registro INTIA con todo el contacto; +25 en cola |
+| 2 | Valencia | `valencia.md` | 25 | 21 bodegas U-R con contacto + 4 arroceras sin dirección |
+| 2 | Zaragoza | `zaragoza.md` | 25 | 3 DO de vino + aceite/melocotón; datos completos |
+| 3 | Toledo | `toledo.md` | 19 | Montes de Toledo; varias coops sin web |
+| 3 | Ciudad Real | `ciudad-real.md` | 10 | ⚠ 5 son socias de la coop. 2º grado: confirmar marca propia o descartar |
+| 3 | A Coruña | `a-coruna.md` | 7 | 2 DOP + 5 de la Festa do Queixo |
+| 3 | Soria | `soria.md` | 4 | Ribera soriana; 2 con `Venta online=sí` del registro |
+| 3 | Cuenca | `cuenca.md` | 3 | Pocas altas pero **7 correcciones** a filas existentes |
+| 3 | Pontevedra | `pontevedra.md` | 1 | Leite Ulla (Festa do Queixo) |
+
+Consejos de integración: cada fichero lleva su dedup fechado, pero **re-deduplicar
+al integrar** (los CSV avanzan); respetar los ⚠ de grupo/alias de cada entrada;
+las pistas `Venta online=sí` son pistas, la decisión es de integración.
+
+### Correcciones a filas EXISTENTES detectadas por la pasada (no son altas)
+
+Ordenadas por fichero donde está el detalle:
+
+- `huelva.md` → **`jamones-tartessos-huelva`**: municipio «Huelva» pero produce
+  en **Cumbres Mayores** (razón social Hnos. Castaño Fernández, confirmado por
+  dominio).
+- `cuenca.md` → **7 correcciones** en `cuenca.csv`: slug+municipio de
+  `quesera-campo-rus` (es Santa María del Campo **Rus**), 2 webs que apuntan a
+  un directorio ajeno (`gff.co.uk`), razones sociales/marcas de Villadharo
+  (S.A.T. Oveman, marca Cerro del Ángel), La Aldea (Poves Redondo), Parra
+  Jiménez (Don Merendón), Río Mayor (Caracenilla) y Chaves (.es vs .com).
+- `navarra.md` → **`mendiko-aibar-oibar`** es bodega certificada DO Navarra
+  (está como Aceite); **`bodega-otazu-otazu`** municipio Echauri a revisar;
+  razones sociales útiles para 4 filas más.
+- `a-coruna.md` → **`alimentos-ruta-xacobea-o-pino`** pertenece al **Grupo TGT**
+  (mayor quesero de España): revisar con el criterio de grandes grupos.
+- `santa-cruz-de-tenerife.md` → **`aguita`**: la fábrica está en Santa Cruz, no
+  La Orotava; **`bodegas-insulares-licores-tacoronte`**: revisar si procede esa
+  segunda fila; `bodegas-el-penitente-la-orotava` opera hoy como **Arautava**.
+- `zaragoza.md` (lote 24) → **`bodegas-gran-ducay-carinena`** ↔ Grandes Vinos:
+  posible alias, resolver antes de dar de alta Grandes Vinos.
+- `ciudad-real.md` → **`cooperativa-el-progreso-villarrubia-de-los-ojos`** es
+  también operador DOP Montes de Toledo (doble faceta vino/aceite).
+- `soria.md` → 7 filas de `soria.csv` no aparecen en el registro de la DO
+  Ribera del Duero (2 son seguramente Vino de la Tierra; el resto, revisar).
+- `ourense.md` → **`pazo-das-tapias-monterrei`** usa el dominio de su matriz
+  (pazodomar.com); si existe web propia, corregir.
+- `lugo.md` → **`torre-de-nunez-o-corgo`**: sede/planta principal en Conturiz
+  (Lugo); revisar municipio y `Venta online`.
+- `pontevedra` → **`adega-pazo-das-barreiras-salvaterra-de-mino`** tiene la web
+  de Bodegas Villanueva (Ribeiro): **ya hay tarea en curso** para corregirla.
+
+### Cortes pendientes (datos ya capturados, abrir sale barato)
+
+Tenerife 53 (en `santa-cruz-de-tenerife.md`) · Navarra 25 (en `navarra.md`) ·
+Utiel-Requena 13 (en `valencia.md`) · Ribeiro corte 3 ~34 (en `ourense.md`) ·
+Cariñena ~16 (vía organismo de certificación) · DOP Islas Canarias ~9 (en
+`santa-cruz-de-tenerife.md`) · Valdeorras resto ~19 (**diferido**, necesita
+navegador o PDF).
+
 ## Cómo usar este documento
 
 1. Lee **Reglas duras de triaje** y el **Flujo por lote** (una vez).

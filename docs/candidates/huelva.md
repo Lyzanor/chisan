@@ -48,11 +48,11 @@
 - [ ] **Enrique Castaño Guijarro** — Charcutería (jamón DOP Jabugo). Cumbres
   Mayores. <https://www.jamonesenriquecastaño.es/> (punycode
   `xn--jamonesenriquecastao-m7b.es`). Cuatro generaciones.
-- [ ] **Hermanos Castaño Fernández, S.L.** — Charcutería (jamón DOP Jabugo).
-  Cumbres Mayores. <https://www.jamonestartessos.com/> (marca «Tartessos») ·
-  959 710 176. ⚠ **Probable duplicado**: el CSV ya tiene «Jamones Tartessos»
-  (municipio Huelva). Muy posiblemente la misma entidad → verificar antes de crear
-  fila; si coincide, corregir municipio a Cumbres Mayores en la fila existente.
+- [x] **Hermanos Castaño Fernández, S.L.** — **already-present** →
+  `jamones-tartessos-huelva` (limpieza 2026-07-10: el dominio
+  `jamonestartessos.com` coincide exactamente con la fila del CSV). NO crear fila.
+  Queda una **corrección pendiente a la fila existente**: el CSV dice municipio
+  «Huelva» pero la razón social produce en **Cumbres Mayores** (959 710 176).
 - [ ] **Ramos Domínguez, S.L.** — Charcutería (jamón DOP Jabugo). Higuera de la
   Sierra. <https://www.jamonesoroviejo.com/> (marca «Oro Viejo») · 959 196 092.
   Tienda online → `Venta online=sí`.

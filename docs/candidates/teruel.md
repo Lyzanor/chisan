@@ -79,8 +79,9 @@
   <https://www.lamonrealense.com/>.
 - [ ] **Jamones Sierra de Mora** — Charcutería (jamón DOP Teruel). Mora de
   Rubielos (confirmar). <https://www.sierrademora.com/>.
-- [ ] **Jamones Bronchales** — Charcutería (jamón DOP Teruel). Bronchales
-  (confirmar). <https://www.jamonesbronchales.com/>.
+- [x] **Jamones Bronchales** — **already-present** →
+  `jamones-bronchales-sl-bronchales` (limpieza 2026-07-10, dominio coincide;
+  integrado tras escribirse este lote). NO crear fila.
 - [ ] **Torico de Teruel** — Charcutería (jamón DOP Teruel). Teruel (confirmar).
   <https://www.toricoteruel.com/>.
 - [ ] **Campo Dulce Curados** — Charcutería (jamón DOP Teruel). Confirmar
@@ -109,8 +110,9 @@
   <https://www.jamoneselrullo.com/>.
 - [ ] **Jamones Pastor** — Charcutería (jamón DOP Teruel). Confirmar municipio.
   <https://www.jamonespastor.com/>.
-- [ ] **Jamones Casa Conejos** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.jamonescasaconejos.es/>.
+- [x] **Jamones Casa Conejos** — **already-present** →
+  `jamones-casa-conejos-sa-cedrillas` (limpieza 2026-07-10, dominio coincide).
+  NO crear fila.
 - [ ] **Alfonso Sáez** — Charcutería (jamón DOP Teruel). Confirmar municipio.
   <https://www.alfonsosaez.com/>.
 - [ ] **Jamones El Sabinar** — Charcutería (jamón DOP Teruel). Confirmar
@@ -147,8 +149,9 @@
 - [ ] **Coop. de Aceites del Matarraña, S.C.L.** — Aceite. Calaceite. · 978 851 014.
 - [ ] **Productos de Calanda, S.L.** — Aceite (+ melocotón). Calanda. Marca
   «Marchenica». · 978 847 904.
-- [ ] **Coop. del Campo San Miguel** — Aceite. Calanda. Marca «San Miguel de
-  Calanda». · 978 847 000.
+- [x] **Coop. del Campo San Miguel** (Calanda) — **already-present** →
+  `cooperativa-del-campo-san-miguel-calanda` (limpieza 2026-07-10). Si esa fila
+  no refleja el aceite DOP Bajo Aragón, anotarlo al verificar. NO crear fila.
 - [ ] **La Calandina, S. Coop.** — Aceite (+ melocotón DOP). Calanda. Marca «La
   Calandina». <https://lacalandina.com/> · 978 846 278.
 - [ ] **Aceites y Encurtidos Ismael y Magallón, S.L.** — Aceite. Calanda. Marca
@@ -175,8 +178,9 @@
 > que también hacen melocotón DOP. Aquí solo las **específicas de fruta** no
 > listadas ya.
 
-- [ ] **Frutícola Bajoaragonesa** — Fruta y verdura (melocotón DOP). Bajo Aragón
-  (confirmar municipio). <https://www.fruticola-bajoaragonesa.com/>.
+- [x] **Frutícola Bajoaragonesa** — **movida a `zaragoza.md`** (limpieza
+  2026-07-10): es de **Caspe (Zaragoza)**, no de Teruel — estaba duplicada entre
+  ambos ficheros. Ver lote 15 en `zaragoza.md`.
 - [ ] **Melocotón La Arenosa** — Fruta y verdura (melocotón DOP). Confirmar
   municipio. <http://melocotonlaarenosa.com/>.
 

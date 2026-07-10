@@ -43,3 +43,56 @@ without restarting:
 
 Once accepted, structured provenance belongs in `data/evidence/**`; prune
 routine source detail from candidate notes.
+
+## Cómo encontrar el registro real de una DO/DOP (aprendizajes, pasada do-huecos 2026-07)
+
+Destilado de 26 lotes contra consejos reguladores. Detalle por lote en
+`do-huecos.md` → Estado.
+
+**Dónde buscar, por orden de rendimiento:**
+
+1. **El organismo de control/certificación, no el consejo.** Cuando la
+   certificación está delegada (INTIA en Navarra, entidades tipo ENAC), ese
+   organismo publica el listado íntegro de operadores; el consejo solo enseña
+   sus asociados o los que pagan ficha de enoturismo (Navarra: 27 de 85;
+   Cariñena: 17 de 33). Buscar «listado operadores certificados <DO> pdf».
+2. **El endpoint de datos detrás del JS.** Si la web pinta el listado con
+   JavaScript, mirar antes de rendirse: endpoints CSV (`bodegas_csv.php` en
+   Ribeira Sacra), el JSON embebido en `wp-json/wp/v2/pages/<id>` (array
+   `places` del Queso Manchego), custom post types (`wp/v2/bodegas` en
+   Navarra), o una ruta hermana server-rendered (`/autenticos-productores/` en
+   Calanda).
+3. **El portal institucional** (cabildo, diputación, consejería): tablas
+   limpias Nombre·Marca·Dirección·Web (`vinosdetenerife.es`).
+4. **La cooperativa de 2º grado o comercializadora comarcal** cuando el consejo
+   no publica nada (Campo de Montiel) — con cautela: si ella comercializa todo,
+   sus socias probablemente son maquila y no son vendibles por separado.
+5. **Wayback Machine** para PDFs movidos y webs caídas (INTIA, Ycoden,
+   Utiel-Requena vía PDF de terceros).
+
+**Trampas de dominio:** los dominios "oficiales" caducan y se reutilizan
+(`arzua-ulloa.org` → academia; `docarinena.com` → sitio vietnamita, aunque el
+email del consejo siga siendo @docarinena.com). Verificar siempre que el
+contenido es el del consejo. Un 403 persistente suele ser Cloudflare
+(`utielrequena.org`): probar `Referer`, y si no, fuente alternativa.
+
+**Reglas de dedup que evitan duplicados reales (todas mordieron):**
+
+- **Marca ≠ razón social.** El consejo publica marcas y el registro razones
+  sociales (o al revés). Cruzar SIEMPRE ambas contra `nombre` del CSV
+  (Finca Albret=Príncipe de Viana; Oveman=Villadharo; Mesur=Frontos;
+  Calius=Cándido Hernández Pío).
+- **Plegar acentos ANTES de quitar palabras genéricas** («QUEIXERÍA» no casa
+  con «queixeria» si se filtra primero).
+- **Exigir la categoría correcta en la fila del CSV** al casar por nombre; sin
+  esa guarda, bodegas casan con charcuterías, conserveras o fruta.
+- **Municipio, no sede fiscal**: el registro suele dar la sede (Discosta Norte
+  «en Ribadeo» para una bodega de Utiel-Requena) o la del consejo (fichas de
+  Monterrei). Y una misma empresa aparece dos veces si tiene dos plantas
+  («Instalaciones sitas en:» del PDF de INTIA).
+- Un dominio que no casa con el nombre suele ser **la matriz del grupo**, no un
+  duplicado (pazodomar.com en Pazo das Tapias).
+
+**Medir el hueco contra el registro de operadores, nunca contra el CSV**: contar
+«filas de la categoría en la zona» infló huecos inexistentes (Arzúa-Ulloa,
+Manchego-Cuenca) y ocultó reales (Utiel-Requena, 34 netas).

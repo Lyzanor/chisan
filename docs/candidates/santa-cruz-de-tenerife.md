@@ -38,8 +38,9 @@
 
 - [ ] **Cervezas Ranilla** — Cerveza artesana. Puerto de la Cruz, desde 2022 (primera
   fábrica artesanal del municipio). <https://cervezasranilla.es/>.
-- [ ] **Bodegas Marba** — Bodega. Tacoronte (DO Tacoronte-Acentejo). Citada como vino
-  presente en los eventos de productores de Anaga.
+- [x] **Bodegas Marba** — retirada de este bloque (limpieza 2026-07-10):
+  duplicaba la entrada completa del lote 22 (abajo), que la sitúa correctamente
+  en **Tegueste** con web y teléfono. Ver «DO Tacoronte-Acentejo (9)».
 
 ## Descartados en esta pasada (no repasar)
 

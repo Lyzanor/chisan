@@ -28,6 +28,9 @@
 - [ ] **Bodegas Cunqueiro** — Bodega. Castrelo de Miño. <https://www.bodegascunqueiro.es/>.
 - [ ] **Bodegas O'Ventosela** — Bodega. Leiro. <https://www.oventosela.com/>.
 - [ ] **Adegas Pazo do Mar** — Bodega. Toén. <https://www.pazodomar.com/>.
+  ⚠ **grupo**: la fila existente `pazo-das-tapias-monterrei` usa este mismo
+  dominio — Pazo das Tapias (Monterrei) es del grupo Pazo do Mar. Son dos bodegas
+  distintas en dos DO; al integrar, no fusionar, pero citar la relación.
 - [ ] **Pazo de Vieite** — Bodega. Leiro. <https://www.pazodevieite.es/>.
 - [ ] **Pazo Lalón** — Bodega. Leiro. (Web propia a confirmar; ficha del consejo
   sin dominio.)

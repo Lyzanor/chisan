@@ -28,8 +28,9 @@
 - [ ] **Cooperativa Bedmarense** — Aceite. Bedmar. Marcas «Magnasur» / «Oro
   Magnasur». <https://magnasur.com/>.
 - [ ] **Oleozumo S.L.** — Aceite. Bedmar. Marca «Orozumo». <https://www.oleozumo.com/>.
-- [ ] **Cooperativa Ntra. Sra. de la Paz** — Aceite. Bélmez de la Moraleda. Marca
-  «La Perla de Mágina». <https://laperlademagina.es/> · 953 394 052.
+- [x] **Cooperativa Ntra. Sra. de la Paz** — **already-present** →
+  `s-c-a-nuestra-senora-de-la-paz-belmez-de-la-moraleda` (limpieza 2026-07-10,
+  dominio `laperlademagina.es` coincide). NO crear fila.
 - [ ] **Cooperativa San Francisco** — Aceite. Albanchez de Mágina. Marcas «Reino
   de Jaén», «Aznaitín», «Molino la Unión». <https://www.aovesierramagina.com/> ·
   953 358 353. Cooperativa centenaria (1919).
@@ -37,15 +38,15 @@
   Marca «Salud Sierra». <https://saludsierra.es/>.
 - [ ] **Cooperativa Unión Oleícola Cambil** — Aceite. Cambil. Marca «Esmeralda de
   Mágina». <https://esmeraldamagina.es/> · 953 300 355.
-- [ ] **Cooperativa Trujal de Mágina** — Aceite (ecológico). Cambil. Marca «Verde
-  Salud» (registrada 1998, cert. CAAE). <https://www.scatrujaldemagina.com/> ·
-  953 300 567.
+- [x] **Cooperativa Trujal de Mágina** — **already-present** →
+  `sca-trujal-del-magina-cambil` (limpieza 2026-07-10, dominio coincide). NO
+  crear fila.
 - [ ] **Cooperativa Ntra. Sra. de la Cabeza** — Aceite. Campillo de Arenas. Marcas
   «Vergilia» / «Oro Puerta de Arenas».
   <https://cooperativacampillodearenas.com/> · 953 309 027.
-- [ ] **Cooperativa San Isidro Labrador** — Aceite. Huelma. Marca «Santuario de
-  Mágina»; mayor productora de la comarca. <https://www.scasanisidro.es/> ·
-  953 390 110.
+- [x] **Cooperativa San Isidro Labrador** (Huelma) — **already-present** →
+  `sca-san-isidro-labrador-huelma` (limpieza 2026-07-10, dominio coincide; la
+  propia nota de homónimos de este fichero ya lo decía). NO crear fila.
 - [ ] **Cooperativa Ntra. Sra. del Rosario** — Aceite. Arbuniel (Cambil). Marca
   «Sierra de Arbuniel». <https://www.aceitesierradearbuniel.com/> · 953 304 407.
 - [ ] **Cooperativa San Antonio Abad** — Aceite. Cárchel (Cárcheles). Marca
