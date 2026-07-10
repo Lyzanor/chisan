@@ -107,8 +107,8 @@ resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 1.1 | S.C. Tenerife | **1.1a Tacoronte-Acentejo (9) hecho**; falta 1.1b Orotava (5)+Güímar (4)+Ycoden (3) y 1.1c Abona (4)+capital (6)+correcciones (`aguita` munic., `bodegas-insulares-licores`, El Penitente→Arautava) | 31 | ~3 (1/3) | en curso |
-| 1.2 | Ourense | ⚠ **decisión de producto tomada**: integrar entera pero **por orden de valor** (bodegas con web+tienda primero), asumiendo a conciencia que el CSV pasa a 71% bodegas (125/175). «Sin web» (25) al final. Ribeiro corte 1 (24)→2; corte 2 (24)→2; Valdeorras (15)→1-2; Monterrei (10+13)→2; Ribeira Sacra (13)→1; +1 Festa. Corrección: `pazo-das-tapias-monterrei` | 100 | ~9 | pendiente |
+| 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
+| 1.2 | Ourense | **1.2a Ribeiro corte 1, 12 bodegas top — hecho**. Falta: resto Ribeiro corte 1 (11) + corte 2 (24) + Valdeorras (15) + Monterrei (10+13) + Ribeira Sacra (13) + Festa (1). Corrección pendiente: `pazo-das-tapias-monterrei` (dominio de matriz) | 100 | ~9 (1/9) | en curso |
 | 1.3 | Córdoba | Empezar por «Bodegas con web/venta confirmada» (8) → 1; Baena (15)→1-2; Priego (9)+Lucena (4)→1; Montoro-Adamuz (7)+Pedroches (8)→1; «Bodegas del registro, municipio a confirmar» (14, sin web) al final. ⚠ resolver grupo Pérez Barquero antes de crear filas de Montilla-Moriles | 65 | ~6 | pendiente |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
@@ -150,6 +150,26 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.2a — Ourense, DO Ribeiro (12 bodegas top)**: 12 altas,
+  todas `verificado`; 7 con `Venta online=sí` ecommerce. Corregido el municipio
+  de O'Ventosela (Ribadavia→Leiro, se mudó en 2008). Criterio: varias bodegas de
+  terroir son de grupos de calidad (Alma Carraovejas, José Pariente, Matarromera)
+  → se **mantienen** (la exclusión de «gran grupo» es para industriales/masa); su
+  VO=sí es vía la tienda oficial del grupo, no reventa de terceros. ⚠ Pazo do Mar
+  comparte el dominio de la matriz con la fila Pazo das Tapias: no fusionar. Bug
+  propio: 3 filas con la URL de Instagram en la columna Facebook (lo pilló el
+  audit) → corregido.
+- 2026-07-10 — **Lotes 1.1b y 1.1c — Tenerife (cierre de provincia)**: 1.1b
+  Orotava (5)+Güímar (4)+Ycoden (3) = 12 altas (7 `verificado`/5 `parcial`; VO=sí
+  en Las Galanas, Tafuriaste, Tempus, Zanata); resueltos ⚠ coop Valle de Güímar
+  (marcas propias) y Bodegas Estrada (sí elabora en finca La Calabacera). 1.1c
+  Abona (4)+capital (Gofio La Salud, Cervezas Ranilla) = 6 altas; corrección con
+  `merge` de Agüita (La Orotava→Santa Cruz, VO=sí ecommerce|suscripcion); dedup
+  crítico resuelto (Sotera = fila `queseria-de-anaga`, no se crea); 3 productoras
+  de Anaga diferidas sin enlace verificable; revisadas las 2 filas Insulares
+  (misma empresa, se mantienen). **Tenerife cerrada: 27 altas.** Aprendizaje:
+  «Compra online» que redirige a un tercero (Hermanos Mesa→Vinófilos) NO es VO
+  propia; pistas «venta en bodega» del registro Abona son venta física.
 - 2026-07-10 — **Lote 1.1a — Tenerife, DO Tacoronte-Acentejo (9 bodegas)**: 9
   altas (4 `verificado`, 5 `parcial`; solo Marba con `Venta online=sí`). Ledger
   `canarias/santa-cruz-de-tenerife.jsonl` creado (dir `data/evidence/canarias/`

@@ -21,25 +21,42 @@
 > `Venta online=sí`, confirmar en integración). El resto (≈59, en su mayoría
 > colleiteiros pequeños) queda en la nota final para cortes posteriores.
 
-- [ ] **Viña Meín – Emilio Rojo** — Bodega. Leiro. <https://www.vinamein-emiliorojo.com/>.
-  Referencia del Ribeiro (treixadura); dos proyectos históricos unidos.
-- [ ] **Bodegas Docampo** — Bodega. Ribadavia. <https://www.bodegasdocampo.com/>.
-  Histórica y familiar (instalaciones de los años 30).
-- [ ] **Bodegas Cunqueiro** — Bodega. Castrelo de Miño. <https://www.bodegascunqueiro.es/>.
-- [ ] **Bodegas O'Ventosela** — Bodega. Leiro. <https://www.oventosela.com/>.
-- [ ] **Adegas Pazo do Mar** — Bodega. Toén. <https://www.pazodomar.com/>.
-  ⚠ **grupo**: la fila existente `pazo-das-tapias-monterrei` usa este mismo
-  dominio — Pazo das Tapias (Monterrei) es del grupo Pazo do Mar. Son dos bodegas
-  distintas en dos DO; al integrar, no fusionar, pero citar la relación.
-- [ ] **Pazo de Vieite** — Bodega. Leiro. <https://www.pazodevieite.es/>.
+> ✅ **Lote 1.2a integrado 2026-07-10** (`integracion.md`): las 12 de más valor
+> (marca consolidada + web), todas **`verificado`**. Con `Venta online=sí`
+> (ecommerce): Viña Meín, Docampo, Pazo do Mar, A Vilerma, Cuñas Davia, Nairoa,
+> Sanclodio (7). Varias son de grupos de calidad (Viña Meín→Alma Carraovejas,
+> Vilerma→José Pariente, Sanclodio→Matarromera): se mantienen por ser unidades de
+> terroir; su VO=sí es vía la tienda oficial del grupo.
+
+- [x] **Viña Meín – Emilio Rojo** — **accepted → `vina-mein-emilio-rojo-leiro`**
+  (`verificado`, `sí`). Leiro; hoy del grupo Alma Carraovejas.
+- [x] **Bodegas Docampo** — **accepted → `bodegas-docampo-ribadavia`**
+  (`verificado`, `sí`). Ribadavia; tienda propia (56-171 €).
+- [x] **Bodegas Cunqueiro** — **accepted → `bodegas-cunqueiro-castrelo-de-mino`**
+  (`verificado`, `no comprobado`). 3ª gen. desde 1920.
+- [x] **Bodegas O'Ventosela** — **accepted → `bodegas-oventosela-leiro`**
+  (`verificado`, `no comprobado`). ⚠ municipio corregido: desde 2008 en San
+  Clodio (**Leiro**), no Ribadavia.
+- [x] **Adegas Pazo do Mar** — **accepted → `adegas-pazo-do-mar-toen`**
+  (`verificado`, `sí`). Toén. ⚠ grupo: la fila `pazo-das-tapias-monterrei` usa
+  este mismo dominio de la matriz — no fusionadas (bodegas distintas); pendiente
+  darle a Pazo das Tapias su propia web si la tiene.
+- [x] **Pazo de Vieite** — **accepted → `pazo-de-vieite-leiro`** (`verificado`,
+  `no comprobado`). Leiro, 10 ha propias.
 - [ ] **Pazo Lalón** — Bodega. Leiro. (Web propia a confirmar; ficha del consejo
-  sin dominio.)
-- [ ] **Pazo Tizón** — Bodega. Boborás. <https://www.pazotizon.com/>.
-- [ ] **Vilerma** — Bodega. Leiro. <https://vilerma.com/>. Enoturismo.
-- [ ] **Cuñas Davia** — Bodega. Cenlle. <https://vinosdoribeiro.es/>.
-- [ ] **Eduardo Peña** — Bodega. Castrelo de Miño. <https://www.bodegaeduardopenha.es/>.
-- [ ] **Nairoa** — Bodega. A Arnoia. <https://www.bodegasnairoa.com/>.
-- [ ] **Viñedos Sanclodio** — Bodega. Leiro (San Clodio). <https://bodegasanclodio.com/>.
+  sin dominio.) → **pendiente** (sin web, corte posterior).
+- [x] **Pazo Tizón** — **accepted → `pazo-tizon-boboras`** (`verificado`,
+  `no comprobado`). Boborás; web enfocada a eventos.
+- [x] **Vilerma** — **accepted → `a-vilerma-leiro`** (`verificado`, `sí`). Leiro;
+  del grupo José Pariente.
+- [x] **Cuñas Davia** — **accepted → `cunas-davia-cenlle`** (`verificado`, `sí`).
+  Cenlle (Adegas Valdavia); tienda propia (45-150 €).
+- [x] **Eduardo Peña** — **accepted → `bodega-eduardo-pena-castrelo-de-mino`**
+  (`verificado`, `no comprobado`). Castrelo de Miño (Barral).
+- [x] **Nairoa** — **accepted → `bodegas-nairoa-a-arnoia`** (`verificado`, `sí`).
+  A Arnoia; tienda propia.
+- [x] **Viñedos Sanclodio** — **accepted → `vinedos-sanclodio-leiro`**
+  (`verificado`, `sí`). Leiro (Gomariz); del grupo Matarromera.
 - [ ] **Bodega Alanís** — Bodega. Cenlle (Barbantes, confirmar). <https://www.bodegaalanis.com/>.
   Marca histórica del Ribeiro.
 - [ ] **Señorío de Beade (Beade Primacía)** — Bodega. Beade. <https://www.beadeprimacia.com/>.
