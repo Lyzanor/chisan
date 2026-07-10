@@ -196,7 +196,7 @@ ordenado por tamaño de hueco (18–26).
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | `queixotetilla.org/nuestros-elaboradores/` (**arzua-ulloa.org muerto**) | ✅ 2026-07-09 (**sin hueco real**: 10 coruñesas en Tetilla → 7 ya en CSV, 1 gran grupo → **2 escritas**; Arzúa-Ulloa sin registro público; +3 pistas otras provincias) |
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (`quesomanchego.es/en/manufacturers/`, JSON en `wp-json/…/pages/10148`) | ✅ 2026-07-09 (65 inscritas 4 prov. → 12 Cuenca → 7 en CSV + **2 alias** → **3 escritas**; +7 correcciones a filas y pistas Toledo 7 / CR 4 / Albacete 5) |
 | 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | `tacovin.com`, `dovalleorotava.com`, `vinosvalleguimar.com`, `vinosdeabona.com` + portal Cabildo `vinosdetenerife.es` | ✅ corte 1, 2026-07-09 (**hueco grande y real**: 89 inscritas → 11 en CSV → **78 netas**; 25 escritas con web; **53 en cortes 2-3** con municipio+tel ya capturados) |
-| 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (nuevo) | **INTIA** (organismo de control), PDF `VN ListadoBodegasCertificadas` vía Wayback — *no* el consejo | ✅ corte 1, 2026-07-09 (**hueco real**: 77 filas del registro → 26 en CSV → **51 netas**; 25 escritas; **5 alias marca↔razón social** detectados) |
+| 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (nuevo) | **INTIA** (organismo de control), PDF `VN ListadoBodegasCertificadas` vía Wayback — *no* el consejo | ✅ corte 1, 2026-07-09 (**hueco real**: 77 filas del registro → 26 en CSV → **51 netas**; 26 escritas; **5 alias marca↔razón social** detectados) |
 | 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | Consejos de las tres DO | pendiente |
 | 25 | DO Utiel-Requena + DOP Arroz de Valencia | Valencia → `valencia.md` (nuevo) | Consejos (utielrequena.org, arrozdevalencia.org) | pendiente |
 | 26 | Ribera del Duero soriana — resto del registro | Soria → `soria.md` (nuevo) | Consejo Ribera del Duero, filtro municipios sorianos | pendiente |
@@ -491,7 +491,7 @@ candidatos.
   INTIA**, en un PDF cuya URL viva ya redirige a la home → recuperado por **Wayback**
   (fechado 31/12/2023). Generalizable: *cuando el consejo delega la certificación en
   un tercero (INTIA y similares), ese tercero suele publicar el listado completo.*
-  Resultado: 26 en CSV → **51 netas**, 25 escritas. Aprendizajes: (a) **el patrón de
+  Resultado: 26 en CSV → **51 netas**, 26 escritas. Aprendizajes: (a) **el patrón de
   alias llega aquí a su forma más pura**: el consejo publica **marcas** y el
   organismo **razones sociales** → *Finca Albret* = Bodegas Príncipe de Viana
   (planta de Cadreita), *Bodega Ozalder* = SAT García García (y está en **Larraga**,

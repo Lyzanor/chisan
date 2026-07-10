@@ -21,7 +21,7 @@
 >
 > Dedup contra `navarra.csv` el 2026-07-09 (dominio + nombre plegando acentos,
 > **exigiendo que la fila del CSV sea de categoría `Bodega`**): **26 ya en CSV**,
-> **51 netas** (34 con web). Este corte escribe **25**; el resto queda abajo.
+> **51 netas** (34 con web). Este corte escribe **26**; el resto queda abajo.
 > Estado: **`unverified`**.
 >
 > **Fuente**: `intiasa.es/web/sites/default/files/assets/files/certificacion/VN ListadoBodegasCertificadas.pdf`
@@ -79,7 +79,7 @@
 - [ ] **Bodega Coop. La Cruz** (marca **Belardi**) — Bodega. Mañeru. · 948 341 002 ·
   <https://www.vinobelardi.com>.
 
-### Baja Montaña y resto (5)
+### Baja Montaña y resto (6)
 
 - [ ] **Viñedos y Bodegas de Mendigorría** (marca **Lúculo**) — Bodega.
   Mendigorría. <https://www.luculo.es>. ⚠ el dedup por nombre la confundió con
@@ -98,7 +98,7 @@
 - [ ] **Aroa Bodegas** — Bodega (ecológica). Zurukuain. · 948 921 867 ·
   <https://www.aroawines.com>.
 
-### Cortes siguientes — 26 restantes (datos ya capturados)
+### Cortes siguientes — 25 restantes (datos ya capturados)
 
 > **Con web, diferidas por ser grupos grandes o de fuera (9)** — decidir por regla
 > dura antes de escribirlas: *Bodegas y Viñedos Artazu* (Artazu; web `artadi.com` →
