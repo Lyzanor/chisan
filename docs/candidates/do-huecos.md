@@ -197,9 +197,9 @@ ordenado por tamaño de hueco (18–26).
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (`quesomanchego.es/en/manufacturers/`, JSON en `wp-json/…/pages/10148`) | ✅ 2026-07-09 (65 inscritas 4 prov. → 12 Cuenca → 7 en CSV + **2 alias** → **3 escritas**; +7 correcciones a filas y pistas Toledo 7 / CR 4 / Albacete 5) |
 | 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | `tacovin.com`, `dovalleorotava.com`, `vinosvalleguimar.com`, `vinosdeabona.com` + portal Cabildo `vinosdetenerife.es` | ✅ corte 1, 2026-07-09 (**hueco grande y real**: 89 inscritas → 11 en CSV → **78 netas**; 25 escritas con web; **53 en cortes 2-3** con municipio+tel ya capturados) |
 | 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (nuevo) | **INTIA** (organismo de control), PDF `VN ListadoBodegasCertificadas` vía Wayback — *no* el consejo | ✅ corte 1, 2026-07-09 (**hueco real**: 77 filas del registro → 26 en CSV → **51 netas**; 26 escritas; **5 alias marca↔razón social** detectados) |
-| 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | Consejos de las tres DO | pendiente |
-| 25 | DO Utiel-Requena + DOP Arroz de Valencia | Valencia → `valencia.md` (nuevo) | Consejos (utielrequena.org, arrozdevalencia.org) | pendiente |
-| 26 | Ribera del Duero soriana — resto del registro | Soria → `soria.md` (nuevo) | Consejo Ribera del Duero, filtro municipios sorianos | pendiente |
+| 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | `carinenawines.com` (⚠ **docarinena.com muerto**), `docampodeborja.com`, `calatayudwine.com` | ✅ 2026-07-09 (46 leídas → 29 en CSV → **17 escritas**; Zaragoza ya muy cubierta; Cariñena solo publica 17 de sus 33) |
+| 25 | DO Utiel-Requena + DOP Arroz de Valencia | Valencia → `valencia.md` (nuevo) | **PDF de bodegas certificadas** (`aepev.es`; utielrequena.org da 403) + arrozdevalencia.org | ✅ 2026-07-09 (**hueco mayor del estimado**: 51 embotelladoras → 17 en CSV → 34 netas, **21 escritas** + 4 de arroz) |
+| 26 | Ribera del Duero soriana — resto del registro | Soria → `soria.md` (nuevo) | `riberadelduero.es/bodegas/resultados` (302 fichas, campo provincia) | ✅ 2026-07-09 (**hueco pequeño, no nulo**: 14 sorianas → 10 en CSV → **4 escritas**; cobertura 71%) |
 
 Avisos ya conocidos para esta ola: (a) lote 14 — cruzar contra `lugo.md`
 existente (pasada de capitales, aún sin commitear) antes de escribir; (b) lote
@@ -511,7 +511,51 @@ candidatos.
   Málaga/Ávila/Burgos, docs de AGENTS) permanece intacto en su rama. Del commit
   mixto del lote 1 se omitieron dos renombrados de imágenes de Burgos. A partir de
   aquí, esta pasada trabaja sobre `main`.
-- Coordinación: en la rama activa hay verificación de Burgos en curso; esta
-  pasada no toca CSVs, así que no interfiere. Si al abrir un lote
-  `git status --short` muestra a otro agente trabajando la provincia destino,
+- 2026-07-09: **lotes 24, 25 y 26 cerrados → SEGUNDA OLA COMPLETA (14-26).**
+  **Lote 24 (Zaragoza)**: 46 bodegas leídas de las tres DO → 29 ya en CSV → **17
+  escritas**. Zaragoza estaba muy bien cubierta (40 bodegas). ⚠ **`docarinena.com`
+  ya no es la DO**: el dominio está **reutilizado por un sitio en vietnamita**
+  (segundo caso tras `arzua-ulloa.org`); el consejo usa hoy `elvinodelaspiedras.es`
+  y publica fichas en `carinenawines.com`. Cariñena solo expone **17 de sus 33**
+  bodegas → corte 2 pendiente. ⚠ posible alias *Grandes Vinos* ↔ `gran-ducay` (ya
+  en CSV). **Lote 25 (Valencia)**: **el diagnóstico se equivocó a la baja** — decía
+  «más cubierto de lo esperado, baja prioridad» porque contó **filas de CSV en la
+  zona**, no operadores: la DO tiene 104 bodegas y **58 embotelladoras**. Leídas 51
+  → 17 en CSV → **34 netas**, 21 escritas + 4 del arroz. `utielrequena.org` está
+  **tras Cloudflare** (403 a todo, incluidos `wp-json` y sitemap); la fuente fue el
+  **PDF de bodegas certificadas alojado por un tercero (`aepev.es`)** — confirma la
+  lección del lote 23. ⚠ *Marqués del Atrio* aparece **aquí y en Navarra** (mismo
+  grupo, dos DO). **Lote 26 (Soria)**: hueco pequeño **pero no nulo** — 302 fichas
+  de Ribera del Duero, solo **14 sorianas** (Burgos 165, Valladolid 113), 10 ya en
+  CSV → **4 escritas** (cobertura 71%, por debajo del 80% que permitía cerrarlo
+  como «sin hueco real»). Trampa: buscar la palabra «Soria» en el HTML da 28 falsos
+  positivos por la «Carretera N-122 Valladolid-Soria» → leer el campo estructurado
+  de provincia.
+- 2026-07-09: **balance de la segunda ola (lotes 14-26).** ~180 candidatos escritos
+  en 13 provincias. **Tres conclusiones que deberían gobernar la próxima pasada:**
+  1. **El diagnóstico por «filas de la categoría en el CSV» no mide el hueco.**
+     Falló en ambos sentidos: infló los lotes 19, 20 y 21 (donde el hueco era casi
+     nulo) y **subestimó el 25** (Utiel-Requena, 34 netas, marcado como «baja
+     prioridad»). También ocultó que el CSV de Tenerife es **provincial** y mezcla
+     cuatro islas (lote 22). Medir contra el **registro de operadores**, no contra
+     el CSV.
+  2. **La web del consejo no suele ser la fuente buena.** De 13 lotes: 2 dominios
+     muertos y reutilizados (`arzua-ulloa.org`, `docarinena.com`), 1 con el HTTPS
+     caído (`ycoden.com`), 1 tras Cloudflare (`utielrequena.org`), 1 con el registro
+     vacío desde 2018 (Campo de Montiel), y 3 que solo publican una parte (Navarra
+     27/85, Cariñena 17/33, Ycoden). Lo que sí funciona, por orden: **el organismo
+     de certificación** (INTIA en Navarra; el PDF de `aepev.es` en Utiel-Requena),
+     **el portal institucional** (Cabildo de Tenerife), **la cooperativa de 2º
+     grado** (Campo de Montiel) y **el endpoint de datos escondido tras el JS** (CSV
+     de Ribeira Sacra, array `places` del Manchego, `wp-json` de Navarra).
+  3. **Marca ≠ razón social, y ese es el duplicado que se cuela.** Confirmado en
+     los lotes 21, 22, 23 y 25. Regla: cruzar **ambas** contra el CSV y **exigir que
+     la fila candidata sea de la categoría correcta** — sin esa guarda, en Navarra
+     tres bodegas casaban con una charcutería, una conservera y una productora de
+     fresas.
+  Cortes pendientes, con datos ya capturados: Tenerife 53 · Navarra 25 ·
+  Utiel-Requena 13 · Ribeiro corte 3 (~34) · Cariñena ~16 · DOP Islas Canarias ~9.
+- Coordinación: la pasada vive en `main` desde el lote 23 y **no toca CSVs**, así
+  que no interfiere con las verificaciones de provincia en curso. Si al abrir un
+  lote `git status --short` muestra a otro agente trabajando la provincia destino,
   elegir otro lote.
