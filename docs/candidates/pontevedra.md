@@ -4,24 +4,22 @@
 > (`docs/candidates/festa-do-queixo.md`). Formato estándar de
 > `docs/candidates/README.md`.
 
-## Festa do Queixo de Arzúa (pasada `festa-do-queixo.md`)
+## Festa do Queixo de Arzúa (pasada `festa-do-queixo.md`) — ✅ integrado 2026-07-10
 
-> Fuente: listaxe oficial de expositores de la 51ª Festa do Queixo (Arzúa, 2026),
-> PDF del Concello en `festadoqueixo.org`. La feria es nacional, pero reúne casi
-> todas las queixerías gallegas. Dedup contra `pontevedra.csv` el 2026-07-09
-> (cruzando razón social y marca): **ya en CSV** — Lácteos Anzuxao / Pazo de
-> Anzuxao (Lalín) y Dona Cobiña / Cobideza (Agolada). Neto: **1**.
-> Estado: **`unverified`**.
+> Lote 0.2 de `integracion.md`. Dedup contra `pontevedra.csv` re-verificado el
+> 2026-07-10: **ya en CSV** — Lácteos Anzuxao / Pazo de Anzuxao (Lalín) y Dona
+> Cobiña / Cobideza (Agolada). Neto: **1**, integrado.
 
-- [ ] **Leite Ulla** (Leite Ulla, S.L.) — Lácteos y quesos. A Estrada.
-  <https://leiteulla.com/>. Leche de vaca pasteurizada entera y quesos. **Venta
-  en la propia queixería** y los sábados en los mercados de Tilos y Vilagarcía →
-  pista `Venta online=sí` (confirmar tienda web vs solo puntos de venta).
-  Stand B25 de la feria.
+- [x] **Leite Ulla** (Leite Ulla, S.L.) — **accepted → `leite-ulla-a-estrada`**
+  (`verificado`, `Venta online=sí`, canal `whatsapp`). Gandería Louzao en A
+  Ribeira, 1 (Santeles, A Estrada). La pista de fase A quedó confirmada por su
+  propia web, que responde literalmente «*Sí, só tes que poñerte en contacto con
+  nos por medio de Whatsapp*» al envío por mensajería: **no hay carrito**, pero
+  el WhatsApp es canal de pedido propio → `sí` + `whatsapp`.
 
-### Nota
+### Nota — pendiente de fase A (descubrimiento, no integración)
 
-Del corte 2 de esa pasada (zona gourmet, provincia sin resolver) hay dos que
+Del corte 2 de aquella pasada (zona gourmet, provincia sin resolver) hay dos que
 **probablemente son de Pontevedra**, pendientes de confirmar concello y web:
 *Embruxo Pontevedra, S.L.* (marca «Aceite Embruxo») y *Rafael González Goyanes*
 («Chocolates Castelo do Sobroso», probable Ponteareas).

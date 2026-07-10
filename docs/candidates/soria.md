@@ -20,17 +20,43 @@
 > Dedup contra `soria.csv` (17 bodegas) el 2026-07-09, con guarda de
 > `categoria == "Bodega"`: **10 ya en CSV** → **4 netas**. Estado: **`unverified`**.
 
-### Candidatos (4)
+### Candidatos (4) — ✅ integrados 2026-07-10 (fase B, lote 0.3 de `integracion.md`)
 
-- [ ] **Bodegas de Postín** (Bodegas de Postín, S.L.) — Bodega. Zayas de Báscones
-  (San Esteban de Gormaz). · 607 802 580 · <https://depostin.es/>. El registro
-  marca **Venta online: sí** → pista `Venta online=sí`.
-- [ ] **La Loba** — Bodega. Matanza de Soria. · 975 102 037 ·
-  <http://www.laloba.es>. **Venta online: sí**.
-- [ ] **Cuarto Lagar** (Cuarto Lagar, S.L.) — Bodega. Miño de San Esteban.
-  · 636 728 883 · <https://www.cuartolagar.com/>.
-- [ ] **Dominio de Echauz** (Dominio de Echauz, S.L.U.) — Bodega. Zayas de
-  Báscones (San Esteban de Gormaz). · 681 131 903. Sin web en el registro.
+- [x] **Bodegas de Postín** — **accepted →
+  `bodegas-de-postin-alcubilla-de-avellaneda`** (`verificado`, `Venta online=sí`,
+  `ecommerce`). Tienda propia comprobada (Edición Limitada 2023, 48,00 €,
+  «Añadir al carrito»). ⚠ **Municipio corregido**: ver abajo.
+- [x] **La Loba** — **accepted → `la-bodega-de-la-loba-san-esteban-de-gormaz`**
+  (`verificado`, **`Venta online=no`**). ⚠ La pista «Venta online: sí» del
+  registro era **falsa**: ese campo contiene la URL de su propia web, que no
+  tiene tienda ni mecanismo de pedido (solo formulario de contacto). Nombre
+  oficial del consejo: «La Bodega de La Loba»; enóloga Ana Carazo.
+- [x] **Cuarto Lagar** — **accepted → `cuarto-lagar-mino-de-san-esteban`**
+  (`parcial`, `no comprobado`). `cuartolagar.com` redirige (301) a
+  `cuartolagar.es`, que sirve **solo el `<title>`** (contenido por JS o en
+  construcción) → sin fuente verificadora. El campo «Venta online» del registro
+  está vacío.
+- [x] **Dominio de Echauz** — **accepted →
+  `dominio-de-echauz-alcubilla-de-avellaneda`** (`verificado`,
+  `no comprobado`). **Sí tiene web**, aunque el registro no la publicaba:
+  <https://echauz.com/> (más de 130 ha, colección de biotipos ancestrales).
+  Instala WooCommerce y anuncia «NUESTRA TIENDA», pero las fichas de vino no
+  muestran precio ni «añadir al carrito» → `no comprobado`, no `sí`.
+
+### ⚠ Corrección geográfica importante (afecta a 3 de las 4 altas)
+
+La nota de fase A asignaba mal los municipios: **Zayas de Báscones** y **Matanza
+de Soria** no son municipios, son pedanías —y **de municipios distintos**:
+
+- **Zayas de Báscones → Alcubilla de Avellaneda** (no San Esteban de Gormaz).
+  Confirmado por el propio ayuntamiento (`alcubilladeavellaneda.es/zayas-de-bascones`).
+  Afecta a De Postín y Dominio de Echauz.
+- **Matanza de Soria → San Esteban de Gormaz** (pedanía). Afecta a La Loba.
+
+Ninguna de las dos está en `municipios.json` (son sub-municipales). Ojo con el
+homónimo: la clave `matanza` del lookup es **Matanza de los Oteros (León)**, a
+180 km. Con el municipio oficial escrito, las coordenadas validan a 5,4 km
+(Alcubilla) y 6,8 km (S. E. de Gormaz) de sus centroides.
 
 ### Notas del lote 26
 
@@ -47,7 +73,8 @@
   seguridad, bodegas de **Vinos de la Tierra**, no de Ribera → correcto que estén,
   pero no cuentan para este hueco.
 - **Zayas de Báscones y Matanza de Soria** son las dos localidades que faltaban
-  por completo en el CSV: ahí están 3 de las 4 altas.
+  por completo en el CSV: ahí están 3 de las 4 altas. (Son **pedanías**, no
+  municipios; ver la corrección geográfica de arriba.)
 
 ### Método
 

@@ -22,17 +22,18 @@
 > queixo@arzua-ulloa.org). Sus **15 queixerías inscritas** se solapan casi por
 > completo con las de Tetilla y con las filas ya presentes en el CSV.
 
-### Candidatos (2)
+### Candidatos (2) — ✅ integrados 2026-07-10 (fase B, lote 0.5 de `integracion.md`)
 
-- [ ] **Bo-Queixo** (Isabel García Couto) — Lácteos y quesos. Boqueixón (Orto, 2).
-  · 619 604 895 · boqueixoboqueixo@gmail.com. Elaboradora de **Tetilla** y también
-  de **Arzúa-Ulloa DOP** (se vende en tiendas gourmet, p. ej. lerueste.com). Sin
-  web propia localizada → confirmar canal de venta.
-- [ ] **Lácteos Algra** (Lácteos Algra, S.L.U.), marca **Queixos Brigantia** —
-  Lácteos y quesos. As Somozas (Polígono Industrial As Somozas, P-4). ·
-  639 259 430 · info@lacteosalgra.gal · <https://queixosbrigantia.es/>.
-  (El dominio `lacteosalgra.gal` del registro de Tetilla no resuelve; la web viva
-  es la de la marca — dato aportado por la pasada `festa-do-queixo.md`, stand B24.)
+- [x] **Bo-Queixo** (Isabel García Couto) — **accepted → `bo-queixo-boqueixon`**
+  (`parcial`, `no comprobado`). Orto, 2 (Boqueixón); elaboradora de Tetilla y
+  Arzúa-Ulloa, ~25.000 kg/año, con visitas guiadas. Sin web ni redes propias →
+  ninguna fuente verificadora, tope `parcial`.
+- [x] **Lácteos Algra** / marca **Queixos Brigantia** — **accepted →
+  `queixos-brigantia-as-somozas`** (`verificado`, `Venta online=sí`,
+  `ecommerce`). Tienda propia con carrito y envío refrigerado 24 h.
+  ⚠ **Municipio = As Somozas** (la planta del polígono, que confirman el registro
+  de Tetilla y el propio concello); la web solo publica el **domicilio social**,
+  que está en San Sadurniño. Caso de libro de «sede fiscal ≠ unidad productiva».
 
 ### Notas del lote 20
 
@@ -63,22 +64,33 @@
 > **`unverified`**. Ver el ledger de la pasada para las cifras, los excluidos y
 > las pistas de fuera de Galicia.
 
-- [ ] **Queixos Verbas** (Lactear S.A.T.) — Lácteos y quesos. Arzúa (A Curiscada,
-  s/n, 15819). Stand B12.
-- [ ] **Lácteos Bretón** — Lácteos y quesos (**requeixo** artesano, desde 1990).
-  Irixoa (parroquia de Mántaras, lugar de Follente).
-  <http://www.lacteosbreton.com/>. Stand B11 (Natalia Bretón Roca).
-- [ ] **Lácteos O Casal** (Lácteos O'Casal, S.L.) — Lácteos y quesos. San
-  Sadurniño (Ferrolterra). <https://www.lacteosocasal.es/>. Empresa familiar desde
-  1982; la web tiene página de **puntos de venta** → confirmar `Venta online` y
-  canal. Stand B18.
-- [ ] **Queixo Fresco Sillobre** (Mª Alejandra Romero Dopico y Eloy Seijas) —
-  Lácteos y quesos (queixo fresco). Fene (parroquia de Sillobre). Proyecto joven
-  (montado desde cero, ~2024); tiene su propia Festa do Queixo en Sillobre. Sin
-  web propia localizada. Stand B31.
-- [ ] **Granxa Lourán**, marca **Restrebas** — Lácteos y quesos (**requeixo** de
-  vacas en pastoreo del val de Xestoso, desde 2016). Monfero. Se vende vía
-  `seitura.gal`. Web propia a confirmar. Stand B49.
+> ✅ Los 5 candidatos de este bloque quedaron **integrados el 2026-07-10** (lote
+> 0.5 de `integracion.md`).
+
+- [x] **Queixos Verbas** (Lactear S.A.T.) — **accepted → `queixos-verbas-arzua`**
+  (`parcial`, `no comprobado`). Tres socios de Arzúa desde 2018; queso de leche
+  cruda sin aditivos, deliberadamente **fuera** de la DO Arzúa-Ulloa. Facebook
+  propio; un directorio de terceros menciona reparto a domicilio, no es canal
+  propio comprobado. (CP: el PDF decía 15819, Nominatim da 15810 → omitido.)
+- [x] **Lácteos Bretón** — **accepted → `lacteos-breton-irixoa`** (`parcial`,
+  `no comprobado`). Mántaras (Irixoa). Su web pública es **solo un portal de
+  acceso (login)**: confirma identidad, ubicación y contacto, pero no la
+  actividad ni el catálogo → tope `parcial`.
+- [x] **Lácteos O Casal** — **accepted → `lacteos-o-casal-san-sadurnino`**
+  (`verificado`, **`Venta online=no`**). Fabricación propia desde 1982 (requeixo,
+  tetilla DOP, kéfir). Comprobado: la web solo tiene «Dónde comprar» con
+  distribuidores y grandes superficies, sin tienda ni pedido a distancia.
+- [x] **Queixo Fresco Sillobre** — **accepted → `queixo-fresco-sillobre-fene`**
+  (`parcial`, `no comprobado`). Confirmado por prensa (COPE, Diario de Ferrol):
+  Alejandra Romero y Eloy Seijas, 8 vacas Jersey, comercializa desde 2024. Sin
+  web ni redes propias → tope `parcial`.
+- [x] **Granxa Lourán** / marca **Restrebas** — **accepted →
+  `granxa-louran-monfero`** (`parcial`, `no comprobado`). Requeixo de vacas en
+  pastoreo del Val de Xestoso desde 2016; Instagram propio. `seitura.gal` es la
+  tienda de la **Asociación Seitura 22** (colectivo de terceros), no canal propio
+  → `no comprobado`. ⚠ Iberinform marca «GRANXA LOURAN SL» como **inactiva**
+  mientras la actividad sigue viva (expositora de la feria 2026, producto a la
+  venta): probable cambio de forma jurídica, **reconfirmar en 2ª pasada**.
 
 > **Sin rastro digital (zona C de la feria, queixeiros pequeños)** — anotados con
 > lo único que da el PDF; confirmar existencia, concello y venta antes de

@@ -82,7 +82,13 @@
 ### Pistas para las otras tres provincias manchegas (datos ya en mano)
 
 > El mismo JSON trae las inscritas de Toledo, Ciudad Real y Albacete, con web y
-> teléfono. **No se abren aquí.** Dedup ya hecho contra sus CSV el 2026-07-09.
+> teléfono. Dedup hecho contra sus CSV el 2026-07-09.
+>
+> ⚠ **Al abrir Toledo y Ciudad Real, releer el registro desde el JSON crudo**: al
+> integrar Albacete se comprobó que estos conteos estaban mal (5 anunciadas → 1
+> real) y que el campo `categories` (`Leche cruda` / `Leche pasteurizada` /
+> `Cámaras de maduración`) distingue elaboradores de simples maduradores. Método
+> y trampas en [albacete.md](albacete.md) §Método.
 
 - **Toledo (7 netas de 19)** → `toledo.md`: S.A.T. La Cañada Real Soriana
   (Madridejos, `quesoselconsuelo.com`) · Explotaciones Ganaderas Pérez Arquero
@@ -94,10 +100,13 @@
   Moreno-Manzanaro (Herencia, `quesosiniesta.com`) · Cabrera Gallego Antonio
   (Manzanares) · Ricardo Corrales Iniesta (Herencia, `lagaitana.es`) · ⚠ **Quesos
   Despaña / Rocinante** (Malagón) — marca grande, aplicar regla de grupos.
-- **Albacete (5 netas de 13)** → `albacete.md`: Quesos Campayo (Villarrobledo) ·
-  Aldonza Gourmet (Albacete). Los otros tres son **grandes grupos** y caen por
-  regla dura: **Lactalis Villarrobledo**, **Mantequerías Arias** y Spanish Cheese
-  (Albacete, confirmar).
+- ✅ **Albacete** → **traspasado y cerrado** en
+  [albacete.md](albacete.md) (lote 0.4, 2026-07-10). El conteo de esta nota era
+  erróneo: no eran 5 netas sino **1** (Quesos Campayo). Aldonza Gourmet y Spanish
+  Cheese figuran solo como `Cámaras de maduración`, **no elaboran** → descartadas
+  como no-productor (ojo: *Quesos Aldonza y Don Ismael* sí es fabricante, pero de
+  **Piedrabuena, Ciudad Real**). Lactalis y Mantequerías Arias caen por gran
+  grupo. Las otras 8 ya estaban en el CSV.
 
 ### Método
 

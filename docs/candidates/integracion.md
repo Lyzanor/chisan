@@ -71,11 +71,17 @@ abrir cada provincia siguiendo sus secciones. Estados: `pendiente` /
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 0.1 | Cuenca | DOP Manchego: 3 altas + 7 correcciones a filas existentes | 3 | 1 | hecho (2026-07-10) |
-| 0.2 | Pontevedra | Festa do Queixo: Leite Ulla | 1 | 1 | pendiente |
-| 0.3 | Soria | Ribera del Duero soriana (2 con pista VO=sí) | 4 | 1 | pendiente |
-| 0.4 | Albacete | 2 queserías DOP Manchego (crear `albacete.md` desde `cuenca.md` §Pistas) | 2 | 1 | pendiente |
-| 0.5 | A Coruña | 2 DOP + 5 Festa do Queixo; revisar ⚠ Grupo TGT | 7 | 1 | pendiente |
+| 0.1 | Cuenca | DOP Manchego: 3 altas + 7 correcciones a filas existentes | 3 | 1 | hecho (2026-07-10): 3 altas, 7 corr., 1 merge |
+| 0.2 | Pontevedra | Festa do Queixo: Leite Ulla | 1 | 1 | hecho (2026-07-10): 1 alta |
+| 0.3 | Soria | Ribera del Duero soriana (2 con pista VO=sí) | 4 | 1 | hecho (2026-07-10): 4 altas, 3 munic. corregidos |
+| 0.4 | Albacete | queserías DOP Manchego (fichero `albacete.md` creado) | 2→1 | 1 | hecho (2026-07-10): 1 alta, 4 rechazos, 2 corr. |
+| 0.5 | A Coruña | 2 DOP + 5 Festa do Queixo | 7 | 1 | hecho (2026-07-10): 7 altas |
+
+**Ronda 0 cerrada** (2026-07-10): 16 altas, 9 correcciones, 4 rechazos, 1 merge.
+Residual de la ronda: `alimentos-ruta-xacobea-o-pino` (⚠ Grupo TGT) sigue **sin
+revisar** — es una decisión de purga/mantener sobre una fila existente, no un
+candidato; va a la 2ª pasada junto con los 3 queixeiros «sin rastro digital» de
+la zona C de la feria (`a-coruna.md`).
 
 ### Ronda 1 — prioridad 1 del traspaso (volumen, datos ya resueltos)
 
@@ -101,8 +107,8 @@ abrir cada provincia siguiendo sus secciones. Estados: `pendiente` /
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 3.1 | Toledo | Montes de Toledo (19, varias coops sin web) + **7 queserías DOP Manchego** desde `cuenca.md` §Pistas | 19+7 | ~2 | pendiente |
-| 3.2 | Ciudad Real | Montes de Toledo CR (2) + Campo de Montiel (5, ⚠ socias de coop 2º grado: marca propia o descartar) + pista provincial (3) + **4 queserías DOP Manchego** desde `cuenca.md` (⚠ Rocinante = regla de grupos) | 10+4 | ~1-2 | pendiente |
+| 3.1 | Toledo | Montes de Toledo (19, varias coops sin web) + queserías DOP Manchego (releer registro: el conteo de `cuenca.md` no es fiable) | 19+? | ~2 | pendiente |
+| 3.2 | Ciudad Real | Montes de Toledo CR (2) + Campo de Montiel (5, ⚠ socias de coop 2º grado: marca propia o descartar) + pista provincial (3) + queserías DOP Manchego, **incluida Quesos Aldonza y Don Ismael (Piedrabuena)** (⚠ Rocinante = regla de grupos) | 10+? | ~1-2 | pendiente |
 
 ### Fuera de alcance de esta fase
 
@@ -127,3 +133,22 @@ abrir cada provincia siguiendo sus secciones. Estados: `pendiente` /
   comprobar ambos antes de «corregir»; webs reales detrás de directorios
   gff.co.uk en 2 filas; «tienda» en menú sin checkout visible NO basta para
   `Venta online=sí` (Piqmar).
+- 2026-07-10 — **Ronda 0 cerrada** (lotes 0.2 a 0.5, 4 provincias): 13 altas más
+  (total 16), 2 correcciones más (total 9), 4 rechazos. Ledgers nuevos:
+  `soria.jsonl`, `a-coruna.jsonl`, `albacete.jsonl`; `pontevedra.jsonl` ampliado.
+  `verify:data` verde (0 issues). Aprendizajes que cambian el método:
+  1. **Las pistas `Venta online=sí` de fase A no valen nada.** En el registro de
+     Ribera del Duero ese campo contiene *la URL de la web*, no una tienda: La
+     Loba la tenía marcada y no vende online (`no`). Confirmar checkout siempre.
+  2. **Pedanía ≠ municipio, y no siempre la del pueblo grande de al lado.** Zayas
+     de Báscones es de **Alcubilla de Avellaneda** y Matanza de Soria de **San
+     Esteban de Gormaz**; la nota de fase A daba SEdG a las dos. Resolver con
+     Nominatim (la jerarquía de `display_name` da el municipio) y confirmar.
+  3. **Domicilio social ≠ planta** (Brigantia: web da San Sadurniño, la quesería
+     está en As Somozas; manda el registro del consejo + el concello).
+  4. **No fiarse del resumidor sobre un JSON de registro**: dio 7 y luego 10
+     fabricantes de Albacete donde hay 13. `curl` + parseo local. Y las
+     **coordenadas del registro pueden estar a 71 km** del municipio: validar.
+  5. Los directorios (`gff.co.uk`, `mejordepueblo.com`) siguen apareciendo como
+     `web` en filas legacy: al cruzar un registro, revisar también las filas ya
+     presentes, no solo las altas.
