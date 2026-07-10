@@ -308,6 +308,18 @@
 > (~73 adegas) es de **provincia de Lugo** → no se abre aquí; anotar como pista
 > para `lugo.md` sin tocarlo.
 
+> ✅ **Lote 1.2g integrado 2026-07-10**: 9 altas (4 `verificado` + 5 `parcial`);
+> VO=sí en Pombares y Aba Solleira. **Diferido: Envínate** (ya está en el CSV de
+> Tenerife como el mismo proyecto; una fila en Ourense duplicaría entre
+> provincias → decisión editorial pendiente). Diferidos phone-only: Adega Sollío,
+> Vázquez Rodríguez (Século/Triscelle), Os Pacios. Los `parcial` son por fallo
+> técnico de web (Temera TLS, Cachín conexión, Fazenda Prádio) o sin web propia
+> (Leirabella, Pereimos/A Corga). Slugs: `dominio-do-bibei-manzaneda`,
+> `adega-do-mollon-pombares-nogueira-de-ramuin`, `aba-solleira-a-peroxa`,
+> `bodega-caneiro-parada-de-sil`, `bodegas-costoya-temera-a-teixeira`,
+> `adega-cachin-a-teixeira`, `fazenda-pradio-a-peroxa`,
+> `adega-leirabella-parada-de-sil`, `pereimos-a-corga-a-pobra-de-trives`.
+
 - [ ] **Dominio do Bibei** — Bodega. Manzaneda (subzona Quiroga-Bibei).
   <https://www.dominiodobibei.com/> · 670 704 028. Marcas Lacima, Lalama, Lapola,
   Lapena… Referencia de alta gama. ⚠ Resuelve el cruce del lote 9: figuraba en el
