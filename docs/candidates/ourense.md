@@ -209,11 +209,24 @@
 > (con web) + 10 Monterrei; el resto de Monterrei y las Valdeorras fuera del PDF
 > quedan en la nota final.
 
-### DO Valdeorras (15)
+### DO Valdeorras (15) — ✅ integrado 2026-07-10 (lote 1.2e)
 
-> Concello por bodega a confirmar en integración (comarca de Valdeorras: A Rúa,
-> O Barco, Vilamartín, Petín, Larouco, Rubiá, O Bolo, Carballeda). Web del PDF
-> oficial → casi todas con venta/tienda, confirmar `Venta online`.
+> **10 altas, todas `verificado`**; 7 con `Venta online=sí` (Valdesil, Melillas,
+> Cepado, Pinguela, Ruchel, Sampayolo, d'Berna) y 3 `no comprobado` (Viñaredo,
+> Casal Novo, Manuel Corzo). Concellos confirmados por web/consejo. **Diferidos
+> (5):** Bodegas Carballal y Ladera Sagrada (DNS muerto), Bodegas Eladio Santalla
+> (www muerto, reintentar sin www), Adega Avelina (403, municipio sin confirmar) y
+> **Jorge Ordóñez** (négociant de Málaga; no se confirmó bodega física ni marca
+> propia de Valdeorras → no crear sin resolver encaje). Slugs:
+> `valdesil-vilamartin-de-valdeorras`, `adega-melillas-a-rua`,
+> `adega-o-cepado-rubia`, `adega-da-pinguela-petin`,
+> `bodegas-ruchel-vilamartin-de-valdeorras`, `bodegas-sampayolo-petin`,
+> `bodegas-d-berna-vilamartin-de-valdeorras`,
+> `vinaredo-bodega-santa-marta-o-barco-de-valdeorras`,
+> `casal-novo-adega-o-casal-rubia`, `manuel-corzo-vina-corzo-o-bolo`.
+>
+> Concello por bodega (comarca de Valdeorras). Web del PDF oficial → casi todas
+> con venta/tienda.
 
 - [ ] **Valdesil** — Bodega. Vilamartín de Valdeorras. <https://www.valdesil.com/>.
   Referencia del godello de Valdeorras.
