@@ -108,7 +108,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
-| 1.2 | Ourense | **1.2a (12) + 1.2b (9) + 1.2c (11) hechos** = 32 altas. Ribeiro corte 1 completo + corte 2 primera mitad (11 de 24; 5 diferidos por web muerta/grupo, 8 sin abrir). Falta: resto corte 2 (~8) + Valdeorras (15) + Monterrei (10+13) + Ribeira Sacra (13) + Festa (1). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~9 (3/9) | en curso |
+| 1.2 | Ourense | **1.2a (12)+1.2b (9)+1.2c (11)+1.2d (7) hechos** = 39 altas. **Ribeiro completo** (corte 1 + corte 2; 6 diferidos por web muerta/grupo, 1 rechazado). Falta: Valdeorras (15) + Monterrei (10+13) + Ribeira Sacra (13) + Festa (1). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~8 (4/8) | en curso |
 | 1.3 | Córdoba | Empezar por «Bodegas con web/venta confirmada» (8) → 1; Baena (15)→1-2; Priego (9)+Lucena (4)→1; Montoro-Adamuz (7)+Pedroches (8)→1; «Bodegas del registro, municipio a confirmar» (14, sin web) al final. ⚠ resolver grupo Pérez Barquero antes de crear filas de Montilla-Moriles | 65 | ~6 | pendiente |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
@@ -150,6 +150,12 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.2d — Ourense, DO Ribeiro (corte 2, cierre)**: 7 altas (4
+  `verificado`, 3 `parcial`; VO=sí en Castro Rei, Pateiro, Gandarela). **Dos
+  correcciones de municipio**: Pateiro está en Carballeda de Avia y Gandarela en
+  Laias (Cenlle), no Ribadavia. O Cotarelo diferida (Google Business da 404).
+  **Ribeiro cerrado** (39 altas en 4 lotes). Los `parcial` son colleiteiros con
+  web en obras/403/escueta (Eduardo Bravo, Iria Otero, Mauro Estévez).
 - 2026-07-10 — **Lote 1.2c — Ourense, DO Ribeiro (corte 2, 1ª mitad)**: 11 altas
   (10 `verificado`, 1 `parcial`; VO=sí en Pousadoiro, Celme, Terra Minei,
   Razamonde). Corrección de municipio: Catro Ferrados está en Puga (**Toén**), no

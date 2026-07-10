@@ -153,22 +153,30 @@
   multi-DO** (Rías Baixas/Ribeiro/Ribera/Rioja, 4 bodegas) y su dominio está
   enredado con la fila de Pontevedra `adega-pazo-das-barreiras` (ya hay tarea en
   curso). Resolver esa relación antes de crear fila en Ourense.
-- [ ] **Castro Rei** — Ribadavia. <http://www.bodegacastrorei.com> → corte 2 resto.
+- [x] **Castro Rei** — **accepted → `bodega-castro-rei-ribadavia`**
+  (`verificado`, `sí`). Sampaio (Ribadavia); tienda propia.
 - [x] **Dominio de Razamonde** — **accepted → `dominio-de-razamonde-cenlle`**
   (`verificado`, `sí`). Razamonde (Cenlle); tienda propia.
-- [ ] **Eduardo Bravo** — Ribadavia. <http://www.eduardobravo.es/> → corte 2 resto.
-- [ ] **Eloi Lorenzo** — A Arnoia. <http://www.eloilorenzo.es/> → corte 2 resto.
+- [x] **Eduardo Bravo** — **accepted → `eduardo-bravo-ribadavia`** (`parcial`,
+  `no comprobado`). Ribadavia; web en reforma, identidad por redes.
+- [x] **Eloi Lorenzo** — **accepted → `adega-eloi-lorenzo-a-arnoia`**
+  (`verificado`, `no comprobado`). Aponte (A Arnoia); vinos naturales.
 - [x] **Granxa D'Outeiro** — **accepted → `granxa-douteiro-ribadavia`**
   (`verificado`, `no comprobado`). Ribadavia; Francelus y Granxa d'Outeiro.
-- [ ] **Iria Otero** — Leiro. <http://www.iriaotero.com> → corte 2 resto.
-- [ ] **Pateiro Vinos de Guarda** — Ribadavia. <http://www.pateirovinosdeguarda.com>
-  → corte 2 resto.
+- [x] **Iria Otero** — **accepted → `iria-otero-leiro`** (`parcial`,
+  `no comprobado`). Leiro; web con 403 (técnico).
+- [x] **Pateiro Vinos de Guarda** — **accepted →
+  `pateiro-vinos-de-guarda-carballeda-de-avia`** (`verificado`, `sí`). ⚠ municipio
+  corregido: **Carballeda de Avia**, no Ribadavia. Marca El Patito Feo.
 - [x] **Lagar do Meréns** — **accepted → `lagar-do-merens-a-arnoia`**
   (`verificado`, `no comprobado`). A Arnoia; premiados.
-- [ ] **Mauro Estévez** — A Arnoia. <http://mauroestevez.com/> → corte 2 resto.
-- [ ] **Adega Gandarela** — Ribadavia. <http://gandarela.es/> → corte 2 resto.
+- [x] **Mauro Estévez** — **accepted → `mauro-estevez-a-arnoia`** (`parcial`,
+  `no comprobado`). A Arnoia; web con poca información.
+- [x] **Adega Gandarela** — **accepted → `adega-gandarela-cenlle`**
+  (`verificado`, `sí`). ⚠ municipio corregido: **Laias (Cenlle)**, no Ribadavia.
+  Tienda propia + turismo rural.
 - [ ] **Adega O Cotarelo** — Cenlle. <https://adega-o-cotarelo.negocio.site>
-  ⚠ web ligera → corte 2 resto.
+  → **diferido**: la página de Google Business da 404 (web ligera caída).
 
 > **Corte 3 (resto ~34, sin dominio propio en la ficha — solo enlace genérico
 > `wineinmoderation.eu`):** colleiteiros pequeños del mismo directorio, p. ej.
