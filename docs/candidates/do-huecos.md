@@ -196,7 +196,7 @@ ordenado por tamaño de hueco (18–26).
 | 20 | DOP Arzúa-Ulloa + DOP Queixo Tetilla (queserías coruñesas) | A Coruña → `a-coruna.md` (nuevo) | `queixotetilla.org/nuestros-elaboradores/` (**arzua-ulloa.org muerto**) | ✅ 2026-07-09 (**sin hueco real**: 10 coruñesas en Tetilla → 7 ya en CSV, 1 gran grupo → **2 escritas**; Arzúa-Ulloa sin registro público; +3 pistas otras provincias) |
 | 21 | DOP Queso Manchego — queserías de Cuenca | Cuenca → `cuenca.md` (nuevo) | Consejo (`quesomanchego.es/en/manufacturers/`, JSON en `wp-json/…/pages/10148`) | ✅ 2026-07-09 (65 inscritas 4 prov. → 12 Cuenca → 7 en CSV + **2 alias** → **3 escritas**; +7 correcciones a filas y pistas Toledo 7 / CR 4 / Albacete 5) |
 | 22 | 5 DO insulares de Tenerife (vino) | S.C. Tenerife → `santa-cruz-de-tenerife.md` (sección nueva) | `tacovin.com`, `dovalleorotava.com`, `vinosvalleguimar.com`, `vinosdeabona.com` + portal Cabildo `vinosdetenerife.es` | ✅ corte 1, 2026-07-09 (**hueco grande y real**: 89 inscritas → 11 en CSV → **78 netas**; 25 escritas con web; **53 en cortes 2-3** con municipio+tel ya capturados) |
-| 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (sección nueva) | Consejo (navarrawine.com), bodegas inscritas | pendiente |
+| 23 | DO Navarra — bodegas (huecos rurales) | Navarra → `navarra.md` (nuevo) | **INTIA** (organismo de control), PDF `VN ListadoBodegasCertificadas` vía Wayback — *no* el consejo | ✅ corte 1, 2026-07-09 (**hueco real**: 77 filas del registro → 26 en CSV → **51 netas**; 25 escritas; **5 alias marca↔razón social** detectados) |
 | 24 | DO Cariñena + Campo de Borja + Calatayud | Zaragoza → `zaragoza.md` | Consejos de las tres DO | pendiente |
 | 25 | DO Utiel-Requena + DOP Arroz de Valencia | Valencia → `valencia.md` (nuevo) | Consejos (utielrequena.org, arrozdevalencia.org) | pendiente |
 | 26 | Ribera del Duero soriana — resto del registro | Soria → `soria.md` (nuevo) | Consejo Ribera del Duero, filtro municipios sorianos | pendiente |
@@ -483,6 +483,34 @@ candidatos.
   pista gorda: existe una **sexta DO regional, `DOP Islas Canarias`**, con ~9
   bodegas tinerfeñas netas (Ferrera, Piedra Fluida, Pago de los Cercados, Finca El
   Ancón, Tabares 4, Envínate…) → corte propio.
+- 2026-07-09: **lote 23 (DO Navarra) — corte 1 cerrado.** `navarra.md` creado.
+  **Hueco real**, y el aprendizaje más transferible de la ola: **la fuente buena no
+  era el consejo**. `navarrawine.com` solo publica **27** bodegas (CPT `bodegas`,
+  `x-wp-total: 27`) frente a las ~85 de la DO; el registro íntegro (**77 filas** con
+  razón social, municipio, tel, email y web) lo publica el **organismo de control,
+  INTIA**, en un PDF cuya URL viva ya redirige a la home → recuperado por **Wayback**
+  (fechado 31/12/2023). Generalizable: *cuando el consejo delega la certificación en
+  un tercero (INTIA y similares), ese tercero suele publicar el listado completo.*
+  Resultado: 26 en CSV → **51 netas**, 25 escritas. Aprendizajes: (a) **el patrón de
+  alias llega aquí a su forma más pura**: el consejo publica **marcas** y el
+  organismo **razones sociales** → *Finca Albret* = Bodegas Príncipe de Viana
+  (planta de Cadreita), *Bodega Ozalder* = SAT García García (y está en **Larraga**,
+  no en Lerín), *Pagos de Obanos* = Grupo Vitilia, *Malón de Echaide* = Bodega Ntra.
+  Sra. del Romero, *Bodega Eslava* = Bodega Coop. San Miguel → 5 duplicados evitados;
+  (b) el PDF trae «**Instalaciones sitas en:**» (planta ≠ sede) y **repite la razón
+  social** por planta → no deduplicar por nombre a secas o se pierden bodegas;
+  (c) **guarda de dedup obligatoria: exigir `categoria == "Bodega"`** en la fila del
+  CSV — sin ella «Bodegas San Martín» matchea una charcutería de Arbizu, «Asensio
+  Viñedos y Bodegas» una conservera y «Viñedos y Bodegas de Mendigorría» una
+  productora de fresas; (d) corrección detectada: `mendiko-aibar-oibar` está como
+  **Aceite** pero es bodega certificada de la DO.
+- 2026-07-09: **la pasada de candidatos se traslada a `main`.** Los lotes 1-22 y la
+  Festa do Queixo vivían en `codex/verifica-avila-lote-1` (rama compartida con la
+  verificación de Málaga, Ávila y Burgos de otros agentes). Se han **cherry-pickeado
+  a `main` solo los commits que tocan `docs/candidates/`**; el trabajo ajeno (CSV de
+  Málaga/Ávila/Burgos, docs de AGENTS) permanece intacto en su rama. Del commit
+  mixto del lote 1 se omitieron dos renombrados de imágenes de Burgos. A partir de
+  aquí, esta pasada trabaja sobre `main`.
 - Coordinación: en la rama activa hay verificación de Burgos en curso; esta
   pasada no toca CSVs, así que no interfiere. Si al abrir un lote
   `git status --short` muestra a otro agente trabajando la provincia destino,
