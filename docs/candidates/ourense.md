@@ -257,7 +257,18 @@
   <https://www.jorgeordonez.es/>. ⚠ Négociant/grupo Jorge Ordóñez (Málaga) con
   proyectos en varias DO; confirmar bodega/marca propia de Valdeorras y encaje.
 
-### DO Monterrei (10)
+### DO Monterrei (10) — ✅ integrado 2026-07-10 (lote 1.2f)
+
+> **9 altas** (3 `verificado` + 6 `parcial`); VO=sí en Tabú y Triay. Diferido:
+> **Franco Basalo** (dominio muerto). Correcciones/resoluciones: **Pazo de
+> Valdeconde está en Verín (Mourazos), no Monterrei**; Terras do Cigarrón
+> confirmada como cooperativa real (no solo marca de Adegas Galegas); Father 1943
+> es la 30ª bodega de la DO (nueva, 2026). Muradella queda `parcial` por no tener
+> web propia (referencia mundial, vende vía distribuidores). Slugs:
+> `quinta-do-buble-oimbra`, `bodega-tabu-oimbra`, `quinta-da-muradella-verin`,
+> `bodegas-triay-oimbra`, `adega-trasdovento-oimbra`, `pazo-de-valdeconde-verin`,
+> `castro-de-lobarzan-monterrei`, `father-1943-verin`,
+> `terras-do-cigarron-monterrei`.
 
 - [ ] **Quinta da Muradella** — Bodega. Verín. Referencia de Monterrei (José Luis
   Mateo, ecológico desde 2005). Web propia a confirmar (vende vía distribuidores).

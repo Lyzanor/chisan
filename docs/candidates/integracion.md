@@ -108,7 +108,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
-| 1.2 | Ourense | **1.2a-d Ribeiro (39) + 1.2e Valdeorras (10) hechos** = 49 altas. Falta: Monterrei (10+13) + Ribeira Sacra (13) + Festa (1). Diferidos acumulados: ~11 (webs muertas/grupos/négociant). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (5/7) | en curso |
+| 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei lote 10 (9) hechos** = 58 altas. Falta: Monterrei resto (13) + Ribeira Sacra (13) + Festa (1). Diferidos acumulados: ~12. Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (6/7) | en curso |
 | 1.3 | Córdoba | Empezar por «Bodegas con web/venta confirmada» (8) → 1; Baena (15)→1-2; Priego (9)+Lucena (4)→1; Montoro-Adamuz (7)+Pedroches (8)→1; «Bodegas del registro, municipio a confirmar» (14, sin web) al final. ⚠ resolver grupo Pérez Barquero antes de crear filas de Montilla-Moriles | 65 | ~6 | pendiente |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
@@ -150,6 +150,14 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.2f — Ourense, DO Monterrei (lote 10, 10 candidatos)**: 9
+  altas (3 `verificado` + 6 `parcial`; VO=sí en Tabú y Triay). **Corrección de
+  municipio**: Pazo de Valdeconde está en Verín (Mourazos), no Monterrei.
+  Resoluciones de ⚠: Terras do Cigarrón es cooperativa real (se mantiene);
+  Muradella queda `parcial` por no tener web propia (referencia mundial pero solo
+  distribuidores). Father 1943 = bodega nueva (30ª de la DO, 2026). Diferido:
+  Franco Basalo (dominio muerto). Falta el resto del lote 17 (13 adegas, casi
+  todas solo con teléfono).
 - 2026-07-10 — **Lote 1.2e — Ourense, DO Valdeorras (10 bodegas)**: 10 altas,
   todas `verificado`; 7 con `Venta online=sí` (lote de alto rendimiento: el PDF
   del consejo lleva a bodegas con web y tienda). Municipios confirmados por web
