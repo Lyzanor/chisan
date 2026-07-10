@@ -57,25 +57,44 @@
   A Arnoia; tienda propia.
 - [x] **Viñedos Sanclodio** — **accepted → `vinedos-sanclodio-leiro`**
   (`verificado`, `sí`). Leiro (Gomariz); del grupo Matarromera.
-- [ ] **Bodega Alanís** — Bodega. Cenlle (Barbantes, confirmar). <https://www.bodegaalanis.com/>.
-  Marca histórica del Ribeiro.
-- [ ] **Señorío de Beade (Beade Primacía)** — Bodega. Beade. <https://www.beadeprimacia.com/>.
-- [ ] **Terras do Castelo** — Bodega. Beade. <https://www.terradocastelo.com/>.
-- [ ] **Bodegas Val de Souto** — Bodega. Castrelo de Miño. <https://www.valdesouto.com/>.
-- [ ] **Ladeiras do Ribeiro** — Bodega. Ribadavia. <https://ladeirasdoribeiro.com/>.
-- [ ] **Vinos Antonio Montero** — Bodega. Castrelo de Miño. <https://www.antoniomontero.com/>.
-- [ ] **Bodegas El Paraguas** — Bodega. Ribadavia (confirmar). <https://www.bodegaselparaguas.com/>.
-- [ ] **Adega Manuel Formigo (Finca Teira)** — Bodega/colleiteiro. Beade.
-  <https://www.fincateira.com/>.
-- [ ] **Luis Anxo Rodríguez Vázquez (Viña de Martín)** — Bodega/colleiteiro.
-  A Arnoia. Colleiteiro de referencia («Os Pasás»); web propia a confirmar.
+> ✅ **Lote 1.2b integrado 2026-07-10** (resto del corte 1): 9 altas (8
+> `verificado` + 1 `parcial`); con `Venta online=sí`: Antonio Montero, Ladeiras,
+> Casar de Vide. **Rechazo:** El Paraguas (otra provincia). **Diferidos:** GRM
+> (503) y Pazo Lalón (sin web).
+
+- [x] **Bodega Alanís** — **accepted → `bodega-alanis-cenlle`** (`verificado`,
+  `no comprobado`). Barbantes (Cenlle), 1910; del grupo Bodegas Gallegas.
+- [x] **Señorío de Beade (Beade Primacía)** — **accepted →
+  `senorio-de-beade-beade`** (`verificado`, `no comprobado`). Beade, desde 1987.
+- [x] **Terras do Castelo** — **accepted → `terra-do-castelo-beade`**
+  (`verificado`, `no comprobado`). Beade; del grupo Martín Códax (email
+  administracion@martincodax.com).
+- [x] **Bodegas Val de Souto** — **accepted →
+  `bodegas-val-de-souto-castrelo-de-mino`** (`verificado`, `no comprobado`).
+  Souto (Castrelo de Miño), 1,6 ha propias.
+- [x] **Ladeiras do Ribeiro** — **accepted → `ladeiras-do-ribeiro-ribadavia`**
+  (`verificado`, `sí`). Ribadavia; marca Seika, tienda propia.
+- [x] **Vinos Antonio Montero** — **accepted →
+  `vinos-antonio-montero-castrelo-de-mino`** (`verificado`, `sí`). Castrelo de
+  Miño; tienda propia (72-108 €).
+- [x] **Bodegas El Paraguas** — **rejected: other-province**. La web sitúa la
+  bodega en **Cobas, Ferrol (A Coruña)**, no en Ribadavia/Ribeiro (error de fase
+  A). Es una bodega real, pero de A Coruña → anotar como candidato de `a-coruna`,
+  no crear en Ourense.
+- [x] **Adega Manuel Formigo (Finca Teira)** — **accepted →
+  `adega-manuel-formigo-finca-teira-beade`** (`verificado`, `no comprobado`).
+  Beade; viticultores/elaboradores con fincas propias.
+- [x] **Luis Anxo Rodríguez Vázquez (Viña de Martín)** — **accepted →
+  `luis-anxo-rodriguez-vina-de-martin-a-arnoia`** (`parcial`, `no comprobado`).
+  Os Pasás, Paixón (A Arnoia); colleiteiro de referencia desde 1988, 3,7 ha. Sin
+  web propia, solo venta vía terceros → parcial.
 - [ ] **Bodegas GRM (Grupo Reboreda-Morgadío / Campante)** — Bodega. Toén.
-  <https://bodegasgrm.com/>. ⚠ Grupo mediano-grande con varias marcas (Gran
-  Reboreda, Viña Reboreda); confirma encaje vs tamaño en integración.
-- [ ] **Casar de Vide** — Bodega. Castrelo de Miño.
-  <https://tienda.matarromera.es/122-bodega-casar-de-vide>. ⚠ Pertenece al **Grupo
-  Matarromera** (gran grupo de Castilla y León); confirmar encaje antes de crear
-  fila.
+  <https://bodegasgrm.com/>. → **diferido**: web dio 503 en la revisión; grupo
+  mediano (Campante) borderline por tamaño → reabrir en corte posterior.
+- [x] **Casar de Vide** — **accepted → `bodega-casar-de-vide-castrelo-de-mino`**
+  (`verificado`, `sí`). Castrelo de Miño (Vide); del grupo Matarromera —
+  mantenida con el mismo criterio que Sanclodio (bodega de terroir de grupo de
+  calidad); VO=sí vía la tienda oficial del grupo (precios confirmados).
 
 > **Resto del registro Ribeiro (≈59, siguiente(s) corte(s) — ya listados en la
 > fuente):** mayoría de colleiteiros y adegas pequeñas del directorio

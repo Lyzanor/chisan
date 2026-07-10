@@ -108,7 +108,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
-| 1.2 | Ourense | **1.2a Ribeiro corte 1, 12 bodegas top — hecho**. Falta: resto Ribeiro corte 1 (11) + corte 2 (24) + Valdeorras (15) + Monterrei (10+13) + Ribeira Sacra (13) + Festa (1). Corrección pendiente: `pazo-das-tapias-monterrei` (dominio de matriz) | 100 | ~9 (1/9) | en curso |
+| 1.2 | Ourense | **1.2a (12) + 1.2b (9) Ribeiro corte 1 hechos** (21 altas; corte 1 cerrado salvo GRM y Pazo Lalón diferidos, El Paraguas rechazado→A Coruña). Falta: Ribeiro corte 2 (24) + Valdeorras (15) + Monterrei (10+13) + Ribeira Sacra (13) + Festa (1). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~9 (2/9) | en curso |
 | 1.3 | Córdoba | Empezar por «Bodegas con web/venta confirmada» (8) → 1; Baena (15)→1-2; Priego (9)+Lucena (4)→1; Montoro-Adamuz (7)+Pedroches (8)→1; «Bodegas del registro, municipio a confirmar» (14, sin web) al final. ⚠ resolver grupo Pérez Barquero antes de crear filas de Montilla-Moriles | 65 | ~6 | pendiente |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.2b — Ourense, DO Ribeiro (resto corte 1)**: 9 altas (8
+  `verificado`, 1 `parcial`; VO=sí en Antonio Montero, Ladeiras, Casar de Vide).
+  **Rechazo por otra provincia**: Bodegas El Paraguas está en Cobas, Ferrol (A
+  Coruña), no en Ribeiro — error de fase A, no se crea en Ourense. **Diferidos**:
+  GRM (web 503, grupo borderline) y Pazo Lalón (sin web). Más bodegas de terroir
+  de grupos de calidad mantenidas (Bodegas Gallegas→Alanís, Martín Códax→Terra do
+  Castelo, Matarromera→Casar de Vide). Corte 1 del Ribeiro cerrado.
 - 2026-07-10 — **Lote 1.2a — Ourense, DO Ribeiro (12 bodegas top)**: 12 altas,
   todas `verificado`; 7 con `Venta online=sí` ecommerce. Corregido el municipio
   de O'Ventosela (Ribadavia→Leiro, se mudó en 2008). Criterio: varias bodegas de
