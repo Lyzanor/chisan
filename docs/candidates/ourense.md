@@ -118,35 +118,57 @@
 > **`unverified`**. Las ~34 fichas sin dominio propio (colleiteiros pequeños)
 > quedan en **nota corte 3**.
 
-- [ ] **Adega Catro Ferrados** — Bodega. Ribadavia. <http://www.vinoribeiro4ferrados.com/>.
-- [ ] **Adega do Demo** — Bodega. Ribadavia. <http://www.adegadodemo.wine>.
-- [ ] **Adega Manuel Rojo** — Bodega/colleiteiro. A Arnoia. <https://www.adegamanuelrojo.com>.
-- [ ] **Adega Pousadoiro** — Bodega. Castrelo de Miño. <https://pousadoiro.wine>.
-- [ ] **Adegas Celme** (Adegas Celme, S.L.) — Bodega. Castrelo de Miño. <http://www.adegascelme.com/>.
-- [ ] **Terra Minei** (Adegas Francisco Fernández Sousa) — Bodega. Castrelo de
-  Miño. <http://www.terraminei.com/>.
-- [ ] **Adegas Maleiga** — Bodega. Beade. <https://maleiga.com/>.
-- [ ] **Quinta do Avelino** (Adegas Parente García) — Bodega. Cenlle. <http://www.parentegarcia.com>.
-- [ ] **Tear dos Dodi** (Amalia Diéguez Martínez) — Bodega/colleiteiro. A Arnoia.
-  <http://www.teardosdodi.com>.
-- [ ] **Boas Vides** (Antonio Míguez Amil) — Bodega/colleiteiro. Ribadavia. <http://www.boasvides.com>.
-- [ ] **Bodegas Loeda** (Bodegas Loeda, S.L.) — Bodega. Ribadavia. <http://www.bodegasloeda.com/>.
-- [ ] **Bodegas Peña** (marca **Lancero**) — Bodega. Castrelo de Miño. <http://www.lancero.es>.
-- [ ] **Bodegas Villanueva** — Bodega. Castrelo de Miño. <http://www.bodegasvillanueva.com>.
-- [ ] **Castro Rei** (Castro Rei, S.L.) — Bodega. Ribadavia. <http://www.bodegacastrorei.com>.
-- [ ] **Dominio de Razamonde** — Bodega. Cenlle. <https://www.dominioderazamonde.com/>.
-- [ ] **Eduardo Bravo** — Bodega/colleiteiro. Ribadavia. <http://www.eduardobravo.es/>.
-- [ ] **Eloi Lorenzo** — Bodega/colleiteiro. A Arnoia. <http://www.eloilorenzo.es/>.
-- [ ] **Granxa D'Outeiro** — Bodega. Ribadavia. <https://www.granxadouteiro.com/>.
-- [ ] **Iria Otero** (Iria Otero Mazoy) — Bodega/colleiteiro. Leiro. <http://www.iriaotero.com>.
-- [ ] **Pateiro Vinos de Guarda** (Iván Vázquez Pateiro) — Bodega. Ribadavia.
-  <http://www.pateirovinosdeguarda.com>.
-- [ ] **Lagar do Meréns** — Bodega. A Arnoia. <http://www.lagardomerens.com/>.
-- [ ] **Mauro Estévez** — Bodega/colleiteiro. A Arnoia. <http://mauroestevez.com/>.
-- [ ] **Adega Gandarela** (Penedo Estévez, Manuel) — Bodega/colleiteiro.
-  Ribadavia. <http://gandarela.es/>.
-- [ ] **Adega O Cotarelo** — Bodega/colleiteiro. Cenlle.
-  <https://adega-o-cotarelo.negocio.site>. ⚠ web ligera (Google Business), confirmar venta.
+> ✅ **Lote 1.2c integrado 2026-07-10** (corte 2, primera mitad): 11 altas (10
+> `verificado` + 1 `parcial`); VO=sí en Pousadoiro, Celme, Terra Minei, Razamonde.
+> Diferidos por web caída/vacía: Manuel Rojo, Quinta do Avelino, Tear dos Dodi
+> (DNS muerto), Lancero (WordPress vacío), Bodegas Villanueva (grupo multi-DO
+> enredado con fila de Pontevedra). Quedan sin abrir 8 del corte 2.
+
+- [x] **Adega Catro Ferrados** — **accepted → `adega-catro-ferrados-toen`**
+  (`verificado`, `no comprobado`). ⚠ municipio corregido: **Puga (Toén)**, no
+  Ribadavia.
+- [x] **Adega do Demo** — **accepted → `adega-do-demo-ribadavia`** (`parcial`,
+  `no comprobado`). Web dio 503 temporal → sin primario legible.
+- [ ] **Adega Manuel Rojo** — A Arnoia. → **diferido**: dominio adegamanuelrojo.com
+  no resuelve (DNS muerto). Buscar rastro alternativo en corte posterior.
+- [x] **Adega Pousadoiro** — **accepted → `adega-pousadoiro-castrelo-de-mino`**
+  (`verificado`, `sí`). Barral (Castrelo de Miño); tienda propia.
+- [x] **Adegas Celme** — **accepted → `adegas-celme-castrelo-de-mino`**
+  (`verificado`, `sí`). Astariz (Castrelo de Miño), ecológica; tienda propia.
+- [x] **Terra Minei** — **accepted → `terra-minei-castrelo-de-mino`**
+  (`verificado`, `sí`). Prado (Castrelo de Miño), desde 1956; tienda propia.
+- [x] **Adegas Maleiga** — **accepted → `adegas-maleiga-beade`** (`verificado`,
+  `no comprobado`). Beade; INTRE y LAPSO.
+- [ ] **Quinta do Avelino** (Parente García) — Cenlle. → **diferido**: dominio
+  parentegarcia.com no resuelve (DNS muerto).
+- [ ] **Tear dos Dodi** — A Arnoia. → **diferido**: dominio teardosdodi.com no
+  resuelve (DNS muerto).
+- [x] **Boas Vides** — **accepted → `boas-vides-ribadavia`** (`verificado`,
+  `no comprobado`). Ribadavia, desde 1993.
+- [x] **Bodegas Loeda** — **accepted → `bodegas-loeda-ribadavia`** (`verificado`,
+  `no comprobado`). Sampaio (Ribadavia), 3 generaciones.
+- [ ] **Bodegas Peña** (Lancero) — Castrelo de Miño. → **diferido**: lancero.es es
+  un WordPress vacío (post de bienvenida por defecto).
+- [ ] **Bodegas Villanueva** — Castrelo de Miño. → **diferido**: es un **grupo
+  multi-DO** (Rías Baixas/Ribeiro/Ribera/Rioja, 4 bodegas) y su dominio está
+  enredado con la fila de Pontevedra `adega-pazo-das-barreiras` (ya hay tarea en
+  curso). Resolver esa relación antes de crear fila en Ourense.
+- [ ] **Castro Rei** — Ribadavia. <http://www.bodegacastrorei.com> → corte 2 resto.
+- [x] **Dominio de Razamonde** — **accepted → `dominio-de-razamonde-cenlle`**
+  (`verificado`, `sí`). Razamonde (Cenlle); tienda propia.
+- [ ] **Eduardo Bravo** — Ribadavia. <http://www.eduardobravo.es/> → corte 2 resto.
+- [ ] **Eloi Lorenzo** — A Arnoia. <http://www.eloilorenzo.es/> → corte 2 resto.
+- [x] **Granxa D'Outeiro** — **accepted → `granxa-douteiro-ribadavia`**
+  (`verificado`, `no comprobado`). Ribadavia; Francelus y Granxa d'Outeiro.
+- [ ] **Iria Otero** — Leiro. <http://www.iriaotero.com> → corte 2 resto.
+- [ ] **Pateiro Vinos de Guarda** — Ribadavia. <http://www.pateirovinosdeguarda.com>
+  → corte 2 resto.
+- [x] **Lagar do Meréns** — **accepted → `lagar-do-merens-a-arnoia`**
+  (`verificado`, `no comprobado`). A Arnoia; premiados.
+- [ ] **Mauro Estévez** — A Arnoia. <http://mauroestevez.com/> → corte 2 resto.
+- [ ] **Adega Gandarela** — Ribadavia. <http://gandarela.es/> → corte 2 resto.
+- [ ] **Adega O Cotarelo** — Cenlle. <https://adega-o-cotarelo.negocio.site>
+  ⚠ web ligera → corte 2 resto.
 
 > **Corte 3 (resto ~34, sin dominio propio en la ficha — solo enlace genérico
 > `wineinmoderation.eu`):** colleiteiros pequeños del mismo directorio, p. ej.
