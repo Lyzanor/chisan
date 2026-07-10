@@ -7,40 +7,42 @@
 > deduplicado contra `santa-cruz-de-tenerife.csv` el 2026-07-08; antes de integrar:
 > re-deduplicar, confirmar actividad/dirección y decidir `verificacion`/`Venta online`.
 
-## ⚠ Corrección a fila existente (no es alta)
+## ⚠ Corrección a fila existente — ✅ aplicada 2026-07-10 (lote 1.1c)
 
-- **Cerveza Agüita** figura en el CSV con municipio **La Orotava**, pero la fábrica
-  está en **C/ Azorín 20, bloque 7, local 2, 38007 Santa Cruz de Tenerife**
-  (<https://aguita.org/contacto/>, Empresite). Corregir municipio+lat/lon de la fila
-  `aguita` → suma 1 a la capital sin crear fila. Tiene tienda online
-  (<https://aguita.org/categoria-producto/cervezas/>) → revisar `Venta online=sí`.
+- ✅ **Cerveza Agüita**: slug corregido `cerveza-aguita-la-orotava` →
+  **`cerveza-aguita-santa-cruz-de-tenerife`** (con registro `merge`), municipio a
+  **Santa Cruz de Tenerife** (C/ Azorín 20, Los Gladiolos), teléfono
+  (692 184 739) y coordenadas actualizados. Confirmada tienda online propia con
+  carrito (cervezas 2,50 €) y **club de suscripción** → `verificado`,
+  `Venta online=sí`, canal `ecommerce|suscripcion`. Suma 1 a la capital.
 
-## Capital (municipio de Santa Cruz) — 5 candidatos
+## Capital (municipio de Santa Cruz) — 5 candidatos → 1 alta, 1 ya presente, 3 diferidas (lote 1.1c)
 
-- [ ] **Molino de Gofio La Salud, S.L.** — Otros (gofio). Avda. de Venezuela 22 /
-  C/ Princesa Guacimara, barrio La Salud. <https://www.molinogofiolasalud.com/>.
-  Licencia de 1943; familia García (Moisés, David y Abel); único molino de gofio
-  activo de la capital; ~200 t/año.
-- [ ] **Queso de Las Carboneras (Sotera)** — Lácteos y quesos. Las Carboneras, Anaga.
-  Sin web; fuente: GastroCanarias/Ayto. de Santa Cruz. ⚠ **Dedup crítico:** aclarar si
-  es la fila existente "Quesería de Anaga" (sin web) antes de crear fila.
-- [ ] **Mieles Laurinagan (Eduardo Perdomo)** — Miel. Taganana. Fuente:
-  <https://degustasantacruz.com/en/and-may-the-queen-reign-again/>. Miel de monte de
-  Anaga; encaja DOP Miel de Tenerife.
-- [ ] **Apicultores Hermanos Dorta** — Miel. Anaga. Fuente: Mercadillo de las
-  Tradiciones de Anaga (Ayto.):
-  <https://www.santacruzdetenerife.es/web/noticias-y-agenda/noticias/detalle-noticia/santa-cruz-promueve-su-producto-local-a-traves-del-mercadillo-de-las-tradiciones-de-anaga>.
-- [ ] **Vino de Mora – Telesforo** — Bodega. Taganana. Fuente: GastroCanarias/Ayto.
-  (<https://reservabiosfera.tenerife.es/noticias/santa-cruz-conectara-a-productores-y-restauradores-de-anaga-en-gastrocanarias/>).
-  Sin web localizada → probable `parcial`.
+- [x] **Molino de Gofio La Salud, S.L.** — **accepted →
+  `molino-de-gofio-la-salud-santa-cruz-de-tenerife`** (`verificado`,
+  `no comprobado`). Av. de Venezuela 22, La Salud; único molino de gofio activo de
+  la capital, desde 1944, familia García. (Geocodificado a la calle real: hay un
+  homónimo de «Av. de Venezuela 22» en Playa San Juan a 64 km.)
+- [x] **Queso de Las Carboneras (Sotera)** — **already-present / no crear**. Doña
+  Sotera es vecina de Las Carboneras y hace queso de cabra; coincide con la fila
+  existente **`queseria-de-anaga-santa-cruz-de-tenerife`** (literalmente en «Calle
+  de las Carboneras, Anaga», queso de cabra del Macizo de Anaga). Sin rastro
+  digital propio que justifique una fila distinta → no se crea (⚠ dedup resuelto).
+- [ ] **Mieles Laurinagan (Eduardo Perdomo)** — **diferida**: solo mención en
+  nota del Ayto. (Taganana), sin web/teléfono/redes → no cumple el mínimo de
+  integración (≥1 enlace verificable). Reabrir si aparece rastro.
+- [ ] **Apicultores Hermanos Dorta** — **diferida**: ídem (solo Mercadillo de las
+  Tradiciones de Anaga).
+- [ ] **Vino de Mora – Telesforo** — **diferida**: solo GastroCanarias/Ayto.
+  (Taganana), sin web → sin fuente verificable.
 
-## Provincia — 2 candidatos
+## Provincia — ✅ Cervezas Ranilla integrada (lote 1.1c)
 
-- [ ] **Cervezas Ranilla** — Cerveza artesana. Puerto de la Cruz, desde 2022 (primera
-  fábrica artesanal del municipio). <https://cervezasranilla.es/>.
+- [x] **Cervezas Ranilla** — **accepted → `cervezas-ranilla-puerto-de-la-cruz`**
+  (`verificado`, **`sí` ecommerce**). Primera fábrica artesanal del Puerto de la
+  Cruz (2022), tienda online propia.
 - [x] **Bodegas Marba** — retirada de este bloque (limpieza 2026-07-10):
-  duplicaba la entrada completa del lote 22 (abajo), que la sitúa correctamente
-  en **Tegueste** con web y teléfono. Ver «DO Tacoronte-Acentejo (9)».
+  duplicaba la entrada del lote 22; integrada como `bodegas-marba-tegueste`.
 
 ## Descartados en esta pasada (no repasar)
 
@@ -113,56 +115,77 @@
   (`parcial`, `no comprobado`). C/ Canal 11, Santa Úrsula; también guachinche.
   Web propia con conexión rechazada (fallo técnico, enlace conservado).
 
-### DO Valle de La Orotava (5)
+### DO Valle de La Orotava (5) — ✅ integradas 2026-07-10 (lote 1.1b)
 
-- [ ] **Bodega Finca Marañuela** — Bodega. La Orotava (La Perdoma). · 699 434 662 ·
-  <https://bodegafincamaranuela.com>.
-- [ ] **Bodega Las Galanas** — Bodega. Los Realejos (La Cruz Santa). · 655 272 498 ·
-  <https://bodegalasgalanas.es>.
-- [ ] **Bodega Murcal** — Bodega. La Orotava (La Perdoma). · 616 175 152 ·
-  <https://bodegasmurcal.es>.
-- [ ] **Bodega Quinta San Antonio** (marca **Vinos Atlante**) — Bodega. La Orotava.
-  · 610 746 163 · <https://vinosatlante.com>.
-- [ ] **Bodega Tafuriaste** — Bodega. La Orotava. · 618 357 270 ·
-  <https://bodegatafuriaste.com>.
+- [x] **Bodega Finca Marañuela** — **accepted → `bodega-finca-maranuela-la-orotava`**
+  (`verificado`, `no comprobado`). La Perdoma; vinos naturales sin sulfitos,
+  ecológica. Sin tienda. Tel. web 691 284 858.
+- [x] **Bodega Las Galanas** — **accepted → `bodega-las-galanas-los-realejos`**
+  (`verificado`, **`sí` ecommerce**). Los Realejos (La Cruz Santa); tienda propia
+  con precios (12/35/18 €).
+- [x] **Bodega Murcal** — **accepted → `bodegas-murcal-la-orotava`** (`parcial`,
+  `no comprobado`). La Perdoma, desde 1932. Su web bodegasmurcal.es da 404 (caída)
+  → sin web, conservado su Facebook.
+- [x] **Bodega Quinta San Antonio (Vinos Atlante)** — **accepted →
+  `bodega-quinta-san-antonio-vinos-atlante-la-orotava`** (`verificado`,
+  `no comprobado`). La Orotava; solo distribuidores, sin carrito.
+- [x] **Bodega Tafuriaste** — **accepted → `bodega-tafuriaste-la-orotava`**
+  (`verificado`, **`sí` ecommerce**). Marcas Tafuriaste, Ocho Islas, Prunet;
+  tienda propia (precios 0,00 € por bug de formato, carrito operativo).
 
-### DO Valle de Güímar (4)
+### DO Valle de Güímar (4) — ✅ integradas 2026-07-10 (lote 1.1b)
 
-- [ ] **Bodega Hermanos Mesa** — Bodega. Arafo (C/ Sosa, 2). · 678 404 137 ·
-  <http://bodegahermanosmesa.com>. Familiar; blancos monovarietales de parcela
-  (Lo Cartas, Novelero, Oracán); viñedo del nivel del mar a 1.300 m.
-- [ ] **Bodega Tempus** — Bodega. Güímar (Barranco Badajoz). · 699 069 833 ·
-  <http://www.bodegatempus.com>.
-- [ ] **Bodega Comarcal Valle de Güímar** — Bodega. Arafo (Ctra. La Cumbre km 4,5).
-  · 922 510 437 · <http://bodegavalledeguimar.com>. ⚠ cooperativa comarcal;
-  confirmar marca propia de consumo.
-- [ ] **Bodegas Viña Gómez** — Bodega. Güímar (Topo Negro). · 636 955 759 ·
-  <http://www.bodegasvinagomez.com>.
+- [x] **Bodega Hermanos Mesa** — **accepted → `bodega-hermanos-mesa-arafo`**
+  (`verificado`, `no comprobado`). Arafo (C/ Sosa 2), variedades autóctonas. Su
+  «Compra online» **redirige a un tercero** (tienda.vinofilos.es) → no es VO propia.
+- [x] **Bodega Tempus** — **accepted → `bodega-tempus-guimar`** (`verificado`,
+  **`sí` ecommerce**). Güímar (Barranco Badajoz); tienda propia funcional.
+- [x] **Bodega Comarcal Valle de Güímar** — **accepted →
+  `bodega-comarcal-valle-de-guimar-arafo`** (`verificado`, `no comprobado`).
+  ⚠ resuelto: **embotella con dos marcas propias** (Pico Cho Marcial, Brumas de
+  Ayosa) → se mantiene. Sin tienda.
+- [x] **Bodegas Viña Gómez** — **accepted → `bodegas-vina-gomez-guimar`**
+  (`parcial`, `no comprobado`). Güímar (El Topo Negro), 5 generaciones. Su dominio
+  bodegasvinagomez.com **no resuelve** (DNS caído) → sin web; vende vía terceros.
 
 ### DO Abona (4)
 
 > Las fichas de este consejo (y las de Güímar) publican **«Venta en bodega: Sí/No»**,
 > visitas, horarios y degustación → pista directa de canal.
 
-- [ ] **Bodega Vento** (razón social José Damián Díaz González) — Bodega. San Miguel
-  de Abona (Las Zocas). · 630 038 886 · <https://www.bodegavento.com>. Venta en
-  bodega: **sí**.
-- [ ] **Bodega Mencey Chasna** (Jottocar, S.L.) — Bodega. Granadilla de Abona
-  (Chimiche). · 922 777 285 · <https://menceychasna.com>. Venta en bodega: **sí**.
-- [ ] **Bodega Laja Blanca** (Laja Blanca, S.L.) — Bodega. Arico. · 620 539 420 ·
-  <https://lajablanca.es>. Venta en bodega: **sí**.
-- [ ] **Sociedad Cooperativa Agrícola San Miguel** (marca **Casmi**) — Bodega. San
-  Miguel de Abona. · 922 700 300 · <https://lacasmi.com>. Venta en bodega: **sí**.
-  ⚠ cooperativa agrícola; confirmar marca de vino propia.
+> ✅ Las 4 integradas 2026-07-10 (lote 1.1c). La pista «Venta en bodega: sí» del
+> registro es **venta física, no online** → todas quedan `Venta online=no comprobado`.
 
-### DO Ycoden-Daute-Isora (3)
+- [x] **Bodega Vento** — **accepted → `bodega-vento-san-miguel-de-abona`**
+  (`parcial`, `no comprobado`). Las Zocas; web-plantilla escueta, actividad vía
+  consejo DO.
+- [x] **Bodega Mencey Chasna** — **accepted →
+  `bodega-mencey-chasna-granadilla-de-abona`** (`parcial`, `no comprobado`).
+  Jottocar, S.L., Chimiche, desde 2006. Su `.com` entra en bucle de
+  redirecciones → web `.net`.
+- [x] **Bodega Laja Blanca** — **accepted → `bodega-laja-blanca-arico`**
+  (`parcial`, `no comprobado`). Arico (TF-629); web con conexión rechazada
+  (técnico), conservado Facebook.
+- [x] **Bodega Lacasmi (Coop. San Miguel)** — **accepted →
+  `bodega-lacasmi-san-miguel-de-abona`** (`parcial`, `no comprobado`). ⚠ resuelto:
+  la coop embotella con su Bodega Lacasmi (marca Casmi) → cumple marca propia. Web
+  en construcción.
 
-- [ ] **Bodegas Estrada** (marca **La Calabacera**) — Bodega. Guía de Isora
-  (Ctra. TF-463, km 8,1). <https://lacalabacera.com>.
-- [ ] **Borja Pérez Viticultor** — Bodega. La Guancha (Av. Villa Nueva, 34).
-  <https://borjaperezviticultor.com>. Marcas: **Ignios Orígenes**, Artífice.
-  Referencia del vino de autor canario.
-- [ ] **Bodega Viña Zanata** — Bodega. La Guancha (C/ El Sol, 3). <https://zanata.net>.
+### DO Ycoden-Daute-Isora (3) — ✅ integradas 2026-07-10 (lote 1.1b)
+
+- [x] **Bodega Estrada (La Calabacera)** — **accepted →
+  `bodega-estrada-la-calabacera-guia-de-isora`** (`parcial`, `no comprobado`).
+  ⚠ resuelto: la web `lacalabacera.com` es una **finca ecológica gourmet**, pero
+  el consejo (ycoden.com/Viña Estrada) confirma que **sí elabora vino** de
+  marmajuelo y tinto de la DO en esa finca (Guía de Isora, Playa San Juan). Sin
+  tienda de vino → parcial.
+- [x] **Borja Pérez Viticultor** — **accepted →
+  `borja-perez-viticultor-la-guancha`** (`parcial`, `no comprobado`). La Guancha;
+  marcas Ignios Orígenes y Artífice, referencia del vino de autor canario. Su web
+  está «Coming Soon» (solo contacto) → actividad vía consejo de la DO, parcial.
+- [x] **Bodega Viña Zanata** — **accepted → `bodega-vina-zanata-la-guancha`**
+  (`verificado`, **`sí` ecommerce**). La Guancha (razón social Viña La Guancha,
+  S.L.); tienda propia (Shopify).
 
 ### Cortes siguientes — 53 bodegas restantes (datos ya capturados)
 
@@ -207,10 +230,15 @@
 ### Notas del lote 22
 
 - **Ya en `santa-cruz-de-tenerife.csv` (no son altas):** Cráter (El Sauzal) ·
-  Bodegas Insulares Tenerife (Tacoronte; ojo, el CSV tiene además
-  `bodegas-insulares-licores-tacoronte` → revisar si procede esa segunda fila) ·
-  Suertes del Marqués y Valleoro (La Orotava) · Viñátigo (La Guancha) · Altos de
-  Trevejos y Reverón (Vilaflor) · Cumbres de Abona (Arico).
+  Bodegas Insulares Tenerife (Tacoronte) · Suertes del Marqués y Valleoro (La
+  Orotava) · Viñátigo (La Guancha) · Altos de Trevejos y Reverón (Vilaflor) ·
+  Cumbres de Abona (Arico).
+  - ✅ **Revisado el ⚠ de `bodegas-insulares-licores-tacoronte`** (2026-07-10):
+    es la misma empresa que `bodegas-insulares-tenerife-tacoronte` (misma razón
+    social y dirección, Ctra. Gral. del Norte km 19,5), pero cubre una **línea de
+    producto distinta** (licor de plátano y aguardiente vs. vinos Viña Norte).
+    Se **mantienen ambas filas** por ahora (productos distintos); candidata a
+    fusión de baja prioridad si se decide una sola fila por unidad productiva.
 - ⚠ **Tres alias que habrían creado duplicados** (mismo patrón que el lote 21: el
   consejo lista **razón social**, el CSV usa **marca**):
   - *Mesur, S.L.* (Abona) = **Bodega Frontos** → `bodega-frontos-granadilla-de-abona`.
