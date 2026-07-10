@@ -18,18 +18,21 @@
 > **`unverified`**. El hueco vuelve a ser pequeño: `cuenca.csv` ya tenía 13
 > queserías.
 
-### Candidatos (3)
+### Candidatos (3) — ✅ integrados 2026-07-10 (fase B, lote 0.1 de `integracion.md`)
 
-- [ ] **Quesos Piqmar** (Comercial Piqmar, S.L.) — Lácteos y quesos. Casas de
-  Haro. · 969 380 764 · <https://www.quesospiqmar.com/>. ⚠ «Comercial» en la razón
-  social, pero figura como **fabricante inscrito** en la DOP; confirmar
-  elaboración propia (no solo envasado).
-- [ ] **Cooperativa San Pedro de Magaceda** — Lácteos y quesos. Villamayor de
-  Santiago. · 969 139 386 · <http://www.sanpedro-magaceda.es/>. Cooperativa con
-  marca propia. ⚠ tercer operador de Villamayor de Santiago (con De la Huz y
-  Sanabria, ya en CSV) → cuidar slug.
-- [ ] **Queserías López Espada** (Queserías López Espada, S.L.) — Lácteos y
-  quesos. Fuente de Pedro Naharro. · 969 125 284 · <http://quesoslopezespada.es/>.
+- [x] **Quesos Piqmar** — **accepted → `quesos-piqmar-casas-de-haro`**
+  (`verificado`): la web oficial confirma elaboración propia («elaboramos
+  artesanalmente nuestro propio queso»), lo que resuelve la duda «Comercial…».
+  Tienda con política de envíos pero sin checkout visible → `Venta
+  online=no comprobado`.
+- [x] **Cooperativa San Pedro de Magaceda** — **accepted →
+  `cooperativa-san-pedro-de-magaceda-villamayor-de-santiago`** (`parcial`):
+  coop quesera desde 1981 (consejo + directorios); su web está viva pero
+  bloquea el fetch (403) → sin primario accesible.
+- [x] **Queserías López Espada** — **accepted →
+  `queserias-lopez-espada-fuente-de-pedro-naharro`** (`verificado`): web
+  oficial confirma elaboración artesanal; sin tienda → `Venta online=no`.
+  Coordenadas a centroide (Nominatim no resuelve la calle Emilia Jarobo).
 
 ### Alias detectados — NO son altas
 
@@ -45,26 +48,36 @@
   (`quesos-la-aldea-san-clemente`). Su email de contacto es
   `quesoslaaldea@gmail.com`; constituida en 2017, con 3 marcas registradas.
 
-### Correcciones a filas existentes de `cuenca.csv` (no tocadas en esta pasada)
+### Correcciones a filas existentes — ✅ aplicadas 2026-07-10 (fase B, lote 0.1)
 
-> Detectadas al cruzar con el registro oficial. Valen para una pasada de refinado.
-
-- `quesera-campo-rus-s-l-cuenca` — **slug y municipio mal**: el consejo la sitúa
-  en **Santa María del Campo Rus** (el slug acaba en `-cuenca` y el municipio está
-  truncado como «Santa María del Campo»). Además la `web` apunta a un directorio
-  ajeno (`gff.co.uk/directory/...`); la real es <http://queseracamporus.com/>.
-- `quesos-sanabria-s-l-villamayor-de-santiago` — `web` también apunta a
-  `gff.co.uk/directory/...`; la real es <https://quesosanabria.com/>.
-- `queseria-villadharo-villaescusa-de-haro` — añadir razón social **S.A.T.
-  Oveman** y la marca **Cerro del Ángel**.
-- `quesos-la-aldea-san-clemente` — razón social **Poves Redondo, S.L.L.**
-- `quesos-parra-jimenez-las-mesas` — razón social **Don Merendón, S.L.**
-- `lacto-ganadera-rio-mayor-quesos-la-ermita-huete` — el consejo la inscribe como
-  **S.A.T. Río Mayor**, en **Caracenilla** (pedanía de Huete), con web
-  <https://quesoshuete.com/>; el CSV usa `quesoslaermitadecaracenilla.com`.
-  Confirmar cuál está viva y si son dos marcas de la misma quesería.
-- `queserias-chaves-saelices` — el CSV usa `queseriaschaves.es`, el consejo
-  `queseriaschaves.com`. Confirmar.
+- ✅ `quesera-campo-rus-s-l-cuenca` → **slug corregido** a
+  `quesera-campo-rus-santa-maria-del-campo-rus` (registro `merge` en evidencia);
+  la web-directorio gff.co.uk sustituida por <https://queseracamporus.com/>
+  (tienda online viva) → `verificado`, `Venta online=sí`. El municipio ya
+  estaba bien en el CSV.
+- ✅ `quesos-sanabria-s-l-villamayor-de-santiago` → web real
+  <https://quesosanabria.com/> + teléfono/email del consejo. El dominio corta
+  el fetch directo (ECONNRESET) pero está vivo (indexado, FB propio) → `parcial`.
+- ✅ `queseria-villadharo-villaescusa-de-haro` — ya estaba aplicada (la
+  descripcion menciona S.A.T. Oveman y Cerro del Ángel); el registro confirma
+  Camino de Rada, 3.
+- ✅ `quesos-la-aldea-san-clemente` — razón social Poves Redondo, S.L.L. en
+  descripcion + teléfono/email del consejo (el email confirma el alias) →
+  `parcial`.
+- ✅ `quesos-parra-jimenez-las-mesas` — razón social Don Merendón, S.L. en
+  descripcion + teléfono/email del consejo → `parcial`.
+- ✅ `lacto-ganadera-rio-mayor-quesos-la-ermita-huete` — resuelto: hay **dos
+  entidades hermanas** con webs y tiendas vivas distintas. La fila es la
+  S.A.T. Río Mayor (marca **La Ermita**, Caracenilla; su teléfono es el del
+  consejo) → nombre/descripcion/correo actualizados, `verificado`,
+  `Venta online=sí`. **Diferido**: posible alta aparte de **Lacto-Ganadera Río
+  Mayor, S.L.** (marca «Ciudad de Huete», <https://quesoshuete.com/>,
+  tel. 969 371 041, tienda online propia) si se confirma unidad productiva
+  distinta de la de Caracenilla.
+- ✅ `queserias-chaves-saelices` — al revés de lo esperado: el `.com` del
+  consejo **no resuelve**; el `.es` de la fila es el vivo (tienda online,
+  sello DOP) → dirección del polígono + teléfono/email añadidos, `verificado`,
+  `Venta online=sí`.
 
 ### Pistas para las otras tres provincias manchegas (datos ya en mano)
 
