@@ -92,20 +92,20 @@
 
 ### DOP Sierra de Cazorla (7)
 
-- [ ] **S.C.A. Santo Tomás Apóstol** — Aceite. Santo Tomé. Marcas «La Vega Santo
+- [x] **S.C.A. Santo Tomás Apóstol** ‹→ cooperativa-santo-tomas-apostol-santo-tome (parcial; web con error de certificado)› — Aceite. Santo Tomé. Marcas «La Vega Santo
   Tomé» / «Estados Santo Tomé». <https://www.cooperativasantotomas.es/> ·
   953 736 010.
-- [ ] **S.C.A. Aceites Cazorla** — Aceite. Cazorla. Marca «Azorla».
+- [x] **S.C.A. Aceites Cazorla** ‹→ aceites-cazorla-cazorla (verificado, VO sí)› — Aceite. Cazorla. Marca «Azorla».
   <https://aceitescazorla.com/> · 953 724 031.
-- [ ] **Aceites Guadalentín S.L.** — Aceite. Pozo Alcón. Marca «Olizumo».
+- [x] **Aceites Guadalentín S.L.** ‹→ aceites-guadalentin-olizumo-pozo-alcon (parcial; web 403)› — Aceite. Pozo Alcón. Marca «Olizumo».
   <https://www.aceitesguadalentin.com/> · 953 738 035.
-- [ ] **S.C.A. La Unión de Chilluévar** — Aceite. Chilluévar. Marca «Cañamares».
+- [x] **S.C.A. La Unión de Chilluévar** ‹→ cooperativa-la-union-de-chilluevar (verificado, VO sí)› — Aceite. Chilluévar. Marca «Cañamares».
   <https://www.scalauniondechilluevar.com/> · 953 717 016.
-- [ ] **Casería de Santa Julia (Aceitex)** — Aceite. Peal de Becerro.
+- [x] **Casería de Santa Julia (Aceitex)** ‹→ caseria-de-santa-julia-aceitex-peal-de-becerro (verificado, VO sí)› — Aceite. Peal de Becerro.
   <https://aceitexp.com/> · 953 243 195.
-- [ ] **Almazara Rotalaya (Explot. Agro. Trame)** — Aceite. Quesada.
+- [x] **Almazara Rotalaya (Explot. Agro. Trame)** ‹→ almazara-rotalaya-quesada (verificado, VO sí)› — Aceite. Quesada.
   <https://www.aceitesrotalaya.com/> · 953 281 584.
-- [ ] **S.C.A. Ntra. Sra. de la Cabeza** — Aceite. Huesa. Marca «Hueoliva».
+- [x] **S.C.A. Ntra. Sra. de la Cabeza** ‹→ cooperativa-hueoliva-huesa (parcial; web cert mal configurado)› — Aceite. Huesa. Marca «Hueoliva».
   <https://tienda.aceitehueoliva.es/> · 953 715 403. Tienda online →
   `Venta online=sí`.
 
@@ -114,7 +114,7 @@
 > Teléfonos del registro del consejo; web añadida en enriquecimiento para las
 > marcas con dominio propio localizado (el resto, «web: confirmar»).
 
-- [ ] **Oro Tradicional S.L.** — Aceite (cosecha temprana, olivar de montaña).
+- [x] **Oro Tradicional S.L.** ‹→ oro-tradicional-beas-de-segura (verificado, VO sí)› — Aceite (cosecha temprana, olivar de montaña).
   Beas de Segura. <https://orotradicional.com/> · 600 314 591. Tienda online →
   `Venta online=sí`.
 - [ ] **S.C.A. San Juan de la Cruz** — Aceite. Beas de Segura. 953 424 803. Web:
@@ -124,7 +124,7 @@
   confirmar.
 - [ ] **S.C.A. Agrícola Ntra. Sra. Virgen del Campo** — Aceite. Génave.
   953 493 224. Web: confirmar.
-- [ ] **Sierra de Génave S.C.A.** — Aceite (ecológico, cert. CAAE). Génave. Marca
+- [x] **Sierra de Génave S.C.A.** ‹→ sierra-de-genave-genave (verificado, VO sí; marca propia + tienda confirmada)› — Aceite (ecológico, cert. CAAE). Génave. Marca
   «Oro de Génave». <https://www.sierradegenave.com/> · 953 493 153. ⚠ Comercializa
   vía la cooperativa de 2º grado Olivar de Segura; confirmar venta con marca
   propia.
@@ -138,18 +138,18 @@
   confirmar.
 - [ ] **Aceites el Carrascal S.A.** — Aceite. Torres de Albanchez. 656 904 570.
   Web: confirmar.
-- [ ] **S.C.A. Virgen del Campo (Chorro de Oro)** — Aceite. Torres de Albanchez.
+- [x] **S.C.A. Virgen del Campo (Chorro de Oro)** ‹→ cooperativa-chorro-de-oro-torres-de-albanchez (verificado, VO sí)› — Aceite. Torres de Albanchez.
   Marca «Chorro de Oro». <https://aceiteschorrodeoro.es/>.
 - [ ] **Oleofer S.L.** — Aceite. La Puerta de Segura. 953 487 173. Web: confirmar.
 - [ ] **S.C.A. Agrosegura** — Aceite. La Puerta de Segura. 953 486 423. Web:
   confirmar.
 - [ ] **S.C.A. San Francisco** — Aceite. Arroyo del Ojanco. 953 420 104. Web:
   confirmar.
-- [ ] **Cortijo La Zarza** — Aceite (finca, picual). Arroyo del Ojanco.
+- [x] **Cortijo La Zarza** ‹→ cortijo-la-zarza-arroyo-del-ojanco (verificado, VO sí)› — Aceite (finca, picual). Arroyo del Ojanco.
   <https://cortijolazarza.com/> · 651 505 486.
 - [ ] **S.C.A. Gutamarta** — Aceite. Cortijos Nuevos (Segura de la Sierra).
   953 496 279. Web: confirmar.
-- [ ] **The Green Gold Olive Oil Company** — Aceite (premium). Hornos de Segura.
+- [x] **The Green Gold Olive Oil Company** ‹→ the-green-gold-oh-hornos-de-segura (verificado, VO sí)› — Aceite (premium). Hornos de Segura.
   Marca «Oh!». <https://ggoliveoilcompany.com/>.
 
 > **Resto de Segura (siguiente corte — datos ya capturados):**

@@ -123,7 +123,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 2.1 | Teruel | **2.1a (7) + 2.1b jamón (9) + 2.1c aceite Bajo Aragón (13) hechos** = 29 altas. Falta: resto jamón secaderos (~5, DNS/redirección) + Melocotón La Arenosa (1). Núcleo cerrado | 51 | ~1 (3/4) | casi |
-| 2.2 | Jaén | **2.2a Sierra Mágina (11) hecho** (Oleozumo→Mancha Real corregido; San Roque/Torito Bravo ya en CSV). Falta: Sierra de Segura (18) + Cazorla (7). ⚠ homónimos coops «San …» y «La Vicaría» | 38 | ~3 (1/3) | en curso |
+| 2.2 | Jaén | **2.2a Sierra Mágina (11) + 2.2b Cazorla (7) & Segura (5) hechos** (23 altas). Falta: resto Segura (13, mayoría solo-teléfono/sin web propia). ⚠ homónimos coops «San …», «La Vicaría» y «Ntra. Sra. de la Cabeza» (Huesa≠Campillo) | 38 | ~23 (2/3) | en curso |
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
@@ -150,6 +150,19 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-11 — **Lote 2.2b — Jaén, DOP Sierra de Cazorla (7) + Sierra de Segura
+  (5 con web)**: 12 altas (9 `verificado`+VO=sí ecommerce, 3 `parcial` por fallo
+  técnico de la web —cert/403— confirmadas solo por el consejo regulador). Cazorla
+  entero (Aceites Cazorla/Azorla, Chilluévar/Cañamares, Aceitex/Sta Julia,
+  Rotalaya, Santo Tomás, Guadalentín/Olizumo, Hueoliva) + las 5 de Segura con
+  tienda (Oro Tradicional, Sierra de Génave, Chorro de Oro, Cortijo La Zarza, The
+  Green Gold/Oh!). ⚠ homónimo resuelto: «Ntra. Sra. de la Cabeza» de **Huesa**
+  (`cooperativa-hueoliva-huesa`) ≠ la de Campillo de Arenas del lote 2.2a. Sierra
+  de Génave desbloqueada: tiene marca propia (Oro de Génave/Olivero) + tienda, no
+  vende solo vía Olivar de Segura. Fuentes de consejo:
+  desierracazorla.es/almazaras + dosierradesegura.com. Nota de método: el tipo de
+  fuente de evidencia válido es `official-site`, no `store` (el validador lo
+  rechaza). Resto de Segura (13, solo-teléfono) queda para un corte posterior.
 - 2026-07-10 — **Lote 2.2a — Jaén, DOP Sierra Mágina aceite (13)**: 11 altas (9
   `verificado`+VO=sí, 2 `parcial` por web 500/DNS). Otro bloque de aceite de alto
   rendimiento (cooperativas con marca propia y tienda). Corrección: Oleozumo está
