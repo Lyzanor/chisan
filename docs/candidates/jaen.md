@@ -23,6 +23,13 @@
 > + fichas del consejo). **Todas tienen tienda online propia → pista
 > `Venta online=sí`** salvo donde se indique.
 
+> ✅ **Lote 2.2a integrado 2026-07-10**: 11 altas (9 `verificado`+VO=sí; Sierra de
+> Arbuniel y Solana de Cárchel `parcial` por web 500/DNS). Todas las cooperativas
+> venden AOVE con marca propia y tienda online → lote de alto rendimiento.
+> **Corrección**: Oleozumo está en **Mancha Real**, no Bedmar. **Ya en el CSV**
+> (skip): San Roque (Carchelejo) y El Torito Bravo (Campillo de Arenas). Slugs con
+> prefijo `cooperativa-*`, `oleozumo-mancha-real`, `finca-alamillos-del-prior-jimena`.
+
 - [ ] **Cooperativa Stmo. Cristo de la Misericordia** — Aceite. Jódar. Marca «La
   Quinta Esencia». <https://laquintaesencia.com/>.
 - [ ] **Cooperativa Bedmarense** — Aceite. Bedmar. Marcas «Magnasur» / «Oro

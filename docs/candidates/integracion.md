@@ -123,7 +123,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 2.1 | Teruel | **2.1a (7) + 2.1b jamón (9) + 2.1c aceite Bajo Aragón (13) hechos** = 29 altas. Falta: resto jamón secaderos (~5, DNS/redirección) + Melocotón La Arenosa (1). Núcleo cerrado | 51 | ~1 (3/4) | casi |
-| 2.2 | Jaén | Sierra Mágina (13) → 1; Sierra de Segura (18) → 1-2; Cazorla (7) se reparte. ⚠ homónimos de coops «San …» | 38 | ~3 | pendiente |
+| 2.2 | Jaén | **2.2a Sierra Mágina (11) hecho** (Oleozumo→Mancha Real corregido; San Roque/Torito Bravo ya en CSV). Falta: Sierra de Segura (18) + Cazorla (7). ⚠ homónimos coops «San …» y «La Vicaría» | 38 | ~3 (1/3) | en curso |
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
@@ -150,6 +150,10 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 2.2a — Jaén, DOP Sierra Mágina aceite (13)**: 11 altas (9
+  `verificado`+VO=sí, 2 `parcial` por web 500/DNS). Otro bloque de aceite de alto
+  rendimiento (cooperativas con marca propia y tienda). Corrección: Oleozumo está
+  en Mancha Real, no Bedmar. San Roque y El Torito Bravo ya estaban en el CSV.
 - 2026-07-10 — **Lote 2.1c — Teruel, DOP Aceite del Bajo Aragón (15)**: 13 altas
   (5 `verificado`: La Calandina, Mazaleón, Torre Gachero con tienda + Palacio de
   Andilla y Marchenica con web; 8 `parcial`: cooperativas del Matarraña sin web
