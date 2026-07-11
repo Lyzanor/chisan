@@ -7,7 +7,12 @@
 > re-deduplicar con `npx pnpm list:province teruel`, confirmar actividad/dirección y
 > decidir `verificacion` y `Venta online`.
 
-## Capital (municipio de Teruel) — 3 candidatos
+## Capital (municipio de Teruel) — 3 candidatos → ✅ 2 altas (lote 2.1a)
+
+> **⚠ grupo resuelto**: «Elaborados Las Torres, S.L.» y «Jamón Mudéjar / Carnicería
+> Hermanos Sánchez» son la **MISMA empresa** (misma dirección Pol. La Paz C/
+> Florencia 14, mismo teléfono) → **una sola fila** (`jamon-mudejar-elaborados-las-torres-teruel`).
+> Rokelin → `rokelin-teruel` (verificado, VO=sí).
 
 - [ ] **Rokelin (Jamones Roque Orriols, S.L.)** — Charcutería (jamón DOP Teruel).
   Pol. Ind. La Paz 17 (tb. parcela 55), 44195 Teruel. <https://rokelin.com/> ·
@@ -28,7 +33,18 @@
 > mismo grupo familiar con dos marcas → riesgo de duplicado encubierto. Confirmar CIF
 > o dirección de cada uno; si son el mismo, una sola fila con la marca principal.
 
-## Provincia — 12 candidatos
+## Provincia — 12 candidatos → ✅ 5 altas + rechazos (lote 2.1a, 2026-07-10)
+
+> Altas: `de-trufa-en-trufa-torrelacarcel`, `trufas-la-chaparra-teruel` (trufa,
+> VO=sí), `jamones-andres-izquierdo-cedrillas`, `secadero-la-serrania-mosqueruela`
+> (jamón), `cervezas-mijares-rubielos-de-mora` (parcial, sin canal propio).
+> **Rechazos/diferidos**: **Ordio Minero** → produce hoy en La Puebla de Alfindén
+> (**Zaragoza**), no Blesa → va a `zaragoza.csv`, no Teruel. **Jamones Albarracín**
+> → secadero de **maquila B2B** (cura para terceros, sin marca de consumo) →
+> excluido. **La Tartuferia** (El Castellar) → comercializadora/distribuidora de
+> trufa, producción propia no confirmada → diferida. Pendientes de otro lote (sin
+> web clara): Castel Cerveza (El Pobo), quesos Hermanos Igado (Samper) y El Rodeño
+> (Ródenas), Horno Domingo y Cristina (Villastar).
 
 - [ ] **Cervezas Mijares (Mijares Gourmet)** — Cerveza artesana. Rubielos de Mora.
   Agua de la Sierra de Gúdar, sin filtrar/pasteurizar. Ficha:

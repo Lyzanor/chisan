@@ -122,7 +122,7 @@ resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 2.1 | Teruel | Capital (3) + provincia (12) → 1 lote; Jamón DOP secaderos (21, municipios «a confirmar») → 2; Aceite Bajo Aragón (14) + Melocotón (1) → 1 | 51 | ~4 | pendiente |
+| 2.1 | Teruel | **1.4a/2.1a capital+provincia (7 altas) hecho**. Falta: Jamón DOP secaderos (21) + Aceite Bajo Aragón (14) + Melocotón (1). Rechazos: Ordio Minero→Zaragoza, Albarracín maquila; La Tartuferia diferida | 51 | ~4 (1/4) | en curso |
 | 2.2 | Jaén | Sierra Mágina (13) → 1; Sierra de Segura (18) → 1-2; Cazorla (7) se reparte. ⚠ homónimos de coops «San …» | 38 | ~3 | pendiente |
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 2.1a — Teruel, capital + provincia (jamón/trufa/cerveza)**:
+  7 altas (6 `verificado` + 1 `parcial`; VO=sí en Rokelin, La Chaparra, De Trufa
+  en Trufa, Jamón Mudéjar). ⚠ grupo resuelto: Elaborados Las Torres = Jamón Mudéjar
+  (misma empresa → 1 fila). Rechazos: Ordio Minero (produce en Zaragoza→otra
+  provincia), Jamones Albarracín (maquila B2B sin marca de consumo); La Tartuferia
+  diferida (comercializadora). Arranca ronda 2. Evidencia `aragon/teruel.jsonl`
+  creada.
 - 2026-07-10 — **Lote 1.3f — Córdoba, registro Montilla sin web (14)**: 6 altas
   (4 `verificado`+VO=sí: Navarro 1830, Del Pino, Galán Portero, Luque 1920; 2
   `parcial`: El Gallo, Bonilla). Muchas del registro «sin web» sí la tienen
