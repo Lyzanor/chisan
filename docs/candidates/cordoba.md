@@ -154,16 +154,27 @@
   <https://aceitesdelasalud.com/>.
 - [ ] **Cortijo de Suerte Alta S.L.** — Aceite. Baena. <https://suertealta.es/>.
   Aceite ecológico de finca; pista `Venta online`.
-- [ ] **S.C.A.O. Virgen de la Sierra (Monteoliva)** — Aceite. Cabra.
-  <https://monteoliva.com/>. ⚠ Colisión de nombre de marca con «Monteoliva
-  Cordobesa S.L.» (Montilla), ya en CSV: entidades distintas (esta es Cabra, DOP
-  Baena), cuidar slug.
-- [ ] **Capricho Andaluz S.L.** — Aceite. Baena (confirmar).
-  <https://caprichoandaluz.com/>.
-- [ ] **Aceite la niña de mis ojos** — Aceite. Confirmar municipio.
-  <https://osaceite.es/>.
+- [x] **Monteoliva (Virgen de la Sierra)** — **accepted →
+  `cooperativa-virgen-de-la-sierra-monteoliva-cabra`** (`verificado`, `sí`). Cabra,
+  DOP Baena; distinta de Monteoliva Cordobesa (Montilla). ⚠ homónimo de municipio
+  «Cabra» con Castel de Cabra (Teruel) en `municipios.json`, resuelto por override.
+- [x] **Capricho Andaluz S.L.** — **accepted → `capricho-andaluz-baena`**
+  (`verificado`, `sí`). Baena; tienda propia.
+- [x] **Aceite la niña de mis ojos** — **rejected: not-producer / other-province**.
+  `osaceite.es` es un **distribuidor de Gijón (Asturias)** con +40 años, no una
+  almazara de Córdoba (comercializa varias marcas, entre ellas «La Niña de mis
+  Ojos»). No crear fila.
 
-### DOP Priego de Córdoba — almazaras (9)
+### DOP Priego de Córdoba — almazaras (9) — ✅ integrado 2026-07-10 (lote 1.3c)
+
+> **9 altas** (8 `verificado` + 1 `parcial` Toxar por certificado caducado); VO=sí
+> en Mueloliva, Manuel Molina, El Lagar, OliBrácana, Zamoranos, La Purísima,
+> Aroden. Sucesores de Morales `verificado`/`no comprobado` (web sin tienda). San
+> Isidro (Toxar, Fuente-Tójar) es **distinta** de la San Isidro de Castro del Río
+> (DOP Baena) del lote anterior. Slugs con prefijo `*-priego-de-cordoba`,
+> `marin-serrano-el-lagar-carcabuey`, `olibracana-almedinilla`,
+> `aceites-manuel-molina-almedinilla`, `aroden-carcabuey`,
+> `olivarera-san-isidro-toxar-fuente-tojar`.
 
 - [ ] **Almazara de Muela / Mueloliva, S.L.** — Aceite. Priego de Córdoba.
   <https://www.mueloliva.es/>. Marca «Venta del Barón», premiada; tienda → pista

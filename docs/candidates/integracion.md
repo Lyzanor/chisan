@@ -109,7 +109,7 @@ resolver) → al final.
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
 | 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei l10 (9) + Ribeira Sacra (9) hechos** = 67 altas. Falta: Monterrei resto l17 (13, solo-tel, baja prioridad) + Festa (1). Diferidos: ~16 (incl. Envínate por duplicado con Tenerife). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (7/7 núcleo) | casi |
-| 1.3 | Córdoba | **1.3a Montilla web/venta (8) + 1.3b DOP Baena (12) hechos** = 20 altas. Falta: Baena resto (3) + Priego (9) + Lucena (4) + Montoro-Adamuz (7) + Pedroches (8) + Montilla registro (14, sin web). ⚠ Pérez Barquero resuelto | 65 | ~5 (2/6) | en curso |
+| 1.3 | Córdoba | **1.3a Montilla (8) + 1.3b Baena (12) + 1.3c Priego+resto Baena (11) hechos** = 31 altas. Falta: Lucena (4) + Montoro-Adamuz (7) + Pedroches (8) + Montilla registro (14, sin web). ⚠ Pérez Barquero resuelto | 65 | ~4 (3/6) | en curso |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
 > El CSV está hoy en 75 filas (26 bodegas, 35%); tras integrar quedaría en 175
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.3c — Córdoba, DOP Priego (9) + resto Baena (2)**: 11 altas
+  (10 `verificado` + 1 `parcial`; 9 con VO=sí). **Rechazo**: «Aceite la niña de
+  mis ojos» (osaceite.es) es un distribuidor de Gijón, no una almazara de Córdoba.
+  Monteoliva (Cabra) = DOP Baena, distinta de Monteoliva Cordobesa (Montilla);
+  ⚠ homónimo de «Cabra» con Castel de Cabra (Teruel) resuelto por override. San
+  Isidro (Toxar/Fuente-Tójar) distinta de la de Castro del Río. Otro lote de aceite
+  de alto rendimiento (casi todas con tienda propia).
 - 2026-07-10 — **Lote 1.3b — Córdoba, DOP Baena aceite (12 almazaras)**: 12 altas,
   **todas `verificado` + `Venta online=sí` ecommerce** (las cooperativas
   olivareras de la DOP venden con tienda propia → lote de máximo rendimiento).
