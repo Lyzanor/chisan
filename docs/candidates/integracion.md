@@ -109,7 +109,7 @@ resolver) → al final.
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
 | 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei l10 (9) + Ribeira Sacra (9) hechos** = 67 altas. Falta: Monterrei resto l17 (13, solo-tel, baja prioridad) + Festa (1). Diferidos: ~16 (incl. Envínate por duplicado con Tenerife). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (7/7 núcleo) | casi |
-| 1.3 | Córdoba | **1.3a Montilla (8) + 1.3b Baena (12) + 1.3c Priego+resto Baena (11) hechos** = 31 altas. Falta: Lucena (4) + Montoro-Adamuz (7) + Pedroches (8) + Montilla registro (14, sin web). ⚠ Pérez Barquero resuelto | 65 | ~4 (3/6) | en curso |
+| 1.3 | Córdoba | **1.3a-c (31) + 1.3d Lucena+Montoro (4) hechos** = 35 altas. Montoro-Adamuz casi todo diferido (DCOOP granel). Falta: Pedroches jamón (8) + Montilla registro (14, sin web). Leads net-new de aceite (Rosán, Campolio, Quirós) para pasada futura | 65 | ~2 (4/6) | en curso |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
 > El CSV está hoy en 75 filas (26 bodegas, 35%); tras integrar quedaría en 175
@@ -150,6 +150,16 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.3d — Córdoba, DOP Lucena (4) + Montoro-Adamuz (7)**: solo
+  4 altas (Coop. de Lucena, Araceli parcial, La Unión de Montilla, Madre del Sol).
+  **La DOP Montoro-Adamuz está dominada por cooperativas DCOOP de granel sin marca
+  de consumo propia** → casi todas diferidas (Oleollanos, Olivarera de Montoro,
+  Merced, San Antonio Abad, Santiago Apóstol, del Guadiato): entra solo el que
+  vende con tienda/marca propia (regla dura del ledger). La Unión de Montilla se
+  crea con categoría «Aceite y bodega» (una fila para aceite DOP Lucena + vino
+  Montilla-Moriles), resolviendo el cruce con el lote 1. Detectados 3 leads
+  net-new de aceite con tienda fuera de la lista (Rosán, Campolio, Lagar de
+  Quirós) para una pasada futura.
 - 2026-07-10 — **Lote 1.3c — Córdoba, DOP Priego (9) + resto Baena (2)**: 11 altas
   (10 `verificado` + 1 `parcial`; 9 con VO=sí). **Rechazo**: «Aceite la niña de
   mis ojos» (osaceite.es) es un distribuidor de Gijón, no una almazara de Córdoba.

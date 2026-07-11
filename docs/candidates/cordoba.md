@@ -223,7 +223,21 @@
 > propia** (tienda física/online); si solo aportan aceituna/granel a DCOOP,
 > excluir. Confirmar caso a caso.
 
-### DOP Aceite de Lucena (4)
+### DOP Aceite de Lucena (4) + DOP Montoro-Adamuz (7) — ✅ 4 integradas 2026-07-10 (lote 1.3d)
+
+> **4 altas**: Cooperativa Olivarera de Lucena (`verificado`, VO=sí), Cooperativa
+> Araceli (`parcial`, TLS), La Unión de Montilla (`verificado`, VO=sí, categoría
+> **Aceite y bodega** — resuelve el cruce con «Bodegas La Unión» del lote 1) y
+> Madre del Sol de Adamuz (`verificado`, marca de consumo Olivar de Sierra).
+> **Diferidas por granel/DCOOP sin marca de consumo propia**: Oleollanos (Rute) y
+> **todo el resto de Montoro-Adamuz** (Olivarera de Montoro, Merced, San Antonio
+> Abad, Santiago Apóstol/Villanueva del Rey [la nota lo llamaba «San Rafael» y
+> «Santiago» por separado: es una sola coop en Villanueva del Rey que vende vía
+> DCOOP/Cordoliva], del Guadiato). **Leads net-new detectados con tienda** (fuera
+> de la lista original, para pasada futura): Aceites Rosán (`aceitesrosan.es`),
+> Aceite Campolio (`aceitecampolio.com`), Lagar de Quirós (`molinodequiros.es`).
+> Slugs: `cooperativa-olivarera-de-lucena`, `cooperativa-araceli-lucena`,
+> `cooperativa-la-union-de-montilla`, `olivarera-madre-del-sol-adamuz`.
 
 - [ ] **Cooperativa Olivarera de Lucena S.C.A.** — Aceite. Lucena.
   <https://cooperativalucena.es/> · tienda <https://cooperativalucena.es/tienda/>.
