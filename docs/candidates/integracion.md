@@ -127,7 +127,7 @@ resolver) → al final.
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
-| 2.6 | Zaragoza | Cariñena (9) + Borja (5) + Calatayud (3) → 1-2 lotes (⚠ resolver Gran Ducay↔Grandes Vinos); Aceite Bajo Aragón + Melocotón (8) → 1 | 25 | ~2 | pendiente |
+| 2.6 | Zaragoza | **2.6a Aceite Bajo Aragón + Melocotón (8) hecho** (5 altas: 2 verif + 3 parcial; 1 rechazo Oliflix→Tarragona; 2 diferidos B2B). Falta: Cariñena (9) + Borja (5) + Calatayud (3) → 1-2 lotes (⚠ resolver Gran Ducay↔Grandes Vinos) | 25 | ~2 (1/3) | en curso |
 | 2.7 | Valencia | Utiel-Requena embotelladoras (21) → 2 lotes; Arroz de Valencia (4, sin dirección) se reparte | 25 | ~2 | pendiente |
 
 ### Ronda 3 — prioridad 3 del traspaso
@@ -150,6 +150,20 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-11 — **Lote 2.6a — Zaragoza, Aceite del Bajo Aragón + Melocotón de
+  Calanda (8)**: 5 altas (2 `verificado`: Granja Brunet/Fabara y La Chipranesca/
+  Chiprana, ambas con web propia leída en vivo; 3 `parcial`: Fruma/Maella —web
+  fruma.es no cargó por SSL, confirmada por 2 registros DOP + directorio—,
+  Compromiso de Caspe y San Sebastián/Fayón —solo-registro DOP, sin web). **1
+  rechazo**: *Oliflix* — el registro DOP la listó como Mequinenza (Zaragoza) pero
+  su propia web (oliflix.net) sitúa la empresa en **Flix, Tarragona** (C/ Costa
+  del Graner, 43750, tel 977) → cross-provincia, va a `tarragona.md`. **2
+  diferidos** por B2B sin marca de consumo: *Frutícola Bajoaragonesa* (S.C. de 2º
+  grado = central hortofrutícola) y *Frumaspi Agrícola* (sin web ni rastro).
+  Aprendizaje: **el registro de un consejo puede ubicar mal a un operador de otra
+  provincia** (Oliflix/Flix) — contrastar siempre el municipio con la web propia,
+  como con las pedanías. VO=no comprobado por defecto en aceites cuya web es
+  informativa (Brunet revende su AOVE en «A tenda do Avó», terceros → no basta).
 - 2026-07-11 — **Lote 2.2b — Jaén, DOP Sierra de Cazorla (7) + Sierra de Segura
   (5 con web)**: 12 altas (9 `verificado`+VO=sí ecommerce, 3 `parcial` por fallo
   técnico de la web —cert/403— confirmadas solo por el consejo regulador). Cazorla

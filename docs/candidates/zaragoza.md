@@ -22,29 +22,29 @@
 > **`unverified`**. La comarca (Caspe/Maella/Belchite/Mequinenza) ya está bastante
 > cubierta en el CSV → hueco real pequeño.
 
-- [ ] **Granja Brunet** (Granja Brunet, S.L.U.) — Aceite (+ melocotón/fruta).
+- [x] **Granja Brunet** ‹→ granja-brunet-fabara (verificado, VO no comprobado; web propia sin carrito, reventa en terceros)› (Granja Brunet, S.L.U.) — Aceite (+ melocotón/fruta).
   Fabara. Tel 650 434 744 · <http://www.granjabrunet.com> ·
   info@granjabrunet.com. AOVE del Bajo Aragón con tienda online → pista
   `Venta online=sí`.
-- [ ] **Oliflix** — Aceite. Mequinenza. Tel 974 464 722 ·
+- [x] **Oliflix** ‹RECHAZADO: su web (oliflix.net) sitúa la empresa en Flix, Tarragona (C/ Costa del Graner, 43750, tel 977), no Mequinenza. El registro DOP la listó mal en Zaragoza → va a tarragona.md› — Aceite. Mequinenza. Tel 974 464 722 ·
   <http://www.oliflix.com> · info@oliflix.com. AOVE de Mequinenza, marca propia.
-- [ ] **La Chipranesca** (La Chipranesca, S.C.L.) — Aceite (+ fruta). Chiprana.
+- [x] **La Chipranesca** ‹→ la-chipranesca-chiprana (verificado, VO no; coop melocotón Calanda, sin tienda online)› (La Chipranesca, S.C.L.) — Aceite (+ fruta). Chiprana.
   Tel 976 637 240 · <http://www.lachipranesca.com>. Cooperativa con marca propia
   (AOVE + melocotón).
-- [ ] **Frutícola Maellana** (marca **Fruma**) — Fruta y verdura (melocotón de
+- [x] **Frutícola Maellana** ‹→ fruticola-maellana-fruma-maella (parcial; identidad/municipio confirmados por 2 registros DOP + directorio, pero fruma.es no cargó en vivo)› (marca **Fruma**) — Fruta y verdura (melocotón de
   Calanda; también aceite). Maella. Tel 976 638 165 · <http://www.fruma.es> ·
   cooperativa@fruma.es. Aparece en ambos registros (aceite y melocotón).
-- [ ] **Frutícola Bajoaragonesa** (Frutícola Bajoaragonesa S.C. 2ºG) — Fruta y
+- [x] **Frutícola Bajoaragonesa** ‹DIFERIDO: S.C. de 2º grado = central hortofrutícola B2B, sin marca de consumo; revisar en 2ª pasada› (Frutícola Bajoaragonesa S.C. 2ºG) — Fruta y
   verdura (melocotón de Calanda). Caspe. Tel 976 633 315 ·
   <http://www.fruticola-bajoaragonesa.com>. ⚠ confirmar marca de consumo vs
   central hortofrutícola B2B.
-- [ ] **Cooperativa Frutícola Compromiso de Caspe** — Aceite (+ melocotón).
+- [x] **Cooperativa Frutícola Compromiso de Caspe** ‹→ cooperativa-fruticola-compromiso-de-caspe (parcial; solo-registro DOP, sin web)› — Aceite (+ melocotón).
   Caspe. Tel 976 632 159 · frucas1@telefonica.net. ⚠ confirmar marca propia
   (posible granel/servicio).
-- [ ] **Frumaspi Agrícola** (Frumaspi Agrícola, S.L.) — Fruta y verdura
+- [x] **Frumaspi Agrícola** ‹DIFERIDO: sin web ni rastro de marca de consumo; probable B2B, revisar en 2ª pasada› (Frumaspi Agrícola, S.L.) — Fruta y verdura
   (melocotón de Calanda). Maella. Tel 876 708 028. Sin web localizada. ⚠
   confirmar marca de consumo.
-- [ ] **Cooperativa Agraria San Sebastián** — Aceite. Fayón. Tel 976 635 674 ·
+- [x] **Cooperativa Agraria San Sebastián** ‹→ cooperativa-agraria-san-sebastian-fayon (parcial; solo-registro DOP, sin web)› — Aceite. Fayón. Tel 976 635 674 ·
   cooperativasansebastian@hotmail.es. ⚠ cooperativa pequeña, confirmar marca vs
   granel antes de integrar.
 
