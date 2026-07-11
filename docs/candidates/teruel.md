@@ -87,6 +87,18 @@
 > del nombre; **web de cada uno tomada del consejo** (casi todos con tienda →
 > pista `Venta online`).
 
+> ✅ **Lote 2.1b integrado 2026-07-10**: 9 altas (7 `verificado`+VO=sí en la
+> mayoría; El Calamochino y Sierra de Mora `parcial` por web caída/en obras):
+> La Monrealense, Josanz, Casa Domingo, Casa Vieja, Peñarroya, Pastor, El Rullo.
+> **Rechazos (el registro del consejo trae mucho ruido de terceros)**: **Torico
+> de Teruel** (comercializador en Valls, **Tarragona**), **Bodegas Gargallo**
+> (comercializador gourmet en **Valencia**, revende 5J/Lazo), **Campodulce**
+> (gran industria, sin DOP Teruel), **Fuenjamón** (bar/tienda de Mora de Rubielos,
+> no elabora). Diferidos por web caída/redirección: JAELCA (redirige a Google
+> Sites de «El Castellar»), Jamones Barriendo (DNS), Jamones Carbó (DNS).
+> Pendientes de otro corte: Castelfrío, Ramiro Guillén, Alfonso Sáez, El Sabinar,
+> Villamón.
+
 - [ ] **JAELCA (Jamones y Elaborados La Calamochina)** — Charcutería (jamón DOP
   Teruel). Calamocha. <https://www.jaelca.com/>.
 - [ ] **El Calamochino** — Charcutería (jamón DOP Teruel). Calamocha.

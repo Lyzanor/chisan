@@ -122,7 +122,7 @@ resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 2.1 | Teruel | **1.4a/2.1a capital+provincia (7 altas) hecho**. Falta: Jamón DOP secaderos (21) + Aceite Bajo Aragón (14) + Melocotón (1). Rechazos: Ordio Minero→Zaragoza, Albarracín maquila; La Tartuferia diferida | 51 | ~4 (1/4) | en curso |
+| 2.1 | Teruel | **2.1a capital+provincia (7) + 2.1b jamón secaderos (9) hechos** = 16 altas. Falta: resto secaderos (~5) + Aceite Bajo Aragón (14) + Melocotón (1). Registro DOP jamón con mucho ruido de terceros (Valls/Valencia/industrial) | 51 | ~3 (2/4) | en curso |
 | 2.2 | Jaén | Sierra Mágina (13) → 1; Sierra de Segura (18) → 1-2; Cazorla (7) se reparte. ⚠ homónimos de coops «San …» | 38 | ~3 | pendiente |
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 2.1b — Teruel, DOP Jamón secaderos (21)**: 9 altas (7
+  `verificado`+VO=sí: Josanz, Casa Domingo, Casa Vieja, Peñarroya, Pastor, El
+  Rullo, La Monrealense; 2 `parcial`: El Calamochino y Sierra de Mora por web
+  caída/en obras). **El registro «Nuestra Gente» del consejo trae mucho ruido de
+  terceros**: rechazados Torico de Teruel (Valls, Tarragona), Bodegas Gargallo
+  (comercializador de Valencia), Campodulce (industria sin DOP Teruel), Fuenjamón
+  (bar). Diferidos por DNS/redirección: JAELCA, Barriendo, Carbó. Pendientes ~5.
 - 2026-07-10 — **Lote 2.1a — Teruel, capital + provincia (jamón/trufa/cerveza)**:
   7 altas (6 `verificado` + 1 `parcial`; VO=sí en Rokelin, La Chaparra, De Trufa
   en Trufa, Jamón Mudéjar). ⚠ grupo resuelto: Elaborados Las Torres = Jamón Mudéjar
