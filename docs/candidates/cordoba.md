@@ -114,7 +114,22 @@
 > las envasadoras/comercializadoras puras de Priego quedan como nota al pie para
 > triar por producción propia (posible siguiente corte).
 
-### DOP Baena — almazaras/olivareras (15)
+### DOP Baena — almazaras/olivareras (15) — ✅ 12 integradas 2026-07-10 (lote 1.3b)
+
+> **12 altas, TODAS `verificado` + `Venta online=sí` (ecommerce)** — lote de
+> máximo rendimiento (las almazaras cooperativas de la DOP venden con tienda
+> propia). **Correcciones de municipio**: Sucesores de Hnos. López está en
+> **Luque** y Olivarera San Isidro en **Castro del Río** (no Baena; esto resuelve
+> el ⚠ homónimo con la San Isidro de Fuente Tójar). Aceites de la Salud
+> confirmada en Castro del Río. Albendín (Suerte Alta, Aceites Albendín) → municipio
+> Baena (Albendín es ELM). Quedan 3 para el siguiente corte: **Monteoliva
+> (Cabra)** — distinta de la Monteoliva Cordobesa de Montilla ya en CSV —,
+> **Capricho Andaluz** y **osaceite/la niña de mis ojos**. Slugs:
+> `olivarera-del-rosario-nueva-carteya`, `olivarera-el-henazar-dona-mencia`,
+> `almazara-de-luque`, `sucesores-de-hermanos-lopez-luque`, `zuheroliva-zuheros`,
+> `orobaena-baena`, `olivarera-san-isidro-castro-del-rio`, `nunez-de-prado-baena`,
+> `olivarera-german-baena`, `aceites-albendin-baena`,
+> `olivarera-de-la-salud-castro-del-rio`, `cortijo-de-suerte-alta-baena`.
 
 - [ ] **S.C.A. Olivarera Ntra. Sra. del Rosario** — Aceite. Nueva Carteya.
   <https://aceitedelrosario.es/>. Cooperativa con marca propia; pista tienda →

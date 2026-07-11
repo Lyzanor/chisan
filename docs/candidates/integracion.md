@@ -109,7 +109,7 @@ resolver) → al final.
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
 | 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei l10 (9) + Ribeira Sacra (9) hechos** = 67 altas. Falta: Monterrei resto l17 (13, solo-tel, baja prioridad) + Festa (1). Diferidos: ~16 (incl. Envínate por duplicado con Tenerife). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (7/7 núcleo) | casi |
-| 1.3 | Córdoba | **1.3a «Bodegas con web/venta» (8) hecho** (⚠ grupo Pérez Barquero resuelto: solo su fila, Gracia diferida). Falta: Montilla registro (14, sin web) + Baena (15) + Priego (9) + Lucena (4) + Montoro-Adamuz (7) + Pedroches (8) | 65 | ~6 (1/6) | en curso |
+| 1.3 | Córdoba | **1.3a Montilla web/venta (8) + 1.3b DOP Baena (12) hechos** = 20 altas. Falta: Baena resto (3) + Priego (9) + Lucena (4) + Montoro-Adamuz (7) + Pedroches (8) + Montilla registro (14, sin web). ⚠ Pérez Barquero resuelto | 65 | ~5 (2/6) | en curso |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
 > El CSV está hoy en 75 filas (26 bodegas, 35%); tras integrar quedaría en 175
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.3b — Córdoba, DOP Baena aceite (12 almazaras)**: 12 altas,
+  **todas `verificado` + `Venta online=sí` ecommerce** (las cooperativas
+  olivareras de la DOP venden con tienda propia → lote de máximo rendimiento).
+  Correcciones de municipio: Sucesores de Hnos. López → Luque, Olivarera San
+  Isidro → Castro del Río (resuelve el ⚠ homónimo con la de Fuente Tójar).
+  Quedan 3 Baena para el próximo corte (Monteoliva/Cabra, Capricho Andaluz,
+  osaceite).
 - 2026-07-10 — **Lote 1.3a — Córdoba, Montilla-Moriles con web/venta (8)**: 8
   altas (7 `verificado` + 1 `parcial` Cruz Conde por fallos de web; VO=sí en
   Doblas, Santa Magdalena, BJN). **⚠ grupo Pérez Barquero resuelto**: se crea solo
