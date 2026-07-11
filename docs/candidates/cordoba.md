@@ -283,6 +283,16 @@
 > Dehesas Reunidas). Quedan **8 net-new**. Municipio = donde está el secadero
 > (comarca de Los Pedroches, norte de Córdoba).
 
+> ✅ **Lote 1.3e integrado 2026-07-10**: 6 altas (5 `verificado` + `Venta online=sí`;
+> Agroibérica `parcial` por TLS). Todas las charcuterías del jamón DOP venden con
+> tienda propia. **Excluida COVAP** (gran grupo cooperativo industrial, regla dura).
+> **La Embajada del Jamón**: confirmado que es **productor** con secadero propio
+> (premio Encina de Oro), pero **diferida por municipio sin confirmar** («Polígono
+> Industrial Cárnico», no geocodifica; reabrir con el municipio exacto). Slugs:
+> `jamones-era-alta-villanueva-de-cordoba`, `navalpedroche-villanueva-de-cordoba`,
+> `dehesa-de-campo-alto-espiel`, `jamon-jarote-villanueva-de-cordoba`,
+> `mio-1898-pozoblanco`, `agroiberica-de-pozoblanco`.
+
 - [ ] **Jamones Era Alta S.L.** — Charcutería (jamón ibérico DOP). Villanueva de
   Córdoba (confirmar). <https://jamoneseraalta.es/>.
 - [ ] **Navalpedroche S.L.** — Charcutería (jamón ibérico DOP). Villanueva de
