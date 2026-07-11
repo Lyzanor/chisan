@@ -20,7 +20,19 @@
 > al consumidor). Municipio = donde se produce (17 municipios de la DO en el sur
 > de Córdoba).
 
-### Bodegas con web/venta confirmada (prioridad)
+### Bodegas con web/venta confirmada (prioridad) — ✅ integrado 2026-07-10 (lote 1.3a)
+
+> **8 altas** (7 `verificado` + 1 `parcial`); VO=sí en Doblas, Santa Magdalena,
+> BJN. **⚠ grupo Pérez Barquero resuelto**: su web no menciona el grupo y tiene
+> marca/escaparate propios → se crea solo Pérez Barquero; **Gracia Hermanos queda
+> diferida** (misma propiedad, sin escaparate propio confirmado). Doblas
+> confirmada = A. Doblas Martos (mismo teléfono). Delgado: marca es «Segunda
+> **Bota**», no «Segunda Bandera». BJN es cooperativa con tienda propia → se
+> mantiene. Cruz Conde queda `parcial` (web con fallos técnicos). Slugs:
+> `bodegas-perez-barquero-montilla`, `bodegas-cruz-conde-montilla`,
+> `bodegas-toro-albala-aguilar-de-la-frontera`, `bodegas-doblas-moriles`,
+> `lagar-blanco-montilla`, `lagar-de-santa-magdalena-moriles`,
+> `bodegas-delgado-puente-genil`, `bodegas-jesus-nazareno-baena`.
 
 - [ ] **Bodegas Pérez Barquero** — Bodega. Montilla.
   <https://perezbarquero.com/> · 957 650 500. Fundada 1905, marca histórica de la
