@@ -169,7 +169,15 @@
 > aquí). **Ya en el CSV (excluidas):** Almazara Artal (Albalate), Coop. del
 > Mezquín (La Codoñera); Cofruval (Puigmoreno, melocotón).
 
-### DOP Aceite del Bajo Aragón — almazaras de Teruel (15)
+### DOP Aceite del Bajo Aragón — almazaras de Teruel (15) — ✅ 13 integradas 2026-07-10 (lote 2.1c)
+
+> **5 `verificado`** (La Calandina, Coop Mazaleón, Torre Gachero con tienda;
+> Palacio de Andilla/Valdealgorfa y Marchenica con web, VO no comprobado) + **8
+> `parcial`** (cooperativas del Matarraña/Bajo Aragón sin web propia: Alcober,
+> Ismael y Magallón/Real de Vellón, Aceites Albalate, Coop Matarraña, Rey Solé,
+> Coop Valderrobres, San Antonio Abad, Juncoliva). **La Masada Roya ya estaba en
+> el CSV** (aceite-y-encurtidos-la-masada-roya-andorra) → no se crea. Doble DOP
+> anotada donde procede (La Calandina, Marchenica también melocotón de Calanda).
 
 - [ ] **Aceites Albalate, S.L.** — Aceite. Albalate del Arzobispo. · 978 813 104.
 - [ ] **La Masada Roya (Valero Romeo)** — Aceite. Andorra. Marca «La Masada Roya».

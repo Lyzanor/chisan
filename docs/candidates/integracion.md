@@ -122,7 +122,7 @@ resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 2.1 | Teruel | **2.1a capital+provincia (7) + 2.1b jamón secaderos (9) hechos** = 16 altas. Falta: resto secaderos (~5) + Aceite Bajo Aragón (14) + Melocotón (1). Registro DOP jamón con mucho ruido de terceros (Valls/Valencia/industrial) | 51 | ~3 (2/4) | en curso |
+| 2.1 | Teruel | **2.1a (7) + 2.1b jamón (9) + 2.1c aceite Bajo Aragón (13) hechos** = 29 altas. Falta: resto jamón secaderos (~5, DNS/redirección) + Melocotón La Arenosa (1). Núcleo cerrado | 51 | ~1 (3/4) | casi |
 | 2.2 | Jaén | Sierra Mágina (13) → 1; Sierra de Segura (18) → 1-2; Cazorla (7) se reparte. ⚠ homónimos de coops «San …» | 38 | ~3 | pendiente |
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 2.1c — Teruel, DOP Aceite del Bajo Aragón (15)**: 13 altas
+  (5 `verificado`: La Calandina, Mazaleón, Torre Gachero con tienda + Palacio de
+  Andilla y Marchenica con web; 8 `parcial`: cooperativas del Matarraña sin web
+  propia). La Masada Roya ya estaba en el CSV. Filtrado a solo Teruel (10
+  empresas de aceite de la DOP están en Zaragoza — Belchite/Caspe/Fabara/Fayón/
+  Maella — que van a `zaragoza.md`). Doble DOP (aceite+melocotón de Calanda)
+  anotada en La Calandina y Marchenica.
 - 2026-07-10 — **Lote 2.1b — Teruel, DOP Jamón secaderos (21)**: 9 altas (7
   `verificado`+VO=sí: Josanz, Casa Domingo, Casa Vieja, Peñarroya, Pastor, El
   Rullo, La Monrealense; 2 `parcial`: El Calamochino y Sierra de Mora por web
