@@ -109,7 +109,7 @@ resolver) → al final.
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
 | 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei l10 (9) + Ribeira Sacra (9) hechos** = 67 altas. Falta: Monterrei resto l17 (13, solo-tel, baja prioridad) + Festa (1). Diferidos: ~16 (incl. Envínate por duplicado con Tenerife). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (7/7 núcleo) | casi |
-| 1.3 | Córdoba | **1.3a-d (35) + 1.3e Pedroches jamón (6) hechos** = 41 altas. Falta: Montilla registro (14, sin web, baja prioridad) + diferidos (COVAP, La Embajada, Oleollanos, Montoro-Adamuz DCOOP). Leads aceite net-new pendientes | 65 | ~1 (5/6) | casi |
+| 1.3 | Córdoba | **✅ CERRADA**: 1.3a-f = 47 altas (Montilla-Moriles, DOP Baena/Priego/Lucena, Pedroches jamón, registro Montilla). Diferidos documentados: COVAP, La Embajada, Gracia Hermanos, Oleollanos/Montoro-Adamuz DCOOP, 7 del registro Montilla sin web | 65 | 6/6 | hecho (2026-07-10) |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
 > El CSV está hoy en 75 filas (26 bodegas, 35%); tras integrar quedaría en 175
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-10 — **Lote 1.3f — Córdoba, registro Montilla sin web (14)**: 6 altas
+  (4 `verificado`+VO=sí: Navarro 1830, Del Pino, Galán Portero, Luque 1920; 2
+  `parcial`: El Gallo, Bonilla). Muchas del registro «sin web» sí la tienen
+  (Navarro, Del Pino, Galán Portero, Luque, El Gallo) — buscar el dominio antes
+  de dar por perdida. Gracia Hermanos diferida (grupo Pérez Barquero). 7 sin
+  web/municipio fiable diferidas (Único, Sillero, El Pujío, Maillo, Mora Chacón,
+  Cañada Navarro, Cabriñana). **Córdoba cerrada**: 47 altas en 6 lotes.
 - 2026-07-10 — **Lote 1.3e — Córdoba, DOP Los Pedroches jamón (8)**: 6 altas (5
   `verificado`+VO=sí, Agroibérica `parcial` por TLS). Las charcuterías del jamón
   DOP venden con tienda propia (buen rendimiento). **Excluida COVAP** (gran grupo

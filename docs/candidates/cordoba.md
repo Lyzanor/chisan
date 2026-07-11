@@ -64,7 +64,17 @@
   bjn@bjn1963.com · 957 670 225. ⚠ Cooperativa: entra si vende con marca de
   consumo (marca BJN); confirmar tienda/venta al público.
 
-### Bodegas del registro (municipio a confirmar)
+### Bodegas del registro (municipio a confirmar) — ✅ 6 integradas 2026-07-10 (lote 1.3f)
+
+> **6 altas** (4 `verificado`+VO=sí: Navarro, Del Pino, Galán Portero, Luque; 2
+> `parcial`: El Gallo web sin contenido, Bonilla sin web). **Gracia Hermanos
+> diferida** (grupo Pérez Barquero). **Diferidas por no encontrar web/venta ni
+> municipio fiable** (registro-only, siguiente pasada): Bodegas Único, Sillero, El
+> Pujío, Maillo, Mora Chacón, El Gallo (⚠ ya integrada parcial), Lagar Cañada
+> Navarro, Lagar Cabriñana. Slugs altas: `bodegas-navarro-montilla`,
+> `bodegas-del-pino-montalban-de-cordoba`, `bodegas-galan-portero-montilla`,
+> `bodegas-luque-dona-mencia`, `bodegas-el-gallo-montilla`,
+> `bodegas-bonilla-aguilar-de-la-frontera`.
 
 - [ ] **Bodegas Navarro** — Bodega. Montilla. Marca histórica de la DO; confirmar
   web oficial y venta.
