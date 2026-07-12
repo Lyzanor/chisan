@@ -45,7 +45,7 @@
 - [x] **Francisco y Gregorio Alcaide Cera, S.L.** ‹→ cortegana-iberico-cortegana (verificado, VO sí; miembro productor DOP Jabugo)› — Charcutería (jamón DOP
   Jabugo). Cortegana. <https://www.corteganaiberico.com/> (marca «Cortegana
   Ibérico») · 959 131 159. Tienda online → `Venta online=sí`.
-- [ ] **Enrique Castaño Guijarro** — Charcutería (jamón DOP Jabugo). Cumbres
+- [x] **Enrique Castaño Guijarro** ‹→ jamones-enrique-castano-guijarro-cumbres-mayores (verificado, VO n/c; línea Summun)› — Charcutería (jamón DOP Jabugo). Cumbres
   Mayores. <https://www.jamonesenriquecastaño.es/> (punycode
   `xn--jamonesenriquecastao-m7b.es`). Cuatro generaciones.
 - [x] **Hermanos Castaño Fernández, S.L.** — **already-present** →
@@ -65,7 +65,7 @@
 - [x] **Miguel y María, S.L.** ‹DIFERIDO: sede/teléfono en Segovia (921), fábricas en Segovia y Huelva, sin e-commerce claro; no es un secadero artesano exclusivo de Jabugo → confirmar encaje› — Charcutería (jamón DOP Jabugo). Jabugo.
   <https://www.miguelymaria.com/> (marca «Castillo Real»). Tienda online →
   `Venta online=sí`.
-- [ ] **Pedro Parra e Hijos, S.A.** — Charcutería (jamón DOP Jabugo). Jabugo.
+- [x] **Pedro Parra e Hijos, S.A.** ‹→ jamones-pedro-parra-montjam-jabugo (verificado, VO n/c; marca propia MONTJAM/ONOFRE)› — Charcutería (jamón DOP Jabugo). Jabugo.
   <https://jamonesmontjam.com/> (marcas «MONTJAM» y «ONOFRE») · 959 122 815.
   ⚠ También presta servicio de maquila (B2B) a terceros; entra por su marca propia.
 - [x] **Sierra de Jabugo, S.L.** ‹→ sierra-de-jabugo-jabugo (verificado, VO sí; marca Jamones Bomba)› — Charcutería (jamón DOP Jabugo). El Repilado
@@ -74,7 +74,7 @@
 - [x] **Olalla Ibérica, S.L.** ‹→ olalla-iberica-santa-olalla-del-cala (verificado, VO sí)› — Charcutería (jamón DOP Jabugo). Santa Olalla del
   Cala. <https://olallajamones.com/> · 959 190 320. Tienda online →
   `Venta online=sí`.
-- [ ] **Jamones Benito e Hijos, S.L.** — Charcutería (jamón DOP Jabugo). Jabugo.
+- [x] **Jamones Benito e Hijos, S.L.** ‹→ jamones-benito-e-hijos-jabugo (parcial; S.L. de Jabugo del grupo Ibéricos Benito de Arahal/Sevilla, web del grupo)› — Charcutería (jamón DOP Jabugo). Jabugo.
   ⚠ Web sin confirmar: buscar arroja «Ibéricos Benito / Anselmo Benito»
   (jamonesbenitoibericos.com, ibericosbenito.com) pero con origen en Arahal
   (Sevilla) — posible entidad distinta. Confirmar razón social y secadero en
