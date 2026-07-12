@@ -18,24 +18,24 @@
 > Estado: **`unverified`**. Variedad amparada: cornicabra. Casi todas con tienda
 > online → pista `Venta online=sí`, confirmar en integración.
 
-- [ ] **Aceites Consuegra** (Aceites Consuegra, S.L.) — Aceite. Consuegra.
+- [x] **Aceites Consuegra** (Aceites Consuegra, S.L.) ‹→ aceites-consuegra-consuegra (verificado, VO sí)› — Aceite. Consuegra.
   <http://www.aceitesconsuegra.com>. (Distinta de la Coop. Vinícola de Consuegra
   ya en CSV.)
-- [ ] **Almazara San Sebastián de Gálvez** (marca **El Paraíso**) — Aceite.
+- [x] **Almazara San Sebastián de Gálvez** (marca **El Paraíso**) ‹→ almazara-san-sebastian-galvez-el-paraiso (verificado, VO n/c)› — Aceite.
   Gálvez. <http://www.aceiteselparaiso.es>.
-- [ ] **Aceites Umbrión** (S. Coop. San Sebastián de Madridejos) — Aceite.
+- [x] **Aceites Umbrión** (S. Coop. San Sebastián de Madridejos) ‹→ aceites-umbrion-madridejos (parcial; web no accesible)› — Aceite.
   Madridejos. <http://www.aceitesumbrion.com>. Cooperativa (~1.200 socios).
-- [ ] **Morlin, S.A.** (marca **Toletum**) — Aceite. Nambroca. <http://www.aceitestoletum.com>.
-- [ ] **IFAMA, S.L.** — Aceite. Noez. <http://www.arzuaganavarro.com>. ⚠ del
+- [x] **Morlin, S.A.** (marca **Toletum**) ‹→ morlin-toletum-nambroca (verificado, VO sí)› — Aceite. Nambroca. <http://www.aceitestoletum.com>.
+- [x] **IFAMA, S.L.** ‹DIFERIDO: la web (arzuaganavarro.com) es la del grupo Arzuaga Navarro (Ribera del Duero, hotel 5*+Michelin); sin identidad ni tienda de AOVE Toledo → confirmar encaje vs grupo› — Aceite. Noez. <http://www.arzuaganavarro.com>. ⚠ del
   **grupo Arzuaga Navarro / Amaya Arzuaga** (Ribera del Duero); confirmar marca de
   AOVE con venta propia y encaje vs grupo.
 - [ ] **Cooperativa Montes de Toledo** — Aceite. Mazarambroz. Sin web propia
   (contacto montestoledo@movistar.es). Confirmar marca de consumo.
-- [ ] **COTOAL, S.L.** — Aceite. El Carpio de Tajo. Web/marca vía dominio
+- [x] **COTOAL, S.L.** ‹→ cotoal-el-carpio-de-tajo (verificado, VO n/c; tienda en mantenimiento)› — Aceite. El Carpio de Tajo. Web/marca vía dominio
   cotoal.com (comercial@cotoal.com); confirmar.
 - [ ] **Jaramontes, S.C.L.** — Aceite. La Nava de Ricomalillo. Sin web propia
   localizada. ⚠ cooperativa, confirmar marca vs granel.
-- [ ] **Agrupación de Olivareros** (La Olivarera) — Aceite. Los Navalmorales.
+- [x] **Agrupación de Olivareros** (La Olivarera) ‹→ la-olivarera-los-navalmorales (parcial; cert mal configurado)› — Aceite. Los Navalmorales.
   Marca/dominio laolivarera.com (elias@laolivarera.com); confirmar.
 - [ ] **Coop. Ntra. Sra. de la Antigua de Los Navalmorales** — Aceite. Los
   Navalmorales. Sin web propia. ⚠ homónima de la de Mora (ya en CSV): cuidar slug
@@ -44,18 +44,18 @@
   Romeral. Sin web propia localizada.
 - [ ] **Coop. San Sebastián de Santa Ana de Pusa** — Aceite. Santa Ana de Pusa.
   Sin web propia localizada.
-- [ ] **Coop. Tesoro de Guarrazar** — Aceite. Guadamur. <http://tesorodeguarrazar.es>.
-- [ ] **Coop. Ntra. Sra. de las Saleras** (marca **Saleras**) — Aceite. Los
+- [x] **Coop. Tesoro de Guarrazar** ‹→ cooperativa-tesoro-de-guarrazar-guadamur (verificado, VO sí)› — Aceite. Guadamur. <http://tesorodeguarrazar.es>.
+- [x] **Coop. Ntra. Sra. de las Saleras** (marca **Saleras**) ‹→ cooperativa-las-saleras-los-navalucillos (verificado, VO sí)› — Aceite. Los
   Navalucillos. <http://www.aovesaleras.es>.
 - [ ] **S.C.L. San Sebastián de Belvís** — Aceite. Belvís de la Jara. Sin web
   propia localizada.
-- [ ] **Óleo Quirós** (Oleoquirós, S.L.) — Aceite (ecológico). Mascaraque.
+- [x] **Óleo Quirós** (Oleoquirós, S.L.) ‹→ oleo-quiros-mascaraque (verificado, VO sí; premiada)› — Aceite (ecológico). Mascaraque.
   <http://www.oleoquiros.com>. Premiada (mejor almazara 2006, mejor AOVE de España
   2008-09).
 - [ ] **Coop. Olivar del Cristo** — Aceite. Villamuelas. Sin web propia (contacto
   olivardelcristo@hotmail.com).
-- [ ] **Alalma del Olivo** (Finca El Torrao) — Aceite. Sonseca. <http://www.alalmadelolivo.com>.
-- [ ] **Aceites Toledo, S.A.** — Aceite. Los Yébenes. <http://www.aceitestoledo.com>.
+- [x] **Alalma del Olivo** (Finca El Torrao) ‹→ alalma-del-olivo-la-guardia (verificado, VO sí; CORRECCIÓN municipio: La Guardia, no Sonseca)› — Aceite. Sonseca. <http://www.alalmadelolivo.com>.
+- [x] **Aceites Toledo, S.A.** ‹→ aceites-toledo-los-yebenes (verificado, VO n/c; empresa independiente desde 1954, no brazo de coop)› — Aceite. Los Yébenes. <http://www.aceitestoledo.com>.
   ⚠ el consejo enlaza esta ficha bajo la entrada «Coop. Ntra. Sra. de la Antigua
   de Mora» (ya en CSV, distinto municipio) → verificar si es operador propio
   (marca «Aceites Toledo»/«Óleum») o brazo comercial de aquella cooperativa.

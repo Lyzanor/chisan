@@ -134,7 +134,7 @@ resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 3.1 | Toledo | Montes de Toledo (19, varias coops sin web) + queserías DOP Manchego (releer registro: el conteo de `cuenca.md` no es fiable) | 19+? | ~2 | pendiente |
+| 3.1 | Toledo | **3.1a Montes de Toledo aceite con web (12) hecho** (11 altas: 9 verif —6 VO=sí— + 2 parcial; 1 diferida IFAMA→grupo Arzuaga). Falta: Montes de Toledo sin web (7 coops) + queserías DOP Manchego. Nuevo `toledo.jsonl` | 19+? | ~2 (1/3) | en curso |
 | 3.2 | Ciudad Real | Montes de Toledo CR (2) + Campo de Montiel (5, ⚠ socias de coop 2º grado: marca propia o descartar) + pista provincial (3) + queserías DOP Manchego, **incluida Quesos Aldonza y Don Ismael (Piedrabuena)** (⚠ Rocinante = regla de grupos) | 10+? | ~1-2 | pendiente |
 
 ### Fuera de alcance de esta fase
@@ -150,6 +150,18 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 3.1a — Toledo, DOP Montes de Toledo aceite con web (12)**:
+  11 altas (9 `verificado`, 6 con VO=sí ecommerce: Aceites Consuegra, Toletum/
+  Nambroca, Tesoro de Guarrazar/Guadamur, Las Saleras/Los Navalucillos, Óleo
+  Quirós/Mascaraque —premiada— y Al Alma del Olivo/La Guardia; + El Paraíso/Gálvez,
+  COTOAL/El Carpio —tienda en mantenimiento— y Aceites Toledo/Los Yébenes, VO n/c;
+  2 `parcial`: Umbrión/Madridejos y La Olivarera/Los Navalmorales, web caída/cert).
+  Otro lote de aceite DOP de alto rendimiento (cornicabra, casi todas con tienda).
+  **1 diferida**: *IFAMA* — su web es la del grupo Arzuaga Navarro (Ribera del
+  Duero), sin identidad ni tienda de AOVE Toledo. **Correcciones de municipio**:
+  *Al Alma del Olivo* está en **La Guardia** (finca El Torrao), no Sonseca —
+  homónimo La Guardia (Jaén/Toledo) resuelto por el override; *Aceites Toledo* es
+  empresa independiente desde 1954, no brazo comercial de la coop de Mora.
 - 2026-07-12 — **Lote 2.7a — Valencia, DO Utiel-Requena embotelladoras con web
   (14)**: 12 altas (6 `verificado`, 3 con VO=sí ecommerce: Iranzo/Caudete —eco sin
   sulfitos—, De Noemí/Fuenterrobles, Emilio Clemente/Requena; + Carré/Requena,
