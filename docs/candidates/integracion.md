@@ -134,7 +134,7 @@ resolver) → al final.
 
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
-| 3.1 | Toledo | **3.1a Montes de Toledo aceite con web (12) hecho** (11 altas: 9 verif —6 VO=sí— + 2 parcial; 1 diferida IFAMA→grupo Arzuaga). Falta: Montes de Toledo sin web (7 coops) + queserías DOP Manchego. Nuevo `toledo.jsonl` | 19+? | ~2 (1/3) | en curso |
+| 3.1 | Toledo | **3.1a aceite (11) + 3.1b queserías Manchego (4) hechos** = 15 altas (13 verif —9 VO=sí— + 2 parcial; diferidas IFAMA + 3 queserías sin web + 7 coops aceite sin web). Falta: aceite sin web + 3 queserías sin web | 19+? | ~1 (2/3) | en curso |
 | 3.2 | Ciudad Real | **3.2a Montes de Toledo CR (2) hecho** (2 altas: El Molinillo verif VO=sí + Moraga parcial; 5 Campo de Montiel DESCARTADAS por maquila/B2B; 3 provinciales diferidas). Nuevo `ciudad-real.jsonl`. Falta: queserías DOP Manchego (Aldonza/Don Ismael…) | 10+? | ~1 (1/2) | en curso |
 
 ### Fuera de alcance de esta fase
@@ -150,6 +150,19 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 3.1b — Toledo, DOP Queso Manchego queserías (4)**: 4 altas,
+  todas `verificado` (3 con VO=sí ecommerce: Quesos El Consuelo/S.A.T. La Cañada
+  Real Soriana/Madridejos —ganadería 1938—, Quesos Barrajón/Quintanar de la Orden
+  y Gallego Sanz/Villanueva de Alcardete —1955—; + Pérez Arquero/Ocaña, VO n/c —web
+  informativa). Verificadas por su propia web (más fiable que el campo `categories`
+  del registro). **Método**: el array `places` del registro Manchego ya **no viene
+  en `content.rendered`** de `/wp-json/wp/v2/pages/10148` (estructura cambiada
+  desde el 2026-07-09) → se usó la lista ya capturada en `cuenca.md` §Pistas + web
+  propia. El `/wp-json` da 301→`-L`. **Homónimo**: Ocaña (Almería/Toledo) resuelto
+  por el override, coords fijadas a Ocaña/Toledo. **3 diferidas** sin web (Reino/
+  Madridejos, Martal/El Toboso —«Industrias Alimentarias», posible madurador—,
+  Palomares/La Puebla de Almoradiel): falta releer `categories` (elaborador vs
+  madurador) del registro.
 - 2026-07-12 — **Lote 3.2a — Ciudad Real, DOP Montes de Toledo parte CR (2)**: 2
   altas (1 `verificado` VO=sí: *Dehesa El Molinillo*/Retuerta del Bullaque —Nortia
   Agricultural, marcas El Molinillo/Navalices, tienda propia; el ⚠ «grupo

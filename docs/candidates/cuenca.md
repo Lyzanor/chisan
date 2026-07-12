@@ -90,12 +90,15 @@
 > `Cámaras de maduración`) distingue elaboradores de simples maduradores. Método
 > y trampas en [albacete.md](albacete.md) §Método.
 
-- **Toledo (7 netas de 19)** → `toledo.md`: S.A.T. La Cañada Real Soriana
-  (Madridejos, `quesoselconsuelo.com`) · Explotaciones Ganaderas Pérez Arquero
-  (Ocaña, `perezarquero.es`) · Quesos Barrajón (Quintanar de la Orden) · S.A.T.
-  Gallego Sanz (Villanueva de Alcardete) · Quesos Reino (Madridejos, sin web) ·
-  Indust. Alimentarias Martal (El Toboso, sin web) · Asoc. Ganadera Palomares
-  (La Puebla de Almoradiel, sin web).
+- **Toledo (7 netas de 19)** → integrado lote 3.1b (2026-07-12): **4 altas
+  verificado** — S.A.T. La Cañada Real Soriana (`quesos-el-consuelo-madridejos`,
+  VO=sí) · Pérez Arquero (`quesos-perez-arquero-ocana`, VO n/c) · Quesos Barrajón
+  (`quesos-barrajon-quintanar-de-la-orden`, VO=sí) · Gallego Sanz
+  (`quesos-gallego-sanz-villanueva-de-alcardete`, VO=sí). **Diferidas las 3 sin
+  web** (Quesos Reino/Madridejos, Indust. Alimentarias Martal/El Toboso, Asoc.
+  Ganadera Palomares/La Puebla de Almoradiel): ⚠ el array `places` del registro ya
+  no viene en `content.rendered` del wp-json (estructura cambiada) → falta releer
+  `categories` para confirmar elaborador vs madurador antes de integrarlas.
 - **Ciudad Real (4 netas de 21)** → `ciudad-real.md`: Félix Iniesta
   Moreno-Manzanaro (Herencia, `quesosiniesta.com`) · Cabrera Gallego Antonio
   (Manzanares) · Ricardo Corrales Iniesta (Herencia, `lagaitana.es`) · ⚠ **Quesos
