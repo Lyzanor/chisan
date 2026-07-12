@@ -125,7 +125,7 @@ resolver) → al final.
 | 2.1 | Teruel | **2.1a (7) + 2.1b jamón (9) + 2.1c aceite Bajo Aragón (13) hechos** = 29 altas. Falta: resto jamón secaderos (~5, DNS/redirección) + Melocotón La Arenosa (1). Núcleo cerrado | 51 | ~1 (3/4) | casi |
 | 2.2 | Jaén | **2.2a Sierra Mágina (11) + 2.2b Cazorla (7) & Segura (5) hechos** (23 altas). Falta: resto Segura (13, mayoría solo-teléfono/sin web propia). ⚠ homónimos coops «San …», «La Vicaría» y «Ntra. Sra. de la Cabeza» (Huesa≠Campillo) | 38 | ~23 (2/3) | en curso |
 | 2.3 | Lugo | **2.3a Prov. (5) + 2.3b RS corte 1 (11) + 2.3c RS corte 2 (10) hechos** = 26 altas. Núcleo cerrado; queda solo la cola de ~23 micro-colleiteiros de nombre personal sin web (nota «corte 2» del doc). Diferidos: Fusco/Finca Cuarta≈prior-de-panton, CastroCandaz≈virxen-dos-remedios, Finca A Figueira (concello?), Maruxas→a-coruna; corrección `torre-de-nunez-o-corgo` | 30 | ~0 (3/3) | ✅ núcleo |
-| 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
+| 2.4 | Huelva | **2.4a Jabugo corte 1 (12) hecho** (10 altas, TODAS verificado+VO=sí ecommerce; 2 diferidas: Cárdeno→Badajoz, Miguel y María→Segovia). Falta: Jabugo corte 2 (Enrique Castaño punycode, Pedro Parra/Montjam, Benito) + Condado bodegas (13). Corrección `jamones-tartessos-huelva`: revisada, se mantiene anclada a la tienda verificada de Huelva | 28 | ~1-2 (1/2) | en curso |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
 | 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
 | 2.7 | Valencia | Utiel-Requena embotelladoras (21) → 2 lotes; Arroz de Valencia (4, sin dirección) se reparte | 25 | ~2 | pendiente |
@@ -150,6 +150,21 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.4a — Huelva, DOP Jabugo secaderos corte 1 (12)**: **10
+  altas, TODAS `verificado` + VO=sí ecommerce** — el lote de mayor rendimiento de
+  la fase: secaderos familiares de la DOP Jabugo con tienda online propia leída en
+  vivo (Lazo/Cortegana, Sierra Mayor/Corteconcepción, Domecq/Cortegana, Velázquez/
+  Aroche, Cortegana Ibérico, Oro Viejo/Higuera, Alba Romero/Cala, Maximiliano/
+  Jabugo, Sierra de Jabugo/Jabugo, Olalla/Santa Olalla del Cala). **2 diferidas
+  por conflicto de provincia** (patrón Oliflix): *Hermanos Cárdeno* — su web
+  (cardeno.es) da Fuentes de León (Badajoz), tel 924, sin reclamar DOP Jabugo; y
+  *Miguel y María* — sede/tel en Segovia (921), fábricas en dos provincias.
+  **Corrección de municipio**: *Alba Romero* (Los Romeros de Jabugo) está en
+  **Cala** (C/ Jabugo 1, 21270), no Jabugo. La corrección pendiente de
+  `jamones-tartessos-huelva` se revisó y se deja como está: la fila ya está
+  verificada y geolocalizada en su tienda oficial de Huelva (place_id real) con la
+  curación en Cumbres Mayores documentada en la descripción; cambiar el municipio
+  degradaría a un centroide y rompería el geo-check.
 - 2026-07-12 — **Lote 2.3c — Lugo, DO Ribeira Sacra corte 2 (adegas sin web)**:
   10 altas (2 `verificado` con web propia leída en vivo: *Alvaredos-Hobbs*/Quiroga
   —Paul Hobbs, distribución→VO n/c— y *Rectoral de Gundivós*/Sober —oleiro+adega,

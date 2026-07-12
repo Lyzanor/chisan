@@ -28,21 +28,21 @@
 > Webs/teléfonos añadidos en la pasada de enriquecimiento 2026-07-09 (búsqueda web
 > + fichas del consejo). Casi todos tienen tienda online → pista `Venta online=sí`.
 
-- [ ] **Jamones Lazo** — Charcutería (jamón bellota 100% ibérico DOP Jabugo).
+- [x] **Jamones Lazo** ‹→ jamones-lazo-cortegana (verificado, VO sí ecommerce)› — Charcutería (jamón bellota 100% ibérico DOP Jabugo).
   Cortegana. <https://www.jamoneslazo.es/>. Tienda online → `Venta online=sí`.
   (Dedup: falso positivo con USISA por el trozo «sa**lazo**nera»; entidad distinta.)
-- [ ] **Sierra Mayor Jabugo, S.A.U.** — Charcutería (jamón DOP Jabugo).
+- [x] **Sierra Mayor Jabugo, S.A.U.** ‹→ sierra-mayor-jabugo-corteconcepcion (verificado, VO sí)› — Charcutería (jamón DOP Jabugo).
   Corteconcepción. <https://sierramayorjabugo.com/>. Marca «Sierra Mayor», tienda
   online → `Venta online=sí`.
-- [ ] **Hermanos Cárdeno, S.L.** — Charcutería (jamón DOP Jabugo). Cumbres
+- [x] **Hermanos Cárdeno, S.L.** ‹DIFERIDO: su web (cardeno.es) sitúa la empresa en Fuentes de León (Badajoz), tel 924, y no reclama DOP Jabugo, pese a figurar el registro en Cumbres Mayores → resolver provincia antes de integrar› — Charcutería (jamón DOP Jabugo). Cumbres
   Mayores. <https://cardeno.es/> · 959 710 351. Tienda online → `Venta online=sí`.
-- [ ] **Ibéricos Domecq, S.L.** — Charcutería (jamón DOP Jabugo). Cortegana.
+- [x] **Ibéricos Domecq, S.L.** ‹→ ibericos-domecq-cortegana (verificado, VO sí; marca Juan Pedro Domecq)› — Charcutería (jamón DOP Jabugo). Cortegana.
   <https://jamonesjuanpedrodomecq.com/> (marca «Juan Pedro Domecq»). Secadero
   inaugurado 2019 en Cortegana.
-- [ ] **Hermanos Velázquez Jabugo, S.A.** — Charcutería (jamón DOP Jabugo).
+- [x] **Hermanos Velázquez Jabugo, S.A.** ‹→ ibericos-velazquez-aroche (verificado, VO sí)› — Charcutería (jamón DOP Jabugo).
   Aroche. <https://www.ibericosvelazquez.com/> · 600 305 694. Tienda online →
   `Venta online=sí`.
-- [ ] **Francisco y Gregorio Alcaide Cera, S.L.** — Charcutería (jamón DOP
+- [x] **Francisco y Gregorio Alcaide Cera, S.L.** ‹→ cortegana-iberico-cortegana (verificado, VO sí; miembro productor DOP Jabugo)› — Charcutería (jamón DOP
   Jabugo). Cortegana. <https://www.corteganaiberico.com/> (marca «Cortegana
   Ibérico») · 959 131 159. Tienda online → `Venta online=sí`.
 - [ ] **Enrique Castaño Guijarro** — Charcutería (jamón DOP Jabugo). Cumbres
@@ -53,25 +53,25 @@
   `jamonestartessos.com` coincide exactamente con la fila del CSV). NO crear fila.
   Queda una **corrección pendiente a la fila existente**: el CSV dice municipio
   «Huelva» pero la razón social produce en **Cumbres Mayores** (959 710 176).
-- [ ] **Ramos Domínguez, S.L.** — Charcutería (jamón DOP Jabugo). Higuera de la
+- [x] **Ramos Domínguez, S.L.** ‹→ jamones-oro-viejo-higuera-de-la-sierra (verificado, VO sí; marca Oro Viejo)› — Charcutería (jamón DOP Jabugo). Higuera de la
   Sierra. <https://www.jamonesoroviejo.com/> (marca «Oro Viejo») · 959 196 092.
   Tienda online → `Venta online=sí`.
-- [ ] **Los Romeros de Jabugo, S.L.** — Charcutería (jamón DOP Jabugo). Jabugo.
+- [x] **Los Romeros de Jabugo, S.L.** ‹→ jamon-alba-romero-cala (verificado, VO sí; CORRECCIÓN municipio: secadero en Cala, no Jabugo)› — Charcutería (jamón DOP Jabugo). Jabugo.
   <https://jamonalbaromero.com/> (marca «Alba Romero») · 959 191 059. Tienda
   online → `Venta online=sí`.
-- [ ] **Maximiliano Jabugo, S.L.** — Charcutería (jamón DOP Jabugo). El Repilado
+- [x] **Maximiliano Jabugo, S.L.** ‹→ maximiliano-jabugo-jabugo (verificado, VO sí; marca MXM)› — Charcutería (jamón DOP Jabugo). El Repilado
   (Jabugo). <https://www.maximilianojabugo.com/> · 900 190 000. Tienda online →
   `Venta online=sí`.
-- [ ] **Miguel y María, S.L.** — Charcutería (jamón DOP Jabugo). Jabugo.
+- [x] **Miguel y María, S.L.** ‹DIFERIDO: sede/teléfono en Segovia (921), fábricas en Segovia y Huelva, sin e-commerce claro; no es un secadero artesano exclusivo de Jabugo → confirmar encaje› — Charcutería (jamón DOP Jabugo). Jabugo.
   <https://www.miguelymaria.com/> (marca «Castillo Real»). Tienda online →
   `Venta online=sí`.
 - [ ] **Pedro Parra e Hijos, S.A.** — Charcutería (jamón DOP Jabugo). Jabugo.
   <https://jamonesmontjam.com/> (marcas «MONTJAM» y «ONOFRE») · 959 122 815.
   ⚠ También presta servicio de maquila (B2B) a terceros; entra por su marca propia.
-- [ ] **Sierra de Jabugo, S.L.** — Charcutería (jamón DOP Jabugo). El Repilado
+- [x] **Sierra de Jabugo, S.L.** ‹→ sierra-de-jabugo-jabugo (verificado, VO sí; marca Jamones Bomba)› — Charcutería (jamón DOP Jabugo). El Repilado
   (Jabugo). <https://www.sierradejabugo.es/> (marca «Jamones Bomba») ·
   959 122 885. Tienda online → `Venta online=sí`.
-- [ ] **Olalla Ibérica, S.L.** — Charcutería (jamón DOP Jabugo). Santa Olalla del
+- [x] **Olalla Ibérica, S.L.** ‹→ olalla-iberica-santa-olalla-del-cala (verificado, VO sí)› — Charcutería (jamón DOP Jabugo). Santa Olalla del
   Cala. <https://olallajamones.com/> · 959 190 320. Tienda online →
   `Venta online=sí`.
 - [ ] **Jamones Benito e Hijos, S.L.** — Charcutería (jamón DOP Jabugo). Jabugo.
