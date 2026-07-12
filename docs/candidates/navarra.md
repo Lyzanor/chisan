@@ -32,28 +32,28 @@
 
 ### Ribera Baja y Ribera Alta (11)
 
-- [ ] **Bodegas Viña Magaña** — Bodega. Barillas. · 948 850 034 ·
+- [x] **Bodegas Viña Magaña** ‹→ bodegas-vina-magana-barillas (verificado, VO n/c)› — Bodega. Barillas. · 948 850 034 ·
   <https://www.vinamagana.com>.
-- [ ] **Bodega Ntra. Sra. del Romero** (marca **Malón de Echaide**) — Bodega.
+- [x] **Bodega Ntra. Sra. del Romero** (marca **Malón de Echaide**) ‹→ bodega-malon-de-echaide-cascante (verificado, VO sí; ⚠ homónimo Cascante del Río en municipios.json → coords fijadas a Navarra)› — Bodega.
   Cascante (Ctra. Tarazona, 33). · 948 851 411 · <https://www.bodegasdelromero.com>.
   Cooperativa. ⚠ el consejo la lista por la marca, no por la razón social.
-- [ ] **Bodegas Marqués de Montecierzo** — Bodega. Castejón. · 948 814 414 ·
+- [x] **Bodegas Marqués de Montecierzo** ‹→ bodega-marques-de-montecierzo-castejon (verificado, VO sí; ecológico)› — Bodega. Castejón. · 948 814 414 ·
   <https://marquesdemontecierzo.com>.
-- [ ] **Bodega Cirbonera** (marca **Dominio Lasierpe**) — Bodega. Cintruénigo.
+- [x] **Bodega Cirbonera** (marca **Dominio Lasierpe**) ‹→ bodega-cirbonera-dominio-lasierpe-cintruenigo (verificado, VO sí)› — Bodega. Cintruénigo.
   · 948 811 033 · <https://www.dominiolasierpe.com>. Cooperativa con marca propia.
-- [ ] **Bodegas Corellanas** — Bodega. Corella (Santa Bárbara, 29). · 948 780 029 ·
+- [x] **Bodegas Corellanas** ‹→ bodegas-corellanas-corella (verificado, VO sí)› — Bodega. Corella (Santa Bárbara, 29). · 948 780 029 ·
   <https://bodegascorellanas.com>.
-- [ ] **Viña Zorzal Wines** — Bodega. Corella. · 948 780 617 ·
+- [x] **Viña Zorzal Wines** ‹→ vina-zorzal-wines-corella (parcial; web SPA no legible)› — Bodega. Corella. · 948 780 617 ·
   <https://www.zorzalwines.com>. ⚠ existe una segunda entidad, *Proyecto Zorzal,
   S.L.* (mismo teléfono) → una sola fila.
-- [ ] **Bodegas Camino del Villar** (marca **Viña Aliaga**) — Bodega. Corella.
+- [x] **Bodegas Camino del Villar** (marca **Viña Aliaga**) ‹→ bodegas-camino-del-villar-vina-aliaga-corella (parcial; web SPA no legible)› — Bodega. Corella.
   · 948 401 321 · <https://www.vinaaliaga.com>.
-- [ ] **Bodega y Viñas Valdelares** — Bodega. Cárcar (Eje del Ebro, km 60).
+- [x] **Bodega y Viñas Valdelares** ‹→ bodega-vinas-valdelares-carcar (parcial; web no accesible)› — Bodega. Cárcar (Eje del Ebro, km 60).
   · 656 849 602 · <https://www.valdelares.com>.
-- [ ] **Vidmundi** (marca **Finca La Cantera**) — Bodega. Murchante.
+- [x] **Vidmundi** (marca **Finca La Cantera**) ‹→ vidmundi-finca-la-cantera-murchante (verificado, VO sí)› — Bodega. Murchante.
   <https://www.fincalacantera.com>.
-- [ ] **Bodegas Azpea** — Bodega. Lumbier. · 948 880 433 · <https://www.bodegasazpea.com>.
-- [ ] **Bodegas Ontañón** — Bodega. Fitero. · 948 776 056 · <https://www.ontanon.es>.
+- [x] **Bodegas Azpea** ‹→ bodegas-azpea-lumbier (verificado, VO sí)› — Bodega. Lumbier. · 948 880 433 · <https://www.bodegasazpea.com>.
+- [x] **Bodegas Ontañón** ‹DIFERIDO: es fundamentalmente riojana (sede Avda. de Aragón 3, Logroño; grupo Ontañón Familia); solo tiene bodega inscrita en Navarra → fuera de provincia› — Bodega. Fitero. · 948 776 056 · <https://www.ontanon.es>.
   ⚠ grupo riojano con bodega inscrita en Navarra; confirmar encaje de tamaño.
 
 ### Tierra Estella, Valdizarbe y Ribera Alta (9)

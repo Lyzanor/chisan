@@ -126,7 +126,7 @@ resolver) → al final.
 | 2.2 | Jaén | **2.2a Sierra Mágina (11) + 2.2b Cazorla (7) & Segura (5) hechos** (23 altas). Falta: resto Segura (13, mayoría solo-teléfono/sin web propia). ⚠ homónimos coops «San …», «La Vicaría» y «Ntra. Sra. de la Cabeza» (Huesa≠Campillo) | 38 | ~23 (2/3) | en curso |
 | 2.3 | Lugo | **2.3a Prov. (5) + 2.3b RS corte 1 (11) + 2.3c RS corte 2 (10) hechos** = 26 altas. Núcleo cerrado; queda solo la cola de ~23 micro-colleiteiros de nombre personal sin web (nota «corte 2» del doc). Diferidos: Fusco/Finca Cuarta≈prior-de-panton, CastroCandaz≈virxen-dos-remedios, Finca A Figueira (concello?), Maruxas→a-coruna; corrección `torre-de-nunez-o-corgo` | 30 | ~0 (3/3) | ✅ núcleo |
 | 2.4 | Huelva | **2.4a Jabugo (12) + 2.4b Condado (13) hechos** = 15 altas (13 verif —7 VO=sí— + 2 parcial), 3 rechazos/dups (López Cuesta=Contreras Ruiz…), 9 diferidos. Falta: solo Jabugo corte 2 (Enrique Castaño punycode, Pedro Parra/Montjam, Benito) + coops Condado sin web. Núcleo cerrado | 28 | ~1 (2/3) | ✅ núcleo |
-| 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
+| 2.5 | Navarra | **2.5a Ribera Baja/Alta (11) hecho** (10 altas: 7 verif —6 VO=sí— + 3 parcial; 1 diferida Ontañón→Rioja). Falta: Tierra Estella/Valdizarbe (9) + Baja Montaña (6). Correcciones pendientes: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 (1/3) | en curso |
 | 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
 | 2.7 | Valencia | Utiel-Requena embotelladoras (21) → 2 lotes; Arroz de Valencia (4, sin dirección) se reparte | 25 | ~2 | pendiente |
 
@@ -150,6 +150,19 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.5a — Navarra, DO Navarra bodegas Ribera Baja/Alta (11)**:
+  10 altas (7 `verificado` con web propia leída en vivo, **6 con VO=sí
+  ecommerce**: Malón de Echaide/Cascante, Montecierzo/Castejón, Dominio Lasierpe/
+  Cintruénigo, Corellanas/Corella, Finca La Cantera/Murchante, Azpea/Lumbier; +
+  Viña Magaña/Barillas sin carrito, VO n/c; 3 `parcial` porque su web es una SPA
+  o no cargó: Viña Zorzal, Viña Aliaga —ambas Corella— y Valdelares/Cárcar,
+  confirmadas por el registro INTIA). **1 diferida**: *Bodegas Ontañón* es
+  fundamentalmente riojana (sede en Logroño), solo con bodega inscrita en Navarra
+  → fuera de provincia. **Trampa de homónimo**: Nominatim geocodificó «Ctra.
+  Tarazona, Cascante» a 205 km, y municipios.json tiene el homónimo *Cascante del
+  Río* (Teruel); las coords de Malón de Echaide se fijaron a Cascante/Navarra y el
+  audit las validó vía el override. Fuente INTIA = organismo de control (mejor que
+  el consejo, que solo publica 27 fichas de enoturismo de ~85 bodegas).
 - 2026-07-12 — **Lote 2.4b — Huelva, DO Condado (vino/vinagre/vino naranja,
   13)**: 5 altas (3 `verificado`: Diezmo Nuevo/Moguer —casa de 1770, VO=sí— y
   Marqués de Villalúa/Villalba del Alcor —viñedo de 1495, VO=sí—, ambas con
