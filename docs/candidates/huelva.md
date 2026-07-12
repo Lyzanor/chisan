@@ -96,37 +96,37 @@
 
 > Webs/teléfonos añadidos en la pasada de enriquecimiento 2026-07-09.
 
-- [ ] **Bodegas del Diezmo Nuevo (Herederos de Cosme Sáenz Jiménez)** — Bodega.
+- [x] **Bodegas del Diezmo Nuevo (Herederos de Cosme Sáenz Jiménez)** ‹→ bodegas-del-diezmo-nuevo-moguer (verificado, VO sí; casa de 1770)› — Bodega.
   Moguer. <https://bodegadiezmonuevo.com/>. Fundada en 1770, una de las bodegas
   activas más antiguas de España (250 aniversario, insignia de oro del consejo);
   pionera en vermut, vino naranja y vino de fresa. Fuerte candidata.
-- [ ] **Bodegas Díaz, S.L.** — Bodega. Bollullos Par del Condado.
+- [x] **Bodegas Díaz, S.L.** ‹→ bodegas-diaz-bollullos (verificado, VO n/c; pedidos por teléfono)› — Bodega. Bollullos Par del Condado.
   <https://www.bodegasdiaz.com/> · tienda <https://tiendabodegasdiaz.com/> ·
   959 410 340. Vinos generosos, dulces y vinagres (marcas Vado del Quema, Onubis,
   Condado Pálido Fino 1955). Tienda online → `Venta online=sí`.
-- [ ] **Vinícola Valverdejo, S.L.** — Bodega. Gibraleón.
+- [x] **Vinícola Valverdejo, S.L.** ‹→ vinicola-valverdejo-gibraleon (parcial; web caída)› — Bodega. Gibraleón.
   <https://www.vinicolavalverdejo.com/>.
-- [ ] **Bodegas Marqués de Villalúa** — Bodega. Villalba del Alcor.
+- [x] **Bodegas Marqués de Villalúa** ‹→ bodegas-marques-de-villalua-villalba-del-alcor (verificado, VO sí)› — Bodega. Villalba del Alcor.
   <https://www.marquesdevillalua.com/>.
-- [ ] **Bodegas Rubio (Brandy Luis Felipe)** — Bodega/brandy. La Palma del
+- [x] **Bodegas Rubio (Brandy Luis Felipe)** ‹→ bodegas-rubio-luis-felipe-la-palma-del-condado (parcial; brandy+vinagre DOP, categoría Licores)› — Bodega/brandy. La Palma del
   Condado. <https://www.brandyluisfelipe.com/>. ⚠ Marca de brandy; confirmar
   encaje (vino/vinagre DO además del brandy).
-- [ ] **Bodegas A. Villarán, S.A.** — Bodega. Bollullos Par del Condado.
+- [x] **Bodegas A. Villarán, S.A.** ‹DIFERIDO: sin web ni marca de consumo confirmada; confirmar marca vs granel en 2ª pasada› — Bodega. Bollullos Par del Condado.
   959 410 377. Sin web propia localizada; confirmar.
-- [ ] **Bodegas López Cuesta, S.A.** — Bodega. Rociana del Condado. 959 416 426.
+- [x] **Bodegas López Cuesta, S.A.** ‹RECHAZADO: es la razón social de Bodegas Contreras Ruiz (ya en CSV); mismas marcas Édalo/Villa Barredero/Vallehondo, tel 959416426› — Bodega. Rociana del Condado. 959 416 426.
   Desde 1949 (vinos Édalo, Villa Barredero, Vallehondo…). Sin web propia
   localizada; confirmar.
-- [ ] **Bodegas Camacho** — Bodega. Bollullos Par del Condado. Sin web localizada;
+- [x] **Bodegas Camacho** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web localizada;
   confirmar actividad/venta.
-- [ ] **Bodegas Acosta** — Bodega. Bollullos Par del Condado. Sin web localizada;
+- [x] **Bodegas Acosta** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web localizada;
   confirmar actividad/venta.
-- [ ] **Bodegas Juncales** — Bodega. Bollullos Par del Condado. Sin web localizada;
+- [x] **Bodegas Juncales** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web localizada;
   confirmar actividad/venta.
-- [ ] **José y Miguel Martín, S.L.** — Bodega. Bollullos Par del Condado. Sin web
+- [x] **José y Miguel Martín, S.L.** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web
   localizada; confirmar actividad/venta.
-- [ ] **Bodegas Escolar Hermanos, S.A.** — Bodega. Almonte. Sin web localizada;
+- [x] **Bodegas Escolar Hermanos, S.A.** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Almonte. Sin web localizada;
   confirmar actividad/venta.
-- [ ] **Vitivinícola Manzanillera, S.C.A.** — Bodega. Manzanilla. Sin web
+- [x] **Vitivinícola Manzanillera, S.C.A.** ‹DIFERIDO: coop sin web; confirmar marca de consumo vs granel/mosto› — Bodega. Manzanilla. Sin web
   localizada; confirmar actividad/venta.
 
 > ⚠ **Descartes/dudas detectadas al enriquecer:**
