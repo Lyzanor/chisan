@@ -150,6 +150,15 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.5d — Navarra, DO Navarra certificadas tras 2023 (2)**: 1
+  alta (*Bodegas Olimpia*/Cáseda, `verificado` VO n/c — del grupo Vitilia pero
+  bodega de terroir con nombre propio, regla de grupos de calidad). **1 excluida**:
+  *Doña Isabella* — `donaisabella.es` redirige a `grupomarquesdelatrio.com` → es
+  marca del **gran grupo Marqués del Atrio** (ya señalado como excluido en varios
+  ficheros). *Hacienda Logos* ya estaba anotada como marca de Bodegas Escudero
+  (excluida). **Confirmación del fin del pool de alto valor**: incluso las
+  «post-2023 con web» son marcas de grupo; lo que resta en todas las provincias
+  son colas de registro sin web/contacto o descartes por grupo/maquila.
 - 2026-07-12 — **Lote 2.3d — Lugo, DO Ribeira Sacra micro-colleiteiros (17)**: 17
   altas `parcial` (colleiteiros de nombre personal con marca registrada, sin web;
   coords al centroide del concello —11 en Sober—). Batch de cobertura del corte 2

@@ -124,7 +124,7 @@
 > (San Martín de Unx; proyecto del enólogo del Bierzo).
 >
 > **Certificadas después del 31/12/2023** (están en la web del consejo pero no en el
-> PDF de INTIA): *Bodegas Olimpia* (Cáseda, `bodegasolimpia.com`) · *Doña Isabella*
+> PDF de INTIA): *Bodegas Olimpia* (Cáseda, `bodegasolimpia.com`) ‹→ bodegas-olimpia-caseda (verificado, VO n/c; grupo Vitilia pero terroir con nombre propio)› · *Doña Isabella* ‹EXCLUIDA: donaisabella.es redirige a grupomarquesdelatrio.com → marca del gran grupo Marqués del Atrio›
 > (Corella, `donaisabella.es`, 948 379 994) · *Hacienda Logos* (marca de Bodegas
 > Escudero). Verificar y añadir en el corte 2.
 
