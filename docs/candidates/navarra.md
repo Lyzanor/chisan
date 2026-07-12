@@ -58,25 +58,25 @@
 
 ### Tierra Estella, Valdizarbe y Ribera Alta (9)
 
-- [ ] **Vinecultor** (marca **Laderas de Montejurra**) — Bodega. Dicastillo
+- [x] **Vinecultor** (marca **Laderas de Montejurra**) ‹→ vinecultor-laderas-de-montejurra-dicastillo (parcial; dominio repurposado como revista)› — Bodega. Dicastillo
   (Ctra. Sesma, 3). <https://www.laderasdemontejurra.com>.
-- [ ] **José Pueyo Granada** (marca **Bodegas Armendáriz**) — Bodega. Falces.
+- [x] **José Pueyo Granada** (marca **Bodegas Armendáriz**) ‹→ bodegas-armendariz-falces (parcial; web 404)› — Bodega. Falces.
   · 948 734 135 · <https://www.bodegasarmendariz.com>.
-- [ ] **Viña Valdorba** — Bodega. Garinoain. · 659 098 794 ·
+- [x] **Viña Valdorba** ‹→ vina-valdorba-garinoain (parcial; web caída)› — Bodega. Garinoain. · 659 098 794 ·
   <https://www.bodegasvaldorba.com>.
-- [ ] **Bodegas Macaya s. XXI** — Bodega. Larraga. · 948 711 549 ·
+- [x] **Bodegas Macaya s. XXI** ‹→ bodegas-macaya-larraga (parcial; cert caducado)› — Bodega. Larraga. · 948 711 549 ·
   <https://www.bodegasmacaya.com>.
-- [ ] **SAT García García 734 NA** (marca **Bodega Ozalder**) — Bodega. Larraga
+- [x] **SAT García García 734 NA** (marca **Bodega Ozalder**) ‹→ bodega-ozalder-larraga (parcial; municipio = Larraga por INTIA, no Lerín)› — Bodega. Larraga
   (Ctra. Berbinzana, 21B). · 661 705 573 / 948 926 036 · <https://www.ozalder.es>.
   ⚠ la ficha del consejo la sitúa en **Lerín**; INTIA dice **Larraga** (CP 31251).
   Confirmar antes de integrar.
-- [ ] **Viñedos y Bodegas Alconde** — Bodega. Lerín. · 948 530 058 ·
+- [x] **Viñedos y Bodegas Alconde** ‹→ vinedos-y-bodegas-alconde-lerin (verificado, VO sí)› — Bodega. Lerín. · 948 530 058 ·
   <https://www.bodegasalconde.com>.
-- [ ] **Bodegas Fernández de Arcaya** — Bodega. Los Arcos. · 948 640 811 ·
+- [x] **Bodegas Fernández de Arcaya** ‹→ bodegas-fernandez-de-arcaya-los-arcos (parcial; cert mal configurado)› — Bodega. Los Arcos. · 948 640 811 ·
   <https://www.fernandezdearcaya.com>.
-- [ ] **Bodegas Valcarlos** — Bodega. Los Arcos (Ctra. de la Circunvalación s/n).
+- [x] **Bodegas Valcarlos** ‹→ bodegas-valcarlos-los-arcos (verificado, VO sí; Grupo Faustino, bodega de terroir)› — Bodega. Los Arcos (Ctra. de la Circunvalación s/n).
   · 948 640 806 · <https://www.bodegasvalcarlos.com>. Inaugurada en 2001.
-- [ ] **Bodega Coop. La Cruz** (marca **Belardi**) — Bodega. Mañeru. · 948 341 002 ·
+- [x] **Bodega Coop. La Cruz** (marca **Belardi**) ‹→ bodega-cooperativa-la-cruz-belardi-maneru (verificado, VO n/c)› — Bodega. Mañeru. · 948 341 002 ·
   <https://www.vinobelardi.com>.
 
 ### Baja Montaña y resto (6)
