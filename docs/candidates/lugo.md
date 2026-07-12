@@ -89,33 +89,33 @@ Teijeiro (Sarria).
   Tel 982 171 666 · <http://bodegadiegodelemos.blogspot.com>. Marca: Diego de Lemos.
 - [x] **Cividade** (Verao López, Brais) ‹→ adega-cividade-sober (parcial; web caída)› — Bodega (Amandi). Sober.
   Tel 982 152 981 · <http://www.cividades.com>. Marca: Cividade.
-- [ ] **Aborixe** — Bodega (Amandi). Sober. Tel 609 660 019. Sin web en registro
+- [x] **Aborixe** ‹→ adega-aborixe-sober (parcial; viño natural, sin web)› — Bodega (Amandi). Sober. Tel 609 660 019. Sin web en registro
   (viño natural, buscar en verificación).
-- [ ] **Bodega Ribada** — Bodega (Chantada). Chantada. Tel 982 441 579.
+- [x] **Bodega Ribada** ‹→ bodega-ribada-chantada (parcial; sin web)› — Bodega (Chantada). Chantada. Tel 982 441 579.
   Marcas: Ribada, Ribada Selección, Viña Ribada.
-- [ ] **Alvaredos-Hobbs** (Fructuoso-Hobbs S.L.) — Bodega (Quiroga-Bibei).
+- [x] **Alvaredos-Hobbs** (Fructuoso-Hobbs S.L.) ‹→ adega-alvaredos-hobbs-quiroga (verificado; Paul Hobbs, distribución → VO n/c)› — Bodega (Quiroga-Bibei).
   Quiroga. Tel 982 155 721. Marca: Alvaredos-Hobbs (proyecto de Paul Hobbs).
-- [ ] **Tolo do Xisto** — Bodega (Quiroga-Bibei). Monforte de Lemos.
+- [x] **Tolo do Xisto** ‹→ adega-tolo-do-xisto-monforte-de-lemos (parcial; Coca i Fitó, sin web propia)› — Bodega (Quiroga-Bibei). Monforte de Lemos.
   Tel 667 797 177. Marca: Tolo do Xisto.
-- [ ] **Regal López, Roberto** — Bodega (Chantada). Taboada. Tel 982 031 093.
+- [x] **Regal López, Roberto** ‹→ adega-regal-lopez-taboada (parcial; marca Gaela)› — Bodega (Chantada). Taboada. Tel 982 031 093.
   Marcas: Gaela, Mission, Neno da Ponte, Manifestación (muchas referencias).
-- [ ] **Albarduxe** (Albarduxe S.C.) — Bodega (Chantada). Chantada.
+- [x] **Albarduxe** (Albarduxe S.C.) ‹→ adega-albarduxe-chantada (parcial; sin web)› — Bodega (Chantada). Chantada.
   Tel 666 472 839. Marcas: Albarduxe, 18 Monasterios, Alboroque, Massimo.
-- [ ] **Bodega Losada Fernández** — Bodega (Ribeiras do Miño). Pantón.
+- [x] **Bodega Losada Fernández** ‹→ bodega-losada-fernandez-panton (parcial; Don Ventura, sin web)› — Bodega (Ribeiras do Miño). Pantón.
   Tel 982 456 213. Marcas: Don Ventura, Pena do Lobo, Viña Caneiro.
-- [ ] **Rectoral de Gundivós** — Bodega (Amandi). Sober. Tel 609 660 019 /
+- [x] **Rectoral de Gundivós** ‹→ rectoral-de-gundivos-sober (verificado; oleiro+adega, vino en barro Ámboa)› — Bodega (Amandi). Sober. Tel 609 660 019 /
   626 966 280. Marcas: Ámboa, Ímbrice, Adobe.
 - [x] **Fusco / Finca Cuarta** (Moure Fernández, Rubén) ‹DIFERIDO: marca «Finca Cuarta» ya figura en la fila prior-de-panton-panton (mismo viñateiro Rubén Moure); confirmar titularidad antes de crear fila aparte› — Bodega (Amandi /
   Ribeiras do Miño). Sober / Pantón. Tel 638 380 222. Marcas: Fusco, Finca
   Cuarta por Rubén Moure, Priscillvs, Nai (viñateiro reconocido; el registro lo
   lista en dos subzonas → una sola ficha).
-- [ ] **Finca A Figueira** (Finca y Bodega A Figueira S.L.) — Bodega (Chantada).
+- [x] **Finca A Figueira** (Finca y Bodega A Figueira S.L.) ‹DIFERIDO: ⚠ concello sin confirmar + teléfono 986 (prefijo Pontevedra) → verificar provincia antes de integrar› — Bodega (Chantada).
   Chantada ⚠ (confirmar concello). Tel 986 483 313. Marca: Finca Figueira.
-- [ ] **Bodegas CastroCandaz** — Bodega (Quiroga-Bibei). Quiroga.
+- [x] **Bodegas CastroCandaz** ‹DIFERIDO: mismo proyecto Raúl Pérez/Rodrigo Méndez (marcas Castro Candaz/Demo/Pazo de Bexán) ya integrado como adega-virxen-dos-remedios-o-savinao → evitar duplicado; resolver titularidad› — Bodega (Quiroga-Bibei). Quiroga.
   Tel 696 621 531. ⚠ colisión de marca «Castro Candaz» (ver Virxen dos Remedios).
-- [ ] **Terrazas de Outeiro** — Bodega (Quiroga-Bibei). Quiroga. Tel 637 895 831.
+- [x] **Terrazas de Outeiro** ‹→ adega-terrazas-de-outeiro-quiroga (parcial; sin marca ni web)› — Bodega (Quiroga-Bibei). Quiroga. Tel 637 895 831.
   Sin marca en registro (confirmar producto y venta).
-- [ ] **Adegas Salvadur** — Bodega (Quiroga-Bibei). A Pobra do Brollón.
+- [x] **Adegas Salvadur** ‹→ adegas-salvadur-a-pobra-do-brollon (parcial; sin marca ni web)› — Bodega (Quiroga-Bibei). A Pobra do Brollón.
   Tel 669 850 034. Sin marca en registro (confirmar).
 
 ### Notas del lote 14
