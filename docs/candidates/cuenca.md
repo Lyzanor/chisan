@@ -99,10 +99,13 @@
   Ganadera Palomares/La Puebla de Almoradiel): ⚠ el array `places` del registro ya
   no viene en `content.rendered` del wp-json (estructura cambiada) → falta releer
   `categories` para confirmar elaborador vs madurador antes de integrarlas.
-- **Ciudad Real (4 netas de 21)** → `ciudad-real.md`: Félix Iniesta
-  Moreno-Manzanaro (Herencia, `quesosiniesta.com`) · Cabrera Gallego Antonio
-  (Manzanares) · Ricardo Corrales Iniesta (Herencia, `lagaitana.es`) · ⚠ **Quesos
-  Despaña / Rocinante** (Malagón) — marca grande, aplicar regla de grupos.
+- **Ciudad Real (4 netas de 21)** → integrado lote 3.2b (2026-07-12): **2 altas
+  verificado VO=sí** — Félix Iniesta Moreno-Manzanaro
+  (`quesos-iniesta-felix-iniesta-herencia`) · Cabrera Gallego Antonio
+  (`quesos-cabrera-manzanares`). Las otras **ya estaban en el CSV**: Ricardo
+  Corrales Iniesta = `quesos-la-gaitana-herencia`; Quesos Aldonza y Don Ismael =
+  `quesos-aldonza-y-don-ismael-piedrabuena`; Quesos Despaña/Rocinante =
+  `quesos-rocinante-s-l-malagon` (además cae por regla de grupos).
 - ✅ **Albacete** → **traspasado y cerrado** en
   [albacete.md](albacete.md) (lote 0.4, 2026-07-10). El conteo de esta nota era
   erróneo: no eran 5 netas sino **1** (Quesos Campayo). Aldonza Gourmet y Spanish

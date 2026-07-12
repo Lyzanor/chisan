@@ -135,7 +135,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 3.1 | Toledo | **3.1a aceite (11) + 3.1b queserías Manchego (4) hechos** = 15 altas (13 verif —9 VO=sí— + 2 parcial; diferidas IFAMA + 3 queserías sin web + 7 coops aceite sin web). Falta: aceite sin web + 3 queserías sin web | 19+? | ~1 (2/3) | en curso |
-| 3.2 | Ciudad Real | **3.2a Montes de Toledo CR (2) hecho** (2 altas: El Molinillo verif VO=sí + Moraga parcial; 5 Campo de Montiel DESCARTADAS por maquila/B2B; 3 provinciales diferidas). Nuevo `ciudad-real.jsonl`. Falta: queserías DOP Manchego (Aldonza/Don Ismael…) | 10+? | ~1 (1/2) | en curso |
+| 3.2 | Ciudad Real | **3.2a aceite (2) + 3.2b queserías Manchego (2) hechos** = 4 altas (3 verif —3 VO=sí— + 1 parcial). Queserías: 2 altas (Iniesta, Cabrera); las otras 3 ya en CSV (La Gaitana, Aldonza&Don Ismael, Rocinante). 5 Campo de Montiel descartadas + 3 provinciales diferidas | 10+? | ~0 (2/2) | ✅ núcleo |
 
 ### Fuera de alcance de esta fase
 
@@ -150,6 +150,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 3.2b — Ciudad Real, DOP Queso Manchego queserías (2)**: 2
+  altas, ambas `verificado` VO=sí ecommerce: *Quesos Iniesta* (Félix Iniesta,
+  Herencia) y *Quesos Cabrera* (Cabrera Gallego, Manzanares, +90 años). Las otras
+  3 candidatas del §Pistas **ya estaban en el CSV** (dedup: *Ricardo Corrales* =
+  `quesos-la-gaitana-herencia`, *Aldonza y Don Ismael* = fila de Piedrabuena,
+  *Rocinante* = fila de Malagón, que además cae por grupo). **Ciudad Real cerrada**
+  (3.2a+3.2b): 4 altas.
 - 2026-07-12 — **Lote 3.1b — Toledo, DOP Queso Manchego queserías (4)**: 4 altas,
   todas `verificado` (3 con VO=sí ecommerce: Quesos El Consuelo/S.A.T. La Cañada
   Real Soriana/Madridejos —ganadería 1938—, Quesos Barrajón/Quintanar de la Orden
