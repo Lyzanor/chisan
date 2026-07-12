@@ -81,21 +81,21 @@
 
 ### Baja Montaña y resto (6)
 
-- [ ] **Viñedos y Bodegas de Mendigorría** (marca **Lúculo**) — Bodega.
+- [x] **Viñedos y Bodegas de Mendigorría** (marca **Lúculo**) ‹→ vinedos-y-bodegas-de-mendigorria-luculo (parcial; web 404)› — Bodega.
   Mendigorría. <https://www.luculo.es>. ⚠ el dedup por nombre la confundió con
   `fresas-de-mendigorria-mendigorria` (fruta): son distintas.
-- [ ] **Proyecto Unsi** (marca **Unsi Wines**) — Bodega. Olite / Erriberri.
+- [x] **Proyecto Unsi** (marca **Unsi Wines**) ‹→ proyecto-unsi-wines-olite (verificado, VO sí)› — Bodega. Olite / Erriberri.
   · 689 482 741 · <https://www.unsiwines.com>.
-- [ ] **Bodegas San Martín** (Sdad. Coop.) — Bodega. San Martín de Unx.
+- [x] **Bodegas San Martín** (Sdad. Coop.) ‹→ bodegas-san-martin-san-martin-de-unx (verificado, VO sí; coop 1914)› — Bodega. San Martín de Unx.
   · 948 738 294 · <https://www.bodegasanmartin.com>. Tienda en bodega. ⚠ el dedup
   por nombre la confundió con una **charcutería de Arbizu** («…Etayo San Martín»):
   son distintas.
-- [ ] **Bodegas Ayerra** — Bodega. San Martín de Unx. · 948 738 190 ·
+- [x] **Bodegas Ayerra** ‹→ bodegas-ayerra-san-martin-de-unx (verificado, VO sí)› — Bodega. San Martín de Unx. · 948 738 190 ·
   <https://www.bodegasayerra.com>.
-- [ ] **Asensio Viñedos y Bodegas** — Bodega. Sesma. · 618 720 613 ·
+- [x] **Asensio Viñedos y Bodegas** ‹→ asensio-vinedos-y-bodegas-sesma (parcial; web 403)› — Bodega. Sesma. · 618 720 613 ·
   <https://www.bodegasasensio.com>. ⚠ el dedup la confundió con
   `conservas-asensio-larraga` (conservas): son distintas.
-- [ ] **Aroa Bodegas** — Bodega (ecológica). Zurukuain. · 948 921 867 ·
+- [x] **Aroa Bodegas** ‹→ aroa-bodegas-yerri (verificado, VO n/c; ecológica, Zurukoain/valle de Yerri)› — Bodega (ecológica). Zurukuain. · 948 921 867 ·
   <https://www.aroawines.com>.
 
 ### Cortes siguientes — 25 restantes (datos ya capturados)
