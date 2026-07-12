@@ -135,7 +135,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 3.1 | Toledo | **3.1a Montes de Toledo aceite con web (12) hecho** (11 altas: 9 verif —6 VO=sí— + 2 parcial; 1 diferida IFAMA→grupo Arzuaga). Falta: Montes de Toledo sin web (7 coops) + queserías DOP Manchego. Nuevo `toledo.jsonl` | 19+? | ~2 (1/3) | en curso |
-| 3.2 | Ciudad Real | Montes de Toledo CR (2) + Campo de Montiel (5, ⚠ socias de coop 2º grado: marca propia o descartar) + pista provincial (3) + queserías DOP Manchego, **incluida Quesos Aldonza y Don Ismael (Piedrabuena)** (⚠ Rocinante = regla de grupos) | 10+? | ~1-2 | pendiente |
+| 3.2 | Ciudad Real | **3.2a Montes de Toledo CR (2) hecho** (2 altas: El Molinillo verif VO=sí + Moraga parcial; 5 Campo de Montiel DESCARTADAS por maquila/B2B; 3 provinciales diferidas). Nuevo `ciudad-real.jsonl`. Falta: queserías DOP Manchego (Aldonza/Don Ismael…) | 10+? | ~1 (1/2) | en curso |
 
 ### Fuera de alcance de esta fase
 
@@ -150,6 +150,20 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 3.2a — Ciudad Real, DOP Montes de Toledo parte CR (2)**: 2
+  altas (1 `verificado` VO=sí: *Dehesa El Molinillo*/Retuerta del Bullaque —Nortia
+  Agricultural, marcas El Molinillo/Navalices, tienda propia; el ⚠ «grupo
+  inversor» se resuelve: vende producto propio; 1 `parcial`: *Aceites Moraga*/
+  Judisan/Fuente el Fresno —hosting suspendido, venta directa en almazara,
+  confirmada por el consejo). **5 descartadas por regla dura maquila/B2B**: las
+  cooperativas de Campo de Montiel (San Gregorio/Almedina, San Bartolomé/Santa
+  Cruz de los Cáñamos, San José/Villamanrique, San Isidro Labrador/Villanueva de
+  la Fuente, Olivarera San Isidro/Torrenueva) muelen para el socio pero su aceite
+  lo comercializa la coop de 2º grado ya en CSV, sin marca ni venta propia. **3
+  diferidas** (Olivapalacios, Pago Piedrabuena, COLIVAL) por ser de Campo de
+  Calatrava, fuera de las dos DOP del lote → pasada provincial. Nuevo
+  `ciudad-real.jsonl`. Homónimos «San Gregorio»/«San Isidro» ya en CSV (otros
+  municipios) confirmados en el dedup, como avisaba el doc.
 - 2026-07-12 — **Lote 3.1a — Toledo, DOP Montes de Toledo aceite con web (12)**:
   11 altas (9 `verificado`, 6 con VO=sí ecommerce: Aceites Consuegra, Toletum/
   Nambroca, Tesoro de Guarrazar/Guadamur, Las Saleras/Los Navalucillos, Óleo

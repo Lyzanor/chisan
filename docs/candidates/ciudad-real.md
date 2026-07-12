@@ -19,10 +19,10 @@
 > De los 30 certificados, 5 son de Ciudad Real: 1 ya en CSV, 1 excluido por grupo,
 > 1 ya presente como bodega, y estos 2 netos.
 
-- [ ] **Aceites Moraga** (Judisan, S.L.) — Aceite. Fuente el Fresno.
+- [x] **Aceites Moraga** (Judisan, S.L.) ‹→ aceites-moraga-judisan-fuente-el-fresno (parcial; hosting suspendido, venta directa en almazara)› — Aceite. Fuente el Fresno.
   <https://aceitesmoraga.es> · 926 806 029. Empresa familiar desde 1974; **venta
   directa en la almazara** → pista `Venta online=sí` (confirmar tienda).
-- [ ] **Dehesa El Molinillo** (Nortia Agricultural, S.A.U.) — Aceite. Retuerta del
+- [x] **Dehesa El Molinillo** (Nortia Agricultural, S.A.U.) ‹→ dehesa-el-molinillo-retuerta-del-bullaque (verificado, VO sí; Nortia vende producto propio)› — Aceite. Retuerta del
   Bullaque (Finca El Molinillo). <https://www.dehesaelmolinillo.com>. Marcas «El
   Molinillo» y «Navalices»; olivar de cornicabra plantado hacia 1950. Premio
   Cornicabra 2026 y Gran Selección Campo y Alma 2026. ⚠ la titular **Nortia** es
@@ -46,18 +46,18 @@
 > venta en almazara o marca propia; si no la hay, son maquila/B2B → **descartar
 > por regla dura** y quedarse solo con la de 2º grado.
 
-- [ ] **Cooperativa San Gregorio** — Aceite. Almedina. ~200 socios, fundada 1949.
+- [x] **Cooperativa San Gregorio** ‹DESCARTADO: maquila/B2B, sin marca ni venta propia; su aceite lo comercializa la coop de 2º grado ya en CSV› — Aceite. Almedina. ~200 socios, fundada 1949.
   <https://cooperativasangregorio.blogspot.com>. ⚠ homónima de
   `cooperativa-san-gregorio-arenales-de-san-gregorio` (Arenales de San Gregorio,
   otro municipio, ya en CSV) → cuidar slug.
-- [ ] **Cooperativa San Bartolomé Apóstol** — Aceite. Santa Cruz de los Cáñamos.
+- [x] **Cooperativa San Bartolomé Apóstol** ‹DESCARTADO: maquila/B2B (coop de 2º grado)› — Aceite. Santa Cruz de los Cáñamos.
   Fundada 1967, 304 socios olivareros.
-- [ ] **Cooperativa San José** — Aceite. Villamanrique. Fundada 1945, 558 socios ·
+- [x] **Cooperativa San José** ‹DESCARTADO: maquila/B2B (coop de 2º grado)› — Aceite. Villamanrique. Fundada 1945, 558 socios ·
   926 354 062 / 602 652 528.
-- [ ] **Cooperativa San Isidro Labrador** — Aceite (en conversión a **ecológico**).
+- [x] **Cooperativa San Isidro Labrador** ‹DESCARTADO: maquila/B2B (coop de 2º grado)› — Aceite (en conversión a **ecológico**).
   Villanueva de la Fuente. Fundada 1952, 481 socios; olivar a ~900 m. ⚠ homónima
   de `cooperativa-san-isidro-pedro-munoz` (Pedro Muñoz, ya en CSV) → cuidar slug.
-- [ ] **Cooperativa Olivarera San Isidro** — Aceite (cornicabra). Torrenueva.
+- [x] **Cooperativa Olivarera San Isidro** ‹DESCARTADO: maquila/B2B (coop de 2º grado)› — Aceite (cornicabra). Torrenueva.
   Fundada 1953, ~400 socios. ⚠ tercer homónimo «San Isidro» en la provincia.
 
 ### Pista provincial — almazaras fuera de estas dos DOP (3)
@@ -67,9 +67,9 @@
 > Fuente: directorio sectorial `oleista.com/es/almazaras/ciudad-real` (el mismo
 > que ya citan varias filas del CSV). Triar en una pasada provincial, no en esta.
 
-- [ ] **Olivapalacios, S.L.** — Aceite. Bolaños de Calatrava.
-- [ ] **Pago Piedrabuena** — Aceite. Ballesteros de Calatrava.
-- [ ] **COLIVAL** (Soc. Coop. Olivarera de Valdepeñas) — Aceite. Valdepeñas.
+- [x] **Olivapalacios, S.L.** ‹DIFERIDO: Campo de Calatrava, fuera de las 2 DOP del lote; a pasada provincial› — Aceite. Bolaños de Calatrava.
+- [x] **Pago Piedrabuena** ‹DIFERIDO: Campo de Calatrava, a pasada provincial› — Aceite. Ballesteros de Calatrava.
+- [x] **COLIVAL** (Soc. Coop. Olivarera de Valdepeñas) ‹DIFERIDO: Campo de Calatrava + coop grande, confirmar marca; a pasada provincial› — Aceite. Valdepeñas.
   ⚠ cooperativa olivarera grande, confirmar marca de consumo.
 
 ### Notas del lote 19
