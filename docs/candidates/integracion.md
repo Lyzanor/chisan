@@ -127,7 +127,7 @@ resolver) → al final.
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
-| 2.6 | Zaragoza | **2.6a Aceite Bajo Aragón + Melocotón (8) hecho** (5 altas: 2 verif + 3 parcial; 1 rechazo Oliflix→Tarragona; 2 diferidos B2B). Falta: Cariñena (9) + Borja (5) + Calatayud (3) → 1-2 lotes (⚠ resolver Gran Ducay↔Grandes Vinos) | 25 | ~2 (1/3) | en curso |
+| 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) hechos** = 13 altas (6 verif + 7 parcial), 2 rechazos (Oliflix→Tarragona, Grandes Vinos=alias Gran Ducay), 2 diferidos B2B. Falta: Campo de Borja (5) + Calatayud (3) → 1 lote | 25 | ~1 (2/3) | en curso |
 | 2.7 | Valencia | Utiel-Requena embotelladoras (21) → 2 lotes; Arroz de Valencia (4, sin dirección) se reparte | 25 | ~2 | pendiente |
 
 ### Ronda 3 — prioridad 3 del traspaso
@@ -150,6 +150,19 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-11 — **Lote 2.6b — Zaragoza, DO Cariñena (9)**: 8 altas (4
+  `verificado` con web propia leída en vivo: Familia Navascués, Manuel Moneva,
+  Gran Viu/Viñedos y Bodegas Pablo —todas en Almonacid de la Sierra— y Luis Marín
+  /Cariñena; 4 `parcial`: IGnius/Sanz Soguero —web con SSL roto—, Heredad Ansón,
+  Romeo Yrisarri y Zazurca). **1 rechazo**: *Bodegas Grandes Vinos* es la empresa
+  que elabora la marca **Gran Ducay**, ya en el CSV como
+  `bodegas-gran-ducay-carinena` → alias. **Corrección de municipio**: *Heredad
+  Ansón* está en **Muel**, no Cariñena (su propia web /Localizacion/ y Turismo de
+  Zaragoza lo confirman). Todas VO=no comprobado (bodegas con web informativa, sin
+  carrito). Método: **npx quedó inservible** (caché de npm corrupta, «File
+  exists» en cacache) → los gates se corren con `bash scripts/check-csv-contract.sh`,
+  `node scripts/check-images.mjs`, `node scripts/check-evidence.mjs` directamente
+  (todos verdes: 50 CSV OK, imágenes OK, evidencia 0 issues).
 - 2026-07-11 — **Lote 2.6a — Zaragoza, Aceite del Bajo Aragón + Melocotón de
   Calanda (8)**: 5 altas (2 `verificado`: Granja Brunet/Fabara y La Chipranesca/
   Chiprana, ambas con web propia leída en vivo; 3 `parcial`: Fruma/Maella —web

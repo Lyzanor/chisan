@@ -78,21 +78,21 @@
 
 ### DO Cariñena (9)
 
-- [ ] **Bodega Francisco Sanz Soguero** (marca **Vignius**) — Bodega. Almonacid de
+- [x] **Bodega Francisco Sanz Soguero** (marca **Vignius**) ‹→ bodega-vignius-ignius-almonacid (parcial; marca real IGnius, web vignius.com con error SSL)› — Bodega. Almonacid de
   la Sierra (Barranco, 60). · 696 453 134 · <https://vignius.com>.
-- [ ] **Bodega Familia Navascués** — Bodega. Almonacid de la Sierra. ·
+- [x] **Bodega Familia Navascués** ‹→ bodega-familia-navascues-almonacid (verificado)› — Bodega. Almonacid de la Sierra. ·
   651 845 176 · <https://bodegafamilianavascues.com>.
-- [ ] **Bodega Manuel Moneva** — Bodega. Almonacid de la Sierra. · 976 627 020 ·
+- [x] **Bodega Manuel Moneva** ‹→ bodegas-manuel-moneva-almonacid (verificado)› — Bodega. Almonacid de la Sierra. · 976 627 020 ·
   <https://bodegasmanuelmoneva.com>.
-- [ ] **Bodegas y Viñedos Pablo** (marca **Gran Viu**) — Bodega. Almonacid de la
+- [x] **Bodegas y Viñedos Pablo** (marca **Gran Viu**) ‹→ vinedos-y-bodegas-pablo-gran-viu-almonacid (verificado)› — Bodega. Almonacid de la
   Sierra. · 976 627 037 · <https://granviu.com>.
-- [ ] **Bodega Roberto Zazurca** — Bodega. Almonacid de la Sierra. · 605 398 368.
+- [x] **Bodega Roberto Zazurca** ‹→ bodega-roberto-zazurca-almonacid (parcial; solo listado del consejo, sin web)› — Bodega. Almonacid de la Sierra. · 605 398 368.
   Sin web localizada.
-- [ ] **Bodegas Luis Marín** — Bodega. Cariñena. · 976 621 129 · <https://luismarin.eu>.
-- [ ] **Bodega Heredad Ansón** — Bodega. Cariñena. · 606 858 296 ·
+- [x] **Bodegas Luis Marín** ‹→ bodegas-luis-marin-carinena (verificado; mayor privada de la DO)› — Bodega. Cariñena. · 976 621 129 · <https://luismarin.eu>.
+- [x] **Bodega Heredad Ansón** ‹→ bodega-heredad-anson-muel (parcial; CORRECCIÓN municipio: está en MUEL, no Cariñena; web con fallo SSL)› — Bodega. Cariñena. · 606 858 296 ·
   <http://www.bodegasheredadanson.com>.
-- [ ] **Bodega Romeo Yrisarri** — Bodega. Cariñena. · 976 620 012. Web a confirmar.
-- [ ] **Bodegas Grandes Vinos** — Bodega. Cariñena. · 976 621 261 ·
+- [x] **Bodega Romeo Yrisarri** ‹→ bodega-romeo-yrisarri-carinena (parcial; C/ La Cruz 8, sin web)› — Bodega. Cariñena. · 976 620 012. Web a confirmar.
+- [x] **Bodegas Grandes Vinos** ‹RECHAZADO: es la empresa que elabora la marca Gran Ducay, ya en CSV como bodegas-gran-ducay-carinena → alias, no alta› — Bodega. Cariñena. · 976 621 261 ·
   <https://www.grandesvinos.com/>. ⚠ **posible alias**: el CSV ya tiene
   `bodegas-gran-ducay-carinena` (`granducay.com`), y *Gran Ducay* es una marca de
   Grandes Vinos y Viñedos → verificar antes de crear fila.
