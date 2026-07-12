@@ -128,7 +128,7 @@ resolver) → al final.
 | 2.4 | Huelva | **2.4a Jabugo (12) + 2.4b Condado (13) + 2.4c Jabugo corte2 (3) hechos** = 18 altas (15 verif —7 VO=sí— + 3 parcial), 3 rechazos/dups, 9 diferidos. Falta: solo coops Condado sin web (confirmar granel). ✅ Jabugo cerrado | 28 | ~0 | ✅ núcleo |
 | 2.5 | Navarra | **2.5a/b/c hechos** (Ribera 10 + Tierra Estella 9 + Baja Montaña 6) = **25 altas** (14 verif —11 VO=sí— + 11 parcial; 1 diferida Ontañón→Rioja). **Corte INTIA cerrado.** Quedan cortes siguientes del doc (grupos grandes, sin web, post-2023) + correcciones `mendiko-aibar-oibar`/`bodega-otazu-otazu` | 26 | ~0 (3/3) | ✅ núcleo |
 | 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
-| 2.7 | Valencia | **2.7a Utiel-Requena con web (14) hecho** (12 altas: 6 verif —3 VO=sí— + 6 parcial; 2 diferidas: BVC≈Coviñas, Sentencia). Falta: Utiel-Requena sin web (7) + Arroz de Valencia (4, sin dirección) → corte 2 | 25 | ~1 (1/2) | en curso |
+| 2.7 | Valencia | **2.7a Utiel-Requena (14) + 2.7b Arroz de Valencia (4) hechos** = 16 altas (8 verif —3 VO=sí— + 8 parcial; diferidas BVC≈Coviñas, Sentencia). Falta: Utiel-Requena sin web (7) → corte 3 | 25 | ~1 (2/3) | en curso |
 
 ### Ronda 3 — prioridad 3 del traspaso
 
@@ -150,6 +150,14 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.7b — Valencia, DOP Arroz de Valencia (4)**: 4 altas (2
+  `verificado` VO n/c: *Arrocerías Antonio Tomás*/Sollana —1962— y *Arroces J.
+  Montoro*/Rafelbuñol —1940—, ambas con web propia leída en vivo sin carrito; 2
+  `parcial`: *Arroces E. Lozano*/Alginet —1957, sin web— y *Arroces y Cereales/
+  ARCESA*/Oliva —industrial, secado en Sueca). El consejo no publica direcciones →
+  municipios resueltos por búsqueda (Antonio Tomás=Sollana, Montoro=Rafelbuñol,
+  Lozano=Alginet, ARCESA=Oliva). Categoría «Arroz». Excluidas ya anotadas: La
+  Fallera (Maicerías) y Herba (Ebro Foods), grandes grupos.
 - 2026-07-12 — **Lote 2.4c — Huelva, DOP Jabugo secaderos corte 2 (3)**: 3 altas
   (2 `verificado` VO n/c: *Pedro Parra e Hijos*/MONTJAM-ONOFRE/El Repilado-Jabugo
   —marca propia, entra pese a hacer maquila— y *Enrique Castaño Guijarro*/Cumbres

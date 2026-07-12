@@ -63,10 +63,10 @@
 > El consejo **no publica direcciones ni webs** → municipio y contacto a resolver
 > en verificación.
 
-- [ ] **Arroces y Cereales, S.A.** — Otros (arroz). Municipio a confirmar.
-- [ ] **Arrocerías Antonio Tomás, S.L.** — Otros (arroz). Municipio a confirmar.
-- [ ] **Arroces E. Lozano, S.L.** — Otros (arroz). Municipio a confirmar.
-- [ ] **Arroces J. Montoro, S.L.** — Otros (arroz). Municipio a confirmar.
+- [x] **Arroces y Cereales, S.A.** ‹→ arroces-y-cereales-arcesa-oliva (parcial; Oliva, industrial, sin tienda)› — Otros (arroz). Municipio a confirmar.
+- [x] **Arrocerías Antonio Tomás, S.L.** ‹→ arrocerias-antonio-tomas-sollana (verificado, VO n/c; Sollana, desde 1962)› — Otros (arroz). Municipio a confirmar.
+- [x] **Arroces E. Lozano, S.L.** ‹→ arroces-e-lozano-alginet (parcial; Alginet, sin web)› — Otros (arroz). Municipio a confirmar.
+- [x] **Arroces J. Montoro, S.L.** ‹→ arroces-j-montoro-rafelbunol (verificado, VO n/c; Rafelbuñol, desde 1940)› — Otros (arroz). Municipio a confirmar.
 
 ### Cortes siguientes y exclusiones
 
