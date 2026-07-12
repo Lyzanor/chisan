@@ -128,7 +128,7 @@ resolver) → al final.
 | 2.4 | Huelva | **2.4a Jabugo (12) + 2.4b Condado (13) hechos** = 15 altas (13 verif —7 VO=sí— + 2 parcial), 3 rechazos/dups (López Cuesta=Contreras Ruiz…), 9 diferidos. Falta: solo Jabugo corte 2 (Enrique Castaño punycode, Pedro Parra/Montjam, Benito) + coops Condado sin web. Núcleo cerrado | 28 | ~1 (2/3) | ✅ núcleo |
 | 2.5 | Navarra | **2.5a/b/c hechos** (Ribera 10 + Tierra Estella 9 + Baja Montaña 6) = **25 altas** (14 verif —11 VO=sí— + 11 parcial; 1 diferida Ontañón→Rioja). **Corte INTIA cerrado.** Quedan cortes siguientes del doc (grupos grandes, sin web, post-2023) + correcciones `mendiko-aibar-oibar`/`bodega-otazu-otazu` | 26 | ~0 (3/3) | ✅ núcleo |
 | 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
-| 2.7 | Valencia | Utiel-Requena embotelladoras (21) → 2 lotes; Arroz de Valencia (4, sin dirección) se reparte | 25 | ~2 | pendiente |
+| 2.7 | Valencia | **2.7a Utiel-Requena con web (14) hecho** (12 altas: 6 verif —3 VO=sí— + 6 parcial; 2 diferidas: BVC≈Coviñas, Sentencia). Falta: Utiel-Requena sin web (7) + Arroz de Valencia (4, sin dirección) → corte 2 | 25 | ~1 (1/2) | en curso |
 
 ### Ronda 3 — prioridad 3 del traspaso
 
@@ -150,6 +150,16 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.7a — Valencia, DO Utiel-Requena embotelladoras con web
+  (14)**: 12 altas (6 `verificado`, 3 con VO=sí ecommerce: Iranzo/Caudete —eco sin
+  sulfitos—, De Noemí/Fuenterrobles, Emilio Clemente/Requena; + Carré/Requena,
+  Casas de Moya/Utiel —checkout no operativo— y Latorre/Venta del Moro, VO n/c; 6
+  `parcial` con web caída/bloqueada —403/401/cert/DNS/parked—: Cárcel de Corpa,
+  Castaro, Ladrón de Lunas, Sebirán, Pedro Moreno 1940, Dagón, confirmadas por el
+  registro de embotelladoras certificadas). **2 diferidas**: *BVC Bodegas*
+  comparte teléfono con Coviñas (coop enorme) → confirmar independencia; *Sentencia*
+  no verificada aún. Correcciones de web: Noemí→denoemi.com, Latorre→
+  bodegaslatorre.com. El resto (7 sin web + 4 de arroz sin dirección) va al corte 2.
 - 2026-07-12 — **Lote 2.5c — Navarra, DO Navarra Baja Montaña (6)**: 6 altas (4
   `verificado`, 3 con VO=sí ecommerce: Unsi/Olite —garnacha de montaña de Gonzalo
   Celayeta—, Bodegas San Martín/San Martín de Unx —coop de 1914— y Ayerra/San

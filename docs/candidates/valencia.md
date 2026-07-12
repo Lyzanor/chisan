@@ -16,32 +16,32 @@
 
 ### DO Utiel-Requena — bodegas embotelladoras (21)
 
-- [ ] **Bodegas Iranzo** (Iranzo Fields, S.L.) — Bodega. Caudete de las Fuentes.
+- [x] **Bodegas Iranzo** (Iranzo Fields, S.L.) ‹→ bodegas-iranzo-caudete-de-las-fuentes (verificado, VO sí; eco sin sulfitos)› — Bodega. Caudete de las Fuentes.
   · 962 302 680 · <https://www.bodegasiranzo.com>.
-- [ ] **Noemí Wines** — Bodega. Fuenterrobles. · 672 149 357 ·
+- [x] **Noemí Wines** ‹→ de-noemi-noemi-wines-fuenterrobles (verificado, VO sí; web = denoemi.com)› — Bodega. Fuenterrobles. · 672 149 357 ·
   <https://www.noemiwines.com>.
-- [ ] **Bodegas Rebollar Ernesto Cárcel** (marca **Cárcel de Corpa**) — Bodega.
+- [x] **Bodegas Rebollar Ernesto Cárcel** (marca **Cárcel de Corpa**) ‹→ bodegas-rebollar-carcel-de-corpa-requena (parcial; web 403)› — Bodega.
   Requena (Rebollar). · 607 436 362 · <https://www.carceldecorpa.es>.
-- [ ] **Bodegas Emilio Clemente** (S.A.T. 7.237 Finca Caballero) — Bodega.
+- [x] **Bodegas Emilio Clemente** (S.A.T. 7.237 Finca Caballero) ‹→ bodegas-emilio-clemente-requena (verificado, VO sí)› — Bodega.
   Requena. · 962 323 391 · <https://www.eclemente.es>.
-- [ ] **Vinícola del Oeste** (marca **Castaro**) — Bodega. Requena.
+- [x] **Vinícola del Oeste** (marca **Castaro**) ‹→ vinicola-del-oeste-castaro-requena (parcial; dominio aparcado/en venta)› — Bodega. Requena.
   · 962 320 002 · <https://www.castaro.com>.
-- [ ] **Bodegas Ladrón de Lunas** — Bodega. Requena. · 660 958 980 ·
+- [x] **Bodegas Ladrón de Lunas** ‹→ bodegas-ladron-de-lunas-requena (parcial; cert caducado)› — Bodega. Requena. · 660 958 980 ·
   <https://www.ladrondelunas.com>.
-- [ ] **Bodega y Viñedos Carré** (José Luis Torres Carpio) — Bodega. Requena.
+- [x] **Bodega y Viñedos Carré** (José Luis Torres Carpio) ‹→ bodega-vinedos-carre-requena (verificado, VO n/c)› — Bodega. Requena.
   · 675 515 729 · <https://www.bodegacarres.com>.
-- [ ] **Sebirán** (VOB & T. International AB, sucursal España) — Bodega. Requena.
+- [x] **Sebirán** (VOB & T. International AB, sucursal España) ‹→ bodega-sebiran-requena (parcial; web 401)› — Bodega. Requena.
   · 962 303 321 · <https://www.sebiran.es>.
-- [ ] **BVC Bodegas** — Bodega. Requena. · 962 300 680 · <https://www.bvcbodegas.com>.
+- [x] **BVC Bodegas** ‹DIFERIDO: mismo teléfono que Coviñas (coop enorme); confirmar si es entidad independiente antes de integrar› — Bodega. Requena. · 962 300 680 · <https://www.bvcbodegas.com>.
   ⚠ mismo teléfono que Coviñas → confirmar si es entidad independiente.
-- [ ] **Bodegas y Viñedos Sentencia** (Juan Pedrón, C.B.) — Bodega. Requena.
+- [x] **Bodegas y Viñedos Sentencia** (Juan Pedrón, C.B.) ‹DIFERIDO a corte 2 (no verificada en este lote)› — Bodega. Requena.
   · 665 969 009 · <https://www.bodegassentencia.com>.
-- [ ] **Bodega Casas de Moya** — Bodega. Utiel. · 665 330 991 · <https://www.demoya.es>.
-- [ ] **Bodegas Pedro Moreno 1940** — Bodega. Venta del Moro. · 962 185 208 ·
+- [x] **Bodega Casas de Moya** ‹→ bodega-casas-de-moya-utiel (verificado, VO n/c; checkout no operativo)› — Bodega. Utiel. · 665 330 991 · <https://www.demoya.es>.
+- [x] **Bodegas Pedro Moreno 1940** ‹→ bodegas-pedro-moreno-1940-venta-del-moro (parcial; web DNS caída)› — Bodega. Venta del Moro. · 962 185 208 ·
   <https://www.bodegaspedromoreno1940.es>.
-- [ ] **Latorre Agrovinícola** — Bodega. Venta del Moro. · 962 185 028 ·
+- [x] **Latorre Agrovinícola** ‹→ latorre-agrovinicola-venta-del-moro (verificado, VO n/c; web = bodegaslatorre.com)› — Bodega. Venta del Moro. · 962 185 028 ·
   <https://www.latorreagrovinicola.com>.
-- [ ] **Bodegas Dagón** (Miguel Jesús Márquez Sahuquillo) — Bodega. Venta del
+- [x] **Bodegas Dagón** (Miguel Jesús Márquez Sahuquillo) ‹→ bodegas-dagon-venta-del-moro (parcial; web no accesible)› — Bodega. Venta del
   Moro. · 962 178 056 · <https://www.dagon.es>. Referencia de vino sin sulfitos.
 - [ ] **Bodegas Carlos Cárcel** — Bodega. Requena (Rebollar). · 962 303 608 /
   616 049 117. Marcas: Rebollar, Valle del Tejo, Bobal 1906. Sin web localizada.
