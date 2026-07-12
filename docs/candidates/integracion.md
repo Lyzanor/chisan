@@ -127,7 +127,7 @@ resolver) → al final.
 | 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
-| 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) hechos** = 13 altas (6 verif + 7 parcial), 2 rechazos (Oliflix→Tarragona, Grandes Vinos=alias Gran Ducay), 2 diferidos B2B. Falta: Campo de Borja (5) + Calatayud (3) → 1 lote | 25 | ~1 (2/3) | en curso |
+| 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
 | 2.7 | Valencia | Utiel-Requena embotelladoras (21) → 2 lotes; Arroz de Valencia (4, sin dirección) se reparte | 25 | ~2 | pendiente |
 
 ### Ronda 3 — prioridad 3 del traspaso
@@ -150,6 +150,17 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-11 — **Lote 2.6c — Zaragoza, DO Campo de Borja (5) + DO Calatayud
+  (3)**: 5 altas (4 `verificado`, de las cuales **2 con VO=sí ecommerce**:
+  *La Cerrada/Vinos Atrevidos* —vino natural, Calatayud— y *Esteban Castejón*
+  —Ibdes—, ambas con carrito propio leído en vivo; + Vinos del Viento/Cooper
+  Cellars/Pozuelo de Aragón y Agustín Cubero/Calatayud, sin carrito; 1 `parcial`:
+  *Bodega Picos*/Magallón, web con certificado compartido incorrecto). **3
+  diferidos** por ser coops sin web con duda granel/marca propia (Agrícola de
+  Borja, Santa Ana Crianzas y Viñedos, Ntra. Sra. Niño Perdido/Tabuenca) → 2ª
+  pasada. Corrección: *Agustín Cubero* está hoy en **Calatayud** (Pol. La
+  Charluca), aunque nació en Godojos en 1881. **Zaragoza cerrada** salvo esos 3
+  diferidos: 18 altas en 3 lotes (2.6a/b/c).
 - 2026-07-11 — **Lote 2.6b — Zaragoza, DO Cariñena (9)**: 8 altas (4
   `verificado` con web propia leída en vivo: Familia Navascués, Manuel Moneva,
   Gran Viu/Viñedos y Bodegas Pablo —todas en Almonacid de la Sierra— y Luis Marín

@@ -99,24 +99,24 @@
 
 ### DO Campo de Borja (5)
 
-- [ ] **Bodega Picos** (Bodega Picos, S.L.) — Bodega. Magallón. · 976 863 006 ·
+- [x] **Bodega Picos** (Bodega Picos, S.L.) ‹→ bodega-picos-magallon (parcial; web con cert compartido incorrecto; marca Gregoriano, confirmada por ayto. + consejo)› — Bodega. Magallón. · 976 863 006 ·
   <http://www.bodegapicos.com>.
-- [ ] **Cooper Cellars** (marca **Vinos del Viento**) — Bodega. Pozuelo de Aragón.
+- [x] **Cooper Cellars** (marca **Vinos del Viento**) ‹→ bodega-vinos-del-viento-pozuelo-de-aragon (verificado; enólogo Michael Cooper)› — Bodega. Pozuelo de Aragón.
   <http://vinosdelviento.com/>.
-- [ ] **Soc. Coop. Agrícola de Borja** — Bodega. Borja. · 976 866 065. Sin web.
+- [x] **Soc. Coop. Agrícola de Borja** ‹DIFERIDO: coop sin web; confirmar marca de consumo propia vs granel/Borsao en 2ª pasada› — Bodega. Borja. · 976 866 065. Sin web.
   ⚠ cooperativa; confirmar marca de consumo propia.
-- [ ] **Santa Ana Crianzas y Viñedos, S. Coop.** — Bodega. Pozuelo de Aragón.
+- [x] **Santa Ana Crianzas y Viñedos, S. Coop.** ‹DIFERIDO: coop sin web; confirmar marca propia en 2ª pasada› — Bodega. Pozuelo de Aragón.
   · 976 862 931. Sin web. ⚠ confirmar marca.
-- [ ] **Coop. Ntra. Sra. Niño Perdido** — Bodega. Tabuenca. · 976 865 874. Sin web.
+- [x] **Coop. Ntra. Sra. Niño Perdido** ‹DIFERIDO: coop sin web; confirmar marca vs granel en 2ª pasada› — Bodega. Tabuenca. · 976 865 874. Sin web.
   ⚠ confirmar marca vs granel.
 
 ### DO Calatayud (3)
 
-- [ ] **Bodegas Agustín Cubero** — Bodega. Calatayud. · 976 882 332 ·
+- [x] **Bodegas Agustín Cubero** ‹→ bodegas-agustin-cubero-calatayud (verificado; 1881, en Calatayud desde 1997)› — Bodega. Calatayud. · 976 882 332 ·
   <https://www.bodegascubero.com>.
-- [ ] **Bodegas La Cerrada** (marca **Vinos Atrevidos**) — Bodega. Calatayud.
+- [x] **Bodegas La Cerrada** (marca **Vinos Atrevidos**) ‹→ bodega-la-cerrada-vinos-atrevidos-calatayud (verificado, VO sí ecommerce; vino natural)› — Bodega. Calatayud.
   · 630 822 247 · <https://www.vinosatrevidos.com>.
-- [ ] **Bodegas Esteban Castejón** — Bodega. Ibdes. · 976 848 031 ·
+- [x] **Bodegas Esteban Castejón** ‹→ bodegas-esteban-castejon-ibdes (verificado, VO sí ecommerce; marcas Sargas de Idues/Tranquera)› — Bodega. Ibdes. · 976 848 031 ·
   <https://www.bodegasesteban.es>.
 
 ### Notas del lote 24
