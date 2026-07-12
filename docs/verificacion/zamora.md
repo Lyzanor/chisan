@@ -1,0 +1,354 @@
+# Verificación provincial de Zamora
+
+Ledger para planificar y reanudar la primera revisión profunda de
+`data/csv/castilla-y-leon/zamora.csv`. El CSV es la fuente de verdad. La
+evidencia estructurada se crea en
+`data/evidence/castilla-y-leon/zamora.jsonl` al cerrar el lote 1.
+
+El procedimiento general sigue `docs/VERIFICATION_TECHNIQUES.md`; los contratos
+viven en `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
+`docs/EDITORIAL_POLICY.md`. Este documento contiene el contexto provincial y una
+worklist congelada para que un modelo económico con razonamiento bajo pueda
+trabajar un solo lote sin cargar toda la provincia.
+
+## Estado inicial
+
+- Inicio: **2026-07-10**.
+- Snapshot: **171 filas**; **0 `verificado`**, **2 `parcial`** y **169
+  `pendiente`**.
+- Venta online: **0 `sí`**, 0 `no` y **171 `no comprobado`**; `Canal de venta`
+  vacío en las 171 filas. No hay anomalías heredadas de `sí`, pero cada tienda
+  propia vigente que aparezca durante la revisión debe quedar como `sí` y con
+  canal.
+- Categorías: **Bodega 96**, Lácteos y quesos 22, Charcutería 13, Trufa y setas
+  12, Legumbres 7, Harinas y cereales 5, Fruta y verdura 3, Aceite 2, Miel 2,
+  Chocolate 2, Licores 2, Frutos secos 2, Cerveza artesana 1, Huevos 1 y Pescado
+  1. Vino concentra el 56 % del catálogo y se divide por denominación y
+  territorio.
+- Territorio: Toro 38 filas, Zamora 28, Fermoselle 14, Fuentesaúco 10, Morales
+  de Toro 8 y una cola larga provincial. Normalizar variantes como `Morales Del
+  Vino`/`Morales del Vino`, `Santibañez`/`Santibáñez` y el municipio mal formado
+  `, Benavente` solo cuando la fuente confirme el valor correcto.
+- Enlaces: web 171/171, Google Maps 171/171, Instagram 75/171, Facebook 74/171,
+  teléfono 121/171 y correo 97/171. **60 webs apuntan a
+  `alimentosdezamora.info`**: es un directorio institucional, no la web propia de
+  cada productor.
+- Coordenadas: 168/171. Faltan en `baltasar-moralejo-e-hijos-s-r-l-coreses`,
+  `industrias-lacteas-benaventanas-s-a-ilbesa-benavente` y
+  `lacteas-zamoro-s-l-santibanez-de-vidriales`.
+- Warnings iniciales: `horticola-majia-zamora` cae a 15,4 km del centroide de
+  Zamora y a 0,4 km de Fresno de la Ribera;
+  `quesos-campostera-zamora` cae a 49,6 km de Zamora y a 0,9 km de Villalpando.
+  Ambos se resuelven o justifican en su lote.
+- Calidad inicial: contrato **OK, 0 errores y 0 warnings**; calidad **0 errores y
+  2 warnings**. Hay 136 avisos opcionales suprimidos.
+- Evidencia inicial: no existe el JSONL provincial y Zamora no figura en
+  `data/evidence/coverage.json`.
+- Imágenes: 86/171. Se conservan las válidas, se mueven al corregir un `slug` y
+  se eliminan si se purga su fila. No se hace enriquecimiento masivo en esta
+  pasada; primero se estabilizan identidad y slugs.
+- No existe `docs/candidates/zamora.md`. No se añaden candidatos durante esta
+  primera pasada salvo petición explícita: el objetivo es cerrar las 171 filas
+  heredadas.
+
+## Reglas duras para Zamora
+
+1. **Reauditar las 171 filas.** Las 2 filas `parcial` (`morcillas-ramiro-zamora`
+   y `queso-beato-de-tabara-olmillos-de-castro`) no se dan por buenas: deben
+   quedar con evidencia actual igual que las 169 pendientes.
+2. **Un directorio no basta para `verificado`.** `Alimentos de Zamora`, un
+   consejo regulador o una marca de garantía apoyan identidad, pertenencia o
+   localización y normalmente topan en `parcial`. Para `verificado` hace falta
+   además una fuente de tipo verificable que sostenga identidad, actividad
+   productora actual y municipio: web/tienda/red oficial, Maps fiable o
+   marketplace atribuible al productor.
+3. **La inscripción vinícola no demuestra actividad actual ni venta.** Usa los
+   consejos de Toro, Arribes, Tierra del Vino y Valles de Benavente como ancla de
+   contraste. Si solo queda la ficha del consejo, conserva `parcial`. Una web
+   caída no prueba cierre.
+4. **Distinguir bodega productora de marca, consultor, hotel o comercio.** Revisar
+   especialmente `bernardo-farina-enologia-creativa-moraleja-del-vino`,
+   `marcelino-ibericos-corrales-del-vino` y
+   `tierra-dulce-moraleja-del-vino`; sus nombres/webs sugieren consultoría,
+   charcutería y chocolate, respectivamente. Recategoriza si existe productor
+   real; purga solo con evidencia firme de fuera de alcance.
+5. **Toro ocupa cuatro lotes.** El consejo confirma pertenencia, pero la fuente
+   propia debe confirmar la unidad productiva zamorana. Marcas de grupos con
+   varias bodegas no se geolocalizan en la sede corporativa. Venta por terceros
+   no convierte `Venta online` en `sí`.
+6. **Arribes cruza Zamora y Salamanca.** Verifica que la bodega del CSV tenga
+   unidad productiva en Fermoselle/Zamora; no basta con aparecer en el consejo
+   común. Fusiona nombres históricos solo si la identidad es inequívoca.
+7. **Lácteos es un lote de alto riesgo.** La DOP Queso Zamorano publica una lista
+   actual mucho más corta que las 22 filas del CSV. Las cinco URLs de `gff.co.uk`
+   son fichas de directorio de tercero y no justifican actividad actual. Busca
+   duplicados de marca/razón social y no confundas ganadería o central lechera
+   con quesería elaboradora.
+8. **Charcutería, harina, garbanzo y setas:** los listados de marca/IGP prueban
+   adhesión o certificación, no necesariamente venta directa. Entran obradores,
+   industrias elaboradoras, molinos/envasadores productores y operadores
+   micológicos reales; salen sellos, asociaciones, distribuidores puros y
+   comercios sin elaboración.
+9. **Venta online solo con pedido remoto vigente.** Tienda propia funcional
+   implica `sí` + `ecommerce`; pedido explícito por correo/teléfono/WhatsApp usa
+   el canal correspondiente. Catálogo sin checkout, formulario genérico,
+   enoturismo o marketplace de tercero se mantiene `no comprobado`.
+10. **Resolver geografía con fuentes, no con intuición.** Completa las tres filas
+    sin coordenadas cuando exista una localización fiable. Resuelve los warnings
+    de Hortícola Majia y Quesos Campostera; si la fuente institucional mantiene
+    el municipio pero la fábrica está en otro término, documenta la excepción.
+11. **Slugs estables salvo identidad incorrecta.** Si se corrige un slug
+    existente en Git, actualiza CSV, imagen, documentación y añade `merge` del
+    viejo al nuevo. Una recategorización por sí sola no cambia el slug.
+12. **No ampliar alcance durante la pasada.** Sin candidatos nuevos ni
+    enriquecimiento masivo de imágenes. Al cerrar, 0 `pendiente`; cada
+    `parcial` y cada `no comprobado` residual debe tener motivo conocido en la
+    evidencia.
+
+## Fuentes provinciales de cotejo
+
+Estas fuentes reducen búsqueda repetida, pero no sustituyen la fuente propia
+necesaria para `verificado` ni la comprobación dinámica de venta:
+
+| Sector | Fuente común | Uso y límite |
+|---|---|---|
+| D.O. Toro | `https://www.dotoro.com/bodegas/` | Bodegas inscritas y municipio; consejo regulador, por sí solo `parcial`. |
+| D.O. Arribes | `https://doarribes.es/bodegas/` | Bodegas adheridas de Zamora y Salamanca; comprobar unidad zamorana. |
+| D.O. Tierra del Vino | `https://www.tierradelvino.net/?page_id=51` | Directorio actual con direcciones/contactos; varias filas heredadas no aparecen y requieren triaje. |
+| D.O.P. Valles de Benavente | `https://vallesdebenavente.org/` | Lista actual de Andrea Gutiérrez, Otero, Viriatus y Verdes; útil para detectar nombres obsoletos. |
+| D.O.P. Queso Zamorano | `https://quesozamorano.com/empresas/` | Queserías inscritas actuales; supporting, no prueba venta. |
+| M.G. Chorizo Zamorano | `https://chorizozamorano.com/empresas_elaboradoras` | Industrias elaboradoras adheridas; contrasta cada web propia. |
+| M.G. Harina Tradicional Zamorana | `https://www.harinatradicionalzamorana.com/nosotros/` | Asociación y fabricantes de harina; confirmar molino/empresa actual. |
+| M.G. Setas de Castilla y León | `https://www.setasdecastillayleon.com/` | Alcance y operadores certificados; no asumir que toda razón social histórica sigue activa. |
+| I.G.P. Garbanzo de Fuentesaúco | `https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/legumbres/IGP_gfuentesauco.aspx` | Existencia de la IGP y órgano de gestión; buscar elaborador/envasador concreto. |
+| Diputación | `https://alimentosdezamora.info/Presentacion_ES.html` | Descubrimiento institucional de sellos/productos; una ficha genérica no verifica actividad actual. |
+
+## Plan y worklist congelada
+
+Los lotes 1-15 cubren exactamente los **171 slugs iniciales sin solaparse**. No
+recalcular la membresía si una fila se purga, fusiona o recategoriza: los slugs
+están congelados debajo. El lote 16 es el cierre transversal.
+
+| # | Lote | Filas | Estado | Foco |
+|---|---|---:|---|---|
+| 1 | D.O. Toro · Toro A | 13 | Hecho | Primer bloque de bodegas en Toro; JSONL creado y CSV actualizado. |
+| 2 | D.O. Toro · Toro B | 13 | Hecho | Segundo bloque de bodegas en Toro; JSONL ampliado y CSV actualizado. |
+| 3 | D.O. Toro · Toro C | 10 | Hecho | Resto de bodegas en Toro; JSONL ampliado y CSV actualizado. |
+| 4 | D.O. Toro · Morales de Toro y El Pego | 10 | Hecho | Ocho Morales + dos El Pego; JSONL ampliado y CSV actualizado. |
+| 5 | D.O. Toro · resto territorial | 9 | Hecho | 9 revisadas: 6 verificado, 3 parcial; 2 ventas online resueltas; 0 purgas/fusiones/recategorizaciones. |
+| 6 | D.O. Arribes · Fermoselle | 13 | Hecho | 9 conservadas: 2 verificado, 7 parcial; 0 ventas online resueltas; 4 purgas `other-province`; 0 cierres, fusiones o recategorizaciones. Ribera de Pelazas y Terrazgo quedan parciales por falta de cierre actual suficientemente fiable. |
+| 7 | D.O. Tierra del Vino | 11 | Hecho | 11 revisadas: 4 verificado, 7 parcial; 1 venta online resuelta; 0 purgas, cierres, fusiones o recategorizaciones. La lista oficial actual incluye los 11 nombres. |
+| 8 | Valles de Benavente + Aliste | 10 | Hecho | 10 revisadas: 6 verificado, 4 parcial; 4 ventas online resueltas; 0 purgas, cierres, fusiones o recategorizaciones. La lista oficial actual se usó como apoyo y no hubo purgas por omisión. |
+| 9 | Vino residual + cerveza/licores | 10 | Hecho | 10 revisadas: 8 verificado, 2 parcial; 2 ventas online resueltas; 2 recategorizaciones (Marcelino Ibéricos → Charcutería, Tierra Dulce → Chocolate); 0 purgas/cierres/fusiones. |
+| 10 | Charcutería | 13 | Hecho | 13 revisadas: 7 verificado, 6 parcial; 4 ventas online resueltas; 1 recategorización (Prado Concejo → Miel); 0 purgas, cierres o fusiones. Morcillas Ramiro reauditada desde parcial. |
+| 11 | Lácteos y quesos A | 11 | Hecho | 11 revisadas: 10 conservadas (6 verificado, 4 parcial) y 1 merge a quesos-revilla-coreses; 2 ventas online resueltas en las filas conservadas; 0 purgas o cierres. Gestión Agro Ganadera/La Antigua queda separada por falta de identidad inequívoca; Vicente Pastor queda documentada para contraste con su contraparte del lote 12. |
+| 12 | Lácteos y quesos B | 11 | Hecho | 9 filas conservadas: 7 verificado y 2 parcial; 3 ventas online resueltas; 1 merge de queserias-vicente-pastor-zamora a queseria-vicente-pastor-morales-del-vino y 1 corrección de slug de Queso del Duero a Toro con registro merge. Quesos Revilla quedó completada como target vigente, se añadieron las 3 coordenadas ausentes y Beato fue reauditado. Quesos Campostera se purgó por cierre documentado de la fábrica. |
+| 13 | Trufa y setas | 12 | Hecho | 6 verificado y 6 parcial; 3 ventas online resueltas (Anda, Gabemar y Hongos de Zamora); 3 recategorizaciones a `Conservas vegetales` (Anda, Gabemar y Faúndez); 0 purgas/fusiones. Se corrigieron municipios y coordenadas de Anda, Gabemar, Faúndez, Frutas Silvestres y Setas, Nando Silvestre y Prodeza cuando hubo fuente suficiente. Eurohongo, Micozamora, Natur Silver y Productos Silvestres Sierra de la Culebra quedan parciales por evidencia propia actual insuficiente, sin inferir cierre. |
+| 14 | Harinas y legumbres | 12 | Hecho | 7 filas conservadas: 3 verificado y 4 parcial; 4 purgas `other-province` (Álvarez Legumbres, Hijo de Macario Marcos, Legumbres Montes y Legumer Precocinados) con registro ITACyL 2026 que identifica la misma razón social y centro vigente fuera de Zamora; 1 merge del molino de piedra genérico con Carbajo Hermanos en Cerecinos de Campos; 0 ventas online resueltas. Se corrigió la unidad/municipio de Carbajo y se conservaron como parciales Coperblanc, Molinos Zamoranos, Agroalimentaria de la Guareña y J. Pedraz por falta de fuente propia actual suficiente. |
+| 15 | Resto alimentario | 13 | Hecho | 9 verificado, 4 parcial; 3 ventas online resueltas; 2 cambios de slug (Pentanux → Toro y Singular → Carbellino); 1 recategorización (Hortícola Majia → Fruta y verdura); 0 purgas. |
+| 16 | Cierre transversal | Todas | Pendiente | 0 pendientes, evidencia, venta, geo, dedup, imágenes y `verify:data`. |
+
+### Membresía exacta por lote
+
+**Lote 1 (13):** `bodega-a-velasco-e-hijos-s-l-toro`,
+`bodega-bernard-magrez-toro`, `bodega-bucrana-toro`,
+`bodega-campo-de-toro-s-l-toro`, `bodega-caserio-de-duenas-toro`,
+`bodega-cyan-toro`, `bodega-divina-proporcion-toro`,
+`bodega-la-vina-del-abuelo-toro`, `bodega-latarce-toro`,
+`bodega-liberalia-enologica-s-l-toro`, `bodega-sobreno-s-a-toro`,
+`bodega-vatan-toro`, `bodega-vetus-toro`.
+
+**Lote 2 (13):** `bodegas-bigardo-toro`, `bodegas-campo-eliseo-toro`,
+`bodegas-carodorum-toro`, `bodegas-covitoro-toro`,
+`bodegas-diez-gomez-toro`, `bodegas-dominio-del-bienamado-toro`,
+`bodegas-frontaura-s-l-u-toro`, `bodegas-monte-la-reina-toro`,
+`bodegas-piedra-toro`, `bodegas-rodriguez-y-sanzo-toro`,
+`bodegas-torreduero-s-a-toro`, `bodegas-valbusenda-toro`,
+`bodegas-vinaguarena-s-l-toro`.
+
+**Lote 3 (10):** `bodegas-y-vinedos-la-guardesa-de-toro-toro`,
+`bodegas-y-vinedos-maires-toro`, `dominio-del-bendito-s-l-toro`,
+`farina-s-l-toro`, `frutos-villar-bodegas-toro`, `gil-luna-s-l-toro`,
+`luis-medina-toro`, `palacio-de-villachica-toro`,
+`quinta-de-la-quietud-toro`, `valdigal-toro`.
+
+**Lote 4 (10):** `bodega-dalmacio-gallego-gutierrez-morales-de-toro`,
+`bodega-vocarraje-morales-de-toro`,
+`bodegas-alonso-conde-s-l-morales-de-toro`, `bodegas-coral-duero-el-pego`,
+`bodegas-mazas-morales-de-toro`, `bodegas-vega-sauco-morales-de-toro`,
+`cuatro-mil-cepas-s-l-el-pego`, `francisco-casas-s-a-morales-de-toro`,
+`moises-gran-vino-morales-de-toro`, `pagos-del-rey-s-l-morales-de-toro`.
+
+**Lote 5 (9):** `bodega-la-presa-sanzoles`,
+`bodega-numanthia-valdefinjas`, `bodega-quadravia-venialbo`,
+`bodega-ramon-ramos-ii-venialbo`, `bodega-valmartin-s-l-argujillo`,
+`campina-s-coop-cyl-valdefinjas`,
+`galindo-san-millan-bodega-y-vinedos-el-pinero`,
+`teso-la-monja-s-l-valdefinjas`, `vina-zangarron-s-l-sanzoles`.
+
+**Lote 6 (13):** `bodega-almaroja-fermoselle`,
+`bodega-arribes-del-duero-soc-coop-fermoselle`,
+`bodega-cooperativa-virgen-de-la-bandera-fermoselle`,
+`bodega-la-casita-del-vinador-fermoselle`, `bodega-la-setera-fermoselle`,
+`bodega-ocellvm-dvrii-fermoselle`, `bodegas-las-fontanicas-fermoselle`,
+`bodegas-las-gavias-fermoselle`, `bodegas-ribera-de-pelazas-fermoselle`,
+`bodegas-vina-romana-fermoselle`, `hacienda-zorita-fermoselle`,
+`quinta-las-velas-fermoselle`, `terrazgo-bodegas-de-crianza-fermoselle`.
+
+**Lote 7 (11):** `alizan-bodegas-y-vinedos-moraleja-del-vino`,
+`bodega-guillermo-freire-moraleja-del-vino`,
+`bodega-vina-escuderos-villamor-de-los-escuderos`,
+`bodega-vinas-del-cenit-villanueva-de-campean`,
+`bodega-vinas-zamoranas-coreses`,
+`bodegas-casaseca-villamor-de-los-escuderos`,
+`bodegas-el-soto-villanueva-de-campean`, `bodegas-seleccionadas-armando-roales`,
+`bodegas-teso-blanco-cabanas-de-sayago`,
+`bodegas-teso-la-encina-villamor-de-los-escuderos`,
+`microbodega-rodriguez-moran-villamor-de-los-escuderos`.
+
+**Lote 8 (10):** `bodega-aliste-figueruela-de-abajo`,
+`bodega-andrea-gutierrez-ferreras-fuente-encalada`,
+`bodega-castillo-de-vidriales-quiruelas-de-vidriales`,
+`bodega-cooperativa-el-tesoro-brime-de-urz`,
+`bodega-francisco-gonzalez-benavente`, `bodega-mitus-villalpando`,
+`bodegas-otero-s-a-benavente`,
+`bodegas-verdes-s-l-santibanez-de-vidriales`,
+`cepas-de-la-culebra-riofrio-de-aliste`, `la-mela-sejas-de-aliste`.
+
+**Lote 9 (10):** `bernardo-farina-enologia-creativa-moraleja-del-vino`,
+`bodega-siesto-sanzoles`, `bodegas-ramayal-ferreruela-de-tabara`,
+`castro-mendi-san-blas`, `cervato-villardeciervos`,
+`marcelino-ibericos-corrales-del-vino`, `tierra-dulce-moraleja-del-vino`,
+`villaveza-toro`, `bendita-locura-morales-del-vino`, `vermutto-toro`.
+
+**Lote 10 (13):** `carnicas-diaz-de-zamora-s-l-morales-del-vino`,
+`carnicas-jose-montero-el-puente-de-sanabria-galende`,
+`carnicas-la-culebra-santa-eulalia-de-rionegro`,
+`embutidos-mayoral-la-boveda-de-toro`,
+`embutidos-turista-s-l-embutidos-duero-roales-del-pan`,
+`embutidos-y-jamones-lema-s-l-santibanez-de-vidriales`,
+`hijos-de-dionisio-sanchez-s-l-fuentesauco`,
+`industrias-carnicas-ele-s-l-roales-del-pan`, `juan-jose-ledesma-s-a-zamora`,
+`melquiades-rodriguez-s-a-coreses`, `paulino-iglesias-encalado-coreses`,
+`prado-concejo-fonfria`, `morcillas-ramiro-zamora`.
+
+**Lote 11 (11):** `alonso-santos-de-pedro-fariza`,
+`consorcio-promocion-de-ovino-soc-coop-villalpando`,
+`gestion-agro-ganadera-s-l-zamora`, `hijas-de-justo-torrero-zamora`,
+`hijos-de-salvador-rodriguez-sta-cristina-de-la-polvorosa`, `hircus-zamora`,
+`lacteas-castellano-leonesas-fresno-de-la-ribera`, `lacteas-revilla-zamora`,
+`lacteos-dehesa-de-la-guadana-granja-de-moreruela`,
+`queseria-la-antigua-de-fuentesauco-fuentesauco`,
+`queseria-vicente-pastor-morales-del-vino`.
+
+**Lote 12 (11):** `queserias-de-zamora-morales-del-vino`,
+`queserias-vicente-pastor-zamora`, `queso-del-duero-s-a-zamora`,
+`quesos-campostera-zamora`, `quesos-revilla-coreses`,
+`baltasar-moralejo-e-hijos-s-r-l-coreses`,
+`industrias-lacteas-benaventanas-s-a-ilbesa-benavente`,
+`lacteas-cobreros-s-a-zamora`,
+`lacteas-zamoro-s-l-santibanez-de-vidriales`,
+`quesos-pablo-alonso-martin-villalpando`,
+`queso-beato-de-tabara-olmillos-de-castro`.
+
+**Lote 13 (12):** `conservas-anda-s-l-zamora`,
+`conservas-gabemar-s-l-zamora`, `conservas-vegetales-faundez-s-l-zamora`,
+`ecoespora-el-pinero`, `eurohongo-s-l-zamora`,
+`frutas-silvestres-y-setas-s-l-zamora`, `hongos-de-zamora-s-l-zamora`,
+`micozamora-gourmet-s-l-l-zamora`, `nando-silvestre-s-l-zamora`,
+`natur-silver-zamora`, `prodeza-s-l-zamora`,
+`productos-silvestres-sierra-de-la-culebra-s-l-zamora`.
+
+**Lote 14 (12):** `carbajo-hermanos-s-a-zamora`,
+`coperblanc-zamorana-s-a-zamora`, `gabino-bobo-s-a-zamora`,
+`molino-de-piedra-en-cerecinos-de-campos-cerecinos-de-campos`,
+`molinos-zamoranos-s-a-zamora`,
+`agroalimentaria-de-la-guarena-s-l-fuentesauco`,
+`alvarez-legumbres-s-l-fuentesauco`,
+`cooperativa-los-zamoranos-fuentesauco`,
+`hijo-de-macario-marcos-s-l-fuentesauco`, `j-pedraz-s-c-fuentesauco`,
+`legumbres-montes-s-l-fuentesauco`, `legumer-precocinados-s-l-fuentesauco`.
+
+**Lote 15 (13):** `el-regalo-de-atenea-formariz`,
+`la-colmenita-de-aliste-vinas`, `horticola-majia-zamora`,
+`douroliva-fermoselle`, `ajo-bovedano-la-boveda-de-toro`,
+`come-frutos-del-bosque-robleda`, `esparragos-corrales-fuentesauco`,
+`almendras-pentanux-zamora`, `frutos-secos-dibel-guarrate`,
+`los-huevos-de-la-abuela-villalpando`, `chocolate-refart-zamora`,
+`miel-fuente-la-muela-san-juan-del-rebollar`,
+`singular-by-grenoucerie-zamora`.
+
+## Flujo mecánico por lote
+
+1. Leer solo `AGENTS.md`, las reglas duras de este ledger, el lote en curso y
+   las secciones necesarias de los contratos. No cargar CSV/JSONL completos en
+   la conversación.
+2. Ejecutar `git status --short`. Si ya hay cambios ajenos en Zamora, detener el
+   lote; no mezclar dos agentes sobre la misma provincia.
+3. Localizar únicamente los slugs del lote con `rg`. Investigar primero la fuente
+   común del sector y luego una fuente propia por fila. Ampliar solo ante
+   contradicción, purga/fusión o venta dinámica.
+4. Para cada slug tomar exactamente una decisión: `verificado`, `parcial`,
+   purga o fusión. Actualizar datos factuales que la fuente sostenga; no rellenar
+   opcionales por intuición.
+5. Resolver `Venta online` solo si se comprueba pedido remoto actual. Dejar
+   `no comprobado` cuando no se vea una vía válida; no convertir ausencia de
+   tienda en `no`.
+6. Editar el CSV con parser CSV, preservando las 20 columnas y LF. Añadir una
+   línea JSONL por decisión con `reviewedBy: "codex-zamora-2026-07"` y fecha real
+   de revisión. Para `verificado`, los sources deben cubrir `identity`,
+   `producer-activity` y `municipality` y contener al menos un tipo verificable.
+7. Actualizar la fila de la worklist: estado, fecha, recuentos finales,
+   ventas resueltas, purgas/fusiones/recategorizaciones y excepciones.
+8. Validar antes de abandonar el lote:
+
+   ```bash
+   npx pnpm check:csv:changed
+   npx pnpm check:evidence
+   npx pnpm check:evidence:changed
+   git diff --check
+   git diff --stat
+   ```
+
+9. No hacer commit ni iniciar el lote siguiente si falla una puerta. Mantener un
+   solo lote en curso para que una interrupción tenga un punto de reanudación
+   inequívoco.
+
+## Cierre transversal: lote 16
+
+La pasada se considera cerrada cuando:
+
+- quedan **0 `pendiente`** y cada `parcial` tiene motivo y evidencia coherentes;
+- cada fila activa tiene el último `keep` y cada purga/fusión conserva su
+  tombstone; el ledger cubre el CSV actual;
+- todos los `Venta online=sí` tienen canal y la dependencia del canal existe
+  (`ecommerce`/web, `email`/correo, `telefono|whatsapp`/teléfono);
+- las tres faltas de coordenadas y los dos warnings iniciales están resueltos o
+  documentados, sin saltos bloqueantes;
+- no hay duplicados normalizados de nombre+municipio, webs ajenas/repetidas ni
+  slugs/imágenes desalineados;
+- `data/evidence/coverage.json` incluye `castilla-y-leon/zamora` solo después de
+  confirmar cobertura de todas las filas activas;
+- `npx pnpm verify:data` y `git diff --check` terminan correctamente;
+- el resumen final de este ledger registra filas, estados, ventas/canales,
+  evidencia, purgas/fusiones, warnings aceptados e imágenes pospuestas.
+
+## Resumen final de lote 16
+
+- **Filas activas:** 159; `verificado` 104, `parcial` 55, `pendiente` 0.
+- **Venta online:** 49 `sí`, todas con canal de venta; 110 sin venta online
+  resuelta y sin canal dependiente.
+- **Evidencia:** 174 registros únicos: 159 `keep` activos y 15 tombstones,
+  desglosados en 9 `purge` y 6 `merge`. La cobertura active↔latest keep es
+  exacta y `castilla-y-leon/zamora` queda incorporada a `coverage.json`.
+- **Identidad y enlaces:** sin duplicados normalizados de nombre+municipio ni
+  slugs; las URLs repetidas son fichas/directorios institucionales compartidos
+  y no duplican productores.
+- **Geografía:** las 3 coordenadas inicialmente ausentes están completas; el
+  warning inicial de Campostera desaparece con su purga y el de Hortícola Majia
+  queda corregido con coordenadas del término de Zamora, sin errores bloqueantes.
+- **Imágenes:** rutas y archivos referenciados correctos; se posponen imágenes
+  no referenciadas de filas purgadas o fusionadas, sin huérfanos bloqueantes.
+- **Gates:** `check:csv:data-quality` de Zamora, `check:images`,
+  `check:evidence`, `check:csv:changed`, `check:evidence:changed`,
+  `verify:data` y `git diff --check` pasan.
