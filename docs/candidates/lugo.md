@@ -64,30 +64,30 @@ Teijeiro (Sarria).
 > es la del registro; el municipio es el de producción (dirección del registro),
 > no la sede del consejo.
 
-- [ ] **Adega Saiñas** (Adega Saiñas C.B.) — Bodega (Ribeiras do Miño). Pantón.
+- [x] **Adega Saiñas** (Adega Saiñas C.B.) ‹→ adega-sainas-panton (parcial; web caída, registro consejo)› — Bodega (Ribeiras do Miño). Pantón.
   Tel 982 456 228 · web www.saiñas.com. Marca: Saiñas / Javier Fernández.
-- [ ] **Alouviño** — Bodega (Amandi). Sober. Tel 667 396 548 ·
+- [x] **Alouviño** ‹→ adega-alouvino-sober (verificado, VO sí ecommerce)› — Bodega (Amandi). Sober. Tel 667 396 548 ·
   <http://www.alouvino.com>. Marcas: 22º, Albarda, Serán, Ukiyo.
-- [ ] **Adegas Amedo** — Bodega (Chantada). Chantada. Tel 982 184 488 ·
+- [x] **Adegas Amedo** ‹→ adegas-amedo-chantada (verificado, VO sí ecommerce)› — Bodega (Chantada). Chantada. Tel 982 184 488 ·
   <http://www.adegasamedo.com>. Marcas: Amedo, As Glorias, Pero Bernal.
-- [ ] **Bodega Soutelo** — Bodega (Amandi). Sober. Tel 600 700 136 ·
+- [x] **Bodega Soutelo** ‹→ bodega-soutelo-sober (verificado, VO sí ecommerce; web real = bodegasoutelo.com, no .es)› — Bodega (Amandi). Sober. Tel 600 700 136 ·
   <http://www.bodegasoutelo.es>. Marca: Cardenal Rodrigo de Castro.
-- [ ] **Dominio Marcelino** (Marcelino Tierra y Vinos S.L.) — Bodega (Amandi).
+- [x] **Dominio Marcelino** (Marcelino Tierra y Vinos S.L.) ‹→ dominio-marcelino-sober (parcial; web con cert incorrecto)› — Bodega (Amandi).
   Sober. Tel 647 164 040 · www.dominiomarcelino.com. Marca: Marcelino I.
-- [ ] **Bodega Pincelo** — Bodega (Chantada). Chantada. Tel 982 441 660 ·
+- [x] **Bodega Pincelo** ‹→ bodega-pincelo-chantada (parcial; web caída)› — Bodega (Chantada). Chantada. Tel 982 441 660 ·
   <http://www.bodegapincelo.com>. Marcas: Pincelo, Momentum, Viña Portotide.
-- [ ] **Régoa** (Régoa C.B.) — Bodega (Amandi). Sober. Tel 649 101 555 ·
+- [x] **Régoa** (Régoa C.B.) ‹→ adega-regoa-sober (parcial; web con cert incorrecto)› — Bodega (Amandi). Sober. Tel 649 101 555 ·
   <http://www.regoa.es>. Marcas: Régoa, Régoa Iria, Régoa TN.
-- [ ] **Val da Lenda** (Rodríguez López, Víctor Manuel) — Bodega (Amandi).
+- [x] **Val da Lenda** (Rodríguez López, Víctor Manuel) ‹→ adega-val-da-lenda-sober (verificado, VO sí ecommerce)› — Bodega (Amandi).
   Sober. Tel 982 460 504 · www.valdalenda.com. Marca: Val da Lenda.
-- [ ] **Virxen dos Remedios** (S.A.T. Virxen dos Remedios 837 XUGA) — Bodega
+- [x] **Virxen dos Remedios** (S.A.T. Virxen dos Remedios 837 XUGA) ‹→ adega-virxen-dos-remedios-o-savinao (verificado, VO n/c; ⚠ marca Castro Candaz compartida)› — Bodega
   (Ribeiras do Miño). O Saviñao. Tel 982 171 720 ·
   <http://www.virxendosremedios.es>. Marcas: Castro Candaz, Demo, Pazo de Bexán.
   ⚠ marca «Castro Candaz» comparte nombre con Bodegas CastroCandaz (Quiroga) y
   con la línea homónima de Martín Códax → verificar titularidad de la marca.
-- [ ] **Diego de Lemos** (Teijeiro Lemos S.L.) — Bodega (Chantada). Chantada.
+- [x] **Diego de Lemos** (Teijeiro Lemos S.L.) ‹→ bodega-diego-de-lemos-chantada (parcial; solo blog)› — Bodega (Chantada). Chantada.
   Tel 982 171 666 · <http://bodegadiegodelemos.blogspot.com>. Marca: Diego de Lemos.
-- [ ] **Cividade** (Verao López, Brais) — Bodega (Amandi). Sober.
+- [x] **Cividade** (Verao López, Brais) ‹→ adega-cividade-sober (parcial; web caída)› — Bodega (Amandi). Sober.
   Tel 982 152 981 · <http://www.cividades.com>. Marca: Cividade.
 - [ ] **Aborixe** — Bodega (Amandi). Sober. Tel 609 660 019. Sin web en registro
   (viño natural, buscar en verificación).
@@ -105,7 +105,7 @@ Teijeiro (Sarria).
   Tel 982 456 213. Marcas: Don Ventura, Pena do Lobo, Viña Caneiro.
 - [ ] **Rectoral de Gundivós** — Bodega (Amandi). Sober. Tel 609 660 019 /
   626 966 280. Marcas: Ámboa, Ímbrice, Adobe.
-- [ ] **Fusco / Finca Cuarta** (Moure Fernández, Rubén) — Bodega (Amandi /
+- [x] **Fusco / Finca Cuarta** (Moure Fernández, Rubén) ‹DIFERIDO: marca «Finca Cuarta» ya figura en la fila prior-de-panton-panton (mismo viñateiro Rubén Moure); confirmar titularidad antes de crear fila aparte› — Bodega (Amandi /
   Ribeiras do Miño). Sober / Pantón. Tel 638 380 222. Marcas: Fusco, Finca
   Cuarta por Rubén Moure, Priscillvs, Nai (viñateiro reconocido; el registro lo
   lista en dos subzonas → una sola ficha).

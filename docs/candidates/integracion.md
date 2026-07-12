@@ -124,7 +124,7 @@ resolver) → al final.
 |---|---|---|---|---|---|
 | 2.1 | Teruel | **2.1a (7) + 2.1b jamón (9) + 2.1c aceite Bajo Aragón (13) hechos** = 29 altas. Falta: resto jamón secaderos (~5, DNS/redirección) + Melocotón La Arenosa (1). Núcleo cerrado | 51 | ~1 (3/4) | casi |
 | 2.2 | Jaén | **2.2a Sierra Mágina (11) + 2.2b Cazorla (7) & Segura (5) hechos** (23 altas). Falta: resto Segura (13, mayoría solo-teléfono/sin web propia). ⚠ homónimos coops «San …», «La Vicaría» y «Ntra. Sra. de la Cabeza» (Huesa≠Campillo) | 38 | ~23 (2/3) | en curso |
-| 2.3 | Lugo | **2.3a Provincia (6) hecho** (5 altas: 2 verif Fraga/Hermelino + 3 parcial As Fadegas/Pingas de Gaia/Céltico; Maruxas de Nata→a-coruna). Falta: Ribeira Sacra lucense (24) → 1-2 lotes. Corrección pendiente: `torre-de-nunez-o-corgo` | 30 | ~1-2 (1/2) | en curso |
+| 2.3 | Lugo | **2.3a Provincia (5) + 2.3b Ribeira Sacra corte 1 (11) hechos** = 16 altas. Falta: Ribeira Sacra corte 2 (~11 sin web) + los ~23 micro-colleiteiros del corte 2 del doc. Correcciones pendientes: `torre-de-nunez-o-corgo`; Maruxas→a-coruna; Fusco/Finca Cuarta≈prior-de-panton | 30 | ~1-2 (2/3) | en curso |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
 | 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
@@ -150,6 +150,19 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.3b — Lugo, DO Ribeira Sacra corte 1 (11 con web)**: 11
+  altas (5 `verificado`, **4 con VO=sí ecommerce**: Alouviño, Adegas Amedo,
+  Bodega Soutelo y Val da Lenda —todas con carrito propio leído en vivo—; +
+  Virxen dos Remedios/O Saviñao, web sin carrito → VO n/c; 6 `parcial`: Saiñas,
+  Marcelino, Pincelo, Régoa, Diego de Lemos, Cividade —dominios caídos o con cert
+  incorrecto, confirmados por el registro del Consejo Regulador). **Corrección de
+  dominio**: la web viva de Soutelo es **bodegasoutelo.com** (Shopify), no el
+  `.es` del registro (DNS caído). **Diferido**: *Fusco/Finca Cuarta* (Rubén
+  Moure) — la marca «Finca Cuarta» ya está en `prior-de-panton-panton`, mismo
+  viñateiro; confirmar titularidad antes de duplicar. Patrón del corte: muchos
+  colleiteiros de Ribeira Sacra tienen el dominio del registro muerto pero siguen
+  activos en el consejo → parcial legítimo. ⚠ marca «Castro Candaz» compartida
+  (Virxen dos Remedios vs Bodegas CastroCandaz de Quiroga, en el corte 2).
 - 2026-07-12 — **Lote 2.3a — Lugo, provincia (6)**: 5 altas (2 `verificado` con
   web propia leída en vivo: *Panadería Fraga*/Palas de Rei y *Embutidos
   Hermelino*/O Valadouro —porco celta, 1939—; 3 `parcial` sin web propia,
