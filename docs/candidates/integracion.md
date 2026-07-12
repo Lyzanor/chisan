@@ -124,7 +124,7 @@ resolver) → al final.
 |---|---|---|---|---|---|
 | 2.1 | Teruel | **2.1a (7) + 2.1b jamón (9) + 2.1c aceite Bajo Aragón (13) hechos** = 29 altas. Falta: resto jamón secaderos (~5, DNS/redirección) + Melocotón La Arenosa (1). Núcleo cerrado | 51 | ~1 (3/4) | casi |
 | 2.2 | Jaén | **2.2a Sierra Mágina (11) + 2.2b Cazorla (7) & Segura (5) hechos** (23 altas). Falta: resto Segura (13, mayoría solo-teléfono/sin web propia). ⚠ homónimos coops «San …», «La Vicaría» y «Ntra. Sra. de la Cabeza» (Huesa≠Campillo) | 38 | ~23 (2/3) | en curso |
-| 2.3 | Lugo | Provincia (6) + Ribeira Sacra lucense (24) → 2 lotes. Corrección: `torre-de-nunez-o-corgo` | 30 | ~2 | pendiente |
+| 2.3 | Lugo | **2.3a Provincia (6) hecho** (5 altas: 2 verif Fraga/Hermelino + 3 parcial As Fadegas/Pingas de Gaia/Céltico; Maruxas de Nata→a-coruna). Falta: Ribeira Sacra lucense (24) → 1-2 lotes. Corrección pendiente: `torre-de-nunez-o-corgo` | 30 | ~1-2 (1/2) | en curso |
 | 2.4 | Huelva | Jabugo secaderos (15) → 1; Condado bodegas (13, 6 «sin web, confirmar») → 1. Corrección: `jamones-tartessos-huelva` (municipio) | 28 | ~2 | pendiente |
 | 2.5 | Navarra | Registro INTIA con contacto (11+9+6) → 2 lotes. Correcciones: `mendiko-aibar-oibar` (es bodega DO), `bodega-otazu-otazu` (municipio) | 26 | ~2 | pendiente |
 | 2.6 | Zaragoza | **2.6a Bajo Aragón (8) + 2.6b Cariñena (9) + 2.6c Borja & Calatayud (8) hechos** = 18 altas (10 verif —2 con VO=sí— + 8 parcial), 2 rechazos, 5 diferidos (2 B2B Bajo Aragón + 3 coops sin web Borja). **Fichero cerrado salvo diferidos** | 25 | 0 (3/3) | ✅ núcleo |
@@ -150,6 +150,16 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.3a — Lugo, provincia (6)**: 5 altas (2 `verificado` con
+  web propia leída en vivo: *Panadería Fraga*/Palas de Rei y *Embutidos
+  Hermelino*/O Valadouro —porco celta, 1939—; 3 `parcial` sin web propia,
+  documentados por prensa/institución: *As Fadegas* —horta eco de Ribadeo, vende
+  en mercado, VO=no—, *Pingas de Gaia* —apicultor de San Simón da Costa/Vilalba—
+  y *Céltico*/Muras —porco celta). **Maruxas de Nata redirigida a `a-coruna`**: la
+  granja está en Monterroso (Lugo) pero el obrador y la tienda están en San
+  Sadurniño (A Coruña) → manda el obrador. Los 3 parcial son filas finas (sin
+  web/teléfono) pero productores reales documentados; SondeLugo es marketplace de
+  terceros → no sube VO. Nuevo `lugo.jsonl`.
 - 2026-07-11 — **Lote 2.6c — Zaragoza, DO Campo de Borja (5) + DO Calatayud
   (3)**: 5 altas (4 `verificado`, de las cuales **2 con VO=sí ecommerce**:
   *La Cerrada/Vinos Atrevidos* —vino natural, Calatayud— y *Esteban Castejón*

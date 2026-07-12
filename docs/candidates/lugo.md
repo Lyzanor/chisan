@@ -18,21 +18,21 @@
 
 ## Provincia — 6 candidatos
 
-- [ ] **As Fadegas** — Fruta y verdura (horta ecolóxica). Ribadeo, a carón do río
+- [x] **As Fadegas** ‹→ as-fadegas-ribadeo (parcial; horta eco pionera, vende en mercado Ribadeo, sin web)› — Fruta y verdura (horta ecolóxica). Ribadeo, a carón do río
   Grande; 5 invernadoiros (1.800 m² cubertos) + 1 ha; pioneira en ecolóxico, 40 anos,
   con relevo generacional. Fuente:
   <https://www.campogalego.gal/as-fadegas-relevo-xeneracional-nunha-explotacion-de-horta-pioneira-que-cumpre-40-anos/>.
-- [ ] **Panadería Fraga** — Pan y pastelería. Palas de Rei, desde 1995. Vende con
+- [x] **Panadería Fraga** ‹→ panaderia-fraga-palas-de-rei (verificado; web propia, sin carrito → VO n/c)› — Pan y pastelería. Palas de Rei, desde 1995. Vende con
   envío vía SondeLugo (<https://sondelugo.com/gl/brand/10-panaderia-fraga>) → pista
   `Venta online=sí` (marketplace).
-- [ ] **Pingas de Gaia** — Miel. Vilalba.
-- [ ] **Embutidos Hermelino** — Charcutería (porco celta). O Valadouro; granja
+- [x] **Pingas de Gaia** ‹→ pingas-de-gaia-vilalba (parcial; apicultor en San Simón da Costa, sin web)› — Miel. Vilalba.
+- [x] **Embutidos Hermelino** ‹→ embutidos-hermelino-o-valadouro (verificado; O Valadouro, porco celta, sin carrito propio)› — Charcutería (porco celta). O Valadouro; granja
   familiar, +80 años. En SondeLugo:
   <https://sondelugo.com/es/productos/241-salchichon-de-cerdo-celta-hermelino.html>.
-- [ ] **Céltico (Mario Rouco Rey)** — Charcutería (porco celta). Muras; granja propia
+- [x] **Céltico (Mario Rouco Rey)** ‹→ celtico-mario-rouco-muras (parcial; Muras, porco celta, sin web)› — Charcutería (porco celta). Muras; granja propia
   desde 2015, marca desde ~2019; chorizo, lomo, salchichón elaborados en Muras.
   Fuente: <https://deputacionlugo.gal/es/node/76611> y Campo Galego.
-- [ ] **Maruxas de Nata** — Dulces (galletas de nata eco). ⚠ **Provincia por
+- [x] **Maruxas de Nata** ‹DIFERIDO a a-coruna: el obrador y la tienda están en San Sadurniño (A Coruña); manda el obrador → integrar en a-coruna.csv, no en Lugo› — Dulces (galletas de nata eco). ⚠ **Provincia por
   decidir:** granja en Monterroso (Lugo) pero obradoiro y tienda en A Garita s/n,
   Santa Mariña do Monte, San Sadurniño (**A Coruña**). Si manda el obrador, va a
   `a-coruna.csv`. <https://maruxasdenata.com/>; venden en Bigcrafters/Mentta → pista
