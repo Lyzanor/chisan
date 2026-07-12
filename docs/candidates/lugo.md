@@ -124,9 +124,13 @@ Teijeiro (Sarria).
   Ribeira Sacra del grupo cervecero Estrella Damm → fuera por regla dura (gran
   grupo industrial). Confirmar en verificación por si tuviera marca propia
   vendible al público.
-- **Corte 2 (cola, ~23 micro-colleiteiros de nombre personal sin web)**: por el
-  tope de lote quedan sin escribir, a repescar en un lote/pasada posterior. Del
-  registro (subzona · concello · tel · marca notable si la hay): A Man de Prado
+- **Corte 2 (micro-colleiteiros) — ✅ INTEGRADO lote 2.3d (2026-07-12)**: 17
+  altas `parcial` (los que tienen marca registrada; coords al centroide del
+  concello, sin web). **Saltados**: Álvarez Rodríguez Óscar, Castro Sesse José
+  María y Pérez Pérez José Luis (sin marca, filas demasiado finas); ED V 2015
+  (Quiroga, marca «Fusco» colisiona con Rubén Moore/Prior de Pantón → verificar
+  titularidad). Lista original del registro (subzona · concello · tel · marca
+  notable si la hay): A Man de Prado
   (Amandi·Sober·617 776 392); Álvarez Rodríguez, Óscar (Amandi·Sober); Alvarín
   Losada, Mª Gloria (Ribeiras do Miño·Monforte·*Ciudaseis*); Carnero Fiuza, Jorge
   (Amandi·Sober·*Viña Cazoga*); Castro Sesse, José María (Ribeiras do

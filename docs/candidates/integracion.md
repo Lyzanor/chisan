@@ -150,6 +150,14 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-12 — **Lote 2.3d — Lugo, DO Ribeira Sacra micro-colleiteiros (17)**: 17
+  altas `parcial` (colleiteiros de nombre personal con marca registrada, sin web;
+  coords al centroide del concello —11 en Sober—). Batch de cobertura del corte 2
+  del doc: identidad/municipio/marca del registro del consejo, sin verificación web
+  (no la tienen). Saltados 4: 3 sin marca (Álvarez Rodríguez, Castro Sesse, Pérez
+  Pérez) y ED V 2015 (marca «Fusco» colisiona con Rubén Moure). Con esto **Lugo
+  queda esencialmente cerrado** (43 altas en total: 2.3a/b/c/d). Fin del pool de
+  alto valor: lo que resta en otras provincias son colas de registro similares.
 - 2026-07-12 — **Lote 2.7b — Valencia, DOP Arroz de Valencia (4)**: 4 altas (2
   `verificado` VO n/c: *Arrocerías Antonio Tomás*/Sollana —1962— y *Arroces J.
   Montoro*/Rafelbuñol —1940—, ambas con web propia leída en vivo sin carrito; 2
