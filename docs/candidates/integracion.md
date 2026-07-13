@@ -225,6 +225,17 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 5 — Lugo, diferidos 1-a-1 (1 alta + 2 resueltos
+  sin fila)**: *Finca A Figueira* → `finca-a-figueira-chantada` (`parcial` — el
+  consejo la sitúa en San Fiz de Asma, **Chantada (Lugo)**; la duda del prefijo
+  986 era el teléfono del titular; 1,65 ha/4.000 kg, coords del consejo a 4,3 km
+  del centroide). *Fusco/Finca Cuarta* (Rubén Moure) → **already-present** =
+  `prior-de-panton-panton` (la marca nació con esa bodega, misma unidad
+  productiva, ~380.000 L hoy). *Bodegas CastroCandaz* → **no fila**: proyecto
+  Raúl Pérez/Rodrigo Méndez sin bodega propia estable; la marca ya está en
+  `adega-virxen-dos-remedios-o-savinao` (atribución del registro del consejo) →
+  fila propia = marca duplicada. Con esto **la cola de diferidos de Lugo queda
+  resuelta** (ED V 2015 sigue descartado por marca/identidad finas). Gates verdes.
 - 2026-07-13 — **Fase C, lote 4 — Ciudad Real, pasada provincial Campo de
   Calatrava (3 altas + 1 upgrade)** — **cierra el fichero**: *Olivapalacios* →
   `olivapalacios-palacio-de-los-olivos-almagro` (`verificado`, VO=sí — ⚠ municipio

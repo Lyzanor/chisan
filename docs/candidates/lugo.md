@@ -113,14 +113,25 @@ Teijeiro (Sarria).
   Tel 982 456 213. Marcas: Don Ventura, Pena do Lobo, Viña Caneiro.
 - [x] **Rectoral de Gundivós** ‹→ rectoral-de-gundivos-sober (verificado; oleiro+adega, vino en barro Ámboa)› — Bodega (Amandi). Sober. Tel 609 660 019 /
   626 966 280. Marcas: Ámboa, Ímbrice, Adobe.
-- [x] **Fusco / Finca Cuarta** (Moure Fernández, Rubén) ‹DIFERIDO: marca «Finca Cuarta» ya figura en la fila prior-de-panton-panton (mismo viñateiro Rubén Moure); confirmar titularidad antes de crear fila aparte› — Bodega (Amandi /
-  Ribeiras do Miño). Sober / Pantón. Tel 638 380 222. Marcas: Fusco, Finca
-  Cuarta por Rubén Moure, Priscillvs, Nai (viñateiro reconocido; el registro lo
-  lista en dos subzonas → una sola ficha).
-- [x] **Finca A Figueira** (Finca y Bodega A Figueira S.L.) ‹DIFERIDO: ⚠ concello sin confirmar + teléfono 986 (prefijo Pontevedra) → verificar provincia antes de integrar› — Bodega (Chantada).
-  Chantada ⚠ (confirmar concello). Tel 986 483 313. Marca: Finca Figueira.
-- [x] **Bodegas CastroCandaz** ‹DIFERIDO: mismo proyecto Raúl Pérez/Rodrigo Méndez (marcas Castro Candaz/Demo/Pazo de Bexán) ya integrado como adega-virxen-dos-remedios-o-savinao → evitar duplicado; resolver titularidad› — Bodega (Quiroga-Bibei). Quiroga.
-  Tel 696 621 531. ⚠ colisión de marca «Castro Candaz» (ver Virxen dos Remedios).
+- [x] **Fusco / Finca Cuarta** (Moure Fernández, Rubén) — **already-present →
+  `prior-de-panton-panton`** (resuelto fase C, 2026-07-13): «Finca Cuarta» es la
+  creación de Rubén Moure **nacida con la bodega Prior de Pantón** (~12 años,
+  viñas del abuelo en el Cabe/Sil; hoy ~380.000 L) — misma unidad productiva, la
+  fila existente ya lleva los vinos Finca Cuarta e IG @finca_cuarta → **no se
+  crea fila**. El registro lo lista en dos subzonas (Amandi/Sober + Ribeiras do
+  Miño/Pantón) por tener viña en ambas.
+- [x] **Finca A Figueira** (Finca y Bodega A Figueira S.L.) — **accepted →
+  `finca-a-figueira-chantada`** (`parcial`, VO=nc) — fase C, 2026-07-13. ⚠ resuelto:
+  el registro del consejo la sitúa en **San Fiz de Asma, 27516 (Lugo)**, parroquia
+  de **Chantada** — el prefijo 986 era solo el teléfono del titular. Micro-colleiteiro
+  (1,65 ha, 4.000 kg, mencía/garnacha); coords del consejo a 4,3 km del centroide.
+- [x] **Bodegas CastroCandaz** — **rejected: no fila** (resuelto fase C,
+  2026-07-13): «Castro Candaz» es el proyecto Ribeira Sacra de **Raúl Pérez y
+  Rodrigo Méndez** (~15.000 botellas, uva de Chantada) **sin bodega propia
+  estable** (vinifican en instalaciones ajenas); la marca ya está representada en
+  la fila `adega-virxen-dos-remedios-o-savinao` (el registro del consejo atribuye
+  las marcas Castro Candaz/Demo/Pazo de Bexán a esa S.A.T.) → una fila propia
+  duplicaría la marca. Reabrir solo si consta bodega física propia registrada.
 - [x] **Terrazas de Outeiro** ‹→ adega-terrazas-de-outeiro-quiroga (parcial; sin marca ni web)› — Bodega (Quiroga-Bibei). Quiroga. Tel 637 895 831.
   Sin marca en registro (confirmar producto y venta).
 - [x] **Adegas Salvadur** ‹→ adegas-salvadur-a-pobra-do-brollon (parcial; sin marca ni web)› — Bodega (Quiroga-Bibei). A Pobra do Brollón.
