@@ -225,6 +225,20 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 6 — Valencia, DO Utiel-Requena cola «sin web» + corte 2
+  (7 altas)**: **4 verificado** — *Sentencia* (Los Pedrones, VO=sí ecommerce con
+  checkout confirmado) · *Mitos* (El Azagador, web viva, confirma actividad que el
+  registro dudaba) · *Lupanda* (boutique Requena) · [*Pigar* resultó
+  **already-present** → no fila]. **4 parcial** (solo registro/FB, sin web propia
+  legible): *Carlos Cárcel* (Rebollar, ⚠ distinta de Ernesto Cárcel/Cárcel de Corpa
+  ya en CSV) · *Palmera* (Utiel) · *Bru & JL* (⚠ municipio corregido a **Caudete de
+  las Fuentes**, no Utiel) · *Escuadra* (Los Isidros). **Rechazado**: *BVC Bodegas*
+  — confirmada independiente de Coviñas, pero es el brazo español del négociant
+  francés Calvet (B2B/export, sin marca km0) → no fila. ⚠ **Dedup fallido**: Pigar
+  ya existía y el `grep -c` no lo delató (solo conté, no listé las líneas) → lo
+  pilló el gate de slug duplicado; fila+evidencia retiradas. Geo-warnings de
+  Sentencia (17 km) y Escuadra (18 km) son **esperados** (pedanías lejanas de la
+  enorme Requena), no defectos. Gates verdes (contrato 0/0, evidencia 0 issues).
 - 2026-07-13 — **Fase C, lote 5 — Lugo, diferidos 1-a-1 (1 alta + 2 resueltos
   sin fila)**: *Finca A Figueira* → `finca-a-figueira-chantada` (`parcial` — el
   consejo la sitúa en San Fiz de Asma, **Chantada (Lugo)**; la duda del prefijo

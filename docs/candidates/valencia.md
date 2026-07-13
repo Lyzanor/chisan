@@ -32,10 +32,8 @@
   · 675 515 729 · <https://www.bodegacarres.com>.
 - [x] **Sebirán** (VOB & T. International AB, sucursal España) ‹→ bodega-sebiran-requena (parcial; web 401)› — Bodega. Requena.
   · 962 303 321 · <https://www.sebiran.es>.
-- [x] **BVC Bodegas** ‹DIFERIDO: mismo teléfono que Coviñas (coop enorme); confirmar si es entidad independiente antes de integrar› — Bodega. Requena. · 962 300 680 · <https://www.bvcbodegas.com>.
-  ⚠ mismo teléfono que Coviñas → confirmar si es entidad independiente.
-- [x] **Bodegas y Viñedos Sentencia** (Juan Pedrón, C.B.) ‹DIFERIDO a corte 2 (no verificada en este lote)› — Bodega. Requena.
-  · 665 969 009 · <https://www.bodegassentencia.com>.
+- [x] **BVC Bodegas** ‹RECHAZADO fase C 2026-07-13: confirmada como **independiente de Coviñas** (Maison Benoit Valérie Calvet, fundada 2014), pero es el brazo español de embotellado/producción del **négociant francés Calvet** → perfil B2B/exportación sin marca de consumo km0 propia; no se crea fila› — Bodega. Requena. · 962 300 680 · <https://www.bvcbodegas.com>.
+- [x] **Bodegas y Viñedos Sentencia** (Juan Pedrón, C.B.) — **accepted → `bodegas-sentencia-requena`** (`verificado`, **VO=sí** ecommerce) — fase C 2026-07-13. Los Pedrones (Requena); tienda propia con checkout confirmado (El Bosque Habitado 13,50 €, tras age-gate). ⚠ Los Pedrones es pedanía a 17 km del centroide → warning de geo esperado.
 - [x] **Bodega Casas de Moya** ‹→ bodega-casas-de-moya-utiel (verificado, VO n/c; checkout no operativo)› — Bodega. Utiel. · 665 330 991 · <https://www.demoya.es>.
 - [x] **Bodegas Pedro Moreno 1940** ‹→ bodegas-pedro-moreno-1940-venta-del-moro (parcial; web DNS caída)› — Bodega. Venta del Moro. · 962 185 208 ·
   <https://www.bodegaspedromoreno1940.es>.
@@ -43,17 +41,32 @@
   <https://www.latorreagrovinicola.com>.
 - [x] **Bodegas Dagón** (Miguel Jesús Márquez Sahuquillo) ‹→ bodegas-dagon-venta-del-moro (parcial; web no accesible)› — Bodega. Venta del
   Moro. · 962 178 056 · <https://www.dagon.es>. Referencia de vino sin sulfitos.
-- [ ] **Bodegas Carlos Cárcel** — Bodega. Requena (Rebollar). · 962 303 608 /
-  616 049 117. Marcas: Rebollar, Valle del Tejo, Bobal 1906. Sin web localizada.
-- [ ] **Bodegas Palmera** — Bodega. Utiel. · 626 706 394. Sin web localizada.
-- [ ] **Bru & JL Vineyards & Wines** — Bodega. Utiel. · 685 137 515. Sin web.
-- [ ] **Bodegas Mitos** — Bodega. Requena. Sin teléfono ni web en el registro;
-  confirmar actividad.
-- [ ] **Bodegas y Viñedos Pigar** — Bodega. Requena. · 620 039 244. Sin web.
-- [ ] **Bodegas Lupanda** (Manuel Peris Villanueva) — Bodega. Requena.
-  · 651 998 904. Sin web.
-- [ ] **Escuadra, Bodega y Viñedos** (Pablo Carrión Guillamón) — Bodega. Requena
-  (Los Isidros). · 695 851 682. Sin web.
+> ✅ **Corte «sin web» integrado en fase C (2026-07-13)** — se les localizó web
+> propia o se confirmaron por el registro del consejo DO Utiel-Requena:
+
+- [x] **Bodegas Mitos** → `bodegas-mitos-requena` (`verificado`, VO=nc). El
+  Azagador (Requena); web propia viva `bodegasmitos.com` (sucesora de la coop.
+  San Miguel del Campo) — confirma la actividad que el registro dejaba en duda.
+- [x] **Bodegas Lupanda** (Manuel Peris Villanueva) → `bodegas-lupanda-requena`
+  (`verificado`, VO=nc). Micro-bodega boutique del casco de Requena; web propia
+  `bodegaslupanda.es` (tienda mencionada pero checkout no confirmado en vivo).
+- [x] **Bodegas Carlos Cárcel** → `bodegas-carlos-carcel-requena` (`parcial`,
+  VO=nc). El Rebollar (Requena) desde 1907; confirmada por el consejo, sin web
+  propia legible (solo registro + FB). Entidad **distinta** de
+  `bodegas-rebollar-carcel-de-corpa-requena` (Ernesto Cárcel) pese al apellido.
+- [x] **Bodegas Palmera** → `bodegas-palmera-utiel` (`parcial`, VO=nc). Utiel,
+  fundada 1998 por Heiner Sauer; vino L'Angelet (oro Biofach). Solo registro.
+- [x] **Bru & JL Vineyards & Wines** → `bru-jl-vineyards-wines-caudete-de-las-fuentes`
+  (`parcial`, VO=nc). ⚠ **municipio corregido: Caudete de las Fuentes** (no Utiel;
+  registro/Empresite). Proyecto de Bruno Murciano; vino L'Alegria (bobal).
+- [x] **Escuadra, Bodega y Viñedo** (Pablo Carrión Guillamón) →
+  `escuadra-bodega-y-vinedo-requena` (`parcial`, VO=nc). Los Isidros (Requena);
+  vinos sin aditivos (Compás, Cartabón). Confirmada por consejo + FB. ⚠ Los
+  Isidros es pedanía a 18 km del centroide → warning de geo esperado.
+- [x] **Bodegas y Viñedos Pigar** — **already-present** → `bodegas-pigar-requena`
+  (ya en el CSV, `verificado` VO=no; misma entidad de Campo Arcís). El dedup por
+  conteo no lo pilló (lección: listar siempre las líneas que casan, no solo
+  contarlas). No se crea fila.
 
 ### DOP Arroz de Valencia (4)
 
