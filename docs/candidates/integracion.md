@@ -225,6 +225,20 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 4 — Ciudad Real, pasada provincial Campo de
+  Calatrava (3 altas + 1 upgrade)** — **cierra el fichero**: *Olivapalacios* →
+  `olivapalacios-palacio-de-los-olivos-almagro` (`verificado`, VO=sí — ⚠ municipio
+  corregido a **Almagro**, finca Los Palacios/CM-4107; la nota decía Bolaños; nº1
+  EVOO World Ranking picual) · *Pago Piedrabuena* →
+  `pago-piedrabuena-ballesteros-de-calatrava` (`parcial` — web con 403 técnico) ·
+  *COLIVAL* → `colival-valdepenas` (`verificado`, VO=sí — resuelto el ⚠: la coop
+  tiene marcas de consumo propias Valdenvero/Sierra Prieta y tienda operativa).
+  **Upgrade**: *Cooperativa El Progreso* (Villarrubia de los Ojos) — fila legacy
+  `pendiente` con web-directorio (apoloybaco) → web real `bodegaselprogreso.com`
+  (vino Viña Xétar + AOVE DOP Montes de Toledo, tienda con checkout), categoría
+  **«Aceite y bodega»**, `verificado` VO=sí. Gates verdes (las 3 warnings de
+  calidad son filas preexistentes, anotadas en el doc). **Ciudad Real cerrada del
+  todo**: 8 altas acumuladas (4 fase B + 3 fase C) + 1 upgrade.
 - 2026-07-13 — **Fase C, lote 3 — correcciones Galicia (2 filas, 2 merges)**:
   *Adega Pazo das Tapias*: slug `pazo-das-tapias-monterrei` →
   **`pazo-das-tapias-verin`** — la finca As Tapias está en **Pazos, parroquia de

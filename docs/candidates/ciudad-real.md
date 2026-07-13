@@ -67,10 +67,20 @@
 > Fuente: directorio sectorial `oleista.com/es/almazaras/ciudad-real` (el mismo
 > que ya citan varias filas del CSV). Triar en una pasada provincial, no en esta.
 
-- [x] **Olivapalacios, S.L.** ‹DIFERIDO: Campo de Calatrava, fuera de las 2 DOP del lote; a pasada provincial› — Aceite. Bolaños de Calatrava.
-- [x] **Pago Piedrabuena** ‹DIFERIDO: Campo de Calatrava, a pasada provincial› — Aceite. Ballesteros de Calatrava.
-- [x] **COLIVAL** (Soc. Coop. Olivarera de Valdepeñas) ‹DIFERIDO: Campo de Calatrava + coop grande, confirmar marca; a pasada provincial› — Aceite. Valdepeñas.
-  ⚠ cooperativa olivarera grande, confirmar marca de consumo.
+> ✅ **Las 3 integradas en fase C, lote 4 (2026-07-13)** — pasada provincial hecha:
+
+- [x] **Olivapalacios, S.L.** → `olivapalacios-palacio-de-los-olivos-almagro`
+  (`verificado`, **VO=sí** ecommerce). ⚠ **Municipio corregido: Almagro** (finca
+  Los Palacios, Ctra. CM-4107), no Bolaños — lo confirman su web y Facebook. Marca
+  Palacio de los Olivos, nº1 EVOO World Ranking picual; tienda propia operativa.
+- [x] **Pago Piedrabuena** → `pago-piedrabuena-ballesteros-de-calatrava`
+  (`parcial`, VO=nc). Almazara ecológica de finca (100 ha, cornicabra); su web
+  `pagopiedrabuena.es` devolvió **403 al fetch** (bloqueo técnico) → sin
+  verificador en vivo, tope parcial.
+- [x] **COLIVAL** → `colival-valdepenas` (`verificado`, **VO=sí** ecommerce).
+  ⚠ resuelto: la coop **sí tiene marcas de consumo propias** (Valdenvero, Sierra
+  Prieta, Exemplum) y tienda online operativa (envíos 24-48 h) → entra por la
+  regla de coop con marca propia.
 
 ### Notas del lote 19
 
@@ -83,10 +93,18 @@
   Fábrica de Aceites San Sebastián (Santa Cruz de Mudela — es la S.A. asociada de
   la coop. de 2º grado), Cooperativa Campo de Montiel (Villanueva de los
   Infantes), Cooperativa Virgen de las Viñas (Tomelloso, bodega+almazara).
-- **Doble faceta vino/aceite**: **Cooperativa El Progreso** (Villarrubia de los
-  Ojos, bodegaselprogreso.com) está en el CSV como **Bodega** pero también es
-  operador certificado de la DOP Montes de Toledo → decidir si se añade categoría
-  Aceite o segunda fila (mismo precedente que «La Unión de Montilla» en el lote 3).
+- ✅ **Doble faceta vino/aceite resuelta** (fase C lote 4, 2026-07-13):
+  **Cooperativa El Progreso** (`cooperativa-el-progreso-villarrubia-de-los-ojos`)
+  upgradeada — era fila legacy `pendiente` con web = directorio apoloybaco; ahora
+  web real `bodegaselprogreso.com` (leída en vivo: vino Viña Xétar + AOVE
+  certificado DOP Montes de Toledo, tienda con checkout), categoría **«Aceite y
+  bodega»** (precedente La Unión de Montilla), contacto actualizado →
+  **`verificado`, VO=sí ecommerce**.
+- ⚠ **Geo-warnings preexistentes detectados 2026-07-13** (no tocados, 2ª pasada):
+  `cooperativa-virgen-del-carmen-almodovar-del-campo` (22 km, ¿Abenójar?),
+  `cooperativa-vinicola-del-carmen-campo-de-criptana` (25 km, coords junto a
+  Tomelloso) y `mieles-san-benito-almodovar-del-campo` (47 km, ¿pedanía San
+  Benito? más cerca de Torrecampo/Córdoba).
 - **Método / fuentes muertas**: `aceitecampodemontiel.com`, `dopcampodemontiel.es`
   y `campodemontiel.org` no resuelven; el dominio vivo es
   **`dopaceitecampodemontiel.es`** (pero con el registro sin publicar). La página
