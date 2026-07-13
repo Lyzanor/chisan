@@ -182,7 +182,23 @@
 - [ ] **Adega O Cotarelo** — Cenlle. <https://adega-o-cotarelo.negocio.site>
   → **diferido**: la página de Google Business da 404 (web ligera caída).
 
-> **Corte 3 (resto ~34, sin dominio propio en la ficha — solo enlace genérico
+> ✅ **Corte 3 — primer lote integrado en fase C (2026-07-13, lote 13): 7 altas**
+> (la etiqueta «sin dominio propio» volvió a ser incompleta: 3 tienen web y 2
+> tienda propia):
+> - **Adegas Laudes** (Cenlle/Esposende) → `adegas-laudes-cenlle` (`verificado`,
+>   web adegaslaudes.com; enólogo Lázaro Moreno).
+> - **Casal do Canteiro** (Castrelo de Miño) → `adega-casal-do-canteiro-castrelo-de-mino`
+>   (`verificado`, **VO=sí** ecommerce; pazo s.XVIII, 2023, tienda propia).
+> - **Adega César García** (Ribadavia/Ventosela) → `adega-cesar-garcia-ribadavia`
+>   (`verificado`, **VO=sí** ecommerce; 1930, fundadora de la DO, marca Beiramiño).
+> - **Adega do Moucho** (Ribadavia) → `adega-do-moucho-ribadavia` (`parcial`;
+>   Francisco García, Oro Decanter 2017, sin web propia).
+> - **Arco da Vella / A Adega de Eladio** (Beade) → `arco-da-vella-adega-de-eladio-beade`
+>   (`parcial`).
+> - **Adega do Cesteiro** (Toén/Puga) → `adega-do-cesteiro-toen` (`parcial`).
+> - **Adegas Cenlle** (Cenlle) → `adegas-cenlle-cenlle` (`parcial`).
+>
+> **Corte 3 (resto ~27, sin dominio propio en la ficha — solo enlace genérico
 > `wineinmoderation.eu`):** colleiteiros pequeños del mismo directorio, p. ej.
 > Adega As Pegas, Adega do Cesteiro, Adega do Veleiro, Adega Viña Carpazal,
 > Adegas Cenlle, Adegas do Rexurdir, Adegas Laudes, Ameijeiras Vázquez,

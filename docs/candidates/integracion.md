@@ -225,6 +225,14 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 13 — Ourense, DO Ribeiro corte 3 (7 altas)**: 3
+  `verificado` (*Adegas Laudes*/Cenlle-Esposende —web—; *Casal do Canteiro*/Castrelo
+  de Miño —web+tienda VO=sí—; *Adega César García*/Ribadavia-Ventosela —1930,
+  fundadora DO, tienda VO=sí—) + 4 `parcial` (*Adega do Moucho* —Oro Decanter 2017—,
+  *Arco da Vella/A Adega de Eladio*/Beade, *Adega do Cesteiro*/Toén-Puga, *Adegas
+  Cenlle*; solo registro del consejo). El corte 3 (~34 «sin dominio») abre con
+  buen rendimiento: la etiqueta seguía siendo incompleta. Quedan ~27 colleiteiros
+  por triar. Gates verdes 0/0.
 - 2026-07-13 — **Fase C, lote 12 — Ourense, DO Monterrei resto (8 altas)**: 3
   `verificado` con web propia (*Quinta Soutullo*/Oímbra, *Vinos Lara*/Verín-Cabreiróa,
   *Serra de Alén*/Verín-Feces de Abaixo) + 5 `parcial` (*Terra de Godello* —cert.
