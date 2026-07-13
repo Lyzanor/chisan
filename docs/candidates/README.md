@@ -32,7 +32,34 @@ Before adding any producer to `data/csv/**`:
 6. Run `npx pnpm verify:data` before finishing.
 
 Prune or update these notes once candidates are accepted, rejected, or already
-present in the catalog.
+present in the catalog. When a file is fully resolved, summarize it in
+`integracion.md` («Resumen de lo integrado») and delete it — git history is the
+archive. Verification ledgers do not belong here; they go to
+`docs/verificacion/`.
+
+## Estado de la carpeta (reordenación 2026-07-13)
+
+Ficheros vivos y su cola pendiente (⚑ el pool de alto valor está agotado: casi
+todo lo que queda son colas de registro sin web o descartes grupo/maquila):
+
+| Fichero | Pendiente (aprox.) | Naturaleza |
+|---|---|---|
+| `ourense.md` | ~80 | Monterrei resto 13 (solo tel) · Ribeiro corte 3 ~34 · Valdeorras resto ~19 (necesita navegador) · Queixería Gaia (¡con web!) · diferidos con motivo |
+| `santa-cruz-de-tenerife.md` | ~62 | 5 bodegas con web + DOP Islas Canarias ~9 con web · 45 sin web · 3 Anaga sin rastro |
+| `cordoba.md` | ~20 | 3 leads con tienda (Rosán, Campolio, Lagar de Quirós) · coops Montilla/Montoro-Adamuz · 7 registro sin web · COVAP/Embajada/Gracia Hnos. |
+| `zaragoza.md` | ~21 | Cariñena corte 2 ~16 (vía organismo certificación) · 3 coops Borja · 2 B2B |
+| `jaen.md` | ~17 | Segura sin web 13 + 4 de la nota final |
+| `navarra.md` | ~17 | Registro INTIA sin web · correcciones mendiko/otazu/lezaun |
+| `huelva.md` | ~15 | Bodegas Bollullos/Almonte sin web · 8 coops Condado · Cárdeno/Miguel y María (provincia) |
+| `teruel.md` | ~14 | Jamón DOP resto (5 + 3 DNS) · Melocotón La Arenosa · 4 provincia sin web · Centelles y Buj |
+| `valencia.md` | ~13 | Utiel-Requena sin web 7 · 4 coops triaje · BVC · Sentencia |
+| `toledo.md` | ~11 | 8 coops aceite sin web · IFAMA · 3 queserías Manchego diferidas |
+| `madrid.md` | 10 | Heladerías pendientes de filtro estricto (dueño propio) |
+| `lugo.md` | ~8 | Diferidos (Fusco, Figueira, CastroCandaz…) · corrección Torre de Núñez · pistas capital |
+| `ciudad-real.md` | 3 | Olivapalacios, Pago Piedrabuena, COLIVAL (Campo de Calatrava) · doble faceta El Progreso |
+| `a-coruna.md` | 3 | Queixeiros sin rastro digital — ⚠ fichero en curso de otro agente |
+| `festa-do-queixo.md` | ~50 pistas | ~34 productores de fuera de Galicia (triar al abrir cada provincia) + corte 2 gourmet (17) |
+| `integracion.md` | — | Ledger fase B + residuales heredados de docs borrados |
 
 For unresolved candidates, keep enough evidence for another agent to continue
 without restarting:
@@ -46,8 +73,9 @@ routine source detail from candidate notes.
 
 ## Cómo encontrar el registro real de una DO/DOP (aprendizajes, pasada do-huecos 2026-07)
 
-Destilado de 26 lotes contra consejos reguladores. Detalle por lote en
-`do-huecos.md` → Estado.
+Destilado de 26 lotes contra consejos reguladores. El ledger de aquella pasada
+(`do-huecos.md`) se borró al cerrarse (2026-07-13); el detalle por lote vive en
+el historial git y el resumen en `integracion.md` → «Resumen de lo integrado».
 
 **Dónde buscar, por orden de rendimiento:**
 

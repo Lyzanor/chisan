@@ -60,6 +60,24 @@
   de Mora» (ya en CSV, distinto municipio) → verificar si es operador propio
   (marca «Aceites Toledo»/«Óleum») o brazo comercial de aquella cooperativa.
 
+## DOP Queso Manchego — queserías toledanas diferidas (heredado de `cuenca.md`, borrado 2026-07-13)
+
+> El lote 3.1b (2026-07-12) integró las 4 queserías toledanas con web (El
+> Consuelo, Pérez Arquero, Barrajón, Gallego Sanz). Quedan **3 diferidas sin
+> web**, del registro del Consejo (`quesomanchego.es`):
+
+- [ ] **Quesos Reino** — Lácteos y quesos. Madridejos. Sin web localizada.
+- [ ] **Industrias Alimentarias Martal** — Lácteos y quesos. El Toboso.
+  ⚠ «Industrias Alimentarias», posible madurador, no elaborador.
+- [ ] **Asoc. Ganadera Palomares** — Lácteos y quesos. La Puebla de Almoradiel.
+  Sin web localizada.
+
+> ⚠ Antes de integrarlas, releer el campo `categories` del registro (elaborador
+> `Leche cruda`/`Leche pasteurizada` vs `Cámaras de maduración`). Ojo: el array
+> `places` ya **no viene** en `content.rendered` de
+> `/wp-json/wp/v2/pages/10148` (estructura cambiada desde 2026-07-09); usar la
+> captura previa o el mapa Leaflet vía navegador.
+
 ### Notas del lote 18 (pista para Ciudad Real — lote 19)
 
 Operadores certificados de la DOP que son de **Ciudad Real** (para `ciudad-real.md`,

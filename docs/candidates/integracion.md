@@ -9,6 +9,81 @@
 > integrarlo en `data/csv/**` con la fila completa, o resolverlo con motivo.
 > Los candidatos siguen viviendo en `docs/candidates/[provincia].md`; aquí solo
 > van la worklist, el flujo estándar y la bitácora.
+> (`do-huecos.md`, `cuenca.md` y demás docs ya integrados se borraron en la
+> reordenación del 2026-07-13; ver «Resumen de lo integrado» y el historial git.)
+
+## Resumen de lo integrado (consolidación 2026-07-13)
+
+> Reordenación de la carpeta (2026-07-13): los docs de candidatos **totalmente
+> integrados** se borraron (viven en el historial git); sus residuales están en
+> la sección «Residuales heredados» de abajo. Los ledgers de *verificación* que
+> estaban aquí por error (`asturias.md`, `guipuzcoa.md`, `la-rioja.md`) se
+> movieron a `docs/verificacion/`.
+
+Altas de la **fase B** (verificación e integración de candidatos de fase A),
+rondas 0–3, 2026-07-10 → 2026-07-12. Detalle por lote en la Bitácora.
+
+| Provincia | Altas | Fuente principal | Estado del doc |
+|---|---:|---|---|
+| Ourense | 67 | DO Ribeiro / Valdeorras / Monterrei / Ribeira Sacra | queda cola (ver doc) |
+| Córdoba | 47 | Montilla-Moriles + 4 DOP aceite + Pedroches | queda cola (ver doc) |
+| Lugo | 43 | DO Ribeira Sacra (26 + 17 micro-colleiteiros) + provincia | queda cola corta |
+| Teruel | 29 | DOP Jamón Teruel + Aceite Bajo Aragón + capital | queda cola |
+| S.C. Tenerife | 27 | 5 DO insulares + capital | queda cola grande |
+| Navarra | 26 | DO Navarra (registro INTIA) | queda cola sin web |
+| Jaén | 23 | DOP Sierra Mágina / Cazorla / Segura | queda cola sin web |
+| Huelva | 18 | DOP Jabugo + DO Condado | queda cola coops |
+| Zaragoza | 18 | DO Cariñena / Borja / Calatayud + Bajo Aragón | queda corte 2 Cariñena |
+| Valencia | 16 | DO Utiel-Requena + DOP Arroz de Valencia | queda cola sin web |
+| Toledo | 15 | DOP Montes de Toledo + Queso Manchego | queda cola coops |
+| A Coruña | 7 | DOP Tetilla/Arzúa-Ulloa + Festa do Queixo | ⚠ en curso otro agente |
+| Ciudad Real | 4 | DOP Montes de Toledo + Queso Manchego | queda 3 diferidas |
+| Soria | 4 | Ribera del Duero soriana | ✅ doc borrado |
+| Cuenca | 3 | DOP Queso Manchego (+7 correcciones) | ✅ doc borrado |
+| Albacete | 1 | DOP Queso Manchego | ✅ doc borrado |
+| Pontevedra | 1 | Festa do Queixo (Leite Ulla) | ✅ doc borrado |
+| **Total fase B** | **≈349** | | |
+
+Pasadas anteriores con doc en esta carpeta, también consolidadas:
+
+- **Tarragona — Rutes del Vi** (jun-2026): ~195 altas (Terra Alta 17, DO
+  Tarragona 10, Conca 18+1, Montsant 44, DOQ Priorat 106) — ✅ doc borrado,
+  histórico en git; verificación en `docs/verificacion/tarragona.md`.
+- **Lácteos y quesos 10 provincias** (2026-07-04): 27 altas en 8 provincias —
+  ✅ doc borrado (cerrada; residuales = 22 `parcial` upgradeables y 27 sin
+  imagen, ya anotados en la memoria de esa pasada).
+- **Madrid heladerías** (2026-07-03): 9 altas — doc vivo (`madrid.md`), quedan
+  10 pendientes de filtro estricto.
+- **do-huecos.md** (fase A, ledger de descubrimiento): ⚑ cerrada y traspasada
+  aquí el 2026-07-10 — ✅ doc borrado; los aprendizajes viven en el README.
+
+## Residuales heredados de docs borrados (2026-07-13)
+
+- **Cuenca** — posible alta aparte: **Lacto-Ganadera Río Mayor, S.L.** (marca
+  «Ciudad de Huete», <https://quesoshuete.com/>, tel. 969 371 041, tienda
+  online) si se confirma unidad productiva distinta de la S.A.T. Río Mayor de
+  Caracenilla (`lacto-ganadera-rio-mayor-quesos-la-ermita-huete`).
+- **Albacete** — `quesos-vega-sotuelamos-chinchilla-de-montearagon`: el CSV usa
+  `vegamancha.com`, el consejo publica `vegasotuelamos.com` (casi vacía);
+  confirmar cuál vive y si «Vega Mancha» es su marca. Además 2 filas DOP con
+  `Venta online=sí` sin canal (`don-eusebio`, `vega-sotuelamos`) → pasada
+  «completar verificados + VO».
+- **Soria** — 7 filas de `soria.csv` no aparecen en el registro DO Ribera
+  (¿otra razón social o Vinos de la Tierra?): `vinedos-y-bodegas-gormaz-*`,
+  `dominio-de-es-*`, `vino-taruguin-*`, `bodegas-senorio-de-aldea-*`,
+  `bodega-aranda-de-vries-ines`, `monte-pinos-almazan`, `pressumia-olvega`.
+  Revisión aparte, no urgente.
+- **Pontevedra** — 2 pistas de fase A sin resolver concello/web: *Embruxo
+  Pontevedra* (Aceite Embruxo) y *Rafael González Goyanes* (Chocolates Castelo
+  do Sobroso, probable Ponteareas). También listadas en el corte 2 de
+  `festa-do-queixo.md`.
+- **Tarragona** — 2 pendientes del histórico Rutes del Vi: **Mas de la Creu**
+  (Celler Vidbertus, real; municipio por fijar — l'Espluga vs Barberà de la
+  Conca, resolver vía `masdelacreu.com` antes de crear fila) y **Gason Expert**
+  (= Bodegas Totó Marqués, municipio/web no fiables). Dudoso encaje: *Unió
+  Fruits SCCL* (coop de fruta, dup-of `cellers-unio-reus`).
+- **Toledo** — las 3 queserías Manchego diferidas de `cuenca.md` se movieron a
+  `toledo.md` (sección propia).
 
 ## Flujo por lote (un lote = una provincia = un commit)
 
