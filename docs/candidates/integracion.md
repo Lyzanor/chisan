@@ -225,6 +225,19 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 10 — Huelva, DO Condado bodegas sin web (4 altas
+  parcial)**: bodegas familiares reales de Bollullos con vino embotellado,
+  confirmadas por el registro del consejo/Ruta del Vino pero sin web propia legible:
+  *Bodegas Acosta* (1922; dominio DNS caído), *Bodegas Villarán* (A. Villarán S.A.),
+  *José y Miguel Martín, S.L.*, *Bodegas Juncales* (1946). **Descartes**: *López
+  Cuesta*=Contreras Ruiz (ya en CSV); *Vitivinícola Manzanillera* diferida (granel/
+  mosto dominante); *Camacho*/*Escolar* no localizadas; ⚠ *Virgen de España*(Beas)=
+  Olibeas y *Santa María Salomé*(Bonares) son coops de **aceite**, no bodegas.
+  **Aprendizaje**: el Condado es región de granel/mosto → rendimiento bajo (mucho
+  descarte, altas finas). Gates verdes (las 2 warnings de calidad son filas
+  preexistentes). **Señal de agotamiento del pool**: a partir de aquí las colas
+  restantes (Navarra INTIA sin web, Ourense Monterrei solo-tel, coops granel) son
+  cada vez más finas.
 - 2026-07-13 — **Fase C, lote 9 — Jaén, DOP Sierra de Segura corte final (5 altas)**:
   2 `verificado` VO=sí (*Agrosegura*/Agrolea —tienda propia, la mayor coop de la
   comarca; *San Isidro de Siles*/El Puntal de Siles —tienda propia) + 3 `parcial`

@@ -111,23 +111,37 @@
 - [x] **Bodegas Rubio (Brandy Luis Felipe)** ‹→ bodegas-rubio-luis-felipe-la-palma-del-condado (parcial; brandy+vinagre DOP, categoría Licores)› — Bodega/brandy. La Palma del
   Condado. <https://www.brandyluisfelipe.com/>. ⚠ Marca de brandy; confirmar
   encaje (vino/vinagre DO además del brandy).
-- [x] **Bodegas A. Villarán, S.A.** ‹DIFERIDO: sin web ni marca de consumo confirmada; confirmar marca vs granel en 2ª pasada› — Bodega. Bollullos Par del Condado.
-  959 410 377. Sin web propia localizada; confirmar.
-- [x] **Bodegas López Cuesta, S.A.** ‹RECHAZADO: es la razón social de Bodegas Contreras Ruiz (ya en CSV); mismas marcas Édalo/Villa Barredero/Vallehondo, tel 959416426› — Bodega. Rociana del Condado. 959 416 426.
-  Desde 1949 (vinos Édalo, Villa Barredero, Vallehondo…). Sin web propia
-  localizada; confirmar.
-- [x] **Bodegas Camacho** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web localizada;
-  confirmar actividad/venta.
-- [x] **Bodegas Acosta** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web localizada;
-  confirmar actividad/venta.
-- [x] **Bodegas Juncales** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web localizada;
-  confirmar actividad/venta.
-- [x] **José y Miguel Martín, S.L.** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Bollullos Par del Condado. Sin web
-  localizada; confirmar actividad/venta.
-- [x] **Bodegas Escolar Hermanos, S.A.** ‹DIFERIDO: sin web; confirmar marca vs granel› — Bodega. Almonte. Sin web localizada;
-  confirmar actividad/venta.
-- [x] **Vitivinícola Manzanillera, S.C.A.** ‹DIFERIDO: coop sin web; confirmar marca de consumo vs granel/mosto› — Bodega. Manzanilla. Sin web
-  localizada; confirmar actividad/venta.
+> ✅ **Corte «bodegas del Condado sin web» triado en fase C (2026-07-13, lote 10)**:
+> **4 altas `parcial`** (bodegas familiares reales de Bollullos con vino
+> embotellado, confirmadas por el registro del consejo / Ruta del Vino, pero sin
+> web propia legible en vivo):
+
+- [x] **Bodegas A. Villarán, S.A.** → `bodegas-villaran-bollullos-par-del-condado`
+  (`parcial`). Bollullos, Calle San Vicente; bodega histórica de la familia Villarán.
+- [x] **Bodegas Acosta** → `bodegas-acosta-bollullos-par-del-condado` (`parcial`).
+  Bollullos, desde 1922 (3ª gen.); generosos, vermut, moscatel, amontillado. Su
+  dominio bodegasacosta.com no resuelve (DNS caído).
+- [x] **Bodegas Juncales** → `bodegas-juncales-bollullos-par-del-condado`
+  (`parcial`). Bollullos, desde 1946; pasó de granel a embotellado, generosos +
+  enoturismo.
+- [x] **José y Miguel Martín, S.L.** → `jose-y-miguel-martin-bollullos-par-del-condado`
+  (`parcial`). Bollullos, Pol. Ind. El Lirio; elaboración/crianza de vinos.
+
+> **Descartes/diferidos del corte (no crear fila):**
+> - [x] **Bodegas López Cuesta, S.A.** — RECHAZADO: razón social de Bodegas
+>   Contreras Ruiz (ya en CSV; marcas Édalo/Villa Barredero/Vallehondo, tel 959416426).
+> - [x] **Vitivinícola Manzanillera, S.C.A.** (Manzanilla) — **diferido**:
+>   cooperativa **mayoritariamente de granel y mosto** (embotella solo una parte,
+>   sin marca de consumo/web localizada) → regla dura de granel, no se crea.
+> - [x] **Bodegas Camacho** (Bollullos) y **Bodegas Escolar Hermanos, S.A.**
+>   (Almonte) — **diferidas**: no localizadas en registro/web en esta pasada;
+>   reabrir si aparece rastro.
+> - ⚠ **Las coops «del Condado» listadas abajo son en su mayoría de ACEITE o de
+>   granel/mosto**, no bodegas de vino embotellado: *Virgen de España* (Beas) =
+>   **Olibeas** (aceite), *Santa María Salomé* (Bonares) = aceite. Las demás
+>   (Estrella/Chucena, Guía/La Palma, Socorro/Rociana, Inmaculada/Trigueros, Santa
+>   Águeda/Villalba, Remedios/Villarrasa) → triar por marca de consumo propia antes
+>   de integrar; excluir si granel/mosto.
 
 > ⚠ **Descartes/dudas detectadas al enriquecer:**
 > - **Bodegas Clemente Neble, S.L.** (Bollullos): figura como **empresa
