@@ -225,6 +225,20 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 1 «último oro con web» (parte 1: Córdoba + Ourense)**:
+  4 altas. **Córdoba (3, aceite de Montoro — leads con tienda del lote 1.3d)**:
+  *Aceites Rosán* (`verificado`, VO=sí ecommerce — almazara familiar, tienda
+  operativa 3,20-4,70 €) · *Aceites Campolio* (`verificado`, VO=sí ecommerce —
+  Industria Aceitera de Montoro S.A./1973, pequeña 0-10 empl., tienda WooCommerce
+  por caja: entra por marca+tienda propias, no es gran grupo) · *Lagar de Quirós*
+  (`parcial`, VO=no comprobado — almazara de finca real, pero su web
+  `molinodequiros.es` tiene el **DNS caído** confirmado por curl → sin verificador
+  en vivo). **Ourense (1)**: *Queixería Gaia* (`verificado`, VO=sí ecommerce —
+  S. Coop. Galega de Xinzo de Limia, quesos de cabra desde 2020; resuelto que la
+  fila es el productor, no la comercializadora Ysabelle). Gates verdes (contrato
+  0/0, calidad 0/0, evidencia 0 issues). Falta la parte 2 del lote: Tenerife
+  (5 bodegas con web + DOP Islas Canarias ~9).
+
 - 2026-07-12 — **Lote 2.5d — Navarra, DO Navarra certificadas tras 2023 (2)**: 1
   alta (*Bodegas Olimpia*/Cáseda, `verificado` VO n/c — del grupo Vitilia pero
   bodega de terroir con nombre propio, regla de grupos de calidad). **1 excluida**:

@@ -244,10 +244,20 @@
 > Abad, Santiago Apóstol/Villanueva del Rey [la nota lo llamaba «San Rafael» y
 > «Santiago» por separado: es una sola coop en Villanueva del Rey que vende vía
 > DCOOP/Cordoliva], del Guadiato). **Leads net-new detectados con tienda** (fuera
-> de la lista original, para pasada futura): Aceites Rosán (`aceitesrosan.es`),
-> Aceite Campolio (`aceitecampolio.com`), Lagar de Quirós (`molinodequiros.es`).
-> Slugs: `cooperativa-olivarera-de-lucena`, `cooperativa-araceli-lucena`,
-> `cooperativa-la-union-de-montilla`, `olivarera-madre-del-sol-adamuz`.
+> de la lista original) — ✅ **integrados fase C, 2026-07-13** (los 3 de Montoro):
+> - **Aceites Rosán** → `aceites-rosan-montoro` (`verificado`, VO=sí ecommerce).
+>   Almazara familiar, Ctra. Madrid-Cádiz km 357; tienda operativa (3,20-4,70 €).
+> - **Aceites Campolio** → `aceites-campolio-montoro` (`verificado`, VO=sí
+>   ecommerce). Industria Aceitera de Montoro, S.A. (1973), marca Campolio,
+>   empresa pequeña (0-10 empl.); tienda WooCommerce por caja. Entra por marca y
+>   tienda propias, no es gran grupo de masa.
+> - **Lagar de Quirós** → `lagar-de-quiros-montoro` (`parcial`, VO=no comprobado).
+>   Lagar de Quirós, S.L. (2002), almazara de finca (~120 ha Picual/Arbequina),
+>   Ctra. N-420 km 52. ⚠ su web `molinodequiros.es` tiene el **DNS caído**
+>   (ENOTFOUND) → sin fuente verificadora en vivo, tope `parcial`.
+> Slugs de las coops del lote 1.3d: `cooperativa-olivarera-de-lucena`,
+> `cooperativa-araceli-lucena`, `cooperativa-la-union-de-montilla`,
+> `olivarera-madre-del-sol-adamuz`.
 
 - [ ] **Cooperativa Olivarera de Lucena S.C.A.** — Aceite. Lucena.
   <https://cooperativalucena.es/> · tienda <https://cooperativalucena.es/tienda/>.

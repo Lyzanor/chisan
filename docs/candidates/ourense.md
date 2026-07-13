@@ -411,10 +411,10 @@
 > (Celanova), Lácteos da Limia / «Galicia Gourmets» (Xinzo de Limia) y Mel Aialma
 > (Laza). Neto: **1**. Estado: **`unverified`**.
 
-- [ ] **Queixería Gaia** (Queixería Gaia S. Coop. Galega), marca **Gaia Gourmets**
-  — Lácteos y quesos. Xinzo de Limia. <https://gaiagourmets.com/>. Cooperativa
-  desde 2020; **quesos de cabra artesanos** (fresco, confitado, curado, añejo) y
-  quesos de vaca de tradición venezolana. Tiene packs/experiencias en tienda →
-  pista `Venta online=sí`. ⚠ «Gaia Gourmets» nace de la unión de la queixería con
-  la comercializadora *Ysabelle Gourmet* → confirmar que la fila es el productor,
-  no la comercializadora. Stand P4 de la feria.
+- [x] **Queixería Gaia** (Queixería Gaia S. Coop. Galega), marca **Gaia Gourmets**
+  — **accepted → `queixeria-gaia-xinzo-de-limia`** (`verificado`, `Venta online=sí`,
+  `ecommerce`) — fase C, 2026-07-13. Cooperativa quesera de Xinzo de Limia (CIF
+  F32506479, Rúa Dous de Maio 43) activa desde 2020; quesos de cabra artesanos.
+  Tienda propia con carrito/checkout (`gaiagourmets.com`). ⚠ resuelto: **la fila
+  es el productor** (la queixería S. Coop. Galega), no la comercializadora
+  Ysabelle Gourmet (que solo es la marca/tienda paraguas).
