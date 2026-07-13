@@ -225,6 +225,18 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 7 — Toledo, coops aceite DOP Montes de Toledo «sin
+  web» (7 altas)**: **3 verificado** — *San Sebastián de Belvís* (VO=sí ecommerce,
+  tienda propia) · *San Sebastián de El Romeral* (VO=sí ecommerce, marca Sierra de
+  El Romeral) · *Jaramontes/Sierranava* (web viva, VO=nc, tienda en dominio aparte).
+  **4 parcial** (solo registro del consejo): *San Sebastián de Pusa* (Santa Ana de
+  Pusa) · *Oleícola Montes de Toledo* (Mazarambroz) · *Olivar del Cristo*
+  (Villamuelas) · *Antigua de Los Navalmorales* (⚠ homónima distinta de la Antigua
+  de Mora ya en CSV; **Olimora es de la de Mora**, no de esta). Aprendizaje: la
+  etiqueta «sin web» de fase A estaba incompleta — 3 de 7 sí tenían web/tienda al
+  buscarlas. Las 3 queserías Manchego toledanas siguen diferidas (necesitan releer
+  `categories` del registro, estructura cambiada). Gates verdes (contrato 0/0,
+  calidad 0 warnings, evidencia 0 issues).
 - 2026-07-13 — **Fase C, lote 6 — Valencia, DO Utiel-Requena cola «sin web» + corte 2
   (7 altas)**: **4 verificado** — *Sentencia* (Los Pedrones, VO=sí ecommerce con
   checkout confirmado) · *Mitos* (El Azagador, web viva, confirma actividad que el

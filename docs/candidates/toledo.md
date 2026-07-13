@@ -60,6 +60,34 @@
   de Mora» (ya en CSV, distinto municipio) → verificar si es operador propio
   (marca «Aceites Toledo»/«Óleum») o brazo comercial de aquella cooperativa.
 
+### ✅ Corte «coops sin web» integrado en fase C (2026-07-13, lote 7) — 7 altas
+
+Las 7 cooperativas certificadas por la DOP que quedaban `[ ]` arriba, integradas.
+Varias sí tenían web propia (la nota «sin web» era incompleta):
+
+- **Coop. San Sebastián de Belvís** (Belvís de la Jara) →
+  `cooperativa-san-sebastian-de-belvis-belvis-de-la-jara` (`verificado`, **VO=sí**
+  ecommerce — web `sansebastiandebelvis.es` con tienda operativa).
+- **Coop. San Sebastián de El Romeral** (El Romeral) →
+  `cooperativa-san-sebastian-el-romeral` (`verificado`, **VO=sí** ecommerce —
+  marca Sierra de El Romeral, tienda `aceitessierradeelromeral.com`; también vino).
+- **Cooperativa Jaramontes** (La Nava de Ricomalillo) →
+  `cooperativa-jaramontes-sierranava-la-nava-de-ricomalillo` (`verificado`, VO=nc —
+  marca Sierranava, web `jaramontes.com`; tienda en dominio aparte no verificado).
+- **Coop. San Sebastián de Pusa** (Santa Ana de Pusa) →
+  `cooperativa-san-sebastian-de-pusa-santa-ana-de-pusa` (`parcial` — solo registro;
+  posible web de marca sin confirmar titularidad).
+- **Cooperativa Oleícola Montes de Toledo** (Mazarambroz) →
+  `cooperativa-oleicola-montes-de-toledo-mazarambroz` (`parcial` — solo registro,
+  contacto movistar).
+- **Cooperativa Olivar del Cristo** (Villamuelas) →
+  `cooperativa-olivar-del-cristo-villamuelas` (`parcial` — marca propia Olivar del
+  Cristo, sin web).
+- **Coop. Ntra. Sra. de la Antigua de Los Navalmorales** →
+  `cooperativa-ntra-sra-de-la-antigua-los-navalmorales` (`parcial`). ⚠ **Homónima
+  distinta** de la Antigua de Mora (ya en CSV, marca **Olimora**, web
+  `cooperativalaantigua.com`): Olimora es de la de Mora, no de esta.
+
 ## DOP Queso Manchego — queserías toledanas diferidas (heredado de `cuenca.md`, borrado 2026-07-13)
 
 > El lote 3.1b (2026-07-12) integró las 4 queserías toledanas con web (El
