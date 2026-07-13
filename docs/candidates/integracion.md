@@ -225,6 +225,16 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 12 — Ourense, DO Monterrei resto (8 altas)**: 3
+  `verificado` con web propia (*Quinta Soutullo*/Oímbra, *Vinos Lara*/Verín-Cabreiróa,
+  *Serra de Alén*/Verín-Feces de Abaixo) + 5 `parcial` (*Terra de Godello* —cert.
+  2025—, *Madrevella*/Tamagos, *Couto Mixto* —Xico de Mandín, Parker—, *Ramón
+  Bigotes* —2023—, *Valderello*/Monterrei; solo registro del consejo). Municipios
+  resueltos: casi todos parroquias de **Verín** (Cabreiróa, Feces de Abaixo,
+  Tamagos, Mandín, Mourazos); Oímbra para Quinta Soutullo/Terra de Godello;
+  Monterrei para Valderello. **Diferidas**: Daniel Fernández, Abeledos, Manuel
+  Vázquez Losada (sin rastro); Minius (marca de Valmiñor); Tapias Mariñán (posible
+  dup con Pazo das Tapias). Gates verdes 0/0. Con esto **Monterrei queda cerrada**.
 - 2026-07-13 — **Fase C, lote 11 — Navarra, DO Navarra «sin web INTIA» (6 altas,
   TODAS verificado)** — desmiente la señal de agotamiento del lote 10: la etiqueta
   «sin web» del registro INTIA vuelve a ser falsa, las 6 tienen web propia:

@@ -377,6 +377,27 @@
 
 ### DO Monterrei — resto (13)
 
+> ✅ **8 integradas en fase C (2026-07-13, lote 12)** — otra vez la etiqueta
+> «solo-teléfono/web a confirmar» era incompleta:
+> - **Quinta Soutullo** (Oímbra) → `quinta-soutullo-oimbra` (`verificado`, web
+>   quintasoutullo.com; marcas Quinta Soutullo/Pontón).
+> - **Vinos Lara** (Verín/Cabreiróa) → `vinos-lara-verin` (`verificado`, web
+>   vinoslara.com; Lara Godello/Mencía, Terra Tamagani).
+> - **Serra de Alén** (Verín/Feces de Abaixo) → `adega-serra-de-alen-verin`
+>   (`verificado`, web serradealen.es).
+> - **Terra de Godello** (Oímbra/O Rosal) → `terra-de-godello-oimbra` (`parcial`;
+>   certificada por la DO en 2025).
+> - **Madrevella** (Verín/Tamagos) → `adega-madrevella-verin` (`parcial`).
+> - **Couto Mixto** (Verín/Mandín) → `bodega-couto-mixto-verin` (`parcial`; Xico de
+>   Mandín, 2006, muy puntuada por Parker, sin web propia).
+> - **Ramón Bigotes** (Verín/Mourazos) → `adega-ramon-bigotes-verin` (`parcial`; 2023).
+> - **Valderello** (Monterrei) → `adega-valderello-monterrei` (`parcial`).
+>
+> **Diferidas del corte:** *Daniel Fernández*, *Abeledos*, *Manuel Vázquez Losada*
+> (colleiteiros sin web ni rastro suficiente); *Minius* (⚠ marca de Adegas
+> Valmiñor, grupo Rías Baixas → confirmar entidad); *Tapias Mariñán* (⚠ posible
+> relación con Pazo das Tapias/marcas «Tapias» → cuidar duplicado).
+
 - [ ] **Abeledos** — Bodega. Comarca de Monterrei (concello a confirmar).
   · 616 571 938. Web propia a confirmar.
 - [ ] **Couto Mixto** — Bodega. Comarca de Monterrei. · 636 762 200. Web propia a
