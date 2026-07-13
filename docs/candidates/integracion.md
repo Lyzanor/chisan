@@ -225,6 +225,21 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 1 «último oro con web» (parte 2: Tenerife)**: 14
+  altas (**6 verificado, 3 con VO=sí ecommerce; 8 parcial**). **5 de DO
+  Tacoronte-Acentejo/Abona**: Hacienda de Acentejo (verif) y La Baldesa (verif,
+  desde 1959) con web legible; Riaba, Finca Vegas y Tierras de Aponte `parcial`
+  (webs JS/en construcción). **Correcciones de municipio**: Riaba = La Victoria de
+  Acentejo (no Tacoronte); *Risco de las Vegas* = razón social **extinguida**, hoy
+  **Finca Vegas** en **Granadilla de Abona** (no Arona). **9 de DOP Islas
+  Canarias**: **Bodegas Ferrera** (Arafo, eco+cerveza, VO=sí) y **Piedra Fluida**
+  (La Orotava, viñedo más alto de Europa, VO=sí) con tienda operativa; Pago de los
+  Cercados, Finca El Ancón (⚠ homónimo con la quesería El Ancón de Tacoronte →
+  slug `bodega-finca-el-ancon-la-orotava`), Alejandro Gallo & Quíquere y Atrevino
+  `verificado` sin tienda; Tabares4 (tel +32, perfil négociant), Vinos 1861 y
+  Mataznos 33 (sin web propia) `parcial`. Gates verdes (contrato 0/0, evidencia 0
+  issues; la única warning de calidad es una fila preexistente de La Palma).
+  **Fin del lote 1** (18 altas totales: 4 en 1a + 14 aquí).
 - 2026-07-13 — **Fase C, lote 1 «último oro con web» (parte 1: Córdoba + Ourense)**:
   4 altas. **Córdoba (3, aceite de Montoro — leads con tienda del lote 1.3d)**:
   *Aceites Rosán* (`verificado`, VO=sí ecommerce — almazara familiar, tienda

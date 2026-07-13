@@ -189,11 +189,20 @@
 
 ### Cortes siguientes — 53 bodegas restantes (datos ya capturados)
 
-> **Con web propia, diferidas por tope de lote (5):** *Hacienda de Acentejo* (La
-> Victoria de Acentejo, `haciendadeacentejo.com`) · *La Baldesa* (El Sauzal,
-> `baldesa.com`) · *Riaba* (Tacoronte ⚠ confirmar municipio, `riaba.es`) · *Risco
-> de las Vegas* (Arona, `fincavegas.com`) · *Tierras de Aponte* (Adeje,
-> `tierrasdeaponte.com`).
+> **Con web propia (5)** — ✅ **integradas fase C, 2026-07-13**:
+> - *Hacienda de Acentejo* → `hacienda-de-acentejo-la-victoria-de-acentejo`
+>   (`verificado`, VO=nc). La Victoria de Acentejo, DO Tacoronte-Acentejo.
+> - *La Baldesa* → `bodega-la-baldesa-el-sauzal` (`verificado`, VO=nc). El Sauzal,
+>   viticultores elaboradores desde 1959.
+> - *Riaba* → `bodega-riaba-la-victoria-de-acentejo` (`parcial`, VO=nc).
+>   ⚠ **municipio resuelto: La Victoria de Acentejo** (no Tacoronte); web JS no
+>   legible → parcial.
+> - *Risco de las Vegas* → `bodega-finca-vegas-granadilla-de-abona` (`parcial`,
+>   VO=nc). ⚠ **municipio corregido: Granadilla de Abona** (no Arona; la razón
+>   social «Risco de las Vegas SL» está **extinguida**, hoy marca **Finca Vegas**,
+>   DO Abona); web en construcción → parcial.
+> - *Tierras de Aponte* → `bodega-tierras-de-aponte-adeje` (`parcial`, VO=nc).
+>   Taucho (Adeje), DO Abona; web JS no legible → parcial.
 >
 > **Sin web propia en el registro (45)** — nombre · municipio · teléfono:
 >
@@ -249,15 +258,20 @@
     sola bodega inscrita en dos DO.
   Y un cuarto que **sí** es alta pese a parecer alias: *Jottocar, S.L.* = **Bodega
   Mencey Chasna** (no está en el CSV).
-- **Pista: existe una sexta DO, `DOP Islas Canarias`** (regional), con bodegas
-  tinerfeñas que **no están en las 5 insulares ni en el CSV**: Bodega Ferrera
-  (Arafo, `bodegasferrera.com`) · Piedra Fluida (La Orotava,
-  `bodegapiedrafluida.com`) · Pago de los Cercados (Santa Úrsula,
-  `pagodeloscercados.com`) · Finca El Ancón (La Orotava, `fincaelancon.com`) ·
-  Tabares 4 (`tabares4.wine`) · Alejandro Gallo & Quíquere Wines
-  (`alejandrogallowines.com`) · Ricardo Gutiérrez de Salamanca (`vinos1861.com`) ·
-  Natan Afonso / Mataznos 33 · Atrevino. Fuente:
-  `vinosdetenerife.es/d-o-p-islas-canarias`. Merece corte propio.
+- **Sexta DO, `DOP Islas Canarias`** (regional) — ✅ **corte integrado fase C,
+  2026-07-13** (9 altas): *Bodegas Ferrera* → `bodegas-ferrera-arafo` (verif,
+  **VO=sí** ecommerce, eco+cerveza Maruca) · *Piedra Fluida* →
+  `bodega-piedra-fluida-la-orotava` (verif, **VO=sí** ecommerce, viñedo Frontones
+  1.687 m) · *Pago de los Cercados* → `pago-de-los-cercados-santa-ursula` (verif,
+  VO=nc) · *Finca El Ancón* → `bodega-finca-el-ancon-la-orotava` (verif, VO=nc;
+  ⚠ homónimo distinto de `queseria-el-ancon-tacoronte`) · *Tabares 4* →
+  `bodega-tabares4-la-matanza-de-acentejo` (parcial — tel +32, perfil négociant) ·
+  *Alejandro Gallo & Quíquere* → `alejandro-gallo-quiquere-wines-el-sauzal`
+  (verif, VO=nc) · *Ricardo Gutiérrez de Salamanca / Vinos 1861* →
+  `vinos-1861-san-cristobal-de-la-laguna` (parcial) · *Natan Afonso / Mataznos 33*
+  → `bodega-mataznos-33-los-realejos` (parcial, sin web propia) · *Atrevino* →
+  `bodegas-atrevino-la-matanza-de-acentejo` (verif, VO=nc). Fuente:
+  `vinosdetenerife.es/d-o-p-islas-canarias`.
 
 ### Método (los dominios de la worklist estaban mal)
 
