@@ -176,11 +176,24 @@
 >   (VO=nc; web aceitedegenave.es). ⚠ ≠ Sierra de Génave (Oro de Génave) ni la
 >   Virgen del Campo de Torres de Albanchez (Chorro de Oro), ambas ya integradas.
 >
-> **Resto de Segura (siguiente corte — datos ya capturados):**
-> «S.C.A San Bartolomé» (Villarrodrigo, 953 484 158; tag solo «Almazaras»,
-> confirmar marca propia), «S.C.A Ntra. Sra. de los Milagros» (municipio a
-> confirmar), «S.C.A. Ntra. Sra. De la Asunción» (municipio a confirmar),
-> «S.C.A Ntra. Sra. de Nazaret» (Chiclana de Segura, 953 466 016).
+> ✅ **Corte final de Segura integrado en fase C (2026-07-13, lote 9) — 5 altas**
+> (2 `verificado` VO=sí + 3 `parcial`):
+> - **Agrosegura Aceites** (La Puerta de Segura) → `cooperativa-agrosegura-la-puerta-de-segura`
+>   (`verificado`, VO=sí; marca Agrolea, la mayor coop de la comarca, tienda propia).
+>   ⚠ **absorbió a «Ntra. Sra. de la Asunción»** (fusión Agrolea/Asunción/El Molinete)
+>   → la Asunción NO va como fila aparte.
+> - **S.C.A. San Isidro de Siles** → `cooperativa-san-isidro-el-puntal-de-siles-siles`
+>   (`verificado`, VO=sí; marca El Puntal de Siles, única almazara del pueblo).
+> - **S.C.A. San Isidro Labrador (Benatae)** → `cooperativa-san-isidro-labrador-benatae`
+>   (`parcial`; sin web propia confirmada). ⚠ ≠ San Isidro de Huelma/Siles.
+> - **S.C.A. San Juan Bautista (Puente de Génave)** →
+>   `cooperativa-san-juan-bautista-puente-de-genave` (`parcial`; Peñolite).
+> - **S.C.A. San Bartolomé (Villarrodrigo)** → `cooperativa-san-bartolome-villarrodrigo`
+>   (`parcial`).
+>
+> **Siguen pendientes (baja prioridad, sin verificar):** «S.C.A Ntra. Sra. de los
+> Milagros» (municipio a confirmar), «S.C.A Ntra. Sra. de Nazaret» (Chiclana de
+> Segura, 953 466 016), «S.C.A. Gutamarta» (Cortijos Nuevos, Segura de la Sierra).
 >
 > ⚠ **Excluido (gran grupo):** «Jaencoop Grupo Cooperativo» (Puente de Génave) es
 > el mayor grupo cooperativo aceitero de la provincia (2º grado); regla dura de

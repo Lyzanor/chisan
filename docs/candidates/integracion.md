@@ -225,6 +225,16 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 9 — Jaén, DOP Sierra de Segura corte final (5 altas)**:
+  2 `verificado` VO=sí (*Agrosegura*/Agrolea —tienda propia, la mayor coop de la
+  comarca; *San Isidro de Siles*/El Puntal de Siles —tienda propia) + 3 `parcial`
+  (*San Isidro Labrador*/Benatae, *San Juan Bautista*/Puente de Génave, *San
+  Bartolomé*/Villarrodrigo —solo registro). ⚠ **Dedup evitado**: la coop «Ntra.
+  Sra. de la Asunción» está **absorbida en Agrosegura** (fusión de 1998) → no se
+  crea fila. **Sierra de Segura queda esencialmente cerrada** (lotes 8+9 = 13
+  altas); residuales sin verificar: Milagros, Nazaret/Chiclana, Gutamarta.
+  Homónimos «San Isidro» resueltos por municipio (Benatae/Siles ≠ Huelma). Gates
+  verdes.
 - 2026-07-13 — **Fase C, lote 8 — Jaén, DOP Sierra de Segura «resto sin web» (8
   altas, TODAS verificado)** — lote de alto rendimiento inesperado: **5 con VO=sí
   ecommerce** (Oleofer/Tierras de Tavara, San Juan de la Cruz/Orobeas, San Marcos/
