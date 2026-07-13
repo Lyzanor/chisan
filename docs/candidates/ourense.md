@@ -198,7 +198,17 @@
 > - **Adega do Cesteiro** (Toén/Puga) → `adega-do-cesteiro-toen` (`parcial`).
 > - **Adegas Cenlle** (Cenlle) → `adegas-cenlle-cenlle` (`parcial`).
 >
-> **Corte 3 (resto ~27, sin dominio propio en la ficha — solo enlace genérico
+> ✅ **Corte 3 — 2º lote (2026-07-13, lote 14): 7 altas más** (5 con web, 1 con
+> tienda): *Adegas do Rexurdir* (Cenlle, `adegas-do-rexurdir-cenlle`, verif) ·
+> *Xulia Bande/Son de Arrieiro* (Leiro, `xulia-bande-son-de-arrieiro-leiro`, verif) ·
+> *Agás do Tempo* (Ribadavia, `adegas-agas-do-tempo-ribadavia`, verif **VO=sí**) ·
+> *Fernando Cibeira* (Beade, `adega-fernando-cibeira-beade`, verif) · *Bodegas
+> Gómez Sanmartín/Bodegosa* (Castrelo de Miño, `bodegas-gomez-sanmartin-castrelo-de-mino`,
+> verif) · *Viña Carpazal* (Cenlle, `adega-vina-carpazal-cenlle`, parcial) ·
+> *Emilio Docampo Diéguez* (Ribadavia, `emilio-docampo-dieguez-ribadavia`, parcial;
+> ⚠ distinto de Bodegas Docampo S.A. ya en CSV).
+
+> **Corte 3 (resto ~20, sin dominio propio en la ficha — solo enlace genérico
 > `wineinmoderation.eu`):** colleiteiros pequeños del mismo directorio, p. ej.
 > Adega As Pegas, Adega do Cesteiro, Adega do Veleiro, Adega Viña Carpazal,
 > Adegas Cenlle, Adegas do Rexurdir, Adegas Laudes, Ameijeiras Vázquez,

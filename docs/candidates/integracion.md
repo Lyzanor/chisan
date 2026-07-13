@@ -225,6 +225,13 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 14 — Ourense, DO Ribeiro corte 3 (2º lote, 7 altas)**:
+  5 `verificado` con web (*Adegas do Rexurdir*/Cenlle, *Xulia Bande-Son de Arrieiro*/
+  Leiro, *Agás do Tempo*/Ribadavia —tienda, VO=sí—, *Fernando Cibeira*/Beade,
+  *Bodegas Gómez Sanmartín-Bodegosa*/Castrelo de Miño) + 2 `parcial` (*Viña
+  Carpazal*/Cenlle, *Emilio Docampo Diéguez*/Ribadavia —⚠ distinto de Bodegas
+  Docampo S.A. ya en CSV—). Corte 3 acumula 14 altas (lotes 13+14); ~20
+  colleiteiros por triar. Gates verdes 0/0.
 - 2026-07-13 — **Fase C, lote 13 — Ourense, DO Ribeiro corte 3 (7 altas)**: 3
   `verificado` (*Adegas Laudes*/Cenlle-Esposende —web—; *Casal do Canteiro*/Castrelo
   de Miño —web+tienda VO=sí—; *Adega César García*/Ribadavia-Ventosela —1930,
