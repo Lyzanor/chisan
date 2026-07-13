@@ -142,18 +142,24 @@
 | Bodegas Malón de Echaide | Bodega Ntra. Sra. del Romero, S. Coop. | Cascante |
 | Bodega Eslava | Bodega Coop. San Miguel (mismo tel. 948 733 185) | Eslava |
 
-### Correcciones a filas existentes de `navarra.csv` (no tocadas en esta pasada)
+### Correcciones a filas existentes de `navarra.csv`
 
-- `mendiko-aibar-oibar` — está como **Aceite**, pero *Bodega Mendiko, S.L.* (Aibar,
-  `bodegamendiko.com`) es **bodega certificada de la DO Navarra**. Doble faceta:
-  decidir categoría o segunda fila.
-- `bodega-otazu-otazu` — INTIA sitúa la bodega en **Echauri** (Otazu es concejo de
-  Etxauri). Revisar `municipio` y lat/lon.
+- ✅ **`mendiko-aibar-oibar`** — corregido fase C 2026-07-13: era **Aceite**, pero
+  Bodega Mendiko (Familia Ibero-Azkárate, Aibar) es **bodega ecológica de vino**
+  (garnacha/cabernet) que también hace aceite → categoría a **«Aceite y vino»**,
+  descripción reescrita, **sube a `verificado`** (web propia leída en vivo).
+  VO=no comprobado (venta por contacto/cooperativas, sin checkout).
+- ✅ **`bodega-otazu-otazu`** — corregido fase C 2026-07-13: municipio **Otazu →
+  Etxauri** (Otazu es concejo de Etxauri; dirección Plaza Señorío de Otazu s/n,
+  31174 Etxauri; D.O.P. Pago de Otazu). Coords validan a ~1 km del centroide de
+  Etxauri. Se mantiene `verificado`, VO=sí.
+- ✅ **`bodegas-lezaun-lacar-lakar`** — corregido fase C 2026-07-13: municipio
+  **«Lácar / Lakar» → Yerri** (Lácar es concejo del valle de Yerri/Deierri).
+  Coords validan a ~6 km del centroide de Yerri. Se mantiene `verificado`, VO=sí.
 - Razones sociales útiles para verificación: `bodegas-maximo-abete-san-martin-de-unx`
   = **Guerinda 2010, S.L.** · `bodega-de-sada-sada` = **Bodega San Francisco
   Javier, Sdad. Coop.** · `bodega-nekeas-anorbe` = **Sociedad Coop. Nequeas** ·
   `bodega-senorio-de-sarria-puente-la-reina` = **Bodega de Sarría, S.A.**
-- `bodegas-lezaun-lacar-lakar` — INTIA lo escribe «Lacar (Yerri)»; confirmar grafía.
 
 ### Método
 

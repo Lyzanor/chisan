@@ -225,6 +225,18 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 2 — correcciones a filas existentes (Navarra, 3)**:
+  no son altas, son fixes de las señaladas por la pasada INTIA. *Bodega Mendiko*
+  (`mendiko-aibar-oibar`): categoría **Aceite → «Aceite y vino»** (es bodega
+  ecológica de vino que también hace aceite, confirmado por su web en vivo), sube a
+  **verificado**. *Bodega Otazu* (`bodega-otazu-otazu`): municipio **Otazu →
+  Etxauri** (concejo de Etxauri; D.O.P. Pago de Otazu; coords a ~1 km del centroide).
+  *Bodegas Lezaun* (`bodegas-lezaun-lacar-lakar`): municipio **«Lácar / Lakar» →
+  Yerri** (Lácar es concejo del valle de Yerri; coords a ~6 km del centroide).
+  Slugs sin cambiar (sin merges/renombres). Evidencia actualizada (3 keep). Gates
+  verdes (contrato 0/0, calidad 0/0, evidencia 0 issues). Pendientes similares en
+  otras provincias: Ourense `pazo-das-tapias-monterrei` (web propia), Lugo
+  `torre-de-nunez-o-corgo` (municipio Conturiz/Lugo + VO).
 - 2026-07-13 — **Fase C, lote 1 «último oro con web» (parte 2: Tenerife)**: 14
   altas (**6 verificado, 3 con VO=sí ecommerce; 8 parcial**). **5 de DO
   Tacoronte-Acentejo/Abona**: Hacienda de Acentejo (verif) y La Baldesa (verif,
