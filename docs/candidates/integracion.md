@@ -225,6 +225,18 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 8 — Jaén, DOP Sierra de Segura «resto sin web» (8
+  altas, TODAS verificado)** — lote de alto rendimiento inesperado: **5 con VO=sí
+  ecommerce** (Oleofer/Tierras de Tavara, San Juan de la Cruz/Orobeas, San Marcos/
+  Natao, Santa Teresa/Aceibes, San Francisco/Arroyo del Ojanco) + **3 VO=nc**
+  (El Carrascal S.A., La Vicaría, Virgen del Campo/Génave). **Aprendizaje clave**:
+  la etiqueta «sin web/solo-teléfono» de fase A era falsa — casi todas tienen marca
+  y tienda propias; **ser socia de Olivar de Segura (2º grado) NO impide la venta
+  directa con marca propia** (revisar el supuesto de maquila 1-a-1, no excluir en
+  bloque). Homónimos resueltos por municipio: San Marcos Beas≠Torres; San Francisco
+  Arroyo≠Begíjar/Mancha Real; La Vicaría almazara≠quesería; Virgen del Campo Génave≠
+  Sierra de Génave≠Chorro de Oro/Torres. Validadas 2 tiendas en vivo (Aceibes, Natao)
+  → patrón confirmado. Gates verdes (la 1 warning de calidad es fila preexistente).
 - 2026-07-13 — **Fase C, lote 7 — Toledo, coops aceite DOP Montes de Toledo «sin
   web» (7 altas)**: **3 verificado** — *San Sebastián de Belvís* (VO=sí ecommerce,
   tienda propia) · *San Sebastián de El Romeral* (VO=sí ecommerce, marca Sierra de

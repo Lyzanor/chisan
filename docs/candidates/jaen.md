@@ -152,6 +152,30 @@
 - [x] **The Green Gold Olive Oil Company** ‹→ the-green-gold-oh-hornos-de-segura (verificado, VO sí)› — Aceite (premium). Hornos de Segura.
   Marca «Oh!». <https://ggoliveoilcompany.com/>.
 
+> ✅ **Corte «resto de Segura con web» integrado en fase C (2026-07-13, lote 8) —
+> 8 altas, todas `verificado`.** Aprendizaje: la etiqueta «sin web / solo-teléfono»
+> de fase A era **errónea** — casi todas estas coops/S.L. tienen **marca propia y
+> tienda online**, y ser socia de Olivar de Segura (2º grado) **no** impide la
+> venta directa con marca propia:
+>
+> - **Oleofer S.L.** (La Puerta de Segura) → `oleofer-tierras-de-tavara-la-puerta-de-segura`
+>   (VO=sí; marca Tierras de Tavara, oleoturismo).
+> - **S.C.A. San Juan de la Cruz** (Beas) → `cooperativa-san-juan-de-la-cruz-orobeas-beas-de-segura`
+>   (VO=sí; marcas Orobeas/Saqura, tienda sin intermediarios).
+> - **S.C.A. San Marcos** (Beas) → `cooperativa-san-marcos-natao-beas-de-segura`
+>   (VO=sí; marca Natao, tienda leída en vivo). ⚠ ≠ San Marcos de Torres (Mágina).
+> - **S.C.A. Santa Teresa de Jesús** (Beas) → `cooperativa-santa-teresa-de-jesus-aceibes-beas-de-segura`
+>   (VO=sí; marca Aceibes, tienda WooCommerce leída en vivo).
+> - **S.C.A. San Francisco** (Arroyo del Ojanco) → `cooperativa-san-francisco-arroyo-del-ojanco`
+>   (VO=sí; tienda propia). ⚠ ≠ Oleícola San Francisco (Begíjar) ni la de Mancha Real.
+> - **Aceites El Carrascal S.A.** (Torres de Albanchez) →
+>   `aceites-el-carrascal-torres-de-albanchez` (VO=nc; web propia, premio Reino de Jaén).
+> - **S.C.A. La Vicaría** (Puente de Génave) → `cooperativa-la-vicaria-puente-de-genave`
+>   (VO=nc; web propia). ⚠ ≠ Quesería Cortijo La Vicaría del mismo pueblo.
+> - **S.C.A. Virgen del Campo** (Génave) → `cooperativa-virgen-del-campo-genave`
+>   (VO=nc; web aceitedegenave.es). ⚠ ≠ Sierra de Génave (Oro de Génave) ni la
+>   Virgen del Campo de Torres de Albanchez (Chorro de Oro), ambas ya integradas.
+>
 > **Resto de Segura (siguiente corte — datos ya capturados):**
 > «S.C.A San Bartolomé» (Villarrodrigo, 953 484 158; tag solo «Almazaras»,
 > confirmar marca propia), «S.C.A Ntra. Sra. de los Milagros» (municipio a
