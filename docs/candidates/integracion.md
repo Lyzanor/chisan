@@ -225,6 +225,17 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 11 — Navarra, DO Navarra «sin web INTIA» (6 altas,
+  TODAS verificado)** — desmiente la señal de agotamiento del lote 10: la etiqueta
+  «sin web» del registro INTIA vuelve a ser falsa, las 6 tienen web propia:
+  *Navarrsotillo* (Andosilla, biodinámico Demeter, leída en vivo) · *Anton Agirre/
+  Ubeta* (Ablitas, garnacha eco) · *Coduvina/Dominio de Milagro* (Milagro, 150 ha) ·
+  *Bodegas Aguirre* (Falces, años 30) · *Viña Palacios* (Olite) · *Monasterio de la
+  Oliva* (Carcastillo, cisterciense). Todas VO=nc (ninguna con carrito propio
+  confirmado). **Diferida**: *Raúl Pérez Cía. de Vinos* (San Martín de Unx) — web
+  en obras, identidad de producción navarra vs registro fiscal del enólogo del
+  Bierzo sin aclarar. Quedan las coops sin web (Artajona, Ángel de la Guarda,
+  San Cristóbal, Iturgaiz, San Miguel=alias Eslava). Gates verdes 0/0.
 - 2026-07-13 — **Fase C, lote 10 — Huelva, DO Condado bodegas sin web (4 altas
   parcial)**: bodegas familiares reales de Bollullos con vino embotellado,
   confirmadas por el registro del consejo/Ruta del Vino pero sin web propia legible:

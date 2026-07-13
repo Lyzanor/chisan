@@ -114,14 +114,28 @@
 > *Hacienda y Viñedos Marqués del Atrio* (Mendavia) · *Bodegas Caudalia*
 > (**Nájera, La Rioja** → fuera de provincia, excluir).
 >
-> **Sin web en el registro (17)** — nombre · municipio · teléfono: Anton Agirre
-> (Ablitas) · Navarrsotillo (Andosilla) · Cooperativa Agrícola de Artajona
-> (948 364 841) · Bodega Coop. Ángel de la Guarda (Berbinzana, 617 519 027) ·
-> Bodega Monasterio de la Oliva (Carcastillo) · Bodega San Cristóbal, Sdad. Coop.
-> (Cirauqui) · Pedro Iturgaiz Lacunza (Cirauqui) · Bodega Coop. San Miguel
-> (Eslava, 948 733 185) · Bodegas Aguirre (Falces, 948 734 155) · Coduvina
-> (Milagro, 948 861 219) · Viña Palacios (Olite) · Raúl Pérez Compañía de Vinos
-> (San Martín de Unx; proyecto del enólogo del Bierzo).
+> **Sin web en el registro (17)** — ✅ **6 integradas en fase C (2026-07-13, lote
+> 11), todas `verificado`** (la etiqueta «sin web» de INTIA era errónea: todas
+> tienen web propia al buscarlas):
+> - **Anton Agirre** (Ablitas) → `bodega-ubeta-anton-agirre-ablitas` (web
+>   ubetawines.com, garnacha eco).
+> - **Navarrsotillo** (Andosilla) → `bodegas-navarrsotillo-andosilla` (biodinámico
+>   Demeter, web leída en vivo).
+> - **Bodega Monasterio de la Oliva** (Carcastillo) →
+>   `bodega-monasterio-de-la-oliva-carcastillo` (monasterio cisterciense, garnacha eco).
+> - **Bodegas Aguirre** (Falces) → `bodegas-aguirre-falces` (web bodegasaguirre.es).
+> - **Coduvina** (Milagro) → `bodega-dominio-de-milagro-coduvina-milagro` (proyecto
+>   Dominio de Milagro, 150 ha, web dominiodemilagro.es).
+> - **Viña Palacios** (Olite) → `vina-palacios-olite` (David Palacios/Izaskun Oria,
+>   garnacha, web vinapalacios.es).
+>
+> **Pendientes del corte (coops sin web + murky, baja prioridad):** Cooperativa
+> Agrícola de Artajona · Coop. Ángel de la Guarda (Berbinzana) · Bodega San
+> Cristóbal (Cirauqui) · Pedro Iturgaiz Lacunza (Cirauqui) · Coop. San Miguel
+> (Eslava, = Bodega Eslava, alias ya anotado) · **Raúl Pérez Compañía de Vinos**
+> (San Martín de Unx) → **diferida**: su web raulperez.com está en obras y la
+> identidad como bodega de producción navarra (vs registro fiscal del enólogo del
+> Bierzo) no está clara; participa en la marca colectiva «El Vino de los Aromas».
 >
 > **Certificadas después del 31/12/2023** (están en la web del consejo pero no en el
 > PDF de INTIA): *Bodegas Olimpia* (Cáseda, `bodegasolimpia.com`) ‹→ bodegas-olimpia-caseda (verificado, VO n/c; grupo Vitilia pero terroir con nombre propio)› · *Doña Isabella* ‹EXCLUIDA: donaisabella.es redirige a grupomarquesdelatrio.com → marca del gran grupo Marqués del Atrio›
