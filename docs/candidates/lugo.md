@@ -8,13 +8,21 @@
 
 ## Notas sobre filas existentes (no son altas)
 
-- **Torre de Núñez** (fila en O Corgo): la sede y planta principal están en
-  **Conturiz, Ctra. N-VI km 497, concello de Lugo** (la de O Corgo es la segunda
-  planta). Valorar si el municipio de la fila debería ser Lugo; si se mantiene
-  O Corgo, documentarlo. Tienda online <https://torredenunez.com/tienda/> → revisar
-  `Venta online`.
+- ✅ **Torre de Núñez** — corregido fase C 2026-07-13: slug `torre-de-nunez-o-corgo`
+  → **`torre-de-nunez-lugo`** (con registro `merge` + imagen renombrada). La planta
+  principal y sede (Torre de Núñez de Conturiz, S.L.) está en **Conturiz, Ctra.
+  N-VI km 497, concello de Lugo** — la dirección del CSV ya era esa, mal etiquetada
+  como O Corgo (segunda planta). Tienda online con checkout leída en vivo →
+  **`verificado`, VO=sí ecommerce** (subía de `pendiente`). Empresa familiar de 2ª
+  generación (~130 empl.), no gran grupo de masa → se mantiene.
 - **Cárnicas Teijeiro** (fila en Sarria): correcto — San Lázaro 15, Sarria (el barrio
   San Lázaro es de Sarria, no de Lugo ciudad). Porco celta desde 1963/2003.
+- ⚠ **Geo-warnings preexistentes detectados 2026-07-13** (no tocados, verificar en
+  2ª pasada): `mel-casa-miranda-o-corgo` (coords a 25 km de O Corgo, más cerca de
+  Ribeira de Piquín — ¿municipio o coords?) y
+  `a-carqueixa-o-sabor-dos-ancares-cervantes` (coords = centroide de Lugo capital,
+  a 43 km de Cervantes — coords probablemente pegadas al centroide equivocado; la
+  cooperativa es de Cervantes/Os Ancares).
 
 ## Provincia — 6 candidatos
 

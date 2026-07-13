@@ -38,9 +38,13 @@
   (`verificado`, `no comprobado`). ⚠ municipio corregido: desde 2008 en San
   Clodio (**Leiro**), no Ribadavia.
 - [x] **Adegas Pazo do Mar** — **accepted → `adegas-pazo-do-mar-toen`**
-  (`verificado`, `sí`). Toén. ⚠ grupo: la fila `pazo-das-tapias-monterrei` usa
-  este mismo dominio de la matriz — no fusionadas (bodegas distintas); pendiente
-  darle a Pazo das Tapias su propia web si la tiene.
+  (`verificado`, `sí`). Toén. ⚠ grupo resuelto fase C 2026-07-13: la fila de Pazo
+  das Tapias ya tiene su web propia (`pazodastapias.com`, publicada por el consejo
+  DO Monterrei) y **slug/municipio corregidos** `pazo-das-tapias-monterrei` →
+  **`pazo-das-tapias-verin`** (la finca As Tapias está en Pazos, parroquia de
+  **Verín**, no en el municipio de Monterrei; registro `merge` + imagen
+  renombrada; sube a `parcial` — su dominio propio tiene bucle de redirección
+  https↔http y no fue legible en vivo).
 - [x] **Pazo de Vieite** — **accepted → `pazo-de-vieite-leiro`** (`verificado`,
   `no comprobado`). Leiro, 10 ha propias.
 - [ ] **Pazo Lalón** — Bodega. Leiro. (Web propia a confirmar; ficha del consejo

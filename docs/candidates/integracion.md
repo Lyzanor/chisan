@@ -183,7 +183,7 @@ resolver) → al final.
 | Orden | Provincia | Alcance | Abiertos | Lotes | Estado |
 |---|---|---|---|---|---|
 | 1.1 | S.C. Tenerife | **✅ HECHA** (1.1a Tacoronte 9 + 1.1b Orotava/Güímar/Ycoden 12 + 1.1c Abona 4/capital 2 + correcciones): 27 altas, 1 merge (Agüita), 3 diferidas, 1 ya presente (Sotera=Anaga). Fichero cerrado | 31 | 3/3 | hecho (2026-07-10) |
-| 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei l10 (9) + Ribeira Sacra (9) hechos** = 67 altas. Falta: Monterrei resto l17 (13, solo-tel, baja prioridad) + Festa (1). Diferidos: ~16 (incl. Envínate por duplicado con Tenerife). Corrección pendiente: `pazo-das-tapias-monterrei` | 100 | ~7 (7/7 núcleo) | casi |
+| 1.2 | Ourense | **Ribeiro (39) + Valdeorras (10) + Monterrei l10 (9) + Ribeira Sacra (9) hechos** = 67 altas (+Gaia en fase C). Falta: Monterrei resto l17 (13, solo-tel, baja prioridad). Diferidos: ~16 (incl. Envínate por duplicado con Tenerife). Corrección `pazo-das-tapias` ✅ (fase C: →`pazo-das-tapias-verin`) | 100 | ~7 (7/7 núcleo) | casi |
 | 1.3 | Córdoba | **✅ CERRADA**: 1.3a-f = 47 altas (Montilla-Moriles, DOP Baena/Priego/Lucena, Pedroches jamón, registro Montilla). Diferidos documentados: COVAP, La Embajada, Gracia Hermanos, Oleollanos/Montoro-Adamuz DCOOP, 7 del registro Montilla sin web | 65 | 6/6 | hecho (2026-07-10) |
 
 > **Nota de producto — Ourense (1.2):** de los 100 candidatos, 99 son bodegas.
@@ -225,6 +225,23 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 3 — correcciones Galicia (2 filas, 2 merges)**:
+  *Adega Pazo das Tapias*: slug `pazo-das-tapias-monterrei` →
+  **`pazo-das-tapias-verin`** — la finca As Tapias está en **Pazos, parroquia de
+  Verín** (ficha del consejo DO Monterrei, CP 32619; mismo patrón que Valdeconde→
+  Mourazos); web propia asignada (`pazodastapias.com`, en vez del dominio de la
+  matriz `pazodomar.com`), pero el dominio tiene **bucle de redirección https↔http**
+  → no legible en vivo, sube solo a `parcial` (desde `pendiente`). *Torre de
+  Núñez*: slug `torre-de-nunez-o-corgo` → **`torre-de-nunez-lugo`** — la planta
+  principal y sede (Torre de Núñez de Conturiz, S.L.) está en **Conturiz, concello
+  de Lugo** (la dirección del CSV ya lo decía, mal etiquetada como O Corgo, donde
+  está la 2ª planta); tienda online con checkout leída en vivo → **`verificado`,
+  VO=sí ecommerce** (desde `pendiente`). Familiar 2ª gen (~130 empl.), no gran
+  grupo de masa → se mantiene. Ambos con registro `merge` + imagen `.webp`
+  renombrada. Gates verdes; las 2 warnings de calidad de Lugo son filas
+  preexistentes (Mel Casa Miranda, A Carqueixa — anotadas en `lugo.md` para 2ª
+  pasada). **Correcciones señaladas por las pasadas: todas resueltas** (Navarra 3 +
+  Galicia 2).
 - 2026-07-13 — **Fase C, lote 2 — correcciones a filas existentes (Navarra, 3)**:
   no son altas, son fixes de las señaladas por la pasada INTIA. *Bodega Mendiko*
   (`mendiko-aibar-oibar`): categoría **Aceite → «Aceite y vino»** (es bodega
