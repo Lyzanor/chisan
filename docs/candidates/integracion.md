@@ -225,6 +225,12 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 15 — Ourense, DO Ribeiro corte 3 (3er lote, 3 altas
+  parcial)**: *Adega O Veleiro* (Cenlle/Laias), *Javier Estévez Abeledo* (Beade,
+  vinos naturales), *Viña do Penedo S.L.* (Leiro) — ya sin web, solo registro con
+  contacto. **Corte 3 agotado en su contenido útil (17 altas, lotes 13-15)**; el
+  resto son colleiteiros solo-registro sin web ni contacto → diferidos (no padear).
+  Gates verdes 0/0.
 - 2026-07-13 — **Fase C, lote 14 — Ourense, DO Ribeiro corte 3 (2º lote, 7 altas)**:
   5 `verificado` con web (*Adegas do Rexurdir*/Cenlle, *Xulia Bande-Son de Arrieiro*/
   Leiro, *Agás do Tempo*/Ribadavia —tienda, VO=sí—, *Fernando Cibeira*/Beade,

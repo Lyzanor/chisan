@@ -208,8 +208,19 @@
 > *Emilio Docampo Diéguez* (Ribadavia, `emilio-docampo-dieguez-ribadavia`, parcial;
 > ⚠ distinto de Bodegas Docampo S.A. ya en CSV).
 
-> **Corte 3 (resto ~20, sin dominio propio en la ficha — solo enlace genérico
-> `wineinmoderation.eu`):** colleiteiros pequeños del mismo directorio, p. ej.
+> ✅ **Corte 3 — 3er lote (2026-07-13, lote 15): 3 altas `parcial`** (ya sin web,
+> tier de fondo): *Adega O Veleiro* (Cenlle/Laias, `adega-o-veleiro-cenlle`) ·
+> *Javier Estévez Abeledo* (Beade, `javier-estevez-abeledo-beade`; vinos naturales)
+> · *Viña do Penedo, S.L.* (Leiro, `vina-do-penedo-leiro`). **Con esto el corte 3
+> queda esencialmente agotado del contenido con dato útil (17 altas en lotes
+> 13-15).** El resto son colleiteiros solo-registro **sin web ni contacto**
+> (Adega As Pegas, Ameijeiras Vázquez, Bruno López, Adegas Joaquín Vázquez, Elisa/
+> Eulogio Collarte, Heredeiros de Avelino Lorenzo, Montero & Rey, Sotelo Barroso,
+> Viña San Esteban, Brixón, D'Vagar…) → **diferidos**: filas demasiado finas, no
+> integrar sin al menos un enlace/contacto verificable.
+
+> **Corte 3 (resto — colleiteiros solo-registro sin web ni contacto, DIFERIDOS —
+> solo enlace genérico `wineinmoderation.eu`):** del mismo directorio, p. ej.
 > Adega As Pegas, Adega do Cesteiro, Adega do Veleiro, Adega Viña Carpazal,
 > Adegas Cenlle, Adegas do Rexurdir, Adegas Laudes, Ameijeiras Vázquez,
 > Xulia Bande (`sondearrieiro`), Bodegas Gómez Sanmartín, Brixón, Bruno López,
