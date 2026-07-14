@@ -94,17 +94,16 @@ Varias sí tenían web propia (la nota «sin web» era incompleta):
 > Consuelo, Pérez Arquero, Barrajón, Gallego Sanz). Quedan **3 diferidas sin
 > web**, del registro del Consejo (`quesomanchego.es`):
 
-- [ ] **Quesos Reino** — Lácteos y quesos. Madridejos. Sin web localizada.
-- [ ] **Industrias Alimentarias Martal** — Lácteos y quesos. El Toboso.
-  ⚠ «Industrias Alimentarias», posible madurador, no elaborador.
-- [ ] **Asoc. Ganadera Palomares** — Lácteos y quesos. La Puebla de Almoradiel.
-  Sin web localizada.
+- [x] **Quesos Reino** ‹→ quesos-reino-madridejos (parcial, VO=nc — alta nueva; quesería familiar real 5 gen., marcas Reino/El Vegazo; web quesosreino.com CAÍDA NXDOMAIN → parcial; reventa en marimancha ≠ VO)› — Lácteos y quesos. Madridejos.
+- [x] **Industrias Alimentarias Martal** ‹→ already-present = `tobar-del-oso-el-toboso` (era `pendiente`, subida a **verificado, VO=sí ecommerce**): NO es madurador, elabora queso manchego propio desde 2005 con tienda online (tobardeloso.es)› — Lácteos y quesos. El Toboso.
+- [x] **Asoc. Ganadera Palomares** ‹→ already-present = `asociacion-ganadera-palomares-s-a-t-la-puebla-de-almoradiel` (era `pendiente`, subida a **parcial**): elaboradora real (marca El Gigüela, SAT ganadera desde 2007, oro Fercam 2025); añadidos tel/correo/dirección/coords; sin web propia → parcial› — Lácteos y quesos. La Puebla de Almoradiel.
 
-> ⚠ Antes de integrarlas, releer el campo `categories` del registro (elaborador
-> `Leche cruda`/`Leche pasteurizada` vs `Cámaras de maduración`). Ojo: el array
-> `places` ya **no viene** en `content.rendered` de
-> `/wp-json/wp/v2/pages/10148` (estructura cambiada desde 2026-07-09); usar la
-> captura previa o el mapa Leaflet vía navegador.
+> ✅ **Corte cerrado (2026-07-14, fase C):** de las 3 «diferidas sin web», solo
+> **Quesos Reino** era alta neta (parcial); las otras 2 ya estaban en el CSV como
+> `pendiente` y se **revisaron/subieron de nivel** (Martal→Tobar del Oso a
+> verificado VO=sí; Palomares a parcial). El aviso «posible madurador» de Martal
+> quedó descartado: es elaboradora con tienda propia. No hizo falta releer el
+> array `places` del registro: la web propia / los premios bastaron.
 
 ### Notas del lote 18 (pista para Ciudad Real — lote 19)
 
