@@ -153,10 +153,27 @@
 >   Sauci** (ya en CSV) y José Espina preside la Vinícola del Condado. Alto riesgo
 >   de duplicado/marca; verificar entidad antes de crear fila.
 
-> ⚠ **Cooperativas del Condado (triar aparte — confirmar marca de consumo propia,
-> excluir si es vino a granel/mosto):** Cooperativa Virgen de España (Beas),
-> Cooperativa Santa María Salomé (Bonares), Cooperativa Ntra. Sra. de la Estrella
-> (Chucena), Cooperativa Ntra. Sra. de Guía (La Palma del Condado), Ntra. Sra. del
-> Socorro S.C.A. (Rociana), Inmaculada Concepción S.C.A. (Trigueros), Cooperativa
-> Santa Águeda (Villalba del Alcor), Cooperativa Ntra. Sra. de los Remedios
-> (Villarrasa).
+> ✅ **Cooperativas del Condado — triadas 1-a-1 (fase C, 2026-07-14):** 2 altas,
+> 2 already-present, 4 rechazos/diferidos. El supuesto «Condado = solo granel/mosto»
+> resultó **parcialmente falso**: hay coops con vino embotellado y aceiteras con
+> marca propia.
+>
+> - [x] **Ntra. Sra. del Socorro** (Rociana) → **alta**
+>   `bodegas-del-socorro-rociana-del-condado` (**verificado, VO=sí ecommerce**):
+>   web+tienda propia `bodegasdelsocorro.com`, vino embotellado con marcas Viñagamo/
+>   El Gamo/Don Frede (zalema), NO granel.
+> - [x] **Cooperativa Santa María Salomé** (Bonares) → **alta**
+>   `cooperativa-santa-maria-salome-bonares` (**parcial**, Aceite): AOVE marca propia
+>   Salomé (desde 1962); sin web propia (venta directa + aceitehuelva.com).
+> - [x] **Cooperativa Virgen de España** (Beas) → **already-present** = `olibeas-beas`
+>   (aceite, marca Olibeas).
+> - [x] **Cooperativa Ntra. Sra. de los Remedios / Villaoliva** (Villarrasa) →
+>   **already-present** = `cooperativa-agricola-olivarera-villarrasa` (Aceite, marca
+>   Villaoliva).
+> - [x] **Cooperativa Ntra. Sra. de Guía** (La Palma del Condado) → **RECHAZO**:
+>   fusionada en **Vinícola del Condado** (la mayor coop vitivinícola de Andalucía,
+>   ya en CSV) → sin identidad comercial independiente.
+> - [x] **Ntra. Sra. de la Estrella** (Chucena), **Inmaculada Concepción** (Trigueros)
+>   y **Santa Águeda** (Villalba del Alcor) → **DIFERIDAS**: coops DO Condado
+>   (elaboración/almacén/embotellado) pero sin marca de consumo ni web/tienda propia
+>   localizada → solo-registro; reabrir si aparece marca propia embotellada.
