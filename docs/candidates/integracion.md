@@ -225,6 +225,14 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 16 — Córdoba, envasadoras DOP Priego (3 altas)**:
+  triaje productor vs comercializadora. **2 verificado VO=sí** (*Legatum AOVE* y
+  *XY Aceite / X 37 Grados Norte* — ambos con olivar propio de picudo y tienda) +
+  **1 parcial** (*Aceites Vizcántar* / Señorío de Vizcántar — marca propia +
+  oleoturismo pero externaliza molturación; web con SSL error). **Rechazada**:
+  *Olivasi / OLIVA SÍ* (comercializadora/selectora Shopify, sin producción propia).
+  Gates verdes. Con esto **Córdoba queda cerrada** (los residuales eran estas 4
+  envasadoras + COVAP/La Embajada ya diferidos por gran grupo/municipio).
 - 2026-07-13 — **Fase C, lote 15 — Ourense, DO Ribeiro corte 3 (3er lote, 3 altas
   parcial)**: *Adega O Veleiro* (Cenlle/Laias), *Javier Estévez Abeledo* (Beade,
   vinos naturales), *Viña do Penedo S.L.* (Leiro) — ya sin web, solo registro con

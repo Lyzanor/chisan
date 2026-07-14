@@ -205,14 +205,20 @@
 - [ ] **Sucesores de Morales Morales, S.L.** — Aceite. Priego de Córdoba.
   <https://www.sucesoresdemorales.com/>.
 
-> ⚠ **Envasadoras/comercializadoras de DOP Priego (triar por producción propia
-> antes de crear fila — posible siguiente corte):** «Aceites Vizcántar»
-> (<https://www.aceitesvizcantar.com/>), «Magna Legatum / Legatum AOVE»
-> (<https://www.legatumaove.com/>), «Sponex / Olivasi» (<https://www.olivasi.com/>),
-> «X 37 Grados Norte / XY Aceite» (<https://www.xyaceitedeoliva.com/>). Entran solo
-> si producen con marca propia y venden al consumidor; excluir las que sean solo
-> envasado/comercialización B2B. «Muela-Olives» del registro es la envasadora del
-> mismo grupo que Mueloliva (no duplicar).
+> ✅ **Envasadoras/comercializadoras de DOP Priego — triadas en fase C (2026-07-13,
+> lote 16):**
+> - **Legatum AOVE** → `legatum-aove-priego-de-cordoba` (`verificado`, VO=sí):
+>   **productor** con olivar propio (picuda, cosecha temprana + coupage), tienda.
+> - **XY Aceite / X 37 Grados Norte** → `xy-aceite-37-grados-norte-priego-de-cordoba`
+>   (`verificado`, VO=sí): empresa familiar **productora** (picudo), tienda multilingüe.
+> - **Aceites Vizcántar (Señorío de Vizcántar)** → `aceites-vizcantar-priego-de-cordoba`
+>   (`parcial`): marca propia ecológica + oleoturismo, pero **externaliza la
+>   molturación** en almazaras de la comarca; web con error SSL → parcial.
+> - **Sponex / Olivasi (OLIVA SÍ)** — **RECHAZADO**: es **comercializadora/selectora**
+>   (Shopify), «no reclama producción propia» → regla dura de solo comercialización,
+>   no se crea fila.
+> «Muela-Olives» del registro es la envasadora del mismo grupo que Mueloliva (no
+> duplicar).
 
 ## DOP Aceite de Lucena + DOP Montoro-Adamuz (aceite, lote 3 de do-huecos)
 
