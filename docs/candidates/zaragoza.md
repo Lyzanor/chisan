@@ -148,3 +148,64 @@
   (Zaragoza) / Tel. / web`. Pero los enlaces del listado apuntan todos a la campaña
   `comparteelsecreto.com`, no a la bodega → hay que leer la web del texto, no el
   `href`.
+
+## ✅ Fase C — Cariñena corte 2 + coops de granel (2026-07-14)
+
+> Verificación 1-a-1 de las dos colas pendientes de Zaragoza. Fuente del corte 2:
+> lista independiente de todowine (30 bodegas DO Cariñena) cruzada contra el CSV
+> vivo, más el registro del consejo (`carinenawines.com`, que solo publica 17).
+> El «resto de 33 inscritas» son casi todas registros no-consumidor (viñedos,
+> almacenistas, embotelladoras) = granel/B2B, no altas.
+
+**Cariñena corte 2 — 7 altas:**
+
+- `bodegas-hermanos-torcal-carinena` (Cariñena) — **verificado, VO=sí ecommerce**
+  (familia desde 1845, 120 ha propias, marcas Cachirulo/Marqués de Fuendetodos;
+  tienda `tienda.vinostorcal.com`).
+- `bodegas-valdegarzon-almonacid-de-la-sierra` (Almonacid) — **verificado, VO=nc**
+  (web propia `valdegarzon.com`, enoturismo + venta por WhatsApp/email).
+- `bodegas-del-senorio-almonacid-de-la-sierra` (Almonacid) — **verificado, VO=nc**
+  (S.A.U., viñedo propio desde 1780, marcas Senda Lasarda/Yañoria; web viva en `www.`).
+- `bodegas-y-vinedos-monfil-carinena` (Cariñena) — **parcial** (familia Mateo 1943,
+  22 ha propias, marca Monfil/Kalius, FB; sin web propia).
+- `quinta-mazuela-carinena` (Cariñena) — **parcial** (boutique de la enóloga Silvia
+  Tomé; solo reventa en terceros, sin web propia).
+- `bodegas-vinos-y-vinedos-marin-rios-encinacorba` (Encinacorba) — **parcial**
+  (familia Marín Ríos, DO-inscrita; sin web propia; ≠ Ignacio Marín).
+- `bodega-san-bernabe-de-cosuenda-cosuenda` (Cosuenda) — **parcial** (producto singular
+  Pajarilla de Cosuenda; comercializada vía Grandes Vinos).
+
+**Cariñena corte 2 — rechazos/diferidos:**
+
+- **Bodegas Gabarda** (Longares) — RECHAZO: usa `administracion@ignaciomarin.com` →
+  marca del grupo **Ignacio Marín** (ya en CSV).
+- **Coop. San Nicolás de Tolentino** (Almonacid) — RECHAZO: vende **a granel** a una
+  coop mayor de Cariñena (en conversión a ecológico), sin marca de consumo propia.
+- **Coop. Ntra. Sra. del Pilar** (Villanueva de Huerva) y **Coop. San Roque de
+  Alfamén** — RECHAZO: coops **fundadoras de Grandes Vinos y Viñedos** (= Gran Ducay,
+  ya en CSV); su vino se comercializa bajo las marcas del grupo, sin línea propia.
+- **Cariñena Vitivinícola, S.A.T. nº 75** (Cariñena) — DIFERIDO: S.A.T. de granel;
+  atribución de marcas (Corona de Aragón…) dudosa/confundida con Grandes Vinos.
+- **Bodegas Luipau** (Longares) — DIFERIDO: funciona como bodega-restaurante de
+  carretera (A-23); marca de elaboración propia sin confirmar.
+- **Bodegas Añadas** = marca CARE (ya en CSV, `bodegas-care-carinena`); **Coop.
+  Vitivinícola de Longares** = COVINCA (ya en CSV) → already-present.
+
+**Cooperativas de granel (DO Campo de Borja + fruta):**
+
+- **Santa Ana Crianzas y Viñedos** (Pozuelo de Aragón) → **alta**
+  `santa-ana-crianzas-y-vinedos-pozuelo-de-aragon` (parcial): tiene marca propia
+  embotellada (Campo Castillo, El Tenor) pese a ser socia de Borsao.
+- **Soc. Coop. Agrícola de Borja** (Borja) y **Coop. Ntra. Sra. Niño Perdido**
+  (Tabuenca) → **RECHAZO**: son las otras dos coops **fundadoras de Bodegas Borsao**
+  (ya en CSV); granel sin marca de consumo propia.
+- **Frutícola Bajoaragonesa** (Caspe) → **RECHAZO**: cooperativa de 2º grado / central
+  hortofrutícola que comercializa al por mayor (B2B) la fruta de sus socios, sin marca
+  de consumo ni tienda propia.
+- **Frumaspi Agrícola** (Maella) → **RECHAZO/DIFERIDO**: S.L. sin web ni rastro de
+  marca de consumo; probable manipulado B2B, sin enlace verificable.
+
+> **Nota de coordinación:** estas 8 altas (+evidencia) se integraron el 2026-07-14
+> en un commit aislado sobre `main`, mientras `gpt-5.6-sol` tenía un pase de
+> verificación de Zaragoza sin commitear en el working tree. El commit aislado NO
+> incluye ese pase (se dejó intacto para su autor).
