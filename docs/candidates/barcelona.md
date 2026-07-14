@@ -55,8 +55,8 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | Lote | Frente | Fuente / alcance | Tamaño est. | Estado | Revisados | Altas |
 |---|---|---|---|---|---:|---:|
 | 0 | 0 | Reconstruir descartes históricos desde git (`529e83b`, `d58771d`, pasada atípicos) + purgas de `docs/verificacion/barcelona.md` → rellenar «Descartados — no re-evaluar» | — | ✅ 2026-07-14 | 618 slugs + 12 pre-CSV | — |
-| 1 | A | **Cata de rendimiento**: muestra Benvinguts a Pagès 2026 (prov. BCN) + prensa comarcal 2025-26 (Regió7, El 9 Nou) | ~20 sonda | pendiente | | |
-| — | — | **GO/NO-GO**: si el lote 1 rinde ≥ ~1 alta/5-6 revisados, seguir con 2-7; si no, saltar al frente B | — | — | — | — |
+| 1 | A | **Cata de rendimiento**: muestra Benvinguts a Pagès 2026 (prov. BCN) + prensa comarcal 2025-26 (Regió7, El 9 Nou) | ~20 sonda | ✅ 2026-07-14 | 31 netos (52 fichas) | 5 + 1 mejora |
+| — | — | **GO/NO-GO**: si el lote 1 rinde ≥ ~1 alta/5-6 revisados, seguir con 2-7; si no, saltar al frente B | — | **GO matizado (2026-07-14)**: 5+1/31 ≈ umbral justo → seguir con 3-6; lote 2 reducido a residual; lote 7 NO-GO (prensa no indexa) | — | — |
 | 2 | A | Benvinguts a Pagès 2026 completo, prov. BCN por comarcas (priorizar Berguedà, Moianès/Lluçanès, Anoia rural) | ~30-50 | pendiente | | |
 | 3 | A | Cerveseras: Barcelona Beer Challenge 2025/26 (medallistas nuevos) + GECAN altas recientes | ~15-25 | pendiente | | |
 | 4 | A | Vino: Premis Vinari 2025/26 + vino natural (Vella Terra y ferias afines) — debutantes DO Alella / Pla de Bages / Penedès | ~15-25 | pendiente | | |
@@ -115,6 +115,37 @@ nombre corto/slug pegado — no re-añadir):
 | «Roca» / AT Roca | `at-roca-pacs-del-penedes` | municipio real Avinyonet del Penedès (slug hereda Pacs); reubicada en lote 89 de verificación | nota Rutes del Vi (`d58771d`) |
 | Celler Sant Miquel d'Oló | `celler-sant-miquel-dolo-santa-maria-dolo` | — | nota Rutes del Vi (`d58771d`) |
 
+**Descartes del lote 1 (2026-07-14, fuente: directorio BAP tot-l'any):**
+
+| nombre | municipio | motivo |
+|---|---|---|
+| Cal Joanet | Vilafranca del Penedès | restaurante |
+| Can Xarina | Collsuspina | restaurante |
+| Cal Ticus | Sant Sadurní d'Anoia | restaurante (cuina de mercat amb productes propis, però punt de consum) |
+| Can Candelich | Cànoves i Samalús | restaurante |
+| El Cigró d'Or | Vilafranca del Penedès | restaurante (guia Michelin, Mercat de la Carn) — el nom enganya, no és obrador de llegums |
+| El Rebost de la Torre / L'Era d'Estiu | Sallent | restaurant del grup La Torre; la granja ja está (`granja-torre-den-roca-la-torre-sallent`) |
+| Bacasis, DeVici, La Forkilla, Bar Sport, Cafè del Mig, Taverna1913, La Taverna del Ciri, Marisqueria La Flor, Il Piatto, ClubHouse27, Menjab | varios | restaurantes/bares del directorio BAP (no revisados 1-a-1: fuera por tipo) |
+| Bolet Casa Modernista | Castellví de la Marca | hotel rural de la família Bolet; la marca celler ja está (`caves-bolet-mas-lluet-…`) |
+| Cal Grau de la Llavinera | Sant Pere Sallavinera | turisme rural |
+| Cal Cabreta | Cardona | casa rural |
+| Els Plans de Cornet | Sallent | allotjament (avaibook) |
+| Ca l'Estamenya | Perafita | allotjament |
+| Baluard de Ferreres · Volta de Ferreres | Olvan | casa de turisme rural |
+| Cal Cisteller | Olvan | casa rural |
+| Casanova de Noet | Avià | casa de camp (lloguer 15 pers.) |
+| Les Feixes de Coaner | Sant Mateu de Bages | masia turística (1595) |
+| El Teixell | Olost | casa rural (les formatges del voltant són de Garduixeres, ja valorada en verificación) |
+| Can Passerells | Sant Vicenç de Torelló | lloguer rural |
+| Mas la Casavella | Les Masies de Voltregà | turisme rural |
+| Les Corts de Biosca (Biosca i el Mas) | Sant Mateu de Bages (Castelltallat) | turisme rural |
+| Villa Maria | Santa Maria de Palautordera | allotjament Montseny |
+| Ca la Julita | Castellbell i el Vilar | enoturisme/turisme rural (≠ Cervesa La Julita de St. Quirze, ja en CSV) |
+| Mas Postius | Muntanyola | turisme rural i ramader, sense producte de marca pròpia visible |
+| Cal Negri | Vilafranca del Penedès | apartaments turístics (el nom és pel gat dels amos) |
+| El Molí de la Barita | Viladrau = **Girona** | fuera de provincia |
+| Red Passion Berries (gerds) | Viladrau = **Girona** | fuera de provincia |
+
 Contexto útil: los 7 candidatos de la nota de junio (Vibra, Fonik, MCava, A27,
 Holy Madre, Hijos de Nata, Baluard El Magatzem) acabaron **todos integrados** —
 de las notas históricas de candidatos no queda nada pendiente ni descartado.
@@ -124,12 +155,58 @@ Huecos que la pasada atípicos no pudo llenar con productor BCN de marca propia
 
 ## Candidatos por lote
 
-*(las secciones se añaden al abrir cada lote, formato estándar del README:
-estado + fuente + resultado del dedup + slug final si acaba en alta)*
+### Lote 1 — cata de rendimiento (2026-07-14) ✅
+
+Fuente A: directorio tot-l'any de `benvingutsapages.cat` (773 fichas, 249 en
+comarcas de la prov. BCN, 195 con pinta de productor tras filtrar
+restaurantes/alojamiento por slug; 52 fichas bajadas y trabajadas). Fuente B:
+prensa comarcal vía buscador — **0 resultados útiles en 3 búsquedas** (Regió7 y
+El 9 Nou apenas indexan; requeriría navegación cabecera a cabecera).
+
+**Altas (5):**
+
+| candidato | slug | verif | VO | nota |
+|---|---|---|---|---|
+| Mels de Can Monràs Nou (Sta. Eulàlia de Ronçana) | `mels-de-can-monras-nou-santa-eulalia-de-roncana` | verificado | no comprobado | ~400 arnes transhumants, premis mel de romaní/Millor Mel Catalana 2023; web viva, tenda sense carret confirmat |
+| Mas Palou (El Pla del Penedès) | `mas-palou-el-pla-del-penedes` | verificado | sí/ecommerce | celler masia medieval, vins ancestrals eco 2024 + oli; shop.maspalou.com checkout viu |
+| Granja Guirigall (El Pla del Penedès) | `granja-guirigall-el-pla-del-penedes` | parcial | no comprobado | IGP Raça Penedesenca des de 2006; granjaguirigall.com DNS caigut el 2026-07-14 (no morta: indexada amb botiga) — recomprobar |
+| Biomasia Ca n'Oliveró (Castellbisbal) | `biomasia-ca-nolivero-castellbisbal` | parcial | no comprobado | 20 ha eco des de 2000 (Pere Botifoll), cistelles; sense web pròpia (FB) |
+| Maset de la Costa (Piera) | `maset-de-la-costa-piera` | parcial | no comprobado | agroturisme + oli marca pròpia L'Oli del Maset (eco CCPAE); activitat oleícola sense datació fresca |
+
+**Mejora (1):** fila-registro `calderon-cabrera-jose-armando-…` renombrada a
+**MielHada** (`mielhada-barcelona-horta-guinardo`): marca del apicultor (+300
+arnes, mateixa adreça/email), botiga WooCommerce vista en viu → verificado,
+VO sí/ecommerce; GMaps aliè «Escalope Armando» blanquejat; coords Nominatim.
+
+**Ya estaban (dedup, 16):** Formatges de Lluçà · El Jardí dels Sentits · Granja
+Torre d'en Roca · Horta Can Calafell · La Mel de l'Avi Joan · La Vaqueria
+d'Osona · Les Cabres d'en Peyu · Formatgeria La Frasera · Mel dels Erms · Oli
+la Xerona · Ca n'Aleix de la Madrona · Mas Buret · estapé1920 (=Hort de
+Proximitat SLU) · Bodegues Sumarroca · Covides · Caves Bolet (via el hotel
+Bolet Casa Modernista).
+
+**Rechazos de gate (25)** → añadidos a «Descartados» (restaurantes 7 ·
+alojamiento/turisme rural 16 · fuera de provincia 2, ver tabla).
+
+**Residual del directorio BAP (queda para un lote 2 recortado):** fichas con
+layout distinto que fallaron el parseo (Can Talamàs, Ca la Tona, Ca l'Ignasi,
+Farmlab Rupit, Vicissim S.A., Cal Miguelon, 9Cèntric) + cola Alt Penedès no
+revisada (Cal Pere del Maset, Can Batlle, Mirador de les Caves, El Celler de
+l'Ordal, Sant Jordi Ca la Katy, La Posada, Menjab Igualada) + J&M Pagesos
+(horta genérica; tel compartit amb Cal Mexica/Espai Agrari Baixa Tordera —
+possible dup, cola a evitar).
+
+**Yield: 5 altas + 1 mejora / 31 candidatos netos revisados ≈ 1 alta per 5-6 →
+GO justo en el umbral**, con matices: la veta BAP es de una sola pasada (ya
+casi agotada aquí) y la prensa por buscador rinde 0. Decisión: **GO hacia los
+lotes 3-6** (fuentes de eventos/premios, indexables); lote 2 queda reducido al
+residual de arriba; **lote 7 (prensa sistemática) NO-GO** salvo navegación
+directa de cabeceras.
 
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
+| 2026-07-14 | 1 | Claude | ✅ Lote 1 (cata) cerrado: 52 fichas BAP prov. BCN trabajadas → **5 altas** (Mels de Can Monràs Nou verif, Mas Palou verif VO=sí, Granja Guirigall parcial, Biomasia Ca n'Oliveró parcial, Maset de la Costa parcial) **+ 1 mejora** (fila registro → MielHada, verif VO=sí) + 16 ya estaban + 25 rechazos (a Descartados). Prensa comarcal vía buscador: 0/3 búsquedas → lote 7 NO-GO. CSV 2491→2496; evidencia 7 registros; gates verdes (csv/images/evidence OK). **GO matizado → siguiente: lote 3 (cerveseras BBC/GECAN)** |
 | 2026-07-14 | 0 | Claude | ✅ Lote 0 cerrado. Arqueología de los 220 commits del CSV → **618 slugs salidos** volcados a `barcelona-snapshot-descartados-git.md` (purgas verificación ~490 + dedup 119 pares + fusiones/renombres). Sección «Descartados» rellenada: 10 descartes pre-CSV de la pasada atípicos + 2 «no añadir fila» de la nota de junio (Hofmann Badalona, Parallelo TOM) + 2 alias «ya estaba» de Rutes del Vi (AT Roca, Sant Miquel d'Oló). Los 7 candidatos de junio 2026 acabaron todos integrados. Siguiente: **lote 1** (cata de rendimiento, GO/NO-GO) |
