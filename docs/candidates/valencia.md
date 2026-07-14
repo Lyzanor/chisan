@@ -97,12 +97,22 @@
 > el registro da la sede, no la bodega. Regla dura: municipio = donde se produce →
 > resolver antes de escribir.
 >
-> **Cooperativas pendientes de triaje (4):** Cooperativa del Campo de Camporrobles
-> · Agrícola Purísima Concepción (Requena, marca *Monte Roble*) · La Encarnación
-> de Ntra. Sra. (Requena) · S.A.T. Montesanco. Confirmar marca de consumo.
->
-> **Resto sin web (5):** José Vicente Pardo Sáez · Bodegas Jiménez-Vila Hnos. ·
-> Ricardo del Valle Ruiz (Bodegas del Valle) · y las dos de Chiva ya excluidas.
+> ✅ **Triado en fase C (2026-07-13, lote 17):**
+> - **Bodegas Jiménez-Vila Hnos.** → `bodegas-jimenez-vila-hermanos-requena`
+>   (`verificado`; web propia, vinos de terroir Nexo/Núcleo, 90 pts Peñín).
+> - **Agrícola Purísima Concepción (Monte Roble)** →
+>   `agricola-purisima-concepcion-monte-roble-requena` (`parcial`; Los Pedrones,
+>   marca de consumo propia Monte Roble). ⚠ pedanía a 17 km del centroide de Requena.
+> - **Cooperativa del Campo de Camporrobles** — **diferida/excluida**: es una de las
+>   **18 coops de integración comercial de vino a GRANEL** de la zona, sin marca de
+>   consumo/web propia → regla dura de granel.
+> - **La Encarnación de Ntra. Sra.** y **S.A.T. Montesanco** — **diferidas** (coops,
+>   confirmar marca de consumo vs granel; sin rastro de marca propia en esta pasada).
+> - **Bodegas del Valle** (Ricardo del Valle) — **diferida**: micro-viñerón real
+>   (rosado de bobal, distinción Viñerón) pero **municipio sin confirmar** y sin web
+>   propia → reabrir con concello.
+> - **Bodegas Jiménez-Vila** (estaba también en «resto sin web»): ✅ integrada arriba.
+> - *José Vicente Pardo Sáez* y las dos de Chiva siguen excluidas/sin rastro.
 
 ### Método
 

@@ -225,6 +225,14 @@ resolver) → al final.
 
 ## Bitácora
 
+- 2026-07-13 — **Fase C, lote 17 — Valencia, DO Utiel-Requena coops de triaje (2
+  altas)**: *Bodegas Jiménez-Vila Hnos.* (Requena, `verificado` —web, 90 pts Peñín—)
+  + *Agrícola Purísima Concepción/Monte Roble* (Los Pedrones/Requena, `parcial` —marca
+  propia—). **Diferidas/excluidas por granel**: Cooperativa de Camporrobles (una de
+  las 18 coops de integración comercial de granel), La Encarnación, Montesanco.
+  *Bodegas del Valle* (Ricardo del Valle) diferida (micro-viñerón real pero municipio
+  sin confirmar). Utiel-Requena ya es sobre todo granel → rendimiento bajo. Gates
+  verdes (la 1 warning de Purísima es geo esperado, pedanía Los Pedrones a 17 km).
 - 2026-07-13 — **Fase C, lote 16 — Córdoba, envasadoras DOP Priego (3 altas)**:
   triaje productor vs comercializadora. **2 verificado VO=sí** (*Legatum AOVE* y
   *XY Aceite / X 37 Grados Norte* — ambos con olivar propio de picudo y tienda) +
