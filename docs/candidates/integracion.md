@@ -59,10 +59,11 @@ Pasadas anteriores con doc en esta carpeta, también consolidadas:
 
 ## Residuales heredados de docs borrados (2026-07-13)
 
-- **Cuenca** — posible alta aparte: **Lacto-Ganadera Río Mayor, S.L.** (marca
-  «Ciudad de Huete», <https://quesoshuete.com/>, tel. 969 371 041, tienda
-  online) si se confirma unidad productiva distinta de la S.A.T. Río Mayor de
-  Caracenilla (`lacto-ganadera-rio-mayor-quesos-la-ermita-huete`).
+- **Cuenca** — ✅ RESUELTO (2026-07-14, fase C): **Lacto-Ganadera Río Mayor, S.L.**
+  (marca «Ciudad de Huete», <https://quesoshuete.com/>, tienda online) confirmada
+  como **entidad distinta** (otra web/tel/marca) de la S.A.T. Río Mayor de
+  Caracenilla → **alta** `lacto-ganadera-rio-mayor-ciudad-de-huete-huete`
+  (verificado, VO=sí ecommerce).
 - **Albacete** — `quesos-vega-sotuelamos-chinchilla-de-montearagon`: el CSV usa
   `vegamancha.com`, el consejo publica `vegasotuelamos.com` (casi vacía);
   confirmar cuál vive y si «Vega Mancha» es su marca. Además 2 filas DOP con
