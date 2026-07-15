@@ -60,7 +60,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 2 | A | Benvinguts a Pagès 2026 completo, prov. BCN por comarcas (priorizar Berguedà, Moianès/Lluçanès, Anoia rural) | ~30-50 | pendiente | | |
 | 3 | A | Cerveseras: Barcelona Beer Challenge 2025/26 (medallistas nuevos) + GECAN altas recientes | ~15-25 | ✅ 2026-07-15 — veta saturada | ~10 netos | 1 |
 | 4 | A | Vino: Premis Vinari 2025/26 + vino natural (Vella Terra y ferias afines) — debutantes DO Alella / Pla de Bages / Penedès | ~15-25 | ✅ 2026-07-15 — veta fértil | ~17 netos | 10 |
-| 5 | A | Formatgeries: Lactium (Vic) ediciones 2025/26 + Millor Formatge Català | ~10-20 | pendiente | | |
+| 5 | A | Formatgeries: Lactium (Vic) ediciones 2025/26 + Millor Formatge Català | ~10-20 | ✅ 2026-07-15 — veta saturada | 19 | 0 + 2 mejoras |
 | 6 | A | Verkami: campañas de alimentación 2024-26 en prov. BCN (obradores, cerveseras, formatgeries) | ~10-20 | pendiente | | |
 | 7 | A | Prensa comarcal, barrido sistemático por cabecera («obre obrador», «nova formatgeria», «celler nou»… 2025-26): Regió7, El 9 Nou, Nació Digital comarcal, Tot locals, VIA Empresa | ~20-40 | pendiente (condicionado a yield 1-6) | | |
 | 8 | A | BORME constituciones 2025-26 CNAE alimentario prov. BCN — red de arrastre, ruidosa | ~30+ brutos | opcional | | |
@@ -297,11 +297,45 @@ posible fuera de provincia).
 
 **Yield: 10 altas / ~17 netos revisados → muy por encima del umbral.**
 
+### Lote 5 — formatgeries: Lactium 2026 + concurso (2026-07-15) ✅
+
+Fuentes: [expositores de Lactium 2026](https://vicfires.cat/lactium-la-festa-del-formatge-catala-2026/expositors)
+(Vic, 18-19 abr 2026 — la ficha de cada expositor trae dirección+CP+municipio;
+35 formatgeries, 19 de la prov. BCN por CP 08xxx) + [palmarés del Concurs
+Lactium 2026](https://www.3cat.cat/3catinfo/el-ninot-de-sant-gil-dalbio-millor-formatge-artesa-2026-consultan-la-llista-completa/noticia/3405230/)
+(Millor Formatge Català 2026 = Sant Gil d'Albió, **Tarragona**).
+
+**Resultado: veta láctea saturada — 0 altas.** Los 19 expositores BCN y los
+premiados del concurso (Cal Músic ×3 ors, Granja Armengol, Làctics Pauet,
+Làctics Ubach, Jon Cake) están **todos** ya en el CSV (100 filas de Lácteos;
+la pasada Lácteos/Quesos de 10 provincias del 2026-07-04 ya había minado
+esto) o en el blindaje (El Quall = obrador comunitario purgado en lote 119
+de verificación — el filtro (a) funcionó). Dedup fino resolvió además:
+Anna Puig Ramirez = La Petita Ànima (por teléfono) · El Xebec del Collsacabra
+SL = razón social de Formatges Riudavets (tel 699650273 en su web) ·
+Ubach Formatgers SLU = Làctics Ubach.
+
+**Mejoras (2):**
+1. **Fusión Masia Fontirons**: `cabanas-llorens-jordi-espunyola` era dup
+   registre↔marca de `masia-fontirons-lespunyola` (mismo tel y web) — purgada
+   la de registro (+ webp), merge en evidencia.
+2. **Slug Riudavets corregido**: `formatges-riudavets-sora` →
+   `formatges-riudavets-lesquirol` (municipio ya decía l'Esquirol; CP 08511
+   de la ficha Lactium lo confirma); email de la web añadido, webp renombrado.
+
+**No localizables (residual):** Joan Puig Camprubí (Castellgalí) y Xavier
+Subirana Colom (Vic), de las secciones «Amics del formatge»/«Cellers» de
+Lactium — sin rastro digital de producto/marca.
+
+**Yield: 0 altas + 2 mejoras / 19 revisados → veta cerrada** (como cerveza:
+las ferias sectoriales maduras ya están íntegramente en el catálogo).
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
+| 2026-07-15 | 5 | Claude | ✅ Lote 5 cerrado: expositores Lactium 2026 (19 BCN, con CP/municipio en ficha) + palmarés del concurso → **0 altas** (todo ya en CSV o en blindaje: El Quall descartado por el filtro (a)) **+ 2 mejoras**: fusión dup Masia Fontirons (registro↔marca por tel/web) y slug de Riudavets corregido a l'Esquirol. CSV 2507→2506 (−1 dup), gates verdes. Veta láctea saturada. **Siguiente: lote 6 (Verkami)** |
 | 2026-07-15 | 4 | Claude | ✅ Lote 4 cerrado: catálogo Vinari 2025 (PDF oficial) + expositores Vella Terra 2026 → **10 altas** (7 verif, 2 con VO=sí: Canals Nadal y Castell d'Or; 2 proyectos nacidos 2021: Raïmones y Mas Guineu) sobre ~17 netos; ~35 ya estaban. CSV 2497→2507, evidencia 10 reg., gates verdes. La veta vino rinde 10× la cervecera. Residual: 4 expositores VT sin localizar. **Siguiente: lote 5 (Lactium/formatgeries)** |
 | 2026-07-15 | 3 | Claude | ✅ Lote 3 cerrado: BBC 25/26 (PDFs oficiales) + mapa GECAN → **1 alta** (Cervesa Cornèlia, parcial) sobre ~10 netos; los 11 medallistas BBC de la provincia ya estaban; mapa GECAN desactualizado (Edge cerrada, As/HOPe secuestradas, Estupenda aparcada, Ausesken muerta); 3 diferidos (Vic Brew, Artesenca, ART Cervesers). CSV 2496→2497, gates verdes. **Veta cervecera cerrada → siguiente: lote 4 (Vinari + vino natural)** |
 | 2026-07-14 | 1 | Claude | ✅ Lote 1 (cata) cerrado: 52 fichas BAP prov. BCN trabajadas → **5 altas** (Mels de Can Monràs Nou verif, Mas Palou verif VO=sí, Granja Guirigall parcial, Biomasia Ca n'Oliveró parcial, Maset de la Costa parcial) **+ 1 mejora** (fila registro → MielHada, verif VO=sí) + 16 ya estaban + 25 rechazos (a Descartados). Prensa comarcal vía buscador: 0/3 búsquedas → lote 7 NO-GO. CSV 2491→2496; evidencia 7 registros; gates verdes (csv/images/evidence OK). **GO matizado → siguiente: lote 3 (cerveseras BBC/GECAN)** |
