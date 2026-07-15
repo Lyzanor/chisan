@@ -58,7 +58,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 1 | A | **Cata de rendimiento**: muestra Benvinguts a Pagès 2026 (prov. BCN) + prensa comarcal 2025-26 (Regió7, El 9 Nou) | ~20 sonda | ✅ 2026-07-14 | 31 netos (52 fichas) | 5 + 1 mejora |
 | — | — | **GO/NO-GO**: si el lote 1 rinde ≥ ~1 alta/5-6 revisados, seguir con 2-7; si no, saltar al frente B | — | **GO matizado (2026-07-14)**: 5+1/31 ≈ umbral justo → seguir con 3-6; lote 2 reducido a residual; lote 7 NO-GO (prensa no indexa) | — | — |
 | 2 | A | Benvinguts a Pagès 2026 completo, prov. BCN por comarcas (priorizar Berguedà, Moianès/Lluçanès, Anoia rural) | ~30-50 | pendiente | | |
-| 3 | A | Cerveseras: Barcelona Beer Challenge 2025/26 (medallistas nuevos) + GECAN altas recientes | ~15-25 | pendiente | | |
+| 3 | A | Cerveseras: Barcelona Beer Challenge 2025/26 (medallistas nuevos) + GECAN altas recientes | ~15-25 | ✅ 2026-07-15 — veta saturada | ~10 netos | 1 |
 | 4 | A | Vino: Premis Vinari 2025/26 + vino natural (Vella Terra y ferias afines) — debutantes DO Alella / Pla de Bages / Penedès | ~15-25 | pendiente | | |
 | 5 | A | Formatgeries: Lactium (Vic) ediciones 2025/26 + Millor Formatge Català | ~10-20 | pendiente | | |
 | 6 | A | Verkami: campañas de alimentación 2024-26 en prov. BCN (obradores, cerveseras, formatgeries) | ~10-20 | pendiente | | |
@@ -146,6 +146,18 @@ nombre corto/slug pegado — no re-añadir):
 | El Molí de la Barita | Viladrau = **Girona** | fuera de provincia |
 | Red Passion Berries (gerds) | Viladrau = **Girona** | fuera de provincia |
 
+**Descartes del lote 3 (2026-07-15, cerveseras BBC/GECAN):**
+
+| nombre | municipio | motivo |
+|---|---|---|
+| Edge Brewing | Barcelona (Poblenou) | **cerrada** (vendida 2020, Foursquare «Now Closed», dominio muerto) |
+| As Cervesa Artesana | Vilanova del Vallès (zona) | ascervesa.com **secuestrada** (blog spam de viajes); sin señal viva |
+| Celler de Cervesa Artesana HOPe | Sant Sadurní d'Anoia (zona) | cervesahope.com **secuestrada** (tienda electrónica china); sin señal viva |
+| l'Estupenda / El Brètol | Sant Cugat del Vallès | dominio lestupenda.com aparcado (DonDominio); sin señal viva — reconsiderable con señal |
+| Ausesken | Sta. Eulàlia de Riuprimer (Osona) | DNS muerto, sin rastro 2025-26 — reconsiderable con señal |
+| BlackLab Brewhouse | Barcelona (Barceloneta) | cerrada (SL en liquidación, Time Out «cerrado», web vacía) pese a medallas BBC 2025 |
+| Cerveseras BBC 25/26 fuera de provincia | — | Attik=Málaga · Kosmonauta=Cantabria · La Spontanerie=Francia · GRO Brewers=Girona · Cervesa Minera=St. Joan de les Abadesses (Girona) · Marina=Blanes · La Calavera=St. Joan Abadesses · Popaire=Blanes · Moska/Poch's/La Selvaseria=Girona · El Gall Negre y Ctretze y Lo Vilot y Casa Dalmases y Noguera y Lo Perot y La Vella Caravana=Lleida · Les Clandestines/La Gardenia/La Mula/L'Anjub/Redhop Salomó=Tarragona · Trulla=Nuoro (IT) · Radiocraft=Roma (IT) · Fresh Beer 30 Km=Shanghái · La Cànibal=Madrid (prior, sin verificar) · Badalà/Hopsters/Qubeer=no localizadas (probable IT/extranjero) |
+
 Contexto útil: los 7 candidatos de la nota de junio (Vibra, Fonik, MCava, A27,
 Holy Madre, Hijos de Nata, Baluard El Magatzem) acabaron **todos integrados** —
 de las notas históricas de candidatos no queda nada pendiente ni descartado.
@@ -203,10 +215,46 @@ lotes 3-6** (fuentes de eventos/premios, indexables); lote 2 queda reducido al
 residual de arriba; **lote 7 (prensa sistemática) NO-GO** salvo navegación
 directa de cabeceras.
 
+### Lote 3 — cerveseras BBC + GECAN (2026-07-15) ✅
+
+Fuentes: PDFs oficiales de premiados del Barcelona Beer Challenge
+([2026](https://barcelonabeerchallenge.com/wp-content/uploads/2026/04/Premiados-Web-2026.pdf),
+[2025](https://factoriadecerveza.com/wp-content/uploads/2025/04/Medallas-Barcelona-Beer-Challenge-2025.pdf))
++ mapa de socios GECAN (KML del MyMaps embebido en gecan.info, 37 socios).
+
+**Resultado clave: la veta cervecera BCN está saturada.** Los ~11 medallistas
+BBC 25/26 de la provincia ya estaban TODOS en el CSV (Maresme Brewery, Dehum,
+La Barberenca, La Cervesera Artesana, La Pirata, Bierboi, Espiga, Montseny,
+Reptilian, Almogàver, Els Minairons). El flujo nuevo del BBC (rookies) es de
+fuera: Kosmonauta=Cantabria, La Spontanerie=Francia, Attik=Málaga. Y del mapa
+GECAN (desactualizado, ~2019-21), de 10 socios BCN no presentes en el CSV,
+la mayoría están muertos.
+
+**Alta (1):** Cervesa Cornèlia (Cornellà de Llobregat) —
+`cervesa-cornelia-cornella-de-llobregat`, parcial, VO no comprobado. Coop SCCL
+de 2014, socia GECAN (instalación propia), check-ins Untappd dic-25/ene-26;
+sin web propia.
+
+**Ya estaban (2):** Malta 51 SL = Bertus (Rubí) · +Malta = Mas Malta (Sta.
+Perpètua).
+
+**Diferidos (residual, comprobar IG/in situ antes de alta):** Vic Brew (Vic;
+vicbrew.com indexada con botiga pero conexión rechazada desde aquí, sin señal
+fresca legible) · Societat Cervesera Artesenca (Artés; web = shell JS sin
+contenido, Untappd hasta 2025) · ART Cervesers (Canovelles, Can Partegàs; web
+viva con WooCommerce pero sitemap congelado desde 2022-04, tel +34619941582).
+
+**Rechazos (a Descartados):** Edge Brewing (cerrada), As Cervesa, HOPe,
+l'Estupenda/El Brètol, Ausesken (ver tabla).
+
+**Yield: 1 alta / ~10 netos revisados → por debajo del umbral.** La cola
+cervecera se cierra; los diferidos quedan como residual barato.
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
+| 2026-07-15 | 3 | Claude | ✅ Lote 3 cerrado: BBC 25/26 (PDFs oficiales) + mapa GECAN → **1 alta** (Cervesa Cornèlia, parcial) sobre ~10 netos; los 11 medallistas BBC de la provincia ya estaban; mapa GECAN desactualizado (Edge cerrada, As/HOPe secuestradas, Estupenda aparcada, Ausesken muerta); 3 diferidos (Vic Brew, Artesenca, ART Cervesers). CSV 2496→2497, gates verdes. **Veta cervecera cerrada → siguiente: lote 4 (Vinari + vino natural)** |
 | 2026-07-14 | 1 | Claude | ✅ Lote 1 (cata) cerrado: 52 fichas BAP prov. BCN trabajadas → **5 altas** (Mels de Can Monràs Nou verif, Mas Palou verif VO=sí, Granja Guirigall parcial, Biomasia Ca n'Oliveró parcial, Maset de la Costa parcial) **+ 1 mejora** (fila registro → MielHada, verif VO=sí) + 16 ya estaban + 25 rechazos (a Descartados). Prensa comarcal vía buscador: 0/3 búsquedas → lote 7 NO-GO. CSV 2491→2496; evidencia 7 registros; gates verdes (csv/images/evidence OK). **GO matizado → siguiente: lote 3 (cerveseras BBC/GECAN)** |
 | 2026-07-14 | 0 | Claude | ✅ Lote 0 cerrado. Arqueología de los 220 commits del CSV → **618 slugs salidos** volcados a `barcelona-snapshot-descartados-git.md` (purgas verificación ~490 + dedup 119 pares + fusiones/renombres). Sección «Descartados» rellenada: 10 descartes pre-CSV de la pasada atípicos + 2 «no añadir fila» de la nota de junio (Hofmann Badalona, Parallelo TOM) + 2 alias «ya estaba» de Rutes del Vi (AT Roca, Sant Miquel d'Oló). Los 7 candidatos de junio 2026 acabaron todos integrados. Siguiente: **lote 1** (cata de rendimiento, GO/NO-GO) |
