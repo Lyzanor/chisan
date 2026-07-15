@@ -59,7 +59,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | — | — | **GO/NO-GO**: si el lote 1 rinde ≥ ~1 alta/5-6 revisados, seguir con 2-7; si no, saltar al frente B | — | **GO matizado (2026-07-14)**: 5+1/31 ≈ umbral justo → seguir con 3-6; lote 2 reducido a residual; lote 7 NO-GO (prensa no indexa) | — | — |
 | 2 | A | Benvinguts a Pagès 2026 completo, prov. BCN por comarcas (priorizar Berguedà, Moianès/Lluçanès, Anoia rural) | ~30-50 | pendiente | | |
 | 3 | A | Cerveseras: Barcelona Beer Challenge 2025/26 (medallistas nuevos) + GECAN altas recientes | ~15-25 | ✅ 2026-07-15 — veta saturada | ~10 netos | 1 |
-| 4 | A | Vino: Premis Vinari 2025/26 + vino natural (Vella Terra y ferias afines) — debutantes DO Alella / Pla de Bages / Penedès | ~15-25 | pendiente | | |
+| 4 | A | Vino: Premis Vinari 2025/26 + vino natural (Vella Terra y ferias afines) — debutantes DO Alella / Pla de Bages / Penedès | ~15-25 | ✅ 2026-07-15 — veta fértil | ~17 netos | 10 |
 | 5 | A | Formatgeries: Lactium (Vic) ediciones 2025/26 + Millor Formatge Català | ~10-20 | pendiente | | |
 | 6 | A | Verkami: campañas de alimentación 2024-26 en prov. BCN (obradores, cerveseras, formatgeries) | ~10-20 | pendiente | | |
 | 7 | A | Prensa comarcal, barrido sistemático por cabecera («obre obrador», «nova formatgeria», «celler nou»… 2025-26): Regió7, El 9 Nou, Nació Digital comarcal, Tot locals, VIA Empresa | ~20-40 | pendiente (condicionado a yield 1-6) | | |
@@ -156,6 +156,15 @@ nombre corto/slug pegado — no re-añadir):
 | l'Estupenda / El Brètol | Sant Cugat del Vallès | dominio lestupenda.com aparcado (DonDominio); sin señal viva — reconsiderable con señal |
 | Ausesken | Sta. Eulàlia de Riuprimer (Osona) | DNS muerto, sin rastro 2025-26 — reconsiderable con señal |
 | BlackLab Brewhouse | Barcelona (Barceloneta) | cerrada (SL en liquidación, Time Out «cerrado», web vacía) pese a medallas BBC 2025 |
+**Descartes del lote 4 (2026-07-15, vino Vinari/Vella Terra):**
+
+| nombre | municipio | motivo |
+|---|---|---|
+| Bardinet Wines (Lacrima Baccus) | — | grupo licorero (Bardinet); etiqueta del grupo — coherente con el descarte de Vermut Berichó |
+| Cava Reverté | Salomó = **Tarragona** | fuera de provincia |
+| Aida i Luis Vinyaters | Xaló = **Alicante** | fuera de provincia |
+| Cellers Vinari fuera de provincia | — | Freixa Rigau=Girona · Carles Andreu/Vinícola del Sarral/Cellers Domenys/Castell del Remei etc.=Tarragona/Lleida · Grup Freixenet=grupo industrial (Segura Viudas ya está como fila propia) |
+
 | Cerveseras BBC 25/26 fuera de provincia | — | Attik=Málaga · Kosmonauta=Cantabria · La Spontanerie=Francia · GRO Brewers=Girona · Cervesa Minera=St. Joan de les Abadesses (Girona) · Marina=Blanes · La Calavera=St. Joan Abadesses · Popaire=Blanes · Moska/Poch's/La Selvaseria=Girona · El Gall Negre y Ctretze y Lo Vilot y Casa Dalmases y Noguera y Lo Perot y La Vella Caravana=Lleida · Les Clandestines/La Gardenia/La Mula/L'Anjub/Redhop Salomó=Tarragona · Trulla=Nuoro (IT) · Radiocraft=Roma (IT) · Fresh Beer 30 Km=Shanghái · La Cànibal=Madrid (prior, sin verificar) · Badalà/Hopsters/Qubeer=no localizadas (probable IT/extranjero) |
 
 Contexto útil: los 7 candidatos de la nota de junio (Vibra, Fonik, MCava, A27,
@@ -250,11 +259,50 @@ l'Estupenda/El Brètol, Ausesken (ver tabla).
 **Yield: 1 alta / ~10 netos revisados → por debajo del umbral.** La cola
 cervecera se cierra; los diferidos quedan como residual barato.
 
+### Lote 4 — vino: Premis Vinari 2025 + Vella Terra 2026 (2026-07-15) ✅
+
+Fuentes: [catálogo oficial de guardonats Vinari 2025](https://www.premisvinari.cat/wp-content/uploads/2025/10/Cataleg-2025.pdf)
+(13a ed., ~46 cellers) + expositores catalanes de [Vella Terra 2026](https://vellaterra.com/en/artisans/)
+(11a ed., feb-2026, 82 bodegas — la participación es señal de actividad fresca).
+La edición Vinari 2026 será en otoño (no existe aún).
+
+**La veta del vino aún da**, al contrario que la cervecera: el catálogo BCN
+tenía 240 bodegas pero los premiados «de segunda línea» del cava y el vi
+natural de ferias seguían fuera.
+
+**Altas (10):** Caves Rimarts (SSd'A, verif) · Canals Nadal (El Pla, verif,
+**VO=sí**) · Can Lleó de Vilanoveta (St. Martí Sarroca, verif; Or Vinari +
+Vella Terra) · Castell d'Or (Vilafranca, verif, **VO=sí**; coop 2º grado con
+marca y botiga → regla Campo de Montiel) · Família Ferrer–Can Sala (St. Quintí
+de Mediona, verif; celler de terroir del grupo → regla Valcarlos/Faustino) ·
+Bodegues Ametller Civill (St. Martí Sarroca, verif; ¡NO es el grupo retail
+Ametller Origen!) · Robert J. Mur/Cellers Most Doré (SSd'A, parcial; webs
+caídas) · Ton Rimbau–Porcellànic (Vilobí, verif; vino natural radical) ·
+Raïmones (Olèrdola, parcial; **fundado 2021**, nueva generación Mas
+Candí/La Salada/RR Sadurní) · Mas Guineu Vinyaters (Torrelles de Foix, verif;
+**primeras vinificaciones 2021**).
+
+**Ya estaban (dedup, ~30):** todos los grandes nombres Vinari de la provincia
+(Vallformosa, Sumarroca, U més U, Llopart, Albet i Noya, Sabaté i Coca, Giró
+Ribot, Rovellats, Oriol Rossell, Maria Rigol Ordi, Canals i Munné, Jaume Giró
+i Giró, Miquel Pons, Alsina Sardà, Blancher, Vilarnau, Roger Goulart, Ramon
+Canals, Jovani Vins, Aymar, Fargas Fargas, Can Serra dels Exibis, Cellers
+Maset, Finca Viladellops, Mas Bertran, Planas Albareda, Júlia Bernet, Celler
+Viader, Vins El Cep, Segura Pujadas, Covides…) + de Vella Terra: Castell
+d'Age, Loxarel, Mas Candí, El Jardí dels Sentits, Can Lleó.
+
+**Residual (localizar en un lote futuro):** Nini Vins, Celler Sanromà,
+Pinyolet Vinyaters, Cas Quitxero (expositores Vella Terra sin localizar —
+posible fuera de provincia).
+
+**Yield: 10 altas / ~17 netos revisados → muy por encima del umbral.**
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
+| 2026-07-15 | 4 | Claude | ✅ Lote 4 cerrado: catálogo Vinari 2025 (PDF oficial) + expositores Vella Terra 2026 → **10 altas** (7 verif, 2 con VO=sí: Canals Nadal y Castell d'Or; 2 proyectos nacidos 2021: Raïmones y Mas Guineu) sobre ~17 netos; ~35 ya estaban. CSV 2497→2507, evidencia 10 reg., gates verdes. La veta vino rinde 10× la cervecera. Residual: 4 expositores VT sin localizar. **Siguiente: lote 5 (Lactium/formatgeries)** |
 | 2026-07-15 | 3 | Claude | ✅ Lote 3 cerrado: BBC 25/26 (PDFs oficiales) + mapa GECAN → **1 alta** (Cervesa Cornèlia, parcial) sobre ~10 netos; los 11 medallistas BBC de la provincia ya estaban; mapa GECAN desactualizado (Edge cerrada, As/HOPe secuestradas, Estupenda aparcada, Ausesken muerta); 3 diferidos (Vic Brew, Artesenca, ART Cervesers). CSV 2496→2497, gates verdes. **Veta cervecera cerrada → siguiente: lote 4 (Vinari + vino natural)** |
 | 2026-07-14 | 1 | Claude | ✅ Lote 1 (cata) cerrado: 52 fichas BAP prov. BCN trabajadas → **5 altas** (Mels de Can Monràs Nou verif, Mas Palou verif VO=sí, Granja Guirigall parcial, Biomasia Ca n'Oliveró parcial, Maset de la Costa parcial) **+ 1 mejora** (fila registro → MielHada, verif VO=sí) + 16 ya estaban + 25 rechazos (a Descartados). Prensa comarcal vía buscador: 0/3 búsquedas → lote 7 NO-GO. CSV 2491→2496; evidencia 7 registros; gates verdes (csv/images/evidence OK). **GO matizado → siguiente: lote 3 (cerveseras BBC/GECAN)** |
 | 2026-07-14 | 0 | Claude | ✅ Lote 0 cerrado. Arqueología de los 220 commits del CSV → **618 slugs salidos** volcados a `barcelona-snapshot-descartados-git.md` (purgas verificación ~490 + dedup 119 pares + fusiones/renombres). Sección «Descartados» rellenada: 10 descartes pre-CSV de la pasada atípicos + 2 «no añadir fila» de la nota de junio (Hofmann Badalona, Parallelo TOM) + 2 alias «ya estaba» de Rutes del Vi (AT Roca, Sant Miquel d'Oló). Los 7 candidatos de junio 2026 acabaron todos integrados. Siguiente: **lote 1** (cata de rendimiento, GO/NO-GO) |
