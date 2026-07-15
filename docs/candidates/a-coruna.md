@@ -42,10 +42,11 @@
   Simón, pero pertenece al **Grupo TGT** (Teodoro García Trabadelo, mayor
   productor y distribuidor de quesos de España; su email de contacto en el
   registro es `@grupotgt.es`). Regla dura de grandes grupos industriales.
-- ⚠ **Hallazgo que afecta a una fila existente**: TGT entró en Galicia comprando
+- ✅ **Hallazgo resuelto en AC-01 (2026-07-12)**: TGT entró en Galicia comprando
   **dos** plantas — Ferrado Verde (Santa Comba) y **Quesería Ruta Xacobea** (O
-  Pino). Esta última está en el CSV como `alimentos-ruta-xacobea-o-pino` →
-  **revisar esa fila** con el mismo criterio de tamaño que se aplica aquí.
+  Pino). La fila `alimentos-ruta-xacobea-o-pino` se purgó como
+  `out-of-scope`, aplicando a ambas plantas el mismo criterio de gran grupo
+  industrial.
 - **Ya en `a-coruna.csv` (no son altas)**: Queixería Barral (Arzúa), Queizuar /
   Queserías Bama (Touro), Queinaga (Curtis), Quesería Brexeo / O Brexeo de
   Grixalba (Sobrado), Lácteos Terra de Melide (Melide), Queserías del Eume (As

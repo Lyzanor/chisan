@@ -22,7 +22,7 @@
 > **`unverified`**. La comarca (Caspe/Maella/Belchite/Mequinenza) ya está bastante
 > cubierta en el CSV → hueco real pequeño.
 
-- [x] **Granja Brunet** ‹→ granja-brunet-fabara (verificado, VO no comprobado; web propia sin carrito, reventa en terceros)› (Granja Brunet, S.L.U.) — Aceite (+ melocotón/fruta).
+- [x] **Granja Brunet** ‹→ granja-brunet-fabara (verificado, VO no; web propia revisada sin pedido remoto, reventa de terceros no atribuida)› (Granja Brunet, S.L.U.) — Aceite (+ melocotón/fruta).
   Fabara. Tel 650 434 744 · <http://www.granjabrunet.com> ·
   info@granjabrunet.com. AOVE del Bajo Aragón con tienda online → pista
   `Venta online=sí`.
@@ -34,19 +34,15 @@
 - [x] **Frutícola Maellana** ‹→ fruticola-maellana-fruma-maella (parcial; identidad/municipio confirmados por 2 registros DOP + directorio, pero fruma.es no cargó en vivo)› (marca **Fruma**) — Fruta y verdura (melocotón de
   Calanda; también aceite). Maella. Tel 976 638 165 · <http://www.fruma.es> ·
   cooperativa@fruma.es. Aparece en ambos registros (aceite y melocotón).
-- [x] **Frutícola Bajoaragonesa** ‹DIFERIDO: S.C. de 2º grado = central hortofrutícola B2B, sin marca de consumo; revisar en 2ª pasada› (Frutícola Bajoaragonesa S.C. 2ºG) — Fruta y
+- [x] **Frutícola Bajoaragonesa** ‹NO ALTA: la web vigente confirma una cooperativa de 2º grado que comercializa la producción de tres socias ya representadas; MAGUA identifica la agrupación, pero no una unidad productiva adicional› (Frutícola Bajoaragonesa S.C. 2ºG) — Fruta y
   verdura (melocotón de Calanda). Caspe. Tel 976 633 315 ·
-  <http://www.fruticola-bajoaragonesa.com>. ⚠ confirmar marca de consumo vs
-  central hortofrutícola B2B.
-- [x] **Cooperativa Frutícola Compromiso de Caspe** ‹→ cooperativa-fruticola-compromiso-de-caspe (parcial; solo-registro DOP, sin web)› — Aceite (+ melocotón).
-  Caspe. Tel 976 632 159 · frucas1@telefonica.net. ⚠ confirmar marca propia
-  (posible granel/servicio).
-- [x] **Frumaspi Agrícola** ‹DIFERIDO: sin web ni rastro de marca de consumo; probable B2B, revisar en 2ª pasada› (Frumaspi Agrícola, S.L.) — Fruta y verdura
-  (melocotón de Calanda). Maella. Tel 876 708 028. Sin web localizada. ⚠
-  confirmar marca de consumo.
-- [x] **Cooperativa Agraria San Sebastián** ‹→ cooperativa-agraria-san-sebastian-fayon (parcial; solo-registro DOP, sin web)› — Aceite. Fayón. Tel 976 635 674 ·
-  cooperativasansebastian@hotmail.es. ⚠ cooperativa pequeña, confirmar marca vs
-  granel antes de integrar.
+  <http://www.fruticola-bajoaragonesa.com>.
+- [x] **Cooperativa Frutícola Compromiso de Caspe** ‹→ cooperativa-fruticola-compromiso-de-caspe (verificado, VO no; web oficial FRUCAS confirma almazara, AOVE y tienda física)› — Aceite (+ melocotón).
+  Caspe. Tel 976 632 159 · <https://www.frucas.es/> · info@frucas.es.
+- [x] **Frumaspi Agrícola** ‹NO ALTA: sociedad agraria activa en 2026 y operador DOP, pero sin web, catálogo, contacto público ni unidad comercial demostrada para la marca registral Frutas Hnos Mas› (Frumaspi Agrícola, S.L.) — Fruta y verdura
+  (melocotón de Calanda). Maella. Tel 876 708 028. Sin web localizada.
+- [x] **Cooperativa Agraria San Sebastián** ‹→ cooperativa-agraria-san-sebastian-fayon (parcial; registro DOP vigente, sin web propia)› — Aceite. Fayón, Ctra. de Ronda 14. Tel 976 635 674 ·
+  cooperativasansebastian@hotmail.es.
 
 ### Notas del lote 15
 
@@ -55,7 +51,7 @@
   (hacen AOVE y melocotón). La primera ya está en CSV como
   `cooperativa-agricola-san-lorenzo-maella`; para Fruma, valorar una sola ficha
   con doble categoría al integrar.
-- **Ya en CSV (no altas)**: Almazara de Jaime (Belchite), Almazara Molino
+- **Ya en CSV (no altas)**: Almazara de Jaime / Aceites de Belchite (Belchite), Almazara Molino
   Alfonso (Belchite), Coop. del Campo San Isidro (Fabara), Aceites Alcañiz
   Millán/Molí de Casto (Maella), Coop. Agrícola San Lorenzo (Maella), Almazara
   Gil Egerique/Torre Maella (Maella), Alejandro y Miguel S.C. (Nonaspe).
@@ -103,12 +99,10 @@
   <http://www.bodegapicos.com>.
 - [x] **Cooper Cellars** (marca **Vinos del Viento**) ‹→ bodega-vinos-del-viento-pozuelo-de-aragon (verificado; enólogo Michael Cooper)› — Bodega. Pozuelo de Aragón.
   <http://vinosdelviento.com/>.
-- [x] **Soc. Coop. Agrícola de Borja** ‹DIFERIDO: coop sin web; confirmar marca de consumo propia vs granel/Borsao en 2ª pasada› — Bodega. Borja. · 976 866 065. Sin web.
-  ⚠ cooperativa; confirmar marca de consumo propia.
-- [x] **Santa Ana Crianzas y Viñedos, S. Coop.** ‹DIFERIDO: coop sin web; confirmar marca propia en 2ª pasada› — Bodega. Pozuelo de Aragón.
-  · 976 862 931. Sin web. ⚠ confirmar marca.
-- [x] **Coop. Ntra. Sra. Niño Perdido** ‹DIFERIDO: coop sin web; confirmar marca vs granel en 2ª pasada› — Bodega. Tabuenca. · 976 865 874. Sin web.
-  ⚠ confirmar marca vs granel.
+- [x] **Soc. Coop. Agrícola de Borja** ‹NO ALTA: cooperativa fundadora de Bodegas Borsao, ya presente; no publica línea propia diferenciada› — Bodega. Borja. · 976 866 065. Sin web.
+- [x] **Santa Ana Crianzas y Viñedos, S. Coop.** ‹→ santa-ana-crianzas-y-vinedos-pozuelo-de-aragon (parcial; el consejo confirma bodega y marcas Campo Castillo/El Tenor, sin fuente primaria ni pedido remoto)› — Bodega. Pozuelo de Aragón.
+  · 976 862 931. Sin web.
+- [x] **Coop. Ntra. Sra. Niño Perdido** ‹NO ALTA: cooperativa fundadora de Bodegas Borsao, ya presente; no publica marca propia diferenciada› — Bodega. Tabuenca. · 976 865 874. Sin web.
 
 ### DO Calatayud (3)
 
@@ -157,21 +151,21 @@
 > El «resto de 33 inscritas» son casi todas registros no-consumidor (viñedos,
 > almacenistas, embotelladoras) = granel/B2B, no altas.
 
-**Cariñena corte 2 — 7 altas:**
+**Cariñena corte 2 — 6 altas y 1 descarte tras reconciliación:**
 
 - `bodegas-hermanos-torcal-carinena` (Cariñena) — **verificado, VO=sí ecommerce**
-  (familia desde 1845, 120 ha propias, marcas Cachirulo/Marqués de Fuendetodos;
+  (familia desde 1845, viñedo propio, marcas Cachirulo/Marqués de Fuendetodos;
   tienda `tienda.vinostorcal.com`).
 - `bodegas-valdegarzon-almonacid-de-la-sierra` (Almonacid) — **verificado, VO=nc**
-  (web propia `valdegarzon.com`, enoturismo + venta por WhatsApp/email).
-- `bodegas-del-senorio-almonacid-de-la-sierra` (Almonacid) — **verificado, VO=nc**
-  (S.A.U., viñedo propio desde 1780, marcas Senda Lasarda/Yañoria; web viva en `www.`).
+  (web propia `valdegarzon.com`, elaboración y enoturismo; WhatsApp y email son
+  contacto, no prueba de pedido).
+- `bodegas-del-senorio-almonacid-de-la-sierra` (Almonacid) — **parcial, VO=nc**
+  (censo DOP y sociedad activa, pero el dominio está aparcado; marcas Senda
+  Lasarda, Señorío de la Obra y Viña Valerma).
 - `bodegas-y-vinedos-monfil-carinena` (Cariñena) — **parcial** (familia Mateo 1943,
-  22 ha propias, marca Monfil/Kalius, FB; sin web propia).
+  marca Monfil/Kalius, FB; dominio en página por defecto, sin web propia operativa).
 - `quinta-mazuela-carinena` (Cariñena) — **parcial** (boutique de la enóloga Silvia
-  Tomé; solo reventa en terceros, sin web propia).
-- `bodegas-vinos-y-vinedos-marin-rios-encinacorba` (Encinacorba) — **parcial**
-  (familia Marín Ríos, DO-inscrita; sin web propia; ≠ Ignacio Marín).
+  Tomé; directorios coincidentes, pero dominio en página por defecto y sin venta atribuible).
 - `bodega-san-bernabe-de-cosuenda-cosuenda` (Cosuenda) — **parcial** (producto singular
   Pajarilla de Cosuenda; comercializada vía Grandes Vinos).
 
@@ -179,15 +173,22 @@
 
 - **Bodegas Gabarda** (Longares) — RECHAZO: usa `administracion@ignaciomarin.com` →
   marca del grupo **Ignacio Marín** (ya en CSV).
+- **Bodegas Vinos y Viñedos, S.L.** (Encinacorba) — **RECHAZO tras reauditoría
+  ZG-22**: el censo DOP publicado en 2026 solo certifica almacenamiento, no
+  elaboración, crianza ni embotellado; comparte los contactos de otros Marín ya
+  representados y no publica producto propio vigente.
 - **Coop. San Nicolás de Tolentino** (Almonacid) — RECHAZO: vende **a granel** a una
   coop mayor de Cariñena (en conversión a ecológico), sin marca de consumo propia.
 - **Coop. Ntra. Sra. del Pilar** (Villanueva de Huerva) y **Coop. San Roque de
   Alfamén** — RECHAZO: coops **fundadoras de Grandes Vinos y Viñedos** (= Gran Ducay,
   ya en CSV); su vino se comercializa bajo las marcas del grupo, sin línea propia.
-- **Cariñena Vitivinícola, S.A.T. nº 75** (Cariñena) — DIFERIDO: S.A.T. de granel;
-  atribución de marcas (Corona de Aragón…) dudosa/confundida con Grandes Vinos.
-- **Bodegas Luipau** (Longares) — DIFERIDO: funciona como bodega-restaurante de
-  carretera (A-23); marca de elaboración propia sin confirmar.
+- **Cariñena Vitivinícola, S.A.T. nº 75** (Cariñena) — **NO ALTA**: el censo DOP
+  usa el correo de Grandes Vinos y la S.A.T. forma parte del proyecto cooperativo
+  ya representado; Corona de Aragón pertenece a Grandes Vinos, no a una línea
+  independiente de esta instalación.
+- **Bodegas Luipau** (Longares) — **NO ALTA**: la sociedad activa declara cultivo
+  de vid, pero la presencia pública vigente corresponde a un restaurante de
+  carretera; no se localizó vino, marca ni elaboración propia atribuible.
 - **Bodegas Añadas** = marca CARE (ya en CSV, `bodegas-care-carinena`); **Coop.
   Vitivinícola de Longares** = COVINCA (ya en CSV) → already-present.
 
@@ -202,10 +203,10 @@
 - **Frutícola Bajoaragonesa** (Caspe) → **RECHAZO**: cooperativa de 2º grado / central
   hortofrutícola que comercializa al por mayor (B2B) la fruta de sus socios, sin marca
   de consumo ni tienda propia.
-- **Frumaspi Agrícola** (Maella) → **RECHAZO/DIFERIDO**: S.L. sin web ni rastro de
-  marca de consumo; probable manipulado B2B, sin enlace verificable.
+- **Frumaspi Agrícola** (Maella) → **NO ALTA**: la sociedad agraria y el operador
+  DOP están activos, pero no publican catálogo, contacto ni unidad comercial
+  verificable para la marca registral Frutas Hnos Mas.
 
-> **Nota de coordinación:** estas 8 altas (+evidencia) se integraron el 2026-07-14
-> en un commit aislado sobre `main`, mientras `gpt-5.6-sol` tenía un pase de
-> verificación de Zaragoza sin commitear en el working tree. El commit aislado NO
-> incluye ese pase (se dejó intacto para su autor).
+> **Nota de coordinación:** las 8 propuestas aparecieron en paralelo durante el
+> pase de `gpt-5.6-sol`. ZG-22 reaudita las ocho: conserva 7, corrige sus datos
+> y evidencia y descarta Encinacorba por alcance exclusivo de almacenamiento.

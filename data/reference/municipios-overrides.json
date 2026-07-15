@@ -558,5 +558,21 @@
       "label": "Vera de Bidasoa",
       "community": "navarra"
     }
+  ],
+  "longares": [
+    {
+      "lat": 41.40194,
+      "lon": -1.16778,
+      "label": "Longares",
+      "community": "aragon"
+    }
+  ],
+  "cuarte": [
+    {
+      "lat": 42.117661,
+      "lon": -0.470789,
+      "label": "Cuarte (Huesca)",
+      "community": "aragon"
+    }
   ]
 }

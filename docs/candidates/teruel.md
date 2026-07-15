@@ -1,243 +1,79 @@
 # Candidatos — Teruel
 
-> Origen: pasada de cobertura de capitales 2026-07-08 (la capital solo tiene 3 filas:
-> Portesa, Horno Sanz, Casa Muñoz), extendida a provincia con los hallazgos reales que
-> quedaron fuera del municipio. **Estado: `unverified`** — deduplicado contra
-> `teruel.csv` el 2026-07-08 por nombre/dominio normalizado; antes de integrar:
-> re-deduplicar con `npx pnpm list:province teruel`, confirmar actividad/dirección y
-> decidir `verificacion` y `Venta online`.
+> Cierre editorial: 2026-07-15. La lista histórica quedó re-deduplicada contra
+> `teruel.csv` y resuelta durante los lotes TE-01 a TE-10. No quedan candidatos
+> abiertos en esta pasada; un hallazgo futuro debe añadirse como candidato nuevo
+> y volver a investigarse con fuentes actuales.
 
-## Capital (municipio de Teruel) — 3 candidatos → ✅ 2 altas (lote 2.1a)
+## Altas resueltas antes de TE-10
 
-> **⚠ grupo resuelto**: «Elaborados Las Torres, S.L.» y «Jamón Mudéjar / Carnicería
-> Hermanos Sánchez» son la **MISMA empresa** (misma dirección Pol. La Paz C/
-> Florencia 14, mismo teléfono) → **una sola fila** (`jamon-mudejar-elaborados-las-torres-teruel`).
-> Rokelin → `rokelin-teruel` (verificado, VO=sí).
+- [x] Rokelin — `rokelin-teruel`.
+- [x] Elaborados Las Torres / Jamón Mudéjar — una sola unidad productiva:
+  `jamon-mudejar-elaborados-las-torres-teruel`.
+- [x] Cervezas Mijares — `cervezas-mijares-rubielos-de-mora`.
+- [x] Trufas La Chaparra — `trufas-la-chaparra-teruel`.
+- [x] De Trufa en Trufa — `de-trufa-en-trufa-torrelacarcel`.
+- [x] Jamones Andrés Izquierdo — `jamones-andres-izquierdo-cedrillas`.
+- [x] Secadero La Serranía — `secadero-la-serrania-mosqueruela`.
+- [x] La Monrealense, Josanz, Casa Domingo, Casa Vieja, Peñarroya, Pastor y El
+  Rullo — altas DOP revalidadas en TE-08.
+- [x] El Calamochino y Sierra de Mora — altas DOP conservadas como `parcial` por
+  fuente primaria caída o temporalmente no operativa.
+- [x] Las trece altas DOP de aceite de Teruel — revalidadas en TE-09; el falso
+  cruce Rey Solé / Mi Olivo se purgó en TE-01.
 
-- [ ] **Rokelin (Jamones Roque Orriols, S.L.)** — Charcutería (jamón DOP Teruel).
-  Pol. Ind. La Paz 17 (tb. parcela 55), 44195 Teruel. <https://rokelin.com/> ·
-  978 604 642 · secadero@rokelin.com. Desde 1975; secadero, fábrica de embutidos,
-  quesos y comidas preparadas + tiendas propias/franquicias. Tienda online propia y
-  Correos Market → pista `Venta online=sí`.
-- [ ] **Elaborados Las Torres (Grupo Hermanos Sánchez Andrés)** — Charcutería.
-  Secadero a 900 m de altitud en Teruel ciudad. <https://www.elaboradoslastorres.es/>.
-  Jamón DO Teruel V/R, jamón bodega, añejo, paleta. ⚠ Ver aviso de grupo abajo.
-- [ ] **Jamón Mudéjar (Carnicería Hermanos Sánchez)** — Charcutería.
-  Teruel ciudad, instalaciones a 900 m. <https://www.jamonmudejar.com/>.
-  ⚠ Colisión de nombre con la fila existente *Turotrans-Tierra Mudejar* (Santa
-  Eulalia): entidades distintas, cuidar slug.
+## Altas de cierre TE-10
 
-> ⚠ **Aviso de grupo (resolver antes de crear dos filas):** "Elaborados Las Torres /
-> Grupo Hermanos Sánchez Andrés" y "Jamón Mudéjar / Carnicería Hermanos Sánchez"
-> comparten apellido, ciudad y el mismo reclamo de "secadero a 900 m". Podrían ser el
-> mismo grupo familiar con dos marcas → riesgo de duplicado encubierto. Confirmar CIF
-> o dirección de cada uno; si son el mismo, una sola fila con la marca principal.
+- [x] Quesos Las Valles / Hermanos Igado Orcal —
+  `quesos-las-valles-samper-de-calanda` (`parcial`, pedidos por email).
+- [x] Queso Artesano El Ródeno / El Aljibe — `queso-el-aljibe-rodenas`.
+- [x] Panadería Domingo y Cristina —
+  `panaderia-domingo-y-cristina-villastar` (`parcial`).
+- [x] La Tartufería — `la-tartuferia-el-castellar`; se resolvió la duda de
+  alcance al confirmarse cultivo propio y elaboración artesana.
+- [x] Melocotón La Arenosa — `melocoton-la-arenosa-calanda`; tienda estacional
+  fuera de campaña, por lo que la venta remota sigue `no comprobado`.
+- [x] JAELCA — `jaelca-teruel` (`parcial`; dominio heredado ambiguo).
+- [x] Jamones Carbó / Caminjamón — `jamones-carbo-caminreal` (`parcial`; dominio
+  sin DNS durante la revisión).
+- [x] Jamones Castelfrío — `jamones-castelfrio-cedrillas`.
+- [x] Jamones Ramiro Guillén —
+  `jamones-ramiro-guillen-villarroya-de-los-pinares`.
+- [x] Alfonso Sáez — `alfonso-saez-mora-de-rubielos`.
+- [x] Jamones El Sabinar / Sierra Mata —
+  `jamones-el-sabinar-la-mata-de-los-olmos` (`parcial`; dominio sin DNS).
+- [x] Jamón Villamón / Don Jate — `jamon-villamon-teruel`.
 
-## Provincia — 12 candidatos → ✅ 5 altas + rechazos (lote 2.1a, 2026-07-10)
+## Ya presentes o absorbidos por otra decisión
 
-> Altas: `de-trufa-en-trufa-torrelacarcel`, `trufas-la-chaparra-teruel` (trufa,
-> VO=sí), `jamones-andres-izquierdo-cedrillas`, `secadero-la-serrania-mosqueruela`
-> (jamón), `cervezas-mijares-rubielos-de-mora` (parcial, sin canal propio).
-> **Rechazos/diferidos**: **Ordio Minero** → produce hoy en La Puebla de Alfindén
-> (**Zaragoza**), no Blesa → va a `zaragoza.csv`, no Teruel. **Jamones Albarracín**
-> → secadero de **maquila B2B** (cura para terceros, sin marca de consumo) →
-> excluido. **La Tartuferia** (El Castellar) → comercializadora/distribuidora de
-> trufa, producción propia no confirmada → diferida. Pendientes de otro lote (sin
-> web clara): Castel Cerveza (El Pobo), quesos Hermanos Igado (Samper) y El Rodeño
-> (Ródenas), Horno Domingo y Cristina (Villastar).
+- [x] Jamones Bronchales — `jamones-bronchales-sl-bronchales`.
+- [x] Jamones Casa Conejos — `jamones-casa-conejos-sau-cedrillas`.
+- [x] La Masada Roya — `aceite-y-encurtidos-la-masada-roya-andorra`.
+- [x] Cooperativa del Campo San Miguel de Calanda —
+  `cooperativa-del-campo-san-miguel-calanda`.
+- [x] Almazara Artal, Cooperativa del Mezquín, Cofruval, Quesos La Val, Quesos
+  Zariche, Tronchón, Sierra de Albarracín y Miel Luas — ya estaban en el CSV y
+  se revalidaron en sus lotes.
 
-- [ ] **Cervezas Mijares (Mijares Gourmet)** — Cerveza artesana. Rubielos de Mora.
-  Agua de la Sierra de Gúdar, sin filtrar/pasteurizar. Ficha:
-  <https://ponaragonentumesa.com/directorio/sector/productores/cervezas-artesanas/cervezas-mijares/>.
-  ⚠ Se vende vía <https://trufasalonso.es/cervezas/> (posible mismo grupo que Trufas Alonso).
-- [ ] **Castel Cerveza Artesanal** — Cerveza artesana. El Pobo. Desde 2011 (primeras
-  cervezas otoño 2012). <https://aragonbeers.com/castel-cerveza-artesanal>.
-- [ ] **Ordio Minero (Bieras Ordio, S.L.)** — Cerveza artesana. Blesa (Cuencas
-  Mineras), nacida 2012. <https://www.ordiominero.com/>. ⚠ Desde 2017 tiene segunda
-  fábrica en La Puebla de Alfindén (Zaragoza): confirmar dónde produce hoy; si toda la
-  producción salió de Blesa, valorar si la fila corresponde a `zaragoza.csv`.
-- [ ] **Hermanos Igado Orcal, S.A.T.** — Lácteos y quesos. Samper de Calanda.
-  Miembro de la asoc. Productores de Leche y Queso de Teruel (quesosdeteruel.es).
-- [ ] **Queso Artesano El Rodeño** — Lácteos y quesos. Ródenas. Misma fuente asociativa.
-- [ ] **Trufas La Chaparra** — Otros (trufa negra). Fuen del Cepo, Albentosa.
-  <https://www.trufateruel.com/> con tienda online → pista `Venta online=sí`.
-- [ ] **La Tartuferia** — Otros (trufa negra). El Castellar. <https://latartuferia.eu/>.
-- [ ] **De Trufa en Trufa** — Otros (trufa negra, ecológica). Torrelacárcel.
-  <https://detrufaentrufa.com/> con tienda online → pista `Venta online=sí`.
-- [ ] **Jamones Andrés Izquierdo** — Charcutería. Cedrillas, secadero desde 1989.
-  <https://www.andresizquierdo.es/el-secadero/>.
-- [ ] **Jamones Albarracín** — Charcutería. Albarracín.
-  <https://www.jamonesalbarracin.com/>. ⚠ Encaje dudoso: mayor secadero de maquila de
-  España (B2B, cura para terceros); valorar si es "productor vendible" según política.
-- [ ] **Secadero La Serranía** — Charcutería (jamón DOP Teruel). Venta del Aire s/n,
-  44410 Mosqueruela (1.400 m). <https://secaderolaserrania.es/>. Grupo "Secaderos al
-  Natural".
-- [ ] **Horno-Panadería Domingo y Cristina** — Pan y pastelería. Villastar, desde
-  1967, horno de leña.
+## Rechazados o trasladados
 
-## DOP Jamón de Teruel — secaderos (lote 12 de do-huecos)
-
-> Fuente: «Nuestra Gente» del Consejo Regulador DOP Jamón de Teruel
-> (<https://jamondeteruel.com/es/nuestra-gente/>, marcas comerciales con web),
-> leído vía navegador. Dedup 2026-07-09 contra `teruel.csv` y contra los
-> candidatos de jamón ya listados arriba. **Ya listados/excluidos:** Rokelin,
-> Elaborados Las Torres, Jamones Albarracín, Secadero La Serranía (candidatos
-> arriba); Aragonia (grupoaragonia, ya en CSV, Calamocha); La Estrella del Jamón
-> (Sierra Palomera, ya en CSV, Monreal). Municipio a confirmar salvo el inferible
-> del nombre; **web de cada uno tomada del consejo** (casi todos con tienda →
-> pista `Venta online`).
-
-> ✅ **Lote 2.1b integrado 2026-07-10**: 9 altas (7 `verificado`+VO=sí en la
-> mayoría; El Calamochino y Sierra de Mora `parcial` por web caída/en obras):
-> La Monrealense, Josanz, Casa Domingo, Casa Vieja, Peñarroya, Pastor, El Rullo.
-> **Rechazos (el registro del consejo trae mucho ruido de terceros)**: **Torico
-> de Teruel** (comercializador en Valls, **Tarragona**), **Bodegas Gargallo**
-> (comercializador gourmet en **Valencia**, revende 5J/Lazo), **Campodulce**
-> (gran industria, sin DOP Teruel), **Fuenjamón** (bar/tienda de Mora de Rubielos,
-> no elabora). Diferidos por web caída/redirección: JAELCA (redirige a Google
-> Sites de «El Castellar»), Jamones Barriendo (DNS), Jamones Carbó (DNS).
-> Pendientes de otro corte: Castelfrío, Ramiro Guillén, Alfonso Sáez, El Sabinar,
-> Villamón.
-
-- [ ] **JAELCA (Jamones y Elaborados La Calamochina)** — Charcutería (jamón DOP
-  Teruel). Calamocha. <https://www.jaelca.com/>.
-- [ ] **El Calamochino** — Charcutería (jamón DOP Teruel). Calamocha.
-  <https://www.elcalamochino.com/>.
-- [ ] **La Monrealense** — Charcutería (jamón DOP Teruel). Monreal del Campo.
-  <https://www.lamonrealense.com/>.
-- [ ] **Jamones Sierra de Mora** — Charcutería (jamón DOP Teruel). Mora de
-  Rubielos (confirmar). <https://www.sierrademora.com/>.
-- [x] **Jamones Bronchales** — **already-present** →
-  `jamones-bronchales-sl-bronchales` (limpieza 2026-07-10, dominio coincide;
-  integrado tras escribirse este lote). NO crear fila.
-- [ ] **Torico de Teruel** — Charcutería (jamón DOP Teruel). Teruel (confirmar).
-  <https://www.toricoteruel.com/>.
-- [ ] **Campo Dulce Curados** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.campodulcecurados.com/>.
-- [ ] **Jamones Barriendo** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamonesbarriendo.es/>.
-- [ ] **Bodegas Gargallo** — Charcutería (jamón/embutido DOP Teruel). Confirmar
-  municipio. <https://www.bodegasgargallo.com/>.
-- [ ] **Jamones Carbó** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamonescarbo.com/>.
-- [ ] **Jamones Casa Domingo** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.jamonescasadomingo.es/>.
-- [ ] **Jamones Casa Vieja** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.jamonescasavieja.es/>.
-- [ ] **Jamones Josanz** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamonesjosanz.com/>.
-- [ ] **Jamones Peñarroya** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamonespenarroya.com/>.
-- [ ] **Jamones Castelfrío** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.jamonescastelfrio.es/>.
-- [ ] **Fuenjamón** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.fuenjamon.com/>.
-- [ ] **Jamones Ramiro Guillén** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.jamonesramiroguillen.es/>.
-- [ ] **Jamones El Rullo** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamoneselrullo.com/>.
-- [ ] **Jamones Pastor** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamonespastor.com/>.
-- [x] **Jamones Casa Conejos** — **already-present** →
-  `jamones-casa-conejos-sa-cedrillas` (limpieza 2026-07-10, dominio coincide).
-  NO crear fila.
-- [ ] **Alfonso Sáez** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.alfonsosaez.com/>.
-- [ ] **Jamones El Sabinar** — Charcutería (jamón DOP Teruel). Confirmar
-  municipio. <https://www.jamoneselsabinar.es/>.
-- [ ] **Jamón Villamón** — Charcutería (jamón DOP Teruel). Confirmar municipio.
-  <https://www.jamonvillamon.com/>.
-
-> ⚠ **Excluidos por regla dura (distribuidores / grandes grupos / no turolenses):**
-> Espuña, Noel, Vall Companys, Eroski, Comercial Logística, Distribuciones Rodrigo,
-> Cartesa, Cárnicas/Jamones y Cecinas, Grupo Yumacor, Grupo Térvalis–Airesano,
-> Jamón Aragón, Grupo Arco Iris, La Garriga Charcutería (Barcelona), Jamones Los
-> Alcores (Sevilla), La Casa de los Jamones (minorista), Dulces de Teruel (no es
-> jamón). ⚠ **Centelles y Buj** (<https://www.centellesybuj.com/>) figura aquí y
-> también en el registro DOP Jabugo (lote 5, Huelva): confirmar si es el mismo
-> grupo con secadero en Teruel antes de crear fila; cuidar duplicado entre
-> provincias.
-
-## DOP Aceite del Bajo Aragón + DOP Melocotón de Calanda (lote 13 de do-huecos)
-
-> Fuentes (vía navegador): productores DOP Aceite del Bajo Aragón
-> (<https://aceitedelbajoaragon.es/productores>, 27 empresas con dirección, tel y
-> marca) + socios DOP Melocotón de Calanda (<https://www.melocotondecalanda.com/>,
-> webs de comercializadoras). Dedup 2026-07-09 contra `teruel.csv`. **Solo
-> provincia de Teruel** (10 empresas de aceite están en Zaragoza — Belchite,
-> Caspe, Fabara, Fayón, Maella — y son pista para `zaragoza.md`, no se abren
-> aquí). **Ya en el CSV (excluidas):** Almazara Artal (Albalate), Coop. del
-> Mezquín (La Codoñera); Cofruval (Puigmoreno, melocotón).
-
-### DOP Aceite del Bajo Aragón — almazaras de Teruel (15) — ✅ 13 integradas 2026-07-10 (lote 2.1c)
-
-> **5 `verificado`** (La Calandina, Coop Mazaleón, Torre Gachero con tienda;
-> Palacio de Andilla/Valdealgorfa y Marchenica con web, VO no comprobado) + **8
-> `parcial`** (cooperativas del Matarraña/Bajo Aragón sin web propia: Alcober,
-> Ismael y Magallón/Real de Vellón, Aceites Albalate, Coop Matarraña, Rey Solé,
-> Coop Valderrobres, San Antonio Abad, Juncoliva). **La Masada Roya ya estaba en
-> el CSV** (aceite-y-encurtidos-la-masada-roya-andorra) → no se crea. Doble DOP
-> anotada donde procede (La Calandina, Marchenica también melocotón de Calanda).
-
-- [ ] **Aceites Albalate, S.L.** — Aceite. Albalate del Arzobispo. · 978 813 104.
-- [ ] **La Masada Roya (Valero Romeo)** — Aceite. Andorra. Marca «La Masada Roya».
-  · 627 027 366.
-- [ ] **Coop. de Aceites del Matarraña, S.C.L.** — Aceite. Calaceite. · 978 851 014.
-- [ ] **Productos de Calanda, S.L.** — Aceite (+ melocotón). Calanda. Marca
-  «Marchenica». · 978 847 904.
-- [x] **Coop. del Campo San Miguel** (Calanda) — **already-present** →
-  `cooperativa-del-campo-san-miguel-calanda` (limpieza 2026-07-10). Si esa fila
-  no refleja el aceite DOP Bajo Aragón, anotarlo al verificar. NO crear fila.
-- [ ] **La Calandina, S. Coop.** — Aceite (+ melocotón DOP). Calanda. Marca «La
-  Calandina». <https://lacalandina.com/> · 978 846 278.
-- [ ] **Aceites y Encurtidos Ismael y Magallón, S.L.** — Aceite. Calanda. Marca
-  «Real de Vellón». · 978 846 665.
-- [ ] **Coop. del Campo San Isidro (Mazaleón)** — Aceite (+ melocotón). Mazaleón.
-  Marcas «Mazaleón», «A2». <https://www.cooperativamazaleon.es/> · 978 898 693.
-- [ ] **Rey Solé, Antonio** — Aceite. Oliete. Marca «Mi Olivo». · 974 464 722.
-- [ ] **Coop. Oleícola Aragonesa de Valdealgorfa** — Aceite. Valdealgorfa. Marca
-  «Palacio de Andilla». · 978 857 030.
-- [ ] **Coop. del Campo «Sección Almazara»** — Aceite. Valderrobres. Marca «Ermita
-  de los Santos». · 978 850 082.
-- [ ] **Torre Gachero, S.L.** — Aceite. Valderrobres. Marca «Torregachero».
-  · 978 890 513.
-- [ ] **Fernando Alcober e Hijos, S.A.** — Aceite. Valdetormo. Marca «Alcober».
-  · 978 858 005.
-- [ ] **Coop. San Antonio Abad** — Aceite. Valdetormo. · 978 858 007.
-- [ ] **Coop. del Campo San Miguel (Valjunquera)** — Aceite. Valjunquera. Marca
-  «Juncoliva». · 978 854 158.
-
-### DOP Melocotón de Calanda — Teruel (comercializadoras net-new)
-
-> Nota: varias inscritas del melocotón son las mismas cooperativas del aceite
-> (La Calandina, Coop. Mazaleón, Productos de Calanda) → una sola fila, anotando
-> que también hacen melocotón DOP. Aquí solo las **específicas de fruta** no
-> listadas ya.
-
-- [x] **Frutícola Bajoaragonesa** — **movida a `zaragoza.md`** (limpieza
-  2026-07-10): es de **Caspe (Zaragoza)**, no de Teruel — estaba duplicada entre
-  ambos ficheros. Ver lote 15 en `zaragoza.md`.
-- [ ] **Melocotón La Arenosa** — Fruta y verdura (melocotón DOP). Confirmar
-  municipio. <http://melocotonlaarenosa.com/>.
-
-> ⚠ **Melocotón — pista para `zaragoza.md` (no abrir):** Magalia (Coop. San
-> Lorenzo, Maella), Fruma / Frutícola Maellana (Maella), La Chipranesca (Chiprana)
-> son de provincia de Zaragoza. ⚠ **Aceite — pista para `zaragoza.md`:** Almazara
-> de Jaime y Molino Alfonso (Belchite), Coop. Frutícola Compromiso de Caspe,
-> Coop. San Isidro y Granja Brunet (Fabara), Coop. San Sebastián (Fayón),
-> Frutícola Maellana/Alcañiz Millán/San Lorenzo/Gil Egerique (Maella).
-
-## Descartados en esta pasada (no repasar)
-
-- *Trufato* (<https://trufato.es/>): municipio no localizable y perfil de
-  distribuidor/comercializador, no productor.
-- *Degusta Teruel* y *Sabores de Teruel*: tiendas online multiproducto, minoristas.
-- *Asociación Turolense de Productores de Leche y Queso* (Aguilar del Alfambra):
-  asociación, no productor; sus socios sí (dos arriba; Tronchón y Albarracín ya
-  estaban en el CSV).
-
-## Ya presentes en `teruel.csv` (comprobado 2026-07-08)
-
-Miel Luas (Ladruñán) · Queseros Artesanos de Tronchón · Quesos Artesanos La Val
-(Mezquita de Jarque) · Quesos Zariche (Celadas) · Queso Artesano de Teruel Sierra de
-Albarracín.
+- [x] Castel Cerveza Artesanal — no se encontró señal fiable de actividad
+  productiva actual posterior a sus referencias históricas; no se crea fila.
+- [x] Ordio Minero — producción actual en La Puebla de Alfindén (Zaragoza).
+- [x] Jamones Albarracín — secadero de maquila B2B sin marca de consumo propia
+  apta para el catálogo.
+- [x] Jamones Barriendo — domicilio y punto de venta en Zaragoza; no es alta de
+  Teruel aunque comercialice jamón DOP.
+- [x] Torico de Teruel, Bodegas Gargallo, Campodulce y Fuenjamón — terceros,
+  comercializadores o negocio sin elaboración propia provincial confirmada.
+- [x] Rey Solé — productor de Mequinenza (Zaragoza), no la marca Mi Olivo de
+  Oliete; la fila mezclada se purgó en TE-01.
+- [x] Frutícola Bajoaragonesa — Caspe (Zaragoza), trasladada a la nota provincial
+  correspondiente.
+- [x] Trufato, Degusta Teruel y Sabores de Teruel — distribuidor o tiendas
+  multiproducto, fuera del alcance productor.
+- [x] Asociación Turolense de Productores de Leche y Queso — asociación, no
+  productor; se evaluaron sus socios individualmente.
+- [x] Grandes grupos, distribuidores y secaderos no turolenses detectados en el
+  listado DOP — descartados por provincia o por falta de unidad productiva
+  vendible en el alcance de este CSV.
