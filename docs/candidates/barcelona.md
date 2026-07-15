@@ -61,7 +61,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 3 | A | Cerveseras: Barcelona Beer Challenge 2025/26 (medallistas nuevos) + GECAN altas recientes | ~15-25 | ✅ 2026-07-15 — veta saturada | ~10 netos | 1 |
 | 4 | A | Vino: Premis Vinari 2025/26 + vino natural (Vella Terra y ferias afines) — debutantes DO Alella / Pla de Bages / Penedès | ~15-25 | ✅ 2026-07-15 — veta fértil | ~17 netos | 10 |
 | 5 | A | Formatgeries: Lactium (Vic) ediciones 2025/26 + Millor Formatge Català | ~10-20 | ✅ 2026-07-15 — veta saturada | 19 | 0 + 2 mejoras |
-| 6 | A | Verkami: campañas de alimentación 2024-26 en prov. BCN (obradores, cerveseras, formatgeries) | ~10-20 | pendiente | | |
+| 6 | A | Verkami: campañas de alimentación 2024-26 en prov. BCN (obradores, cerveseras, formatgeries) | ~10-20 | ✅ 2026-07-15 | ~9 netos (144 crawl) | 1 |
 | 7 | A | Prensa comarcal, barrido sistemático por cabecera («obre obrador», «nova formatgeria», «celler nou»… 2025-26): Regió7, El 9 Nou, Nació Digital comarcal, Tot locals, VIA Empresa | ~20-40 | pendiente (condicionado a yield 1-6) | | |
 | 8 | A | BORME constituciones 2025-26 CNAE alimentario prov. BCN — red de arrastre, ruidosa | ~30+ brutos | opcional | | |
 | 9 | B | Gastroteca.cat: cruce contra CSV + snapshot | ~40 brutos | pendiente | | |
@@ -164,6 +164,14 @@ nombre corto/slug pegado — no re-añadir):
 | Cava Reverté | Salomó = **Tarragona** | fuera de provincia |
 | Aida i Luis Vinyaters | Xaló = **Alicante** | fuera de provincia |
 | Cellers Vinari fuera de provincia | — | Freixa Rigau=Girona · Carles Andreu/Vinícola del Sarral/Cellers Domenys/Castell del Remei etc.=Tarragona/Lleida · Grup Freixenet=grupo industrial (Segura Viudas ya está como fila propia) |
+
+**Descartes del lote 6 (2026-07-15, Verkami):**
+
+| nombre | municipio | motivo |
+|---|---|---|
+| Vermutiquín | Barcelona | pack-regalo de vermut «cachondo» sin elaboración propia identificable |
+| Cardinale | Gironella | cafè-obrador de dolços i pans (campaña 2025 para equipar cocina) — cola Pan genérico a evitar |
+| Salvem la Nova Farga | Barcelona | campaña de rescate (2026) de un negocio sin identidad de productor localizable — probable punt de consum |
 
 | Cerveseras BBC 25/26 fuera de provincia | — | Attik=Málaga · Kosmonauta=Cantabria · La Spontanerie=Francia · GRO Brewers=Girona · Cervesa Minera=St. Joan de les Abadesses (Girona) · Marina=Blanes · La Calavera=St. Joan Abadesses · Popaire=Blanes · Moska/Poch's/La Selvaseria=Girona · El Gall Negre y Ctretze y Lo Vilot y Casa Dalmases y Noguera y Lo Perot y La Vella Caravana=Lleida · Les Clandestines/La Gardenia/La Mula/L'Anjub/Redhop Salomó=Tarragona · Trulla=Nuoro (IT) · Radiocraft=Roma (IT) · Fresh Beer 30 Km=Shanghái · La Cànibal=Madrid (prior, sin verificar) · Badalà/Hopsters/Qubeer=no localizadas (probable IT/extranjero) |
 
@@ -330,11 +338,47 @@ Lactium — sin rastro digital de producto/marca.
 **Yield: 0 altas + 2 mejoras / 19 revisados → veta cerrada** (como cerveza:
 las ferias sectoriales maduras ya están íntegramente en el catálogo).
 
+### Lote 6 — Verkami, campañas alimentación 2024-26 (2026-07-15) ✅
+
+Fuente: crawl sistemático de la categoría
+[43-alimentación de Verkami](https://www.verkami.com/discover/projects/by/most_recent/category/43-alimentacion)
+(144 proyectos, 8 páginas `most_recent`, hasta ~2018; la ventana 2024-26 ocupa
+las ~3 primeras). Cada ficha de proyecto lleva «Creado en <municipio>» +
+estado + creador — el crawl es barato y reutilizable como delta en pasadas
+futuras (guardado en scratch; regenerable con el mismo script).
+
+**Alta (1):** Paret Seca Vins (Sta. Margarida i els Monjos) —
+`paret-seca-vins-santa-margarida-i-els-monjos`, parcial, **VO sí/ecommerce**
+(botiga WooCommerce viva). Vi natural sense sulfits de l'enòleg Ivà Gallego,
+nacido en pandemia y financiado por Verkami; en Peñín y con distribución
+internacional. Municipio solo por directorio → parcial.
+
+**Ya estaban, con señal fresca (2):** Vallalta Vinícola (campaña ene-2026
+para reconstruir el celler tras la caída de un árbol) · Amat & Montané (=
+«Vins de Bressol», 4 ediciones de crowdfunding, la 4a en 2026, vi de Sumoll
+en ánfora). + viejas campañas de filas existentes: Abirradero (Beertual),
+Väcka, La Montnegre (Atorrentada), Artcava, Hoppit (Collbaix).
+
+**Rechazos de gate (3, a Descartados):** Vermutiquín (pack-regalo de vermut
+sin elaboración propia) · Cardinale (Gironella; cafè-obrador de dolços, cola
+Pan a evitar) · Salvem la Nova Farga (campaña de rescate de un negocio sin
+identidad de productor localizable).
+
+**Fuera de ventana/provincia (residual):** Sans Domaine (Llorenç del
+Penedès=TGN) · Apadrina un eixam (St. Quirze Safaja, ~2023 — ¿qué apicultor?
+comprobar si se abre 2ª pasada) · vinos colaborativos DO Alella (2019-22) ·
+formatgeria mòbil El Turó de les Nou Cabres (Matadepera, vieja).
+
+**Yield: 1 alta + 2 señales frescas / ~9 netos de la ventana → veta fina pero
+barata**; el 90% de la categoría son libros/juegos/restaurantes que el gate
+filtra en segundos.
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
+| 2026-07-15 | 6 | Claude | ✅ Lote 6 cerrado: crawl de 144 proyectos de Verkami/alimentación (ventana 2024-26 ≈ 3 primeras páginas) → **1 alta** (Paret Seca Vins, vi natural, parcial + VO=sí) + 2 señales frescas para filas existentes (Vallalta Vinícola ene-26; Amat & Montané = Vins de Bressol 4a ed. 2026) + 3 rechazos a Descartados. CSV 2506→2507, gates verdes. **Frente A completado (lotes 0-6; 2 y 7 residuales/NO-GO) → siguiente: frente B, lote 9 (Gastroteca.cat con snapshot)** |
 | 2026-07-15 | 5 | Claude | ✅ Lote 5 cerrado: expositores Lactium 2026 (19 BCN, con CP/municipio en ficha) + palmarés del concurso → **0 altas** (todo ya en CSV o en blindaje: El Quall descartado por el filtro (a)) **+ 2 mejoras**: fusión dup Masia Fontirons (registro↔marca por tel/web) y slug de Riudavets corregido a l'Esquirol. CSV 2507→2506 (−1 dup), gates verdes. Veta láctea saturada. **Siguiente: lote 6 (Verkami)** |
 | 2026-07-15 | 4 | Claude | ✅ Lote 4 cerrado: catálogo Vinari 2025 (PDF oficial) + expositores Vella Terra 2026 → **10 altas** (7 verif, 2 con VO=sí: Canals Nadal y Castell d'Or; 2 proyectos nacidos 2021: Raïmones y Mas Guineu) sobre ~17 netos; ~35 ya estaban. CSV 2497→2507, evidencia 10 reg., gates verdes. La veta vino rinde 10× la cervecera. Residual: 4 expositores VT sin localizar. **Siguiente: lote 5 (Lactium/formatgeries)** |
 | 2026-07-15 | 3 | Claude | ✅ Lote 3 cerrado: BBC 25/26 (PDFs oficiales) + mapa GECAN → **1 alta** (Cervesa Cornèlia, parcial) sobre ~10 netos; los 11 medallistas BBC de la provincia ya estaban; mapa GECAN desactualizado (Edge cerrada, As/HOPe secuestradas, Estupenda aparcada, Ausesken muerta); 3 diferidos (Vic Brew, Artesenca, ART Cervesers). CSV 2496→2497, gates verdes. **Veta cervecera cerrada → siguiente: lote 4 (Vinari + vino natural)** |
