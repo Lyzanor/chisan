@@ -65,7 +65,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 7 | A | Prensa comarcal, barrido sistemático por cabecera («obre obrador», «nova formatgeria», «celler nou»… 2025-26): Regió7, El 9 Nou, Nació Digital comarcal, Tot locals, VIA Empresa | ~20-40 | pendiente (condicionado a yield 1-6) | | |
 | 8 | A | BORME constituciones 2025-26 CNAE alimentario prov. BCN — red de arrastre, ruidosa | ~30+ brutos | opcional | | |
 | 9 | B | Gastroteca.cat: cruce contra CSV + snapshot | ~40 brutos | ✅ 2026-07-16 — snapshot guardado | 435 fichas BCN (152 netas) | 8 |
-| 10 | B | Xarxa Productes de la Terra (Diputació BCN): cruce + snapshot | ~40 brutos | pendiente | | |
+| 10 | B | Xarxa Productes de la Terra (Diputació BCN): cruce + snapshot | ~40 brutos | ✅ 2026-07-16 — snapshot guardado | 1.327 fichas (321 netas) | 3 |
 | 11 | B | Mercats de pagès municipals + Slow Food Mercat de la Terra BCN: cruce + snapshot | ~20-30 | pendiente | | |
 | 12 | B | CCPAE prov. BCN: si publica fecha de alta, solo altas 2024-26; si no, snapshot para deltas futuros | ~20-40 | pendiente | | |
 
@@ -422,10 +422,45 @@ cata): la mayoría del catálogo maduro ya está y el valor está en las **categ
 raras** (vinagres, most, tòfona, frutos secos) que sí aportan y en el snapshot
 como base de diffs.
 
+### Lote 10 — Xarxa Productes de la Terra 2025: cruce + snapshot (2026-07-16) ✅
+
+Fuente: **Directori d'empreses i productes de la Xarxa Productes de la Terra
+2025** (Diputació de Barcelona, PDF de nov-2025, 266 pág., 12 comarcas de la
+provincia). El buscador web es JS y las webs de las fichas van en fuente
+decorativa `cid` no decodificable, pero el PDF parsea columna-a-columna
+(nombre·municipio·contacto·teléfono·email·producto). **1.328 fichas** →
+tras dedup (nombre limpio + nombre-sin-sector·municipio + dominio de email +
+teléfono): **911 ya estaban** (≈69%: confirma que el catálogo es exhaustivo),
+90 en «Descartados», 2 fuera de provincia (Viladrau=Girona), **321 netas**.
+Snapshot crudo completo en
+[`barcelona-snapshot-xpt.md`](barcelona-snapshot-xpt.md) (base de diffs).
+
+**Altas (3), todas parcial** (fuente institucional fresca XPT-2025 + secundarias
+vivas; ninguna con web propia viva → tope parcial):
+
+| candidato | slug | categoría | nota |
+|---|---|---|---|
+| Cal Andreuet (Gósol) | `cal-andreuet-gosol` | Legumbres | granja de muntanya de Carles Riu (Sorribes de Gósol, Berguedà, prov. BCN), recupera el **Pèsol Negre del Berguedà** (producte singular) + sucs de poma antics + conserves; feature viu a agricultura.gencat.cat; calandreuet.com caído (NXDOMAIN) |
+| Calcite (Isabelle Brunet) | `calcite-vilanova-i-la-geltru` | Bodega | **vino natural** del massís del Garraf (criança biològica/oxidativa, Xarel·lo vermell, Malvasia de Sitges); singular XPT + IG @isabellebrunetbcn + Fira NODE Garraf nov-2025. Distinto del CALCITE de Finca Valldosera (Olèrdola, ya en CSV) |
+| Perfum de Fruits (la Garriga) | `perfum-de-fruits-la-garriga` | Mermeladas | obrador de melmelades (20+ varietats); solo consta en el XPT 2025 (institucional fresco), sin web/social localizada |
+
+**Aprendizaje clave — dedup con prefijo de sección:** el PDF lista cada empresa
+bajo su(s) sector(es) con el nombre a veces precedido por la cabecera del sector
+(«LLEGUMS I DERIVATS X», «VERDURES, HORTALISSES… X»), lo que hacía que el fold
+del nombre fallara y produjera falsos «nuevos» (391→324→**321** al añadir la
+clave nombre-sin-sector·municipio). Casi todas las candidatas de categoría rara
+que parecían nuevas (Noir et Blanc, Conserves Coll, Bouquet d'Hort, Naturaliment
+Suquipà, Es IM-Perfect, Agrària Santboiana, Mas Jalech…) resultaron **ya estar**
+en el CSV. El valor de frente B está en el **snapshot**, no en el yield de altas.
+**Cola sin revisar (321):** mayoría horta/vi/oli/carne genéricos (el gate y el
+dedup se los comen); los buckets de valor (mel, destil·leries, peix, bolets) se
+rastrearon y estaban prácticamente todos presentes.
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
+| 2026-07-16 | 10 | Claude | ✅ Lote 10 (frente B) cerrado: parseo del PDF del **Directori XPT 2025** (266 pág., 1.328 fichas prov. BCN) + cruce → **3 altas parcial** (Cal Andreuet/Pèsol Negre Gósol; Calcite vi natural Garraf; Perfum de Fruits melmelades la Garriga) sobre 321 netas; **911 ya estaban** (69%, catálogo exhaustivo), 90 descartadas, 2 fuera de prov. Snapshot completo guardado (`barcelona-snapshot-xpt.md`). Aprendizaje: el prefijo de sección del PDF inflaba los falsos-nuevos; casi todas las «raras» aparentes ya estaban. CSV 2516→2519, evidencia +3, gates verdes. **Siguiente: lote 11 (mercats de pagès + Slow Food Mercat de la Terra)** |
 | 2026-07-16 | 9 | Claude | ✅ Lote 9 (frente B) cerrado: crawl de gastroteca.cat (archivos pagès+elaborador, 435 fichas BCN) + cruce → **8 altas** (Pairó Fish verif VO=sí; Masia Still y Mostatxo verif; Marmeles/Barret/Mel Morató/La Tofonera/Lainurvi parcial) sobre 152 netas; 276 ya estaban, 7 descartadas, 3 residual. Snapshot completo guardado (`barcelona-snapshot-gastroteca.md`) como base de diffs; 141 sin revisar (bloque de ~15 cavas Penedès como cola vino). CSV 2508→2516, evidencia +8, gates verdes. **Frente B iniciado → siguiente: lote 10 (Xarxa Productes de la Terra, Diputació BCN)** |
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
 | 2026-07-15 | 6 | Claude | ✅ Lote 6 cerrado: crawl de 144 proyectos de Verkami/alimentación (ventana 2024-26 ≈ 3 primeras páginas) → **1 alta** (Paret Seca Vins, vi natural, parcial + VO=sí) + 2 señales frescas para filas existentes (Vallalta Vinícola ene-26; Amat & Montané = Vins de Bressol 4a ed. 2026) + 3 rechazos a Descartados. CSV 2506→2507, gates verdes. **Frente A completado (lotes 0-6; 2 y 7 residuales/NO-GO) → siguiente: frente B, lote 9 (Gastroteca.cat con snapshot)** |
