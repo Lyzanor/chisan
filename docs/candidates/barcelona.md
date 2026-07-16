@@ -64,7 +64,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 6 | A | Verkami: campañas de alimentación 2024-26 en prov. BCN (obradores, cerveseras, formatgeries) | ~10-20 | ✅ 2026-07-15 | ~9 netos (144 crawl) | 1 |
 | 7 | A | Prensa comarcal, barrido sistemático por cabecera («obre obrador», «nova formatgeria», «celler nou»… 2025-26): Regió7, El 9 Nou, Nació Digital comarcal, Tot locals, VIA Empresa | ~20-40 | pendiente (condicionado a yield 1-6) | | |
 | 8 | A | BORME constituciones 2025-26 CNAE alimentario prov. BCN — red de arrastre, ruidosa | ~30+ brutos | opcional | | |
-| 9 | B | Gastroteca.cat: cruce contra CSV + snapshot | ~40 brutos | pendiente | | |
+| 9 | B | Gastroteca.cat: cruce contra CSV + snapshot | ~40 brutos | ✅ 2026-07-16 — snapshot guardado | 435 fichas BCN (152 netas) | 8 |
 | 10 | B | Xarxa Productes de la Terra (Diputació BCN): cruce + snapshot | ~40 brutos | pendiente | | |
 | 11 | B | Mercats de pagès municipals + Slow Food Mercat de la Terra BCN: cruce + snapshot | ~20-30 | pendiente | | |
 | 12 | B | CCPAE prov. BCN: si publica fecha de alta, solo altas 2024-26; si no, snapshot para deltas futuros | ~20-40 | pendiente | | |
@@ -172,6 +172,15 @@ nombre corto/slug pegado — no re-añadir):
 | Vermutiquín | Barcelona | pack-regalo de vermut «cachondo» sin elaboración propia identificable |
 | Cardinale | Gironella | cafè-obrador de dolços i pans (campaña 2025 para equipar cocina) — cola Pan genérico a evitar |
 | Salvem la Nova Farga | Barcelona | campaña de rescate (2026) de un negocio sin identidad de productor localizable — probable punt de consum |
+
+**Descartes/residuals del lote 9 (2026-07-16, Gastroteca.cat):**
+
+| nombre | municipio | motivo |
+|---|---|---|
+| Successors de J. Pont | Balenyà | charcutería **industrial** (planta 15.000 m², export a 17+ países, sin checkout) → gate fuera |
+| Mel de Montserrat | Olivella | la web `campomiel.com` es de un apicultor de **La Rioja** (Ventosa); identidad/municipio no cuadran → sin verificar |
+| Abellaires d'Osona / La Casa de les Abelles | Sant Pere de Torelló | centro **educativo** apícola; marca/tienda de miel propia no confirmada → residual |
+| AS Cervesa, Foscka Ratafia, Fontferri, Can Tortós, Cal Penyasco, Red Passion Berries, Cal Mexicà | varios | ya en «Descartados» de lotes previos/verificación (el filtro (a) los cazó) |
 
 | Cerveseras BBC 25/26 fuera de provincia | — | Attik=Málaga · Kosmonauta=Cantabria · La Spontanerie=Francia · GRO Brewers=Girona · Cervesa Minera=St. Joan de les Abadesses (Girona) · Marina=Blanes · La Calavera=St. Joan Abadesses · Popaire=Blanes · Moska/Poch's/La Selvaseria=Girona · El Gall Negre y Ctretze y Lo Vilot y Casa Dalmases y Noguera y Lo Perot y La Vella Caravana=Lleida · Les Clandestines/La Gardenia/La Mula/L'Anjub/Redhop Salomó=Tarragona · Trulla=Nuoro (IT) · Radiocraft=Roma (IT) · Fresh Beer 30 Km=Shanghái · La Cànibal=Madrid (prior, sin verificar) · Badalà/Hopsters/Qubeer=no localizadas (probable IT/extranjero) |
 
@@ -373,10 +382,51 @@ formatgeria mòbil El Turó de les Nou Cabres (Matadepera, vieja).
 barata**; el 90% de la categoría son libros/juegos/restaurantes que el gate
 filtra en segundos.
 
+### Lote 9 — Gastroteca.cat: cruce + snapshot (2026-07-16) ✅
+
+Fuente: archivos `on-comprar` de gastroteca.cat, tipos *compra a pagès* +
+*compra a l'elaborador* (crawl paginado servidor; el buscador es JS pero los
+archivos de taxonomía renderizan tarjetas con nombre·municipio·web·tel·email).
+**1.159 fichas de productor** en toda Catalunya; **435 con demarcació de
+Barcelona**. Cruce (dominio+teléfono+nombre plegados, con dedup fino manual)
+contra `barcelona.csv`: **276 ya estaban**, 7 en «Descartados», 152 netas.
+Snapshot crudo completo en
+[`barcelona-snapshot-gastroteca.md`](barcelona-snapshot-gastroteca.md) (línea
+base para diffs futuros; 141 fichas quedan como «nuevas sin revisar 1-a-1»,
+cola barata para el próximo pase).
+
+**Altas (8):**
+
+| candidato | slug | verif | VO | nota |
+|---|---|---|---|---|
+| Pairó Fish (Montcada i Reixac) | `pairo-fish-montcada-i-reixac` | verificado | **sí/ecommerce** | elaborador de bacallà (dessalat/salaons/5a gamma), botiga WooCommerce viva; su propia web lo sitúa en Montcada (no Badalona como el directorio) |
+| Vinagres Masia Still (St. Pere de Riudebitlles) | `vinagres-masia-still-sant-pere-de-riudebitlles` | verificado | no comprobado | vinagres balsàmics eco artesanos (raïm Penedès); web+IG vivas; «botiga» = punts de venda de terceros (VilaViniteca) → VO nc. Categoría rara |
+| Mostatxo (Gelida) | `mostatxo-gelida` | verificado | no comprobado | most natural eco/biodinàmic sin sulfitos; verema 2025 + eventos 2026, IG @mostatxo_most |
+| Marmeles (St. Martí de Tous) | `marmeles-sant-marti-de-tous` | parcial | no comprobado | ametlles/anacards caramel·litzats artesanos; marmeles.com **NXDOMAIN** (8.8.8.8), IG @marmelesartesanal + Anoia Turisme vivos → tope parcial. Frutos secos (cola fina) |
+| Barret Cerveses (Granollers) | `barret-cerveses-granollers` | parcial | no comprobado | cervesera artesana desde 2012, coop CAC, medallas Berlín/BCN/Lió; barret.cat **NXDOMAIN**, FB+Untappd vivos → parcial |
+| Mel Morató – Mel Mas Foradada (Vic) | `mel-morato-mel-mas-foradada-vic` | parcial | no comprobado | apícola Morató-Sanglas (~1200 arnes, 2 marcas); web viva pero antigua (blog 2016); web dice Folgueroles, fiscal en Vic (08500) → parcial |
+| La Tofonera (Avià) | `la-tofonera-avia` | parcial | no comprobado | tòfona negra + bolets (Pere Muxí/Laia Aldomà, 2002; premi Generalitat 2012), marca evolucionada a SoTaTerra (IG @sota_terra); latofonera.cat **NXDOMAIN** → parcial. Trufa y setas (cola rara) |
+| Lainurvi, llardons artesans (Castellar del Vallès) | `lainurvi-llardons-artesans-castellar-del-valles` | parcial | no comprobado | llardons/cortezas del cerdo artesanos, marca propia; web viva con plantilla genérica, imágenes oct-2025 → parcial |
+
+**Residuals no alta (3, ver tabla Descartados):** Successors de J. Pont
+(industrial), Mel de Montserrat (web = apicultor de La Rioja), Abellaires
+d'Osona (centro educativo). **Cola sin revisar (141):** destaca un bloque de
+~15 cavas/cellers del Penedès establecidos y ausentes (Rosell Gallart, Rosell i
+Formosa, Almirall, Mas Xarot, Canals & Casanovas, Caves Bohigas, Ferré Amell,
+Coma Romà, Caves Mungust, Cava Martín Soler, Antoni Vilamajó, J. Fortuny…) —
+cola vino, pendiente de un lote dirigido; el resto son horta/frutas genéricas
+que el gate de encaje filtrará.
+
+**Yield: 8 altas / 152 netas ≈ 1/19**, pero con perfil de frente B (cruce, no
+cata): la mayoría del catálogo maduro ya está y el valor está en las **categorías
+raras** (vinagres, most, tòfona, frutos secos) que sí aportan y en el snapshot
+como base de diffs.
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
+| 2026-07-16 | 9 | Claude | ✅ Lote 9 (frente B) cerrado: crawl de gastroteca.cat (archivos pagès+elaborador, 435 fichas BCN) + cruce → **8 altas** (Pairó Fish verif VO=sí; Masia Still y Mostatxo verif; Marmeles/Barret/Mel Morató/La Tofonera/Lainurvi parcial) sobre 152 netas; 276 ya estaban, 7 descartadas, 3 residual. Snapshot completo guardado (`barcelona-snapshot-gastroteca.md`) como base de diffs; 141 sin revisar (bloque de ~15 cavas Penedès como cola vino). CSV 2508→2516, evidencia +8, gates verdes. **Frente B iniciado → siguiente: lote 10 (Xarxa Productes de la Terra, Diputació BCN)** |
 | 2026-07-14 | — | Claude (planificación) | Creado el ledger; pasada definida en 3 frentes y 13 lotes; pendiente lote 0 |
 | 2026-07-15 | 6 | Claude | ✅ Lote 6 cerrado: crawl de 144 proyectos de Verkami/alimentación (ventana 2024-26 ≈ 3 primeras páginas) → **1 alta** (Paret Seca Vins, vi natural, parcial + VO=sí) + 2 señales frescas para filas existentes (Vallalta Vinícola ene-26; Amat & Montané = Vins de Bressol 4a ed. 2026) + 3 rechazos a Descartados. CSV 2506→2507, gates verdes. **Frente A completado (lotes 0-6; 2 y 7 residuales/NO-GO) → siguiente: frente B, lote 9 (Gastroteca.cat con snapshot)** |
 | 2026-07-15 | 5 | Claude | ✅ Lote 5 cerrado: expositores Lactium 2026 (19 BCN, con CP/municipio en ficha) + palmarés del concurso → **0 altas** (todo ya en CSV o en blindaje: El Quall descartado por el filtro (a)) **+ 2 mejoras**: fusión dup Masia Fontirons (registro↔marca por tel/web) y slug de Riudavets corregido a l'Esquirol. CSV 2507→2506 (−1 dup), gates verdes. Veta láctea saturada. **Siguiente: lote 6 (Verkami)** |
