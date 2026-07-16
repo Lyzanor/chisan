@@ -69,6 +69,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 11 | B | Mercats de pagès municipals + Slow Food Mercat de la Terra BCN: cruce + snapshot | ~20-30 | ✅ 2026-07-16 — snapshot guardado | 50 mdp + 23 SF | 2 |
 | 12 | B | CCPAE prov. BCN: si publica fecha de alta, solo altas 2024-26; si no, snapshot para deltas futuros | ~20-40 | ✅ 2026-07-16 — snapshot/delta-base | 5.085 total (sonda Berguedà 63) | 0 |
 | 13 | R | **Residual — lote de vino dirigido**: bloque de cellers/cavas del Penedès/Alella/Bages en los snapshots XPT+Gastroteca sin integrar | ~30 brutos | ✅ 2026-07-16 | 23 netos | 23 |
+| 14 | R | **Residual — flecos**: diferidos de las shortlists de los lotes 3 y 9 (cerveceras, marcas sueltas) | ~12 | ✅ 2026-07-16 — cierra la pasada | 12 | 1 |
 
 Colas finas donde priorizar dentro de cada lote (huecos del catálogo actual):
 Conservas (7), Frutos secos (9), Aromáticas (9), Harinas (3), Aceitunas y
@@ -554,10 +555,44 @@ que ya estaban bajo variante), y el **content-check anti-parking** cazó dos
 dominios muertos que respondían 200 (serralada, joaquimbatlle). **Con esto se
 vacía el residual de valor de la pasada.**
 
+### Lote 14 — Residual: flecos de las shortlists (2026-07-16) ✅
+
+Cierre 1-a-1 de los diferidos que quedaron a medio verificar en los lotes 3 y 9.
+**Alta (1):** Paul and Pippa (`paul-and-pippa-barbera-del-valles`, parcial, VO nc)
+— marca registrada de galetes/crackers eco con web viva y distribución gourmet;
+obrador en el Polígon Can Salvatella (Barberà del Vallès) por directorio
+profesional (la ficha Gastroteca decía Barcelona = sede).
+
+**Ya estaban (3, grafía engañó al grep del lote 9):** BIO Prasad
+(`bio-prasad-produccio-ecologica-pineda-de-mar`) · Mel d'Antany–Pau Bars
+(`mel-dantany-pau-bars-vilanova-del-cami`) · ART Cervesers
+(`art-cervesers-cervebrew-s-l-llica-d-amunt`).
+
+**Rechazos de gate (3, a Descartados):**
+
+| nombre | municipio | motivo |
+|---|---|---|
+| Ral d'Avinyó (Grup d'Avinyó) | Avinyó | marca gourmet de **grupo porcino industrial líder con exportación** («3.500 clients del canal alimentari… des de la cria fins a l'exportació») — patrón J. Pont/Gin Mare |
+| Sanmartí 1850 | Sabadell | **carnisseria/gallinaires del Mercat Central** (parades 261-263, 6 generacions): retail, vende carne de granjas ajenas (El Toll, wagyu) — no productor |
+| Cervesa R115 | Barcelona (Sants) | **SL extinguida feb-2025** (einforma/Empresite) + web congelada ©2020 — patrón BlackLab |
+
+**Sin señal / sin rastro (6, no alta; reconsiderables con señal nueva):**
+Bio Aliments Natura (bionaturas.com en mantenimiento) · Cooperativa de Calaf
+(coopac.cat NXDOMAIN, sin rastro propio; el conill de Calaf lo vende Agro
+Igualada) · Vic Brew (web muerta, Untappd sin fecha fresca legible — 3er intento)
+· Societat Cervesera Artesenca/Cerberus (web shell vacío — 3er intento) · 27 Club
+Brewery (Badalona; SL activa 2020/cuentas 2023 pero web WP rota y sin señal ≤6m
+confirmable) · IDG Gastronomic + Del camp al Plat + Ecoil de Josa (B2B industrial
+/ dominio muerto / oli de Josa=Lleida — descartes rápidos ya apuntados en lote 9).
+
+**⚑ Con el lote 14 la pasada queda sin flecos: todo candidato conocido está
+integrado, descartado con motivo o marcado reconsiderable-con-señal.**
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
+| 2026-07-16 | 14 | Claude | ✅ Lote 14 (flecos) cerrado: 12 diferidos resueltos 1-a-1 → **1 alta** (Paul and Pippa, Barberà del Vallès, parcial), 3 ya estaban (grafía), 3 rechazos de gate (Ral d'Avinyó=grupo industrial, Sanmartí 1850=retail, R115=SL extinguida), 6 sin señal (reconsiderables). CSV 2544→2545, gates verdes. **Pasada flujo 2026 sin flecos pendientes.** |
 | 2026-07-16 | 13 | Claude | ✅ Lote 13 (residual, vino dirigido): bloque de cellers/cavas de los snapshots XPT+Gastroteca → **23 altas** (12 verificado, 11 parcial; 1 VO=sí: J. Fortuny Fàbregas) tras cruce preciso con grep y descarte de ~7 ya-presentes. CSV 2521→2544, evidencia +23, gates verdes. Vacía el residual de valor de la pasada; lotes 2/7/8 quedan cerrados por diseño (baja señal). |
 | 2026-07-16 | 12 | Claude | ✅ Lote 12 (frente B) cerrado como **snapshot/delta-base, 0 altas**: CCPAE = registro de certificación de toda Catalunya (5.085 operadores), dragnet de baja señal (logística/distribuidores/aceites), sin fecha de alta; no hay dataset abierto y el buscador es Dojo hostil (conducido con navegador). Sonda Berguedà (63): ~90% en bruto, elaboradores ya en CSV. El subconjunto de marca ya entró vía XPT/Gastroteca/mercats. Hallazgo + método de deltas en `barcelona-snapshot-ccpae.md`. **Cierra el frente B (lotes 9-12: +13 altas, 2508→2521).** |
 | 2026-07-16 | 11 | Claude | ✅ Lote 11 (frente B) cerrado: directori de la Coordinadora de Mercats de Pagès BCN (50, server-render, filtrado por comarca a prov. BCN) + expositores de Slow Food Mercat de la Terra (23, pie leído con navegador) → **2 altas parcial** (Roca del Cór formatges cabra Sentmenat; 10Cireres cireres eco Torrelles) sobre 12 netas de mdp; Slow Food 0 netas. 19 fuera de prov, 18 ya en CSV. Varias «nuevas» aparentes ya estaban (fold vs grep). Snapshot con addendum Slow Food. CSV 2519→2521, evidencia +2, gates verdes. **Fuentes de mercados cerradas → quedan lote 8 (BORME, opcional) y 12 (CCPAE)** |
