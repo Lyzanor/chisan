@@ -68,6 +68,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 10 | B | Xarxa Productes de la Terra (Diputació BCN): cruce + snapshot | ~40 brutos | ✅ 2026-07-16 — snapshot guardado | 1.327 fichas (321 netas) | 3 |
 | 11 | B | Mercats de pagès municipals + Slow Food Mercat de la Terra BCN: cruce + snapshot | ~20-30 | ✅ 2026-07-16 — snapshot guardado | 50 mdp + 23 SF | 2 |
 | 12 | B | CCPAE prov. BCN: si publica fecha de alta, solo altas 2024-26; si no, snapshot para deltas futuros | ~20-40 | ✅ 2026-07-16 — snapshot/delta-base | 5.085 total (sonda Berguedà 63) | 0 |
+| 13 | R | **Residual — lote de vino dirigido**: bloque de cellers/cavas del Penedès/Alella/Bages en los snapshots XPT+Gastroteca sin integrar | ~30 brutos | ✅ 2026-07-16 | 23 netos | 23 |
 
 Colas finas donde priorizar dentro de cada lote (huecos del catálogo actual):
 Conservas (7), Frutos secos (9), Aromáticas (9), Harinas (3), Aceitunas y
@@ -519,10 +520,45 @@ fuentes vivas por deltas quedan con snapshot-base. Residuales de la pasada: lote
 ejecutado por baja señal/alto ruido). Colas dentro de snapshots: ~15 cavas Penedès
 (XPT/Gastroteca) para un lote de vino dirigido.
 
+### Lote 13 — Residual: lote de vino dirigido (2026-07-16) ✅
+
+Reapertura del **único residual de valor** identificado al cerrar el frente B: el
+bloque de cellers/cavas que quedaron como «nuevos sin revisar» en los snapshots
+de XPT (lote 10) y Gastroteca (lote 9). Método: extraer los candidatos vi/cava de
+ambos snapshots, **cruce preciso con grep** (no fold) contra el CSV, verificación
+de dominio (DNS + liveness + content-check anti-parking) y geocodificación por
+centroide.
+
+De ~59 candidatos brutos (con ruido de parseo del XPT y falsos «mas/masia»), tras
+depurar y **descartar los ya presentes** (Can Ràfols dels Caus, Valldolina/
+Tutusaus, Can Guilera/Coma Romà=Josep Guilera Riambau, Caves Bohigas, Fèlix
+Massana Ràfols, Vins i Caves Cuscó Berga, Alta Alella=misma empresa que la fila
+Grape Ale) → **23 altas** (CSV 2521→2544):
+
+- **12 verificado** (web propia viva, content-check OK): Alemany i Corrió
+  (Vilafranca, Sot Lefriec), Almirall Cava, Bodega J. Fortuny Fàbregas (**VO=sí**,
+  WooCommerce), Bodegas Roura (DO Alella), Cava Martín Soler (Font-rubí, 1965),
+  Cava Torné & Bel, Celler Avenc del Garraf (Olesa de Bonesvalls, Parc Garraf),
+  Bergonyó i Durall, Jané Santacana, Mas Xarot, Vins Petxina (Manresa, Pla de
+  Bages), Can Grau Vell (Els Hostalets de Pierola).
+- **11 parcial** (dominio caído/aparcado o sin web, identidad+municipio por
+  directorio institucional): Cava Joan Colet, Celler d'Ullastrell (webs no
+  legibles en vivo); Caves Mungust, Celler Can Pagès, Celler Joaquim Batlle
+  (Tiana, DO Alella; joaquimbatlle.com aparcada), Cuscó i Comas, Celler Puig
+  Romeu (dominios NXDOMAIN); Celler Altrabanda (serraladadelamarina.com expirado/
+  GoDaddy), Celler Grapissó, Celler Tres Tombs, Esteve i Gibert (sin web).
+
+Evidencia +23, gates verdes. Categoría `Bodega` en todas. Aprendizaje reforzado:
+el **grep preciso vs fold** es imprescindible (el fold daba ~26 falsos «nuevos»
+que ya estaban bajo variante), y el **content-check anti-parking** cazó dos
+dominios muertos que respondían 200 (serralada, joaquimbatlle). **Con esto se
+vacía el residual de valor de la pasada.**
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
+| 2026-07-16 | 13 | Claude | ✅ Lote 13 (residual, vino dirigido): bloque de cellers/cavas de los snapshots XPT+Gastroteca → **23 altas** (12 verificado, 11 parcial; 1 VO=sí: J. Fortuny Fàbregas) tras cruce preciso con grep y descarte de ~7 ya-presentes. CSV 2521→2544, evidencia +23, gates verdes. Vacía el residual de valor de la pasada; lotes 2/7/8 quedan cerrados por diseño (baja señal). |
 | 2026-07-16 | 12 | Claude | ✅ Lote 12 (frente B) cerrado como **snapshot/delta-base, 0 altas**: CCPAE = registro de certificación de toda Catalunya (5.085 operadores), dragnet de baja señal (logística/distribuidores/aceites), sin fecha de alta; no hay dataset abierto y el buscador es Dojo hostil (conducido con navegador). Sonda Berguedà (63): ~90% en bruto, elaboradores ya en CSV. El subconjunto de marca ya entró vía XPT/Gastroteca/mercats. Hallazgo + método de deltas en `barcelona-snapshot-ccpae.md`. **Cierra el frente B (lotes 9-12: +13 altas, 2508→2521).** |
 | 2026-07-16 | 11 | Claude | ✅ Lote 11 (frente B) cerrado: directori de la Coordinadora de Mercats de Pagès BCN (50, server-render, filtrado por comarca a prov. BCN) + expositores de Slow Food Mercat de la Terra (23, pie leído con navegador) → **2 altas parcial** (Roca del Cór formatges cabra Sentmenat; 10Cireres cireres eco Torrelles) sobre 12 netas de mdp; Slow Food 0 netas. 19 fuera de prov, 18 ya en CSV. Varias «nuevas» aparentes ya estaban (fold vs grep). Snapshot con addendum Slow Food. CSV 2519→2521, evidencia +2, gates verdes. **Fuentes de mercados cerradas → quedan lote 8 (BORME, opcional) y 12 (CCPAE)** |
 | 2026-07-16 | 10 | Claude | ✅ Lote 10 (frente B) cerrado: parseo del PDF del **Directori XPT 2025** (266 pág., 1.328 fichas prov. BCN) + cruce → **3 altas parcial** (Cal Andreuet/Pèsol Negre Gósol; Calcite vi natural Garraf; Perfum de Fruits melmelades la Garriga) sobre 321 netas; **911 ya estaban** (69%, catálogo exhaustivo), 90 descartadas, 2 fuera de prov. Snapshot completo guardado (`barcelona-snapshot-xpt.md`). Aprendizaje: el prefijo de sección del PDF inflaba los falsos-nuevos; casi todas las «raras» aparentes ya estaban. CSV 2516→2519, evidencia +3, gates verdes. **Siguiente: lote 11 (mercats de pagès + Slow Food Mercat de la Terra)** |
