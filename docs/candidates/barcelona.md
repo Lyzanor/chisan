@@ -67,7 +67,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 | 9 | B | Gastroteca.cat: cruce contra CSV + snapshot | ~40 brutos | ✅ 2026-07-16 — snapshot guardado | 435 fichas BCN (152 netas) | 8 |
 | 10 | B | Xarxa Productes de la Terra (Diputació BCN): cruce + snapshot | ~40 brutos | ✅ 2026-07-16 — snapshot guardado | 1.327 fichas (321 netas) | 3 |
 | 11 | B | Mercats de pagès municipals + Slow Food Mercat de la Terra BCN: cruce + snapshot | ~20-30 | ✅ 2026-07-16 — snapshot guardado | 50 mdp + 23 SF | 2 |
-| 12 | B | CCPAE prov. BCN: si publica fecha de alta, solo altas 2024-26; si no, snapshot para deltas futuros | ~20-40 | pendiente | | |
+| 12 | B | CCPAE prov. BCN: si publica fecha de alta, solo altas 2024-26; si no, snapshot para deltas futuros | ~20-40 | ✅ 2026-07-16 — snapshot/delta-base | 5.085 total (sonda Berguedà 63) | 0 |
 
 Colas finas donde priorizar dentro de cada lote (huecos del catálogo actual):
 Conservas (7), Frutos secos (9), Aromáticas (9), Harinas (3), Aceitunas y
@@ -493,10 +493,37 @@ km0 del área metropolitana ya está muy cubierto; el valor es el snapshot. **Co
 el lote 11 se cierran las fuentes de mercados**; quedan lote 8 (BORME, opcional/
 ruidoso) y 12 (CCPAE).
 
+### Lote 12 — CCPAE (operadors ecològics): snapshot/delta-base (2026-07-16) ✅
+
+Fuente: **Guia d'operadors** del CCPAE ([guia.ccpae.org](https://guia.ccpae.org/GD/guiaDirectoriWebCercar.action)).
+**Resultado: 0 altas netas — cierre como snapshot/delta-base** (rama «si no
+publica fecha → snapshot» del plan), documentado en
+[`barcelona-snapshot-ccpae.md`](barcelona-snapshot-ccpae.md).
+
+Motivos (verificados en vivo con navegador, tras descartar datos abiertos —no
+existe el dataset— y `curl` —form Struts+Dojo hostil—): **5.085 operadores de
+toda Catalunya**, registro-dragnet de certificación dominado por **no-productores**
+(logística, distribuidores, aceites industriales, importadores) → como REGA,
+soporta a lo sumo `parcial`; **sin fecha de alta** por operador. Sonda del
+**Berguedà (63 operadores)**: ~90% en bruto (bosc/pastos/raíces = pagesos), y los
+pocos elaboradores **ya en CSV** (Casabella Natura, La Bauma de les Deveses); único
+ausente Carn i Bestiar Prat = carne genérica sin señal → no alta. El subconjunto
+con marca/vendible/en-provincia **ya fluyó** vía XPT (lote 10, 69% ya-en-CSV, que
+arrastra el distintivo CCPAE eco), Gastroteca y mercats. Método para deltas
+futuros (filtrar por activitat de elaboració o por comarca+ELABORACIÓN) en el doc.
+
+**⚑ PASADA «FLUJO 2026» — FRENTE B CERRADO.** Lotes 9-12 completos (Gastroteca +8,
+XPT +3, mercats+SlowFood +2, CCPAE +0 = **+13 altas**, 2508→2521). Todas las
+fuentes vivas por deltas quedan con snapshot-base. Residuales de la pasada: lote 2
+(Benvinguts a Pagès residual), lote 7 (prensa, NO-GO), lote 8 (BORME, opcional —no
+ejecutado por baja señal/alto ruido). Colas dentro de snapshots: ~15 cavas Penedès
+(XPT/Gastroteca) para un lote de vino dirigido.
+
 ## Bitácora
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
+| 2026-07-16 | 12 | Claude | ✅ Lote 12 (frente B) cerrado como **snapshot/delta-base, 0 altas**: CCPAE = registro de certificación de toda Catalunya (5.085 operadores), dragnet de baja señal (logística/distribuidores/aceites), sin fecha de alta; no hay dataset abierto y el buscador es Dojo hostil (conducido con navegador). Sonda Berguedà (63): ~90% en bruto, elaboradores ya en CSV. El subconjunto de marca ya entró vía XPT/Gastroteca/mercats. Hallazgo + método de deltas en `barcelona-snapshot-ccpae.md`. **Cierra el frente B (lotes 9-12: +13 altas, 2508→2521).** |
 | 2026-07-16 | 11 | Claude | ✅ Lote 11 (frente B) cerrado: directori de la Coordinadora de Mercats de Pagès BCN (50, server-render, filtrado por comarca a prov. BCN) + expositores de Slow Food Mercat de la Terra (23, pie leído con navegador) → **2 altas parcial** (Roca del Cór formatges cabra Sentmenat; 10Cireres cireres eco Torrelles) sobre 12 netas de mdp; Slow Food 0 netas. 19 fuera de prov, 18 ya en CSV. Varias «nuevas» aparentes ya estaban (fold vs grep). Snapshot con addendum Slow Food. CSV 2519→2521, evidencia +2, gates verdes. **Fuentes de mercados cerradas → quedan lote 8 (BORME, opcional) y 12 (CCPAE)** |
 | 2026-07-16 | 10 | Claude | ✅ Lote 10 (frente B) cerrado: parseo del PDF del **Directori XPT 2025** (266 pág., 1.328 fichas prov. BCN) + cruce → **3 altas parcial** (Cal Andreuet/Pèsol Negre Gósol; Calcite vi natural Garraf; Perfum de Fruits melmelades la Garriga) sobre 321 netas; **911 ya estaban** (69%, catálogo exhaustivo), 90 descartadas, 2 fuera de prov. Snapshot completo guardado (`barcelona-snapshot-xpt.md`). Aprendizaje: el prefijo de sección del PDF inflaba los falsos-nuevos; casi todas las «raras» aparentes ya estaban. CSV 2516→2519, evidencia +3, gates verdes. **Siguiente: lote 11 (mercats de pagès + Slow Food Mercat de la Terra)** |
 | 2026-07-16 | 9 | Claude | ✅ Lote 9 (frente B) cerrado: crawl de gastroteca.cat (archivos pagès+elaborador, 435 fichas BCN) + cruce → **8 altas** (Pairó Fish verif VO=sí; Masia Still y Mostatxo verif; Marmeles/Barret/Mel Morató/La Tofonera/Lainurvi parcial) sobre 152 netas; 276 ya estaban, 7 descartadas, 3 residual. Snapshot completo guardado (`barcelona-snapshot-gastroteca.md`) como base de diffs; 141 sin revisar (bloque de ~15 cavas Penedès como cola vino). CSV 2508→2516, evidencia +8, gates verdes. **Frente B iniciado → siguiente: lote 10 (Xarxa Productes de la Terra, Diputació BCN)** |
