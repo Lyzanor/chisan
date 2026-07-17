@@ -92,13 +92,12 @@ All 20 canonical columns are physically present in every CSV. A column being pre
 - For new and re-reviewed decisions, the matching evidence ledger records source URLs, inspection dates and supported claims. Provinces migrate progressively; strict coverage is controlled by `data/evidence/coverage.json`.
 
 ## Online sales
-- The decision model for choosing among these values lives in `docs/EDITORIAL_POLICY.md`.
+- The decision model — when a channel qualifies as `sí`, the third-party resale rule — lives in `docs/EDITORIAL_POLICY.md`. This section owns only allowed values and blocking rules.
 - `Venta online` is required for every row.
 - Allowed values:
   - `sí`
   - `no`
   - `no comprobado`
-- Do not infer `sí` from having a `web` link. Use `sí` only when the site or channel clearly supports online purchase or order.
 
 ## Sales channel
 - `Canal de venta` is optional and complements `Venta online`. `Venta online` answers *whether* there is online sale; `Canal de venta` answers *how* an order is placed, so an agent knows which mechanism to use.
@@ -109,7 +108,7 @@ All 20 canonical columns are physically present in every CSV. A column being pre
   - `email`: orders by sending a product list to the `correo` address.
   - `telefono`: orders by phone call to the `telefono` number.
   - `suscripcion`: recurring box / subscription model (e.g. weekly basket).
-  - `marketplace`: sells through a third-party platform or aggregator.
+  - `marketplace`: sells through a third-party platform acting for the producer — its own or official-collective storefront, not independent resale (see `docs/EDITORIAL_POLICY.md`).
 - A producer may use several channels at once: join tokens with `|`, e.g. `ecommerce|whatsapp`. Order is not significant.
 - An empty value means the channel has not been classified yet; it does **not** assert "no channel".
 - Validation is a non-blocking warning today (`check:csv:data-quality`): if present, every token must be in the allowed set and `Venta online` should be `sí`. It is intentionally **not** part of the blocking `check:csv` contract yet, so the column can be backfilled incrementally without failing `verify:ai`. Promote it to a blocking rule once coverage is high enough.

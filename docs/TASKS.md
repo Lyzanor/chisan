@@ -4,20 +4,13 @@
 1. Edit the target province CSV under `data/csv/[comunidad]/[provincia].csv`.
 2. Add new producers with a correct unique `slug`; keep existing correct slugs stable, but fix materially wrong ones with evidence.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
-4. Set `verificacion`:
-   - `pendiente`: added for coverage and still needs review.
-   - `parcial`: real and localized, but some data is inferred or not fully checked.
-   - `verificado`: cross-checked against a primary or clearly reliable source; requires coordinates and at least one external link.
-5. Set `Venta online`:
-   - `sí`: confirmed online sales through the producer site or a concrete known channel.
-   - `no`: checked and no online sales channel found.
-   - `no comprobado`: default until reviewed.
-6. Add or update the matching record in `data/evidence/[comunidad]/[provincia].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
-7. Run:
+4. Set `verificacion` and `Venta online` following the decision model in `docs/EDITORIAL_POLICY.md` (allowed values and blocking rules in `docs/CSV_CONTRACT.md`); keep `no comprobado` until the sales channel is reviewed.
+5. Add or update the matching record in `data/evidence/[comunidad]/[provincia].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
+6. Run:
 ```bash
 npx pnpm verify:data
 ```
-8. No build or manual route check is required for a data/evidence/image-only change.
+7. No build or manual route check is required for a data/evidence/image-only change.
 
 ## 1b) Weekly CSV review
 1. Run the blocking contract audit:
@@ -78,18 +71,15 @@ npx pnpm verify:ai
 5. Use `vercel deploy . --prod -y` only as a manual fallback.
 
 ## 6) Agent handoff checklist
-1. Read `AGENTS.md` before changing code or data.
-2. Treat `data/csv/**` as the source of truth.
-3. Treat `data/evidence/**` as decision provenance, not a second producer catalog.
-4. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
-5. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
-6. Keep correct producer `slug` values stable and unique; fix materially wrong slugs with the CSV/image/docs/evidence updates described in `AGENTS.md`.
-7. Run the matching gate:
+1. Read `AGENTS.md` before changing code or data; it owns sources of truth, invariants, and workflow.
+2. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
+3. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
+4. Run the matching gate:
 ```bash
 npx pnpm verify:data   # data/reference/evidence/images
 npx pnpm verify:ai     # code/scripts/policy
 ```
-8. If shipping, commit and push to `main`; do not run a second deploy by default.
+5. If shipping, commit and push to `main`; do not run a second deploy by default.
 
 ## 7) Backlog transversal compartido
 
@@ -130,6 +120,6 @@ la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `d
 - Prefer small, reversible edits.
 - CSV row order is editorial: keep it easy to sort by the criterion that matters for the task.
 - Keep correct `slug` values stable and unique; a materially wrong slug is an editorial defect to fix, not a URL to preserve mechanically.
-- Keep `AGENTS.md`, `README.md`, and this file aligned when changing workflow.
+- Keep `AGENTS.md` and this file aligned when changing workflow; `README.md` is a human quickstart and only points here.
 - Keep docs in sync if behavior changes.
 - Keep change proposals and task notes in Markdown.
