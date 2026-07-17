@@ -103,7 +103,7 @@ la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `d
   `embutidos-reina-de-los-angeles-el-real-de-la-jara`, `chocolates-mama-goye-…-bollullos-de-la-mitacion`;
   lugo: `abella-meiga-outeiro-de-rei`, `toxal-riba-navia-de-suarna`. Vaciar celda + borrar asset cuando
   esas provincias queden libres. A más largo plazo: barrido visual por provincia para basura única
-  (ver `docs/VERIFICATION_TECHNIQUES.md` § Imágenes).
+  (ver `docs/IMAGES.md`).
 - **Trabajo en ramas `codex/*` sin integrar en `main`:** Ávila (1ª pasada completa) y Burgos (lotes 1-8)
   en `codex/verifica-avila-lote-1`; continuación de Burgos activa en `codex/verifica-burgos-cont`;
   Málaga lotes 1-2 + commit gemelo de lácteos (`77aefb6`) en `codex/verifica-malaga-lotes-1-2`. Los

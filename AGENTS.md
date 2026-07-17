@@ -23,7 +23,8 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `docs/CSV_CONTRACT.md`: CSV header, columns, allowed values, blocking/warning rules, image path contract, reference centroid data.
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types, purge/merge records.
 - `docs/EDITORIAL_POLICY.md`: decision model for `verificado`/`parcial`/purge/online sales.
-- `docs/VERIFICATION_TECHNIQUES.md`: efficient investigation workflow, sufficient evidence, deduplication, location, images, context discipline.
+- `docs/VERIFICATION_TECHNIQUES.md`: efficient investigation workflow, sufficient evidence, deduplication, location, context discipline.
+- `docs/IMAGES.md`: producer image workflow — format, sourcing, naming, enrichment tooling, junk signatures.
 - `docs/TASKS.md`: task recipes, release checklist, handoff checklist.
 - `docs/PROVINCE_COMPLETENESS.md`: planning targets; provinces are not benchmarks for one another.
 - `docs/ARCHITECTURE.md`: app flow and runtime design rules.
@@ -38,7 +39,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `Canal de venta` is optional, meaningful only when `Venta online=sí`, and follows `docs/CSV_CONTRACT.md`.
 - `lat`/`lon` more than 100 km from the `municipio` centroid is blocking; 15-100 km is a warning. For territorial homonyms, fix `data/reference/municipios-overrides.json`, not correct producer coordinates.
 - Evidence is optional and advisory, but preferred at decision time for adds, re-verifications, resolved online sales, purges, and merges.
-- Producer images live under `public/productores/[comunidad]/[provincia]/`; use the shared `npx pnpm enrich:images --provincia [provincia]` workflow only after inspecting candidates, and apply per slug.
+- Producer images live under `public/productores/[comunidad]/[provincia]/`; follow `docs/IMAGES.md` — inspect candidates first and apply `enrich:images` per slug.
 
 ## Commands
 - Data/reference/evidence/image-only change: `npx pnpm verify:data`.

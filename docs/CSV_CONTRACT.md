@@ -179,7 +179,7 @@ https://maps.app.goo.gl/...
 - When present, it must be a root-relative path to an asset under `public/`, for example `/productores/catalunya/barcelona/ejemplo.webp`.
 - Preferred path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/madrid/madrid/`).
 - The file must exist and pass `npx pnpm check:images`.
-- Visual composition, sourcing, naming conventions, and enrichment workflow live in `docs/VERIFICATION_TECHNIQUES.md#imágenes`.
+- Visual composition, sourcing, naming conventions, and enrichment workflow live in `docs/IMAGES.md`.
 
 ## Producer identity
 - `slug` is the primary identity for producer detail pages.
