@@ -40,6 +40,11 @@ All 20 canonical columns are physically present in every CSV. A column being pre
 - Blocking non-empty values: `slug`, `verificacion`, `Venta online`.
 - Blocking controlled values: `slug` format, `verificacion`, `Venta online`, `categoria` when present, `telefono` when present.
 - Paired values: `lat` and `lon` must both be present or both be empty.
+- Coordinate precision: `lat`/`lon` may be an exact geocoded address or a municipal-centroid
+  fallback from the geocoding gap-fill. `data/reference/geo-provenance.json` (regenerate with
+  `node scripts/build-geo-provenance.mjs`) lists the rows whose coordinates match their
+  municipality centroid; do not treat those as farm/workshop locations, and remove a row's entry
+  by re-running the generator after replacing its coordinates with a real geocoded address.
 - Optional-value fields: `imagen` and `Canal de venta`.
 - Other empty values are allowed by the contract but may appear in `check:csv:data-quality` or `check:csv:completeness`.
 
