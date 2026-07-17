@@ -155,6 +155,14 @@ grep -q "WARNING line 2 .* nombre is empty" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 2 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
+# Identical long descriptions across rows are flagged as template boilerplate.
+grep -q "WARNING line 3 .* descripcion is duplicated on lines 3, 4" "$TMP_DIR/out-quality.txt"
+grep -q "WARNING line 4 .* descripcion is duplicated on lines 3, 4" "$TMP_DIR/out-quality.txt"
+# Short descriptions never join the duplicate-description check.
+if grep -q "line 2 .* descripcion is duplicated" "$TMP_DIR/out-quality.txt"; then
+  echo "Error: short description must not raise the duplicate-description warning" >&2
+  exit 1
+fi
 # Optional-field gaps are suppressed (tracked by check:csv:completeness), never warnings.
 for needle in "telefono and correo are both empty" "Google Maps is empty" "coordinates are present but direccion is not useful"; do
   if grep -q "WARNING .* ${needle}" "$TMP_DIR/out-quality.txt"; then

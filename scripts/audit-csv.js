@@ -684,6 +684,11 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
 function runQualityAudit({ rows, push, centroids, communityHint }) {
   const nameCityLines = new Map();
   const categoryVariants = new Map();
+  // The same normalized descripcion on several rows is almost always template
+  // boilerplate inherited from a bulk import, not a producer-specific text.
+  // Short descriptions are skipped: below the minimum length they already get
+  // the optional-gap note and are too generic to prove a shared template.
+  const descriptionLines = new Map();
 
   for (const [index, fields] of rows.entries()) {
     const line = index + 2;
@@ -826,6 +831,15 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
       nameCityLines.set(normalizedNameCity, lines);
     }
 
+    if (description.length >= DESCRIPTION_MIN_LENGTH) {
+      const normalizedDescription = normalizeSearch(description);
+      if (normalizedDescription) {
+        const lines = descriptionLines.get(normalizedDescription) ?? [];
+        lines.push(line);
+        descriptionLines.set(normalizedDescription, lines);
+      }
+    }
+
     if (category) {
       const normalizedCategory = normalizeSearch(category);
       const variants = categoryVariants.get(normalizedCategory) ?? new Map();
@@ -845,6 +859,20 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
           line - 1,
           rows[line - 2]?.slug ?? "",
           `nombre + municipio looks duplicated on lines ${lines.join(", ")}`,
+        );
+      }
+    }
+  }
+
+  for (const [, lines] of descriptionLines.entries()) {
+    if (lines.length > 1) {
+      for (const line of lines) {
+        push(
+          "warning",
+          line,
+          line - 1,
+          rows[line - 2]?.slug ?? "",
+          `descripcion is duplicated on lines ${lines.join(", ")} (shared template boilerplate; write producer-specific descriptions)`,
         );
       }
     }

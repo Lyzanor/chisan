@@ -96,8 +96,10 @@ la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `d
 - **Corrupción por plantilla (hallazgo 2026-06-21):** algunas filas heredaron `productos estrella` +
   `descripcion` de boilerplate de OTRA categoría (p. ej. texto de miel en una almazara). Reparadas 4
   (Huelva ×2, Sevilla ×1, Málaga ×1) detectadas por keyword del nombre; pueden quedar más en filas cuyo
-  nombre de marca no delata la categoría. Barrido pendiente: cruzar `categoria` contra keywords de
-  `descripcion`/`productos estrella`.
+  nombre de marca no delata la categoría. Desde 2026-07-17 `check:csv:data-quality` avisa de
+  `descripcion` duplicada entre filas (boilerplate compartido; ~1.685 filas en 22 provincias al
+  estrenarse — es cola de redacción, no de purga). Barrido pendiente solo para boilerplate único:
+  cruzar `categoria` contra keywords de `descripcion`/`productos estrella`.
 - **Imágenes basura restante (2026-07-17):** la purga por hash (`6d8c1fa`, 130 imágenes) dejó 5 basuras
   conocidas en provincias entonces activas — sevilla: `miel-deaz-aznalcollar`,
   `embutidos-reina-de-los-angeles-el-real-de-la-jara`, `chocolates-mama-goye-…-bollullos-de-la-mitacion`;

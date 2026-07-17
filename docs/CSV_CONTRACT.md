@@ -70,6 +70,23 @@ All 20 canonical columns are physically present in every CSV. A column being pre
   - remove diacritics
   - keep letters/numbers, collapse separators
 
+## Editorial field conventions
+
+Style rules for the free-text identity fields. Empty is always preferable to
+invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
+
+- `nombre`: the public brand as the producer writes it. Use the razón social
+  only when no distinct brand exists; do not append the municipality or legal
+  suffixes (S.L., S.C.) unless they are part of the public brand.
+- `productos estrella`: a few real, confirmed products of this producer,
+  comma-separated. No generic category fillers.
+- `descripcion`: specific, verifiable facts about this producer (what it
+  makes, how, since when, where). No promotional adjectives and no template
+  text shared across rows — duplicated descriptions are flagged by
+  `check:csv:data-quality` as probable import boilerplate.
+- `horario`: only hours published by the producer; do not keep hours that
+  reference a dead web, social profile or phone.
+
 ## Categories
 - The valid `categoria` set lives in `data/reference/categories.json` (`categories`) and is enforced by `check:csv`.
 - Inspect the current set with:
@@ -156,6 +173,7 @@ Actionable warnings (always fire):
   - `Canal de venta` present with a token outside the allowed set (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`)
   - `Canal de venta` set while `Venta online` is not `sí`
   - duplicated normalized `nombre + municipio`
+  - `descripcion` duplicated across different rows (shared template boilerplate; see Editorial field conventions)
   - near-duplicate `categoria` variants after normalization
   - category labels that should use one of the preferred category labels
   - `lat`/`lon` between `15 km` and `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond `100 km` it is a blocking error instead (see Blocking rules). The message names the closest centroid — `closest centroid is X (Y km)` — so you can tell whether the `municipio` or the `lat`/`lon` is the wrong field. Rows whose `municipio` is not in the lookup are skipped silently.
