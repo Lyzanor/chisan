@@ -190,6 +190,13 @@ No fusiones automáticamente cooperativa y socio, secciones productivas distinta
 o productores que comparten finca, mercado o centroide. `grep -i` no pliega acentos y no sirve como
 único control.
 
+Un dominio que no casa con el nombre de la fila suele ser el **grupo matriz**, no una web cruzada:
+muchas bodegas de grupos (González Byass, Familia Torres, Bodegas Riojanas, Eguren…) publican bajo el
+dominio o la marca del grupo, y cruzar dos DO por dominio da falsos positivos de duplicado. Señales de
+cruce real: razón social distinta, el mismo Instagram compartido entre filas sin relación, o una web
+que resulta ser un directorio. Ante grupo confirmado, cada bodega/marca con identidad y municipio
+propios sigue siendo una fila válida.
+
 ## Ubicación
 
 - Contrasta `municipio`, `direccion`, `lat` y `lon` conjuntamente.
@@ -262,7 +269,27 @@ stock, IA, competidores ni imágenes de portales genéricos.
 - El script no escribe nada por defecto. Revisa candidato, score, dimensiones y
   URL; aplica solo por `--slug`. Usa `--allow-photos` únicamente cuando una foto
   propia sea el fallback buscado.
+- `--apply` reescribe el CSV con `csv.writer` (CRLF): reconvierte a LF después
+  (`perl -i -pe 's/\r\n/\n/g'`) y comprueba con `git diff` que solo cambió `imagen`.
+- Tras aplicar, QA visual **desde los `.webp` guardados** (no desde las URLs de origen):
+  el apply puede guardar un candidato distinto al primero aceptable.
 - Cierra cambios de imagen con `npx pnpm check:images`.
+
+### Basura conocida y auditoría por hash
+
+El scorer puntúa alto activos que no son la marca. Firmas confirmadas (auditorías 2026-06/07):
+logos de plugins y consentimiento (CookieYes, GDPR, iconos de accesibilidad), temas y paneles web
+(WordPress, BRIDGE, Divi, Plesk, "FUSE"), hosting (IONOS), directorios (QDQ), banners de subvención
+(Kit Digital, Plan de Recuperación, FEADER/UE, Gobierno/Generalitat), marcas de directorio provincial
+(Alimentos de Guadalajara, Sabores Almería, Gusto Cádiz), sellos ajenos (Guild of Fine Food, DOP/premios),
+iconos de red social sueltos, burbujas de chat y tarjetas en blanco.
+
+Auditoría retroactiva barata sin red: agrupa `public/productores/**/*.webp` por hash (`md5 -r`).
+**El mismo hash en marcas sin relación = basura** (vacía la celda `imagen` y borra el asset);
+el mismo hash dentro de un grupo empresarial o multi-local (Torres, Protos, Baluard…) es legítimo.
+La pasada 2026-07-17 (commit `6d8c1fa`) purgó así 130 imágenes en 19 provincias: los 27 clusters
+cross-marca inspeccionados resultaron ser todos basura. El hash no caza basura que aparece una sola
+vez: para eso sigue haciendo falta barrido visual por provincia (montajes con fondo gris/contraste).
 
 ## Disciplina de contexto
 

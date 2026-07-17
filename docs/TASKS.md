@@ -91,6 +91,40 @@ npx pnpm verify:ai     # code/scripts/policy
 ```
 8. If shipping, commit and push to `main`; do not run a second deploy by default.
 
+## 7) Backlog transversal compartido
+
+Trabajo pendiente que cruza provincias o sesiones. Cualquier agente puede tomarlo; actualiza o borra
+la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `docs/verificacion/`).
+
+- **Categorías (pases 2026-06-20/21 en main: `77f9f72`, `d157b1f`, `41233aa`, `183f4eb`):** taxonomía
+  consolidada a categoría principal (matiz→descripción; minoritarias→`Otros` a la espera de
+  subcategorías). Pendiente: revisar combos multi-producto y pescado/setas dudosos; repaso opcional de
+  Navarra contra la taxonomía consolidada (se normalizó lote a lote en su pasada, no en bloque);
+  futuro: subcategorías. ⚠ El diagnóstico original vive en un documento externo de otro asistente (no
+  accesible desde el repo): rehacer con `npx pnpm list:categories` + `check:csv:data-quality` antes de
+  continuar, o pedir el export al usuario.
+- **Corrupción por plantilla (hallazgo 2026-06-21):** algunas filas heredaron `productos estrella` +
+  `descripcion` de boilerplate de OTRA categoría (p. ej. texto de miel en una almazara). Reparadas 4
+  (Huelva ×2, Sevilla ×1, Málaga ×1) detectadas por keyword del nombre; pueden quedar más en filas cuyo
+  nombre de marca no delata la categoría. Barrido pendiente: cruzar `categoria` contra keywords de
+  `descripcion`/`productos estrella`.
+- **Imágenes basura restante (2026-07-17):** la purga por hash (`6d8c1fa`, 130 imágenes) dejó 5 basuras
+  conocidas en provincias entonces activas — sevilla: `miel-deaz-aznalcollar`,
+  `embutidos-reina-de-los-angeles-el-real-de-la-jara`, `chocolates-mama-goye-…-bollullos-de-la-mitacion`;
+  lugo: `abella-meiga-outeiro-de-rei`, `toxal-riba-navia-de-suarna`. Vaciar celda + borrar asset cuando
+  esas provincias queden libres. A más largo plazo: barrido visual por provincia para basura única
+  (ver `docs/VERIFICATION_TECHNIQUES.md` § Imágenes).
+- **Trabajo en ramas `codex/*` sin integrar en `main`:** Ávila (1ª pasada completa) y Burgos (lotes 1-8)
+  en `codex/verifica-avila-lote-1`; continuación de Burgos activa en `codex/verifica-burgos-cont`;
+  Málaga lotes 1-2 + commit gemelo de lácteos (`77aefb6`) en `codex/verifica-malaga-lotes-1-2`. Los
+  `docs/verificacion/avila.md` y `burgos.md` de esas ramas son la fuente para reanudar; integrar a
+  `main` cuando sus agentes cierren.
+- **Lácteos/Quesos 10 provincias (cerrada 2026-07-04, `cdaa141`):** residuales 22 `parcial` y 27 altas
+  sin imagen.
+- **Pasada "completar verificados + Venta online" por provincia:** Ourense y Lugo hechos; resto de
+  provincias sin pasada profunda de VO siguen el criterio de `docs/VERIFICATION_TECHNIQUES.md` § Venta
+  online.
+
 ## Guardrails
 - Do not add DB/API/migrations unless explicitly requested.
 - Prefer small, reversible edits.
