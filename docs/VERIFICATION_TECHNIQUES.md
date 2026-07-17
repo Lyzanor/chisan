@@ -150,24 +150,10 @@ crear criterios provinciales alternativos.
 
 ## Venta online
 
-Audítala aparte de la identidad:
-
-- `sí`: existe hoy un pedido remoto concreto y utilizable.
-- `no`: se ha revisado y solo hay venta física o información sin aceptación de pedidos.
-- `no comprobado`: la evidencia es insuficiente o el canal puede estar fallando temporalmente.
-
-`Canal de venta` solo se rellena con `sí`:
-
-- `ecommerce`: carrito y checkout funcional;
-- `whatsapp`, `email` o `telefono`: la entidad acepta pedidos explícitamente por ese medio;
-- `suscripcion`: cesta o entrega recurrente activa;
-- `marketplace`: ficha vigente y comprable en la tienda **propia del productor o
-  en la oficial de su DO/colectivo**. La reventa por tiendas de terceros
-  independientes (vinotecas, marketplaces genéricos como Vinissimus/Bodeboca) **no**
-  basta para `sí` → `no comprobado` salvo que se confirme canal propio o colectivo.
-
-Combina canales con `|`. No prueban venta remota una web, catálogo, precios, tienda vacía, texto legal,
-publicación histórica, tienda física ni venta exclusiva de visitas o merchandising.
+Los criterios de decisión — cuándo un canal cuenta para `sí`, la regla de reventa
+por terceros y qué no basta — son el checklist de `docs/EDITORIAL_POLICY.md`
+§ Online sales; los tokens de `Canal de venta` viven en `docs/CSV_CONTRACT.md`.
+Audítala aparte de la identidad y combina canales con `|`.
 
 Revisa todos los `sí`. En cierres profundos revisa también `no` y `no comprobado`, porque pueden ocultar
 pedidos por contacto directo. Un fallo temporal justifica `no comprobado`, no necesariamente `no`.

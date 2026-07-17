@@ -348,6 +348,122 @@
         "salesChannels": []
       },
       "why": "Resale by independent third-party retailers does not by itself establish the producer's own online sale; only an own or official collective channel qualifies for 'sí'."
+    },
+    {
+      "id": "purge-industrial-mass-market-group",
+      "dimensions": ["scope"],
+      "description": "A real, active plant produces food at industrial mass-market scale under a national group brand, with no local producer identity.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "out-of-scope",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "purge",
+        "reason": "out-of-scope"
+      },
+      "why": "Producing in the province is not enough: industrial mass-market operations without local producer identity fall outside catalog scope, while a named terroir unit of a quality group would stay."
+    },
+    {
+      "id": "purge-maquila-coop-branded-by-second-grade",
+      "dimensions": ["scope"],
+      "description": "A first-grade cooperative only processes for its members; the brand, shop and consumer sales belong to the second-grade cooperative.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "out-of-scope",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "reliable",
+        "activityEvidence": "reliable",
+        "municipalityEvidence": "reliable",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "purge",
+        "reason": "out-of-scope"
+      },
+      "why": "A maquila/B2B unit without its own market identity is not a sellable producer; the second-grade cooperative that owns the brand is the catalog entity."
+    },
+    {
+      "id": "partial-without-live-verifying-source",
+      "dimensions": ["verification", "freshness"],
+      "description": "Registry and directories agree on the producer, but its own domain is dead (TLS failure, parked or suspended) and no verifying source could be read live.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "reliable",
+        "activityEvidence": "secondary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "keep",
+        "verification": "parcial",
+        "onlineSales": "no comprobado",
+        "salesChannels": []
+      },
+      "why": "Any number of supporting sources without a live verifying source caps the row at parcial; a dead domain is an evidence ceiling, not a closure."
+    },
+    {
+      "id": "online-sale-through-official-group-store",
+      "dimensions": ["online-sales"],
+      "description": "The producer's products are purchasable in the working official online shop of its group, DO or cooperative collective.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "usable-channel",
+        "onlineSalesChannels": ["ecommerce"]
+      },
+      "expected": {
+        "action": "keep",
+        "verification": "verificado",
+        "onlineSales": "sí",
+        "salesChannels": ["ecommerce"]
+      },
+      "why": "A channel operated on behalf of the producer — its group, DO or collective official shop — counts as the producer's own online sale, unlike independent third-party resale."
+    },
+    {
+      "id": "broken-checkout-is-not-a-no",
+      "dimensions": ["online-sales", "freshness"],
+      "description": "The official site renders and confirms identity and activity, but its shop is under maintenance and the cart has no working checkout.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "reliable",
+        "activityEvidence": "reliable",
+        "municipalityEvidence": "reliable",
+        "onlineSalesEvidence": "temporary-failure",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "keep",
+        "verification": "verificado",
+        "onlineSales": "no comprobado",
+        "salesChannels": []
+      },
+      "why": "A shop under maintenance or a cart without a working checkout is uncertainty about the channel, not reviewed evidence of absent sales."
     }
   ]
 }
