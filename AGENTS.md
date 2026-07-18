@@ -70,6 +70,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Do not trust speculative candidate lists; verify each item and prune resolved notes.
 
 ## Token And Context Discipline
+- Simplification is the default: prefer deleting or tightening docs over adding. Before writing a doc note, check whether a better error message or tool fix makes it unnecessary; keep derived state (status tables, registries) out of docs.
 - Start reviews with `git diff --name-status` and `git diff --stat`; open full diffs only for files you will judge or edit.
 - Do not read whole large CSVs or JSONL ledgers for one row. Use `rg`, `list:province` filters, and small line windows.
 - Do not dump full successful gate logs, rosters, or audit output into the conversation; summarize the command and result unless a failure needs details.
