@@ -1,7 +1,7 @@
 # Candidatos — Lugo
 
-> Origen: pasada de cobertura de capitales 2026-07-08 (la capital tiene 4 filas:
-> Aloumiña, Bubela, Cafés Candelas, Confitería Madarro). Resultado honesto: **no salió
+> Origen: pasada de cobertura de capitales 2026-07-08 (la capital tenía 4 filas;
+> Confitería Madarro fue purgada por cierre en LU-08). Resultado honesto: **no salió
 > ninguna alta nueva de capital** — los dos productores potentes del concello/entorno
 > ya estaban en el CSV. **Estado: `unverified`** — deduplicado contra `lugo.csv` el
 > 2026-07-08.
@@ -17,12 +17,20 @@
   generación (~130 empl.), no gran grupo de masa → se mantiene.
 - **Cárnicas Teijeiro** (fila en Sarria): correcto — San Lázaro 15, Sarria (el barrio
   San Lázaro es de Sarria, no de Lugo ciudad). Porco celta desde 1963/2003.
-- ⚠ **Geo-warnings preexistentes detectados 2026-07-13** (no tocados, verificar en
-  2ª pasada): `mel-casa-miranda-o-corgo` (coords a 25 km de O Corgo, más cerca de
-  Ribeira de Piquín — ¿municipio o coords?) y
-  `a-carqueixa-o-sabor-dos-ancares-cervantes` (coords = centroide de Lugo capital,
-  a 43 km de Cervantes — coords probablemente pegadas al centroide equivocado; la
-  cooperativa es de Cervantes/Os Ancares).
+- ✅ **Mel Casa Miranda** — corregido en LU-03 el 2026-07-16: slug
+  `mel-casa-miranda-o-corgo` → **`mel-casa-miranda-baleira`** (con registro
+  `merge` e imagen renombrada). Mendreiras, CP 27276, pertenece a **Baleira** y la
+  web propia sitúa expresamente las colmenas en A Marronda/Baleira; las coordenadas
+  eran correctas y se conservaron.
+- ✅ **Mel do Neira** — corregido en LU-03 el 2026-07-16: slug
+  `mel-do-neira-becerrea` → **`mel-do-neira-baralla`** (con registro `merge` e
+  imagen renombrada). Valados y Neira de Rei pertenecen oficialmente a
+  **Baralla**, aunque queden próximos a Becerreá.
+- ✅ **A Carqueixa** — corregido en LU-04 el 2026-07-16: se mantiene el slug y
+  municipio Cervantes, pero la dirección del puesto minorista de Lugo se sustituye
+  por la sede social/productiva de **Casa Rectoral, San Román, Cervantes**. La
+  coordenada de Lugo capital se reemplaza por el centroide de referencia de
+  Cervantes y el enlace de Maps pasa a buscar la sede.
 
 ## Provincia — 6 candidatos
 
@@ -55,7 +63,7 @@
 ## Ya presentes en `lugo.csv` (comprobado 2026-07-08)
 
 Arqueixal (Palas de Rei) · Queixería Don Gabino (Vilalba) · Mel Casa da Torre
-(Cervantes) · A Horta da SancoVeiga (Vilalba) · Torre de Núñez (O Corgo) · Cárnicas
+(Cervantes) · A Horta da SancoVeiga (Vilalba) · Torre de Núñez (Lugo) · Cárnicas
 Teijeiro (Sarria).
 
 ## DO Ribeira Sacra — adegas lucenses (lote 14 de do-huecos)
