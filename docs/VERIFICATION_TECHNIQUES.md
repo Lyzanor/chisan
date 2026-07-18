@@ -253,13 +253,29 @@ de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálo
 
 ## Documento provincial opcional
 
-Crea `docs/verificacion/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Incluye:
+Crea `docs/verificacion/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Durante
+una pasada es un documento de trabajo: snapshot, worklist, plan de lotes, fuentes locales y
+excepciones. No copies este manual ni conviertas el ledger en otra base de datos. Las pistas no
+aceptadas siguen en `docs/candidates/[provincia].md`.
 
-- snapshot y worklist;
-- fuentes locales y sus límites;
-- excepciones territoriales;
-- residuales justificados;
-- referencia al historial Git.
+### Rotación al cerrar la pasada
 
-No copies este manual ni conviertas el ledger en otra base de datos. Las pistas no aceptadas siguen en
-`docs/candidates/[provincia].md`.
+Al cerrar una pasada, comprime el ledger a un snapshot de mantenimiento (~40-80 líneas); el detalle
+por lote queda en el historial git del propio fichero. Cerrar la pasada no cierra el catálogo:
+`verificado` registra el estado de la evidencia en una fecha, no una verdad definitiva, y las
+afirmaciones dinámicas (actividad, cierre, venta online) caducan. El documento comprimido existe para
+la siguiente sesión de mantenimiento, no como acta de la pasada.
+
+Conserva exactamente:
+
+- **Estado final**: fecha y commit de cierre, filas y recuento por `verificacion`, `Venta online`
+  sí/no/nc con cobertura de canal, evidencia y si la provincia está en `coverage.json`.
+- **Residuales justificados**: cada `pendiente`/`parcial` restante y cada duda de venta con su techo
+  real de evidencia, para no reinvestigarlos desde cero.
+- **Excepciones y reglas locales reutilizables**: homónimos y geografía, decisiones que otro agente
+  podría revertir por error, purgas/merges que conviene no deshacer.
+- **Fuentes locales** que funcionaron y sus límites.
+- **Mantenimiento**: qué recomprobar al retomar (los `VO=sí`, actividad de filas antiguas, imágenes
+  pendientes) y desde qué fecha.
+
+Elimina la narrativa por lote, los volcados de comandos y todo lo que ya vive en CSV, JSONL o git.

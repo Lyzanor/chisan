@@ -605,3 +605,99 @@ integrado, descartado con motivo o marcado reconsiderable-con-señal.**
 | 2026-07-15 | 3 | Claude | ✅ Lote 3 cerrado: BBC 25/26 (PDFs oficiales) + mapa GECAN → **1 alta** (Cervesa Cornèlia, parcial) sobre ~10 netos; los 11 medallistas BBC de la provincia ya estaban; mapa GECAN desactualizado (Edge cerrada, As/HOPe secuestradas, Estupenda aparcada, Ausesken muerta); 3 diferidos (Vic Brew, Artesenca, ART Cervesers). CSV 2496→2497, gates verdes. **Veta cervecera cerrada → siguiente: lote 4 (Vinari + vino natural)** |
 | 2026-07-14 | 1 | Claude | ✅ Lote 1 (cata) cerrado: 52 fichas BAP prov. BCN trabajadas → **5 altas** (Mels de Can Monràs Nou verif, Mas Palou verif VO=sí, Granja Guirigall parcial, Biomasia Ca n'Oliveró parcial, Maset de la Costa parcial) **+ 1 mejora** (fila registro → MielHada, verif VO=sí) + 16 ya estaban + 25 rechazos (a Descartados). Prensa comarcal vía buscador: 0/3 búsquedas → lote 7 NO-GO. CSV 2491→2496; evidencia 7 registros; gates verdes (csv/images/evidence OK). **GO matizado → siguiente: lote 3 (cerveseras BBC/GECAN)** |
 | 2026-07-14 | 0 | Claude | ✅ Lote 0 cerrado. Arqueología de los 220 commits del CSV → **618 slugs salidos** volcados a `barcelona-snapshot-descartados-git.md` (purgas verificación ~490 + dedup 119 pares + fusiones/renombres). Sección «Descartados» rellenada: 10 descartes pre-CSV de la pasada atípicos + 2 «no añadir fila» de la nota de junio (Hofmann Badalona, Parallelo TOM) + 2 alias «ya estaba» de Rutes del Vi (AT Roca, Sant Miquel d'Oló). Los 7 candidatos de junio 2026 acabaron todos integrados. Siguiente: **lote 1** (cata de rendimiento, GO/NO-GO) |
+
+## Herencia del ledger de verificación: candidatos DAR sin triar (2026-06)
+
+Movidos aquí al comprimir `docs/verificacion/barcelona.md` (2026-07-18). Lista de junio 2026:
+**deduplicar contra el CSV antes de usar** — la pasada flujo 2026 (julio) ya integró algunos
+(p. ej. Mel Morató, Mels Can Monràs Nou) y otros pueden estar como fila de registro o marca.
+No son cola obligatoria; integrar solo tras verificación (protocolo de AGENTS.md).
+Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo tras verificación
+(protocolo de AGENTS.md). No son cola obligatoria.
+
+- **Manresa/Bages:** AMPANS/Urpina · Calafell (Can Calafell) · CCAgrària (Can Poc Oli)
+- **Vic/Osona:** Apícola Morató (Mel Morató) · Pujalt Quero (Xai Torrents del Prat) · Tarres Alcalde (L'Esquellot del Montseny)
+- **Badalona:** Abellan Moya (vins) · Conreu Sereny SCCL (horta)
+- **Sant Boi:** Central Parc del Baix Llobregat SCCL
+- **Sant Sadurní d'Anoia:** Can Font de Muntanya (horta) · Mas Casas Cruïlles (formatges ovella) · Mir CB (embotits) · Ca l'Obaga (verdura) · Arboreco
+- **Anoia:** Eixarcolant (Jorba) · La Beneta (Hostalets) · Cigronet de Cal Farrés (Calonge) · Embotits Cal Travé (Llacuna)
+- **Alt Penedès:** Coop. Vinícola del Penedès · Marquès Ros (Cal Sis Dits, Vilobí) · Pons Ametller (olives, Vilobí)
+- **Garraf:** Agrovilanova SAT (Claramunt Food Service)
+- **Subirats:** Castell de Subirats SA · Heretat Guilera SL · Mas Gori · Ràfols Vendrell (Cal Pau Jan) · Caves El Mas Ferrer (Ca l'Avi, cava mètode tradicional des de 1979, elmasferrer.com; la fila «Caves Masia El Mas» mal fichada a La Granada es va purgar al lote 144)
+- **Piera:** Borràs Puiggròs (préssecs) · Vallverdú Garriga Roser (oli)
+- **Caldes de Montbui:** Vicente López Pablo (horta)
+- **Moianès:** Vins Colltor + Celler Sant Miquel (Sta Maria d'Oló) · La Cabreria/Bardissa (formatges, Oló) · Granja La Bassola (Castellterçol)
+- **Tordera:** Colldeforns Soler · Llavina Parés (Horta Llavina) · Jordi Manresa (farines) · Ramaderia Can Thos (llet) · Lluís Sagrera (patata)
+- **Vilassar de Mar:** Agrícola de Vilassar de Mar SCCL (coop 1918, agrobotiga)
+- **Viladecans:** Heretat Mas Tinell (vins) · Vilaeco SL · Ximalls SAT
+- **Olesa de Montserrat:** Bolets Petràs (setes fresques/silvestres/seques, Llorenç Petràs «el rei dels bolets» de La Boqueria; pol. ind. Can Singla, boletspetras.com, IG @bolets_petras) — desplaçat del lote 221, on s'havia sobreposat erròniament a Comercial Safaja (SQS)
+- **Collsuspina/Moianès:** Ciuró Torras, Albert (conserves vegetals) · Torras Clos, Pere (La Verdella, carn de boví)
+- **Mediona/Alt Penedès:** Torres Murgades, Jordi (oli d'oliva i olives)
+- **Santpedor/Bages:** Mas Graner, SCCL (xai)
+- **Prats de Lluçanès:** Aragües Carrera, David (xai) — desplaçat del lote 249 (fila buida a Sta Maria de Merlès)
+- **Avià/Berguedà:** Ginatge (ginebra London Dry de Jordi Millán) — purgat del lote 259; la web gintonic.cat ara és cocteleria d'esdeveniments, cal confirmar si segueix produint el gin abans de reintegrar
+- **Figaró-Montmany:** Salvat López de Padilla, Clara (horta: patata, enciam, carabassa, ceba) — DAR no casat
+- **Martorelles:** Masia Can Roda Vinyes i Vins SL (So de Can Roda, vins) — DAR no casat
+- **Montmajor:** Calabuig Agropecuària SL (carn de boví) — DAR no casat
+- **Rajadell:** Fer i Refer SL (Masiets & Perich, pollastre) — DAR no casat
+- **Sobremunt:** Agrícola Ramadera Mas Reixach SC (xai) — DAR no casat
+- **Vallgorguina:** Plana Perxachs, Maria Carme (cabrum) — DAR no casat
+- **Viver i Serrateix:** Gamisans Solà, Carles · Les Cots de Sant Joan SCP (vedella de Ramaders de Muntanya del Berguedà) — DAR no casats
+- **Para otros agentes — Tarragona (Baix Penedès), per a `tarragona.csv`:** **Cellers Avgvstvs Forvm** (vins i vinagres Forvm, avgvstvsforvm.com) i **Jané Ventura** (celler ecològic, cava, janeventura.com) — estaven mal fichats a barcelona.csv (El Vendrell, CP 43700), purgats al lote 264. **Bodega Can Marlès** (celler del Penedès + enoturisme, canmarles.com) — mal fichada (El Montmell, CP 43812 Can Ferrer de la Cogullada), purgada al lote 309.
+- **Para otros agentes — Lleida, per a `lleida.csv`:** **Cal Andreuet** (explotació agrícola/ramadera ecològica d'alta muntanya: pèsol negre, patates de muntanya, suc de poma; calandreuet.com, IG cal_andreuet) — mal fichat a barcelona.csv (Gósol, CP 25716, província de Lleida), purgat al lote 313. Gósol té més productors al DAR (Morales García, Prathumthong, Riu Bosoms, Solé Fígols) per a lleida.csv.
+- **Castellbisbal:** Celler Ca l'Esteve (vins DO Catalunya; "Quitxalla" es su marca, fila purgada)
+- **El Masnou:** Jordana Ribas SL (Jordi Jordana Maresme; horta)
+- **Cardedeu:** SAT Can Roger (llet ecològica; Agrobotiga La Païssa)
+- **Sant Martí Sarroca:** Greenhort SCP (horta) · Molí de Calabuig SL (olives/ordi) · Ràfols Baqués Josep (conserves) · Vidal Bolet Jesús (fruita/horta) · Cellers Montserrat (vins)
+- **Cabrera de Mar:** Cultius Jaume's Noe SCP (horta, DAR) · Roig Vins (celler i botiga gourmet nova)
+- **Gavà (Mercat de Pagès):** Cal Xim Xim (Mauri Bosch, 30 ha) · Vila Eco by Enric ECO (Xavier Estrada) · Ivern Borrut Josep (DAR). ~~Can Arenols~~ → integrado como fila de Castelldefels (lote 45, parcial; confirmar municipi del camp) |
+- **Sant Feliu de Llobregat:** La Rural de Collserola SCCL (Can Ferriol, DAR; horts a la Rierada-Molins ja citats al lote 34)
+- **Sant Pere de Ribes:** La Piotxa SCCL (préssecs, espàrrec, espelta; DAR 656577327)
+- **Torelló:** Agrària de Torelló SCCL (Patates del Bufet d'Orís; DAR 617331898) · Les Gambires Torelló SL (El Rebost de les Gambires, pollastre; DAR 626305631) · Espai Natura (parada eco al Mercat Municipal, collita pròpia)
+- **Granollers:** Figuls Tuset, Pere (Can Figuls, enciam/mongeta; DAR 645932199) · Ventosa Asturgo, Isidro (llet i formatges; DAR 647466330)
+- **Santa Coloma de Gramenet:** Horticultura Meya SL (DAR 670246579; probablemente la mateixa família que la fila Horta Meya ja verificada — comprovar abans d'afegir)
+- **Esparreguera:** Masia Can Claramunt (verdures i producte de proximitat, masiacanclaramunt.com)
+- **Palafolls:** Navarro Sanchez, Juan Manuel (préssecs/pomes/olives; DAR 660562171) · Pla Urrea, Antoni (pastanaga/horta; DAR 629351781)
+- **Prats de Lluçanès:** Aragües Carrera, David (xai; DAR 626165004) · Coop. Mas Les Vinyes SCCL (horta+xai+mel, agroforestal)
+- **Arenys de Mar:** Hortalisses Tuto SCP (horta; DAR 637855410) · Sala Martinez, Lluís (carxofa/fava; DAR 629303780) · Can Maresma SL (ous/fruita/verdura, parada 14/16 mercat)
+- **Argentona:** Oliveras Guiñon, Jose (all/mongeta/tomàquet; DAR 639261000)
+- **Avinyonet del Penedès:** Marcé Medialdea, Martí (Martí Marcé, préssecs; DAR 677507426). Los Cuscó Esteve (Joan/Jordi/Lluís) son la família de Cuscó Berga, no añadir.
+- **Pineda de Mar:** Cuní Baltrons, Juan (horta; DAR 660364608)
+- **Olesa de Montserrat:** Fruits del Bosc Petras SL (marca Fruits del Bosc, aromàtiques; DAR 624073697) — probablement la mateixa família que Bolets Petràs (ya verificada), comprovar abans d'afegir.
+- **Barberà del Vallès:** Pons Pujol SCP (vedella; DAR 680947310)
+- **Granollers (Palou):** de la lista oficial Productes de Palou, no integrados: Hort de Can Tabaquet (horta eco) · L'Horta de la Tuka (horta+mel) · Can Nicolau SAT (carn) · Els Bardissots (vi) · Fem Horting
+- **Gurb:** Agrícola Terricabras Colom SL (marca ACTUS, ceba/calçot/enciam/patata; DAR 606877466)
+- **Granollers (ciutat):** Gassó Artesans 1885 (pastisseria gourmet, Cal Ros dels Ocells 4C, gassoartesans.com) — marca real purgada de Lliçà d'Amunt donde figuraba como cansaladeria
+- **Palau-solità i Plegamans:** Estrada Llargues, Isidro (mongeta; DAR 659999473)
+- **Santa Perpètua de Mogoda:** Pa Artesà del Vallès (obrador 40 anys, Pol. Can Roca, paartesadelvalles.com + restaurant Cal Jaume; els seus enllaços estaven mal posats a la fila Pastisseria Pi de La Llagosta, purgats d'allà al lote 145)
+- **Parets del Vallès:** Mestresses S.C. (horta, blat tou, ordi; DAR 661350810)
+- **Sant Esteve Sesrovires:** Juscafresa Ferrer, Eugeni (horta/taronges/carxofa; DAR 660823944) · López Cabello, Manel (horta; DAR 693063652)
+- **Sallent:** Guitart Quintana, Josep (Essència d'Oli de Cabrianes; DAR 617375377) · La Tomakera SCP (horta; DAR 649195293) · Santasusagna SCP (xai; DAR 617405951)
+- **Torrelavit:** Cols Canals, Lluís (Cal Cols, vins+oli; DAR 653162580) · Ruiz Molina, Anna (préssecs; DAR 648725583)
+- **Castellfollit del Boix:** Cornellas Prat, Jordi (Cal Rei, conserves; DAR 618762888) · Lladó Oliva, Joan (cigró/mongeta; DAR 608691406)
+- **Cubelles:** Poch Lleó, Ciril (oli/horta; DAR 636808594)
+- **Font-rubí:** Aranda González, Agustín (oli/pebrot; DAR 639333948) · Celler Cal Costas SL (DAR 654127597) · Ràfols Petit, Jordi (Magna Hortum, horta; DAR 625810165) · Ros Marina Viticultors (Mas Uberni; DAR 686501262)
+- **Malgrat de Mar:** Xaubet SCP (horta; DAR 629006100) · Josep Maynou y Bona Verdura (directorio Espai Agrari Baixa Tordera, espaiagraribaixatordera.cat — fuente útil para todo el Alt Maresme/Baixa Tordera)
+- **Mollet del Vallès (Gallecs):** ~~Alsina Cusco~~ (integrado en lote 91, reubicado desde Sta. Eulàlia) · Butjosa i Boada Gallecs SCP (marca Ous de Gallecs / "Ou de Gallecs", Laura Blasco; DAR 652303577) · Hereus Can Jornet SL (Can Jornet, farines; DAR 689509161) · Agrobotiga de Gallecs (punt de venda col·lectiu dels pagesos, espairuralgallecs.cat — web http-only, https con cert roto)
+- **Sta. Eulàlia de Ronçana:** Monràs Passeta, Alan (Mels Can Monràs Nou; DAR 618094396)
+- **Castellterçol:** Esteva Monforte, Enric (horta/col-i-flor/tomàquet; DAR 608925270) · Vall-llosana SCP (vedella; DAR 666545870) · Granja La Bassola SAT (paralela a El Rocall SL ya integrada; DAR 629134275, comprovar si és la mateixa entitat abans d'afegir)
+- **Cervelló:** Soldevilla Alonso, Jordi (cireres; DAR 627418908)
+- **Montornès del Vallès:** Vallès Oriental = zona DOP de mongeta del ganxet (Montornès, les Franqueses, la Roca); coop Agrària Vallès (agrariavalles.coop) como fuente
+- **Bigues i Riells del Fai:** de la lista de productors de l'ajuntament, no integrados: Hortícola Vila (tomàquets/calçots a domicili; elflix@elflix.com, 687083451) · Can Quimet (mongetes i calçots) · Chiva Valls (cereals). Can Sapera y Embotits Guinó (Lliçà de Vall) ya están en el CSV
+- **Papiol:** grup Rebrot Pagès (6 pagesos eco del Papiol; Can Font ya integrado, identificar el resto) · catàleg de productors del Parc Natural de Collserola (parcnaturalcollserola.cat) y programa de la Festa de la Cirera — fuentes útiles. Figueras Garriga Ramon (DAR 606701734) ya cubierto por la fila Cal Figueras (hermanos)
+- **Sta. Margarida i els Monjos:** directori municipal de cellers i caves (santamargaridaielsmonjos.cat/directori/cellers-i-caves) — fuente útil para más cellers del municipi
+- **Seva:** Blansac 2015 SL (marca Formatge Bauma, formatges de llet crua; DAR 617386155) · guia d'empreses de l'ajuntament (seva.cat) — fuente útil
+- **Torrelles de Foix:** Heretat Laverna (celler dels Escofet des de 1342, vins eco DO Penedès, primera anyada 2021, ancestrals.cat; vil·la romana a la finca) — no está en el CSV, candidata clara
+- **Badia del Vallès:** Carnisseria Cristina Ramacisa SL (Mercat de Badia, Av. Via de la Plata 8) — real en directorios; el ajuntament publica la lista de parades con servei a domicili (badiadelvalles.cat)
+- **Terrassa:** Hort del Silenci (hortdelsilenci.com; agricultores y elaboradores eco con almacén en Terrassa; su obrador es la Masia Can Viver de Torrebonica = Agrària Can Viver SL del DAR, fila quimera purgada de Montcada) — no está en el CSV
+- **Lluçanès:** portales llucanesataula.cat y turisme.llucanes.cat/tasta/productors-elaboradors — fuentes útiles para toda la comarca; Formatges de Lluçà (Lluçà) y el obrador col·lectiu/formatgeria del Lluçanès (Anna Puig, BCN Agrària) como pistas
+- **Santa Susanna:** Agrícola de Santa Susanna SCCL (coop) · Hortalisses Pascual SCP (DAR 636644433) · L'Hort d'en Pol (Pol Pi Pujol, DAR 691857326) · Campeny Solà, Angel (aromàtiques, DAR 685270784)
+- **Calldetenes:** Roca Rovira, Antonino (ceba/calçot, DAR 658910605)
+- **Cardona:** Cal Pepitu (carnisseria de Cardona amb botiga online lavalldelcardener.cat; vedella, el col·lectiu de Josep Jané/Guillem Flores/Mar Barons — el ramader Jané ja és fila parcial) · Tòfona del Clot de Coma (Josep Malagarriga, DAR 687847550)
+- **Casserres:** Casa Barbats Agrícola i Ramadera SL (vedella, Ramaders de Muntanya del Berguedà; DAR 620942009 — ja integrada com a fila "Casa Barbats" parcial) · Cal Trumfet (casa rural amb productes locals)
+- **Gelida:** Cartró Parera, Vicenç (prunes/figues/préssecs/peres, DAR 606249984)
+- **Abrera:** Sències (agricultura i ramaderia eco en 3 masies d'Abrera/Sitges/Masquefa)
+- **Alella:** Bouquet d'Alella SL (marca Bouquet, vins/caves; DAR 670275054)
+- **Aguilar de Segarra:** Cal Figuera (ous; citat a directoris del Bages)
+- **Avinyó:** Torras Salvans, Ricard (marca Salers el Vinyes, vedella; DAR 620962240)
+- **Oristà:** Puig Orriols, Albert (carn de conill; DAR 626898877)
