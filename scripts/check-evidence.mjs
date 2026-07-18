@@ -269,7 +269,9 @@ function validateSources(record, reviewedAt, location, errors) {
 
     const type = validateString(source, "type", sourceLocation, errors);
     if (type && !SOURCE_TYPES.has(type)) {
-      errors.push(`${sourceLocation}: unsupported source type '${type}'`);
+      errors.push(
+        `${sourceLocation}: unsupported source type '${type}' (allowed: ${[...SOURCE_TYPES].join(", ")})`,
+      );
     }
     types.add(type);
 
@@ -411,7 +413,7 @@ function validateKeepRecord({
     );
     if (![...types].some((type) => PRIMARY_SOURCE_TYPES.has(type))) {
       errors.push(
-        `${location}: verificado requires at least one current primary/reliable source type`,
+        `${location}: verificado requires at least one current primary/reliable source type (${[...PRIMARY_SOURCE_TYPES].join(", ")})`,
       );
     }
   } else if (verification === "parcial") {
