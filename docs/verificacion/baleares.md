@@ -191,6 +191,8 @@ Reducen búsqueda repetida, pero no sustituyen la fuente propia necesaria para
 | Vi de la Terra Eivissa / Formentera | `https://www.illesbalearsqualitat.es/` | Bodegas pitiusas; el catálogo es corto y cerrado. |
 | CBPAE (ecológico balear) | `https://www.cbpae.org/` | Operadores certificados; registro de certificación, `parcial` como techo. |
 | Producte Balear / Illes Balears Qualitat | `https://www.illesbalearsqualitat.es/` | Descubrimiento institucional; una ficha genérica no verifica actividad actual. |
+| **Venda directa (Govern balear)** | `https://www.caib.es/sites/vendadirecta/` | **Registro oficial de venta directa: publica dirección y municipio del productor.** Apareció en BAL-08 y es la mejor fuente para contrastar direcciones cuando el productor no las publica. |
+| Directorio de queserías (Govern) | `https://www.illesbalears.travel/en/mallorca/visiting-mallorcas-cheese-factories` | Censo corto de queserías mallorquinas; útil para descartar nombres inventados. |
 
 ## Plan y worklist congelada
 
@@ -207,7 +209,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 3 ventas online resueltas; 1 merge por municipio erróneo (Can Xanet a Alcúdia); cierra las 44 bodegas de Mallorca. |
 | BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | ✅ 2026-07-21 | 11 verificado, 1 parcial; 8 ventas online resueltas; 1 purga (`Oli de Sant Joan`, inexistente), 1 merge del par Cooperativa de Sóller y 1 merge por municipio (Son Catiu a Inca). |
 | BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas; **3 purgas** (Can Estela, Can Pere Joan y «Sobrasada Ferrer») y 1 merge por municipio (Can Company a Maria de la Salut). |
-| BAL-08 | Lácteos y quesos · Mallorca | 11 | Pendiente | 3 sin web; nombres dudosos (Short des Pont, Dairy Mercè); par Son Jover y par Sa Teulera. |
+| BAL-08 | Lácteos y quesos · Mallorca | 11 | ✅ 2026-07-21 | 4 verificado, 4 parcial; 1 venta online resuelta; **3 purgas** (S'Hort des Pont, Gotes en Ram, Formatges Lluc) y 2 merges (Grimalt a Santanyí, Dairy Mercè a Formatges Mercè). |
 | BAL-09 | Fruta y verdura · Mallorca | 13 | Pendiente | Cooperativas con supermercado; contrapartes de los pares Son Jover y Sa Teulera (el par de la Cooperativa de Sóller ya se fusionó en BAL-06). |
 | BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | Pendiente | Forns de Palma; Fornet de la Soca VO=sí; Gelabert sin coordenadas ni web propia. |
 | BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | Pendiente | 6 recategorizaciones probables desde `Otros`; 5 VO=sí. |
@@ -429,6 +431,39 @@ quién solo pone la marca.
   Zagal lista media docena de cadenas: es reventa de terceros y deja la fila en
   `no comprobado`. Tampoco cuenta la tienda de otra empresa del sector
   (Munar vende vía `ramadersagrupats.com`).
+
+### BAL-08 — Lácteos y quesos de Mallorca
+
+Cuatro `verificado`, cuatro `parcial` y **tres purgas más**. El CSV queda en 160
+filas. Este lote añade la tercera firma del volcado inventado y descubre la mejor
+fuente provincial de la pasada.
+
+- **Los teléfonos inventados tienen patrón.** Barriendo todo el CSV aparecen
+  **once números con dígitos correlativos** —`611223344`, `622334455`,
+  `629112233`, `630112244`, `971121212`…— y **diez son del estrato A**. Junto al
+  dominio derivado del nombre y la dirección que repite la marca, son las tres
+  firmas que identifican una fila fabricada sin salir del fichero.
+- **Tres filas más que no existen o no son productores.** «Formatges Lluc»
+  (Llucmajor) acumula las tres firmas a la vez: dominio sin DNS derivado del
+  nombre, teléfono `611223344` y dirección «Carrer d'en Lluc, 14». «Gotes en Ram»
+  no aparece en ninguna fuente del sector. Y **«S'Hort des Pont» es un
+  restaurante de Montuïri**, no una quesería de Manacor; su slug venía además de
+  tragarse el apóstrofo de *S'Hort* al generarlo.
+- **Sexto municipio equivocado, y de los gordos.** Quesos Grimalt no está en
+  Lloret de Vistalegre sino en **Es Llombards, término de Santanyí** — al otro
+  extremo de la isla. Es la marca de queso mallorquín más conocida del lote.
+- **El registro de venta directa del Govern es la mejor fuente para direcciones.**
+  Lo encontré al equivocarme: rebajé la dirección de Sa Cabreta a solo el
+  municipio por parecer sintética, y el validador de evidencia me lo cazó al
+  faltar el claim `municipality`. Resultó que `caib.es/sites/vendadirecta`
+  publica **exactamente** esa dirección. **No toda dirección rara es inventada**:
+  antes de vaciar, buscar en el registro de venta directa.
+- **Cuatro `parcial` por la misma razón**: Grimalt, Fet a Son Garrova, Formatges
+  Mercè y Es Collet son queserías reales y activas, pero ninguna tiene web propia
+  —solo Facebook— así que su evidencia se apoya en registros y prensa.
+- **Comprar la leche no descalifica.** Formatges Mercè no tiene rebaño pero
+  elabora queso y yogur en su quesería de Costitx: entra. El criterio sigue
+  siendo la elaboración.
 
 ### Membresía exacta por lote
 
