@@ -204,7 +204,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-02 | D.O. Binissalem · Santa Maria, Sencelles, Santa Eugènia | 10 | ✅ 2026-07-21 | 9 verificado, 1 parcial; 4 ventas online resueltas; 1 merge por municipio erróneo (Son Juliana a Santa Eugènia); 5 webs del volcado muertas o equivocadas sustituidas. |
 | BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | ✅ 2026-07-21 | 7 verificado, 2 parcial; 5 ventas online resueltas; Toni Gelabert sin web viva; 4 coordenadas al centroide por geocodificación no fiable. |
 | BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | ✅ 2026-07-21 | 7 verificado, 0 parcial; 2 ventas online resueltas; 4 dominios del volcado sustituidos; 4 coordenadas al centroide. |
-| BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | Pendiente | Fuera de D.O.; Can Axartell sin coordenadas y VO=sí. |
+| BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 3 ventas online resueltas; 1 merge por municipio erróneo (Can Xanet a Alcúdia); cierra las 44 bodegas de Mallorca. |
 | BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | Pendiente | Almazara vs marca; par duplicado Cooperativa de Sóller; Oli de Santanyí VO=sí sin coordenadas. |
 | BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | Pendiente | Obrador vs carnicería; Ferriol VO=sí; Estrany sin coordenadas. |
 | BAL-08 | Lácteos y quesos · Mallorca | 11 | Pendiente | 3 sin web; nombres dudosos (Short des Pont, Dairy Mercè); par Son Jover y par Sa Teulera. |
@@ -338,6 +338,29 @@ ya vistos se confirman como sistemáticos:
   Maps; de ahí salen sus coordenadas. A cambio, la dirección se reduce al
   municipio y el teléfono se vacía: **es preferible el campo vacío al dato del
   volcado.**
+
+### BAL-05 — Vi de la Terra: Tramuntana, Pollença y Palma
+
+Ocho `verificado` y Son Vives en `parcial`. Con este lote **quedan cerradas las
+44 bodegas de Mallorca**: 40 `verificado`, 4 `parcial`, 0 `pendiente`.
+
+- **Tercer municipio equivocado, y el más fácil de haber pasado por alto.** Can
+  Xanet estaba en Pollença; su propia web se titula «Bodega en Alcudia». Ni la
+  dirección ni las coordenadas sintéticas lo delataban, porque Pollença y Alcúdia
+  son limítrofes y el punto caía dentro del término equivocado sin disparar
+  ningún aviso. **El geo-check no detecta un municipio vecino.**
+- **Un error de certificado no es una web caída.** `castellmiquel.com` falla en
+  WebFetch con «unable to verify the first certificate», pero el certificado está
+  emitido a nombre de Bionorica SE, la empresa del fundador de la bodega, y el
+  sitio está vivo con tienda propia. Es el segundo caso tras Bodega Ribas:
+  **comprobar siempre por otra vía antes de tocar la columna web.**
+- **Son Vives baja a `parcial` por doble fallo de dominio.**
+  `cellersonvives.com` no tiene DNS y `sonvives.com` sirve una página vacía con
+  solo el nombre del dominio. Es distinto de un aparcamiento comercial y de un
+  secuestro; conviene mirar el contenido, no solo el código de estado.
+- **Un título de página genérico no significa web falsa.** `bodegasxaloc.com`
+  devuelve `<title>Home</title>`, lo que huele a plantilla sin configurar, pero
+  el contenido describe una bodega real de tres hectáreas con aceite propio.
 
 ### Membresía exacta por lote
 
