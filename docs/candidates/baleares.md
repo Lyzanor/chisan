@@ -23,3 +23,24 @@ nueva cuando se verifique por su cuenta.
 
 Ojo: su agroturismo está cerrado durante 2026 por obras, lo que no afecta a la
 actividad oleícola pero sí a lo que se pueda leer en su web.
+
+## Procam (elaborador de la marca Can Pere Joan)
+
+Elaborador certificado de la I.G.P. Sobrasada de Mallorca. Es quien fabrica la
+sobrasada que Mercadona vende bajo la marca **Can Pere Joan**, la fila que se
+purgó en BAL-07 por describir una unidad productiva inexistente en Inca. Falta
+localizar su municipio y su web propia antes de plantear el alta.
+
+## Bon Gust (Algaida)
+
+Elaborador certificado de la I.G.P. Sobrasada de Mallorca y, según el registro,
+**el único de Algaida**. Apareció al purgar `sobrasada-de-mallorca-ferrer-algaida`,
+una fila inventada cuyo nombre no corresponde a ninguna empresa.
+
+## Otros elaboradores de la I.G.P. sin fila en el CSV
+
+Del registro de quince elaboradores certificados
+(`sobrasadademallorca.org`), no están en el CSV: Bon Gust, Procam,
+Aplicacions Tècniques Insulars, Tucarn, Ca Na Paulina, Ramaders Agrupats,
+Hipercentro y Embotits Montuiri. Varios son industria o distribución más que
+productor de marca propia: verificar uno a uno antes de dar de alta ninguno.

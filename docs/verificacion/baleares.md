@@ -206,7 +206,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | ✅ 2026-07-21 | 7 verificado, 0 parcial; 2 ventas online resueltas; 4 dominios del volcado sustituidos; 4 coordenadas al centroide. |
 | BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 3 ventas online resueltas; 1 merge por municipio erróneo (Can Xanet a Alcúdia); cierra las 44 bodegas de Mallorca. |
 | BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | ✅ 2026-07-21 | 11 verificado, 1 parcial; 8 ventas online resueltas; 1 purga (`Oli de Sant Joan`, inexistente), 1 merge del par Cooperativa de Sóller y 1 merge por municipio (Son Catiu a Inca). |
-| BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | Pendiente | Obrador vs carnicería; Ferriol VO=sí; Estrany sin coordenadas. |
+| BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas; **3 purgas** (Can Estela, Can Pere Joan y «Sobrasada Ferrer») y 1 merge por municipio (Can Company a Maria de la Salut). |
 | BAL-08 | Lácteos y quesos · Mallorca | 11 | Pendiente | 3 sin web; nombres dudosos (Short des Pont, Dairy Mercè); par Son Jover y par Sa Teulera. |
 | BAL-09 | Fruta y verdura · Mallorca | 13 | Pendiente | Cooperativas con supermercado; contrapartes de los pares Son Jover y Sa Teulera (el par de la Cooperativa de Sóller ya se fusionó en BAL-06). |
 | BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | Pendiente | Forns de Palma; Fornet de la Soca VO=sí; Gelabert sin coordenadas ni web propia. |
@@ -396,6 +396,39 @@ municipio de cada inscrita.
 - **Ojo con la finca de eventos que además hace aceite.** Son Mir es sobre todo
   un espacio de celebraciones, pero elabora AOVE con aceituna propia: entra. El
   criterio es la elaboración, no cuál sea el negocio principal.
+
+### BAL-07 — Charcutería, I.G.P. Sobrasada de Mallorca
+
+Ocho `verificado`, uno `parcial` y **tres purgas**: el lote con más bajas de la
+pasada. El CSV queda en 163 filas. El registro de quince elaboradores
+certificados de la I.G.P. fue decisivo: separa en un vistazo quién elabora de
+quién solo pone la marca.
+
+- **El generador inventó los dominios a partir del nombre.** Medido sobre todo el
+  estrato A: **41 de 51 dominios (80 %) son derivables del nombre del productor**
+  —`sobrasadasferrer.com` para «Sobrasada de Mallorca Ferrer`, `canperejoan.es`
+  para «Can Pere Joan»— y por eso tantos no resuelven. La columna `web` del
+  estrato A no es un dato observado sino una conjetura, y hay que tratarla así:
+  **comprobar el dominio antes de usarlo como prueba de nada.**
+- **Tres filas que no son productores.** «Sobrasada de Mallorca Ferrer» (Algaida)
+  no existe: no está en la I.G.P., su dominio no tiene DNS y las búsquedas solo
+  devuelven Embotits Ferriol, de Sineu, que ya tiene fila propia. «Can Pere Joan»
+  es una **marca** de sobrasada de Mercadona elaborada por Procam, no una empresa
+  de Inca. «Carnisseria Can Estela» no aparece en el Mercat de l'Olivar por
+  ninguna vía, y aunque existiera sería una parada que despacha, no un obrador.
+  Sus tres alternativas reales —Bon Gust, Procam y el resto del registro— quedan
+  en `docs/candidates/baleares.md`.
+- **Quinto municipio equivocado.** Can Company figuraba en Llubí; su fábrica está
+  en la carretera Petra-Santa Margalida, en **Maria de la Salut**.
+- **Cuarto dominio con guion**: `embutidoslaluna.com` no existe, el real es
+  `la-luna.es`. Y **Embutidos Munar solo responde por HTTP**: se conserva con
+  `http://`, que es un dato válido, en vez de darla por caída.
+- **Tercera marca convertida en calle**: Sa Caldera figuraba en «Camí de sa
+  Caldera» y está en el Carrer de la Pau. Con Mollet y Butxet, el patrón es firme.
+- **Vender en Mercadona, Carrefour o El Corte Inglés no es venta online.** El
+  Zagal lista media docena de cadenas: es reventa de terceros y deja la fila en
+  `no comprobado`. Tampoco cuenta la tienda de otra empresa del sector
+  (Munar vende vía `ramadersagrupats.com`).
 
 ### Membresía exacta por lote
 
