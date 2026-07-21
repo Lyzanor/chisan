@@ -201,7 +201,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | # | Lote | Filas | Estado | Foco |
 |---|---|---:|---|---|
 | BAL-01 | D.O. Binissalem · Binissalem y Consell | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas (Ferrer y Antonio Nadal Ros) y 1 caída (Can Fumat); 1 merge por municipio erróneo (Ava Vins a Sencelles); 1 dominio secuestrado retirado (Biniagual). |
-| BAL-02 | D.O. Binissalem · Santa Maria, Sencelles, Santa Eugènia | 10 | Pendiente | Incluye 1 VO=sí y Son Juliana sin coordenadas. |
+| BAL-02 | D.O. Binissalem · Santa Maria, Sencelles, Santa Eugènia | 10 | ✅ 2026-07-21 | 9 verificado, 1 parcial; 4 ventas online resueltas; 1 merge por municipio erróneo (Son Juliana a Santa Eugènia); 5 webs del volcado muertas o equivocadas sustituidas. |
 | BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | Pendiente | Bodegas del llano; vigilar marca vs bodega. |
 | BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | Pendiente | Incluye Mesquida Mora (VO=sí). |
 | BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | Pendiente | Fuera de D.O.; Can Axartell sin coordenadas y VO=sí. |
@@ -250,6 +250,39 @@ reutilizables en el resto de la provincia:
 - **Fallo de fetch ≠ web muerta.** `www.bodegaribas.com` da error de certificado
   porque el altname solo cubre el dominio sin `www`; el sitio está vivo. Ese
   fallo no debe leerse como baja.
+
+### BAL-02 — D.O. Binissalem: Santa Maria, Sencelles y Santa Eugènia
+
+Nueve `verificado` y Vinya Taujana en `parcial`. El lote confirma que **la web
+del volcado es el campo menos fiable de todos**: de diez filas, cinco apuntaban a
+un dominio que no sirve al productor.
+
+- **Cinco webs malas, cinco averías distintas.** `jaumedepuntiro.com` sin
+  registro DNS (real: `vinsjaumedepuntiro.com`); `casapadrina.com` sin respuesta
+  y con 525 en el `www` (real: `vinscasapadrina.com`); `sonjuliana.com` aparcado
+  y en venta en GoDaddy (real: `sonjuliana.es`); `7103petitceller.com` sirviendo
+  el placeholder `/defaultsite` del hosting porque **el dominio real lleva guion**,
+  `7103-petitceller.com`; y `vinyataujana.es`, que sí es suyo pero devuelve la
+  pantalla «ConnectYourDomain Error» de Wix. Ninguna se detecta pidiendo solo el
+  código HTTP: hay que mirar el destino final y el título de la página.
+- **El generador convirtió una marca de vino en una calle.** Ca Sa Padrina
+  figuraba en «Carrer d'en Mollet, Biniali»: Mollet es uno de sus vinos, y la
+  bodega está en el Camí dels Horts de Sencelles. Cuando la dirección sintética
+  suena a producto, desconfía.
+- **Segundo municipio equivocado del mismo tipo.** Son Juliana no está en Santa
+  Maria del Camí sino en Santa Eugènia, en la carretera que une ambos pueblos.
+  Junto con Ava Vins en BAL-01 van dos de diecinueve: **conviene comprobar el
+  municipio de toda bodega cuya dirección sea una carretera o un llogaret.**
+- **Un formulario de pedido con reparto sí es venta remota.** 7103 no tiene
+  pasarela de pago, pero su formulario deja elegir vinos y cantidades, fija
+  portes (gratis desde 18 botellas) y fecha de entrega. Se resuelve como `sí`
+  con canal `email`, no `ecommerce`, que exige checkout.
+- **Una tienda puede no vender el producto.** `shopsebastiapastor.com` parece
+  comercio pero solo cobra catas y visitas: la venta de vino no queda resuelta.
+  El mismo cuidado que con el enoturismo.
+- **El registro de la D.O. Binissalem tiene once bodegas y se queda corto.**
+  Macià Batle, la más conocida del lote, no aparece en él. Sirve para municipio
+  y contacto, nunca como censo.
 
 ### Membresía exacta por lote
 
