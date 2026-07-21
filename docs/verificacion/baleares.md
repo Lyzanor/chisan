@@ -200,7 +200,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 
 | # | Lote | Filas | Estado | Foco |
 |---|---|---:|---|---|
-| BAL-01 | D.O. Binissalem · Binissalem y Consell | 9 | Pendiente | Núcleo de la D.O.; incluye 1 VO=sí y 1 fila sin coordenadas. |
+| BAL-01 | D.O. Binissalem · Binissalem y Consell | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas (Ferrer y Antonio Nadal Ros) y 1 caída (Can Fumat); 1 merge por municipio erróneo (Ava Vins a Sencelles); 1 dominio secuestrado retirado (Biniagual). |
 | BAL-02 | D.O. Binissalem · Santa Maria, Sencelles, Santa Eugènia | 10 | Pendiente | Incluye 1 VO=sí y Son Juliana sin coordenadas. |
 | BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | Pendiente | Bodegas del llano; vigilar marca vs bodega. |
 | BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | Pendiente | Incluye Mesquida Mora (VO=sí). |
@@ -217,6 +217,39 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-15 | Eivissa | 13 | Pendiente | 2 slugs con parroquia; Sa Nostra Mel con web de directorio; 2 VO=sí. |
 | BAL-16 | Formentera | 5 | Pendiente | Catálogo cerrado; 3 sin coordenadas, 2 sin web, Peix Sec VO=sí. |
 | BAL-17 | Cierre transversal | Todas | Pendiente | 0 pendientes, evidencia, venta, geo, dedup, imágenes y `verify:data`. |
+
+### BAL-01 — D.O. Binissalem, Binissalem y Consell
+
+Ocho de las nueve quedan `verificado` y Ava Vins en `parcial`. Incidencias
+reutilizables en el resto de la provincia:
+
+- **Un dominio caducado puede volver como otra cosa.** `bodegabiniagual.com` se
+  re-registró el 2025-06-22 vía Gname.com y hoy hace 301 a `gas138go.com`, un
+  portal de apuestas indonesio. La bodega existe y sigue inscrita en la D.O.: el
+  problema era solo el dominio. Se sustituyó por `finca-biniagual.com` y se
+  vació el correo, que colgaba del dominio secuestrado. Es el mismo patrón de
+  brainapple.es en Burgos y Destraperlo en Cádiz: **comprobar a dónde redirige
+  cada web, no solo que responda 200.**
+- **El listado del consejo no cubre a todos.** Cuatro filas del lote —Tianna
+  Negre, Ribas, Ava Vins y Antonio Nadal Ros— no están en el registro de la D.O.
+  Binissalem y sin embargo son bodegas reales: embotellan bajo IGP Mallorca o
+  Vi de la Terra. **Ausencia del consejo no es motivo de purga**; obliga a buscar
+  la denominación correcta.
+- **Biniali es llogaret de Sencelles, no de Consell.** Ava Vins estaba en el
+  municipio equivocado y su web del volcado (`avavins.com`) ni siquiera tiene
+  registro DNS; el dominio real es `ava-vi.es`. Municipio, dirección, teléfono,
+  correo y coordenadas rehechos, con `merge` a `ava-vins-sencelles`.
+- **Las direcciones sintéticas se inventan calles plausibles.** Vins Nadal no
+  está en «Carrer Ramon y Cajal» sino en Ramon Llull, y Tianna Negre no está en
+  «Camí des Marjals» sino en Camí des Mitjans. Ambas calles existen en el pueblo,
+  así que el error no se detecta sin abrir la web del productor.
+- **Formulario de contacto no es venta online.** Can Fumat baja de `sí` a `no
+  comprobado`: catálogo sin carrito y formulario genérico. En cambio Ferrer
+  (tienda propia con envío a Baleares, península y UE) y Antonio Nadal Ros
+  (carrito y pasarela activos) suben a `sí` + `ecommerce`.
+- **Fallo de fetch ≠ web muerta.** `www.bodegaribas.com` da error de certificado
+  porque el altname solo cubre el dominio sin `www`; el sitio está vivo. Ese
+  fallo no debe leerse como baja.
 
 ### Membresía exacta por lote
 
