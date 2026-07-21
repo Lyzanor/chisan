@@ -202,7 +202,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 |---|---|---:|---|---|
 | BAL-01 | D.O. Binissalem · Binissalem y Consell | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas (Ferrer y Antonio Nadal Ros) y 1 caída (Can Fumat); 1 merge por municipio erróneo (Ava Vins a Sencelles); 1 dominio secuestrado retirado (Biniagual). |
 | BAL-02 | D.O. Binissalem · Santa Maria, Sencelles, Santa Eugènia | 10 | ✅ 2026-07-21 | 9 verificado, 1 parcial; 4 ventas online resueltas; 1 merge por municipio erróneo (Son Juliana a Santa Eugènia); 5 webs del volcado muertas o equivocadas sustituidas. |
-| BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | Pendiente | Bodegas del llano; vigilar marca vs bodega. |
+| BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | ✅ 2026-07-21 | 7 verificado, 2 parcial; 5 ventas online resueltas; Toni Gelabert sin web viva; 4 coordenadas al centroide por geocodificación no fiable. |
 | BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | Pendiente | Incluye Mesquida Mora (VO=sí). |
 | BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | Pendiente | Fuera de D.O.; Can Axartell sin coordenadas y VO=sí. |
 | BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | Pendiente | Almazara vs marca; par duplicado Cooperativa de Sóller; Oli de Santanyí VO=sí sin coordenadas. |
@@ -283,6 +283,39 @@ un dominio que no sirve al productor.
 - **El registro de la D.O. Binissalem tiene once bodegas y se queda corto.**
   Macià Batle, la más conocida del lote, no aparece en él. Sirve para municipio
   y contacto, nunca como censo.
+
+### BAL-03 — D.O. Pla i Llevant: Felanitx, Llucmajor, Manacor, Algaida y Montuïri
+
+Siete `verificado` y dos `parcial`. Aquí el campo que falla en bloque ya no es la
+web sino **el teléfono**: cinco de nueve estaban mal.
+
+- **Los teléfonos del volcado son tan inventados como las direcciones.** Pere
+  Seda, Miquel Gelabert, Toni Gelabert, Vi Rei y Blanca Terra publicaban otro
+  número. En Blanca Terra el heredado ni siquiera era de la bodega. Conviene
+  comprobar teléfono y correo con la misma desconfianza que la dirección.
+- **Toni Gelabert se queda sin web.** `vinstonigelabert.com` resuelve pero no
+  responde y `tonigelabert.com` es una página aparcada de GoDaddy. La bodega está
+  activa y en la D.O., así que la fila sobrevive en `parcial` con la web vacía.
+  Su dirección heredada, «Carrer Major, 46», también era falsa: está en la camada
+  dels Horts de Llodrà, en la carretera a Felanitx.
+- **Buscar el POI por nombre funciona mejor que geocodificar la calle.** Nominatim
+  resolvió Can Majoral, Toni Gelabert y Blanca Terra como puntos etiquetados
+  `wine`/`winery`, pero al pedirle «Carrer de Salas, Manacor» devolvió calles de
+  Cala Murada a 20 km. **Un resultado plausible de geocodificador no es una
+  fuente**: hay que mirar el `display_name` y descartar si no cuadra.
+- **Cuando no hay geocodificación fiable, centroide, no invento.** Miquel
+  Gelabert, Bordoy, Vi Rei y Armero i Adrover se quedan con el centroide de su
+  municipio, que `geo-provenance.json` registrará como tal en el cierre. Es peor
+  que la finca pero mucho mejor que el punto sintético heredado, porque queda
+  declarado.
+- **Una sección «tienda» puede no vender nada.** La de Bordoy no tiene precios ni
+  carrito y remite a la tienda física de la bodega. Van tres casos en tres lotes
+  (Can Fumat, Sebastià Pastor, Bordoy): **abrir siempre la tienda, no fiarse del
+  enlace.**
+- **4 Kilos ilustra el límite del `parcial`.** Es una bodega conocida y activa,
+  pero su web es un sitio antiguo sin contenido rastreable, así que dirección y
+  contacto se apoyan en directorios. `parcial` mide la evidencia, no la duda
+  sobre su existencia.
 
 ### Membresía exacta por lote
 
