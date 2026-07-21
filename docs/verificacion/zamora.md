@@ -352,3 +352,61 @@ La pasada se considera cerrada cuando:
 - **Gates:** `check:csv:data-quality` de Zamora, `check:images`,
   `check:evidence`, `check:csv:changed`, `check:evidence:changed`,
   `verify:data` y `git diff --check` pasan.
+
+## Segunda pasada: rescate de webs de directorio (lotes ZA-R)
+
+La primera pasada se cerró en una rama que nunca aterrizó en `main`; se aplicó
+el 2026-07-21. Al auditarla apareció el hueco que la cerró en falso: **37 filas
+conservaban un directorio como `web` propia** (33 de ellas
+`alimentosdezamora.info`), con la descripción, el horario y las coordenadas del
+volcado institucional. Ese estado no cumple la definición de completado que usan
+Albacete, Granada o Cádiz, así que la provincia se retoma por lotes.
+
+Regla del bloque: por cada fila, buscar el dominio propio; si no existe uno vivo,
+**vaciar `web`** en vez de conservar el directorio, y ajustar el techo de
+verificación a la fuente que quede. Una ficha de directorio o de consejo
+regulador sostiene `parcial`, nunca `verificado`.
+
+| # | Lote | Filas | Estado | Saldo |
+|---|---|---:|---|---|
+| ZA-R1 | Arribes/Fermoselle + Morales de Toro | 10 | ✅ 2026-07-21 | 2 purgas a Salamanca, 2 traslados a Villar del Buey, 1 verificado nuevo, 1 recategorización |
+| ZA-R2 | Tierra del Vino, Valles de Benavente y Villamor | 14 | ⏳ | — |
+| ZA-R3 | Lácteos, legumbres, setas y conservas | 13 | ⏳ | — |
+| ZA-R4 | Geo-check: 8 municipios fuera del lookup + descripciones duplicadas | 10 | ⏳ | — |
+| ZA-R5 | Muestreo de los 49 `Venta online=sí` y cierre | — | ⏳ | — |
+
+### ZA-R1 — Arribes/Fermoselle y Morales de Toro
+
+Las diez filas eran volcado puro: misma descripción plantilla, sin dirección ni
+teléfono y —las nueve de Fermoselle— con **las mismas coordenadas**, las del
+centroide del municipio.
+
+- `verificado`: Cooperativa Virgen de la Bandera (web propia viva) y La Setera.
+- `parcial`: AlmaRoja, Ocellvm Dvrii, Las Fontanicas, Hacienda Zorita Natural
+  Reserve, Terrazgo y Dalmacio Gallego.
+- `Venta online=sí` + `ecommerce`: La Setera.
+- `purge:other-province`: La Casita del Viñador y Ribera de Pelazas, ambas
+  traspasadas a `docs/candidates/salamanca.md`.
+- `merge` por municipio erróneo: La Setera y Terrazgo, de `-fermoselle` a
+  `-villar-del-buey`.
+
+Incidencias reutilizables:
+
+- **Fornillos de Fermoselle no es municipio, es pedanía de Villar del Buey.** Dos
+  bodegas lo daban como Fermoselle. Es el mismo error que «Isso» en Albacete y se
+  arregla igual: municipio oficial, coordenadas de la pedanía y `merge` del slug.
+- **La D.O. Arribes cruza Zamora y Salamanca**, así que su listado común mete
+  bodegas salmantinas en el CSV zamorano. La primera pasada purgó cuatro por esa
+  vía y dejó dos que también lo eran. Estar en la denominación no sitúa la bodega.
+- **Un dominio caído no es una bodega cerrada, pero tampoco es `verificado`.**
+  `almaroja.com` no responde por tres vías distintas (WebFetch, navegador y
+  `curl`, timeout en 443) y la bodega sigue viva en el mercado: la fila baja a
+  `parcial` y se queda con su Facebook oficial. Cuidado con `almaroja.es`, que
+  **no es suyo**: hoy sirve un agregador gastronómico.
+- **La ficha del consejo puede estar a nombre del grupo.** `doarribes.es` inscribe
+  Marqués de la Concordia, no «Hacienda Zorita»; la unidad zamorana es la finca
+  Natural Reserve de la ctra. Zamora-Fermoselle km 58. La web del grupo es una
+  SPA sin contenido rastreable, así que el techo se queda en `parcial`.
+- **Una bodega puede haber dejado de serlo.** La Cooperativa Virgen de la Bandera
+  paró el vino en 2020 por abandono de viñedo y hoy su producción vigente es AOVE
+  de manzanilla: se recategoriza a Aceite y se anota la intención de retomarlo.
