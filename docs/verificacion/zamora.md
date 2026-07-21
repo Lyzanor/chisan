@@ -370,7 +370,7 @@ regulador sostiene `parcial`, nunca `verificado`.
 | # | Lote | Filas | Estado | Saldo |
 |---|---|---:|---|---|
 | ZA-R1 | Arribes/Fermoselle + Morales de Toro | 10 | ✅ 2026-07-21 | 2 purgas a Salamanca, 2 traslados a Villar del Buey, 1 verificado nuevo, 1 recategorización |
-| ZA-R2 | Tierra del Vino, Valles de Benavente y Villamor | 14 | ⏳ | — |
+| ZA-R2 | Tierra del Vino, Valles de Benavente y Villamor | 14 | ✅ 2026-07-21 | 4 verificado (2 con tienda propia), 10 parcial, 0 purgas |
 | ZA-R3 | Lácteos, legumbres, setas y conservas | 13 | ⏳ | — |
 | ZA-R4 | Geo-check: 8 municipios fuera del lookup + descripciones duplicadas | 10 | ⏳ | — |
 | ZA-R5 | Muestreo de los 49 `Venta online=sí` y cierre | — | ⏳ | — |
@@ -410,3 +410,35 @@ Incidencias reutilizables:
 - **Una bodega puede haber dejado de serlo.** La Cooperativa Virgen de la Bandera
   paró el vino en 2020 por abandono de viñedo y hoy su producción vigente es AOVE
   de manzanilla: se recategoriza a Aceite y se anota la intención de retomarlo.
+
+### ZA-R2 — Tierra del Vino, Valles de Benavente y Villamor
+
+- `verificado` + ecommerce: Bodegas Casaseca y Bodegas el Soto.
+- `verificado`, venta no comprobada: Viñas del Cénit y Teso la Encina.
+- `parcial` (10): Alizán, El Tesoro, Francisco González, Guillermo Freire,
+  Mitus, Viña Escuderos, Viñas Zamoranas, Armando, Teso Blanco y Rodríguez
+  Morán. Ninguna conserva ya el directorio como web.
+
+Incidencias reutilizables:
+
+- **El listado del consejo, leído en crudo, vale más que su resumen.** La página
+  de bodegas de `tierradelvino.net` publica dirección, teléfono, correo y web de
+  cada bodega, pero solo aparecen al leer el HTML: resolvió de golpe la dirección
+  de seis filas y desveló que «Bodega Guillermo Freire» se publica como **Bodega
+  Jarreño**.
+- **`vinaescuderos.com` está secuestrado.** El dominio con el nombre exacto de la
+  cooperativa sirve hoy un blog de marketing digital firmado por «Claire
+  Williams». Es la tercera variante del patrón en esta provincia, junto a
+  `almaroja.es` y `confiterialamoderna.com` de Albacete: **comprobar siempre que
+  el contenido habla del productor antes de guardar un dominio que encaja con el
+  nombre**.
+- **Dos filas con el mismo teléfono señalan un dato copiado, no siempre un
+  duplicado.** Casaseca y Armando compartían el +34980538683; la tienda propia de
+  Casaseca publica otro número, así que se corrigió la fila equivocada en vez de
+  fusionar dos bodegas distintas.
+- **La tienda puede vivir en un subdominio de plataforma.** Casaseca vende en
+  `bodegascasaseca.tienda-online.com`, no en un dominio propio: es tienda oficial
+  igualmente y acredita el canal.
+- **Un checkout no siempre vende el producto de la fila.** Teso la Encina es
+  bodega y hotel rural en la misma finca; su carrito es el de la reserva, así que
+  la venta de vino queda `no comprobado`.
