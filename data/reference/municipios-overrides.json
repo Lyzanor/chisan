@@ -574,5 +574,19 @@
       "label": "Cuarte (Huesca)",
       "community": "aragon"
     }
+  ],
+  "robledo": [
+    {
+      "lat": 38.78337,
+      "lon": -2.42943,
+      "label": "Robledo",
+      "community": "castilla-la-mancha"
+    },
+    {
+      "lat": 40.49833,
+      "lon": -4.23889,
+      "label": "Robledo de Chavela",
+      "community": "madrid"
+    }
   ]
 }
