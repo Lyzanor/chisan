@@ -4,7 +4,7 @@
 - Province files: `data/csv/[comunidad]/[provincia].csv`
 - Barcelona file: `data/csv/catalunya/barcelona.csv`
 - Structured provenance: `data/evidence/[comunidad]/[provincia].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
-- Encoding: UTF-8 (BOM tolerated)
+- Encoding: UTF-8 **without BOM** (a leading BOM is blocking; it usually means the file went through a spreadsheet export)
 - Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
 - Header row is required.
 
@@ -28,7 +28,7 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 ## Reference data
 - `data/reference/municipios.json` is a Wikidata-sourced lookup of Spanish municipality centroids (~8.300 entries with multilingual aliases). The geography warning rule uses it; nothing else in the app depends on it.
 - Covered: every entity classified as a municipality of Spain in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
-- Not covered: pedanías, núcleos and other sub-municipal localities (e.g. Alpatró inside La Vall de Gallinera, El Alquián inside Almería). The audit silently skips rows whose `municipio` is not in the lookup; the row is still subject to every other warning.
+- Not covered: pedanías, núcleos and other sub-municipal localities (e.g. Alpatró inside La Vall de Gallinera, El Alquián inside Almería). Rows whose `municipio` is not in the lookup escape every geography check; the row is still subject to every other rule. The audit summary reports the count (`geo-check skipped: N rows`) so the gap stays visible — a rising number usually means a spelling the lookup does not carry (`Roa de Duero` for `Roa`, `Pamplona / Iruña` for `Pamplona`), which is worth fixing in the `municipio` column, not a genuine pedanía.
 - Compound names: if Wikidata uses the official compound form (e.g. `Aínsa-Sobrarbe`) and the CSV uses the short form (e.g. `Aínsa`), the lookup may miss. Prefer the official form in the `municipio` column when known.
 - `data/reference/municipios-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipios.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, community}` candidates; the audit picks the one whose `community` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another province (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia).
 - Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~30 seconds. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs.
@@ -37,8 +37,9 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 
 All 20 canonical columns are physically present in every CSV. A column being present does not mean every row must have a non-empty value.
 
-- Blocking non-empty values: `slug`, `verificacion`, `Venta online`.
-- Blocking controlled values: `slug` format, `verificacion`, `Venta online`, `categoria` when present, `telefono` when present.
+- Blocking non-empty values: `slug`, `nombre`, `municipio`, `categoria`, `verificacion`, `Venta online`.
+- Blocking controlled values: `slug` format, `verificacion`, `Venta online`, `categoria`, `telefono` when present, `correo` when present, `Canal de venta` when present.
+- Controlled values are matched **exactly**, not case- or accent-folded: `sí` and `verificado` pass, `Si` and `Verificado` are blocking drift.
 - Paired values: `lat` and `lon` must both be present or both be empty.
 - Coordinate precision: `lat`/`lon` may be an exact geocoded address or a municipal-centroid
   fallback from the geocoding gap-fill. `data/reference/geo-provenance.json` (regenerate with
@@ -128,18 +129,17 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
   - `marketplace`: sells through a third-party platform acting for the producer — its own or official-collective storefront, not independent resale (see `docs/EDITORIAL_POLICY.md`).
 - A producer may use several channels at once: join tokens with `|`, e.g. `ecommerce|whatsapp`. Order is not significant.
 - An empty value means the channel has not been classified yet; it does **not** assert "no channel".
-- Validation is a non-blocking warning today (`check:csv:data-quality`): if present, every token must be in the allowed set and `Venta online` should be `sí`. It is intentionally **not** part of the blocking `check:csv` contract yet, so the column can be backfilled incrementally without failing `verify:ai`. Promote it to a blocking rule once coverage is high enough.
+- Validation is blocking (`check:csv`): if present, every token must be in the allowed set and `Venta online` must be `sí`. Leaving the column empty stays valid everywhere, so incremental backfill is unaffected — only a *filled* value has to be coherent.
 
 ## Missing values
 - Missing cell values are represented as empty strings internally.
 - Detail table renders empty values as `—`.
 
 ## Blocking rules (`check:csv`)
-- The header must be exactly the canonical 20-column header, in canonical order (see Canonical header).
-- No duplicated header columns.
-- Line endings must be LF (no CR/CRLF anywhere in the file).
-- All canonical header columns must exist exactly once.
+- The header must be exactly the canonical 20-column header, in canonical order (see Canonical header). The comparison is positional, so a missing, duplicated, extra or reordered column all fail here, with a message naming the position.
+- Line endings must be LF (no CR/CRLF anywhere in the file), and the file must not start with a UTF-8 BOM.
 - `slug` is required and must be lowercase ASCII words separated by `-`.
+- `nombre`, `municipio` and `categoria` are required: they are the row's title, its location and the facet it is filtered by.
 - `slug` must be unique within its province CSV.
 - `lat` and `lon` must both be present or both be empty.
 - `lat`, when present, must be numeric and between `-90` and `90`.
@@ -150,8 +150,10 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
 - `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
 - `Venta online` is required and must be one of `sí`, `no`, or `no comprobado`.
-- `categoria`, when present, must exactly match one of the registered/valid categories officially whitelisted in the audit tool.
+- `categoria` must exactly match one of the registered/valid categories officially whitelisted in the audit tool.
 - `telefono` may be empty, but if present must be in strict E.164 format (e.g. `+34600112233`).
+- `correo` may be empty, but if present must be a single valid email address. A cell holding several addresses separated by `;`, `/` or `,` has no usable contact: pick the public one (prefer a role mailbox such as `info@` on the producer's own domain).
+- `Canal de venta` may be empty, but if present every `|`-separated token must be in the allowed set and `Venta online` must be `sí`.
 
 ## Warning rules (`check:csv:data-quality`)
 
@@ -169,9 +171,7 @@ Optional-field gaps (always suppressed → see `check:csv:completeness`):
   - coordinates present but `direccion` not useful for location review
 
 Actionable warnings (always fire):
-  - `nombre`, `municipio` or `categoria` empty (a core field is missing)
-  - `Canal de venta` present with a token outside the allowed set (`ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace`)
-  - `Canal de venta` set while `Venta online` is not `sí`
+  - `Facebook` or `Instagram` pointing at the network itself rather than a producer profile: the bare domain, an `/explore` or logged-in feed URL, or an Instagram post permalink (`/p/<code>`). Facebook's `/p/<name>-<id>`, `/pages/<name>` and `/profile.php?id=` forms are real pages and do not warn.
   - duplicated normalized `nombre + municipio`
   - `descripcion` duplicated across different rows (shared template boilerplate; see Editorial field conventions)
   - near-duplicate `categoria` variants after normalization
@@ -195,7 +195,7 @@ https://maps.app.goo.gl/...
 ## Producer image contract
 - `imagen` may be empty.
 - When present, it must be a root-relative path to an asset under `public/`, for example `/productores/catalunya/barcelona/ejemplo.webp`.
-- Preferred path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/madrid/madrid/`).
+- Canonical path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/madrid/madrid/`). `check:images` warns when a row's asset lives outside its province folder, so a legacy top-level path does not go unnoticed.
 - The file must exist and pass `npx pnpm check:images`.
 - Visual composition, sourcing, naming conventions, and enrichment workflow live in `docs/IMAGES.md`.
 

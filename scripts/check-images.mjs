@@ -163,6 +163,12 @@ const references = new Map();
 const csvPaths = walk(CSV_ROOT, (file) => file.endsWith(".csv"));
 
 for (const csvPath of csvPaths) {
+  // Assets mirror the CSV layout: /productores/<comunidad>/<provincia>/.
+  const csvRelative = path.relative(CSV_ROOT, csvPath);
+  const comunidad = csvRelative.split(path.sep)[0];
+  const provincia = path.basename(csvRelative, ".csv");
+  const expectedDir = `/productores/${comunidad}/${provincia}/`;
+
   for (const row of readCsvRows(csvPath)) {
     const imagePath = String(row.imagen || "").trim();
     if (!imagePath) continue;
@@ -185,6 +191,10 @@ for (const csvPath of csvPaths) {
     if (!fs.existsSync(assetPath)) {
       errors.push(`${rowId} -> ${imagePath}: asset does not exist`);
       continue;
+    }
+
+    if (!imagePath.startsWith(expectedDir)) {
+      warnings.push(`${rowId} -> ${imagePath}: should live under ${expectedDir} (see docs/IMAGES.md)`);
     }
 
     const expectedStem = String(row.slug || "").trim();

@@ -1,26 +1,5 @@
 #!/usr/bin/env node
 
-const REQUIRED_COLUMNS = [
-  "slug",
-  "nombre",
-  "municipio",
-  "categoria",
-  "productos estrella",
-  "direccion",
-  "descripcion",
-  "horario",
-  "telefono",
-  "correo",
-  "web",
-  "Venta online",
-  "Facebook",
-  "Instagram",
-  "Google Maps",
-  "lat",
-  "lon",
-  "verificacion",
-];
-
 // Exact 20-column header shared by all province CSVs, in this order.
 // Documented in docs/CSV_CONTRACT.md, section "Canonical header".
 const CANONICAL_HEADER = [
@@ -47,11 +26,17 @@ const CANONICAL_HEADER = [
 ];
 
 const DESCRIPTION_MIN_LENGTH = 30;
+// Controlled values are matched exactly, not case/diacritic folded: the CSVs are
+// the product surface, so 'Sí' or 'VERIFICADO' are drift to fix, not variants to
+// accept silently.
 const VERIFICATION_COLUMN = "verificacion";
 const VERIFICATION_LEVELS = new Set(["pendiente", "parcial", "verificado"]);
 const ONLINE_SALES_COLUMN = "Venta online";
-const ONLINE_SALES_VALUES = new Set(["si", "no", "no comprobado"]);
+const ONLINE_SALES_VALUES = new Set(["sí", "no", "no comprobado"]);
 const ONLINE_SALES_DISPLAY_VALUES = "sí, no, no comprobado";
+// One address only: a cell holding several separated by ';', '/' or ',' has no
+// single usable contact and breaks any consumer that treats it as an email.
+const EMAIL_PATTERN = /^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]+$/;
 const SALES_CHANNEL_COLUMN = "Canal de venta";
 const SALES_CHANNEL_SEPARATOR = "|";
 const SALES_CHANNEL_VALUES = new Set([
@@ -243,15 +228,10 @@ function parseCoordinate(rawValue, maxAbs, integerDigits) {
 }
 
 function readUrl(value) {
-  const rawValue = String(value ?? "");
-  const trimmed = rawValue.trim();
+  const trimmed = cleanCell(value);
 
   if (!trimmed) {
     return null;
-  }
-
-  if (trimmed !== rawValue) {
-    return { error: "contains leading or trailing spaces" };
   }
 
   try {
@@ -279,6 +259,33 @@ function validateGoogleMapsUrl(url) {
 
   if (!isGoogleMapsHost && !isGoogleMapsShortUrl) {
     return "must point to a Google Maps URL";
+  }
+
+  return null;
+}
+
+// A social link is only useful when it reaches the producer's own profile.
+// Facebook's /p/<name>-<id> and /pages/<name> and /profile.php?id= forms are all
+// real pages, so only the network's own surfaces are rejected here.
+function socialProfileError(url) {
+  const segments = url.pathname.split("/").filter(Boolean);
+
+  if (!segments.length) {
+    return "points to the network home page, not a producer profile";
+  }
+
+  const [first] = segments;
+
+  if (first === "_n" || first === "explore") {
+    return "points to a feed or explore page, not a producer profile";
+  }
+
+  if (first === "pages" && segments.length === 1) {
+    return "points to the pages index, not a producer profile";
+  }
+
+  if (first === "p" && matchesHost(url.hostname, "instagram.com")) {
+    return "points to a single post, not a producer profile";
   }
 
   return null;
@@ -477,25 +484,12 @@ function createIssueCollector() {
   return { issues, push };
 }
 
-function runContractAudit({ raw, headers, rows, push, centroids, communityHint }) {
-  const headerCounts = new Map();
-  const missing = REQUIRED_COLUMNS.filter((column) => !headers.includes(column));
+function runContractAudit({ raw, headers, rows, push, centroids, communityHint, stats }) {
   const slugLines = new Map();
 
-  for (const column of headers) {
-    headerCounts.set(column, (headerCounts.get(column) ?? 0) + 1);
-  }
-
-  for (const column of missing) {
-    push("error", 1, 0, "(header)", `missing required CSV column '${column}'`);
-  }
-
-  for (const [column, count] of headerCounts.entries()) {
-    if (count > 1) {
-      push("error", 1, 0, "(header)", `duplicated CSV column '${column || "(empty)"}'`);
-    }
-  }
-
+  // The canonical-header comparison below is positional, so it already covers a
+  // missing, duplicated, extra or reordered column, with a message naming the
+  // exact position.
   const mismatchIndex = CANONICAL_HEADER.findIndex((column, index) => headers[index] !== column);
   if (mismatchIndex !== -1 || headers.length !== CANONICAL_HEADER.length) {
     const detail =
@@ -513,6 +507,10 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
 
   if (/\r/.test(raw ?? "")) {
     push("error", 1, 0, "(file)", "line endings must be LF, found CR/CRLF (see .gitattributes)");
+  }
+
+  if ((raw ?? "").charCodeAt(0) === 0xfeff) {
+    push("error", 1, 0, "(file)", "file must not start with a UTF-8 BOM (usually a spreadsheet export)");
   }
 
   const validators = {
@@ -541,14 +539,20 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
       slugLines.set(slug, lines);
     }
 
+    // Identity fields the product cannot render a useful row without: the title,
+    // the town it is placed in, and the facet it is filtered by.
+    for (const column of ["nombre", "municipio", "categoria"]) {
+      if (!cleanCell(fields[column])) {
+        push("error", line, id, slug, `${column} is required`);
+      }
+    }
+
     const latRaw = cleanCell(fields.lat);
     const lonRaw = cleanCell(fields.lon);
     const lat = parseCoordinate(latRaw, 90, [2, 1, 3]);
     const lon = parseCoordinate(lonRaw, 180, [1, 2, 3]);
     const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
-    const verification = normalizeSearch(verificationRaw);
     const onlineSalesRaw = cleanCell(fields[ONLINE_SALES_COLUMN]);
-    const onlineSales = normalizeSearch(onlineSalesRaw);
 
     if ((latRaw && !lonRaw) || (!latRaw && lonRaw)) {
       push("error", line, id, slug, "lat and lon must both be present or both be empty");
@@ -574,7 +578,12 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
     // different town: almost always a swapped/wrong lat/lon or a wrong municipio.
     if (centroids && latRaw && lonRaw && !Number.isNaN(lat) && !Number.isNaN(lon)) {
       const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), communityHint);
-      if (centroid) {
+      if (!centroid) {
+        // No centroid for this municipio (pedanía, or a spelling the lookup does
+        // not carry): the row silently escapes every geography check, so count it
+        // instead of letting the gap disappear.
+        stats.geoSkipped += 1;
+      } else {
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
         if (distance > CENTROID_BLOCKING_DISTANCE_KM) {
           push(
@@ -613,7 +622,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
 
     if (!verificationRaw) {
       push("error", line, id, slug, "verificacion is required");
-    } else if (!VERIFICATION_LEVELS.has(verification)) {
+    } else if (!VERIFICATION_LEVELS.has(verificationRaw)) {
       push(
         "error",
         line,
@@ -621,7 +630,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
         slug,
         `verificacion must be one of: ${[...VERIFICATION_LEVELS].join(", ")}`,
       );
-    } else if (verification === "verificado") {
+    } else if (verificationRaw === "verificado") {
       const hasCoords =
         !Number.isNaN(lat) &&
         !Number.isNaN(lon) &&
@@ -645,13 +654,52 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint }
 
     if (!onlineSalesRaw) {
       push("error", line, id, slug, "Venta online is required");
-    } else if (!ONLINE_SALES_VALUES.has(onlineSales)) {
+    } else if (!ONLINE_SALES_VALUES.has(onlineSalesRaw)) {
       push(
         "error",
         line,
         id,
         slug,
         `Venta online must be one of: ${ONLINE_SALES_DISPLAY_VALUES}`,
+      );
+    }
+
+    // Canal de venta stays optional (empty = not classified yet), but a value
+    // that is present must be usable: known tokens, and an actual online sale to
+    // describe.
+    const salesChannelRaw = cleanCell(fields[SALES_CHANNEL_COLUMN]);
+    if (salesChannelRaw) {
+      const invalid = salesChannelRaw
+        .split(SALES_CHANNEL_SEPARATOR)
+        .map((token) => token.trim())
+        .filter(Boolean)
+        .filter((token) => !SALES_CHANNEL_VALUES.has(token));
+
+      if (invalid.length) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `Canal de venta has invalid value(s) ${invalid
+            .map((value) => `'${value}'`)
+            .join(", ")} (allowed: ${SALES_CHANNEL_DISPLAY_VALUES})`,
+        );
+      }
+
+      if (onlineSalesRaw !== "sí") {
+        push("error", line, id, slug, "Canal de venta is set but Venta online is not 'sí'");
+      }
+    }
+
+    const emailRaw = cleanCell(fields.correo);
+    if (emailRaw && !EMAIL_PATTERN.test(emailRaw)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `correo: '${emailRaw}' must be a single valid email address`,
       );
     }
 
@@ -704,8 +752,6 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     const facebook = cleanCell(fields.Facebook);
     const instagram = cleanCell(fields.Instagram);
     const googleMaps = cleanCell(fields["Google Maps"]);
-    const onlineSales = normalizeSearch(cleanCell(fields[ONLINE_SALES_COLUMN]));
-    const salesChannelRaw = cleanCell(fields[SALES_CHANNEL_COLUMN]);
     const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
     const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
 
@@ -716,17 +762,9 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     // they never add per-row noise here, whatever the verification status.
     const optionalGap = "suppressed";
 
-    if (!name) {
-      push("warning", line, id, slug, "nombre is empty");
-    }
-
-    if (!city) {
-      push("warning", line, id, slug, "municipio is empty");
-    }
-
-    if (!category) {
-      push("warning", line, id, slug, "categoria is empty");
-    } else {
+    // nombre, municipio and categoria being non-empty is a blocking contract
+    // rule; only the label preference is a matter of degree.
+    if (category) {
       const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
       if (preferredCategory && category !== preferredCategory) {
         push(
@@ -736,6 +774,17 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
           slug,
           `categoria should use preferred label '${preferredCategory}' instead of '${category}'`,
         );
+      }
+    }
+
+    for (const column of ["Facebook", "Instagram"]) {
+      const parsedUrl = readUrl(fields[column]);
+      if (!parsedUrl || parsedUrl.error) {
+        continue;
+      }
+      const profileError = socialProfileError(parsedUrl.url);
+      if (profileError) {
+        push("warning", line, id, slug, `${column}: ${profileError}`);
       }
     }
 
@@ -765,36 +814,6 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
 
     if (!googleMaps) {
       push(optionalGap, line, id, slug, "Google Maps is empty");
-    }
-
-    if (salesChannelRaw) {
-      const tokens = salesChannelRaw
-        .split(SALES_CHANNEL_SEPARATOR)
-        .map((token) => token.trim())
-        .filter(Boolean);
-      const invalid = tokens.filter(
-        (token) => !SALES_CHANNEL_VALUES.has(normalizeSearch(token)),
-      );
-      if (invalid.length) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `Canal de venta has invalid value(s) ${invalid
-            .map((value) => `'${value}'`)
-            .join(", ")} (allowed: ${SALES_CHANNEL_DISPLAY_VALUES})`,
-        );
-      }
-      if (onlineSales !== "si") {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          "Canal de venta is set but Venta online is not 'sí'",
-        );
-      }
     }
 
     if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {
@@ -899,7 +918,7 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
   }
 }
 
-function printReport(mode, issues, { summaryOnly = false } = {}) {
+function printReport(mode, issues, { summaryOnly = false, stats = { geoSkipped: 0 } } = {}) {
   const errors = issues.filter((issue) => issue.severity === "error");
   const warnings = issues.filter((issue) => issue.severity === "warning");
   const suppressed = issues.filter((issue) => issue.severity === "suppressed");
@@ -913,6 +932,11 @@ function printReport(mode, issues, { summaryOnly = false } = {}) {
   if (suppressed.length) {
     console.log(
       `- suppressed (absent optional fields; tracked by check:csv:completeness): ${suppressed.length}`,
+    );
+  }
+  if (stats.geoSkipped) {
+    console.log(
+      `- geo-check skipped (municipio not in data/reference/municipios.json): ${stats.geoSkipped} rows`,
     );
   }
 
@@ -943,14 +967,15 @@ async function main() {
 
   const centroids = await loadCentroids();
   const communityHint = inferCommunitySlug(csvPath);
+  const stats = { geoSkipped: 0 };
 
-  runContractAudit({ raw, headers, rows, push, centroids, communityHint });
+  runContractAudit({ raw, headers, rows, push, centroids, communityHint, stats });
 
   if (mode === "quality") {
     runQualityAudit({ headers, rows, push, centroids, communityHint });
   }
 
-  printReport(mode, issues, { summaryOnly });
+  printReport(mode, issues, { summaryOnly, stats });
 
   const errorCount = issues.filter((issue) => issue.severity === "error").length;
   process.exit(errorCount > 0 ? 1 : 0);

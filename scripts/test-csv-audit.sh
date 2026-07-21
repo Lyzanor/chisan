@@ -77,6 +77,38 @@ canal-bad,Masia Bad,Abrera,Bodega,Vino,Carrer Major 2,Descripcion suficientement
 canal-estado,Masia Estado,Abrera,Bodega,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,verificado,no,whatsapp
 CSV
 
+cat >"$TMP_DIR/canonical-ok.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+canal-ok,Masia Ok,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp
+CSV
+
+# Controlled values are matched exactly: folded case and a missing accent are drift.
+cat >"$TMP_DIR/inexact-values.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+valor-acento,Masia Acento,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,si,
+valor-mayus,Masia Mayus,Abrera,Bodega,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,Verificado,no,
+CSV
+
+cat >"$TMP_DIR/identity-required.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+sin-identidad,,Abrera,,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+CSV
+
+cat >"$TMP_DIR/multi-email.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+dos-correos,Masia Correos,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,uno@example.com; dos@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+CSV
+
+cat >"$TMP_DIR/junk-social.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+social-basura,Masia Social,Abrera,Bodega,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/,https://www.instagram.com/explore/tags/queso/,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+social-pagina,Masia Pagina,Abrera,Bodega,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://www.facebook.com/p/Masia-Pagina-100063712593417,https://www.instagram.com/masiapagina,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+CSV
+
+# A UTF-8 BOM (typical of spreadsheet exports) is a blocking error.
+printf '\xEF\xBB\xBF' >"$TMP_DIR/bom.csv"
+cat "$TMP_DIR/canonical-ok.csv" >>"$TMP_DIR/bom.csv"
+
 # Same canonical content as sales-channel.csv but with CRLF line endings.
 sed 's/$/\r/' "$TMP_DIR/sales-channel.csv" >"$TMP_DIR/crlf.csv"
 
@@ -103,17 +135,19 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 geo-lejisimos,Masia Lejisimos,Abrera,Bodega,Vino,Carrer Major 12,Descripcion suficientemente larga para validar,,+34600000000,lejisimos@example.com,https://example.com,no comprobado,https://facebook.com/lejisimos,https://instagram.com/lejisimos,https://www.google.com/maps/place/Lejisimos,40.0,-3.7,pendiente
 CSV
 
+# A missing column and a duplicated column are both caught by the positional
+# canonical-header comparison, which names the offending position.
 run_expect_failure "$TMP_DIR/out-missing.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/missing-column.csv"
-grep -q "missing required CSV column 'Venta online'" "$TMP_DIR/out-missing.txt"
+grep -q "header is not the canonical 20-column header (column 17 is 'verificacion' instead of 'imagen')" "$TMP_DIR/out-missing.txt"
 
 run_expect_failure "$TMP_DIR/out-duplicate-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/duplicate-header.csv"
-grep -q "duplicated CSV column 'web'" "$TMP_DIR/out-duplicate-header.txt"
+grep -q "header is not the canonical 20-column header (column 12 is 'web' instead of 'Facebook')" "$TMP_DIR/out-duplicate-header.txt"
 
 # The exact canonical 20-column header passes contract mode.
 run_expect_success "$TMP_DIR/out-canonical-header.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/sales-channel.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/canonical-ok.csv"
 
 # All 20 columns present but out of order is a blocking error.
 run_expect_failure "$TMP_DIR/out-wrong-order-header.txt" \
@@ -150,8 +184,8 @@ grep -q "Venta online must be one of: sí, no, no comprobado" "$TMP_DIR/out-onli
 
 run_expect_failure "$TMP_DIR/out-quality.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/quality-warnings.csv"
-# Core-field gaps and correctness issues stay as warnings.
-grep -q "WARNING line 2 .* nombre is empty" "$TMP_DIR/out-quality.txt"
+# A missing identity field is blocking; the rest stay as warnings.
+grep -q "ERROR line 2 .* nombre is required" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 2 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
 grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
@@ -177,12 +211,45 @@ run_expect_failure "$TMP_DIR/out-geo-blocking.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/geo-blocking.csv"
 grep -q "ERROR line 2 .* km from Abrera centroid (threshold 100 km)" "$TMP_DIR/out-geo-blocking.txt"
 
-run_expect_success "$TMP_DIR/out-sales-channel.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/sales-channel.csv"
-grep -q "WARNING line 3 .* Canal de venta has invalid value.*'tienda'" "$TMP_DIR/out-sales-channel.txt"
-grep -q "WARNING line 4 .* Canal de venta is set but Venta online is not" "$TMP_DIR/out-sales-channel.txt"
+# Canal de venta is blocking: an unknown token, or a channel set without an
+# actual online sale to describe, both fail the contract.
+run_expect_failure "$TMP_DIR/out-sales-channel.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/sales-channel.csv"
+grep -q "ERROR line 3 .* Canal de venta has invalid value.*'tienda'" "$TMP_DIR/out-sales-channel.txt"
+grep -q "ERROR line 4 .* Canal de venta is set but Venta online is not" "$TMP_DIR/out-sales-channel.txt"
 if grep -q "line 2 .* Canal de venta" "$TMP_DIR/out-sales-channel.txt"; then
-  echo "Error: valid multichannel row should not raise a Canal de venta warning" >&2
+  echo "Error: valid multichannel row should not raise a Canal de venta issue" >&2
+  exit 1
+fi
+
+# Controlled values must match the canonical spelling exactly.
+run_expect_failure "$TMP_DIR/out-inexact.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/inexact-values.csv"
+grep -q "ERROR line 2 .* Venta online must be one of: sí, no, no comprobado" "$TMP_DIR/out-inexact.txt"
+grep -q "ERROR line 3 .* verificacion must be one of: pendiente, parcial, verificado" "$TMP_DIR/out-inexact.txt"
+
+# nombre, municipio and categoria are required, not merely advisable.
+run_expect_failure "$TMP_DIR/out-identity.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/identity-required.csv"
+grep -q "ERROR line 2 .* nombre is required" "$TMP_DIR/out-identity.txt"
+grep -q "ERROR line 2 .* categoria is required" "$TMP_DIR/out-identity.txt"
+
+# correo carries one address, not a list.
+run_expect_failure "$TMP_DIR/out-email.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/multi-email.csv"
+grep -q "ERROR line 2 .* correo: .* must be a single valid email address" "$TMP_DIR/out-email.txt"
+
+run_expect_failure "$TMP_DIR/out-bom.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/bom.csv"
+grep -q "must not start with a UTF-8 BOM" "$TMP_DIR/out-bom.txt"
+
+# Social links must reach a profile; Facebook's /p/<name>-<id> form is a real page.
+run_expect_success "$TMP_DIR/out-junk-social.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/junk-social.csv"
+grep -q "WARNING line 2 .* Facebook: points to the network home page" "$TMP_DIR/out-junk-social.txt"
+grep -q "WARNING line 2 .* Instagram: points to a feed or explore page" "$TMP_DIR/out-junk-social.txt"
+if grep -q "line 3 .* \(Facebook\|Instagram\):" "$TMP_DIR/out-junk-social.txt"; then
+  echo "Error: a real Facebook /p/ page and Instagram profile must not warn" >&2
   exit 1
 fi
 
