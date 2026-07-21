@@ -66,6 +66,23 @@ existentes.
   dominio extinto, y Segama, sin web). Se añadió el desambiguador `robledo` a
   `data/reference/municipios-overrides.json`, con lo que las filas fuera del
   geo-check bajan de 2 a 1.
+- Tras AB-04 (2026-07-21): **114 filas**; **84 `pendiente`, 3 `parcial`, 27
+  `verificado`**. Seis bodegas verificadas, tres con ecommerce propio. Pago de
+  La Jaraba se dio de baja con `purge:other-province` —su finca está en El
+  Provencio (Cuenca) y Villarrobledo es solo el acceso— y se traspasó con toda
+  la evidencia a `docs/candidates/cuenca.md`. Dos `sí` heredados bajaron a
+  `no comprobado` por tienda no disponible (Ayuso) o inexistente (Martínez Sáez).
+- Tras AB-05 y AB-06 (2026-07-21): **114 filas**; **69 `pendiente`, 4 `parcial`,
+  41 `verificado`**. Cerrada la DO Almansa entera más las dos bodegas de
+  Montealegre. Trece bodegas verificadas y una `parcial` (Virgen de Belén, con
+  el dominio extinto). Bodegas Almanseñas se renombró a su identidad pública
+  actual, **Bodegas Venta la Vega**, con cambio de slug y `merge`. Las seis
+  filas que usaban la web de la DO tienen ya dominio propio o vacío, y se
+  reescribieron sus direcciones y descripciones de relleno con datos reales.
+- Tras AB-07 a AB-11 (2026-07-21): **110 filas**; **29 `pendiente`, 13 `parcial`,
+  68 `verificado`**. **Bloque de bodegas cerrado: las 61 filas revisadas.** El
+  saldo del bloque completo es 44 verificadas, 9 parciales, 4 purgas y 4 fusiones
+  o traslados de municipio. `verify:data` verde sobre los 50 CSV.
 
 ## Reglas y riesgos locales
 
@@ -97,15 +114,15 @@ existentes.
 | AB-01 | Lácteos I — Minaya, Ossa, Santa Ana, Albacete | 7 | ✅ 2026-07-21 | 7 verificadas; 6 ecommerce; 2 webs de directorio sustituidas |
 | AB-02 | Lácteos II — Chinchilla, Fuente-Álamo, Letur, La Roda, Villamalea, El Bonillo | 8 | ✅ 2026-07-21 | 7 verificadas; 1 merge; Vega Sotuélamos trasladada a El Bonillo |
 | AB-03 | Lácteos III — Ontur, Villarrobledo, Lezuza, Munera, La Herrera, Robledo, Mahora | 9 | ✅ 2026-07-21 | 7 verificadas, 2 parciales; 1 dominio extinto; homónimo Robledo resuelto |
-| AB-04 | Bodegas DO La Mancha — Villarrobledo I | 7 | ⏳ | Escala industrial (Ayuso) |
-| AB-05 | Bodegas DO Almansa | 11 | ⏳ | 6 filas con web de la DO |
-| AB-06 | Bodegas DO Manchuela I | 7 | ⏳ | Cooperativas de primer grado |
-| AB-07 | Bodegas DO Manchuela II | 12 | ⏳ | Cooperativas de primer grado |
-| AB-08 | Bodegas DO Jumilla (Ontur, Hellín, Montealegre) | 7 | ⏳ | Duplicado Ontalba; 2 webs de `jumilla.wine` |
-| AB-09 | Bodegas DO La Mancha — La Roda y Villarrobledo II | 7 | ⏳ | Escala industrial (Lozano) |
-| AB-10 | Bodegas sin web propia (fuente `apoloybaco`) | 10 | ⏳ | Alto riesgo de purga: graneleras sin marca |
-| AB-11 | Aceite y miel | 10 | ⏳ | Pequeñas explotaciones de sierra |
-| AB-12 | Azafrán, frutos secos, pan, cerveza, setas, fruta, harina, charcutería | 20 | ⏳ | 4 webs de directorio; azafrán reenvasado |
+| AB-04 | Bodegas DO La Mancha — Villarrobledo I | 7 | ✅ 2026-07-21 | 6 verificadas; La Jaraba purgada a Cuenca |
+| AB-05 | Bodegas DO Almansa — filas con web de la DO | 6 | ✅ 2026-07-21 | 5 verificadas, 1 parcial; Almanseñas renombrada Venta la Vega |
+| AB-06 | Bodegas DO Almansa y Jumilla con dominio propio | 8 | ✅ 2026-07-21 | 8 verificadas con ecommerce; 2 dominios sustituidos |
+| AB-07 | Bodegas DO Manchuela I — Fuentealbilla, Casas Ibáñez, Alborea, Alcalá, Cenizate | 10 | ✅ 2026-07-21 | 8 verificadas; Ibañesas purgada por granel |
+| AB-08 | Bodegas DO Manchuela II — Mahora, Navas, Villamalea, Fuentealbilla | 7 | ✅ 2026-07-21 | 5 verificadas, 1 parcial; 2 fallos de TLS/mantenimiento |
+| AB-09 | Bodegas DO Jumilla — Ontur, Albatana, Hellín | 6 | ✅ 2026-07-21 | 5 verificadas; Ontalba fusionada en una fila |
+| AB-10 | Bodegas DO La Mancha — La Roda y Villarrobledo II | 7 | ✅ 2026-07-21 | 3 verificadas, 2 parciales, 2 purgas (granel y embotellador) |
+| AB-11 | Bodegas con web de directorio (`apoloybaco`) | 10 | ✅ 2026-07-21 | 4 verificadas, 6 parciales; Señorío del Júcar trasladado |
+| AB-12 | Aceite, miel, azafrán, frutos secos, pan, cerveza, setas, fruta, harina, charcutería | 29 | ⏳ | 4 webs de directorio; azafrán reenvasado |
 | AB-13 | Cierre: reauditoría, reconciliación y cobertura | — | ⏳ | Paridad CSV/evidencia y `coverage.json` |
 
 ## AB-00 — Higiene, snapshot y partición
@@ -210,3 +227,110 @@ Incidencias reutilizables:
   fila fuera del geo-check. La solución es el nombre oficial más una entrada en
   `municipios-overrides.json`, con **todos** los candidatos homónimos para no
   romper la comunidad ajena.
+
+## AB-04 — Bodegas DO La Mancha: Villarrobledo y La Roda
+
+Decisiones cerradas el 2026-07-21:
+
+- `verificado` + ecommerce: Vinícola de Villarrobledo–Don Octavio, Cooperativa
+  La Remediadora y Torres Filoso.
+- `verificado`, venta no comprobada: Bodega Vinos de La Cruz, Bodegas Ayuso y
+  Bodegas Martínez Sáez.
+- `purge:other-province`: Pago de La Jaraba → `docs/candidates/cuenca.md`.
+
+Incidencias reutilizables:
+
+- **«Acceso» y «ubicación» no son lo mismo.** Pago de La Jaraba publica las dos:
+  se accede por la N-310 km 142,7 de Villarrobledo, pero la finca es la parcela
+  9000 del polígono 9 de El Provencio, Cuenca. Al purgar por provincia conviene
+  traspasar la evidencia al `docs/candidates/` de la provincia correcta en el
+  mismo cambio, o el productor se pierde.
+- **Tienda «actualmente no disponible» es `no comprobado`, no `no`.** Bodegas
+  Ayuso mantiene la infraestructura de tienda y una oferta anunciada, pero no
+  deja completar la compra: es indisponibilidad temporal.
+- Las cooperativas vinícolas que embotellan y venden con marca propia al
+  consumidor (Don Octavio, La Villa Real de La Remediadora) entran en alcance;
+  lo que queda fuera es la cooperativa que solo elabora para terceros.
+- Una tienda física en la propia finca no acredita venta remota.
+
+## AB-05 y AB-06 — DO Almansa completa, más Montealegre del Castillo
+
+Decisiones cerradas el 2026-07-21 sobre las 14 filas del bloque.
+
+- `verificado` + ecommerte propio: Hacienda El Espino, El Tanino, Dehesa El
+  Carrascal, Bodegas Cano, Tintoralba, Piqueras, Santa Cruz de Alpera,
+  Balmoral, Santiago Apóstol y TorreCastillo.
+- `verificado` + tienda oficial del grupo: Bodegas Venta la Vega (MGWines) y
+  Bodegas Atalaya (Viñas Familia Gil).
+- `verificado`, venta no comprobada: Bodegas Matamangos.
+- `parcial`, venta no comprobada: Bodegas Virgen de Belén.
+- `merge`: Bodegas Almanseñas → Bodegas Venta la Vega.
+
+Incidencias reutilizables:
+
+- **La ficha colectiva de la DO no da webs.** `denominacion-origen-almansa.com`
+  confirma existencia, municipio y marcas de las doce bodegas, pero solo publica
+  el contacto del consejo. Los dominios propios hay que buscarlos por marca, y
+  media docena de filas los tenía sustituidos por esa ficha.
+- **Bodega dentro de un grupo: mirar identidad, no propiedad.** Venta la Vega
+  (MGWines) y Atalaya (Familia Gil) conservan finca, viñedo, elaboración y
+  gama propias, así que siguen siendo fila. Y como sus dominios propios están
+  caídos o aparcados, la web pasa a la ficha del grupo, cuya tienda oficial sí
+  acredita el canal.
+- **Un grupo puede absorber el dominio pero no la identidad.** Cuidado con lo
+  contrario a Almanseñas: aquí el nombre viejo era el de la fila y el vivo el
+  del grupo; se corrigió al público actual dejando `merge`.
+- Tres variantes distintas de dominio caído en un solo bloque: NXDOMAIN real
+  (Virgen de Belén, `bodegatorrecastillo.com`), conexión rechazada más www
+  aparcado en dondominio (Atalaya) y certificado del hosting en vez del dominio
+  (`ventalavega.com` → host.digitis.net). Las tres se resuelven buscando el
+  dominio o la ficha viva, no dando la bodega por cerrada.
+- Las cooperativas de Alpera (1947), Higueruela (Tintoralba) y Villarrobledo
+  embotellan y venden con marca propia al consumidor: entran en alcance.
+
+## AB-07 a AB-11 — Manchuela, Jumilla y el resto de La Mancha
+
+Decisiones cerradas el 2026-07-21 sobre las 40 filas restantes de bodega.
+
+- `verificado` + ecommerce (16): Iniesta, Vega Tolosa, San Isidro de Alborea,
+  Pardo Tolosa, La Cepa de Pelayo, González Cabezas, D. Florentino Pérez,
+  Virgen de las Nieves, Maricubas, San Isidro de Mahora, Cantos, SAAC, García
+  Molina, Finca Monastasia, Pío del Ramo, Ramón Izquierdo, Lozano, Señorío del
+  Júcar y Casa Antonete.
+- `verificado`, venta no comprobada (8): Ntra. Sra. de la Cabeza, Finca El
+  Molar, Vitivinos, Ontalba, Bro Valero, Aresan, San Isidro de Villalgordo y
+  Santiago El Mayor.
+- `parcial` (8): San Gregorio Magno, Bodegas Ortega, Mazorral, Celaya,
+  Agrocinegética Joma, La Manchega, César José Velasco, Manvi y Andrés Calero.
+- `purge:out-of-scope` (3): Bodegas Ibañesas de Exportación, Viuda de Joaquín
+  Ortega y Morgante.
+- `merge` (2): Ontalba Albatana → Ontalba Ontur; Señorío del Júcar Tarazona →
+  Casas Ibáñez.
+
+Incidencias reutilizables:
+
+- **El granel y el embotellado ajeno están fuera de alcance.** Tres filas
+  resultaron ser proveedores B2B sin producto identificable: Ibañesas (vino y
+  mosto a granel para embotelladores), Viuda de Joaquín Ortega (alcohol
+  rectificado, aguardientes y vino a granel, CNAE 1101) y Morgante (planta que
+  envasa para terceros). La prueba está en su propia página de productos o
+  servicios, no en el registro.
+- **La cooperativa se juzga por si embotella marca propia al consumidor**, no
+  por su tamaño: La Unión mueve 5.000 hectáreas y también vende granel, pero
+  Casa Antonete es marca propia con tienda, así que entra.
+- **Dos filas de la misma cooperativa no son dos productores.** Ontalba tenía
+  fila por cada bodega, Ontur y Albatana, sin nombre ni oferta propios; sobrevive
+  la del domicilio social y la otra se documenta en la descripción.
+- **Un directorio puede cruzar dos bodegas.** La dirección de Tarazona que los
+  listados daban a Señorío del Júcar es en realidad la de Casa Antonete; la web
+  propia lo sitúa en Casas Ibáñez, y allí se traslada.
+- **Antes de purgar por provincia, comprobar si la unidad sigue existiendo.**
+  Bodegas Lozano presenta hoy Leza (Álava) como bodega de enoturismo y
+  Villarrobledo como contacto comercial, pero sus fincas La Carrasca, La Elipa y
+  Los Salvadores siguen en el término manchego: la fila se queda.
+- **`apoloybaco.com` sostiene `parcial`, no `verificado`.** Las diez filas que lo
+  traían como web tenían dirección y teléfono correctos, pero es un listado de
+  asociación: seis se quedaron en `parcial` por no tener ninguna fuente primaria
+  viva, y ninguna conserva ya el directorio en `web`.
+- Un carrito sin oferta (Bro Valero: «No se encontraron productos») no acredita
+  venta, igual que una tienda en mantenimiento.
