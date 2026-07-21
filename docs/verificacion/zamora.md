@@ -371,8 +371,8 @@ regulador sostiene `parcial`, nunca `verificado`.
 |---|---|---:|---|---|
 | ZA-R1 | Arribes/Fermoselle + Morales de Toro | 10 | ✅ 2026-07-21 | 2 purgas a Salamanca, 2 traslados a Villar del Buey, 1 verificado nuevo, 1 recategorización |
 | ZA-R2 | Tierra del Vino, Valles de Benavente y Villamor | 14 | ✅ 2026-07-21 | 4 verificado (2 con tienda propia), 10 parcial, 0 purgas |
-| ZA-R3 | Lácteos, legumbres, setas y conservas | 13 | ⏳ | — |
-| ZA-R4 | Geo-check: 8 municipios fuera del lookup + descripciones duplicadas | 10 | ⏳ | — |
+| ZA-R3 | Lácteos, legumbres, setas y conservas | 13 | ✅ 2026-07-21 | 4 verificado, 1 merge, 6 correcciones de municipio/slug |
+| ZA-R4 | Geo-check: municipios fuera del lookup y slugs desalineados | 7 | ⏳ | — |
 | ZA-R5 | Muestreo de los 49 `Venta online=sí` y cierre | — | ⏳ | — |
 
 ### ZA-R1 — Arribes/Fermoselle y Morales de Toro
@@ -442,3 +442,38 @@ Incidencias reutilizables:
 - **Un checkout no siempre vende el producto de la fila.** Teso la Encina es
   bodega y hotel rural en la misma finca; su carrito es el de la reserva, así que
   la venta de vino queda `no comprobado`.
+
+### ZA-R3 — Lácteos, legumbres, setas y conservas
+
+- `verificado` + ecommerce: Faúndez (Rabanales).
+- `verificado`, venta no comprobada: Lácteos Dehesa de la Guadaña, Quesería
+  Vicente Pastor y Lácteas Cobreros.
+- `parcial` (7): Hijas de Justo Torrero, Agroalimentaria de la Guareña, J.
+  Pedraz, Eurohongo, Micozamora, Natur Silver, ProSilvestre y Frutas Silvestres
+  y Setas.
+- `merge`: Gestión Agro Ganadera → Quesería La Antigua de Fuentesaúco.
+- Seis correcciones de municipio con cambio de slug: Justo Torrero (→ La Bóveda
+  de Toro), Eurohongo (→ Puebla de Sanabria), Micozamora y Faúndez (→
+  Rabanales), Natur Silver (→ Olmillos de Castro), ProSilvestre (→
+  Villardeciervos), Cobreros (→ Castrogonzalo) y Frutas Silvestres (→ Trefacio).
+
+Incidencias reutilizables:
+
+- **El correo de la fila delata el dominio propio.** `lacteos@dehesadelaguadana.com`
+  y `pastor@vicentepastor.com` estaban en el CSV mientras la columna `web`
+  apuntaba al consejo regulador. Antes de buscar por nombre, mirar el correo.
+- **Una fila con municipio corregido y slug sin corregir es media corrección.**
+  La primera pasada arregló ocho municipios y dejó el slug apuntando a Zamora
+  capital. Comparar el sufijo del slug con la columna `municipio` es una
+  comprobación de una línea que destapa el desfase entero.
+- **San Martín de Tábara no es municipio**: es localidad de Olmillos de Castro
+  desde la fusión de 1850. Mismo patrón que Fornillos o Isso.
+- **Recogida de leche no es producto vendible.** Gestión Agro Ganadera recoge 20
+  millones de litros para más de cincuenta queserías; su propia web anuncia que
+  ya es «una sola entidad» con Quesería La Antigua, así que la fila B2B se funde
+  en la quesería, que es la que vende.
+- **La lista vigente del consejo desempata el techo.** Justo Torrero elabora
+  queso zamorano según la prensa, pero ya no está en la lista de empresas del
+  C.R.D.O.P.; sin web propia se queda en `parcial`, mientras Dehesa de la Guadaña
+  sí sigue inscrita y sostiene el encaje quesero pese a que su web hable sobre
+  todo de ganadería.
