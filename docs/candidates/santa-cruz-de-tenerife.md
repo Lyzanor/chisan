@@ -3,9 +3,10 @@
 > Origen: pasada de cobertura de capitales 2026-07-08 (la capital solo tiene 4 filas:
 > Quesería de Anaga, La Boutique de la Carne, Panadería El Pilar, COPLACA). Clave de
 > esta capital: **todo el macizo de Anaga (Taganana, Las Carboneras, Taborno, Igueste,
-> San Andrés…) es término municipal de Santa Cruz**. **Estado: `unverified`** —
-> deduplicado contra `santa-cruz-de-tenerife.csv` el 2026-07-08; antes de integrar:
-> re-deduplicar, confirmar actividad/dirección y decidir `verificacion`/`Venta online`.
+> San Andrés…) es término municipal de Santa Cruz**. **Estado: cerrado en SC-09
+> (2026-07-19)** — las altas aceptadas ya están integradas y las pistas sin identidad
+> comercial o enlace público suficiente quedan cerradas sin alta hasta que aparezca
+> nueva evidencia.
 
 ## ⚠ Corrección a fila existente — ✅ aplicada 2026-07-10 (lote 1.1c)
 
@@ -23,17 +24,17 @@
   `no comprobado`). Av. de Venezuela 22, La Salud; único molino de gofio activo de
   la capital, desde 1944, familia García. (Geocodificado a la calle real: hay un
   homónimo de «Av. de Venezuela 22» en Playa San Juan a 64 km.)
-- [x] **Queso de Las Carboneras (Sotera)** — **already-present / no crear**. Doña
-  Sotera es vecina de Las Carboneras y hace queso de cabra; coincide con la fila
-  existente **`queseria-de-anaga-santa-cruz-de-tenerife`** (literalmente en «Calle
-  de las Carboneras, Anaga», queso de cabra del Macizo de Anaga). Sin rastro
-  digital propio que justifique una fila distinta → no se crea (⚠ dedup resuelto).
-- [ ] **Mieles Laurinagan (Eduardo Perdomo)** — **diferida**: solo mención en
+- [x] **Queso de Las Carboneras (Sotera)** — **already-present / no crear**.
+  Resuelto en SC-05: la fila genérica `queseria-de-anaga-santa-cruz-de-tenerife`
+  se corrige a **`queso-de-las-carboneras-sotera-santa-cruz-de-tenerife`**
+  (`parcial`, VO=nc). La mención de GastroCanarias acredita la identidad de la
+  productora de Anaga, pero no hay fuente propia o contacto actual inspeccionable.
+- [x] **Mieles Laurinagan (Eduardo Perdomo)** — **cerrada sin alta**: solo mención en
   nota del Ayto. (Taganana), sin web/teléfono/redes → no cumple el mínimo de
   integración (≥1 enlace verificable). Reabrir si aparece rastro.
-- [ ] **Apicultores Hermanos Dorta** — **diferida**: ídem (solo Mercadillo de las
+- [x] **Apicultores Hermanos Dorta** — **cerrada sin alta**: ídem (solo Mercadillo de las
   Tradiciones de Anaga).
-- [ ] **Vino de Mora – Telesforo** — **diferida**: solo GastroCanarias/Ayto.
+- [x] **Vino de Mora – Telesforo** — **cerrada sin alta**: solo GastroCanarias/Ayto.
   (Taganana), sin web → sin fuente verificable.
 
 ## Provincia — ✅ Cervezas Ranilla integrada (lote 1.1c)
@@ -104,9 +105,10 @@
   **`Venta online=sí`, `ecommerce`**). Tienda propia funcional (carrito+checkout,
   Visa/MasterCard/transferencia). Activa desde 1993. Tel. web 639 065 015.
 - [x] **Bodega Presas Ocampo** — **accepted → `bodega-presas-ocampo-tacoronte`**
-  (`verificado`, `no comprobado`). Referente de Tacoronte (1998, viñedos
-  propios). Su web tiene el **certificado TLS mal configurado** (fallo técnico,
-  no baja); vende vía marketplaces de terceros → eso **no** es VO propia.
+  (`parcial`, `no comprobado`; corregido en SC-09). La ficha insular y la DO
+  confirman identidad y actividad, pero la web propia mantiene el certificado
+  TLS mal configurado y no apareció una fuente directa inspeccionable. La reventa
+  en marketplaces de terceros no acredita venta online propia ni `verificado`.
 - [x] **Winery Burgmann Tenerife** — **accepted →
   `winery-burgmann-tenerife-tacoronte`** (`verificado`, `no comprobado`). Camino
   las Viñas 20, Tacoronte, desde 2020; «Shop» del menú = «dónde encontrar», no
@@ -240,20 +242,20 @@
 
 - **Ya en `santa-cruz-de-tenerife.csv` (no son altas):** Cráter (El Sauzal) ·
   Bodegas Insulares Tenerife (Tacoronte) · Suertes del Marqués y Valleoro (La
-  Orotava) · Viñátigo (La Guancha) · Altos de Trevejos y Reverón (Vilaflor) ·
+  Orotava) · Viñátigo (La Guancha) · Altos de Trevejos (bodega en San Miguel de
+  Abona, finca en Vilaflor) y Reverón (Vilaflor) ·
   Cumbres de Abona (Arico).
-  - ✅ **Revisado el ⚠ de `bodegas-insulares-licores-tacoronte`** (2026-07-10):
-    es la misma empresa que `bodegas-insulares-tenerife-tacoronte` (misma razón
-    social y dirección, Ctra. Gral. del Norte km 19,5), pero cubre una **línea de
-    producto distinta** (licor de plátano y aguardiente vs. vinos Viña Norte).
-    Se **mantienen ambas filas** por ahora (productos distintos); candidata a
-    fusión de baja prioridad si se decide una sola fila por unidad productiva.
+  - ✅ **Resuelto el ⚠ de `bodegas-insulares-licores-tacoronte`** (2026-07-19):
+    era la misma empresa y unidad productiva que
+    `bodegas-insulares-tenerife-tacoronte`. Las líneas de vino, licor y vermut se
+    consolidaron en una sola ficha; el slug antiguo queda documentado como
+    `merge` en evidencia.
 - ⚠ **Tres alias que habrían creado duplicados** (mismo patrón que el lote 21: el
   consejo lista **razón social**, el CSV usa **marca**):
   - *Mesur, S.L.* (Abona) = **Bodega Frontos** → `bodega-frontos-granadilla-de-abona`.
-  - *Bodegas Arautava* (Orotava) = **Bodegas El Penitente** →
-    `bodegas-el-penitente-la-orotava` (el CSV usa el nombre antiguo pero ya apunta a
-    `bodegasarautava.com`).
+  - *Bodegas Arautava* (Orotava) = antiguo **Bodegas El Penitente** → resuelto
+    el 2026-07-19 como `bodegas-arautava-la-orotava`, con `merge` desde el slug
+    antiguo.
   - *Bodega Calius* (Güímar) = **Cándido Hernández Pío** (Tacoronte-Acentejo): una
     sola bodega inscrita en dos DO.
   Y un cuarto que **sí** es alta pese a parecer alias: *Jottocar, S.L.* = **Bodega
