@@ -210,7 +210,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | ✅ 2026-07-21 | 11 verificado, 1 parcial; 8 ventas online resueltas; 1 purga (`Oli de Sant Joan`, inexistente), 1 merge del par Cooperativa de Sóller y 1 merge por municipio (Son Catiu a Inca). |
 | BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas; **3 purgas** (Can Estela, Can Pere Joan y «Sobrasada Ferrer») y 1 merge por municipio (Can Company a Maria de la Salut). |
 | BAL-08 | Lácteos y quesos · Mallorca | 11 | ✅ 2026-07-21 | 4 verificado, 4 parcial; 1 venta online resuelta; **3 purgas** (S'Hort des Pont, Gotes en Ram, Formatges Lluc) y 2 merges (Grimalt a Santanyí, Dairy Mercè a Formatges Mercè). |
-| BAL-09 | Fruta y verdura · Mallorca | 13 | Pendiente | Cooperativas con supermercado; contrapartes de los pares Son Jover y Sa Teulera (el par de la Cooperativa de Sóller ya se fusionó en BAL-06). |
+| BAL-09 | Fruta y verdura · Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 1 venta online resuelta; 1 purga (Es Merca, mayorista) y **4 merges**: los pares Son Jover y Sa Teulera, más Terracor a Petra y Agromart a Porreres. |
 | BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | Pendiente | Forns de Palma; Fornet de la Soca VO=sí; Gelabert sin coordenadas ni web propia. |
 | BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | Pendiente | 6 recategorizaciones probables desde `Otros`; 5 VO=sí. |
 | BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | Pendiente | Coinga es industrial; Binigafull sin web; Cavalleria Nova VO=sí y parcial. |
@@ -464,6 +464,34 @@ fuente provincial de la pasada.
 - **Comprar la leche no descalifica.** Formatges Mercè no tiene rebaño pero
   elabora queso y yogur en su quesería de Costitx: entra. El criterio sigue
   siendo la elaboración.
+
+### BAL-09 — Fruta y verdura de Mallorca
+
+Ocho `verificado`, uno `parcial`, una purga y cuatro fusiones. El CSV queda en
+**157 filas**. Con este lote **quedan resueltos los tres pares duplicados** que
+la auditoría inicial detectó por teléfono compartido.
+
+- **Los pares eran una sola explotación partida por categoría.** Son Jover y Sa
+  Teulera tenían fila de lácteos y fila de huerta, con el mismo teléfono, el
+  mismo dominio y la misma finca. El CBPAE inscribe a Sa Teulera con todas sus
+  actividades a la vez —embutidos, queso, fruta, aceite, pan y verdura—, que es
+  exactamente el argumento para fusionar: **el registro define la unidad
+  productiva, no el catálogo de productos.**
+- **Séptimo y octavo municipio equivocados, y de tipo nuevo.** Terracor traía
+  `municipio = Manacor` con una dirección que ya decía «07520 Petra»: **la fila se
+  contradecía a sí misma** y ninguna puerta lo detecta, porque el geo-check solo
+  mira coordenadas. Agromart Balear figuraba en Llucmajor y el registro mercantil
+  la domicilia en Porreres, donde además están sus fincas.
+- **Segundo dominio secuestrado.** `biogranjalareal.com` responde 200 y sirve un
+  directorio de aplicaciones de apuestas. Con `bodegabiniagual.com` van dos.
+- **Un mayorista no es un productor.** Es Merca Fruites i Verdures SL es un
+  puesto de Mercapalma clasificado en comercio al por mayor: purgada.
+- **Casi purgo una finca real por leer solo su web.** Son Mut Nou parecía un banco
+  de germoplasma —3.200 higueras, 1.436 variedades— cuya única venta era un
+  libro. La prensa del sector confirma que elabora **veintiún productos
+  derivados del higo**, incluidos vino, cerveza y café. Es el segundo aviso del
+  día, tras la dirección de Sa Cabreta: **antes de purgar, buscar fuera de la web
+  propia.**
 
 ### Membresía exacta por lote
 
