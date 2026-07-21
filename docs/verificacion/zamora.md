@@ -373,7 +373,7 @@ regulador sostiene `parcial`, nunca `verificado`.
 | ZA-R2 | Tierra del Vino, Valles de Benavente y Villamor | 14 | ✅ 2026-07-21 | 4 verificado (2 con tienda propia), 10 parcial, 0 purgas |
 | ZA-R3 | Lácteos, legumbres, setas y conservas | 13 | ✅ 2026-07-21 | 4 verificado, 1 merge, 6 correcciones de municipio/slug |
 | ZA-R4 | Harineras, geo-check y slugs desalineados | 18 | ✅ 2026-07-21 | 1 merge, 5 slugs corregidos, 8 municipios devueltos al geo-check, 1 override de referencia arreglado |
-| ZA-R5 | Muestreo de los `Venta online=sí` y cierre | — | ⏳ | — |
+| ZA-R5 | Auditoría de los `Venta online=sí` y cierre | 53 | ✅ 2026-07-21 | 53/53 confirmadas; 2 webs corregidas |
 
 ### ZA-R1 — Arribes/Fermoselle y Morales de Toro
 
@@ -519,3 +519,52 @@ Incidencias reutilizables:
   nombre comercial de Gabino Bobo (fusión), mientras Coperblanc es otra sociedad
   del grupo Molinos del Duero —«tres molinos, dos familias»— junto a Carbajo
   Hermanos: tres filas legítimas, no una.
+
+### ZA-R5 — Auditoría de `Venta online=sí` y cierre
+
+Se comprobaron **las 53 filas** con venta declarada, no una muestra: cribado en
+bloque de cada `web` buscando señales de tienda (carrito, checkout, WooCommerce,
+PrestaShop) y revisión una a una de las que no daban señal. **Las 53 se
+confirman.** Dos correcciones de datos:
+
+- Quesos Revilla opera hoy como **Quesos Reviques S.L.**: su dominio redirige
+  (301) al nuevo, con tienda propia de precios y carrito. Se actualizan nombre,
+  web, teléfono y correo.
+- Moisés Gran Vino apuntaba a `heredaduruena.com`, que presenta el certificado
+  de `heredaduruena.es`; la web canónica es el `.es`. Es la marca de la familia
+  Rodríguez León en la D.O. Toro, con otra bodega en Urueña (Valladolid) bajo
+  otra denominación: la fila zamorana sigue a la unidad de Toro.
+
+Incidencia reutilizable: **el cribado en bloque tiene falsos negativos, no
+falsos positivos.** Cuatro filas salieron «sin señal» y ninguna era un error de
+dato: Chocolate Refart y Faúndez pintan la tienda con JavaScript, Quesos Revilla
+redirigía a su dominio nuevo y Paulino Iglesias devuelve 403/500 a `curl` y a
+WebFetch pero carga perfectamente en navegador. Sirve para **ordenar el trabajo**,
+nunca para degradar una fila.
+
+## Cierre de la segunda pasada (2026-07-21)
+
+- **Filas activas: 155** (159 al aterrizar; −4: 3 purgas y 5 fusiones, con una
+  fila nueva por ninguna).
+- **Verificación: 106 `verificado`, 49 `parcial`, 0 `pendiente`.**
+- **Venta online: 53 `sí` (53/53 con canal y comprobadas en esta pasada), 102
+  `no comprobado`, 0 `no`.**
+- **Evidencia: 189 registros** — 155 `keep` (cobertura **155/155**), 11 `purge`
+  y 23 `merge`.
+- **Ninguna fila conserva un directorio como `web` propia** (eran 37) y
+  **ninguna queda fuera del geo-check** (eran 8). `check:csv:data-quality` de
+  Zamora: 0 errores y 0 warnings. `verify:data` verde sobre los 50 CSV.
+
+### Residuales para la tercera pasada
+
+- **74 filas sin imagen**, casi la mitad del catálogo: el mayor hueco de calidad
+  y el trabajo natural siguiente.
+- **23 filas sin `web`**, por no tener dominio propio vivo. Varias tienen solo
+  Facebook (AlmaRoja, Ocellvm Dvrii, Armando).
+- **49 `parcial`**, sobre todo bodegas y operadores micológicos sin fuente
+  primaria viva. Encaje a revisar: Eurohongo y Micozamora (comercializadores más
+  que transformadores) y Coperblanc (unidad propia dentro del grupo).
+- **Bodega Cooperativa El Tesoro** (Brime de Urz): hay noticias de que sus socios
+  estudiaron vender la bodega. No consta cierre; conviene reintentarlo.
+- **102 `no comprobado`**: mayoritariamente bodegas pequeñas sin tienda. No es
+  deuda, es el estado real.
