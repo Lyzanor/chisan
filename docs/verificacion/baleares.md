@@ -203,7 +203,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-01 | D.O. Binissalem · Binissalem y Consell | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas (Ferrer y Antonio Nadal Ros) y 1 caída (Can Fumat); 1 merge por municipio erróneo (Ava Vins a Sencelles); 1 dominio secuestrado retirado (Biniagual). |
 | BAL-02 | D.O. Binissalem · Santa Maria, Sencelles, Santa Eugènia | 10 | ✅ 2026-07-21 | 9 verificado, 1 parcial; 4 ventas online resueltas; 1 merge por municipio erróneo (Son Juliana a Santa Eugènia); 5 webs del volcado muertas o equivocadas sustituidas. |
 | BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | ✅ 2026-07-21 | 7 verificado, 2 parcial; 5 ventas online resueltas; Toni Gelabert sin web viva; 4 coordenadas al centroide por geocodificación no fiable. |
-| BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | Pendiente | Incluye Mesquida Mora (VO=sí). |
+| BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | ✅ 2026-07-21 | 7 verificado, 0 parcial; 2 ventas online resueltas; 4 dominios del volcado sustituidos; 4 coordenadas al centroide. |
 | BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | Pendiente | Fuera de D.O.; Can Axartell sin coordenadas y VO=sí. |
 | BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | Pendiente | Almazara vs marca; par duplicado Cooperativa de Sóller; Oli de Santanyí VO=sí sin coordenadas. |
 | BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | Pendiente | Obrador vs carnicería; Ferriol VO=sí; Estrany sin coordenadas. |
@@ -316,6 +316,28 @@ web sino **el teléfono**: cinco de nueve estaban mal.
   pero su web es un sitio antiguo sin contenido rastreable, así que dirección y
   contacto se apoyan en directorios. `parcial` mide la evidencia, no la duda
   sobre su existencia.
+
+### BAL-04 — D.O. Pla i Llevant: Petra, Porreres, Muro, Santa Margalida y Santanyí
+
+Las siete quedan `verificado`, el primer lote sin ningún `parcial`. Tres patrones
+ya vistos se confirman como sistemáticos:
+
+- **Segundo caso de marca convertida en calle.** Butxet figuraba en «Carrer d'en
+  Butxet»; está en la carretera de Muro a Can Picafort. Con Ca Sa Padrina
+  («Carrer d'en Mollet») son dos, así que **toda dirección cuyo nombre de calle
+  coincida con la marca es sospechosa por defecto**.
+- **Segundo dominio que falla por un carácter.** `vinysonalegre.com` no existe;
+  el real es `vinyasonalegre.com`, con una `a` más. Igual que
+  `7103petitceller.com` frente a `7103-petitceller.com`. Cuando un dominio
+  plausible no resuelve, probar variantes antes de darlo por muerto.
+- **Cuando la bodega tiene también agroturismo, hay dos teléfonos.** Can Feliu
+  publica uno para el alojamiento y otro para el celler, y el volcado traía un
+  tercero. Lo mismo pasó con el restaurante de Blanca Terra en BAL-03.
+- **Un enlace propio a Google Maps sirve de fuente de coordenadas.** Galmés i
+  Ribot no publica dirección ni teléfono, pero su web enlaza su propia ficha de
+  Maps; de ahí salen sus coordenadas. A cambio, la dirección se reduce al
+  municipio y el teléfono se vacía: **es preferible el campo vacío al dato del
+  volcado.**
 
 ### Membresía exacta por lote
 
