@@ -205,10 +205,10 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-03 | D.O. Pla i Llevant A · Felanitx, Llucmajor, Manacor, Algaida, Montuïri | 9 | ✅ 2026-07-21 | 7 verificado, 2 parcial; 5 ventas online resueltas; Toni Gelabert sin web viva; 4 coordenadas al centroide por geocodificación no fiable. |
 | BAL-04 | D.O. Pla i Llevant B · Petra, Porreres, Muro, Sta. Margalida, Santanyí | 7 | ✅ 2026-07-21 | 7 verificado, 0 parcial; 2 ventas online resueltas; 4 dominios del volcado sustituidos; 4 coordenadas al centroide. |
 | BAL-05 | Vi de la Terra · Tramuntana, Pollença, Palma | 9 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 3 ventas online resueltas; 1 merge por municipio erróneo (Can Xanet a Alcúdia); cierra las 44 bodegas de Mallorca. |
-| BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | Pendiente | Almazara vs marca; par duplicado Cooperativa de Sóller; Oli de Santanyí VO=sí sin coordenadas. |
+| BAL-06 | Aceite · D.O.P. Oli de Mallorca | 13 | ✅ 2026-07-21 | 11 verificado, 1 parcial; 8 ventas online resueltas; 1 purga (`Oli de Sant Joan`, inexistente), 1 merge del par Cooperativa de Sóller y 1 merge por municipio (Son Catiu a Inca). |
 | BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | Pendiente | Obrador vs carnicería; Ferriol VO=sí; Estrany sin coordenadas. |
 | BAL-08 | Lácteos y quesos · Mallorca | 11 | Pendiente | 3 sin web; nombres dudosos (Short des Pont, Dairy Mercè); par Son Jover y par Sa Teulera. |
-| BAL-09 | Fruta y verdura · Mallorca | 13 | Pendiente | Cooperativas con supermercado; contrapartes de los pares duplicados. |
+| BAL-09 | Fruta y verdura · Mallorca | 13 | Pendiente | Cooperativas con supermercado; contrapartes de los pares Son Jover y Sa Teulera (el par de la Cooperativa de Sóller ya se fusionó en BAL-06). |
 | BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | Pendiente | Forns de Palma; Fornet de la Soca VO=sí; Gelabert sin coordenadas ni web propia. |
 | BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | Pendiente | 6 recategorizaciones probables desde `Otros`; 5 VO=sí. |
 | BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | Pendiente | Coinga es industrial; Binigafull sin web; Cavalleria Nova VO=sí y parcial. |
@@ -361,6 +361,41 @@ Ocho `verificado` y Son Vives en `parcial`. Con este lote **quedan cerradas las
 - **Un título de página genérico no significa web falsa.** `bodegasxaloc.com`
   devuelve `<title>Home</title>`, lo que huele a plantilla sin configurar, pero
   el contenido describe una bodega real de tres hectáreas con aceite propio.
+
+### BAL-06 — Aceite, D.O.P. Oli de Mallorca
+
+Once `verificado`, uno `parcial`, una purga y dos fusiones: **el lote deja el CSV
+en 166 filas**. El registro de almazaras de la D.O.P. resultó ser la fuente
+provincial más útil de la pasada hasta ahora, porque publica razón social y
+municipio de cada inscrita.
+
+- **La primera fila inventada de la provincia.** `oli-de-sant-joan-sant-joan` se
+  purga como `nonexistent`: no existe ninguna marca con ese nombre, su dominio no
+  tiene DNS y la D.O.P. no inscribe ninguna almazara en Sant Joan. El nombre está
+  construido a partir del municipio, igual que el resto del estrato sintético.
+  El único elaborador real del pueblo es **Gossalba**, anotado en
+  `docs/candidates/baleares.md`: **no se reaprovecha la fila cambiándole la
+  identidad**, porque eso sería sustituir un productor por otro.
+- **Un dominio puede haber pasado a otra empresa sin estar aparcado.**
+  `cooperativasoller.com` rechaza el 443 pero responde por HTTP… sirviendo el
+  sitio de **Brico Balears**, un negocio distinto. Ni caducado ni secuestrado por
+  un spammer: simplemente ya no es de la cooperativa. Es la cuarta variedad de
+  avería y la que peor se ve, porque un `curl` a HTTP devuelve 200 tan campante.
+- **El par duplicado se resuelve fusionando.** Las dos filas de la Cooperativa de
+  Sóller (aceite y cítricos) eran la misma cooperativa, con el mismo teléfono y
+  dominio, partida por categoría. Sobrevive la de Aceite —está en el registro de
+  la D.O.P.— y los cítricos pasan a la descripción. Quedan dos pares del mismo
+  tipo por resolver en BAL-08 y BAL-09.
+- **Cuarto municipio equivocado.** Son Catiu no está en Lloseta sino en Inca,
+  según su propia web y el registro de la D.O.P. (S'Oliera Son Catiu).
+- **Tercer dominio que falla por un carácter**: `esfangar.com` no existe, el real
+  es `es-fangar.com`.
+- **Una web en mantenimiento se conserva y topa en `parcial`.** Son Mesquidassa
+  responde pero no publica nada; la D.O.P. la inscribe, así que la fila vive con
+  su web intacta y el techo bajo.
+- **Ojo con la finca de eventos que además hace aceite.** Son Mir es sobre todo
+  un espacio de celebraciones, pero elabora AOVE con aceituna propia: entra. El
+  criterio es la elaboración, no cuál sea el negocio principal.
 
 ### Membresía exacta por lote
 
