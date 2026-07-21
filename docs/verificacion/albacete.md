@@ -83,6 +83,12 @@ existentes.
   68 `verificado`**. **Bloque de bodegas cerrado: las 61 filas revisadas.** El
   saldo del bloque completo es 44 verificadas, 9 parciales, 4 purgas y 4 fusiones
   o traslados de municipio. `verify:data` verde sobre los 50 CSV.
+- **Cierre de la 1ª pasada (2026-07-21)**: **109 filas**; **0 `pendiente`, 17
+  `parcial`, 92 `verificado`**. Venta online: **67 `sí` (67/67 con canal),
+  0 `no`, 42 `no comprobado`**. Evidencia: **120 registros** — 109 `keep`
+  (cobertura 109/109), 5 `purge` y 6 `merge`. Ninguna fila conserva un
+  directorio como `web` y ninguna queda fuera del geo-check. Albacete entra en
+  `data/evidence/coverage.json`.
 
 ## Reglas y riesgos locales
 
@@ -122,8 +128,8 @@ existentes.
 | AB-09 | Bodegas DO Jumilla — Ontur, Albatana, Hellín | 6 | ✅ 2026-07-21 | 5 verificadas; Ontalba fusionada en una fila |
 | AB-10 | Bodegas DO La Mancha — La Roda y Villarrobledo II | 7 | ✅ 2026-07-21 | 3 verificadas, 2 parciales, 2 purgas (granel y embotellador) |
 | AB-11 | Bodegas con web de directorio (`apoloybaco`) | 10 | ✅ 2026-07-21 | 4 verificadas, 6 parciales; Señorío del Júcar trasladado |
-| AB-12 | Aceite, miel, azafrán, frutos secos, pan, cerveza, setas, fruta, harina, charcutería | 29 | ⏳ | 4 webs de directorio; azafrán reenvasado |
-| AB-13 | Cierre: reauditoría, reconciliación y cobertura | — | ⏳ | Paridad CSV/evidencia y `coverage.json` |
+| AB-12 | Aceite, miel, azafrán, frutos secos, pan, cerveza, setas, fruta, harina, charcutería | 29 | ✅ 2026-07-21 | 23 verificadas, 5 parciales, 1 purga; Conace es hoy Juan Marín |
+| AB-13 | Cierre: reauditoría, reconciliación y cobertura | 109 | ✅ 2026-07-21 | 109/109 con `keep`; Albacete en `coverage.json` |
 
 ## AB-00 — Higiene, snapshot y partición
 
@@ -334,3 +340,57 @@ Incidencias reutilizables:
   viva, y ninguna conserva ya el directorio en `web`.
 - Un carrito sin oferta (Bro Valero: «No se encontraron productos») no acredita
   venta, igual que una tienda en mantenimiento.
+
+## AB-12 y AB-13 — Categorías menores y cierre provincial
+
+Decisiones cerradas el 2026-07-21 sobre las 29 filas restantes, más la
+reconciliación final.
+
+- `verificado` + ecommerce (14): Almazara Juan Marín, Aceites R. Lencina, Mito
+  Tradición, Apimancha, La Casa de la Miel, Rincón del Segura, Azafrán Desbrín,
+  Flor de Opaz, Mundo Miel Nerpio, El Oro de Yeste, Oleum Yeste, Almendras
+  Sierra del Segura y Valle del Taibilla.
+- `verificado` + pedido por WhatsApp: Oro de Nuestra Sierra.
+- `verificado`, venta no comprobada (10): Finca Tindávar, Neofungi, Champinter,
+  Molinos Cano, Pistalbilla, Miguelitos Arenas, Confitería Fernández,
+  Miguelitos Ruiz, Cervezas 69 y Cerveza La Nena.
+- `parcial` (5): Confitería La Moderna, Manchega de la Almendra, Manchuela
+  Frutos Secos, SAT Productores de Albaricoque y Frutales Santiago Apóstol.
+- `purge:other-province`: Embutidos Carrizal → `docs/candidates/ciudad-real.md`.
+- `merge`: Conace Isso → Almazara Juan Marín.
+
+Incidencias reutilizables:
+
+- **Un dominio muerto puede esconder un renombrado, no un cierre.** Conace Isso
+  devuelve NXDOMAIN, pero Almazara Juan Marín repite su historia fundacional
+  —el molino de piedra recuperado dentro de una posada abandonada— y su
+  ubicación en Isso: es la misma almazara con otro nombre.
+- **Un dominio caducado se recicla como granja de contenidos.**
+  `confiterialamoderna.com` sirve hoy «Dulces Innovadores», un agregador
+  gastronómico sin relación con la confitería de 1922. Antes de conservar una
+  web hay que comprobar que el contenido habla del productor.
+- **La tienda del productor y su fábrica pueden estar en provincias distintas.**
+  La carnicería de Embutidos Carrizal está en Povedilla, pero la fábrica está en
+  Villanueva de la Fuente (Ciudad Real): la fila sigue a la fábrica.
+- **`Isso` no es municipio, es pedanía de Hellín.** Corregirlo devolvió la
+  última fila de la provincia al geo-check.
+- Tres webs de la fila pertenecían a terceros sin relación: un punto de recogida
+  de envases (sigfito), una noticia local (albaceteabierto), un directorio B2B
+  (zipmec) y la web de otra cervecería (El Cateto).
+- Las agrupaciones que solo acopian, clasifican y comercializan sin transformar
+  (Manchega de la Almendra, SAT del Albaricoque, Pistalbilla) se conservan como
+  `parcial` con el encaje anotado, no se purgan: la duda de alcance se resuelve
+  en segunda pasada, no con una baja apresurada.
+
+## Residuales para la segunda pasada
+
+- **17 `parcial`**, casi todas por no tener fuente primaria viva. Candidatas a
+  revisar el encaje: Manchega de la Almendra y SAT del Albaricoque (acopio sin
+  transformación), Pistalbilla (servicio a socios), Andrés Calero (sin ningún
+  rastro digital) y La Manchega de Ossa de Montiel (posible granel).
+- **42 `Venta online=no comprobado`**: varias son tiendas caídas o «próximamente»
+  que conviene reintentar (Bodegas Ayuso, Miguelitos Arenas, Cerveza La Nena,
+  Bro Valero) y dominios en mantenimiento (San Gregorio Magno).
+- **14 filas sin `web`**, por dominio extinto o inexistente.
+- **Imágenes: 108 de 109 filas sin imagen.** Es el mayor hueco de calidad de la
+  provincia y no se tocó en esta pasada.

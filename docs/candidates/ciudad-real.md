@@ -110,3 +110,26 @@
   **`dopaceitecampodemontiel.es`** (pero con el registro sin publicar). La página
   de JCCM (`pagina.jccm.es/agricul/…/aceite_montiel.htm`) está caída. El camino
   que funcionó fue la web de la **cooperativa de 2º grado**.
+
+## Traspaso desde la verificación de Albacete (2026-07-21)
+
+> Estado: **`unverified` como fila de Ciudad Real**, pero la identidad y la
+> ubicación ya están comprobadas contra la web del propio productor.
+
+- [ ] **Embutidos Carrizal** — Pol. Ind. Las Suertes, C/ Juan Amador Fresneda, 5,
+  13330 Villanueva de la Fuente. Embutidos frescos, curados, fritos y salazones
+  de elaboración propia. Web `https://www.embutidoscarrizal.com/`,
+  `contacto@embutidoscarrizal.com`, 967 396 255. Tienda propia operativa con
+  precios de 2,95 a 36,75 € y carrito → `Venta online=sí`, canal `ecommerce`.
+  Categoría **Charcutería**.
+
+  Venía como `embutidos-carrizal-povedilla` en `albacete.csv` y se dio de baja
+  con `purge:other-province`: su página de contacto separa la **carnicería** de
+  Povedilla (Albacete) de la **fábrica**, que está en Villanueva de la Fuente.
+  Al dar el alta, poner la dirección de la fábrica y dejar la carnicería como
+  punto de venta en la descripción; la marca conserva el «de Povedilla» del
+  origen familiar, así que el nombre no contradice el municipio de la fábrica.
+
+  Su logotipo ya estaba descargado y se retiró al purgar la fila para no dejar
+  una imagen huérfana. Se recupera del histórico:
+  `git show 708685e:public/productores/castilla-la-mancha/albacete/embutidos-carrizal-povedilla.webp`.
