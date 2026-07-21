@@ -372,8 +372,8 @@ regulador sostiene `parcial`, nunca `verificado`.
 | ZA-R1 | Arribes/Fermoselle + Morales de Toro | 10 | ✅ 2026-07-21 | 2 purgas a Salamanca, 2 traslados a Villar del Buey, 1 verificado nuevo, 1 recategorización |
 | ZA-R2 | Tierra del Vino, Valles de Benavente y Villamor | 14 | ✅ 2026-07-21 | 4 verificado (2 con tienda propia), 10 parcial, 0 purgas |
 | ZA-R3 | Lácteos, legumbres, setas y conservas | 13 | ✅ 2026-07-21 | 4 verificado, 1 merge, 6 correcciones de municipio/slug |
-| ZA-R4 | Geo-check: municipios fuera del lookup y slugs desalineados | 7 | ⏳ | — |
-| ZA-R5 | Muestreo de los 49 `Venta online=sí` y cierre | — | ⏳ | — |
+| ZA-R4 | Harineras, geo-check y slugs desalineados | 18 | ✅ 2026-07-21 | 1 merge, 5 slugs corregidos, 8 municipios devueltos al geo-check, 1 override de referencia arreglado |
+| ZA-R5 | Muestreo de los `Venta online=sí` y cierre | — | ⏳ | — |
 
 ### ZA-R1 — Arribes/Fermoselle y Morales de Toro
 
@@ -477,3 +477,45 @@ Incidencias reutilizables:
   C.R.D.O.P.; sin web propia se queda en `parcial`, mientras Dehesa de la Guadaña
   sí sigue inscrita y sostiene el encaje quesero pese a que su web hable sobre
   todo de ganadería.
+
+### ZA-R4 — Harineras, geo-check y slugs desalineados
+
+Cierra la última web de directorio de la provincia y devuelve al geo-check las
+ocho filas que se lo saltaban.
+
+- `verificado` + ecommerce: Molinos Zamoranos, con la razón social Harinas
+  Gabino Bobo fusionada dentro.
+- `merge`: Gabino Bobo → Molinos Zamoranos; y cinco slugs corregidos al
+  municipio real (Carbajo Hermanos → Cerecinos de Campos, Conservas Anda → Toro,
+  Gabemar → Rabanales, Nando Silvestre y Prodeza → San Vitero).
+- Ocho municipios corregidos por pedanía o grafía: Figueruela de Abajo →
+  Figueruela de Arriba, San Blas → Viñas, Formariz → Villar del Buey, Sejas de
+  Aliste → Rábano de Aliste, El Puente de Sanabria → Galende, Santa Eulalia de
+  Rionegro → Rionegro del Puente, «Sta. Cristina» → Santa Cristina de la
+  Polvorosa y San Juan del Rebollar → San Vitero.
+
+Incidencias reutilizables:
+
+- **Un municipio que el lookup no conoce no da error: desaparece del
+  geo-check.** Las ocho filas llevaban una pedanía, una abreviatura («Sta.») o
+  el par localidad-municipio en el mismo campo, y ninguna se comprobaba. En
+  cuanto se normalizaron, el validador destapó un error real que llevaba
+  escondido: la fila de Santa Cristina de la Polvorosa tenía coordenadas a 54 km,
+  copiadas del override de Fariza.
+- **La referencia compartida también se equivoca.** La entrada `fariza` de
+  `data/reference/municipios-overrides.json` apuntaba a 41,516/-5,774, unos 40 km
+  al noreste del municipio real (41,418/-6,267, en Sayago). El override existe
+  porque Wikidata da «Fariza» como nombre alternativo de **Ariza** (Zaragoza);
+  al crearlo se fijó una coordenada equivocada. Corregido, y con él las dos filas
+  que lo habían heredado.
+- **Regla de slug adoptada en esta pasada**: se renombra el slug cuando su
+  sufijo nombra un **municipio equivocado** (casi siempre `-zamora` heredado del
+  volcado); se conserva cuando nombra la **localidad real** del productor
+  (`-sejas-de-aliste`, `-san-blas`, `-formariz`), que es información buena y
+  estable aunque no sea el municipio administrativo.
+- **Tres filas con la misma dirección y el mismo teléfono eran dos empresas y
+  una marca.** Gabino Bobo, Molinos Zamoranos y Coperblanc compartían
+  Ctra. de Villalpando 13. La web de la marca aclara que Molinos Zamoranos es el
+  nombre comercial de Gabino Bobo (fusión), mientras Coperblanc es otra sociedad
+  del grupo Molinos del Duero —«tres molinos, dos familias»— junto a Carbajo
+  Hermanos: tres filas legítimas, no una.
