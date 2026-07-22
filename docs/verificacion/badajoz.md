@@ -193,7 +193,7 @@ bodegas-vinedos-pozanco-s-l, vina-santa-marina, bodegas-moreno, bodega-los-castu
 ### BAD-09 · Bodega / Charcutería — ✅
 cooperativa-montevirgen, bodegas-cerro-la-barca-s-l, bodegas-angel-ortiz, bodegas-medina-el-convento, dehesa-guadarranque, fabrica-de-embutidos-manuel-guedejo, charcuteria-alfonso, charcuteria-juaqui, elaborados-sanchez-iglesias, jamon-exclusive-s-l, matarrevalva, sabor-encina-tradicion-iberica-pedro-barroso, chacinas-manuel-castillo, embutidos-hidalgo, iberazuaga
 
-### BAD-10 · Charcutería — ⏳
+### BAD-10 · Charcutería — ✅
 charcuteria-el-paisano, el-corte-de-espin-jamoneria, embutidos-marytere, embutidos-pepe, eurojamon-s-l, ibericos-maxima-natura, la-moncloa-ibericos, mas-que-un-jamon, senorio-de-montanera, jamones-moreno-la-tradicion-del-iberico, jamones-y-embutidos-gallardo, iberico-del-brillante, carniceria-texeira, carniceria-victoriano-perez, ecoextincion
 
 ### BAD-11 · Charcutería — ⏳
@@ -356,3 +356,13 @@ abierto. Sin tablas de estado derivado.
   dice que montó secadero y elabora sus embutidos. **El rótulo no decide: hay que
   abrir la web.** Tercera web que solo sirve la página por defecto del servidor
   (`bodegasangelortiz.com`, tras `vsantamarina.com`).
+- **BAD-10** (2026-07-22): 15 filas → 12. **6 `verificado`, 6 `parcial`, 0
+  pendientes**; 6 `Venta online=sí` con canal. **3 purgas, todas minoristas de
+  Badajoz capital**: `el-corte-de-espin-jamoneria` (cuatro tiendas, «selecciona
+  minuciosamente»), `embutidos-marytere` (revende Señorío de Montanera y D.O.P.
+  Queso de la Serena) y `la-moncloa-ibericos` (cafetería que revende Maldonado,
+  Montanera y Morán Píris). **Se confirma el patrón: la charcutería urbana de la
+  capital es sobre todo comercio, no elaboración** — de las 8 filas de Badajoz
+  ciudad de este lote, 3 son purga y 2 quedan en `parcial` sin resolver.
+  `senorio-de-montanera` redirige a `senorio.es` y su tienda a
+  `tienda.senorio.es`.
