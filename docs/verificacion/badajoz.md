@@ -175,7 +175,7 @@ almazara-de-fuente-de-cantos-s-l, aceites-obreo, coop-olivarera-ntra-sra-de-los-
 ### BAD-03 · Aceite — ✅
 cooperativa-pedro-de-alvarado-lobon, albalata, cooperativa-san-antonio-de-padua, almazara-las-torres, baeturia, aceite-olevm, oliva-nature, cooperativa-san-isidro, aceites-juzgado, la-milagrosa, la-monterrubiana, la-unidad, sabor-de-extremadura, extrema-oliva, aceites-bonet
 
-### BAD-04 · Aceite — ⏳
+### BAD-04 · Aceite — ✅
 aceites-orellana, aceites-del-pozo, almazara-molero-maza, marquesado-de-obando, aceites-clemen, olivareros-ribera-del-fresno, aceites-villamur-aove-extremadura-santa-amalia-aceite-de-oliva-virgen-extra, aceites-siruela, mundioliva, sol-de-barros, bio-alandre, cooperativa-la-siberia-extremena, alguijuela, almazara-de-villafranca-s-l, almazara-ducoy-olive-oil
 
 ### BAD-05 · Aceite / Bodega — ⏳
@@ -290,3 +290,12 @@ abierto. Sin tablas de estado derivado.
   sierra de Montánchez, Cáceres — sede y unidad productiva en provincias
   distintas) y `aceites-bonet` (Iberinform la marca inactiva mientras el
   catálogo la sigue listando; candidata a purga por cierre).
+- **BAD-04** (2026-07-22): 15 filas, sin purgas ni fusiones. **12 `verificado`,
+  3 `parcial`, 0 pendientes**; 10 `Venta online=sí` con canal y 3 `no`.
+  Dos municipios corregidos por contradicción interna de la propia fila:
+  `almazara-molero-maza` (Puebla de la Calzada → Lobón, que era lo que ya decía
+  su dirección) y `almazara-ducoy-olive-oil` (Villalba de los Barros → Fuente
+  del Maestre, cuyo CP 06360 ya traía el volcado). `bio-alandre` parecía web
+  cruzada y no lo es: `bioalandre.com` está muerto y `crolivareros.com` es su
+  propia tienda. `almazara-de-villafranca-s-l` llegaba sin teléfono, sin web y
+  con la dirección reducida al municipio; se rescató del registro de Infaoliva.
