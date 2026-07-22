@@ -187,7 +187,7 @@ bodegas-san-antonio-s-a-t, bodegas-sani-primavera-s-l, bodegas-sat-satiba, bodeg
 ### BAD-07 · Bodega — ✅
 bodegas-bujillo, bodegas-regajo, bodegas-repite, bodegas-girol-pareja, bodegas-rey-de-los-reyes-sl, bodegas-hijos-de-francisco-escaso, cosecha-extremena, bodegas-garcia-rebollo, bodegas-s-a-t-el-majuelo, hermanos-garcia-triguero-vino-401, bodegas-castelar, bodegas-cortes, bodegas-hermanos-zapata, cooperativa-virgen-de-la-estrella, bodega-valdealto
 
-### BAD-08 · Bodega — ⏳
+### BAD-08 · Bodega — ✅
 bodegas-vinedos-pozanco-s-l, vina-santa-marina, bodegas-moreno, bodega-los-castuos, bodega-rosal, bodegas-macario, pago-los-balancines, bodega-puente-ajuda, bodegas-el-maestrino, bodegas-toribio-vina-puebla, bodega-cooperativa-santa-marta-virgen, bodegas-la-pelina, cooperativa-del-campo-san-isidro, bodega-pago-de-las-encomiendas, cave-san-jose
 
 ### BAD-09 · Bodega / Charcutería — ⏳
@@ -333,3 +333,14 @@ abierto. Sin tablas de estado derivado.
   `sí` a `no comprobado` porque su tienda está en modo mantenimiento (503), que
   es incertidumbre y no negativa. Las 6 `parcial` son todas bodegas de Guareña,
   Fuente del Maestre y Hornachos sin web propia.
+- **BAD-08** (2026-07-22): 15 filas, sin purgas ni fusiones. **10 `verificado`,
+  5 `parcial`, 0 pendientes**; 10 `Venta online=sí` con canal. Dos webs que
+  parecían muertas eran dominio equivocado: `bodegaspozanco.com` → `.es` (con
+  tienda) y `vsantamarina.com`, que solo sirve la página por defecto del
+  servidor, → su tienda `shopvsantamarina.com`. **Aviso para la 2ª pasada**:
+  `vina-santa-marina` y `bodega-valdealto` comparten dirección (N-630, pk 634)
+  y teléfono; marcas y dominios distintos, así que no se fusionan sin más
+  prueba. `bodega-puente-ajuda` es hoy un espacio de bodas y eventos sin rastro
+  de vino en su web: candidata a purga por alcance, sin cerrar.
+  Se mantiene el geo-warning de `bodegas-vinedos-pozanco-s-l`: está en el km
+  15,7 de la BA-001 y su propia ficha da Mérida.
