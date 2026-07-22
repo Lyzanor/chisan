@@ -196,7 +196,7 @@ cooperativa-montevirgen, bodegas-cerro-la-barca-s-l, bodegas-angel-ortiz, bodega
 ### BAD-10 · Charcutería — ✅
 charcuteria-el-paisano, el-corte-de-espin-jamoneria, embutidos-marytere, embutidos-pepe, eurojamon-s-l, ibericos-maxima-natura, la-moncloa-ibericos, mas-que-un-jamon, senorio-de-montanera, jamones-moreno-la-tradicion-del-iberico, jamones-y-embutidos-gallardo, iberico-del-brillante, carniceria-texeira, carniceria-victoriano-perez, ecoextincion
 
-### BAD-11 · Charcutería — ⏳
+### BAD-11 · Charcutería — ✅
 jamones-guti, jamones-y-embutidos-don-benito, embutidos-pacheco-martinez, jamones-ibericos-cumplido, jamones-ibericos-de-fregenal-de-la-sierra-s-l, tomas-gonzalez-ibericos, viejo-jamon, carnicas-y-embutidos-extremenos-sl, embutidos-guareno-s-l-embutidos-artesanales-en-extremadura, ibericos-en-lonchas, productos-maximo-carnicas-y-embutidos-extremenos-s-l, santa-elena-ibericos, jamones-montanera, carniceria-fabrica-de-embutidos-el-pantano-artesanos-de-herrera-del-duque, industrias-carnicas-el-pantano
 
 ### BAD-12 · Charcutería — ⏳
@@ -366,3 +366,14 @@ abierto. Sin tablas de estado derivado.
   ciudad de este lote, 3 son purga y 2 quedan en `parcial` sin resolver.
   `senorio-de-montanera` redirige a `senorio.es` y su tienda a
   `tienda.senorio.es`.
+- **BAD-11** (2026-07-22): 15 filas → 13. **5 `verificado`, 8 `parcial`, 0
+  pendientes**; 5 `Venta online=sí` con canal. **2 fusiones**, ambas de los pares
+  de teléfono repetido detectados en la auditoría inicial:
+  `carniceria-fabrica-de-embutidos-el-pantano-…` → `industrias-carnicas-el-pantano`
+  (mismo teléfono y dirección; se traspasan web e imagen, renombrada al slug
+  superviviente) y `carnicas-y-embutidos-extremenos-sl` →
+  `productos-maximo-…` (misma razón social). **5 webs muertas vaciadas**, entre
+  ellas `embutidosguareño.es`, con eñe, que tampoco resuelve en punycode.
+  Limpiadas también las 6 imágenes huérfanas que dejaron las purgas de BAD-06,
+  BAD-07, BAD-09 y BAD-10. Fregenal de la Sierra es el contraste de Badajoz
+  capital: 3 de sus 5 filas son fábricas con secadero propio y tienda.
