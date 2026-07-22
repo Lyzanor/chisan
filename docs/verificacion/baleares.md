@@ -212,7 +212,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-08 | Lácteos y quesos · Mallorca | 11 | ✅ 2026-07-21 | 4 verificado, 4 parcial; 1 venta online resuelta; **3 purgas** (S'Hort des Pont, Gotes en Ram, Formatges Lluc) y 2 merges (Grimalt a Santanyí, Dairy Mercè a Formatges Mercè). |
 | BAL-09 | Fruta y verdura · Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 1 venta online resuelta; 1 purga (Es Merca, mayorista) y **4 merges**: los pares Son Jover y Sa Teulera, más Terracor a Petra y Agromart a Porreres. |
 | BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | ✅ 2026-07-21 | 7 verificado, 6 parcial; 4 ventas online resueltas; 0 purgas; **10 de 11 dominios del volcado eran falsos**; 1 merge por errata de nombre (Can Joan de s'Aigo). |
-| BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | Pendiente | 6 recategorizaciones probables desde `Otros`; 5 VO=sí. |
+| BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | ✅ 2026-07-21 | 11 verificado, 0 parcial; **6 recategorizaciones desde `Otros`**; 2 ventas online caídas (Bessó y Puig); **cierra Mallorca**. |
 | BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | Pendiente | Coinga es industrial; Binigafull sin web; Cavalleria Nova VO=sí y parcial. |
 | BAL-13 | Menorca · D.O.P. Mahón-Menorca B (Es Mercadal, Ferreries, Maó, Sant Lluís) | 11 | Pendiente | Hort de Sant Patrici con web de directorio; Algendaret sin web. |
 | BAL-14 | Menorca · resto (vino, aceite, cerveza, gin, miel, pastelería, hortícola) | 10 | Pendiente | 4 VO=sí; grafía `Mahón`; Torralbenc es hotel-bodega. |
@@ -522,6 +522,51 @@ son falsos pero **los productores son reales**.
   coinciden en la calle y nadie confirma el teléfono: se vacían web, calle y
   teléfono en vez de elegir una versión. **Es preferible una fila corta y cierta
   a una completa y dudosa.**
+
+### BAL-11 — Licores, sal, bebidas, cerveza y frutos secos
+
+**Las once quedan `verificado`, sin ningún `parcial` ni purga**, y con este lote
+**Mallorca queda cerrada**: 106 filas, 0 pendientes.
+
+- **Las seis recategorizaciones previstas se confirman.** `Otros` era el cajón de
+  sastre exacto que la auditoría inicial sospechaba: Flor de Sal d'Es Trenc a
+  **Sal**, Licors Moyà a **Licores**, Suau y Túnel a **Destilados y licores**,
+  Especias Crespí a **Pimentón y especias** y Refrescos Puig a **Bebidas**.
+- **Túnel no es una empresa, es una fábrica y una marca.** `tunel.com` redirige a
+  `antonionadal.es`: la casa es Antonio Nadal Destil·leries SLU, fundada en
+  Bunyola en 1898. **La fila se conserva** —la fábrica Túnel del polígono de
+  Marratxí es una unidad productiva real— pero el nombre se ajusta para no
+  atribuir la producción a una empresa que ya no existe por separado. Es el
+  contraste con Can Pere Joan de BAL-07, que sí se purgó: **allí la marca no
+  tenía fábrica en el municipio de la fila; aquí sí.**
+- **Dos ventas online se caen, y una por una trampa nueva.** Bessó de Mallorca
+  tenía «checkout» nueve veces en el HTML… y era plantilla del tema: su página de
+  productos no muestra ni precios ni botón de compra. **Contar palabras en el
+  HTML no sirve; hay que abrir la página de productos.** Refrescos Puig cae
+  porque su carrito lleva a `productodeaqui.com`, plataforma de terceros.
+- **Dos webs muertas más**, ambas con el patrón de siempre: `licoresmoya.com`
+  (real: `moya.es`) y `brandysuau.com` (real: `bodegassuau.com`).
+
+## Cierre de Mallorca
+
+Con BAL-11 terminan los once lotes de la isla mayor. De las **117 filas
+iniciales quedan 106**: **88 `verificado`, 18 `parcial` y 0 `pendiente`**. Se
+fueron 8 por purga —de ellas 6 por no existir o no ser productores— y 3 por
+fusión de pares duplicados. Los cambios de municipio y de nombre no restan
+filas: se resuelven con `merge` de slug.
+
+Lo que la isla deja aprendido para Menorca, Eivissa y Formentera:
+
+1. **Tres firmas identifican una fila fabricada sin salir del fichero**: dominio
+   derivado del nombre, teléfono de dígitos correlativos y dirección que repite
+   la marca. Cuando coinciden las tres, la fila no existe.
+2. **Ocho municipios equivocados en 117 filas.** Los llogarets (Biniali,
+   Biniagual, Es Llombards) y los términos vecinos (Alcúdia/Pollença,
+   Manacor/Petra) son el patrón; el geo-check no ve ninguno.
+3. **Un dominio muerto no dice nada del productor.** En el lote de panadería, 10
+   de 11 dominios eran falsos y no hubo una sola purga.
+4. **Antes de purgar, buscar fuera de la web propia.** Son Mut Nou y la dirección
+   de Sa Cabreta estuvieron a punto de perderse por leer solo una fuente.
 
 ### Membresía exacta por lote
 
