@@ -211,7 +211,7 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-07 | Charcutería · I.G.P. Sobrasada de Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 2 ventas online resueltas; **3 purgas** (Can Estela, Can Pere Joan y «Sobrasada Ferrer») y 1 merge por municipio (Can Company a Maria de la Salut). |
 | BAL-08 | Lácteos y quesos · Mallorca | 11 | ✅ 2026-07-21 | 4 verificado, 4 parcial; 1 venta online resuelta; **3 purgas** (S'Hort des Pont, Gotes en Ram, Formatges Lluc) y 2 merges (Grimalt a Santanyí, Dairy Mercè a Formatges Mercè). |
 | BAL-09 | Fruta y verdura · Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 1 venta online resuelta; 1 purga (Es Merca, mayorista) y **4 merges**: los pares Son Jover y Sa Teulera, más Terracor a Petra y Agromart a Porreres. |
-| BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | Pendiente | Forns de Palma; Fornet de la Soca VO=sí; Gelabert sin coordenadas ni web propia. |
+| BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | ✅ 2026-07-21 | 7 verificado, 6 parcial; 4 ventas online resueltas; 0 purgas; **10 de 11 dominios del volcado eran falsos**; 1 merge por errata de nombre (Can Joan de s'Aigo). |
 | BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | Pendiente | 6 recategorizaciones probables desde `Otros`; 5 VO=sí. |
 | BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | Pendiente | Coinga es industrial; Binigafull sin web; Cavalleria Nova VO=sí y parcial. |
 | BAL-13 | Menorca · D.O.P. Mahón-Menorca B (Es Mercadal, Ferreries, Maó, Sant Lluís) | 11 | Pendiente | Hort de Sant Patrici con web de directorio; Algendaret sin web. |
@@ -492,6 +492,36 @@ la auditoría inicial detectó por teléfono compartido.
   derivados del higo**, incluidos vino, cerveza y café. Es el segundo aviso del
   día, tras la dirección de Sa Cabreta: **antes de purgar, buscar fuera de la web
   propia.**
+
+### BAL-10 — Pan y pastelería, I.G.P. Ensaimada
+
+Siete `verificado`, seis `parcial` y **ninguna purga**: todos los forns existen.
+Es el lote que mejor separa las dos patologías del volcado, porque aquí los datos
+son falsos pero **los productores son reales**.
+
+- **Diez de los once dominios eran inventados.** Ni uno solo de los forns del
+  estrato A tenía la web correcta; todas seguían el patrón «nombre del negocio +
+  .com». Los reales aparecen al buscar: `fornfondo.es` (no .com),
+  `hornosantocristo.com`, `lluisperezpastisser.com`, `fornsantfrancesc.com` (no
+  .es), `pastisseriespomar.es`, `canjoandesaigo.com`. **Que el dominio sea falso
+  no dice nada sobre el productor**: son casas de 1700, 1717, 1902 y 1910.
+- **La dirección más engañosa de la pasada.** A Forn Trias le puso «Carrer del
+  Metge Josep Darder, 18»… que es la calle del **consejo regulador de la I.G.P.
+  Ensaimada**, no la del obrador. El generador tomó una dirección del sector y se
+  la asignó a un productor. Trias está en la avinguda del Cister del Secar de la
+  Real.
+- **Una errata de nombre arrastrada al slug.** «Can Joan de s'Aigua» es en
+  realidad **Can Joan de s'Aigo**, y su dominio del volcado fallaba a la vez en
+  el nombre y en el TLD (`canjoandesaigua.cat` frente a `canjoandesaigo.com`).
+- **Seis `parcial` sin web propia.** Muchos forns emblemáticos no tienen dominio:
+  Trias, Forn de la Glòria, Ca Na Teresa, Can Salem, Gelabert y Can Xim viven en
+  redes sociales o en páginas automáticas. Gelabert es el caso extremo: su
+  `negocio.site` de Google devuelve 404 y su dominio propio no responde, pese a
+  ser mejor ensaimada del mundo en 2018.
+- **Ca Na Teresa queda deliberadamente escueta.** Existe, pero las fuentes no
+  coinciden en la calle y nadie confirma el teléfono: se vacían web, calle y
+  teléfono en vez de elegir una versión. **Es preferible una fila corta y cierta
+  a una completa y dudosa.**
 
 ### Membresía exacta por lote
 
