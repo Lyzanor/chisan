@@ -190,7 +190,7 @@ bodegas-bujillo, bodegas-regajo, bodegas-repite, bodegas-girol-pareja, bodegas-r
 ### BAD-08 · Bodega — ✅
 bodegas-vinedos-pozanco-s-l, vina-santa-marina, bodegas-moreno, bodega-los-castuos, bodega-rosal, bodegas-macario, pago-los-balancines, bodega-puente-ajuda, bodegas-el-maestrino, bodegas-toribio-vina-puebla, bodega-cooperativa-santa-marta-virgen, bodegas-la-pelina, cooperativa-del-campo-san-isidro, bodega-pago-de-las-encomiendas, cave-san-jose
 
-### BAD-09 · Bodega / Charcutería — ⏳
+### BAD-09 · Bodega / Charcutería — ✅
 cooperativa-montevirgen, bodegas-cerro-la-barca-s-l, bodegas-angel-ortiz, bodegas-medina-el-convento, dehesa-guadarranque, fabrica-de-embutidos-manuel-guedejo, charcuteria-alfonso, charcuteria-juaqui, elaborados-sanchez-iglesias, jamon-exclusive-s-l, matarrevalva, sabor-encina-tradicion-iberica-pedro-barroso, chacinas-manuel-castillo, embutidos-hidalgo, iberazuaga
 
 ### BAD-10 · Charcutería — ⏳
@@ -344,3 +344,15 @@ abierto. Sin tablas de estado derivado.
   de vino en su web: candidata a purga por alcance, sin cerrar.
   Se mantiene el geo-warning de `bodegas-vinedos-pozanco-s-l`: está en el km
   15,7 de la BA-001 y su propia ficha da Mérida.
+- **BAD-09** (2026-07-22): 15 filas → 13. **8 `verificado`, 5 `parcial`, 0
+  pendientes**; 8 `Venta online=sí` con canal. Cierra el bloque de bodegas
+  (60 filas) y abre el de charcutería. **2 purgas, ambas decididas por lo que
+  dice su propia web**: `jamon-exclusive-s-l` («trabajamos directamente con
+  productores locales», selecciona en vez de curar) y
+  `sabor-encina-tradicion-iberica-pedro-barroso` (tienda y servicio de corte;
+  la dirección del volcado ya lo decía — «Plaza del Mercado, 2, puesto 1»).
+  **Y el caso contrario, que es la lección del lote**: `charcuteria-alfonso`
+  parece por nombre y por web gratuita un despacho de barrio, y su propia página
+  dice que montó secadero y elabora sus embutidos. **El rótulo no decide: hay que
+  abrir la web.** Tercera web que solo sirve la página por defecto del servidor
+  (`bodegasangelortiz.com`, tras `vsantamarina.com`).
