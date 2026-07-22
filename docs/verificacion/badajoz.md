@@ -172,7 +172,7 @@ ermita-del-ara, cooperativa-san-mauro, aceite-finca-la-jacoba, aceite-de-arbequi
 ### BAD-02 · Aceite — ✅
 almazara-de-fuente-de-cantos-s-l, aceites-obreo, coop-olivarera-ntra-sra-de-los-angeles, sociedad-cooperativa-de-colonos-de-gevora, castuo-cooperativa-cooperativa-de-aceite-y-vino, el-turunuelo-aove, naturvie, retamar-aceite-con-alma, aceite-de-oliva-jose-manuel-izquierdo-tena, ntra-senora-de-consolacion, cooperativa-de-hornachos, valdelaseras, cooperativa-santa-quiteria, cooperativa-canchalosa, agrollerena-y-comarca
 
-### BAD-03 · Aceite — ⏳
+### BAD-03 · Aceite — ✅
 cooperativa-pedro-de-alvarado-lobon, albalata, cooperativa-san-antonio-de-padua, almazara-las-torres, baeturia, aceite-olevm, oliva-nature, cooperativa-san-isidro, aceites-juzgado, la-milagrosa, la-monterrubiana, la-unidad, sabor-de-extremadura, extrema-oliva, aceites-bonet
 
 ### BAD-04 · Aceite — ⏳
@@ -282,3 +282,11 @@ abierto. Sin tablas de estado derivado.
   vaciada; typo «La Codesera» → La Codosera (venía del propio catálogo de la
   Diputación). El barrido de webs dio falso positivo en `almazaralosangeles.com`,
   que responde 200 al reintentar.
+- **BAD-03** (2026-07-22): 15 filas, sin purgas ni fusiones. **13 `verificado`,
+  2 `parcial`, 0 pendientes**; 13 `Venta online=sí` con canal y 1 `no`.
+  `cooperativa-san-isidro` estaba sin web y tiene sitio propio con tienda
+  (`coopsanisidro.com`): añadidos web, teléfono y correo. Dos abiertas:
+  `oliva-nature` (el catálogo la registra en Mérida pero su olivar está en la
+  sierra de Montánchez, Cáceres — sede y unidad productiva en provincias
+  distintas) y `aceites-bonet` (Iberinform la marca inactiva mientras el
+  catálogo la sigue listando; candidata a purga por cierre).
