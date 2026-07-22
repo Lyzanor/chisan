@@ -178,7 +178,7 @@ cooperativa-pedro-de-alvarado-lobon, albalata, cooperativa-san-antonio-de-padua,
 ### BAD-04 · Aceite — ✅
 aceites-orellana, aceites-del-pozo, almazara-molero-maza, marquesado-de-obando, aceites-clemen, olivareros-ribera-del-fresno, aceites-villamur-aove-extremadura-santa-amalia-aceite-de-oliva-virgen-extra, aceites-siruela, mundioliva, sol-de-barros, bio-alandre, cooperativa-la-siberia-extremena, alguijuela, almazara-de-villafranca-s-l, almazara-ducoy-olive-oil
 
-### BAD-05 · Aceite / Bodega — ⏳
+### BAD-05 · Aceite / Bodega — ✅
 almazara-molino-de-zafra, olivense, aceite-de-oliva-virgen-extra-telesforo-perez, aceites-tome, bodega-cooperativa-soledad-aceuchal, palacio-quemado, encina-blanca-de-alburquerque, bodega-vinicola-las-minitas, bodegas-lopez-morenas, bodegas-marcelino-diaz, bodegas-martinez-paiva, bodegas-oran-y-occidente, bodegas-pena-del-valle, bodegas-periane-s-l, bodegas-romale
 
 ### BAD-06 · Bodega — ⏳
@@ -299,3 +299,15 @@ abierto. Sin tablas de estado derivado.
   cruzada y no lo es: `bioalandre.com` está muerto y `crolivareros.com` es su
   propia tienda. `almazara-de-villafranca-s-l` llegaba sin teléfono, sin web y
   con la dirección reducida al municipio; se rescató del registro de Infaoliva.
+- **BAD-05** (2026-07-22): 15 filas, sin purgas ni fusiones. **10 `verificado`,
+  5 `parcial`, 0 pendientes**; 9 `Venta online=sí` con canal. Cierra el bloque
+  de aceite (BAD-01..05, 75 filas) y abre el de bodegas.
+  `encina-blanca-de-alburquerque` y `bodegas-lopez-morenas` entraban sin web y
+  ambas tienen sitio propio vivo. Tres dominios muertos vaciados
+  (`olivense.com`, `penadelvalle.es`, `madiaz.com`). **Aparecen los primeros
+  casos límite de granel**: `bodegas-periane-s-l` (doce millones de litros a
+  granel, pero inscrita en la D.O.) y `bodega-vinicola-las-minitas` (S.A.T. de
+  1.250 ha sin marca embotellada); ambas quedan en `parcial` como candidatas a
+  purga B2B, sin cerrar porque sus webs devuelven 500 y 403 y un bloqueo técnico
+  no es prueba. Se mantiene el geo-warning de `encina-blanca`: la bodega está en
+  el km 85 de la EX-324 y el término de Alburquerque es enorme.
