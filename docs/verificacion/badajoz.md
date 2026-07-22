@@ -184,7 +184,7 @@ almazara-molino-de-zafra, olivense, aceite-de-oliva-virgen-extra-telesforo-perez
 ### BAD-06 · Bodega — ✅
 bodegas-san-antonio-s-a-t, bodegas-sani-primavera-s-l, bodegas-sat-satiba, bodegas-ventura-de-vega-s-l, bodegas-via-de-la-plata, bodegas-vina-extremena, leneus, vina-oliva, viticultores-de-barros, coloma-vinedos-y-bodegas, bodega-otero-vaquera-vinos-bureo, cooperativa-del-campo-san-jose-calamonte, bodega-el-coto-de-galan-s-a, delauvin, bodega-domblasco
 
-### BAD-07 · Bodega — ⏳
+### BAD-07 · Bodega — ✅
 bodegas-bujillo, bodegas-regajo, bodegas-repite, bodegas-girol-pareja, bodegas-rey-de-los-reyes-sl, bodegas-hijos-de-francisco-escaso, cosecha-extremena, bodegas-garcia-rebollo, bodegas-s-a-t-el-majuelo, hermanos-garcia-triguero-vino-401, bodegas-castelar, bodegas-cortes, bodegas-hermanos-zapata, cooperativa-virgen-de-la-estrella, bodega-valdealto
 
 ### BAD-08 · Bodega — ⏳
@@ -323,3 +323,13 @@ abierto. Sin tablas de estado derivado.
   se corrige. `vina-oliva` es cooperativa de segundo grado y mueve granel, pero
   envasa con marca y tiene tienda al consumidor, así que no entra en el criterio
   de purga B2B.
+- **BAD-07** (2026-07-22): 15 filas → 14. **8 `verificado`, 6 `parcial`, 0
+  pendientes**; 7 `Venta online=sí` con canal y 1 `no`. 1 purga:
+  `bodegas-cortes`, que **lo dice su propia web** — dejó de elaborar vino y hoy
+  es distribuidor oficial de Heineken para la Campiña Sur.
+  `bodegas-rey-de-los-reyes-sl` traía la web como `wwwbodegasreydelosreyes.es`,
+  sin el punto tras el www; con el dominio bien escrito responde y tiene tienda.
+  Primera bajada de `Venta online`: `cooperativa-virgen-de-la-estrella` pasa de
+  `sí` a `no comprobado` porque su tienda está en modo mantenimiento (503), que
+  es incertidumbre y no negativa. Las 6 `parcial` son todas bodegas de Guareña,
+  Fuente del Maestre y Hornachos sin web propia.
