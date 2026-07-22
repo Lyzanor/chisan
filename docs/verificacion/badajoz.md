@@ -169,7 +169,7 @@ Leyenda: ⏳ pendiente · ✅ cerrado
 ### BAD-01 · Aceite — ✅
 ermita-del-ara, cooperativa-san-mauro, aceite-finca-la-jacoba, aceite-de-arbequina-victoriano, almazara-la-cana, oleicola-berlanguena, almagral-coop-olivarera-cabeza-del-buey, tentuoliva, cooperativa-al-kasera, aceite-de-oliva-olea-organic, el-lacara, casat-don-benito, cooperativa-olivarera-nuestra-senora-de-las-cruces, ntra-senora-de-las-cruces, vianoleo
 
-### BAD-02 · Aceite — ⏳
+### BAD-02 · Aceite — ✅
 almazara-de-fuente-de-cantos-s-l, aceites-obreo, coop-olivarera-ntra-sra-de-los-angeles, sociedad-cooperativa-de-colonos-de-gevora, castuo-cooperativa-cooperativa-de-aceite-y-vino, el-turunuelo-aove, naturvie, retamar-aceite-con-alma, aceite-de-oliva-jose-manuel-izquierdo-tena, ntra-senora-de-consolacion, cooperativa-de-hornachos, valdelaseras, cooperativa-santa-quiteria, cooperativa-canchalosa, agrollerena-y-comarca
 
 ### BAD-03 · Aceite — ⏳
@@ -271,3 +271,14 @@ abierto. Sin tablas de estado derivado.
   publicados. Abiertas: `ermita-del-ara` (web tras reto Anubis, tienda propia sin
   comprobar), `almazara-la-cana` y `aceite-de-oliva-olea-organic` (sin rastro
   digital propio; candidatas a purga si la 2ª pasada no encuentra actividad).
+- **BAD-02** (2026-07-22): 15 filas → 14. **11 `verificado`, 3 `parcial`, 0
+  pendientes**; 11 `Venta online=sí` todas con canal. 1 purga:
+  `agrollerena-y-comarca` (CNAE 4621, comercio al por mayor de cereales y
+  aceitunas, sin almazara ni marca envasada — el caso B2B de Albacete).
+  Correcciones: municipio `Gévora` → Badajoz y `Helechal` → Benquerencia de la
+  Serena (ambas pedanías; el geo-skip baja de 12 a 10 filas); teléfono relleno
+  `+34924000000` de Castúo sustituido por el real; dirección de `naturvie`
+  movida de Oliva de Mérida a Guareña; `coopdehornachos.com` en NXDOMAIN →
+  vaciada; typo «La Codesera» → La Codosera (venía del propio catálogo de la
+  Diputación). El barrido de webs dio falso positivo en `almazaralosangeles.com`,
+  que responde 200 al reintentar.
