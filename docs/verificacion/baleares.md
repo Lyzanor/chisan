@@ -215,10 +215,10 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | ✅ 2026-07-21 | 11 verificado, 0 parcial; **6 recategorizaciones desde `Otros`**; 2 ventas online caídas (Bessó y Puig); **cierra Mallorca**. |
 | BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | ✅ 2026-07-21 | 9 verificado, 3 parcial; 7 ventas online resueltas; 1 merge por municipio (Subaida a Es Mercadal); 0 purgas. |
 | BAL-13 | Menorca · D.O.P. Mahón-Menorca B (Es Mercadal, Ferreries, Maó, Sant Lluís) | 11 | ✅ 2026-07-21 | 9 verificado, 2 parcial; 5 ventas online resueltas; 1 merge por municipio (Binibeca a Alaior); 0 purgas; se retira la última web de directorio de la provincia. |
-| BAL-14 | Menorca · resto (vino, aceite, cerveza, gin, miel, pastelería, hortícola) | 10 | Pendiente | 4 VO=sí; grafía `Mahón`; Torralbenc es hotel-bodega. |
-| BAL-15 | Eivissa | 13 | Pendiente | 2 slugs con parroquia; Sa Nostra Mel con web de directorio; 2 VO=sí. |
-| BAL-16 | Formentera | 5 | Pendiente | Catálogo cerrado; 3 sin coordenadas, 2 sin web, Peix Sec VO=sí. |
-| BAL-17 | Cierre transversal | Todas | Pendiente | 0 pendientes, evidencia, venta, geo, dedup, imágenes y `verify:data`. |
+| BAL-14 | Menorca · resto (vino, aceite, cerveza, gin, miel, pastelería, hortícola) | 10 | ✅ 2026-07-21 | 9 verificado; 6 ventas online resueltas; 1 purga (`Mel de Menorca`, inventada); 4 dominios sustituidos; cierra Menorca. |
+| BAL-15 | Eivissa | 13 | ✅ 2026-07-21 | 8 verificado, 5 parcial; 2 merges por municipio (Salinas a Sant Josep, Can Caus a Santa Eulària); 1 dominio repurposed retirado (Ibosim); se retira la última web de directorio. |
+| BAL-16 | Formentera | 5 | ✅ 2026-07-21 | 3 verificado, 2 parcial; Peix Sec resuelto como `email|telefono`; las 3 coordenadas ausentes completadas. |
+| BAL-17 | Cierre transversal | Todas | ✅ 2026-07-21 | 0 pendientes, 0 estrato A, evidencia 156/156, geo-provenance regenerado y `illes-balears/baleares` en `coverage.json`. |
 
 ### BAL-01 — D.O. Binissalem, Binissalem y Consell
 
@@ -603,6 +603,106 @@ mayoritariamente redactado a mano.
   —Es Tudons y Algendaret Nou— no están en la D.O.P. porque trabajan **vaca
   vermella menorquina en ecológico**, al margen de la denominación: la ausencia
   del registro no es un demérito, es una pista sobre qué elaboran.
+
+### BAL-14, BAL-15 y BAL-16 — resto de Menorca, Eivissa y Formentera
+
+Los tres últimos lotes de catálogo: **20 `verificado`, 7 `parcial`, 1 purga**.
+
+- **Segunda y última fila inventada de la provincia.** «Mel de Menorca ·
+  Apicultura Menorquina» no existe: dominio sin DNS derivado del nombre,
+  teléfono `629334455` y —el detalle que la delata— **la dirección copiada de
+  Lluriach**, «Camí de Tramuntana s/n», que está en la misma lista de Es
+  Mercadal. Los apicultores reales de allí son Mel i Reines.
+- **Tercer dominio que hoy sirve a otra empresa.** `cervezaibosim.com` redirige
+  a `kokura.design`, un estudio de diseño. Con `cooperativasoller.com` (Brico
+  Balears) y `biogranjalareal.com` (apps de apuestas) van tres. Ibosim sigue
+  activa: es la primera microcervecera de Eivissa.
+- **Undécimo y duodécimo municipios equivocados.** Salinas de Ibiza decía
+  «Ibiza» con la dirección diciendo ya «07817 Sant Josep» —la fila se
+  contradecía a sí misma, como Terracor—, y Can Caus estaba en «Santa Gertrudis
+  de Fruitera», que es **parroquia de Santa Eulària des Riu**: era la única fila
+  de la provincia que se saltaba el geo-check por completo.
+- **Se retira la segunda y última web de directorio.** Sa Nostra Mel apuntaba a
+  `ibizaproduce.org`, directorio de la fundación IbizaPreservation que ni
+  siquiera tiene ficha con ese nombre.
+- **Peix Sec estrena canal.** No tiene carrito, pero su web declara que el
+  pedido se hace por teléfono o correo: es venta remota vigente, así que queda
+  `sí` con canal `email|telefono`, el único caso de la provincia que no es
+  `ecommerce`.
+
+## Cierre transversal: BAL-17
+
+La pasada queda cerrada el 2026-07-21. Comprobaciones finales:
+
+| Criterio | Resultado |
+|---|---|
+| `pendiente` | **0** |
+| Estrato A (volcado sintético) | **0** de 94 |
+| Estrato B (verificado por directorio) | **0** de 21 |
+| Filas sin `lat`/`lon` | **0** de 13 iniciales |
+| Filas que se saltan el geo-check | **0** |
+| Grafías de municipio sin unificar | **0** |
+| Webs de directorio | **0** de 2 |
+| Duplicados de nombre+municipio | **0** |
+| Teléfonos o dominios repetidos | **0** |
+| `Venta online=sí` sin canal | **0** de 58 |
+| Dependencias de canal rotas | **0** |
+| Evidencia: filas activas ↔ `keep` | **156 ↔ 156**, 0 huérfanos |
+| `data/evidence/coverage.json` | incluye `illes-balears/baleares` |
+| `verify:data` · `check:images` | verde, 0 warnings |
+
+**Balance:** de **168 filas iniciales quedan 156** — 126 `verificado` y 30
+`parcial`. Salieron **9 por purga** (6 `nonexistent`, 3 `not-producer`) y 3 por
+fusión de pares duplicados; los **17 `merge`** restantes son correcciones de
+slug por municipio o nombre, que no restan filas. `Venta online` pasa de 20 `sí`
+sin canal a **58 `sí` con canal**, tras auditar una a una las heredadas: 6 se
+cayeron por no tener venta remota real.
+
+**Doce municipios equivocados en 168 filas** y ninguno lo detectaba una puerta.
+`geo-provenance.json` declara ahora **75 filas con coordenadas de centroide**:
+es el precio honesto de haber retirado 94 coordenadas fabricadas que sí pasaban
+el geo-check.
+
+### Residuales para una segunda pasada
+
+No son deuda de esta pasada; son lo que queda por encima del criterio de cierre.
+
+1. **76 filas sin imagen** (de 156). No se hizo enriquecimiento masivo, por la
+   política de `docs/IMAGES.md` y el historial de basura del scorer.
+2. **30 `parcial`**, casi todas por la misma causa: productores reales y activos
+   **sin web propia viva**, con evidencia en registros sectoriales y prensa.
+   Buena parte son forns y queserías pequeñas que solo tienen redes sociales.
+3. **27 filas sin `web`**, coherente con lo anterior.
+4. **Dos filas deliberadamente escuetas**: Ca Na Teresa (Palma) y Mel de
+   Formentera. Existen, pero ninguna fuente fiable confirma calle ni teléfono, y
+   se prefirió el campo vacío. Se resuelven sobre el terreno.
+5. **Salinas de Ibiza**: falta aclarar la identidad societaria de la explotación
+   (la comercializa Salinera Española).
+6. **Biogranja La Real**: revisar alcance como productor —mezcla huerto propio,
+   huertos de alquiler y tienda bio.
+7. `docs/candidates/baleares.md` guarda **Gossalba, Procam, Bon Gust** y los
+   demás elaboradores de la I.G.P. Sobrasada sin fila, hallados al purgar. **No
+   se integraron**: sustituir una identidad por otra habría sido peor que la
+   purga.
+
+### Lo que esta provincia enseña
+
+1. **Un CSV puede pasar todas las puertas y ser un volcado.** Contrato OK, 0
+   warnings de calidad y geo limpio, con 94 filas de datos generados dentro.
+   Las métricas baratas fallan cuando el volcado está **interpolado**, no
+   copiado.
+2. **Tres firmas identifican una fila fabricada sin salir del fichero**: dominio
+   derivado del nombre (80 % del estrato A), teléfono de dígitos correlativos y
+   dirección que repite la marca. Cuidado con los falsos positivos: `971188001`
+   y `665555965` son números reales que la heurística marca.
+3. **Un dominio muerto no dice nada del productor.** En panadería, 10 de 11
+   dominios falsos y cero purgas.
+4. **Antes de purgar, buscar fuera de la web propia.** Son Mut Nou y la
+   dirección de Sa Cabreta casi se pierden por leer una sola fuente.
+5. **Los registros sectoriales son la mejor herramienta de la pasada** —D.O.P.
+   Mahón-Menorca, Oli de Mallorca, I.G.P. Sobrasada, venta directa del Govern—
+   pero **no son infalibles**: la D.O.P. inscribe Binibeca en Mahón cuando la
+   quesería está en Alaior.
 
 ### Membresía exacta por lote
 
