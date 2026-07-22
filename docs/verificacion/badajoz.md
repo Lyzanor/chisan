@@ -181,7 +181,7 @@ aceites-orellana, aceites-del-pozo, almazara-molero-maza, marquesado-de-obando, 
 ### BAD-05 · Aceite / Bodega — ✅
 almazara-molino-de-zafra, olivense, aceite-de-oliva-virgen-extra-telesforo-perez, aceites-tome, bodega-cooperativa-soledad-aceuchal, palacio-quemado, encina-blanca-de-alburquerque, bodega-vinicola-las-minitas, bodegas-lopez-morenas, bodegas-marcelino-diaz, bodegas-martinez-paiva, bodegas-oran-y-occidente, bodegas-pena-del-valle, bodegas-periane-s-l, bodegas-romale
 
-### BAD-06 · Bodega — ⏳
+### BAD-06 · Bodega — ✅
 bodegas-san-antonio-s-a-t, bodegas-sani-primavera-s-l, bodegas-sat-satiba, bodegas-ventura-de-vega-s-l, bodegas-via-de-la-plata, bodegas-vina-extremena, leneus, vina-oliva, viticultores-de-barros, coloma-vinedos-y-bodegas, bodega-otero-vaquera-vinos-bureo, cooperativa-del-campo-san-jose-calamonte, bodega-el-coto-de-galan-s-a, delauvin, bodega-domblasco
 
 ### BAD-07 · Bodega — ⏳
@@ -311,3 +311,15 @@ abierto. Sin tablas de estado derivado.
   purga B2B, sin cerrar porque sus webs devuelven 500 y 403 y un bloqueo técnico
   no es prueba. Se mantiene el geo-warning de `encina-blanca`: la bodega está en
   el km 85 de la EX-324 y el término de Alburquerque es enorme.
+- **BAD-06** (2026-07-22): 15 filas → 14. **10 `verificado`, 4 `parcial`, 0
+  pendientes**; 9 `Venta online=sí` con canal y 1 `no`. 1 purga:
+  `bodega-el-coto-de-galan-s-a`, por triple motivo — sociedad **en liquidación**,
+  no es bodega de vino sino jamonera (la fila estaba además catalogada como
+  Bodega) y `elcotodegalan.es` está **secuestrado** por un portal indonesio de
+  casino. Segundo dominio secuestrado de la provincia. `bodegas-vina-extremena`
+  entraba sin web: `vinexsa.com` murió y el sitio vivo es
+  `bodegassanivinexsa.com`. `coloma-vinedos-y-bodegas` pasa de Alvarado (poblado
+  de colonización) a Badajoz; el aviso geo de 15,7 km que deja es correcto y no
+  se corrige. `vina-oliva` es cooperativa de segundo grado y mueve granel, pero
+  envasa con marca y tiene tienda al consumidor, así que no entra en el criterio
+  de purga B2B.
