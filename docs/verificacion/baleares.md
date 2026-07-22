@@ -213,8 +213,8 @@ recategoriza: los slugs están congelados debajo. BAL-17 es el cierre transversa
 | BAL-09 | Fruta y verdura · Mallorca | 12 | ✅ 2026-07-21 | 8 verificado, 1 parcial; 1 venta online resuelta; 1 purga (Es Merca, mayorista) y **4 merges**: los pares Son Jover y Sa Teulera, más Terracor a Petra y Agromart a Porreres. |
 | BAL-10 | Pan y pastelería · I.G.P. Ensaimada | 13 | ✅ 2026-07-21 | 7 verificado, 6 parcial; 4 ventas online resueltas; 0 purgas; **10 de 11 dominios del volcado eran falsos**; 1 merge por errata de nombre (Can Joan de s'Aigo). |
 | BAL-11 | Licores, sal, bebidas, cerveza y frutos secos · Mallorca | 11 | ✅ 2026-07-21 | 11 verificado, 0 parcial; **6 recategorizaciones desde `Otros`**; 2 ventas online caídas (Bessó y Puig); **cierra Mallorca**. |
-| BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | Pendiente | Coinga es industrial; Binigafull sin web; Cavalleria Nova VO=sí y parcial. |
-| BAL-13 | Menorca · D.O.P. Mahón-Menorca B (Es Mercadal, Ferreries, Maó, Sant Lluís) | 11 | Pendiente | Hort de Sant Patrici con web de directorio; Algendaret sin web. |
+| BAL-12 | Menorca · D.O.P. Mahón-Menorca A (Alaior y Ciutadella) | 12 | ✅ 2026-07-21 | 9 verificado, 3 parcial; 7 ventas online resueltas; 1 merge por municipio (Subaida a Es Mercadal); 0 purgas. |
+| BAL-13 | Menorca · D.O.P. Mahón-Menorca B (Es Mercadal, Ferreries, Maó, Sant Lluís) | 11 | ✅ 2026-07-21 | 9 verificado, 2 parcial; 5 ventas online resueltas; 1 merge por municipio (Binibeca a Alaior); 0 purgas; se retira la última web de directorio de la provincia. |
 | BAL-14 | Menorca · resto (vino, aceite, cerveza, gin, miel, pastelería, hortícola) | 10 | Pendiente | 4 VO=sí; grafía `Mahón`; Torralbenc es hotel-bodega. |
 | BAL-15 | Eivissa | 13 | Pendiente | 2 slugs con parroquia; Sa Nostra Mel con web de directorio; 2 VO=sí. |
 | BAL-16 | Formentera | 5 | Pendiente | Catálogo cerrado; 3 sin coordenadas, 2 sin web, Peix Sec VO=sí. |
@@ -567,6 +567,42 @@ Lo que la isla deja aprendido para Menorca, Eivissa y Formentera:
    de 11 dominios eran falsos y no hubo una sola purga.
 4. **Antes de purgar, buscar fuera de la web propia.** Son Mut Nou y la dirección
    de Sa Cabreta estuvieron a punto de perderse por leer solo una fuente.
+
+### BAL-12 y BAL-13 — D.O.P. Queso Mahón-Menorca
+
+Las 23 filas de queso menorquín se cierran juntas: **18 `verificado`, 5 `parcial`
+y ninguna purga**. Es el bloque más sano de la provincia, y la razón es que
+**solo 8 de las 23 eran del estrato sintético**: el queso de Menorca llegó al CSV
+mayoritariamente redactado a mano.
+
+- **El registro del consejo regulador vale por diez búsquedas.**
+  `quesomahonmenorca.com/ca/empreses/` publica las 41 queserías con municipio y
+  con la distinción artesano/industrial. Con él se resolvieron de golpe la
+  pertenencia y el municipio de casi todo el bloque, y saltaron **dos municipios
+  equivocados**: Subaida figuraba en Alaior y está en **Es Mercadal**.
+- **Binibeca es el error de municipio más instructivo de la pasada.** La fila
+  decía Sant Lluís… porque Binibeca es el nombre del **núcleo turístico** de ese
+  término. Pero Binibeca es solo la **marca**, tomada de otra finca de la
+  familia: la quesería está en **Alcaidusset, término de Alaior**. El volcado
+  geolocalizó una marca por su topónimo. Aquí el registro de la D.O.P. tampoco
+  acierta —la inscribe en Mahón, seguramente por domicilio social— y manda la
+  fuente propia, que es la que describe la unidad productiva.
+- **Una fila no aparecía en el registro porque allí se llama de otra forma.**
+  Binigafull consta como **Formatges CM**; Binigafull es el nombre de la finca.
+  Antes de concluir que una quesería no está inscrita, buscarla por finca y por
+  razón comercial.
+- **Se retira la última web de directorio de la provincia.** Hort de Sant Patrici
+  apuntaba a una ficha de `gff.co.uk`. Su dominio institucional
+  `santpatrici.com` devuelve 526 de Cloudflare, así que la fila enlaza su tienda
+  `santpatricigourmet.com`, que sí responde.
+- **Cuatro teléfonos inventados más**, todos del estrato A y todos con el patrón
+  ya conocido: Son Piris (`650302010`, dígitos descendientes), Sant Joan Gran
+  (`629112233`), Tirant Nou (`680405060`) y Binibeca (`622334455`).
+- **Cinco `parcial` por la misma causa de siempre**: Son Piris, Binigafull,
+  Tirant Nou, Algendaret Nou y Es Tudons no tienen web propia viva. Dos de ellas
+  —Es Tudons y Algendaret Nou— no están en la D.O.P. porque trabajan **vaca
+  vermella menorquina en ecológico**, al margen de la denominación: la ausencia
+  del registro no es un demérito, es una pista sobre qué elaboran.
 
 ### Membresía exacta por lote
 
