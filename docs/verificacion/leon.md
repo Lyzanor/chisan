@@ -61,6 +61,11 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   comprobado`**. Evidencia: **42 registros** (37 `keep`, 3 `merge`, 2 `purge`).
   Las filas fuera del geo-check bajan de **63 a 55** y los avisos de
   data-quality de 80 a 67. Filas con `correo`: 100.
+- Tras LE-03 (2026-07-26): **238 filas**; **177 `pendiente`, 10 `parcial`, 51
+  `verificado`**. Venta online: **28 `sí` (28/28 con canal), 1 `no`, 209 `no
+  comprobado`**. Evidencia: **64 registros**. Las filas fuera del geo-check
+  bajan de **55 a 47** y los avisos de data-quality de 67 a 54. Filas con
+  `correo`: 110. **Ya no queda ningún `sí` sin canal.**
 
 ## Reglas y riesgos locales
 
@@ -129,8 +134,8 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-00 | Higiene, snapshot y partición | 240 | ✅ 2026-07-26 | 236 pendientes; 240 VO sin resolver; 73 filas fuera del geo-check |
 | LE-01 | Lácteos y quesos | 19 | ✅ 2026-07-26 | 16 verif, 1 parcial, 2 purgas; 10 municipios corregidos |
 | LE-02 | Bodega — Villafranca, Valtuille, Arganza, Corullón y Sancedo | 20 | ✅ 2026-07-26 | 16 verif, 4 parcial; 9 municipios corregidos, 2 slugs renombrados |
-| LE-03 | Bodega — DO Bierzo, Cacabelos, Carracedelo y Parandones | 18 | ⏳ | Parandones es pedanía |
-| LE-04 | Bodega — DO Bierzo, Ponferrada y bajo Bierzo | 15 | ⏳ | San Andrés de Montejos, Fuentesnuevas, Dehesas |
+| LE-03 | Bodega — Cacabelos, Camponaraya, Carracedelo y Toral de los Vados | 21 | ✅ 2026-07-26 | 19 verif, 2 parcial; 8 municipios corregidos por el cambio de nombre de 2010 |
+| LE-04 | Bodega — DO Bierzo, Ponferrada y bajo Bierzo | 14 | ⏳ | San Andrés de Montejos, Fuentesnuevas, Dehesas |
 | LE-05 | Bodega — DO Tierra de León, Valdevimbre y Villamañán | 10 | ⏳ | |
 | LE-06 | Bodega — los Oteros, Valencia de Don Juan y sur | 10 | ⏳ | |
 | LE-07 | Bodega — León capital y resto de la provincia | 9 | ⏳ | Armunia, Trobajo, Oteruelo, Villalmán |
@@ -298,3 +303,61 @@ Incidencias reutilizables:
 - **Una bodega de grupo con instalación e identidad propias se conserva.**
   Pittacum es de Terras Gauda desde 2022 pero mantiene bodega en Arganza, marca
   y gama propias.
+
+## LE-03 — Bodega: Cacabelos, Camponaraya, Carracedelo y Toral de los Vados
+
+Decisiones cerradas el 2026-07-26 sobre las 21 filas de la zona: **19
+verificadas y 2 parciales**, sin purgas.
+
+- `verificado` + ecommerce (9): Cuatro Pasos, Luna Beberide, Losada Vinos de
+  Finca, Ribas del Cúa, Vinos del Bierzo (Vinos Guerra), Bodega del Abad, Casar
+  de Burbia, Arturo García, Soto del Vicario y La Serrana.
+- `verificado`, venta no comprobada (8): Viñas del Bierzo (Gran Bierzo),
+  Verónica Ortega, Mengoba, Luzdivina Amigo, Silva Broco, Vinos de Arganza,
+  Álvarez de Toledo, Martínez Yebra y Bernardo Álvarez.
+- `parcial` (2): Valle Blanco y Hijos de Lisardo García.
+- `merge`: `vinos-de-arganza-toral-de-los-vados-capital` →
+  `vinos-de-arganza-toral-de-los-vados`.
+
+Incidencias reutilizables:
+
+- **Ocho filas estaban en un municipio que cambió de nombre en 2010.** El
+  municipio de **Villadecanes pasó a llamarse Toral de los Vados**, y el volcado
+  usó indistintamente el nombre viejo (Villadecanes ×2), tres de sus localidades
+  (Parandones ×4, Otero de Villadecanes) y una forma con basura del scrape
+  (`Toral De Los Vados (Capital)`). Todas son la misma entidad. Cuando una fila
+  no cuadra con `municipios.json`, merece comprobar si el municipio se
+  renombró, no solo si es pedanía.
+- **La web propia de una bodega puede seguir escribiendo el municipio viejo.**
+  Álvarez de Toledo pone «C/ Río Selmo, 8 - Villadecanes» con © 2026. No es un
+  error suyo: es que el nombre anterior sigue siendo el de la localidad.
+- **El dominio cruzado a otra provincia era real y no un error.** Soto del
+  Vicario traía `tienda.pagodelvicario.com` y un teléfono 926 de Ciudad Real:
+  es la bodega del grupo manchego Pago del Vicario en el Bierzo, con finca de
+  35 hectáreas, enóloga propia desde 2006 y hotel en San Clemente. Segundo caso
+  de la provincia (tras Pittacum) en que un grupo de fuera mantiene una unidad
+  con identidad propia. Y San Clemente es localidad de Cacabelos desde los
+  años ochenta.
+- **Un 500 puede ser del cliente, no del servidor.** `bodegasarturo.com`
+  devuelve 500 a la herramienta de fetch y carga perfectamente en navegador,
+  con tienda, carrito y precios. Antes de dar un dominio por roto conviene
+  probarlo por otra vía.
+- **Un dominio puede estar vivo y no contener nada.** `bodegasvalleblanco.com`
+  sirve una página de 64 bytes cuyo cuerpo entero es «-», mientras los
+  buscadores conservan indexado el sitio anterior con su título. Responde 200 y
+  no acredita nada: se vació `web`.
+- **La bodega no siempre está donde se cría el vino.** Luna Beberide elabora en
+  Cacabelos, cría en un caserón del siglo XVI de Villafranca y almacena en
+  Sorribas (Toral de los Vados); Bodegas Estefanía, en LE-02, era el caso
+  inverso. La fila sigue a la elaboración.
+- **Una «Tienda» sin precios no es un canal.** La de Martínez Yebra son fichas
+  con «Ver Ficha Técnica», «Solicitar Más Información» y «Realizar Pedido», sin
+  precio ni carrito: `no comprobado`. La de La Serrana, en cambio, sí lo es, y
+  vive en `/comprar-vino-del-bierzo/` porque `/tienda/` da 404.
+- **La cooperativa más grande de la DO traía el dominio muerto.** Vinos del
+  Bierzo S. Coop. (850 viticultores, 40 % de la denominación) llegaba con
+  `vinosdelbierzo.com`, que rechaza la conexión; su sitio vivo es
+  `vinosguerra.com` y su tienda `tiendavinosdelbierzo.com`. Es cooperativa de
+  primer grado que vende con marca propia (Guerra), así que entra. En cambio
+  **Viñas del Bierzo ya no es cooperativa**: su aviso legal la identifica como
+  S.L., aunque siga desde 1963 con la marca Gran Bierzo.
