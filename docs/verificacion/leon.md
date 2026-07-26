@@ -107,6 +107,13 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   data-quality: **25**. **Bloque de fruta y verdura cerrado**, con 4 pendientes
   documentadas. Quedan miel (19), dulces (15), legumbres (11), pan (10) y 21
   filas menores.
+- Tras LE-11, LE-12 y LE-13 (2026-07-26): **216 filas** (−5 purgas); **35
+  `pendiente`, 33 `parcial`, 148 `verificado`**. Venta online: **101 `sí`
+  (101/101 con canal), 1 `no`, 114 `no comprobado`**. Evidencia: **225
+  registros** (190 `keep`, 14 `merge`, 21 `purge`). Filas fuera del geo-check:
+  **7**; avisos de data-quality: **14**. **Miel, dulces y chocolate, y legumbres
+  y huevos cerrados.** Queda pan y pastelería (10), cerveza (6) y 15 filas
+  menores, más los residuales documentados.
 
 ## Reglas y riesgos locales
 
@@ -185,11 +192,12 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-12 | Dulces y repostería — Mantecadas de Astorga IGP | 8 | ⏳ | Una fila es la propia IGP |
 | LE-13 | Dulces y repostería y chocolate — León capital | 11 | ⏳ | Confiterías: obrador propio o despacho |
 | LE-10 | Fruta y verdura | 21 | ✅ 2026-07-26 | 5 verif, 4 parcial, 4 pend, 8 purgas; el bloque de purga que anunciaba LE-00 |
-| LE-15 | Miel — Montaña de León y Bierzo | 19 | ⏳ | |
-| LE-16 | Legumbres y huevos | 15 | ⏳ | Alubia de La Bañeza IGP; huevos de escala |
-| LE-17 | Pan y pastelería | 10 | ⏳ | |
-| LE-18 | Cerveza, licores, sidra y despensa | 13 | ⏳ | Cajón heterogéneo, revisar categoría |
-| LE-19 | Cierre: reauditoría, reconciliación y cobertura | — | ⏳ | Geo-check a cero y cobertura de evidencia |
+| LE-11 | Miel — Montaña de León y Bierzo | 19 | ✅ 2026-07-26 | 13 verif, 3 parcial, 2 pend, 1 purga; 9 municipios corregidos |
+| LE-12 | Dulces, repostería y chocolate | 19 | ✅ 2026-07-26 | 11 verif, 4 parcial, 2 pend, 2 purgas; el consejo de la IGP era fila |
+| LE-13 | Legumbres y huevos | 15 | ✅ 2026-07-26 | 6 verif, 4 parcial, 3 pend, 2 purgas; envasadora ≠ productor |
+| LE-14 | Pan y pastelería | 10 | ⏳ | |
+| LE-15 | Cerveza, licores, sidra y despensa | 15 | ⏳ | Cajón heterogéneo, revisar categoría |
+| LE-16 | Cierre: reauditoría, reconciliación y cobertura | — | ⏳ | Geo-check a cero y cobertura de evidencia |
 
 ## LE-00 — Higiene, snapshot y partición
 
@@ -719,3 +727,118 @@ Incidencias reutilizables:
   pero en ninguna sección afirma cultivar. Identidad y municipio sí, actividad
   productiva no: `parcial`, y la venta `no comprobado` porque si es reventa no
   sería canal del productor.
+
+## LE-11 — Miel
+
+Decisiones cerradas el 2026-07-26 sobre las 19 filas: **13 verificadas, 3
+parciales, 2 pendientes documentadas y 1 purga**.
+
+- `verificado` con canal (9): Teleno Miel, La Cazurra, Cuna del Cea, El Ramayal,
+  La Priorina, Los Zánganos, Miel Panera, Ribera del Torío y El Robledal (este
+  con escaparate en un marketplace).
+- `verificado`, venta no comprobada (4): Labejazul, Miel Milor, Miel de Mieles y
+  Miel de Montes.
+- `parcial` (3): De Miel Amores, Miel Montañas de León y Miel de León.
+- `pendiente` documentada (2): El Faedo y Miel Traslapeña.
+- `purge:not-producer` (1): Miel Nature.
+- `merge`: `miel-ribera-del-torio-villaquilambre` → `…-matallana-de-torio`.
+
+Incidencias reutilizables:
+
+- **Es el bloque con más pedanías de toda la provincia: nueve de diecinueve.**
+  Filiel (Lucillo), Llanos de Alba (La Robla), Morgovejo (Valderrueda), Naredo de
+  Fenar (Matallana de Torío), Onamio (Molinaseca), Orzonaga (Matallana de Torío),
+  Pobladura de Fontecha (Valdevimbre), Santa Cruz de Montes y Santa Marina de
+  Torre (Torre del Bierzo). Lógico: los colmenares están en aldeas de montaña.
+  **Naredo de Fenar añade un caso nuevo**: pasó de La Robla a Matallana de Torío
+  en 1945, otro cambio de término que el volcado ignora.
+- **Y la única fila de la capital era una tienda.** Miel Nature, en la Avenida
+  Alcalde Miguel Castaño, tiene actividad registrada de comercio al por menor.
+  Tercera vez que se repite el patrón (delicatessen en LE-07, fruterías en LE-10):
+  **en León capital el rótulo del producto no acredita producción**.
+- **Una fila estaba en el municipio equivocado según su propia web.** Miel
+  Ribera del Torío figuraba en Villaquilambre y publica C/ El Sol, 31, Robles de
+  la Valcueva, que es de Matallana de Torío.
+- **Una contradicción de origen sin cerrar**: Miel de León está domiciliada en
+  Pobladura de Fontecha (Valdevimbre, Tierra de León) y su web se titula «Miel
+  ecológica del Bierzo» y firma «hecha a mano en El Bierzo», sin dirección
+  postal. Queda `parcial` con la venta sí demostrada.
+- **Tres apicultores sin web viven en el marketplace.** El Robledal, Montañas de
+  León y De Miel Amores se venden a través de Productos Leoneses o de tiendas de
+  producto típico. Solo el primero tiene escaparate propio identificable, que sí
+  cuenta como canal; los otros dos son reventa de terceros.
+
+## LE-12 — Dulces, repostería y chocolate
+
+Decisiones cerradas el 2026-07-26 sobre las 19 filas: **11 verificadas, 4
+parciales, 2 pendientes documentadas y 2 purgas**.
+
+- `purge:not-producer` (1): IGP Mantecadas de Astorga.
+- `merge` (2): la segunda fila «Alonso» y el slug sin municipio de Santocildes.
+- `parcial` (4): Milagritos, Los Maragatos, Obrador San José y Santa Cecilia.
+- `pendiente` documentada (2): Chocolates Ner y Obrador Confiterías León.
+
+Incidencias reutilizables:
+
+- **Una fila era el consejo regulador de la IGP.** «IGP Mantecadas de Astorga»
+  es el propio consejo, en C/ Padres Redentoristas, 26, y su web lista a sus
+  cinco empresas inscritas —Velasco, Dulma, Los Maragatos, El Arriero Maragato y
+  Hojaldres y Mantecadas Alonso—: **las cinco ya eran filas del CSV**, así que la
+  fila del consejo era además una duplicación conceptual del bloque. El registro
+  sirvió a la vez de purga y de lista de comprobación.
+- **El mismo registro delató un duplicado.** El volcado tenía dos filas
+  «Alonso», una en el km 326 de Astorga sin teléfono ni web y otra en el km 331
+  de Pradorrey con web. Es la misma carretera, la web declara una única
+  instalación y el consejo inscribe una sola empresa: fusión.
+- **Dos dominios que no casaban con el nombre y no eran cruces.** `merles.es` es
+  la web de la Confitería La Flor y Nata porque el Merle es su producto estrella,
+  y `chocodulcecabezas.com` es la casa que está detrás de Mantecadas Los
+  Maragatos, con la misma dirección exacta. El segundo queda `parcial`: la marca
+  está inscrita en la IGP, pero la unidad concreta no se pudo separar.
+- **Un slug traía la palabra del rótulo en vez del municipio**:
+  `chocolates-santocildes-fabrica`. La prensa documenta su traslado de
+  Castrocontrigo al polígono de Onzonilla en 2018, que es donde la sitúa la fila.
+- **Cuatro confiterías con obrador y sin web** quedan en `parcial`: en este
+  sector los directorios sectoriales (Páginas Amarillas, guías de pastelerías)
+  describen el obrador con precisión, pero son fuentes de apoyo.
+
+## LE-13 — Legumbres y huevos
+
+Decisiones cerradas el 2026-07-26 sobre las 15 filas: **6 verificadas, 4
+parciales, 3 pendientes documentadas y 2 purgas**.
+
+- `purge:out-of-scope` (1): Huevos Guillén – Cantos Blancos Norte.
+- `purge:not-producer` (1): Legumbres El Leonés.
+- `parcial` (4): El Maragato, Arconada, Luengo y El Peregrino.
+- `pendiente` documentada (3): Granja Avícola Pascual, Matadeón de los Oteros
+  Legumbre y Cereales y Legumbres El Canal.
+
+Incidencias reutilizables:
+
+- **La pregunta del bloque es si envasar es producir.** La legumbre de La Bañeza
+  y el Páramo se vende a través de envasadoras que compran a los agricultores de
+  la zona. El criterio aplicado: **cocer o cultivar sí, seleccionar y envasar no
+  basta**. Se quedan `verificado` Polifer (controla «desde la siembra»), Legumbres
+  Rosa (vende «directamente de nuestra finca»), La Asturiana y Penelas (cuecen
+  además de envasar); quedan `parcial` con la duda anotada Arconada —que declara
+  expresamente no cultivar—, El Maragato, Luengo y El Peregrino. **Es la decisión
+  de encaje más discutible de la pasada y merece revisión.**
+- **El Leonés no era ninguna de las dos cosas**: distribuidora del Grupo Codilex
+  con más de mil referencias para el canal profesional y sede en Torrelavega. Y
+  el correo que traía la fila era de otra empresa (`selectoscampomar.com`).
+- **La portada puede desmentir a la empresa y la página de empresa rehabilitarla.**
+  Huevos León solo dice en portada «selección, envasado, distribución y
+  comercialización», que apuntaba a purga; su página de empresa aclara que tiene
+  complejo integrado avícola propio y granjas de ponedoras en Malillos de los
+  Oteros desde 2017. Merece la pena leer más de una página antes de purgar.
+- **Una avícola nacional y una granja familiar en el mismo bloque.** Huevos
+  Guillén se define como «la empresa líder del sector de la avicultura de puesta
+  en España» y su teléfono es un 961 de Valencia: fuera. Granja Rualmar, de 1957
+  y dedicada solo al huevo campero, se queda —y además estaba en el municipio
+  equivocado: su web da Olleros de Alba (La Robla), no La Magdalena.
+- **La firma de LE-10 reaparece intacta en dos filas**: «Matadeon De Los Oteros
+  Legumbre» con dirección «LE-6602» y «Cereales y legumbres el canal» con
+  «Avenida del Canal, s/n», ambas sin teléfono ni web. Nombre genérico más
+  dirección de vía más cero contacto: es el artefacto del scrape.
+- **Una `direccion` eran literalmente unas coordenadas.** Legumbres El Peregrino
+  traía «42.180036, -5.817025» en el campo de dirección.
