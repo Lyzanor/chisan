@@ -92,6 +92,14 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   comprobado`**. Evidencia: **118 registros** (101 `keep`, 10 `merge`, 7
   `purge`). Filas fuera del geo-check: **35**; avisos de data-quality: **32**.
   Quedan 31 filas de charcutería.
+- Tras LE-08 y LE-09 (2026-07-26): **229 filas** (−2 purgas); **98
+  `pendiente`, 18 `parcial`, 113 `verificado`**. Venta online: **77 `sí`
+  (77/77 con canal), 1 `no`, 151 `no comprobado`**. Evidencia: **149
+  registros** (129 `keep`, 11 `merge`, 9 `purge`). Filas fuera del geo-check:
+  **26**; avisos de data-quality: **31**. **Bloque de charcutería cerrado:
+  queda 1 pendiente documentada** de las 41 filas revisadas. Lo que falta es
+  fruta y verdura (21), miel (19), dulces (15), legumbres (11), pan (10) y 21
+  filas menores.
 
 ## Reglas y riesgos locales
 
@@ -165,8 +173,8 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-05 | Bodega — D.O. León: Valdevimbre, Villamañán y entorno de la capital | 13 | ✅ 2026-07-26 | 8 verif, 3 parcial, 1 purga, 1 fusión; 3 certificados caducados |
 | LE-06 | Bodega — los Oteros, Valderas y sur; cierra el bloque | 17 | ✅ 2026-07-26 | 13 verif, 2 parcial, 2 purgas; un concesionario de coches y una tienda de marca |
 | LE-07 | Charcutería — León capital y el duplicado de Geras | 10 | ✅ 2026-07-26 | 5 verif, 1 parcial, 1 pend, 2 purgas, 3 fusiones; 3 filas eran el despacho, no el obrador |
-| LE-08 | Charcutería — IGP Cecina de León y Astorga | ~12 | ⏳ | Pradorrey y San Román de la Vega |
-| LE-09 | Charcutería — resto de la provincia | ~19 | ⏳ | Botillo del Bierzo; despachos sin obrador |
+| LE-08 | Charcutería — Astorga, Maragatería y el Órbigo | 13 | ✅ 2026-07-26 | 13 verif; 5 municipios corregidos, Castanoble resuelto |
+| LE-09 | Charcutería — resto de la provincia; cierra el bloque | 17 | ✅ 2026-07-26 | 14 verif, 1 parcial, 2 purgas (matadero y grupo avícola) |
 | LE-12 | Dulces y repostería — Mantecadas de Astorga IGP | 8 | ⏳ | Una fila es la propia IGP |
 | LE-13 | Dulces y repostería y chocolate — León capital | 11 | ⏳ | Confiterías: obrador propio o despacho |
 | LE-14 | Fruta y verdura | 21 | ⏳ | Mayoristas, centrales B2B y fruterías: purga alta |
@@ -587,3 +595,60 @@ Incidencias reutilizables:
   elaboran.** Bueyes de León declara controlar «desde la cría hasta el
   envasado» en dehesas leonesas, y Panizo elabora y despacha en dos puntos de
   la capital, uno de ellos el mercado del Conde Luna.
+
+## LE-08 y LE-09 — Charcutería: el resto de la provincia (cierra el bloque)
+
+Decisiones cerradas el 2026-07-26 sobre las 30 filas restantes: **27
+verificadas, 1 parcial y 2 purgas**. **El bloque de charcutería queda cerrado
+con una sola pendiente documentada** de 41 filas revisadas.
+
+- `purge:out-of-scope` (2): Grupo Oblanca y Embutidos Carracedo Llamas.
+- `parcial` (1): Cecinas Leitariegos.
+- `merge`: `embutidos-pajariel-ponferrada` → `embutidos-pajariel-bembibre`.
+- Las otras 27 quedan `verificado`; **19 con canal demostrado**.
+
+Incidencias reutilizables:
+
+- **La categoría del volcado escondía dos exclusiones de manual.** Grupo
+  Oblanca (110 M€, 500 empleados, 1.500 referencias) es un grupo avícola y
+  distribuidor de congelado, marisco, verdura y bollería a hostelería, con la
+  charcutería como una marca más; y Embutidos Carracedo Llamas, pese al nombre,
+  tiene por actividad registrada el comercio mayorista de carne y el
+  **sacrificio de vacuno y equino**: es el adjudicatario del matadero municipal
+  de León. Ninguno de los dos se descubre por la web —Oblanca la tiene
+  impecable—, sino por lo que declaran hacer.
+- **Un dominio que apunta a otra provincia puede ser solo la sede social.**
+  Castanoble publica un domicilio en el Passeig Torras i Bages de Barcelona,
+  pero su página de contacto distingue administración (Barcelona) de **centro de
+  producción (Avenida de Astorga, 13, Riego de la Vega)**, con 5.000 m² de
+  saladero, secadero natural y bodega de afinado. Nació en 1973 como jamonería
+  barcelonesa y se integró verticalmente con este secadero leonés. Tercer caso
+  de la provincia —con Pittacum y Soto del Vicario— en que la matriz de fuera no
+  descalifica la fila.
+- **La escala vuelve a decidirse por identidad, no por tamaño.** Se conservan
+  Embutidos Rodríguez (60.000 m², más de setenta países, pero familiar de La
+  Bañeza desde 1910) y Pajariel (15.000 m², BRC e IFS, desde 1945), y se purga
+  el grupo que ya no tiene producto propio identificable.
+- **Nueve municipios más corregidos**, todos por el mismo mecanismo: Celada y
+  San Román de la Vega son de San Justo de la Vega, Pradorrey de Brazuelo,
+  Priaranza de la Valduerna de Luyego, Villoria de Órbigo de Villarejo, Azadinos
+  de Sariegos, Ocero de Sancedo, San Román de Bembibre de Bembibre y Villaobispo
+  de las Regueras de Villaquilambre. Más la tilde de Villadangos del Páramo.
+- **Dos filas estaban en la fábrica equivocada de la misma empresa.** Pajariel
+  tiene sede en el polígono del Bierzo Alto (Bembibre) y oficina en Ponferrada,
+  y el volcado se quedó con la oficina; Cecinas Ezequiel tiene dos fábricas y su
+  web publica la de Villamanín, no la del polígono de La Robla que traía la
+  fila. En Pajariel se traslada y se renombra; en Ezequiel se corrige solo el
+  municipio, porque las dos plantas son suyas.
+- **Un claim dinámico que había que comprobar sí o sí.** La fábrica de Embutidos
+  Santa Cruz de Montes ardió en julio de 2023. Su web —viva solo por HTTP—
+  publica hoy la parcela Q11 del polígono del Bierzo Alto, y la prensa local
+  documenta la reconstrucción: sigue activa, así que `verificado` y no purga por
+  cierre.
+- **Una tienda de demostración con precios a cero también es canal si dice cómo
+  pedir.** Hijos de Francisco Miguel muestra todos los productos a «0,00 €» y
+  avisa en el pie: «Esta es una tienda de demostración - Para realizar pedidos
+  contacte con el Teléfono». Sin checkout, pero con canal publicado: `telefono`.
+- **Y una carnicería que sí se hizo obrador.** Hompanera nació en 1974 como
+  Carnicería Miguel y hoy es fábrica con tienda propia: el caso simétrico de los
+  despachos de la capital de LE-07.
