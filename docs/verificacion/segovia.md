@@ -57,6 +57,12 @@ existentes.
   comprobado`**; los `sí` sin canal bajan a 45. Evidencia: **32 registros**.
   **Bloque de bodegas cerrado: las 20 filas revisadas** (13 verificadas, 6
   parciales, 1 pendiente). Las filas fuera del geo-check bajan de 16 a 15.
+- Tras SG-04 a SG-07 (2026-07-26): **155 filas** (−10 purgas); **69
+  `pendiente`, 40 `parcial`, 46 `verificado`**. Venta online: **66 `sí`, 58
+  `no`, 31 `no comprobado`**; los `sí` sin canal bajan a 32. Evidencia: **79
+  registros**. **Bloque de charcutería cerrado: las 44 filas revisadas** (25
+  verificadas, 9 parciales, 10 purgas). Las filas fuera del geo-check bajan de
+  15 a 8 y solo queda un aviso de distancia.
 
 ## Reglas y riesgos locales
 
@@ -103,10 +109,10 @@ existentes.
 | SG-01 | Lácteos y quesos | 11 | ✅ 2026-07-26 | 8 verificadas, 3 parciales; Delicias Cuéllar trasladada a Vallelado |
 | SG-02 | Bodegas D.O. Rueda — Nieva, Santiuste, Nava | 10 | ✅ 2026-07-26 | 6 verificadas, 4 parciales; `martue.com` era matriz real, no cruce |
 | SG-03 | Bodegas D.O.P. Valtiendas, Ribera y resto | 10 | ✅ 2026-07-26 | 7 verificadas, 2 parciales, 1 pendiente; 6 dominios rescatados |
-| SG-04 | Charcutería — Chorizo de Cantimpalos IGP | 10 | ⏳ | razón social vs marca; duplicados por dirección |
-| SG-05 | Charcutería — cochinillo y salas de despiece | 10 | ⏳ | encaje de sala de despiece y matadero |
-| SG-06 | Charcutería — resto de la provincia | 12 | ⏳ | carnicerías sin elaboración |
-| SG-07 | Charcutería — Segovia capital | 12 | ⏳ | carnicerías de barrio: `purge:not-producer` |
+| SG-04 | Charcutería — IGP Chorizo de Cantimpalos | 11 | ✅ 2026-07-26 | 9 verificadas, 2 parciales; 3 municipios corregidos |
+| SG-05 | Charcutería — filas con dominio propio | 13 | ✅ 2026-07-26 | 8 verificadas, 1 parcial, 4 purgas |
+| SG-06 | Charcutería — resto de la provincia | 15 | ✅ 2026-07-26 | 7 verificadas, 6 parciales, 2 purgas |
+| SG-07 | Charcutería — carnicerías de despacho | 5 | ✅ 2026-07-26 | 1 verificada y trasladada, 4 purgas |
 | SG-08 | Pan y pastelería — Segovia capital | 13 | ⏳ | despachos y franquicias; Valdenebro duplicado |
 | SG-09 | Pan y pastelería — provincia | 12 | ⏳ | obrador vs despacho; Valdenebro `merge` |
 | SG-10 | Fruta y verdura — Cuéllar y Gomezserracín | 11 | ⏳ | centrales hortofrutícolas B2B |
@@ -233,3 +239,54 @@ Incidencias reutilizables:
   del bloque: fija municipio y web de nueve bodegas y sirvió para descartar
   Malacepa, que no está inscrita, no tiene rastro digital y consta en el
   registro mercantil con CNAE de cerveza.
+
+## SG-04 a SG-07 — Bloque de charcutería completo
+
+Decisiones cerradas el 2026-07-26 sobre las 44 filas de la categoría: **25
+verificadas, 9 parciales y 10 purgas**.
+
+- `purge:not-producer` (6): Omnívoro, Cárnicas Mallorcar, Carnicería Maribel,
+  Carnicería Mercedes Martín, Carnicería J. Encinas y Carnicería Álvaro.
+- `purge:out-of-scope` (4): Carnes de Riaza, Cárnicas Ceferino, Llorente Mañas
+  e Innoporc.
+- `merge` (3): Jambur, Hnos. María Moreno y Alimentación Sanz Vegas, los tres
+  por slug con municipio o texto equivocado.
+
+Incidencias reutilizables:
+
+- **«Sin web» en este volcado no es un dato.** Diecinueve filas de charcutería
+  llegaron con `web` vacía teniendo dominio propio vivo, y once de ellas
+  además sin teléfono. Trece de esos dominios tienen tienda con precios. El
+  volcado no buscó: buscar es el trabajo.
+- **Los registros son la fuente barata, pero van por detrás.** El registro de
+  operadores de la IGP Chorizo de Cantimpalos fijó municipio, teléfono y
+  encaje de media docena de filas y delató que Zamarras es la marca de Mariano
+  López e Hijos; pero sitúa aún a Mariano Pascual en Carbonero el Mayor cuando
+  su planta está en Tabanera la Luenga desde 1992. Registro contra web propia,
+  gana la web propia.
+- **Cuatro «municipios» del volcado eran pedanías o entidades locales
+  menores**: Pinillos de Polendos (de Escobar de Polendos), Hontoria (barrio
+  de Segovia), Cobos de Segovia (ELM de Sangarcía) y, en sentido contrario,
+  Jambur estaba en Cantimpalos y no en Escobar. Corregirlas devolvió siete
+  filas al geo-check.
+- **La línea de la purga está en quién transforma.** Se van los mataderos y
+  distribuidores que su propia web dirige a mayoristas y restaurantes (Carnes
+  de Riaza, 360.000 canales/año; Cárnicas Ceferino), el cebadero que vende al
+  mayorista (Llorente Mañas), la empresa de cría porcina que abastece a otras
+  empresas (Innoporc), las tiendas online que compran a terceros (Omnívoro,
+  Cárnicas Mallorcar, Maribel) y los despachos de carnicería. Se quedan los
+  que sacrifican **y** curan con marca propia, aunque críen fuera: La Prudencia
+  cría en Zafra pero mata y cura en Villacastín.
+- **Un despacho con obrador sí es fila.** Alimentación Sanz Vegas parecía una
+  tienda de alimentación de Segovia capital; es de Prádena, a cuarenta
+  kilómetros, y su propia web titula la sección «Tienda y Obrador».
+- **El slug puede arrastrar basura del scrape.** «Cochinillo de Segovia,
+  Hermanos María Moreno, visita tienda online» llevaba el reclamo comercial
+  incrustado en el nombre y en el slug.
+- **Comprobar un dominio con eñe requiere dejar que lo convierta el cliente.**
+  `embutidoscañas.es` es `xn--embutidoscaas-skb.es`; la codificación que
+  parecía correcta a ojo no existía y el dominio parecía muerto.
+- **Un 403 sistemático es bloqueo, no cierre** (Jesús Palomo, Eresma), igual
+  que un certificado caducado (Cárnicas Pedro Gómez) o un `altname` del
+  hosting. **NXDOMAIN sí es muerte**, aunque el buscador siga indexando la
+  tienda (Domingo de Pedro) o el consejo regulador siga publicando el dominio.
