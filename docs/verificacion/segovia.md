@@ -63,6 +63,11 @@ existentes.
   registros**. **Bloque de charcutería cerrado: las 44 filas revisadas** (25
   verificadas, 9 parciales, 10 purgas). Las filas fuera del geo-check bajan de
   15 a 8 y solo queda un aviso de distancia.
+- Tras SG-08 y SG-09 (2026-07-26): **152 filas**; **47 `pendiente`, 48
+  `parcial`, 57 `verificado`**. Venta online: **65 `sí`, 40 `no`, 47 `no
+  comprobado`**; los `sí` sin canal bajan a 25. Evidencia: **105 registros**.
+  **Bloque de pan y pastelería cerrado: las 25 filas revisadas**. Los avisos de
+  data-quality caen de 43 a 5 y las filas fuera del geo-check a 7.
 
 ## Reglas y riesgos locales
 
@@ -113,8 +118,7 @@ existentes.
 | SG-05 | Charcutería — filas con dominio propio | 13 | ✅ 2026-07-26 | 8 verificadas, 1 parcial, 4 purgas |
 | SG-06 | Charcutería — resto de la provincia | 15 | ✅ 2026-07-26 | 7 verificadas, 6 parciales, 2 purgas |
 | SG-07 | Charcutería — carnicerías de despacho | 5 | ✅ 2026-07-26 | 1 verificada y trasladada, 4 purgas |
-| SG-08 | Pan y pastelería — Segovia capital | 13 | ⏳ | despachos y franquicias; Valdenebro duplicado |
-| SG-09 | Pan y pastelería — provincia | 12 | ⏳ | obrador vs despacho; Valdenebro `merge` |
+| SG-08/09 | Pan y pastelería — capital y provincia | 25 | ✅ 2026-07-26 | 11 verif, 10 parcial, 1 pend; 4 despachos fusionados |
 | SG-10 | Fruta y verdura — Cuéllar y Gomezserracín | 11 | ⏳ | centrales hortofrutícolas B2B |
 | SG-11 | Fruta y verdura — resto, más viveros | 11 | ⏳ | viveros de planta: fuera de alcance alimentario |
 | SG-12 | Huevos y legumbres | 14 | ⏳ | granjas de puesta industrial; garbanzo de Valseca |
@@ -290,3 +294,37 @@ Incidencias reutilizables:
   que un certificado caducado (Cárnicas Pedro Gómez) o un `altname` del
   hosting. **NXDOMAIN sí es muerte**, aunque el buscador siga indexando la
   tienda (Domingo de Pedro) o el consejo regulador siga publicando el dominio.
+
+## SG-08 y SG-09 — Pan y pastelería
+
+Decisiones cerradas el 2026-07-26 sobre las 25 filas del bloque: **11
+verificadas, 10 parciales, 1 pendiente y 4 fusiones**.
+
+- `verificado` + ecommerce: Valdenebro, Juan Sanz, Pastelería Acueducto y Los
+  Mellizos; con pedido por teléfono o correo, El Horno de Chema y Dulces
+  Vuelos.
+- `verificado`, venta no comprobada: Obrador del Pan Concepción Moreno, El
+  Obrador de Palazuelos, Ipanema, Masa con Alma y Ángel Maroto.
+- `merge`: los tres despachos de Valdenebro en una fila y Obrador del Pan de
+  Segovia en su obrador de Garcillán.
+- `pendiente` documentado: Origen Pastelería Artesana.
+
+Incidencias reutilizables:
+
+- **El volcado confundió despacho con obrador cuatro veces.** Las tres filas de
+  Valdenebro eran su obrador y dos puntos de venta, y «Obrador del Pan» de la
+  calle José Zorrilla es el despacho segoviano del obrador de Garcillán: misma
+  dirección y mismo teléfono que publica su web. La señal barata vuelve a ser
+  la coincidencia de teléfono o dirección con la página de puntos de venta.
+- **Un dominio que no casa con el nombre puede ser la razón social.**
+  `panaderosderevenga.com` en Panadería Ipanema no era un cruce: es Cesáreo
+  Nevado e Hijos, panaderos en Revenga desde 1900, que explota tres despachos
+  con la marca Ipanema.
+- **Dos dominios muertos que el buscador sigue indexando**: `panaderiavacmar.es`
+  y `turegalomisgalletas.es`, esta última con fichas de producto y opción de
+  recogida en obrador todavía cacheadas. Ninguno resuelve.
+- **San Rafael es pedanía de El Espinar**, la última entidad menor del CSV que
+  quedaba mal puesta como municipio.
+- Un obrador de barrio sin web ni redes se queda en `parcial`: los listados
+  sectoriales (tartapan, panaderiasartesanas, observatorio económico municipal)
+  acreditan identidad y municipio, pero no son fuente primaria.
