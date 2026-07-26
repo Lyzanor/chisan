@@ -52,6 +52,11 @@ existentes.
   `verificado`**. Venta online: **60 `sí`, 101 `no`, 4 `no comprobado`**; los
   `sí` sin canal bajan de 61 a 53. Evidencia: **12 registros** (11 `keep`, 1
   `merge`); se estrena `data/evidence/castilla-y-leon/segovia.jsonl`.
+- Tras SG-02 y SG-03 (2026-07-26): **165 filas**; **111 `pendiente`, 33
+  `parcial`, 21 `verificado`**. Venta online: **63 `sí`, 89 `no`, 13 `no
+  comprobado`**; los `sí` sin canal bajan a 45. Evidencia: **32 registros**.
+  **Bloque de bodegas cerrado: las 20 filas revisadas** (13 verificadas, 6
+  parciales, 1 pendiente). Las filas fuera del geo-check bajan de 16 a 15.
 
 ## Reglas y riesgos locales
 
@@ -96,8 +101,8 @@ existentes.
 |---:|---|---:|---|---|
 | SG-00 | Higiene, snapshot y partición | 165 | ✅ 2026-07-26 | 134 pendientes; 61 `sí` sin canal; VO interpolada; 8 webs de directorio |
 | SG-01 | Lácteos y quesos | 11 | ✅ 2026-07-26 | 8 verificadas, 3 parciales; Delicias Cuéllar trasladada a Vallelado |
-| SG-02 | Bodegas DO Rueda — Nieva, Santiuste, Nava | 10 | ⏳ | `martue.com` cruzado; bodegas sin web |
-| SG-03 | Bodegas Valtiendas, Ribera y resto | 10 | ⏳ | 7 filas sin web; viticultores sin unidad propia |
+| SG-02 | Bodegas D.O. Rueda — Nieva, Santiuste, Nava | 10 | ✅ 2026-07-26 | 6 verificadas, 4 parciales; `martue.com` era matriz real, no cruce |
+| SG-03 | Bodegas D.O.P. Valtiendas, Ribera y resto | 10 | ✅ 2026-07-26 | 7 verificadas, 2 parciales, 1 pendiente; 6 dominios rescatados |
 | SG-04 | Charcutería — Chorizo de Cantimpalos IGP | 10 | ⏳ | razón social vs marca; duplicados por dirección |
 | SG-05 | Charcutería — cochinillo y salas de despiece | 10 | ⏳ | encaje de sala de despiece y matadero |
 | SG-06 | Charcutería — resto de la provincia | 12 | ⏳ | carnicerías sin elaboración |
@@ -179,3 +184,52 @@ Incidencias reutilizables:
   esperada no cierra la pregunta: el HTML de portada delataba WooCommerce.
 - Dos filas estaban mal categorizadas: Bendito Nanno (obrador de helados) pasa a
   `Helados` y Delicias Cuéllar a `Pan y pastelería`.
+
+## SG-02 y SG-03 — Bloque de bodegas completo
+
+Decisiones cerradas el 2026-07-26 sobre las 20 filas de la categoría.
+
+- `verificado` + ecommerce (11): Microbio Wines, Blanco Nieva, Herrero Bodega,
+  Ossian Vides y Vinos, García Serrano, Severino Sanz, Navaltallar, Las Dos
+  Antiguas, Finca Cárdaba y —con pedido por correo en vez de carrito— Tinto
+  Redreja y José Galindo Winegrower.
+- `verificado`, venta no comprobada (2): Avelino Vegas y Bodegas Carlos PJ.
+- `parcial` (6): Esmeralda García, Montejuelo, Alanterra-Viñedos de Agejas,
+  Camiruaga, Valdrinal y Ribera del Duratón.
+- `pendiente` documentado (1): Malacepa.
+
+Incidencias reutilizables:
+
+- **Seis filas llegaban sin `web` teniendo dominio propio vivo**: Herrero
+  Bodega, García Serrano, Finca Cárdaba, Carlos PJ, Tinto Redreja y José
+  Galindo. Cuatro llegaban además sin teléfono ni correo. El volcado no buscó
+  el dominio, no es que no exista: **«sin web» en el volcado no es un dato**.
+- **Un dominio que no casa con el nombre suele ser la matriz, no un cruce.**
+  `martue.com` en Bodegas Blanco Nieva parecía error: Martúe entró en la bodega
+  en 2009, la web del grupo tiene sección propia de Nieva y su tienda vende
+  Blanco Nieva Verdejo y Sauvignon Blanc. Se conserva, apuntando a
+  `martue.com/nieva/` en vez de a la portada.
+- **Pero el mismo patrón puede fallar por contenido.** Montejuelo trae
+  `gonzalezygonzalez.com`, que Tierra de Sabor publica como su web y de donde
+  sale su correo de contacto: es la matriz real, sí, pero el sitio es una
+  distribuidora madrileña de materias primas de panadería que **no menciona la
+  bodega**. Dominio correcto y web inservible a la vez: se vacía.
+- **Cuatro dominios muertos y dos en mantenimiento en un solo bloque.**
+  NXDOMAIN real (`bodegasduraton.com`, que el consejo regulador sigue
+  publicando; `bodegascamiruaga.com`), conexión rechazada (`bodegasalanterra.es`
+  y `agejasbodega.com`) y mantenimiento total (`valdrinal.com` en /es y /en,
+  `esmeraldagarcia.es`). Los muertos se vacían; los de mantenimiento se
+  conservan y dejan la fila en `parcial`.
+- **Un carrito puede no ser de producto.** Avelino Vegas tiene `/carrito/` y
+  `/tienda/`, pero el carrito es de reservas de enoturismo («Sin reservas
+  seleccionadas») y la tienda no lista vino: `no comprobado`.
+- **Un formulario de pedido sí es canal.** Tinto Redreja publica packs con
+  precio y pide el encargo por correo; José Galindo tiene formulario que
+  recoge el pedido y luego cierra envío y pago. Ambos son `email`, no `no`.
+- **Pecharromán es anejo de Valtiendas**, no municipio: corregirlo devolvió
+  Finca Cárdaba al geo-check. Su viñedo y el de Carlos PJ están en Valtiendas
+  aunque las bodegas estén en otro término; la fila sigue a la bodega.
+- El registro de la D.O.P. Valtiendas (`dopvaltiendas.com`) es la fuente barata
+  del bloque: fija municipio y web de nueve bodegas y sirvió para descartar
+  Malacepa, que no está inscrita, no tiene rastro digital y consta en el
+  registro mercantil con CNAE de cerveza.
