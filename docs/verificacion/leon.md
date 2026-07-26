@@ -100,6 +100,13 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   queda 1 pendiente documentada** de las 41 filas revisadas. Lo que falta es
   fruta y verdura (21), miel (19), dulces (15), legumbres (11), pan (10) y 21
   filas menores.
+- Tras LE-10 (2026-07-26): **221 filas** (−8 purgas); **81 `pendiente`, 22
+  `parcial`, 118 `verificado`**. Venta online: **82 `sí` (82/82 con canal), 1
+  `no`, 138 `no comprobado`**. Evidencia: **170 registros** (142 `keep`, 11
+  `merge`, 17 `purge`). Filas fuera del geo-check: **23**; avisos de
+  data-quality: **25**. **Bloque de fruta y verdura cerrado**, con 4 pendientes
+  documentadas. Quedan miel (19), dulces (15), legumbres (11), pan (10) y 21
+  filas menores.
 
 ## Reglas y riesgos locales
 
@@ -177,7 +184,7 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-09 | Charcutería — resto de la provincia; cierra el bloque | 17 | ✅ 2026-07-26 | 14 verif, 1 parcial, 2 purgas (matadero y grupo avícola) |
 | LE-12 | Dulces y repostería — Mantecadas de Astorga IGP | 8 | ⏳ | Una fila es la propia IGP |
 | LE-13 | Dulces y repostería y chocolate — León capital | 11 | ⏳ | Confiterías: obrador propio o despacho |
-| LE-14 | Fruta y verdura | 21 | ⏳ | Mayoristas, centrales B2B y fruterías: purga alta |
+| LE-10 | Fruta y verdura | 21 | ✅ 2026-07-26 | 5 verif, 4 parcial, 4 pend, 8 purgas; el bloque de purga que anunciaba LE-00 |
 | LE-15 | Miel — Montaña de León y Bierzo | 19 | ⏳ | |
 | LE-16 | Legumbres y huevos | 15 | ⏳ | Alubia de La Bañeza IGP; huevos de escala |
 | LE-17 | Pan y pastelería | 10 | ⏳ | |
@@ -652,3 +659,63 @@ Incidencias reutilizables:
 - **Y una carnicería que sí se hizo obrador.** Hompanera nació en 1974 como
   Carnicería Miguel y hoy es fábrica con tienda propia: el caso simétrico de los
   despachos de la capital de LE-07.
+
+## LE-10 — Fruta y verdura
+
+Decisiones cerradas el 2026-07-26 sobre las 21 filas del bloque: **5
+verificadas, 4 parciales, 4 pendientes documentadas y 8 purgas**. Es la tasa de
+purga más alta de la provincia (38 %) y confirma el diagnóstico de LE-00.
+
+- `verificado` + ecommerce (5): Ibsa Bierzo, Conservas Vegaesla, La Huerta de
+  Fresno, Patatas Hijolusa y Castañas Campelo.
+- `parcial` (4): Cofrubi, Val de Ornedo, Frutibierzo y La Huerta de Ana Mary.
+- `pendiente` documentada (4): La Huerta del Abuelo, La huerta, Huerta grande y
+  Huertas El Caserío.
+- `purge:not-producer` (7): Frutas Badal, Frutas Almi, Frutas El Bierzo, Frutas
+  Los Brezos, Frutas Oliver, La Huerta de Juanín y La Huerta de la Abuela.
+- `purge:nonexistent` (1): Huerta Vizconde 7.
+
+Incidencias reutilizables:
+
+- **Una fila no era un negocio sino una dirección.** «Huerta Vizconde 7» es la
+  **Urbanización de Huerta la Vizconde** de Santovenia de la Valdoncina, y el 7
+  es el portal. El scrape convirtió un nombre de calle en un productor, y por eso
+  llegó sin nombre comercial, sin teléfono y sin web. Es el primer
+  `purge:nonexistent` de la provincia.
+- **La firma del artefacto es la ausencia total de contacto.** Cinco filas
+  llegaron sin teléfono, sin web y sin imagen; cuatro de ellas con nombre
+  genérico («La huerta», «Huerta grande», «Huertas El Caserío», «La huerta de la
+  Abuela»). De esas cuatro solo se pudo resolver la de la capital, que es
+  frutería. Las otras tres quedan `pendiente` documentadas y son las candidatas
+  más claras a purga de la segunda pasada: **un nombre genérico no es un nombre
+  comercial**.
+- **En León capital, «huerta» en el rótulo significa frutería.** Las cinco filas
+  de la ciudad con ese nombre o con «Frutas X» eran comercio minorista o
+  mayorista de Mercaleón. Ninguna cultiva.
+- **Tres mayoristas lo dicen en su propia web** y uno hasta en el nombre de la
+  fila: Frutas Badal es «empresa mayorista de fruta en León», Frutas El Bierzo
+  es la delegación del Grupo Fruasa en los puestos 12-15 de **Mercaleón** con
+  «actividad basada en la distribución», y Frutas Los Brezos es «distribuidor
+  mayorista… en Burgos». Cuando la web habla de proveedores y de reparto a
+  hostelería y colectividades, no hay huerta detrás.
+- **Pero tres centrales frutícolas sí entran, por ser la identidad de mercado de
+  sus socios.** Cofrubi, Frutibierzo (Cefrubierzo, **S.A.T. 916**) y Val de
+  Ornedo confeccionan y venden con marca propia la pera conferencia y la manzana
+  reineta del Bierzo de sus socios. Se quedan en `parcial`: ninguna vende a
+  consumidor y las tres tienen la web caída o congelada (certificado del hosting
+  en Cofrubi, caducado en Frutibierzo, inexistente en Val de Ornedo). El encaje
+  queda anotado como duda.
+- **Cuatro filas eran conservera, no hortícola.** Ibsa (Industrias del Bierzo,
+  salsas y conservas), Vegaesla y La Huerta de Fresno pasan a `Conservas
+  vegetales`, y Castañas Campelo a `Frutos secos`. Las tres conserveras declaran
+  cosecha propia; es lo que las separa de los mayoristas.
+- **La escala se resuelve otra vez por lo que declaran hacer.** Patatas Hijolusa
+  es envasadora de 23.500 m², pero su propia descripción empieza por el
+  **cultivo** y mantiene contratos con sus agricultores y agrónomos que
+  supervisan desde antes de la siembra: se conserva. Es el mismo razonamiento que
+  dejó dentro a Embutidos Rodríguez y fuera a Grupo Oblanca.
+- **Una duda de encaje que no se pudo cerrar:** La Huerta de Ana Mary vende
+  hortaliza «de la vega de Fresno» con precios por kilo y opción de mayorista,
+  pero en ninguna sección afirma cultivar. Identidad y municipio sí, actividad
+  productiva no: `parcial`, y la venta `no comprobado` porque si es reventa no
+  sería canal del productor.
