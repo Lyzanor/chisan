@@ -73,6 +73,12 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   `correo`: 118. **Bloque del Bierzo cerrado: las 52 bodegas de la DO Bierzo
   están revisadas** y quedan 30 bodegas pendientes, todas de Tierra de León y
   el sur de la provincia.
+- Tras LE-05 (2026-07-26): **236 filas** (−2 purgas); **154 `pendiente`, 14
+  `parcial`, 68 `verificado`**. Venta online: **41 `sí` (41/41 con canal), 1
+  `no`, 194 `no comprobado`**. Evidencia: **87 registros** (79 `keep`, 5
+  `merge`, 3 `purge`). Las filas fuera del geo-check bajan de **43 a 38** y los
+  avisos de data-quality de 50 a 44. Filas con `correo`: 120. Quedan 17 bodegas
+  pendientes.
 
 ## Reglas y riesgos locales
 
@@ -143,9 +149,8 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-02 | Bodega — Villafranca, Valtuille, Arganza, Corullón y Sancedo | 20 | ✅ 2026-07-26 | 16 verif, 4 parcial; 9 municipios corregidos, 2 slugs renombrados |
 | LE-03 | Bodega — Cacabelos, Camponaraya, Carracedelo y Toral de los Vados | 21 | ✅ 2026-07-26 | 19 verif, 2 parcial; 8 municipios corregidos por el cambio de nombre de 2010 |
 | LE-04 | Bodega — DO Bierzo, Ponferrada y alto Bierzo | 10 | ✅ 2026-07-26 | 9 verif, 1 parcial; cierra la DO Bierzo (52 bodegas) |
-| LE-05 | Bodega — DO Tierra de León, Valdevimbre y Villamañán | 10 | ⏳ | |
-| LE-06 | Bodega — los Oteros, Valencia de Don Juan y sur | 10 | ⏳ | |
-| LE-07 | Bodega — León capital y resto de la provincia | 9 | ⏳ | Armunia, Trobajo, Oteruelo, Villalmán |
+| LE-05 | Bodega — D.O. León: Valdevimbre, Villamañán y entorno de la capital | 13 | ✅ 2026-07-26 | 8 verif, 3 parcial, 1 purga, 1 fusión; 3 certificados caducados |
+| LE-06 | Bodega — los Oteros, Valencia de Don Juan y sur | 17 | ⏳ | |
 | LE-08 | Charcutería — IGP Cecina de León y Astorga | 12 | ⏳ | Duplicado Geras; Pradorrey y San Román de la Vega |
 | LE-09 | Charcutería — León capital | 11 | ⏳ | Tiendas gourmet del estrato Google Maps |
 | LE-10 | Charcutería — resto de la provincia | 12 | ⏳ | Botillo del Bierzo; despachos sin obrador |
@@ -410,3 +415,61 @@ Incidencias reutilizables:
 - **Una puerta de edad no siempre esconde el catálogo.** La de Valdecontina deja
   ver la tienda con precios; la de Cantariña (LE-02) no. Merece la pena
   comprobarlo antes de dar la venta por no comprobada.
+
+## LE-05 — Bodega: D.O. León, Valdevimbre, Villamañán y entorno de la capital
+
+Decisiones cerradas el 2026-07-26 sobre las 13 filas del bloque: **8
+verificadas, 3 parciales, 1 purga y 1 fusión**.
+
+- `verificado` + ecommerce (6): VILE, Palomares, El Sueño de las Alforjas,
+  Tampesta, Cooperativa Vinícola Comarcal de Valdevimbre y Vitalis.
+- `verificado` + pedido por correo (1): La Osa Vinos.
+- `verificado`, venta no comprobada (1): Leyenda del Páramo.
+- `parcial` (3): Señorío de los Arcos, Julio Crespo y Marcos Miñambres.
+- `purge:not-producer` (1): Bodegas Vinor.
+- `merge`: `francisco-javier-amigo-tejado-trobajo-del-camino` →
+  `bodega-luzdivina-amigo-parandones`.
+
+Incidencias reutilizables:
+
+- **El volcado cruzó a un viticultor con un homónimo a 130 km.** «Francisco
+  Javier Amigó Tejado» venía con la web de una empresa de instalaciones de
+  Trobajo del Camino (`javieramigoinstalaciones.es`) y descripción «revisado con
+  DO Bierzo». El registro del consejo lo inscribe en Ctra. Villafranca, 10,
+  Parandones: **la dirección exacta de Bodega Luzdivina Amigo**, que fundaron
+  los hermanos Miguel Ángel y Javier Amigo. Misma unidad productiva con dos
+  inscripciones. Cuando una fila nombra a una persona y no a una marca, hay que
+  buscar a qué bodega pertenece antes que fiarse del emparejamiento del scrape.
+- **Tres certificados caducados en un solo bloque** (Señorío de los Arcos,
+  Marcos Miñambres y, con error crítico de WordPress, Julio Crespo). Los tres
+  son bodegas reales, activas e inscritas en la D.O. León, pero sin fuente
+  verificante viva su techo es `parcial`. En la D.O. León el registro de
+  `doleon.es` es la fuente barata equivalente a `crdobierzo.es` en el Bierzo, y
+  además publica la dirección postal completa.
+- **El registro corrigió dos municipios que el volcado tenía mal de raíz.**
+  Señorío de los Arcos figuraba en Villabalter (San Andrés del Rabanedo) y está
+  en Ardoncino, localidad de **Chozas de Abajo**; Julio Crespo figuraba en
+  Villalmán y el registro da «24326 Joara, Sahagún» —**Joara se integró en
+  Sahagún en 1977**, otro municipio extinto, como Villadecanes en LE-03—. En
+  ambos casos la localidad del volcado no pertenecía siquiera al término que
+  se le atribuía.
+- **La purga de este lote la firmó el propio productor.** Bodegas Vinor se
+  describe en su web como empresa que «recibe vinos a granel de alta calidad
+  para ser elaborados y embotellados» y distribuye vino de Palacios Remondo y
+  Muga, licores de Diageo y Bacardi, agua mineral, sidra asturiana y conservas
+  de pescado, con reparto a hostelería. Embotellador de granel y distribuidor
+  mayorista: `not-producer`. Era además uno de los cuatro dominios que en LE-00
+  parecían de directorio (`vinorleon.es`) y el único que lo era de verdad.
+- **«Estamos trabajando en nuestra tienda online, mientras tanto puedes hacer tu
+  pedido por e-mail» sí es canal.** La Osa Vinos no tiene carrito, pero publica
+  el mecanismo: `email`. Es lo contrario de Leyenda del Páramo, que anuncia
+  tienda en un subdominio que devuelve 500 y una página vacía: eso es `no
+  comprobado`.
+- **Una cooperativa de primer grado con marca propia entra.** La Vinícola
+  Comarcal de Valdevimbre canaliza 250 socios y 400 hectáreas y vende como
+  Señorío de Valdés, San Tirso y Abadía de Balderedo. Llegaba sin web y su
+  dominio no casa con el nombre (`vinicoval.com`), un patrón que en otros lotes
+  hizo sospechar de cruce y aquí es simplemente la marca corta.
+- **En Valdevimbre el nombre engaña en la otra dirección**: las cuevas del
+  pueblo son restaurantes, así que «Bodega Palomares» parecía mesón. Es bodega
+  con viñedo propio y tienda.
