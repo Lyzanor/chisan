@@ -114,6 +114,18 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   **7**; avisos de data-quality: **14**. **Miel, dulces y chocolate, y legumbres
   y huevos cerrados.** Queda pan y pastelería (10), cerveza (6) y 15 filas
   menores, más los residuales documentados.
+- **Cierre de la 1ª pasada (2026-07-26)**: **214 filas** (de 240; −23 purgas y
+  −3 fusiones de filas duplicadas); **14 `pendiente`, 40 `parcial`, 160
+  `verificado`**. Venta online: **108 `sí` (108/108 con canal), 1 `no`, 105 `no
+  comprobado`**. Evidencia: **252 registros** — 214 `keep` (cobertura
+  **214/214**), 23 `purge` y 15 `merge`.
+  **Cero avisos de data-quality, cero filas fuera del geo-check, cero avisos de
+  distancia, ningún dominio, teléfono ni descripción repetidos y ninguna
+  descripción de plantilla.** `verify:data` verde sobre los 50 CSV.
+  **León no entra en `data/evidence/coverage.json`** por las 14 pendientes
+  residuales, siguiendo el criterio de Alicante y Burgos; la cobertura de
+  evidencia sí está completa, así que es un cambio de una línea cuando se
+  resuelvan.
 
 ## Reglas y riesgos locales
 
@@ -195,9 +207,9 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-11 | Miel — Montaña de León y Bierzo | 19 | ✅ 2026-07-26 | 13 verif, 3 parcial, 2 pend, 1 purga; 9 municipios corregidos |
 | LE-12 | Dulces, repostería y chocolate | 19 | ✅ 2026-07-26 | 11 verif, 4 parcial, 2 pend, 2 purgas; el consejo de la IGP era fila |
 | LE-13 | Legumbres y huevos | 15 | ✅ 2026-07-26 | 6 verif, 4 parcial, 3 pend, 2 purgas; envasadora ≠ productor |
-| LE-14 | Pan y pastelería | 10 | ⏳ | |
-| LE-15 | Cerveza, licores, sidra y despensa | 15 | ⏳ | Cajón heterogéneo, revisar categoría |
-| LE-16 | Cierre: reauditoría, reconciliación y cobertura | — | ⏳ | Geo-check a cero y cobertura de evidencia |
+| LE-14 | Pan y pastelería | 10 | ✅ 2026-07-26 | 4 verif, 3 parcial, 2 pend, 1 purga (obrador en Zamora) |
+| LE-15 | Cerveza, licores, sidra y despensa | 13 | ✅ 2026-07-26 | 6 verif, 6 parcial, 1 purga (cervecera gallega); 5 recategorizadas |
+| LE-16 | Cierre: reauditoría y las 3 filas heredadas como parcial | 217 | ✅ 2026-07-26 | Geo-check y data-quality a cero; 214/214 con `keep` |
 
 ## LE-00 — Higiene, snapshot y partición
 
@@ -842,3 +854,110 @@ Incidencias reutilizables:
   dirección de vía más cero contacto: es el artefacto del scrape.
 - **Una `direccion` eran literalmente unas coordenadas.** Legumbres El Peregrino
   traía «42.180036, -5.817025» en el campo de dirección.
+
+## LE-14 y LE-15 — Pan y pastelería, cerveza, licores, sidra y despensa
+
+Decisiones cerradas el 2026-07-26 sobre las 23 filas restantes: **10
+verificadas, 9 parciales, 4 pendientes documentadas y 2 purgas**.
+
+- `purge:other-province` (2): Panadería Robles Manganeses y Cerveza AleAlé.
+- `merge`: `cerveza-la-corrala` → `cerveza-la-corrala-ponferrada`.
+- **Cinco filas cambian de categoría**: Destilería Baelo y Los Prietos a
+  `Destilados y licores`, Bubo Babia a `Conservas`, San Agustín a `Café`.
+
+Incidencias reutilizables:
+
+- **Las dos purgas son la primera vez que el volcado se sale de la provincia.**
+  El obrador de Panadería Robles está en **Manganeses de la Polvorosa (Zamora)**
+  y la fila era uno de sus dos despachos en León; y Cerveza AleAlé publica «Uxes,
+  A Coruña», escribe la marca en gallego y se presenta como cervecera gallega.
+  Lo llamativo de AleAlé es que el volcado le dio **la misma dirección exacta que
+  Belecker** —parcela 51 del polígono de Toral de los Vados—, que sí es de allí:
+  probablemente elaboró en sus instalaciones. Cuando dos filas comparten parcela
+  y una tiene web de otra provincia, la sospecha correcta es que una es huésped.
+- **Tercer dominio con eñe de la provincia.** Confiterías Montañés tiene dos webs
+  y las dos raras: `lazosdesanguillermo.es` —el dominio del producto, no de la
+  casa, como `merles.es` en LE-12— y `confiteríasmontañés.com`, que solo resuelve
+  en punycode. Van ya tres: 13viñas, embutidoscañas (Segovia) y esta.
+- **Segundo dominio secuestrado por un casino.** `miguelcasado.es` fue
+  reregistrado y hoy es un sitio de reseñas de casinos online; se vacían `web` y
+  `correo`. Es el mismo patrón de `masasturias.com` en LE-02 y el que ya apareció
+  en Burgos y Baleares: **si el contenido no tiene nada que ver con el productor,
+  el dominio caducó**.
+- **La tienda cerrada no es la tienda inexistente.** Unión Panadera avisa «esta
+  tienda está actualmente cerrada»: indisponibilidad, `no comprobado`. Y su
+  propio nombre resolvía el municipio, que el volcado había puesto en León
+  capital: está en Trobajo del Camino (San Andrés del Rabanedo).
+- **Cuatro filas de cerveza artesana no tienen web** y viven en la prensa local:
+  Wolfram (2014, Camponaraya, 20-24.000 l/año) y Belecker (2016, Toral, 30-40.000
+  l/año) quedan `parcial` con datos de producción y responsable documentados por
+  el reportaje de referencia del sector en Diario de León.
+- **Cinco filas estaban en la categoría cajón.** «Despensa artesanal» escondía
+  una destilería de orujo de tercera generación, una conservera de mermeladas y
+  un tostador de café de especialidad. Como en Segovia, el cajón «Otros» y
+  equivalentes es donde se acumulan las categorías que faltan.
+
+## LE-16 — Cierre provincial
+
+Cerrado el 2026-07-26. Reauditoría sobre las 214 filas resultantes:
+
+- **Las tres filas que llegaban ya como `parcial`** —Morcillas Morvega,
+  Embutidos La Pradera de Fontún y Embutidos Natalio Fernández— habían quedado
+  fuera de todos los lotes, porque la partición filtraba por `pendiente`. Se
+  revisaron en el cierre: La Pradera y Natalio pasan a `verificado` (la primera
+  con tienda propia) y Morvega se queda en `parcial` por certificado caducado.
+  **Lección: partir por categoría es correcto, pero el filtro debe ser «sin
+  `keep` en evidencia», no «`pendiente` en el CSV».**
+- Evidencia **214/214** con `keep` vigente; 23 `purge` y 15 `merge` como
+  tombstones. De los 15 `merge`, tres consolidan filas duplicadas de verdad
+  (Cecina en León/Entrepeñas, las dos «Alonso» y Francisco Javier Amigo/Luzdivina)
+  y doce son renombrados de slug por municipio equivocado o basura del scrape.
+- `check:csv:data-quality` pasa con **cero avisos**: ninguna descripción de
+  plantilla, ningún dominio, teléfono ni descripción repetidos, ninguna fila
+  fuera del geo-check y ningún aviso de distancia. Se partió de 82 avisos y 73
+  filas fuera del geo-check.
+- Los 108 `Venta online=sí` tienen canal. Solo se usó `no` una vez, en
+  Vallelongo, que declara expresamente no atender pedidos nuevos; en el resto,
+  sin prueba de ausencia, el valor honesto es `no comprobado`.
+- Ninguna fila conserva un directorio como `web`. De los cuatro dominios que
+  LE-00 marcó como sospechosos de directorio, tres eran del productor y solo uno
+  —`vinorleon.es`— era realmente un distribuidor, que se purgó.
+- Filas con `correo`: **147 de 214** (se partió de 79). Filas sin `web`: 39.
+
+## Residuales para la segunda pasada
+
+- **14 `pendiente`, todas con el mismo bloqueo y todas candidatas a purga**:
+  filas del estrato de Google Maps sin teléfono, sin web, sin redes y sin ficha
+  sectorial. Cuatro tienen además nombre genérico que no es nombre comercial
+  («La huerta», «Huerta grande», «Huertas El Caserío», «Obrador Confiterías
+  León») y una lo tiene igual al del producto («Embutidos de León»). Las otras:
+  Chocolates Ner, La Huerta del Abuelo, Granja Avícola Pascual, Matadeón de los
+  Oteros Legumbre, Cereales y Legumbres El Canal, El Faedo, Miel Traslapeña,
+  Panadería Raquel y Panadería El Manjar.
+- **Encaje pendiente de decidir: ¿envasar es producir?** Cuatro envasadoras de
+  legumbre quedan en `parcial` con la duda anotada (Arconada —que declara no
+  cultivar—, El Maragato, Luengo y El Peregrino), y con ellas las tres centrales
+  frutícolas del Bierzo (Cofrubi, Frutibierzo, Val de Ornedo). El criterio
+  aplicado fue *cocer o cultivar sí, seleccionar y envasar no basta*, pero
+  merece una decisión explícita de política.
+- **Otras dudas de encaje anotadas**: Mantecadas Los Maragatos (marca de la IGP
+  cuya unidad productiva es Chocodulce Cabezas), La Huerta de Ana Mary (no
+  afirma cultivar), Bubo Babia (obrador en Piedrafita de Babia según la prensa,
+  Villablino según el registro) y Miel de León (domiciliada en el Páramo y
+  autodescrita como del Bierzo).
+- **40 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
+  reintento los dominios caídos o bloqueados: Señorío de los Arcos, Marcos
+  Miñambres, Julio Crespo, Morvega y Sidra Carral (certificado caducado o error
+  500), El Peregrino (403 sistemático), Bubo Babia y El Maragato.
+- **Dominios a rescatar o vaciar**: Cepall, Mas Asturias, Valle Blanco, Solotero,
+  Leitariegos y La Flor de Ribaseca se quedaron sin `web` porque su dominio es
+  NXDOMAIN o sirve una página vacía; conviene reintentar por si han vuelto.
+- **105 `no comprobado`**: varios son webs sin tienda que podrían tener canal no
+  publicado, y unos pocos son tiendas caídas que conviene reintentar (Leyenda del
+  Páramo, Bodegas Estefanía, Unión Panadera).
+- **68 de 214 filas sin imagen** (32 %). Es el mayor hueco de calidad que deja la
+  pasada y no se tocó, salvo el renombrado de las nueve imágenes cuyo slug cambió
+  y el borrado de las once de filas purgadas.
+- **Altas pendientes detectadas al paso**: la bodega y el obrador de conservas de
+  **Prada a Tope en el Palacio de Canedo (Arganza)**, cuya fila purgada era su
+  tienda de León capital, no están en el CSV.
