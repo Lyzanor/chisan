@@ -56,6 +56,11 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   fuera del geo-check bajan de **73 a 63** y los avisos de data-quality de 82 a
   80. Las filas con `correo` suben de 79 a 87. El único `sí` sin canal es Soto
   del Vicario, que es del bloque de bodegas.
+- Tras LE-02 (2026-07-26): **238 filas**; **198 `pendiente`, 8 `parcial`, 32
+  `verificado`**. Venta online: **19 `sí` (18 con canal), 1 `no`, 218 `no
+  comprobado`**. Evidencia: **42 registros** (37 `keep`, 3 `merge`, 2 `purge`).
+  Las filas fuera del geo-check bajan de **63 a 55** y los avisos de
+  data-quality de 80 a 67. Filas con `correo`: 100.
 
 ## Reglas y riesgos locales
 
@@ -123,8 +128,8 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 |---:|---|---:|---|---|
 | LE-00 | Higiene, snapshot y partición | 240 | ✅ 2026-07-26 | 236 pendientes; 240 VO sin resolver; 73 filas fuera del geo-check |
 | LE-01 | Lácteos y quesos | 19 | ✅ 2026-07-26 | 16 verif, 1 parcial, 2 purgas; 10 municipios corregidos |
-| LE-02 | Bodega — DO Bierzo, Villafranca y Valtuille | 17 | ⏳ | 6 filas en Valtuille de Abajo, pedanía |
-| LE-03 | Bodega — DO Bierzo, Cacabelos, Carracedelo y Parandones | 20 | ⏳ | Parandones y Pieros son pedanías |
+| LE-02 | Bodega — Villafranca, Valtuille, Arganza, Corullón y Sancedo | 20 | ✅ 2026-07-26 | 16 verif, 4 parcial; 9 municipios corregidos, 2 slugs renombrados |
+| LE-03 | Bodega — DO Bierzo, Cacabelos, Carracedelo y Parandones | 18 | ⏳ | Parandones es pedanía |
 | LE-04 | Bodega — DO Bierzo, Ponferrada y bajo Bierzo | 15 | ⏳ | San Andrés de Montejos, Fuentesnuevas, Dehesas |
 | LE-05 | Bodega — DO Tierra de León, Valdevimbre y Villamañán | 10 | ⏳ | |
 | LE-06 | Bodega — los Oteros, Valencia de Don Juan y sur | 10 | ⏳ | |
@@ -222,3 +227,74 @@ Incidencias reutilizables:
 - **La columna `correo` estaba a medias y es barata de rellenar**: ocho de estas
   filas publicaban su correo en la propia página de contacto. Abuelo Aitalas
   publica además un teléfono distinto del que traía el volcado.
+
+## LE-02 — Bodega: Villafranca, Valtuille, Arganza, Corullón y Sancedo
+
+Decisiones cerradas el 2026-07-26 sobre las 20 filas de la zona: **16
+verificadas y 4 parciales**, sin purgas.
+
+- `verificado` + ecommerce (7): Godelia, Gancedo, Vinos Valtuille, Aníbal de
+  Otero, Bodegas Adriá, Demencia de Autor, Olga Verde y Tenoira.
+- `verificado` + marketplace propio (1): Pérez Caramés.
+- `verificado`, venta no comprobada (7): Pittacum, Cobertizo, Bodegas Estefanía
+  (Tilenus), Castroventosa, Estévez, Alberto Ledo y Cantariña.
+- `parcial` (4): Descendientes de J. Palacios, Cepall, César Márquez y Mas
+  Asturias.
+- `merge`: `bodegas-estefania-tilenus-valtuille-de-abajo` →
+  `…-ponferrada`, y `demencia-wine-villafranca-del-bierzo` →
+  `demencia-de-autor-toral-de-los-vados`.
+
+Incidencias reutilizables:
+
+- **El registro del consejo regulador es la fuente barata del bloque, y en las
+  cuatro parciales es la única.** `crdobierzo.es` publica dirección, teléfono,
+  correo y web de cada bodega inscrita y resolvió Cepall, César Márquez y Mas
+  Asturias, que no tienen sitio propio. Pero **va por detrás y publica dominios
+  que ya no son de la bodega**: `bodegacepall.com` es NXDOMAIN y
+  `masasturias.com` hoy aloja un blog ajeno sobre reformar una casa en
+  Asturias. Un dominio caducado y reregistrado es peor que uno muerto, porque
+  responde 200.
+- **Registro contra web propia, gana la web propia — y aquí cambió de
+  municipio.** El consejo sitúa Bodegas Estefanía en Valtuille de Abajo; el pie
+  de `tilenus.com` (© 2025) da Calle la Lechería, 3, Ponferrada, coherente con
+  su propia historia: recuperaron una antigua lechería de Dehesas en 1999. El
+  viñedo sí está en Valtuille. La fila sigue a la bodega.
+- **Tres direcciones para una sola bodega.** Demencia traía «Demencia Wine,
+  24500 Villafranca del Bierzo» (sin calle) en el volcado, un piso de Ponferrada
+  en su página de contacto y la nave 12B del Pol. Ind. del Bierzo, en Toral de
+  los Vados, en el registro del consejo. La nave es la unidad productiva: se
+  renombró el slug a su razón social (Demencia de Autor, S.L.) y se movió la
+  imagen.
+- **Ocho filas tenían localidad por municipio**: Pieros y Quilós son de
+  Cacabelos y las cinco de Valtuille de Abajo que se quedan son de Villafranca
+  del Bierzo. En este bloque el error del volcado es sistemático: **la DO Bierzo
+  se organiza por aldeas de viñedo, y el scrape tomó la aldea**.
+- **Dirección compartida no es duplicado.** Aníbal de Otero y Alberto Ledo
+  comparten el portal C/ Estación, 6 de Villafranca, y Pérez Caramés está en la
+  misma calle. Son tres entidades distintas e inscritas por separado: Bodega y
+  Viñedos Hija de Aníbal, S.L. (Elva García Amigo, 2013) y Alberto Álvaro Ledo
+  Linares-Rivas. El registro del consejo es lo que lo desambigua.
+- **Dos sitios propios vivos solo por HTTP.** `bodegacobertizo.com` presenta en
+  HTTPS el certificado comodín de su hosting (piensasolutions) y
+  `albertoledo.com` falla el handshake TLS; los dos cargan y son suyos por HTTP.
+  Sin abrirlos por otra vía, ambos parecerían dominios muertos. El de Alberto
+  Ledo tiene el contenido congelado en 2013 pero sigue inscrito en el consejo:
+  contenido viejo no es bodega cerrada.
+- **Cuatro maneras distintas de que una tienda no cuente como canal.**
+  Estefanía tiene «Añadir al carrito» en portada pero `/tienda/` y `/carrito/`
+  dan error crítico de WordPress; Cantariña esconde el catálogo detrás de una
+  puerta de edad; Pittacum enlaza a la tienda del grupo
+  (`bodega.terrasgauda.com`) y esa URL devuelve un login de WordPress; y
+  Estévez vende por Lavinia, que es un minorista independiente. Las cuatro son
+  `no comprobado`, ninguna es `no`.
+- **Pero un escaparate propio dentro de un mercado sí cuenta.** Pérez Caramés
+  enlaza desde su web «Entrar Tienda Virtual» a `bodegas.bio`, donde tiene
+  página de bodega con siete referencias de 7 a 18 € y pedido mínimo y envío
+  calculados por bodega. Eso es `marketplace`, no reventa de terceros.
+- **La tienda casi nunca está en `/tienda/`.** En este bloque falló esa ruta en
+  Adriá (las fichas cuelgan de `/product/`), en Cantariña (`/index.php/tienda-2/`)
+  y en Gancedo (`/tienda-2/`). Conviene leer el menú antes de dar por muerta una
+  tienda.
+- **Una bodega de grupo con instalación e identidad propias se conserva.**
+  Pittacum es de Terras Gauda desde 2022 pero mantiene bodega en Arganza, marca
+  y gama propias.
