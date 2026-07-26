@@ -115,7 +115,7 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   y huevos cerrados.** Queda pan y pastelería (10), cerveza (6) y 15 filas
   menores, más los residuales documentados.
 - **Cierre de la 1ª pasada (2026-07-26)**: **214 filas** (de 240; −23 purgas y
-  −3 fusiones de filas duplicadas); **14 `pendiente`, 40 `parcial`, 160
+  −3 fusiones de filas duplicadas); **14 `pendiente`, 39 `parcial`, 161
   `verificado`**. Venta online: **108 `sí` (108/108 con canal), 1 `no`, 105 `no
   comprobado`**. Evidencia: **252 registros** — 214 `keep` (cobertura
   **214/214**), 23 `purge` y 15 `merge`.
@@ -126,6 +126,11 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   residuales, siguiendo el criterio de Alicante y Burgos; la cobertura de
   evidencia sí está completa, así que es un cambio de una línea cuando se
   resuelvan.
+- **Encaje de las envasadoras resuelto (2026-07-26)**: envasar cuenta como
+  producir en León por excepción de provincia (Reglas locales, punto 11).
+  Arconada pasa a `verificado` y las otras seis filas afectadas siguen en
+  `parcial` por tener la web caída, no por encaje. Queda en **161 `verificado` y
+  39 `parcial`**.
 
 ## Reglas y riesgos locales
 
@@ -181,7 +186,21 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 10. **Web cruzada a otra provincia**: Soto del Vicario (San Clemente, Bierzo)
     trae `tienda.pagodelvicario.com`, y Pago del Vicario es de Ciudad Real.
     Verificar si es matriz de grupo antes de dar el dominio por bueno.
-11. Señales baratas que **sí** salen limpias: **189 dominios, los 189 únicos**
+11. **Envasar cuenta como producir en León, por excepción de provincia**
+    (decisión editorial del 2026-07-26). La legumbre de La Bañeza y el Páramo y
+    la fruta del Bierzo se comercializan a través de envasadoras y centrales que
+    compran a los agricultores de la zona, seleccionan y envasan con marca
+    propia; sin ellas la provincia perdería la identidad de mercado de sus dos
+    productos con marca de calidad. **No es un cambio del criterio general de
+    `docs/EDITORIAL_POLICY.md`**: es una excepción acotada a esta provincia y a
+    estas dos cadenas. La línea sigue estando en el origen del producto y en la
+    marca propia, así que se mantienen fuera el mayorista que compra a
+    proveedores anónimos (Frutas Badal, Frutas El Bierzo, Frutas Los Brezos), el
+    distribuidor de mil referencias (Legumbres El Leonés) y el embotellador de
+    vino a granel que reparte licores y conservas a hostelería (Bodegas Vinor).
+    Afecta a siete filas: Arconada, El Maragato, Luengo y El Peregrino en
+    legumbre, y Cofrubi, Frutibierzo y Val de Ornedo en fruta.
+12. Señales baratas que **sí** salen limpias: **189 dominios, los 189 únicos**
     (ningún dominio repetido, ninguna web de directorio), 240/240 con `direccion`
     y `productos estrella`, 235/240 con `place_id` de Google y 239/240 con
     lat/lon. El volcado partió de sitios reales: el trabajo es de encaje y
@@ -934,13 +953,13 @@ Cerrado el 2026-07-26. Reauditoría sobre las 214 filas resultantes:
   Chocolates Ner, La Huerta del Abuelo, Granja Avícola Pascual, Matadeón de los
   Oteros Legumbre, Cereales y Legumbres El Canal, El Faedo, Miel Traslapeña,
   Panadería Raquel y Panadería El Manjar.
-- **Encaje pendiente de decidir: ¿envasar es producir?** Cuatro envasadoras de
-  legumbre quedan en `parcial` con la duda anotada (Arconada —que declara no
-  cultivar—, El Maragato, Luengo y El Peregrino), y con ellas las tres centrales
-  frutícolas del Bierzo (Cofrubi, Frutibierzo, Val de Ornedo). El criterio
-  aplicado fue *cocer o cultivar sí, seleccionar y envasar no basta*, pero
-  merece una decisión explícita de política.
-- **Otras dudas de encaje anotadas**: Mantecadas Los Maragatos (marca de la IGP
+- **Encaje de las envasadoras: resuelto** el 2026-07-26 a favor de conservarlas
+  (ver Reglas locales, punto 11). Arconada pasa a `verificado`; El Maragato,
+  Luengo, El Peregrino, Cofrubi, Frutibierzo y Val de Ornedo **siguen en
+  `parcial` por la fuente, no por el encaje**: su web es un 500, un 403, un
+  certificado caducado, un menú sin contenido o no existe. Son las seis filas
+  que más ganarían con un reintento de dominio.
+- **Dudas de encaje que siguen abiertas**: Mantecadas Los Maragatos (marca de la IGP
   cuya unidad productiva es Chocodulce Cabezas), La Huerta de Ana Mary (no
   afirma cultivar), Bubo Babia (obrador en Piedrafita de Babia según la prensa,
   Villablino según el registro) y Miel de León (domiciliada en el Páramo y
