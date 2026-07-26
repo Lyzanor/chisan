@@ -68,6 +68,15 @@ existentes.
   comprobado`**; los `sí` sin canal bajan a 25. Evidencia: **105 registros**.
   **Bloque de pan y pastelería cerrado: las 25 filas revisadas**. Los avisos de
   data-quality caen de 43 a 5 y las filas fuera del geo-check a 7.
+- **Cierre de la 1ª pasada (2026-07-26)**: **144 filas** (de 165; −18 purgas y
+  −3 fusiones de filas duplicadas); **7 `pendiente`, 43 `parcial`, 94
+  `verificado`**. Venta online: **62 `sí` (62/62 con canal), 0 `no`, 82 `no
+  comprobado`**. Evidencia: **176 registros** — 144 `keep` (cobertura
+  **144/144**), 18 `purge` y 14 `merge`.
+  **Cero avisos de data-quality, cero filas fuera del geo-check, cero avisos de
+  distancia, ninguna web de directorio, ningún teléfono ni descripción
+  repetidos.** `verify:data` verde sobre los 50 CSV. Segovia entra en
+  `data/evidence/coverage.json`.
 
 ## Reglas y riesgos locales
 
@@ -119,13 +128,11 @@ existentes.
 | SG-06 | Charcutería — resto de la provincia | 15 | ✅ 2026-07-26 | 7 verificadas, 6 parciales, 2 purgas |
 | SG-07 | Charcutería — carnicerías de despacho | 5 | ✅ 2026-07-26 | 1 verificada y trasladada, 4 purgas |
 | SG-08/09 | Pan y pastelería — capital y provincia | 25 | ✅ 2026-07-26 | 11 verif, 10 parcial, 1 pend; 4 despachos fusionados |
-| SG-10 | Fruta y verdura — Cuéllar y Gomezserracín | 11 | ⏳ | centrales hortofrutícolas B2B |
-| SG-11 | Fruta y verdura — resto, más viveros | 11 | ⏳ | viveros de planta: fuera de alcance alimentario |
-| SG-12 | Huevos y legumbres | 14 | ⏳ | granjas de puesta industrial; garbanzo de Valseca |
-| SG-13 | Miel | 9 | ⏳ | envasadores vs apicultores |
-| SG-14 | Cerveza artesana y pescado ahumado | 10 | ⏳ | cerveceras gitanas sin planta propia |
-| SG-15 | Otros, aperitivos, conservas y despensa | 12 | ⏳ | licores y vermú: elaboración vs marca |
-| SG-16 | Cierre: reauditoría, reconciliación y cobertura | — | ⏳ | cobertura evidencia; `coverage.json` |
+| SG-10 | Cerveza, ahumados y bebidas | 14 | ✅ 2026-07-26 | 11 verif, 3 parcial; 4 categorías corregidas |
+| SG-11 | Miel | 9 | ✅ 2026-07-26 | 5 verif, 2 parcial, 2 purgas |
+| SG-12 | Legumbres y huevos | 14 | ✅ 2026-07-26 | 8 verif, 4 parcial, 1 pend, 1 purga |
+| SG-13 | Fruta y verdura, aperitivos, conservas y despensa | 28 | ✅ 2026-07-26 | 14 verif, 5 parcial, 4 pend, 5 purgas |
+| SG-16 | Cierre: reauditoría, reconciliación y cobertura | 144 | ✅ 2026-07-26 | 144/144 con `keep`; Segovia en `coverage.json` |
 
 ## SG-00 — Higiene, snapshot y partición
 
@@ -328,3 +335,83 @@ Incidencias reutilizables:
 - Un obrador de barrio sin web ni redes se queda en `parcial`: los listados
   sectoriales (tartapan, panaderiasartesanas, observatorio económico municipal)
   acreditan identidad y municipio, pero no son fuente primaria.
+
+## SG-10 a SG-13 — Resto de categorías
+
+Decisiones cerradas el 2026-07-26 sobre las 65 filas restantes: **38
+verificadas, 14 parciales, 5 pendientes documentadas y 8 purgas**.
+
+- `purge:out-of-scope` (5): Cooperativa Glus (suministro agrario: gasóleo,
+  fitosanitarios, semillas y pienso), los viveros Campiñas, Secueductos y El
+  Pinar (planta para agricultores, no alimento) y Producciones Avícolas El
+  Granjero (26 millones de docenas al año, absorbida por Hevo Group).
+- `purge:not-producer` (3): El Hada Leanan (artesanía en cuero), Apirase
+  (tienda que vende miel de Cantabria) y Onzas de Sabor (granel de terceros).
+- `merge` (4): Néctara, Campesana, Ecoeduco, Ideal Fruits y Espirulina
+  Valsaín, todos por municipio o etiqueta equivocada en el slug.
+
+Incidencias reutilizables:
+
+- **La categoría del volcado miente tanto como el municipio.** Dos de las tres
+  filas de «Pescado» ahumaban carne (HUMA y Ahuma d'Or), El Hada Leanan estaba
+  en «Miel» siendo un taller de cuero, Ecosancho y dos cochinilleras estaban en
+  «Charcutería», y el cajón «Otros» escondía una gaseosera, un vermú y un
+  tostadero de café. Trece filas cambiaron de categoría.
+- **Las purgas de este bloque tienen todas la misma forma**: la fila existe y
+  es real, pero lo que produce no es alimento (viveros), no es suyo (tiendas
+  que revenden) o no llega al consumidor con identidad propia (suministro
+  agrario, avícola industrial).
+- **Cuando el municipio del volcado es una pedanía, el slug suele arrastrarla.**
+  Se corrigieron once municipios en toda la pasada; en cinco casos el slug era
+  además materialmente falso y se renombró con `merge`. En los seis restantes
+  se conservó el slug con la localidad y se corrigió solo la columna
+  `municipio`, dejando la localidad en `direccion`: menos churn y la misma
+  verdad. Con la última tanda **ninguna fila queda fuera del geo-check**.
+- **Una web viva puede no servir de nada.** Herfruit responde con una portada
+  de 2004 que solo contiene una línea de copyright, y Huerta y Pico publica una
+  plantilla de Canva con el título y nada más. Existen, son suyas y no
+  acreditan nada: techo `parcial`.
+- Escala: se conservan Huercasa (70 M€, pero fundada y con fábrica en
+  Sanchonuño) y las hortícolas certificadas del Carracillo, y se purga la
+  avícola de marca nacional. El criterio no es el tamaño sino si queda
+  identidad local y producto propio.
+
+## SG-16 — Cierre provincial
+
+Cerrado el 2026-07-26. Reauditoría sobre las 144 filas resultantes:
+
+- Evidencia **144/144** con `keep` vigente; 18 `purge` y 14 `merge` como
+  tombstones. De los 14 `merge`, tres consolidan filas duplicadas y once son
+  renombrados de slug por municipio o etiqueta equivocada. Segovia entra en `data/evidence/coverage.json`.
+- `check:csv:data-quality` pasa con **cero avisos**: ninguna descripción ni
+  horario de plantilla, ningún teléfono repetido, ninguna coordenada fuera de
+  rango y ninguna fila fuera del geo-check.
+- Ninguna fila conserva un directorio como `web`. Las dos únicas webs que no
+  son dominio propio (una ficha de constructor genérico y una plantilla de
+  Canva) pertenecen al productor y sostienen `parcial`, no `verificado`.
+- Los 62 `Venta online=sí` tienen canal. No se usó `no` en ninguna fila: sin
+  prueba de ausencia de canal, el valor honesto es `no comprobado`.
+
+## Residuales para la segunda pasada
+
+- **7 `pendiente`** con bloqueo documentado, todas candidatas a purga si la
+  segunda pasada no encuentra nada: Malacepa (S.L. de 2017 con CNAE de cerveza
+  y sin inscripción en la D.O.P.), Las Damas, Origen Pastelería Artesana,
+  Huevos Riofrío, Hortafercar, Hortalizas Gourmet y Hortalizas El Rubio.
+- **43 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
+  reintento: Jesús Palomo (403 sistemático), Eresma (403), Valdrinal y
+  Esmeralda García (dominios en mantenimiento) y Marijave, cuya S.L. figura de
+  baja en el registro mercantil.
+- **Dudas de encaje anotadas**: Cárnicas N. Abad (matadero-distribuidor),
+  Segoviana de Patatas (almacén con marca propia), Huercasa (escala), Rodríguez
+  Sacristán (no declara dónde cura) y Mesenor (cooperativa de pienso con tienda
+  gourmet).
+- **Posible duplicado**: Entrehoces y Mieles de la Hoz comparten apellido y
+  pueblo (Maderuelo); confirmar que son dos explotaciones distintas.
+- **82 `no comprobado`**: varios son webs sin tienda que podrían tener canal no
+  publicado, y unos pocos dominios caídos que conviene reintentar.
+- **81 de 144 filas sin imagen** (56 %). Es el mayor hueco de calidad que deja
+  la pasada y no se tocó, salvo el renombrado de las cinco imágenes cuyo slug
+  cambió y el borrado de las ocho de filas purgadas.
+- **Altas pendientes**: `docs/candidates/segovia.md` guarda cinco bodegas de la
+  D.O.P. Valtiendas ausentes del CSV, sin contrastar.
