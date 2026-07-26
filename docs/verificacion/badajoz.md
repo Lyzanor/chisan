@@ -199,7 +199,7 @@ charcuteria-el-paisano, el-corte-de-espin-jamoneria, embutidos-marytere, embutid
 ### BAD-11 · Charcutería — ✅
 jamones-guti, jamones-y-embutidos-don-benito, embutidos-pacheco-martinez, jamones-ibericos-cumplido, jamones-ibericos-de-fregenal-de-la-sierra-s-l, tomas-gonzalez-ibericos, viejo-jamon, carnicas-y-embutidos-extremenos-sl, embutidos-guareno-s-l-embutidos-artesanales-en-extremadura, ibericos-en-lonchas, productos-maximo-carnicas-y-embutidos-extremenos-s-l, santa-elena-ibericos, jamones-montanera, carniceria-fabrica-de-embutidos-el-pantano-artesanos-de-herrera-del-duque, industrias-carnicas-el-pantano
 
-### BAD-12 · Charcutería — ⏳
+### BAD-12 · Charcutería — ✅
 embutidos-serraflor, jamones-y-embutidos-artesanos, jamones-y-embutidos-carrascal, sierra-grande-hornachos-fabrica-de-embutidos-y-salazon-de-jamones, industrias-carnicas-el-bellotero, jamones-emilio-diaz, jamones-jierrito, jamones-y-embutidos-angeles-s-l, jamones-y-embutidos-neila-s-l, juanes-iberico-salvaje, montesano-extremadura, productos-simon, sierra-extremena, comparaibericos, jamon-y-salud
 
 ### BAD-13 · Charcutería — ⏳
@@ -377,3 +377,17 @@ abierto. Sin tablas de estado derivado.
   Limpiadas también las 6 imágenes huérfanas que dejaron las purgas de BAD-06,
   BAD-07, BAD-09 y BAD-10. Fregenal de la Sierra es el contraste de Badajoz
   capital: 3 de sus 5 filas son fábricas con secadero propio y tienda.
+- **BAD-12** (2026-07-26): 15 filas → 14. **10 `verificado`, 4 `parcial`, 0
+  pendientes**; 10 `Venta online=sí` con canal. 1 purga: `comparaibericos`, que
+  se define como **plataforma de venta** para pequeños productores, no
+  elaborador. **Jerez de los Caballeros confirma la regla del bloque**: 5 de sus
+  8 filas son fábricas con curación propia (Bellotero, Emilio Díaz, Montesano,
+  Productos Simón, Jierrito). Aquí el patrón de venta cambia: **cuatro casas
+  elaboran pero no tienen carrito** y publican pedido por teléfono, correo o
+  WhatsApp — canal válido, no ausencia de venta.
+  Resuelta la duda que dejó BAD-10: **hay dos «Sierra Extremeña» distintas**, la
+  de La Parra (esta fila) y la de Castuera (razón social tras
+  `iberico-del-brillante`). No se fusionan. Queda una contradicción **dentro del
+  propio catálogo** de la Diputación: su campo de dirección dice La Parra y su
+  texto libre «situado en la zarza»; se mantiene La Parra, que es el dato
+  estructurado y el que coincide con CSV y Facebook.
