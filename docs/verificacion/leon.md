@@ -79,6 +79,14 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   `merge`, 3 `purge`). Las filas fuera del geo-check bajan de **43 a 38** y los
   avisos de data-quality de 50 a 44. Filas con `correo`: 120. Quedan 17 bodegas
   pendientes.
+- Tras LE-06 (2026-07-26): **234 filas** (−2 purgas); **137 `pendiente`, 16
+  `parcial`, 81 `verificado`**. Venta online: **52 `sí` (52/52 con canal), 1
+  `no`, 181 `no comprobado`**. Evidencia: **106 registros** (94 `keep`, 7
+  `merge`, 5 `purge`). Filas fuera del geo-check: **37**; avisos de
+  data-quality: **39**, y **cero avisos de distancia**. **Bloque de bodega
+  cerrado: 0 pendientes de las 74 filas** que quedan en la categoría. Lo que
+  falta es charcutería (40), fruta y verdura (21), miel (19), dulces (15),
+  legumbres (11), pan (10) y un resto de 21 filas menores.
 
 ## Reglas y riesgos locales
 
@@ -150,7 +158,7 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-03 | Bodega — Cacabelos, Camponaraya, Carracedelo y Toral de los Vados | 21 | ✅ 2026-07-26 | 19 verif, 2 parcial; 8 municipios corregidos por el cambio de nombre de 2010 |
 | LE-04 | Bodega — DO Bierzo, Ponferrada y alto Bierzo | 10 | ✅ 2026-07-26 | 9 verif, 1 parcial; cierra la DO Bierzo (52 bodegas) |
 | LE-05 | Bodega — D.O. León: Valdevimbre, Villamañán y entorno de la capital | 13 | ✅ 2026-07-26 | 8 verif, 3 parcial, 1 purga, 1 fusión; 3 certificados caducados |
-| LE-06 | Bodega — los Oteros, Valencia de Don Juan y sur | 17 | ⏳ | |
+| LE-06 | Bodega — los Oteros, Valderas y sur; cierra el bloque | 17 | ✅ 2026-07-26 | 13 verif, 2 parcial, 2 purgas; un concesionario de coches y una tienda de marca |
 | LE-08 | Charcutería — IGP Cecina de León y Astorga | 12 | ⏳ | Duplicado Geras; Pradorrey y San Román de la Vega |
 | LE-09 | Charcutería — León capital | 11 | ⏳ | Tiendas gourmet del estrato Google Maps |
 | LE-10 | Charcutería — resto de la provincia | 12 | ⏳ | Botillo del Bierzo; despachos sin obrador |
@@ -473,3 +481,59 @@ Incidencias reutilizables:
 - **En Valdevimbre el nombre engaña en la otra dirección**: las cuevas del
   pueblo son restaurantes, así que «Bodega Palomares» parecía mesón. Es bodega
   con viñedo propio y tienda.
+
+## LE-06 — Bodega: los Oteros, Valderas y sur (cierra el bloque)
+
+Decisiones cerradas el 2026-07-26 sobre las 17 filas restantes: **13
+verificadas, 2 parciales y 2 purgas**. **El bloque de bodega queda cerrado: 0
+pendientes de 74 filas.**
+
+- `verificado` + ecommerce (10): Vinícola Valmadrigal, 100 Cepas, Gordonzello,
+  Pincerna, El Capricho, Finca Valdemora, Pardevalles, Margón, Cooperativa los
+  Oteros y Jagatas.
+- `verificado` + formulario de pedido (1): Vinos Ribera del Cea.
+- `verificado`, venta no comprobada (2): Bodegas Peláez y Agua del Teleno.
+- `parcial` (2): Solotero y Cascallana.
+- `purge:not-producer` (2): M de Michaisa y Prada a Tope León.
+
+Incidencias reutilizables:
+
+- **Una fila del CSV era un concesionario de coches.** «M de Michaisa» no tenía
+  web y el volcado la marcó «revisado con DO Bierzo» estando en la Avenida de
+  Antibióticos de León. Su Instagram se presenta como «Vehículos de ocasión y
+  **km 0**, venta de mobil-home, importación de vehículos» y publica el mismo
+  teléfono que traía la fila. Michaisa es un cruce de la ciudad, no una marca de
+  vino. Sin web, la única señal barata para desmentirla fue el teléfono.
+- **La tienda de una marca famosa no es la marca.** Prada a Tope figuraba en la
+  calle Alfonso IX de León capital, que es su restaurante-tienda; la bodega, el
+  obrador de conservas y el viñedo están en el Palacio de Canedo (Arganza). Su
+  «web» era además una página de Canva con una sola línea de texto, el mismo
+  patrón que Huerta y Pico en Segovia. **La bodega de Canedo no está en el CSV**
+  y queda como alta pendiente.
+- **Dos dominios casi idénticos para dos negocios del mismo dueño.**
+  `fincavaldemora.com` es una finca de eventos con restaurante y
+  `bodegafincavaldemora.com` la bodega de 2017. El volcado se quedó con el
+  primero, que no menciona vino.
+- **El aviso de distancia del geo-check tenía razón.** Pardevalles era la única
+  fila de la provincia a más de 15 km de su centroide (19,1 km de León, 2,0 km
+  de Valdevimbre) y su propia dirección ya decía «Lugar Valdevimbre» con CP
+  24230. Corregida, **la provincia se queda sin ningún aviso de distancia**.
+- **Bodegas Peláez estaba en la ciudad y la bodega en la ribera.** El volcado la
+  puso en C/ Rey Monje, León, y su web dice que elabora en **Grajal de la
+  Ribera**, localidad de La Antigua, a 80 km. Tercer caso del bloque en que la
+  fila apuntaba a un punto de venta urbano en vez de a la unidad productiva.
+- **Dos filas no eran vino y ya tenían categoría propia en la taxonomía.**
+  Agua del Teleno es un manantial y planta embotelladora de agua mineral
+  (categoría `Agua mineral natural`) y Cascallana es sobre todo destilería de
+  orujo (`Destilados y licores`). El Capricho, en cambio, se recategoriza a
+  `Carnes`: es la casa de bueyes de José Gordón, que cría, sacrifica y madura
+  con marca propia y vende en su tienda online. El restaurante no le da entrada
+  al catálogo; la maduración con marca propia sí, por el mismo criterio que las
+  cárnicas de Segovia.
+- **Un formulario que detalla botellas y cajas es canal.** Vinos Ribera del Cea
+  no tiene carrito pero publica pedido mínimo de 12 botellas y un formulario
+  donde se especifica cuántas de cada vino: `email`, igual que La Osa en LE-05.
+- **Dos correos del volcado eran de terceros o genéricos**: Pincerna traía el
+  gmail personal de un distribuidor (`gabriel@dvino.com`) y 100 Cepas un
+  `bodeluva@gmail.com` que su web no publica. Merece la pena contrastar también
+  el correo, no solo la web.
