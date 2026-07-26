@@ -87,6 +87,11 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   cerrado: 0 pendientes de las 74 filas** que quedan en la categoría. Lo que
   falta es charcutería (40), fruta y verdura (21), miel (19), dulces (15),
   legumbres (11), pan (10) y un resto de 21 filas menores.
+- Tras LE-07 (2026-07-26): **231 filas** (−3); **128 `pendiente`, 17 `parcial`,
+  86 `verificado`**. Venta online: **57 `sí` (57/57 con canal), 1 `no`, 173 `no
+  comprobado`**. Evidencia: **118 registros** (101 `keep`, 10 `merge`, 7
+  `purge`). Filas fuera del geo-check: **35**; avisos de data-quality: **32**.
+  Quedan 31 filas de charcutería.
 
 ## Reglas y riesgos locales
 
@@ -159,10 +164,9 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-04 | Bodega — DO Bierzo, Ponferrada y alto Bierzo | 10 | ✅ 2026-07-26 | 9 verif, 1 parcial; cierra la DO Bierzo (52 bodegas) |
 | LE-05 | Bodega — D.O. León: Valdevimbre, Villamañán y entorno de la capital | 13 | ✅ 2026-07-26 | 8 verif, 3 parcial, 1 purga, 1 fusión; 3 certificados caducados |
 | LE-06 | Bodega — los Oteros, Valderas y sur; cierra el bloque | 17 | ✅ 2026-07-26 | 13 verif, 2 parcial, 2 purgas; un concesionario de coches y una tienda de marca |
-| LE-08 | Charcutería — IGP Cecina de León y Astorga | 12 | ⏳ | Duplicado Geras; Pradorrey y San Román de la Vega |
-| LE-09 | Charcutería — León capital | 11 | ⏳ | Tiendas gourmet del estrato Google Maps |
-| LE-10 | Charcutería — resto de la provincia | 12 | ⏳ | Botillo del Bierzo; despachos sin obrador |
-| LE-11 | Charcutería — filas sin web ni rastro | 8 | ⏳ | |
+| LE-07 | Charcutería — León capital y el duplicado de Geras | 10 | ✅ 2026-07-26 | 5 verif, 1 parcial, 1 pend, 2 purgas, 3 fusiones; 3 filas eran el despacho, no el obrador |
+| LE-08 | Charcutería — IGP Cecina de León y Astorga | ~12 | ⏳ | Pradorrey y San Román de la Vega |
+| LE-09 | Charcutería — resto de la provincia | ~19 | ⏳ | Botillo del Bierzo; despachos sin obrador |
 | LE-12 | Dulces y repostería — Mantecadas de Astorga IGP | 8 | ⏳ | Una fila es la propia IGP |
 | LE-13 | Dulces y repostería y chocolate — León capital | 11 | ⏳ | Confiterías: obrador propio o despacho |
 | LE-14 | Fruta y verdura | 21 | ⏳ | Mayoristas, centrales B2B y fruterías: purga alta |
@@ -537,3 +541,49 @@ Incidencias reutilizables:
   gmail personal de un distribuidor (`gabriel@dvino.com`) y 100 Cepas un
   `bodeluva@gmail.com` que su web no publica. Merece la pena contrastar también
   el correo, no solo la web.
+
+## LE-07 — Charcutería: León capital y el duplicado de Geras
+
+Decisiones cerradas el 2026-07-26 sobre las 10 filas del bloque: **5
+verificadas, 1 parcial, 1 pendiente documentada, 2 purgas y 3 fusiones**.
+
+- `verificado` + ecommerce (5): Bueyes de León, Panizo, La Artesa Selección,
+  Embutidos Agustín y Entrepeñas.
+- `parcial` (1): Embutidos El Montañés.
+- `pendiente` documentada (1): Embutidos de León.
+- `purge:not-producer` (2): La Casa del Embutido y La Cilla de Feito.
+- `merge` (3): `cecina-en-leon-geras` → `entrepenas-geras`,
+  `la-despensa-…-el-montanes-…-leon` → `embutidos-el-montanes-vegacervera` y
+  `sorrento-embutidos-agustin-leon` → `embutidos-agustin-carrizo-de-la-ribera`.
+
+Incidencias reutilizables:
+
+- **Tres de las ocho filas de la capital eran el despacho, no el obrador.** El
+  Montañés se elabora en Vegacervera y «La Despensa» es su tienda del Duque de
+  Rivas; Embutidos Agustín fabrica en Villanueva de Carrizo y «Sorrento» es su
+  despacho de la Avenida Lancia. Las dos filas se **trasladan a la unidad
+  productiva**, con slug, municipio, coordenadas e imagen. Es el mismo patrón
+  que Valdenebro en Segovia, y en León se agrava porque el Barrio Húmedo
+  concentra despachos de marcas de toda la provincia.
+- **En León «cecina» y «embutidos» en el rótulo no dicen nada sobre quién
+  elabora.** La señal que separa tienda de obrador es el **surtido**: La Cilla
+  de Feito vende once cecinas distintas —vaca, burro, ciervo, jabalí, toro de
+  lidia, chivo, oveja, buey, búfalo, caballo y angus—, 35 chorizos y 10
+  salchichones. Nadie cura eso; se selecciona. La Casa del Embutido lo dice sin
+  rodeos en su web: «una selección de los mejores embutidos y quesos de León».
+- **El único teléfono repetido de la provincia, que LE-00 marcó como duda, era
+  real.** `cecinaenleon.es` lleva en el pie «ENTREPEÑAS SL» y publica la misma
+  calle y el mismo número que Entrepeñas: es su **marca de distribución
+  multimarca** a hostelería, que vende además bresaola y cecinas de terceros.
+  Misma sociedad y misma dirección, así que fusión, no purga.
+- **Una fila era charcutería solo en la categoría.** La Artesa Selección es la
+  marca de Manga Martínez, S.L., que cocina al vacío cochinillo, lechazo,
+  cabrito y bacalao: pasa a `Comida preparada`.
+- **Un nombre genérico bloquea la verificación.** «Embutidos de León» llegó sin
+  calle, sin web y sin redes, y su nombre es el del producto: no hay búsqueda
+  que lo distinga, y el teléfono no devuelve empresa. Queda `pendiente`
+  documentada, no purgada: la falta de rastro no prueba inexistencia.
+- **Lo contrario también pasa: dos filas con pinta de tienda urbana sí
+  elaboran.** Bueyes de León declara controlar «desde la cría hasta el
+  envasado» en dehesas leonesas, y Panizo elabora y despacha en dos puntos de
+  la capital, uno de ellos el mercado del Conde Luna.
