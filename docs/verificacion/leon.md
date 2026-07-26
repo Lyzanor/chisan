@@ -66,6 +66,13 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   comprobado`**. Evidencia: **64 registros**. Las filas fuera del geo-check
   bajan de **55 a 47** y los avisos de data-quality de 67 a 54. Filas con
   `correo`: 110. **Ya no queda ningún `sí` sin canal.**
+- Tras LE-04 (2026-07-26): **238 filas**; **167 `pendiente`, 11 `parcial`, 60
+  `verificado`**. Venta online: **34 `sí` (34/34 con canal), 1 `no`, 203 `no
+  comprobado`**. Evidencia: **74 registros**. Las filas fuera del geo-check
+  bajan de **47 a 43** y los avisos de data-quality de 54 a 50. Filas con
+  `correo`: 118. **Bloque del Bierzo cerrado: las 52 bodegas de la DO Bierzo
+  están revisadas** y quedan 30 bodegas pendientes, todas de Tierra de León y
+  el sur de la provincia.
 
 ## Reglas y riesgos locales
 
@@ -135,7 +142,7 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 | LE-01 | Lácteos y quesos | 19 | ✅ 2026-07-26 | 16 verif, 1 parcial, 2 purgas; 10 municipios corregidos |
 | LE-02 | Bodega — Villafranca, Valtuille, Arganza, Corullón y Sancedo | 20 | ✅ 2026-07-26 | 16 verif, 4 parcial; 9 municipios corregidos, 2 slugs renombrados |
 | LE-03 | Bodega — Cacabelos, Camponaraya, Carracedelo y Toral de los Vados | 21 | ✅ 2026-07-26 | 19 verif, 2 parcial; 8 municipios corregidos por el cambio de nombre de 2010 |
-| LE-04 | Bodega — DO Bierzo, Ponferrada y bajo Bierzo | 14 | ⏳ | San Andrés de Montejos, Fuentesnuevas, Dehesas |
+| LE-04 | Bodega — DO Bierzo, Ponferrada y alto Bierzo | 10 | ✅ 2026-07-26 | 9 verif, 1 parcial; cierra la DO Bierzo (52 bodegas) |
 | LE-05 | Bodega — DO Tierra de León, Valdevimbre y Villamañán | 10 | ⏳ | |
 | LE-06 | Bodega — los Oteros, Valencia de Don Juan y sur | 10 | ⏳ | |
 | LE-07 | Bodega — León capital y resto de la provincia | 9 | ⏳ | Armunia, Trobajo, Oteruelo, Villalmán |
@@ -361,3 +368,45 @@ Incidencias reutilizables:
   primer grado que vende con marca propia (Guerra), así que entra. En cambio
   **Viñas del Bierzo ya no es cooperativa**: su aviso legal la identifica como
   S.L., aunque siga desde 1963 con la marca Gran Bierzo.
+
+## LE-04 — Bodega: Ponferrada y alto Bierzo (cierre de la DO Bierzo)
+
+Decisiones cerradas el 2026-07-26 sobre las 10 filas restantes de la
+denominación: **9 verificadas y 1 parcial**. Con este lote **quedan revisadas
+las 52 bodegas de la DO Bierzo** del CSV.
+
+- `verificado` + ecommerce (6): Valdecontina, 13 Viñas, Encima Wines, Heredad
+  Morán & López, Emilio Moro - Bierzo y Dominio de Tares.
+- `verificado`, venta no comprobada (3): Akilia, Aurelio Feo y Merayo.
+- `parcial` (1): Don Pedrones.
+
+Incidencias reutilizables:
+
+- **Cuando el volcado pone una pedanía, la web del propio productor suele
+  escribir el municipio completo.** «Albares de la Ribera, Torre del Bierzo» en
+  Valdecontina y «San Andrés de Montejos, Ponferrada» en Bodega Feo. Antes de
+  irse al nomenclátor, conviene leer la página de contacto.
+- **Un dominio con eñe hay que convertirlo a punycode.** El volcado traía
+  `13viñas.com` tal cual, que no resuelve; la forma buena es
+  `xn--13vias-zwa.com`. Es el mismo tropiezo que en Segovia con
+  `embutidoscañas.es`.
+- **Dos formas nuevas de que un dominio propio parezca muerto**: `bodegasmerayo.com`
+  hace bucle de redirección entre HTTPS y HTTP para el fetcher (solo se lee en
+  navegador) y `bodegafeo.es` presenta el certificado de dondominio. Con
+  Cobertizo, Alberto Ledo y Álvarez de Toledo, van ya **cinco bodegas bercianas
+  cuyo sitio propio solo es legible por HTTP o por navegador**. En esta DO es la
+  norma, no la excepción.
+- **Una bodega de grupo con inversión y viñedo propios no es una etiqueta.**
+  Emilio Moro - Bierzo, S.L. es sociedad aparte, tiene bodega en la Ctra. de
+  Molinaseca de Ponferrada, 8 M€ invertidos, más de 60 hectáreas propias y tres
+  godellos con nombre (Polvorete, El Zarzal, La Revelía). Es el tercer caso de
+  la provincia, con Pittacum y Soto del Vicario, y el criterio se repite:
+  instalación y municipio propios deciden, no el dueño.
+- **Una portada de una línea no acredita nada, ni siendo suya.** `donpedrones.es`
+  solo dice «Vinos de autor con alma del Bierzo» y enlaza a redes: sin
+  dirección, contacto ni tienda. La bodega existe y es de 2013, pero identidad y
+  municipio salen del directorio sectorial y de la prensa local, así que el
+  techo es `parcial`.
+- **Una puerta de edad no siempre esconde el catálogo.** La de Valdecontina deja
+  ver la tienda con precios; la de Cantariña (LE-02) no. Merece la pena
+  comprobarlo antes de dar la venta por no comprobada.
