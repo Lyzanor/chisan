@@ -129,7 +129,7 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 | SO-01 | Bodegas de San Esteban de Gormaz: pedanías y viñas viejas | 9 | ✅ |
 | SO-02 | Bodegas del casco de San Esteban y resto de la Ribera soriana | 10 | ✅ |
 | SO-03 | Charcutería con datos propios | 7 | ✅ |
-| SO-04 | Bloque Marca de Garantía Torrezno de Soria | 9 | ⏳ |
+| SO-04 | Bloque Marca de Garantía Torrezno de Soria | 9 | ✅ |
 | SO-05 | Lácteos y quesos | 10 | ⏳ |
 | SO-06 | Trufa y setas | 10 | ⏳ |
 | SO-07 | Pan y pastelería y dulces | 10 | ⏳ |
@@ -284,3 +284,56 @@ online 3 `sí` (todas `ecommerce`) y 3 `no` demostrado.
 - Corregidos dos correos que el volcado tenía mal (Tradición Tierra de Ágreda
   publica `clientes@`, Giaquinta `hnosgiaquinta@hotmail.com`) y reescritas las
   descripciones de plantilla de Tierra de Sabor.
+
+## SO-04 — Bloque Marca de Garantía Torrezno de Soria ✅
+
+9 filas → **8**. Resultado: 7 `verificado`, 1 `parcial`, 0 `pendiente`; Venta
+online 5 `sí` (todas `ecommerce`) y 3 `no` demostrado.
+
+Este lote era la parte más opaca del CSV —nueve filas sin dirección, sin
+teléfono, sin correo, sin web y con el Instagram institucional de la marca— y se
+resolvió entero con **una sola fuente**: el listado oficial de empresas
+asociadas de `torreznodesoria.com`, que publica ficha con dirección, teléfono,
+correo, web y redes de cada una.
+
+- **Seis de las ocho filas no estaban en Soria capital.** El volcado había puesto
+  «Soria» a todas porque la marca se llama Torrezno **de Soria**. En realidad:
+
+  | Fila | Municipio real |
+  | --- | --- |
+  | Cárnicas Llorente | Almazán |
+  | Cárnicas Sierra de Toranzo | Ólvega |
+  | Embutidos Caba | Garray (Tardesillas) |
+  | Embutidos Moreno-Sáez | Garray |
+  | Tierras del Burgo | El Burgo de Osma |
+  | Embutidos Almenar | Almenar de Soria |
+
+  Las seis se renombran con `merge` desde el slug antiguo. Solo La Despensa y
+  D'María están de verdad en la capital, las dos en el polígono Las Casas.
+
+- **«La Hoguera» era una fila fantasma.** El listado de la marca tiene
+  **exactamente once empresas** y La Hoguera aparece **una sola vez**, con la
+  dirección de San Pedro Manrique. La fila `la-hoguera-soria` era el nombre corto
+  sin ningún dato propio: `merge` en `embutidos-la-hoguera-san-pedro-manrique`.
+- **Lo que sí son dos empresas distintas: Cárnicas Llorente y La Despensa.** La
+  Despensa es la marca de *Productos* Cárnicos Llorente, en el polígono Las
+  Casas, y Cárnicas Llorente está en Almazán; la marca de garantía las inscribe
+  por separado y cada una tiene dirección, teléfono, correo y dominio propios.
+  El apellido compartido invita a fusionarlas y no procede.
+- **Ocho filas sin web pasan a siete con web y cinco con tienda propia.** El
+  volcado no capturó nada: las ocho tienen sitio y cinco venden con precio y
+  carrito (Llorente en el subdominio `tienda.carnicasllorente.es`, Sierra de
+  Toranzo, Moreno-Sáez, La Despensa y —ya en SO-03— las de charcutería). Almenar
+  y D'María tienen catálogo sin precios, y Tierras del Burgo tampoco vende.
+- **Embutidos Caba es la excepción y la única `parcial`**: `embutidoscaba.com`
+  responde 200 pero solo sirve un cartel de «en construcción» de 2,5 KB. No se
+  publica la URL; del registro se rescatan dirección, teléfono y correo.
+- **Un teléfono con prefijo de otra provincia que es correcto**: Sierra de
+  Toranzo usa un 976 (Zaragoza) porque Ólvega está pegada a la raya aragonesa.
+  No es un dato cruzado.
+- **Coordenadas rehechas**: las ocho llevaban el centroide de Soria capital.
+  Cinco se geocodificaron por Nominatim y validaron a 0,2-1,9 km del centroide
+  del municipio correcto; Ólvega y la Avenida de la Rosa de Garray no resuelven y
+  se quedan en el centroide de su municipio.
+- **El Instagram institucional queda retirado de todas**: solo Sierra de Toranzo
+  y Moreno-Sáez tienen cuenta propia, y son las que se conservan.
