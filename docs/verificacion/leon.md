@@ -122,10 +122,12 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
   **Cero avisos de data-quality, cero filas fuera del geo-check, cero avisos de
   distancia, ningún dominio, teléfono ni descripción repetidos y ninguna
   descripción de plantilla.** `verify:data` verde sobre los 50 CSV.
-  **León no entra en `data/evidence/coverage.json`** por las 14 pendientes
-  residuales, siguiendo el criterio de Alicante y Burgos; la cobertura de
-  evidencia sí está completa, así que es un cambio de una línea cuando se
-  resuelvan.
+  **León entra en `data/evidence/coverage.json`**: el criterio del contrato es
+  que el ledger cubra todas las filas actuales (214/214 con `keep`), no que no
+  queden `pendiente`. Las 14 pendientes tienen su propio `keep` documentando el
+  bloqueo, igual que en Segovia y Zaragoza, que están en la lista con 7 y 27
+  pendientes. Alicante y Burgos sí quedan fuera, pero porque sus pendientes no
+  tienen registro de evidencia, no por ser pendientes.
 - **Encaje de las envasadoras resuelto (2026-07-26)**: envasar cuenta como
   producir en León por excepción de provincia (Reglas locales, punto 11).
   Arconada pasa a `verificado` y las otras seis filas afectadas siguen en
