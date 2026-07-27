@@ -130,7 +130,7 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 | SO-02 | Bodegas del casco de San Esteban y resto de la Ribera soriana | 10 | ✅ |
 | SO-03 | Charcutería con datos propios | 7 | ✅ |
 | SO-04 | Bloque Marca de Garantía Torrezno de Soria | 9 | ✅ |
-| SO-05 | Lácteos y quesos | 10 | ⏳ |
+| SO-05 | Lácteos y quesos | 10 | ✅ |
 | SO-06 | Trufa y setas | 10 | ⏳ |
 | SO-07 | Pan y pastelería y dulces | 10 | ⏳ |
 | SO-08 | Miel y cerveza artesana | 8 | ⏳ |
@@ -337,3 +337,44 @@ correo, web y redes de cada una.
   se quedan en el centroide de su municipio.
 - **El Instagram institucional queda retirado de todas**: solo Sierra de Toranzo
   y Moreno-Sáez tienen cuenta propia, y son las que se conservan.
+
+## SO-05 — Lácteos y quesos ✅
+
+10 filas → **9**. Resultado: 6 `verificado`, 3 `parcial`, 0 `pendiente`; Venta
+online 2 `sí` (1 `ecommerce`, 1 `marketplace`), 4 `no` demostrado y 3 `no
+comprobado`.
+
+- **Purga: «Saiona» describe una situación que terminó en 2018.** La cooperativa
+  navarra **vendió su planta de Ólvega al Grupo TGT** tres años después de
+  abrirla. Y la planta nunca fue un productor con marca al consumidor: 25.000
+  t/año de queso en barra, lonchas y rallado, con la distribución en manos del
+  Grupo Aldanondo. Ni la identidad ni el alcance se sostienen. `out-of-scope`.
+- **Dos dominios más caídos, y los dos siguen indexados en Google con tienda y
+  fichas de producto**: `queseriarocioalayeto.es` y
+  `quesoszayasdequintanilla.com` no resuelven en 8.8.8.8, 1.1.1.1 ni 9.9.9.9.
+  Con este lote van **cinco dominios muertos** en la provincia. La regla que sale
+  de aquí es que **el índice del buscador no prueba que un sitio esté vivo**: hay
+  que resolver el dominio.
+- **La fila más fácil de la provincia estaba entre las peores**: Mantequerías
+  York llegaba con «Soria, Soria» por dirección y sin teléfono, correo, web ni
+  redes, y tiene sitio propio con tienda, precios y carrito en la plaza Mariano
+  Granados.
+- **Falsa alarma de tienda en Cañada Real de Soria**: los precios que aparecen en
+  sus fichas de producto son los de **las bases legales de un sorteo**
+  (camisetas, gorras, balones de la selección), no los de sus lácteos.
+- **Quesoncala vende en Hermeneus, no en su web**: sus botones «COMPRAR» son
+  anclas que llevan a su tienda en ese marketplace, donde sus quesos tienen ficha
+  con precio y carrito. Canal `marketplace`.
+- **Resuelta la categoría de los obradores de Mantequilla de Soria DOP** (Regla
+  local 7). Se van a `Dulces y repostería` **Yemas Gil, Dulces Duero y Venus
+  Selección**, que son obradores de repostería; se queda en `Lácteos y quesos`
+  **Mantequerías York**, que elabora la mantequilla DOP en obrador propio y en
+  tres formatos.
+- **Venus Selección se queda en `parcial` por no tener web**, pero la prensa
+  local la documenta bien: obrador y punto de venta en la parcela 11 de la calle
+  D del polígono Las Casas, tienda en Sigüenza, y la Mantequilla de Soria DOP con
+  trufa, frambuesa, tomillo o lavanda además del turrón de torrezno.
+- **Un horario real por fin**: Rocío Alayeto publica el suyo y sustituye al
+  marcador estándar del repo. Es la única fila de la provincia que lo tiene.
+- Coordenadas rehechas por Nominatim en tres filas (plaza Mariano Granados,
+  polígono Valdemiés y polígono Las Casas), todas a menos de 2 km del centroide.
