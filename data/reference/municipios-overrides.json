@@ -1,23 +1,45 @@
 {
+  "alins": [
+    {
+      "lat": 42.5478,
+      "lon": 1.3081,
+      "label": "Alins (Pallars Sobirà, Lleida)",
+      "community": "catalunya"
+    },
+    {
+      "lat": 41.97417,
+      "lon": 0.31222,
+      "label": "Azanuy-Alins",
+      "community": "aragon"
+    }
+  ],
+  "antigua": [
+    {
+      "lat": 28.4196,
+      "lon": -14.0204,
+      "label": "Antigua",
+      "community": "canarias"
+    }
+  ],
+  "armuna": [
+    {
+      "lat": 41.0775,
+      "lon": -4.3207,
+      "label": "Armuña (Segovia)",
+      "community": "castilla-y-leon"
+    },
+    {
+      "lat": 40.53194,
+      "lon": -3.03028,
+      "label": "Armuña de Tajuña",
+      "community": "castilla-la-mancha"
+    }
+  ],
   "arroyomolinos": [
     {
       "lat": 40.27861,
       "lon": -3.91167,
       "label": "Arroyomolinos",
-      "community": "madrid"
-    }
-  ],
-  "el molar": [
-    {
-      "lat": 41.16352,
-      "lon": 0.70604,
-      "label": "El Molar (Priorat)",
-      "community": "catalunya"
-    },
-    {
-      "lat": 40.735,
-      "lon": -3.58139,
-      "label": "El Molar",
       "community": "madrid"
     }
   ],
@@ -35,18 +57,122 @@
       "community": "navarra"
     }
   ],
-  "figueres": [
+  "bello": [
     {
-      "lat": 42.26667,
-      "lon": 2.95,
-      "label": "Figueres",
+      "lat": 43.13991,
+      "lon": -5.61113,
+      "label": "Bello",
+      "community": "asturias"
+    }
+  ],
+  "berlanga": [
+    {
+      "lat": 38.2845,
+      "lon": -5.8292,
+      "label": "Berlanga",
+      "community": "extremadura"
+    }
+  ],
+  "cabanes": [
+    {
+      "lat": 42.30827,
+      "lon": 2.97854,
+      "label": "Cabanes",
+      "community": "catalunya"
+    }
+  ],
+  "cabra": [
+    {
+      "lat": 37.47972,
+      "lon": -4.40156,
+      "label": "Cabra",
+      "community": "andalucia"
+    }
+  ],
+  "calahorra": [
+    {
+      "lat": 42.31383,
+      "lon": -1.96566,
+      "label": "Calahorra",
+      "community": "la-rioja"
+    }
+  ],
+  "canales": [
+    {
+      "lat": 43.31908,
+      "lon": -4.90331,
+      "label": "Canales",
+      "community": "asturias"
+    }
+  ],
+  "carballo": [
+    {
+      "lat": 43.11908,
+      "lon": -6.48965,
+      "label": "Carballo",
+      "community": "asturias"
+    }
+  ],
+  "carpio": [
+    {
+      "lat": 41.21439,
+      "lon": -5.09744,
+      "label": "Carpio",
+      "community": "castilla-y-leon"
+    }
+  ],
+  "cascante": [
+    {
+      "lat": 41.97884,
+      "lon": -1.67598,
+      "label": "Cascante",
+      "community": "navarra"
+    }
+  ],
+  "cervera": [
+    {
+      "lat": 41.66807,
+      "lon": 1.27188,
+      "label": "Cervera",
+      "community": "catalunya"
+    }
+  ],
+  "colmenar": [
+    {
+      "lat": 36.90581,
+      "lon": -4.36962,
+      "label": "Colmenar",
+      "community": "andalucia"
+    }
+  ],
+  "cuarte": [
+    {
+      "lat": 42.117661,
+      "lon": -0.470789,
+      "label": "Cuarte (Huesca)",
+      "community": "aragon"
+    }
+  ],
+  "el molar": [
+    {
+      "lat": 41.16352,
+      "lon": 0.70604,
+      "label": "El Molar (Priorat)",
       "community": "catalunya"
     },
     {
-      "lat": 39.9843,
-      "lon": -0.50174,
-      "label": "Higueras",
-      "community": "comunitat-valenciana"
+      "lat": 40.735,
+      "lon": -3.58139,
+      "label": "El Molar",
+      "community": "madrid"
+    }
+  ],
+  "fariza": [
+    {
+      "lat": 41.41806,
+      "lon": -6.26667,
+      "label": "Fariza",
+      "community": "castilla-y-leon"
     }
   ],
   "figueras": [
@@ -63,68 +189,56 @@
       "community": "comunitat-valenciana"
     }
   ],
-  "sallent": [
+  "figueres": [
     {
-      "lat": 41.82634,
-      "lon": 1.89332,
-      "label": "Sallent",
+      "lat": 42.26667,
+      "lon": 2.95,
+      "label": "Figueres",
       "community": "catalunya"
+    },
+    {
+      "lat": 39.9843,
+      "lon": -0.50174,
+      "label": "Higueras",
+      "community": "comunitat-valenciana"
     }
   ],
-  "nava": [
+  "fresneda": [
     {
-      "lat": 43.36201,
-      "lon": -5.50495,
-      "label": "Nava",
+      "lat": 42.8756,
+      "lon": -3.055,
+      "label": "Fresneda (Valdegovía, Álava)",
+      "community": "pais-vasco"
+    },
+    {
+      "lat": 40.92789,
+      "lon": 0.07426,
+      "label": "La Fresneda",
+      "community": "aragon"
+    }
+  ],
+  "fuente alamo": [
+    {
+      "lat": 38.69774,
+      "lon": -1.42686,
+      "label": "Fuente-Álamo",
+      "community": "castilla-la-mancha"
+    }
+  ],
+  "la fresneda": [
+    {
+      "lat": 43.29124,
+      "lon": -5.14789,
+      "label": "La Fresneda",
       "community": "asturias"
     }
   ],
-  "seron": [
+  "la guardia": [
     {
-      "lat": 37.34546,
-      "lon": -2.50693,
-      "label": "Serón",
-      "community": "andalucia"
-    }
-  ],
-  "calahorra": [
-    {
-      "lat": 42.31383,
-      "lon": -1.96566,
-      "label": "Calahorra",
-      "community": "la-rioja"
-    }
-  ],
-  "colmenar": [
-    {
-      "lat": 36.90581,
-      "lon": -4.36962,
-      "label": "Colmenar",
-      "community": "andalucia"
-    }
-  ],
-  "antigua": [
-    {
-      "lat": 28.4196,
-      "lon": -14.0204,
-      "label": "Antigua",
-      "community": "canarias"
-    }
-  ],
-  "navas": [
-    {
-      "lat": 41.89136,
-      "lon": 1.87623,
-      "label": "Navàs",
-      "community": "catalunya"
-    }
-  ],
-  "berlanga": [
-    {
-      "lat": 38.2845,
-      "lon": -5.8292,
-      "label": "Berlanga",
-      "community": "extremadura"
+      "lat": 39.7871,
+      "lon": -3.47576,
+      "label": "La Guardia",
+      "community": "castilla-la-mancha"
     }
   ],
   "la pena": [
@@ -143,76 +257,12 @@
       "community": "pais-vasco"
     }
   ],
-  "valverde": [
+  "longares": [
     {
-      "lat": 27.8031,
-      "lon": -17.9228,
-      "label": "Valverde",
-      "community": "canarias"
-    }
-  ],
-  "sarria": [
-    {
-      "lat": 42.78216,
-      "lon": -7.41454,
-      "label": "Sarria",
-      "community": "galicia"
-    }
-  ],
-  "san fernando": [
-    {
-      "lat": 36.47707,
-      "lon": -6.19332,
-      "label": "San Fernando",
-      "community": "andalucia"
-    }
-  ],
-  "cabra": [
-    {
-      "lat": 37.47972,
-      "lon": -4.40156,
-      "label": "Cabra",
-      "community": "andalucia"
-    }
-  ],
-  "villanueva de la reina": [
-    {
-      "lat": 38.02961,
-      "lon": -3.90906,
-      "label": "Villanueva de la Reina",
-      "community": "andalucia"
-    }
-  ],
-  "santa eulalia": [
-    {
-      "lat": 40.56927,
-      "lon": -1.31673,
-      "label": "Santa Eulalia",
+      "lat": 41.40194,
+      "lon": -1.16778,
+      "label": "Longares",
       "community": "aragon"
-    }
-  ],
-  "mieres": [
-    {
-      "lat": 43.26232,
-      "lon": -5.80264,
-      "label": "Mieres",
-      "community": "asturias"
-    }
-  ],
-  "ocana": [
-    {
-      "lat": 39.95945,
-      "lon": -3.49881,
-      "label": "Ocaña",
-      "community": "castilla-la-mancha"
-    }
-  ],
-  "torrent": [
-    {
-      "lat": 41.95016,
-      "lon": 3.12664,
-      "label": "Torrent",
-      "community": "catalunya"
     }
   ],
   "los barrios": [
@@ -223,142 +273,20 @@
       "community": "andalucia"
     }
   ],
-  "santa cruz": [
+  "marmolejo": [
     {
-      "lat": 37.69838,
-      "lon": -4.6131,
-      "label": "Santa Cruz",
-      "community": "andalucia"
+      "lat": 38.27637,
+      "lon": -5.82527,
+      "label": "Marmolejo",
+      "community": "extremadura"
     }
   ],
-  "riofrio": [
-    {
-      "lat": 37.15424,
-      "lon": -4.20725,
-      "label": "Riofrío",
-      "community": "andalucia"
-    }
-  ],
-  "villanueva": [
-    {
-      "lat": 43.26732,
-      "lon": -6.00332,
-      "label": "Villanueva",
-      "community": "asturias"
-    }
-  ],
-  "carballo": [
-    {
-      "lat": 43.11908,
-      "lon": -6.48965,
-      "label": "Carballo",
-      "community": "asturias"
-    }
-  ],
-  "bello": [
-    {
-      "lat": 43.13991,
-      "lon": -5.61113,
-      "label": "Bello",
-      "community": "asturias"
-    }
-  ],
-  "paderne": [
-    {
-      "lat": 43.54571,
-      "lon": -6.70263,
-      "label": "Paderne",
-      "community": "asturias"
-    }
-  ],
-  "san cristobal": [
-    {
-      "lat": 43.50724,
-      "lon": -6.97263,
-      "label": "San Cristobal",
-      "community": "asturias"
-    }
-  ],
-  "san martin": [
-    {
-      "lat": 43.41277,
-      "lon": -6.25184,
-      "label": "San Martín",
-      "community": "asturias"
-    }
-  ],
-  "la fresneda": [
-    {
-      "lat": 43.29124,
-      "lon": -5.14789,
-      "label": "La Fresneda",
-      "community": "asturias"
-    }
-  ],
-  "canales": [
-    {
-      "lat": 43.31908,
-      "lon": -4.90331,
-      "label": "Canales",
-      "community": "asturias"
-    }
-  ],
-  "valsequillo": [
-    {
-      "lat": 27.99497,
-      "lon": -15.47281,
-      "label": "Valsequillo",
-      "community": "canarias"
-    }
-  ],
-  "santa ana": [
-    {
-      "lat": 38.904,
-      "lon": -2.00112,
-      "label": "Santa Ana",
-      "community": "castilla-la-mancha"
-    }
-  ],
-  "fuente alamo": [
-    {
-      "lat": 38.69774,
-      "lon": -1.42686,
-      "label": "Fuente-Álamo",
-      "community": "castilla-la-mancha"
-    }
-  ],
-  "villahermosa": [
-    {
-      "lat": 38.81772,
-      "lon": -2.84427,
-      "label": "Villahermosa",
-      "community": "castilla-la-mancha"
-    }
-  ],
-  "la guardia": [
-    {
-      "lat": 39.7871,
-      "lon": -3.47576,
-      "label": "La Guardia",
-      "community": "castilla-la-mancha"
-    }
-  ],
-  "san clemente": [
-    {
-      "lat": 42.63043,
-      "lon": -6.74719,
-      "label": "San Clemente",
-      "community": "castilla-y-leon"
-    }
-  ],
-  "villarmayor": [
-    {
-      "lat": 41.01424,
-      "lon": -5.97618,
-      "label": "Villarmayor",
-      "community": "castilla-y-leon"
-    }
-  ],
+  "mazariegos": {
+    "lat": 42.06111,
+    "lon": -4.72139,
+    "label": "Mazariegos",
+    "community": "castilla-y-leon"
+  },
   "melida": [
     {
       "lat": 41.58056,
@@ -367,44 +295,12 @@
       "community": "castilla-y-leon"
     }
   ],
-  "carpio": [
+  "mieres": [
     {
-      "lat": 41.21439,
-      "lon": -5.09744,
-      "label": "Carpio",
-      "community": "castilla-y-leon"
-    }
-  ],
-  "fariza": [
-    {
-      "lat": 41.41806,
-      "lon": -6.26667,
-      "label": "Fariza",
-      "community": "castilla-y-leon"
-    }
-  ],
-  "cabanes": [
-    {
-      "lat": 42.30827,
-      "lon": 2.97854,
-      "label": "Cabanes",
-      "community": "catalunya"
-    }
-  ],
-  "cervera": [
-    {
-      "lat": 41.66807,
-      "lon": 1.27188,
-      "label": "Cervera",
-      "community": "catalunya"
-    }
-  ],
-  "marmolejo": [
-    {
-      "lat": 38.27637,
-      "lon": -5.82527,
-      "label": "Marmolejo",
-      "community": "extremadura"
+      "lat": 43.26232,
+      "lon": -5.80264,
+      "label": "Mieres",
+      "community": "asturias"
     }
   ],
   "mino": [
@@ -415,70 +311,44 @@
       "community": "galicia"
     }
   ],
-  "sada": [
+  "nava": [
     {
-      "lat": 43.35983,
-      "lon": -8.28273,
-      "label": "Sada",
-      "community": "galicia"
+      "lat": 43.36201,
+      "lon": -5.50495,
+      "label": "Nava",
+      "community": "asturias"
     }
   ],
-  "cascante": [
+  "navas": [
     {
-      "lat": 41.97884,
-      "lon": -1.67598,
-      "label": "Cascante",
-      "community": "navarra"
+      "lat": 41.89136,
+      "lon": 1.87623,
+      "label": "Navàs",
+      "community": "catalunya"
     }
   ],
-  "san adrian": [
+  "ocana": [
     {
-      "lat": 42.3325,
-      "lon": -1.93333,
-      "label": "San Adrián",
-      "community": "navarra"
-    }
-  ],
-  "zuera": [
-    {
-      "lat": 41.87,
-      "lon": -0.7886,
-      "label": "Zuera",
-      "community": "aragon"
-    },
-    {
-      "lat": 39.95194,
-      "lon": -0.33167,
-      "label": "Sueras",
-      "community": "comunitat-valenciana"
-    }
-  ],
-  "armuna": [
-    {
-      "lat": 41.0775,
-      "lon": -4.3207,
-      "label": "Armuña (Segovia)",
-      "community": "castilla-y-leon"
-    },
-    {
-      "lat": 40.53194,
-      "lon": -3.03028,
-      "label": "Armuña de Tajuña",
+      "lat": 39.95945,
+      "lon": -3.49881,
+      "label": "Ocaña",
       "community": "castilla-la-mancha"
     }
   ],
-  "portillo": [
+  "paderne": [
     {
-      "lat": 41.4774,
-      "lon": -4.5882,
-      "label": "Portillo",
+      "lat": 43.54571,
+      "lon": -6.70263,
+      "label": "Paderne",
+      "community": "asturias"
+    }
+  ],
+  "palacios": [
+    {
+      "lat": 40.5427,
+      "lon": -4.8502,
+      "label": "Palacios (Ávila)",
       "community": "castilla-y-leon"
-    },
-    {
-      "lat": 40.05944,
-      "lon": -4.22389,
-      "label": "Portillo de Toledo",
-      "community": "castilla-la-mancha"
     }
   ],
   "palazuelos": [
@@ -495,12 +365,48 @@
       "community": "castilla-y-leon"
     }
   ],
-  "palacios": [
+  "portillo": [
     {
-      "lat": 40.5427,
-      "lon": -4.8502,
-      "label": "Palacios (Ávila)",
+      "lat": 41.4774,
+      "lon": -4.5882,
+      "label": "Portillo",
       "community": "castilla-y-leon"
+    },
+    {
+      "lat": 40.05944,
+      "lon": -4.22389,
+      "label": "Portillo de Toledo",
+      "community": "castilla-la-mancha"
+    }
+  ],
+  "riofrio": [
+    {
+      "lat": 37.15424,
+      "lon": -4.20725,
+      "label": "Riofrío",
+      "community": "andalucia"
+    }
+  ],
+  "robledo": [
+    {
+      "lat": 38.78337,
+      "lon": -2.42943,
+      "label": "Robledo",
+      "community": "castilla-la-mancha"
+    },
+    {
+      "lat": 40.49833,
+      "lon": -4.23889,
+      "label": "Robledo de Chavela",
+      "community": "madrid"
+    }
+  ],
+  "sada": [
+    {
+      "lat": 43.35983,
+      "lon": -8.28273,
+      "label": "Sada",
+      "community": "galicia"
     }
   ],
   "salcedo": [
@@ -517,32 +423,116 @@
       "community": "galicia"
     }
   ],
-  "fresneda": [
+  "sallent": [
     {
-      "lat": 42.8756,
-      "lon": -3.055,
-      "label": "Fresneda (Valdegovía, Álava)",
-      "community": "pais-vasco"
-    },
+      "lat": 41.82634,
+      "lon": 1.89332,
+      "label": "Sallent",
+      "community": "catalunya"
+    }
+  ],
+  "san adrian": [
     {
-      "lat": 40.92789,
-      "lon": 0.07426,
-      "label": "La Fresneda",
+      "lat": 42.3325,
+      "lon": -1.93333,
+      "label": "San Adrián",
+      "community": "navarra"
+    }
+  ],
+  "san clemente": [
+    {
+      "lat": 42.63043,
+      "lon": -6.74719,
+      "label": "San Clemente",
+      "community": "castilla-y-leon"
+    }
+  ],
+  "san cristobal": [
+    {
+      "lat": 43.50724,
+      "lon": -6.97263,
+      "label": "San Cristobal",
+      "community": "asturias"
+    }
+  ],
+  "san fernando": [
+    {
+      "lat": 36.47707,
+      "lon": -6.19332,
+      "label": "San Fernando",
+      "community": "andalucia"
+    }
+  ],
+  "san martin": [
+    {
+      "lat": 43.41277,
+      "lon": -6.25184,
+      "label": "San Martín",
+      "community": "asturias"
+    }
+  ],
+  "santa ana": [
+    {
+      "lat": 38.904,
+      "lon": -2.00112,
+      "label": "Santa Ana",
+      "community": "castilla-la-mancha"
+    }
+  ],
+  "santa cruz": [
+    {
+      "lat": 37.69838,
+      "lon": -4.6131,
+      "label": "Santa Cruz",
+      "community": "andalucia"
+    }
+  ],
+  "santa eulalia": [
+    {
+      "lat": 40.56927,
+      "lon": -1.31673,
+      "label": "Santa Eulalia",
       "community": "aragon"
     }
   ],
-  "alins": [
+  "sarria": [
     {
-      "lat": 42.5478,
-      "lon": 1.3081,
-      "label": "Alins (Pallars Sobirà, Lleida)",
+      "lat": 42.78216,
+      "lon": -7.41454,
+      "label": "Sarria",
+      "community": "galicia"
+    }
+  ],
+  "seron": [
+    {
+      "lat": 37.34546,
+      "lon": -2.50693,
+      "label": "Serón",
+      "community": "andalucia"
+    }
+  ],
+  "torrent": [
+    {
+      "lat": 41.95016,
+      "lon": 3.12664,
+      "label": "Torrent",
       "community": "catalunya"
-    },
+    }
+  ],
+  "valsequillo": [
     {
-      "lat": 41.97417,
-      "lon": 0.31222,
-      "label": "Azanuy-Alins",
-      "community": "aragon"
+      "lat": 27.99497,
+      "lon": -15.47281,
+      "label": "Valsequillo",
+      "community": "canarias"
+    }
+  ],
+  "valverde": [
+    {
+      "lat": 27.8031,
+      "lon": -17.9228,
+      "label": "Valverde",
+      "community": "canarias"
     }
   ],
   "vera": [
@@ -559,34 +549,50 @@
       "community": "navarra"
     }
   ],
-  "longares": [
+  "villahermosa": [
     {
-      "lat": 41.40194,
-      "lon": -1.16778,
-      "label": "Longares",
-      "community": "aragon"
-    }
-  ],
-  "cuarte": [
-    {
-      "lat": 42.117661,
-      "lon": -0.470789,
-      "label": "Cuarte (Huesca)",
-      "community": "aragon"
-    }
-  ],
-  "robledo": [
-    {
-      "lat": 38.78337,
-      "lon": -2.42943,
-      "label": "Robledo",
+      "lat": 38.81772,
+      "lon": -2.84427,
+      "label": "Villahermosa",
       "community": "castilla-la-mancha"
+    }
+  ],
+  "villanueva": [
+    {
+      "lat": 43.26732,
+      "lon": -6.00332,
+      "label": "Villanueva",
+      "community": "asturias"
+    }
+  ],
+  "villanueva de la reina": [
+    {
+      "lat": 38.02961,
+      "lon": -3.90906,
+      "label": "Villanueva de la Reina",
+      "community": "andalucia"
+    }
+  ],
+  "villarmayor": [
+    {
+      "lat": 41.01424,
+      "lon": -5.97618,
+      "label": "Villarmayor",
+      "community": "castilla-y-leon"
+    }
+  ],
+  "zuera": [
+    {
+      "lat": 41.87,
+      "lon": -0.7886,
+      "label": "Zuera",
+      "community": "aragon"
     },
     {
-      "lat": 40.49833,
-      "lon": -4.23889,
-      "label": "Robledo de Chavela",
-      "community": "madrid"
+      "lat": 39.95194,
+      "lon": -0.33167,
+      "label": "Sueras",
+      "community": "comunitat-valenciana"
     }
   ]
 }

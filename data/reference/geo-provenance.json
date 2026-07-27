@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-22",
+  "generatedAt": "2026-07-27",
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 12208,
-    "tagged": 1134
+    "rows": 12073,
+    "tagged": 1140
   },
   "provinces": {
     "andalucia/almeria": [
@@ -325,23 +325,22 @@
     ],
     "castilla-la-mancha/cuenca": [
       "aceites-mancha-oliva-tarancon",
-      "bodegas-gismero-monreal-del-llano",
       "bodegas-mont-reaga-monreal-del-llano",
       "bodegas-y-vinedos-illana-pozoamargo",
       "casa-gualda-cooperativa-nuestra-senora-de-la-cabeza-pozoamargo",
       "cooperativa-dulce-nombre-de-jesus-casas-de-guijarro",
       "feliciano-fernandez-torres-villamayor-de-santiago",
-      "grupo-solis-vintners-tarancon",
       "lacto-ganadera-rio-mayor-ciudad-de-huete-huete",
       "marino-saiz-villarejo-periesteban",
       "queserias-lopez-espada-fuente-de-pedro-naharro",
-      "sat-herlo-talayuelas",
-      "vinedos-y-crianzas-tarancon",
-      "virgilio-solis-bodegas-tarancon"
+      "sat-herlo-talayuelas"
     ],
     "castilla-la-mancha/guadalajara": [
-      "la-espelta-y-sal",
+      "atrufarte",
+      "azafran-valnara",
+      "destileria-alcarria-flora",
       "pastas-y-harinas-despelta",
+      "queseria-de-hita-hita",
       "queso-la-flor-de-brihuega",
       "quesos-seguntino-siguenza"
     ],
@@ -412,25 +411,35 @@
       "xocolart-burgos"
     ],
     "castilla-y-leon/leon": [
+      "bodegas-estefania-tilenus-ponferrada",
+      "bodegas-pelaez-la-antigua",
+      "bodegas-senorio-de-los-arcos-chozas-de-abajo",
+      "demencia-de-autor-toral-de-los-vados",
+      "embutidos-agustin-carrizo-de-la-ribera",
+      "embutidos-el-montanes-vegacervera",
       "embutidos-la-pradera-de-fontun-villamanin",
       "embutidos-natalio-fernandez-leon",
-      "morcillas-morvega-sabero",
-      "soto-del-vicario-san-clemente"
+      "embutidos-pajariel-bembibre",
+      "granja-rualmar-la-magdalena",
+      "madre-esla-cooperativa-vega-esla-toral-de-los-guzmanes",
+      "miel-ribera-del-torio-matallana-de-torio",
+      "morcillas-morvega-sabero"
     ],
     "castilla-y-leon/palencia": [
-      "miel-gaia-mejorada-del-campo"
+      "basileo-vino-de-reyes-herrera-de-valdecanas",
+      "piscifactoria-de-campoo-santibanez-de-la-pena"
     ],
     "castilla-y-leon/salamanca": [
       "don-hornazo-salamanca-obrador-villarmayor"
     ],
     "castilla-y-leon/segovia": [
+      "alimentacion-sanz-vegas-pradena",
       "bendito-nanno-villacastin",
       "canamo-canniebas-nieva",
-      "delicias-cuellar-cuellar",
+      "delicias-cuellar-vallelado",
       "entrehoces-maderuelo",
       "frutas-tabuenca-cuellar",
       "garbanzos-el-celemin-de-labajos-labajos",
-      "glus-cuellar",
       "guadarrama-coffee-roasters-real-sitio-de-san-ildefonso",
       "horticolas-bermejo-manso-chane",
       "huerta-y-pico-torrecaballeros",
@@ -442,6 +451,7 @@
       "marijave-castroserna-de-abajo",
       "mieles-de-la-hoz-maderuelo",
       "montejuelo-santiuste-de-san-juan-bautista",
+      "nectara-escobar-de-polendos",
       "olmos-serrano-fuentepelayo",
       "panaderia-bolleria-los-mellizos-carbonero-el-mayor",
       "panificadora-artesana-angel-maroto-otero-de-herreros",
@@ -450,8 +460,6 @@
       "precocinados-el-campo-sanchonuno",
       "quesos-bartolome-aldeonte",
       "quevana-la-queseria-vegana-vallelado",
-      "viveros-campinas-chane",
-      "viveros-secueductos-mozoncillo",
       "zamarras-cantimpalos"
     ],
     "castilla-y-leon/soria": [
@@ -908,10 +916,8 @@
       "cooperativa-virgen-de-la-estrella",
       "covica",
       "dulceria-la-chimenea",
-      "dulces-artesanos-capricho-extremeno-cb",
       "ea-group",
       "frutas-biomova",
-      "galan-moreno",
       "jamones-emilio-diaz",
       "jamones-jierrito",
       "lacteos-de-castuera",
