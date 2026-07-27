@@ -132,7 +132,7 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 | SO-04 | Bloque Marca de Garantía Torrezno de Soria | 9 | ✅ |
 | SO-05 | Lácteos y quesos | 10 | ✅ |
 | SO-06 | Trufa y setas | 10 | ✅ |
-| SO-07 | Pan y pastelería y dulces | 10 | ⏳ |
+| SO-07 | Pan y pastelería y dulces | 10 | ✅ |
 | SO-08 | Miel y cerveza artesana | 8 | ⏳ |
 | SO-09 | Fruta y verdura, despensa y categorías sueltas (cierra la pasada) | 12 | ⏳ |
 
@@ -413,3 +413,38 @@ digital, y se nota.
   de promoción provincial la sitúa en el polígono de La Dehesa de Ágreda.
 - Recuperadas 5 direcciones de calle donde había solo el municipio, y añadidos 4
   Facebook y 3 Instagram propios.
+
+## SO-07 — Pan y pastelería y dulces ✅
+
+10 filas, **10 conservadas**, 0 purgas. Resultado: 8 `verificado`, 2 `parcial`,
+0 `pendiente`; Venta online 2 `sí` (ambas `ecommerce`) y 8 `no` demostrado.
+
+- **La contaminación más tonta de la provincia**: el Instagram de Galletas
+  Tejedor era **`@artbees`, la empresa que vende la plantilla de WordPress** con
+  la que está hecha su web. El mismo enlace aparecía en el campo Facebook. La
+  galletera no tiene redes propias. Es el segundo tipo de enlace ajeno del CSV,
+  después del Instagram institucional de la marca de garantía.
+- **Un cambio de dominio y un cambio de nombre.** Dulces Típicos El Beato ha
+  pasado a `elbeato.com` —`dulcestipicos.es` redirige 301— y «Pastel Soria» se
+  llama en realidad **Pastisoria**, con tienda Shopify en un tercer dominio,
+  `lazospastisoria.com`.
+- **Pastelería Mogui no estaba en Soria capital**: está en **Vinuesa**, calle de
+  la Reina Sofía 32, y se llama Pastelería Mantequería Mogui. La fila llegaba con
+  «Soria, Soria» por dirección y sin teléfono ni web, y tenía las tres cosas mal.
+  Renombrada con `merge`.
+- **«Aguilar Sampedrano, María Pilar» no es un negocio, es una persona**: es la
+  titular en el registro de Tierra de Sabor del obrador que se llama **Pastelería
+  Ramiro**, de 1930. Renombrada con `merge`. Es el mismo defecto que las filas
+  del volcado de la marca de garantía: nombre de registro en lugar de rótulo.
+- **Sexto dominio caído**: `confiteriagonzalez.com` no resuelve. Con él van
+  Aranda-De Vries, Lunas de Castromoro, Señorío de Aldea, Rocío Alayeto y Quesos
+  Zayas. **Seis de 81 filas**, todas indexadas todavía por Google.
+- **`Venta online=no` es aquí la norma y está demostrado ocho veces**: la
+  repostería soriana vende en mostrador. El caso más claro es Repostería de
+  Pinares, cuyo enlace «nuestra tienda online» lleva a una tienda Mabisy dada de
+  baja y cuya ficha en mercadosoriaonline dice literalmente «(Sin venta
+  online)».
+- **Una web solo por http**: `pastelsoria.com` sirve por http y su certificado de
+  `www` falla. Se conserva la URL http, que es la que funciona.
+- Direcciones corregidas contra fuente propia en El Abuelo José Luis (Calle
+  Mayor 5, no 7). Recuperados 3 teléfonos, 2 correos y 3 webs.
