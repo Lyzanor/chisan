@@ -131,7 +131,7 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 | SO-03 | Charcutería con datos propios | 7 | ✅ |
 | SO-04 | Bloque Marca de Garantía Torrezno de Soria | 9 | ✅ |
 | SO-05 | Lácteos y quesos | 10 | ✅ |
-| SO-06 | Trufa y setas | 10 | ⏳ |
+| SO-06 | Trufa y setas | 10 | ✅ |
 | SO-07 | Pan y pastelería y dulces | 10 | ⏳ |
 | SO-08 | Miel y cerveza artesana | 8 | ⏳ |
 | SO-09 | Fruta y verdura, despensa y categorías sueltas (cierra la pasada) | 12 | ⏳ |
@@ -378,3 +378,38 @@ comprobado`.
   marcador estándar del repo. Es la única fila de la provincia que lo tiene.
 - Coordenadas rehechas por Nominatim en tres filas (plaza Mariano Granados,
   polígono Valdemiés y polígono Las Casas), todas a menos de 2 km del centroide.
+
+## SO-06 — Trufa y setas ✅
+
+10 filas → **9**. Resultado: 9 `verificado`, 0 `parcial`, 0 `pendiente`; Venta
+online 8 `sí` (7 `ecommerce`, 1 `telefono|whatsapp|email`) y 1 `no` demostrado.
+
+Es el lote más sano de la provincia: las diez filas tenían web propia y viva, y
+ocho de ellas venden en línea. La trufa soriana es un sector joven y nativo
+digital, y se nota.
+
+- **Purga: «Descubre Pinares» no es un productor.** Es una empresa de turismo
+  activo **de San Leonardo de Yagüe** —no de Cabrejas del Pinar, como decía la
+  fila— que vende una experiencia de tres horas con charla, caza de trufa con
+  perros y comida. La plantación de Cabrejas es del truficultor José María Calvo,
+  que colabora con ellos. Ni cultiva ni vende trufa. `out-of-scope`.
+- **Tres filas más que no estaban en Soria capital**, y las tres lo dicen en su
+  propia web: Oro Negro de Soria está en **Golmayo** (urbanización Las
+  Camaretas, según su aviso legal), Trufa Directa en **Serón de Nágima** y Truf
+  Gourmet en **Barca** (Trufgourmet SLU, La Iglesia 7). Renombradas con `merge`.
+  Con SO-04 van **nueve filas** rescatadas del falso «Soria».
+- **Trufbox llevaba la dirección de otra fila.** El volcado le daba la nave del
+  polígono Las Casas que también atribuye a Caelia Cerveza Artesana; Trufbox
+  Innovation S.L. publica calle Venerable Carabantes 1, planta 1, 42003. Queda
+  pendiente comprobar en SO-08 cuál de las dos era la buena para Caelia.
+- **Un canal de venta que no es tienda**: Oro Negro de Soria no tiene carrito;
+  su sección «Comprar trufa negra» pide peso o presupuesto y prepara el pedido
+  por correo, WhatsApp o teléfono. Canal `telefono|whatsapp|email`.
+- **Dos tiendas en subdominio propio**: Encitruf vende en `shop.encitruf.es` y
+  —fuera de este lote— Cárnicas Llorente en `tienda.carnicasllorente.es`. Buscar
+  el carrito solo en el dominio principal habría dado dos falsos `no`.
+- **Sabor de Fronteras es el único `no` del lote**, y demostrado: fichas de
+  producto sin precio ni carrito. Su web tampoco publica dirección; la agencia
+  de promoción provincial la sitúa en el polígono de La Dehesa de Ágreda.
+- Recuperadas 5 direcciones de calle donde había solo el municipio, y añadidos 4
+  Facebook y 3 Instagram propios.
