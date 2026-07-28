@@ -16,6 +16,7 @@
     "list:categories": "node scripts/list-categories.js",
     "list:province": "node scripts/list-province.js",
     "check:csv:completeness": "node scripts/audit-province-completeness.js",
+    "check:defects": "node scripts/audit-defects.mjs",
     "check:images": "node scripts/check-images.mjs",
     "enrich:images": "python3 scripts/enrich-producer-images.py",
     "test:csv-audit": "bash scripts/test-csv-audit.sh",

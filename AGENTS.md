@@ -46,6 +46,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Code, scripts, validators, policy, or behavior change: `npx pnpm verify:ai`.
 - While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch missing provenance signals.
 - Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`; completeness planning: `npx pnpm check:csv:completeness`.
+- Cross-province editorial defects (advisory worklist, never blocking): `npx pnpm check:defects`. Answers "what is left to fix and where" for the shared backlog in `docs/TASKS.md` § 7.
 - Province roster/de-dup: `npx pnpm list:province [provincia]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories: `npx pnpm list:categories`.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
