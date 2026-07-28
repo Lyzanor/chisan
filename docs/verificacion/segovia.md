@@ -38,6 +38,13 @@ existentes.
 
 ## Estado
 
+- **Lote SG-R1-a (2026-07-28, carril R1).** Alcance: la única `pendiente`,
+  `origen-pasteleria-artesana-segovia` → `parcial`. El pin de Maps con
+  place_id, la dirección y el móvil sostienen que el establecimiento existe y
+  dónde está; sin web, redes ni ficha sectorial no da para más, y su ausencia
+  en Alimentos de Segovia (marca de adhesión voluntaria) no prueba
+  inexistencia, así que no se purga. `descripcion` retirada: narraba nuestra
+  búsqueda, no al productor. `pendiente` a **0**.
 - Inicio: **2026-07-26**. Primera pasada profunda de las **165 filas**
   existentes; no añadir candidatos hasta el cierre.
 - Snapshot inicial: **165 filas**; **134 `pendiente`, 31 `parcial`, 0

@@ -40,6 +40,17 @@ candidatos nuevos hasta terminar la primera pasada de las filas existentes.
 
 ## Estado
 
+- **Lote LE-R1-a (2026-07-28, carril R1).** Alcance: las 2 `pendiente` que
+  quedaban, ambas del volcado de Google Places. **1 purga**:
+  `cereales-y-legumbres-el-canal-ponferrada` es «Almacenes El Canal», almacén
+  de cereales, legumbres, piensos y paja —compraventa, no elaboración—, y su
+  dirección real es avenida de Galicia 156, no la avenida del Canal que
+  publicaba (`not-producer`). `la-huerta-san-martin-de-torres` **sigue
+  `pendiente` como residual con techo conocido**: el pin de Maps no sostiene
+  ni `identity` (nombre común, sin teléfono, web ni ficha), y tampoco hay
+  prueba positiva de que sea un artefacto de dirección como en
+  `huerta-vizconde-7`; se reabre solo con una fuente que le dé identidad. Su
+  `descripcion` se retira porque narraba el volcado. 214→**213 filas**.
 - Inicio: **2026-07-26**. Primera pasada profunda de las **240 filas**
   existentes; no añadir candidatos hasta el cierre.
 - Snapshot inicial: **240 filas**; **236 `pendiente`, 4 `parcial`, 0

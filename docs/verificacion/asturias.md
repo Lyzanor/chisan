@@ -4,6 +4,20 @@
 > verdad y `data/evidence/asturias/asturias.jsonl` guardará las decisiones. Esta
 > nota solo conserva el plan, las incidencias compartidas y el progreso.
 
+## Estado
+
+- **Lote AS-R1-a (2026-07-28, carril R1).** Alcance: las 2 `pendiente` que
+  quedaban. `cerveza-nurse-oviedo` → **`verificado`** (web propia viva, dos
+  enfermeros de Oviedo, diez años); su venta online **se deja sin resolver a
+  propósito**: la web enlaza tienda propia en SumUp pero, abierta en
+  navegador, responde «Tienda cerrada temporalmente» — el mecanismo existe y
+  no es operable, así que ni `sí` ni `no`. `cafes-batrakof-siero` →
+  **`parcial`** (tostadero de Ricardo Puente en Lieres, +30 años, ~7.000
+  kg/año), no `verificado`: sin web ni redes, sus dos fuentes son prensa (tipo
+  de apoyo) y el único enlace de la fila es el pin de Maps. Su venta online
+  pasa a **`no`**: la prensa describe positivamente sus canales (almacén
+  propio, tiendas y hostelería) y no hay pedido remoto. `pendiente` a **0**.
+
 ## Línea base
 
 - CSV: `data/csv/asturias/asturias.csv`.
