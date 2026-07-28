@@ -9,6 +9,13 @@ fija el snapshot, los riesgos locales y el alcance de los lotes. Los contratos
 aplicables son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.
 
+> **⚑ 1ª PASADA CERRADA el 2026-07-27.** 80 filas, 67 `verificado`, 13 `parcial`
+> y **0 `pendiente`**; 32 `Venta online=sí`, **todas con canal**; 0 errores y 0
+> avisos de data-quality; ninguna fila fuera del geo-check. Las 80 filas tienen
+> `keep`, así que Soria **entra** en `coverage.json`. Lo que sigue son los
+> residuales de la 2ª pasada, al final de SO-09. No reabrir lotes cerrados sin
+> motivo nuevo.
+
 ## Cómo reanudar
 
 1. Leer `git status --short`, Estado, Reglas locales y solo el lote activo.
@@ -134,7 +141,7 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 | SO-06 | Trufa y setas | 10 | ✅ |
 | SO-07 | Pan y pastelería y dulces | 10 | ✅ |
 | SO-08 | Miel y cerveza artesana | 8 | ✅ |
-| SO-09 | Fruta y verdura, despensa y categorías sueltas (cierra la pasada) | 12 | ⏳ |
+| SO-09 | Fruta y verdura, despensa y categorías sueltas (cierra la pasada) | 12 | ✅ |
 
 ## SO-00 — Higiene, snapshot y partición ✅
 
@@ -479,3 +486,88 @@ online 2 `sí` (ambas `ecommerce`), 3 `no` demostrado y 2 `no comprobado`.
   datos y su distintivo de Artesanía Alimentaria, y Apipinares, documentado por
   la prensa local con nave en el polígono de Valdeavellano de Tera.
 - Coordenadas rehechas por Nominatim en tres filas de la capital.
+
+## SO-09 — Fruta y verdura, despensa y categorías sueltas ✅
+
+12 filas, **12 conservadas**, 0 purgas. Resultado: 11 `verificado`, 1 `parcial`,
+0 `pendiente`; Venta online 5 `sí` (todas `ecommerce`), 6 `no` demostrado y 1
+`no comprobado`.
+
+Este lote era el cajón de sastre del volcado y se dedica sobre todo a
+**deshacer la categoría `Fruta y verdura`**, que el volcado usaba para todo lo
+que no supo clasificar. De sus cinco filas no queda ninguna: Aperitivos de
+Añavieja pasa a `Aperitivos`, Arotz Foods a `Trufa y setas`, Tortillas a Tu
+Gusto a `Comida preparada` y el Monasterio de Santa María de Huerta a
+`Conservas y mermeladas`; solo Nufresco sigue siendo fruta. Se resuelven además
+las dos de `Bodega`: Monte Pinos a `Agua mineral natural` y Pressumia a
+`Bebidas`. Con esto queda cerrada entera la Regla local 7.
+
+- **Resuelto el último dominio sospechoso de la Regla local 8, y tampoco era un
+  cruce**: Nufresco es la S.A.T. nº 1.596 **Nufri**, grupo del Pla d'Urgell, de
+  ahí el correo de `frutasurgell.com` y el teléfono 973. La unidad productiva sí
+  es soriana: la finca **La Rasa**, en El Burgo de Osma, es **la mayor plantación
+  de manzanos de Europa**, con un techo de 40 millones de kilos. Los cuatro
+  dominios que no casaban con el nombre eran los cuatro legítimos.
+- **Otra fila que no estaba en Soria capital: Almendras del Moncayo**, que está
+  en Ágreda (calle 7 de Junio 17) con el almendral de Belona en Valverde de
+  Ágreda. Y su Instagram, `@almendrasdelmoncayo.lr`, sí era suyo: el sufijo son
+  las iniciales de López Ruiz, la razón social. Renombrada con `merge`.
+- **Falsa alarma de tienda en Martirelo**: su portada carga el widget de precios
+  de WooCommerce, pero la página de productos no lleva precio ni carrito y
+  `/tienda` y `/carrito` responden 404. Es el mismo tipo de falso positivo que
+  el sorteo de Cañada Real: **el marcador de tienda no es la tienda**.
+- **Dos vecinos que no son la misma empresa**: Aperitivos de Añavieja y
+  Martirelo están a un kilómetro por la misma carretera de Añavieja, pero son
+  empresas distintas y hasta de municipios distintos (Ólvega y Castilruiz).
+- **El monasterio se conserva por elaboración propia**: los monjes hacen
+  mermeladas de más de cuarenta sabores y dulce de membrillo; que su tienda
+  venda además producto de otros monasterios cistercienses no cuenta como
+  elaboración suya, pero no lo descalifica.
+- **Monte Pinos ya no tiene web propia**: `montepinos.com` redirige a la ficha
+  de marca de Vichy Catalan Corporation, su propietaria, y se adopta esa URL. La
+  tienda del grupo devuelve 403, así que la venta queda sin comprobar. Es la
+  única fila de la provincia que cierra en `no comprobado` por bloqueo.
+- Direcciones corregidas contra fuente propia en Tortillas a Tu Gusto (calle
+  Segovia 6, no avenida) y Pressumia (calle Alemania 2, no avenida de Ágreda
+  17). Recuperados 5 teléfonos, 2 correos y 3 webs.
+
+### Cierre (2026-07-27)
+
+- **85 → 80 filas**: 4 purgas (Gepisa, Saiona, Descubre Pinares y La Mielería) y
+  1 fusión de duplicado (La Hoguera). Otras 12 filas cambiaron de identidad o de
+  municipio con `merge`, sin cambiar el recuento.
+- **67 `verificado`, 13 `parcial`, 0 `pendiente`.**
+- Venta online: **32 `sí` (32/32 con canal)**, 29 `no` demostrado, 19 `no
+  comprobado`. Canales: 29 `ecommerce`, 2 `marketplace`, 1
+  `telefono|whatsapp|email`.
+- Evidencia: **97 registros** (80 `keep`, 4 `purge`, 13 `merge`) para 80 filas;
+  **80 de 80 cubiertas**. Soria entra en `coverage.json`.
+- Contrato: 0 errores. Data-quality: 0 avisos. Geo-check: 0 filas fuera y 0
+  avisos de distancia. `check:evidence`: 0 avisos. `check:images`: 0/0.
+- Contacto recuperado: **31 teléfonos** donde no había ninguno, 23 correos y 12
+  webs; retiradas 7 webs de dominios caídos y 12 enlaces de redes ajenas.
+- **Trece filas rescatadas del falso «Soria»**: el volcado ponía la capital por
+  defecto. Ocho eran de la Marca de Garantía y cinco de otros lotes.
+
+### Residuales para la 2ª pasada
+
+- **Imágenes: 0 de 80 filas.** Es el hueco entero de la provincia.
+- **Las 13 `parcial`**, casi todas por dominio caído o por no tener web: Aranda-De
+  Vries, Lunas de Castromoro, Los Imposibles, Embutidos Caba, Rocío Alayeto,
+  Quesos Zayas, Venus Selección, Confitería González, Pastelería Ramiro, Caelia,
+  Miel El Camino del Cid, Apipinares y Nufresco.
+- **Siete dominios caídos a reintentar**: `bodegasenoriodealdea.com` (dado de
+  baja, sustituido por bodegasagoris.com), `arandadevries.com` (registrado sin
+  NS), `lunasdecastromoro.com` (portada por defecto de Nginx Proxy Manager),
+  `queseriarocioalayeto.es`, `quesoszayasdequintanilla.com`,
+  `confiteriagonzalez.com` (NXDOMAIN) y `cervezacaelia.es` (resuelve, servidor
+  rechaza conexión). Y `embutidoscaba.com`, en construcción.
+- **Tres sitios que nos bloquean** y habría que comprobar por otra vía:
+  `dominiodeatauta.com`, `tierradesabor`/`terraselecta.com` y `latiendavichy.com`
+  (los tres 403). De ellos dependen dos `Venta online` sin comprobar.
+- **Cuatro filas sin dirección de calle**, tres de ellas con motivo: La Quinta
+  Vendimia y Vino Taruguín son proyectos sin bodega propia direccionable y Trufa
+  Directa no la publica. La cuarta, Huevos Camperos de Soria, sí debería tener
+  una.
+- **Un `no comprobado` que se puede cerrar**: Monte Pinos, si se logra abrir
+  `latiendavichy.com`.
