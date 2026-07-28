@@ -548,6 +548,9 @@ las dos de `Bodega`: Monte Pinos a `Agua mineral natural` y Pressumia a
   webs; retiradas 7 webs de dominios caídos y 12 enlaces de redes ajenas.
 - **Trece filas rescatadas del falso «Soria»**: el volcado ponía la capital por
   defecto. Ocho eran de la Marca de Garantía y cinco de otros lotes.
+- Coordenadas: de las 22 filas que compartían el centroide de Soria capital no
+  queda ninguna. **10 de 80** siguen en el centroide de su municipio, todas
+  registradas en `data/reference/geo-provenance.json`, regenerado al cerrar.
 
 ### Residuales para la 2ª pasada
 

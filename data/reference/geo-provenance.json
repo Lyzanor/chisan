@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-27",
+  "generatedAt": "2026-07-28",
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 12073,
-    "tagged": 1140
+    "rows": 12058,
+    "tagged": 1142
   },
   "provinces": {
     "andalucia/almeria": [
@@ -430,7 +430,10 @@
       "piscifactoria-de-campoo-santibanez-de-la-pena"
     ],
     "castilla-y-leon/salamanca": [
-      "don-hornazo-salamanca-obrador-villarmayor"
+      "bodega-dominio-de-la-sierra-san-esteban-de-la-sierra",
+      "carralejos-granja-queseria-aldeanueva-de-la-sierra",
+      "don-hornazo-salamanca-obrador-villarmayor",
+      "ganas-de-pan-san-pedro-de-rozados"
     ],
     "castilla-y-leon/segovia": [
       "alimentacion-sanz-vegas-pradena",
@@ -464,14 +467,13 @@
     ],
     "castilla-y-leon/soria": [
       "apipinares-rodrigo-yubero-valdeavellano-de-tera",
+      "carnicas-sierra-de-toranzo-olvega",
       "confiteria-gonzalez-almazan",
-      "descubre-pinares-cabrejas-del-pinar",
       "dominio-de-es-san-esteban-de-gormaz",
+      "embutidos-moreno-saez-garray",
       "obrador-el-abuelo-jose-luis-arcos-de-jalon",
       "pasteleria-moraga-el-burgo-de-osma",
-      "queseria-rocio-alayeto-agreda",
       "quinta-vendimia-san-esteban-de-gormaz",
-      "saiona-olvega",
       "vino-taruguin-san-esteban-de-gormaz",
       "yemas-gil-almazan"
     ],
