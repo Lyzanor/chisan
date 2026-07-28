@@ -133,7 +133,7 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 | SO-05 | Lácteos y quesos | 10 | ✅ |
 | SO-06 | Trufa y setas | 10 | ✅ |
 | SO-07 | Pan y pastelería y dulces | 10 | ✅ |
-| SO-08 | Miel y cerveza artesana | 8 | ⏳ |
+| SO-08 | Miel y cerveza artesana | 8 | ✅ |
 | SO-09 | Fruta y verdura, despensa y categorías sueltas (cierra la pasada) | 12 | ⏳ |
 
 ## SO-00 — Higiene, snapshot y partición ✅
@@ -448,3 +448,34 @@ digital, y se nota.
   `www` falla. Se conserva la URL http, que es la que funciona.
 - Direcciones corregidas contra fuente propia en El Abuelo José Luis (Calle
   Mayor 5, no 7). Recuperados 3 teléfonos, 2 correos y 3 webs.
+
+## SO-08 — Miel y cerveza artesana ✅
+
+8 filas → **7**. Resultado: 4 `verificado`, 3 `parcial`, 0 `pendiente`; Venta
+online 2 `sí` (ambas `ecommerce`), 3 `no` demostrado y 2 `no comprobado`.
+
+- **Purga: «La Mielería» no es soriana, es de Cocentaina (Alicante).** La lleva
+  Nacho Company Agulló, cuarta generación desde 1926, y su domicilio y su tienda
+  están en la avinguda de Xàtiva 76. Sus colmenas **sí trashuman** a Sierra
+  Cebollera, Urbión y Cabrejas —de ahí salió la descripción del volcado—, pero
+  la unidad productiva no está en la provincia. `other-province`, y traspasada a
+  `docs/candidates/alicante.md`, donde no figuraba.
+- **Falsa alarma de Instagram ajeno**: `@cerveceria_alquimia` sí es de Cerveza
+  Arévaka. Su propio sitio rotula el bloque de redes como «Alquimia de Arévaka»
+  y enlaza esa cuenta. De las dos sospechas de la Regla local 3, una era cierta
+  (Galletas Tejedor) y esta no.
+- **Séptimo dominio caído, y de un tipo nuevo**: `cervezacaelia.es` **resuelve**
+  (195.201.69.223) pero el servidor **rechaza la conexión** en los puertos 80 y
+  443. No es NXDOMAIN como los cinco primeros ni una portada por defecto como
+  Lunas de Castromoro. Campo `web` vaciado.
+- **Resuelto el cruce de direcciones de SO-06 en el sentido contrario al
+  esperado**: la nave del polígono Las Casas, calle J nave 3, sí es de Caelia
+  —lo confirma el registro cervecero—, y la fila equivocada era Trufbox.
+- **El Reino de las Abejas publica otra dirección que la del volcado**: Bee-Aser
+  S.L. da la calle San Benito 7, no la nave del polígono Valcorba. Se adopta la
+  que publica la empresa.
+- **Dos filas se quedan en `parcial` por no tener rastro propio**, no por duda:
+  Miel El Camino del Cid, cuyo registro en Tierra de Sabor confirma todos sus
+  datos y su distintivo de Artesanía Alimentaria, y Apipinares, documentado por
+  la prensa local con nave en el polígono de Valdeavellano de Tera.
+- Coordenadas rehechas por Nominatim en tres filas de la capital.
