@@ -146,6 +146,16 @@ proveniencia por fila vive en `data/evidence/extremadura/caceres.jsonl`.
   filas**; 100 `verificado`, 94 `parcial` y 46 `pendiente`. El Cabrón queda con
   ecommerce; Don Pablo y Ecotahona se verifican sin venta remota demostrada;
   La Pasión Dulce y Virgen del Puerto quedan parciales por techo de fuente.
+- Tras lote 27 / Salvatierra de Santiago a Zarza de Granadilla, con cierre de
+  Trujillo (2026-07-28): **232 filas**; 129 `verificado`, 103 `parcial` y
+  **0 `pendiente`**. Queda cerrada la primera pasada provincial. Se verifican
+  29 productores, 19 de ellos con ecommerce propio, y nueve filas quedan
+  parciales por techo de fuente. Se fusionan La Purísima con la Cooperativa La
+  Inmaculada y el secadero duplicado de IberPro con su fábrica de Torrecillas de
+  la Tiesa. Casa Bautista se corrige desde la tienda de Trujillo a su unidad
+  productiva de Montánchez. Se purgan seis comercios, revendedores o unidades
+  fuera de alcance: La Encamisá, Pacorro, la fábrica genérica sin identidad,
+  Ibéricos Paulino, Hortofrut de Coria y Santa Lucía de Valdastillas.
 
 ## Criterios locales
 
@@ -161,13 +171,12 @@ proveniencia por fila vive en `data/evidence/extremadura/caceres.jsonl`.
 
 ## Plan de continuación
 
-1. Lote 27: continuar desde Oro de A y cerrar Salvatierra de Santiago,
-   Santibáñez el Bajo, Serradilla y Sierra de Fuentes.
-2. Continuar por municipios pequeños en orden del CSV, agrupando fuentes y
-   dejando las cabeceras grandes para lotes sectoriales.
-3. Al llegar a 0 `pendiente`, hacer la pasada transversal de duplicados,
-   enlaces, geografía, imágenes, todos los `Venta online=sí` y residuales
-   `parcial`/`no comprobado`; después decidir cobertura de evidencia.
+1. Hacer la pasada transversal de duplicados residuales, enlaces, geografía e
+   imágenes.
+2. Revisar de forma dirigida los 103 `parcial` y los `Venta online=no
+   comprobado`, priorizando señales nuevas y fuentes propias recuperadas.
+3. Auditar todos los `Venta online=sí` y decidir después candidatos y cobertura
+   de evidencia.
 
 ## Reanudación
 
