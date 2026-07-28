@@ -394,11 +394,15 @@ Cerrado el 2026-07-26. Reauditoría sobre las 144 filas resultantes:
 
 ## Residuales para la segunda pasada
 
-- **7 `pendiente`** con bloqueo documentado, todas candidatas a purga si la
-  segunda pasada no encuentra nada: Malacepa (S.L. de 2017 con CNAE de cerveza
-  y sin inscripción en la D.O.P.), Las Damas, Origen Pastelería Artesana,
-  Huevos Riofrío, Hortafercar, Hortalizas Gourmet y Hortalizas El Rubio.
-- **43 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
+- **Segunda y tercera pasadas 2026-07-28: 7 → 1 `pendiente`**. Las Damas se purgó porque
+  es una tienda de golosinas y aperitivos, no un productor. Hortafercar y
+  Hortalizas Gourmet pasan a `verificado`; Hortalizas El Rubio y Huevos Riofrío
+  pasan a `parcial`. Malacepa también pasa a `parcial`: el registro acredita
+  identidad, traslado reciente y objeto de fabricación de bebidas, pero aún no
+  producto o actividad pública. Queda solo **Origen Pastelería Artesana**, sin
+  rastro fuera de la ficha cartográfica. Estado provincial: **143 filas; 96
+  `verificado`, 46 `parcial`, 1 `pendiente`**.
+- **46 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
   reintento: Jesús Palomo (403 sistemático), Eresma (403), Valdrinal y
   Esmeralda García (dominios en mantenimiento) y Marijave, cuya S.L. figura de
   baja en el registro mercantil.
@@ -410,7 +414,7 @@ Cerrado el 2026-07-26. Reauditoría sobre las 144 filas resultantes:
   pueblo (Maderuelo); confirmar que son dos explotaciones distintas.
 - **82 `no comprobado`**: varios son webs sin tienda que podrían tener canal no
   publicado, y unos pocos dominios caídos que conviene reintentar.
-- **81 de 144 filas sin imagen** (56 %). Es el mayor hueco de calidad que deja
+- **81 de 143 filas sin imagen** (57 %). Es el mayor hueco de calidad que deja
   la pasada y no se tocó, salvo el renombrado de las cinco imágenes cuyo slug
   cambió y el borrado de las ocho de filas purgadas.
 - **Altas pendientes**: `docs/candidates/segovia.md` guarda cinco bodegas de la

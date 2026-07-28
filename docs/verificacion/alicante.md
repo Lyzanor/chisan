@@ -6,24 +6,24 @@ Primera pasada profunda **cerrada el 2026-06-29** (lotes 1-8, commit `6ca678b`; 
 `data/evidence/comunitat-valenciana/alicante.jsonl`. La verdad es el CSV; cerrar la pasada no
 cierra el catálogo y las afirmaciones dinámicas caducan.
 
-## Estado final de la pasada (2026-06-29)
+## Estado actual tras segunda pasada (2026-07-28)
 
 - Filas: **98** (104 iniciales; 3 fusiones + 4 purgas… ver abajo) · verificado **84** · parcial
-  **10** · **pendiente 4** (sin rastro digital, a confirmar en campo).
+  **14** · **pendiente 0**.
 - `Venta online`: **58 `sí` (58/58 con canal: 56 ecommerce, 2 marketplace) · 0 `no` · 40
   `no comprobado`**.
 - Coordenadas 98/98 (geocodificadas las que faltaban, validación ≤15 km o centroide).
-- Evidencia: 101 registros (94 `keep`, 3 `merge`, 4 `purge`). **NO está en `coverage.json`**,
-  exclusivamente por los 4 pendientes residuales.
+- Evidencia: 105 decisiones al cierre de esta pasada. **Está en `coverage.json`**.
 - Imágenes: 47/98 al cierre.
 
-## Residuales justificados
+## Segunda pasada residual
 
-- **4 `pendiente` sin rastro digital** (productores particulares; ni se parcializan —no hay fuente
-  externa— ni se purgan —ausencia de web ≠ inexistencia—; confirmar en campo/mantenimiento):
-  **M. Rosario García** (Vega Baja), **Frutas SIN**, **Finca El Serrat** (Relleu),
-  **María Rosario Ortega Pérez** (miel, Salinas).
-- 10 `parcial` con techo real; entre ellos **La Rectoria de Pego**, **Selma**, y **Aitana
+- Los cuatro `pendiente` se localizaron en fichas individuales de Saborigen:
+  **M. Rosario García**, **Frutas SIN**, **Finca El Serrat** y **María Rosario
+  Ortega Pérez**. Las fichas confirman producción propia, municipio y contacto.
+  Los cuatro pasan a `parcial`, no a `verificado`, porque solo hay fuente
+  institucional y no una web, red propia o ficha primaria viva.
+- Los 10 `parcial` previos conservan su techo real; entre ellos **La Rectoria de Pego**, **Selma**, y **Aitana
   Espirulina** (cesó la producción; vigilar por si reactiva o cierra del todo).
 
 ## Reglas locales (no revertir sin nueva evidencia)
@@ -54,7 +54,7 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
 
 ## Mantenimiento (al retomar)
 
-- **Prioridad: resolver los 4 `pendiente` sin rastro** (campo/teléfono) → si se cierran, añadir
-  `comunitat-valenciana/alicante` a `coverage.json`.
+- Ya no quedan `pendiente`; revalidar en campo o por teléfono los cuatro
+  `parcial` de la segunda pasada sería una mejora, no un bloqueo de cobertura.
 - Recomprobar los 58 `Venta online=sí` (última comprobación 2026-06-29) y los 40 `no comprobado`.
 - Imágenes pendientes: ~51 filas.

@@ -943,18 +943,23 @@ Cerrado el 2026-07-26. Reauditoría sobre las 214 filas resultantes:
 - Ninguna fila conserva un directorio como `web`. De los cuatro dominios que
   LE-00 marcó como sospechosos de directorio, tres eran del productor y solo uno
   —`vinorleon.es`— era realmente un distribuidor, que se purgó.
-- Filas con `correo`: **147 de 214** (se partió de 79). Filas sin `web`: 39.
+- Tras la segunda pasada, filas con `correo`: **148 de 210** (se partió de
+  79). Filas sin `web`: 39.
 
 ## Residuales para la segunda pasada
 
-- **14 `pendiente`, todas con el mismo bloqueo y todas candidatas a purga**:
-  filas del estrato de Google Maps sin teléfono, sin web, sin redes y sin ficha
-  sectorial. Cuatro tienen además nombre genérico que no es nombre comercial
-  («La huerta», «Huerta grande», «Huertas El Caserío», «Obrador Confiterías
-  León») y una lo tiene igual al del producto («Embutidos de León»). Las otras:
-  Chocolates Ner, La Huerta del Abuelo, Granja Avícola Pascual, Matadeón de los
-  Oteros Legumbre, Cereales y Legumbres El Canal, El Faedo, Miel Traslapeña,
-  Panadería Raquel y Panadería El Manjar.
+- **Segunda y tercera pasadas 2026-07-28: 14 → 2 `pendiente`**. Se purgaron seis falsos
+  productores: Embutidos de León era La Despensa de Fer, una tienda; Huerta
+  Grande es un recinto municipal; Huertas El Caserío es una hacienda de
+  eventos; Matadeón de los Oteros Legumbre era el Almacén Campotero; La Huerta
+  del Abuelo es una frutería minorista; y el punto de Chocolates Ner corresponde
+  actualmente a una clínica sanitaria.
+  Se rescataron Miel Traslapeña y Panadería El Manjar a `verificado`, y Obrador
+  Confiterías León, Granja Avícola Pascual, El Faedo y Panadería Raquel a
+  `parcial`. Quedan solo **La huerta de San Martín de Torres y Cereales y
+  Legumbres El Canal**, sin base suficiente ni para verificar ni para purgar.
+  Estado provincial: **208 filas; 163 `verificado`, 43 `parcial`, 2
+  `pendiente`**.
 - **Encaje de las envasadoras: resuelto** el 2026-07-26 a favor de conservarlas
   (ver Reglas locales, punto 11). Arconada pasa a `verificado`; El Maragato,
   Luengo, El Peregrino, Cofrubi, Frutibierzo y Val de Ornedo **siguen en
@@ -966,17 +971,17 @@ Cerrado el 2026-07-26. Reauditoría sobre las 214 filas resultantes:
   afirma cultivar), Bubo Babia (obrador en Piedrafita de Babia según la prensa,
   Villablino según el registro) y Miel de León (domiciliada en el Páramo y
   autodescrita como del Bierzo).
-- **40 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
+- **43 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
   reintento los dominios caídos o bloqueados: Señorío de los Arcos, Marcos
   Miñambres, Julio Crespo, Morvega y Sidra Carral (certificado caducado o error
   500), El Peregrino (403 sistemático), Bubo Babia y El Maragato.
 - **Dominios a rescatar o vaciar**: Cepall, Mas Asturias, Valle Blanco, Solotero,
   Leitariegos y La Flor de Ribaseca se quedaron sin `web` porque su dominio es
   NXDOMAIN o sirve una página vacía; conviene reintentar por si han vuelto.
-- **105 `no comprobado`**: varios son webs sin tienda que podrían tener canal no
+- **101 `no comprobado`**: varios son webs sin tienda que podrían tener canal no
   publicado, y unos pocos son tiendas caídas que conviene reintentar (Leyenda del
   Páramo, Bodegas Estefanía, Unión Panadera).
-- **68 de 214 filas sin imagen** (32 %). Es el mayor hueco de calidad que deja la
+- **68 de 208 filas sin imagen** (33 %). Es el mayor hueco de calidad que deja la
   pasada y no se tocó, salvo el renombrado de las nueve imágenes cuyo slug cambió
   y el borrado de las once de filas purgadas.
 - **Altas pendientes detectadas al paso**: la bodega y el obrador de conservas de

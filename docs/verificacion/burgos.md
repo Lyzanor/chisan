@@ -528,6 +528,13 @@ tarea.
   (−39: 25 purgas + 14 fusiones; los 30 registros `merge` incluyen además 16
   renombres de slug de la misma entidad), 297 pendientes → 5, VO 16 `sí`
   cuarentena → 140 `sí` todos con canal. `verify:data` en verde.
+- **Segunda pasada residual (2026-07-28): 5 → 1 `pendiente`**. Miel Riuseco,
+  Miel Apilife, Huevos Camperos y Collalb@s reaparecen en Burgos Alimenta u
+  otras fuentes públicas y pasan a `parcial`; Collalb@s se recategoriza a
+  `Legumbres y cereales`. Solo queda Manuel Torre Vivanco: su teléfono era el
+  de la Asociación de Productores y Comerciantes Las Caderechas y se retira,
+  pero no hay base para purgar la identidad. Estado: **303 filas; 222
+  `verificado`, 80 `parcial`, 1 `pendiente`**.
 - **Herencia a reauditar** (diferencia clave con Ávila, que partía de cero):
   los 25 `verificado` y 20 `parcial` heredados NO se respetan por defecto; se
   reauditan dentro de su lote con el mismo estándar que una fila `pendiente`
