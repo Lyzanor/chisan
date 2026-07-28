@@ -43,6 +43,40 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ## Estado
 
+```text
+Estado de pasada: mantenimiento
+Base: 7f56485
+Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
+  canal-sin-clasificar, descripcion-generica, categoria-variante (check:defects)
+Lote activo: — (ZA-R1-1 y ZA-R1-2 cerrados)
+Alcance: —
+Última actualización: 2026-07-28
+```
+
+- **Lotes ZA-R1-1 y ZA-R1-2 (2026-07-28, carril R1).** Alcance: las 27
+  `pendiente`, que incluían las 23 `sinteticas`. Ambas colas a **0**;
+  246→223 filas. La pasada anterior ya había buscado las 23 sin hallar rastro
+  y había verificado que sus dominios no resuelven; se paró con la razón
+  correcta escrita («ausencia y fallo técnico no prueban inexistencia»). Lo
+  que faltaba era la fuente que zanja, y ahora hay dos: **ninguna de las 23
+  está en «Pon Aragón en tu Mesa»** (3.154 fichas, 1.337 productores, 20
+  grupos LEADER) **ni en el Registro de la Artesanía Alimentaria de Aragón**
+  (30/06/2026). Purgadas con `nonexistent` y la nota redactada como defecto
+  del registro propio, no como inexistencia del negocio.
+  - Método reutilizable: el buscador del directorio se replica por URL con
+    `?w2dc_action=search&controller=directory_controller&what_search=…`; los
+    resultados vienen en el HTML aunque el contador se pinte por JS.
+  - Matiz que queda escrito en 7 evidencias: Zaragoza capital y Utebo no los
+    cubre bien ese directorio, que es de ámbito rural (Utebo devuelve 0
+    fichas). Ahí el peso lo llevan los directorios generalistas, el dominio
+    inventado y la ausencia total de datos.
+  - De las 4 filas que venían del registro mercantil, 3 purgadas como
+    `not-producer` —Epulae Monegros (además en concurso voluntario desde
+    2019), Inversiones Michelac y Aragonesa de Productos Lácteos: su único
+    rastro es un CNAE de fabricación de queso y un domicilio, en un caso un
+    piso—. **Agerca S. Coop. (Tauste) sí es real** y sube a `parcial`
+    (quesos de cabra Quesicos y Quitapenas, tel. 976 854 267); queda sin
+    dirimir si su dirección es Juan de Austria s/n o Ronda Val de Volvi 5.
 - Inicio: **2026-07-14**. Modo: primera pasada profunda de las 254 filas
   heredadas; no se añaden candidatos nuevos antes del cierre transversal.
 - Snapshot inicial: **254 filas**; **183 `pendiente`, 61 `parcial`, 10
