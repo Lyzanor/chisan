@@ -17,11 +17,12 @@
 //   node scripts/audit-defects.mjs                  every province
 //   node scripts/audit-defects.mjs --provincia soria
 //   node scripts/audit-defects.mjs --check sinteticas --list
+//   node scripts/audit-defects.mjs --check descripcion-generica --plantillas
 //   node scripts/audit-defects.mjs --json
 
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "csv-parse/sync";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -59,6 +60,7 @@ const onlyProvincia = flag("provincia");
 const onlyCheck = flag("check");
 const wantList = argv.includes("--list");
 const wantJson = argv.includes("--json");
+const wantPlantillas = argv.includes("--plantillas");
 
 const norm = (s) =>
   (s ?? "")
@@ -73,6 +75,26 @@ const hostOf = (url) => {
   const m = (url ?? "").match(/^https?:\/\/(?:www\.)?([^/?#]+)/i);
   return m ? m[1].toLowerCase() : "";
 };
+
+// Collapse the proper nouns out of a description so two rows that differ only
+// by producer name, municipality or DO reduce to the same shape. Generated
+// boilerplate was written from a handful of templates, so grouping by shape
+// turns "1.260 rows to rewrite" into "a few dozen decisions": for each shape,
+// either it carries a fact that is not already in another column, or the whole
+// cluster should be emptied. Runs of capitalised words fold together so
+// `Google Maps` or `Ribera del Duero` count as one placeholder.
+// A run is a capitalised word plus any further capitalised words, tolerating
+// the lowercase particles that sit inside Spanish and Catalan place names
+// (`San Vicente de la Sonsierra`, `Ribera del Duero`).
+const PROPER_NOUN_RUN =
+  /\b\p{Lu}[\p{L}\p{N}·'’-]*(?:(?:\s+(?:de|del|la|las|el|los|y|e|i|d'))*\s+\p{Lu}[\p{L}\p{N}·'’-]*)*/gu;
+export const templateShape = (text) =>
+  (text ?? "")
+    .toString()
+    .replace(PROPER_NOUN_RUN, "«…»")
+    .replace(/\d+([.,]\d+)?/g, "«n»")
+    .replace(/\s+/g, " ")
+    .trim();
 
 // Taxonomy drift the per-file near-duplicate warning cannot see, because the
 // variants live in different provinces and its normalization does not fold
@@ -177,9 +199,18 @@ function readEvidence(comunidad, provincia) {
 
 // Each check returns the offending rows so --list can name them. The label is
 // what a future agent reads to decide whether the item is worth their session.
-const CHECKS = [
+//
+// `kind` decides whether a check belongs in the shared workload:
+//   cola  -> a defect: every hit is either fixed or justified as a residual.
+//   senal -> a coverage gap that may legitimately stay open forever. Empty is a
+//            valid end state, so these never enter the union that drives
+//            priority. Counting them there buries the real overlap: with them
+//            in, ~5.000 rows look like they sit in two queues; without them,
+//            it is ~870, and almost all of it is "row already opened for venta".
+export const CHECKS = [
   {
     id: "sinteticas",
+    kind: "cola",
     label: "filas sin un solo enlace ni contacto (candidatas a fila sintética)",
     hint: "docs/EDITORIAL_POLICY.md § Decision order: cruzar contra la fuente exhaustiva de la comunidad antes de decidir",
     run: ({ rows }) =>
@@ -190,6 +221,7 @@ const CHECKS = [
   },
   {
     id: "evidencia-prestada",
+    kind: "cola",
     label: "`verificado` cuyo único enlace externo es un pin de Google Maps",
     hint: "un pin es contenido de usuario: prueba que hay un punto, no que el productor esté activo",
     run: ({ rows }) =>
@@ -204,6 +236,7 @@ const CHECKS = [
   },
   {
     id: "web-de-tercero",
+    kind: "cola",
     label: `\`web\` compartida por >=${SHARED_DOMAIN_THRESHOLD} filas de la provincia (consejo, mercado o blog haciendo de web propia)`,
     hint: "el enlace prestado hace pasar el gate de `verificado` sin una fuente del productor",
     run: ({ rows }) => {
@@ -221,6 +254,7 @@ const CHECKS = [
   },
   {
     id: "descripcion-generica",
+    kind: "cola",
     label: "`descripcion` que no distingue a este productor de otro de su categoría",
     hint: "docs/CSV_CONTRACT.md § Editorial field conventions; se publica tal cual en la ficha",
     run: ({ rows }) =>
@@ -232,30 +266,35 @@ const CHECKS = [
   // on one metric is worse than one tool owning it.
   {
     id: "categoria-variante",
+    kind: "cola",
     label: "`categoria` que es variante minoritaria de otra en uso (plural o combo)",
     hint: "el filtro de la app agrupa por string exacto: estas filas son invisibles desde la etiqueta mayoritaria",
     run: ({ rows }, ctx) => rows.filter((r) => ctx.categoryVariants.has(r.categoria)),
   },
   {
     id: "canal-sin-clasificar",
+    kind: "cola",
     label: "`Venta online=sí` sin `Canal de venta`",
     hint: "sabemos que vende pero no cómo se le pide: el dato que hace accionable la fila",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "sí" && !r["Canal de venta"]),
   },
   {
     id: "venta-sin-resolver",
+    kind: "cola",
     label: "`Venta online=no comprobado`",
     hint: "objetivo 100% resuelto en docs/PROVINCE_COMPLETENESS.md; es el mayor hueco abierto",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "no comprobado"),
   },
   {
     id: "sin-imagen",
+    kind: "senal",
     label: "sin `imagen`",
     hint: "docs/IMAGES.md; enrich:images por slug con --contact-sheet, nunca --apply en bloque",
     run: ({ rows }) => rows.filter((r) => !r.imagen),
   },
   {
     id: "sin-evidencia",
+    kind: "senal",
     label: "filas sin registro `keep` en el ledger de evidencia",
     hint: "la evidencia es opcional y advisory; falta-keep NO es deuda que haya que backfillear",
     run: ({ rows, comunidad, provincia }) => {
@@ -265,6 +304,7 @@ const CHECKS = [
   },
   {
     id: "pendiente",
+    kind: "cola",
     label: "`verificacion=pendiente`",
     hint: "sin revisar: es la única categoría que la app muestra sin ninguna comprobación",
     run: ({ rows }) => rows.filter((r) => r.verificacion === "pendiente"),
@@ -286,17 +326,52 @@ function main() {
   }
 
   const results = [];
+  const queueMembership = new Map(); // `provincia/slug` -> Set of `cola` check ids
+  const plantillaRows = [];
   for (const province of provinces) {
     const entry = { provincia: province.provincia, filas: province.rows.length, checks: {} };
     for (const check of checks) {
       const hits = check.run(province, ctx);
       entry.checks[check.id] = wantList || wantJson ? hits.map((r) => r.slug) : hits.length;
+      if (check.kind === "cola") {
+        for (const row of hits) {
+          const key = `${province.provincia}/${row.slug}`;
+          if (!queueMembership.has(key)) queueMembership.set(key, new Set());
+          queueMembership.get(key).add(check.id);
+        }
+      }
+      if (wantPlantillas && check.id === "descripcion-generica") {
+        for (const row of hits) plantillaRows.push({ provincia: province.provincia, row });
+      }
     }
     results.push(entry);
   }
 
+  // Priority is per producer, not per check: a row in three queues is still one
+  // investigation. Computed here so no document has to freeze the number.
+  const union = [...queueMembership.values()];
+  const workload = {
+    filasEnCola: union.length,
+    enDosOMasColas: union.filter((s) => s.size >= 2).length,
+  };
+
+  if (wantPlantillas) {
+    reportPlantillas(plantillaRows);
+    return;
+  }
+
   if (wantJson) {
-    console.log(JSON.stringify({ checks: checks.map((c) => ({ id: c.id, label: c.label })), provinces: results }, null, 2));
+    console.log(
+      JSON.stringify(
+        {
+          checks: checks.map((c) => ({ id: c.id, label: c.label, kind: c.kind })),
+          workload,
+          provinces: results,
+        },
+        null,
+        2,
+      ),
+    );
     return;
   }
 
@@ -313,7 +388,8 @@ function main() {
       .sort((a, b) => b[1] - a[1]);
     const total = affected.reduce((sum, [, n]) => sum + n, 0);
 
-    console.log(`## ${check.id} — ${total} filas en ${affected.length} provincias`);
+    const suffix = check.kind === "senal" ? " · señal, no cola" : "";
+    console.log(`## ${check.id} — ${total} filas en ${affected.length} provincias${suffix}`);
     console.log(`   ${check.label}`);
     if (total > 0) {
       console.log(`   → ${check.hint}`);
@@ -330,9 +406,57 @@ function main() {
     console.log("");
   }
 
+  if (!onlyCheck) {
+    console.log(
+      `## carga real — ${workload.filasEnCola} filas en alguna cola, ${workload.enDosOMasColas} en dos o más`,
+    );
+    console.log("   productores únicos, sin contar las señales: la unidad de trabajo es la fila, no el check");
+    console.log("   → una fila en varias colas se investiga una vez y se cierran juntas sus decisiones\n");
+  }
+
   if (!wantList && !onlyCheck) {
     console.log("Detalle por fila: --check <id> --list · una provincia: --provincia <nombre> · JSON: --json");
   }
 }
 
-main();
+// Boilerplate descriptions were generated from templates, so the work is one
+// decision per shape, not one per row. Sorted by cluster size: the top entry is
+// usually worth more than the whole tail.
+function reportPlantillas(entries) {
+  if (entries.length === 0) {
+    console.log("Sin filas de `descripcion-generica` en el alcance pedido.");
+    return;
+  }
+  const byShape = new Map();
+  for (const { provincia, row } of entries) {
+    const shape = templateShape(row.descripcion);
+    if (!byShape.has(shape)) byShape.set(shape, { filas: [], provincias: new Set() });
+    const group = byShape.get(shape);
+    group.filas.push({ provincia, slug: row.slug, descripcion: row.descripcion });
+    group.provincias.add(provincia);
+  }
+  const groups = [...byShape.entries()].sort((a, b) => b[1].filas.length - a[1].filas.length);
+
+  console.log(
+    `Plantillas de descripción — ${entries.length} filas en ${groups.length} formas distintas\n`,
+  );
+  for (const [shape, group] of groups) {
+    console.log(`## ${group.filas.length} filas · ${[...group.provincias].join(", ")}`);
+    console.log(`   ${shape}`);
+    console.log(`   ej.: ${group.filas[0].descripcion}`);
+    if (wantList) {
+      for (const provincia of group.provincias) {
+        const slugs = group.filas.filter((f) => f.provincia === provincia).map((f) => f.slug);
+        console.log(`     ${provincia}: ${slugs.join(", ")}`);
+      }
+    }
+    console.log("");
+  }
+  console.log(
+    "Decide una vez por forma: si no aporta un hecho ausente de `categoria`/`municipio`, vacía el grupo entero.",
+  );
+  if (!wantList) console.log("Slugs por grupo: añade --list");
+}
+
+// Importable for tests; still a plain CLI when run directly.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

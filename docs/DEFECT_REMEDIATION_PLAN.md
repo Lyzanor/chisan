@@ -13,6 +13,9 @@ npx pnpm check:csv:data-quality
 npx pnpm check:csv:completeness
 ```
 
+Si `npx` falla, el gate sigue siendo el comando, no el lanzador: ejecuta
+`node scripts/audit-defects.mjs` o `bash scripts/check-csv-quality.sh` y sigue.
+
 Este plan organiza el trabajo; no sustituye los contratos de
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md`,
 `docs/EDITORIAL_POLICY.md`, `docs/VERIFICATION_TECHNIQUES.md` y
@@ -45,6 +48,33 @@ No cuentan como progreso:
 - añadir productores nuevos mientras la pasada contratada es de saneamiento,
   salvo que una fusión o corrección de identidad lo exija.
 
+### Colas y señales
+
+`check:defects` marca cada check con un `kind` y solo las **colas** son carga de
+trabajo:
+
+- **cola**: cada fila se arregla o se justifica como residual.
+- **señal**: hueco de cobertura que puede quedarse abierto para siempre porque
+  vacío es un final válido. Hoy son `sin-imagen` (objetivo fijo del 60%) y
+  `sin-evidencia` (advisory por contrato). No entran en la unión que ordena el
+  trabajo.
+
+La prioridad se mide en **productores únicos**, no sumando checks: una fila en
+tres colas sigue siendo una investigación. La cifra la calcula la herramienta y
+por eso no se copia aquí:
+
+```bash
+npx pnpm check:defects            # última sección: "carga real"
+npx pnpm check:defects --json     # campo `workload`
+```
+
+Contar las señales como cola infla la unión unas seis veces y esconde el único
+solape que importa de verdad: la mayoría de filas que están en dos colas son
+`venta-sin-resolver` cruzada con `descripcion-generica`, `web-de-tercero` o
+`evidencia-prestada`. En la práctica eso significa **una sola regla**: cuando
+abras una fila para resolver venta, cierra en la misma visita su descripción, su
+web y su evidencia.
+
 ## 2) Unidad de trabajo y regla de no solape
 
 La unidad de propiedad es la **provincia**. La unidad de entrega es un **lote
@@ -56,8 +86,8 @@ cerrado de slugs** dentro de esa provincia.
 - Las provincias distintas sí son independientes, salvo durante un lote
   global de tooling o taxonomía.
 - Un lote global que toque validadores, referencias o varios CSV declara
-  **ventana global**: antes de empezar se comprueba que no haya ramas o cambios
-  activos sobre los mismos ficheros.
+  **ventana global**: antes de empezar se comprueba que no haya ramas,
+  worktrees ni cambios activos sobre los mismos ficheros.
 - Cada lote congela su lista exacta de slugs antes de investigar. Un hallazgo
   fuera de alcance se anota para el siguiente lote; no se corrige “de paso”.
 - Una purga o fusión puede tocar el slug objetivo, su imagen, evidencia y nota
@@ -70,18 +100,28 @@ Para una pasada que vaya a ocupar más de una sesión, la cabecera de
 ```text
 Estado de pasada: activa | pausada | mantenimiento
 Base: <commit>
+Método: <detectores vigentes al cerrar: G-CAT, G-GEO, G-TPL, G-WEB…>
 Lote activo: <id y carril>
 Alcance: <lista exacta de slugs o subsección que la contiene>
 Última actualización: <YYYY-MM-DD>
 ```
+
+`Método` existe porque una pasada cerrada no es una pasada buena: dice contra
+qué detectores se validó la provincia, y por tanto cuáles no la han mirado
+nunca. Sin esa línea, cada detector nuevo obliga a reabrir todo a ciegas.
 
 No se crea una tabla central de estados. Antes de confiar en un ledger o una
 rama antigua se contrasta su trabajo real:
 
 ```bash
 git status --short
+git worktree list
 git diff main...<rama> -- data/csv data/evidence public/productores docs/candidates docs/verificacion
 ```
+
+`git worktree list` no es opcional: un árbol principal limpio no dice nada sobre
+worktrees con datos sin aterrizar, y el `git diff` de la tercera línea exige
+saber ya el nombre de la rama.
 
 Si la provincia ya tiene cambios activos, se reanuda o se entrega ese trabajo;
 no se abre una segunda pasada.
@@ -116,8 +156,24 @@ no se abre una segunda pasada.
 
 ## 4) Fase G — cerrar primero las puertas de tooling
 
-Estos lotes requieren `verify:ai`. Mientras uno esté activo no se hace trabajo
-provincial sobre los ficheros que vaya a migrar.
+Estos lotes requieren `verify:ai` y declaran ventana global.
+
+**Cada puerta bloquea solo el carril que puede reintroducir su defecto.** El
+saneamiento de identidad no escribe categorías, municipios ni descripciones, así
+que no espera a nadie:
+
+| Lote | Bloquea | No bloquea |
+|---|---|---|
+| G-CAT-1 y G-CAT-2 | carril T y cualquier escritura de `categoria` | R0, R1, V, E, I |
+| G-GEO-1 | carril E (localización) | R0, R1, V, T, I |
+| G-TPL-1 | carril T | R0, R1, V, E, I |
+| G-WEB-1 | nada: adelanta trabajo de R0 y R1 | — |
+
+**Salida obligatoria de todo lote G:** pasar el detector nuevo por las
+provincias que ya figuran como cerradas y archivar sus hits como cola de
+mantenimiento en el ledger de cada una. Es un diff, no una repasada. Sin este
+paso, cada detector nuevo deja una capa de provincias que nunca lo vieron y el
+problema aparece entero en la Ola 7.
 
 ### G-CAT-1 — detector y mapa de taxonomía
 
@@ -166,6 +222,29 @@ estar describiendo un productor mixto y necesitan una decisión editorial.
   creciente de marcas reales.
 - El detector solo genera candidatos. La reparación exige fuente del productor
   y puede afectar categoría, productos y descripción.
+
+### G-WEB-1 — dominios muertos, aparcados y secuestrados
+
+Ningún script del repo resuelve hoy un dominio, y sin embargo el hallazgo
+recurrente de las pasadas profundas es exactamente ese: webs caídas que Google
+sigue indexando con tienda y precios, y alguna reasignada a spam. Es información
+falsa publicada —lo primero de la lista del § 1— y solo se descubre abriendo
+filas a mano.
+
+- Check advisory que resuelva cada `web` del catálogo y **clasifique**, sin
+  decidir: NXDOMAIN · dominio sin NS · conexión rechazada · timeout · redirección
+  a otro dominio · portada de parking o de proveedor · 200 vivo · 403 vivo.
+- Un 403 no es un sitio muerto y un 200 no es un sitio del productor: la
+  clasificación alimenta R0 y R1, no los sustituye.
+- Guardar el resultado como snapshot con fecha. Caduca: es una afirmación
+  dinámica, igual que `Venta online`.
+- Concurrencia baja y reintento único. Un timeout se clasifica como timeout, no
+  como caída.
+- Las pruebas cubren la clasificación de respuestas con fixtures; no tocan la
+  red.
+
+Salida: lista precalculada que convierte el paso más caro de R0/R1 en lectura.
+Sirve igual para triar `web-de-tercero`.
 
 ### G-AUD-1 — utilidad del inventario
 
@@ -246,8 +325,8 @@ Para cada fila:
 - usar `no` solo tras revisar los canales actuales y no encontrar pedido
   remoto; bloqueo, timeout o ambigüedad permanecen `no comprobado`;
 - registrar `online-sales` en evidencia cuando se decide `sí` o `no`;
-- aprovechar la misma fuente para corregir contacto o enlace únicamente si es
-  inequívoco y pertenece al slug del lote.
+- cerrar en la misma visita descripción, web y evidencia de esa fila. Es el
+  solape real del catálogo: reabrirla después cuesta el doble.
 
 Salida: todo `sí` tiene canal y prueba vigente; los `no` del lote fueron
 revisados; cada `no comprobado` residual tiene una razón material reanudable,
@@ -255,10 +334,36 @@ no una investigación olvidada.
 
 ### T — texto, productos y consistencia semántica
 
-Tamaño orientativo: 10–25 filas.
-
 Incluye `descripcion-generica`, duplicados de descripción del audit de calidad
 y candidatos de plantilla cruzada.
+
+#### T0 — decidir por plantilla, no por fila
+
+La mayor parte de `descripcion-generica` no son decisiones independientes: son
+unas pocas plantillas de volcado repetidas. Agrúpalas antes de escribir nada.
+
+```bash
+npx pnpm check:defects --check descripcion-generica --plantillas
+npx pnpm check:defects --provincia <provincia> --check descripcion-generica --plantillas --list
+```
+
+Para cada forma, una sola pregunta: **¿aporta algún hecho que no esté ya en
+`categoria`, `municipio` o `verificacion`?**
+
+- Si no —el caso típico, «[categoría] de la [DO] situada en [municipio],
+  incorporada al catálogo provincial de [X] y revisada con Google Maps»—, vacía
+  el grupo entero en un lote revisado. `descripcion` vacía tiene severidad
+  `suppressed` en el auditor: es legal y ni siquiera emite aviso.
+- Si sí, el grupo pasa a redacción individual con el tamaño normal del carril.
+
+Vaciar en grupo no es una excepción a la política editorial, es su aplicación:
+vacío es mejor que un texto que no distingue al productor. Y baja de golpe buena
+parte de los avisos de `check:csv:data-quality`, que se concentran en los mismos
+CSV.
+
+#### T1 — redacción individual
+
+Tamaño orientativo: 10–25 filas.
 
 - Escribir solo hechos específicos y verificables del productor: qué produce,
   método, lugar o trayectoria cuando la fuente lo publica.
@@ -353,7 +458,13 @@ Tamaño: una provincia, después de terminar sus carriles contratados.
    promoción.
 6. Podar candidatos resueltos y comprimir el ledger provincial según
    `docs/VERIFICATION_TECHNIQUES.md`.
-7. Ejecutar todos los gates de cierre.
+7. Actualizar la cabecera de reserva: `Estado de pasada: mantenimiento` y la
+   línea `Método` con los detectores vigentes.
+8. `data/evidence/coverage.json` se toca solo si la provincia cumple su
+   criterio propio —toda fila con registro `keep`, según
+   `docs/EVIDENCE_CONTRACT.md`—, que **no** es «cero pendientes». Cerrar una
+   pasada no implica entrar en ese fichero, y no entrar no es deuda.
+9. Ejecutar todos los gates de cierre.
 
 Una provincia termina la pasada profunda cuando no quedan `pendiente`, los
 residuales tienen un techo de evidencia conocido y las afirmaciones dinámicas
@@ -365,17 +476,28 @@ congelado.
 El orden se recalcula al inicio de cada ola con el inventario vivo. No se
 mantienen rankings provinciales en documentos.
 
-### Ola 0 — tooling y daño conocido
+Las olas describen prioridad, no una cola estrictamente serie. **La Ola 0 y la
+Ola 1 corren en paralelo desde el primer día**: son ficheros disjuntos y la
+tabla de bloqueo del § 4 dice exactamente qué carril espera a qué puerta.
+Encolar el saneamiento de filas publicadas detrás de cuatro lotes de tooling
+mantiene vivo el daño peor por el defecto más barato.
 
-Completar G-CAT, G-GEO y G-TPL, y retirar las imágenes basura ya confirmadas.
-Esta ola evita que el trabajo editorial pueda reintroducir categorías
-retiradas o escapar de la geografía.
+### Ola 0 — tooling
+
+Completar G-CAT, G-GEO, G-TPL y G-WEB. Evita que el trabajo editorial pueda
+reintroducir categorías retiradas o escapar de la geografía, y precalcula los
+enlaces muertos para las olas siguientes.
 
 ### Ola 1 — riesgo alto y colas pequeñas cerrables
 
-1. Provincias con `pendiente` o `sinteticas`.
-2. `canal-sin-clasificar`.
-3. Colas pequeñas de `evidencia-prestada` y `web-de-tercero`.
+No espera a la Ola 0.
+
+1. R0: basura visual y enlaces ajenos ya confirmados.
+2. R1 en provincias con `pendiente` o `sinteticas`, de cola menor a mayor.
+   Filas inventadas y sin revisar están publicadas: es lo más caro para el
+   usuario y lo más barato de arreglar.
+3. `canal-sin-clasificar`.
+4. Colas pequeñas de `evidencia-prestada` y `web-de-tercero`.
 
 Dentro del mismo nivel, empezar por la provincia con menos slugs únicos permite
 cerrar el protocolo con rapidez; después abordar los clusters grandes por
@@ -398,14 +520,14 @@ Ordenar provincias por número vivo de `venta-sin-resolver`:
 4. más de 200, divididas por categoría/dominio.
 
 El objetivo es cerrar provincias pequeñas y aprender de sus fuentes antes de
-entrar en las colas mayores. Dentro de cada fila se corrige también el canal y
-el contacto inequívoco encontrado en la misma fuente.
+entrar en las colas mayores. Dentro de cada fila se corrige también el canal, el
+texto y el contacto inequívoco encontrado en la misma fuente.
 
 ### Ola 4 — texto y plantilla
 
-Priorizar provincias donde `descripcion-generica` o los avisos de descripción
-afecten a una parte grande del CSV. Reutilizar fuentes ya abiertas en R1/V y
-hacer pasadas dedicadas solo sobre el residual.
+Empezar siempre por T0: el paso de plantillas convierte la mayor parte de la
+cola en unas decenas de decisiones. Reutilizar fuentes ya abiertas en R1/V y
+hacer pasadas dedicadas solo sobre el residual que sobrevive al agrupamiento.
 
 ### Ola 5 — enriquecimiento útil
 
@@ -422,6 +544,8 @@ debajo del objetivo fijo. No perseguir 100%: cada activo debe mejorar la ficha.
 
 Cerrar consistencia provincial, rotar ledgers, podar candidatos y pasar a
 mantenimiento periódico de actividad, enlaces, `Venta online=sí` e imágenes.
+Las provincias cuya línea `Método` no incluya un detector ya vigente entran aquí
+por su re-escaneo, no por una pasada nueva.
 
 ## 7) Gates y criterio de aceptación
 
@@ -480,7 +604,8 @@ el inventario, se documenta como nueva visibilidad, no como regresión de datos.
 
 ## 8) Medición y cadencia
 
-- Medir por slugs únicos revisados, no por suma bruta de checks solapados.
+- Medir por slugs únicos revisados, no por suma bruta de checks solapados. La
+  cifra viva es la línea `carga real` de `check:defects`.
 - Registrar por lote: revisados, verificadas/parciales, ventas resueltas,
   purgas, merges, correcciones de identidad y residuales justificados.
 - Comparar cada provincia contra su estado anterior, nunca contra otra.
@@ -488,26 +613,38 @@ el inventario, se documenta como nueva visibilidad, no como regresión de datos.
   provincia y cada 5–10 lotes provinciales.
 - Usar `check:csv:completeness` como señal, no como obligación de rellenar
   campos inexistentes.
-- `sin-evidencia` no es KPI ni cola de backfill. La evidencia se añade cuando
-  se toma una decisión.
-- `sin-imagen` y `venta-sin-resolver` pueden conservar residuales legítimos:
-  el éxito es que estén revisados y que no se haya inventado una respuesta.
+- Las señales (`sin-evidencia`, `sin-imagen`) no son KPI ni cola de backfill.
+  Pueden conservar residuales legítimos: el éxito es que estén revisados y que
+  no se haya inventado una respuesta.
 - Los commits y el ledger provincial son el handoff. No copiar listados de
   slugs o recuentos globales a este documento.
 
 ## 9) Secuencia de arranque
 
-1. G-CAT-1: detector, mapa canónico y pruebas.
-2. G-CAT-2: migración por familias y retirada efectiva de etiquetas.
-3. G-GEO-1: municipios bilingües y casos de homónimos.
-4. G-TPL-1: detector advisory de plantilla cruzada.
-5. R0: basura visual ya confirmada.
-6. R1: provincias con `pendiente`/`sinteticas`, de cola menor a mayor.
-7. V: `canal-sin-clasificar`.
-8. R1: clusters de fuentes prestadas, dejando campañas grandes para lotes
-   secuenciales.
-9. V: provincias con 1–40 ventas sin resolver; continuar por bandas.
-10. T, E, I y C según se estabilice cada provincia.
+Dos carriles en paralelo. El de datos no espera al de tooling salvo donde lo
+diga la tabla de bloqueo del § 4.
 
-Antes de iniciar el punto 1 se vuelve a medir: si otro trabajo ya lo resolvió,
-se elimina o reajusta el lote en vez de repetirlo.
+**Tooling (ventana global, `verify:ai`)**
+
+1. G-WEB-1: clasificación de dominios. Primero porque no bloquea a nadie y
+   convierte trabajo manual de los demás en lectura.
+2. G-CAT-1: detector, mapa canónico y pruebas.
+3. G-CAT-2: migración por familias y retirada efectiva de etiquetas.
+4. G-GEO-1: municipios bilingües y casos de homónimos.
+5. G-TPL-1: detector advisory de plantilla cruzada.
+
+Cada uno cierra con el re-escaneo de las provincias ya cerradas.
+
+**Datos (una provincia por escritor, desde el día uno)**
+
+1. R0: basura visual y enlaces ajenos ya confirmados.
+2. R1: provincias con `pendiente`/`sinteticas`, de cola menor a mayor.
+3. V: `canal-sin-clasificar`.
+4. R1: clusters de fuentes prestadas, dejando campañas grandes para lotes
+   secuenciales.
+5. V: provincias con 1–40 ventas sin resolver; continuar por bandas.
+6. T0 sobre las provincias con más plantilla, en cuanto G-TPL-1 esté verde.
+7. T1, E, I y C según se estabilice cada provincia.
+
+Antes de iniciar cualquiera de los dos puntos 1 se vuelve a medir: si otro
+trabajo ya lo resolvió, se elimina o reajusta el lote en vez de repetirlo.

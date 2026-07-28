@@ -23,7 +23,8 @@
     "test:enrich-images": "python3 scripts/test-enrich-images.py",
     "test:evidence-contract": "node scripts/test-evidence-contract.mjs",
     "test:editorial-policy": "node scripts/test-editorial-policy.mjs",
-    "test:intelligence": "pnpm test:evidence-contract && pnpm test:editorial-policy",
+    "test:audit-defects": "node scripts/test-audit-defects.mjs",
+    "test:intelligence": "pnpm test:evidence-contract && pnpm test:editorial-policy && pnpm test:audit-defects",
     "test:behavior": "bash scripts/test-behavior.sh",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence",
     "verify:ai": "pnpm verify && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm test:csv-audit && pnpm test:enrich-images && pnpm test:intelligence && pnpm test:behavior"

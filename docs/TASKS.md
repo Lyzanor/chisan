@@ -104,6 +104,11 @@ Imprime, por provincia, cuántas filas tiene cada defecto de abajo. Añade
 pueden ver porque necesitan contexto entre ficheros o un juicio que el contrato
 no codifica.
 
+Los checks marcados `señal, no cola` (`sin-imagen`, `sin-evidencia`) son huecos
+de cobertura donde vacío es un final válido: no son carga de trabajo. La última
+línea, `carga real`, ya descuenta esas señales y deduplica por fila, que es la
+unidad de investigación real.
+
 ### A) Arreglos de tooling que cierran la puerta (hazlos antes que el trabajo editorial)
 
 Cada uno convierte una limpieza manual recurrente en algo que el validador
@@ -120,6 +125,13 @@ impide. Requieren `verify:ai`.
   fichero.** Por eso `Carne`(mayoría)/`Carnes` no salta ni en Málaga, donde
   conviven en el mismo CSV. La app agrupa por string exacto
   (`lib/csv-catalog.ts`), así que quien filtra una etiqueta no ve la otra.
+- **Nada en el repo resuelve un dominio.** Ni DNS ni HTTP sobre `web`, y el
+  hallazgo recurrente de las pasadas profundas es justo ese: webs caídas que
+  Google sigue indexando con tienda y precios, alguna reasignada a spam. Es
+  información falsa publicada y hoy solo se ve abriendo filas a mano. Falta un
+  check advisory que clasifique (NXDOMAIN · sin NS · rechazada · timeout ·
+  redirección · parking · 200 · 403 vivo) sin decidir nada; un 403 no es un
+  sitio muerto. Spec en `DEFECT_REMEDIATION_PLAN.md` § G-WEB-1.
 - **Municipios en forma bilingüe `A / B` se saltan el geo-check.** El
   normalizador de `audit-csv.js` ya recorta el sufijo `Ciudad - Distrito`; le
   falta probar cada mitad de `Puente la Reina / Gares`. Son 26 filas navarras,
@@ -152,8 +164,12 @@ Ordenada por daño al usuario, no por tamaño.
   cambio (`--check canal-sin-clasificar` lista las que se quedaron a medias).
 - **Descripciones genéricas** (`--check descripcion-generica`): texto que narra
   nuestro proceso («incorporado desde directorios de…», «revisado con Google
-  Maps») o repite la categoría. Se publica tal cual en la ficha. Es cola de
-  redacción, no de purga.
+  Maps») o repite la categoría. Se publica tal cual en la ficha. **No son
+  decisiones fila a fila:** añade `--plantillas` y salen agrupadas por forma de
+  volcado —un puñado de plantillas cubre la mayoría—. Decide una vez por forma:
+  si no aporta un hecho ausente de `categoria`/`municipio`, vacía el grupo
+  entero (`descripcion` vacía es `suppressed`, ni siquiera avisa). Solo el
+  residual es cola de redacción.
 - **Imágenes** (`--check sin-imagen`): flujo en `docs/IMAGES.md`; `enrich:images`
   por slug con `--contact-sheet`, nunca `--apply` en bloque. Rinde más empezar
   por provincias pequeñas y ya cerradas editorialmente que por las grandes.

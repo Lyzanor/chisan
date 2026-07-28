@@ -17,8 +17,8 @@ The audit prints the fixed targets and one mechanical progress score per provinc
 
 | Metric | Target | Meaning |
 | --- | ---: | --- |
-| `verificacion` | 100% | Rows reviewed as `parcial` or `verificado`; `pendiente` remains work to do. |
-| `Venta online` | 100% | Status reviewed as `sí` or `no`; keep `no comprobado` until researched. |
+| `verificacion` | 100% reviewed | Rows reviewed as `parcial` or `verificado`; `pendiente` remains work to do. |
+| `Venta online` | 100% reviewed | Every row researched, not every row resolved: `no comprobado` is the honest answer when the channels were checked and nothing proved remote ordering. |
 | `Google Maps` | 100% | A usable producer/location link is present. |
 | `lat` + `lon` | 100% | Both coordinates are present and pass the geographic checks. |
 | `telefono` or `correo` | 90% | At least one direct contact route is present. |
