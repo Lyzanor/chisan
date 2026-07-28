@@ -35,6 +35,31 @@ tarea.
 
 ## Estado
 
+```text
+Estado de pasada: mantenimiento
+Base: b3bd902
+Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
+  canal-sin-clasificar, descripcion-generica, categoria-variante (check:defects)
+Lote activo: — (BU-R1-25 cerrado)
+Alcance: —
+Última actualización: 2026-07-28
+```
+
+- **Lote BU-R1-25 (2026-07-28, carril R1).** Alcance congelado: las 5
+  `sinteticas` + la última `pendiente`. Las 5 bodegas del Arlanza **no eran
+  sintéticas**: las 5 están en el registro del consejo de la D.O., que además
+  publica el contacto que la 1ª pasada no recogió al retirar `arlanza.org` de
+  `web` (correcto). Recuperados teléfono/correo de las 5, dirección real de
+  Alonso Angulo y Agrobauto (la del volcado era inventada) y Facebook de Alonso
+  Angulo. `alonsoangulo.com` **no resuelve (sin NS)** → no se restituye a `web`.
+  Los `productos estrella` del volcado eran de plantilla: sustituidos por los
+  vinos reales donde constan (Castrinto/Flor de Sanctus/Sanctus, Viña del
+  Fraile, Las Mamblas de Valtravieso) y vaciados donde no. Las 5 siguen
+  `parcial` (techo de registro). **1 purga**: `manuel-torre-vivanco-rucandio`,
+  reason `nonexistent` — la ficha de Burgos Alimenta que la sostenía es la de
+  otra entidad (M.G. Caderechas = Asociación de Productores, Salas de Bureba, ya
+  purgada en el lote 20) y la fila arrastraba su CP 09593 y su teléfono. 303→302
+  filas; `sinteticas` y `pendiente` a **0**.
 - Inicio: 2026-07-06. Modo: **primera pasada profunda**. No añadir candidatos
   nuevos; primero cerrar identidad, alcance, municipio y venta online de las
   filas heredadas. No existe `docs/candidates/burgos.md`.
