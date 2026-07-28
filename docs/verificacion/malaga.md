@@ -10,6 +10,33 @@ los riesgos locales y el avance de Málaga.
 
 ## Estado
 
+> ⚑ **Antes de tocar Málaga, lee esto.** La rama `codex/verifica-malaga-lotes-1-2`
+> tiene 6 commits de lotes 1-21 que **no** están en `main`, pero está
+> **superada**, no viva: su último commit es del 2026-07-06 y `main` completó su
+> propia pasada de Málaga el 2026-07-17 (`c943c33`), además de la purga de
+> imágenes `6d8c1fa`. La rama va 224 commits por detrás. Aun así **no está
+> vacía**: tiene 20 slugs que `main` no tiene y `main` tiene 8 que ella no
+> (algunos son renombrados, p. ej. `caserissimo-mijas` frente a
+> `caserissimo-fuengirola`). Decidir si se rescata alguno es una tarea propia;
+> **no** fusionarla a ciegas. `main` es la fuente de verdad para Málaga.
+
+- **Lote MA-V-a (2026-07-28, carril V).** Alcance: las 14 filas de
+  `check:defects --check canal-sin-clasificar`. **11 cerradas a `ecommerce`**
+  con el mecanismo comprobado en vivo. Resultados que valen más que el token:
+  - **Tropicado baja de `Venta online=sí` a `no comprobado`**: su Shopify no
+    tiene ni un producto publicado (`/products.json` devuelve 0) y la empresa
+    (Zenith Area SL) se describe como importadora/exportadora hortofrutícola.
+    Queda además una **duda de alcance abierta**: puede ser comercializadora, no
+    productora. No se resuelve aquí, es carril R1.
+  - **Dos dominios que no casaban con el nombre resultaron ser correctos**, no
+    webs cruzadas: `ladomadorayelleon.es` es la matriz que produce La Axarca, y
+    `mieldelatorre.com` es el sitio oficial del Ingenio de Frigiliana.
+  - `naturmel.es` redirige a `mielysolomiel.es`: `web` actualizada.
+  - **2 residuales que NO hay que reabrir sin cambiar el contrato**:
+    `miel-el-chozo` (la fuente confirma venta online pero no identifica
+    mecanismo) y `quesos-argudo` (**vende por DM de Instagram y Facebook, y el
+    enum de `Canal de venta` no tipifica mensajería social**). Esto último es un
+    hueco real del contrato, anotado en `docs/TASKS.md` § 7 A.
 - Inicio: 2026-07-16.
 - Snapshot inicial: **405 filas**; **65 `verificado`**, **6 `parcial`** y
   **334 `pendiente`**.

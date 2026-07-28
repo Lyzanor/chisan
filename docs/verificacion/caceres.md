@@ -6,6 +6,24 @@ proveniencia por fila vive en `data/evidence/extremadura/caceres.jsonl`.
 
 ## Estado
 
+- **Lote CC-V-a (2026-07-28, carril V).** Alcance: las 23 filas de
+  `check:defects --check canal-sin-clasificar`. **21 cerradas a `ecommerce`**
+  comprobando el mecanismo en vivo (catálogo con botón de compra), no el texto
+  comercial. **2 residuales por fallo técnico, no por falta de investigación**:
+  `queserias-valle-del-alagon-queval` (queval.es devuelve 503 también en
+  navegador) y `cervezas-cerex` («Mantenimiento programado»). Ninguna decisión
+  se degrada por un fallo técnico; se reabren cuando el sitio vuelva. Cerex se
+  vende además en tiendas de terceros (La Despensa de Laura, Sabor a
+  Extremadura), que es reventa independiente y **no** cuenta como su canal.
+  - Dos hallazgos reutilizables: **Dehesa Barón de Ley no tiene carrito en su
+    web de marca — su tienda vive en un dominio aparte, `tiendabarondeley.es`**;
+    buscar el dominio de tienda separado antes de concluir evita un falso `no`.
+    Y **Bodegas Robledillo de Gata conserva productos de demo de PrestaShop**
+    (`mountain-fox`, `brown-bear`) junto a los reales: es residuo de la
+    instalación, no una tienda de fachada.
+  - Barón de Ley es la única de las 21 sin registro de evidencia: no publica su
+    municipio ni en la web ni en contacto/aviso legal, y no se le inventa el
+    claim. La evidencia es opcional; el canal sí queda en el CSV.
 - Inicio: 2026-07-19.
 - Snapshot inicial: **272 filas**; 14 `verificado`, 27 `parcial` y 231
   `pendiente`.

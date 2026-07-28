@@ -132,6 +132,13 @@ impide. Requieren `verify:ai`.
   check advisory que clasifique (NXDOMAIN · sin NS · rechazada · timeout ·
   redirección · parking · 200 · 403 vivo) sin decidir nada; un 403 no es un
   sitio muerto. Spec en `DEFECT_REMEDIATION_PLAN.md` § G-WEB-1.
+- **El enum de `Canal de venta` no tipifica la mensajería social.** Hay
+  productores cuyo canal de pedido demostrado es el DM de Instagram o Facebook
+  (p. ej. `quesos-argudo-campillos`): `Venta online=sí` está probado y el canal
+  se queda vacío porque ningún token encaja, así que la fila aparece
+  eternamente en `canal-sin-clasificar`. Decidir si se añade un token o si estos
+  casos se documentan como residual legítimo; cambiar el enum toca
+  `docs/CSV_CONTRACT.md`, el validador y sus pruebas.
 - **Municipios en forma bilingüe `A / B` se saltan el geo-check.** El
   normalizador de `audit-csv.js` ya recorta el sufijo `Ciudad - Distrito`; le
   falta probar cada mitad de `Puente la Reina / Gares`. Son 26 filas navarras,
