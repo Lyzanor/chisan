@@ -173,11 +173,6 @@ Ordenada por daño al usuario, no por tamaño.
 - **Imágenes** (`--check sin-imagen`): flujo en `docs/IMAGES.md`; `enrich:images`
   por slug con `--contact-sheet`, nunca `--apply` en bloque. Rinde más empezar
   por provincias pequeñas y ya cerradas editorialmente que por las grandes.
-  Pendiente aparte: 5 basuras conocidas que sobrevivieron a la purga por hash
-  (`6d8c1fa`) — sevilla `miel-deaz-aznalcollar`,
-  `embutidos-reina-de-los-angeles-el-real-de-la-jara`,
-  `chocolates-mama-goye-…-bollullos-de-la-mitacion`; lugo
-  `abella-meiga-outeiro-de-rei`, `toxal-riba-navia-de-suarna`.
 - **Corrupción por plantilla cruzada (2026-06-21):** filas que heredaron
   `productos estrella` + `descripcion` de otra categoría (texto de miel en una
   almazara). Reparadas 4 por keyword del nombre; quedan las de marca que no
