@@ -92,6 +92,11 @@ la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `d
 npx pnpm check:defects
 ```
 
+El plan de ejecución por lotes, propiedad provincial, orden de carriles,
+criterios de salida y gates vive en
+`docs/DEFECT_REMEDIATION_PLAN.md`. Esta sección describe la worklist; el plan
+explica cómo reducirla durante muchas sesiones sin solapes ni regresiones.
+
 Imprime, por provincia, cuántas filas tiene cada defecto de abajo. Añade
 `--provincia <nombre>` para una sola, `--check <id> --list` para ver los slugs y
 `--json` para tratarlo. No es bloqueante: es la worklist. Los recuentos viven
