@@ -62,6 +62,20 @@ La verdad es el CSV; tras el cierre, la pasada de ampliación «flujo 2026» (ju
 
 ## Mantenimiento (al retomar)
 
+- **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
+  `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
+  local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
+  del llistat de productors de l'ajuntament de Bigues i Riells; Apiaria Vinya i Celler, de la
+  fitxa de catalunya.com). Las 4 restantes quedan con techo documentado en evidencia, salvo
+  Garduixeres. Dos avisos que valen más que la fila:
+  - `garduixeres-olost` tiene **duda de alcance abierta**: las fuentes lo describen como *mas
+    que ordeña ~50 frisonas y suministra leche* a elaboradores, no como vendedor de queso
+    propio. Sin fuente que le dé `identity` como productor no se le escribe evidencia. Y
+    **no encruzarlo con Formatges Reixagó**: es otra granja de Olost (Ignasi y Cristina Majó,
+    finca de 44 ha, formatgeria propia desde 2011) que sí tiene web viva.
+  - Tres `Venta online=no` heredados del volcado sin ninguna fuente (Garduixeres, Griselda
+    Planas, Can Reinal) bajan a `no comprobado`. Sube `venta-sin-resolver` en 3: es
+    visibilidad nueva, no una regresión.
 - Recomprobar los `Venta online=sí` (última pasada masiva 2026-06-22; la ampliación de julio
   revisó los suyos) y vigilar los 773 `parcial` de registro.
 - Candidatos DAR no integrados: movidos a `docs/candidates/barcelona.md` § «Herencia del ledger
