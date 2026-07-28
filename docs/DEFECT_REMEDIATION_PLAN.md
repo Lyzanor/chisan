@@ -223,28 +223,28 @@ estar describiendo un productor mixto y necesitan una decisión editorial.
 - El detector solo genera candidatos. La reparación exige fuente del productor
   y puede afectar categoría, productos y descripción.
 
-### G-WEB-1 — dominios muertos, aparcados y secuestrados
+### G-WEB-1 — dominios muertos, aparcados y secuestrados ✅
 
-Ningún script del repo resuelve hoy un dominio, y sin embargo el hallazgo
-recurrente de las pasadas profundas es exactamente ese: webs caídas que Google
-sigue indexando con tienda y precios, y alguna reasignada a spam. Es información
-falsa publicada —lo primero de la lista del § 1— y solo se descubre abriendo
-filas a mano.
+Hecho. `pnpm check:links` resuelve cada `web` y la **clasifica sin decidir**:
+NXDOMAIN · sin NS · sin registro A · conexión rechazada · timeout · TLS ·
+redirección a otro dominio · parking · portada de proveedor · 403 vivo · 200
+vivo. La clasificación alimenta R0 y R1, no los sustituye: un 403 no es un sitio
+muerto y un 200 no prueba que la web sea del productor.
 
-- Check advisory que resuelva cada `web` del catálogo y **clasifique**, sin
-  decidir: NXDOMAIN · dominio sin NS · conexión rechazada · timeout · redirección
-  a otro dominio · portada de parking o de proveedor · 200 vivo · 403 vivo.
-- Un 403 no es un sitio muerto y un 200 no es un sitio del productor: la
-  clasificación alimenta R0 y R1, no los sustituye.
-- Guardar el resultado como snapshot con fecha. Caduca: es una afirmación
-  dinámica, igual que `Venta online`.
-- Concurrencia baja y reintento único. Un timeout se clasifica como timeout, no
-  como caída.
-- Las pruebas cubren la clasificación de respuestas con fixtures; no tocan la
-  red.
+El producto es el snapshot fechado `data/reference/web-status.json`, que
+convierte el paso más caro de una pasada —abrir dominios a mano— en lectura:
 
-Salida: lista precalculada que convierte el paso más caro de R0/R1 en lectura.
-Sirve igual para triar `web-de-tercero`.
+```bash
+npx pnpm check:links -- --offline --provincia <provincia>   # sin red
+npx pnpm check:links -- --provincia <provincia>             # refresca
+```
+
+Caduca, porque `web` es una afirmación dinámica igual que `Venta online`: el
+informe da la edad de cada dato y marca los de más de 90 días. Sirve también
+para triar `web-de-tercero`, porque lista los dominios compartidos por varias
+filas.
+
+Lo que queda de aquí en adelante es editorial: triar las señales por provincia.
 
 ### G-AUD-1 — utilidad del inventario
 
@@ -626,8 +626,8 @@ diga la tabla de bloqueo del § 4.
 
 **Tooling (ventana global, `verify:ai`)**
 
-1. G-WEB-1: clasificación de dominios. Primero porque no bloquea a nadie y
-   convierte trabajo manual de los demás en lectura.
+1. ~~G-WEB-1: clasificación de dominios.~~ ✅ Hecho: el snapshot ya está, y el
+   re-escaneo de las cerradas es leerlo con `--offline`, no repasarlas.
 2. G-CAT-1: detector, mapa canónico y pruebas.
 3. G-CAT-2: migración por familias y retirada efectiva de etiquetas.
 4. G-GEO-1: municipios bilingües y casos de homónimos.

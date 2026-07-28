@@ -50,6 +50,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Province roster/de-dup: `npx pnpm list:province [provincia]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories: `npx pnpm list:categories`.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
+- Dead, parked or hijacked `web` domains: `npx pnpm check:links -- --offline` reads the dated snapshot in `data/reference/web-status.json` without touching the network — check it before opening domains by hand. Refresh with `--provincia <name>` or `--all`. It classifies (NXDOMAIN, no NS, refused, timeout, TLS, redirect, parking, provider placeholder, 403, 200) and never decides: a 403 is not a dead site and a 200 is not proof the site belongs to the producer.
 
 ## Data Workflow
 1. Run `git status --short` before changing data and identify active province CSVs, evidence files, image folders, candidate notes, and ledgers.

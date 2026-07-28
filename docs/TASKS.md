@@ -125,13 +125,13 @@ impide. Requieren `verify:ai`.
   fichero.** Por eso `Carne`(mayoría)/`Carnes` no salta ni en Málaga, donde
   conviven en el mismo CSV. La app agrupa por string exacto
   (`lib/csv-catalog.ts`), así que quien filtra una etiqueta no ve la otra.
-- **Nada en el repo resuelve un dominio.** Ni DNS ni HTTP sobre `web`, y el
-  hallazgo recurrente de las pasadas profundas es justo ese: webs caídas que
-  Google sigue indexando con tienda y precios, alguna reasignada a spam. Es
-  información falsa publicada y hoy solo se ve abriendo filas a mano. Falta un
-  check advisory que clasifique (NXDOMAIN · sin NS · rechazada · timeout ·
-  redirección · parking · 200 · 403 vivo) sin decidir nada; un 403 no es un
-  sitio muerto. Spec en `DEFECT_REMEDIATION_PLAN.md` § G-WEB-1.
+- ~~**Nada en el repo resuelve un dominio.**~~ Hecho: `check:links` clasifica
+  cada `web` y guarda el resultado fechado en `data/reference/web-status.json`.
+  **Léelo con `--offline` antes de abrir dominios a mano**; solo vuelve a la red
+  con `--provincia` o `--all`. Clasifica sin decidir, y esa distinción es el
+  punto: un 403 no es un sitio muerto y un 200 no prueba que la web sea del
+  productor. Lo que queda es editorial, no de tooling — triar sus señales
+  provincia a provincia.
 - **El enum de `Canal de venta` no tipifica la mensajería social.** Hay
   productores cuyo canal de pedido demostrado es el DM de Instagram o Facebook
   (p. ej. `quesos-argudo-campillos`): `Venta online=sí` está probado y el canal
