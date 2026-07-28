@@ -9,14 +9,12 @@ fija el snapshot, los riesgos locales y el alcance de los lotes. Los contratos
 aplicables son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.
 
-> **⚑ 1ª PASADA CERRADA el 2026-07-27.** 133 filas, 96 `verificado`, 36
-> `parcial` y **1 `pendiente`** con bloqueo documentado; 75 `Venta online=sí`,
+> **⚑ PASADA CERRADA el 2026-07-27 y reconciliada el 2026-07-28.** 133 filas,
+> 97 `verificado`, 36 `parcial` y **0 `pendiente`**; 75 `Venta online=sí`,
 > **todas con canal**; 0 errores y **0 avisos** de data-quality; ninguna fila
-> fuera del geo-check. Salamanca **no** entra en `coverage.json`: la fila
-> pendiente no tiene registro de evidencia porque no hay ninguna fuente que
-> citar, y el criterio de cobertura es que toda fila tenga `keep`. Lo que sigue
-> son los residuales de la 2ª pasada, al final de Estado. No reabrir lotes
-> cerrados sin motivo nuevo.
+> fuera del geo-check. Salamanca entra en `coverage.json` con `keep` para sus
+> 133 filas. Lo que sigue son mejoras no bloqueantes al final de Estado. No
+> reabrir lotes cerrados sin motivo nuevo.
 
 ## Cómo reanudar
 
@@ -79,14 +77,25 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 - Contacto recuperado: **~85 correos** donde no había ninguno, unos 30
   teléfonos y unas 30 webs.
 
+### Reconciliación final (2026-07-28)
+
+- **97 `verificado`, 36 `parcial`, 0 `pendiente`**; venta online sin cambios.
+- El Obrador 4.0 queda verificado como unidad productiva de Grupo Tapas:
+  licencia municipal del obrador en C/ Río Carrión 9 y actividad propia vigente
+  en 2026.
+- AQ5 se corrige de la oficina administrativa de Salamanca a su municipio
+  productivo, Ahigal de los Aceiteros; conserva `parcial` por molturación
+  externa y olivar sin localización pública exacta.
+- Evidencia: **152 registros** (133 `keep`, 7 `purge`, 12 `merge`) y 0 avisos.
+  Salamanca entra en `data/evidence/coverage.json`.
+
 ### Residuales para la 2ª pasada
 
 - **Imágenes: 0 de 133 filas.** Es el hueco más grande y queda entero.
-- **La fila `el-obrador-4-0-salamanca`**, único `pendiente`: resolver en campo.
 - **Posible fusión Carralejos / Quesos Amado Charra** (SA-08): comparten calle,
   pueblo y teléfono.
-- **Candidatos a purga o revisión**: Quesería Santomez (sin rastro propio),
-  AQ5 Sabores e Ibéricos Yebra (marca comercializadora y B2B).
+- **Candidatos a purga o revisión**: Quesería Santomez (sin rastro propio) e
+  Ibéricos Yebra (marca comercializadora y B2B).
 - **Webs a reintentar**: IberoArt y CIBEGO (SA-05), Jamón Pinucho y Revisan
   (403), Bodegas Labrador, El Bardal, Mermeladas La Aldea y El Manjuelo.
 - **Desajustes obrador/tienda anotados**: Faustino Prieto, Confitería Santa
@@ -204,12 +213,13 @@ online 6 `sí` (todas con canal `ecommerce`) y 1 `no comprobado`.
   Salamanca en Bandeja la mantienen con la dirección y el teléfono del volcado,
   pero la web que ambas enlazan, `quintalasvelas.com`, responde 404 por http y
   https. Campo `web` vaciado.
-- **AQ5 Sabores queda en `parcial` a propósito y con aviso de evidencia.** Es
-  Asset Qualitas 5 S.L., marca con olivar en Arribes pero que muele en almazara
-  ajena y solo publica su oficina de la capital: no hay unidad productiva
-  adscribible a un municipio, así que el registro omite la claim `municipality`
-  y `check:evidence` avisa. Es el único aviso de la provincia y es deliberado.
-- Rescatados 6 correos y corregidos el CP y la dirección de AQ5 (37003 → 37006).
+- **AQ5 Sabores queda en `parcial` y se corrige a Ahigal de los Aceiteros.**
+  Su web confirma que cultiva olivos en Arribes y moltura allí sus aceitunas;
+  Calidad Rural también la sitúa en ese municipio. Se retiran la dirección y
+  las coordenadas de la oficina administrativa de Salamanca capital. El techo
+  parcial se mantiene porque usa una almazara externa y no publica la ubicación
+  exacta del olivar.
+- Rescatados 6 correos; AQ5 conserva teléfono, correo y tienda propios.
 - Las 4 bodegas y los 3 aceites restantes tienen tienda propia con carrito y
   precios comprobados uno a uno, no enlaces a terceros.
 
@@ -444,7 +454,7 @@ online 5 `sí` (todas `ecommerce`), 4 `no` demostrado y 2 `no comprobado`.
 
 ## SA-11 — Pan y pastelería de Salamanca capital ✅
 
-15 filas → **14**. Resultado: 5 `verificado`, 8 `parcial`, **1 `pendiente`**;
+15 filas → **14**. Resultado final: 6 `verificado`, 8 `parcial`, 0 `pendiente`;
 Venta online 4 `sí` (2 `ecommerce`, 1 `marketplace`, 1 `telefono|whatsapp`), 1
 `no` demostrado y 9 `no comprobado`.
 
@@ -452,11 +462,12 @@ Venta online 4 `sí` (2 `ecommerce`, 1 `marketplace`, 1 `telefono|whatsapp`), 1
   identifica como Ibéricos La Favorita, tienda de la Rúa Mayor que revende
   jamones, embutidos, vinos, quesos, aceites, dulces y conservas de la región.
   El volcado la había metido en `Pan y pastelería`. `not-producer`.
-- **El único `pendiente` de la provincia: «El Obrador 4.0».** Sin web ni
-  teléfono, y dos búsquedas dirigidas —por nombre y por calle— no devuelven
-  ninguna ficha, red social ni mención. Ni se verifica ni se purga: no hay
-  indicio de que no exista, pero tampoco fuente que lo identifique. Se queda sin
-  registro de evidencia, porque no hay ninguna fuente que citar.
+- **El Obrador 4.0 queda `verificado` en la reconciliación del 2026-07-28.**
+  El Ayuntamiento vincula la licencia del obrador y cocina de C/ Río Carrión 9
+  con Tapas 2.0 Hostel S.L.; el perfil oficial de Grupo Tapas documenta en 2026
+  la elaboración de pan de masa madre, focaccia, brioche y croquetas artesanas.
+  Se mantiene `no comprobado`: trabaja para restauración y colectividades, pero
+  no publica un mecanismo de pedido remoto para consumidor final.
 - **«Ganas de Pan» no estaba en la capital.** Su web da como única dirección
   San Pedro de Rozados y ninguna búsqueda encuentra local suyo en la avenida de
   Italia; lo que hay en esa avenida es otra panadería del propio CSV. Fila
