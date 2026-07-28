@@ -202,58 +202,58 @@ jamones-guti, jamones-y-embutidos-don-benito, embutidos-pacheco-martinez, jamone
 ### BAD-12 · Charcutería — ✅
 embutidos-serraflor, jamones-y-embutidos-artesanos, jamones-y-embutidos-carrascal, sierra-grande-hornachos-fabrica-de-embutidos-y-salazon-de-jamones, industrias-carnicas-el-bellotero, jamones-emilio-diaz, jamones-jierrito, jamones-y-embutidos-angeles-s-l, jamones-y-embutidos-neila-s-l, juanes-iberico-salvaje, montesano-extremadura, productos-simon, sierra-extremena, comparaibericos, jamon-y-salud
 
-### BAD-13 · Charcutería — ⏳
+### BAD-13 · Charcutería — ✅
 embutidos-morato, ibericos-bayon, ibericos-de-extremadura, carniceria-charcuteria-retama, carniceria-antonio-carmona, charcuteria-maria-auxiliadora, ibericos-angelito, ibericos-el-capote, ibericos-rodriguez, matadero-iberico-de-merida-s-l, arte-corte, el-culebrin, galan-moreno, ibericos-casa-lucas, ibericos-jose-zoilo
 
-### BAD-14 · Charcutería — ⏳
+### BAD-14 · Charcutería — ✅
 ibermonesterio, jamon-de-monesterio, jamones-sierra-de-monesterio, tentuiberico, victoriano-contreras-barragan, carniceria-domingo-gordillo, carniceria-martinez-crespo, carniceria-y-embutidos-hermanos-martinez-martin, charcuteria-casa-hernandez, jamon-curado-a-cuchillo-guadyerbas-charcuteria-montijo, degil-ibericos, embutidos-paqui, fabrica-de-embutidos-y-secadero-de-jamones-moya, senorio-porrino, carniceria-manuela-morera
 
-### BAD-15 · Charcutería / Lácteos y quesos — ⏳
+### BAD-15 · Charcutería / Lácteos y quesos — ✅
 embutidos-romero, carniceria-anastasio-nunez-antunez, charcuteria-la-alacena, jamones-y-embutidos-hernandez, productos-del-encinar-sl-jamon-de-bellota-iberico, embutidos-cadenas, fabrica-embutidos-y-jamones-hnos-castano, embutidos-y-jamones-hnos-caceres-rodriguez, ea-group, corte-iberica-fabricacion-y-distribucion, embutidos-silva, ibericos-gomez-rico, iberllota-jamones-ibericos, embutidos-antonio-centeno, dona-leonor-de-alburquerque
 
-### BAD-16 · Lácteos y quesos — ⏳
+### BAD-16 · Lácteos y quesos — ✅
 quesos-moran-piris, quesos-sierra-la-horca, toril-del-cardo, mama-cabra, queseria-el-majadal, artesanos-del-queso, queserex-quesos-de-la-serena, queseria-garcia-risco, quesos-reborto, queseria-artesana-tesoro-de-cabra, comercial-royca, cremositos-del-zujar, castilcerro, covica, granja-queseria-castrum-erat
 
-### BAD-17 · Lácteos y quesos — ⏳
+### BAD-17 · Lácteos y quesos — ✅
 lacteos-de-castuera, quesos-atalaya, quesos-el-guilero, quesos-sanchez-hidalgo, quesos-tena-nunez, quesos-y-tortas-de-la-serena, scl-comarcal-agricola-ganadera-castuera-castuera, serena-pura, simon-romero, hmm-quesos-y-jamones-ibericos, quesos-de-la-sierra, queseria-hermanos-zapata-leche-cruda-de-cabra, quesos-roniel, queseros-parrenos, el-prado-de-llera-s-l-llera
 
-### BAD-18 · Lácteos y quesos / Pan y pastelería — ⏳
+### BAD-18 · Lácteos y quesos / Pan y pastelería — ✅
 quesos-dona-ines-s-l, quesos-marina, el-senorio-de-monesterio-s-c-monesterio, queseria-artesanal-abuela-cecilia, quesos-rufino-afinadores, queseria-utrero, primitivo-sanchez, finca-buenavista-ribera-cb-ribera-del-fresno, queseria-buena-vista, quesos-santiago-madera, queseria-tierra-de-barros, quesos-pinto, jarropa-y-sita-queseria-artesana, obrador-de-dulces-artesanos-leo, dulces-artesanos-castillo
 
-### BAD-19 · Pan y pastelería — ⏳
+### BAD-19 · Pan y pastelería — ✅
 panaderia-obrero, clarisas, el-obrador-de-gamero-gil-espacio-de-creacion-artistica, exmesa, horno-virgen-de-guadalupe-s-l, panaderia-pasteleria-bolleria-artesana, pasteleria-artesanos-panvira, el-callejon-de-las-delicias, panaderia-vera, lazaro-pasteleros, panaderia-pasteleria-lavado-y-lavado, panaderia-carrasco-v-generacion, arteluc, la-bruja-dulce, panaderia-dulceria-el-miajon
 
-### BAD-20 · Pan y pastelería — ⏳
+### BAD-20 · Pan y pastelería — ✅
 panaderia-juan-diaz-moreno, panaderia-confiteria-barrientos-hilinger-s-l, turrones-dos-hermanos, medina-rincon-dulceria-artesana, panaderia-bolleria-j-j, panaderia-francisco-javier-medina-gallego, panaderia-la-gloria, pasteleria-mario-medina, pasteleria-pepi-sanchez, pasteleria-el-pilar, la-tahona-de-meripan-obrador-artesano, obrador-la-abuela-juli, dulces-artesanos-romo, productos-castano-dulceria-panaderia, panaderia-y-pasteleria-luis-macias-e-hijos-s-l
 
-### BAD-21 · Pan y pastelería — ⏳
+### BAD-21 · Pan y pastelería — ✅
 pasteleria-obrador-canela, pasteleria-mauro, chocolate-moro, panaderia-makana, panaderia-pasteleria-avalos, raices-pasteleria-argentina, santa-clara-dulces-artesanos, panaderia-el-valle-horno-los-remedios, pasteleria-arte-dulce-golosa-obrador, dulces-artesanos-capricho-extremeno-cb, obrador-artesano, dulceria-san-jose, horno-los-remedios, pasteleria-artesanos-roco, pasteleria-marquesa-de-pinares
 
-### BAD-22 · Pan y pastelería — ⏳
+### BAD-22 · Pan y pastelería — ✅
 pasteleria-tradicion-extremena-s-l, horno-monesterio, abocao-pasteleria, la-cuba, obrador-oliva-sin-gluten, dulces-ruiz, dulceria-la-chimenea, panaderia-artesana-garrido-e-hijas, panaderia-dulceria-la-espiga, pasteleria-casa-fuentes, panaderia-concepcion, panaderia-obreo, panaderia-pasteleria-aguilera, panaderia-collado-cebrino, freeglut
 
-### BAD-23 · Pan y pastelería / Fruta y verdura — ⏳
+### BAD-23 · Pan y pastelería / Fruta y verdura — ✅
 la-abuela-laly, dulceria-dolores, pasteleria-angel-cascales, pasteleria-artesanal-la-siberia, panaderia-asensio, panaderia-ortiz, pasteleria-oron-y-chaves, el-horno-del-seron, obrador-artesano-quintana, la-cercana-pasteleria-artesanal, obrador-el-colibri, dulce-el-cristo, dulces-el-cristo-de-zalamea-s-l, ajos-hnos-trejo, ajos-montejano
 
-### BAD-24 · Fruta y verdura — ⏳
+### BAD-24 · Fruta y verdura — ✅
 ajos-tierra-de-barros, cooperativa-extremena-de-ajos-de-aceuchal-s-c, interajos-s-l, rudasil-s-l-venta-de-ajos-al-por-mayor, exproa-extremena-de-productos-agricolas-2011-s-l-fabrica, frutas-pulido, extremeno-aragonesa-agricola-s-a-exaasa-frutaria, frubardo, frutas-albemar-s-l, frutas-nina, frutas-kora, frutas-azamar-s-l, frutas-the-origen, cooperativa-del-campo-san-pedro, frutas-nuevo-sanabria
 
-### BAD-25 · Fruta y verdura — ⏳
+### BAD-25 · Fruta y verdura — ✅
 frutas-fernandez-s-l, frutaex, frutas-belinda, frutas-marin, frutas-montijo, frutas-aranzazu, frutas-jesus-de-la-o-s-l, frutas-verea, fuensana-bio, frutas-biomova, frutas-nene, central-hortofruticola-el-canito, global-pahica-frutas-nacri, frutakia, cooperativa-agricola-san-isidro
 
-### BAD-26 · Fruta y verdura / Despensa artesanal — ⏳
+### BAD-26 · Fruta y verdura / Despensa artesanal — ✅
 frutas-diez, frutas-ramos-benitez-s-l, cooperativa-san-miguel-de-vivares, frutas-hermanos-rodriguez-elmutilao, tany-nature, aceitunas-dominguez-s-a, aceitunas-gonga, aceitunas-guadalquivir-almendralejo, aceitunas-hermanos-barroso-s-l, aceitunas-jope-s-l-u-sede-av-presidente-juan-carlos-rodriguez-ibarra-31, aceitunas-julio-alvarez-martin, aceitunas-olivexma, aceitunas-rama-jimenez-s-l, aceitunas-roman-duran, envasados-de-aceitunas-prado
 
-### BAD-27 · Despensa artesanal — ⏳
+### BAD-27 · Despensa artesanal — ✅
 fabrica-de-aceitunas-hoyca-s-l, aceitunas-flores-y-victoria, aceitunas-pepe, green-spirit, aceitunas-y-encurtidos-oliber, cultivando-empleo, pambiotica, cooperativa-de-aceitunas-soc-cop-rio-retin, iberex, productos-del-tito-rodrigo, conservas-martinete, aceitunas-y-cereales-carmona-s-l, hacienda-el-vedado, sol-de-valdivia, aceitunas-aguedo
 
-### BAD-28 · Despensa artesanal / Miel — ⏳
+### BAD-28 · Despensa artesanal / Miel — ✅
 aceitunas-fernandez, aceitunas-lopez, s-coop-san-isidro, transa, villacruz, miel-de-lazaro, germel, miel-solar-by-tesela-natura, valles-de-anam, miel-cuarta-generacion, abeja-obrera, apicola-laparra, apicola-solven, cooperativa-montemiel, floralia-miel-espana
 
-### BAD-29 · Miel / Cerveza artesana — ⏳
+### BAD-29 · Miel / Cerveza artesana — ✅
 miel-calabresa, miel-los-juanes, sibermiel, artesanos-virgen-de-extremadura, miel-la-siberia, bavymiel, euromiel-s-coop-de-2-grado, miel-de-juan-alvarez, miel-y-mostaza, el-encinar-del-porrino, miel-de-valverde-de-leganes, cerveza-piporra-artesana, cerveza-ballut, cerveza-de-monesterio, cerveza-extremadura-jacha-jigo-jiguera
 
-### BAD-30 · Cerveza artesana / Aperitivos / Huevos / Otros — ⏳
+### BAD-30 · Cerveza artesana / Aperitivos / Huevos / Otros — ✅
 sevebrau, territorios, la-turruca, roman-duran, el-conchito, patatas-fritas-mm, granja-avicola, huevos-guillen-cantos-blancos-sur, huevos-camperos-en-higuera-la-real-huevos-camperos-el-dornero, huevos-hermanos-martin-gomez-c-b-inoxa-extremadura, nestle-waters, mermeladas-glasai
 
 ## Cierres de lote
@@ -377,17 +377,317 @@ abierto. Sin tablas de estado derivado.
   Limpiadas también las 6 imágenes huérfanas que dejaron las purgas de BAD-06,
   BAD-07, BAD-09 y BAD-10. Fregenal de la Sierra es el contraste de Badajoz
   capital: 3 de sus 5 filas son fábricas con secadero propio y tienda.
-- **BAD-12** (2026-07-26): 15 filas → 14. **10 `verificado`, 4 `parcial`, 0
-  pendientes**; 10 `Venta online=sí` con canal. 1 purga: `comparaibericos`, que
+- **BAD-12** (2026-07-26): 15 filas → 14. **9 `verificado`, 5 `parcial`, 0
+  pendientes**; 9 `Venta online=sí` con canal. 1 purga: `comparaibericos`, que
   se define como **plataforma de venta** para pequeños productores, no
-  elaborador. **Jerez de los Caballeros confirma la regla del bloque**: 5 de sus
-  8 filas son fábricas con curación propia (Bellotero, Emilio Díaz, Montesano,
-  Productos Simón, Jierrito). Aquí el patrón de venta cambia: **cuatro casas
-  elaboran pero no tienen carrito** y publican pedido por teléfono, correo o
-  WhatsApp — canal válido, no ausencia de venta.
+  elaborador. **Jerez de los Caballeros confirma la regla del bloque**: 6 de sus
+  8 filas quedan verificadas como elaboradores. Aquí el patrón de venta cambia:
+  **cuatro casas elaboran pero no tienen carrito** y publican pedido por
+  teléfono, correo o WhatsApp — canal válido, no ausencia de venta. Jierrito
+  recupera su dominio `.es`, pero su catálogo no muestra un proceso de compra
+  concreto, así que queda en `no comprobado`.
+  La web de `jamones-y-embutidos-artesanos` se retira del CSV por contenido
+  inyectado de casino y la fila queda en `parcial`.
   Resuelta la duda que dejó BAD-10: **hay dos «Sierra Extremeña» distintas**, la
   de La Parra (esta fila) y la de Castuera (razón social tras
   `iberico-del-brillante`). No se fusionan. Queda una contradicción **dentro del
   propio catálogo** de la Diputación: su campo de dirección dice La Parra y su
   texto libre «situado en la zarza»; se mantiene La Parra, que es el dato
   estructurado y el que coincide con CSV y Facebook.
+- **BAD-13** (2026-07-26): 15 filas → 8. **5 `verificado`, 3 `parcial`, 0
+  pendientes**; 7 `Venta online=sí` con canal. **7 purgas por no ser
+  productores**: `ibericos-de-extremadura`, `charcuteria-maria-auxiliadora`,
+  `ibericos-el-capote`, `ibericos-rodriguez` y `galan-moreno` son tiendas,
+  supermercados o mayoristas que seleccionan producto ajeno; `arte-corte` e
+  `ibericos-jose-zoilo` venden servicios de corte y loncheado.
+  **La página corporativa decide cuando la portada es ambigua**: El Capote y
+  Galán Moreno tienen ecommerce y lenguaje de marca, pero sus páginas
+  «Sobre nosotros» dicen expresamente que seleccionan productores o piezas.
+  El caso inverso es `el-culebrin`: su página «Quiénes somos» confirma
+  ganadería asociada, matadero, fábrica, secaderos y bodegas propios, por lo que
+  sube de `parcial` a `verificado`. `carniceria-antonio-carmona` e
+  `ibericos-angelito` mantienen venta remota, pero quedan en `parcial` porque no
+  hay fuente propia suficiente para acreditar el alcance de su elaboración.
+  Se conserva el slug de `matadero-iberico-de-merida-s-l`: es la unidad local
+  de sacrificio y despiece del grupo Nicolás Gil Blanco, no un cambio de
+  identidad a la matriz.
+- **BAD-14** (2026-07-26): 15 filas → 11. **8 `verificado`, 3 `parcial`, 0
+  pendientes**; 8 `Venta online=sí` con canal ecommerce. **4 purgas**:
+  `carniceria-martinez-crespo` y `charcuteria-casa-hernandez` son comercios
+  minoristas sin elaboración acreditada; `jamon-curado-a-cuchillo-guadyerbas-…`
+  vende embutidos, quesos y corte de jamón, y `jamon-de-monesterio` es una ficha
+  genérica no reclamada sin entidad concreta. Esta última **no se fusiona** con
+  Victoriano Contreras: la guía municipal usa «Jamón de Monesterio» como
+  denominación colectiva y enumera por separado a los fabricantes.
+  Monesterio aporta cuatro verificadas: Ibermonesterio, Sierra de Monesterio,
+  Tentuibérico y Victoriano Contreras acreditan fábrica o curación propia y
+  ecommerce. Domingo Gordillo, Martínez Martín, Embutidos Paqui y Señorío
+  Porrino completan las otras cuatro. Quedan en `parcial` DeGil Ibéricos, cuyo
+  dominio ya no resuelve; Jamones Moya, con ficha no reclamada y respaldo
+  registral de 2024; y Carnicería Manuela Morera, cuya elaboración artesanal
+  solo está publicada en el catálogo provincial. Se retiran las webs muertas de
+  DeGil y Moya, la ficha de Maps que ya solo resuelve a la dirección de Manuela
+  Morera y el Facebook inválido `/tr` de Tentuibérico.
+- **BAD-15** (2026-07-26): 15 filas → 13. **11 `verificado`, 2 `parcial`, 0
+  pendientes**; 12 `Venta online=sí` con canal. **2 purgas por no ser
+  productores**: `carniceria-anastasio-nunez-antunez` y
+  `charcuteria-la-alacena` son comercios minoristas activos, pero sus fichas y
+  reseñas solo acreditan venta de carne, fiambres y producto ajeno, no
+  elaboración propia. Ocho productores venden mediante ecommerce; Hnos.
+  Cáceres combina mensajería con teléfono y correo, y EA Group añade pedido
+  telefónico a su tienda. Corte Ibérica y Embutidos Silva mantienen entrega y
+  pedido por teléfono.
+  **La actividad actual no basta por sí sola para `verificado`**: Corte Ibérica
+  tiene fotos y respuestas recientes del titular que hablan de elaboración
+  artesanal, pero su web está casi vacía y la sociedad fabril histórica fue
+  absorbida; Embutidos Silva conserva ficha, horario, entrega y una referencia
+  a embutidos artesanos, pero ninguna fuente propia. Ambos quedan en `parcial`.
+  El caso contrario lo resuelven las webs bloqueadas para el rastreador pero
+  navegables: Productos del Encinar, Embutidos Cadenas y Doña Leonor muestran
+  elaboración propia y ecommerce operativo. EA Group se corrige de jamones a
+  carne fresca de cordero y sube a `verificado` al acreditar ganaderos,
+  cebaderos, mataderos y salas de despiece integrados.
+- **BAD-16** (2026-07-26): 15 filas → 11. **8 `verificado`, 3 `parcial`, 0
+  pendientes**; 4 `Venta online=sí`, todas por ecommerce. **4 purgas**:
+  Román Durán comercializa, envasa y distribuye producto de terceros; Cerveza
+  de Monesterio sigue fabricándose por encargo en Alemania y la planta local
+  continúa siendo solo una aspiración; Cerveza Ballut cerró su etapa productiva
+  y puso fábrica, marca y maquinaria a la venta en 2026; y Green Spirit S.L.
+  quedó extinguida por fusión en julio de 2025. Se retiran las tres imágenes
+  que quedan huérfanas.
+  La Turruca, Territorios, Sevebrau y Hacienda El Vedado acreditan producción
+  propia y tienda activa. Patatas Fritas MM, Nestlé Aquarel, Conservas
+  Martinete y Cultivando Empleo verifican fabricación o cultivo, pero no un
+  canal inequívoco de pedido remoto. El Conchito queda en `parcial` porque su
+  web no ofrece contenido navegable suficiente; Oliber e Iberex solo conservan
+  respaldo institucional o registral, y en Iberex se vacían además el dominio
+  caído y la ficha de Maps que ya no identifica el negocio.
+- **BAD-17** (2026-07-26): 15 filas → 15. **13 `verificado`, 2 `parcial`, 0
+  pendientes**; 5 `Venta online=sí` con canal, 7 `no` tras revisar sus webs
+  corporativas y 3 `no comprobado`. **Sin purgas**. Yerbal (Pambiótica), San
+  Isidro y Cremositos del Zújar tienen ecommerce; Jarropa y Sita organiza
+  pedidos por teléfono o correo, y Mamá Cabra mantiene entrega por teléfono en
+  su ficha viva de Maps aunque su dominio ya no resuelve.
+  Se corrigen cuatro municipios administrativos: El Raposo pasa a Puebla de
+  Sancho Pérez; Valdivia y Zurbarán, a Villanueva de la Serena; y Barbaño, a
+  Montijo, conservando cada núcleo en la dirección. San Isidro cambia a
+  `Bodega`, y Transa, Sol de Valdivia, Ajos Tierra de Barros, Fuensana Bio y
+  Tany Nature quedan descritos por su producción real, no como elaboradores
+  genéricos.
+  Frubardo y Frutas Kora quedan en `parcial`: ambos dominios han caído y sus
+  fichas de Maps solo resolvían direcciones; el respaldo institucional atribuye
+  cultivo o producción integrada, pero las señales registrales actuales no
+  bastan para confirmar por sí solas el alcance de la actividad. Quesos El
+  Montaño se conserva como elaborador por su maduración artesanal acreditada,
+  sin atribuirle fabricación desde leche.
+- **BAD-18** (2026-07-26): 15 filas → 15. **11 `verificado`, 4 `parcial`, 0
+  pendientes**; 10 `Venta online=sí` con canal —6 ecommerce y 4 por teléfono—,
+  1 `no` tras revisar la web propia y 4 `no comprobado`. **Sin purgas**. El
+  Majadal, Morán Piris, Rufino, Abeja Obrera, Montemiel y Miel Cuarta Generación
+  tienen ecommerce; Marina, Simón Romero, Glasai y Miel Calabresa mantienen
+  entrega por teléfono. Santiago Madera tiene presentación propia viva, pero
+  no publica compra, entrega ni instrucciones de pedido remoto.
+  La ficha publicada como Quesos Roniel se corrige a **Artesanos Valle del Agua
+  (Quesos Roniel)**: catálogo, registro ambiental de 2026 y BORME coinciden en
+  titular, teléfono y fabricación de queso fresco de vaca. Permanece `parcial`
+  al faltar un canal vivo propio. También se corrige la ficha de Maps de Simón
+  Romero —la anterior resolvía a SAT Rumsa—, junto con dirección y coordenadas,
+  y se vacían las fichas basadas solo en dirección de Tesoro de Cabra y El
+  Encinar del Porrino. Glasai pasa de `Otros` a `Despensa artesanal`; Montemiel
+  y Miel Cuarta Generación reciben sus dominios actuales.
+- **BAD-19** (2026-07-26): 15 filas → 13. **10 `verificado`, 3 `parcial`, 0
+  pendientes y 2 purgas**; 6 `Venta online=sí` con canal —5 ecommerce y
+  Clarisas por teléfono—, 1 `no` y 6 `no comprobado`. Miel Los Juanes, Valles
+  de Anam, Chocolate Moro, Dulces Artesanos Romo y Dulces Ruiz mantienen tienda
+  propia; Artesanos de la Abuela Laly tiene web de presentación viva pero sin
+  compra ni entrega.
+  Se purgan **El Callejón de las Delicias**, cuya ficha de Maps marca cierre
+  permanente y cuyo único canal propio fue eliminado, y **Exmesa**, en concurso
+  e insolvencia desde 2021 y también cerrada en Maps. Ninguna tenía imagen.
+  Dulcería Dolores se conserva pese al aviso antiguo de Maps: el portal oficial
+  de turismo municipal la enumera entre las dulcerías actuales y su Facebook
+  mantiene actividad y un teléfono nuevo. Freeglut queda `parcial`: el BORME
+  distingue una sociedad vigente de la antigua extinguida, pero la web devuelve
+  520, Maps solo resuelve la dirección y el Facebook del CSV pertenece a una
+  empresa argentina; se vacían los tres enlaces. También se eliminan el
+  Instagram desaparecido de Sibermiel y el dominio caído de Arteluc.
+- **BAD-20** (2026-07-26): 15 filas → 14. **9 `verificado`, 5 `parcial`, 0
+  pendientes y 1 purga**; 4 `Venta online=sí` con canal —Mauro y Turrones Dos
+  Hermanos por ecommerce, Jacha Jigo Jiguera por WhatsApp y La Cuba por
+  teléfono o email—, 1 `no` y 9 `no comprobado`. **Aceitunas Domínguez S.A.**
+  se purga: la sociedad y la marca siguen activas, pero su web oficial y el
+  registro vigente las sitúan en Salamanca; la dirección de Almendralejo era
+  histórica y ya no representa un productor pacense.
+  La Cuba se corrige de panadería a elaborador integral de higos ecológicos.
+  Lázaro recibe su dominio y correo actuales; Mauro incorpora su ecommerce;
+  Ángel Cascales pierde el antiguo `negocio.site`; El Colibrí actualiza el
+  teléfono; y Fernández completa dirección y contacto. Carrasco, Lavado, La
+  Siberia, Piporra y Aceitunas Fernández quedan `parcial`: los catálogos o
+  directorios sostienen su identidad productora, pero falta una señal propia
+  reciente suficientemente fuerte. La autorización ambiental autonómica
+  vigente permite verificar Aceitunas Águedo, mientras la ficha exacta y las
+  reseñas de Flores y Victoria sostienen su elaboración propia.
+- **BAD-21** (2026-07-26): 15 filas → 10. **5 `verificado`, 5 `parcial`, 0
+  pendientes y 5 purgas**; 1 `Venta online=sí` con ecommerce —Aceitunas
+  López—, 3 `no` y 6 `no comprobado`. La tienda de López permite compra, pago
+  y envío; las webs de Agolives, Jope y Olisur son presentaciones activas sin
+  pedido ni entrega. El slug de **Aceitunas Jope** se corrige desde el rótulo
+  largo de Places a `aceitunas-jope`, dejando registro `merge`.
+  Se purgan **Aceitunas Hermanos Barroso**, **Aceitunas Pepe**, **Aceitunas
+  Román Durán**, **Aceitunas y Cereales Carmona** y **Envasados de Aceitunas
+  Prado**: las fuentes actuales solo acreditan comercio mayorista, compra de
+  cosechas, suministros o servicios industriales/envasado para terceros, no
+  producto propio. Se elimina la imagen de Carmona; las otras cuatro no tenían.
+  Gonga, Julio Álvarez, Olivexma, Río Retín y Ajos Hnos. Trejo quedan
+  `parcial` por falta de una señal propia reciente bastante, mientras una
+  referencia sectorial de 2024 permite verificar la actividad de Rama Jiménez.
+- **BAD-22** (2026-07-26): 15 filas → 9. **8 `verificado`, 1 `parcial`, 0
+  pendientes, 5 purgas y 1 `merge`**; 2 `Venta online=sí` por teléfono
+  —Coajos y Frutas Aranzazu—, 6 `no` y 1 `no comprobado`. Coajos publica
+  formatos, venta mayorista y minorista y solicitud de pedido; Aranzazu explica
+  en abril de 2026 cómo cursar pedidos mayoristas. Ajos Montejano, San Isidro,
+  EXAASA, Belinda, Diez y Fernández tienen presencia propia vigente sin pedido
+  remoto.
+  **Cooperativa del Campo San Pedro** se fusiona con **Castúo**: son la misma
+  cooperativa de Guareña, con idéntico teléfono y dirección productiva. Se
+  purga **Frutaex** por su disolución y liquidación oficial en abril de 2026, y
+  **Frutakia**, **Frutas Albemar**, **Frutas Azamar** y **El Mutilao** porque
+  las fuentes solo acreditan frutería, compraventa o distribución, no
+  producción propia. Se elimina la imagen de Albemar; las demás bajas no
+  tenían. EXPROA queda `parcial`: el BORME de febrero de 2026 sostiene su
+  continuidad y el objeto social incluye producción agraria, pero no aparece
+  una señal propia reciente que identifique sus productos.
+- **BAD-23** (2026-07-26): 15 filas → 9. **4 `verificado`, 5 `parcial`, 0
+  pendientes, 5 purgas y 1 `merge`**; 1 `Venta online=sí` por WhatsApp
+  —Huevos El Dornero—, 3 `no` y 5 `no comprobado`. Frutas Nene acredita la
+  producción de las explotaciones de sus socios; Interajos y Rudasil,
+  plantaciones propias de ajo; y El Dornero, granja familiar, puntos de venta
+  y pedido con reparto por WhatsApp.
+  Se purgan **Frutas Marín**, **Frutas Montijo**, **Frutas Niña**, **Frutas
+  Nuevo Sanabria** y **Frutas Pulido**: las fuentes actuales las describen
+  como mayoristas, fruterías o comercios con reparto, sin cultivo o
+  elaboración propia. Ninguna tenía imagen. La ficha genérica **Granja
+  Avícola** se fusiona con **Huevos Guillén - Cantos Blancos Sur**: ambas
+  señalan la misma explotación de ponedoras en la finca Campo Viejo.
+  Jesús de la O, Ramos Benítez y Global Pahica quedan `parcial` porque su
+  actividad agrícola consta en fuentes societarias u oficiales, pero falta
+  una presencia propia reciente que detalle el producto comercializado; The
+  Origen y Verea solo conservan una señal local sin alcance productivo
+  suficiente.
+- **BAD-24** (2026-07-26): 15 filas → 13. **9 `verificado`, 4 `parcial`, 0
+  pendientes y 2 purgas**; 7 `Venta online=sí` con canal —Castrum-Erat,
+  Queserex, Buenavista, García Risco, Tierra de Barros y El Guilero por
+  ecommerce, y Hermanos Zapata por teléfono—, 3 `no` y 4 `no comprobado`.
+  Las tiendas propias acreditan catálogo, carrito y entrega; Huevos Guillén
+  documenta en su informe oficial la explotación Cantos Blancos Sur, pero no
+  ofrece venta directa. Hermanos Martín queda `parcial`: un directorio local
+  atribuye producción propia, mientras su presencia oficial se define como
+  distribuidor. Artesanos del Queso, Abuela Cecilia y Utrero también quedan
+  `parcial` por falta de una señal primaria reciente.
+  Se purgan **HMM Quesos y Jamones Ibéricos**, ficha aislada sin entidad
+  atribuible y con una dirección asociada a otro negocio, y **Quesos Doña
+  Inés**: la sociedad continúa activa, pero el BORME trasladó su domicilio a
+  Badajoz y sustituyó el objeto quesero por actividades ajenas a la elaboración
+  acreditada. Ninguna baja tenía imagen. Se corrigen, entre otros, el domicilio
+  de García Risco al número 17, el de Tierra de Barros en Los Varales, los
+  teléfonos de Hermanos Zapata y El Guilero y varios dominios HTTPS.
+- **BAD-25** (2026-07-26): 15 filas → 11. **9 `verificado`, 2 `parcial`, 0
+  pendientes, 2 purgas y 2 `merge`**; 8 `Venta online=sí` con canal —Quesos
+  Pinto, Floralia, Miel La Siberia, Miel Solar, Abocao, Capricho Extremeño y
+  Dulces Castillo por ecommerce; Abocao también por WhatsApp; y Miel de Juan
+  Álvarez por email—, 1 `no` y 2 `no comprobado`. Las tiendas propias
+  acreditan producto, carrito o instrucciones de pedido y entrega; Euromiel
+  sigue activa como cooperativa y coordinadora de un proyecto apícola europeo,
+  pero solo publica contacto profesional.
+  La ficha genérica **Quesos y Tortas de la Serena** se fusiona con
+  **Castrum-Erat**, cuya fábrica ocupa la misma parcela de la EX-104, y
+  **Dulces El Cristo de Zalamea S.L.** se fusiona con el registro estable
+  `dulce-el-cristo`: comparten dirección, teléfono, correo y redes. Se purgan
+  **Miel de Valverde de Leganés**, únicamente acreditada como tienda sin
+  producción apícola, y **Miel y Mostaza**, que es una boutique de ropa.
+  Ninguna baja o fusión tenía imagen. BavyMiel y Dulcería San José quedan
+  `parcial` por falta de una señal primaria reciente. Capricho Extremeño se
+  corrige de «Marmolejo» a **Berlanga**, conforme al código postal y a la
+  dirección oficial de su obrador.
+- **BAD-26** (2026-07-26): 15 filas del lote + 2 duplicados posteriores → 14
+  fichas. **9 `verificado`, 5 `parcial`, 0 pendientes, 1 purga y 2 `merge`**;
+  2 `Venta online=sí` con canal —La Abuela Juli por teléfono y marketplace,
+  y Obrador Oliva por marketplace—, 5 `no` y 7 `no comprobado`. Horno Los
+  Remedios, Horno Monesterio, La Cercana, La Tahona de Meripan, Quintana,
+  Dulces Leo, La Abuela Juli, Obrador Oliva y Garrido e Hijas quedan
+  verificados; Virgen de Guadalupe, La Bruja Dulce, Medina Rincón, Obrador
+  ArteSano de Medellín y Panadería Asensio quedan `parcial` por falta de una
+  presencia propia o una señal primaria reciente suficiente.
+  **Panadería El Valle - Horno Los Remedios** se fusiona con
+  `horno-los-remedios`: Unión Panaderías El Valle usa esa marca y la fábrica de
+  Lobón abastece sus tiendas, por lo que la ficha canónica pasa de la sucursal
+  de Mérida a Corredera 53. **Panadería Pastelería Bollería Artesana** se
+  fusiona con **Horno Virgen de Guadalupe S.L.** por teléfono idéntico y
+  ubicación contigua. Se purga **El Obrador de Gamero Gil**, que es un estudio
+  de creación artística, no un productor alimentario, y se elimina su imagen.
+  **La Abuela Juli** se corrige de panadería a `Charcutería`: elabora pringue o
+  cachuela tradicional con registro sanitario, pedidos telefónicos y venta
+  actual en marketplace.
+- **BAD-27** (2026-07-28): 15 filas → 15. **8 `verificado`, 7 `parcial`, 0
+  pendientes, sin purgas ni fusiones**; 0 `Venta online=sí`, 3 `no` y 12
+  `no comprobado`. J J, Barrientos Hilinger, Francisco Javier Medina
+  Gallego, La Gloria, Makana, Ortiz, Aguilera y Ávalos quedan verificados;
+  Collado Cebrino, Concepción, El Miajón, La Espiga, Juan Díaz Moreno,
+  Obreo y Obrero quedan `parcial` por falta de una fuente propia o primaria
+  reciente suficiente. La ficha de **Panadería Bollería J J** pasa del
+  despacho de Segunda Cruz al obrador de Montera 11 y suma su correo
+  oficial. Se añaden Facebook a Makana, Instagram a Aguilera y correo a FJM
+  y Ávalos. El dominio de **Panadería Ortiz** sólo muestra hoy un índice de
+  servidor sin contenido del negocio y se retira. Las tres webs propias
+  revisadas que sí presentan el negocio —J J, FJM y Ávalos— no incorporan
+  compra, instrucciones de pedido ni entrega remota, por lo que quedan en
+  `Venta online=no`.
+- **BAD-28** (2026-07-28): 15 filas → 15. **8 `verificado`, 7 `parcial`, 0
+  pendientes, sin purgas ni fusiones**; 6 `Venta online=sí`, 0 `no` y 9
+  `no comprobado`. Panvira, Artesanos Roco, Casa Fuentes, El Pilar,
+  Marquesa de Pinares, Obrador Canela, Productos Castaño y Raíces quedan
+  verificados; Vera, Luis Macías, Arte Dulce, Mario Medina, Orón y Chaves,
+  Pepi Sánchez y Tradición Extremeña quedan `parcial` por falta de una
+  presencia propia o señal primaria reciente suficiente. Se confirma venta
+  por marketplace para Panvira, por WhatsApp y correo para Roco, por
+  teléfono para Marquesa de Pinares y por ecommerce para Casa Fuentes,
+  Obrador Canela y Productos Castaño. Casa Fuentes pasa al dominio vigente
+  `pasteleriacasafuentes.es`; se corrigen las redes de Canela, se eliminan
+  el Facebook genérico de Productos Castaño y se incorporan los contactos
+  oficiales recuperados.
+- **BAD-29** (2026-07-28): 5 filas pendientes + las fichas canónicas posteriores
+  `covica` y `queseria-buena-vista` → 3 fichas del lote. **4 decisiones
+  `verificado`, 0 `parcial`, 0 pendientes y 2 `merge`**; las cuatro fichas
+  revisadas que permanecen quedan con `Venta online=sí` y canal ecommerce.
+  Santa Clara se identifica como el
+  obrador de las Clarisas de Llerena y pasa a Corredera 19-21; El Prado de
+  Llera, El Señorío de Monesterio y Quesería Buenavista sustituyen los
+  directorios de premios por sus tiendas propias y completan contactos y
+  ubicación productiva. La variante societaria de **Finca Buenavista Ribera**
+  se fusiona con `queseria-buena-vista`, pues comparte finca, teléfono, correo,
+  web, coordenadas y productos Solocabra. **SCL Comarcal Agrícola Ganadera
+  Castuera** se
+  fusiona con `covica`: es la razón social titular de la misma cooperativa,
+  fábrica y marca, y la ficha canónica queda verificada con tienda,
+  dirección y correo oficiales. Con este lote la provincia queda sin filas
+  `pendiente`. La auditoría de cierre detecta 19 fichas `parcial` heredadas sin
+  evidencia de esta pasada, que se trasladan al lote residual BAD-30.
+- **BAD-30 · residual heredado** (2026-07-28): 19 filas → 19. **14
+  `verificado`, 5 `parcial`, 0 pendientes, sin purgas ni fusiones**; 11
+  `Venta online=sí` con ecommerce, 3 `no` tras revisar sus webs y 5 `no
+  comprobado`. Se verifican las tiendas de Queso de la Sierra, Lácteos de
+  Castuera, Sierra la Horca, Reborto, Apícola Laparra, Apícola Solven, Miel de
+  Lázaro, GerMel, Virgen de Extremadura, Villacruz y La Chimenea; Queseros
+  Parreños acredita elaboración propia sin un pedido remoto inequívoco.
+  Biomova y El Canito documentan cultivo o fruta propia, pero sus webs sólo
+  presentan la actividad; San Miguel queda `parcial` al comercializar cultivos
+  de sus socios sin separar una producción de la propia cooperativa. Sánchez
+  Hidalgo, Primitivo Sánchez, Serena Pura y Toril del Cardo permanecen
+  `parcial` por sostenerse en fuentes regulatorias, registrales o Maps sin una
+  presencia propia reciente suficiente. Se retiran los dominios no públicos de
+  Sánchez Hidalgo y Artecrema, y se corrigen las pedanías Vivares a Don Benito
+  y Valdivia a Villanueva de la Serena. Con este residual, las 52 fichas
+  `parcial` heredadas han sido reauditadas y toda fila actual tiene evidencia
+  de esta pasada. Se sustituyen además las 16 descripciones plantilla
+  residuales; la auditoría de calidad queda únicamente con cinco avisos
+  geográficos ya revisados.
