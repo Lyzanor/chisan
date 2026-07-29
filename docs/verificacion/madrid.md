@@ -1,18 +1,19 @@
 # Madrid · verificación — snapshot de mantenimiento
 
-Primera pasada profunda **cerrada el 2026-06-12** (50 lotes + retrospectiva + auditorías completas
-de `Venta online`). El detalle por lote vive en `git log --follow -p -- docs/verificacion/madrid.md`;
-la verdad es el CSV. Cerrar la pasada no cierra el catálogo: los recuentos vivos salen de
+Primera pasada profunda **cerrada el 2026-06-12** (50 lotes + retrospectiva +
+auditorías completas de `Venta online`); mantenimiento de venta **V-01 el
+2026-07-29**. El detalle por lote vive en
+`git log --follow -p -- docs/verificacion/madrid.md`; la verdad es el CSV.
+Cerrar la pasada no cierra el catálogo: los recuentos vivos salen de
 `npx pnpm list:province madrid` y las afirmaciones dinámicas caducan.
 
 ## Estado final de la pasada (2026-06-12)
 
-- Filas: **222** · verificado **218** · parcial **4** · pendiente **0**.
-- `Venta online` auditada al 100% en ambas direcciones: todos los `sí` confirmados uno a uno
-  (~177), todos los `no` re-auditados dos veces (32), resto `no comprobado` (~13).
+- Filas: **231** · verificado **227** · parcial **4** · pendiente **0**.
+- `Venta online`: **182 `sí`**, **41 `no`** y **8 `no comprobado`** tras V-01.
 - Evidencia y coverage: Madrid no está en `data/evidence/coverage.json` (pasada anterior al
-  contrato de evidencia; los registros nuevos se añaden al re-decidir filas).
-- Imágenes: 140/222 con asset local en `/productores/madrid/madrid/`.
+  contrato de evidencia; 14 registros se han añadido al re-decidir filas).
+- Imágenes: 148/231 con asset local en `/productores/madrid/madrid/`.
 
 ## Residuales justificados
 
@@ -20,8 +21,27 @@ la verdad es el CSV. Cerrar la pasada no cierra el catálogo: los recuentos vivo
   **Lavandas del Alto Jarama** y **La Cabaña Blanca** (constan en mercados 2026, sin presencia
   primaria propia), **Té y Vida** (dominio en mantenimiento), **Melones Velasco** (actividad
   pública reciente sin canal propio verificable).
-- `no comprobado` con motivo conocido: **Gigorro** (quesería real, sin fuente actual de pedido
-  remoto), **Aceites Oro** (catálogo íntegramente agotado y ficha averiada).
+- `no comprobado` tras V-01: **Lavandas de Madrid** y **La Cabaña Blanca**
+  (sin canal primario propio que permita revisar pedidos), **Té y Vida**
+  (dominio en 503/mantenimiento), **Pedro García** (tienda nueva aún como
+  catálogo, sin precios ni alta al carrito), **Mario Sampedro** (reparto por
+  teléfono/correo documentado en 2020, pero sin confirmación dinámica actual),
+  **Aceites Oro** (única referencia agotada), **Gigorro** (quesería real, sin
+  fuente actual de pedido remoto) y **S.A.T. Santa Lucía** (blog propio detenido
+  en 2011 y mención actual de venta online sin mecanismo utilizable).
+
+## Mantenimiento V-01 · venta sin resolver
+
+- Se resolvieron **10 de 18**: `sí` para **Fré Lebanese Ice Cream**
+  (`marketplace`, tienda propia operativa en Uber Eats); `no` para **El Huerto
+  de San Martín**, **Melones José Carlos Velasco**, **Frutos Secos Rincón**,
+  **Bodega Vegaluna**, **Cooperativa Santo Cristo**, **Gelato Lab**, **Di Angelo
+  Gelateria**, **Helados Calero** y **Dolce Palatino** tras revisar sus canales
+  actuales.
+- **Bodega Vegaluna** perdió la descripción genérica de importación y **Di
+  Angelo** incorpora el correo publicado por su web oficial.
+- No se convirtieron en negativas los fallos técnicos, catálogos sin compra,
+  tiendas agotadas ni un mecanismo histórico no revalidado.
 
 ## Reglas locales (no revertir sin nueva evidencia)
 
@@ -54,7 +74,8 @@ crear `scripts/match-madrid.mjs` análogo a `match-dar.mjs`):
 
 ## Mantenimiento (al retomar)
 
-- Recomprobar los `Venta online=sí` (~177, comprobados por última vez 2026-06-12) y los
-  `no comprobado`; actividad/cierre de filas antiguas ante cualquier señal.
-- Imágenes pendientes: ~82 filas sin asset.
+- Recomprobar los `Venta online=sí` (Fré revalidada en V-01; el resto con
+  última comprobación general 2026-06-12) y los 8 `no comprobado`;
+  actividad/cierre de filas antiguas ante cualquier señal.
+- Imágenes pendientes: 83 filas sin asset.
 - Pistas no integradas: `docs/candidates/madrid.md` (heladerías pendientes de filtro de obrador propio).

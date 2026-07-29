@@ -1,16 +1,17 @@
 # Girona · verificación — snapshot de mantenimiento
 
-Pasada profunda **cerrada el 2026-06-15** (27 lotes + pasada de consistencia). Detalle por lote en
+Pasada profunda **cerrada el 2026-06-15** (27 lotes + pasada de consistencia);
+mantenimiento de venta **V-02 el 2026-07-29**. Detalle por lote en
 `git log --follow -p -- docs/verificacion/girona.md`; procedencia por fila en
-`data/evidence/catalunya/girona.jsonl`. La verdad es el CSV; cerrar la pasada no cierra el catálogo
-y las afirmaciones dinámicas caducan.
+`data/evidence/catalunya/girona.jsonl`. La verdad es el CSV; cerrar la pasada no
+cierra el catálogo y las afirmaciones dinámicas caducan.
 
 ## Estado final de la pasada (2026-06-15)
 
 - Filas: **241** · verificado **239** · parcial **2** · pendiente **0**. Desde el inicio: 8 purgas,
   1 fusión, 7 altas concurrentes (cruce Rutes del Vi).
-- `Venta online`: 125 `sí` (todos con canal y dependencias válidas), 17 `no comprobado` con decisión
-  documentada; el resto `no`.
+- `Venta online`: **131 `sí`** (todos con canal y dependencias válidas), **101
+  `no`** y **9 `no comprobado`** con techo documentado.
 - Evidencia: 241 `keep` + tombstones; la provincia está en `data/evidence/coverage.json` (advisory).
 - Completitud ~99%: penaliza los `no comprobado`, no es cola sin revisar.
 
@@ -19,10 +20,27 @@ y las afirmaciones dinámicas caducan.
 - 2 `parcial`: **Làctics Tramuntana** (Cabanelles; existencia respaldada, última actividad propia
   localizada 2020) y **Can Solivera** (Forallac; continuidad contradictoria, web propia convertida
   en alojamiento, sin perfil social).
-- `no comprobado` con techo conocido: **Mas Patiràs** (bodega confirmada, venta remota no
-  demostrada), **Molí de Ger** (remite a Mercat Arrels sin ficha comprable confirmada), **Recuits
-  de Fonteta** (anuncia botiga online que no se pudo verificar), **Gelats Enxaneta** (tienda cerrada
-  por mantenimiento), **Martín Faixó** y **Molí de Pals** (catálogo con referencias no disponibles).
+- `no comprobado` tras V-02: **Aigua de Sant Aniol** (solo reventa
+  independiente), **Arròs Molí de Pals** (seis referencias no disponibles),
+  **Molí de Ger** (remite a Mercat Arrels sin ficha comprable actual),
+  **Embotits Vilanova** (carrito sin precio ni alta de producto), **Can
+  Solivera** (dominio roto y continuidad propia no demostrada), **Red Passion
+  Berries** (tienda propia en timeout), **Clos de la Torre** (catálogo sin
+  referencia disponible), **Oliver Conti** (TLS inválido y HTTP 403) y **Mas
+  Patiràs** (el enlace de compra de la DO devuelve 404).
+
+## Mantenimiento V-02 · venta sin resolver
+
+- Se resolvieron **8 de 17**: `sí` para **Martín Faixó** (`ecommerce`), **Gelats
+  Enxaneta** (`email` de pedidos), **Xuixo Castelló** (`ecommerce`), **Or de
+  l'Albera** (`ecommerce` enlazado a Canigó Oil), **Alma Teas** (`ecommerce`) y
+  **Llívins** (`marketplace` colectivo de la Diputació); `no` para **Recuits de
+  Fonteta** y **Aldea de Buscarós** tras revisar sus canales actuales.
+- **Xuixo Castelló**, **Embotits Vilanova** y **Or de l'Albera** perdieron el
+  texto genérico de importación; **Alma Teas** apunta ahora a su web de marca y
+  **Gelats Enxaneta** al correo explícito de pedidos.
+- No se forzaron como negativas las tiendas agotadas, los carritos incompletos,
+  la reventa independiente ni los fallos de TLS, timeout o 404.
 
 ## Reglas locales (no revertir sin nueva evidencia)
 
@@ -58,6 +76,7 @@ y las afirmaciones dinámicas caducan.
 
 ## Mantenimiento (al retomar)
 
-- Recomprobar los 125 `Venta online=sí` (última comprobación 2026-06-15) y los 17 `no comprobado`.
+- Recomprobar los 131 `Venta online=sí` (seis revisados en V-02 y el resto con
+  última comprobación general 2026-06-15) y los 9 `no comprobado`.
 - Vigilar los 2 `parcial` (Tramuntana, Can Solivera) por señales de cierre definitivo.
 - La nota de candidatos de Girona quedó cerrada; pistas nuevas → `docs/candidates/girona.md`.

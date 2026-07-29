@@ -9,12 +9,12 @@ fija el snapshot, los riesgos locales y el alcance de los lotes. Los contratos
 aplicables son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.
 
-> **⚑ 1ª PASADA CERRADA el 2026-07-27.** 80 filas, 67 `verificado`, 13 `parcial`
-> y **0 `pendiente`**; 32 `Venta online=sí`, **todas con canal**; 0 errores y 0
+> **⚑ 1ª PASADA CERRADA el 2026-07-27; mantenimiento V-01 el 2026-07-29.**
+> 80 filas, 69 `verificado`, 11 `parcial` y **0 `pendiente`**; Venta online:
+> 36 `sí` —todas con canal—, 32 `no` y 12 `no comprobado`; 0 errores y 0
 > avisos de data-quality; ninguna fila fuera del geo-check. Las 80 filas tienen
-> `keep`, así que Soria **entra** en `coverage.json`. Lo que sigue son los
-> residuales de la 2ª pasada, al final de SO-09. No reabrir lotes cerrados sin
-> motivo nuevo.
+> `keep`, así que Soria **está** en `coverage.json`. No reabrir lotes cerrados
+> sin motivo nuevo.
 
 ## Cómo reanudar
 
@@ -552,25 +552,45 @@ las dos de `Bodega`: Monte Pinos a `Agua mineral natural` y Pressumia a
   queda ninguna. **10 de 80** siguen en el centroide de su municipio, todas
   registradas en `data/reference/geo-provenance.json`, regenerado al cerrar.
 
+### Mantenimiento V-01 · venta sin resolver
+
+- Se resolvieron **7 de 19**: `sí` para **Dominio de Atauta**, **Lunas de
+  Castromoro**, **Viñedos y Bodegas Gormaz** y **Monte Pinos**; `no` para
+  **Bodega Los Imposibles**, **Bodegas y Viñedos Aceña** y **Nufresco** tras
+  revisar sus canales actuales.
+- **Lunas de Castromoro** recuperó su dominio, sube a `verificado` y actualiza
+  dirección, coordenadas, teléfono, web y gama a sus instalaciones abiertas en
+  Pedraja de San Esteban en 2024. Su selección remota admite solicitudes desde
+  seis botellas (`email`). **Nufresco** también sube a `verificado`: las nuevas
+  webs propias de Nufri/Nufresco acreditan la finca y el teléfono local de La
+  Rasa; se corrigen web, dirección y contacto.
+- Se desbloquearon tres tiendas: la de **Terra Selecta** para Dominio de Atauta,
+  **Tu Vinoteca** para Gormaz y **La Tienda Vichy** para Monte Pinos, todas con
+  producto disponible y compra operativa. No se forzaron como negativas los
+  dominios caídos, los motores de tienda sin producto ni las fichas solo
+  institucionales.
+
 ### Residuales para la 2ª pasada
 
 - **Imágenes: 0 de 80 filas.** Es el hueco entero de la provincia.
-- **Las 13 `parcial`**, casi todas por dominio caído o por no tener web: Aranda-De
-  Vries, Lunas de Castromoro, Los Imposibles, Embutidos Caba, Rocío Alayeto,
-  Quesos Zayas, Venus Selección, Confitería González, Pastelería Ramiro, Caelia,
-  Miel El Camino del Cid, Apipinares y Nufresco.
-- **Siete dominios caídos a reintentar**: `bodegasenoriodealdea.com` (dado de
+- **Las 11 `parcial`**, casi todas por dominio caído o por no tener web:
+  Aranda-De Vries, Los Imposibles, Embutidos Caba, Rocío Alayeto, Quesos Zayas,
+  Venus Selección, Confitería González, Pastelería Ramiro, Caelia, Miel El
+  Camino del Cid y Apipinares.
+- **Seis dominios caídos a reintentar**: `bodegasenoriodealdea.com` (dado de
   baja, sustituido por bodegasagoris.com), `arandadevries.com` (registrado sin
-  NS), `lunasdecastromoro.com` (portada por defecto de Nginx Proxy Manager),
+  NS),
   `queseriarocioalayeto.es`, `quesoszayasdequintanilla.com`,
   `confiteriagonzalez.com` (NXDOMAIN) y `cervezacaelia.es` (resuelve, servidor
   rechaza conexión). Y `embutidoscaba.com`, en construcción.
-- **Tres sitios que nos bloquean** y habría que comprobar por otra vía:
-  `dominiodeatauta.com`, `tierradesabor`/`terraselecta.com` y `latiendavichy.com`
-  (los tres 403). De ellos dependen dos `Venta online` sin comprobar.
+- **Motores de tienda no operativos**: Dominio de Es carga WooCommerce sin
+  productos comprables; Cuarto Lagar publica condiciones de compra y carrito,
+  pero ninguna ruta de producto responde. Ambos siguen `no comprobado`.
 - **Cuatro filas sin dirección de calle**, tres de ellas con motivo: La Quinta
   Vendimia y Vino Taruguín son proyectos sin bodega propia direccionable y Trufa
   Directa no la publica. La cuarta, Huevos Camperos de Soria, sí debería tener
   una.
-- **Un `no comprobado` que se puede cerrar**: Monte Pinos, si se logra abrir
-  `latiendavichy.com`.
+- Los otros diez `no comprobado` carecen de canal primario vivo o arrastran
+  dominio caído: Embutidos Caba, Pastelería Ramiro, Miel El Camino del Cid,
+  Quesos Zayas, Rocío Alayeto, Confitería González, Venus Selección,
+  Aranda-De Vries, Caelia y Apipinares.

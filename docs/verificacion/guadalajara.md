@@ -7,9 +7,10 @@ aplicables son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 
 ## Estado
 
-✅ **Cerrada el 2026-07-27.** **61 filas** (de 62; −1 fusión): 50 `verificado`,
-11 `parcial`, **0 `pendiente`**. Venta online: **45 `sí` (45/45 con canal), 1
-`no`, 15 `no comprobado`**. Evidencia: 67 registros — **61 `keep` (cobertura
+✅ **Cerrada el 2026-07-27; mantenimiento V-01 el 2026-07-29.** **61 filas**
+(de 62; −1 fusión): 52 `verificado`, 9 `parcial`, **0 `pendiente`**. Venta
+online: **53 `sí` (53/53 con canal), 5 `no`, 3 `no comprobado`**. Evidencia:
+67 registros — **61 `keep` (cobertura
 61/61)**, 2 `purge`, 4 `merge`. **Cero avisos de data-quality.** En
 `data/evidence/coverage.json`.
 
@@ -48,4 +49,9 @@ Seis de las 62 filas llegaban sin registro de evidencia y cinco de ellas tenían
 - **Duda de municipio en Frutos Secos Orozco**: su portada dice elaborar «en
   Mazuecos, Guadalajara» pero la página de contacto solo publica la dirección de
   la capital. Se conservó el municipio del volcado.
+- **Venta online residual tras V-01**: Nectarius conserva una mención de tienda
+  en AECOC Trade, pero `nectarius.es` no resuelve; La Huerta del Lobo solo tiene
+  catálogo institucional y contacto, sin pedido remoto explícito; la tienda
+  antigua de Quesos Seguntino ya no resuelve y su canal social no demuestra un
+  mecanismo vigente. Los tres siguen `no comprobado` por bloqueo material.
 - 24 de 61 filas sin imagen y 13 sin web.
