@@ -439,3 +439,30 @@ Incidencias reutilizables:
 - Al quedar reconciliadas todas las filas, `galicia/ourense` se incorporó a
   `data/evidence/coverage.json`. El trabajo concurrente de Sevilla permaneció
   fuera del alcance y no fue modificado por este expediente.
+
+## OR-12 — Ola 3 de venta sin resolver
+
+Decisiones cerradas el 2026-07-29:
+
+- Se acreditaron nueve ventas remotas. Posada Marron Glacé, Pazo Tizón, Granxa
+  D'Outeiro, Xulia Bande, Adegas Laudes y Bodegas Gómez Sanmartín tienen
+  productos actuales con precio y carrito. Eloi Lorenzo, Señorío de Beade y
+  Adegas do Rexurdir aceptan pedidos directos por teléfono.
+- Posada deja de clasificarse por la portada vacía de su tienda: fichas del
+  mismo catálogo muestran numerosas referencias disponibles y añadibles al
+  carrito, además de seguimiento de pedidos.
+- Granxa D'Outeiro completa dirección productiva en Francelos, teléfono,
+  correo, miel y los tres canales publicados: ecommerce, teléfono y email.
+  Adegas Laudes añade el móvil y correo oficiales vigentes.
+- Adegas do Rexurdir sustituye el dominio `.com` caído por su web oficial
+  `.es`, que publica dirección, teléfono y la acción «hacer un pedido».
+- Ladeiras do Ribeiro sustituye el dominio caído por `seika.gal`, completa
+  móvil y correo, elimina la afirmación incorrecta de tienda propia y conserva
+  venta `sí` mediante pedido telefónico con entrega a domicilio.
+- Bodegas Loeda normaliza HTTPS, pero conserva `no comprobado`: su política
+  menciona una tienda histórica mientras las rutas actuales de tienda y
+  carrito devuelven 404 y no existe oferta comprable.
+
+Estado tras OR-12: **168 filas**; **0 `pendiente`, 42 `parcial`, 126
+`verificado`**. Venta online: **90 `sí`, 9 `no`, 69 `no comprobado`**.
+Evidencia acumulada: **168 `keep` y 5 `merge`**.

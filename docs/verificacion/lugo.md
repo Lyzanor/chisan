@@ -297,3 +297,24 @@ Decisiones cerradas el 2026-07-16:
 Estado final: **137 filas**; **0 `pendiente`, 45 `parcial`, 92
 `verificado`**. Venta online: **59 `sí`, 1 `no`, 77 `no comprobado`**.
 Evidencia acumulada: **137 `keep`, 3 `merge` y 4 `purge`**.
+
+## LU-09 — Ola 3 de venta sin resolver
+
+Decisiones cerradas el 2026-07-29:
+
+- Se resolvieron tres ventas remotas: Fontelas Queixería acepta pedidos por
+  teléfono; O Galeirón mantiene productos de miel disponibles en su tienda
+  propia; y Adegas e Viñedos Lareu publica encargos por teléfono, email y
+  WhatsApp, con móvil y correo actualizados.
+- Se retiraron los dominios caídos de Casa Ánxel y Rectoral de Gundivós sin
+  convertir el fallo técnico en una decisión de venta. La segunda conserva
+  respaldo vigente del Consejo Regulador.
+- Adega Tear y Condado de Sequeiras normalizan HTTPS. La tienda vacía de la
+  primera y el aviso de «próximamente» de la segunda no acreditan compra
+  actual, por lo que ambas siguen `no comprobado`.
+- Maeloc pasa de la categoría impropia `Bodega` a `Otros`: el producto y la
+  actividad descritos son sidra, no vino.
+
+Estado tras LU-09: **137 filas**; **0 `pendiente`, 45 `parcial`, 92
+`verificado`**. Venta online: **62 `sí`, 1 `no`, 74 `no comprobado`**.
+Evidencia acumulada: **137 `keep`, 3 `merge` y 4 `purge`**.
