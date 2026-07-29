@@ -671,3 +671,37 @@ Snapshot final:
 - Canal de venta informado: 101/101 productores con `Venta online=sí`
 - Evidencia Valencia: 196 registros JSONL
 - Cobertura estricta/advisory: `comunitat-valenciana/valencia`
+
+## Mantenimiento ola 3 - venta online
+
+Revisión transversal de 53 filas con `Venta online=no comprobado`
+(2026-07-29). Se resuelven 30 casos: 11 pasan a `sí` con canal, 18 a `no` y
+se purga `quesos-belda-l-alcudia-de-crespins` porque el BORME inscribió la
+extinción de Quesos Belda S.L. en 2019. Quedan 23 casos sin resolver porque el
+canal propio falla técnicamente, la tienda está en mantenimiento o sin stock,
+o no se pudo distinguir con seguridad una tienda actual de un tercero.
+
+Mejoras materiales del CSV:
+
+- Se recuperan tiendas activas que la pasada anterior no pudo leer:
+  Artelicor, Lavandabio, Ecoaromuz, Obsidiana Brewing, 2L Vinos Alto Turia,
+  Daniel Belda, Murviedro, Cárcel de Corpa y Bodegas Lupanda.
+- `arroces-e-lozano-alginet` incorpora identidad web, dirección, teléfono,
+  correo y tienda propia; pasa de ficha sectorial `parcial` a `verificado`.
+- ARCESA incorpora marcas, dirección industrial, teléfono, correo y web
+  oficiales; Granja Rinya corrige dirección y completa contacto; Groguetes
+  sustituye el dominio muerto y el correo antiguo por el contacto publicado en
+  la guía turística comarcal vigente.
+- Se actualizan teléfonos o contactos de Bodegas Lupanda, Bodegas Carlos
+  Cárcel y Bodegas Palmera, y se retira el dominio muerto de Embutidos El
+  Serrano sin convertir el fallo técnico en un `no`.
+- Las falsas tiendas de plantilla de Cooperativa de Bolbaite y Arrocerías
+  Antonio Tomás no cuentan como venta online; las páginas exponen productos de
+  demostración ajenos a la entidad.
+
+Snapshot tras el mantenimiento:
+
+- Filas CSV: 218
+- Verificación: 167 `verificado`, 51 `parcial`, 0 `pendiente`
+- Venta online: 116 `sí`, 79 `no`, 23 `no comprobado`
+- Evidencia: 229 registros (218 `keep`, 3 `purge`, 8 `merge`)

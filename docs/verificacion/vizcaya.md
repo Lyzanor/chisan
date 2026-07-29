@@ -559,3 +559,36 @@ obvios, imágenes, evidence y cobertura estricta.
 - Los 47 residuales `parcial` quedan con evidencia válida y motivo conocido:
   fuente sectorial/directorio sin fuente propia, web caída o bloqueo temporal,
   duda de alcance que no justifica purga, o venta remota no comprobable.
+
+## Mantenimiento ola 3 - venta online
+
+Revisión transversal de 54 filas con `Venta online=no comprobado`
+(2026-07-29). Se resuelven 46 casos: 9 pasan a `sí` con canal y 37 a `no`.
+Quedan 8 casos sin resolver por bloqueo, error de servidor, dominio caído o
+identidad/canal insuficientemente demostrados; esos fallos técnicos no se
+interpretan como ausencia de venta.
+
+Mejoras materiales del CSV:
+
+- BBK Azoka confirma compra vigente de Bizkaia Esnea, Errotik, Txikiñena,
+  Ulibarri Artzaiak, Olatxuko Laboreak y Tologorri/Santa Clara Baserria. Se
+  añaden enlaces útiles y, cuando la fuente permite cierre pleno, se promueven
+  las fichas.
+- Lvre Wines pasa a `verificado` con su tienda propia de txakoli; Caserío
+  Itturbaltza sustituye el dominio caído por la ficha actual que publica
+  pedidos por email y WhatsApp y envío refrigerado.
+- Pastelería Zuricalday queda enlazada a su canal oficial hacia Apanymantel,
+  que admite encargos online con antelación.
+- `miel-de-arrazola-atxondo` deja de presentar Amillena como si fuera la web y
+  dirección del productor: se identifica a Iñigo Mendibil, se conserva
+  Arrazola como localización y Amillena queda solo como evidencia de punto de
+  venta local.
+- Las colecciones de Amalur y Onandi con cero productos, y las simples fichas
+  de productor sin pedido, no se marcan como marketplace activo.
+
+Snapshot tras el mantenimiento:
+
+- Filas CSV: 175
+- Verificación: 132 `verificado`, 43 `parcial`, 0 `pendiente`
+- Venta online: 72 `sí`, 95 `no`, 8 `no comprobado`
+- Evidencia: 190 registros (175 `keep`, 10 `purge`, 5 `merge`)
