@@ -164,10 +164,10 @@ que no espera a nadie:
 
 | Lote | Bloquea | No bloquea |
 |---|---|---|
-| G-CAT-1 y G-CAT-2 | carril T y cualquier escritura de `categoria` | R0, R1, V, E, I |
+| G-CAT-1 y G-CAT-2 ✅ | carril T y cualquier escritura de `categoria` | R0, R1, V, E, I |
 | G-GEO-1 | carril E (localización) | R0, R1, V, T, I |
-| G-TPL-1 | carril T | R0, R1, V, E, I |
-| G-WEB-1 | nada: adelanta trabajo de R0 y R1 | — |
+| G-TPL-1 ✅ | carril T | R0, R1, V, E, I |
+| G-WEB-1 ✅ | nada: adelanta trabajo de R0 y R1 | — |
 
 **Salida obligatoria de todo lote G:** pasar el detector nuevo por las
 provincias que ya figuran como cerradas y archivar sus hits como cola de
@@ -192,31 +192,36 @@ puerta está cerrada. El aviso por fichero de `audit-csv.js` además pliega el
 plural (`Carne`/`Carnes` ya salta en Málaga); el cruce entre provincias sigue
 siendo de `check:defects`, que es quien ve todos los CSV a la vez.
 
-Queda editorial: migrar las filas de las 36 que siguen vivas, que es G-CAT-2.
+Queda editorial: migrar las filas de las 36 que siguen vivas, que es G-CAT-2 ✅.
 
-### G-CAT-2 — migración por familias
+### G-CAT-2 — migración por familias ✅
 
-- Trabajar una familia de etiquetas por lote, con ventana global. La cola es la
-  intersección de `retiredCategories` con `categories`; no hace falta anotarla
-  en ningún sitio.
-- El mapa registra la decisión de 2026-06-21, no la obliga. Una parte de las
-  filas vivas no son reintroducciones sino pasadas provinciales posteriores que
-  eligieron la etiqueta a propósito (Granada rehizo `Especias`, `Mermeladas`,
-  `Bebidas`…). Cada familia se decide una vez: o se migran sus filas, o se
-  argumenta la etiqueta de vuelta al registro y se borra su entrada del mapa.
-  Lo que no vale es dejarla flotando.
-- Para alias inequívocos, cambiar solo `categoria`.
-- Para combinaciones, comprobar que `productos estrella` o `descripcion`
-  conservan el matiz útil; corregirlos solo con evidencia y vaciarlos si están
-  contaminados por plantilla.
-- Cuando una etiqueta llegue a cero usos, retirarla de
-  `data/reference/categories.json` en el mismo lote y añadir su alias
-  preferido cuando aporte un mensaje accionable.
-- Ejecutar `check:defects --check categoria-variante`, `check:csv`,
-  las pruebas del auditor y `verify:ai`.
+Hecho en 5 lotes (175 filas, 36 etiquetas). `retiredCategories` ya no corta con
+`categories`, así que `categoria-variante` está a cero y toda etiqueta retirada
+es error de contrato. Los avisos de calidad vuelven a su línea base previa a
+G-CAT-1: los 175 avisos desaparecen porque los datos están migrados, no porque
+se silenciara el detector.
 
-No se hace una sustitución masiva ciega: algunas etiquetas combinadas pueden
-estar describiendo un productor mixto y necesitan una decisión editorial.
+El mapa registraba la decisión de 2026-06-21 pero no la obligaba, y en ~30 filas
+no se siguió, siempre con la evidencia en la propia fila. Dos formas:
+
+- **el cajón de sastre no era el mejor destino disponible**: `Mermeladas` fue a
+  `Conservas` —que es donde el mapa ya mandaba `Conservas y mermeladas`—, y
+  `Turrones` y `Churrería` a `Dulces y repostería`. El registro recoge el
+  destino real, no el de 2026-06-21;
+- **la etiqueta agrupaba productores distintos**: `Bebidas` es el caso claro.
+  Solo 7 de sus 27 filas eran bebida sin categoría propia; el resto eran
+  sidrerías, casas de pacharán y cerveceras que ya tenían etiqueta viva. Lo
+  mismo, en pequeño, con dos salineras dentro de `Condimentos` y dos fábricas
+  de chocolate y una heladería dentro de `Dulces`.
+
+Quedan residuales honestos, no deuda: `Hidromiel` (3) y agua mineral (7) están
+en `Otros` porque no hay etiqueta viva que les encaje, que es exactamente la
+razón declarada de la consolidación —esperar a las subcategorías—.
+
+Regla que deja el lote para quien migre después: **decidir por fila, no por
+etiqueta**. El destino del mapa es el valor por defecto, y la evidencia de la
+fila lo gana.
 
 ### G-GEO-1 — municipios bilingües
 
@@ -667,7 +672,8 @@ diga la tabla de bloqueo del § 4.
    re-escaneo de las cerradas es leerlo con `--offline`, no repasarlas.
 2. ~~G-CAT-1: detector, mapa canónico y pruebas.~~ ✅ Hecho: el registro lleva
    la cuenta y `check:defects --check categoria-variante` es el re-escaneo.
-3. G-CAT-2: migración por familias y retirada efectiva de etiquetas.
+3. ~~G-CAT-2: migración por familias y retirada efectiva de etiquetas.~~ ✅ Hecho:
+   `retiredCategories` ya no corta con `categories`.
 4. G-GEO-1: municipios bilingües y casos de homónimos.
 5. ~~G-TPL-1: detector advisory de plantilla cruzada.~~ ✅ Hecho.
 
@@ -681,7 +687,8 @@ Cada uno cierra con el re-escaneo de las provincias ya cerradas.
 4. R1: clusters de fuentes prestadas, dejando campañas grandes para lotes
    secuenciales.
 5. V: provincias con 1–40 ventas sin resolver; continuar por bandas.
-6. T0 sobre las provincias con más plantilla, en cuanto G-TPL-1 esté verde.
+6. T0 sobre las provincias con más plantilla. **Desbloqueado**: las tres
+   puertas del carril T (G-CAT-1, G-CAT-2, G-TPL-1) están verdes.
 7. T1, E, I y C según se estabilice cada provincia.
 
 Antes de iniciar cualquiera de los dos puntos 1 se vuelve a medir: si otro

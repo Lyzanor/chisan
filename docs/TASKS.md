@@ -115,13 +115,11 @@ Cada uno convierte una limpieza manual recurrente en algo que el validador
 impide. Requieren `verify:ai`.
 
 - ~~**`categories.json` acepta 29 etiquetas que nadie usa.**~~ ~~**El aviso de
-  variantes de `audit-csv.js` no pliega plurales.**~~ Hechos: `categories.json`
-  lleva `retiredCategories`, las 29 muertas salieron del registro y el aviso por
-  fichero ya pliega el plural. Lo que queda es la migración editorial (G-CAT-2):
-  36 etiquetas retiradas siguen vivas y sus filas son invisibles desde la
-  etiqueta que las sustituye, porque la app agrupa por string exacto
-  (`lib/csv-catalog.ts`). La cola la da `check:defects --check
-  categoria-variante`; el criterio, `docs/CSV_CONTRACT.md` § Categories.
+  variantes de `audit-csv.js` no pliega plurales.**~~ Hechos, y con ellos la
+  migración entera (G-CAT-1 y G-CAT-2): `categories.json` lleva
+  `retiredCategories`, las 64 etiquetas retiradas están a cero usos y fuera del
+  registro, y volver a escribir cualquiera de ellas es error de contrato con el
+  reemplazo en el mensaje. `categoria-variante` está a cero.
 - ~~**Nada en el repo resuelve un dominio.**~~ Hecho: `check:links` clasifica
   cada `web` y guarda el resultado fechado en `data/reference/web-status.json`.
   **Léelo con `--offline` antes de abrir dominios a mano**; solo vuelve a la red

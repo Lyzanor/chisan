@@ -129,7 +129,15 @@ CSV
 # (warns, rows left to migrate) to "retired and rejected" (blocking error), so a
 # hardcoded fixture would break exactly when the migration it supports lands.
 # Labels with a comma are skipped: they would need quoting inside the fixture.
-IFS=$'\t' read -r RETIRED_VALID RETIRED_VALID_TARGET RETIRED_GONE RETIRED_GONE_TARGET PLURAL_UNO PLURAL_DOS < <(
+# One value per line, not tab-separated: bash counts a tab as IFS whitespace
+# even when IFS is set to one, so consecutive or leading empty fields collapse —
+# and "empty" is the normal state here once a migration finishes.
+{
+  read -r RETIRED_VALID
+  read -r RETIRED_VALID_TARGET
+  read -r RETIRED_GONE
+  read -r RETIRED_GONE_TARGET
+} < <(
   node -e '
     const config = require(process.argv[1]);
     const valid = new Set(config.categories);
@@ -138,24 +146,8 @@ IFS=$'\t' read -r RETIRED_VALID RETIRED_VALID_TARGET RETIRED_GONE RETIRED_GONE_T
     );
     const stillValid = usable.find(([label]) => valid.has(label)) ?? ["", ""];
     const rejected = usable.find(([label]) => !valid.has(label)) ?? ["", ""];
-    const stem = (label) =>
-      label
-        .normalize("NFD")
-        .replace(/\p{Diacritic}/gu, "")
-        .toLowerCase()
-        .replace(/[^\p{L}\p{N}]+/gu, " ")
-        .trim()
-        .split(" ")
-        .map((word) => word.replace(/s$/, ""))
-        .join(" ");
-    const byStem = new Map();
-    for (const label of config.categories) {
-      if (label.includes(",")) continue;
-      byStem.set(stem(label), [...(byStem.get(stem(label)) ?? []), label]);
-    }
-    const pair = [...byStem.values()].find((group) => group.length > 1) ?? ["", ""];
     // Trailing newline on purpose: `read` returns non-zero on EOF without one.
-    process.stdout.write(`${[...stillValid, ...rejected, pair[0], pair[1]].join("\t")}\n`);
+    process.stdout.write(`${[...stillValid, ...rejected].join("\n")}\n`);
   ' "$ROOT_DIR/data/reference/categories.json"
 )
 
@@ -335,19 +327,19 @@ fi
 
 # Singular and plural of the same label in one CSV: `normalizeSearch` folded
 # only case and accents, so this pair used to pass unnoticed inside a province.
-if [[ -n "$PLURAL_DOS" ]]; then
-  cat >"$TMP_DIR/plural-variants.csv" <<CSV
+# The labels are invented on purpose. The near-duplicate warning groups before
+# validating, so this keeps testing the folding even though the catalog no
+# longer has a real plural pair for it to catch.
+cat >"$TMP_DIR/plural-variants.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-plural-uno,Masia Plural,Abrera,$PLURAL_UNO,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
-plural-dos,Masia Singular,Abrera,$PLURAL_DOS,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+plural-uno,Masia Plural,Abrera,Sintetica,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+plural-dos,Masia Singular,Abrera,Sinteticas,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
 CSV
-  run_expect_success "$TMP_DIR/out-plural-variants.txt" \
-    node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/plural-variants.csv"
-  grep -q "WARNING line 2 .* categoria has near-duplicate variants" "$TMP_DIR/out-plural-variants.txt"
-  grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-plural-variants.txt"
-else
-  echo "note: no singular/plural pair left in the registry"
-fi
+run_expect_failure "$TMP_DIR/out-plural-variants.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/plural-variants.csv"
+grep -q "WARNING line 2 .* categoria has near-duplicate variants: Sintetica \[2\]; Sinteticas \[3\]" \
+  "$TMP_DIR/out-plural-variants.txt"
+grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-plural-variants.txt"
 
 # Two genuinely different categories in one CSV must not be folded together.
 cat >"$TMP_DIR/distinct-categories.csv" <<'CSV'
