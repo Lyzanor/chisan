@@ -62,3 +62,43 @@ Techos reales — no promover sin fuente primaria propia leída en vivo:
 - Recomprobar los 96 `Venta online=sí` (última comprobación 2026-07-01) y los 63 `no comprobado`.
 - Imágenes pendientes: 52 filas.
 - La pasada no añadió candidatos nuevos (regla de la 1ª pasada); expansión → `docs/candidates/`.
+
+## Ola 3 · venta online y mejora de fichas (2026-07-29)
+
+Se revisaron las **63** filas que entraban con `Venta online=no comprobado`.
+Quedan resueltas **29**: **11** pasan a `sí` con canal y **18** a `no`. Las
+otras **34** conservan `no comprobado` por dominio caído, timeout/TLS, tienda
+en mantenimiento, checkout incompleto o falta de una fuente propia suficiente.
+
+Mejoras materiales del CSV:
+
+- Páez Morilla tenía su ecommerce en un dominio separado del corporativo;
+  ahora la ficha enlaza la web canónica y recoge tienda, correo, gama real y
+  una descripción específica.
+- Cien Palacios dispone de compra web y condiciones de envío; se corrigen el
+  nombre, el correo `.es`, el móvil de pedidos, el surtido y la descripción.
+- Huerta de Albalá ya no depende de la antigua tienda de desarrollo: publica
+  productos 2026 con precio y stock. Primitivo Collantes ofrece 17 referencias
+  con carrito y condiciones de compra.
+- Viandas Cádiz sustituye el dominio `.com` por la tienda `.es` vigente y deja
+  de describirse con una plantilla genérica. Se documentan producto elaborado,
+  orientación profesional y pedido mínimo.
+- Del’Aqua publica pedidos por WhatsApp y entrega al día siguiente; Los
+  Horgazales tiene un teléfono específico de pedidos; Quesos Ubrique enlaza
+  «Hacer un pedido» al teléfono; La Rosa de Oro publica encargos y precios de
+  temporada.
+- La web oficial de Pastelería Jesús autoriza su escaparate en Apanymantel, por
+  lo que cuenta como `marketplace`. Cooperativa Las Virtudes publica el correo
+  de pedidos profesionales y actualiza descripción, horario y dominio.
+- No se fuerzan los casos técnicamente dudosos: La Pedriza carga estructura de
+  carrito pero productos sin precio; Postres La Cobijada sigue en
+  mantenimiento; Hermanos Holgado muestra una tienda rota; Rivero, Algaeca,
+  Indi&Co y los dominios NXDOMAIN continúan sin resolver.
+
+Snapshot tras la ola:
+
+- Filas CSV: **159**
+- Verificación: **145 `verificado`, 14 `parcial`, 0 `pendiente`**
+- Venta online: **107 `sí`, 18 `no`, 34 `no comprobado`**
+- Canal informado: **107/107** filas con `Venta online=sí`
+- Evidencia: **162** registros

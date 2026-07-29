@@ -49,3 +49,38 @@ cuatro filas que quedaban sin registro de evidencia y saneó las webs.
   que se quedaron sin `web` en este cierre son las primeras candidatas a
   rescatar el dominio real.
 - 143 de 146 filas sin imagen: es el mayor hueco de calidad de la provincia.
+
+## Ola 3 · venta online y segunda pasada (2026-07-29)
+
+Se revisaron las **58** filas que entraban con `Venta online=no comprobado`.
+Quedan resueltas **22**: **11** pasan a `sí` con canal y **11** a `no`. Las
+otras **36** conservan `no comprobado` porque tienen fallos técnicos, una
+tienda incompleta, fuentes solo secundarias o una llamada comercial demasiado
+ambigua para afirmar pedido remoto.
+
+Mejoras materiales del CSV:
+
+- Coovival, Bodegas Símbolo, Vinos Colomán, Vinos & Bodegas y Zaferán
+  Calatravo tienen tienda propia operativa con producto, precio, stock y
+  carrito; dejan de figurar como simples catálogos.
+- Bodegas Marín Perona y Bodega La Tercia acreditan encargos directos por
+  teléfono y correo. Marín Perona incorpora el móvil de pedidos vigente.
+- Galán de Membrilla enlaza desde su propia web el escaparate oficial de
+  Amazon. Las cooperativas de Carrión, Puerto Lápice y Villamayor usan la
+  tienda colectiva oficial de Grupo Montes Norte, mecanismo admitido por la
+  política editorial.
+- Se distingue un catálogo real de una falsa tienda: Bodegas Isla conserva
+  `no comprobado` porque sus productos aparecen sin precio ni checkout;
+  Pago Piedrabuena y The Harvest of Saffron también quedan prudentes ante
+  formularios o solicitudes comerciales que no prueban un pedido utilizable.
+- Los dominios con fallo técnico —Vegaval, Bodega Bernal, Quesería Solidaria,
+  Castillo de Salvatierra y el directorio de Vinos y Aceites Villarrubia— no
+  se convierten artificialmente en `no`.
+
+Snapshot tras la ola:
+
+- Filas CSV: **146**
+- Verificación: **110 `verificado`, 36 `parcial`, 0 `pendiente`**
+- Venta online: **99 `sí`, 11 `no`, 36 `no comprobado`**
+- Canal informado: **99/99** filas con `Venta online=sí`
+- Evidencia: **195** registros
