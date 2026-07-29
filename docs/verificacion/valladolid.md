@@ -146,17 +146,35 @@ persiguen campos opcionales que no cambien la decisión.
 
 - Snapshot final: **195 filas**; **151 `verificado`, 44 `parcial`, 0
   `pendiente`**. Se registran 195 decisiones `keep`, 20 `merge` y 14 `purge`.
-- Venta online: **108 `sí`, 43 `no`, 44 `no comprobado`**; los 108 casos
+- Venta online tras Ola 3: **111 `sí`, 66 `no`, 18 `no comprobado`**; los 111 casos
   positivos tienen un `Canal de venta` válido.
-- Cobertura: 194/195 Google Maps, 193/195 coordenadas y 130/195 imágenes.
+- Cobertura: 194/195 Google Maps, 193/195 coordenadas y 123/195 imágenes.
   Los únicos huecos geográficos corresponden a dos filas `parcial`: La
   Fabulosa no publica la finca exacta y Fonseca Mediero solo permite ubicar la
   calle, no el número con precisión suficiente. No se inventan coordenadas.
-- Auditoría transversal: sin pendientes, duplicados editoriales, errores o
-  avisos de contrato/calidad. Las coincidencias de contacto detectadas son
-  unidades productivas distintas de Matarromera, Bornos y Protos.
-- Puerta final: `npx pnpm verify:data` superada el 2026-07-11 con 0 errores, 0
+- Auditoría transversal: sin pendientes, duplicados editoriales, errores de
+  contrato ni descripciones genéricas. Las tres señales restantes de plantilla
+  cruzada son productores mixtos reales: Concejo del Monte y los espárragos
+  Belloso y Velón en fresco y conserva.
+- Puerta final: `npx pnpm verify:data` revalidada el 2026-07-29 con 0 errores, 0
   avisos de imágenes y 0 incidencias de evidencia.
+
+### Ola 3 · Venta online y texto (2026-07-29)
+
+- **44 → 18 `no comprobado`**: tres pedidos directos demostrados —Vinesenti,
+  Miel Sandonís y Las Mermeladas de Alison— y 23 negocios actuales sin
+  mecanismo remoto público.
+- Los 18 residuales tienen incertidumbre concreta: dominios caídos o
+  inaccesibles, catálogo detrás de cuenta, fuente propia ausente o actividad
+  comercial que no puede confirmarse. OLIGUEVA se mantiene `parcial`: la
+  sociedad figura inactiva y sus canales han desaparecido, pero no consta aún
+  una extinción registral que permita `purge:closed`.
+- **34 descripciones de plantilla eliminadas**: narraban que la fila se había
+  incorporado al catálogo y revisado con Google Maps, sin aportar un hecho del
+  productor. También se corrige Helios de `Pan y pastelería` a `Despensa
+  artesanal`, se normaliza la gama truncada de El Gran Cardenal y se condensan
+  textos promocionales extensos en Oligueva, Montevital y los dos productores
+  de espárrago.
 
 ## Worklist
 

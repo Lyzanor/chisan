@@ -89,6 +89,13 @@ existentes.
   (cobertura 109/109), 5 `purge` y 6 `merge`. Ninguna fila conserva un
   directorio como `web` y ninguna queda fuera del geo-check. Albacete entra en
   `data/evidence/coverage.json`.
+- **Ola 3 (2026-07-29)**: **107 filas**, 91 `verificado`, 16 `parcial` y 0
+  `pendiente`. Venta online: **68 `sí`, 16 `no`, 23 `no comprobado`**. La
+  cooperativa Nuestra Señora de la Cabeza publica pedido directo de sus vinos
+  Viaril por teléfono y correo. Pistalbilla y la Cooperativa Manchega de la
+  Almendra se purgan como acopio/procesado B2B sin producto propio identificable
+  para el consumidor. Se corrigen además PRODALBAR, Finca El Molar y la marca,
+  dirección y gama de la Cooperativa San Isidro de Villalgordo.
 
 ## Reglas y riesgos locales
 
@@ -382,15 +389,14 @@ Incidencias reutilizables:
   `parcial` con el encaje anotado, no se purgan: la duda de alcance se resuelve
   en segunda pasada, no con una baja apresurada.
 
-## Residuales para la segunda pasada
+## Residuales tras Ola 3
 
-- **17 `parcial`**, casi todas por no tener fuente primaria viva. Candidatas a
-  revisar el encaje: Manchega de la Almendra y SAT del Albaricoque (acopio sin
-  transformación), Pistalbilla (servicio a socios), Andrés Calero (sin ningún
-  rastro digital) y La Manchega de Ossa de Montiel (posible granel).
-- **42 `Venta online=no comprobado`**: varias son tiendas caídas o «próximamente»
-  que conviene reintentar (Bodegas Ayuso, Miguelitos Arenas, Cerveza La Nena,
-  Bro Valero) y dominios en mantenimiento (San Gregorio Magno).
-- **14 filas sin `web`**, por dominio extinto o inexistente.
-- **Imágenes: 108 de 109 filas sin imagen.** Es el mayor hueco de calidad de la
-  provincia y no se tocó en esta pasada.
+- **16 `parcial`**, casi todas por no tener fuente primaria viva. Conviene
+  reexaminar el encaje de La Manchega de Ossa de Montiel y de las bodegas sin
+  marca documentada, pero no hay prueba suficiente para purgarlas.
+- **23 `Venta online=no comprobado`**: se concentran en tiendas temporalmente
+  no disponibles (Ayuso, Miguelitos Arenas), páginas en obras o mantenimiento
+  (PRODALBAR, San Gregorio Magno, La Nena, Serrano Flores), bloqueos/errores
+  técnicos y dominios extintos. No se convierten artificialmente en `no`.
+- **75 de 107 filas tienen imagen.** La imagen retirada de Pistalbilla no queda
+  huérfana; el audit de imágenes permanece limpio.

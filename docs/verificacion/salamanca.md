@@ -9,12 +9,12 @@ fija el snapshot, los riesgos locales y el alcance de los lotes. Los contratos
 aplicables son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.
 
-> **⚑ PASADA CERRADA el 2026-07-27 y reconciliada el 2026-07-28.** 133 filas,
-> 97 `verificado`, 36 `parcial` y **0 `pendiente`**; 75 `Venta online=sí`,
-> **todas con canal**; 0 errores y **0 avisos** de data-quality; ninguna fila
-> fuera del geo-check. Salamanca entra en `coverage.json` con `keep` para sus
-> 133 filas. Lo que sigue son mejoras no bloqueantes al final de Estado. No
-> reabrir lotes cerrados sin motivo nuevo.
+> **⚑ PASADA CERRADA el 2026-07-27, reconciliada el 2026-07-28 y revisada en
+> Ola 3 el 2026-07-29.** 132 filas, 98 `verificado`, 34 `parcial` y **0
+> `pendiente`**; 76 `Venta online=sí`, todas con canal, 43 `no` y 13 `no
+> comprobado`; 0 errores y **0 avisos** de data-quality; ninguna fila fuera del
+> geo-check. Salamanca tiene `keep` para sus 132 filas. No reabrir lotes
+> cerrados sin motivo nuevo.
 
 ## Cómo reanudar
 
@@ -89,18 +89,30 @@ nuevos hasta terminar la primera pasada de las filas existentes.
 - Evidencia: **152 registros** (133 `keep`, 7 `purge`, 12 `merge`) y 0 avisos.
   Salamanca entra en `data/evidence/coverage.json`.
 
+### Ola 3 · Venta online y segunda pasada (2026-07-29)
+
+- **133 → 132 filas**: Carralejos se fusiona en Quesos Amado Charra; la tienda
+  oficial de Amado identifica Carralejos como gama propia y ambas filas
+  compartían dirección, teléfono y unidad productiva.
+- Venta online: **75/17/41 → 76 `sí`, 43 `no`, 13 `no comprobado`**. Don
+  Hornazo aporta el nuevo ecommerce; 26 canales públicos actuales no ofrecen
+  pedido remoto y los 13 residuales conservan incertidumbre técnica o de fuente.
+- El Manjuelo deja de ser una fila genérica de Salamanca: pasa a su identidad
+  cooperativa y ubicación reales en Endrinal, con carne de vacuno certificada.
+- Cerveza Bizarra se traslada de una dirección comercial antigua a la fábrica
+  vigente del polígono Montalvo II. Evidencia final: **153 registros** —132
+  `keep`, 7 `purge` y 14 `merge`.
+
 ### Residuales para la 2ª pasada
 
-- **Imágenes: 0 de 133 filas.** Es el hueco más grande y queda entero.
-- **Posible fusión Carralejos / Quesos Amado Charra** (SA-08): comparten calle,
-  pueblo y teléfono.
-- **Candidatos a purga o revisión**: Quesería Santomez (sin rastro propio) e
-  Ibéricos Yebra (marca comercializadora y B2B).
-- **Webs a reintentar**: IberoArt y CIBEGO (SA-05), Jamón Pinucho y Revisan
-  (403), Bodegas Labrador, El Bardal, Mermeladas La Aldea y El Manjuelo.
+- **Imágenes: 0 de 132 filas.** Es el hueco más grande y queda entero.
+- **13 `Venta online=no comprobado`**: Bodegas Labrador, Quinta de las Velas,
+  Carne Fresca Ibérica Yebra, Jamón Pinucho, IberoArt, Revisan, Pagos de Izcala,
+  Mermeladas La Aldea, La Roblicita, Garrapiñadas M. Sánchez, Hacienda Zorita,
+  La Casa del Pan III y El Bardal. Son fallos técnicos, dominios sin lectura o
+  ausencia de fuente propia viva; no se fuerzan a `no`.
 - **Desajustes obrador/tienda anotados**: Faustino Prieto, Confitería Santa
   Lucía, Confitería Gil y Revisan.
-- **Perahigos**: decidir entre Garcibuey y Miranda del Castañar.
 
 ## Reglas y riesgos locales
 
