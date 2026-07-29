@@ -982,6 +982,33 @@ Cerrado el 2026-07-26. Reauditoría sobre las 214 filas resultantes:
   afirma cultivar), Bubo Babia (obrador en Piedrafita de Babia según la prensa,
   Villablino según el registro) y Miel de León (domiciliada en el Páramo y
   autodescrita como del Bierzo).
+
+## LE-17 — Ola 3 · venta sin resolver (2026-07-29)
+
+Segunda pasada sobre las **98 filas con `Venta online=no comprobado`** del
+snapshot actual. Se resuelven **12** canales vigentes y atribuibles al productor:
+
+- **7 ecommerce propios:** Tilenus, Cantariña, Confiterías Montañés, Confitería
+  Velasco, Legumbres Rosa, Miel Milor y Agua del Teleno.
+- **5 pedidos asistidos:** Álvarez de Toledo, Martínez Yebra, Jamones y Cecinas
+  Prieto y Embutidos Natalio mediante formulario; Cerveza La Corrala por
+  teléfono o correo.
+
+No se limita la pasada al enum. Se sustituyen ocho campos genéricos de producto
+por referencias comprables, se añade el correo oficial de Montañés, se
+normalizan a HTTPS Agua del Teleno y Martínez Yebra y se publican instrucciones
+reales de pedido donde el flujo no es checkout.
+
+Se mantienen sin resolver las tiendas vacías, cerradas o solo anunciadas:
+Labejazul muestra productos de distribuidor a 0 €, la tienda de Unión Panadera
+declara estar cerrada y Obrador Confitería Asturias no expone todavía un flujo
+comprable. La fila `la-huerta-san-martin-de-torres` continúa `pendiente`: la
+revisión no encontró una fuente nueva que permita identificarla ni una fuente
+exhaustiva que sostenga su purga.
+
+**Estado tras LE-17:** 207 filas; 163 `verificado`, 43 `parcial`, 1 `pendiente`;
+venta online en **120 `sí`**, 1 `no` y **86 `no comprobado`**. Las 12 decisiones
+positivas tienen canal y evidencia actualizados.
 - **43 `parcial`**, la mayoría por no tener fuente primaria viva. Merecen
   reintento los dominios caídos o bloqueados: Señorío de los Arcos, Marcos
   Miñambres, Julio Crespo, Morvega y Sidra Carral (certificado caducado o error

@@ -568,3 +568,46 @@ nunca para degradar una fila.
   estudiaron vender la bodega. No consta cierre; conviene reintentarlo.
 - **102 `no comprobado`**: mayoritariamente bodegas pequeñas sin tienda. No es
   deuda, es el estado real.
+
+### ZA-R6 — Ola 3 · venta sin resolver (2026-07-29)
+
+Tercera pasada sobre las **102 filas con `Venta online=no comprobado`**. Se
+confirman **26** ventas remotas:
+
+- **23 ecommerce propios**, entre ellos Bigardo, Ramayal, La Guardesa, Maires,
+  Alonso Conde, Hircus, ILBESA, La Mela, Embutidos Mayoral, Cárnicas Ele,
+  Douroliva y Quesos Pablo Alonso Martín.
+- **1 marketplace:** la tienda de Hijos de Dionisio Sánchez en eBay, enlazada
+  por su web oficial y con referencias propias activas.
+- **2 pedidos asistidos:** Consorcio Promoción del Ovino mediante formulario y
+  Valdigal por teléfono o correo.
+
+La pasada corrige una venta heredada que ya no es segura: `micestadesetas.com`
+redirige hoy a un dominio ajeno. Hongos de Zamora pasa de nuevo a `no
+comprobado`, sustituye la web secuestrada por `honza.es` y publica los contactos
+vigentes. El balance neto de la cola provincial es, por tanto, **−25**.
+
+También se corrige identidad y localización. Hircus no produce en Zamora
+capital: la unidad oficial de Caprino del Esla está en la carretera
+Zamora–Carbajales, en **Palacios del Pan**. Se actualizan municipio, slug,
+dirección, coordenadas, contacto e imagen y queda el `merge` de
+`hircus-zamora` a `hircus-palacios-del-pan`.
+
+Nueve filas pasan de `parcial` a `verificado` porque la tienda oficial aporta
+ahora actividad productora y, junto con la fuente territorial previa, municipio:
+Cárnicas Díaz, Cárnicas La Culebra, El Regalo de Atenea, Embutidos Mayoral,
+Hijos de Dionisio Sánchez, Hircus, Cárnicas Ele, La Mela y Quesos Pablo Alonso
+Martín.
+
+Higiene adicional:
+
+- se retiran cuatro webs muertas y las tres fichas compartidas de
+  `exquisiteza.es` que hacían de web propia;
+- se actualizan los dominios redirigidos de Bigardo y Dionisio Sánchez;
+- se reescriben productos y descripciones genéricos con gamas concretas;
+- `plantilla-cruzada` baja de 4 a 0 y `web-de-tercero` de 3 a 0.
+
+**Estado tras ZA-R6:** 155 filas; **115 `verificado`**, 40 `parcial`, 0
+`pendiente`; venta online en **78 `sí`** y **77 `no comprobado`**. El lote
+conjunto **León + Zamora** reduce la cola global de Ola 3 en **37** filas, de
+3.979 a **3.942**.
