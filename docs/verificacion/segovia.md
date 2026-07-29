@@ -84,6 +84,10 @@ existentes.
   distancia, ninguna web de directorio, ningún teléfono ni descripción
   repetidos.** `verify:data` verde sobre los 50 CSV. Segovia entra en
   `data/evidence/coverage.json`.
+- **Ola 3 — venta sin resolver (2026-07-29): 143 filas; 97 `verificado`, 46
+  `parcial`, 0 `pendiente`. Venta online: 67 `sí` (67/67 con canal), 0 `no`,
+  76 `no comprobado`.** Se resolvieron cinco canales de venta y Mieles de la
+  Hoz pasó a `verificado`; el total ya recoge la purga previa de Las Damas.
 
 ## Reglas y riesgos locales
 
@@ -426,3 +430,19 @@ Cerrado el 2026-07-26. Reauditoría sobre las 144 filas resultantes:
   cambió y el borrado de las ocho de filas purgadas.
 - **Altas pendientes**: `docs/candidates/segovia.md` guarda cinco bodegas de la
   D.O.P. Valtiendas ausentes del CSV, sin contrastar.
+
+## SG-17 — Ola 3 · venta sin resolver (2026-07-29)
+
+Revisión de las 81 filas que aún tenían `Venta online=no comprobado`:
+
+- **5 ventas remotas confirmadas**: Alimentación Sanz Vegas
+  (`whatsapp|telefono`), Huerta PradoAncho (`whatsapp|email`) y las tiendas
+  activas de Mesenor, Segoviana de Patatas y Verduras Tabuenca (`ecommerce`).
+- **Mejoras adicionales del CSV**: teléfono, horario y web vigentes de
+  Hortafercar; correos actuales de Alanterra y Ribera del Duratón; descripciones
+  y productos concretos en las filas afectadas.
+- **Mieles de la Hoz** queda `verificado`: su web oficial identifica a Marta de
+  la Hoz y sus colmenares, por lo que se descarta la sospecha de duplicidad con
+  Entrehoces, de Jesús de la Hoz.
+- Las otras **76 filas** permanecen `no comprobado`: no se convirtió una
+  ausencia de carrito o un contacto genérico en un `no`.

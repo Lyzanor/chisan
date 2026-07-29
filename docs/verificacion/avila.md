@@ -56,6 +56,11 @@ problema en una fila de otro lote, anótalo en la sección Estado y sigue.
   145 filas. 0 duplicados, 0 geo-warnings, 0 huecos reales de
   municipios.json.** Residual para 2ª pasada: 8 `parcial` (motivo anotado),
   imágenes 0/145.
+- **Ola 3 — venta sin resolver (2026-07-29): 140 filas, 134 `verificado`, 6
+  `parcial`, 0 `pendiente`; VO 76 `sí` (76/76 canal) / 0 `no` / 64 `no
+  comprobado`.** La reducción neta combina 13 ventas confirmadas, 3 purgas de
+  comercios y 2 fusiones de puntos de venta duplicados. Evidencia: 160
+  registros (140 `keep`, 8 `purge`, 12 `merge`).
 - Tras lote 10 (2026-07-04): **145 filas**; **0 `pendiente`**, 8 `parcial`,
   137 `verificado`. **Las 152 filas originales quedan todas revisadas**
   (152 iniciales − 4 purgas: Ornua, Marugán, Sabores de Gredos, La Casa de
@@ -818,3 +823,28 @@ imágenes 0/145.
 - Correcciones de municipio/slug (con su `merge`), geo-warnings aceptados y
   huecos confirmados de `municipios.json`.
 - Todo cambio de `Venta online` a `sí` o `no` (canal y fuente).
+
+## AV-13 — Ola 3 · venta sin resolver (2026-07-29)
+
+Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
+
+- **11 productores con compra activa en la tienda colectiva vigente de Ávila
+  Auténtica**: Soto Manrique, Don Juan del Águila/Gaznata, Huellas del Tiétar,
+  Bodega El Callejón, Carhesan/Embutidos Herráez, Sueños de Alba, Quesería
+  Valdecabras, La Quesería de María, Montealijar, Miel La Picorea y URSU9.
+  Todos quedan `sí,marketplace` con página de producto concreta, precio y
+  compra activa.
+- **2 canales directos**: Casa Palancas publica teléfono específico para
+  pedidos; Mil Momentos admite encargos y entrega a domicilio por teléfono o
+  email.
+- **2 fusiones**: la tienda Aceitunas de Serranillos de Ávila capital pertenece
+  a Aceitunas Ovidio S.L.; Frutos Secos Loli es una tienda de Flores y Jiménez.
+  Se conservan las fichas productivas y se eliminan los puntos de venta
+  duplicados.
+- **3 purgas `not-producer`**: Frutos Secos Luis y Legumbres Vaquero se
+  presentan como comercios de surtido ajeno; «Yemas de Ávila» en plaza de San
+  Vicente 3 era la tienda de recuerdos de la Taberna Las Murallas, sin obrador
+  identificado.
+- Además de resolver venta, se limpiaron nombres, productos y descripciones
+  genéricas en nueve filas y se añadieron contactos útiles donde la fuente los
+  publica. Las otras **64 filas** quedan honestamente `no comprobado`.
