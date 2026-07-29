@@ -97,6 +97,17 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
 - `categoria`, when present, must exactly match one value from that set.
 - Preferred aliases live in the same file (`preferredAliases`) and are reported by `check:csv:data-quality`; examples include `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
 - Add a category only when no existing label fits a materially different producer type. Update `data/reference/categories.json`, docs, and validator tests together.
+- `retiredCategories` maps every label the 2026-06-21 consolidation folded away
+  (commits `d157b1f`, `41233aa`, `183f4eb`) to the one that replaced it. Its
+  intersection with `categories` is the state of the migration, and reading it
+  beats any count in a doc:
+  - **in both** — rows are still using the label, so it stays valid and
+    `check:csv:data-quality` warns on each row. It is the `categoria-variante`
+    queue of `check:defects`.
+  - **retired only** — nothing uses it, and typing it again is a blocking
+    error that names the replacement.
+  A retired label leaves `categories` in the same lot that empties it. Bringing
+  one back means arguing it into `categories` on purpose, not typing it.
 
 ## Verification levels
 - The decision model — how to choose `pendiente`/`parcial`/`verificado`, online sales, and edge cases — lives in `docs/EDITORIAL_POLICY.md`. This section owns only allowed values and blocking rules.
@@ -174,8 +185,10 @@ Actionable warnings (always fire):
   - `Facebook` or `Instagram` pointing at the network itself rather than a producer profile: the bare domain, an `/explore` or logged-in feed URL, or an Instagram post permalink (`/p/<code>`). Facebook's `/p/<name>-<id>`, `/pages/<name>` and `/profile.php?id=` forms are real pages and do not warn.
   - duplicated normalized `nombre + municipio`
   - `descripcion` duplicated across different rows (shared template boilerplate; see Editorial field conventions)
-  - near-duplicate `categoria` variants after normalization
+  - near-duplicate `categoria` variants after normalization, folding a trailing
+    `s` per word so `Carne` and `Carnes` in the same file are one group
   - category labels that should use one of the preferred category labels
+  - a `categoria` listed in `retiredCategories` but still valid (see Categories)
   - `lat`/`lon` between `15 km` and `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond `100 km` it is a blocking error instead (see Blocking rules). The message names the closest centroid — `closest centroid is X (Y km)` — so you can tell whether the `municipio` or the `lat`/`lon` is the wrong field. Rows whose `municipio` is not in the lookup are skipped silently.
 
 ## Link validation

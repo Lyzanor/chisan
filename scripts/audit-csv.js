@@ -57,6 +57,11 @@ const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipios-overrides.json";
 let PREFERRED_CATEGORY_ALIASES = new Map();
 let VALID_CATEGORIES = new Set();
+// Labels the 2026-06-21 consolidation folded into another one, mapped to their
+// replacement. A retired label that is still in VALID_CATEGORIES has rows left
+// to migrate; once it reaches zero uses it leaves the valid list and comes back
+// only as a contract error. See docs/CSV_CONTRACT.md § Categories.
+let RETIRED_CATEGORIES = new Map();
 
 const MAP_ADDRESS_HINT_KEYWORDS = [
   "avinguda",
@@ -148,6 +153,7 @@ function loadCategoryConfig(fs, path) {
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
   PREFERRED_CATEGORY_ALIASES = new Map(Object.entries(config.preferredAliases));
   VALID_CATEGORIES = new Set(config.categories);
+  RETIRED_CATEGORIES = new Map(Object.entries(config.retiredCategories ?? {}));
 }
 
 async function getDependencies() {
@@ -181,6 +187,17 @@ function normalizeSearch(value) {
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+// Grouping key for the near-duplicate category warning. `normalizeSearch` only
+// folds case and accents, so `Carne` and `Carnes` sitting in the same CSV never
+// tripped it. Strip a trailing `s` per word and they collapse; stripping `es`
+// too would turn `carnes` into `carn` and lose the pair this exists for.
+function categoryStem(value) {
+  return normalizeSearch(value)
+    .split(" ")
+    .map((word) => word.replace(/s$/, ""))
+    .join(" ");
 }
 
 function slugifySegment(value) {
@@ -705,7 +722,20 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint, 
 
     const category = cleanCell(fields.categoria);
     if (category && !VALID_CATEGORIES.has(category)) {
-      push("error", line, id, slug, `categoria '${category}' is not a valid category`);
+      // Naming the replacement matters more than the rejection: most of these
+      // are a retired label typed again, not a new one being proposed.
+      const replacement =
+        RETIRED_CATEGORIES.get(category) ??
+        PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        replacement
+          ? `categoria '${category}' was retired; use '${replacement}'`
+          : `categoria '${category}' is not a valid category`,
+      );
     }
 
     const phoneRaw = cleanCell(fields.telefono);
@@ -773,6 +803,19 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
           id,
           slug,
           `categoria should use preferred label '${preferredCategory}' instead of '${category}'`,
+        );
+      }
+      // Retired labels still in the valid list: the rows the consolidation
+      // never reached, plus the ones typed again afterwards. The app groups by
+      // exact string, so whoever filters the replacement never sees these.
+      const replacesRetired = RETIRED_CATEGORIES.get(category);
+      if (replacesRetired && VALID_CATEGORIES.has(category)) {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          `categoria '${category}' was retired; reassign to '${replacesRetired}' or argue the label back into data/reference/categories.json`,
         );
       }
     }
@@ -860,12 +903,12 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
     }
 
     if (category) {
-      const normalizedCategory = normalizeSearch(category);
-      const variants = categoryVariants.get(normalizedCategory) ?? new Map();
+      const stem = categoryStem(category);
+      const variants = categoryVariants.get(stem) ?? new Map();
       const lines = variants.get(category) ?? [];
       lines.push(line);
       variants.set(category, lines);
-      categoryVariants.set(normalizedCategory, variants);
+      categoryVariants.set(stem, variants);
     }
   }
 

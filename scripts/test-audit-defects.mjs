@@ -5,8 +5,18 @@
 // collapse into templates.
 
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-import { CHECKS, templateShape } from "./audit-defects.mjs";
+import { CHECKS, loadCategoryVariants, templateShape } from "./audit-defects.mjs";
+
+const registry = JSON.parse(
+  fs.readFileSync(
+    path.join(path.dirname(fileURLToPath(import.meta.url)), "../data/reference/categories.json"),
+    "utf8",
+  ),
+);
 
 let passed = 0;
 const test = (name, fn) => {
@@ -43,6 +53,42 @@ test("published falsehood is always a cola", () => {
     assert.ok(check, `missing check ${id}`);
     assert.equal(check.kind, "cola", `${id} must count as workload`);
   }
+});
+
+test("every retired category is replaced by one that is still valid", () => {
+  // A retirement whose target was itself retired would send an editor to a
+  // label the contract rejects, and would make the migration a chain instead
+  // of a single reassignment.
+  const valid = new Set(registry.categories);
+  for (const [label, target] of Object.entries(registry.retiredCategories)) {
+    assert.ok(valid.has(target), `${label} points at ${target}, which is not a valid category`);
+    assert.ok(
+      !(target in registry.retiredCategories),
+      `${label} points at ${target}, which is itself retired`,
+    );
+  }
+});
+
+test("a retired label leaves the valid list as soon as nothing uses it", () => {
+  // G-CAT-2's exit condition, executable. A retired label stays valid only
+  // while it still carries rows — otherwise every other agent's gate would go
+  // red on data they did not touch. So each one must be showing up in the
+  // migration queue: if it is not, its rows are gone and it should have been
+  // dropped from `categories` in the same lot.
+  const variants = loadCategoryVariants();
+  const stillValid = Object.keys(registry.retiredCategories).filter((label) =>
+    registry.categories.includes(label),
+  );
+  for (const label of stillValid) {
+    assert.ok(
+      variants.has(label),
+      `'${label}' is retired but still valid, and no row uses it: drop it from data/reference/categories.json`,
+    );
+  }
+});
+
+test("the migration queue counts as workload, not as a coverage signal", () => {
+  assert.equal(CHECKS.find((c) => c.id === "categoria-variante").kind, "cola");
 });
 
 test("same template, different producer and town, folds to one shape", () => {

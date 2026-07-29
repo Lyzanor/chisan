@@ -124,6 +124,41 @@ bodega-uno,Celler Uno,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientement
 pan-uno,Forn Uno,Abrera,Panadería y repostería,Pan,Carrer Major 3,Descripcion suficientemente larga para validar,,600000002,tres@example.com,https://example.com,no comprobado,https://facebook.com/tres,https://instagram.com/tres,https://www.google.com/maps/place/Forn%20Uno,41.3,2.3,pendiente
 CSV
 
+# The retired-label cases read their labels off the live registry instead of
+# freezing one. G-CAT-2 keeps moving labels from "retired but still valid"
+# (warns, rows left to migrate) to "retired and rejected" (blocking error), so a
+# hardcoded fixture would break exactly when the migration it supports lands.
+# Labels with a comma are skipped: they would need quoting inside the fixture.
+IFS=$'\t' read -r RETIRED_VALID RETIRED_VALID_TARGET RETIRED_GONE RETIRED_GONE_TARGET PLURAL_UNO PLURAL_DOS < <(
+  node -e '
+    const config = require(process.argv[1]);
+    const valid = new Set(config.categories);
+    const usable = Object.entries(config.retiredCategories).filter(
+      ([label, target]) => !label.includes(",") && !target.includes(","),
+    );
+    const stillValid = usable.find(([label]) => valid.has(label)) ?? ["", ""];
+    const rejected = usable.find(([label]) => !valid.has(label)) ?? ["", ""];
+    const stem = (label) =>
+      label
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "")
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, " ")
+        .trim()
+        .split(" ")
+        .map((word) => word.replace(/s$/, ""))
+        .join(" ");
+    const byStem = new Map();
+    for (const label of config.categories) {
+      if (label.includes(",")) continue;
+      byStem.set(stem(label), [...(byStem.get(stem(label)) ?? []), label]);
+    }
+    const pair = [...byStem.values()].find((group) => group.length > 1) ?? ["", ""];
+    // Trailing newline on purpose: `read` returns non-zero on EOF without one.
+    process.stdout.write(`${[...stillValid, ...rejected, pair[0], pair[1]].join("\t")}\n`);
+  ' "$ROOT_DIR/data/reference/categories.json"
+)
+
 cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
 verif-sin-contacto,Masia Verif,Abrera,Bodega,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,verificado,no comprobado,
@@ -258,6 +293,74 @@ run_expect_failure "$TMP_DIR/out-categories.txt" \
 grep -q "WARNING line 2 .* categoria should use preferred label 'Lácteos y quesos' instead of 'Quesos y lácteos'" "$TMP_DIR/out-categories.txt"
 grep -q "WARNING line 3 .* categoria should use preferred label 'Bodega' instead of 'Vino'" "$TMP_DIR/out-categories.txt"
 grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y pastelería' instead of 'Panadería y repostería'" "$TMP_DIR/out-categories.txt"
+
+# A label that was never registered keeps the plain rejection.
+cat >"$TMP_DIR/unknown-category.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+cat-inventada,Masia Inventada,Abrera,Categoria Inventada,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+CSV
+run_expect_failure "$TMP_DIR/out-unknown-category.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/unknown-category.csv"
+grep -q "categoria 'Categoria Inventada' is not a valid category" "$TMP_DIR/out-unknown-category.txt"
+
+# A retired label out of the valid list cannot come back, and the error names
+# what replaced it: most of these are a retired label typed again.
+if [[ -z "$RETIRED_GONE" ]]; then
+  echo "Error: the registry has no retired-and-rejected label to test" >&2
+  exit 1
+fi
+cat >"$TMP_DIR/retired-rejected.csv" <<CSV
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+cat-retirada,Masia Retirada,Abrera,$RETIRED_GONE,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+CSV
+run_expect_failure "$TMP_DIR/out-retired-rejected.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/retired-rejected.csv"
+grep -qF "categoria '$RETIRED_GONE' was retired; use '$RETIRED_GONE_TARGET'" "$TMP_DIR/out-retired-rejected.txt"
+
+# A retired label still in the valid list is the G-CAT-2 queue: it warns, so the
+# rows stay visible, but it does not block anyone else's gate.
+if [[ -n "$RETIRED_VALID" ]]; then
+  cat >"$TMP_DIR/retired-pending.csv" <<CSV
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+cat-pendiente,Masia Pendiente,Abrera,$RETIRED_VALID,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+CSV
+  run_expect_success "$TMP_DIR/out-retired-pending.txt" \
+    node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/retired-pending.csv"
+  grep -qF "WARNING line 2" "$TMP_DIR/out-retired-pending.txt"
+  grep -qF "categoria '$RETIRED_VALID' was retired; reassign to '$RETIRED_VALID_TARGET'" \
+    "$TMP_DIR/out-retired-pending.txt"
+else
+  echo "note: no retired label left in the valid list, G-CAT-2 is done"
+fi
+
+# Singular and plural of the same label in one CSV: `normalizeSearch` folded
+# only case and accents, so this pair used to pass unnoticed inside a province.
+if [[ -n "$PLURAL_DOS" ]]; then
+  cat >"$TMP_DIR/plural-variants.csv" <<CSV
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+plural-uno,Masia Plural,Abrera,$PLURAL_UNO,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+plural-dos,Masia Singular,Abrera,$PLURAL_DOS,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+CSV
+  run_expect_success "$TMP_DIR/out-plural-variants.txt" \
+    node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/plural-variants.csv"
+  grep -q "WARNING line 2 .* categoria has near-duplicate variants" "$TMP_DIR/out-plural-variants.txt"
+  grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-plural-variants.txt"
+else
+  echo "note: no singular/plural pair left in the registry"
+fi
+
+# Two genuinely different categories in one CSV must not be folded together.
+cat >"$TMP_DIR/distinct-categories.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+distinta-uno,Masia Bodega,Abrera,Bodega,Vino,Carrer Major 1,Descripcion de la bodega con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+distinta-dos,Masia Miel,Abrera,Miel,Miel,Carrer Major 2,Descripcion del colmenar con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+CSV
+run_expect_success "$TMP_DIR/out-distinct-categories.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/distinct-categories.csv"
+if grep -q "near-duplicate variants" "$TMP_DIR/out-distinct-categories.txt"; then
+  echo "Error: unrelated categories must not fold into one stem" >&2
+  exit 1
+fi
 
 run_expect_success "$TMP_DIR/out-verificado-suppression.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/verificado-suppression.csv"

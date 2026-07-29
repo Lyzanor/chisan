@@ -175,21 +175,36 @@ mantenimiento en el ledger de cada una. Es un diff, no una repasada. Sin este
 paso, cada detector nuevo deja una capa de provincias que nunca lo vieron y el
 problema aparece entero en la Ola 7.
 
-### G-CAT-1 — detector y mapa de taxonomía
+### G-CAT-1 — detector y mapa de taxonomía ✅
 
-- Reconstruir el mapa de etiquetas retiradas a partir de los commits
-  `d157b1f`, `41233aa` y `183f4eb`, el uso actual y la semántica de cada fila.
-- Añadir pruebas que plieguen singular/plural y detecten variantes dentro de
-  un CSV. La prevención principal seguirá siendo la lista bloqueante de
-  categorías válidas.
-- Separar alias mecánicos de categorías combinadas que requieren comprobar el
-  producto real. No decidir una categoría solo por el nombre comercial.
-- Añadir casos para que una etiqueta retirada no pueda reintroducirse sin
-  fallar el contrato.
+Hecho. `data/reference/categories.json` gana `retiredCategories`: las 64
+etiquetas que retiraron `d157b1f`, `41233aa` y `183f4eb`, cada una apuntando a
+la que la sustituyó. El registro deja de ser una lista de etiquetas permitidas y
+pasa a llevar la cuenta de la migración, sin recuentos en ningún doc:
+
+- retirada **y** válida → le quedan filas; `check:csv:data-quality` avisa en
+  cada una y `check:defects --check categoria-variante` las lista;
+- retirada **y no** válida → nadie la usa y volver a escribirla es error de
+  contrato, con el reemplazo en el mensaje.
+
+Las 29 que ya no usaba nadie salieron del registro en el mismo lote, así que esa
+puerta está cerrada. El aviso por fichero de `audit-csv.js` además pliega el
+plural (`Carne`/`Carnes` ya salta en Málaga); el cruce entre provincias sigue
+siendo de `check:defects`, que es quien ve todos los CSV a la vez.
+
+Queda editorial: migrar las filas de las 36 que siguen vivas, que es G-CAT-2.
 
 ### G-CAT-2 — migración por familias
 
-- Trabajar una familia de etiquetas por lote, con ventana global.
+- Trabajar una familia de etiquetas por lote, con ventana global. La cola es la
+  intersección de `retiredCategories` con `categories`; no hace falta anotarla
+  en ningún sitio.
+- El mapa registra la decisión de 2026-06-21, no la obliga. Una parte de las
+  filas vivas no son reintroducciones sino pasadas provinciales posteriores que
+  eligieron la etiqueta a propósito (Granada rehizo `Especias`, `Mermeladas`,
+  `Bebidas`…). Cada familia se decide una vez: o se migran sus filas, o se
+  argumenta la etiqueta de vuelta al registro y se borra su entrada del mapa.
+  Lo que no vale es dejarla flotando.
 - Para alias inequívocos, cambiar solo `categoria`.
 - Para combinaciones, comprobar que `productos estrella` o `descripcion`
   conservan el matiz útil; corregirlos solo con evidencia y vaciarlos si están
@@ -628,7 +643,8 @@ diga la tabla de bloqueo del § 4.
 
 1. ~~G-WEB-1: clasificación de dominios.~~ ✅ Hecho: el snapshot ya está, y el
    re-escaneo de las cerradas es leerlo con `--offline`, no repasarlas.
-2. G-CAT-1: detector, mapa canónico y pruebas.
+2. ~~G-CAT-1: detector, mapa canónico y pruebas.~~ ✅ Hecho: el registro lleva
+   la cuenta y `check:defects --check categoria-variante` es el re-escaneo.
 3. G-CAT-2: migración por familias y retirada efectiva de etiquetas.
 4. G-GEO-1: municipios bilingües y casos de homónimos.
 5. G-TPL-1: detector advisory de plantilla cruzada.

@@ -97,12 +97,15 @@ export const templateShape = (text) =>
     .trim();
 
 // Taxonomy drift the per-file near-duplicate warning cannot see, because the
-// variants live in different provinces and its normalization does not fold
-// plurals. Two shapes, both of which split the app's category filter:
+// variants live in different provinces. Three shapes, all of which split the
+// app's category filter:
+//   - a label the 2026-06-21 consolidation retired, still carrying rows
 //   - plural/singular of the same label (`Carne` vs `Carnes`)
 //   - a combo `X y Y` when `X` or `Y` already exists on its own
+// The first comes from the registry, which records the decision; the other two
+// are inferred from usage, and catch drift no consolidation ever ruled on.
 // Reported as the minority variant, so the fix is "reassign these rows".
-function loadCategoryVariants() {
+export function loadCategoryVariants() {
   // Always across every province, even under --provincia: which spelling is the
   // majority is a property of the catalog, not of the file being inspected.
   // Scoped to one province, Málaga's 2 `Carne` rows would look like the
@@ -116,6 +119,16 @@ function loadCategoryVariants() {
   }
   const canonical = new Set(usage.keys());
   const variants = new Set();
+
+  // Retired labels that still carry rows. Registry, not heuristic: these were
+  // ruled on once and the ruling has to survive the fact that some of them are
+  // now the majority spelling in their own province.
+  const registry = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data", "reference", "categories.json"), "utf8"),
+  );
+  for (const label of Object.keys(registry.retiredCategories ?? {})) {
+    if (usage.has(label)) variants.add(label);
+  }
 
   // Fold plurals: group labels whose normalized form matches once a trailing
   // `s` is removed from every word, then keep only the majority spelling.
@@ -267,8 +280,8 @@ export const CHECKS = [
   {
     id: "categoria-variante",
     kind: "cola",
-    label: "`categoria` que es variante minoritaria de otra en uso (plural o combo)",
-    hint: "el filtro de la app agrupa por string exacto: estas filas son invisibles desde la etiqueta mayoritaria",
+    label: "`categoria` retirada del registro, o variante minoritaria de otra en uso",
+    hint: "el filtro de la app agrupa por string exacto: estas filas son invisibles desde la etiqueta que las sustituye",
     run: ({ rows }, ctx) => rows.filter((r) => ctx.categoryVariants.has(r.categoria)),
   },
   {

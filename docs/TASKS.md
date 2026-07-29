@@ -114,17 +114,14 @@ unidad de investigación real.
 Cada uno convierte una limpieza manual recurrente en algo que el validador
 impide. Requieren `verify:ai`.
 
-- **`categories.json` acepta 29 etiquetas que nadie usa** — son justo las que
-  fusionó la consolidación de 2026-06-21 (`d157b1f`, `41233aa`, `183f4eb`).
-  Siguen registradas, así que la puerta bloqueante las deja volver, y **27 ya
-  han vuelto** (≈99 filas; `Carnes` 19, `Repostería artesana` 10, `Platos
-  preparados` 8…). Bórralas del registro y la reintroducción pasa a ser un
-  error, no una nota en un doc. Mide antes/después con `check:defects --check
-  categoria-variante`.
-- **El aviso de variantes de `audit-csv.js` no pliega plurales y corre por
-  fichero.** Por eso `Carne`(mayoría)/`Carnes` no salta ni en Málaga, donde
-  conviven en el mismo CSV. La app agrupa por string exacto
-  (`lib/csv-catalog.ts`), así que quien filtra una etiqueta no ve la otra.
+- ~~**`categories.json` acepta 29 etiquetas que nadie usa.**~~ ~~**El aviso de
+  variantes de `audit-csv.js` no pliega plurales.**~~ Hechos: `categories.json`
+  lleva `retiredCategories`, las 29 muertas salieron del registro y el aviso por
+  fichero ya pliega el plural. Lo que queda es la migración editorial (G-CAT-2):
+  36 etiquetas retiradas siguen vivas y sus filas son invisibles desde la
+  etiqueta que las sustituye, porque la app agrupa por string exacto
+  (`lib/csv-catalog.ts`). La cola la da `check:defects --check
+  categoria-variante`; el criterio, `docs/CSV_CONTRACT.md` § Categories.
 - ~~**Nada en el repo resuelve un dominio.**~~ Hecho: `check:links` clasifica
   cada `web` y guarda el resultado fechado en `data/reference/web-status.json`.
   **Léelo con `--offline` antes de abrir dominios a mano**; solo vuelve a la red
