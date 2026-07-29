@@ -363,16 +363,53 @@ function pickCandidate(entry, communityHint) {
   return entry;
 }
 
+// Spellings of one `municipio` worth trying against the centroid lookup, most
+// literal first. Three shapes appear in the CSVs and only the first was handled:
+//   `Ciudad - Distrito`            -> the city
+//   `Puente la Reina / Gares`      -> either half; both name the same town
+//   `Granollers (Palou)`           -> either half, and the order is not stable:
+//                                     Catalonia writes both `municipi (llogaret)`
+//                                     and `llogaret (municipi)`
+// Only one half is normally a municipio, so trying them in order picks it. When
+// both are, the first wins and the distance check is what catches a bad guess —
+// this resolves a lookup, it does not assert the row is right.
+function municipioCandidates(municipio) {
+  const candidates = [municipio];
+  const push = (value) => {
+    const trimmed = value.trim();
+    if (trimmed && !candidates.includes(trimmed)) candidates.push(trimmed);
+  };
+  push(municipio.split(" - ")[0]);
+  for (const part of municipio.split(/\s*\/\s*|\s*[()]\s*/)) push(part);
+  return candidates;
+}
+
 function lookupCentroid(centroids, municipio, communityHint) {
   if (!centroids || !municipio) return null;
-  const stripped = municipio.split(" - ")[0].trim();
-  const key1 = normalizeSearch(municipio);
-  const key2 = normalizeSearch(stripped);
-  const override = centroids.overrides[key1] || centroids.overrides[key2];
-  if (override) {
-    return pickCandidate(override, communityHint);
+  const keys = municipioCandidates(municipio).map(normalizeSearch);
+  // An override is the curated answer for a name already known to be
+  // ambiguous, so it decides on its own — including deciding to say nothing
+  // when no community matches. Letting a stray `main` entry outvote it would
+  // undo the disambiguation it exists for.
+  for (const key of keys) {
+    if (centroids.overrides[key]) return pickCandidate(centroids.overrides[key], communityHint);
   }
-  return centroids.main[key1] || centroids.main[key2] || null;
+  const resolved = keys.map((key) => centroids.main[key]).filter(Boolean);
+  if (!resolved.length) return null;
+
+  // Several halves resolve. A bilingual pair names one town — `Ujué / Uxue`
+  // and `Roncal / Erronkari` land on the same coordinates — so they agree. A
+  // homonym does not: `La Floresta (Sant Cugat del Vallès)` resolves both to
+  // the Lleida municipality and to Sant Cugat, 96 km apart, and picking the
+  // first would invent a 96 km gap on a correct row. Trust the lookup only
+  // while the candidates agree inside the tolerance the distance check itself
+  // uses; otherwise return nothing, which is what these rows got before.
+  const [first, ...rest] = resolved;
+  const disagrees = rest.some(
+    (candidate) =>
+      haversineKm(first.lat, first.lon, candidate.lat, candidate.lon) > CENTROID_MAX_DISTANCE_KM,
+  );
+  return disagrees ? null : first;
 }
 
 function flattenCentroids(centroids) {

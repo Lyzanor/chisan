@@ -238,6 +238,63 @@ run_expect_failure "$TMP_DIR/out-geo-blocking.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/geo-blocking.csv"
 grep -q "ERROR line 2 .* km from Abrera centroid (threshold 100 km)" "$TMP_DIR/out-geo-blocking.txt"
 
+# `municipio` written as two names. Either half may be the one the lookup knows
+# and the order is not stable, so the check tries them all — but only trusts the
+# answer when the halves agree on where the town is.
+cat >"$TMP_DIR/municipio-bilingue.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+bilingue-ok,Masia Bilingue,Ujué / Uxue,Bodega,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.47981,-1.49709,,pendiente,no,
+paren-ok,Masia Parentesis,Granollers (Palou),Bodega,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.60833,2.28889,,pendiente,no,
+CSV
+run_expect_success "$TMP_DIR/out-municipio-bilingue.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-bilingue.csv"
+# The summary only prints the skipped line when something was skipped, so its
+# absence is what says both rows reached the geo-check.
+if grep -q "geo-check skipped" "$TMP_DIR/out-municipio-bilingue.txt"; then
+  echo "Error: both municipio spellings should resolve, nothing to skip" >&2
+  exit 1
+fi
+if grep -q "km from" "$TMP_DIR/out-municipio-bilingue.txt"; then
+  echo "Error: a bilingual municipio sitting on its own centroid must not warn" >&2
+  exit 1
+fi
+
+# The halves resolving is not the same as the row being right: with the same
+# spelling and coordinates 30 km away, the check has to fire. This is what
+# proves the geo-check runs on these rows instead of silently skipping them.
+cat >"$TMP_DIR/municipio-bilingue-lejos.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+bilingue-lejos,Masia Lejos,Puente la Reina / Gares,Bodega,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.90,-1.60,,pendiente,no,
+CSV
+run_expect_success "$TMP_DIR/out-municipio-bilingue-lejos.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-bilingue-lejos.csv"
+grep -q "WARNING line 2 .* km from Puente la Reina centroid" "$TMP_DIR/out-municipio-bilingue-lejos.txt"
+
+# Territorial homonym: `La Floresta` is a municipality in Lleida and also a
+# district of Sant Cugat, 96 km apart. Taking the first half would invent that
+# gap on a correct row, so a disagreement means the lookup says nothing.
+cat >"$TMP_DIR/municipio-homonimo.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+homonimo,Masia Homonima,La Floresta (Sant Cugat del Vallès),Bodega,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.47354,2.08524,,pendiente,no,
+CSV
+run_expect_success "$TMP_DIR/out-municipio-homonimo.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-homonimo.csv"
+grep -q "geo-check skipped .*: 1 rows" "$TMP_DIR/out-municipio-homonimo.txt"
+if grep -q "km from" "$TMP_DIR/out-municipio-homonimo.txt"; then
+  echo "Error: an ambiguous municipio must be skipped, not resolved to one half" >&2
+  exit 1
+fi
+
+# A real pedanía the lookup does not cover stays skipped and silent: it is a
+# documented gap, not a defect to report.
+cat >"$TMP_DIR/municipio-pedania.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+pedania,Masia Pedania,Aldea Sintetica de Arriba,Bodega,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+CSV
+run_expect_success "$TMP_DIR/out-municipio-pedania.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-pedania.csv"
+grep -q "geo-check skipped .*: 1 rows" "$TMP_DIR/out-municipio-pedania.txt"
+
 # Canal de venta is blocking: an unknown token, or a channel set without an
 # actual online sale to describe, both fail the contract.
 run_expect_failure "$TMP_DIR/out-sales-channel.txt" \

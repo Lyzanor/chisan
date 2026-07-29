@@ -165,7 +165,7 @@ que no espera a nadie:
 | Lote | Bloquea | No bloquea |
 |---|---|---|
 | G-CAT-1 y G-CAT-2 ✅ | carril T y cualquier escritura de `categoria` | R0, R1, V, E, I |
-| G-GEO-1 | carril E (localización) | R0, R1, V, T, I |
+| G-GEO-1 ✅ | carril E (localización) | R0, R1, V, T, I |
 | G-TPL-1 ✅ | carril T | R0, R1, V, E, I |
 | G-WEB-1 ✅ | nada: adelanta trabajo de R0 y R1 | — |
 
@@ -223,16 +223,34 @@ Regla que deja el lote para quien migre después: **decidir por fila, no por
 etiqueta**. El destino del mapa es el valor por defecto, y la evidencia de la
 fila lo gana.
 
-### G-GEO-1 — municipios bilingües
+### G-GEO-1 — municipios bilingües ✅
 
-- Hacer que el geo-check pruebe cada mitad de `A / B` con la misma lógica y
-  contexto autonómico del lookup actual.
-- Añadir casos de evaluación para forma bilingüe válida, homónimo territorial
-  y pedanía real no cubierta.
-- Regenerar o corregir `municipios-overrides.json` solo para homónimos; no
-  mover coordenadas correctas para silenciar el validador.
-- Tras activar la detección, tratar sus nuevos avisos como cola provincial, no
-  como una migración automática.
+Hecho. El lookup de centroides prueba cada mitad del `municipio`, no solo el
+recorte de `Ciudad - Distrito`. Cubre las dos formas que había en los CSV, y en
+la segunda el orden no es estable:
+
+```text
+Puente la Reina / Gares          bilingüe: las dos mitades son el mismo pueblo
+Granollers (Palou)               municipi (llogaret)
+Bruguera (Ribes de Freser)       llogaret (municipi)
+```
+
+**Resolver varias mitades no es resolver la fila.** Un par bilingüe cae en las
+mismas coordenadas; un homónimo no. `La Floresta (Sant Cugat del Vallès)`
+resuelve a la vez al municipio de Lleida y a Sant Cugat, a 96 km, y quedarse con
+la primera inventaba ese hueco en una fila correcta. Así que el lookup solo se
+fía mientras las mitades concuerdan dentro de la misma tolerancia que usa el
+propio check de distancia; si no, no dice nada, que es lo que esas filas tenían
+antes. Un `override` sigue mandando por encima de todo: existe justo para
+desambiguar un nombre y una entrada suelta de `municipios.json` no lo vota.
+
+Efecto: `geo-check skipped` **384 → 322 filas**, ningún aviso perdido, ningún
+error bloqueante nuevo y **un aviso nuevo**, que es un hallazgo real
+(`carpier-ahumados-palafolls-sant-genis`, a 52,7 km de Palafolls y a 2,3 de
+Barberà). No hizo falta tocar `municipios-overrides.json`.
+
+Las 322 que siguen saltándose son pedanías reales sin centroide: hueco
+documentado y aceptado, cola provincial si acaso, no migración automática.
 
 ### G-TPL-1 — corrupción de plantilla cruzada ✅
 
@@ -674,7 +692,7 @@ diga la tabla de bloqueo del § 4.
    la cuenta y `check:defects --check categoria-variante` es el re-escaneo.
 3. ~~G-CAT-2: migración por familias y retirada efectiva de etiquetas.~~ ✅ Hecho:
    `retiredCategories` ya no corta con `categories`.
-4. G-GEO-1: municipios bilingües y casos de homónimos.
+4. ~~G-GEO-1: municipios bilingües y casos de homónimos.~~ ✅ Hecho.
 5. ~~G-TPL-1: detector advisory de plantilla cruzada.~~ ✅ Hecho.
 
 Cada uno cierra con el re-escaneo de las provincias ya cerradas.

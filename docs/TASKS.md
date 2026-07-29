@@ -134,12 +134,12 @@ impide. Requieren `verify:ai`.
   eternamente en `canal-sin-clasificar`. Decidir si se añade un token o si estos
   casos se documentan como residual legítimo; cambiar el enum toca
   `docs/CSV_CONTRACT.md`, el validador y sus pruebas.
-- **Municipios en forma bilingüe `A / B` se saltan el geo-check.** El
-  normalizador de `audit-csv.js` ya recorta el sufijo `Ciudad - Distrito`; le
-  falta probar cada mitad de `Puente la Reina / Gares`. Son 26 filas navarras,
-  16 de las cuales resolverían solas. El recuento lo da `check:csv` en su línea
-  `geo-check skipped` (esa métrica es suya, `check:defects` no la duplica). El
-  resto sí son pedanías reales: hueco documentado y aceptado, no lo persigas.
+- ~~**Municipios en forma bilingüe `A / B` se saltan el geo-check.**~~ Hecho: el
+  lookup prueba cada mitad, tanto en `A / B` como en `Municipio (pedanía)`, y
+  solo se fía cuando concuerdan —si no, un homónimo como `La Floresta (Sant
+  Cugat)` inventaría un hueco de 96 km—. `geo-check skipped` bajó de 384 a 322.
+  Las que quedan son pedanías reales sin centroide: hueco documentado y
+  aceptado, no lo persigas.
 
 ### B) Deuda editorial
 
