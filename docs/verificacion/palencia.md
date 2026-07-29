@@ -751,3 +751,35 @@ Incidencias reutilizables:
   Castilla y Repostería El Cisne se quedan `parcial` con la contradicción
   anotada. No hay prueba de reventa pura ni de elaboración propia, y el contrato
   dice que la incertidumbre no se convierte en exclusión.
+
+## PA-12 — Ola 3: venta sin resolver
+
+Revisión cerrada el 2026-07-29 sobre las **80 filas** que seguían con
+`Venta online=no comprobado`: **5 pasan a `sí` y 75 permanecen sin resolver**
+tras revisar sus canales actuales.
+
+- `sí` por ecommerce (2): Industrias Cárnicas Santa Marina y Piscifactoría de
+  Campoo.
+- `sí` por pedido directo (2): Bodegas Barrialba (`telefono|email`) y Dulzuras
+  del Carmelo (`whatsapp`).
+- `sí` por marketplace oficial (1): Clarisas de Calabazanos, a través de
+  Fundación Contemplare.
+
+Mejoras editoriales asociadas:
+
+- La fila genérica de las Carmelitas Descalzas se completa con su marca
+  **Dulzuras del Carmelo**, web, Instagram, correo y WhatsApp de pedidos, y pasa
+  de `parcial` a `verificado`.
+- Santa Marina recupera su tienda real —la revisión anterior había seguido una
+  ruta antigua que devolvía 404— y corrige HTTPS, dirección completa y correo.
+- Se conserva Santibáñez de la Peña para Piscifactoría de Campoo: la tienda no
+  altera la decisión ya documentada entre instalación productiva y domicilio
+  administrativo.
+- `valledesanjuan.com` se normaliza a la URL HTTPS que sí responde y se retira
+  `orodelcerrato.es`, que ahora sirve una página de cuenta suspendida. Oro del
+  Cerrato continúa activo en fuentes locales y queda `no comprobado`; un
+  dominio suspendido no prueba ni cierre ni ausencia de venta.
+- Los falsos positivos de infraestructura no se promovieron: Hortalizas Mauri
+  declara que la tienda está en obras, Fuentes de Lebanza solo tiene un
+  producto agotado y los catálogos sin artículos comprables permanecen
+  `no comprobado`.

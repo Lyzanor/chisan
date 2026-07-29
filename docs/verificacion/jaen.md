@@ -433,3 +433,34 @@ lote**, no el resultado; se actualizan al cerrar cada lote.
   ausencia suficientemente contrastada.
 - Normalizaciones de municipio y resolución de los geo-warnings de Jaén/Alcaudete
   y Segura de la Sierra/Génave.
+
+## JA-13 — Ola 3: venta sin resolver
+
+Revisión cerrada el 2026-07-29 sobre las **81 filas** que seguían con
+`Venta online=no comprobado`: **11 pasan a `sí` y 70 permanecen sin resolver**
+tras revisar sus canales actuales.
+
+Las once resoluciones son ecommerce propio: Tierra de Frontera, Productos
+Paqui, Casa Bigote, SCA Encarnación, Apisierra, Aceites Sola Romero, Productos
+Urbano, Patatas Fritas Domi, Aguas Sierra Cazorla, Aceites El Carrascal y la
+Cooperativa La Vicaría.
+
+Mejoras editoriales asociadas:
+
+- **Bioandalus** mezclaba la calle de su fábrica con el municipio y código
+  postal de Navas de San Juan. La web oficial sitúa las naves 4-6 en el
+  polígono Condado de Santisteban, 23250 Santisteban del Puerto; se corrigen
+  dirección, correo, productos y descripción.
+- **Apisierra** ya no es un catálogo roto: estrenó una tienda Prestashop con
+  mieles, chocolates y mermeladas. Se incorporan sus mieles reales a
+  `productos estrella`, se sustituye el teléfono y se resume la descripción.
+- Santo Reino se enlaza a la ficha vigente de Grupo Apex y se elimina la
+  afirmación heredada de una tienda no comprobada. Martínez Premium recupera
+  su dominio y correo actuales, pero su tienda declara que no hay productos.
+- Se retira el dominio sin DNS de Solana de Cárchel sin degradar actividad ni
+  inferir que no vende.
+- No se confundió scaffolding con comercio: Pistachos del Guadiana expone
+  productos WooCommerce de demostración ajenos al pistacho; San Antonio Abad
+  muestra «No se encontraron productos»; Obrador La Panadería anuncia
+  «Próximamente» y la tienda embebida de Virgen del Campo falla. Todos siguen
+  `no comprobado`.
