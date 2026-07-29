@@ -163,3 +163,22 @@ cambio, sin incorporar hallazgos ajenos al lote activo.
   sostienen identidad y actividad, pero no sustituyen una fuente directa para
   `verificado`; el fallo TLS de su dominio tampoco demuestra cierre. Se conserva
   como `parcial` y sin venta remota confirmada.
+
+## Mantenimiento · ola 3 de venta online (2026-07-29)
+
+- Revisadas las **77** filas que seguían en `Venta online=no comprobado`: el
+  saldo queda en **30 `sí` · 75 `no comprobado`**. El estado editorial pasa a
+  **60 `verificado` · 45 `parcial`**.
+- **Tajinaste** tiene una tienda oficial operativa con vinos en stock, precio y
+  carrito. **La Calabacera** se corrige de forma material: la ficha ahora
+  prioriza sus cajas semanales de fruta, verdura y aromáticas ecológicas
+  propias, con pedido por teléfono o email y reparto en Tenerife, sin perder la
+  actividad vitivinícola de Bodega Estrada.
+- Se reescribieron cinco descripciones de plantilla. También se retiraron los
+  dominios sin DNS de **Zacatín** y **Molino de Gofio La Salud**, y la web 404
+  de **Las Cabezadas**; para el molino se recuperaron teléfono y correo
+  públicos actuales.
+- Permanecen sin resolver los escaparates sin producto comprable, la tienda en
+  pruebas de Vega Norte, productos agotados o con precio cero, y enlaces a
+  reventa de terceros. Los fallos técnicos aislados tampoco se trataron como
+  cierre ni como ausencia de venta.

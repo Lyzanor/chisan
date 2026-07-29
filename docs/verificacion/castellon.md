@@ -58,3 +58,21 @@ enlaces ajenos), **Cítricos Natanael Bort**, **Mel Mas de l'Argila**.
   (los `no` de aguas B2B del lote 3 son estables).
 - Vigilar las 4 cerveceras `parcial` por señales de cierre.
 - La pasada no añadió candidatos; expansión → `docs/candidates/`.
+
+## Mantenimiento · ola 3 de venta online (2026-07-29)
+
+- Revisadas las **76** filas que seguían en `Venta online=no comprobado`: el
+  saldo queda en **73 `sí` · 7 `no` · 70 `no comprobado`**.
+- Se confirmaron seis mecanismos actuales: ecommerce de **Licores Artesanos de
+  Burriana**, **Mieles La Alquería**, **Cafés Balancilla**, **La Planeta** y
+  **Patatas Geysel**, más pedidos por WhatsApp de **Panadería Mónica**.
+- La pasada mejoró **50 fichas**, no solo su decisión de venta: 30 descripciones
+  de plantilla se sustituyeron por texto específico, 26 horarios dejaron de
+  remitir a una web ausente y se corrigieron ocho URLs. Entre estas últimas,
+  **Cafés B+o** pasa a su tienda activa `cafesbo-online.com`, **Miel Sierra
+  Espadán** a HTTPS y **Molí la Barona** al dominio `.com`; se retiraron tres
+  dominios sin DNS.
+- Se conservan como `no comprobado` los escaparates sin checkout, tiendas sin
+  existencias, servicios temporalmente fuera de servicio, bloqueos técnicos y
+  reventa exclusivamente de terceros. Un catálogo o un carrito residual no se
+  interpretaron como pedido operativo.
