@@ -1013,3 +1013,31 @@ triaje por slug con contact sheets → `--apply` solo de logos verificados a ojo
   (`torrons-l-agramuntina`), que se detectaron y purgaron tras el apply.
 - Gate `verify:data` OK. Quedan ~70 sin imagen (sin web o sin candidato aceptable).
   Pendiente en P3: Barcelona (39 %).
+
+## Ola 3 — venta sin resolver (2026-07-29)
+
+- Se revisaron las **72** filas que seguían con `Venta online=no comprobado`.
+  Vinya els Vilars, Ous Codi 0, Click & Brew y Sanui Fruits pasan a **`sí` por
+  `ecommerce`**: sus tiendas oficiales mantienen producto propio o elaborado
+  por la entidad, precio, stock y acción de compra.
+- No se fuerza una decisión en los escaparates que no permiten comprar. Granja
+  Pifarré solo vende experiencias, Farré Vidal tiene la tienda vacía y las
+  páginas de Nous Montsec, Fruits Secs Puigdellívol y Aigua Pineo no ofrecen un
+  pedido operativo. La tienda incrustada en Sauvella muestra vinos ajenos y
+  precios en dólares, por lo que tampoco se usa como prueba de venta del
+  productor.
+- Se retiran **10 webs** inutilizables: nueve dominios sin DNS y la página
+  genérica del proveedor de Casa Sibilló. También se eliminan **8 correos** de
+  esos dominios sin DNS y se corrigen los textos de contacto para que no
+  remitan a una web inexistente.
+- Se reescriben **31 descripciones** formularias. Las nuevas versiones conservan
+  los hechos ya documentados —producto, oficio y localización— sin repetir
+  “productor local artesanal”, sin frases defectuosas ni puntos duplicados.
+- Estado provincial: **204 filas**; venta online **121 `sí`**, 15 `no` y
+  **68 `no comprobado`**. Verificación: 163 `verificado` y 41 `parcial`.
+
+Fuentes principales:
+<https://vinyaelsvilars.cat/vins/>,
+<https://codi0.cat/product/ous-ecologics-mitja-dotzena/>,
+<https://www.clickandbrew.com/tienda/> y
+<https://www.sanuifruits.com/producto/pera-conference-extra/>.

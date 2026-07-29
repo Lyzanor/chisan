@@ -1108,3 +1108,26 @@ tocados.
   `parcial`** y **0 `pendiente`**. Venta online: **202 `sí`** (188 con canal
   tipificado), 111 `no` y 73 `no comprobado`. Hay **350 filas actuales**
   cubiertas por evidencia y **378 registros** en el ledger provincial.
+
+### Ola 3 — venta sin resolver (2026-07-29)
+
+- Se revisaron las **74** filas que seguían con `Venta online=no comprobado`.
+  Bodegas y Viñedos de la Capuchina pasa a **`sí` por `ecommerce`**: su tienda
+  oficial vuelve a publicar vinos y aceite propios con precio, stock y carrito.
+- Se mantienen sin resolver las tiendas vacías o incompletas: Tropicado no
+  publica productos, Apícola Milosi presenta artículos sin precio de compra,
+  IFM conserva todo el catálogo agotado y Rioliva muestra precio cero y
+  “consultar precio”. Los fallos 403, TLS, DNS o servidor tampoco se convierten
+  en un `no`.
+- Se retiran **cinco webs** que ya no son utilizables: tres dominios sin DNS,
+  la página de proveedor caducada de Luzana y `lamelifera.com`, que actualmente
+  pertenece a un laboratorio ecuatoriano ajeno a la ficha de Mijas. Se eliminan
+  además los dos correos asociados a dominios incorrectos o sin DNS y se
+  actualizan los textos de contacto.
+- Estado provincial: **386 filas**; venta online **202 `sí`**, 111 `no` y
+  **73 `no comprobado`**. Verificación: 336 `verificado` y 50 `parcial`.
+
+Fuentes principales:
+<https://bodegalacapuchina.es/>,
+<https://bodegalacapuchina.es/producto/capuchina-vieja-moscatel-seco/> y
+<https://lamelifera.com/nosotros/>.
