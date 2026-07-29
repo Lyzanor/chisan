@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-07-28",
+  "generatedAt": "2026-07-29",
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 12058,
-    "tagged": 1142
+    "rows": 11998,
+    "tagged": 1143
   },
   "provinces": {
     "andalucia/almeria": [
+      "bio-nature-mediterraneo-vicar",
       "la-pastora-de-taberno",
+      "licores-naturales-berja",
       "queseria-el-canao-abrucena",
       "queseria-el-pericho-roquetas-de-mar",
       "queseria-medal-laujar",
@@ -24,7 +26,6 @@
       "agroiberica-de-pozoblanco",
       "almazara-de-luque",
       "aroden-carcabuey",
-      "bodegas-el-gallo-montilla",
       "bodegas-luque-dona-mencia",
       "dehesa-de-campo-alto-espiel",
       "dehesa-las-tobosas-hinojosa-del-duque",
@@ -431,7 +432,6 @@
     ],
     "castilla-y-leon/salamanca": [
       "bodega-dominio-de-la-sierra-san-esteban-de-la-sierra",
-      "carralejos-granja-queseria-aldeanueva-de-la-sierra",
       "don-hornazo-salamanca-obrador-villarmayor",
       "ganas-de-pan-san-pedro-de-rozados"
     ],
@@ -916,7 +916,6 @@
       "cooperativa-pedro-de-alvarado-lobon",
       "cooperativa-san-mauro",
       "cooperativa-virgen-de-la-estrella",
-      "covica",
       "dulceria-la-chimenea",
       "ea-group",
       "frutas-biomova",
@@ -939,8 +938,10 @@
       "dehesa-de-solana-herrera-de-alcantara",
       "extrem-puro-extremadura-herreruela",
       "extremiel-canamero",
+      "jamones-casa-bautista-montanchez",
       "jamones-ibericos-carlos-rosco-montanchez",
       "la-dalia-pimenton-jaraiz-de-la-vera",
+      "lacteos-del-burdalo-slu-almoharin",
       "las-delicias-del-palacio-del-dean-villamiel",
       "miel-flor-de-alba-logrosan",
       "pimenton-caballo-de-oros-jaraiz-de-la-vera",
@@ -1122,6 +1123,7 @@
     ],
     "murcia/murcia": [
       "anis-flor-de-murcia-cehegin",
+      "bodega-pura-vina-cehegin",
       "embutidos-cehegin-cehegin"
     ],
     "navarra/navarra": [
@@ -1204,7 +1206,6 @@
       "leintz-gatzaga-gatza-leintz-gatzaga",
       "lekungarai-baserria-oiartzun",
       "lizardi-baserria-astigarraga",
-      "lurka-chocolate-donostia-san-sebastian",
       "mellifera-larraul",
       "oteiza-goikoa-gaztak-amezketa",
       "pasteleria-aramendia-errenteria",

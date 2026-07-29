@@ -530,3 +530,21 @@ Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
 - Bodega/licores/cerveza: canal propio frente a reventa de terceros.
 - Cualquier fila sin web propia que quede `verificado`: fuente concreta que
   sostiene identidad, actividad y municipio.
+
+## Ola 3 · Venta sin resolver (2026-07-29)
+
+- Corte actual: **199 filas** · 177 `verificado` · 22 `parcial` · venta
+  136 `sí` · 0 `no` · 63 `no comprobado`.
+- Se acreditan nueve canales: ecommerce en Peña de Baena, Anís Machaquito,
+  Finca Duernas, Bodegas El Monte, Aceites Vizcántar, Bodegas El Gallo,
+  Cervezas Bandolera y Bodegas Delgado; Lagar Blanco publica pedidos por llamada
+  o WhatsApp.
+- Se sustituyen seis descripciones de plantilla por información productiva
+  propia: Peña de Baena, Machaquito, Finca Duernas, El Monte, Bandolera y
+  Dulcisan. La cola `descripcion-generica` baja de 87 a 81.
+- Bodegas El Gallo se corrige de Montilla a Buen Suceso 3, Córdoba: municipio,
+  dirección, coordenadas, contactos y slug. El slug anterior conserva registro
+  `merge`; la web propia y el Consejo Regulador sostienen la identidad.
+- Aceites Vizcántar y El Gallo pasan a `verificado` al estar de nuevo legibles
+  sus fuentes propias. Los bloqueos, mantenimientos y tiendas sin producto
+  permanecen en `no comprobado`.

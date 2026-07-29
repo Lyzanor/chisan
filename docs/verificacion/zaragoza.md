@@ -1312,3 +1312,14 @@ contaminen los bloques por categoría; ZG-22 es la reconciliación provincial.
 - Zaragoza conserva **119 imágenes referenciadas y 119 archivos**, sin faltantes
   ni huérfanos. No hay verificadas sin coordenadas, ventas positivas sin canal,
   discrepancias de evidencia ni bajas sin tombstone.
+
+## Ola 3 · Venta sin resolver (2026-07-29)
+
+- Corte actual: **220 filas** · 155 `verificado` · 65 `parcial` · venta
+  108 `sí` · 52 `no` · 60 `no comprobado`.
+- Se resuelven cuatro canales vigentes: PAM Coffee, Finca La Corona y Pastelería
+  Micheto con ecommerce; Amandolas con pedido explícito por correo o teléfono.
+- Finca La Corona pasa a `verificado` al volver a estar accesibles su web y
+  tienda propias. Micheto actualiza el teléfono y correo que publica la tienda.
+- Tiendas vacías, catálogos sin compra, cierres técnicos y dominios con errores
+  permanecen en `no comprobado`; no se reinterpretan como venta negativa.

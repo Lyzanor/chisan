@@ -66,14 +66,14 @@
 
 ### Bodegas del registro (municipio a confirmar) — ✅ 6 integradas 2026-07-10 (lote 1.3f)
 
-> **6 altas** (4 `verificado`+VO=sí: Navarro, Del Pino, Galán Portero, Luque; 2
-> `parcial`: El Gallo web sin contenido, Bonilla sin web). **Gracia Hermanos
+> **6 altas** (5 `verificado`+VO=sí: Navarro, Del Pino, Galán Portero, Luque y
+> El Gallo; 1 `parcial`: Bonilla sin web). **Gracia Hermanos
 > diferida** (grupo Pérez Barquero). **Diferidas por no encontrar web/venta ni
 > municipio fiable** (registro-only, siguiente pasada): Bodegas Único, Sillero, El
-> Pujío, Maillo, Mora Chacón, El Gallo (⚠ ya integrada parcial), Lagar Cañada
+> Pujío, Maillo, Mora Chacón, Lagar Cañada
 > Navarro, Lagar Cabriñana. Slugs altas: `bodegas-navarro-montilla`,
 > `bodegas-del-pino-montalban-de-cordoba`, `bodegas-galan-portero-montilla`,
-> `bodegas-luque-dona-mencia`, `bodegas-el-gallo-montilla`,
+> `bodegas-luque-dona-mencia`, `bodegas-el-gallo-cordoba`,
 > `bodegas-bonilla-aguilar-de-la-frontera`.
 
 - [ ] **Bodegas Navarro** — Bodega. Montilla. Marca histórica de la DO; confirmar
@@ -92,7 +92,8 @@
 - [ ] **Bodegas El Pujío** — Bodega. Confirmar municipio, web y venta.
 - [ ] **Bodegas Maillo** — Bodega. Confirmar municipio, web y venta.
 - [ ] **Bodegas Mora Chacón** — Bodega. Confirmar municipio, web y venta.
-- [ ] **Bodegas El Gallo** — Bodega. Montilla (confirmar). Confirmar web/venta.
+- [x] **Bodegas El Gallo** — integrada y corregida a Córdoba (Buen Suceso, 3);
+  web y ecommerce propios operativos, revisados el 2026-07-29.
 - [ ] **Lagar Cañada Navarro** — Bodega/Lagar. Sierra de Montilla (Montilla).
   Confirmar web y venta.
 - [ ] **Bodegas Cabriñana / Lagar Cabriñana (Rockera Cabriñana)** — Bodega/Lagar.
