@@ -514,7 +514,10 @@ Alcance: —
   casi anecdótica) → parcial. **Webs saneadas**: silmaburgos.es→.com,
   palbin→xocolart.com, areposteria.es→pequenareposteria.es, blog de El
   Chocolatero (404) retirado; brainapple.es conservada pese al spam de casino en
-  un fetch (regla 17, revisar). Sin nuevos geo-warnings (siguen 7).
+  un fetch (regla 17, revisar) → **resuelto el 2026-07-28: no era un fetch
+  suelto, el dominio está secuestrado; `web` y el correo del mismo dominio
+  vaciados, y la fila baja a `parcial`/`no comprobado` porque su ficha de
+  marketplace también da 404**. Sin nuevos geo-warnings (siguen 7).
 - Snapshot tras lote 23 (2026-07-20): **304 filas** (−2: 2 purgas
   `not-producer`; el renombre de slug es la misma entidad). **5 pendiente**,
   77 parcial, 222 verificado. Venta online: **140 sí — todas con canal** (135
