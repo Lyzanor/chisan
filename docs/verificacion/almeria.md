@@ -228,6 +228,24 @@ transversal de cierre y puede revisar filas ya tocadas.
 | 6 | Conservas y elaborados vegetales | `Conservas` | 11 | 0 | 2 | 9 | 4 | ✅ | Cerrado el 2026-06-30: 9 verificadas, 2 parciales y 4 ecommerce confirmados. Corrige La Gergaleña a Gérgal y Umai a Abla, retira webs rotas o institucionales de NDH, Pulpí Eya y Umai, recategoriza NDH como `Productos ecológicos` y deja Pulpí Eya/NDH en parcial por falta de fuente propia vigente. |
 | 7 | Cierre transversal provincial | Todas | 101 | 0 | 25 | 76 | 47 | ✅ | Cerrado el 2026-06-30: sin pendientes, sin duplicados obvios, evidencia completa, 47/47 ventas online con canal, imágenes sin errores de contrato y geo-warnings residuales justificados para Huertaiberika y Salinas de Cabo de Gata. |
 
+## Ola 3 — venta sin resolver (2026-07-29)
+
+Los 46 `no comprobado` de entrada bajan a 21. El cierre conserva 105 filas:
+82 `verificado`, 23 `parcial`; venta online 60 `sí`, 24 `no` y 21
+`no comprobado`.
+
+- Se confirman canales remotos actuales para CASI, Huertaiberika y once
+  productores con tienda activa en Sabores Almería.
+- Se fusiona `industrias-carnicas-sierra-maria-maria` con Los Amadeos y se
+  purga Cervezas La Cala: la fila mezclaba una cervecera histórica con un
+  restaurante actual y la sociedad consta extinguida.
+- Se corrigen siete `slug` materiales junto con municipio, web, contacto,
+  coordenadas o imagen cuando correspondía; destacan Lauricius, Palomillo,
+  La Gergaleña, Licores Naturales y Bio Nature Mediterráneo.
+- Los 21 residuales se mantienen por fallos técnicos, canales solo B2B o
+  fuentes insuficientes. No se ha convertido una web caída en `Venta
+  online=no` ni se han añadido directorios como web del productor.
+
 ## Criterios de cierre de la pasada
 
 - 0 filas `pendiente`, salvo pausa explícita documentada.

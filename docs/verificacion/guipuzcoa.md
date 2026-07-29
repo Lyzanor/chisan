@@ -328,3 +328,4 @@ npx pnpm verify:data
 | 2026-06-19 | 6 - Cárnicos / huevos / patés | cerrado | 11 filas revisadas; 5 `verificado`, 6 `parcial`, sin pendientes. |
 | 2026-06-19 | 7 - Obradores / cerveza / miel | cerrado | 19 filas conservadas y 2 bajas `other-province`; sin pendientes. |
 | 2026-06-19 | Cierre principal | cerrado | Guipúzcoa queda en 169 filas, 122 `verificado`, 47 `parcial` y sin `pendiente`; entra en cobertura estricta. |
+| 2026-07-29 | Ola 3 - venta sin resolver | cerrado | Los 44 `no comprobado` de entrada bajan a 15: se confirman 26 casos sin venta remota y 3 con pedido remoto. Se corrigen además la categoría e identidad comercial de Lurka, el canal de Mellifera y la relación entre Okelgintza y Baserria Km0. Cierre: 169 filas, 123 `verificado`, 46 `parcial`; venta online 88 `sí`, 66 `no` y 15 `no comprobado`. Los residuales corresponden a webs inaccesibles, señales contradictorias o identidad insuficiente, no a decisiones omitidas. |
