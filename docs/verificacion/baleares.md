@@ -860,3 +860,38 @@ La pasada se considera cerrada cuando:
 - `npx pnpm verify:data` y `git diff --check` terminan correctamente;
 - el resumen final de este ledger registra filas, estados, ventas/canales,
   evidencia, purgas/fusiones, warnings aceptados e imágenes pospuestas.
+
+### BAL-18 — Ola 3 · venta sin resolver (2026-07-29)
+
+Segunda pasada sobre las **98 filas con `Venta online=no comprobado`** del cierre
+BAL-17. Se resuelven **16** ventas actuales:
+
+- **10 ecommerce propios:** Cap de Barbaria, Can Joan de s’Aigo, Forn de Sant
+  Francesc, Pastisseria Lluís Pérez, Son Mesquidassa, Subaida, Licors Moyà,
+  Suau, Antonio Nadal / Túnel y Begudes Puig.
+- **4 marketplaces enlazados o colectivos:** Biniagual en Mallorquiner, Tianna
+  Negre en 1898 Drinks Boutique, Olis Sóller en Fet a Sóller y Embutidos Munar
+  en Ramaders Agrupats. Se conserva `marketplace` para no presentar esas
+  plataformas terceras como ecommerce propio.
+- **2 pedidos asistidos:** Vins Nadal mediante formulario y Bodegas Miquel
+  Oliver por teléfono o correo.
+
+La revisión corrige datos útiles que habían quedado atados a dominios antiguos:
+correo de Lluís Pérez, teléfono y correo de Licors Moyà y Suau, correo
+corporativo de Antonio Nadal, teléfono del local de Can Sanç de Can Joan de
+s’Aigo y correo/HTTPS de Cap de Barbaria. En Suau se reescribe además
+`productos estrella` con referencias reales de licores, eliminando el único
+aviso provincial de `plantilla-cruzada`; Begudes Puig deja el genérico
+«refrescos tradicionales» por su gama concreta.
+
+Se mantienen sin resolver las falsas señales: Familia Marí Mayans tiene tienda
+sin productos, Can Xanet expone catálogo no comprable y la tienda encontrada
+para Gin Xoriguer no está enlazada por el productor. Contacto genérico o reventa
+independiente no bastan para declarar venta remota.
+
+**Estado tras BAL-18:** 156 filas; 126 `verificado`, 30 `parcial`, 0
+`pendiente`; venta online en **74 `sí`** y **82 `no comprobado`**. Las 16
+decisiones tienen evidencia actualizada y canal accionable.
+
+El lote conjunto **Huelva + Baleares** reduce la cola global de Ola 3 en **23**
+filas, de 4.002 a **3.979**.

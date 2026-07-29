@@ -671,3 +671,29 @@ La primera pasada queda completa porque:
 - `npx pnpm verify:data` pasa;
 - el ledger refleja el snapshot final y `andalucia/huelva` queda en
   `data/evidence/coverage.json`.
+
+## HU-13 — Ola 3 · venta sin resolver (2026-07-29)
+
+Segunda pasada centrada en las **88 filas con `Venta online=no comprobado`** del
+snapshot actual de 150 productores. Se resuelven **7** casos con una vía de
+pedido vigente y atribuible al productor:
+
+- **3 ecommerce propios:** Folks Bier, Mieles La Madroña y la tienda oficial de
+  Luis Felipe / Bodegas Rubio 1893.
+- **4 pedidos asistidos:** Jamones Asensio por WhatsApp, Bodegas Díaz por
+  teléfono, Confitería Alvarado por teléfono o correo y Pastelería Dioni por
+  formulario/correo o teléfono.
+
+La pasada mejora también el dato publicado: teléfono operativo de pedidos de
+Jamones Asensio, teléfono de la tienda Luis Felipe, correo oficial de Dioni,
+horarios e instrucciones de encargo de Alvarado y Díaz, y descripciones que ya
+no narran la falta de comprobación anterior.
+
+No se fuerza un `sí` cuando solo aparece contacto genérico, reventa de tercero o
+una tienda sin existencias: Masiá Ciscar sigue sin producto comprable y la
+aparente tienda de Olionuba pertenece a una plantilla compartida ajena. Esos
+casos permanecen honestamente en `no comprobado`.
+
+**Estado tras HU-13:** 150 filas; 116 `verificado`, 34 `parcial`, 0
+`pendiente`; venta online en **68 `sí`**, 1 `no` y **81 `no comprobado`**. Las 7
+decisiones tienen evidencia actualizada y canal accionable.
