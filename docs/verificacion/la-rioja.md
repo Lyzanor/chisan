@@ -390,3 +390,19 @@ Trabajo:
 - Los `Venta online=sí` deben tener `Canal de venta`.
 - Las bajas/fusiones deben quedar explicadas en evidencia JSONL.
 - Al cerrar un lote, anotar aquí fecha, resultado y riesgos residuales.
+
+## Ola 3 · venta sin resolver (2026-07-29)
+
+- La cola baja de **114 a 106**: se confirman **5** canales remotos y se retiran **3** filas que
+  no debían contar como productores independientes. Estado actual de venta: **161 `sí` · 146
+  `no` · 106 `no comprobado`**.
+- Ecommerce confirmado y campos enriquecidos para Isul, Miel Llaría, Chocolates Peñaquel y Abel
+  Mendoza; Bodegas Gregorio Martínez admite pedidos por correo o teléfono y envíos nacionales.
+- Dos categorías `Aceite` ocultaban duplicados: `cornelio-vega-vella-navarrete` se fusiona en
+  `bodegas-cornelio-dinastia-s-l-navarrete` y `valbornedo-navarrete` en
+  `senorio-de-valbornedo-s-coop-navarrete`. Las filas supervivientes reciben vinos, descripción,
+  dirección y contacto reales.
+- `cafe-electi-logrono` se elimina: la fuente propia y la actividad empresarial sostienen una
+  tienda especializada, no tostado ni elaboración propia.
+- Estado editorial actual: **413 filas · 308 `verificado` · 105 `parcial` · 0 `pendiente`**.
+  Quedan actualizados CSV y los diez registros de evidencia afectados.

@@ -68,3 +68,17 @@ catálogo y las afirmaciones dinámicas caducan.
 - Recomprobar los 154 `Venta online=sí` (última comprobación 2026-07-03); los 112 `no comprobado`
   son revisables si abren canal propio.
 - Imágenes pendientes: 81 filas (scorer de `enrich:images` solo por slug).
+
+## Ola 3 · venta sin resolver (2026-07-29)
+
+- Revisadas las **112** filas que seguían en `no comprobado`: **8** pasan a `sí` con canal
+  demostrado y quedan **104**. Estado actual: **162 `sí` · 0 `no` · 104 `no comprobado`**.
+- Se confirmaron ecommerce propios en Bioartesa, Mariscal Delicatessen, Al-Andaluzza, Flor de
+  Vainilla y Selva GR; pedidos asistidos en Los Teatinos y Queso Montefrieño; y marketplace de
+  la cooperativa de la que forma parte La Vieja Buchaca.
+- La revisión no se limitó a la etiqueta de venta: Bioartesa pasa de `Aperitivos` a `Harinas y
+  cereales`; se concretan gamas, descripciones, teléfonos, correos y protocolos web en las ocho
+  filas. Bioartesa y Mariscal pasan de `parcial` a `verificado`.
+- Estado editorial actual: **266 filas · 252 `verificado` · 14 `parcial` · 0 `pendiente`**.
+- No se promovieron señales débiles: plugins WooCommerce sin productos, catálogos sin pedido y
+  reventa de terceros permanecen en `no comprobado`.
