@@ -229,14 +229,36 @@ estar describiendo un productor mixto y necesitan una decisión editorial.
 - Tras activar la detección, tratar sus nuevos avisos como cola provincial, no
   como una migración automática.
 
-### G-TPL-1 — corrupción de plantilla cruzada
+### G-TPL-1 — corrupción de plantilla cruzada ✅
 
-- Crear primero un check advisory que cruce `categoria` con patrones fuertes
-  de `productos estrella` y `descripcion`.
-- Usar fixtures sintéticos con positivos y negativos; no codificar una lista
-  creciente de marcas reales.
-- El detector solo genera candidatos. La reparación exige fuente del productor
-  y puede afectar categoría, productos y descripción.
+Hecho. `check:defects --check plantilla-cruzada` marca las filas cuyo
+`productos estrella` describe otra categoría. Dos reglas:
+
+- **estructural**: el campo no lista productos, lista etiquetas de la taxonomía
+  (`Quesos y lácteos` en una heladería). Sale del registro, así que no depende
+  de vocabulario ni de que la categoría tenga marcadores;
+- **léxica**: sustantivos de producto de otra categoría, y ninguno de la
+  propia. Solo juzga a las categorías que tienen marcadores, porque en un
+  cajón de sastre (`Otros`, `Despensa artesanal`) la ausencia no prueba nada.
+
+Solo dispara `productos estrella`. `descripcion` se midió como disparador y se
+descartó: es prosa, y marcaba menciones legítimas —una cervecera que madura en
+botas de vino, un dulce hecho con aceite— a un ritmo que enterraba los
+hallazgos. Léela como corroboración una vez marcada la fila: suele ser el campo
+que dice cuál de los dos está contaminado.
+
+Es una **lista de candidatos, no de veredictos**: en muestreo sistemático
+acierta en torno a 2 de cada 3. Los falsos positivos tienen forma reconocible
+—productor genuinamente mixto, y producto cuyo nombre pertenece a otra
+categoría («tomate frito» en una conservera)—, así que se descartan de un
+vistazo. Lo que queda es editorial y no es mecánico: la reparación exige fuente
+del productor y puede tocar categoría, productos y descripción.
+
+Tres decisiones que se midieron y que conviene no deshacer sin volver a medir:
+la marca comercial no cuenta como producto (si no, toda almazara llamada
+«Molino de…» era harinera), un sustantivo tras `con`/`de` es ingrediente y no
+línea de producto, y una etiqueta retirada se resuelve antes de comparar (si no,
+la deriva de taxonomía se lee como contaminación).
 
 ### G-WEB-1 — dominios muertos, aparcados y secuestrados ✅
 
@@ -647,7 +669,7 @@ diga la tabla de bloqueo del § 4.
    la cuenta y `check:defects --check categoria-variante` es el re-escaneo.
 3. G-CAT-2: migración por familias y retirada efectiva de etiquetas.
 4. G-GEO-1: municipios bilingües y casos de homónimos.
-5. G-TPL-1: detector advisory de plantilla cruzada.
+5. ~~G-TPL-1: detector advisory de plantilla cruzada.~~ ✅ Hecho.
 
 Cada uno cierra con el re-escaneo de las provincias ya cerradas.
 

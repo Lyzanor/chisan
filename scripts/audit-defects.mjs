@@ -105,6 +105,122 @@ export const templateShape = (text) =>
 // The first comes from the registry, which records the decision; the other two
 // are inferred from usage, and catch drift no consolidation ever ruled on.
 // Reported as the minority variant, so the fix is "reassign these rows".
+// Product nouns strong enough to name a category on their own, in the four
+// languages the catalog publishes in. Nouns only: no brands, and no process
+// words several categories share ("obrador", "molino", "artesano"), which is
+// what made the first draft of this detector flag every almazara called
+// "Molino de …". A category with no entry here is never judged by markers,
+// because then the absence of its own nouns proves nothing — that is why
+// `Otros`, `Despensa artesanal` and `Comida preparada` are deliberately absent.
+export const CATEGORY_MARKERS = {
+  Aceite: ["aceite", "aceites", "aove", "oliva", "olivar", "almazara", "arbequina", "picual", "hojiblanca", "oli", "olivera", "trull"],
+  Miel: ["miel", "mieles", "polen", "propoleo", "jalea", "colmena", "colmenar", "apicola", "apicultura", "mel", "ezti"],
+  Bodega: ["vino", "vinos", "vi", "vins", "vinho", "cava", "cavas", "caves", "bodega", "bodegas", "celler", "cellers", "vina", "vinas", "vinedo", "vinya", "vinyes", "vinicola", "espumoso", "albarino", "verdejo", "raim", "ardo"],
+  Charcutería: ["embutido", "embutidos", "embotit", "embotits", "fuet", "botifarra", "llonganissa", "chorizo", "xorico", "jamon", "jamones", "pernil", "salchichon", "sobrasada", "morcilla", "cecina", "chacina", "chacinas", "carne", "carnes", "carnicos", "carnica", "carniceria", "carn", "carns"],
+  "Lácteos y quesos": ["queso", "quesos", "queixo", "formatge", "formatges", "gazta", "mato", "yogur", "iogurt", "leche", "llet", "esnea", "requeson", "cuajada", "mantequilla", "lacteos"],
+  "Pan y pastelería": ["pan", "panes", "pa", "panets", "ogi", "coca", "ensaimada", "bolleria", "croissant", "hogaza", "panaderia", "pasteleria", "pastel", "pasteles", "pastis", "pastissos", "pastisseria", "confiteria", "reposteria", "galleta", "galletas", "magdalena", "magdalenas", "empanada", "torta", "tortas", "mantecado", "mantecados", "polvoron", "polvorones", "pestino", "pestinos", "hojaldre", "hojaldres", "rosquilla", "rosquillas", "churro", "churros", "panellet", "panellets", "tortell"],
+  "Cerveza artesana": ["cerveza", "cervezas", "cervesa", "cerveses", "birra", "lupulo", "garagardo"],
+  Conservas: ["conserva", "conservas", "conserves", "escabeche", "pisto"],
+  Legumbres: ["alubia", "alubias", "judia", "judias", "garbanzo", "garbanzos", "cigro", "cigrons", "lenteja", "lentejas", "llentia", "llenties", "faba", "fabas", "legumbre", "legumbres", "llegum", "llegums", "mongeta", "mongetes"],
+  "Fruta y verdura": ["hortaliza", "hortalizas", "hortalisses", "horta", "huerta", "verdura", "verduras", "verdures", "fruta", "frutas", "fruita", "fruites", "tomate", "tomates", "tomaquet", "cereza", "cerezas", "cirera", "cireres", "naranja", "naranjas", "taronja", "patata", "patatas", "patates", "calcot", "calcots", "carxofa", "carxofes", "pesol", "pesols", "bleda", "bledes", "pebrot", "pebrots", "espinac", "espinacs", "moniato", "albercoc", "albercocs", "pressec", "pressecs", "poma", "carbasso"],
+  Pescado: ["pescado", "pescados", "peix", "peixos", "arrain", "marisco", "mariscos", "marisc", "atun", "bacalao", "anchoa", "anchoas", "mejillon", "mejillones", "salazon", "salazones"],
+  Huevos: ["huevo", "huevos", "ou", "ous", "ovo", "ovos", "ponedora", "ponedoras"],
+  "Frutos secos": ["almendra", "almendras", "ametlla", "ametlles", "avellana", "avellanas", "avellanes", "nuez", "nueces", "pistacho", "pistachos", "castana", "castanas", "castanya"],
+  "Aceitunas y encurtidos": ["aceituna", "aceitunas", "olives", "encurtido", "encurtidos", "banderilla", "banderillas"],
+  Sidra: ["sidra", "sidras", "llagar", "sagardo", "sagardoa"],
+  Arroz: ["arroz", "arros"],
+  "Trufa y setas": ["trufa", "trufas", "tofona", "tofones", "seta", "setas", "bolet", "bolets", "hongo", "hongos", "boletus", "champinon", "champinones"],
+  Chocolate: ["chocolate", "chocolates", "xocolata", "cacao", "bombon", "bombones"],
+  Licores: ["licor", "licores", "licors", "orujo", "aguardiente", "ginebra", "ginebras", "destileria", "pacharan"],
+  Helados: ["helado", "helados", "gelat", "gelats", "gelateria", "sorbete", "sorbetes"],
+  "Harinas y cereales": ["harina", "harinas", "farina", "farines", "espelta", "molienda"],
+};
+
+// Rows whose `productos estrella` describes a different category than the one
+// the row is filed under: the 2026-06-21 bulk import copied that field, and the
+// description with it, across category boundaries.
+//
+// Only `productos estrella` triggers. `descripcion` was measured as a trigger
+// too and rejected: it is prose, so it flags legitimate mentions (a brewery
+// ageing beer in wine casks, a pastry made with olive oil) at a rate that
+// buries the real hits. Read it as corroboration once a row is flagged — it is
+// usually the field that tells you which of the two is the corrupted one.
+export function loadCrossTemplate(rows) {
+  const registry = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data", "reference", "categories.json"), "utf8"),
+  );
+  const canonical = (label) => registry.retiredCategories?.[label] ?? label;
+  // A retired label and its replacement are the same category: comparing
+  // without resolving them turns taxonomy drift into fake contamination.
+  const labels = new Map();
+  for (const label of [...registry.categories, ...Object.keys(registry.retiredCategories ?? {})]) {
+    labels.set(norm(label), canonical(label));
+  }
+  const markers = new Map(Object.entries(CATEGORY_MARKERS).map(([c, m]) => [canonical(c), m]));
+
+  const wordsOf = (text) => new Set(norm(text).split(" ").filter(Boolean));
+  // A noun introduced by "con"/"de" is a flavour or an ingredient of the
+  // product before it, not a product line: "sobaos con chocolate" is a bakery,
+  // "queso de oveja con aceite" is a dairy. Only the head nouns count as
+  // evidence of another category.
+  const MODIFIER_HEADS = new Set(["con", "de", "del", "amb", "al", "a"]);
+  const headWordsOf = (text) => {
+    const tokens = norm(text).split(" ").filter(Boolean);
+    return new Set(tokens.filter((_, i) => i === 0 || !MODIFIER_HEADS.has(tokens[i - 1])));
+  };
+  const categoriesNamedBy = (text, { heads = false } = {}) => {
+    const found = new Set();
+    for (const part of text.split(/[,;|/]/)) {
+      const label = labels.get(norm(part));
+      if (label) found.add(label);
+    }
+    const words = heads ? headWordsOf(text) : wordsOf(text);
+    for (const [category, nouns] of markers) {
+      if (nouns.some((noun) => words.has(noun))) found.add(category);
+    }
+    return found;
+  };
+
+  const hits = new Map(); // `provincia/slug` -> categories named instead
+  for (const { provincia, rows: provinceRows } of rows) {
+    for (const row of provinceRows) {
+      const estrella = (row["productos estrella"] ?? "").trim();
+      if (!estrella || !row.categoria) continue;
+      const own = canonical(row.categoria);
+      // The trade name is not a product: "Conservas Senra" does not make a
+      // fish cannery a preserves maker, and dropping its words is what stops
+      // the check from reading brands as evidence.
+      const brand = wordsOf(row.nombre);
+      const foreign = categoriesNamedBy(
+        norm(estrella)
+          .split(" ")
+          .filter((word) => !brand.has(word))
+          .join(" "),
+        { heads: true },
+      );
+
+      // Every comma-separated item is a taxonomy label, so the field holds
+      // categories instead of products. The anomaly is structural, not lexical:
+      // it survives the brand overlap ("Aceitunas Oliber" filed under `Despensa
+      // artesanal`) and does not need `own` to have markers.
+      const parts = estrella.split(/[,;|]/).map((p) => norm(p)).filter(Boolean);
+      if (parts.length && parts.every((p) => labels.has(p))) {
+        const named = [...new Set(parts.map((p) => labels.get(p)))];
+        if (!named.includes(own)) {
+          hits.set(`${provincia}/${row.slug}`, named);
+          continue;
+        }
+      }
+
+      if (!markers.has(own)) continue;
+      if (categoriesNamedBy(estrella).has(own)) continue;
+      foreign.delete(own);
+      if (foreign.size) hits.set(`${provincia}/${row.slug}`, [...foreign]);
+    }
+  }
+  return hits;
+}
+
 export function loadCategoryVariants() {
   // Always across every province, even under --provincia: which spelling is the
   // majority is a property of the catalog, not of the file being inspected.
@@ -285,6 +401,14 @@ export const CHECKS = [
     run: ({ rows }, ctx) => rows.filter((r) => ctx.categoryVariants.has(r.categoria)),
   },
   {
+    id: "plantilla-cruzada",
+    kind: "cola",
+    label: "`productos estrella` describe una categoría distinta de la de la fila",
+    hint: "candidatos, no veredictos: abre la ficha y decide si sobra el producto o sobra la categoría",
+    run: ({ rows, provincia }, ctx) =>
+      rows.filter((r) => ctx.crossTemplate.has(`${provincia}/${r.slug}`)),
+  },
+  {
     id: "canal-sin-clasificar",
     kind: "cola",
     label: "`Venta online=sí` sin `Canal de venta`",
@@ -331,7 +455,10 @@ function main() {
     process.exit(1);
   }
 
-  const ctx = { categoryVariants: loadCategoryVariants() };
+  const ctx = {
+    categoryVariants: loadCategoryVariants(),
+    crossTemplate: loadCrossTemplate(provinces),
+  };
   const checks = onlyCheck ? CHECKS.filter((c) => c.id === onlyCheck) : CHECKS;
   if (checks.length === 0) {
     console.error(`Check desconocido "${onlyCheck}". Disponibles: ${CHECKS.map((c) => c.id).join(", ")}`);

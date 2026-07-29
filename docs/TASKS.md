@@ -177,11 +177,13 @@ Ordenada por daño al usuario, no por tamaño.
 - **Imágenes** (`--check sin-imagen`): flujo en `docs/IMAGES.md`; `enrich:images`
   por slug con `--contact-sheet`, nunca `--apply` en bloque. Rinde más empezar
   por provincias pequeñas y ya cerradas editorialmente que por las grandes.
-- **Corrupción por plantilla cruzada (2026-06-21):** filas que heredaron
-  `productos estrella` + `descripcion` de otra categoría (texto de miel en una
-  almazara). Reparadas 4 por keyword del nombre; quedan las de marca que no
-  delata la categoría. Barrido pendiente: cruzar `categoria` contra keywords de
-  esos dos campos.
+- **Corrupción por plantilla cruzada** (`--check plantilla-cruzada`): filas que
+  heredaron `productos estrella` de otra categoría (texto de miel en una
+  almazara). El barrido ya no hay que hacerlo a mano: el check las cruza. Es
+  **lista de candidatos, no de veredictos** —acierta ~2 de cada 3—, así que se
+  abre la ficha y se decide si sobra el producto o sobra la categoría; el falso
+  positivo típico es el productor genuinamente mixto. Criterio en
+  `docs/DEFECT_REMEDIATION_PLAN.md` § G-TPL-1.
 - **Cobertura de evidencia** (`--check sin-evidencia`): la evidencia es
   advisory y falta-`keep` **no** es deuda (`docs/EVIDENCE_CONTRACT.md`). Úsalo
   solo para saber dónde no hay rastro de por qué se decidió algo, no para
