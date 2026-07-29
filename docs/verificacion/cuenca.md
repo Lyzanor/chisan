@@ -37,3 +37,19 @@ faltaba una fila sin evidencia y dos descripciones de plantilla.
   ferretería del mismo nombre en el pueblo, así que puede ser la dirección
   equivocada. Conviene resolverlo en una segunda pasada.
 - 32 `parcial` y 27 filas sin web; 66 de 118 sin imagen.
+
+## Ola 3 · cierre de la banda 1–40 (2026-07-29)
+
+- Se revisaron las **40** filas residuales: **4** pasan a `sí`, **23** a `no`
+  y **13** permanecen `no comprobado` por bloqueo, DNS/TLS, tienda incompleta o
+  catálogo contaminado. Cuenca queda con **118 filas**: 60 `sí`, 45 `no` y 13
+  `no comprobado`.
+- **Quesos Parra Jiménez** y **Quesos La Aldea** pasan a `verificado` con
+  dirección y contacto de fábrica corregidos y ecommerce comprobado. En La
+  Aldea se sustituye el dominio muerto por el oficial vigente.
+- **Coopaman** resuelve su canal mediante la tienda operativa de su marca
+  Pedroñete. **Confitería Marisol** resuelve venta por su escaparate propio en
+  Glovo y actualiza el horario, aunque el catálogo de su web siga fallando.
+- Los 23 `no` proceden de canales actuales revisados sin pedido remoto; no se
+  aplicó `no` a webs temporalmente rotas ni a escaparates cuyo checkout no pudo
+  comprobarse.

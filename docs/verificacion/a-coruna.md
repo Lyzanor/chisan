@@ -710,3 +710,21 @@ que sus filas contaminen los bloques por categoría.
   las 38 identidades retiradas o corregidas conservan su `purge` o `merge`.
 - A Coruña queda añadida a `data/evidence/coverage.json` y el gate final global
   cierra sin incidencias.
+
+## Ola 3 · cierre de la banda 1–40 (2026-07-29)
+
+- Se revisaron las **38** filas que seguían en `no comprobado`: **1** pasa a
+  `sí`, **29** a `no`, **7** permanecen `no comprobado` por ambigüedad o fallo
+  técnico real y **1** se purga. La provincia queda con **147 filas**:
+  73 `sí`, 67 `no` y 7 `no comprobado`.
+- **Conservas Ría de Arosa** pasa a `verificado`: se precisan Postmarcos,
+  horario y web oficial del grupo, y Club Ortiz acredita ecommerce operativo.
+- **Queixo Fresco Sillobre** se corrige a la identidad productora
+  **Gandería Sillobre**, con dirección, teléfono, horario y sus dos productos
+  actuales. **Panadería Tarrío** recibe el móvil vigente.
+- **Granxa O Caxigo** se retira: es una explotación de vacuno dedicada a leche
+  mayorista, sin producto elaborado identificable ni canal al consumidor. La
+  identidad heredada de Moeche conserva su propia purga de trazabilidad.
+- Los siete residuales no se maquillan como `no`: incluyen dominios caídos,
+  comercio antiguo contradictorio, reventa independiente o reparto sin método
+  público de pedido.

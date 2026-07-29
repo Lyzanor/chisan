@@ -427,3 +427,18 @@ Revisado el 2026-06-16 como pasada final sobre residuales `parcial`, ventas
   representan el mismo productor público en el CSV.
 - El audit de calidad baja de 45 a 36 warnings; las restantes son avisos de
   campos opcionales ausentes o filas parciales, no errores bloqueantes.
+
+## Ola 3 — venta-sin-resolver
+
+- Cerrado el 2026-07-29: se revisaron las 35 ventas `no comprobado` y se
+  resolvieron 33: 3 `sí` y 30 `no`.
+- Aroma de Abeja y Kerixara pasan a `sí` por `ecommerce`. Nuestra Señora de
+  Ocón pasa a `sí` por `telefono|email`, ya que su página oficial de compra
+  indica expresamente cursar pedidos por llamada o formulario.
+- La tienda propia de Kerixara permite además recuperar su web y correo
+  actuales y elevar la ficha a `verificado`.
+- Quedan solo Casa Rojanda y Bodegas Gil Berzal en `no comprobado`: la primera
+  conserva un fallo TLS que impide revisar su canal de vino y la segunda
+  mantiene la web oficial en mantenimiento.
+- Snapshot provincial: 109 `verificado`, 22 `parcial`; venta 84 `sí`, 45 `no`
+  y 2 `no comprobado`.

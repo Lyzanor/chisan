@@ -58,3 +58,18 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
   `parcial` de la segunda pasada sería una mejora, no un bloqueo de cobertura.
 - Recomprobar los 58 `Venta online=sí` (última comprobación 2026-06-29) y los 40 `no comprobado`.
 - Imágenes pendientes: ~51 filas.
+
+## Ola 3 · cierre de la banda 1–40 (2026-07-29)
+
+- Se revisaron las **40** filas residuales: **24** pasan a `no`, **15**
+  permanecen `no comprobado` por tienda averiada/estacional, dominio caído o
+  reventa independiente, y **1** se purga. Alicante queda con **97 filas**:
+  58 `sí`, 24 `no` y 15 `no comprobado`.
+- **Aitana Espirulina** sale del CSV y se elimina su imagen: su propia web
+  declara que ya no produce espirulina y mantiene únicamente talleres, visitas
+  y actividad educativa.
+- **Turrones Picó** recibe la dirección real de fábrica, teléfono, correo y
+  horario oficiales.
+- **Chocolates Clavileño** deja atrás la descripción genérica y completa sede,
+  teléfono y correo publicados por el fabricante. Su web sigue siendo catálogo
+  sin pedido B2C, por lo que se registra `no`.

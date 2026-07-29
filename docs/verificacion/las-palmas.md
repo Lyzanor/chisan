@@ -181,3 +181,19 @@ procedencia por decisión vive en `data/evidence/canarias/las-palmas.jsonl`.
 Los lotes se pueden subdividir cuando aparezcan purgas, fusiones o evidencia
 contradictoria. Una pasada solo se cierra con cero `pendiente`, todos los
 residuales explicados y `npx pnpm verify:data` correcto.
+
+## Ola 3 — venta-sin-resolver
+
+- Cerrado el 2026-07-29: se revisaron las 35 ventas `no comprobado` y se
+  resolvieron 31: 1 `sí` y 30 `no`.
+- Hacienda Jiménez - Tres Olivos pasa a `sí` por `email`: su web propia
+  vigente publica una llamada explícita «Hacer pedido» que abre un formulario
+  operativo. La fuente propia permite también elevar la ficha a `verificado`.
+- Se cierra `no` en los demás casos revisados cuando los canales actuales solo
+  ofrecen venta directa física, distribución, visitas, catálogo o contacto
+  general, sin mecanismo público de pedido remoto.
+- Quedan 4 `no comprobado`: El Chupadero (HTTP 522), Puro Rofe (dominio sin
+  resolución), Quesos La Villa (fallo TLS) y Quesería Tinache (actividad
+  contradictoria).
+- Snapshot provincial: 51 `verificado`, 49 `parcial`; venta 34 `sí`, 62 `no`
+  y 4 `no comprobado`.

@@ -643,3 +643,18 @@ es el cierre transversal y puede revisar cualquier excepción documentada.
   Evidencia final: 212 `keep`, 18 `merge` y 4 `purge`.
 - Murcia se incorpora a `data/evidence/coverage.json` únicamente después de
   completar esta reconciliación.
+
+## Ola 3 — venta-sin-resolver
+
+- Cerrado el 2026-07-29: se revisaron las 31 ventas `no comprobado` de la
+  provincia y se resolvieron 14: 1 `sí` y 13 `no`.
+- Panadería José Antonio pasa a `sí` por `ecommerce`: la tienda oficial ofrece
+  catálogo, precios, carrito y entrega a domicilio, incluidos envíos
+  nacionales.
+- Se cierra `no` cuando la presencia pública vigente solo acredita venta
+  física, catálogo, contacto general o actividad profesional, sin reparto ni
+  instrucciones inequívocas para cursar pedidos remotos.
+- Quedan 17 `no comprobado` por fallos de DNS/TLS o servidor, tiendas sin
+  existencias, mecanismos restringidos o señales contradictorias. No se
+  convierten en `no` mientras el canal no pueda inspeccionarse con fiabilidad.
+- Snapshot de venta tras la ola: 109 `sí`, 86 `no` y 17 `no comprobado`.

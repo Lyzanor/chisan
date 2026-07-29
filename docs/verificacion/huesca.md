@@ -149,6 +149,10 @@ resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
   Ingrávida y se mantienen por HTTP dos sitios cuyo HTTPS está mal configurado.
   La provincia entra en cobertura estricta y las auditorías provincial de
   contrato, calidad, evidencia e imágenes cierran con 0 incidencias.
+- Tras HU-13 (2026-07-29): la Ola 3 revisa las **24** ventas no resueltas y
+  cierra ocho como `no`; venta provincial: **71 `sí`, 23 `no` y 16 `no
+  comprobado`**. Permanecen ambiguas las tiendas cerradas temporalmente, los
+  dominios rotos y los casos sin canal propio suficiente.
 
 ## Reglas locales
 
@@ -183,6 +187,7 @@ resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 | HU-10 | `bodega-laus` → `pasteleria-vilas` | 10 | ✅ 2026-07-15 | 10 verificadas, 8 ecommerce y 2 sin venta remota |
 | HU-11 | `panaderia-lartica` → `el-colmenar-de-angel` | 13 | ✅ 2026-07-15 | 9 verificadas, 3 parciales, 1 purga y 8 ventas remotas |
 | HU-12 | Auditoría transversal, candidatos diferidos y cierre | variable | ✅ 2026-07-15 | 0 duplicados, cobertura 110/110 y auditorías limpias |
+| HU-13 | Ola 3: residual `venta-sin-resolver` | 24 | ✅ 2026-07-29 | 8 ausencias de venta remota demostradas y 16 ambigüedades conservadas |
 
 ## Incidencias reutilizables
 

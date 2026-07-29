@@ -160,6 +160,7 @@ alcance no dependa del número de línea.
 | TE-08 | `rokelin-teruel` → `jamones-el-rullo-villarluengo` | 14 | ✅ 2026-07-15 | 13 verificadas, 1 parcial, 11 ventas remotas y 4 estados online ambiguos resueltos |
 | TE-09 | `el-calamochino-calamocha` → `cooperativa-san-miguel-juncoliva-valjunquera` | 14 | ✅ 2026-07-15 | 7 verificadas, 7 parciales, 7 ventas remotas, 3 no y 4 indisponibles/ambiguas |
 | TE-10 | Auditoría transversal, candidatos diferidos y cierre | variable | ✅ 2026-07-15 | 12 altas (7 verificadas, 5 parciales), candidatos cerrados y corrección Torre de las Arcas |
+| TE-11 | Ola 3: residual `venta-sin-resolver` | 21 | ✅ 2026-07-29 | 2 pedidos directos resueltos y 19 indisponibles o todavía ambiguos |
 
 ## Incidencias reutilizables
 
@@ -194,9 +195,12 @@ alcance no dependa del número de línea.
 
 - Filas finales: **122**.
 - Verificación: **99 `verificado`**, **23 `parcial`**, **0 `pendiente`**.
-- Venta remota: **69 `sí`**, **32 `no`**, **21 `no comprobado`**.
+- Venta remota: **71 `sí`**, **32 `no`**, **19 `no comprobado`**.
 - Auditoría de calidad provincial: **0 errores y 0 avisos**.
 - Las 122 filas tienen un `keep` vigente y decisión idéntica al CSV; Teruel
   queda añadido a `data/evidence/coverage.json` con cobertura estricta.
 - La nota `docs/candidates/teruel.md` no conserva candidatos abiertos de esta
   pasada; las nuevas propuestas deben entrar como hallazgos posteriores.
+- La Ola 3 confirma encargos por teléfono o correo para Bodegas Salvador y El
+  Calamochino. Aceite Centenario sigue sin DNS y Sierra de Mora redirige a una
+  tienda protegida; esas indisponibilidades no se convierten en falsos `no`.
