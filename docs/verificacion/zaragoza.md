@@ -45,14 +45,23 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ```text
 Estado de pasada: mantenimiento
-Base: d13b2c1
+Base: 90be12a
 Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
   canal-sin-clasificar, descripcion-generica, categoria-variante,
   venta-sin-resolver (check:defects)
-Lote activo: — (ZA-R1-1, ZA-R1-2, ZA-V-1 y ZA-V-2 cerrados)
+Lote activo: — (ZA-R1-1, ZA-R1-2, ZA-V-1, ZA-V-2 y ZA-V-3 cerrados)
 Alcance: —
 Última actualización: 2026-07-31
 ```
+
+- **Lote ZA-V-3 (2026-07-31, carril V).** 10 fichas revisadas: Miel
+  Apihuecha y Miel La Galinda pasan a `sí` por pedido telefónico; Horno de Sos,
+  Picarda, Quesos Artesanos Villamayor, Agerca, Delifactory, Helados LIC y Miel
+  El Albar quedan en `no` tras revisar sus canales públicos actuales; la
+  Carnicería Jesús Ignacio Mainar se purga porque las fuentes solo demuestran
+  comercio minorista, no elaboración propia. Las nueve fichas conservadas
+  mejoran gama y descripción; Apihuecha recupera el móvil de pedidos y
+  Delifactory añade correo.
 
 - **Lote ZA-V-2 (2026-07-31, carril V).** 10 productores no vinícolas
   revisados: Las Cardelinas, Ajo de Arándiga y Pastas Romero quedan resueltos
