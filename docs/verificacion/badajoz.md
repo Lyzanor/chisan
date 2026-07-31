@@ -691,3 +691,21 @@ abierto. Sin tablas de estado derivado.
   de esta pasada. Se sustituyen además las 16 descripciones plantilla
   residuales; la auditoría de calidad queda únicamente con cinco avisos
   geográficos ya revisados.
+
+## Ola 3 · segunda pasada de venta online
+
+- **BAD-W3-01** (2026-07-31): 13 fichas → **11 decisiones resueltas**
+  (**6 `sí` y 5 `no`**) y 2 `no comprobado` conservados tras retirar enlaces
+  inválidos. El residual provincial baja de 145 a **134**. La navegación de los
+  flujos completos descubre tiendas propias operativas que no estaban visibles
+  en el menú de El Conchito Gourmet, Conservas Martinete y Cultivando Empleo;
+  confirma el ecommerce colectivo de Palacio Quemado en la tienda oficial de
+  Alvear, el pedido directo por WhatsApp de El Pantano y el pedido por teléfono
+  o correo de Jamones Jierrito. La revisión completa de Patatas Fritas MM,
+  Obrador El Colibrí, Hnos. Castaño, Queseros Parreños e Iberazuaga permite fijar
+  `Venta online=no`: mantienen presencia propia vigente, pero no publican un
+  mecanismo ni condiciones de pedido remoto. Se elimina el dominio secuestrado
+  de Ermita del Ara y el NXDOMAIN de Pastelería La Siberia sin forzar una
+  decisión de venta. Además de los estados, se corrigen gamas, descripciones,
+  horarios y contactos; especialmente, Queseros Parreños pasa de una atribución
+  errónea de queso de cabra a queso fresco de leche de sus propias vacas.
