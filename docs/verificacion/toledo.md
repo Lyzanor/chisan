@@ -105,7 +105,7 @@ No se renumera si una fila se purga o fusiona.
 `cooperativa-ntra-sra-de-la-natividad-mentrida`,
 `cooperativa-san-roque-escalona`,
 `cooperativa-santo-domingo-de-guzman-valmojado`,
-`bodegas-tavera-arcicollar`, `uva-de-vida-camarena`.
+`bodegas-tavera-arcicollar`, `uva-de-vida-santa-olalla`.
 
 ### TOL-10 · Bodega Méntrida centro (12) — cerrado 2026-07-25
 
@@ -119,7 +119,7 @@ No se renumera si una fila se purga o fusiona.
 
 ### TOL-11 · Bodega Consuegra y Madridejos (12) — cerrado 2026-07-25
 
-`bodegas-tavasa-casarrubios-del-monte`,
+`tavasa-casarrubios-del-monte`,
 `cooperativa-virgen-de-la-oliva-almonacid-de-toledo`,
 `cecilio-mingo-herrero-cabezamesada`, `cooperativa-la-fe-camunas`,
 `sociedad-cooperativa-la-centinela-consuegra`,
