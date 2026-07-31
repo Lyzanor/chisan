@@ -595,3 +595,26 @@ Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
   `no comprobado` porque la web devuelve 403 y las referencias de pedido son
   contradictorias. La cola `descripcion-generica` baja de **75 a 73** y
   `venta-sin-resolver` de **55 a 47**.
+
+### Tanda CO-V-4 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **198 filas** · 176 `verificado`
+  · 22 `parcial` · venta 141 `sí` · 19 `no` · 38 `no comprobado`.
+- **Dulcisan** pasa a `sí` (`telefono`): su página vigente publica literalmente
+  dos teléfonos para pedidos y consultas. **Panadería Artesana de Villarrubia**
+  pasa a `sí` (`telefono|whatsapp`): ofrece encargos personalizados y enlaza
+  ambos mecanismos desde su fuente propia.
+- Piamonte D'Ambrosio, Horno de la Cruz, Mil Paladares de la Ñ, Hermanos
+  Rodríguez Barbancho, La Chacha Sebastiana, Aceitunas El Mesto y Agrícola
+  Sierra Morena–Puerto Carretas pasan a `no`. Sus canales actuales muestran
+  servicios, catálogos, distribución profesional o compra física en la finca,
+  pero no un pedido remoto directo para consumidor.
+- **Nocciolata** conserva `no comprobado`: la web anuncia que su tienda online
+  sigue en obras y abrirá próximamente. La indisponibilidad temporal no se
+  convierte artificialmente en ausencia de venta.
+- Se corrigen el horario oficial de Piamonte y el horario mal formateado de
+  Villarrubia; Horno de la Cruz distingue despacho y obrador con sus códigos
+  postales; Nocciolata incorpora el segundo local. Las diez fichas ganan gamas
+  y textos productivos específicos —marcas, variedades, trayectoria y método—.
+  `descripcion-generica` baja de **73 a 68** y `venta-sin-resolver` de **47 a
+  38**.
