@@ -592,3 +592,25 @@ Snapshot tras el mantenimiento:
 - Verificación: 132 `verificado`, 43 `parcial`, 0 `pendiente`
 - Venta online: 72 `sí`, 95 `no`, 8 `no comprobado`
 - Evidencia: 190 registros (175 `keep`, 10 `purge`, 5 `merge`)
+
+## Mantenimiento ola 3 · residual 1–6 (2026-07-31)
+
+Se revisaron los seis casos que seguían en `no comprobado`. Etxeandia pasa a
+`no`: su web propia publica actividad y visitas de 2026, pero no catálogo,
+pedido ni entrega de cerveza. La reserva de visitas en BOGA no convierte a
+BOGA en canal de venta de Etxeandia ni demuestra una fusión entre ambos
+productores.
+
+Mejoras materiales del CSV:
+
+- Helen Okindegia conserva la ficha por su reapertura documentada en 2025,
+  pero se retira `helenokindegia.com`, que ya no resuelve.
+- Txorierri Garagardoa conserva el teléfono y los perfiles sociales respaldados
+  por la oferta turística comarcal; se retiran la web y el correo de `txg.eus`
+  porque el dominio devuelve NXDOMAIN.
+- Charamel (503) y Bikandi (500) mantienen sus dominios ante fallos de servidor,
+  no confundidos con cierre; Urban Beer continúa `parcial` por falta de fuente
+  primaria actual suficiente.
+
+Snapshot tras esta revisión: 174 filas; 133 `verificado`, 41 `parcial`; venta
+online 73 `sí`, 96 `no` y 5 `no comprobado`.

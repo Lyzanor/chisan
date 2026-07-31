@@ -79,3 +79,26 @@ crear `scripts/match-madrid.mjs` análogo a `match-dar.mjs`):
   actividad/cierre de filas antiguas ante cualquier señal.
 - Imágenes pendientes: 83 filas sin asset.
 - Pistas no integradas: `docs/candidates/madrid.md` (heladerías pendientes de filtro de obrador propio).
+
+## Mantenimiento V-02 · mejora de los ocho residuales (2026-07-31)
+
+Se reabrieron los ocho `no comprobado`. Ninguno se fuerza a `sí` o `no`: Té y
+Vida devuelve 503; la tienda de Pedro García lista vinos pero no ofrece precios
+ni alta al carrito; Aceites Oro solo muestra una referencia agotada; Mario
+Sampedro conserva un reparto documentado en 2020 sin mecanismo dinámico actual;
+y Lavandas de Madrid, La Cabaña Blanca, Gigorro y Santa Lucía carecen de un
+canal primario vigente que permita cerrar la decisión.
+
+La pasada sí mejora las ocho fichas:
+
+- Lavandas de Madrid incorpora el cultivo de unas 160 hectáreas de lavandín en
+  cuatro municipios y la obtención de aceite esencial.
+- Pedro García sustituye `Vino` por sus gamas actuales y documenta la bodega de
+  1931 y su cueva del siglo XVII; Mario Sampedro incorpora actividad en
+  Cadalvín 2026.
+- La Cabaña Blanca concreta miel pura; Gigorro, leche cruda del rebaño propio y
+  curación; Oro Madrid, variedad cornicabra y formatos; Santa Lucía, las dos
+  variedades y los formatos publicados en su ficha vigente.
+
+Snapshot: 231 filas; 226 `verificado`, 5 `parcial`; venta online 182 `sí`, 41
+`no` y 8 `no comprobado`.

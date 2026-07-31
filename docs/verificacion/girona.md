@@ -80,3 +80,25 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
   última comprobación general 2026-06-15) y los 9 `no comprobado`.
 - Vigilar los 2 `parcial` (Tramuntana, Can Solivera) por señales de cierre definitivo.
 - La nota de candidatos de Girona quedó cerrada; pistas nuevas → `docs/candidates/girona.md`.
+
+## Mantenimiento V-03 · mejora de los nueve residuales (2026-07-31)
+
+Los nueve casos se vuelven a contrastar y conservan `no comprobado`: siguen
+existiendo reventa independiente, referencias agotadas, un carrito incompleto,
+un marketplace sin ficha, timeout, TLS inválido o un enlace de compra roto. No
+hay nueva evidencia suficiente para convertir esas incertidumbres técnicas en
+un `sí` o un `no`.
+
+Mejoras materiales del CSV:
+
+- Red Passion Berries pasa de `Otros` a `Fruta y verdura` y concreta frambuesa
+  fresca y mermelada de producción propia.
+- Molí de Ger incorpora cinco quesos de su gama vigente.
+- Oliver Conti sustituye el móvil heredado por el teléfono publicado por la DO,
+  añade correo y detalla sus gamas Indispensable, Gewürztraminer y Cabernet
+  Franc.
+- Mas Patiràs incorpora seis marcas, variedades, superficie de viñedo y visitas
+  concertadas.
+
+Snapshot sin cambios artificiales de estado: 241 filas; 239 `verificado`, 2
+`parcial`; venta online 131 `sí`, 101 `no` y 9 `no comprobado`.
