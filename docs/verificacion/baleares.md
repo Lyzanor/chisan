@@ -917,3 +917,38 @@ tienda futura, Familia Marí Mayans no tiene producto, Son Mut Nou está en
 mantenimiento, Can Rich y El Zagal remiten a revendedores, y varias páginas son
 carcasas o fallos técnicos. **Estado tras BAL-19:** 156 filas; 126 `verificado`,
 30 `parcial`; venta online en **82 `sí`**, **33 `no`** y **41 `no comprobado`**.
+
+## BAL-20 — Ola 3 · cuarta pasada y depuración editorial (2026-07-31)
+
+Cuarta pasada focalizada sobre **16 fichas** de la cola residual, priorizando
+web propia, señales comerciales explícitas y datos que podían mejorar la ficha
+aunque la venta continuase abierta. La cola baja en **10** productores:
+
+- **4 ventas remotas confirmadas:** Salinera Española - Salinas de Ibiza por
+  ecommerce propio; El Zagal y Can Rich mediante marketplaces enlazados por el
+  productor; Son Piris por pedido telefónico con reparto local y peninsular.
+- **5 `no` revisados:** C'an Coleto, Bodega Ribas, Bodega Son Mayol, Gin
+  Xoriguer y Celler Son Alegre publican catálogo, visita o tienda física, pero
+  no un mecanismo público actual de pedido remoto.
+- **1 purga `out-of-scope`:** Finca Eco Son Barrina cerró su tienda ecológica
+  en 2016 y su actividad pública actual es educativa y cultural; la web afirma
+  que los alimentos de la finca son para consumo familiar.
+
+La pasada corrige también contenido de producto: gamas actuales en Ribas, Son
+Mayol, La Luna, El Zagal, Gin Xoriguer, Familia Marí Mayans y Can Rich; formatos
+de cuarta gama de Illacamp; y la identidad del operador de las salinas de Ibiza,
+que pasa de la marca alemana ajena `SAL DE IBIZA GmbH` a **Salinera Española**,
+con su dirección, teléfono, correo y tienda propios. Se actualizan además el
+dominio de Illacamp, el teléfono de Can Rich, el camí, móvil y correo de Son
+Piris, el HTTPS de Lluriach y el horario de Formatgeria Es Collet.
+
+Se conservan como `no comprobado` los fallos reales: la tienda de Toni Gelabert
+termina en error de aplicación, La Luna aún anuncia una tienda futura, la
+tienda de Familia Marí Mayans no contiene productos y Lluriach conserva un
+contacto de plantilla. Un botón de contacto o un dominio roto no se convierte
+en `no` por descarte.
+
+**Estado tras BAL-20:** 155 filas; 126 `verificado`, 29 `parcial`, 0
+`pendiente`; venta online en **86 `sí`**, **38 `no`** y **31 `no comprobado`**.
+Las demás colas editoriales permanecen en cero; las 75 fichas sin imagen son
+señal de enriquecimiento y no bloqueo de esta ola.
