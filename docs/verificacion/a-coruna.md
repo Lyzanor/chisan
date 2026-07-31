@@ -728,3 +728,22 @@ que sus filas contaminen los bloques por categoría.
 - Los siete residuales no se maquillan como `no`: incluyen dominios caídos,
   comercio antiguo contradictorio, reventa independiente o reparto sin método
   público de pedido.
+
+### Residual corto (2026-07-31)
+
+- Se revisan seis perfiles y **Lúa de Dexo** pasa a `Venta online=no`: su canal
+  oficial está activo y las fuentes recientes confirman venta directa y catas,
+  pero no publican enlace, teléfono ni instrucción de pedido remoto. La ficha
+  incorpora más de 280 variedades, Amaralla, Dexchup, mermeladas y tomates
+  confitados.
+- Los otros cinco no se fuerzan. Lorenzo Bescansa enlaza únicamente revendedores
+  independientes; el checkout de Melanger llega hasta el carrito pero no ofrece
+  método de pago; Casa Xacobe solo tiene un WhatsApp generado por un directorio;
+  Daterra conserva el dominio caído; y A Horta de Porta muestra actividad social
+  antigua y una contradicción de ubicación.
+- La mejora editorial incluye además el Facebook oficial de Lorenzo Bescansa,
+  el horario y siete especialidades de Casa Xacobe, la identidad y línea
+  ecológica de **Daterra do País · Horta Daterra**, y la retirada del Instagram
+  no disponible de Melanger.
+- Snapshot: 147 filas; 122 `verificado`, 25 `parcial`; venta 74 `sí`, 68 `no` y
+  5 `no comprobado`.

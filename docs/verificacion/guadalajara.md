@@ -55,3 +55,17 @@ Seis de las 62 filas llegaban sin registro de evidencia y cinco de ellas tenían
   antigua de Quesos Seguntino ya no resuelve y su canal social no demuestra un
   mecanismo vigente. Los tres siguen `no comprobado` por bloqueo material.
 - 24 de 61 filas sin imagen y 13 sin web.
+
+## Ola 3 · residual corto (2026-07-31)
+
+- Se reabren los dos casos que quedaban en `no comprobado` para mejorar la
+  ficha, no para forzar la decisión. **Nectarius** recupera su dominio oficial
+  vigente (`nectarius.net`), seis floraciones DOP, identidad y descripción
+  propias, y sube a `verificado`. Su catálogo muestra precios y carrito, pero
+  el modo catálogo oculta la compra y no deja un checkout usable: sigue
+  correctamente en `no comprobado`.
+- **Quesos Seguntino** incorpora el teléfono y correo publicados por su perfil
+  oficial. La última actividad visible es de 2021 y la antigua tienda sigue
+  caída, por lo que conserva el techo `parcial` y la venta sin resolver.
+- Snapshot: 61 filas; 53 `verificado`, 8 `parcial`; venta 53 `sí`, 6 `no` y
+  2 `no comprobado`.

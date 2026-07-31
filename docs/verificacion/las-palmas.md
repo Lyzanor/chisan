@@ -197,3 +197,22 @@ residuales explicados y `npx pnpm verify:data` correcto.
   contradictoria).
 - Snapshot provincial: 51 `verificado`, 49 `parcial`; venta 34 `sí`, 62 `no`
   y 4 `no comprobado`.
+
+### Residual corto (2026-07-31)
+
+- Los cuatro residuales se revisan de nuevo con fuentes actuales. **El
+  Chupadero** se retira: hoy es un bar/restaurante temporalmente cerrado por
+  reforma y la gastroguía identifica el vino servido como Los Perdomos, de
+  Bodegas Reymar; no hay una unidad productora comercial propia que deba seguir
+  en el CSV.
+- **Quesería Tinache** conserva producción y gana un punto de venta útil: puesto
+  12 del Mercado Agrícola y Artesanal de Mancha Blanca, domingos de 09:00 a
+  14:00. La antigua ficha de Calle Tajaste figura cerrada. El canal actual es
+  físico y `Venta online` se resuelve como `no`.
+- **Quesos La Villa** pierde el horario de visita y la web rota: la propia
+  quesería avisó de que la explotación ya no recibe público y distribuye en
+  SPAR. El fallo TLS impide cerrar la venta remota. **Puro Rofe** mantiene el
+  mismo bloqueo por dominio caído; ambos quedan honestamente en
+  `no comprobado`.
+- Snapshot: 99 filas; 51 `verificado`, 48 `parcial`; venta 34 `sí`, 63 `no` y
+  2 `no comprobado`.
