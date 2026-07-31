@@ -954,3 +954,36 @@ Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
   accionables y siete fichas conservadas con nombre, productos, descripción o
   contacto mejorados. `descripcion-generica` baja de **95 a 86**,
   `evidencia-prestada` de **29 a 27** y `venta-sin-resolver` de **39 a 32**.
+
+### Tanda AV-V-5 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **133 filas** · 124 `verificado`
+  · 9 `parcial` · venta 83 `sí` · 28 `no` · 22 `no comprobado`.
+- Se purgan **3 falsos productores**. **La Huerta de Xelo** es en realidad una
+  zona de senderismo. **Legumbres Julián Muñoz e hijos** figura como mayorista,
+  sin producción propia acreditada. **Legumbres Nuestra Señora del Rosario**
+  aparece como comercio y su mismo teléfono se usaba para vender alubias,
+  garbanzos y lentejas para siembra, no alimentos elaborados bajo marca propia.
+- **PavosBio · La Solanilla** pasa a `sí` (`ecommerce`) y la ficha se reconstruye
+  alrededor de la unidad productiva real: pavo ecológico de pasto, huevos y
+  caldos, sacrificio y despiece propios, venta exclusivamente online, dirección,
+  teléfono, correo, Instagram, Maps y coordenadas actuales. La web de la escuela
+  regenerativa y el pin del alojamiento dejan de sustituir a la granja.
+- **Quesería Artesanal Amaltea** pasa a `sí` (`email`): su perfil propio ofrece
+  envío a domicilio y pedidos por correo. Se añaden el correo y Facebook
+  oficiales y se concreta que Juan elabora queso artesanal con su rebaño de
+  cabras en Casas del Rey y ofrece visitas y catas concertadas.
+- VHOLA, Umbrías de Gredos, Montes Bravos, Quesos Miguel y Para Legumbres La
+  Castellana pasan a `no` tras revisar sus canales actuales sin encontrar pedido
+  remoto publicado. En VHOLA se sustituye el despacho de San Segundo por el
+  obrador de Río Pisuerga y se incorporan maestros heladeros, gama, contactos y
+  coordenadas; Umbrías corrige La Cuesta 35 → 28 y añade ganadería propia y
+  correo; Montes Bravos añade rebaño, cuatro generaciones, gama, dirección y
+  correo, manteniendo fuera el dominio hoy secuestrado por casinos.
+- **Para Legumbres La Castellana** baja a `parcial`: la marca sigue vigente para
+  legumbres secas y cocidas, pero la presencia pública solo acredita un
+  mayorista en Velayos, no elaboración propia. Se conserva porque esa duda no
+  prueba una exclusión y queda expuesta en la descripción.
+- El lote resuelve las diez ventas y sustituye las diez descripciones de
+  plantilla o elimina la fila falsa. `descripcion-generica` baja de **86 a 76**,
+  `evidencia-prestada` de **27 a 23** y `venta-sin-resolver` de **32 a 22**.
