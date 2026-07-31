@@ -46,6 +46,11 @@ cola de lotes y las excepciones que evitan repetir investigación.
   `email|telefono`), 2 a `no` y 3 conservan `no comprobado` por bloqueo real.
   Se corrige la identidad cruzada `Obrador Uría` → `Masamadre` en Fuensalida y
   el dominio aparcado de Montenoble por su web propia vigente.
+- **TOL-W3-02 · venta sin resolver — cerrado 2026-07-31.** 16 filas
+  reeditadas: 10 pasan a venta `sí` (9 `ecommerce` y 1 por `email`), 2 a `no`
+  y 4 conservan `no comprobado` por un impedimento observado. Se incorporan
+  las migraciones De Hualdo y Latúe, la tienda actual de Peñas Negras y webs,
+  contactos, ubicaciones, productos y descripciones más precisos.
 
 ## Cola congelada
 
@@ -200,13 +205,34 @@ No se renumera si una fila se purga o fusiona.
 `finca-loranque-bargas`, `bodegas-mas-que-vinos-cabanas-de-yepes`,
 `bodegas-martue-pago-campo-de-la-guardia-la-guardia`.
 
+### TOL-W3-02 · Venta sin resolver (16) — cerrado 2026-07-31
+
+`quesos-de-hualdo-el-carpio-de-tajo`,
+`casas-de-hualdo-el-carpio-de-tajo`, `la-pontezuela-los-navalmorales`,
+`riet-vell-legumbres-ecologicas-villacanas`, `finca-constancia-otero`,
+`felix-solis-la-puebla-la-puebla-de-almoradiel`,
+`bodegas-leganza-quintanar-de-la-orden`,
+`bodegas-latue-villanueva-de-alcardete`,
+`bodegas-verduguez-villanueva-de-alcardete`,
+`industrias-carnicas-tello-totanes`, `delaviuda-alimentacion-sonseca`,
+`aceites-umbrion-madridejos`, `quesos-perez-arquero-ocana`,
+`quesos-reino-madridejos`, `cotoal-el-carpio-de-tajo`,
+`artesanos-penas-negras-de-mora-mora`.
+
 ## Excepciones activas
 
-- `parcial` es cierre válido: no se reabre Fuentevieja, Quesos de Hualdo o
-  Peñas Negras sin una fuente propia nuevamente accesible.
+- `parcial` es cierre válido: no se reabre Fuentevieja sin una fuente propia
+  nuevamente accesible.
 - Los registros de queso y vino prueban identidad/localización, pero sin fuente
   verificadora viva topan en `parcial`.
 - Montenoble conserva `no comprobado`: la web propia nueva muestra catálogo,
   precios y condiciones, pero las fichas revisadas no ofrecen control de
   compra. Cuevas Santoyo también queda abierto porque su antigua tienda
   redirige al portal genérico del proveedor.
+- Latúe conserva `no comprobado`: la tienda publica catálogo y precios, pero la
+  plantilla oculta los controles de compra. COTOAL mantiene expresamente su
+  tienda en mantenimiento temporal.
+- Verduguez queda `parcial` y sin web: el dominio sirve una página de proveedor
+  incompatible, mientras las fuentes públicas solo apoyan identidad y
+  actividad. Quesos Reino sigue `parcial` sin evidencia reciente de pedido
+  remoto.
