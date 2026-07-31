@@ -106,3 +106,39 @@ Fuentes destacadas: <https://coopjerica.es/tienda/>,
 <https://www.queseriatotdepoble.com/productos.html>,
 <https://www.masiaelsmasets.es/productos-lacteos-artesanos/> y
 <https://quercusandtruffles.com/mayoristas-de-trufas/>.
+
+## Ola 3 · banda 41–60 (2026-07-31)
+
+- La tercera revisión reduce el residual de venta de **44 a 33** filas: se
+  demuestran cuatro canales nuevos (`sí`) y siete negocios sin pedido remoto
+  (`no`). Quedan **83 `sí` · 34 `no` · 33 `no comprobado`**.
+- **Bodega Les Useres** pasa a `sí|marketplace`: la cooperativa territorial
+  DePenyagolosa vende siete referencias de la bodega con precios, variantes y
+  carrito. Brancal Mermelada, Turrones Barberá y Terreta Dolça también quedan
+  asociados a mecanismos de compra concretos; Horno Estellés se revalida y
+  enriquece sin alterar su venta ya resuelta.
+- Se cierran como `no` los canales revisados de Nature Tasty, Cooperativa de
+  Vilafamés, Almazara Sierra Espadán, Bodega Vizuecos, Carnicería R. Gallego y
+  Cooperativa Benasalense y Horno Romero. En R. Gallego la propia web afirma
+  que la venta es exclusivamente presencial; AVELLASSAL describe el e-commerce
+  de la Benasalense como una actuación futura.
+- Se mejoran **21 filas del CSV**. Destacan la dirección, teléfono, correo y
+  coordenadas reales de R. Gallego; el surtido y contacto de Olis Cuquello; las
+  variedades, nave, teléfono y coordenadas de Nature Tasty; y catálogos
+  concretos para Les Useres, Vizuecos, Blasco de Catí, Terreta Dolça y otros
+  obradores. Las diez filas cuyo `verificado` dependía solo de Maps reciben
+  evidencia propia o bajan justificadamente a `parcial`.
+- Corrección de identidad: `horno-el-romano-almedijar` pasa mediante registro
+  `merge` a **`horno-el-romano-segorbe`**. La ficha anterior interpretó como
+  domicilio un texto narrativo sobre Almedíjar; la asociación artesanal, los
+  directorios actuales y las redes coinciden en Calle del Romano 36, Segorbe.
+- Se mantienen `no comprobado` los casos con incertidumbre técnica o comercial:
+  Agut continúa en mantenimiento, Rey's devuelve 404, la tienda nueva de Olis
+  Cuquello no resuelve DNS y El Mollet responde 503. No se convierten fallos de
+  acceso en falsos `no`.
+
+Fuentes destacadas: <https://depenyagolosa.com/proveedores/bodega-les-useres/>,
+<https://rgallego.com/?page_id=1113>,
+<https://cooperativesagroalimentariescv.com/projecte/avellassal/>,
+<https://artesanosdelpalancia.com/horno-el-romano/> y
+<https://www.oliscuquello.com/index.php/en/the-oils/cuquello-100>.
