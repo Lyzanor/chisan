@@ -548,3 +548,25 @@ Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
 - Aceites Vizcántar y El Gallo pasan a `verificado` al estar de nuevo legibles
   sus fuentes propias. Los bloqueos, mantenimientos y tiendas sin producto
   permanecen en `no comprobado`.
+
+### Tanda CO-V-2 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **198 filas** · 177 `verificado`
+  · 21 `parcial` · venta 137 `sí` · 6 `no` · 55 `no comprobado`.
+- Se resuelven siete decisiones de venta: Vénoor Délices pasa a `sí`
+  (`ecommerce`) y Almazara Adamuz, Legumbres Ortiz, Ibérico de Cardeña, Chips
+  by Raquel, Pastrami Romera Martínez y Buonisssimo Gelato pasan a `no` tras
+  revisar sus canales propios actuales.
+- Vescera Délice se actualiza a **Vénoor Délices**: nuevo slug, marca,
+  categoría, gama, web, redes y contactos, conservando un registro `merge`.
+  La tienda propia ofrece carrito, precios y envíos 24/48 h.
+- Se purga **Bodegas Montes y Compañía** (`not-producer`): la sociedad consta
+  como mayorista de vinos y vinagres y la dirección es un punto de venta, sin
+  bodega, elaboración propia ni marca productora localizada.
+- Se corrige Legumbres Ortiz del número 35 al **55** del polígono El
+  Junquillo; Pastrami incorpora teléfono público; Olisur pierde un Instagram
+  genérico sin atribución fiable. Ibéricos Azoche y Olisur permanecen en
+  `no comprobado` por limitaciones técnicas o ambigüedad del canal.
+- Se concretan productos y actividad en nueve fichas. La cola
+  `descripcion-generica` baja de **81 a 75** y `venta-sin-resolver` de **63 a
+  55**.
