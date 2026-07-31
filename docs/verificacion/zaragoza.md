@@ -45,14 +45,25 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ```text
 Estado de pasada: mantenimiento
-Base: 058834e
+Base: 547832b
 Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
   canal-sin-clasificar, descripcion-generica, categoria-variante,
   venta-sin-resolver (check:defects)
-Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 a ZA-V-4 cerrados)
+Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 a ZA-V-5 cerrados)
 Alcance: —
 Última actualización: 2026-07-31
 ```
+
+- **Lote ZA-V-5 (2026-07-31, carril V).** 10 fichas revisadas: la Almazara
+  Virgen del Castillo pasa a `sí` por entrega a domicilio y pedido telefónico;
+  Agrotrain, Ajos Verdes El Sixto y Alejandro y Miguel quedan en `no` tras
+  revisar sus canales públicos. Delpont, Muniente, Apiambel, Ajos del Moncayo
+  y Alium conservan `no comprobado` por catálogo sin checkout, 403 o dominios
+  caídos. Agrícola Montejalón se purga como `out-of-scope`: era una sociedad
+  agraria sin oferta propia y su ficha pública mezclaba contactos y marcas de
+  Agrícola Gil. Además, Agrotrain corrige dirección, gama, correo y certificaciones
+  y sube a `verificado`; Agustín Pellicer recupera su identidad Apiambel; Aniñón
+  concreta coupage y nave; las otras fichas mejoran productos o descripción.
 
 - **Lote ZA-V-4 (2026-07-31, carril V).** 10 fichas con evidencia antigua
   revisadas: + Q Carne y Aceites Josa pasan a `sí` por entrega a domicilio y
