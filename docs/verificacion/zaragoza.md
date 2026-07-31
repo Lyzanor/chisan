@@ -45,14 +45,22 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ```text
 Estado de pasada: mantenimiento
-Base: d11fea8
+Base: d13b2c1
 Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
   canal-sin-clasificar, descripcion-generica, categoria-variante,
   venta-sin-resolver (check:defects)
-Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 cerrados)
+Lote activo: — (ZA-R1-1, ZA-R1-2, ZA-V-1 y ZA-V-2 cerrados)
 Alcance: —
 Última actualización: 2026-07-31
 ```
+
+- **Lote ZA-V-2 (2026-07-31, carril V).** 10 productores no vinícolas
+  revisados: Las Cardelinas, Ajo de Arándiga y Pastas Romero quedan resueltos
+  como `no`; los otros 7 permanecen `no comprobado` por una razón explícita y
+  actual (modo catálogo, tienda en mantenimiento o vacía, TLS, dominio
+  aparcado/NXDOMAIN o afirmación de venta sin mecanismo visible). Las diez
+  fichas mejoran gama o descripción y además se recuperan el correo de Melada,
+  el código postal de Pastas Romero y productos concretos antes omitidos.
 
 - **Lote ZA-V-1 (2026-07-31, carril V).** 12 bodegas revisadas: 5 ventas
   resueltas como `no`, 2 como `sí` (Libre y Salvaje por `ecommerce` de bonos de
