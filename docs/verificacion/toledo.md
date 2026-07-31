@@ -51,6 +51,12 @@ cola de lotes y las excepciones que evitan repetir investigación.
   y 4 conservan `no comprobado` por un impedimento observado. Se incorporan
   las migraciones De Hualdo y Latúe, la tienda actual de Peñas Negras y webs,
   contactos, ubicaciones, productos y descripciones más precisos.
+- **TOL-W3-03 · venta sin resolver + descripción genérica — cerrado
+  2026-07-31.** 15 filas reeditadas: 4 pasan a venta `sí` por `ecommerce`, 9
+  a `no` tras revisar sus canales actuales y 2 conservan `no comprobado` por
+  fallos técnicos reproducibles. Las 15 pierden la descripción plantilla; se
+  corrigen productos, direcciones, contactos y 14 webs prestadas, obsoletas o
+  rotas.
 
 ## Cola congelada
 
@@ -219,6 +225,22 @@ No se renumera si una fila se purga o fusiona.
 `quesos-reino-madridejos`, `cotoal-el-carpio-de-tajo`,
 `artesanos-penas-negras-de-mora-mora`.
 
+### TOL-W3-03 · Venta sin resolver + descripción genérica (15) — cerrado 2026-07-31
+
+`bodegas-y-vinedos-gonzalez-camarena`,
+`bodegas-hibeu-la-torre-de-esteban-hambran`,
+`cooperativa-san-roque-escalona`,
+`cooperativa-santo-domingo-de-guzman-valmojado`,
+`vinicola-delgado-la-torre-de-esteban-hambran`,
+`viticola-mentridana-mentrida`, `bodegas-atalaque-fuensalida`,
+`cooperativa-san-miguel-arcangel-montearagon`,
+`cooperativa-ntra-sra-de-gracia-casarrubios-del-monte`,
+`finca-traspinedo-los-cerralbos`,
+`bodegas-la-cerca-casarrubios-del-monte`,
+`cooperativa-virgen-de-la-oliva-almonacid-de-toledo`,
+`cecilio-mingo-herrero-cabezamesada`, `cooperativa-la-fe-camunas`,
+`sociedad-cooperativa-la-centinela-consuegra`.
+
 ## Excepciones activas
 
 - `parcial` es cierre válido: no se reabre Fuentevieja sin una fuente propia
@@ -236,3 +258,7 @@ No se renumera si una fila se purga o fusiona.
   incompatible, mientras las fuentes públicas solo apoyan identidad y
   actividad. Quesos Reino sigue `parcial` sin evidencia reciente de pedido
   remoto.
+- Bodegas y Viñedos González conserva `no comprobado`: `vinobispo.com` usa un
+  certificado autofirmado y, al sortearlo, devuelve una página de error del
+  administrador. Bodegas Hibeu también queda abierta porque su dominio propio
+  responde HTTP 500 con un error crítico de WordPress.
