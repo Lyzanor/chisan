@@ -41,6 +41,11 @@ cola de lotes y las excepciones que evitan repetir investigación.
   compra o pedido remoto.
 - **Cierre provincial: 172 filas; 88 `verificado`, 84 `parcial` y 0
   `pendiente`.**
+- **TOL-W3-01 · venta sin resolver — cerrado 2026-07-31.** 15 filas
+  reeditadas: 10 pasan a venta `sí` (8 `ecommerce`, 1 `marketplace` y 1 por
+  `email|telefono`), 2 a `no` y 3 conservan `no comprobado` por bloqueo real.
+  Se corrige la identidad cruzada `Obrador Uría` → `Masamadre` en Fuensalida y
+  el dominio aparcado de Montenoble por su web propia vigente.
 
 ## Cola congelada
 
@@ -77,7 +82,7 @@ No se renumera si una fila se purga o fusiona.
 `mazapanes-peces-consuegra`, `pasteleria-plaza-mayor-ocana`,
 `pasteleria-gito-la-puebla-de-montalban`, `panaderia-manzano-toledo`,
 `el-obrador-del-abuelo-toledo`, `pan-para-pepe-toledo`,
-`obrador-uria-fuensalida`, `xocolalla-santa-olalla`,
+`masamadre-fuensalida`, `xocolalla-santa-olalla`,
 `delaviuda-alimentacion-sonseca`.
 
 ### TOL-07 · Cerveza, miel, azafrán y legumbres (12) — cerrado 2026-07-25
@@ -182,12 +187,26 @@ No se renumera si una fila se purga o fusiona.
 `marques-de-grinon-dominio-de-valdepusa-malpica-de-tajo`,
 `bodegas-martue-pago-campo-de-la-guardia-la-guardia`.
 
+### TOL-W3-01 · Venta sin resolver (15) — cerrado 2026-07-31
+
+`cooperativa-ntra-sra-de-la-antigua-mora`,
+`almazara-villa-de-orgaz-orgaz`,
+`cerveza-la-sagra-numancia-de-la-sagra`,
+`alonso-cuesta-la-torre-de-esteban-hambran`, `lopez-campos-valmojado`,
+`bodegas-barreda-corral-de-almaguer`, `bodegas-montenoble-noblejas`,
+`cuevas-santoyo-villanueva-de-alcardete`,
+`bodegas-alcardet-villanueva-de-alcardete`, `xocolalla-santa-olalla`,
+`panaderia-manzano-toledo`, `masamadre-fuensalida`,
+`finca-loranque-bargas`, `bodegas-mas-que-vinos-cabanas-de-yepes`,
+`bodegas-martue-pago-campo-de-la-guardia-la-guardia`.
+
 ## Excepciones activas
 
 - `parcial` es cierre válido: no se reabre Fuentevieja, Quesos de Hualdo o
   Peñas Negras sin una fuente propia nuevamente accesible.
 - Los registros de queso y vino prueban identidad/localización, pero sin fuente
   verificadora viva topan en `parcial`.
-- La auditoría de calidad conserva 78 avisos preexistentes por la descripción
-  genérica compartida de las bodegas. Es trabajo de enriquecimiento editorial,
-  no una decisión pendiente de identidad o estado.
+- Montenoble conserva `no comprobado`: la web propia nueva muestra catálogo,
+  precios y condiciones, pero las fichas revisadas no ofrecen control de
+  compra. Cuevas Santoyo también queda abierto porque su antigua tienda
+  redirige al portal genérico del proveedor.
