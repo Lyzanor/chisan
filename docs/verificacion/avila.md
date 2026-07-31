@@ -871,3 +871,29 @@ Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
   parcela de Embutidos Soriano, el horario y correo de PorkyÁvila y la sede de
   Elgorriaga en la N-110 km 259. `descripcion-generica` baja de **118 a 108**
   y `venta-sin-resolver` de **64 a 56**.
+
+### Tanda AV-V-2 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **139 filas** · 132 `verificado`
+  · 7 `parcial` · venta 79 `sí` · 14 `no` · 46 `no comprobado`.
+- Se purga **Aves y Huevos Sánchez** como `not-producer`: su web actual la
+  presenta como distribuidora para profesionales y afirma que comercializa
+  exclusivamente huevos de Avícola Redondo, productor ya presente en el CSV.
+- **Quesería de Castilla** pasa a `sí` (`telefono|email`): Ávila Auténtica
+  confirma venta a particulares de Península y Baleares con logística inferior
+  a 48 horas. Se corrigen nombre, correo y productos, se eliminan la web y las
+  redes de la IGP Queso Castellano que se le habían atribuido por error y se
+  baja a `parcial` al no disponer de una fuente propia vigente.
+- La Heladería Artesana, Topping, Campesina Tormes, Ganaderos de Caprino,
+  Panadería de Flora, La Candelaria, Garrosa y Flores y Jiménez pasan a `no`
+  tras revisar sus canales actuales: hay catálogo, contacto, tiendas, cita
+  previa o reparto local, pero no un mecanismo de pedido remoto vigente. En La
+  Heladería Artesana el pedido web figura expresamente como «próximamente
+  disponible»; Glovo para Topping solo cubre entrega local en Ávila.
+- Las nueve fichas conservadas sustituyen descripciones de plantilla por
+  productos, trayectoria y métodos concretos. Además se corrigen dominio y
+  correo de La Heladería Artesana; teléfono, correo y horario de Campesina y
+  Flores y Jiménez; sede y horario de Ganaderos de Caprino; y se retira el
+  Facebook general del Ayuntamiento que figuraba en Garrosa.
+  `descripcion-generica` baja de **108 a 105** y `venta-sin-resolver` de **56
+  a 46**.
