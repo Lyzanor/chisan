@@ -86,7 +86,7 @@ No se renumera si una fila se purga o fusiona.
 `cervezas-domus-toledo`, `la-balluca-cerveza-artesana-toledo`,
 `miel-castiza-toledo`, `apicola-el-nebrillo-los-navalmorales`,
 `miel-mieleko-menasalbas`, `miel-de-melque-san-martin-de-montalban`,
-`zaffralia-madridejos`, `la-rosera-camunas`,
+`zaffralia-madridejos`, `azafran-1994-madridejos`,
 `riet-vell-legumbres-ecologicas-villacanas`,
 `legumbres-selectas-la-posada-cabanas-de-la-sagra`.
 
