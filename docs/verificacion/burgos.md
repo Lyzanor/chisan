@@ -1656,6 +1656,46 @@ muestra contenido de viajes ajeno al productor. Se podrá retirar ese enlace en
 un lote de identidad, pero el secuestro del dominio no demuestra por sí solo
 la ausencia de venta remota.
 
+### Ola 3 · venta sin resolver, cuarta tanda (18 revisadas) — ✅ 2026-07-31
+
+Cuarta tanda provincial: **10** estados de venta resueltos, **1 sí** y **9
+no**; además, **Vinos Sinceros** se purga al confirmarse que es una
+distribuidora y no la bodega productora que describía la fila. Otras **7**
+fichas se mejoran y permanecen honestamente en `no comprobado` porque sus
+únicas webs son antiguas, están en construcción o sufren fallos técnicos. El
+residual de Burgos baja de **108 a 97**. Estado tras la tanda: **301 filas** ·
+**224 verificado / 77 parcial** · VO **154 sí / 50 no / 97 no comprobado**.
+
+La revisión cambia bastante más que las etiquetas: se reemplazan descripciones
+genéricas o truncadas, se concretan catálogos, se normalizan las direcciones y
+enlaces cartográficos y se actualizan contactos de Natura Suko, Bajo Cero,
+Demanda Vacuno, Hermanos Masa y Magdalenas de las Heras. Apicast y El Obrador
+del Convento suben de `parcial` a `verificado` al volver a estar accesible
+evidencia propia de identidad, elaboración y municipio.
+
+```text
+hermanos-masa-villalbilla-de-burgos · sí (ecommerce) — producto añadido, portes calculados y checkout con facturación, pedido y pago con tarjeta
+bodegas-la-horra-la-horra · no — tres vinos, proyecto, visitas, eventos y redes, sin tienda ni pedido remoto
+cerveceria-bajo-cero-burgos · no — cuatro estilos, proceso y contacto, sin precio, carrito ni pedido
+demanda-vacuno-burgos · no — cría, productos, distribución y puntos físicos, sin mecanismo remoto para el cliente
+magdalenas-de-las-heras-aranda-de-duero · no — seis familias de producto, actualidad de 2026 y contacto, sin tienda ni pedido
+apicast-barbadillo-del-mercado · no — catálogo y ofertas B2B con formulario general, pero sin instrucción de pedido por un canal concreto
+hernando-hurtado-barbadillo-del-mercado · no — web corporativa vigente de envasado mayorista, sin tienda ni pedido remoto
+miel-de-frias-frias · no — miel y apiturismo con reserva de visita, sin venta remota del producto
+natura-suko-saldana-de-burgos · no — catálogo vigente para restauración y particulares, sin precio, carrito ni pedido
+ovapiscis-tubilla-del-agua · no — producción B2B de huevas y contacto general, sin mecanismo de pedido publicado
+vinos-sinceros-covarrubias · purga (not-producer) — la web se define como distribuidora y enlaza la tienda independiente Vinoval
+```
+
+Permanecen en `no comprobado` Adolfo Martínez Piernavieja, Embutidos
+Contreras, Embutidos Mari Paz, Morcilla Artesana de Lerma, Morcilla Ortega,
+Quesos Ugala y El Obrador del Convento. En este último la portada propia ya
+identifica el obrador, pero la ruta de tienda muestra contenido de apuestas de
+Macao: se documenta el secuestro técnico y no se convierte en venta válida ni
+en una falsa ausencia de venta. Los blogs de Adolfo y Contreras datan de
+2005-2006 y 2011, respectivamente; su antigüedad tampoco sirve para afirmar un
+`no` actual.
+
 ## Flujo por lote
 
 1. Antes de empezar:
