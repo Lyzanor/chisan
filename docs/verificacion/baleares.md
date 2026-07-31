@@ -895,3 +895,25 @@ decisiones tienen evidencia actualizada y canal accionable.
 
 El lote conjunto **Huelva + Baleares** reduce la cola global de Ola 3 en **23**
 filas, de 4.002 a **3.979**.
+
+## BAL-19 — Ola 3 · tercera pasada de venta (2026-07-31)
+
+Tercera pasada sobre las **82 ventas aún sin resolver**. Se cierran **41**:
+
+- **3 ecommerce propios:** AVA Vï, Cooperativa Pagesa de Pollença y Pastisseria
+  Artesana Lluís Febrer muestran producto, precio y cesta operativa.
+- **5 pedidos asistidos:** Ca Sa Padrina por WhatsApp; Son Naava por correo;
+  Quesería Binibeca, Sa Caldera y Son Puig por correo o teléfono.
+- **33 `no`:** sus webs oficiales vigentes ofrecen el catálogo, las visitas o
+  la venta física, pero no un mecanismo público de pedido remoto.
+
+Se corrigen datos que sí llegan a la ficha: teléfono y correo actuales de la
+Cooperativa de Pollença, teléfono de Binibeca y, en Lluís Febrer, número de
+calle, teléfono, correo, gama y el dato vigente de que desde 2024 el obrador
+trabaja exclusivamente sin gluten.
+
+No se fuerza la docena de falsos positivos que quedan: La Luna solo anuncia una
+tienda futura, Familia Marí Mayans no tiene producto, Son Mut Nou está en
+mantenimiento, Can Rich y El Zagal remiten a revendedores, y varias páginas son
+carcasas o fallos técnicos. **Estado tras BAL-19:** 156 filas; 126 `verificado`,
+30 `parcial`; venta online en **82 `sí`**, **33 `no`** y **41 `no comprobado`**.

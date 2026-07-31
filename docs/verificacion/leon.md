@@ -1025,3 +1025,35 @@ positivas tienen canal y evidencia actualizados.
 - **Altas pendientes detectadas al paso**: la bodega y el obrador de conservas de
   **Prada a Tope en el Palacio de Canedo (Arganza)**, cuya fila purgada era su
   tienda de León capital, no están en el CSV.
+
+## LE-18 — Ola 3 · tercera pasada de venta (2026-07-31)
+
+Tercera pasada sobre las **86 ventas aún sin resolver**. Se cierran **38**:
+
+- **1 ecommerce propio:** Labejazul vuelve a tener mieles con precio y cesta
+  activa.
+- **6 pedidos asistidos:** Gran Bierzo tramita el pedido mediante formulario y
+  presupuesto; Vinos de Arganza, Confiterías El Bernesga, La Alcancía, Quesos
+  La Prada y Quesos La Presa publican una instrucción específica por teléfono,
+  correo o WhatsApp. La Presa confirma además envíos por paquetería.
+- **31 `no`:** webs oficiales completas con catálogo/contacto, pero sin un
+  mecanismo público de pedido remoto.
+
+La pasada resuelve también los dos avisos de evidencia prestada. Panadería El
+Manjar incorpora su página oficial, correo, horno de leña y gama real; Miel
+Traslapeña baja a `parcial`, porque el directorio institucional y Maps no
+justifican por sí solos el techo `verificado`. Chocodulce Cabezas identifica en
+su propia web a Mantecadas Los Maragatos como producto de la casa: la fila pasa
+a `verificado` y deja de presentar una marca aislada como si fuera el productor.
+
+Se mantienen sin forzar Leyenda del Páramo (tienda HTTP 500), Estévez (solo
+reventa de tercero), Coladilla (tienda 404), Unión Panadera (tienda cerrada) y
+los dominios en mantenimiento. La Huerta de San Martín de Torres sigue
+`pendiente`: no apareció evidencia nueva para verificarla ni para purgarla.
+
+**Estado tras LE-18:** 207 filas; 163 `verificado`, 43 `parcial`, 1 `pendiente`;
+venta online en **127 `sí`**, **32 `no`** y **48 `no comprobado`**.
+
+El lote conjunto **Huelva + Baleares + León** resuelve **112 de 249** filas. La
+cola global de Ola 3 baja de 3.482 a **3.370 de 4.544**; quedan **1.174 resueltas
+(25,8 %)**.

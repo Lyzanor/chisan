@@ -697,3 +697,25 @@ casos permanecen honestamente en `no comprobado`.
 **Estado tras HU-13:** 150 filas; 116 `verificado`, 34 `parcial`, 0
 `pendiente`; venta online en **68 `sí`**, 1 `no` y **81 `no comprobado`**. Las 7
 decisiones tienen evidencia actualizada y canal accionable.
+
+## HU-14 — Ola 3 · tercera pasada de venta (2026-07-31)
+
+Tercera pasada sobre las **81 ventas aún sin resolver**. Se cierran **33**:
+
+- **2 pedidos asistidos:** La Repostería de Pi y Horno San Ramón aceptan
+  encargos por teléfono o correo desde sus páginas oficiales.
+- **31 `no`:** se revisaron webs corporativas, catálogos y contactos oficiales
+  completos de productores, cooperativas, obradores y secaderos. No se encontró
+  checkout ni una instrucción concreta de pedido remoto; un contacto genérico o
+  la venta profesional/física no se presenta como venta online.
+
+La mejora no se limita al enum: se incorpora el correo de La Repostería de Pi,
+se reescriben las descripciones públicas de Olivar de Huelva, MONTJAM y Jamones
+Enrique Castaño, y se retiran tres webs impropias. `caim.es` redirige a la ayuda
+genérica del proveedor, el dominio de Panadería San José sirve una página Plesk
+y la ficha de Olionuba pertenece a un directorio con plantilla compartida. Se
+conservan las redes y contactos válidos.
+
+Permanecen `no comprobado` los fallos técnicos, las tiendas sin existencias y
+la falsa tienda de Olionuba. **Estado tras HU-14:** 150 filas; 116 `verificado`,
+34 `parcial`; venta online en **70 `sí`**, **32 `no`** y **48 `no comprobado`**.
