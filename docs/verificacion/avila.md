@@ -987,3 +987,36 @@ Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
 - El lote resuelve las diez ventas y sustituye las diez descripciones de
   plantilla o elimina la fila falsa. `descripcion-generica` baja de **86 a 76**,
   `evidencia-prestada` de **27 a 23** y `venta-sin-resolver` de **32 a 22**.
+
+### Tanda AV-V-6 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **133 filas** · 124 `verificado`
+  · 9 `parcial` · venta 84 `sí` · 33 `no` · 16 `no comprobado`.
+- Las diez fichas dejan de publicar texto de plantilla. **El Panal 1978** gana
+  su razón social actual y la actividad registrada de miel, cera y derivados;
+  **Apicultura Apigredos · Carnicería La Colmena** conserva correctamente su
+  doble identidad; **Horno Viejo**, **El Horno del Marqués**, **Rafael
+  Hernández**, **Tahona Araujo**, **La Vieja Tahona** y las dos tahonas de El
+  Barraco/Navaluenga incorporan elaboraciones concretas y nombres normalizados.
+- **Pastelería La Barraqueña** pasa a `sí` (`telefono`): su web propia publica
+  expresamente pedidos en tienda o llamando al 920 281 568. La ficha incorpora
+  la web y el teléfono, rosquillas Velí, ensaimadas fritas, tartas, pasteles y
+  mantecados, y el carácter familiar de cuarta generación y más de un siglo.
+  Se conserva Plaza de la Constitución 25 por la coincidencia de Maps y Guía
+  Repsol, aunque la web todavía muestra el 22, y se corrige el código postal de
+  la localidad a 05110.
+- El Panal, Apigredos, La Tahona de Barraco, Horno Viejo y El Horno del Marqués
+  pasan a `no`: sus fichas actuales y fuentes institucionales no publican web,
+  red, tienda ni mecanismo de pedido remoto. El Horno del Marqués añade además
+  correo, masa madre, larga fermentación y su gama artesana; Horno Viejo queda
+  descrito como la primera panadería de Hoyos del Espino.
+- Cuatro ventas se mantienen deliberadamente en `no comprobado`, sin cerrar la
+  métrica a costa de la verdad. La Vieja Tahona anuncia reparto solo en un
+  directorio; Rafael Hernández conserva un destacado de «Nuevo Serv. 🚚» sin
+  mecanismo visible; Tahona Araujo realiza reparto físico por pueblos pero no
+  publica cómo encargar; y los agregadores de La Tahona de Navaluenga se
+  contradicen entre entrega y ausencia de entrega. Sus productos, actividad y
+  enlaces sí quedan mejorados y documentados.
+- `descripcion-generica` baja de **76 a 66**, `evidencia-prestada` de **23 a
+  20** y `venta-sin-resolver` de **22 a 16**. El avance neto es de seis ventas
+  resueltas y diez fichas editoriales reconstruidas.
