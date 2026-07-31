@@ -923,3 +923,34 @@ Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
 - Las diez filas sustituyen texto de plantilla por productos, métodos y alcance
   concretos. `descripcion-generica` baja de **105 a 95** y
   `venta-sin-resolver` de **46 a 39**.
+
+### Tanda AV-V-4 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **136 filas** · 127 `verificado`
+  · 9 `parcial` · venta 81 `sí` · 23 `no` · 32 `no comprobado`.
+- Se purgan tres falsos productores. **Huerta Col** es un topónimo etiquetado
+  `place=locality`, no una explotación; **La Huerta de Miguel** ofrece parcelas
+  de huerto de ocio para que cultive el usuario; y el `place_id` de **La huerta
+  de Rodri** resuelve en 41.449512, 2.195456, en el entorno de Barcelona, no en
+  la dirección y coordenadas abulenses que traía la fila.
+- **Higo de Gredos · Cooperativa Capra Hispánica** pasa a `sí` (`ecommerce`):
+  su nueva web propia tiene tienda, precio y producto disponible para añadir al
+  carrito. La ficha incorpora higo Cuello Dama Blanco fresco y seco, bombón de
+  higo, historia desde 1988, teléfono, correo y redes actuales. **Alma Dulce
+  Ávila** pasa a `sí` (`marketplace`) por su Pack Sorpresa activo de panadería y
+  bollería en Too Good To Go; baja a `parcial` porque todavía no se acredita un
+  obrador propio.
+- **Panadería Arte Sano** y **El Ingenio de la Huerta** pasan a `no`: sus
+  canales públicos vigentes ofrecen despacho, teléfono o localización, pero no
+  un mecanismo de pedido remoto. En Ingenio, el BORME permite sustituir la
+  plantilla por el objeto hortofrutícola registrado y confirma el traslado de
+  2024 a Cabezas de Alambre.
+- Obrador de Ángel (Las Navas), Dulces Santo Tomás y Obrador de Ángel (Luanje)
+  conservan `no comprobado`: hay referencias históricas o de terceros a reparto
+  y encargos, pero ninguna permite atribuir un canal remoto vigente al productor.
+  Las tres fichas sí ganan productos concretos; la de Las Navas añade el correo
+  publicado en el directorio municipal.
+- El efecto neto es **3 falsas fichas de productor eliminadas**, dos canales de compra
+  accionables y siete fichas conservadas con nombre, productos, descripción o
+  contacto mejorados. `descripcion-generica` baja de **95 a 86**,
+  `evidencia-prestada` de **29 a 27** y `venta-sin-resolver` de **39 a 32**.
