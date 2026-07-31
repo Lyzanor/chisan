@@ -76,18 +76,18 @@
 
 - [x] **Bodega Francisco Sanz Soguero** (marca **Vignius**) ‹→ bodega-vignius-ignius-almonacid (parcial; marca real IGnius, web vignius.com con error SSL)› — Bodega. Almonacid de
   la Sierra (Barranco, 60). · 696 453 134 · <https://vignius.com>.
-- [x] **Bodega Familia Navascués** ‹→ bodega-familia-navascues-almonacid (verificado)› — Bodega. Almonacid de la Sierra. ·
+- [x] **Bodega Familia Navascués** ‹→ bodega-familia-navascues-almonacid (verificado; VO=no; gama Cutio, Mancuso y Mas de Mancuso)› — Bodega. Almonacid de la Sierra. ·
   651 845 176 · <https://bodegafamilianavascues.com>.
 - [x] **Bodega Manuel Moneva** ‹→ bodegas-manuel-moneva-almonacid (verificado)› — Bodega. Almonacid de la Sierra. · 976 627 020 ·
   <https://bodegasmanuelmoneva.com>.
 - [x] **Bodegas y Viñedos Pablo** (marca **Gran Viu**) ‹→ vinedos-y-bodegas-pablo-gran-viu-almonacid (verificado)› — Bodega. Almonacid de la
   Sierra. · 976 627 037 · <https://granviu.com>.
-- [x] **Bodega Roberto Zazurca** ‹→ bodega-roberto-zazurca-almonacid (parcial; solo listado del consejo, sin web)› — Bodega. Almonacid de la Sierra. · 605 398 368.
+- [x] **Bodega Roberto Zazurca** ‹→ bodega-roberto-zazurca-almonacid (parcial; VO=no; consejo vigente, Calle Barranco s/n y garnacha centenaria)› — Bodega. Almonacid de la Sierra. · 605 398 368.
   Sin web localizada.
 - [x] **Bodegas Luis Marín** ‹→ bodegas-luis-marin-carinena (verificado; mayor privada de la DO)› — Bodega. Cariñena. · 976 621 129 · <https://luismarin.eu>.
 - [x] **Bodega Heredad Ansón** ‹→ bodega-heredad-anson-muel (parcial; CORRECCIÓN municipio: está en MUEL, no Cariñena; web con fallo SSL)› — Bodega. Cariñena. · 606 858 296 ·
   <http://www.bodegasheredadanson.com>.
-- [x] **Bodega Romeo Yrisarri** ‹→ bodega-romeo-yrisarri-carinena (parcial; C/ La Cruz 8, sin web)› — Bodega. Cariñena. · 976 620 012. Web a confirmar.
+- [x] **Bodega Romeo Yrisarri** ‹→ bodega-romeo-yrisarri-carinena (parcial; VO=no; C/ La Cruz 8, vino El Aragón es rojo luminoso)› — Bodega. Cariñena. · 976 620 012. Sin web ni pedido remoto.
 - [x] **Bodegas Grandes Vinos** ‹RECHAZADO: es la empresa que elabora la marca Gran Ducay, ya en CSV como bodegas-gran-ducay-carinena → alias, no alta› — Bodega. Cariñena. · 976 621 261 ·
   <https://www.grandesvinos.com/>. ⚠ **posible alias**: el CSV ya tiene
   `bodegas-gran-ducay-carinena` (`granducay.com`), y *Gran Ducay* es una marca de
@@ -100,7 +100,7 @@
 - [x] **Cooper Cellars** (marca **Vinos del Viento**) ‹→ bodega-vinos-del-viento-pozuelo-de-aragon (verificado; enólogo Michael Cooper)› — Bodega. Pozuelo de Aragón.
   <http://vinosdelviento.com/>.
 - [x] **Soc. Coop. Agrícola de Borja** ‹NO ALTA: cooperativa fundadora de Bodegas Borsao, ya presente; no publica línea propia diferenciada› — Bodega. Borja. · 976 866 065. Sin web.
-- [x] **Santa Ana Crianzas y Viñedos, S. Coop.** ‹→ santa-ana-crianzas-y-vinedos-pozuelo-de-aragon (parcial; el consejo confirma bodega y marcas Campo Castillo/El Tenor, sin fuente primaria ni pedido remoto)› — Bodega. Pozuelo de Aragón.
+- [x] **Santa Ana Crianzas y Viñedos, S. Coop.** ‹→ santa-ana-crianzas-y-vinedos-pozuelo-de-aragon (parcial; VO=no; el consejo confirma bodega y marcas Campo Castillo/El Tenor, sin web ni pedido remoto)› — Bodega. Pozuelo de Aragón.
   · 976 862 931. Sin web.
 - [x] **Coop. Ntra. Sra. Niño Perdido** ‹NO ALTA: cooperativa fundadora de Bodegas Borsao, ya presente; no publica marca propia diferenciada› — Bodega. Tabuenca. · 976 865 874. Sin web.
 
@@ -156,18 +156,20 @@
 - `bodegas-hermanos-torcal-carinena` (Cariñena) — **verificado, VO=sí ecommerce**
   (familia desde 1845, viñedo propio, marcas Cachirulo/Marqués de Fuendetodos;
   tienda `tienda.vinostorcal.com`).
-- `bodegas-valdegarzon-almonacid-de-la-sierra` (Almonacid) — **verificado, VO=nc**
-  (web propia `valdegarzon.com`, elaboración y enoturismo; WhatsApp y email son
-  contacto, no prueba de pedido).
+- `bodegas-valdegarzon-almonacid-de-la-sierra` (Almonacid) — **verificado, VO=no**
+  (web propia `valdegarzon.com`, elaboración y enoturismo; revisados WhatsApp,
+  correo y web sin catálogo ni mecanismo de pedido).
 - `bodegas-del-senorio-almonacid-de-la-sierra` (Almonacid) — **parcial, VO=nc**
   (censo DOP y sociedad activa, pero el dominio está aparcado; marcas Senda
   Lasarda, Señorío de la Obra y Viña Valerma).
-- `bodegas-y-vinedos-monfil-carinena` (Cariñena) — **parcial** (familia Mateo 1943,
-  marca Monfil/Kalius, FB; dominio en página por defecto, sin web propia operativa).
+- `bodegas-y-vinedos-monfil-carinena` (Cariñena) — **PURGA `closed`**: BORME
+  publica disolución, liquidación y extinción de la sociedad el 14/10/2024 y
+  Aragón revoca su registro sanitario; sin sucesor productor localizado.
 - `quinta-mazuela-carinena` (Cariñena) — **parcial** (boutique de la enóloga Silvia
   Tomé; directorios coincidentes, pero dominio en página por defecto y sin venta atribuible).
-- `bodega-san-bernabe-de-cosuenda-cosuenda` (Cosuenda) — **parcial** (producto singular
-  Pajarilla de Cosuenda; comercializada vía Grandes Vinos).
+- `bodega-san-bernabe-de-cosuenda-cosuenda` (Cosuenda) — **parcial, VO=sí
+  marketplace** (la tienda oficial del grupo Grandes Vinos vende la Pajarilla
+  de Cosuenda con precio, stock, cesta y envío).
 
 **Cariñena corte 2 — rechazos/diferidos:**
 

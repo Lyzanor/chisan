@@ -45,13 +45,21 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ```text
 Estado de pasada: mantenimiento
-Base: 7f56485
+Base: d11fea8
 Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
-  canal-sin-clasificar, descripcion-generica, categoria-variante (check:defects)
-Lote activo: — (ZA-R1-1 y ZA-R1-2 cerrados)
+  canal-sin-clasificar, descripcion-generica, categoria-variante,
+  venta-sin-resolver (check:defects)
+Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 cerrados)
 Alcance: —
-Última actualización: 2026-07-28
+Última actualización: 2026-07-31
 ```
+
+- **Lote ZA-V-1 (2026-07-31, carril V).** 12 bodegas revisadas: 5 ventas
+  resueltas como `no`, 2 como `sí` (Libre y Salvaje por `ecommerce` de bonos de
+  enoturismo; San Bernabé por `marketplace` oficial de Grandes Vinos), 4 casos
+  permanecen `no comprobado` por tienda sin stock/mantenimiento o dominio
+  técnico, y Monfil se purga por extinción registral. Además se corrigen gama,
+  actividad, dirección, adscripción DOP no vigente y enlaces de compra útiles.
 
 - **Lotes ZA-R1-1 y ZA-R1-2 (2026-07-28, carril R1).** Alcance: las 27
   `pendiente`, que incluían las 23 `sinteticas`. Ambas colas a **0**;
