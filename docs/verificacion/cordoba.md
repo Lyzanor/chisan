@@ -570,3 +570,28 @@ Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
 - Se concretan productos y actividad en nueve fichas. La cola
   `descripcion-generica` baja de **81 a 75** y `venta-sin-resolver` de **63 a
   55**.
+
+### Tanda CO-V-3 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **198 filas** · 176 `verificado`
+  · 22 `parcial` · venta 139 `sí` · 12 `no` · 47 `no comprobado`.
+- Se confirman dos tiendas propias: **Bodegas Toro Albalá** publica productos,
+  precio, stock, carrito y envíos a Península y Baleares; **El Canito** ofrece
+  elaborados de caza e ibéricos con carrito y envío a toda España. Ambas pasan
+  a `sí` (`ecommerce`).
+- Aguilar Sánchez Alimentaria, David Ruano, Legumbres Baena, Carnes Montoro,
+  Pérez Barquero y Sucesores de Morales pasan a `no`: sus canales vigentes
+  muestran catálogo, puntos físicos o atención profesional, pero no pedido
+  remoto directo para consumidor.
+- **Mielsico** se corrige de Moriles a Córdoba capital y deja de atribuirse a
+  Castillo de Moriles. Cambian slug, dirección, coordenadas, teléfono, correo,
+  gama y descripción; el dominio se retira por certificado no válido y portada
+  de proveedor. Queda `parcial` y conserva `no comprobado`, con registro
+  `merge` desde `mielsico-moriles`.
+- David Ruano pierde también su web pública: aunque conserva contenido del
+  obrador, está comprometida con enlaces y artículos de casinos ajenos. Se
+  mantiene el Instagram propio, se concreta la ficha y se resuelve la venta.
+- Cortijo La Calzada incorpora paraje, carretera y gama de quesos; permanece en
+  `no comprobado` porque la web devuelve 403 y las referencias de pedido son
+  contradictorias. La cola `descripcion-generica` baja de **75 a 73** y
+  `venta-sin-resolver` de **55 a 47**.
