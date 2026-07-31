@@ -45,14 +45,24 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ```text
 Estado de pasada: mantenimiento
-Base: 547832b
+Base: b6723fe
 Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
   canal-sin-clasificar, descripcion-generica, categoria-variante,
   venta-sin-resolver (check:defects)
-Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 a ZA-V-5 cerrados)
+Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 a ZA-V-6 cerrados)
 Alcance: —
 Última actualización: 2026-07-31
 ```
+
+- **Lote ZA-V-6 (2026-07-31, carril V).** 8 fichas revisadas: Ángel Bravo,
+  La Chipranesca y la Cooperativa San Sebastián de Fayón quedan en `no` tras
+  revisar sus canales públicos. Antigua Casa Cortés conserva `no comprobado`
+  porque su única compra visible es reventa independiente; Isasa y La Casa de
+  la Abuela por bloqueo o caída de sus canales propios; Fruma por TLS y dominio
+  genérico. Frutaria se purga como `out-of-scope`: la fila era una central de
+  un grupo agroindustrial de seis provincias y 120 millones de kilos anuales,
+  no una identidad productora local. Las fichas conservadas concretan obrador,
+  dulces tradicionales, titular y correo vigente, gama frutícola y AOVE local.
 
 - **Lote ZA-V-5 (2026-07-31, carril V).** 10 fichas revisadas: la Almazara
   Virgen del Castillo pasa a `sí` por entrega a domicilio y pedido telefónico;
