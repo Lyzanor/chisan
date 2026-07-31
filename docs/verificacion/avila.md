@@ -897,3 +897,29 @@ Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
   Facebook general del Ayuntamiento que figuraba en Garrosa.
   `descripcion-generica` baja de **108 a 105** y `venta-sin-resolver` de **56
   a 46**.
+
+### Tanda AV-V-3 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **139 filas** · 129 `verificado`
+  · 10 `parcial` · venta 79 `sí` · 21 `no` · 39 `no comprobado`.
+- Siete productores pasan a `no`: Almazara Comarcal del Alberche, La
+  Beltraneja, Comando G, Las Pedreras, Embutidos del Río, Embutidos Dégano y
+  Agropecuaria La Serrota. Sus canales públicos vigentes muestran fábrica,
+  bodega, granja, contacto o venta física, pero no pedido remoto al consumidor.
+- Tres casos conservan honestamente `no comprobado`. Pimentón Don Pablo solo
+  aparece en tiendas independientes; el dominio de Rubén Díaz sigue secuestrado
+  por una web de golf y sus vinos se venden mediante distribuidores; Miguel
+  Pascual carece de fuente propia y las fuentes actuales ni siquiera permiten
+  atribuirle con seguridad una elaboración concreta.
+- Almazara Comarcal, Pimentón Don Pablo y Rubén Díaz bajan de `verificado` a
+  `parcial`: su actividad o identidad dependen de directorios, consejo
+  regulador, marketplace o pin, no de una presencia primaria vigente. Con ello
+  `evidencia-prestada` baja de **32 a 29**.
+- Se corrigen nombre, sede, código postal y teléfono de La Beltraneja; teléfono
+  y correo de Comando G; sede, teléfono y correo de Las Pedreras; y correo,
+  gama y método de Rubén Díaz. La ficha de La Serrota deja de mezclar wagyu,
+  avicultura y embutidos del grupo completo: la instalación queda descrita como
+  la granja porcina concreta de 2.500 madres que acredita Kerbest.
+- Las diez filas sustituyen texto de plantilla por productos, métodos y alcance
+  concretos. `descripcion-generica` baja de **105 a 95** y
+  `venta-sin-resolver` de **46 a 39**.
