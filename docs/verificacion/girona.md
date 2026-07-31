@@ -1,26 +1,28 @@
 # Girona · verificación — snapshot de mantenimiento
 
 Pasada profunda **cerrada el 2026-06-15** (27 lotes + pasada de consistencia);
-mantenimiento de venta y calidad **V-04 el 2026-07-31**. Detalle por lote en
+mantenimiento de venta y calidad **V-05 el 2026-07-31**. Detalle por lote en
 `git log --follow -p -- docs/verificacion/girona.md`; procedencia por fila en
 `data/evidence/catalunya/girona.jsonl`. La verdad es el CSV; cerrar la pasada no
 cierra el catálogo y las afirmaciones dinámicas caducan.
 
 ## Estado actual
 
-- Filas: **241** · verificado **239** · parcial **2** · pendiente **0**. Desde el inicio: 8 purgas,
-  1 fusión, 7 altas concurrentes (cruce Rutes del Vi).
-- `Venta online`: **130 `sí`** (todos con canal y dependencias válidas), **103
+- Filas: **241** · verificado **237** · parcial **4** · pendiente **0**. Desde el inicio: 8 purgas,
+  2 fusiones, 7 altas concurrentes (cruce Rutes del Vi).
+- `Venta online`: **131 `sí`** (todos con canal y dependencias válidas), **102
   `no`** y **8 `no comprobado`** con techo documentado.
 - Evidencia: 241 `keep` + tombstones; la provincia está en `data/evidence/coverage.json` (advisory).
 - Completitud ~99%: penaliza los `no comprobado`, no es cola sin revisar.
 
 ## Residuales justificados
 
-- 2 `parcial`: **Làctics Tramuntana** (Cabanelles; existencia respaldada, última actividad propia
-  localizada 2020) y **Can Solivera** (Forallac; continuidad contradictoria, web propia convertida
-  en alojamiento, sin perfil social).
-- `no comprobado` tras V-04: **El Pastor de Riudaura** (tienda propia con
+- 4 `parcial`: **Làctics Tramuntana** (Cabanelles; existencia respaldada, última actividad propia
+  localizada 2020), **Can Solivera** (Forallac; continuidad contradictoria, web propia convertida
+  en alojamiento, sin perfil social), **Ca l'Esteve** (Ribes de Freser; el directorio institucional
+  confirma el obrador, pero no mantiene canal propio activo) y **Mel La Calma** (Olot; ficha pública
+  actualizada, sin presencia propia vigente que eleve la verificación).
+- `no comprobado` tras V-05: **El Pastor de Riudaura** (tienda propia con
   certificado TLS inválido), **Molí de Ger** (remite a Mercat Arrels sin ficha
   comprable actual), **Embotits Vilanova** (carrito sin precio ni alta de
   producto), **Can Solivera** (dominio roto y continuidad propia no
@@ -75,9 +77,10 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
 
 ## Mantenimiento (al retomar)
 
-- Recomprobar los 130 `Venta online=sí` y los 8 `no comprobado`; V-04 deja
+- Recomprobar los 131 `Venta online=sí` y los 8 `no comprobado`; V-05 deja
   documentadas las decisiones nuevas y el techo técnico de los residuales.
-- Vigilar los 2 `parcial` (Tramuntana, Can Solivera) por señales de cierre definitivo.
+- Vigilar los 4 `parcial` (Tramuntana, Can Solivera, Ca l'Esteve y Mel La Calma)
+  por señales de actividad propia o cierre definitivo.
 - La nota de candidatos de Girona quedó cerrada; pistas nuevas → `docs/candidates/girona.md`.
 
 ## Mantenimiento V-03 · mejora de los nueve residuales (2026-07-31)
@@ -125,3 +128,32 @@ Snapshot actual: 241 filas; 239 `verificado`, 2 `parcial`; venta online 130
 `sí`, 103 `no` y 8 `no comprobado`. En la cola editorial quedan 24 filas únicas:
 5 descripciones genéricas, 7 evidencias prestadas, 4 plantillas cruzadas y los
 8 casos de venta técnicamente no resolubles con las fuentes actuales.
+
+## Mantenimiento V-05 · cierre de calidad residual (2026-07-31)
+
+Lote de 16 filas investigadas individualmente para cerrar defectos editoriales
+sin maquillar los ocho casos de venta todavía no resolubles.
+
+- Cinco fichas genéricas —**Ànec de l'Empordà**, **Mas Auró**, **Dolça Abella**,
+  **Nous Can Llavanera** y **Ratafia l'Empordanesa**— incorporan trayectoria,
+  gama, producción, dirección u horarios concretos tomados de sus fuentes vivas.
+- **Gelats Enxaneta** pasa de `Lácteos y quesos` a `Helados`. En **La Fageda**,
+  **Carnisseria Alemany** y **L'Hort de les Mulleres** se corrige el texto que
+  provocaba falsos cruces de categoría sin borrar productos reales.
+- **Ca l'Esteve** y **Mel La Calma** pasan honestamente a `parcial`; las fuentes
+  institucionales prueban continuidad reciente, pero no una presencia propia
+  suficiente para `verificado`.
+- **SAT Sant Mer**, **Granja El Trèvol** y **Can Costa de Manol** enlazan sus
+  perfiles de ATO, sociedad propiedad de sus siete granjas; **Can Violant**
+  enlaza su perfil de Lletera Campllong. Son fuentes colectivas oficiales, no
+  fichas municipales prestadas.
+- La antigua ficha **Embotits Eugeni** se fusiona en **Embotits Masó**: BORME y
+  registro alimentario confirman la sociedad e identidad actuales en Olot. La
+  nueva ficha incorpora web, tienda, contacto, ubicación y gama vigentes, y
+  pasa de `no` a `sí|ecommerce`.
+
+Snapshot actual: 241 filas; 237 `verificado`, 4 `parcial`; venta online 131
+`sí`, 102 `no` y 8 `no comprobado`. Quedan 11 alertas únicas: los 8 techos
+técnicos de venta y 3 falsos positivos del detector de web compartida para los
+perfiles de ATO. Descripciones genéricas, evidencia prestada y cruces de
+categoría accionables quedan a cero.
