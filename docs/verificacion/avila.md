@@ -848,3 +848,26 @@ Revisión de las 82 filas que aún tenían `Venta online=no comprobado`:
 - Además de resolver venta, se limpiaron nombres, productos y descripciones
   genéricas en nueve filas y se añadieron contactos útiles donde la fuente los
   publica. Las otras **64 filas** quedan honestamente `no comprobado`.
+
+### Tanda AV-V-1 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **140 filas** · 134 `verificado`
+  · 6 `parcial` · venta 78 `sí` · 6 `no` · 56 `no comprobado`.
+- **Aceitunas Ovidio** pasa a `sí` (`telefono`): su web invita expresamente a
+  tiendas, restaurantes y hogares a llamar para cubrir su demanda. **Alma
+  Rural** pasa a `sí` (`email`): publica dos vinos con añada y precio y cada
+  ficha enlaza `ESCRÍBENOS` al correo de la bodega.
+- Aceitunas Simón, Teo Legido, Embutidos Soriano, PorkyÁvila, Elgorriaga y La
+  Granja de Ibai pasan a `no`: sus fuentes propias muestran catálogo,
+  contacto, venta física o localización de distribuidores, pero no pedido
+  remoto directo para consumidor.
+- 7 Navas y Carnes y Embutidos Manolo conservan `no comprobado`. La primera
+  mantiene un error 500 en su web y la segunda un 502; directorios y reseñas
+  sugieren compra o reparto, pero no se atribuyen al productor como canal
+  vigente sin una fuente propia accesible.
+- Las diez fichas sustituyen texto de plantilla por productos, variedades,
+  método, trayectoria o escala concretos. Se corrigen, entre otros, la sede y
+  contactos de Ovidio, **Valencia 29 → Barcelona 29** en Aceitunas Simón, la
+  parcela de Embutidos Soriano, el horario y correo de PorkyÁvila y la sede de
+  Elgorriaga en la N-110 km 259. `descripcion-generica` baja de **118 a 108**
+  y `venta-sin-resolver` de **64 a 56**.
