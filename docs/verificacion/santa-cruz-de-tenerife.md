@@ -204,3 +204,38 @@ Revisión editorial de las **75** filas que aún estaban en `no comprobado`:
 
 **Estado tras SC-10:** 105 filas; **65 `verificado`** y 40 `parcial`; venta
 online en **32 `sí`**, **29 `no`** y **44 `no comprobado`**.
+
+## SC-11 — Ola 3 · venta enlazada y colas solapadas (2026-07-31)
+
+Nueva pasada sobre señales que SC-10 no había podido cerrar. Se resuelven **6**
+ventas sin inferir ecommerce propio donde interviene un distribuidor:
+
+- **3 `sí|marketplace`:** Gofio Imendi enlaza Amazon para Península y Seseo
+  para Canarias; Bodega Hermanos Mesa enlaza su catálogo vigente de ocho vinos
+  en Vinófilos; Pago de los Cercados dirige a particulares a Alto 1994, donde
+  cinco referencias tienen precio y carrito.
+- **3 `no`:** la web mínima de Envínate solo publica contacto y no ofrece
+  pedido; Bodega Comarcal Valle de Güímar permite revisar su catálogo, visitas
+  y contacto completos sin mecanismo remoto; Lacasmi publica bodega, vinos,
+  tienda agraria y supermercado físicos, pero no cesta ni pedido a distancia.
+
+La mejora alcanza también el contenido de las fichas. Hermanos Mesa incorpora
+móvil, correo, visitas y gama actual; la Bodega Comarcal añade horario, HTTPS,
+familias viticultoras, altitudes y tipos de vino; Lacasmi sustituye el genérico
+`Vino Casmi` por sus marcas reales y pasa a `verificado` al estar ya operativa
+su web de bodega. Envínate actualiza HTTPS y correo; El Mocanero recupera su
+dominio HTTPS, aunque continúa `no comprobado` porque varias rutas siguen
+rotas.
+
+Se cierran a la vez las cuatro colas solapadas de la provincia. El dominio
+colectivo `quesopalmero.es` se retira del campo web de Quesos Palmera, Luna de
+Awara y Granja Las Cuevas, pero permanece como fuente regulatoria en evidencia.
+Molino de Gofio La Salud baja a `parcial`: fuentes institucionales acreditan la
+actividad, pero el único enlace externo de la ficha era un pin de usuarios y no
+una presencia propia. La subida de Lacasmi y esta corrección se compensan en el
+recuento global de verificación.
+
+**Estado tras SC-11:** 105 filas; **65 `verificado`** y 40 `parcial`; venta
+online en **35 `sí`**, **32 `no`** y **38 `no comprobado`**. Las colas de
+`evidencia-prestada` y `web-de-tercero` quedan en cero; las 105 fichas sin
+imagen siguen siendo una señal de enriquecimiento separada de esta ola.
