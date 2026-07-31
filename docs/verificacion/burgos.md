@@ -1616,6 +1616,46 @@ pero no publica todavía un flujo concreto de pedido; El Horno de Burgos sigue
 tras un certificado TLS inválido. Ninguno se convirtió artificialmente en
 `no`.
 
+### Ola 3 · venta sin resolver, tercera tanda (17 revisadas) — ✅ 2026-07-31
+
+Tercera tanda provincial: **16** filas resueltas, **4 sí** y **12 no**, más
+Páramo Arroyo revisada y mantenida honestamente en `no comprobado`. El residual
+de Burgos baja de **124 a 108**. Estado tras la tanda: **302 filas** ·
+**222 verificado / 80 parcial** · VO **153 sí / 41 no / 108 no comprobado**.
+
+El lote mejora las 17 fichas, incluida la ambigua: productos reales,
+descripciones específicas, direcciones y enlaces de Google Maps alineados.
+También corrige los nombres públicos de Quesera Burgalesa, Flor de Burgos,
+Bodegas Carmelo Rodero y Confitería Arroyo; actualiza contactos de Divina
+Pastora, Florbú, Quesos Carreras y Páramo Arroyo; y retira dos enlaces de
+Facebook espurios. Los horarios genéricos se vacían y solo se conserva el
+horario publicado por Bodegas Carmelo Rodero.
+
+```text
+hacienda-el-ternero-miranda-de-ebro · sí (telefono) — la tienda publica precios, envíos y «Pedidos por teléfono: 941 320 021»
+florbu-burgos · sí (marketplace) — escaparate oficial enlazado por Florbú en Burgos en Casa; carrito y checkout de invitado operativos
+quesos-carreras-busto-de-bureba · sí (ecommerce) — producto añadido y checkout propio con facturación, envío y Stripe
+bodegas-y-vinedos-roberik-milagros · sí (ecommerce) — Abés añadido al carrito y checkout seguro con correo, entrega y pago
+reposteria-artesana-divina-pastora-fresno-de-rio-tiron · no — productos, historia y contacto, sin precio, carrito ni pedido remoto
+panaderia-ordonez-tardajos · no — gama y despachos físicos, sin venta remota
+lacteos-angulo-quesera-burgalesa-burgos · no — cuatro gamas de queso y contacto, sin pedido remoto
+lacteas-flor-de-burgos-burgos · no — empresa, productos, recetas y contacto, sin tienda ni pedido
+bodegas-rodero-pedrosa-de-duero · no — vinos, enoturismo, noticias y contacto, sin tienda ni pedido
+bodegas-valdecamellas-fresnillo-de-las-duenas · no — dos vinos y contacto, sin precio, carrito ni pedido
+bodegas-vina-mambrilla-mambrilla-de-castrejon · no — Alidis, Esentium, enoturismo y contacto, sin venta remota
+bodegas-coruna-del-conde-coruna-del-conde · no — gamas, viñedo, bodega y contacto, sin venta remota
+riarsi-confiteria-arroyo-espinosa-de-los-monteros · no — cinco especialidades y puntos físicos, sin precio, carrito ni pedido
+gotas-de-rocio-quintanilla-del-agua-y-tordueles · no — vinos, catálogo, galería y contacto, sin pedido remoto
+lechazo-y-quesos-del-vidal-oquillas · no — queso, lechazo, visitas y talleres, sin precio, carrito ni pedido
+panaderia-panaranda-aranda-de-duero · no — Torta de Aranda, pan de leña, empresa y contacto, sin venta remota
+bodegas-hnos-paramo-arroyo-pedrosa-de-duero · no comprobado — la tienda llega a caja, pero esta declara que no puede aceptar pagos online
+```
+
+El criterio de prudencia también excluyó Caralmeat/Umoh: su dominio actual
+muestra contenido de viajes ajeno al productor. Se podrá retirar ese enlace en
+un lote de identidad, pero el secuestro del dominio no demuestra por sí solo
+la ausencia de venta remota.
+
 ## Flujo por lote
 
 1. Antes de empezar:
