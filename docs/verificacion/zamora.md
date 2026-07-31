@@ -611,3 +611,30 @@ Higiene adicional:
 `pendiente`; venta online en **78 `sí`** y **77 `no comprobado`**. El lote
 conjunto **León + Zamora** reduce la cola global de Ola 3 en **37** filas, de
 3.979 a **3.942**.
+
+### ZA-R7 — Ola 3 · resolución del residual (2026-07-31)
+
+Segunda revisión de las **77** filas que seguían en `no comprobado`. Se
+resuelven **29**: **11 `sí`** y **18 `no`**.
+
+- Quedan confirmadas las tiendas propias de Andrea Gutiérrez, Cervato, Díez
+  Gómez, Vermutto, Gil Luna y Tierra Dulce; las tiendas oficiales de grupo de
+  Torreduero, Carbajo Hermanos, Coperblanc y Queso del Duero; y el escaparate
+  propio de Pentanux en Correos Market, enlazado desde su página de compra.
+- Las 18 negativas se apoyan en una revisión completa de producto, navegación
+  y contacto de la web oficial. No se degradaron los fallos TLS, la tienda en
+  mantenimiento de Vetus, el escaparate vacío de Ecoespora ni la tienda sin
+  compra utilizable de Prado Concejo.
+- La bodega Caserío de Dueñas de Toro se conserva: la D.O. Toro mantiene su
+  ficha propia y no se confundió con la unidad homónima de Valladolid. Al no
+  haber canal comercial atribuible a la unidad toresana, sigue en
+  `no comprobado`.
+- El CSV incorpora teléfono, correo, productos y una descripción directa para
+  Andrea Gutiérrez; sustituye textos de directorio en Díez Gómez, Torreduero,
+  Gil Luna y Queso del Duero; normaliza las webs HTTPS de Díez Gómez, Gil Luna
+  y Vermutto; y corrige Vermutto de `Licores` a `Vermut`.
+- Coral Duero pasa a `verificado`: su web oficial actual identifica actividad,
+  vinos y ubicación en El Pego.
+
+**Estado tras ZA-R7:** 155 filas; **116 `verificado`** y 39 `parcial`; venta
+online en **89 `sí`**, **18 `no`** y **48 `no comprobado`**.

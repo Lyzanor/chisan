@@ -446,3 +446,27 @@ Revisión de las 81 filas que aún tenían `Venta online=no comprobado`:
   Entrehoces, de Jesús de la Hoz.
 - Las otras **76 filas** permanecen `no comprobado`: no se convirtió una
   ausencia de carrito o un contacto genérico en un `no`.
+
+## SG-18 — Ola 3 · resolución del residual (2026-07-31)
+
+Segunda revisión de las **76** filas que seguían en `no comprobado`:
+
+- Se resuelven **30**: **5 `sí`** y **25 `no`**. Los pedidos confirmados son
+  Hnos. Herranz Llorente (`whatsapp`), Hortafercar y Hortalizas Gourmet
+  (`email|telefono`), El Garbanzal de Valseca (`telefono`) y Gaseosas Olmos
+  (`email|telefono`). Todos publican una instrucción específica de compra o
+  pedido; no se promovieron formularios genéricos.
+- Las negativas se limitan a webs oficiales actuales revisadas de extremo a
+  extremo sin carrito, checkout ni instrucciones de pedido. Valdrinal y
+  Esmeralda García siguen en mantenimiento, Quesos El Molinero mantiene todo
+  agotado y las portadas mínimas de Herfruit, Huerta y Pico y Marijave siguen
+  siendo inciertas: las seis permanecen en `no comprobado`.
+- Se actualizan el teléfono de compra de Herranz Llorente y el móvil de pedidos
+  de Hortafercar; la descripción de la cooperativa deja de contradecir su página
+  de pedidos.
+- Aceitunas Hilario pasa de `Conservas` a la categoría específica `Aceitunas y
+  encurtidos`, y el producto principal de Ahuma d'Or se centra en sus carnes
+  ahumadas. `plantilla-cruzada` baja de 2 a **0**.
+
+**Estado tras SG-18:** 143 filas; **97 `verificado`** y 46 `parcial`; venta
+online en **72 `sí`**, **25 `no`** y **46 `no comprobado`**.

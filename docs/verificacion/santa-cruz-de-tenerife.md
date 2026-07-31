@@ -182,3 +182,25 @@ cambio, sin incorporar hallazgos ajenos al lote activo.
   pruebas de Vega Norte, productos agotados o con precio cero, y enlaces a
   reventa de terceros. Los fallos técnicos aislados tampoco se trataron como
   cierre ni como ausencia de venta.
+
+## SC-10 — Ola 3 · resolución del residual (2026-07-31)
+
+Revisión editorial de las **75** filas que aún estaban en `no comprobado`:
+
+- Se resuelven **31**: **2 `sí`** y **29 `no`**. Vinos Tendal publica ahora un
+  teléfono específico «Para ventas» y Bodega Vento permite reservar vino por
+  formulario para recogerlo en bodega. En ambos casos se verificó el mecanismo,
+  no solo la presencia de una página de contacto.
+- Las 29 negativas corresponden a sitios oficiales actuales cuyo catálogo,
+  navegación y contacto pudieron revisarse completos sin encontrar pedido
+  remoto. Tiendas en pruebas, páginas en mantenimiento, escaparates vacíos y
+  reventa independiente permanecen en `no comprobado`.
+- El CSV mejora además el teléfono de venta de Tendal, retira la nota obsoleta
+  de «web en construcción» de Finca Vegas y reescribe la ficha de Tabares4 con
+  su bodega y viñedo de La Matanza. Carballo, Linaje del Pago, Vento, Finca
+  Vegas y Tabares4 pasan a `verificado` por sus fuentes oficiales vivas.
+- Se corrigen dos categorías: Salinas de Fuencaliente pasa a `Sal` y COPLACA a
+  `Fruta y verdura`.
+
+**Estado tras SC-10:** 105 filas; **65 `verificado`** y 40 `parcial`; venta
+online en **32 `sí`**, **29 `no`** y **44 `no comprobado`**.
