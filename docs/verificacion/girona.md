@@ -1,17 +1,17 @@
 # Girona · verificación — snapshot de mantenimiento
 
 Pasada profunda **cerrada el 2026-06-15** (27 lotes + pasada de consistencia);
-mantenimiento de venta **V-02 el 2026-07-29**. Detalle por lote en
+mantenimiento de venta y calidad **V-04 el 2026-07-31**. Detalle por lote en
 `git log --follow -p -- docs/verificacion/girona.md`; procedencia por fila en
 `data/evidence/catalunya/girona.jsonl`. La verdad es el CSV; cerrar la pasada no
 cierra el catálogo y las afirmaciones dinámicas caducan.
 
-## Estado final de la pasada (2026-06-15)
+## Estado actual
 
 - Filas: **241** · verificado **239** · parcial **2** · pendiente **0**. Desde el inicio: 8 purgas,
   1 fusión, 7 altas concurrentes (cruce Rutes del Vi).
-- `Venta online`: **131 `sí`** (todos con canal y dependencias válidas), **101
-  `no`** y **9 `no comprobado`** con techo documentado.
+- `Venta online`: **130 `sí`** (todos con canal y dependencias válidas), **103
+  `no`** y **8 `no comprobado`** con techo documentado.
 - Evidencia: 241 `keep` + tombstones; la provincia está en `data/evidence/coverage.json` (advisory).
 - Completitud ~99%: penaliza los `no comprobado`, no es cola sin revisar.
 
@@ -20,14 +20,13 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
 - 2 `parcial`: **Làctics Tramuntana** (Cabanelles; existencia respaldada, última actividad propia
   localizada 2020) y **Can Solivera** (Forallac; continuidad contradictoria, web propia convertida
   en alojamiento, sin perfil social).
-- `no comprobado` tras V-02: **Aigua de Sant Aniol** (solo reventa
-  independiente), **Arròs Molí de Pals** (seis referencias no disponibles),
-  **Molí de Ger** (remite a Mercat Arrels sin ficha comprable actual),
-  **Embotits Vilanova** (carrito sin precio ni alta de producto), **Can
-  Solivera** (dominio roto y continuidad propia no demostrada), **Red Passion
-  Berries** (tienda propia en timeout), **Clos de la Torre** (catálogo sin
-  referencia disponible), **Oliver Conti** (TLS inválido y HTTP 403) y **Mas
-  Patiràs** (el enlace de compra de la DO devuelve 404).
+- `no comprobado` tras V-04: **El Pastor de Riudaura** (tienda propia con
+  certificado TLS inválido), **Molí de Ger** (remite a Mercat Arrels sin ficha
+  comprable actual), **Embotits Vilanova** (carrito sin precio ni alta de
+  producto), **Can Solivera** (dominio roto y continuidad propia no
+  demostrada), **Red Passion Berries** (tienda propia en timeout), **Clos de la
+  Torre** (catálogo sin referencia disponible), **Oliver Conti** (TLS inválido
+  y HTTP 403) y **Mas Patiràs** (el enlace de compra de la DO devuelve 404).
 
 ## Mantenimiento V-02 · venta sin resolver
 
@@ -76,8 +75,8 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
 
 ## Mantenimiento (al retomar)
 
-- Recomprobar los 131 `Venta online=sí` (seis revisados en V-02 y el resto con
-  última comprobación general 2026-06-15) y los 9 `no comprobado`.
+- Recomprobar los 130 `Venta online=sí` y los 8 `no comprobado`; V-04 deja
+  documentadas las decisiones nuevas y el techo técnico de los residuales.
 - Vigilar los 2 `parcial` (Tramuntana, Can Solivera) por señales de cierre definitivo.
 - La nota de candidatos de Girona quedó cerrada; pistas nuevas → `docs/candidates/girona.md`.
 
@@ -102,3 +101,27 @@ Mejoras materiales del CSV:
 
 Snapshot sin cambios artificiales de estado: 241 filas; 239 `verificado`, 2
 `parcial`; venta online 131 `sí`, 101 `no` y 9 `no comprobado`.
+
+## Mantenimiento V-04 · venta y descripciones genéricas (2026-07-31)
+
+Lote de 15 filas orientado a mejorar el contenido real del CSV, no solo sus
+estados. Se retiraron 13 descripciones genéricas y se precisaron identidad,
+gama, trayectoria, dirección o contacto con fuentes actuales.
+
+- **Aigua de Sant Aniol** pasa a `sí` por su servicio propio de agua a domicilio,
+  que confirma disponibilidad, precio y pedido por contacto (`email|telefono`).
+- **Arròs Molí de Pals** pasa a `sí|ecommerce`: su tienda vuelve a ofrecer
+  referencias con precio, cantidad y botón de compra.
+- Se corrigen tres falsos positivos: **El Pastor de Riudaura** pasa de `sí` a
+  `no comprobado` por el TLS inválido de su tienda; **Forn de Pa Porterias** y
+  **Carnisseria Gironell** pasan de `sí` a `no` porque sus webs actuales son
+  informativas y no publican un flujo de pedido remoto.
+- **Noguera Pastissers** incorpora los canales explícitos de WhatsApp y teléfono;
+  **WHYM** corrige número de calle y correo; Sota els Àngels, Birba, Tornés,
+  Juhé, Albera, Rufa, Can Fanera y Collverd reciben descripciones y gamas
+  específicas respaldadas por sus fuentes propias.
+
+Snapshot actual: 241 filas; 239 `verificado`, 2 `parcial`; venta online 130
+`sí`, 103 `no` y 8 `no comprobado`. En la cola editorial quedan 24 filas únicas:
+5 descripciones genéricas, 7 evidencias prestadas, 4 plantillas cruzadas y los
+8 casos de venta técnicamente no resolubles con las fuentes actuales.
