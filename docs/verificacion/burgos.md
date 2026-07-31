@@ -1543,6 +1543,41 @@ hay que hacer:
 - **Imágenes**: 0 huérfanas de filas purgadas (`npx pnpm check:images`).
 - **`npx pnpm verify:data` en verde** y actualización final de este ledger.
 
+### Ola 3 · venta sin resolver, segunda pasada (14) — ✅ 2026-07-31
+
+Primera tanda de la Ola 3 centrada en canales de pedido utilizables y en
+mejorar el CSV, no solo el estado editorial. Se resolvieron **14** filas que
+estaban en `Venta online=no comprobado`: **8 sí** y **6 no**. El residual
+provincial baja de **154 a 140**. Estado tras la tanda: **302 filas** ·
+**222 verificado / 80 parcial** · VO **147 sí / 15 no / 140 no comprobado**.
+
+Además de la decisión de venta, se concretaron gamas, descripciones y
+direcciones; se corrigieron los contactos de ventas de Bodegas Lerma y Cafés
+Gometero, el dominio vigente de Bodegas Lerma y el código postal de Valdaya.
+Valdaya sube de `parcial` a `verificado` al volver a estar operativa su web
+propia y confirmar identidad, actividad y municipio.
+
+```text
+bodegas-hnos-perez-pascuas-vina-pedrosa-pedrosa-de-duero · sí (telefono|email) — la web oficial publica «PEDIDOS Y CONSULTAS» con ambos canales
+bodegas-lerma-lerma · sí (telefono|email) — bloque oficial «VENTAS»; web y teléfono de ventas actualizados
+bodegas-fuentenarro-la-horra · sí (email|telefono) — su «Tienda Online» remite expresamente a ambos canales para precios y condiciones
+bodegas-valdaya-sotillo-de-la-ribera · sí (ecommerce) — colección oficial Valdaya con producto, carrito y checkout Shopify
+bodegas-lambuena-roa · sí (marketplace) — la web propia enlaza el escaparate oficial en Catatu; carrito operativo
+cafes-gometero-miranda-de-ebro · sí (telefono|email) — pedidos alternativos explícitos mientras la tienda está en mantenimiento
+caracoles-melma-ciadoncha · sí (whatsapp|email|telefono) — presupuesto directo por los tres canales publicados
+el-carluque-merindad-de-valdivielso · sí (marketplace) — vendedor vigente en Burgos Rural Market, evolución de Merindades Plaza; checkout completo comprobado
+bodegas-viyuela-pedrosa-de-duero · no — «Tienda Online» puramente informativa, sin precios, carrito ni instrucción de pedido
+bodegas-nabal-gumiel-de-izan · no — navegación completa revisada, solo catálogo, enoturismo, hotel y contacto
+bodegas-hemar-fuentecen · no — catálogo, reconocimientos y contacto, sin mecanismo de pedido remoto
+bodegas-valdable-covarrubias · no — web informativa de productos, imágenes y contacto
+miel-sabinares-del-arlanza-hortiguela · no — catálogo y puntos físicos de venta, sin pedido remoto
+xocolart-burgos · no — catálogo visual y contacto, sin precios ni flujo de pedido
+```
+
+Se mantuvieron en `no comprobado` los casos técnicamente ambiguos; por
+ejemplo, el botón oficial de compra de Viña Sastre termina en un 404 y no se
+ha convertido esa avería en un `no`.
+
 ## Flujo por lote
 
 1. Antes de empezar:
