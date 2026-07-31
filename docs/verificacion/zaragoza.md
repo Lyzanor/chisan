@@ -45,14 +45,23 @@ se resuelve en su lote. Los lotes solo se recalculan tras purgas o merges.
 
 ```text
 Estado de pasada: mantenimiento
-Base: 90be12a
+Base: 058834e
 Método: sinteticas, pendiente, evidencia-prestada, web-de-tercero,
   canal-sin-clasificar, descripcion-generica, categoria-variante,
   venta-sin-resolver (check:defects)
-Lote activo: — (ZA-R1-1, ZA-R1-2, ZA-V-1, ZA-V-2 y ZA-V-3 cerrados)
+Lote activo: — (ZA-R1-1, ZA-R1-2 y ZA-V-1 a ZA-V-4 cerrados)
 Alcance: —
 Última actualización: 2026-07-31
 ```
+
+- **Lote ZA-V-4 (2026-07-31, carril V).** 10 fichas con evidencia antigua
+  revisadas: + Q Carne y Aceites Josa pasan a `sí` por entrega a domicilio y
+  pedido telefónico; Miel Mil Gotas, Ebro Trigo, Tereos Zaragoza, AOVE Ansó,
+  Molí de Casto, Aceites del Isuela, Aceites Sanz y Aceites Tezar quedan en
+  `no` tras revisar sus canales públicos. Las diez fichas mejoran gama o
+  descripción; + Q Carne recupera el móvil directo, Tezar añade correo y
+  Aceites del Isuela rebaja de AOVE a aceite de oliva porque la fuente no
+  sostiene la especificidad heredada.
 
 - **Lote ZA-V-3 (2026-07-31, carril V).** 10 fichas revisadas: Miel
   Apihuecha y Miel La Galinda pasan a `sí` por pedido telefónico; Horno de Sos,
