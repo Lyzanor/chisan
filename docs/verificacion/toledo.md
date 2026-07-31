@@ -65,6 +65,15 @@ cola de lotes y las excepciones que evitan repetir investigación.
   colas bajan de 73 a **58** ventas sin resolver, de 39 a **24** descripciones
   genéricas y de 34 a **22** webs de tercero. La cola global de Ola 3 pasa de
   3.265 a **3.250 de 4.544**; van 1.294 resueltas (28,5 %).
+- **TOL-W3-05 · venta sin resolver + depuración de fichas vinícolas — cerrado
+  2026-07-31.** 15 filas reeditadas: 4 pasan a venta `sí` por `ecommerce`, 9
+  a `no` y 2 conservan `no comprobado` por webs técnicamente inaccesibles o
+  falta de un canal actual suficiente. Se sustituyen las 15 descripciones
+  plantilla, se retiran 15 enlaces prestados de Apoloybaco y se corrigen
+  denominaciones, marcas, domicilios, teléfonos y correos con fuentes
+  actuales. Toledo queda con **45** ventas sin resolver, **9** descripciones
+  genéricas y **7** webs de tercero. La cola global de Ola 3 baja a **3.237 de
+  4.544**; van 1.307 resueltas (28,8 %).
 
 ## Cola congelada
 
@@ -273,6 +282,33 @@ Muñoz. La Defensa y El Remedio se fusionan en
 desde 2010. Las siete filas supervivientes incorporan, según disponibilidad,
 marcas reales, historia, tamaño, dirección, horario, teléfono, correo y web
 propia; desaparecen las 15 descripciones plantilla del lote.
+
+### TOL-W3-05 · Venta sin resolver + depuración de fichas vinícolas (15) — cerrado 2026-07-31
+
+`cooperativa-ntra-sra-del-rosario-turleque`,
+`cooperativa-cristo-de-la-vera-cruz-urda`,
+`monte-la-villa-la-villa-de-don-fadrique`,
+`s-a-t-don-fadrique-la-villa-de-don-fadrique`,
+`bodegas-j-santos-la-villa-de-don-fadrique`,
+`cooperativa-san-isidro-labrador-don-fadrique-la-villa-de-don-fadrique`,
+`estancia-lacal-la-villa-de-don-fadrique`, `bodegas-guillermo-villacanas`,
+`cooperativa-angel-del-alcazar-villacanas`,
+`cooperativa-san-antonio-abad-villacanas-villacanas`,
+`cooperativa-cristo-de-santa-ana-villafranca-de-los-caballeros`,
+`bodegas-casagrande-villamuelas`,
+`cooperativa-ntra-sra-de-castellar-villarrubia-de-santiago`,
+`bodegas-hermanos-rubio-villasequilla`,
+`cooperativa-san-isidro-villasequilla-villasequilla`.
+
+Resultado editorial: J. Santos, Ángel del Alcázar, San Antonio Abad y Cristo
+de Santa Ana incorporan tiendas propias operativas y quedan verificadas con
+canal `ecommerce`; S.A.T. Don Fadrique queda verificada sin pedido remoto.
+Hermanos Rubio conserva `parcial` porque su dominio expiró, aunque el consejo
+regulador y Maps sostienen la actividad y permiten resolver la venta. Las
+cooperativas y bodegas sostenidas solo por fuentes
+regulatorias o registrales conservan `parcial`. Estancia Lacal queda abierta
+por falta de una fuente actual concluyente y Bodegas Guillermo por un HTTP 500
+en su dominio propio; ninguna avería se fuerza a venta `no`.
 
 ## Excepciones activas
 
