@@ -783,3 +783,28 @@ Mejoras editoriales asociadas:
   declara que la tienda está en obras, Fuentes de Lebanza solo tiene un
   producto agotado y los catálogos sin artículos comprables permanecen
   `no comprobado`.
+
+## PA-13 — Ola 3, segunda pasada de venta sin resolver
+
+Revisión cerrada el 2026-07-31 sobre las **75** filas residuales: **24 quedan
+resueltas** —una `sí` y veintitrés `no`— y 51 conservan `no comprobado`.
+
+- **Cabo Vírgenes** pasa a `sí` por `whatsapp`: su web oficial ofrece solicitar
+  cotización de los productos y abre un chat funcional del grupo con mensaje
+  comercial predefinido. Se documenta como venta B2B por WhatsApp, no como
+  ecommerce.
+- Se fija `no` cuando el sitio completo solo ofrece catálogo, distribución o
+  contacto: entre otros, Peñafría, Virgen del Brezo, Precocinados El Cristo,
+  Caballero Rojo, Agropal, Doncel, Campos de Nava, Leguminor, La Vega, Quesos
+  Cerrato, Pan de Ampudia, Rigodón, Merpacífico y Micopal.
+- Permanecen sin resolver los fallos TLS, los escaparates colectivos rotos y
+  las tiendas temporalmente vacías: Pagos de Negredo, Conservas Ramos,
+  Hortalizas Mauri, El Negrito, Abiamiel, Valle de San Juan y Fuentes de
+  Lebanza no se convierten en `no` por una limitación técnica o temporal.
+- Se normalizan HTTPS de Cárnicas Odriozola y Quesos Cerrato. Virgen del Brezo
+  incorpora su gama actual de hojaldres. La cola `plantilla-cruzada` pasa de 3
+  a **0** con productos y textos propios para Conservas Ramos, Artesanas de
+  Boedo y Pastelería Polo.
+
+Estado tras PA-13: **126 filas**; 79 `verificado` y 47 `parcial`. Venta online:
+**52 `sí`**, 23 `no` y **51 `no comprobado`**.

@@ -318,3 +318,29 @@ Decisiones cerradas el 2026-07-29:
 Estado tras LU-09: **137 filas**; **0 `pendiente`, 45 `parcial`, 92
 `verificado`**. Venta online: **62 `sí`, 1 `no`, 74 `no comprobado`**.
 Evidencia acumulada: **137 `keep`, 3 `merge` y 4 `purge`**.
+
+## LU-10 — Ola 3, segunda pasada de venta sin resolver
+
+Decisiones cerradas el 2026-07-31:
+
+- Se resuelven **25 de 74** casos: cuatro pasan a `sí`, veintiuno a `no` y 49
+  permanecen `no comprobado`. Las tiendas vacías, el «próximamente», los
+  errores 500/503 y la reventa independiente siguen sin convertirse en una
+  negativa.
+- Ecommerce acreditado: **Arqueixal** vuelve a mostrar alimentos con precio,
+  carrito, seguimiento y condiciones; **Sen Máis** publica leche y yogures con
+  precio, disponibilidad, carrito y condiciones de entrega.
+- Pedido directo acreditado: **Abella Meiga** ofrece «Solicitar presupuesto»
+  mediante un enlace de correo ya dirigido al productor; **Panadería Fraga**
+  declara pedidos especiales por encargo y publica teléfono y correo en la
+  misma cabecera.
+- Se fija `no` en los sitios informativos completos que solo publican producto,
+  distribución o contacto. Casos especialmente comprobados: la tienda de
+  Muuhlloa vende cosmética, no los lácteos de Granxa Maruxa; Mazarico dirige a
+  tiendas físicas; Alibós mantiene un catálogo industrial; Proencia y Prior de
+  Pantón ofrecen contacto o visitas, no un pedido de vino.
+- Se normalizan a HTTPS Casleiras, Leitigal y Arqueixal, y se enriquecen las
+  fichas de Arqueixal y Abella Meiga con productos y actividad específicos.
+
+Estado tras LU-10: **137 filas**; 92 `verificado` y 45 `parcial`. Venta online:
+**66 `sí`**, 22 `no` y **49 `no comprobado`**.

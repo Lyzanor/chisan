@@ -1131,3 +1131,30 @@ Fuentes principales:
 <https://bodegalacapuchina.es/>,
 <https://bodegalacapuchina.es/producto/capuchina-vieja-moscatel-seco/> y
 <https://lamelifera.com/nosotros/>.
+
+### Ola 3 — segunda pasada de venta sin resolver (2026-07-31)
+
+- Se reabrieron las **73** filas residuales con el sitio renderizado cuando el
+  HTML inicial no bastaba. Trece pasan a **`no`** tras recorrer la web oficial,
+  sus productos y el contacto vigente sin encontrar tienda operativa, checkout
+  ni una instrucción concreta de pedido remoto. Cadelmar sale además del CSV:
+  el BORME inscribió la disolución voluntaria y extinción de la sociedad en
+  octubre de 2025. Permanecen 59 sin resolver por bloqueo, fallo técnico,
+  tienda vacía o disponibilidad temporal.
+- Entre las negativas confirmadas están 100 Caños, Castillo de la Estrella,
+  Aceites Sierra de Yeguas, Agro-Olivarera Riogordo, Gonzalo Beltrán, Niño de
+  la Salina, Pérez Hidalgo, El Carrero, El Molino de Colmenar, Frutos Secos
+  Esteban, La Huerta de Carmen, Miel Agustín y Quesos El Llano Jaral. No se usa
+  como `no` ningún 403, DNS, 500/503, catálogo agotado o tienda incompleta.
+- Aceites Sierra de Yeguas recupera su sitio oficial vigente, normaliza HTTPS y
+  pasa a `verificado`; su descripción incorpora los más de 200 socios, la
+  almazara y la extracción en frío. Se eliminan también los horarios editoriales
+  del tipo «Consultar web» en las filas resueltas.
+- La auditoría de producto deja **0 `plantilla-cruzada`** (antes 9):
+  Destilerías El Tajo y Gin Alborán se corrigen a `Licores`; las otras siete
+  fichas reciben productos específicos que sí corresponden a su categoría.
+  Las descripciones se reescriben con datos propios —subastas de Estepona,
+  escala de Piquitos San Roque, proceso de Domínguez y gamas reales—.
+
+Estado tras esta tanda: **385 filas**; **336 `verificado`** y 49 `parcial`.
+Venta online: **202 `sí`**, 124 `no` y **59 `no comprobado`**.
