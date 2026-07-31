@@ -1543,7 +1543,7 @@ hay que hacer:
 - **Imágenes**: 0 huérfanas de filas purgadas (`npx pnpm check:images`).
 - **`npx pnpm verify:data` en verde** y actualización final de este ledger.
 
-### Ola 3 · venta sin resolver, segunda pasada (14) — ✅ 2026-07-31
+### Ola 3 · venta sin resolver, primera tanda (14) — ✅ 2026-07-31
 
 Primera tanda de la Ola 3 centrada en canales de pedido utilizables y en
 mejorar el CSV, no solo el estado editorial. Se resolvieron **14** filas que
@@ -1577,6 +1577,44 @@ xocolart-burgos · no — catálogo visual y contacto, sin precios ni flujo de p
 Se mantuvieron en `no comprobado` los casos técnicamente ambiguos; por
 ejemplo, el botón oficial de compra de Viña Sastre termina en un 404 y no se
 ha convertido esa avería en un `no`.
+
+### Ola 3 · venta sin resolver, segunda tanda (16) — ✅ 2026-07-31
+
+Segunda tanda provincial: **16** filas resueltas, **2 sí** y **14 no**. El
+residual de Burgos baja de **140 a 124**. Estado tras la tanda: **302 filas** ·
+**222 verificado / 80 parcial** · VO **149 sí / 29 no / 124 no comprobado**.
+
+La mejora del CSV fue parte explícita del lote: se sustituyeron productos y
+descripciones genéricos, se normalizaron direcciones y enlaces de Google Maps
+y se actualizaron contactos públicos de Abadía la Arroyada, Francisco Barona,
+Hornillos Ballesteros, Pastelería Silma y Valreinas. «Huevos Himma» pasa a su
+nombre oficial, **Granja Hima**, conservando el slug histórico de la misma
+entidad.
+
+```text
+destileria-reino-de-castilla-poza-de-la-sal · sí (telefono|email) — interés en producto y «Solicitar presupuesto» publicados junto a ambos canales
+pasteleria-silma-burgos · sí (telefono) — la portada declara «Pedidos solo se realizan vía telefónica» y publica el 947 262 083
+usanza-quinta-gama-valle-de-tobalina · no — catálogo B2B, servicios y contacto, sin pedido remoto anunciado
+huevos-himma-melgar-de-fernamental · no — producción y distribución profesional, sin pedido remoto de consumidor
+bodegas-vizcarra-mambrilla-de-castrejon · no — bodega, viñedos, vinos, visitas y contacto, sin tienda ni pedido
+bizcochos-noel-lerma · no — formatos, galería, noticias y contacto, sin precio, carrito ni pedido
+r-m-teran-burgos · no — rosquillas y formatos informativos, sin mecanismo de pedido
+bodega-doble-r-fuentecen · no — catálogo de cinco vinos y contacto, sin venta remota
+bodegas-abadia-la-arroyada-terradillos-de-esgueva · no — vinos, enoturismo y contacto, sin tienda ni pedido
+bodegas-francisco-barona-roa · no — vinos y comercialización informativa, sin precio, carrito ni pedido
+hornillos-ballesteros-vinos-mibal-roa · no — gama Mibal y contacto, sin venta remota
+ramos-ducher-olmedillo-de-roa · no — bodega, viñedos, vinos y contacto, sin pedido remoto
+valreinas-vinedo-y-bodega-nava-de-roa · no — gama y enoturismo, sin precio, carrito ni pedido
+bodegas-valle-de-monzon-quintana-del-pidio · no — tres marcas y contacto, sin venta remota
+bodegas-vinum-vitae-gumiel-de-izan · no — gama Avañate y contacto, sin tienda ni pedido
+bodegas-y-vinedos-ortega-fournier-berlangas-de-roa · no — Crianza, Reserva y contacto, sin tienda ni pedido
+```
+
+Se mantuvieron fuera del lote dos incertidumbres observadas: Sei Solo ofrece
+un formulario para apuntarse como «Cliente Amigo» y promete precios de bodega,
+pero no publica todavía un flujo concreto de pedido; El Horno de Burgos sigue
+tras un certificado TLS inválido. Ninguno se convirtió artificialmente en
+`no`.
 
 ## Flujo por lote
 
