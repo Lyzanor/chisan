@@ -57,6 +57,14 @@ cola de lotes y las excepciones que evitan repetir investigación.
   fallos técnicos reproducibles. Las 15 pierden la descripción plantilla; se
   corrigen productos, direcciones, contactos y 14 webs prestadas, obsoletas o
   rotas.
+- **TOL-W3-04 · venta sin resolver + saneamiento de identidad — cerrado
+  2026-07-31.** Las 15 filas heredadas salen de `venta-sin-resolver`: 7 se
+  reeditan con venta `no`, 5 se purgan y 3 se fusionan. Artero pasa a ser una
+  gama de Bodegas Muñoz; La Defensa y El Remedio se consolidan en la nueva
+  fila verificada de Bodegas La Estación. Toledo queda en **165 filas** y sus
+  colas bajan de 73 a **58** ventas sin resolver, de 39 a **24** descripciones
+  genéricas y de 34 a **22** webs de tercero. La cola global de Ola 3 pasa de
+  3.265 a **3.250 de 4.544**; van 1.294 resueltas (28,5 %).
 
 ## Cola congelada
 
@@ -240,6 +248,31 @@ No se renumera si una fila se purga o fusiona.
 `cooperativa-virgen-de-la-oliva-almonacid-de-toledo`,
 `cecilio-mingo-herrero-cabezamesada`, `cooperativa-la-fe-camunas`,
 `sociedad-cooperativa-la-centinela-consuegra`.
+
+### TOL-W3-04 · Venta sin resolver + saneamiento de identidad (15) — cerrado 2026-07-31
+
+`cooperativa-vinicola-de-consuegra-consuegra`,
+`cooperativa-san-isidro-labrador-consuegra-consuegra`,
+`cooperativa-castillo-de-consuegra-consuegra`,
+`cooperativa-cristo-de-la-agonia-dosbarrios`,
+`cooperativa-san-isidro-huerta-huerta-de-valdecarabanos`,
+`bodegas-salvador-alonso-noblejas`, `bodegas-torrique-noblejas`,
+`granduc-winery-noblejas`, `vinos-isidro-diaz-reganon-noblejas`,
+`bodega-artero-noblejas`,
+`cooperativa-virgen-de-palomares-la-puebla-de-almoradiel`,
+`sociedad-cooperativa-el-remedio-santa-cruz-de-la-zarza`,
+`cooperativa-la-defensa-santa-cruz-de-la-zarza`,
+`cooperativa-ntra-sra-de-los-remedios-sonseca`,
+`cooperativa-la-humildad-el-toboso`.
+
+Resultado editorial: se purgan Cristo de la Agonía, San Isidro Huerta y
+Virgen de Palomares como filas sintéticas; Granduc Winery y la identidad
+Torrique/Cacharel por extinción documentada. Artero se fusiona con Bodegas
+Muñoz. La Defensa y El Remedio se fusionan en
+`bodegas-la-estacion-santa-cruz-de-la-zarza`, la unidad productiva vigente
+desde 2010. Las siete filas supervivientes incorporan, según disponibilidad,
+marcas reales, historia, tamaño, dirección, horario, teléfono, correo y web
+propia; desaparecen las 15 descripciones plantilla del lote.
 
 ## Excepciones activas
 
