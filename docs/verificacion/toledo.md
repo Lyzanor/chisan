@@ -74,6 +74,15 @@ cola de lotes y las excepciones que evitan repetir investigación.
   actuales. Toledo queda con **45** ventas sin resolver, **9** descripciones
   genéricas y **7** webs de tercero. La cola global de Ola 3 baja a **3.237 de
   4.544**; van 1.307 resueltas (28,8 %).
+- **TOL-W3-06 · cierre de defectos solapados — cerrado 2026-07-31.** 12 filas
+  reeditadas: 3 pasan a venta `sí` por `ecommerce`, 4 a `no` y 5 conservan
+  `no comprobado` porque las fuentes no permiten atribuir un canal actual. Se
+  eliminan las **9** descripciones genéricas y las **7** webs prestadas que
+  quedaban en Toledo. La identidad histórica `Raquel Cuéllar Rama ·
+  Arcicóllar` se corrige a `La Bruja Lechera · Camarena`, con tombstone
+  `merge`. Toledo queda con **38** ventas sin resolver y sin defectos de
+  descripción genérica ni web de tercero. La cola global de Ola 3 baja a
+  **3.230 de 4.544**; van 1.314 resueltas (28,9 %).
 
 ## Cola congelada
 
@@ -93,7 +102,7 @@ No se renumera si una fila se purga o fusiona.
 
 ### TOL-04 · Lácteos residuales (2) — cerrado 2026-07-25
 
-`raquel-cuellar-rama-arcicollar`,
+`raquel-cuellar-rama-arcicollar` → `la-bruja-lechera-camarena`,
 `s-a-t-estrada-castano-herreruela-de-oropesa`.
 
 ### TOL-05 · Aceite (9) — cerrado 2026-07-25
@@ -309,6 +318,30 @@ cooperativas y bodegas sostenidas solo por fuentes
 regulatorias o registrales conservan `parcial`. Estancia Lacal queda abierta
 por falta de una fuente actual concluyente y Bodegas Guillermo por un HTTP 500
 en su dominio propio; ninguna avería se fuerza a venta `no`.
+
+### TOL-W3-06 · Cierre de defectos solapados (12) — cerrado 2026-07-31
+
+`bodegas-del-muni-villatobas`,
+`cooperativa-ntra-sra-de-la-asuncion-villatobas`,
+`cooperativa-del-campo-yepes-yepes`,
+`cooperativa-del-campo-de-yebenes-los-yebenes`, `vihucas-villacanas`,
+`vinedos-mejorantes-villacanas`, `bodegas-garron-los-yebenes`,
+`casa-del-valle-yepes`, `embutidos-alia-escalonilla`,
+`asociacion-ganadera-palomares-s-a-t-la-puebla-de-almoradiel`,
+`la-bruja-lechera-camarena`,
+`s-a-t-estrada-castano-herreruela-de-oropesa`.
+
+Resultado editorial: Bodegas del Muni, Casa del Valle y Estrada Castaño
+incorporan sus tiendas propias operativas, catálogos y datos productivos y
+quedan verificadas con `ecommerce`. Vihucas y tres cooperativas pasan a venta
+`no` después de revisar sus canales; Vihucas conserva `parcial` por el TLS
+roto y la antigüedad visible de su web HTTP. Mejorantes, Garrón, Embutidos
+Alia, Palomares y La Bruja Lechera mantienen `no comprobado` por ausencia de
+un canal atribuible o evidencia actual concluyente, no por mera falta de
+búsqueda. Las doce fichas reciben descripciones y productos específicos; se
+retiran dominios muertos, páginas de proveedor y enlaces prestados. La
+identidad personal `raquel-cuellar-rama-arcicollar` se fusiona con la ficha
+empresarial y territorial correcta `la-bruja-lechera-camarena`.
 
 ## Excepciones activas
 
