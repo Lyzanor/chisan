@@ -618,3 +618,25 @@ Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
   y textos productivos específicos —marcas, variedades, trayectoria y método—.
   `descripcion-generica` baja de **73 a 68** y `venta-sin-resolver` de **47 a
   38**.
+
+### Tanda CO-V-5 (2026-07-31)
+
+- Se revisan **10 filas** y el corte queda en **198 filas** · 176 `verificado`
+  · 22 `parcial` · venta 144 `sí` · 22 `no` · 32 `no comprobado`.
+- **Cañadú**, **Horno La Molina** y **Rosypan** pasan a `sí` (`telefono`): los
+  dos primeros publican encargos junto a su número y Rosypan añade reparto a
+  domicilio y una llamada expresa a encargar por teléfono.
+- **La Miga**, **La Catalana 1890** y **Gómez Priego** pasan a `no`. Sus
+  perfiles propios muestran respectivamente compra en tienda, puntos de venta
+  y ubicación física, pero no tienda, reparto ni instrucciones de pedido
+  remoto para consumidor.
+- La Piedra Escrita, Jamones Hetesa, Pastelería Nati y Delicias Artesanas Cris
+  conservan `no comprobado`: Meta oculta o no aporta actividad utilizable en
+  dos casos y los otros dos carecen de canal propio. Una reseña sobre un envío
+  de Hetesa no se atribuye como política comercial del productor.
+- Se corrige Horno La Molina del número **34 al 36** según su perfil oficial.
+  Las diez fichas sustituyen la descripción de plantilla por gama, método,
+  trayectoria o servicio concretos: pastelería clásica y origen en 1948,
+  productos sin lactosa, jamón de Los Pedroches, pan sin añadidos, pestiños de
+  pellizco y reparto local, entre otros. `descripcion-generica` baja de **68 a
+  58** y `venta-sin-resolver` de **38 a 32**.
