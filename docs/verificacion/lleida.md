@@ -1041,3 +1041,26 @@ Fuentes principales:
 <https://codi0.cat/product/ous-ecologics-mitja-dotzena/>,
 <https://www.clickandbrew.com/tienda/> y
 <https://www.sanuifruits.com/producto/pera-conference-extra/>.
+
+## Ola 3 · segunda pasada de residuales (2026-07-31)
+
+- Se reabren las **68** decisiones pendientes y se resuelven **20 como `no`**:
+  los canales propios disponibles son catálogos, webs corporativas o perfiles
+  sociales sin instrucciones de pedido remoto. Los fallos técnicos, tiendas
+  vacías y reventa independiente se mantienen como incertidumbre, no como
+  ausencia de venta.
+- La pasada mejora **21 fichas**. Aubagueta incorpora Coster, Segarra, Kalona,
+  Lara y mató y el rebaño de unas 300 cabras; Masia Perdigués detalla
+  longaniza, secallona, fuet, lomo, chorizo y AOVE; Pineo concreta Natural,
+  Intens y Luna Llena; y Puigdellívol añade Instagram y su gama deshidratada al
+  vacío.
+- Aigua Pineo continúa `no comprobado`: el productor sólo enlaza compra en una
+  tienda independiente de Países Bajos. Granja Pifarré mezcla reserva de
+  experiencias y referencias de proximidad; las tiendas vacías o rotas de
+  Farré Vidal, Sauvella y otros casos tampoco permiten una decisión negativa.
+- Estado provincial: **204 filas**; venta online **121 `sí`**, **35 `no`** y
+  **48 `no comprobado`**. Verificación: 163 `verificado` y 41 `parcial`.
+
+Fuentes destacadas: <https://aubagueta.com/?page_id=30>,
+<https://foratdebuli.com/>, <https://www.pineo.cat/punts-de-venda/> y
+<https://www.frutossecospuigdellivol.com/>.

@@ -76,3 +76,33 @@ enlaces ajenos), **Cítricos Natanael Bort**, **Mel Mas de l'Argila**.
   existencias, servicios temporalmente fuera de servicio, bloqueos técnicos y
   reventa exclusivamente de terceros. Un catálogo o un carrito residual no se
   interpretaron como pedido operativo.
+
+## Ola 3 · segunda pasada de residuales (2026-07-31)
+
+- Se resuelven **26 de los 70** pendientes: **20 pasan a `no`** tras revisar sus
+  canales actuales sin encontrar pedido remoto y **6 pasan a `sí`** con un
+  mecanismo concreto y usable.
+- La Cooperativa de Jérica ofrece siete AOVE, carrito, checkout y pago Redsys,
+  además de pedidos por correo (`ecommerce|email`). Bodega Vilafamés publica
+  entrega y pedidos por correo o teléfono; Tot de Poble, Masía Els Masets y Les
+  Pastetes de Lumi aceptan encargos telefónicos; Quercus and Truffles prepara y
+  envía pedidos mayoristas por correo o teléfono.
+- La pasada mejora **28 fichas del CSV**: se corrigen o amplían gamas,
+  descripciones, direcciones, horarios y contactos. Entre otras, Agua de Bejís
+  incorpora la planta de Los Cloticos y formatos de 0,5 a 20 litros; La
+  Canetana sustituye su texto de directorio por vinos y contacto propios;
+  Boverals concreta sus tres tipos de huevo; y Vega Palancia, Tot de Poble,
+  Els Masets, Rey's, Carnes Alto Palancia y Coarvi detallan producto real.
+- Se prueban hasta el último paso los casos ambiguos. Aguacates de la Plana
+  añade una caja al carrito pero su checkout termina en error; Carns Noel
+  bloquea el pago; la tienda antigua de Rey's devuelve 404 y las rutas de
+  L'Estanquer se resuelven como blog. Los cuatro continúan `no comprobado` por
+  fallo técnico.
+- Estado provincial: **150 filas**; venta online **79 `sí`**, **27 `no`** y
+  **44 `no comprobado`**. Verificación: 137 `verificado` y 13 `parcial`.
+
+Fuentes destacadas: <https://coopjerica.es/tienda/>,
+<https://www.bodegavilafames.com/es/a-tu-servicio>,
+<https://www.queseriatotdepoble.com/productos.html>,
+<https://www.masiaelsmasets.es/productos-lacteos-artesanos/> y
+<https://quercusandtruffles.com/mayoristas-de-trufas/>.
