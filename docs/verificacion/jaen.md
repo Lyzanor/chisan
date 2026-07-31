@@ -464,3 +464,43 @@ Mejoras editoriales asociadas:
   muestra «No se encontraron productos»; Obrador La Panadería anuncia
   «Próximamente» y la tienda embebida de Virgen del Campo falla. Todos siguen
   `no comprobado`.
+
+## JA-14 — Ola 3: residual y saneamiento de fichas
+
+Decisiones cerradas el 2026-07-31 sobre las 70 filas pendientes tras JA-13:
+**2 pasan a `sí`, 10 a `no` y 58 permanecen `no comprobado`**.
+
+- **Ajos El Nene** publica un procedimiento para solicitar presupuesto de sus
+  productos por teléfono o correo; se acreditan ambos canales y se incorpora
+  el correo comercial.
+- **Stevia del Condado** publica pedidos mínimos, precios y condiciones a
+  través del departamento comercial; se acreditan email y teléfono.
+- Los diez `no` proceden de canales oficiales vivos revisados sin compra ni
+  instrucciones de pedido: Anabella, San Antonio Abad, Olivar de Castro, Santo
+  Reino/Grupo Apex, Diego Angulo, Panadería Ortega, Torrefrío, Panadería La
+  Plaza, Bioandalus y Levasa.
+- Tiendas temporalmente indisponibles, dominios con fallo técnico y reventa
+  independiente siguen en `no comprobado`, conforme a la política editorial.
+
+Mejoras editoriales asociadas:
+
+- **Stevia del Condado** producía una mezcla entre domicilio fiscal y fábrica:
+  las instalaciones de producción y envasado están en Santisteban del Puerto,
+  no en Navas de San Juan. Se corrigen slug, municipio, dirección, mapa,
+  horario, contacto, gama y descripción, con `merge` trazable.
+- **Aceite Diego Angulo** sitúa sus fincas Cerro Palomino y Artesones en
+  Villanueva de la Reina, no en Lahiguera. Se corrigen slug, municipio,
+  dirección, mapa y descripción, dejando `merge` desde la URL antigua.
+- Se resumen descripciones desproporcionadas y se precisan productos de
+  Esencia Andalusí, Productos Mata, Productos Campos, Bigopan, Anabella,
+  Obrador La Panadería, Salinas Don Diego, La Plaza y otros obradores.
+- Chocolivate queda descrito como obrador de chocolate artesano con aceite de
+  oliva, respaldado por Degusta Jaén y su presencia en la feria de 2026. Sigue
+  `parcial` y con venta no comprobada por falta de canal primario.
+- `plantilla-cruzada` baja de 7 a 0. También se eliminan las dos descripciones
+  duplicadas detectadas en Panadería Medina y Panadería Panciencia; solo queda
+  el geo-warning histórico y documentado de MO Molina Olivares.
+
+Estado tras JA-14: **185 filas**; **0 `pendiente`, 38 `parcial`, 147
+`verificado`**. Venta online: **116 `sí`, 11 `no`, 58 `no comprobado`**.
+Evidencia acumulada: **185 `keep` y 4 `merge`**.

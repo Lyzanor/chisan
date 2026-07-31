@@ -466,3 +466,39 @@ Decisiones cerradas el 2026-07-29:
 Estado tras OR-12: **168 filas**; **0 `pendiente`, 42 `parcial`, 126
 `verificado`**. Venta online: **90 `sí`, 9 `no`, 69 `no comprobado`**.
 Evidencia acumulada: **168 `keep` y 5 `merge`**.
+
+## OR-13 — Ola 3: cierre parcial del residual
+
+Decisiones cerradas el 2026-07-31 sobre las 69 filas que seguían sin resolver:
+**5 pasan a `sí`, 25 a `no` y 39 permanecen `no comprobado`**.
+
+- Ecommerce acreditado: Adega Vella, Adegas Maleiga, Bodega Santa Marta
+  (Viñaredo) y Adega Trasdovento. Las cuatro tiendas ofrecen referencias
+  actuales, precios y un carrito/checkout utilizable.
+- Pedido directo acreditado: Adega Fernando Cibeira publica expresamente que
+  los pedidos se realizan por teléfono o WhatsApp.
+- Los 25 `no` corresponden a sitios oficiales vivos cuyos canales actuales se
+  revisaron sin hallar tienda ni instrucciones concretas de pedido remoto.
+  Catálogos, formularios genéricos y restos técnicos de WooCommerce no se
+  contaron como venta.
+
+Mejoras editoriales asociadas:
+
+- **Adegas Maleiga** tiene la adega y el embotellado en San Paio (Ribadavia),
+  no en Beade. Se corrigen slug, municipio, dirección, mapa, horario y gama,
+  dejando `merge` desde la URL anterior.
+- **Bodega Santa Marta** está en Córgomo (Vilamartín de Valdeorras), no en O
+  Barco. Se corrigen identidad pública, slug, dirección, contactos y
+  coordenadas oficiales, además de incorporar la oferta vigente de la tienda.
+- Adega Vella, Touza Vella, Trasdovento, Pazo de Valdeconde y Fazenda Pradio
+  suben de `parcial` a `verificado` al existir hoy una fuente primaria viva que
+  completa la evidencia territorial previa.
+- Se retira `pazodastapias.com`: el dominio muestra una plantilla genérica de
+  alojamiento sin identidad de la bodega. No se interpreta como cierre ni como
+  prueba de ausencia de venta.
+- Se completan productos, contactos, redes, direcciones y descripciones de las
+  fichas materiales. La cola `plantilla-cruzada` baja de 1 a 0.
+
+Estado tras OR-13: **168 filas**; **0 `pendiente`, 37 `parcial`, 131
+`verificado`**. Venta online: **95 `sí`, 34 `no`, 39 `no comprobado`**.
+Evidencia acumulada: **168 `keep` y 7 `merge`**.
