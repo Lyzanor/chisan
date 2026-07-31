@@ -6,6 +6,13 @@ proveniencia por fila vive en `data/evidence/extremadura/caceres.jsonl`.
 
 ## Estado
 
+- **Lote CC-O3-venta (2026-07-31):** 12 fichas investigadas y **12 decisiones
+  cerradas** (`5 sí` por ecommerce propio y `7 no`). La cola baja **122 → 110**
+  y el CSV queda en 232 filas: **131 `verificado` y 101 `parcial`**. Teodoro
+  Pérez y Las Hermanas pasan a verificado; también se corrigen nombre,
+  descripción, contacto o domicilio en Las Hermanas, La Esencia y Almazara El
+  Tejar. Cuatro falsos indicios de tienda se resuelven como `no` tras comprobar
+  que el sitio oculta o deja inoperantes precio, carrito y compra.
 - **Lote CC-V-a (2026-07-28, carril V).** Alcance: las 23 filas de
   `check:defects --check canal-sin-clasificar`. **21 cerradas a `ecommerce`**
   comprobando el mecanismo en vivo (catálogo con botón de compra), no el texto

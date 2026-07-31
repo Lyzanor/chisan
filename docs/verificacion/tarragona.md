@@ -7,6 +7,14 @@ procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`.
 
 ## Estado
 
+- **Lote O3-venta (2026-07-31):** 13 fichas investigadas; **10 decisiones
+  cerradas** (`6 sí` por ecommerce propio y `4 no`) y 3 tiendas técnicamente
+  incompletas que permanecen `no comprobado`. La cola baja **120 → 110** y el
+  CSV queda en 315 filas: **248 `verificado` y 67 `parcial`**. Además de
+  clasificar la venta se mejoran descripción, URL o contacto de Vidafruits,
+  Sarral/Portell, Bondria y La Placeta. Sarral, Bondria y Bundó no se fuerzan:
+  el primero desvía carrito y pago a portada, el segundo no expone compra
+  activa y el tercero declara temporalmente deshabilitados los pedidos web.
 - Inicio de la pasada profunda no-vino: 2026-06-23.
 - Snapshot inicial: 314 filas; 176 `verificado`, 70 `parcial`, 68 `pendiente`.
   `Venta online`: 145 `sí`, 41 `no`, 128 `no comprobado`.
