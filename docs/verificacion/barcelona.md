@@ -1213,6 +1213,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   explícitos: los cinco de `BCN-L1-a` y La Planeta. El siguiente carril abre las
   20 decisiones de cerveza artesana.
 
+- **Lote BCN-B1-a (2026-08-01, primera pasada profunda de cerveza).** Se
+  revisan las diez primeras fichas del carril y se cierran **siete decisiones
+  de venta** sin forzar los tres fallos técnicos. La Textil queda en `no`: su
+  tienda actual solo vende ropa y discos, no cerveza. Canetenca recupera el
+  nombre público actual, elimina el pin ajeno de Bar La Trinca y confirma
+  ecommerce en cajas de 12; Els Minairons pasa de estilos genéricos a seis
+  referencias reales, adopta las coordenadas institucionales y recoge pedidos
+  por correo. Synera deja de confundirse con el nombre del taproom, corrige
+  correo, Instagram y posición, y queda en `sí|telefono` por su ficha de venta
+  en línea y distribución propia.
+
+  La pasada también corrige alcance e identidad. ST ROCH se describe ya como
+  cervesera nómada, pierde una supuesta fábrica no sustentada y actualiza móvil,
+  Instagram y catálogo. Dehum deja de figurar como microcervecera comercial:
+  es una asociación sin ánimo de lucro de autoproducción y cultura cervecera,
+  activa en ferias, y pierde el mapa prestado de The Drunk Monk. Grenyut corrige
+  comarca, nombre, dirección, Instagram, horario y cinco cervezas; su aplicación
+  oficial publica `Botiga: En construcció`, por lo que queda en `no`. ART borra
+  la razón social histórica Cervebrew, pasa a HTTPS y conserva `no comprobado`:
+  tienda y carrito cargan, pero el catálogo está vacío. Brew Pub Le Sec responde
+  503 y The Goats sirve el vhost por defecto; ambos quedan aparcados como techos
+  técnicos, no como falsos `no`.
+
+  Barcelona mantiene **2.451 filas**; el residual provincial baja **365 → 358**,
+  la carga real **565 → 558** y el residual de cerveza **20 → 13**. Los avisos
+  de calidad siguen en **34**, `sinteticas` en **7**, evidencia prestada en
+  **128**, `plantilla-cruzada` en **20** y `pendiente` en **9**. `BCN-B1-b`
+  continúa con las diez fichas frescas restantes; los tres techos de esta tanda
+  quedan fuera del recuento de trabajo fresco.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
