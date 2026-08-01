@@ -1057,3 +1057,24 @@ venta online en **127 `sí`**, **32 `no`** y **48 `no comprobado`**.
 El lote conjunto **Huelva + Baleares + León** resuelve **112 de 249** filas. La
 cola global de Ola 3 baja de 3.482 a **3.370 de 4.544**; quedan **1.174 resueltas
 (25,8 %)**.
+
+## LE-19 — Ola 3 · banda 41–60 (2026-08-01)
+
+Cuarta pasada sobre el residual, con tres decisiones y mejora de los datos
+publicados:
+
+- **Confitería Asturias** publica elaboración propia, encargos y envíos a toda
+  la península con pedido por teléfono. Pasa a `sí` y actualiza dominio,
+  teléfono, gama y descripción.
+- **Bodegas Verónica Ortega** y **Estévez Bodegas y Viñedos** tienen webs
+  oficiales actuales con catálogo y contacto completos, pero sin tienda ni
+  instrucción de pedido remoto: pasan a `no`. Se detallan las etiquetas de
+  Verónica Ortega y, en Estévez, la gama, el correo y la dirección oficial
+  actual.
+
+Se reintentaron sin convertir una avería en una conclusión comercial:
+`tienda.leyendadelparamo.es` sigue devolviendo HTTP 500 y los 15 productos de
+Coladilla figuran como `available: false`. Ambos permanecen en `no comprobado`.
+
+**Estado tras LE-19:** 207 filas; 163 `verificado`, 43 `parcial`, 1
+`pendiente`; venta online en **128 `sí`**, **34 `no`** y **45 `no comprobado`**.

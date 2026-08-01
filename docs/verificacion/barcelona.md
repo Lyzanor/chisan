@@ -62,6 +62,32 @@ La verdad es el CSV; tras el cierre, la pasada de ampliación «flujo 2026» (ju
 
 ## Mantenimiento (al retomar)
 
+### Campaña prioritaria BCN-V · Ola 3 (planificada 2026-08-01)
+
+Barcelona se aborda **antes de agotar las demás bandas** y como campaña propia,
+no como el último lote grande. Medición de entrada: **2.544 filas**, 1.737
+`verificado`, 807 `parcial`, 0 `pendiente` y **833 `Venta online=no
+comprobado`**. Es la mayor cola provincial de Ola 3 y el CSV prioritario del
+catálogo.
+
+La campaña se divide en tandas de unas 40–70 filas, recortadas con el estado
+vivo justo antes de abrirlas:
+
+1. bodegas (116), en dos tandas;
+2. pan y pastelería (107), por municipio/distrito y en dos tandas;
+3. charcutería (93), en dos tandas;
+4. lácteos, cerveza, miel y aceite (90), en dos tandas;
+5. fruta y verdura (199), separando presencia propia de las filas con techo DAR;
+6. despensa y el resto de categorías, en lotes homogéneos hasta agotar el residual.
+
+Cada tanda tiene dos pasadas: **V1** resuelve el canal vigente y mejora en la
+misma fuente identidad, contacto, productos, descripción y ubicación; **V2**
+audita todos los nuevos `sí`/`no`, los fallos técnicos y los solapes con
+`evidencia-prestada`, `web-de-tercero`, `plantilla-cruzada` y texto genérico.
+No se vuelca el roster completo: se trabaja con `--categoria`, `rg` y pequeños
+clusters de dominio/municipio. Cada tanda cierra con evidencia para las
+decisiones cambiadas, `verify:data` y commit propio.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,

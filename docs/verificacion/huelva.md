@@ -719,3 +719,20 @@ conservan las redes y contactos válidos.
 Permanecen `no comprobado` los fallos técnicos, las tiendas sin existencias y
 la falsa tienda de Olionuba. **Estado tras HU-14:** 150 filas; 116 `verificado`,
 34 `parcial`; venta online en **70 `sí`**, **32 `no`** y **48 `no comprobado`**.
+
+## HU-15 — Ola 3 · banda 41–60 (2026-08-01)
+
+Pasada focalizada sobre el residual técnico y las fichas con mayor posibilidad
+de mejora pública. **Bodegas Juncales** deja de ser una ficha de registro:
+su web oficial viva acredita actividad, dirección y una gama de 16 vinos y
+vinagres, y publica una sección específica de pedidos por correo o teléfono.
+La fila pasa a `verificado` y `Venta online=sí`, incorpora ambos contactos, web,
+dirección y una gama útil para el usuario.
+
+No se fuerzan decisiones en los dominios que no funcionan al revisarlos.
+Bodegas Acosta y Cerveza Odiel conservan señales recientes de catálogo, pero
+sus dominios no resolvían por DNS y la antigua tienda Ecwid de Odiel devolvía
+404; siguen en `no comprobado` conforme a la regla de fallo técnico.
+
+**Estado tras HU-15:** 150 filas; **117 `verificado`**, 33 `parcial`, 0
+`pendiente`; venta online en **71 `sí`**, 32 `no` y **47 `no comprobado`**.
