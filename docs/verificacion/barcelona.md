@@ -806,6 +806,55 @@ decisiones cambiadas, `verify:data` y commit propio.
   `forn-de-pa-rovira-lhospitalet-de-llobregat` y
   `sus-cakes-santa-coloma-de-gramenet`.
 
+- **Lote BCN-P1-d (2026-08-01, primera pasada de pan y pastelería).** Se
+  investigaron las 25 fichas congeladas y **las 25 reciben cambios materiales
+  en el CSV**. La corrección principal es de identidad: la fila atribuida a
+  Èric Lloberes y repartida entre Viladecavalls y Granollers correspondía en
+  realidad al obrador de **Eric Vila en Cardedeu**; se corrigen nombre,
+  municipio, dirección, contacto y slug, con fusión trazada. Carlamel de
+  Canyella repara columnas desplazadas y pasa de una dirección y teléfono
+  antiguos a su obrador actual de Gurb 73. Pastisseria Núria deja de heredar
+  la historia de una homónima de Terrassa y se identifica con el obrador
+  Vallirana de Pastisseria Cusbat. Kinkakau retira un dominio hoy secuestrado
+  por una plantilla de *coaching* ajena; Ampurdanesa elimina una web sin DNS.
+  También se corrigen direcciones, contactos, horarios y surtidos de Xanat,
+  Altarriba, Forn Maria, Artipà, Masramon, Sant Jordi, Sant Onofre, L'Espiga
+  d'Or, 180ºC, Falgueras, Cal Pelegrí, Cal Forner, Ca la Fornera, Lladó, Forn
+  Sant Jordi de Folgueroles, Morreig, Forn Mercè, Forns Rovira y Su's Cakes.
+
+  Se resuelven **las 25 decisiones de venta**, doce en `sí` y trece en `no`.
+  Artipà y Morreig disponen de tienda propia; Falgueras y Cal Forner aceptan
+  pedidos por WhatsApp; Sant Onofre, Ericpastisser y Forns Rovira publican
+  canales de encargo; y Núria, Carlamel, Kinkakau, Ampurdanesa y Su's Cakes
+  permiten pedidos por teléfono o WhatsApp. Las trece negativas quedan
+  sustentadas por sitios oficiales, directorios institucionales y fichas
+  operativas actuales sin mecanismo remoto, incluida la indicación expresa de
+  que Forn Mercè no reparte.
+
+  Barcelona mantiene **2.500 filas**; el residual provincial baja **532 →
+  507**, la carga real **722 → 699** y el residual de pan y pastelería **47 →
+  22**. Los avisos de calidad siguen en **40**, `sinteticas` en **8**,
+  `plantilla-cruzada` en **21** y `pendiente` en **9**. Se congela `BCN-P1-e`
+  como segunda pasada de los 22 techos restantes: `forn-de-pa-can-more-argentona`,
+  `taart-by-carles-mampel-badalona`,
+  `artesano-panaderia-y-pasteleria-barcelona-gracia`,
+  `pastisseria-roquetes-barcelona-nou-barris`,
+  `obrador-pastrygas-barcelona-sant-marti`,
+  `fleca-serra-cal-forner-caldes-destrac`,
+  `el-capritxet-pastisseria-castellbisbal`,
+  `canyars-pastissers-castelldefels`, `forn-nou-folgueroles-folgueroles`,
+  `masamara-martorelles`, `forn-de-la-panadella-montmaneu`,
+  `pastisseria-prat-can-carriel-roda-de-ter`, `la-coca-danis-de-vic`,
+  `pastisseria-forn-de-sant-joan-sant-sadurni-danoia`,
+  `pastisseria-sant-jordi-sant-sadurni-danoia`,
+  `pasteleria-pascual-santa-coloma-de-gramenet`,
+  `pasteleria-torres-santa-coloma-de-gramenet`,
+  `arka-delicatessen-lhospitalet-de-llobregat`,
+  `la-trufa-dor-sant-adria-de-besos`,
+  `la-francesa-pastisseria-lhospitalet-de-llobregat`,
+  `forn-de-pa-la-catalana-sant-adria-de-besos` y
+  `baluard-el-magatzem-lhospitalet-de-llobregat`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
