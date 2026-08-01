@@ -534,6 +534,44 @@ decisiones cambiadas, `verify:data` y commit propio.
   `claramunt-estruch-javier-sant-esteve-sesrovires` hasta
   `juli-centellas-alex-tordera`.
 
+- **Lote BCN-V1-p (2026-08-01, fruta y verdura sin web, quinta tanda).** Las
+  25 fichas congeladas se investigaron y las 24 unidades que permanecen en
+  catálogo recibieron cambios materiales. La revisión encontró además una
+  segunda fila previa de **El Jardí de Collbarra** con slug de Ullastrell pese
+  a que productor, contacto y municipio eran los mismos de Sant Llorenç
+  Savall. Se conserva la URL provincial correcta y quedan tombstones de
+  `merge` tanto para ese duplicado como para **Elena Simó**, que ya estaba
+  representada por **Els Campaners** en Ullastrell. **Agrosans** deja Terrassa
+  y pasa a su municipio, dirección, contacto y coordenadas reales en Castellar
+  del Vallès, también con trazabilidad de `merge`.
+
+  Se recuperan cinco identidades comerciales útiles —El Jardí de Collbarra,
+  Can Aubareda, Cal Pastoret, Cal Jan y Hort d'en Gallina— y se reconstruyen
+  con productos y puntos de venta concretos L'Horta de les Casetes, Jaume
+  Biscarri, Família Esteve Ràfols, Manel Massana, Olivella Font Clara, Agrària
+  Can Viver y Jofre Bellido. Horta Vila deja de inventar tomate y lechuga: el
+  censo municipal vigente describe una explotación porcina y cunícola. Diego
+  Aguilar, Juana Tamarit y Modest Preixens dejan de ser fichas genéricas de
+  fruta y verdura y recuperan la actividad histórica de aceite, aceituna y
+  almendra.
+
+  El lote elimina pines, horarios, teléfonos y direcciones de un ayuntamiento,
+  un ateneo, una fábrica textil, una tienda de muebles, una sala, un
+  restaurante y un salón de manicura. Cuatro fichas cuya actividad solo queda
+  apoyada por el registro histórico pasan honestamente a `pendiente`; Horta
+  Vila conserva `no comprobado` porque la actividad ganadera actual no permite
+  deducir un canal alimentario. En las filas conservadas se resuelven **19
+  decisiones de venta** como `no` tras revisar webs, mercados, agrobotigas,
+  venta directa y circuito corto sin mecanismo remoto. La fusión de Elena Simó
+  elimina otra decisión sin resolver duplicada.
+
+  Barcelona baja **2.507 → 2.505 filas**; el residual provincial **686 → 666**,
+  la carga real **857 → 840**, el residual de fruta y verdura **119 → 95** y
+  los avisos de calidad **49 → 48**; `plantilla-cruzada` se mantiene en **21**.
+  Quedan **22 fichas frescas sin web y sin evidencia de revisión**. Se congelan
+  como `BCN-V1-q`, desde `mateu-mendez-joaquin-tordera` hasta
+  `josep-floriach-gonzalez-mataro`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
