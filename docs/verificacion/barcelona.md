@@ -106,6 +106,25 @@ decisiones cambiadas, `verify:data` y commit propio.
   dominio comprometido; Amat Montané requiere confirmar la titularidad del
   nuevo escaparate. Ninguno se promovió por esas señales.
 
+- **BCN-V1-b · bodegas, segunda pasada (2026-08-01).** Se profundizó en 12
+  bodegas con canal oficial y se mejoró la ficha completa, no solo la marca de
+  venta: productos concretos en las 12, descripciones específicas y
+  correcciones de web, dirección, teléfono o correo en siete fichas. Once
+  pasan a `sí`: Alella
+  Vinícola–Celler Marfil, Cava Bohigas, Colet Vins, Codorníu, Parxet, Celler
+  Pardas, Llopart, Cava Martín Soler, Bergonyó i Durall, Jané Santacana y Mas
+  Xarot. La titularidad de las tiendas de Codorníu y Parxet se comprobó en el
+  aviso legal del grupo productor; Celler Marfil y Colet reemplazan datos y
+  dominios históricos, y Pardas adopta como `web` su tienda oficial viva ante
+  el fallo del dominio corporativo. Celler Avenc del Garraf conserva `no
+  comprobado`: su identidad, ubicación, contacto y oferta sí se actualizaron,
+  pero la botiga devolvió un fallo técnico y no se convirtió esa incertidumbre
+  en venta vigente. El residual provincial baja **826 → 815** y el de bodegas
+  **109 → 98**. La V2 confirma coincidencia CSV/evidencia y ningún nuevo `sí`
+  entra en las colas editoriales de venta, fuente, plantilla o texto genérico;
+  quedan avisos de imagen independientes del alcance de esta tanda y solo Avenc
+  permanece deliberadamente en `venta-sin-resolver`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
