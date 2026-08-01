@@ -1511,6 +1511,38 @@ decisiones cambiadas, `verify:data` y commit propio.
   `sin-imagen` baja **1.374 → 1.372** por la consolidación de las dos fichas
   duplicadas sin activo propio.
 
+- **Lote BCN-F2-b (2026-08-01, Barcelona ciudad y dos traslados).** Nueve
+  fichas revisadas resuelven **cinco huecos provinciales** y eliminan varias
+  atribuciones cruzadas. **Barcelona Chocolate Company** mantiene inactiva su
+  cesta, pero su web actual dirige expresamente las compras al correo propio;
+  actualiza gama, contacto y mapa y pasa a `sí|email`. **Oggi Gelato** tiene
+  carta operativa en Glovo con precios, alta de producto y entrega
+  (`sí|marketplace`). **Oriol Balaguer** recupera la tienda propia y el correo
+  de pedidos, con referencias disponibles, cesta y tramitación
+  (`sí|ecommerce`).
+
+  Dos supuestos productores barceloneses eran domicilios administrativos.
+  **Agrícola Poma** comercializa LoMasOli, pero cultiva y elabora en Finca les
+  Pinyanes del Priorat; se traslada a Tarragona como `lomasoli-priorat` y queda
+  en `no` tras revisar su catálogo completo sin precio, pedido ni entrega.
+  **Martin González Meyer** es **Oli Cometes**: las condiciones de compra y el
+  ayuntamiento sitúan finca y molino propios en La Pobla de Cérvoles. Se
+  traslada a Lleida con su identidad, gama, contacto y ecommerce reales.
+
+  La ficha de **Artemis Cosmètica** estaba contaminada por un centro de estética
+  homónimo de Nou Barris: se eliminan web, Facebook, teléfono, pin, coordenadas,
+  horario e imagen genérica ajenos y se conserva el perfil del proyecto
+  artesano. **Fontcalda Corporate, Joan Prats Espar y David Balsells Edo**
+  mantienen sólo lo que respalda el registro histórico; se retiran contactos y
+  mapas sin corroboración —incluidos Galeria Joan Prats y Grup Balsells— y
+  quedan `pendiente`, sin fingir precisión actual.
+
+  Barcelona pasa de **2.443 a 2.441 filas**; el residual baja **317 → 312** y
+  la carga real **519 → 514**. `sinteticas` sube **9 → 12** y `pendiente` **10
+  → 13** por las tres limpiezas históricas; evidencia prestada sigue en **128**
+  y `plantilla-cruzada` en **20**. `sin-imagen` baja **1.372 → 1.371**: salen
+  dos fichas sin activo y Artemis deja de apuntar a una imagen no identificable.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
