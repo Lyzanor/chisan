@@ -213,6 +213,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   incertidumbres justificadas siguen en `venta-sin-resolver` y la señal de
   imagen permanece fuera del alcance de esta tanda.
 
+- **BCN-V1-f · bodegas, sexta pasada técnica (2026-08-01).** Se investigaron
+  en dos pasadas las 12 bodegas pendientes cuyo enlace existente estaba
+  aparcado, secuestrado, vacío, roto o limitado a HTTP; el cruce de identidad
+  amplió la revisión a las dos fichas actuales de Ullastrell relacionadas. El
+  resultado principal no es el marcador de venta: el Celler Vitícola
+  d'Ullastrell SAT se elimina como `closed`, sin fusionarlo con La Botiga
+  d'Ullastrell; esta última se corrige como proyecto lácteo y agroalimentario
+  de MIM Foods con ecommerce propio. Granja Núria permanece como productor
+  distinto de mató y queso, pero recupera su dirección, comarca y contacto
+  reales y pierde la atribución infundada a MIM Cheese. También se retiran las
+  webs aparcadas o ajenas de Caves Gibert, Mas dels Clavers, Grau Dòria y Clos
+  Lentiscus y, al quedar sin fuente propia viva, las cuatro fichas pasan a
+  `parcial`; Granja Núria recibe el mismo techo editorial por su web caída. Se
+  recuperan los dominios o protocolos vigentes de Milfulls, Sant Miquel d'Oló,
+  Carles de Lavern, Planas Albareda, Trias Batlle y Torreblanca, y se corrige
+  Milfulls de bodega a aperitivo vínico dentro de `Vermut`. Cuatro ventas se
+  resuelven con evidencia: Castellblanc y La Botiga pasan a `sí|ecommerce`, y
+  Milfulls y Planas Albareda a `no`; Granja Núria vuelve de un `no` no
+  sustentado a `no comprobado`. Las 13 fichas supervivientes reciben productos
+  y descripción específicos, todas corrigen su enlace web y once mejoran la
+  dirección; se actualizan además nombres, teléfonos, correos, horarios,
+  coordenadas, categoría o canal cuando procede. Barcelona queda en **2.539
+  filas**; el residual provincial baja **791 → 787**, el de bodegas **74 →
+  70**, las bodegas pendientes con web **24 → 16**, el total de bodegas **300
+  → 298**, la carga real **957 → 953** y los avisos de calidad **69 → 67**. La
+  V2 confirma que ninguna ficha tocada conserva texto genérico, plantilla
+  cruzada, evidencia prestada o web de tercero; nueve incertidumbres de venta
+  técnicamente justificadas y la señal de imagen quedan visibles para futuras
+  pasadas.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
