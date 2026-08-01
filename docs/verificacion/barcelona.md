@@ -633,6 +633,34 @@ decisiones cambiadas, `verify:data` y commit propio.
   `BCN-V2-b`, desde `cruz-garcia-elvia-jesus-cornella-de-llobregat` hasta
   `ca-la-col-agricultura-ecologica-arenys-de-munt`.
 
+- **Lote BCN-V2-b (2026-08-01, segunda pasada de fruta y verdura).** Se
+  investigaron las 25 fichas congeladas y **21 reciben cambios en el CSV**.
+  Els Felius recupera el surtido vigente y las coordenadas institucionales;
+  Griselda Planas deja una ficha ficticia de peras y pasa a reflejar su
+  explotación mixta de cereal, legumbres, olivar, almendro, viña y aromáticas,
+  con contacto público; y Poch queda correctamente clasificado como explotación
+  mixta de melocotón y aceituna. También se actualizan productos, contactos y
+  canales físicos de Horta Canadell, Jordi Soler Roset, Pere Ayter, Can
+  Cantallops, Horta Pera, Basart y Ca La Col.
+
+  Se resuelven **19 decisiones de venta**. **Can Gallard** publica un canal de
+  pedido por correo para sus caracoles y **Horta Pera** admite encargos por
+  correo o WhatsApp con reparto a domicilio; otras diecisiete unidades quedan
+  en `no` tras revisar venta directa, mercados, ferias o circuito corto sin
+  mecanismo remoto. Se conservan seis incertidumbres justificadas: La
+  Catxaruda carece de señal comercial actual; L'Hort de l'Avi, Cal Santacreu y
+  La Pagesa solo conservan referencias históricas a cestas o reparto con los
+  dominios averiados; Pere Ayter tiene escaparate vivo pero cero productos; y
+  el dominio oficial de Ca La Col no resuelve.
+
+  Barcelona mantiene **2.504 filas**; el residual provincial baja **625 →
+  606**, la carga real **811 → 792**, el residual de fruta y verdura **54 →
+  35**, las fichas sintéticas **9 → 8** y los avisos de calidad se mantienen en
+  **46**; `plantilla-cruzada` sigue en **21**. Los diez techos documentados se
+  apartan de la rotación inmediata y las últimas 25 decisiones de fruta y
+  verdura quedan congeladas como `BCN-V2-c`, desde
+  `agri-ma-scp-el-papiol` hasta `10cireres-torrelles-de-llobregat`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
