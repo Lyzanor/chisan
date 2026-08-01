@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-29",
+  "generatedAt": "2026-08-01",
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 11998,
-    "tagged": 1143
+    "rows": 11941,
+    "tagged": 1135
   },
   "provinces": {
     "andalucia/almeria": [
@@ -79,6 +79,7 @@
       "quesos-sierra-del-romero-la-granada-de-riotinto"
     ],
     "andalucia/jaen": [
+      "aceite-diego-angulo-villanueva-de-la-reina",
       "aceites-el-carrascal-torres-de-albanchez",
       "almazara-rotalaya-quesada",
       "cooperativa-agrosegura-la-puerta-de-segura",
@@ -101,6 +102,7 @@
       "quesos-cumbres-del-segura-santiago-pontones",
       "quesos-sierra-de-la-hoya-noalejo",
       "sierra-de-genave-genave",
+      "stevia-del-condado-santisteban-del-puerto",
       "the-green-gold-oh-hornos-de-segura"
     ],
     "andalucia/malaga": [
@@ -363,7 +365,8 @@
       "delaviuda-alimentacion-sonseca",
       "la-bruja-lechera-camarena",
       "quesos-hm-mora",
-      "quesos-reino-madridejos"
+      "quesos-reino-madridejos",
+      "uva-de-vida-santa-olalla"
     ],
     "castilla-y-leon/burgos": [
       "agrobauto-sdad-cooperativa-quintanilla-del-agua-y-tordueles",
@@ -408,7 +411,6 @@
       "vina-y-tia-cilleruelo-de-abajo",
       "vinedos-alonso-del-yerro-roa",
       "vinedos-de-altura-lerma",
-      "vinos-sinceros-covarrubias",
       "xocolart-burgos"
     ],
     "castilla-y-leon/leon": [
@@ -491,6 +493,7 @@
       "eurohongo-s-l-puebla-de-sanabria",
       "galindo-san-millan-bodega-y-vinedos-el-pinero",
       "hijas-de-justo-torrero-la-boveda-de-toro",
+      "hircus-palacios-del-pan",
       "micozamora-gourmet-s-l-l-rabanales",
       "morcillas-ramiro-zamora",
       "natur-silver-olmillos-de-castro",
@@ -500,7 +503,7 @@
       "10cireres-torrelles-de-llobregat",
       "agro-freixedes-s-c-p-santa-margarida-i-els-monjos",
       "alemany-duran-joan-torrelavit",
-      "alemany-i-corrio-vilafranca-del-penedes",
+      "alkimia-wines-olesa-de-bonesvalls",
       "almirall-cava-sant-sadurni-d-anoia",
       "alsina-cusco-pere-joan-santa-eulalia-de-roncana",
       "amat-montane-olerdola",
@@ -520,7 +523,6 @@
       "cal-figueras-papiol",
       "calcite-vilanova-i-la-geltru",
       "can-corder-llinars-del-valles",
-      "can-grau-vell-els-hostalets-de-pierola",
       "can-lleo-de-vilanoveta-sant-marti-sarroca",
       "can-pinos-scp-llinars-del-valles",
       "can-tonico-milfulls-roca-del-valles",
@@ -529,32 +531,26 @@
       "casa-noguera-1870-igualada",
       "castell-dor-vilafranca-del-penedes",
       "cat-n-1077-sat-sallent",
-      "cava-joan-colet-rius-sant-sadurni-d-anoia",
       "cava-martin-soler-font-rubi",
       "cava-torne-bel-sant-sadurni-d-anoia",
       "caves-cusco-i-comas-piera",
       "caves-mungust-piera",
       "caves-rimarts-sant-sadurni-danoia",
-      "celler-altrabanda-martorelles",
       "celler-avenc-del-garraf-olesa-de-bonesvalls",
       "celler-bergonyo-i-durall-vilafranca-del-penedes",
       "celler-can-pages-sant-pere-de-ribes",
-      "celler-d-ullastrell-ullastrell",
       "celler-grapisso-la-llacuna",
-      "celler-joaquim-batlle-ponce-tiana",
       "celler-la-salada-pla-del-penedes",
       "celler-puig-romeu-la-llacuna",
       "celler-tres-tombs-avinyonet-del-penedes",
       "centre-gestor-i-comercialitzacio-molinaris-sl-font-rubi",
       "comallonga-gavalda-oriol-sallent",
       "damilaura-s-l-la-llagosta",
-      "duran-alsina-joan-palau-solita-i-plegamans",
       "els-hortells-de-la-marina-baix-llobregat",
       "embutidos-pedragosa-caldes-de-montbui",
       "embutidos-y-jamones-arroyofrio-s-l-montcada-i-reixac",
       "espirulina-natural-cardedeu",
       "esteve-arcs-jaume-sant-climent-de-llobregat",
-      "esteve-i-gibert-viticultors-subirats",
       "estruch-casajuana-anna-papiol",
       "exeo-ipsum-agro-c-b-taradell",
       "familia-ferrer-can-sala-sant-quinti-de-mediona",
@@ -589,7 +585,6 @@
       "marmeles-sant-marti-de-tous",
       "marquez-tarres-joan-pineda-de-mar",
       "mas-calm-joan-centelles",
-      "mas-guineu-vinyaters-torrelles-de-foix",
       "mas-palou-el-pla-del-penedes",
       "mas-xarot-sant-sadurni-d-anoia",
       "masamara-martorelles",
@@ -616,7 +611,6 @@
       "ratafies-de-lavi-guillem-esparreguera",
       "riera-batalla-adria-torrelles-de-llobregat",
       "rios-cherto-ana-maria-palau-solita-i-plegamans",
-      "robert-j-mur-cellers-most-dore-sant-sadurni-danoia",
       "roca-del-cor-sentmenat",
       "rosell-canals-joan-sabadell",
       "rovira-vineta-lluis-centelles",
@@ -625,8 +619,7 @@
       "vall-del-riu-sat-sant-andreu-de-la-barca",
       "vendrell-pellicer-josep-avinyonet-del-penedes",
       "vinagres-masia-still-sant-pere-de-riudebitlles",
-      "vins-geniu-vilafranca-del-penedes",
-      "vins-petxina-manresa"
+      "vins-geniu-vilafranca-del-penedes"
     ],
     "catalunya/girona": [
       "antoni-izquierdo-gourmet-palamos",
@@ -651,7 +644,6 @@
       "cosmic-vinyaters-agullana",
       "efa-sureda-casanovas-ulla",
       "embotits-casolans-de-planoles-planoles",
-      "embotits-eugeni-sant-joan-les-fonts",
       "embotits-i-pates-costabona-camprodon",
       "embotits-pages-canet-d-adri",
       "fleca-can-baldiri-palafrugell",
@@ -994,6 +986,7 @@
       "adegas-cenlle-cenlle",
       "adegas-do-rexurdir-cenlle",
       "adegas-laudes-cenlle",
+      "adegas-maleiga-ribadavia",
       "adegas-pazo-do-mar-toen",
       "arco-da-vella-adega-de-eladio-beade",
       "bodega-castro-rei-ribadavia",
@@ -1054,7 +1047,6 @@
       "embutidos-el-zagal-felanitx",
       "embutidos-estrany-inca",
       "embutidos-munar-porreres",
-      "finca-eco-son-barrina-llubi",
       "finca-es-fangar-felanitx",
       "formatges-burguera-campos",
       "formatges-de-son-jover-inca",

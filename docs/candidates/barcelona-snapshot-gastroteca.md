@@ -226,7 +226,7 @@
 | Oli Migjorn | Navàs | olimigjorn.com/ca/ | 937444017 | pagès | ja al CSV → `oli-migjorn-navas` |
 | Caves Bohigas | Òdena | www.fermibohigas.com/ | 938048100 | elaborador | nou (sense revisar 1-a-1) |
 | Attimo Caffè | Olèrdola | www.qualityblends.net | 935166791 | elaborador | nou (sense revisar 1-a-1) |
-| Finca Valldosera | Olèrdola | www.fincavalldosera.com | 938143047 | elaborador | ja al CSV → `finca-valldosera-calcite-olerdola` |
+| Finca Valldosera | Olèrdola | www.fincavalldosera.com | 938143047 | elaborador | ja al CSV → `finca-valldosera-olerdola` |
 | Mitjans la Botiga,Tast&Vins | Olèrdola | www.mitjans.es | 938171150 | elaborador | ja al CSV → `josep-maria-mitjans-embotits-mitjans-olerdola` |
 | Quality Blends Cafès Especialitat | Olèrdola | www.qualityblends.coffee | 0034 935166791 | pagès | ja al CSV → `quality-blends-olerdola-sant-pere-molanta` |
 | Mel de Montserrat | Olivella | www.campomiel.com | +34606120088 | pagès | residual (web campomiel.com = apicultor de La Rioja (Ventosa); identitat/municipi no quadren) |

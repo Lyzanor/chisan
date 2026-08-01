@@ -303,6 +303,27 @@ decisiones cambiadas, `verify:data` y commit propio.
   desde `massana-rafols-felix-subirats` hasta
   `esteve-i-gibert-viticultors-subirats`.
 
+- **Lote BCN-V1-i (2026-08-01, carril V1 bodegas sin web).** Cerradas las 25
+  filas congeladas con revisión de identidad y unidad productiva antes de
+  resolver la venta. Cinco tiendas o mecanismos propios quedan publicados
+  como `sí` —Caves Fèlix Massana Ràfols, Celler Can Roda, Celler Grapissó,
+  Celler Tres Tombs y Esteve i Gibert—; La Salada y Can Pagès pasan a `no` al
+  no existir mecanismo remoto en sus webs actuales. La depuración elimina
+  siete filas netas: Blanca Ozcáriz se integra en El Jardí dels Sentits,
+  Robert J. Mur en Montesquius, Joaquim Batlle en Celler Quim Batlle y la ficha
+  personal de José Esteve en Esteve i Gibert; Polleria Soler no era una bodega,
+  Altrabanda consta cerrada desde 2018 y la marca Serralada de Marina ya se
+  elabora dentro de Can Roda. La pasada V2 separa además Finca Valldosera de
+  la falsa contaminación con Calcite. Se corrigen las identidades públicas de
+  Massana Ràfols, Salaçe y Can Turon; este último pasa de `Bodega` a `Fruta y
+  verdura`. El Mas Pujó queda en Santa Margarida i els Monjos y Tarrida i
+  Sibil en Font-rubí, sus instalaciones productivas reales. Barcelona queda
+  en **2.518 filas**; el residual provincial baja **772 → 760**, el de bodegas
+  **54 → 41**, el total de bodegas **284 → 276** y la carga real **937 →
+  925**. Los 13 casos aún `no comprobado` conservan ese estado porque las
+  fuentes actuales no muestran ni descartan un mecanismo de pedido; no se
+  han cerrado por ausencia de web.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
