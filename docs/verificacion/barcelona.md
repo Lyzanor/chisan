@@ -1094,6 +1094,43 @@ decisiones cambiadas, `verify:data` y commit propio.
   `casa-noguera-1870-igualada`, `cansaladeria-can-trave-la-llacuna` y
   `lainurvi-llardons-artesans-castellar-del-valles`.
 
+- **Lote BCN-C1-d (2026-08-01, cierre de la pasada profunda de charcutería).**
+  Las 18 filas frescas restantes dejan **cuatro bajas**, dos transiciones de
+  slug y catorce fichas comerciales reparadas. Mauri Puig era una explotación
+  ganadera sin oferta alimentaria propia; el queso y la venta correspondían a
+  la ficha distinta y ya existente de Formatges Mas el Garet. Pere Monfulleda
+  solo conservaba el registro histórico de proximidad, Badacabres publica hoy
+  servicios de pastoreo y gestión forestal, y Ca l'Adela funciona como vinoteca
+  y bar gastronómico. Las cuatro salen como `out-of-scope` en vez de convertir
+  señales ganaderas o de restauración en productores vendibles.
+
+  La identidad de **Bechs** sustituye a la fila nominal de Ramon M. Pujol
+  Pagerols: la web familiar vigente confirma la elaboración en Viver i
+  Serrateix, su catálogo de cerdo, embutidos y confitados y los pedidos por
+  teléfono o WhatsApp. **Ecoviand de Brugarolas** corrige su municipio y slug de
+  les Franqueses del Vallès a Moià, donde trasladó la actividad en 2023; la
+  venta actual se acredita en el marketplace de GHD Fresc y se retira el
+  dominio corporativo sin DNS. Jordi Torres pasa de charcutería a carne con sus
+  lotes ecológicos de vacuno Limousin; Can Rodoreda corrige su nombre público a
+  Can Rodorera; Can Travé recupera su dirección actual; Can Teixidor, Cal
+  Xullat, Collfred, Carnívors, Cal Vives, Can Freixas, Can Jordi, Casa Noguera y
+  Lainurvi ganan producto, contacto, horario, dirección o fuente vigente según
+  cada superficie revisada. También se eliminan dominios muertos, secuestrados
+  o ajenos que degradaban cuatro de esas fichas.
+
+  Se cierran **las 18 decisiones de venta**. Mas Freixes, Bechs y Can Freixas
+  aceptan pedido directo; Collfred y Casa Noguera tienen ecommerce propio, y
+  Carnívors y Ecoviand venden mediante marketplaces actuales. Las otras once
+  decisiones quedan en `no` después de revisar sus superficies vigentes o, en
+  las cuatro bajas, desaparecen con la fila. Barcelona pasa de **2.468 a 2.464
+  filas**; el residual provincial baja **418 → 400**, la carga real **619 →
+  600** y el residual de charcutería **19 → 1**. Los avisos de calidad bajan
+  **38 → 37**; `sinteticas` sigue en **8**, `plantilla-cruzada` en **20** y
+  `pendiente` en **9**. El único caso retenido es Xarcuteria Sala, techo ya
+  documentado; la pasada principal de charcutería queda cerrada. El siguiente
+  carril abre las 90 decisiones restantes de lácteos y quesos (**41**), cerveza
+  artesana (**20**), miel (**19**) y aceite (**10**) en tandas homogéneas.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
