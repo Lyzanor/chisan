@@ -73,7 +73,8 @@ catálogo.
 La campaña se divide en tandas de unas 40–70 filas, recortadas con el estado
 vivo justo antes de abrirlas:
 
-1. bodegas (116), en dos tandas;
+1. bodegas, en tandas sucesivas que separan webs vivas, fallos técnicos y filas
+   sin web;
 2. pan y pastelería (107), por municipio/distrito y en dos tandas;
 3. charcutería (93), en dos tandas;
 4. lácteos, cerveza, miel y aceite (90), en dos tandas;
@@ -124,6 +125,32 @@ decisiones cambiadas, `verify:data` y commit propio.
   entra en las colas editoriales de venta, fuente, plantilla o texto genérico;
   quedan avisos de imagen independientes del alcance de esta tanda y solo Avenc
   permanece deliberadamente en `venta-sin-resolver`.
+
+- **BCN-V1-c · bodegas, tercera pasada (2026-08-01).** Se revisaron 12 filas
+  con web y se corrigió primero la identidad. `Anima Mundi` no era una segunda
+  bodega: es una gama de AT Roca y se fusiona con la ficha superviviente, que
+  incorpora los vinos, la bodega actual de Sant Sebastià dels Gorgs y contacto
+  vigente; el slug superviviente corrige además `pacs-del-penedes` por
+  `avinyonet-del-penedes` y conserva el anterior como `merge`. El
+  `sí|marketplace` de AT Roca se retira porque carecía de evidencia
+  y solo se localizaron revendedores independientes; queda `no comprobado`, no
+  se convierte la ausencia de trazabilidad en un `no`. Jovani Vins conserva la
+  continuidad mediante un registro `merge`, pero corrige el slug que todavía
+  codificaba Sant Martí Sarroca a Castellví de la Marca y renombra también la
+  imagen. Tres canales remotos vigentes pasan a `sí`: Roqueta Origen y Jovani
+  por ecommerce propio o del grupo, y Porcellànic por formulario de pedido que
+  continúa por correo. Seis quedan en `no` tras revisar navegación, catálogo y
+  contacto oficiales completos: La Diferenta, Celler Viader, Caves Rimarts,
+  Mas Pujadó, Vins Gèniu y Can Lleó. Gramona se enriquece con gama y actividad,
+  pero conserva `no comprobado`: remite a tiendas de confianza o al contacto
+  general sin publicar un pedido explícito. Las 11 fichas supervivientes ganan
+  productos y descripción específicos; se corrigen además enlaces, contacto,
+  horarios, ubicación o verificación donde la fuente lo permite. El CSV queda
+  en **2.543 filas**; el residual provincial baja **815 → 806**, el de bodegas
+  **98 → 89** y el subconjunto de bodegas pendientes con web **48 → 39**. La V2
+  deja fuera de las colas editoriales los nueve estados resueltos y los slugs
+  nuevos; solo AT Roca y Gramona permanecen deliberadamente en
+  `venta-sin-resolver`, con avisos de imagen independientes en otras fichas.
 
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
