@@ -353,6 +353,41 @@ decisiones cambiadas, `verify:data` y commit propio.
   `cal-masses-sant-salvador-de-guardiola` hasta `lhortet-del-bruc-el-bruc`;
   Mas Llopis no se repite porque su 403 ya quedó documentado en esta tanda.
 
+- **Lote BCN-V1-k (2026-08-01, fruta y verdura con web, cierre del carril).**
+  Se investigaron las 23 fichas congeladas por identidad, actividad, unidad
+  productiva, ubicación, contacto y venta. El CSV pierde una fila porque Les
+  Marines era la misma unidad familiar ya publicada como Tugas i Companyia en
+  Viladecans. Can Plana deja de figurar como huerta: la propia finca explica
+  que la horta es de autoconsumo y la actividad comercial es el rebaño, por lo
+  que pasa a `Carne`, con teléfono, correo, dominio y ecommerce colectivos
+  vigentes. Els Horts de l'Alegria queda `parcial` y a `no`: el proyecto anunció
+  una pausa indefinida en julio de 2025, no un cierre definitivo. L'Amanida
+  vuelve a su identidad y domicilio agrarios de Viladecans; se eliminan la
+  tienda, el teléfono, el horario y el mapa de un comercio de Gavà que no
+  identificaban de forma fiable la unidad productiva. También se actualizan
+  gama, descripción o contacto en las 22 supervivientes y se retiran ocho webs
+  caídas, secuestradas o institucionales usadas como si fueran propias.
+  Se resuelven 17 ventas: Fruits Montmany y Ecotràmec por correo y suscripción;
+  Can Plana y L'Hortet del Bruc · Som Alzines por ecommerce; El Progrés-Garbí
+  por marketplace; L'Horta amb Alegria por WhatsApp; Les Ràfoles por teléfono;
+  y diez fichas a `no` tras revisar sus sistemas actuales. Cal Masses, Hort del
+  Navarro, Can Balasch, L'Amanida y Cal Vilaseca conservan `no comprobado` por
+  falta de un mecanismo remoto vigente y accionable.
+
+  Barcelona queda en **2.516 filas**; el residual provincial baja **745 → 727**,
+  la carga real **910 → 892**, el residual de fruta y verdura **185 → 167** y
+  los avisos de calidad se mantienen en **58**. `web-de-tercero` baja **61 → 53**
+  y `plantilla-cruzada` **27 → 26**; no se introducen descripciones genéricas,
+  evidencia prestada ni canales sin clasificar. `sinteticas` sube **5 → 6** de
+  forma deliberada: L'Amanida queda sin contacto externo antes que conservar
+  datos atribuibles a otra tienda; el censo agrario actual y la evidencia
+  sostienen la ficha, y prima la corrección editorial sobre el detector. En
+  fruta y verdura quedan solo dos `no comprobado` con web, ambos ya revisados
+  (Mas Llopis y Hort del Navarro), por lo que el carril fresco con web queda
+  cerrado. `BCN-V1-l` se congela con las primeras **25 de 148 fichas frescas sin
+  web**, desde `can-vilanova-valenti-vilanova-arenys-de-munt` hasta
+  `verdura-masclans-caldes-de-montbui`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
