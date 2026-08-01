@@ -754,6 +754,58 @@ decisiones cambiadas, `verify:data` y commit propio.
   `fleca-fontanals-s-l-olerdola-sant-pere-molanta` hasta
   `tot-teca-forn-gotes-terrassa`.
 
+- **Lote BCN-P1-c (2026-08-01, primera pasada de pan y pastelería).** Se
+  investigaron las 25 fichas congeladas y **24 reciben cambios en el CSV**.
+  Cuatro filas salen del producto: `Panificio Artesania y Nutrición` es una
+  sociedad patrimonial y no un obrador público separado de Macxipan;
+  `Fermentum (Panarras Terrassa)` era una consultora de franquicias domiciliada
+  en Manlleu con el pin de una empresa de vinagre; `L'Obrador d'en Pau` figura
+  cerrado permanentemente; y `Tot Teca - Forn Gotés` nunca estuvo en Terrassa,
+  sino en Sabadell, donde cerró definitivamente en marzo de 2026. Se elimina
+  también la imagen huérfana de Fermentum. `Pim Pam Pastisseria` corrige
+  municipio, dirección y slug de Sobremunt a Sant Quirze de Besora, dejando la
+  fusión trazada. Can Carriel repara una descripción partida entre columnas y
+  La Coca d'Anís retira web y correo de un dominio sin DNS. Además se mejoran
+  de forma material surtido, descripción, horario o contacto de Fontanals,
+  Sant Adjutori, Panacea, Forn Franquesa, Planas, La Iaia, Forn de Cabrianes,
+  Macxipan, Baklava, Flor de Neu, La Crossandra, Mix, Sant Jordi, Can Postres,
+  La Bona Teka, Pastisseria del Montalt y Delicious.
+
+  Se resuelven **17 decisiones de venta**, diez en `sí` y siete en `no`. Sant
+  Adjutori, Planas, La Crossandra, Mix y Can Postres aceptan encargos por
+  teléfono o correo; Forn Franquesa, La Iaia y Forn de Cabrianes disponen de
+  tienda; y Macxipan y Baklava sirven mediante marketplaces, además del
+  WhatsApp de Baklava. Las siete negativas quedan sustentadas por webs,
+  directorios o fichas actuales sin mecanismo remoto. Cuatro techos conservan
+  `no comprobado`: Can Carriel y La Coca d'Anís por dominios desaparecidos,
+  Sant Jordi por su certificado autofirmado y Forn de Sant Joan porque no se
+  localiza una segunda fuente pública actual.
+
+  Barcelona pasa de **2.504 a 2.500 filas**; el residual provincial baja
+  **553 → 532**, la carga real **743 → 722**, el residual de pan y pastelería
+  **68 → 47** y los avisos de calidad **42 → 40**. `sinteticas` se mantiene en
+  **8**, `plantilla-cruzada` en **21** y `pendiente` en **9**. Se congela
+  `BCN-P1-d` con las siguientes 25 decisiones: `fleca-xanat-torello`,
+  `forn-de-pa-altarriba-botiga-de-torello-torello`,
+  `pastisseria-nuria-vallirana`, `forn-de-pa-maria-vallromanes`,
+  `artipa-obrador-artesa-vic`, `carlamel-de-canyella-vic`,
+  `pastisseria-masramon-vic`,
+  `eric-pastisser-eric-lloberes-viladecavalls-granollers`,
+  `forn-de-pa-sant-jordi-vilafranca-del-penedes`,
+  `forn-sant-onofre-vilanova-i-la-geltru`,
+  `kinkakau-pastisseria-vilanova-i-la-geltru`,
+  `lespiga-dor-vilanova-i-la-geltru`,
+  `pastisseria-180oc-vilanova-i-la-geltru`,
+  `pastisseria-falgueras-vilassar-de-mar`,
+  `forn-i-pastisseria-cal-pelegri-subirats-ordal`,
+  `sant-pau-coffee-i-bakery-vilafranca-del-penedes`,
+  `ampurdanesa-obrador-sense-gluten-terrassa`, `cal-forner-granollers`,
+  `ca-la-fornera-santa-eugenia-de-berga`, `pastisseria-llado-vic`,
+  `forn-de-sant-jordi-folgueroles`, `morreig-barcelona-gracia`,
+  `forn-de-pa-merce-lhospitalet-de-llobregat`,
+  `forn-de-pa-rovira-lhospitalet-de-llobregat` y
+  `sus-cakes-santa-coloma-de-gramenet`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
