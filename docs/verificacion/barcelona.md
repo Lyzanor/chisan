@@ -1477,6 +1477,40 @@ decisiones cambiadas, `verify:data` y commit propio.
   pasada de categorías pequeñas; el siguiente carril se elige sobre las 322
   ventas aún sin resolver.
 
+- **Lote BCN-F2-a (2026-08-01, Avià, Badalona y dos mercados).** Siete fichas
+  revisadas eliminan **dos duplicados** y cierran **cinco huecos de venta**.
+  La ficha antigua de **Ibertruf** mezclaba la consultora técnica de Solsona con
+  la explotación tofonera de Pere Muxí y añadía nueces y un pin de Muxí Mobles
+  sin sustento. Se integra en **SoTaTerra**, la identidad productiva vigente.
+  **Ous Dachs** también estaba duplicada bajo el nombre personal de Josep Dachs
+  Sabata: se conserva la ficha de marca, su imagen y el pin exacto, se recupera
+  el móvil actual y se elimina tanto el pin de Dachs Electrónica como el pollo
+  de corral que no forma parte de la gama publicada. El directorio territorial
+  sólo documenta distribución en tiendas y supermercados del Berguedà (`no`).
+
+  **Lillo Picó** concreta helados, horchata, granizados y turrones, la continuidad
+  familiar desde 1971 y el horario actual. La ficha operativa enumera consumo y
+  recogida y marca expresamente que no hay entrega (`no`). **Bomboneria Almera**
+  mejora generaciones y catálogo —Bombons d'Anís del Mono, Pavillard, Bomboles
+  y turrones—, pero queda como techo técnico: su sitio afirma enviar a domicilio,
+  aunque el navegador actual bloquea toda la tienda por certificado caducado y
+  no permite comprobar precio o cesta. Se conserva `no comprobado`; un fallo TLS
+  no se convierte en un cierre ni en un `no`.
+
+  **Gastro Carnicería Guasch** pasa de `Huevos` a `Carne`, corrige nombre,
+  teléfono, correo, gama y mapa y retira el dominio inexistente. Su página
+  oficial sólo ofrece consumo local y contacto, sin pedido o entrega (`no`).
+  **Carnisseria Polleria Eva** también deja la categoría Huevos y elimina notas
+  de ubicación duplicadas: la tienda colectiva oficial del Mercat 11 de
+  Setembre mantiene catálogo, precios, cesta, tramitación y reparto
+  (`sí|marketplace`).
+
+  Barcelona pasa de **2.445 a 2.443 filas**; el residual provincial baja **322
+  → 317** y la carga real **524 → 519**. `sinteticas` sigue en **9**, evidencia
+  prestada en **128**, `plantilla-cruzada` en **20** y `pendiente` en **10**;
+  `sin-imagen` baja **1.374 → 1.372** por la consolidación de las dos fichas
+  duplicadas sin activo propio.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
