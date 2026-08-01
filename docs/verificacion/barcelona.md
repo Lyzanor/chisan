@@ -572,6 +572,40 @@ decisiones cambiadas, `verify:data` y commit propio.
   como `BCN-V1-q`, desde `mateu-mendez-joaquin-tordera` hasta
   `josep-floriach-gonzalez-mataro`.
 
+- **Lote BCN-V1-q (2026-08-01, cierre del carril fresco sin web).** Se
+  investigaron las 22 fichas congeladas y las 21 unidades que permanecen en
+  catálogo recibieron cambios materiales. **Horts Biopenedes SL** sale del CSV:
+  su NIF fue revocado oficialmente y la sociedad figura inactiva, mientras la
+  fila mezclaba su razón social con el Instagram y el pin de otra entidad, Hort
+  Ecològic Penedès. Queda registro de `purge` con ambas señales.
+
+  En Tordera se recuperan las identidades **Quim i Míriam**, **Can Gaget**,
+  **Can Saleta** y **Can Pau**. Vicenç Bigas deja de inventar fruta y verdura y
+  pasa a su actividad real de bovino de carne, leche y forrajes; Can Pau
+  recupera la finca, producción integrada, productos y parada física actuales.
+  También se reconstruyen **Cal Delaila**, **Cal Calic**, **Cal Juvitu**,
+  **Vivers Salicrú**, Sínia Sant Gervasi, Agrària Santa Coloma, La Paradeta del
+  Camí Ral y Agrícola Cal Martí. El lote elimina datos ajenos de una
+  cooperativa, un hotel, un club de fútbol, un memorial, varias redes genéricas
+  y horarios o coordenadas sin soporte.
+
+  Se resuelven **19 decisiones de venta** en las fichas conservadas: La Beneta
+  publica pedido de su aceite por WhatsApp; Can Redeu, Jaume Font y Josep
+  Floriach publican pedidos telefónicos con reparto; y quince unidades quedan
+  en `no` tras revisar sus canales físicos, cooperativas, mercados o circuito
+  corto. La baja de Horts Biopenedes elimina otra decisión sin resolver. Cal
+  Juvitu conserva `no comprobado` porque su web devuelve error 500 y Agrícola
+  Cal Martí porque un directorio marca venta en línea sin ofrecer mecanismo
+  remoto utilizable.
+
+  Barcelona baja **2.505 → 2.504 filas**; el residual provincial **666 → 646**,
+  la carga real **840 → 832**, el residual de fruta y verdura **95 → 75** y los
+  avisos de calidad **48 → 46**; `plantilla-cruzada` se mantiene en **21**. El
+  carril de fruta y verdura sin web y sin evidencia `keep` queda en **0**. Se
+  congelan las siguientes 25 decisiones de fruta y verdura como `BCN-V2-a`,
+  desde `can-vilanova-valenti-vilanova-arenys-de-munt` hasta
+  `serra-fabre-jordi-centelles`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
