@@ -1171,6 +1171,48 @@ decisiones cambiadas, `verify:data` y commit propio.
   abierto con las 18 fichas frescas restantes y los cinco techos anteriores se
   aparcan para no volver a contarlos como trabajo sin investigar.
 
+- **Lote BCN-L1-b (2026-08-01, cierre de la pasada profunda de lácteos).** Las
+  18 fichas frescas dejan **diez bajas**, dos recategorizaciones a carne, siete
+  decisiones de venta cerradas y un techo nuevo. El corte principal es de
+  alcance: Els Gatells, Garduixeres y Crous Cutrina producen leche para otros
+  elaboradores pero no publican un alimento propio vendible; Produccions
+  Làctiques Masferrer solo consta actualmente como explotación bovina; L'Aranyó
+  solo como explotación caprina, y el supuesto queso y yogur de Sandra Rial
+  contradecían su único registro de 2014, que enumeraba cabrito, leche, huevos y
+  elaborados sin precisar. Ca n'Oller era una masía histórica convertida en
+  granja láctea por la ficha, Vicenç Vergés no existe en el roster vigente de
+  Productes de Palou y Formatgeria El 27 es una tienda minorista. Vicenç Manent
+  sale como cierre: una sentencia firme confirmó la clausura de su actividad y
+  no aparece reanudación posterior. Se eliminan las ocho imágenes que habían
+  quedado ligadas a esas bajas.
+
+  **Mas Rogers** deja de apropiarse los lácteos que El Canadell elabora con su
+  leche y pasa a carne, su producto propio de venta directa, además de recuperar
+  contacto y coordenadas municipales. **Cabrum Les Tres Torres** también pasa a
+  carne de cabrito y leche y pierde el pin del Turó de Tagamanent, que no era la
+  explotación. Granja Fabre limpia una descripción corrupta y conserva parcial
+  la oferta histórica de leche de cabra y huerta gracias a su continuidad en el
+  censo agrario de 2026. Can Ponsa recupera dirección, correo, móvil y catálogo
+  con continuidad en Lactium 2025; Mató d'Ullastrell corrige coordenadas y
+  consolida su ficha municipal; Roca del Cor gana gama, móvil y una descripción
+  de producción propia verificable.
+
+  Granja Ventosa queda como el único `sí`: la ficha comercial vigente invita a
+  encargar por correo la leche cruda propia. Granja Fabre, Mas Rogers, Cabrum,
+  Can Ponsa, Mató d'Ullastrell y Roca del Cor quedan en `no` al no publicar
+  compra o entrega remota. **La Planeta de Roda de Ter** se aparca: se retiran
+  la leche fresca y la venta en finca no sustentadas, pero el perfil enlazado no
+  muestra actividad comercial y las búsquedas conducen sobre todo a un homónimo
+  de Xert; no se fuerza ni baja ni `no` sin resolver antes la identidad.
+
+  Barcelona pasa de **2.461 a 2.451 filas**; el residual provincial baja **382
+  → 365**, la carga real **582 → 565** y el residual de lácteos **23 → 6**. Los
+  avisos de calidad mejoran **36 → 34**, `sinteticas` **8 → 7** y la señal de
+  evidencia prestada **129 → 128**; `plantilla-cruzada` sigue en **20** y
+  `pendiente` en **9**. La pasada fresca de lácteos queda cerrada con seis techos
+  explícitos: los cinco de `BCN-L1-a` y La Planeta. El siguiente carril abre las
+  20 decisiones de cerveza artesana.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
