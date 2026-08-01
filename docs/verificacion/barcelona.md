@@ -184,6 +184,35 @@ decisiones cambiadas, `verify:data` y commit propio.
   `web-de-tercero` por alojarse en Google Sites, aunque sus páginas identifican
   al productor y la evidencia documenta la titularidad editorial.
 
+- **BCN-V1-e · bodegas, quinta pasada (2026-08-01).** Se profundizó en las seis
+  webs que respondían y todavía no habían recibido una revisión propia. Dos
+  estados se resuelven en `no` después de recorrer las webs oficiales completas:
+  Alemany i Corrió solo publica el celler, cuatro etiquetas y el contacto, y
+  Joan Colet Rius presenta el proyecto, la elaboración, cinco caves y el
+  contacto sin precio ni mecanismo de pedido. Joan Colet pasa además de
+  `parcial` a `verificado`, incorpora su dirección y coordenadas productivas y
+  deja atrás el texto heredado que decía que la web no era legible. La decisión
+  de mayor valor no es una marca de venta: Vins Petxina se retira como
+  `out-of-scope`. Su propia web sitúa la oficina en Manresa, pero atribuye las
+  viñas y las instalaciones a tres cellers colaboradores de La Nou de Gaià,
+  Sarral y Vilobí del Penedès, cuyos enólogos elaboran y embotellan para que
+  Petxina comercialice; no existe una unidad productiva propia en Barcelona.
+  Las otras tres filas permanecen deliberadamente en `no comprobado`: Roura
+  enseña botones de compra, pero todos los precios son 0,00 € y el alta no
+  conserva el producto en el carrito; Torné & Bel declara la página en obras y
+  solo ofrece consulta; Can Grau Vell remite a Vilaviniteca, un distribuidor y
+  comercio independiente que no prueba un canal operado por el productor. Aun
+  sin forzar esos estados, las cinco fichas supervivientes ganan referencias
+  concretas y descripción específica; cuatro mejoran dirección o ubicación y
+  dos incorporan redes oficiales. Barcelona queda en **2.540 filas**; el
+  residual provincial baja **794 → 791**, el de bodegas **77 → 74**, las
+  bodegas pendientes con web **27 → 24** y el total de bodegas **301 → 300**.
+  La carga real baja **960 → 957**. La V2 confirma coincidencia entre CSV y
+  evidencia y que las cinco supervivientes no entran en texto genérico,
+  plantilla cruzada, evidencia prestada ni web de tercero; solo las tres
+  incertidumbres justificadas siguen en `venta-sin-resolver` y la señal de
+  imagen permanece fuera del alcance de esta tanda.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
