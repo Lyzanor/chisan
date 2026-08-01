@@ -272,6 +272,37 @@ decisiones cambiadas, `verify:data` y commit propio.
   pendiente con web sin revisión de la campaña. El siguiente carril son las
   **50 bodegas sin web no investigadas**, repartidas en dos tandas V1/V2.
 
+- **BCN-V1-h · bodegas sin web, primera tanda (2026-08-01).** Se congelaron y
+  revisaron las primeras 25 filas del carril, con una V1 de identidad,
+  actividad, municipio y venta y una V2 sobre los defectos resultantes. El
+  trabajo reduce filas porque corrige el origen del dato: seis eran comercios
+  o domicilios de unidades productivas de otra provincia y se purgan; once
+  slugs personales, jurídicos o territoriales se fusionan con la marca y la
+  ficha productiva correctas. Entre los casos de mayor valor, Aglaner es la
+  titular de Celler Sanmartí; Enric Forn y Lluís Vich son Entrebosc y Can Vich;
+  Joan Duran es Can Duran; Pilar Carreras dirige las viñas de Can Prats dentro
+  de Vins El Cep; Vinyes de Bresca es DeBresca en el Pallars; y Business
+  Investment & Technologies es Celler de l'Era en Tarragona. Alkimia Wines,
+  Bodega Folguera, Coma Romà y Torres de la Serra sustituyen cuatro slugs cuya
+  ubicación o nombre público era materialmente incorrecto. Los targets
+  supervivientes ganan gama, descripción, contacto, dirección o coordenadas y
+  DeBresca se enriquece también en `lleida.csv`. Solo una venta nueva pasa a
+  `sí|ecommerce` —Bodega Folguera— y Coma Romà a `no`; Can Duran vuelve de un
+  `no` sin evidencia a `no comprobado` porque las fuentes publican reparto de
+  cestas pero no aclaran el mecanismo actual de pedido. La V2 baja Unió de
+  Cellers del Noia a `parcial`: un pin y una pertenencia gremial no justifican
+  `verificado`; también elimina el falso cruce de categoría de Mond Obert. Los
+  registros vivos recuperan marca y contacto correctos para Torres de la
+  Serra y Maria Roser Girbau. Barcelona queda en **2.525 filas**; el residual
+  provincial baja **786 → 772**, el de bodegas **69 → 54**, el total de
+  bodegas **297 → 284** y la carga real **952 → 937**. Ninguna ficha tocada
+  conserva descripción genérica, plantilla cruzada, web de tercero o
+  evidencia prestada; solo Garcia Moll permanece en `sinteticas`, de forma
+  deliberada, porque el registro de 2014 no permite publicar un contacto
+  actual. El carril `BCN-V1-i` queda congelado en las **25 filas restantes**,
+  desde `massana-rafols-felix-subirats` hasta
+  `esteve-i-gibert-viticultors-subirats`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
