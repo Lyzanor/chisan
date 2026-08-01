@@ -1398,6 +1398,45 @@ decisiones cambiadas, `verify:data` y commit propio.
   fresca de aceite queda cerrada con tres techos explícitos: Manuel Encinas, Ana
   Maria Rios y Cal Feliuàs.
 
+- **Lote BCN-F1-a (2026-08-01, primera pasada de categorías pequeñas).** Las
+  nueve fichas revisadas cierran **cinco decisiones de venta**, eliminan un
+  duplicado y corrigen tres registros históricos que aún publicaban datos
+  personales pese a que su propia descripción afirmaba haberlos retirado.
+  **L'Escairador** absorbe la ficha nominal de Maria Costa en la ficha de marca
+  ya existente, conserva imagen y pin exacto y actualiza catálogo, contactos y
+  redes. Su tienda propia mantiene productos con precio, cesta, portes y
+  proceso de compra (`sí|ecommerce`).
+
+  **Civia Cereals (Cal Civia)** deja de atribuirse a Seva y a un catálogo
+  antiguo de espelta, legumbres y peras. Se reconstruye como **Civia Foods**,
+  marca de Avencat Bio en Balenyà, con dirección y contactos oficiales,
+  catálogo vigente de granolas ecológicas sin gluten y ecommerce con carrito,
+  envíos y pago por Bizum o tarjeta. **Mas Terricabras** pierde el horario y
+  los contactos corruptos, recupera a Miquel Rovira, el Cigró d'Oristà y los
+  blats forment y xeixa; las superficies actuales sólo documentan venta en
+  explotación, feria y restauración (`no`). **Mas d'Ardesa** confirma
+  continuidad en 2026 y pasa a `sí|telefono`: la ficha vigente de Diputación
+  publica el móvil y marca a la vez venta en línea, venta directa y
+  distribución propia. **Xarcuteria Sala** queda en `no`: la guía excepcional
+  de reparto de 2020 no continúa en el directorio municipal ni en la superficie
+  operativa actual.
+
+  Diego Aguilar, Juana Tamarit y Modest Preixens conservan `pendiente|no
+  comprobado` como techos históricos: sólo aparece el registro de 2014. Se
+  corrige `Aceite y vino` a `Aceite` y se retiran domicilios y contactos
+  personales sin vigencia comercial. Cultius La Gírgola tampoco cambia de
+  estado: el directorio municipal confirma identidad y contacto, pero la web
+  propia falla y no permite convertir incertidumbre técnica en `no`.
+
+  Barcelona pasa de **2.447 a 2.446 filas**; el residual provincial baja **331
+  → 326** y la carga real **531 → 528**. Los avisos de calidad siguen en **34**,
+  evidencia prestada en **128** y `pendiente` en **9**. `sinteticas` sube **7 →
+  8** al retirar el último contacto histórico de Juana Tamarit y
+  `plantilla-cruzada` sube **20 → 21** porque el catálogo real de Civia combina
+  cereal, fruta, frutos secos y chocolate; ambas son señales más honestas, no
+  datos inventados. La segunda pasada continúa con las ocho fichas restantes
+  de zumos, infusiones, aceitunas, licores, setas y aperitivos.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,

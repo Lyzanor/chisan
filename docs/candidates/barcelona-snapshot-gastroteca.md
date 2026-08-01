@@ -72,7 +72,7 @@
 | Cal Rovira (Berga) | Berga |  | +34938212520 | elaborador | nou (sense revisar 1-a-1) |
 | Destil·leries Vila | Berga | www.aromesdelqueralt.com | 938210223 | pagès | ja al CSV → `destil-leries-vila-berga` |
 | Dolceria Pujol | Berga | www.botigadolceriapujol.com | 938210159 | pagès | ja al CSV → `dolceria-pujol-berga` |
-| L’Escairador | Berga | www.escairador.com | 669857875 | pagès | ja al CSV → `costa-ferrer-maria-berga` |
+| L’Escairador | Berga | www.escairador.com | 669857875 | pagès | ja al CSV → `lescairador-cal-rosal-berga` (fusionada la ficha nominal) |
 | Ramaders de Muntanya del Berguedà | Berga | www.ramadersbergueda.com | +34938220092 | pagès | ja al CSV → `ramaders-de-muntanya-del-bergueda-berga` |
 | Masia Can Viver | Bigues i Riells | masiacanviver.com/ca/ | 682771816 | pagès | ja al CSV → `masia-can-viver-bigues-i-riells-del-fai` |
 | Fleca Freixa | Borredà | fetaqui.com/es/forners/87-fleca-freixa.html | 938239145 | elaborador+pagès | nou (sense revisar 1-a-1) |
