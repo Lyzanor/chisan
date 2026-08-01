@@ -388,6 +388,37 @@ decisiones cambiadas, `verify:data` y commit propio.
   web**, desde `can-vilanova-valenti-vilanova-arenys-de-munt` hasta
   `verdura-masclans-caldes-de-montbui`.
 
+- **Lote BCN-V1-l (2026-08-01, fruta y verdura sin web, primera tanda).** Se
+  investigaron las 25 fichas congeladas y se corrigió primero la identidad y la
+  unidad productiva. Emili Gallart y Jordi i Rosa eran puestos de fruta y
+  verdura sin prueba de cultivo propio; Wanplais es una inmobiliaria y Calvet
+  Fruits un mayorista de Mercabarna, por lo que las cuatro filas se purgan.
+  Vilabanús se traslada a su instalación real de frutos secos y aceite en La
+  Masó y Disfruta & Verdura a su huerta familiar de Cambrils, ambas en
+  Tarragona. Las dos fichas de la familia Marcé se fusionan en **Can Baldiri**,
+  con identidad, finca, contactos y web actuales en Cantallops (Avinyonet del
+  Penedès); Mir Pous Girona se integra en la unidad ya publicada como Sències
+  Can Girona, mientras su oficina de Francesc Macià deja de figurar como finca.
+  También se corrigen dos categorías falsas: Joan Macau pasa de horta a
+  despensa artesanal y Salvador Tantiña a carne y embutidos.
+
+  Las supervivientes ganan gama, contactos, dirección o descripción específica
+  y pierden cinco pines urbanos o de negocios ajenos. Se resuelven cinco ventas:
+  Can Baldiri, Lluís Fidel Colomer y Montserrat Amargant a `no`; Agro-Picanyol
+  por teléfono y Verdura Masclans por correo. Font Riera, Galindo Aguas,
+  Vendrell Pellicer, Pere Borrero y Maria Teresa Vendrell quedan anclados al
+  censo agrario 2026 sin inventar un canal remoto; otros históricos conservan
+  `no comprobado` con su techo documentado.
+
+  Barcelona queda en **2.508 filas**; el residual provincial baja **727 → 714**,
+  la carga real **892 → 879**, el residual de fruta y verdura **167 → 152** y
+  los avisos de calidad **58 → 56**. `plantilla-cruzada` baja **26 → 24**, sin
+  introducir canales sin clasificar. Tarragona incorpora dos productores reales
+  en el mismo cambio para que el saneamiento territorial no pierda información.
+  `BCN-V1-m` queda congelado con las siguientes **25 de 122 fichas frescas sin
+  web**, desde `horta-de-capolat-capolat` hasta
+  `cal-malu-jordi-pratginestos-llinars-del-valles`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
