@@ -1573,6 +1573,41 @@ decisiones cambiadas, `verify:data` y commit propio.
   `plantilla-cruzada` en **20**. `sin-imagen` baja **1.371 → 1.370** por el
   traslado de Blue Zafir, que no tenía activo.
 
+- **Lote BCN-F2-d (2026-08-01, explotaciones rurales y continuidad jurídica).**
+  Ocho fichas revisadas cierran **siete huecos de venta** y corrigen dos
+  identidades geográficas. **El Rusc d'Or / FR Apicultors** pasa a `Miel`,
+  recupera el correo y documenta encargos y envío peninsular (`sí|email`).
+  **Xais Adoració** deja de usar Calaf en el slug —era un punto de venta— y se
+  identifica con su explotación de Sant Martí Sesgueioles; actualiza dirección,
+  móvil, correo y gama y la ficha provincial vigente confirma venta en línea
+  (`sí|email`). **Vedella Ecològica de Trullàs** reemplaza el dominio aparcado
+  por su web real, actualiza los contactos y resuelve la venta directa remota
+  por correo.
+
+  **Pastes Sanmartí** no elaboraba pasta fresca ni mermeladas: se corrigen a
+  pasta seca artesanal, dirección 40, teléfono, correo, horario e Instagram. La
+  actividad continúa en 2026 y su superficie propia publica el teléfono como
+  canal de ventas (`sí|telefono`). **Agrovitae** tampoco era una tienda de
+  legumbres: es una explotación familiar de fruta y hortaliza con cosecha
+  propia, mercados semanales y encargos a domicilio por móvil y WhatsApp; se
+  eliminan el pin y las coordenadas de L'Agrobotiga.
+
+  **Granja Ecològica Sassorba** se traslada de la falsa ubicación de Caldes al
+  Pla de Sant Julià de Sassorba, en Gurb, con identidad, contacto, mapa y tienda
+  reales; ofrece compra única y suscripción (`sí|ecommerce|suscripcion`).
+  **Matafaluga Management** se integra en **Conserves Naturals Mar-Tret**: el
+  BORME acredita su absorción y extinción en 2023. Finalmente,
+  **Maria Luisa Vallsmadella** conserva sólo la gama histórica; se retiran
+  contacto, horario y el pin de un centro médico sin relación y queda
+  `pendiente`.
+
+  Barcelona pasa de **2.440 a 2.439 filas**; el residual baja **309 → 302** y
+  la carga real **511 → 505**. `sinteticas` sube **15 → 16** y `pendiente`
+  **16 → 17** por la depuración de Vallsmadella; evidencia prestada sigue en
+  **128**. `plantilla-cruzada` sube **20 → 21** porque la categoría correcta
+  `Harinas y cereales` de Pastes Sanmartí activa el heurístico de pasta: es un
+  falso positivo documentado, no contaminación de plantilla.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
