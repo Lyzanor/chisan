@@ -606,6 +606,33 @@ decisiones cambiadas, `verify:data` y commit propio.
   desde `can-vilanova-valenti-vilanova-arenys-de-munt` hasta
   `serra-fabre-jordi-centelles`.
 
+- **Lote BCN-V2-a (2026-08-01, segunda pasada de fruta y verdura).** Se
+  investigaron las 25 fichas congeladas y **22 reciben cambios en el CSV**.
+  La API viva de venta de proximidad permite dejar de tratar como históricos a
+  Daniel Royo, Agrícola de Agell y Josep Vendrell Pellicer, acreditados en
+  2024–2025. También recupera las marcas **Maria i Miquel**, **L'Hort de
+  l'Eriçó**, **Els Hortells de Marina** y **Masia Puigventós**, además de
+  direcciones, contactos y surtidos completos. La Datzira cambia al correo
+  vigente; Jordi Serra Fabre pierde la patata y las coordenadas sin soporte y
+  recupera Mas el Masat y sus cultivos reales.
+
+  Se resuelven **21 decisiones de venta**: Can Duran pasa a `sí|telefono`
+  porque las fichas institucionales publican el teléfono junto al reparto de
+  cestas a domicilio dos veces por semana; otras veinte unidades quedan en
+  `no` tras revisar sus canales actuales de venta directa, finca, mercado o
+  circuito corto sin mecanismo remoto. Joan Serrat, La Nansa del Cistell y
+  Josep Maria Bonet conservan `no comprobado` por falta de actividad comercial
+  dinámica; Horta La Fanecada lo conserva porque su dominio termina en un
+  `business.site` averiado, una falla técnica que no prueba ausencia de venta.
+
+  Barcelona mantiene **2.504 filas**; el residual provincial baja **646 →
+  625**, la carga real **832 → 811**, el residual de fruta y verdura **75 →
+  54** y los avisos de calidad se mantienen en **46**;
+  `plantilla-cruzada` sigue en **21**. Los cuatro techos documentados se apartan
+  de la rotación inmediata y se congelan las siguientes 25 decisiones como
+  `BCN-V2-b`, desde `cruz-garcia-elvia-jesus-cornella-de-llobregat` hasta
+  `ca-la-col-agricultura-ecologica-arenys-de-munt`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
