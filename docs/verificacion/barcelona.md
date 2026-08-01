@@ -1608,6 +1608,49 @@ decisiones cambiadas, `verify:data` y commit propio.
   `Harinas y cereales` de Pastes Sanmartí activa el heurístico de pasta: es un
   falso positivo documentado, no contaminación de plantilla.
 
+- **Lote BCN-F2-e (2026-08-01, identidades cruzadas y superficies comerciales).**
+  Diez fichas investigadas cierran **ocho huecos de venta** y la revisión de
+  Natursoy permite eliminar además un duplicado societario. **Can Ginesta**
+  vuelve de Montcada i Reixac a Calella: la dirección, el horario, el teléfono,
+  la web y el mapa publicados pertenecían a un colegio homónimo. Recupera su
+  nombre, fruta y contacto desde la ficha provincial, sin inventar la ubicación
+  de la finca. **Cal Farrés** deja de figurar como productor de huevos abierto
+  24 horas; se conserva como explotación de cigronet, pero queda `parcial` y
+  sin resolver porque la superficie actual sólo documenta el alojamiento rural.
+
+  **Aceite Alzina** pasa a `Aceite`, elimina infusiones, un Instagram de turismo
+  rural manchego y el pin de otra finca. Su web HTTP sigue activa, confirma Las
+  Botas, los 3.600 olivos Arbequina y pedidos de aceite por correo o teléfono
+  (`sí|email|telefono`). **Can Casamada** actualiza dominio, móvil, correo y
+  gama; la web invita a acudir a la agrobotiga y no ofrece pedido remoto
+  (`no`). **Momocho** retira un dominio con certificado inválido y servicio no
+  encontrado, sin confundirlo con cierre: la actividad continúa y Glovo ofrece
+  carta, precios, pago y entrega (`sí|marketplace`).
+
+  La fila **Cafè Fantini (Cafès del Bages)** mezclaba la fábrica de Natursoy en
+  Castellterçol con enlaces de una marca italiana. Se reconstruye como **Cafès
+  del Bages** en Sant Salvador de Guardiola, se conserva su imagen correcta y
+  se enlaza su tienda Cafès Serra, con carrito y suscripción
+  (`sí|ecommerce|suscripcion`). **Natursoy** corrige dirección, propietario,
+  contacto, categoría y gama tras la incorporación por Sanygran en julio de
+  2026; su catálogo no es comprable (`no`). La fila paralela de **Nutrition &
+  Santé Ibérica**, que describía la misma planta bajo el dueño anterior, se
+  fusiona con Natursoy.
+
+  **Jaleo Coffee Roasters** mantiene una carta propia con precios, variantes y
+  carrito (`sí|ecommerce`) y pierde horario y contactos ya no publicados.
+  **Masia Cal Po** conserva el antecedente de AOVE, pero su web renovada en 2026
+  se dedica sólo al alojamiento y todas las rutas antiguas de aceite y tienda
+  devuelven 404 (`parcial|no`). **Granja Sant Llop** limita la gama a huevos,
+  elimina el dominio sin DNS y mantiene venta en granja y distribución, sin
+  pedido remoto (`no`).
+
+  Barcelona pasa de **2.439 a 2.438 filas**; el residual baja **302 → 294** y
+  la carga real **505 → 497**. `sinteticas` queda en **16**,
+  `evidencia-prestada` en **128**, `plantilla-cruzada` en **21** y `pendiente`
+  en **17**. `sin-imagen` baja **1.369 → 1.368** por la fusión societaria; las
+  dos imágenes renombradas siguen asociadas a sus productores reales.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
