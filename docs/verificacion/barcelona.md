@@ -243,6 +243,35 @@ decisiones cambiadas, `verify:data` y commit propio.
   técnicamente justificadas y la señal de imagen quedan visibles para futuras
   pasadas.
 
+- **BCN-V1-g · bodegas, cierre del carril con web (2026-08-01).** Se hizo la
+  segunda pasada de las cinco bodegas con web que V1-a había dejado para
+  investigación profunda. La corrección principal vuelve a ser de identidad:
+  `Brugarol la Granja SL` no es una unidad productiva de Barcelona, sino el
+  restaurante y alojamiento urbano de un grupo cuyo vino, aceite y queso se
+  elaboran en Celler Brugarol/Finca Bell-Lloc, Palamós. La fila barcelonesa y
+  su imagen duplicada se eliminan como `other-province`; la ficha ya existente
+  en Girona conserva slug e imagen y gana seis vinos actuales, viticultura
+  regenerativa y evidencia nueva de la tienda oficial. Amat & Montané sube de
+  `parcial` a `verificado` mediante su campaña y perfil propios de 2026, recibe
+  la gama IGIGA, SIRENI, NAVEGANTS, ViCICLISTA y el nuevo Sumoll, y pierde el
+  dominio que hoy solo muestra una plantilla de mantenimiento sin identidad.
+  Su preventa terminó el 11 de julio, por lo que no se presenta como canal
+  vigente. Solergibert incorpora doce hectáreas ecológicas, nueve referencias,
+  dirección, horario y la web renovada; Sanmartí, sus seis vinos actuales y el
+  detalle de elaboración; Almirall, dirección, historia familiar y ocho tipos
+  de cava. Los tres conservan `no comprobado`: las referencias de Solergibert
+  en Vinsdelbages son reventa independiente, el formulario de alta del Club
+  Sanmartí se anuncia todavía como «disponible próximamente» y Almirall ofrece
+  entrega a domicilio sin explicar cómo cursar un pedido. Barcelona queda en
+  **2.538 filas**; el residual provincial baja **787 → 786**, el de bodegas
+  **70 → 69**, las bodegas pendientes con web **16 → 14**, el total de bodegas
+  **298 → 297** y la carga real **953 → 952**; los avisos de calidad se
+  mantienen en **67**. La V2 confirma que las cuatro supervivientes solo
+  conservan `venta-sin-resolver` —y Almirall la señal de imagen—, que Brugarol
+  ya no entra en `plantilla-cruzada` en Girona y que no queda ninguna bodega
+  pendiente con web sin revisión de la campaña. El siguiente carril son las
+  **50 bodegas sin web no investigadas**, repartidas en dos tandas V1/V2.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,

@@ -52,6 +52,7 @@ cierra el catálogo y las afirmaciones dinámicas caducan.
   **Cargol Bover** (entidad no demostrable).
 - Fusión: **Vins de Taller** → `clos-de-basella-siurana` (misma sociedad y teléfono).
 - Identidades actualizadas (slug estable): Finca Bell-Lloc se presenta como **Celler Brugarol**;
+  `BCN-V1-g` retiró su duplicado territorial de Barcelona y concretó aquí la gama y el cultivo;
   L'Arbreda = marca **Mas L'Arbreda**; Làctics Vall de Ribes = **Ca l'Esteve** (desde 2023 compra la
   leche a otra granja del Ripollès, sigue siendo obrador); Gelats Janeret = **Golafreria Janeret**
   (Plaça Major); **Masia Serra** salió de la DO Empordà; **Cal Flequer** = obrador en Cornellà del
