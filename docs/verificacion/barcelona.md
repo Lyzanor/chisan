@@ -1131,6 +1131,46 @@ decisiones cambiadas, `verify:data` y commit propio.
   carril abre las 90 decisiones restantes de lácteos y quesos (**41**), cerveza
   artesana (**20**), miel (**19**) y aceite (**10**) en tandas homogéneas.
 
+- **Lote BCN-L1-a (2026-08-01, primera pasada profunda de lácteos).** Se
+  revisan 23 fichas con alguna superficie pública y el resultado no se limita a
+  resolver la columna de venta: salen **tres falsos productores**, se corrigen
+  dos identidades geográficas con transición de slug y se reconstruyen veinte
+  fichas comerciales. Formatgeria Simó y Queso con Chocolate son comercios que
+  revenden queso de otros elaboradores; Andreu Argudo era una ficha sintética
+  apoyada en una plantilla SEO anónima, mientras las fuentes públicas actuales
+  identifican al homónimo de Montgat como futbolista y entrenador. Se eliminan
+  también sus tres imágenes huérfanas.
+
+  **Làctics Clotet** deja Granollers y recupera su emplazamiento real en Caldes
+  de Montbui, el catálogo de El Clotet/L'Arca y coordenadas institucionales.
+  **Molí de l'Alzina** sustituye el nombre descriptivo y el slug excesivo de
+  Formatgeria de Cantonigròs. Can Orjusa pierde el mapa, las coordenadas, el
+  teléfono y el horario prestados por la distinta Formatges Can Pujol;
+  Ecomercaderet recupera su dominio nuevo, la finca y la tienda activa; Can Gel
+  deja de atribuirse derivados Pastoret y queda correctamente descrita como
+  productora de leche. Bauma, Artelac, Cuirols, La Cabreria, Cal Cantaré e
+  [in]perfecto dejan atrás dominios muertos, comprometidos o rechazados y
+  ganan fuentes públicas vigentes. Gavarresa, Cal Serrador, La Brolla, Les
+  Feixes, Cal Músic, Reixagó, Cal Carlot, Riudavets y Ancosa incorporan
+  catálogos, contactos, direcciones o descripciones específicas.
+
+  Se cierran **18 de las 23 decisiones**. Gavarresa y Les Feixes aceptan
+  encargos por formulario o correo; La Brolla, Reixagó, Ecomercaderet y
+  Riudavets tienen ecommerce propio operativo. Nueve fichas quedan en `no`
+  tras revisar sus superficies actuales y las tres bajas abandonan la cola.
+  Conservan `no comprobado` cinco techos explícitos: Molí de l'Alzina por
+  dominio muerto y menciones de compra atribuibles a revendedores; Cuirols por
+  tienda propia con pagos desactivados; Artelac por dos dominios caídos pese a
+  una mención institucional de tienda; [in]perfecto por la discrepancia entre
+  obrador y contacto actual; y Ancosa porque su web propia responde 403.
+
+  Barcelona pasa de **2.464 a 2.461 filas**; el residual provincial baja **400
+  → 382**, la carga real **600 → 582** y el residual de lácteos **41 → 23**.
+  Los avisos de calidad mejoran **37 → 36**; `sinteticas` sigue en **8**,
+  `plantilla-cruzada` en **20** y `pendiente` en **9**. `BCN-L1-b` queda
+  abierto con las 18 fichas frescas restantes y los cinco techos anteriores se
+  aparcan para no volver a contarlos como trabajo sin investigar.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
