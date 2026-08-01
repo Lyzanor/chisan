@@ -30,7 +30,7 @@
 | VilaEco | Sant Climent de Llobregat | baix llobregat | Fruites i verdures ecològiques | Mercat de Pagès La Sagrera | nou (sense revisar) |
 | Apiferro | Montsec | pallars jussa | Producció de mel exclusiva del Montsec |  | fora de província |
 | Bolets La Mandraula | Estopanyà | ribagorca | Granja de bolets de cultiu |  | fora de província |
-| Brot Agrològic | Sant Feliu de Codines | valles oriental | Verdura de temporada i ecològica | Mercat de Pagès Sant Antoni | ja al CSV → `brot-agrologic-moia` |
+| Brot Agrològic | Sant Feliu de Codines | valles oriental | Verdura de temporada i ecològica | Mercat de Pagès Sant Antoni | ja al CSV → `brot-agrologic-granera` (producció també a Sant Feliu de Codines) |
 | Cal Fusteret | Sant Fruitós del Bages | bages | Carns ecològiques de porc i vedella | Mercat de la Terra | ja al CSV → `cal-fusteret-sant-fruitos-de-bages` |
 | Cal Pastera Eco | Sant Boi, Viladecans i Sant Vicenç dels Horts | baix llobregat | Fruites i verdures ecològiques i de temporada | Mercat de la Terra | ja al CSV → `cal-pastera-eco-sant-boi-de-llobregat` |
 | Cal Sileta | Vallbona de les Monges | lleida | Xai, oli d’oliva i ametlles eco | Mercat de la Terra | fora de província |

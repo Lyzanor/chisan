@@ -456,6 +456,44 @@ decisiones cambiadas, `verify:data` y commit propio.
   `BCN-V1-n`, desde `can-pinos-scp-llinars-del-valles` hasta
   `ribas-alsina-miquel-premia-de-dalt`.
 
+- **Lote BCN-V1-n (2026-08-01, fruta y verdura sin web, tercera tanda).** Se
+  investigaron las 25 fichas congeladas y 24 recibieron cambios materiales;
+  Horta Pera se conserva sin forzar cambios porque una programación municipal
+  de 2025 confirma la actividad y la localización que ya publicaba. El lote
+  corrige siete identidades o municipios con trazabilidad de `merge`: Brot
+  Agrològic pasa de Moià a Can Roure de Granera; Horta 3sols a Castellterçol;
+  Jaime Toneu recupera nombre, finca, contacto y marca como **La Noguereda**;
+  Cal Marcelino/Fabró Produccions pasa de Sant Boi a El Prat; Javier Torrens
+  incorpora la marca Fordal; Ca La Col pasa de Pineda a Arenys de Munt; y
+  Agri-Ma deja una dirección y teléfono de un fotógrafo de Polinyà para la
+  explotación real de Jaume Magrans en El Papiol.
+
+  La corrección más grave de categoría es **Can Pinós**, que deja la plantilla
+  de fruta y verdura y pasa a explotación porcina según el registro municipal
+  vigente. También se recuperan la finca Can Baltasar de Pere Ayter, la marca
+  Can Gallard y su especialización en caracol, la gama completa de Mayfunt y
+  Perramon, la Poma de Pontons Roqueta de Joan Domènech y el melocotón de la
+  Fortesa de Josep Vives. Se retiran pines de dos centros médicos, una
+  residencia, una empresa industrial de Granollers, un negocio de Barcelona y
+  otras búsquedas de apellido ajenas; De La Maria pierde además las redes de
+  Anoia Turisme.
+
+  Se resuelven cinco ventas remotas con mecanismo utilizable: Ple de Verd y
+  Brot Agrològic por tienda propia, Horta 3sols por Pagesia a casa, Cal
+  Marcelino por encargos telefónicos con reparto y Masia Can Sagristà por el
+  servicio a domicilio publicado por el directorio municipal. No se marca Pere
+  Ayter: su perfil comercial está vivo pero declara cero productos. Tampoco
+  Agri-Ma: el directorio menciona cestas mediante Can Perol, pero los dos
+  dominios publicados ya no resuelven.
+
+  Barcelona permanece en **2.508 filas**; el residual provincial baja **707 →
+  702**, la carga real **872 → 870**, el residual de fruta y verdura **142 →
+  136**, `plantilla-cruzada` **22 → 21** y los avisos de calidad **53 → 51**.
+  Las siguientes **25 de 72 fichas frescas sin web** quedan congeladas como
+  `BCN-V1-o`, desde
+  `esteve-grau-ganduxe-can-esteve-tonico-roca-del-valles` hasta
+  `masia-can-bell-sant-cugat-del-valles`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
