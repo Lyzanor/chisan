@@ -88,6 +88,24 @@ No se vuelca el roster completo: se trabaja con `--categoria`, `rg` y pequeños
 clusters de dominio/municipio. Cada tanda cierra con evidencia para las
 decisiones cambiadas, `verify:data` y commit propio.
 
+- **BCN-V1-a · bodegas, primera pasada (2026-08-01).** Se cribaron 40 de las
+  66 bodegas sin resolver que ya tenían web y se exigió producto vigente,
+  precio y mecanismo real de pedido; detectar WooCommerce o un enlace
+  «tienda» no bastó. Siete pasan a `sí`: Can Quetu, Cava Rovellats, Covides,
+  Família Ferrer–Can Sala, Finca Espiells, Martí Grau Viticultors y Celler
+  Credo. En las siete se sustituyeron productos/descripciones genéricos y se
+  dejó evidencia del canal propio o del grupo productor. Canals & Domingo se
+  enriqueció con oferta y contacto, pero conserva `no comprobado`: su tienda
+  oficial sigue en construcción y anuncia la compra para más adelante. El
+  residual provincial baja **833 → 826**. La V2 de la misma muestra quedó
+  cerrada antes de abrir otra tanda: CSV y evidencia coinciden, ninguno de los
+  siete nuevos `sí` aparece en una cola editorial y solo Canals & Domingo
+  permanece deliberadamente en `venta-sin-resolver`. Celler Solergibert y
+  Celler Sanmartí solo mostraron infraestructura de tienda; Brugarol apunta a
+  una explotación de Girona; Almirall presenta contenido ajeno compatible con
+  dominio comprometido; Amat Montané requiere confirmar la titularidad del
+  nuevo escaparate. Ninguno se promovió por esas señales.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
