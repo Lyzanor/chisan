@@ -693,6 +693,37 @@ decisiones cambiadas, `verify:data` y commit propio.
   pan y pastelería, desde `pastisseria-duch-abrera` hasta
   `pastisseria-grau-esparreguera`.
 
+- **Lote BCN-P1-a (2026-08-01, primera pasada de pan y pastelería).** Se
+  investigaron las 25 fichas congeladas y **20 reciben cambios en el CSV**.
+  La corrección principal es de identidad y alcance: `Casa Biosca` no era una
+  panadería ni producía las harinas atribuidas por la ficha. El RIAAC identifica
+  allí a **Pastures de Castelltallat SL**, elaborador de carne picada,
+  hamburguesas, albóndigas y brochetas. Se corrigen slug, nombre, categoría,
+  producto, contacto e imagen y se deja la fusión trazada. TAART pierde un pin
+  y coordenadas que pertenecían a otra pastelería y baja a `parcial`;
+  Pastisseria Roquetes pierde un dominio sin DNS. También se actualizan
+  surtidos, descripciones, horarios o contactos de Duch, Bohème, Mireia, Horno
+  Santa Madrona, Turón, Leiva, Milu, Pachi Larrea, Ca l'Agustí, Obrador Roig y
+  Pastisseria Grau.
+
+  Se resuelven **17 decisiones de venta**. **Caus Cakes** acepta encargos por
+  WhatsApp; **L'Obrador Roig** recupera su tienda con carrito, reparto y
+  pedidos por WhatsApp o teléfono; y **Pastisseria Grau** publica correo de
+  pedidos y WhatsApp. Otras catorce fichas quedan en `no` tras revisar sus
+  webs, perfiles, registros o directorios actuales sin encontrar un mecanismo
+  remoto. Ocho techos conservan `no comprobado`: cinco por dominios que
+  agotan tiempo, fallan en TLS o devuelven 502; TAART y Roquetes por dominios
+  caídos; y El Capritxet porque las fuentes actuales discrepan entre abierto y
+  cerrado.
+
+  Barcelona mantiene **2.504 filas**; el residual provincial baja **592 →
+  575**, la carga real **779 → 763** y el residual de pan y pastelería **107 →
+  90**. Los avisos de calidad siguen en **46**, `sinteticas` en **8**,
+  `plantilla-cruzada` en **21** y `pendiente` en **9**. Los ocho techos se
+  apartan de la rotación inmediata y se congela `BCN-P1-b` con las siguientes
+  25 decisiones, desde `pa-i-pastissos-can-girabent-figaro-montmany` hasta
+  `fleca-el-crosto-navas`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
