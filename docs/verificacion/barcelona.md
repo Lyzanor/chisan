@@ -324,6 +324,35 @@ decisiones cambiadas, `verify:data` y commit propio.
   fuentes actuales no muestran ni descartan un mecanismo de pedido; no se
   han cerrado por ausencia de web.
 
+- **Lote BCN-V1-j (2026-08-01, fruta y verdura con web).** Cerrada la primera
+  tanda de 25 fichas con una pasada de identidad, unidad productiva, contacto,
+  ubicación y venta antes de revisar los defectos resultantes. El cambio más
+  importante vuelve a estar en el CSV: Cal Biel se purga como comercio sin
+  producción propia; L'Hort de l'Avi deja de localizar la explotación en su
+  tienda de Igualada y pasa a la finca de Agustí Domènech en Òdena; Cal
+  Pastera deja el municipio erróneo de Ripollet y queda en su explotación de
+  Sant Boi; y Cultius La Gírgola pasa de horta a `Trufa y setas`. También se
+  distinguen la marca Brot Agrològic de la razón cooperativa Brotada Rural y
+  las denominaciones Cordú Fruits / Fruites i Verdures Cortès. Las 24 fichas
+  supervivientes reciben descripción y gama específicas; 21 mejoran
+  dirección, contacto, horario, mapa, nombre o categoría, y se retiran 14
+  webs muertas o de terceros. Se resuelven 14 ventas: Sóc Pagès por WhatsApp;
+  Can Margarida por el marketplace municipal; Brot Agrològic, Pla de Munt y
+  Ca n'Ustrell por ecommerce; Cal Climent y Torre Malla por correo/teléfono;
+  Cal Pastera y Green Hort por correo; y Ca n'Oliveró, Pere Fíguls, Manel
+  Sanfeliu, Viscarri y Horts de Sant Benet a `no` tras revisar sus canales
+  actuales. Diez incertidumbres conservan `no comprobado` porque el dominio
+  está roto, suspendido o bloqueado, o porque las fuentes no enseñan un
+  mecanismo remoto utilizable. Barcelona queda en **2.517 filas**; el residual
+  provincial baja **760 → 745**, la carga real **925 → 910**, los avisos de
+  calidad **67 → 58** y el residual de fruta y verdura **201 → 185**; dentro de
+  la categoría, las pendientes con web bajan **48 → 24**. La V2 deja las
+  fichas tocadas fuera de texto genérico, plantilla cruzada, evidencia
+  prestada, web de tercero y canal sin clasificar. `BCN-V1-k` queda preparado
+  con las **23 fichas con web aún no investigadas**, desde
+  `cal-masses-sant-salvador-de-guardiola` hasta `lhortet-del-bruc-el-bruc`;
+  Mas Llopis no se repite porque su 403 ya quedó documentado en esta tanda.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
