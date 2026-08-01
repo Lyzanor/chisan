@@ -897,6 +897,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   `forn-de-pa-la-catalana-sant-adria-de-besos` y
   `baluard-el-magatzem-lhospitalet-de-llobregat`.
 
+- **Lote BCN-P1-e-b (2026-08-01, cierre profundo de pan y pastelería).** La
+  segunda mitad de excepciones descubre una duplicación triple: el supuesto
+  Forn de Sant Joan de Sant Sadurní era en realidad el obrador de **Pastisseria
+  Trens / Forn de Sant Joan de Vilafranca**, ya presente dos veces en el CSV.
+  Se conservan una sola ficha y un solo slug, se eliminan las dos copias y se
+  corrigen nombre, correo, surtido e historia del obrador centenario. Can
+  Carriel también recibe una reparación de identidad operativa: pasa del número
+  23 al 15, corrige teléfono, correo y coordenadas y deja de enlazar el
+  Instagram de una pastelería distinta de El Prat. Sant Jordi cambia el HTTPS
+  autofirmado por su web HTTP funcional y retira un Instagram no demostrable;
+  La Catalana sustituye un teléfono ajeno por el de la sociedad de Sant Adrià.
+
+  Se cierran **siete decisiones de venta**. Arka y La Francesa tienen carrito
+  con pago y aceptan encargos por correo; Baluard vende mediante su tienda de
+  marca y marketplace. Can Carriel, Sant Jordi, Pascual y La Catalana quedan en
+  `no` tras revisar sus superficies actuales sin hallar pedido remoto. Pascual
+  pierde productos y el supuesto obrador propio que no tenían respaldo;
+  Torres, Arka, Trufa d'Or, La Francesa, La Catalana y Baluard ganan direcciones,
+  horarios, contactos, surtidos o descripciones específicos. La Coca d'Anís,
+  Torres y Trufa d'Or conservan `no comprobado`: respectivamente hay un antiguo
+  comercio sin DNS y dos contradicciones actuales sobre reparto sin un canal
+  operable. Se aparcan junto a Masamara como los cuatro techos conocidos de la
+  categoría.
+
+  Barcelona pasa de **2.498 a 2.496 filas**; el residual provincial baja **497
+  → 489**, la carga real **688 → 682** y el residual de pan y pastelería **12 →
+  4**. Los avisos de calidad siguen en **40**, `sinteticas` en **8**,
+  `plantilla-cruzada` en **21** y `pendiente` en **9**. Se cierra `BCN-P1-e-b`
+  y el siguiente carril por volumen es **charcutería (93 `no comprobado`)**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
