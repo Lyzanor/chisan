@@ -927,6 +927,61 @@ decisiones cambiadas, `verify:data` y commit propio.
   `plantilla-cruzada` en **21** y `pendiente` en **9**. Se cierra `BCN-P1-e-b`
   y el siguiente carril por volumen es **charcutería (93 `no comprobado`)**.
 
+- **Lote BCN-C1-a (2026-08-01, primera pasada profunda de charcutería).** Se
+  revisan las primeras 25 filas del carril y el resultado vuelve a ser más
+  editorial que mecánico: **10 filas salen del catálogo**. Pocreu es una
+  inmobiliaria, no un productor; la supuesta parada de Xarcuteries Bosch en el
+  Mercat de Santa Eulàlia no existe ni en el directorio del mercado ni en los
+  puntos de venta de la marca; y Agropecuària de Moià, Gerundense, Anna
+  Baraldes, Òscar Casino, Enric Ullar, Can Villena, Vinfaro y Puigdauret solo
+  quedan documentados como explotaciones o sociedades agrarias, sin una oferta
+  alimentaria pública actual que permita convertirlos en charcuterías. Se
+  retira también la imagen huérfana de la falsa parada Bosch.
+
+  Dos fichas reciben una reparación completa de identidad con transición de
+  slug trazada. **Carn del Cadí-Moixeró** deja de mezclarse con la carnicería
+  Cal Negre: pasa a carne de xai, cabrit y lletó de Ricard Garcia Canal, con
+  dirección, contacto y pedido directo propios. **Embotits Guinó** deja de
+  figurar en Lliçà de Vall y recupera su fábrica real de Can Barri, en Bigues i
+  Riells, junto con el catálogo, contacto y reparto que acaba de publicar. Cal
+  Guitart incorpora su ampliación de 2025 en Passeig de la Indústria 62 sin
+  borrar la tienda de Lluís Millet; Gonfaus corrige dirección, teléfono y
+  producto a la vedella Bruna; Subirats se reconstruye como grupo integral de
+  cuatro generaciones y baja honestamente a `parcial` al no tener coordenadas
+  públicas precisas de Can Puig. Can Quintí, Can Valls, Pau i Mar, Casa Barba,
+  Euroconills, Puig Fitó, Devesa y Moliner ganan asimismo horarios, contactos,
+  surtidos, categorías o descripciones específicos; Casa Barba y Moliner
+  pierden dominios ya inservibles.
+
+  Se cierran **13 decisiones de venta**: Can Valls vende por WhatsApp; Carn del
+  Cadí-Moixeró por WhatsApp, teléfono y correo; Pau i Mar por teléfono; Puig
+  Fitó por tienda y teléfono de pedidos; y Embotits Guinó por teléfono y
+  correo con reparto. Can Quintí, Cal Guitart, Gonfaus, Subirats, Casa Barba,
+  Euroconills, Devesa y Moliner quedan en `no` tras revisar sus superficies
+  actuales. Acero y Xarcuteria Sala conservan `no comprobado`: el primero no
+  ofrece aún un contacto público atribuible y el segundo tiene un antecedente
+  de reparto de 2020 que no puede darse ni por vigente ni por extinguido.
+
+  Barcelona pasa de **2.496 a 2.486 filas**; el residual provincial baja **489
+  → 466**, la carga real **682 → 661** y el residual de charcutería **93 →
+  69**. Los avisos de calidad mejoran **40 → 39**; `sinteticas` sigue en **8**,
+  `plantilla-cruzada` en **21** y `pendiente` en **9**. Se abre `BCN-C1-b` con
+  `xarcuteria-sala-castellbisbal`, `can-corder-llinars-del-valles`,
+  `explotacions-agricoles-ramaderes-picas-scp-lluca`,
+  `garet-bosch-pere-lluca`, `capdevila-costa-josep-manlleu`,
+  `maso-coll-david-manlleu`, `tatje-de-viladordis-manresa-viladordis`,
+  `serra-xarcuters-martorell`, `conillbo-cb-masquefa`,
+  `cal-trapet-matadepera`, `el-gai-pollastres-el-gai-moia`,
+  `padrisa-prieto-andreu-moia`, `serracarbasa-sala-scp-moia`,
+  `vall-llosana-scp-moia`, `carnisseria-altayo-ripoll-mollet-del-valles`,
+  `les-mil-butis-monistrol-de-montserrat`,
+  `el-soler-de-preixana-scp-montmajor`,
+  `ares-puigsasllosas-pere-muntanyola`, `embotits-de-mura-mura`,
+  `cansaladeria-singla-navarcles`, `marginet-costa-marti-nou-de-bergueda`,
+  `cal-roio-catllaras-scp-nou-de-bergueda`,
+  `carniques-maso-s-a-olerdola-vilafranca-del-penedes`, `oriol-scp-oris` y
+  `100-conill-albert-puig-orista-la-torre-dorista`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
