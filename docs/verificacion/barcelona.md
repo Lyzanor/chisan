@@ -1770,6 +1770,33 @@ decisiones cambiadas, `verify:data` y commit propio.
   **18** y `sin-imagen` en **1.364**; la imagen de la Botigueta conserva
   continuidad con el slug corregido.
 
+- **Lote BCN-F2-i (2026-08-01, Gallifa y productores de Palou).** Cuatro
+  huecos de venta salen del residual y las cuatro fichas ganan datos
+  utilizables. **Granja Ferreria** deja de apuntar a una calle urbana y pierde
+  un horario inventado: la federación avícola y la licencia municipal la
+  sitúan en Les Ferreries, recuperan su correo y describen una explotación
+  mixta de huevos de consumo, porcino y apicultura (`no`). La mezcla activa el
+  detector cruzado de forma legítima, sin aumentar su recuento.
+
+  **Agropecuària Can Mariné** también estaba anclada en el centro urbano de
+  Granollers: el domicilio productivo vigente es Can Mariné, Palou. Se
+  retiran ese pin, sus coordenadas y un correo no corroborado; se conservan el
+  teléfono actual, los huevos y el porcino, con techo `parcial|no` porque no
+  publica superficie propia ni pedido remoto.
+
+  **SAT Can Pla** recupera la masía exacta, el móvil, el correo y su gama de
+  mongeta del ganxet y legumbres estacionales. **SAT Palou** recupera nombre
+  público, móvil, correo y garbanzos, y pierde otro pin urbano sin relación con
+  la explotación. Las fichas actuales de comercio local invitan expresamente
+  a encargar por correo, por lo que ambas pasan a `sí|email`; se mantiene
+  `parcial` al no atribuirles una web propia que no tienen.
+
+  Barcelona permanece en **2.434 filas**; el residual baja **266 → 262** y la
+  carga real **470 → 467**. `sin-evidencia` baja **1.824 → 1.820** mediante
+  las cuatro decisiones. `evidencia-prestada` queda en **127**, `sinteticas`
+  en **17**, `plantilla-cruzada` en **23**, `pendiente` en **18** y
+  `sin-imagen` en **1.364**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
