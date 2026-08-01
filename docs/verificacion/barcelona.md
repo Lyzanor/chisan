@@ -1282,6 +1282,43 @@ decisiones cambiadas, `verify:data` y commit propio.
   La Micro, Bripau, La Lenta, Cornèlia y Barret. El siguiente carril abre las
   19 decisiones de miel.
 
+- **Lote BCN-M1-a (2026-08-01, primera pasada profunda de miel).** Las diez
+  primeras fichas dejan **ocho decisiones fuera del residual** y corrigen cinco
+  identidades públicas. **Naturmel** sale de Barcelona: el dominio enlazado
+  redirige a Miel y Solo Miel y su única sede oficial está en Colmenar (Málaga),
+  no en Castelldefels. **Delícia de Mel** pasa de Moià a su obrador real de
+  Calders, elimina teléfono y Facebook ajenos, incorpora variedades, contacto y
+  web propios y confirma ecommerce activo. **Ester Garriga** se reconstruye
+  como **Mels Cal Pastoret**, con obrador, correo, gama y tienda propia; la
+  entrevista de Diputación de 2025 confirma la continuidad de la explotación.
+
+  **Bibiana Bataller** pasa a su marca **Mel Cal Fuster**, corrige el punto de
+  Castelladral, borra horario y contactos contaminados y recupera mel, cera,
+  pròpolis y derivados. La ficha vigente de Diputación marca venta en línea y
+  Pagesia a casa concreta reparto comarcal y pago remoto, por lo que queda
+  `sí|telefono`. **Envasats Mic&Em** adopta la marca **Mel del Paratge de la
+  Serra del Boix**, catálogo real y el domicilio de Casa Pere Periques. El
+  registro agroalimentario de mayo de 2026 confirma la extracción de miel, pero
+  su web no resuelve DNS: se mantiene como techo técnico, no como falso `no`.
+
+  **La Mel** sustituye la ficha nominal de Annabel Muñoz y estrena su web de
+  2026, cuatro productos, móvil y correo. **Mel de les Valls del Montcau**
+  elimina el pin prestado de Can Monràs Nou, recupera a Marc Pineda y su mel de
+  farigola premiada en 2025. Ambas quedan en `no`: sus superficies actuales
+  ofrecen puntos de venta o directorio, pero no pedido remoto. Abelles Negres
+  actualiza las cuatro mels del catálogo 2025 y queda también en `no`; la
+  reserva web es sólo para núcleos de abejas. Anthophila elimina las mermeladas
+  inventadas y precisa miel, productos apícolas y material vivo. **Roser
+  Jordana** queda sin tocar como techo: no apareció una fuente actual que
+  permita reconstruir con seguridad su actividad comercial apícola.
+
+  Barcelona pasa de **2.451 a 2.450 filas**; el residual provincial baja **353
+  → 345**, la carga real **553 → 546** y el residual de miel **19 → 11**. Los
+  avisos de calidad siguen en **34**, `sinteticas` en **7**, evidencia prestada
+  en **128**, `plantilla-cruzada` en **20** y `pendiente` en **9**. `BCN-M1-b`
+  continúa con las nueve fichas frescas restantes; los dos techos de esta tanda
+  son Mel del Paratge y Roser Jordana.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
