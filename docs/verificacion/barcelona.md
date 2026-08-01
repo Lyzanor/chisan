@@ -419,6 +419,43 @@ decisiones cambiadas, `verify:data` y commit propio.
   web**, desde `horta-de-capolat-capolat` hasta
   `cal-malu-jordi-pratginestos-llinars-del-valles`.
 
+- **Lote BCN-V1-m (2026-08-01, fruta y verdura sin web, segunda tanda).** Se
+  investigaron las 25 fichas congeladas y 23 recibieron cambios materiales; las
+  dos titularidades de Can Moret, Hilari Serra y Josep Serra, se confirmaron
+  separadas en el censo agrario 2026 y no se fusionan solo por compartir finca y
+  correo. El lote corrige antes la identidad y el territorio: **Can Arenols**
+  deja la ficha de un restaurante de Castelldefels y pasa a su explotación y
+  agrobotiga reales de Viladecans; **Horta Can Manent** pasa a la finca del
+  rodal de Sabadell, y **El Sabater Vell** recupera identidad, responsable y
+  contacto propios en Castellar. L'Hortet de l'Antonia alinea su slug con
+  Llinars del Vallès. Los cuatro cambios de identidad conservan trazabilidad de
+  `merge`.
+
+  También se corrigen dos categorías graves: Les Cases d'Argençola pasa de
+  fruta y verdura a carne de cordero y Puigxoriguer de patata a explotación
+  bovina y porcina; Joan Roselló pasa a legumbres por su producción documentada
+  de guisante y judía. Se eliminan el pin de La Datzira que caía fuera de
+  Castellcir, el de Fruits Capellades que caía en Capellades, el de Joan Roselló
+  que caía en Barcelona, el de Casa Jordi atribuido a Puigventós y el pin
+  mezclado de El Sabater/Can Manent. UCHUS queda anclado directamente a la API
+  oficial de venta de proximidad —acreditación VP/P/4371/2024— en vez de a una
+  descripción de plantilla.
+
+  Se resuelven siete ventas remotas con mecanismo utilizable: Horta de Capolat,
+  Obra Tutelar Agrària y Fruits Capellades por tienda o marketplace; Horta Can
+  Manent, Can Arenols y Horta de Vallcàrquera por teléfono; Verdures Carreras
+  por WhatsApp. En paralelo, La Catxaruda pierde un horario y una afirmación de
+  marketplace sin vigencia demostrada, y los históricos sin presencia actual
+  conservan `no comprobado` en vez de convertir un correo publicado en prueba
+  de pedido.
+
+  Barcelona permanece en **2.508 filas**; el residual provincial baja **714 →
+  707**, la carga real **879 → 872**, el residual de fruta y verdura **152 →
+  142**, `plantilla-cruzada` **24 → 22** y los avisos de calidad **56 → 53**.
+  Las siguientes **25 de 97 fichas frescas sin web** quedan congeladas como
+  `BCN-V1-n`, desde `can-pinos-scp-llinars-del-valles` hasta
+  `ribas-alsina-miquel-premia-de-dalt`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
