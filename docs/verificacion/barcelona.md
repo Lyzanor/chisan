@@ -1694,6 +1694,43 @@ decisiones cambiadas, `verify:data` y commit propio.
   porque la gama mixta real de Cal Pauet activa el cruce de harina frente a su
   categoría principal de carne; es un falso positivo documentado.
 
+- **Lote BCN-F2-g (2026-08-01, identidades rurales Cardedeu–Castellfollit).**
+  Doce huecos de venta salen del residual, pero el resultado principal es la
+  reparación del catálogo. **Gercasa SCP** era la razón productora de **Can
+  Casamada** y **Montserrat Farré** la titular de **Granja La Roca**: se
+  eliminan ambas fichas duplicadas y la segunda superviviente recupera nombre,
+  dirección, teléfono, correo, huevos y caldos actuales. **Fruits Presas** deja
+  de figurar como elaborador de conservas en un centro cultural de
+  Castellbisbal; pasa a la explotación familiar de fruta y huerta de Abrera,
+  con la imagen migrada al slug correcto. **Cigró-Ciuró** tampoco estaba en
+  Castellcir: se reconstruye como producto de Mas Padrós, Collsuspina, con
+  dirección, contactos y coordenadas institucionales.
+
+  **Can Vilumara** sustituye la razón SAT en el nombre y slug públicos; su
+  tienda ofrece lotes de ternera y cordero y encargos por WhatsApp y teléfono
+  (`sí|ecommerce|whatsapp|telefono`). **Mas Maçaners** corrige nombre, masía,
+  correo y raza avícola, y su producto comprable en MengemBages permite
+  resolver `sí|marketplace`. **Granja La Roca** queda `sí|email|telefono` y
+  **Cigró-Ciuró**, `sí|email|telefono`.
+
+  En **Can Còdol**, **Can Torra**, **Ous de Maians**, **Cal Meler**, **Mateu
+  Arnau Oliveras** y **Fruits Presas** se corrigen productos, identidades,
+  contactos, direcciones o coordenadas y se documenta `no` tras revisar sus
+  superficies públicas sin encontrar pedido remoto. Se mantiene techo
+  `parcial` cuando la actividad actual sólo está respaldada indirectamente.
+  **La Blanca del Montseny** es la única incertidumbre conservada: sólo aparece
+  en el registro histórico de 2014, por lo que pierde dirección, teléfono,
+  correo y mapa obsoletos y queda `pendiente|no comprobado` en vez de simular
+  precisión.
+
+  Barcelona pasa de **2.436 a 2.434 filas**; el residual baja **286 → 274** y
+  la carga real **489 → 479**. `sinteticas` sube **16 → 17** y `pendiente` **17
+  → 18** por la limpieza honesta de La Blanca; `evidencia-prestada` permanece
+  en **128**. `plantilla-cruzada` sube **22 → 23** porque la gama real de Can
+  Còdol combina ternera y mongeta bajo la categoría principal `Carne`.
+  `sin-imagen` baja **1.366 → 1.364** al salir los dos duplicados sin activo;
+  la imagen de Fruits Presas conserva continuidad con su nuevo slug.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
