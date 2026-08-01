@@ -1319,6 +1319,45 @@ decisiones cambiadas, `verify:data` y commit propio.
   continúa con las nueve fichas frescas restantes; los dos techos de esta tanda
   son Mel del Paratge y Roser Jordana.
 
+- **Lote BCN-M1-b (2026-08-01, cierre de la pasada profunda de miel).** Las
+  nueve fichas restantes cierran **seis decisiones de venta** y descubren dos
+  duplicados transversales. **Mel dels Erms** actualiza responsable, dirección,
+  teléfono, correo y cinco líneas de producto; su ruta «Botiga» está vacía y
+  Gastroteca sólo publica canales presenciales, por lo que queda en `no`.
+  **Mel Can Mallofré** absorbe la ficha nominal de Salvador Mallofré, conserva
+  el slug público que ya existía y sustituye una dirección de Barcelona y un
+  horario 24 h por el obrador de Sant Pau d'Ordal, siete variedades y contacto
+  actual. No tiene web y sólo vende en ferias y mercados (`no`).
+
+  **Mel d'Antany – Pau Bars** concreta productos, dirección y coordenadas de la
+  ficha vigente de Diputación y pasa a `sí|telefono`: la fuente marca venta en
+  línea y distribución propia y publica el móvil. **L'Horta de la Tuka** cambia
+  el dominio retirado por su escaparate activo en Oidà, donde se prepara la
+  cesta y se envía por WhatsApp; también actualiza horario, reparto y catálogo
+  mixto (`sí|whatsapp`). **Brunzit** recupera Can Miqueló, a Josep M. Márquez y
+  el origen de su producción limitada; sus superficies actuales sólo ofrecen
+  contacto (`no`). **Mels de Can Monràs Nou** corrige domicilio, coordenadas,
+  número de arnes y catálogo: la supuesta tienda es un catálogo sin precios,
+  carrito, checkout ni instrucción de pedido, así que queda en `no` tras
+  inspección funcional.
+
+  La pasada retira además el duplicado previo de **Mel Cal Fuster** bajo
+  `Despensa artesanal`, junto con sus mermeladas y horario corruptos. Said
+  Azouggagh pierde el pin prestado del campo de fútbol y adopta centroide
+  municipal; Víctor Goula pierde el pin personal y la descripción de plantilla.
+  Ambos conservan `no comprobado` porque no apareció superficie comercial
+  actual. **Mel Morató – Mel Mas Foradada** también queda como techo: Gastroteca
+  sólo muestra venta física, pero el dominio oficial responde 502 y esa avería
+  impide convertir incertidumbre en `no`.
+
+  Barcelona pasa de **2.450 a 2.448 filas**; el residual provincial baja **345
+  → 338**, la carga real **546 → 538** y el residual de miel **11 → 5**. Los
+  avisos de calidad siguen en **34**, `sinteticas` en **7**, evidencia prestada
+  en **128**, `plantilla-cruzada` en **20** y `pendiente` en **9**. La pasada
+  fresca de miel queda cerrada con cinco techos explícitos: Mel del Paratge,
+  Roser Jordana, Said Azouggagh, Víctor Goula y Mel Morató. El siguiente carril
+  abre las decisiones de aceite.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
