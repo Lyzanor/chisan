@@ -1437,6 +1437,46 @@ decisiones cambiadas, `verify:data` y commit propio.
   datos inventados. La segunda pasada continúa con las ocho fichas restantes
   de zumos, infusiones, aceitunas, licores, setas y aperitivos.
 
+- **Lote BCN-F1-b (2026-08-01, cierre de categorías pequeñas).** Las ocho
+  fichas restantes cierran **tres decisiones de venta**, consolidan dos
+  identidades y eliminan una empresa extinguida. **Mostos Suc de Vida** deja de
+  ser una ficha personal de Daniel Pascual en Vilafranca: el registro vigente
+  sitúa la sociedad y planta elaboradora en Carrer del Ribat 33, Santa Margarida
+  i els Monjos. Se eliminan un teléfono de una empresa de reformas, un horario
+  inventado y un pin de Daniel Fàbrega, todos ajenos; sin superficie comercial
+  actual, conserva `parcial|no comprobado`.
+
+  **Jaime Pons Ametller** queda como techo histórico `pendiente|no comprobado`:
+  el único rastro productivo es el registro de venta de proximidad de 2014. Se
+  corrigen categoría y productos y se retiran horario, contacto, coordenadas,
+  pin e imagen, que pertenecían a Ametller Origen en Sant Cugat. **SoTaTerra**
+  sustituye la antigua identidad La Tofonera, actualiza trufa negra ecológica y
+  Poma de Busa y conserva la plantación de Avià; su perfil actual sólo anuncia
+  tienda física de invierno en Torà, así que una referencia antigua a pedidos
+  por Instagram no permite resolver la venta remota. Herbolari de Sau mantiene
+  actividad confirmada por la feria municipal de 2025, pero sus dominios
+  históricos ya no ofrecen una web utilizable.
+
+  **Outer Gin** pasa a `sí|marketplace`: el perfil oficial enlaza directamente
+  a una ficha de Amazon disponible, con precio y alta en cesta comprobados.
+  **La Destilateca** recupera domicilio, teléfono, email y gama; su tienda propia
+  está agotada, pero la Ginebra Mar que elabora para CxC conserva compra y envío
+  operativos en la tienda del proyecto colaborador (`sí|marketplace`).
+  **Mostatxo** concreta sus dos mostos y los productores Gil Coma y Magda Bages;
+  la web propia invita expresamente a escribir para llevarse el producto
+  (`sí|email`). **Paul and Pippa** sale del catálogo: la sociedad productora
+  consta extinguida desde 2022 y la marca cancelada en 2025; una web residual y
+  existencias de minoristas no demuestran un productor activo o sucesor.
+
+  Barcelona pasa de **2.446 a 2.445 filas**; el residual provincial baja **326
+  → 322** y la carga real **528 → 524**. Los avisos de calidad bajan **34 →
+  33**, `plantilla-cruzada` **21 → 20**, evidencia prestada sigue en **128**,
+  `sinteticas` sube **8 → 9** por la limpieza de Jaime Pons y `pendiente` **9 →
+  10**. Son degradaciones editoriales deliberadas: sustituyen datos concretos
+  pero falsos por incertidumbre visible. Con este lote se cierra la primera
+  pasada de categorías pequeñas; el siguiente carril se elige sobre las 322
+  ventas aún sin resolver.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,

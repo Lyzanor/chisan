@@ -3,8 +3,8 @@
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 11872,
-    "tagged": 1126
+    "rows": 11871,
+    "tagged": 1125
   },
   "provinces": {
     "andalucia/almeria": [
@@ -573,7 +573,6 @@
       "la-destilateca-terrassa",
       "la-llar-del-bacalla-sant-just-desvern",
       "la-mel-annabel-munoz-sant-llorenc-savall",
-      "la-tofonera-avia",
       "leopoldos-sant-just-desvern",
       "marmeles-sant-marti-de-tous",
       "marquez-tarres-joan-pineda-de-mar",
@@ -596,7 +595,6 @@
       "ous-marimon-montmaneu",
       "pairo-fish-montcada-i-reixac",
       "paret-seca-vins-santa-margarida-i-els-monjos",
-      "paul-and-pippa-barbera-del-valles",
       "perfum-de-fruits-la-garriga",
       "pollastre-del-montseny-seva",
       "raimones-olerdola",
@@ -606,6 +604,7 @@
       "roca-del-cor-sentmenat",
       "rovira-vineta-lluis-centelles",
       "single-vineyards-collectors-sant-pere-de-ribes",
+      "sotaterra-avia",
       "ton-rimbau-porcellanic-vilobi-del-penedes",
       "vall-del-riu-sat-sant-andreu-de-la-barca",
       "vendrell-pellicer-josep-avinyonet-del-penedes",
