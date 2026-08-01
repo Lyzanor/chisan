@@ -855,6 +855,48 @@ decisiones cambiadas, `verify:data` y commit propio.
   `forn-de-pa-la-catalana-sant-adria-de-besos` y
   `baluard-el-magatzem-lhospitalet-de-llobregat`.
 
+- **Lote BCN-P1-e-a (2026-08-01, segunda pasada de pan y pastelería).** Se
+  revisaron en profundidad las primeras once excepciones técnicas del lote y
+  **nueve fichas supervivientes reciben cambios materiales**. TAART llevaba
+  sin actividad propia desde 2024 y su local de Mar 101 funciona actualmente
+  como Cotti Coffee; El Capritxet figura cerrado y el Ayuntamiento sitúa desde
+  2025 la sede de DIREXIS en el mismo Pi i Margall 36. Ambas filas se retiran
+  como `closed`. Can Serra deja de mezclarse con la marca, el teléfono y el
+  Instagram de Cal Forner: recupera nombre, slug, historia familiar desde 1928,
+  contacto y horario propios, con fusión trazada. El supuesto Forn Nou de
+  Folgueroles tampoco existía con los datos publicados: el Instagram era de un
+  negocio de Llíria y dirección, teléfono y dominio carecían de respaldo. Se
+  corrige a la unidad real de **Forn Nou de Balenyà**, documentada por el
+  ayuntamiento y Fet a Osona, también con transición de slug trazada.
+
+  Se cierran **ocho decisiones de venta**: Can Moré acepta encargos por correo
+  y teléfono; Artesano Horneado en Casa recupera una tienda con catálogo,
+  pago, reparto y recogida programada; y la web de PastryGas vuelve a responder
+  por HTTP y publica explícitamente el correo de encargos. Roquetes, Can Serra,
+  Canyars, Forn Nou y La Panadella quedan en `no` después de la segunda
+  revisión de sus webs, perfiles y directorios. Todas ganan surtido,
+  descripción o contacto específico. Masamara conserva `no comprobado`: se
+  corrige el teléfono al de Paula Escribano y Sergi y se eliminan coordenadas
+  de centroide sin dirección, pero su única huella verificable sigue siendo un
+  mercado de productores de 2020, insuficiente para decidir actividad dinámica
+  o venta actual.
+
+  Barcelona pasa de **2.500 a 2.498 filas**; el residual provincial baja **507
+  → 497**, la carga real **699 → 688** y el residual de pan y pastelería **22 →
+  12**. Los avisos de calidad siguen en **40**, `sinteticas` en **8**,
+  `plantilla-cruzada` en **21** y `pendiente` en **9**. Masamara queda aparcada
+  como techo explícito y se abre `BCN-P1-e-b` con las once excepciones restantes:
+  `pastisseria-prat-can-carriel-roda-de-ter`, `la-coca-danis-de-vic`,
+  `pastisseria-forn-de-sant-joan-sant-sadurni-danoia`,
+  `pastisseria-sant-jordi-sant-sadurni-danoia`,
+  `pasteleria-pascual-santa-coloma-de-gramenet`,
+  `pasteleria-torres-santa-coloma-de-gramenet`,
+  `arka-delicatessen-lhospitalet-de-llobregat`,
+  `la-trufa-dor-sant-adria-de-besos`,
+  `la-francesa-pastisseria-lhospitalet-de-llobregat`,
+  `forn-de-pa-la-catalana-sant-adria-de-besos` y
+  `baluard-el-magatzem-lhospitalet-de-llobregat`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
