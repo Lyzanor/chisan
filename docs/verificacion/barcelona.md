@@ -1243,6 +1243,45 @@ decisiones cambiadas, `verify:data` y commit propio.
   continúa con las diez fichas frescas restantes; los tres techos de esta tanda
   quedan fuera del recuento de trabajo fresco.
 
+- **Lote BCN-B1-b (2026-08-01, cierre de la pasada profunda de cerveza).** Las
+  diez fichas restantes cierran **cinco decisiones de venta** y corrigen las
+  diez superficies. Reptilian deja atrás el descriptor genérico, recupera
+  móvil y cuatro referencias de gama fija y confirma 17 productos comprables
+  en la tienda colectiva de BrewCluster (`sí|marketplace`). HOBAC incorpora
+  Bruma, Santa Maria y Memento Mori, elimina el mapa prestado de La Vinya Bar y
+  queda en `sí|marketplace` con su escaparate de productor en La Colmena.
+  Montseny gana seis cervezas, descripción de fábrica y horario completo de
+  taproom; Capfoguer sustituye productos genéricos por sus cuatro recetas y
+  aclara el papel de La Fàbrica. Ambos quedan en `no`: publican compra o consumo
+  presencial, pero no pedido remoto de cerveza.
+
+  La Montnegre confirma continuidad con su lanzamiento de enero de 2026,
+  corrige municipio, móvil e Instagram y elimina dominio sin DNS, dirección
+  territorial y pin sin obrador; su distribución actual es a bares locales.
+  La Micro recupera a Roger Plata, contacto y estilos premiados; Bripau cambia
+  el dominio muerto por la web vigente, correo, visitas y cuatro cervezas; La
+  Lenta deja de atribuirse fábrica propia y se presenta como cervecera nómada
+  con sus cuatro referencias. Cornèlia actualiza la gama con su presencia en
+  feria y pierde coordenadas sin dirección productiva. Las cuatro conservan
+  `no comprobado`: timeout en La Micro, Shopify retirada en Bripau, error 500
+  en La Lenta y configuración Wix rota en Cornèlia.
+
+  **Barret Cerveses** deja la dirección histórica de Granollers y pasa a Can
+  Malé con transición a `barret-cerveses-llica-damunt`, sin imagen que mover.
+  Se conservan solo Floppy, Caubeen y Kabuto y se documenta la contradicción:
+  una fuente institucional reciente lo incluye en la cooperativa, mientras una
+  fuente especializada dice que la marca ya no opera de modo independiente; la
+  tienda colectiva responde 403. Queda parcial y sin resolución de venta hasta
+  poder separar marca activa de recetas heredadas.
+
+  Barcelona mantiene **2.451 filas**; el residual provincial baja **358 → 353**,
+  la carga real **558 → 553** y el residual de cerveza **13 → 8**. Los avisos
+  de calidad siguen en **34**, `sinteticas` en **7**, evidencia prestada en
+  **128**, `plantilla-cruzada` en **20** y `pendiente` en **9**. La pasada fresca
+  de cerveza queda cerrada con ocho techos explícitos: Le Sec, ART, The Goats,
+  La Micro, Bripau, La Lenta, Cornèlia y Barret. El siguiente carril abre las
+  19 decisiones de miel.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
