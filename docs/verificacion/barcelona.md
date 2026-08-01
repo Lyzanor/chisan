@@ -1827,6 +1827,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   **127**, `sinteticas` en **17**, `plantilla-cruzada` en **23** y `pendiente`
   en **18**.
 
+- **Lote BCN-F2-k (2026-08-01, comprobación transaccional de tiendas).**
+  Cuatro huecos se resuelven después de probar producto, cesta y paso a caja,
+  no sólo de detectar software de comercio. **Avenc del Garraf** vuelve a
+  servir su tienda bajo `/public`: se actualizan la URL efectiva y seis vinos,
+  y Flor d'Ametller permite elegir variante, añadir y avanzar a checkout.
+  **Mas d'en Nogués** recupera teléfono y correo del obrador de Vilanova del
+  Camí, amplía su gama real y ofrece treinta referencias; la prueba con nueces
+  caramelizadas llega a cálculo de envío y caja.
+
+  **Parc de les Olors (El Serrat)** corrige el teléfono de la sede central y
+  concreta infusiones, aceites esenciales, hidrolatos, cosmética y miel. Su
+  tienda propia permite comprar y calcular el envío. **Can Alemany** deja la
+  categoría genérica y unas almendras no respaldadas: queda como productor de
+  AOVE ecológico arbequina de cinco hectáreas de olivos centenarios, con tres
+  formatos comprables y entrega a domicilio. Los cuatro pasan a
+  `sí|ecommerce`.
+
+  La misma pasada conserva correctamente como incertidumbre las falsas
+  señales técnicas: Canals & Domingo sigue anunciando una tienda en obras,
+  Exotic Sal está en mantenimiento, Farmbrots sólo deja comprable un producto
+  de prueba ajeno a su gama, Bripau devuelve `Store unavailable`, Celler
+  Sanmartí tiene cero productos y Formatges Cuirols publica referencias pero
+  mantiene los pagos desactivados. Ninguno se fuerza a `sí` ni a `no`.
+
+  Barcelona permanece en **2.433 filas**; el residual baja **256 → 252** y la
+  carga real **462 → 458**. `sin-evidencia` baja **1.819 → 1.816**; las
+  restantes señales quedan estables: `evidencia-prestada` **127**,
+  `sinteticas` **17**, `plantilla-cruzada` **23**, `pendiente` **18** y
+  `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
