@@ -1797,6 +1797,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   en **17**, `plantilla-cruzada` en **23**, `pendiente` en **18** y
   `sin-imagen` en **1.364**.
 
+- **Lote BCN-F2-j (2026-08-01, productores recientes y dominios caídos).**
+  Se resuelven seis huecos con una reparación de identidad y una purga.
+  **Apeuderoques – Peu de Roques** mezclaba la casa de retiros de Casa
+  Torrades con una explotación alimentaria distinta. La ficha superviviente es
+  **Peu de Roques**, en Casa Reixachs: huerta y aromáticas ecológicas, miel y
+  Pèsol Negre, con su teléfono, correo e Instagram reales. Gastroteca mantiene
+  además la tienda en línea (`sí|ecommerce`).
+
+  **Casa de la Kombucha / Probio Drinks** sale del catálogo: la sociedad
+  concluyó su concurso en 2024, el establecimiento de Tamarit figura cerrado,
+  no queda superficie social operativa y el antiguo dominio sirve ahora un
+  casino ajeno. **Gòtic Ferments** sigue identificable en su perfil social,
+  pero su dominio y correo ya no resuelven; las fuentes describen distribución
+  en cooperativas, tiendas y hostelería sin pedido remoto actual (`no`).
+
+  **Granja Guirigall** recupera el móvil vigente, pierde un dominio caído y
+  queda `sí|email|telefono` porque ofrece expresamente aves preparadas por
+  encargo. **Mel Morató – Mel Mas Foradada** sube a `verificado`: su web ha
+  vuelto a responder y confirma marcas, productos, dirección y contacto, pero
+  sólo muestra catálogo y formulario general, mientras Gastroteca limita la
+  compra al taller, comercio y mercado (`no`). **Cal Andreuet** recupera correo,
+  Instagram y gama actual; la venta publicada es directa y en ferias, sin
+  mecanismo remoto (`no`).
+
+  Barcelona pasa de **2.434 a 2.433 filas**; el residual baja **262 → 256** y
+  la carga real **467 → 462**. `sin-imagen` baja **1.364 → 1.363** con la
+  purga y `sin-evidencia` **1.820 → 1.819**. `evidencia-prestada` queda en
+  **127**, `sinteticas` en **17**, `plantilla-cruzada` en **23** y `pendiente`
+  en **18**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
