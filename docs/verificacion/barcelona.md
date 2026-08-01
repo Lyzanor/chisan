@@ -1543,6 +1543,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   y `plantilla-cruzada` en **20**. `sin-imagen` baja **1.372 → 1.371**: salen
   dos fichas sin activo y Artemis deja de apuntar a una imagen no identificable.
 
+- **Lote BCN-F2-c (2026-08-01, continuidad comercial y depuración societaria).**
+  **Xurreria Apolo** se corrige a su continuidad vigente, **Xurreria Jessy**:
+  conserva el local de Creu Coberta y la imagen, actualiza gama, horario,
+  teléfono, correo e Instagram y documenta también los locales de Aragó y
+  Sabadell. El perfil oficial mantiene un destacado de reparto y Uber Eats
+  ofrece carta, cesta y entrega (`sí|marketplace`). **Bombons Blasi** actualiza
+  gama y correo y pasa a `sí|ecommerce`: la tienda propia conserva referencias
+  disponibles con precio, cantidad y alta en cesta, aunque otras sólo admitan
+  recogida o estén agotadas.
+
+  **Blue Zafir** sale de Barcelona: Roc Boronat era la oficina, mientras la
+  documentación territorial sitúa su explotación **Mas Julià** en Torroella de
+  Montgrí. Se traslada a Girona sin arrastrar teléfono, correo ni pin
+  administrativos. **Global Grup Mamabe** deja de atribuirse almendras,
+  aceitunas, higos y fruta: el registro agroalimentario vigente sólo acredita
+  elaboración de especias, y la marca registrada permite identificar Azafrán
+  de Montserrat; se corrigen teléfono y mapa.
+
+  **Eduardo Cerdán, Alejandro Molina y Fiplana** pierden datos aparentemente
+  precisos pero contaminados: gestoría, empresa de biomasa y Finques Laplana,
+  respectivamente. Se corrigen categorías y gama desde los registros y quedan
+  `pendiente`, porque no hay superficie comercial actual que sostenga esos
+  contactos ni permita resolver la venta.
+
+  Barcelona pasa de **2.441 a 2.440 filas**; el residual baja **312 → 309** y
+  la carga real **514 → 511**. `sinteticas` sube **12 → 15** y `pendiente` **13
+  → 16** por las tres depuraciones; evidencia prestada sigue en **128** y
+  `plantilla-cruzada` en **20**. `sin-imagen` baja **1.371 → 1.370** por el
+  traslado de Blue Zafir, que no tenía activo.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
