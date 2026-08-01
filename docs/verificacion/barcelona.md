@@ -1731,6 +1731,45 @@ decisiones cambiadas, `verify:data` y commit propio.
   `sin-imagen` baja **1.366 → 1.364** al salir los dos duplicados sin activo;
   la imagen de Fruits Presas conserva continuidad con su nuevo slug.
 
+- **Lote BCN-F2-h (2026-08-01, plantas trasladadas y separación de Gallecs).**
+  Ocho huecos de venta se resuelven y la pasada corrige dos contaminaciones
+  geográficas importantes. **Suquipa** ya no está en Castellterçol ni en la
+  posterior sede de Castellcir: la web propia sitúa la planta actual en Sant
+  Feliu de Codines. Se migran municipio y slug, se recuperan web y redes y se
+  amplía la gama a verduras asadas y al vapor, cremas, Burgesanas, salsas y
+  aliños. Su área de cliente aún se anuncia como próxima y los formularios son
+  comerciales B2B/Horeca, no compra minorista (`no`).
+
+  **L'Ou de Gallecs** tampoco se producía en Can Jornet: la explotación de
+  Laura Blasco está en **Can Castellà**. La ficha recupera móvil, correo,
+  hortalizas, legumbres y cereales y pierde las coordenadas prestadas de la
+  otra masía. **Hereus de Can Jornet** queda separado con Santi Olivé, sus
+  trigos antiguos, molino de piedra, legumbres, contacto y coordenadas propios;
+  ambos venden de forma directa en Gallecs, sin mecanismo remoto actual
+  (`no`).
+
+  **La Botigueta de Mosqueroles** sustituye el nombre personal de Berta Cordomí
+  y la categoría de conservas por su huerta y cestas de temporada; corrige
+  teléfono, dirección e imagen y elimina un horario diario sin fuente. El
+  mercado virtual citado en 2020 devuelve 404 y no hay tienda sucesora
+  (`no`). **Joan Roselló** sigue en la campaña del guisante de 2026 y el mercado
+  de Plaça de Cuba, pero la guía no le atribuye reparto ni pedido remoto.
+
+  **Les Cases d'Argençola** y **Puigxoriguer** conservan sólo actividad,
+  producto, dirección y coordenadas respaldados por los censos municipales de
+  2026; se retiran teléfonos y correos personales que no reaparecen desde 2014.
+  **Cafès Balanzó** recupera la marca vigente 1889 y enlaza la superficie a la
+  que redirige su antiguo dominio, pero no se le adjudica el ecommerce de otras
+  gamas de Cafés Candelas (`no`).
+
+  Barcelona permanece en **2.434 filas**; el residual baja **274 → 266** y la
+  carga real **479 → 470**. `evidencia-prestada` baja **128 → 127** porque
+  Suquipa recupera su superficie propia; `sin-evidencia` baja **1.829 → 1.824**
+  mediante decisiones nuevas, aunque sigue siendo una señal y no una cola.
+  `sinteticas` queda en **17**, `plantilla-cruzada` en **23**, `pendiente` en
+  **18** y `sin-imagen` en **1.364**; la imagen de la Botigueta conserva
+  continuidad con el slug corregido.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
