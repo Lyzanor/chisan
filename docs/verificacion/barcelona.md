@@ -1358,6 +1358,46 @@ decisiones cambiadas, `verify:data` y commit propio.
   Roser Jordana, Said Azouggagh, Víctor Goula y Mel Morató. El siguiente carril
   abre las decisiones de aceite.
 
+- **Lote BCN-O1 (2026-08-01, pasada profunda de aceite).** Las diez fichas
+  frescas cierran **siete decisiones de venta** y corrigen dos errores de
+  alcance más importantes que el contador. **Masia Ca la Gori** no elabora el
+  aceite y las aceitunas que decía el CSV: es la explotación de aviram de la
+  familia Olivella Cruz, con gall y ànec mut del Penedès, foie, raviolis y
+  escorxador propio. Pasa a `Carne`, recupera su dirección, web y teléfono y
+  queda en `no` porque las fuentes actuales sólo publican venta en explotación
+  y puntos físicos.
+
+  **Olivariana** pasa de Subirats a Font-rubí, elimina el pin prestado de una
+  finca vinícola y cambia `Aceite` por `Aceitunas y encurtidos`: su producción
+  vigente es Blanqueta, Grossal y Empeltre aliñadas y olivada. La cooperativa
+  kmCAT mantiene referencias comprables con precio y carrito, por lo que queda
+  `sí|marketplace`. **Oli del Barranc – Ecotros** sale de Barcelona: Sant Joan
+  Despí era una sede societaria y el pin correspondía a Grupo Mac Ser, mientras
+  las parcelas, oliveras, contacto y pedidos están en L'Ametlla de Mar. La ficha
+  y su imagen se trasladan a Tarragona con checkout completo verificado
+  (`sí|ecommerce`).
+
+  **Molí d'Oli Cal Nasi** recupera su web, contacto, arbequina y continuidad de
+  seis generaciones confirmada por el ayuntamiento en mayo de 2026; el catálogo
+  no permite pedir (`no`). **El Raig del Nano** concreta AOVE ecológico,
+  dirección, punto de venta y distribución y queda `sí|telefono` según la ficha
+  vigente de Diputación. **Can Cruset** corrige coordenadas y catálogo de aceite
+  y almendras ecológicas y queda también `sí|telefono`. **L'Oli del Maset**
+  incorpora dirección y experiencias actuales; PayPal cobra alojamiento y
+  apadrinamiento, no compra remota del aceite, por lo que queda en `no`.
+
+  Manuel Encinas y Ana Maria Rios pierden texto u horarios de plantilla, y Cal
+  Feliuàs pierde un horario y un pin no sustentados. Los tres conservan `no
+  comprobado`: no apareció una superficie comercial actual que permita decidir
+  sin convertir ausencia de resultados en un hecho negativo.
+
+  Barcelona pasa de **2.448 a 2.447 filas**; el residual provincial baja **338
+  → 331**, la carga real **538 → 531** y el residual de aceite **10 → 3**. Los
+  avisos de calidad siguen en **34**, `sinteticas` en **7**, evidencia prestada
+  en **128**, `plantilla-cruzada` en **20** y `pendiente` en **9**. La pasada
+  fresca de aceite queda cerrada con tres techos explícitos: Manuel Encinas, Ana
+  Maria Rios y Cal Feliuàs.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
