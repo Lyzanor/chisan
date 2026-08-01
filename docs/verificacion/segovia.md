@@ -470,3 +470,28 @@ Segunda revisión de las **76** filas que seguían en `no comprobado`:
 
 **Estado tras SG-18:** 143 filas; **97 `verificado`** y 46 `parcial`; venta
 online en **72 `sí`**, **25 `no`** y **46 `no comprobado`**.
+
+## SG-19 — Ola 3 · banda 41–60 (2026-08-01)
+
+Revisión editorial del residual de **46** ventas sin resolver, priorizando
+mejoras útiles del CSV además de la decisión de venta:
+
+- Se resuelven **5**: las tiendas propias operativas de El Cochinillo
+  Segoviano, Eresma y Huercasa pasan a `sí|ecommerce`; Cárnicas Pedro Gómez y
+  Malacepa pasan a `no` tras revisar íntegramente sus webs oficiales actuales,
+  que solo publican catálogo, contacto o puntos de venta físicos.
+- El Cochinillo, Eresma, Huercasa y Malacepa dejan atrás fichas parciales y
+  ganan web, dirección o contacto directo, productos actuales y descripciones
+  basadas en la actividad publicada por el productor. Marijave también pasa a
+  `verificado`: su participación en una feria de julio de 2026 confirma que la
+  marca sigue elaborando pese a la baja de su antigua sociedad.
+- Se mejoran sin forzar la decisión Hortalizas Los Claveles —dirección,
+  teléfono y correo—, Panadería VACMAR —productos, horario y correo—, Ahumados
+  Perser —gama y correo— y Quesos El Molinero —correo y HTTPS—.
+- Se conservan **cuatro incertidumbres técnicas**: la tienda de Marijave
+  devuelve un error de certificado y 404; el dominio de Los Claveles llega a
+  una web por defecto; el de Perser no resuelve; y todos los packs online de
+  Quesos El Molinero siguen agotados. Ninguna se convirtió en un falso `no`.
+
+**Estado tras SG-19:** 143 filas; **102 `verificado`** y 41 `parcial`; venta
+online en **75 `sí`**, **27 `no`** y **41 `no comprobado`**.
