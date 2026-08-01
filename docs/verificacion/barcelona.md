@@ -1651,6 +1651,49 @@ decisiones cambiadas, `verify:data` y commit propio.
   en **17**. `sin-imagen` baja **1.369 → 1.368** por la fusión societaria; las
   dos imágenes renombradas siguen asociadas a sus productores reales.
 
+- **Lote BCN-F2-f (2026-08-01, identidad provincial y canales de encargo).**
+  Once fichas investigadas cierran **seis huecos de venta** y eliminan dos
+  ubicaciones falsas. **Parc de les Olors de Sant Marçal** confirma a Brigitte
+  Caralt, las más de 30 especies y las actividades concertadas; la tienda
+  colectiva oficial de la red permite comprar elaborados y se registra como
+  `sí|marketplace`. **Kin Pollastre / Kins Ous** actualiza correo y conserva la
+  identidad de Cal Flequer; el mercado semanal municipal ofrece sus huevos y
+  admite encargos al puesto por WhatsApp (`sí|whatsapp`).
+
+  **Cal Pauet** completa móvil, gama y descripción de su ciclo cerrado de
+  ovino, cereales antiguos, molino y obrador; su cuenta propia publica pedidos
+  por correo (`sí|email`). **Molí d'Oli Lluch** pasa a la identidad vigente
+  **Família Lluch – Molí i Celler**, sustituye el dominio averiado por su nueva
+  web y tienda y amplía la ficha a aceite, vino y cava de cosecha propia
+  (`sí|ecommerce`). **Torre Malla** elimina un horario corrupto y un Instagram
+  inexistente, recupera el dominio correcto y documenta encargos por correo o
+  teléfono con recogida en la masía (`sí|email|telefono`).
+
+  **Melmelades del Bosc** no estaba en l'Estany ni en la casa de colonias que
+  señalaba el mapa: se reconstruye con Núria Padrisa, dirección y contactos de
+  Moià y pedidos por WhatsApp. **Les Tafaneres** tampoco estaba en Collbató;
+  la antigua explotación de Sora figura ya en Viladamat y se traslada a Girona
+  sin arrastrar dirección ni contactos viejos. **Ocata Fums** se purga como
+  cerrado: la sentencia 299/2024 de la Audiencia Provincial documenta la
+  insolvencia, el fin del suministro en 2018 y el fracaso del ahumadero.
+
+  **Polleria Cristina** corrige nombre, categoría, puestos, contacto y gama,
+  pero queda `parcial|no comprobado`: su certificado no es válido y el supuesto
+  ecommerce sólo contiene productos demo en inglés de la plantilla instalada.
+  **L'Anxoveta** se separa de la razón Villa Thalassa que contaminaba su nombre
+  y slug; conserva su obrador, contactos y tienda propia activa como productor
+  independiente (`verificado|sí|ecommerce`).
+  **Nostramar** se identifica con Villa Thalassa SL y conserva el teléfono
+  mercantil, pero pierde el PDF usado como web y el pin genérico del puerto;
+  sin prueba actual de cultivo o venta permanece `parcial|no comprobado`.
+
+  Barcelona pasa de **2.438 a 2.436 filas**; el residual baja **294 → 286** y
+  la carga real **497 → 489**. `sinteticas` queda en **16**,
+  `evidencia-prestada` en **128** y `pendiente` en **17**. `sin-imagen` baja
+  **1.368 → 1.366** por las dos salidas. `plantilla-cruzada` sube **21 → 22**
+  porque la gama mixta real de Cal Pauet activa el cruce de harina frente a su
+  categoría principal de carne; es un falso positivo documentado.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,

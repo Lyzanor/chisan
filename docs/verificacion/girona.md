@@ -158,3 +158,16 @@ Snapshot actual: 241 filas; 237 `verificado`, 4 `parcial`; venta online 131
 técnicos de venta y 3 falsos positivos del detector de web compartida para los
 perfiles de ATO. Descripciones genéricas, evidencia prestada y cruces de
 categoría accionables quedan a cero.
+
+## Mantenimiento V-06 · traslado de Les Tafaneres (2026-08-01)
+
+Se incorpora desde Barcelona **Ous Ecològics Les Tafaneres** en Viladamat. La
+guía agroalimentaria 2025 de Empordà acredita el municipio actual y la cuenta
+propia, activa en julio de 2025, confirma la explotación familiar antes llamada
+Les Tofaroques. La ficha queda `parcial|no comprobado` porque no se ha localizado
+la dirección productiva ni un mecanismo de pedido remoto vigente; no se
+arrastran los contactos de Sora ni la geografía falsa de Collbató.
+
+Girona pasa de **242 a 243 filas** tras el traslado previo de Blue Zafir y éste;
+la venta sin resolver sube **9 → 10** y la carga real **12 → 13**, sin crear
+alertas nuevas de evidencia prestada, descripción genérica o plantilla cruzada.
