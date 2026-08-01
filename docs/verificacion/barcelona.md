@@ -724,6 +724,36 @@ decisiones cambiadas, `verify:data` y commit propio.
   25 decisiones, desde `pa-i-pastissos-can-girabent-figaro-montmany` hasta
   `fleca-el-crosto-navas`.
 
+- **Lote BCN-P1-b (2026-08-01, primera pasada de pan y pastelería).** Se
+  investigaron las 25 fichas congeladas y **24 reciben cambios en el CSV**.
+  `Postres Artesanes Santa Eulàlia` deja de ser una fila de panadería con
+  columnas desplazadas: se reconstruye como elaborador de quesos y postres
+  lácteos de oveja, con surtido y contacto actuales. Forn Nou pierde el dominio
+  sin DNS y un pin situado a unos 15 km de su dirección y baja a `parcial`.
+  Forn Ricardera corrige dirección, teléfono, horario y especialización sin
+  gluten; Ernest Sala deja de publicar un directorio como web y una descripción
+  de volcado. También se mejoran de forma material surtido, texto, horario o
+  contacto de Can Girabent, La Coca de Folgueroles, Can Busquets, Delícies
+  Sense Gluten, Forn Alemany, Targarona, D Tast, Petits Délices, La Granja,
+  Gumi's, Belcan, Cal Forner y El Crostó.
+
+  Se resuelven **22 decisiones de venta**, once en `sí` y once en `no`. Can
+  Girabent, La Coca de Folgueroles, Can Busquets, D Tast, Petits Délices y La
+  Granja recuperan tiendas con carrito; Delícies Sense Gluten, Gumi's y Cal
+  Forner aceptan WhatsApp; Jaume i Vicenç y Targarona aceptan encargos por
+  teléfono. Las once negativas quedan sustentadas por webs o directorios
+  actuales que solo ofrecen venta física o contacto informativo. Forn Nou y
+  Forn de la Panadella conservan `no comprobado` por fallas técnicas de sus
+  dominios; Masamara no tiene correspondencia pública suficiente para decidir.
+
+  Barcelona mantiene **2.504 filas**; el residual provincial baja **575 →
+  553**, la carga real **763 → 743**, el residual de pan y pastelería **90 →
+  68** y los avisos de calidad **46 → 42**. `sinteticas` se mantiene en **8**,
+  `plantilla-cruzada` en **21** y `pendiente` en **9**. Se congela `BCN-P1-c`
+  con las siguientes 25 decisiones, desde
+  `fleca-fontanals-s-l-olerdola-sant-pere-molanta` hasta
+  `tot-teca-forn-gotes-terrassa`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
