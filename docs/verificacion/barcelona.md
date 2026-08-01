@@ -56,8 +56,9 @@ La verdad es el CSV; tras el cierre, la pasada de ampliación «flujo 2026» (ju
   `tarragona.csv`.
 - Girona: **Hort Viu** (Les Planes d'Hostoles) candidata real; **L'Espigall** (Lladó) es
   consultoría agroambiental con producción menor en DAR — baja prioridad, solo si vende.
-- Lleida: **Ferro Falgueras** (miel, Tremp) candidato; **Celler del Miracle** quedó `parcial` en
-  barcelona.csv pero el Santuari del Miracle está en Riner (Solsonès) — revisar si debe moverse.
+- Lleida: **Ferro Falgueras** (miel, Tremp) candidato. **Celler del Miracle** ya
+  se trasladó de Barcelona a Riner (Solsonès) en `BCN-V1-d`, con evidencia e
+  imagen movidas a la ficha `celler-del-miracle-riner`.
 - Vilafranca: posible dup Forn Sant Joan vs Pastisseria Trens (mismo C/ Sant Joan 9).
 
 ## Mantenimiento (al retomar)
@@ -151,6 +152,37 @@ decisiones cambiadas, `verify:data` y commit propio.
   deja fuera de las colas editoriales los nueve estados resueltos y los slugs
   nuevos; solo AT Roca y Gramona permanecen deliberadamente en
   `venta-sin-resolver`, con avisos de imagen independientes en otras fichas.
+
+- **BCN-V1-d · bodegas, cuarta pasada (2026-08-01).** Se cerraron 12 filas con
+  web que respondía y se priorizó de nuevo la identidad sobre el marcado de
+  venta. `Molner Canal, Jordi` no era una bodega productiva de Cardona: es el
+  responsable del Celler del Miracle y la elaboración se hace bajo el
+  monasterio del Santuari del Miracle, en Riner. La fila se retira de Barcelona
+  como `other-province` y continúa en `lleida.csv` como
+  `celler-del-miracle-riner`, con nombre público, gama 2022–2024, contacto,
+  coordenadas e imagen corregidos. `Vins per Estimar el Vi` comparte domicilio,
+  teléfono y responsable legal —GRAMONA S.A.— con Gramona; se fusiona con su
+  ficha y conserva Gessamí, Mart, Ca La Mar y Vi de Glass dentro de la oferta.
+  También se corrige un error de categoría y producto: Bauma de les Deveses no
+  se publica ya como bodega de tinto y blanco, sino como elaborador de licores,
+  infusiones y condimentos ecológicos, con su contacto y punto productivo
+  reales. Caves Bundó pasa a `sí|email|telefono`: su propia portada presenta el
+  contacto como las maneras de comprar y publica ambos canales. Nueve filas
+  pasan a `no` tras revisar navegación, producto y contacto completos: Can
+  Bonastre, Bauma de les Deveses, Caves Soler-Jové, Celler Ludens, Terra de
+  Marca, Mas Clarella, Mont Marçal, Família Ametller y Mas Guineu. Las diez
+  fichas supervivientes de la muestra y Gramona ganan productos, descripción,
+  contacto, dirección, horario, web, redes o coordenadas cuando la fuente lo
+  permite; Celler del Miracle recibe la misma mejora en Lleida y queda también
+  en `no`. Barcelona queda en **2.541 filas**; el residual provincial baja
+  **806 → 794**, el de bodegas **89 → 77**, las bodegas pendientes con web
+  **39 → 27** y el total de filas clasificadas como bodega **304 → 301** por el
+  traslado, la fusión y la categoría corregida. Los avisos de calidad bajan
+  **71 → 69**. La V2 no encuentra texto genérico, plantilla cruzada ni evidencia
+  prestada en las fichas tocadas; Gramona permanece deliberadamente en
+  `venta-sin-resolver` y Caves Bundó conserva la señal mecánica
+  `web-de-tercero` por alojarse en Google Sites, aunque sus páginas identifican
+  al productor y la evidencia documenta la titularidad editorial.
 
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
