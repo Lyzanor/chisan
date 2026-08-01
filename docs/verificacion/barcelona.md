@@ -1041,6 +1041,59 @@ decisiones cambiadas, `verify:data` y commit propio.
   `queviures-marcual-can-marcual-teia` y
   `santa-magdalena-sat-num-962-cat-terrassa`.
 
+- **Lote BCN-C1-c (2026-08-01, tercera pasada profunda de charcutería).** Las
+  25 filas revisadas dejan **13 bajas**, una transición de slug y doce fichas
+  comerciales reparadas. Colom Alibés, Maria Dolors Molas, Xavier Vaquer,
+  Anna Duocastella, Marcel Miranda, Pere Oms y Josep i Ricard solo conservaban
+  como oferta alimentaria el registro de proximidad de 2014; El Roger consta
+  actualmente como explotación ovina y caprina, Guillem Martí como pastor y
+  Gabriel Pedragosa como prestador de servicios silvopastorales, sin producto
+  alimentario propio a la venta. Santa Magdalena SAT sigue censada, pero la
+  supuesta charcutería mezclaba sus datos con la distinta Avícola Lleonart de
+  Ullastrell. Carns Aguilar sale tras publicar el BORME de mayo de 2026 la
+  conclusión del concurso y cierre registral; Can Marcual cerró definitivamente
+  el 18 de enero después de 125 años.
+
+  La reparación de identidad más clara es **Cansaladeria Puigdollers**: no
+  estaba en Sant Miquel de Balenyà, sino en Tona, tal como ya indicaban sus
+  coordenadas. Cambian municipio, dirección y slug y se incorporan su catálogo,
+  móvil y encargos por teléfono o WhatsApp. Can Lluís deja de enlazar mapa,
+  teléfono y horario de Agrobotiga de la Roca y pasa de charcutería a productor
+  de horta, legumbres y cereales en Santa Maria de Palautordera. Cal Codina
+  corrige una dirección y un mapa ajenos por la tienda centenaria de carrer de
+  les Escoles; Montserrat, Llorens, Cristóbal, Cal Quim, Pau Alañá, V. Serret,
+  Can Bullit y La Alhambra ganan surtidos, contactos, horarios, descripción o
+  fuentes actuales. Se mantienen parciales La Alhambra y V. Serret por depender
+  de directorios de terceros, y Carns Torrent por no estar cerrada del todo la
+  relación entre tienda y planta elaboradora.
+
+  Se cierran **las 25 decisiones de venta**. Montserrat publica catálogo y
+  pedidos en el marketplace colectivo y WhatsApp; Llorens y Puigdollers admiten
+  encargos por WhatsApp; Carns Torrent y Can Bullit, por teléfono. Cristóbal,
+  La Alhambra, Cal Codina, Cal Quim, Pau Alañá, V. Serret y Can Lluís quedan en
+  `no` después de revisar sus superficies vigentes. Barcelona pasa de **2.481 a
+  2.468 filas**; el residual provincial baja **443 → 418**, la carga real **643
+  → 619** y el residual de charcutería **44 → 19**. Los avisos de calidad
+  mejoran **39 → 38**; `sinteticas` sigue en **8**, `plantilla-cruzada` en
+  **20** y `pendiente` en **9**.
+
+  Se abre `BCN-C1-d` con las 18 filas frescas restantes, dejando aparcado el
+  techo documentado de Xarcuteria Sala: `mauri-puig-lluis-tona`,
+  `jordi-torres-lacomba-tordera`, `monfulleda-mollfulleda-pere-tordera`,
+  `can-teixidor-carns-teixidor-sl-torello`,
+  `cansaladeria-i-comestibles-cal-xullat-torrelles-de-foix`,
+  `carns-i-embutits-de-coll-fred-sl-vic`,
+  `carnivors-mercat-de-la-constitucio-viladecans`,
+  `cal-vives-vilafranca-del-penedes`, `badacabres-sl-vilanova-del-valles`,
+  `pujol-pagerols-ramon-m-viver-i-serrateix`,
+  `carnisseria-i-xarcuteria-can-freixas-tordera`,
+  `xarcuteria-ca-ladela-caldes-destrac`,
+  `can-rodoreda-les-franqueses-del-valles`,
+  `ecoviand-de-brugarolas-les-franqueses-del-valles`,
+  `xarcuteria-can-jordi-santa-eugenia-de-berga`,
+  `casa-noguera-1870-igualada`, `cansaladeria-can-trave-la-llacuna` y
+  `lainurvi-llardons-artesans-castellar-del-valles`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
