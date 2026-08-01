@@ -494,6 +494,46 @@ decisiones cambiadas, `verify:data` y commit propio.
   `esteve-grau-ganduxe-can-esteve-tonico-roca-del-valles` hasta
   `masia-can-bell-sant-cugat-del-valles`.
 
+- **Lote BCN-V1-o (2026-08-01, fruta y verdura sin web, cuarta tanda).** Se
+  investigaron las 25 fichas congeladas y las 24 que permanecen en catálogo
+  recibieron cambios materiales. Sale **Alexandre Farell Sostres**: la fila
+  reutilizaba el contacto de Morera Equitació y los expedientes municipales
+  sitúan su Granja Morera en Polinyà y la destinan a hípica, sin una unidad
+  alimentaria actual documentada.
+
+  Se corrigen tres identidades con trazabilidad de `merge`: Nicolas Loiseau
+  recupera la marca **Nicoverd**; Màrius Torrentó deja un hospital y el Rodal
+  de Sabadell para volver a ser **El Pagès de Rubí**, con municipio, finca,
+  contacto y variedades locales; y Joan Rosell Canals pasa a **Hort del
+  Catre**, con su tienda y reparto reales. También se corrigen dos categorías:
+  Mas d'Ardesa pasa a `Legumbres y cereales` con Cigronet de l'Anoia y civada,
+  y Masia Can Bell a `Aceite y vino` con xarel·lo y aceite ecológicos. Horta
+  Pera Viván deja de publicar «peras»: Pera es el apellido y su producto es el
+  pèsol garrofal y llàgrima.
+
+  El lote elimina pines de una hípica, un hospital, una maderera, una empresa
+  metalúrgica, una gestoría, un restaurante, una tienda ajena y una finca de
+  Cabrils; Cal Moliné pierde además el Instagram y el horario de una cadena de
+  panaderías homónima. Se reconstruyen con producto y contacto útiles Can Jep,
+  Nicoverd, Jadeverd, Verdures Josep i Elena, Cal Nyet, Cal Xecu, Pere Herrero,
+  Ca l'Estrany y Masia Can Bell. Seis fichas cuya única señal era el registro
+  histórico quedan honestamente en `pendiente`, sin conservar datos de terceros.
+
+  Se resuelven **15 decisiones de venta** dentro de las filas conservadas:
+  Nicoverd acepta pedidos por correo con entrega; Hort del Catre mantiene
+  carrito en Agroboca; Verdures Josep i Elena publica reparto concertado por
+  teléfono; y doce productores quedan en `no` tras revisar sus canales físicos
+  o de circuito corto sin mecanismo remoto. Mas d'Ardesa no se fuerza a `sí`:
+  el directorio marca «venda en línia», pero no ofrece un canal utilizable.
+
+  Barcelona baja **2.508 → 2.507 filas**; el residual provincial **702 → 686**,
+  la carga real **870 → 857**, el residual de fruta y verdura **136 → 119** y
+  los avisos de calidad **51 → 49**; `plantilla-cruzada` se mantiene en **21**.
+  Quedan **47 fichas frescas sin web**. Las siguientes 25 quedan congeladas
+  como `BCN-V1-p`, desde
+  `claramunt-estruch-javier-sant-esteve-sesrovires` hasta
+  `juli-centellas-alex-tordera`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
