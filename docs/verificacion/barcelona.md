@@ -982,6 +982,65 @@ decisiones cambiadas, `verify:data` y commit propio.
   `carniques-maso-s-a-olerdola-vilafranca-del-penedes`, `oriol-scp-oris` y
   `100-conill-albert-puig-orista-la-torre-dorista`.
 
+- **Lote BCN-C1-b (2026-08-01, segunda pasada profunda de charcutería).** Las
+  25 filas de entrada producen **cinco bajas y cinco transiciones de slug**,
+  además de una corrección general de categoría: una parte sustancial de la
+  supuesta charcutería era en realidad carne o lácteos. Can Corder deja de ser
+  una xarcuteria de Llinars con contacto ajeno y recupera su identidad de
+  formatgeria en Santa Eulàlia de Ronçana; Conillbo deja de mezclarse con la
+  marca Conill de la Barretina y se reconstruye como Pagès de Rofes, en La
+  Llacuna; El Gai pasa de unos pollastres y un fuet inventados a la vedella
+  ecològica de Gemma Alibés; Mas Les Basses sustituye el slug personal de Josep
+  Capdevila; y Vall-Llosana se mueve de Moià a su finca real de Castellterçol,
+  con Black Angus ecológica y tienda activa.
+
+  Salen Picas, cuya única oferta alimentaria localizada era el registro de
+  2014 y que el censo posterior sitúa fuera de Barcelona; Andreu Padrisa,
+  proveedor de leche para Montbrú pero sin producto propio; Serracarbasa, que
+  figura como aula didáctica en granja; Pere Ares, sostenido únicamente por
+  registros ganaderos de 2006-2007; y L'Oriol, hoy documentado solo como
+  explotación porcina y bovina. También se deshacen dos cruces especialmente
+  dañinos: Martí Marginet pierde los datos de Fonda Cal Marginet y recupera La
+  Canal, la vedella y el Pollastre del Berguedà; Altayó Ros pierde el teléfono,
+  mapa y coordenadas de la distinta parada Altayó Ripoll.
+
+  Se cierran **23 de las 25 decisiones de venta**. Serra acepta pedidos por
+  WhatsApp; Mas Vall-Llosana por ecommerce; Les Mil Butis, Cal Roio Catllaràs
+  y 100% Conill por teléfono, los dos primeros con reparto documentado. Otras
+  trece fichas quedan en `no` después de revisar sus superficies vigentes, y
+  las cinco bajas abandonan la cola. Solo Garet Bosch y David Masó conservan
+  `no comprobado`: el registro industrial prueba al primero pero no publica
+  marca o contacto de consumo, y el segundo sigue activo en el consejo agrario
+  de Manlleu pero su oferta atribuible continúa anclada en el registro de 2014.
+
+  Barcelona pasa de **2.486 a 2.481 filas**; el residual provincial baja **466
+  → 443**, la carga real **661 → 643** y el residual de charcutería **69 →
+  44**. Los avisos de calidad permanecen en **39**; `sinteticas` sigue en **8**,
+  `plantilla-cruzada` baja **21 → 20** y `pendiente` se mantiene en **9**. Se
+  abre `BCN-C1-c`, dejando aparcado el techo ya documentado de Xarcuteria Sala,
+  con `carnisseria-montserrat-palau-solita-i-plegamans`,
+  `carns-torrent-i-bonet-palau-solita-i-plegamans`,
+  `carnisseria-llorens-perafita`, `colom-alibes-joan-rupit-i-pruit`,
+  `molas-plana-maria-dolores-rupit-i-pruit`,
+  `vaquer-abril-xavier-rupit-i-pruit`,
+  `pedragosa-armengol-gabriel-sant-antoni-de-vilamajor`,
+  `xarcuteria-cristobal-mercat-de-mira-sol-sant-cugat-del-valles`,
+  `carns-aguilar-heredia-s-l-sant-fost-de-campsentelles`,
+  `embutidos-artesanos-la-alhambra-de-granada-s-l-sant-fost-de-campsentelles`,
+  `cal-codina-de-tous-sant-marti-de-tous`,
+  `duocastella-figuera-anna-m-sant-mateu-de-bages`,
+  `puigdollers-cansaladeria-sant-miquel-de-balenya`,
+  `cal-quim-sant-pau-dordal-subirats`,
+  `el-roger-scp-sant-pere-de-torello`,
+  `marti-marigot-guillem-sant-pere-de-torello`,
+  `pau-alana-sant-quirze-del-valles`,
+  `fabrica-dembotits-v-serret-s-l-sant-vicenc-dels-horts`,
+  `agricola-i-ramadera-can-lluis-santa-maria-de-palautordera`,
+  `can-bullit-seva`, `miranda-comellas-marcel-sora`,
+  `oms-molist-pere-sora`, `josep-i-ricard-scp-tavernoles`,
+  `queviures-marcual-can-marcual-teia` y
+  `santa-magdalena-sat-num-962-cat-terrassa`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
