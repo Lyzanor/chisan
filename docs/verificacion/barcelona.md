@@ -661,6 +661,38 @@ decisiones cambiadas, `verify:data` y commit propio.
   verdura quedan congeladas como `BCN-V2-c`, desde
   `agri-ma-scp-el-papiol` hasta `10cireres-torrelles-de-llobregat`.
 
+- **Lote BCN-V2-c (2026-08-01, cierre de la segunda pasada de fruta y
+  verdura).** Se investigaron las últimas 25 fichas frescas no apartadas y
+  **16 reciben cambios en el CSV**. Casa Pepa deja de ser una explotación
+  meramente histórica: el directorio vigente permite recuperar la gama y el
+  teléfono y subirla de `pendiente` a `parcial`. También se normalizan y
+  actualizan producto, contacto o descripción de Joan Domènech, Pau Pañella,
+  Miquel Ribas, Jadeverd, Gaoxing 2020, Mas Llopis, Cal Masses, Can Turon, Can
+  Balasch, Agrícola Cal Martí y Cal Vilaseca. Biomasia corrige sus coordenadas
+  con la ficha institucional y Cal Masses pasa a `Otros` para representar su
+  producción mixta vegetal, vitícola y ganadera.
+
+  Se resuelven **14 decisiones de venta**. **10Cireres** reconstruye su ficha
+  desde la web oficial, con calendario 2026, variedades y encargos por llamada
+  o WhatsApp; **Cordú Fruits** publica reparto en seis comarcas y contacto por
+  correo o teléfono; y **Biomasia Ca n'Oliveró** combina la venta en línea
+  institucional con sus cestas y correo público. Otras once unidades quedan en
+  `no` tras revisar venta directa, agrobotigas, mercados, visitas o actividad
+  empresarial sin mecanismo remoto.
+
+  Once fichas del lote conservan incertidumbre justificada: Agri-Ma tiene
+  caídos los dominios de sus cestas; Mas Llopis devuelve 403; Hort del Navarro
+  agota tiempo; Cal Juvitu responde 500; Agrícola Cal Martí figura con «venta
+  en línea» pero no ofrece cómo comprar; y seis productores solo mantienen
+  actividad histórica o insuficientemente pública. Barcelona mantiene **2.504
+  filas**; el residual provincial baja **606 → 592**, la carga real **792 →
+  779**, el residual de fruta y verdura **35 → 21** y `pendiente` **10 → 9**;
+  los avisos de calidad siguen en **46**, `sinteticas` en **8** y
+  `plantilla-cruzada` en **21**. El carril fresco queda agotado salvo esos 21
+  techos documentados. Se abre `BCN-P1-a` con las primeras 25 decisiones de
+  pan y pastelería, desde `pastisseria-duch-abrera` hasta
+  `pastisseria-grau-esparreguera`.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
