@@ -2210,6 +2210,24 @@ decisiones cambiadas, `verify:data` y commit propio.
   `evidencia-prestada` **125**, `sin-imagen` **1.362**,
   `descripcion-generica` **3** y `pendiente` **21**.
 
+- **Lote BCN-F2-z (2026-08-01, cierre de descripciones genéricas).** **Jaume
+  Roger Garriga** queda descrito por su venta real de cosecha en el mercado
+  semanal y la Fira de Proximitat; se retiran una dirección y coordenadas sin
+  respaldo y se añade el directorio municipal vigente. **Els Bardissots**
+  recupera Can Perdiu, Pep Pou y Oriol Artigas, las viñas viejas del Vallès, la
+  variedad beier y sus vinos Oriental tinto y blanco; la presencia en una
+  tienda independiente no se cuenta como venta online del productor.
+
+  **La Fem** deja de ser un «obrador local» intercambiable con cualquier otro:
+  se identifica como el primer local de la marca, con obrador a pocos pasos de
+  los grifos, más de 120 estilos y referencias concretas del catálogo. La web
+  propia confirma la compra con envío a domicilio.
+
+  Barcelona mantiene **2.428 filas** y **227** ventas sin resolver.
+  `descripcion-generica` baja **3 → 0**, `sin-evidencia` **1.755 → 1.753** y
+  la carga real **415 → 412**. Permanecen estables `sinteticas` **20**,
+  `evidencia-prestada` **125**, `sin-imagen` **1.362** y `pendiente` **21**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
