@@ -1968,6 +1968,29 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-q (2026-08-01, dominios sustituidos y cesta semanal).**
+  **Mas Sales (Projecte Geosmina)** deja la plantilla vacía y recupera la finca
+  real de Terrassa, su agricultura regenerativa, la agrotienda y los contactos.
+  La página invita expresamente a reservar la cesta de temporada por WhatsApp
+  y fija las franjas de recogida (`verificado|sí|whatsapp`). **Biosanare**
+  amplía su ficha desde tres genéricos a conservas, encurtidos, aceitunas,
+  semillas, tomate seco, patés, aceite y vinagre, corrige el teléfono de fábrica
+  y pasa a `no`: el sitio corporativo completo sólo ofrece catálogo y contacto
+  profesional.
+
+  **Brèscat** deja de enlazar a un dominio que ahora redirige a Ecocolmena; el
+  directorio comarcal vigente permite actualizar titulares, finca, móvil y gama
+  de miel, polen y própolis, pero no cerrar su venta remota. **Les Herbes de Can
+  Riera** pierde la falsa gama de plantas ornamentales y queda como vivero
+  ecológico de aromáticas, medicinales, culinarias y flores comestibles. Su
+  dominio tampoco resuelve: se retira y la ficha baja prudentemente a
+  `parcial|no comprobado`.
+
+  Barcelona permanece en **2.432 filas**; el residual baja **238 → 236** y la
+  carga real **444 → 442**. `sin-evidencia` baja **1.799 → 1.795**; las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
