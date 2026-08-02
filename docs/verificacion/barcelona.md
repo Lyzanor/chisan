@@ -1857,6 +1857,28 @@ decisiones cambiadas, `verify:data` y commit propio.
   `sinteticas` **17**, `plantilla-cruzada` **23**, `pendiente` **18** y
   `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-l (2026-08-01, sedes y catálogos vigentes).** **Sesmans
+  Organic** deja de figurar en la antigua nave de Polinyà: la web oficial
+  publica ahora sede, móvil y correo en Sabadell. Se corrigen municipio, slug,
+  imagen, categoría y gama; se retiran el pin y las coordenadas antiguos. La
+  tienda muestra precios, pero mantiene las compras desactivadas por
+  mantenimiento, así que queda `parcial|no comprobado` en vez de aparentar una
+  transacción disponible.
+
+  **Finca La Font de Jui** recupera el teléfono y el correo vigentes y amplía
+  su escaparate a Miratge, MIMAS, Ombres de tardor, Coll de Dama, A Delit y
+  Mirant el futur. La propia web define el servicio como informativo y, tras
+  revisar vinos y contacto, no publica precio, cesta ni pedido remoto: pasa a
+  `no`. **Oli El Puig** deja la categoría genérica y una infusión no respaldada;
+  queda como productor de AOVE ecológico arbequina, con dirección y correo
+  oficiales. Sus canales remiten a distribuidores físicos y contacto general,
+  sin mecanismo explícito de pedido, por lo que conserva `no comprobado`.
+
+  Barcelona permanece en **2.433 filas**; el residual baja **252 → 251** y la
+  carga real **458 → 457**. `sin-evidencia` baja **1.816 → 1.814**; las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
