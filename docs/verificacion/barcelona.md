@@ -1920,6 +1920,28 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-o (2026-08-01, alcance y canales de venta).** **Pizza A
+  Punt Vilanova** pasa a `verificado|sí|ecommerce`: su ficha oficial permite
+  pedir y pagar en la web y delimita la zona de reparto. **Vilanova Casa de
+  Menjars**, en cambio, sale del catálogo como `not-producer`: la web sólo
+  acredita un restaurante con reservas y consumo en sala, no el supuesto
+  obrador de platos preparados que afirmaba la fila heredada.
+
+  **FAI Natur** deja la categoría genérica y un catálogo mezclado con
+  productos no respaldados; queda como elaborador de infusiones con miel,
+  infusiones a granel, chocolate y chai, con móvil oficial y `no` tras revisar
+  todo el sitio sin encontrar precio, cesta o pedido. **Avícola Lleonart**
+  pierde el pollo de corral falso y concreta huevos frescos y ovoproductos; su
+  web está en construcción, por lo que mantiene prudentemente `no comprobado`.
+  **Masia Escrigas** se reconstruye como finca de fruta y verdura: desde junio
+  de 2026 su agrotienda permite recoger hortaliza del huerto y comprar huevos
+  propios presencialmente (`no` para venta online).
+
+  Barcelona queda en **2.432 filas**; el residual baja **245 → 241** y la
+  carga real **451 → 447**. `sin-evidencia` baja **1.809 → 1.804**; las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
