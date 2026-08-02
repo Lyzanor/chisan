@@ -1900,6 +1900,26 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-n (2026-08-01, pedido directo y oferta alimentaria).**
+  **Farina Pasta Fresca d'Autor** actualiza nombre, fundadores, móvil, correo y
+  descripción del obrador del Mercat del Guinardó. Su web invita expresamente
+  a pedir por teléfono o WhatsApp y ofrece entrega a domicilio, por lo que pasa
+  a `sí|whatsapp|telefono`. **Granja La Bassola** concreta su carne de ternera
+  y las hamburguesas artesanas Mas Burguer; acepta pedidos personalizados y
+  vincula el contacto específico de producto con correo y teléfono
+  (`sí|email|telefono`).
+
+  **Mas Casablanca** recibe dirección y gama agrícola reales: huerta, huevos,
+  carne y lácteos producidos en una explotación diversificada y usados en sus
+  menús y actividades. La tienda web sólo vende cuentos y camisetas, no
+  alimentos; la ficha productiva queda `parcial|no` sin convertir una compra de
+  merchandising en venta alimentaria.
+
+  Barcelona permanece en **2.433 filas**; el residual baja **248 → 245** y la
+  carga real **454 → 451**. `sin-evidencia` baja **1.812 → 1.809**; las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
