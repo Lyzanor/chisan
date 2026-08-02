@@ -2102,6 +2102,35 @@ decisiones cambiadas, `verify:data` y commit propio.
   estables `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `descripcion-generica` **3** y `pendiente` **18**.
 
+- **Lote BCN-F2-v (2026-08-01, falsos pines de Terrassa).** Se purga
+  **Altamon**: nombre, correo y pin corresponden a un distribuidor de
+  maquinaria y equipamiento HORECA, no a un productor de miel. No apareció
+  ninguna identidad apícola independiente que sostuviera la fila.
+
+  **Apicultura Melsana** se traslada a Vacarisses con el teléfono, correo y
+  catálogo institucionales: miel y cera elaboradas mediante permapicultura con
+  abeja negra. Desaparecen las mermeladas, el horario y el pin de un restaurante
+  de Terrassa; el slug antiguo deja `merge`. **Explotacions Molle** pierde una
+  gama inventada de conservas, zumos, mermeladas y frutos secos y recupera su
+  actividad agraria registrada de cereales, leguminosas y oleaginosas; también
+  se retiran el teléfono y el pin de terceros.
+
+  **Maria Montserrat Roige Vert** queda correctamente descrita con almendras,
+  aceite y aceitunas, tal como figura en las secciones de venta directa y
+  circuito corto del registro histórico. **Violeta Zafra Pedrosa** pasa de
+  fruta y verdura a cultivo ecológico de plantas aromáticas y medicinales. En
+  ambas se eliminan la dirección, horario, teléfono y pin del Centre Cívic
+  Montserrat Roig; al no existir una señal comercial actual quedan
+  `pendiente|no comprobado` en vez de publicar datos falsos.
+
+  Barcelona queda en **2.429 filas**; la venta sin resolver baja **228 → 227**
+  y la carga real **434 → 433**. `sin-evidencia` baja **1.776 → 1.771** y
+  `sin-imagen` **1.363 → 1.362**. La retirada de contactos prestados hace
+  visibles dos fichas históricas sin contacto: `sinteticas` sube **17 → 19** y
+  `pendiente` **18 → 20**; es deuda real expuesta, no pérdida de información
+  válida. Permanecen estables `evidencia-prestada` **127**,
+  `plantilla-cruzada` **23** y `descripcion-generica` **3**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
