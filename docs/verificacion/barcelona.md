@@ -1991,6 +1991,35 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-r (2026-08-01, contactos prestados y venta telefónica).**
+  **Homs Gastronomia** deja la nave y el teléfono ajenos y recupera el obrador
+  real de Ctra. de Manresa, su gama cárnica, el móvil y el correo. El perfil
+  oficial publica «encarrega i recull», de modo que queda
+  `verificado|sí|telefono`. **CEE Escola Viver Castell de Sant Foix** sustituye
+  el blog por la página oficial de su vivero, detalla plantas, horarios y
+  paradas y pasa también a `verificado|sí|telefono`; se usa el teléfono actual
+  de la sede y no el número de otro instituto que quedó copiado en la página
+  de ventas.
+
+  **La Fassina de Jafre** reemplaza tomates y lechugas genéricos por sus
+  mermeladas, licores, miel y palomitas ecológicas, y añade contacto y ubicación
+  institucionales. **El Puig de la Balma** concreta las legumbres, patatas y
+  verduras propias y retira su antiguo dominio, hoy redirigido a una web alemana
+  ajena. Ambos siguen prudentemente en `parcial|no comprobado` por fallos del
+  dominio o falta de mecanismo remoto demostrable.
+
+  La corrección más profunda es **Costa Garet**: la fila mezclaba la explotación
+  de Riambau con Cal Fargas. Se eliminan el móvil, la web, el Instagram, la
+  imagen y el pin prestados; el registro devuelve bovino, huerta y cebada, y el
+  inventario de Diba fija la ubicación real. Baja a `parcial|no comprobado`
+  porque la fuente productiva disponible no es reciente.
+
+  Barcelona permanece en **2.432 filas**; el residual baja **236 → 234** y la
+  carga real **442 → 440**. `sin-evidencia` baja **1.795 → 1.790**;
+  `sin-imagen` sube **1.363 → 1.364** al retirar una imagen falsa. Las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23** y `pendiente` **18**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
