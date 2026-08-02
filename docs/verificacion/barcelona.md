@@ -1879,6 +1879,27 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-m (2026-08-01, identidades de obrador).** **La Moianesa**
+  deja de ser una falsa charcutería de jamón y fuet: es la fábrica familiar de
+  pasta de Moià, activa desde 1880. Se reconstruyen categoría, gama, fábrica de
+  Camí de Planella, teléfono, correo y redes; también se retiran la dirección,
+  el pin y las coordenadas de otro comercio. Su web publica más de veinte
+  formatos y una tienda física, pero no pedido remoto (`parcial|no`).
+
+  **El Rebost del Maresme** tampoco era la identidad vigente: se corrige por
+  **RADI**, fabricante B2B de preparados para postres, bases de salsa, adobos,
+  caldos e ingredientes, con centro operativo y contactos actuales en
+  Montornès del Vallès. Nombre, municipio, slug e imagen cambian con registro
+  `merge`; la web es un catálogo profesional con contacto comercial, no una
+  tienda (`parcial|no`). **Vinagres Masia Still** queda `no`: su página llamada
+  tienda es en realidad una relación de distribuidores físicos, sin precio,
+  cesta ni pedido remoto propio.
+
+  Barcelona permanece en **2.433 filas**; el residual baja **251 → 248** y la
+  carga real **457 → 454**. `sin-evidencia` baja **1.814 → 1.812**; las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
