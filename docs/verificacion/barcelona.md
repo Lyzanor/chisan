@@ -2020,6 +2020,33 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23** y `pendiente` **18**.
 
+- **Lote BCN-F2-s (2026-08-01, productos cruzados y granja homónima).**
+  **El Zagalico by La Salaita** deja de figurar como comida preparada: el
+  catálogo territorial lo identifica como almendra tostada con y sin sal y
+  aporta el contacto específico de Tania Pérez. **PastaxPasta** añade el móvil,
+  el pin del obrador y su servicio de catering, y elimina las salsas no
+  sustentadas; el dominio antiguo no resuelve y no aparece un pedido remoto
+  concreto, por lo que ambas fichas siguen en `parcial|no comprobado`.
+
+  La ficha personal de **Serni Vallribera Tubau** se reconstruye como la marca
+  pública **Granja Tubau (Agropecuaria Valltu)**. El estudio Vallribera Noray
+  Arquitectes le había prestado la dirección urbana, el horario, el móvil, el
+  Instagram, el mapa y hasta una imagen genérica del Plan de Recuperación. Se
+  sustituyen por la explotación avícola real de Granja d'en Tubau y se deja
+  registro `merge` del slug histórico.
+
+  **Tocat de l'Ala** pierde la fruta y verdura de la parada vecina y recupera
+  su catálogo de rostisseria: pollo a l'ast, croquetas, patatas, escalivada y
+  platos caseros. Su escaparate oficial en Glovo está operativo, con carta,
+  precios y pedido, así que pasa a `verificado|sí|marketplace`.
+
+  Barcelona permanece en **2.432 filas**; el residual baja **234 → 233** y la
+  carga real **440 → 439**. `sin-evidencia` baja **1.790 → 1.786** y
+  `descripcion-generica` **4 → 3**; `sin-imagen` sube **1.364 → 1.365** al
+  retirar otro recurso falso. Las demás señales quedan estables:
+  `evidencia-prestada` **127**, `sinteticas` **17**, `plantilla-cruzada` **23**
+  y `pendiente` **18**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
