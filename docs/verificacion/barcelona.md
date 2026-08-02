@@ -2186,6 +2186,30 @@ decisiones cambiadas, `verify:data` y commit propio.
   `sinteticas` **19 → 20** y `pendiente` **20 → 21**; permanecen estables
   `sin-imagen` **1.362** y `descripcion-generica` **3**.
 
+- **Lote BCN-F2-y (2026-08-01, cierre de catálogos cruzados).** Se cierra la
+  cola `plantilla-cruzada` con revisión editorial de sus diez candidatos. No se
+  ocultan avisos válidos: **Agro Igualada** estaba mezclando el aceite que
+  produce en su molino con productos de terceros de su agrobotiga; queda sólo
+  su aceite virgen y virgen extra. **Vermouth Cisa** pasa de Licores a Vermut y
+  detalla vermut rojo y blanco, moscatel y malvasía. **Cal Meler** pasa de
+  Despensa artesanal a Miel y concreta producción ecológica.
+
+  **Pastes Sanmartí** adopta `Otros`, destino canónico de pasta artesana en la
+  taxonomía vigente, en lugar de tratar el producto acabado como harina.
+  **Civia Foods** pasa a Despensa artesanal como elaborador de granola. En
+  **Fruits Secs Torra** se sustituyen familias genéricas por almendras,
+  avellanas, nueces, anacardos, semillas y fruta deshidratada verificables en
+  la tienda. **El Soler de Sant Pau** incorpora nombre, dirección, contacto,
+  descripción y la venta cruda o cocida de pèsol negre. En **Melmelades del
+  Bosc**, **Manel Massana** y **Cal Andreuet** se hace explícito cuál es la
+  gama principal sin borrar sus productos secundarios reales.
+
+  Barcelona mantiene **2.428 filas** y **227** ventas sin resolver.
+  `plantilla-cruzada` baja **10 → 0**, `sin-evidencia` **1.758 → 1.755** y la
+  carga real **423 → 415**. Permanecen estables `sinteticas` **20**,
+  `evidencia-prestada` **125**, `sin-imagen` **1.362**,
+  `descripcion-generica` **3** y `pendiente` **21**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
