@@ -2047,6 +2047,34 @@ decisiones cambiadas, `verify:data` y commit propio.
   `evidencia-prestada` **127**, `sinteticas` **17**, `plantilla-cruzada` **23**
   y `pendiente` **18**.
 
+- **Lote BCN-F2-t (2026-08-01, municipio falso y fila no sustentada).**
+  **Conservas Coll** pasa de Sant Quirze Safaja a su obrador real del polígono
+  El Vapor de Castellterçol; el pin ya estaba allí. Se amplía la gama a setas
+  frescas, secas, en conserva y congeladas, trufa negra y patés. La tienda
+  propia permite añadir producto con stock al carrito y llegar al checkout,
+  por lo que queda `verificado|sí|ecommerce` y el slug antiguo deja registro
+  `merge`.
+
+  Se purga **Dosmons (Laia i Miquel)** como fila no sustentada: no aparece la
+  supuesta explotación ni sus titulares o productos, el Instagram no existe,
+  el móvil sigue un patrón ficticio y el pin cae en el casco urbano junto a
+  Fumont, no en la dirección declarada. **Fumont Gourmet** sí figura en el
+  censo municipal vigente como obrador: se corrige de conservas y mermeladas a
+  salmón y trucha ahumados, se retira el dominio caído y baja prudentemente a
+  `parcial|no comprobado`.
+
+  **Herbes del Tros** elimina fruta y verdura prestadas y repone plantas
+  aromáticas y medicinales. Su canal oficial sólo publica compra en la finca,
+  de modo que se resuelve como `verificado|no`. **Casanella Xocolaters** detalla
+  Crackànies, Jacintos, Evaristos y bombones, añade correo y dirección completa
+  y retira su dominio sin DNS; conserva `no comprobado` y baja a `parcial`.
+
+  Barcelona queda en **2.431 filas**; la venta sin resolver baja **233 → 230**
+  y la carga real **439 → 436**. `sin-evidencia` baja **1.786 → 1.781** y
+  `sin-imagen` **1.365 → 1.364** al desaparecer la fila falsa. Las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `descripcion-generica` **3** y `pendiente` **18**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
