@@ -2075,6 +2075,33 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `descripcion-generica` **3** y `pendiente` **18**.
 
+- **Lote BCN-F2-u (2026-08-01, apicultura y cruces territoriales).**
+  **Les Tofaroques** pierde el pollo no sustentado y recupera su identidad y
+  catálogo reales de huevos ecológicos. Su ficha propia ofrece precio, lista
+  de compra y envío de la comanda por WhatsApp, por lo que pasa a
+  `verificado|sí|whatsapp`.
+
+  **Garrapinyades Can Faba** se traslada de la ubicación falsa de Santa Maria
+  de Palautordera a Mollet del Vallès: se corrigen a la vez slug, dirección,
+  teléfono, correo, categoría y producto. El directorio vigente de Diputació
+  y su presencia en la Fira de Sant Josep 2026 acreditan actividad, aunque no
+  un pedido remoto; queda `parcial|no comprobado` y el slug antiguo deja
+  `merge`. **Apícola Caballé** elimina las mermeladas prestadas y repone miel,
+  cera y enjambres. **Mel Castell de Penyafort** actualiza contacto y gama y
+  retira el dominio sin DNS, manteniendo `verificado|no comprobado` gracias a
+  la ficha institucional y al perfil social vigente.
+
+  Se purga **Lleonart Subirana, Ana Maria** como cruce: el domicilio, horario,
+  teléfono, web y pin eran los de una inmobiliaria de Terrassa, mientras el
+  correo y los productos remitían a la explotación distinta **Avícola
+  Lleonart** de Ullastrell, ya incluida y verificada en el CSV.
+
+  Barcelona queda en **2.430 filas**; la venta sin resolver baja **230 → 228**
+  y la carga real **436 → 434**. `sin-evidencia` baja **1.781 → 1.776** y
+  `sin-imagen` **1.364 → 1.363** al desaparecer la fila cruzada. Permanecen
+  estables `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `descripcion-generica` **3** y `pendiente` **18**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
