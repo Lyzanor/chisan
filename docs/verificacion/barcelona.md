@@ -2131,6 +2131,32 @@ decisiones cambiadas, `verify:data` y commit propio.
   válida. Permanecen estables `evidencia-prestada` **127**,
   `plantilla-cruzada` **23** y `descripcion-generica` **3**.
 
+- **Lote BCN-F2-w (2026-08-01, seis catálogos cruzados).** **Granja La
+  Pasiega** pasa de fruta y verdura a leche cruda de vaca. El censo municipal
+  y una entrevista de 2024 confirman que es la última granja lechera del Baix
+  Llobregat, con venta minoritaria sólo en la tienda de la finca; queda
+  `verificado|no` y el slug registral SAT deja `merge`.
+
+  **Destil·leries Vila** sustituye vino blanco y tinto por Aromes de Queralt,
+  Ratafia del Queralt, Barreja de la Patum y otros licores artesanales.
+  **El Serradet de Barneres** pierde fuet, butifarra y longaniza y recupera
+  quesos de oveja, yogur, mató, tupí, leche y cordero lechal; conserva
+  `sí|telefono` porque su página acepta encargos y reparto a grupos de consumo.
+
+  **Prats Fruits** se traslada del domicilio registral histórico de Gavà a su
+  sede operativa de Mercabarna, con slug, categoría, gama y contacto actuales;
+  combina producción propia con distribución mayorista de fruta y verdura.
+  **Nadolç** deja de figurar como elaborador de miel y turrón: fabrica yogures,
+  kéfir, flanes y postres ecológicos de soja y vegetales. **Fruits Secs Torra**
+  elimina conservas y detalla su surtido real de frutos secos, semillas y fruta
+  deshidratada, con torrefacción tradicional y ecommerce activo.
+
+  Barcelona permanece en **2.429 filas** y **227** ventas sin resolver.
+  `plantilla-cruzada` baja **23 → 18**, `sin-evidencia` **1.771 → 1.765** y la
+  carga real **433 → 428**. Permanecen estables `sinteticas` **19**,
+  `evidencia-prestada` **127**, `sin-imagen` **1.362**,
+  `descripcion-generica` **3** y `pendiente` **20**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
