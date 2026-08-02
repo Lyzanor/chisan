@@ -1942,6 +1942,32 @@ decisiones cambiadas, `verify:data` y commit propio.
   señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
   `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
 
+- **Lote BCN-F2-p (2026-08-01, obradores mal ubicados y pedido directo).**
+  **JR Pizzes** recupera la dirección, el teléfono y la web actuales de Moià,
+  además de su gama real de pizzas, cocina catalana y pollos asados. La carta,
+  los menús por encargo y el WhatsApp enlazado permiten resolverlo como
+  `verificado|sí|whatsapp`. **Can Burguès** sustituye horta y aceite genéricos
+  por su catálogo de avellana transformada en el obrador; el propio PDF publica
+  precios, pedido por WhatsApp o correo y envío a domicilio
+  (`sí|whatsapp|email`).
+
+  Tres fichas estaban geográficamente mezcladas con comercios ajenos o puntos
+  de venta. **Umami Croqueteria** pasa de Sabadell a su obrador real de Rubí,
+  con dirección, móvil, dominio y gama vigentes; su WhatsApp sólo se presenta
+  para información, por lo que conserva `no comprobado`. **Confitures La
+  Codina** pasa de Sant Quirze a Castellar del Vallès, donde ya apuntaban sus
+  coordenadas; actualiza productos, contacto y web y queda `verificado|no`.
+  **Pastes La Forja** pasa de la tienda de Vilafranca al obrador de Barri Cuscó,
+  Castellví de la Marca, con categoría, rellenos y contactos productivos
+  reales; al no recuperar un canal oficial vigente, queda
+  `parcial|no comprobado`. Los tres cambios de municipio dejan registro
+  `merge` de sus slugs históricos.
+
+  Barcelona permanece en **2.432 filas**; el residual baja **241 → 238** y la
+  carga real **447 → 444**. `sin-evidencia` baja **1.804 → 1.799**; las demás
+  señales quedan estables: `evidencia-prestada` **127**, `sinteticas` **17**,
+  `plantilla-cruzada` **23**, `pendiente` **18** y `sin-imagen` **1.363**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
