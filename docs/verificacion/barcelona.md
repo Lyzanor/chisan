@@ -2157,6 +2157,35 @@ decisiones cambiadas, `verify:data` y commit propio.
   `evidencia-prestada` **127**, `sin-imagen` **1.362**,
   `descripcion-generica` **3** y `pendiente` **20**.
 
+- **Lote BCN-F2-x (2026-08-01, cruces de categoría y ubicación).** Se purga
+  **Olives Baraka**: su propia web explica que comercializa directamente el
+  producto de pequeños productores, por lo que era una reventa y no un
+  productor independiente. También se elimina su imagen huérfana.
+
+  **Tousec** pierde conservas y recupera su gama real de almendras, avellanas,
+  nueces, higos y pipas. **Scharlau Agrícola** pasa de aceite, conservas y
+  mermeladas a pistachos; se retiran el teléfono y el pin de la sede del
+  laboratorio Scharlab, que no localizaban la explotación. **Cal Miquel** deja
+  de figurar como quesería y queda como charcutería con obrador propio, carne
+  fresca y embutidos artesanales, con dirección y correo actuales.
+
+  **Can Vila** corrige el antiguo slug de Santa Eulàlia de Ronçana: Pere Joan
+  Alsina Cuscó produce hortalizas ecológicas, mongetes y tomates en Gallecs,
+  Mollet del Vallès. En Tordera, **Santi Manresa (Can Gaget)** pasa de fruta y
+  verdura a judías secas; **Joan Manresa Agell** recupera avena y judías, pero
+  pierde el horario, los contactos históricos y el pin de un taller ajeno y
+  queda `pendiente` hasta confirmar actividad actual. **Cal Tupí d'Olives**
+  deja de ser una falsa tienda de encurtidos: es la finca hortícola de Antoni
+  Ferrer, con cultivos, dirección, horario de mercados, teléfono y correo en
+  sus columnas correctas.
+
+  Barcelona queda en **2.428 filas** y mantiene **227** ventas sin resolver.
+  `plantilla-cruzada` baja **18 → 10**, `evidencia-prestada` **127 → 125**,
+  `sin-evidencia` **1.765 → 1.758** y la carga real **428 → 423**. La retirada
+  de la información histórica no reconfirmada de Joan Manresa hace subir
+  `sinteticas` **19 → 20** y `pendiente` **20 → 21**; permanecen estables
+  `sin-imagen` **1.362** y `descripcion-generica` **3**.
+
 - **Lote BCN-R1-a (2026-07-28, carril R1).** Alcance: las 6 filas de
   `check:defects --check sinteticas`. Ninguna era sintética: las 6 son reales y con fuente
   local concreta, solo que nunca se les recogió contacto. Resueltas 2 (Jaume Roger Garriga,
