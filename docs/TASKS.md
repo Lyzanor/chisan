@@ -127,13 +127,16 @@ impide. Requieren `verify:ai`.
   punto: un 403 no es un sitio muerto y un 200 no prueba que la web sea del
   productor. Lo que queda es editorial, no de tooling — triar sus señales
   provincia a provincia.
-- **El enum de `Canal de venta` no tipifica la mensajería social.** Hay
-  productores cuyo canal de pedido demostrado es el DM de Instagram o Facebook
-  (p. ej. `quesos-argudo-campillos`): `Venta online=sí` está probado y el canal
-  se queda vacío porque ningún token encaja, así que la fila aparece
-  eternamente en `canal-sin-clasificar`. Decidir si se añade un token o si estos
-  casos se documentan como residual legítimo; cambiar el enum toca
-  `docs/CSV_CONTRACT.md`, el validador y sus pruebas.
+- ~~**El enum de `Canal de venta` no tipifica la mensajería social.**~~
+  **Decidido 2026-08-02: no se añade token; son residual legítimo.** La duda era
+  si `quesos-argudo-campillos` y `miel-el-chozo-villanueva-del-trabuco` —`Venta
+  online=sí` probado, pedido por DM— justificaban tocar el enum. Lo que lo
+  zanja es medir la población: de 5.923 filas con `sí`, **236 no tienen web y
+  152 de esas sí tienen Instagram o Facebook**, y todas ellas ya están
+  clasificadas con los tokens existentes. Un token nuevo no rescataría 2 filas:
+  dejaría 152 mal tipificadas. Así que `canal-sin-clasificar` conserva esas dos
+  y eso es un final válido, no deuda.
+
 - ~~**Municipios en forma bilingüe `A / B` se saltan el geo-check.**~~ Hecho: el
   lookup prueba cada mitad, tanto en `A / B` como en `Municipio (pedanía)`, y
   solo se fía cuando concuerdan —si no, un homónimo como `La Floresta (Sant
