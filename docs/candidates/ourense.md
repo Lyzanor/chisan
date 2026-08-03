@@ -3,94 +3,82 @@
 > Origen: pasada **DO menos cubiertas** (2026-07). Los lotes de DO Ribeiro,
 > Valdeorras, Monterrei, Ribeira Sacra y la Festa do Queixo quedaron integrados en
 > las fases B y C (≈67 altas); lo integrado está en `data/csv/galicia/ourense.csv`
-> y el detalle por lote, en el historial git. Aquí solo queda la cola sin
-> resolver. Dedup rehecho el 2026-08-03: las 23 entradas de abajo siguen sin fila.
+> y el detalle por lote, en el historial git.
+>
+> **⚑ COLA CERRADA 2026-08-03: 22 de las 23 entradas integradas, 1 diferida.**
 
-## DO Ribeiro — diferidas por rastro digital muerto (7)
+## Diferida (1)
 
-Todas salieron del directorio del Consello Regulador
-(`ribeiro.wine/es/wineries`, 89 adegas/colleiteiros). Se difirieron porque su
-dominio no resuelve o su web está vacía: sin fuente verificadora en vivo, el
-tope sería `parcial`. Buscar rastro alternativo (redes, distribuidores, prensa)
-antes de crear fila.
+- [ ] **Os Pacios** — A Teixeira (Abeleda, 32). Del CSV oficial del Consello de
+  Ribeira Sacra (`ribeirasacra.org/bodegas_csv.php`), pero es la **única ficha de
+  la subzona sin marca comercial** y la única que declara producción **en kg de
+  uva** (5.000 kg, 0,5 ha) en vez de en litros: perfil de viticultor que entrega
+  uva, no de embotellador. Además hay un homónimo, *Adega Os Pacios*, en
+  Espasantes (Pantón, **Lugo**), que contamina toda búsqueda. Reabrir solo si
+  aparece marca propia y venta.
 
-- [ ] **Pazo Lalón** — Bodega. Leiro. Ficha del consejo sin dominio.
-- [ ] **Adega Manuel Rojo** — A Arnoia. `adegamanuelrojo.com` no resuelve (DNS
-  muerto).
-- [ ] **Quinta do Avelino** (Parente García) — Cenlle. `parentegarcia.com` no
-  resuelve (DNS muerto).
-- [ ] **Tear dos Dodi** — A Arnoia. `teardosdodi.com` no resuelve (DNS muerto).
-- [ ] **Adega O Cotarelo** — Cenlle. `adega-o-cotarelo.negocio.site` da 404 (web
-  ligera caída).
-- [ ] **Bodegas Peña** (marca Lancero) — Castrelo de Miño. `lancero.es` es un
-  WordPress vacío (post de bienvenida por defecto). ⚠ **Entidad distinta** de
-  Bodega Eduardo Peña (`bodega-eduardo-pena-castrelo-de-mino`, mismo concello, ya
-  en CSV): no fusionar por apellido.
-- [ ] **Bodegas GRM (Grupo Reboreda-Morgadío / Campante)** — Bodega. Toén.
-  <https://bodegasgrm.com/> dio 503 en la revisión. ⚠ Grupo mediano (Campante),
-  borderline por tamaño → decidir encaje al reabrir.
+## Correcciones que salieron de esta cola (reutilizables)
 
-## DO Ribeiro — grupo por resolver (1)
+⚠ **«Dominio muerto» ≠ «sin rastro digital».** De las 10 entradas diferidas por
+web caída, cuatro tenían web viva en otro dominio y una tercera parte del
+diagnóstico estaba caducado:
 
-- [ ] **Bodegas Villanueva** — Castrelo de Miño. Es un **grupo multi-DO** (Rías
-  Baixas / Ribeiro / Ribera / Rioja, 4 bodegas) y su dominio está enredado con la
-  fila de Pontevedra `adega-pazo-das-barreiras`. Resolver esa relación antes de
-  crear fila en Ourense.
+- *Tear dos Dodi* no es `teardosdodi.com` (NXDOMAIN) sino
+  **`adegateardosdodi.com`**, con tienda propia operativa → entró `verificado` y
+  `Venta online=sí`. En el registro figura por la razón social **Amalia Diéguez
+  Martínez**, no por la marca, y por eso no aparecía al buscar «tear».
+- *Ladera Sagrada* no es `.es` (NXDOMAIN) sino `.com` — aunque el `.com` solo
+  sirve una portada con el nombre, así que se quedó sin `web`.
+- *Bodegas GRM* es el nombre del dominio, no de la adega: la ficha del consejo la
+  inscribe como **Bodegas Campante, S.A.** (Finca Reboreda, Puga, Toén).
+- *Jorge Ordóñez (proyecto Valdeorras)* es **Bodegas Avancia**, con instalación
+  propia en el parque empresarial A Raña de O Barco y certificado 2014/35 vigente.
+- *Bodegas Eladio Santalla* está certificada por la razón social **Hacienda
+  Ucediños, S.L.**, que es a la vez su marca de vino.
 
-## DO Valdeorras — resto del registro (5)
-
-Con web propia localizada, sin verificar.
-
-- [ ] **Bodegas Carballal** — <https://www.bodegascarballal.com/>.
-- [ ] **Adega Avelina** — <https://www.adegaavelina.com/>.
-- [ ] **Ladera Sagrada** — <https://www.laderasagrada.es/>.
-- [ ] **Bodegas Eladio Santalla** — <https://www.bodegaseladiosantalla.com/>.
-- [ ] **Jorge Ordóñez (proyecto Valdeorras)** — <https://www.jorgeordonez.es/>.
-  ⚠ Négociant/grupo Jorge Ordóñez (Málaga) con proyectos en varias DO; confirmar
-  bodega y marca propias de Valdeorras, y el encaje.
-
-> ⚠ **Valdeorras, ~19 bodegas más: DIFERIDO por fuente.** El listado de
-> `dovaldeorras.gal/bodegas/` se renderiza 100% por JS tras un age-gate (ni en el
-> HTML ni en `wp-json`; no hay custom post type). El lote 10 usó el **PDF oficial**
-> del consejo para 24 bodegas; el resto necesita ese PDF o un navegador → reabrir
-> en una sesión con navegador disponible.
-
-## DO Monterrei — colleiteiros sin web (6)
-
-Del directorio `domonterrei.wine/adegas/`. La ficha del consejo expone la web y
-la dirección **del propio consejo** en Verín, no las de la adega: hay que buscar
-concello y web reales en verificación.
-
-- [ ] **Franco Basalo** — Castrelo do Val (confirmar).
-  <https://www.francobasalo.es/>. Vino «Estela do Val».
-- [ ] **Abeledos** — Concello a confirmar. · 616 571 938.
-- [ ] **Daniel Fernández** — Bodega/colleiteiro. · 988 590 864.
-- [ ] **Manuel Vázquez Losada** — Bodega/colleiteiro. · 686 764 371.
-- [ ] **Minius** — Oímbra. ⚠ La marca «Minius Godello» la elabora y comercializa
-  **Adegas Valmiñor** (grupo de Rías Baixas); confirmar si es entidad con venta
-  propia o solo marca de grupo.
-- [ ] **Tapias Mariñán** — · 988 411 693. ⚠ Posible relación con Pazo das Tapias
-  y Pazo de Valdeconde (marcas «Tapias»), ambas ya en CSV; cuidar duplicado.
-
-## DO Ribeira Sacra (Ribeiras do Sil) — colleiteiros (4)
-
-Del CSV oficial del Consello (`ribeirasacra.org/bodegas_csv.php`).
-
-- [ ] **Envínate** — A Teixeira. <https://envinate.es/> · 682 207 160. Marca
-  «Lousas»; el equipo trabaja también en Canarias y Almansa, pero la base gallega
-  es A Teixeira.
-- [ ] **Álvarez Rodríguez, Juan Alberto (Adega Sollío)** — A Teixeira. Marca
-  «Sollío». · 639 787 637. Web propia a confirmar.
-- [ ] **Vázquez Rodríguez, José** — A Teixeira. Marcas «Século» y «Triscelle».
-  · 629 818 701. Web propia a confirmar.
-- [ ] **Os Pacios** — Bodega/colleiteiro. A Teixeira (Abeleda). · 684 037 926.
-  Producción pequeña (5.000 kg); confirmar marca propia y venta.
-
-## Avisos reutilizables
+⚠ **Dominio secuestrado por spam de casino:** `adegamanuelrojo.com` **y**
+`adegamanuelrojo.es` responden 200 con un portal de «casinos sin licencia». Los
+dos son el dominio que publica el consejo. Se integró sin `web`.
 
 ⚠ **Municipio = concello de la adega**, tomado de la dirección real de la ficha,
-no de la sede del consejo (Ribadavia en Ribeiro, Verín en Monterrei). Este error
-ya obligó a corregir Castro Rei a Laias (Cenlle).
+no de la sede del consejo (Ribadavia en Ribeiro, Verín en Monterrei). Las fichas
+de Monterrei **sí** publican la dirección propia de cada adega, al contrario de
+lo que decía la nota anterior. Concellos resueltos en esta pasada: Abeledos →
+Tamagos (**Verín**) · Daniel Fernández → Queizás (**Verín**) · Franco Basalo →
+**Castrelo do Val** · Manuel Vázquez Losada → **Castrelo do Val** · Minius →
+**Oímbra** · Tapias Mariñán → Pazos (**Verín**) · Ladera Sagrada → **Larouco**.
 
-⚠ **El resto del registro de Ribeira Sacra (~73 adegas) es de provincia de
-Lugo** → no se abre aquí; es pista para `lugo.md`.
+⚠ **Homónimo que parecía duplicado y no lo era:** *Tapias Mariñán* (hermanos
+Blanco Núñez; marcas Quinta das Tapias y Pazo Mariñán) y `pazo-das-tapias-verin`
+(familia Méndez, grupo Pazo do Mar; marcas Alma de Autor y Atalaya do Mar) son
+**dos adegas distintas en el mismo lugar de Pazos, Verín**, con direcciones y
+teléfonos propios. La tapia centenaria de la que las dos toman el nombre es la
+coincidencia, no la empresa.
+
+⚠ **Grupos multi-DO:** *Bodegas Villanueva* entró como `parcial` porque su web
+propia presenta cuatro bodegas y **ninguna del Ribeiro** — el Ribeiro solo
+aparece como marcas (Lulo 1915, Carlos Villanueva) en su tienda; la unidad
+productiva de Castrelo de Miño la sostiene solo el registro del consejo. *Minius*
+sí entró pese a pertenecer al grupo Valmiñor porque el consejo la inscribe con
+dirección y marcas propias en Oímbra. *Envínate* tiene fila en Ourense **y** en
+Santa Cruz de Tenerife: son dos unidades productivas, no un duplicado.
+
+## Pistas para reabrir
+
+> ⚠ **Valdeorras, ~19 bodegas más.** `dovaldeorras.gal/bodegas/` sigue siendo
+> 100% JS tras un age-gate, pero el consejo publica un PDF de una página con el
+> **listado de bodegas con producto certificado** (40 adegas, nº de certificado y
+> fecha de renovación), actualizado el 17-07-2026:
+> `dovaldeorras.gal/wp-content/uploads/2024/10/Listado-de-certificados-17-07-26.pdf`.
+> Es la mejor fuente para cruzar altas y para detectar bajas: *Bodegas Carballal*
+> y *Bodega Eladio Santalla* no figuran en él bajo ese nombre. Las páginas
+> `dovaldeorras.gal/en/<slug>/` sí se sirven en HTML y dan dirección y teléfono.
+
+> El CSV oficial de Ribeira Sacra (`ribeirasacra.org/bodegas_csv.php`) trae
+> **nombre, dirección, lat/lon, teléfono, email, web, superficie, producción,
+> marcas y variedades** en texto plano — la fuente más completa de esta pasada.
+> Su lado de Ourense está **agotado**: 16 fichas, 14 ya en el CSV y las de A
+> Teixeira integradas aquí. Queda **una sola alta posible**: *Spanish Wines by
+> Carlos Rodríguez, S.L.* (Lg. de Casundila 60, San Xes, 32151 **A Peroxa**), y
+> *Os Pacios*, diferida arriba. El resto del registro (~73 adegas) es de Lugo →
+> pista para `lugo.md`.

@@ -189,13 +189,26 @@
   (`verificado`, **`sí` ecommerce**). La Guancha (razón social Viña La Guancha,
   S.L.); tienda propia (Shopify).
 
-### Cortes siguientes — 49 bodegas anotadas (datos ya capturados)
+### Cortes siguientes — ✅ CERRADOS 2026-08-03
 
-> ⚠ **Recuento reconciliado el 2026-08-03.** El corte 1 estimó **53 restantes**
-> (78 netas − 25 escritas), pero abajo solo hay **49 fichas** (5 con web, ya
-> integradas + 44 sin web). Faltan por anotar **4 bodegas** de los registros de
-> las 5 DO insulares: al reabrir, releer las fuentes antes de dar la lista por
-> completa. Las 44 sin web siguen sin fila en el CSV (dedup rehecho el 2026-08-03).
+> **Las 44 fichas «sin web» del corte 2 quedaron integradas como 41 filas**
+> (`parcial`, VO=`no comprobado`), porque tres pares eran la misma bodega listada
+> dos veces por razón social y por marca:
+> *Tierra Fundida* = **Vinos En Tándem** · *Mallar de los Trazos* = **José Antonio
+> Rodríguez del Castillo** · *Llano El Pino* = **Pedro Jonay Santana Hernández**.
+> Fuente de contraste: la tabla *Nombre · Marcas · Dirección · Web* del portal del
+> Cabildo (`vinosdetenerife.es`), que cubre 4 de las 5 DO; Güímar se resolvió con
+> `vinosvalleguimar.com`. 15 de las 41 llevan coordenadas geocodificadas de la
+> dirección del registro; las otras 26 van a centroide municipal, casi todas las
+> de Güímar (el consejo no publica dirección) y las que Nominatim no resuelve.
+>
+> **Flecos abiertos (2 pistas, ninguna con fila):**
+> - **Bodega Salomé** — aparece en el listado de `dovalleorotava.com/bodegas` (18
+>   bodegas) pero no en la tabla del Cabildo ni en ninguna otra fuente localizada.
+>   Probablemente una de las «4 bodegas sin anotar» del recuento del corte 1.
+> - **Bodega Contiempo** (integrada) llegó con teléfono y correo en su ficha del
+>   consejo que son **los del propio consejo regulador**: si se reabre Abona,
+>   desconfiar de esos dos campos en el resto de fichas.
 
 > **Con web propia (5)** — ✅ **integradas fase C, 2026-07-13**:
 > - *Hacienda de Acentejo* → `hacienda-de-acentejo-la-victoria-de-acentejo`
@@ -211,38 +224,6 @@
 >   DO Abona); web en construcción → parcial.
 > - *Tierras de Aponte* → `bodega-tierras-de-aponte-adeje` (`parcial`, VO=nc).
 >   Taucho (Adeje), DO Abona; web JS no legible → parcial.
->
-> **Sin web propia en el registro (44)** — nombre · municipio · teléfono:
->
-> - **Tacoronte-Acentejo (19):** Ambora (Tegueste, 922 638 044) · Cuevas de Lino
->   (Tacoronte, 922 631 305) · El Cercado (Tacoronte, 922 562 002) · Granilete
->   (Tacoronte) · Guayonge (Tacoronte, 922 561 780) · José Antonio Rodríguez del
->   Castillo (La Laguna) · José Miguel Robayna Betancort (La Laguna, 650 945 311) ·
->   La Hijuela (El Rosario, 922 537 284) · Llano El Pino (Tegueste) · LoHer (La
->   Victoria de Acentejo) · Mallar de los Trazos (La Laguna, 619 211 924) · Pedro
->   Jonay Santana Hernández (Tegueste) · Tierra Fundida (La Laguna, 659 974 374) ·
->   Trancao de Acentejo (La Victoria, 922 577 424) · Vinos En Tándem (La Laguna) ·
->   Viña El Drago (La Laguna, 922 541 500) · Viña Estévez (La Victoria, 922 580 779)
->   · Viña Flores (La Matanza, 922 577 194) · Viña Orosía (Santa Úrsula, 922 300 285).
-> - **Valle de La Orotava (9):** 300 Líos Volcanic Grapes (Los Realejos,
->   616 511 951) · Bodegas La Araucaria (La Orotava, 679 704 769) · Bodega Illada
->   (Los Realejos, 627 229 735) · Bodega Juan Dios (Los Realejos, 626 725 461) ·
->   Bodega La Haya (Los Realejos, La Cruz Santa, 629 051 413) · Bodega La Suertita
->   (Los Realejos, 669 408 761) · Bodega La Viñita (La Orotava, 639 369 330) ·
->   Bodega Secadero (Los Realejos, San Benito, 665 807 966) · Bodega Volcán de
->   Caramujo (Los Realejos, 677 448 757).
-> - **Valle de Güímar (6):** Bodega Juan Francisco Fariña Pérez (Arafo, 636 824 919)
->   · Bodega La Vera (Güímar, 607 594 918) · Bodega Viña Herzas (Arafo, 639 157 290)
->   · Bodega El Silencio (Candelaria, 608 014 944) · Bodegas El Rebusco (Candelaria,
->   922 892 512) · Bodegas Prodiflora (Güímar, 626 497 315).
-> - **Abona (7):** Amelia Olimpia Marrero Abreu (Arico, 922 768 108) · Bodega
->   Contiempo (Arona; venta en bodega: **no**) · Daniel Martín Navarro (Arona) ·
->   Lagar de Chasna (Vilaflor, 600 220 294) · Pedro Hernández Tejera – **Viña Arese**
->   (Fasnia, 616 920 832; el registro la duplica, una sola ficha) · Pedro Julián
->   Rivero Oval (Granadilla de Abona, 629 199 438; venta en bodega: **no**) · Tomás
->   Frías González (Fasnia, 922 164 185).
-> - **Ycoden-Daute-Isora (3):** Bodegas Aceviño (Icod de los Vinos) · Canales del
->   Palmar (Buenavista del Norte) · Viña Engracia (Icod de los Vinos).
 
 ### Notas del lote 22
 
