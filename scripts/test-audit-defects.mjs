@@ -143,7 +143,7 @@ test("a foreign noun used as an ingredient is not a second product line", () => 
   // con/de modifies the product before it.
   assert.deepEqual(
     flagged([
-      { nombre: "Obrador Sintético", categoria: "Pan y pastelería", "productos estrella": "Sobaos con chocolate" },
+      { nombre: "Obrador Sintético", categoria: "Pan y cereal", "productos estrella": "Sobaos con chocolate" },
     ]),
     [],
   );

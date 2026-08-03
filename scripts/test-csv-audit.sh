@@ -341,7 +341,7 @@ run_expect_failure "$TMP_DIR/out-categories.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/category-preferences.csv"
 grep -q "WARNING line 2 .* categoria should use preferred label 'Lácteos y quesos' instead of 'Quesos y lácteos'" "$TMP_DIR/out-categories.txt"
 grep -q "WARNING line 3 .* categoria should use preferred label 'Bodega' instead of 'Vino'" "$TMP_DIR/out-categories.txt"
-grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y pastelería' instead of 'Panadería y repostería'" "$TMP_DIR/out-categories.txt"
+grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y cereal' instead of 'Panadería y repostería'" "$TMP_DIR/out-categories.txt"
 
 # A label that was never registered keeps the plain rejection.
 cat >"$TMP_DIR/unknown-category.csv" <<'CSV'

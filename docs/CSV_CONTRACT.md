@@ -95,12 +95,12 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
   npx pnpm list:categories
   ```
 - `categoria`, when present, must exactly match one value from that set.
-- Preferred aliases live in the same file (`preferredAliases`) and are reported by `check:csv:data-quality`; examples include `Lácteos y quesos`, `Bodega`, and `Pan y pastelería`.
-- Add a category only when no existing label fits a materially different producer type. Update `data/reference/categories.json`, docs, and validator tests together.
-- `retiredCategories` maps every label the 2026-06-21 consolidation folded away
-  (commits `d157b1f`, `41233aa`, `183f4eb`) to the one that replaced it. Its
-  intersection with `categories` is the state of the migration, and reading it
-  beats any count in a doc:
+- Preferred aliases live in the same file (`preferredAliases`) and are reported by `check:csv:data-quality`; examples include `Lácteos y quesos`, `Bodega`, and `Pan y cereal`.
+- Add a category only when no existing label fits a materially different producer type. Update `data/reference/categories.json`, docs, validator tests and `getCategoryIcon` together — a label with no branch in the icon cascade publishes as the generic basket.
+- `retiredCategories` maps every label a consolidation folded away (2026-06-21,
+  commits `d157b1f`, `41233aa`, `183f4eb`; 2026-08-03, the 38 → 24 pass) to the
+  one that replaced it. Its intersection with `categories` is the state of the
+  migration, and reading it beats any count in a doc:
   - **in both** — rows are still using the label, so it stays valid and
     `check:csv:data-quality` warns on each row. It is the `categoria-variante`
     queue of `check:defects`.
