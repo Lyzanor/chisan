@@ -7,7 +7,7 @@
  * correcto sólo para `Otros` y `Despensa artesanal`.
  */
 export function getCategoryIcon(value: string): string {
-  if (/vino|bodega|vermut/i.test(value)) return "🍷";
+  if (/vino|bodega/i.test(value)) return "🍷";
   if (/ques/i.test(value)) return "🧀";
   if (/pan|pastel/i.test(value)) return "🍞";
   if (/miel/i.test(value)) return "🍯";
@@ -26,7 +26,6 @@ export function getCategoryIcon(value: string): string {
   if (/huevo/i.test(value)) return "🥚";
   if (/seta|trufa|hongo/i.test(value)) return "🍄";
   if (/legumbre/i.test(value)) return "🫘";
-  if (/cereal|arroz/i.test(value)) return "🌾";
   if (/condimento|especia/i.test(value)) return "🧂";
   if (/conserva/i.test(value)) return "🥫";
   if (/dulce|reposter/i.test(value)) return "🍰";

@@ -3,7 +3,6 @@
     "Aceite",
     "Aceite y vino",
     "Aperitivos",
-    "Arroz",
     "Bebidas sin alcohol",
     "Bodega",
     "Café",
@@ -28,8 +27,7 @@
     "Pan y cereal",
     "Pescado",
     "Setas",
-    "Té e infusiones",
-    "Vermut"
+    "Té e infusiones"
   ],
   "preferredAliases": {
     "quesos y lacteos": "Lácteos y quesos",
@@ -51,7 +49,8 @@
     "Agua mineral natural": "Bebidas sin alcohol",
     "Aromáticas": "Condimentos",
     "Aromáticas y condimentos": "Condimentos",
-    "Arroz ecológico": "Arroz",
+    "Arroz": "Pan y cereal",
+    "Arroz ecológico": "Pan y cereal",
     "Aves y arroz": "Otros",
     "Azafrán": "Condimentos",
     "Bebidas": "Bebidas sin alcohol",
@@ -118,7 +117,8 @@
     "Trufa y setas": "Setas",
     "Turrones": "Dulces y repostería",
     "Varios": "Otros",
-    "Vermut y vinos de licor": "Vermut",
+    "Vermut": "Bodega",
+    "Vermut y vinos de licor": "Bodega",
     "Vino y conservas": "Bodega",
     "Vino y frutos secos": "Bodega",
     "Zumos": "Bebidas sin alcohol"
