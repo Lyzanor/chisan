@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-01",
+  "generatedAt": "2026-08-03",
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 11869,
-    "tagged": 1126
+    "rows": 11857,
+    "tagged": 1124
   },
   "provinces": {
     "andalucia/almeria": [
@@ -504,7 +504,6 @@
       "agro-freixedes-s-c-p-santa-margarida-i-els-monjos",
       "alkimia-wines-olesa-de-bonesvalls",
       "almirall-cava-sant-sadurni-d-anoia",
-      "alsina-cusco-pere-joan-santa-eulalia-de-roncana",
       "amat-montane-olerdola",
       "anima-essencies-sallent",
       "apicola-caballe-santa-coloma-de-cervello",
@@ -521,6 +520,7 @@
       "calcite-vilanova-i-la-geltru",
       "can-lleo-de-vilanoveta-sant-marti-sarroca",
       "can-tonico-milfulls-roca-del-valles",
+      "can-vila-gallecs-mollet-del-valles",
       "canals-nadal-el-pla-del-penedes",
       "cardona-carbo-jordi-castellvi-de-la-marca",
       "casa-noguera-1870-igualada",
@@ -556,8 +556,6 @@
       "fruita-familia-catasus-vilamos-subirats-can-rossell",
       "fruites-i-verdures-cal-campos-slu-olesa-de-montserrat",
       "fruites-i-verdures-vivami-sant-andreu-de-la-barca",
-      "gercasa-s-c-p-castellar-del-valles",
-      "ginesta-verges-joaquim-calella",
       "gotic-ferments-barcelona",
       "granja-fabre-s-l-centelles",
       "granja-guirigall-el-pla-del-penedes",
@@ -585,8 +583,8 @@
       "mel-dels-erms-sant-pere-de-vilamajor",
       "mel-morato-mel-mas-foradada-vic",
       "melis-essentia-igualada",
+      "mels-del-montnegre-tordera",
       "molist-sanz-raul-mollet-del-valles",
-      "montserrat-farre-solanes-castellar-del-valles",
       "morral-de-bellerin-eduard-santa-coloma-de-cervello",
       "mostatxo-gelida",
       "nassari-s-a-vilassar-de-dalt",

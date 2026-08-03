@@ -1,14 +1,11 @@
 # Barcelona · verificación — snapshot de mantenimiento
 
 ```text
-Estado de pasada: activa
+Estado de pasada: mantenimiento
 Base: b8654df7
 Método: G-CAT-1, G-CAT-2, G-GEO-1, G-TPL-1, G-WEB-1
-Lote activo: BCN-OLA1 · carril R1 (pendiente + sintéticas)
-Alcance: las 25 filas listadas abajo en «Lote BCN-OLA1». Reservadas de punta a punta
-  (identidad, purga/fusión, y solo en las supervivientes venta online y canal).
-  Si trabajas la ola 3 en Barcelona, EXCLUYE estos 25 slugs: 23 de ellos están
-  también en `venta-sin-resolver` y resolverlos ahí es trabajo tirado.
+Lote activo: — (BCN-OLA1 cerrado el 2026-08-03)
+Alcance: —
 Última actualización: 2026-08-03
 ```
 
@@ -2260,38 +2257,54 @@ decisiones cambiadas, `verify:data` y commit propio.
   de verificación» — deduplicar contra el CSV antes de usar.
 - Imágenes: ~250 candidatas inspeccionables pendientes de triaje manual.
 
-## Lote BCN-OLA1 — pendiente + sintéticas (activo, 2026-08-03)
+## Lote BCN-OLA1 — pendiente + sintéticas · **CERRADO 2026-08-03**
 
-Las 21 `pendiente` y 20 `sintéticas` que dejó la ampliación «flujo 2026»; 16 filas están en
-ambas colas, de ahí 25 únicas. Casi todas son personas físicas del registro DAR de venda de
-proximitat («Apellido1 Apellido2 Nombre»), sin marca ni presencia propia. Criterio de purga en
-`docs/EDITORIAL_POLICY.md` § Decision order: no basta no encontrar nada, hace falta la ausencia
-en la fuente exhaustiva que la listaría — y aquí esa fuente es el propio registro DAR.
+Las 21 `pendiente` y 20 `sintéticas` que dejó la ampliación «flujo 2026» (16 en ambas colas → 25 filas).
+**23 de las 25 resultaron ser productores reales** acreditados en el registro DAR de venda de proximitat:
+`sintéticas` mide «sin contacto», no «inventada». Resultado: `pendiente` 21 → **0**, `sintéticas` 20 → **4**.
 
-| slug | colas | contacto | categoría | decisión |
-|---|---|---|---|---|
-| `balsells-edo-david-barcelona` | pend+VO | **ninguno** | Aromáticas y condimentos | ⏳ |
-| `bruach-galian-maria-angeles-sant-boi-de-llobregat` | pend+VO | mail | Fruta y verdura | ⏳ |
-| `carolina-obiol-pino-castellfollit-del-boix` |  | **ninguno** | Miel | ⏳ |
-| `cerdan-ruiz-eduardo-barcelona-gracia` | pend+VO | **ninguno** | Fruta y verdura | ⏳ |
-| `claramunt-estruch-javier-sant-esteve-sesrovires` | pend+VO | tel, mail, maps | Fruta y verdura | ⏳ |
-| `colome-ala-cid-gloria-sabadell` | pend+VO | **ninguno** | Fruta y verdura | ⏳ |
-| `diego-aguilar-hidalgo-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
-| `esteve-grau-ganduxe-can-esteve-tonico-roca-del-valles` | pend+VO | tel, maps | Fruta y verdura | ⏳ |
-| `fiplana-s-a-barcelona-sarria-sant-gervasi` | pend+VO | **ninguno** | Frutos secos | ⏳ |
-| `fontcalda-corporate-sl-barcelona` | pend+VO | **ninguno** | Despensa artesanal | ⏳ |
-| `garcia-moll-modesto-barcelona-sant-andreu` | VO | **ninguno** | Bodega | ⏳ |
-| `jaime-pons-ametller-vilobi-del-penedes` | pend+VO | **ninguno** | Fruta y verdura | ⏳ |
-| `joan-manresa-agell-tordera` | pend+VO | **ninguno** | Legumbres y cereales | ⏳ |
-| `juana-tamarit-preixens-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
-| `la-blanca-del-montseny-scp-cardedeu` | pend+VO | **ninguno** | Carne | ⏳ |
-| `lamanida-sat-1488-cat-viladecans` |  | **ninguno** | Fruta y verdura | ⏳ |
-| `marieges-busquets-maria-rosa-sant-boi-de-llobregat` | pend+VO | tel | Fruta y verdura | ⏳ |
-| `modest-preixens-pinol-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
-| `molina-maria-alejandro-barcelona-sant-andreu` | pend+VO | **ninguno** | Miel | ⏳ |
-| `ous-de-can-reinal-torrelles-de-llobregat` | VO | **ninguno** | Huevos | ⏳ |
-| `prats-espar-joan-barcelona` | pend+VO | **ninguno** | Conservas | ⏳ |
-| `roige-vert-maria-montserrat-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
-| `ros-prat-eduard-sant-boi-de-llobregat` | pend+VO | tel, mail | Fruta y verdura | ⏳ |
-| `vallsmadella-cruells-maria-luisa-caldes-de-montbui` | pend+VO | **ninguno** | Conservas | ⏳ |
-| `violeta-zafra-pedrosa-terrassa` | pend+VO | **ninguno** | Aromáticas y condimentos | ⏳ |
+Método: cruce contra las dos publicaciones oficiales del registro — el dataset Socrata `xmyy-7xqi`
+(2.410 filas, solo quien consintió publicarse) y el PDF por comarcas (1.711 fichas). El match exige
+**apellidos + municipio**, no tokens sueltos: «maria», «de» y «can» producían falsos positivos.
+
+⚠ **Corrección al off-by-one del PDF**: la dirección de un productor va **encima de su propio código**,
+no antes del código siguiente. Validado contra Socrata: 578 aciertos / 27 fallos (95%) frente al 12%
+de la lectura anterior. Quien vuelva a este PDF debe usar esta regla.
+
+| slug | acreditación | decisión |
+|---|---|---|
+| `balsells-edo-david-barcelona` | VP/P/4416/2024 | `parcial` · cosechado tel, correo, dirección |
+| `bruach-galian-maria-angeles-sant-boi-de-llobregat` | VP/P/1494/2014 | `parcial` · cosechado tel, correo, dirección |
+| `carolina-obiol-pino-castellfollit-del-boix` | VP/P/1011/2013 | `parcial` · cosechado tel, correo, dirección |
+| `cerdan-ruiz-eduardo-barcelona-gracia` | VP/P/3894/2021 | `parcial` · cosechado tel, correo, dirección |
+| `claramunt-estruch-javier-sant-esteve-sesrovires` | VP/P/1083/2013 | `parcial` · cosechado tel, correo, dirección |
+| `colome-ala-cid-gloria-sabadell` | VP/P/1325/2013 | `parcial` · cosechado dirección |
+| `diego-aguilar-hidalgo-terrassa` | VP/P/0727/2013 | `parcial` · cosechado tel, dirección |
+| `esteve-grau-ganduxe-can-esteve-tonico-roca-del-valles` | VP/P/1611/2014 | `parcial` · cosechado tel, correo, dirección |
+| `fiplana-s-a-barcelona-sarria-sant-gervasi` | VP/P/3369/2019 | `parcial` · cosechado tel, correo, dirección |
+| `garcia-moll-modesto-barcelona-sant-andreu` | VP/P/1330/2014 | `parcial` · cosechado tel, correo, dirección |
+| `jaime-pons-ametller-vilobi-del-penedes` | VP/P/1430/2014 | `parcial` · cosechado tel, correo, dirección |
+| `joan-manresa-agell-tordera` | VP/P/1124/2013 | `parcial` · cosechado tel, correo, dirección |
+| `juana-tamarit-preixens-terrassa` | VP/P/0111/2013 | `parcial` · cosechado tel, correo, dirección |
+| `la-blanca-del-montseny-scp-cardedeu` | VP/P/0621/2013 | `parcial` · cosechado tel, correo, dirección |
+| `lamanida-sat-1488-cat-viladecans` | VP/AP/0194/2022 | `parcial` · cosechado tel, correo, dirección |
+| `marieges-busquets-maria-rosa-sant-boi-de-llobregat` | VP/P/1071/2013 | `parcial` · cosechado tel, dirección |
+| `modest-preixens-pinol-terrassa` | VP/P/0726/2013 | `parcial` · cosechado dirección |
+| `mels-del-montnegre-tordera` | VP/P/3132/2019 | **re-slug + municipio → Tordera**, `verificado`, VO=no (web propia leída en vivo: solo mercados físicos) |
+| `prats-espar-joan-barcelona` | VP/P/1875/2015 | `parcial` · cosechado tel, correo, dirección |
+| `roige-vert-maria-montserrat-terrassa` | VP/P/0174/2013 | `parcial` · cosechado dirección |
+| `ros-prat-eduard-sant-boi-de-llobregat` | VP/P/0684/2013 | `parcial` · cosechado tel, correo, dirección |
+| `vallsmadella-cruells-maria-luisa-caldes-de-montbui` | VP/P/1332/2014 | `parcial` · cosechado tel, correo, dirección |
+| `violeta-zafra-pedrosa-terrassa` | VP/P/1308/2013 | `parcial` · cosechado tel, correo, dirección |
+| `ous-de-can-reinal-torrelles-de-llobregat` | — (fuera del DAR) | `parcial` · granja real de huevos ecológicos (Consorci de Turisme + 3Cat) |
+| `fontcalda-corporate-sl-barcelona` | — (fuera del DAR) | **purge:not-producer** · inmobiliaria (objeto social: compraventa de inmuebles, NIF B42714295) |
+
+**Residual documentado:** 4 filas siguen en `sintéticas` porque el registro las publica sin teléfono
+ni correo (`colome-ala-cid-gloria-sabadell`, `modest-preixens-pinol-terrassa`,
+`roige-vert-maria-montserrat-terrassa`) o no tiene contacto público (`ous-de-can-reinal…`).
+Son reales y están sourced: ausencia de contacto es un final válido, no deuda.
+
+**Devuelto a la ola 3:** las 24 supervivientes quedan con `Venta online` sin resolver salvo
+Mels del Montnegre. La identidad ya está cerrada, así que quien lleve la ola 3 puede ir directo
+al canal de venta sin reabrir quién es cada fila.
+
