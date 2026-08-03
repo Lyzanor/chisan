@@ -1,5 +1,17 @@
 # Barcelona · verificación — snapshot de mantenimiento
 
+```text
+Estado de pasada: activa
+Base: b8654df7
+Método: G-CAT-1, G-CAT-2, G-GEO-1, G-TPL-1, G-WEB-1
+Lote activo: BCN-OLA1 · carril R1 (pendiente + sintéticas)
+Alcance: las 25 filas listadas abajo en «Lote BCN-OLA1». Reservadas de punta a punta
+  (identidad, purga/fusión, y solo en las supervivientes venta online y canal).
+  Si trabajas la ola 3 en Barcelona, EXCLUYE estos 25 slugs: 23 de ellos están
+  también en `venta-sin-resolver` y resolverlos ahí es trabajo tirado.
+Última actualización: 2026-08-03
+```
+
 Pasada profunda **cerrada el 2026-06-22** (lotes 1-368: toda la cola de `pendiente`, normalización
 de grafías y dedup). Detalle por lote en `git log --follow -p -- docs/verificacion/barcelona.md`.
 La verdad es el CSV; tras el cierre, la pasada de ampliación «flujo 2026» (julio, ledger en
@@ -2247,3 +2259,39 @@ decisiones cambiadas, `verify:data` y commit propio.
 - Candidatos DAR no integrados: movidos a `docs/candidates/barcelona.md` § «Herencia del ledger
   de verificación» — deduplicar contra el CSV antes de usar.
 - Imágenes: ~250 candidatas inspeccionables pendientes de triaje manual.
+
+## Lote BCN-OLA1 — pendiente + sintéticas (activo, 2026-08-03)
+
+Las 21 `pendiente` y 20 `sintéticas` que dejó la ampliación «flujo 2026»; 16 filas están en
+ambas colas, de ahí 25 únicas. Casi todas son personas físicas del registro DAR de venda de
+proximitat («Apellido1 Apellido2 Nombre»), sin marca ni presencia propia. Criterio de purga en
+`docs/EDITORIAL_POLICY.md` § Decision order: no basta no encontrar nada, hace falta la ausencia
+en la fuente exhaustiva que la listaría — y aquí esa fuente es el propio registro DAR.
+
+| slug | colas | contacto | categoría | decisión |
+|---|---|---|---|---|
+| `balsells-edo-david-barcelona` | pend+VO | **ninguno** | Aromáticas y condimentos | ⏳ |
+| `bruach-galian-maria-angeles-sant-boi-de-llobregat` | pend+VO | mail | Fruta y verdura | ⏳ |
+| `carolina-obiol-pino-castellfollit-del-boix` |  | **ninguno** | Miel | ⏳ |
+| `cerdan-ruiz-eduardo-barcelona-gracia` | pend+VO | **ninguno** | Fruta y verdura | ⏳ |
+| `claramunt-estruch-javier-sant-esteve-sesrovires` | pend+VO | tel, mail, maps | Fruta y verdura | ⏳ |
+| `colome-ala-cid-gloria-sabadell` | pend+VO | **ninguno** | Fruta y verdura | ⏳ |
+| `diego-aguilar-hidalgo-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
+| `esteve-grau-ganduxe-can-esteve-tonico-roca-del-valles` | pend+VO | tel, maps | Fruta y verdura | ⏳ |
+| `fiplana-s-a-barcelona-sarria-sant-gervasi` | pend+VO | **ninguno** | Frutos secos | ⏳ |
+| `fontcalda-corporate-sl-barcelona` | pend+VO | **ninguno** | Despensa artesanal | ⏳ |
+| `garcia-moll-modesto-barcelona-sant-andreu` | VO | **ninguno** | Bodega | ⏳ |
+| `jaime-pons-ametller-vilobi-del-penedes` | pend+VO | **ninguno** | Fruta y verdura | ⏳ |
+| `joan-manresa-agell-tordera` | pend+VO | **ninguno** | Legumbres y cereales | ⏳ |
+| `juana-tamarit-preixens-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
+| `la-blanca-del-montseny-scp-cardedeu` | pend+VO | **ninguno** | Carne | ⏳ |
+| `lamanida-sat-1488-cat-viladecans` |  | **ninguno** | Fruta y verdura | ⏳ |
+| `marieges-busquets-maria-rosa-sant-boi-de-llobregat` | pend+VO | tel | Fruta y verdura | ⏳ |
+| `modest-preixens-pinol-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
+| `molina-maria-alejandro-barcelona-sant-andreu` | pend+VO | **ninguno** | Miel | ⏳ |
+| `ous-de-can-reinal-torrelles-de-llobregat` | VO | **ninguno** | Huevos | ⏳ |
+| `prats-espar-joan-barcelona` | pend+VO | **ninguno** | Conservas | ⏳ |
+| `roige-vert-maria-montserrat-terrassa` | pend+VO | **ninguno** | Aceite | ⏳ |
+| `ros-prat-eduard-sant-boi-de-llobregat` | pend+VO | tel, mail | Fruta y verdura | ⏳ |
+| `vallsmadella-cruells-maria-luisa-caldes-de-montbui` | pend+VO | **ninguno** | Conservas | ⏳ |
+| `violeta-zafra-pedrosa-terrassa` | pend+VO | **ninguno** | Aromáticas y condimentos | ⏳ |
