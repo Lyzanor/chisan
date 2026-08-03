@@ -49,10 +49,16 @@ export type ProvinceGroup = {
 export type ProvinceCountry = {
   slug: string;
   label: string;
+  // What the two levels are called locally. A prefecture is not a province and a
+  // region is not a comunidad, so the wording travels with the country instead of
+  // being hardcoded in the pages.
+  unit: string;
+  groupUnit: string;
   groups: ProvinceGroup[];
 };
 
 type ProvinceRegistryEntry = ProvinceOption & {
+  countrySlug: string;
   communitySlug: string;
 };
 
@@ -297,17 +303,33 @@ const JAPAN_GROUPS = [
   },
 ] as const satisfies readonly ProvinceGroup[];
 
+// The country slug is the ISO 3166-1 alpha-2 code and is used verbatim in both
+// places it appears: the `/es` and `/jp` routes and the first folder of every
+// data path (`data/csv/es/catalunya/barcelona.csv`), so there is no URL-to-disk
+// mapping to keep in sync.
 const PROVINCE_COUNTRIES = [
-  { slug: "espana", label: "España", groups: SPAIN_GROUPS },
-  { slug: "japon", label: "Japón", groups: JAPAN_GROUPS },
+  {
+    slug: "es",
+    label: "España",
+    unit: "provincias",
+    groupUnit: "comunidades",
+    groups: SPAIN_GROUPS,
+  },
+  {
+    slug: "jp",
+    label: "Japón",
+    unit: "prefecturas",
+    groupUnit: "regiones",
+    groups: JAPAN_GROUPS,
+  },
 ] as const;
 
 const PROVINCE_REGISTRY: Map<string, ProvinceRegistryEntry> = new Map(
-  PROVINCE_COUNTRIES.flatMap(({ groups }) =>
-    groups.flatMap((group) =>
+  PROVINCE_COUNTRIES.flatMap((country) =>
+    country.groups.flatMap((group) =>
       group.provinces.map((province) => [
         province.slug,
-        { ...province, communitySlug: group.slug },
+        { ...province, countrySlug: country.slug, communitySlug: group.slug },
       ]),
     ),
   ),
@@ -339,6 +361,7 @@ function resolveProvinceCsvPath(province: string): string {
   return path.resolve(
     process.cwd(),
     CSV_DATA_DIR,
+    registryEntry.countrySlug,
     registryEntry.communitySlug,
     `${normalizedProvince}.csv`,
   );
@@ -348,6 +371,19 @@ export function getProvinceLabel(province: string): string {
   return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.label ?? "";
 }
 
+export function getProvinceCountrySlug(province: string): string {
+  return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.countrySlug ?? "";
+}
+
+export function findProvinceCountry(country: string): ProvinceCountry | null {
+  const normalized = cleanCell(country).toLowerCase();
+  return listProvinceCountries().find((entry) => entry.slug === normalized) ?? null;
+}
+
+export function listCountrySlugs(): string[] {
+  return PROVINCE_COUNTRIES.map(({ slug }) => slug);
+}
+
 export function listProvinces(): ProvinceOption[] {
   return PROVINCE_COUNTRIES.flatMap(({ groups }) =>
     groups.flatMap(({ provinces }) => provinces.map(({ slug, label }) => ({ slug, label }))),
@@ -355,9 +391,11 @@ export function listProvinces(): ProvinceOption[] {
 }
 
 export function listProvinceCountries(): ProvinceCountry[] {
-  return PROVINCE_COUNTRIES.map(({ slug, label, groups }) => ({
+  return PROVINCE_COUNTRIES.map(({ slug, label, unit, groupUnit, groups }) => ({
     slug,
     label,
+    unit,
+    groupUnit,
     groups: groups.map(({ slug: groupSlug, label: groupLabel, provinces }) => ({
       slug: groupSlug,
       label: groupLabel,

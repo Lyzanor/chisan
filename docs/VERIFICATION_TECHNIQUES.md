@@ -1,6 +1,6 @@
 # Técnicas de verificación de catálogos provinciales
 
-Manual operativo para revisar `data/csv/[comunidad]/[provincia].csv`. `AGENTS.md`,
+Manual operativo para revisar `data/csv/[pais]/[comunidad]/[provincia].csv`. `AGENTS.md`,
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`
 contienen los contratos; aquí se define cómo investigar con eficiencia.
 
@@ -81,8 +81,8 @@ técnicas son heurísticas que el agente puede adaptar al caso.
    npx pnpm check:evidence
    npx pnpm check:evidence:changed   # warning-only: ¿alguna decisión sin evidencia?
    git diff --check
-   git diff -- data/csv/[comunidad]/[provincia].csv
-   git diff -- data/evidence/[comunidad]/[provincia].jsonl
+   git diff -- data/csv/[pais]/[comunidad]/[provincia].csv
+   git diff -- data/evidence/[pais]/[comunidad]/[provincia].jsonl
    ```
 
    Al cerrar trabajo de datos, ejecuta `npx pnpm verify:data`.
@@ -253,10 +253,10 @@ de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálo
 
 ## Documento provincial opcional
 
-Crea `docs/verificacion/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Durante
+Crea `docs/verificacion/[pais]/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Durante
 una pasada es un documento de trabajo: snapshot, worklist, plan de lotes, fuentes locales y
 excepciones. No copies este manual ni conviertas el ledger en otra base de datos. Las pistas no
-aceptadas siguen en `docs/candidates/[provincia].md`.
+aceptadas siguen en `docs/candidates/[pais]/[provincia].md`.
 
 ### Rotación al cerrar la pasada
 

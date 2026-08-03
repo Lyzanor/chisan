@@ -933,7 +933,8 @@ def process_candidate(
 
 
 def list_csv_paths(root: Path) -> list[Path]:
-    return sorted((root / "data" / "csv").glob("*/*.csv"))
+    # data/csv/<pais>/<comunidad>/<provincia>.csv
+    return sorted((root / "data" / "csv").glob("*/*/*.csv"))
 
 
 def find_csv_path(root: Path, province: str | None, csv_path: str | None) -> Path:
@@ -1044,7 +1045,14 @@ def main() -> int:
     except ValueError as exc:
         parser.error(str(exc))
 
-    asset_province = args.asset_provincia or csv_path.stem
+    # Default to the canonical asset folder, which mirrors the CSV path
+    # (`data/csv/jp/kansai/kyoto.csv` -> `/productores/jp/kansai/kyoto/`). Using
+    # the bare stem used to drop assets at the top level, outside the folder
+    # `check:images` expects.
+    default_asset_province = (
+        csv_path.relative_to(root / "data" / "csv").with_suffix("").as_posix()
+    )
+    asset_province = args.asset_provincia or default_asset_province
     output_dir = root / "public" / "productores" / asset_province
     fieldnames, rows = read_csv(csv_path)
     wanted_slugs = set(args.slug)

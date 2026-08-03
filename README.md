@@ -9,20 +9,21 @@ docs canónicos). `CLAUDE.md` y `GEMINI.md` solo redirigen allí.
 
 ## Mecanismo core
 
-1. `/` solicita elegir provincia.
-2. `/?provincia=[provincia]` = mapa y visualizador de productores.
-3. El mapa pinta productores con `lat/lon`.
-4. El panel lateral permite seleccionar productores y abrir `/p/[slug]?provincia=[provincia]`.
-5. `/p/[slug]?provincia=[provincia]` muestra esa fila completa (columna + valor).
+1. `/` solicita elegir país.
+2. `/[pais]` (`/es`, `/jp`) solicita elegir provincia o prefectura.
+3. `/?provincia=[provincia]` = mapa y visualizador de productores.
+4. El mapa pinta productores con `lat/lon`.
+5. El panel lateral permite seleccionar productores y abrir `/p/[slug]?provincia=[provincia]`.
+6. `/p/[slug]?provincia=[provincia]` muestra esa fila completa (columna + valor).
 
 No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
 Componentes y diseño runtime: `docs/ARCHITECTURE.md`.
 
 ## Datos
 
-- `data/csv/[comunidad]/[provincia].csv`: fuente de verdad de productores (contrato: `docs/CSV_CONTRACT.md`).
-- `data/evidence/[comunidad]/[provincia].jsonl`: procedencia de decisiones editoriales; la app no la lee.
-- `public/productores/[comunidad]/[provincia]/`: imágenes locales de productores.
+- `data/csv/[pais]/[comunidad]/[provincia].csv`: fuente de verdad de productores (contrato: `docs/CSV_CONTRACT.md`).
+- `data/evidence/[pais]/[comunidad]/[provincia].jsonl`: procedencia de decisiones editoriales; la app no la lee.
+- `public/productores/[pais]/[comunidad]/[provincia]/`: imágenes locales de productores.
 
 ## Uso
 

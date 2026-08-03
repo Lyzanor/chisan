@@ -12,7 +12,7 @@ públicas, imágenes ajenas ni el primer resultado por puntuación.
 ## Formato y composición
 
 - Activo final preferido: **1600x1200 WebP** (4:3 horizontal), calidad `>= 88`,
-  en `/productores/<comunidad>/<provincia>/<slug>.webp`.
+  en `/productores/<pais>/<comunidad>/<provincia>/<slug>.webp`.
 - Fondo plano `#F3F0E8`; logo centrado con alrededor de 10% de margen por lado.
   El lado más largo del logo debería quedar en torno a 960 px o menos.
 - Mantén visible el fondo alrededor del logo. No estires el logo para rellenar
@@ -59,7 +59,7 @@ equivocada no se distingue de una correcta sin volver a mirarla.
 ## Naming y tooling
 
 - El nombre del archivo debe coincidir con el `slug` del CSV y el path debe
-  reflejar la provincia: `/productores/<comunidad>/<provincia>/<slug>.webp`. Un
+  reflejar la provincia: `/productores/<pais>/<comunidad>/<provincia>/<slug>.webp`. Un
   activo por productor; no guardes variantes ni originales de trabajo en
   `public/`. Si el destino canónico no coincide con el CSV stem, pasa
   `--asset-provincia <comunidad>/<provincia>`.

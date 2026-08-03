@@ -56,9 +56,15 @@ function createFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "km0-evidence-"));
   const csvRoot = path.join(root, "csv");
   const evidenceRoot = path.join(root, "evidence");
-  const csvPath = path.join(csvRoot, "test-community", "test-province.csv");
+  const csvPath = path.join(
+    csvRoot,
+    "test-country",
+    "test-community",
+    "test-province.csv",
+  );
   const ledgerPath = path.join(
     evidenceRoot,
+    "test-country",
     "test-community",
     "test-province.jsonl",
   );
@@ -114,7 +120,7 @@ function main() {
     writeLedger(fixture.ledgerPath, []);
     writeJson(path.join(fixture.evidenceRoot, "coverage.json"), {
       version: 1,
-      strictProvinces: ["test-community/test-province"],
+      strictProvinces: ["test-country/test-community/test-province"],
     });
     result = auditEvidence(fixture);
     assert.ok(

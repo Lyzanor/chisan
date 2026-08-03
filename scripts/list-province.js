@@ -6,7 +6,7 @@
 //
 // Usage:
 //   node scripts/list-province.js cuenca
-//   node scripts/list-province.js data/csv/castilla-la-mancha/cuenca.csv
+//   node scripts/list-province.js data/csv/es/castilla-la-mancha/cuenca.csv
 //   node scripts/list-province.js cuenca --categoria "Bodega"
 //   node scripts/list-province.js cuenca --pendientes
 
@@ -66,11 +66,15 @@ function resolveCsvPath(csvRoot, target) {
 
   const slug = normalize(target).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const matches = [];
-  for (const comunidad of fs.readdirSync(csvRoot)) {
-    const dir = path.join(csvRoot, comunidad);
-    if (!fs.statSync(dir).isDirectory()) continue;
-    for (const file of fs.readdirSync(dir)) {
-      if (file === `${slug}.csv`) matches.push(path.join(dir, file));
+  for (const pais of fs.readdirSync(csvRoot)) {
+    const countryDir = path.join(csvRoot, pais);
+    if (!fs.statSync(countryDir).isDirectory()) continue;
+    for (const comunidad of fs.readdirSync(countryDir)) {
+      const dir = path.join(countryDir, comunidad);
+      if (!fs.statSync(dir).isDirectory()) continue;
+      for (const file of fs.readdirSync(dir)) {
+        if (file === `${slug}.csv`) matches.push(path.join(dir, file));
+      }
     }
   }
   return matches.length === 1 ? matches[0] : matches.length > 1 ? matches : null;

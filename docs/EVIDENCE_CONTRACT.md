@@ -37,7 +37,7 @@ done.
 Evidence mirrors the CSV layout:
 
 ```text
-data/csv/catalunya/barcelona.csv
+data/csv/es/catalunya/barcelona.csv
 data/evidence/catalunya/barcelona.jsonl
 ```
 

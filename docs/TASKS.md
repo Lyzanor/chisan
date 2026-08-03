@@ -1,11 +1,11 @@
 # Common Tasks
 
 ## 1) Update data (manual CSV edit)
-1. Edit the target province CSV under `data/csv/[comunidad]/[provincia].csv`.
+1. Edit the target province CSV under `data/csv/[pais]/[comunidad]/[provincia].csv`.
 2. Add new producers with a correct unique `slug`; keep existing correct slugs stable, but fix materially wrong ones with evidence.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
 4. Set `verificacion` and `Venta online` following the decision model in `docs/EDITORIAL_POLICY.md` (allowed values and blocking rules in `docs/CSV_CONTRACT.md`); keep `no comprobado` until the sales channel is reviewed.
-5. Add or update the matching record in `data/evidence/[comunidad]/[provincia].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
+5. Add or update the matching record in `data/evidence/[pais]/[comunidad]/[provincia].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
 6. Run:
 ```bash
 npx pnpm verify:data
@@ -72,7 +72,7 @@ npx pnpm verify:ai
 
 ## 6) Agent handoff checklist
 1. Read `AGENTS.md` before changing code or data; it owns sources of truth, invariants, and workflow.
-2. Keep candidate notes in `docs/candidates/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
+2. Keep candidate notes in `docs/candidates/[pais]/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
 3. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
 4. Run the matching gate:
 ```bash

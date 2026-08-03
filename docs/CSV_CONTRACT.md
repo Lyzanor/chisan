@@ -1,14 +1,17 @@
 # CSV Contract
 
 ## Source of truth
-- Province files: `data/csv/[comunidad]/[provincia].csv`
-- Barcelona file: `data/csv/catalunya/barcelona.csv`
-- Japan uses the same two levels with local names: the folder is one of the eight
+- Province files: `data/csv/[pais]/[comunidad]/[provincia].csv`
+- Barcelona file: `data/csv/es/catalunya/barcelona.csv`
+- `[pais]` is the ISO 3166-1 alpha-2 code, and the same token names the route:
+  `data/csv/es/**` is browsed at `/es`, `data/csv/jp/**` at `/jp`. There is no
+  URL-to-disk mapping to keep in sync.
+- Japan fills the middle level with its own names: the folder is one of the eight
   regions (`kansai`, `kanto`, …) and the file is a prefecture, so
-  `data/csv/kansai/kyoto.csv` is reached as `?provincia=kyoto`. `provincia` stays
-  the URL and catalog unit everywhere; nothing about the contract changes per
-  country. Prefecture and municipio names are rōmaji without macrons.
-- Structured provenance: `data/evidence/[comunidad]/[provincia].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
+  `data/csv/jp/kansai/kyoto.csv` is reached as `?provincia=kyoto`. `provincia`
+  stays the URL and catalog unit in both countries; nothing about the contract
+  changes per country. Prefecture and municipio names are rōmaji without macrons.
+- Structured provenance: `data/evidence/[pais]/[comunidad]/[provincia].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
 - Encoding: UTF-8 **without BOM** (a leading BOM is blocking; it usually means the file went through a spreadsheet export)
 - Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
 - Header row is required.
@@ -25,9 +28,9 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 - 0-based indices for column-aware scripts: 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
 - Validation and inspection entrypoints:
   - `pnpm check:csv`: blocking technical contract audit for every CSV
-  - `node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv`: blocking audit for one CSV
+  - `node scripts/audit-csv.js --mode=contract data/csv/[pais]/[comunidad]/[provincia].csv`: blocking audit for one CSV
   - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings for every CSV
-  - `node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv`: detailed warning audit for one CSV
+  - `node scripts/audit-csv.js --mode=quality data/csv/[pais]/[comunidad]/[provincia].csv`: detailed warning audit for one CSV
   - `pnpm list:categories`: print the current valid `categoria` set
 
 ## Reference data
@@ -57,7 +60,7 @@ All 20 canonical columns are physically present in every CSV. A column being pre
 - Other empty values are allowed by the contract but may appear in `check:csv:data-quality` or `check:csv:completeness`.
 
 ## How the app uses columns
-- Province catalog source: one CSV file per province in `data/csv/[comunidad]/`.
+- Province catalog source: one CSV file per province in `data/csv/[pais]/[comunidad]/`.
 - Filter by category: `categoria` (exact normalized match).
 - Result title: `nombre`.
 - Result metadata: `municipio`, `categoria`, `productos estrella`.
@@ -214,8 +217,8 @@ https://maps.app.goo.gl/...
 
 ## Producer image contract
 - `imagen` may be empty.
-- When present, it must be a root-relative path to an asset under `public/`, for example `/productores/catalunya/barcelona/ejemplo.webp`.
-- Canonical path: `/productores/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/madrid/madrid/`). `check:images` warns when a row's asset lives outside its province folder, so a legacy top-level path does not go unnoticed.
+- When present, it must be a root-relative path to an asset under `public/`, for example `/productores/es/catalunya/barcelona/ejemplo.webp`.
+- Canonical path: `/productores/<pais>/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/es/madrid/madrid/`). `check:images` warns when a row's asset lives outside its province folder, so a legacy top-level path does not go unnoticed.
 - The file must exist and pass `npx pnpm check:images`.
 - Visual composition, sourcing, naming conventions, and enrichment workflow live in `docs/IMAGES.md`.
 

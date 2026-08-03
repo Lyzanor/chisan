@@ -107,7 +107,7 @@ const MAP_ADDRESS_PLACEHOLDER_MARKERS = [
 
 function parseArgs(argv, resolvePath) {
   let mode = "quality";
-  let csvPath = "data/csv/catalunya/barcelona.csv";
+  let csvPath = "data/csv/es/catalunya/barcelona.csv";
   let summaryOnly = false;
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -349,9 +349,11 @@ async function loadCentroids() {
   return { main, overrides };
 }
 
+// `data/csv/<pais>/<comunidad>/<provincia>.csv`: the centroid overrides are keyed
+// by community, so the hint is the second segment, not the first.
 function inferCommunitySlug(csvPath) {
   const normalized = String(csvPath ?? "").replace(/\\/g, "/");
-  const match = /(?:^|\/)data\/csv\/([^/]+)\//.exec(normalized);
+  const match = /(?:^|\/)data\/csv\/[^/]+\/([^/]+)\//.exec(normalized);
   return match ? match[1] : null;
 }
 

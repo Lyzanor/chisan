@@ -14,7 +14,7 @@ extract_sample() {
 const fs = require("node:fs");
 const { parse } = require("csv-parse/sync");
 
-const raw = fs.readFileSync("data/csv/catalunya/barcelona.csv", "utf8");
+const raw = fs.readFileSync("data/csv/es/catalunya/barcelona.csv", "utf8");
 const rows = parse(raw, { columns: true, bom: true, skip_empty_lines: true });
 if (!rows.length) {
   console.error("CSV has no rows.");
@@ -69,8 +69,27 @@ wait_for_app
 HTML_HOME="$(curl -fsS "$BASE_URL/")"
 HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"
 
-if [[ "$HTML_HOME_CLEAN" != *"Elige provincia"* ]]; then
-  echo "Error: home page should ask for an initial province selection." >&2
+if [[ "$HTML_HOME_CLEAN" != *"Elige país"* ]]; then
+  echo "Error: home page should ask for an initial country selection." >&2
+  exit 1
+fi
+
+# Each country route names its own unit: a prefecture is not a province.
+HTML_ES="$(curl -fsS "$BASE_URL/es" | sed 's/<!-- -->//g')"
+if [[ "$HTML_ES" != *"Elige provincia"* || "$HTML_ES" != *"Barcelona"* ]]; then
+  echo "Error: /es should list Spanish provinces." >&2
+  exit 1
+fi
+
+HTML_JP="$(curl -fsS "$BASE_URL/jp" | sed 's/<!-- -->//g')"
+if [[ "$HTML_JP" != *"Elige prefectura"* || "$HTML_JP" != *"Kyoto"* ]]; then
+  echo "Error: /jp should list Japanese prefectures." >&2
+  exit 1
+fi
+
+UNKNOWN_COUNTRY_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/zz")"
+if [[ "$UNKNOWN_COUNTRY_STATUS" != "404" ]]; then
+  echo "Error: unknown country route should 404, got '$UNKNOWN_COUNTRY_STATUS'." >&2
   exit 1
 fi
 

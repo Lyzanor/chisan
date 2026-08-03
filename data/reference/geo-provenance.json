@@ -3,11 +3,11 @@
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 11929,
+    "rows": 11917,
     "tagged": 1160
   },
   "provinces": {
-    "andalucia/almeria": [
+    "es/andalucia/almeria": [
       "bio-nature-mediterraneo-vicar",
       "la-pastora-de-taberno",
       "licores-naturales-berja",
@@ -17,10 +17,10 @@
       "quesos-sierra-de-bedar",
       "roca-caprina-abla"
     ],
-    "andalucia/cadiz": [
+    "es/andalucia/cadiz": [
       "hermanillas-los-barrios"
     ],
-    "andalucia/cordoba": [
+    "es/andalucia/cordoba": [
       "aceites-rosan-montoro",
       "aceites-vizcantar-priego-de-cordoba",
       "agroiberica-de-pozoblanco",
@@ -52,7 +52,7 @@
       "xy-aceite-37-grados-norte-priego-de-cordoba",
       "zuheroliva-zuheros"
     ],
-    "andalucia/granada": [
+    "es/andalucia/granada": [
       "benafru-sca-benalua",
       "bodega-barranco-oscuro-cadiar",
       "bodega-dominio-buenavista-ugijar",
@@ -63,7 +63,7 @@
       "riofrio-caviar-ecologico-riofrio",
       "sca-nuestra-senora-de-la-soledad-huescar"
     ],
-    "andalucia/huelva": [
+    "es/andalucia/huelva": [
       "bodegas-acosta-bollullos-par-del-condado",
       "bodegas-del-socorro-rociana-del-condado",
       "bodegas-juncales-bollullos-par-del-condado",
@@ -82,7 +82,7 @@
       "quesos-reyes-cala",
       "quesos-sierra-del-romero-la-granada-de-riotinto"
     ],
-    "andalucia/jaen": [
+    "es/andalucia/jaen": [
       "aceite-diego-angulo-villanueva-de-la-reina",
       "aceites-el-carrascal-torres-de-albanchez",
       "almazara-rotalaya-quesada",
@@ -109,7 +109,7 @@
       "stevia-del-condado-santisteban-del-puerto",
       "the-green-gold-oh-hornos-de-segura"
     ],
-    "andalucia/malaga": [
+    "es/andalucia/malaga": [
       "attik-brewing-malaga",
       "bodega-vinos-conrad-ronda",
       "bodegas-gomara-malaga",
@@ -129,20 +129,20 @@
       "sedella-vinos-sedella",
       "tropicado-velez-malaga"
     ],
-    "andalucia/sevilla": [
+    "es/andalucia/sevilla": [
       "cabana-apicola-casta-bollullos-de-la-mitacion",
       "cerveza-debla-utrera",
       "islanova-isla-mayor",
       "picos-marchapan-utrera",
       "sca-hortofruticola-naranjales-del-guadalquivir-cantillana"
     ],
-    "aragon/huesca": [
+    "es/aragon/huesca": [
       "elarte-helados-naturales",
       "horno-de-lena-esplus",
       "quesos-el-benasques",
       "ternera-valle-de-aisa"
     ],
-    "aragon/teruel": [
+    "es/aragon/teruel": [
       "aceite-centenario-jaqbar-calaceite",
       "aceite-ecologico-adakun-alacon",
       "aceites-albalate-albalate-del-arzobispo",
@@ -168,7 +168,7 @@
       "queso-el-aljibe-rodenas",
       "quesos-las-valles-samper-de-calanda"
     ],
-    "aragon/zaragoza": [
+    "es/aragon/zaragoza": [
       "a-trufa-fresca-tabuenca",
       "abejas-de-candido-ejea-de-los-caballeros",
       "aceite-arbara-luceni",
@@ -238,13 +238,13 @@
       "trujal-la-veronica-tarazona",
       "venta-las-canadas-villarreal-de-huerva"
     ],
-    "asturias/asturias": [
+    "es/asturias/asturias": [
       "ecopitas-morcin",
       "granja-la-amistad-carreno",
       "kiwis-vega-de-aguin-pilona",
       "sidra-foncueva-sariego"
     ],
-    "canarias/las-palmas": [
+    "es/canarias/las-palmas": [
       "queseria-arquegran-aguimes",
       "queseria-artesanal-el-pagador-moya",
       "queseria-cortijo-de-las-hoyas-moya",
@@ -260,7 +260,7 @@
       "quesos-pedrin-firgas",
       "s-a-t-queso-flor-valsequillo-valsequillo"
     ],
-    "canarias/santa-cruz-de-tenerife": [
+    "es/canarias/santa-cruz-de-tenerife": [
       "bodega-300-lios-volcanic-grapes-los-realejos",
       "bodega-altos-de-trevejos-san-miguel-de-abona",
       "bodega-ambora-tegueste",
@@ -326,16 +326,16 @@
       "vinos-en-tandem-san-cristobal-de-la-laguna",
       "winery-burgmann-tenerife-tacoronte"
     ],
-    "cantabria/cantabria": [
+    "es/cantabria/cantabria": [
       "quesos-de-ruesga"
     ],
-    "castilla-la-mancha/albacete": [
+    "es/castilla-la-mancha/albacete": [
       "quesos-cerron-fuente-alamo",
       "quesos-el-convento-mahora",
       "quesos-julian-olivas-santa-ana",
       "quesos-vega-sotuelamos-el-bonillo"
     ],
-    "castilla-la-mancha/ciudad-real": [
+    "es/castilla-la-mancha/ciudad-real": [
       "aceites-moraga-judisan-fuente-el-fresno",
       "adiano-el-robledo",
       "agropecuaria-navaloshaces-s-l-corral-de-calatrava",
@@ -356,7 +356,7 @@
       "quesos-rocinante-s-l-malagon",
       "vitis-terrarum-arenales-de-san-gregorio"
     ],
-    "castilla-la-mancha/cuenca": [
+    "es/castilla-la-mancha/cuenca": [
       "aceites-mancha-oliva-tarancon",
       "bodegas-mont-reaga-monreal-del-llano",
       "bodegas-y-vinedos-illana-pozoamargo",
@@ -368,7 +368,7 @@
       "queserias-lopez-espada-fuente-de-pedro-naharro",
       "sat-herlo-talayuelas"
     ],
-    "castilla-la-mancha/guadalajara": [
+    "es/castilla-la-mancha/guadalajara": [
       "atrufarte",
       "azafran-valnara",
       "destileria-alcarria-flora",
@@ -377,7 +377,7 @@
       "queso-la-flor-de-brihuega",
       "quesos-seguntino-siguenza"
     ],
-    "castilla-la-mancha/toledo": [
+    "es/castilla-la-mancha/toledo": [
       "aceites-consuegra-consuegra",
       "aceites-de-mora-mora",
       "alalma-del-olivo-la-guardia",
@@ -398,7 +398,7 @@
       "quesos-reino-madridejos",
       "uva-de-vida-santa-olalla"
     ],
-    "castilla-y-leon/burgos": [
+    "es/castilla-y-leon/burgos": [
       "agrobauto-sdad-cooperativa-quintanilla-del-agua-y-tordueles",
       "aire-de-arlanza-cilleruelo-de-arriba",
       "alma-silense-santo-domingo-de-silos",
@@ -443,7 +443,7 @@
       "vinedos-de-altura-lerma",
       "xocolart-burgos"
     ],
-    "castilla-y-leon/leon": [
+    "es/castilla-y-leon/leon": [
       "bodegas-estefania-tilenus-ponferrada",
       "bodegas-pelaez-la-antigua",
       "bodegas-senorio-de-los-arcos-chozas-de-abajo",
@@ -458,16 +458,16 @@
       "miel-ribera-del-torio-matallana-de-torio",
       "morcillas-morvega-sabero"
     ],
-    "castilla-y-leon/palencia": [
+    "es/castilla-y-leon/palencia": [
       "basileo-vino-de-reyes-herrera-de-valdecanas",
       "piscifactoria-de-campoo-santibanez-de-la-pena"
     ],
-    "castilla-y-leon/salamanca": [
+    "es/castilla-y-leon/salamanca": [
       "bodega-dominio-de-la-sierra-san-esteban-de-la-sierra",
       "don-hornazo-salamanca-obrador-villarmayor",
       "ganas-de-pan-san-pedro-de-rozados"
     ],
-    "castilla-y-leon/segovia": [
+    "es/castilla-y-leon/segovia": [
       "alimentacion-sanz-vegas-pradena",
       "bendito-nanno-villacastin",
       "canamo-canniebas-nieva",
@@ -497,7 +497,7 @@
       "quevana-la-queseria-vegana-vallelado",
       "zamarras-cantimpalos"
     ],
-    "castilla-y-leon/soria": [
+    "es/castilla-y-leon/soria": [
       "apipinares-rodrigo-yubero-valdeavellano-de-tera",
       "carnicas-sierra-de-toranzo-olvega",
       "confiteria-gonzalez-almazan",
@@ -509,11 +509,11 @@
       "vino-taruguin-san-esteban-de-gormaz",
       "yemas-gil-almazan"
     ],
-    "castilla-y-leon/valladolid": [
+    "es/castilla-y-leon/valladolid": [
       "ibericos-hermanos-marcos-carpio",
       "melida-wines-melida"
     ],
-    "castilla-y-leon/zamora": [
+    "es/castilla-y-leon/zamora": [
       "alonso-santos-de-pedro-fariza",
       "bodega-almaroja-fermoselle",
       "bodega-cooperativa-virgen-de-la-bandera-fermoselle",
@@ -529,7 +529,7 @@
       "natur-silver-olmillos-de-castro",
       "productos-silvestres-sierra-de-la-culebra-s-l-villardeciervos"
     ],
-    "catalunya/barcelona": [
+    "es/catalunya/barcelona": [
       "10cireres-torrelles-de-llobregat",
       "agro-freixedes-s-c-p-santa-margarida-i-els-monjos",
       "alkimia-wines-olesa-de-bonesvalls",
@@ -639,7 +639,7 @@
       "vinagres-masia-still-sant-pere-de-riudebitlles",
       "vins-geniu-vilafranca-del-penedes"
     ],
-    "catalunya/girona": [
+    "es/catalunya/girona": [
       "antoni-izquierdo-gourmet-palamos",
       "anxoves-de-l-escala-sa-l-escala",
       "apicola-gironina-vilobi-d-onyar",
@@ -698,7 +698,7 @@
       "trull-amiel-i-baserba-vilafant",
       "trull-ylla-cabanes"
     ],
-    "catalunya/lleida": [
+    "es/catalunya/lleida": [
       "agro-caprina-morell-montgai",
       "antic-forn-de-pa-j-marti-llaras-lleida",
       "apicola-bonet-camarasa",
@@ -759,7 +759,7 @@
       "torrons-felix-agramunt",
       "tres-cadires-arbeca"
     ],
-    "catalunya/tarragona": [
+    "es/catalunya/tarragona": [
       "adrets-del-priorat-torroja-del-priorat",
       "agricola-corbera-debre-corbera-debre",
       "alicia-i-josep-viticultors-porrera",
@@ -855,7 +855,7 @@
       "viticultors-del-priorat-bellmunt-del-priorat",
       "viticultors-mas-den-gil-bellmunt-del-priorat"
     ],
-    "comunitat-valenciana/alicante": [
+    "es/comunitat-valenciana/alicante": [
       "alcaprone-queseria-alcoy",
       "better-pan-alicante",
       "bine-i-xama-beneixama",
@@ -878,13 +878,13 @@
       "turrones-hijos-de-manuel-pico-jijona",
       "vall-de-seta-agroalimentaria-quatretondeta"
     ],
-    "comunitat-valenciana/castellon": [
+    "es/comunitat-valenciana/castellon": [
       "cooperativa-agraria-depenyagolosa-atzeneta-del-maestrat",
       "demetrio-trufa-benassal",
       "iepa-cervesa-artesana-dels-ports-la-mata-de-morella",
       "mel-mas-de-l-argila-benlloc"
     ],
-    "comunitat-valenciana/valencia": [
+    "es/comunitat-valenciana/valencia": [
       "arroces-e-lozano-alginet",
       "bodega-daniel-belda-fontanars-dels-alforins",
       "bodegas-arraez-la-font-de-la-figuera",
@@ -918,7 +918,7 @@
       "turrones-apolonia-casinos",
       "turrones-chimo-casinos"
     ],
-    "extremadura/badajoz": [
+    "es/extremadura/badajoz": [
       "apicola-solven",
       "bodega-cooperativa-soledad-aceuchal",
       "bodegas-bujillo",
@@ -938,7 +938,7 @@
       "senorio-de-montanera",
       "villacruz"
     ],
-    "extremadura/caceres": [
+    "es/extremadura/caceres": [
       "acenorca-montehermoso",
       "bodegas-las-granadas-coronadas-herguijuela",
       "bodegas-martin-amaro-villasbuenas-de-gata",
@@ -963,10 +963,10 @@
       "regadhigos-almoharin",
       "sierra-miel-torrecilla-de-los-angeles"
     ],
-    "galicia/a-coruna": [
+    "es/galicia/a-coruna": [
       "granxa-o-cancelo-mino"
     ],
-    "galicia/lugo": [
+    "es/galicia/lugo": [
       "a-carqueixa-o-sabor-dos-ancares-cervantes",
       "adega-a-man-de-prado-sober",
       "adega-alvarin-losada-ciudaseis-monforte-de-lemos",
@@ -987,7 +987,7 @@
       "panaderia-pallares-sarria",
       "pilares-de-belesar-asolagados-o-savinao"
     ],
-    "galicia/ourense": [
+    "es/galicia/ourense": [
       "a-vilerma-leiro",
       "adega-casal-do-canteiro-castrelo-de-mino",
       "adega-cesar-garcia-ribadavia",
@@ -1039,10 +1039,10 @@
       "vinos-lara-verin",
       "xulia-bande-son-de-arrieiro-leiro"
     ],
-    "galicia/pontevedra": [
+    "es/galicia/pontevedra": [
       "lacteos-farelo-agolada"
     ],
-    "illes-balears/baleares": [
+    "es/illes-balears/baleares": [
       "agromart-balear-porreres",
       "alcaidus-alaior",
       "algendaret-nou-mao",
@@ -1118,11 +1118,11 @@
       "treurer-algaida",
       "vins-miquel-gelabert-manacor"
     ],
-    "la-rioja/la-rioja": [
+    "es/la-rioja/la-rioja": [
       "bolumburu-ormaechea-carlos-gimileo",
       "queseria-la-cilla-prejano"
     ],
-    "madrid/madrid": [
+    "es/madrid/madrid": [
       "aceite-oleollano-morata-de-tajuna",
       "amor-y-miel-bustarviejo",
       "bodegas-peral-colmenar-de-oreja",
@@ -1138,12 +1138,12 @@
       "te-traigo-la-huerta-fuentiduena-de-tajo",
       "te-y-vida"
     ],
-    "murcia/murcia": [
+    "es/murcia/murcia": [
       "anis-flor-de-murcia-cehegin",
       "bodega-pura-vina-cehegin",
       "embutidos-cehegin-cehegin"
     ],
-    "navarra/navarra": [
+    "es/navarra/navarra": [
       "aceite-la-maja-mendavia",
       "aceites-artajo-fontellas",
       "aroa-bodegas-yerri",
@@ -1186,10 +1186,10 @@
       "vina-palacios-olite",
       "vinedos-y-bodegas-alconde-lerin"
     ],
-    "pais-vasco/alava": [
+    "es/pais-vasco/alava": [
       "falken-brewing-vitoria-gasteiz"
     ],
-    "pais-vasco/guipuzcoa": [
+    "es/pais-vasco/guipuzcoa": [
       "aikur-erle-museoa-urretxu",
       "aitor-iztueta-barandiaran-lazkao",
       "akarregi-txiki-getaria",
@@ -1242,7 +1242,7 @@
       "yogures-goenaga-donostia-san-sebastian",
       "zudugarai-aia"
     ],
-    "pais-vasco/vizcaya": [
+    "es/pais-vasco/vizcaya": [
       "anchoas-royo-bermeo",
       "askibil-igorre",
       "axpe-sagardotegia-markina-xemein",

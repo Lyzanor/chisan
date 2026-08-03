@@ -6,8 +6,10 @@ Serve province CSV files as a map-first producer catalog with a simple row detai
 ## Runtime flow
 ```mermaid
 flowchart TD
-  A["data/csv/[comunidad]/[provincia].csv"] --> B["lib/csv-catalog.ts"]
-  B --> C["app/page.tsx (/): province/category selector"]
+  A["data/csv/[pais]/[comunidad]/[provincia].csv"] --> B["lib/csv-catalog.ts"]
+  B --> P["app/page.tsx (/): country selector"]
+  P --> Q["app/[country]/page.tsx (/es, /jp): province selector"]
+  Q --> C["app/page.tsx (?provincia=): province/category catalog"]
   C --> D["Producer viewer"]
   C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]

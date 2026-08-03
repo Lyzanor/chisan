@@ -207,7 +207,7 @@ function loadCoverage(evidenceRoot, errors) {
   for (const province of manifest.strictProvinces) {
     if (
       typeof province !== "string" ||
-      !/^[a-z0-9-]+\/[a-z0-9-]+$/.test(province)
+      !/^[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+$/.test(province)
     ) {
       errors.push(`${coveragePath}: invalid strict province '${province}'`);
       continue;
@@ -574,9 +574,9 @@ export function auditEvidence({
   for (const evidencePath of evidenceFiles) {
     const relative = path.relative(resolvedEvidenceRoot, evidencePath);
     const provinceKey = relative.slice(0, -".jsonl".length);
-    if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(provinceKey)) {
+    if (!/^[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+$/.test(provinceKey)) {
       errors.push(
-        `${evidencePath}: evidence path must be <community>/<province>.jsonl`,
+        `${evidencePath}: evidence path must be <country>/<community>/<province>.jsonl`,
       );
       continue;
     }

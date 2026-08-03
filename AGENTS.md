@@ -8,14 +8,14 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Validators enforce structure; they do not prove editorial truth.
 
 ## Project Shape
-- This app is a map viewer for province CSV files: `/` asks for a province; `/?provincia=[provincia]` lists producers; `/p/[slug]?provincia=[provincia]` renders one producer row.
+- This app is a map viewer for province CSV files: `/` asks for a country; `/[pais]` asks for a province or prefecture; `/?provincia=[provincia]` lists producers; `/p/[slug]?provincia=[provincia]` renders one producer row.
 - Runtime flow stays simple: `data/csv/** -> map/list -> row detail`.
-- Core runtime files: `app/page.tsx`, `app/p/[slug]/page.tsx`, `lib/csv-catalog.ts`, `lib/catalog-navigation.ts`, `components/map/`.
+- Core runtime files: `app/page.tsx`, `app/[country]/page.tsx`, `app/p/[slug]/page.tsx`, `lib/csv-catalog.ts`, `lib/catalog-navigation.ts`, `components/map/`.
 - Out of scope: database/ORM/migrations/seeds, producer-search API layers, complex service abstractions, hidden producer sources outside `data/csv/**`, and one-off province generators as source of truth.
 
 ## Sources Of Truth
-- `data/csv/[comunidad]/[provincia].csv`: current producer state, read by the app at request time.
-- `data/evidence/[comunidad]/[provincia].jsonl`: decision provenance only; never overrides the CSV and is not read by the app.
+- `data/csv/[pais]/[comunidad]/[provincia].csv`: current producer state, read by the app at request time.
+- `data/evidence/[pais]/[comunidad]/[provincia].jsonl`: decision provenance only; never overrides the CSV and is not read by the app.
 - `data/evals/**`: policy regression fixtures.
 - Provincial ledgers, candidate notes, and Git history: narrative context and work planning, not producer truth.
 
@@ -31,7 +31,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 
 ## Hard Invariants
 - Every province CSV has the canonical 20-column header and LF line endings. Never add, remove, or reorder columns in one province only; structural changes apply to every CSV under `data/csv/**` in one dedicated commit.
-- Keep URL params stable: `provincia`, `categoria`, `destacar`.
+- Keep URL params stable: `provincia`, `categoria`, `destacar`. Country routes are `/es` and `/jp` — the same tokens as the first folder of every data path, so one rename would move both.
 - Producer identity is `slug` within a province; row order must not affect detail URLs. Keep a correct slug stable; fix a materially wrong one following `docs/CSV_CONTRACT.md` § Producer identity (update CSV, images, docs/evidence, and leave a `merge` record when the old slug existed in Git).
 - Detail URLs use `/p/[slug]` and must include `provincia`, including Barcelona.
 - `verificacion` is required and must be `pendiente`, `parcial`, or `verificado`.
@@ -39,7 +39,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `Canal de venta` is optional, meaningful only when `Venta online=sí`, and follows `docs/CSV_CONTRACT.md`.
 - `lat`/`lon` more than 100 km from the `municipio` centroid is blocking; 15-100 km is a warning. For territorial homonyms, fix `data/reference/municipios-overrides.json`, not correct producer coordinates.
 - Evidence is optional and advisory, but preferred at decision time for adds, re-verifications, resolved online sales, purges, and merges.
-- Producer images live under `public/productores/[comunidad]/[provincia]/`; follow `docs/IMAGES.md` — inspect candidates first and apply `enrich:images` per slug.
+- Producer images live under `public/productores/[pais]/[comunidad]/[provincia]/`; follow `docs/IMAGES.md` — inspect candidates first and apply `enrich:images` per slug.
 
 ## Commands
 - Data/reference/evidence/image-only change: `npx pnpm verify:data`.
@@ -58,7 +58,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 3. Work by province when possible: CSV, matching evidence JSONL, candidate note, ledger, and image folder move together.
 4. De-duplicate before adding with `list:province` and targeted `rg`; verify every accepted producer through reliable public sources.
 5. Edit surgically: locate rows with `rg`, read small windows, use a CSV-aware approach for structured changes, and replace one JSONL line rather than reformatting ledgers.
-6. Keep candidate research in `docs/candidates/[provincia].md`. Move legacy root candidate notes there before editing unless another agent owns that province.
+6. Keep candidate research in `docs/candidates/[pais]/[provincia].md`. Move legacy root candidate notes there before editing unless another agent owns that province.
 7. When a candidate is accepted, rejected, or already present, update/prune the candidate note in the same change.
 8. Validate touched files while iterating, then run the matching final gate before finishing.
 

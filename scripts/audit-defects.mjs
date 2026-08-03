@@ -287,18 +287,28 @@ let provinceCache = null;
 function readProvinces({ all = false } = {}) {
   if (!provinceCache) {
     provinceCache = [];
-    for (const comunidad of fs.readdirSync(CSV_ROOT)) {
-      const comunidadDir = path.join(CSV_ROOT, comunidad);
-      if (!fs.statSync(comunidadDir).isDirectory()) continue;
-      for (const file of fs.readdirSync(comunidadDir)) {
-        if (!file.endsWith(".csv")) continue;
-        const provincia = file.replace(/\.csv$/, "");
-        const rows = parse(fs.readFileSync(path.join(comunidadDir, file), "utf8"), {
-          bom: true,
-          columns: true,
-          skip_empty_lines: true,
-        });
-        provinceCache.push({ comunidad, provincia, key: `${comunidad}/${provincia}`, rows });
+    for (const pais of fs.readdirSync(CSV_ROOT)) {
+      const paisDir = path.join(CSV_ROOT, pais);
+      if (!fs.statSync(paisDir).isDirectory()) continue;
+      for (const comunidad of fs.readdirSync(paisDir)) {
+        const comunidadDir = path.join(paisDir, comunidad);
+        if (!fs.statSync(comunidadDir).isDirectory()) continue;
+        for (const file of fs.readdirSync(comunidadDir)) {
+          if (!file.endsWith(".csv")) continue;
+          const provincia = file.replace(/\.csv$/, "");
+          const rows = parse(fs.readFileSync(path.join(comunidadDir, file), "utf8"), {
+            bom: true,
+            columns: true,
+            skip_empty_lines: true,
+          });
+          provinceCache.push({
+            pais,
+            comunidad,
+            provincia,
+            key: `${pais}/${comunidad}/${provincia}`,
+            rows,
+          });
+        }
       }
     }
   }
@@ -306,8 +316,8 @@ function readProvinces({ all = false } = {}) {
   return provinceCache.filter((p) => p.provincia === onlyProvincia);
 }
 
-function readEvidence(comunidad, provincia) {
-  const file = path.join(EVIDENCE_ROOT, comunidad, `${provincia}.jsonl`);
+function readEvidence(pais, comunidad, provincia) {
+  const file = path.join(EVIDENCE_ROOT, pais, comunidad, `${provincia}.jsonl`);
   const keep = new Set();
   if (!fs.existsSync(file)) return keep;
   for (const line of fs.readFileSync(file, "utf8").split("\n")) {
@@ -430,8 +440,8 @@ export const CHECKS = [
     kind: "senal",
     label: "filas sin registro `keep` en el ledger de evidencia",
     hint: "la evidencia es opcional y advisory; falta-keep NO es deuda que haya que backfillear",
-    run: ({ rows, comunidad, provincia }) => {
-      const keep = readEvidence(comunidad, provincia);
+    run: ({ rows, pais, comunidad, provincia }) => {
+      const keep = readEvidence(pais, comunidad, provincia);
       return rows.filter((r) => !keep.has(r.slug));
     },
   },

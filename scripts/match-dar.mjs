@@ -4,7 +4,7 @@
 // Cruza las filas de UN municipio de un CSV de provincia contra el dataset
 // DAR "venda de proximitat" de la Generalitat (Socrata `xmyy-7xqi`) por
 // teléfono / email / apellidos normalizados. Acelera la verificación profunda
-// de Barcelona (ver docs/verificacion/barcelona.md): confirma existencia
+// de Barcelona (ver docs/verificacion/es/barcelona.md): confirma existencia
 // (→ parcial), detecta dups registre↔marca y sugiere recats vía `productes`.
 //
 // El match por tel/email es municipi-agnóstico (caza productores fichados en
@@ -12,7 +12,7 @@
 //
 // Uso:
 //   node scripts/match-dar.mjs "<municipio>" [--csv <ruta>] [--all]
-//     --csv  CSV de provincia (def. data/csv/catalunya/barcelona.csv)
+//     --csv  CSV de provincia (def. data/csv/es/catalunya/barcelona.csv)
 //     --all  incluir todas las filas, no solo `pendiente`
 //
 // El DAR se cachea en /tmp/dar.csv (se descarga si falta).
@@ -101,7 +101,7 @@ async function loadDar() {
 // --- args ---
 const argv = process.argv.slice(2);
 let municipio = null,
-  csvPath = "data/csv/catalunya/barcelona.csv",
+  csvPath = "data/csv/es/catalunya/barcelona.csv",
   all = false;
 for (let i = 0; i < argv.length; i++) {
   if (argv[i] === "--csv") csvPath = argv[++i];

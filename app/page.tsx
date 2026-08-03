@@ -6,6 +6,7 @@ import { ProducersMap } from "@/components/map/producers-map";
 import { ProvinceSelector } from "@/components/province-selector";
 import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
 import {
+  getProvinceCountrySlug,
   getProvinceLabel,
   listCategories,
   listProvinceCountries,
@@ -36,52 +37,37 @@ function getFieldValue(fields: Record<string, string>, key: string): string {
   return (match?.[1] ?? "").trim();
 }
 
-function ProvinceStart({ countries }: { countries: ProvinceCountries }) {
+function CountryStart({ countries }: { countries: ProvinceCountries }) {
   return (
     <main className="province-start-page">
-      <section className="province-start-shell" aria-labelledby="province-start-title">
+      <section className="province-start-shell" aria-labelledby="country-start-title">
         <div className="province-start-head">
           <div>
             <p className="catalog-kicker">KM0</p>
-            <h1 id="province-start-title">Elige provincia o prefectura</h1>
+            <h1 id="country-start-title">Elige país</h1>
           </div>
           <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
             <ProvinceSelector countries={countries} currentProvince="" />
           </Suspense>
         </div>
 
-        {countries.map((country) => (
-          <section
-            key={country.slug}
-            className="province-country-section"
-            aria-labelledby={`province-country-${country.slug}`}
-          >
-            <h2 id={`province-country-${country.slug}`}>{country.label}</h2>
+        <div className="country-card-list">
+          {countries.map((country) => {
+            const places = country.groups.reduce(
+              (total, group) => total + group.provinces.length,
+              0,
+            );
 
-            <div className="province-group-list">
-              {country.groups.map((group) => (
-                <section
-                  key={group.slug}
-                  className="province-group-section"
-                  aria-labelledby={`province-group-${group.slug}`}
-                >
-                  <h3 id={`province-group-${group.slug}`}>{group.label}</h3>
-                  <div className="province-link-list">
-                    {group.provinces.map((province) => (
-                      <Link
-                        key={province.slug}
-                        href={buildCatalogHref({ province: province.slug })}
-                        className="province-link"
-                      >
-                        {province.label}
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-              ))}
-            </div>
-          </section>
-        ))}
+            return (
+              <Link key={country.slug} href={`/${country.slug}`} className="country-card">
+                <strong>{country.label}</strong>
+                <small>
+                  {places} {country.unit} en {country.groups.length} {country.groupUnit}
+                </small>
+              </Link>
+            );
+          })}
+        </div>
       </section>
     </main>
   );
@@ -95,7 +81,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const highlightedSlug = readQueryParam(queryParams, "destacar");
 
   if (!province) {
-    return <ProvinceStart countries={countries} />;
+    return <CountryStart countries={countries} />;
   }
 
   const [items, categories, allRows] = await Promise.all([
@@ -111,12 +97,26 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const mapPoints = toProducerMapPoints(items);
   const visibleItems = items.slice(0, 500);
   const provinceLabel = getProvinceLabel(province);
+  const countrySlug = getProvinceCountrySlug(province);
+  const country = countries.find((entry) => entry.slug === countrySlug);
 
   return (
     <main className="catalog-page catalog-page--simple">
       <header className="catalog-simple-header">
         <div>
-          <p className="catalog-kicker">KM0</p>
+          <p className="catalog-kicker">
+            <Link href="/" className="country-back-link">
+              KM0
+            </Link>
+            {country ? (
+              <>
+                {" · "}
+                <Link href={`/${country.slug}`} className="country-back-link">
+                  {country.label}
+                </Link>
+              </>
+            ) : null}
+          </p>
           <h1>Mapa de productores</h1>
           <p>
             {provinceLabel} · {items.length} productores encontrados · {mapPoints.length} en el mapa

@@ -163,11 +163,11 @@ const references = new Map();
 const csvPaths = walk(CSV_ROOT, (file) => file.endsWith(".csv"));
 
 for (const csvPath of csvPaths) {
-  // Assets mirror the CSV layout: /productores/<comunidad>/<provincia>/.
+  // Assets mirror the CSV layout: /productores/<pais>/<comunidad>/<provincia>/.
   const csvRelative = path.relative(CSV_ROOT, csvPath);
-  const comunidad = csvRelative.split(path.sep)[0];
+  const [pais, comunidad] = csvRelative.split(path.sep);
   const provincia = path.basename(csvRelative, ".csv");
-  const expectedDir = `/productores/${comunidad}/${provincia}/`;
+  const expectedDir = `/productores/${pais}/${comunidad}/${provincia}/`;
 
   for (const row of readCsvRows(csvPath)) {
     const imagePath = String(row.imagen || "").trim();

@@ -95,7 +95,7 @@ cerrado de slugs** dentro de esa provincia.
   dependencia forma parte del mismo lote.
 
 Para una pasada que vaya a ocupar más de una sesión, la cabecera de
-`docs/verificacion/[provincia].md` mantiene solo esta reserva:
+`docs/verificacion/[pais]/[provincia].md` mantiene solo esta reserva:
 
 ```text
 Estado de pasada: activa | pausada | mantenimiento
@@ -133,8 +133,8 @@ no se abre una segunda pasada.
 
    ```bash
    npx pnpm check:defects --provincia <provincia>
-   node scripts/audit-csv.js --mode=contract data/csv/<comunidad>/<provincia>.csv
-   node scripts/audit-csv.js --mode=quality data/csv/<comunidad>/<provincia>.csv
+   node scripts/audit-csv.js --mode=contract data/csv/<pais>/<comunidad>/<provincia>.csv
+   node scripts/audit-csv.js --mode=quality data/csv/<pais>/<comunidad>/<provincia>.csv
    ```
 
 3. Obtener slugs únicamente para el carril elegido:
@@ -648,7 +648,7 @@ ramas.
 ```bash
 npx pnpm verify:data
 npx pnpm check:defects --provincia <provincia>
-node scripts/audit-csv.js --mode=quality data/csv/<comunidad>/<provincia>.csv
+node scripts/audit-csv.js --mode=quality data/csv/<pais>/<comunidad>/<provincia>.csv
 git diff --check
 git diff --stat
 ```

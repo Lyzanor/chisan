@@ -67,8 +67,8 @@ For each selected province:
 1. Run:
 ```bash
 npx pnpm check:csv:completeness
-node scripts/audit-csv.js --mode=contract data/csv/[comunidad]/[provincia].csv
-node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
+node scripts/audit-csv.js --mode=contract data/csv/[pais]/[comunidad]/[provincia].csv
+node scripts/audit-csv.js --mode=quality data/csv/[pais]/[comunidad]/[provincia].csv
 ```
 
 2. Fix blocking contract errors first.
@@ -78,7 +78,7 @@ node scripts/audit-csv.js --mode=quality data/csv/[comunidad]/[provincia].csv
 6. Fill or correct `Google Maps`, `lat`, and `lon`.
 7. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
 8. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
-9. Add images only as local assets under `public/productores/[comunidad]/[provincia]/`.
+9. Add images only as local assets under `public/productores/[pais]/[comunidad]/[provincia]/`.
 10. Run:
 ```bash
 npx pnpm verify:data

@@ -87,18 +87,27 @@ async function main() {
   let totalRows = 0;
   let totalTagged = 0;
 
-  const communities = (await fs.readdir(CSV_ROOT, { withFileTypes: true }))
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name)
-    .sort();
+  const readDirs = async (dir) =>
+    (await fs.readdir(dir, { withFileTypes: true }))
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name)
+      .sort();
 
-  for (const community of communities) {
-    const files = (await fs.readdir(path.join(CSV_ROOT, community)))
+  const countries = await readDirs(CSV_ROOT);
+  const pairs = [];
+  for (const country of countries) {
+    for (const community of await readDirs(path.join(CSV_ROOT, country))) {
+      pairs.push({ country, community });
+    }
+  }
+
+  for (const { country, community } of pairs) {
+    const files = (await fs.readdir(path.join(CSV_ROOT, country, community)))
       .filter((f) => f.endsWith(".csv"))
       .sort();
     for (const file of files) {
       const province = file.replace(/\.csv$/, "");
-      const text = await fs.readFile(path.join(CSV_ROOT, community, file), "utf8");
+      const text = await fs.readFile(path.join(CSV_ROOT, country, community, file), "utf8");
       const lines = text.split("\n").filter((l) => l.length > 0);
       const header = parseCsvLine(lines[0]);
       const idx = {
@@ -124,7 +133,7 @@ async function main() {
         }
       }
       if (tagged.length) {
-        provinces[`${community}/${province}`] = tagged.sort();
+        provinces[`${country}/${community}/${province}`] = tagged.sort();
         totalTagged += tagged.length;
       }
     }

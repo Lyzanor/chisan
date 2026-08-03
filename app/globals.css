@@ -150,16 +150,53 @@ a {
   line-height: 1.05;
 }
 
-.province-country-section + .province-country-section {
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
+.country-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
-.province-country-section > h2 {
-  margin: 1rem 0 0;
+.country-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.country-card strong {
   font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.country-card small {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.country-card:hover {
+  background: var(--surface-muted);
+}
+
+.country-card:focus-visible,
+.country-back-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.country-back-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.country-back-link:hover {
+  text-decoration: underline;
 }
 
 .province-group-list {
@@ -629,7 +666,8 @@ td:first-child {
     flex-direction: column;
   }
 
-  .province-group-list {
+  .province-group-list,
+  .country-card-list {
     grid-template-columns: 1fr;
   }
 
