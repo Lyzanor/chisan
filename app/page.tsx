@@ -6,6 +6,7 @@ import { ProducersMap } from "@/components/map/producers-map";
 import { ProvinceSelector } from "@/components/province-selector";
 import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
 import {
+  CATALOG_UNIT,
   getProvinceCountrySlug,
   getProvinceLabel,
   listCategories,
@@ -18,7 +19,7 @@ import { getCategoryIcon } from "@/lib/get-category-icon";
 
 export const metadata: Metadata = {
   title: "Mapa de productores KM0",
-  description: "Mapa y visualizador de productores locales por provincia.",
+  description: `Mapa y visualizador de productores locales por ${CATALOG_UNIT}.`,
 };
 
 type HomePageProps = {
@@ -46,9 +47,6 @@ function CountryStart({ countries }: { countries: ProvinceCountries }) {
             <p className="catalog-kicker">KM0</p>
             <h1 id="country-start-title">Elige país</h1>
           </div>
-          <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
-            <ProvinceSelector countries={countries} currentProvince="" />
-          </Suspense>
         </div>
 
         <div className="country-card-list">
@@ -62,7 +60,7 @@ function CountryStart({ countries }: { countries: ProvinceCountries }) {
               <Link key={country.slug} href={`/${country.slug}`} className="country-card">
                 <strong>{country.label}</strong>
                 <small>
-                  {places} {country.unit} en {country.groups.length} {country.groupUnit}
+                  {places} {country.unitPlural} en {country.groups.length} {country.groupUnitPlural}
                 </small>
               </Link>
             );
@@ -123,9 +121,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           </p>
         </div>
 
-        <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
-          <ProvinceSelector countries={countries} currentProvince={province} />
-        </Suspense>
+        {country ? (
+          <Suspense fallback={<div className="province-selector--loading">{country.label}…</div>}>
+            <ProvinceSelector country={country} currentProvince={province} />
+          </Suspense>
+        ) : null}
       </header>
 
       <nav className="catalog-simple-categories" aria-label="Categorías">

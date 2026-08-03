@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Roboto } from "next/font/google";
 import "./globals.css";
 
+import { CATALOG_UNIT } from "@/lib/csv-catalog";
+
 const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
@@ -27,8 +29,7 @@ export const metadata: Metadata = {
     default: "KM0 Productores",
     template: "%s | KM0",
   },
-  description:
-    "Mapa de productores locales de kilómetro cero por provincia y categoría.",
+  description: `Mapa de productores locales de kilómetro cero por ${CATALOG_UNIT} y categoría.`,
 };
 
 export default function RootLayout({

@@ -10,7 +10,12 @@ import {
   buildProducerPathSegment,
   readQueryParam,
 } from "@/lib/catalog-navigation";
-import { findProducerBySlug, listCategories, normalizeProvinceSlug } from "@/lib/csv-catalog";
+import {
+  CATALOG_UNIT,
+  findProducerBySlug,
+  listCategories,
+  normalizeProvinceSlug,
+} from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
 
 type PageProps = {
@@ -36,8 +41,8 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
   if (!province) {
     return {
-      title: "Selecciona provincia",
-      description: "La ficha necesita una provincia para resolver el CSV correcto.",
+      title: `Selecciona ${CATALOG_UNIT}`,
+      description: `La ficha necesita una ${CATALOG_UNIT} para resolver el CSV correcto.`,
     };
   }
 

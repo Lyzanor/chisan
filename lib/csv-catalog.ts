@@ -46,14 +46,26 @@ export type ProvinceGroup = {
   provinces: ProvinceOption[];
 };
 
+// Neutral name for the catalog unit, for copy that is not inside a country yet.
+// Each country overrides it with its own word (`unit`): provincia in Spain,
+// prefectura in Japan. It is deliberately not "región": that is already the level
+// *above* in Japan — eight regions holding forty-seven prefectures — so reusing it
+// here would be wrong exactly where the Spain-centric wording was.
+// The `provincia` URL param keeps its name regardless; it is a pinned interface.
+export const CATALOG_UNIT = "zona";
+export const CATALOG_UNIT_PLURAL = "zonas";
+
 export type ProvinceCountry = {
   slug: string;
   label: string;
   // What the two levels are called locally. A prefecture is not a province and a
   // region is not a comunidad, so the wording travels with the country instead of
-  // being hardcoded in the pages.
+  // being hardcoded in the pages. Both numbers are stored because every caller
+  // needs one or the other, and deriving them by trimming an `s` reads worse than
+  // writing the two words down.
   unit: string;
-  groupUnit: string;
+  unitPlural: string;
+  groupUnitPlural: string;
   groups: ProvinceGroup[];
 };
 
@@ -311,15 +323,17 @@ const PROVINCE_COUNTRIES = [
   {
     slug: "es",
     label: "España",
-    unit: "provincias",
-    groupUnit: "comunidades",
+    unit: "provincia",
+    unitPlural: "provincias",
+    groupUnitPlural: "comunidades",
     groups: SPAIN_GROUPS,
   },
   {
     slug: "jp",
     label: "Japón",
-    unit: "prefecturas",
-    groupUnit: "regiones",
+    unit: "prefectura",
+    unitPlural: "prefecturas",
+    groupUnitPlural: "regiones",
     groups: JAPAN_GROUPS,
   },
 ] as const;
@@ -391,11 +405,12 @@ export function listProvinces(): ProvinceOption[] {
 }
 
 export function listProvinceCountries(): ProvinceCountry[] {
-  return PROVINCE_COUNTRIES.map(({ slug, label, unit, groupUnit, groups }) => ({
+  return PROVINCE_COUNTRIES.map(({ slug, label, unit, unitPlural, groupUnitPlural, groups }) => ({
     slug,
     label,
     unit,
-    groupUnit,
+    unitPlural,
+    groupUnitPlural,
     groups: groups.map(({ slug: groupSlug, label: groupLabel, provinces }) => ({
       slug: groupSlug,
       label: groupLabel,

@@ -19,15 +19,20 @@ type ProvinceGroup = {
 type ProvinceCountry = {
   slug: string;
   label: string;
+  unit: string;
   groups: ProvinceGroup[];
 };
 
 type ProvinceSelectorProps = {
-  countries: ProvinceCountry[];
+  country: ProvinceCountry;
   currentProvince: string;
 };
 
-export function ProvinceSelector({ countries, currentProvince }: ProvinceSelectorProps) {
+function capitalize(value: string): string {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+export function ProvinceSelector({ country, currentProvince }: ProvinceSelectorProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
@@ -51,7 +56,7 @@ export function ProvinceSelector({ countries, currentProvince }: ProvinceSelecto
   return (
     <div className="province-selector">
       <label htmlFor="province-select" className="province-selector-label">
-        Provincia o prefectura
+        {capitalize(country.unit)}
       </label>
       <select
         id="province-select"
@@ -61,20 +66,17 @@ export function ProvinceSelector({ countries, currentProvince }: ProvinceSelecto
         className="province-selector-select"
       >
         <option value="" disabled>
-          Selecciona provincia o prefectura
+          Selecciona {country.unit}
         </option>
-        {/* `optgroup` cannot nest, so the country prefixes each group label. */}
-        {countries.flatMap((country) =>
-          country.groups.map((group) => (
-            <optgroup key={group.slug} label={`${country.label} · ${group.label}`}>
-              {group.provinces.map((province) => (
-                <option key={province.slug} value={province.slug}>
-                  {province.label}
-                </option>
-              ))}
-            </optgroup>
-          )),
-        )}
+        {country.groups.map((group) => (
+          <optgroup key={group.slug} label={group.label}>
+            {group.provinces.map((province) => (
+              <option key={province.slug} value={province.slug}>
+                {province.label}
+              </option>
+            ))}
+          </optgroup>
+        ))}
       </select>
     </div>
   );

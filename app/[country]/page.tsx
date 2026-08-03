@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 import { ProvinceSelector } from "@/components/province-selector";
 import { buildCatalogHref } from "@/lib/catalog-navigation";
-import { findProvinceCountry, listCountrySlugs, listProvinceCountries } from "@/lib/csv-catalog";
+import { findProvinceCountry, listCountrySlugs } from "@/lib/csv-catalog";
 
 type CountryPageProps = {
   params: Promise<{ country: string }>;
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 
   return {
     title: `${country.label} · Productores KM0`,
-    description: `Elige ${country.unit.replace(/s$/, "")} de ${country.label} para ver sus productores locales.`,
+    description: `Elige ${country.unit} de ${country.label} para ver sus productores locales.`,
   };
 }
 
@@ -36,8 +36,6 @@ export default async function CountryPage({ params }: CountryPageProps) {
   if (!country) {
     notFound();
   }
-
-  const countries = listProvinceCountries();
 
   return (
     <main className="province-start-page">
@@ -50,10 +48,10 @@ export default async function CountryPage({ params }: CountryPageProps) {
               </Link>{" "}
               · {country.label}
             </p>
-            <h1 id="province-start-title">Elige {country.unit.replace(/s$/, "")}</h1>
+            <h1 id="province-start-title">Elige {country.unit}</h1>
           </div>
-          <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
-            <ProvinceSelector countries={countries} currentProvince="" />
+          <Suspense fallback={<div className="province-selector--loading">{country.label}…</div>}>
+            <ProvinceSelector country={country} currentProvince="" />
           </Suspense>
         </div>
 

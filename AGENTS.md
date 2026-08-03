@@ -32,6 +32,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 ## Hard Invariants
 - Every province CSV has the canonical 20-column header and LF line endings. Never add, remove, or reorder columns in one province only; structural changes apply to every CSV under `data/csv/**` in one dedicated commit.
 - Keep URL params stable: `provincia`, `categoria`, `destacar`. Country routes are `/es` and `/jp` — the same tokens as the first folder of every data path, so one rename would move both.
+- Vocabulary: the param and the code keep the name `provincia`, but user-facing copy does not. Inside a country use its own word (`unit`: provincia, prefectura); outside one use the neutral `CATALOG_UNIT` from `lib/csv-catalog.ts`. It is `zona` and not `región` because a region is already the level above in Japan.
 - Producer identity is `slug` within a province; row order must not affect detail URLs. Keep a correct slug stable; fix a materially wrong one following `docs/CSV_CONTRACT.md` § Producer identity (update CSV, images, docs/evidence, and leave a `merge` record when the old slug existed in Git).
 - Detail URLs use `/p/[slug]` and must include `provincia`, including Barcelona.
 - `verificacion` is required and must be `pendiente`, `parcial`, or `verificado`.
