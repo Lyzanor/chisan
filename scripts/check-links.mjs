@@ -112,7 +112,7 @@ function usage() {
 
 Opciones:
   --provincia <stem>    Provincia(s) a comprobar (ej. girona,cadiz).
-  --all                 Comprueba los 50 CSV (lento; ~8.500 hosts).
+  --all                 Comprueba todos los CSV (lento; ~8.500 hosts).
   --offline             No toca la red: informa desde el snapshot guardado.
   --timeout <ms>        Timeout por URL (defecto 10000).
   --concurrency <n>     Peticiones simultáneas (defecto 6).

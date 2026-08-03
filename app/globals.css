@@ -150,6 +150,18 @@ a {
   line-height: 1.05;
 }
 
+.province-country-section + .province-country-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.province-country-section > h2 {
+  margin: 1rem 0 0;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.15rem;
+}
+
 .province-group-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -161,7 +173,7 @@ a {
   min-width: 0;
 }
 
-.province-group-section h2 {
+.province-group-section h3 {
   margin: 0 0 0.45rem;
   color: var(--muted);
   font-size: 0.86rem;

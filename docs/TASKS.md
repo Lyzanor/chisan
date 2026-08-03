@@ -58,7 +58,7 @@ npx pnpm verify:ai
 
 ## 4) Add a CSV column to detail view
 1. Update the canonical header and contract in `docs/CSV_CONTRACT.md`.
-2. Apply the structural change to all 50 province CSVs in one dedicated commit; never add a column to one province only.
+2. Apply the structural change to every CSV under `data/csv/**` in one dedicated commit; never add a column to one province only.
 3. No extra code is needed for the detail table: it renders all fields.
 4. If the column should appear in list summary, update `app/page.tsx`.
 5. Run `npx pnpm verify:ai` because a structural change normally affects validators or application behavior.

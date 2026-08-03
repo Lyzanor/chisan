@@ -57,6 +57,20 @@
       "community": "navarra"
     }
   ],
+  "aya": [
+    {
+      "lat": 43.23655,
+      "lon": -2.14867,
+      "label": "Aya (Gipuzkoa)",
+      "community": "pais-vasco"
+    },
+    {
+      "lat": 31.99903,
+      "lon": 131.25294,
+      "label": "Aya (Miyazaki)",
+      "community": "kyushu-okinawa"
+    }
+  ],
   "bello": [
     {
       "lat": 43.13991,
@@ -135,6 +149,20 @@
       "lon": 1.27188,
       "label": "Cervera",
       "community": "catalunya"
+    }
+  ],
+  "chiba": [
+    {
+      "lat": 39.47138,
+      "lon": -0.71971,
+      "label": "Chiva",
+      "community": "comunitat-valenciana"
+    },
+    {
+      "lat": 35.60728,
+      "lon": 140.10636,
+      "label": "Chiba",
+      "community": "kanto"
     }
   ],
   "colmenar": [
@@ -225,6 +253,48 @@
       "community": "castilla-la-mancha"
     }
   ],
+  "heras": [
+    {
+      "lat": 43.38139,
+      "lon": -3.73167,
+      "label": "Heras (localidad de Medio Cudeyo)",
+      "community": "cantabria"
+    },
+    {
+      "lat": 40.79083,
+      "lon": -3.09889,
+      "label": "Heras de Ayuso",
+      "community": "castilla-la-mancha"
+    }
+  ],
+  "hita": [
+    {
+      "lat": 40.82472,
+      "lon": -3.04944,
+      "label": "Hita (Guadalajara)",
+      "community": "castilla-la-mancha"
+    },
+    {
+      "lat": 33.32131,
+      "lon": 130.94114,
+      "label": "Hita (Oita)",
+      "community": "kyushu-okinawa"
+    }
+  ],
+  "izu": [
+    {
+      "lat": 42.8225,
+      "lon": -1.75389,
+      "label": "Izu (concejo de Cendea de Olza)",
+      "community": "navarra"
+    },
+    {
+      "lat": 34.97653,
+      "lon": 138.94681,
+      "label": "Izu (Shizuoka)",
+      "community": "chubu"
+    }
+  ],
   "la fresneda": [
     {
       "lat": 43.29124,
@@ -309,6 +379,12 @@
       "lon": -8.16822,
       "label": "Miño",
       "community": "galicia"
+    },
+    {
+      "lat": 35.57892,
+      "lon": 136.9012,
+      "label": "Mino (Gifu)",
+      "community": "chubu"
     }
   ],
   "nava": [
@@ -333,6 +409,20 @@
       "lon": -3.49881,
       "label": "Ocaña",
       "community": "castilla-la-mancha"
+    }
+  ],
+  "oto": [
+    {
+      "lat": 42.885,
+      "lon": -2.8013,
+      "label": "Los Huetos",
+      "community": "pais-vasco"
+    },
+    {
+      "lat": 33.61222,
+      "lon": 130.85369,
+      "label": "Oto (Fukuoka)",
+      "community": "kyushu-okinawa"
     }
   ],
   "paderne": [

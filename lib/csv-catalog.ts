@@ -46,11 +46,17 @@ export type ProvinceGroup = {
   provinces: ProvinceOption[];
 };
 
+export type ProvinceCountry = {
+  slug: string;
+  label: string;
+  groups: ProvinceGroup[];
+};
+
 type ProvinceRegistryEntry = ProvinceOption & {
   communitySlug: string;
 };
 
-const PROVINCE_GROUPS = [
+const SPAIN_GROUPS = [
   {
     slug: "andalucia",
     label: "Andalucía",
@@ -191,12 +197,119 @@ const PROVINCE_GROUPS = [
   },
 ] as const satisfies readonly ProvinceGroup[];
 
+// Japan under the standard eight-region division (八地方区分). The catalog unit
+// stays `provincia`: a prefecture is the province, and a region is the CSV
+// folder, the same role a comunidad plays in Spain. Labels are rōmaji without
+// macrons so slug and label agree.
+const JAPAN_GROUPS = [
+  {
+    slug: "hokkaido",
+    label: "Hokkaido",
+    provinces: [{ slug: "hokkaido", label: "Hokkaido" }],
+  },
+  {
+    slug: "tohoku",
+    label: "Tohoku",
+    provinces: [
+      { slug: "aomori", label: "Aomori" },
+      { slug: "iwate", label: "Iwate" },
+      { slug: "miyagi", label: "Miyagi" },
+      { slug: "akita", label: "Akita" },
+      { slug: "yamagata", label: "Yamagata" },
+      { slug: "fukushima", label: "Fukushima" },
+    ],
+  },
+  {
+    slug: "kanto",
+    label: "Kanto",
+    provinces: [
+      { slug: "ibaraki", label: "Ibaraki" },
+      { slug: "tochigi", label: "Tochigi" },
+      { slug: "gunma", label: "Gunma" },
+      { slug: "saitama", label: "Saitama" },
+      { slug: "chiba", label: "Chiba" },
+      { slug: "tokyo", label: "Tokyo" },
+      { slug: "kanagawa", label: "Kanagawa" },
+    ],
+  },
+  {
+    slug: "chubu",
+    label: "Chubu",
+    provinces: [
+      { slug: "niigata", label: "Niigata" },
+      { slug: "toyama", label: "Toyama" },
+      { slug: "ishikawa", label: "Ishikawa" },
+      { slug: "fukui", label: "Fukui" },
+      { slug: "yamanashi", label: "Yamanashi" },
+      { slug: "nagano", label: "Nagano" },
+      { slug: "gifu", label: "Gifu" },
+      { slug: "shizuoka", label: "Shizuoka" },
+      { slug: "aichi", label: "Aichi" },
+    ],
+  },
+  {
+    slug: "kansai",
+    label: "Kansai",
+    provinces: [
+      { slug: "mie", label: "Mie" },
+      { slug: "shiga", label: "Shiga" },
+      { slug: "kyoto", label: "Kyoto" },
+      { slug: "osaka", label: "Osaka" },
+      { slug: "hyogo", label: "Hyogo" },
+      { slug: "nara", label: "Nara" },
+      { slug: "wakayama", label: "Wakayama" },
+    ],
+  },
+  {
+    slug: "chugoku",
+    label: "Chugoku",
+    provinces: [
+      { slug: "tottori", label: "Tottori" },
+      { slug: "shimane", label: "Shimane" },
+      { slug: "okayama", label: "Okayama" },
+      { slug: "hiroshima", label: "Hiroshima" },
+      { slug: "yamaguchi", label: "Yamaguchi" },
+    ],
+  },
+  {
+    slug: "shikoku",
+    label: "Shikoku",
+    provinces: [
+      { slug: "tokushima", label: "Tokushima" },
+      { slug: "kagawa", label: "Kagawa" },
+      { slug: "ehime", label: "Ehime" },
+      { slug: "kochi", label: "Kochi" },
+    ],
+  },
+  {
+    slug: "kyushu-okinawa",
+    label: "Kyushu y Okinawa",
+    provinces: [
+      { slug: "fukuoka", label: "Fukuoka" },
+      { slug: "saga", label: "Saga" },
+      { slug: "nagasaki", label: "Nagasaki" },
+      { slug: "kumamoto", label: "Kumamoto" },
+      { slug: "oita", label: "Oita" },
+      { slug: "miyazaki", label: "Miyazaki" },
+      { slug: "kagoshima", label: "Kagoshima" },
+      { slug: "okinawa", label: "Okinawa" },
+    ],
+  },
+] as const satisfies readonly ProvinceGroup[];
+
+const PROVINCE_COUNTRIES = [
+  { slug: "espana", label: "España", groups: SPAIN_GROUPS },
+  { slug: "japon", label: "Japón", groups: JAPAN_GROUPS },
+] as const;
+
 const PROVINCE_REGISTRY: Map<string, ProvinceRegistryEntry> = new Map(
-  PROVINCE_GROUPS.flatMap((group) =>
-    group.provinces.map((province) => [
-      province.slug,
-      { ...province, communitySlug: group.slug },
-    ]),
+  PROVINCE_COUNTRIES.flatMap(({ groups }) =>
+    groups.flatMap((group) =>
+      group.provinces.map((province) => [
+        province.slug,
+        { ...province, communitySlug: group.slug },
+      ]),
+    ),
   ),
 );
 
@@ -207,6 +320,8 @@ export function normalizeProvinceSlug(province: string): string {
     .toLowerCase();
   const provinceAliases: Record<string, string> = {
     logrono: "la-rioja",
+    kioto: "kyoto",
+    tokio: "tokyo",
   };
   const normalizedSlug = provinceAliases[slug] ?? slug;
 
@@ -234,16 +349,22 @@ export function getProvinceLabel(province: string): string {
 }
 
 export function listProvinces(): ProvinceOption[] {
-  return PROVINCE_GROUPS.flatMap(({ provinces }) => provinces.map(({ slug, label }) => ({ slug, label })));
+  return PROVINCE_COUNTRIES.flatMap(({ groups }) =>
+    groups.flatMap(({ provinces }) => provinces.map(({ slug, label }) => ({ slug, label }))),
+  );
 }
 
-export function listProvinceGroups(): ProvinceGroup[] {
-  return PROVINCE_GROUPS.map(({ slug, label, provinces }) => ({
+export function listProvinceCountries(): ProvinceCountry[] {
+  return PROVINCE_COUNTRIES.map(({ slug, label, groups }) => ({
     slug,
     label,
-    provinces: provinces.map(({ slug: provinceSlug, label: provinceLabel }) => ({
-      slug: provinceSlug,
-      label: provinceLabel,
+    groups: groups.map(({ slug: groupSlug, label: groupLabel, provinces }) => ({
+      slug: groupSlug,
+      label: groupLabel,
+      provinces: provinces.map(({ slug: provinceSlug, label: provinceLabel }) => ({
+        slug: provinceSlug,
+        label: provinceLabel,
+      })),
     })),
   }));
 }

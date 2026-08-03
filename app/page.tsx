@@ -8,7 +8,7 @@ import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catal
 import {
   getProvinceLabel,
   listCategories,
-  listProvinceGroups,
+  listProvinceCountries,
   normalizeProvinceSlug,
   searchProducers,
   toProducerMapPoints,
@@ -24,7 +24,7 @@ type HomePageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-type ProvinceGroups = ReturnType<typeof listProvinceGroups>;
+type ProvinceCountries = ReturnType<typeof listProvinceCountries>;
 
 export const dynamic = "force-dynamic";
 
@@ -36,42 +36,52 @@ function getFieldValue(fields: Record<string, string>, key: string): string {
   return (match?.[1] ?? "").trim();
 }
 
-function ProvinceStart({ groups }: { groups: ProvinceGroups }) {
+function ProvinceStart({ countries }: { countries: ProvinceCountries }) {
   return (
     <main className="province-start-page">
       <section className="province-start-shell" aria-labelledby="province-start-title">
         <div className="province-start-head">
           <div>
             <p className="catalog-kicker">KM0</p>
-            <h1 id="province-start-title">Elige provincia</h1>
+            <h1 id="province-start-title">Elige provincia o prefectura</h1>
           </div>
           <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
-            <ProvinceSelector groups={groups} currentProvince="" />
+            <ProvinceSelector countries={countries} currentProvince="" />
           </Suspense>
         </div>
 
-        <div className="province-group-list">
-          {groups.map((group) => (
-            <section
-              key={group.slug}
-              className="province-group-section"
-              aria-labelledby={`province-group-${group.slug}`}
-            >
-              <h2 id={`province-group-${group.slug}`}>{group.label}</h2>
-              <div className="province-link-list">
-                {group.provinces.map((province) => (
-                  <Link
-                    key={province.slug}
-                    href={buildCatalogHref({ province: province.slug })}
-                    className="province-link"
-                  >
-                    {province.label}
-                  </Link>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
+        {countries.map((country) => (
+          <section
+            key={country.slug}
+            className="province-country-section"
+            aria-labelledby={`province-country-${country.slug}`}
+          >
+            <h2 id={`province-country-${country.slug}`}>{country.label}</h2>
+
+            <div className="province-group-list">
+              {country.groups.map((group) => (
+                <section
+                  key={group.slug}
+                  className="province-group-section"
+                  aria-labelledby={`province-group-${group.slug}`}
+                >
+                  <h3 id={`province-group-${group.slug}`}>{group.label}</h3>
+                  <div className="province-link-list">
+                    {group.provinces.map((province) => (
+                      <Link
+                        key={province.slug}
+                        href={buildCatalogHref({ province: province.slug })}
+                        className="province-link"
+                      >
+                        {province.label}
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </section>
+        ))}
       </section>
     </main>
   );
@@ -79,13 +89,13 @@ function ProvinceStart({ groups }: { groups: ProvinceGroups }) {
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
-  const groups = listProvinceGroups();
+  const countries = listProvinceCountries();
   const province = normalizeProvinceSlug(readQueryParam(queryParams, "provincia"));
   const category = readQueryParam(queryParams, "categoria");
   const highlightedSlug = readQueryParam(queryParams, "destacar");
 
   if (!province) {
-    return <ProvinceStart groups={groups} />;
+    return <ProvinceStart countries={countries} />;
   }
 
   const [items, categories, allRows] = await Promise.all([
@@ -114,7 +124,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         </div>
 
         <Suspense fallback={<div className="province-selector--loading">Provincia…</div>}>
-          <ProvinceSelector groups={groups} currentProvince={province} />
+          <ProvinceSelector countries={countries} currentProvince={province} />
         </Suspense>
       </header>
 

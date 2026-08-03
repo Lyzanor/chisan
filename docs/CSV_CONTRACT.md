@@ -3,6 +3,11 @@
 ## Source of truth
 - Province files: `data/csv/[comunidad]/[provincia].csv`
 - Barcelona file: `data/csv/catalunya/barcelona.csv`
+- Japan uses the same two levels with local names: the folder is one of the eight
+  regions (`kansai`, `kanto`, …) and the file is a prefecture, so
+  `data/csv/kansai/kyoto.csv` is reached as `?provincia=kyoto`. `provincia` stays
+  the URL and catalog unit everywhere; nothing about the contract changes per
+  country. Prefecture and municipio names are rōmaji without macrons.
 - Structured provenance: `data/evidence/[comunidad]/[provincia].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
 - Encoding: UTF-8 **without BOM** (a leading BOM is blocking; it usually means the file went through a spreadsheet export)
 - Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
@@ -15,7 +20,7 @@ Every province CSV shares the exact same 20-column header, in this order:
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
 ```
 
-- All 50 files carry all 20 columns physically; "optional" means the *value* may be empty, never that the column may be missing.
+- Every file carries all 20 columns physically; "optional" means the *value* may be empty, never that the column may be missing.
 - Do not add, remove, or reorder columns in a single province. A structural change applies to every CSV at once, in a solo commit, with `verify:data` before and after.
 - 0-based indices for column-aware scripts: 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
 - Validation and inspection entrypoints:
@@ -26,12 +31,14 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
   - `pnpm list:categories`: print the current valid `categoria` set
 
 ## Reference data
-- `data/reference/municipios.json` is a Wikidata-sourced lookup of Spanish municipality centroids (~8.300 entries with multilingual aliases). The geography warning rule uses it; nothing else in the app depends on it.
-- Covered: every entity classified as a municipality of Spain in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
+- `data/reference/municipios.json` is a Wikidata-sourced lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, plus ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names). The geography warning rule uses it; nothing else in the app depends on it.
+- Covered: every entity classified as a municipality of Spain, and every municipality of Japan without a dissolution date, in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
+- Not covered on the Japanese side: Tokyo itself, which is a prefecture rather than a municipality. Rows there take the ward or city as `municipio` (`Setagaya`, `Hachioji`), which is also the right granularity.
+- Japanese municipalities are frequently the product of 2000s mergers and can span tens of kilometres, so a correct row may still land in the 15–100 km warning band — Miyama in Nantan is 21,6 km from its own city centroid. Read the warning before assuming the `municipio` is wrong.
 - Not covered: pedanías, núcleos and other sub-municipal localities (e.g. Alpatró inside La Vall de Gallinera, El Alquián inside Almería). Rows whose `municipio` is not in the lookup escape every geography check; the row is still subject to every other rule. The audit summary reports the count (`geo-check skipped: N rows`) so the gap stays visible — a rising number usually means a spelling the lookup does not carry (`Roa de Duero` for `Roa`, `Pamplona / Iruña` for `Pamplona`), which is worth fixing in the `municipio` column, not a genuine pedanía.
 - Compound names: if Wikidata uses the official compound form (e.g. `Aínsa-Sobrarbe`) and the CSV uses the short form (e.g. `Aínsa`), the lookup may miss. Prefer the official form in the `municipio` column when known.
-- `data/reference/municipios-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipios.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, community}` candidates; the audit picks the one whose `community` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another province (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia).
-- Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~30 seconds. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs.
+- `data/reference/municipios-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipios.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, community}` candidates; the audit picks the one whose `community` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another province (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia). Homonyms across countries live in the same layer and matter more, because the losing side measures its distance against another continent and fails the blocking rule rather than warning: `chiba` (Chiba in Kanto vs Chiva in Valencia), `hita`, `aya`, `mino` and `oto` are already resolved there.
+- Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~1 minute. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs. It **merges by default**: keys already committed keep their centroid and only new ones are added, because which of two homonyms wins a shared key is arbitrary and a plain rebuild silently moves municipios that existing rows are checked against (measured once: 149 keys moved, 17 dropped). `--refresh` takes the rebuild verbatim; review that diff municipio by municipio.
 
 ## Column value requirements
 

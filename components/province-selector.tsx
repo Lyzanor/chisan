@@ -16,12 +16,18 @@ type ProvinceGroup = {
   provinces: ProvinceOption[];
 };
 
-type ProvinceSelectorProps = {
+type ProvinceCountry = {
+  slug: string;
+  label: string;
   groups: ProvinceGroup[];
+};
+
+type ProvinceSelectorProps = {
+  countries: ProvinceCountry[];
   currentProvince: string;
 };
 
-export function ProvinceSelector({ groups, currentProvince }: ProvinceSelectorProps) {
+export function ProvinceSelector({ countries, currentProvince }: ProvinceSelectorProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
@@ -45,7 +51,7 @@ export function ProvinceSelector({ groups, currentProvince }: ProvinceSelectorPr
   return (
     <div className="province-selector">
       <label htmlFor="province-select" className="province-selector-label">
-        Provincia
+        Provincia o prefectura
       </label>
       <select
         id="province-select"
@@ -55,17 +61,20 @@ export function ProvinceSelector({ groups, currentProvince }: ProvinceSelectorPr
         className="province-selector-select"
       >
         <option value="" disabled>
-          Selecciona una provincia
+          Selecciona provincia o prefectura
         </option>
-        {groups.map((group) => (
-          <optgroup key={group.slug} label={group.label}>
-            {group.provinces.map((province) => (
-              <option key={province.slug} value={province.slug}>
-                {province.label}
-              </option>
-            ))}
-          </optgroup>
-        ))}
+        {/* `optgroup` cannot nest, so the country prefixes each group label. */}
+        {countries.flatMap((country) =>
+          country.groups.map((group) => (
+            <optgroup key={group.slug} label={`${country.label} · ${group.label}`}>
+              {group.provinces.map((province) => (
+                <option key={province.slug} value={province.slug}>
+                  {province.label}
+                </option>
+              ))}
+            </optgroup>
+          )),
+        )}
       </select>
     </div>
   );
