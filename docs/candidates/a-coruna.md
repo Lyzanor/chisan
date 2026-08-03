@@ -102,15 +102,14 @@
 
 ### Pistas para otras provincias (Tetilla ampara toda Galicia)
 
-> Del registro de Tetilla, elaboradores de fuera de A Coruña que **no** están en
-> el CSV de su provincia. Anotados sin abrir esas provincias (aviso (c) de la
-> worklist).
+> Del registro de Tetilla, elaboradores de fuera de A Coruña. Re-deduplicado el
+> 2026-08-03: **de las tres pistas originales solo queda viva la de Lugo**.
 
 - **Lugo** — *Queixos de Galicia, S.L.* (Palas de Rei · 607 505 046). ⚠ email de
   contacto `@garciabaquero.com` → probable **Grupo García Baquero**; confirmar
   antes de nada. (El resto de elaboradores lucenses ya están en `lugo.csv`:
   Crisanto, Daniberto, Leitigal, Prestes, Prado, Sarrianas.)
-- **Pontevedra** — *Cobideza, S.C.G.* (Agolada, Pol. Ind. P-6 · 986 580 473 ·
-  queixeria@cobideza.es). (Hoxe, Anzuxao y Farelo ya están en `pontevedra.csv`.)
-- **Ourense** — *Quesos de la Montaña de Entrimo* (Entrimo · 988 434 615 ·
-  queixosentrimo@gmail.com). (Quesos Feijoo ya está en `ourense.csv`.)
+- ~~Pontevedra — *Cobideza, S.C.G.* (Agolada)~~ → ya en CSV como
+  `dona-cobina-agolada` (Dona Cobiña es su marca).
+- ~~Ourense — *Quesos de la Montaña de Entrimo*~~ → ya en CSV como
+  `quesos-la-montana-de-entrimo`.

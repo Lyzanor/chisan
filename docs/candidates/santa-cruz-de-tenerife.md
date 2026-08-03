@@ -189,7 +189,13 @@
   (`verificado`, **`sí` ecommerce**). La Guancha (razón social Viña La Guancha,
   S.L.); tienda propia (Shopify).
 
-### Cortes siguientes — 53 bodegas restantes (datos ya capturados)
+### Cortes siguientes — 49 bodegas anotadas (datos ya capturados)
+
+> ⚠ **Recuento reconciliado el 2026-08-03.** El corte 1 estimó **53 restantes**
+> (78 netas − 25 escritas), pero abajo solo hay **49 fichas** (5 con web, ya
+> integradas + 44 sin web). Faltan por anotar **4 bodegas** de los registros de
+> las 5 DO insulares: al reabrir, releer las fuentes antes de dar la lista por
+> completa. Las 44 sin web siguen sin fila en el CSV (dedup rehecho el 2026-08-03).
 
 > **Con web propia (5)** — ✅ **integradas fase C, 2026-07-13**:
 > - *Hacienda de Acentejo* → `hacienda-de-acentejo-la-victoria-de-acentejo`
@@ -206,9 +212,9 @@
 > - *Tierras de Aponte* → `bodega-tierras-de-aponte-adeje` (`parcial`, VO=nc).
 >   Taucho (Adeje), DO Abona; web JS no legible → parcial.
 >
-> **Sin web propia en el registro (45)** — nombre · municipio · teléfono:
+> **Sin web propia en el registro (44)** — nombre · municipio · teléfono:
 >
-> - **Tacoronte-Acentejo (18):** Ambora (Tegueste, 922 638 044) · Cuevas de Lino
+> - **Tacoronte-Acentejo (19):** Ambora (Tegueste, 922 638 044) · Cuevas de Lino
 >   (Tacoronte, 922 631 305) · El Cercado (Tacoronte, 922 562 002) · Granilete
 >   (Tacoronte) · Guayonge (Tacoronte, 922 561 780) · José Antonio Rodríguez del
 >   Castillo (La Laguna) · José Miguel Robayna Betancort (La Laguna, 650 945 311) ·

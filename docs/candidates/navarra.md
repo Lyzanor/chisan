@@ -98,7 +98,13 @@
 - [x] **Aroa Bodegas** ‹→ aroa-bodegas-yerri (verificado, VO n/c; ecológica, Zurukoain/valle de Yerri)› — Bodega (ecológica). Zurukuain. · 948 921 867 ·
   <https://www.aroawines.com>.
 
-### Cortes siguientes — 25 restantes (datos ya capturados)
+### Cortes siguientes — 21 anotadas de las 25 restantes (datos ya capturados)
+
+> ⚠ **Recuento reconciliado el 2026-08-03.** El corte 1 dejó **25 restantes**,
+> pero abajo solo hay **21 fichas** (9 grupos/fuera + 6 integradas en fase C + 6
+> pendientes, una de ellas alias de otra). Faltan por anotar **4 bodegas** del PDF
+> de INTIA: al reabrir el corte 2, releer el listado antes de darlo por completo.
+> Los 6 pendientes de abajo siguen sin fila (dedup rehecho el 2026-08-03).
 
 > **Con web, diferidas por ser grupos grandes o de fuera (9)** — decidir por regla
 > dura antes de escribirlas: *Bodegas y Viñedos Artazu* (Artazu; web `artadi.com` →
@@ -114,9 +120,9 @@
 > *Hacienda y Viñedos Marqués del Atrio* (Mendavia) · *Bodegas Caudalia*
 > (**Nájera, La Rioja** → fuera de provincia, excluir).
 >
-> **Sin web en el registro (17)** — ✅ **6 integradas en fase C (2026-07-13, lote
-> 11), todas `verificado`** (la etiqueta «sin web» de INTIA era errónea: todas
-> tienen web propia al buscarlas):
+> **Sin web en el registro (12 anotadas)** — ✅ **6 integradas en fase C
+> (2026-07-13, lote 11), todas `verificado`** (la etiqueta «sin web» de INTIA era
+> errónea: todas tienen web propia al buscarlas):
 > - **Anton Agirre** (Ablitas) → `bodega-ubeta-anton-agirre-ablitas` (web
 >   ubetawines.com, garnacha eco).
 > - **Navarrsotillo** (Andosilla) → `bodegas-navarrsotillo-andosilla` (biodinámico

@@ -6,8 +6,12 @@ Diez filas del CSV de Zamora resultaron ser unidades productivas salmantinas y
 se dieron de baja con `purge:other-province`. Vienen de dos arrastres distintos:
 el listado común de la **D.O. Arribes**, que cruza Zamora y Salamanca, y el
 registro **ITACyL** de la I.G.P. Garbanzo de Fuentesaúco, cuya zona amparada
-también cruza las dos provincias. Ninguna está verificada como candidata: hay
-que comprobar municipio, actividad y venta antes de darlas de alta.
+también cruza las dos provincias.
+
+**Cinco ya tienen fila en `salamanca.csv`** (Arribes del Duero, Quinta de las
+Velas, Álvarez Legumbres, Legumbres Montes y Legumer Precocinados) y se han
+retirado de esta nota. Quedan estas cinco, sin verificar: comprobar municipio,
+actividad y venta antes de darlas de alta. Dedup rehecho el 2026-08-03.
 
 ### D.O. Arribes
 
@@ -19,24 +23,17 @@ que comprobar municipio, actividad y venta antes de darlas de alta.
   Abadengo y Bruñal de cepas de 60 a 100 años. Categoría **Bodega**.
   `bodegasriberadepelazas.com` sirve hoy una portada de dominio en venta y
   `bodegasriberadepelazascompra.com` no resuelve: confirmar si sigue activa.
-- [ ] **Bodega Arribes del Duero S. Coop.** — Masueco de la Ribera.
 - [ ] **Bodegas Las Gavias** — Pereña de la Ribera.
 - [ ] **Bodegas Viña Romana** — Villarino de los Aires.
-- [ ] **Quinta Las Velas** — Ahigal de los Aceiteros.
 
-Las cuatro últimas las localizó el consejo regulador (`doarribes.es`) durante la
-primera pasada de Zamora; conviene contrastarlas con fuente propia.
+Las Gavias y Viña Romana las localizó el consejo regulador (`doarribes.es`)
+durante la primera pasada de Zamora; conviene contrastarlas con fuente propia.
 
 ### I.G.P. Garbanzo de Fuentesaúco (registro ITACyL 2026)
 
-- [ ] **Álvarez Legumbres S.L.** — Gomecello. Categoría **Legumbres**.
 - [ ] **Hijo de Macario Marcos S.L.** — La Vellés. Categoría **Legumbres**.
-- [ ] **Legumbres Montes S.L.** — La Vellés. Categoría **Legumbres**.
-- [ ] **Legumer Precocinados S.L.** — Pajares de la Laguna. Categoría
-  **Legumbres**; tienda propia en `https://tienda.legumer.com/`, que es la
-  fuente que fijó su municipio.
 
 Aviso reutilizable: estar inscrito en una I.G.P. o D.O. cuya zona amparada
-incluye Fuentesaúco o Fermoselle **no** sitúa la empresa en Zamora. En estos
-diez casos el municipio del CSV era el de la denominación, no el de la unidad
-productiva.
+incluye Fuentesaúco o Fermoselle **no** sitúa la empresa en Zamora. En los diez
+casos de este traspaso el municipio del CSV era el de la denominación, no el de
+la unidad productiva.

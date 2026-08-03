@@ -122,9 +122,10 @@
   Esteban Martín, Hacienda Molleda, Bodem, Libre y Salvaje, Dominio de Longaz
   (Cariñena) · Langa, San Alejandro, San Gregorio, Virgen de la Sierra, Ateca,
   Augusta Bílbilis, Raíces Ibéricas, Colás Viticultores (Calatayud).
-- ⚠ **Cariñena publica solo 17 de sus 33 bodegas inscritas** → queda un corte 2
-  con las ~16 que no tienen ficha en la web del consejo. Vía probable: el
-  organismo de certificación (mismo patrón que INTIA en Navarra).
+- **Cariñena publica solo 17 de sus 33 bodegas inscritas.** ✅ El corte 2 con las
+  ~16 restantes quedó **cerrado en la fase C** (sección de abajo): las que no
+  tienen ficha en la web del consejo son casi todas registros no-consumidor
+  (viñedos, almacenistas, embotelladoras) = granel/B2B, no altas.
 - ⚠ **Bodegas Ateca** (Calatayud) y **Bodegas Morca** (Borja) son del **Gil
   Family Estates** (`gilfamily.es`) — ambas ya en CSV; aplicar el mismo criterio
   de tamaño si se revisan.
