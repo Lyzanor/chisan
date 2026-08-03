@@ -12,7 +12,6 @@ import {
 } from "@/lib/catalog-navigation";
 import { findProducerBySlug, listCategories, normalizeProvinceSlug } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
-import { ExternalLink } from "@/components/external-link";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -130,26 +129,26 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
             </p>
             <div className="detail-links">
               {website ? (
-                <ExternalLink href={website}>
+                <a href={website} target="_blank" rel="noreferrer">
                   Sitio web
-                </ExternalLink>
+                </a>
               ) : null}
               {maps ? (
-                <ExternalLink href={maps}>
+                <a href={maps} target="_blank" rel="noreferrer">
                   Google Maps
-                </ExternalLink>
+                </a>
               ) : null}
               {phone && phoneHref ? <a href={phoneHref}>Teléfono</a> : null}
               {email ? <a href={`mailto:${email}`}>Correo</a> : null}
               {instagram ? (
-                <ExternalLink href={instagram}>
+                <a href={instagram} target="_blank" rel="noreferrer">
                   Instagram
-                </ExternalLink>
+                </a>
               ) : null}
               {facebook ? (
-                <ExternalLink href={facebook}>
+                <a href={facebook} target="_blank" rel="noreferrer">
                   Facebook
-                </ExternalLink>
+                </a>
               ) : null}
             </div>
           </div>

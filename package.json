@@ -32,10 +32,6 @@
     "verify:ai": "pnpm verify && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm test:csv-audit && pnpm test:enrich-images && pnpm test:intelligence && pnpm test:behavior"
   },
   "dependencies": {
-    "@capacitor/android": "^8.2.0",
-    "@capacitor/app": "^8.0.1",
-    "@capacitor/browser": "^8.0.2",
-    "@capacitor/core": "^8.2.0",
     "csv-parse": "^6.1.0",
     "leaflet": "^1.9.4",
     "next": "16.1.6",
@@ -44,7 +40,6 @@
     "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.2.0",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20",
     "@types/react": "^19",
