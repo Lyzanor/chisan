@@ -96,7 +96,7 @@ test("the migration queue counts as workload, not as a coverage signal", () => {
 const crossTemplate = (rows) =>
   loadCrossTemplate([
     {
-      provincia: "test",
+      area: "test",
       rows: rows.map((r, i) => ({
         slug: `fila-${i}`,
         nombre: "",
@@ -218,9 +218,9 @@ test("every marker category is a category the contract accepts", () => {
 
 test("same template, different producer and town, folds to one shape", () => {
   const a =
-    "Bodega de la DOCa Rioja situada en Agoncillo, incorporada al catálogo provincial de La Rioja y revisada con Google Maps.";
+    "Bodega de la DOCa Rioja situada en Agoncillo, incorporada al catálogo areal de La Rioja y revisada con Google Maps.";
   const b =
-    "Quesería de la DOP Cameros situada en Munilla, incorporada al catálogo provincial de La Rioja y revisada con Google Maps.";
+    "Quesería de la DOP Cameros situada en Munilla, incorporada al catálogo areal de La Rioja y revisada con Google Maps.";
   assert.equal(templateShape(a), templateShape(b));
 });
 

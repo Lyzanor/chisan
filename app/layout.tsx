@@ -26,10 +26,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "KM0 Productores",
+    default: "KM0 Producers",
     template: "%s | KM0",
   },
-  description: `Mapa de productores locales de kilómetro cero por ${CATALOG_UNIT} y categoría.`,
+  description: `Map of local, zero-kilometre producers by ${CATALOG_UNIT.one} and category.`,
 };
 
 export default function RootLayout({
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${fraunces.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${roboto.variable}`}>
       <body>{children}</body>
     </html>
   );

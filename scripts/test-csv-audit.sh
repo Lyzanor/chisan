@@ -428,7 +428,7 @@ grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-
 
 # Province completeness uses fixed targets and does not expose a CSV baseline.
 run_expect_success "$TMP_DIR/out-completeness.json" \
-  node "$ROOT_DIR/scripts/audit-province-completeness.js" --json
+  node "$ROOT_DIR/scripts/audit-area-completeness.js" --json
 node - "$TMP_DIR/out-completeness.json" <<'NODE'
 const fs = require("node:fs");
 const report = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));

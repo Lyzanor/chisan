@@ -16,7 +16,7 @@ The knowledge hierarchy is:
 ## Optional audit layer
 
 Evidence is provenance, not a gate. The CSV is the source of truth; evidence
-records explain decisions but never block a province from being considered
+records explain decisions but never block an area from being considered
 done.
 
 - Every evidence record that exists is validated by `npx pnpm check:evidence`,
@@ -25,11 +25,11 @@ done.
 - Writing evidence is cheapest at decision time, when the sources are already
   open: prefer adding a record when you add a producer, re-verify one, resolve
   `Venta online`, or purge/merge — not as a retroactive backfill of an
-  already-verified province.
-- `data/evidence/coverage.json` is an **advisory** list of provinces whose
+  already-verified area.
+- `data/evidence/coverage.json` is an **advisory** list of areas whose
   ledger already covers every current row. It records that fact for humans; it
   does not impose a requirement and is never enforced.
-- A province is never required to have any evidence record. Missing records are
+- An area is never required to have any evidence record. Missing records are
   not a defect or a debt.
 
 ## Layout
@@ -46,7 +46,7 @@ current producer. Git preserves earlier versions. `purge` and `merge` records
 remain as tombstones so destructive decisions stay explainable.
 
 JSONL is intentional: agents can locate one `slug` with `rg` and replace one
-line without loading or rewriting a large province ledger.
+line without loading or rewriting a large area ledger.
 
 ## Keep record
 
@@ -72,13 +72,13 @@ Channel order is irrelevant.
 Allowed purge reasons:
 
 - `not-producer`
-- `other-province`
+- `other-area`
 - `closed`
 - `nonexistent`
 - `out-of-scope`
 
 The deleted source `slug` must not remain in the CSV. A merge target must exist
-in the same province.
+in the same area.
 
 ## Claims
 
@@ -160,7 +160,7 @@ npx pnpm test:evidence-contract
 The validator checks JSONL shape, allowed values, dates, claims, source URLs,
 slug existence, merge/purge consistency and exact CSV decision parity. It runs
 **non-blocking**: any mismatch is a warning, not a build-breaking error, and
-provinces listed in `coverage.json` are no longer required to cover every row.
+areas listed in `coverage.json` are no longer required to cover every row.
 
 It checks that the required claims are present and that at least one verifying
 source type exists, but it does not bind a claim to a source: confirming that a

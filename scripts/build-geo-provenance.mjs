@@ -10,8 +10,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CSV_ROOT = path.join(ROOT, "data/csv");
-const CENTROIDS_PATH = path.join(ROOT, "data/reference/municipios.json");
-const OVERRIDES_PATH = path.join(ROOT, "data/reference/municipios-overrides.json");
+const CENTROIDS_PATH = path.join(ROOT, "data/reference/municipalities.json");
+const OVERRIDES_PATH = path.join(ROOT, "data/reference/municipality-overrides.json");
 const OUTPUT_PATH = path.join(ROOT, "data/reference/geo-provenance.json");
 
 // Copia literal del centroide: tolerancia ~1 m. Direcciones geocodificadas de
@@ -29,22 +29,22 @@ function normalizeSearch(value) {
     .trim();
 }
 
-function pickCandidate(entry, communityHint) {
+function pickCandidate(entry, regionHint) {
   if (Array.isArray(entry)) {
-    if (!communityHint) return null;
-    return entry.find((c) => c.community === communityHint) ?? null;
+    if (!regionHint) return null;
+    return entry.find((c) => c.region === regionHint) ?? null;
   }
   return entry;
 }
 
-function lookupCentroid(centroids, municipio, communityHint) {
+function lookupCentroid(centroids, municipio, regionHint) {
   if (!centroids || !municipio) return null;
   const stripped = municipio.split(" - ")[0].trim();
   const key1 = normalizeSearch(municipio);
   const key2 = normalizeSearch(stripped);
   const override = centroids.overrides[key1] || centroids.overrides[key2];
   if (override) {
-    return pickCandidate(override, communityHint);
+    return pickCandidate(override, regionHint);
   }
   return centroids.main[key1] || centroids.main[key2] || null;
 }
@@ -83,7 +83,7 @@ async function main() {
     overrides: JSON.parse(await fs.readFile(OVERRIDES_PATH, "utf8")),
   };
 
-  const provinces = {};
+  const areas = {};
   let totalRows = 0;
   let totalTagged = 0;
 
@@ -96,18 +96,18 @@ async function main() {
   const countries = await readDirs(CSV_ROOT);
   const pairs = [];
   for (const country of countries) {
-    for (const community of await readDirs(path.join(CSV_ROOT, country))) {
-      pairs.push({ country, community });
+    for (const region of await readDirs(path.join(CSV_ROOT, country))) {
+      pairs.push({ country, region });
     }
   }
 
-  for (const { country, community } of pairs) {
-    const files = (await fs.readdir(path.join(CSV_ROOT, country, community)))
+  for (const { country, region } of pairs) {
+    const files = (await fs.readdir(path.join(CSV_ROOT, country, region)))
       .filter((f) => f.endsWith(".csv"))
       .sort();
     for (const file of files) {
-      const province = file.replace(/\.csv$/, "");
-      const text = await fs.readFile(path.join(CSV_ROOT, country, community, file), "utf8");
+      const area = file.replace(/\.csv$/, "");
+      const text = await fs.readFile(path.join(CSV_ROOT, country, region, file), "utf8");
       const lines = text.split("\n").filter((l) => l.length > 0);
       const header = parseCsvLine(lines[0]);
       const idx = {
@@ -123,7 +123,7 @@ async function main() {
         const lat = Number.parseFloat(fields[idx.lat]);
         const lon = Number.parseFloat(fields[idx.lon]);
         if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
-        const centroid = lookupCentroid(centroids, fields[idx.municipio], community);
+        const centroid = lookupCentroid(centroids, fields[idx.municipio], region);
         if (!centroid) continue;
         if (
           Math.abs(lat - centroid.lat) <= TOLERANCE_DEG &&
@@ -133,7 +133,7 @@ async function main() {
         }
       }
       if (tagged.length) {
-        provinces[`${country}/${community}/${province}`] = tagged.sort();
+        areas[`${country}/${region}/${area}`] = tagged.sort();
         totalTagged += tagged.length;
       }
     }
@@ -142,13 +142,13 @@ async function main() {
   const output = {
     generatedAt: new Date().toISOString().slice(0, 10),
     generator: "scripts/build-geo-provenance.mjs",
-    method: `lat/lon a ±${TOLERANCE_DEG}° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador`,
+    method: `lat/lon a ±${TOLERANCE_DEG}° del centroide municipal (municipalities.json + overrides): coordenada de pueblo, no de finca/obrador`,
     totals: { rows: totalRows, tagged: totalTagged },
-    provinces,
+    areas,
   };
   await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, "utf8");
   console.log(`geo-provenance: ${totalTagged}/${totalRows} filas etiquetadas centroide-municipal`);
-  const top = Object.entries(provinces)
+  const top = Object.entries(areas)
     .sort((a, b) => b[1].length - a[1].length)
     .slice(0, 8);
   for (const [prov, slugs] of top) console.log(`  ${prov}: ${slugs.length}`);

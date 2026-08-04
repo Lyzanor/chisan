@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-// Compact roster for one province CSV: one line per producer.
+// Compact roster for one area CSV: one line per producer.
 // Use it to de-duplicate before discovery and to browse a catalog without
 // loading the whole CSV into context.
 //
 // Usage:
-//   node scripts/list-province.js cuenca
-//   node scripts/list-province.js data/csv/es/castilla-la-mancha/cuenca.csv
-//   node scripts/list-province.js cuenca --categoria "Bodega"
-//   node scripts/list-province.js cuenca --pendientes
+//   node scripts/list-area.js cuenca
+//   node scripts/list-area.js data/csv/es/castilla-la-mancha/cuenca.csv
+//   node scripts/list-area.js cuenca --categoria "Bodega"
+//   node scripts/list-area.js cuenca --pending
 
 let fs;
 let path;
@@ -38,22 +38,22 @@ function normalize(value) {
 
 function parseArgs(argv) {
   let target = null;
-  let categoria = null;
-  let onlyPendientes = false;
+  let category = null;
+  let onlyPending = false;
 
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
-    if (arg === "--categoria" && argv[i + 1]) {
-      categoria = argv[i + 1];
+    if (arg === "--category" && argv[i + 1]) {
+      category = argv[i + 1];
       i += 1;
-    } else if (arg === "--pendientes") {
-      onlyPendientes = true;
+    } else if (arg === "--pending") {
+      onlyPending = true;
     } else if (!arg.startsWith("--")) {
       target = arg;
     }
   }
 
-  return { target, categoria, onlyPendientes };
+  return { target, category, onlyPending };
 }
 
 function resolveCsvPath(csvRoot, target) {
@@ -66,11 +66,11 @@ function resolveCsvPath(csvRoot, target) {
 
   const slug = normalize(target).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const matches = [];
-  for (const pais of fs.readdirSync(csvRoot)) {
-    const countryDir = path.join(csvRoot, pais);
+  for (const country of fs.readdirSync(csvRoot)) {
+    const countryDir = path.join(csvRoot, country);
     if (!fs.statSync(countryDir).isDirectory()) continue;
-    for (const comunidad of fs.readdirSync(countryDir)) {
-      const dir = path.join(countryDir, comunidad);
+    for (const region of fs.readdirSync(countryDir)) {
+      const dir = path.join(countryDir, region);
       if (!fs.statSync(dir).isDirectory()) continue;
       for (const file of fs.readdirSync(dir)) {
         if (file === `${slug}.csv`) matches.push(path.join(dir, file));
@@ -84,10 +84,10 @@ async function main() {
   await loadDependencies();
 
   const csvRoot = path.join(__dirname, "..", "data", "csv");
-  const { target, categoria, onlyPendientes } = parseArgs(process.argv.slice(2));
+  const { target, category, onlyPending } = parseArgs(process.argv.slice(2));
 
   if (!target) {
-    console.error("Usage: node scripts/list-province.js <provincia|path> [--categoria X] [--pendientes]");
+    console.error("Usage: node scripts/list-area.js <area|path> [--category X] [--pending]");
     process.exit(1);
   }
 
@@ -107,7 +107,7 @@ async function main() {
     skip_empty_lines: true,
   });
 
-  const catFilter = categoria ? normalize(categoria) : null;
+  const catFilter = category ? normalize(category) : null;
   const counts = { pendiente: 0, parcial: 0, verificado: 0, otro: 0 };
   const lines = [];
 
@@ -116,7 +116,7 @@ async function main() {
     counts[verif in counts ? verif : "otro"] += 1;
 
     if (catFilter && normalize(row.categoria) !== catFilter) continue;
-    if (onlyPendientes && verif !== "pendiente") continue;
+    if (onlyPending && verif !== "pendiente") continue;
 
     lines.push(
       [
@@ -136,8 +136,8 @@ async function main() {
       (counts.otro ? ` · otro ${counts.otro}` : ""),
   );
   console.log("# slug | nombre | municipio | categoria | verificacion | Venta online");
-  if (catFilter || onlyPendientes) {
-    console.log(`# (filtrado${catFilter ? ` categoria=${categoria}` : ""}${onlyPendientes ? " pendientes" : ""}: ${lines.length} filas)`);
+  if (catFilter || onlyPending) {
+    console.log(`# (filtrado${catFilter ? ` categoria=${categoria}` : ""}${onlyPending ? " pendientes" : ""}: ${lines.length} filas)`);
   }
   for (const line of lines) console.log(line);
 }

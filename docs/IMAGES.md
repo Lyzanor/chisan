@@ -12,7 +12,7 @@ públicas, imágenes ajenas ni el primer resultado por puntuación.
 ## Formato y composición
 
 - Activo final preferido: **1600x1200 WebP** (4:3 horizontal), calidad `>= 88`,
-  en `/productores/<pais>/<comunidad>/<provincia>/<slug>.webp`.
+  en `/productores/<country>/<region>/<area>/<slug>.webp`.
 - Fondo plano `#F3F0E8`; logo centrado con alrededor de 10% de margen por lado.
   El lado más largo del logo debería quedar en torno a 960 px o menos.
 - Mantén visible el fondo alrededor del logo. No estires el logo para rellenar
@@ -59,10 +59,10 @@ equivocada no se distingue de una correcta sin volver a mirarla.
 ## Naming y tooling
 
 - El nombre del archivo debe coincidir con el `slug` del CSV y el path debe
-  reflejar la provincia: `/productores/<pais>/<comunidad>/<provincia>/<slug>.webp`. Un
+  reflejar la provincia: `/productores/<country>/<region>/<area>/<slug>.webp`. Un
   activo por productor; no guardes variantes ni originales de trabajo en
   `public/`. Si el destino canónico no coincide con el CSV stem, pasa
-  `--asset-provincia <comunidad>/<provincia>`.
+  `--asset-dir <region>/<area>`.
 - Instala las herramientas opcionales solo cuando vayas a usar enriquecimiento:
   ```bash
   python3 -m pip install -r scripts/requirements-image-tools.txt
@@ -71,9 +71,9 @@ equivocada no se distingue de una correcta sin volver a mirarla.
 El flujo son tres pasos y **el del medio no es opcional**:
 
 ```bash
-npx pnpm enrich:images --provincia [provincia] --contact-sheet informe/[provincia]
+npx pnpm enrich:images --area [area] --contact-sheet informe/[area]
 # mira las hojas; decide productor a productor
-npx pnpm enrich:images --provincia [provincia] --apply --slug [slug]
+npx pnpm enrich:images --area [area] --apply --slug [slug]
 ```
 
 `--contact-sheet` compone cada candidato **exactamente como lo guardaría

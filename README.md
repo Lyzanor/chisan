@@ -1,41 +1,54 @@
 # KM0 Producer Map
 
-Aplicación mínima para visualizar productores KM0 desde CSV provinciales.
+Minimal app for browsing local, zero-kilometre producers from per-area CSV files.
 
-## Para agentes de IA
+## For AI agents
 
-Leer `AGENTS.md`: es la guía única (fuentes de verdad, invariantes, comandos y
-docs canónicos). `CLAUDE.md` y `GEMINI.md` solo redirigen allí.
+Read `AGENTS.md`: it is the single guide (sources of truth, invariants, commands
+and canonical docs). `CLAUDE.md` and `GEMINI.md` only point there.
 
-## Mecanismo core
+## Core mechanism
 
-1. `/` solicita elegir país.
-2. `/[pais]` (`/es`, `/jp`) solicita elegir provincia o prefectura.
-3. `/?provincia=[provincia]` = mapa y visualizador de productores.
-4. El mapa pinta productores con `lat/lon`.
-5. El panel lateral permite seleccionar productores y abrir `/p/[slug]?provincia=[provincia]`.
-6. `/p/[slug]?provincia=[provincia]` muestra esa fila completa (columna + valor).
+1. `/` asks for a country.
+2. `/[country]` (`/es`, `/jp`) asks for one of its areas.
+3. `/?area=[area]` = producer map and browser.
+4. The map plots producers from `lat/lon`.
+5. The side panel selects producers and opens `/p/[slug]?area=[area]`.
+6. `/p/[slug]?area=[area]` shows that whole row (field + value).
 
-No hay API intermedia en el flujo principal: CSV -> mapa/listado -> ficha.
-Componentes y diseño runtime: `docs/ARCHITECTURE.md`.
+There is no API in between: CSV -> map/list -> profile. Components and runtime
+design: `docs/ARCHITECTURE.md`.
 
-## Datos
+## Vocabulary
 
-- `data/csv/[pais]/[comunidad]/[provincia].csv`: fuente de verdad de productores (contrato: `docs/CSV_CONTRACT.md`).
-- `data/evidence/[pais]/[comunidad]/[provincia].jsonl`: procedencia de decisiones editoriales; la app no la lee.
-- `public/productores/[pais]/[comunidad]/[provincia]/`: imágenes locales de productores.
+Three levels, named in English so the framework does not carry any one country's
+subdivisions: **country → region → area**. `area` is the catalog unit and the
+only one that appears in URLs. What a country calls its own levels — province,
+prefecture, autonomous community, 地方 — is display text declared in its
+`country.json`. Producer data stays in the language of its country; only the
+framework is English.
 
-## Uso
+## Data
+
+- `data/csv/[country]/[region]/[area].csv`: producer source of truth (contract: `docs/CSV_CONTRACT.md`).
+- `data/csv/[country]/country.json`: labels, level names, ordering and aliases for that country.
+- `data/evidence/[country]/[region]/[area].jsonl`: provenance of editorial decisions; the app does not read it.
+- `public/productores/[country]/[region]/[area]/`: local producer images.
+
+The tree is the registry. A new area is a CSV, a new country is a folder plus a
+manifest — neither needs a code change.
+
+## Usage
 
 ```bash
-npx pnpm dev           # app en http://localhost:3000
-npx pnpm verify:data   # gate para cambios de datos/evidencia/imágenes
-npx pnpm verify:ai     # gate para cambios de código/scripts/policy
+npx pnpm dev           # app at http://localhost:3000
+npx pnpm verify:data   # gate for data/evidence/image changes
+npx pnpm verify:ai     # gate for code/scripts/policy changes
 ```
 
-La lista completa de comandos vive en `AGENTS.md` § Commands y `package.json`.
+The full command list lives in `AGENTS.md` § Commands and `package.json`.
 
-## Publicar
+## Publishing
 
-Push a `main` despliega producción automáticamente (integración GitHub→Vercel).
-Checklist completo: `docs/TASKS.md` § Release checklist.
+Pushing to `main` deploys production automatically (GitHub→Vercel integration).
+Full checklist: `docs/TASKS.md` § Release checklist.

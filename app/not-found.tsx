@@ -4,10 +4,10 @@ export default function NotFoundPage() {
   return (
     <main className="page-shell">
       <section className="panel">
-        <h1>Página no encontrada</h1>
-        <p>El productor o página que buscas no existe.</p>
+        <h1>Page not found</h1>
+        <p>That producer or page does not exist.</p>
         <Link href="/" className="back-link">
-          ← Volver al mapa
+          ← Back to the map
         </Link>
       </section>
     </main>

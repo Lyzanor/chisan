@@ -69,20 +69,20 @@ wait_for_app
 HTML_HOME="$(curl -fsS "$BASE_URL/")"
 HTML_HOME_CLEAN="$(printf '%s' "$HTML_HOME" | sed 's/<!-- -->//g')"
 
-if [[ "$HTML_HOME_CLEAN" != *"Elige país"* ]]; then
+if [[ "$HTML_HOME_CLEAN" != *"Choose a country"* ]]; then
   echo "Error: home page should ask for an initial country selection." >&2
   exit 1
 fi
 
 # Each country route names its own unit: a prefecture is not a province.
 HTML_ES="$(curl -fsS "$BASE_URL/es" | sed 's/<!-- -->//g')"
-if [[ "$HTML_ES" != *"Elige provincia"* || "$HTML_ES" != *"Barcelona"* ]]; then
+if [[ "$HTML_ES" != *"Choose a province"* || "$HTML_ES" != *"Barcelona"* ]]; then
   echo "Error: /es should list Spanish provinces." >&2
   exit 1
 fi
 
 HTML_JP="$(curl -fsS "$BASE_URL/jp" | sed 's/<!-- -->//g')"
-if [[ "$HTML_JP" != *"Elige prefectura"* || "$HTML_JP" != *"Kyoto"* ]]; then
+if [[ "$HTML_JP" != *"Choose a prefecture"* || "$HTML_JP" != *"Kyoto"* ]]; then
   echo "Error: /jp should list Japanese prefectures." >&2
   exit 1
 fi
@@ -94,8 +94,8 @@ if [[ "$UNKNOWN_COUNTRY_STATUS" != "404" ]]; then
 fi
 
 HTML_FILTERED="$(curl -fsS --get "$BASE_URL/" \
-  --data-urlencode "provincia=barcelona" \
-  --data-urlencode "categoria=$CATEGORY")"
+  --data-urlencode "area=barcelona" \
+  --data-urlencode "category=$CATEGORY")"
 
 if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
   echo "Error: filtered search did not contain expected producer '$NAME'." >&2
@@ -103,39 +103,39 @@ if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
 fi
 
 HTML_NO_MATCH="$(curl -fsS --get "$BASE_URL/" \
-  --data-urlencode "provincia=barcelona" \
-  --data-urlencode "categoria=__categoria_que_no_existe__")"
+  --data-urlencode "area=barcelona" \
+  --data-urlencode "category=__no_such_category__")"
 
 HTML_NO_MATCH_CLEAN="$(printf '%s' "$HTML_NO_MATCH" | sed 's/<!-- -->//g')"
 
-if [[ "$HTML_NO_MATCH_CLEAN" != *"No hay productores en esta categoría"* ]]; then
+if [[ "$HTML_NO_MATCH_CLEAN" != *"No producers in this category"* ]]; then
   echo "Error: expected 0 results for non-matching category." >&2
   exit 1
 fi
 
-REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1?provincia=barcelona")"
-if [[ "$REDIRECT_URL" != "$BASE_URL/p/$SLUG?provincia=barcelona" ]]; then
-  echo "Error: expected /p/1?provincia=barcelona to redirect to /p/$SLUG?provincia=barcelona, got '$REDIRECT_URL'." >&2
+REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1?area=barcelona")"
+if [[ "$REDIRECT_URL" != "$BASE_URL/p/$SLUG?area=barcelona" ]]; then
+  echo "Error: expected /p/1?area=barcelona to redirect to /p/$SLUG?area=barcelona, got '$REDIRECT_URL'." >&2
   exit 1
 fi
 
-LEGACY_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1-$SLUG?provincia=barcelona")"
-if [[ "$LEGACY_REDIRECT_URL" != "$BASE_URL/p/$SLUG?provincia=barcelona" ]]; then
-  echo "Error: expected /p/1-$SLUG?provincia=barcelona to redirect to /p/$SLUG?provincia=barcelona, got '$LEGACY_REDIRECT_URL'." >&2
+LEGACY_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1-$SLUG?area=barcelona")"
+if [[ "$LEGACY_REDIRECT_URL" != "$BASE_URL/p/$SLUG?area=barcelona" ]]; then
+  echo "Error: expected /p/1-$SLUG?area=barcelona to redirect to /p/$SLUG?area=barcelona, got '$LEGACY_REDIRECT_URL'." >&2
   exit 1
 fi
 
-MISSING_PROVINCE_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/$SLUG")"
-if [[ "$MISSING_PROVINCE_REDIRECT_URL" != "$BASE_URL/" ]]; then
-  echo "Error: expected /p/$SLUG without provincia to redirect to /, got '$MISSING_PROVINCE_REDIRECT_URL'." >&2
+MISSING_AREA_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/$SLUG")"
+if [[ "$MISSING_AREA_REDIRECT_URL" != "$BASE_URL/" ]]; then
+  echo "Error: expected /p/$SLUG without area to redirect to /, got '$MISSING_AREA_REDIRECT_URL'." >&2
   exit 1
 fi
 
 DETAIL_OK=0
 for _ in {1..20}; do
-  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/$SLUG?provincia=barcelona")"
+  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/$SLUG?area=barcelona")"
   HTML_DETAIL_CLEAN="$(printf '%s' "$HTML_DETAIL" | sed 's/<!-- -->//g')"
-  if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Información"* ]]; then
+  if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Details"* ]]; then
     DETAIL_OK=1
     break
   fi
@@ -143,7 +143,7 @@ for _ in {1..20}; do
 done
 
 if [[ "$DETAIL_OK" -ne 1 ]]; then
-  echo "Error: detail page /p/$SLUG?provincia=barcelona does not render expected content." >&2
+  echo "Error: detail page /p/$SLUG?area=barcelona does not render expected content." >&2
   exit 1
 fi
 

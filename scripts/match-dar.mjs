@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // match-dar.mjs — Helper de verificación (NO es fuente de verdad).
 //
-// Cruza las filas de UN municipio de un CSV de provincia contra el dataset
+// Cruza las filas de UN municipio de un CSV de area contra el dataset
 // DAR "venda de proximitat" de la Generalitat (Socrata `xmyy-7xqi`) por
 // teléfono / email / apellidos normalizados. Acelera la verificación profunda
 // de Barcelona (ver docs/verificacion/es/barcelona.md): confirma existencia
@@ -12,7 +12,7 @@
 //
 // Uso:
 //   node scripts/match-dar.mjs "<municipio>" [--csv <ruta>] [--all]
-//     --csv  CSV de provincia (def. data/csv/es/catalunya/barcelona.csv)
+//     --csv  CSV de area (def. data/csv/es/catalunya/barcelona.csv)
 //     --all  incluir todas las filas, no solo `pendiente`
 //
 // El DAR se cachea en /tmp/dar.csv (se descarga si falta).

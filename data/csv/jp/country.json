@@ -1,0 +1,253 @@
+{
+  "label": "Japan",
+  "unit": {
+    "one": "prefecture",
+    "many": "prefectures"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "aliases": {
+    "kioto": "kyoto",
+    "tokio": "tokyo"
+  },
+  "regions": [
+    {
+      "slug": "hokkaido",
+      "label": "Hokkaido",
+      "areas": [
+        {
+          "slug": "hokkaido",
+          "label": "Hokkaido"
+        }
+      ]
+    },
+    {
+      "slug": "tohoku",
+      "label": "Tohoku",
+      "areas": [
+        {
+          "slug": "aomori",
+          "label": "Aomori"
+        },
+        {
+          "slug": "iwate",
+          "label": "Iwate"
+        },
+        {
+          "slug": "miyagi",
+          "label": "Miyagi"
+        },
+        {
+          "slug": "akita",
+          "label": "Akita"
+        },
+        {
+          "slug": "yamagata",
+          "label": "Yamagata"
+        },
+        {
+          "slug": "fukushima",
+          "label": "Fukushima"
+        }
+      ]
+    },
+    {
+      "slug": "kanto",
+      "label": "Kanto",
+      "areas": [
+        {
+          "slug": "ibaraki",
+          "label": "Ibaraki"
+        },
+        {
+          "slug": "tochigi",
+          "label": "Tochigi"
+        },
+        {
+          "slug": "gunma",
+          "label": "Gunma"
+        },
+        {
+          "slug": "saitama",
+          "label": "Saitama"
+        },
+        {
+          "slug": "chiba",
+          "label": "Chiba"
+        },
+        {
+          "slug": "tokyo",
+          "label": "Tokyo"
+        },
+        {
+          "slug": "kanagawa",
+          "label": "Kanagawa"
+        }
+      ]
+    },
+    {
+      "slug": "chubu",
+      "label": "Chubu",
+      "areas": [
+        {
+          "slug": "niigata",
+          "label": "Niigata"
+        },
+        {
+          "slug": "toyama",
+          "label": "Toyama"
+        },
+        {
+          "slug": "ishikawa",
+          "label": "Ishikawa"
+        },
+        {
+          "slug": "fukui",
+          "label": "Fukui"
+        },
+        {
+          "slug": "yamanashi",
+          "label": "Yamanashi"
+        },
+        {
+          "slug": "nagano",
+          "label": "Nagano"
+        },
+        {
+          "slug": "gifu",
+          "label": "Gifu"
+        },
+        {
+          "slug": "shizuoka",
+          "label": "Shizuoka"
+        },
+        {
+          "slug": "aichi",
+          "label": "Aichi"
+        }
+      ]
+    },
+    {
+      "slug": "kansai",
+      "label": "Kansai",
+      "areas": [
+        {
+          "slug": "mie",
+          "label": "Mie"
+        },
+        {
+          "slug": "shiga",
+          "label": "Shiga"
+        },
+        {
+          "slug": "kyoto",
+          "label": "Kyoto"
+        },
+        {
+          "slug": "osaka",
+          "label": "Osaka"
+        },
+        {
+          "slug": "hyogo",
+          "label": "Hyogo"
+        },
+        {
+          "slug": "nara",
+          "label": "Nara"
+        },
+        {
+          "slug": "wakayama",
+          "label": "Wakayama"
+        }
+      ]
+    },
+    {
+      "slug": "chugoku",
+      "label": "Chugoku",
+      "areas": [
+        {
+          "slug": "tottori",
+          "label": "Tottori"
+        },
+        {
+          "slug": "shimane",
+          "label": "Shimane"
+        },
+        {
+          "slug": "okayama",
+          "label": "Okayama"
+        },
+        {
+          "slug": "hiroshima",
+          "label": "Hiroshima"
+        },
+        {
+          "slug": "yamaguchi",
+          "label": "Yamaguchi"
+        }
+      ]
+    },
+    {
+      "slug": "shikoku",
+      "label": "Shikoku",
+      "areas": [
+        {
+          "slug": "tokushima",
+          "label": "Tokushima"
+        },
+        {
+          "slug": "kagawa",
+          "label": "Kagawa"
+        },
+        {
+          "slug": "ehime",
+          "label": "Ehime"
+        },
+        {
+          "slug": "kochi",
+          "label": "Kochi"
+        }
+      ]
+    },
+    {
+      "slug": "kyushu-okinawa",
+      "label": "Kyushu y Okinawa",
+      "areas": [
+        {
+          "slug": "fukuoka",
+          "label": "Fukuoka"
+        },
+        {
+          "slug": "saga",
+          "label": "Saga"
+        },
+        {
+          "slug": "nagasaki",
+          "label": "Nagasaki"
+        },
+        {
+          "slug": "kumamoto",
+          "label": "Kumamoto"
+        },
+        {
+          "slug": "oita",
+          "label": "Oita"
+        },
+        {
+          "slug": "miyazaki",
+          "label": "Miyazaki"
+        },
+        {
+          "slug": "kagoshima",
+          "label": "Kagoshima"
+        },
+        {
+          "slug": "okinawa",
+          "label": "Okinawa"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "strictProvinces": [
+  "strictAreas": [
     "es/pais-vasco/alava",
     "es/pais-vasco/vizcaya",
     "es/pais-vasco/guipuzcoa",

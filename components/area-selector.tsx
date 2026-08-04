@@ -5,74 +5,74 @@ import { useTransition } from "react";
 
 import { buildCatalogHref } from "@/lib/catalog-navigation";
 
-type ProvinceOption = {
+type AreaOption = {
   slug: string;
   label: string;
 };
 
-type ProvinceGroup = {
+type Region = {
   slug: string;
   label: string;
-  provinces: ProvinceOption[];
+  areas: AreaOption[];
 };
 
-type ProvinceCountry = {
+type Country = {
   slug: string;
   label: string;
-  unit: string;
-  groups: ProvinceGroup[];
+  unit: { one: string; many: string };
+  regions: Region[];
 };
 
-type ProvinceSelectorProps = {
-  country: ProvinceCountry;
-  currentProvince: string;
+type AreaSelectorProps = {
+  country: Country;
+  currentArea: string;
 };
 
 function capitalize(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-export function ProvinceSelector({ country, currentProvince }: ProvinceSelectorProps) {
+export function AreaSelector({ country, currentArea }: AreaSelectorProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    const province = e.target.value;
-    if (!province) {
+    const area = e.target.value;
+    if (!area) {
       return;
     }
 
     startTransition(() => {
       router.push(
         buildCatalogHref({
-          province,
-          category: searchParams.get("categoria") ?? "",
+          area,
+          category: searchParams.get("category") ?? "",
         }),
       );
     });
   }
 
   return (
-    <div className="province-selector">
-      <label htmlFor="province-select" className="province-selector-label">
-        {capitalize(country.unit)}
+    <div className="area-selector">
+      <label htmlFor="area-select" className="area-selector-label">
+        {capitalize(country.unit.one)}
       </label>
       <select
-        id="province-select"
-        value={currentProvince}
+        id="area-select"
+        value={currentArea}
         onChange={handleChange}
         disabled={isPending}
-        className="province-selector-select"
+        className="area-selector-select"
       >
         <option value="" disabled>
-          Selecciona {country.unit}
+          Select a {country.unit.one}
         </option>
-        {country.groups.map((group) => (
-          <optgroup key={group.slug} label={group.label}>
-            {group.provinces.map((province) => (
-              <option key={province.slug} value={province.slug}>
-                {province.label}
+        {country.regions.map((region) => (
+          <optgroup key={region.slug} label={region.label}>
+            {region.areas.map((area) => (
+              <option key={area.slug} value={area.slug}>
+                {area.label}
               </option>
             ))}
           </optgroup>

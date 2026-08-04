@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Maintenance utility: regenerate data/reference/municipios.json from Wikidata.
+// Maintenance utility: regenerate data/reference/municipalities.json from Wikidata.
 //
 // Source
 // - Wikidata SPARQL endpoint: https://query.wikidata.org/sparql
@@ -14,7 +14,7 @@
 //     the CSVs use) and ja (so a kanji spelling also resolves).
 //
 // Output
-// - data/reference/municipios.json
+// - data/reference/municipalities.json
 //   { "<normalized-key>": { lat, lon, label } }
 //   Keys are produced by normalizeSearch (lowercase, ASCII, single spaces),
 //   matching how scripts/audit-csv.js looks up the municipio column.
@@ -29,14 +29,14 @@
 //   in case some are due to lookup gaps.
 //
 // Usage
-//   node scripts/build-municipio-centroids.js             merge: keep every key
+//   node scripts/build-municipality-centroids.js             merge: keep every key
 //                                                         already committed, add
 //                                                         the ones Wikidata grew
-//   node scripts/build-municipio-centroids.js --refresh    take the rebuild as is
+//   node scripts/build-municipality-centroids.js --refresh    take the rebuild as is
 //
 // Notes
 // - Self-contained: uses native fetch (Node 18+), no extra deps.
-// - The script rewrites data/reference/municipios.json in place; commit the
+// - The script rewrites data/reference/municipalities.json in place; commit the
 //   result if it differs. Default runs are additive, so the diff is reviewable.
 //   `--refresh` also moves existing centroids: measured once against the file
 //   committed in August 2026, a plain rebuild changed 149 keys and dropped 17,
@@ -45,7 +45,7 @@
 // - Cross-language label collisions (e.g. Catalan "Figueres" → both real
 //   Figueres in Girona and Higueras in Castellón) cause one entity to win
 //   the key arbitrarily. Known collisions are disambiguated via
-//   data/reference/municipios-overrides.json, which is loaded by
+//   data/reference/municipality-overrides.json, which is loaded by
 //   scripts/audit-csv.js after this file and resolves the match using the
 //   autonomous-community slug inferred from the CSV path. This file is not
 //   touched by the rebuild.
@@ -205,7 +205,7 @@ async function main() {
           // A name shared across countries is the dangerous kind: the loser's
           // rows would measure their distance against a town on another
           // continent, which is a blocking geo error rather than a skip.
-          // Disambiguate those in data/reference/municipios-overrides.json.
+          // Disambiguate those in data/reference/municipality-overrides.json.
           if (owner.country !== country.slug) crossCountry.push(`${lbl} (${country.slug} lost to ${owner.country})`);
           continue;
         }

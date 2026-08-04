@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -34,393 +35,224 @@ export type MunicipalitySummary = {
 };
 
 const CSV_DATA_DIR = "data/csv";
+const COUNTRY_MANIFEST = "country.json";
 
-export type ProvinceOption = {
+// Three levels, named in English so the framework does not carry one country's
+// vocabulary: country -> region -> area. `area` is the catalog unit and the one
+// that appears in URLs; each country says what it calls it (province, prefecture,
+// …) in its manifest, and that word is what the interface shows.
+export type AreaOption = {
   slug: string;
   label: string;
 };
 
-export type ProvinceGroup = {
+export type Region = {
   slug: string;
   label: string;
-  provinces: ProvinceOption[];
+  areas: AreaOption[];
 };
 
-// Neutral name for the catalog unit, for copy that is not inside a country yet.
-// Each country overrides it with its own word (`unit`): provincia in Spain,
-// prefectura in Japan. It is deliberately not "región": that is already the level
-// *above* in Japan — eight regions holding forty-seven prefectures — so reusing it
-// here would be wrong exactly where the Spain-centric wording was.
-// The `provincia` URL param keeps its name regardless; it is a pinned interface.
-export const CATALOG_UNIT = "zona";
-export const CATALOG_UNIT_PLURAL = "zonas";
+export type UnitName = {
+  one: string;
+  many: string;
+};
 
-export type ProvinceCountry = {
+export type Country = {
   slug: string;
   label: string;
-  // What the two levels are called locally. A prefecture is not a province and a
-  // region is not a comunidad, so the wording travels with the country instead of
-  // being hardcoded in the pages. Both numbers are stored because every caller
-  // needs one or the other, and deriving them by trimming an `s` reads worse than
-  // writing the two words down.
-  unit: string;
-  unitPlural: string;
-  groupUnitPlural: string;
-  groups: ProvinceGroup[];
+  unit: UnitName;
+  regionUnit: UnitName;
+  regions: Region[];
 };
 
-type ProvinceRegistryEntry = ProvinceOption & {
+// Neutral word for the unit, for copy written outside any country.
+export const CATALOG_UNIT: UnitName = { one: "area", many: "areas" };
+
+type CountryManifest = {
+  label?: string;
+  unit?: Partial<UnitName>;
+  regionUnit?: Partial<UnitName>;
+  aliases?: Record<string, string>;
+  regions?: {
+    slug: string;
+    label?: string;
+    areas?: { slug: string; label?: string }[];
+  }[];
+};
+
+type AreaRegistryEntry = AreaOption & {
   countrySlug: string;
-  communitySlug: string;
+  regionSlug: string;
 };
 
-const SPAIN_GROUPS = [
-  {
-    slug: "andalucia",
-    label: "Andalucía",
-    provinces: [
-      { slug: "almeria", label: "Almería" },
-      { slug: "cadiz", label: "Cádiz" },
-      { slug: "cordoba", label: "Córdoba" },
-      { slug: "granada", label: "Granada" },
-      { slug: "huelva", label: "Huelva" },
-      { slug: "jaen", label: "Jaén" },
-      { slug: "malaga", label: "Málaga" },
-      { slug: "sevilla", label: "Sevilla" },
-    ],
-  },
-  {
-    slug: "asturias",
-    label: "Principado de Asturias",
-    provinces: [{ slug: "asturias", label: "Asturias" }],
-  },
-  {
-    slug: "cantabria",
-    label: "Cantabria",
-    provinces: [{ slug: "cantabria", label: "Cantabria" }],
-  },
-  {
-    slug: "castilla-y-leon",
-    label: "Castilla y León",
-    provinces: [
-      { slug: "avila", label: "Ávila" },
-      { slug: "burgos", label: "Burgos" },
-      { slug: "leon", label: "León" },
-      { slug: "palencia", label: "Palencia" },
-      { slug: "salamanca", label: "Salamanca" },
-      { slug: "segovia", label: "Segovia" },
-      { slug: "soria", label: "Soria" },
-      { slug: "valladolid", label: "Valladolid" },
-      { slug: "zamora", label: "Zamora" },
-    ],
-  },
-  {
-    slug: "castilla-la-mancha",
-    label: "Castilla-La Mancha",
-    provinces: [
-      { slug: "albacete", label: "Albacete" },
-      { slug: "ciudad-real", label: "Ciudad Real" },
-      { slug: "cuenca", label: "Cuenca" },
-      { slug: "guadalajara", label: "Guadalajara" },
-      { slug: "toledo", label: "Toledo" },
-    ],
-  },
-  {
-    slug: "aragon",
-    label: "Aragón",
-    provinces: [
-      { slug: "huesca", label: "Huesca" },
-      { slug: "teruel", label: "Teruel" },
-      { slug: "zaragoza", label: "Zaragoza" },
-    ],
-  },
-  {
-    slug: "catalunya",
-    label: "Catalunya",
-    provinces: [
-      { slug: "barcelona", label: "Barcelona" },
-      { slug: "girona", label: "Girona" },
-      { slug: "lleida", label: "Lleida" },
-      { slug: "tarragona", label: "Tarragona" },
-    ],
-  },
-  {
-    slug: "illes-balears",
-    label: "Illes Balears",
-    provinces: [{ slug: "baleares", label: "Baleares" }],
-  },
-  {
-    slug: "canarias",
-    label: "Canarias",
-    provinces: [
-      { slug: "las-palmas", label: "Las Palmas" },
-      { slug: "santa-cruz-de-tenerife", label: "Santa Cruz de Tenerife" },
-    ],
-  },
-  {
-    slug: "comunitat-valenciana",
-    label: "Comunitat Valenciana",
-    provinces: [
-      { slug: "alicante", label: "Alicante" },
-      { slug: "castellon", label: "Castellón" },
-      { slug: "valencia", label: "Valencia" },
-    ],
-  },
-  {
-    slug: "galicia",
-    label: "Galicia",
-    provinces: [
-      { slug: "a-coruna", label: "A Coruña" },
-      { slug: "lugo", label: "Lugo" },
-      { slug: "ourense", label: "Ourense" },
-      { slug: "pontevedra", label: "Pontevedra" },
-    ],
-  },
-  {
-    slug: "extremadura",
-    label: "Extremadura",
-    provinces: [
-      { slug: "badajoz", label: "Badajoz" },
-      { slug: "caceres", label: "Cáceres" },
-    ],
-  },
-  {
-    slug: "madrid",
-    label: "Comunidad de Madrid",
-    provinces: [{ slug: "madrid", label: "Madrid" }],
-  },
-  {
-    slug: "la-rioja",
-    label: "La Rioja",
-    provinces: [{ slug: "la-rioja", label: "La Rioja" }],
-  },
-  {
-    slug: "murcia",
-    label: "Región de Murcia",
-    provinces: [{ slug: "murcia", label: "Murcia" }],
-  },
-  {
-    slug: "navarra",
-    label: "Navarra",
-    provinces: [{ slug: "navarra", label: "Navarra" }],
-  },
-  {
-    slug: "pais-vasco",
-    label: "País Vasco",
-    provinces: [
-      { slug: "alava", label: "Álava" },
-      { slug: "guipuzcoa", label: "Guipúzcoa" },
-      { slug: "vizcaya", label: "Vizcaya" },
-    ],
-  },
-] as const satisfies readonly ProvinceGroup[];
+function titleCase(slug: string): string {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
 
-// Japan under the standard eight-region division (八地方区分). The catalog unit
-// stays `provincia`: a prefecture is the province, and a region is the CSV
-// folder, the same role a comunidad plays in Spain. Labels are rōmaji without
-// macrons so slug and label agree.
-const JAPAN_GROUPS = [
-  {
-    slug: "hokkaido",
-    label: "Hokkaido",
-    provinces: [{ slug: "hokkaido", label: "Hokkaido" }],
-  },
-  {
-    slug: "tohoku",
-    label: "Tohoku",
-    provinces: [
-      { slug: "aomori", label: "Aomori" },
-      { slug: "iwate", label: "Iwate" },
-      { slug: "miyagi", label: "Miyagi" },
-      { slug: "akita", label: "Akita" },
-      { slug: "yamagata", label: "Yamagata" },
-      { slug: "fukushima", label: "Fukushima" },
-    ],
-  },
-  {
-    slug: "kanto",
-    label: "Kanto",
-    provinces: [
-      { slug: "ibaraki", label: "Ibaraki" },
-      { slug: "tochigi", label: "Tochigi" },
-      { slug: "gunma", label: "Gunma" },
-      { slug: "saitama", label: "Saitama" },
-      { slug: "chiba", label: "Chiba" },
-      { slug: "tokyo", label: "Tokyo" },
-      { slug: "kanagawa", label: "Kanagawa" },
-    ],
-  },
-  {
-    slug: "chubu",
-    label: "Chubu",
-    provinces: [
-      { slug: "niigata", label: "Niigata" },
-      { slug: "toyama", label: "Toyama" },
-      { slug: "ishikawa", label: "Ishikawa" },
-      { slug: "fukui", label: "Fukui" },
-      { slug: "yamanashi", label: "Yamanashi" },
-      { slug: "nagano", label: "Nagano" },
-      { slug: "gifu", label: "Gifu" },
-      { slug: "shizuoka", label: "Shizuoka" },
-      { slug: "aichi", label: "Aichi" },
-    ],
-  },
-  {
-    slug: "kansai",
-    label: "Kansai",
-    provinces: [
-      { slug: "mie", label: "Mie" },
-      { slug: "shiga", label: "Shiga" },
-      { slug: "kyoto", label: "Kyoto" },
-      { slug: "osaka", label: "Osaka" },
-      { slug: "hyogo", label: "Hyogo" },
-      { slug: "nara", label: "Nara" },
-      { slug: "wakayama", label: "Wakayama" },
-    ],
-  },
-  {
-    slug: "chugoku",
-    label: "Chugoku",
-    provinces: [
-      { slug: "tottori", label: "Tottori" },
-      { slug: "shimane", label: "Shimane" },
-      { slug: "okayama", label: "Okayama" },
-      { slug: "hiroshima", label: "Hiroshima" },
-      { slug: "yamaguchi", label: "Yamaguchi" },
-    ],
-  },
-  {
-    slug: "shikoku",
-    label: "Shikoku",
-    provinces: [
-      { slug: "tokushima", label: "Tokushima" },
-      { slug: "kagawa", label: "Kagawa" },
-      { slug: "ehime", label: "Ehime" },
-      { slug: "kochi", label: "Kochi" },
-    ],
-  },
-  {
-    slug: "kyushu-okinawa",
-    label: "Kyushu y Okinawa",
-    provinces: [
-      { slug: "fukuoka", label: "Fukuoka" },
-      { slug: "saga", label: "Saga" },
-      { slug: "nagasaki", label: "Nagasaki" },
-      { slug: "kumamoto", label: "Kumamoto" },
-      { slug: "oita", label: "Oita" },
-      { slug: "miyazaki", label: "Miyazaki" },
-      { slug: "kagoshima", label: "Kagoshima" },
-      { slug: "okinawa", label: "Okinawa" },
-    ],
-  },
-] as const satisfies readonly ProvinceGroup[];
+// The tree is the source of truth for *what exists*: a country is a folder under
+// data/csv, a region is a folder inside it and an area is a CSV inside that. The
+// optional country.json only supplies what a folder name cannot carry — the
+// display labels, what the country calls its two levels, and the order they are
+// listed in. Dropping a new CSV in is therefore enough to publish it, and adding
+// a country is a folder plus a manifest, never a code change.
+function loadCountries(): Country[] {
+  const root = path.resolve(process.cwd(), CSV_DATA_DIR);
+  const directories = (parent: string) =>
+    fs
+      .readdirSync(parent, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name)
+      .sort();
 
-// The country slug is the ISO 3166-1 alpha-2 code and is used verbatim in both
-// places it appears: the `/es` and `/jp` routes and the first folder of every
-// data path (`data/csv/es/catalunya/barcelona.csv`), so there is no URL-to-disk
-// mapping to keep in sync.
-const PROVINCE_COUNTRIES = [
-  {
-    slug: "es",
-    label: "España",
-    unit: "provincia",
-    unitPlural: "provincias",
-    groupUnitPlural: "comunidades",
-    groups: SPAIN_GROUPS,
-  },
-  {
-    slug: "jp",
-    label: "Japón",
-    unit: "prefectura",
-    unitPlural: "prefecturas",
-    groupUnitPlural: "regiones",
-    groups: JAPAN_GROUPS,
-  },
-] as const;
+  return directories(root).map((countrySlug) => {
+    const countryDir = path.join(root, countrySlug);
+    const manifestPath = path.join(countryDir, COUNTRY_MANIFEST);
+    const manifest: CountryManifest = fs.existsSync(manifestPath)
+      ? (JSON.parse(fs.readFileSync(manifestPath, "utf8")) as CountryManifest)
+      : {};
 
-const PROVINCE_REGISTRY: Map<string, ProvinceRegistryEntry> = new Map(
-  PROVINCE_COUNTRIES.flatMap((country) =>
-    country.groups.flatMap((group) =>
-      group.provinces.map((province) => [
-        province.slug,
-        { ...province, countrySlug: country.slug, communitySlug: group.slug },
-      ]),
+    const declaredRegions = manifest.regions ?? [];
+    const regionOrder = new Map(declaredRegions.map((region, index) => [region.slug, index]));
+    const regionSlugs = directories(countryDir).sort((a, b) => {
+      const left = regionOrder.get(a) ?? Number.MAX_SAFE_INTEGER;
+      const right = regionOrder.get(b) ?? Number.MAX_SAFE_INTEGER;
+      return left - right || a.localeCompare(b);
+    });
+
+    const regions = regionSlugs.map((regionSlug) => {
+      const declared = declaredRegions.find((region) => region.slug === regionSlug);
+      const declaredAreas = declared?.areas ?? [];
+      const areaOrder = new Map(declaredAreas.map((area, index) => [area.slug, index]));
+      const areaSlugs = fs
+        .readdirSync(path.join(countryDir, regionSlug))
+        .filter((file) => file.endsWith(".csv"))
+        .map((file) => file.slice(0, -".csv".length))
+        .sort((a, b) => {
+          const left = areaOrder.get(a) ?? Number.MAX_SAFE_INTEGER;
+          const right = areaOrder.get(b) ?? Number.MAX_SAFE_INTEGER;
+          return left - right || a.localeCompare(b);
+        });
+
+      return {
+        slug: regionSlug,
+        label: declared?.label ?? titleCase(regionSlug),
+        areas: areaSlugs.map((areaSlug) => ({
+          slug: areaSlug,
+          label:
+            declaredAreas.find((area) => area.slug === areaSlug)?.label ?? titleCase(areaSlug),
+        })),
+      };
+    });
+
+    return {
+      slug: countrySlug,
+      label: manifest.label ?? countrySlug.toUpperCase(),
+      unit: {
+        one: manifest.unit?.one ?? CATALOG_UNIT.one,
+        many: manifest.unit?.many ?? CATALOG_UNIT.many,
+      },
+      regionUnit: {
+        one: manifest.regionUnit?.one ?? "region",
+        many: manifest.regionUnit?.many ?? "regions",
+      },
+      regions,
+    };
+  });
+}
+
+function loadAliases(): Map<string, string> {
+  const root = path.resolve(process.cwd(), CSV_DATA_DIR);
+  const aliases = new Map<string, string>();
+
+  for (const countrySlug of fs
+    .readdirSync(root, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)) {
+    const manifestPath = path.join(root, countrySlug, COUNTRY_MANIFEST);
+    if (!fs.existsSync(manifestPath)) continue;
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as CountryManifest;
+    for (const [alias, target] of Object.entries(manifest.aliases ?? {})) {
+      aliases.set(alias, target);
+    }
+  }
+
+  return aliases;
+}
+
+const COUNTRIES = loadCountries();
+const AREA_ALIASES = loadAliases();
+
+const AREA_REGISTRY: Map<string, AreaRegistryEntry> = new Map(
+  COUNTRIES.flatMap((country) =>
+    country.regions.flatMap((region) =>
+      region.areas.map(
+        (area) =>
+          [
+            area.slug,
+            { ...area, countrySlug: country.slug, regionSlug: region.slug },
+          ] as [string, AreaRegistryEntry],
+      ),
     ),
   ),
 );
 
-export function normalizeProvinceSlug(province: string): string {
-  const slug = cleanCell(province)
+export function normalizeAreaSlug(area: string): string {
+  const slug = cleanCell(area)
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase();
-  const provinceAliases: Record<string, string> = {
-    logrono: "la-rioja",
-    kioto: "kyoto",
-    tokio: "tokyo",
-  };
-  const normalizedSlug = provinceAliases[slug] ?? slug;
+  const normalizedSlug = AREA_ALIASES.get(slug) ?? slug;
 
-  return PROVINCE_REGISTRY.has(normalizedSlug) ? normalizedSlug : "";
+  return AREA_REGISTRY.has(normalizedSlug) ? normalizedSlug : "";
 }
 
-function resolveProvinceCsvPath(province: string): string {
-  const normalizedProvince = normalizeProvinceSlug(province);
-  const registryEntry = PROVINCE_REGISTRY.get(normalizedProvince);
+function resolveAreaCsvPath(area: string): string {
+  const normalizedArea = normalizeAreaSlug(area);
+  const entry = AREA_REGISTRY.get(normalizedArea);
 
-  if (!registryEntry) {
-    throw new Error(`Unknown province '${province}'.`);
+  if (!entry) {
+    throw new Error(`Unknown area '${area}'.`);
   }
 
   return path.resolve(
     process.cwd(),
     CSV_DATA_DIR,
-    registryEntry.countrySlug,
-    registryEntry.communitySlug,
-    `${normalizedProvince}.csv`,
+    entry.countrySlug,
+    entry.regionSlug,
+    `${normalizedArea}.csv`,
   );
 }
 
-export function getProvinceLabel(province: string): string {
-  return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.label ?? "";
+export function getAreaLabel(area: string): string {
+  return AREA_REGISTRY.get(normalizeAreaSlug(area))?.label ?? "";
 }
 
-export function getProvinceCountrySlug(province: string): string {
-  return PROVINCE_REGISTRY.get(normalizeProvinceSlug(province))?.countrySlug ?? "";
+export function getAreaCountrySlug(area: string): string {
+  return AREA_REGISTRY.get(normalizeAreaSlug(area))?.countrySlug ?? "";
 }
 
-export function findProvinceCountry(country: string): ProvinceCountry | null {
+export function listAreas(): AreaOption[] {
+  return COUNTRIES.flatMap(({ regions }) =>
+    regions.flatMap(({ areas }) => areas.map(({ slug, label }) => ({ slug, label }))),
+  );
+}
+
+export function listCountries(): Country[] {
+  return COUNTRIES;
+}
+
+export function findCountry(country: string): Country | null {
   const normalized = cleanCell(country).toLowerCase();
-  return listProvinceCountries().find((entry) => entry.slug === normalized) ?? null;
+  return COUNTRIES.find((entry) => entry.slug === normalized) ?? null;
 }
 
 export function listCountrySlugs(): string[] {
-  return PROVINCE_COUNTRIES.map(({ slug }) => slug);
+  return COUNTRIES.map(({ slug }) => slug);
 }
 
-export function listProvinces(): ProvinceOption[] {
-  return PROVINCE_COUNTRIES.flatMap(({ groups }) =>
-    groups.flatMap(({ provinces }) => provinces.map(({ slug, label }) => ({ slug, label }))),
-  );
-}
-
-export function listProvinceCountries(): ProvinceCountry[] {
-  return PROVINCE_COUNTRIES.map(({ slug, label, unit, unitPlural, groupUnitPlural, groups }) => ({
-    slug,
-    label,
-    unit,
-    unitPlural,
-    groupUnitPlural,
-    groups: groups.map(({ slug: groupSlug, label: groupLabel, provinces }) => ({
-      slug: groupSlug,
-      label: groupLabel,
-      provinces: provinces.map(({ slug: provinceSlug, label: provinceLabel }) => ({
-        slug: provinceSlug,
-        label: provinceLabel,
-      })),
-    })),
-  }));
-}
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 const ONLINE_SALES_COLUMN = "Venta online";
 const DEFAULT_ONLINE_SALES_VALUE = "no comprobado";
@@ -589,8 +421,8 @@ function calculateDistance(
 
 const csvCache = new Map<string, ProducerCsvRow[]>();
 
-async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
-  const cacheKey = normalizeProvinceSlug(province);
+async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
+  const cacheKey = normalizeAreaSlug(area);
   if (!cacheKey) {
     return [];
   }
@@ -600,7 +432,7 @@ async function loadCsvRows(province = ""): Promise<ProducerCsvRow[]> {
     return cached;
   }
 
-  const csvPath = resolveProvinceCsvPath(cacheKey);
+  const csvPath = resolveAreaCsvPath(cacheKey);
   const csvRaw = await readFile(csvPath, "utf8");
   const parsedRows = parse(csvRaw, {
     columns: true,
@@ -654,13 +486,13 @@ function parseLegacyProducerId(rawSegment: string): number | null {
   return id;
 }
 
-export async function findProducerBySlug(rawSegment: string, province = ""): Promise<ProducerCsvRow | null> {
+export async function findProducerBySlug(rawSegment: string, area = ""): Promise<ProducerCsvRow | null> {
   const segment = slugifySegment(rawSegment);
   if (!segment) {
     return null;
   }
 
-  const rows = await loadCsvRows(province);
+  const rows = await loadCsvRows(area);
   const exactMatch = rows.find((row) => row.slug === segment);
   if (exactMatch) {
     return exactMatch;
@@ -678,8 +510,8 @@ export async function findProducerBySlug(rawSegment: string, province = ""): Pro
   return legacyId === null ? null : rows[legacyId - 1] ?? null;
 }
 
-export async function listCategories(province = ""): Promise<string[]> {
-  const rows = await loadCsvRows(province);
+export async function listCategories(area = ""): Promise<string[]> {
+  const rows = await loadCsvRows(area);
   const counts = new Map<string, number>();
 
   for (const row of rows) {
@@ -696,9 +528,9 @@ export async function listCategories(province = ""): Promise<string[]> {
 export async function listMunicipalitySummaries(
   category = "",
   limit = 12,
-  province = "",
+  area = "",
 ): Promise<MunicipalitySummary[]> {
-  const rows = await loadCsvRows(province);
+  const rows = await loadCsvRows(area);
   const normalizedCategory = normalizeSearch(category);
   const counts = new Map<string, number>();
 
@@ -756,9 +588,9 @@ export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] 
 
 export async function searchProducers(
   filters: ProducerSearchFilters,
-  province = "",
+  area = "",
 ): Promise<ProducerCsvRow[]> {
-  const rows = await loadCsvRows(province);
+  const rows = await loadCsvRows(area);
   const normalizedMunicipality = normalizeSearch(filters.municipality);
   const normalizedCategory = normalizeSearch(filters.category);
 

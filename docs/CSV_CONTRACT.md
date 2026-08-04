@@ -1,47 +1,49 @@
 # CSV Contract
 
 ## Source of truth
-- Province files: `data/csv/[pais]/[comunidad]/[provincia].csv`
+- Area files: `data/csv/[country]/[region]/[area].csv`
 - Barcelona file: `data/csv/es/catalunya/barcelona.csv`
-- `[pais]` is the ISO 3166-1 alpha-2 code, and the same token names the route:
+- `[country]` is the ISO 3166-1 alpha-2 code, and the same token names the route:
   `data/csv/es/**` is browsed at `/es`, `data/csv/jp/**` at `/jp`. There is no
   URL-to-disk mapping to keep in sync.
-- Japan fills the middle level with its own names: the folder is one of the eight
-  regions (`kansai`, `kanto`, …) and the file is a prefecture, so
-  `data/csv/jp/kansai/kyoto.csv` is reached as `?provincia=kyoto`. `provincia`
-  stays the URL and catalog unit in both countries; nothing about the contract
-  changes per country. Prefecture and municipio names are rōmaji without macrons.
-- Structured provenance: `data/evidence/[pais]/[comunidad]/[provincia].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
+- Each country fills the two lower levels with its own subdivisions: a Spanish
+  region is an autonomous community holding provinces, a Japanese one is a 地方
+  holding prefectures. The contract does not change per country — the file is
+  always an area and `?area=` is always how it is reached, so
+  `data/csv/jp/kansai/kyoto.csv` is browsed at `/?area=kyoto`. What a country
+  calls its levels is display text and lives in its `country.json`. Japanese
+  prefecture and municipio names are rōmaji without macrons.
+- Structured provenance: `data/evidence/[country]/[region]/[area].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
 - Encoding: UTF-8 **without BOM** (a leading BOM is blocking; it usually means the file went through a spreadsheet export)
 - Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
 - Header row is required.
 
 ## Canonical header (physical structure)
-Every province CSV shares the exact same 20-column header, in this order:
+Every area CSV shares the exact same 20-column header, in this order:
 
 ```text
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
 ```
 
 - Every file carries all 20 columns physically; "optional" means the *value* may be empty, never that the column may be missing.
-- Do not add, remove, or reorder columns in a single province. A structural change applies to every CSV at once, in a solo commit, with `verify:data` before and after.
+- Do not add, remove, or reorder columns in a single area. A structural change applies to every CSV at once, in a solo commit, with `verify:data` before and after.
 - 0-based indices for column-aware scripts: 0 slug · 1 nombre · 2 municipio · 3 categoria · 4 productos estrella · 5 direccion · 6 descripcion · 7 horario · 8 telefono · 9 correo · 10 web · 11 Facebook · 12 Instagram · 13 Google Maps · 14 lat · 15 lon · 16 imagen · 17 verificacion · 18 Venta online · 19 Canal de venta.
 - Validation and inspection entrypoints:
   - `pnpm check:csv`: blocking technical contract audit for every CSV
-  - `node scripts/audit-csv.js --mode=contract data/csv/[pais]/[comunidad]/[provincia].csv`: blocking audit for one CSV
+  - `node scripts/audit-csv.js --mode=contract data/csv/[country]/[region]/[area].csv`: blocking audit for one CSV
   - `pnpm check:csv:data-quality`: weekly data-quality audit with warnings for every CSV
-  - `node scripts/audit-csv.js --mode=quality data/csv/[pais]/[comunidad]/[provincia].csv`: detailed warning audit for one CSV
+  - `node scripts/audit-csv.js --mode=quality data/csv/[country]/[region]/[area].csv`: detailed warning audit for one CSV
   - `pnpm list:categories`: print the current valid `categoria` set
 
 ## Reference data
-- `data/reference/municipios.json` is a Wikidata-sourced lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, plus ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names). The geography warning rule uses it; nothing else in the app depends on it.
+- `data/reference/municipalities.json` is a Wikidata-sourced lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, plus ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names). The geography warning rule uses it; nothing else in the app depends on it.
 - Covered: every entity classified as a municipality of Spain, and every municipality of Japan without a dissolution date, in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
 - Not covered on the Japanese side: Tokyo itself, which is a prefecture rather than a municipality. Rows there take the ward or city as `municipio` (`Setagaya`, `Hachioji`), which is also the right granularity.
 - Japanese municipalities are frequently the product of 2000s mergers and can span tens of kilometres, so a correct row may still land in the 15–100 km warning band — Miyama in Nantan is 21,6 km from its own city centroid. Read the warning before assuming the `municipio` is wrong.
 - Not covered: pedanías, núcleos and other sub-municipal localities (e.g. Alpatró inside La Vall de Gallinera, El Alquián inside Almería). Rows whose `municipio` is not in the lookup escape every geography check; the row is still subject to every other rule. The audit summary reports the count (`geo-check skipped: N rows`) so the gap stays visible — a rising number usually means a spelling the lookup does not carry (`Roa de Duero` for `Roa`, `Pamplona / Iruña` for `Pamplona`), which is worth fixing in the `municipio` column, not a genuine pedanía.
 - Compound names: if Wikidata uses the official compound form (e.g. `Aínsa-Sobrarbe`) and the CSV uses the short form (e.g. `Aínsa`), the lookup may miss. Prefer the official form in the `municipio` column when known.
-- `data/reference/municipios-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipios.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, community}` candidates; the audit picks the one whose `community` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another province (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia). Homonyms across countries live in the same layer and matter more, because the losing side measures its distance against another continent and fails the blocking rule rather than warning: `chiba` (Chiba in Kanto vs Chiva in Valencia), `hita`, `aya`, `mino` and `oto` are already resolved there.
-- Refresh: `node scripts/build-municipio-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~1 minute. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs. It **merges by default**: keys already committed keep their centroid and only new ones are added, because which of two homonyms wins a shared key is arbitrary and a plain rebuild silently moves municipios that existing rows are checked against (measured once: 149 keys moved, 17 dropped). `--refresh` takes the rebuild verbatim; review that diff municipio by municipio.
+- `data/reference/municipality-overrides.json` is a hand-curated disambiguation layer for homonyms: the same `municipio` name shared by towns in different communities collides on one normalized key in `municipalities.json`, so the lookup can return the wrong town and raise a false geography warning. Each override key maps to an array of `{lat, lon, label, region}` candidates; the audit picks the one whose `region` matches the CSV path (`pickCandidate`). Add an entry when geo warnings show a whole municipio's producers landing hundreds of km from a same-named town in another area (e.g. `sallent` → Sallent in Catalunya, not Sellent in Valencia). Homonyms across countries live in the same layer and matter more, because the losing side measures its distance against another continent and fails the blocking rule rather than warning: `chiba` (Chiba in Kanto vs Chiva in Valencia), `hita`, `aya`, `mino` and `oto` are already resolved there.
+- Refresh: `node scripts/build-municipality-centroids.js`. Self-contained (native `fetch`, no extra deps), fetches Wikidata via SPARQL in ~1 minute. Re-run when the lookup may be stale or you suspect a missing municipio. Commit the regenerated JSON if it differs. It **merges by default**: keys already committed keep their centroid and only new ones are added, because which of two homonyms wins a shared key is arbitrary and a plain rebuild silently moves municipios that existing rows are checked against (measured once: 149 keys moved, 17 dropped). `--refresh` takes the rebuild verbatim; review that diff municipio by municipio.
 
 ## Column value requirements
 
@@ -60,7 +62,7 @@ All 20 canonical columns are physically present in every CSV. A column being pre
 - Other empty values are allowed by the contract but may appear in `check:csv:data-quality` or `check:csv:completeness`.
 
 ## How the app uses columns
-- Province catalog source: one CSV file per province in `data/csv/[pais]/[comunidad]/`.
+- Area catalog source: one CSV file per area in `data/csv/[country]/[region]/`.
 - Filter by category: `categoria` (exact normalized match).
 - Result title: `nombre`.
 - Result metadata: `municipio`, `categoria`, `productos estrella`.
@@ -128,7 +130,7 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
   - `verificado`
 - Legacy values such as `alta`, `media`, and `baja` are invalid. Use `verificado`, `parcial`, and `pendiente`.
 - A row marked `verificado` must have coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`), so the level stays evidence-based. The blocking audit fails when this is not the case.
-- For new and re-reviewed decisions, the matching evidence ledger records source URLs, inspection dates and supported claims. Provinces migrate progressively; strict coverage is controlled by `data/evidence/coverage.json`.
+- For new and re-reviewed decisions, the matching evidence ledger records source URLs, inspection dates and supported claims. Areas migrate progressively; strict coverage is controlled by `data/evidence/coverage.json`.
 
 ## Online sales
 - The decision model — when a channel qualifies as `sí`, the third-party resale rule — lives in `docs/EDITORIAL_POLICY.md`. This section owns only allowed values and blocking rules.
@@ -161,11 +163,11 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
 - Line endings must be LF (no CR/CRLF anywhere in the file), and the file must not start with a UTF-8 BOM.
 - `slug` is required and must be lowercase ASCII words separated by `-`.
 - `nombre`, `municipio` and `categoria` are required: they are the row's title, its location and the facet it is filtered by.
-- `slug` must be unique within its province CSV.
+- `slug` must be unique within its area CSV.
 - `lat` and `lon` must both be present or both be empty.
 - `lat`, when present, must be numeric and between `-90` and `90`.
 - `lon`, when present, must be numeric and between `-180` and `180`.
-- `lat`/`lon` must not be more than `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond that the point belongs to a different town: almost always a swapped/wrong coordinate or a wrong `municipio`. The `15–100 km` band is a warning, not an error; rows whose `municipio` is not in the lookup are skipped.
+- `lat`/`lon` must not be more than `100 km` from the `municipio` centroid (looked up in `data/reference/municipalities.json` + overrides). Beyond that the point belongs to a different town: almost always a swapped/wrong coordinate or a wrong `municipio`. The `15–100 km` band is a warning, not an error; rows whose `municipio` is not in the lookup are skipped.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
 - `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/catalunya/barcelona/ejemplo.webp`.
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
@@ -199,7 +201,7 @@ Actionable warnings (always fire):
     `s` per word so `Carne` and `Carnes` in the same file are one group
   - category labels that should use one of the preferred category labels
   - a `categoria` listed in `retiredCategories` but still valid (see Categories)
-  - `lat`/`lon` between `15 km` and `100 km` from the `municipio` centroid (looked up in `data/reference/municipios.json` + overrides). Beyond `100 km` it is a blocking error instead (see Blocking rules). The message names the closest centroid — `closest centroid is X (Y km)` — so you can tell whether the `municipio` or the `lat`/`lon` is the wrong field. Rows whose `municipio` is not in the lookup are skipped silently.
+  - `lat`/`lon` between `15 km` and `100 km` from the `municipio` centroid (looked up in `data/reference/municipalities.json` + overrides). Beyond `100 km` it is a blocking error instead (see Blocking rules). The message names the closest centroid — `closest centroid is X (Y km)` — so you can tell whether the `municipio` or the `lat`/`lon` is the wrong field. Rows whose `municipio` is not in the lookup are skipped silently.
 
 ## Link validation
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must be valid `http://` or `https://` URLs.
@@ -218,14 +220,14 @@ https://maps.app.goo.gl/...
 ## Producer image contract
 - `imagen` may be empty.
 - When present, it must be a root-relative path to an asset under `public/`, for example `/productores/es/catalunya/barcelona/ejemplo.webp`.
-- Canonical path: `/productores/<pais>/<comunidad>/<provincia>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/es/madrid/madrid/`). `check:images` warns when a row's asset lives outside its province folder, so a legacy top-level path does not go unnoticed.
+- Canonical path: `/productores/<country>/<region>/<area>/<slug>.webp`, mirroring both the CSV layout and the producer `slug` (Madrid: `/productores/es/madrid/madrid/`). `check:images` warns when a row's asset lives outside its area folder, so a legacy top-level path does not go unnoticed.
 - The file must exist and pass `npx pnpm check:images`.
 - Visual composition, sourcing, naming conventions, and enrichment workflow live in `docs/IMAGES.md`.
 
 ## Producer identity
 - `slug` is the primary identity for producer detail pages.
-- Row order in each province CSV is editorial and may change without changing producer URLs.
+- Row order in each area CSV is editorial and may change without changing producer URLs.
 - Canonical detail path format is `/p/[slug]`.
-- Detail URLs must include `provincia=[provincia]`, including Barcelona, because slugs are unique within a province CSV rather than globally.
-- Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]?provincia=[provincia]` when resolvable.
-- `slug` should be lowercase ASCII with words separated by `-`, unique within the province CSV, and stable across row reordering. Keep a correct slug stable, but correct one that materially encodes the wrong identity, municipality, duplicate or misleading typo; preserve the history with evidence/docs updates.
+- Detail URLs must include `area=[area]`, including Barcelona, because slugs are unique within an area CSV rather than globally.
+- Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]?area=[area]` when resolvable.
+- `slug` should be lowercase ASCII with words separated by `-`, unique within the area CSV, and stable across row reordering. Keep a correct slug stable, but correct one that materially encodes the wrong identity, municipality, duplicate or misleading typo; preserve the history with evidence/docs updates.

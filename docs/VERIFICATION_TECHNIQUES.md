@@ -1,6 +1,6 @@
 # Técnicas de verificación de catálogos provinciales
 
-Manual operativo para revisar `data/csv/[pais]/[comunidad]/[provincia].csv`. `AGENTS.md`,
+Manual operativo para revisar `data/csv/[country]/[region]/[area].csv`. `AGENTS.md`,
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`
 contienen los contratos; aquí se define cómo investigar con eficiencia.
 
@@ -37,7 +37,7 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 
    ```bash
    git status --short
-   npx pnpm list:province [provincia]   # acótalo en provincias grandes (ver Disciplina de contexto)
+   npx pnpm list:area [area]   # acótalo en provincias grandes (ver Disciplina de contexto)
    ```
 
    Evita abrir en paralelo una provincia ya activa. Para una fila concreta, localízala con `rg` en el
@@ -81,8 +81,8 @@ técnicas son heurísticas que el agente puede adaptar al caso.
    npx pnpm check:evidence
    npx pnpm check:evidence:changed   # warning-only: ¿alguna decisión sin evidencia?
    git diff --check
-   git diff -- data/csv/[pais]/[comunidad]/[provincia].csv
-   git diff -- data/evidence/[pais]/[comunidad]/[provincia].jsonl
+   git diff -- data/csv/[country]/[region]/[area].csv
+   git diff -- data/evidence/[country]/[region]/[area].jsonl
    ```
 
    Al cerrar trabajo de datos, ejecuta `npx pnpm verify:data`.
@@ -189,7 +189,7 @@ propios sigue siendo una fila válida.
 - Si geocodificas, limita a España, respeta el servicio usado y valida contra el centroide municipal.
 - Hasta 15 km es la banda esperada; 15–100 km requiere revisión; más de 100 km bloquea el contrato.
 - Si el centroide corresponde a un homónimo territorial, corrige
-  `data/reference/municipios-overrides.json`; no muevas productores correctos.
+  `data/reference/municipality-overrides.json`; no muevas productores correctos.
 - Si una dirección no resuelve, conserva el centroide. Coordenadas iguales o próximas son una alerta,
   no una orden de fusionar.
 
@@ -204,7 +204,7 @@ hash) vive en `docs/IMAGES.md`; el contrato del campo `imagen` en
 
 - No leas todo el CSV para editar unas filas.
 - No leas ni reformatees todo el JSONL: busca el `slug` y sustituye una sola línea.
-- El roster `list:province` de una provincia grande (Barcelona, Madrid) también llena el contexto:
+- El roster `list:area` de una provincia grande (Barcelona, Madrid) también llena el contexto:
   acótalo con `--categoria`/`--pendientes` o `rg`, no lo vuelques entero.
 - No releas este documento completo en cada lote; conserva solo las secciones aplicables.
 - Consulta `docs/CSV_CONTRACT.md` solo para dudas estructurales o valores permitidos.
@@ -253,10 +253,10 @@ de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálo
 
 ## Documento provincial opcional
 
-Crea `docs/verificacion/[pais]/[provincia].md` solo si el CSV y este manual no bastan para reanudar. Durante
+Crea `docs/verification/[country]/[area].md` solo si el CSV y este manual no bastan para reanudar. Durante
 una pasada es un documento de trabajo: snapshot, worklist, plan de lotes, fuentes locales y
 excepciones. No copies este manual ni conviertas el ledger en otra base de datos. Las pistas no
-aceptadas siguen en `docs/candidates/[pais]/[provincia].md`.
+aceptadas siguen en `docs/candidates/[country]/[area].md`.
 
 ### Rotación al cerrar la pasada
 

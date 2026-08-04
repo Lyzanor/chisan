@@ -4,7 +4,7 @@ export type CatalogNavigationContext = {
   highlight?: string | number;
   lat?: string | number;
   lon?: string | number;
-  province?: string;
+  area?: string;
 };
 
 export function readQueryParam(
@@ -29,10 +29,10 @@ function appendParam(params: URLSearchParams, key: string, value?: string | numb
 function buildContextParams(context: CatalogNavigationContext): URLSearchParams {
   const params = new URLSearchParams();
 
-  appendParam(params, "provincia", context.province);
-  appendParam(params, "municipio", context.municipality);
-  appendParam(params, "categoria", context.category);
-  appendParam(params, "destacar", context.highlight);
+  appendParam(params, "area", context.area);
+  appendParam(params, "municipality", context.municipality);
+  appendParam(params, "category", context.category);
+  appendParam(params, "highlight", context.highlight);
   appendParam(params, "lat", context.lat);
   appendParam(params, "lon", context.lon);
 

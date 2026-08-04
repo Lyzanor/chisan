@@ -4,24 +4,24 @@
  */
 
 const LABELS: Record<string, string> = {
-  nombre: "Nombre",
-  municipio: "Municipio",
-  categoria: "Categoría",
-  subcategoria: "Subcategoría",
-  direccion: "Dirección",
-  descripcion: "Descripción",
-  horario: "Horario",
-  telefono: "Teléfono",
-  correo: "Correo",
+  nombre: "Name",
+  municipio: "Municipality",
+  categoria: "Category",
+  subcategoria: "Subcategory",
+  direccion: "Address",
+  descripcion: "Description",
+  horario: "Opening hours",
+  telefono: "Phone",
+  correo: "Email",
   web: "Web",
-  "venta online": "Venta online",
-  "canal de venta": "Canal de venta",
+  "venta online": "Online sales",
+  "canal de venta": "Sales channel",
   facebook: "Facebook",
   instagram: "Instagram",
   "google maps": "Google Maps",
-  lat: "Latitud",
-  lon: "Longitud",
-  revisado: "Revisado",
+  lat: "Latitude",
+  lon: "Longitude",
+  revisado: "Reviewed",
 };
 
 function normalizeKey(key: string): string {

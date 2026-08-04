@@ -1,19 +1,19 @@
 # Architecture
 
 ## Purpose
-Serve province CSV files as a map-first producer catalog with a simple row detail page. The app has no implicit default province; `/` asks for a province before reading a CSV.
+Serve area CSV files as a map-first producer catalog with a simple row detail page. The app has no implicit default area; `/` asks for a country and `/[country]` for an area before any CSV is read.
 
 ## Runtime flow
 ```mermaid
 flowchart TD
-  A["data/csv/[pais]/[comunidad]/[provincia].csv"] --> B["lib/csv-catalog.ts"]
+  A["data/csv/[country]/[region]/[area].csv"] --> B["lib/csv-catalog.ts"]
   B --> P["app/page.tsx (/): country selector"]
-  P --> Q["app/[country]/page.tsx (/es, /jp): province selector"]
-  Q --> C["app/page.tsx (?provincia=): province/category catalog"]
+  P --> Q["app/[country]/page.tsx (/es, /jp): area selector"]
+  Q --> C["app/page.tsx (?area=): area/category catalog"]
   C --> D["Producer viewer"]
   C --> E["Map points (toProducerMapPoints)"]
   E --> F["Leaflet + OSM map (components/map/*)"]
-  D --> G["app/p/[slug]/page.tsx -> /p/[slug]?provincia=[provincia]"]
+  D --> G["app/p/[slug]/page.tsx -> /p/[slug]?area=[area]"]
   G --> H["Row detail (field/value table)"]
 ```
 
@@ -47,19 +47,19 @@ flowchart TD
     - `findProducerBySlug(slug|legacy-id|legacy-id-slug)`
     - `toProducerMapPoints(rows)`
 - `app/page.tsx`
-  - Reads URL params `provincia`, `categoria`, and `destacar` (producer `slug`).
-  - Renders the province chooser when `provincia` is missing or unknown.
-  - Shows province selector and category chips.
+  - Reads URL params `area`, `categoria`, and `destacar` (producer `slug`).
+  - Renders the area chooser when `area` is missing or unknown.
+  - Shows area selector and category chips.
   - Renders a Leaflet map with OSM tiles for producers with coordinates.
   - Renders a compact producer viewer next to the map.
 - `app/p/[slug]/page.tsx`
-  - Resolves one producer by current `slug` plus `provincia`.
-  - Redirects legacy `/p/[id]` and `/p/[id]-[slug]` URLs to canonical `/p/[slug]?provincia=[provincia]`.
-  - Redirects detail requests without `provincia` back to `/` because producer slugs are province-scoped.
+  - Resolves one producer by current `slug` plus `area`.
+  - Redirects legacy `/p/[id]` and `/p/[id]-[slug]` URLs to canonical `/p/[slug]?area=[area]`.
+  - Redirects detail requests without `area` back to `/` because producer slugs are area-scoped.
   - Renders all CSV columns and values.
 
 ## Design rules
-- Keep one data source per province: CSV file on disk, grouped by autonomous community.
+- Keep one data source per area: CSV file on disk, grouped by autonomous community.
 - Keep decision provenance in matching JSONL evidence ledgers; never read them from application code.
 - Keep stable editorial outcomes covered by synthetic evaluation cases.
 - Keep CSV reading and normalization centralized in `lib/csv-catalog.ts`.

@@ -1,0 +1,135 @@
+{
+  "label": "Portugal",
+  "unit": {
+    "one": "district",
+    "many": "districts"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "regions": [
+    {
+      "slug": "norte",
+      "label": "Norte",
+      "areas": [
+        {
+          "slug": "viana-do-castelo",
+          "label": "Viana do Castelo"
+        },
+        {
+          "slug": "braga",
+          "label": "Braga"
+        },
+        {
+          "slug": "vila-real",
+          "label": "Vila Real"
+        },
+        {
+          "slug": "braganca",
+          "label": "Bragança"
+        },
+        {
+          "slug": "porto",
+          "label": "Porto"
+        }
+      ]
+    },
+    {
+      "slug": "centro",
+      "label": "Centro",
+      "areas": [
+        {
+          "slug": "aveiro",
+          "label": "Aveiro"
+        },
+        {
+          "slug": "viseu",
+          "label": "Viseu"
+        },
+        {
+          "slug": "guarda",
+          "label": "Guarda"
+        },
+        {
+          "slug": "coimbra",
+          "label": "Coimbra"
+        },
+        {
+          "slug": "castelo-branco",
+          "label": "Castelo Branco"
+        },
+        {
+          "slug": "leiria",
+          "label": "Leiria"
+        }
+      ]
+    },
+    {
+      "slug": "lisboa-e-vale-do-tejo",
+      "label": "Lisboa e Vale do Tejo",
+      "areas": [
+        {
+          "slug": "santarem",
+          "label": "Santarém"
+        },
+        {
+          "slug": "lisboa",
+          "label": "Lisboa"
+        },
+        {
+          "slug": "setubal",
+          "label": "Setúbal"
+        }
+      ]
+    },
+    {
+      "slug": "alentejo",
+      "label": "Alentejo",
+      "areas": [
+        {
+          "slug": "portalegre",
+          "label": "Portalegre"
+        },
+        {
+          "slug": "evora",
+          "label": "Évora"
+        },
+        {
+          "slug": "beja",
+          "label": "Beja"
+        }
+      ]
+    },
+    {
+      "slug": "algarve",
+      "label": "Algarve",
+      "areas": [
+        {
+          "slug": "faro",
+          "label": "Faro"
+        }
+      ]
+    },
+    {
+      "slug": "acores",
+      "label": "Açores",
+      "areas": [
+        {
+          "slug": "acores",
+          "label": "Açores"
+        }
+      ]
+    },
+    {
+      "slug": "madeira",
+      "label": "Madeira",
+      "areas": [
+        {
+          "slug": "madeira",
+          "label": "Madeira"
+        }
+      ]
+    }
+  ]
+}

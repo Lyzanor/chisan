@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Exact 20-column header shared by all province CSVs, in this order.
+// Exact 20-column header shared by all area CSVs, in this order.
 // Documented in docs/CSV_CONTRACT.md, section "Canonical header".
 const CANONICAL_HEADER = [
   "slug",
@@ -53,8 +53,8 @@ const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
 // different municipio: a blocking error (wrong lat/lon or wrong municipio).
 const CENTROID_BLOCKING_DISTANCE_KM = 100;
-const CENTROIDS_RELATIVE_PATH = "data/reference/municipios.json";
-const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipios-overrides.json";
+const CENTROIDS_RELATIVE_PATH = "data/reference/municipalities.json";
+const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipality-overrides.json";
 let PREFERRED_CATEGORY_ALIASES = new Map();
 let VALID_CATEGORIES = new Set();
 // Labels the 2026-06-21 consolidation folded into another one, mapped to their
@@ -349,18 +349,18 @@ async function loadCentroids() {
   return { main, overrides };
 }
 
-// `data/csv/<pais>/<comunidad>/<provincia>.csv`: the centroid overrides are keyed
+// `data/csv/<country>/<region>/<area>.csv`: the centroid overrides are keyed
 // by community, so the hint is the second segment, not the first.
-function inferCommunitySlug(csvPath) {
+function inferRegionSlug(csvPath) {
   const normalized = String(csvPath ?? "").replace(/\\/g, "/");
   const match = /(?:^|\/)data\/csv\/[^/]+\/([^/]+)\//.exec(normalized);
   return match ? match[1] : null;
 }
 
-function pickCandidate(entry, communityHint) {
+function pickCandidate(entry, regionHint) {
   if (Array.isArray(entry)) {
-    if (!communityHint) return null;
-    return entry.find((c) => c.community === communityHint) ?? null;
+    if (!regionHint) return null;
+    return entry.find((c) => c.region === regionHint) ?? null;
   }
   return entry;
 }
@@ -386,7 +386,7 @@ function municipioCandidates(municipio) {
   return candidates;
 }
 
-function lookupCentroid(centroids, municipio, communityHint) {
+function lookupCentroid(centroids, municipio, regionHint) {
   if (!centroids || !municipio) return null;
   const keys = municipioCandidates(municipio).map(normalizeSearch);
   // An override is the curated answer for a name already known to be
@@ -394,7 +394,7 @@ function lookupCentroid(centroids, municipio, communityHint) {
   // when no community matches. Letting a stray `main` entry outvote it would
   // undo the disambiguation it exists for.
   for (const key of keys) {
-    if (centroids.overrides[key]) return pickCandidate(centroids.overrides[key], communityHint);
+    if (centroids.overrides[key]) return pickCandidate(centroids.overrides[key], regionHint);
   }
   const resolved = keys.map((key) => centroids.main[key]).filter(Boolean);
   if (!resolved.length) return null;
@@ -540,7 +540,7 @@ function createIssueCollector() {
   return { issues, push };
 }
 
-function runContractAudit({ raw, headers, rows, push, centroids, communityHint, stats }) {
+function runContractAudit({ raw, headers, rows, push, centroids, regionHint, stats }) {
   const slugLines = new Map();
 
   // The canonical-header comparison below is positional, so it already covers a
@@ -633,7 +633,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint, 
     // Coordinates so far from the declared municipio that they belong to a
     // different town: almost always a swapped/wrong lat/lon or a wrong municipio.
     if (centroids && latRaw && lonRaw && !Number.isNaN(lat) && !Number.isNaN(lon)) {
-      const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), communityHint);
+      const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), regionHint);
       if (!centroid) {
         // No centroid for this municipio (pedanía, or a spelling the lookup does
         // not carry): the row silently escapes every geography check, so count it
@@ -798,7 +798,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, communityHint, 
   }
 }
 
-function runQualityAudit({ rows, push, centroids, communityHint }) {
+function runQualityAudit({ rows, push, centroids, regionHint }) {
   const nameCityLines = new Map();
   const categoryVariants = new Map();
   // The same normalized descripcion on several rows is almost always template
@@ -903,7 +903,7 @@ function runQualityAudit({ rows, push, centroids, communityHint }) {
         push(optionalGap, line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
 
-      const centroid = lookupCentroid(centroids, city, communityHint);
+      const centroid = lookupCentroid(centroids, city, regionHint);
       if (centroid) {
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
         // Beyond the blocking distance the contract audit raises an error, so
@@ -1018,7 +1018,7 @@ function printReport(mode, issues, { summaryOnly = false, stats = { geoSkipped: 
   }
   if (stats.geoSkipped) {
     console.log(
-      `- geo-check skipped (municipio not in data/reference/municipios.json): ${stats.geoSkipped} rows`,
+      `- geo-check skipped (municipio not in data/reference/municipalities.json): ${stats.geoSkipped} rows`,
     );
   }
 
@@ -1048,13 +1048,13 @@ async function main() {
   const { issues, push } = createIssueCollector();
 
   const centroids = await loadCentroids();
-  const communityHint = inferCommunitySlug(csvPath);
+  const regionHint = inferRegionSlug(csvPath);
   const stats = { geoSkipped: 0 };
 
-  runContractAudit({ raw, headers, rows, push, centroids, communityHint, stats });
+  runContractAudit({ raw, headers, rows, push, centroids, regionHint, stats });
 
   if (mode === "quality") {
-    runQualityAudit({ headers, rows, push, centroids, communityHint });
+    runQualityAudit({ headers, rows, push, centroids, regionHint });
   }
 
   printReport(mode, issues, { summaryOnly, stats });

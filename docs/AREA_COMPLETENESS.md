@@ -1,17 +1,17 @@
-# Province Completeness
+# Area Completeness
 
 ## Goal
-Long-term: make every province catalog progressively more useful and reliable, while allowing each province to improve at its own pace.
+Long-term: make every area catalog progressively more useful and reliable, while allowing each area to improve at its own pace.
 
-This is not a required gate for every task. Use it when planning data-expansion work, auditing a province, or deciding which province to improve next.
+This is not a required gate for every task. Use it when planning data-expansion work, auditing an area, or deciding which area to improve next.
 
-No province CSV is the reference or target for another. Completeness is measured against shared, fixed editorial criteria, and progress should be evaluated against the previous state of the same province.
+No area CSV is the reference or target for another. Completeness is measured against shared, fixed editorial criteria, and progress should be evaluated against the previous state of the same area.
 
 ```bash
 npx pnpm check:csv:completeness
 ```
 
-The audit prints the fixed targets and one mechanical progress score per province. It lists provinces by path rather than ranking them against each other. The score is a planning signal, not a release gate or a substitute for source verification.
+The audit prints the fixed targets and one mechanical progress score per area. It lists areas by path rather than ranking them against each other. The score is a planning signal, not a release gate or a substitute for source verification.
 
 ## Fixed Planning Targets
 
@@ -45,7 +45,7 @@ These percentages are stable editorial planning targets, not claims that every p
 ## Planning Signal
 Run the completeness audit when you need a planning signal. It highlights obvious gaps, but it does not replace editorial judgment about validity, municipal spread, row quality, and source reliability.
 
-Choose the province from the current editorial plan, then inspect its `Gaps to target` columns to decide the actual work:
+Choose the area from the current editorial plan, then inspect its `Gaps to target` columns to decide the actual work:
 
 - `horario`: schedules are missing or sparse.
 - `contacto`: `telefono` and `correo` coverage is weak.
@@ -57,18 +57,18 @@ Choose the province from the current editorial plan, then inspect its `Gaps to t
 - `imagen`: local producer images are missing.
 - `verificacion`: rows remain `pendiente`.
 
-Compare a province with its own earlier state when assessing progress. Do not choose the next province from score alone: editorial ownership, active candidate research, municipal gaps, and data validity matter more than cross-province ordering.
+Compare an area with its own earlier state when assessing progress. Do not choose the next area from score alone: editorial ownership, active candidate research, municipal gaps, and data validity matter more than cross-area ordering.
 
-## Province Improvement Loop
-Use this loop for dedicated province work, not as a default requirement for unrelated tasks.
+## Area Improvement Loop
+Use this loop for dedicated area work, not as a default requirement for unrelated tasks.
 
-For each selected province:
+For each selected area:
 
 1. Run:
 ```bash
 npx pnpm check:csv:completeness
-node scripts/audit-csv.js --mode=contract data/csv/[pais]/[comunidad]/[provincia].csv
-node scripts/audit-csv.js --mode=quality data/csv/[pais]/[comunidad]/[provincia].csv
+node scripts/audit-csv.js --mode=contract data/csv/[country]/[region]/[area].csv
+node scripts/audit-csv.js --mode=quality data/csv/[country]/[region]/[area].csv
 ```
 
 2. Fix blocking contract errors first.
@@ -78,7 +78,7 @@ node scripts/audit-csv.js --mode=quality data/csv/[pais]/[comunidad]/[provincia]
 6. Fill or correct `Google Maps`, `lat`, and `lon`.
 7. Verify `web`, `Facebook`, and `Instagram`; remove links that do not resolve or do not belong to the producer.
 8. Fill missing contact fields from official producer pages, public registries, or reliable institutional listings.
-9. Add images only as local assets under `public/productores/[pais]/[comunidad]/[provincia]/`.
+9. Add images only as local assets under `public/productores/[country]/[region]/[area]/`.
 10. Run:
 ```bash
 npx pnpm verify:data

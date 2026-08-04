@@ -15,10 +15,10 @@
 // `Venta online`, así que el informe avisa de la edad de cada dato.
 //
 // Uso:
-//   node scripts/check-links.mjs --provincia girona,cadiz
+//   node scripts/check-links.mjs --area girona,cadiz
 //   node scripts/check-links.mjs --all                  (lento: ~8.500 hosts)
 //   node scripts/check-links.mjs --offline              lee el snapshot, sin red
-//   node scripts/check-links.mjs --offline --provincia soria --json
+//   node scripts/check-links.mjs --offline --area soria --json
 
 import fs from "node:fs";
 import path from "node:path";
@@ -108,10 +108,10 @@ const SIGNAL_ORDER = [
 ];
 
 function usage() {
-  console.log(`Uso: node scripts/check-links.mjs --provincia <stem>[,<stem>] [opciones]
+  console.log(`Uso: node scripts/check-links.mjs --area <stem>[,<stem>] [opciones]
 
 Opciones:
-  --provincia <stem>    Provincia(s) a comprobar (ej. girona,cadiz).
+  --area <stem>         Area(s) to check (e.g. girona,cadiz).
   --all                 Comprueba todos los CSV (lento; ~8.500 hosts).
   --offline             No toca la red: informa desde el snapshot guardado.
   --timeout <ms>        Timeout por URL (defecto 10000).
@@ -122,7 +122,7 @@ Opciones:
 
 function parseArgs(argv) {
   const args = {
-    provincias: [],
+    areas: [],
     all: false,
     offline: false,
     timeout: 10000,
@@ -140,10 +140,10 @@ function parseArgs(argv) {
       args.offline = true;
     } else if (arg === "--no-snapshot") {
       args.snapshot = false;
-    } else if (arg === "--provincia") {
+    } else if (arg === "--area") {
       const value = argv[++i];
-      if (!value) throw new Error("--provincia requiere un valor");
-      args.provincias.push(
+      if (!value) throw new Error("--area requiere un valor");
+      args.areas.push(
         ...value
           .split(",")
           .map((item) => item.trim())
@@ -168,9 +168,9 @@ function parseArgs(argv) {
   }
   // En modo offline no hay coste de red, así que "sin filtro" es todo el
   // catálogo; con red, exigir alcance explícito evita barridos accidentales.
-  if (!args.offline && !args.all && args.provincias.length === 0) {
+  if (!args.offline && !args.all && args.areas.length === 0) {
     usage();
-    throw new Error("Indica --provincia o --all.");
+    throw new Error("Indica --area o --all.");
   }
   return args;
 }
@@ -443,7 +443,7 @@ export function readSnapshot(file = SNAPSHOT_PATH) {
 }
 
 function writeSnapshot(previous, fresh, today, file = SNAPSHOT_PATH) {
-  // Merge: una tanda por provincia no debe borrar lo que ya se sabe del resto.
+  // Merge: una tanda por area no debe borrar lo que ya se sabe del resto.
   const urls = { ...previous.urls, ...fresh };
   const ordered = Object.fromEntries(Object.keys(urls).sort().map((key) => [key, urls[key]]));
   const payload = {
@@ -491,7 +491,7 @@ function collectRows(files) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  const files = listCsvFiles(args.all || args.offline ? args.provincias : args.provincias);
+  const files = listCsvFiles(args.all || args.offline ? args.areas : args.areas);
   const { rowsByUrl, rowsByDomain } = collectRows(files);
   const urls = [...rowsByUrl.keys()];
   const today = new Date().toISOString().slice(0, 10);

@@ -3,30 +3,30 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 import { ProducersMap } from "@/components/map/producers-map";
-import { ProvinceSelector } from "@/components/province-selector";
+import { AreaSelector } from "@/components/area-selector";
 import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
 import {
   CATALOG_UNIT,
-  getProvinceCountrySlug,
-  getProvinceLabel,
+  getAreaCountrySlug,
+  getAreaLabel,
   listCategories,
-  listProvinceCountries,
-  normalizeProvinceSlug,
+  listCountries,
+  normalizeAreaSlug,
   searchProducers,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
 import { getCategoryIcon } from "@/lib/get-category-icon";
 
 export const metadata: Metadata = {
-  title: "Mapa de productores KM0",
-  description: `Mapa y visualizador de productores locales por ${CATALOG_UNIT}.`,
+  title: "KM0 Producer Map",
+  description: `Map and browser of local producers by ${CATALOG_UNIT.one}.`,
 };
 
 type HomePageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-type ProvinceCountries = ReturnType<typeof listProvinceCountries>;
+type Countries = ReturnType<typeof listCountries>;
 
 export const dynamic = "force-dynamic";
 
@@ -38,21 +38,26 @@ function getFieldValue(fields: Record<string, string>, key: string): string {
   return (match?.[1] ?? "").trim();
 }
 
-function CountryStart({ countries }: { countries: ProvinceCountries }) {
+// A country that starts with a single area would otherwise read "1 districts".
+function count(n: number, unit: { one: string; many: string }): string {
+  return `${n} ${n === 1 ? unit.one : unit.many}`;
+}
+
+function CountryStart({ countries }: { countries: Countries }) {
   return (
-    <main className="province-start-page">
-      <section className="province-start-shell" aria-labelledby="country-start-title">
-        <div className="province-start-head">
+    <main className="catalog-start-page">
+      <section className="catalog-start-shell" aria-labelledby="country-start-title">
+        <div className="catalog-start-head">
           <div>
             <p className="catalog-kicker">KM0</p>
-            <h1 id="country-start-title">Elige país</h1>
+            <h1 id="country-start-title">Choose a country</h1>
           </div>
         </div>
 
         <div className="country-card-list">
           {countries.map((country) => {
-            const places = country.groups.reduce(
-              (total, group) => total + group.provinces.length,
+            const places = country.regions.reduce(
+              (total, region) => total + region.areas.length,
               0,
             );
 
@@ -60,7 +65,7 @@ function CountryStart({ countries }: { countries: ProvinceCountries }) {
               <Link key={country.slug} href={`/${country.slug}`} className="country-card">
                 <strong>{country.label}</strong>
                 <small>
-                  {places} {country.unitPlural} en {country.groups.length} {country.groupUnitPlural}
+                  {count(places, country.unit)} in {count(country.regions.length, country.regionUnit)}
                 </small>
               </Link>
             );
@@ -73,19 +78,19 @@ function CountryStart({ countries }: { countries: ProvinceCountries }) {
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const queryParams = await searchParams;
-  const countries = listProvinceCountries();
-  const province = normalizeProvinceSlug(readQueryParam(queryParams, "provincia"));
-  const category = readQueryParam(queryParams, "categoria");
-  const highlightedSlug = readQueryParam(queryParams, "destacar");
+  const countries = listCountries();
+  const area = normalizeAreaSlug(readQueryParam(queryParams, "area"));
+  const category = readQueryParam(queryParams, "category");
+  const highlightedSlug = readQueryParam(queryParams, "highlight");
 
-  if (!province) {
+  if (!area) {
     return <CountryStart countries={countries} />;
   }
 
   const [items, categories, allRows] = await Promise.all([
-    searchProducers({ municipality: "", category }, province),
-    listCategories(province),
-    searchProducers({ municipality: "", category: "" }, province),
+    searchProducers({ municipality: "", category }, area),
+    listCategories(area),
+    searchProducers({ municipality: "", category: "" }, area),
   ]);
 
   const highlightedItem = highlightedSlug
@@ -94,8 +99,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     : undefined;
   const mapPoints = toProducerMapPoints(items);
   const visibleItems = items.slice(0, 500);
-  const provinceLabel = getProvinceLabel(province);
-  const countrySlug = getProvinceCountrySlug(province);
+  const areaLabel = getAreaLabel(area);
+  const countrySlug = getAreaCountrySlug(area);
   const country = countries.find((entry) => entry.slug === countrySlug);
 
   return (
@@ -115,30 +120,30 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </>
             ) : null}
           </p>
-          <h1>Mapa de productores</h1>
+          <h1>Producer map</h1>
           <p>
-            {provinceLabel} · {items.length} productores encontrados · {mapPoints.length} en el mapa
+            {areaLabel} · {items.length} producers found · {mapPoints.length} on the map
           </p>
         </div>
 
         {country ? (
-          <Suspense fallback={<div className="province-selector--loading">{country.label}…</div>}>
-            <ProvinceSelector country={country} currentProvince={province} />
+          <Suspense fallback={<div className="area-selector--loading">{country.label}…</div>}>
+            <AreaSelector country={country} currentArea={area} />
           </Suspense>
         ) : null}
       </header>
 
-      <nav className="catalog-simple-categories" aria-label="Categorías">
+      <nav className="catalog-simple-categories" aria-label="Categories">
         <Link
-          href={buildCatalogHref({ province })}
+          href={buildCatalogHref({ area })}
           className={`catalog-chip ${!category ? "is-active" : ""}`}
         >
-          Todas
+          All
         </Link>
         {categories.map((cat) => (
           <Link
             key={cat}
-            href={buildCatalogHref({ province, category: cat })}
+            href={buildCatalogHref({ area, category: cat })}
             className={`catalog-chip ${category === cat ? "is-active" : ""}`}
           >
             <span aria-hidden="true">{getCategoryIcon(cat)}</span>
@@ -148,32 +153,32 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </nav>
 
       <section className="catalog-simple-layout">
-        <div className="catalog-simple-map" aria-label="Mapa de productores">
+        <div className="catalog-simple-map" aria-label="Producer map">
           <ProducersMap
             points={mapPoints}
-            province={province}
+            area={area}
             highlightedSlug={highlightedItem?.slug}
           />
         </div>
 
-        <aside className="catalog-viewer" aria-label="Productores">
+        <aside className="catalog-viewer" aria-label="Producers">
           {highlightedItem ? (
             <article className="catalog-featured-producer">
-              <p className="catalog-kicker">Seleccionado</p>
+              <p className="catalog-kicker">Selected</p>
               <h2>{highlightedItem.name}</h2>
               <p>{highlightedItem.city} · {highlightedItem.category}</p>
               <div className="catalog-featured-actions">
-                <Link href={buildCatalogHref({ province, category })}>Ver todos</Link>
-                <Link href={buildProducerHref(highlightedItem, { province })}>Abrir ficha</Link>
+                <Link href={buildCatalogHref({ area, category })}>See all</Link>
+                <Link href={buildProducerHref(highlightedItem, { area })}>Open profile</Link>
               </div>
             </article>
           ) : null}
 
           <div className="catalog-viewer-head">
-            <h2>Productores</h2>
+            <h2>Producers</h2>
             <p>
-              Mostrando {visibleItems.length} de {items.length}
-              {allRows.length !== items.length ? ` · ${allRows.length} total en ${provinceLabel}` : ""}
+              Showing {visibleItems.length} of {items.length}
+              {allRows.length !== items.length ? ` · ${allRows.length} total in ${areaLabel}` : ""}
             </p>
           </div>
 
@@ -186,7 +191,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 return (
                   <li key={item.slug} className={highlightedItem?.slug === item.slug ? "is-selected" : ""}>
                     <Link
-                      href={buildCatalogHref({ province, category, highlight: item.slug })}
+                      href={buildCatalogHref({ area, category, highlight: item.slug })}
                       scroll={false}
                       className="producer-compact-link"
                     >
@@ -202,17 +207,17 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                       </span>
                     </Link>
                     <Link
-                      href={buildProducerHref(item, { province })}
+                      href={buildProducerHref(item, { area })}
                       className="producer-compact-detail"
                     >
-                      Ficha
+                      Details
                     </Link>
                   </li>
                 );
               })}
             </ul>
           ) : (
-            <p className="catalog-empty">No hay productores en esta categoría para {provinceLabel}.</p>
+            <p className="catalog-empty">No producers in this category for {areaLabel}.</p>
           )}
         </aside>
       </section>

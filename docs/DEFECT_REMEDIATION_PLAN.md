@@ -95,7 +95,7 @@ cerrado de slugs** dentro de esa provincia.
   dependencia forma parte del mismo lote.
 
 Para una pasada que vaya a ocupar más de una sesión, la cabecera de
-`docs/verificacion/[pais]/[provincia].md` mantiene solo esta reserva:
+`docs/verification/[country]/[area].md` mantiene solo esta reserva:
 
 ```text
 Estado de pasada: activa | pausada | mantenimiento
@@ -132,15 +132,15 @@ no se abre una segunda pasada.
 2. Medir la provincia, sin volcar rosters grandes:
 
    ```bash
-   npx pnpm check:defects --provincia <provincia>
-   node scripts/audit-csv.js --mode=contract data/csv/<pais>/<comunidad>/<provincia>.csv
-   node scripts/audit-csv.js --mode=quality data/csv/<pais>/<comunidad>/<provincia>.csv
+   npx pnpm check:defects --area <area>
+   node scripts/audit-csv.js --mode=contract data/csv/<country>/<region>/<area>.csv
+   node scripts/audit-csv.js --mode=quality data/csv/<country>/<region>/<area>.csv
    ```
 
 3. Obtener slugs únicamente para el carril elegido:
 
    ```bash
-   npx pnpm check:defects --provincia <provincia> --check <id> --list
+   npx pnpm check:defects --area <area> --check <id> --list
    ```
 
 4. Formar la unión de defectos por slug. Una fila que aparece en varios checks
@@ -295,8 +295,8 @@ El producto es el snapshot fechado `data/reference/web-status.json`, que
 convierte el paso más caro de una pasada —abrir dominios a mano— en lectura:
 
 ```bash
-npx pnpm check:links -- --offline --provincia <provincia>   # sin red
-npx pnpm check:links -- --provincia <provincia>             # refresca
+npx pnpm check:links -- --offline --area <area>   # sin red
+npx pnpm check:links -- --area <area>             # refresca
 ```
 
 Caduca, porque `web` es una afirmación dinámica igual que `Venta online`: el
@@ -404,7 +404,7 @@ unas pocas plantillas de volcado repetidas. Agrúpalas antes de escribir nada.
 
 ```bash
 npx pnpm check:defects --check descripcion-generica --plantillas
-npx pnpm check:defects --provincia <provincia> --check descripcion-generica --plantillas --list
+npx pnpm check:defects --area <area> --check descripcion-generica --plantillas --list
 ```
 
 Para cada forma, una sola pregunta: **¿aporta algún hecho que no esté ya en
@@ -477,9 +477,9 @@ Entrada obligatoria: identidad, municipio y slug estables; la fila no tiene
 R1 abierto.
 
 ```bash
-npx pnpm enrich:images --provincia <provincia> --contact-sheet informe/<provincia>
+npx pnpm enrich:images --area <area> --contact-sheet informe/<area>
 # inspección visual productor a productor
-npx pnpm enrich:images --provincia <provincia> --apply --slug <slug>
+npx pnpm enrich:images --area <area> --apply --slug <slug>
 ```
 
 - Priorizar provincias editorialmente cerradas y por debajo del objetivo fijo
@@ -620,7 +620,7 @@ git diff --check
 
 Además:
 
-- ejecutar el `check:defects --provincia ... --check ...` que originó el lote;
+- ejecutar el `check:defects --area ... --check ...` que originó el lote;
 - ejecutar el audit de calidad del CSV provincial;
 - ejecutar `check:images` si se tocaron imágenes;
 - revisar el diff de CSV, JSONL, candidatos, ledger y activos;
@@ -647,8 +647,8 @@ ramas.
 
 ```bash
 npx pnpm verify:data
-npx pnpm check:defects --provincia <provincia>
-node scripts/audit-csv.js --mode=quality data/csv/<pais>/<comunidad>/<provincia>.csv
+npx pnpm check:defects --area <area>
+node scripts/audit-csv.js --mode=quality data/csv/<country>/<region>/<area>.csv
 git diff --check
 git diff --stat
 ```

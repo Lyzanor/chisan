@@ -14,7 +14,7 @@ import {
   CATALOG_UNIT,
   findProducerBySlug,
   listCategories,
-  normalizeProvinceSlug,
+  normalizeAreaSlug,
 } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
 
@@ -38,20 +38,20 @@ function buildPhoneHref(phone: string): string {
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const query = await searchParams;
-  const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
-  if (!province) {
+  const area = normalizeAreaSlug(readQueryParam(query, "area"));
+  if (!area) {
     return {
-      title: `Selecciona ${CATALOG_UNIT}`,
-      description: `La ficha necesita una ${CATALOG_UNIT} para resolver el CSV correcto.`,
+      title: `Select an ${CATALOG_UNIT.one}`,
+      description: `The profile needs an ${CATALOG_UNIT.one} to resolve the right CSV.`,
     };
   }
 
-  const producer = await findProducerBySlug(slug, province);
+  const producer = await findProducerBySlug(slug, area);
 
   if (!producer) {
     return {
-      title: "Productor no encontrado",
-      description: "No existe ese productor en el CSV.",
+      title: "Producer not found",
+      description: "That producer is not in the CSV.",
     };
   }
 
@@ -64,14 +64,14 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
 export default async function ProducerPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
   const query = await searchParams;
-  const province = normalizeProvinceSlug(readQueryParam(query, "provincia"));
-  if (!province) {
+  const area = normalizeAreaSlug(readQueryParam(query, "area"));
+  if (!area) {
     redirect("/");
   }
 
   const [producer, categories] = await Promise.all([
-    findProducerBySlug(slug, province),
-    listCategories(province),
+    findProducerBySlug(slug, area),
+    listCategories(area),
   ]);
 
   if (!producer) {
@@ -79,12 +79,12 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
   }
 
   const municipality = readQueryParam(query, "municipio");
-  const category = readQueryParam(query, "categoria");
-  const highlight = readQueryParam(query, "destacar");
+  const category = readQueryParam(query, "category");
+  const highlight = readQueryParam(query, "highlight");
   const lat = readQueryParam(query, "lat");
   const lon = readQueryParam(query, "lon");
   const canonicalSegment = buildProducerPathSegment(producer.slug);
-  const backHref = buildCatalogHref({ province, category, highlight: producer.slug });
+  const backHref = buildCatalogHref({ area, category, highlight: producer.slug });
 
   if (slug !== canonicalSegment) {
     redirect(
@@ -96,7 +96,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
           highlight: highlight ? producer.slug : undefined,
           lat,
           lon,
-          province,
+          area,
         },
       ),
     );
@@ -115,18 +115,18 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
     <main className="detail-page">
       <div className="detail-mobile-bar">
         <Link href={backHref} className="detail-back-link">
-          ← Volver al mapa
+          ← Back to the map
         </Link>
       </div>
       <section className="detail-shell">
-        <DetailDesktopNav categories={categories} province={province} />
+        <DetailDesktopNav categories={categories} area={area} />
         <Link href={backHref} className="detail-back-link detail-back-link--desktop">
-          ← Volver al mapa
+          ← Back to the map
         </Link>
 
         <header id="detail-hero" className="detail-hero">
           <div className="detail-hero-copy">
-            <p className="detail-eyebrow">Ficha de productor</p>
+            <p className="detail-eyebrow">Producer profile</p>
             <h1>{producer.name}</h1>
             <p className="detail-subtitle">
               {producer.city} · {producer.category}
@@ -135,7 +135,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
             <div className="detail-links">
               {website ? (
                 <a href={website} target="_blank" rel="noreferrer">
-                  Sitio web
+                  Website
                 </a>
               ) : null}
               {maps ? (
@@ -143,8 +143,8 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
                   Google Maps
                 </a>
               ) : null}
-              {phone && phoneHref ? <a href={phoneHref}>Teléfono</a> : null}
-              {email ? <a href={`mailto:${email}`}>Correo</a> : null}
+              {phone && phoneHref ? <a href={phoneHref}>Phone</a> : null}
+              {email ? <a href={`mailto:${email}`}>Email</a> : null}
               {instagram ? (
                 <a href={instagram} target="_blank" rel="noreferrer">
                   Instagram
@@ -160,7 +160,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
           <figure className="detail-hero-media">
             <Image
               src={producer.imageSrc}
-              alt={`Imagen de ${producer.name}`}
+              alt={`Image of ${producer.name}`}
               width={640}
               height={480}
               sizes="(max-width: 980px) calc(100vw - 2.75rem), 330px"
@@ -171,13 +171,13 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
         </header>
 
         <section id="detail-info" className="detail-table-card">
-          <h2>Información</h2>
+          <h2>Details</h2>
           <div className="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Dato</th>
-                  <th>Información</th>
+                  <th>Field</th>
+                  <th>Value</th>
                 </tr>
               </thead>
               <tbody>

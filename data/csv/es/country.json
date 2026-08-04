@@ -1,0 +1,318 @@
+{
+  "label": "Spain",
+  "unit": {
+    "one": "province",
+    "many": "provinces"
+  },
+  "regionUnit": {
+    "one": "autonomous community",
+    "many": "autonomous communities"
+  },
+  "aliases": {
+    "logrono": "la-rioja"
+  },
+  "regions": [
+    {
+      "slug": "andalucia",
+      "label": "Andalucía",
+      "areas": [
+        {
+          "slug": "almeria",
+          "label": "Almería"
+        },
+        {
+          "slug": "cadiz",
+          "label": "Cádiz"
+        },
+        {
+          "slug": "cordoba",
+          "label": "Córdoba"
+        },
+        {
+          "slug": "granada",
+          "label": "Granada"
+        },
+        {
+          "slug": "huelva",
+          "label": "Huelva"
+        },
+        {
+          "slug": "jaen",
+          "label": "Jaén"
+        },
+        {
+          "slug": "malaga",
+          "label": "Málaga"
+        },
+        {
+          "slug": "sevilla",
+          "label": "Sevilla"
+        }
+      ]
+    },
+    {
+      "slug": "asturias",
+      "label": "Principado de Asturias",
+      "areas": [
+        {
+          "slug": "asturias",
+          "label": "Asturias"
+        }
+      ]
+    },
+    {
+      "slug": "cantabria",
+      "label": "Cantabria",
+      "areas": [
+        {
+          "slug": "cantabria",
+          "label": "Cantabria"
+        }
+      ]
+    },
+    {
+      "slug": "castilla-y-leon",
+      "label": "Castilla y León",
+      "areas": [
+        {
+          "slug": "avila",
+          "label": "Ávila"
+        },
+        {
+          "slug": "burgos",
+          "label": "Burgos"
+        },
+        {
+          "slug": "leon",
+          "label": "León"
+        },
+        {
+          "slug": "palencia",
+          "label": "Palencia"
+        },
+        {
+          "slug": "salamanca",
+          "label": "Salamanca"
+        },
+        {
+          "slug": "segovia",
+          "label": "Segovia"
+        },
+        {
+          "slug": "soria",
+          "label": "Soria"
+        },
+        {
+          "slug": "valladolid",
+          "label": "Valladolid"
+        },
+        {
+          "slug": "zamora",
+          "label": "Zamora"
+        }
+      ]
+    },
+    {
+      "slug": "castilla-la-mancha",
+      "label": "Castilla-La Mancha",
+      "areas": [
+        {
+          "slug": "albacete",
+          "label": "Albacete"
+        },
+        {
+          "slug": "ciudad-real",
+          "label": "Ciudad Real"
+        },
+        {
+          "slug": "cuenca",
+          "label": "Cuenca"
+        },
+        {
+          "slug": "guadalajara",
+          "label": "Guadalajara"
+        },
+        {
+          "slug": "toledo",
+          "label": "Toledo"
+        }
+      ]
+    },
+    {
+      "slug": "aragon",
+      "label": "Aragón",
+      "areas": [
+        {
+          "slug": "huesca",
+          "label": "Huesca"
+        },
+        {
+          "slug": "teruel",
+          "label": "Teruel"
+        },
+        {
+          "slug": "zaragoza",
+          "label": "Zaragoza"
+        }
+      ]
+    },
+    {
+      "slug": "catalunya",
+      "label": "Catalunya",
+      "areas": [
+        {
+          "slug": "barcelona",
+          "label": "Barcelona"
+        },
+        {
+          "slug": "girona",
+          "label": "Girona"
+        },
+        {
+          "slug": "lleida",
+          "label": "Lleida"
+        },
+        {
+          "slug": "tarragona",
+          "label": "Tarragona"
+        }
+      ]
+    },
+    {
+      "slug": "illes-balears",
+      "label": "Illes Balears",
+      "areas": [
+        {
+          "slug": "baleares",
+          "label": "Baleares"
+        }
+      ]
+    },
+    {
+      "slug": "canarias",
+      "label": "Canarias",
+      "areas": [
+        {
+          "slug": "las-palmas",
+          "label": "Las Palmas"
+        },
+        {
+          "slug": "santa-cruz-de-tenerife",
+          "label": "Santa Cruz de Tenerife"
+        }
+      ]
+    },
+    {
+      "slug": "comunitat-valenciana",
+      "label": "Comunitat Valenciana",
+      "areas": [
+        {
+          "slug": "alicante",
+          "label": "Alicante"
+        },
+        {
+          "slug": "castellon",
+          "label": "Castellón"
+        },
+        {
+          "slug": "valencia",
+          "label": "Valencia"
+        }
+      ]
+    },
+    {
+      "slug": "galicia",
+      "label": "Galicia",
+      "areas": [
+        {
+          "slug": "a-coruna",
+          "label": "A Coruña"
+        },
+        {
+          "slug": "lugo",
+          "label": "Lugo"
+        },
+        {
+          "slug": "ourense",
+          "label": "Ourense"
+        },
+        {
+          "slug": "pontevedra",
+          "label": "Pontevedra"
+        }
+      ]
+    },
+    {
+      "slug": "extremadura",
+      "label": "Extremadura",
+      "areas": [
+        {
+          "slug": "badajoz",
+          "label": "Badajoz"
+        },
+        {
+          "slug": "caceres",
+          "label": "Cáceres"
+        }
+      ]
+    },
+    {
+      "slug": "madrid",
+      "label": "Comunidad de Madrid",
+      "areas": [
+        {
+          "slug": "madrid",
+          "label": "Madrid"
+        }
+      ]
+    },
+    {
+      "slug": "la-rioja",
+      "label": "La Rioja",
+      "areas": [
+        {
+          "slug": "la-rioja",
+          "label": "La Rioja"
+        }
+      ]
+    },
+    {
+      "slug": "murcia",
+      "label": "Región de Murcia",
+      "areas": [
+        {
+          "slug": "murcia",
+          "label": "Murcia"
+        }
+      ]
+    },
+    {
+      "slug": "navarra",
+      "label": "Navarra",
+      "areas": [
+        {
+          "slug": "navarra",
+          "label": "Navarra"
+        }
+      ]
+    },
+    {
+      "slug": "pais-vasco",
+      "label": "País Vasco",
+      "areas": [
+        {
+          "slug": "alava",
+          "label": "Álava"
+        },
+        {
+          "slug": "guipuzcoa",
+          "label": "Guipúzcoa"
+        },
+        {
+          "slug": "vizcaya",
+          "label": "Vizcaya"
+        }
+      ]
+    }
+  ]
+}

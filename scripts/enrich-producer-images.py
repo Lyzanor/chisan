@@ -933,7 +933,7 @@ def process_candidate(
 
 
 def list_csv_paths(root: Path) -> list[Path]:
-    # data/csv/<pais>/<comunidad>/<provincia>.csv
+    # data/csv/<country>/<region>/<area>.csv
     return sorted((root / "data" / "csv").glob("*/*/*.csv"))
 
 
@@ -943,7 +943,7 @@ def find_csv_path(root: Path, province: str | None, csv_path: str | None) -> Pat
         return path if path.is_absolute() else root / path
 
     if not province:
-        raise ValueError("Provide --provincia or --csv.")
+        raise ValueError("Provide --area or --csv.")
 
     matches = [path for path in list_csv_paths(root) if path.stem == province]
     if not matches:
@@ -982,8 +982,8 @@ def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
     return fieldnames, rows
 
 
-def public_image_path(asset_province: str, slug: str) -> str:
-    return f"/productores/{asset_province}/{slug}.webp"
+def public_image_path(asset_dir: str, slug: str) -> str:
+    return f"/productores/{asset_dir}/{slug}.webp"
 
 
 def print_candidate_summary(candidate_info: dict[str, object], prefix: str = "  -") -> None:
@@ -999,9 +999,9 @@ def print_candidate_summary(candidate_info: dict[str, object], prefix: str = "  
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Find and normalize producer image assets.")
-    parser.add_argument("--provincia", help="Province CSV slug, e.g. cuenca or la-rioja.")
+    parser.add_argument("--area", help="Province CSV slug, e.g. cuenca or la-rioja.")
     parser.add_argument("--csv", dest="csv_path", help="Explicit CSV path when province lookup is not enough.")
-    parser.add_argument("--asset-provincia", help="Asset folder slug under public/productores/. Defaults to CSV stem.")
+    parser.add_argument("--asset-dir", help="Asset folder slug under public/productores/. Defaults to CSV stem.")
     parser.add_argument("--apply", action="store_true", help="Write WebP assets and update the CSV.")
     parser.add_argument("--replace", action="store_true", help="Process rows that already have imagen.")
     parser.add_argument("--allow-photos", action="store_true", help="Allow non-logo OG/Twitter photos as fallbacks.")
@@ -1020,7 +1020,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "out in review sheets. Look at these before --apply; a scorer cannot tell a producer's "
         "brand from its parent company's logo, a subsidy banner or an award seal.",
     )
-    parser.add_argument("--list-provinces", action="store_true", help="List province CSV slugs and exit.")
+    parser.add_argument("--list-provinces", action="store_true", help="List area CSV slugs and exit.")
     return parser
 
 
@@ -1041,7 +1041,7 @@ def main() -> int:
         parser.error("--contact-sheet is for reviewing before you apply; run it without --apply.")
 
     try:
-        csv_path = find_csv_path(root, args.provincia, args.csv_path)
+        csv_path = find_csv_path(root, args.area, args.csv_path)
     except ValueError as exc:
         parser.error(str(exc))
 
@@ -1049,11 +1049,11 @@ def main() -> int:
     # (`data/csv/jp/kansai/kyoto.csv` -> `/productores/jp/kansai/kyoto/`). Using
     # the bare stem used to drop assets at the top level, outside the folder
     # `check:images` expects.
-    default_asset_province = (
+    default_asset_dir = (
         csv_path.relative_to(root / "data" / "csv").with_suffix("").as_posix()
     )
-    asset_province = args.asset_provincia or default_asset_province
-    output_dir = root / "public" / "productores" / asset_province
+    asset_dir = args.asset_dir or default_asset_dir
+    output_dir = root / "public" / "productores" / asset_dir
     fieldnames, rows = read_csv(csv_path)
     wanted_slugs = set(args.slug)
     report: list[dict[str, object]] = []
@@ -1063,7 +1063,7 @@ def main() -> int:
     inspected = 0
 
     mode = "APPLY" if args.apply else "DRY RUN"
-    print(f"{mode}: {csv_path.relative_to(root)} -> /productores/{asset_province}/")
+    print(f"{mode}: {csv_path.relative_to(root)} -> /productores/{asset_dir}/")
     if not args.apply:
         print("No files will be written. Re-run with --apply to save selected images.")
 
@@ -1123,7 +1123,7 @@ def main() -> int:
                 row_report["candidates"].append(candidate_info)
                 print_candidate_summary(candidate_info)
                 if ok:
-                    row["imagen"] = public_image_path(asset_province, slug)
+                    row["imagen"] = public_image_path(asset_dir, slug)
                     if candidate_info.get("source_below_floor"):
                         selected_below_floor = candidate_info
                         continue

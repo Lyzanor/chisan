@@ -8,10 +8,10 @@ import { getCategoryIcon } from "@/lib/get-category-icon";
 
 type DetailDesktopNavProps = {
   categories: string[];
-  province?: string;
+  area?: string;
 };
 
-export function DetailDesktopNav({ categories, province = "" }: DetailDesktopNavProps) {
+export function DetailDesktopNav({ categories, area = "" }: DetailDesktopNavProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
 
@@ -34,9 +34,9 @@ export function DetailDesktopNav({ categories, province = "" }: DetailDesktopNav
   }, [open, close]);
 
   return (
-    <nav ref={rootRef} className="detail-desktop-nav" aria-label="Navegación">
-      <Link href={buildCatalogHref({ province })} className="detail-desktop-nav__home">
-        Mapa
+    <nav ref={rootRef} className="detail-desktop-nav" aria-label="Navigation">
+      <Link href={buildCatalogHref({ area })} className="detail-desktop-nav__home">
+        Map
       </Link>
       <div className="nav-dropdown">
         <button
@@ -48,7 +48,7 @@ export function DetailDesktopNav({ categories, province = "" }: DetailDesktopNav
           id="btn-detail-categories"
           onClick={() => setOpen((v) => !v)}
         >
-          Categorías
+          Categories
           <span className="nav-dropdown__chevron" aria-hidden="true">
             ▾
           </span>
@@ -61,7 +61,7 @@ export function DetailDesktopNav({ categories, province = "" }: DetailDesktopNav
             className="nav-dropdown__panel"
           >
             <Link
-              href={buildCatalogHref({ province })}
+              href={buildCatalogHref({ area })}
               role="menuitem"
               className="nav-dropdown__item"
               onClick={close}
@@ -74,7 +74,7 @@ export function DetailDesktopNav({ categories, province = "" }: DetailDesktopNav
             {categories.map((cat) => (
               <Link
                 key={cat}
-                href={buildCatalogHref({ province, category: cat })}
+                href={buildCatalogHref({ area, category: cat })}
                 role="menuitem"
                 className="nav-dropdown__item"
                 onClick={close}

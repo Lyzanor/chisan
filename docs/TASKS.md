@@ -1,11 +1,11 @@
 # Common Tasks
 
 ## 1) Update data (manual CSV edit)
-1. Edit the target province CSV under `data/csv/[pais]/[comunidad]/[provincia].csv`.
+1. Edit the target area CSV under `data/csv/[country]/[region]/[area].csv`.
 2. Add new producers with a correct unique `slug`; keep existing correct slugs stable, but fix materially wrong ones with evidence.
 3. Place rows according to the current editorial ordering, or append when no ordering pass is part of the task.
 4. Set `verificacion` and `Venta online` following the decision model in `docs/EDITORIAL_POLICY.md` (allowed values and blocking rules in `docs/CSV_CONTRACT.md`); keep `no comprobado` until the sales channel is reviewed.
-5. Add or update the matching record in `data/evidence/[pais]/[comunidad]/[provincia].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
+5. Add or update the matching record in `data/evidence/[country]/[region]/[area].jsonl` for a new producer, re-verification, resolved online-sale decision, purge, or merge.
 6. Run:
 ```bash
 npx pnpm verify:data
@@ -21,7 +21,7 @@ npx pnpm check:csv
 ```bash
 npx pnpm check:csv:data-quality
 ```
-3. Fix `error` items first in the target province CSV.
+3. Fix `error` items first in the target area CSV.
 4. Fix `warning` items next:
    - empty key fields
    - duplicates
@@ -38,15 +38,15 @@ npx pnpm verify:data
 
 ## 2) Change catalog behavior
 1. Edit catalog logic in `lib/csv-catalog.ts` or `app/page.tsx`.
-2. Keep URL params stable: `provincia`, `categoria`, `destacar` (`slug` del productor).
+2. Keep URL params stable: `area`, `category`, `highlight` (`slug` del productor).
 3. Run:
 ```bash
 npx pnpm verify:ai
 ```
 4. Validate:
-- Province selector switches CSV.
+- Area selector switches CSV.
 - Category chips filter list and map.
-- Detail links preserve the selected province.
+- Detail links preserve the selected area.
 
 ## 3) Change UI only
 1. Edit `app/page.tsx` and/or `app/globals.css`.
@@ -58,7 +58,7 @@ npx pnpm verify:ai
 
 ## 4) Add a CSV column to detail view
 1. Update the canonical header and contract in `docs/CSV_CONTRACT.md`.
-2. Apply the structural change to every CSV under `data/csv/**` in one dedicated commit; never add a column to one province only.
+2. Apply the structural change to every CSV under `data/csv/**` in one dedicated commit; never add a column to one area only.
 3. No extra code is needed for the detail table: it renders all fields.
 4. If the column should appear in list summary, update `app/page.tsx`.
 5. Run `npx pnpm verify:ai` because a structural change normally affects validators or application behavior.
@@ -72,7 +72,7 @@ npx pnpm verify:ai
 
 ## 6) Agent handoff checklist
 1. Read `AGENTS.md` before changing code or data; it owns sources of truth, invariants, and workflow.
-2. Keep candidate notes in `docs/candidates/[pais]/[provincia].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that province.
+2. Keep candidate notes in `docs/candidates/[country]/[area].md`; move legacy `docs/*_candidates.md` files there before editing unless another agent owns that area.
 3. Do not restore deleted one-off scripts, generator scripts, database layers, or API search layers.
 4. Run the matching gate:
 ```bash
@@ -84,7 +84,7 @@ npx pnpm verify:ai     # code/scripts/policy
 ## 7) Backlog transversal compartido
 
 Trabajo pendiente que cruza provincias o sesiones. Cualquier agente puede tomarlo; actualiza o borra
-la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `docs/verificacion/`).
+la entrada al avanzarla. No dupliques aquí el estado provincial (eso vive en `docs/verification/`).
 
 **Empieza por medir, no por leer esta lista:**
 
@@ -98,7 +98,7 @@ criterios de salida y gates vive en
 explica cómo reducirla durante muchas sesiones sin solapes ni regresiones.
 
 Imprime, por provincia, cuántas filas tiene cada defecto de abajo. Añade
-`--provincia <nombre>` para una sola, `--check <id> --list` para ver los slugs y
+`--area <nombre>` para una sola, `--check <id> --list` para ver los slugs y
 `--json` para tratarlo. No es bloqueante: es la worklist. Los recuentos viven
 **solo** ahí; si los copias aquí caducan. Cubre lo que las otras puertas no
 pueden ver porque necesitan contexto entre ficheros o un juicio que el contrato
@@ -123,7 +123,7 @@ impide. Requieren `verify:ai`.
 - ~~**Nada en el repo resuelve un dominio.**~~ Hecho: `check:links` clasifica
   cada `web` y guarda el resultado fechado en `data/reference/web-status.json`.
   **Léelo con `--offline` antes de abrir dominios a mano**; solo vuelve a la red
-  con `--provincia` o `--all`. Clasifica sin decidir, y esa distinción es el
+  con `--area` o `--all`. Clasifica sin decidir, y esa distinción es el
   punto: un 403 no es un sitio muerto y un 200 no prueba que la web sea del
   productor. Lo que queda es editorial, no de tooling — triar sus señales
   provincia a provincia.

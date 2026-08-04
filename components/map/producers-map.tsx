@@ -6,17 +6,17 @@ import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
-  loading: () => <div className="map-placeholder">Cargando mapa…</div>,
+  loading: () => <div className="map-placeholder">Loading map…</div>,
 });
 
 type ProducersMapProps = {
   points: ProducerMapPoint[];
-  province?: string;
+  area?: string;
   highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
 };
 
-export function ProducersMap({ points, province = "", highlightedSlug, userLocation }: ProducersMapProps) {
+export function ProducersMap({ points, area = "", highlightedSlug, userLocation }: ProducersMapProps) {
   if (!points.length) {
     return (
       <div className="map-placeholder">
@@ -29,7 +29,7 @@ export function ProducersMap({ points, province = "", highlightedSlug, userLocat
     <div className="map-shell">
       <ProducersMapInner
         points={points}
-        province={province}
+        area={area}
         highlightedSlug={highlightedSlug}
         userLocation={userLocation}
       />

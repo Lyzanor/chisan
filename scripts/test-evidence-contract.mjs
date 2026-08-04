@@ -73,7 +73,7 @@ function createFixture() {
   fs.writeFileSync(csvPath, `${HEADER}\n${ROW}\n`);
   writeJson(path.join(evidenceRoot, "coverage.json"), {
     version: 1,
-    strictProvinces: [],
+    strictAreas: [],
   });
 
   return { root, csvRoot, evidenceRoot, ledgerPath };
@@ -120,7 +120,7 @@ function main() {
     writeLedger(fixture.ledgerPath, []);
     writeJson(path.join(fixture.evidenceRoot, "coverage.json"), {
       version: 1,
-      strictProvinces: ["test-country/test-community/test-province"],
+      strictAreas: ["test-country/test-community/test-province"],
     });
     result = auditEvidence(fixture);
     assert.ok(

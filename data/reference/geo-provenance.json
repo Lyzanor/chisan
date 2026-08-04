@@ -1,12 +1,12 @@
 {
   "generatedAt": "2026-08-03",
   "generator": "scripts/build-geo-provenance.mjs",
-  "method": "lat/lon a ±0.00001° del centroide municipal (municipios.json + overrides): coordenada de pueblo, no de finca/obrador",
+  "method": "lat/lon a ±0.00001° del centroide municipal (municipalities.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
     "rows": 11917,
     "tagged": 1160
   },
-  "provinces": {
+  "areas": {
     "es/andalucia/almeria": [
       "bio-nature-mediterraneo-vicar",
       "la-pastora-de-taberno",

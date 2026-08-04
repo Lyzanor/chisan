@@ -190,30 +190,30 @@ function loadCoverage(evidenceRoot, errors) {
   if (
     !isPlainObject(manifest) ||
     manifest.version !== 1 ||
-    !Array.isArray(manifest.strictProvinces)
+    !Array.isArray(manifest.strictAreas)
   ) {
     errors.push(
-      `${coveragePath}: expected {"version":1,"strictProvinces":[...]}`,
+      `${coveragePath}: expected {"version":1,"strictAreas":[...]}`,
     );
     return [];
   }
 
-  const unknown = unknownKeys(manifest, new Set(["version", "strictProvinces"]));
+  const unknown = unknownKeys(manifest, new Set(["version", "strictAreas"]));
   if (unknown.length) {
     errors.push(`${coveragePath}: unknown field(s): ${unknown.join(", ")}`);
   }
 
   const seen = new Set();
-  for (const province of manifest.strictProvinces) {
+  for (const province of manifest.strictAreas) {
     if (
       typeof province !== "string" ||
       !/^[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+$/.test(province)
     ) {
-      errors.push(`${coveragePath}: invalid strict province '${province}'`);
+      errors.push(`${coveragePath}: invalid strict area '${province}'`);
       continue;
     }
     if (seen.has(province)) {
-      errors.push(`${coveragePath}: duplicated strict province '${province}'`);
+      errors.push(`${coveragePath}: duplicated strict area '${province}'`);
     }
     seen.add(province);
   }
@@ -334,7 +334,7 @@ function validateKeepRecord({
   errors,
 }) {
   if (!row) {
-    errors.push(`${location}: keep record slug does not exist in province CSV`);
+    errors.push(`${location}: keep record slug does not exist in area CSV`);
     return;
   }
 
@@ -431,7 +431,7 @@ function validateKeepRecord({
 
 function validatePurgeRecord({ record, row, claims, location, errors }) {
   if (row) {
-    errors.push(`${location}: purged slug still exists in province CSV`);
+    errors.push(`${location}: purged slug still exists in area CSV`);
   }
   if (record.decision !== undefined || record.targetSlug !== undefined) {
     errors.push(`${location}: purge record cannot set decision or targetSlug`);
@@ -460,7 +460,7 @@ function validateMergeRecord({
   errors,
 }) {
   if (row) {
-    errors.push(`${location}: merged source slug still exists in province CSV`);
+    errors.push(`${location}: merged source slug still exists in area CSV`);
   }
   if (record.decision !== undefined || record.reason !== undefined) {
     errors.push(`${location}: merge record cannot set decision or reason`);
@@ -468,7 +468,7 @@ function validateMergeRecord({
 
   const targetSlug = validateString(record, "targetSlug", location, errors);
   if (targetSlug && !rows.has(targetSlug)) {
-    errors.push(`${location}: merge target '${targetSlug}' is not in province CSV`);
+    errors.push(`${location}: merge target '${targetSlug}' is not in area CSV`);
   }
   if (targetSlug === record.slug) {
     errors.push(`${location}: merge target must differ from source slug`);
@@ -567,28 +567,28 @@ export function auditEvidence({
   const resolvedCsvRoot = path.resolve(csvRoot);
   const resolvedEvidenceRoot = path.resolve(evidenceRoot);
   const errors = [];
-  const strictProvinces = loadCoverage(resolvedEvidenceRoot, errors);
+  const strictAreas = loadCoverage(resolvedEvidenceRoot, errors);
   const evidenceFiles = listFiles(resolvedEvidenceRoot, ".jsonl");
-  const provinceResults = new Map();
+  const areaResults = new Map();
 
   for (const evidencePath of evidenceFiles) {
     const relative = path.relative(resolvedEvidenceRoot, evidencePath);
-    const provinceKey = relative.slice(0, -".jsonl".length);
-    if (!/^[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+$/.test(provinceKey)) {
+    const areaKey = relative.slice(0, -".jsonl".length);
+    if (!/^[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+$/.test(areaKey)) {
       errors.push(
-        `${evidencePath}: evidence path must be <country>/<community>/<province>.jsonl`,
+        `${evidencePath}: evidence path must be <country>/<region>/<area>.jsonl`,
       );
       continue;
     }
 
-    const csvPath = path.join(resolvedCsvRoot, `${provinceKey}.csv`);
+    const csvPath = path.join(resolvedCsvRoot, `${areaKey}.csv`);
     if (!fs.existsSync(csvPath)) {
       errors.push(`${evidencePath}: matching CSV not found at ${csvPath}`);
       continue;
     }
 
-    provinceResults.set(
-      provinceKey,
+    areaResults.set(
+      areaKey,
       validateEvidenceFile(evidencePath, csvPath, errors),
     );
   }
@@ -601,11 +601,11 @@ export function auditEvidence({
   return {
     errors,
     files: evidenceFiles.length,
-    records: [...provinceResults.values()].reduce(
+    records: [...areaResults.values()].reduce(
       (sum, result) => sum + result.records.size,
       0,
     ),
-    strictProvinces: strictProvinces.length,
+    strictAreas: strictAreas.length,
   };
 }
 
@@ -616,7 +616,7 @@ function main() {
   console.log("Evidence contract audit summary");
   console.log(`- files: ${result.files}`);
   console.log(`- records: ${result.records}`);
-  console.log(`- advisory strict provinces: ${result.strictProvinces}`);
+  console.log(`- advisory strict areas: ${result.strictAreas}`);
   console.log(`- issues: ${result.errors.length}`);
 
   if (result.errors.length === 0) {

@@ -15,7 +15,7 @@
 //
 // Usage:
 //   node scripts/audit-defects.mjs                  every province
-//   node scripts/audit-defects.mjs --provincia soria
+//   node scripts/audit-defects.mjs --area soria
 //   node scripts/audit-defects.mjs --check sinteticas --list
 //   node scripts/audit-defects.mjs --check descripcion-generica --plantillas
 //   node scripts/audit-defects.mjs --json
@@ -41,7 +41,7 @@ const SHARED_DOMAIN_THRESHOLD = 3;
 // duplicates per file; this catches the templated ones that happen to be unique
 // because the municipality differs.
 const GENERIC_DESCRIPTION = [
-  /incorporad[oa] al cat[aá]logo provincial/i,
+  /incorporad[oa] al cat[aá]logo areal/i,
   /revisad[oa] con [A-ZÁÉÍÓÚ]/,
   /con presencia p[uú]blica contrastada/i,
   /queda pendiente fuente propia/i,
@@ -56,11 +56,11 @@ const flag = (name) => {
   const i = argv.indexOf(`--${name}`);
   return i === -1 ? null : (argv[i + 1] ?? true);
 };
-const onlyProvincia = flag("provincia");
+const onlyArea = flag("area");
 const onlyCheck = flag("check");
 const wantList = argv.includes("--list");
 const wantJson = argv.includes("--json");
-const wantPlantillas = argv.includes("--plantillas");
+const wantPlantillas = argv.includes("--templates");
 
 const norm = (s) =>
   (s ?? "")
@@ -177,8 +177,8 @@ export function loadCrossTemplate(rows) {
     return found;
   };
 
-  const hits = new Map(); // `provincia/slug` -> categories named instead
-  for (const { provincia, rows: provinceRows } of rows) {
+  const hits = new Map(); // `area/slug` -> categories named instead
+  for (const { area, rows: provinceRows } of rows) {
     for (const row of provinceRows) {
       const estrella = (row["productos estrella"] ?? "").trim();
       if (!estrella || !row.categoria) continue;
@@ -203,7 +203,7 @@ export function loadCrossTemplate(rows) {
       if (parts.length && parts.every((p) => labels.has(p))) {
         const named = [...new Set(parts.map((p) => labels.get(p)))];
         if (!named.includes(own)) {
-          hits.set(`${provincia}/${row.slug}`, named);
+          hits.set(`${area}/${row.slug}`, named);
           continue;
         }
       }
@@ -211,19 +211,19 @@ export function loadCrossTemplate(rows) {
       if (!markers.has(own)) continue;
       if (categoriesNamedBy(estrella).has(own)) continue;
       foreign.delete(own);
-      if (foreign.size) hits.set(`${provincia}/${row.slug}`, [...foreign]);
+      if (foreign.size) hits.set(`${area}/${row.slug}`, [...foreign]);
     }
   }
   return hits;
 }
 
 export function loadCategoryVariants() {
-  // Always across every province, even under --provincia: which spelling is the
+  // Always across every province, even under --area: which spelling is the
   // majority is a property of the catalog, not of the file being inspected.
   // Scoped to one province, Málaga's 2 `Carne` rows would look like the
   // minority variant of its 4 `Carnes`, when nationally it is the reverse.
   const usage = new Map();
-  for (const { rows } of readProvinces({ all: true })) {
+  for (const { rows } of readAreas({ all: true })) {
     for (const row of rows) {
       if (!row.categoria) continue;
       usage.set(row.categoria, (usage.get(row.categoria) ?? 0) + 1);
@@ -283,41 +283,41 @@ export function loadCategoryVariants() {
   return variants;
 }
 
-let provinceCache = null;
-function readProvinces({ all = false } = {}) {
-  if (!provinceCache) {
-    provinceCache = [];
-    for (const pais of fs.readdirSync(CSV_ROOT)) {
-      const paisDir = path.join(CSV_ROOT, pais);
-      if (!fs.statSync(paisDir).isDirectory()) continue;
-      for (const comunidad of fs.readdirSync(paisDir)) {
-        const comunidadDir = path.join(paisDir, comunidad);
-        if (!fs.statSync(comunidadDir).isDirectory()) continue;
-        for (const file of fs.readdirSync(comunidadDir)) {
+let areaCache = null;
+function readAreas({ all = false } = {}) {
+  if (!areaCache) {
+    areaCache = [];
+    for (const country of fs.readdirSync(CSV_ROOT)) {
+      const countryDir = path.join(CSV_ROOT, country);
+      if (!fs.statSync(countryDir).isDirectory()) continue;
+      for (const region of fs.readdirSync(countryDir)) {
+        const regionDir = path.join(countryDir, region);
+        if (!fs.statSync(regionDir).isDirectory()) continue;
+        for (const file of fs.readdirSync(regionDir)) {
           if (!file.endsWith(".csv")) continue;
-          const provincia = file.replace(/\.csv$/, "");
-          const rows = parse(fs.readFileSync(path.join(comunidadDir, file), "utf8"), {
+          const area = file.replace(/\.csv$/, "");
+          const rows = parse(fs.readFileSync(path.join(regionDir, file), "utf8"), {
             bom: true,
             columns: true,
             skip_empty_lines: true,
           });
-          provinceCache.push({
-            pais,
-            comunidad,
-            provincia,
-            key: `${pais}/${comunidad}/${provincia}`,
+          areaCache.push({
+            country,
+            region,
+            area,
+            key: `${country}/${region}/${area}`,
             rows,
           });
         }
       }
     }
   }
-  if (all || !onlyProvincia) return provinceCache;
-  return provinceCache.filter((p) => p.provincia === onlyProvincia);
+  if (all || !onlyArea) return areaCache;
+  return areaCache.filter((p) => p.area === onlyArea);
 }
 
-function readEvidence(pais, comunidad, provincia) {
-  const file = path.join(EVIDENCE_ROOT, pais, comunidad, `${provincia}.jsonl`);
+function readEvidence(country, region, area) {
+  const file = path.join(EVIDENCE_ROOT, country, region, `${area}.jsonl`);
   const keep = new Set();
   if (!fs.existsSync(file)) return keep;
   for (const line of fs.readFileSync(file, "utf8").split("\n")) {
@@ -347,7 +347,7 @@ export const CHECKS = [
     id: "sinteticas",
     kind: "cola",
     label: "filas sin un solo enlace ni contacto (candidatas a fila sintética)",
-    hint: "docs/EDITORIAL_POLICY.md § Decision order: cruzar contra la fuente exhaustiva de la comunidad antes de decidir",
+    hint: "docs/EDITORIAL_POLICY.md § Decision order: cruzar contra la fuente exhaustiva de la region antes de decidir",
     run: ({ rows }) =>
       rows.filter(
         (r) =>
@@ -372,7 +372,7 @@ export const CHECKS = [
   {
     id: "web-de-tercero",
     kind: "cola",
-    label: `\`web\` compartida por >=${SHARED_DOMAIN_THRESHOLD} filas de la provincia (consejo, mercado o blog haciendo de web propia)`,
+    label: `\`web\` compartida por >=${SHARED_DOMAIN_THRESHOLD} filas de la area (consejo, mercado o blog haciendo de web propia)`,
     hint: "el enlace prestado hace pasar el gate de `verificado` sin una fuente del productor",
     run: ({ rows }) => {
       const byHost = new Map();
@@ -411,8 +411,8 @@ export const CHECKS = [
     kind: "cola",
     label: "`productos estrella` describe una categoría distinta de la de la fila",
     hint: "candidatos, no veredictos: abre la ficha y decide si sobra el producto o sobra la categoría",
-    run: ({ rows, provincia }, ctx) =>
-      rows.filter((r) => ctx.crossTemplate.has(`${provincia}/${r.slug}`)),
+    run: ({ rows, area }, ctx) =>
+      rows.filter((r) => ctx.crossTemplate.has(`${area}/${r.slug}`)),
   },
   {
     id: "canal-sin-clasificar",
@@ -440,8 +440,8 @@ export const CHECKS = [
     kind: "senal",
     label: "filas sin registro `keep` en el ledger de evidencia",
     hint: "la evidencia es opcional y advisory; falta-keep NO es deuda que haya que backfillear",
-    run: ({ rows, pais, comunidad, provincia }) => {
-      const keep = readEvidence(pais, comunidad, provincia);
+    run: ({ rows, country, region, area }) => {
+      const keep = readEvidence(country, region, area);
       return rows.filter((r) => !keep.has(r.slug));
     },
   },
@@ -455,9 +455,9 @@ export const CHECKS = [
 ];
 
 function main() {
-  const provinces = readProvinces();
+  const provinces = readAreas();
   if (provinces.length === 0) {
-    console.error(onlyProvincia ? `No existe la provincia "${onlyProvincia}".` : "No hay CSV.");
+    console.error(onlyArea ? `No existe la area "${onlyArea}".` : "No hay CSV.");
     process.exit(1);
   }
 
@@ -472,22 +472,22 @@ function main() {
   }
 
   const results = [];
-  const queueMembership = new Map(); // `provincia/slug` -> Set of `cola` check ids
+  const queueMembership = new Map(); // `area/slug` -> Set of `cola` check ids
   const plantillaRows = [];
   for (const province of provinces) {
-    const entry = { provincia: province.provincia, filas: province.rows.length, checks: {} };
+    const entry = { area: province.area, filas: province.rows.length, checks: {} };
     for (const check of checks) {
       const hits = check.run(province, ctx);
       entry.checks[check.id] = wantList || wantJson ? hits.map((r) => r.slug) : hits.length;
       if (check.kind === "cola") {
         for (const row of hits) {
-          const key = `${province.provincia}/${row.slug}`;
+          const key = `${province.area}/${row.slug}`;
           if (!queueMembership.has(key)) queueMembership.set(key, new Set());
           queueMembership.get(key).add(check.id);
         }
       }
       if (wantPlantillas && check.id === "descripcion-generica") {
-        for (const row of hits) plantillaRows.push({ provincia: province.provincia, row });
+        for (const row of hits) plantillaRows.push({ area: province.area, row });
       }
     }
     results.push(entry);
@@ -529,13 +529,13 @@ function main() {
 
   for (const check of checks) {
     const affected = results
-      .map((r) => [r.provincia, count(r, check.id)])
+      .map((r) => [r.area, count(r, check.id)])
       .filter(([, n]) => n > 0)
       .sort((a, b) => b[1] - a[1]);
     const total = affected.reduce((sum, [, n]) => sum + n, 0);
 
     const suffix = check.kind === "senal" ? " · señal, no cola" : "";
-    console.log(`## ${check.id} — ${total} filas en ${affected.length} provincias${suffix}`);
+    console.log(`## ${check.id} — ${total} filas en ${affected.length} areas${suffix}`);
     console.log(`   ${check.label}`);
     if (total > 0) {
       console.log(`   → ${check.hint}`);
@@ -544,7 +544,7 @@ function main() {
         for (const entry of results) {
           const slugs = entry.checks[check.id];
           if (Array.isArray(slugs) && slugs.length > 0) {
-            console.log(`     ${entry.provincia}: ${slugs.join(", ")}`);
+            console.log(`     ${entry.area}: ${slugs.join(", ")}`);
           }
         }
       }
@@ -561,7 +561,7 @@ function main() {
   }
 
   if (!wantList && !onlyCheck) {
-    console.log("Detalle por fila: --check <id> --list · una provincia: --provincia <nombre> · JSON: --json");
+    console.log("Detalle por fila: --check <id> --list · una area: --area <nombre> · JSON: --json");
   }
 }
 
@@ -574,12 +574,12 @@ function reportPlantillas(entries) {
     return;
   }
   const byShape = new Map();
-  for (const { provincia, row } of entries) {
+  for (const { area, row } of entries) {
     const shape = templateShape(row.descripcion);
-    if (!byShape.has(shape)) byShape.set(shape, { filas: [], provincias: new Set() });
+    if (!byShape.has(shape)) byShape.set(shape, { filas: [], areas: new Set() });
     const group = byShape.get(shape);
-    group.filas.push({ provincia, slug: row.slug, descripcion: row.descripcion });
-    group.provincias.add(provincia);
+    group.filas.push({ area, slug: row.slug, descripcion: row.descripcion });
+    group.areas.add(area);
   }
   const groups = [...byShape.entries()].sort((a, b) => b[1].filas.length - a[1].filas.length);
 
@@ -587,13 +587,13 @@ function reportPlantillas(entries) {
     `Plantillas de descripción — ${entries.length} filas en ${groups.length} formas distintas\n`,
   );
   for (const [shape, group] of groups) {
-    console.log(`## ${group.filas.length} filas · ${[...group.provincias].join(", ")}`);
+    console.log(`## ${group.filas.length} filas · ${[...group.areas].join(", ")}`);
     console.log(`   ${shape}`);
     console.log(`   ej.: ${group.filas[0].descripcion}`);
     if (wantList) {
-      for (const provincia of group.provincias) {
-        const slugs = group.filas.filter((f) => f.provincia === provincia).map((f) => f.slug);
-        console.log(`     ${provincia}: ${slugs.join(", ")}`);
+      for (const area of group.areas) {
+        const slugs = group.filas.filter((f) => f.area === area).map((f) => f.slug);
+        console.log(`     ${area}: ${slugs.join(", ")}`);
       }
     }
     console.log("");

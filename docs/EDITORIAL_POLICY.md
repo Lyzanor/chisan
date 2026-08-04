@@ -7,13 +7,13 @@ This document defines the stable decision model behind catalog verification.
 this file defines the outcome that equivalent evidence should produce.
 
 The model is intentionally small. It protects core decisions from tool,
-agent, province and workflow changes without pretending that all research can
+agent, area and workflow changes without pretending that all research can
 be reduced to deterministic code.
 
 ## Catalog scope
 
 A row is a **productive unit that makes or elaborates food or drink in the
-province and sells it under its own identity**. The catalog favors local,
+area and sells it under its own identity**. The catalog favors local,
 artisan and terroir-scale producers over industrial operations.
 
 Included:
@@ -52,7 +52,7 @@ Resolve hard exclusions before assigning a verification level:
 3. Reseller, restaurant, directory or other non-producer → `purge:not-producer`.
 4. Real entity outside the catalog's defined scope → `purge:out-of-scope`.
 5. Permanent closure reliably established → `purge:closed`.
-6. Productive unit belongs to another province → `purge:other-province`.
+6. Productive unit belongs to another area → `purge:other-area`.
 7. Otherwise keep the row and assign `verificacion`.
 
 Do not turn uncertainty into an exclusion. Technical failure, registry absence
@@ -152,7 +152,7 @@ The suite uses synthetic archetypes, never real producers. It currently covers:
 - online sales;
 - deduplication;
 - freshness and technical failure;
-- provincial geography.
+- area geography.
 
 Run:
 
