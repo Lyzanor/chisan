@@ -58,7 +58,7 @@ medida que se revise cada lote.
   o contactos de varios parciales y deja los avisos residuales como brechas
   opcionales no bloqueantes.
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces conservados, venta
 online y canal; editar solo sus filas; añadir evidencia JSONL para decisiones
 materiales; y cerrar con `npx pnpm verify:data`.

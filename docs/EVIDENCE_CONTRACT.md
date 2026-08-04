@@ -11,7 +11,7 @@ The knowledge hierarchy is:
 1. `data/csv/**`: current public producer state.
 2. `data/evidence/**`: structured provenance for editorial decisions.
 3. `data/evals/**`: stable policy examples that prevent criteria drift.
-4. Provincial ledgers and Git history: local context, progress and narrative.
+4. Area ledgers and Git history: local context, progress and narrative.
 
 ## Optional audit layer
 
@@ -38,7 +38,7 @@ Evidence mirrors the CSV layout:
 
 ```text
 data/csv/es/catalunya/barcelona.csv
-data/evidence/catalunya/barcelona.jsonl
+data/evidence/es/catalunya/barcelona.jsonl
 ```
 
 Each non-empty JSONL line is one decision. Use one latest `keep` record per

@@ -4,7 +4,7 @@ Ledger para planificar y reanudar la verificación profunda de
 `data/csv/castilla-la-mancha/albacete.csv`. El CSV es la fuente de verdad y la
 evidencia por decisión vive en `data/evidence/castilla-la-mancha/albacete.jsonl`.
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento
 fija el snapshot, los riesgos locales y el alcance de los lotes. Los contratos
 aplicables son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.

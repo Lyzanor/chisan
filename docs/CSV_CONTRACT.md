@@ -2,9 +2,9 @@
 
 ## Source of truth
 - Area files: `data/csv/[country]/[region]/[area].csv`
-- Barcelona file: `data/csv/es/catalunya/barcelona.csv`
+- Example: `data/csv/es/catalunya/barcelona.csv`
 - `[country]` is the ISO 3166-1 alpha-2 code, and the same token names the route:
-  `data/csv/es/**` is browsed at `/es`, `data/csv/jp/**` at `/jp`. There is no
+  `data/csv/es/**` is browsed at `/es`. There is no
   URL-to-disk mapping to keep in sync.
 - Each country fills the two lower levels with its own subdivisions: a Spanish
   region is an autonomous community holding provinces, a Japanese one is a 地方
@@ -169,7 +169,7 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
 - `lon`, when present, must be numeric and between `-180` and `180`.
 - `lat`/`lon` must not be more than `100 km` from the `municipio` centroid (looked up in `data/reference/municipalities.json` + overrides). Beyond that the point belongs to a different town: almost always a swapped/wrong coordinate or a wrong `municipio`. The `15–100 km` band is a warning, not an error; rows whose `municipio` is not in the lookup are skipped.
 - `web`, `Facebook`, `Instagram` and `Google Maps` may be empty, but if present must pass the link rules below.
-- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/catalunya/barcelona/ejemplo.webp`.
+- `imagen` may be empty, but if present must be a root-relative asset path inside `public/` such as `/productores/es/catalunya/barcelona/ejemplo.webp`.
 - `verificacion` is required and must be one of `pendiente`, `parcial`, or `verificado`.
 - `verificacion=verificado` requires coordinates and at least one external link (`web`, `Google Maps`, `Instagram`, or `Facebook`).
 - `Venta online` is required and must be one of `sí`, `no`, or `no comprobado`.
@@ -228,6 +228,6 @@ https://maps.app.goo.gl/...
 - `slug` is the primary identity for producer detail pages.
 - Row order in each area CSV is editorial and may change without changing producer URLs.
 - Canonical detail path format is `/p/[slug]`.
-- Detail URLs must include `area=[area]`, including Barcelona, because slugs are unique within an area CSV rather than globally.
+- Detail URLs must include `area=[area]` because slugs are unique within an area CSV rather than globally.
 - Legacy `/p/[id]` and `/p/[id]-[slug]` URLs redirect to `/p/[slug]?area=[area]` when resolvable.
 - `slug` should be lowercase ASCII with words separated by `-`, unique within the area CSV, and stable across row reordering. Keep a correct slug stable, but correct one that materially encodes the wrong identity, municipality, duplicate or misleading typo; preserve the history with evidence/docs updates.

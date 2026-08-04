@@ -25,7 +25,7 @@ medida que se revise cada lote.
   81 filas con canal.
 - Modo: pasada provincial cerrada. Lotes 1-8 cerrados.
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces conservados, venta
 online y canal; editar solo sus filas; añadir evidencia JSONL para decisiones
 materiales; y cerrar con `npx pnpm verify:data`.

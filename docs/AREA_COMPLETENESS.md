@@ -38,7 +38,7 @@ These percentages are stable editorial planning targets, not claims that every p
 - `web` exists only when the domain resolves and belongs to the producer or a reliable official listing.
 - `Venta online` is reviewed as `sí` or `no` when the producer site or a concrete known sales channel makes the status clear; keep `no comprobado` otherwise.
 - `Facebook`, `Instagram`, and `imagen` are added when reliable and useful, without filling cells for score alone.
-- Coverage is fine-grained across municipalities, not just concentrated in provincial capitals or a few well-known towns.
+- Coverage is fine-grained across municipalities, not just concentrated in the main city or a few well-known towns.
 - Row count should grow from verified producers, not filler entries.
 - Product descriptions should be specific enough to distinguish producers.
 
@@ -72,7 +72,7 @@ node scripts/audit-csv.js --mode=quality data/csv/[country]/[region]/[area].csv
 ```
 
 2. Fix blocking contract errors first.
-3. For expansion passes, look for candidates from the provincial capital, comarca seats, and smaller municipalities with food tradition; search by category and keep only producers verified through web, Google Maps, social profiles, or reliable institutional listings.
+3. For expansion passes, look for candidates from the main city, secondary towns, and smaller municipalities with food tradition; search by category and keep only producers verified through web, Google Maps, social profiles, or reliable institutional listings.
 4. Add new verified producers with stable unique `slug`, normalized `categoria`, `Google Maps`, `lat`, `lon`, `verificacion`, `Venta online`, and contact or `web` when available; place them according to the current ordering criterion.
 5. Add or update matching structured evidence records for accepted decisions.
 6. Fill or correct `Google Maps`, `lat`, and `lon`.

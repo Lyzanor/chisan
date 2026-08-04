@@ -6,7 +6,7 @@ estructurada por fila debe vivir en `data/evidence/andalucia/huelva.jsonl` a
 medida que se revise cada lote (el fichero se creó en el lote 1 y se amplía en
 cada cierre).
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento no
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento no
 lo duplica, solo fija el snapshot, las particularidades de Huelva y el plan de
 lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
 `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.

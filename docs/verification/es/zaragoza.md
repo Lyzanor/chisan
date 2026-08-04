@@ -4,7 +4,7 @@ Ledger para planificar y reanudar la primera pasada profunda de
 `data/csv/aragon/zaragoza.csv`. El CSV es la fuente de verdad y la evidencia
 por decisión vive en `data/evidence/aragon/zaragoza.jsonl`.
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento
 solo conserva el snapshot, los riesgos locales, el alcance exacto y el avance.
 Los contratos son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.

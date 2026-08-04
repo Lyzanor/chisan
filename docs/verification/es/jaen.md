@@ -5,7 +5,7 @@ Ledger inicial para planificar y reanudar la revisión profunda de
 estructurada por fila vive en `data/evidence/andalucia/jaen.jsonl` y se amplía a
 medida que se revise cada lote.
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento no
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento no
 lo duplica, solo fija el snapshot, las particularidades de Jaén y el plan de
 lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
 `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.

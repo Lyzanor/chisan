@@ -6,7 +6,7 @@ evidencia estructurada por fila debe vivir en
 `data/evidence/castilla-y-leon/burgos.jsonl` a medida que se cierre cada lote
 (la carpeta ya existe por Ávila; el fichero se crea al cerrar el lote 1).
 
-El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento
+El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento
 no lo duplica, solo fija el snapshot, las particularidades de Burgos y el plan
 de lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
 `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.

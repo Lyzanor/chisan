@@ -59,7 +59,7 @@ equivocada no se distingue de una correcta sin volver a mirarla.
 ## Naming y tooling
 
 - El nombre del archivo debe coincidir con el `slug` del CSV y el path debe
-  reflejar la provincia: `/productores/<country>/<region>/<area>/<slug>.webp`. Un
+  reflejar el área: `/productores/<country>/<region>/<area>/<slug>.webp`. Un
   activo por productor; no guardes variantes ni originales de trabajo en
   `public/`. Si el destino canónico no coincide con el CSV stem, pasa
   `--asset-dir <region>/<area>`.
@@ -93,18 +93,22 @@ turismo y el logo de la agencia que hizo la web puntúan todos perfectamente.
 El scorer puntúa alto activos que no son la marca. Firmas confirmadas (auditorías 2026-06/07):
 logos de plugins y consentimiento (CookieYes, GDPR, iconos de accesibilidad), temas y paneles web
 (WordPress, BRIDGE, Divi, Plesk, "FUSE"), hosting (IONOS), directorios (QDQ), banners de subvención
-(Kit Digital, Plan de Recuperación, FEADER/UE, Gobierno/Generalitat), marcas de directorio provincial
+(Kit Digital, Plan de Recuperación, FEADER/UE, Gobierno/Generalitat), marcas de directorio territorial
 (Alimentos de Guadalajara, Sabores Almería, Gusto Cádiz), sellos ajenos (Guild of Fine Food, DOP/premios),
 iconos de red social sueltos, burbujas de chat y tarjetas en blanco. Añadidas en 2026-07 (Albacete):
 el logo de la agencia que hizo la web («Powered by …»), sellos institucionales y de promoción
 (banderas autonómicas, turismo, rutas del vino) y capturas de la web entera.
 
+Estas firmas se observaron en el catálogo español: subvenciones, sellos y
+directorios son locales, así que otro país verá su propio repertorio y lo
+anotará en sus propios docs en vez de heredar esta lista.
+
 **Es un atajo, nunca la razón para no mirar el resultado**: la lista es
-retrospectiva por construcción y siempre irá una provincia por detrás.
+retrospectiva por construcción y siempre irá un área por detrás.
 
 Auditoría retroactiva barata sin red: agrupa `public/productores/**/*.webp` por hash (`md5 -r`).
 **El mismo hash en marcas sin relación = basura** (vacía la celda `imagen` y borra el asset);
 el mismo hash dentro de un grupo empresarial o multi-local (Torres, Protos, Baluard…) es legítimo.
 La pasada 2026-07-17 (commit `6d8c1fa`) purgó así 130 imágenes en 19 provincias: los 27 clusters
 cross-marca inspeccionados resultaron ser todos basura. El hash no caza basura que aparece una sola
-vez: para eso sigue haciendo falta barrido visual por provincia (montajes con fondo gris/contraste).
+vez: para eso sigue haciendo falta barrido visual por área (montajes con fondo gris/contraste).

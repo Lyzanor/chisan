@@ -3,7 +3,7 @@
 ## Purpose
 
 This document defines the stable decision model behind catalog verification.
-`docs/VERIFICATION_TECHNIQUES.md` explains how to investigate efficiently;
+`docs/es/VERIFICATION_TECHNIQUES.md` explains how to investigate efficiently;
 this file defines the outcome that equivalent evidence should produce.
 
 The model is intentionally small. It protects core decisions from tool,
@@ -40,7 +40,7 @@ Excluded:
 - A first-grade cooperative that only processes for its members while brand
   and sales belong to the second-grade cooperative (maquila/B2B): keep the
   second-grade entity, exclude the maquila unit → `purge:out-of-scope`.
-- Livestock-holding registry rows (REGA and similar): an explotación is not a
+- Rows imported from livestock-holding or facility registries (the country guide names them): a farming holding is not a
   sellable producer by default; triage and prune.
 
 ## Decision order
@@ -168,7 +168,7 @@ guard, not an automatic research engine or substitute for evidence.
 A material criteria change is complete only when the same commit updates:
 
 1. this document;
-2. `docs/VERIFICATION_TECHNIQUES.md` when workflow changes;
+2. `docs/es/VERIFICATION_TECHNIQUES.md` when workflow changes;
 3. the evaluator when the stable decision logic changes;
 4. existing cases whose expected outcome changes;
 5. at least one new case for the newly introduced edge condition.
