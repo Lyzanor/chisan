@@ -7,7 +7,7 @@
 // Usage:
 //   node scripts/list-area.js cuenca
 //   node scripts/list-area.js data/csv/es/castilla-la-mancha/cuenca.csv
-//   node scripts/list-area.js cuenca --categoria "Bodega"
+//   node scripts/list-area.js cuenca --categoria "Vino"
 //   node scripts/list-area.js cuenca --pending
 
 let fs;

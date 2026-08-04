@@ -10,7 +10,7 @@ import { auditEvidence } from "./check-evidence.mjs";
 const HEADER =
   "slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta";
 const ROW =
-  "productor-uno,Productor Uno,Abrera,Bodega,Vino,Carrer Major 1,Productor sintético para probar el contrato,,+34600000000,uno@example.com,https://example.com,,,https://www.google.com/maps/place/Uno,41.5,1.9,,verificado,sí,ecommerce";
+  "productor-uno,Productor Uno,Abrera,Vino,Vino,Carrer Major 1,Productor sintético para probar el contrato,,+34600000000,uno@example.com,https://example.com,,,https://www.google.com/maps/place/Uno,41.5,1.9,,verificado,sí,ecommerce";
 
 function writeJson(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });

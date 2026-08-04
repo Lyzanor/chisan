@@ -115,7 +115,14 @@ export const templateShape = (text) =>
 export const CATEGORY_MARKERS = {
   Aceite: ["aceite", "aceites", "aove", "oliva", "olivar", "almazara", "arbequina", "picual", "hojiblanca", "oli", "olivera", "trull"],
   Miel: ["miel", "mieles", "polen", "propoleo", "jalea", "colmena", "colmenar", "apicola", "apicultura", "mel", "ezti"],
-  Bodega: ["vino", "vinos", "vi", "vins", "vinho", "cava", "cavas", "caves", "bodega", "bodegas", "celler", "cellers", "vina", "vinas", "vinedo", "vinya", "vinyes", "vinicola", "espumoso", "albarino", "verdejo", "raim", "ardo", "sidra", "sidras", "llagar", "sagardo", "sagardoa"],
+  // `vermut` is deliberately in both lists: it is an aromatized wine, and some
+  // sixty wineries make one as a side line, so the noun alone does not say the
+  // row is filed wrong. It still catches the real thing, because a vermouth
+  // maker filed under another category has no wine noun to match either.
+  Vino: ["vino", "vinos", "vi", "vins", "vinho", "cava", "cavas", "caves", "bodega", "bodegas", "celler", "cellers", "vina", "vinas", "vinedo", "vinya", "vinyes", "vinicola", "espumoso", "albarino", "verdejo", "raim", "ardo", "txakoli", "txakolina", "vermut", "vermuts", "vermu", "vermouth"],
+  Sidra: ["sidra", "sidras", "sidre", "llagar", "sagardo", "sagardoa", "sagardotegia"],
+  Vermut: ["vermut", "vermuts", "vermu", "vermouth"],
+  Sake: ["sake", "sakes", "junmai", "ginjo", "daiginjo", "nihonshu"],
   Carne: ["embutido", "embutidos", "embotit", "embotits", "fuet", "botifarra", "llonganissa", "chorizo", "xorico", "jamon", "jamones", "pernil", "salchichon", "sobrasada", "morcilla", "cecina", "chacina", "chacinas", "carne", "carnes", "carnicos", "carnica", "carniceria", "carn", "carns"],
   "Lácteos y quesos": ["queso", "quesos", "queixo", "formatge", "formatges", "gazta", "mato", "yogur", "iogurt", "leche", "llet", "esnea", "requeson", "cuajada", "mantequilla", "lacteos"],
   "Pan y cereal": ["pan", "panes", "pa", "panets", "ogi", "coca", "ensaimada", "bolleria", "croissant", "hogaza", "panaderia", "pasteleria", "pastel", "pasteles", "pastis", "pastissos", "pastisseria", "confiteria", "reposteria", "galleta", "galletas", "magdalena", "magdalenas", "empanada", "torta", "tortas", "mantecado", "mantecados", "polvoron", "polvorones", "pestino", "pestinos", "hojaldre", "hojaldres", "rosquilla", "rosquillas", "churro", "churros", "panellet", "panellets", "tortell", "harina", "harinas", "farina", "farines", "espelta", "molienda", "arroz", "arros"],
@@ -266,7 +273,7 @@ export function loadCategoryVariants() {
   // Combo labels that duplicate two categories which already exist on their
   // own, and carry fewer rows than either. `Fruta y verdura` or `Lácteos y
   // quesos` are canonical here, not combos: their halves are not categories.
-  // The defect is `Aceite y bodega` (3 rows) next to `Aceite` and `Bodega`.
+  // The defect is `Aceite y vino` (7 rows) next to `Aceite` and `Vino`.
   const usageOfStem = new Map();
   for (const [label, count] of usage) {
     const stem = singular(label);

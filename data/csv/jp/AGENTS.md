@@ -18,4 +18,4 @@ What is true of `data/csv/jp/**` only. The shared contract is `AGENTS.md` at the
 
 ## Conventions
 - `nombre`, `municipio` and `direccion` in romaji; `descripcion` in Spanish, like the rest of the catalog.
-- Categories are the shared closed list: a sake brewery is `Bodega`.
+- Categories are the shared closed list: a sake brewery is `Sake`, a winery `Vino`.

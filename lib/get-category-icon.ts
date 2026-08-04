@@ -7,6 +7,12 @@
  * correcto sólo para `Otros` y `Despensa artesanal`.
  */
 export function getCategoryIcon(value: string): string {
+  // Las tres bebidas que salieron de `Bodega` van antes que el vino: `Vermut`
+  // no casa con `/vino/`, pero la etiqueta retirada `Vermut y vinos de licor`
+  // sí, y publicarla como copa de vino escondería el reparto.
+  if (/sake/i.test(value)) return "🍶";
+  if (/sidra|sagardo/i.test(value)) return "🍏";
+  if (/vermut|vermouth/i.test(value)) return "🍸";
   if (/vino|bodega/i.test(value)) return "🍷";
   if (/ques/i.test(value)) return "🧀";
   if (/pan|pastel/i.test(value)) return "🍞";

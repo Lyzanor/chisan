@@ -108,7 +108,7 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
   npx pnpm list:categories
   ```
 - `categoria`, when present, must exactly match one value from that set.
-- Preferred aliases live in the same file (`preferredAliases`) and are reported by `check:csv:data-quality`; examples include `Lácteos y quesos`, `Bodega`, and `Pan y cereal`.
+- Preferred aliases live in the same file (`preferredAliases`) and are reported by `check:csv:data-quality`; examples include `Lácteos y quesos`, `Vino`, and `Pan y cereal`.
 - Add a category only when no existing label fits a materially different producer type. Update `data/reference/categories.json`, docs, validator tests and `getCategoryIcon` together — a label with no branch in the icon cascade publishes as the generic basket.
 - `retiredCategories` maps every label a consolidation folded away (2026-06-21,
   commits `d157b1f`, `41233aa`, `183f4eb`; 2026-08-03, the 38 → 24 pass) to the

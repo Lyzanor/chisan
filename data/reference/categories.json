@@ -1,10 +1,8 @@
 {
   "categories": [
     "Aceite",
-    "Aceite y vino",
     "Aperitivos",
     "Bebidas sin alcohol",
-    "Bodega",
     "Café",
     "Carne",
     "Cerveza",
@@ -26,15 +24,18 @@
     "Otros",
     "Pan y cereal",
     "Pescado",
+    "Sake",
     "Setas",
-    "Té e infusiones"
+    "Sidra",
+    "Té e infusiones",
+    "Vermut",
+    "Vino"
   ],
   "preferredAliases": {
     "quesos y lacteos": "Lácteos y quesos",
     "lacteos": "Lácteos y quesos",
-    "vino": "Bodega",
-    "vinos y bebidas": "Bodega",
-    "bodega y licores": "Bodega",
+    "vinos y bebidas": "Vino",
+    "bodega y licores": "Vino",
     "panaderia": "Pan y cereal",
     "panaderia y reposteria": "Pan y cereal",
     "pasteleria y panaderia": "Pan y cereal",
@@ -45,6 +46,7 @@
   "retiredCategories": {
     "Aceite y bodega": "Aceite",
     "Aceite y frutos secos": "Aceite",
+    "Aceite y vino": "Vino",
     "Aceitunas y encurtidos": "Conservas",
     "Agua mineral natural": "Bebidas sin alcohol",
     "Aromáticas": "Condimentos",
@@ -54,6 +56,7 @@
     "Aves y arroz": "Otros",
     "Azafrán": "Condimentos",
     "Bebidas": "Bebidas sin alcohol",
+    "Bodega": "Vino",
     "Calçots y aceite": "Fruta y verdura",
     "Caracoles": "Otros",
     "Carnes": "Carne",
@@ -111,16 +114,14 @@
     "Sal y condimentos": "Condimentos",
     "Salsas": "Condimentos",
     "Setas y hongos": "Setas",
-    "Sidra": "Bodega",
     "Snacks artesanos": "Aperitivos",
     "Trufa": "Setas",
     "Trufa y setas": "Setas",
     "Turrones": "Dulces y repostería",
     "Varios": "Otros",
-    "Vermut": "Bodega",
-    "Vermut y vinos de licor": "Bodega",
-    "Vino y conservas": "Bodega",
-    "Vino y frutos secos": "Bodega",
+    "Vermut y vinos de licor": "Vino",
+    "Vino y conservas": "Vino",
+    "Vino y frutos secos": "Vino",
     "Zumos": "Bebidas sin alcohol"
   }
 }
