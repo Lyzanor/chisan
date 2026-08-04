@@ -1,8 +1,8 @@
 # Kagawa — candidatos
 
-- CSV: `data/csv/jp/shikoku/kagawa.csv` (6 filas, las 6 bodegas del gremio, altas del 2026-08-04).
+- CSV: `data/csv/jp/shikoku/kagawa.csv` (15 filas: 6 bodegas + 9 casas de salsa de soja, altas del 2026-08-04).
 - Fuentes: 香川県酒造組合, <https://sanuki-sake.com/> (6 miembros, censo completo, **con dominio**) y 小豆島醤油協同組合, <https://shima-shoyu.com/> (14 socios + 4 casas de la isla fuera del gremio). Ambas leídas 2026-08-04.
-- Estado: **sake ✅ integrado** (las 6, 2026-08-04). 醤油 sigue abierto: 18 `unverified`.
+- Estado: **sake ✅ integrado** (las 6) y **醤油 ✅ 9 de 18** (2026-08-04). Quedan 9 sin dominio localizado.
 
 Kagawa es la prefectura más pequeña de Japón y solo tiene **6 bodegas de sake**,
 así que el grueso de candidatos viene del otro lado: **小豆島 (Shodoshima)**, la
@@ -37,35 +37,40 @@ Lo que salió al abrirlas:
 - **Maruo Honten (悦凱陣) no tiene web propia** pese a ser conocida fuera de Japón:
   entra `parcial` y sin enlace, como las bodegas de Nara del gremio.
 
-## 醤油 de Shodoshima (18) — categoría `Condimentos`
+## 醤油 de Shodoshima — 9 integradas de 18 (2026-08-04)
 
-Socios del gremio (14), todos en 小豆島町 (Shodoshima):
+Categoría `Condimentos`. Siete `verificado`, una `parcial` y una fuera.
+Cinco con tienda propia.
 
-| nombre (rōmaji propuesto) | 社名 |
-|---|---|
-| Yamaroku Shoyu | ヤマロク醤油 |
-| Shokin Shoyu | 正金醤油 |
-| Marushima Shoyu | 丸島醤油 |
-| Takesan | タケサン醤油 |
-| Yamahisa | ヤマヒサ |
-| Kinryo Shoyu | 金両醤油 |
-| Kindai Shoyu | 金大醤油 |
-| Yamasan Shoyu | ヤマサン醤油 |
-| Sakai Shoyu Kogyo | 左海醤油工業 |
-| Takahashi Shoten | 高橋商店 |
-| Shodoshima Shoyu | 小豆島醤油 |
-| Shimajo | 島醸 |
-| Motoya Shoten | 元屋商店 |
-| Shodoshima Umakoshi Shoyu | 小豆島馬越醤油 |
+| casa | municipio | resultado |
+|---|---|---|
+| Shokin Shoyu | Shodoshima | verificado · venta sí |
+| Yamasan Shoyu | Shodoshima | verificado · venta sí |
+| Kinryo Shoyu | Shodoshima | verificado · venta sí |
+| Takahashi Shoten (Yamamo) | Shodoshima | verificado · venta sí |
+| Takesan | Shodoshima | verificado · venta sí |
+| Yamaroku Shoyu | Shodoshima | verificado · venta sin comprobar |
+| Sakai Shoyu Kogyo | Shodoshima | verificado · venta sin comprobar |
+| Yamahisa | Shodoshima | **parcial** · dominio con WAF |
+| Yamahira Shoyuten | **Tonosho** | verificado · venta sí |
 
-Casas de la isla **fuera** del gremio (4) — el propio gremio las publica:
+Lo que salió al abrirlas:
+- **El dominio de 左海醤油工業 que publica la prensa está mudado.**
+  `sakaishoyu.web.fc2.com` responde 200 pero es un aviso de renovación que salta
+  a `sakai-syouyu.info`. Un 200 no basta: hay que leer el cuerpo. Su web propia
+  además corrige el número de la calle (2125, no 2128).
+- **ヤマヒサ devuelve 403 incluso con user-agent de navegador**, pero sirve cuerpo:
+  es un WAF, no un sitio muerto (`AGENTS.md`). Sin poder leer su ficha se queda
+  `parcial`, no se purga.
+- **ヤマロク no publica carrito** pese a ser la casa más conocida de la isla fuera
+  de Japón: se distribuye por terceros, así que su venta online no está
+  comprobada. La fama no es evidencia de canal.
+- **マルキン醤油 queda fuera**: es marca del grupo Morita (`moritakk.com`),
+  descarte por masa. Su museo en la isla es visita, no obrador independiente.
 
-| nombre (rōmaji propuesto) | 社名 | municipio | web |
-|---|---|---|---|
-| Marukin Shoyu | マルキン醤油 | Shodoshima | ⚠ grupo grande |
-| Fujidai Shoyu | 富士大醤油 | Tonosho | |
-| Yamahira (Yamaguchi Shoyu) | 山口醤油（ヤマヒラ） | Tonosho | yamahira-soy.com |
-| Yamatoichi (Omori Shoyu Jozojo) | 大森醤油醸造所（ヤマトイチ） | Tonosho | |
+**Sin dominio localizado, siguen en cola (9):** 丸島醤油, 小豆島醤油, 島醸,
+元屋商店, 小豆島馬越醤油, 金大醤油 (socias del gremio) y 富士大醤油,
+大森醤油醸造所 (Tonosho, fuera del gremio), más マルキン si se reconsidera.
 
 ## Trampas
 - ⚠ **`Tonosho` en rōmaji resolvía al municipio equivocado.** 土庄町 (Kagawa) y
