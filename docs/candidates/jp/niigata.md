@@ -146,4 +146,12 @@ misma fuente, el gremio.
 
 ## Qué falta
 - Ningún dominio recogido: es el primer trabajo de cada lote.
-- Fuera del sake, sin abrir: arroz Koshihikari, 笹団子, 麹/miso, pescado de Sado.
+- Fuera del sake, sin abrir: arroz Koshihikari, 笹団子, pescado de Sado.
+- **味噌/醤油/麹 es el siguiente vertical y ya tiene gremio localizado** (2026-08-04):
+  新潟県味噌醤油工業協同組合, <https://niigata-miso-shouyu.amebaownd.com/>. La
+  portada no lista socios y `/pages/1/` da 404: hay que encontrar la ruta del
+  listado. Dos casas ya identificadas por fuera, con dominio propio y por tanto
+  mejores que cualquier fila del gremio de sake: **町田醤油味噌醸造** (Joetsu,
+  `machida-shouyumiso.co.jp`) y **山田屋** (`e-misoya.com`).
+- Esta prefectura **no necesita más candidatos de sake**: arrastra 91 sin
+  integrar. Lo que le falta es dominio por fila, no nombres nuevos.

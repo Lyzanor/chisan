@@ -13,6 +13,33 @@
 Mochimune es un barrio de la ciudad de **Shizuoka** y Shuzenji de **Izu**: el
 `municipio` es la ciudad, no el barrio.
 
+## Sake (14, pasada 2026-08-04)
+
+Cola nueva: el fichero estaba vacío de candidatos. Fuente: censo de 酒蔵 de
+SAKETIMES, <https://jp.sake-times.com/sakagura/shizuoka> (30 bodegas, leído
+2026-08-04). Gremio: 静岡県酒造組合, <http://www.shizuoka-sake.jp/>.
+Ninguna trae dominio. Categoría: `Sake`.
+
+| nombre (rōmaji propuesto) | 社名 | municipio |
+|---|---|---|
+| Isojiman Shuzo | 磯自慢酒造 | Yaizu |
+| Aoshima Shuzo | 青島酒造 | Fujieda |
+| Shidaizumi Shuzo | 志太泉酒造 | Fujieda |
+| Sugii Shuzo | 杉井酒造 | Fujieda |
+| Eikun Shuzo | 英君酒造 | Shizuoka |
+| Kanzawagawa Shuzojo | 神沢川酒造場 | Shizuoka |
+| Kunpai Shuzo | 君盃酒造 | Shizuoka |
+| Sanwa Shuzo | 三和酒造 | Shizuoka |
+| Shizuoka Hiraki Shuzo | 静岡平喜酒造 | Shizuoka |
+| Suruga Shuzojo | 駿河酒造場 | Shizuoka |
+| Omuraya Shuzojo | 大村屋酒造場 | Shimada |
+| Enshu Yamanaka Shuzo | 遠州山中酒造 | Kakegawa |
+| Kokko Shuzo | 國香酒造 | Fukuroi |
+| Senju Shuzo | 千寿酒造 | Iwata |
+
+Seis están en 静岡市, que tras las fusiones es enorme y con tres 区: el
+`municipio` es `Shizuoka`, como ya se decidió arriba para Mochimune.
+
 ## Qué falta
 Shizuoka produce en torno al 40% del té de Japón y aquí hay **un** productor.
 Lo que ya se descartó como fuente y por qué:

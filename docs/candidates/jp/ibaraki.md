@@ -67,6 +67,32 @@ fila que hay que acotar antes de escribirla.
 - Las fichas `exports.pref.ibaraki.jp` son de un portal de exportación: confirman
   identidad y localización, no actividad ni venta online. Solo sostienen `parcial`.
 
+## Sake: el resto del gremio (13, pasada 2026-08-04)
+
+Medido el hueco que avisaba el «Qué falta»: el censo son **45 bodegas** y arriba
+había 7. Fuente: <https://jp.sake-times.com/sakagura/ibaraki>. Deduplicado
+contra el CSV (木内酒造) y contra la tabla de arriba (青木酒造). Ninguna trae
+dominio. Categoría: `Sake`.
+
+| nombre (rōmaji propuesto) | 社名 | municipio |
+|---|---|---|
+| Aiyu Shuzo | 愛友酒造 | Itako |
+| Asakawa Shuzo | 浅川酒造 | Hitachiomiya |
+| Isaka Shuzoten | 井坂酒造店 | Hitachiota |
+| Ota Meijo | 太田銘醸 | Hitachiota |
+| Okabe | 岡部合名 | Hitachiota |
+| Goretsu Tominaga Shuzoten | 剛烈富永酒造店 | Hitachiota |
+| Ishioka Shuzo | 石岡酒造 | Ishioka |
+| Isokura Shuzo | 磯蔵酒造 | Kasama |
+| Inaba Shuzo | 稲葉酒造 | Tsukuba |
+| Urazato Shuzoten | 浦里酒造店 | Tsukuba |
+| Iekyucho Honten | 家久長本店 | Daigo |
+| Kahoku Shuzo | 珂北酒造 | Daigo |
+| Kinmon Shuzo | 金門酒造 | Toride |
+
+**宏和商工 日立酒造工場 (Hitachi)** es una planta de un grupo: triar antes de
+escribir fila.
+
 ## Qué falta
 - El bloque de sake son 7 bodegas y el gremio de Ibaraki lista bastantes más.
   El listado de origen es una **selección**, no el censo: medir contra

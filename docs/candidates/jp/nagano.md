@@ -59,7 +59,31 @@ Nakano, Nagano, Ueda, Saku, Suwa, Ina) y hay que recorrerlas una a una.
   varias prefecturas: candidata a descarte por masa, no por origen.
 - Ninguna fila trae web propia: el listado apunta al gremio para las 22 bodegas.
 
+## Fuera del xlsx (10, pasada 2026-08-04)
+
+Primera mordida al censo real (~80 bodegas) por orden alfabético:
+<https://jp.sake-times.com/sakagura/nagano>. **Cierra el aviso de arriba**:
+大澤酒造 (Saku), que el xlsx se dejaba, entra aquí. Ninguna trae dominio.
+Categoría: `Sake`.
+
+| nombre (rōmaji propuesto) | 社名 | municipio |
+|---|---|---|
+| Osawa Shuzo | 大澤酒造 | Saku |
+| Okazaki Shuzo | 岡崎酒造 | Ueda |
+| Iwanami Shuzo | 岩波酒造 | Matsumoto |
+| Okuzawa Shokai | 奥澤商会 | Matsumoto |
+| Akashina Shuzo | 明科酒造 | Azumino |
+| EH Shuzo | EH酒造 | Azumino |
+| Ichinoya | 市野屋 | Omachi |
+| Usui Shoten | 薄井商店 | Omachi |
+| Igaya Shuzojo | 井賀屋酒造場 | Nakano |
+| Okuni Shuzo | 大國酒造 | Ina |
+
+Cubre además cinco de las diez áreas del gremio que el «Qué falta» daba sin
+recorrer (Ueda, Matsumoto, Kitaazumi/Omachi, Nakano, Ina).
+
 ## Qué falta
-- Las ~8 áreas del gremio sin recorrer, y las bodegas de Saku que el xlsx se dejó.
+- Las ~50 bodegas del censo aún sin listar (el corte de arriba es alfabético,
+  no geográfico: llega hasta 大 y para).
 - Nagano es mucho más que sake: soba, miso (Shinshu), manzana, uva y **vino** de
   Chikumagawa/Kikyogahara, wasabi de Azumino, oyaki. Nada de eso está aquí.

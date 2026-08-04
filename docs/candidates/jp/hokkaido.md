@@ -74,6 +74,34 @@ arriba, que es solo de bodegas.
 Estas cuatro abren por fin el frente lácteo/cárnico de la isla, que la tabla de
 bodegas no tocaba. Kyodogakusha es además la punta del hilo de las queserías.
 
+## Sake (13, pasada 2026-08-04)
+
+Frente abierto por fin. Fuente: censo de 酒蔵 de SAKETIMES,
+<https://jp.sake-times.com/sakagura/hokkaido> (13 bodegas, el censo completo de
+la isla). Gremio: 北海道酒造組合, <http://www.hokkaido-sake.or.jp/>.
+Ninguna trae dominio en la fuente. Categoría: `Sake`.
+
+| nombre (rōmaji propuesto) | 社名 | municipio |
+|---|---|---|
+| Otokoyama | 男山 | Asahikawa |
+| Takasago Shuzo | 高砂酒造 | Asahikawa |
+| Kamikawa Taisetsu Shuzo | 上川大雪酒造 | Kamikawa |
+| Kunimare Shuzo | 国稀酒造 | Mashike |
+| Kinteki Shuzo | 金滴酒造 | Shintotsukawa |
+| Kobayashi Shuzo | 小林酒造 | Kuriyama |
+| Tanaka Shuzo | 田中酒造 | Otaru |
+| Niseko Shuzo | 二世古酒造 | Kutchan |
+| Fukutsukasa Shuzo | 福司酒造 | Kushiro |
+| Usui Katsusaburo Shoten | 碓氷勝三郎商店 | Nemuro |
+| Nippon Seishu | 日本清酒 | Sapporo ⚠ |
+| Sapporo Shusei Kogyo | 札幌酒精工業 | Sapporo ⚠ |
+| Godo Shusei Asahikawa | 合同酒精 旭川工場 | Asahikawa ⚠ planta, triar |
+
+⚠ **日本清酒 y 札幌酒精 ya aparecen arriba** como matrices de 余市ワイナリー y
+おとべワイナリー. Si entran también como bodega de sake es **otra fila** (otro
+producto, otro municipio productivo), no un duplicado — pero decidirlo antes de
+escribir, no después.
+
 ## Qué falta
 - Las ~36 bodegas restantes del censo (no asociadas y altas 2025-2026), casi todas
   en Yoichi, Niki e Iwamizawa: mismo listado de Wine Cluster, sección inferior.

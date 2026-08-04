@@ -46,6 +46,40 @@ Categoría: `Sake` salvo la última fila.
 - **松竹梅酒造** (marca 灘一, Nishinomiya) es empresa distinta de **宝酒造** (marca
   松竹梅). Nombres casi idénticos: no fusionar filas.
 
+## Fuera de Nada (11, pasada 2026-08-04)
+
+Primera mordida al resto de la prefectura, que es lo que pedía el «Qué falta».
+El censo son **97 bodegas** — Hyogo es la primera de Japón en número — frente a
+las 25 de Nada. Fuente: <https://jp.sake-times.com/sakagura/hyogo>, orden
+alfabético. Deduplicado contra la tabla de Nada. Ninguna trae dominio.
+Categoría: `Sake`.
+
+| nombre (rōmaji propuesto) | 社名 | municipio |
+|---|---|---|
+| Akashi Shurui Jozo | 明石酒類醸造 | Akashi |
+| Ibaraki Shuzo | 茨木酒造 | Akashi |
+| Eigashima Shuzo | 江井ヶ嶋酒造 | Akashi |
+| Izawa Honke | 井澤本家 | Inami |
+| Eisen Shuzo | 栄泉酒造 | Inami |
+| Itami Oimatsu Shuzo | 伊丹老松酒造 | Itami |
+| Oimatsu Shuzo | 老松酒造 | Shiso |
+| Izushi Shuzo | 出石酒造 | Toyooka |
+| Inami Shuzo | 稲見酒造 | Miki |
+| Uchida Shuzo | 打田酒造 | Tanba |
+| Okuma Shuzo | 大熊酒造 | Kato |
+
+## Trampas de este bloque
+- **伊丹老松酒造 (Itami) y 老松酒造 (Shiso) son dos empresas**, y hay una tercera
+  老松酒造 en Hita (Oita). Casar por 社名 completo y municipio.
+- **茨木酒造 está en Akashi (Hyogo)**, no en 茨木市 (Osaka) ni en 茨城県. El
+  apellido no es la localización — la trampa contraria a la que ya avisa
+  `ibaraki.md`.
+- **稲見酒造 (Miki, Hyogo)** no es 井波酒造 (Sabae, Fukui) pese al rōmaji Inami, y
+  encima **稲美町 (Inami)** es un municipio distinto de esta misma prefectura donde
+  están 井澤本家 y 栄泉酒造. Rōmaji `Inami` = tres cosas.
+- **江井ヶ嶋酒造 (Akashi)** hace además whisky (ホワイトオーク) y vino: una fila,
+  con la `categoria` que pese.
+
 ## Qué falta
 - Hyogo es mucho más que Nada: falta el resto del gremio prefectural
   (兵庫県酒造組合連合会, <https://hyogo-sake.or.jp/>), que agrupa las otras zonas

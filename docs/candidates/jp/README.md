@@ -6,11 +6,54 @@ fuentes autorizadas del país en `data/csv/jp/AGENTS.md`.
 
 > **Integración 2026-08-04:** 14 de las 18 de la bandeja entraron en su CSV como `parcial`. Siguen aquí las 4 que no: los tres molinos harineros (Fukuoka, Saga, Kumamoto), B2B de materia prima, y Minimal, que no trae el barrio de Tokio.
 
+> **Pasada de gremios 2026-08-04:** abiertas **las 47 prefecturas**, ~700
+> candidatos nuevos, todos `unverified`. Ninguno abierto en vivo. Detalle y
+> estado, en la cabecera de cada fichero.
+
+## El gremio de bebida es la fuente que generaliza
+
+Lo que `data/csv/jp/AGENTS.md` decía del sake vale para el país entero: **cada
+prefectura tiene un gremio de bebida alcohólica y publica su padrón completo**.
+No es el mismo producto en todas — sake en 44, **本格焼酎 en Kagoshima y
+Miyazaki, 泡盛 en Okinawa, 球磨焼酎 como segundo gremio en Kumamoto** — pero la
+estructura es idéntica y por sí sola pasa de diez candidatos en las 47.
+
+- Índice de los 47 gremios: <https://www.japansake.or.jp/sake/link/index.html>.
+- Buscador nacional por prefectura: `japansake.or.jp/sakagura/jp/<prefectura>/`
+  (paginado, autoritativo).
+- Censo por prefectura de SAKETIMES: `jp.sake-times.com/sakagura/<prefectura>`
+  (una sola página, más cómodo de leer). **La ruta de Kochi es `kouchi`.**
+
+**Lo que el gremio no da es el dominio.** Se comprobó en tres fuentes distintas
+y en los padrones de Miyagi, Saitama y Aomori: nombre y municipio sí, web casi
+nunca. Es el cuello de botella real de Japón — no faltan nombres, falta enlace
+por fila — y por eso todo esto entra como `unverified` y como mucho sostendrá
+`parcial`. Las excepciones medidas, y por eso valen oro: **Kagawa** (gremio de
+sake con dominio) y **Nara** (三輪素麺, 9 fabricantes con web propia).
+
+**Trampas de acceso**, para no repetir el trabajo: varios gremios siguen en HTTP
+antiguo y no responden por HTTPS (Aomori), otros tienen el certificado roto
+(Okinawa) y `iwate-sake.jp` no resuelve. Un fallo de fetch aquí **no es un sitio
+muerto** (`AGENTS.md`): usar el buscador nacional como segunda vía.
+
+**Trampas de datos**, las tres que salieron en casi todas las prefecturas:
+
+1. **Homónimos de 社名.** Hay cuatro 旭酒造 (uno es Dassai), tres 尾崎酒造, tres
+   青木酒造, tres 太田/大田酒造, dos 高木酒造 (una es 十四代). Casar por 社名
+   **y** municipio, nunca por apellido.
+2. **Municipios disueltos en las fusiones Heisei.** Las fuentes siguen citando
+   湯津上村, 岩舟町, 山川町, 嘉穂町, 有明町… que ya no existen. Wikidata los
+   excluye, así que la fila se queda **sin puerta geográfica**: el audit la salta
+   y la cuenta como skipped, no como comprobada.
+3. **郡 y エリア no son municipio.** El 郡 es una comarca; y el gremio de
+   Kagoshima agrupa por zonas históricas (伊集院, 知覧) que hoy son barrios de
+   otros municipios.
+
 ## Bandeja de entrada — sueltos por prefectura
 
-Prefecturas con una o dos pistas, sin fichero propio todavía. Cuando una junte
-material suficiente, se muda a `docs/candidates/jp/[prefectura].md` y sale de
-aquí. Origen de todas: listado aportado por el usuario,
+Los 18 sueltos que abrieron el país, ya con fichero propio en su prefectura.
+Se quedan aquí hasta resolver los cuatro que siguen fuera del CSV. Origen de
+todas: listado aportado por el usuario,
 `listado_125_productores_locales_japon.xlsx` (2026-08-04). Ninguna abierta en
 vivo; `A`/`B` es la clasificación del origen.
 

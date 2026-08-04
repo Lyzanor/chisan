@@ -46,9 +46,35 @@ de cada bodega antes de fijar coordenadas.
   «actividad actual» no es un trámite: exige evidencia reciente, y una bodega
   parada no es una purga, es `parcial` con nota.
 
+## Las que faltaban (11, pasada 2026-08-04)
+
+Resuelta la duda del «Qué falta»: **la página en inglés era un extracto**. El
+censo real son ~42 bodegas (日本酒造組合中央会,
+<https://japansake.or.jp/sakagura/jp/ishikawa/>, 3 páginas; y
+<https://jp.sake-times.com/sakagura/ishikawa>). Estas 11 no estaban arriba.
+Ninguna trae dominio. Categoría: `Sake`.
+
+| nombre (rōmaji propuesto) | 社名 | municipio |
+|---|---|---|
+| Kikuhime | 菊姫 | Hakusan |
+| Kuze Shuzoten | 久世酒造店 | Tsubata |
+| Takeuchi Shuzoten | 武内酒造店 | Kanazawa |
+| Tezuka Shuzojo | 手塚酒造場 | Komatsu |
+| Tsuruno Shuzoten | 鶴野酒造店 | Noto |
+| Hiyoshi Shuzoten | 日吉酒造店 | Wajima ⚠ |
+| Shirafuji Shuzoten | 白藤酒造店 | Wajima ⚠ |
+| Shimizu Shuzoten | 清水酒造店 | Wajima ⚠ |
+| Chuno Shuzo | 中納酒造 | Wajima ⚠ |
+| Nakano Shuzo | 中野酒造 | Wajima ⚠ |
+| Nakashima Shuzoten | 中島酒造店 | Wajima ⚠ |
+
+⚠ **Las seis de Wajima caen de lleno en la zona del terremoto de enero de 2024**,
+el aviso que ya está más abajo en este fichero. Varias perdieron el 蔵 y elaboran
+cedidas en otra prefectura. Aquí «sigue activa» exige evidencia de 2025-2026, y
+una bodega parada **no es purga**: es `parcial` con nota.
+
 ## Qué falta
-- Comprobar si el gremio son 16 o más: la página en inglés puede ser un extracto
-  de la japonesa.
+- ~15 bodegas más del censo (páginas 2-3 del listado del gremio nacional).
 - Fuera del sake, sin abrir: 加賀野菜 (verdura tradicional de Kanazawa), 能登
   (sal marina de Suzu, ika/pescado, 中島菜), 金沢 (dulces wagashi, pan de oro),
   醤油/味噌 de Ono (Kanazawa), 治部煮 y conservas.
