@@ -116,7 +116,7 @@ rama antigua se contrasta su trabajo real:
 ```bash
 git status --short
 git worktree list
-git diff main...<rama> -- data/csv data/evidence public/productores docs/candidates docs/verificacion
+git diff main...<rama> -- data/csv data/evidence public/productores docs/candidates docs/verification
 ```
 
 `git worktree list` no es opcional: un árbol principal limpio no dice nada sobre
@@ -154,165 +154,48 @@ no se abre una segunda pasada.
 7. Anotar la línea base del lote en el ledger provincial o en el mensaje de
    commit: slugs de entrada, señales activas y avisos de calidad relacionados.
 
-## 4) Fase G — cerrar primero las puertas de tooling
+## 4) Puertas de tooling (cerradas)
 
-Estos lotes requieren `verify:ai` y declaran ventana global.
+Las cinco puertas que impedían que el trabajo editorial reintrodujera un defecto
+están cerradas: hoy son el re-escaneo barato de cualquier provincia, no trabajo
+pendiente. La línea `Método` de un ledger dice contra cuáles se validó esa
+provincia y, por tanto, cuáles no la han mirado nunca.
 
-**Cada puerta bloquea solo el carril que puede reintroducir su defecto.** El
-saneamiento de identidad no escribe categorías, municipios ni descripciones, así
-que no espera a nadie:
-
-| Lote | Bloquea | No bloquea |
+| Puerta | Qué detecta | Re-escaneo |
 |---|---|---|
-| G-CAT-1 y G-CAT-2 ✅ | carril T y cualquier escritura de `categoria` | R0, R1, V, E, I |
-| G-GEO-1 ✅ | carril E (localización) | R0, R1, V, T, I |
-| G-TPL-1 ✅ | carril T | R0, R1, V, E, I |
-| G-WEB-1 ✅ | nada: adelanta trabajo de R0 y R1 | — |
+| G-CAT-1 | etiquetas retiradas y variantes de la taxonomía | `check:defects --check categoria-variante`, hoy a cero: escribir una retirada es error de contrato, con el reemplazo en el mensaje |
+| G-CAT-2 | filas que aún usaban esas etiquetas | migradas; `retiredCategories` guarda a dónde fue cada una |
+| G-GEO-1 | municipios bilingües y `Municipio (pedanía)` fuera del geo-check | el lookup prueba cada mitad; `geo-check skipped` bajó de 384 a 322 |
+| G-TPL-1 | `productos estrella` que describe otra categoría | `check:defects --check plantilla-cruzada` |
+| G-WEB-1 | dominios muertos, aparcados o secuestrados | `check:links -- --offline --area <area>`, sobre el snapshot fechado `data/reference/web-status.json` |
 
-**Salida obligatoria de todo lote G:** pasar el detector nuevo por las
-provincias que ya figuran como cerradas y archivar sus hits como cola de
-mantenimiento en el ledger de cada una. Es un diff, no una repasada. Sin este
-paso, cada detector nuevo deja una capa de provincias que nunca lo vieron y el
-problema aparece entero en la Ola 7.
+Cinco reglas que dejaron y que no conviene deshacer sin volver a medir:
 
-### G-CAT-1 — detector y mapa de taxonomía ✅
+- **Decidir por fila, no por etiqueta** (G-CAT-2). El mapa de migración es el
+  valor por defecto y la evidencia de la fila lo gana, porque una etiqueta puede
+  agrupar productores distintos: de las 27 filas de `Bebidas`, solo 7 eran bebida
+  sin categoría propia; el resto ya tenían etiqueta viva.
+- **Resolver varias mitades no es resolver la fila** (G-GEO-1). Un par bilingüe
+  cae en las mismas coordenadas y un homónimo no —`La Floresta (Sant Cugat)`
+  resuelve también a Lleida, a 96 km—, así que el lookup solo se fía cuando las
+  mitades concuerdan. Las 322 que siguen saltándose son pedanías reales sin
+  centroide: hueco aceptado, no cola.
+- **`plantilla-cruzada` da candidatos, no veredictos** (G-TPL-1). Acierta ~2 de
+  cada 3 y el falso positivo típico es el productor genuinamente mixto. Solo
+  dispara sobre `productos estrella` —`descripcion` se midió como disparador y se
+  descartó: es prosa y enterraba los hallazgos—; la marca comercial no cuenta como
+  producto, un sustantivo tras `con`/`de` es ingrediente, y una etiqueta retirada
+  se resuelve antes de comparar.
+- **La clasificación de `web` no decide** (G-WEB-1). Un 403 no es un sitio muerto
+  y un 200 no prueba que la web sea del productor. El snapshot caduca: marca los
+  datos de más de 90 días porque `web` es tan dinámico como `Venta online`.
+- **Automatización nueva solo si varias tandas repiten el mismo trabajo
+  mecánico**, y ningún check de juicio editorial se endurece hasta que su regla
+  sea estable, tenga pocos falsos positivos y venga con pruebas.
 
-Hecho. `data/reference/categories.json` gana `retiredCategories`: las 64
-etiquetas que retiraron `d157b1f`, `41233aa` y `183f4eb`, cada una apuntando a
-la que la sustituyó. El registro deja de ser una lista de etiquetas permitidas y
-pasa a llevar la cuenta de la migración, sin recuentos en ningún doc:
-
-- retirada **y** válida → le quedan filas; `check:csv:data-quality` avisa en
-  cada una y `check:defects --check categoria-variante` las lista;
-- retirada **y no** válida → nadie la usa y volver a escribirla es error de
-  contrato, con el reemplazo en el mensaje.
-
-Las 29 que ya no usaba nadie salieron del registro en el mismo lote, así que esa
-puerta está cerrada. El aviso por fichero de `audit-csv.js` además pliega el
-plural (`Carne`/`Carnes` ya salta en Málaga); el cruce entre provincias sigue
-siendo de `check:defects`, que es quien ve todos los CSV a la vez.
-
-Queda editorial: migrar las filas de las 36 que siguen vivas, que es G-CAT-2 ✅.
-
-### G-CAT-2 — migración por familias ✅
-
-Hecho en 5 lotes (175 filas, 36 etiquetas). `retiredCategories` ya no corta con
-`categories`, así que `categoria-variante` está a cero y toda etiqueta retirada
-es error de contrato. Los avisos de calidad vuelven a su línea base previa a
-G-CAT-1: los 175 avisos desaparecen porque los datos están migrados, no porque
-se silenciara el detector.
-
-El mapa registraba la decisión de 2026-06-21 pero no la obligaba, y en ~30 filas
-no se siguió, siempre con la evidencia en la propia fila. Dos formas:
-
-- **el cajón de sastre no era el mejor destino disponible**: `Mermeladas` fue a
-  `Conservas` —que es donde el mapa ya mandaba `Conservas y mermeladas`—, y
-  `Turrones` y `Churrería` a `Dulces y repostería`. El registro recoge el
-  destino real, no el de 2026-06-21;
-- **la etiqueta agrupaba productores distintos**: `Bebidas` es el caso claro.
-  Solo 7 de sus 27 filas eran bebida sin categoría propia; el resto eran
-  sidrerías, casas de pacharán y cerveceras que ya tenían etiqueta viva. Lo
-  mismo, en pequeño, con dos salineras dentro de `Condimentos` y dos fábricas
-  de chocolate y una heladería dentro de `Dulces`.
-
-Quedan residuales honestos, no deuda: `Hidromiel` (3) y agua mineral (7) están
-en `Otros` porque no hay etiqueta viva que les encaje, que es exactamente la
-razón declarada de la consolidación —esperar a las subcategorías—.
-
-Regla que deja el lote para quien migre después: **decidir por fila, no por
-etiqueta**. El destino del mapa es el valor por defecto, y la evidencia de la
-fila lo gana.
-
-### G-GEO-1 — municipios bilingües ✅
-
-Hecho. El lookup de centroides prueba cada mitad del `municipio`, no solo el
-recorte de `Ciudad - Distrito`. Cubre las dos formas que había en los CSV, y en
-la segunda el orden no es estable:
-
-```text
-Puente la Reina / Gares          bilingüe: las dos mitades son el mismo pueblo
-Granollers (Palou)               municipi (llogaret)
-Bruguera (Ribes de Freser)       llogaret (municipi)
-```
-
-**Resolver varias mitades no es resolver la fila.** Un par bilingüe cae en las
-mismas coordenadas; un homónimo no. `La Floresta (Sant Cugat del Vallès)`
-resuelve a la vez al municipio de Lleida y a Sant Cugat, a 96 km, y quedarse con
-la primera inventaba ese hueco en una fila correcta. Así que el lookup solo se
-fía mientras las mitades concuerdan dentro de la misma tolerancia que usa el
-propio check de distancia; si no, no dice nada, que es lo que esas filas tenían
-antes. Un `override` sigue mandando por encima de todo: existe justo para
-desambiguar un nombre y una entrada suelta de `municipios.json` no lo vota.
-
-Efecto: `geo-check skipped` **384 → 322 filas**, ningún aviso perdido, ningún
-error bloqueante nuevo y **un aviso nuevo**, que es un hallazgo real
-(`carpier-ahumados-palafolls-sant-genis`, a 52,7 km de Palafolls y a 2,3 de
-Barberà). No hizo falta tocar `municipios-overrides.json`.
-
-Las 322 que siguen saltándose son pedanías reales sin centroide: hueco
-documentado y aceptado, cola provincial si acaso, no migración automática.
-
-### G-TPL-1 — corrupción de plantilla cruzada ✅
-
-Hecho. `check:defects --check plantilla-cruzada` marca las filas cuyo
-`productos estrella` describe otra categoría. Dos reglas:
-
-- **estructural**: el campo no lista productos, lista etiquetas de la taxonomía
-  (`Quesos y lácteos` en una heladería). Sale del registro, así que no depende
-  de vocabulario ni de que la categoría tenga marcadores;
-- **léxica**: sustantivos de producto de otra categoría, y ninguno de la
-  propia. Solo juzga a las categorías que tienen marcadores, porque en un
-  cajón de sastre (`Otros`, `Despensa artesanal`) la ausencia no prueba nada.
-
-Solo dispara `productos estrella`. `descripcion` se midió como disparador y se
-descartó: es prosa, y marcaba menciones legítimas —una cervecera que madura en
-botas de vino, un dulce hecho con aceite— a un ritmo que enterraba los
-hallazgos. Léela como corroboración una vez marcada la fila: suele ser el campo
-que dice cuál de los dos está contaminado.
-
-Es una **lista de candidatos, no de veredictos**: en muestreo sistemático
-acierta en torno a 2 de cada 3. Los falsos positivos tienen forma reconocible
-—productor genuinamente mixto, y producto cuyo nombre pertenece a otra
-categoría («tomate frito» en una conservera)—, así que se descartan de un
-vistazo. Lo que queda es editorial y no es mecánico: la reparación exige fuente
-del productor y puede tocar categoría, productos y descripción.
-
-Tres decisiones que se midieron y que conviene no deshacer sin volver a medir:
-la marca comercial no cuenta como producto (si no, toda almazara llamada
-«Molino de…» era harinera), un sustantivo tras `con`/`de` es ingrediente y no
-línea de producto, y una etiqueta retirada se resuelve antes de comparar (si no,
-la deriva de taxonomía se lee como contaminación).
-
-### G-WEB-1 — dominios muertos, aparcados y secuestrados ✅
-
-Hecho. `pnpm check:links` resuelve cada `web` y la **clasifica sin decidir**:
-NXDOMAIN · sin NS · sin registro A · conexión rechazada · timeout · TLS ·
-redirección a otro dominio · parking · portada de proveedor · 403 vivo · 200
-vivo. La clasificación alimenta R0 y R1, no los sustituye: un 403 no es un sitio
-muerto y un 200 no prueba que la web sea del productor.
-
-El producto es el snapshot fechado `data/reference/web-status.json`, que
-convierte el paso más caro de una pasada —abrir dominios a mano— en lectura:
-
-```bash
-npx pnpm check:links -- --offline --area <area>   # sin red
-npx pnpm check:links -- --area <area>             # refresca
-```
-
-Caduca, porque `web` es una afirmación dinámica igual que `Venta online`: el
-informe da la edad de cada dato y marca los de más de 90 días. Sirve también
-para triar `web-de-tercero`, porque lista los dominios compartidos por varias
-filas.
-
-Lo que queda de aquí en adelante es editorial: triar las señales por provincia.
-
-### G-AUD-1 — utilidad del inventario
-
-- Mantener `--json` como interfaz para formar uniones y medir antes/después.
-- Añadir automatización nueva solo si varias tandas repiten el mismo trabajo
-  mecánico. No convertir la planificación en otra base de datos.
-- No endurecer checks de juicio editorial hasta que la regla sea estable, tenga
-  pocos falsos positivos y cuente con pruebas.
+Si una puerta nueva se abre en el futuro, su salida obligatoria es pasar el
+detector por las provincias ya cerradas y archivar los hits como cola de
+mantenimiento en el ledger de cada una. Es un diff, no una repasada.
 
 ## 5) Carriles provinciales
 
@@ -501,56 +384,32 @@ basura conocida; `check:images` verde.
 
 Tamaño: una provincia, después de terminar sus carriles contratados.
 
-1. Reconciliar filas, slugs, estados, venta, canales, enlaces, evidencia,
-   candidatos e imágenes.
-2. Comprobar dependencias:
-   - `sí` ↔ canal;
-   - `ecommerce` ↔ tienda demostrada;
-   - `email` ↔ correo;
-   - `telefono|whatsapp` ↔ teléfono;
-   - horario ↔ canal público vigente.
-3. Repetir deduplicación, propiedad de enlaces, geografía y revisión de todos
-   los `Venta online=sí`.
-4. Clasificar todos los avisos de calidad: corregirlos en R1/T/E o documentar
-   las excepciones geográficas y editoriales legítimas; no dejar avisos
-   olvidados.
-5. Revisar `parcial`, `pendiente` y `no comprobado` residuales sin forzar una
-   promoción.
-6. Podar candidatos resueltos y comprimir el ledger provincial según
-   `docs/VERIFICATION_TECHNIQUES.md`.
-7. Actualizar la cabecera de reserva: `Estado de pasada: mantenimiento` y la
-   línea `Método` con los detectores vigentes.
-8. `data/evidence/coverage.json` se toca solo si la provincia cumple su
-   criterio propio —toda fila con registro `keep`, según
-   `docs/EVIDENCE_CONTRACT.md`—, que **no** es «cero pendientes». Cerrar una
-   pasada no implica entrar en ese fichero, y no entrar no es deuda.
-9. Ejecutar todos los gates de cierre.
+La pasada de consistencia —reconciliar, comprobar dependencias, repetir dedup y
+geografía, auditar los `Venta online=sí`, revisar residuales, podar candidatos y
+comprimir el ledger— es la de `docs/VERIFICATION_TECHNIQUES.md`, que no se copia
+aquí. Este plan solo añade tres cosas:
 
-Una provincia termina la pasada profunda cuando no quedan `pendiente`, los
-residuales tienen un techo de evidencia conocido y las afirmaciones dinámicas
-fueron revisadas. Después pasa a mantenimiento; el catálogo no queda
-congelado.
+1. Clasificar **todos** los avisos de calidad: corregirlos en R1/T/E o documentar
+   la excepción geográfica o editorial que los justifica. Ninguno se queda sin
+   clasificar.
+2. Actualizar la cabecera de reserva: `Estado de pasada: mantenimiento` y la
+   línea `Método` con los detectores vigentes al cerrar.
+3. `data/evidence/coverage.json` se toca solo si la provincia cumple su criterio
+   propio —toda fila con registro `keep`, según `docs/EVIDENCE_CONTRACT.md`—, que
+   **no** es «cero pendientes». Cerrar una pasada no implica entrar en ese
+   fichero, y no entrar no es deuda.
 
 ## 6) Orden de las olas
 
 El orden se recalcula al inicio de cada ola con el inventario vivo. No se
-mantienen rankings provinciales en documentos.
+mantienen rankings provinciales en documentos, y antes de abrir un lote se vuelve
+a medir: si otro trabajo ya lo resolvió, se reajusta en vez de repetirlo.
 
-Las olas describen prioridad, no una cola estrictamente serie. **La Ola 0 y la
-Ola 1 corren en paralelo desde el primer día**: son ficheros disjuntos y la
-tabla de bloqueo del § 4 dice exactamente qué carril espera a qué puerta.
-Encolar el saneamiento de filas publicadas detrás de cuatro lotes de tooling
-mantiene vivo el daño peor por el defecto más barato.
-
-### Ola 0 — tooling
-
-Completar G-CAT, G-GEO, G-TPL y G-WEB. Evita que el trabajo editorial pueda
-reintroducir categorías retiradas o escapar de la geografía, y precalcula los
-enlaces muertos para las olas siguientes.
+Las olas describen prioridad, no una cola estrictamente serie. La Ola 0 —cerrar
+las puertas de tooling del § 4— está terminada; las demás no se encolan entre sí
+más de lo que exija el orden de carriles de cada provincia.
 
 ### Ola 1 — riesgo alto y colas pequeñas cerrables
-
-No espera a la Ola 0.
 
 1. R0: basura visual y enlaces ajenos ya confirmados.
 2. R1 en provincias con `pendiente` o `sinteticas`, de cola menor a mayor.
@@ -611,14 +470,9 @@ por su re-escaneo, no por una pasada nueva.
 
 ### Durante un lote de datos
 
-```bash
-npx pnpm check:csv:changed
-npx pnpm check:evidence:changed
-npx pnpm check:evidence
-git diff --check
-```
-
-Además:
+Los gates de iteración son los del flujo mínimo de `docs/VERIFICATION_TECHNIQUES.md`
+(`check:csv:changed`, `check:evidence`, `check:evidence:changed`, `git diff --check`).
+Un lote de este plan añade:
 
 - ejecutar el `check:defects --area ... --check ...` que originó el lote;
 - ejecutar el audit de calidad del CSV provincial;
@@ -678,36 +532,3 @@ el inventario, se documenta como nueva visibilidad, no como regresión de datos.
   no se haya inventado una respuesta.
 - Los commits y el ledger provincial son el handoff. No copiar listados de
   slugs o recuentos globales a este documento.
-
-## 9) Secuencia de arranque
-
-Dos carriles en paralelo. El de datos no espera al de tooling salvo donde lo
-diga la tabla de bloqueo del § 4.
-
-**Tooling (ventana global, `verify:ai`)**
-
-1. ~~G-WEB-1: clasificación de dominios.~~ ✅ Hecho: el snapshot ya está, y el
-   re-escaneo de las cerradas es leerlo con `--offline`, no repasarlas.
-2. ~~G-CAT-1: detector, mapa canónico y pruebas.~~ ✅ Hecho: el registro lleva
-   la cuenta y `check:defects --check categoria-variante` es el re-escaneo.
-3. ~~G-CAT-2: migración por familias y retirada efectiva de etiquetas.~~ ✅ Hecho:
-   `retiredCategories` ya no corta con `categories`.
-4. ~~G-GEO-1: municipios bilingües y casos de homónimos.~~ ✅ Hecho.
-5. ~~G-TPL-1: detector advisory de plantilla cruzada.~~ ✅ Hecho.
-
-Cada uno cierra con el re-escaneo de las provincias ya cerradas.
-
-**Datos (una provincia por escritor, desde el día uno)**
-
-1. R0: basura visual y enlaces ajenos ya confirmados.
-2. R1: provincias con `pendiente`/`sinteticas`, de cola menor a mayor.
-3. V: `canal-sin-clasificar`.
-4. R1: clusters de fuentes prestadas, dejando campañas grandes para lotes
-   secuenciales.
-5. V: provincias con 1–40 ventas sin resolver; continuar por bandas.
-6. T0 sobre las provincias con más plantilla. **Desbloqueado**: las tres
-   puertas del carril T (G-CAT-1, G-CAT-2, G-TPL-1) están verdes.
-7. T1, E, I y C según se estabilice cada provincia.
-
-Antes de iniciar cualquiera de los dos puntos 1 se vuelve a medir: si otro
-trabajo ya lo resolvió, se elimina o reajusta el lote en vez de repetirlo.

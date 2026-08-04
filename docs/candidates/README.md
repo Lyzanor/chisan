@@ -115,6 +115,11 @@ En **el mismo cambio** que toca el CSV, resuelve la anotación: aceptada, ya
 presente, o rechazada con motivo. Un candidato aceptado no se queda «por si
 acaso»; su sitio es la fila y su evidencia.
 
+Esto lleva tiempo sin cumplirse, así que **las casillas `- [ ]` de los ficheros
+que ya existen no son cola abierta**: entre el 59% y el 73% de las que están sin
+marcar ya tienen fila. Cruza el fichero contra el CSV por nombre normalizado y
+dominio antes de planificar nada sobre él.
+
 Cuando un fichero queda resuelto entero, **bórralo**. Lo que aportaba ya está en
 el CSV y en `data/evidence/**`, y el historial de git guarda el resto; no dejes
 un resumen de lo integrado, que es estado derivado y caduca solo. Si la pasada

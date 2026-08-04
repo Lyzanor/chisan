@@ -29,42 +29,11 @@ de cobertura donde vacío es un final válido: no son carga de trabajo. La últi
 línea, `carga real`, ya descuenta esas señales y deduplica por fila, que es la
 unidad de investigación real.
 
-## A) Arreglos de tooling que cierran la puerta (hazlos antes que el trabajo editorial)
+Las puertas de tooling que cerraban la reentrada de un defecto (taxonomía,
+geografía, plantilla cruzada, dominios) están todas cerradas: qué detecta cada
+una y cómo se re-escanea está en `docs/es/DEFECT_REMEDIATION_PLAN.md` § 4.
 
-Cada uno convierte una limpieza manual recurrente en algo que el validador
-impide. Requieren `verify:ai`.
-
-- ~~**`categories.json` acepta 29 etiquetas que nadie usa.**~~ ~~**El aviso de
-  variantes de `audit-csv.js` no pliega plurales.**~~ Hechos, y con ellos la
-  migración entera (G-CAT-1 y G-CAT-2): `categories.json` lleva
-  `retiredCategories`, las 64 etiquetas retiradas están a cero usos y fuera del
-  registro, y volver a escribir cualquiera de ellas es error de contrato con el
-  reemplazo en el mensaje. `categoria-variante` está a cero.
-- ~~**Nada en el repo resuelve un dominio.**~~ Hecho: `check:links` clasifica
-  cada `web` y guarda el resultado fechado en `data/reference/web-status.json`.
-  **Léelo con `--offline` antes de abrir dominios a mano**; solo vuelve a la red
-  con `--area` o `--all`. Clasifica sin decidir, y esa distinción es el
-  punto: un 403 no es un sitio muerto y un 200 no prueba que la web sea del
-  productor. Lo que queda es editorial, no de tooling — triar sus señales
-  provincia a provincia.
-- ~~**El enum de `Canal de venta` no tipifica la mensajería social.**~~
-  **Decidido 2026-08-02: no se añade token; son residual legítimo.** La duda era
-  si `quesos-argudo-campillos` y `miel-el-chozo-villanueva-del-trabuco` —`Venta
-  online=sí` probado, pedido por DM— justificaban tocar el enum. Lo que lo
-  zanja es medir la población: de 5.923 filas con `sí`, **236 no tienen web y
-  152 de esas sí tienen Instagram o Facebook**, y todas ellas ya están
-  clasificadas con los tokens existentes. Un token nuevo no rescataría 2 filas:
-  dejaría 152 mal tipificadas. Así que `canal-sin-clasificar` conserva esas dos
-  y eso es un final válido, no deuda.
-
-- ~~**Municipios en forma bilingüe `A / B` se saltan el geo-check.**~~ Hecho: el
-  lookup prueba cada mitad, tanto en `A / B` como en `Municipio (pedanía)`, y
-  solo se fía cuando concuerdan —si no, un homónimo como `La Floresta (Sant
-  Cugat)` inventaría un hueco de 96 km—. `geo-check skipped` bajó de 384 a 322.
-  Las que quedan son pedanías reales sin centroide: hueco documentado y
-  aceptado, no lo persigas.
-
-## B) Deuda editorial
+## Deuda editorial
 
 Ordenada por daño al usuario, no por tamaño.
 
@@ -86,7 +55,11 @@ Ordenada por daño al usuario, no por tamaño.
   abierto del catálogo y el que más útil hace una ficha. Criterio en
   `docs/VERIFICATION_TECHNIQUES.md` § Venta online. Ourense y Lugo tienen pasada
   profunda; el resto no. Al resolver a `sí`, rellena `Canal de venta` en el mismo
-  cambio (`--check canal-sin-clasificar` lista las que se quedaron a medias).
+  cambio (`--check canal-sin-clasificar` lista las que se quedaron a medias). Las
+  dos filas que venden por DM de Instagram se quedan ahí: **decidido 2026-08-02
+  que la mensajería social no lleva token propio**, porque de las 236 filas con
+  `sí` y sin web, 152 tienen redes y ya están tipificadas con el enum actual; un
+  token nuevo rescataría 2 y desclasificaría 152. Residual legítimo, no deuda.
 - **Descripciones genéricas** (`--check descripcion-generica`): texto que narra
   nuestro proceso («incorporado desde directorios de…», «revisado con Google
   Maps») o repite la categoría. Se publica tal cual en la ficha. **No son
@@ -104,20 +77,8 @@ Ordenada por daño al usuario, no por tamaño.
   **lista de candidatos, no de veredictos** —acierta ~2 de cada 3—, así que se
   abre la ficha y se decide si sobra el producto o sobra la categoría; el falso
   positivo típico es el productor genuinamente mixto. Criterio en
-  `docs/es/DEFECT_REMEDIATION_PLAN.md` § G-TPL-1.
+  `docs/es/DEFECT_REMEDIATION_PLAN.md` § 4 (G-TPL-1).
 - **Cobertura de evidencia** (`--check sin-evidencia`): la evidencia es
   advisory y falta-`keep` **no** es deuda (`docs/EVIDENCE_CONTRACT.md`). Úsalo
   solo para saber dónde no hay rastro de por qué se decidió algo, no para
   backfillear.
-
-## C) Higiene de repo
-
-- **Candidatos:** las casillas `- [ ]` de `docs/candidates/` **no son cola
-  abierta** — la poda al integrar no se está cumpliendo y entre el 59% y el 73%
-  de las casillas sin marcar ya están en el CSV. Cruza siempre contra el CSV por
-  nombre normalizado + dominio antes de planificar sobre uno de esos ficheros, y
-  poda al resolver como pide `docs/candidates/README.md`.
-- **Ramas:** comprueba con `git diff main...<rama> -- data/csv` antes de creer
-  que una rama tiene trabajo vivo; varias `codex/*` ya están en `main` y alguna
-  está por detrás. Si la rama va por detrás, bórrala en vez de fusionarla.
-

@@ -36,7 +36,7 @@ los riesgos locales y el avance de Málaga.
     `miel-el-chozo` (la fuente confirma venta online pero no identifica
     mecanismo) y `quesos-argudo` (**vende por DM de Instagram y Facebook, y el
     enum de `Canal de venta` no tipifica mensajería social**). Esto último es un
-    hueco real del contrato, anotado en `docs/es/BACKLOG.md` § A.
+    hueco real del contrato, anotado en `docs/es/BACKLOG.md`.
 - Inicio: 2026-07-16.
 - Snapshot inicial: **405 filas**; **65 `verificado`**, **6 `parcial`** y
   **334 `pendiente`**.
