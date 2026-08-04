@@ -44,6 +44,13 @@
     "es/castilla-y-leon/soria",
     "es/castilla-y-leon/salamanca",
     "es/murcia/murcia",
-    "jp/kansai/kyoto"
+    "jp/kansai/kyoto",
+    "pt/norte/porto",
+    "pt/centro/aveiro",
+    "pt/lisboa-e-vale-do-tejo/setubal",
+    "pt/alentejo/evora",
+    "pt/algarve/faro",
+    "pt/madeira/madeira",
+    "pt/acores/acores"
   ]
 }

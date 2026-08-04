@@ -455,6 +455,20 @@
       "region": "castilla-y-leon"
     }
   ],
+  "penafiel": [
+    {
+      "lat": 41.2079,
+      "lon": -8.2842,
+      "label": "Penafiel (Porto)",
+      "region": "norte"
+    },
+    {
+      "lat": 41.59751,
+      "lon": -4.12279,
+      "label": "Peñafiel",
+      "region": "castilla-y-leon"
+    }
+  ],
   "portillo": [
     {
       "lat": 41.4774,
@@ -467,6 +481,20 @@
       "lon": -4.22389,
       "label": "Portillo de Toledo",
       "region": "castilla-la-mancha"
+    }
+  ],
+  "porto": [
+    {
+      "lat": 41.1579,
+      "lon": -8.6291,
+      "label": "Porto",
+      "region": "norte"
+    },
+    {
+      "lat": 42.16722,
+      "lon": -6.89944,
+      "label": "Porto (Zamora)",
+      "region": "castilla-y-leon"
     }
   ],
   "riofrio": [
