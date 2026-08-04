@@ -84,7 +84,7 @@ Ordenada por daño al usuario, no por tamaño.
   no el dominio: alguna es un grupo real.
 - **`Venta online` sin resolver** (`--check venta-sin-resolver`): el mayor hueco
   abierto del catálogo y el que más útil hace una ficha. Criterio en
-  `docs/es/VERIFICATION_TECHNIQUES.md` § Venta online. Ourense y Lugo tienen pasada
+  `docs/VERIFICATION_TECHNIQUES.md` § Venta online. Ourense y Lugo tienen pasada
   profunda; el resto no. Al resolver a `sí`, rellena `Canal de venta` en el mismo
   cambio (`--check canal-sin-clasificar` lista las que se quedaron a medias).
 - **Descripciones genéricas** (`--check descripcion-generica`): texto que narra

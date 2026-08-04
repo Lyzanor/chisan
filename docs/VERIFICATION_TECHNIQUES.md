@@ -1,16 +1,20 @@
-# Técnicas de verificación de catálogos provinciales
+# Técnicas de verificación de catálogos de área
 
-Manual operativo para revisar `data/csv/[country]/[region]/[area].csv`. `AGENTS.md`,
+Manual operativo para revisar `data/csv/[country]/[region]/[area].csv`, en cualquier país. `AGENTS.md`,
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`
 contienen los contratos; aquí se define cómo investigar con eficiencia.
 
+Lo que solo vale para un país —fuentes autorizadas, registros cruzables, trampas locales y qué
+significa `area` allí— vive en su guía, `data/csv/[country]/AGENTS.md`. Léela antes de abrir un área
+de un país que no conozcas.
+
 La fuente de verdad del productor es el CSV. El JSONL de evidencia guarda procedencia estructurada;
-un ledger provincial, si existe, solo conserva fuentes locales, excepciones y progreso.
+un ledger de área, si existe, solo conserva fuentes locales, excepciones y progreso.
 
 ## Cómo usar este documento
 
 Lee siempre **Reglas duras**, **Flujo mínimo** y **Decisión por fila**. Consulta las demás secciones
-solo cuando el lote incluya venta online, duplicados, ubicación, imágenes o cierre provincial.
+solo cuando el lote incluya venta online, duplicados, ubicación, imágenes o cierre de área.
 
 El agente puede elegir herramientas, fuentes, orden y tamaño de lote. Debe emplear el método menos
 costoso que produzca evidencia suficiente y detener la investigación cuando la decisión ya sea sólida.
@@ -23,7 +27,7 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 2. **No inventes.** Vacío es mejor que falso.
 3. **Elimina enlaces ajenos.** Un HTTP 200 de otra entidad es desinformación.
 4. **Un fallo técnico no prueba una baja.** Contrasta timeout, TLS, DNS o bloqueo por otra vía.
-5. **No purgues con evidencia débil.** Exige duplicidad, fuera de alcance/provincia, baja clara o
+5. **No purgues con evidencia débil.** Exige duplicidad, fuera de alcance/área, baja clara o
    ausencia suficientemente contrastada.
 6. **Las afirmaciones dinámicas requieren evidencia actual.** Especialmente actividad y venta.
 7. **No inventes precisión geográfica.** Un centroide honesto es preferible a un punto conjeturado.
@@ -37,10 +41,10 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 
    ```bash
    git status --short
-   npx pnpm list:area [area]   # acótalo en provincias grandes (ver Disciplina de contexto)
+   npx pnpm list:area [area]   # acótalo en áreas grandes (ver Disciplina de contexto)
    ```
 
-   Evita abrir en paralelo una provincia ya activa. Para una fila concreta, localízala con `rg` en el
+   Evita abrir en paralelo un área ya activa. Para una fila concreta, localízala con `rg` en el
    CSV y en su JSONL de evidencia; lee solo esas ventanas.
 
 2. **Define un lote útil**
@@ -50,7 +54,7 @@ técnicas son heurísticas que el agente puede adaptar al caso.
 
 3. **Prioriza**
 
-   - duplicados, enlaces ajenos, fuera de provincia y no productores;
+   - duplicados, enlaces ajenos, fuera del área y no productores;
    - pendientes con fuente propia fácil de comprobar;
    - `Venta online=sí` no demostrada;
    - filas de registro o sin presencia propia;
@@ -107,9 +111,8 @@ Para hacer match de entidad combina nombre o razón social con municipio y, cuan
 teléfono, correo o dirección. No prolongues la búsqueda si una fuente primaria ya resuelve esos puntos
 sin contradicciones.
 
-Para Cataluña, `node scripts/match-dar.mjs "<municipio>" [--csv <path>] [--all]` cruza un CSV con el
-registro DAR de venda de proximitat por teléfono, correo y apellidos. Confirma existencia/localidad
-(`parcial`), sugiere duplicados o candidatos y nunca prueba venta online ni sustituye al CSV.
+Algunos países tienen un registro cruzable con tooling propio; si existe, está en su guía de país. Un
+cruce de ese tipo confirma existencia y localidad —techo `parcial`— y nunca prueba venta online.
 
 Registra la fuente con los claims concretos que demuestra. Una URL no hereda autoridad sobre todos los
 campos: por ejemplo, un marketplace puede probar venta activa sin probar municipio.
@@ -120,7 +123,7 @@ Revisa únicamente lo necesario para responder:
 
 1. ¿Existe y está activa?
 2. ¿Produce o elabora, en vez de limitarse a revender o servir?
-3. ¿Corresponde a esta provincia y municipio?
+3. ¿Corresponde a esta área y municipio?
 4. ¿Los enlaces y datos que se conservan pertenecen a esa entidad?
 5. ¿La venta remota está correctamente clasificada?
 
@@ -129,14 +132,14 @@ Revisa únicamente lo necesario para responder:
 | Identidad, actividad productora, municipio y datos principales contrastados | `verificado` |
 | Existe, pero solo hay registro/fuente secundaria o queda una duda material | `parcial` |
 | No se ha podido revisar suficientemente | `pendiente` |
-| Duplicado, no productor, otra provincia, entidad inexistente o baja definitiva probada | Purgar |
+| Duplicado, no productor, otra área, entidad inexistente o baja definitiva probada | Purgar |
 
 `parcial` es un cierre válido cuando existe un techo real de evidencia. No promociones para vaciar
 la cola. El contrato acepta enlaces externos válidos, pero una URL
 `maps/search/?api=1&query=...` no demuestra editorialmente la identidad.
 
 La matriz normativa y sus casos sintéticos viven en `docs/EDITORIAL_POLICY.md`; este manual no debe
-crear criterios provinciales alternativos.
+crear criterios de área alternativos.
 
 ### Campos
 
@@ -158,11 +161,11 @@ Audítala aparte de la identidad y combina canales con `|`.
 Revisa todos los `sí`. En cierres profundos revisa también `no` y `no comprobado`, porque pueden ocultar
 pedidos por contacto directo. Un fallo temporal justifica `no comprobado`, no necesariamente `no`.
 
-**Confirmar venta en webs difíciles.** Muchas webs de productor —cellers de vino en especial— bloquean
+**Confirmar venta en webs difíciles.** Muchas webs de productor —las de vino en especial— bloquean
 WebFetch por age-gate, Cloudflare o TLS; un fetch fallido no prueba que no haya tienda. Antes de cerrar en
-`no`/`no comprobado`, confirma con WebSearch (`"<nombre>" tienda online comprar`) y busca la tienda en un
-**dominio o subdominio de marca aparte** (p. ej. `adernats.cat`→`adernats-shop.com`, `botiga.<marca>.com`,
-`<marca>-shop.com`). Distingue el canal propio del de terceros al rellenar `Canal de venta`.
+`no`/`no comprobado`, confirma con una búsqueda (`"<nombre>" tienda online comprar`) y busca la tienda en un
+**dominio o subdominio de marca aparte** (`shop.<marca>`, `<marca>-shop`, o la palabra «tienda» del idioma
+local). Distingue el canal propio del de terceros al rellenar `Canal de venta`.
 
 ## Deduplicación
 
@@ -176,17 +179,18 @@ No fusiones automáticamente cooperativa y socio, secciones productivas distinta
 o productores que comparten finca, mercado o centroide. `grep -i` no pliega acentos y no sirve como
 único control.
 
-Un dominio que no casa con el nombre de la fila suele ser el **grupo matriz**, no una web cruzada:
-muchas bodegas de grupos (González Byass, Familia Torres, Bodegas Riojanas, Eguren…) publican bajo el
-dominio o la marca del grupo, y cruzar dos DO por dominio da falsos positivos de duplicado. Señales de
-cruce real: razón social distinta, el mismo Instagram compartido entre filas sin relación, o una web
-que resulta ser un directorio. Ante grupo confirmado, cada bodega/marca con identidad y municipio
-propios sigue siendo una fila válida.
+Un dominio que no casa con el nombre de la fila suele ser el **grupo matriz**, no una web cruzada: las
+marcas de un grupo publican bajo el dominio o la marca de la matriz, así que cruzar dos
+denominaciones por dominio da falsos positivos de duplicado. Señales de cruce real: razón social
+distinta, el mismo Instagram compartido entre filas sin relación, o una web que resulta ser un
+directorio. Ante grupo confirmado, cada marca con identidad y municipio propios sigue siendo una fila
+válida.
 
 ## Ubicación
 
 - Contrasta `municipio`, `direccion`, `lat` y `lon` conjuntamente.
-- Si geocodificas, limita a España, respeta el servicio usado y valida contra el centroide municipal.
+- Si geocodificas, acota la consulta al país del área, respeta el servicio usado y valida contra el
+  centroide municipal.
 - Hasta 15 km es la banda esperada; 15–100 km requiere revisión; más de 100 km bloquea el contrato.
 - Si el centroide corresponde a un homónimo territorial, corrige
   `data/reference/municipality-overrides.json`; no muevas productores correctos.
@@ -204,7 +208,7 @@ hash) vive en `docs/IMAGES.md`; el contrato del campo `imagen` en
 
 - No leas todo el CSV para editar unas filas.
 - No leas ni reformatees todo el JSONL: busca el `slug` y sustituye una sola línea.
-- El roster `list:area` de una provincia grande (Barcelona, Madrid) también llena el contexto:
+- El roster `list:area` de un área grande (Barcelona, Madrid) también llena el contexto:
   acótalo con `--categoria`/`--pendientes` o `rg`, no lo vuelques entero.
 - No releas este documento completo en cada lote; conserva solo las secciones aplicables.
 - Consulta `docs/CSV_CONTRACT.md` solo para dudas estructurales o valores permitidos.
@@ -220,8 +224,8 @@ contradicciones, riesgo de purga, duplicidad o una afirmación dinámica dudosa.
 
 ## Trazabilidad
 
-El JSONL registra de forma estructurada fuente, fecha, claims y decisión. El mensaje de commit o ledger
-provincial debe limitarse a lo necesario para reanudar:
+El JSONL registra de forma estructurada fuente, fecha, claims y decisión. El mensaje de commit o el
+ledger de área deben limitarse a lo necesario para reanudar:
 
 - lote y fecha;
 - verificadas, parciales y purgas;
@@ -232,9 +236,9 @@ No dupliques en narrativa cada fuente rutinaria que ya está en el JSONL. Docume
 solo para purgas, fusiones, dudas residuales y excepciones que otro agente podría interpretar de forma
 distinta.
 
-## Pasada de consistencia al cerrar una pasada provincial
+## Pasada de consistencia al cerrar una pasada de área
 
-Esta pasada es provincial, no necesaria tras cada lote:
+Esta pasada es de área, no necesaria tras cada lote:
 
 1. Concilia filas, estados, venta, canales, imágenes y evidencia.
 2. Comprueba dependencias: `sí`/canal; `ecommerce`/web; `email`/correo;
@@ -245,13 +249,13 @@ Esta pasada es provincial, no necesaria tras cada lote:
 6. Revisa diff, LF, imágenes, evidencia y ejecuta `npx pnpm verify:data`.
 
 Una **pasada** de revisión se cierra cuando no quedan `pendiente`, cada residual tiene una razón
-conocida y las afirmaciones dinámicas se han comprobado; entonces la provincia entra en mantenimiento.
+conocida y las afirmaciones dinámicas se han comprobado; entonces el área entra en mantenimiento.
 El CSV nunca se «cierra» ni se da por terminado: es un catálogo vivo. Las afirmaciones dinámicas
 (actividad, cierre, venta online) y la frescura de la evidencia se vuelven a comprobar durante el
-mantenimiento. Añadir la provincia a `data/evidence/coverage.json` la marca como cobertura completa
+mantenimiento. Añadir el área a `data/evidence/coverage.json` la marca como cobertura completa
 de evidencia (advisory: `check:evidence` no bloquea), pero no congela el catálogo ni cierra el CSV.
 
-## Documento provincial opcional
+## Documento de área opcional
 
 Crea `docs/verification/[country]/[area].md` solo si el CSV y este manual no bastan para reanudar. Durante
 una pasada es un documento de trabajo: snapshot, worklist, plan de lotes, fuentes locales y
@@ -269,7 +273,7 @@ la siguiente sesión de mantenimiento, no como acta de la pasada.
 Conserva exactamente:
 
 - **Estado final**: fecha y commit de cierre, filas y recuento por `verificacion`, `Venta online`
-  sí/no/nc con cobertura de canal, evidencia y si la provincia está en `coverage.json`.
+  sí/no/nc con cobertura de canal, evidencia y si el área está en `coverage.json`.
 - **Residuales justificados**: cada `pendiente`/`parcial` restante y cada duda de venta con su techo
   real de evidencia, para no reinvestigarlos desde cero.
 - **Excepciones y reglas locales reutilizables**: homónimos y geografía, decisiones que otro agente

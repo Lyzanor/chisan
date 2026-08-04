@@ -5,7 +5,7 @@ Ledger operativo para completar por lotes la revisión de
 por fila vive en `data/evidence/andalucia/malaga.jsonl`.
 
 Los criterios generales son `docs/EDITORIAL_POLICY.md` y
-`docs/es/VERIFICATION_TECHNIQUES.md`. Este documento solo conserva el snapshot,
+`docs/VERIFICATION_TECHNIQUES.md`. Este documento solo conserva el snapshot,
 los riesgos locales y el avance de Málaga.
 
 ## Estado

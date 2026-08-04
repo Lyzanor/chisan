@@ -7,7 +7,7 @@ evidencia estructurada por fila debe vivir en
 (ni el fichero ni la carpeta `data/evidence/castilla-y-leon/` existen todavía;
 se crean al cerrar el lote 1).
 
-El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento
+El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento
 no lo duplica, solo fija el snapshot, las particularidades de Ávila y el plan
 de lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
 `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.

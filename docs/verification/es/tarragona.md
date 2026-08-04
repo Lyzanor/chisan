@@ -3,7 +3,7 @@
 Ledger mínimo para reanudar la revisión profunda de
 `data/csv/catalunya/tarragona.csv`. El CSV sigue siendo la fuente de verdad y la
 evidencia por fila vive en `data/evidence/catalunya/tarragona.jsonl`. El
-procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`.
+procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`.
 
 ## Estado
 
@@ -87,7 +87,7 @@ tienda propia/agrobotiga, el `whatsapp`/`email`/`telefono` del propio productor 
 tienda oficial de su DO/cooperativa. La **reventa por tiendas de terceros
 independientes** (vinotecas, marketplaces genéricos como Vinissimus/Bodeboca) **no**
 basta → `no comprobado`. Formalizado en `docs/EDITORIAL_POLICY.md`,
-`docs/es/VERIFICATION_TECHNIQUES.md`, el evaluador `scripts/editorial-policy.mjs`
+`docs/VERIFICATION_TECHNIQUES.md`, el evaluador `scripts/editorial-policy.mjs`
 (valor `reseller-only`) y un caso en `data/evals/editorial-policy-cases.json`
 (`verify:ai` verde, 15 casos).
 

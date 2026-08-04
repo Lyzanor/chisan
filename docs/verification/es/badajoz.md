@@ -5,7 +5,7 @@ Ledger para planificar y reanudar la primera revisión profunda de
 estructurada se crea en `data/evidence/extremadura/badajoz.jsonl` al cerrar
 BAD-01.
 
-Procedimiento en `docs/es/VERIFICATION_TECHNIQUES.md`; contratos en
+Procedimiento en `docs/VERIFICATION_TECHNIQUES.md`; contratos en
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.
 Aquí solo va el contexto provincial y la worklist congelada.
 

@@ -4,7 +4,7 @@ Ledger para reanudar la primera revisión profunda de
 `data/csv/castilla-la-mancha/toledo.csv`. El CSV es la fuente de verdad y cada
 decisión se registra en `data/evidence/castilla-la-mancha/toledo.jsonl`.
 
-Procedimiento en `docs/es/VERIFICATION_TECHNIQUES.md`; contratos en
+Procedimiento en `docs/VERIFICATION_TECHNIQUES.md`; contratos en
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`. Este fichero solo conserva el corte provincial, la
 cola de lotes y las excepciones que evitan repetir investigación.

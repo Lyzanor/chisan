@@ -4,7 +4,7 @@ Ledger de ejecución para cerrar la revisión profunda de
 `data/csv/andalucia/sevilla.csv`. El CSV es la fuente de verdad y la evidencia
 por decisión vive en `data/evidence/andalucia/sevilla.jsonl` desde el lote 1.
 
-El procedimiento general está en `docs/es/VERIFICATION_TECHNIQUES.md`; este
+El procedimiento general está en `docs/VERIFICATION_TECHNIQUES.md`; este
 documento fija únicamente el snapshot, los riesgos provinciales y la secuencia
 de lotes. Los contratos siguen en `docs/CSV_CONTRACT.md`,
 `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.

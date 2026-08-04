@@ -12,7 +12,7 @@ trabajándolas: entonces déjalas y dilo en el traspaso.
 
 Lo que no es descubrimiento ya vive en otro sitio: los criterios de decisión en
 `docs/EDITORIAL_POLICY.md`, cómo investigar una fila en
-`docs/es/VERIFICATION_TECHNIQUES.md`, el contrato de la fila en
+`docs/VERIFICATION_TECHNIQUES.md`, el contrato de la fila en
 `docs/CSV_CONTRACT.md` y la procedencia estructurada en `data/evidence/**`.
 
 ## 1. Descubrir

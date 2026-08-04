@@ -5,7 +5,7 @@ Ledger para planificar y reanudar la primera revisión profunda de
 estructurada vive en `data/evidence/murcia/murcia.jsonl` desde el cierre de
 MR-01.
 
-El procedimiento general sigue `docs/es/VERIFICATION_TECHNIQUES.md`; los contratos
+El procedimiento general sigue `docs/VERIFICATION_TECHNIQUES.md`; los contratos
 viven en `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`. Este documento conserva el snapshot, los riesgos
 provinciales y una worklist congelada. No convierte la evidencia en requisito

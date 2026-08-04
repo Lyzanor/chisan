@@ -6,7 +6,7 @@ evidencia estructurada por fila debe vivir en
 `data/evidence/comunitat-valenciana/valencia.jsonl` a medida que se revise cada
 lote (creado en el lote 1).
 
-El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento no
+El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento no
 lo duplica, solo fija el snapshot, las particularidades de Valencia y el plan de
 lotes. Los contratos viven en `docs/CSV_CONTRACT.md`,
 `docs/EVIDENCE_CONTRACT.md` y `docs/EDITORIAL_POLICY.md`.
@@ -187,7 +187,7 @@ auditoría transversal y puede revisar filas ya tocadas.
 
 ## Flujo por lote
 
-Detalle completo en `docs/es/VERIFICATION_TECHNIQUES.md`. Por lote:
+Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
 
 1. `git status --short` y `npx pnpm list:province valencia` (acota con
    `--categoria` cuando el lote sea de una categoría concreta).

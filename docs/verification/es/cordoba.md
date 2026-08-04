@@ -5,7 +5,7 @@ Ledger inicial para planificar y reanudar la revisión profunda de
 estructurada por fila vive en `data/evidence/andalucia/cordoba.jsonl` y se
 amplía a medida que se revise cada lote.
 
-El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`. Este documento
+El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Este documento
 fija el snapshot, las particularidades de Córdoba y el plan de lotes; no duplica
 los contratos de `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` ni
 `docs/EDITORIAL_POLICY.md`.
@@ -454,7 +454,7 @@ Snapshot final tras los lotes 1-9:
 
 ## Flujo por lote
 
-Detalle completo en `docs/es/VERIFICATION_TECHNIQUES.md`. Por lote:
+Detalle completo en `docs/VERIFICATION_TECHNIQUES.md`. Por lote:
 
 1. Proteger el trabajo existente:
 

@@ -5,7 +5,7 @@ Ledger para planificar y reanudar la primera revisión profunda de
 evidencia estructurada se crea en
 `data/evidence/castilla-y-leon/zamora.jsonl` al cerrar el lote 1.
 
-El procedimiento general sigue `docs/es/VERIFICATION_TECHNIQUES.md`; los contratos
+El procedimiento general sigue `docs/VERIFICATION_TECHNIQUES.md`; los contratos
 viven en `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`. Este documento contiene el contexto provincial y una
 worklist congelada para que un modelo económico con razonamiento bajo pueda

@@ -18,7 +18,7 @@ Si `npx` falla, el gate sigue siendo el comando, no el lanzador: ejecuta
 
 Este plan organiza el trabajo; no sustituye los contratos de
 `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md`,
-`docs/EDITORIAL_POLICY.md`, `docs/es/VERIFICATION_TECHNIQUES.md` y
+`docs/EDITORIAL_POLICY.md`, `docs/VERIFICATION_TECHNIQUES.md` y
 `docs/IMAGES.md`.
 
 ## 1) Resultado buscado
@@ -517,7 +517,7 @@ Tamaño: una provincia, después de terminar sus carriles contratados.
 5. Revisar `parcial`, `pendiente` y `no comprobado` residuales sin forzar una
    promoción.
 6. Podar candidatos resueltos y comprimir el ledger provincial según
-   `docs/es/VERIFICATION_TECHNIQUES.md`.
+   `docs/VERIFICATION_TECHNIQUES.md`.
 7. Actualizar la cabecera de reserva: `Estado de pasada: mantenimiento` y la
    línea `Método` con los detectores vigentes.
 8. `data/evidence/coverage.json` se toca solo si la provincia cumple su

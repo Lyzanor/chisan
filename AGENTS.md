@@ -31,11 +31,12 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `docs/CSV_CONTRACT.md`: CSV header, columns, allowed values, blocking/warning rules, image path contract, reference centroid data.
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types, purge/merge records.
 - `docs/EDITORIAL_POLICY.md`: decision model for `verificado`/`parcial`/purge/online sales.
+- `docs/VERIFICATION_TECHNIQUES.md`: how to investigate an area efficiently — batch flow, sufficient evidence, deduplication, location, context discipline. Written in Spanish, valid for every country.
 - `docs/IMAGES.md`: producer image workflow — format, sourcing, naming, enrichment tooling, junk signatures.
 - `docs/TASKS.md`: task recipes, release checklist, handoff checklist.
 - `docs/AREA_COMPLETENESS.md`: planning targets; areas are not benchmarks for one another.
 - `docs/ARCHITECTURE.md`: app flow and runtime design rules.
-- `docs/[country]/**`: that country's own docs — investigation techniques, backlog, remediation plans. They are not canonical for anyone else, and a country without them is not missing anything; it simply has not written them yet.
+- `docs/[country]/**`: that country's own docs — backlog, remediation plans, local investigation notes. They are not canonical for anyone else, and a country without them is not missing anything; it simply has not written them yet.
 
 ## Hard Invariants
 - Every area CSV in every country shares one header — the canonical one in `docs/CSV_CONTRACT.md` — with LF line endings. The header may grow when the catalog needs it; what is forbidden is growing it partially. Widening it means updating the contract, the validator and every CSV under `data/csv/**` in one dedicated commit.

@@ -5,7 +5,7 @@ Ledger para planificar y reanudar la primera pasada profunda de
 evidencia por decisión vive en
 `data/evidence/castilla-y-leon/valladolid.jsonl`, que se crea con el lote 1.
 
-El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`; este documento
+El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`; este documento
 solo fija el snapshot, los riesgos locales y el alcance exacto de cada lote.
 Los contratos son `docs/CSV_CONTRACT.md`, `docs/EVIDENCE_CONTRACT.md` y
 `docs/EDITORIAL_POLICY.md`.

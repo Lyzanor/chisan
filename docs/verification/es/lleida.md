@@ -13,7 +13,7 @@ evidencia por fila vive en `data/evidence/catalunya/lleida.jsonl`.
   puntuales si aparecen fuentes nuevas.
 - Lotes 1–50 cerrados; Lleida completa.
 
-El procedimiento general es `docs/es/VERIFICATION_TECHNIQUES.md`. Cada lote debe
+El procedimiento general es `docs/VERIFICATION_TECHNIQUES.md`. Cada lote debe
 revisar identidad, actividad productora, municipio, enlaces y venta online;
 editar solo sus filas; añadir evidencia JSONL y cerrar con `verify:data`.
 

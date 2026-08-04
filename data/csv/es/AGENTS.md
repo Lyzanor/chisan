@@ -18,7 +18,7 @@ What is true of `data/csv/es/**` only. The shared contract is `AGENTS.md` at the
 - Municipio homonyms between communities are frequent; the resolved ones are in `data/reference/municipality-overrides.json`.
 
 ## Spain's own docs
-- `docs/es/VERIFICATION_TECHNIQUES.md`: investigation workflow, sufficient evidence, deduplication, location, context discipline. Written around the province as the unit of work.
+The investigation workflow is shared: `docs/VERIFICATION_TECHNIQUES.md`. What is Spain's alone:
 - `docs/es/BACKLOG.md`: the cross-province editorial worklist. Measure it with `check:defects` before reading it.
 - `docs/es/DEFECT_REMEDIATION_PLAN.md`: how that backlog is worked down over many sessions — batch execution, province ownership, lane order, exit criteria.
 - Per-province verification manuals: `docs/verification/es/[area].md`. Candidate research: `docs/candidates/es/[area].md`.
