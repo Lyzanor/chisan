@@ -9,10 +9,10 @@ What is true of `data/csv/pt/**` only. The shared contract is `AGENTS.md` at the
 ## State
 - 38 rows across 7 districts (Aveiro, Évora, Faro, Porto, Setúbal, Açores, Madeira). The other 13 district CSVs are published empty.
 
-## Geography — open gap
-- `data/reference/municipalities.json` has no Portuguese catalog, so **35 of the 38 rows are geo-skipped**: the audit reports them as skipped and passes. A green run here does not mean the coordinates were checked.
-- The 3 rows that do resolve only do so because their names collide with Spanish municipios (`porto`, `penafiel`) and were disambiguated by hand in `data/reference/municipality-overrides.json`.
-- Fix: add a "municipality of Portugal" catalog to `scripts/build-municipality-centroids.js` alongside Spain and Japan, regenerate, and re-run the audit over `data/csv/pt`.
+## Geography
+- Centroids come from Wikidata's "municipality of Portugal": the 308 concelhos, islands included, labelled in pt. Every row resolves, so the geographic gate is on and a green run means checked.
+- Two concelho names repeat inside Portugal and are resolved by region in `data/reference/municipality-overrides.json`: `lagoa` (Algarve / Açores, 1.500 km apart) and `calheta` (Açores / Madeira).
+- Fifteen more collide with a Spanish municipio, and Spain keeps the shared key. `porto` and `penafiel` are disambiguated; `gondomar`, `maia`, `paredes`, `benavente`, `montijo`, `mira`, `vila real`, `santa cruz`, `belmonte`, `monforte`, `oleiros`, `mora` and `almodôvar` are not, because no row uses them yet. The first producer in one of those concelhos will fail the 100 km rule loudly rather than pass wrong; add the override then, listing both countries' candidates so neither side loses its lookup.
 
 ## Sources
 - Not established yet. Candidates to evaluate and then record here: DOP/IGP registries, regional producer directories, and the certifying bodies of the wine regions. Until they are, additions rest on the producer's own site and a listing normally supports at most `parcial`.

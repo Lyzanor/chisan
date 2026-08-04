@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03",
+  "generatedAt": "2026-08-04",
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipalities.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 11917,
+    "rows": 11955,
     "tagged": 1160
   },
   "areas": {

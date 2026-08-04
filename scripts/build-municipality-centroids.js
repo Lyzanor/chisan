@@ -3,7 +3,7 @@
 //
 // Source
 // - Wikidata SPARQL endpoint: https://query.wikidata.org/sparql
-// - Two catalogs, one per country in data/csv:
+// - One catalog per country in data/csv:
 //   - Spain: every entity classified (transitively via P31/P279*) as
 //     "municipality of Spain" (Q2074737) with point coordinates (P625).
 //     Labels in es / ca / gl / eu / an / ast so multilingual variants
@@ -12,6 +12,10 @@
 //     anything carrying a dissolution date (P576) — the Heisei mergers left
 //     ~13.000 dissolved municipalities in Wikidata. Labels in en (the rōmaji
 //     the CSVs use) and ja (so a kanji spelling also resolves).
+//   - Portugal: "municipality of Portugal" (Q13217644) with coordinates — the
+//     308 concelhos, islands included. Labels in pt only: the CSVs write them
+//     in Portuguese and no concelho carries a dissolution date, so neither an
+//     extra language nor the Japanese filter buys anything.
 //
 // Output
 // - data/reference/municipalities.json
@@ -19,7 +23,8 @@
 //   Keys are produced by normalizeSearch (lowercase, ASCII, single spaces),
 //   matching how scripts/audit-csv.js looks up the municipio column.
 //   Spain is written first and wins any cross-country key collision, so
-//   adding Japan can never move an existing Spanish centroid.
+//   adding another country can never move an existing Spanish centroid. The
+//   losing side is resolved by region in municipality-overrides.json.
 //
 // When to re-run
 // - You suspect the lookup is missing a real municipio (Wikidata may have
@@ -41,13 +46,13 @@
 //   `--refresh` also moves existing centroids: measured once against the file
 //   committed in August 2026, a plain rebuild changed 149 keys and dropped 17,
 //   most of them homonyms whose winner flipped rather than real corrections.
-// - Four SPARQL requests, ~1 minute total on a normal connection.
+// - Two SPARQL requests per country, ~1-2 minutes total on a normal connection.
 // - Cross-language label collisions (e.g. Catalan "Figueres" → both real
 //   Figueres in Girona and Higueras in Castellón) cause one entity to win
 //   the key arbitrarily. Known collisions are disambiguated via
 //   data/reference/municipality-overrides.json, which is loaded by
 //   scripts/audit-csv.js after this file and resolves the match using the
-//   autonomous-community slug inferred from the CSV path. This file is not
+//   region slug inferred from the CSV path. This file is not
 //   touched by the rebuild.
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
@@ -74,6 +79,14 @@ const COUNTRIES = [
     langs: ["en", "ja"],
     canonicalLang: "en",
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
+  },
+  {
+    slug: "portugal",
+    label: "Portugal",
+    rootClass: "wd:Q13217644",
+    langs: ["pt"],
+    canonicalLang: "pt",
+    extraFilter: "",
   },
 ];
 
@@ -222,7 +235,10 @@ async function main() {
     summaries.push({ label: country.label, items: items.size, keys, collisions });
   }
 
-  const outPath = path.join(__dirname, "..", "data", "reference", "municipios.json");
+  // Same file scripts/audit-csv.js reads. The rename to the English name during
+  // the multi-country move missed this line, so every run since then wrote an
+  // orphan municipios.json and left the real lookup untouched.
+  const outPath = path.join(__dirname, "..", "data", "reference", "municipalities.json");
   const existing =
     !refresh && fs.existsSync(outPath) ? JSON.parse(fs.readFileSync(outPath, "utf8")) : {};
 

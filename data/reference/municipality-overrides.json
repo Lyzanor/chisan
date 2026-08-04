@@ -111,6 +111,20 @@
       "region": "la-rioja"
     }
   ],
+  "calheta": [
+    {
+      "lat": 38.6,
+      "lon": -28.01667,
+      "label": "Calheta (Açores)",
+      "region": "acores"
+    },
+    {
+      "lat": 32.73333,
+      "lon": -17.16667,
+      "label": "Calheta (Madeira)",
+      "region": "madeira"
+    }
+  ],
   "canales": [
     {
       "lat": 43.31908,
@@ -317,6 +331,20 @@
       "lon": -6.65691,
       "label": "La Peña",
       "region": "asturias"
+    }
+  ],
+  "lagoa": [
+    {
+      "lat": 37.13333,
+      "lon": -8.45,
+      "label": "Lagoa (Algarve)",
+      "region": "algarve"
+    },
+    {
+      "lat": 37.75,
+      "lon": -25.58333,
+      "label": "Lagoa (Açores)",
+      "region": "acores"
     }
   ],
   "lezama amurrio": [
