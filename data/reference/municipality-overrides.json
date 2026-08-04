@@ -721,6 +721,20 @@
       "region": "andalucia"
     }
   ],
+  "tonosho": [
+    {
+      "lat": 35.83717,
+      "lon": 140.66869,
+      "label": "Tōnoshō-machi",
+      "region": "kanto"
+    },
+    {
+      "lat": 34.48693,
+      "lon": 134.18836,
+      "label": "Tonoshō-chō",
+      "region": "shikoku"
+    }
+  ],
   "torrent": [
     {
       "lat": 41.95016,
