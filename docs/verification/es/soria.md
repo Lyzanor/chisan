@@ -573,6 +573,13 @@ las dos de `Bodega`: Monte Pinos a `Agua mineral natural` y Pressumia a
 ### Residuales para la 2ª pasada
 
 - **Imágenes: 0 de 80 filas.** Es el hueco entero de la provincia.
+- **Cinco bodegas del CSV no aparecen en el registro de la DO Ribera del Duero**:
+  `vinedos-y-bodegas-gormaz-san-esteban-de-gormaz`,
+  `dominio-de-es-san-esteban-de-gormaz`, `vino-taruguin-san-esteban-de-gormaz`,
+  `bodegas-senorio-de-aldea-aldea-de-san-esteban` y
+  `bodega-aranda-de-vries-ines`. Puede ser otra razón social inscrita, o que
+  embotellen como Vinos de la Tierra. Comprobación aparte, no urgente: ninguna
+  depende de la DO para sostener su ficha.
 - **Las 11 `parcial`**, casi todas por dominio caído o por no tener web:
   Aranda-De Vries, Los Imposibles, Embutidos Caba, Rocío Alayeto, Quesos Zayas,
   Venus Selección, Confitería González, Pastelería Ramiro, Caelia, Miel El

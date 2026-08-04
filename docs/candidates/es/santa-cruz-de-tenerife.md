@@ -80,7 +80,7 @@
 > `vinosdeabona.com/bodegas-y-vinos/` (16) · DO Ycoden-Daute-Isora vía **portal del
 > Cabildo** `vinosdetenerife.es` (8; su web propia está caída).
 
-### DO Tacoronte-Acentejo (9) — ✅ integradas 2026-07-10 (lote 1.1a de `integracion.md`)
+### DO Tacoronte-Acentejo (9) — ✅ integradas 2026-07-10 (fase B)
 
 - [x] **Bodegas Cándido Hernández Pío** — **accepted →
   `bodegas-candido-hernandez-pio-la-matanza-de-acentejo`** (`verificado`,

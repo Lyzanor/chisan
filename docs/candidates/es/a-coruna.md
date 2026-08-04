@@ -4,7 +4,7 @@
 > Formato estándar de `docs/candidates/README.md`. Cada bloque indica su fuente,
 > fecha y estado.
 
-## DOP Queixo Tetilla + DOP Arzúa-Ulloa — queserías coruñesas (lote 20 de do-huecos)
+## DOP Queixo Tetilla + DOP Arzúa-Ulloa — queserías coruñesas  20 de do-huecos)
 
 > Estado: **`unverified`**. Dedup contra `a-coruna.csv` el 2026-07-09.
 > **Resultado honesto: el hueco es casi inexistente.** De los 10 elaboradores
@@ -22,7 +22,7 @@
 > queixo@arzua-ulloa.org). Sus **15 queixerías inscritas** se solapan casi por
 > completo con las de Tetilla y con las filas ya presentes en el CSV.
 
-### Candidatos (2) — ✅ integrados 2026-07-10 (fase B, lote 0.5 de `integracion.md`)
+### Candidatos (2) — ✅ integrados 2026-07-10 (fase B)
 
 - [x] **Bo-Queixo** (Isabel García Couto) — **accepted → `bo-queixo-boqueixon`**
   (`parcial`, `no comprobado`). Orto, 2 (Boqueixón); elaboradora de Tetilla y
@@ -65,8 +65,7 @@
 > **`unverified`**. Ver el ledger de la pasada para las cifras, los excluidos y
 > las pistas de fuera de Galicia.
 
-> ✅ Los 5 candidatos de este bloque quedaron **integrados el 2026-07-10** (lote
-> 0.5 de `integracion.md`).
+> ✅ Los 5 candidatos de este bloque quedaron **integrados el 2026-07-10** (fase B).
 
 - [x] **Queixos Verbas** (Lactear S.A.T.) — **accepted → `queixos-verbas-arzua`**
   (`parcial`, `no comprobado`). Tres socios de Arzúa desde 2018; queso de leche

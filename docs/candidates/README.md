@@ -1,176 +1,122 @@
-# Candidate Notes
+# Candidatos
 
-This folder stores raw candidate notes from manual research or other agents.
+Scratch compartido de investigación: pistas sin contrastar de camino al CSV.
+Nada de aquí es fuente de verdad y nada de aquí lo lee la app; un productor solo
+existe cuando está en `data/csv/**`.
 
-These files are not a source of truth. Treat every entry as unverified until it
-has been checked against reliable sources and de-duplicated against the current
-province CSV.
+Un fichero por área, `docs/candidates/[país]/[área].md`, y `[área]-[tema].md`
+solo si una pasada monográfica haría ilegible el principal. No abras carpetas
+privadas de agente ni listas paralelas de un área. Si encuentras notas sueltas
+bajo `docs/`, muévelas aquí, salvo que `git status --short` muestre a otro agente
+trabajándolas: entonces déjalas y dilo en el traspaso.
 
-Use this folder as the shared scratch space for all agents. Do not create
-agent-private candidate folders or parallel province lists.
+Lo que no es descubrimiento ya vive en otro sitio: los criterios de decisión en
+`docs/EDITORIAL_POLICY.md`, cómo investigar una fila en
+`docs/es/VERIFICATION_TECHNIQUES.md`, el contrato de la fila en
+`docs/CSV_CONTRACT.md` y la procedencia estructurada en `data/evidence/**`.
 
-Naming, one folder per country:
-- `docs/candidates/[country]/[area].md` for shared research on one area.
-- `docs/candidates/[country]/[area]-[topic].md` only when a focused pass would
-  make the main file hard to review.
+## 1. Descubrir
 
-Do not keep candidate notes directly under `docs/`. If you find one, move it
-here and rename it to the shared area file before continuing, unless
-`git status --short` shows another agent is actively working that area. In that
-case, leave the file untouched and call it out in the handoff.
+Las fuentes autorizadas de cada país están en su guía (`data/csv/[país]/AGENTS.md`).
+Orden de rendimiento, medido en la pasada de DO/DOP de 2026-07 (26 lotes):
 
-Before adding any producer to `data/csv/**`:
-
-1. Run `npx pnpm list:area [area]` to check existing rows.
-2. Verify the producer through an official website, registry, map listing, or
-   reliable public source.
-3. Add only real producers with a stable `slug`, normalized `categoria`,
-   coordinates, `Google Maps`, `verificacion`, and `Venta online`.
-4. Add the accepted decision to the matching `data/evidence/**` JSONL ledger.
-5. Run `npx pnpm check:csv:changed` while iterating.
-6. Run `npx pnpm verify:data` before finishing.
-
-Prune or update these notes once candidates are accepted, rejected, or already
-present in the catalog. When a file is fully resolved, summarize it in
-`integracion.md` («Resumen de lo integrado») and delete it — git history is the
-archive. Verification ledgers do not belong here; they go to
-`docs/verification/`.
-
-## Estado por fichero
-
-El estado y la cola pendiente de cada provincia viven en la **cabecera de su
-propio `docs/candidates/[country]/[area].md`** (origen, fecha, estado y qué queda),
-nunca en este README: un resumen central caduca con cada sesión y obliga a
-editarlo constantemente. Para la vista de conjunto: `ls docs/candidates/` y la
-cabecera de cada fichero; `integracion.md` es el ledger de la fase de
-integración. Al abrir o cerrar cola en un fichero, actualiza su cabecera en el
-mismo cambio.
-
-For unresolved candidates, keep enough evidence for another agent to continue
-without restarting:
-- status: `unverified`, `accepted`, `rejected`, or `already-present`
-- source URL or search route used
-- duplicate check result
-- final slug when accepted or already present
-
-Once accepted, structured provenance belongs in `data/evidence/**`; prune
-routine source detail from candidate notes.
-
-## Cómo encontrar el registro real de una DO/DOP (aprendizajes, pasada do-huecos 2026-07)
-
-Destilado de 26 lotes contra consejos reguladores. El ledger de aquella pasada
-(`do-huecos.md`) se borró al cerrarse (2026-07-13); el detalle por lote vive en
-el historial git y el resumen en `integracion.md` → «Resumen de lo integrado».
-
-**Dónde buscar, por orden de rendimiento:**
-
-1. **El organismo de control/certificación, no el consejo.** Cuando la
-   certificación está delegada (INTIA en Navarra, entidades tipo ENAC), ese
-   organismo publica el listado íntegro de operadores; el consejo solo enseña
-   sus asociados o los que pagan ficha de enoturismo (Navarra: 27 de 85;
-   Cariñena: 17 de 33). Buscar «listado operadores certificados <DO> pdf».
-2. **El endpoint de datos detrás del JS.** Si la web pinta el listado con
-   JavaScript, mirar antes de rendirse: endpoints CSV (`bodegas_csv.php` en
-   Ribeira Sacra), el JSON embebido en `wp-json/wp/v2/pages/<id>` (array
-   `places` del Queso Manchego), custom post types (`wp/v2/bodegas` en
-   Navarra), o una ruta hermana server-rendered (`/autenticos-productores/` en
-   Calanda).
-3. **El portal institucional** (cabildo, diputación, consejería): tablas
-   limpias Nombre·Marca·Dirección·Web (`vinosdetenerife.es`).
+1. **El organismo de control, no el consejo regulador.** Cuando la certificación
+   está delegada (INTIA en Navarra, entidades tipo ENAC), ese organismo publica
+   el listado íntegro de operadores; el consejo solo enseña a sus asociados o a
+   quien paga ficha de enoturismo (Navarra: 27 de 85; Cariñena: 17 de 33). Buscar
+   «listado operadores certificados \<DO\> pdf».
+2. **El endpoint de datos detrás del JS.** Si el listado se pinta con JavaScript,
+   mira antes de rendirte: endpoints CSV (`bodegas_csv.php`, Ribeira Sacra), JSON
+   embebido (`wp-json/wp/v2/pages/<id>`, Queso Manchego), custom post types
+   (`wp/v2/bodegas`, Navarra) o una ruta hermana server-rendered
+   (`/autenticos-productores/`, Calanda).
+3. **El portal institucional** (cabildo, diputación, consejería): tablas limpias
+   Nombre·Marca·Dirección·Web.
 4. **La cooperativa de 2º grado o comercializadora comarcal** cuando el consejo
-   no publica nada (Campo de Montiel) — con cautela: si ella comercializa todo,
-   sus socias probablemente son maquila y no son vendibles por separado.
-5. **Wayback Machine** para PDFs movidos y webs caídas (INTIA, Ycoden,
-   Utiel-Requena vía PDF de terceros).
+   no publica nada, con cautela: si ella comercializa todo, sus socias suelen ser
+   maquila y no son vendibles por separado.
+5. **Wayback Machine** para PDFs movidos y webs caídas.
 
-**Trampas de dominio:** los dominios "oficiales" caducan y se reutilizan
-(`arzua-ulloa.org` → academia; `docarinena.com` → sitio vietnamita, aunque el
-email del consejo siga siendo @docarinena.com). Verificar siempre que el
-contenido es el del consejo. Un 403 persistente suele ser Cloudflare
-(`utielrequena.org`): probar `Referer`, y si no, fuente alternativa.
+**Mide el hueco contra el registro de operadores, nunca contra el CSV.** Contar
+«filas de la categoría en la zona» infló huecos inexistentes (Arzúa-Ulloa) y
+ocultó reales (Utiel-Requena, 34 netas).
 
-**Reglas de dedup que evitan duplicados reales (todas mordieron):**
+**Trampas.** Los dominios oficiales caducan y se reutilizan (`arzua-ulloa.org` →
+academia; `docarinena.com` → sitio vietnamita, aunque el email del consejo siga
+siendo @docarinena.com): confirma que el contenido es del organismo. Un 403
+persistente suele ser Cloudflare, no una web muerta.
 
-- **Marca ≠ razón social.** El consejo publica marcas y el registro razones
-  sociales (o al revés). Cruzar SIEMPRE ambas contra `nombre` del CSV
-  (Finca Albret=Príncipe de Viana; Oveman=Villadharo; Mesur=Frontos;
-  Calius=Cándido Hernández Pío).
-- **Plegar acentos ANTES de quitar palabras genéricas** («QUEIXERÍA» no casa
-  con «queixeria» si se filtra primero).
-- **Exigir la categoría correcta en la fila del CSV** al casar por nombre; sin
-  esa guarda, bodegas casan con charcuterías, conserveras o fruta.
-- **Municipio, no sede fiscal**: el registro suele dar la sede (Discosta Norte
-  «en Ribadeo» para una bodega de Utiel-Requena) o la del consejo (fichas de
-  Monterrei). Y una misma empresa aparece dos veces si tiene dos plantas
-  («Instalaciones sitas en:» del PDF de INTIA).
-- Un dominio que no casa con el nombre suele ser **la matriz del grupo**, no un
-  duplicado (pazodomar.com en Pazo das Tapias).
+**Dónde está el oro y cuándo parar.** Rinde el registro con web y tienda propias
+(aceite, jamón y queso DOP: los secaderos de Jabugo salieron 10/10 `verificado`
+con venta online). Cuando ese pool se agota en un área, lo que queda son colas de
+registro sin web (`parcial` fino) y descartes por grupo o maquila: eso se
+verifica 1-a-1, no se padea en bloque, y es la señal de cerrar la pasada.
 
-**Medir el hueco contra el registro de operadores, nunca contra el CSV**: contar
-«filas de la categoría en la zona» infló huecos inexistentes (Arzúa-Ulloa,
-Manchego-Cuenca) y ocultó reales (Utiel-Requena, 34 netas).
+## 2. Qué anotar
 
-## Cómo integrar un candidato al CSV (aprendizajes, fase B 2026-07)
+En la cabecera del fichero —esto es el «formato estándar» que citan los ficheros
+de área— van CSV destino, fuente con URL o ruta de búsqueda, fecha, estado de la
+pasada y qué queda. El estado vive **solo** ahí: no hay tabla central en este
+README porque caduca en cada sesión. La vista de conjunto es `ls
+docs/candidates/*/` más esas cabeceras; si un área no tiene fichero, su pasada
+está cerrada.
 
-Destilado de ~22 lotes de integración (~152 altas). Ledger por lote en
-`integracion.md` → Bitácora.
+Por candidato, lo justo para que otro agente siga sin reempezar:
 
-**Provincia = donde produce/vende, según la web propia, NO el registro.** El
-registro de un consejo lista a menudo la sede fiscal, y a veces sitúa mal a un
-operador de otra provincia. Contrastar el municipio con la web propia siempre; si
-chocan, manda la web/planta. Casos: *Oliflix* (registro DOP Bajo Aragón la puso en
-Mequinenza/Zaragoza; su web dice Flix/Tarragona) · *Hermanos Cárdeno* (registro
-Cumbres Mayores; web Fuentes de León/Badajoz) · *Miguel y María* (sede Segovia,
-fábricas en 2 provincias) · *Ontañón* (inscrita en Navarra, es riojana). Y
-correcciones de municipio dentro de provincia por la ficha del propio operador
-(Alba Romero→Cala no Jabugo; Al Alma del Olivo→La Guardia no Sonseca; Ozalder→
-Larraga no Lerín; Heredad Ansón→Muel no Cariñena).
+| campo | |
+|---|---|
+| nombre | tal como lo publica la fuente; anota también la razón social si difiere de la marca |
+| municipio | márcalo `⚠` si la fuente no lo trae, para que se vea que falta |
+| pista | categoría, web, y qué lo hace elegible |
+| estado | `unverified` · `accepted` · `rejected` (con motivo) · `already-present` |
+| slug | al aceptarlo, o al descubrir que ya estaba |
 
-**`verificado` vs `parcial` (regla de rigor):** `verificado` exige una **fuente
-verificadora leída EN VIVO** (tipo `official-site`/`store`/`social`/`google-maps`/
-`marketplace`) que confirme identidad + actividad + municipio. Si la web propia no
-carga (SSL/cert/403/401/DNS/dominio aparcado/hosting suspendido) o es una SPA que
-no renderiza, tope **`parcial`** aunque el registro y varios directorios lo
-confirmen. Solo-registro → `parcial`. Los dominios muertos son constantes en las
-colas (muchas coops viejas siguen certificadas con la web caída → `parcial`
-legítimo).
+Aquí **no** van la procedencia estructurada de lo ya aceptado (`data/evidence/**`),
+los ledgers de verificación (`docs/verification/`) ni recuentos derivados del CSV.
 
-**`Venta online=sí` solo con checkout propio o colectivo visto en vivo.**
-Marketplace de terceros (SondeLugo, A tenda do Avó, Bigcrafters, Mentta) → `no
-comprobado`. Tienda «en mantenimiento», carrito sin checkout operativo, o portal
-tras verificación de edad que no deja ver la tienda → `no comprobado`. La tienda
-del grupo matriz que vende el producto de la bodega SÍ cuenta (Valcarlos→Grupo
-Faustino).
+## 3. Pasarlo al CSV
 
-**Grupos y maquila:** bodegas/almazaras de **terroir con nombre propio** de grupos
-de calidad SÍ se integran (Valcarlos/Faustino, Bodegas Olimpia/Vitilia, El
-Molinillo/Nortia); la exclusión de «gran grupo» es solo para **industrial/masa**
-(Grupo Montes Norte, La Fallera/Maicerías, Herba/Ebro Foods). Una marca cuyo
-dominio **redirige al sitio del grupo** es una etiqueta del grupo, no una entidad
-propia → exclusión (Doña Isabella→Marqués del Atrio). Cooperativas de 1er grado que
-muelen para el socio pero cuya **marca y tienda son la coop de 2º grado** → maquila
-/B2B, **descartar** y quedarse con la de 2º grado (Campo de Montiel).
+1. **Dedup primero**, con `npx pnpm list:area [área]` y `rg` dirigido. Tres
+   guardas que mordieron: pliega acentos **antes** de quitar palabras genéricas
+   («QUEIXERÍA» no casa con «queixeria» si filtras primero); exige la categoría
+   correcta al casar por nombre, o una bodega casará con una charcutería; y cruza
+   marca **y** razón social, porque el consejo publica una y el registro la otra
+   (Finca Albret = Príncipe de Viana; Mesur = Frontos).
+2. **Verifica en vivo.** El registro solo sostiene `parcial`; `verificado` exige
+   una fuente leída en el momento que confirme identidad, actividad y municipio.
+   `Venta online` se audita aparte: criterios en `docs/EDITORIAL_POLICY.md`.
+3. **El área es donde produce según su propia web, no según el registro**, que
+   suele dar la sede fiscal y a veces sitúa mal: el registro de la DOP Bajo
+   Aragón puso a Oliflix en Mequinenza (Zaragoza) y su web dice Flix (Tarragona);
+   Ontañón está inscrita en Navarra y es riojana. Si chocan, manda la web.
+4. **Triaje de grupo y maquila.** Entra la bodega o almazara de terroir con
+   nombre, municipio y marca propios aunque pertenezca a un grupo de calidad
+   (Valcarlos/Faustino). No entra el industrial de masa, ni la marca cuyo dominio
+   redirige al sitio del grupo (Doña Isabella → Marqués del Atrio), ni la
+   cooperativa de 1er grado que muele para el socio pero cuya marca y tienda son
+   las de la de 2º grado: en ese caso se queda la de 2º grado.
+5. **Escribe la fila completa** —`slug` estable, `categoria` normalizada,
+   coordenadas, `verificacion`, `Venta online`— y su registro en
+   `data/evidence/**`. Gates: `npx pnpm check:csv:changed` mientras iteras,
+   `npx pnpm verify:data` antes de cerrar.
 
-**Evidencia (`data/evidence/**`):** el tipo de fuente válido es `official-site`
-(el validador rechaza `store`). Un `keep` `verificado` con `VO=no` necesita el
-claim `online-sales`; un `parcial` necesita `municipality` en alguna fuente
-(el registro del consejo lo aporta). Warnings de evidencia no bloquean.
+**Por lotes, no en bloque.** Unos 10-12 candidatos por lote y un lote por commit:
+cada ficha cuesta varias comprobaciones y en torno a ⅔ traen algún dato erróneo o
+una decisión no anticipada. Empieza por los que tienen web propia, que se
+verifican rápido y salen `verificado`; deja para el final los que arrastran ⚠ sin
+resolver, y agrupa en el último lote a los que no tienen rastro digital en vez de
+repartirlos. Alta mínima: identidad y municipio productivo confirmados más un
+enlace verificable; solo-registro sin más rastro no se da de alta, se queda
+anotado.
 
-**Geocodificación y homónimos:** `municipios.json` colapsa homónimos (Cascante/
-Teruel, La Guardia/Jaén, Ocaña/Almería, Zurukuain no existe→usar Yerri); un script
-simple da falso `BLOQ >100km`, pero **el audit los resuelve con el override por
-comunidad** — fijar las coords al municipio correcto y confiar en `audit-csv.js`.
-Nominatim con «calle, CP municipio» a veces casa a cientos de km (Ctra. Tarazona→
-205 km): validar ≤15 km contra el centroide y caer al centroide del municipio si
-falla. Varias filas de un mismo municipio sin dirección comparten centroide (se
-acepta como fallback).
+## 4. Limpiar
 
-**Gates sin npx:** si `npx pnpm` no va (caché npm corrupta), correr directo
-`bash scripts/check-csv-contract.sh`, `node scripts/check-images.mjs`,
-`node scripts/check-evidence.mjs` (= `verify:data`) y sus variantes `-changed`.
+En **el mismo cambio** que toca el CSV, resuelve la anotación: aceptada, ya
+presente, o rechazada con motivo. Un candidato aceptado no se queda «por si
+acaso»; su sitio es la fila y su evidencia.
 
-**Rendimiento por tipo de lote:** oro = **aceite/jamón/queso DOP con web+tienda**
-(secaderos Jabugo 10/10 verificado+VO=sí, DOP Montes de Toledo, Sierra de Cazorla/
-Segura, queserías Manchego). Cuando se agota ese pool, el resto son **colas de
-registro sin web** (`parcial` fino, coords a centroide) o **descartes por grupo/
-maquila** → verificar 1-a-1, no padear en bloque.
+Cuando un fichero queda resuelto entero, **bórralo**. Lo que aportaba ya está en
+el CSV y en `data/evidence/**`, y el historial de git guarda el resto; no dejes
+un resumen de lo integrado, que es estado derivado y caduca solo. Si la pasada
+dejó un aprendizaje que cambia el método, súbelo a este README. Un fichero de
+candidatos vivo significa que queda cola.

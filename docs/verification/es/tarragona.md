@@ -58,7 +58,7 @@ Lote 9 (2026-06-23):
   (`parcial`, `sí`/marketplace); **Mas de la Creu** confirmado real (Celler Vidbertus)
   pero con municipio por fijar (l'Espluga de Francolí vs Barberà de la Conca) antes de
   crear fila; **Abadia de Poblet rechazado** (marca de Celler Tintoré, no productor
-  propio). Detalle en `docs/candidates/es/tarragona.md`.
+  propio).
 - **Duplicado fusionado:** `mas-martinet-assessoraments-falset` → `mas-martinet-viticultors-falset`
   (misma web/IG/teléfono/municipio; registro `merge` en la evidencia). 314→313→314 filas
   tras la fusión y el alta de Mas de la Pansa.
@@ -73,7 +73,12 @@ Residuales no bloqueantes (mantenimiento):
   identidad ya `verificado`, muchas probablemente comprables vía marketplace.
 - **21 filas `Venta online = sí` sin `Canal de venta`** (heredadas de la expansión de
   vino; `Canal` es warning-only y se backfillea de forma incremental por contrato).
-- **Mas de la Creu** pendiente de alta cuando se fije el municipio.
+- **Mas de la Creu** pendiente de alta cuando se fije el municipio (vía
+  `masdelacreu.com`).
+- **Gason Expert** (= Bodegas Totó Marqués), del histórico Rutes del Vi: municipio
+  y web no fiables, resolver antes de crear fila.
+- **Unió Fruits SCCL**: cooperativa de fruta de encaje dudoso y probable duplicado
+  de `cellers-unio-reus`; decidir si entra antes de volver a proponerla.
 
 ## Criterio de Venta online + repaso del vino (2026-06-24)
 
