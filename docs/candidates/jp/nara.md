@@ -1,6 +1,6 @@
 # Nara — candidatos
 
-- CSV: `data/csv/jp/kansai/nara.csv` (25 filas, todas altas de esta pasada).
+- CSV: `data/csv/jp/kansai/nara.csv` (35 filas: 25 bodegas + 10 altas de somen y kudzu del 2026-08-04).
 - Fuente: 奈良県酒造組合 (Nara Sake Brewers Association), <https://yamato-umazake.com/brewery-introduction/> — los 26 miembros del gremio, con marca, municipio y dominio propio.
 - Estado: **25 de 26 integradas** en el CSV el 2026-08-04 como `parcial`. Queda 1: Yoshimura Shuzo (Uda), dejada fuera porque su única URL es una ruta de hosting de proveedor (`begin.or.jp/~inadoya`) y hay que localizar dominio vivo.
 
@@ -47,6 +47,39 @@ Categoría para todos: `Sake` (`Bodega` quedó retirada el 2026-08-04).
   dominio propio) y la ficha de Facebook de Kawai Shuzo. Si no cargan, tope
   `parcial`, no purga.
 
+## Fuera del sake: 三輪素麺 y 葛 — ✅ INTEGRADO 2026-08-04
+
+El gremio de sake de Nara está **agotado** (25 de 26 ya en el CSV), así que los
+candidatos nuevos salieron de otro vertical. **Las 10 fichas abiertas en vivo
+entraron en el CSV como `verificado`**: nueve obradores de 三輪素麺 (IG registrada)
+y la casa de 吉野本葛 Inoue Tengyokudo. Nueve de las diez con tienda propia y
+`Venta online=sí`. Evidencia en `data/evidence/jp/kansai/nara.jsonl`.
+
+Queda **una sin integrar**:
+
+| nombre | 社名 | municipio | por qué no entra |
+|---|---|---|---|
+| Kurokawa Honke | 黒川本家 | Uda ⚠ | sin enlace verificable |
+
+## Lo que resolvió esta integración
+
+- ⚠ **«三輪匠» no existe como empresa.** El listado del 振興会 le puso el dominio
+  de 三輪そうめん小西, y resultó ser **有限会社小西食品** (marca 三輪麺匠 小西,
+  Makinouchi 345, tel. 0744-43-1072), empresa distinta de 三輪そうめん小西
+  (tel. 0744-43-3113). **Dos Konishi en el mismo municipio**: entraron las dos,
+  como filas separadas.
+- ⚠ **Kurokawa Honke no está en Yoshino, sino en Uda** (大宇陀). Y el dominio que
+  los directorios le atribuyen, `yoshinokuzu.com`, **no resuelve** (SERVFAIL):
+  no es un 404, es que el dominio no existe. Sin enlace verificable no se da de
+  alta (`docs/candidates/README.md`, alta mínima) — queda anotada.
+- **森井食品 fallaba por HTTPS** (certificado de `bizmw.com`) y responde 200 por
+  HTTP: no era un sitio muerto. Coordenadas tomadas de su propio enlace de mapa.
+  Sin tienda localizada, así que entró `verificado` con `Venta online=no comprobado`.
+- **奈良県三輪素麺工業協同組合** se queda fuera: es la cooperativa (63 socios), no
+  un productor. Su tienda `miwasoumen.stores.jp` vende marca colectiva.
+
 ## Qué falta
-- Nada de fuera del sake: el gremio solo cubre bodegas. Nara tiene además té de
-  Yamato, kudzu de Yoshino y persimón; sin fuente institucional localizada aún.
+- Los ~50 fabricantes de somen que la cooperativa no destaca.
+- Sin abrir: **té de Yamato** (大和茶, sin fuente institucional localizada aún),
+  persimón de Gojo/Nishiyoshino (Nara es la segunda de Japón), 柿の葉寿司,
+  奈良漬 (encurtido en sake kasu, ligado a las bodegas de arriba).
