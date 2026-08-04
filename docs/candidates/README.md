@@ -9,20 +9,19 @@ province CSV.
 Use this folder as the shared scratch space for all agents. Do not create
 agent-private candidate folders or parallel province lists.
 
-Recommended naming:
-- `docs/candidates/[provincia].md` for shared province research.
-- `docs/candidates/[provincia]-[topic].md` only when a focused pass would make
-  the main file hard to review.
+Naming, one folder per country:
+- `docs/candidates/[country]/[area].md` for shared research on one area.
+- `docs/candidates/[country]/[area]-[topic].md` only when a focused pass would
+  make the main file hard to review.
 
-Do not keep candidate notes directly under `docs/` as
-`docs/[provincia]_candidates.md`. If you find one, move it here and rename it
-to the shared province file before continuing, unless `git status --short`
-shows another agent is actively working that province. In that case, leave the
-file untouched and call it out in the handoff.
+Do not keep candidate notes directly under `docs/`. If you find one, move it
+here and rename it to the shared area file before continuing, unless
+`git status --short` shows another agent is actively working that area. In that
+case, leave the file untouched and call it out in the handoff.
 
 Before adding any producer to `data/csv/**`:
 
-1. Run `npx pnpm list:province [provincia]` to check existing rows.
+1. Run `npx pnpm list:area [area]` to check existing rows.
 2. Verify the producer through an official website, registry, map listing, or
    reliable public source.
 3. Add only real producers with a stable `slug`, normalized `categoria`,
@@ -35,12 +34,12 @@ Prune or update these notes once candidates are accepted, rejected, or already
 present in the catalog. When a file is fully resolved, summarize it in
 `integracion.md` («Resumen de lo integrado») and delete it — git history is the
 archive. Verification ledgers do not belong here; they go to
-`docs/verificacion/`.
+`docs/verification/`.
 
 ## Estado por fichero
 
 El estado y la cola pendiente de cada provincia viven en la **cabecera de su
-propio `docs/candidates/[provincia].md`** (origen, fecha, estado y qué queda),
+propio `docs/candidates/[country]/[area].md`** (origen, fecha, estado y qué queda),
 nunca en este README: un resumen central caduca con cada sesión y obliga a
 editarlo constantemente. Para la vista de conjunto: `ls docs/candidates/` y la
 cabecera de cada fichero; `integracion.md` es el ledger de la fase de

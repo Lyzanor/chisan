@@ -295,6 +295,34 @@
       "region": "kyushu-okinawa"
     }
   ],
+  "hokuto": [
+    {
+      "lat": 41.82411,
+      "lon": 140.65303,
+      "label": "Hokuto (Hokkaido)",
+      "region": "hokkaido"
+    },
+    {
+      "lat": 35.7765,
+      "lon": 138.4236,
+      "label": "Hokuto (Yamanashi)",
+      "region": "chubu"
+    }
+  ],
+  "ikeda": [
+    {
+      "lat": 42.929,
+      "lon": 143.44847,
+      "label": "Ikeda (Hokkaido)",
+      "region": "hokkaido"
+    },
+    {
+      "lat": 35.4423,
+      "lon": 136.573,
+      "label": "Ikeda (Gifu)",
+      "region": "chubu"
+    }
+  ],
   "izu": [
     {
       "lat": 42.8225,
@@ -307,6 +335,28 @@
       "lon": 138.94681,
       "label": "Izu (Shizuoka)",
       "region": "chubu"
+    }
+  ],
+  "katsuragi": [
+    {
+      "lat": 34.48922,
+      "lon": 135.72644,
+      "label": "Katsuragi (Nara)",
+      "region": "kansai"
+    },
+    {
+      "lat": 34.2965,
+      "lon": 135.5037,
+      "label": "Katsuragi (Wakayama)",
+      "region": "kansai"
+    }
+  ],
+  "kitaibaraki": [
+    {
+      "lat": 36.8019,
+      "lon": 140.751,
+      "label": "Kitaibaraki",
+      "region": "kanto"
     }
   ],
   "la fresneda": [
@@ -429,6 +479,20 @@
       "lon": 1.87623,
       "label": "Navàs",
       "region": "catalunya"
+    }
+  ],
+  "nichinan": [
+    {
+      "lat": 31.6019,
+      "lon": 131.3787,
+      "label": "Nichinan (Miyazaki)",
+      "region": "kyushu-okinawa"
+    },
+    {
+      "lat": 35.1632,
+      "lon": 133.3062,
+      "label": "Nichinan (Tottori)",
+      "region": "chugoku"
     }
   ],
   "ocana": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28",
+  "generatedAt": "2026-08-04",
   "nota": "Snapshot de resolución de la columna `web`. Afirmación dinámica: caduca. Clasifica, no decide — un 403 no es un sitio muerto y un 200 no prueba que la web sea del productor. Regenerar con `pnpm check:links --all`.",
   "urls": {
     "http://0x100gluten.com/ca/0gluten": {
@@ -4862,6 +4862,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.hoshinet.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "http://www.hucarma.es": {
       "tag": "sin-registro-a",
       "level": "señal",
@@ -5107,6 +5113,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.kozawafoods.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "http://www.kyo-ya.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "http://www.la-alcancia.com/": {
       "tag": "ok",
@@ -5977,6 +5995,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.nemotuke.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "http://www.nestareseguizabal.com": {
       "tag": "ok",
@@ -7100,6 +7124,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.shirasu.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "http://www.sidrafoncueva.com/": {
       "tag": "conexion",
       "level": "incertidumbre",
@@ -7616,6 +7646,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.vm-net.ne.jp/elk/fujino/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "http://www.xarcuteriamuntal.cat": {
       "tag": "ok",
       "level": "ok",
@@ -7699,6 +7735,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://10rwinery.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://1770lluch.com": {
       "tag": "tls",
@@ -8636,6 +8678,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://aizawanouen.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://ajoblancoamelia.com/": {
       "tag": "ok",
       "level": "ok",
@@ -9362,6 +9410,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://anselmomendes.pt/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://antiguacasadeguardia.com/": {
       "tag": "ok",
       "level": "ok",
@@ -9553,6 +9607,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://applefujita-llc.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://aquadomus.es/": {
       "tag": "ok",
@@ -10040,6 +10100,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://bairdbeer.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://balbas.es/": {
       "tag": "ok",
       "level": "ok",
@@ -10153,6 +10219,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://beermarca.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://begudespuig.es": {
       "tag": "ok",
@@ -12758,6 +12830,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://camelfarm.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://camilodeblas.es/": {
       "tag": "ok",
       "level": "ok",
@@ -14804,6 +14882,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://cocowine.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://cocoycanela.com/": {
       "tag": "ok",
       "level": "ok",
@@ -14821,6 +14905,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://coedobrewery.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://cofruval.com/": {
       "tag": "ok",
@@ -15824,6 +15914,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://craftbeer.nagoya/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://cregoemonaguillo.com/": {
       "tag": "ok",
       "level": "ok",
@@ -16190,6 +16286,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://demontille-hokkaido.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://denoemi.com": {
       "tag": "ok",
       "level": "ok",
@@ -16424,6 +16526,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://domaine-raison.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://dominiobasconcillos.com/": {
       "tag": "ok",
       "level": "ok",
@@ -16633,6 +16741,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://due-punti-vineyards.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://dulces-hermanos-herrero.webnode.es/": {
       "tag": "ok",
@@ -18158,6 +18272,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://eurofumeiro.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://eurojamon.es/": {
       "tag": "ok",
       "level": "ok",
@@ -19328,6 +19448,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://fukasaku.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://fulletes.com": {
       "tag": "ok",
       "level": "ok",
@@ -20144,6 +20270,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://hakkenzanwinery.com/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-04"
+    },
     "https://hamenbertokoa.eus/ateun-harategia/": {
       "tag": "ok",
       "level": "ok",
@@ -20630,6 +20762,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://housui-winery.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://hoxe.gal/": {
       "tag": "http-508",
       "level": "incertidumbre",
@@ -20743,6 +20881,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://hyakurakumon-sake.com/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-04"
     },
     "https://iberazuaga.es/": {
       "tag": "ok",
@@ -20911,6 +21055,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://imanishisyuzou.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://inaten.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://inaziourruzola.eus/": {
       "tag": "ok",
@@ -21506,6 +21662,24 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://kaminokuni-winery.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://kankiko.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://kanosuke.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://karmelotoja.com/": {
       "tag": "ok",
       "level": "ok",
@@ -21560,6 +21734,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://kikutsukasa.pro/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://killbeers.com/": {
       "tag": "ok",
       "level": "ok",
@@ -21571,6 +21751,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://kinko-ookura.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://kitaoka-honten.com/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-04"
+    },
+    "https://kiuchibrewery.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://kiwiastur.es/": {
       "tag": "ok",
@@ -21613,6 +21811,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://kuramoto-sake.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://la-pastora.com/": {
       "tag": "ok",
@@ -23486,6 +23690,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://maedashokuhin.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://maelocway.com/es/": {
       "tag": "ok",
       "level": "ok",
@@ -23563,6 +23773,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://makibanoie.com/winery/": {
+      "tag": "http-403",
+      "level": "incertidumbre",
+      "detail": "HTTP 403 (¿bloqueo anti-bot?)",
+      "checkedAt": "2026-08-04"
     },
     "https://maleiga.com": {
       "tag": "ok",
@@ -23647,6 +23863,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://maoidistillery.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://mar-tret.com/": {
       "tag": "ok",
@@ -24062,6 +24284,18 @@
       "detail": "CERT_HAS_EXPIRED",
       "checkedAt": "2026-07-28"
     },
+    "https://matsubarawine.com/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-04"
+    },
+    "https://matsunotomo.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://maychoco.es/": {
       "tag": "ok",
       "level": "ok",
@@ -24103,6 +24337,12 @@
       "level": "incertidumbre",
       "detail": "UNABLE_TO_VERIFY_LEAF_SIGNATURE",
       "checkedAt": "2026-07-28"
+    },
+    "https://meirishurui.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://melangerpasteleria.es/": {
       "tag": "ok",
@@ -24259,6 +24499,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://memurowinery.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://mendezmoya.com": {
       "tag": "ok",
@@ -24860,6 +25106,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://miyokiku.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://mizpiradi.eus/": {
       "tag": "ok",
       "level": "ok",
@@ -25364,6 +25616,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://nara-tanzan.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://naranjasdecastellon.com/": {
       "tag": "ok",
       "level": "ok",
@@ -25466,6 +25724,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://nemotoen.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://neoalgae.es/proyectos/": {
       "tag": "ok",
       "level": "ok",
@@ -25490,11 +25754,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://nikihills.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://nilva.es/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://ninjin-koubou.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://ninomanuel.es/": {
       "tag": "ok",
@@ -25513,6 +25789,12 @@
       "level": "señal",
       "detail": "título: «mejores métodos de pago casino online en españa»",
       "checkedAt": "2026-07-28"
+    },
+    "https://noborijozo.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://nocciolatagelateria.com/": {
       "tag": "ok",
@@ -25549,6 +25831,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://nora-kura.jp/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-04"
     },
     "https://nougat.cat/": {
       "tag": "ok",
@@ -26222,6 +26510,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://osawinery.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://osdoresero.es/": {
       "tag": "ok",
       "level": "ok",
@@ -26413,6 +26707,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://palaciodabrejoeira.pt/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://palaciodebornos.com/": {
       "tag": "ok",
@@ -29324,6 +29624,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://quintadoportal.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://quitapenas.es/": {
       "tag": "ok",
       "level": "ok",
@@ -29810,6 +30116,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://sake-goshin.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://saladitos.com/": {
       "tag": "ok",
       "level": "ok",
@@ -30025,6 +30337,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://sapporo-wine.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://sarralde.com/": {
       "tag": "ok",
@@ -30307,6 +30625,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://shinga-shinga.jimdofree.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://shop.ochiaipastisseria.com/": {
       "tag": "http-500",
@@ -30632,6 +30956,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://snowriverwines.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://soba-isemata.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://sobaoscantabria.es/": {
       "tag": "ok",
       "level": "ok",
@@ -30872,6 +31208,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://sugi-bee.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://sumarroca.es": {
       "tag": "ok",
       "level": "ok",
@@ -30955,6 +31297,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://tamamura-honten.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://tandem.es/": {
       "tag": "ok",
@@ -31454,6 +31802,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://topiteu.pt/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://torcadul.com/": {
       "tag": "ok",
       "level": "ok",
@@ -31724,6 +32078,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://tsukiurawine.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://tugasicompanyia.cat": {
       "tag": "dns",
       "level": "incertidumbre",
@@ -31891,6 +32251,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://uchubrewing.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://ucopaxa.com/": {
       "tag": "ok",
@@ -32540,6 +32906,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://vina-de-oro-bodega.net/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-04"
+    },
     "https://vinabuena.com/": {
       "tag": "ok",
       "level": "ok",
@@ -32960,6 +33332,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://winery-yumenomori.com/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-04"
+    },
     "https://winevinosybodegas.com/es/": {
       "tag": "ok",
       "level": "ok",
@@ -32977,6 +33355,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.100nen-meicha.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.15bodegas.com/raimat": {
       "tag": "ok",
@@ -38594,11 +38978,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.chitose-winery.jp/": {
+      "tag": "timeout",
+      "level": "incertidumbre",
+      "detail": "sin respuesta dentro del timeout",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.chivodecanillas.com/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.chiyoshuzo.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.chocolateecologico.com/": {
       "tag": "ok",
@@ -38671,6 +39067,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.choryo.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.churrofacil.com/": {
       "tag": "ok",
@@ -42104,11 +42506,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.fujini-shouyu.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.fundaciocatalunya-lapedrera.com/ca/horts-sant-benet": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.furanowine.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.fussimanya.cat": {
       "tag": "ok",
@@ -42457,6 +42871,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.grace-wine.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.gramolalab.com/": {
       "tag": "ok",
@@ -42830,6 +43250,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.hakodatewine.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.hanaivegana.com/": {
       "tag": "ok",
       "level": "ok",
@@ -42847,6 +43273,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.harushika.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.hazalacentenosa.com": {
       "tag": "ok",
@@ -42968,6 +43400,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.hiratsuka-seika.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.hiruzta.com/": {
       "tag": "ok",
       "level": "ok",
@@ -42980,11 +43418,29 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.hitatenryosui.co.jp/": {
+      "tag": "timeout",
+      "level": "incertidumbre",
+      "detail": "sin respuesta dentro del timeout",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.hojaldresalonso.com/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.hokkaidowine.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://www.hombo.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.hongosdelajara.com/": {
       "tag": "ok",
@@ -43304,6 +43760,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.ichirosmalt.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.icvillar.es": {
       "tag": "ok",
       "level": "ok",
@@ -43315,6 +43777,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.iijima1129.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.ilbesa.com/": {
       "tag": "ok",
@@ -43772,6 +44240,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.kakukyu.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://www.kamejirushi.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.karabeleko.org/es/contacts": {
       "tag": "http-404",
       "level": "señal",
@@ -43802,17 +44282,41 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.kitamurasyuzou.co.jp/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "UNABLE_TO_VERIFY_LEAF_SIGNATURE",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.kiwinatur.com/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.komenoshonai.or.jp/": {
+      "tag": "http-403",
+      "level": "incertidumbre",
+      "detail": "HTTP 403 (¿bloqueo anti-bot?)",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.kortarikoborda.eus/es/inicio/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.kubohonke.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://www.kyodogakusha.org/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.la-cuba.com/index.php/es/": {
       "tag": "ok",
@@ -46052,6 +46556,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.minoh-beer.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.misqi.cat/": {
       "tag": "ok",
       "level": "ok",
@@ -46424,6 +46934,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.nara-toyosawa.jp/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.naranjasche.com": {
       "tag": "ok",
       "level": "ok",
@@ -46724,6 +47240,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.okushiri-winery.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.oleandmanzanillaolive.es/": {
       "tag": "tls",
       "level": "incertidumbre",
@@ -47005,6 +47527,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.organicwine.jp/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "CERT_HAS_EXPIRED",
+      "checkedAt": "2026-08-04"
     },
     "https://www.orimiel.com": {
       "tag": "nxdomain",
@@ -49178,6 +49706,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.quintadocrasto.wine/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.quintaquietud.com": {
       "tag": "ok",
       "level": "ok",
@@ -49550,6 +50084,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.rubaiyat.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.rubiejo.com/": {
       "tag": "ok",
       "level": "ok",
@@ -49699,6 +50239,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.sake-asaka.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.salardarbucies.com/": {
       "tag": "ok",
@@ -50185,6 +50731,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.shibanuma.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.sidraacebal.es/": {
       "tag": "ok",
@@ -50840,6 +51392,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.tokachi-wine.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.tomascusine.com/": {
       "tag": "ok",
       "level": "ok",
@@ -50863,6 +51421,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.tondenfarm.co.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.toogoodtogo.com/es/find/mataro/mcavapastissers/bakedgoods/panaderiaybolleria-205287909593012128": {
       "tag": "http-429",
@@ -51182,6 +51746,12 @@
       "detail": "HTTP 403 (¿bloqueo anti-bot?)",
       "checkedAt": "2026-07-28"
     },
+    "https://www.ueda-syuzou.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.uhaldeko.eus": {
       "tag": "ok",
       "level": "ok",
@@ -51193,6 +51763,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.umenoyado.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.umesu.wine": {
       "tag": "ok",
@@ -51752,6 +52328,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.vinhalvarinho.pt/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.vinicoladelcondado.com/": {
       "tag": "ok",
       "level": "ok",
@@ -52124,6 +52706,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.westcoastbrewing.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.whym.cat/": {
       "tag": "ok",
       "level": "ok",
@@ -52286,6 +52874,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.yamaturu.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
+    },
+    "https://www.yamazaki-winery.co.jp/": {
+      "tag": "timeout",
+      "level": "incertidumbre",
+      "detail": "sin respuesta dentro del timeout",
+      "checkedAt": "2026-08-04"
+    },
     "https://www.yannduytsche.com/": {
       "tag": "ok",
       "level": "ok",
@@ -52315,6 +52915,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.yucho-sake.jp/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-04"
     },
     "https://www.zabalatxakolina.com/": {
       "tag": "ok",
@@ -52585,6 +53191,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://yoshino-umazake.com/": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "CERT_HAS_EXPIRED",
+      "checkedAt": "2026-08-04"
+    },
+    "https://yoteigreenbusiness.com/": {
+      "tag": "dns",
+      "level": "incertidumbre",
+      "detail": "DNS no resuelve (ENOTFOUND)",
+      "checkedAt": "2026-08-04"
     },
     "https://yunrabano.com/cestas": {
       "tag": "http-404",

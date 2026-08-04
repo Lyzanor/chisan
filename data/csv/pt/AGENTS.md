@@ -7,7 +7,8 @@ What is true of `data/csv/pt/**` only. The shared contract is `AGENTS.md` at the
 - Slugs are ASCII (`braganca`, `evora`, `setubal`); labels keep the Portuguese accents. No aliases in use yet.
 
 ## State
-- 38 rows across 7 districts (Aveiro, Évora, Faro, Porto, Setúbal, Açores, Madeira). The other 13 district CSVs are published empty.
+- 78 rows across 14 districts. The first seven (Aveiro, Évora, Faro, Porto, Setúbal, Açores, Madeira) were reviewed row by row; Braga, Bragança, Guarda, Lisboa, Viana do Castelo, Vila Real and Viseu opened on 2026-08-04 from institutional rosters and are `parcial` throughout. Six district CSVs are still published empty.
+- The open queues are in `docs/candidates/pt/**`. The recurring blocker is the concelho: a wine region roster crosses districts and rarely states it, so a producer stays out until its own site places it.
 
 ## Geography
 - Centroids come from Wikidata's "municipality of Portugal": the 308 concelhos, islands included, labelled in pt. Every row resolves, so the geographic gate is on and a green run means checked.
@@ -15,7 +16,11 @@ What is true of `data/csv/pt/**` only. The shared contract is `AGENTS.md` at the
 - Fifteen more collide with a Spanish municipio, and Spain keeps the shared key. `porto` and `penafiel` are disambiguated; `gondomar`, `maia`, `paredes`, `benavente`, `montijo`, `mira`, `vila real`, `santa cruz`, `belmonte`, `monforte`, `oleiros`, `mora` and `almodôvar` are not, because no row uses them yet. The first producer in one of those concelhos will fail the 100 km rule loudly rather than pass wrong; add the override then, listing both countries' candidates so neither side loses its lookup.
 
 ## Sources
-- Not established yet. Candidates to evaluate and then record here: DOP/IGP registries, regional producer directories, and the certifying bodies of the wine regions. Until they are, additions rest on the producer's own site and a listing normally supports at most `parcial`.
+- `tradicional.dgadr.gov.pt` is the national DOP/IGP catalogue: it names the managing group and the certifying body per product, not the producers. Use it to find who holds the real roster, then go there.
+- The **CVR** of each wine region is the census (CVR Dão lists 117 bottlers); its **rota dos vinhos** is the tourist roster and is much smaller (42 for the same region). Measure a gap against the CVR, never against the rota. Several rota sites render the listing in JavaScript and return nothing in flat HTML — the Vinhos Verdes adherent search is one; go for the endpoint behind it.
+- **Municipal sites and confrarias** are the practical roster for non-wine DOPs: Câmara de Mirandela publishes the Alheira IGP producers, the Confraria do Queijo Serra da Estrela publishes the certified dairies with contact. They carry phone and address but rarely a website, and their listings truncate — page to the end before calling a front closed.
+- A wine region crosses districts (Dão spans Viseu, Guarda and Coimbra; the Douro covers seven concelhos of Vila Real): a region roster is never a district roster. Confirm the concelho on the producer's own site.
+- All of these confirm existence, not activity or online sales, so a listing supports at most `parcial`.
 
 ## Conventions
 - `nombre`, `municipio` and `direccion` in Portuguese; `descripcion` in Spanish, like the rest of the catalog.
