@@ -1,0 +1,177 @@
+{
+  "label": "Germany",
+  "unit": {
+    "one": "federal state",
+    "many": "federal states"
+  },
+  "regionUnit": {
+    "one": "federal state",
+    "many": "federal states"
+  },
+  "aliases": {
+    "baden-wurttemberg": "baden-wuerttemberg",
+    "thuringen": "thueringen"
+  },
+  "regions": [
+    {
+      "slug": "baden-wuerttemberg",
+      "label": "Baden-Württemberg",
+      "areas": [
+        {
+          "slug": "baden-wuerttemberg",
+          "label": "Baden-Württemberg"
+        }
+      ]
+    },
+    {
+      "slug": "bayern",
+      "label": "Bayern",
+      "areas": [
+        {
+          "slug": "bayern",
+          "label": "Bayern"
+        }
+      ]
+    },
+    {
+      "slug": "berlin",
+      "label": "Berlin",
+      "areas": [
+        {
+          "slug": "berlin",
+          "label": "Berlin"
+        }
+      ]
+    },
+    {
+      "slug": "brandenburg",
+      "label": "Brandenburg",
+      "areas": [
+        {
+          "slug": "brandenburg",
+          "label": "Brandenburg"
+        }
+      ]
+    },
+    {
+      "slug": "bremen",
+      "label": "Bremen",
+      "areas": [
+        {
+          "slug": "bremen",
+          "label": "Bremen"
+        }
+      ]
+    },
+    {
+      "slug": "hamburg",
+      "label": "Hamburg",
+      "areas": [
+        {
+          "slug": "hamburg",
+          "label": "Hamburg"
+        }
+      ]
+    },
+    {
+      "slug": "hessen",
+      "label": "Hessen",
+      "areas": [
+        {
+          "slug": "hessen",
+          "label": "Hessen"
+        }
+      ]
+    },
+    {
+      "slug": "mecklenburg-vorpommern",
+      "label": "Mecklenburg-Vorpommern",
+      "areas": [
+        {
+          "slug": "mecklenburg-vorpommern",
+          "label": "Mecklenburg-Vorpommern"
+        }
+      ]
+    },
+    {
+      "slug": "niedersachsen",
+      "label": "Niedersachsen",
+      "areas": [
+        {
+          "slug": "niedersachsen",
+          "label": "Niedersachsen"
+        }
+      ]
+    },
+    {
+      "slug": "nordrhein-westfalen",
+      "label": "Nordrhein-Westfalen",
+      "areas": [
+        {
+          "slug": "nordrhein-westfalen",
+          "label": "Nordrhein-Westfalen"
+        }
+      ]
+    },
+    {
+      "slug": "rheinland-pfalz",
+      "label": "Rheinland-Pfalz",
+      "areas": [
+        {
+          "slug": "rheinland-pfalz",
+          "label": "Rheinland-Pfalz"
+        }
+      ]
+    },
+    {
+      "slug": "saarland",
+      "label": "Saarland",
+      "areas": [
+        {
+          "slug": "saarland",
+          "label": "Saarland"
+        }
+      ]
+    },
+    {
+      "slug": "sachsen",
+      "label": "Sachsen",
+      "areas": [
+        {
+          "slug": "sachsen",
+          "label": "Sachsen"
+        }
+      ]
+    },
+    {
+      "slug": "sachsen-anhalt",
+      "label": "Sachsen-Anhalt",
+      "areas": [
+        {
+          "slug": "sachsen-anhalt",
+          "label": "Sachsen-Anhalt"
+        }
+      ]
+    },
+    {
+      "slug": "schleswig-holstein",
+      "label": "Schleswig-Holstein",
+      "areas": [
+        {
+          "slug": "schleswig-holstein",
+          "label": "Schleswig-Holstein"
+        }
+      ]
+    },
+    {
+      "slug": "thueringen",
+      "label": "Thüringen",
+      "areas": [
+        {
+          "slug": "thueringen",
+          "label": "Thüringen"
+        }
+      ]
+    }
+  ]
+}
