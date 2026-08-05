@@ -45,6 +45,27 @@ jobs:
       - name: Fetch the structured Farmshops OSM extract
         run: git clone --depth 1 https://github.com/CodeforKarlsruhe/farmshops.eu.git /tmp/farmshops
 
+      - name: Prioritize websites while retaining complete regional coverage
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/generate-germany-from-farmshops.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              'if not name or not website or not municipality:\n        return None',
+              'if not name or not municipality:\n        return None',
+          )
+          text = text.replace(
+              'score = 20 + (8 if address else 0)',
+              'score = (40 if website else 0) + 20 + (8 if address else 0)',
+          )
+          text = text.replace(
+              'Every accepted row is a named OSM farm shop or producer craft with municipality, coordinates and website.',
+              'Every accepted row is a named OSM farm shop or producer craft with municipality and coordinates; records with websites are prioritized.',
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Generate 500 German producers
         run: python3 scripts/generate-germany-from-farmshops.py /tmp/farmshops
 
