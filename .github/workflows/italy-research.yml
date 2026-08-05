@@ -12,6 +12,38 @@ permissions:
   contents: read
 
 jobs:
+  fetch-existing-csv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch CSV from the completed Vercel research deployment
+        run: |
+          mkdir -p direct-output
+          curl --fail-with-body --location --retry 2 --max-time 120 \
+            'https://km0-git-research-italia-km0-500-20260804-lyzanors-projects.vercel.app/research/italia-500/italia_km0_500_master.csv' \
+            -o direct-output/italia_km0_500_master.csv
+      - name: Validate exactly 500 data rows
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          path = Path('direct-output/italia_km0_500_master.csv')
+          with path.open(encoding='utf-8', newline='') as handle:
+              rows = list(csv.reader(handle))
+          if len(rows) != 501:
+              raise SystemExit(f'Expected 501 physical CSV rows including header, got {len(rows)}')
+          if not rows[0] or rows[0][0] != 'numero':
+              raise SystemExit('Unexpected CSV header')
+          print('CSV validado: 500 registros')
+          PY
+      - name: Upload direct CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: italia-km0-500-csv
+          path: direct-output/italia_km0_500_master.csv
+          if-no-files-found: error
+          retention-days: 7
+
   build-italy-research:
     runs-on: ubuntu-latest
     timeout-minutes: 20
