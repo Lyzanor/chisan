@@ -13,6 +13,13 @@
   `data/csv/jp/kansai/kyoto.csv` is browsed at `/?area=kyoto`. What a country
   calls its levels is display text and lives in its `country.json`. Japanese
   prefecture and municipio names are rōmaji without macrons.
+- `[area]` is the whole address the app has: `?area=` carries no country, so the
+  registry that resolves it is one flat map built from every country at once and
+  two areas cannot share a slug. A repeat does not fail, it shadows — the later
+  country wins the name and the earlier one's CSV becomes unreachable. Names do
+  repeat across borders, so the second arrival takes a distinct slug and keeps
+  the shared name as its label: Limburg is a province of both Belgium and the
+  Netherlands, and the Dutch one is `nederlands-limburg` labelled `Limburg`.
 - Structured provenance: `data/evidence/[country]/[region]/[area].jsonl` explains editorial decisions but is not read by the app and never overrides the CSV. See `docs/EVIDENCE_CONTRACT.md`.
 - Encoding: UTF-8 **without BOM** (a leading BOM is blocking; it usually means the file went through a spreadsheet export)
 - Line endings: **LF** in every CSV (unified 2026-06-10, enforced by `.gitattributes`). Do not reintroduce CRLF.
@@ -36,8 +43,9 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
   - `pnpm list:categories`: print the current valid `categoria` set
 
 ## Reference data
-- `data/reference/municipalities.json` is a lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names, the 308 Portuguese concelhos, ~8.300 Italian comuni keyed in Italian and German, the 34.969 French communes, and the 565 Belgian municipalities keyed in Dutch, French and German). The geography warning rule uses it; nothing else in the app depends on it.
-- Covered: every entity classified as a municipality of Spain, every municipality of Japan, comune of Italy or municipality of Belgium without a dissolution date, and every municipality of Portugal, in Wikidata; France comes from Etalab's `geo.api.gouv.fr` instead, because 34.900 communes do not fit in one Wikidata query. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
+- `data/reference/municipalities.json` is a lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names, the 308 Portuguese concelhos, ~8.300 Italian comuni keyed in Italian and German, the 34.969 French communes, the 565 Belgian municipalities keyed in Dutch, French and German, and ~1.220 Dutch gemeenten keyed in Dutch and Frisian). The geography warning rule uses it; nothing else in the app depends on it.
+- Covered: every entity classified as a municipality of Spain, every municipality of Japan, comune of Italy, or municipality of Belgium or the Netherlands, without a dissolution date, and every municipality of Portugal, in Wikidata; France comes from Etalab's `geo.api.gouv.fr` instead, because 34.900 communes do not fit in one Wikidata query. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
+- The dissolution filter is only as good as Wikidata. It empties Japan's ~13.000 Heisei-merger entries and Belgium's deelgemeenten, but almost no abolished Dutch municipality carries the date, so that catalog holds ~1.220 keys for a country with some 340 gemeenten. An abolished municipality sits in the town it was named after and is harmless on its own; what it can do is take a shared key from a current municipality elsewhere — `altena` was won by a Frisian label 172 km from gemeente Altena — which is an override case like any other homonym.
 - Every Wikidata catalog asks for the `mul` label before its own languages. Wikidata stores a name spelled identically in every language there and the per-language labels may then be deleted, so a municipality can have no label in any language a country lists: Charleroi has none in `nl`, `fr` or `de`, and without `mul` it left the Belgian catalog — and every producer in it ungated — entirely. Four Belgian municipalities and five Italian comuni were reachable only this way.
 - One catalog per country, added in `scripts/build-municipality-centroids.js`. A country absent from it is not half-checked, it is unchecked: every one of its rows lands in `geo-check skipped` and the audit still reports OK.
 - France is the one catalog that drops a name instead of picking a winner: 1.482 of its commune names are shared by two or more communes, and an arbitrary winner turns correct rows into blocking errors rather than skips. Those names have no entry at all until `municipality-overrides.json` gives them one per region.

@@ -33,6 +33,12 @@
 //     left every deelgemeente in Wikidata. Labels in nl / fr / de, so the two
 //     official spellings of a bilingual municipality (Mons / Bergen,
 //     Antwerpen / Anvers) share one centroid.
+//   - Netherlands: "municipality of the Netherlands" (Q2039348) with
+//     coordinates, minus anything carrying a dissolution date — the country
+//     went from ~1.100 municipalities to ~340 by merger, so the dissolved ones
+//     outnumber the current ones several times over. Labels in nl and fy: a
+//     Frisian municipality is officially named in Frisian (Súdwest-Fryslân,
+//     Tytsjerksteradiel) and a Dutch source will still write the Dutch form.
 //
 // The "mul" label
 // - Wikidata's multilingual label holds the name of an entity spelled the same
@@ -150,6 +156,15 @@ const COUNTRIES = [
     label: "Belgium",
     rootClass: "wd:Q493522",
     langs: ["mul", "nl", "fr", "de"],
+    canonicalLang: "nl",
+    extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
+  },
+  {
+    slug: "netherlands",
+    code: "nl",
+    label: "Netherlands",
+    rootClass: "wd:Q2039348",
+    langs: ["mul", "nl", "fy"],
     canonicalLang: "nl",
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
   },

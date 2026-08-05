@@ -1354,5 +1354,22 @@
         "region": "wallonie"
       }
     ]
+  },
+  "nl": {
+    "altena": {
+      "lat": 51.765663,
+      "lon": 4.945931,
+      "label": "Altena (Noord-Brabant)"
+    },
+    "bergen nh": {
+      "lat": 52.663174,
+      "lon": 4.661387,
+      "label": "Bergen (Noord-Holland)"
+    },
+    "bergen l": {
+      "lat": 51.591908,
+      "lon": 6.089382,
+      "label": "Bergen (Limburg)"
+    }
   }
 }

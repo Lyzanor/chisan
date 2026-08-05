@@ -1,0 +1,103 @@
+{
+  "label": "Netherlands",
+  "unit": {
+    "one": "province",
+    "many": "provinces"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "aliases": {
+    "friesland": "fryslan",
+    "frisia": "fryslan",
+    "groninga": "groningen",
+    "drente": "drenthe",
+    "overijsel": "overijssel",
+    "gueldres": "gelderland",
+    "guelders": "gelderland",
+    "holanda-septentrional": "noord-holland",
+    "north-holland": "noord-holland",
+    "holanda-meridional": "zuid-holland",
+    "south-holland": "zuid-holland",
+    "zelanda": "zeeland",
+    "brabante-septentrional": "noord-brabant",
+    "north-brabant": "noord-brabant",
+    "limburgo-neerlandes": "nederlands-limburg",
+    "limburg-nl": "nederlands-limburg"
+  },
+  "regions": [
+    {
+      "slug": "noord-nederland",
+      "label": "Noord-Nederland",
+      "areas": [
+        {
+          "slug": "groningen",
+          "label": "Groningen"
+        },
+        {
+          "slug": "fryslan",
+          "label": "Fryslân"
+        },
+        {
+          "slug": "drenthe",
+          "label": "Drenthe"
+        }
+      ]
+    },
+    {
+      "slug": "oost-nederland",
+      "label": "Oost-Nederland",
+      "areas": [
+        {
+          "slug": "overijssel",
+          "label": "Overijssel"
+        },
+        {
+          "slug": "gelderland",
+          "label": "Gelderland"
+        },
+        {
+          "slug": "flevoland",
+          "label": "Flevoland"
+        }
+      ]
+    },
+    {
+      "slug": "west-nederland",
+      "label": "West-Nederland",
+      "areas": [
+        {
+          "slug": "utrecht",
+          "label": "Utrecht"
+        },
+        {
+          "slug": "noord-holland",
+          "label": "Noord-Holland"
+        },
+        {
+          "slug": "zuid-holland",
+          "label": "Zuid-Holland"
+        },
+        {
+          "slug": "zeeland",
+          "label": "Zeeland"
+        }
+      ]
+    },
+    {
+      "slug": "zuid-nederland",
+      "label": "Zuid-Nederland",
+      "areas": [
+        {
+          "slug": "noord-brabant",
+          "label": "Noord-Brabant"
+        },
+        {
+          "slug": "nederlands-limburg",
+          "label": "Limburg"
+        }
+      ]
+    }
+  ]
+}
