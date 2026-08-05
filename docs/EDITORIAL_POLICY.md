@@ -32,7 +32,12 @@ Excluded:
   production → `purge:not-producer`.
 - Industrial or mass-market operations without a local producer identity
   (large food groups, national commodity brands, white-label plants) →
-  `purge:out-of-scope`.
+  `purge:out-of-scope`. **Scale alone does not exclude.** A high-volume
+  producer stays when it elaborates in its own area under its own brand and
+  identity; it leaves when production is delocalized from the area it claims,
+  or when the brand has no productive unit of its own. Decide this explicitly
+  and record it in the row's evidence — the reasoning is worth more than the
+  verdict, because the next pass will meet the same case.
 - A brand label without its own productive unit: when the domain redirects to
   the group site and no own facility or municipality exists, it is a label of
   the group, not an entity. Merge into the parent's row when present;
