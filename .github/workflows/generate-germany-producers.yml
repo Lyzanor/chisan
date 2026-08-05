@@ -1,0 +1,111 @@
+name: Generate Germany producer export
+
+on:
+  push:
+    branches:
+      - data/germany-producers-20260805
+    paths:
+      - scripts/generate-germany-from-farmshops.py
+      - scripts/sanitize-germany-export.py
+      - .github/workflows/generate-germany-producers.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - scripts/generate-germany-from-farmshops.py
+      - scripts/sanitize-germany-export.py
+      - .github/workflows/generate-germany-producers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TARGET_BRANCH: ${{ github.head_ref || github.ref_name }}
+    steps:
+      - name: Check out generation branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install project dependencies
+        run: |
+          npm install -g pnpm@10
+          pnpm install --frozen-lockfile
+
+      - name: Fetch the structured Farmshops OSM extract
+        run: git clone --depth 1 https://github.com/CodeforKarlsruhe/farmshops.eu.git /tmp/farmshops
+
+      - name: Prioritize websites while retaining complete regional coverage
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/generate-germany-from-farmshops.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              'if not name or not website or not municipality:\n        return None',
+              'if not name or not municipality:\n        return None',
+          )
+          text = text.replace(
+              'score = 20 + (8 if address else 0)',
+              'score = (40 if website else 0) + 20 + (8 if address else 0)',
+          )
+          text = text.replace(
+              'Every accepted row is a named OSM farm shop or producer craft with municipality, coordinates and website.',
+              'Every accepted row is a named OSM farm shop or producer craft with municipality and coordinates; records with websites are prioritized.',
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Generate 500 German producers
+        run: python3 scripts/generate-germany-from-farmshops.py /tmp/farmshops
+
+      - name: Sanitize social profile fields
+        run: python3 scripts/sanitize-germany-export.py
+
+      - name: Validate all CSV files against the KM0 contract
+        run: pnpm check:csv
+
+      - name: Package the import-ready Germany folder
+        run: |
+          rm -f exports/km0_alemania_import_500.zip
+          zip -qr exports/km0_alemania_import_500.zip data/csv/de
+
+      - name: Upload downloadable dataset artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: productores-km0-alemania-500
+          if-no-files-found: error
+          retention-days: 7
+          path: |
+            exports/productores_km0_alemania_500.csv
+            exports/calidad_productores_km0_alemania_500.json
+            exports/README_productores_km0_alemania_500.md
+            exports/km0_alemania_import_500.zip
+            data/csv/de/
+
+      - name: Commit generated dataset to the branch
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          git config user.name "km0-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/csv/de \
+            exports/productores_km0_alemania_500.csv \
+            exports/calidad_productores_km0_alemania_500.json \
+            exports/README_productores_km0_alemania_500.md \
+            exports/km0_alemania_import_500.zip
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "data(de): add 500 local producer records"
+          git push origin HEAD:${TARGET_BRANCH}
