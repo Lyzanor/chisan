@@ -1,36 +1,59 @@
 # Yamagata — candidatos
 
-- CSV: `data/csv/jp/tohoku/yamagata.csv` (1 fila: Tsuruoka Beikoku Shogyo Kyodo Kumiai, cereal).
-- Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/yamagata> (53 bodegas, leído 2026-08-04). Gremio: 山形県酒造組合, <http://www.yamagata-sake.or.jp/>.
-- Estado: cola abierta, 16 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta. No solapan con la única fila del CSV.
+- CSV: `data/csv/jp/tohoku/yamagata.csv` (10 filas: 9 bodegas del 2026-08-05 más Tsuruoka Beikoku, cereal).
+- Fuentes: 山形県酒造組合, <http://yamagata-sake.or.jp/pages/162/> — mapa de los 47 socios, **con ficha por bodega que sí publica el dominio** (`/pages/NN/`); y el censo de SAKETIMES, <https://jp.sake-times.com/sakagura/yamagata> (53).
+- Estado: **9 integradas** el 2026-08-05 (7 `verificado`, 2 `parcial`); quedan 13 de la tabla y ~31 del censo. Evidencia en `data/evidence/jp/tohoku/yamagata.jsonl`.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
 
 | nombre (rōmaji propuesto) | 社名 | municipio |
 |---|---|---|
-| Dewazakura Shuzo | 出羽桜酒造 | Tendo |
-| Mitobe Shuzo | 水戸部酒造 | Tendo |
-| Takagi Shuzo | 高木酒造 | Murayama |
-| Kojima Sohonten | 小嶋総本店 | Yonezawa |
 | Shindo Shuzoten | 新藤酒造店 | Yonezawa |
 | Kosaka Shuzo | 香坂酒造 | Yonezawa |
 | Otokoyama Shuzo | 男山酒造 | Yamagata |
 | Shuhou Shuzojo | 秀鳳酒造場 | Yamagata |
 | Kotobuki Toraya Shuzo | 寿虎屋酒造 | Yamagata |
-| Gassan Shuzo | 月山酒造 | Sagae |
 | Chiyokotobuki Toraya | 千代寿虎屋 | Sagae |
 | Furusawa Shuzoten | 古澤酒造 | Sagae |
-| Tatenokawa Shuzo | 楯の川酒造 | Sakata |
-| Sakata Shuzo | 酒田酒造 | Sakata |
 | Kikuisami | 菊勇 | Sakata |
 | Fumotoi Shuzo | 麓井酒造 | Sakata |
-| Kamenoi Shuzo | 亀の井酒造 | Tsuruoka |
 | Watarai Honten | 渡會本店 | Tsuruoka |
 | Takenotsuyu | 竹の露 | Tsuruoka |
 | Kato Kahachiro Shuzo | 加藤嘉八郎酒造 | Tsuruoka |
-| Yonetsuru Shuzo | 米鶴酒造 | Takahata |
 | Rokkasen | 六歌仙 | Higashine |
+
+## Integradas 2026-08-05 (9) — salidas de la cola de arriba
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Dewazakura Shuzo | Tendo | verificado · venta sí |
+| Tatenokawa Shuzo | Sakata | verificado · venta sí |
+| Kojima Sohonten | Yonezawa | verificado · venta sí |
+| Yonetsuru Shuzo | Takahata | verificado · venta sí |
+| Gassan Shuzo | Sagae | verificado · venta sí |
+| Mitobe Shuzo | Tendo | verificado · venta sí |
+| Sakata Shuzo | Sakata | verificado · sin carrito |
+| Takagi Shuzo | Murayama | **parcial** · sin web |
+| Kamenoi Shuzo | Tsuruoka | **parcial** · sin web |
+
+**Aquí el gremio sí es la palanca, al revés que en Fukushima.** El mapa de socios
+(`/pages/162/`) enlaza una ficha por bodega y esa ficha **publica el dominio
+propio**, además de dirección y teléfono. Una llamada por bodega en vez de dos.
+Ojo con las rutas: `/publics/index/NN/` redirige 301 a `/pages/NN/`.
+
+- ⚠ **Que el campo web del registro esté vacío no significa que no haya web.**
+  酒田酒造 aparece con «—» en el dominio, pero el gremio sí publicaba su correo:
+  el dominio de ese correo (`jokigen.com`, que es su marca) resultó ser su web
+  propia, con la misma dirección y el mismo teléfono. Tirar del correo antes de
+  dar por perdida una bodega.
+- ⚠ **La lectura de `yonetsuru.com` devolvió otro municipio** («Yamabe-machi»)
+  conservando el número de calle. El gremio la sitúa en Takahata, que es lo que
+  se escribió. Es el mismo ruido de lectura que en Ayakiku (`kagawa.md`): cuando
+  la web y el registro chocan en municipio y coincide el número, manda el registro.
+- **高木酒造, la casa de 十四代, no tiene web ni correo.** Igual que Hiroki en
+  Fukushima: dos de las marcas más buscadas del país son `parcial` por no tener
+  dónde enlazar.
 
 ## Trampas
 - **寿虎屋酒造 (Yamagata) y 千代寿虎屋 (Sagae) son dos empresas** con el mismo
