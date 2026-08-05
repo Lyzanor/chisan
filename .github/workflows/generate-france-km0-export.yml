@@ -1,15 +1,17 @@
 name: Generate France km0 CSV export
 
 on:
+  push:
+    branches: [agent/france-km0-csv-export-20260805]
   pull_request:
     types: [opened, synchronize, reopened]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   generate:
-    if: github.head_ref == 'agent/france-km0-csv-export-20260805'
+    if: github.event_name == 'push' || github.head_ref == 'agent/france-km0-csv-export-20260805'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -256,3 +258,18 @@ jobs:
             out/summary.json
           if-no-files-found: error
           retention-days: 1
+
+      - name: Commit generated CSV to the temporary branch
+        if: github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip km0 export]')
+        shell: bash
+        run: |
+          mkdir -p exports
+          cp out/producteurs_km0_france_500.csv exports/producteurs_km0_france_500.csv
+          cp out/summary.json exports/producteurs_km0_france_500.summary.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add exports/producteurs_km0_france_500.csv exports/producteurs_km0_france_500.summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m "[skip km0 export] Añade CSV temporal de productores franceses"
+            git push
+          fi
