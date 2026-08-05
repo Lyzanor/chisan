@@ -1,0 +1,60 @@
+name: Generate Germany producer export
+
+on:
+  push:
+    branches:
+      - data/germany-producers-20260805
+    paths:
+      - scripts/generate-germany-producers.mjs
+      - .github/workflows/generate-germany-producers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out generation branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install project dependencies
+        run: |
+          npm install -g pnpm@10
+          pnpm install --frozen-lockfile
+
+      - name: Generate 500 German producers
+        run: node scripts/generate-germany-producers.mjs
+
+      - name: Validate all CSV files against the KM0 contract
+        run: pnpm check:csv
+
+      - name: Package the import-ready Germany folder
+        run: |
+          rm -f exports/km0_alemania_import_500.zip
+          zip -qr exports/km0_alemania_import_500.zip data/csv/de
+
+      - name: Commit generated dataset to the branch
+        run: |
+          git config user.name "km0-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/csv/de \
+            exports/productores_km0_alemania_500.csv \
+            exports/calidad_productores_km0_alemania_500.json \
+            exports/README_productores_km0_alemania_500.md \
+            exports/km0_alemania_import_500.zip
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "data(de): add 500 local producer records"
+          git push origin HEAD:${{ github.ref_name }}
