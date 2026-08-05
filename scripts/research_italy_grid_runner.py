@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Run the Italy candidate exporter with small, resilient Overpass grid queries."""
+"""Run the Italy candidate exporter with concurrent, bounded Overpass queries."""
 from __future__ import annotations
 
 import importlib.util
-import json
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
@@ -23,8 +23,6 @@ ENDPOINTS = [
     "https://overpass.kumi.systems/api/interpreter",
 ]
 
-# Small overlapping cells cover mainland Italy, Sicily and Sardinia while keeping
-# each public Overpass query inexpensive.
 CELLS = [
     (45.0, 6.30, 47.30, 9.50),
     (45.0, 9.25, 47.30, 12.50),
@@ -48,7 +46,7 @@ def cell_query(cell: tuple[float, float, float, float], *, expanded: bool = Fals
     south, west, north, east = cell
     bbox = f"({south},{west},{north},{east})"
     extra = f'nwr["produce"]["name"]{bbox};' if expanded else ""
-    return f'''[out:json][timeout:55][maxsize:134217728];
+    return f'''[out:json][timeout:35][maxsize:134217728];
 (
   nwr["shop"="farm"]["name"]{bbox};
   nwr["craft"~"^(winery|brewery|cheese|oil_mill|distillery|beekeeper|confectionery|pasta|bakery|coffee_roaster)$"]["name"]{bbox};
@@ -56,54 +54,57 @@ def cell_query(cell: tuple[float, float, float, float], *, expanded: bool = Fals
   nwr["man_made"="winery"]["name"]{bbox};
   {extra}
 );
-out center tags qt 900;
+out center tags qt 1000;
 '''
 
 
-def fetch_cell(cell: tuple[float, float, float, float], expanded: bool) -> list[dict[str, Any]]:
+def fetch_cell(index: int, cell: tuple[float, float, float, float], expanded: bool) -> list[dict[str, Any]]:
     query = cell_query(cell, expanded=expanded)
     errors: list[str] = []
-    for endpoint in ENDPOINTS:
+    endpoints = ENDPOINTS[index % len(ENDPOINTS):] + ENDPOINTS[: index % len(ENDPOINTS)]
+    for endpoint in endpoints:
         try:
             response = requests.post(
                 endpoint,
                 data={"data": query},
                 headers={
-                    "User-Agent": "KM0-Italy-Research/1.1 (+https://github.com/Lyzanor/km0)",
+                    "User-Agent": "KM0-Italy-Research/1.2 (+https://github.com/Lyzanor/km0)",
                     "Accept": "application/json",
                 },
-                timeout=75,
+                timeout=45,
             )
             response.raise_for_status()
-            payload = response.json()
-            elements = payload.get("elements", [])
-            print(
-                f"Celda {cell} vía {endpoint}: {len(elements)} elementos",
-                flush=True,
-            )
+            elements = response.json().get("elements", [])
+            print(f"Celda {index + 1}/{len(CELLS)} vía {endpoint}: {len(elements)}", flush=True)
             return elements
         except Exception as exc:  # noqa: BLE001
             errors.append(f"{endpoint}: {exc}")
-            time.sleep(2)
-    print(f"Celda omitida {cell}: {' | '.join(errors)}", flush=True)
+            time.sleep(1)
+    print(f"Celda {index + 1} omitida: {' | '.join(errors)}", flush=True)
     return []
+
+
+def run_pass(*, expanded: bool) -> list[dict[str, Any]]:
+    output: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        futures = {
+            pool.submit(fetch_cell, index, cell, expanded): index
+            for index, cell in enumerate(CELLS)
+        }
+        for future in as_completed(futures):
+            output.extend(future.result())
+    return output
 
 
 def fetch_overpass_grid(_session: requests.Session) -> dict[str, Any]:
     by_id: dict[tuple[str, int], dict[str, Any]] = {}
-    for cell in CELLS:
-        for element in fetch_cell(cell, expanded=False):
-            by_id[(str(element.get("type")), int(element["id"]))] = element
+    for element in run_pass(expanded=False):
+        by_id[(str(element.get("type")), int(element["id"]))] = element
 
-    # A second, broader discovery pass is only used when the producer-specific
-    # tags did not yield enough material after de-duplication.
     if len(by_id) < 900:
         print(f"Solo {len(by_id)} elementos primarios; activando pase ampliado", flush=True)
-        for cell in CELLS:
-            for element in fetch_cell(cell, expanded=True):
-                by_id[(str(element.get("type")), int(element["id"]))] = element
-            if len(by_id) >= 1800:
-                break
+        for element in run_pass(expanded=True):
+            by_id[(str(element.get("type")), int(element["id"]))] = element
 
     if len(by_id) < research.TARGET:
         raise RuntimeError(
@@ -112,7 +113,7 @@ def fetch_overpass_grid(_session: requests.Session) -> dict[str, Any]:
     print(f"Elementos OSM únicos obtenidos: {len(by_id)}", flush=True)
     return {
         "version": 0.6,
-        "generator": "KM0 Italy grid Overpass runner",
+        "generator": "KM0 Italy concurrent grid Overpass runner",
         "elements": list(by_id.values()),
     }
 
