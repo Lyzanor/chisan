@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Build a 500-row Italy KM0 candidate CSV from the Geofabrik OSM shapefile."""
+"""Build a 500-row Italy KM0 candidate CSV from a Geofabrik OSM shapefile."""
 from __future__ import annotations
 
 import csv
-import io
-import json
 import re
 import unicodedata
 import zipfile
@@ -81,6 +79,8 @@ def download(session: requests.Session, url: str, path: Path) -> None:
             for chunk in response.iter_content(chunk_size=4 * 1024 * 1024):
                 if chunk:
                     handle.write(chunk)
+    if path.stat().st_size < 10_000_000:
+        raise RuntimeError(f"Descarga demasiado pequeña: {path.stat().st_size} bytes")
     print(f"Descargado: {path.stat().st_size / 1_000_000:.1f} MB", flush=True)
 
 
@@ -129,7 +129,9 @@ def locate(tree: STRtree, geometries, properties, lon: float, lat: float):
         props = properties[index]
         region = clean(props.get("reg_name") or props.get("region_name"))
         province = clean(props.get("prov_name") or props.get("province_name"))
-        municipality = clean(props.get("com_name") or props.get("municipality_name"))
+        municipality = clean(
+            props.get("com_name") or props.get("municipality_name") or props.get("name")
+        )
         if region and province and municipality:
             return region, province, municipality
     return None
@@ -159,7 +161,10 @@ def category_for(fclass: str, name: str) -> str:
 
 def score_for(fclass: str, name: str) -> int:
     score = 10 if fclass in STRICT_CLASSES else 3
-    if any(token in name.lower() for token in ("azienda agricola", "fattoria", "cantina", "caseificio", "frantoio", "birrificio", "apicolt")):
+    if any(token in name.lower() for token in (
+        "azienda agricola", "fattoria", "cantina", "caseificio", "frantoio",
+        "birrificio", "apicolt", "forno", "panificio", "pastificio",
+    )):
         score += 6
     if fclass in {"supermarket", "convenience"}:
         score -= 8
@@ -245,7 +250,7 @@ def balanced_select(rows: list[dict[str, Any]], target: int) -> list[dict[str, A
 
 def main() -> None:
     session = requests.Session()
-    session.headers.update({"User-Agent": "KM0-Italy-Geofabrik/1.0 (+https://github.com/Lyzanor/km0)"})
+    session.headers.update({"User-Agent": "KM0-Italy-Geofabrik/1.1 (+https://github.com/Lyzanor/km0)"})
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     download(session, SHAPEFILE_URL, DOWNLOAD)
     shp_path = extract_pois(DOWNLOAD, OUT_DIR / "shape")
