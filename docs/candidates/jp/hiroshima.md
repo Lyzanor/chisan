@@ -1,8 +1,8 @@
 # Hiroshima — candidatos
 
-- CSV: `data/csv/jp/chugoku/hiroshima.csv` (0 filas). Dedup: nada que cruzar en el CSV, pero ver la nota sobre Imada.
+- CSV: `data/csv/jp/chugoku/hiroshima.csv` (9 filas, altas del 2026-08-05).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/hiroshima> (56 bodegas, leído 2026-08-04). Gremio: 広島県酒造組合, <http://www.hirosake.or.jp/>.
-- Estado: cola abierta, 13 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: **9 integradas** el 2026-08-05 (7 `verificado`, 2 `parcial`); quedan 7 de la tabla y ~40 del censo. Evidencia en `data/evidence/jp/chugoku/hiroshima.jsonl`.
 
 **西条 (Saijo), en Higashihiroshima, es una de las tres capitales del sake de
 Japón** junto a Nada (Hyogo) y Fushimi (Kioto), con las bodegas alineadas en una
@@ -10,19 +10,43 @@ sola calle. Categoría para todas: `Sake`.
 
 | nombre (rōmaji propuesto) | 社名 | municipio |
 |---|---|---|
-| Kamotsuru Shuzo | 賀茂鶴酒造 | Higashihiroshima |
-| Kamoizumi Shuzo | 賀茂泉酒造 | Higashihiroshima |
-| Kanemitsu Shuzo | 金光酒造 | Higashihiroshima ⚠ |
-| Aihara Shuzo | 相原酒造 | Kure |
-| Enoki Shuzo | 榎酒造 | Kure |
 | Umeda Shuzojo | 梅田酒造場 | Hiroshima |
-| Kyokuho Shuzo | 旭鳳酒造 | Hiroshima |
 | Ikuma Shuzo | 生熊酒造 | Shobara |
 | Kitamura Jozojo | 北村醸造場 | Shobara |
-| Etajima Meijo | 江田島銘醸 | Etajima |
 | Ono Shuzo | 小野酒造 | Kitahiroshima ⚠ |
 | Aseed Brew | アシードブリュー | Fukuyama |
 | Kawamoto Eisuke | 川本英介 | Akiota |
+
+## Integradas 2026-08-05 (9) — salidas de la cola de arriba
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Kamotsuru Shuzo | Higashihiroshima | verificado · venta sí |
+| Kamoizumi Shuzo | Higashihiroshima | verificado · venta sí |
+| Imada Shuzo Honten | Higashihiroshima | verificado · venta sí |
+| Enoki Shuzo | Kure | verificado · venta sí |
+| Etajima Meijo | Etajima | verificado · venta sí |
+| Nakao Jozo | **Takehara** | verificado · venta sí |
+| Kanemitsu Shuzo | Higashihiroshima | verificado · sin carrito |
+| Kyokuho Shuzo | Hiroshima | **parcial** · web bloqueada |
+| Aihara Shuzo | Kure | **parcial** · sin web |
+
+**El buscador del gremio no sirve**: `hirosake.org/app/service?brewery` se pinta
+con JavaScript y en plano no devuelve nada. Hiroshima cuesta como Fukushima, una
+búsqueda por bodega — no como Yamagata.
+
+- **Imada Shuzo Honten sale de la bandeja del `README.md`** de esta carpeta: ya
+  está en el CSV y no debe volver a proponerse. Su dominio público es el de la
+  marca, `fukucho.jp`, no la razón social.
+- **Nakao Jozo (Takehara) no estaba en la tabla**: salió del mismo censo al
+  cazar dominios. Su web falla por HTTPS con **el certificado de `bizmw.com`, el
+  mismo hosting que Morii Shokuhin en Nara**, y responde 200 por HTTP. Ese
+  proveedor ya ha dado dos falsos muertos: probar HTTP antes de descartar.
+- **旭鳳酒造 devuelve 403 con cuerpo mínimo**: bloqueo de bot, no sitio muerto
+  (tercer caso tras Yamahisa). Sin poder leer la ficha se queda `parcial`.
+- **相原酒造 (Ugo no Tsuki) no tiene web propia.** Tercer caso del patrón, tras
+  Hiroki en Fukushima y Takagi en Yamagata: marcas muy valoradas y sin dónde
+  enlazar, todas `parcial`.
 
 ## Trampas
 - **今田酒造本店 (Imada Shuzo Honten, Higashihiroshima)** ya está en la bandeja
