@@ -6,12 +6,14 @@ on:
       - data/germany-producers-20260805
     paths:
       - scripts/generate-germany-producers.mjs
+      - scripts/sanitize-germany-export.py
       - .github/workflows/generate-germany-producers.yml
   pull_request:
     branches:
       - main
     paths:
       - scripts/generate-germany-producers.mjs
+      - scripts/sanitize-germany-export.py
       - .github/workflows/generate-germany-producers.yml
 
 permissions:
@@ -42,6 +44,9 @@ jobs:
 
       - name: Generate 500 German producers
         run: node scripts/generate-germany-producers.mjs
+
+      - name: Sanitize social profile fields
+        run: python3 scripts/sanitize-germany-export.py
 
       - name: Validate all CSV files against the KM0 contract
         run: pnpm check:csv
