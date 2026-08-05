@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Maintenance utility: regenerate data/reference/municipalities.json from Wikidata.
+// Maintenance utility: regenerate data/reference/municipalities.json from each
+// country's own official catalog.
 //
 // Source
 // - Wikidata SPARQL endpoint: https://query.wikidata.org/sparql
@@ -20,15 +21,29 @@
 //     carrying a dissolution date — the 2010s fusioni left hundreds of
 //     suppressed comuni in Wikidata. Labels in it and de, so the bilingual
 //     South Tyrolean names (Bressanone / Brixen) share one centroid.
+//   - France: the only country not taken from Wikidata. Its 34.900 communes
+//     do not fit in one SPARQL request — the query returns HTTP 200 with a
+//     body cut off at the 60 s endpoint timeout, every time — and the official
+//     centroids are published anyway, so the catalog comes from Etalab's
+//     "Découpage administratif" API (geo.api.gouv.fr) in a single call. Only
+//     current communes are listed there, so no dissolution filter is needed,
+//     and each commune carries one name, so there are no altLabels.
 //
 // Output
 // - data/reference/municipalities.json
-//   { "<normalized-key>": { lat, lon, label } }
+//   { "<country>": { "<normalized-key>": { lat, lon, label } } }
 //   Keys are produced by normalizeSearch (lowercase, ASCII, single spaces),
-//   matching how scripts/audit-csv.js looks up the municipio column.
-//   Spain is written first and wins any cross-country key collision, so
-//   adding another country can never move an existing Spanish centroid. The
-//   losing side is resolved by region in municipality-overrides.json.
+//   matching how scripts/audit-csv.js looks up the municipio column, and the
+//   country is the folder under data/csv the row lives in. One catalog per
+//   country is what makes a name mean one thing: Chiba is only ever looked up
+//   against Japan and Chiva against Spain, so no producer can be measured
+//   against a town on another continent.
+//   Inside one country a repeated name is still ambiguous, and which of the
+//   two wins the key is arbitrary. A country marked `dropAmbiguous` (France)
+//   removes the key instead: with 1.482 repeated commune names an arbitrary
+//   winner turns correct rows into blocking geo errors, while no key at all
+//   makes them skip, which is what an unresolvable name honestly is. The
+//   names that matter get a per-region entry in municipality-overrides.json.
 //
 // When to re-run
 // - You suspect the lookup is missing a real municipio (Wikidata may have
@@ -40,7 +55,7 @@
 // Usage
 //   node scripts/build-municipality-centroids.js             merge: keep every key
 //                                                         already committed, add
-//                                                         the ones Wikidata grew
+//                                                         the ones the source grew
 //   node scripts/build-municipality-centroids.js --refresh    take the rebuild as is
 //
 // Notes
@@ -50,26 +65,31 @@
 //   `--refresh` also moves existing centroids: measured once against the file
 //   committed in August 2026, a plain rebuild changed 149 keys and dropped 17,
 //   most of them homonyms whose winner flipped rather than real corrections.
-// - Two SPARQL requests per country, ~1-2 minutes total on a normal connection.
-// - Cross-language label collisions (e.g. Catalan "Figueres" → both real
-//   Figueres in Girona and Higueras in Castellón) cause one entity to win
-//   the key arbitrarily. Known collisions are disambiguated via
-//   data/reference/municipality-overrides.json, which is loaded by
-//   scripts/audit-csv.js after this file and resolves the match using the
-//   region slug inferred from the CSV path. This file is not
+// - Two SPARQL requests per Wikidata country, one plain GET for France;
+//   ~1-2 minutes total on a normal connection.
+// - Cross-language label collisions inside one country (e.g. Catalan
+//   "Figueres" → both real Figueres in Girona and Higueras in Castellón) still
+//   cause one entity to win the key arbitrarily. Known collisions are
+//   disambiguated via data/reference/municipality-overrides.json, which is
+//   loaded by scripts/audit-csv.js after this file, keyed by country and
+//   resolved by the region slug inferred from the CSV path. This file is not
 //   touched by the rebuild.
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
+const GEO_API_COMMUNES =
+  "https://geo.api.gouv.fr/communes?fields=code,nom,centre&format=json";
 const USER_AGENT = "km0-municipio-centroids/1.0 (https://github.com/Lyzanor/km0)";
 const REQUEST_TIMEOUT_MS = 120000;
 
 const langFilter = (langs) => langs.map((l) => `"${l}"`).join(", ");
 
-// Order matters: the first country to claim a normalized key keeps it, so Spain
-// stays authoritative for names that exist in both catalogs.
+// One entry per country folder under data/csv; `code` is that folder, and the
+// catalog it produces is only ever read for rows in it. Order does not matter:
+// no country can take a key from another.
 const COUNTRIES = [
   {
     slug: "spain",
+    code: "es",
     label: "Spain",
     rootClass: "wd:Q2074737",
     langs: ["es", "ca", "gl", "eu", "an", "ast"],
@@ -78,6 +98,7 @@ const COUNTRIES = [
   },
   {
     slug: "japan",
+    code: "jp",
     label: "Japan",
     rootClass: "wd:Q1054813",
     langs: ["en", "ja"],
@@ -86,6 +107,7 @@ const COUNTRIES = [
   },
   {
     slug: "portugal",
+    code: "pt",
     label: "Portugal",
     rootClass: "wd:Q13217644",
     langs: ["pt"],
@@ -94,11 +116,19 @@ const COUNTRIES = [
   },
   {
     slug: "italy",
+    code: "it",
     label: "Italy",
     rootClass: "wd:Q747074",
     langs: ["it", "de"],
     canonicalLang: "it",
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
+  },
+  {
+    slug: "france",
+    code: "fr",
+    label: "France",
+    endpoint: GEO_API_COMMUNES,
+    dropAmbiguous: true,
   },
 ];
 
@@ -144,10 +174,10 @@ async function fetchSparql(query) {
   }
 }
 
-async function sparql(query, attempts = 4) {
+async function withRetry(run, attempts = 4) {
   for (let attempt = 1; ; attempt++) {
     try {
-      return await fetchSparql(query);
+      return await run();
     } catch (err) {
       if (attempt >= attempts) throw err;
       console.log(`  attempt ${attempt}/${attempts} failed (${err.message.slice(0, 90)}); retrying...`);
@@ -172,15 +202,54 @@ function parseWkt(wkt) {
   return { lon: Number(m[1]), lat: Number(m[2]) };
 }
 
+async function fetchJson(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, {
+      headers: { Accept: "application/json", "User-Agent": USER_AGENT },
+      signal: controller.signal,
+    });
+    const body = await res.text();
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+    return JSON.parse(body);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// geo.api.gouv.fr returns the whole list in one document, so the retry wrapper
+// and the qid/altLabel machinery above have nothing to do here. The INSEE code
+// plays the part of the qid: it is what keeps two communes from merging into
+// one entry when they share a name.
+async function collectFromGeoApi(country) {
+  console.log(`[${country.label}] fetching communes from geo.api.gouv.fr...`);
+  const raw = await withRetry(() => fetchJson(country.endpoint));
+  console.log(`  ${raw.length} communes`);
+
+  const items = new Map();
+  for (const commune of raw) {
+    const point = commune.centre?.coordinates;
+    if (!point) continue;
+    items.set(commune.code ?? commune.nom, {
+      coord: { lon: point[0], lat: point[1] },
+      labels: new Set([commune.nom]),
+      canonical: commune.nom,
+    });
+  }
+  return items;
+}
+
 async function collectItems(country) {
+  if (country.endpoint) return collectFromGeoApi(country);
   const queries = buildQueries(country);
 
   console.log(`[${country.label}] fetching labels from Wikidata...`);
-  const labelsRaw = await sparql(queries.labels);
+  const labelsRaw = await withRetry(() => fetchSparql(queries.labels));
   console.log(`  ${labelsRaw.results.bindings.length} label bindings`);
 
   console.log(`[${country.label}] fetching altLabels from Wikidata...`);
-  const altRaw = await sparql(queries.alt);
+  const altRaw = await withRetry(() => fetchSparql(queries.alt));
   console.log(`  ${altRaw.results.bindings.length} altLabel bindings`);
 
   const items = new Map(); // qid -> { coord, labels: Set, canonical }
@@ -211,32 +280,33 @@ async function main() {
 
   const refresh = process.argv.includes("--refresh");
   const lookup = {};
-  const owners = new Map(); // key -> { qid, country } (collision tracking)
   const summaries = [];
-  const crossCountry = [];
 
   for (const country of COUNTRIES) {
     const items = await collectItems(country);
+    const catalog = {};
+    const owners = new Map(); // key -> qid, inside this country only
     let keys = 0;
     let collisions = 0;
+    let dropped = 0;
 
     for (const [qid, entry] of items) {
       for (const lbl of entry.labels) {
         const key = normalize(lbl);
         if (!key) continue;
         const owner = owners.get(key);
-        if (owner && owner.qid !== qid) {
+        if (owner && owner !== qid) {
           collisions++;
-          // A name shared across countries is the dangerous kind: the loser's
-          // rows would measure their distance against a town on another
-          // continent, which is a blocking geo error rather than a skip.
-          // Disambiguate those in data/reference/municipality-overrides.json.
-          if (owner.country !== country.slug) crossCountry.push(`${lbl} (${country.slug} lost to ${owner.country})`);
+          if (country.dropAmbiguous && catalog[key]) {
+            delete catalog[key];
+            keys--;
+            dropped++;
+          }
           continue;
         }
         if (!owner) keys++;
-        owners.set(key, { qid, country: country.slug });
-        lookup[key] = {
+        owners.set(key, qid);
+        catalog[key] = {
           lat: Number(entry.coord.lat.toFixed(5)),
           lon: Number(entry.coord.lon.toFixed(5)),
           label: entry.canonical,
@@ -244,27 +314,36 @@ async function main() {
       }
     }
 
-    summaries.push({ label: country.label, items: items.size, keys, collisions });
+    lookup[country.code] = catalog;
+    summaries.push({ label: country.label, code: country.code, items: items.size, keys, collisions, dropped });
   }
 
   // Same file scripts/audit-csv.js reads. The rename to the English name during
   // the multi-country move missed this line, so every run since then wrote an
   // orphan municipios.json and left the real lookup untouched.
   const outPath = path.join(__dirname, "..", "data", "reference", "municipalities.json");
-  const existing =
+  const previous =
     !refresh && fs.existsSync(outPath) ? JSON.parse(fs.readFileSync(outPath, "utf8")) : {};
 
-  // Which of the two colliding items wins a shared key is arbitrary, so a plain
-  // rebuild silently reshuffles homonyms that producer rows are already checked
-  // against (`portillo` jumping from Portillo de Toledo to Portillo de Soria is
-  // a 200 km move, and the geo rule is blocking past 100 km). Merging keeps every
-  // key already committed and only adds the new ones; `--refresh` takes the
-  // rebuild verbatim, and then the diff must be reviewed municipio by municipio.
-  const merged = { ...lookup, ...existing };
-  const preserved = Object.keys(existing).filter(
-    (key) => key in lookup && JSON.stringify(existing[key]) !== JSON.stringify(lookup[key]),
-  ).length;
-  const kept = Object.keys(existing).filter((key) => !(key in lookup)).length;
+  // Which of two colliding municipalities wins a shared key is arbitrary, so a
+  // plain rebuild silently reshuffles homonyms that producer rows are already
+  // checked against (`portillo` jumping from Portillo de Toledo to Portillo de
+  // Soria is a 200 km move, and the geo rule is blocking past 100 km). Merging
+  // keeps every key already committed and only adds the new ones; `--refresh`
+  // takes the rebuild verbatim, and then the diff must be reviewed municipio by
+  // municipio. A country absent from the committed file simply has no base.
+  const merged = {};
+  let preserved = 0;
+  let kept = 0;
+  for (const country of COUNTRIES) {
+    const base = previous[country.code] ?? {};
+    const built = lookup[country.code];
+    merged[country.code] = { ...built, ...base };
+    preserved += Object.keys(base).filter(
+      (key) => key in built && JSON.stringify(base[key]) !== JSON.stringify(built[key]),
+    ).length;
+    kept += Object.keys(base).filter((key) => !(key in built)).length;
+  }
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(merged) + "\n");
@@ -272,18 +351,16 @@ async function main() {
   const sizeKb = Math.round(fs.statSync(outPath).size / 1024);
   console.log("---");
   for (const s of summaries) {
-    console.log(`${s.label}: ${s.items} items, ${s.keys} keys (${s.collisions} collisions skipped)`);
+    const drops = s.dropped ? `, ${s.dropped} ambiguous names dropped` : "";
+    console.log(`${s.label}: ${s.items} items, ${s.keys} keys (${s.collisions} collisions skipped${drops})`);
   }
-  console.log(`Lookup keys: ${Object.keys(merged).length}`);
+  console.log(
+    `Lookup keys: ${Object.values(merged).reduce((total, catalog) => total + Object.keys(catalog).length, 0)}`,
+  );
   if (!refresh) {
     console.log(
       `Merged onto the committed file: ${preserved} keys the rebuild would have moved were preserved, ${kept} keys absent from the rebuild were kept (--refresh takes the rebuild instead).`,
     );
-  }
-  if (crossCountry.length) {
-    console.log(`Cross-country name collisions: ${crossCountry.length}`);
-    for (const line of crossCountry.slice(0, 40)) console.log(`  - ${line}`);
-    if (crossCountry.length > 40) console.log(`  ... ${crossCountry.length - 40} more`);
   }
   console.log(`Output: ${path.relative(process.cwd(), outPath)} (${sizeKb} KB)`);
 }

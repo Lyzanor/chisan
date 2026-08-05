@@ -1,1000 +1,1300 @@
 {
-  "alins": [
-    {
-      "lat": 42.5478,
-      "lon": 1.3081,
-      "label": "Alins (Pallars Sobirà, Lleida)",
-      "region": "catalunya"
-    },
-    {
-      "lat": 41.97417,
-      "lon": 0.31222,
-      "label": "Azanuy-Alins",
-      "region": "aragon"
-    }
-  ],
-  "antigua": [
-    {
-      "lat": 28.4196,
-      "lon": -14.0204,
-      "label": "Antigua",
-      "region": "canarias"
-    }
-  ],
-  "armuna": [
-    {
-      "lat": 41.0775,
-      "lon": -4.3207,
-      "label": "Armuña (Segovia)",
+  "es": {
+    "alins": [
+      {
+        "lat": 42.5478,
+        "lon": 1.3081,
+        "label": "Alins (Pallars Sobirà, Lleida)",
+        "region": "catalunya"
+      },
+      {
+        "lat": 41.97417,
+        "lon": 0.31222,
+        "label": "Azanuy-Alins",
+        "region": "aragon"
+      }
+    ],
+    "antigua": [
+      {
+        "lat": 28.4196,
+        "lon": -14.0204,
+        "label": "Antigua",
+        "region": "canarias"
+      }
+    ],
+    "armuna": [
+      {
+        "lat": 41.0775,
+        "lon": -4.3207,
+        "label": "Armuña (Segovia)",
+        "region": "castilla-y-leon"
+      },
+      {
+        "lat": 40.53194,
+        "lon": -3.03028,
+        "label": "Armuña de Tajuña",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "arroyomolinos": [
+      {
+        "lat": 40.27861,
+        "lon": -3.91167,
+        "label": "Arroyomolinos",
+        "region": "madrid"
+      }
+    ],
+    "artieda": [
+      {
+        "lat": 42.58659,
+        "lon": -0.98368,
+        "label": "Artieda",
+        "region": "aragon"
+      },
+      {
+        "lat": 42.715,
+        "lon": -1.326,
+        "label": "Artieda (Urraúl Bajo)",
+        "region": "navarra"
+      }
+    ],
+    "asque": [
+      {
+        "lat": 42.1725,
+        "lon": 0.06417,
+        "label": "Asque (Colungo, Huesca)",
+        "region": "aragon"
+      }
+    ],
+    "bello": [
+      {
+        "lat": 43.13991,
+        "lon": -5.61113,
+        "label": "Bello",
+        "region": "asturias"
+      }
+    ],
+    "berlanga": [
+      {
+        "lat": 38.2845,
+        "lon": -5.8292,
+        "label": "Berlanga",
+        "region": "extremadura"
+      }
+    ],
+    "cabanes": [
+      {
+        "lat": 42.30827,
+        "lon": 2.97854,
+        "label": "Cabanes",
+        "region": "catalunya"
+      }
+    ],
+    "cabra": [
+      {
+        "lat": 37.47972,
+        "lon": -4.40156,
+        "label": "Cabra",
+        "region": "andalucia"
+      }
+    ],
+    "calahorra": [
+      {
+        "lat": 42.31383,
+        "lon": -1.96566,
+        "label": "Calahorra",
+        "region": "la-rioja"
+      }
+    ],
+    "canales": [
+      {
+        "lat": 43.31908,
+        "lon": -4.90331,
+        "label": "Canales",
+        "region": "asturias"
+      }
+    ],
+    "carballo": [
+      {
+        "lat": 43.11908,
+        "lon": -6.48965,
+        "label": "Carballo",
+        "region": "asturias"
+      }
+    ],
+    "carpio": [
+      {
+        "lat": 41.21439,
+        "lon": -5.09744,
+        "label": "Carpio",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "cascante": [
+      {
+        "lat": 41.97884,
+        "lon": -1.67598,
+        "label": "Cascante",
+        "region": "navarra"
+      }
+    ],
+    "cervera": [
+      {
+        "lat": 41.66807,
+        "lon": 1.27188,
+        "label": "Cervera",
+        "region": "catalunya"
+      }
+    ],
+    "colmenar": [
+      {
+        "lat": 36.90581,
+        "lon": -4.36962,
+        "label": "Colmenar",
+        "region": "andalucia"
+      }
+    ],
+    "cuarte": [
+      {
+        "lat": 42.117661,
+        "lon": -0.470789,
+        "label": "Cuarte (Huesca)",
+        "region": "aragon"
+      }
+    ],
+    "el molar": [
+      {
+        "lat": 41.16352,
+        "lon": 0.70604,
+        "label": "El Molar (Priorat)",
+        "region": "catalunya"
+      },
+      {
+        "lat": 40.735,
+        "lon": -3.58139,
+        "label": "El Molar",
+        "region": "madrid"
+      }
+    ],
+    "fariza": [
+      {
+        "lat": 41.41806,
+        "lon": -6.26667,
+        "label": "Fariza",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "figarol": [
+      {
+        "lat": 42.35123,
+        "lon": -1.41514,
+        "label": "Figarol (Carcastillo, Navarra)",
+        "region": "navarra"
+      }
+    ],
+    "figueras": [
+      {
+        "lat": 42.26667,
+        "lon": 2.95,
+        "label": "Figueres",
+        "region": "catalunya"
+      },
+      {
+        "lat": 39.9843,
+        "lon": -0.50174,
+        "label": "Higueras",
+        "region": "comunitat-valenciana"
+      }
+    ],
+    "figueres": [
+      {
+        "lat": 42.26667,
+        "lon": 2.95,
+        "label": "Figueres",
+        "region": "catalunya"
+      },
+      {
+        "lat": 39.9843,
+        "lon": -0.50174,
+        "label": "Higueras",
+        "region": "comunitat-valenciana"
+      }
+    ],
+    "fresneda": [
+      {
+        "lat": 42.8756,
+        "lon": -3.055,
+        "label": "Fresneda (Valdegovía, Álava)",
+        "region": "pais-vasco"
+      },
+      {
+        "lat": 40.92789,
+        "lon": 0.07426,
+        "label": "La Fresneda",
+        "region": "aragon"
+      }
+    ],
+    "fuente alamo": [
+      {
+        "lat": 38.69774,
+        "lon": -1.42686,
+        "label": "Fuente-Álamo",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "heras": [
+      {
+        "lat": 43.38139,
+        "lon": -3.73167,
+        "label": "Heras (localidad de Medio Cudeyo)",
+        "region": "cantabria"
+      },
+      {
+        "lat": 40.79083,
+        "lon": -3.09889,
+        "label": "Heras de Ayuso",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "izu": [
+      {
+        "lat": 42.8225,
+        "lon": -1.75389,
+        "label": "Izu (concejo de Cendea de Olza)",
+        "region": "navarra"
+      }
+    ],
+    "la fresneda": [
+      {
+        "lat": 43.29124,
+        "lon": -5.14789,
+        "label": "La Fresneda",
+        "region": "asturias"
+      }
+    ],
+    "la guardia": [
+      {
+        "lat": 39.7871,
+        "lon": -3.47576,
+        "label": "La Guardia",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "la pena": [
+      {
+        "lat": 43.54802,
+        "lon": -6.65691,
+        "label": "La Peña",
+        "region": "asturias"
+      }
+    ],
+    "lezama amurrio": [
+      {
+        "lat": 43.0266218,
+        "lon": -2.9566506,
+        "label": "Lezama-Amurrio",
+        "region": "pais-vasco"
+      }
+    ],
+    "longares": [
+      {
+        "lat": 41.40194,
+        "lon": -1.16778,
+        "label": "Longares",
+        "region": "aragon"
+      }
+    ],
+    "los barrios": [
+      {
+        "lat": 36.28875,
+        "lon": -5.57397,
+        "label": "Los Barrios",
+        "region": "andalucia"
+      }
+    ],
+    "marmolejo": [
+      {
+        "lat": 38.27637,
+        "lon": -5.82527,
+        "label": "Marmolejo",
+        "region": "extremadura"
+      }
+    ],
+    "mazariegos": {
+      "lat": 42.06111,
+      "lon": -4.72139,
+      "label": "Mazariegos",
       "region": "castilla-y-leon"
     },
-    {
-      "lat": 40.53194,
-      "lon": -3.03028,
-      "label": "Armuña de Tajuña",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "arroyomolinos": [
-    {
-      "lat": 40.27861,
-      "lon": -3.91167,
-      "label": "Arroyomolinos",
-      "region": "madrid"
-    }
-  ],
-  "artieda": [
-    {
-      "lat": 42.58659,
-      "lon": -0.98368,
-      "label": "Artieda",
-      "region": "aragon"
-    },
-    {
-      "lat": 42.715,
-      "lon": -1.326,
-      "label": "Artieda (Urraúl Bajo)",
-      "region": "navarra"
-    }
-  ],
-  "aya": [
-    {
-      "lat": 43.23655,
-      "lon": -2.14867,
-      "label": "Aya (Gipuzkoa)",
-      "region": "pais-vasco"
-    },
-    {
-      "lat": 31.99903,
-      "lon": 131.25294,
-      "label": "Aya (Miyazaki)",
-      "region": "kyushu-okinawa"
-    }
-  ],
-  "bello": [
-    {
-      "lat": 43.13991,
-      "lon": -5.61113,
-      "label": "Bello",
-      "region": "asturias"
-    }
-  ],
-  "berlanga": [
-    {
-      "lat": 38.2845,
-      "lon": -5.8292,
-      "label": "Berlanga",
-      "region": "extremadura"
-    }
-  ],
-  "cabanes": [
-    {
-      "lat": 42.30827,
-      "lon": 2.97854,
-      "label": "Cabanes",
-      "region": "catalunya"
-    }
-  ],
-  "cabra": [
-    {
-      "lat": 37.47972,
-      "lon": -4.40156,
-      "label": "Cabra",
-      "region": "andalucia"
-    }
-  ],
-  "calahorra": [
-    {
-      "lat": 42.31383,
-      "lon": -1.96566,
-      "label": "Calahorra",
-      "region": "la-rioja"
-    }
-  ],
-  "calheta": [
-    {
-      "lat": 38.6,
-      "lon": -28.01667,
-      "label": "Calheta (Açores)",
-      "region": "acores"
-    },
-    {
-      "lat": 32.73333,
-      "lon": -17.16667,
-      "label": "Calheta (Madeira)",
-      "region": "madeira"
-    }
-  ],
-  "canales": [
-    {
-      "lat": 43.31908,
-      "lon": -4.90331,
-      "label": "Canales",
-      "region": "asturias"
-    }
-  ],
-  "cantagallo": [
-    {
-      "lat": 40.37306,
-      "lon": -5.81972,
-      "label": "Cantagallo (Salamanca)",
-      "region": "castilla-y-leon"
-    },
-    {
-      "lat": 44.01667,
-      "lon": 11.08333,
-      "label": "Cantagallo (Prato)",
-      "region": "toscana"
-    }
-  ],
-  "carballo": [
-    {
-      "lat": 43.11908,
-      "lon": -6.48965,
-      "label": "Carballo",
-      "region": "asturias"
-    }
-  ],
-  "carpio": [
-    {
-      "lat": 41.21439,
-      "lon": -5.09744,
-      "label": "Carpio",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "cascante": [
-    {
-      "lat": 41.97884,
-      "lon": -1.67598,
-      "label": "Cascante",
-      "region": "navarra"
-    }
-  ],
-  "cervera": [
-    {
-      "lat": 41.66807,
-      "lon": 1.27188,
-      "label": "Cervera",
-      "region": "catalunya"
-    }
-  ],
-  "chiba": [
-    {
-      "lat": 39.47138,
-      "lon": -0.71971,
-      "label": "Chiva",
-      "region": "comunitat-valenciana"
-    },
-    {
-      "lat": 35.60728,
-      "lon": 140.10636,
-      "label": "Chiba",
-      "region": "kanto"
-    }
-  ],
-  "colmenar": [
-    {
-      "lat": 36.90581,
-      "lon": -4.36962,
-      "label": "Colmenar",
-      "region": "andalucia"
-    }
-  ],
-  "cuarte": [
-    {
-      "lat": 42.117661,
-      "lon": -0.470789,
-      "label": "Cuarte (Huesca)",
-      "region": "aragon"
-    }
-  ],
-  "daisen": [
-    {
-      "lat": 35.51069,
-      "lon": 133.49606,
-      "label": "Daisen (大山町, Tottori)",
-      "region": "chugoku"
-    },
-    {
-      "lat": 39.45306,
-      "lon": 140.47544,
-      "label": "Daisen (大仙市, Akita)",
-      "region": "tohoku"
-    }
-  ],
-  "el molar": [
-    {
-      "lat": 41.16352,
-      "lon": 0.70604,
-      "label": "El Molar (Priorat)",
-      "region": "catalunya"
-    },
-    {
-      "lat": 40.735,
-      "lon": -3.58139,
-      "label": "El Molar",
-      "region": "madrid"
-    }
-  ],
-  "fariza": [
-    {
-      "lat": 41.41806,
-      "lon": -6.26667,
-      "label": "Fariza",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "figueras": [
-    {
-      "lat": 42.26667,
-      "lon": 2.95,
-      "label": "Figueres",
-      "region": "catalunya"
-    },
-    {
-      "lat": 39.9843,
-      "lon": -0.50174,
-      "label": "Higueras",
-      "region": "comunitat-valenciana"
-    }
-  ],
-  "figueres": [
-    {
-      "lat": 42.26667,
-      "lon": 2.95,
-      "label": "Figueres",
-      "region": "catalunya"
-    },
-    {
-      "lat": 39.9843,
-      "lon": -0.50174,
-      "label": "Higueras",
-      "region": "comunitat-valenciana"
-    }
-  ],
-  "fresneda": [
-    {
-      "lat": 42.8756,
-      "lon": -3.055,
-      "label": "Fresneda (Valdegovía, Álava)",
-      "region": "pais-vasco"
-    },
-    {
-      "lat": 40.92789,
-      "lon": 0.07426,
-      "label": "La Fresneda",
-      "region": "aragon"
-    }
-  ],
-  "fuente alamo": [
-    {
-      "lat": 38.69774,
-      "lon": -1.42686,
-      "label": "Fuente-Álamo",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "heras": [
-    {
-      "lat": 43.38139,
-      "lon": -3.73167,
-      "label": "Heras (localidad de Medio Cudeyo)",
-      "region": "cantabria"
-    },
-    {
-      "lat": 40.79083,
-      "lon": -3.09889,
-      "label": "Heras de Ayuso",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "hita": [
-    {
-      "lat": 40.82472,
-      "lon": -3.04944,
-      "label": "Hita (Guadalajara)",
-      "region": "castilla-la-mancha"
-    },
-    {
-      "lat": 33.32131,
-      "lon": 130.94114,
-      "label": "Hita (Oita)",
-      "region": "kyushu-okinawa"
-    }
-  ],
-  "hokuto": [
-    {
-      "lat": 41.82411,
-      "lon": 140.65303,
-      "label": "Hokuto (Hokkaido)",
-      "region": "hokkaido"
-    },
-    {
-      "lat": 35.7765,
-      "lon": 138.4236,
-      "label": "Hokuto (Yamanashi)",
-      "region": "chubu"
-    }
-  ],
-  "ikeda": [
-    {
-      "lat": 42.929,
-      "lon": 143.44847,
-      "label": "Ikeda (Hokkaido)",
-      "region": "hokkaido"
-    },
-    {
-      "lat": 35.4423,
-      "lon": 136.573,
-      "label": "Ikeda (Gifu)",
-      "region": "chubu"
-    }
-  ],
-  "ikeda kitaazumi": [
-    {
-      "lat": 36.42079,
-      "lon": 137.88045,
-      "label": "Ikeda (Kitaazumi, Nagano)",
-      "region": "chubu"
-    }
-  ],
-  "izu": [
-    {
-      "lat": 42.8225,
-      "lon": -1.75389,
-      "label": "Izu (concejo de Cendea de Olza)",
-      "region": "navarra"
-    },
-    {
-      "lat": 34.97653,
-      "lon": 138.94681,
-      "label": "Izu (Shizuoka)",
-      "region": "chubu"
-    }
-  ],
-  "kami": [
-    {
-      "lat": 35.63219,
-      "lon": 134.62914,
-      "label": "Kami (香美町, Hyogo)",
-      "region": "kansai"
-    },
-    {
-      "lat": 38.57175,
-      "lon": 140.85481,
-      "label": "Kami (加美町, Miyagi)",
-      "region": "tohoku"
-    }
-  ],
-  "kashima": [
-    {
-      "lat": 35.96564,
-      "lon": 140.64483,
-      "label": "Kashima (鹿嶋市)",
-      "region": "kanto"
-    },
-    {
-      "lat": 33.10383,
-      "lon": 130.09858,
-      "label": "Kashima (鹿島市)",
-      "region": "kyushu-okinawa"
-    }
-  ],
-  "katsuragi": [
-    {
-      "lat": 34.48922,
-      "lon": 135.72644,
-      "label": "Katsuragi (Nara)",
-      "region": "kansai"
-    },
-    {
-      "lat": 34.2965,
-      "lon": 135.5037,
-      "label": "Katsuragi (Wakayama)",
-      "region": "kansai"
-    }
-  ],
-  "kisomachi": [
-    {
-      "lat": 35.84192,
-      "lon": 137.69139,
-      "label": "Kisomachi (木曽町)",
-      "region": "chubu"
-    }
-  ],
-  "kisomura": [
-    {
-      "lat": 35.93631,
-      "lon": 137.78314,
-      "label": "Kisomura (木祖村)",
-      "region": "chubu"
-    }
-  ],
-  "kitaibaraki": [
-    {
-      "lat": 36.8019,
-      "lon": 140.751,
-      "label": "Kitaibaraki",
-      "region": "kanto"
-    }
-  ],
-  "kurume": [
-    {
-      "lat": 35.758,
-      "lon": 139.52986,
-      "label": "Higashikurume (東久留米市, Tokyo)",
-      "region": "kanto"
-    },
-    {
-      "lat": 33.31925,
-      "lon": 130.50833,
-      "label": "Kurume (久留米市, Fukuoka)",
-      "region": "kyushu-okinawa"
-    }
-  ],
-  "la fresneda": [
-    {
-      "lat": 43.29124,
-      "lon": -5.14789,
-      "label": "La Fresneda",
-      "region": "asturias"
-    }
-  ],
-  "la guardia": [
-    {
-      "lat": 39.7871,
-      "lon": -3.47576,
-      "label": "La Guardia",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "la pena": [
-    {
-      "lat": 43.54802,
-      "lon": -6.65691,
-      "label": "La Peña",
-      "region": "asturias"
-    }
-  ],
-  "lagoa": [
-    {
-      "lat": 37.13333,
-      "lon": -8.45,
-      "label": "Lagoa (Algarve)",
-      "region": "algarve"
-    },
-    {
-      "lat": 37.75,
-      "lon": -25.58333,
-      "label": "Lagoa (Açores)",
-      "region": "acores"
-    }
-  ],
-  "lezama amurrio": [
-    {
-      "lat": 43.0266218,
-      "lon": -2.9566506,
-      "label": "Lezama-Amurrio",
-      "region": "pais-vasco"
-    }
-  ],
-  "longares": [
-    {
-      "lat": 41.40194,
-      "lon": -1.16778,
-      "label": "Longares",
-      "region": "aragon"
-    }
-  ],
-  "los barrios": [
-    {
-      "lat": 36.28875,
-      "lon": -5.57397,
-      "label": "Los Barrios",
-      "region": "andalucia"
-    }
-  ],
-  "marmolejo": [
-    {
-      "lat": 38.27637,
-      "lon": -5.82527,
-      "label": "Marmolejo",
-      "region": "extremadura"
-    }
-  ],
-  "mazariegos": {
-    "lat": 42.06111,
-    "lon": -4.72139,
-    "label": "Mazariegos",
-    "region": "castilla-y-leon"
+    "melida": [
+      {
+        "lat": 41.58056,
+        "lon": -4.07702,
+        "label": "Mélida",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "mieres": [
+      {
+        "lat": 43.26232,
+        "lon": -5.80264,
+        "label": "Mieres",
+        "region": "asturias"
+      }
+    ],
+    "mino": [
+      {
+        "lat": 43.34861,
+        "lon": -8.16822,
+        "label": "Miño",
+        "region": "galicia"
+      }
+    ],
+    "nava": [
+      {
+        "lat": 43.36201,
+        "lon": -5.50495,
+        "label": "Nava",
+        "region": "asturias"
+      }
+    ],
+    "navas": [
+      {
+        "lat": 41.89136,
+        "lon": 1.87623,
+        "label": "Navàs",
+        "region": "catalunya"
+      }
+    ],
+    "ocana": [
+      {
+        "lat": 39.95945,
+        "lon": -3.49881,
+        "label": "Ocaña",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "paderne": [
+      {
+        "lat": 43.54571,
+        "lon": -6.70263,
+        "label": "Paderne",
+        "region": "asturias"
+      }
+    ],
+    "palacios": [
+      {
+        "lat": 40.5427,
+        "lon": -4.8502,
+        "label": "Palacios (Ávila)",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "palazuelos": [
+      {
+        "lat": 41.0564,
+        "lon": -2.7051,
+        "label": "Palazuelos (Guadalajara)",
+        "region": "castilla-la-mancha"
+      },
+      {
+        "lat": 40.93028,
+        "lon": -4.06111,
+        "label": "Palazuelos de Eresma",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "pitres": [
+      {
+        "lat": 36.93611,
+        "lon": -3.32556,
+        "label": "Pitres (La Taha, Granada)",
+        "region": "andalucia"
+      }
+    ],
+    "portillo": [
+      {
+        "lat": 41.4774,
+        "lon": -4.5882,
+        "label": "Portillo",
+        "region": "castilla-y-leon"
+      },
+      {
+        "lat": 40.05944,
+        "lon": -4.22389,
+        "label": "Portillo de Toledo",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "riofrio": [
+      {
+        "lat": 37.15424,
+        "lon": -4.20725,
+        "label": "Riofrío",
+        "region": "andalucia"
+      }
+    ],
+    "robledo": [
+      {
+        "lat": 38.78337,
+        "lon": -2.42943,
+        "label": "Robledo",
+        "region": "castilla-la-mancha"
+      },
+      {
+        "lat": 40.49833,
+        "lon": -4.23889,
+        "label": "Robledo de Chavela",
+        "region": "madrid"
+      }
+    ],
+    "sada": [
+      {
+        "lat": 43.35983,
+        "lon": -8.28273,
+        "label": "Sada",
+        "region": "galicia"
+      }
+    ],
+    "salcedo": [
+      {
+        "lat": 42.7342,
+        "lon": -2.9639,
+        "label": "Salcedo (Lantarón, Álava)",
+        "region": "pais-vasco"
+      },
+      {
+        "lat": 42.41139,
+        "lon": -8.6475,
+        "label": "Salcedo",
+        "region": "galicia"
+      }
+    ],
+    "sallent": [
+      {
+        "lat": 41.82634,
+        "lon": 1.89332,
+        "label": "Sallent",
+        "region": "catalunya"
+      }
+    ],
+    "san adrian": [
+      {
+        "lat": 42.3325,
+        "lon": -1.93333,
+        "label": "San Adrián",
+        "region": "navarra"
+      }
+    ],
+    "san clemente": [
+      {
+        "lat": 42.63043,
+        "lon": -6.74719,
+        "label": "San Clemente",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "san cristobal": [
+      {
+        "lat": 43.50724,
+        "lon": -6.97263,
+        "label": "San Cristobal",
+        "region": "asturias"
+      }
+    ],
+    "san fernando": [
+      {
+        "lat": 36.47707,
+        "lon": -6.19332,
+        "label": "San Fernando",
+        "region": "andalucia"
+      }
+    ],
+    "san martin": [
+      {
+        "lat": 43.41277,
+        "lon": -6.25184,
+        "label": "San Martín",
+        "region": "asturias"
+      }
+    ],
+    "santa ana": [
+      {
+        "lat": 38.904,
+        "lon": -2.00112,
+        "label": "Santa Ana",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "santa cruz": [
+      {
+        "lat": 37.69838,
+        "lon": -4.6131,
+        "label": "Santa Cruz",
+        "region": "andalucia"
+      }
+    ],
+    "santa eulalia": [
+      {
+        "lat": 40.56927,
+        "lon": -1.31673,
+        "label": "Santa Eulalia",
+        "region": "aragon"
+      }
+    ],
+    "santa marina": [
+      {
+        "lat": 42.24528,
+        "lon": -2.35778,
+        "label": "Santa Marina (Santa Engracia del Jubera, La Rioja)",
+        "region": "la-rioja"
+      }
+    ],
+    "sarria": [
+      {
+        "lat": 42.78216,
+        "lon": -7.41454,
+        "label": "Sarria",
+        "region": "galicia"
+      }
+    ],
+    "seron": [
+      {
+        "lat": 37.34546,
+        "lon": -2.50693,
+        "label": "Serón",
+        "region": "andalucia"
+      }
+    ],
+    "tollo": [
+      {
+        "lat": 43.10944,
+        "lon": -4.61917,
+        "label": "Tollo (Vega de Liébana, Cantabria)",
+        "region": "cantabria"
+      }
+    ],
+    "torrent": [
+      {
+        "lat": 41.95016,
+        "lon": 3.12664,
+        "label": "Torrent",
+        "region": "catalunya"
+      }
+    ],
+    "valsequillo": [
+      {
+        "lat": 27.99497,
+        "lon": -15.47281,
+        "label": "Valsequillo",
+        "region": "canarias"
+      }
+    ],
+    "valverde": [
+      {
+        "lat": 27.8031,
+        "lon": -17.9228,
+        "label": "Valverde",
+        "region": "canarias"
+      }
+    ],
+    "vera": [
+      {
+        "lat": 37.2475942,
+        "lon": -1.8681961,
+        "label": "Vera",
+        "region": "andalucia"
+      },
+      {
+        "lat": 43.27833,
+        "lon": -1.6825,
+        "label": "Vera de Bidasoa",
+        "region": "navarra"
+      }
+    ],
+    "villahermosa": [
+      {
+        "lat": 38.81772,
+        "lon": -2.84427,
+        "label": "Villahermosa",
+        "region": "castilla-la-mancha"
+      }
+    ],
+    "villanueva": [
+      {
+        "lat": 43.26732,
+        "lon": -6.00332,
+        "label": "Villanueva",
+        "region": "asturias"
+      }
+    ],
+    "villanueva de la reina": [
+      {
+        "lat": 38.02961,
+        "lon": -3.90906,
+        "label": "Villanueva de la Reina",
+        "region": "andalucia"
+      }
+    ],
+    "villarmayor": [
+      {
+        "lat": 41.01424,
+        "lon": -5.97618,
+        "label": "Villarmayor",
+        "region": "castilla-y-leon"
+      }
+    ],
+    "zuera": [
+      {
+        "lat": 41.87,
+        "lon": -0.7886,
+        "label": "Zuera",
+        "region": "aragon"
+      },
+      {
+        "lat": 39.95194,
+        "lon": -0.33167,
+        "label": "Sueras",
+        "region": "comunitat-valenciana"
+      }
+    ]
   },
-  "melida": [
-    {
-      "lat": 41.58056,
-      "lon": -4.07702,
-      "label": "Mélida",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "mieres": [
-    {
-      "lat": 43.26232,
-      "lon": -5.80264,
-      "label": "Mieres",
-      "region": "asturias"
-    }
-  ],
-  "mino": [
-    {
-      "lat": 43.34861,
-      "lon": -8.16822,
-      "label": "Miño",
-      "region": "galicia"
-    },
-    {
-      "lat": 35.57892,
-      "lon": 136.9012,
-      "label": "Mino (Gifu)",
-      "region": "chubu"
-    }
-  ],
-  "nakano": [
-    {
-      "lat": 35.70728,
-      "lon": 139.66375,
-      "label": "Nakano (Tokio)",
-      "region": "kanto"
-    },
-    {
-      "lat": 36.74222,
-      "lon": 138.36722,
-      "label": "Nakano (Nagano)",
-      "region": "chubu"
-    }
-  ],
-  "nava": [
-    {
-      "lat": 43.36201,
-      "lon": -5.50495,
-      "label": "Nava",
-      "region": "asturias"
-    }
-  ],
-  "navas": [
-    {
-      "lat": 41.89136,
-      "lon": 1.87623,
-      "label": "Navàs",
-      "region": "catalunya"
-    }
-  ],
-  "nichinan": [
-    {
-      "lat": 31.6019,
-      "lon": 131.3787,
-      "label": "Nichinan (Miyazaki)",
-      "region": "kyushu-okinawa"
-    },
-    {
-      "lat": 35.1632,
-      "lon": 133.3062,
-      "label": "Nichinan (Tottori)",
-      "region": "chugoku"
-    }
-  ],
-  "ocana": [
-    {
-      "lat": 39.95945,
-      "lon": -3.49881,
-      "label": "Ocaña",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "oto": [
-    {
-      "lat": 42.885,
-      "lon": -2.8013,
-      "label": "Los Huetos",
-      "region": "pais-vasco"
-    },
-    {
-      "lat": 33.61222,
-      "lon": 130.85369,
-      "label": "Oto (Fukuoka)",
-      "region": "kyushu-okinawa"
-    }
-  ],
-  "paderne": [
-    {
-      "lat": 43.54571,
-      "lon": -6.70263,
-      "label": "Paderne",
-      "region": "asturias"
-    }
-  ],
-  "palacios": [
-    {
-      "lat": 40.5427,
-      "lon": -4.8502,
-      "label": "Palacios (Ávila)",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "palazuelos": [
-    {
-      "lat": 41.0564,
-      "lon": -2.7051,
-      "label": "Palazuelos (Guadalajara)",
-      "region": "castilla-la-mancha"
-    },
-    {
-      "lat": 40.93028,
-      "lon": -4.06111,
-      "label": "Palazuelos de Eresma",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "penafiel": [
-    {
-      "lat": 41.2079,
-      "lon": -8.2842,
-      "label": "Penafiel (Porto)",
-      "region": "norte"
-    },
-    {
-      "lat": 41.59751,
-      "lon": -4.12279,
-      "label": "Peñafiel",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "portillo": [
-    {
-      "lat": 41.4774,
-      "lon": -4.5882,
-      "label": "Portillo",
-      "region": "castilla-y-leon"
-    },
-    {
-      "lat": 40.05944,
-      "lon": -4.22389,
-      "label": "Portillo de Toledo",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "porto": [
-    {
-      "lat": 41.1579,
-      "lon": -8.6291,
-      "label": "Porto",
-      "region": "norte"
-    },
-    {
-      "lat": 42.16722,
-      "lon": -6.89944,
-      "label": "Porto (Zamora)",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "rio": [
-    {
-      "lat": 42.38444,
-      "lon": -7.31417,
-      "label": "Río (Ourense)",
-      "region": "galicia"
-    },
-    {
-      "lat": 42.81344,
-      "lon": 10.41736,
-      "label": "Rio (Isola d'Elba, Livorno)",
-      "region": "toscana"
-    }
-  ],
-  "riofrio": [
-    {
-      "lat": 37.15424,
-      "lon": -4.20725,
-      "label": "Riofrío",
-      "region": "andalucia"
-    }
-  ],
-  "robledo": [
-    {
-      "lat": 38.78337,
-      "lon": -2.42943,
-      "label": "Robledo",
-      "region": "castilla-la-mancha"
-    },
-    {
-      "lat": 40.49833,
-      "lon": -4.23889,
-      "label": "Robledo de Chavela",
-      "region": "madrid"
-    }
-  ],
-  "sada": [
-    {
-      "lat": 43.35983,
-      "lon": -8.28273,
-      "label": "Sada",
-      "region": "galicia"
-    }
-  ],
-  "salcedo": [
-    {
-      "lat": 42.7342,
-      "lon": -2.9639,
-      "label": "Salcedo (Lantarón, Álava)",
-      "region": "pais-vasco"
-    },
-    {
-      "lat": 42.41139,
-      "lon": -8.6475,
-      "label": "Salcedo",
-      "region": "galicia"
-    }
-  ],
-  "sallent": [
-    {
-      "lat": 41.82634,
-      "lon": 1.89332,
-      "label": "Sallent",
-      "region": "catalunya"
-    }
-  ],
-  "san adrian": [
-    {
-      "lat": 42.3325,
-      "lon": -1.93333,
-      "label": "San Adrián",
-      "region": "navarra"
-    }
-  ],
-  "san clemente": [
-    {
-      "lat": 42.63043,
-      "lon": -6.74719,
-      "label": "San Clemente",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "san cristobal": [
-    {
-      "lat": 43.50724,
-      "lon": -6.97263,
-      "label": "San Cristobal",
-      "region": "asturias"
-    }
-  ],
-  "san fernando": [
-    {
-      "lat": 36.47707,
-      "lon": -6.19332,
-      "label": "San Fernando",
-      "region": "andalucia"
-    }
-  ],
-  "san martin": [
-    {
-      "lat": 43.41277,
-      "lon": -6.25184,
-      "label": "San Martín",
-      "region": "asturias"
-    }
-  ],
-  "santa ana": [
-    {
-      "lat": 38.904,
-      "lon": -2.00112,
-      "label": "Santa Ana",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "santa cruz": [
-    {
-      "lat": 37.69838,
-      "lon": -4.6131,
-      "label": "Santa Cruz",
-      "region": "andalucia"
-    }
-  ],
-  "santa eulalia": [
-    {
-      "lat": 40.56927,
-      "lon": -1.31673,
-      "label": "Santa Eulalia",
-      "region": "aragon"
-    }
-  ],
-  "santa marina": [
-    {
-      "lat": 42.24528,
-      "lon": -2.35778,
-      "label": "Santa Marina (Santa Engracia del Jubera, La Rioja)",
-      "region": "la-rioja"
-    },
-    {
-      "lat": 40.09708,
-      "lon": 15.52327,
-      "label": "Santa Marina (Salerno)",
-      "region": "campania"
-    }
-  ],
-  "sarria": [
-    {
-      "lat": 42.78216,
-      "lon": -7.41454,
-      "label": "Sarria",
-      "region": "galicia"
-    }
-  ],
-  "seron": [
-    {
-      "lat": 37.34546,
-      "lon": -2.50693,
-      "label": "Serón",
-      "region": "andalucia"
-    }
-  ],
-  "shiroishi": [
-    {
-      "lat": 33.18106,
-      "lon": 130.14344,
-      "label": "Shiroishi (白石町, Saga)",
-      "region": "kyushu-okinawa"
-    },
-    {
-      "lat": 38.00244,
-      "lon": 140.61989,
-      "label": "Shiroishi (白石市, Miyagi)",
-      "region": "tohoku"
-    }
-  ],
-  "tollo": [
-    {
-      "lat": 43.10944,
-      "lon": -4.61917,
-      "label": "Tollo (Vega de Liébana, Cantabria)",
-      "region": "cantabria"
-    },
-    {
-      "lat": 42.34542,
-      "lon": 14.3236,
-      "label": "Tollo (Chieti)",
-      "region": "abruzzo"
-    }
-  ],
-  "tonosho": [
-    {
-      "lat": 35.83717,
-      "lon": 140.66869,
-      "label": "Tōnoshō-machi",
-      "region": "kanto"
-    },
-    {
-      "lat": 34.48693,
-      "lon": 134.18836,
-      "label": "Tonoshō-chō",
-      "region": "shikoku"
-    }
-  ],
-  "torrent": [
-    {
-      "lat": 41.95016,
-      "lon": 3.12664,
-      "label": "Torrent",
-      "region": "catalunya"
-    }
-  ],
-  "valsequillo": [
-    {
-      "lat": 27.99497,
-      "lon": -15.47281,
-      "label": "Valsequillo",
-      "region": "canarias"
-    }
-  ],
-  "valverde": [
-    {
-      "lat": 27.8031,
-      "lon": -17.9228,
-      "label": "Valverde",
-      "region": "canarias"
-    }
-  ],
-  "vera": [
-    {
-      "lat": 37.2475942,
-      "lon": -1.8681961,
-      "label": "Vera",
-      "region": "andalucia"
-    },
-    {
-      "lat": 43.27833,
-      "lon": -1.6825,
-      "label": "Vera de Bidasoa",
-      "region": "navarra"
-    }
-  ],
-  "villahermosa": [
-    {
-      "lat": 38.81772,
-      "lon": -2.84427,
-      "label": "Villahermosa",
-      "region": "castilla-la-mancha"
-    }
-  ],
-  "villanueva": [
-    {
-      "lat": 43.26732,
-      "lon": -6.00332,
-      "label": "Villanueva",
-      "region": "asturias"
-    }
-  ],
-  "villanueva de la reina": [
-    {
-      "lat": 38.02961,
-      "lon": -3.90906,
-      "label": "Villanueva de la Reina",
-      "region": "andalucia"
-    }
-  ],
-  "villarmayor": [
-    {
-      "lat": 41.01424,
-      "lon": -5.97618,
-      "label": "Villarmayor",
-      "region": "castilla-y-leon"
-    }
-  ],
-  "yuzawa": [
-    {
-      "lat": 39.16444,
-      "lon": 140.49583,
-      "label": "Yuzawa (湯沢市, Akita)",
-      "region": "tohoku"
-    },
-    {
-      "lat": 36.93408,
-      "lon": 138.81739,
-      "label": "Yuzawa (湯沢町, Niigata)",
-      "region": "chubu"
-    }
-  ],
-  "zuera": [
-    {
-      "lat": 41.87,
-      "lon": -0.7886,
-      "label": "Zuera",
-      "region": "aragon"
-    },
-    {
-      "lat": 39.95194,
-      "lon": -0.33167,
-      "label": "Sueras",
-      "region": "comunitat-valenciana"
-    }
-  ]
+  "fr": {
+    "aigne": [
+      {
+        "lat": 43.3241,
+        "lon": 2.7922,
+        "label": "Aigne (Hérault)",
+        "region": "occitanie"
+      }
+    ],
+    "auge": [
+      {
+        "lat": 46.452,
+        "lon": -0.2872,
+        "label": "Augé (Deux-Sèvres)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "barsac": [
+      {
+        "lat": 44.7275,
+        "lon": 5.3056,
+        "label": "Barsac (Drôme)",
+        "region": "auvergne-rhone-alpes"
+      }
+    ],
+    "beaucaire": [
+      {
+        "lat": 43.7815,
+        "lon": 4.5912,
+        "label": "Beaucaire (Gard)",
+        "region": "occitanie"
+      }
+    ],
+    "beaulieu": [
+      {
+        "lat": 44.3575,
+        "lon": 4.2553,
+        "label": "Beaulieu (Ardèche)",
+        "region": "auvergne-rhone-alpes"
+      }
+    ],
+    "beaumont": [
+      {
+        "lat": 45.3121,
+        "lon": 3.3281,
+        "label": "Beaumont (Haute-Loire)",
+        "region": "auvergne-rhone-alpes"
+      }
+    ],
+    "beauvoisin": [
+      {
+        "lat": 44.3046,
+        "lon": 5.2151,
+        "label": "Beauvoisin (Drôme)",
+        "region": "auvergne-rhone-alpes"
+      }
+    ],
+    "change": [
+      {
+        "lat": 46.929,
+        "lon": 4.6296,
+        "label": "Change (Saône-et-Loire)",
+        "region": "bourgogne-franche-comte"
+      }
+    ],
+    "claret": [
+      {
+        "lat": 43.8554,
+        "lon": 3.8764,
+        "label": "Claret (Hérault)",
+        "region": "occitanie"
+      }
+    ],
+    "clesse": [
+      {
+        "lat": 46.7238,
+        "lon": -0.402,
+        "label": "Clessé (Deux-Sèvres)",
+        "region": "nouvelle-aquitaine"
+      },
+      {
+        "lat": 46.4188,
+        "lon": 4.8239,
+        "label": "Clessé (Saône-et-Loire)",
+        "region": "bourgogne-franche-comte"
+      }
+    ],
+    "colombier": [
+      {
+        "lat": 44.7866,
+        "lon": 0.5174,
+        "label": "Colombier (Dordogne)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "fronsac": [
+      {
+        "lat": 44.9213,
+        "lon": -0.2765,
+        "label": "Fronsac (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "gorges": [
+      {
+        "lat": 47.1032,
+        "lon": -1.3134,
+        "label": "Gorges (Loire-Atlantique)",
+        "region": "pays-de-la-loire"
+      }
+    ],
+    "grignols": [
+      {
+        "lat": 45.0827,
+        "lon": 0.5359,
+        "label": "Grignols (Dordogne)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "jussy": [
+      {
+        "lat": 47.7136,
+        "lon": 3.5715,
+        "label": "Jussy (Yonne)",
+        "region": "bourgogne-franche-comte"
+      }
+    ],
+    "la celle": [
+      {
+        "lat": 43.3843,
+        "lon": 6.0016,
+        "label": "La Celle (Var)",
+        "region": "provence-alpes-cote-dazur"
+      }
+    ],
+    "la garde": [
+      {
+        "lat": 43.129,
+        "lon": 6.0162,
+        "label": "La Garde (Var)",
+        "region": "provence-alpes-cote-dazur"
+      }
+    ],
+    "la riviere": [
+      {
+        "lat": 44.9385,
+        "lon": -0.318,
+        "label": "La Rivière (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "marcy": [
+      {
+        "lat": 45.9141,
+        "lon": 4.6755,
+        "label": "Marcy (Rhône)",
+        "region": "auvergne-rhone-alpes"
+      }
+    ],
+    "merignac": [
+      {
+        "lat": 44.8313,
+        "lon": -0.682,
+        "label": "Mérignac (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "monnieres": [
+      {
+        "lat": 47.1202,
+        "lon": -1.35,
+        "label": "Monnières (Loire-Atlantique)",
+        "region": "pays-de-la-loire"
+      }
+    ],
+    "monthelon": [
+      {
+        "lat": 46.9596,
+        "lon": 4.2224,
+        "label": "Monthelon (Saône-et-Loire)",
+        "region": "bourgogne-franche-comte"
+      }
+    ],
+    "montreal": [
+      {
+        "lat": 43.961,
+        "lon": 0.2097,
+        "label": "Montréal (Gers)",
+        "region": "occitanie"
+      }
+    ],
+    "moussy": [
+      {
+        "lat": 49.0151,
+        "lon": 3.9271,
+        "label": "Moussy (Marne)",
+        "region": "grand-est"
+      }
+    ],
+    "nolay": [
+      {
+        "lat": 46.9588,
+        "lon": 4.6193,
+        "label": "Nolay (Côte-d'Or)",
+        "region": "bourgogne-franche-comte"
+      }
+    ],
+    "parnac": [
+      {
+        "lat": 46.441,
+        "lon": 1.4607,
+        "label": "Parnac (Indre)",
+        "region": "centre-val-de-loire"
+      }
+    ],
+    "pougny": [
+      {
+        "lat": 47.3965,
+        "lon": 3.0251,
+        "label": "Pougny (Nièvre)",
+        "region": "bourgogne-franche-comte"
+      }
+    ],
+    "pouille": [
+      {
+        "lat": 47.3057,
+        "lon": 1.2811,
+        "label": "Pouillé (Loir-et-Cher)",
+        "region": "centre-val-de-loire"
+      }
+    ],
+    "rians": [
+      {
+        "lat": 43.6026,
+        "lon": 5.734,
+        "label": "Rians (Var)",
+        "region": "provence-alpes-cote-dazur"
+      }
+    ],
+    "roches": [
+      {
+        "lat": 46.2776,
+        "lon": 1.9896,
+        "label": "Roches (Creuse)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "rocles": [
+      {
+        "lat": 46.4418,
+        "lon": 3.0314,
+        "label": "Rocles (Allier)",
+        "region": "auvergne-rhone-alpes"
+      }
+    ],
+    "roussillon": [
+      {
+        "lat": 43.8959,
+        "lon": 5.2906,
+        "label": "Roussillon (Vaucluse)",
+        "region": "provence-alpes-cote-dazur"
+      }
+    ],
+    "saillans": [
+      {
+        "lat": 44.955,
+        "lon": -0.2709,
+        "label": "Saillans (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "saint astier": [
+      {
+        "lat": 45.1426,
+        "lon": 0.5146,
+        "label": "Saint-Astier (Dordogne)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "saint estephe": [
+      {
+        "lat": 45.2544,
+        "lon": -0.7759,
+        "label": "Saint-Estèphe (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "saint hippolyte": [
+      {
+        "lat": 44.8747,
+        "lon": -0.1207,
+        "label": "Saint-Hippolyte (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "saint maixant": [
+      {
+        "lat": 44.5815,
+        "lon": -0.2481,
+        "label": "Saint-Maixant (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "saint sauveur": [
+      {
+        "lat": 45.1433,
+        "lon": 5.3457,
+        "label": "Saint-Sauveur (Isère)",
+        "region": "auvergne-rhone-alpes"
+      },
+      {
+        "lat": 45.1964,
+        "lon": -0.8223,
+        "label": "Saint-Sauveur (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "saint vivien": [
+      {
+        "lat": 44.8936,
+        "lon": 0.1026,
+        "label": "Saint-Vivien (Dordogne)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "sainte croix": [
+      {
+        "lat": 43.97,
+        "lon": 2.0721,
+        "label": "Sainte-Croix (Tarn)",
+        "region": "occitanie"
+      }
+    ],
+    "sainte marie": [
+      {
+        "lat": -20.9463,
+        "lon": 55.5234,
+        "label": "Sainte-Marie (La Réunion)",
+        "region": "la-reunion"
+      }
+    ],
+    "sanilhac": [
+      {
+        "lat": 45.1079,
+        "lon": 0.7435,
+        "label": "Sanilhac (Dordogne)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "soudan": [
+      {
+        "lat": 47.7262,
+        "lon": -1.2871,
+        "label": "Soudan (Loire-Atlantique)",
+        "region": "pays-de-la-loire"
+      }
+    ],
+    "tauriac": [
+      {
+        "lat": 45.0524,
+        "lon": -0.5059,
+        "label": "Tauriac (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "vayres": [
+      {
+        "lat": 44.8908,
+        "lon": -0.326,
+        "label": "Vayres (Gironde)",
+        "region": "nouvelle-aquitaine"
+      }
+    ],
+    "verneuil": [
+      {
+        "lat": 49.1023,
+        "lon": 3.6684,
+        "label": "Verneuil (Marne)",
+        "region": "grand-est"
+      }
+    ],
+    "vix": [
+      {
+        "lat": 46.3528,
+        "lon": -0.8525,
+        "label": "Vix (Vendée)",
+        "region": "pays-de-la-loire"
+      }
+    ],
+    "œuilly": [
+      {
+        "lat": 49.0599,
+        "lon": 3.7936,
+        "label": "Œuilly (Marne)",
+        "region": "grand-est"
+      }
+    ]
+  },
+  "jp": {
+    "daisen": [
+      {
+        "lat": 35.51069,
+        "lon": 133.49606,
+        "label": "Daisen (大山町, Tottori)",
+        "region": "chugoku"
+      },
+      {
+        "lat": 39.45306,
+        "lon": 140.47544,
+        "label": "Daisen (大仙市, Akita)",
+        "region": "tohoku"
+      }
+    ],
+    "hokuto": [
+      {
+        "lat": 41.82411,
+        "lon": 140.65303,
+        "label": "Hokuto (Hokkaido)",
+        "region": "hokkaido"
+      },
+      {
+        "lat": 35.7765,
+        "lon": 138.4236,
+        "label": "Hokuto (Yamanashi)",
+        "region": "chubu"
+      }
+    ],
+    "ikeda": [
+      {
+        "lat": 42.929,
+        "lon": 143.44847,
+        "label": "Ikeda (Hokkaido)",
+        "region": "hokkaido"
+      },
+      {
+        "lat": 35.4423,
+        "lon": 136.573,
+        "label": "Ikeda (Gifu)",
+        "region": "chubu"
+      }
+    ],
+    "ikeda kitaazumi": [
+      {
+        "lat": 36.42079,
+        "lon": 137.88045,
+        "label": "Ikeda (Kitaazumi, Nagano)",
+        "region": "chubu"
+      }
+    ],
+    "kami": [
+      {
+        "lat": 35.63219,
+        "lon": 134.62914,
+        "label": "Kami (香美町, Hyogo)",
+        "region": "kansai"
+      },
+      {
+        "lat": 38.57175,
+        "lon": 140.85481,
+        "label": "Kami (加美町, Miyagi)",
+        "region": "tohoku"
+      }
+    ],
+    "kashima": [
+      {
+        "lat": 35.96564,
+        "lon": 140.64483,
+        "label": "Kashima (鹿嶋市)",
+        "region": "kanto"
+      },
+      {
+        "lat": 33.10383,
+        "lon": 130.09858,
+        "label": "Kashima (鹿島市)",
+        "region": "kyushu-okinawa"
+      }
+    ],
+    "katsuragi": [
+      {
+        "lat": 34.48922,
+        "lon": 135.72644,
+        "label": "Katsuragi (Nara)",
+        "region": "kansai"
+      },
+      {
+        "lat": 34.2965,
+        "lon": 135.5037,
+        "label": "Katsuragi (Wakayama)",
+        "region": "kansai"
+      }
+    ],
+    "kisomachi": [
+      {
+        "lat": 35.84192,
+        "lon": 137.69139,
+        "label": "Kisomachi (木曽町)",
+        "region": "chubu"
+      }
+    ],
+    "kisomura": [
+      {
+        "lat": 35.93631,
+        "lon": 137.78314,
+        "label": "Kisomura (木祖村)",
+        "region": "chubu"
+      }
+    ],
+    "kitaibaraki": [
+      {
+        "lat": 36.8019,
+        "lon": 140.751,
+        "label": "Kitaibaraki",
+        "region": "kanto"
+      }
+    ],
+    "kurume": [
+      {
+        "lat": 35.758,
+        "lon": 139.52986,
+        "label": "Higashikurume (東久留米市, Tokyo)",
+        "region": "kanto"
+      },
+      {
+        "lat": 33.31925,
+        "lon": 130.50833,
+        "label": "Kurume (久留米市, Fukuoka)",
+        "region": "kyushu-okinawa"
+      }
+    ],
+    "nakano": [
+      {
+        "lat": 35.70728,
+        "lon": 139.66375,
+        "label": "Nakano (Tokio)",
+        "region": "kanto"
+      },
+      {
+        "lat": 36.74222,
+        "lon": 138.36722,
+        "label": "Nakano (Nagano)",
+        "region": "chubu"
+      }
+    ],
+    "nichinan": [
+      {
+        "lat": 31.6019,
+        "lon": 131.3787,
+        "label": "Nichinan (Miyazaki)",
+        "region": "kyushu-okinawa"
+      },
+      {
+        "lat": 35.1632,
+        "lon": 133.3062,
+        "label": "Nichinan (Tottori)",
+        "region": "chugoku"
+      }
+    ],
+    "shiroishi": [
+      {
+        "lat": 33.18106,
+        "lon": 130.14344,
+        "label": "Shiroishi (白石町, Saga)",
+        "region": "kyushu-okinawa"
+      },
+      {
+        "lat": 38.00244,
+        "lon": 140.61989,
+        "label": "Shiroishi (白石市, Miyagi)",
+        "region": "tohoku"
+      }
+    ],
+    "tonosho": [
+      {
+        "lat": 35.83717,
+        "lon": 140.66869,
+        "label": "Tōnoshō-machi",
+        "region": "kanto"
+      },
+      {
+        "lat": 34.48693,
+        "lon": 134.18836,
+        "label": "Tonoshō-chō",
+        "region": "shikoku"
+      }
+    ],
+    "yuzawa": [
+      {
+        "lat": 39.16444,
+        "lon": 140.49583,
+        "label": "Yuzawa (湯沢市, Akita)",
+        "region": "tohoku"
+      },
+      {
+        "lat": 36.93408,
+        "lon": 138.81739,
+        "label": "Yuzawa (湯沢町, Niigata)",
+        "region": "chubu"
+      }
+    ]
+  },
+  "pt": {
+    "calheta": [
+      {
+        "lat": 38.6,
+        "lon": -28.01667,
+        "label": "Calheta (Açores)",
+        "region": "acores"
+      },
+      {
+        "lat": 32.73333,
+        "lon": -17.16667,
+        "label": "Calheta (Madeira)",
+        "region": "madeira"
+      }
+    ],
+    "lagoa": [
+      {
+        "lat": 37.13333,
+        "lon": -8.45,
+        "label": "Lagoa (Algarve)",
+        "region": "algarve"
+      },
+      {
+        "lat": 37.75,
+        "lon": -25.58333,
+        "label": "Lagoa (Açores)",
+        "region": "acores"
+      }
+    ],
+    "porto": [
+      {
+        "lat": 41.1579,
+        "lon": -8.6291,
+        "label": "Porto",
+        "region": "norte"
+      }
+    ]
+  }
 }

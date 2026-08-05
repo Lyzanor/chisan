@@ -14,7 +14,7 @@ What is true of `data/csv/it/**` only. The shared contract is `AGENTS.md` at the
 
 ## Geography
 - Centroids come from Wikidata's "comune of Italy" minus anything with a dissolution date — the 2010s fusioni left hundreds of suppressed comuni behind. Labels are loaded in it and de, so the bilingual South Tyrolean names (Bressanone / Brixen) both resolve. Every row resolves, so the geographic gate is on and a green run means checked.
-- Four names collide across countries and are resolved by region in `data/reference/municipality-overrides.json`: `rio` and `cantagallo`, where the comune lost the key to a Spanish municipio, and `tollo` and `santa marina`, where the comune won it from a Spanish pedanía whose row had never been checked at all.
+- No comune name needs disambiguating: the centroid lookup is scoped per country, so `rio`, `cantagallo`, `tollo` and `santa marina` — which used to fight Spanish municipios for one key — resolve on their own, and Italy has no entry left in `data/reference/municipality-overrides.json`.
 
 ## Sources
 - No authoritative roster established yet.

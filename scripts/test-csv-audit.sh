@@ -2,8 +2,15 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "$TMP_DIR"' EXIT
+TMP_ROOT="$(mktemp -d)"
+trap 'rm -rf "$TMP_ROOT"' EXIT
+
+# The audit scopes the centroid lookup to the country and region it reads off
+# the path, so a fixture has to sit where a real area CSV sits or it gets no
+# geography check at all. Abrera, the municipio these fixtures use, is Catalan.
+TMP_DIR="$TMP_ROOT/data/csv/es/catalunya"
+JP_DIR="$TMP_ROOT/data/csv/jp/kanto"
+mkdir -p "$TMP_DIR" "$JP_DIR"
 
 run_expect_failure() {
   local output_file="$1"
@@ -425,5 +432,27 @@ fi
 grep -q "suppressed (absent optional fields; empty is a valid value)" "$TMP_DIR/out-verificado-suppression.txt"
 # Correctness warnings still fire on verificado rows.
 grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-suppression.txt"
+
+# One municipio name, two countries: `chiba` is Chiba in Kantō and an alt label
+# of Chiva in Valencia, 10.751 km apart. Each row is measured against its own
+# country's catalog, so both pass without anyone curating the collision.
+cat >"$JP_DIR/scoped-jp.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+kura-chiba,Kura Chiba,Chiba,Sake,Sake,1-1 Chuo,Bodega de sake con datos propios en la ciudad,,,,https://example.com,,,,35.60728,140.10636,,pendiente,no comprobado,
+CSV
+cat >"$TMP_DIR/scoped-es.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+celler-chiva,Celler de Chiva,Chiva,Vino,Vino,Carrer Major 1,Bodega con datos propios en el municipio,,,,https://example.com,,,,39.47138,-0.71971,,pendiente,no comprobado,
+CSV
+run_expect_success "$TMP_DIR/out-scoped-jp.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$JP_DIR/scoped-jp.csv"
+run_expect_success "$TMP_DIR/out-scoped-es.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/scoped-es.csv"
+for scoped in jp es; do
+  if grep -q "geo-check skipped (municipio not in data/reference/municipalities.json): [1-9]" "$TMP_DIR/out-scoped-$scoped.txt"; then
+    echo "Error: scoped lookup should resolve Chiba/Chiva in its own country" >&2
+    exit 1
+  fi
+done
 
 echo "CSV audit tests OK."

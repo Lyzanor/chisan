@@ -349,18 +349,21 @@ async function loadCentroids() {
   return { main, overrides };
 }
 
-// `data/csv/<country>/<region>/<area>.csv`: the centroid overrides are keyed
-// by community, so the hint is the second segment, not the first.
-function inferRegionSlug(csvPath) {
+// `data/csv/<country>/<region>/<area>.csv`. Both centroid files are keyed by
+// country first, because a municipio name only means one thing inside one
+// country: `Chiba` is a Japanese city and `Chiva` a Valencian one, and they
+// normalize to the same key. Inside a country the overrides disambiguate
+// homonyms by region, so both segments are the scope of a lookup.
+function inferScope(csvPath) {
   const normalized = String(csvPath ?? "").replace(/\\/g, "/");
-  const match = /(?:^|\/)data\/csv\/[^/]+\/([^/]+)\//.exec(normalized);
-  return match ? match[1] : null;
+  const match = /(?:^|\/)data\/csv\/([^/]+)\/([^/]+)\//.exec(normalized);
+  return match ? { country: match[1], region: match[2] } : { country: null, region: null };
 }
 
-function pickCandidate(entry, regionHint) {
+function pickCandidate(entry, scope) {
   if (Array.isArray(entry)) {
-    if (!regionHint) return null;
-    return entry.find((c) => c.region === regionHint) ?? null;
+    if (!scope.region) return null;
+    return entry.find((c) => c.region === scope.region) ?? null;
   }
   return entry;
 }
@@ -386,17 +389,20 @@ function municipioCandidates(municipio) {
   return candidates;
 }
 
-function lookupCentroid(centroids, municipio, regionHint) {
-  if (!centroids || !municipio) return null;
+function lookupCentroid(centroids, municipio, scope) {
+  if (!centroids || !municipio || !scope.country) return null;
+  const main = centroids.main[scope.country];
+  const overrides = centroids.overrides[scope.country] ?? {};
+  if (!main) return null;
   const keys = municipioCandidates(municipio).map(normalizeSearch);
   // An override is the curated answer for a name already known to be
   // ambiguous, so it decides on its own — including deciding to say nothing
   // when no community matches. Letting a stray `main` entry outvote it would
   // undo the disambiguation it exists for.
   for (const key of keys) {
-    if (centroids.overrides[key]) return pickCandidate(centroids.overrides[key], regionHint);
+    if (overrides[key]) return pickCandidate(overrides[key], scope);
   }
-  const resolved = keys.map((key) => centroids.main[key]).filter(Boolean);
+  const resolved = keys.map((key) => main[key]).filter(Boolean);
   if (!resolved.length) return null;
 
   // Several halves resolve. A bilingual pair names one town — `Ujué / Uxue`
@@ -414,9 +420,16 @@ function lookupCentroid(centroids, municipio, regionHint) {
   return disagrees ? null : first;
 }
 
-function flattenCentroids(centroids) {
-  if (!centroids) return [];
-  if (centroids._flat) return centroids._flat;
+// The nearest centroid is a hint for the editor, so it stays inside the row's
+// own country: "closest centroid is Alix (1.6 km)" helps, a town two countries
+// away does not.
+function flattenCentroids(centroids, country) {
+  if (!centroids || !country) return [];
+  if (!centroids._flat) {
+    Object.defineProperty(centroids, "_flat", { value: new Map(), enumerable: false });
+  }
+  const cached = centroids._flat.get(country);
+  if (cached) return cached;
   const flat = [];
   const collect = (entry) => {
     if (!entry) return;
@@ -428,18 +441,18 @@ function flattenCentroids(centroids) {
       flat.push(entry);
     }
   };
-  for (const value of Object.values(centroids.main || {})) collect(value);
-  for (const value of Object.values(centroids.overrides || {})) collect(value);
-  Object.defineProperty(centroids, "_flat", { value: flat, enumerable: false });
+  for (const value of Object.values(centroids.main?.[country] || {})) collect(value);
+  for (const value of Object.values(centroids.overrides?.[country] || {})) collect(value);
+  centroids._flat.set(country, flat);
   return flat;
 }
 
 // Closest municipio centroid to a coordinate. Used to turn a "far from the
 // declared municipio" warning into an actionable "this pin actually sits in X".
-function findNearestCentroid(centroids, lat, lon) {
+function findNearestCentroid(centroids, country, lat, lon) {
   let best = null;
   let bestKm = Infinity;
-  for (const candidate of flattenCentroids(centroids)) {
+  for (const candidate of flattenCentroids(centroids, country)) {
     const km = haversineKm(lat, lon, candidate.lat, candidate.lon);
     if (km < bestKm) {
       bestKm = km;
@@ -452,8 +465,8 @@ function findNearestCentroid(centroids, lat, lon) {
 // Shared message for the "coords far from the declared municipio" checks. Adds
 // the closest municipio centroid when it differs, so an editor can tell which
 // field (municipio or lat/lon) is wrong.
-function describeCentroidGap(centroids, lat, lon, declared, distance, limitKm) {
-  const nearest = findNearestCentroid(centroids, lat, lon);
+function describeCentroidGap(centroids, scope, lat, lon, declared, distance, limitKm) {
+  const nearest = findNearestCentroid(centroids, scope.country, lat, lon);
   const nearestNote =
     nearest && normalizeSearch(nearest.centroid.label) !== normalizeSearch(declared.label)
       ? `; closest centroid is ${nearest.centroid.label} (${nearest.distance.toFixed(1)} km) — check whether municipio or lat/lon is wrong`
@@ -540,7 +553,7 @@ function createIssueCollector() {
   return { issues, push };
 }
 
-function runContractAudit({ raw, headers, rows, push, centroids, regionHint, stats }) {
+function runContractAudit({ raw, headers, rows, push, centroids, scope, stats }) {
   const slugLines = new Map();
 
   // The canonical-header comparison below is positional, so it already covers a
@@ -633,7 +646,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, regionHint, sta
     // Coordinates so far from the declared municipio that they belong to a
     // different town: almost always a swapped/wrong lat/lon or a wrong municipio.
     if (centroids && latRaw && lonRaw && !Number.isNaN(lat) && !Number.isNaN(lon)) {
-      const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), regionHint);
+      const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), scope);
       if (!centroid) {
         // No centroid for this municipio (pedanía, or a spelling the lookup does
         // not carry): the row silently escapes every geography check, so count it
@@ -647,7 +660,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, regionHint, sta
             line,
             id,
             slug,
-            describeCentroidGap(centroids, lat, lon, centroid, distance, CENTROID_BLOCKING_DISTANCE_KM),
+            describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_BLOCKING_DISTANCE_KM),
           );
         }
       }
@@ -798,7 +811,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, regionHint, sta
   }
 }
 
-function runQualityAudit({ rows, push, centroids, regionHint }) {
+function runQualityAudit({ rows, push, centroids, scope }) {
   const nameCityLines = new Map();
   const categoryVariants = new Map();
   // The same normalized descripcion on several rows is almost always template
@@ -902,7 +915,7 @@ function runQualityAudit({ rows, push, centroids, regionHint }) {
         push(optionalGap, line, id, slug, "coordinates are present but direccion is not useful for location review");
       }
 
-      const centroid = lookupCentroid(centroids, city, regionHint);
+      const centroid = lookupCentroid(centroids, city, scope);
       if (centroid) {
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
         // Beyond the blocking distance the contract audit raises an error, so
@@ -916,7 +929,7 @@ function runQualityAudit({ rows, push, centroids, regionHint }) {
             line,
             id,
             slug,
-            describeCentroidGap(centroids, lat, lon, centroid, distance, CENTROID_MAX_DISTANCE_KM),
+            describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_MAX_DISTANCE_KM),
           );
         }
       }
@@ -1047,13 +1060,13 @@ async function main() {
   const { issues, push } = createIssueCollector();
 
   const centroids = await loadCentroids();
-  const regionHint = inferRegionSlug(csvPath);
+  const scope = inferScope(csvPath);
   const stats = { geoSkipped: 0 };
 
-  runContractAudit({ raw, headers, rows, push, centroids, regionHint, stats });
+  runContractAudit({ raw, headers, rows, push, centroids, scope, stats });
 
   if (mode === "quality") {
-    runQualityAudit({ headers, rows, push, centroids, regionHint });
+    runQualityAudit({ headers, rows, push, centroids, scope });
   }
 
   printReport(mode, issues, { summaryOnly, stats });

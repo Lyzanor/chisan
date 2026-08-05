@@ -44,7 +44,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Detail URLs use `/p/[slug]` and always carry `area`, because slugs are unique within an area and not globally.
 - `verificacion` is required and must be `pendiente`, `parcial`, or `verificado`.
 - `Venta online` is required and must be `sí`, `no`, or `no comprobado`; use `no comprobado` until reviewed. `Canal de venta` is optional, meaningful only when `Venta online=sí`, and follows `docs/CSV_CONTRACT.md`.
-- `lat`/`lon` more than 100 km from the `municipio` centroid is blocking; 15-100 km is a warning. For homonyms, fix `data/reference/municipality-overrides.json`, not correct producer coordinates — its keys are region slugs, unique inside a country but not across countries.
+- `lat`/`lon` more than 100 km from the `municipio` centroid is blocking; 15-100 km is a warning. Both centroid files are keyed by country first, so a `municipio` is only ever matched inside its own country and a name shared with another one cannot collide. For homonyms inside a country, fix `data/reference/municipality-overrides.json`, not correct producer coordinates — its second level is region slugs, which are unique inside a country.
 - A `municipio` with no centroid has no geographic gate at all: the audit skips the row and counts it as skipped instead of failing. Read the skipped count before reading a green run as "checked".
 - Evidence is optional and advisory, but preferred at decision time for adds, re-verifications, resolved online sales, purges, and merges.
 - Producer images live under `public/productores/[country]/[region]/[area]/`; follow `docs/IMAGES.md` — inspect candidates first and apply `enrich:images` per slug.

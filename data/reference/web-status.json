@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-05",
   "nota": "Snapshot de resolución de la columna `web`. Afirmación dinámica: caduca. Clasifica, no decide — un 403 no es un sitio muerto y un 200 no prueba que la web sea del productor. Regenerar con `pnpm check:links --all`.",
   "urls": {
     "http://0x100gluten.com/ca/0gluten": {
@@ -476,6 +476,24 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://champagne-frederic-coppeaux.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://chateau-pasdelane.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://clairette-de-die-truchefaud.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://clarisasavila.org/": {
       "tag": "ok",
       "level": "ok",
@@ -536,6 +554,30 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://domaine-habsiger.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://domainederabelais.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://domainedubane.com/fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://domaineduloou.com/": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
+    },
     "http://donflorentino.com/": {
       "tag": "ok",
       "level": "ok",
@@ -577,6 +619,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://elevagedesroussets.eklablog.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://elpucheroriojano.es/": {
       "tag": "ok",
@@ -638,6 +686,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://emmanuel.dampt.pagesperso-orange.fr/": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
+    },
     "http://envinate.es": {
       "tag": "ok",
       "level": "ok",
@@ -655,6 +709,30 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://ferme-departementale-vindecahors.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://fermecaussanel.com/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "http://fermedelaplatane.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://fermeduvinage.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://fincaecojusto.com/": {
       "tag": "ok",
@@ -823,6 +901,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://la-gazette-de-la-dame-blanche.eklablog.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://labejalbercana.com/": {
       "tag": "ok",
@@ -1004,6 +1088,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://muscadetchon.com/": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.gilbertchon.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
     "http://nanike.es/": {
       "tag": "http-500",
       "level": "incertidumbre",
@@ -1093,6 +1183,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://pomevasion.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://porkyavila.com/": {
       "tag": "ok",
@@ -1297,6 +1393,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://tnla-2014-achacunsafacette.blogspot.fr/": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ tnla-2014-achacunsafacette.blogspot.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
     },
     "http://tofaroques.blogspot.com": {
       "tag": "ok",
@@ -1813,6 +1915,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.armanddavid.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.aromasdemedina.com/": {
       "tag": "ok",
@@ -2792,6 +2900,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.boismoze.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.boletspetras.com/": {
       "tag": "ok",
       "level": "ok",
@@ -3554,6 +3668,42 @@
       "detail": "HTTP 404",
       "checkedAt": "2026-07-28"
     },
+    "http://www.champagne-chatelain.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.chateau-de-la-riviere.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.chateaubalsamine.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.chateauboisvert.com/notre-histoire/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.chateauhennebelle.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.chateaulebrezeguet.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.chocolateriaaliva.com/": {
       "tag": "ok",
       "level": "ok",
@@ -3601,6 +3751,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.clementine-jmp.com/jmp-clementine/nostalgie.php": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.cnature.es": {
       "tag": "ok",
@@ -3848,6 +4004,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.cyrille-mandon.fr/page/23/la-boutique.html": {
+      "tag": "http-503",
+      "level": "incertidumbre",
+      "detail": "HTTP 503",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.daromas.es": {
       "tag": "ok",
       "level": "ok",
@@ -3908,6 +4070,66 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.domaine-bazin.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domaine-de-saint-maur.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domaine-des-amandiers.com/": {
+      "tag": "http-500",
+      "level": "incertidumbre",
+      "detail": "HTTP 500",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domaine-des-bernardins.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domaine-la-gayolle.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domaine-saint-pierre.com/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domainedelagarde.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domainedemihoudy.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domainedupoyet.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.domainesvincentmoreau.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.dominiodenobleza.com": {
       "tag": "ok",
       "level": "ok",
@@ -3931,6 +4153,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.earlboucher.com/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
     },
     "http://www.ecoeduco.es/": {
       "tag": "ok",
@@ -4268,6 +4496,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.ericploquin.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.espadafor.es": {
       "tag": "ok",
       "level": "ok",
@@ -4339,6 +4573,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.ferme-decouverte.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.ferretguasch.com/": {
       "tag": "ok",
@@ -4520,6 +4760,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.fraises-asperges.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.francoespanolas.com": {
       "tag": "ok",
       "level": "ok",
@@ -4555,6 +4801,12 @@
       "level": "incertidumbre",
       "detail": "HTTP 500",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.gaechallayetfils.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.ganaderosdecaprino.com/": {
       "tag": "ok",
@@ -5234,6 +5486,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.lagourmandisedupoitou.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.lagraciadedios.es": {
       "tag": "ok",
       "level": "ok",
@@ -5275,6 +5533,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.lamoinerie.com/": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
     },
     "http://www.lamontnegre.cat/": {
       "tag": "sin-registro-a",
@@ -5461,6 +5725,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.lemoulindelatouche.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.les-avinturiers.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.lesherbesdecanriera.com": {
       "tag": "nxdomain",
@@ -5972,6 +6248,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.moulindechauvigne.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.moyseafood.com/": {
       "tag": "ok",
       "level": "ok",
@@ -6127,6 +6409,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.oullieres.fr/fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.ousdachs.com": {
       "tag": "ok",
@@ -6397,6 +6685,12 @@
       "level": "señal",
       "detail": "dominio delegado, pero el host no tiene registro A",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.pey-labrie.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.picosyeye.com/": {
       "tag": "ok",
@@ -7538,11 +7832,29 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "http://www.vignerons-perigourdins.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "http://www.vignobles-gazziola.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "http://www.villarrica.es": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.vin-rochette-leclair.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "http://www.vinaberneda.com": {
       "tag": "ok",
@@ -7627,6 +7939,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "http://www.vinsfinslebrin.com/": {
+      "tag": "portada-proveedor",
+      "level": "señal",
+      "detail": "patrón «index of /»",
+      "checkedAt": "2026-08-05"
     },
     "http://www.virgendelbrezo.es/": {
       "tag": "ok",
@@ -9674,6 +9992,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://arce-22.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://arehucas.es/": {
       "tag": "ok",
       "level": "ok",
@@ -9973,6 +10297,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://auxlainesdetiyos.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
     },
     "https://ava-vi.es": {
       "tag": "ok",
@@ -12218,6 +12548,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://bollenberg.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://bombondehigo.com/": {
       "tag": "ok",
       "level": "ok",
@@ -12913,6 +13249,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://campus-agro62.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://can-bas.com": {
       "tag": "ok",
@@ -14612,6 +14954,48 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://chalmeau-chitry.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://champagne-bruno-berjot.fr": {
+      "tag": "http-403",
+      "level": "incertidumbre",
+      "detail": "HTTP 403 (¿bloqueo anti-bot?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://champagne-celce-legrain.business.site/": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
+    "https://champagne-dom-bacchus.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://champagne-jacques-copin.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://champagne-leredde-pierre.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://champerche.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://champinter.com/": {
       "tag": "ok",
       "level": "ok",
@@ -14629,6 +15013,72 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://chateau-pichon-bellevue.com/accueil/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateau-vaugaudry.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateaubalac.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateauchardonnay.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateaudefontes.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateaudefourques.com": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateaudelandure.fr": {
+      "tag": "http-500",
+      "level": "incertidumbre",
+      "detail": "HTTP 500",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateaudesifs.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateaulestribeau.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateausoubirou.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://chateauzayawinery.com": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.vignoblesyounan.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
     },
     "https://chatoganan.es/": {
       "tag": "ok",
@@ -14648,11 +15098,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://chezmorille.fr/nos-canards-gras/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://chicharronesdesevilla.blogspot.com/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://chinoncolombier.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://chipsbyraquel.com/": {
       "tag": "ok",
@@ -14840,11 +15302,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://closduroi.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://closmontblanc.com": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://closstjean.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://clotdelessoleres.com": {
       "tag": "ok",
@@ -16046,6 +16520,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://damienbruneau.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
     "https://danes1944.cat": {
       "tag": "ok",
       "level": "ok",
@@ -16526,11 +17006,131 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://domaine-dames-de-lune.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaine-des-hauts-perrays.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaine-des-vaux-marquis.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaine-gardot.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaine-jacquet.fr": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaine-montdhortes.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://domaine-raison.com/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-08-04"
+    },
+    "https://domaine-rapet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaineclementg.sitew.com": {
+      "tag": "http-410",
+      "level": "señal",
+      "detail": "HTTP 410",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedebonserine.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedelaunay.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedelechelette.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedepaguignan.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedesbleuces.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedescassagnoles.com": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ domaine-des-cassagnoles.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedubonrepos.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainedupuyrigault.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainegiacometti.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domaineguinand.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainelenovi.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://domainepratavone.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://dominiobasconcillos.com/": {
       "tag": "ok",
@@ -17960,6 +18560,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://epleanevers.educagri.fr/nos-centres/le-pre-des-athenees-exploitation-de-challuy": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://erdikoetxe.com/nuestros-productos/": {
       "tag": "ok",
       "level": "ok",
@@ -18494,6 +19100,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://famillebonnin.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://familybiscuits.com/": {
       "tag": "ok",
       "level": "ok",
@@ -18535,6 +19147,36 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://ferme-saint-ulrich.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://ferme-vogt.com": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.ferme-vogt.fr (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://fermedelarcher.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://fermedelasagnole.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://fermedollinger.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
     },
     "https://ferment9.com/": {
       "tag": "ok",
@@ -19262,6 +19904,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://fromages-claria.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://frontondeoro.com/": {
       "tag": "ok",
       "level": "ok",
@@ -19843,6 +20491,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://gite-en-vercors.com/la_ferme.php": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
     },
     "https://gluki.cat/ca/": {
       "tag": "ok",
@@ -20516,6 +21170,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://hery-vigneron.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://hida.es/": {
       "tag": "ok",
       "level": "ok",
@@ -20749,6 +21409,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://hortilan.com": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
     },
     "https://hortsdelalegria.com": {
       "tag": "http-404",
@@ -21127,6 +21793,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://invindia.fr/domaine/chateau-touzinat/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://iparragirresagardotegia.eus/": {
       "tag": "ok",
@@ -21818,6 +22490,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-08-04"
     },
+    "https://la-ferme-joel-lolita.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://la-pastora.com/": {
       "tag": "ok",
       "level": "ok",
@@ -21829,6 +22507,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://la-vieille-cure.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://laabejagregaria.com/": {
       "tag": "ok",
@@ -22375,6 +23059,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://lafermedelaportedaspe.wordpress.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://lafermedepuycheny.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://lafibiolivos.com/": {
       "tag": "ok",
@@ -23018,6 +23714,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://lastationfermiere.fr/gaec-joly/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://lastressierras.com/": {
       "tag": "ok",
       "level": "ok",
@@ -23198,6 +23900,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://leguellec-ducouet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://legumbresbaena.com/es/": {
       "tag": "ok",
       "level": "ok",
@@ -23270,6 +23978,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://les-vergers-des-tilleuls.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://lesacacies.com": {
       "tag": "ok",
       "level": "ok",
@@ -23287,6 +24001,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://lesprairiesgourmandesdumorvan.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://lesterrassesdadrien.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://levasa.com": {
       "tag": "ok",
@@ -23455,6 +24181,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://locavor.fr/presentation/4585-gaec-baguet": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://lomayvega.com/": {
       "tag": "ok",
@@ -24080,6 +24812,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://masdefarjou.free.fr": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
     "https://masdelabundancia.com/": {
       "tag": "ok",
       "level": "ok",
@@ -24115,6 +24853,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://masdesinfermieres.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://masdoix.com/": {
       "tag": "ok",
@@ -24235,6 +24979,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://masson-producteurs.jimdofree.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://matanzaartesana.com/": {
       "tag": "ok",
@@ -25118,6 +25868,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://mlledevichi.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://mocaibo.com/": {
       "tag": "ok",
       "level": "ok",
@@ -25472,6 +26228,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://moutte-blanc.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://movialsa.es/": {
       "tag": "ok",
       "level": "ok",
@@ -25687,6 +26449,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://nature-et-saveurs.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://naturokela.com/": {
       "tag": "ok",
@@ -27890,6 +28658,12 @@
       "detail": "dominio delegado, pero el host no tiene registro A",
       "checkedAt": "2026-07-28"
     },
+    "https://pepinieres-contarin.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://pequenareposteria.es/": {
       "tag": "ok",
       "level": "ok",
@@ -28184,6 +28958,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://plants-maraichers-yzosse-40.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://pobillecologics.com": {
       "tag": "ok",
       "level": "ok",
@@ -28285,6 +29065,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://preignesleneuf.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://premium-organics.com/": {
       "tag": "ok",
@@ -29918,6 +30704,12 @@
       "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
       "checkedAt": "2026-07-28"
     },
+    "https://rocherdesfees.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://rodanoble.com/": {
       "tag": "ok",
       "level": "ok",
@@ -30115,6 +30907,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://saint-nectaire-fermier.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://sake-goshin.com/": {
       "tag": "ok",
@@ -31232,6 +32030,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://surminette.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://sweetdreamspastisseria.com/": {
       "tag": "ok",
       "level": "ok",
@@ -31484,11 +32288,23 @@
       "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
       "checkedAt": "2026-07-28"
     },
+    "https://terre-du-roure.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://terrer.net/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://terresdesainthilaire.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://territoriospecanas.es/": {
       "tag": "ok",
@@ -32714,6 +33530,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://vergersdegriffarin.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://vergersdesmoncels.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://veritaspanis.es/": {
       "tag": "ok",
       "level": "ok",
@@ -32839,6 +33667,36 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://vignoble-anneau.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://vignoblenaulin.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://vignoblesduparadis.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://vignoblespaeffgen.org": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://vignoblesromain.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://vilacorona.cat/": {
       "tag": "ok",
@@ -33097,6 +33955,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://vins-prieur.com": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
     },
     "https://vinscancoleto.com": {
       "tag": "ok",
@@ -33980,6 +34844,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.agerria.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.aginapiperrak.com/": {
       "tag": "ok",
       "level": "ok",
@@ -34021,6 +34891,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.agrocampus47.fr": {
+      "tag": "conexion",
+      "level": "incertidumbre",
+      "detail": "ECONNRESET",
+      "checkedAt": "2026-08-05"
     },
     "https://www.agroecosamora.com": {
       "tag": "ok",
@@ -34172,6 +35048,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.alban-roblin-sancerre.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.chateau-la-rabotine.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.albaxarcuteries.cat/": {
       "tag": "ok",
       "level": "ok",
@@ -34267,6 +35149,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.alloucheryperseval.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.almaruralbodega.com/": {
       "tag": "ok",
@@ -34381,6 +35269,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.alpaga-lama.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "UNABLE_TO_VERIFY_LEAF_SIGNATURE",
+      "checkedAt": "2026-08-05"
     },
     "https://www.alsinasarda.com": {
       "tag": "http-500",
@@ -34544,6 +35438,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.angelliaume.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.angelortizgarcia.com/": {
       "tag": "ok",
       "level": "ok",
@@ -34651,6 +35551,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.api-goudouneix.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.apianatura.com/": {
       "tag": "ok",
@@ -34789,6 +35695,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.armagnacsaintmartin.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.aroawines.com": {
       "tag": "ok",
@@ -35000,6 +35912,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.atlantis-alpagas.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.atroca.eu": {
       "tag": "ok",
       "level": "ok",
@@ -35012,11 +35930,29 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.aubrac-des-fleursblanches.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.aumerade.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.auroradelcamp.com/cat/top/home/": {
       "tag": "tls",
       "level": "incertidumbre",
       "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.auzias.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.avantayora.com/": {
       "tag": "http-503",
@@ -35192,6 +36128,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.barene.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.barkaiztegi.com/": {
       "tag": "ok",
       "level": "ok",
@@ -35282,6 +36224,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.beaujolias-combemorguiere.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.becdor.cat/": {
       "tag": "nxdomain",
       "level": "señal",
@@ -35359,6 +36307,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.bertaud-belieu.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.bertus.cat": {
       "tag": "ok",
@@ -35468,6 +36422,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.bisons-auvergne.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.bizcochosnoel.com/": {
       "tag": "ok",
       "level": "ok",
@@ -35515,6 +36475,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.blanchetgilles.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.bmaro.com/": {
       "tag": "ok",
@@ -37076,6 +38042,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.bourgogne-vigne-verre.com/fr/6-domaine-e-cornu-et-fils": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.bouzadorei.com/": {
       "tag": "ok",
       "level": "ok",
@@ -38348,6 +39320,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.cassagnole.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.castanoble.com/": {
       "tag": "ok",
       "level": "ok",
@@ -38467,6 +39445,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.cave-la-paroisse.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.cavefraiseau-leclerc.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.caves-catroux.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.caviaroli.com": {
       "tag": "ok",
@@ -38966,6 +39962,180 @@
       "detail": "patrón «coming soon»",
       "checkedAt": "2026-07-28"
     },
+    "https://www.chablis-beaufume.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champ-nathalieassailly.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-barnaut-bouzy.com/": {
+      "tag": "http-403",
+      "level": "incertidumbre",
+      "detail": "HTTP 403 (¿bloqueo anti-bot?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-bouchard.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-curfs-ralite.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-dethune.com": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-forget-chemin.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-fredestel.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-gimonnet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-gratiot-pilliere.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-gratiot.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-grumier.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-guyremi.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-lhuillier.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-navarre.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-sanchez-collard.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-serge-gallois.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-sonnette.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-viot.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagne-yves-couvreur.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnecuchet-cez.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnedegenne.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnedominiquecousin.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagneelodied.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnejcmignon.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnejeanmichel.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.champagnejeanmichel.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnemichelchanoir.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnesergerafflin.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.champagnesourdet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.champivil.com/": {
       "tag": "ok",
       "level": "ok",
@@ -38977,6 +40147,192 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.charolais-riotte.schrapfer.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-darricaud.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-de-bregancon.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-du-rooy.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-fortia.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-la-rayre.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ chateau-la-rayre.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-lassegue.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-nodoz.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-saint-hilaire.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-salles-buzet.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-thenac.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-trianon.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateau-vaudois.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaubarbebelle.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateauclare.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudebrize.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudecalassou.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudecallac.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudelagaliniere.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudepanigon.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudequincay.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaudetigne.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateauducarruge.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaufontalba.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateauguipiere.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaulabertrande.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaulaforet-bergerac.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaulagracefonrazade.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaumontredon.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chateaupeyrelongue.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.chevrerielatrufiere.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.chevrerielatrufiere.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
     },
     "https://www.chitose-winery.jp/": {
       "tag": "timeout",
@@ -39068,6 +40424,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.chopniereduroy.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.choryo.jp/": {
       "tag": "ok",
       "level": "ok",
@@ -39116,6 +40478,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.claudenouveau.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.clavelin.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.clickandbrew.com/": {
       "tag": "ok",
       "level": "ok",
@@ -39127,6 +40501,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.clos-saint-maur.com": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.clos-st-marc.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.closberenguer.com/": {
       "tag": "ok",
@@ -39176,6 +40562,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.clospoggiale.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.closvieuxbourg.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.clubcampos.com/": {
       "tag": "ok",
       "level": "ok",
@@ -39218,11 +40616,23 @@
       "detail": "UNABLE_TO_VERIFY_LEAF_SIGNATURE",
       "checkedAt": "2026-07-28"
     },
+    "https://www.coeur-de-fermier.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.coffee-center.es": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.cognac-pineau-pelletant.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.colet.es": {
       "tag": "tls",
@@ -39283,6 +40693,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.comptoir-paulinois.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.conatvs.com": {
       "tag": "ok",
@@ -40130,6 +41546,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.delaille.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.delaterreaumiel.fr": {
+      "tag": "http-503",
+      "level": "incertidumbre",
+      "detail": "HTTP 503",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.delavera.com": {
       "tag": "ok",
       "level": "ok",
@@ -40225,6 +41653,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.denis-digel.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.descalzosviejos.com": {
       "tag": "ok",
@@ -40322,11 +41756,551 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.domaine-allemand.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-aufranc.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-auge.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-belemnites.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-besancenot.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-carroy.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-cedrick-bardin.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-charles.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-chataigniere.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-de-la-traille.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-de-tresbaudon.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-des-vieux-pruniers.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-doreau.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-du-bourgeois.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-du-cheval-blanc.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-echardieres.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-eyguestre.com": {
+      "tag": "dns",
+      "level": "incertidumbre",
+      "detail": "DNS no resuelve (ENOTFOUND)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-frederic-lambert.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_SSL/TLS_ALERT_HANDSHAKE_FAILURE",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-fribourg.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-gerfaudrie.fr/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-guilhon-daze.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-laborie.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-laurens.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-leblanc.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-nicolas.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-nudant.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-pecheur.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ domainepecheur.fr (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-penet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-roche-archambault.fr/": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-sergent.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-toussaint.com/": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-villargeau.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine-villemaine.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine.de.cardon.fr": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaine.pastou.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaineasseray.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaineberoujon.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainebillonchristophe.com": {
+      "tag": "http-403",
+      "level": "incertidumbre",
+      "detail": "HTTP 403 (¿bloqueo anti-bot?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainebrintet.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainebrunely.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainebrusset.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainecalmet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainechene.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainechevalierbernard.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainecheysson.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainecollotte.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedaridan.com": {
+      "tag": "parking",
+      "level": "señal",
+      "detail": "patrón «dan.com»",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedebellefeuille.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedebise.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedechampfleury.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedechantemerle.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.domainedechantemerle.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedefiervaux.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedegingeau.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedelajacqueliniere.net": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedelanguetouche.fr/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedelarochelierre.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedeloye.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedelunes.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedesnugues.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedesraynieres.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedesrochettes.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedessens-dabin.com/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedetara.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedetartifume.fr/": {
+      "tag": "conexion",
+      "level": "incertidumbre",
+      "detail": "ECONNRESET",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaineduboisjoly.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedubonremede.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaineduchampchapron.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedugrandjaure.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedumas.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedumoulie.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainedupetitval.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaineduvayssaire-aubrac.com": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.gite-laguiole-aubrac-levayssaire.fr (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainefrancoislegros.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainegaltier.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainegillon.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domaineguillemotmichel.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainehersarddufondis.fr": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainejulline.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainelagemiere.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "CERT_HAS_EXPIRED",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainelamirande.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainelatourbeaumont.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainelecapitaine.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainelepeage.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainemarini.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainenais.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainepetiteroche.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainesaintephilomene.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainesaintpaul.com": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.famillejeune.fr (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.domainesaintsavournin.com/": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.domaineslupier.com": {
       "tag": "tls",
       "level": "incertidumbre",
       "detail": "CERT_HAS_EXPIRED",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.domainevecchio.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.dombardo.com/": {
       "tag": "ok",
@@ -40615,6 +42589,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.earl-varenas.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.ecampos.es": {
       "tag": "ok",
@@ -41480,6 +43460,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.ericmeslet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.ericpolivigneron.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.erleak.es/": {
       "tag": "ok",
       "level": "ok",
@@ -41515,6 +43507,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.escarelle.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.escojoartesanos.es/": {
       "tag": "ok",
@@ -41708,6 +43706,12 @@
       "detail": "HTTP 503",
       "checkedAt": "2026-07-28"
     },
+    "https://www.fabiencastaing.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.fabricaembutidos.es/": {
       "tag": "ok",
       "level": "ok",
@@ -41725,6 +43729,12 @@
       "level": "incertidumbre",
       "detail": "HTTP 400",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.facebook.com/earlfrancistirton": {
+      "tag": "http-400",
+      "level": "incertidumbre",
+      "detail": "HTTP 400",
+      "checkedAt": "2026-08-05"
     },
     "https://www.fadispan.com/": {
       "tag": "ok",
@@ -41749,6 +43759,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.famille-guittard.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.famillebalaran.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.farinapastafresca.com/": {
       "tag": "ok",
@@ -41821,6 +43843,84 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.ferme-du-botton.fr": {
+      "tag": "http-503",
+      "level": "incertidumbre",
+      "detail": "HTTP 503",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.ferme-hartmann.fr/22\u0002legumes/la-ferme": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.ferme-labelette.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "CERT_HAS_EXPIRED",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermeaubergeduroc.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedecourjat.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedelacombe.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedelarbre.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedelarbremadame.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedes4saisons.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedespeupliers.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedubruel.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermedumoulinet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.fermelesacacias.fr/": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.fermelesacacias.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
     },
     "https://www.fernandezdearcaya.com": {
       "tag": "tls",
@@ -42044,11 +44144,29 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.foie-gras-fermedebeauregard.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.foiegras-soudan.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.foixdesarria.com": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.fomagerie-la-barotiere.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.fondillonluisxiv.com": {
       "tag": "ok",
@@ -42073,6 +44191,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.fontsainte.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.formatgeriacalcantare.cat/": {
       "tag": "conexion-rechazada",
@@ -42356,6 +44480,18 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.francois-braun.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.francoiscazin-lepetitchambord-cheverny.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.frescitrus.com/": {
       "tag": "conexion",
       "level": "incertidumbre",
@@ -42541,6 +44677,30 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.gadet-terrefort.com/": {
+      "tag": "timeout",
+      "level": "incertidumbre",
+      "detail": "sin respuesta dentro del timeout",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.gaec-lafermederoussillon.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.gaecimprenable-fredetverowix.com": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.gaecjollyfreres.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.gaineta.com/": {
       "tag": "ok",
@@ -42878,11 +45038,29 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-08-04"
     },
+    "https://www.grainsdenature.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.grall-vigneron-sancerre.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.gramolalab.com/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.granajolo.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+      "checkedAt": "2026-08-05"
     },
     "https://www.granducwinery.com": {
       "tag": "nxdomain",
@@ -43082,6 +45260,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.gruaud-larose.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.grupdem.org/botiga/alimentacio/": {
       "tag": "ok",
       "level": "ok",
@@ -43190,6 +45374,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.guigal.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.guijarromunoz.es": {
       "tag": "ok",
       "level": "ok",
@@ -43201,6 +45391,12 @@
       "level": "incertidumbre",
       "detail": "HTTP 503",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.gumigraines.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.gurelurrekomerkatua.com/user/53": {
       "tag": "http-404",
@@ -43604,6 +45800,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.hourtin-ducasse.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.hoyadelaiglesia.com": {
       "tag": "ok",
       "level": "ok",
@@ -43615,6 +45817,12 @@
       "level": "incertidumbre",
       "detail": "HTTP 500",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.https//www.champagnepaulprioux.fr/": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
     },
     "https://www.huertamenguante.com/": {
       "tag": "ok",
@@ -43861,6 +46069,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.islesaintpierre.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.iturrieta.eus/": {
       "tag": "ok",
@@ -44180,6 +46394,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.jonqueresdoriloa.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.jordimorerabaker.com/": {
       "tag": "ok",
       "level": "ok",
@@ -44323,6 +46543,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.la-ferme-desiris.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.la-luna.es": {
       "tag": "ok",
@@ -44576,6 +46802,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.lafabricdalice.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lafem.beer": {
       "tag": "ok",
       "level": "ok",
@@ -44587,6 +46819,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.lafermechateaurobert.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.lafermeducluselier.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.lafermettedemeline.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.laflordecastilla.com/": {
       "tag": "ok",
@@ -44605,6 +46855,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.lafontdelolivier.com": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
     },
     "https://www.lafou.net/": {
       "tag": "ok",
@@ -44647,6 +46903,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.lagarriguehaute.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.lagatinelaurentaise.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.lageria.com/": {
       "tag": "ok",
@@ -44894,6 +47162,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.lapetitefermedegillesetjulie.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lapiara.com/": {
       "tag": "ok",
       "level": "ok",
@@ -44947,6 +47221,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.laroche.vacquie.com": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
     },
     "https://www.laromamanresa.cat": {
       "tag": "ok",
@@ -45014,6 +47294,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.lasamatane.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lasaovalles.cat/": {
       "tag": "ok",
       "level": "ok",
@@ -45031,6 +47317,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.laseigneurie.net": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.laselvatana.net/ca/": {
       "tag": "ok",
@@ -45182,6 +47474,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.le-sapin-de-noel.com": {
+      "tag": "http-404",
+      "level": "señal",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lebanza.com/": {
       "tag": "ok",
       "level": "ok",
@@ -45200,6 +47498,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.leclosduchaillou.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lefournilbcn.es/": {
       "tag": "ok",
       "level": "ok",
@@ -45211,6 +47515,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.legroscaillou-viticulteur.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.legumbresmorgade.com/": {
       "tag": "ok",
@@ -45242,17 +47552,47 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.lemasdesflauzieres.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.les-souterrains.fr": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.lesavoineries.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lescases.cat": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.lescerfsdelafardelliere.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.lesgambires.cat": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.lesjardinsdelabresle.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.lesmarines.cat": {
       "tag": "ok",
@@ -45271,6 +47611,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.lesvergersdhurtebise.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.lesvergersdugalichet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.lesvinsyannickdevermont.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.lesvinyesdelconvent.wine": {
       "tag": "ok",
@@ -45331,6 +47689,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.lilotdelameinau.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.limbik-co.com": {
       "tag": "ok",
@@ -45476,11 +47840,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.lpci.fr": {
+      "tag": "sin-registro-a",
+      "level": "señal",
+      "detail": "dominio delegado, pero el host no tiene registro A",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.luberri.com/es/": {
       "tag": "ok",
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.luchey-halde.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.luisfelipe.es": {
       "tag": "ok",
@@ -45505,6 +47881,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.mabileau.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.maciabatle.com": {
       "tag": "ok",
@@ -45541,6 +47923,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.maisondelamirabelle.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.maisonrivier.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.maisor.com/": {
       "tag": "ok",
@@ -45728,6 +48122,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.marniquet.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.marquesdelvalle.com/": {
       "tag": "ok",
       "level": "ok",
@@ -45818,6 +48218,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.mas-bleu.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.masalba.cat/": {
       "tag": "ok",
       "level": "ok",
@@ -45890,6 +48296,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.masdebayle.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.masdelesvinyes.com/": {
       "tag": "ok",
       "level": "ok",
@@ -45955,6 +48367,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.masgranier.fr": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.masgranier.com (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
     },
     "https://www.masia-agullons.com/ca/": {
       "tag": "ok",
@@ -46111,6 +48529,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.maylandie.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.mazapan-toledo.com/": {
       "tag": "ok",
@@ -46550,6 +48974,12 @@
       "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
       "checkedAt": "2026-07-28"
     },
+    "https://www.millet-sancerre.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.mimesgourmet.es/": {
       "tag": "ok",
       "level": "ok",
@@ -46561,6 +48991,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-08-04"
+    },
+    "https://www.miselle.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.misqi.cat/": {
       "tag": "ok",
@@ -46597,6 +49033,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.moissenet-bonnard.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.mokasol.es/": {
       "tag": "ok",
@@ -46688,6 +49130,12 @@
       "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
       "checkedAt": "2026-07-28"
     },
+    "https://www.monardiere.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.monasterioviaceli.com/abadia-de-viaceli-queso-trapa": {
       "tag": "ok",
       "level": "ok",
@@ -46723,6 +49171,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.montagnette-aubrac.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.montaudesadurni.com/": {
       "tag": "ok",
@@ -46898,6 +49352,30 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.moulin-de-la-bouteille.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.moulin-mas-cardelle.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.moulindelhorizon.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.moulinducalanquet.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.mueloliva.es": {
       "tag": "ok",
       "level": "ok",
@@ -46915,6 +49393,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.muscadet-sur-lie.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.musee-du-pruneau.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.museuconfitura.com/": {
       "tag": "ok",
@@ -46987,6 +49477,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.naturegatine.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.naturetasty.com/": {
       "tag": "conexion-rechazada",
@@ -47125,6 +49621,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.nouvelleplaine.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.novos.es": {
       "tag": "ok",
@@ -47528,6 +50030,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.orengadegaffory.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.organicwine.jp/": {
       "tag": "tls",
       "level": "incertidumbre",
@@ -47558,6 +50066,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.ormes-sorbet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.orobailen.com/": {
       "tag": "ok",
       "level": "ok",
@@ -47581,6 +50095,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.ortola.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.ortovins.com/": {
       "tag": "ok",
@@ -47911,6 +50431,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.panierdeschamps.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.panificadoraartesanaangelmaroto.es/": {
       "tag": "ok",
@@ -48374,6 +50900,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.pb-couly.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.pedragosa.net": {
       "tag": "ok",
       "level": "ok",
@@ -48404,6 +50936,12 @@
       "detail": "ECONNRESET",
       "checkedAt": "2026-07-28"
     },
+    "https://www.pellehaut.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.penafria.com/": {
       "tag": "ok",
       "level": "ok",
@@ -48421,6 +50959,12 @@
       "level": "señal",
       "detail": "→ pepemiel.com (¿rebrand legítimo o dominio revendido?)",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.pepiniereguitton.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.perahigos.es/": {
       "tag": "ok",
@@ -48506,6 +51050,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.petitebottedepaille.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.petitsdelicesmataro.com/": {
       "tag": "dns",
       "level": "incertidumbre",
@@ -48523,6 +51073,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.peyrebrune.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.pflordeneu.com/": {
       "tag": "ok",
@@ -48571,6 +51127,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.pigoudet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.pimenton-ladalia.com": {
       "tag": "ok",
@@ -48752,6 +51314,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.poulet-et-fils.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.pradodeolmedo.com/": {
       "tag": "ok",
       "level": "ok",
@@ -48769,6 +51337,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.prieur-pierre-sancerre.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.prodeza.es/": {
       "tag": "ok",
@@ -49760,6 +52334,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.raimbaultnoeletjeanluc.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.rajope.es/": {
       "tag": "ok",
       "level": "ok",
@@ -49802,6 +52382,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.raphael-midoir.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.ratafiaempordanesa.com/": {
       "tag": "ok",
       "level": "ok",
@@ -49825,6 +52411,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.raymond-bossis.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.realcarolina.es": {
       "tag": "ok",
@@ -49879,6 +52471,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.reinach.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.reinadelrumblar.com": {
       "tag": "timeout",
@@ -49976,6 +52574,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.rizieres-vignobledemarseillette.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.roblemancha.com": {
       "tag": "ok",
       "level": "ok",
@@ -49988,6 +52592,12 @@
       "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
       "checkedAt": "2026-07-28"
     },
+    "https://www.rocdeboisseaux.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.rocinante.es/": {
       "tag": "ok",
       "level": "ok",
@@ -49999,6 +52609,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.rogerchampault.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.rogergoulart.com/": {
       "tag": "ok",
@@ -50144,6 +52760,12 @@
       "detail": "el dominio no existe",
       "checkedAt": "2026-07-28"
     },
+    "https://www.sabieume.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.sabordeextremadura.es/": {
       "tag": "ok",
       "level": "ok",
@@ -50239,6 +52861,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.saint-nectaire-boisjoli.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.saintmartindagel.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.saintpaulet.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.sake-asaka.co.jp/": {
       "tag": "ok",
@@ -50372,6 +53012,24 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.sancerre-frederic-champault.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.sancerre-noel.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.sancerre-roblin.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.sancosmeysandamian.com": {
       "tag": "ok",
       "level": "ok",
@@ -50407,6 +53065,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.sanquilico.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.santacatalina.es/": {
       "tag": "ok",
@@ -50678,6 +53342,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.seriege.fr/chateau-de-seriege-famille-dandoque/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.serradealen.es": {
       "tag": "ok",
       "level": "ok",
@@ -50870,6 +53540,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.singleyrac.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.smach.es/": {
       "tag": "ok",
       "level": "ok",
@@ -50905,6 +53581,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.sohler.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.solardeurbezo.es": {
       "tag": "ok",
@@ -51008,6 +53690,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.spirea-reunion.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.squirrelsmile.com": {
       "tag": "ok",
       "level": "ok",
@@ -51073,6 +53761,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.sylvain-bailly.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.talaiberri.com/": {
       "tag": "ok",
@@ -51416,6 +54110,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.tomaze.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.tomemiel.es/": {
       "tag": "ok",
       "level": "ok",
@@ -51644,6 +54344,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.tuquetmonceau.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.turismoasturias.es/es/descubre/gastronomia/bodegas/bodega-martinez-parrondo": {
       "tag": "ok",
       "level": "ok",
@@ -51842,11 +54548,23 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.val-joanis.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.valdalenda.com": {
       "tag": "http-500",
       "level": "incertidumbre",
       "detail": "HTTP 500",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.valdecaire.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.valdecinca.com/": {
       "tag": "ok",
@@ -51992,6 +54710,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.vazart-coquart.com": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.vcurro.com/": {
       "tag": "ok",
       "level": "ok",
@@ -52076,6 +54800,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.vente-directe-viande-charolaise.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.venuslauniversal.com/": {
       "tag": "ok",
       "level": "ok",
@@ -52124,6 +54854,18 @@
       "detail": "HTTP 403 (¿bloqueo anti-bot?)",
       "checkedAt": "2026-07-28"
     },
+    "https://www.vergersdes4v.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vergerstissot.fr": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.vermutflorum.com/": {
       "tag": "ok",
       "level": "ok",
@@ -52141,6 +54883,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.viandecharolaise.fr": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
     },
     "https://www.viaromana.es": {
       "tag": "ok",
@@ -52196,6 +54944,60 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.vigneronsbrasseursdeburosse.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignoble-tuffiere.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignobledubeausoleil.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignobles-arbo.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_TLS_CERT_ALTNAME_INVALID",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignobles-chanfreau.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignobles-silvio-denz.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignobles-vigier.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignoblesbodillard.com": {
+      "tag": "tls",
+      "level": "incertidumbre",
+      "detail": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vignobleschevronvillette.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.vihucas.com": {
       "tag": "tls",
       "level": "incertidumbre",
@@ -52225,6 +55027,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.villa-exindrio.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.villacorona.es/": {
       "tag": "ok",
@@ -52261,6 +55069,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.vin-bergerac-monbazillac-gerales.com": {
+      "tag": "http-500",
+      "level": "incertidumbre",
+      "detail": "HTTP 500",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vin-de-sancerre.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vin-touraine-cellierdubeaujardin.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
     },
     "https://www.vinaaliaga.com": {
       "tag": "ok",
@@ -52538,6 +55364,24 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.vins-gaillac-vayssette.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vins-saintpourcain-caveray.fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vins-taluau-foltzenlogel.fr/fr/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.vinscasapadrina.com": {
       "tag": "ok",
       "level": "ok",
@@ -52549,6 +55393,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.vinsklee.free.fr": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
     },
     "https://www.vinslaconreria.com/": {
       "tag": "ok",
@@ -52573,6 +55423,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.vinsvaldeloire.fr/fr/domaine/earl-sejourne-et-fils": {
+      "tag": "redirige",
+      "level": "señal",
+      "detail": "→ www.vinsdeloire.fr (¿rebrand legítimo o dominio revendido?)",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vinsvictorhertz.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
     },
     "https://www.vinyaescude.com": {
       "tag": "ok",
@@ -52658,6 +55520,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://www.visite-irouleguy.com": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-05"
+    },
     "https://www.visitfuerteventura.com/bodegas-y-queserias/fuerteventura/queseria-rio-cabras/": {
       "tag": "ok",
       "level": "ok",
@@ -52705,6 +55573,24 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.vouvray-guertin.com": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vouvraybm.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.vouvrayfouquet.com": {
+      "tag": "conexion-rechazada",
+      "level": "señal",
+      "detail": "conexión rechazada",
+      "checkedAt": "2026-08-05"
     },
     "https://www.westcoastbrewing.jp/": {
       "tag": "ok",
@@ -52789,6 +55675,18 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.xn--coteauxdelagardire-6vb.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
+    "https://www.xn--ferme-terre-de-cur-9jd.com": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
     },
     "https://www.xn--jamonesenriquecastao-m7b.es": {
       "tag": "ok",
@@ -53060,6 +55958,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
     },
+    "https://xn--chteaulagracedieulesmenuts-xfc.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
+    },
     "https://xn--confiteriasmontaes-20b.com/": {
       "tag": "ok",
       "level": "ok",
@@ -53071,6 +55975,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://xn--ferme-fruitire-hufschmitt-vhc.fr": {
+      "tag": "nxdomain",
+      "level": "señal",
+      "detail": "el dominio no existe",
+      "checkedAt": "2026-08-05"
     },
     "https://xn--labradoresdelacampia-m7b.com/es/": {
       "tag": "ok",

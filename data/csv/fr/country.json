@@ -1,0 +1,538 @@
+{
+  "label": "France",
+  "unit": {
+    "one": "department",
+    "many": "departments"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "aliases": {
+    "saboya": "savoie",
+    "alta-saboya": "haute-savoie",
+    "corcega-del-sur": "corse-du-sud",
+    "alta-corcega": "haute-corse",
+    "bajo-rin": "bas-rhin",
+    "alto-rin": "haut-rhin",
+    "pirineos-atlanticos": "pyrenees-atlantiques",
+    "pirineos-orientales": "pyrenees-orientales",
+    "cote-d-or": "cote-dor",
+    "cotes-d-armor": "cotes-darmor",
+    "val-d-oise": "val-doise"
+  },
+  "regions": [
+    {
+      "slug": "auvergne-rhone-alpes",
+      "label": "Auvergne-Rhône-Alpes",
+      "areas": [
+        {
+          "slug": "ain",
+          "label": "Ain"
+        },
+        {
+          "slug": "allier",
+          "label": "Allier"
+        },
+        {
+          "slug": "ardeche",
+          "label": "Ardèche"
+        },
+        {
+          "slug": "cantal",
+          "label": "Cantal"
+        },
+        {
+          "slug": "drome",
+          "label": "Drôme"
+        },
+        {
+          "slug": "isere",
+          "label": "Isère"
+        },
+        {
+          "slug": "loire",
+          "label": "Loire"
+        },
+        {
+          "slug": "haute-loire",
+          "label": "Haute-Loire"
+        },
+        {
+          "slug": "puy-de-dome",
+          "label": "Puy-de-Dôme"
+        },
+        {
+          "slug": "rhone",
+          "label": "Rhône"
+        },
+        {
+          "slug": "savoie",
+          "label": "Savoie"
+        },
+        {
+          "slug": "haute-savoie",
+          "label": "Haute-Savoie"
+        }
+      ]
+    },
+    {
+      "slug": "bourgogne-franche-comte",
+      "label": "Bourgogne-Franche-Comté",
+      "areas": [
+        {
+          "slug": "cote-dor",
+          "label": "Côte-d'Or"
+        },
+        {
+          "slug": "doubs",
+          "label": "Doubs"
+        },
+        {
+          "slug": "jura",
+          "label": "Jura"
+        },
+        {
+          "slug": "nievre",
+          "label": "Nièvre"
+        },
+        {
+          "slug": "haute-saone",
+          "label": "Haute-Saône"
+        },
+        {
+          "slug": "saone-et-loire",
+          "label": "Saône-et-Loire"
+        },
+        {
+          "slug": "yonne",
+          "label": "Yonne"
+        },
+        {
+          "slug": "territoire-de-belfort",
+          "label": "Territoire de Belfort"
+        }
+      ]
+    },
+    {
+      "slug": "bretagne",
+      "label": "Bretagne",
+      "areas": [
+        {
+          "slug": "cotes-darmor",
+          "label": "Côtes-d'Armor"
+        },
+        {
+          "slug": "finistere",
+          "label": "Finistère"
+        },
+        {
+          "slug": "ille-et-vilaine",
+          "label": "Ille-et-Vilaine"
+        },
+        {
+          "slug": "morbihan",
+          "label": "Morbihan"
+        }
+      ]
+    },
+    {
+      "slug": "centre-val-de-loire",
+      "label": "Centre-Val de Loire",
+      "areas": [
+        {
+          "slug": "cher",
+          "label": "Cher"
+        },
+        {
+          "slug": "eure-et-loir",
+          "label": "Eure-et-Loir"
+        },
+        {
+          "slug": "indre",
+          "label": "Indre"
+        },
+        {
+          "slug": "indre-et-loire",
+          "label": "Indre-et-Loire"
+        },
+        {
+          "slug": "loir-et-cher",
+          "label": "Loir-et-Cher"
+        },
+        {
+          "slug": "loiret",
+          "label": "Loiret"
+        }
+      ]
+    },
+    {
+      "slug": "corse",
+      "label": "Corse",
+      "areas": [
+        {
+          "slug": "corse-du-sud",
+          "label": "Corse-du-Sud"
+        },
+        {
+          "slug": "haute-corse",
+          "label": "Haute-Corse"
+        }
+      ]
+    },
+    {
+      "slug": "grand-est",
+      "label": "Grand Est",
+      "areas": [
+        {
+          "slug": "ardennes",
+          "label": "Ardennes"
+        },
+        {
+          "slug": "aube",
+          "label": "Aube"
+        },
+        {
+          "slug": "marne",
+          "label": "Marne"
+        },
+        {
+          "slug": "haute-marne",
+          "label": "Haute-Marne"
+        },
+        {
+          "slug": "meurthe-et-moselle",
+          "label": "Meurthe-et-Moselle"
+        },
+        {
+          "slug": "meuse",
+          "label": "Meuse"
+        },
+        {
+          "slug": "moselle",
+          "label": "Moselle"
+        },
+        {
+          "slug": "bas-rhin",
+          "label": "Bas-Rhin"
+        },
+        {
+          "slug": "haut-rhin",
+          "label": "Haut-Rhin"
+        },
+        {
+          "slug": "vosges",
+          "label": "Vosges"
+        }
+      ]
+    },
+    {
+      "slug": "hauts-de-france",
+      "label": "Hauts-de-France",
+      "areas": [
+        {
+          "slug": "aisne",
+          "label": "Aisne"
+        },
+        {
+          "slug": "nord",
+          "label": "Nord"
+        },
+        {
+          "slug": "oise",
+          "label": "Oise"
+        },
+        {
+          "slug": "pas-de-calais",
+          "label": "Pas-de-Calais"
+        },
+        {
+          "slug": "somme",
+          "label": "Somme"
+        }
+      ]
+    },
+    {
+      "slug": "ile-de-france",
+      "label": "Île-de-France",
+      "areas": [
+        {
+          "slug": "paris",
+          "label": "Paris"
+        },
+        {
+          "slug": "seine-et-marne",
+          "label": "Seine-et-Marne"
+        },
+        {
+          "slug": "yvelines",
+          "label": "Yvelines"
+        },
+        {
+          "slug": "essonne",
+          "label": "Essonne"
+        },
+        {
+          "slug": "hauts-de-seine",
+          "label": "Hauts-de-Seine"
+        },
+        {
+          "slug": "seine-saint-denis",
+          "label": "Seine-Saint-Denis"
+        },
+        {
+          "slug": "val-de-marne",
+          "label": "Val-de-Marne"
+        },
+        {
+          "slug": "val-doise",
+          "label": "Val-d'Oise"
+        }
+      ]
+    },
+    {
+      "slug": "normandie",
+      "label": "Normandie",
+      "areas": [
+        {
+          "slug": "calvados",
+          "label": "Calvados"
+        },
+        {
+          "slug": "eure",
+          "label": "Eure"
+        },
+        {
+          "slug": "manche",
+          "label": "Manche"
+        },
+        {
+          "slug": "orne",
+          "label": "Orne"
+        },
+        {
+          "slug": "seine-maritime",
+          "label": "Seine-Maritime"
+        }
+      ]
+    },
+    {
+      "slug": "nouvelle-aquitaine",
+      "label": "Nouvelle-Aquitaine",
+      "areas": [
+        {
+          "slug": "charente",
+          "label": "Charente"
+        },
+        {
+          "slug": "charente-maritime",
+          "label": "Charente-Maritime"
+        },
+        {
+          "slug": "correze",
+          "label": "Corrèze"
+        },
+        {
+          "slug": "creuse",
+          "label": "Creuse"
+        },
+        {
+          "slug": "dordogne",
+          "label": "Dordogne"
+        },
+        {
+          "slug": "gironde",
+          "label": "Gironde"
+        },
+        {
+          "slug": "landes",
+          "label": "Landes"
+        },
+        {
+          "slug": "lot-et-garonne",
+          "label": "Lot-et-Garonne"
+        },
+        {
+          "slug": "pyrenees-atlantiques",
+          "label": "Pyrénées-Atlantiques"
+        },
+        {
+          "slug": "deux-sevres",
+          "label": "Deux-Sèvres"
+        },
+        {
+          "slug": "vienne",
+          "label": "Vienne"
+        },
+        {
+          "slug": "haute-vienne",
+          "label": "Haute-Vienne"
+        }
+      ]
+    },
+    {
+      "slug": "occitanie",
+      "label": "Occitanie",
+      "areas": [
+        {
+          "slug": "ariege",
+          "label": "Ariège"
+        },
+        {
+          "slug": "aude",
+          "label": "Aude"
+        },
+        {
+          "slug": "aveyron",
+          "label": "Aveyron"
+        },
+        {
+          "slug": "gard",
+          "label": "Gard"
+        },
+        {
+          "slug": "haute-garonne",
+          "label": "Haute-Garonne"
+        },
+        {
+          "slug": "gers",
+          "label": "Gers"
+        },
+        {
+          "slug": "herault",
+          "label": "Hérault"
+        },
+        {
+          "slug": "lot",
+          "label": "Lot"
+        },
+        {
+          "slug": "lozere",
+          "label": "Lozère"
+        },
+        {
+          "slug": "hautes-pyrenees",
+          "label": "Hautes-Pyrénées"
+        },
+        {
+          "slug": "pyrenees-orientales",
+          "label": "Pyrénées-Orientales"
+        },
+        {
+          "slug": "tarn",
+          "label": "Tarn"
+        },
+        {
+          "slug": "tarn-et-garonne",
+          "label": "Tarn-et-Garonne"
+        }
+      ]
+    },
+    {
+      "slug": "pays-de-la-loire",
+      "label": "Pays de la Loire",
+      "areas": [
+        {
+          "slug": "loire-atlantique",
+          "label": "Loire-Atlantique"
+        },
+        {
+          "slug": "maine-et-loire",
+          "label": "Maine-et-Loire"
+        },
+        {
+          "slug": "mayenne",
+          "label": "Mayenne"
+        },
+        {
+          "slug": "sarthe",
+          "label": "Sarthe"
+        },
+        {
+          "slug": "vendee",
+          "label": "Vendée"
+        }
+      ]
+    },
+    {
+      "slug": "provence-alpes-cote-dazur",
+      "label": "Provence-Alpes-Côte d'Azur",
+      "areas": [
+        {
+          "slug": "alpes-de-haute-provence",
+          "label": "Alpes-de-Haute-Provence"
+        },
+        {
+          "slug": "hautes-alpes",
+          "label": "Hautes-Alpes"
+        },
+        {
+          "slug": "alpes-maritimes",
+          "label": "Alpes-Maritimes"
+        },
+        {
+          "slug": "bouches-du-rhone",
+          "label": "Bouches-du-Rhône"
+        },
+        {
+          "slug": "var",
+          "label": "Var"
+        },
+        {
+          "slug": "vaucluse",
+          "label": "Vaucluse"
+        }
+      ]
+    },
+    {
+      "slug": "guadeloupe",
+      "label": "Guadeloupe",
+      "areas": [
+        {
+          "slug": "guadeloupe",
+          "label": "Guadeloupe"
+        }
+      ]
+    },
+    {
+      "slug": "martinique",
+      "label": "Martinique",
+      "areas": [
+        {
+          "slug": "martinique",
+          "label": "Martinique"
+        }
+      ]
+    },
+    {
+      "slug": "guyane",
+      "label": "Guyane",
+      "areas": [
+        {
+          "slug": "guyane",
+          "label": "Guyane"
+        }
+      ]
+    },
+    {
+      "slug": "la-reunion",
+      "label": "La Réunion",
+      "areas": [
+        {
+          "slug": "la-reunion",
+          "label": "La Réunion"
+        }
+      ]
+    },
+    {
+      "slug": "mayotte",
+      "label": "Mayotte",
+      "areas": [
+        {
+          "slug": "mayotte",
+          "label": "Mayotte"
+        }
+      ]
+    }
+  ]
+}

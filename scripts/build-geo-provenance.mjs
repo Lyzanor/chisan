@@ -29,24 +29,29 @@ function normalizeSearch(value) {
     .trim();
 }
 
-function pickCandidate(entry, regionHint) {
+function pickCandidate(entry, scope) {
   if (Array.isArray(entry)) {
-    if (!regionHint) return null;
-    return entry.find((c) => c.region === regionHint) ?? null;
+    if (!scope.region) return null;
+    return entry.find((c) => c.region === scope.region) ?? null;
   }
   return entry;
 }
 
-function lookupCentroid(centroids, municipio, regionHint) {
+// Same scoping as scripts/audit-csv.js: both centroid files are keyed by
+// country first, so a municipio is only ever matched inside its own country.
+function lookupCentroid(centroids, municipio, scope) {
   if (!centroids || !municipio) return null;
+  const main = centroids.main[scope.country];
+  if (!main) return null;
+  const overrides = centroids.overrides[scope.country] ?? {};
   const stripped = municipio.split(" - ")[0].trim();
   const key1 = normalizeSearch(municipio);
   const key2 = normalizeSearch(stripped);
-  const override = centroids.overrides[key1] || centroids.overrides[key2];
+  const override = overrides[key1] || overrides[key2];
   if (override) {
-    return pickCandidate(override, regionHint);
+    return pickCandidate(override, scope);
   }
-  return centroids.main[key1] || centroids.main[key2] || null;
+  return main[key1] || main[key2] || null;
 }
 
 function parseCsvLine(line) {
@@ -123,7 +128,7 @@ async function main() {
         const lat = Number.parseFloat(fields[idx.lat]);
         const lon = Number.parseFloat(fields[idx.lon]);
         if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
-        const centroid = lookupCentroid(centroids, fields[idx.municipio], region);
+        const centroid = lookupCentroid(centroids, fields[idx.municipio], { country, region });
         if (!centroid) continue;
         if (
           Math.abs(lat - centroid.lat) <= TOLERANCE_DEG &&

@@ -12,7 +12,7 @@ What is true of `data/csv/pt/**` only. The shared contract is `AGENTS.md` at the
 
 ## Geography
 - Centroids come from Wikidata's "municipality of Portugal": the 308 concelhos, islands included, labelled in pt. Every row resolves, so the geographic gate is on and a green run means checked.
-- Two concelho names repeat inside Portugal and are resolved by region in `data/reference/municipality-overrides.json`: `lagoa` (Algarve / Açores, 1.500 km apart) and `calheta` (Açores / Madeira).
+- Two concelho names repeat inside Portugal and are resolved by region under `pt` in `data/reference/municipality-overrides.json`: `lagoa` (Algarve / Açores, 1.500 km apart) and `calheta` (Açores / Madeira).
 - Fifteen more collide with a Spanish municipio, and Spain keeps the shared key. `porto` and `penafiel` are disambiguated; `gondomar`, `maia`, `paredes`, `benavente`, `montijo`, `mira`, `vila real`, `santa cruz`, `belmonte`, `monforte`, `oleiros`, `mora` and `almodôvar` are not, because no row uses them yet. The first producer in one of those concelhos will fail the 100 km rule loudly rather than pass wrong; add the override then, listing both countries' candidates so neither side loses its lookup.
 
 ## Sources

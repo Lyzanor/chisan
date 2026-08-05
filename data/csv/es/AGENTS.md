@@ -15,7 +15,10 @@ What is true of `data/csv/es/**` only. The shared contract is `AGENTS.md` at the
 - DO and certification registries list the legal name *and* the brand, so one producer arrives as two candidates. Deduplicate by address before adding.
 - A domain that does not match the producer name is usually the parent group, not a cross-linked website. A real cross-link is a different company, a shared Instagram, or a directory posing as `web`.
 - Several provinces were seeded from bulk imports and still carry interpolated rows: contact fields can look plausible and belong to nobody. `web` is the least reliable column, then `telefono`.
-- Municipio homonyms between communities are frequent; the resolved ones are in `data/reference/municipality-overrides.json`.
+- Municipio homonyms between communities are frequent; the resolved ones are under `es` in
+  `data/reference/municipality-overrides.json`. The same file is where a pedanía the Wikidata
+  catalog does not carry gets a centroid — `pitres` (La Taha), `figarol` (Carcastillo), `asque`
+  (Colungo) and `tollo` and `santa marina` are checked that way rather than skipped.
 
 ## Spain's own docs
 The investigation workflow is shared: `docs/VERIFICATION_TECHNIQUES.md`. What is Spain's alone:
