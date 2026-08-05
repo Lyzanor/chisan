@@ -875,6 +875,20 @@
       "region": "castilla-y-leon"
     }
   ],
+  "yuzawa": [
+    {
+      "lat": 39.16444,
+      "lon": 140.49583,
+      "label": "Yuzawa (湯沢市, Akita)",
+      "region": "tohoku"
+    },
+    {
+      "lat": 36.93408,
+      "lon": 138.81739,
+      "label": "Yuzawa (湯沢町, Niigata)",
+      "region": "chubu"
+    }
+  ],
   "zuera": [
     {
       "lat": 41.87,

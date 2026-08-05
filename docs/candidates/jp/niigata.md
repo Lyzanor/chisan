@@ -1,8 +1,8 @@
 # Niigata — candidatos
 
-- CSV: `data/csv/jp/chubu/niigata.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/chubu/niigata.csv` (6 filas, altas del 2026-08-05).
 - Fuente: 新潟県酒造組合 vía <https://howtoniigata.jp/spot/nihonshu/40210/> — las 89 bodegas del gremio con marca y municipio. Contraste institucional: el mapa de la Agencia Tributaria, <https://www.nta.go.jp/about/organization/kantoshinetsu/sake/sake_breweries_map/pdf/sake_jp/sake_niigata_jp.pdf>.
-- Estado: cola abierta, 91 sin integrar (2026-08-04). **Ninguna entró en el CSV**: cosechar el dominio de cada bodega es el trabajo previo.
+- Estado: **6 integradas** el 2026-08-05 (4 `verificado` con tienda, 2 `parcial`); quedan 85. Evidencia en `data/evidence/jp/chubu/niigata.jsonl`.
 
 Niigata es la prefectura con más bodegas de Japón. El listado da marca y
 municipio pero **no web**: cada alta necesita localizar el dominio propio y
@@ -29,11 +29,8 @@ Categoría para todas: `Sake`. El rōmaji de `nombre` es propuesta a confirmar.
 | Hakuryu Shuzo | 白龍酒造 | 白龍 | Agano |
 | Kondo Shuzo | 近藤酒造 | 越乃鹿六 | Gosen |
 | Kinshihai Shuzo | 金鵄盃酒造 | 越後杜氏 | Gosen |
-| Kirinzan Shuzo | 麒麟山酒造 | 麒麟山 | Aga |
 | Kaetsu Shuzo | 下越酒造 | 蒲原 Kambara | Aga |
 | Murayu Shuzo | 村祐酒造 | 花越路 | Niigata (秋葉区) |
-| Imayotsukasa Shuzo | 今代司酒造 | 今代司 | Niigata (中央区) |
-| Ishimoto Shuzo | 石本酒造 | 越乃寒梅 Koshi no Kanbai | Niigata (江南区) |
 | Shiokawa Shuzo | 塩川酒造 | 越の関 | Niigata (西区) |
 | Higi Shuzo | 樋木酒造 | 鶴の友 | Niigata (西区) |
 | Takano Shuzo | 高野酒造 | 越路吹雪 | Niigata (西区) |
@@ -52,7 +49,6 @@ Categoría para todas: `Sake`. El rōmaji de `nombre` es propuesta a confirmar.
 
 | nombre (rōmaji propuesto) | 社名 | marca | municipio |
 |---|---|---|---|
-| Asahi Shuzo | 朝日酒造 | 久保田 Kubota | Nagaoka |
 | Hakuro Shuzo | 柏露酒造 | 越乃柏露 | Nagaoka |
 | Takahashi Shuzo | 高橋酒造 | 長陵 | Nagaoka |
 | Yoshinogawa | 吉乃川 | 極上吉乃川 | Nagaoka |
@@ -77,9 +73,7 @@ Categoría para todas: `Sake`. El rōmaji de `nombre` es propuesta a confirmar.
 | Midorikawa Shuzo | 緑川酒造 | 緑川 | Uonuma |
 | Tamagawa Shuzo | 玉川酒造 | 魚沼玉風味 | Uonuma |
 | Aoki Shuzo | 青木酒造 | 鶴齢 Kakurei | Minamiuonuma (塩沢) |
-| Hakkai Jozo | 八海醸造 | 八海山 Hakkaisan | Minamiuonuma |
 | Takachiyo Shuzo | 髙千代酒造 | 髙千代 | Minamiuonuma |
-| Shirataki Shuzo | 白瀧酒造 | 上善如水 Jozen Mizu no Gotoshi | Yuzawa |
 | Matsunoi Shuzojo | 松乃井酒造場 | 松乃井 | Tokamachi |
 | Uonuma Shuzo | 魚沼酒造 | 天神囃子 | Tokamachi |
 | Naeba Shuzo | 苗場酒造 | 苗場山 | Tsunan |
@@ -112,6 +106,25 @@ Categoría para todas: `Sake`. El rōmaji de `nombre` es propuesta a confirmar.
 | Tahara Shuzo | 田原酒造 | 雪鶴 | Itoigawa |
 | Watanabe Shuzoten | 渡辺酒造店 | 根知男山 Nechi Otokoyama | Itoigawa |
 | Inomata Shuzo | 猪又酒造 | 月不見の池 | Itoigawa |
+
+## Integradas 2026-08-05 (6)
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Asahi Shuzo (Kubota) | Nagaoka | verificado · venta sí |
+| Imayotsukasa Shuzo | Niigata | verificado · venta sí |
+| Kirinzan Shuzo | Aga | verificado · venta sí |
+| Shirataki Shuzo (Jozen) | **Yuzawa** ⚠ | verificado · venta sí |
+| Hakkai Jozo (Hakkaisan) | Minamiuonuma | **parcial** · web sin respuesta |
+| Ishimoto Shuzo (Koshi no Kanbai) | Niigata | **parcial** · sin web |
+
+⚠ **`Yuzawa` resolvía al 湯沢市 de Akita** en vez del 湯沢町 de Niigata, a 280 km:
+error bloqueante. Resuelto el 2026-08-05 en `municipality-overrides.json`
+(tohoku vs chubu). Es el séptimo homónimo de este tipo abierto en la pasada.
+
+Las cuatro con tienda son marcas de exportación; las dos `parcial` son, a la
+inversa, dos de las más famosas del país — Hakkaisan y Koshi no Kanbai — y ni
+una ni otra se dejó leer.
 
 ## 佐渡 Sado (5)
 
