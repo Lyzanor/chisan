@@ -1,8 +1,8 @@
 # Ishikawa — candidatos
 
-- CSV: `data/csv/jp/chubu/ishikawa.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/chubu/ishikawa.csv` (6 filas, altas del 2026-08-05).
 - Origen: listado aportado por el usuario, `listado_125_productores_locales_japon.xlsx` (2026-08-04). Fuente que cita: 石川県酒造組合連合会 <https://www.ishikawa-sake.jp/eng/index.html>.
-- Estado: cola abierta, 16 sin integrar (2026-08-04). **Ninguna entró en el CSV**: faltan dominio y confirmación de municipio (el gremio solo sitúa dos).
+- Estado: **6 integradas** el 2026-08-05 (5 `verificado`, 1 `parcial`), 4 con tienda propia. Evidencia en `data/evidence/jp/chubu/ishikawa.jsonl`.
 
 Categoría para todas: `Sake`. Todas vienen marcadas `B` en el origen (solo
 valen los productos con origen local acreditado).
@@ -10,21 +10,44 @@ valen los productos con origen local acreditado).
 | nombre | municipio (del xlsx, sin contrastar) |
 |---|---|
 | Nakamura Brewery | Kanazawa ✔ |
-| Fukumitsuya Sake Brewery | Kanazawa ✔ |
 | Yachiya Brewing | Kanazawa |
 | Kanaya Shuzouten | Hakusan |
 | Manzairaku Sake Kura | Hakusan |
-| Shata Shuzo | Hakusan |
-| Yoshida Shuzoten | Hakusan |
 | Kaetsu Sake Brewery | Komatsu |
 | Higashi Sake Brewing | Komatsu |
 | Kano Sake Brewery | Kaga |
 | Mioya Brewery | Hakui |
-| Kazuma Sake Brewery | Noto |
 | Matsunami Shuzo | Noto |
 | Sakurada Sake Brewery | Suzu |
-| Sogen Sake Brewery | Suzu |
 | Hakuto Sake Brewery | Wajima |
+
+## Integradas 2026-08-05 (6)
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Shata Shuzo (Tengumai) | Hakusan | verificado · venta sí |
+| Fukumitsuya | Kanazawa | verificado · venta sí |
+| Kazuma Shuzo (Chikuha) | **Noto** ⚠ | verificado · venta sí |
+| Sogen Shuzo | **Suzu** ⚠ | verificado · venta sí |
+| Yoshida Shuzoten (Tedorigawa) | Hakusan | verificado · sin carrito |
+| Kikuhime | Hakusan | **parcial** · web con JS |
+
+⚠ **Cierra en parte el aviso de Noto que abría este fichero.** Las dos bodegas
+de la zona del terremoto de enero de 2024 que entran aquí **siguen elaborando**,
+con evidencia:
+- **数馬酒造 (Noto)** mantiene producción y tienda propia.
+- **宗玄酒造 (Suzu)** perdió botellas y su túnel de guarda quedó sepultado por un
+  corrimiento, pero **reanudó la elaboración el 15 de enero de 2024** y aguantó
+  además las lluvias torrenciales de septiembre.
+
+Sigue en pie el aviso para **las seis de Wajima**, que son las que perdieron el
+kura y no se han comprobado.
+
+- **宗玄 no tiene dominio propio**: su único sitio localizado es la tienda en
+  Shopify, que sirve a la vez de identidad y de canal, como Yano en `saga.md`.
+- **菊姫 sirve el cuerpo vacío** (se pinta con JavaScript), igual que Kotobuki
+  Toraya en `yamagata.md`: `parcial`.
+- **Kikuhime está en Tsurugi**, barrio de Hakusan tras la fusión de 2005.
 
 ## Contraste contra el gremio (hecho 2026-08-04)
 
