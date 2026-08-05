@@ -224,7 +224,7 @@ if grep -q "line 2 .* descripcion is duplicated" "$TMP_DIR/out-quality.txt"; the
   echo "Error: short description must not raise the duplicate-description warning" >&2
   exit 1
 fi
-# Optional-field gaps are suppressed (tracked by check:csv:completeness), never warnings.
+# Optional-field gaps are suppressed, never warnings.
 for needle in "telefono and correo are both empty" "Google Maps is empty" "coordinates are present but direccion is not useful"; do
   if grep -q "WARNING .* ${needle}" "$TMP_DIR/out-quality.txt"; then
     echo "Error: optional-field gap '${needle}' must be suppressed, not a warning" >&2
@@ -422,37 +422,8 @@ if grep -q "telefono and correo are both empty" "$TMP_DIR/out-verificado-suppres
   echo "Error: optional-field gap should be suppressed" >&2
   exit 1
 fi
-grep -q "suppressed (absent optional fields; tracked by check:csv:completeness)" "$TMP_DIR/out-verificado-suppression.txt"
+grep -q "suppressed (absent optional fields; empty is a valid value)" "$TMP_DIR/out-verificado-suppression.txt"
 # Correctness warnings still fire on verificado rows.
 grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-suppression.txt"
-
-# Province completeness uses fixed targets and does not expose a CSV baseline.
-run_expect_success "$TMP_DIR/out-completeness.json" \
-  node "$ROOT_DIR/scripts/audit-area-completeness.js" --json
-node - "$TMP_DIR/out-completeness.json" <<'NODE'
-const fs = require("node:fs");
-const report = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
-
-if ("baseline" in report) {
-  throw new Error("completeness report must not expose a province baseline");
-}
-if (!report.targets || report.targets.verificacion !== 100) {
-  throw new Error("completeness report must expose fixed editorial targets");
-}
-if (!Array.isArray(report.results) || report.results.length === 0) {
-  throw new Error("completeness report must include province results");
-}
-if (
-  report.results.some(
-    (result) =>
-      typeof result.progress !== "number" ||
-      result.progress < 0 ||
-      result.progress > 100 ||
-      !Array.isArray(result.gaps),
-  )
-) {
-  throw new Error("completeness results must include bounded progress and gaps");
-}
-NODE
 
 echo "CSV audit tests OK."

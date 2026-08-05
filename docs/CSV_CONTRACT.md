@@ -60,7 +60,7 @@ All 20 canonical columns are physically present in every CSV. A column being pre
   municipality centroid; do not treat those as farm/workshop locations, and remove a row's entry
   by re-running the generator after replacing its coordinates with a real geocoded address.
 - Optional-value fields: `imagen` and `Canal de venta`.
-- Other empty values are allowed by the contract but may appear in `check:csv:data-quality` or `check:csv:completeness`.
+- Other empty values are allowed by the contract; `check:csv:data-quality` counts them as suppressed instead of warning on them.
 
 ## How the app uses columns
 - Area catalog source: one CSV file per area in `data/csv/[country]/[region]/`.
@@ -183,10 +183,10 @@ invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
 
 Warnings come in two tiers:
 
-- **Optional-field gaps** flag an empty *optional* field. They are **always suppressed**: editorial policy treats empty as valid, and `check:csv:completeness` already tracks their coverage as a percentage. The summary reports the count as `suppressed (absent optional fields; tracked by check:csv:completeness)` instead of listing them, so the warning list stays a real worklist of actionable issues. Use `check:csv:completeness` to plan filling these gaps.
+- **Optional-field gaps** flag an empty *optional* field. They are **always suppressed**: editorial policy treats empty as valid. The summary reports the count as `suppressed (absent optional fields; empty is a valid value)` instead of listing them, so the warning list stays a real worklist of actionable issues.
 - **Actionable warnings** flag a probable defect (missing core field, bad coordinates, duplicate, invalid value). They always fire, because they need a fix regardless of `verificacion`.
 
-Optional-field gaps (always suppressed → see `check:csv:completeness`):
+Optional-field gaps (always suppressed):
   - `direccion` empty
   - `descripcion` empty or shorter than `30` characters
   - both `telefono` and `correo` empty

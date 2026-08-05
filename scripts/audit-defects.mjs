@@ -5,8 +5,7 @@
 // Complements the existing gates rather than duplicating them:
 //   check:csv                -> blocking technical contract, per file
 //   check:csv:data-quality   -> warnings, per file
-//   check:csv:completeness   -> how full the optional fields are, per file
-//   check:defects (this)     -> editorial defects the other three cannot see,
+//   check:defects (this)     -> editorial defects the other two cannot see,
 //                               because they need cross-file context or a
 //                               judgement the contract does not encode.
 //
@@ -432,7 +431,7 @@ export const CHECKS = [
     id: "venta-sin-resolver",
     kind: "cola",
     label: "`Venta online=no comprobado`",
-    hint: "objetivo 100% resuelto en docs/PROVINCE_COMPLETENESS.md; es el mayor hueco abierto",
+    hint: "el mayor hueco abierto; el criterio de sí/no/no comprobado está en docs/EDITORIAL_POLICY.md",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "no comprobado"),
   },
   {

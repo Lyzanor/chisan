@@ -1,8 +1,8 @@
 # Plan transversal de remediación editorial
 
 Roadmap de larga duración para reducir la deuda que muestran
-`check:defects`, `check:csv:data-quality` y `check:csv:completeness` sin
-degradar la verdad editorial de los CSV.
+`check:defects` y `check:csv:data-quality` sin degradar la verdad editorial de
+los CSV.
 
 Los recuentos no viven aquí: cambian con cada lote. La línea base y la cola
 actual se obtienen siempre con:
@@ -10,7 +10,6 @@ actual se obtienen siempre con:
 ```bash
 npx pnpm check:defects
 npx pnpm check:csv:data-quality
-npx pnpm check:csv:completeness
 ```
 
 Si `npx` falla, el gate sigue siendo el comando, no el lanzador: ejecuta
@@ -325,9 +324,9 @@ o queda honestamente vacío.
 
 Tamaño orientativo: 10–25 filas, agrupadas por municipio, dominio o fuente.
 
-Este carril usa `check:csv:completeness` después de cerrar identidad, venta y
-texto. Los huecos opcionales no son defectos automáticos, pero sí oportunidades
-de hacer la ficha más accionable.
+Este carril entra después de cerrar identidad, venta y texto. Los huecos
+opcionales no son defectos automáticos, pero sí oportunidades de hacer la ficha
+más accionable.
 
 Orden:
 
@@ -525,8 +524,6 @@ el inventario, se documenta como nueva visibilidad, no como regresión de datos.
 - Comparar cada provincia contra su estado anterior, nunca contra otra.
 - Ejecutar inventario global después de un lote de tooling, al cerrar una
   provincia y cada 5–10 lotes provinciales.
-- Usar `check:csv:completeness` como señal, no como obligación de rellenar
-  campos inexistentes.
 - Las señales (`sin-evidencia`, `sin-imagen`) no son KPI ni cola de backfill.
   Pueden conservar residuales legítimos: el éxito es que estén revisados y que
   no se haya inventado una respuesta.

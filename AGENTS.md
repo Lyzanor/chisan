@@ -34,7 +34,6 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `docs/VERIFICATION_TECHNIQUES.md`: how to investigate an area efficiently — batch flow, sufficient evidence, deduplication, location, context discipline. Written in Spanish, valid for every country.
 - `docs/IMAGES.md`: producer image workflow — format, sourcing, naming, enrichment tooling, junk signatures.
 - `docs/TASKS.md`: task recipes, release checklist, handoff checklist.
-- `docs/AREA_COMPLETENESS.md`: planning targets; areas are not benchmarks for one another.
 - `docs/ARCHITECTURE.md`: app flow and runtime design rules.
 - `docs/[country]/**`: that country's own docs — backlog, remediation plans, local investigation notes. They are not canonical for anyone else, and a country without them is not missing anything; it simply has not written them yet.
 
@@ -54,7 +53,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Data/reference/evidence/image-only change: `npx pnpm verify:data`.
 - Code, scripts, validators, policy, or behavior change: `npx pnpm verify:ai`.
 - While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch missing provenance signals.
-- Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`; completeness planning: `npx pnpm check:csv:completeness`.
+- Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`.
 - Cross-area editorial defects (advisory worklist, never blocking): `npx pnpm check:defects`. Answers "what is left to fix and where"; how a country works that queue down is in its own docs.
 - Area roster/de-dup: `npx pnpm list:area [area]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories: `npx pnpm list:categories`. The list is shared by every country; a new country maps its products onto it instead of extending it.

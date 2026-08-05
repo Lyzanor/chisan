@@ -826,8 +826,7 @@ function runQualityAudit({ rows, push, centroids, regionHint }) {
 
     // Core-field gaps are real defects and always warn. Optional-field gaps
     // (address, description, contact, social, Google Maps) are not defects:
-    // editorial policy treats empty as valid, and check:csv:completeness already
-    // tracks their coverage as a percentage. They are pushed as "suppressed" so
+    // editorial policy treats empty as valid. They are pushed as "suppressed" so
     // they never add per-row noise here, whatever the verification status.
     const optionalGap = "suppressed";
 
@@ -1013,7 +1012,7 @@ function printReport(mode, issues, { summaryOnly = false, stats = { geoSkipped: 
   console.log(`- warnings: ${warnings.length}`);
   if (suppressed.length) {
     console.log(
-      `- suppressed (absent optional fields; tracked by check:csv:completeness): ${suppressed.length}`,
+      `- suppressed (absent optional fields; empty is a valid value): ${suppressed.length}`,
     );
   }
   if (stats.geoSkipped) {
