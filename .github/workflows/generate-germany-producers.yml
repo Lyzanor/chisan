@@ -42,12 +42,21 @@ jobs:
           npm install -g pnpm@10
           pnpm install --frozen-lockfile
 
-      - name: Prefer the responsive Overpass mirror
+      - name: Prepare a bounded Overpass query
         run: |
           python3 - <<'PY'
           from pathlib import Path
           path = Path('scripts/generate-germany-producers.mjs')
           text = path.read_text(encoding='utf-8')
+          start = text.index('const OVERPASS_QUERY = `')
+          end = text.index('`;\n\nconst OVERPASS_ENDPOINTS', start) + 2
+          query = '''const OVERPASS_QUERY = `[out:json][timeout:600][bbox:47.20,5.75,55.10,15.15];
+          (
+            nwr["shop"="farm"]["name"];
+            nwr["craft"~"^(beekeeper|winery|brewery|cheese|dairy|oil_mill|distillery|bakery|confectionery|butcher)$"]["name"];
+          );
+          out tags center qt;`;'''
+          text = text[:start] + query + text[end:]
           text = text.replace(
               "const OVERPASS_ENDPOINTS = [\n  'https://overpass.kumi.systems/api/interpreter',\n  'https://overpass-api.de/api/interpreter',",
               "const OVERPASS_ENDPOINTS = [\n  'https://overpass-api.de/api/interpreter',\n  'https://overpass.kumi.systems/api/interpreter',",
