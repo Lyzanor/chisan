@@ -337,6 +337,20 @@
       "region": "chubu"
     }
   ],
+  "kashima": [
+    {
+      "lat": 35.96564,
+      "lon": 140.64483,
+      "label": "Kashima (鹿嶋市)",
+      "region": "kanto"
+    },
+    {
+      "lat": 33.10383,
+      "lon": 130.09858,
+      "label": "Kashima (鹿島市)",
+      "region": "kyushu-okinawa"
+    }
+  ],
   "katsuragi": [
     {
       "lat": 34.48922,
