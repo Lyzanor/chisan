@@ -6,6 +6,7 @@ on:
       - research/italia-km0-500-20260804
     paths:
       - .research-trigger-italy
+      - scripts/research_italy_grid_runner.py
 
 permissions:
   contents: read
@@ -21,48 +22,21 @@ jobs:
           python-version: '3.12'
       - name: Install research dependencies
         run: python -m pip install --disable-pip-version-check requests shapely
-      - name: Apply CI compatibility and bounded Overpass query
+      - name: Apply Shapely 2 index compatibility patch
         run: |
           python - <<'PY'
           from pathlib import Path
-
           path = Path('scripts/research_italy_osm.py')
           text = path.read_text(encoding='utf-8')
-
           old = 'if isinstance(hit, (int,)):\n            idx = int(hit)'
           new = 'if hasattr(hit, "__index__"):\n            idx = int(hit)'
           if old in text:
-              text = text.replace(old, new)
+              path.write_text(text.replace(old, new), encoding='utf-8')
           elif new not in text:
-              raise SystemExit('Expected Shapely compatibility target not found')
-
-          endpoints_start = text.index('OVERPASS_ENDPOINTS = [')
-          endpoints_end = text.index('\n\nOVERPASS_QUERY =', endpoints_start)
-          endpoints = '''OVERPASS_ENDPOINTS = [
-              "https://overpass.private.coffee/api/interpreter",
-              "https://overpass.kumi.systems/api/interpreter",
-              "https://overpass-api.de/api/interpreter",
-          ]'''
-          text = text[:endpoints_start] + endpoints + text[endpoints_end:]
-
-          query_start = text.index('OVERPASS_QUERY = r"""')
-          query_end = text.index('"""\n\nMUNICIPALITY_GEOJSON_URLS', query_start) + 3
-          query = '''OVERPASS_QUERY = r"""
-          [out:json][timeout:120][maxsize:536870912];
-          (
-            nwr["shop"="farm"]["name"](35.20,6.35,47.25,18.75);
-            nwr["craft"~"^(winery|brewery|cheese|oil_mill|distillery|beekeeper|confectionery|pasta|bakery|coffee_roaster)$"]["name"](35.20,6.35,47.25,18.75);
-            nwr["industrial"~"^(winery|brewery|dairy|slaughterhouse|food)$"]["name"](35.20,6.35,47.25,18.75);
-            nwr["man_made"="winery"]["name"](35.20,6.35,47.25,18.75);
-          );
-          out center tags qt 6000;
-          """'''
-          text = text[:query_start] + query + text[query_end:]
-          text = text.replace('timeout=330)', 'timeout=150)')
-          path.write_text(text, encoding='utf-8')
+              raise SystemExit('Expected compatibility target not found')
           PY
       - name: Generate 500 Italy KM0 candidates
-        run: python scripts/research_italy_osm.py
+        run: python scripts/research_italy_grid_runner.py
       - name: Upload research package
         uses: actions/upload-artifact@v4
         with:
