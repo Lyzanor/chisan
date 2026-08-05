@@ -167,6 +167,19 @@ WebFetch por age-gate, Cloudflare o TLS; un fetch fallido no prueba que no haya 
 **dominio o subdominio de marca aparte** (`shop.<marca>`, `<marca>-shop`, o la palabra «tienda» del idioma
 local). Distingue el canal propio del de terceros al rellenar `Canal de venta`.
 
+**Y al revés: que parezca tienda no basta.** El error simétrico es más fácil de cometer porque nadie lo
+revisa. Tres formas medidas de dar un `sí` falso:
+
+- **La palabra «shop» en una ruta suele ser un listado de distribuidores o de tiendas físicas**, no un
+  carrito: `/shop-list/`, `/shop.html`, `/shop/` con el mapa de puntos de venta. Ábrelo antes de creerlo.
+- **Contar la palabra en el HTML da falsos positivos.** Las coincidencias pueden ser ficheros CSS de la
+  plantilla o rutas de blog. Extrae el `href` y mira a dónde va.
+- **Un `200` puede ser un aviso de mudanza.** Hay dominios que responden y cuyo cuerpo dice que el sitio se
+  ha trasladado; el registro que los publica no se entera. Lee el cuerpo, no solo el código.
+
+Lo que sí sostiene `sí` es una plataforma de pago identificable (Shopify, BASE, STORES, ColorMe, MakeShop,
+`.official.ec`, `theshop.jp`) o un carrito en el propio dominio.
+
 ## Deduplicación
 
 Normaliza acentos, mayúsculas y separadores. Compara nombre/marca, dominio, teléfono, correo, dirección,
