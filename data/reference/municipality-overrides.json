@@ -337,6 +337,20 @@
       "region": "chubu"
     }
   ],
+  "kami": [
+    {
+      "lat": 35.63219,
+      "lon": 134.62914,
+      "label": "Kami (香美町, Hyogo)",
+      "region": "kansai"
+    },
+    {
+      "lat": 38.57175,
+      "lon": 140.85481,
+      "label": "Kami (加美町, Miyagi)",
+      "region": "tohoku"
+    }
+  ],
   "kashima": [
     {
       "lat": 35.96564,
@@ -733,6 +747,20 @@
       "lon": -2.50693,
       "label": "Serón",
       "region": "andalucia"
+    }
+  ],
+  "shiroishi": [
+    {
+      "lat": 33.18106,
+      "lon": 130.14344,
+      "label": "Shiroishi (白石町, Saga)",
+      "region": "kyushu-okinawa"
+    },
+    {
+      "lat": 38.00244,
+      "lon": 140.61989,
+      "label": "Shiroishi (白石市, Miyagi)",
+      "region": "tohoku"
     }
   ],
   "tonosho": [

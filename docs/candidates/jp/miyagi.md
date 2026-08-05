@@ -1,22 +1,17 @@
 # Miyagi — candidatos
 
-- CSV: `data/csv/jp/tohoku/miyagi.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/tohoku/miyagi.csv` (9 filas, altas del 2026-08-05).
 - Fuente: 宮城県酒造組合 (gremio, autoritativo), <https://miyagisake.jp/kuramoto/> — los 24 miembros con 社名 y municipio (leído 2026-08-04).
-- Estado: cola abierta, 24 `unverified` (2026-08-04). **El gremio no publica el dominio de sus socios**: cosecharlo es el trabajo previo a cada alta.
+- Estado: **9 integradas** el 2026-08-05 (7 `verificado`, 2 `parcial`); quedan 15. Evidencia en `data/evidence/jp/tohoku/miyagi.jsonl`.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
 
 | nombre (rōmaji propuesto) | 社名 | municipio |
 |---|---|---|
-| Saura | 佐浦 | Shiogama |
 | Abekan Shuzo | 阿部勘酒造 | Shiogama |
-| Katsuyama Shuzo | 仙台伊澤家 勝山酒造 | Sendai |
 | Uchigasaki Shuzoten | 内ヶ崎酒造店 | Tomiya |
-| Taiwagura Shuzo | 大和蔵酒造 | Taiwa |
 | Sasaki Shuzoten | 佐々木酒造店 | Natori |
-| Ichinokura | 一ノ蔵 | Osaki |
-| Niizawa Jozoten | 新澤醸造店 | Osaki |
 | Moritami Shuzoten | 森民酒造店 | Osaki |
 | Kanbai Shuzo | 寒梅酒造 | Osaki |
 | Tanaka Shuzoten | 田中酒造店 | Kami |
@@ -25,14 +20,44 @@ confirmar contra la web de cada bodega.
 | Kawakei Shoten | 川敬商店 | Misato |
 | Chida Shuzo | 千田酒造 | Kurihara |
 | Kanenoi Shuzo | 金の井酒造 | Kurihara |
-| Hagino Shuzo | 萩野酒造 | Kurihara |
 | Ishikoshi Jozo | 石越醸造 | Tome |
 | Kakuboshi | 角星 | Kesennuma |
-| Otokoyama Honten | 男山本店 | Kesennuma |
-| Hirako Shuzo | 平孝酒造 | Ishinomaki |
-| Suminoe Shuzo | 墨廼江酒造 | Ishinomaki |
 | Onuma Shuzoten | 大沼酒造店 | Murata |
 | Zao Shuzo | 蔵王酒造 | Shiroishi |
+
+## Integradas 2026-08-05 (9)
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Ichinokura | Osaki | verificado · venta sí |
+| Otokoyama Honten | Kesennuma | verificado · venta sí |
+| Katsuyama Shuzo | Sendai | verificado · venta sí |
+| Saura (Urakasumi) | Shiogama | verificado · tienda física |
+| Niizawa Jozoten | Osaki ⚠ | verificado · sin carrito |
+| Hagino Shuzo | Kurihara | verificado · sin carrito |
+| Taiwagura Shuzo | Taiwa | verificado · sin carrito |
+| Suminoe Shuzo | Ishinomaki | **parcial** · sin web |
+| Heiko Shuzo | Ishinomaki | **parcial** · sin web |
+
+⚠ **Miyagi tiene tres municipios que resolvían al sitio equivocado**, y es la
+prefectura con más homónimos vistos hasta ahora:
+- `kami` → 香美町 (Hyogo) en vez de 加美町, donde están tres bodegas de la cola.
+- `shiroishi` → 白石町 (Saga) en vez de 白石市, donde está 蔵王酒造.
+- `misato` → 美郷町 (Shimane), y además hay 美里町 en Kumamoto y en Saitama.
+
+Los dos primeros quedan resueltos en `municipality-overrides.json` el
+2026-08-05, **antes** de escribir esas filas. `misato` sigue sin resolver
+porque hace falta decidir entre cuatro candidatos: hacerlo al integrar 川敬商店.
+
+- ⚠ **Niizawa es un caso de sede contra planta.** Tras 2011 trasladó la
+  elaboración a **Kawasaki-machi** y reconstruyó la sede en Osaki en 2013. La
+  fila toma Osaki, que es lo que dan el gremio y su domicilio social, pero si la
+  unidad productiva sigue en Kawasaki hay que corregirla.
+- **`urakasumi.com/shop/` son tiendas físicas**, no carrito. Tercer falso
+  positivo de la palabra «shop» tras Sachihime y Nabeshima en `saga.md`.
+- **Suminoe y Heiko no tienen web propia**: cuarto y quinto caso del patrón tras
+  Hiroki, Takagi y Aihara. Las marcas cotizadas del segmento premium venden por
+  distribuidor y no publican nada.
 
 ## Trampas
 - El gremio da **barrio, no municipio** en varias (仙台市泉区, 大崎市松山,
