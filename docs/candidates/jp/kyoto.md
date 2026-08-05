@@ -1,29 +1,51 @@
 # Kioto — candidatos
 
-- CSV: `data/csv/jp/kansai/kyoto.csv` (15 filas, la única prefectura de Japón revisada fila a fila). Dedup hecho: quedan fuera 佐々木酒造 (Sasaki), 向井酒造 (Mukai), 玉乃光 (Tamanohikari) y 白嶺 (Hakurei), ya en el CSV.
+- CSV: `data/csv/jp/kansai/kyoto.csv` (23 filas: 15 previas más 8 bodegas del 2026-08-05).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/kyoto> (51 bodegas, leído 2026-08-04). Gremio: 京都府酒造組合, <http://kyoto-sake.sakura.ne.jp>.
-- Estado: cola abierta, 15 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: **8 integradas** el 2026-08-05, todas `verificado`, 5 con tienda propia. Evidencia en `data/evidence/jp/kansai/kyoto.jsonl`.
 
 Kioto es la segunda zona sakera de Japón por volumen (Fushimi), y el CSV solo
 tiene tres bodegas. Categoría para todas: `Sake`.
 
 | nombre (rōmaji propuesto) | 社名 | municipio |
 |---|---|---|
-| Gekkeikan | 月桂冠 | Kyoto (伏見) |
-| Kizakura | 黄桜 | Kyoto (伏見) |
-| Kitagawa Honke | 北川本家 | Kyoto (伏見) |
-| Kinshi Masamune | キンシ正宗 | Kyoto |
-| Saito Shuzo | 齊藤酒造 | Kyoto |
-| Shotoku Shuzo | 招德酒造 | Kyoto (伏見) |
 | Kyohime Shuzo | 京姫酒造 | Kyoto (伏見) |
 | Kyodo Shuzo | 共同酒造 | Kyoto |
 | Koyama Honke Shuzo | 小山本家酒造 | Kyoto ⚠ |
-| Joyo Shuzo | 城陽酒造 | Joyo |
-| Oishi Shuzo | 大石酒造 | Kameoka |
-| Kinoshita Shuzo | 木下酒造 | Kyotango |
 | Kumano Shuzo | 熊野酒造 | Kyotango |
 | Ikeda Shuzo | 池田酒造 | Maizuru |
 | Shiraito Shuzo | 白糸酒造 | Miyazu |
+
+## Integradas 2026-08-05 (8) — todas verificado
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Kizakura | Kyoto (Fushimi) | verificado · venta sí |
+| Kitagawa Honke | Kyoto (Fushimi) | verificado · venta sí |
+| Saito Shuzo (Eikun) | Kyoto (Fushimi) | verificado · venta sí |
+| Shotoku Shuzo | Kyoto (Fushimi) | verificado · venta sí |
+| Kinshi Masamune | Kyoto (Fushimi) | verificado · venta sí |
+| Kinoshita Shuzo (Tamagawa) | Kyotango | verificado · sin carrito |
+| Joyo Shuzo | Joyo | verificado · sin carrito |
+| Oishi Shuzo (Okinazuru) | Kameoka | verificado · sin carrito |
+
+**El gremio de Fushimi (`fushimi.or.jp/brewery/`) lista sus 22 socios pero no
+publica el dominio de ninguno**: sirve para censo y municipio, no para enlace.
+
+- ⚠ **月桂冠 (Gekkeikan) queda fuera por masa.** Es de los mayores productores de
+  sake del mundo, con planta en California; el «Qué falta» pedía decidirlo
+  explícitamente y esta es la decisión (`docs/EDITORIAL_POLICY.md`, grupos).
+  **黄桜 sí entra**: es grande pero de identidad local — un solo kura en Fushimi,
+  cerveza artesana propia y planta visitable. La línea se traza en escala
+  industrial y deslocalización, no en facturación.
+  Su dominio, además, no respondió ni por HTTP ni por HTTPS desde aquí.
+- **松竹梅 (Takara) sigue fuera** por lo ya anotado en `hyogo.md`: su sede es
+  Kioto pero su unidad de Nada es planta de grupo.
+- **Dos webs sirven en codificación antigua** — `eikun.com` en Shift_JIS y
+  `okinazuru.co.jp` en EUC-JP — y el título llega ilegible al leerlas como UTF-8.
+  El cuerpo sí se lee: no son sitios rotos.
+- **La tienda de Kitagawa Honke no se enlaza desde su portada**, así que el
+  barrido de hrefs no la vio; la confirmó abrir `shop-tomio.com` directamente.
 
 ## Trampas
 - ⚠ **小山本家酒造** tiene su sede en **さいたま市 (Saitama)** — está en
