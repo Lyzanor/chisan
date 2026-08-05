@@ -20,10 +20,15 @@ What is true of `data/csv/nl/**` only. The shared contract is `AGENTS.md` at the
   are odd, but because the directory tags half its entries `streekproducten` and nothing else: for
   those rows there is no evidence of what the farm actually sells. The rest are 136
   `Lácteos y quesos`, 85 `Fruta y verdura`, 21 `Carne`, 9 `Huevos` and single figures elsewhere.
-- **Only 2 rows carry a `web`, and none carries a phone, an email or a social profile.** Contact is
-  the second hole and the more mechanical one to close.
-- Everything is the 2026-08-05 opening from a single directory. Nothing has been confirmed against a
-  producer's own source, so a first pass is owed province by province.
+- **45 rows are `parcial`, the other 451 `pendiente`.** The 45 are the Landwinkel co-op members: each
+  one's own site was resolved live and carries its name, which settles identity and, with the address
+  the co-op publishes, the municipality. `verificado` needs the page read for what the farm actually
+  produces, which none of them has had.
+- Contact reaches 47 `web` (9,5%), 43 `correo`, 22 `telefono`, 17 Facebook and 10 Instagram — all but
+  two of them from that one pass. **449 rows still have no contact of any kind**, and that is the
+  second hole after the categories.
+- Everything else is the 2026-08-05 opening from a single directory, unconfirmed against any
+  producer's own source, so a first pass is still owed province by province.
 
 ## Geography
 - The register is PDOK's Locatieserver over the BAG, `api.pdok.nl/bzk/locatieserver/search/v3_1/free`.
@@ -59,10 +64,21 @@ What is true of `data/csv/nl/**` only. The shared contract is `AGENTS.md` at the
   says what it produces.
 - The extract read is a subset: the Drenthe page alone lists 70 entries against the 30 filed here, so
   the same directory is still the cheapest next pass.
-- Two national sources are worth reading after it, and neither has been touched: `erkendstreekproduct.nl`,
-  the certification mark run by Streekeigen Producten Nederland, which publishes a map of certified
-  businesses, and `landwinkel.nl`, the farm-shop cooperative — around a hundred shops, most of them
-  already in Boerenroute but with the producer's own site attached, which is exactly what is missing.
+- **Landwinkel**, the farm-shop co-op, publishes its whole membership at `landwinkel.nl/api/stores`:
+  105 shops with website, phone, email, socials, street, postcode and a point. That is where the 45
+  matched rows come from. Two cautions. Its `geolocation` is not reliable — Arkelandshoeve's is 4,7 km
+  from the address it publishes in the same record, and the address is the right one — so match on
+  postcode plus house number, never on distance alone. And its `url` is whatever the member gave it:
+  one is a page on a regional portal rather than the shop's own site, one is a domain parked for sale,
+  one answers only a placeholder, and one has live mail but no web server. Read the page before
+  writing the column.
+- `www.landwinkel.nl` serves a certificate for another host and every client refuses it; the site is
+  perfectly alive at `landwinkel.nl`. A failed fetch is not a dead site.
+- **`erkendstreekproduct.nl`** is the other national source and is still owed: the certification mark
+  of Streekeigen Producten Nederland, whose map lists 270 businesses and whose `/bedrijf/<slug>/` pages
+  carry address, postcode, website, email and phone in a table — the same shape as the co-op's API and
+  matchable the same way. It rate-limits hard: six workers were enough to make the whole host stop
+  answering. Fetch it slowly and serially.
 - Nothing has been read on cheese, beer, or anything the country is otherwise known for.
 
 ## Conventions
@@ -80,6 +96,11 @@ What is true of `data/csv/nl/**` only. The shared contract is `AGENTS.md` at the
   families with no dominant one is `Otros` — the list has no label for a general farm shop, and
   picking one of its families would be a guess.
 - The extract arrived with a Google search URL in `web` for 498 of its 500 rows. A search URL is not
-  a producer site: the column was emptied, and the two real domains are the only ones kept.
+  a producer site: the column was emptied, and the two real domains are the only ones kept. What goes
+  in `web` is the producer's own site, resolved to its final URL and read: not a search, not a page
+  about it on somebody else's portal, and not a domain that merely answers.
+- `Google Maps` is empty here, as it is in every country but Spain. Spain's ~10.900 entries are
+  `maps/search/?api=1&query=…` built from the address rather than resolved place links, so filling the
+  column for the Netherlands is not a Dutch decision — it is whether that practice should spread.
 - Pick-your-own flower gardens were left out — four rows, all real businesses, none of them selling
   food, and every category in the shared list is one.
