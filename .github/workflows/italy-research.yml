@@ -9,11 +9,23 @@ on:
       - scripts/research_italy_grid_runner.py
       - scripts/research_italy_geofabrik.py
       - scripts/research_italy_geofabrik_centro.py
+      - scripts/diagnose_openpolis_geojson.py
 
 permissions:
   contents: read
 
 jobs:
+  diagnose-municipalities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests shapely
+      - run: python scripts/diagnose_openpolis_geojson.py
+
   build-static-fallback:
     runs-on: ubuntu-latest
     timeout-minutes: 20
