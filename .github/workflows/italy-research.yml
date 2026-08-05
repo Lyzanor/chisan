@@ -8,6 +8,7 @@ on:
       - .research-trigger-italy
       - scripts/research_italy_grid_runner.py
       - scripts/research_italy_geofabrik.py
+      - scripts/research_italy_geofabrik_centro.py
 
 permissions:
   contents: read
@@ -23,8 +24,8 @@ jobs:
           python-version: '3.12'
       - name: Install static export dependencies
         run: python -m pip install --disable-pip-version-check requests shapely pyshp
-      - name: Generate 500 candidates from the static Geofabrik extract
-        run: python scripts/research_italy_geofabrik.py
+      - name: Generate 500 candidates from the Centro Geofabrik extract
+        run: python scripts/research_italy_geofabrik_centro.py
       - name: Upload validated CSV
         uses: actions/upload-artifact@v4
         with:
