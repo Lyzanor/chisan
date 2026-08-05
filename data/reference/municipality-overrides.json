@@ -195,6 +195,20 @@
       "region": "aragon"
     }
   ],
+  "daisen": [
+    {
+      "lat": 35.51069,
+      "lon": 133.49606,
+      "label": "Daisen (大山町, Tottori)",
+      "region": "chugoku"
+    },
+    {
+      "lat": 39.45306,
+      "lon": 140.47544,
+      "label": "Daisen (大仙市, Akita)",
+      "region": "tohoku"
+    }
+  ],
   "el molar": [
     {
       "lat": 41.16352,
