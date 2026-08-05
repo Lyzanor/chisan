@@ -179,8 +179,15 @@ function cleanCell(value) {
   return String(value ?? "").replace(/\s+/g, " ").trim();
 }
 
+// `œ` and `æ` are single letters with no Unicode decomposition, so NFD leaves
+// them intact and `Belœil` never meets a row spelling itself `Beloeil`. They are
+// folded here and identically in scripts/build-municipality-centroids.js: the
+// centroid keys are produced by that normalizer and looked up by this one, so
+// the two must agree letter for letter.
 function normalizeSearch(value) {
   return cleanCell(value)
+    .replace(/[œŒ]/g, "oe")
+    .replace(/[æÆ]/g, "ae")
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase()

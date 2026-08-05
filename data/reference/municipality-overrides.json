@@ -866,6 +866,14 @@
         "region": "bourgogne-franche-comte"
       }
     ],
+    "oeuilly": [
+      {
+        "lat": 49.0599,
+        "lon": 3.7936,
+        "label": "Œuilly (Marne)",
+        "region": "grand-est"
+      }
+    ],
     "parnac": [
       {
         "lat": 46.441,
@@ -1046,14 +1054,6 @@
         "lon": -0.8525,
         "label": "Vix (Vendée)",
         "region": "pays-de-la-loire"
-      }
-    ],
-    "œuilly": [
-      {
-        "lat": 49.0599,
-        "lon": 3.7936,
-        "label": "Œuilly (Marne)",
-        "region": "grand-est"
       }
     ]
   },
@@ -1294,6 +1294,64 @@
         "lon": -8.6291,
         "label": "Porto",
         "region": "norte"
+      }
+    ]
+  },
+  "be": {
+    "baelen": [
+      {
+        "lat": 50.63,
+        "lon": 5.9714,
+        "label": "Baelen (Liège)",
+        "region": "wallonie"
+      },
+      {
+        "lat": 51.17083,
+        "lon": 5.16972,
+        "label": "Balen (Antwerpen)",
+        "region": "vlaanderen"
+      }
+    ],
+    "balen": [
+      {
+        "lat": 51.17083,
+        "lon": 5.16972,
+        "label": "Balen (Antwerpen)",
+        "region": "vlaanderen"
+      },
+      {
+        "lat": 50.63,
+        "lon": 5.9714,
+        "label": "Baelen (Liège)",
+        "region": "wallonie"
+      }
+    ],
+    "saint nicolas": [
+      {
+        "lat": 50.63333,
+        "lon": 5.53333,
+        "label": "Saint-Nicolas (Liège)",
+        "region": "wallonie"
+      },
+      {
+        "lat": 51.16444,
+        "lon": 4.13917,
+        "label": "Sint-Niklaas (Oost-Vlaanderen)",
+        "region": "vlaanderen"
+      }
+    ],
+    "sint niklaas": [
+      {
+        "lat": 51.16444,
+        "lon": 4.13917,
+        "label": "Sint-Niklaas (Oost-Vlaanderen)",
+        "region": "vlaanderen"
+      },
+      {
+        "lat": 50.63333,
+        "lon": 5.53333,
+        "label": "Saint-Nicolas (Liège)",
+        "region": "wallonie"
       }
     ]
   }

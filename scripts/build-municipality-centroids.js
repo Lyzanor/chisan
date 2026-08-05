@@ -28,6 +28,20 @@
 //     "Découpage administratif" API (geo.api.gouv.fr) in a single call. Only
 //     current communes are listed there, so no dissolution filter is needed,
 //     and each commune carries one name, so there are no altLabels.
+//   - Belgium: "municipality of Belgium" (Q493522) with coordinates, minus
+//     anything carrying a dissolution date — the 1977 and 2019/2025 mergers
+//     left every deelgemeente in Wikidata. Labels in nl / fr / de, so the two
+//     official spellings of a bilingual municipality (Mons / Bergen,
+//     Antwerpen / Anvers) share one centroid.
+//
+// The "mul" label
+// - Wikidata's multilingual label holds the name of an entity spelled the same
+//   in every language, and an editor who fills it in may remove the per-language
+//   ones. Every country therefore asks for "mul" first: without it Charleroi has
+//   no nl, fr or de label at all and drops out of the Belgian catalog entirely,
+//   taking the geographic gate for every producer in Wallonia's largest city
+//   with it. Four Belgian municipalities and five Italian comuni were reachable
+//   only this way.
 //
 // Output
 // - data/reference/municipalities.json
@@ -92,7 +106,7 @@ const COUNTRIES = [
     code: "es",
     label: "Spain",
     rootClass: "wd:Q2074737",
-    langs: ["es", "ca", "gl", "eu", "an", "ast"],
+    langs: ["mul", "es", "ca", "gl", "eu", "an", "ast"],
     canonicalLang: "es",
     extraFilter: "",
   },
@@ -101,7 +115,7 @@ const COUNTRIES = [
     code: "jp",
     label: "Japan",
     rootClass: "wd:Q1054813",
-    langs: ["en", "ja"],
+    langs: ["mul", "en", "ja"],
     canonicalLang: "en",
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
   },
@@ -110,7 +124,7 @@ const COUNTRIES = [
     code: "pt",
     label: "Portugal",
     rootClass: "wd:Q13217644",
-    langs: ["pt"],
+    langs: ["mul", "pt"],
     canonicalLang: "pt",
     extraFilter: "",
   },
@@ -119,7 +133,7 @@ const COUNTRIES = [
     code: "it",
     label: "Italy",
     rootClass: "wd:Q747074",
-    langs: ["it", "de"],
+    langs: ["mul", "it", "de"],
     canonicalLang: "it",
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
   },
@@ -129,6 +143,15 @@ const COUNTRIES = [
     label: "France",
     endpoint: GEO_API_COMMUNES,
     dropAmbiguous: true,
+  },
+  {
+    slug: "belgium",
+    code: "be",
+    label: "Belgium",
+    rootClass: "wd:Q493522",
+    langs: ["mul", "nl", "fr", "de"],
+    canonicalLang: "nl",
+    extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
   },
 ];
 
@@ -188,6 +211,8 @@ async function withRetry(run, attempts = 4) {
 
 function normalize(value) {
   return String(value || "")
+    .replace(/[œŒ]/g, "oe")
+    .replace(/[æÆ]/g, "ae")
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase()

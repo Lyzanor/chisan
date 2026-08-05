@@ -3,10 +3,57 @@
   "generator": "scripts/build-geo-provenance.mjs",
   "method": "lat/lon a ±0.00001° del centroide municipal (municipalities.json + overrides): coordenada de pueblo, no de finca/obrador",
   "totals": {
-    "rows": 13244,
-    "tagged": 1543
+    "rows": 13396,
+    "tagged": 1576
   },
   "areas": {
+    "be/bruxelles-capitale/bruxelles-capitale": [
+      "brasserie-de-l-ermitage"
+    ],
+    "be/vlaanderen/antwerpen": [
+      "antwerpse-brouw-compagnie",
+      "brouwerij-duvel-moortgat",
+      "speciale-belge-brewers"
+    ],
+    "be/wallonie/brabant-wallon": [
+      "la-ferme-du-gentissart",
+      "la-fraise-du-piroy",
+      "la-terre-d-ici"
+    ],
+    "be/wallonie/hainaut": [
+      "brasserie-de-cambron",
+      "brasserie-de-l-abbaye-n-d-de-scourmont",
+      "brasserie-des-3-f",
+      "brasserie-des-carrieres-diole",
+      "brasserie-du-val-de-dendre",
+      "brasserie-kluiz",
+      "brasserie-saint-feuillien",
+      "brasserie-scassenes",
+      "jean-luc-leclercq",
+      "la-ferme-des-grands-pres",
+      "les-jardins-de-myrtille",
+      "les-jardins-du-bois-d-arnelle",
+      "ramene-ta-fraise",
+      "urban-brewery"
+    ],
+    "be/wallonie/liege": [
+      "ferme-au-vivier",
+      "ferme-schiepers",
+      "fromagerie-regal",
+      "la-ferme-de-wichampre"
+    ],
+    "be/wallonie/luxembourg": [
+      "bergerie-de-l-isbelle",
+      "bio-gailly-les-legumes-du-guimpoux"
+    ],
+    "be/wallonie/namur": [
+      "agrabio",
+      "au-coin-du-jardin",
+      "ferme-de-la-couture",
+      "ferme-du-fond-du-buisson",
+      "la-ferme-d-enee",
+      "les-jardins-de-mimie"
+    ],
     "es/andalucia/almeria": [
       "bio-nature-mediterraneo-vicar",
       "la-pastora-de-taberno",

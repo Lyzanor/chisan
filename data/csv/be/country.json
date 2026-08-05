@@ -1,0 +1,105 @@
+{
+  "label": "Belgium",
+  "unit": {
+    "one": "province",
+    "many": "provinces"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "aliases": {
+    "flandes": "vlaanderen",
+    "flanders": "vlaanderen",
+    "flandre": "vlaanderen",
+    "valonia": "wallonie",
+    "wallonia": "wallonie",
+    "wallonie-region": "wallonie",
+    "bruselas": "bruxelles-capitale",
+    "brussel": "bruxelles-capitale",
+    "brussels": "bruxelles-capitale",
+    "bruxelles": "bruxelles-capitale",
+    "amberes": "antwerpen",
+    "anvers": "antwerpen",
+    "antwerp": "antwerpen",
+    "limburgo": "limburg",
+    "flandes-oriental": "oost-vlaanderen",
+    "flandre-orientale": "oost-vlaanderen",
+    "flandes-occidental": "west-vlaanderen",
+    "flandre-occidentale": "west-vlaanderen",
+    "brabante-flamenco": "vlaams-brabant",
+    "brabant-flamand": "vlaams-brabant",
+    "brabante-valon": "brabant-wallon",
+    "waals-brabant": "brabant-wallon",
+    "henao": "hainaut",
+    "henegouwen": "hainaut",
+    "lieja": "liege",
+    "luik": "liege",
+    "luxemburgo": "luxembourg",
+    "namen": "namur"
+  },
+  "regions": [
+    {
+      "slug": "vlaanderen",
+      "label": "Vlaanderen",
+      "areas": [
+        {
+          "slug": "antwerpen",
+          "label": "Antwerpen"
+        },
+        {
+          "slug": "limburg",
+          "label": "Limburg"
+        },
+        {
+          "slug": "oost-vlaanderen",
+          "label": "Oost-Vlaanderen"
+        },
+        {
+          "slug": "vlaams-brabant",
+          "label": "Vlaams-Brabant"
+        },
+        {
+          "slug": "west-vlaanderen",
+          "label": "West-Vlaanderen"
+        }
+      ]
+    },
+    {
+      "slug": "wallonie",
+      "label": "Wallonie",
+      "areas": [
+        {
+          "slug": "brabant-wallon",
+          "label": "Brabant wallon"
+        },
+        {
+          "slug": "hainaut",
+          "label": "Hainaut"
+        },
+        {
+          "slug": "liege",
+          "label": "Liège"
+        },
+        {
+          "slug": "luxembourg",
+          "label": "Luxembourg"
+        },
+        {
+          "slug": "namur",
+          "label": "Namur"
+        }
+      ]
+    },
+    {
+      "slug": "bruxelles-capitale",
+      "label": "Bruxelles-Capitale",
+      "areas": [
+        {
+          "slug": "bruxelles-capitale",
+          "label": "Bruxelles-Capitale"
+        }
+      ]
+    }
+  ]
+}
