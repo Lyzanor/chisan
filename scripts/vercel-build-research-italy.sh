@@ -8,17 +8,29 @@ mkdir -p "${PY_DEPS}" public/research/italia-500
 python3 -m pip install --disable-pip-version-check --no-cache-dir --target "${PY_DEPS}" requests shapely
 export PYTHONPATH="${PY_DEPS}${PYTHONPATH:+:${PYTHONPATH}}"
 
-# Shapely 2 devuelve índices numpy.int64 desde STRtree.query().
+# Ajustes de compatibilidad del generador para Shapely 2 y el esquema Openpolis.
 python3 - <<'PY'
 from pathlib import Path
 path = Path('scripts/research_italy_osm.py')
 text = path.read_text(encoding='utf-8')
-old = 'if isinstance(hit, (int,)):\n            idx = int(hit)'
-new = 'if hasattr(hit, "__index__"):\n            idx = int(hit)'
-if old in text:
-    path.write_text(text.replace(old, new), encoding='utf-8')
-elif new not in text:
-    raise SystemExit('No se encontró el bloque de compatibilidad de Shapely')
+
+replacements = [
+    (
+        'if isinstance(hit, (int,)):\n            idx = int(hit)',
+        'if hasattr(hit, "__index__"):\n            idx = int(hit)',
+    ),
+    (
+        'municipality = clean_text(props.get("com_name") or props.get("municipality_name"))',
+        'municipality = clean_text(props.get("name") or props.get("com_name") or props.get("municipality_name"))',
+    ),
+]
+for old, new in replacements:
+    if old in text:
+        text = text.replace(old, new)
+    elif new not in text:
+        raise SystemExit(f'No se encontró el bloque esperado: {old}')
+
+path.write_text(text, encoding='utf-8')
 PY
 
 python3 scripts/research_italy_osm.py
