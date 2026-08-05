@@ -337,6 +337,14 @@
       "region": "chubu"
     }
   ],
+  "ikeda kitaazumi": [
+    {
+      "lat": 36.42079,
+      "lon": 137.88045,
+      "label": "Ikeda (Kitaazumi, Nagano)",
+      "region": "chubu"
+    }
+  ],
   "izu": [
     {
       "lat": 42.8225,
@@ -391,6 +399,22 @@
       "lon": 135.5037,
       "label": "Katsuragi (Wakayama)",
       "region": "kansai"
+    }
+  ],
+  "kisomachi": [
+    {
+      "lat": 35.84192,
+      "lon": 137.69139,
+      "label": "Kisomachi (木曽町)",
+      "region": "chubu"
+    }
+  ],
+  "kisomura": [
+    {
+      "lat": 35.93631,
+      "lon": 137.78314,
+      "label": "Kisomura (木祖村)",
+      "region": "chubu"
     }
   ],
   "kitaibaraki": [

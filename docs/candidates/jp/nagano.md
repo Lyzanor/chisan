@@ -1,51 +1,62 @@
 # Nagano — candidatos
 
-- CSV: `data/csv/jp/chubu/nagano.csv` (32 filas).
-- Fuente: 長野県酒造組合 <https://www.nagano-sake.or.jp/breweries/>, que reparte
-  sus miembros en diez áreas (Kitaazumi, Matsumoto, Kiso, Iida, Nakano, Nagano,
-  Ueda, Saku, Suwa, Ina) y **publica el dominio de cada bodega en la propia ficha
-  del área**, junto con dirección y teléfono. Una lectura por área basta.
-- Estado: **⚑ CANDIDATOS DEL LISTADO AGOTADOS** el 2026-08-05. Las 22 bodegas del
-  xlsx, las 10 de la primera mordida al censo y Tamamura Honten están integradas.
+- CSV: `data/csv/jp/chubu/nagano.csv` (77 filas).
+- Fuente: 長野県酒造組合. **Lee las fichas japonesas, `/intro/<area>/`, no las inglesas
+  `/breweries/<area>/`**: las inglesas pierden bodegas, romanizan mal y traducen
+  razones sociales por marcas. Diez áreas: Kitaazumi, Matsumoto, Kiso, Iida,
+  Nakano, Nagano, Ueda, Saku, Suwa, Ina.
+- Estado: **⚑ CENSO DE SAKE CERRADO** el 2026-08-05. Las 76 bodegas del gremio
+  están integradas (77 filas = 76 + Tamamura Honten, que entra como cervecera).
 
 ## Descartes
 
-- **明科酒造 (Akashina Shuzo, Azumino)**: cerrada entre 2012 y 2014. Estaba en el
-  corte alfabético de sake-times, que no marca las bajas — el censo del gremio no
-  la lista y por ahí se cazó.
-- **Hokto Corporation**: cotizada de cultivo industrial de setas con plantas en
-  varias prefecturas. Descarte por escala, no por origen.
+- **明科酒造 (Akashina Shuzo, Azumino)**: cerrada entre 2012 y 2014. Solo la
+  listaba un directorio que no marca las bajas.
+- **山清酒造 (Sansei Shuzo, Chikuhoku)**: aparece en la ficha inglesa del área de
+  Matsumoto y **no** en la japonesa. Sin web y sin rastro reciente: no se da de
+  alta hasta confirmar que sigue.
+- **芙蓉酒造協同組合**: misma dirección, teléfono y web que 芙蓉酒造（株）. Dos
+  figuras jurídicas sobre una unidad productiva, una sola fila.
+- **Hokto Corporation**: cotizada de setas con plantas en varias prefecturas.
 
-## Trampas resueltas en la pasada
+## Trampas resueltas
 
-- **Nakano** es municipio de Nagano y barrio de Tokio, a 130 km: error bloqueante.
-  Resuelto en `data/reference/municipality-overrides.json`.
-- **Dominios que el gremio publica y ya no valen**: `miyamazakura.com` (Furuya) no
-  resuelve — el vigente es `furuya-shuzou.com`; `ueda.ne.jp/~okazaki` (Okazaki) da
-  error de certificado — el vigente es `shinshu-kirei.com`; `asamadake.co.jp`
-  redirige a `.com`. Comprobar el dominio antes de copiarlo del gremio.
-- **Un 403 o una verificación de edad no son un sitio muerto**: Higashiiida
-  (`motooi.com`), Furuya y Totsuka (`kanchiku.com`) sirven, pero no se dejan leer
-  en automático, y por eso quedan en `parcial`.
-- **`ookuni.com`** resuelve pero sirve una página de prohibido en el puerto 444:
-  la fila se queda sin `web`.
-- **La tienda puede estar en el dominio a pelo o en el `www`, no en los dos**:
-  `masumi.jp` es una portada por defecto del proveedor y `www.masumi.jp` es la
-  tienda real.
+- **La marca 雲山 (Unzan) no identifica a un productor.** La crearon en 1960 seis
+  bodegas con embotelladora común (雲山銘醸) y desde los noventa solo la elabora
+  **西之門よしのや**. El gremio se la sigue atribuyendo además a **山形屋** y
+  **坂井銘醸**, que quedan sin marca propia acreditada y son las dos candidatas a
+  revisar en 2ª pasada.
+- **Homónimos entre municipios de Nagano y de fuera**, todos en
+  `municipality-overrides.json`: `nakano` (Nagano / barrio de Tokio, 130 km) e
+  `ikeda` (Kitaazumi / Gifu, misma región `chubu`, por eso el `municipio` lleva el
+  distrito: `Ikeda (Kitaazumi)`).
+- **Homónimo de Nagano contra sí misma**: 木祖村 y 木曽町 romanizan los dos como
+  «Kiso» y son municipios distintos a 20 km. Se escriben `Kisomura` y `Kisomachi`,
+  con override cada uno.
+- **Dominios del gremio caducados** (7 de 76): `miyamazakura.com` (Furuya, no
+  resuelve → `furuya-shuzou.com`), `ueda.ne.jp/~okazaki` (Okazaki, certificado →
+  `shinshu-kirei.com`), `fukumuryo.co.jp` (Kutsukake, no resuelve →
+  `kutsukake-sake.com`), `shopdaiya.jp` (Toda, 404 → `todashuzo.jp`),
+  `mcci.or.jp/www/yoikana/` (Yoikana, 404 → `yoikana.com`), `asamadake.co.jp`
+  (redirige a `.com`) y la ficha de Tenpo Shuzo, que apunta a una licorería ajena.
+- **`https://www.sakagura.co.jp/` sirve el sitio de reclutamiento de un grupo
+  industrial ajeno**; el de Sakai Meijo es el `http://`. Comprobar los dos esquemas.
+- **Un 403, una verificación de edad o un timeout no son un sitio muerto**:
+  Higashiiida, Furuya, Totsuka, Yoshinoya, Fuyo, Nakazen y Kikusui sirven pero no
+  se dejan leer, y por eso quedan en `parcial`.
 - **Razón social ≠ marca**: 薄井商店 firma ya como 白馬錦酒造; 市野屋 vende bajo
-  Ryusuisen y no bajo el Kinrankurobe que lista el gremio; 高橋助作酒造店 se llama
-  a sí misma Matsuwo. La fila lleva el nombre público actual.
-- **木内醸造 (Kiuchi Jyouzou, Saku)** no tiene nada que ver con **木内酒造**
-  (Kiuchi Brewery, Naka, Ibaraki), el de Hitachino Nest.
+  Ryusuisen y no bajo el Kinrankurobe del gremio; 高橋助作酒造店 se llama a sí
+  misma Matsuwo; 戸田酒造 no es «Suwa Otsuya Honke Shuzo».
+- **木内醸造 (Saku)** no tiene nada que ver con **木内酒造** (Naka, Ibaraki), el de
+  Hitachino Nest.
+- **`shoplist` / `shops` suele ser la lista de tiendas concertadas**, no tienda
+  propia: Hokuan, Ono, Kasuga y Daishinshu se quedan en `no comprobado` por eso.
 
 ## Qué falta
 
-- **El resto del censo de sake**: el gremio lista ~80 bodegas y aquí hay 31. Sin
-  recorrer quedan las áreas de **Kiso** e **Iida** enteras, y los miembros que no
-  estaban en el listado dentro de las ocho ya leídas — entre ellos 芙蓉酒造 y
-  木内醸造 (Saku), 豊島屋 y 諏訪大津屋本家酒造 y 舞姫 (Suwa), 長野銘醸 y 西飯田酒造店
-  y 尾澤酒造場 y 松葉屋本店 y 高澤酒造 y 坂井銘醸 y 天法酒造 (Nagano), los cinco de
-  Ueda, ocho de Matsumoto, tres de Kitaazumi, seis de Nakano y siete de Ina.
+- **2ª pasada**: 21 filas en `parcial` (las de arriba), Yoshinoya sin coordenadas
+  (el geocodificador oficial no tiene Nishinomoncho) y las dos candidatas a purga.
 - **Todo lo que no es sake**: soba, miso de Shinshu, manzana, uva y **vino** de
-  Chikumagawa/Kikyogahara, wasabi de Azumino, oyaki. Ninguna fuente localizada aún.
-- Imágenes: 32/32 filas sin `imagen`.
+  Chikumagawa/Kikyogahara, wasabi de Azumino, oyaki. Ninguna fuente localizada aún
+  — es el hueco grande de la prefectura.
+- Imágenes: 77/77 filas sin `imagen`.
