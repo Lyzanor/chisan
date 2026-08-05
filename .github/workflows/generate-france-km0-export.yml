@@ -1,0 +1,258 @@
+name: Generate France km0 CSV export
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    if: github.head_ref == 'agent/france-km0-csv-export-20260805'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download, filter and balance 500 direct-sale producers
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import csv
+          import io
+          import json
+          import re
+          import unicodedata
+          import urllib.request
+          from collections import defaultdict, deque
+          from pathlib import Path
+
+          SOURCE_FILE = "https://static.data.gouv.fr/resources/annuaire-des-exploitations-certifiees-haute-valeur-environnementale/20250730-125900/annuaire-des-exploitations-hve-juin-2025.csv"
+          SOURCE_PAGE = "https://www.data.gouv.fr/datasets/annuaire-des-exploitations-certifiees-haute-valeur-environnementale"
+          OUTPUT = Path("out/producteurs_km0_france_500.csv")
+          OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+
+          request = urllib.request.Request(
+              SOURCE_FILE,
+              headers={"User-Agent": "km0-data-export/1.0 (+https://km0-nu.vercel.app/)"},
+          )
+          with urllib.request.urlopen(request, timeout=120) as response:
+              raw = response.read()
+
+          text = None
+          used_encoding = None
+          for encoding in ("utf-8-sig", "cp1252", "latin-1"):
+              try:
+                  text = raw.decode(encoding)
+                  used_encoding = encoding
+                  break
+              except UnicodeDecodeError:
+                  pass
+          if text is None:
+              raise RuntimeError("Unable to decode official HVE CSV")
+
+          try:
+              dialect = csv.Sniffer().sniff(text[:20000], delimiters=";,\t,")
+              delimiter = dialect.delimiter
+          except csv.Error:
+              delimiter = ";"
+
+          def clean(value):
+              return re.sub(r"\s+", " ", str(value or "")).strip()
+
+          def norm(value):
+              value = unicodedata.normalize("NFKD", clean(value))
+              value = "".join(ch for ch in value if not unicodedata.combining(ch))
+              return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+
+          reader = csv.DictReader(io.StringIO(text), delimiter=delimiter)
+          if not reader.fieldnames:
+              raise RuntimeError("Official HVE CSV has no header")
+          header = {norm(name): name for name in reader.fieldnames if name}
+
+          aliases = {
+              "name": ["nom ou raison sociale", "nom_ou_raison_sociale"],
+              "address": ["adresse"],
+              "postal": ["code postal", "code_postal"],
+              "region": ["region", "région"],
+              "department": ["departement", "département"],
+              "municipality": ["commune"],
+              "web": ["site internet", "site_internet"],
+              "animal": ["activite principale animale", "activité principale animale", "activite principale secteur animal"],
+              "plant": ["activite principale vegetale", "activité principale végétale", "activite principale secteur vegetal"],
+              "direct": ["vente directe", "vente_directe"],
+              "certification": ["date de certification", "date_de_certification"],
+          }
+
+          def field(row, key):
+              for alias in aliases[key]:
+                  original = header.get(norm(alias))
+                  if original is not None:
+                      return clean(row.get(original, ""))
+              return ""
+
+          def normalize_web(value):
+              value = clean(value)
+              if norm(value) in {"", "nan", "na", "nc", "non", "neant", "aucun"}:
+                  return ""
+              if value.startswith("//"):
+                  return "https:" + value
+              if not re.match(r"^https?://", value, flags=re.I):
+                  value = "https://" + value.lstrip("/")
+              return value
+
+          records = []
+          seen = set()
+          for row in reader:
+              if norm(field(row, "direct")) != "oui":
+                  continue
+              name = field(row, "name")
+              region = field(row, "region")
+              municipality = field(row, "municipality")
+              postal = field(row, "postal")
+              animal = field(row, "animal")
+              plant = field(row, "plant")
+              category_parts = [part for part in (animal, plant) if part]
+              category = " / ".join(dict.fromkeys(category_parts))
+              if not name or not region or not category:
+                  continue
+              dedupe_key = (norm(name), norm(municipality), norm(postal))
+              if dedupe_key in seen:
+                  continue
+              seen.add(dedupe_key)
+              records.append({
+                  "nombre": name,
+                  "pais": "France",
+                  "region": region,
+                  "departamento": field(row, "department"),
+                  "municipio": municipality,
+                  "codigo_postal": postal,
+                  "categoria": category,
+                  "actividad_animal": animal,
+                  "actividad_vegetal": plant,
+                  "direccion": field(row, "address"),
+                  "web": normalize_web(field(row, "web")),
+                  "venta_directa": "OUI",
+                  "fecha_certificacion": field(row, "certification"),
+                  "fuente": SOURCE_PAGE,
+              })
+
+          def balanced_take(pool, limit):
+              grouped = defaultdict(deque)
+              for record in sorted(
+                  pool,
+                  key=lambda item: (
+                      norm(item["region"]),
+                      norm(item["categoria"]),
+                      norm(item["nombre"]),
+                      norm(item["municipio"]),
+                  ),
+              ):
+                  grouped[(record["region"], record["categoria"])].append(record)
+
+              region_groups = defaultdict(list)
+              for group_key in sorted(grouped, key=lambda key: (norm(key[0]), norm(key[1]))):
+                  region_groups[group_key[0]].append(group_key)
+              regions = sorted(region_groups, key=norm)
+              cursors = {region: 0 for region in regions}
+              result = []
+
+              while len(result) < limit:
+                  progressed = False
+                  for region in regions:
+                      keys = region_groups[region]
+                      if not keys:
+                          continue
+                      for _ in range(len(keys)):
+                          index = cursors[region] % len(keys)
+                          cursors[region] += 1
+                          key = keys[index]
+                          if grouped[key]:
+                              result.append(grouped[key].popleft())
+                              progressed = True
+                              break
+                      if len(result) >= limit:
+                          break
+                  if not progressed:
+                      break
+              return result
+
+          with_web = [record for record in records if record["web"]]
+          without_web = [record for record in records if not record["web"]]
+          selected = balanced_take(with_web, min(500, len(with_web)))
+          if len(selected) < 500:
+              selected.extend(balanced_take(without_web, 500 - len(selected)))
+          if len(selected) != 500:
+              raise RuntimeError(f"Expected 500 eligible producers, found {len(selected)}")
+
+          selected.sort(
+              key=lambda item: (
+                  norm(item["region"]),
+                  norm(item["departamento"]),
+                  norm(item["municipio"]),
+                  norm(item["nombre"]),
+              )
+          )
+
+          def slugify(value):
+              slug = norm(value).replace(" ", "-")
+              return slug.strip("-") or "producteur"
+
+          used_slugs = set()
+          for record in selected:
+              base = slugify(f'{record["nombre"]}-{record["municipio"]}')
+              slug = base
+              suffix = 2
+              while slug in used_slugs:
+                  slug = f"{base}-{suffix}"
+                  suffix += 1
+              used_slugs.add(slug)
+              record["slug"] = slug
+
+          columns = [
+              "slug",
+              "nombre",
+              "pais",
+              "region",
+              "departamento",
+              "municipio",
+              "codigo_postal",
+              "categoria",
+              "actividad_animal",
+              "actividad_vegetal",
+              "direccion",
+              "web",
+              "venta_directa",
+              "fecha_certificacion",
+              "fuente",
+          ]
+          with OUTPUT.open("w", encoding="utf-8", newline="") as handle:
+              writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
+              writer.writeheader()
+              writer.writerows(selected)
+
+          stats = {
+              "source_encoding": used_encoding,
+              "source_delimiter": delimiter,
+              "eligible_direct_sale_rows": len(records),
+              "exported_rows": len(selected),
+              "rows_with_web": sum(bool(record["web"]) for record in selected),
+              "regions": sorted({record["region"] for record in selected}, key=norm),
+              "categories": sorted({record["categoria"] for record in selected}, key=norm),
+          }
+          Path("out/summary.json").write_text(
+              json.dumps(stats, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(stats, ensure_ascii=False))
+          PY
+
+      - name: Upload CSV artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: producteurs-km0-france-500
+          path: |
+            out/producteurs_km0_france_500.csv
+            out/summary.json
+          if-no-files-found: error
+          retention-days: 1
