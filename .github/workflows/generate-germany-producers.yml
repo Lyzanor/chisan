@@ -42,6 +42,19 @@ jobs:
           npm install -g pnpm@10
           pnpm install --frozen-lockfile
 
+      - name: Prefer the responsive Overpass mirror
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/generate-germany-producers.mjs')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              "const OVERPASS_ENDPOINTS = [\n  'https://overpass.kumi.systems/api/interpreter',\n  'https://overpass-api.de/api/interpreter',",
+              "const OVERPASS_ENDPOINTS = [\n  'https://overpass-api.de/api/interpreter',\n  'https://overpass.kumi.systems/api/interpreter',",
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Generate 500 German producers
         run: node scripts/generate-germany-producers.mjs
 
