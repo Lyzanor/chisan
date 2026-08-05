@@ -42,7 +42,7 @@ jobs:
           npm install -g pnpm@10
           pnpm install --frozen-lockfile
 
-      - name: Prepare a bounded Overpass query
+      - name: Prepare a focused Overpass query
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -50,10 +50,14 @@ jobs:
           text = path.read_text(encoding='utf-8')
           start = text.index('const OVERPASS_QUERY = `')
           end = text.index('`;\n\nconst OVERPASS_ENDPOINTS', start) + 2
-          query = '''const OVERPASS_QUERY = `[out:json][timeout:600][bbox:47.20,5.75,55.10,15.15];
+          query = '''const OVERPASS_QUERY = `[out:json][timeout:300][bbox:47.20,5.75,55.10,15.15];
           (
-            nwr["shop"="farm"]["name"];
-            nwr["craft"~"^(beekeeper|winery|brewery|cheese|dairy|oil_mill|distillery|bakery|confectionery|butcher)$"]["name"];
+            nwr["shop"="farm"]["name"]["website"];
+            nwr["shop"="farm"]["name"]["contact:website"];
+            nwr["shop"="farm"]["name"]["url"];
+            nwr["craft"~"^(beekeeper|winery|brewery|cheese|dairy|oil_mill|distillery|bakery|confectionery|butcher)$"]["name"]["website"];
+            nwr["craft"~"^(beekeeper|winery|brewery|cheese|dairy|oil_mill|distillery|bakery|confectionery|butcher)$"]["name"]["contact:website"];
+            nwr["craft"~"^(beekeeper|winery|brewery|cheese|dairy|oil_mill|distillery|bakery|confectionery|butcher)$"]["name"]["url"];
           );
           out tags center qt;`;'''
           text = text[:start] + query + text[end:]
