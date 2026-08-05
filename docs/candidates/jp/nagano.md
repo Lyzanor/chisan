@@ -1,89 +1,51 @@
 # Nagano — candidatos
 
-- CSV: `data/csv/jp/chubu/nagano.csv` (1 filas, todas altas de esta pasada).
-- Origen: listado aportado por el usuario, `listado_125_productores_locales_japon.xlsx` (2026-08-04), bloque de Nagano. Fuente que cita: 長野県酒造組合 <https://www.nagano-sake.or.jp/breweries/>.
-- Estado: **1 integrada** (Tamamura Honten) el 2026-08-04. Las 22 bodegas siguen fuera porque el gremio no publica su dominio, y Hokto queda descartada por escala industrial.
+- CSV: `data/csv/jp/chubu/nagano.csv` (32 filas).
+- Fuente: 長野県酒造組合 <https://www.nagano-sake.or.jp/breweries/>, que reparte
+  sus miembros en diez áreas (Kitaazumi, Matsumoto, Kiso, Iida, Nakano, Nagano,
+  Ueda, Saku, Suwa, Ina) y **publica el dominio de cada bodega en la propia ficha
+  del área**, junto con dirección y teléfono. Una lectura por área basta.
+- Estado: **⚑ CANDIDATOS DEL LISTADO AGOTADOS** el 2026-08-05. Las 22 bodegas del
+  xlsx, las 10 de la primera mordida al censo y Tamamura Honten están integradas.
 
-Categoría: `Sake` salvo las dos últimas. `A`/`B` es la clasificación del
-listado de origen (`B` = solo valen los productos con origen local acreditado).
+## Descartes
 
-| nombre | municipio | categoría | A/B |
-|---|---|---|---|
-| Imaishuzouten | Nagano | Sake | B |
-| Higashiiidashuzouten | Nagano | Sake | B |
-| Shusenkurano (酒千蔵野) | Nagano | Sake | B |
-| Matsuwo Sake | Shinano | Sake | B |
-| Masuichi Ichimura Shuzoujou | Obuse | Sake | B |
-| Endo Brewery | Suzaka | Sake | B |
-| Ootsuka Shuzou (大塚酒造) | Komoro | Sake | B |
-| Chikumanishiki Shuzou (千曲錦酒造) | Saku | Sake | B |
-| Totsuka Shuzou (戸塚酒造) | Saku | Sake | B |
-| Furuya Shuzouten (古屋酒造店) | Saku | Sake | B |
-| Takeshige Honke Brewing (武重本家酒造) | Saku | Sake | B |
-| Tsuchiya Shuzouten (土屋酒造店) | Saku | Sake | B |
-| Tomono Shuzou (伴野酒造) | Saku | Sake | B |
-| Kitsukura Shuzou (橘倉酒造) | Saku | Sake | B |
-| Sakunohana Shuzou (佐久の花酒造) | Saku | Sake | B |
-| Kurosawa Sake Brewery (黒澤酒造) | Sakuho | Sake | B |
-| Reijin Shuzou | Suwa | Sake | B |
-| Sakenunoya Honkin Shuzou (酒ぬのや本金酒造) | Suwa | Sake | B |
-| Ito Shuzou | Suwa | Sake | B |
-| Miyasaka Brewing (宮坂醸造 / 真澄) | Suwa | Sake | B |
-| Koten Shuzou | Okaya | Sake | B |
-| Mikotsuru Shuzou (御湖鶴) | Shimosuwa | Sake | B |
-| Tamamura Honten / Shiga Kogen Beer | Yamanouchi | Cerveza | B — tamamura-honten.co.jp |
-| Hokto Corporation | Nagano | Setas | B — hokto-kinoko.co.jp ⚠ ver nota |
+- **明科酒造 (Akashina Shuzo, Azumino)**: cerrada entre 2012 y 2014. Estaba en el
+  corte alfabético de sake-times, que no marca las bajas — el censo del gremio no
+  la lista y por ahí se cazó.
+- **Hokto Corporation**: cotizada de cultivo industrial de setas con plantas en
+  varias prefecturas. Descarte por escala, no por origen.
 
-## Contraste contra el gremio (hecho 2026-08-04)
+## Trampas resueltas en la pasada
 
-Abierta la página del área de **Saku**, <https://www.nagano-sake.or.jp/breweries/saku/>:
-las diez entradas de Saku/Komoro/Sakuho del listado aparecen ahí literalmente,
-con marca y kanji. El bloque es real, no una lista inventada.
-
-Pero la misma página revela lo importante: **el listado de origen es una
-selección, no el censo**. Solo en el área de Saku el gremio lista además
-大澤酒造 (Osawa Shuzo), 芙蓉酒造 (Fuyou Shuzou), 木内醸造 (Kiuchi Jyouzou) y
-芙蓉酒造協同組合, ninguna de ellas en el xlsx. Nagano ronda las 80 bodegas y aquí
-hay 22. El gremio reparte por diez áreas (Kitaazumi, Matsumoto, Kiso, Iida,
-Nakano, Nagano, Ueda, Saku, Suwa, Ina) y hay que recorrerlas una a una.
-
-## Trampas
-- **木内醸造 (Kiuchi Jyouzou, marca Hatsuuguisu, Saku)** no tiene nada que ver con
-  **木内酒造 (Kiuchi Brewery, Naka, Ibaraki)**, el de Hitachino Nest. Mismo
-  apellido, dos empresas, dos prefecturas.
-- El rōmaji del listado tiene erratas: «Sakanunoya Honkin» es 酒ぬのや本金酒造
-  (Sakenunoya). Confirmar cada `nombre` contra la ficha del gremio.
-- **Kitsukura** aparece en el gremio como «Usuda, Saku»: Usuda es un barrio de
-  Saku, el `municipio` es Saku.
-- **Hokto** es una empresa cotizada de cultivo industrial de setas con plantas en
-  varias prefecturas: candidata a descarte por masa, no por origen.
-- Ninguna fila trae web propia: el listado apunta al gremio para las 22 bodegas.
-
-## Fuera del xlsx (10, pasada 2026-08-04)
-
-Primera mordida al censo real (~80 bodegas) por orden alfabético:
-<https://jp.sake-times.com/sakagura/nagano>. **Cierra el aviso de arriba**:
-大澤酒造 (Saku), que el xlsx se dejaba, entra aquí. Ninguna trae dominio.
-Categoría: `Sake`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Osawa Shuzo | 大澤酒造 | Saku |
-| Okazaki Shuzo | 岡崎酒造 | Ueda |
-| Iwanami Shuzo | 岩波酒造 | Matsumoto |
-| Okuzawa Shokai | 奥澤商会 | Matsumoto |
-| Akashina Shuzo | 明科酒造 | Azumino |
-| EH Shuzo | EH酒造 | Azumino |
-| Ichinoya | 市野屋 | Omachi |
-| Usui Shoten | 薄井商店 | Omachi |
-| Igaya Shuzojo | 井賀屋酒造場 | Nakano |
-| Okuni Shuzo | 大國酒造 | Ina |
-
-Cubre además cinco de las diez áreas del gremio que el «Qué falta» daba sin
-recorrer (Ueda, Matsumoto, Kitaazumi/Omachi, Nakano, Ina).
+- **Nakano** es municipio de Nagano y barrio de Tokio, a 130 km: error bloqueante.
+  Resuelto en `data/reference/municipality-overrides.json`.
+- **Dominios que el gremio publica y ya no valen**: `miyamazakura.com` (Furuya) no
+  resuelve — el vigente es `furuya-shuzou.com`; `ueda.ne.jp/~okazaki` (Okazaki) da
+  error de certificado — el vigente es `shinshu-kirei.com`; `asamadake.co.jp`
+  redirige a `.com`. Comprobar el dominio antes de copiarlo del gremio.
+- **Un 403 o una verificación de edad no son un sitio muerto**: Higashiiida
+  (`motooi.com`), Furuya y Totsuka (`kanchiku.com`) sirven, pero no se dejan leer
+  en automático, y por eso quedan en `parcial`.
+- **`ookuni.com`** resuelve pero sirve una página de prohibido en el puerto 444:
+  la fila se queda sin `web`.
+- **La tienda puede estar en el dominio a pelo o en el `www`, no en los dos**:
+  `masumi.jp` es una portada por defecto del proveedor y `www.masumi.jp` es la
+  tienda real.
+- **Razón social ≠ marca**: 薄井商店 firma ya como 白馬錦酒造; 市野屋 vende bajo
+  Ryusuisen y no bajo el Kinrankurobe que lista el gremio; 高橋助作酒造店 se llama
+  a sí misma Matsuwo. La fila lleva el nombre público actual.
+- **木内醸造 (Kiuchi Jyouzou, Saku)** no tiene nada que ver con **木内酒造**
+  (Kiuchi Brewery, Naka, Ibaraki), el de Hitachino Nest.
 
 ## Qué falta
-- Las ~50 bodegas del censo aún sin listar (el corte de arriba es alfabético,
-  no geográfico: llega hasta 大 y para).
-- Nagano es mucho más que sake: soba, miso (Shinshu), manzana, uva y **vino** de
-  Chikumagawa/Kikyogahara, wasabi de Azumino, oyaki. Nada de eso está aquí.
+
+- **El resto del censo de sake**: el gremio lista ~80 bodegas y aquí hay 31. Sin
+  recorrer quedan las áreas de **Kiso** e **Iida** enteras, y los miembros que no
+  estaban en el listado dentro de las ocho ya leídas — entre ellos 芙蓉酒造 y
+  木内醸造 (Saku), 豊島屋 y 諏訪大津屋本家酒造 y 舞姫 (Suwa), 長野銘醸 y 西飯田酒造店
+  y 尾澤酒造場 y 松葉屋本店 y 高澤酒造 y 坂井銘醸 y 天法酒造 (Nagano), los cinco de
+  Ueda, ocho de Matsumoto, tres de Kitaazumi, seis de Nakano y siete de Ina.
+- **Todo lo que no es sake**: soba, miso de Shinshu, manzana, uva y **vino** de
+  Chikumagawa/Kikyogahara, wasabi de Azumino, oyaki. Ninguna fuente localizada aún.
+- Imágenes: 32/32 filas sin `imagen`.

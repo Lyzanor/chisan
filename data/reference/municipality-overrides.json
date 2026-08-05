@@ -521,6 +521,20 @@
       "region": "chubu"
     }
   ],
+  "nakano": [
+    {
+      "lat": 35.70728,
+      "lon": 139.66375,
+      "label": "Nakano (Tokio)",
+      "region": "kanto"
+    },
+    {
+      "lat": 36.74222,
+      "lon": 138.36722,
+      "label": "Nakano (Nagano)",
+      "region": "chubu"
+    }
+  ],
   "nava": [
     {
       "lat": 43.36201,
