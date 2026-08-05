@@ -62,6 +62,35 @@ The decision must exactly match the current CSV row:
 
 Channel order is irrelevant.
 
+## Notes
+
+`notes` is optional and holds **facts about the producer and about what a
+source published** — never the reasoning that led to the decision. The decision
+is already in `decision`/`action`, and the criterion behind it belongs to
+`docs/EDITORIAL_POLICY.md`, where it is written once instead of once per row.
+
+Leave out:
+
+- The verification level or its justification (*"without an external link it
+  cannot go past `parcial`"*, *"no cart on the homepage"*). Restating a
+  structured field is noise.
+- Cross-references to other rows, areas or candidate notes (*"fourth case of
+  the pattern after X and Y"*). Candidate notes are scratch and get deleted;
+  a reference to them rots.
+- Workflow narration: which pass found the row, which queue it came from, what
+  to retry next time.
+
+Write, when it is not obvious from the row itself:
+
+- An identity trait that separates the entity from a homonym, or a brand that
+  differs from the razón social.
+- A conflict between sources, and which one the row followed.
+- How a source behaved when that behaviour would otherwise read as a dead site:
+  HTTP-only, TLS mismatch, WAF `403` with a body, empty JS-rendered body, a
+  domain that no longer resolves, or a page that declares itself superseded.
+- A material fact about the productive unit: more than one facility, a move, a
+  disaster that changed where it produces.
+
 ## Purge and merge records
 
 ```json
