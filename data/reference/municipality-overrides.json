@@ -133,6 +133,20 @@
       "region": "asturias"
     }
   ],
+  "cantagallo": [
+    {
+      "lat": 40.37306,
+      "lon": -5.81972,
+      "label": "Cantagallo (Salamanca)",
+      "region": "castilla-y-leon"
+    },
+    {
+      "lat": 44.01667,
+      "lon": 11.08333,
+      "label": "Cantagallo (Prato)",
+      "region": "toscana"
+    }
+  ],
   "carballo": [
     {
       "lat": 43.11908,
@@ -683,6 +697,20 @@
       "region": "castilla-y-leon"
     }
   ],
+  "rio": [
+    {
+      "lat": 42.38444,
+      "lon": -7.31417,
+      "label": "Río (Ourense)",
+      "region": "galicia"
+    },
+    {
+      "lat": 42.81344,
+      "lon": 10.41736,
+      "label": "Rio (Isola d'Elba, Livorno)",
+      "region": "toscana"
+    }
+  ],
   "riofrio": [
     {
       "lat": 37.15424,
@@ -799,6 +827,20 @@
       "region": "aragon"
     }
   ],
+  "santa marina": [
+    {
+      "lat": 42.24528,
+      "lon": -2.35778,
+      "label": "Santa Marina (Santa Engracia del Jubera, La Rioja)",
+      "region": "la-rioja"
+    },
+    {
+      "lat": 40.09708,
+      "lon": 15.52327,
+      "label": "Santa Marina (Salerno)",
+      "region": "campania"
+    }
+  ],
   "sarria": [
     {
       "lat": 42.78216,
@@ -827,6 +869,20 @@
       "lon": 140.61989,
       "label": "Shiroishi (白石市, Miyagi)",
       "region": "tohoku"
+    }
+  ],
+  "tollo": [
+    {
+      "lat": 43.10944,
+      "lon": -4.61917,
+      "label": "Tollo (Vega de Liébana, Cantabria)",
+      "region": "cantabria"
+    },
+    {
+      "lat": 42.34542,
+      "lon": 14.3236,
+      "label": "Tollo (Chieti)",
+      "region": "abruzzo"
     }
   ],
   "tonosho": [

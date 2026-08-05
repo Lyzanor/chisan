@@ -16,6 +16,10 @@
 //     308 concelhos, islands included. Labels in pt only: the CSVs write them
 //     in Portuguese and no concelho carries a dissolution date, so neither an
 //     extra language nor the Japanese filter buys anything.
+//   - Italy: "comune of Italy" (Q747074) with coordinates, minus anything
+//     carrying a dissolution date — the 2010s fusioni left hundreds of
+//     suppressed comuni in Wikidata. Labels in it and de, so the bilingual
+//     South Tyrolean names (Bressanone / Brixen) share one centroid.
 //
 // Output
 // - data/reference/municipalities.json
@@ -87,6 +91,14 @@ const COUNTRIES = [
     langs: ["pt"],
     canonicalLang: "pt",
     extraFilter: "",
+  },
+  {
+    slug: "italy",
+    label: "Italy",
+    rootClass: "wd:Q747074",
+    langs: ["it", "de"],
+    canonicalLang: "it",
+    extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
   },
 ];
 

@@ -36,8 +36,8 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
   - `pnpm list:categories`: print the current valid `categoria` set
 
 ## Reference data
-- `data/reference/municipalities.json` is a Wikidata-sourced lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names, and the 308 Portuguese concelhos). The geography warning rule uses it; nothing else in the app depends on it.
-- Covered: every entity classified as a municipality of Spain, every municipality of Japan without a dissolution date, and every municipality of Portugal, in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
+- `data/reference/municipalities.json` is a Wikidata-sourced lookup of municipality centroids (~8.300 Spanish entries with multilingual aliases, ~1.780 current Japanese municipalities keyed by their rōmaji and kanji names, the 308 Portuguese concelhos, and ~8.300 Italian comuni keyed in Italian and German). The geography warning rule uses it; nothing else in the app depends on it.
+- Covered: every entity classified as a municipality of Spain, every municipality of Japan or comune of Italy without a dissolution date, and every municipality of Portugal, in Wikidata. Adding a producer in any real municipio — even one not yet in any CSV — works out of the box.
 - One catalog per country, added in `scripts/build-municipality-centroids.js`. A country absent from it is not half-checked, it is unchecked: every one of its rows lands in `geo-check skipped` and the audit still reports OK.
 - Not covered on the Japanese side: Tokyo itself, which is a prefecture rather than a municipality. Rows there take the ward or city as `municipio` (`Setagaya`, `Hachioji`), which is also the right granularity.
 - Japanese municipalities are frequently the product of 2000s mergers and can span tens of kilometres, so a correct row may still land in the 15–100 km warning band — Miyama in Nantan is 21,6 km from its own city centroid. Read the warning before assuming the `municipio` is wrong.
