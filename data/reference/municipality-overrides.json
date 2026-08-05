@@ -387,6 +387,20 @@
       "region": "kanto"
     }
   ],
+  "kurume": [
+    {
+      "lat": 35.758,
+      "lon": 139.52986,
+      "label": "Higashikurume (東久留米市, Tokyo)",
+      "region": "kanto"
+    },
+    {
+      "lat": 33.31925,
+      "lon": 130.50833,
+      "label": "Kurume (久留米市, Fukuoka)",
+      "region": "kyushu-okinawa"
+    }
+  ],
   "la fresneda": [
     {
       "lat": 43.29124,

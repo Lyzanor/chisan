@@ -1,8 +1,8 @@
 # Fukuoka — candidatos
 
-- CSV: `data/csv/jp/kyushu-okinawa/fukuoka.csv` (0 filas). Dedup: nada que cruzar en el CSV. En la bandeja del `README.md` sigue Taiyo Flour Milling, que no está en esta tabla.
+- CSV: `data/csv/jp/kyushu-okinawa/fukuoka.csv` (6 filas, altas del 2026-08-05).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/fukuoka> (70 bodegas, leído 2026-08-04). Gremio: 福岡県酒造組合, <http://www.fukuoka-sake.org/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: **6 integradas** el 2026-08-05 (5 `verificado`, 1 `parcial`). Evidencia en `data/evidence/jp/kyushu-okinawa/fukuoka.jsonl`.
 
 Fukuoka es la tercera prefectura de Japón en número de bodegas, detrás de Hyogo y
 Niigata. Categoría para todas: `Sake`.
@@ -13,16 +13,41 @@ Niigata. Categoría para todas: `Sake`.
 | Ikekame Shuzo | 池亀酒造 | Kurume |
 | Asahimatsu Shuzo | 旭松酒造 | Yame |
 | Ayasugi Shuzojo | 綾杉酒造場 | Fukuoka |
-| Ishikura Shuzo | 石蔵酒造 | Fukuoka |
 | Izu Honten | 伊豆本店 | Munakata |
 | Isonosawa | いそのさわ | Ukiha |
 | Umegatani Shuzo | 梅ヶ谷酒造 | Kama |
 | Osato Shuzo | 大里酒造 | Kama ⚠ |
 | Egashira Shuzo | 江頭酒造 | Omuta |
-| Oga Shuzo | 大賀酒造 | Chikushino |
 | Okina Shuzo | 翁酒造 | Koga ⚠ |
 | Kataoka Shuzojo | 片岡酒造場 | Toho |
 | Ikedaya | 池田屋 | Miyama ⚠ |
+
+## Integradas 2026-08-05 (6)
+
+| bodega | municipio | resultado |
+|---|---|---|
+| Morinokura | Kurume | verificado · venta sí |
+| Wakatakeya Shuzojo | Kurume | verificado · venta sí |
+| Yamaguchi Shuzojo (Niwa no Uguisu) | Kurume | verificado · sin carrito |
+| Ishikura Shuzo (Hakata Hyakunengura) | Fukuoka | verificado · sin carrito |
+| Oga Shuzo | Chikushino | verificado · sin carrito |
+| Kitaya | Yame | **parcial** · web sin respuesta |
+
+Cuatro de las seis no estaban en la tabla de arriba: salieron al cazar dominios,
+igual que Nakao en `hiroshima.md`. **El censo de la tabla es una selección, no
+el padrón** — Fukuoka tiene 70 bodegas.
+
+⚠ **`Kurume` resolvía a Higashikurume, en Tokio**, a 950 km: error bloqueante.
+Resuelto el 2026-08-05 con una entrada `kurume` en
+`municipality-overrides.json` (kanto vs kyushu-okinawa). Tercer homónimo de la
+sesión tras `tonosho` y `kashima`, y el más peligroso porque **Kurume
+concentra tres de estas seis bodegas**.
+
+- **大賀酒造 (1673) es la más antigua de la prefectura** y **石蔵酒造 la única que
+  sigue elaborando dentro de Hakata**: las dos son perfiles de visita, no de
+  venta online.
+- **Kitaya no respondió** ni en su dominio principal ni en el de su tienda
+  declarada. Se queda `parcial`; reintentar antes de dar el dominio por malo.
 
 ## Trampas
 - ⚠ **La fuente sitúa 大里酒造 en 嘉穂郡嘉穂町, que ya no existe**: se fusionó en
