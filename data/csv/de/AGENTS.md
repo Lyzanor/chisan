@@ -20,13 +20,18 @@ What is true of `data/csv/de/**` only. The shared contract is `AGENTS.md` at the
 - 499 rows across all 16 Länder, every one `pendiente` and `Venta online = no comprobado`. Bayern
   carries 70 and Nordrhein-Westfalen 65; the city states are the thin end — Bremen 5, Hamburg 6,
   Berlin 8 — and no Land is empty.
-- **239 of the 499 sit in `Otros`**, the largest editorial hole and the direct consequence of the
+- **240 of the 499 sit in `Otros`**, the largest editorial hole and the direct consequence of the
   source: a `Hofladen` with no product tag says it sells farm produce and nothing more. The rest are
   94 `Miel`, 42 `Huevos`, 38 `Fruta y verdura`, 30 `Lácteos y quesos`, 18 `Pan y cereal`, 12 `Carne`
   and single figures elsewhere.
+- Exactly **one row is a brewery** — `niederrhein-westfaelische-braumanufaktur-hamminkeln`, which
+  was sitting in `Otros`. The two rows that carried `categoria=Cerveza` were Hofläden reselling beer
+  among twenty other things and are now `Otros`. Read a `categoria` on this catalog as what the shop
+  *stocks* until someone checks; the extract could not tell stocking from making.
 - Contact is unusually good for an opening: 494 rows carry a `web`, 494 a `telefono`, 469 a `correo`
   and 427 an `horario`; exactly one row has no contact of any kind. Socials are the gap — 39
-  Facebook, 12 Instagram. **No image, no evidence file and no candidate note exists yet.**
+  Facebook, 12 Instagram. **No image and no evidence file exists yet**; the only candidate notes are
+  the beer sweep below.
 - Everything is the 2026-08-06 opening from one OpenStreetMap extract, unconfirmed against any
   producer's own source, so a first pass is owed Land by Land. What that pass owes most is the
   producer/reseller question below, then the 239 `Otros`.
@@ -63,7 +68,12 @@ What is true of `data/csv/de/**` only. The shared contract is `AGENTS.md` at the
 - OpenStreetMap data is ODbL 1.0 and requires attribution.
 - One row arrived that was not in Germany at all — a shop in 4125 Riehen, Basel-Stadt — and was
   dropped as out of scope. Read the postcode before trusting the Land the extract filed a row under.
-- No authoritative German roster is established yet, and none has been looked for. Two families are
+- **Beer has its own sweep**: `docs/de/cerveza.md`, with the per-Land queue in
+  `docs/candidates/de/*.md`. 1.720 unverified candidates from OpenStreetMap and Wikidata against the
+  1.415 Braustätten Destatis counted in 2025 — the farm-shop extract contained no brewery at all, so
+  the whole category was missing rather than thin. Any other product family is likely to be missing
+  the same way; measure it against an outside census before concluding Germany is short of it.
+- No general authoritative German roster is established yet. Two families are
   worth trying first: the organic associations — Bioland, Demeter, Naturland — whose member lists are
   the closest thing here to a certification registry and which dozens of rows already name in their
   own text, and the per-Land direct-marketing directories the chambers of agriculture publish. Verify
