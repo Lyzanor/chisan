@@ -100,6 +100,12 @@ All 20 canonical columns are physically present in every CSV. A column being pre
 Style rules for the free-text identity fields. Empty is always preferable to
 invented or copied content (`docs/EDITORIAL_POLICY.md`, empty vs. false).
 
+- Language: what you **copy** keeps the producer's own language — `nombre`,
+  `municipio`, `direccion`, a published `horario`, and product, brand or
+  appellation names. What you **write** is English: `descripcion`, and the
+  generic wording in `productos estrella`. Spain is the single exception and
+  writes both in Spanish. Serving a country its own language is a later
+  addition on top of the English text, not a reason to write in it now.
 - `nombre`: the public brand as the producer writes it. Use the razón social
   only when no distinct brand exists; do not append the municipality or legal
   suffixes (S.L., S.C.) unless they are part of the public brand.

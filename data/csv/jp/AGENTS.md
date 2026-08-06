@@ -27,5 +27,5 @@ What is true of `data/csv/jp/**` only. The shared contract is `AGENTS.md` at the
 - Not yet established for anything outside sake and wine (tea, miso/shoyu, dairy, produce). Trade associations of merchants (茶商 and the like) list wholesalers and retailers, not producers — triage rather than import.
 
 ## Conventions
-- `nombre`, `municipio` and `direccion` in romaji; `descripcion` in Spanish, like the rest of the catalog.
+- `nombre`, `municipio` and `direccion` in romaji.
 - Categories are the shared closed list: a sake brewery is `Sake`, a winery `Vino`.

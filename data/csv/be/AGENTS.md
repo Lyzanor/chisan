@@ -53,8 +53,7 @@ What is true of `data/csv/be/**` only. The shared contract is `AGENTS.md` at the
   Flanders, and `Made in BW` / the *Accueil Champêtre en Wallonie* network for Wallonia.
 
 ## Conventions
-- `nombre` and `direccion` as the producer writes them, in Dutch or French depending on where it is;
-  `descripcion` in Spanish, like the rest of the catalog.
+- `nombre` and `direccion` as the producer writes them, in Dutch or French depending on where it is.
 - `municipio` is the official municipality, never the deelgemeente or the postal locality — 77 of
   the 152 rows arrived naming one of those. Westmalle is filed under `Malle`, Tourpes under
   `Leuze-en-Hainaut`, Marchienne-au-Pont under `Charleroi`. The old name belongs in `direccion`.

@@ -22,7 +22,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Area ledgers, candidate notes, and Git history: narrative context and work planning, not producer truth.
 
 ## Country Guides
-- This file holds only what is true of every country. Anything naming a registry, an administrative level, a language, or one country's spelling habits belongs in `data/csv/[country]/AGENTS.md`.
+- This file holds only what is true of every country. Anything naming a registry, an administrative level, or one country's spelling habits belongs in `data/csv/[country]/AGENTS.md`. Which language a field is written in is not one of those: it is the contract's (`docs/CSV_CONTRACT.md` § Editorial field conventions).
 - Read the guide of the country you are touching, and only that one. Another country's sources, traps and open gaps are noise here, not precedent: never carry a rule across countries because it worked in one.
 - Keep a country guide small: what its levels are called, which sources are authoritative there, the conventions its data follows, and what is still missing. Longer country material goes in `docs/[country]/**` and is linked from the guide; per-area progress is derived state and lives in `docs/verification/`.
 - Opening a country is a folder, a `country.json`, its own guide, and its centroids — never a code change, and never an edit to this file.

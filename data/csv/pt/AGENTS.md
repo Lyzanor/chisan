@@ -23,5 +23,5 @@ What is true of `data/csv/pt/**` only. The shared contract is `AGENTS.md` at the
 - All of these confirm existence, not activity or online sales, so a listing supports at most `parcial`.
 
 ## Conventions
-- `nombre`, `municipio` and `direccion` in Portuguese; `descripcion` in Spanish, like the rest of the catalog.
+- `nombre`, `municipio` and `direccion` in Portuguese.
 - Categories are the shared closed list; do not add Portuguese-specific labels.

@@ -22,5 +22,5 @@ What is true of `data/csv/it/**` only. The shared contract is `AGENTS.md` at the
 - `masaf.gov.it` publishes the list of *consorzi di tutela* per DOP/IGP — foods, wines and spirits, updated 2026-04-01. Like Portugal's DGADR catalogue it names the body that holds the roster rather than the producers, so it is where to find the consorzio, not the census.
 
 ## Conventions
-- `nombre`, `municipio` and `direccion` in Italian; `descripcion` in Spanish, like the rest of the catalog.
+- `nombre`, `municipio` and `direccion` in Italian.
 - Categories are the shared closed list: a cantina is `Vino`, a frantoio `Aceite`, a birrificio `Cerveza`, a panificio `Pan y cereal`.

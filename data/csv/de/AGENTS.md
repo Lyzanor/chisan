@@ -81,7 +81,7 @@ What is true of `data/csv/de/**` only. The shared contract is `AGENTS.md` at the
 
 ## Conventions
 - `nombre`, `municipio` and `direccion` in German, as the producer writes them; `direccion` is
-  `Straße Nummer, PLZ Ort`. `descripcion` in Spanish, like the rest of the catalog.
+  `Straße Nummer, PLZ Ort`. `horario` is copied from the extract, so it stays German.
 - 105 rows carry a `descripcion` translated from the extract's own `description` tag — almost always
   an assortment list. It records what the shop *offers*, which is not yet a claim about what the farm
   *makes*; the ones that were pure marketing copy or repeated verbatim across two rows were dropped

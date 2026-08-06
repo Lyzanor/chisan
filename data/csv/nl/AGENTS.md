@@ -82,8 +82,8 @@ What is true of `data/csv/nl/**` only. The shared contract is `AGENTS.md` at the
 - Nothing has been read on cheese, beer, or anything the country is otherwise known for.
 
 ## Conventions
-- `nombre` and `direccion` as the producer writes them, in Dutch; `descripcion` in Spanish, like the
-  rest of the catalog. The directory's titles are listing headlines rather than brands — 42 of them
+- `nombre` and `direccion` as the producer writes them, in Dutch. The directory's titles are listing
+  headlines rather than brands — 42 of them
   carried a tail describing the business (`… - Kamperen bij de boer`, `… | Vergaderlocatie |
   Melkveebedrijf`) and were trimmed back to the name.
 - `municipio` is the gemeente, never the woonplaats: 376 of the 500 rows arrived naming a village.

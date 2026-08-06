@@ -56,8 +56,7 @@ What is true of `data/csv/fr/**` only. The shared contract is `AGENTS.md` at the
   agreeing, so trust `municipio` over any address fragment in a legacy row.
 
 ## Conventions
-- `nombre`, `municipio` and `direccion` in French; `descripcion` in Spanish, like the rest of the
-  catalog.
+- `nombre`, `municipio` and `direccion` in French.
 - The register writes the raison sociale in capitals with the legal form attached. Rows carry the
   brand instead: the legal form is dropped (`EARL DOMAINE DE CASSAGNOLE` → `Domaine de Cassagnole`,
   `AUBRACS DES FLEURS (GAEC LES)` → `Aubracs des Fleurs`) unless nothing but a surname would be

@@ -6,6 +6,9 @@ What is true of `data/csv/es/**` only. The shared contract is `AGENTS.md` at the
 - `area` = province (50 CSVs), `region` = autonomous community (17). `country.json` declares both names and is what the interface prints.
 - Slugs are ASCII and unaccented (`avila`, `caceres`, `leon`); labels keep the accents. One alias in use: `logrono` -> `la-rioja`.
 
+## Conventions
+- `descripcion` and `productos estrella` are written in Spanish here. Spain is the one exception to the catalog's English default (`docs/CSV_CONTRACT.md` § Editorial field conventions); do not migrate them.
+
 ## Sources
 - Consejos reguladores of each DO/DOP/IGP, regional artisan-food registries, and regional producer directories: Alimentos de Palencia, Pon Aragón en tu Mesa, Gastroteca and Xarxa Productes de la Terra in Catalonia, CCPAE for organic certification.
 - Catalonia has a cross-check tool: `node scripts/match-dar.mjs "<municipio>" [--csv <path>] [--all]` matches a CSV against the DAR venda de proximitat registry by phone, email and surname. It confirms existence and locality, not activity.
