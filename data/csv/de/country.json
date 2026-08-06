@@ -1,0 +1,125 @@
+{
+  "label": "Germany",
+  "unit": {
+    "one": "federal state",
+    "many": "federal states"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "aliases": {
+    "baden-wurttemberg": "baden-wuerttemberg",
+    "baden-wuerttemberg-de": "baden-wuerttemberg",
+    "wurttemberg": "baden-wuerttemberg",
+    "bavaria": "bayern",
+    "baviera": "bayern",
+    "brandeburgo": "brandenburg",
+    "hamburgo": "hamburg",
+    "hesse": "hessen",
+    "lower-saxony": "niedersachsen",
+    "baja-sajonia": "niedersachsen",
+    "north-rhine-westphalia": "nordrhein-westfalen",
+    "renania-del-norte-westfalia": "nordrhein-westfalen",
+    "rhineland-palatinate": "rheinland-pfalz",
+    "renania-palatinado": "rheinland-pfalz",
+    "sarre": "saarland",
+    "saxony": "sachsen",
+    "sajonia": "sachsen",
+    "saxony-anhalt": "sachsen-anhalt",
+    "sajonia-anhalt": "sachsen-anhalt",
+    "thuringia": "thueringen",
+    "thuringen": "thueringen",
+    "turingia": "thueringen"
+  },
+  "regions": [
+    {
+      "slug": "norddeutschland",
+      "label": "Norddeutschland",
+      "areas": [
+        {
+          "slug": "schleswig-holstein",
+          "label": "Schleswig-Holstein"
+        },
+        {
+          "slug": "hamburg",
+          "label": "Hamburg"
+        },
+        {
+          "slug": "bremen",
+          "label": "Bremen"
+        },
+        {
+          "slug": "niedersachsen",
+          "label": "Niedersachsen"
+        },
+        {
+          "slug": "mecklenburg-vorpommern",
+          "label": "Mecklenburg-Vorpommern"
+        }
+      ]
+    },
+    {
+      "slug": "ostdeutschland",
+      "label": "Ostdeutschland",
+      "areas": [
+        {
+          "slug": "berlin",
+          "label": "Berlin"
+        },
+        {
+          "slug": "brandenburg",
+          "label": "Brandenburg"
+        },
+        {
+          "slug": "sachsen-anhalt",
+          "label": "Sachsen-Anhalt"
+        },
+        {
+          "slug": "sachsen",
+          "label": "Sachsen"
+        },
+        {
+          "slug": "thueringen",
+          "label": "Thüringen"
+        }
+      ]
+    },
+    {
+      "slug": "westdeutschland",
+      "label": "Westdeutschland",
+      "areas": [
+        {
+          "slug": "nordrhein-westfalen",
+          "label": "Nordrhein-Westfalen"
+        },
+        {
+          "slug": "hessen",
+          "label": "Hessen"
+        },
+        {
+          "slug": "rheinland-pfalz",
+          "label": "Rheinland-Pfalz"
+        },
+        {
+          "slug": "saarland",
+          "label": "Saarland"
+        }
+      ]
+    },
+    {
+      "slug": "sueddeutschland",
+      "label": "Süddeutschland",
+      "areas": [
+        {
+          "slug": "baden-wuerttemberg",
+          "label": "Baden-Württemberg"
+        },
+        {
+          "slug": "bayern",
+          "label": "Bayern"
+        }
+      ]
+    }
+  ]
+}

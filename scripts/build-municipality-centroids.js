@@ -33,6 +33,15 @@
 //     left every deelgemeente in Wikidata. Labels in nl / fr / de, so the two
 //     official spellings of a bilingual municipality (Mons / Bergen,
 //     Antwerpen / Anvers) share one centroid.
+//   - Germany: "municipality of Germany" (Q262166) with coordinates, minus
+//     anything carrying a dissolution date — the Gebietsreformen and the
+//     post-1990 mergers left thousands of abolished Gemeinden in Wikidata.
+//     Labels in de only: a German municipality carries one official name, and
+//     the bilingual exceptions (Sorbian, Danish, Frisian) publish the German
+//     form too. Marked `dropAmbiguous` for the same reason as France — the
+//     country repeats municipality names on an industrial scale (Neustadt,
+//     Bergen, Hausen, Neukirchen, Königsfeld), so an arbitrary winner would
+//     fail correct rows instead of skipping unresolvable ones.
 //   - Netherlands: "municipality of the Netherlands" (Q2039348) with
 //     coordinates, minus anything carrying a dissolution date — the country
 //     went from ~1.100 municipalities to ~340 by merger, so the dissolved ones
@@ -167,6 +176,16 @@ const COUNTRIES = [
     langs: ["mul", "nl", "fy"],
     canonicalLang: "nl",
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
+  },
+  {
+    slug: "germany",
+    code: "de",
+    label: "Germany",
+    rootClass: "wd:Q262166",
+    langs: ["mul", "de"],
+    canonicalLang: "de",
+    extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
+    dropAmbiguous: true,
   },
 ];
 
