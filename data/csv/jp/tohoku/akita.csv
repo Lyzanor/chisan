@@ -1,7 +1,23 @@
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-akita-shurui-seizo-akita,Akita Shurui Seizo,Akita,Sake,Takashimizu,"Akita","Maker of Takashimizu, the prefecture's best-selling label, with its own online shop and a direct sales room at the kura.",,,,https://www.takashimizu.co.jp/,,,,39.719890,140.102580,,verificado,sí,ecommerce
-kimura-shuzo-yuzawa,Kimura Shuzo,Yuzawa,Sake,Fukukomachi,"Yuzawa","Brewery founded in 1615, the second oldest in Akita, maker of Fukukomachi. Own online shop.",,,,https://www.fukukomachi.com/,,https://www.instagram.com/fukukomachi1615/,,39.164440,140.495830,,verificado,sí,ecommerce
-hiraizumi-honpo-nikaho,Hiraizumi Honpo,Nikaho,Sake,Hiraizumi,"Nikaho","Founded in 1487 and among the oldest breweries in Japan, now in its twenty-seventh generation. Closed kura sales in 2024.",,,,https://www.hiraizumi.co.jp/,,,,39.203000,139.907720,,verificado,no comprobado,
+akita-shurui-seizo-akita,Akita Shurui Seizo,Akita,Sake,Takashimizu,Akita,"Maker of Takashimizu, the prefecture's best-selling label, with its own online shop and a direct sales room at the kura.",,,,https://www.takashimizu.co.jp/,,,,39.719890,140.102580,,verificado,sí,ecommerce
+kimura-shuzo-yuzawa,Kimura Shuzo,Yuzawa,Sake,Fukukomachi,Yuzawa,"Brewery founded in 1615, the second oldest in Akita, maker of Fukukomachi. Own online shop.",,,,https://www.fukukomachi.com/,,https://www.instagram.com/fukukomachi1615/,,39.164440,140.495830,,verificado,sí,ecommerce
+hiraizumi-honpo-nikaho,Hiraizumi Honpo,Nikaho,Sake,Hiraizumi,Nikaho,"Founded in 1487 and among the oldest breweries in Japan, now in its twenty-seventh generation. Closed kura sales in 2024.",,,,https://www.hiraizumi.co.jp/,,,,39.203000,139.907720,,verificado,no comprobado,
 saiya-shuzoten-yurihonjo,Saiya Shuzoten,Yurihonjo,Sake,Yuki no Bosha,"Ishiwaki 53, Yurihonjo","Maker of Yuki no Bosha, in a kura built on a slope. States explicitly that it does not ship retail: buy at a specialist shop or at its Hakko Koji Taya premises.",,+81184220536,,https://www.yukinobosha.jp/,,,,39.385860,140.048830,,verificado,no,
 aramasa-shuzo-akita,Aramasa Shuzo,Akita,Sake,"Aramasa, Colors series","Omachi 6-2-35, Akita","Brewery founded in 1852 in central Akita, source of kyokai yeast number 6, the oldest still in use. Brews only with its own yeast and prefecture rice. No domain found.",,+81188236407,,,,,,39.719890,140.102580,,parcial,no comprobado,
-hinomaru-jozo-yokote,Hinomaru Jozo,Yokote,Sake,Mansaku no Hana,"Yokote","Brewery founded in 1689 in Masuda, Yokote, with an interior warehouse listed as cultural property. Its only own presence found is Instagram.",,,,,,https://www.instagram.com/hinomarusake/,,39.313720,140.566610,,parcial,no comprobado,
+hinomaru-jozo-yokote,Hinomaru Jozo,Yokote,Sake,Mansaku no Hana,Yokote,"Brewery founded in 1689 in Masuda, Yokote, with an interior warehouse listed as cultural property. Its only own presence found is Instagram.",,,,,,https://www.instagram.com/hinomarusake/,,39.313720,140.566610,,parcial,no comprobado,
+akita-jozo-akita,Akita Jozo,Akita,Sake,,秋田県秋田市新屋元町23-28,,,+81188281311,,http://www.akitabare.jp/,,,,,,,parcial,no comprobado,
+akita-shuzo-akita,Akita Shuzo,Akita,Sake,,秋田県秋田市新屋元町23-28,,,+81188281311,,http://www.akitabare.jp/,,,,,,,parcial,no comprobado,
+nawa-shoten-akita,Nawa Shoten,Akita,Sake,,秋田県秋田市土崎港中央1-16-41,,,+81188451260,,http://jizakemonogatari.net/index.html,,,,,,,parcial,no comprobado,
+akita-seishu-daisen,Akita Seishu,Daisen,Sake,,秋田県大仙市戸地谷字天ケ沢83-1,,,+81187631224,,http://www.igeta.jp,,,,,,,parcial,no comprobado,
+kariho-shuzo-daisen,Kariho Shuzo,Daisen,Sake,,秋田県大仙市神宮寺字神宮寺275,,,+81187722311,,http://www.igeta.jp/about-kariho/,,,,,,,parcial,no comprobado,
+dewatsuru-shuzo-daisen,Dewatsuru Shuzo,Daisen,Sake,,秋田県大仙市南外悪戸野81,,,+81187631224,,,,,,,,,parcial,no comprobado,
+fukunotomo-shuzo-daisen,Fukunotomo Shuzo,Daisen,Sake,,秋田県大仙市神宮寺字本郷野82-6,,,+81187724141,,http://www.fukunotomo.co.jp/,,,,,,,parcial,no comprobado,
+suzuki-shuzoten-daisen,Suzuki Shuzoten,Daisen,Sake,,秋田県大仙市長野字二日町9,,,+81187562121,,http://www.hideyoshi.co.jp/,,,,,,,parcial,no comprobado,
+azakura-shuzo-yokote,Azakura Shuzo,Yokote,Sake,,秋田県横手市大沢字西野67-2,,,+81182320126,,http://www.azakura.co.jp/,,,,,,,parcial,no comprobado,
+asamai-shuzo-yokote,Asamai Shuzo,Yokote,Sake,,秋田県横手市平鹿町浅舞字浅舞388,,,+81182241030,,http://www.amanoto.co.jp/index.html,,,,,,,parcial,no comprobado,
+ryozeki-shuzo-yuzawa,Ryozeki Shuzo,Yuzawa,Sake,,秋田県湯沢市前森4-3-18,,,+81183733143,,http://www.ryozeki.co.jp/index.html,,,,,,,parcial,no comprobado,
+akita-meijo-yuzawa,Akita Meijo,Yuzawa,Sake,,秋田県湯沢市大工町4-23,,,+81183733161,,http://www.ranman.co.jp/ranman/,,,,,,,parcial,no comprobado,
+tenju-shuzo-yurihonjo,Tenju Shuzo,Yurihonjo,Sake,,秋田県由利本荘市矢島町城内字八森下117,,,+81184553165,,https://tenju.co.jp/,,,,,,,parcial,no comprobado,
+fukurokuju-shuzo-gojome,Fukurokuju Shuzo,Gojome,Sake,,秋田県南秋田郡五城目町字下タ町48,,,+81188524130,,http://www.fukurokuju.jp/index.html,,,,,,,parcial,no comprobado,
+yamamoto-shuzoten-happo,Yamamoto Shuzoten,Happo,Sake,,秋田県山本郡八峰町八森字八森269,,,+81185772311,,https://www.yamamoto-brewery.com/,,,,,,,parcial,no comprobado,
+kodama-jozo-katagami,Kodama Jozo,Katagami,Sake,,秋田県潟上市飯田川飯塚字飯塚34-1,,,+81188772100,,http://www.kodamajozo.co.jp/,,,,,,,parcial,no comprobado,

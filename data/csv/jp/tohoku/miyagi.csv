@@ -1,10 +1,25 @@
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
 ichinokura-osaki,Ichinokura,Osaki,Sake,"Ichinokura, Suzune espumoso","Matsuyama Sengoku Okeyaki 14, Osaki","Brewery born in 1973 from the union of four Osaki houses, which keeps hand pressing. Own online shop.",,,,https://www.ichinokura.co.jp/,,,,38.577110,140.955580,,verificado,sí,ecommerce
-otokoyama-honten-kesennuma,Otokoyama Honten,Kesennuma,Sake,"Sotenden, Miroku","Kesennuma","Brewery founded in 1912 in the port of Kesennuma, rebuilt after the 2011 tsunami. Own online shop.",,,,https://www.kesennuma.co.jp/,,,,38.908060,141.569940,,verificado,sí,ecommerce
+otokoyama-honten-kesennuma,Otokoyama Honten,Kesennuma,Sake,"Sotenden, Miroku",Kesennuma,"Brewery founded in 1912 in the port of Kesennuma, rebuilt after the 2011 tsunami. Own online shop.",,,,https://www.kesennuma.co.jp/,,,,38.908060,141.569940,,verificado,sí,ecommerce
 katsuyama-shuzo-sendai,Katsuyama Shuzo,Sendai,Sake,"Katsuyama Ken, Akatsuki","Izumi-ku Fukuoka Futamata 25-1, Sendai","The Isawa house of Sendai, former supplier to the Date clan. Own online shop.",,,,https://www.katsu-yama.com/,,,,38.268220,140.869420,,verificado,sí,ecommerce
 saura-shiogama,Saura,Shiogama,Sake,"Urakasumi, Zen","Honcho 2-19, Shiogama","Brewery founded in 1724 in Shiogama, supplier to the Shiwahiko shrine and source of kyokai yeast number 12. Its shop is physical, next to the kura.",,,,https://www.urakasumi.com/,,,,38.314360,141.021970,,verificado,no comprobado,
 niizawa-jozoten-osaki,Niizawa Jozoten,Osaki,Sake,"Hakurakusei, Atago no Matsu","Sanbongi Kitamachi 63, Osaki","Brewery founded in 1873 and based in Osaki. After the 2011 earthquake it moved brewing to Kawasaki, in the same Miyagi, and rebuilt the head office in 2013.",,+81229523002,,https://niizawa-brewery.co.jp/,,,,38.577110,140.955580,,verificado,no comprobado,
 hagino-shuzo-kurihara,Hagino Shuzo,Kurihara,Sake,"Hagi no Tsuru, Hiwata","Kannari Aritaka Shinmachi 52, Kurihara","Brewery founded in 1840 in Kurihara, in the north of the prefecture, known for its seasonal labels.",,+81228442214,,https://www.hagino-shuzou.co.jp/,,,,38.730110,141.021470,,verificado,no comprobado,
 taiwagura-shuzo-taiwa,Taiwagura Shuzo,Taiwa,Sake,Yuki no Matsushima,"Taiwa, Kurokawa","Brewery in Taiwa, north of Sendai, maker of Yuki no Matsushima.",,,,https://taiwagura.co.jp/,,,,38.437330,140.886360,,verificado,no comprobado,
-suminoe-shuzo-ishinomaki,Suminoe Shuzo,Ishinomaki,Sake,Suminoe,"Ishinomaki","Brewery founded in 1845 in the port of Ishinomaki. No own website found.",,,,,,,,38.434250,141.302720,,parcial,no comprobado,
-heiko-shuzo-ishinomaki,Heiko Shuzo,Ishinomaki,Sake,Hidakami,"Ishinomaki","Ishinomaki brewery of more than a century and a half, maker of Hidakami, a sake meant to go with fish. No own website found.",,,,,,,,38.434250,141.302720,,parcial,no comprobado,
+suminoe-shuzo-ishinomaki,Suminoe Shuzo,Ishinomaki,Sake,Suminoe,Ishinomaki,Brewery founded in 1845 in the port of Ishinomaki. No own website found.,,,,,,,,38.434250,141.302720,,parcial,no comprobado,
+heiko-shuzo-ishinomaki,Heiko Shuzo,Ishinomaki,Sake,Hidakami,Ishinomaki,"Ishinomaki brewery of more than a century and a half, maker of Hidakami, a sake meant to go with fish. No own website found.",,,,,,,,38.434250,141.302720,,parcial,no comprobado,
+abekan-shuzo-shiogama,Abekan Shuzo,Shiogama,Sake,,宮城県塩竈市西町3-9,,,+81223620251,,http://www.abekan.com/index.html,,,,,,,parcial,no comprobado,
+uchigasaki-shuzoten-tomiya,Uchigasaki Shuzoten,Tomiya,Sake,,宮城県富谷市富谷新町27,,,+81223582026,,http://uchigasaki.com/index.html,,,,,,,parcial,no comprobado,
+sasaki-shuzoten-natori,Sasaki Shuzoten,Natori,Sake,,宮城県名取市美田園7-1-1-E4（閖上さいかい市場内）,,,+81223988596,,http://naminooto.saleshop.jp/,,,,,,,parcial,no comprobado,
+moritami-shuzoten-osaki,Moritami Shuzoten,Osaki,Sake,,宮城県大崎市岩出山字上川原町15,,,+81229721010,,http://moritamishuzouten.com/,,,,,,,parcial,no comprobado,
+kanbai-shuzo-osaki,Kanbai Shuzo,Osaki,Sake,,宮城県大崎市古川柏崎字境田15,,,+81229262037,,http://miyakanbai.com/,,,,,,,parcial,no comprobado,
+tanaka-shuzoten-kami,Tanaka Shuzoten,Kami,Sake,,宮城県加美郡加美町字西町88-1,,,+81229633005,,http://www.manatsuru.co.jp/,,,,,,,parcial,no comprobado,
+yamawa-shuzoten-kami,Yamawa Shuzoten,Kami,Sake,,宮城県加美郡加美町字南町109-1,,,+81229633017,,http://www.nona.dti.ne.jp/~yamawa/,,,,,,,parcial,no comprobado,
+nakayu-shuzoten-kami,Nakayu Shuzoten,Kami,Sake,,宮城県加美郡加美町字南町166番地,,,+81229632018,,http://www.tenjo-mugen.co.jp,,,,,,,parcial,no comprobado,
+kawakei-shoten-misato,Kawakei Shoten,Misato,Sake,,宮城県遠田郡美里町ニ郷字高玉6-7,,,+81229580333,,,,,,,,,parcial,no comprobado,
+chida-shuzo-kurihara,Chida Shuzo,Kurihara,Sake,,宮城県栗原市栗駒中野北畑中63-1,,,+81228451024,,,,,,,,,parcial,no comprobado,
+kanenoi-shuzo-kurihara,Kanenoi Shuzo,Kurihara,Sake,,宮城県栗原市一迫川口町浦1-1,,,+81228542115,,,https://www.facebook.com/kanenoi/,,,,,,parcial,no comprobado,
+ishikoshi-jozo-tome,Ishikoshi Jozo,Tome,Sake,,宮城県登米市石越町北郷字中沢108-1,,,+81228342005,,http://sawanoizumi.jp,,,,,,,parcial,no comprobado,
+kakuboshi-kesennuma,Kakuboshi,Kesennuma,Sake,,宮城県気仙沼市魚町2-1-9,,,+81226220001,,http://kakuboshi.co.jp/,,,,,,,parcial,no comprobado,
+onuma-shuzoten-murata,Onuma Shuzoten,Murata,Sake,,宮城県柴田郡村田町村田字町56-1,,,+81224832025,,,,,,,,,parcial,no comprobado,
+zao-shuzo-shiroishi,Zao Shuzo,Shiroishi,Sake,,宮城県白石市字東小路120-1,,,+81224253355,,http://www.zaoshuzo.com/index.html,,,,,,,parcial,no comprobado,
