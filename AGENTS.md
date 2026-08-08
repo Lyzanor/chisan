@@ -63,7 +63,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 1. Run `git status --short` before changing data and identify active area CSVs, evidence files, image folders and candidate notes.
 2. Treat a dirty worktree as normal multi-agent context. Preserve unrelated work; do not overwrite another agent's active area unless the user explicitly asks for a merge.
 3. Work by area when possible: CSV, matching evidence JSONL, candidate note and image folder move together.
-4. Define a coherent batch by municipality, category, source, or risk. Start with the most direct source and resolve only identity, qualifying activity, municipality, and any dynamic claim in scope; expand research for contradictions or destructive decisions, and stop when the evidence is sufficient.
+4. Define a coherent batch by municipality, category, source, or risk, and note its candidate cutoff in the working context. Candidates appended after that cutoff belong to the next batch and do not block closing or pushing the current one. Start with the most direct source and resolve only identity, qualifying activity, municipality, and any dynamic claim in scope; expand research for contradictions or destructive decisions, and stop when the evidence is sufficient.
 5. Match entities with name plus municipality and, when available, brand, address, domain, phone, or email. De-duplicate before adding with `list:area` and targeted `rg`; merge only the same productive unit, never merely shared ownership or address.
 6. Edit surgically: locate rows with `rg`, read small windows, use a CSV-aware approach for structured changes, and replace one JSONL line rather than reformatting ledgers.
 7. Keep candidate research in `docs/candidates/[country]/[area].md`.

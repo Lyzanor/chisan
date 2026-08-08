@@ -57,6 +57,13 @@ candidate notes; do not import a speculative row as `pendiente`. If one is
 affirmatively false, reject it. Missing search results or a failed fetch prove
 neither.
 
+An authoritative institutional directory that explicitly identifies a
+qualifying producer, its productive municipality and a public phone or email
+can support a usable `parcial` row without an official website, provided the
+admission claims are otherwise sufficient. Copy only the fields it publishes,
+leave `web` empty when no official site is established, and keep
+`Venta online=no comprobado` unless remote sales are separately proven.
+
 ## Decision order
 
 Resolve exclusions before assigning a verification level. `purge` applies to a
