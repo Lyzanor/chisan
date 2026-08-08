@@ -8,9 +8,8 @@ import { parse } from "csv-parse/sync";
 
 const DEFAULT_CSV_ROOT = "data/csv";
 const DEFAULT_EVIDENCE_ROOT = "data/evidence";
-const COVERAGE_FILE = "coverage.json";
 
-const ACTIONS = new Set(["keep", "purge", "merge"]);
+const ACTIONS = new Set(["keep", "reject", "purge", "merge"]);
 const VERIFICATION_VALUES = new Set(["pendiente", "parcial", "verificado"]);
 const ONLINE_SALES_VALUES = new Set(["sí", "no", "no comprobado"]);
 const SALES_CHANNEL_VALUES = new Set([
@@ -46,9 +45,9 @@ const CLAIMS = new Set([
   "scope",
   "existence",
 ]);
-const PURGE_REASONS = new Set([
+const EXCLUSION_REASONS = new Set([
   "not-producer",
-  "other-province",
+  "other-area",
   "closed",
   "nonexistent",
   "out-of-scope",
@@ -170,55 +169,6 @@ function readCsvRows(csvPath) {
   });
 
   return new Map(rows.map((row) => [String(row.slug ?? "").trim(), row]));
-}
-
-function loadCoverage(evidenceRoot, errors) {
-  const coveragePath = path.join(evidenceRoot, COVERAGE_FILE);
-  if (!fs.existsSync(coveragePath)) {
-    errors.push(`${coveragePath}: missing coverage manifest`);
-    return [];
-  }
-
-  let manifest;
-  try {
-    manifest = JSON.parse(fs.readFileSync(coveragePath, "utf8"));
-  } catch (error) {
-    errors.push(`${coveragePath}: invalid JSON (${error.message})`);
-    return [];
-  }
-
-  if (
-    !isPlainObject(manifest) ||
-    manifest.version !== 1 ||
-    !Array.isArray(manifest.strictAreas)
-  ) {
-    errors.push(
-      `${coveragePath}: expected {"version":1,"strictAreas":[...]}`,
-    );
-    return [];
-  }
-
-  const unknown = unknownKeys(manifest, new Set(["version", "strictAreas"]));
-  if (unknown.length) {
-    errors.push(`${coveragePath}: unknown field(s): ${unknown.join(", ")}`);
-  }
-
-  const seen = new Set();
-  for (const province of manifest.strictAreas) {
-    if (
-      typeof province !== "string" ||
-      !/^[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+$/.test(province)
-    ) {
-      errors.push(`${coveragePath}: invalid strict area '${province}'`);
-      continue;
-    }
-    if (seen.has(province)) {
-      errors.push(`${coveragePath}: duplicated strict area '${province}'`);
-    }
-    seen.add(province);
-  }
-
-  return [...seen].sort();
 }
 
 function validateString(record, key, location, errors) {
@@ -429,21 +379,30 @@ function validateKeepRecord({
   }
 }
 
-function validatePurgeRecord({ record, row, claims, location, errors }) {
+function validateExclusionRecord({
+  record,
+  row,
+  claims,
+  location,
+  errors,
+}) {
+  const action = record.action;
   if (row) {
-    errors.push(`${location}: purged slug still exists in area CSV`);
+    errors.push(`${location}: ${action} slug still exists in area CSV`);
   }
   if (record.decision !== undefined || record.targetSlug !== undefined) {
-    errors.push(`${location}: purge record cannot set decision or targetSlug`);
+    errors.push(
+      `${location}: ${action} record cannot set decision or targetSlug`,
+    );
   }
-  if (!PURGE_REASONS.has(record.reason)) {
-    errors.push(`${location}: unsupported purge reason '${record.reason}'`);
+  if (!EXCLUSION_REASONS.has(record.reason)) {
+    errors.push(`${location}: unsupported ${action} reason '${record.reason}'`);
     return;
   }
 
   const claimByReason = {
     "not-producer": "scope",
-    "other-province": "municipality",
+    "other-area": "municipality",
     closed: "closure",
     nonexistent: "existence",
     "out-of-scope": "scope",
@@ -539,8 +498,8 @@ function validateEvidenceFile(evidencePath, csvPath, errors) {
 
     if (action === "keep") {
       validateKeepRecord({ record, row, claims, types, location, errors });
-    } else if (action === "purge") {
-      validatePurgeRecord({ record, row, claims, location, errors });
+    } else if (action === "reject" || action === "purge") {
+      validateExclusionRecord({ record, row, claims, location, errors });
     } else if (action === "merge") {
       validateMergeRecord({
         record,
@@ -567,7 +526,11 @@ export function auditEvidence({
   const resolvedCsvRoot = path.resolve(csvRoot);
   const resolvedEvidenceRoot = path.resolve(evidenceRoot);
   const errors = [];
-  const strictAreas = loadCoverage(resolvedEvidenceRoot, errors);
+  const catalogFiles = listFiles(resolvedCsvRoot, ".csv");
+  const catalogRows = catalogFiles.reduce(
+    (sum, csvPath) => sum + readCsvRows(csvPath).size,
+    0,
+  );
   const evidenceFiles = listFiles(resolvedEvidenceRoot, ".jsonl");
   const areaResults = new Map();
 
@@ -593,19 +556,27 @@ export function auditEvidence({
     );
   }
 
-  // Strict coverage is advisory, not enforced. Evidence is an optional audit
-  // layer, so a province listed in coverage.json is never required to carry a
-  // keep record for every CSV row. The list still marks fully-documented
-  // provinces, but its gaps never block.
+  let documentedRows = 0;
+  let completeAreas = 0;
+  for (const { rows, records } of areaResults.values()) {
+    const keepRows = [...rows.keys()].filter(
+      (slug) => records.get(slug)?.action === "keep",
+    ).length;
+    documentedRows += keepRows;
+    if (keepRows === rows.size) completeAreas += 1;
+  }
 
   return {
     errors,
+    catalogAreas: catalogFiles.length,
+    catalogRows,
     files: evidenceFiles.length,
     records: [...areaResults.values()].reduce(
       (sum, result) => sum + result.records.size,
       0,
     ),
-    strictAreas: strictAreas.length,
+    completeAreas,
+    documentedRows,
   };
 }
 
@@ -614,9 +585,13 @@ function main() {
   const result = auditEvidence(args);
 
   console.log("Evidence contract audit summary");
-  console.log(`- files: ${result.files}`);
+  console.log(`- catalog areas: ${result.catalogAreas}`);
+  console.log(`- evidence ledgers: ${result.files}`);
+  console.log(`- complete ledgers: ${result.completeAreas}`);
+  console.log(
+    `- current catalog rows documented: ${result.documentedRows}/${result.catalogRows}`,
+  );
   console.log(`- records: ${result.records}`);
-  console.log(`- advisory strict areas: ${result.strictAreas}`);
   console.log(`- issues: ${result.errors.length}`);
 
   if (result.errors.length === 0) {

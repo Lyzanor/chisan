@@ -6,7 +6,7 @@
 - **Estado** `unverified` en bloque: barrido exhaustivo hecho, ninguna ficha abierta
 - **Tamaño del hueco** 101 candidatos contra las **1.415 Braustätten** que Destatis cuenta en toda Alemania en 2025 (el desglose por Land solo se publica para Bayern, Baden-Württemberg y Nordrhein-Westfalen; el resto vive en GENESIS 73411-0002, que pide registro); el CSV tiene hoy 0 filas de cerveza aquí
 
-Método, trampas y criterio de triaje: `docs/de/cerveza.md`. Columna **clase** = qué tag de OSM lo trajo, no una decisión editorial:
+La columna **clase** indica qué tag de OSM trajo el candidato, no una decisión editorial:
 `craft=brewery` cervecería declarada · `industrial` planta industrial, triar tamaño y grupo · `microbrewery` local que declara elaborar in situ (Gasthausbrauerei), es el tier que más falsos positivos trae.
 El sufijo tras la web es el código HTTP del barrido del 2026-08-06 cuando no fue 2xx propio.
 

@@ -10,13 +10,13 @@
 //
 // El resultado se guarda como snapshot fechado en
 // `data/reference/web-status.json`. Ese fichero es el producto real del check:
-// convierte el paso más caro de una pasada R0/R1 —abrir dominios a mano— en
-// una lectura. Caduca: `web` es una afirmación dinámica, igual que
+// convierte una comprobación de red costosa —abrir dominios a mano— en una
+// lectura. Caduca: `web` es una afirmación dinámica, igual que
 // `Venta online`, así que el informe avisa de la edad de cada dato.
 //
 // Uso:
 //   node scripts/check-links.mjs --area girona,cadiz
-//   node scripts/check-links.mjs --all                  (lento: ~8.500 hosts)
+//   node scripts/check-links.mjs --all                  (lento: catálogo completo)
 //   node scripts/check-links.mjs --offline              lee el snapshot, sin red
 //   node scripts/check-links.mjs --offline --area soria --json
 
@@ -112,7 +112,7 @@ function usage() {
 
 Opciones:
   --area <stem>         Area(s) to check (e.g. girona,cadiz).
-  --all                 Comprueba todos los CSV (lento; ~8.500 hosts).
+  --all                 Comprueba todos los CSV (lento; catálogo completo).
   --offline             No toca la red: informa desde el snapshot guardado.
   --timeout <ms>        Timeout por URL (defecto 10000).
   --concurrency <n>     Peticiones simultáneas (defecto 6).
@@ -442,21 +442,32 @@ export function readSnapshot(file = SNAPSHOT_PATH) {
   }
 }
 
-function writeSnapshot(previous, fresh, today, file = SNAPSHOT_PATH) {
-  // Merge: una tanda por area no debe borrar lo que ya se sabe del resto.
-  const urls = { ...previous.urls, ...fresh };
-  const ordered = Object.fromEntries(Object.keys(urls).sort().map((key) => [key, urls[key]]));
+export function mergeSnapshotUrls(previous, fresh, activeUrls) {
+  // A partial area refresh preserves other current URLs but drops URLs that no
+  // longer occur anywhere in the catalog, so the snapshot cannot grow forever.
+  const active = new Set(activeUrls);
+  const merged = { ...previous, ...fresh };
+  return Object.fromEntries(
+    Object.keys(merged)
+      .filter((url) => active.has(url))
+      .sort()
+      .map((url) => [url, merged[url]]),
+  );
+}
+
+function writeSnapshot(previous, fresh, activeUrls, today, file = SNAPSHOT_PATH) {
+  const urls = mergeSnapshotUrls(previous.urls, fresh, activeUrls);
   const payload = {
     generatedAt: today,
     nota:
       "Snapshot de resolución de la columna `web`. Afirmación dinámica: caduca. " +
       "Clasifica, no decide — un 403 no es un sitio muerto y un 200 no prueba que la web sea del productor. " +
       "Regenerar con `pnpm check:links --all`.",
-    urls: ordered,
+    urls,
   };
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, `${JSON.stringify(payload, null, 2)}\n`);
-  return Object.keys(ordered).length;
+  return Object.keys(urls).length;
 }
 
 const daysBetween = (from, to) =>
@@ -517,7 +528,8 @@ async function main() {
       const fresh = Object.fromEntries(
         urls.map((url, index) => [url, { ...classified[index], checkedAt: today }]),
       );
-      const total = writeSnapshot(previous, fresh, today);
+      const activeUrls = collectRows(listCsvFiles([])).rowsByUrl.keys();
+      const total = writeSnapshot(previous, fresh, activeUrls, today);
       console.error(`Snapshot actualizado: ${SNAPSHOT_PATH} (${total} URLs).`);
     }
   }

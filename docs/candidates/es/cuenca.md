@@ -11,7 +11,7 @@
   `ecommerce`.
 
   Venía como `pago-de-la-jaraba-villarrobledo` en `albacete.csv` y se dio de
-  baja con `purge:other-province`: su propia web separa la ubicación
+  baja con `purge:other-area`: su propia web separa la ubicación
   (El Provencio, Cuenca) del **acceso** por la N-310 km 142,7, que sí cae en
   Villarrobledo. Al dar el alta conviene dejar la dirección de la parcela y
   mencionar el acceso en la descripción, para que nadie vuelva a moverla a

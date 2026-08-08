@@ -20,6 +20,14 @@ function assertEnum(value, allowed, field) {
 }
 
 export function evaluateEditorialFacts(facts) {
+  // Existing evaluation fixtures predate candidate lifecycle decisions. Their
+  // omitted state remains published; new candidate cases declare it explicitly.
+  const catalogState = facts.catalogState ?? "published";
+  assertEnum(
+    catalogState,
+    new Set(["published", "candidate"]),
+    "catalogState",
+  );
   assertEnum(
     facts.existenceStatus,
     new Set(["confirmed", "nonexistent", "unknown"]),
@@ -37,7 +45,7 @@ export function evaluateEditorialFacts(facts) {
   );
   assertEnum(
     facts.territory,
-    new Set(["matching", "other-province", "unknown"]),
+    new Set(["matching", "other-area", "unknown"]),
     "territory",
   );
   assertEnum(
@@ -72,23 +80,28 @@ export function evaluateEditorialFacts(facts) {
     assertEnum(channel, SALES_CHANNELS, "online sales channel");
   }
 
+  const isCandidate = catalogState === "candidate";
+  const exclusionAction = isCandidate ? "reject" : "purge";
+
   if (facts.duplicate === "same-unit") {
-    return { action: "merge", reason: "duplicate" };
+    return isCandidate
+      ? { action: "already-present" }
+      : { action: "merge", reason: "duplicate" };
   }
   if (facts.existenceStatus === "nonexistent") {
-    return { action: "purge", reason: "nonexistent" };
+    return { action: exclusionAction, reason: "nonexistent" };
   }
   if (facts.scope === "not-producer") {
-    return { action: "purge", reason: "not-producer" };
+    return { action: exclusionAction, reason: "not-producer" };
   }
   if (facts.scope === "out-of-scope") {
-    return { action: "purge", reason: "out-of-scope" };
+    return { action: exclusionAction, reason: "out-of-scope" };
   }
   if (facts.operatingStatus === "closed") {
-    return { action: "purge", reason: "closed" };
+    return { action: exclusionAction, reason: "closed" };
   }
-  if (facts.territory === "other-province") {
-    return { action: "purge", reason: "other-province" };
+  if (facts.territory === "other-area") {
+    return { action: exclusionAction, reason: "other-area" };
   }
 
   const confirmed = new Set(["primary", "reliable"]);
@@ -105,6 +118,20 @@ export function evaluateEditorialFacts(facts) {
     facts.activityEvidence,
     facts.municipalityEvidence,
   ].every((value) => value !== "none");
+
+  if (
+    isCandidate &&
+    !(
+      facts.existenceStatus === "confirmed" &&
+      facts.scope === "producer" &&
+      facts.operatingStatus === "active" &&
+      facts.territory === "matching" &&
+      ["none", "distinct-unit"].includes(facts.duplicate) &&
+      allCorePresent
+    )
+  ) {
+    return { action: "hold" };
+  }
 
   let verification = "pendiente";
   if (allCoreConfirmed) {

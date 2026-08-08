@@ -53,6 +53,10 @@ const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
 // different municipio: a blocking error (wrong lat/lon or wrong municipio).
 const CENTROID_BLOCKING_DISTANCE_KM = 100;
+// Coordinates copied from a municipality centroid are an explicit coarse
+// fallback, not an exact producer location. Count them without emitting one
+// warning per row; the full audit summary keeps the limitation visible.
+const CENTROID_FALLBACK_TOLERANCE_DEG = 1e-5;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipalities.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipality-overrides.json";
 let PREFERRED_CATEGORY_ALIASES = new Map();
@@ -660,6 +664,12 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
         // instead of letting the gap disappear.
         stats.geoSkipped += 1;
       } else {
+        if (
+          Math.abs(lat - centroid.lat) <= CENTROID_FALLBACK_TOLERANCE_DEG &&
+          Math.abs(lon - centroid.lon) <= CENTROID_FALLBACK_TOLERANCE_DEG
+        ) {
+          stats.geoFallback += 1;
+        }
         const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
         if (distance > CENTROID_BLOCKING_DISTANCE_KM) {
           push(
@@ -1019,7 +1029,11 @@ function runQualityAudit({ rows, push, centroids, scope }) {
   }
 }
 
-function printReport(mode, issues, { summaryOnly = false, stats = { geoSkipped: 0 } } = {}) {
+function printReport(
+  mode,
+  issues,
+  { summaryOnly = false, stats = { geoSkipped: 0, geoFallback: 0 } } = {},
+) {
   const errors = issues.filter((issue) => issue.severity === "error");
   const warnings = issues.filter((issue) => issue.severity === "warning");
   const suppressed = issues.filter((issue) => issue.severity === "suppressed");
@@ -1039,6 +1053,9 @@ function printReport(mode, issues, { summaryOnly = false, stats = { geoSkipped: 
     console.log(
       `- geo-check skipped (municipio not in data/reference/municipalities.json): ${stats.geoSkipped} rows`,
     );
+  }
+  if (stats.geoFallback) {
+    console.log(`- centroid fallback coordinates: ${stats.geoFallback}`);
   }
 
   if (!visible.length) {
@@ -1068,7 +1085,7 @@ async function main() {
 
   const centroids = await loadCentroids();
   const scope = inferScope(csvPath);
-  const stats = { geoSkipped: 0 };
+  const stats = { geoSkipped: 0, geoFallback: 0 };
 
   runContractAudit({ raw, headers, rows, push, centroids, scope, stats });
 

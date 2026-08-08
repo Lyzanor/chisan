@@ -17,7 +17,7 @@ Dedup contra `ciudad-real.csv` rehecho el 2026-08-03: sigue sin fila.
   Categoría **Charcutería**.
 
   Venía como `embutidos-carrizal-povedilla` en `albacete.csv` y se dio de baja
-  con `purge:other-province`: su página de contacto separa la **carnicería** de
+  con `purge:other-area`: su página de contacto separa la **carnicería** de
   Povedilla (Albacete) de la **fábrica**, que está en Villanueva de la Fuente.
   Al dar el alta, poner la dirección de la fábrica y dejar la carnicería como
   punto de venta en la descripción; la marca conserva el «de Povedilla» del

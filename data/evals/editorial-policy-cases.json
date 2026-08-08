@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "cases": [
     {
       "id": "verified-from-current-reliable-evidence",
@@ -118,14 +118,14 @@
       "why": "Closure requires strong current evidence; a technical failure alone would not satisfy this case."
     },
     {
-      "id": "purge-another-province",
+      "id": "purge-another-area",
       "dimensions": ["geography", "scope"],
-      "description": "The producer is real but the productive unit belongs to another province.",
+      "description": "The producer is real but the productive unit belongs to another catalog area.",
       "facts": {
         "existenceStatus": "confirmed",
         "scope": "producer",
         "operatingStatus": "active",
-        "territory": "other-province",
+        "territory": "other-area",
         "duplicate": "none",
         "identityEvidence": "primary",
         "activityEvidence": "primary",
@@ -135,9 +135,9 @@
       },
       "expected": {
         "action": "purge",
-        "reason": "other-province"
+        "reason": "other-area"
       },
-      "why": "A valid producer still does not belong in the wrong provincial catalog."
+      "why": "A valid producer still does not belong in the wrong area catalog."
     },
     {
       "id": "merge-the-same-productive-unit",
@@ -369,7 +369,7 @@
         "action": "purge",
         "reason": "out-of-scope"
       },
-      "why": "Producing in the province is not enough: industrial mass-market operations without local producer identity fall outside catalog scope, while a named terroir unit of a quality group would stay."
+      "why": "Producing in the area is not enough: industrial mass-market operations without local producer identity fall outside catalog scope, while a named terroir unit of a quality group would stay."
     },
     {
       "id": "purge-maquila-coop-branded-by-second-grade",
@@ -464,6 +464,98 @@
         "salesChannels": []
       },
       "why": "A shop under maintenance or a cart without a working checkout is uncertainty about the channel, not reviewed evidence of absent sales."
+    },
+    {
+      "id": "accept-a-confirmed-candidate",
+      "dimensions": ["candidate-lifecycle", "verification"],
+      "description": "A never-published candidate has sufficient evidence for every admission claim.",
+      "facts": {
+        "catalogState": "candidate",
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "reliable",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "keep",
+        "verification": "verificado",
+        "onlineSales": "no comprobado",
+        "salesChannels": []
+      },
+      "why": "Acceptance adds the row and records its resulting keep decision; it does not need an intermediate candidate status."
+    },
+    {
+      "id": "hold-an-unresolved-candidate",
+      "dimensions": ["candidate-lifecycle", "verification"],
+      "description": "A candidate is plausible but qualifying activity and location remain unresolved.",
+      "facts": {
+        "catalogState": "candidate",
+        "existenceStatus": "unknown",
+        "scope": "unknown",
+        "operatingStatus": "unknown",
+        "territory": "unknown",
+        "duplicate": "unknown",
+        "identityEvidence": "secondary",
+        "activityEvidence": "none",
+        "municipalityEvidence": "none",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "hold"
+      },
+      "why": "Uncertainty stays in the candidate note and must not become either a speculative CSV row or a rejection."
+    },
+    {
+      "id": "reject-a-never-published-reseller",
+      "dimensions": ["candidate-lifecycle", "scope"],
+      "description": "Reliable evidence shows that a never-published candidate only resells products.",
+      "facts": {
+        "catalogState": "candidate",
+        "existenceStatus": "confirmed",
+        "scope": "not-producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "reject",
+        "reason": "not-producer"
+      },
+      "why": "The exclusion is durable evidence, but purge would falsely imply that the candidate had been published."
+    },
+    {
+      "id": "remove-an-already-present-candidate",
+      "dimensions": ["candidate-lifecycle", "deduplication"],
+      "description": "A candidate resolves to the same productive unit as a current CSV row.",
+      "facts": {
+        "catalogState": "candidate",
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "same-unit",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": []
+      },
+      "expected": {
+        "action": "already-present"
+      },
+      "why": "The note is pruned after matching the existing row; merge is reserved for a source slug that was actually published."
     }
   ]
 }

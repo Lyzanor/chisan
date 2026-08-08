@@ -12,11 +12,6 @@ const HEADER =
 const ROW =
   "productor-uno,Productor Uno,Abrera,Vino,Vino,Carrer Major 1,Productor sintético para probar el contrato,,+34600000000,uno@example.com,https://example.com,,,https://www.google.com/maps/place/Uno,41.5,1.9,,verificado,sí,ecommerce";
 
-function writeJson(filePath, value) {
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
-}
-
 function writeLedger(filePath, records) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(
@@ -52,6 +47,24 @@ function validRecord() {
   };
 }
 
+function validRejectRecord() {
+  return {
+    slug: "candidato-descartado",
+    reviewedAt: "2026-06-15",
+    reviewedBy: "test",
+    action: "reject",
+    reason: "not-producer",
+    sources: [
+      {
+        url: "https://example.com/candidate",
+        type: "official-site",
+        checkedAt: "2026-06-15",
+        claims: ["identity", "scope"],
+      },
+    ],
+  };
+}
+
 function createFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "km0-evidence-"));
   const csvRoot = path.join(root, "csv");
@@ -59,22 +72,18 @@ function createFixture() {
   const csvPath = path.join(
     csvRoot,
     "test-country",
-    "test-community",
-    "test-province.csv",
+    "test-region",
+    "test-area.csv",
   );
   const ledgerPath = path.join(
     evidenceRoot,
     "test-country",
-    "test-community",
-    "test-province.jsonl",
+    "test-region",
+    "test-area.jsonl",
   );
 
   fs.mkdirSync(path.dirname(csvPath), { recursive: true });
   fs.writeFileSync(csvPath, `${HEADER}\n${ROW}\n`);
-  writeJson(path.join(evidenceRoot, "coverage.json"), {
-    version: 1,
-    strictAreas: [],
-  });
 
   return { root, csvRoot, evidenceRoot, ledgerPath };
 }
@@ -85,6 +94,11 @@ function main() {
     writeLedger(fixture.ledgerPath, [validRecord()]);
     let result = auditEvidence(fixture);
     assert.deepEqual(result.errors, []);
+    assert.equal(result.catalogAreas, 1);
+    assert.equal(result.catalogRows, 1);
+    assert.equal(result.files, 1);
+    assert.equal(result.completeAreas, 1);
+    assert.equal(result.documentedRows, 1);
 
     const missingClaim = validRecord();
     missingClaim.sources[0].claims = ["identity", "municipality", "online-sales"];
@@ -115,20 +129,36 @@ function main() {
       ),
     );
 
-    // Strict coverage is advisory: a province listed in coverage.json with an
-    // empty ledger must not raise a blocking "missing keep record" error.
-    writeLedger(fixture.ledgerPath, []);
-    writeJson(path.join(fixture.evidenceRoot, "coverage.json"), {
-      version: 1,
-      strictAreas: ["test-country/test-community/test-province"],
-    });
+    writeLedger(fixture.ledgerPath, [validRejectRecord()]);
+    result = auditEvidence(fixture);
+    assert.deepEqual(result.errors, []);
+
+    const uncertainReject = validRejectRecord();
+    uncertainReject.sources[0].claims = ["identity"];
+    writeLedger(fixture.ledgerPath, [uncertainReject]);
     result = auditEvidence(fixture);
     assert.ok(
-      !result.errors.some((error) =>
-        error.includes("strict coverage missing keep record"),
+      result.errors.some((error) =>
+        error.includes("missing required claim 'scope'"),
       ),
-      "strict coverage must no longer require keep records",
     );
+
+    const publishedReject = validRejectRecord();
+    publishedReject.slug = "productor-uno";
+    writeLedger(fixture.ledgerPath, [publishedReject]);
+    result = auditEvidence(fixture);
+    assert.ok(
+      result.errors.some((error) =>
+        error.includes("reject slug still exists in area CSV"),
+      ),
+    );
+
+    // Coverage is derived and advisory: an empty ledger is valid but incomplete.
+    writeLedger(fixture.ledgerPath, []);
+    result = auditEvidence(fixture);
+    assert.deepEqual(result.errors, []);
+    assert.equal(result.completeAreas, 0);
+    assert.equal(result.documentedRows, 0);
 
     console.log("Evidence contract tests OK.");
   } finally {

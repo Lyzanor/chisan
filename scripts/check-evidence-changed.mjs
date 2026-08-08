@@ -5,12 +5,12 @@
 // row state against HEAD and warns when an editorial decision that the evidence
 // contract expects to be recorded — a new producer, a changed `verificacion` or
 // `Venta online`, or a removed row (purge/merge) — has no matching line touched
-// in the province evidence ledger.
+// in the matching area evidence ledger.
 //
 // It never fails the build. It makes the evidence invariant visible while a
-// province is still migrating (i.e. not yet under strict `coverage.json`),
-// where `check:evidence` alone cannot require a record to exist. Use it while
-// iterating; `verify:data` still runs the blocking `check:evidence`.
+// ledger is still incomplete, where `check:evidence` alone cannot require a
+// record to exist. Use it while iterating; `verify:data` still checks evidence
+// structure and CSV parity.
 
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";

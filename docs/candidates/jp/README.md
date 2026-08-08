@@ -1,8 +1,8 @@
 # Japón — índice de candidatos y bandeja de entrada
 
 Ficheros por prefectura en esta carpeta, más los sueltos que aún no dan para
-abrir el suyo. Las reglas comunes están en `docs/candidates/README.md` y las
-fuentes autorizadas del país en `data/csv/jp/AGENTS.md`.
+abrir el suyo. Las reglas comunes están en `docs/candidates/README.md`; cada
+fichero identifica la asociación o fuente concreta usada.
 
 > **Integración 2026-08-04:** 14 de las 18 de la bandeja entraron en su CSV como `parcial`. Siguen aquí las 4 que no: los tres molinos harineros (Fukuoka, Saga, Kumamoto), B2B de materia prima, y Minimal, que no trae el barrio de Tokio.
 
@@ -12,8 +12,8 @@ fuentes autorizadas del país en `data/csv/jp/AGENTS.md`.
 
 ## El gremio de bebida es la fuente que generaliza
 
-Lo que `data/csv/jp/AGENTS.md` decía del sake vale para el país entero: **cada
-prefectura tiene un gremio de bebida alcohólica y publica su padrón completo**.
+Para este barrido, **cada prefectura tiene un gremio de bebida alcohólica y
+publica su padrón completo**.
 No es el mismo producto en todas — sake en 44, **本格焼酎 en Kagoshima y
 Miyazaki, 泡盛 en Okinawa, 球磨焼酎 como segundo gremio en Kumamoto** — pero la
 estructura es idéntica y por sí sola pasa de diez candidatos en las 47.

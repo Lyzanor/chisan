@@ -3,7 +3,7 @@
 ## Traspaso desde la verificación de Zamora (2026-07-10 y 2026-07-21)
 
 Diez filas del CSV de Zamora resultaron ser unidades productivas salmantinas y
-se dieron de baja con `purge:other-province`. Vienen de dos arrastres distintos:
+se dieron de baja con `purge:other-area`. Vienen de dos arrastres distintos:
 el listado común de la **D.O. Arribes**, que cruza Zamora y Salamanca, y el
 registro **ITACyL** de la I.G.P. Garbanzo de Fuentesaúco, cuya zona amparada
 también cruza las dos provincias.

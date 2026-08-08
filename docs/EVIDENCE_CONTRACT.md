@@ -2,182 +2,150 @@
 
 ## Purpose
 
-`data/csv/**` remains the only producer-data source of truth used by the app.
-Evidence ledgers record why an editorial decision was made: source, date,
-claim and resulting state. They are an audit layer, not a second catalog.
+`data/csv/**` is the only producer-data source of truth and the only layer read
+by the app. `data/evidence/**` is optional structured provenance: it records
+who reviewed a decision, when, and which source supports each claim. It never
+overrides the CSV. Editorial meaning belongs in `docs/EDITORIAL_POLICY.md`.
 
-The knowledge hierarchy is:
+## Storage
 
-1. `data/csv/**`: current public producer state.
-2. `data/evidence/**`: structured provenance for editorial decisions.
-3. `data/evals/**`: stable policy examples that prevent criteria drift.
-4. Area ledgers and Git history: local context, progress and narrative.
-
-## Optional audit layer
-
-Evidence is provenance, not a gate. The CSV is the source of truth; evidence
-records explain decisions but never block an area from being considered
-done.
-
-- Every evidence record that exists is validated by `npx pnpm check:evidence`,
-  but the validator is **non-blocking**: problems are reported as warnings, not
-  errors, and never fail `verify:data` / `verify:ai`.
-- Writing evidence is cheapest at decision time, when the sources are already
-  open: prefer adding a record when you add a producer, re-verify one, resolve
-  `Venta online`, or purge/merge — not as a retroactive backfill of an
-  already-verified area.
-- `data/evidence/coverage.json` is an **advisory** list of areas whose
-  ledger already covers every current row. It records that fact for humans; it
-  does not impose a requirement and is never enforced.
-- An area is never required to have any evidence record. Missing records are
-  not a defect or a debt.
-
-## Layout
-
-Evidence mirrors the CSV layout:
+Evidence mirrors the catalog path:
 
 ```text
-data/csv/es/catalunya/barcelona.csv
-data/evidence/es/catalunya/barcelona.jsonl
+data/csv/<country>/<region>/<area>.csv
+data/evidence/<country>/<region>/<area>.jsonl
 ```
 
-Each non-empty JSONL line is one decision. Use one latest `keep` record per
-current producer. Git preserves earlier versions. `purge` and `merge` records
-remain as tombstones so destructive decisions stay explainable.
+Each non-empty JSONL line is one object. A ledger contains at most one current
+record per `slug`; Git keeps earlier versions. `reject`, `purge`, and `merge`
+records remain as tombstones, while `keep` records describe rows still present
+in the matching CSV.
 
-JSONL is intentional: agents can locate one `slug` with `rg` and replace one
-line without loading or rewriting a large area ledger.
+Evidence is advisory: an area or row may have no record. Coverage is derived at
+audit time from current CSV rows with matching `keep` records; there is no
+manual coverage manifest and incompleteness is not an error.
 
-## Keep record
+## Common record
+
+Every action uses these fields:
+
+| Field | Rule |
+|---|---|
+| `slug` | Required lowercase ASCII kebab-case; unique within the ledger |
+| `reviewedAt` | Required `YYYY-MM-DD`; not in the future |
+| `reviewedBy` | Required non-empty editor or agent identifier |
+| `action` | `keep`, `reject`, `purge`, or `merge` |
+| `sources` | Required non-empty array of source objects |
+| `notes` | Optional factual context not represented elsewhere |
+
+Each source has:
+
+| Field | Rule |
+|---|---|
+| `url` | Unique HTTP(S) URL within the record |
+| `type` | One allowed source type below |
+| `checkedAt` | `YYYY-MM-DD`; not later than `reviewedAt` or today |
+| `claims` | Non-empty, duplicate-free array of allowed claims |
+| `note` | Optional fact about this source |
+
+Unknown fields are reported by the validator.
+
+## Actions
+
+| Action | Required fields | CSV relationship | Required claim |
+|---|---|---|---|
+| `keep` | `decision` | `slug` exists; decision matches its row | Depends on decision |
+| `reject` | `reason` | `slug` is absent and the candidate was never published | Depends on reason |
+| `purge` | `reason` | `slug` no longer exists | Depends on reason |
+| `merge` | `targetSlug` | source is absent; target exists in the same CSV and differs from source | `duplicate` |
+
+`keep` cannot carry `reason` or `targetSlug`; `reject` and `purge` cannot carry
+`decision` or `targetSlug`; `merge` cannot carry `decision` or `reason`.
+
+Use `reject` for a definitively excluded candidate that never entered the CSV,
+and `purge` for a previously published row. Insufficient evidence is neither:
+the candidate remains open. The validator can confirm current CSV absence, not
+historical publication, so editors own this distinction.
+
+### Keep decision
 
 ```json
-{"slug":"example-producer","reviewedAt":"2026-06-15","reviewedBy":"editor-id","action":"keep","decision":{"verification":"verificado","onlineSales":"sí","salesChannels":["ecommerce"]},"sources":[{"url":"https://example.com/shop","type":"official-store","checkedAt":"2026-06-15","claims":["identity","producer-activity","municipality","online-sales"]}],"notes":"Optional material exception only."}
+{"slug":"example-producer","reviewedAt":"2026-06-15","reviewedBy":"editor-id","action":"keep","decision":{"verification":"verificado","onlineSales":"sí","salesChannels":["ecommerce"]},"sources":[{"url":"https://example.com/shop","type":"official-store","checkedAt":"2026-06-15","claims":["identity","producer-activity","municipality","online-sales"]}]}
 ```
 
-The decision must exactly match the current CSV row:
+The decision must match the CSV exactly:
 
-- `verification` ↔ `verificacion`
-- `onlineSales` ↔ `Venta online`
-- `salesChannels` ↔ `Canal de venta`
+| Evidence | CSV | Allowed values |
+|---|---|---|
+| `verification` | `verificacion` | `pendiente`, `parcial`, `verificado` |
+| `onlineSales` | `Venta online` | `sí`, `no`, `no comprobado` |
+| `salesChannels` | `Canal de venta` | `ecommerce`, `whatsapp`, `email`, `telefono`, `suscripcion`, `marketplace` |
 
-Channel order is irrelevant.
+Channel order is irrelevant; duplicates are invalid. Channels must be empty
+unless `onlineSales=sí`.
 
-## Notes
+Validator minimums:
 
-`notes` is optional and holds **facts about the producer and about what a
-source published** — never the reasoning that led to the decision. The decision
-is already in `decision`/`action`, and the criterion behind it belongs to
-`docs/EDITORIAL_POLICY.md`, where it is written once instead of once per row.
+| Decision | Required claims or source |
+|---|---|
+| `verificado` | `identity`, `producer-activity`, `municipality`, plus one verifying source type |
+| `parcial` | `identity`, `municipality` |
+| `pendiente` | No minimum claim set |
+| `onlineSales=sí` or `no` | `online-sales` |
+| `onlineSales=no comprobado` | No `online-sales` requirement |
 
-Leave out:
+These are structural minimums, not proof of editorial sufficiency; the policy
+remains authoritative.
 
-- The verification level or its justification (*"without an external link it
-  cannot go past `parcial`"*, *"no cart on the homepage"*). Restating a
-  structured field is noise.
-- Cross-references to other rows, areas or candidate notes (*"fourth case of
-  the pattern after X and Y"*). Candidate notes are scratch and get deleted;
-  a reference to them rots.
-- Workflow narration: which pass found the row, which queue it came from, what
-  to retry next time.
+### Exclusion reasons
 
-Write, when it is not obvious from the row itself:
+The same reasons and claim minimums apply to `reject` and `purge`:
 
-- An identity trait that separates the entity from a homonym, or a brand that
-  differs from the razón social.
-- A conflict between sources, and which one the row followed.
-- How a source behaved when that behaviour would otherwise read as a dead site:
-  HTTP-only, TLS mismatch, WAF `403` with a body, empty JS-rendered body, a
-  domain that no longer resolves, or a page that declares itself superseded.
-- A material fact about the productive unit: more than one facility, a move, a
-  disaster that changed where it produces.
+| `reason` | Required claim |
+|---|---|
+| `not-producer` | `scope` |
+| `other-area` | `municipality` |
+| `closed` | `closure` |
+| `nonexistent` | `existence` |
+| `out-of-scope` | `scope` |
 
-## Purge and merge records
-
-```json
-{"slug":"old-row","reviewedAt":"2026-06-15","reviewedBy":"editor-id","action":"purge","reason":"not-producer","sources":[{"url":"https://example.com/about","type":"official-site","checkedAt":"2026-06-15","claims":["identity","scope"]}]}
-{"slug":"duplicate-row","reviewedAt":"2026-06-15","reviewedBy":"editor-id","action":"merge","targetSlug":"surviving-row","sources":[{"url":"https://example.com/contact","type":"official-site","checkedAt":"2026-06-15","claims":["identity","duplicate"]}]}
-```
-
-Allowed purge reasons:
-
-- `not-producer`
-- `other-area`
-- `closed`
-- `nonexistent`
-- `out-of-scope`
-
-The deleted source `slug` must not remain in the CSV. A merge target must exist
-in the same area.
+`other-area` means that the productive unit belongs in a different area CSV.
 
 ## Claims
 
-Sources state what they support rather than acting as an undifferentiated URL
-list.
-
 | Claim | Meaning |
 |---|---|
-| `identity` | The source belongs to or identifies the entity. |
-| `producer-activity` | The entity produces or elaborates in catalog scope. |
-| `municipality` | The productive unit belongs to the stated municipality. |
-| `location` | Address or coordinates are supported. |
-| `contact` | A direct contact route is published by or for the entity. |
-| `online-sales` | Current remote ordering status was checked. |
-| `link-ownership` | A preserved web/social/maps link belongs to the entity. |
-| `duplicate` | Two rows represent the same productive unit. |
-| `closure` | Permanent closure is reliably established. |
-| `scope` | Evidence establishes inclusion or exclusion from producer scope. |
-| `existence` | Evidence resolves whether the named entity exists. |
+| `identity` | Identifies the entity |
+| `producer-activity` | Shows qualifying production or elaboration |
+| `municipality` | Places the productive unit in the stated municipality |
+| `location` | Supports address or coordinates |
+| `contact` | Publishes a direct contact route |
+| `online-sales` | Supports the reviewed remote-order status |
+| `link-ownership` | Connects a retained link to the entity |
+| `duplicate` | Shows that two rows are the same productive unit |
+| `closure` | Establishes permanent closure |
+| `scope` | Establishes catalog inclusion or exclusion |
+| `existence` | Resolves whether the named entity exists |
 
-Minimum claim requirements:
-
-- `verificado`: `identity`, `producer-activity`, `municipality`, plus at least
-  one source of a *verifying* type (see Source types below).
-- `parcial`: `identity` and `municipality`.
-- `Venta online=sí|no`: `online-sales`.
-- `merge`: `duplicate`.
-- `purge`: the claim associated with its reason.
+A source supports only its listed claims.
 
 ## Source types
 
-Allowed values:
+Allowed values are `official-site`, `official-store`, `official-social`,
+`google-maps`, `public-registry`, `regulatory-council`,
+`institutional-directory`, `marketplace`, `press`, and `other`.
 
-- `official-site`
-- `official-store`
-- `official-social`
-- `google-maps`
-- `public-registry`
-- `regulatory-council`
-- `institutional-directory`
-- `marketplace`
-- `press`
-- `other`
+For the structural `verificado` check, verifying types are `official-site`,
+`official-store`, `official-social`, `google-maps`, and `marketplace`. A type
+does not make every claim reliable: editors must still confirm what the source
+actually demonstrates.
 
-Source type does not override editorial judgment. A registry may establish
-existence but not current activity; a marketplace may establish a live sale
-but not the producer's municipality.
+## Notes
 
-For `verificado`, the *verifying* types are `official-site`, `official-store`,
-`official-social`, `google-maps` and `marketplace`; `check:evidence` requires
-at least one of them. The remaining types — `public-registry`,
-`regulatory-council`, `institutional-directory` and `press` — are *supporting*:
-they can establish existence, identity or localization, but on their own cap a
-row at `parcial`, because a listing confirms that an entity existed, not that it
-produces today. This mirrors the discovery protocol in `AGENTS.md`: listing
-supports at most `parcial`.
-
-## Dates and freshness
-
-- `reviewedAt`: date of the editorial decision.
-- `checkedAt`: date the specific source was inspected.
-- Both use `YYYY-MM-DD`, cannot be in the future, and `checkedAt` cannot be
-  later than the decision it supports.
-- `reviewedBy`: stable editor or agent identifier, used for accountability
-  without relying on chat history.
-- There is no universal expiry period. Freshness depends on the claim.
-- Dynamic claims such as activity, closure and online sales require current
-  evidence at review time and should be rechecked during maintenance.
-
-A source returning HTTP 200 is not proof that its claim remains true.
+Use `notes` only for durable facts needed to interpret the record: identity
+distinctions, source conflicts, unusual source behaviour, moves, or multiple
+facilities. Do not restate the decision, policy, workflow, or routine source
+checks. Use a source-level `note` when the fact concerns only that source.
 
 ## Validation
 
@@ -186,17 +154,9 @@ npx pnpm check:evidence
 npx pnpm test:evidence-contract
 ```
 
-The validator checks JSONL shape, allowed values, dates, claims, source URLs,
-slug existence, merge/purge consistency and exact CSV decision parity. It runs
-**non-blocking**: any mismatch is a warning, not a build-breaking error, and
-areas listed in `coverage.json` are no longer required to cover every row.
-
-It checks that the required claims are present and that at least one verifying
-source type exists, but it does not bind a claim to a source: confirming that a
-verifying source actually carries `identity`, `producer-activity` and
-`municipality` stays an editorial judgment. A green `check:evidence` means the
-record is well-formed and consistent with the CSV, not that the strongest
-source proves every core claim.
-
-`npx pnpm verify:data` includes the evidence contract. Changes to the evidence
-validator or policy code require `npx pnpm verify:ai`.
+The validator checks paths, JSONL shape, allowed fields and values, dates,
+source URLs, claims, action invariants, slug existence, merge targets, and exact
+CSV parity. It also reports ledger and row coverage derived from the current
+catalog. Issues are warnings and never block `verify:data` or `verify:ai`. A
+green run proves structural consistency, not factual truth or complete
+provenance.

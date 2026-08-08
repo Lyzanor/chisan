@@ -2,180 +2,140 @@
 
 ## Purpose
 
-This document defines the stable decision model behind catalog verification.
-`docs/VERIFICATION_TECHNIQUES.md` explains how to investigate efficiently;
-this file defines the outcome that equivalent evidence should produce.
-
-The model is intentionally small. It protects core decisions from tool,
-agent, area and workflow changes without pretending that all research can
-be reduced to deterministic code.
+This document defines the stable decision model for catalog eligibility,
+verification and online sales. `AGENTS.md` defines the investigation workflow;
+`docs/CSV_CONTRACT.md` and `docs/EVIDENCE_CONTRACT.md` define how decisions are
+stored.
 
 ## Catalog scope
 
-A row is a **productive unit that makes or elaborates food or drink in the
-area and sells it under its own identity**. The catalog favors local,
-artisan and terroir-scale producers over industrial operations.
+The catalog represents **active, place-based producer identities for food or
+drink intended for human consumption**. A producer is eligible only when all
+of these are true:
 
-Included:
+1. **Productive responsibility:** the entity performs a material production or
+   elaboration step, directly or, for a producer collective, through members
+   whose output it governs.
+2. **Place:** that activity belongs to an identifiable productive unit in the
+   stated area and municipality.
+3. **Own offer:** at least one resulting food or drink reaches the market under
+   a public producer identity that remains attributable through sale.
+4. **Place-based identity:** public evidence connects that identity and product
+   to the unit as their origin or maker, not merely to an interchangeable plant.
 
-- Farms, cellars, mills, dairies, obradores and similar productive units with
-  their own name, municipality and offer — including units owned by a
-  quality-oriented group when the unit keeps its own identity (a named estate
-  winery inside a wine group is still a row).
-- First-grade cooperatives selling to consumers under their own brand, and
-  second-grade cooperatives that are the actual market identity of their
-  members' production.
+“Own” describes responsibility for both production and product identity. It
+does not require ownership of the premises or raw materials, direct-to-consumer
+sales, a particular legal form or a maximum size. Scale alone neither includes
+nor excludes.
 
-Excluded:
+One row represents one qualifying productive unit through its public producer
+identity, or one governed producer collective, in one area:
 
-- Resellers, shops, restaurants, distributors and directories without own
-  production → `purge:not-producer`.
-- Industrial or mass-market operations without a local producer identity
-  (large food groups, national commodity brands, white-label plants) →
-  `purge:out-of-scope`. **Scale alone does not exclude.** A high-volume
-  producer stays when it elaborates in its own area under its own brand and
-  identity; it leaves when production is delocalized from the area it claims,
-  or when the brand has no productive unit of its own. Decide this explicitly
-  and record it in the row's evidence — the reasoning is worth more than the
-  verdict, because the next pass will meet the same case.
-- A brand label without its own productive unit: when the domain redirects to
-  the group site and no own facility or municipality exists, it is a label of
-  the group, not an entity. Merge into the parent's row when present;
-  otherwise do not add it.
-- A first-grade cooperative that only processes for its members while brand
-  and sales belong to the second-grade cooperative (maquila/B2B): keep the
-  second-grade entity, exclude the maquila unit → `purge:out-of-scope`.
-- Rows imported from livestock-holding or facility registries (the country guide names them): a farming holding is not a
-  sellable producer by default; triage and prune.
+- Product lines or labels without a productive unit of their own are not
+  separate producers. Their underlying unit is included only if it qualifies.
+- Shared ownership or address does not merge genuinely distinct productive
+  units.
+- A collective qualifies when it is the actual productive or market identity
+  of its members' output. A member qualifies separately only if it also meets
+  the full test.
+- A unit that produces for third parties still qualifies when it also has an
+  own offer; a service-only or contract-only unit does not.
+
+Typical exclusions are pure retailers, hospitality businesses, distributors,
+directories, service providers, product labels without their own unit,
+anonymous group plants and registry entries that identify only a holding,
+facility or certification. The reason is the failed criterion, not the sector
+or business form.
+
+### Candidate gate
+
+A registry, directory, article, map result or product listing is a discovery
+signal, not automatic admission. Before adding a new row, establish with
+traceable public evidence its identity, qualifying activity, current own offer
+and productive location. If one is unknown, keep investigating or retain it in
+candidate notes; do not import a speculative row as `pendiente`. If one is
+affirmatively false, reject it. Missing search results or a failed fetch prove
+neither.
 
 ## Decision order
 
-Resolve hard exclusions before assigning a verification level:
+Resolve exclusions before assigning a verification level. `purge` applies to a
+published row; the equivalent decision for a never-published candidate is
+`reject`:
 
-1. Same productive unit as an existing row → `merge`.
-2. Entity reliably proven nonexistent → `purge:nonexistent`.
-3. Reseller, restaurant, directory or other non-producer → `purge:not-producer`.
-4. Real entity outside the catalog's defined scope → `purge:out-of-scope`.
-5. Permanent closure reliably established → `purge:closed`.
-6. Productive unit belongs to another area → `purge:other-area`.
-7. Otherwise keep the row and assign `verificacion`.
+| Condition | Existing row | New candidate |
+|---|---|---|
+| Same productive unit as an existing row | `merge` | Already present; remove from candidates |
+| Entity reliably proven not to exist | `purge:nonexistent` | `reject:nonexistent` |
+| Entity exists but is not a producer | `purge:not-producer` | `reject:not-producer` |
+| Entity is real but fails the catalog scope | `purge:out-of-scope` | `reject:out-of-scope` |
+| Permanent closure reliably established | `purge:closed` | `reject:closed` |
+| Qualifying productive unit belongs to another area | `purge:other-area` | `reject:other-area` |
+| No exclusion applies | Keep and assign `verificacion` | Add only when admission claims are sufficient; otherwise hold |
 
-Do not turn uncertainty into an exclusion. Technical failure, registry absence
-or weak search results leave the row unresolved; they do not prove closure or
-nonexistence.
+Use `not-producer` when no material productive activity exists;
+use `out-of-scope` when productive activity exists but another scope condition
+fails.
+
+Do not turn uncertainty into an exclusion. An unresolved existing row remains
+`pendiente` or `parcial` according to the evidence available. An unresolved
+candidate receives the workflow outcome `hold` and stays in candidates; `hold`
+is not an evidence action and never creates a CSV row.
 
 ## Core verification claims
 
 Verification depends on three independent claims:
 
-1. **Identity:** this is the named entity.
-2. **Producer activity:** it produces or elaborates within catalog scope.
+1. **Identity:** the source identifies the row's entity.
+2. **Producer activity:** the entity is active and performs the qualifying
+   production or elaboration.
 3. **Municipality:** the productive unit belongs to the stated municipality.
 
-| Evidence state | Result |
+| Evidence state | `verificacion` |
 |---|---|
-| All three claims confirmed by current primary or clearly reliable evidence; entity active and in scope | `verificado` |
-| All three claims have evidence, but at least one relies on a secondary source or retains material doubt | `parcial` |
-| At least one core claim lacks sufficient evidence | `pendiente` |
+| All three claims confirmed by current primary or clearly reliable evidence, including a current verifying source | `verificado` |
+| All three claims have evidence, but at least one depends on a secondary source or retains material doubt | `parcial` |
+| At least one claim lacks sufficient evidence | `pendiente` |
 
-`parcial` is a valid stable result. Never promote it only to improve a metric
-or empty a queue.
+A verifying source is one capable of showing the producer as current, using the
+source types defined in `docs/EVIDENCE_CONTRACT.md`. Registries and other
+supporting sources prove only the claims they actually publish; without a
+current verifying source they cap the row at `parcial`. `parcial` is a valid,
+stable result and must not be promoted merely to clear a queue.
 
-`verificado` additionally requires at least one **verifying source read live at
-review time** — official site, store, social profile, Google Maps profile or
-the producer's own marketplace storefront (`docs/EVIDENCE_CONTRACT.md` § Source
-types). Registries, regulatory councils, directories and press are supporting
-sources: any number of them without a live verifying source caps the row at
-`parcial`. A dead own domain (TLS/DNS failure, parked or suspended site, a page
-that will not render) therefore caps the row at `parcial` even when registries
-and directories agree.
+## Online sales
 
-## Online sales is independent
-
-Identity verification does not imply online sales.
+Online sales is independent of identity verification. It records whether a
+customer can currently place a remote order through a mechanism explicitly
+offered by or on behalf of the producer.
 
 | Evidence | `Venta online` |
 |---|---|
-| Current, concrete and usable remote ordering channel | `sí` |
-| Current channels reviewed and no remote ordering mechanism found | `no` |
-| Not checked, ambiguous or temporarily unavailable | `no comprobado` |
+| A concrete remote-order channel was seen usable at review time | `sí` |
+| The producer's current channels were reviewed and no remote-order mechanism is offered | `no` |
+| Not reviewed, ambiguous, inaccessible or temporarily broken | `no comprobado` |
 
-`Canal de venta` records the demonstrated mechanism. Checklist for `sí` — the
-channel must be **seen working at review time** and operated by or on behalf
-of the producer:
+An own shop, explicit phone/message/email ordering, subscription or official
+collective storefront may qualify. Independent third-party resale does not: it
+shows product availability, not a sales channel operated for the producer. A
+site, catalog, price list, generic contact route or physical point of sale also
+does not establish remote ordering by itself.
 
-- Its own shop or agrobotiga with a working checkout, or explicit
-  `whatsapp`/`email`/`telefono` ordering published by the entity.
-- The official online shop of its group, DO or cooperative collective counts
-  as the producer's channel.
-- A marketplace listing counts only when it is the producer's own or
-  official-collective storefront (`Canal de venta = marketplace`). A product
-  merely **resold by independent third-party retailers** (generic wine shops,
-  marketplaces not acting for the producer) does not establish the producer's
-  online sale → `no comprobado` unless an own or collective channel is
-  confirmed.
+`Canal de venta` records the demonstrated mechanism and is filled only when
+`Venta online=sí`, using the values in `docs/CSV_CONTRACT.md`.
 
-Not sufficient for `sí`: a web page, product catalog, price list, legal text,
-physical-shop information or historical publication. A shop under maintenance,
-a cart without a working checkout, an age-gate or block that hides the shop,
-or any technical failure is uncertainty → `no comprobado`, not `no`.
+## Evidence rules
 
-## Stable edge-case rules
+- Evidence is claim-specific: a source does not inherit authority over facts it
+  does not publish.
+- Activity, closure and online sales are dynamic and require current evidence.
+- Registry absence, search failure, timeout, blocking, TLS/DNS error or a
+  broken checkout is uncertainty, not proof of nonexistence, closure or no sale.
+- Empty or unresolved is preferable to a plausible invention.
 
-- **Related entities:** shared ownership or address does not imply duplicate;
-  merge only the same productive unit.
-- **Third-party resale:** see Online sales; independent retailers do not
-  establish the producer's own sale.
-- **Brand vs. legal entity:** preserve a correct public `slug`; use identifiers
-  and productive-unit identity to decide merges. Correct a slug that materially
-  encodes the wrong identity or municipality.
-- **Geographic uncertainty:** use an honest centroid rather than invented
-  precision. Correct reference overrides for territorial homonyms.
-- **Broken source:** timeout, TLS, DNS or blocked fetch is uncertainty, not a
-  negative business fact.
-- **Registry evidence:** useful for existence and localization, but generally
-  insufficient for current activity or online sales.
-- **Dynamic claims:** activity, closure and sale require evidence current at
-  the time of review.
-- **Empty vs. false:** an empty field or unresolved status is preferable to a
-  plausible invention.
+## Policy maintenance
 
-## Evaluation suite
-
-The executable policy baseline lives in:
-
-```text
-data/evals/editorial-policy-cases.json
-scripts/editorial-policy.mjs
-scripts/test-editorial-policy.mjs
-```
-
-The suite uses synthetic archetypes, never real producers. It currently covers:
-
-- verification;
-- producer scope;
-- online sales;
-- deduplication;
-- freshness and technical failure;
-- area geography.
-
-Run:
-
-```bash
-npx pnpm test:editorial-policy
-```
-
-The executable evaluator covers only the stable core above. It is a regression
-guard, not an automatic research engine or substitute for evidence.
-
-## Policy change discipline
-
-A material criteria change is complete only when the same commit updates:
-
-1. this document;
-2. `docs/VERIFICATION_TECHNIQUES.md` when workflow changes;
-3. the evaluator when the stable decision logic changes;
-4. existing cases whose expected outcome changes;
-5. at least one new case for the newly introduced edge condition.
-
-Run `npx pnpm verify:ai` after changing policy, evaluation or validation code.
+The executable baseline lives in `data/evals/editorial-policy-cases.json` and
+`scripts/editorial-policy.mjs`. A material criteria change must update this
+document, the evaluator and at least one synthetic case; update `AGENTS.md`
+only when the workflow changes. Run `npx pnpm verify:ai`.

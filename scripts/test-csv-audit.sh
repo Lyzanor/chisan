@@ -29,6 +29,21 @@ run_expect_success() {
   "$@" >"$output_file" 2>&1
 }
 
+REGISTRY_OK="$TMP_ROOT/registry-ok"
+REGISTRY_DUPLICATE="$TMP_ROOT/registry-duplicate"
+mkdir -p "$REGISTRY_OK/es/centro" "$REGISTRY_OK/pt/norte"
+mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/pt/norte"
+touch "$REGISTRY_OK/es/centro/madrid.csv" "$REGISTRY_OK/pt/norte/porto.csv"
+touch "$REGISTRY_DUPLICATE/es/centro/ribera.csv" "$REGISTRY_DUPLICATE/pt/norte/ribera.csv"
+
+run_expect_success "$TMP_ROOT/out-registry-ok.txt" \
+  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_OK"
+grep -q "Area registry contract OK (2 areas)" "$TMP_ROOT/out-registry-ok.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-duplicate.txt" \
+  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_DUPLICATE"
+grep -q "area slug 'ribera' is global and duplicated" "$TMP_ROOT/out-registry-duplicate.txt"
+
 cat >"$TMP_DIR/missing-column.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,verificacion
 fila-1,Uno,Abrera,Vino,Vino,Carrer 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,https://example.com,https://facebook.com/uno,https://instagram.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,pendiente
@@ -453,6 +468,7 @@ for scoped in jp es; do
     echo "Error: scoped lookup should resolve Chiba/Chiva in its own country" >&2
     exit 1
   fi
+  grep -qF -- "- centroid fallback coordinates: 1" "$TMP_DIR/out-scoped-$scoped.txt"
 done
 
 echo "CSV audit tests OK."

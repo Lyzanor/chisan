@@ -9,7 +9,11 @@
 
 import assert from "node:assert/strict";
 
-import { classifyProbe, registrableDomain } from "./check-links.mjs";
+import {
+  classifyProbe,
+  mergeSnapshotUrls,
+  registrableDomain,
+} from "./check-links.mjs";
 
 let passed = 0;
 const test = (name, fn) => {
@@ -187,6 +191,24 @@ test("registrableDomain pliega www y respeta los TLD de dos niveles", () => {
   assert.equal(registrableDomain("www.ejemplo.com.es"), "ejemplo.com.es");
   assert.equal(registrableDomain("algo.ejemplo.co.uk"), "ejemplo.co.uk");
   assert.equal(registrableDomain("ejemplo.cat"), "ejemplo.cat");
+});
+
+test("el snapshot conserva URLs activas y poda las retiradas", () => {
+  const previous = {
+    "https://actual.example": { tag: "ok" },
+    "https://retirada.example": { tag: "ok" },
+  };
+  const fresh = { "https://nueva.example": { tag: "ok" } };
+  assert.deepEqual(
+    mergeSnapshotUrls(previous, fresh, [
+      "https://actual.example",
+      "https://nueva.example",
+    ]),
+    {
+      "https://actual.example": { tag: "ok" },
+      "https://nueva.example": { tag: "ok" },
+    },
+  );
 });
 
 // --- 200 limpio -------------------------------------------------------------
