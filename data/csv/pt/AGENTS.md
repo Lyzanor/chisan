@@ -1,8 +1,8 @@
 # Portugal
 
 ## Operating state
-- Phase: targeted opening and expansion through regional producer organizations and routes. Derive the published-row queues with `npx pnpm check:defects --country pt`.
-- Active source passes live in `docs/candidates/pt/**`; prune resolved candidates and store row decisions in `data/evidence/pt/**`.
+- Phase: targeted expansion and maintenance after reviewing the current candidate backlog. Derive published-row queues with `npx pnpm check:defects --country pt`.
+- Two unresolved candidates remain parked in `docs/candidates/pt/**` for lack of current evidence; row and exclusion decisions live in `data/evidence/pt/**`.
 
 ## Country rules
 - `municipio` is the concelho, never the freguesia, localidade or district; retain the smaller locality in `direccion`.
