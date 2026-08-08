@@ -14,6 +14,7 @@
 //
 // Usage:
 //   node scripts/audit-defects.mjs                  every province
+//   node scripts/audit-defects.mjs --country it
 //   node scripts/audit-defects.mjs --area soria
 //   node scripts/audit-defects.mjs --check sinteticas --list
 //   node scripts/audit-defects.mjs --check descripcion-generica --plantillas
@@ -56,6 +57,7 @@ const flag = (name) => {
   return i === -1 ? null : (argv[i + 1] ?? true);
 };
 const onlyArea = flag("area");
+const onlyCountry = flag("country");
 const onlyCheck = flag("check");
 const wantList = argv.includes("--list");
 const wantJson = argv.includes("--json");
@@ -290,6 +292,12 @@ export function loadCategoryVariants() {
 }
 
 let areaCache = null;
+export function filterAreas(areas, { country = "", area = "" } = {}) {
+  return areas.filter(
+    (entry) => (!country || entry.country === country) && (!area || entry.area === area),
+  );
+}
+
 function readAreas({ all = false } = {}) {
   if (!areaCache) {
     areaCache = [];
@@ -318,8 +326,8 @@ function readAreas({ all = false } = {}) {
       }
     }
   }
-  if (all || !onlyArea) return areaCache;
-  return areaCache.filter((p) => p.area === onlyArea);
+  if (all) return areaCache;
+  return filterAreas(areaCache, { country: onlyCountry, area: onlyArea });
 }
 
 function readEvidence(country, region, area) {
@@ -463,7 +471,13 @@ export const CHECKS = [
 function main() {
   const provinces = readAreas();
   if (provinces.length === 0) {
-    console.error(onlyArea ? `No existe la area "${onlyArea}".` : "No hay CSV.");
+    if (onlyArea) {
+      console.error(`No existe la area "${onlyArea}" en el alcance pedido.`);
+    } else if (onlyCountry) {
+      console.error(`No existe el país "${onlyCountry}".`);
+    } else {
+      console.error("No hay CSV.");
+    }
     process.exit(1);
   }
 
@@ -567,7 +581,9 @@ function main() {
   }
 
   if (!wantList && !onlyCheck) {
-    console.log("Detalle por fila: --check <id> --list · una area: --area <nombre> · JSON: --json");
+    console.log(
+      "Detalle por fila: --check <id> --list · un país: --country <iso> · una area: --area <nombre> · JSON: --json",
+    );
   }
 }
 

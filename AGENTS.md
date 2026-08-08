@@ -1,6 +1,6 @@
 # KM0 Agent Guide
 
-Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, and any other AI assistant working in this repository. Read this file first; if the target country has a scoped `AGENTS.md`, read it only for the country-wide source caveat it records.
+Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, and any other AI assistant working in this repository. Read this file first, then the target country's scoped `AGENTS.md` for its operating phase, source ceilings and local interpretation rules.
 
 ## Editorial Priority
 - The CSV is the product: optimize for real producers, correct identity, location, category, contact, sales status, and usable public data.
@@ -16,16 +16,17 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 ## Sources Of Truth
 - `data/csv/[country]/[region]/[area].csv`: current producer state, read by the app at request time. The tree is the registry: a folder is a country, a folder inside it a region, a CSV an area. Adding any of them is a data change, never a code change.
 - `data/csv/[country]/country.json`: display labels, level names, ordering and slug aliases for that country. Optional — without it, folder names are title-cased and the order is alphabetical.
-- `data/csv/[country]/AGENTS.md`: optional temporary source note for a country whose inherited rows still lack per-row provenance.
+- `data/csv/[country]/AGENTS.md`: minimal country guide for operating phase, country-wide source ceilings and local interpretation rules. It guides work but never overrides the CSV or the global contracts.
 - `data/evidence/[country]/[region]/[area].jsonl`: decision provenance only; never overrides the CSV and is not read by the app.
 - `data/evals/**`: policy regression fixtures.
 - Candidate notes and Git history: narrative context and work planning, not producer truth.
 
 ## Country-specific material
 - `country.json` owns level names, display labels, ordering and aliases. Reference files own centroid coverage and geographic disambiguation. Do not duplicate either in prose.
-- A country `AGENTS.md` is exceptional, not required. Keep one only while a country-wide inherited source or interpretation trap is both material and absent from row evidence. It contains that source's scope, claim ceiling and the minimum handling rule — never counts, progress, aliases, general workflow or future-source ideas. Delete it once provenance has moved to evidence.
-- Active discovery belongs in `docs/candidates/[country]/[area].md`; decisions belong in `data/evidence/**`. Per-area status is derived from the CSV, evidence and audits, not maintained in permanent country docs.
-- Never carry a source rule across countries merely because it worked in one. Opening a country requires its folder, `country.json` and centroid support, not another guide or code change.
+- Every country folder has a short `AGENTS.md` with exactly three concerns: `Operating state`, `Country rules` and `Source ceilings`. `Operating state` records a coarse phase and active work lanes; exact current queues come from `npx pnpm check:defects --country <iso>`, the CSV, evidence and candidate notes. `Country rules` records only durable local geography, identity or naming traps. `Source ceilings` records what material country-wide sources can and cannot prove.
+- Keep the guide small. Never copy counts, area lists, aliases, category lists, per-area progress or general workflow into it. Update the phase or active lane when the country's work changes; remove a source note once it no longer affects current decisions.
+- Active discovery and per-area progress belong in `docs/candidates/[country]/[area].md`; decisions belong in `data/evidence/**`. The country guide may point to those lanes but does not reproduce them.
+- Never carry a source or interpretation rule across countries merely because it worked in one. Opening a country requires its folder, `country.json`, `AGENTS.md` and centroid support, not a code change.
 
 ## Canonical Docs
 - `docs/CSV_CONTRACT.md`: published-row schema, field and empty-value semantics, controlled values, cross-field invariants and validation model.
@@ -51,7 +52,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Code, scripts, validators, policy, or behavior change: `npx pnpm verify:ai`.
 - While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch missing provenance signals.
 - Full CSV contract: `npx pnpm check:csv`; data-quality warnings: `npx pnpm check:csv:data-quality`.
-- Cross-area editorial defects (advisory worklist, never blocking): `npx pnpm check:defects`. Its output is the current worklist; resolve it under the shared workflow instead of copying it into a plan.
+- Cross-area editorial defects (advisory worklist, never blocking): `npx pnpm check:defects`, scoped with `--country <iso>` or `--area <name>`. Its output is the current worklist; resolve it under the shared workflow instead of copying it into a plan.
 - Area roster/de-dup: `npx pnpm list:area [area]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories: `npx pnpm list:categories`. The list is shared by every country; a new country maps its products onto it instead of extending it.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
@@ -70,7 +71,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 9. At area close, reconcile CSV, evidence, images, links, online-sale channels, residual `pendiente`/`parcial` rows, duplicates, and geography; prune resolved candidates and run the matching final gate. The catalog remains open to later maintenance.
 
 ## Discovery Rules
-- Start from authoritative registries and official or clearly reliable sources; never from memory. Use the active candidate note or an optional country source note when one exists; otherwise establish the source's scope before importing.
+- Start from authoritative registries and official or clearly reliable sources; never from memory. Use the country guide and active candidate note, then establish any new source's scope before importing.
 - Registries confirm what they publish, often existence or certification, but not necessarily current activity or online sales. A listing normally supports at most `parcial`.
 - Not every registry is a producer list. Some catalog holdings, facilities or certifications rather than sellable producers; triage and prune instead of importing by default.
 - Never invent or guess producer names. A plausible category, dish, or place name is not a producer without a concrete business source.
@@ -88,7 +89,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Use temporary scripts for mechanical one-off transformations when needed, but do not add them as permanent tooling unless they are broadly reusable and documented.
 
 ## Multi-Agent And Git
-- `AGENTS.md` is the shared contract. Agent-specific files may summarize it and an optional country source note may narrow one inherited dataset; neither may override it or create a separate workflow.
+- `AGENTS.md` is the shared contract. A country guide narrows operating context, source ceilings and local interpretation; it may not override this contract or create a separate workflow.
 - Review another agent's changes as intentional work first. If a change appears to violate a rule but improves factual correctness, preserve it, validate it, and document the reason rather than reverting by default.
 - Commit CSV/data-contract changes together when they depend on each other. Keep unrelated area work out of your stage.
 - A branch is not live work until you check `git diff main...<branch> -- data/csv`: several are already merged or behind. Delete a branch that is behind instead of merging it.

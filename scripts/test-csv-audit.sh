@@ -31,10 +31,29 @@ run_expect_success() {
 
 REGISTRY_OK="$TMP_ROOT/registry-ok"
 REGISTRY_DUPLICATE="$TMP_ROOT/registry-duplicate"
+REGISTRY_MISSING_GUIDE="$TMP_ROOT/registry-missing-guide"
+REGISTRY_BAD_GUIDE="$TMP_ROOT/registry-bad-guide"
 mkdir -p "$REGISTRY_OK/es/centro" "$REGISTRY_OK/pt/norte"
 mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/pt/norte"
+mkdir -p "$REGISTRY_MISSING_GUIDE/es/centro" "$REGISTRY_BAD_GUIDE/es/centro"
 touch "$REGISTRY_OK/es/centro/madrid.csv" "$REGISTRY_OK/pt/norte/porto.csv"
 touch "$REGISTRY_DUPLICATE/es/centro/ribera.csv" "$REGISTRY_DUPLICATE/pt/norte/ribera.csv"
+touch "$REGISTRY_MISSING_GUIDE/es/centro/madrid.csv" "$REGISTRY_BAD_GUIDE/es/centro/madrid.csv"
+
+for guide in "$REGISTRY_OK/es/AGENTS.md" "$REGISTRY_OK/pt/AGENTS.md" \
+  "$REGISTRY_DUPLICATE/es/AGENTS.md" "$REGISTRY_DUPLICATE/pt/AGENTS.md"; do
+  cat >"$guide" <<'GUIDE'
+# Country
+## Operating state
+## Country rules
+## Source ceilings
+GUIDE
+done
+
+cat >"$REGISTRY_BAD_GUIDE/es/AGENTS.md" <<'GUIDE'
+# Country
+## Notes
+GUIDE
 
 run_expect_success "$TMP_ROOT/out-registry-ok.txt" \
   node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_OK"
@@ -43,6 +62,14 @@ grep -q "Area registry contract OK (2 areas)" "$TMP_ROOT/out-registry-ok.txt"
 run_expect_failure "$TMP_ROOT/out-registry-duplicate.txt" \
   node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_DUPLICATE"
 grep -q "area slug 'ribera' is global and duplicated" "$TMP_ROOT/out-registry-duplicate.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-missing-guide.txt" \
+  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_MISSING_GUIDE"
+grep -q "country 'es' must contain AGENTS.md" "$TMP_ROOT/out-registry-missing-guide.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-bad-guide.txt" \
+  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_BAD_GUIDE"
+grep -q "country guide 'es/AGENTS.md' must use exactly" "$TMP_ROOT/out-registry-bad-guide.txt"
 
 cat >"$TMP_DIR/missing-column.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,verificacion

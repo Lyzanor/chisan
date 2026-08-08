@@ -1,13 +1,14 @@
-# France — temporary source note
+# France
 
-Keep this note only while `data/csv/fr/**` lacks per-row evidence.
+## Operating state
+- Phase: inherited-catalog review. Derive the live queues with `npx pnpm check:defects --country fr`; investigate and record decisions by department.
+- There is no country-wide discovery roster. Open `docs/candidates/fr/<area>.md` only for a concrete source pass and store closed decisions in `data/evidence/fr/**`.
 
-- The inherited catalog came from the HVE certified-holding register. It proves
-  only what the certification record publishes; it does not establish a public
-  producer identity, current activity, own offer or online sales.
-- Legacy `web` values did not come from that register and require independent
-  ownership checks.
-- `municipio` is the current official commune. A commune nouvelle replaces its
-  absorbed name; the old locality belongs in `direccion`.
-- The source favors legal names. Publish the producer's public brand when one
-  exists, and do not infer a brand from a surname or acronym.
+## Country rules
+- `municipio` is the current official commune. A commune nouvelle replaces its absorbed name; retain the former commune or locality in `direccion`.
+- Publish the producer's public brand when one exists. Do not invent a brand from a legal surname, holding name or acronym.
+- Place the row at the productive unit, not at the legal seat, certification holder's office or appellation named by the product.
+
+## Source ceilings
+- The inherited catalog came from the HVE certified-holding register. It proves only the certification facts it publishes; it does not establish a public producer identity, current activity, own offer or online sales.
+- Legacy `web` values did not come from HVE and require an independent ownership match before they support any claim.

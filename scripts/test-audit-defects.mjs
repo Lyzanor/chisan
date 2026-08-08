@@ -9,7 +9,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { CATEGORY_MARKERS, CHECKS, loadCategoryVariants, loadCrossTemplate, templateShape } from "./audit-defects.mjs";
+import {
+  CATEGORY_MARKERS,
+  CHECKS,
+  filterAreas,
+  loadCategoryVariants,
+  loadCrossTemplate,
+  templateShape,
+} from "./audit-defects.mjs";
 
 const registry = JSON.parse(
   fs.readFileSync(
@@ -53,6 +60,17 @@ test("published falsehood is always a cola", () => {
     assert.ok(check, `missing check ${id}`);
     assert.equal(check.kind, "cola", `${id} must count as workload`);
   }
+});
+
+test("country and area scopes select only their live workset", () => {
+  const areas = [
+    { country: "es", area: "madrid" },
+    { country: "es", area: "soria" },
+    { country: "it", area: "roma" },
+  ];
+  assert.deepEqual(filterAreas(areas, { country: "es" }), areas.slice(0, 2));
+  assert.deepEqual(filterAreas(areas, { country: "es", area: "soria" }), [areas[1]]);
+  assert.deepEqual(filterAreas(areas, { country: "it", area: "soria" }), []);
 });
 
 test("every retired category is replaced by one that is still valid", () => {
