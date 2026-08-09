@@ -96,4 +96,5 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Commit CSV/data-contract changes together when they depend on each other. Keep unrelated area work out of your stage.
 - A branch is not live work until you check `git diff main...<branch> -- data/csv`: several are already merged or behind. Delete a branch that is behind instead of merging it.
 - Keep `main` deployable. Before committing, run the matching gate above.
+- `.github/workflows/verify.yml` runs `verify:ai` on every push to `main` and every pull request. It reports after the fact and does not hold back the Vercel deploy, so the local gate before committing is still the real one.
 - Deploy to production by pushing to `main`; GitHub -> Vercel builds production automatically. Do not run an extra deploy or poll all deployments by default.
