@@ -1066,6 +1066,28 @@
     ]
   },
   "jp": {
+    "anan": [
+      {
+        "lat": 33.92178,
+        "lon": 134.65953,
+        "label": "Anan (阿南市)",
+        "region": "shikoku"
+      }
+    ],
+    "asahi": [
+      {
+        "lat": 36.946167,
+        "lon": 137.559944,
+        "label": "Asahi (朝日町, Toyama)",
+        "region": "chubu"
+      },
+      {
+        "lat": 35.03425,
+        "lon": 136.66442,
+        "label": "Asahi",
+        "region": "kansai"
+      }
+    ],
     "daisen": [
       {
         "lat": 35.51069,
@@ -1094,6 +1116,20 @@
         "region": "chubu"
       }
     ],
+    "ichinomiya": [
+      {
+        "lat": 35.30389,
+        "lon": 136.80306,
+        "label": "Ichinomiya",
+        "region": "chubu"
+      },
+      {
+        "lat": 35.372778,
+        "lon": 140.36875,
+        "label": "Ichinomiya (一宮町, Chiba)",
+        "region": "kanto"
+      }
+    ],
     "ikeda": [
       {
         "lat": 42.929,
@@ -1116,6 +1152,14 @@
         "region": "chubu"
       }
     ],
+    "inami": [
+      {
+        "lat": 34.74875,
+        "lon": 134.91353,
+        "label": "Inami (稲美町)",
+        "region": "kansai"
+      }
+    ],
     "kami": [
       {
         "lat": 35.63219,
@@ -1128,6 +1172,14 @@
         "lon": 140.85481,
         "label": "Kami (加美町, Miyagi)",
         "region": "tohoku"
+      }
+    ],
+    "kamikawa": [
+      {
+        "lat": 43.84725,
+        "lon": 142.77042,
+        "label": "Kamikawa (上川町)",
+        "region": "hokkaido"
       }
     ],
     "kashima": [
@@ -1158,6 +1210,20 @@
         "region": "kansai"
       }
     ],
+    "katsuura": [
+      {
+        "lat": 35.15219,
+        "lon": 140.32083,
+        "label": "Katsuura",
+        "region": "kanto"
+      },
+      {
+        "lat": 33.931389,
+        "lon": 134.511389,
+        "label": "Katsuura (勝浦町, Tokushima)",
+        "region": "shikoku"
+      }
+    ],
     "kisomachi": [
       {
         "lat": 35.84192,
@@ -1182,6 +1248,34 @@
         "region": "kanto"
       }
     ],
+    "kofu": [
+      {
+        "lat": 35.27592,
+        "lon": 133.47894,
+        "label": "Kofu (江府町)",
+        "region": "chugoku"
+      }
+    ],
+    "konan": [
+      {
+        "lat": 35.33208,
+        "lon": 136.87067,
+        "label": "Kōnan-shi",
+        "region": "chubu"
+      },
+      {
+        "lat": 35.00408,
+        "lon": 136.08472,
+        "label": "Konan (湖南市)",
+        "region": "kansai"
+      },
+      {
+        "lat": 33.56417,
+        "lon": 133.7005,
+        "label": "Konan (香南市)",
+        "region": "shikoku"
+      }
+    ],
     "kurume": [
       {
         "lat": 35.758,
@@ -1194,6 +1288,64 @@
         "lon": 130.50833,
         "label": "Kurume (久留米市, Fukuoka)",
         "region": "kyushu-okinawa"
+      }
+    ],
+    "meiwa": [
+      {
+        "lat": 34.547667,
+        "lon": 136.6235,
+        "label": "Meiwa (明和町, Mie)",
+        "region": "kansai"
+      }
+    ],
+    "misato": [
+      {
+        "lat": 36.177167,
+        "lon": 139.181444,
+        "label": "Misato (美里町, Saitama)",
+        "region": "kanto"
+      },
+      {
+        "lat": 38.544389,
+        "lon": 141.056694,
+        "label": "Misato (美里町, Miyagi)",
+        "region": "tohoku"
+      }
+    ],
+    "miyoshi": [
+      {
+        "lat": 34.02603,
+        "lon": 133.80717,
+        "label": "Miyoshi (三好市)",
+        "region": "shikoku"
+      }
+    ],
+    "naka": [
+      {
+        "lat": 36.45739,
+        "lon": 140.48675,
+        "label": "Naka",
+        "region": "kanto"
+      },
+      {
+        "lat": 33.85742,
+        "lon": 134.49664,
+        "label": "Naka (那賀町)",
+        "region": "shikoku"
+      }
+    ],
+    "nakagawa": [
+      {
+        "lat": 35.63453,
+        "lon": 137.94597,
+        "label": "Nakagawa",
+        "region": "chubu"
+      },
+      {
+        "lat": 36.73633,
+        "lon": 140.17258,
+        "label": "Nakagawa (那珂川町)",
+        "region": "kanto"
       }
     ],
     "nakano": [
@@ -1224,6 +1376,60 @@
         "region": "chugoku"
       }
     ],
+    "numata": [
+      {
+        "lat": 36.64393,
+        "lon": 139.04275,
+        "label": "Numata (沼田市)",
+        "region": "kanto"
+      }
+    ],
+    "ogawa": [
+      {
+        "lat": 36.056667,
+        "lon": 139.261833,
+        "label": "Ogawa (小川町, Saitama)",
+        "region": "kanto"
+      }
+    ],
+    "ono": [
+      {
+        "lat": 35.97972,
+        "lon": 136.4875,
+        "label": "Ono (大野市)",
+        "region": "chubu"
+      }
+    ],
+    "ota": [
+      {
+        "lat": 36.29114,
+        "lon": 139.37539,
+        "label": "Ota (太田市)",
+        "region": "kanto"
+      }
+    ],
+    "sakai": [
+      {
+        "lat": 36.16694,
+        "lon": 136.23144,
+        "label": "Sakai (坂井市)",
+        "region": "chubu"
+      },
+      {
+        "lat": 34.57333,
+        "lon": 135.483,
+        "label": "Sakai (堺市)",
+        "region": "kansai"
+      }
+    ],
+    "shingu": [
+      {
+        "lat": 33.72417,
+        "lon": 135.99256,
+        "label": "Shingu (新宮市)",
+        "region": "kansai"
+      }
+    ],
     "shiroishi": [
       {
         "lat": 33.18106,
@@ -1238,6 +1444,14 @@
         "region": "tohoku"
       }
     ],
+    "tokai": [
+      {
+        "lat": 36.47297,
+        "lon": 140.56611,
+        "label": "Tokai (東海村, Ibaraki)",
+        "region": "kanto"
+      }
+    ],
     "tonosho": [
       {
         "lat": 35.83717,
@@ -1250,6 +1464,22 @@
         "lon": 134.18836,
         "label": "Tonoshō-chō",
         "region": "shikoku"
+      }
+    ],
+    "toyosato": [
+      {
+        "lat": 35.20036,
+        "lon": 136.22994,
+        "label": "Toyosato (豊郷町)",
+        "region": "kansai"
+      }
+    ],
+    "tsushima": [
+      {
+        "lat": 34.20278,
+        "lon": 129.28753,
+        "label": "Tsushima (対馬市)",
+        "region": "kyushu-okinawa"
       }
     ],
     "wakasa": [
