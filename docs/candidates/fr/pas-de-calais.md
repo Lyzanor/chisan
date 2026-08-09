@@ -5,7 +5,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
 | ATELIER CRE ACTIF - BIOSOL CHEUVA Loïc | BIOSOL'62 | Le Portel | 2 Rue Roland Dorgeles Résidence Paul Eluard 62480 | actividad | Autres fruits à pépins, Prairie permanente, Pommes de table | 2026 | [nº Bio 150581](https://annuaire.agencebio.org/operateur/150581) |
-| AU JARDIN DE BERTHEM | MARCILLAUD ESTELLE | LOUCHES | 42 CHE VERT 62610 | actividad | Autres boissons non alcoolisées, Autres baies (hors cassis et myrtilles), Légumes frais n.c.a. | 2026 | [nº Bio 18047](https://annuaire.agencebio.org/operateur/18047) |
 | AUX SOURCES PLANQUE Louis | PLANQUE LOUIS MARTIN | WIERRE-AU-BOIS | 593 RTE DE DESVRES 62830 | actividad | Légumes frais n.c.a., Autres fruits à pépins, Kiwis | 2026 | [nº Bio 17076](https://annuaire.agencebio.org/operateur/17076) |
 | BAZ'ANGUS DELATTRE Anne et Christophe | BAZ'ANGUS | BAZINGHEN | 170 rte du point du jour 62250 | actividad | Autres bovins et bovidés, Mélanges Céréales-légumineuses, Bœufs | 2026 | [nº Bio 133001](https://annuaire.agencebio.org/operateur/133001) |
 | BIO DU PLAT FOSSE DURLIN Christian | BIO DU PLAT FOSSE | RICHEBOURG | 18 RUE DU BOUT DEL VILLE 62136 | actividad | Triticale, Choux, Pommes de terre (hors féculière) | 2026 | [nº Bio 107492](https://annuaire.agencebio.org/operateur/107492) |

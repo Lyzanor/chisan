@@ -5,7 +5,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
 | ABOKI Ahouangbe AHOUANGBE Aboki | ABOKI AHOUANGBE MAIJULE | BETETE | 2 IMP SAINT MICHEL 23270 | actividad | Millet, Autres céréales ou pseudo céréales, Sorgho | 2026 | [nº Bio 132500](https://annuaire.agencebio.org/operateur/132500) |
-| ATMOSVERT | KEIRSE WOUTER | SAINT-DIZIER-LES-DOMAINES | 1 LES CHAUMES 23270 | actividad | Plants et semences potagers, à l'exclusion des semences de betteraves, Autres fruits à pépins, Autres baies (hors cassis et myrtilles) | 2026 | [nº Bio 141505](https://annuaire.agencebio.org/operateur/141505) |
 | Au jardin de Christine | VERDUIJN CHRISTINE | LAFAT | 8 route des Gouttes 23800 | actividad | Autres légumes à racine, à bulbe ou à tubercules n.c.a., Culture inconnue, Prairie temporaire | 2026 | [nº Bio 172340](https://annuaire.agencebio.org/operateur/172340) |
 | AUTOUR AUTOUR Fabienne | EARL AUTOUR | Boussac Bourg | Les Roudières 23600 | actividad | Prairie permanente, Prairie temporaire, Sarrasin | 2026 | [nº Bio 10432](https://annuaire.agencebio.org/operateur/10432) |
 | BERGERIES DES MILLES SOURCES ZELTZ Adéle | GAEC DE LA BERGERIE DES MILLE SOURCES | GENTIOUX-PIGEROLLES | 3 RTE DE SAINT MARC 23340 | actividad | Parcours herbeux (hors estives collectives), Estives ou alpages collectifs, Béliers | 2026 | [nº Bio 39909](https://annuaire.agencebio.org/operateur/39909) |
@@ -24,3 +23,7 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Jean-Marc SAINRAPT | SAINRAPT JEAN MARC | MAUTES | 6 BARMONT 23190 | actividad | Coings, Safran, Prairie permanente | 2026 | [nº Bio 181691](https://annuaire.agencebio.org/operateur/181691) |
 | L'AGNEAU DES DEUX VALLEES LETELLIER Adrien | GAEC DE L'AGNEAU DES DEUX VALLEES | LA VILLEDIEU | HAUTE-BESSE 23340 | actividad | Fèves de soja, Seigle, Culture inconnue | 2026 | [nº Bio 146750](https://annuaire.agencebio.org/operateur/146750) |
 | LA FERME DES CHAUMES | MAZZOLENI PATRICIA | TOULX SAINTE CROIX | ARNOULT Patricia 23600 | actividad | Blé tendre, Pain frais, Autres légumes à racine, à bulbe ou à tubercules n.c.a. | 2026 | [nº Bio 154574](https://annuaire.agencebio.org/operateur/154574) |
+
+## Descartes documentados — 2026-08-09
+
+- **Atmosvert** — fuera de alcance: Vivero de permacultura que vende árboles, arbustos y otras plantas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/141505) · [fuente pública](https://www.atmosvert.fr/)

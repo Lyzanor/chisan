@@ -5,7 +5,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
 | BESNARD Julien | Julien BESNARD | SAINT MARCEAU | La Maugerie 72170 | actividad | Bœufs, Infusions, Culture inconnue | 2026 | [nº Bio 61505](https://annuaire.agencebio.org/operateur/61505) |
-| BIO AVENIR | GAEC BIO-AVENIR | SPAY | LD LA FONTAINE 72700 | actividad | Triticale, Vaches laitières, vivantes, Fromages | 2026 | [nº Bio 115841](https://annuaire.agencebio.org/operateur/115841) |
 | BIOVAL (SCEA) | SOCIETE CIVILE D'EXPLOITATION AGRICOLE BIOVAL | JUIGNE-SUR-SARTHE | LA MERCERIE 72300 | actividad | Autres services d'entreposage et de stockage, Œufs de poule, en coquille, frais, Poulets, vivants | 2026 | [nº Bio 107437](https://annuaire.agencebio.org/operateur/107437) |
 | BRINDILLE ET CHARRON | PEIGNE LAETITIA MAGALI LUCRECE | LHOMME | BEL AIR 72340 | actividad | Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Noix, Poires | 2026 | [nº Bio 122580](https://annuaire.agencebio.org/operateur/122580) |
 | CHANTELOUP (SCEA) | SCEA CHANTELOUP | AVOISE | SCEA RICHARD La Bellangeraie 72430 | actividad | Œufs de poule, en coquille, frais, Poules pondeuses, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 106295](https://annuaire.agencebio.org/operateur/106295) |

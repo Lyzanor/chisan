@@ -4,10 +4,7 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| Au fil des saisons | LAVENE Pierre (EI) | Grand-Aigueblanche | 54 Chemin des Ancolies 73260 | actividad | Légumes frais plein champ | 2026 | [nº Bio 69168](https://annuaire.agencebio.org/operateur/69168) |
-| CHRS TERRE SOLIDAIRE | ASS TERRE SOLIDAIRE | PLANAISE | Ferme de Carmintran 430 route de Carmintran 73800 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Légumes frais n.c.a., Commerce de détail de fruits et légumes frais | 2026 | [nº Bio 144394](https://annuaire.agencebio.org/operateur/144394) |
 | DAMIAN R  GIS | DE LA VENETTE DAMIAN ET FILS | AYN | LD LES QUILLERES LIEU DIT LES QUILLERES 73470 | actividad | Plants et semences potagers, à l'exclusion des semences de betteraves, Autres surfaces non productive et surfaces non agricoles, Pommes de terre (hors féculière) | 2026 | [nº Bio 19883](https://annuaire.agencebio.org/operateur/19883) |
-| DISTILLERIE APRILIS (SARL) | DISTILLERIE APRILIS | LE BOURGET-DU-LAC | 358 ROUTE DE LA SERRAZ 73370 | actividad | Autres zones de cueillette sauvage, Zone de cueillette de baies sauvages, Commerce de détail d'autres boissons | 2026 | [nº Bio 63036](https://annuaire.agencebio.org/operateur/63036) |
 | DOMAINE PASCAL ANNICK & NOE QUENARD | DOMAINE PASCAL, ANNICK ET NOE QUENARD | CHIGNIN | 1 PL DU LAVOIR 73800 | actividad | Raisin de cuve, Vins de raisin | 2026 | [nº Bio 145142](https://annuaire.agencebio.org/operateur/145142) |
 | DOMONT DOMONT Axel | DOMONT SAS | Porte-de-Savoie | 594 Chem. des Combes de Truchon 73800 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Raisin de cuve | 2026 | [nº Bio 44731](https://annuaire.agencebio.org/operateur/44731) |
 | EDMOND JACQUIN & FILS (EARL) | EDMOND JACQUIN ET FILS | JONGIEUX | LD JONGIEUX LE HAUT 73170 | actividad | Noix | 2026 | [nº Bio 1341](https://annuaire.agencebio.org/operateur/1341) |

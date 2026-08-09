@@ -22,5 +22,8 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA FERME DE L'HOTIE | HIGNET LAURENT GILBERT ANDRE | Paimpont | 208 LA TOUCHE GUERIN 35380 | actividad | Jus de fruits et légumes, Autres préparations et conserves à base de viandes, abats et sang, Culture inconnue | 2026 | [nº Bio 154572](https://annuaire.agencebio.org/operateur/154572) |
 | LA FERME DU DOMAINE LEPORT Julien | EARL FERME DU DOMAINE | Broualan | Ferme du domaine 35120 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Veaux (< 8mois), Prairie permanente | 2026 | [nº Bio 157389](https://annuaire.agencebio.org/operateur/157389) |
 | LA PREE AUX TRESORS | BARTEL CHRISTIANE PIERRETTE RAYMONDE | SAINT-MARC-LE-BLANC | LD LE ROCHER BIGOT 35460 | actividad | Noisettes, Raisin de cuve, Autres baies (hors cassis et myrtilles) | 2026 | [nº Bio 107900](https://annuaire.agencebio.org/operateur/107900) |
-| LE JARDIN D HERBES | VOLAND CHRISTINE | BAZOUGES-LA-PEROUSE | LD LA CORDONNAIS 35560 | actividad | Prairie permanente, Semences fruitières, Autres légumes à racine, à bulbe ou à tubercules n.c.a. | 2026 | [nº Bio 143945](https://annuaire.agencebio.org/operateur/143945) |
 | LES COURS PARIS ROME Michaël et DENIAUD Céline | LES COURS PARIS | BAGUER MORVAN | Les Cours Paris 35120 | actividad | Prairie temporaire, Pommes de table, Poules pondeuses | 2026 | [nº Bio 144872](https://annuaire.agencebio.org/operateur/144872) |
+
+## Descartes documentados — 2026-08-09
+
+- **Le Jardin d'Herbes** — fuera de alcance: Vivero de plantas aromáticas y hortícolas, sin oferta de alimentos o bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/143945) · [fuente pública](https://www.le-jardin-d-herbes.fr/)

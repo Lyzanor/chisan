@@ -23,4 +23,7 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | GAEC LES CAROTTES SONT CRUES | DARCANGUES Sébastien | Arcangues | Chemin de Adamenia 64200 | actividad | Autres fruits frais, Prairie permanente, Prairie temporaire | 2025 | [nº Bio 130611](https://annuaire.agencebio.org/operateur/130611) |
 | GAEC UHARTETXERRI | UHARTETXERRI | ST PEE/NIVELLE | Uharte etxeberria 621 chemin Karrika Zaharra 64310 | actividad | Agnelles de renouvellement, Agneaux, Brebis laitières | 2025 | [nº Bio 130510](https://annuaire.agencebio.org/operateur/130510) |
 | PEYROU BEAUDEANT Bruno | PEYROU BRUNO | BARCUS | QUARTIER LARRAJA 64130 | actividad | Fèves, sèches (yc féveroles), Maïs grain (hors maïs doux) | 2025 | [nº Bio 144187](https://annuaire.agencebio.org/operateur/144187) |
-| SARL MENDIBURU FRERES | MENDIBURU FRERES | MOUGUERRE | 1169 RTE DE VILLEFRANQUE 64990 | actividad | Plants et semences potagers, à l'exclusion des semences de betteraves | 2025 | [nº Bio 159435](https://annuaire.agencebio.org/operateur/159435) |
+
+## Descartes documentados — 2026-08-09
+
+- **Mendi** — fuera de alcance: Productor hortícola de plantas y flores, sin oferta de alimentos o bebidas bajo esta identidad. [Agence Bio](https://annuaire.agencebio.org/operateur/159435) · [fuente pública](https://www.mendiburu.eu/)

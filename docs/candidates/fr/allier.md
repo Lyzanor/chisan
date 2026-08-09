@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| ASINERIE DU TREMBLE CLEMENT Michel | CLEMENT MICHEL LAURENT | BRAIZE | 15 RTE DE SAINT AMAND MONTROND 03360 | actividad | Prairie temporaire, Lait brut de jument ou d'ânesse, Prairie permanente | 2026 | [nº Bio 53041](https://annuaire.agencebio.org/operateur/53041) |
 | AU CHAMP DES POSSIBLES TOUCHAIN Thomas | TOUCHAIN THOMAS MARC-PHILIPPE | Saint Marcel en Marcillat | Les Vincents 03420 | actividad | Autres fruits à coque (à l'exclusion des noix sauvages, arachides et noix de coco), Autres fruits à pépins, Autres légumes à racine, à bulbe ou à tubercules n.c.a. | 2026 | [nº Bio 35998](https://annuaire.agencebio.org/operateur/35998) |
 | BEYSSAC Pierre-Jean | BEYSSAC PIERRE | ABREST | 51 ROUTE DE QUINSAT 03200 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Produits de confiserie divers (y compris le chocolat blanc) ne contenant pas de cacao, Autres produits de l'apiculture | 2026 | [nº Bio 141737](https://annuaire.agencebio.org/operateur/141737) |
 | BOBO MIEL NAUDIN Boris | NAUDIN BORIS ANDRE | BOURBON-L'ARCHAMBAULT | PONT DES CHEVRES 03160 | actividad | Produits de confiserie divers (y compris le chocolat blanc) ne contenant pas de cacao, Ruches, Pâtisseries et viennoiseries fraîches | 2026 | [nº Bio 143026](https://annuaire.agencebio.org/operateur/143026) |
@@ -18,9 +17,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DES GUERICHAUDS SABOT Stéphane | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE DES GUERICHAUDS | Cindre | Lieu dit Guerichauds 03220 | actividad | Petit épeautre, Autres légumes à racine, à bulbe ou à tubercules n.c.a., Commerce de détail de produits laitiers | 2026 | [nº Bio 132430](https://annuaire.agencebio.org/operateur/132430) |
 | DOMAINE DE LA FORGE SEGUIER Dominique et Monika | SCEA DOMAINE DE LA FORGE | SAUVAGNY | La Vareinne 03430 | actividad | Grand épeautre, Sarrasin, Trèfle | 2026 | [nº Bio 108710](https://annuaire.agencebio.org/operateur/108710) |
 | DOMAINE DE LA SOURDE BONVIN Benoît | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE DU DOMAINE DE LA SOURDE | LOUCHY-MONTFAND | 9 RUE SAINTE CATHERINE 03500 | actividad | Vins de raisin, Raisin de cuve | 2026 | [nº Bio 32819](https://annuaire.agencebio.org/operateur/32819) |
-| DOMAINE GROSBOT BARBARA | SCEA GROSBOT-BARBARA | Cesset | 5 Montjournal RD46 03500 | actividad | Luzerne, Vins de raisin, Raisin de cuve | 2026 | [nº Bio 45142](https://annuaire.agencebio.org/operateur/45142) |
 | DOMAINE MONT GEORGES NEBOUT Julien | SOCIETE CIVILE D EXPLOITATION VITICOLE MONT GEORGES | SAINT POURCAIN SUR SIOULE | 18 route de Montmarault 03500 | actividad | Culture inconnue, Vins de raisin, Raisin de cuve | 2026 | [nº Bio 28628](https://annuaire.agencebio.org/operateur/28628) |
 | DOORGEEST Agnès | DOORGEEST AGNES GERTRAUD | YGRANDE | LD LA BACHARDE 03160 | actividad | Veaux (< 8mois), Culture inconnue, Chèvres | 2026 | [nº Bio 108954](https://annuaire.agencebio.org/operateur/108954) |
 | DU TURAIL | GROUPEMENT AGRICOLE D EXPLOITATION EN COMMUN AGREE DU TURAIL | Doyet | 1 Chez moi 03170 | actividad | Poules pondeuses, Œufs de poule, en coquille, frais, Prairie permanente | 2026 | [nº Bio 18439](https://annuaire.agencebio.org/operateur/18439) |
 | Ferme de la grande Chassagne | BIRET CECILE | CHATEL-MONTAGNE | LA GRANDE CHASSAGNE 03250 | actividad | Autres fruits à pépins, Génisses renouvellement (>8 mois), Poules pondeuses | 2026 | [nº Bio 302351](https://annuaire.agencebio.org/operateur/302351) |
 | Ferme des Caloptéryx | GARCIA Sylvain (EI) | LODDES | 1 Chemin de la Verne 03130 | actividad | Autres produits de l'apiculture, Miel, Ruches | 2026 | [nº Bio 302418](https://annuaire.agencebio.org/operateur/302418) |
+
+## Descartes documentados — 2026-08-09
+
+- **Asinerie du Tremble** — fuera de alcance: La oferta pública se centra en la cría de asnos, la formación y la mediación; no presenta alimentos o bebidas para consumo humano. [Agence Bio](https://annuaire.agencebio.org/operateur/53041) · [fuente pública](https://www.asineriedutremble.com/)

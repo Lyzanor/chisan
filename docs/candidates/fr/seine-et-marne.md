@@ -22,5 +22,8 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DE LA FONTENELLE DE BISSCHOP Brice | FERME DE LA FONTENELLE | Vulaines lès Provins | 1 LA FONTENELLE 77160 | actividad | Sauces ; mélanges de condiments et assaisonnements préparés ; farines de moutarde et moutardes préparées, Maïs grain (hors maïs doux), Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 172505](https://annuaire.agencebio.org/operateur/172505) |
 | FEYLER Benoît | FEYLER BENOIT MARC | DORMELLES | LA BIKAD 77130 | actividad | Blé tendre, Seigle, Noix | 2026 | [nº Bio 109716](https://annuaire.agencebio.org/operateur/109716) |
 | FREDERIC DEVARREWAERE | DEVARREWAERE FREDERIC ALBERT | MAROLLES EN BRIE | 11 RUE DE ORGERE 77120 | actividad | Luzerne, Prairie permanente, Chanvre | 2026 | [nº Bio 159746](https://annuaire.agencebio.org/operateur/159746) |
-| L'Arche Paysanne | DOUSS CHAMSI | LA GRANDE-PAROISSE | 2 chemin de la vallée 77130 | actividad | Ânes, mulets et bardots, vivants, Chevaux, vivants, Bouc | 2026 | [nº Bio 20223](https://annuaire.agencebio.org/operateur/20223) |
 | LA FERME CHAILLOTINE DOS SANTOS Laurentino | SCEA LA FERME CHAILLOTINE | CHAILLY EN BIERE | ALLARD Ludovic 77930 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Autres préparations et conserves à base de fruits et légumes, Autres fruits à pépins | 2026 | [nº Bio 131908](https://annuaire.agencebio.org/operateur/131908) |
+
+## Descartes documentados — 2026-08-09
+
+- **L'Arche Paysanne** — fuera de alcance: Granja pedagógica centrada en asnos, caballos y cabras; no consta una oferta alimentaria pública. [Agence Bio](https://annuaire.agencebio.org/operateur/20223) · [fuente pública](https://larchepaysanne.fr/)

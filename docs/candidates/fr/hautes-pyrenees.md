@@ -22,5 +22,8 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | La Canopée - Ei Julia Aubert | EI - AUBERT JULIA | Loubajac | 4 chemin rural de la serre 65100 | actividad | Fleurs coupées et boutons de fleurs, Légumes frais n.c.a., Prairie permanente | 2026 | [nº Bio 65481](https://annuaire.agencebio.org/operateur/65481) |
 | LA FERME DES CRETES | EARL LA FERME DES CRETES | LUSTAR | CHEMIN DU BOURZOU 65220 | actividad | Culture inconnue, Prairie temporaire, Autres Œufs et dérivés | 2026 | [nº Bio 157810](https://annuaire.agencebio.org/operateur/157810) |
 | Les légumes d'Anaïs | Entreprise individuelle | POUEYFERRE | CHEMIN DES HOURCADES 65100 | actividad | Autres fruits à coque (à l'exclusion des noix sauvages, arachides et noix de coco), Culture inconnue, Plants et semences potagers, à l'exclusion des semences de betteraves | 2026 | [nº Bio 34493](https://annuaire.agencebio.org/operateur/34493) |
-| MOZAFARI Mina / PEPINIERE FRUITIERE DES BARONNIES | Pépinière fruitière des Baronnies | Tilhouse | 15 rue Carrère 65130 | actividad | Autres fruits à coque (à l'exclusion des noix sauvages, arachides et noix de coco), Prunes, Autres fruits à pépins | 2026 | [nº Bio 58679](https://annuaire.agencebio.org/operateur/58679) |
 | PERMA-PIRATE | PADILLA VINCENT CLAUDE ERIC | SARIAC-MAGNOAC | 460 CHEMIN DU GERS 65230 | actividad | Semences florales, Artichauts, Autres baies (hors cassis et myrtilles) | 2026 | [nº Bio 50884](https://annuaire.agencebio.org/operateur/50884) |
+
+## Descartes documentados — 2026-08-09
+
+- **Pépinière Fruitière des Baronnies** — fuera de alcance: Vivero productor de frutales, sin frutas o bebidas comercializadas bajo esta identidad. [Agence Bio](https://annuaire.agencebio.org/operateur/58679) · [fuente pública](https://pfb65.fr/)

@@ -4,8 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| CHAMPAGNE CLERGEOT Père et Fils | CLERGEOT PERE ET FILS | LES RICEYS | 12 rue de Saint Jacques 10340 | actividad | Raisin de cuve, Vins de raisin | 2026 | [nº Bio 172216](https://annuaire.agencebio.org/operateur/172216) |
-| CHAMPAGNE FEVRE FEVRE Stéphane | EARL CHAMPAGNE FEVRE | VILLE-SUR-ARCE | 8 RUE BENOIT 10110 | actividad | Autres produits alimentaires n.c.a., Raisin de cuve, Vins de raisin | 2026 | [nº Bio 141063](https://annuaire.agencebio.org/operateur/141063) |
 | CHAMPAGNE ROBERT BARBICHON | EARL BARBICHON-PRELAT | GYE-SUR-SEINE | 8 RUE DE LA VEREILLE 10250 | actividad | Autres produits alimentaires n.c.a., Raisin de cuve, Vins de raisin | 2026 | [nº Bio 116077](https://annuaire.agencebio.org/operateur/116077) |
 | CHAMPBIO SIMPHAL Fanny | SCEA LA CHAMPMESLE | NOZAY | FERME DES BANLEES 10700 | actividad | Luzerne, Orges, Carottes | 2026 | [nº Bio 133861](https://annuaire.agencebio.org/operateur/133861) |
 | CHICKEN COOP DES VIGNES  - SEP BIO VALLEE | CHICKEN COOP DES VIGNES | GRANDVILLE | Les Vignes 10700 | actividad | Poules pondeuses, Prairie permanente, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 7235](https://annuaire.agencebio.org/operateur/7235) |
@@ -21,6 +19,5 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DU CRAYON BERGERAT Pierre | EARL DU CRAYON | PAYNS | 24 CHEMIN DU CHATEAU D'EAU 10600 | actividad | Orges | 2026 | [nº Bio 18571](https://annuaire.agencebio.org/operateur/18571) |
 | DU CROC BARRE - SEP DOSNON BIO | SCEA DU CROC BARRE | DOSNON | FERME DU CROC BARRE 10700 | actividad | Pois, secs, Avoine, Carottes | 2026 | [nº Bio 64362](https://annuaire.agencebio.org/operateur/64362) |
 | DU MONT BEL AIR HAMOT Eric | SCA DU MONT BEL AIR | SAINT BENOIT SUR SEINE | Ferme du Mont Bel Air 10180 | actividad | Blé tendre, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Anis | 2026 | [nº Bio 9560](https://annuaire.agencebio.org/operateur/9560) |
-| DU MOULIN BRULE BARRAT Aurélie | EARL DU MOULIN BRULE | VILLENAUXE LA GRANDE | 20 RUE JAILLARD 10370 | actividad | Fèves, sèches (yc féveroles), Luzerne, Pois, secs | 2026 | [nº Bio 109186](https://annuaire.agencebio.org/operateur/109186) |
 | DU PETIT BOIS HENRY François | EARL DU PETIT BOIS | THIL | 7 GRANDE RUE 10200 | actividad | Mélanges Céréales-légumineuses, Œufs de poule, en coquille, frais, Bois pâturés et parcours ligneux | 2026 | [nº Bio 181507](https://annuaire.agencebio.org/operateur/181507) |
 | DU THEIL MARTENS Daniel | SCEA DUTHEIL | FONTETTE | 10360 | actividad | Sarrasin, Semences de céréales, légumineuses et oléagineux (à l'exclusion du riz), Trèfle | 2026 | [nº Bio 137149](https://annuaire.agencebio.org/operateur/137149) |
