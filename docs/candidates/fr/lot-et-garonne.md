@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| ANDEL ANNIBAL Sandrine | EARL ANDEL | Thézac | 835 Rte de Masquières 47370 | actividad | Blé tendre, Estives ou alpages collectifs, Prairie temporaire | 2026 | [nº Bio 108338](https://annuaire.agencebio.org/operateur/108338) |
 | ARBUSSAN IBANEZ David | EARL ARBUSSAN | POUDENAS | 83 impasse d'Arbussan 47170 | actividad | Autres fruits à pépins | 2026 | [nº Bio 10748](https://annuaire.agencebio.org/operateur/10748) |
 | BIO CADRES CHASSAIGNE Jean-Christophe | SAS BIO CADRES | MONCRABEAU | LD BRIZAC 47600 | actividad | Seigle, Lentilles, sèches, Blé tendre | 2026 | [nº Bio 10866](https://annuaire.agencebio.org/operateur/10866) |
 | BIO LIGNAC CHASSAIGNE Jean Christophe | EARL BIO LIGNAC | MONCRABEAU | LD BRIZAC 47600 | actividad | Mélanges Céréales-légumineuses, Prairie temporaire, Avoine | 2026 | [nº Bio 170479](https://annuaire.agencebio.org/operateur/170479) |
@@ -20,7 +19,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DU CAYRE BLANC | GAEC DU CAYRE BLANC | LACEPEDE | 2441 Route du Lac de Salabert 47360 | actividad | Autres légumes secs, Fenugrec, Plants et semences potagers, à l'exclusion des semences de betteraves | 2026 | [nº Bio 137950](https://annuaire.agencebio.org/operateur/137950) |
 | EARL PICANTY | EARL DE PICANTY | HAUTESVIGNES | 508 chemin de Picanty 47400 | actividad | Tomates, Tournesol, Fèves de soja | 2026 | [nº Bio 104121](https://annuaire.agencebio.org/operateur/104121) |
 | EI ROUSSILLE Léopold | ROUSSILLE LEOPOLD ADRIEN | MONTPIOLLAN | 44 cotes de priames 47200 | actividad | Viande bovine, fraîche ou réfrigérée, Taureaux (>24 mois), Plats préparés | 2026 | [nº Bio 137911](https://annuaire.agencebio.org/operateur/137911) |
-| Exploitation horticole de l'EPLEFPA de Fazanis | ETABLISSEMENT PUBLIC LOCAL D ENSEIGNEMENT ET DE FORMATION PROFESSIONNELLE AGRICOLE DU LOT ET GARONNE | TONNEINS | ROUTE DE CLAIRAC 47400 | actividad | Autres fruits à pépins, Autres agrumes, Prairie temporaire | 2026 | [nº Bio 109576](https://annuaire.agencebio.org/operateur/109576) |
 | FERME DE COUSTETE  COULBOIS Loic | COULBOIS LOIC | Thézac | 2311 Rte de Bazérac 47370 | actividad | Brebis laitières, Fromages, Yaourts et autres produits lactés fermentés ou acidifiés | 2026 | [nº Bio 114710](https://annuaire.agencebio.org/operateur/114710) |
 | FERME DE PRIE DIEU DE LAMARLIERE Christophe | GAEC FERME DE PRIE DIEU | Ferrensac | LD LE COLOMBIER 47330 | actividad | Mélanges Céréales-légumineuses, Commerce de gros de céréales, semences et aliments pour le bétail, Lentilles, sèches | 2026 | [nº Bio 143145](https://annuaire.agencebio.org/operateur/143145) |
 

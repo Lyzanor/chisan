@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| Aux Saveurs Bio | DES SAVEURS BIO | THEZAN-LES-BEZIERS | 20 AV GEORGES CLEMENCEAU 34490 | actividad | Autres fruits à pépins, Figues, Pêches | 2026 | [nº Bio 148840](https://annuaire.agencebio.org/operateur/148840) |
 | CAMBAU JEAN CHRISTOPHE ET SUZANNE | CAMBAU SUZANNE LOU MINNIE | LIEURAN-CABRIERES | LE PLAN DU FOUR 34800 | actividad | Autres fruits à pépins, Camomille romaine, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 131118](https://annuaire.agencebio.org/operateur/131118) |
 | CHATEAU SOULIE DES JONCS | EARL DU DOMAINE DES SOULIE | ASSIGNAN | RUE CARRIERA DE LA TEULIERA 34360 | actividad | Raisin de cuve, Pois chiches, secs, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 148450](https://annuaire.agencebio.org/operateur/148450) |
 | CLOS VALET PERIS Laurent | CLOS VALET | MURVIEL-LES-BEZIERS | 7 CHEMIN DES BOUFFIES 34490 | actividad | Raisin de cuve, Vins de raisin, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 149758](https://annuaire.agencebio.org/operateur/149758) |

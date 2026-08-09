@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| BAUSSANT Rémy | BAUSSANT REMY FRANCOIS | SAINT-GROUX | 8 RUE DE LA FONTAINE 16230 | actividad | Autres légumes à racine, à bulbe ou à tubercules n.c.a., Champignons, Endives | 2026 | [nº Bio 19287](https://annuaire.agencebio.org/operateur/19287) |
 | BEURTON Bénédicte | BEURTON BENEDICTE JEANNE | COURGEAC | Chez Guérinaud 16190 | actividad | Légumes frais n.c.a., Autres légumes à feuilles ou à tiges, Pommes de table | 2026 | [nº Bio 150637](https://annuaire.agencebio.org/operateur/150637) |
 | CENTRE SOCIAL ET CULTUREL DU PAYS MENIGOUTAIS | CENTRE SOCIOCULTUREL DU PAYS MENIGOUTAIS | CHERVES RICHEMONT | 12 Route de l'Ancien Séminaire 16370 | actividad | Autres légumes à racine, à bulbe ou à tubercules n.c.a., Fraises, Légumes frais n.c.a. | 2026 | [nº Bio 155018](https://annuaire.agencebio.org/operateur/155018) |
 | DE PUY CHARENTON | SCEA DE PUYCHARENTON | LESSAC | PUYCHARENTON 16500 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Prairie permanente, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 117312](https://annuaire.agencebio.org/operateur/117312) |

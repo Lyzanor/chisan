@@ -6,7 +6,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 |---|---|---|---|---|---|---|---|
 | AU POTAGER DE LA VINGEANNE SAINTY Manon | SAINTY MANON | CHOILLEY-DARDENAY | 21 RUE DE LA CHAPELLE 52190 | actividad | Carottes, Oignons, Pommes de table | 2026 | [nº Bio 4636](https://annuaire.agencebio.org/operateur/4636) |
 | AUDE CATHELAT | CATHELAT AUDE | Colmier-le-Haut | 1 RUE LES METS DESSUS 52160 | actividad | Commerce de détail de fruits et légumes frais, Commerce de détail d'autres produits alimentaires n.c.a., Commerce de détail de fruits et légumes de conservation | 2026 | [nº Bio 129238](https://annuaire.agencebio.org/operateur/129238) |
-| BERNHARD Sarah | BERNHARD-PAPIN SARAH | PIERREMONT-SUR-AMANCE | RUE MOULIN JOBARD 52500 | actividad | Huiles essentielles, Prairie permanente, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 142964](https://annuaire.agencebio.org/operateur/142964) |
 | BOTTA Raphaël | BOTTA RAPHAEL BERTRAND MATHIEU | BUSSON | 2 RUE PRINCIPALE 52700 | actividad | Ruches, Autres produits de l'apiculture, Chocolat et préparations à base de cacao (à l'exclusion du cacao en poudre sucré), conditionnés sous différentes formes | 2026 | [nº Bio 137356](https://annuaire.agencebio.org/operateur/137356) |
 | COMBE A L'ORGE KIHM Jean-Paul | SCEA  COMBE A L'ORGE | ROCHEFORT-SUR-LA-COTE | RUE DU DESSUS DE LA ROCHE 52700 | actividad | Tournesol, Culture inconnue, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 142869](https://annuaire.agencebio.org/operateur/142869) |
 | DE LA COMBE MARTINET  de ROUVRE Alexandra | DE LA COMBE MARTINET | VERBIESLES | 1 Val des Escholiers 52000 | actividad | Prairie permanente, Aliments pour animaux de ferme, Chevaux, vivants | 2026 | [nº Bio 117475](https://annuaire.agencebio.org/operateur/117475) |
@@ -24,3 +23,7 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | EARL DE MEFOLLAY | DU MEFOLLAY | AGEVILLE | 10 ALLEE DE L'AULNAY 52340 | actividad | Autres surfaces non productive et surfaces non agricoles, Luzerne, Trèfle | 2026 | [nº Bio 25349](https://annuaire.agencebio.org/operateur/25349) |
 | EARL DU CLOS SAINT ROCHE LA POULE MEUNIERE | DU CLOS ST ROCH LA POULE MEUNIERE | BOLOGNE | 1 RUE DU FOURNEAU MARAULT 52310 | actividad | Blé dur, Luzerne, Trèfle | 2026 | [nº Bio 18343](https://annuaire.agencebio.org/operateur/18343) |
 | EI AYMERIC LECHENET | LECHENET AYMERIC PIERRE-ALAIN | SEMOUTIERS-MONTSAON | 2 CHE DE CHATEAUVILLAIN 52000 | actividad | Trèfle, Prairie temporaire, Prairie permanente | 2026 | [nº Bio 50806](https://annuaire.agencebio.org/operateur/50806) |
+
+## Descartes documentados — 2026-08-09
+
+- **BERNHARD Sarah** — fuera de alcance: La identidad pública es una jabonería con oferta cosmética, no alimentaria. [Agence Bio](https://annuaire.agencebio.org/operateur/142964) · [fuente pública](https://www.gabrasrosa.com)

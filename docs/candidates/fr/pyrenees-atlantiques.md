@@ -6,7 +6,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 |---|---|---|---|---|---|---|---|
 | APELXENIA LAPEYRADE Joan | EARL APELXENIA | ASCARAT | MAISON APELXENIA 64220 | actividad | Prairie permanente, Vins de raisin, Prairie temporaire | 2026 | [nº Bio 140674](https://annuaire.agencebio.org/operateur/140674) |
 | BRIN D'HERBE | BAUDRY BEATRICE | MONT-DISSE | CHE TILLET 64330 | actividad | Poires, Prunes, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 115376](https://annuaire.agencebio.org/operateur/115376) |
-| CONSTANTIN / TOMATE O COEUR | CONSTANTIN JEAN EMMANUEL | OLORON-SAINTE-MARIE | 135 MALLARODE 64400 | actividad | Autres fruits à pépins, Estives ou alpages collectifs, Taureaux (>24 mois) | 2026 | [nº Bio 114788](https://annuaire.agencebio.org/operateur/114788) |
 | Ferme Saint Marty | JEMET Silouane | COARRAZE | 76 ROUTE DE SAINT-VINCENT 64800 | actividad | Sarrasin, Pâtisseries et viennoiseries fraîches, Maïs doux | 2026 | [nº Bio 147084](https://annuaire.agencebio.org/operateur/147084) |
 | GAUZERE RIGAL Agnès | RIGAL AGNES-MARIE | BOSDARROS | 483 côte du Rey 64290 | actividad | Autres fruits à pépins, Prairie permanente, Autres légumes à racine, à bulbe ou à tubercules n.c.a. | 2026 | [nº Bio 147634](https://annuaire.agencebio.org/operateur/147634) |
 | LAMARQUE Anne Marie | LAMARQUE JEAN | SAINT-FAUST | 179 CHE DES CRETES 64110 | actividad | Gelée royale, Ruches, Autres produits de l'apiculture | 2026 | [nº Bio 146726](https://annuaire.agencebio.org/operateur/146726) |

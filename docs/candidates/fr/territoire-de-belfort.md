@@ -5,9 +5,7 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
 | LA NOUNETTE (EI) | La Nounette | joncherey | 24 rue de belfort 90100 | actividad | Autres fruits à noyau, Autres fruits à pépins | 2026 | [nº Bio 39473](https://annuaire.agencebio.org/operateur/39473) |
-| Le bruit de la ruche - 90 | Le bruit de la Ruche | CRAVANCHE | 4 rue de la petite Brasserie 90300 | actividad | Ruches | 2026 | [nº Bio 302344](https://annuaire.agencebio.org/operateur/302344) |
 | MENUISERIE STALDER | STALDER FRANCIS | LEPUIX | 52 RUE DE LA CHARRIERE 90200 | actividad | Culture inconnue, Veaux (< 8mois), Prairie permanente | 2026 | [nº Bio 140259](https://annuaire.agencebio.org/operateur/140259) |
-| MERCIER VALERIE | FERME du TREMBLET | Essert | Chemin du Tremblet 90850 | actividad | Autres légumes à racine, à bulbe ou à tubercules n.c.a., Prairie permanente, Pommes de table | 2026 | [nº Bio 68085](https://annuaire.agencebio.org/operateur/68085) |
 | SASU LES ATELIERS DE LA PIERRE-QUI-VIRE | LES ATELIERS DE LA PIERRE QUI VIRE | Lepuix | 14 Rue de Chauveroche 90200 | sede; unidad por confirmar | Autres boissons fermentées non distillées, Autres produits alimentaires n.c.a. | 2025 | [nº Bio 47191](https://annuaire.agencebio.org/operateur/47191) |
 | BOEHLER MARIE-LAURE ODILE | BOEHLER MARIE-LAURE ODILE | MENONCOURT | 13 RUE DU VIEUX LAVOIR 90150 | actividad | Aliments pour animaux de ferme, Prairie permanente | 2026 | [nº Bio 137371](https://annuaire.agencebio.org/operateur/137371) |
 | EARL CANAL OLIVIER | EARL CANAL OLIVIER | GIROMAGNY | 2 Rue de la 1ère Division Française libre 90200 | actividad | Prairie permanente | 2026 | [nº Bio 68888](https://annuaire.agencebio.org/operateur/68888) |

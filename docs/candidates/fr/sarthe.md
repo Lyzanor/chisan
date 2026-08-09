@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| BESNARD Julien | Julien BESNARD | SAINT MARCEAU | La Maugerie 72170 | actividad | Bœufs, Infusions, Culture inconnue | 2026 | [nº Bio 61505](https://annuaire.agencebio.org/operateur/61505) |
 | BIOVAL (SCEA) | SOCIETE CIVILE D'EXPLOITATION AGRICOLE BIOVAL | JUIGNE-SUR-SARTHE | LA MERCERIE 72300 | actividad | Autres services d'entreposage et de stockage, Œufs de poule, en coquille, frais, Poulets, vivants | 2026 | [nº Bio 107437](https://annuaire.agencebio.org/operateur/107437) |
 | BRINDILLE ET CHARRON | PEIGNE LAETITIA MAGALI LUCRECE | LHOMME | BEL AIR 72340 | actividad | Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Noix, Poires | 2026 | [nº Bio 122580](https://annuaire.agencebio.org/operateur/122580) |
 | CHANTELOUP (SCEA) | SCEA CHANTELOUP | AVOISE | SCEA RICHARD La Bellangeraie 72430 | actividad | Œufs de poule, en coquille, frais, Poules pondeuses, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 106295](https://annuaire.agencebio.org/operateur/106295) |
@@ -17,9 +16,10 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FARCY (GAEC) | GROUPEMENT AGRICOLE D EXPLOITATION EN COMMUN RECONNU FARCY | BOUSSE | EARL FARCY La Pommeraie 72270 | actividad | Œufs de poule, en coquille, frais, Poules pondeuses, Autres surfaces non productive et surfaces non agricoles | 2026 | [nº Bio 103724](https://annuaire.agencebio.org/operateur/103724) |
 | FERME DE LA TIREBOURDIERE | BUOSI ISABELLE | PONTVALLAIN | LA TIREBOURDIERE 72510 | actividad | Pommes de table, Commerce de détail de fruits et légumes frais, Autres légumes à feuilles ou à tiges | 2026 | [nº Bio 106713](https://annuaire.agencebio.org/operateur/106713) |
 | FUTAIE (GAEC LA) | GAEC LA FUTAIE | SAINT SYMPHORIEN | Ferme "La Futaie" Route de Parennes 72240 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Taureaux (>24 mois) | 2026 | [nº Bio 103129](https://annuaire.agencebio.org/operateur/103129) |
-| GIBET CAROLINE | GIBET Caroline (EI) | FERCE SUR SARTHE | Chemin des Venillières 72430 | actividad | Plants : plants de pépinière, bulbes, tubercules et rhizomes, boutures et greffons ; blanc de champignon, Prairie temporaire | 2026 | [nº Bio 73485](https://annuaire.agencebio.org/operateur/73485) |
 | GUITTET Frères (GAEC) | GAEC GUITTET FRERES | LOUE | GAEC GUITTET Frères Le Perrin 72540 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Broutards (mâle ou femelle) | 2026 | [nº Bio 154175](https://annuaire.agencebio.org/operateur/154175) |
-| HARAS DE LA VALLEE DES HAFLINGER/ FERME DE LA GOURDAINE / EQUALYA | HARAS DE LA VALLEE DES HAFLINGER | Coulans sur Gée | Domaine de Courteille 72550 | actividad | Prairie permanente, Plats préparés, Taureaux (>24 mois) | 2026 | [nº Bio 131353](https://annuaire.agencebio.org/operateur/131353) |
-| jardin du bon air | BONNAIRE Guillaume (EI) | Fercé-sur- Sarthe | 18 chemin des vénillières 72430 | actividad | Pommes de table, Prairie permanente, Légumes frais plein champ | 2026 | [nº Bio 303422](https://annuaire.agencebio.org/operateur/303422) |
 | La Bonita | EARL LA BONITA | ROEZE-SUR-SARTHE | ROUTE DE GUECELARD 72210 | actividad | Prairie permanente, Légumes frais plein champ | 2026 | [nº Bio 67591](https://annuaire.agencebio.org/operateur/67591) |
-| LA FERME DE VAULUMIER | PICHON EMILIE | Thoire sur Dinan | PICHON LANOISELEE Emilie 72500 | actividad | Mélanges Céréales-légumineuses, Béliers, Agneaux | 2026 | [nº Bio 173577](https://annuaire.agencebio.org/operateur/173577) |
+
+## Descartes documentados — 2026-08-09
+
+- **HARAS DE LA VALLEE DES HAFLINGER/ FERME DE LA GOURDAINE / EQUALYA** — fuera de alcance: La identidad y oferta públicas se centran en la cría de caballos, no en alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/131353) · [fuente pública](https://www.harasdelavalleedeshaflinger.com/)
+- **GIBET CAROLINE** — fuera de alcance: La oferta pública son plantones de árboles frutales, no fruta ni otro alimento. [Agence Bio](https://annuaire.agencebio.org/operateur/73485) · [fuente pública](https://www.auxfruitiersgenereux.com)

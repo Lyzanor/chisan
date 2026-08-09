@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| ALEXANDRE MICHEL - DOMAINE LES LENDEMAINS QUI CHANTENT | MICHEL ALEXANDRE FREDERIC OLIVIER | Saint-Andéol-de-Berg | Quartier Les Chabrilleres 07170 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Raisin de cuve, Vins de raisin | 2026 | [nº Bio 128759](https://annuaire.agencebio.org/operateur/128759) |
 | AUDIBERT François | AUDIBERT FRANCOIS LOUIS | FAUGERES | LD La Pierre Plantée 07230 | actividad | Châtaignes et marrons | 2026 | [nº Bio 131886](https://annuaire.agencebio.org/operateur/131886) |
 | BALTHAZAR Franck | SCEA FRANCK BALTHAZAR | CORNAS | 8 rue des Violettes 07130 | actividad | Raisin de cuve, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 107987](https://annuaire.agencebio.org/operateur/107987) |
 | BERNARD HABAUZIT | HABAUZIT BERNARD | VESSEAUX | 103 IMPASSE DES CHAUSSADENTS 07200 | actividad | Châtaignes et marrons | 2026 | [nº Bio 159015](https://annuaire.agencebio.org/operateur/159015) |

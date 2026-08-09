@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| AR VUOC'HIG SALLIOU-AUFFRET Tudual | AR VUOC'HIG | LANVELLEC | 1 KERVEROT 22420 | actividad | Autres baies (hors cassis et myrtilles), Prairie temporaire, Prunes | 2026 | [nº Bio 612](https://annuaire.agencebio.org/operateur/612) |
 | ASSOCIATION 4 VAULX-JARDIN | ESAT" 4 VAULX-JARDIN" | CORSEUL | Coet Finet BP 4 22130 | actividad | Mélanges Céréaliers (sans légumineuses), Pommes de terre (hors féculière), Courgettes | 2026 | [nº Bio 148120](https://annuaire.agencebio.org/operateur/148120) |
 | CREPES ET GALETTES DE CRENELEUC | PINARD NATHALIE MARIE JOSEPH | LAURENAN | 17 CRENELEUC 22230 | actividad | Sève de bouleau, Pâtisseries et viennoiseries fraîches, Arbres forestiers | 2026 | [nº Bio 158220](https://annuaire.agencebio.org/operateur/158220) |
 | DE COURAILLON JOUANJAN Hervé | GAEC DE COURAILLON | PLEHEDEL | 72 Couraillon (domicile) Couraillon (exploitation) 22290 | actividad | Autres plantes et surfaces fourragères n.c.a., Lait de vache, brut, Maïs fourrager | 2026 | [nº Bio 101544](https://annuaire.agencebio.org/operateur/101544) |

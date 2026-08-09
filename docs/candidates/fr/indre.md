@@ -16,12 +16,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | EARL LES BERTHIERES | LES BERTHIERES | CLERE-DU-BOIS | LES BERTHIERES 36700 | actividad | Béliers, Agnelles de renouvellement, Agneaux | 2026 | [nº Bio 57162](https://annuaire.agencebio.org/operateur/57162) |
 | EI | Les Récoltes Rouges | Saint Plantaire | 7 route de Bord 36190 | actividad | Légumes frais n.c.a., Fraises, Prairie permanente | 2026 | [nº Bio 302889](https://annuaire.agencebio.org/operateur/302889) |
 | GHISLAIN DE LA ROCHETHULON | THIBAUD DE LA ROCHETHULON GHISLAIN LOUIS MICHEL | PRISSAC | 36 LA ROCHECHEVREUX 36370 | actividad | Autres surfaces non productive et surfaces non agricoles, Mélanges fourragers, Prairie permanente | 2026 | [nº Bio 9899](https://annuaire.agencebio.org/operateur/9899) |
-| Januel Benoit | EI | Champillet | 4 impasse des Baudichons 36160 | actividad | Ruches | 2026 | [nº Bio 301281](https://annuaire.agencebio.org/operateur/301281) |
 | JOUHANNEAU  JOUHANNEAU Jérôme | EARL JOUHANNEAU | Bommiers | Les Jarrys 36120 | actividad | Orges, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 15750](https://annuaire.agencebio.org/operateur/15750) |
 | LA FONTAINE SAINT GERMAIN PETERS Dorus | LA FONTAINE SAINT GERMAIN | PARNAC | LD SAINT GERMAIN 36170 | actividad | Trèfle, Prairie temporaire, Taureaux (>24 mois) | 2026 | [nº Bio 144942](https://annuaire.agencebio.org/operateur/144942) |
-| LE JARDIN BIO DU CHAGNE LALOUF Stéphane | LALOUF STEPHANE | POULIGNY-SAINT-MARTIN | LD LE MONTET 36160 | actividad | Prairie permanente, Légumes frais n.c.a., Chanvre | 2026 | [nº Bio 142465](https://annuaire.agencebio.org/operateur/142465) |
 | LEFRANC (EARL) | LEFRANC | LA PEROUILLE | LIEU DIT LES COURTIOUX 36350 | actividad | Bande tampon ou fleurie, Luzerne, Tournesol | 2026 | [nº Bio 12786](https://annuaire.agencebio.org/operateur/12786) |
 
 ## Descartes documentados — 2026-08-09
 
 - **Clavières et Dépendances** — fuera de alcance: La identidad pública verificada es un alojamiento turístico y el registro no declara alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/303439) · [fuente pública](https://www.clavieres-dependances.fr/)
+- **LE JARDIN BIO DU CHAGNE LALOUF Stéphane** — fuera de alcance: La oferta pública es CBD y material de vivero, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/142465) · [fuente pública](https://www.cbd-berry.fr)

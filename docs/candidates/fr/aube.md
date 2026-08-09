@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| CHAMPAGNE ROBERT BARBICHON | EARL BARBICHON-PRELAT | GYE-SUR-SEINE | 8 RUE DE LA VEREILLE 10250 | actividad | Autres produits alimentaires n.c.a., Raisin de cuve, Vins de raisin | 2026 | [nº Bio 116077](https://annuaire.agencebio.org/operateur/116077) |
 | CHAMPBIO SIMPHAL Fanny | SCEA LA CHAMPMESLE | NOZAY | FERME DES BANLEES 10700 | actividad | Luzerne, Orges, Carottes | 2026 | [nº Bio 133861](https://annuaire.agencebio.org/operateur/133861) |
 | CHICKEN COOP DES VIGNES  - SEP BIO VALLEE | CHICKEN COOP DES VIGNES | GRANDVILLE | Les Vignes 10700 | actividad | Poules pondeuses, Prairie permanente, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 7235](https://annuaire.agencebio.org/operateur/7235) |
 | COSDON BIO | sarl | PAISY-COSDON | RUE DE COSDON 10160 | actividad | Tournesol, Orges, Chanvre | 2026 | [nº Bio 49269](https://annuaire.agencebio.org/operateur/49269) |

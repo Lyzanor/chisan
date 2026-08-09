@@ -18,8 +18,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DES RAILLIS SCHMITT Sébastien et Arnaud | GAEC RECONNU DES RAILLIS | NANCOIS-LE-GRAND | 4 RUE BOUTEA 55500 | actividad | Fèves, sèches (yc féveroles), Pommes de terre (hors féculière), Vaches allaitantes | 2026 | [nº Bio 105006](https://annuaire.agencebio.org/operateur/105006) |
 | DU CHAMP MOULIN PINCHERELLE Joël et PINCHERELLE Steven | SCEA DU CHAMP MOULIN | VERY | FERME DU CHAMP MOULIN 55270 | actividad | Mélanges Céréaliers (sans légumineuses), Génisses renouvellement (>8 mois), Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 143609](https://annuaire.agencebio.org/operateur/143609) |
 | DU VIEUX RUISSEAU REINBOLT Hervé | EARL DU VIEUX RUISSEAU | Les Hauts de Chée | 25 rue Principale 55000 | actividad | Prairie permanente, Vaches allaitantes, Taureaux (>24 mois) | 2026 | [nº Bio 138532](https://annuaire.agencebio.org/operateur/138532) |
-| EARL DU TALMET | EARL | KOEUR LA PETITE | THONIN Hugues 20 route de sampi 55300 | actividad | Luzerne, Seigle | 2026 | [nº Bio 304606](https://annuaire.agencebio.org/operateur/304606) |
 | EQUINOXE GAUNY Emmanuel | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE EQUINOXE | GIMECOURT | 2 RUE JEANNE D ARC 55260 | actividad | Avoine, Trèfle, Semences de céréales, légumineuses et oléagineux (à l'exclusion du riz) | 2026 | [nº Bio 12300](https://annuaire.agencebio.org/operateur/12300) |
 | FERME DU VALLET BONA FROMONT Nicolas | FERME DU VALLET BONA | MELIGNY-LE-GRAND | 9 RUE SAINT AUBIN 55190 | actividad | Légumes frais n.c.a., Culture inconnue, Pommes de table | 2026 | [nº Bio 21686](https://annuaire.agencebio.org/operateur/21686) |
 | FERME MATEOMARD  JACQUEMIN Jean Marie | JACQUEMIN JEAN MARIE | Geville | Ferme mateomard 55200 | actividad | Trèfle, Estives ou alpages collectifs, Veaux (< 8mois) | 2026 | [nº Bio 28557](https://annuaire.agencebio.org/operateur/28557) |
 | GAEC LES FEUILLES VERTES | GAEC DES FEUILLES VERTES | LAVIGNEVILLE | 13 RUE DES LILAS 55300 | actividad | Lait de vache, brut, Autres surfaces non productive et surfaces non agricoles, Prairie permanente | 2026 | [nº Bio 159093](https://annuaire.agencebio.org/operateur/159093) |
+
+## Descartes documentados — 2026-08-09
+
+- **EARL DU TALMET** — fuera de alcance: La única oferta publicada es alfalfa para alimentación animal. [Agence Bio](https://annuaire.agencebio.org/operateur/304606)

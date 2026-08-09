@@ -4,10 +4,8 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 | Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
 |---|---|---|---|---|---|---|---|
-| ACCRU KHLOPIN Dmitry | ACCRU | MONTLOUIS-SUR-LOIRE | 21 RUE DE CHAPITRE 37270 | actividad | Prairie permanente, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Raisin de cuve | 2026 | [nº Bio 43965](https://annuaire.agencebio.org/operateur/43965) |
 | BRÜGGEMANN Tiphaine | BRUGGEMANN TIPHAINE JEANINE MARIE THERESE | SAINT-EPAIN | 5 RUE LOUIS PERROTIN 37800 | actividad | Culture inconnue, Trèfle | 2026 | [nº Bio 44861](https://annuaire.agencebio.org/operateur/44861) |
 | CHIPON Frédéric | CHIPON FREDERIC DAVID CHRISTOPHE | Saint Martin le Beau | 7 route de Montlouis 37270 | actividad | Raisin de cuve | 2026 | [nº Bio 5801](https://annuaire.agencebio.org/operateur/5801) |
-| claudia CASLOT-PONTONNIER | CASLOT - PONTONNIER | BENAIS | 3 RUE MACHET 37140 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Vins de raisin, Raisin de cuve | 2026 | [nº Bio 155031](https://annuaire.agencebio.org/operateur/155031) |
 | CLEDAT DE LA VIGERIE Eric | ERIC CLEDAT DE LA VIGERIE | SAVIGNY EN VERON | 1 RUE DES CAILLIS 37420 | actividad | Culture inconnue, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Raisin de cuve | 2026 | [nº Bio 105984](https://annuaire.agencebio.org/operateur/105984) |
 | COMMUNE DE CHAMBRAY LES TOURS BARRIOL Yannick | COMMUNE DE CHAMBRAY LES TOURS | Chambray les Tours | 6 Rue de la Mairie 37170 | actividad | Pommes de table, Autres baies (hors cassis et myrtilles), Autres légumes à feuilles ou à tiges | 2026 | [nº Bio 28176](https://annuaire.agencebio.org/operateur/28176) |
 | DES CHARMILLES FILLIAT Francis et Anne-Marie | DES CHARMILLES | BETZ LE CHÂTEAU | 1 Les Courtinais 37600 | actividad | Luzerne, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Maïs grain (hors maïs doux) | 2026 | [nº Bio 140174](https://annuaire.agencebio.org/operateur/140174) |

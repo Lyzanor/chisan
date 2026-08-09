@@ -13,11 +13,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOMAINE DE BOIS MOZE | SCEA DOMAINE DU BOIS MOZE | Coutures | HERAULT Benoist Le Bois Mozé 49320 | actividad | Mélanges Céréales-légumineuses, Prairie permanente, Vins de raisin | 2026 | [nº Bio 135963](https://annuaire.agencebio.org/operateur/135963) |
 | DU LAYON PERDRIAU Jean-François | DU LAYON | DOUE EN ANJOU | Maury 6 rue de l'EcluseSaint Georges Sur Layon 49700 | actividad | Chanvre, Tournesol, Prairie permanente | 2026 | [nº Bio 148418](https://annuaire.agencebio.org/operateur/148418) |
 | DU ROIFSE | DESMARRES MURIEL | DAUMERAY | Le Grand Roissé 49640 | actividad | Sarrasin, Prairie temporaire, Prairie permanente | 2026 | [nº Bio 148326](https://annuaire.agencebio.org/operateur/148326) |
-| EARL LA HAUTE ROUE | DE LA HAUTE ROUE | LA POMMERAYE | 6 LA HAUTE ROUE 49620 | actividad | Fèves, sèches (yc féveroles), Vaches laitières, vivantes, Poulets, vivants | 2026 | [nº Bio 151889](https://annuaire.agencebio.org/operateur/151889) |
 | EARL MARTIN BAS BREIL CHAMP SUR LAYON | EARL MARTIN | CHAMP SUR LAYON | Le Bas Breil 49380 | actividad | Génisses engraissement (>8 mois), Taureaux (>24 mois), Lait de vache, brut | 2026 | [nº Bio 151730](https://annuaire.agencebio.org/operateur/151730) |
-| FERME SAINTE MARTHE | FERME DE SAINTE MARTHE | LOIRE-AUTHION | 3 RTE DE LA PLOTINIERE 49800 | actividad | Figues, Pommes de table, Poires | 2026 | [nº Bio 109653](https://annuaire.agencebio.org/operateur/109653) |
 | FROUIN (GAEC) | GAEC FROUIN | TOUTLEMONDE | LE BORDAGE PALNAY 49360 | actividad | Génisses renouvellement (>8 mois), Taureaux (>24 mois), Vaches allaitantes | 2026 | [nº Bio 103139](https://annuaire.agencebio.org/operateur/103139) |
 | GABORIT Pierre-Yves | GABORIT | MAULEVRIER | LD LA GRANDE NILLIERE 49360 | actividad | Orges, Maïs grain (hors maïs doux), Mélanges fourragers | 2026 | [nº Bio 147766](https://annuaire.agencebio.org/operateur/147766) |
 | GAEC BIO MARQUIS | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU BIO MARQUIS | VERNOIL LE FOURRIER | LA ROCHE 49390 | actividad | Mélanges fourragers, Vaches allaitantes, Génisses engraissement (>8 mois) | 2026 | [nº Bio 151756](https://annuaire.agencebio.org/operateur/151756) |
 | GAEC DES CHAMPS FLEURIS | DES CHAMPS FLEURIS | MAULEVRIER | LA VIEILLERE 49360 | actividad | Bande tampon ou fleurie, Autres surfaces non productive et surfaces non agricoles, Luzerne | 2026 | [nº Bio 105681](https://annuaire.agencebio.org/operateur/105681) |
-| Garo'Vin | GARREAU Cédric | Chemillé en Anjou | 5 Le prieuré 49750 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Prairie permanente, Culture inconnue | 2026 | [nº Bio 102950](https://annuaire.agencebio.org/operateur/102950) |
+
+## Descartes documentados — 2026-08-09
+
+- **FERME SAINTE MARTHE** — fuera de alcance: La oferta pública son semillas y plantas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/109653) · [fuente pública](http://www.fermedesaintemarthe.com)

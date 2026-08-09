@@ -13,7 +13,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DE LA RESERVE DE PUY GUILLON BLANZAT Sabrina | SCEA DE LA RESERVE DE PUY GUILLON | VERNUSSE | LD PUY GUILLON 03390 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Aliments pour animaux de ferme, Culture inconnue | 2026 | [nº Bio 118368](https://annuaire.agencebio.org/operateur/118368) |
 | DEROCHE SYLVAIN JULIEN | DEROCHE SYLVAIN | BLOMARD | 13 ROUTE DE LA PALUE 03390 | actividad | Vaches allaitantes, Prairie permanente, Prairie temporaire | 2026 | [nº Bio 65467](https://annuaire.agencebio.org/operateur/65467) |
 | DES BLAINS SMOLDERS Bas | GROUPEMENT AGRICOLE D EXPLOITATION EN COMMUN AGREE DES BLAINS | LOUROUX BOURBONNAIS | LD LES BLAINS 03350 | actividad | Culture inconnue, Prairie temporaire, Luzerne | 2026 | [nº Bio 144544](https://annuaire.agencebio.org/operateur/144544) |
-| DES CROUX ROBERT Olivier et Pascal | GAEC DES CROUX | YGRANDE | LA GRANDE CROUX 03160 | actividad | Taureaux (>24 mois), Maïs grain (hors maïs doux), Grand épeautre | 2026 | [nº Bio 117110](https://annuaire.agencebio.org/operateur/117110) |
 | DES GUERICHAUDS SABOT Stéphane | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE DES GUERICHAUDS | Cindre | Lieu dit Guerichauds 03220 | actividad | Petit épeautre, Autres légumes à racine, à bulbe ou à tubercules n.c.a., Commerce de détail de produits laitiers | 2026 | [nº Bio 132430](https://annuaire.agencebio.org/operateur/132430) |
 | DOMAINE DE LA FORGE SEGUIER Dominique et Monika | SCEA DOMAINE DE LA FORGE | SAUVAGNY | La Vareinne 03430 | actividad | Grand épeautre, Sarrasin, Trèfle | 2026 | [nº Bio 108710](https://annuaire.agencebio.org/operateur/108710) |
 | DOMAINE DE LA SOURDE BONVIN Benoît | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE DU DOMAINE DE LA SOURDE | LOUCHY-MONTFAND | 9 RUE SAINTE CATHERINE 03500 | actividad | Vins de raisin, Raisin de cuve | 2026 | [nº Bio 32819](https://annuaire.agencebio.org/operateur/32819) |
@@ -21,7 +20,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOORGEEST Agnès | DOORGEEST AGNES GERTRAUD | YGRANDE | LD LA BACHARDE 03160 | actividad | Veaux (< 8mois), Culture inconnue, Chèvres | 2026 | [nº Bio 108954](https://annuaire.agencebio.org/operateur/108954) |
 | DU TURAIL | GROUPEMENT AGRICOLE D EXPLOITATION EN COMMUN AGREE DU TURAIL | Doyet | 1 Chez moi 03170 | actividad | Poules pondeuses, Œufs de poule, en coquille, frais, Prairie permanente | 2026 | [nº Bio 18439](https://annuaire.agencebio.org/operateur/18439) |
 | Ferme de la grande Chassagne | BIRET CECILE | CHATEL-MONTAGNE | LA GRANDE CHASSAGNE 03250 | actividad | Autres fruits à pépins, Génisses renouvellement (>8 mois), Poules pondeuses | 2026 | [nº Bio 302351](https://annuaire.agencebio.org/operateur/302351) |
-| Ferme des Caloptéryx | GARCIA Sylvain (EI) | LODDES | 1 Chemin de la Verne 03130 | actividad | Autres produits de l'apiculture, Miel, Ruches | 2026 | [nº Bio 302418](https://annuaire.agencebio.org/operateur/302418) |
 
 ## Descartes documentados — 2026-08-09
 
