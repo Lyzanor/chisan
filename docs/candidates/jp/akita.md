@@ -66,3 +66,30 @@ antes de escribir esas filas.
 - Las ~20 bodegas restantes del censo.
 - Sin abrir: きりたんぽ, いぶりがっこ (encurtido ahumado, con GI propia), arroz
   Akitakomachi, 稲庭うどん de Yuzawa (fideos con denominación y muchos obradores).
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 有限会社　正八 | H-5,6　他 | 秋田県南秋田郡大潟村西野22-18　他 | 有機農産物 | AFASSEQ-AA-050701 |
+| 安部ファーム | F-11-1　他 | 秋田県南秋田郡大潟村方上6-5　他 | 有機農産物 | AFASSEQ-AA-030904 |
+| イー・ファーム 遠藤暁 | G17-2 他 | 秋田県南秋田郡大潟村方上34-3、34-49　他 | 有機農産物 | AFASSEQ-AA-040901 |
+| 有限会社花咲農園 | F7-4　他 | 秋田県南秋田郡大潟村方上26-32　他 | 有機農産物 | AFASSEQ-AA-010702 |
+| 秋田ふるさと農業協同組合　有機米生産グループ | 橋本暁 | 秋田県横手市平鹿町中吉田字田ノ植39(一時利用)　他 | 有機農産物 | 600606P02A |
+| 内田　一 | 4　他 | 秋田県南秋田郡大潟村東4-13　他 | 有機農産物 | S-085 |
+| 大潟村げんき有機部会 | 相馬時博　2　他 | 秋田県南秋田郡大潟村東野38-24　他 | 有機農産物 | S-093 |
+| 大潟村自然農法研究会 | １　他 | 秋田県南秋田郡大潟村字東野3-8　他 | 有機農産物 | 有機農産物認証生産第4号 |
+| サン・ライス『有機の会』 | T-1A　他 | 秋田県南秋田郡大潟村字方口54-1　他 | 有機農産物 | 有機農産物認証生産第5号 |
+| 株式会社OGURA | 株式会社OGURA | 秋田県大館市比内町扇田字倉下5-1 | 有機加工食品 | 011114-001 |
+| 有限会社　サンファーム | B-18-①　他 | 秋田県南秋田郡大潟村字方口33-7　他 | 有機農産物 | 100093002 |
+| 有限会社ライス秋田 | 方上12-10 | 秋田県南秋田郡大潟村方上12-10 | 有機農産物 | 100093007 |
+| 早津　一仁 | 早津農園 | 秋田県南秋田郡大潟村字東野4-15①　他 | 有機農産物 | 00-002 |
+| 有限会社粋き活き農場 | F-15 A　他 | 秋田県南秋田郡大潟村方上23-3　他 | 有機農産物 | 100052701 |
+| オーリア21有機農産物生産部会 | １　他 | 秋田県南秋田郡大潟村字方口19-14  他 | 有機農産物 | 有機農産物認証生産第11号 |
+| 株式会社秋田ニューバイオファーム | 株式会社秋田ニューバイオファーム | 秋田県由利本荘市西目町沼田字新道下４９０－５ | 有機加工食品 | JIAFE-OP-0006 |
+| 今野農園・今野克久 | 10(Ｄ-2)　他 | 秋田県南秋田郡大潟村東野44-14　他 | 有機農産物 | AFASSEQ-AA-090801 |
+| 白神郷ふたつい有機クラブ | 1　他 | 秋田県能代市二ツ井町切石字新田240　他 | 有機農産物 | S-214 |
+| かたっこ米 | １　他 | 秋田県南秋田郡大潟村西野16-31,32　他 | 有機農産物 | 有機農産物認証生産第23号 |
+| 有限会社北浦郷 | １　他 | 秋田県仙北市角館町八割字内山383　他 | 有機農産物 | 有機農産物認証生産第24号 |

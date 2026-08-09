@@ -43,3 +43,30 @@ de terroir de estas bodegas. Categoría para todas: `Sake`.
   identificables y venta online real, probablemente el mejor pool de la
   prefectura; きびだんご (con casas históricas), 千屋牛 (una de las carnes wagyu
   más antiguas), ままかり y 瀬戸内 pescado, 手延べ麺 de Kamogata.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 株式会社丸菱　岡山工場 | 株式会社丸菱　岡山工場　他 | 岡山県新見市大佐小阪部1421　他 | 有機加工食品 | MPJP1027-01 |
+| 庄地区無農薬研究会 | 生産025-002-12号　他 | 岡山県倉敷市下庄467-1 | 有機農産物 | 生産025号 |
+| まびゆうき | 生産037-003-02号　他 | 岡山県倉敷市真備町服部813-1　他 | 有機農産物 | 生産037号 |
+| エコファームMITANI | 生産049-001-01号　他 | 岡山県倉敷市玉島陶3753-1　他 | 有機農産物 | 生産049 |
+| 岡山県立高松農業高等学校 | 生産066-001-01号　他 | 岡山県岡山市北区高松原古才400-1の一部 | 有機農産物 | 生産066号 |
+| 中和元気米クラブ | 生産062-006-07号　他 | 岡山県真庭市蒜山下和2606　他 | 有機農産物 | 生産062号 |
+| 丸本酒造（株） | 生産070-001-05号　他 | 岡山県浅口市鴨方地頭上1171 他 | 有機農産物 | 生産070号 |
+| 倉敷弥高山高原有機野菜クラブ | 生産043-001-01号　他 | 岡山県倉敷市玉島陶5539-4　他 | 有機農産物 | 生産043 |
+| タンチョウの里内山農園 | 生産072-001-01号 | 岡山県和気郡和気町田賀451-6他 | 有機農産物 | 生産072 |
+| 上組営農実行組合 | 生産003-009-01号　他 | 岡山県高梁市川上町高山3280-1他 | 有機農産物 | 生産００３号 |
+| 大興産業株式会社 | 大興産業㈱ | 岡山県井原市西江原町1858-3　他 | 有機加工食品 | 加工003 |
+| 岡山市高松有機無農薬野菜生産組合みどり会 | 生産001-014-01号　他 | 岡山県岡山市北区平山548　他 | 有機農産物 | 生産001号 |
+| 岡山市高松有機無農薬野菜生産組合ふるさと会 | 生産002-015-01号　他 | 岡山県岡山市北区新庄下185-1　他 | 有機農産物 | 生産002 |
+| 和気健康農業研究会 | 生産036-001-01号　他 | 岡山県和気郡和気町吉田177-1　他 | 有機農産物 | 生産036号 |
+| 株式会社　岡三食品 | ㈱岡三食品　他 | 岡山県岡山市東区西大寺新地360-8　他 | 有機加工食品 | JO080725PR-1050-0 |
+| 日生町みかん生産組合 | 生産033-006-01号　他 | 岡山県備前市日生町日生3635-26　他 | 有機農産物 | 生産033-006-01号他 |
+| 日本オリーブ(株) | 日本オリーブ（株）　他 | 岡山県瀬戸内市牛窓町牛窓3911-10 他 | 有機加工食品 |  |
+| 名水美人ファクトリー株式会社　岡山工場 | 名水美人ファクトリー株式会社　岡山第2工場　他 | 岡山県小田郡矢掛町中６８６－１　他 | 有機農産物 | SES-05012501 |
+| はやしま有機の郷 | 生産065-001-01号　他 | 岡山県都窪郡早島町早島3678-1　他 | 有機農産物 | 生産065号 |
+| 有限会社想庵 | 有限会社想庵　万富工場 | 岡山県岡山市瀬戸町万富314-2 | 有機加工食品 | MPJP1615 |

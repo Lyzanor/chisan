@@ -55,3 +55,30 @@ destilado reconocidas de Japón — y concentra 27 destilerías en un valle.
   lácteos y pastos de Aso; **い草** (junco de tatami, no alimentario); 熊本ラーメン,
   からし蓮根, デコポン (el cítrico nació aquí), 塩トマト de Yatsushiro,
   海苔 de Ariake.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 早稲田富士男 | 1他 | 熊本県上天草市大矢野町中野牛島5712-13他 | 有機農産物 | 0605-A10 |
+| 甲斐農園 | 1他 | 熊本県上益城郡山都町野尻女迫559他 | 有機農産物 | 0605-A09 |
+| 山下正喜 | 3他 | 熊本県上益城郡山都町田所タキガシラ313他 | 有機農産物 | 0605-A07 |
+| 坂本農園 | 1他 | 熊本県上益城郡山都町入佐字龍ノ坪156、175　他 | 有機農産物 | 0605-A01 |
+| 荒木雄二郎 | 1他 | 熊本県上益城郡山都町田所東鶴470-1、470-2、471、472-2、473、474、475他 | 有機農産物 | 0605-A11 |
+| 株式会社　安永商会 | 株式会社安永商会 | 熊本県熊本市中央区南熊本5丁目10番地8号 | 有機加工食品 | 0608-B01 |
+| 飯星　敬一 | ２他 | 熊本県上益郡山都町東前田472　他 | 有機農産物 | 0607-A05 |
+| 八反田　慶介 | １　他 | 熊本県上益郡御船町大字小坂字上原1954番地　他 | 有機農産物 | 0608-A03 |
+| 戸馳有機米研究会 | 3-1 他 | 熊本県宇城市三角町戸馳6030他 | 有機農産物 | 0608-A01 |
+| 小川　啓造 | １　他 | 熊本県球磨郡あさぎり町岡原南610-17　他 | 有機農産物 | 0608-A04 |
+| マルキン食品（株）　阿蘇工場 | マルキン食品（株）　阿蘇工場 | 熊本県阿蘇郡西原村鳥子312-3 | 有機加工食品 | JM010116PR-0831-0 |
+| 園田農園 | 3 他 | 熊本県上益城郡山都町田小野後谷2187　他 | 有機農産物 | 0610-A07 |
+| 山本誠也 | １他 | 熊本県阿蘇市小野田字村内950　他 | 有機農産物 | 0610-A14 |
+| 原田幸二 | １　他 | 熊本県上益城郡山都町麻山大鶴1043-1　他 | 有機農産物 | 0610-A15 |
+| 髙岡オレンジ園 | 2　他 | 熊本県宇城市三角町里浦字梨木迫706　他 | 有機農産物 | 0610-A12 |
+| 津田貴代志 | ２他 | 熊本県上益城郡山都町入佐シモヨシズル3560　他 | 有機農産物 | 0610-A06 |
+| 水源茶業組合 | 水源第一製茶工場 | 熊本県菊池市原3419 | 有機農産物 | JY81030FA-0055-1 |
+| （株）丸美屋　菊水工場 | （株）丸美屋　菊水工場 | 熊本県玉名郡和水町内田2211 | 有機加工食品 | JM000928-PR0081-0 |
+| 浦川繁 | ４　他 | 熊本県天草市新和町大多尾塩屋浦4323-30　他 | 有機農産物 | 0611-A02 |
+| 岩永英康 | １　他 | 熊本県上益城郡山都町麻山イケノクボ2122-1　他 | 有機農産物 | 0611-A18 |

@@ -45,3 +45,30 @@ confirmar contra la web de cada bodega.
   Además: 鯛 de Uwajima (acuicultura con marca), じゃこ天, 今治 y la ruta de
   Shimanami, 砥部焼 (no alimentario), 麦味噌 (el miso de cebada del que Ehime es
   la principal productora).
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 株式会社松南園 | 株式会社松南園 | 愛媛県松山市小坂5-13-5 | 有機加工食品 | JS010202PR-0623-0 |
+| フジワラ化学株式会社 | フジワラ化学（株）　他 | 愛媛県西条市大新田95-1　他 | 有機加工食品 | 38212200101 |
+| 大三島果汁工業株式会社 | 大三島果汁工業（株） | 愛媛県今治市大三島町浦戸1104 | 有機加工食品 | 38354200101 |
+| 阿部久敏 | 愛媛県今治市郷新屋敷町2丁目259番地1　他 | 愛媛県今治市郷新屋敷町2丁目259番地1　他 | 有機農産物 | 382021002 |
+| 岡田　義之 | 愛媛県松山市中島大浦2204番地1　他 | 愛媛県松山市中島大浦2204番地1 | 有機農産物 | 38363101302 |
+| ヤマキ株式会社 | ヤマキ（株）第二工場　他 | 愛媛県伊予市下三谷字明星田262-1他 | 有機加工食品 | JY070426PR-0983-0 |
+| 田井　和美 | 07番ほ場 | 愛媛県東温市則之内乙1390番地1 | 有機農産物 | 38362100807 |
+| 池川良嗣 | 愛媛県東温市則之内乙2004番地1　他 | 愛媛県東温市則之内乙2004番地1　他 | 有機農産物 | 38362100301～10 |
+| 株式会社サンフーズ | （株）サンフーズ | 愛媛県大洲市菅田町菅田甲2522 | 有機加工食品 | 38207200101 |
+| 忽那醸造株式会社 | （株）忽那醸造 | 愛媛県松山市北条822 | 有機加工食品 | 38211200101 |
+| しまなみ有機栽培グループ | 末岡英治3 他 | 愛媛県今治市大三島町明日587 他 | 有機農産物 | 2004F-12 |
+| 有限会社バイオ | 02番ほ場 | 愛媛県松山市鷹子町乙52番地 | 有機農産物 | 38201100102 |
+| 遠赤青汁株式会社 | 遠赤青汁㈱　本社工場 | 愛媛県東温市河之内乙８２７－１ | 有機加工食品 | 383362200101-2 |
+| 愛工房株式会社 | 愛工房㈱ | 愛媛県宇和島市吉田町立間2番耕地146番地 | 有機加工食品 | 38203200101 |
+| 株式会社Revege | 株式会社Revege | 愛媛県大洲市成能甲1583番地 | 有機農産物 | 38201100803 |
+| 株式会社山口園芸 | 02ほ場 | 愛媛県宇和島市津島町増穂乙４番地 | 有機農産物 | 38203100202 |
+| 白石　善輝 | 01番ほ場 | 愛媛県八幡浜市保内町宮内6番耕地963-3 | 有機農産物 | 38204100201 |
+| 山崎　学 | 愛媛県今治市上浦町井口4765番地 | 愛媛県今治市上浦町井口4765番地 | 有機農産物 | 382021027 |
+| 株式会社　アール・シー・フードパック | （株）アール・シー・フードパック | 愛媛県西予市宇和町卯之町2丁目575番地 | 有機加工食品 | 38214200201 |
+| 二宮　裕基茂 | 愛媛県八幡浜市日土町ツバキ谷5-280-1　他 | 愛媛県八幡浜市日土町ツバキ谷5-280-1　他 | 有機農産物 | 382041004 |

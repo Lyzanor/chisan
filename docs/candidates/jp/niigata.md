@@ -168,3 +168,30 @@ misma fuente, el gremio.
   `machida-shouyumiso.co.jp`) y **山田屋** (`e-misoya.com`).
 - Esta prefectura **no necesita más candidatos de sake**: arrastra 91 sin
   integrar. Lo que le falta es dominio por fila, no nombres nuevos.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 村山正明 | 1　他 | 新潟県中魚沼郡津南町大字下船渡乙4172　他 | 有機農産物 | S-038 |
+| 長津安保 | 1　他 | 新潟県新潟市西蒲区下木島久保田175-1　他 | 有機農産物 | S-042 |
+| 上野　晃 | 1　他 | 新潟県新潟市北区新井郷居裏1071-1073　他 | 有機農産物 | S-043 |
+| 栄有機稲作研究会 | 栄有機稲作研究会　（株）ファームフレッシュヤマザキ　1　他 | 新潟県三条市渡前4352　他 | 有機農産物 | S-081 |
+| 金谷武志 | 2　他 | 新潟県上越市三和区神田2360　他 | 有機農産物 | S-086 |
+| 石橋直和 | 7　他 | 新潟県中魚沼郡津南町大字下船渡丁2620 他 | 有機農産物 | S-087 |
+| エコファーム巻島 | 1　他 | 新潟県長岡市巻島町字ヨツワリ271-274　他 | 有機農産物 | S-097 |
+| 山口　均 | 1　他 | 新潟県燕市松橋字南451～453, 455, 456　他 | 有機農産物 | S-124 |
+| 宮尾浩史 | 1　他 | 新潟県新潟市北区内沼一本柳541～550, 515　他 | 有機農産物 | S-158 |
+| Agri-S 清水耕司 | 11　他 | 新潟県見附市東今町510　他 | 有機農産物 | AFASSEQ-AA-020906 |
+| 有限会社笠原農園 | 奥上40　他 | 新潟県南魚沼市奥字野中266、267、268、269-1　他 | 有機農産物 | AFASSEQ-AA-060901 |
+| 株式会社フエキ農園 | 島の2反　他 | 新潟県南魚沼市島新田関端474-1.2　他 | 有機農産物 | AFASSEQ-AA-010904 |
+| （有）加藤農場 | １他 | 新潟県新発田市向中条2992-2　他 | 有機農産物 | A－00－0006 |
+| 伊藤　幸成 | 3 | 新潟県北蒲原郡聖籠町蓮潟龍門618　他 | 有機農産物 | A－05－0054 |
+| 有限会社エーエフカガヤキ | １　他 | 新潟県新潟市江南区沢海1丁目624　他 | 有機農産物 | A－05－0055 |
+| 農事組合法人　木津みずほ生産組合 | 1 | 新潟県新潟市新潟市江南区木津天王杉1688－1　他 | 有機農産物 | A－05－0056 |
+| 斉藤　勇雄 | １他 | 新潟県阿賀野市駒林千刈8204　他 | 有機農産物 | A－05－0057 |
+| 高橋農園 | １他 | 新潟県新潟市南区七穂字七穂323　他 | 有機農産物 | A－00－0009 |
+| 株式会社ごはん | A3-7　他 | 新潟県中魚沼郡津南町下船渡己6257　他 | 有機農産物 | A－00－0010 |
+| 有限会社　ファーミング・スタッフ | １他 | 新潟県柏崎市西山町北野字仲田3604,3605　他 | 有機農産物 | A－00－0012 |

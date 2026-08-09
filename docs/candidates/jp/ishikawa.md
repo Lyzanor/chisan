@@ -101,3 +101,30 @@ una bodega parada **no es purga**: es `parcial` con nota.
 - Fuera del sake, sin abrir: 加賀野菜 (verdura tradicional de Kanazawa), 能登
   (sal marina de Suzu, ika/pescado, 中島菜), 金沢 (dulces wagashi, pan de oro),
   醤油/味噌 de Ono (Kanazawa), 治部煮 y conservas.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 株式会社ヤマト醤油味噌 | 株式会社ヤマト醤油味噌 | 石川県金沢市大野町4丁目イ-170 | 有機加工食品 | 01-020B |
+| 護国寺生産グループ | 農事組合法人護国寺農場　9　他 | 石川県小松市五国寺町63　他 | 有機農産物 | 2000F-12 |
+| （有）ジャパンファーム | 生水敏雄　ほ場1　他 | 石川県小松市金平町尾谷7　他 | 有機農産物 | 2001F-8 |
+| 手取清流生産グループ | 川北 弘 1 他 | 石川県能美市下清水ヨ91番地 他 | 有機農産物 | 2000F-10 |
+| 有限会社グリーンアース杉浦 代表取締役 杉浦 賢治 | 002810 他 | 石川県羽咋市円井町602 他 | 有機農産物 | 2 |
+| 辻本 長衛 | 006470 他 | 石川県羽咋市垣内田町438 他 | 有機農産物 | 10 |
+| ユウキファーム山岸 山岸 邦夫 | 000010 他 | 石川県七尾市中島町西谷内な57 他 | 有機農産物 | 12 |
+| 加賀有機の会 代表 橋詰 善庸 | 000140 他 | 石川県加賀市西島町43 他 | 有機農産物 | 13 |
+| 有限会社たけもと農場 代表取締役 竹本 彰吾 | 001100 他 | 石川県能美市佐野町西49 他 | 有機農産物 | 15 |
+| 今井 清博 | 004430 他 | 石川県鹿島郡中能登町小田中井きし27 他 | 有機農産物 | 17 |
+| 橋 祥一郎 | 000980 他 | 石川県小松市拓栄町277-1 他 | 有機農産物 | 21 |
+| 高 利充 | 無関29 他 | 石川県七尾市能登島無関町29 他 | 有機農産物 | 45 |
+| 木下 勝 | 10730 他 | 石川県金沢市粟崎町4-107 他 | 有機農産物 | 48 |
+| 井村辰二郎 | S083 金沢 | 石川県金沢市湖南町83 | 有機農産物 | JI001010FA-0069-0 |
+| ダートコーヒー（株） | ダートコーヒー株式会社　白山工場 | 石川県白山市水島町451 | 有機加工食品 | 07-050B |
+| 加賀味噌食品工業協業組合 | 加賀味噌食品工業協業組合 | 石川県白山市倉部町1080 | 有機加工食品 | JK090323PR-1075-0 |
+| 公益財団法人農業・環境・健康研究所 白山研究農場 代表 細川 洋幹 | 1 他 | 石川県白山市徳光町3840-1 他 | 有機農産物 | 56 |
+| 東　浩一 | 湖東町331　他 | 石川県小松市湖東町331　他 | 有機農産物 | JH100511FA-1112-0 |
+| 農家ふじた | 新2　他 | 石川県小松市木場町新43、44、45　 他 | 有機農産物 | 2010F-5 |
+| 株式会社スギヨファーム 代表取締役 杉野 哲也 | 圃場1 | 石川県七尾市能登島町上野３３ | 有機農産物 | 58 |

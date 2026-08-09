@@ -45,3 +45,30 @@ confirmar contra la web de cada bodega.
   naranja de verano nació ahí, con mermeladas y confitados artesanos);
   岩国れんこん, 長門ゆずきち, 見蘭牛 y 無角和種, わさび de Yamaguchi,
   外郎 (uiro) de Yamaguchi-shi.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 有限会社土井ヶ浜農園 | ４　他 | 山口県下関市豊北町神田上3099　他 | 有機農産物 | 0608-A06 |
+| 株式会社原田食品 | 株式会社原田食品 周東工場　他 | 山口県岩国市周東町上久原1901-1　他 | 有機加工食品 | N9386J03 |
+| 錦町農産加工グループ | 錦町農産加工株式会社　他 | 山口県岩国市錦町府谷131番地　他 | 有機加工食品 | MPJP1159 |
+| 株式会社セイシン企業　山口宇部寿工場 | 株式会社セイシン企業　山口宇部寿工場 | 山口県宇部市山中甲石７００－３ | 有機加工食品 | SEZ-24011601 |
+| 藤井健二 | 16　他 | 山口県防府市富海419-1　他 | 有機農産物 | 11A-0003 |
+| 岩田珈琲店 | 岩田珈琲店 | 山口県熊毛郡上関町大字祝島3675 | 有機加工食品 | B08-111901 |
+| 亀の甲農園（代表　三隅忠典） | 1　他 | 山口県山陽小野田市大字小野田笹原1745-1　他 | 有機農産物 | 114-041 |
+| 藤井　秀一 | 3　他 | 山口県美弥市美東町大田字峠口359、360、361　他 | 有機農産物 | A14-102701 |
+| 福本自然農園 | 8　他 | 山口県熊毛郡田布施町下田布施天瀬1920・1921-1　他 | 有機農産物 | A15-111901 |
+| 株式会社ミライエfarm | 10　他 | 山口県防府市大字鈴屋合三郎1260　他 | 有機農産物 | A15-112701 |
+| 株式会社MIHORI | MIHORIセントラルキッチン | 山口県山口市大内矢田南6丁目8-8 | 有機加工食品 | B16-042701 |
+| 石田　俊文 | No.1　他 | 山口県大島郡周防大島町西安下庄尾崎2261-1　他 | 有機農産物 | A16-110401 |
+| 株式会社かな川 | 金川敏採取場①他 | 山口県長門市俵山大羽山4330他 | 有機農産物 | SES-30012601 |
+| 株式会社みほりファーム | A2　他 | 山口県防府市大字上右田字西上河原2539-1　他 | 有機農産物 | A18-101801 |
+| 株式会社エコファーム山口 | 1　他 | 山口県周南市大字金峰東兼田2502-2、2503-3、2504、2522-1、2522-2　他 | 有機農産物 | NA-18112902 |
+| 株式会社ゆめファーム | 深野Ａ　他 | 山口県山口市仁保下郷森河 1428　他 | 有機農産物 | 19A-0001 |
+| 株式会社サンピット | 4　他 | 山口県熊毛郡平生町大字平生町546－2、546－4、546－6、546－7、551－33　他 | 有機農産物 | 19A-0003 |
+| 株式会社　大黒屋 | 工場 | 山口県宇部市大字西岐波1277-11 | 有機加工食品 | 2002-B01 |
+| 株式会社藤本コーポレーション | S1、S2（発生・収穫） | 山口県柳井市南浜３丁目１－１ | 有機農産物 | 農-0153 |
+| 農業クエスト | 6　他 | 山口県岩国市周東町祖生547-1　他 | 有機農産物 | J35A-2010 |

@@ -108,3 +108,30 @@ escribir, no después.
 - **Queserías**: Hokkaido tiene más de 100 obradores y no hay ninguno aquí. Es el
   frente con más recorrido de la isla y sigue sin fuente institucional localizada.
 - Sin abrir: sake (北海道酒造組合), lácteos, marisco, ramen/miso.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 麦わらファーム　梶沼啓 | A　他 | 北海道上川郡当麻町中央7区 | 有機農産物 | A06-062302 |
+| 栗沢あおぞら農園　林宏 | 1　他 | 北海道岩見沢市栗沢町必成99 | 有機農産物 | A06-062301 |
+| 森田 基 | 森田 基 10 他 | 北海道石狩郡新篠津村第36線10番地 他 | 有機農産物 | 2006F-5 |
+| 岩田醸造（株） | 岩田醸造（株）　千歳工場 | 北海道千歳市上長都1130-13 | 有機加工食品 | 第1073号 |
+| 佐藤京一 | 3　他 | 北海道岩見沢市栗沢町茂世丑768-1、768-2　他 | 有機農産物 | A06-080701 |
+| 小路恵子 | 01　他 | 北海道勇払郡安平町追分旭821-2　他 | 有機農産物 | 18002-01 |
+| 池田良英 | 池田良英 | 北海道上川郡新得町上佐幌西1線5-1 | 有機農産物 | 18003-01 |
+| 近藤弘和 | 近藤弘和 | 北海道網走郡津別町活汲 | 有機農産物 | 18006-01 |
+| 津別町有機酪農研究会 | 石川賢一　他 | 北海道網走郡津別町共和229-2　他 | 有機畜産物 | 第TS18016号-02　他 |
+| 早坂農場 | 早坂清彦 H　他 | 北海道上川郡美瑛町ﾙﾍﾞｼﾍﾞ6959-1　他 | 有機農産物 | AFASSEQ-AA-010809 |
+| 畑のがんこもの組合 | 柳澤　繁雄　他 | 北海道上川郡剣淵町西岡町1245番地　他 | 有機農産物 | 第13013号－01　他 |
+| 木村　正幸 | 30　他 | 北海道上川郡剣淵町南桜町2025番地 | 有機農産物 | 第15010号-01 |
+| 安田　盛 | 13　他 | 北海道上川郡剣淵町南桜町525番地 | 有機農産物 | 第15012号-01 |
+| (有)サンユー農産 | A-1　他 | 北海道余市郡仁木町東町12丁目　他 | 有機農産物 | 14001-01 |
+| 中本　正雄 | 中本　正雄 | 北海道岩内郡共和町学田 | 有機農産物 | 15007-01 |
+| 栗山かなまる農園 | ハウスNo.1　他 | 北海道夕張郡栗山町字桜山365　他 | 有機農産物 | 第15001号-01 |
+| クローバーの会 | 浅野　晃彦　１　他 | 北海道旭川市神居町西丘 | 有機農産物 | 第13004号-01　他 |
+| いずみ農園 | O-1　他 | 北海道帯広市西10条北3丁目3　他 | 有機農産物 | 第14006号-01 |
+| 佐伯農園 | O-1　他 | 北海道虻田郡洞爺湖町洞爺町417 | 有機農産物 | 100092001 |
+| オホーツク髙橋農場 | 01 他 | 北海道網走郡美幌町田中1236 | 有機農産物 | A06-110202 |

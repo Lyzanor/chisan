@@ -53,3 +53,30 @@ Frentes que sí quedan abiertos:
 - Wasabi de Izu y Utogi (cultivo en tatami-ishi, patrimonio agrícola mundial).
 - Gremio de sake de Shizuoka, mikan de Mikkabi, pescado de Yaizu (katsuobushi) y
   Numazu (himono), fresa de Kunōzan.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 自然のわ研究会 | 自然のわ研究会　茶再製加工場 | 静岡県島田市金谷猪土居3769-3 | 有機加工食品 | MPJP1333 |
+| 山啓製茶株式会社 | 山啓製茶株式会社 | 静岡県掛川市伊達方323-1 | 有機加工食品 | 202022501 |
+| 掛川市農業協同組合 | 掛川市農業協同組合緑茶加工施設 | 静岡県掛川市千羽1266 | 有機加工食品 | 203040401 |
+| ミヤハラフーズ株式会社 | ミヤハラフーズ株式会社　原料第1倉庫 | 静岡県静岡市清水区中河内878-1、880-1 | 有機加工食品 | 第1293号 |
+| やまさ製茶株式会社 | やまさ製茶株式会社 | 静岡県島田市志戸呂798-1 | 有機加工食品 | 202032304 |
+| （株）かつまた | （株）かつまた　他 | 静岡県富士市大渕3478-1　他 | 有機加工食品 | 第1139号 |
+| 丸福製茶（株） | 丸福製茶（株）　本社工場　他 | 静岡県静岡市葵区若松町25　他 | 有機加工食品 | JM90501K-0234-0 |
+| 茗広茶業（株） | 茗広茶業（株）　本社工場　他 | 静岡県静岡市葵区北番町117-4　他 | 有機加工食品 | JM030513PR-0613-0 |
+| 中村製粉（株） | 中村製粉（株） | 静岡県浜松市中央区和合町1210 | 有機加工食品 | JＮ60810PR-0909-0 |
+| 清茶会 | 清茶会 | 静岡県藤枝市助宗大谷184 | 有機農産物 | 01-036 |
+| 住岡食品株式会社 | 住岡食品株式会社浜北工場　他 | 静岡県浜松市浜名区平口5201-1　他 | 有機加工食品 | カ-03-02 |
+| 株式会社増田採種場 | 株式会社増田採種場 1 他 | 静岡県磐田市気子島983 他 | 有機農産物 | 2001F-38 |
+| 株式会社八木音 | 株式会社八木音 工場 他 | 静岡県藤枝市茶町1丁目1-43 他 | 有機加工食品 | 2002M-4 |
+| 株式会社小柳津清一商店 | 本社工場　他 | 静岡県静岡市駿河区向敷地1-5-38　他 | 有機加工食品 | カ-05-02 |
+| 株式会社浜佐商店 | 株式会社浜佐商店　他 | 静岡県静岡市葵区安西3-11　他 | 有機加工食品 | 200111601 |
+| 丸善製茶（株）　丸子工場 | 丸善製茶（株）　丸子工場　他 | 静岡県静岡市駿河区丸子新田314 | 有機加工食品 | JM80518K-0175-0 |
+| 高砂珈琲（株）　磐田工場 | 高砂珈琲（株）　第一工場　他 | 静岡県磐田市下万能525-1　他 | 有機加工食品 | JT000122PR-0259-0 |
+| 株式会社伊藤園 静岡相良工場 | 株式会社伊藤園 静岡相良工場 | 静岡県牧之原市女神21 | 有機加工食品 | 01-12B |
+| （株）かねも | （株）かねも | 静岡県掛川市掛川70 | 有機加工食品 | JK050426PR-0817-0 |
+| 永倉精麦株式会社 | 永倉精麦株式会社　他 | 静岡県駿東郡長泉町東野50-18　他 | 有機加工食品 | MPJP1081 |

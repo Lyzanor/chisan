@@ -40,3 +40,30 @@ confirmar contra la web de cada bodega.
 - Las 3-5 bodegas restantes del censo.
 - Sin abrir: manzana de Hirosaki (la primera de Japón y no hay ninguna fila),
   sidra, ajo de Takko, vieira y atún de Ōma, 煎餅 de Nanbu.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 有限会社ナチュラルファーム | 松原2南 | 青森県三沢市松原2丁目31-1663 | 有機農産物 | 101051402 |
+| 自然農法はまなす会 | 鈴木 譲 1 他 | 青森県上北郡横浜町三保野51、52-1 他 | 有機農産物 | 2006F-18 |
+| 中里町自然農法研究会 | 横山慶吉 1 他 | 青森県北津軽郡中泊町大字宮川字種取823 他 | 有機農産物 | 2006F-10 |
+| 津軽みらい農協ときわ有機農産物部会 | 古川徹500201　他 | 青森県南津軽郡藤崎町大字福島字萢頭99　他 | 有機農産物 | 101122802 |
+| あおもり南部有機生産組合 | 1 | 青森県上北郡おいらせ町向山東1丁目3220-1 | 有機農産物 | JA001101FA-0146-0 |
+| みちのく有機共同農場 | 目名①　他 | 青森県東通村大字目名新田73　他 | 有機農産物 | NA-07071801 |
+| 有限会社瑞宝 | 加工所 | 青森県北津軽郡中泊町大字中里字宝森339-3 | 有機加工食品 | 2009M-6 |
+| 福士明宏 | 福士明宏 1 他 | 青森県青森市浪岡郷山前字永井17-1～2 他 | 有機農産物 | 2001F-60 |
+| 城田　安幸 | 医果同源アップルバレー | 青森県南津軽郡大鰐町大字長峰字前田ノ沢115-1 | 有機農産物 | JS141111FA-1313-0 |
+| 三上年 | 1 | 青森県弘前市大字宮地字菖富沢73,84　他 | 有機農産物 | JS000828FA-1364-63 |
+| 和楽堂養生農苑 | 留目　昌明 | 青森県三戸郡南部町大字大向字明土39,41,63-1,63-2,65-1（通称：林）　他 | 有機農産物 | 600606P124 |
+| 株式会社ＣＲＴワールド農園ナチュローブ | №8　他 | 青森県十和田市大字大沢田字笹舘195　他 | 有機農産物 | A17-122501 |
+| 北上農園 | 北上俊博　他 | 青森県三戸郡五戸町大字浅水字高森42-1　他 | 有機農産物 | 600606P136 |
+| アピイ ファーム | アピイ ファーム | 青森県東津軽郡平内町大字小湊字前萢53番地365 | 有機農産物 | 600606P145 |
+| 市崎貴之 | 梅田 | 青森県十和田市大字相坂字白上135-16 | 有機農産物 | JI220808FA-1834 |
+| かねさ株式会社 | かねさ株式会社 梵珠工場 | 青森県青森市浪岡大字徳才子字山本44-5 | 有機加工食品 | J02B-2235 |
+| 大石平 | 貝沢 | 青森県弘前市貝沢字沢294　および　307-853の一部 | 有機農産物 | NA-23101801 |
+| ㈱あいない | 27/山際 | 青森県八戸市南郷大字市野沢字高森5 | 有機農産物 | JA231127FA-1954 |
+| すこやか自然農園株式会社 | 東　他 | 青森県上北郡六戸町大字折茂字沖山106-14　他 | 有機農産物 | J02A-2324 |
+| （一社）日本販売農業協同団体連合会 | あおぞら農園　ほ場1　他 | 青森県むつ市大畑町字本門字寺前8番地　他 | 有機農産物 | 2024F-9 |

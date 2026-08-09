@@ -104,3 +104,30 @@ Categoría: `Sake`.
   (兵庫県酒造組合連合会, <https://hyogo-sake.or.jp/>), que agrupa las otras zonas
   (播州, 但馬, 丹波…). Ese listado es el siguiente lote natural.
 - Sin abrir: carne de Tajima/Kobe, 明石 pescado, 淡路 cebolla, soja/miso.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| （株）藤田食品 | （株）藤田食品　本社工場 | 兵庫県川西市東久代2‐6‐5 | 有機加工食品 | 第1056-B号 |
+| 株式会社ファイン | 株式会社ファイン上郡工場　他 | 兵庫県赤穂郡上郡町奥甲931 他 | 有機加工食品 | 05B-002、14C-001、17C-002 |
+| マルカン酢（株） | マルカン酢（株）本社工場 | 兵庫県神戸市東灘区向洋町西5-6 | 有機加工食品 | 第1061号 |
+| 澁谷嘉一 | 1　他 | 兵庫県神戸市西区伊川谷町花折1167他 | 有機農産物 | 01A-008-2 |
+| UCC上島珈琲株式会社六甲アイランド工場 | UCC上島珈琲株式会社　六甲アイランド工場 | 兵庫県神戸市東灘区向洋町西2丁目4番 | 有機加工食品 | MPJP1338 |
+| 中務　喜紹 | 1　他 | 兵庫県豊岡市出石町口小野スクモヅカ2022　他 | 有機農産物 | 06A-010 |
+| 三栄薬品貿易株式会社 | 三栄薬品貿易株式会社　西神研究所 | 兵庫県神戸市西区室谷2-2-5 | 有機加工食品 | 05B-007 |
+| 吉田ピーナツ食品株式会社 | 吉田ピーナツ食品株式会社　本社工場　他 | 兵庫県神戸市長田区神楽町2-3-22　他 | 有機加工食品 | 第1241号 |
+| キングフーズ株式会社 | キングフーズ株式会社本社工場 | 兵庫県高砂市荒井町新浜2丁目12番1号 | 有機加工食品 | 02B-009 |
+| 神戸紅茶(株) | 神戸紅茶(株)　他 | 兵庫県神戸市東灘区住吉浜町16-2　他 | 有機加工食品 | JS010214PR-0607-0 |
+| 井関義次 | 1　他 | 兵庫県丹波篠山市西吹中ノ瀬坪515ｰ1　他 | 有機農産物 | 02A-018 |
+| 後藤透 | 1　他 | 兵庫県丹波篠山市八上上中溝480　他 | 有機農産物 | 02A-021 |
+| （株）ヒヨバク | （株）ヒヨバク　本社工場 | 兵庫県神戸市西区伊川谷町潤和字京田951-1 | 有機加工食品 | 第1133号 |
+| マエカワテイスト（株）　加西工場 | マエカワテイスト（株）　加西工場 | 兵庫県加西市繁昌町字森ガハナ甲903-29 | 有機加工食品 | JM00628PR-0838-0 |
+| 髙木　力 | 圃場1 | 兵庫県丹波市市島町与戸2392 | 有機農産物 | 00A-011 |
+| 有限会社相沢食産 | 相沢食産香寺工場 | 兵庫県姫路市香寺町岩部336-7 | 有機加工食品 | 01B-016 |
+| ハマヤ株式会社　関西工場 | ハマヤ株式会社　関西工場 | 兵庫県伊丹市東有岡3-323 | 有機加工食品 | JH10322PR-0811-0 |
+| 株式会社　山本貢資商店 | （株）山本貢資商店 | 兵庫県西宮市山口町阪神流通センター1-107-1 | 有機加工食品 | JY991005PR-0717-0 |
+| 植垣米菓（株） | 植垣米菓（株） | 兵庫県加古川市平岡町高畑520-10 | 有機加工食品 | JU010202PR-0269-0 |
+| 古跡真一 | 1　他 | 兵庫県加東市山国東野2013-29　他 | 有機農産物 | 05A-003 |

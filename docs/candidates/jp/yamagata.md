@@ -89,3 +89,30 @@ dominio de las doce**. Después bastó un barrido leyendo el cuerpo de cada web.
 - Sin abrir: cereza sato-nishiki y pera La France (Yamagata es la primera de
   Japón en ambas), ternera de Yonezawa, 玉こんにゃく, soba de Murayama, y el
   **vino de Takahata/Nan'yo**, que tiene bodegas históricas y no hay ninguna.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 農事組合法人 庄内協同ファーム | 五十嵐英一　43　他 | 山形県東田川郡三川町大字押切新田字深田15-5　他 | 有機農産物 | AFASSEQ-AA-000902 |
+| 渡部陽一 | 2　他 | 山形県新庄市昭和867-2-ロ　他 | 有機農産物 | S-040 |
+| 石井昭一 | 1　他 | 山形県新庄市大字昭和199-1　他 | 有機農産物 | S-147 |
+| 有限会社ファーマーズクラブ赤とんぼ | オオウナジタ1他 | 山形県東置賜郡高畠町大字高畠大畦下2-2990-1他 | 有機農産物 | AFASSEQ-AA-011101 |
+| 株式会社おきたま興農舎 | 安部慎一郎 1　他 | 山形県米沢市窪田町西川崎2134-イ　他 | 有機農産物 | 13 |
+| ネットワーク21　代表 菅原弘行 | 菅原弘行 ①　他 | 山形県東田川郡三川町大字押切新田字前興39　他 | 有機農産物 | 12 |
+| 株式会社たかはたファーム | 株式会社たかはまファーム　第一工場 | 山形県東置賜郡高畠町大字入生田100 | 有機加工食品 | MPJP1035 |
+| 出羽弥兵衛株式会社 | 出羽弥兵衛株式会社（板垣　弘志） | 山形県鶴岡市羽黒町昼田字下川原7　他 | 有機農産物 | 03-009 |
+| 高畠ワイン有機ぶどう研究会 | （株）高畠ワイナリー８ | 山形県東置賜郡高畠町大字元和田2752 | 有機農産物 | JT040924FA-0755-0 |
+| 井上克浩 | №1　他 | 山形県鶴岡市渡前字大坪80番地　他 | 有機農産物 |  |
+| 株式会社丸十大屋 | （株）丸十大屋　他 | 山形県山形市十日町3-10-1　他 | 有機加工食品 | 01-018B |
+| 農事組合法人　山形おきたま産直センター | 新関拓也　2　他 | 山形県南陽市金沢万平193-ニ・ホ、194-2　他 | 有機農産物 | S-101 |
+| 工藤　賢悦 | 野草人　工藤農場 | 山形県東置賜郡高畠町大字亀岡字石転シ4593　他 | 有機農産物 | 01-053 |
+| 川西自然農法グループ | 高橋健次 1 他 | 山形県東置賜郡川西町大字堀金字萩ノ目1173-2 他 | 有機農産物 | 2006F-13 |
+| 庄内自然農法研究会 | 菅原賢信　他 | 山形県鶴岡市古郡字杉ノ崎139　 他 | 有機農産物 | 2000F-9 |
+| 山形有機うまいもん研究会 | 伊藤藤夫 4 他 | 山形県東置賜郡川西町堀金438 他 | 有機農産物 | 2001F-39 |
+| 佐久間優 | 1　他 | 山形県鶴岡市常磐木字臼井10-11-（1）他 | 有機農産物 | 18 |
+| 農事組合法人太ももの会　代表 渋谷嘉明 | 1　他 | 山形県酒田市広野昭和91-1　他 | 有機農産物 | 17 |
+| 石井　光司 | 石井光司　UF-1　他 | 山形県鶴岡市添川字洗田91－イ　他 | 有機農産物 | JA70417FA-1048-13 |
+| 岡部農園　代表 岡部栄一 | ①　他 | 山形県鶴岡市羽黒町大字仙道一本松72-1-3-(1)　他 | 有機農産物 | 19 |

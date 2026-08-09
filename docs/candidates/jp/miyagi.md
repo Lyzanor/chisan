@@ -72,3 +72,30 @@ porque hace falta decidir entre cuatro candidatos: hacerlo al integrar 川敬商
 - Ningún dominio recogido: primer trabajo de cada lote.
 - Sin abrir: 笹かまぼこ de Sendai, ostra y marisco de Matsushima/Kesennuma, ternera
   de Sendai, arroz Hitomebore, 味噌/醤油.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 井ヶ田製茶株式会社 | 井ヶ田製茶株式会社　お茶の里総合流通センター | 宮城県仙台市若林区卸町1丁目3番2号 | 有機加工食品 | MPJP1158 |
+| 服部コーヒーフーズ（株） | 服部コーヒーフーズ（株）　製造部 | 宮城県仙台市若林区六丁の目元町2-5 | 有機加工食品 | 第1063号 |
+| ライスネット仙台 | ライスネット仙台 | 宮城県登米市迫町新田字下十五丸45 | 有機農産物 | AFASSEQ-AA-040902 |
+| 門傳　仁 | 門傳　仁 | 宮城県栗原市一迫萩生45-A　他 | 有機農産物 | 600606P101 |
+| 松山環境保全米グループ | 小原　勉 | 宮城県大崎市松山金谷字中田308-1,308-2　他 | 有機農産物 | 600606P01A |
+| 黒澤　重雄 | 黒澤重雄 | 宮城県遠田郡涌谷町吉住字新吉住119　他 | 有機農産物 | 600606P104 |
+| 武田英一 | 1 他 | 宮城県大崎市田尻蕪栗新蕪栗沼30　他 | 有機農産物 | S-146 |
+| 有限会社　蕪栗千葉農場 | 3　他 | 宮城県大崎市田尻蕪栗上谷地88～90　他 | 有機農産物 | AFASSEQ-AA-011102 |
+| JA加美よつば　有機米生産部会 | 長沼太一　他 | 宮城県加美郡加美町字下野目清水田40-1,41-1,42　他 | 有機農産物 | 600606P08A |
+| 南方町水稲部会「有機の会」Ｃブロック | 高橋清範　他 | 宮城県登米市南方町新高石浦120　他 | 有機農産物 | 600606P11A |
+| 南方町水稲部会「有機の会」Ｄブロック | 佐々木徳久　他 | 宮城県登米市南方町新間内39,40　他 | 有機農産物 | 600606P12A |
+| 南方町水稲部会「有機の会」Ａブロック | 鎌田善太郎　他 | 宮城県登米市南方町新原浦44　他 | 有機農産物 | 600606P18A |
+| 無農薬生産組合 | 亀ヶ下　他 | 宮城県登米市登米町登米字寺池亀ヶ下234,235,236-1,236-2,237　他 | 有機農産物 | 600606P03A |
+| （有）ヒーロー　黒川支部 | 八嶋　喬　他 | 宮城県黒川郡大和町鶴巣北目大崎字具足沢64-47Ｂ　他 | 有機農産物 | 600606P17A |
+| （有）ヒーロー | （有）ヒーロー | 宮城県大崎市田尻大沢新南善光寺13 | 有機農産物 | 600606P20A |
+| 安部陽一 | 安部陽一 ほ場1 他 | 宮城県遠田郡美里町二郷字慶半東59番地1～2 他 | 有機農産物 | 2002F-35 |
+| 三本珈琲株式会社 | 三本珈琲株式会社　仙台総合工場 | 宮城県黒川郡大和町吉岡東3－2－26 | 有機加工食品 | GMJP1097-02 |
+| 佐藤和也 | 佐藤和也K-1他 | 宮城県加美郡加美町字原町東154他 | 有機農産物 | JA70417FA-0768-7 |
+| 鈴木　要 | 1　他 | 宮城県大崎市田尻小塩字蓬田北4　他 | 有機農産物 | S-163 |
+| 自然農法登米普及会 | 伊藤克成 10 他 | 宮城県登米市南方町新原浦49 他 | 有機農産物 | 2007F-14 |

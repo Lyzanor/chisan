@@ -99,3 +99,30 @@ escribir fila.
   `japansake.or.jp/sakagura/en/ibaraki/`.
 - Ningún dominio comprobado en vivo, y varias filas solo traen la ficha del
   portal: encontrar la web propia es el primer trabajo de cada lote.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 株式会社　オーピーシートレーディング | 株式会社　オーピーシートレーディング　水戸工場 | 茨城県水戸市成沢町457－3 | 有機加工食品 | カ-06-01 |
+| 鯉淵学園農業栄養専門学校 | 鯉淵学園農業栄養専門学校 | 茨城県水戸市鯉淵町5965 | 有機農産物 | 02-003 |
+| 茨城県有機稲作協議会 | 1（墓地裏）　他 | 茨城県筑西市桑山3560　他 | 有機農産物 | AFASSEQ-AA-010806 |
+| (有)森ファームサービス | 1　他 | 茨城県古河市上片田原岸963-1　他 | 有機農産物 | S-033 |
+| 永塚文男 | 1　他 | 茨城県古河市女沼宿下1202-2　他 | 有機農産物 | S-077 |
+| つくばいしだファーム | １　他 | 茨城県つくば市上郷7923　他 | 有機農産物 | AFASSEQ-AA-010802 |
+| 鴻巣　仁 | 鴻巣農園（鴻巣　仁） | 茨城県石岡市小野越亀尻106-2　他 | 有機農産物 | 05-001 |
+| モアーク食品株式会社 | モアーク食品株式会社 モアーク食品 つくば有機農産物加工センター 他 | 茨城県つくば市上郷1068-7 他 | 有機加工食品 | 2006M-4 |
+| 平田敬義 | １　他 | 茨城県稲敷市稲波1861-5・6　他 | 有機農産物 | S-063 |
+| すがの農場有限会社 | 加幸沢田んぼ　他 | 茨城県日立市十王町伊師3746　他 | 有機農産物 | AFASSEQ－AA－010401 |
+| 株式会社朝一番 | 株式会社朝一番　本社工場 | 茨城県土浦市小山田1-265 | 有機加工食品 | 第1026号 |
+| 鈴木　英也 | 鈴木英也農園 | 茨城県石岡市下林字薊ヶ原2448-172　他 | 有機農産物 | 01-016 |
+| (有)くらぶコア | 長久保1　他 | 茨城県行方市次木690-4、5　他 | 有機農産物 | NA-07032901 |
+| 小田　貴史 | 小田農園 | 茨城県小美玉市下吉影2422-1他 | 有機農産物 | 04-020 |
+| 山﨑正志 | 山崎正志5他 | 茨城県坂東市庄右衛門新田川西1060、1061他 | 有機農産物 | JY000828-FA0066-0 |
+| 広瀬　平一郎 | 広瀬農場 | 茨城県石岡市石沢台780他 | 有機農産物 | 01-004 |
+| 柳　志津雄 | 柳農園 | 茨城県小美玉市倉数原山601-69 | 有機農産物 | 04-022 |
+| 鬼沢　寛 | 鬼沢農園 | 茨城県鉾田市烟田内野1851-8他 | 有機農産物 | 04-013 |
+| 金沢　正一 | 金沢農園 | 茨城県鉾田市借宿野子堀2259-4　他 | 有機農産物 | 04-014 |
+| 武藤　大悟 | むとう農園 | 茨城県石岡市栄松14174-3他 | 有機農産物 | 07-006 |

@@ -71,3 +71,30 @@ búsqueda por bodega — no como Yamagata.
   hay cofradías y criaderos con marca; **レモン de Setoda/Ikuchijima** (casi todo
   el limón japonés); もみじ饅頭 (decenas de obradores en Miyajima), 広島菜漬,
   お好み焼き のソース (Otafuku y las casas pequeñas), 比婆牛.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 株式会社セイコー珈琲 | 株式会社セイコー珈琲　安浦工場 他 | 広島県呉市安浦町大字中畑字堀田迫110-1　他 | 有機加工食品 | MPJP1210 |
+| こだま食品株式会社 | こだま食品（株） | 広島県福山市駅家町法成寺1575-9 | 有機加工食品 | 04B-005（05C-007） |
+| （株）ますやみそ　他 | （株）ますやみそ　他 | 広島県呉市焼山西2-2-8　他 | 有機加工食品 | 01-015B |
+| （株）純正食品マルシマ | （株）純正食品マルシマ　新高山工場　他 | 広島県尾道市新高山3-1170-162　他 | 有機加工食品 | JM80202PR-0250-0 |
+| 寺岡有機醸造株式会社 | 寺岡有機醸造（株）　神村工場　他 | 広島県福山市神村町3685-1　他 | 有機加工食品 | JR991020PR-0255-0 |
+| 杉田与次兵衛商店（有） | 杉田与次平衛商店（有）食酢工場 | 広島県尾道市栗原町6345 | 有機加工食品 | JS020115PR-0480-0 |
+| 中国醤油醸造協同組合 | 中国醤油醸造協同組合 | 広島県東広島市河内町中河内190-1 | 有機加工食品 | JC010213PR-0298-0 |
+| こだま試験農場株式会社 | 南山1　他 | 広島県世羅郡世羅町大字小国字南山1703-1　他 | 有機農産物 | 07A-030 |
+| 株式会社出来商店 | 4号ハウス　他 | 広島県東広島市黒瀬町南方字水越1587　他 | 有機農産物 | SES-20070801 |
+| 金光味噌（株） | 金光味噌株式会社出口工場　他 | 広島県府中市出口町1180　他 | 有機加工食品 | 01-006B |
+| 株式会社　椿き家 | 株式会社　椿き家　本社工場　他 | 広島県三原市本郷町南方字1133-1　他 | 有機加工食品 | JT090821PR-1083-0 |
+| 株式会社やまみ | 株式会社やまみ　本社工場 | 広島県三原市沼田西町小原字袖掛73-5 | 有機加工食品 | 第1434号 |
+| センナリ株式会社 | センナリ株式会社　他 | 広島県広島市安佐北区安佐町大字久地2683-25　他 | 有機加工食品 | 130902-001 |
+| 有限会社ニシオカ | 製造所1 | 広島県広島市安佐南区東野3丁目5-3 | 有機加工食品 | 214-002 |
+| 桑田　恒二 | 1　他 | 広島県福山市神辺町川北衆御領937-1、6（ハウス含む）　他 | 有機農産物 | 114-010 |
+| 早志　健太郎 | 1　他 | 広島県東広島市福富町上竹仁段原山843-13　他 | 有機農産物 | 114-049 |
+| 横山　豊富 | 1　他 | 広島県神石郡神石高原町油木乙670　他 | 有機農産物 | 114-072 |
+| 寺岡有機農場有限会社 | 世羅A1　他 | 広島県世羅郡世羅町賀茂10144-151　他 | 有機農産物 | 114-078 |
+| 豆の木 | 山本1　他 | 広島県安芸高田市吉田町下入江1485　他 | 有機農産物 | 115-010 |
+| 引田　義道 | 1　他 | 広島県庄原市東城町竹森751番地　他 | 有機農産物 | 115-023 |

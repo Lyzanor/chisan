@@ -72,3 +72,30 @@ segundo homónimo de este tipo tras `tonosho` en `kagawa.md`.
   la primera productora nacional, con cofradías); 佐賀牛; 呼子のイカ (calamar
   vivo, con lonja propia); 有田焼 y 伊万里焼 (cerámica, fuera de catálogo pero
   arrastran obradores de 器 y té).
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| きたの茶園 | 1　他 | 佐賀県嬉野市嬉野町大字下宿丙2231、2333　他 | 有機農産物 | 0604-A01 |
+| 福田農園 | 圃場１他 | 佐賀県佐賀市木原1丁目359-1　他 | 有機農産物 | SES-1708091 |
+| 株式会社東洋新薬 | 株式会社東洋新薬　鳥栖工場　他 | 佐賀県鳥栖市弥生が丘7-28　他 | 有機加工食品 | SGS/JP/JASO-N002 |
+| 有限会社原製茶園 | 有限会社原製茶園 | 佐賀県武雄市西川登町大字神六20420-1 | 有機加工食品 | 0612-B03 |
+| 岡本正廣 | 1他 | 佐賀県唐津市北波多成渕竹木場2777-2他 | 有機農産物 | 0704-A02 |
+| 有限会社アロマ珈琲 | 有限会社アロマ珈琲三瀬珈琲工房他 | 佐賀県佐賀市三瀬村三瀬92-1他 | 有機加工食品 | 加-0006 |
+| 古賀正孝 | 1-1他 | 佐賀県鳥栖市下野町下畑田1379他 | 有機農産物 | 0705-A04 |
+| 佐賀大学生物資源教育研究センター | 1他 | 佐賀県佐賀市久保泉町下和泉1841他 | 有機農産物 | 0709-A02 |
+| （株）オニザキコーポレーション | （株）オニザキコーポレーション　多久美舎他 | 佐賀県多久市北多久町大字多久原306-23　他 | 有機加工食品 | 第1054号 |
+| 佐藤農場株式会社 | 佐藤農場株式会社 | 佐賀県鹿島市大字飯田乙3574 | 有機加工食品 | 加-0088 |
+| 中村（克）有機農園 | 圃場1 他 | 佐賀県佐賀市三瀬村三瀬土師2180-10他 | 有機農産物 | SES-24103001 |
+| 佐々木励 | 1 | 佐賀県唐津市浜玉町横田上513‐1,514-3 | 有機農産物 | 0090 |
+| 農事組合法人　武雄そだちレモングラスハッピーファーマーズ | 川内圃場団地　他 | 佐賀県武雄市若木大字本部14904－1　他 | 有機農産物 | SES-24122001 |
+| 九州薬品工業株式会社 | 加工工場他 | 佐賀県鳥栖市永吉町580-4他 | 有機加工食品 | SEZ-25010701 |
+| 嬉野オリーブ農園 | 1 他 | 佐賀県嬉野市塩田町大字馬場下畦川内2丙145 他 | 有機農産物 | 1306-A01 |
+| 中島農園 | 中島農園　圃場4他 | 佐賀県杵島郡白石町大字八平新開1055,1056　他 | 有機農産物 | SES-24100101 |
+| 自然社中 | 松尾清美　松尾圃場1他 | 佐賀県伊万里市大坪町乙753-1他 | 有機農産物 | SES-25061101 |
+| 山田農園 | 椎の木　他 | 佐賀県唐津市巌木町天川1000　他 | 有機農産物 | SES-27051101 |
+| 株式会社マルハ園芸 | れんこん洗浄・選別　他 | 佐賀県杵島郡白石町大字新拓46-4 | 有機加工食品 | 1508-B01 |
+| 合同会社Ｒelation　Ｔea | 第一工場他 | 佐賀県武雄市山内町三間坂甲13350-1他 | 有機加工食品 | SEZ-28012001 |

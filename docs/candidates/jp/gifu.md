@@ -42,3 +42,30 @@ confirmar contra la web de cada bodega.
 - Sin abrir: **飛騨牛** (una de las tres grandes carnes de Japón, con marca
   registrada y ganaderías identificables), 富有柿 de Motosu, 朴葉味噌, 鮎 del
   Nagara (pesca con cormorán, patrimonio), 和菓子 de Gifu, 岐阜提灯 (no alimentario).
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 成瀬三郎 | 成瀬三郎1号　他 | 岐阜県瑞浪市日吉町5579　他 | 有機農産物 | JN060822FA-1297-0 |
+| （株）ますぶち園 | （株）ますぶち園　第1、2工場 | 岐阜県加茂郡白川町黒川1400 | 有機加工食品 | JM990320PR-0328-0 |
+| 内堀醸造株式会社 | 内堀醸造株式会社 | 岐阜県加茂郡八百津町伊岐津志437-1 | 有機加工食品 | 01-001B |
+| 株式会社真誠 | 株式会社真誠インダストリアル・パーク関ヶ原工場 他 | 岐阜県不破郡関ヶ原町玉1565-10　他 | 有機加工食品 | 23-05 |
+| 岐阜県しょうゆ協業組合 | 岐阜県しょうゆ協業組合 | 岐阜県恵那市武並町竹折451 | 有機加工食品 | JI000612-PRO0169-1 |
+| コスモスライクス（株） | コスモスライクス（株）他 | 岐阜県可児市西帷子字東野571他 | 有機加工食品 | 07-046B |
+| 稲葉ピーナツ株式会社 | 稲葉ピーナッツ（株）第１、第３工場　他 | 岐阜県岐阜市六条大溝4-2-5　他 | 有機加工食品 | JI000925PR-0063-0 |
+| 有限会社久世食品 | 本社工場 他 | 岐阜県岐阜市東島4丁目10番13号 他 | 有機加工食品 | 2003M-3 |
+| 岐阜県立恵那農業高等学校 | 1 | 岐阜県恵那市大井町2625-17 | 有機農産物 | 21-02 |
+| 株式会社センコー技研 | 大野工場　他 | 岐阜県揖斐郡大野町加納223-1 | 有機加工食品 | MPJP1617 |
+| 株式会社お茶の玉露園 | （株）お茶の玉露園　第一工場　他 | 岐阜県羽島郡岐南町上印食3-67-1　他 | 有機加工食品 | 2013M-1 |
+| ネオナチュラル母袋有機農場 | C1 他 | 岐阜県郡上市大和町栗巣1077　他 | 有機農産物 | JN130402FA-1268-4 |
+| 株式会社谷田商店 | 株式会社谷田商店 工場 | 岐阜県揖斐郡池田町段貝籠232 | 有機加工食品 | 21-08 |
+| 株式会社瑞草園 | 本社工場 他 | 岐阜県揖斐郡池田町六之井659 他 | 有機加工食品 | 21-09 |
+| アイガモ稲作研究会 | 1 他 | 岐阜県羽島市桑原町大須4-45-1 | 有機農産物 | 21-10 |
+| 兼松宣仁 | 1 他 | 岐阜県各務原市蘇原月丘町4-1-3 他 | 有機農産物 | 21-11 |
+| 株式会社ポテンシャル農業研究所 | 1 他 | 岐阜県高山市一之宮町1776-2 | 有機農産物 | 21-12 |
+| 有限会社山藏農園 | 有限会社山藏農園 | 岐阜県高山市江名子町７６７　他 | 有機農産物 | 15-003 |
+| 株式会社中津川サラダ農園 | 株式会社中津川サラダ農園 | 岐阜県中津川市駒場1944 | 有機農産物 | 160831-001 |
+| 小林生麺株式会社 | 製造所1　他 | 岐阜県岐阜市白山町1－22　他 | 有機加工食品 | 217－004 |

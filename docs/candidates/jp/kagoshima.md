@@ -53,3 +53,30 @@ Geográfica (薩摩焼酎). Categoría para todas: `Destilados y licores`.
 - Sin abrir: **かつお節 de Makurazaki** (la primera del país, con obradores
   familiares); 鹿児島黒豚 y 黒牛; **té de Kagoshima** (segunda de Japón tras
   Shizuoka y creciendo); さつまいも; 桜島小みかん y 桜島大根; あくまき.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 有限会社塗木製茶工場 | 有限会社塗木製茶工場 | 鹿児島県南九州市知覧町西元11713 | 有機加工食品 | 加工23号 |
+| 宇都口農園 | １他 | 鹿児島県霧島市牧園町三体堂持山1998-1、1998-8、1998-26他 | 有機農産物 | 12号 |
+| 宇都口製茶 | 宇都口製茶 | 鹿児島県霧島市牧園町三体堂1761-1 | 有機加工食品 | 加工1号 |
+| 有限会社小牧緑峰園 | １他 | 鹿児島県南さつま市金峰町大野原口3234他 | 有機農産物 | 168号 |
+| 橋口農園（橋口典明） | １他 | 鹿児島県いちき串木野市湊町小字山口349-1他 | 有機農産物 | 40号 |
+| 伊地知製茶 | 1　他 | 鹿児島県曽於市大隅町月野牛次郎9483-1他 | 有機農産物 | 176号 |
+| 株式会社春日園川路製茶 | くわ１　他 | 鹿児島県日置市伊集院町中川597-1他 | 有機農産物 | 57号 |
+| いぶすき農業協同組合茶業センター | いぶすき農業協同組合えい茶業センター | 鹿児島県南九州市頴娃町上別府1546 | 有機加工食品 | 加工9号 |
+| 有限会社古市製茶 | 有限会社古市製茶 | 鹿児島県南九州市川辺町永田1296-1 | 有機加工食品 | 加工37号 |
+| 鹿児島製茶株式会社 | 鹿児島製茶株式会社錦江流通センター他 | 鹿児島県鹿児島市錦江町6番26号他 | 有機加工食品 | 加工4号 |
+| 坂元醸造株式会社 | 第3工場　他 | 鹿児島県霧島市福山町福山3066-4　他 | 有機加工食品 | 加工32号 |
+| ＪA南さつま知覧茶業センター | ＪA南さつま知覧茶業センター | 鹿児島県南九州市知覧町郡17285 | 有機加工食品 | 加工21号 |
+| お茶工房　田中園 | お茶工房　田中園 | 鹿児島県出水市上大川内2704-30 | 有機加工食品 | 0605-B02 |
+| クリンティかごしま株式会社 | 23 他 | 鹿児島県南九州市頴娃町上別府3820-7　他 | 有機農産物 | 66号 |
+| 株式会社福山こめ酢 | 株式会社　福山こめ酢 | 鹿児島県霧島市福山町福山4115-1 | 有機加工食品 | 加工15号 |
+| 株式会社お茶の沢田園 | 株式会社お茶の沢田園 | 鹿児島県鹿児島市南栄3-11 | 有機加工食品 | 加工55号 |
+| 山麓園 | 山麓園 | 鹿児島県熊毛郡屋久島町麦生335‐257　他 | 有機農産物 | 94号 |
+| 有限会社おりた園 | 有限会社おりた園 | 鹿児島県南九州市知覧町塩屋15712番地 | 有機加工食品 | 加工36号 |
+| 株式会社　堀口園 | 株式会社堀口園本社工場　他 | 鹿児島県志布志市有明町野神字大堀3451-8　他 | 有機加工食品 | 加工1003号 |
+| 折田園 | 1 他 | 鹿児島県南九州市知覧町西元上塚13251 他 | 有機農産物 | 71 |

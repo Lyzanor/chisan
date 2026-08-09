@@ -55,3 +55,30 @@ de historia. Categoría para todas: `Destilados y licores`.
   identificables; **シークヮーサー de Ogimi**; 海ぶどう; 島とうがらし y コーレー
   グース; 紅芋 de Yomitan; ゴーヤー; 沖縄そば (con gremio propio); 石垣牛 y
   あぐー豚; 塩 de Miyako e Ishigaki.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 宮古島亜熱帯有機農業生産組合 | 砂川重信①　他 | 沖縄県宮古島市下地字来間443-1、443-2、444　他 | 有機農産物 | JS000828FA-0145-26 |
+| 株式会社丸海あきら | MM-01 | 沖縄県浦添市伊祖3-43-8 | 有機農産物 | IOTA-SS-01 |
+| 松八 | NT-01(b) 他 | 沖縄県中頭郡中城村字伊舎堂209　他 | 有機農産物 | IOTA-SS-03 |
+| 有限会社あらぐさ | AG-01　他 | 沖縄県島尻郡八重瀬町東風平字宜次218-1　他 | 有機農産物 | IOTA-SS-21 |
+| 農業生産法人（株）熱帯資源植物研究所 | 農業生産法人（株）熱帯資源植物研究所 | 沖縄県糸満市真栄平1158-1 | 有機農産物 | 2009F-15 |
+| 伊佐　真幸 | ISA01 | 沖縄県那覇市首里石嶺町4-40 | 有機農産物 | IOTA-SS-37 |
+| 仲村　直子 | NN01,03 | 沖縄県中頭郡北中城村字荻道底田原595, 596-1　他 | 有機農産物 | IOTA-SS-36 |
+| 有限会社月桃農園 | GN01 | 沖縄県うるま市勝連浜宜野湾201　他 | 有機農産物 | IOTA-SS-34 |
+| 外間　修 | HO-02　他 | 沖縄県中頭郡西原町幸地谷那堂1065,1065　他 | 有機農産物 | IOTA-SS-44 |
+| 伊芸農園 | 伊芸農園－１～６ | 沖縄県国頭郡大宜味村字津波1971-50　他 | 有機農産物 | IOTA-SS-43 |
+| 城間　清栄 | 松真農園－01他 | 沖縄県南城市佐敷字冨祖崎兼久原264-1　他 | 有機農産物 | IOTA-SS-38 |
+| 農業生産法人　㈲琉球アロエ | 琉球アロエオーガニック農場 | 沖縄県国頭郡今帰仁村字渡喜仁２６９番地 　他 | 有機農産物 | IOTA-SS-48 |
+| 新島ファーム | 前川畑№1　他 | 沖縄県中頭郡西原町字我謝前川256-1，257-1他 | 有機農産物 | IOTA-SS-56 |
+| ゆんなみファーム | 後原畑№1、№2 | 沖縄県中頭郡西原町字安室213-5，213-2 | 有機農産物 | IOTA-SS-57 |
+| 農業生産法人　株式会社石垣島胡椒園 | 有機ほ場①他 | 沖縄県石垣市字平得1021番地 | 有機農産物 | IOTA-SS-59 |
+| 小橋川ファーム沖縄 | 小橋川ファーム沖縄No.1他 | 沖縄県中頭郡西原町兼久371-1他 | 有機農産物 | IOTA-SS-60 |
+| 有限会社沖縄長生薬草本社 | CHOUSEI有機ほ場No１他 | 沖縄県南城市佐敷字仲伊保原99-1,103,111 | 有機農産物 | IOTA-SS-61 |
+| おきなわオーガニック産地育成協議会 | 泉川農園①　他 | 沖縄県中頭郡北中城村渡口410　他 | 有機農産物 | IOTA-SS-62 |
+| 農業生産法人(株)シーフォーグループ | 有機ほ場①他 | 沖縄県宮古島市下地字上地1016-1他 | 有機農産物 | IOTA-SS-63 |
+| ソフィエル・ペアー（株） | 幸地①ほ他 | 沖縄県中頭郡西原町幸地下安次座906番地1他 | 有機農産物 | IOTA-SS-65 |

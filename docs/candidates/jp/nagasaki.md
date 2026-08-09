@@ -45,3 +45,30 @@ Categoría para todas: `Sake`, salvo lo que se indique. El rōmaji de `nombre` y
   (Fukusaya, Bunmeido y decenas de obradores pequeños), el frente más obvio;
   びわ (níspero, primera de Japón), 五島うどん y 五島の椿油, 島原そうめん,
   長崎和牛, あごだし (caldo de pez volador), 波佐見焼 (cerámica).
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 長工醤油味噌協同組合 | 長工醤油味噌協同組合 | 長崎県大村市溝陸町815 | 有機加工食品 | 010409-001 |
+| （有）手のべ陣川 | （有）手のべ陣川 | 長崎県南島原市北有馬町己564-1 | 有機加工食品 | JJ010322PR-0741-0 |
+| 長崎有機農業研究会 | 溝田督史　上大峰　他 | 長崎県南島原市南有馬町己780、781-1.2、782-1　他 | 有機農産物 | AFASSEQ-AA-010301 |
+| 農業法人夢有民農場有限会社 | 圃場1他 | 長崎県南島原市布津町坂下名船石原4669-66他 | 有機農産物 | SES-180322 |
+| アリアケファーム（株） | アリアケファーム㈱　11 | 長崎県諫早市中央干拓11、12番地 | 有機農産物 | 2009F-5 |
+| ひらどオーガニック | 栽培場他 | 長崎県平戸市前津古町字ナゴサ592－1他 | 有機農産物 | SES-25070101 |
+| 農業法人有限会社きのこ屋 | 農業法人有限会社きのこ屋加工場 | 長崎県平戸市前津吉町605他 | 有機加工食品 | SEZ-26102901 |
+| 有限会社グリーンティ五島 | 製茶工場他 | 長崎県五島市岐宿町岐宿2905番地2他 | 有機加工食品 | SEZ-28041881 |
+| （有）お茶の秋月園 | お茶の秋月園工場 | 長崎県長崎市富士見町16-9 | 有機加工食品 | 1703-B01 |
+| 長崎ＥＣＯＦ | １　他 | 長崎県雲仙市吾妻町大字永中名1307-1　他 | 有機農産物 | 1038号 |
+| 株式会社雲仙きのこ本舗　有機エノキグループ | 株式会社雲仙きのこ本舗　有機エノキグループ | 長崎県南島原市有家町尾上3147　　他 | 有機農産物 | 420GM-1701 |
+| 株式会社雲仙きのこ本舗　有機マイタケグループ | 株式会社雲仙きのこ本舗　有機マイタケグループ | 長崎県南島原市有家町尾上3147　　他 | 有機農産物 | 420GM-1703 |
+| 農事組合法人ごとう茶生産組合 | 圃場1（コンカナ王国2）他 | 長崎県五島市上大津町蟹丁水2479-イ他 | 有機農産物 | SES-28041801 |
+| ナチュラルファーミング合同会社 | 1　他 | 長崎県雲仙市吾妻町阿母名字大熊44-2　他 | 有機農産物 | 1193号 |
+| 宝緑園 | 宝緑園　茶園1（下南）他 | 長崎県北松浦郡佐々町八口免350他 | 有機農産物 | SES-02030401 |
+| 株式会社アイル　田平工場 | 株式会社アイル　田平工場 他 | 長崎県平戸市田平町小手田免419-1 他 | 有機加工食品 | SEZ-03042701 |
+| ごと株式会社 | ごと　E1:51001他 | 長崎県五島市高田町1399他 | 有機農産物 | SES-04021801 |
+| 有限会社北村製茶 | 圃場番号１ | 長崎県北松浦郡佐々町迎木場免４２５番地１８ | 有機農産物 | SES-04101902 |
+| 百笑会プラス | 1　他 | 長崎県東彼杵郡波佐見町村木郷1687,1689,1685　他 | 有機農産物 | 2305-A01 |
+| 雲仙農園 | 2　他 | 長崎県雲仙市吾妻町永中名永中道256番　他 | 有機農産物 | 42-01 |

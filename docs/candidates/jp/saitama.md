@@ -51,3 +51,30 @@ Ninguna trae dominio. Categoría: `Sake`. Excluida 松岡醸造, ya arriba.
   bastantes más bodegas que la única que trae el listado.
 - Sin abrir: té de Sayama (de los tres grandes de Japón, y no aparece ninguno),
   fideos udon de Musashino, negi de Fukaya, batata de Kawagoe.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 共立食品（株）　品質管理部 | 共立食品工業（株）　稲荷工場 | 埼玉県草加市稲荷5-13 | 有機加工食品 | 1012-A |
+| 狭山茶　増岡園 | 狭山茶　増岡園 | 埼玉県入間市上谷ケ貫562　他 | 有機加工食品 | 202050701 |
+| 自然農法上里生産組合 | 岩田弘一　他 | 埼玉県児玉郡上里町八町河原2341、2342　他 | 有機農産物 | 9706-201-00 |
+| ヤマキ醸造株式会社 | ヤマキ醸造株式会社　他 | 埼玉県児玉郡神川町大字下阿久原955　他 | 有機加工食品 | 060821-001 |
+| 高橋ソース株式会社 | 高橋ソース（株）本社工場 他 | 埼玉県本庄市下野堂604-7　他 | 有機加工食品 | 010618-001 |
+| 有限会社　豆太郎 | 有限会社　豆太郎　他 | 埼玉県本庄市寿3-3-16　他 | 有機加工食品 | 061102-001 |
+| UCC上島珈琲株式会社北関東工場 | UCC上島珈琲株式会社　北関東工場 | 埼玉県熊谷市万吉2643-17 | 有機加工食品 | MPJP1090-01 |
+| 有限会社島田食品 | 有限会社島田食品 他 | 埼玉県富士見市大字東大久保163　他 | 有機加工食品 | AFASSEQ-AP-001203 |
+| 美鈴コーヒー株式会社 | 美鈴コーヒー株式会社　川口工場 | 埼玉県川口市川口1－9－33 | 有機加工食品 | カ-06-03 |
+| キャピタル株式会社 | キャピタル株式会社　川口工場 | 埼玉県川口市弥平3丁目6番17号 | 有機加工食品 |  |
+| 弓削多醤油(株) | 弓削多醤油(株)　他 | 埼玉県坂戸市多和目475　他 | 有機加工食品 |  |
+| 井上スパイス工業株式会社 | 井上スパイス工業株式会社 | 埼玉県上尾市上野491-1 | 有機加工食品 | Ｂ09-122301 |
+| 江原　浩昭 | ガバレ農場 | 埼玉県鴻巣市前砂310　他 | 有機農産物 | 10-002 |
+| ＴＳＵＲＵＯＫＡファーム | 鶴岡英俊 | 埼玉県三郷市高洲2-338　他 | 有機農産物 | 9910-203-00 |
+| 大畑農場 | 1　他 | 埼玉県比企郡吉見町万光寺字前方81-1　他 | 有機農産物 | S-202 |
+| 髙橋製麺株式会社 | 髙橋製麺株式会社 | 埼玉県鴻巣市笠原2620番地　他 | 有機加工食品 | 121113-001 |
+| オーガニックファーム　ふくだ | 福田伸一 | 埼玉県熊谷市板井1646-1 他 | 有機農産物 | 0815-207-00 |
+| 日本のうえん | 日本のうえん（八須　理明） | 埼玉県児玉郡神川町大字新宿字大清水865-1　他 | 有機農産物 | 8215-208-00 |
+| 株式会社　えもり農園 | 江守広章 | 埼玉県熊谷市大塚杉戸田204-1　他 | 有機農産物 |  |
+| ヤマキ醸造株式会社（豆庵豆腐工房） | ヤマキ醸造株式会社（豆庵豆腐工房） | 埼玉県児玉郡神川町大字下阿久原955 | 有機加工食品 | 150903-001 |

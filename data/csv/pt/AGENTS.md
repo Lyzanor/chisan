@@ -2,7 +2,7 @@
 
 ## Operating state
 - Phase: targeted expansion and maintenance after reviewing the current candidate backlog. Derive published-row queues with `npx pnpm check:defects --country pt`.
-- Two unresolved candidates remain parked in `docs/candidates/pt/**` for lack of current evidence; row and exclusion decisions live in `data/evidence/pt/**`.
+- Residual candidates without sufficient current evidence remain parked in `docs/candidates/pt/**`; row and exclusion decisions live in `data/evidence/pt/**`.
 
 ## Country rules
 - `municipio` is the concelho, never the freguesia, localidade or district; retain the smaller locality in `direccion`.

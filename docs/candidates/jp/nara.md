@@ -83,3 +83,30 @@ Queda **una sin integrar**:
 - Sin abrir: **té de Yamato** (大和茶, sin fuente institucional localizada aún),
   persimón de Gojo/Nishiyoshino (Nara es la segunda de Japón), 柿の葉寿司,
   奈良漬 (encurtido en sake kasu, ligado a las bodegas de arriba).
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| 株式会社　松音商会 | （株）松音商会　他 | 奈良県大和郡山市北郡山町63-2　他 | 有機加工食品 | JM010831PR-0426-0 |
+| 大和まごころ会 | 熊代敬三　1　他 | 奈良県五條市牧町2512　他 | 有機農産物 | JY110922FA-1163-0 |
+| 片上醤油 | 片上醤油 | 奈良県御所市森脇329 | 有機加工食品 | 03B-002 |
+| （有）山口農園 | ア他 | 奈良県宇陀市榛原大貝674　他 | 有機農産物 | ＪＹ001027FA-0062-0 |
+| 白銀オーガニック | 白銀オーガニックA 他 | 奈良県五條市西吉野町奥谷1897　他 | 有機加工食品 | 0702-01 |
+| 京都グレインシステム株式会社 | 京都グレインシステム（株）奈良工場 | 奈良県奈良市小倉町1224 | 有機加工食品 | 04B-001 |
+| 吉野川（紀ノ川）エコネット1 | 新開き2　他 | 奈良県五條市西吉野町湯塩35　他 | 有機農産物 | NA-08120901 |
+| 福光園 | 福井製茶工場 他 | 奈良県奈良市都祁白石町198　他 | 有機加工食品 | 29-04 |
+| 吉野川（紀ノ川）エコネット3 | 家の下　他 | 奈良県五條市西吉野町平沼田1333　他 | 有機農産物 | NA-09022601 |
+| 吉野川（紀ノ川）エコネット4 | 家の上 他 | 奈良県五條市大深町中畑垣内388-3、383　他 | 有機農産物 | NA-09022602 |
+| 株式会社パンドラファームグループ | 株式会社パンドラファームグループ　第一センター　他 | 奈良県五條市霊安寺町良峯1554　他 | 有機加工食品 | 212022701 |
+| 前川勝人 | 圃場番号1 他 | 奈良県宇陀市榛原上井足2530　他 | 有機農産物 | (JM120727FA-1197-0) |
+| 長木　節次 | 圃場番号1 他 | 奈良県宇陀市榛原上井足2540　他 | 有機農産物 | JC120629FA-1195-0 |
+| 滝グループ | 墓の下　他 | 奈良県御所市原谷1107　他 | 有機農産物 | NA-13071601 |
+| 旭製粉株式会社 | 旭製粉株式会社 | 奈良県桜井市上之宮67-2 | 有機加工食品 |  |
+| 有限会社上田玄米茶屋 | 有限会社上田玄米茶屋 | 奈良県橿原市小槻町346-1 | 有機加工食品 | MPJP1772 |
+| 山村　栄次 | 圃場1　他 | 奈良県宇陀市榛原澤1559(ハウス1～5)　他 | 有機農産物 | 00A-006 |
+| 腰岡　大聖 | 露地Ａ　他 | 奈良県宇陀市大字陀東平尾４７３ | 有機農産物 | JK150311FA-1328-0 |
+| フジエダ珈琲株式会社 | フジエダ珈琲株式会社 | 奈良県大和郡山市大江町112－1 | 有機加工食品 | 16B-003、16C-002 |
+| 上久保淳一 | ほ場1 | 奈良県奈良市月ヶ瀬桃香野4096-3 | 有機農産物 | 29-07 |

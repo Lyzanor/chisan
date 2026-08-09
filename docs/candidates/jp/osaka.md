@@ -43,3 +43,30 @@ confirmar contra la web de cada bodega.
   con GI, Kishiwada/Izumisano), 能勢 y 河内 (verdura de montaña), 河内ワイン y
   **柏原の葡萄・ワイン** (zona vitícola histórica, ninguna bodega en el CSV),
   昆布 y 佃煮 de Osaka, 醤油 de Sakai.
+
+## Lote JAS ecológico nacional — 2026-08-08
+
+Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
+
+| Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
+|---|---|---|---|---|
+| UCC上島珈琲株式会社大阪工場 | UCC上島珈琲株式会社　大阪工場 | 大阪府高槻市辻子3-1-3 | 有機加工食品 | MPJP1461 |
+| （株）心斎橋門田苑 | （株）心斎橋門田園　物流本部 | 大阪府松原市西野々1-8-23 | 有機加工食品 | 第1258号 |
+| 有限会社 阪急泉南グリーンファーム | No.7-2ハウス　他 | 大阪府泉南市幡代2005　他 | 有機農産物 | 0411-01 |
+| （株）ユニオンコーヒーロースターズ | （株）ユニオンコーヒーロースターズ　他 | 大阪府茨木市豊原町6-10　他 | 有機加工食品 | JU010228PR-0310-0 |
+| リボン食品製造（株） | リボン食品製造（株）　第一工場 | 大阪府大阪市淀川区三津屋南3-14-4 | 有機加工食品 | JR020910PR-0559-0 |
+| 小西製薬（株）　高井田工場 | 小西製薬（株）　高井田工場 | 大阪府大阪市高井田本通2-5-26 | 有機加工食品 | JU041207PR-0773-2 |
+| 株式会社藤原商店 | 株式会社藤原商店 | 大阪府岸和田市田治米町110番地 | 有機加工食品 | 03B-003 |
+| 中嶋泰人 | 1　他 | 大阪府交野市私市4丁目113番地　他 | 有機農産物 | 01A-039 |
+| （株）向井珍味堂 | （株）向井珍味堂 | 大阪府大阪市平野区加美西1-12-18 | 有機加工食品 | JY991005PR-0098-2 |
+| カタギ食品株式会社 | カタギ食品株式会社　寝屋川工場　他 | 大阪府寝屋川市石津元町12-8　他 | 有機加工食品 | 第1047号 |
+| 日本粉末薬品（株）枚岡工場 | 日本粉末薬品（株）枚岡工場　他 | 大阪府東大阪市宝町13-36　他 | 有機加工食品 | JN040210PR-0756-0 |
+| 中尾食品工業（株） | 中尾食品工業株式会社 第一工場 他 | 大阪府堺市西区草部715番地 他 | 有機加工食品 | 2002M-9 |
+| 堀田直子 | １ | 大阪府岸和田市塔原町上平10-1 | 有機農産物 | 27-13 |
+| ハマヤ株式会社　茨木工場 | ハマヤ株式会社　茨木工場他 | 大阪府茨木市横江2-2-4　他 | 有機加工食品 | JH10322PR-0307-0 |
+| 株式会社やまつ辻田 | （株）やまつ辻田　他 | 大阪府堺市中区福田280　他 | 有機加工食品 | 07B-012、07C-012 |
+| （株）久保養蜂園 | （株）久保養蜂園 | 大阪府和泉市九鬼町601 | 有機加工食品 | JK010213PR-1032-0 |
+| （株）コムズライヴリ　高石工場 | （株）コムズライヴリ　高石工場　他 | 大阪府高石市高師浜丁4-15　他 | 有機加工食品 | JK011127PR-1058-0 |
+| 上野農園 | カイト　他 | 大阪府堺市中区深井畑山町169-1　他 | 有機農産物 | 1110-01A |
+| 株式会社フリゴ　北港物流センター | 株式会社フリゴ　北港物流センター | 大阪府大阪市此花区北港白津1丁目7番11号 | 有機加工食品 | MPJP1711 |
+| 株式会社大和川食産 | 株式会社大和川食産 | 大阪府東大阪市水走4-8-4 | 有機加工食品 | 09B-004 |
