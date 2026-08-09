@@ -10,7 +10,6 @@ Lote de descubrimiento de 2026-08-08 a partir del directorio oficial de venta di
 | 't Fonteinveld | Bever | Hoevewinkel | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/hoevewinkel/t-fonteinveld) |
 | 't Fruitratje | Bierbeek | Hoevewinkel | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/hoevewinkel/t-fruitratje) |
 | 't Keekje | Pepingen | Hoevewinkel | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/hoevewinkel/t-keekje) |
-| 't Legumenhofke | Bierbeek | CSA-boerderij | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/csa-boerderij/t-legumenhofke) |
 | 't PlukGeluk | Leuven | CSA-boerderij | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/csa-boerderij/t-plukgeluk) |
 | 't Silsomhof | Kortenberg | Hoevewinkel | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/hoevewinkel/t-silsomhof) |
 | 't Stappeshof | Opwijk | Hoevewinkel | [ficha VLAM](https://www.lekkervanbijons.be/producten/rechtvanbijdeboer/verkooppunten/hoevewinkel/t-stappeshof) |

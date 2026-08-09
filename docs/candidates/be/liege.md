@@ -5,7 +5,6 @@ Lote de descubrimiento de 2026-08-08 a partir del mapa oficial «Je Cuisine Loca
 | Nombre declarado | Dirección/localidad declarada | Tipo y productos en la fuente | Fuente |
 |---|---|---|---|
 | BIOLEJEUNE.S SPRL | Jevigné 25A Lierneux 4990 Lierneux 4990 | Producteur — Légumes | [ficha Apaq-W](https://jecuisinelocal.be/producteurs-artisans/biolejeune-s-sprl/) |
-| Brasserie de Warsage | Rue Muller 93 Dalhem 4607 Dalhem 4607 | Producteur — Boissons, Bières | [ficha Apaq-W](https://jecuisinelocal.be/producteurs-artisans/brasserie-de-warsage/) |
 | Epicurium Beer | Chantraine 2 boite 1 Thimister-Clermont 4890 Thimister-Clermont 4890 | Producteur — Boissons, Bières | [ficha Apaq-W](https://jecuisinelocal.be/producteurs-artisans/epicurium-beer/) |
 | Ferme Marchal | Rue des Bada 1 Faimes 4317 Faimes 4317 | Producteur — Viandes et charcuterie, Agneau, Chèvre | [ficha Apaq-W](https://jecuisinelocal.be/producteurs-artisans/ferme-marchal/) |
 | HoneyHoney | Poyoux Sarts 25 Huy 4500 Huy 4500 | Producteur — Épicerie, Confiture, compote, sirops, … | [ficha Apaq-W](https://jecuisinelocal.be/producteurs-artisans/honeyhoney/) |
