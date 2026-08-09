@@ -47,11 +47,28 @@ test("every check declares a kind", () => {
 });
 
 test("coverage gaps that may stay open forever are señales, not colas", () => {
-  // Empty is a valid end state for both: images are a 60% target and evidence
-  // is advisory. Counting them as workload inflates the union ~6x and buries
-  // the real overlap.
+  // Empty is a valid end state for all three: images are a 60% target, evidence
+  // is advisory, and docs/GEOLOCATION.md rules that a missing coordinate is a
+  // coverage signal because some rows correctly end with none. Counting them as
+  // workload inflates the union ~6x and buries the real overlap.
   const senales = CHECKS.filter((c) => c.kind === "senal").map((c) => c.id);
-  assert.deepEqual(senales.sort(), ["sin-evidencia", "sin-imagen"]);
+  assert.deepEqual(senales.sort(), ["sin-coordenada", "sin-evidencia", "sin-imagen"]);
+});
+
+test("a row is off the map only when both coordinate cells are empty", () => {
+  // A half-filled pair is a blocking error in check:csv. Reporting it here too
+  // would put one metric under two owners, which is what keeps the centroid
+  // checks out of this script.
+  const check = CHECKS.find((c) => c.id === "sin-coordenada");
+  const rows = [
+    { slug: "con-punto", lat: "41.3874", lon: "2.1686" },
+    { slug: "sin-punto", lat: "", lon: "" },
+    { slug: "media-fila", lat: "41.3874", lon: "" },
+  ];
+  assert.deepEqual(
+    check.run({ rows }).map((r) => r.slug),
+    ["sin-punto"],
+  );
 });
 
 test("published falsehood is always a cola", () => {

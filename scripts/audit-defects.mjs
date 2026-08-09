@@ -412,7 +412,22 @@ export const CHECKS = [
   // No `geo-sin-check` here on purpose: check:csv already reports it per file
   // as "geo-check skipped", using a centroid lookup with community-aware
   // overrides that this script would have to reimplement. Two tools disagreeing
-  // on one metric is worse than one tool owning it.
+  // on one metric is worse than one tool owning it. The centroid-fallback count
+  // stays there for the same reason: check:csv prints it as "centroid fallback
+  // coordinates" off the same lookup.
+  //
+  // What is left is the one geographic state no gate measures at all. A row with
+  // both cells empty never reaches that centroid block, so it is not an error,
+  // not a warning, and not in either count: it simply is not on the map.
+  {
+    id: "sin-coordenada",
+    kind: "senal",
+    label: "sin `lat`/`lon`: la fila no aparece en el mapa",
+    hint: "docs/GEOLOCATION.md; el punto es la unidad productiva, y una celda vacía es mejor que un punto convincente y equivocado",
+    // Both cells: a half-filled pair is a blocking contract error and belongs to
+    // check:csv, not to an advisory coverage count.
+    run: ({ rows }) => rows.filter((r) => !r.lat && !r.lon),
+  },
   {
     id: "categoria-variante",
     kind: "cola",
