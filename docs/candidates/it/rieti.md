@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
-| ALTA MONTAGNA BIO SOCIETA AGRICOLA SEMPLICE | Accumoli | LOCALITA MADONNA DELLE COSTE 02011 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-09-01 | [IT-BIO-006.380-0105277.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0105277.2025.001.pdf) |
 | ALVINO ERIKA | Fiamignano | VICOLO DELLA CANONICA 7 02023 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-02-23 | [IT-BIO-004.380-0022370.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0022370.2026.001.pdf) |
 | ANDRE KATHY | Poggio Nativo | VIA SALARIA VECCHIA SN, C 02030 | producción — vegetales sin transformar | 2029-02-18 | [IT-BIO-022.380-0015887.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-022.380-0015887.2026.001.pdf) |
 | AZ.AGR.BIO.RURA COLIMUS DI RONCORONI EUGENIO | Casperia | VIA ROMA 90 LOC. PARANZANO 02041 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-15 | [IT-BIO-004.380-0101822.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0101822.2025.001.pdf) |

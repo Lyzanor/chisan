@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
-| ACQUALAGNA TARTUFI S.R.L. | Acqualagna | VIA C.COLOMBO N.2/A 61041 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-02-18 | [IT-BIO-004.380-0001296.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0001296.2026.001.pdf) |
 | AGRI PALAZZOLO DI SACCHI ANDREA | Mercatello sul Metauro | Via Mercato Nord, 14/E 61040 | producción — vegetales sin transformar | 2028-10-02 | [IT-BIO-009.380-0034954.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0034954.2025.001.pdf) |
 | AGRICOLA G&G SRLS | Colli al Metauro | VIA MOMBAROCCESE SNC 61036 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-11-02 | [IT-BIO-004.380-0087431.2025.005](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0087431.2025.005.pdf) |
 | AGRITURISMO DAI MORI DI POGGIASPALLA SILVIA | Isola del Piano | STRADA DELLE VALLI 5 61030 | producción — vegetales sin transformar | 2029-02-17 | [IT-BIO-009.380-0042062.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0042062.2026.001.pdf) |

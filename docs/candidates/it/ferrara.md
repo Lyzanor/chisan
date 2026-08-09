@@ -21,6 +21,7 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | VENIERI BARBARA | Argenta | VIA G GALASSI N 27 44011 | producción — vegetales sin transformar | 2028-06-04 | [IT-BIO-007.380-0010697.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0010697.2025.001.pdf) |
 | VERTUANI GIANLUCA - GESTIONI AGRICOLE VERTUANI | Portomaggiore | VIA G.BRUNO 52 44015 | producción — vegetales sin transformar | 2028-06-27 | [IT-BIO-007.380-0089815.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0089815.2025.002.pdf) |
 | ZANDI CARLO | Ferrara | VIALE CAVOUR 20 44121 | producción — vegetales sin transformar | 2028-06-03 | [IT-BIO-009.380-0057663.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0057663.2025.001.pdf) |
-| ALBA SRL | Poggio Renatico | VIA UCCELLINO, 140 44028 | preparación — animales y productos de acuicultura | 2028-05-20 | [IT-BIO-004.380-0100407.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0100407.2025.001.pdf) |
-| COFRIMAR SRL | Argenta | VIA NICOLO' COPERNICO, 14/A 44011 | preparación — animales y productos de acuicultura, vegetales sin transformar | 2028-05-19 | [IT-BIO-004.380-0100352.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0100352.2025.001.pdf) |
-| LA PIZZA LEGGERA S.R.L. | Cento | Via Europa, 4 44042 | preparación — animales y productos de acuicultura | 2029-01-25 | [IT-BIO-014.380-0097777.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0097777.2026.001.pdf) |
+
+## Resolución no obvia — 2026-08-09
+
+- **COFRIMAR SRL** — La actividad oficial actual es el almacenamiento frigorífico y el procesado de `petfood`, no una oferta pública propia para alimentación humana. Se conserva un registro `reject` en el ledger de evidencia del área.

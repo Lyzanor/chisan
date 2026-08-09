@@ -24,3 +24,7 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BARBA GIUSEPPA | Campobello di Licata | VIA SINCACO GIOVANNI SIRAGU 2 92023 | producción — vegetales sin transformar | 2028-05-22 | [IT-BIO-006.380-0100562.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0100562.2025.001.pdf) |
 | BARBERA ANNA GABRIELLA | Menfi | VIA GARIBALDI 260 92013 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-09-29 | [IT-BIO-012.380-0056202.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0056202.2025.002.pdf) |
 | BAVETTA DOMENICO | Montevago | VIA PIERSANTI MATTARELLA SNC 92010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-11-11 | [IT-BIO-004.380-0109468.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0109468.2025.001.pdf) |
+
+## Retención no obvia — 2026-08-09
+
+- **AZIENDE AGRICOLE RAVIDA' SOCIETA' AGRICOLA A.R.L. IN LIQUIDAZIONE** — La marca Ravidà mantiene web y ficha pública activas, pero el titular certificado figura expresamente `IN LIQUIDAZIONE`; se retiene hasta confirmar continuidad jurídica entre el certificado y la identidad pública actual.

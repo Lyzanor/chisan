@@ -4,7 +4,6 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
-| AGRIBESK DI FRISON DAVIDE | Oleggio | Via Bedisco 77 28047 | producción — vegetales sin transformar | 2029-05-12 | [IT-BIO-012.380-0019295.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0019295.2026.001.pdf) |
 | Apicoltura Gattoni Paola | Cressa | Via Salvemini, 8 28012 | producción — ganado y productos ganaderos sin transformar | 2027-09-09 | [IT-BIO-008.380-0084658.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0084658.2024.001.pdf) |
 | APICOLTURA MASTROIANNI MERI | Boca | VIA BRUGHIERA, 5 28010 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2028-11-27 | [IT-BIO-008.380-0112272.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0112272.2026.001.pdf) |
 | APOSTOLO CARLA MARIA TERESA | Oleggio | VIA GALLARATE, 33/A 28047 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura | 2027-03-15 | [IT-BIO-007.380-0031445.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0031445.2026.001.pdf) |

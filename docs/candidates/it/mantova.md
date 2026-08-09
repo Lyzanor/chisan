@@ -21,6 +21,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | SOLIMAGO SOC. AGRICOLA DI ANTONELLA E SIMONETTA LICATA | Solferino | VIA NAPOLEONE III 37 46040 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-06-17 | [IT-BIO-009.380-0031719.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0031719.2025.001.pdf) |
 | VISINI CARLO | Asola | STRADA SAN PIETRO LAVACCHIELLO, 1 46041 | producción — vegetales sin transformar | 2027-06-11 | [IT-BIO-007.380-0041133.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0041133.2026.001.pdf) |
 | Zilioli Denis | Gonzaga | Via Luigi Einaudi, 15 46023 | producción — vegetales sin transformar | 2027-06-24 | [IT-BIO-005.380-0025809.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0025809.2025.002.pdf) |
-| EUROZOO SRL | Revere | Via Della Resistenza 10 46036 | preparación — alimentos transformados, animales y productos de acuicultura | 2028-04-13 | [IT-BIO-015.380-0098519.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0098519.2025.001.pdf) |
 | FORNO ARVATI SRL | Mantua | VIA GIORDANO DI CAPI 46100 | preparación — animales y productos de acuicultura | 2028-09-11 | [IT-BIO-023.380-0106130.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0106130.2025.001.pdf) |
 | RISERIA CAMPANINI S.R.L. | San Giorgio Bigarello | VIA GHISIOLO 67 46030 | preparación — animales y productos de acuicultura, vegetales sin transformar | 2028-05-05 | [IT-BIO-009.380-0014019.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0014019.2025.001.pdf) |
+
+## Resolución no obvia — 2026-08-09
+
+- **EUROZOO SRL** — La identidad pública actual suministra productos agrícolas y `petfood`, no una oferta propia apta para el catálogo de alimentación humana. Se conserva un registro `reject` en el ledger de evidencia del área.
