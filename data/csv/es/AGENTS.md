@@ -8,6 +8,7 @@
 - `municipio` is the official municipality, not a barrio, distrito, pedanía, parroquia or comarca; retain the smaller locality in `direccion`.
 - Place a row in the province of the productive unit, not the province of a head office, regulatory council, appellation or retail outlet.
 - Preserve the producer's and authority's public Spanish, Catalan, Galician or Basque spelling; do not translate proper names to make rows look uniform.
+- CartoCiudad may normalize the type of road. A candidate remains reviewable when name, number, postcode and municipality match an independently published productive address; never rewrite the CSV or accept a different road only because the normalized portal is nearby.
 
 ## Source ceilings
 - Denomination councils, certification registers and autonomous or provincial producer directories support only the membership, product, identity or location they actually publish. They do not by themselves prove current activity, a public own offer or online sales.

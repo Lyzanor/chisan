@@ -32,6 +32,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `docs/CSV_CONTRACT.md`: published-row schema, field and empty-value semantics, controlled values, cross-field invariants and validation model.
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types and decision records.
 - `docs/EDITORIAL_POLICY.md`: decision model for eligibility, verification, exclusions and online sales.
+- `docs/GEOLOCATION.md`: producer coordinate workflow — productive-unit sourcing, geocoding, precision, review and future tooling.
 - `docs/IMAGES.md`: producer image workflow — format, sourcing, naming, enrichment tooling, junk signatures.
 
 ## Hard Invariants
@@ -44,6 +45,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `Venta online` is required and must be `sí`, `no`, or `no comprobado`; use `no comprobado` until reviewed. `Canal de venta` is optional, meaningful only when `Venta online=sí`, and follows `docs/CSV_CONTRACT.md`.
 - `lat`/`lon` more than 100 km from the `municipio` centroid is blocking; 15-100 km is a warning. Both centroid files are keyed by country first, so a `municipio` is only ever matched inside its own country and a name shared with another one cannot collide. For homonyms inside a country, fix `data/reference/municipality-overrides.json`, not correct producer coordinates — its second level is region slugs, which are unique inside a country.
 - A `municipio` with no centroid has no geographic gate at all: the audit skips the row and counts it instead of failing. It also counts coordinates copied from municipality centroids as coarse fallbacks. Read both counts before treating a green run as geographically checked or precisely located.
+- Follow `docs/GEOLOCATION.md` when finding coordinates: identify the productive unit before geocoding, inspect candidates, and keep an honest empty or centroid fallback when no exact point is supportable.
 - Evidence is optional and advisory, but preferred at decision time for adds, re-verifications, resolved online sales, rejections, purges, and merges.
 - Producer images live under `public/productores/[country]/[region]/[area]/`; follow `docs/IMAGES.md` — inspect candidates first and apply `enrich:images` per slug.
 

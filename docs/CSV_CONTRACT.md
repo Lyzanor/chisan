@@ -16,6 +16,7 @@ decide which entities qualify or how research is performed:
   decision but never overrides the CSV.
 - `AGENTS.md` owns runtime boundaries, routing invariants, the editing workflow
   and validation gates.
+- `docs/GEOLOCATION.md` owns coordinate sourcing, geocoding and review.
 - `docs/IMAGES.md` owns image sourcing and preparation.
 
 Validators prove conformance, not truth. Editorial correctness remains the
@@ -168,6 +169,8 @@ Allowed channel tokens:
 Multiple tokens use `|`, for example `ecommerce|whatsapp`; order has no meaning.
 
 ## Geography contract
+
+Coordinate sourcing and review live in `docs/GEOLOCATION.md`.
 
 `lat` and `lon` are either both filled or both empty. They locate the productive
 unit when known. A municipality centroid may be used as an explicit coarse
