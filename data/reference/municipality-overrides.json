@@ -146,6 +146,14 @@
         "region": "catalunya"
       }
     ],
+    "cervo": [
+      {
+        "lat": 43.6703,
+        "lon": -7.4106,
+        "label": "Cervo (Lugo)",
+        "region": "galicia"
+      }
+    ],
     "colmenar": [
       {
         "lat": 36.90581,

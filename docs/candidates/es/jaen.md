@@ -5,17 +5,24 @@
 > 9); lo integrado está en `data/csv/andalucia/jaen.csv` y el detalle por lote en
 > el historial git. Aquí solo queda la cola sin resolver.
 
-## Cola pendiente — DOP Sierra de Segura (3, baja prioridad)
+## Cola pendiente — DOP Sierra de Segura (2, baja prioridad)
 
-Dedup contra `jaen.csv` rehecho el 2026-08-03: las tres siguen sin fila. Sin web
+Dedup contra `jaen.csv` rehecho el 2026-08-03: las dos siguen sin fila. Sin web
 propia localizada; el aprendizaje de los cortes anteriores es que la etiqueta
 «sin web» del registro suele ser errónea y casi todas estas cooperativas tienen
 marca propia y tienda online → buscar antes de darlas por `parcial`.
 
-- [ ] **S.C.A. Gutamarta** — Aceite. Cortijos Nuevos (Segura de la Sierra).
-  953 496 279.
 - [ ] **S.C.A. Ntra. Sra. de Nazaret** — Aceite. Chiclana de Segura. 953 466 016.
+  Último intento 2026-08-09: el consejo la clasifica únicamente como
+  **almazara**, no como marca, y no publica ningún producto propio atribuible;
+  directorios confirman fabricación y envasado, pero no una oferta pública con
+  identidad propia. Se mantiene abierta: la ausencia de marca en el registro no
+  basta para un `reject`.
 - [ ] **S.C.A. Ntra. Sra. de los Milagros** — Aceite. Municipio a confirmar.
+  Municipio resuelto: **Villarrodrigo**, aldea de Onsares. Último intento
+  2026-08-09: el consejo y Cooperativas Agro-alimentarias la clasifican como
+  almazara y confirman actividad/contacto, pero no aparece marca ni oferta
+  propia; se mantiene abierta por el mismo motivo que Nazaret.
 
 ## Avisos reutilizables
 

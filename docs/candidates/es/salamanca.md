@@ -8,10 +8,7 @@ el listado común de la **D.O. Arribes**, que cruza Zamora y Salamanca, y el
 registro **ITACyL** de la I.G.P. Garbanzo de Fuentesaúco, cuya zona amparada
 también cruza las dos provincias.
 
-**Cinco ya tienen fila en `salamanca.csv`** (Arribes del Duero, Quinta de las
-Velas, Álvarez Legumbres, Legumbres Montes y Legumer Precocinados) y se han
-retirado de esta nota. Quedan estas cinco, sin verificar: comprobar municipio,
-actividad y venta antes de darlas de alta. Dedup rehecho el 2026-08-03.
+Tras el cierre del 2026-08-09 solo queda una entrada sin resolver.
 
 ### D.O. Arribes
 
@@ -19,19 +16,10 @@ actividad y venta antes de darlas de alta. Dedup rehecho el 2026-08-03.
   Donaloba, Areales y Cruz de San Pedro, de Chus Bartolomé y Jon Dowson, sobre
   cuatro hectáreas de viñedo viejo recuperado. Categoría **Bodega**. Su dominio
   `lacasita-wine.com` no resuelve; hay que buscar presencia viva actual.
-- [ ] **Bodegas Ribera de Pelazas** — Pereña de la Ribera. Vinos Abadengo, Gran
-  Abadengo y Bruñal de cepas de 60 a 100 años. Categoría **Bodega**.
-  `bodegasriberadepelazas.com` sirve hoy una portada de dominio en venta y
-  `bodegasriberadepelazascompra.com` no resuelve: confirmar si sigue activa.
-- [ ] **Bodegas Las Gavias** — Pereña de la Ribera.
-- [ ] **Bodegas Viña Romana** — Villarino de los Aires.
-
-Las Gavias y Viña Romana las localizó el consejo regulador (`doarribes.es`)
-durante la primera pasada de Zamora; conviene contrastarlas con fuente propia.
-
-### I.G.P. Garbanzo de Fuentesaúco (registro ITACyL 2026)
-
-- [ ] **Hijo de Macario Marcos S.L.** — La Vellés. Categoría **Legumbres**.
+  Último intento 2026-08-09: no figura entre las bodegas asociadas vigentes de
+  la D.O. Arribes, el dominio continúa sin resolver y solo aparecen directorios
+  históricos o reventa de cosechas antiguas. No hay prueba afirmativa de cierre,
+  por lo que se mantiene abierta y no se crea `reject`.
 
 Aviso reutilizable: estar inscrito en una I.G.P. o D.O. cuya zona amparada
 incluye Fuentesaúco o Fermoselle **no** sitúa la empresa en Zamora. En los diez

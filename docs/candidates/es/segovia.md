@@ -14,10 +14,11 @@ una a una todavía.
 | Bodega | Municipio | Web publicada por la DOP |
 |---|---|---|
 | Centaura | Fuentidueña | — |
-| González Fischer | Sacramenia | gonzalezfischer.com |
-| Pago el Almendro | Navalilla | — |
-| Valmenia | Sacramenia | bodegasvalmenia.com |
-| Zarraguilla | Sacramenia | bodegaszarraguilla.es |
 
-La D.O.P. declara nueve bodegas inscritas; las otras cuatro (Finca Cárdaba,
-Navaltallar, Ribera del Duratón y Vagal/José Galindo) ya están en el CSV.
+Último intento 2026-08-09: la DOP vigente confirma a Centaura como bodega de
+Fuentidueña, pero no publica contacto, vinos o una identidad comercial más allá
+del nombre y no se ha localizado ninguna fuente propia o institucional adicional.
+La admisión aún no acredita una oferta propia trazable, así que se mantiene sin
+resolver; no hay base afirmativa para `reject`.
+
+Las otras ocho bodegas del registro ya están en el CSV.
