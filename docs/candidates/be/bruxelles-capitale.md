@@ -1,7 +1,7 @@
 # Candidatos — bruxelles-capitale
 
-Lote de descubrimiento de 2026-08-08 a partir del directorio oficial Good Food de Bruxelles Environnement, filtrado por «Acteur Bruxellois» y por productor vegetal, productor animal o transformador. Se han excluido coincidencias directas con el CSV actual. La ficha respalda la existencia de un actor alimentario bruselense y la actividad declarada, pero antes de publicar hay que confirmar que la elaboración es propia, que sigue activa y que la dirección corresponde a la unidad productiva; los proyectos formativos o colectivos requieren especial cautela.
+Revisión individual del lote Good Food de 2026-08-08: el candidato permanece retenido. La actividad y la venta directa están vigentes en 2026, pero no corresponde a una unidad productora estable que pueda publicarse como una sola ficha.
 
-| Nombre declarado | Municipio declarado | Tipo Good Food | Actividad declarada | Fuente |
-|---|---|---|---|---|
-| Espace test agricole | Anderlecht | Producteur végétal | Hortalizas frescas y de temporada | [ficha Good Food](https://goodfood.brussels/fr/commerces/espace-test-agricole) |
+| Candidato retenido | Estado | Motivo y fuentes revisadas |
+|---|---|---|
+| Espace test agricole | En espera | Es una infraestructura gestionada por Graines de Paysans que presta parcelas y medios a hasta diez proyectos agrícolas temporales. La [ficha Good Food](https://goodfood.brussels/fr/commerces/espace-test-agricole) y la [información municipal de 2026](https://www.anderlecht.be/fr/node/7841) confirman producción y mercado colectivos, pero los productores cambian y deben evaluarse como unidades independientes. |
