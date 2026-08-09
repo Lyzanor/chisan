@@ -1244,6 +1244,34 @@
         "region": "shikoku"
       }
     ],
+    "wakasa": [
+      {
+        "lat": 35.549015,
+        "lon": 135.908203,
+        "label": "Wakasa (若狭町, Fukui)",
+        "region": "chubu"
+      },
+      {
+        "lat": 35.34014,
+        "lon": 134.40094,
+        "label": "Wakasa (若桜町, Tottori)",
+        "region": "chugoku"
+      }
+    ],
+    "yamato": [
+      {
+        "lat": 35.48753,
+        "lon": 139.45803,
+        "label": "Yamato (大和市, Kanagawa)",
+        "region": "kanto"
+      },
+      {
+        "lat": 32.685387,
+        "lon": 130.990448,
+        "label": "Yamato (山都町, Kumamoto)",
+        "region": "kyushu-okinawa"
+      }
+    ],
     "yuzawa": [
       {
         "lat": 39.16444,

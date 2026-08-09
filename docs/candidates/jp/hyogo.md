@@ -65,6 +65,11 @@ para que la próxima pasada no tenga que re-deducirlo.
 - **松竹梅酒造** (marca 灘一, Nishinomiya) es empresa distinta de **宝酒造** (marca
   松竹梅). Nombres casi idénticos: no fusionar filas.
 
+**Revisión 2026-08-09:** Takara Shuzo sigue retenida. La dirección de Kobe es
+una planta del grupo de Kioto y no se localizó una identidad minorista autónoma
+de esa unidad que justifique una fila propia. Revisar si aparece una marca de
+planta; no tratarlo como descarte definitivo.
+
 ## Fuera de Nada (11, pasada 2026-08-04)
 
 Primera mordida al resto de la prefectura, que es lo que pedía el «Qué falta».

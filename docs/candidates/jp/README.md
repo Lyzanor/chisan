@@ -10,6 +10,16 @@ fichero identifica la asociación o fuente concreta usada.
 > candidatos nuevos, todos `unverified`. Ninguno abierto en vivo. Detalle y
 > estado, en la cabecera de cada fichero.
 
+> **Revisión integral 2026-08-09:** revisados los **940 candidatos del lote JAS**
+> y los **12 casos heredados que no casaban literalmente con el CSV**. Se
+> integraron 69 productores con fuente pública viva y unidad productiva
+> localizada; Kakukyu Hatcho Miso y Sekinoichi Shuzo ya estaban publicados bajo
+> su identidad comercial. Quedan 869 JAS en sus ficheros de prefectura porque la
+> búsqueda no dio todavía una combinación suficiente de identidad pública,
+> actividad productora y enlace fiable. Los ocho casos de grupo, planta o escala
+> discutible se conservan fechados en la nota de su prefectura; no deben
+> reinterpretarse como descartes definitivos en la siguiente pasada.
+
 ## El gremio de bebida es la fuente que generaliza
 
 Para este barrido, **cada prefectura tiene un gremio de bebida alcohólica y

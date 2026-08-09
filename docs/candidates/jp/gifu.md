@@ -50,8 +50,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
 |---|---|---|---|---|
 | 成瀬三郎 | 成瀬三郎1号　他 | 岐阜県瑞浪市日吉町5579　他 | 有機農産物 | JN060822FA-1297-0 |
-| （株）ますぶち園 | （株）ますぶち園　第1、2工場 | 岐阜県加茂郡白川町黒川1400 | 有機加工食品 | JM990320PR-0328-0 |
-| 内堀醸造株式会社 | 内堀醸造株式会社 | 岐阜県加茂郡八百津町伊岐津志437-1 | 有機加工食品 | 01-001B |
 | 株式会社真誠 | 株式会社真誠インダストリアル・パーク関ヶ原工場 他 | 岐阜県不破郡関ヶ原町玉1565-10　他 | 有機加工食品 | 23-05 |
 | 岐阜県しょうゆ協業組合 | 岐阜県しょうゆ協業組合 | 岐阜県恵那市武並町竹折451 | 有機加工食品 | JI000612-PRO0169-1 |
 | コスモスライクス（株） | コスモスライクス（株）他 | 岐阜県可児市西帷子字東野571他 | 有機加工食品 | 07-046B |

@@ -145,7 +145,7 @@ misma fuente, el gremio.
 
 | nombre | municipio | categoría | A/B | web |
 |---|---|---|---|---|
-| Yukiguni Maitake | Minamiuonuma | Setas | A | maitake.co.jp ⚠ cotizada, cultivo industrial: candidata a descarte por masa |
+| Yukiguni Maitake | Minamiuonuma | Setas | A | maitake.co.jp ⚠ revisada 2026-08-09: cotizada y de cultivo industrial; retenida por escala, no descartada definitivamente |
 | Echigo Beer | Niigata | Cerveza | B | echigobeer.com |
 
 ## Trampas vistas
@@ -192,6 +192,5 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 有限会社エーエフカガヤキ | １　他 | 新潟県新潟市江南区沢海1丁目624　他 | 有機農産物 | A－05－0055 |
 | 農事組合法人　木津みずほ生産組合 | 1 | 新潟県新潟市新潟市江南区木津天王杉1688－1　他 | 有機農産物 | A－05－0056 |
 | 斉藤　勇雄 | １他 | 新潟県阿賀野市駒林千刈8204　他 | 有機農産物 | A－05－0057 |
-| 高橋農園 | １他 | 新潟県新潟市南区七穂字七穂323　他 | 有機農産物 | A－00－0009 |
 | 株式会社ごはん | A3-7　他 | 新潟県中魚沼郡津南町下船渡己6257　他 | 有機農産物 | A－00－0010 |
 | 有限会社　ファーミング・スタッフ | １他 | 新潟県柏崎市西山町北野字仲田3604,3605　他 | 有機農産物 | A－00－0012 |

@@ -79,7 +79,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
 |---|---|---|---|---|
-| きたの茶園 | 1　他 | 佐賀県嬉野市嬉野町大字下宿丙2231、2333　他 | 有機農産物 | 0604-A01 |
 | 福田農園 | 圃場１他 | 佐賀県佐賀市木原1丁目359-1　他 | 有機農産物 | SES-1708091 |
 | 株式会社東洋新薬 | 株式会社東洋新薬　鳥栖工場　他 | 佐賀県鳥栖市弥生が丘7-28　他 | 有機加工食品 | SGS/JP/JASO-N002 |
 | 有限会社原製茶園 | 有限会社原製茶園 | 佐賀県武雄市西川登町大字神六20420-1 | 有機加工食品 | 0612-B03 |

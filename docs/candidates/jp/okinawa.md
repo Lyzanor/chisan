@@ -27,11 +27,14 @@ de historia. Categoría para todas: `Destilados y licores`.
 | Helios Shuzo | ヘリオス酒造 | Nago |
 | Yamakawa Shuzo | 山川酒造 | Motobu |
 | Nakijin Shuzo | 今帰仁酒造 | Nakijin |
-| Takazato Shuzosho | 田嘉里酒造所 | Ogimi |
 | Izena Shuzosho | 伊是名酒造所 | Izena |
 | Iheya Shuzo | 伊平屋酒造所 | Iheya |
 
 ## Trampas
+
+- **Revisión 2026-08-09:** Takazato Shuzosho era la identidad histórica del ya
+  publicado `yanbaru-shuzo-ogimi`; se retira de la cola como resuelto, no como
+  descarte.
 - ⚠ **石川酒造場 (Nishihara, Okinawa)** no es 石川酒造 (Fussa, Tokio), en
   `tokyo.md`. Y ojo: **石川** es además un barrio de うるま市 y el nombre de una
   prefectura entera (`ishikawa.md`). Tres cosas, un rōmaji.
@@ -65,7 +68,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 宮古島亜熱帯有機農業生産組合 | 砂川重信①　他 | 沖縄県宮古島市下地字来間443-1、443-2、444　他 | 有機農産物 | JS000828FA-0145-26 |
 | 株式会社丸海あきら | MM-01 | 沖縄県浦添市伊祖3-43-8 | 有機農産物 | IOTA-SS-01 |
 | 松八 | NT-01(b) 他 | 沖縄県中頭郡中城村字伊舎堂209　他 | 有機農産物 | IOTA-SS-03 |
-| 有限会社あらぐさ | AG-01　他 | 沖縄県島尻郡八重瀬町東風平字宜次218-1　他 | 有機農産物 | IOTA-SS-21 |
 | 農業生産法人（株）熱帯資源植物研究所 | 農業生産法人（株）熱帯資源植物研究所 | 沖縄県糸満市真栄平1158-1 | 有機農産物 | 2009F-15 |
 | 伊佐　真幸 | ISA01 | 沖縄県那覇市首里石嶺町4-40 | 有機農産物 | IOTA-SS-37 |
 | 仲村　直子 | NN01,03 | 沖縄県中頭郡北中城村字荻道底田原595, 596-1　他 | 有機農産物 | IOTA-SS-36 |
@@ -74,7 +76,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 伊芸農園 | 伊芸農園－１～６ | 沖縄県国頭郡大宜味村字津波1971-50　他 | 有機農産物 | IOTA-SS-43 |
 | 城間　清栄 | 松真農園－01他 | 沖縄県南城市佐敷字冨祖崎兼久原264-1　他 | 有機農産物 | IOTA-SS-38 |
 | 農業生産法人　㈲琉球アロエ | 琉球アロエオーガニック農場 | 沖縄県国頭郡今帰仁村字渡喜仁２６９番地 　他 | 有機農産物 | IOTA-SS-48 |
-| 新島ファーム | 前川畑№1　他 | 沖縄県中頭郡西原町字我謝前川256-1，257-1他 | 有機農産物 | IOTA-SS-56 |
 | ゆんなみファーム | 後原畑№1、№2 | 沖縄県中頭郡西原町字安室213-5，213-2 | 有機農産物 | IOTA-SS-57 |
 | 農業生産法人　株式会社石垣島胡椒園 | 有機ほ場①他 | 沖縄県石垣市字平得1021番地 | 有機農産物 | IOTA-SS-59 |
 | 小橋川ファーム沖縄 | 小橋川ファーム沖縄No.1他 | 沖縄県中頭郡西原町兼久371-1他 | 有機農産物 | IOTA-SS-60 |

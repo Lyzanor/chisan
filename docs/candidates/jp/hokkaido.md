@@ -49,7 +49,6 @@ El rōmaji de `nombre` y `municipio` es propuesta a confirmar.
 | DUE PUNTI | DUE PUNTI | Hokuto | due-punti-vineyards.com |
 | Ebeotsu Wein | えべおつWein | Takikawa ⚠ | facebook.com/ebeotsu.Wein |
 | De Montille & Hokkaido | ド・モンティーユ＆北海道 | Hakodate | demontille-hokkaido.com |
-| Domaine Towa | ドメーヌトワ | Takasu | (sin dominio en la fuente) |
 
 ⚠ **Las dos fuentes se contradicen en el municipio**, y siempre por lo mismo:
 una da la **sede social** y la otra la **bodega**. Manda dónde se produce.
@@ -58,6 +57,14 @@ una da la **sede social** y la otra la **bodega**. Manda dónde se produce.
 - おとべワイナリー: Sapporo (sede de 札幌酒精) vs Otobe (bodega) → Otobe.
 - えべおつWein: Takikawa (barrio de Ebeotsu) vs Eniwa → resolver en la web propia.
 - 松原農園: Rankoshi vs Niseko → resolver en la web propia.
+
+**Revisión 2026-08-09:** Domaine Towa era una variante del ya publicado
+`domaine-toi-takasu`; se retira de la cola, no es un descarte. **Yotsuba Milk
+Products** queda retenida por ser una federación nacional con varias plantas y
+sin una unidad local minorista inequívoca. **Yokoyama Flour Milling** queda
+retenida por perfil B2B y falta de municipio productivo. **Godo Shusei
+Asahikawa** queda retenida porque la fuente identifica una planta de grupo, no
+una identidad productora local autónoma. Son decisiones revisables, no rechazos.
 
 ## Fuera del vino (4, del listado aportado 2026-08-04)
 
@@ -130,7 +137,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 安田　盛 | 13　他 | 北海道上川郡剣淵町南桜町525番地 | 有機農産物 | 第15012号-01 |
 | (有)サンユー農産 | A-1　他 | 北海道余市郡仁木町東町12丁目　他 | 有機農産物 | 14001-01 |
 | 中本　正雄 | 中本　正雄 | 北海道岩内郡共和町学田 | 有機農産物 | 15007-01 |
-| 栗山かなまる農園 | ハウスNo.1　他 | 北海道夕張郡栗山町字桜山365　他 | 有機農産物 | 第15001号-01 |
 | クローバーの会 | 浅野　晃彦　１　他 | 北海道旭川市神居町西丘 | 有機農産物 | 第13004号-01　他 |
 | いずみ農園 | O-1　他 | 北海道帯広市西10条北3丁目3　他 | 有機農産物 | 第14006号-01 |
 | 佐伯農園 | O-1　他 | 北海道虻田郡洞爺湖町洞爺町417 | 有機農産物 | 100092001 |

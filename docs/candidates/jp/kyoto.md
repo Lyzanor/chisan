@@ -51,7 +51,8 @@ publica el dominio de ninguno**: sirve para censo y municipio, no para enlace.
 - ⚠ **小山本家酒造** tiene su sede en **さいたま市 (Saitama)** — está en
   `saitama.md` — y en Fushimi opera una planta. Si la unidad de Kioto no tiene
   marca e identidad propias, la fila correcta es la de Saitama, no ésta
-  (`docs/EDITORIAL_POLICY.md`, grupos).
+  (`docs/EDITORIAL_POLICY.md`, grupos). **Revisada 2026-08-09:** se retiene por
+  esa duda de identidad de planta; no es un descarte definitivo.
 - **伏見 (Fushimi) es un 区 de la ciudad de Kioto**, no un municipio: la fila lleva
   `Kyoto`. Lo mismo que ya se resolvió para Uji y las casas de té del CSV.
 - **月桂冠 y 黄桜** son grupos grandes con distribución nacional: entran por
@@ -75,11 +76,8 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
 |---|---|---|---|---|
-| 株式会社カネ七畠山製茶 | 本社工場 | 京都府京都市伏見区向島橋詰町786 | 有機加工食品 | 01B-015 |
 | （有）　中井製茶場 | （有）　中井製茶場 | 京都府相楽郡和束町中市場14-1 | 有機加工食品 | JN70725PR-0101-0 |
 | 京都飲料株式会社 | 京都飲料株式会社 | 京都府京都市南区久世東土川町265 | 有機加工食品 | 02-026B |
-| 高橋食品工業株式会社 | 高橋食品工業（株） | 京都府京都市伏見区向島善阿弥町62 | 有機加工食品 | 01B-002 |
-| 童仙房茶舗 | 布施田雅浩茶園1 | 京都府相楽郡南山城村童仙房三郷田7番地 | 有機農産物 | JD001215FA-0284-0 |
 | （株）福寿園　山城工場 | （株）福寿園　山城工場 | 京都府木津川市山城町上狛東作り道11-1 | 有機加工食品 | JF001010PR-0173-0 |
 | 大洋産業株式会社 | 大洋産業（株） | 京都府宇治市大久保町平盛71-1 | 有機加工食品 | 06B-008 |
 | (株)播磨園製茶 | 大川碾茶工場 | 京都府綴喜郡宇治田原町南高座1 | 有機農産物 | JH010130FA-0241-0 |

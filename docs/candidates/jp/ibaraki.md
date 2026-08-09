@@ -15,14 +15,12 @@ fila que hay que acotar antes de escribirla.
 | Isemata Beikoku Seifun | Hitachiota | Pan y cereal | A | soba-isemata.com |
 | Iijima Chikusan | Hokota | Carne | A | iijima1129.co.jp |
 | Iiyama Seicha | Yachiyo | Té e infusiones | A | ficha exports.pref.ibaraki.jp (id 715446) |
-| Sashima Tea Producer Export Council | Yachiyo | Té e infusiones | A | sashimacha.jp ⚠ es un consejo exportador, no un productor |
 | Hitachi Fugetsudo | Hitachi | Dulces y repostería | A | ficha exports.pref.ibaraki.jp (id 715380) |
 | Fujita Apple Orchard | Daigo | Fruta y verdura | A | applefujita-llc.com |
 | Fukasaku Farm | Hokota | Fruta y verdura | A | fukasaku.com |
 | Terunuma | Tokai | Fruta y verdura | A | ficha exports.pref.ibaraki.jp (id 714729) |
 | Nemoto Tsukemono | Mito | Conservas | A | nemotuke.com |
 | Ibaraki Mogitate Factory | Ibaraki (町) | Comida preparada | A | ficha exports.pref.ibaraki.jp (id 715034) |
-| Tsukuba Gingko Production Association | Ishioka | Frutos secos | A | tsukuba-gingko.com ⚠ asociación de productores |
 | Aoki Brewing | Koga | Sake | B | japansake.or.jp (gremio) |
 | Kiuchi Brewery 1823 | Naka | Sake | B | kiuchibrewery.co.jp ⚠ ver nota |
 | Sudo Honke | Kasama | Sake | B | japansake.or.jp (gremio) |
@@ -60,10 +58,12 @@ fila que hay que acotar antes de escribirla.
   茨木市 en Osaka. Resolver el municipio antes de escribir la fila, o el gate
   geográfico la manda al otro extremo del país.
 - **Sashima Tea Producer Export Council** y **Tsukuba Gingko Production
-  Association** son órganos colectivos: entran solo si comercializan marca propia
-  (`docs/EDITORIAL_POLICY.md`), y si no, se sustituyen por sus socios.
-- **Calbee Kaitsuka** es filial de un grupo industrial cotizado: candidata a
-  descarte por masa, salvo que la línea de batata local se sostenga sola.
+  Association** se cerraron el 2026-08-09: son órganos colectivos sin identidad
+  productora propia; una futura revisión debe proponer sus socios, no reabrir
+  estos dos nombres.
+- **Calbee Kaitsuka** se revisó el 2026-08-09 y queda retenida, no descartada: es
+  filial de un grupo industrial cotizado, pero puede volver a evaluarse si la
+  línea de batata de Kasumigaura demuestra identidad y venta propias.
 - Las fichas `exports.pref.ibaraki.jp` son de un portal de exportación: confirman
   identidad y localización, no actividad ni venta online. Solo sostienen `parcial`.
 
@@ -111,7 +111,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 茨城県有機稲作協議会 | 1（墓地裏）　他 | 茨城県筑西市桑山3560　他 | 有機農産物 | AFASSEQ-AA-010806 |
 | (有)森ファームサービス | 1　他 | 茨城県古河市上片田原岸963-1　他 | 有機農産物 | S-033 |
 | 永塚文男 | 1　他 | 茨城県古河市女沼宿下1202-2　他 | 有機農産物 | S-077 |
-| つくばいしだファーム | １　他 | 茨城県つくば市上郷7923　他 | 有機農産物 | AFASSEQ-AA-010802 |
 | 鴻巣　仁 | 鴻巣農園（鴻巣　仁） | 茨城県石岡市小野越亀尻106-2　他 | 有機農産物 | 05-001 |
 | モアーク食品株式会社 | モアーク食品株式会社 モアーク食品 つくば有機農産物加工センター 他 | 茨城県つくば市上郷1068-7 他 | 有機加工食品 | 2006M-4 |
 | 平田敬義 | １　他 | 茨城県稲敷市稲波1861-5・6　他 | 有機農産物 | S-063 |
