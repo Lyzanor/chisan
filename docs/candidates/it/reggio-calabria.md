@@ -25,17 +25,6 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | ANASTASI ROSARITA | Oppido Mamertina | VIA PROV.LE 38 FRAZ.CASTELLACE 89014 | producción — vegetales sin transformar | 2029-03-17 | [IT-BIO-004.380-0106028.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0106028.2026.002.pdf) |
 | ARENA VINCENZO | Melicuccà | VIA ROMA  33 89020 | producción — vegetales sin transformar | 2028-04-10 | [IT-BIO-006.380-0098389.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0098389.2025.001.pdf) |
 
-## Preselección regional con identidad y oferta públicas — 2026-08-10
-
-Cuatro nombres del lote de 25 para Calabria, presentes como bodegas en el [elenco oficial ARSAC de Vinitaly 2026](https://www.arsacweb.it/calabria-vinitaly-2026/). Las webs públicas confirman productos propios y territorio; antes de publicar hay que fijar la unidad productiva, contacto y posible correspondencia con titulares legales.
-
-| Candidato público | Comune productivo provisional | Producto propio visible | Fuente complementaria / siguiente comprobación |
-|---|---|---|---|
-| Azienda Agricola Baccellieri | Bianco | vino, bergamota, aceite, cítricos y cereal | [web del productor](https://www.baccellieri.it/); separar líneas y confirmar finca |
-| Barone G.R. Macrì | Gerace / Locri | vino, aceite, lácteos, miel y cítricos | [web del productor](https://www.baronemacri.it/); fijar la unidad productiva principal |
-| Casa Vinicola Criserà | Reggio Calabria, Catona | vino y grappa | [web del productor](https://www.vinicrisera.it/); confirmar bodega productiva |
-| Cantine Lavorata | Roccella Ionica | vino | [web del productor](https://www.cantinelavorata.it/); confirmar viñedos y coordenadas de la bodega |
-
 ## Categorías poco representadas — barrido del 2026-08-10
 
 1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.

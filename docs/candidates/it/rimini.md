@@ -24,20 +24,3 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | POETA CARLO | Pennabilli | STR. PER MIRATOIO, N 13 47864 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-15 | [IT-BIO-004.380-0010868.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0010868.2026.001.pdf) |
 | POGGIOLI ANDREA E C. SOCIETA' AGRICOLA S.S. | Novafeltria | VIA VIGIOLO, 21 47863 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-08 | [IT-BIO-004.380-0031238.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0031238.2026.001.pdf) |
 | SALIMBENI FEDERICO | Casteldelci | LOCALITA' SENATELLO 11 47861 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-16 | [IT-BIO-004.380-0112341.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0112341.2026.001.pdf) |
-
-## Categorías poco representadas — barrido del 2026-08-10
-
-2 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Cerveza` 2.
-
-Fuentes de este lote:
-
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Beha - Birrificio Agricolo Artigianale | Rimini | `Cerveza` | birra artigianale | [web](https://behabrewing.com/) |
-| Birrificio Artigianale Noiz | Santarcangelo di Romagna | `Cerveza` | birra artigianale | [web](https://www.noizbeer.com/) |

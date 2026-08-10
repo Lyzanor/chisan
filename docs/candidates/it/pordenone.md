@@ -26,14 +26,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-26 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+24 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Carne` 12, `Fruta y verdura` 4, `Lácteos y quesos` 4, `Cerveza` 2, `Legumbres y cereales` 2, `Condimentos` 1, `Miel` 1.
+Reparto por categoría propuesta: `Carne` 16, `Fruta y verdura` 18, `Aceite` 3, `Condimentos` 4, `Legumbres y cereales` 10, `Huevos` 2, `Lácteos y quesos` 4, `Miel` 1.
 
 Fuentes de este lote:
 
 - Regione Friuli-Venezia Giulia — elenco fattorie didattiche e sociali (open data) — <https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -51,8 +50,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Società agricola Le Quattro stagioni di Gattel Daniela & C. s.s. | San Martino Di Campagna - Aviano | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | viticoltura, orticoltura, frutticoltura, cerealicoltura, allevamento animali da cortile azienda agricola | 0434657086<br>info@aziendalequattrostagioni.com<br>[web](https://www.aziendalequattrostragioni.com) |
 | Azienda agricola Sottosopra S.S. | Tramonti di Sotto | `Carne` + `Fruta y verdura` | Azienda convenzionale:-allevamento di ovini, suini, animali da cortile-orticoltura. azienda agricola | info@sottosoprafvg.it<br>[web](https://www.sottosopra.fvg.it) |
 | Azienda agricola Fattoria Gelindo dei Magredi di Trevisanutto Pietro Enrico, Giancarlo, Gelindo, Tiziano, Donatello | Vivaro | `Carne` + `Fruta y verdura` | convenzionale: allevamento cavalli, bovini, suini, animali da cortileproduzione biologica: orticoltura in serra, frutticoltura (pomacee)preparazione biologica: succo di mela, sidro azienda agricola,azienda agricola con o | 042797037<br>info@gelindo.it<br>[web](https://www.gelindo.it) |
-| Birrificio di Naon | Porcia | `Cerveza` | birra artigianale | [web](https://www.birradinaon.com/) |
-| Birra Galassia | Pordenone | `Cerveza` | birra artigianale | [web](https://www.birragalassia.it/) |
 | Società agricola Vivan di Antonio e Michele S.S. | San Giorgio della Richinvelda | `Condimentos` + `Legumbres y cereales` + `Fruta y verdura` | frutticoltura (melo, vite, kiwi), orticoltura (patate, zucche), cerealicoltura, piante officinali. azienda agricola | 042794124<br>agricolavivan@gmailcom |
 | Azienda agricola di Canton Angela | Azzano Decimo | `Fruta y verdura` | Ungulati selvatici, cavalli, ovini, pappagalli, animali da cortile, orticole, piccoli frutti azienda agricola | 0434640035 |
 | Cooperativa sociale Il Piccolo Principe-onlus | Località Comunali San Vito Al Tagliamento | `Fruta y verdura` | Convenzionale (integrata): floricoltura e orticoltura azienda agricola | 0434870949<br>lavolpe@ilpiccoloprincipe.pn.it<br>[web](https://www.ilpiccoloprincipe.pn.it) |

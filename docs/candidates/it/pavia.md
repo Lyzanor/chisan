@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-23 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+22 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Carne` 5, `Lácteos y quesos` 5, `Legumbres y cereales` 4, `Conservas` 3, `Cerveza` 2, `Condimentos` 2, `Fruta y verdura` 2.
+Reparto por categoría propuesta: `Carne` 9, `Fruta y verdura` 8, `Conservas` 6, `Legumbres y cereales` 11, `Condimentos` 4, `Cerveza` 1, `Lácteos y quesos` 5, `Miel` 2, `Huevos` 1.
 
 Fuentes de este lote:
 
@@ -47,7 +47,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Cascina Chiericoni | Rivanazzano Terme | `Carne` + `Condimentos` + `Conservas` | Azienda a conduzione biologica con viticoltura, frutticoltura, orticoltura. Produzione di vino e confetture. Coltivazione di alcune piante officinali. Allevamento avicolo. | 0383.92957<br>agriturismo@cascinachiericoni.it, albertolucotti@alice.it,<br>[web](http://www.cascinachiericoni.it) |
 | Piccolo Fiore s.r.l. | Vigevano | `Carne` + `Legumbres y cereales` | L’azienda produce principalmente riso, possiede un orto che oltre a soddisfare le esigenze interne dell’azienda è utilizzato per attività didattiche, un allevamento di suini, una linea vacca-vitello di razza Varzese e an | 0381.341624<br>info@agriturismocarloenadia.it<br>[web](http://www.agriturismocarloenadia.it) |
 | Microbirrificio Doppiobaffo | Chignolo Po | `Cerveza` | birra artigianale | — |
-| Birrificio Oltrepò | Pavia | `Cerveza` | birra artigianale | [web](https://www.birrificiooltrepo.it/) |
 | La Corte Ghiotta | Velezzo Lomellina | `Condimentos` + `Conservas` + `Legumbres y cereales` | Coltivazioni cerealicole, produzione di risi sbiancati, risi preparati per risotti e zuppe, conserve, erbe aromatiche. | 0381.87720<br>info@lacorteghiotta.com<br>[web](http://www.lacorteghiotta.com) |
 | Soc. Agr. La Rugiada S.S. c/o Pelliciardi Alberto | Voghera | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | La Ca' del Fant | Campospinoso | `Conservas` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda produce cereali e ortaggi di stagione da maggio a novembre. Zucche, zucchine, aglio, cipolle, zucche decorative, melanzane, pomodori, peperoni, angurie, meloni | 0385.277839<br>christianschiapparoli@libero.it |

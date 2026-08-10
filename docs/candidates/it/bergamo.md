@@ -25,15 +25,14 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-60 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+57 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 19, `Carne` 16, `Fruta y verdura` 10, `Aceite` 5, `Cerveza` 3, `Miel` 3, `Conservas` 2, `Condimentos` 1, `Legumbres y cereales` 1.
+Reparto por categoría propuesta: `Aceite` 6, `Condimentos` 5, `Conservas` 9, `Frutos secos` 2, `Setas` 1, `Fruta y verdura` 21, `Dulces y repostería` 1, `Carne` 32, `Legumbres y cereales` 6, `Otros` 1, `Miel` 8, `Pescado` 1, `Huevos` 4, `Helados` 1, `Bebidas sin alcohol` 1, `Lácteos y quesos` 19.
 
 Fuentes de este lote:
 
 - Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
 - Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -60,9 +59,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Medolago Albani | Trescore Balneario | `Carne` | Azienda vitivinicola con produzione di vini, spumanti e insaccati. | 035.942022<br>info@medolagoalbani.it<br>[web](http://www.medolagoalbani.it) |
 | Cascina Bassanella | Treviglio | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | Foraggi: fieno polifita, erba medica.Cereali: mais, orzoPaglia: di orzo e frumento per lettiereFrutta e ortaggi: prodotti stagionali destinati all'agriturismoSuini: per derivati salame, coppa, pancetta, lardo, carne dest | 0363.303187<br>info@bassanella.it<br>[web](http://www.bassanella.it) |
 | Cascina Buona Speranza | Zanica | `Carne` | In azienda si allevano bovini, equini e suini. | 035.671301 tel. e fax, 338.1377890<br>info@cascinabuonasperanza.it<br>[web](http://www.cascinabuonasperanza.it) |
-| Monangi Brew Pub | Dalmine | `Cerveza` | birra artigianale | [web](https://www.monangibrewpub.com/) |
-| Birrificio Via Priula | San Pellegrino Terme | `Cerveza` | birra artigianale | [web](https://www.birrificioviapriula.it/) |
-| BIRRIFICIO OTUS | Seriate | `Cerveza` | birra artigianale | [web](https://www.birrificiootus.com/) |
 | Azienda Agricola Biologica Fronte Mura | Bergamo | `Condimentos` + `Fruta y verdura` | L'azienda ad indirizzo vitivinicolo produce vini biologici DOP e IGP, coltiva erbe aromatiche ed officinali, frutta e verdura biologici e certificati.Vendita di prodotti biologici: vino da vitigno autoctono di Bergamo, f | 339.5313393, 338.6066349<br>fattoriadidattica@frontemura.com<br>[web](http://www.frontemura.com) |
 | Bio Farm Spineto s.s. | Martinengo | `Conservas` + `Helados` + `Bebidas sin alcohol` | L’azienda è specializzata nella produzione Bio di succhi di frutta, confetture, gastronomia, frutta, verdura e agrigelato. | 333.2274598<br>posta@biofarmspineto.com<br>[web](http://www.biofarmspineto.com) |
 | Castolda | Treviglio | `Conservas` + `Fruta y verdura` | In azienda si allevano cavalli purosangue arabi da morfologia e animali di bassa corte. L'azienda è specializzata nella coltivazione di ortaggi, mais e di frutta per la produzione di confetture. | 0363.302344 tel. e fax<br>info@castolda.com<br>[web](http://www.castolda.com) |

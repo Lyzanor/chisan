@@ -27,14 +27,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-6 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+5 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 3, `Cerveza` 1, `Legumbres y cereales` 1, `Lácteos y quesos` 1.
+Reparto por categoría propuesta: `Aceite` 3, `Miel` 1, `Condimentos` 1, `Conservas` 2, `Legumbres y cereales` 1, `Lácteos y quesos` 1.
 
 Fuentes de este lote:
 
 - Regione Lazio — aziende concessionarie del marchio «Natura in Campo» (open data) — <https://dati.lazio.it/dataset/elenco-aziende-agricole-concessionarie-marchio-natura-in-campo>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -43,6 +42,5 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Le Roghete Soc agricola | Acquapendente | `Aceite` + `Miel` | Olio extravergine di oliva biologico, miele del Monte Rufeno | 338/8479799, 0763/734641<br>info@leroghete.it |
 | Fattoria biologica 'La bottara' di d'Ascenzi Augusta | Valentano | `Aceite` + `Condimentos` + `Conservas` | zucca biologica, zucchina biologica, fagiolo cannellino biologico, fagiolo verdolino biologico, fagiolo ciavattone biologico, fagiolo del purgatorio biologico, cece biologico, fragole biologiche, frutti di bosco biologic | 0761-423969, 348/7424111<br>la_bottara@libero.it |
 | Soc. Agr. Sciuga S.S. | Viterbo | `Aceite` + `Conservas` | olio extra-vergine di oliva biologico, olio extra-vergine di oliva biologico DOP Tuscia, olio aromatizzato biologico, confetture extra biologiche, pat di olive biologico | info@oliodelmolino.it |
-| Hilltop Brewery | Bassano Romano | `Cerveza` | birra artigianale | [web](https://www.hilltopbrewery.it) |
 | Az. Agr. Brizi Giuseppe | Acquapendente | `Legumbres y cereales` | Lenticchia di Onano, fagiolo del purgatorio di Gradoli, fagiolo verdolino, fagiolo giallo, farro del Pungolo di Acquapendente, cece del solco dritto di Valentano | 0763/732106, 338/2416797<br>cerquetosrl@tiscali.it |
 | Primavalle Formaggi di Governi Ampelio s.r.l. | Acquapendente | `Lácteos y quesos` | Pecorino in grotta del Viterbese, pecorino Viterbese, ricotta Viterbese, fior di latte | 0763/733262<br>primavalleformaggi@libero.it |

@@ -26,15 +26,14 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-57 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+55 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 13, `Cerveza` 2, `Fruta y verdura` 1, `Lácteos y quesos` 1.
+Reparto por categoría propuesta: `Aceite` 13, `Fruta y verdura` 1, `Lácteos y quesos` 1.
 
 Fuentes de este lote:
 
 - Consorzio di Tutela Olio DOP Riviera Ligure — produttori — <https://www.oliorivieraligure.it/produttori/>
 - Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 En 3 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
 
@@ -55,8 +54,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | AZIENDA AGRICOLA MUZIO ALDO | Sestri Levante | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/457135 |
 | OLIVICOLTORI SESTRESI | Sestri Levante | `Aceite` | «Olivicoltori Sestresi Olivicoltori Sestresi --> --> Azienda Contatti --> E-Commerce +39.0185.44341 English -->» | 0185 44 341<br>amministrazione@olivicoltori.net<br>[web](http://olivicoltori.net) |
 | TERRAZZE BACIGALUPO DI BRAGOLI SANDRO | Tribogna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 349/3516563 |
-| Birrificio Exuvia | Campo Ligure | `Cerveza` | birra artigianale | [web](https://birrificioexuvia.it/) |
-| Maltus Faber | Genova | `Cerveza` | birra artigianale | [web](https://www.maltusfaber.com/) |
 | VALDOLIVO | Cogoleto | `Fruta y verdura` | «terna ci permette di mantenere alti gli standard... Leggi di più News Ortaggi di stagione biologici certificati in pronta consegna Continuano le conse» | 010 91 88 130<br>info@agriturismovaldolivo.it<br>[web](http://agriturismovaldolivo.it) |
 | MONTEROSSO | Rossiglione | `Lácteos y quesos` | «etto "Gustosi per natura" del Parco del Beigua Chi desidera gustare i nostri formaggi e le prelibatezze delle aziende che collaborano con noi può comp» | 348 54 88 927<br>info@agriturismomonterosso.it<br>[web](http://agriturismomonterosso.it) |
 

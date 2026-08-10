@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-9 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+7 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 4, `Lácteos y quesos` 2, `Fruta y verdura` 1, `Legumbres y cereales` 1, `Miel` 1.
+Reparto por categoría propuesta: `Cerveza` 2, `Fruta y verdura` 2, `Legumbres y cereales` 2, `Lácteos y quesos` 2, `Carne` 2, `Conservas` 1, `Miel` 2.
 
 Fuentes de este lote:
 
@@ -41,9 +41,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | LA Brewery | Bernareggio | `Cerveza` | birra artigianale | [web](https://labreweryshop.com/) |
-| BIRRIFICIO RURALE | Desio | `Cerveza` | birra artigianale | [web](https://www.birrificiorurale.it) |
 | CARROBIOLO | Monza | `Cerveza` | birra artigianale | [web](https://www.birradelcarrobiolo.it/) |
-| Birra Eretica | Ornago | `Cerveza` | birra artigianale | [web](https://www.birraeretica.it/) |
 | Besana S.S. | Besana Brianza | `Fruta y verdura` | Cavalli, Pony, ortaggi e frutta, animali da cortile | 338.2619691<br>fattoriabesana@gmail.com<br>[web](http://www.fattoriabesana.it) |
 | Fattoria Didattica ASINOteca | Bellusco | `Legumbres y cereales` | Produzione cerealicola, foraggera e zootecnica. | 338.2575426<br>asinoteca@gmail.com<br>[web](http://www.asinoteca.it) |
 | Brusignone | Besana Brianza | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda coltiva cereali e ortaggi che in parte vengono destinati al nutrimento degli animali ed in parte alla ristorazione. Si coltivano anche frutti di bosco, utilizzati sia per l’agriturismo sia per la trasformazione | 335.5975100<br>info@agricolabrusignone.com<br>[web](http://www.agricolabrusignone.com) |

@@ -27,15 +27,14 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-55 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+54 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 37, `Cerveza` 1, `Conservas` 1.
+Reparto por categoría propuesta: `Aceite` 37, `Conservas` 1.
 
 Fuentes de este lote:
 
 - Consorzio di Tutela Olio DOP Riviera Ligure — produttori — <https://www.oliorivieraligure.it/produttori/>
 - Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 En 6 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
 
@@ -80,7 +79,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | FLORCOOP SANREMO SCA | Taggia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0184 51650 |
 | FRANTOIO BOERI GIUSEPPE | Taggia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0184/475301 |
 | IL ROCCOLO | Vasia | `Aceite` | «Olio Cotta Agriturismo Olio Extra Vergine taggiasca biocosmesi Olio Cotta Agriturismo Olio Extra Vergine taggiasca biocosmesi Salta a» | 0183 28 21 45<br>monica@agricotta.com<br>[web](http://agricotta.com) |
-| Birrificio San Luca | Imperia | `Cerveza` | birra artigianale | [web](https://www.birrificiosanluca.it/) |
 | GLI ORTI | Chiusanico | `Conservas` | «llo Olive taggiasche denocciolate 190 gr. 7,50 € Aggiungi al carrello Patè di olive taggiasche 180 gr 4,50 € Aggiungi al carrello Pesto con basilico g» | 0183 52 90 30<br>help@borgatacastello.com<br>[web](http://borgatacastello.com) |
 
 ### Sin producto declarado por el registro (16)

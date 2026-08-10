@@ -22,9 +22,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-37 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+34 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 14, `Carne` 9, `Cerveza` 5, `Aceite` 3, `Fruta y verdura` 2, `Conservas` 1, `Huevos` 1, `Legumbres y cereales` 1, `Miel` 1.
+Reparto por categoría propuesta: `Aceite` 4, `Dulces y repostería` 1, `Fruta y verdura` 8, `Miel` 7, `Conservas` 7, `Carne` 19, `Condimentos` 3, `Huevos` 2, `Legumbres y cereales` 8, `Cerveza` 2, `Lácteos y quesos` 14, `Helados` 2, `Frutos secos` 1.
 
 Fuentes de este lote:
 
@@ -48,11 +48,8 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Cà del Lupo | Palazzolo sull'Oglio | `Carne` + `Conservas` + `Legumbres y cereales` | L’azienda produce orzo, avena e coltiva prato stabile per gli animali allevati. Ha un frutteto. Alleva animali anche da carne bovini, equini, ovini, conigli, polli, anatre e daini.Produzione di confetture ed ortaggi. | 030.733667, 320.8896465<br>info@cadelupo.it<br>[web](http://www.cadelupo.it) |
 | Le Caselle | Prevalle | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda alleva bovini da carne e animali di bassa corte. Coltiva cereali e prodotti ortofrutticoli con il metodo biologico. | 030.6801416<br>info@cascinalecaselle.it<br>[web](http://www.cascinalecaselle.it) |
 | Azienda agricola Marende | Serle | `Carne` + `Fruta y verdura` | Coltivazione di frutti di bosco ed ortaggi e allevamento di cavalli, asini, animali di bassa corte. Cucina semplice e tradizionale con specialità di piatti caserecci come spiedo e casoncelli. I menù variano a seconda del | 030.6910695 - 327.2492377 Andrea – 329.4<br>info@agriturismoaquilasolitaria.com<br>[web](http://www.agriturismoaquilasolitaria.com) |
-| BIRRA LA DAMA | Bedizzole | `Cerveza` | birra artigianale | [web](https://birraladama.it/) |
 | BIRRIFICIO AGRICOLO PAGUS | Darfo Boario Terme | `Cerveza` | birra artigianale | [web](https://www.birrapagus.it) |
-| Luppoleto Camuno | Gianico | `Cerveza` | birra artigianale | [web](https://www.luppoletocamuno.it/) |
 | Birrificio Manerba | Manerba del Garda | `Cerveza` | birra artigianale | [web](https://www.birrificiomanerba.it/) |
-| Birrificio Artigianale Curtense | Passirano Fraz. Monterotondo | `Cerveza` | birra artigianale | [web](https://www.curtense.it) |
 | Fattoria Didattica Cascina Ponte | Cologne | `Conservas` + `Legumbres y cereales` + `Fruta y verdura` | L'azienda coltiva e conserva cereali antichi, ortaggi biologici e alleva animali in via d'estinzione. I prodotti in vendita sono ortaggi, cereali e foraggi. | Tel.e Fax 030.7050650<br>info@cascinaponte.it<br>[web](http://www.cascinaponte.it) |
 | La Fiorita | Ome | `Fruta y verdura` | Azienda vitivinicola con produzione di vini Franciacorta, coltivazione di frutta e ortaggi, e animali della fattoria. | 030.652279, 339.4019259<br>info@lafioritafranciacorta.com<br>[web](http://www.lafioritafranciacorta.com) |
 | Dosso Sant'Andrea | Quinzano d'Oglio | `Fruta y verdura` | Sono presenti un noceto, un bosco ed un’area per bambini. Si allevano cavalli, asini, pecore, cani border-collie, conigli, ed animali di bassa corte. Produzione e vendita di ortaggi. | 030.9923493, 347.4948432<br>lamagni.mariangela@alice.it<br>[web](http://www.agridosso.net) |

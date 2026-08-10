@@ -26,9 +26,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-43 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+41 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 17, `Lácteos y quesos` 11, `Fruta y verdura` 7, `Cerveza` 3, `Conservas` 3, `Condimentos` 1, `Miel` 1.
+Reparto por categoría propuesta: `Aceite` 21, `Conservas` 8, `Miel` 2, `Fruta y verdura` 21, `Condimentos` 7, `Cerveza` 1, `Lácteos y quesos` 11, `Pescado` 1.
 
 Fuentes de este lote:
 
@@ -56,8 +56,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | I Capitani | Torre Le Nocelle | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-63.html) |
 | Il Sentiero degli Ulivi | Venticano | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-255.html) |
 | Oleificio FAM | Venticano | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-209.html) |
-| SKAPTE HANDCRAFT BEER | Cairano | `Cerveza` | birra artigianale | [web](https://www.skapte.it/) |
-| Birrificio Ventitré | Grottaminarda | `Cerveza` | birra artigianale | [web](https://www.birrificioventitre.it/) |
 | PARTHENYA | Montefusco | `Cerveza` | birra artigianale | [web](https://www.parthenya.it/) |
 | La Tana del Ghiro | Serino | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-263.html) |
 | Azienda Agrituristica Pericle di Pizza Renato | Montella | `Conservas` + `Fruta y verdura` | conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-87.html) |

@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-17 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+16 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 2, `Aceite` 1, `Fruta y verdura` 1.
+Reparto por categoría propuesta: `Aceite` 1, `Cerveza` 1, `Fruta y verdura` 1.
 
 Fuentes de este lote:
 
@@ -43,7 +43,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | SANTA MARIA | San Venanzo | `Aceite` | «l'Agriturismo Santa Maria Attiva/disattiva navigazione Home Il nostro Olio extra vergine d’oliva La nostra cucina Chi Siamo La Nostra Storia L’Azienda» | info@agrisantamaria.it<br>[web](https://www.agrisantamaria.it) |
-| Birrificio Amerino | Amelia | `Cerveza` | birra artigianale | [web](https://www.birrificioamerino.it/) |
 | BIRRALFINA | Orvieto | `Cerveza` | birra artigianale | [web](https://birralfina.com/) |
 | FATTORIA DIDATTICA ' LA COLLINA INCANTATA' | Narni | `Fruta y verdura` | «e colline umbre, valorizza i prodotti locali della tenuta Giovannini: ortaggi, carni e vini. La cucina propone piatti tradizionali umbri rivisitati, c» | info@fattoriacollinaincantata.com<br>[web](https://www.fattoriacollinaincantata.com) |
 

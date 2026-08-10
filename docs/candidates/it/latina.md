@@ -27,14 +27,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-14 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+13 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 5, `Carne` 4, `Cerveza` 1, `Conservas` 1, `Frutos secos` 1, `Legumbres y cereales` 1, `Lácteos y quesos` 1.
+Reparto por categoría propuesta: `Aceite` 5, `Otros` 5, `Conservas` 2, `Carne` 4, `Frutos secos` 1, `Dulces y repostería` 1, `Legumbres y cereales` 1, `Lácteos y quesos` 1.
 
 Fuentes de este lote:
 
 - Regione Lazio — aziende concessionarie del marchio «Natura in Campo» (open data) — <https://dati.lazio.it/dataset/elenco-aziende-agricole-concessionarie-marchio-natura-in-campo>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -49,7 +48,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Eredi Di Fazio Assuntina di Pelliccia Raffaele sas | Fondi | `Carne` | Guanciale, pancetta di suino, salsiccia di fegato di suino, salsiccia paesana al coriandolo dei monti aurunci, vitellone di itri,zauzicchie e salam funnan, agnello e capretto dei monti aurunci | 0771/501784<br>carnevaleannamaria@libero.it |
 | La Bottega della Carne di Sergio di Vito | Fondi | `Carne` | Salsiccia al coriandolo dei Monti Aurunci, pancetta, guanciale, capocollo, salsiccia di fegato | 0771/504928<br>labottegadellacarne@alice.it |
 | Az. Tucciarone Pietro Giuseppe | Formia | `Carne` | Salsiccia al coriandolo dei Monti aurunci, capocollo, pancetta tesa, salame corallina, guanciale | 0771/735753<br>salsicciapaesana@tiscali.it |
-| Ergo Brewery | Latina | `Cerveza` | birra artigianale | [web](https://www.ergobrewery.it/) |
 | Az. Agr. Torre del Fico | Formia | `Conservas` | Tiella di Gaeta, pomodoro Spagnoletta del Golfo di Gaeta e di Formia, passata di pomodoro Spagnoletta di Gaeta, lattuga Signorinella di Formia | 0771/720021<br>info@agriturismodelfico.it |
 | Pane Dolci e Tradizioni di Sezze | Sabaudia | `Frutos secos` + `Dulces y repostería` + `Otros` | Crostata di visciole di Sezze, Pasta di mandorle di Sezze, Tozzetti, Biscotti di Sezze,Tortolo di Sezze, Ciambelle al vino, Ciambelle allacqua | 345/5876388, 348/8203102<br>dolcitradizionisezze@libero.it |
 | La Piana del Sciuscello di Paolo De Feo | Ventotene | `Legumbres y cereales` | lenticchia di Ventotene, ceci, cicerchia, zucchina con fiore | 06/0183520, 349/4207875<br>pdfeo1@alice.it<br>[web](https://www.lenticchiadiventotene.it) |

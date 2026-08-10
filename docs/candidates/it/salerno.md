@@ -26,14 +26,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-70 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+69 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 32, `Aceite` 18, `Fruta y verdura` 11, `Conservas` 5, `Carne` 1, `Cerveza` 1, `Miel` 1, `Pescado` 1.
+Reparto por categoría propuesta: `Aceite` 34, `Fruta y verdura` 43, `Conservas` 16, `Condimentos` 6, `Carne` 6, `Pescado` 4, `Lácteos y quesos` 32, `Miel` 5.
 
 Fuentes de este lote:
 
 - Regione Campania — Albo regionale delle fattorie didattiche (open data) — <https://dati.regione.campania.it/catalogo/Fattorie-didattiche>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -58,7 +57,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Azienda Olivicola Mennella di Luca Mennella | Serre | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-346.html) |
 | Oleificio Di Giacomo srl | Serre | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-73.html) |
 | Erbanito | San Rufo | `Carne` | salumi e carni | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-169.html) |
-| Birrificio dell'Aspide | Roccadaspide | `Cerveza` | birra artigianale | [web](https://www.birrificiodellaspide.it) |
 | Podere Rega | Capaccio | `Conservas` + `Fruta y verdura` + `Condimentos` | conserve e confetture, frutta, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-359.html) |
 | San Giovanni – ITAS G. Fortunato | Eboli | `Conservas` + `Fruta y verdura` | conserve e confetture, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-168.html) |
 | Agriturismo Barone Fortunato | Giffoni Valle Piana | `Conservas` + `Fruta y verdura` | conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-268.html) |

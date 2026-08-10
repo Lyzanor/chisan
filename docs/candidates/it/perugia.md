@@ -25,9 +25,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-109 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+106 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Carne` 11, `Aceite` 10, `Cerveza` 4, `Conservas` 2, `Fruta y verdura` 1, `Legumbres y cereales` 1.
+Reparto por categoría propuesta: `Aceite` 10, `Carne` 11, `Cerveza` 1, `Conservas` 2, `Fruta y verdura` 1, `Legumbres y cereales` 1.
 
 Fuentes de este lote:
 
@@ -63,9 +63,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | SAL.PI Uno | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0861 870973<br>[web](https://www.salpi.it) |
 | Todiano Prosciutti | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 938093<br>[web](https://www.todianoprosciutti.it) |
 | Birra dell'Eremo | Assisi | `Cerveza` | birra artigianale | [web](https://www.birradelleremo.it/) |
-| Birrificio Artigianale Fortebraccio | Montone | `Cerveza` | birra artigianale | [web](https://www.birrafortebraccio.com) |
-| Birrificio Alto Tevere | San Giustino | `Cerveza` | birra artigianale | [web](https://www.birrificioaltotevere.com) |
-| FABBRICA DELLA BIRRA PERUGIA | Torgiano | `Cerveza` | birra artigianale | [web](https://www.birraperugia.it) |
 | SOCIETﾷ AGRICOLA CAGLIOFIORE SS DI PASTORI ALESSANDRO E SARA | Cerreto di Spoleto | `Conservas` | «canti Cialde croccanti, un’antica tradizione umbra delle feste sacre. Confetture extra Confetture artigianali con frutta coltivata in maniera naturale» | info@cagliofiore.it<br>[web](https://www.cagliofiore.it) |
 | AGRITURISMO LACANDA DELL NOCI | Marsciano | `Conservas` | «o, allevare gli animali, produrre olio, vino e formaggi, preparare le marmellate … sono cose che facciamo da oltre 40 anni e che continuiamo a fare og» | info@locandadellenoci.it<br>[web](https://www.locandadellenoci.it) |
 | FATTORIA DIDATTICA 'I 5 ELEMENTI' | Costacciaro | `Fruta y verdura` | «a didattica. Immancabile un Orto in cui si producono le verdure e gli ortaggi di stagione " biologici ". Casale Agriturismo Camping Rio Verde Casale A» | daniela.fan@libero.it<br>[web](https://www.casalelafornace.it) |

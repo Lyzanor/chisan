@@ -25,9 +25,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-13 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+12 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 11, `Cerveza` 2.
+Reparto por categoría propuesta: `Aceite` 11, `Cerveza` 1.
 
 Fuentes de este lote:
 
@@ -49,5 +49,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | TENUTA TRENTA VOLPI SRL SOC AGR | Lucca | `Aceite` | Olio extravergine di oliva Toscano IGP | solari.lorenzo@gmail.com |
 | FRANTOIO DI MASSAROSA SRL | Massarosa | `Aceite` | Olio extravergine di oliva Toscano IGP | info@frantoiodimassarosa.it |
 | SOC. AGR. PARADIS AGRICOLE SRL | Pietrasanta | `Aceite` | Olio extravergine di oliva Toscano IGP | azienda@paradisagricole.it |
-| La Collina Trattoria & Birrificio Artigianale | Pescaglia | `Cerveza` | birra artigianale | [web](https://www.trattorialacollina.it) |
 | Radical Brewery | Porcari | `Cerveza` | birra artigianale | — |

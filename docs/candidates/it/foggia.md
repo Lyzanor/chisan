@@ -24,19 +24,3 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | ASSOCIAZIONE CENTRO STUDI NATURALISTICI ONLUS | Foggia | VIA VITTIME CIVILI 64 71121 | producción — vegetales sin transformar | 2028-07-01 | [IT-BIO-004.380-0102601.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0102601.2025.001.pdf) |
 | ASSOCIAZIONE SERVIZIO VOLONTARIATO SOCIALE "ELPIS" | San Giovanni Rotondo | Via Kennedy, 75 71013 | producción — vegetales sin transformar | 2028-12-21 | [IT-BIO-008.380-0111637.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0111637.2026.001.pdf) |
 | AUGELLO FRANCESCA | San Nicandro Garganico | LOCALITA' PIANO SALATO, SNC 71015 | producción — vegetales sin transformar | 2028-10-08 | [IT-BIO-018.380-0107707.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-018.380-0107707.2025.002.pdf) |
-
-## Categorías poco representadas — barrido del 2026-08-10
-
-1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Cerveza` 1.
-
-Fuentes de este lote:
-
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| REBEERS | Foggia | `Cerveza` | birra artigianale | [web](https://www.rebeers.it/) |

@@ -27,28 +27,18 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Preselección con identidad y oferta públicas — 2026-08-10
 
-Doce candidatos para la mitad trentina del lote regional. Todos figuran en la selección vigente de [productores enogastronómicos de Trentino Guest Card](https://www.visittrentino.info/it/articoli/guest-card/produttori-enogastronomici), que publica nombre, localidad y familia de producto. La presencia en esa red confirma actividad comercial pública reciente, pero no sustituye la comprobación de unidad productiva, contacto y categoría final.
+Dos candidatos permanecen retenidos tras la revisión ampliada del 2026-08-10. `Magia d'Erbe Officinali` exige separar con claridad la oferta alimentaria de la cosmética; para `Azienda Agricola La Quadra` todavía no hay una fuente actual suficiente que confirme conjuntamente la gama alimentaria propia y la unidad productiva.
 
 | Candidato público | Comune / localidad provisional | Producto propio visible | Siguiente comprobación |
 |---|---|---|---|
-| Simoni Azienda Agricola | Palù di Giovo | fruta, miel y producciones agrícolas | fijar comune y catálogo propio |
-| Cembra Cantina di Montagna | Cembra Lisignago | vino | confirmar bodega productiva y contacto |
-| Cantina Aldeno | Aldeno | vino | confirmar identidad pública y gama propia |
-| Cantina Distilleria Francesco | Vezzano, Vallelaghi | vino y destilados | fijar comune actual tras la fusión municipal |
-| Cantina Distilleria F.lli Pisoni | Pergolese, Madruzzo | vino y destilados | confirmar dirección productiva |
-| Cantina Pravis | Lasino, Madruzzo | vino | confirmar dirección productiva |
-| Lucia Maria Melchiori | Tres, Predaia | derivados de manzana | confirmar laboratorio y marca pública |
-| Azienda Agricola Il Leprotto Bisestile | Bosentino, Altopiano della Vigolana | producción agrícola y hierbas | concretar alimentos vendibles y unidad productiva |
-| Cooperativa Produttori Agricoli Giudicariesi | Comano Terme | fruta y producciones agrícolas | confirmar oferta propia frente a mera agrupación |
 | Magia d'Erbe Officinali | Roncegno Terme | hierbas y preparados | separar alimentos de cosmética |
 | Azienda Agricola La Quadra | Drena | aceite y producciones agrícolas | confirmar gama alimentaria propia |
-| OlioCRU | Riva del Garda | aceite de oliva | confirmar olivar / molino y datos de contacto |
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-6 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+2 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 6.
+Reparto por categoría propuesta: `Cerveza` 2.
 
 Fuentes de este lote:
 
@@ -59,8 +49,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | Birra Impavida | Arco | `Cerveza` | birra artigianale | [web](https://www.birraimpavida.com/) |
-| Birrificio Barbaforte | Folgaria | `Cerveza` | birra artigianale | [web](https://www.barbaforte.it) |
-| Birrificio Artigianale Leder | Ledro | `Cerveza` | birra artigianale | [web](https://www.birrificioleder.it/) |
-| Birrificio Val Rendena | Pinzolo | `Cerveza` | birra artigianale | [web](https://www.valrendena.beer) |
-| Birra Del Bosco | San Michele all'Adige | `Cerveza` | birra artigianale | [web](https://www.birradelbosco.it/) |
 | 5+ Birrificio Artigianale | Trento | `Cerveza` | birra artigianale | [web](https://5piu.com/) |

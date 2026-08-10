@@ -24,9 +24,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-12 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+9 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 8, `Cerveza` 4.
+Reparto por categoría propuesta: `Cerveza` 1, `Lácteos y quesos` 8.
 
 Fuentes de este lote:
 
@@ -38,9 +38,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | Ofelia | Sovizzo | `Cerveza` | birra artigianale | [web](https://www.birraofelia.it) |
-| La Villana | Vicenza | `Cerveza` | birra artigianale | [web](https://www.lavillana.it/) |
-| Lucky Brews | Vicenza | `Cerveza` | birra artigianale | [web](https://www.luckybrews.com/) |
-| GROOVE BIRRIFICIO INDIPENDENTE | Zugliano | `Cerveza` | birra artigianale | [web](https://groove.beer) |
 | Azienda Agricola Al.Ba Asiago di Basso Alberto | Asiago | `Lácteos y quesos` | Asiago DOP | — |
 | Caseificio Pennar Asiago | Asiago | `Lácteos y quesos` | Asiago DOP | — |
 | Società Basso S.S. di Pangrazio Marialuisa e Basso Elena – Malga Zebio – Asiago | Asiago | `Lácteos y quesos` | Asiago DOP | — |

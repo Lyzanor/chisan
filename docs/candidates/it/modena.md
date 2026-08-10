@@ -27,25 +27,21 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-80 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+63 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Condimentos` 78, `Cerveza` 2.
+Reparto por categoría propuesta: `Condimentos` 63.
 
 Fuentes de este lote:
 
 - Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
-| Alchemist Ale | Campogalliano | `Cerveza` | birra artigianale | [web](https://alchemistale.it/) |
-| Labeerinto | Modena | `Cerveza` | birra artigianale | [web](https://www.labeerinto.it) |
 | Acetaia Rebecchi Giuseppe | Bastiglia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 3348406887<br>info@acetaiarebecchigiuseppe.it<br>[web](https://acetaiarebecchigiuseppe.it) |
 | Acetaia Rossetti di Poppi Franca | Bastiglia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Az. Agr. Real Balsamico di Paride Rebecchi | Bastiglia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | realbalsamico36@gmail.com |
-| Acetaia Bellei – Bellei Luigi & Figli srl | Bomporto | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 320 9460477<br>info@bellei.it<br>[web](https://bellei.it) |
 | Acetaia Comunale Bomporto | Bomporto | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 800722<br>info@comune.bomporto.mo.it<br>[web](https://comune.bomporto.mo.it) |
 | Acetaia Comunale Campogalliano | Campogalliano | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059851008<br>lavilla@comune.campogalliano.mo.it<br>[web](https://comune.campogalliano.mo.it) |
 | Bondavalli e Fontanesi di Fontanesi A. S.S. | Campogalliano | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
@@ -61,7 +57,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Conserve Alimentari “I MALETTI” srl | Casinalbo Di Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Panella Marino | Casinalbo Di Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Comunale Castelfranco | Castelfranco E. | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 959390<br>cultura@comune.castelfranco-emilia.mo.it<br>[web](https://comune.castelfranco-emilia.mo.it) |
-| Acetaia Malagoli Daniele di Piccinini Barbara | Castelfranco Emilia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 3382640322<br>info@acetaiamalagoli.com<br>[web](https://acetaiamalagoli.com) |
 | Acetaia Villa Piccoli di Leonardi Lamberto | Castelfranco Emilia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Az. Agr. “San Paolo” di Selmi Alessandro ed Enrico SS | Castelfranco Emilia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Boccaletti Giovanni | Castelfranco Emilia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
@@ -69,20 +64,16 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Levoni Luca | Castelnuovo R. | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Antichi Colli srl | Castelnuovo Rangone | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Comunale Castelnuovo | Castelnuovo Rangone | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 534802<br>cultura@comune.castelnuovo-rangone.mo.it<br>[web](https://comune.castelnuovo-rangone.mo.it) |
-| Acetificio Carandini Emilio s.p.a. | Castelnuovo Rangone | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059469471<br>visite@acetodelduca.it<br>[web](https://acetodelduca.it) |
+| Acetificio Carandini Emilio s.p.a. | Castelnuovo Rangone | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Comunale Castelvetro | Castelvetro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 758880<br>info@visitcastelvetro.it<br>[web](https://visitcastelvetro.it) |
 | Az. Agr. Manicardi srl | Castelvetro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Simonini PierGiorgio | Castelvetro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 3491865083<br>bookyourvinegartour@villasandonnino.it<br>[web](https://villasandonnino.it) |
+| Simonini PierGiorgio | Castelvetro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Antica Acetaia Cavedoni dal 1860 | Castelvetro di Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Az. Agr. Boni Romano (acetaia Boni) | Castelvetro di Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 3401552317<br>info@acetaiaboni.it<br>[web](https://acetaiaboni.it) |
-| Monteremellino Soc.Agr. S.S. | Castelvetro di Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 333 3969516<br>info@monteremellino.it<br>[web](https://monteremellino.it) |
-| Acetum spa | Cavezzo | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 0535 410860<br>info@casamazzetti.it<br>[web](https://casamazzetti.it) |
 | Braghiroli Miller | Cavezzo | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Bulgarelli Enzo | Cavezzo | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Luppi Mauro | Cavezzo | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Fabbi Società Agricola s.s. | Collegara | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Massa Massimo | Concordia Sul Secchia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Soc. Agr. Guerzoni | Concordia sulla Secchia | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 053556561<br>info@guerzoni.com<br>[web](https://guerzoni.com) |
 | Annovi Gian Luca | Corlo Di Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Cantina Sociale Formigine Pedemontana soc.agr.coop. | Corlo Di Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Comunale Fanano | Fanano | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 0536 68696<br>info@fanano.eu<br>[web](https://fanano.eu) |
@@ -90,10 +81,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Piretti Omer | Fiorano Modenese | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Barbolini Gianluigi | Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Simeoli Fabio Mariano | Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Az. Agr. I Solai di San Giorgio srl (Bottega Fiorini) | Ganaceto | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | info@bottegafiorini.it<br>[web](https://bottegafiorini.it) |
 | Az. Agr. Santa Chiara di Lorenzoni Paola | Levizzano Rangone -Castelvetro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Operazerodue Soc.Agr. Srl | Levizzano Rangone-Castelvetro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | INFO@OPERA02.IT<br>[web](https://www.opera02.it) |
-| Acetaia Valeri di Giacobazzi Valerio | Magreta Di Formigine | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 333.2320194<br>info@acetobalsamicovaleri.it<br>[web](https://acetobalsamicovaleri.it) |
 | Acetaia Comunale Maranello | Maranello | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 0536 240000<br>info@maranellotipico.it<br>[web](https://maranellotipico.it) |
 | Acetaia Poggioli Abramo | Maranello | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Az. Agr. Pezzuoli | Maranello | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
@@ -101,24 +89,18 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Lei Enzo | Maranello | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Roggiani Ettore | Maranello | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Comunale Marano | Marano sul Panaro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 705711<br>segreteria.generale@comune.marano.mo.it<br>[web](https://comune.marano.mo.it) |
-| Acetaia Sereni | Marano sul Panaro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | info@acetaiasereni.com<br>[web](https://acetaiasereni.com) |
 | Costanzini Luana | Marano sul Panaro | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Acetaia Aula Mater / elevate what’s food | Medolla | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 3287228936<br>gabrielli.marc@gmail.com |
 | Az. Agr. Uccelliera di Manfredini Maria Grazia | Medolla | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Soc. Agr. Garden Vivai Morselli S.S. | Medolla | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 0535 52466<br>morselli@vivaimorselli.it<br>[web](https://vivaimorselli.it) |
 | Acetaia Comunale Mirandola | Mirandola | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 0535 29724<br>turismo@comune.mirandola.mo.it<br>[web](https://comune.mirandola.mo.it) |
-| Acetaia della Vigona di Campagnoli Alberto | Mirandola | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 333 2275137<br>[web](https://www.acetaiadellavigona.com) |
 | Franciosi Rino | Mirandola | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | ABTM SERVIZI srl | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Accademia Ducale Modena – Consorteria ABT Spilamberto | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | consorteria@consorteria.org<br>[web](https://consorteria.org) |
-| Acetaia Di Giorgio di Cati Giovanna | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 333015<br>info@acetaiadigiorgio.it<br>[web](https://acetaiadigiorgio.it) |
-| Acetaia Fini Modena srl | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 3929258119<br>emanuela.fontanella@giusti.it<br>[web](https://giusti.it) |
-| Acetaia Marchi srl | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 0594822139<br>tours@acetaiamarchi.com<br>[web](https://acetaiamarchi.com) |
+| Acetaia Fini Modena srl | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Marisa Barbieri di Franca Giuliani | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Rossi Gilio Eredi – Luca Greco | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Tradizionale Filippi srl | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Acetaia Vincenzo Ferrari Amorotti Eredi | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| Acetaia di Nonno Mario di Bevini Mario | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059/3367125<br>barbieri@sileaeng.com<br>[web](https://sileaeng.com) |
 | Agrozoo Campazzo S.S. Azienda Agricola | Modena | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 
-> Se han recortado 131 candidatos adicionales de esta provincia para no inflar la nota; proceden de las mismas fuentes y se recuperan volviendo a consultarlas.
+> Se mantienen fuera de la tabla 116 candidatos adicionales de esta provincia para no inflar la nota; proceden de las mismas fuentes y se recuperan volviendo a consultarlas.

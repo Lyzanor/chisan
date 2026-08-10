@@ -25,9 +25,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-16 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+14 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 10, `Cerveza` 4, `Condimentos` 2.
+Reparto por categoría propuesta: `Cerveza` 2, `Condimentos` 2, `Lácteos y quesos` 10.
 
 Fuentes de este lote:
 
@@ -42,8 +42,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 |---|---|---|---|---|
 | MFB - Manifattura Birre Bologna | Bologna | `Cerveza` | birra artigianale | [web](https://www.manifatturabirre.it/) |
 | Birrificio Claterna | Castel San Pietro Terme | `Cerveza` | birra artigianale | — |
-| Birrificio Vecchia Orsa | San Giovanni in Persiceto | `Cerveza` | birra artigianale | [web](https://www.vecchiaorsa.it/) |
-| Birra Bellazzi | San Lazzaro di Savena | `Cerveza` | birra artigianale | [web](https://www.birrabellazzi.it) |
 | Acetaia Zanchetta di Fava Rita | Bologna | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | Soc. Agr. Fontanelli srl | Bologna | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | CASEARIA DI SANT'ANNA | Anzola dell'Emilia | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |

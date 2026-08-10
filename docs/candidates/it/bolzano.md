@@ -27,23 +27,11 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Preselección con identidad y oferta públicas — 2026-08-10
 
-Trece candidatos completan el lote de 25 para Trentino-Alto Adige. Todos aparecen con dirección y contacto en el [elenco oficial de expositores de Alto Adige en Vinitaly 2026](https://www.vinialtoadige.com/images/events/vinitaly-2026-elenco-espositori-stand-alto-adige.pdf) del Consorzio Vini Alto Adige. La feria confirma identidad pública y vino propio actual; queda comprobar que la dirección citada sea la bodega o finca productiva y no solo la sede comercial.
+Un candidato permanece retenido tras la revisión ampliada del 2026-08-10. La denominación `Tenuta Larcherhof – Thomas Dorfmann` no puede reconciliarse sin ambigüedad con la identidad y la ubicación que publican las fuentes actuales.
 
 | Candidato público | Comune provisional | Producto propio visible | Siguiente comprobación |
 |---|---|---|---|
-| Cantina Andriano | Andriano | vino | comprobar bodega, contacto y posible relación cooperativa |
-| Cantina Terlano | Terlano | vino | comprobar bodega productiva y contacto |
-| Tenuta J. Hofstätter | Termeno sulla Strada del Vino | vino | fijar unidad productiva frente a sedes de visita |
-| Schmid Oberrautner | Bolzano | vino | confirmar viñedos y dirección de bodega |
 | Tenuta Larcherhof – Thomas Dorfmann | Bolzano | vino | confirmar dirección productiva |
-| Tenuta Ebner | Campodazzo, Renon | vino | confirmar comune y dirección de bodega |
-| Tenuta Egger Ramer | Bolzano | vino | confirmar dirección productiva |
-| Haderburg | Salorno sulla Strada del Vino | vino espumoso | comprobar bodega y contacto actual |
-| Peter Zemmer | Cortina sulla Strada del Vino | vino | comprobar que la dirección publicada sea productiva |
-| Elena Walch | Termeno sulla Strada del Vino | vino | fijar finca / bodega principal |
-| Gump Hof – Markus Prackwieser | Fiè allo Sciliar | vino | confirmar Novale di Presule como unidad productiva |
-| Untermoserhof – Florian Ramoser | Bolzano | vino | confirmar bodega productiva |
-| Tiefenbrunner | Cortaccia sulla Strada del Vino | vino | confirmar dirección productiva y contacto |
 
 ## Categorías poco representadas — barrido del 2026-08-10
 

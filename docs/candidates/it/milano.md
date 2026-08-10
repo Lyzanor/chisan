@@ -26,9 +26,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-31 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+27 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Carne` 9, `Lácteos y quesos` 9, `Cerveza` 6, `Fruta y verdura` 5, `Condimentos` 2.
+Reparto por categoría propuesta: `Carne` 16, `Huevos` 3, `Fruta y verdura` 7, `Aceite` 1, `Condimentos` 4, `Legumbres y cereales` 7, `Miel` 4, `Conservas` 3, `Cerveza` 3, `Lácteos y quesos` 9.
 
 Fuentes de este lote:
 
@@ -50,12 +50,8 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Cascina Bullona | Ponte Di Magenta | `Carne` + `Miel` + `Conservas` | L’azienda coltiva cereali, alleva bovini, suini e api e produce insaccati, sott'oli e sott'aceti, confetture, torte, biscotti.Vendita di insaccati, confetture, conserve, torte, biscotti, farina, riso. | 02.97293135, 02.97292091<br>bullona@agriturismobullona.it<br>[web](http://www.agriturismobullona.it) |
 | Società agricola Cascina Salazzara S.S. | Pontevecchio Di Magenta | `Carne` + `Miel` + `Legumbres y cereales` | Azienda biologica certificata ad indirizzo cerealicolo con foraggio e allevamento di api. Miele biologico e suoi derivati. | 02.9790934 - 333.9031747 - 348.7038210<br>info@cascinasalazzara.it<br>[web](http://www.cascinasalazzara.it) |
 | Cirenaica | Robecchetto con Induno | `Carne` + `Conservas` + `Legumbres y cereales` | L’azienda coltiva cereali ed alleva suini, bovini da carne e animali di bassa corte. Produce insaccati e conserve, coltiva un orto ed un frutteto per l’utilizzo nel proprio ristoro e vendita diretta. | 0331.875855<br>info@cirenaica.it<br>[web](http://www.cirenaica.it) |
-| Birrificio AcmE | Basiano | `Cerveza` | birra artigianale | [web](https://www.birrificioacme.it/) |
-| Birrificio Cascinazza | Buccinasco | `Cerveza` | birra artigianale | [web](https://prodotticascinazza.it/) |
-| Serra Storta | Buscate | `Cerveza` | birra artigianale | [web](https://www.serrastorta.it) |
 | Birrificio WAR | Cassina de' Pecchi | `Cerveza` | birra artigianale | [web](https://www.birrificiowar.it/) |
 | BIRRIFICIO DI LEGNANO | Legnano | `Cerveza` | birra artigianale | — |
-| BIRRIFICIO LAMBRATE | Milano | `Cerveza` | birra artigianale | [web](https://www.birrificiolambrate.com) |
 | L'Aia | Cassinetta di Lugagnano | `Condimentos` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva secondo il metodo dell’agricoltura biologica: cereali mais, orzo, frumento dai quali ricava farine integrali e non, frutti antichi, verdure, piante officinali ed aromatiche. | 02.9424900<br>agriturismoaia@hotmail.it<br>[web](http://www.agriturismoaia.it) |
 | Canonaco Matteo -Acetaia Corte D’Este | Milano | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
 | APOL INDUSTRIALE | Milano | `Fruta y verdura` | ORTOFRUTTA | — |

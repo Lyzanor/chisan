@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-38 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+33 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 9, `Cerveza` 6, `Carne` 5, `Lácteos y quesos` 4, `Pescado` 4, `Fruta y verdura` 3, `Legumbres y cereales` 3, `Miel` 3, `Huevos` 1.
+Reparto por categoría propuesta: `Aceite` 12, `Miel` 4, `Frutos secos` 3, `Legumbres y cereales` 5, `Otros` 3, `Condimentos` 3, `Conservas` 4, `Fruta y verdura` 7, `Carne` 7, `Dulces y repostería` 3, `Cerveza` 1, `Huevos` 1, `Lácteos y quesos` 4, `Pescado` 4.
 
 Fuentes de este lote:
 
@@ -54,12 +54,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Az. Agricola ed Agriturismo il Castoro di Pietro Di Domenico | Roma | `Carne` | Animale Bovino da carne biologico | 06/99802020, 335/336789<br>info@azagricolailcastoro.it |
 | Soc. Agr. Fortunato sas | Roma | `Carne` + `Dulces y repostería` + `Fruta y verdura` | coppa, mortadella, lonzino, lonza, guanciale, pancetta, lardo di S. Nicola, porchetta, coppiette di maiale, corallina, sallsiccia secca (semplice e aromatizzata), salame paesano, caciotta di mucca, marzolina, fettuccine, | 06 87120518<br>fortunatoaziendaagricola@gmail.com<br>[web](https://www.aziendagricolafortunato.it) |
 | Az Agr Guendalina Morani | Tolfa | `Carne` + `Aceite` + `Conservas` | Prodotti orticoli biologici, carne bovina maremmana biologica, carciofini sott'olio biologici, zucchine sott'olio biologiche | 0766/571878, 338/7066354<br>azienda.morani@tiscali.it |
-| RITUAL LAB | Formello | `Cerveza` | birra artigianale | [web](https://www.ritual-lab.it/) |
-| Birra Oxiana | Pomezia | `Cerveza` | birra artigianale | [web](https://www.birraoxiana.it/) |
 | ECB - Eternal City Brewing | Roma | `Cerveza` | birra artigianale | [web](https://www.eternalcitybrewing.it/) |
-| Jungle Juice Brewing | Roma | `Cerveza` | birra artigianale | [web](https://www.junglejuicebrewing.com/) |
-| Rebel's | Roma | `Cerveza` | birra artigianale | [web](https://www.rebelsbrewery.it/) |
-| Birrificio Lepino | Segni | `Cerveza` | birra artigianale | [web](https://www.birrificiolepino.it) |
 | Azienda Panificio Liberati snc | Nazzano | `Fruta y verdura` | Amaretti, ciambelline/ciambelle al vino o con l'anice, treccia all'anice, calzone con verdure (fallone), pane con le patate, pangiallo, mostaccioli, pizza bianca, ciriola romana, pizza rossa | 0765/332422, 0765/332657, 327/0425377<br>info@panificioliberati.it |
 | Soc. Coop. Il Trattore srl | Roma | `Fruta y verdura` | Prodotti orticoli biologici certificati | 06/65742168, 06/65759826<br>info@iltrattore.it |
 | Az Agr Roncella Giuseppe | Santa Marinella | `Fruta y verdura` | carciofo di Tarquinia o della maremma viterbese, finocchio di Tarquinia, broccolo romanesco | 0766/570270<br>s.roncella@alice.it |

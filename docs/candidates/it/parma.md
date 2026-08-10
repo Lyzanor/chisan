@@ -27,21 +27,18 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-80 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+78 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 78, `Cerveza` 2.
+Reparto por categoría propuesta: `Lácteos y quesos` 78.
 
 Fuentes de este lote:
 
 - Consorzio del Formaggio Parmigiano Reggiano — trova caseificio — <https://www.parmigianoreggiano.com/it/caseifici-trova-caseificio>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
-| Turris Birra | Borgo Val di Taro | `Cerveza` | birra artigianale | [web](https://www.turrisbirra.it/) |
-| BASTIAN CONTRARIO | Parma | `Cerveza` | birra artigianale | [web](https://bastiancontrarioparma.it/) |
 | CASEIFICIO SOCIALE BORGOTARO | Albareto | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
 | BRUGNOLI F.LLI | Bardi | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
 | CASEIFICIO CANSALDI | Bardi | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |

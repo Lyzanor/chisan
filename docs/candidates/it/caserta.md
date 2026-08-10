@@ -27,14 +27,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-56 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+55 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 21, `Lácteos y quesos` 14, `Fruta y verdura` 11, `Miel` 3, `Carne` 2, `Condimentos` 2, `Conservas` 2, `Cerveza` 1.
+Reparto por categoría propuesta: `Aceite` 25, `Miel` 10, `Fruta y verdura` 30, `Condimentos` 7, `Conservas` 6, `Carne` 3, `Lácteos y quesos` 14.
 
 Fuentes de este lote:
 
 - Regione Campania — Albo regionale delle fattorie didattiche (open data) — <https://dati.regione.campania.it/catalogo/Fattorie-didattiche>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -63,7 +62,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Frantoio Oleario Migliozzi Enrico | Teano | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-361.html) |
 | Azienda Agricola G. D'Andrea | Caianello | `Carne` | salumi e carni | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-81.html) |
 | Salumificio Magroni | Pastorano | `Carne` | salumi e carni | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-164.html) |
-| Birrificio artigianale Magifra | Vitulazio | `Cerveza` | birra artigianale | [web](https://www.magifrabeer.com/) |
 | Al.Gio. srl | Sessa Aurunca | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-174.html) |
 | Iniziativa Agricola Soc. Agr. Arl | Sparanise | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-385.html) |
 | Bosco Farneto | Presenzano | `Conservas` | conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-179.html) |

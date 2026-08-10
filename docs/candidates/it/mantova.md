@@ -30,16 +30,15 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-39 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+38 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 20, `Fruta y verdura` 7, `Carne` 5, `Miel` 3, `Cerveza` 1, `Condimentos` 1, `Destilados y licores` 1, `Legumbres y cereales` 1.
+Reparto por categoría propuesta: `Carne` 7, `Fruta y verdura` 13, `Legumbres y cereales` 7, `Huevos` 2, `Condimentos` 2, `Conservas` 3, `Destilados y licores` 2, `Lácteos y quesos` 20, `Miel` 3.
 
 Fuentes de este lote:
 
 - Consorzio del Formaggio Parmigiano Reggiano — trova caseificio — <https://www.parmigianoreggiano.com/it/caseifici-trova-caseificio>
 - Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
 - Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -50,7 +49,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Corte Galvagnina | Marcaria | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | Azienda ad indirizzo cerealicolo, vitivinicolo e ortofrutticolo con allevamento di animali da cortile. Bosco. | 0376.969059<br>info@cortegalvagnina.it<br>[web](http://www.cortegalvagnina.it.) |
 | Corte Valle San Martino | Moglia | `Carne` + `Huevos` + `Legumbres y cereales` | Si coltivano mais, orzo, grano, frutta e vite. Si allevano bovini, suini, avicoli e ovini e si producono insaccati tra cui il "salam casalin dei contadini mantovani". In azienda c’è un parco botanico con oltre 100 essenz | 0376.557943<br>cortevallesanmartino@alice.it |
 | Bio Welt-La fattoria sul fiume | Pozzolo Di Marmirolo | `Carne` + `Huevos` + `Legumbres y cereales` | L’attività dell’azienda è basata principalmente sull’allevamento allo stato semibrado di bovini, cavalli, asini, maiali, pecore e avicoli. Si coltivano cereali e kiwi e si vendono succo di kiwi e insaccati. | 0376.460086 fax<br>bio-welt@libero.it |
-| Mister B Brewery | San Giorgio Bigarello | `Cerveza` | birra artigianale | [web](https://www.misterb.beer) |
 | Corte Cascine | Borgoforte Borgo Virgilio | `Condimentos` + `Conservas` + `Fruta y verdura` | L’azienda coltiva alberi da frutto, ortaggi, erbe aromatiche e pratica la pioppicoltura da legno. Produce confetture, mostarde e passata di pomodoro. | 0376.648175<br>info@cortecascine.it<br>[web](http://www.cortecascine.it) |
 | Corte Pagliare Verdieri | Commessaggio | `Destilados y licores` + `Condimentos` + `Legumbres y cereales` | Azienda a conduzione biologica. Cerealicoltura e viticoltura. Produzione di Lambrusco viadanese biologico, aceto, agrodolce, grappa. | 0376.98526<br>cortepagliare@libero.it<br>[web](http://www.agriturismomantova.it) |
 | O.P. VERDEINTESA | Goito | `Fruta y verdura` | ORTOFRUTTA | — |

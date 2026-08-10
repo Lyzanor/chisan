@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-18 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+15 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 10, `Cerveza` 6, `Carne` 2.
+Reparto por categoría propuesta: `Carne` 12, `Conservas` 3, `Frutos secos` 1, `Legumbres y cereales` 1, `Fruta y verdura` 2, `Cerveza` 3, `Lácteos y quesos` 10, `Miel` 4, `Helados` 1.
 
 Fuentes de este lote:
 
@@ -44,10 +44,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | La Fattoria | Sesto Calende | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva cereali, alberi da frutta e alleva con metodo ecocompatibile capre, vacche e maiali utilizzati per la produzione di salumi e carni. | 0331.924897<br>lafattoriadidattica.va@virgilio.it<br>[web](http://www.lafattoriadidattica.com) |
 | BIRRA OV | Busto Arsizio | `Cerveza` | birra artigianale | [web](https://www.birraov.com/it/) |
 | PicoBrew | Busto Arsizio | `Cerveza` | birra artigianale | [web](https://www.picobrew.it/) |
-| Birrificio Settimo | Carnago | `Cerveza` | birra artigianale | [web](https://www.birrificiosettimo.it/) |
-| VETRA | Caronno Pertusella | `Cerveza` | birra artigianale | [web](https://vetra.beer) |
 | 50&50 | Varese | `Cerveza` | birra artigianale | [web](https://www.50e50.beer) |
-| The Wall Italian Craft Beer | Venegono Inferiore | `Cerveza` | birra artigianale | [web](https://www.thewallbeer.com/) |
 | Il Vecchio Castagno | Angera | `Lácteos y quesos` + `Carne` + `Miel` | Azienda con allevamenti di caprini e bovini, api e animali di bassa corte. Produzione di piccoli frutti, frutta e ortaggi, insaccati, Azienda con allevamenti di caprini e bovini, api e animali di bassa corte. Produzione | 0331.975131<br>ilvecchiocastagno@gmail.com<br>[web](http://www.ilvecchiocastagno.com) |
 | Fattoria Canale | Azzate | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda alleva suini, avicoli e api. Produce carne, insaccati, latte, formaggi, miele, confetture e marmellate destinati alla ristorazione. | 0332.459673<br>liliana.canale@tin.it<br>[web](http://www.canaleagriturismo.com) |
 | Pasquè | Bernate Di Casale Litta | `Lácteos y quesos` + `Carne` + `Miel` | Azienda zootecnica. Si allevano equini, bovini, suini, ovini, caprini, avicoli, animali di bassa corte. Si producono insaccati, latticini freschi e stagionati. Si pratica l’apicoltura. | 0332.948307<br>fattoria@pasque.it<br>[web](http://www.pasque.it) |

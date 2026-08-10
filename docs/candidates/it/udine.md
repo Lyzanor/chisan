@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-67 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+51 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Carne` 48, `Lácteos y quesos` 8, `Cerveza` 3, `Aceite` 2, `Miel` 2, `Condimentos` 1, `Conservas` 1, `Frutos secos` 1, `Legumbres y cereales` 1.
+Reparto por categoría propuesta: `Aceite` 4, `Condimentos` 5, `Fruta y verdura` 22, `Carne` 41, `Legumbres y cereales` 18, `Miel` 6, `Frutos secos` 2, `Conservas` 2, `Cerveza` 1, `Lácteos y quesos` 8, `Pescado` 1.
 
 Fuentes de este lote:
 
@@ -63,37 +63,21 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Solari Eliana e Silvia Società agricola Semplice | Prato Carnico | `Carne` + `Condimentos` + `Conservas` | convenzionale: allevamento di animali produzione biologica: foraggicoltura, orticoltura, frutticoltura (frutta secca, pomacee, sambuco, piccoli frutti), piante officinaliraccolta spontanea: mirtillo e cicerbitapreparazio | 043369379<br>info@sotlanapa.it<br>[web](https://www.sotlanapa.it) |
 | Azienda agricola Bertagnin Virginia | Precenicco | `Carne` + `Condimentos` + `Fruta y verdura` | Allevamento con fecondazione artificiale di cavalli e pony principalmente di razza Knabstrupper (meglio conosciuto come il cavallo di Pippi Calzelunghe); piccolo orto per la produzione di ortaggi,piante officinali,frutte | info@virginiaranch.it<br>[web](https://www.virginiaranch.it) |
 | Azienda agricola F.lli Comello Giovanni, Danilo, Domenico s.s | Reana del Rojale | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | allevamento di animaliViticoltura, frutticoltura, orticoltura, cerealicoltura azienda agricola con offerta agrituristica | 0432852625<br>daiminisins@gmail.com<br>[web](https://www.minisins.it) |
-| A&B Prosciutti | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956485<br>info@aebprosciutti.it<br>[web](http://www.aebprosciutti.it/) |
-| Agricola Tre Valli | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956411<br>[web](http://www.negroni.com/) |
-| Alberti 1906 “La casa del prosciutto” | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957422<br>info@lacasadelprosciutto.com<br>[web](http://www.lacasadelprosciutto.com/) |
 | Arbea | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | Tel +39 0432 953075<br>arbea@fratelliberetta.com |
-| DOK Dall’Ava | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957335<br>info@dallava.com<br>[web](http://www.dallava.com/) |
-| Eli Prosciutti | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957077<br>fogolar@eliprosciutti.it<br>[web](https://www.eliprosciutti.it/prodotti/prosciutto-san-daniele-dop/) |
 | Filiera Uno Prosciutti | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956636<br>filieraunoprosciutti@alcaruno.it<br>[web](http://www.alcaruno.it/) |
 | Framon | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | +39 0432 956633<br>[web](http://www.fratelliberetta.com/) |
 | Io Prosciutto | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 940089<br>ioprosciuttosrl@gmail.com |
-| La Glacere | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 954102<br>info@laglacere.it<br>[web](http://www.laglacere.it/) |
 | Leoncini Prosciutti | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 940693<br>info@leonciniprosciutti.com<br>[web](http://www.leonciniprosciutti.com/) |
-| Levoni | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956265<br>levoni@levoni.it<br>[web](http://www.levoni.it/) |
-| Martelli il 27 | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957539<br>sandaniele@martelli.com<br>[web](https://www.martelli.com) |
-| Morgante | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956511<br>info@morgante.it<br>[web](http://www.morgante.it/) |
 | Nuova Mondial | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957638<br>nuovamondial@alice.it |
 | Principe di San Daniele | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T + 39 0432 942083<br>info@salumiprincipe.it |
-| Prosciutti Coradazzi | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957582<br>info@coradazzi.it<br>[web](http://www.coradazzi.it/) |
-| Prosciuttifici Picaron | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 941388<br>[web](http://www.picaron.it) |
-| Prosciuttificio Bagatto | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957252<br>info@prosciuttibagatto.it<br>[web](http://www.prosciuttibagatto.it/) |
-| Prosciuttificio Friulano San Daniele | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957492<br>info@friulanosandaniele.it<br>[web](http://www.friulanosandaniele.it/) |
 | Prosciuttificio Il Camarin | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 942125<br>ilcamarin.prosciutti@gmail.com |
 | Prosciuttificio Zanini | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956017<br>zaninigiobatta@gmail.com |
 | Queen’s | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 955956<br>info@queenssales.it |
-| Salumifici GranTerre | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 955551<br>info@granterre.it<br>[web](http://www.granterre.it/) |
 | Sanbon | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957353<br>info@testaemolinaro.it<br>[web](http://www.testaemolinaro.it/) |
 | Selva Alimentari | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 956275<br>selva.alimentari@virgilio.it |
 | Testa & Molinaro | San Daniele del Friuli | `Carne` | Prosciutto di San Daniele DOP | T +39 0432 957353<br>info@testaemolinaro.it<br>[web](http://www.testaemolinaro.it/) |
 | Società agricola Te Cort s.s. | Torreano Di Cividale Del Friuli | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | vitivinicoltura, cerealicoltura, orticoltura, frutticoltura, allevamento di animali (suini ed animali di bassa corte) azienda agricola con offerta agrituristica | 0432715287<br>tecort@alice.it<br>[web](https://www.agriturismotecort.it) |
-| BIRRA GARLATTI COSTA | Forgaria nel Friuli | `Cerveza` | birra artigianale | [web](https://www.birragarlatticosta.it) |
 | Foglie d'Erba | Forni di Sopra | `Cerveza` | birra artigianale | [web](https://birrificiofogliederba.it/) |
-| BIRRIFICIO BASEI | Latisana | `Cerveza` | birra artigianale | [web](https://www.baseibrewery.it) |
 | Società agricola di Favia Lorenzo & Coceani Germana snc | Cividale del Friuli | `Condimentos` + `Fruta y verdura` | produzione biologica: foraggicoltura, orticoltura, piante officinali, viticoltura, frutticoltura azienda agricola con produzione biologica | 0432700820<br>info@ilgiardinodelchiostro.com<br>[web](https://www.ilgiardinodelchiostro.it) |
 | L'Orto Felice di Luciano Romanelli | Udine | `Conservas` + `Legumbres y cereales` + `Fruta y verdura` | produzione biologica: orticoltura, cerealicoltura, frutticoltura (pomacee)preparazione biologica: molitura cereali, conserve vegetali azienda agricola con produzione e preparazione biologica | 0432602574<br>[web](https://www.l'ortofelice.it) |
 | Azienda agricola Costalunga Antonio | Faedis | `Frutos secos` + `Fruta y verdura` | Produzione biologica: orticoltura, vitivinicoltura, foraggicoltura, frutticoltura (pomacee, castagne) Preparazione biologica: sidro, succo di mela, vino doc azienda agricola con offerta agrituristica, produzione e prepar | 0432728638<br>info@casadelgrivo.com<br>[web](https://www.casadelgrivo.com) |

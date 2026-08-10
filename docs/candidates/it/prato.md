@@ -25,14 +25,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-13 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+12 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 12, `Cerveza` 1.
+Reparto por categoría propuesta: `Aceite` 12.
 
 Fuentes de este lote:
 
 - Consorzio Olio Toscano IGP — aziende associate — <https://www.oliotoscanoigp.it/aziende/>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -50,4 +49,3 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | SAF SOCIETA' AGRICOLA E FORESTALE S.R.L. | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | saf@aleph.srl |
 | SOC. AGR. CERI S.R.L A SOCIO UNICO | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | edoardo@tenutaceri.it |
 | VILLA RUCELLAI - FATTORIA DI CANNETO S.A.S. | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | lorenzo@villarucellai.it |
-| MOSTODOLCE | Vaiano | `Cerveza` | birra artigianale | [web](https://www.mostodolce.it) |

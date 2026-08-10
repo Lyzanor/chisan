@@ -25,9 +25,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-12 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+3 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 12.
+Reparto por categoría propuesta: `Cerveza` 3.
 
 Fuentes de este lote:
 
@@ -37,15 +37,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
-| Filodilana Birrificio Indipendente | Avigliana | `Cerveza` | birra artigianale | [web](https://www.birrafilodilana.it/) |
-| Birrificio Aleghe | Giaveno | `Cerveza` | birra artigianale | [web](https://www.aleghebirra.com) |
-| Birrificio Rabèl | Ivrea | `Cerveza` | birra artigianale | [web](https://www.birrarabel.it) |
 | La Vecchia Ivrea | Ivrea | `Cerveza` | birra artigianale | — |
 | BIRRIFICIO GRADO PLATO | Montaldo Torinese | `Cerveza` | birra artigianale | [web](https://www.gradoplato.it) |
-| Birrificio Pinerolese | Pinerolo | `Cerveza` | birra artigianale | [web](https://www.birrificiopinerolese.it/) |
-| BIRRIFICIO GILAC | Rivoli | `Cerveza` | birra artigianale | [web](https://www.gilac.it) |
-| Birrificio Parsifal | S.Raffaele Cimena | `Cerveza` | birra artigianale | [web](https://www.birrificioparsifal.it) |
 | Birrificio La Piazza | Torino | `Cerveza` | birra artigianale | — |
-| METZGER 1848 | Torino | `Cerveza` | birra artigianale | [web](https://www.metzger1848.com/) |
-| SORALAMÀ | Vaie | `Cerveza` | birra artigianale | [web](https://www.soralama.it/) |
-| BEBA | Villar Perosa | `Cerveza` | birra artigianale | [web](https://www.birrabeba.it/) |

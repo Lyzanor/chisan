@@ -24,20 +24,3 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BIO CULTYVIA SOCIETA' SEMPLICE AGRICOLA | Gossolengo | VIA TORRONE  15 29020 | producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-10-01 | [IT-BIO-023.380-0036099.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0036099.2025.001.pdf) |
 | BOERI GIUSEPPE | Morfasso | CORNOLO, N 18 29020 | producción — vegetales sin transformar | 2029-03-15 | [IT-BIO-004.380-0012734.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0012734.2026.001.pdf) |
 | CA' DEL MONTE SOCIETA' AGRICOLA | Bettola | LOCALITA' LOC. PRATO BARBIERI 29021 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-06-29 | [IT-BIO-004.380-0074948.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0074948.2025.001.pdf) |
-
-## Categorías poco representadas — barrido del 2026-08-10
-
-2 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Cerveza` 2.
-
-Fuentes de este lote:
-
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| La Buttiga | Piacenza | `Cerveza` | birra artigianale | [web](https://www.labuttiga.it/) |
-| Retorto | Podenzano | `Cerveza` | birra artigianale | [web](https://www.retorto.it) |

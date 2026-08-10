@@ -25,9 +25,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-8 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+7 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Carne` 2, `Cerveza` 2, `Aceite` 1, `Fruta y verdura` 1, `Lácteos y quesos` 1, `Miel` 1.
+Reparto por categoría propuesta: `Aceite` 1, `Condimentos` 1, `Frutos secos` 1, `Carne` 3, `Fruta y verdura` 2, `Conservas` 3, `Bebidas sin alcohol` 2, `Cerveza` 1, `Lácteos y quesos` 1, `Miel` 1.
 
 Fuentes de este lote:
 
@@ -42,7 +42,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Azienda Agricola Villa Zita | Cremella | `Carne` + `Fruta y verdura` | In azienda si producono frutti di bosco ed ortaggi. Si allevano cavalli destinati alla compagnia, allo sport ed al tempo libero. Sia l'allevamento che l'addestramento vengono effettuati con metodi etologici che rispettan | 039.9272024, 338.9748680, 392.7312707<br>f.fornarelli@tiscali.it<br>[web](http://www.villazita.it) |
 | Bon Prà | Vendrogno | `Carne` + `Conservas` + `Bebidas sin alcohol` | L’azienda coltiva piccoli frutti more, mirtilli, lamponi e ribes e frutta antica. Inoltre, trasforma in succhi le confetture. Alleva bovini da carne ed equini. | 339.4553942<br>agribonpra@tiscali.it<br>[web](http://www.bonpra.it) |
 | Dulac | Galbiate | `Cerveza` | birra artigianale | [web](https://www.birradulac.it) |
-| BIRRIFICIO LARIANO | Sirone | `Cerveza` | birra artigianale | [web](https://www.birrificiolariano.com/) |
 | Amici Cavalli | Brivio | `Fruta y verdura` | L’azienda alleva equini e animali di bassa corte; produce frutta e verdura. | 039.9322077<br>giovannabrambilla@virgilio.it<br>[web](https://www.facebook.com/Amici-Cavalli-284532564989483/) |
 | Monsereno Horses | Imbersago | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda produce foraggi e alleva equini, ovi-caprini, suini, bovini e animali da cortile. Presenza di un vivaio e orto.Produce e vende: insaccati, carne, conserve, confetture, ortaggi, piccoli frutti, fiori e piante. | 039.9921343<br>info@monserenohorses.it<br>[web](http://www.monserenohorses.it) |
 | Apicoltura Ravasi | Merate | `Miel` + `Conservas` + `Bebidas sin alcohol` | L’azienda alleva api, capre tibetane, pecore owessant e animali di bassa corte. Coltiva frutta antica e piccoli frutti. Produce miele di qualità diverse, confetture, mostarde e succhi di frutta. | 039.599235<br>apienzo@apicolturaravasi.it<br>[web](http://www.apicolturaravasi.it) |

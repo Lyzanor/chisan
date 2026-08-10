@@ -26,14 +26,13 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-47 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+45 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 12, `Conservas` 10, `Lácteos y quesos` 8, `Fruta y verdura` 7, `Miel` 7, `Cerveza` 2, `Condimentos` 1.
+Reparto por categoría propuesta: `Aceite` 13, `Conservas` 15, `Fruta y verdura` 29, `Miel` 10, `Condimentos` 10, `Lácteos y quesos` 8, `Carne` 1.
 
 Fuentes de este lote:
 
 - Regione Campania — Albo regionale delle fattorie didattiche (open data) — <https://dati.regione.campania.it/catalogo/Fattorie-didattiche>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
@@ -51,8 +50,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Il Cocchiere | Poggiomarino | `Aceite` + `Conservas` | olivo e olio, conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-257.html) |
 | Masseria Panico di Eredi Beneduce Ettore | Somma Vesuviana | `Aceite` + `Conservas` + `Fruta y verdura` | olivo e olio, conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-9.html) |
 | Astapiana Villa Giusso | Vico Equense | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-84.html) |
-| Microbirrificio Artigianale Incanto | Casalnuovo di Napoli | `Cerveza` | birra artigianale | [web](https://www.birrificioincanto.it/) |
-| Birra KBirr | Giugliano in Campania | `Cerveza` | birra artigianale | [web](https://www.birrakbirr.com) |
 | Tenuta Fidentea | Pozzuoli | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-380.html) |
 | Piscina Mirabile | Bacoli | `Conservas` + `Fruta y verdura` | conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-238.html) |
 | Società Agricola Villa Romano srl | Napoli | `Conservas` + `Fruta y verdura` + `Condimentos` | conserve e confetture, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-429.html) |
