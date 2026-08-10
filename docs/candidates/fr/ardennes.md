@@ -24,3 +24,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA CROIX BOURBON CHATELAIN Laurent | EARL  LA CROIX BOURBON | GIVRY | 15 RUE DU BOUT HAUT 08130 | actividad | Taureaux (>24 mois), Triticale, Prairie permanente | 2026 | [nº Bio 7326](https://annuaire.agencebio.org/operateur/7326) |
 | LA DAUPHINEE DEMISSY Xavier | EARL LA DAUPHINE | LE FRETY | DEMISSY Xavier Ferme de la Dauphiné 08290 | actividad | Taureaux (>24 mois), Gel fixe, friche, gel spécifique n’entrant pas en rotation, Génisses renouvellement (>8 mois) | 2026 | [nº Bio 135000](https://annuaire.agencebio.org/operateur/135000) |
 | LA VERDELETTE DE MERODE Edouard | DE MERODE LEONEL | GUIGNICOURT SUR VENCE | Château de Guignicourt 08430 | actividad | Pommes de table, Viande bovine, fraîche ou réfrigérée, Veaux (< 8mois) | 2026 | [nº Bio 149135](https://annuaire.agencebio.org/operateur/149135) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| HARMONIE SERVICES | GARELLE WETE DJOUCHE | Charleville-Mézières | 20 AVENUE CHARLES DE GAULLE 08000 CHARLEVILLE-MEZIERES | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2025-01 | [SIREN 938710621](https://annuaire-entreprises.data.gouv.fr/entreprise/938710621) |
+| LE SAFRAN DE LILLY | CELINE JACQUIER | Launois-sur-Vence | 2 PLACE HENRI JURION 08430 LAUNOIS-SUR-VENCE | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2022-03 | [SIREN 910677004](https://annuaire-entreprises.data.gouv.fr/entreprise/910677004) |
+| DISTILLERIE SCAILLE | RENE BERTRAND | Hargnies | 4 CHE DU SAINT SACREMENT 08170 HARGNIES | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 1990-04 | [SIREN 377569538](https://annuaire-entreprises.data.gouv.fr/entreprise/377569538) |

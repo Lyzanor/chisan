@@ -23,3 +23,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LES BOURDONS | EARL DES BOURDONS | PANNECE | LE BOURDONNAIS 44440 | actividad | Prairie permanente, Luzerne, Prairie temporaire | 2026 | [nº Bio 111668](https://annuaire.agencebio.org/operateur/111668) |
 | LES BRILLATS LE PROVOST Sébastien | LES BRILLATS | ORVAULT | RUE DE LA LEVEE DES DONS 44700 | actividad | Plants et semences potagers, à l'exclusion des semences de betteraves, Pêches, Tomates | 2026 | [nº Bio 111665](https://annuaire.agencebio.org/operateur/111665) |
 | LIERRES (GAEC DES) | GAEC DES LIERRES | LE BIGNON | L AUGEOIRE 44140 | actividad | Colza fourrager, Parcours herbeux (hors estives collectives), Prairie permanente | 2026 | [nº Bio 100232](https://annuaire.agencebio.org/operateur/100232) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA BRULERIE | TORREFACTION SABARD | Nantes | 24 RUE DE LA MARNE 44000 NANTES | Café | 10.83Z — Transformation du thé et du café | 2023-07 | [SIREN 977830272](https://annuaire-entreprises.data.gouv.fr/entreprise/977830272) |
+| LA ROUTE DU CACAO | CHOCOLATERIE PINEAU | Le Croisic | 4 PLACE BOSTON 44490 LE CROISIC | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-05 | [SIREN 751599937](https://annuaire-entreprises.data.gouv.fr/entreprise/751599937) |
+| BRUNO CACAO | BRUNO GUILLARD CHOCOLATIER | Nantes | 114 RUE DES HAUTS PAVES 44000 NANTES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1998-08 | [SIREN 419764139](https://annuaire-entreprises.data.gouv.fr/entreprise/419764139) |
+| CHOCOLATERIE T.CHENAIS | SSTC | Treillières | 11 RUE DE RENNES 44119 TREILLIERES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2018-07 | [SIREN 841370646](https://annuaire-entreprises.data.gouv.fr/entreprise/841370646) |
+| PALUDIERE | FABIENNE DANIEL | Guérande | GRAND PALUMER 44350 GUERANDE | Condimentos | 08.93Z — Production de sel | 1990-01 | [SIREN 381589852](https://annuaire-entreprises.data.gouv.fr/entreprise/381589852) |

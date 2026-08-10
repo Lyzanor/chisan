@@ -21,3 +21,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LES LUSITANOS  VAN ECHELPOEL Hadewych | GROUPEMENT AGRICOLE DEXPLOITATION EN COMMUN AGREE DE LES LUSITANOS | Clara-Villerach | CORTAL CAN DE DEU TRAVERSE DE CLARA-VILLERACH 66500 | actividad | Béliers, Agneaux, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 138131](https://annuaire.agencebio.org/operateur/138131) |
 | MAISON ADVINAM | ADVINAM | Calce | la donna 66600 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Commerce de gros de boissons alcoolisées, Vins de raisin | 2026 | [nº Bio 162922](https://annuaire.agencebio.org/operateur/162922) |
 | MORENO MARCELO | MORENO MARCEL | SALSES-LE-CHATEAU | IMPASSE SAINTE COLOMBE 66600 | actividad | Grenades, Jus de fruits et légumes | 2026 | [nº Bio 142102](https://annuaire.agencebio.org/operateur/142102) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'ATELIER DE BELLE-MAMAN | BEATRICE SANCHEZ | Le Soler | 18 RUE FRANCOIS ARAGO 66270 LE SOLER | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2003-09 | [SIREN 326176930](https://annuaire-entreprises.data.gouv.fr/entreprise/326176930) |
+| BISCUITERIE GALAMUS | A.M. | Saint-Paul-de-Fenouillet | ZA LE REAL RUE DE LA FOU 66220 SAINT-PAUL-DE-FENOUILLET | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2011-03 | [SIREN 531374429](https://annuaire-entreprises.data.gouv.fr/entreprise/531374429) · [web sin contrastar](https://tot-va-be.eatbu.com/) |

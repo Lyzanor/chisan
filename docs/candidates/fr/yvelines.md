@@ -18,3 +18,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FRANTOLINE | RESIDENCES DE LOISIRS GESTION | Saint Illiers la Ville | 1 rue d'Inchelin 78980 | actividad | Framboises, Autres baies (hors cassis et myrtilles), Autres légumes à feuilles ou à tiges | 2026 | [nº Bio 281159](https://annuaire.agencebio.org/operateur/281159) |
 | LA FERME  DU LOUP BLANC | SCEA LA FERME DU LOUP BLANC | Civry la Forêt | ALMEIDA Maxime et Nathalie 1 Le Loup Blanc 78910 | actividad | Poules pondeuses, Prairie permanente, Poulets, vivants | 2026 | [nº Bio 131569](https://annuaire.agencebio.org/operateur/131569) |
 | LA FERME DES LOGES GOURLAOUEN Nils | EARL LA FERME DES LOGES | LES LOGES-EN-JOSAS | 26 RUE DE BUC 78350 | actividad | Œufs de poule, en coquille, frais, Commerce de détail de fruits et légumes frais, Raisin de table | 2026 | [nº Bio 32904](https://annuaire.agencebio.org/operateur/32904) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| DADOU MACARONS & CHOCOLAT | RECEP PERE ET FILS | Le Vésinet | 9 PLACE DE L'EGLISE 78110 LE VESINET | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2015-01 | [SIREN 809105232](https://annuaire-entreprises.data.gouv.fr/entreprise/809105232) |
+| LA LAITERIE DE LA FERME DE VILTAIN | — | Jouy-en-Josas | LE PETIT VILTAIN 78350 JOUY EN JOSAS | Lácteos y quesos | 10.51A — Fabrication de lait liquide et de produits frais | 1981-10 | [SIREN 322751009](https://annuaire-entreprises.data.gouv.fr/entreprise/322751009) |
+| LA TORREFACTION DU DONJON | TODD&CO | Houdan | 13 GRANDE RUE 78550 HOUDAN | Té e infusiones | 10.83Z — Transformation du thé et du café | 2023-09 | [SIREN 979338266](https://annuaire-entreprises.data.gouv.fr/entreprise/979338266) |

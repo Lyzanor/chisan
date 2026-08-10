@@ -19,3 +19,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 - **pépinière des poèmes** — fuera de alcance: La identidad pública es un vivero y no se acredita una oferta alimentaria actual. [Agence Bio](https://annuaire.agencebio.org/operateur/58590)
 - **L'Âme Forêt** — fuera de alcance: La única oferta publicada es gemoterapia, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/305129)
 - **VENI VERDI** — fuera de alcance: La actividad pública es agricultura urbana educativa, sin una oferta alimentaria propia bajo esta identidad. [Agence Bio](https://annuaire.agencebio.org/operateur/67572) · [fuente pública](https://veniverdi.fr)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRASSERIE DU GRAND PARIS | MY BEER COMPANY | Saint-Denis | 103 RUE CHARLES MICHELS 93200 SAINT-DENIS | Cerveza | 11.05Z — Fabrication de bière | 2011-07 | [SIREN 533304952](https://annuaire-entreprises.data.gouv.fr/entreprise/533304952) · [web sin contrastar](https://www.bgp.paris) |
+| VOODOO | CAROLINE BELLANDE | Aulnay-sous-Bois | 51 RUE JULES PRINCET 93600 AULNAY-SOUS-BOIS | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2023-11 | [SIREN 981560899](https://annuaire-entreprises.data.gouv.fr/entreprise/981560899) |
+| KANAPATHY PARVATHY | NITHILA KANAPATHIPPILLAI | Bobigny | 17 RUE HERZOG 93000 BOBIGNY | Pan y cereal | 10.61A — Meunerie | 2016-07 | [SIREN 822544912](https://annuaire-entreprises.data.gouv.fr/entreprise/822544912) |

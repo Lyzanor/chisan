@@ -22,3 +22,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FONDEROCHE (EARL) | EARL FONDEROCHE | PRAHECQ | LD LA FONTAINE DE LA ROCHELLE 79230 | actividad | Œufs de poule, en coquille, frais, Poules pondeuses, Prairie permanente | 2026 | [nº Bio 103372](https://annuaire.agencebio.org/operateur/103372) |
 | HERAULT Felix | Félix Hérault | MONCOUTANT-SUR-SEVRE | LA PETITE PLAINE 79240 | actividad | Triticale, Lupin, Blé tendre | 2026 | [nº Bio 5113](https://annuaire.agencebio.org/operateur/5113) |
 | IL ETAIT UNE FOIS ROCHARD Aude | IL ETAIT UNE FOIS | BRESSUIRE | ESSERTON 79300 | actividad | Plats préparés, Prairie permanente | 2026 | [nº Bio 134839](https://annuaire.agencebio.org/operateur/134839) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| FROMAGERIE LE FUMAILLOU | DENIS GUILLOTEAU | La Peyratte | LD FUMAILLES 79200 LA PEYRATTE | Lácteos y quesos | 10.51C — Fabrication de fromage | 2016-01 | [SIREN 818107153](https://annuaire-entreprises.data.gouv.fr/entreprise/818107153) |

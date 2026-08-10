@@ -22,3 +22,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | ESTADENS DE PERIGNON Patrick | EARL ESTADENS | PRESERVILLE | LD ESTADENS 31570 | actividad | Blé tendre, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 144366](https://annuaire.agencebio.org/operateur/144366) |
 | GAEC DE L'OUSTAL | GAEC RECONNU DE L'OUSTAL | Avignonet-Lauragais | EN JOUTY 31290 | actividad | Bande tampon ou fleurie, Autres surfaces non productive et surfaces non agricoles, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 171973](https://annuaire.agencebio.org/operateur/171973) |
 | GERARD BELLECOURT | BELLECOURT GERARD | CARBONNE | Le Lançon - 33 chemin de Canabère 31390 | actividad | Autres surfaces non productive et surfaces non agricoles, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Lin (graines) | 2026 | [nº Bio 107735](https://annuaire.agencebio.org/operateur/107735) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA BRULERIE DES FILATIERS | BAYSWATER | Toulouse | 28 RUE DES FILATIERS 31000 TOULOUSE | Café | 10.83Z — Transformation du thé et du café | 2013-10 | [SIREN 797666096](https://annuaire-entreprises.data.gouv.fr/entreprise/797666096) |
+| BRASSERIE DU GUE DES MOINES | PAILLE-FREYBURGER | Bruguières | ZI DE LA BRIQUETERIE 31 RUE DE LA BRIQUETERIE 31150 BRUGUIERES | Cerveza | 11.05Z — Fabrication de bière | 2015-01 | [SIREN 809295553](https://annuaire-entreprises.data.gouv.fr/entreprise/809295553) · [web sin contrastar](https://www.leguedesmoines.fr/) |

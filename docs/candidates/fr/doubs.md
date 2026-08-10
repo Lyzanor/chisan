@@ -22,3 +22,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FABRE PIQUEREZ Aurélie | FABRE PIQUEREZ AURELIE GINETTE MADELEINE | LES BRESEUX | 30 RUE PRINCIPALE 25120 | actividad | Zone de cueillette de plantes à parfum aromatiques et médicinales sauvages, Autres produits alimentaires n.c.a., Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 9428](https://annuaire.agencebio.org/operateur/9428) |
 | FERME CANELLE | FERME CANNELLE | VILLERS SOUS CHALAMONT | CANNELLE Jean-Louis et EISENZAEMMER Celine 5038 Rue de Montorge 25270 | actividad | Taureaux (>24 mois), Veaux (< 8mois), Arbres forestiers | 2026 | [nº Bio 158137](https://annuaire.agencebio.org/operateur/158137) |
 | GOUNAND GOUNAND David | GOUNAND | ROSET-FLUANS | 26 RUE DE SALANS 25410 | actividad | Fèves de soja, Autres céréales ou pseudo céréales, Aliments pour animaux de ferme | 2026 | [nº Bio 142797](https://annuaire.agencebio.org/operateur/142797) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRASSERIE ARTISANALE LA BONNE BOUIL | BRASSERIE ARTISANALE LA BONNE BOUILLE | Pontarlier | 14 RUE DU MAGASIN 25300 PONTARLIER | Cerveza | 11.05Z — Fabrication de bière | 2015-11 | [SIREN 814786109](https://annuaire-entreprises.data.gouv.fr/entreprise/814786109) · [web sin contrastar](https://www.brasseriebonnebouille.com/) |
+| L'ATELIER DU COOKIE | LORIANE RAMOS | Besançon | 65 RUE DE DOLE 25000 BESANCON | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2024-09 | [SIREN 931106637](https://annuaire-entreprises.data.gouv.fr/entreprise/931106637) |
+| GLACES CANDIDO MARTINEZ | CANDIDO MARTINEZ | Besançon | 89 GRANDE-RUE 25000 BESANCON | Helados | 10.52Z — Fabrication de glaces et sorbets | 2017-03 | [SIREN 828240259](https://annuaire-entreprises.data.gouv.fr/entreprise/828240259) |

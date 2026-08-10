@@ -23,3 +23,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **BOUGEOIS JULES-ANTOINE** — fuera de alcance: La identidad pública es un vivero de árboles, no un productor de alimentos o bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/52550) · [fuente pública](https://www.pepiniere-indigene.info)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| CHATEAU DE FREYSSINET - CHATAIGNES | JOHN SMID | Saint-Priest-Ligoure | 33 FREYSSINET 87800 SAINT-PRIEST-LIGOURE | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2022-01 | [SIREN 909817314](https://annuaire-entreprises.data.gouv.fr/entreprise/909817314) |
+| TISANA D'AQUI | MARIE-ODILE DESVALOIS | Veyrac | 10 IMPASSE DE LA FORET 87520 VEYRAC | Té e infusiones | 10.83Z — Transformation du thé et du café | 2019-01 | [SIREN 844866186](https://annuaire-entreprises.data.gouv.fr/entreprise/844866186) |

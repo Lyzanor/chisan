@@ -25,3 +25,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **L'Arche Paysanne** — fuera de alcance: Granja pedagógica centrada en asnos, caballos y cabras; no consta una oferta alimentaria pública. [Agence Bio](https://annuaire.agencebio.org/operateur/20223) · [fuente pública](https://larchepaysanne.fr/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LEPINAY CHOCOLATIER | LES TROIS CHOCOLATS | Saint-Thibault-des-Vignes | 5 RUE DE LA NOUE GUIMANTE 77400 SAINT-THIBAULT-DES-VIGNES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2000-11 | [SIREN 433749132](https://annuaire-entreprises.data.gouv.fr/entreprise/433749132) |
+| SENEGAMBIAN BITES | SERRAY KEBE | Chelles | MAISON 5 22 CHEMIN DU SEMPIN 77500 CHELLES | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2018-02 | [SIREN 835213745](https://annuaire-entreprises.data.gouv.fr/entreprise/835213745) |
+| LA MERINGUERIE FRANCAISE | NATACHA JOURNOU FREDET | Provins | 21 RUE DU PALAIS 77160 PROVINS | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2013-12 | [SIREN 799004304](https://annuaire-entreprises.data.gouv.fr/entreprise/799004304) |

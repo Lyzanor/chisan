@@ -21,3 +21,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Ferme de Laisia | GAEC DE LA COMBE DE LAISIA | LES MOLUNES | Ldt Le Bas de laisia 39310 | actividad | Pâtisseries et viennoiseries fraîches, Poules pondeuses, Génisses renouvellement (>8 mois) | 2026 | [nº Bio 149269](https://annuaire.agencebio.org/operateur/149269) |
 | FERMES DES LYRES | GAEC FERMES DES LYRES | CHOUX | 5 CHEMIN DE SOUS CUCHET 39370 | actividad | Triticale, Prairie permanente, Vaches allaitantes | 2026 | [nº Bio 146891](https://annuaire.agencebio.org/operateur/146891) |
 | GAEC FAHRNI | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE FAHRNI | AROMAS | 2LES MEULES 39240 | actividad | Autres surfaces non productive et surfaces non agricoles, Mélanges fourragers, Prairie temporaire | 2026 | [nº Bio 159503](https://annuaire.agencebio.org/operateur/159503) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA BRULERIE COMTOISE | YSB | Dole | ET 44 42 GRANDE RUE 39100 DOLE | Café | 10.83Z — Transformation du thé et du café | 2019-12 | [SIREN 879483600](https://annuaire-entreprises.data.gouv.fr/entreprise/879483600) |
+| LE SAFRAN BLEU | CLAUDE ANCEDY | Chissey-sur-Loue | 60 GRANDE RUE 39380 CHISSEY-SUR-LOUE | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2009-01 | [SIREN 509865168](https://annuaire-entreprises.data.gouv.fr/entreprise/509865168) |
+| PISCICULTURE DES GROTTES | ROLAND GAILLARD | Les Planches-près-Arbois | 15 RUE DE LA BAUME 39600 LES PLANCHES-PRES-ARBOIS | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2009-01 | [SIREN 509116133](https://annuaire-entreprises.data.gouv.fr/entreprise/509116133) |

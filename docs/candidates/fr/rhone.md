@@ -20,3 +20,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | GAEC LA FERME DU MARJON | LA FERME DU MARJON | Soucieu-en-Jarrest | 1596 Route de Marjon 69510 | actividad | Prairie permanente, Prairie temporaire, Triticale | 2026 | [nº Bio 159050](https://annuaire.agencebio.org/operateur/159050) |
 | GAEC NICOLOSI | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN NICOLOSI | JULLIE | La Ferme du Rolland 5073 route de la Siberie 69840 | actividad | Taureaux (>24 mois), Veaux (< 8mois), Génisses engraissement (>8 mois) | 2026 | [nº Bio 112516](https://annuaire.agencebio.org/operateur/112516) |
 | LA BONNE TONNE AGATENSI Thomas | LA BONNE TONNE | VILLIE-MORGON | 668 ROUTE DE LA CHAPONNE 69910 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Vins de raisin, Culture inconnue | 2026 | [nº Bio 11539](https://annuaire.agencebio.org/operateur/11539) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| ATELIER BONNEVIE | JULIA BONNEVIE | Saint-Cyr-au-Mont-d'Or | 2 CHEMIN DES CHARBOTTES 69450 SAINT-CYR-AU-MONT-D'OR | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2023-10 | [SIREN 981008469](https://annuaire-entreprises.data.gouv.fr/entreprise/981008469) |
+| UNICO ARTISAN GLACIER | UNICO ARTISAN | LYON | 91 MONTEE DE LA GRANDE COTE 69001 LYON | Helados | 10.52Z — Fabrication de glaces et sorbets | 2017-05 | [SIREN 830068920](https://annuaire-entreprises.data.gouv.fr/entreprise/830068920) |

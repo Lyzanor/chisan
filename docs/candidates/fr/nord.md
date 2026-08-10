@@ -22,3 +22,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **EARL FABIEN HOUSEZ** — fuera de alcance: La oferta pública es alimentación animal, no alimentos o bebidas para consumo humano. [Agence Bio](https://annuaire.agencebio.org/operateur/53586) · [fuente pública](https://agreenpellets.fr)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| TONIKBIO 59 | PASCAL LAURENT | Le Cateau-Cambrésis | 21 RESIDENCE DUC DE TREVISE RUE PERONNE SUR SELLE 59360 LE CATEAU-CAMBRESIS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2003-05 | [SIREN 448425454](https://annuaire-entreprises.data.gouv.fr/entreprise/448425454) |
+| SABDA | AISSATOU DIALLO | Loos | 1 RUE PAUL CEZANNE 59120 LOOS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2022-03 | [SIREN 910627694](https://annuaire-entreprises.data.gouv.fr/entreprise/910627694) |
+| L'ATELIER DES LYS | NOUGAT DES LYS | Steenwerck | CROIX DU BAC 3 RUE DE CARPE 59181 STEENWERCK | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1996-09 | [SIREN 412206799](https://annuaire-entreprises.data.gouv.fr/entreprise/412206799) |
+| L'APEROLIVES/ JAWAD CONSULTING | JAWAD SBAHI | Abscon | 13 RUE BLANQUI 59215 ABSCON | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 1993-06 | [SIREN 391130697](https://annuaire-entreprises.data.gouv.fr/entreprise/391130697) |

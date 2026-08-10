@@ -24,3 +24,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 - **Clavières et Dépendances** — fuera de alcance: La identidad pública verificada es un alojamiento turístico y el registro no declara alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/303439) · [fuente pública](https://www.clavieres-dependances.fr/)
 - **LE JARDIN BIO DU CHAGNE LALOUF Stéphane** — fuera de alcance: La oferta pública es CBD y material de vivero, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/142465) · [fuente pública](https://www.cbd-berry.fr)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| DENIS ELDIN | — | Sarzay | LE PONDERON 16 ROUTE DE NEUVY 36230 SARZAY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2016-05 | [SIREN 820233039](https://annuaire-entreprises.data.gouv.fr/entreprise/820233039) |
+| L'ATELIER DE LA BIERE | L'ATELIER DE LA BIERE CHATEAUROUX | Châteauroux | 1 PLACE NAPOLEON 36000 CHATEAUROUX | Cerveza | 11.05Z — Fabrication de bière | 2021-10 | [SIREN 900917253](https://annuaire-entreprises.data.gouv.fr/entreprise/900917253) |
+| LIQUEURS DU BERRY | ANNE-MARIA NACKAERTS | Feusines | 21 ROUTE D'ASNIERES 36160 FEUSINES | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2018-10 | [SIREN 842581423](https://annuaire-entreprises.data.gouv.fr/entreprise/842581423) · [web sin contrastar](https://www.liqueursduberry.com/) |
+| GREGOIRE CHARMONT PISCICULTURE | GREGOIRE CHARMONT | Nuret-le-Ferron | LA MONTEE 36800 NURET-LE-FERRON | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2014-01 | [SIREN 799571807](https://annuaire-entreprises.data.gouv.fr/entreprise/799571807) |

@@ -17,3 +17,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOMAINE ST ALBERT | FOUCOU OLIVIER | HYERES | FOUCOU Olivier 3846 chemin des Borrels 83400 | actividad | Vins de raisin, Autres fruits à pépins, Raisin de cuve | 2026 | [nº Bio 104732](https://annuaire.agencebio.org/operateur/104732) |
 | EPLEFPA AGRICAMPUS | ETABLISSEMENT PUBLIC LOCAL D'ENSEIGNEMENT ET DE FORMATION PROFESSIONNELLE AGRICOLES | HYÈRES | 32 chemin St Lazare CFPPA de Hyères 83400 | actividad | Abricots, Autres produits de l'apiculture, Plants : plants de pépinière, bulbes, tubercules et rhizomes, boutures et greffons ; blanc de champignon | 2026 | [nº Bio 154434](https://annuaire.agencebio.org/operateur/154434) |
 | GRAND CAMPDUMY GAVOTY Roselyne | GRAND CAMPDUMY | CABASSE | DOMAINE LE GRAND CAMPDUMY 83340 | actividad | Produits amylacés, Jus de fruits et légumes, Mélanges Céréales-légumineuses | 2026 | [nº Bio 139906](https://annuaire.agencebio.org/operateur/139906) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| MOULIN A HUILE DU PARTEGAL | GUILLAUME KAUFFMANN | La Farlède | 159 CHEMIN DES LAURES 83210 LA FARLEDE | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2008-10 | [SIREN 507927358](https://annuaire-entreprises.data.gouv.fr/entreprise/507927358) |
+| TORREFACTION | CAFEZINHO | Fréjus | 66 RUE JEAN JAURES 83600 FREJUS | Café | 10.83Z — Transformation du thé et du café | 2020-10 | [SIREN 889702494](https://annuaire-entreprises.data.gouv.fr/entreprise/889702494) |
+| LA BISCUITERIE SAINT TROPEZ | BISCUITERIE DE NIOOULARGO | Saint-Tropez | 3 TRAVERSE DES CALFATS 83990 SAINT-TROPEZ | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2020-05 | [SIREN 884348715](https://annuaire-entreprises.data.gouv.fr/entreprise/884348715) |
+| GLACIER NESS | BIGNESS | Fréjus | RESIDENCE AIGUE MARINE BAT A 109 QUAI DE CLEOPATRE 83600 FREJUS | Helados | 10.52Z — Fabrication de glaces et sorbets | 2018-03 | [SIREN 838157840](https://annuaire-entreprises.data.gouv.fr/entreprise/838157840) |

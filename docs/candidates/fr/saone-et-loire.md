@@ -21,3 +21,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DE NOUVILLE MERCIER Noé | SCEA FERME DE NOUVILLE | BLANOT | LD NOUVILLE 71250 | actividad | Ânes, mulets et bardots, vivants, Agnelles de renouvellement, Blé tendre | 2026 | [nº Bio 33055](https://annuaire.agencebio.org/operateur/33055) |
 | FERME DU VERDRAT | EARL DUSSABLY REMI | MARTIGNY LE COMTE | LE VERDRAT 71220 | actividad | Prairie permanente, Vaches allaitantes, Veaux (< 8mois) | 2026 | [nº Bio 131547](https://annuaire.agencebio.org/operateur/131547) |
 | GAEC DE LA FERME DE LA PETITE FORET | LA FERME DE LA PETITE FORET | CUISEAUX | 1 LA PETITE FORET 71480 | actividad | Brebis laitières, Œufs de poule, en coquille, frais, Poules pondeuses | 2026 | [nº Bio 26060](https://annuaire.agencebio.org/operateur/26060) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| VITALIBOX | LYDIA GUIGUE | Chalon-sur-Saône | 6 RUE SAINT-VINCENT 71100 CHALON-SUR-SAONE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2008-05 | [SIREN 504694324](https://annuaire-entreprises.data.gouv.fr/entreprise/504694324) |
+| BRASSERIE LA COULEUVRE | MATTHIEU BRENDLEN | Dompierre-les-Ormes | MEULIN LD LA FIN DE MEULIN 71520 DOMPIERRE-LES-ORMES | Cerveza | 11.05Z — Fabrication de bière | 1991-10 | [SIREN 383320470](https://annuaire-entreprises.data.gouv.fr/entreprise/383320470) · [web sin contrastar](https://www.facebook.com/brasserielacouleuvre) |
+| LES CONFITURIERS DU MORVAN | FINE FOOD BOURGOGNE | La Celle-en-Morvan | LIEUDIT PRE BOUCHE LD PRE BOUCHE 71400 LA CELLE-EN-MORVAN | Conservas | 10.39B — Transformation et conservation de fruits | 2006-03 | [SIREN 488958810](https://annuaire-entreprises.data.gouv.fr/entreprise/488958810) |

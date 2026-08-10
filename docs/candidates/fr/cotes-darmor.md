@@ -22,3 +22,16 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | SemiSauvage | LENORMAND Sophie | Pleumeur Bodou | SEMISAUVAGE 35 Route de TrégastelVoie Communale Karrhent Ar Bleiz 22560 | actividad | Autres fruits à pépins, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Citrons et limes | 2026 | [nº Bio 181404](https://annuaire.agencebio.org/operateur/181404) |
 | THERMET Gérard | THERMET GERARD ANDRE IRENE | LE MENE | 3 RUE DE LA METAIRIE 22330 | actividad | Jus de fruits et légumes, Noisettes, Pommes de table | 2026 | [nº Bio 116817](https://annuaire.agencebio.org/operateur/116817) |
 | URVOY URVOY Stéphane et Nathalie | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU URVOY | LOUDEAC | LA VILLE CALAIRE 22600 | actividad | Veaux (< 8mois), Mélanges Céréales-légumineuses, Maïs grain (hors maïs doux) | 2026 | [nº Bio 170480](https://annuaire.agencebio.org/operateur/170480) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 6 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| MURIEL BLUREAU | MURIEL BLUTEAU | Merdrignac | 1 RETRAIN 22230 MERDRIGNAC | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2022-03 | [SIREN 910940782](https://annuaire-entreprises.data.gouv.fr/entreprise/910940782) |
+| LA MAISON DES CAFES | TORREFACTEUR DE DINAN-VAL DE RANCE | Dinan | 11 RUE THIERS 22100 DINAN | Café | 10.83Z — Transformation du thé et du café | 2017-02 | [SIREN 828107912](https://annuaire-entreprises.data.gouv.fr/entreprise/828107912) |
+| BRASSERIE UNCLE | DAVID BREWERY | Binic-Étables-sur-Mer | 10 RUE DE L'EUROPE 22680 BINIC-ETABLES-SUR-MER | Cerveza | 11.05Z — Fabrication de bière | 2016-04 | [SIREN 819615337](https://annuaire-entreprises.data.gouv.fr/entreprise/819615337) · [web sin contrastar](https://www.brasserie-uncle.com/) |
+| LA RIPOSTE | BRASSERIE LA RIPOSTE | Châtelaudren-Plouagat | 27 PL DE LA REPUBLIQUE 22170 CHATELAUDREN-PLOUAGAT | Cerveza | 11.05Z — Fabrication de bière | 2020-09 | [SIREN 889128823](https://annuaire-entreprises.data.gouv.fr/entreprise/889128823) · [web sin contrastar](https://brasserielariposte.bzh/) |
+| CAREXQUIS | SARL BRIAND ET FILS | Guingamp | 18 BOULEVARD MENDES FRANCE 22200 GUINGAMP | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2008-09 | [SIREN 507608248](https://annuaire-entreprises.data.gouv.fr/entreprise/507608248) |
+| BISCUITERIE MENOU LES DELICES DE L'ARGOAT | ETABLISSEMENTS JACQUES MENOU | Plougonver | 16 RUE DE LA GARE 22810 PLOUGONVER | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 1980-01 | [SIREN 318402997](https://annuaire-entreprises.data.gouv.fr/entreprise/318402997) |

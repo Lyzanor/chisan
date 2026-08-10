@@ -22,3 +22,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FLORENCE CORNIQUET | EARL FLORENCE CORNIQUET | CONTY | 37 RUE CAROLINE FOLLET 80160 | actividad | Lentilles, sèches, Fèves, sèches (yc féveroles), Blé tendre | 2026 | [nº Bio 76830](https://annuaire.agencebio.org/operateur/76830) |
 | GAFFET Frédéric | GAFFET FREDERIC ROLAND RENE | Allery | 43 Chemin Latéral 80270 | actividad | Mélanges Céréales-légumineuses, Abricots, Taureaux (>24 mois) | 2026 | [nº Bio 138308](https://annuaire.agencebio.org/operateur/138308) |
 | GAUTHIER GAUTHIER Mathieu et Guillaume | GAEC GAUTHIER | LIMEUX | 5 RUE DE BAILLEUL 80490 | actividad | Génisses renouvellement (>8 mois), Aliments pour animaux de ferme, Orges | 2026 | [nº Bio 140192](https://annuaire.agencebio.org/operateur/140192) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA BRULERIE | CUTTY SARK IN BAIE | Abbeville | 13 RUE DU PONT D'AMOUR 80100 ABBEVILLE | Café | 10.83Z — Transformation du thé et du café | 2020-03 | [SIREN 882502701](https://annuaire-entreprises.data.gouv.fr/entreprise/882502701) |
+| ATELIER DE THOT | CELIA MEURET | Saint-Fuscien | 45 RUE DE CAGNY 80680 SAINT-FUSCIEN | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2016-07 | [SIREN 821170610](https://annuaire-entreprises.data.gouv.fr/entreprise/821170610) |
+| LA BISCUITERIE DU COQUELICOT | GILDA FERET | Beaucourt-sur-l'Ancre | 1 CHEMIN DE PUISIEUX 80300 BEAUCOURT-SUR-L'ANCRE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2012-05 | [SIREN 751561424](https://annuaire-entreprises.data.gouv.fr/entreprise/751561424) |
+| AU FUMOIR ENCHANTE | YVES AU FUMOIR ENCHANTE | Bouillancourt-en-Séry | RUE D'INFRAY - N.16F 80220 BOUILLANCOURT-EN-SERY | Pescado | 10.20Z — Transformation et conservation de poisson et de produits de la mer | 2009-12 | [SIREN 518432851](https://annuaire-entreprises.data.gouv.fr/entreprise/518432851) |

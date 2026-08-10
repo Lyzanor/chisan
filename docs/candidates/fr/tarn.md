@@ -23,3 +23,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | GAY-VABRE Delphine | GAY DELPHINE MONIQUE SYLVIE | SAINT AMANS SOULT | 2 chemin de la Métairie Basse 81240 | actividad | Vaches laitières, vivantes, Génisses renouvellement (>8 mois), Estives ou alpages collectifs | 2026 | [nº Bio 109980](https://annuaire.agencebio.org/operateur/109980) |
 | Gazel Sandrine SUENH | Gazel Sandrine | Lautrec | 879 chemin de cabrilles saint clément 81440 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 8411](https://annuaire.agencebio.org/operateur/8411) |
 | GERVAIS Sam | Les paniers gourmands de la playjarie | Saint Michel Labadie | LES PANIERS GOURMANDS DE LA PLAYJARIE Lieu-dit La Playjarié 81340 | actividad | Autres légumes à racine, à bulbe ou à tubercules n.c.a., Prairie temporaire, Aliments pour animaux de ferme | 2026 | [nº Bio 12481](https://annuaire.agencebio.org/operateur/12481) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA FERME AU VILLAGE | FRANCOISE CARAYOL | Lautrec | RUE DU MERCADIAL 81440 LAUTREC | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2006-06 | [SIREN 490491404](https://annuaire-entreprises.data.gouv.fr/entreprise/490491404) |

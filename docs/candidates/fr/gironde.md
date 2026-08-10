@@ -19,3 +19,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | D'A NOSTE BERGER Jean-Jacques | SOCIETE D'A NOSTE | VENDAYS-MONTALIVET | DE GRAND BOS 33930 | actividad | Culture inconnue, Autres fruits à coque (à l'exclusion des noix sauvages, arachides et noix de coco), Autres zones de cueillette sauvage | 2026 | [nº Bio 131990](https://annuaire.agencebio.org/operateur/131990) |
 | DE POURQUEY GAZEAU FOUILHAC Cyril | EARL DU POURQUEY GAZEAU | CASTELVIEL | 1 A Pourquey 33540 | actividad | Vins de raisin, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Autres préparations et conserves à base de fruits et légumes | 2026 | [nº Bio 117319](https://annuaire.agencebio.org/operateur/117319) |
 | DES TROIS ARCHES DE KEATING Ylan | EARL DES TROIS ARCHES | CUDOS | 3 PESSAN 33430 | actividad | Prairie permanente, Autres boissons non alcoolisées, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 157007](https://annuaire.agencebio.org/operateur/157007) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L ATELIER PAYTRA FOUQUET | JANICK PAYTRA | Saint-Denis-de-Pile | 36 ROUTE DE PINAUD 33910 SAINT-DENIS-DE-PILE | Conservas | 10.39B — Transformation et conservation de fruits | 2019-04 | [SIREN 849899885](https://annuaire-entreprises.data.gouv.fr/entreprise/849899885) |
+| SADIRAC | CIDRERIE HIC | Sadirac | 57 ROUTE DE SAINT-CAPRAIS 33670 SADIRAC | Sidra | 11.03Z — Fabrication de cidre et de vins de fruits | 2021-07 | [SIREN 900990987](https://annuaire-entreprises.data.gouv.fr/entreprise/900990987) |

@@ -26,3 +26,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Mendi** — fuera de alcance: Productor hortícola de plantas y flores, sin oferta de alimentos o bebidas bajo esta identidad. [Agence Bio](https://annuaire.agencebio.org/operateur/159435) · [fuente pública](https://www.mendiburu.eu/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| SCA NOUSTE EKILILI | SOCIETE COOPERATIVE AGRICOLE NOUSTE EKILILI | Gabat | MAISON APATHIA 977 CHEMIN DES FONTAINES 64120 GABAT | Aceite | 10.41B — Fabrication d'huiles et graisses raffinées | 2010-01 | [SIREN 519698278](https://annuaire-entreprises.data.gouv.fr/entreprise/519698278) · [web sin contrastar](https://nousteekilili.jimdofree.com/) |
+| LA TRUITE D OSSAU | EARL PISCICULTURE DE LA VALLEE D OSSAU | Louvie-Juzon | LIEU DIT PEDEHOURAT 28 VC 8 DITE DE DURIEU 64260 LOUVIE-JUZON | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2021-09 | [SIREN 903408763](https://annuaire-entreprises.data.gouv.fr/entreprise/903408763) |

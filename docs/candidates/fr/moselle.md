@@ -22,3 +22,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | HENRION Cécile | VEISS CECILE MARIE FRANCINE | SECOURT | 1 PL ALBERT VAUTRIN 57420 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Colza, Lentilles, sèches | 2026 | [nº Bio 25622](https://annuaire.agencebio.org/operateur/25622) |
 | HERGOTT Cindy - AUX JARDINS D'ETTING | HERGOTT CINDY | ETTING | 12 RUE D'ACHEN 57412 | actividad | Fraises, Légumes frais n.c.a., Prairie permanente | 2026 | [nº Bio 43505](https://annuaire.agencebio.org/operateur/43505) |
 | JARDINS (SCEA DES) | SOCIETE CIVILE D'EXPLOITATION AGRICOLE DES JARDINS | SECOURT | 1 place Vautrin 57420 | actividad | Lin (graines), Fèves de soja, Pois, secs | 2026 | [nº Bio 101617](https://annuaire.agencebio.org/operateur/101617) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRESILIA - TOP MALT - TOP CAFE - SANPAOLO | SOC LORRAINE DE TORREFACTION | Terville | RUE DIDIER PIRONI 57180 TERVILLE | Café | 10.83Z — Transformation du thé et du café | 1985-12 | [SIREN 337793640](https://annuaire-entreprises.data.gouv.fr/entreprise/337793640) |
+| PISCICULTURE DES ETANGS DE BOULIGNY | ARNAUD STEIL | Arraincourt | ETANG DE BOULIGNY 57380 ARRAINCOURT | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2005-10 | [SIREN 488089129](https://annuaire-entreprises.data.gouv.fr/entreprise/488089129) |

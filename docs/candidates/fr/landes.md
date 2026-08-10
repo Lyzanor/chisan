@@ -23,3 +23,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Ganadéria Grenet** — fuera de alcance: Cría y venta de caballos con servicios para eventos, sin oferta alimentaria para consumo humano. [Agence Bio](https://annuaire.agencebio.org/operateur/6194) · [fuente pública](https://grenetganaderia.fr/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'ATELIER DE JEAN JEAN | JEAN-CHRISTOPHE AUGEY | Gastes | 183 AVENUE DU LANOT 40160 GASTES | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2023-09 | [SIREN 978469740](https://annuaire-entreprises.data.gouv.fr/entreprise/978469740) |
+| CATH' SPIRIT ET CATH' BRASSERIE DISTILLERIE | BRASSERIE CATH | Labenne | 7 ALLEE ARTIGUENAVE 40530 LABENNE | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2015-09 | [SIREN 813671799](https://annuaire-entreprises.data.gouv.fr/entreprise/813671799) · [web sin contrastar](https://www.brasserie-cath.com/) |
+| VIVERA | KERN | Seignosse | 683 AVENUE DE LARRIGAN 40510 SEIGNOSSE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2020-09 | [SIREN 887729507](https://annuaire-entreprises.data.gouv.fr/entreprise/887729507) · [web sin contrastar](https://www.rosny-beer.com/) |

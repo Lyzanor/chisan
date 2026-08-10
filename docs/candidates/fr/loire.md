@@ -21,3 +21,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA FERME DE BEAUCHAMP CALLET Hélène | LA FERME DE BEAUCHAMP | CLEPPE | 682 RTE DE SAINTE FOY 42110 | actividad | Prairie permanente, Pois, secs, Mélanges Céréales-légumineuses | 2026 | [nº Bio 150106](https://annuaire.agencebio.org/operateur/150106) |
 | LA FERME DE ROCHE EN FOREZ JOANDEL Philippe | GAEC LA FERME DE ROCHE EN FOREZ | ROCHE | LD LA COMBE 42600 | actividad | Bouc, Veaux (< 8mois), Broutards (mâle ou femelle) | 2026 | [nº Bio 110878](https://annuaire.agencebio.org/operateur/110878) |
 | LA FERME DU PHAUX | GAEC DE LA LOGE DU FAUX | Noiretable | MON P'TIT RUCHER 42440 | actividad | Fraises, Autres préparations et conserves à base de fruits et légumes, Autres baies (hors cassis et myrtilles) | 2026 | [nº Bio 146849](https://annuaire.agencebio.org/operateur/146849) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| PATRICK FONT | ATELIER PATRICK FONT | Tartaras | 6 ROUTE DE GIVORS 42800 TARTARAS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2012-10 | [SIREN 788591840](https://annuaire-entreprises.data.gouv.fr/entreprise/788591840) |
+| LES BIERES DU PILAT | BRASSERIE DU PILAT | Saint-Julien-Molin-Molette | ZONE ARTISANALE 56 LE GRAND PRE 42220 SAINT-JULIEN-MOLIN-MOLETTE | Cerveza | 11.05Z — Fabrication de bière | 2002-04 | [SIREN 441780426](https://annuaire-entreprises.data.gouv.fr/entreprise/441780426) · [web sin contrastar](https://www.brasseriedupilat.com/) |
+| CIDRERIE DU PILAT | — | Saint-Étienne | 24 RUE PEYRET-LALLIER 42100 SAINT-ETIENNE | Sidra | 11.03Z — Fabrication de cidre et de vins de fruits | 2024-01 | [SIREN 983255217](https://annuaire-entreprises.data.gouv.fr/entreprise/983255217) |

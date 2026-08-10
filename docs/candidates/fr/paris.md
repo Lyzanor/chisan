@@ -26,3 +26,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **URBAGRI (SAS)** — fuera de alcance: La actividad pública son servicios de agricultura urbana, sin una oferta propia de alimentos o bebidas que encaje. [Agence Bio](https://annuaire.agencebio.org/operateur/53704) · [fuente pública](https://www.urbagri.org)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| TCHOUDELISS | KADIATOU TRASSOUDAINE | PARIS | 141 RUE CASTAGNARY 75015 PARIS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2015-05 | [SIREN 811681915](https://annuaire-entreprises.data.gouv.fr/entreprise/811681915) |
+| LA BRULERIE DU RENDEZ - VOUS | DISCAR | PARIS | 7 RUE DU RENDEZ-VOUS 75012 PARIS | Café | 10.83Z — Transformation du thé et du café | 1997-08 | [SIREN 414276501](https://annuaire-entreprises.data.gouv.fr/entreprise/414276501) |
+| SAUCES PAPILLON | PAPILLON FOODS | PARIS | 107 RUE D'ABOUKIR 75002 PARIS | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2022-01 | [SIREN 909761173](https://annuaire-entreprises.data.gouv.fr/entreprise/909761173) |

@@ -20,3 +20,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | EGEA Daniela | EGEA FRANCIS ALBERT FREDERIC | SALON-DE-PROVENCE | ROUTE DE MARSEILLE 13300 | actividad | Courges et citrouilles, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 148182](https://annuaire.agencebio.org/operateur/148182) |
 | FAVRE Tristan L'ABEILLE de MONTMAJOUR | FAVRE TRISTAN ALEXANDRE | FONTVIELLE | Roc Colombier - Quartier Castelet 13990 | actividad | Ruches, Autres produits de l'apiculture, Miel | 2026 | [nº Bio 133086](https://annuaire.agencebio.org/operateur/133086) |
 | GFA DU VEDEAU | GROUPEMENT FONCIER AGRICOLE DU VEDEAU | Salin-de-Giraud | DOMAINE DU VEDEAU 13129 | actividad | Mélanges fourragers, Parcours herbeux (hors estives collectives), Prairie permanente | 2026 | [nº Bio 105375](https://annuaire.agencebio.org/operateur/105375) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| TORREFACTION ST-ROCH | CMS | Gardanne | 7 COURS DE LA REPUBLIQUE 13120 GARDANNE | Café | 10.83Z — Transformation du thé et du café | 2017-08 | [SIREN 831269774](https://annuaire-entreprises.data.gouv.fr/entreprise/831269774) |
+| CAFE CORTO | TORREFACTION PROVENCE | MARSEILLE | 319 RUE SAINT PIERRE 13005 MARSEILLE | Café | 10.83Z — Transformation du thé et du café | 2018-08 | [SIREN 841894447](https://annuaire-entreprises.data.gouv.fr/entreprise/841894447) |
+| EPICES VILLAGE | COMADA SAS | Martigues | 1 PLACE JOSEPH FASCIOLA 13500 MARTIGUES | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2015-03 | [SIREN 810100545](https://annuaire-entreprises.data.gouv.fr/entreprise/810100545) |

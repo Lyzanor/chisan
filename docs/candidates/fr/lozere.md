@@ -24,3 +24,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA FERME DES BELLES COMBES BELON Valérie | EARL LA FERME DES BELLES COMBES | BARRE-DES-CEVENNES | LD LE VERGOUGNOUX 48400 | actividad | Châtaignes et marrons, Autres fruits à pépins, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 43122](https://annuaire.agencebio.org/operateur/43122) |
 | LA FERME DU MOUTON NOIR | KENOUDI Myriam | LE POMPIDOU | La Ferme du Mouton Noir Mas Roger 48110 | actividad | Légumes frais plein champ, Légumes frais n.c.a., Châtaignes et marrons | 2026 | [nº Bio 101379](https://annuaire.agencebio.org/operateur/101379) |
 | LE VIGOS (GAEC) | GAEC LE VIGOS | ISPAGNAC | LE VIGOS 48320 | actividad | Parcours herbeux (hors estives collectives), Béliers, Agnelles de renouvellement | 2026 | [nº Bio 22654](https://annuaire.agencebio.org/operateur/22654) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LES CHATAIGNES DU PETIT MAS | ALICE AMOUROUX | Saint-Michel-de-Dèze | LA BARRAQUE 48160 SAINT-MICHEL-DE-DEZE | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2024-01 | [SIREN 983894965](https://annuaire-entreprises.data.gouv.fr/entreprise/983894965) |
+| PISCICULTURE DE FLORAC | TRUITE DE FLORAC | Florac Trois Rivières | 8 IMP DU FOURNIOL 48400 FLORAC TROIS RIVIERES | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2023-06 | [SIREN 953357134](https://annuaire-entreprises.data.gouv.fr/entreprise/953357134) |

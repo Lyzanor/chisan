@@ -24,3 +24,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FAIGNAERT FAIGNAERT Thomas | FAIGNAERT | BUCAMPS | 15 RUE SAINTE PHILOMENE 60480 | actividad | Courges et citrouilles, Lin (graines), Lentilles, sèches | 2026 | [nº Bio 133963](https://annuaire.agencebio.org/operateur/133963) |
 | FERME DE LA MONTAGNE BONTEMPS Jean-Baptiste et Corinne | EARL FERME DE LA MONTAGNE | ROCQUENCOURT | 8 RUE DE LA MONTAGNE 60120 | actividad | Fèves, sèches (yc féveroles) | 2026 | [nº Bio 12932](https://annuaire.agencebio.org/operateur/12932) |
 | GRAINE ET GRIGNOTE DELASALLE Edwin et OBRIOT Manon | GRAINE ET GRIGNOTE | ROUVROY-LES-MERLES | 1 RTE DE QUIRY 60120 | actividad | Mélanges Céréales-légumineuses, Seigle, Pois chiches, secs | 2026 | [nº Bio 149043](https://annuaire.agencebio.org/operateur/149043) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LE VERGER DE PIERROT | — | Beaumont-les-Nonains | 24 RUE DE LA NEUVILLE-GARNIER 60390 BEAUMONT-LES-NONAINS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2019-08 | [SIREN 853328193](https://annuaire-entreprises.data.gouv.fr/entreprise/853328193) |
+| BRASSERIE JUQUEL | REMY JUQUEL | Saint-Aubin-en-Bray | 5 RUE DE L'EGLISE 60650 SAINT-AUBIN-EN-BRAY | Cerveza | 11.05Z — Fabrication de bière | 2016-01 | [SIREN 817670342](https://annuaire-entreprises.data.gouv.fr/entreprise/817670342) |
+| L'ATELIER DE LESLIE | LESLIE DEVILLERS | Tartigny | 2 CHEMIN DES VIGNES 60120 TARTIGNY | Conservas | 10.39B — Transformation et conservation de fruits | 2022-01 | [SIREN 909914830](https://annuaire-entreprises.data.gouv.fr/entreprise/909914830) |
+| AW GLACES | AW ABOU | Beauvais | 15 RUE DESGROUX 60000 BEAUVAIS | Helados | 10.52Z — Fabrication de glaces et sorbets | 1990-10 | [SIREN 379745995](https://annuaire-entreprises.data.gouv.fr/entreprise/379745995) |

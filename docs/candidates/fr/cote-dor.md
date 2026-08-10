@@ -20,3 +20,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOMAINE BERRUX JEAN MARIE - BERRUX Jean Marie | BERRUX JEAN MARIE | MEURSAULT | 11 RUE MAZERAY 21190 | actividad | Raisin de cuve | 2026 | [nº Bio 104847](https://annuaire.agencebio.org/operateur/104847) |
 | DOMAINE DANDELION SEUILLOT Morgane | DOMAINE DANDELION | MAVILLY-MANDELOT | 5 PLACE DE L'EGLISE 21190 | actividad | Pommes de table, Poires, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 139250](https://annuaire.agencebio.org/operateur/139250) |
 | DOMAINE FRANCOIS ET ANTOINE JOBARD JOBARD Antoine | EARL DOMAINE FRANCOIS ET ANTOINE JOBARD | MEURSAULT | 2 RUE DE LEIGNON 21190 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Raisin de cuve | 2026 | [nº Bio 139285](https://annuaire.agencebio.org/operateur/139285) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LE PETIT BOURGUIGNON | LPB TORREFACTION | Longvic | BATIMENT D 7 BOULEVARD EIFFEL 21600 LONGVIC | Café | 10.83Z — Transformation du thé et du café | 2019-04 | [SIREN 849495767](https://annuaire-entreprises.data.gouv.fr/entreprise/849495767) |
+| FABRICE GILLOTTE | AU PARRAIN GENEREUX | Dijon | 21 RUE DU BOURG 21000 DIJON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1957-01 | [SIREN 015751142](https://annuaire-entreprises.data.gouv.fr/entreprise/015751142) · [web sin contrastar](https://dijon.chocolats-pralus.com/) |
+| LA CHOCOLATIERE SEBASTIEN HENON | LA CHOCOLATIERE | Plombières-lès-Dijon | 9 CHEMIN DU PLATEAU 21370 PLOMBIERES-LES-DIJON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2010-08 | [SIREN 523682581](https://annuaire-entreprises.data.gouv.fr/entreprise/523682581) |

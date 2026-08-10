@@ -22,3 +22,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | ELEVAGE PEROL | GAEC ELEVAGE PEROL | Montfermy | La Ribeyre 63230 | actividad | Prairie temporaire, Taureaux (>24 mois), Luzerne | 2026 | [nº Bio 138089](https://annuaire.agencebio.org/operateur/138089) |
 | EPLEA ROCHEFORT MONTAGNE | LYCEE PROFESSIONNEL AGRICOLE DE ROCHEFORT MONTAGNE | ROCHEFORT MONTAGNE | LE MARCHEDIAL 63210 | actividad | Lait de vache, brut, Prairie permanente, Veaux (< 8mois) | 2026 | [nº Bio 148146](https://annuaire.agencebio.org/operateur/148146) |
 | FERME DE LA ROVE | LASTIOLAS CAROLINE NURAL | MONTMORIN | LD LE FOURNET 63160 | actividad | Luzerne, Vaches laitières, vivantes, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 136758](https://annuaire.agencebio.org/operateur/136758) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| SAINT NECTAIRE FERMIER VAISSAIRE PAPON L'ARVERNE | ETS VAISSAIRE PAPON | Saint-Diéry | LOT D'ENTRP.  LA GENOUILLADE 11 CHE DE PELINDE 63320 SAINT-DIERY | Lácteos y quesos | 10.51C — Fabrication de fromage | 1986-01 | [SIREN 334958519](https://annuaire-entreprises.data.gouv.fr/entreprise/334958519) |

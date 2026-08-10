@@ -21,3 +21,16 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DE LA PRESQU'ILE MERRAND Killian | DE LA PRESQU'ILE | Locquirec | 3 RUE HENT KER LEZINGARD 29241 | actividad | Choux-fleurs et brocolis, Autres plantes et surfaces fourragères n.c.a., Dérivés de produits végétaux ou résineux | 2026 | [nº Bio 10579](https://annuaire.agencebio.org/operateur/10579) |
 | DE VOURCH VRAS BLEUNVEN Virgile | EARL DE VOURCH VRAS | PLABENNEC | VOURCH VRAS 29860 | actividad | Prairie temporaire, Aliments pour animaux de ferme, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 150552](https://annuaire.agencebio.org/operateur/150552) |
 | FERME DE KELLERS GUILLOUROUX Céline | GUILLOUROUX CELINE LAURA | PONT-DE-BUIS-LES-QUIMERCH | KELLERS 29590 | actividad | Prairie permanente, Autres fruits à pépins, Légumes frais n.c.a. | 2026 | [nº Bio 172901](https://annuaire.agencebio.org/operateur/172901) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 6 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LES BRULERIES DU LEON-CAFES MARC-CA | BRULERIE DU LEON | Brest | 88 RUE JEAN JAURES 29200 BREST | Café | 10.83Z — Transformation du thé et du café | 1980-01 | [SIREN 317683068](https://annuaire-entreprises.data.gouv.fr/entreprise/317683068) |
+| BRASSERIE ARVARUS | ARVARUS | Ploumoguer | LA FERME DE MESSOUFLIN 29810 PLOUMOGUER | Cerveza | 11.05Z — Fabrication de bière | 2018-04 | [SIREN 839093820](https://annuaire-entreprises.data.gouv.fr/entreprise/839093820) · [web sin contrastar](https://www.arvarus.bzh/) |
+| LE BOCAL SAUVAGE | SOLENE DOUSSE | Douarnenez | 1 ALLEE DE KERLIEN 29100 DOUARNENEZ | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2020-06 | [SIREN 883058083](https://annuaire-entreprises.data.gouv.fr/entreprise/883058083) |
+| SAFRAN DU STIVAL | ANNE-SOPHIE LE CAM | Melgven | SAFRAN DU STIVAL PONT STIVAL 29140 MELGVEN | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2011-08 | [SIREN 752054437](https://annuaire-entreprises.data.gouv.fr/entreprise/752054437) |
+| C'EST L'HEURE | KARINE VOOGDEN | Morlaix | 19 RAMPE SAINT NICOLAS 29600 MORLAIX | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2022-08 | [SIREN 918781113](https://annuaire-entreprises.data.gouv.fr/entreprise/918781113) |
+| BISCUITERIE PHILIPPE | BISCOTIERE | Quimper | 32 AVENUE SAINT DENIS 29000 QUIMPER | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2021-10 | [SIREN 903751824](https://annuaire-entreprises.data.gouv.fr/entreprise/903751824) |

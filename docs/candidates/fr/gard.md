@@ -21,3 +21,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LES FLEURS DE CALOU | VILLEVALOIS PASCALE | SUMENE | HAM DE PINAUCH 30440 | actividad | Fleurs coupées et boutons de fleurs, Cassis, Estragon | 2026 | [nº Bio 111722](https://annuaire.agencebio.org/operateur/111722) |
 | MAS BAUDIN BONNARD Didier | MAS BAUDIN | MONTFRIN | Mas Baudin 30490 | actividad | Vins de raisin, Orges, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 112210](https://annuaire.agencebio.org/operateur/112210) |
 | PALAI MIGNON | AMIDO CYRIL | TAVEL | Impasse la ferrage 30126 | actividad | Raisin de cuve, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Olives | 2026 | [nº Bio 112639](https://annuaire.agencebio.org/operateur/112639) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LES CONFITURES DE JUSTINE ET BAPTISTE - LE MAS DES GOURMANDISES | STEVEN MEGARD | Bezouce | MAS NEGUE POULIN 30320 BEZOUCE | Conservas | 10.39B — Transformation et conservation de fruits | 2022-02 | [SIREN 909281115](https://annuaire-entreprises.data.gouv.fr/entreprise/909281115) |
+| PEPINE | CIDRERIE PEPINE | Vergèze | MAS CHAPEL 1500 CHEMIN DE MINTEAU 30310 VERGEZE | Sidra | 11.03Z — Fabrication de cidre et de vins de fruits | 2022-04 | [SIREN 911851244](https://annuaire-entreprises.data.gouv.fr/entreprise/911851244) |

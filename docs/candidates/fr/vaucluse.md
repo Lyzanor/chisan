@@ -17,3 +17,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOMAINE MORAND MORAND François | MORAND FRANCOIS | SAINT HIPPOLYTE LE GRAVERON | 848 Chemin de la Barrianne 84330 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Raisin de cuve, Raisin de table | 2026 | [nº Bio 104742](https://annuaire.agencebio.org/operateur/104742) |
 | EARL LA PETITE BASTIDE | LA PETITE BASTIDE | OPPEDE | 351 ROUTE D’OPPEDE LE VIEUX 84580 | actividad | Autres surfaces non productive et surfaces non agricoles, Raisin de cuve, Cerises | 2026 | [nº Bio 130995](https://annuaire.agencebio.org/operateur/130995) |
 | EARL THOMAS JULLIEN | EARL THOMAS JULIEN | Suzette | 392 Chemin du Saint Amant 84190 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Vins de raisin, Raisin de cuve | 2026 | [nº Bio 117359](https://annuaire.agencebio.org/operateur/117359) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRASSERIE DES DIVERS GENS | LA BRASSERIE INTERDITE | Pertuis | 167 RUE ROBERVAL 84120 PERTUIS | Cerveza | 11.05Z — Fabrication de bière | 2021-03 | [SIREN 895230449](https://annuaire-entreprises.data.gouv.fr/entreprise/895230449) · [web sin contrastar](https://biere-artisanale-luberon.fr) |
+| LE MOULIN DES TAILLADES | — | Bédarrides | 43 CHEMIN DES TAILLADES 84370 BEDARRIDES | Pan y cereal | 10.61A — Meunerie | 2021-10 | [SIREN 904094018](https://annuaire-entreprises.data.gouv.fr/entreprise/904094018) |
+| PISCICULTURE LE PETIT LARGE TALLET | CHRISTINE TALLET | Saumane-de-Vaucluse | 231 CHE LE PETIT LARGE 84800 SAUMANE-DE-VAUCLUSE | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2015-10 | [SIREN 813733961](https://annuaire-entreprises.data.gouv.fr/entreprise/813733961) · [web sin contrastar](http://truite-provence.fr/) |

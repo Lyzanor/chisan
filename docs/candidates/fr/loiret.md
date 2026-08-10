@@ -20,3 +20,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Le Portail** — fuera de alcance: Camping y alojamiento rural; el registro solo declara pastos y ninguna oferta alimentaria. [Agence Bio](https://annuaire.agencebio.org/operateur/40891) · [fuente pública](https://www.le-portail.nl/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| HUILERIE NICOLEA | NICOLAS RAMON | Sandillon | 92 RUE DE LA FECULERIE 45640 SANDILLON | Aceite | 10.41B — Fabrication d'huiles et graisses raffinées | 2019-10 | [SIREN 877955096](https://annuaire-entreprises.data.gouv.fr/entreprise/877955096) |
+| MICRO BRASSERIE DE CHATEAUNEUF | HERVE SAUGER | Châteauneuf-sur-Loire | 37 GRANDE RUE 45110 CHATEAUNEUF-SUR-LOIRE | Cerveza | 11.05Z — Fabrication de bière | 2022-08 | [SIREN 915240741](https://annuaire-entreprises.data.gouv.fr/entreprise/915240741) · [web sin contrastar](https://brasserie.city/microbrasserie-de-chateauneuf-47547.html) |
+| SCEA L'AMANDE BEAUCERONNE | — | Engenville | 9 RUE DES ACACIAS 45300 ENGENVILLE | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2019-12 | [SIREN 880115399](https://annuaire-entreprises.data.gouv.fr/entreprise/880115399) |

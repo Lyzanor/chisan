@@ -23,3 +23,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | HAUT PORTETENY MONGE Valérie | EARL HAUT PORTETENY | CADEILHAN | LD HAUT PORTETENY 32380 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Safran, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 102075](https://annuaire.agencebio.org/operateur/102075) |
 | HOARAU ISABELLE | CASSAIGNEAU ISABELLE VERONIQUE | TOURNECOUPE | LD ENJOINQUE 32380 | actividad | Luzerne, Légumes frais plein champ | 2026 | [nº Bio 10780](https://annuaire.agencebio.org/operateur/10780) |
 | JEAN LEININGER | LEININGER JEAN BERNARD | AUTERIVE | Haurigot 32550 | actividad | Luzerne, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Blé tendre | 2026 | [nº Bio 170238](https://annuaire.agencebio.org/operateur/170238) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA BRULERIE DE CAFE | EMILIE KUROWSKI | Auch | 1 RUE DE LA SOMME 32000 AUCH | Café | 10.83Z — Transformation du thé et du café | 2019-03 | [SIREN 847635380](https://annuaire-entreprises.data.gouv.fr/entreprise/847635380) |
+| LA CONSERVERIE DES PRODUCTEURS | YVES CHAMPOMIER | Termes-d'Armagnac | 525 RUE DE LA COLLINE 32400 TERMES-D'ARMAGNAC | Conservas | 10.39A — Autre transformation et conservation de légumes | 2023-08 | [SIREN 978037604](https://annuaire-entreprises.data.gouv.fr/entreprise/978037604) |
+| MARIE DUFFAU ET DELORD | ETABLISSEMENTS DELORD FRERES | Lannepax | 14 RUE DE L'ALAMBIC 32190 LANNEPAX | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 1965-01 | [SIREN 396520017](https://annuaire-entreprises.data.gouv.fr/entreprise/396520017) · [web sin contrastar](https://www.armagnacdelord.com) |

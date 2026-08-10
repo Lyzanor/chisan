@@ -25,3 +25,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Pépinière Fruitière des Baronnies** — fuera de alcance: Vivero productor de frutales, sin frutas o bebidas comercializadas bajo esta identidad. [Agence Bio](https://annuaire.agencebio.org/operateur/58679) · [fuente pública](https://pfb65.fr/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| PRALINE ET MARGUERITE | FERME DE LA MERLERE | Sénac | 2 RTE DE VILLECOMTAL 65140 SENAC | Helados | 10.52Z — Fabrication de glaces et sorbets | 2013-02 | [SIREN 790773998](https://annuaire-entreprises.data.gouv.fr/entreprise/790773998) |

@@ -23,3 +23,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LEMASSON Marie-Christine et Benoît | GAEC LEMASSON | CERISY LA SALLE | 21 Village le Deshayes 50210 | actividad | Bœufs, Veaux (< 8mois), Lait de vache, brut | 2026 | [nº Bio 147518](https://annuaire.agencebio.org/operateur/147518) |
 | LES TERRIERS DU MESNIL | NICOLET JEAN-JACQUES ROGER ANDRE | LINGREVILLE | la rue du Mesnil 4rue de Chausey 50660 | actividad | Prairie permanente | 2026 | [nº Bio 111891](https://annuaire.agencebio.org/operateur/111891) |
 | MORIN Mickaël | MORIN RAYMONDE | NOTRE DAME DE LIVOYE | 6 La Haute Beurrerie 50370 | actividad | Vaches allaitantes, Prairie permanente, Aliments pour animaux de ferme | 2026 | [nº Bio 145676](https://annuaire.agencebio.org/operateur/145676) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| ROULE MA POMME | KAREN LEPRIEUR | Saint-James | ARGOUGES 9 RUE DU MOULIN - LE BOURG 50240 SAINT-JAMES | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2020-10 | [SIREN 891257552](https://annuaire-entreprises.data.gouv.fr/entreprise/891257552) |
+| LE MOULIN A CAFE | LE MOULIN DU NEUFBOURG | Saint-Lô | 41 RUE DU NEUFBOURG 50000 SAINT-LO | Café | 10.83Z — Transformation du thé et du café | 2020-06 | [SIREN 884687559](https://annuaire-entreprises.data.gouv.fr/entreprise/884687559) |
+| LA DISTILLERIE DU VOYAGEUR | — | Le Vast | 2 HAMEAU BOISNEL 50630 LE VAST | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2024-04 | [SIREN 928523604](https://annuaire-entreprises.data.gouv.fr/entreprise/928523604) · [web sin contrastar](https://www.ladistillerieduvoyageur.com/) |
+| BISCUITERIE ARTISANALE DE QUINEVILLE | SAS BISCUITERIE DE QUINEVILLE | Quinéville | 6 RUE DU PORT SINOPE 50310 QUINEVILLE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2013-06 | [SIREN 793998055](https://annuaire-entreprises.data.gouv.fr/entreprise/793998055) |

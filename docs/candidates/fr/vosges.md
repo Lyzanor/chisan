@@ -22,3 +22,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | EURL HUIN AGRICULTURE | EURL HUIN ARNAUD DENIS JEAN FERNAND AGRICULTURE | LA BOURGONCE | 94 LE VILLAGE 88470 | actividad | Veaux (< 8mois), Génisses engraissement (>8 mois), Génisses renouvellement (>8 mois) | 2026 | [nº Bio 51022](https://annuaire.agencebio.org/operateur/51022) |
 | ferme du champ de fontaine | VALSECCHI BENOIT | fays | 526 grande rue 88600 | actividad | Vaches allaitantes, Prairie temporaire, Génisses renouvellement (>8 mois) | 2026 | [nº Bio 6570](https://annuaire.agencebio.org/operateur/6570) |
 | GAEC DU MOIRET | EARL YVES THENOT | Contrexéville | 3 cour des Château des Anglais 88140 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Prairie permanente | 2026 | [nº Bio 11698](https://annuaire.agencebio.org/operateur/11698) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'ATELIER DES CHAMPS | FRANCOISE VETTER | Frenelle-la-Grande | 145 RUE DU CALVAIRE 88500 FRENELLE-LA-GRANDE | Conservas | 10.39B — Transformation et conservation de fruits | 2017-08 | [SIREN 831664685](https://annuaire-entreprises.data.gouv.fr/entreprise/831664685) |
+| LE JARDIN | L'ATELIER DES FRUITS | Vieux-Moulin | 1 ROUTE DE LA PETITE RAON 88210 VIEUX-MOULIN | Conservas | 10.39B — Transformation et conservation de fruits | 2018-07 | [SIREN 841699820](https://annuaire-entreprises.data.gouv.fr/entreprise/841699820) |
+| CAFES CANTON | — | Granges-Aumontzey | 19 QUAI DE LA VOLOGNE 88640 GRANGES-AUMONTZEY | Té e infusiones | 10.83Z — Transformation du thé et du café | 1991-12 | [SIREN 384273348](https://annuaire-entreprises.data.gouv.fr/entreprise/384273348) |

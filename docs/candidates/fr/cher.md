@@ -23,3 +23,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DIVINA NATURA PORTALIER Davina | PORTALIER DAVINA OPHELIE | VERNAIS | 6 RUE DES BOIS 18210 | actividad | Pommes de table, Valériane, Millepertuis | 2026 | [nº Bio 41721](https://annuaire.agencebio.org/operateur/41721) |
 | DOMAINE DE BEAUMONT (SCEA) | SCEA DOMAINE DE BEAUMONT | LERE | Le Rezay 18480 | actividad | Tournesol | 2026 | [nº Bio 26103](https://annuaire.agencebio.org/operateur/26103) |
 | DOMAINE HENRY PELLE PELLE Paul-Henry | SCEA DOMAINE HENRY PELLE | MOROGUES | 1 Route d'Aubinges 18220 | actividad | Prairie temporaire, Raisin de cuve, Vins de raisin | 2026 | [nº Bio 145427](https://annuaire.agencebio.org/operateur/145427) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| TORREFACTION D'AURON | SYLVIE LEBEAU | Bourges | 75 RUE D'AURON 18000 BOURGES | Café | 10.83Z — Transformation du thé et du café | 1992-12 | [SIREN 390009611](https://annuaire-entreprises.data.gouv.fr/entreprise/390009611) |
+| LE MOULIN A CAFE | ISABELLE PEZARD | Saint-Amand-Montrond | 14 RUE PORTE MUTIN 18200 SAINT-AMAND-MONTROND | Café | 10.83Z — Transformation du thé et du café | 2005-02 | [SIREN 480831627](https://annuaire-entreprises.data.gouv.fr/entreprise/480831627) |
+| MICRO BRASSERIE VERIDIK | MAXIME LEBOEUF | Mehun-sur-Yèvre | 119 AVENUE JEAN CHATELET 18500 MEHUN-SUR-YEVRE | Cerveza | 11.05Z — Fabrication de bière | 2020-03 | [SIREN 882606338](https://annuaire-entreprises.data.gouv.fr/entreprise/882606338) · [web sin contrastar](https://www.facebook.com/61565728241745/) |
+| CONFISERIE CHARLES VII CHOCOLATERIE DAME AGNES | NICOLAS PIERRE VIOLLET | Bourges | 14 CHEMIN LEGNIER 18000 BOURGES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2006-03 | [SIREN 488790858](https://annuaire-entreprises.data.gouv.fr/entreprise/488790858) |

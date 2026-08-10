@@ -24,3 +24,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Asinerie du Tremble** — fuera de alcance: La oferta pública se centra en la cría de asnos, la formación y la mediación; no presenta alimentos o bebidas para consumo humano. [Agence Bio](https://annuaire.agencebio.org/operateur/53041) · [fuente pública](https://www.asineriedutremble.com/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| SALSA VEGGIE | RAFIKA GHOURCHI | Montluçon | 111 AVENUE DE LA REPUBLIQUE 03100 MONTLUCON | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2004-04 | [SIREN 478274707](https://annuaire-entreprises.data.gouv.fr/entreprise/478274707) |
+| DISTILLERIE DE MONSIEUR BALTHAZAR | — | Hérisson | 8 PLACE DE LA REPUBLIQUE 03190 HERISSON | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2000-12 | [SIREN 434242822](https://annuaire-entreprises.data.gouv.fr/entreprise/434242822) · [web sin contrastar](http://whisky-hedgehog.fr) |
+| PISCICULTURE DES POUBOTS | JULIEN CORETE | Franchesse | LIEU DIT LES POUBOTS 03160 FRANCHESSE | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2006-01 | [SIREN 485214969](https://annuaire-entreprises.data.gouv.fr/entreprise/485214969) |

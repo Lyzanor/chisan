@@ -24,3 +24,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | INFUS'HERBES: LES TISANES DE SEB ACHARD Sébastien | ACHARD SEBASTIEN BERNARD ROMAIN | GRAND'LANDES | LA PETITE VILLENEUVE 85670 | actividad | Infusions, Autres baies (hors cassis et myrtilles), Zone de cueillette de fruits à coque | 2026 | [nº Bio 139754](https://annuaire.agencebio.org/operateur/139754) |
 | JOYEUSE (EARL LA) | EARL LA JOYEUSE | SAINTE-RADEGONDE-DES-NOYERS | LA HONTEUSE 85450 | actividad | Poulets, vivants, Bande tampon ou fleurie, Noix | 2026 | [nº Bio 101467](https://annuaire.agencebio.org/operateur/101467) |
 | LA CAMBAUDIERE ALLAIN Jimmy | EARL LA CAMBAUDIERE | SAINT-FULGENT | 3 LE PONT LAURENCEAU 85250 | actividad | Prairie permanente, Autres fruits à pépins, Culture inconnue | 2026 | [nº Bio 7858](https://annuaire.agencebio.org/operateur/7858) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| GUIDO'S ROLLS/CABANE GUIDO | GUIDO FAVROU | La Tranche-sur-Mer | SKATE PARK RUE DU PERTHUIS BRETON 85360 LA TRANCHE-SUR-MER | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 1990-03 | [SIREN 353789753](https://annuaire-entreprises.data.gouv.fr/entreprise/353789753) |
+| BRASSERIE LA CIBULLE | SARL BONNIN | Maillé | 6 RUE SAINT-NICOLAS 85420 MAILLE | Cerveza | 11.05Z — Fabrication de bière | 2016-02 | [SIREN 818253700](https://annuaire-entreprises.data.gouv.fr/entreprise/818253700) · [web sin contrastar](https://www.lacibulle.fr) |
+| L'ATELIER DU FRUIT | ERIC BEZRUKI | Coëx | 15 RUE LA PETITE GROUINIERE 85220 COEX | Conservas | 10.39B — Transformation et conservation de fruits | 1992-07 | [SIREN 387811268](https://annuaire-entreprises.data.gouv.fr/entreprise/387811268) |
+| CROQUEZ LA VENDEE | SARL CHEVALIER VALERIE | Bretignolles-sur-Mer | 2 RUE DU PIED DE CHAUME 85470 BRETIGNOLLES-SUR-MER | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2014-12 | [SIREN 808435572](https://annuaire-entreprises.data.gouv.fr/entreprise/808435572) |

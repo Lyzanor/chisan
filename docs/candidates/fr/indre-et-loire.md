@@ -18,3 +18,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | GIQUEL Alexandre | ALEXANDRE GIQUEL | NOIZAY | 247 RUE DE LA BRETONNIERE 37210 | actividad | Raisin de cuve, Vins de raisin, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 133757](https://annuaire.agencebio.org/operateur/133757) |
 | L'ATELIER MILLE FEUILLES DUPRE Claire | DUPRE CLAIRE FRANCOISE GHISLAINE | EPEIGNE-LES-BOIS | 12 ROUTE DES VIGNES 37150 | actividad | Reine des prés, Châtaignes et marrons, Sauge sclarée | 2026 | [nº Bio 38386](https://annuaire.agencebio.org/operateur/38386) |
 | LA CLARTE FRANCOIS XAVIER CHAUVEL | CHAUVEL FRANCOIS XAVIER OLIVIER MARIE | AMBOISE | 141 RUE BRETONNEAU 37400 | actividad | Raisin de cuve | 2026 | [nº Bio 43901](https://annuaire.agencebio.org/operateur/43901) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| ARBOL TORREFACTEUR | CATIMOR | Saint-Avertin | 23 AVENUE DU GENERAL DE GAULLE 37550 SAINT-AVERTIN | Café | 10.83Z — Transformation du thé et du café | 2023-07 | [SIREN 953039294](https://annuaire-entreprises.data.gouv.fr/entreprise/953039294) |
+| CONFISERIE HALLARD | JEREMY COUTON | Loches | 62 T AVENUE ARISTIDE BRIAND 37600 LOCHES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2021-02 | [SIREN 893582072](https://annuaire-entreprises.data.gouv.fr/entreprise/893582072) |
+| BISCUITERIE NOMADE | FANNY BALLARD-GUERARD | Civray-de-Touraine | 618 RUE DES HAUTS DE VAUX 37150 CIVRAY-DE-TOURAINE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2005-01 | [SIREN 479495269](https://annuaire-entreprises.data.gouv.fr/entreprise/479495269) |
+| BISCUITERIE AMERANTINE | YANNICK MOLINIER | Céré-la-Ronde | 2A 2 IMPASSE DE LA FORGE 37460 CERE-LA-RONDE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2016-06 | [SIREN 820008910](https://annuaire-entreprises.data.gouv.fr/entreprise/820008910) |

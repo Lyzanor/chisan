@@ -26,3 +26,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **EARL DU TALMET** — fuera de alcance: La única oferta publicada es alfalfa para alimentación animal. [Agence Bio](https://annuaire.agencebio.org/operateur/304606)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| GLACES DE MEUSE | DANIEL REMY | Nouillonpont | 7 RUE WOECOURT 55230 NOUILLONPONT | Helados | 10.52Z — Fabrication de glaces et sorbets | 1988-04 | [SIREN 344881701](https://annuaire-entreprises.data.gouv.fr/entreprise/344881701) |

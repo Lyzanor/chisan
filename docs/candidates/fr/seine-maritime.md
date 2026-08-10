@@ -18,3 +18,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DE LA POMMERAIE LACHIVER Romain | EARL FERME DE LA POMMERAIE | BOSC-HYONS | 7 RUE DU BUS 76220 | actividad | Lin (graines), Prairie permanente, Vaches laitières, vivantes | 2026 | [nº Bio 12332](https://annuaire.agencebio.org/operateur/12332) |
 | FERME DE LA QUEUE DU RENERD DELAPORTE Laurent | FERME DE LA QUEUE DU RENARD | EMANVILLE | 1612 RUE DE LA CROIX DE BUIS 76570 | actividad | Autres fruits à pépins, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Autres baies (hors cassis et myrtilles) | 2026 | [nº Bio 117256](https://annuaire.agencebio.org/operateur/117256) |
 | FERME DROUET | FERME DROUET (SCEA) | YVILLE-SUR-SEINE | 1289 ROUTE DES SABLONS 76530 | actividad | Prairie temporaire, Triticale, Sorgho | 2026 | [nº Bio 302096](https://annuaire.agencebio.org/operateur/302096) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA FERME MARGUERITE | CHRISTOPHE DELAMARE | Sainte-Marguerite-sur-Duclair | 87 ROUTE DE DUCLAIR 76480 SAINTE-MARGUERITE-SUR-DUCLAIR | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2025-01 | [SIREN 939327359](https://annuaire-entreprises.data.gouv.fr/entreprise/939327359) |
+| BRASSERIE UNION-B | UNION-B | Malaunay | 40 RUE DE LA CLERETTE 76770 MALAUNAY | Cerveza | 11.05Z — Fabrication de bière | 2017-12 | [SIREN 834174120](https://annuaire-entreprises.data.gouv.fr/entreprise/834174120) · [web sin contrastar](https://www.union-b.fr) |
+| CHOCOLATERIE BEYER | MAXIME FESSARD | Rouen | 17 RUE GRAND PONT 76000 ROUEN | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2014-02 | [SIREN 801418492](https://annuaire-entreprises.data.gouv.fr/entreprise/801418492) |
+| LA FERME AUX OISEAUX | DOMINIQUE STALDER | Angerville-la-Martel | 267 IMPASSE DES CHARMES 76540 ANGERVILLE-LA-MARTEL | Conservas | 10.39B — Transformation et conservation de fruits | 1997-04 | [SIREN 411953714](https://annuaire-entreprises.data.gouv.fr/entreprise/411953714) |

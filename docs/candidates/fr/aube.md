@@ -20,3 +20,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DU MONT BEL AIR HAMOT Eric | SCA DU MONT BEL AIR | SAINT BENOIT SUR SEINE | Ferme du Mont Bel Air 10180 | actividad | Blé tendre, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Anis | 2026 | [nº Bio 9560](https://annuaire.agencebio.org/operateur/9560) |
 | DU PETIT BOIS HENRY François | EARL DU PETIT BOIS | THIL | 7 GRANDE RUE 10200 | actividad | Mélanges Céréales-légumineuses, Œufs de poule, en coquille, frais, Bois pâturés et parcours ligneux | 2026 | [nº Bio 181507](https://annuaire.agencebio.org/operateur/181507) |
 | DU THEIL MARTENS Daniel | SCEA DUTHEIL | FONTETTE | 10360 | actividad | Sarrasin, Semences de céréales, légumineuses et oléagineux (à l'exclusion du riz), Trèfle | 2026 | [nº Bio 137149](https://annuaire.agencebio.org/operateur/137149) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| CHOCOLATERIE TEMOINS | TEMOINS | Troyes | 9 RUE DE LA REPUBLIQUE 10000 TROYES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1990-05 | [SIREN 378943039](https://annuaire-entreprises.data.gouv.fr/entreprise/378943039) |
+| LA PETITE BISCUITERIE | DAVID MICHEL | Maizières-la-Grande-Paroisse | 7 BD ANTOINE DE SAINT EXUPERY 10510 MAIZIERES-LA-GRANDE-PAROISSE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 1996-05 | [SIREN 407654169](https://annuaire-entreprises.data.gouv.fr/entreprise/407654169) |
+| UNE PATISSERIE POUR KY | STEPHANIE LECAILLON | Saint-Léger-sous-Brienne | 33 GRANDE RUE 10500 SAINT-LEGER-SOUS-BRIENNE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2023-10 | [SIREN 979296316](https://annuaire-entreprises.data.gouv.fr/entreprise/979296316) |

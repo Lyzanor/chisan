@@ -22,3 +22,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | GAINNET GAINNET Emmanuel | GAEC GAINNET | NOROY-LE-BOURG | 3 RTE D'AUTREY LES CERRE 70000 | actividad | Taureaux (>24 mois), Triticale, Vaches laitières, vivantes | 2026 | [nº Bio 10593](https://annuaire.agencebio.org/operateur/10593) |
 | GANTOIS Sébastien | GANTOIS SEBASTIEN PASCAL | VOUGECOURT | 10 Rue des Marronniers 70500 | actividad | Broutards (mâle ou femelle), Fèves, sèches (yc féveroles), Génisses renouvellement (>8 mois) | 2026 | [nº Bio 1078](https://annuaire.agencebio.org/operateur/1078) |
 | GIRARD GIRARD Mickaël | GIRARD | SAINT-GAND | 4 LE CHARME 70130 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Prairie permanente, Fèves, sèches (yc féveroles) | 2026 | [nº Bio 180419](https://annuaire.agencebio.org/operateur/180419) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LES PRESSEURS DE L'EST | — | Fougerolles-Saint-Valbert | 214 214 CROSLIERES 70220 FOUGEROLLES-SAINT-VALBERT | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2021-03 | [SIREN 897451035](https://annuaire-entreprises.data.gouv.fr/entreprise/897451035) |
+| DISTILLERIE DES 400 COUPS | 400 COUPS | Rioz | LE CHAILLAUX 70190 RIOZ | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2024-02 | [SIREN 984881342](https://annuaire-entreprises.data.gouv.fr/entreprise/984881342) |
+| FORICHER - MOULINS DORMOY | SOCIETE FORICHER - MOULINS DORMOY | Fougerolles-Saint-Valbert | FOUGROLLES 329 329 LE CHATEAU 70220 FOUGEROLLES-SAINT-VALBERT | Pan y cereal | 10.61A — Meunerie | 2009-03 | [SIREN 511447971](https://annuaire-entreprises.data.gouv.fr/entreprise/511447971) |

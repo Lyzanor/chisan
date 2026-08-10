@@ -20,3 +20,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | EARL DE LA FERME DE SAINT GERVAIS | EARL DE LA FERME DE SAINT GERVAIS | Saint Gervais | 2 Rue d'Alincourt 95420 | actividad | Raisin de cuve, Vins de raisin, Raisin de table | 2026 | [nº Bio 32287](https://annuaire.agencebio.org/operateur/32287) |
 | EARL DELACOUR | EARL DELACOUR | GOUZANGREZ | 1 GRANDE RUE 95450 | actividad | Sarrasin, Avoine, Fèves de soja | 2026 | [nº Bio 11808](https://annuaire.agencebio.org/operateur/11808) |
 | EARL DU CHEMIN NEUF | EARL DU CHEMIN NEUF | CHAUSSY | Ferme de la bergerie 95710 | actividad | Pommes de terre (hors féculière), Orges, Blé tendre | 2026 | [nº Bio 148468](https://annuaire.agencebio.org/operateur/148468) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| HUILERIE AVERNOISE | — | Avernes | 43 RUE DE CHANTEREINE 95450 AVERNES | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2017-08 | [SIREN 832806350](https://annuaire-entreprises.data.gouv.fr/entreprise/832806350) |
+| BRULERIE DE CERGY | LA BRULERIE PELINE | Cergy | 14 RUE DES GALERIES 95000 CERGY | Café | 10.83Z — Transformation du thé et du café | 2014-08 | [SIREN 803899194](https://annuaire-entreprises.data.gouv.fr/entreprise/803899194) |
+| MAISON FERCOT | MF DISTILLERIE | Sannois | 99 ALLEE DE CORMEILLES 95110 SANNOIS | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2019-01 | [SIREN 848181020](https://annuaire-entreprises.data.gouv.fr/entreprise/848181020) · [web sin contrastar](https://www.lesapeurbrasseur.com/) |

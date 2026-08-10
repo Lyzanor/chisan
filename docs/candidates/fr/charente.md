@@ -23,3 +23,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LEBRAUD LEBRAUD Virginie | SCEA LEBRAUD | Chirac | 4 Chemin de élauds 16150 | actividad | Veaux (< 8mois), Triticale, Vaches allaitantes | 2026 | [nº Bio 146527](https://annuaire.agencebio.org/operateur/146527) |
 | MICHONNEAU ET FILS (EARL) | EARL MICHONNEAU & FILS | BARBEZIEUX-SAINT-HILAIRE | PEUGEMARD 16300 | actividad | Autres porcins, Porcelets, Truies | 2026 | [nº Bio 171110](https://annuaire.agencebio.org/operateur/171110) |
 | ROWE MIKE PULLINGER Andy | ROWE MIKE | PERIGNAC | Domaine de Lerse 16250 | actividad | Veaux (< 8mois), Autres fruits à pépins, Luzerne | 2026 | [nº Bio 145514](https://annuaire.agencebio.org/operateur/145514) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRULERIE DU VALOIS CAFES RASSET | BRULERIE DU VALOIS | Angoulême | 14 RUE DES POSTES 16000 ANGOULEME | Café | 10.83Z — Transformation du thé et du café | 2002-05 | [SIREN 441969615](https://annuaire-entreprises.data.gouv.fr/entreprise/441969615) |
+| JUKEBOX | BRASSERIE JUKEBOX | Cognac | 48 RUE ARMAND SIMARD 16100 COGNAC | Cerveza | 11.05Z — Fabrication de bière | 2022-01 | [SIREN 908582943](https://annuaire-entreprises.data.gouv.fr/entreprise/908582943) · [web sin contrastar](https://brasseriejukebox.com/) |
+| CHOCOLATERIE D'ANTAN | MAJOJ | La Rochefoucauld-en-Angoumois | 6-8 6 RUE DES GAILLAUDES 16110 LA ROCHEFOUCAULD-EN-ANGOUMOIS | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2002-09 | [SIREN 443596705](https://annuaire-entreprises.data.gouv.fr/entreprise/443596705) |

@@ -20,3 +20,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FRANCK AMAR | AMAR FRANCK LEON GERARD | NEFFES | 1 rue du château le village 05000 | actividad | Autres fruits frais, Sève de bouleau, Jus de fruits et légumes | 2026 | [nº Bio 129347](https://annuaire.agencebio.org/operateur/129347) |
 | GAEC DE CLAVUS | DE CLAVUS (GAEC) | VEYNES | QUARTIER DE LA GRANGE 05400 | actividad | Prairie temporaire, Légumes frais plein champ, Pommes de terre (hors féculière) | 2026 | [nº Bio 144666](https://annuaire.agencebio.org/operateur/144666) |
 | GLEIZES Christine - LE RUCHER K | GLEIZES Christine | Fouillouse | 1801 Route de Tallard Les Grands Pins 05130 | actividad | Autres produits de l'apiculture, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Cire d'abeille | 2026 | [nº Bio 133608](https://annuaire.agencebio.org/operateur/133608) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| DISTILLERIE DU CHAMPSAUR | GAYRAL - REYNIER | Saint-Jean-Saint-Nicolas | PONT DU FOSSE MAISON REYNIER 05260 SAINT-JEAN-SAINT-NICOLAS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2002-10 | [SIREN 443755541](https://annuaire-entreprises.data.gouv.fr/entreprise/443755541) |
+| A.L. SIGNOURET - ARTISAN CHOCOLATIER | CHOCOLATERIE SIGNOURET | Gap | 79 AVENUE JEAN JAURES 05000 GAP | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2013-08 | [SIREN 794812412](https://annuaire-entreprises.data.gouv.fr/entreprise/794812412) |
+| THIERRY SIAT COMPAGNON CHOCOLATIER PATISSIER GLACIER | THIERRY SIAT | Saint-Firmin | 1090 ROUTE DE LA BROUE 05800 SAINT-FIRMIN | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2008-07 | [SIREN 507623593](https://annuaire-entreprises.data.gouv.fr/entreprise/507623593) |
+| CONSERVERIE DU JALLET | SYLVIE RODODENDRI | Chanousse | 551 ROUTE DU VILLAGE 05700 CHANOUSSE | Conservas | 10.39A — Autre transformation et conservation de légumes | 2022-10 | [SIREN 920076809](https://annuaire-entreprises.data.gouv.fr/entreprise/920076809) |

@@ -22,3 +22,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Echinops Graines** — fuera de alcance: La oferta pública son semillas ornamentales y flores, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/16429) · [fuente pública](https://echinops-graines.com)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LES BEAUX VIVANTS | NINA FENATEU | Blois | 8 QUAI ARISTIDE BRIAND 41000 BLOIS | Conservas | 10.39A — Autre transformation et conservation de légumes | 2007-07 | [SIREN 499250116](https://annuaire-entreprises.data.gouv.fr/entreprise/499250116) |
+| L'ATELIER DE MONCHAUD | CHRISTELLE COLARD | Saint-Léonard-en-Beauce | 1 LD MONCHAUD 1 MONCHAUD 41370 SAINT-LEONARD-EN-BEAUCE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2019-10 | [SIREN 877555037](https://annuaire-entreprises.data.gouv.fr/entreprise/877555037) |
+| O DOUCEURS DE LA CISSE | — | Veuzain-sur-Loire | 19 RUE DE LA JUSTICE ONZAIN 41150 VEUZAIN-SUR-LOIRE | Helados | 10.52Z — Fabrication de glaces et sorbets | 2021-07 | [SIREN 901450775](https://annuaire-entreprises.data.gouv.fr/entreprise/901450775) |
+| FROMAGERIE MOREAU | MOREAU | Pontlevoy | FERME DE BELLEVUE 80 ROUTE DE MONTRICHARD 41400 PONTLEVOY | Lácteos y quesos | 10.51C — Fabrication de fromage | 1994-01 | [SIREN 393732672](https://annuaire-entreprises.data.gouv.fr/entreprise/393732672) |

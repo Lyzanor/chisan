@@ -21,3 +21,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | EVERAERE (EARL) | EARL EVERAERE | AUDEMBERT | 850 RUE DE LA VALLEE 62250 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Taureaux (>24 mois) | 2026 | [nº Bio 103798](https://annuaire.agencebio.org/operateur/103798) |
 | FERME BIO DE CHAILLY FORTIN Bertrand | FERME BIO DE CHAILLY | LA CAPELLE-LES-BOULOGNE | 35 RUE MARCEL CAUDEVELLE 62360 | actividad | Prairie permanente, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Aliments pour animaux de ferme | 2026 | [nº Bio 18050](https://annuaire.agencebio.org/operateur/18050) |
 | FERME RETTEMOY GUILBERT Benoît | FERME RETTEMOY | Bucquoy | D8 Route de Essart Lieu-dit Ferme Rettemoy 62116 | actividad | Autres plantes et surfaces fourragères n.c.a., Culture inconnue | 2026 | [nº Bio 56615](https://annuaire.agencebio.org/operateur/56615) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LENS CAFE | BRULERIE DU CANTIN | Lens | 61 RUE RENE LANOY 62300 LENS | Café | 10.83Z — Transformation du thé et du café | 2015-12 | [SIREN 815397153](https://annuaire-entreprises.data.gouv.fr/entreprise/815397153) |
+| BRASSERIE DELBEKE | LA QUILLE | Lorgies | 141 ROUTE D'ESTAIRES 62840 LORGIES | Cerveza | 11.05Z — Fabrication de bière | 2021-08 | [SIREN 901711309](https://annuaire-entreprises.data.gouv.fr/entreprise/901711309) · [web sin contrastar](https://www.brasseriedelbeke.fr) |
+| FLEUR DE SEL | FLEUR DE SEL DES 2 CAPS | Les Attaques | 1872 RUE DE L'ECLUSE CARREE 62730 LES ATTAQUES | Condimentos | 08.93Z — Production de sel | 2017-02 | [SIREN 827731217](https://annuaire-entreprises.data.gouv.fr/entreprise/827731217) |
+| LA MANUFACTURE DU TOUQUET | INALTO | Le Touquet-Paris-Plage | 29 RUE SAINT-LOUIS 62520 LE TOUQUET-PARIS-PLAGE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2015-09 | [SIREN 813471901](https://annuaire-entreprises.data.gouv.fr/entreprise/813471901) |
+| BISCUITERIE EN NORD, SALAINORD | BISCUITERIE EN NORD | Tournehem-sur-la-Hem | 117 RUE DE L'ETANG 62890 TOURNEHEM-SUR-LA-HEM | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2013-09 | [SIREN 794950931](https://annuaire-entreprises.data.gouv.fr/entreprise/794950931) |

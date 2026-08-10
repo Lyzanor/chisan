@@ -18,3 +18,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | GAEC WURGLER FRERES | GAEC WURGLER FRERES | LACOLLONGE | 1 RUE D ALSACE 90150 | actividad | Génisses renouvellement (>8 mois), Veaux (< 8mois), Fromages | 2026 | [nº Bio 143888](https://annuaire.agencebio.org/operateur/143888) |
 | GINOT Steve | GINOT Steve | LACHAPELLE-SOUS-ROUGEMONT | CHE DU CHENOIS 90360 | actividad | Blé tendre, Prairie temporaire, Prairie permanente | 2026 | [nº Bio 154489](https://annuaire.agencebio.org/operateur/154489) |
 | GOUAT SANDRINE | GOUAT SANDRINE | AUXELLES-HAUT | 29 RUE DES ROCHES 90200 | actividad | Prairie permanente, Brebis laitières, Culture inconnue | 2026 | [nº Bio 135992](https://annuaire.agencebio.org/operateur/135992) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| EMMANUEL VIRON | — | Chavanatte | 7 RUE DU LAVOIR 90100 CHAVANATTE | Pan y cereal | 10.61A — Meunerie | 2022-01 | [SIREN 909509127](https://annuaire-entreprises.data.gouv.fr/entreprise/909509127) |

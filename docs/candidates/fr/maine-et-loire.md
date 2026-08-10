@@ -22,3 +22,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **FERME SAINTE MARTHE** — fuera de alcance: La oferta pública son semillas y plantas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/109653) · [fuente pública](http://www.fermedesaintemarthe.com)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| MAISON/XWE/PER AMON-RE | DODJI OLOU | Saumur | 19 RUE DES SABLES 49400 SAUMUR | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2024-01 | [SIREN 983015546](https://annuaire-entreprises.data.gouv.fr/entreprise/983015546) |
+| LA FEVE D'OR | TORREFACTION LA FEVE D'OR | Angers | 77 RUE PLANTAGENET 49100 ANGERS | Café | 10.83Z — Transformation du thé et du café | 2021-02 | [SIREN 893576561](https://annuaire-entreprises.data.gouv.fr/entreprise/893576561) |
+| TORREFACTION SAUMUROISE | GRAIN DE CAFE | Distré | ZA DU CHAMP BLANCHARD 1 RUE DE L'AVENIR 49400 DISTRE | Café | 10.83Z — Transformation du thé et du café | 2000-04 | [SIREN 431219104](https://annuaire-entreprises.data.gouv.fr/entreprise/431219104) |
+| LA FERME DE CHEZ NOUS | TOFARMMS | Sèvremoine | SAINT-MACAIRE-EN-MAUGES LES ALOUETTES 49230 SEVREMOINE | Conservas | 10.39A — Autre transformation et conservation de légumes | 2021-04 | [SIREN 898477229](https://annuaire-entreprises.data.gouv.fr/entreprise/898477229) |
+| ATELIER BERLOT | TOGA | Savennières | 19 RUE MONSALLIER 49170 SAVENNIERES | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2024-04 | [SIREN 929040657](https://annuaire-entreprises.data.gouv.fr/entreprise/929040657) |

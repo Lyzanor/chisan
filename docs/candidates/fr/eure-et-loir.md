@@ -24,3 +24,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **CASSAIGNE ROMAIN GEORGES AUGUSTIN** — fuera de alcance: La identidad pública es una explotación de cabras de mohair que vende fibra no alimentaria. [Agence Bio](https://annuaire.agencebio.org/operateur/66218) · [fuente pública](https://www.mohair-labouquetiere.fr)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BY JARDIN | LE PERCHE AGRICOLE | Saintigny | SAINT DENIS D'AUTHOU HAM LES SOUCHES 28480 SAINTIGNY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2014-12 | [SIREN 808131007](https://annuaire-entreprises.data.gouv.fr/entreprise/808131007) |
+| ARMELLE AUBARBIER CHOCOLATIERE | ARMELLE AUBARBIER | Sorel-Moussel | LD LES CHRISTOPHES 20 ROUTE DE BU 28260 SOREL-MOUSSEL | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-10 | [SIREN 789271608](https://annuaire-entreprises.data.gouv.fr/entreprise/789271608) |
+| BELSIA | SARL FERME DE LETOURVILLE | Boisville-la-Saint-Père | FERME DE LETOURVILLE 28150 BOISVILLE-LA-SAINT-PERE | Conservas | 10.39A — Autre transformation et conservation de légumes | 2015-09 | [SIREN 813635828](https://annuaire-entreprises.data.gouv.fr/entreprise/813635828) |

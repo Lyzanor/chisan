@@ -24,3 +24,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 - **AROM ANTIQUE BOURGEOIS Laurent** — fuera de alcance: La oferta pública es un vivero de plantas aromáticas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/116282) · [fuente pública](https://www.plantearomatique.com)
 - **MADAME FLORIANE RICHARD** — fuera de alcance: La oferta publicada son aceites esenciales, hidrolatos y cosméticos, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/157338) · [fuente pública](https://www.pam-alpines.fr)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA BRULERIE DU PLATEAU | ALEXIS GODARD | Serves-sur-Rhône | 559 CHEMIN DE LA PLAINE 26600 SERVES-SUR-RHONE | Té e infusiones | 10.83Z — Transformation du thé et du café | 2020-10 | [SIREN 892991241](https://annuaire-entreprises.data.gouv.fr/entreprise/892991241) |

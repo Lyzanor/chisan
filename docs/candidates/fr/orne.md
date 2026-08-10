@@ -21,3 +21,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DES VALLONS (EARL) | FERME DES VALLONS | TINCHEBRAY BOCAGE | 405 le valet Saint-Cornier des Landes 61800 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Taureaux (>24 mois) | 2026 | [nº Bio 35560](https://annuaire.agencebio.org/operateur/35560) |
 | FOUGERAY LE MONCEL FOUGERAY Pierre | EARL FOUGERAY LE MONCEL | CISAI SAINT AUBIN | Le Moncel 61230 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Trèfle, Culture inconnue | 2026 | [nº Bio 147847](https://annuaire.agencebio.org/operateur/147847) |
 | LE JARDIN D'ARCANE | PUZZUOLI SARAH CECILE | ATHIS DE L'OME | PUZZUOLI Sarah Le Moulin du Buat 61430 | actividad | Infusions, Framboises, Prairie permanente | 2026 | [nº Bio 132099](https://annuaire.agencebio.org/operateur/132099) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| ROSE BOHEME | L'ATELIER | Alençon | 1 RUE DE L'ECUSSON 61000 ALENCON | Café | 10.83Z — Transformation du thé et du café | 2002-04 | [SIREN 441271624](https://annuaire-entreprises.data.gouv.fr/entreprise/441271624) |
+| CHOCOLATERIE BATAILLE | CHOCOLATERIE CHRISTOPHE HENNINGER | Bellême | 24 BOULEVARD BANSARD DES BOIS 61130 BELLEME | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2020-09 | [SIREN 889088084](https://annuaire-entreprises.data.gouv.fr/entreprise/889088084) |
+| LA BOUYARDIERE | SIMON BAXTER | Saint-Mars-d'Égrenne | LD LA BOUYARDIERE 61350 SAINT MARS D'EGRENNE | Conservas | 10.39B — Transformation et conservation de fruits | 2019-12 | [SIREN 879019255](https://annuaire-entreprises.data.gouv.fr/entreprise/879019255) |
+| LE BUS GLACE | — | Alençon | 38 RUE LOUIS ROUSIER 61000 ALENCON | Helados | 10.52Z — Fabrication de glaces et sorbets | 2004-09 | [SIREN 479070286](https://annuaire-entreprises.data.gouv.fr/entreprise/479070286) |
+| PISCICULTURE D'OCCAGNES | HONORE LE BAIL | Occagnes | LA CHANTERAINE 61200 OCCAGNES | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2014-12 | [SIREN 812490167](https://annuaire-entreprises.data.gouv.fr/entreprise/812490167) |

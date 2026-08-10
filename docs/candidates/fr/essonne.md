@@ -18,3 +18,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Les Jardins d'Ollivier** — fuera de alcance: Vivero que vende plantas y productos de jardinería, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/101636) · [fuente pública](https://www.au-jardin-bio.com/?utm_source=gmb)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| KUUURE | DAVID DOS SENTOS LENZA | Brunoy | BP 43 IMPASSE DE LA MAIRIE 91800 BRUNOY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 1995-10 | [SIREN 402270870](https://annuaire-entreprises.data.gouv.fr/entreprise/402270870) |
+| L ATELIER DES JARDINS GOURMANDS | SYLVIE YANNIC-ARNOULT | Épinay-sur-Orge | 42 RUE DES MEUNIERS 91360 EPINAY-SUR-ORGE | Conservas | 10.39B — Transformation et conservation de fruits | 2018-09 | [SIREN 842120511](https://annuaire-entreprises.data.gouv.fr/entreprise/842120511) |
+| L'ATELIER DE STEPH | STEPHANIE VALLEE | Brétigny-sur-Orge | BATIMENT 5 LA MARINIERE 20 RUE ALBERT CAMUS 91220 BRETIGNY-SUR-ORGE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2025-03 | [SIREN 941300725](https://annuaire-entreprises.data.gouv.fr/entreprise/941300725) |

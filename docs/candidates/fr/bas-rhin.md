@@ -15,3 +15,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DU FAIL PFENNIG Mathieu | EARL DU FAIL | Engwiller | 35 Rue principale 67350 | actividad | Œufs de poule, en coquille, frais, Poules pondeuses, Prairie temporaire | 2026 | [nº Bio 142255](https://annuaire.agencebio.org/operateur/142255) |
 | DU FELDBAUM - KAES | EARL DU FELDBAUM | MOLSHEIM | 12 PL DE LA LIBERTE 67120 | actividad | Vins de raisin, Autres produits alimentaires n.c.a., Raisin de cuve | 2026 | [nº Bio 109149](https://annuaire.agencebio.org/operateur/109149) |
 | DU GRAAL GUTH Julien | GAEC DU GRAAL | LA BROQUE | MALPLAQUET 67130 | actividad | Chèvres, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Agnelles de renouvellement | 2026 | [nº Bio 109143](https://annuaire.agencebio.org/operateur/109143) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LA COMPAGNIE DES TORREFACTEURS | CAFES RECK | Strasbourg | 24 RUE DE LA ROCHELLE 67100 STRASBOURG | Café | 10.83Z — Transformation du thé et du café | 1957-01 | [SIREN 578506339](https://annuaire-entreprises.data.gouv.fr/entreprise/578506339) |
+| BRASSERIE DE SAINT-PIERRE | ALSABIERES | Saint-Pierre | 30 RUE PRINCIPALE 67140 SAINT-PIERRE | Cerveza | 11.05Z — Fabrication de bière | 1986-01 | [SIREN 334926086](https://annuaire-entreprises.data.gouv.fr/entreprise/334926086) · [web sin contrastar](https://www.lasaintpierre.com/) |
+| BRASSERIE LA PERLE | BIERES ARTZNER | Strasbourg | 10 PLACE DE L'ABATTOIR 67200 STRASBOURG | Cerveza | 11.05Z — Fabrication de bière | 2009-07 | [SIREN 513083147](https://annuaire-entreprises.data.gouv.fr/entreprise/513083147) · [web sin contrastar](https://www.biere-perle.com/) |

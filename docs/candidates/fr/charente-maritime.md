@@ -18,3 +18,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | JONATHAN GIRARDON | GIRARDON JONATHAN | saint savinien sur charente | 10 chez praud 17350 | actividad | Farines de céréales et de légumes ; mélanges de ces farines, Huile de tournesol, brute, Bordure de champs ou de forêt | 2026 | [nº Bio 1799](https://annuaire.agencebio.org/operateur/1799) |
 | LA FANTAISIE GAUTHIER FRANCOIS | EARL LA FANTAISIE | Beauvais sur Matha | Bourcelaine 17490 | actividad | Tournesol, Lin (graines), Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 9043](https://annuaire.agencebio.org/operateur/9043) |
 | LA FERME DE LIBERNEUIL BARBE Alexis et LABOUAL Zoé | GAEC LA FERME DE LIBERNEUIL | TAILLEBOURG | LA BROSSADIERE 17350 | actividad | Prairie permanente, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Trèfle | 2026 | [nº Bio 150928](https://annuaire.agencebio.org/operateur/150928) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| CHAMBOULE TOUT | VERONIQUE CHELLIT | La Rochelle | 20 RUE GILL 17000 LA ROCHELLE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2013-02 | [SIREN 791153166](https://annuaire-entreprises.data.gouv.fr/entreprise/791153166) |
+| VICTORIA'S JUICES | VICTORIA TAMBURRINI | Périgny | 34 RUE DES CHARMES 17180 PERIGNY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2022-07 | [SIREN 914952239](https://annuaire-entreprises.data.gouv.fr/entreprise/914952239) |
+| LA SALINE AUX 4 VENTS | LAURE MORISSET ROBIGO | Saint-Georges-d'Oléron | CHERAY 4 CANTON DE LA GUERENNE 17190 SAINT-GEORGES-D'OLERON | Condimentos | 08.93Z — Production de sel | 2021-07 | [SIREN 901428029](https://annuaire-entreprises.data.gouv.fr/entreprise/901428029) |

@@ -20,3 +20,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | NOISETIERS (EARL LES) | LES NOISETIERS | LESCHAUX | Le Pré de la Grange 1101 Route des Bauges 74320 | actividad | Commerce de détail d'autres produits alimentaires n.c.a., Produits laitiers n.c.a., Fromages | 2026 | [nº Bio 11062](https://annuaire.agencebio.org/operateur/11062) |
 | PARC AUX QUATRE VENTS | EARL PARC AUX 4 VENTS | ARBUSIGNY | 438 CHE DE PERRAVEX 74930 | actividad | Prairie permanente, Génisses renouvellement (>8 mois), Culture inconnue | 2026 | [nº Bio 145441](https://annuaire.agencebio.org/operateur/145441) |
 | THOVEX Arthur | Le P'tit Barbu | La Clusaz | Le p'tit barbu 97 route de la grallière 74220 | actividad | Ortie, Zone de cueillette de baies sauvages, Infusions | 2026 | [nº Bio 45757](https://annuaire.agencebio.org/operateur/45757) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| CHARLOTTE O CHOCOLAT PAR FRED V | STEPHANIE VESIN | Ballaison | 126 ROUTE DU LAC 74140 BALLAISON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2015-11 | [SIREN 814599262](https://annuaire-entreprises.data.gouv.fr/entreprise/814599262) · [web sin contrastar](https://charlotteochocolat.com) |
+| CONSERVERIE LES BOSSES FERME D'EDMEE MARMITE SAVOYARDE | LES BOSSES | Allinges | 670 A ROUTE DES BLAVES 74200 ALLINGES | Conservas | 10.39B — Transformation et conservation de fruits | 2017-07 | [SIREN 831385364](https://annuaire-entreprises.data.gouv.fr/entreprise/831385364) · [web sin contrastar](https://www.biere-leman.com) |

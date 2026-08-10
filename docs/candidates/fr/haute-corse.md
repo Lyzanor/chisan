@@ -21,3 +21,21 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Grana Mora** — fuera de alcance: la oferta pública actual son aceites y cuidados cosméticos; no se acredita una oferta alimentaria bajo esta identidad. [Agence Bio](https://annuaire.agencebio.org/operateur/65760) · [fuente oficial](https://www.granamora.com/)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 11 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| AESA POLI | — | Bastia | SUBIGNA CHEMIN DE CUTONE ROUTE IMPERIALE 20600 BASTIA | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2013-05 | [SIREN 793074840](https://annuaire-entreprises.data.gouv.fr/entreprise/793074840) |
+| JUICE AND GO | CHAYMAA BEN ABIDOU | Bastia | BAT 7 APPT 733 RESIDENCE LES VALLONS DU MACCHIONE 20600 BASTIA | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2023-04 | [SIREN 949892301](https://annuaire-entreprises.data.gouv.fr/entreprise/949892301) |
+| BRULERIE DES ILES - TORREFACTION LE | JEAN FRANCESCHINI | L'Île-Rousse | PL DELANNEY RTE NATIONALE 199 20220 L'ILE ROUSSE | Café | 10.83Z — Transformation du thé et du café | 2005-01 | [SIREN 480660943](https://annuaire-entreprises.data.gouv.fr/entreprise/480660943) |
+| BRASSERIE 3D | DIDIER DROUIN | Bastia | 9 RUE CESAR CAMPINCHI 20200 BASTIA | Cerveza | 11.05Z — Fabrication de bière | 2021-09 | [SIREN 902937390](https://annuaire-entreprises.data.gouv.fr/entreprise/902937390) |
+| MICROBRASSERIE K'ORSU | MARIE PAULE PIACENTINI | Crocicchia | RUE VILLAGE CROCICCHIA 20290 CROCICCHIA | Cerveza | 11.05Z — Fabrication de bière | 2020-01 | [SIREN 881309967](https://annuaire-entreprises.data.gouv.fr/entreprise/881309967) |
+| BRASSERIE PALAZZU | DOMAINE BRASSICOLE PALAZZU | Rogliano | PALAZZU NICROSI VIGNALE 20247 ROGLIANO | Cerveza | 11.05Z — Fabrication de bière | 2019-11 | [SIREN 879211217](https://annuaire-entreprises.data.gouv.fr/entreprise/879211217) |
+| CORSE PRALINE | DEBORAH FOLLIN | Bastia | RESIDENCE ST MARC RUE DU JUGE FALCONE 20200 BASTIA | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2021-05 | [SIREN 899558712](https://annuaire-entreprises.data.gouv.fr/entreprise/899558712) |
+| DECOR DE BONBON | MARIA NOVO GONCALVES DE PASSOS | Bastia | RDC IMM LE VINCI 20200 BASTIA | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2009-09 | [SIREN 515260495](https://annuaire-entreprises.data.gouv.fr/entreprise/515260495) |
+| KORO EXOTIC | NATURAL FRUITS | Borgo | BOX NO 9 STRADA VECCHIA LOT B 20290 BORGO | Conservas | 10.39B — Transformation et conservation de fruits | 2015-07 | [SIREN 812558328](https://annuaire-entreprises.data.gouv.fr/entreprise/812558328) |
+| ATELIER CORSE FRUITS ET LEGUMES | — | Linguizzetta | LD FARINACCIO 20230 LINGUIZZETTA | Conservas | 10.39B — Transformation et conservation de fruits | 2021-05 | [SIREN 900032657](https://annuaire-entreprises.data.gouv.fr/entreprise/900032657) |
+| BISCUITERIE | MARILINDA | L'Île-Rousse | PLACE DU CANON 20220 L'ILE-ROUSSE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2011-06 | [SIREN 533187985](https://annuaire-entreprises.data.gouv.fr/entreprise/533187985) |

@@ -21,3 +21,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LEVEQUE Guillaume | LEVEQUE Guillaume | Mandres les Roses | 155 rue de Verdun 94520 | actividad | Prairie permanente | 2026 | [nº Bio 54237](https://annuaire.agencebio.org/operateur/54237) |
 | PINTO MIKAEL ALEXANDRE | PINTO MIKAEL ALEXANDRE | CHAMPIGNY-SUR-MARNE | 94 AVENUE ROGER SALENGRO 94500 | actividad | Miel, Ruches | 2026 | [nº Bio 52261](https://annuaire.agencebio.org/operateur/52261) |
 | VACHERAND NATALIA | VACHERAND NATALIA | MANDRES-LES-ROSES | 165 RUE DE VERDUN 94520 | actividad | Autres légumes à feuilles ou à tiges, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Rhubarbe | 2026 | [nº Bio 55249](https://annuaire.agencebio.org/operateur/55249) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| SORBET DOUCEUR | SAINT-ANGE MIRANDE | Orly | BAT 129 ZONE DE FRET JULIETTE BP 679 RUE DE LA CHAPELLE 94310 ORLY | Helados | 10.52Z — Fabrication de glaces et sorbets | 1990-11 | [SIREN 380159780](https://annuaire-entreprises.data.gouv.fr/entreprise/380159780) |

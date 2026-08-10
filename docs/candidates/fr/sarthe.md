@@ -23,3 +23,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 - **HARAS DE LA VALLEE DES HAFLINGER/ FERME DE LA GOURDAINE / EQUALYA** — fuera de alcance: La identidad y oferta públicas se centran en la cría de caballos, no en alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/131353) · [fuente pública](https://www.harasdelavalleedeshaflinger.com/)
 - **GIBET CAROLINE** — fuera de alcance: La oferta pública son plantones de árboles frutales, no fruta ni otro alimento. [Agence Bio](https://annuaire.agencebio.org/operateur/73485) · [fuente pública](https://www.auxfruitiersgenereux.com)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| DELICES DE LA FERME | — | Oizé | LIEU DIT LE CHATAIGNIER 72330 OIZE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2025-06 | [SIREN 945281772](https://annuaire-entreprises.data.gouv.fr/entreprise/945281772) |
+| BRASSERIE DISTILLERIE DE MONTMIRAIL | BDM | Montmirail | 9 RUE DU DOCTEUR CASTAING 72320 MONTMIRAIL | Cerveza | 11.05Z — Fabrication de bière | 2020-03 | [SIREN 881990006](https://annuaire-entreprises.data.gouv.fr/entreprise/881990006) |
+| PELLETIER THIBAUT | THIBAUT PELLETIER | La Chapelle-Huon | LA MAISON BRULEE 72310 LA CHAPELLE-HUON | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2019-09 | [SIREN 878415850](https://annuaire-entreprises.data.gouv.fr/entreprise/878415850) |
+| LES GLACES DE ROM | ROMAIN VERITE | Parigné-l'Évêque | 1 ALLEE DES PINS 72250 PARIGNE-L'EVEQUE | Helados | 10.52Z — Fabrication de glaces et sorbets | 2023-03 | [SIREN 947597548](https://annuaire-entreprises.data.gouv.fr/entreprise/947597548) |

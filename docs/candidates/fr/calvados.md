@@ -21,3 +21,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FLAMAND Coralie | Au potager du petit Pré | Fauguernon | LA FERME DE COMBRAY 407 route de combray 14100 | actividad | Autres légumes à feuilles ou à tiges, Pommes de table, Prairie permanente | 2026 | [nº Bio 33854](https://annuaire.agencebio.org/operateur/33854) |
 | GONNEGIRLS Bonnieux Gaëlle | SCEA GONNEGIRLS | GONNEVILLE-EN-AUGE | 3 RTE DE TROARN 14810 | actividad | Pommes de table, Prairie permanente, Œufs de poule, en coquille, frais | 2026 | [nº Bio 1746](https://annuaire.agencebio.org/operateur/1746) |
 | LA FERME DE LA BOISERIE BEGARD Rodolphe et Hélène | GAEC LA FERME DE LA BOISERIE | Les | 262 Chemin du lieu hauton Le Lieu Hauton 14100 | actividad | Autres produits alimentaires n.c.a., Grand épeautre, Blé tendre | 2026 | [nº Bio 40440](https://annuaire.agencebio.org/operateur/40440) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LE TORREFACTEUR | DHM | Épron | BATIMENT ETINCELLE 2 RUE HUBERTINE AUCLERT 14610 EPRON | Café | 10.83Z — Transformation du thé et du café | 2003-04 | [SIREN 448330829](https://annuaire-entreprises.data.gouv.fr/entreprise/448330829) |
+| MOBSBY'S BRASSERIE ARTISANALE | ADAM MOBSBY | Vire Normandie | SAINT-GERMAIN-DE-TALLEVENDE-LA-LANDE-V 2301 ROUTE DE LA DIADE 14500 VIRE NORMANDIE | Cerveza | 11.05Z — Fabrication de bière | 2018-05 | [SIREN 842200834](https://annuaire-entreprises.data.gouv.fr/entreprise/842200834) · [web sin contrastar](https://www.mobsbys.com) |
+| LA ROUTE DU CACAO | CHOCOLATERIE MERIMEE | Lisieux | 5 RUE ARISTIDE BRIAND 14100 LISIEUX | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2010-09 | [SIREN 524393881](https://annuaire-entreprises.data.gouv.fr/entreprise/524393881) |
+| SAFRAN DE NORMANDIE | ANNIE GUERARD | La Hoguette | LD LE MOULIN 14700 LA HOGUETTE | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2012-07 | [SIREN 752628339](https://annuaire-entreprises.data.gouv.fr/entreprise/752628339) |
+| BISCUITERIE L'ECOLE EST FINIE | MELISSA KINYOCK | Caen | 3 RUE PROFESSEUR MAURICE GUIBE 14000 CAEN | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2023-08 | [SIREN 978630937](https://annuaire-entreprises.data.gouv.fr/entreprise/978630937) |

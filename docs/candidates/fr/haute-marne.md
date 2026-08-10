@@ -27,3 +27,11 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **BERNHARD Sarah** — fuera de alcance: La identidad pública es una jabonería con oferta cosmética, no alimentaria. [Agence Bio](https://annuaire.agencebio.org/operateur/142964) · [fuente pública](https://www.gabrasrosa.com)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LES SAVEURS D'ANNALICE | BIANCO BOSS | Richebourg | 8 B RUE DE LA LEVEE DE CESAR 52120 RICHEBOURG | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2001-09 | [SIREN 439085671](https://annuaire-entreprises.data.gouv.fr/entreprise/439085671) |

@@ -22,3 +22,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Ferme du Defant | SCEA FERME DU DEFANT | Moux en Morvan | Chemin du Defant 58230 | actividad | Gel fixe, friche, gel spécifique n’entrant pas en rotation, Autres baies (hors cassis et myrtilles), Poires | 2026 | [nº Bio 64328](https://annuaire.agencebio.org/operateur/64328) |
 | IBING Anselm - Bocaux d'Amour | IBING ANSELM JOHANNES | LAROCHEMILLAY | 5 Chemin du moulin - Le Ruault 58370 | actividad | Miel, Autres baies (hors cassis et myrtilles), Zone de cueillette de fruits à coque | 2026 | [nº Bio 22028](https://annuaire.agencebio.org/operateur/22028) |
 | JUGLANS BEDU Mathilde | EARL JUGLANS | Vielmanay | 4 FERME DE LA RONCE 58150 | actividad | Aliments pour animaux de ferme, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Noisettes | 2026 | [nº Bio 138804](https://annuaire.agencebio.org/operateur/138804) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| HUILERIE DU MOULIN DE L'ILE | — | Donzy | 14 RUE DE L'EMINENCE 58220 DONZY | Aceite | 10.41B — Fabrication d'huiles et graisses raffinées | 2012-08 | [SIREN 754004018](https://annuaire-entreprises.data.gouv.fr/entreprise/754004018) · [web sin contrastar](https://www.huileriedumoulin.fr/) |
+| LA VINAIGRERIE UN POIL FOL | YVES LEBRUN | Savigny-Poil-Fol | 1 ROUTE DE LA POMMERAY 58170 SAVIGNY-POIL-FOL | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 1996-05 | [SIREN 407689827](https://annuaire-entreprises.data.gouv.fr/entreprise/407689827) |
+| L'ANDRESIENNE | WILLY PONCET | Saint-André-en-Morvan | LD ATHEE 27 RUE DE LA CHAUME AUX OUAILLES 58140 SAINT-ANDRE-EN-MORVAN | Conservas | 10.39B — Transformation et conservation de fruits | 2019-05 | [SIREN 850115932](https://annuaire-entreprises.data.gouv.fr/entreprise/850115932) |

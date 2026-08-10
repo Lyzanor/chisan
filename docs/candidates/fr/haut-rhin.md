@@ -16,3 +16,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | Gilles TARON | TARON GILLES BERNARD PIERRE | COLMAR | CHEMIN DE NIEDERAU 68000 | actividad | Commerce de détail de fruits et légumes frais, Glaces et sorbets, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 171058](https://annuaire.agencebio.org/operateur/171058) |
 | GRUNEISEN Béatrice | GRUNEISEN GILBERT | Soultz Haut Rhin | 20A route de bollwiller 68360 | actividad | Raisin de cuve | 2026 | [nº Bio 173343](https://annuaire.agencebio.org/operateur/173343) |
 | JEHL Patrick (EARL) | EARL JEHL PATRICK | GUEMAR | LD ROHRBODEN 68970 | actividad | Autres surfaces non productive et surfaces non agricoles, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Prairie permanente | 2026 | [nº Bio 3975](https://annuaire.agencebio.org/operateur/3975) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| VINCENT STRACKAR CHOCOLATIER CONFISEUR | CHOCOLATERIE CONFISERIE VINCENT STRACKAR | Kaysersberg Vignoble | 27 RUE DU GENERAL DE GAULLE 68240 KAYSERSBERG VIGNOBLE | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-07 | [SIREN 752815209](https://annuaire-entreprises.data.gouv.fr/entreprise/752815209) |
+| FROMAGERIE DU PAYS WELSCHE | — | Lapoutroie | (333A) 333 LA CROIX D'ORBEY 68650 LAPOUTROIE | Lácteos y quesos | 10.51C — Fabrication de fromage | 1994-12 | [SIREN 399663210](https://annuaire-entreprises.data.gouv.fr/entreprise/399663210) · [web sin contrastar](http://www.brasseriedupayswelche.fr) |
+| MOULIN MARCHAND | FARINES ET GRAINES DE LA WEISS | Orbey | 5 ROUTE DE COLMAR 68370 ORBEY | Pan y cereal | 10.61A — Meunerie | 2022-01 | [SIREN 909080582](https://annuaire-entreprises.data.gouv.fr/entreprise/909080582) |

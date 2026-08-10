@@ -21,3 +21,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DU HAUT BUISSON EECKMAN Alexis | EARL DU HAUT BUISSON | JEANCOURT | 4 RUE DU HAUT BUISSON 02490 | actividad | Mélanges Céréales-légumineuses, Triticale, Raisin de cuve | 2026 | [nº Bio 173966](https://annuaire.agencebio.org/operateur/173966) |
 | EARL Frederic Lemaire Lemaire Clément | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE FREDERIC LEMAIRE | DIZY-LE-GROS | 54 GRANDE RUE 02340 | actividad | Fèves de soja, Maïs grain (hors maïs doux), Lentilles, sèches | 2026 | [nº Bio 9583](https://annuaire.agencebio.org/operateur/9583) |
 | ECOUTE S'IL PLEUT VERMEULEN Amandine | EARL ECOUTE S'IL PLEUT | CHERY-CHARTREUVE | 11 HAM DE CRUAUX 02220 | actividad | Culture inconnue, Plants et semences potagers, à l'exclusion des semences de betteraves, Cassis | 2026 | [nº Bio 6061](https://annuaire.agencebio.org/operateur/6061) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRULERIE SAINT MARTIN | MURIELLE POIRRIER | Soissons | 16 RUE SAINT-MARTIN 02200 SOISSONS | Café | 10.83Z — Transformation du thé et du café | 1993-10 | [SIREN 397820416](https://annuaire-entreprises.data.gouv.fr/entreprise/397820416) |
+| BMC | BRASSERIE DE LA MONTAGNE COURONNEE | Laon | 1 A RUE GEORGES ERMANT 02000 LAON | Cerveza | 11.05Z — Fabrication de bière | 2019-01 | [SIREN 847884822](https://annuaire-entreprises.data.gouv.fr/entreprise/847884822) |
+| LA CHOCOLATIERE | HELENE DECOSTER | Holnon | 10 RUE CHARLES VAVASSEUR 02760 HOLNON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2023-09 | [SIREN 979128857](https://annuaire-entreprises.data.gouv.fr/entreprise/979128857) |
+| JEAN FRANCOIS FERON CHOCOLATIER | CHOCOLATERIE FERON | Soissons | 4 RUE DE LA BUERIE 02200 SOISSONS | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2009-08 | [SIREN 514343037](https://annuaire-entreprises.data.gouv.fr/entreprise/514343037) |
+| L'ATELIER DE CLAIRE | CLAIRE BLANDIER | Tergnier | 4 CHEMIN DE BOISSY 02700 TERGNIER | Conservas | 10.39B — Transformation et conservation de fruits | 2019-11 | [SIREN 878423011](https://annuaire-entreprises.data.gouv.fr/entreprise/878423011) |

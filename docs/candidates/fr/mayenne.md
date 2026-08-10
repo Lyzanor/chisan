@@ -23,3 +23,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LUMASOJO (GAEC) | GROUPEMENT AGRICOLE D EXPLOITATION EN COMMUN LUMASOJO | SIMPLE | Le Domaine des Ferronières 53360 | actividad | Luzerne, Prairie permanente, Prairie temporaire | 2026 | [nº Bio 100115](https://annuaire.agencebio.org/operateur/100115) |
 | M MAIGNAN GERARD | MAIGNAN GERARD | AZE | LES PIERRES 53200 | actividad | Veaux (< 8mois), Prairie permanente, Vaches allaitantes | 2026 | [nº Bio 152636](https://annuaire.agencebio.org/operateur/152636) |
 | OPTI BIO (SAS) | OPTI BIO | AHUILLE | La Vannerie 53940 | actividad | Bande tampon ou fleurie, Miscanthus, Autres céréales ou pseudo céréales | 2026 | [nº Bio 146074](https://annuaire.agencebio.org/operateur/146074) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRASSERIE GUIBS BEER | — | Mayenne | 139 IMPASSE THOMAS A EDISON 53100 MAYENNE | Cerveza | 11.05Z — Fabrication de bière | 2019-11 | [SIREN 878884535](https://annuaire-entreprises.data.gouv.fr/entreprise/878884535) · [web sin contrastar](https://www.guibsbeer.fr/) |
+| LOU SAFRAN MAYENNE | LOUISE BILHOU | Gesvres | 8 LA SAUVAGERE DU BAS 53370 GESVRES | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2014-09 | [SIREN 804900538](https://annuaire-entreprises.data.gouv.fr/entreprise/804900538) |
+| SWEET DELICES | CREME D'HELENE | Laval | PARC DE L'HABITAT RUE DU PETIT MONTRON 53000 LAVAL | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2023-09 | [SIREN 979174216](https://annuaire-entreprises.data.gouv.fr/entreprise/979174216) |
+| C. REMON - PISCICULTURE DE L'OUETTE | — | Parné-sur-Roc | 21 RUE DE LA VEQUERIE 53260 PARNE-SUR-ROC | Pescado | 10.20Z — Transformation et conservation de poisson et de produits de la mer | 2010-05 | [SIREN 522426899](https://annuaire-entreprises.data.gouv.fr/entreprise/522426899) |

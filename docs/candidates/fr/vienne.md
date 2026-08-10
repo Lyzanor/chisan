@@ -22,3 +22,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | la ferme de Noëlie | AWAGA Aurélie | CHAUVIGNY | LE PRADEAU PAIZOUX 86300 | actividad | Noix, Culture inconnue, Fraises | 2026 | [nº Bio 133977](https://annuaire.agencebio.org/operateur/133977) |
 | LABBE MARTRES (GAEC) | GAEC LABBE-MARTRES | ASNIERES SUR BLOUR | Maison Blanche 86430 | actividad | Veaux (< 8mois), Génisses engraissement (>8 mois), Bœufs | 2026 | [nº Bio 101169](https://annuaire.agencebio.org/operateur/101169) |
 | LALLEMENT Cécile / Cueilleurs d'étoiles | LALLEMENT CECILE | GOUEX | 4 LD LA ROCHE AUX RENARDS 86320 | actividad | Noix, Lavandin, Plants et semences potagers, à l'exclusion des semences de betteraves | 2026 | [nº Bio 45327](https://annuaire.agencebio.org/operateur/45327) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LE MOULIN A CAFE | — | Poitiers | 200 GRAND RUE 86000 POITIERS | Café | 10.83Z — Transformation du thé et du café | 2011-09 | [SIREN 534992979](https://annuaire-entreprises.data.gouv.fr/entreprise/534992979) · [web sin contrastar](https://cluricaumcafe.fr) |
+| LE GLACIER DE BELLEFOIS | — | Neuville-de-Poitou | 33 ROUTE DE CLAN 86170 NEUVILLE-DE-POITOU | Helados | 10.52Z — Fabrication de glaces et sorbets | 2020-05 | [SIREN 883721367](https://annuaire-entreprises.data.gouv.fr/entreprise/883721367) · [web sin contrastar](http://www.brasserie-de-bellefois.fr/) |

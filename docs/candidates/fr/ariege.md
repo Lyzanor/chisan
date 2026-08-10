@@ -23,3 +23,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LIFA PONS Patrice | EARL LIFA | MONTELS | LD LA BARAQUE 09240 | actividad | Estives ou alpages collectifs, Trèfle, Taureaux (>24 mois) | 2026 | [nº Bio 157263](https://annuaire.agencebio.org/operateur/157263) |
 | MARTIN Emilie | Le Jardin du Valier | SEIX | BLECHEIN D’EN BAS 09140 | actividad | Culture inconnue, Jus de fruits et légumes, Autres préparations et conserves à base de fruits et légumes | 2026 | [nº Bio 8234](https://annuaire.agencebio.org/operateur/8234) |
 | OLAGNON Jean Michel | PRAVISANI ELODIE BEPINA PAULETTE | Campagne sur Arize | 10 rue de l'église 09350 | actividad | Agnelles de renouvellement, Blé tendre, Aliments pour animaux de ferme | 2026 | [nº Bio 133400](https://annuaire.agencebio.org/operateur/133400) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| VIDA LOCA | CAROLINE ABBOU | Saint-Girons | APPARTEMENT 5 47 AVENUE GALLIENI 09200 SAINT-GIRONS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2021-10 | [SIREN 903124360](https://annuaire-entreprises.data.gouv.fr/entreprise/903124360) |
+| LES BISCUITS DU MOULIN | MARFAING BOUTIN | Aulos-Sinsat | AV PAUL BERDOT 09310 AULOS-SINSAT | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2014-06 | [SIREN 803049048](https://annuaire-entreprises.data.gouv.fr/entreprise/803049048) |
+| CREMERIE DU COUSERANS | SARL 2A 2C | Saint-Girons | 2 RUE DU PONT VIEUX 09200 SAINT-GIRONS | Lácteos y quesos | 10.51C — Fabrication de fromage | 2011-07 | [SIREN 533825204](https://annuaire-entreprises.data.gouv.fr/entreprise/533825204) |

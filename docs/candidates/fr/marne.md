@@ -17,3 +17,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOMAINE DE CHAMPAGNE | SCEV DOMAINES DE CHAMPAGNE | REIMS CEDEX | BP 66 51053 | actividad | Raisin de cuve, Culture inconnue, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 158587](https://annuaire.agencebio.org/operateur/158587) |
 | DU DOMAINE DES MARETZ MICHAUD Etienne | SOC D'EXPLOITATION DU DOMAINE DES MARETZ | MERFY | 2 HAM DES MARETZ 51220 | actividad | Parcours herbeux (hors estives collectives), Petits pois, Triticale | 2026 | [nº Bio 133809](https://annuaire.agencebio.org/operateur/133809) |
 | EI BAUCHET Robin | BAUCHET ROBIN ULYSSE FELICIEN | GRAUVES | 13 rue des hurlots 51190 | actividad | Raisin de cuve | 2026 | [nº Bio 44293](https://annuaire.agencebio.org/operateur/44293) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| SMILE | CHOUJAA ALDAFFAIE | Reims | 9 RUE DES CAPUCINS 51100 REIMS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2019-01 | [SIREN 847573722](https://annuaire-entreprises.data.gouv.fr/entreprise/847573722) |
+| LE SAFRAN DE CELESTE ET OCEANE | SANDRINE BERNIER-DELPORTE | Mourmelon-le-Grand | 120 RUE DU MARECHAL FOCH 51400 MOURMELON-LE-GRAND | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2011-10 | [SIREN 538749714](https://annuaire-entreprises.data.gouv.fr/entreprise/538749714) |
+| DISTILLERIE GUILLON | G.W. | Val de Livre | HAM DE VERTUELLE 51150 VAL DE LIVRE | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2007-05 | [SIREN 497549675](https://annuaire-entreprises.data.gouv.fr/entreprise/497549675) |

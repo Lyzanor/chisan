@@ -16,3 +16,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DOMAINE DE PICHOU | FERROUDJI SORAYA | ALET-LES-BAINS | DOMAINE DE PICHOU 11580 | actividad | Autres bovins et bovidés, Béliers, Taureaux (>24 mois) | 2026 | [nº Bio 103439](https://annuaire.agencebio.org/operateur/103439) |
 | DOMAINE LES PORTES | PECH DE LACLAUSE PHILIPPE | NARBONNE | 2 ROUTE DE GRUISSAN ESPACE SOLEIL 11100 | actividad | Olives, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Culture inconnue | 2026 | [nº Bio 108877](https://annuaire.agencebio.org/operateur/108877) |
 | DU GOULET ARTIGUES Romain | GAEC DU GOULET | ROQUEFEUIL | ARTIGUES ROMAIN LE GOULET 11340 | actividad | Prairie permanente, Autres bovins et bovidés, Taureaux (>24 mois) | 2026 | [nº Bio 151088](https://annuaire.agencebio.org/operateur/151088) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LE TEMPS DU CHOCOLAT | FB CHOCOLATERIE 11 | Narbonne | 28 RUE JEAN JAURES 11100 NARBONNE | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2022-05 | [SIREN 913329629](https://annuaire-entreprises.data.gouv.fr/entreprise/913329629) |
+| L'HARMONIE DES SAVEURS | VERONIQUE OLTRA | Castelnaudary | CHEMIN DU BREIL 197 IMPASSE DU BREIL 11400 CASTELNAUDARY | Té e infusiones | 10.83Z — Transformation du thé et du café | 1991-10 | [SIREN 383488608](https://annuaire-entreprises.data.gouv.fr/entreprise/383488608) |

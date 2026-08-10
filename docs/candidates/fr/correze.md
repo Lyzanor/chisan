@@ -23,3 +23,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA FONTAINE DU BERLE DUMONT Claudine | SCEA DE LA FONTAINE DE BERLE | CHAUFFOUR-SUR-VELL | 1355 RTE DE BERLE 19500 | actividad | Autres préparations et conserves à base de fruits et légumes, Autres huiles végétales, brutes, Noix | 2026 | [nº Bio 101267](https://annuaire.agencebio.org/operateur/101267) |
 | LAFON DE LAGENESTE Clément | LAFON DE LAGENESTE FRANCOISE | Saint Clément | 3 route de l'Anis 19700 | actividad | Châtaignes et marrons, Prairie permanente | 2026 | [nº Bio 149211](https://annuaire.agencebio.org/operateur/149211) |
 | LE CHAMP DU PATRE LAPRUN Matthias | SCEA LE CHAMP DU PATRE | Serandon | 3 Douniol 19160 | actividad | Autres légumes à feuilles ou à tiges, Autres légumes à racine, à bulbe ou à tubercules n.c.a., Lait de brebis, brut | 2026 | [nº Bio 41237](https://annuaire.agencebio.org/operateur/41237) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BRASSERIE DES ANGES | STEPHANIE COULANGE | Chamboulive | PLACE DE LA CHAPELLE 19450 CHAMBOULIVE | Cerveza | 11.05Z — Fabrication de bière | 2013-09 | [SIREN 795087808](https://annuaire-entreprises.data.gouv.fr/entreprise/795087808) · [web sin contrastar](https://brasseriedesanges.com/) |
+| B.B.CHOCOLATIER -BORZEIX-BESSE -B.B.CHOCOLATIER BORZEIX-BESSE -COMPTOIR DU CHOCOLAT DE TREIGNAC-B.B. | BORZEIX-BESSE | Treignac | 3-5 3 AVENUE LEON VACHER 19260 TREIGNAC | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1999-12 | [SIREN 428768543](https://annuaire-entreprises.data.gouv.fr/entreprise/428768543) |

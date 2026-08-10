@@ -23,3 +23,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | BERNARD FABRICE | BERNARD FABRICE | SCEAUX | 10 RUE DES ECOLES 92330 | actividad | Miel, Ruches | 2025 | [nº Bio 151410](https://annuaire.agencebio.org/operateur/151410) |
 | NICOLAS PATRICK ANDRE | NICOLAS PATRICK ANDRE | MEUDON | 8 SENTIER STR DU CLOS MADAME 92190 | actividad | Plants : plants de pépinière, bulbes, tubercules et rhizomes, boutures et greffons ; blanc de champignon, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Raisin de table | 2025 | [nº Bio 146903](https://annuaire.agencebio.org/operateur/146903) |
 | SCEA DU CHAMP DE LA VIGNE | SCEA DU CHAMP DE LA VIGNE | Le Plessis-Robinson | 7 AVENUE DESCARTES 92350 | actividad | Blé tendre, Truffes, Noix | 2025 | [nº Bio 159362](https://annuaire.agencebio.org/operateur/159362) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| BELVIE | CHRISTOPHE SO | Sèvres | 25 AVENUE DE L'EUROPE 92310 SEVRES | Conservas | 10.39B — Transformation et conservation de fruits | 2021-02 | [SIREN 893538603](https://annuaire-entreprises.data.gouv.fr/entreprise/893538603) |
+| BONVILLETTE NOISETTES | — | Boulogne-Billancourt | 29 RUE DE L'EST 92100 BOULOGNE-BILLANCOURT | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2020-04 | [SIREN 883568263](https://annuaire-entreprises.data.gouv.fr/entreprise/883568263) |
+| P.F.A. | PISCICULTURE FRANCE AFRIQUE | Sceaux | 10 AVENUE DE CAMBERWELL 92330 SCEAUX | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2015-07 | [SIREN 812660462](https://annuaire-entreprises.data.gouv.fr/entreprise/812660462) |

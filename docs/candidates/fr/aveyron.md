@@ -22,3 +22,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FABRE Benoit - ferme de beaurivage | FABRE BENOIT | ESPALION | BEAURIVAGE 12500 | actividad | Estives ou alpages collectifs, Pintades, Vaches allaitantes | 2026 | [nº Bio 12477](https://annuaire.agencebio.org/operateur/12477) |
 | FAGES Laurent | EARL DU RONC | Severac d'Aveyron | FERME DU RONC 12150 | actividad | Agnelles de renouvellement, Plats préparés, Estives ou alpages collectifs | 2026 | [nº Bio 109228](https://annuaire.agencebio.org/operateur/109228) |
 | FERME DE GREZES | ASSOCIATION DU CENTRE DE GREZES | Severac l'Eglise | 8 Avenue de la Plaine 12310 | actividad | Lait de vache, brut, Vaches laitières, vivantes, Estives ou alpages collectifs | 2026 | [nº Bio 146670](https://annuaire.agencebio.org/operateur/146670) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'ATELIER CREATIF MATTHIEU CLOT | — | Rodez | 9 AVENUE DE L'ENTREPRISE 12000 RODEZ | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-10 | [SIREN 789203528](https://annuaire-entreprises.data.gouv.fr/entreprise/789203528) · [web sin contrastar](http://www.aici-chocolatier.fr/) |
+| MOULIN MEJANE | VINCENT MEJANE | Espeyrac | LA MOLENERIE 12140 ESPEYRAC | Pan y cereal | 10.61A — Meunerie | 2014-07 | [SIREN 804208825](https://annuaire-entreprises.data.gouv.fr/entreprise/804208825) |

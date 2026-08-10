@@ -22,3 +22,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LE JARDIN BIO D'ALICE | SIMON CHARLES | JASSANS RIOTTIER | 391 ROUTE DES CHAMPS DE RIOTTIER 01480 | actividad | Autres produits alimentaires n.c.a., Poules pondeuses, Œufs de poule, en coquille, frais | 2026 | [nº Bio 128945](https://annuaire.agencebio.org/operateur/128945) |
 | LES BERGONNES | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU DES BERGONNES | HOTONNES | Les Plants d'Hotonnes 01260 | actividad | Fromages, Brebis laitières, Agneaux | 2026 | [nº Bio 150546](https://annuaire.agencebio.org/operateur/150546) |
 | LES CHAMPIGNONS DE LA CASCADE JANOT Olivier | JANOT OLIVIER PAUL | Tenay | LD En Courtioux 01230 | actividad | Champignons | 2026 | [nº Bio 143707](https://annuaire.agencebio.org/operateur/143707) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| TORREFACTION DAGOBERT | STIF | Châtillon-sur-Chalaronne | 86 IMPASSE CHRISTIAN BARNARD 01400 CHATILLON-SUR-CHALARONNE | Café | 10.83Z — Transformation du thé et du café | 2017-10 | [SIREN 832194666](https://annuaire-entreprises.data.gouv.fr/entreprise/832194666) |
+| MON CAFE GOURMET | SANDRA VOLO | Lagnieu | 44 RUE GAMBETTA 01150 LAGNIEU | Café | 10.83Z — Transformation du thé et du café | 2017-03 | [SIREN 828729863](https://annuaire-entreprises.data.gouv.fr/entreprise/828729863) · [web sin contrastar](https://www.moncafegourmet.fr/) |
+| HESTIA BISCUITERIE | EMELINE GODIN | Saint-Paul-de-Varax | 215 RUE DE LA DOMBES 01240 SAINT-PAUL-DE-VARAX | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2022-09 | [SIREN 918926338](https://annuaire-entreprises.data.gouv.fr/entreprise/918926338) |

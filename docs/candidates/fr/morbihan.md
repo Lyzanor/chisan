@@ -20,3 +20,15 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DU VERGER (EARL LA) | LA FERME DU VERGER | BERRIC | 39 RUE DU VERGER 56230 | actividad | Prairie temporaire, Légumes frais plein champ, Légumes frais sous abris | 2026 | [nº Bio 103526](https://annuaire.agencebio.org/operateur/103526) |
 | FERME PENN DA BENN CHAPELLIER Pierre | EARL FERME PENN DA BENN | SENE | BROUEL KERBIHAN 56860 | actividad | Viande bovine, fraîche ou réfrigérée, Autres bovins et bovidés, Bœufs | 2026 | [nº Bio 158511](https://annuaire.agencebio.org/operateur/158511) |
 | FERME TRUGAREZ AN DOUAR FERRE Séverine | FERRE SEVERINE NICOLE SIMONE | Landaul | Langombrac'h 56690 | actividad | Légumes frais n.c.a., Cidre et autres vins de fruits, Autres préparations et conserves à base de fruits et légumes | 2026 | [nº Bio 103481](https://annuaire.agencebio.org/operateur/103481) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 5 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L CHANVRE | — | Péaule | 5717 PONT SAILLANT 56130 PEAULE | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2006-05 | [SIREN 490293602](https://annuaire-entreprises.data.gouv.fr/entreprise/490293602) |
+| POMM'S FACTORY | NATHALIE JOLLY | Baud | LANN VREHAN 56150 BAUD | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2018-09 | [SIREN 842401192](https://annuaire-entreprises.data.gouv.fr/entreprise/842401192) |
+| BROOKLYN JUICE CO | PHILIPPE PIERRE | Sauzon | 2 RUE SAINT NICOLAS 56360 SAUZON | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2013-05 | [SIREN 793015496](https://annuaire-entreprises.data.gouv.fr/entreprise/793015496) |
+| BRULERIE DE BELLE-ILE-EN-MER | PLUM | Le Palais | 7 RUE WILLAUMEZ 56360 LE PALAIS | Café | 10.83Z — Transformation du thé et du café | 2020-06 | [SIREN 898994322](https://annuaire-entreprises.data.gouv.fr/entreprise/898994322) · [web sin contrastar](https://www.kaerilis.org/) |
+| DISTILLERIE BLEIZ-MOR | LOIC LE GUHENNEC | Étel | 4 RUE VICTOR HUGO 56410 ETEL | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2021-12 | [SIREN 909089740](https://annuaire-entreprises.data.gouv.fr/entreprise/909089740) · [web sin contrastar](https://www.distilleriebleizmor.fr/) |

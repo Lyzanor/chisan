@@ -19,3 +19,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA MOULINE BALDY Didier | GAEC LA MOULINE | SAINT DENIS CATUS | La Garnone 46150 | actividad | Viande bovine, fraîche ou réfrigérée, Veaux (< 8mois), Vaches allaitantes | 2026 | [nº Bio 132973](https://annuaire.agencebio.org/operateur/132973) |
 | LA VERNIERE TEULIERES Philippe | EARL LA VERNIERE | SOUSCEYRAC | Lavernière 46190 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Autres surfaces non productive et surfaces non agricoles | 2026 | [nº Bio 133049](https://annuaire.agencebio.org/operateur/133049) |
 | LALO EMMANUEL | GAEC DU SUQ | MONTREDON | 200 impasse de Laroque - Plancat 46270 | actividad | Autres porcins, Porcs charcutiers, Truies | 2026 | [nº Bio 109910](https://annuaire.agencebio.org/operateur/109910) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| LE MOULIN DE ST-CERE | FOXA TOURN' | Saint-Céré | 55 RUE CROIX DE LAGARDE 46400 SAINT-CERE | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2023-09 | [SIREN 979906096](https://annuaire-entreprises.data.gouv.fr/entreprise/979906096) · [web sin contrastar](https://www.moulindesaintcere.com/) |
+| BIERES RATZ | BRASSERIE ARTISANALE RATZ | Fontanes | PARC D'ACTIVITES DE CAHORS SUD 725 AV DE SAINT EXUPERY 46230 FONTANES | Cerveza | 11.05Z — Fabrication de bière | 2001-02 | [SIREN 435093281](https://annuaire-entreprises.data.gouv.fr/entreprise/435093281) · [web sin contrastar](https://biereratz.fr/) |

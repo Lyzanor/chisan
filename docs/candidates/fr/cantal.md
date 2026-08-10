@@ -21,3 +21,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | NATUR' AGNEAU | EARL NATUR'AGNEAU | SAINT FLOUR | CHABANIER Béatrice Volzac 15100 | actividad | Agnelles de renouvellement, Chèvres, Brebis laitières | 2026 | [nº Bio 149922](https://annuaire.agencebio.org/operateur/149922) |
 | PANIS DE LA JUNIE PANIS Gilbert | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE PANIS DE LA JUNIE | VITRAC | LA JUNIE 15220 | actividad | Lait de vache, brut, Veaux (< 8mois), Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 138613](https://annuaire.agencebio.org/operateur/138613) |
 | QUART D'HEURE (GAEC) | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN DU QUART D'HEURE | MOURJOU | GALES 15340 | actividad | Prairie temporaire, Veaux (< 8mois), Génisses renouvellement (>8 mois) | 2026 | [nº Bio 141250](https://annuaire.agencebio.org/operateur/141250) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'ATELIER DES MUFFINS | ROMANE COMBRE | Villedieu | 1 GRAND RUE RIBEYREVIEILLE 15100 VILLEDIEU | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2019-01 | [SIREN 844955963](https://annuaire-entreprises.data.gouv.fr/entreprise/844955963) |
+| LES MOULINS D'ANTOINE-JAMBON ALIMEN | LES MOULINS D'ANTOINE | Murat | 6 RUE DU STADE 15300 MURAT | Pan y cereal | 10.61A — Meunerie | 1967-01 | [SIREN 536780059](https://annuaire-entreprises.data.gouv.fr/entreprise/536780059) |

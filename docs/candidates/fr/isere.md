@@ -20,3 +20,12 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA FERME DU CERF RIONDET Bernard | EARL DES FRENES | VIF | 60 route de la merlière 38450 | actividad | Viande bovine, fraîche ou réfrigérée, Noix, Luzerne | 2026 | [nº Bio 105096](https://annuaire.agencebio.org/operateur/105096) |
 | LA FERME DU TREFLE PELLOUX TYTGAT Romaric | PELLOUX TYTGAT ROMARIC | Lalley | LE VILLAGE 38930 | actividad | Poulets, vivants, Œufs de poule, en coquille, frais, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 131668](https://annuaire.agencebio.org/operateur/131668) |
 | La Pépinière du Circaète | CATHALA SONIA | ROISSARD | 30 place du 19 mars 1962 38650 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Autres fruits à pépins, Plants et semences potagers, à l'exclusion des semences de betteraves | 2026 | [nº Bio 171356](https://annuaire.agencebio.org/operateur/171356) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 2 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| MICROBRASSERIE THETYS | THETYS | Saint-Clair-de-la-Tour | ZA LA CORDERIE 450 RUE DU SERPENTIN 38110 SAINT-CLAIR-DE-LA-TOUR | Cerveza | 11.05Z — Fabrication de bière | 2019-12 | [SIREN 879471571](https://annuaire-entreprises.data.gouv.fr/entreprise/879471571) · [web sin contrastar](https://brasserie-thetys.com/) |
+| L ATELIER FLORETTE & SES CONCOCTIONS | KARINE FLORET | Saint-Geoire-en-Valdaine | 251 ROUTE DU BOURG 38620 SAINT-GEOIRE-EN-VALDAINE | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2013-09 | [SIREN 794861302](https://annuaire-entreprises.data.gouv.fr/entreprise/794861302) |

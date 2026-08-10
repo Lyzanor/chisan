@@ -24,3 +24,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 ## Descartes documentados — 2026-08-09
 
 - **Bioflore Provence** — fuera de alcance: Vivero y explotación hortícola que vende plantas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/137869) · [fuente pública](https://www.biofloreprovence.com/?utm_source=gmb)
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 4 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| NANA SMOOTHIE | SANDRINE PONZA | Barcelonnette | 39 RUE MANUEL 04400 BARCELONNETTE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2011-01 | [SIREN 529846784](https://annuaire-entreprises.data.gouv.fr/entreprise/529846784) |
+| DI.CO.MI - MANON - LE NOUGATIER PROVENCAL | SOC DE DIFFUS CONFISERIE MIEL MANON | Peyruis | 2 ZONE INDUSTRIELLE ST PIERRE 04310 PEYRUIS | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1965-01 | [SIREN 707050035](https://annuaire-entreprises.data.gouv.fr/entreprise/707050035) |
+| LA BRASSERIE DES HAUTES VALLEES | — | Saint-Paul-sur-Ubaye | L'ADRECH 546 ROUTE DU COL DE VARS 04530 SAINT-PAUL-SUR-UBAYE | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2025-01 | [SIREN 939825014](https://annuaire-entreprises.data.gouv.fr/entreprise/939825014) · [web sin contrastar](https://www.la-sauvage.fr/) |
+| L'ATELIER SUCRE SALE | SOPHIE BERNARD | Aubenas-les-Alpes | LD LES RIBASSES LA GRANDE FONTAINE 04110 AUBENAS-LES-ALPES | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2021-05 | [SIREN 898211057](https://annuaire-entreprises.data.gouv.fr/entreprise/898211057) |

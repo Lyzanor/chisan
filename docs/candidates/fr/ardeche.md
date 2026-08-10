@@ -22,3 +22,13 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | JOSEPH DEUGOUE NGAGOUE | DEUGOUE NGAGOUE JOSEPH | BOZAS | CHEMIN DE BALAY LA GRANGE 07410 | actividad | Légumes frais plein champ, Autres fruits à noyau, Châtaignes et marrons | 2026 | [nº Bio 159748](https://annuaire.agencebio.org/operateur/159748) |
 | LA FERME DES GENETS VILLIEN Jonathan | VILLIEN JONATHAN | ARLEBOSC | Ferme des Genêts 6230 route des Fauries 07410 | actividad | Pommes de table, Raisin de table, Sauces ; mélanges de condiments et assaisonnements préparés ; farines de moutarde et moutardes préparées | 2026 | [nº Bio 110869](https://annuaire.agencebio.org/operateur/110869) |
 | LA FERME DU BREUIL POICHOT Annie | POICHOT ANNIE | MARS | LE BREUIL 07320 | actividad | Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Prairie permanente, Aliments pour animaux de ferme | 2026 | [nº Bio 140339](https://annuaire.agencebio.org/operateur/140339) |
+
+## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
+
+Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 3 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+
+| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'OLEICOLE DES CEVENNES | MOULIN A HUILE D'OLIVE FROMENT | Les Vans | 397 ROUTE DES CEVENNES 07140 LES VANS | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 1991-11 | [SIREN 383711397](https://annuaire-entreprises.data.gouv.fr/entreprise/383711397) |
+| PIERRE CHAUVET CHOCOLATIER | PIERRE CHAUVET | Ucel | 111 RTE DE VALS LES BAINS 07200 UCEL | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1993-08 | [SIREN 392170486](https://annuaire-entreprises.data.gouv.fr/entreprise/392170486) |
+| LES CHATAIGNIERS DE CHANTELOUBE | JEROME COSTE | Vallées-d'Antraigues-Asperjoc | CHANTELOUBE 07530 VALLEES-D'ANTRAIGUES-ASPERJOC | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2011-02 | [SIREN 530574326](https://annuaire-entreprises.data.gouv.fr/entreprise/530574326) |
