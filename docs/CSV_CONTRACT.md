@@ -73,7 +73,7 @@ whitespace.
 | `web` | optional | Official producer HTTP(S) URL. |
 | `Facebook` | optional | Official producer Facebook profile/page HTTP(S) URL. |
 | `Instagram` | optional | Official producer Instagram profile HTTP(S) URL. |
-| `Google Maps` | optional | HTTP(S) Google Maps listing for the producer or productive unit. |
+| `Google Maps` | optional | Canonical HTTP(S) Google Maps listing or exact reviewed location pin for the producer or productive unit. |
 | `lat` | paired | WGS84 latitude in decimal degrees, between `-90` and `90`. |
 | `lon` | paired | WGS84 longitude in decimal degrees, between `-180` and `180`. |
 | `imagen` | optional | Root-relative path to a local public image asset. |
@@ -225,7 +225,17 @@ must be valid HTTP(S) URLs and refer to the row's producer:
 - `Instagram` must use an `instagram.com` host and identify a profile, not the
   network home, explore view or post permalink.
 - `Google Maps` must use a recognized Google Maps host and resolve to the
-  producer or productive unit.
+  producer or productive unit. The canonical form is
+  `https://www.google.com/maps/search/?api=1&query=<lat>%2C<lon>&query_place_id=<PLACE_ID>`
+  for a reviewed listing, or the same URL without `query_place_id` for an exact
+  reviewed coordinate with no matching listing. Text-only searches, shortened
+  `maps.app.goo.gl` links and copied interface URLs are advisory migration
+  warnings rather than blocking errors; do not add them to new or reviewed rows.
+
+`direccion`, `lat`/`lon` and `Google Maps` must identify the same unit and role.
+Leave `Google Maps` empty for a centroid, locality-only or otherwise approximate
+point. Constructing a textual Maps search does not establish that its current
+result belongs to the producer.
 
 Syntax, an HTTP response or a directory listing does not establish ownership,
 activity or online sales.

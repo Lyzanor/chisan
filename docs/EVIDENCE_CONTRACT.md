@@ -146,6 +146,12 @@ For the structural `verificado` check, verifying types are `official-site`,
 does not make every claim reliable: editors must still confirm what the source
 actually demonstrates.
 
+A `google-maps` source is a specific listing that the editor opened and matched
+to the row. A generated text-search URL is a query, not evidence of the result
+it happens to return. A coordinate-only Maps URL derived from another provider
+is a public navigation link; the upstream address or coordinate source, not
+Google, carries its `location` claim.
+
 ## Notes
 
 Use `notes` only for durable facts needed to interpret the record: identity

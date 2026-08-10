@@ -134,6 +134,55 @@ coordenadas exactas choquen con un centroide incorrecto o ambiguo, corrige
 `data/reference/municipality-overrides.json` o la referencia; nunca las
 coordenadas correctas.
 
+## Enlace público de Google Maps
+
+El enlace público es una salida de la misma revisión geográfica, no un
+enriquecimiento independiente. `direccion`, `lat`/`lon` y `Google Maps` deben
+resolver la misma unidad y el mismo rol. No enlaces una tienda, oficina,
+alojamiento o ficha homónima cuando la fila y sus coordenadas representan la
+unidad productiva.
+
+Publica el enlace según el resultado aceptado:
+
+| Resultado de la revisión | Valor de `Google Maps` |
+|---|---|
+| POI de Google contrastado con la unidad | URL canónica con `query_place_id`. |
+| Sin ficha de Google, pero con coordenadas exactas de precisión `publicada`, `direccion` o `poi` | URL canónica con `query=lat,lon`, sin atribuir a Google la procedencia del punto. |
+| Punto `interpolada`, `localidad` o `centroide`, rol dudoso o identidad no resuelta | Vacío. |
+
+Usa una [Maps URL](https://developers.google.com/maps/documentation/urls/get-started)
+universal y codificada:
+
+```text
+https://www.google.com/maps/search/?api=1&query=<lat>%2C<lon>&query_place_id=<PLACE_ID>
+https://www.google.com/maps/search/?api=1&query=<lat>%2C<lon>
+```
+
+La primera forma abre la ficha aceptada y conserva el punto revisado como
+fallback; la segunda abre un pin sin afirmar que exista una ficha del productor.
+El `query=lat,lon` copia las coordenadas aceptadas de la fila, no otro punto
+aproximado obtenido durante la búsqueda.
+Una búsqueda textual construida con nombre o dirección es solo una consulta de
+revisión: aunque hoy devuelva el candidato esperado, no fija un resultado y no
+debe publicarse como ubicación resuelta. Tampoco uses como forma canónica enlaces
+cortos `maps.app.goo.gl` ni URLs largas copiadas de la interfaz; conserva el
+identificador de lugar explícito y auditable cuando exista.
+
+Para un lote pequeño, localiza el identificador con el buscador manual enlazado
+desde la documentación de Place IDs. Para un lote repetible, un adaptador puede
+consultar Places Text Search solicitando solo `places.id` a partir del nombre,
+dirección revisada y país. En ambos casos el ID sigue siendo un candidato:
+construye la URL canónica, abre la ficha y contrasta identidad, dirección, rol y
+otro dato independiente antes de aplicarlo. No reutilices automáticamente como
+`lat`/`lon` otros campos devueltos por Google sin comprobar antes sus términos de
+almacenamiento.
+
+Los Place IDs pueden almacenarse y reutilizarse, pero Google recomienda
+[refrescarlos cuando superan los doce meses](https://developers.google.com/maps/documentation/places/web-service/place-id).
+La renovación vuelve a pasar por revisión editorial: un identificador obsoleto,
+un traslado o una ficha fusionada no autorizan a aceptar automáticamente el
+nuevo resultado.
+
 ## Fallback municipal
 
 El centroide es adecuado cuando la fuente solo permite afirmar municipio y un
@@ -181,6 +230,10 @@ dos entradas distintas: ninguna debe recibir claims que no demuestra.
 Usa `type: "google-maps"` para una ficha de Maps y `type: "other"` para un
 geocodificador que no tenga tipo propio. Una nota de fuente puede registrar una
 excepción relevante —número interpolado, POI contrastado, carretera o paraje—.
+Una Maps URL solo es fuente `google-maps` cuando se abrió y revisó la ficha
+concreta. Una búsqueda textual generada no demuestra su resultado; un enlace de
+coordenadas generado a partir de otro proveedor tampoco convierte a Google en
+fuente de `location`.
 Anota a nivel de decisión únicamente conflictos duraderos, instalaciones
 múltiples o el motivo de una distancia geográfica inusual. No dupliques en el
 ledger la consulta y precisión si una futura herramienta ya las conserva en su
@@ -199,7 +252,8 @@ seguro que `enrich:images`:
   declarada, rol de la instalación y distancia municipal;
 - **revisión visible**: dirección fuente y candidatos sobre mapa antes de elegir;
 - **aplicación explícita**: un `slug` y un candidato aceptado cada vez;
-- **cambios quirúrgicos**: solo `lat`/`lon` y, cuando proceda, evidencia;
+- **cambios quirúrgicos**: solo `lat`/`lon`, `Google Maps` y, cuando proceda,
+  evidencia;
 - **sin fuente oculta**: el CSV sigue siendo el estado publicado y la evidencia,
   la procedencia; cachés e informes son artefactos de trabajo;
 - **benchmark**: ocultar coordenadas conocidas y medir por país acierto de
@@ -212,9 +266,10 @@ automático: algunas filas terminarán correctamente vacías.
 El informe por candidato debería incluir `slug`, consulta y variante, proveedor,
 fecha, identificador, etiqueta devuelta, `lat`/`lon`, precisión, rol de la
 instalación, componente más profundo confirmado, componentes no resueltos,
-coincidencias de dirección, distancia al centroide y motivos de revisión. El
-cache debe permitir reanudar una pasada sin consultar de nuevo y cambiar de
-proveedor sin cambiar el formato del informe.
+coincidencias de dirección, distancia al centroide, Place ID y Maps URL pública
+propuesta cuando existan, y motivos de revisión. El cache debe permitir reanudar
+una pasada sin consultar de nuevo y cambiar de proveedor sin cambiar el formato
+del informe.
 
 ## Cierre de una pasada
 

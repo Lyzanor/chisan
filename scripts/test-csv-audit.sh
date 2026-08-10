@@ -163,6 +163,16 @@ social-basura,Masia Social,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficient
 social-pagina,Masia Pagina,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://www.facebook.com/p/Masia-Pagina-100063712593417,https://www.instagram.com/masiapagina,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
 CSV
 
+cat >"$TMP_DIR/google-maps-quality.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+maps-place-id,Masia Place ID,Abrera,Vino,Vino,Carrer Major 1,Productor con una ficha concreta y revisada,,+34600000000,place@example.com,https://example.com,,,https://www.google.com/maps/search/?api=1&query=41.51%2C1.90&query_place_id=abc,41.51,1.90,,pendiente,no,,
+maps-coordinates,Masia Coordenadas,Abrera,Vino,Vino,Carrer Major 2,Productor con un pin exacto sin ficha propia,,+34600000001,coords@example.com,https://example.com,,,https://www.google.com/maps/search/?api=1&query=41.52%2C1.91,41.52,1.91,,pendiente,no,,
+maps-text,Masia Textual,Abrera,Vino,Vino,Carrer Major 3,Productor enlazado mediante una busqueda textual,,+34600000002,text@example.com,https://example.com,,,https://www.google.com/maps/search/?api=1&query=Masia+Textual+Abrera,41.53,1.92,,pendiente,no,,
+maps-no-api,Masia Sin API,Abrera,Vino,Vino,Carrer Major 4,Productor con una URL universal incompleta,,+34600000003,api@example.com,https://example.com,,,https://www.google.com/maps/search/?query=41.54%2C1.93&query_place_id=def,41.54,1.93,,pendiente,no,,
+maps-short,Masia Corta,Abrera,Vino,Vino,Carrer Major 5,Productor enlazado mediante una URL acortada,,+34600000004,short@example.com,https://example.com,,,https://maps.app.goo.gl/opaque,41.55,1.94,,pendiente,no,,
+maps-interface,Masia Interfaz,Abrera,Vino,Vino,Carrer Major 6,Productor enlazado mediante una URL de interfaz,,+34600000005,interface@example.com,https://example.com,,,https://www.google.com/maps/place/Masia+Interfaz,41.56,1.95,,pendiente,no,,
+CSV
+
 # A UTF-8 BOM (typical of spreadsheet exports) is a blocking error.
 printf '\xEF\xBB\xBF' >"$TMP_DIR/bom.csv"
 cat "$TMP_DIR/canonical-ok.csv" >>"$TMP_DIR/bom.csv"
@@ -411,6 +421,24 @@ grep -q "WARNING line 2 .* Facebook: points to the network home page" "$TMP_DIR/
 grep -q "WARNING line 2 .* Instagram: points to a feed or explore page" "$TMP_DIR/out-junk-social.txt"
 if grep -q "line 3 .* \(Facebook\|Instagram\):" "$TMP_DIR/out-junk-social.txt"; then
   echo "Error: a real Facebook /p/ page and Instagram profile must not warn" >&2
+  exit 1
+fi
+
+# Canonical Place ID and exact-coordinate links pass. Text searches, missing
+# api=1, short URLs and copied interface URLs remain non-blocking migration
+# warnings so the inherited catalog can be repaired progressively.
+run_expect_success "$TMP_DIR/out-google-maps-quality.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/google-maps-quality.csv"
+grep -q "WARNING line 4 .* Google Maps: textual search has no query_place_id" \
+  "$TMP_DIR/out-google-maps-quality.txt"
+grep -q "WARNING line 5 .* Google Maps: search URL must include api=1" \
+  "$TMP_DIR/out-google-maps-quality.txt"
+grep -q "WARNING line 6 .* Google Maps: shortened maps.app.goo.gl URL is opaque" \
+  "$TMP_DIR/out-google-maps-quality.txt"
+grep -q "WARNING line 7 .* Google Maps: copied interface URL is not canonical" \
+  "$TMP_DIR/out-google-maps-quality.txt"
+if grep -q "WARNING line [23] .* Google Maps:" "$TMP_DIR/out-google-maps-quality.txt"; then
+  echo "Error: canonical Place ID and exact-coordinate Maps URLs must not warn" >&2
   exit 1
 fi
 

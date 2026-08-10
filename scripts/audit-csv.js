@@ -307,6 +307,51 @@ function validateGoogleMapsUrl(url) {
   return null;
 }
 
+function isCoordinateMapsQuery(query) {
+  const match = cleanCell(query).match(
+    /^(-?\d{1,2}(?:\.\d+)?)\s*,\s*(-?\d{1,3}(?:\.\d+)?)$/,
+  );
+  if (!match) {
+    return false;
+  }
+
+  const lat = Number.parseFloat(match[1]);
+  const lon = Number.parseFloat(match[2]);
+  return Math.abs(lat) <= 90 && Math.abs(lon) <= 180;
+}
+
+function googleMapsQualityWarnings(url) {
+  const host = url.hostname.toLowerCase();
+  if (host === "maps.app.goo.gl") {
+    return [
+      "shortened maps.app.goo.gl URL is opaque; use a canonical /maps/search/?api=1 URL",
+    ];
+  }
+
+  if (!/^\/maps\/search\/?$/.test(url.pathname)) {
+    return [
+      "copied interface URL is not canonical; use a /maps/search/?api=1 URL",
+    ];
+  }
+
+  const warnings = [];
+  const query = url.searchParams.get("query") ?? "";
+  const placeId = cleanCell(url.searchParams.get("query_place_id"));
+
+  if (url.searchParams.get("api") !== "1") {
+    warnings.push("search URL must include api=1");
+  }
+  if (!cleanCell(query)) {
+    warnings.push("search URL must include a non-empty query");
+  } else if (!placeId && !isCoordinateMapsQuery(query)) {
+    warnings.push(
+      "textual search has no query_place_id and does not anchor a specific place",
+    );
+  }
+
+  return warnings;
+}
+
 // A social link is only useful when it reaches the producer's own profile.
 // Facebook's /p/<name>-<id> and /pages/<name> and /profile.php?id= forms are all
 // real pages, so only the network's own surfaces are rejected here.
@@ -989,6 +1034,17 @@ function runQualityAudit({ rows, push, centroids, scope }) {
       const profileError = socialProfileError(parsedUrl.url);
       if (profileError) {
         push("warning", line, id, slug, `${column}: ${profileError}`);
+      }
+    }
+
+    const parsedGoogleMaps = readUrl(googleMaps);
+    if (
+      parsedGoogleMaps &&
+      !parsedGoogleMaps.error &&
+      !validateGoogleMapsUrl(parsedGoogleMaps.url)
+    ) {
+      for (const warning of googleMapsQualityWarnings(parsedGoogleMaps.url)) {
+        push("warning", line, id, slug, `Google Maps: ${warning}`);
       }
     }
 
