@@ -24,3 +24,43 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | DALLAGO MICHELE | Mezzolombardo | VIA E DE VARDA 77 38017 | producción — vegetales sin transformar | 2028-07-23 | [IT-BIO-006.380-0080655.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0080655.2025.001.pdf) |
 | DALPEZ LUCA | Cles | VICOLO DEL PRA' 3 38023 | producción — vegetales sin transformar | 2028-07-16 | [IT-BIO-006.380-0037855.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0037855.2025.001.pdf) |
 | DELVAI SERGIO | Ville di Fiemme | VIA TOMMASI FEDERICO  5 38099 | producción — vegetales sin transformar | 2028-11-13 | [IT-BIO-006.380-0043392.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0043392.2025.001.pdf) |
+
+## Preselección con identidad y oferta públicas — 2026-08-10
+
+Doce candidatos para la mitad trentina del lote regional. Todos figuran en la selección vigente de [productores enogastronómicos de Trentino Guest Card](https://www.visittrentino.info/it/articoli/guest-card/produttori-enogastronomici), que publica nombre, localidad y familia de producto. La presencia en esa red confirma actividad comercial pública reciente, pero no sustituye la comprobación de unidad productiva, contacto y categoría final.
+
+| Candidato público | Comune / localidad provisional | Producto propio visible | Siguiente comprobación |
+|---|---|---|---|
+| Simoni Azienda Agricola | Palù di Giovo | fruta, miel y producciones agrícolas | fijar comune y catálogo propio |
+| Cembra Cantina di Montagna | Cembra Lisignago | vino | confirmar bodega productiva y contacto |
+| Cantina Aldeno | Aldeno | vino | confirmar identidad pública y gama propia |
+| Cantina Distilleria Francesco | Vezzano, Vallelaghi | vino y destilados | fijar comune actual tras la fusión municipal |
+| Cantina Distilleria F.lli Pisoni | Pergolese, Madruzzo | vino y destilados | confirmar dirección productiva |
+| Cantina Pravis | Lasino, Madruzzo | vino | confirmar dirección productiva |
+| Lucia Maria Melchiori | Tres, Predaia | derivados de manzana | confirmar laboratorio y marca pública |
+| Azienda Agricola Il Leprotto Bisestile | Bosentino, Altopiano della Vigolana | producción agrícola y hierbas | concretar alimentos vendibles y unidad productiva |
+| Cooperativa Produttori Agricoli Giudicariesi | Comano Terme | fruta y producciones agrícolas | confirmar oferta propia frente a mera agrupación |
+| Magia d'Erbe Officinali | Roncegno Terme | hierbas y preparados | separar alimentos de cosmética |
+| Azienda Agricola La Quadra | Drena | aceite y producciones agrícolas | confirmar gama alimentaria propia |
+| OlioCRU | Riva del Garda | aceite de oliva | confirmar olivar / molino y datos de contacto |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+6 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 6.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birra Impavida | Arco | `Cerveza` | birra artigianale | [web](https://www.birraimpavida.com/) |
+| Birrificio Barbaforte | Folgaria | `Cerveza` | birra artigianale | [web](https://www.barbaforte.it) |
+| Birrificio Artigianale Leder | Ledro | `Cerveza` | birra artigianale | [web](https://www.birrificioleder.it/) |
+| Birrificio Val Rendena | Pinzolo | `Cerveza` | birra artigianale | [web](https://www.valrendena.beer) |
+| Birra Del Bosco | San Michele all'Adige | `Cerveza` | birra artigianale | [web](https://www.birradelbosco.it/) |
+| 5+ Birrificio Artigianale | Trento | `Cerveza` | birra artigianale | [web](https://5piu.com/) |

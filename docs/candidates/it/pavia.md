@@ -24,3 +24,43 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | FARINA ANNA | Cassolnovo | VIA CASTELLO, 3 27023 | producción — vegetales sin transformar | 2029-02-02 | [IT-BIO-007.380-0005935.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0005935.2026.001.pdf) |
 | FERRARI ALESSANDRO | Cecima | FRAZIONE BUSANCA  8 27050 | producción — vegetales sin transformar | 2028-08-07 | [IT-BIO-023.380-0021754.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0021754.2025.001.pdf) |
 | GRAMEGNA ANNA | Barbianello | FRAZIONE SAN RE N 36 27041 | producción — vegetales sin transformar | 2029-01-28 | [IT-BIO-007.380-0004236.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0004236.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+23 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 5, `Lácteos y quesos` 5, `Legumbres y cereales` 4, `Conservas` 3, `Cerveza` 2, `Condimentos` 2, `Fruta y verdura` 2.
+
+Fuentes de este lote:
+
+- Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Sulla Via del Sale | Brallo di Pregola | `Carne` + `Fruta y verdura` | Produzione di frutta e verdura con orto primaverile/estivo: frutti di bosco, patate, melanzane, insalata, rosmarino, salvia.Allevamento di oche e galline. | 0383.500669<br>pgerboni@sullaviadelsale.it<br>[web](http://www.sullaviadelsale.it.) |
+| Cascina Baracca | Gambolò | `Carne` + `Conservas` + `Legumbres y cereales` | Azienda prevalentemente risicola con frutteto e orto, predisposta all’agricoltura con misura integrata, allevamento di bovini e animali di bassa corte. Produzione di confetture e riso. | 0381.939787<br>info@agriturismobaracca.com<br>[web](http://www.agriturismobaracca.com) |
+| Cella di Montalto | Montalto Pavese | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva cereali, frutta e ortaggi, vite e produce vino e salumi. | 0383.870117<br>celladimontalto@gmail.com<br>[web](http://www.celladimontalto.com) |
+| Cascina Chiericoni | Rivanazzano Terme | `Carne` + `Condimentos` + `Conservas` | Azienda a conduzione biologica con viticoltura, frutticoltura, orticoltura. Produzione di vino e confetture. Coltivazione di alcune piante officinali. Allevamento avicolo. | 0383.92957<br>agriturismo@cascinachiericoni.it, albertolucotti@alice.it,<br>[web](http://www.cascinachiericoni.it) |
+| Piccolo Fiore s.r.l. | Vigevano | `Carne` + `Legumbres y cereales` | L’azienda produce principalmente riso, possiede un orto che oltre a soddisfare le esigenze interne dell’azienda è utilizzato per attività didattiche, un allevamento di suini, una linea vacca-vitello di razza Varzese e an | 0381.341624<br>info@agriturismocarloenadia.it<br>[web](http://www.agriturismocarloenadia.it) |
+| Microbirrificio Doppiobaffo | Chignolo Po | `Cerveza` | birra artigianale | — |
+| Birrificio Oltrepò | Pavia | `Cerveza` | birra artigianale | [web](https://www.birrificiooltrepo.it/) |
+| La Corte Ghiotta | Velezzo Lomellina | `Condimentos` + `Conservas` + `Legumbres y cereales` | Coltivazioni cerealicole, produzione di risi sbiancati, risi preparati per risotti e zuppe, conserve, erbe aromatiche. | 0381.87720<br>info@lacorteghiotta.com<br>[web](http://www.lacorteghiotta.com) |
+| Soc. Agr. La Rugiada S.S. c/o Pelliciardi Alberto | Voghera | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
+| La Ca' del Fant | Campospinoso | `Conservas` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda produce cereali e ortaggi di stagione da maggio a novembre. Zucche, zucchine, aglio, cipolle, zucche decorative, melanzane, pomodori, peperoni, angurie, meloni | 0385.277839<br>christianschiapparoli@libero.it |
+| Andi Fausto | Montù Beccaria | `Conservas` | L’azienda è vitivinicola con produzione di confetture e vini. | 0385.277245<br>info@andifausto.com<br>[web](http://www.andifausto.com) |
+| Tenuta San Giovanni | Olevano di Lomellina | `Conservas` + `Legumbres y cereales` | L’azienda è ad ordinamento cerealicolo misto con rotazioni colturali orzo, farro, pisello, soia. Si producono confetture con i prodotti dell’orto. L’unico prodotto commercializzato è il riso. E grissini a base di riso. | 0384.672644<br>info@leonedilomellina.it<br>[web](http://www.leonedilomellina.it) |
+| Spizzirò | Bagnaria | `Fruta y verdura` | Azienda apistica con coltivazione di frutta e ortaggi. | 0383.572194, 320.7569815<br>spizziro@infinito.it |
+| Il Biancospino | Casteggio | `Fruta y verdura` | L’azienda alleva cani di razza Samoiedo e Golden Retriever, animali da cortile oche, anatre, galline, galli, conigli e asinelli sardi e coltiva frutti di bosco. Produzione di frutta e prodotti orticoli. | 0383.83000<br>info@ilbiancospino.it<br>[web](http://www.ilbiancospino.it) |
+| La Fattoria delle Ginestre | Montebello della Battaglia | `Legumbres y cereales` + `Fruta y verdura` | L’azienda da sempre coltiva cereali, foraggi, mais. Ha un piccolo vigneto e sta implementando l’area frutteto ed ortaggi. | 0383.83831, 347.9648374<br>eureka@lafattoriadelleginestre.com, eureka@silvanasperati.it<br>[web](http://www.lafattoriadelleginestre.com) |
+| Cascina Vallidone | Parasacco Di Zerbolò | `Legumbres y cereales` | L’azienda produce prevalentemente riso, mais e soia come rotazione, altri cereali e silvicoltura. Si effettua vendita diretta di riso. | 349.2904891<br>cascina@vallidone.it<br>[web](http://www.vallidone.it) |
+| Cascina Colombara | Pavia | `Legumbres y cereales` | L’azienda produce riso e frumento | 0382.570717<br>didattica@cascinacolombara.it, info@cascinacolombara.it<br>[web](http://www.cascinacolombara.it) |
+| La Valbona | Travacò Siccomario | `Legumbres y cereales` + `Fruta y verdura` | Coltivazione di cereali, ortaggi e frutta. | 0382.482079<br>info@agriturismolavalbona.it<br>[web](http://www.agriturismolavalbona.it) |
+| Cascina Quartiago | Bascapè | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda alleva equini, caprini, avicoli, suini , apicoltura. | 0382.666004, 331.3003670<br>marta.goglio@tiscali.it<br>[web](http://www.cascinaquartiago.it) |
+| Sant'Andrea | Gropello Cairoli | `Lácteos y quesos` + `Carne` + `Fruta y verdura` | L'azienda agricola "Sant'Andréa" e' un' azienda biologica ed utilizza i propri prodotti:ortaggi,frutta e carni per creare menù all'insegna della genuinità'Nell'azienda agricola "Sant'Andrea" si allevano numerosi animali: | 0382.1862762, 348.4523005<br>raffaellamoroni@virgilio.it<br>[web](http://www.agriturismo-santandrea.it) |
+| Cascina Venesia | Mezzanino | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | L’azienda è specializzata nella coltivazione di cereali orzo, grano e mais e nell’allevamento di animali di bassa corte, nonchè asini, caprini e daini. | 339.4605062<br>contatti@cascinavenesia.it<br>[web](http://www.cascinavenesia.it) |
+| Pescarolo del Molino Miradolo | Robbio | `Lácteos y quesos` + `Carne` + `Miel` | Azienda ad indirizzo cerealicolo, ortofrutticolo, con ulivi e vitigni; allevamento di caprini e avicoli . Produzione di salami d’oca crudi e cotti e salami “d’la duja” . Apicoltura. | 0384.671146<br>fulvio@fulviopescarolo.it<br>[web](http://www.fulviopescarolo.it.) |
+| La Sorgente | Varzi | `Lácteos y quesos` + `Condimentos` + `Huevos` | L’azienda alleva avicoli, conigli e caprini. Coltiva verdura, legumi, spezie e frutta. | 0383.53295, 333.8092944<br>info@lasorgenteagriturismo.it<br>[web](http://www.lasorgenteagriturismo.it) |

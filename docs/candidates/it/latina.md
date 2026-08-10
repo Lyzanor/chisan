@@ -24,3 +24,33 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | KIWILAZIALE SOC. AGR. SRL | Cisterna di Latina | VIA APRILIA, 55 04012 | producción — vegetales sin transformar | 2028-10-25 | [IT-BIO-007.380-0052820.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0052820.2025.001.pdf) |
 | LUNGO ROSALBA | Santi Cosma e Damiano | VIA FRANCESCO BARACCA 1869 04020 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-02-04 | [IT-BIO-004.380-0111265.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0111265.2026.001.pdf) |
 | MANZI SALVATORE | Itri | VIA SAN MARTINO 28 04020 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-03 | [IT-BIO-004.380-0026559.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0026559.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+14 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 5, `Carne` 4, `Cerveza` 1, `Conservas` 1, `Frutos secos` 1, `Legumbres y cereales` 1, `Lácteos y quesos` 1.
+
+Fuentes de este lote:
+
+- Regione Lazio — aziende concessionarie del marchio «Natura in Campo» (open data) — <https://dati.lazio.it/dataset/elenco-aziende-agricole-concessionarie-marchio-natura-in-campo>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Azienda Frantolio s.r.l. di Tullio Fiordisa | Fondi | `Aceite` + `Otros` | Olio extra vergine di oliva monovarietale di Itrana, pasta di olive. pestato di Gaeta, olive di Gaeta | 0771/502590, 338/1741629<br>frantoliosrl10@tiscali.it, frantoliosrl@hotmail.com<br>[web](https://www.guglietta.it) |
+| Azienda Agricola Forte Vincenzo | Formia | `Aceite` | Olio extravergine di oliva monovarietale Itrana, olive di Gaeta | 0771/735054, 348/8506576<br>mariacivita.forte@virgilio.it |
+| Az. Agric.Cosmo Di Russo | Gaeta | `Aceite` + `Conservas` + `Otros` | olio extravergine d'oliva monovarietale 'Itrana', olive di Gaeta, passato di pomodoro da spagnoletta di Gaeta, pasta di olive , pestato di Gaeta | 0771/462201, 0771741496<br>cosmo_di@libero.it |
+| Soc Coop Unione Agricoltura Itrani arl (UNAGRI) | Itri | `Aceite` + `Otros` | Olio extra vergine di oliva monovarietale di Itrana, olive di Gaeta, oliva bianca di Itri, pasta di olive | 0771/727928, 0771/730226<br>info@unagri.com |
+| Az. Agr. La Tenuta dei Ricordi di Labbadia Ilenia | Lenola | `Aceite` + `Otros` | Olio extravergine di oliva Colline Pontine DOP, olio extra vergine monovarietale di Itrana, pasta di olive, olive di Gaeta | 0771/598555<br>latenutadeiricordi@gmail.com |
+| Az. Petrillo Franco | Fondi | `Carne` | Salsiccia al coriandolo dei Monti Aurunci, pancetta, guanciale, capocollo, coppiette | 0771 513666, 335/8154329<br>franco.petrillo@hotmail.it |
+| Eredi Di Fazio Assuntina di Pelliccia Raffaele sas | Fondi | `Carne` | Guanciale, pancetta di suino, salsiccia di fegato di suino, salsiccia paesana al coriandolo dei monti aurunci, vitellone di itri,zauzicchie e salam funnan, agnello e capretto dei monti aurunci | 0771/501784<br>carnevaleannamaria@libero.it |
+| La Bottega della Carne di Sergio di Vito | Fondi | `Carne` | Salsiccia al coriandolo dei Monti Aurunci, pancetta, guanciale, capocollo, salsiccia di fegato | 0771/504928<br>labottegadellacarne@alice.it |
+| Az. Tucciarone Pietro Giuseppe | Formia | `Carne` | Salsiccia al coriandolo dei Monti aurunci, capocollo, pancetta tesa, salame corallina, guanciale | 0771/735753<br>salsicciapaesana@tiscali.it |
+| Ergo Brewery | Latina | `Cerveza` | birra artigianale | [web](https://www.ergobrewery.it/) |
+| Az. Agr. Torre del Fico | Formia | `Conservas` | Tiella di Gaeta, pomodoro Spagnoletta del Golfo di Gaeta e di Formia, passata di pomodoro Spagnoletta di Gaeta, lattuga Signorinella di Formia | 0771/720021<br>info@agriturismodelfico.it |
+| Pane Dolci e Tradizioni di Sezze | Sabaudia | `Frutos secos` + `Dulces y repostería` + `Otros` | Crostata di visciole di Sezze, Pasta di mandorle di Sezze, Tozzetti, Biscotti di Sezze,Tortolo di Sezze, Ciambelle al vino, Ciambelle allacqua | 345/5876388, 348/8203102<br>dolcitradizionisezze@libero.it |
+| La Piana del Sciuscello di Paolo De Feo | Ventotene | `Legumbres y cereales` | lenticchia di Ventotene, ceci, cicerchia, zucchina con fiore | 06/0183520, 349/4207875<br>pdfeo1@alice.it<br>[web](https://www.lenticchiadiventotene.it) |
+| Azienda Lo Spicchio s.r.l. | Minturno | `Lácteos y quesos` | Caciocavallo di bufala (semplice o affumicato), ricotta di bufala, caciotta di bufala, burrata di bufala, provola di bufala | 0771/622250, 340/9249402<br>lospicchiosrl@libero.it |

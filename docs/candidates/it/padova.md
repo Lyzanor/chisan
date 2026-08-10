@@ -22,3 +22,25 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | LIGUORI FRANCESCO | Padua | VIA RAVENNA, 19 35142 | producción — vegetales sin transformar | 2028-09-14 | [IT-BIO-008.380-0109647.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0109647.2025.001.pdf) |
 | MENESELLO LUCIANO | Arquà Petrarca | VIA COSTA 82 35032 | producción — vegetales sin transformar | 2028-08-18 | [IT-BIO-006.380-0043763.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0043763.2025.002.pdf) |
 | PALMIERI VANESSA | Bagnoli di Sopra | VIA DIAZ ARMANDO 23 35023 | producción — vegetales sin transformar | 2028-07-16 | [IT-BIO-006.380-0028226.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0028226.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+7 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 7.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| VECCHIO BIRRAIO | Campo San Martino | `Cerveza` | birra artigianale | [web](https://www.vecchiobirraio.com/) |
+| CRAK Brewery | Campodarsego | `Cerveza` | birra artigianale | [web](https://www.crakbrewery.com) |
+| BIRRIFICIO BUSA DEI BRIGANTI | Cinto Euganeo | `Cerveza` | birra artigianale | [web](https://busadeibriganti.com/) |
+| Birrificio Estense | Este | `Cerveza` | birra artigianale | [web](https://birrificioestense.it/) |
+| IL MAGLIO Birrificio | Galliera Veneta | `Cerveza` | birra artigianale | [web](https://www.birrificioilmaglio.com) |
+| Artigiani della birra | Piombino Dese | `Cerveza` | birra artigianale | [web](https://www.artigianidellabirra.it/) |
+| EVOQE BREWING | Trebaseleghe | `Cerveza` | birra artigianale | [web](https://www.evoqebrewing.com) |

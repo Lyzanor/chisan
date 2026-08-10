@@ -23,3 +23,43 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BIASI FRANCESCO | Riccò del Golfo di Spezia | VIA VALLE 17 LOC POLVERARA 19020 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-09-02 | [IT-BIO-004.380-0105449.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0105449.2025.001.pdf) |
 | BIASOTTI FAUSTO | Varese Ligure | LOC TORRE 79 FRAZ CARANZA 19028 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-11-04 | [IT-BIO-004.380-0011039.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0011039.2024.001.pdf) |
 | BIZZARRI ALESSANDRA | Sesta Godano | VIA LA CAMINA FRAZ MANGIA 8 19020 | preparación, producción — ganado y productos ganaderos sin transformar, vino | 2029-07-29 | [IT-BIO-006.380-0036214.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0036214.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+17 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Taverna del Vara | Maissana | `Cerveza` | birra artigianale | [web](https://www.tavernadelvara.it/) |
+
+### Sin producto declarado por el registro (16)
+
+El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
+
+| Candidato | Comune | Contacto |
+|---|---|---|
+| IL FIENILE | Arcola | 0187 98 71 60<br>fienile2003@alice.it |
+| AZ. AGRICOLA BARTOLUCCI | Calice al Cornoviglio | 338 84 12 01 14<br>apibarto@libero.it |
+| DELLA BARCARECCIA | Calice al Cornoviglio | 0187 93 63 74<br>agrituribarcareccia@libero.it |
+| I DUE GHIRI | Calice al Cornoviglio | 0187 57 65 00<br>info@agriturismoidueghiri.com |
+| CA DU CHITTU | Carro | 0187 86 12 05<br>caduchittu@virgilio.it |
+| IL FILO DI PAGLIA | Carro | 349 78 68 625<br>agriturismo.ilfilodipaglia@gmail.com |
+| IL CARPANEDO | La Spezia | 347 17 39 488<br>fattoriadelcarpanedo@gmail.com |
+| TAGGIASCO ENRICO | La Spezia | 0187 50 13 62<br>sarabottinelli@hotmail.it |
+| LA ROSA CANINA | Lerici | 0187 96 67 19<br>info@larosacanina.net |
+| DEGLI OLIVI | Levanto | aziendaagricoladegliolivi@cdh.it |
+| MILLEFIORI | Levanto | 0187 89 98 06<br>agrimillefiori@virgilio.it |
+| CA' MARCANTONIO | Maissana | 329 39 24 199<br>info@camarcantonio.it |
+| GIANDRIALE | Maissana | 0187 84 02 79<br>info@giandriale.it |
+| ALLE SERRE | Sarzana | 0187 62 17 30<br>aziendadimostrativa@libero.it |
+| CIMABUE | Varese Ligure | 328 30 33 581<br>cimabueagrisociale@libero.it |
+| IL PELLEGRINO | Varese Ligure | 0525 88 264<br>info@ilpellegrino.eu |

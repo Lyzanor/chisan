@@ -26,3 +26,20 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 ## Resolución no obvia — 2026-08-09
 
 - **A.F.M. AZIENDA FAUNISTICA MARCHE DI SABBATINI ROSSETTI LUCA** — La actividad oficial actual es la cría de aves cinegéticas vivas para repoblación y caza, no la producción alimentaria. Se conserva un registro `reject` en el ledger de evidencia del área.
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+2 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 2.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birrificio dei Castelli | Arcevia | `Cerveza` | birra artigianale | [web](https://www.birrificiodeicastelli.it) |
+| Birra 81 | Jesi | `Cerveza` | birra artigianale | [web](https://www.thebeershop.it) |

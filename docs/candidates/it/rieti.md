@@ -23,3 +23,24 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | CAVEZZA ERCOLE | Amatrice | FRAZ SCAI 271 02012 | producción — vegetales sin transformar | 2029-02-22 | [IT-BIO-004.380-0007234.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0007234.2026.001.pdf) |
 | CECCARELLI DIONILLA | Scandriglia | LOC PRATARONI 2 02038 | producción — vegetales sin transformar | 2028-09-16 | [IT-BIO-004.380-0106426.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0106426.2025.001.pdf) |
 | CELLENTANI FABIO | Montopoli di Sabina | VIA PIEDIMONTE 22 02034 | producción — vegetales sin transformar | 2028-04-11 | [IT-BIO-006.380-0098451.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0098451.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+6 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 3, `Frutos secos` 1, `Legumbres y cereales` 1, `Setas` 1.
+
+Fuentes de este lote:
+
+- Regione Lazio — aziende concessionarie del marchio «Natura in Campo» (open data) — <https://dati.lazio.it/dataset/elenco-aziende-agricole-concessionarie-marchio-natura-in-campo>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Az Agr Colle Paradiso | Mompeo | `Aceite` | Olio extravergine di oliva biologico | 0765/735225<br>info@colleparadiso.eu<br>[web](https://www.colleparadiso.eu) |
+| Soc Coop Agricola Fiume Farfa | Mompeo | `Aceite` + `Miel` + `Conservas` | Olio extravergine di oliva biologico, olio etravergine di oliva monovarietale Carboncella, olio extravergine di oliva monovarietale di Olivago, olio extravergine di oliva monovarietale di Rosciola, olio extravergine di o | 0765/469037<br>fiumefarfa@gmail.com |
+| Soc. Agr. Ferrari Farm | Petrella Salto | `Aceite` + `Condimentos` + `Conservas` | frutta biologica, prodotti orticoli bio certificati, erbe aromatiche biologiche, erbe aromatiche essiccate biologiche, castagne biologiche, nocciole con guscio biologiche, verdure sott'olio biologiche, succhi di frutta b | 393/8390825, 0746559114<br>info@ferrarifarm.com<br>[web](https://www.ferrarifarm.com) |
+| Dolci Tipici Artigianali di Clara srl | Borgorose | `Frutos secos` + `Dulces y repostería` + `Fruta y verdura` | Amaretti, Biscotti, calzone con verdure (fallone), ciambella da sposa, ciambelline/ciambelle al vino o con l'anice, ciambelle salate, ciambelle col gelo, ferratelle, maltagliati e fregnacce, murzitti, pizza sfogliata, pi | 0746/334161, 348/4951374<br>clararubeis@hotmail.com |
+| Az. Agr. Wolfango De amicis | Borgorose | `Legumbres y cereales` | Lenticchia, farro | 3483805029<br>w.deamicis@mac.com |
+| Az. Agr. Samantha Statuti | Colli sul Velino | `Setas` | Scorsone, tartufo nero e tartufo bianco | 328-1692937<br>gregoritartufi@tiscali.it |

@@ -22,3 +22,27 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | MOTOLESE ANDREA | Lecco | VIA PAPA GIOVANNI XXIII 4 03010 | producción — vegetales sin transformar | 2027-02-19 | [IT-BIO-009.380-0064878.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0064878.2024.001.pdf) |
 | NATURA VIVA DI VIMERCATI G.& C. S.S. | Cremella | CASCINA MONTEGREGORIO, 1 23894 | producción — vegetales sin transformar | 2028-10-01 | [IT-BIO-007.380-0071899.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0071899.2025.001.pdf) |
 | PENCI JACOPO | Mandello del Lario | VIA A STOPPANI 13 23826 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2027-09-23 | [IT-BIO-007.380-0085375.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0085375.2026.002.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+8 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 2, `Cerveza` 2, `Aceite` 1, `Fruta y verdura` 1, `Lácteos y quesos` 1, `Miel` 1.
+
+Fuentes de este lote:
+
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| La Possa | Barzio | `Aceite` + `Condimentos` + `Frutos secos` | L’azienda è a conduzione biologica ed alleva avicoli e animali di bassa corte, coltiva piccoli frutti e antiche varietà di mele ,pere susine ,ciliege, noci e castagne circondati dalle siepi di olivello spinoso e il raro | 348.4909840, 348.4909834<br>agriturismo.lapossa@tiscali.it<br>[web](http://www.agriturismolapossa.it) |
+| Azienda Agricola Villa Zita | Cremella | `Carne` + `Fruta y verdura` | In azienda si producono frutti di bosco ed ortaggi. Si allevano cavalli destinati alla compagnia, allo sport ed al tempo libero. Sia l'allevamento che l'addestramento vengono effettuati con metodi etologici che rispettan | 039.9272024, 338.9748680, 392.7312707<br>f.fornarelli@tiscali.it<br>[web](http://www.villazita.it) |
+| Bon Prà | Vendrogno | `Carne` + `Conservas` + `Bebidas sin alcohol` | L’azienda coltiva piccoli frutti more, mirtilli, lamponi e ribes e frutta antica. Inoltre, trasforma in succhi le confetture. Alleva bovini da carne ed equini. | 339.4553942<br>agribonpra@tiscali.it<br>[web](http://www.bonpra.it) |
+| Dulac | Galbiate | `Cerveza` | birra artigianale | [web](https://www.birradulac.it) |
+| BIRRIFICIO LARIANO | Sirone | `Cerveza` | birra artigianale | [web](https://www.birrificiolariano.com/) |
+| Amici Cavalli | Brivio | `Fruta y verdura` | L’azienda alleva equini e animali di bassa corte; produce frutta e verdura. | 039.9322077<br>giovannabrambilla@virgilio.it<br>[web](https://www.facebook.com/Amici-Cavalli-284532564989483/) |
+| Monsereno Horses | Imbersago | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda produce foraggi e alleva equini, ovi-caprini, suini, bovini e animali da cortile. Presenza di un vivaio e orto.Produce e vende: insaccati, carne, conserve, confetture, ortaggi, piccoli frutti, fiori e piante. | 039.9921343<br>info@monserenohorses.it<br>[web](http://www.monserenohorses.it) |
+| Apicoltura Ravasi | Merate | `Miel` + `Conservas` + `Bebidas sin alcohol` | L’azienda alleva api, capre tibetane, pecore owessant e animali di bassa corte. Coltiva frutta antica e piccoli frutti. Produce miele di qualità diverse, confetture, mostarde e succhi di frutta. | 039.599235<br>apienzo@apicolturaravasi.it<br>[web](http://www.apicolturaravasi.it) |

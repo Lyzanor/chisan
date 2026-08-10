@@ -24,3 +24,75 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | CANNAVALE FRANCESCA | Casapulla | VIA APPIA ANTICA 31 81020 | producción — vegetales sin transformar | 2028-09-16 | [IT-BIO-007.380-0091234.2025.004](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0091234.2025.004.pdf) |
 | CANTELLI ANNAMARIA | Casal di Principe | VIA MICHELANGELO 11 81033 | producción — vegetales sin transformar | 2028-08-04 | [IT-BIO-007.380-0090837.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090837.2025.001.pdf) |
 | CANTELLI SALVATORE | Casal di Principe | VIA TREVISO 5 81033 | producción — vegetales sin transformar | 2027-04-22 | [IT-BIO-007.380-0074608.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0074608.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+56 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 21, `Lácteos y quesos` 14, `Fruta y verdura` 11, `Miel` 3, `Carne` 2, `Condimentos` 2, `Conservas` 2, `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Regione Campania — Albo regionale delle fattorie didattiche (open data) — <https://dati.regione.campania.it/catalogo/Fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Mazzarella Pasquale srl | Alvignano | `Aceite` + `Miel` + `Fruta y verdura` | olivo e olio, miele e api, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-198.html) |
+| Le Saudine di Scarano Lucia Anna Maria | Caiazzo | `Aceite` + `Fruta y verdura` + `Condimentos` | olivo e olio, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-419.html) |
+| San Giovanni | Caiazzo | `Aceite` + `Miel` | olivo e olio, miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-176.html) |
+| Soc. Agricola MT72 sas di Domenico Testa & C. | Caiazzo | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-416.html) |
+| La Colombaia | Capua | `Aceite` + `Miel` + `Fruta y verdura` | olivo e olio, miele e api, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-45.html) |
+| Masseria Giòsole sas | Capua | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-298.html) |
+| Ulivo Saraceno - Papale Salvatore | Capua | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-223.html) |
+| L'Ape e il Girasole di Coscia Giuseppe | Castel Campagnano | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-261.html) |
+| Ciardiello Salvatore | Conca della Campania | `Aceite` + `Conservas` | olivo e olio, conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-334.html) |
+| Regina Viarum sas | Falciano del Massico | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-178.html) |
+| Sorà Antonio | Formicola | `Aceite` + `Fruta y verdura` | olivo e olio, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-403.html) |
+| Azienda Agricola Zootecnica La Fattoria Reale | Francolise | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-371.html) |
+| La posta vecchia | Francolise | `Aceite` + `Fruta y verdura` + `Condimentos` | olivo e olio, frutta, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-54.html) |
+| Le Arcate sas | Galluccio | `Aceite` + `Fruta y verdura` | olivo e olio, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-281.html) |
+| Villa Sorbo di Sorbo Salvatore | Galluccio | `Aceite` + `Miel` | olivo e olio, miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-404.html) |
+| Sole soc. coop. agricola | Parete | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-299.html) |
+| Fattoria Sole e Natura | Pignataro Maggiore | `Aceite` + `Conservas` + `Fruta y verdura` | olivo e olio, conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-170.html) |
+| Rotondola di Salzillo Salvatore | Pontelatone | `Aceite` + `Miel` + `Fruta y verdura` | olivo e olio, miele e api, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-365.html) |
+| Fattoria L'Uliveto di D'Ausilio Giovanna | Sessa Aurunca | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-312.html) |
+| La Masseria di Sessa srl | Sessa Aurunca | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-377.html) |
+| Frantoio Oleario Migliozzi Enrico | Teano | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-361.html) |
+| Azienda Agricola G. D'Andrea | Caianello | `Carne` | salumi e carni | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-81.html) |
+| Salumificio Magroni | Pastorano | `Carne` | salumi e carni | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-164.html) |
+| Birrificio artigianale Magifra | Vitulazio | `Cerveza` | birra artigianale | [web](https://www.magifrabeer.com/) |
+| Al.Gio. srl | Sessa Aurunca | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-174.html) |
+| Iniziativa Agricola Soc. Agr. Arl | Sparanise | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-385.html) |
+| Bosco Farneto | Presenzano | `Conservas` | conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-179.html) |
+| Masseria Adinolfi di Adinolfi Andrea | S. Angelo In Formis | `Conservas` | conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-388.html) |
+| Un Fiore per la Vita - scs | Aversa | `Fruta y verdura` + `Condimentos` | ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-201.html) |
+| Bosco Grande sca | Bellona | `Fruta y verdura` | ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-383.html) |
+| Cioffi Monica | Calvi Risorta | `Fruta y verdura` | ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-401.html) |
+| CREA - Unità di ricerca per la frutticoltura (FRC) | Caserta | `Fruta y verdura` | frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-244.html) |
+| Le Due Torri di Rusciano Laura | Presenzano | `Fruta y verdura` | ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-236.html) |
+| San Cassiano | San Potito Sannitico | `Fruta y verdura` + `Condimentos` | frutta, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-280.html) |
+| Azienda Vernelle srl | Sant'Angelo Di Alife | `Fruta y verdura` | ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-259.html) |
+| Amico Bio Spartacus Arena | Santa Maria Capua Vetere | `Fruta y verdura` + `Condimentos` | ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-349.html) |
+| Al di là dei sogni Onlus coop. sociale | Sessa Aurunca | `Fruta y verdura` | ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-283.html) |
+| Associazione di Volontariato “Geofilos Atella” Circolo Legambiente” | Succivo | `Fruta y verdura` | ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-325.html) |
+| Giaccio Frutta scarl. | Vitulazio | `Fruta y verdura` | frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-177.html) |
+| Izzo Giuseppina - Le terre di giù | Alvignano | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-389.html) |
+| La Sagliutella | Alvignano | `Lácteos y quesos` + `Conservas` + `Fruta y verdura` | latte e formaggi, conserve e confetture, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-247.html) |
+| Verdeoliva di Sabino Serra | Alvignano | `Lácteos y quesos` + `Miel` | latte e formaggi, miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-232.html) |
+| Fattoria Selvanova | Castel Campagnano | `Lácteos y quesos` + `Aceite` | latte e formaggi, olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-123.html) |
+| La Cascina degli Ulivi | Castel Campagnano | `Lácteos y quesos` + `Aceite` + `Miel` | latte e formaggi, olivo e olio, miele e api, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-262.html) |
+| Le Campestre | Castel di Sasso | `Lácteos y quesos` + `Aceite` | latte e formaggi, olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-134.html) |
+| Agricola Vitale srl – Società Agricola | Ciorlano | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-347.html) |
+| Romano Salvatore - Il Professore | Gioia Sannitica | `Lácteos y quesos` + `Fruta y verdura` | latte e formaggi, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-264.html) |
+| Iemma Cesare Giulio | Pastorano | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-415.html) |
+| Agrizoo soc. coop. arl | Pignataro Maggiore | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-226.html) |
+| I.M.A. Industrie Meridionali Alimentari srl | Pignataro Maggiore | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-120.html) |
+| Masseria Cardilli | Presenzano | `Lácteos y quesos` + `Fruta y verdura` | latte e formaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-194.html) |
+| Coop. Falode | San Gregorio Matese | `Lácteos y quesos` + `Carne` | latte e formaggi, salumi e carni | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-80.html) |
+| Badevisco | Sessa Aurunca | `Lácteos y quesos` + `Aceite` + `Conservas` | latte e formaggi, olivo e olio, conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-56.html) |
+| Masseria delle Sorgenti Ferrarelle srl | Riardo | `Miel` + `Fruta y verdura` | miele e api, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-308.html) |
+| La Ghiandaia srl | San Leucio | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-171.html) |
+| Apicoltura Massimo Sgambato | Santa Maria a Vico | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-44.html) |

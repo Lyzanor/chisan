@@ -22,3 +22,37 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | COOPERATIVA LAVORATORI DELLA TERRA SOCIETA' COOPERATIVA AGRICOLA | Medicina | VIA AURELIO SAFFI 202 40059 | producción — vegetales sin transformar | 2029-03-12 | [IT-BIO-006.380-0027465.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0027465.2026.001.pdf) |
 | CORTESE PAOLO - DAL CAMPO | Baricella | VIA DI MEZZO 14 SAN GABRIELE 40052 | producción — vegetales sin transformar | 2028-12-10 | [IT-BIO-007.380-0110353.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0110353.2025.001.pdf) |
 | DULCAMARA SOCIETA' COOPERATIVA A RESPONSABILITA' LIMITATA | Ozzano dell'Emilia | VIA TOLARA DI SOPRA 78 40064 | producción — vegetales sin transformar | 2028-10-09 | [IT-BIO-006.380-0080524.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0080524.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+16 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 10, `Cerveza` 4, `Condimentos` 2.
+
+Fuentes de este lote:
+
+- Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
+- Consorzio del Formaggio Parmigiano Reggiano — trova caseificio — <https://www.parmigianoreggiano.com/it/caseifici-trova-caseificio>
+- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| MFB - Manifattura Birre Bologna | Bologna | `Cerveza` | birra artigianale | [web](https://www.manifatturabirre.it/) |
+| Birrificio Claterna | Castel San Pietro Terme | `Cerveza` | birra artigianale | — |
+| Birrificio Vecchia Orsa | San Giovanni in Persiceto | `Cerveza` | birra artigianale | [web](https://www.vecchiaorsa.it/) |
+| Birra Bellazzi | San Lazzaro di Savena | `Cerveza` | birra artigianale | [web](https://www.birrabellazzi.it) |
+| Acetaia Zanchetta di Fava Rita | Bologna | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
+| Soc. Agr. Fontanelli srl | Bologna | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
+| CASEARIA DI SANT'ANNA | Anzola dell'Emilia | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| GRANLATTE | Bologna | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
+| PIEVE ROFFENO | Castel d'Aiano | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO SOCIALE CANEVACCIA | Gaggio Montano | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO SOCIALE FIOR DI LATTE | Gaggio Montano | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO SOCIALE DI QUERCIOLA | Lizzano in Belvedere | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO SANT'ANGELO | San Giovanni in Persiceto | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| 4 MADONNE CASEIFICIO DELL'EMILIA | Valsamoggia | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO BAZZANESE | Valsamoggia | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| FATTORIA SAN ROCCO | Valsamoggia | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |

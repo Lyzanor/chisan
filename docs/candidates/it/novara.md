@@ -23,3 +23,24 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | De Marmis Arturo | Briona | Via Case Sparse, 6 28072 | preparación, producción — ganado y productos ganaderos sin transformar, vino | 2028-07-28 | [IT-BIO-008.380-0105059.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0105059.2025.001.pdf) |
 | DOTT. AGR. CARNEVALE MAFFE' GUIDO SOCIETA' AGRICOLA SEMPLICE | Casalino | Località Azienda Agricola Il Pascolo, snc 28060 | producción — vegetales sin transformar | 2029-01-07 | [IT-BIO-014.380-0000692.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0000692.2026.001.pdf) |
 | EBISUNO MI RAI | Cavallirio | Località San Germano 2 28010 | producción — vegetales sin transformar | 2027-01-22 | [IT-BIO-012.380-0061787.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0061787.2024.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+5 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 4, `Condimentos` 1.
+
+Fuentes de este lote:
+
+- Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birra 100Venti | Borgomanero | `Cerveza` | birra artigianale | [web](https://www.birracentoventi.it) |
+| Hordeum | Novara | `Cerveza` | birra artigianale | [web](https://www.hordeum.it) |
+| Birrificio Diciottozerouno | Oleggio Castello | `Cerveza` | birra artigianale | [web](https://www.diciottozerouno.it) |
+| Croce di Malto | Trecate | `Cerveza` | birra artigianale | [web](https://www.crocedimalto.it) |
+| PONTI S.P.A. | Ghemme | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | 059 768911<br>info@modenaceti.it<br>[web](https://modenaceti.it) |

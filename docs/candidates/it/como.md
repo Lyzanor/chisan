@@ -22,3 +22,29 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | FLORICOLTURA PIRONI SOCIETA' SEMPLICE AGRICOLA | Vertemate con Minoprio | VIA ABBAZIA 4/A 22070 | producción — vegetales sin transformar | 2028-08-05 | [IT-BIO-007.380-0026182.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0026182.2025.001.pdf) |
 | Fondazione Minoprio | Vertemate con Minoprio | VIALE RAIMONDI 54 22070 | producción — vegetales sin transformar | 2028-06-11 | [IT-BIO-007.380-0091546.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0091546.2025.001.pdf) |
 | GANDOLA MARINA | Carlazzo | VIA PRATI 58 22010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-01-28 | [IT-BIO-007.380-0094395.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0094395.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+10 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 3, `Lácteos y quesos` 2, `Cerveza` 1, `Condimentos` 1, `Conservas` 1, `Fruta y verdura` 1, `Miel` 1.
+
+Fuentes de este lote:
+
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| La Silvienne | Cermenate | `Carne` | Allevamento di asini e vendita di puledri. | 348.9280989<br>caroline.bazzi@yahoo.it<br>[web](http://www.centroterapeuticolasilvienne.it) |
+| Rovall | Fino Mornasco | `Carne` + `Miel` + `Fruta y verdura` | Allevamento capre, asini, cavalli e galline. Produzione certificata biologica di orticole, frutti di bosco, frutti di varietà antiche. Miele. | 335.8767201<br>info@rovall.it<br>[web](http://www.rovall.it) |
+| Millefiori | Mariano Comense | `Carne` + `Aceite` + `Huevos` | Allevamento di cavalli, avicoli e cani. Stazione di monta con allevamento equidi in particolare razza Knabstrupper. Si vendono prodotti agricoli bio olive, frutta. | 0362.341528 fax<br>millefiori@email.it<br>[web](http://www.millefiori.org) |
+| Birrificio Italiano | Limido Comasco | `Cerveza` | birra artigianale | [web](https://www.birrificio.it) |
+| Cucina delle agridee | Tavernerio | `Condimentos` + `Frutos secos` + `Huevos` | L'azienda coltiva ortaggi, frutta e erbe aromatiche con metodi naturali, ma è soprattutto specializzata nella coltivazione, lavorazione e trasformazione di frutti minori quali lamponi, fragole, ribes, mirtilli. Si alleva | 333.6501647<br>ki@cucinadelleidee.it<br>[web](http://www.cucinadelleidee.it) |
+| La Vigna | Lomazzo | `Conservas` + `Fruta y verdura` | L’azienda vende frutta e verdura non trattate e confetture. Si allevano pollami a granaglia per l'agriturismo. | 02.96370866<br>agriturismo.lavigna@libero.it<br>[web](http://www.fattorialavigna.wordpress.com) |
+| Centro Ippico La Scuderia ASD | Cantù | `Fruta y verdura` | L’azienda alleva equini da riproduzione e da attività ippoturistica e coltiva circa 8.000 mq di piante da vivaio. | 338.8278087<br>lascuderia@alice.it<br>[web](http://www.centroippicolascuderia.it) |
+| La Sorgente S.A. | Gravedona ed Uniti | `Lácteos y quesos` + `Carne` + `Miel` | Produzione di miele, castagne e di frutti di bosco lamponi, more, mirtilli. Confetture e conserve di frutta e di verdura.Allevamento di ovi-caprini, animali da cortile e api. Coltivazione e trasformazione dei prodotti az | 338.2394740<br>info@agriturismolasorgente.com<br>[web](http://www.agriturismolasorgente.com) |
+| Le Cicogne | Olgiate Comasco | `Lácteos y quesos` + `Carne` | Allevamento di bovini, caprini, suini e animali di bassa corte quali oche e anatre. Nella fattoria sono presenti varie specie di pappagalli, pavoni, fagiani e struzzi. | 031.944704<br>desyre23@live.it |
+| Azienda agricola biologica San Damiano | Cantù | `Miel` + `Conservas` + `Fruta y verdura` | L’azienda coltiva piccoli frutti, kiwi, amarene, fragole, orticole e produce confetture e miele. | 348.5432021<br>biologicasandamiano@gmail.com<br>[web](http://www.biologicasandamiano.com) |

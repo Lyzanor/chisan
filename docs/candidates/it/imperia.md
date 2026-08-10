@@ -24,3 +24,49 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | SOCIETA AGRICOLA SAN MARTIN | Apricale | REGIONE SAN MARTINO 18035 | producción — vegetales sin transformar | 2028-06-27 | [IT-BIO-006.380-0102436.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0102436.2025.001.pdf) |
 | SOCIETA' AGRICOLA FRATELLI VENTURINO DI VENTURINO V. & C SAS | Diano San Pietro | VIA MOLINI 1 18013 | producción — vegetales sin transformar | 2027-01-24 | [IT-BIO-007.380-0061981.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0061981.2026.001.pdf) |
 | TRECCI ERICA | Pompeiana | VIA A DE GASPERI 16/1 18015 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-03-27 | [IT-BIO-007.380-0006111.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0006111.2025.002.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+23 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birrificio San Luca | Imperia | `Cerveza` | birra artigianale | [web](https://www.birrificiosanluca.it/) |
+
+### Sin producto declarado por el registro (22)
+
+El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
+
+| Candidato | Comune | Contacto |
+|---|---|---|
+| TERRE DEL MISTERO | Apricale | 0184 20 83 51<br>gambapatrizio@libero.it |
+| L'ADAGIO | Badalucco | 0184 40 80 04<br>info@olioroi.com |
+| CA' SOTTANE | Borgomaro | 0183 75 28 48<br>agr.casottane@libero.it |
+| RIO LOVAIRA | Camporosso | 339 1852731<br>riolovaira@libero.it |
+| GLI ORTI | Chiusanico | 0183 52 90 30<br>help@borgatacastello.com |
+| CA' DI CUNI | Diano Arentino | 0183 43 073<br>dinamicos@libero.it |
+| POGGIO DEI GORLERI | Diano Marina | 0183 49 52 07<br>info@poggiodeigorleri.com |
+| CIAN DE BAZUE | Imperia | 0183 60 870<br>alcideferro@alice.it |
+| GIORDANO ALESSANDRO | Imperia | 0183 29 78 80<br>info@alessandrogiordano.it |
+| IL BEY | Imperia | ilbey@libero.it |
+| LE ROCCHE | Imperia | 340 78 65 222<br>federica.ranise@gmail.com |
+| NONNI DEVIA | Lucinasco | 338 14 75 966<br>info@olioarmato.it |
+| IL CASTAGNO | Mendatica | 0183 32 87 18<br>il.castagno@libero.it |
+| ANTICA DISTILLERIA CUGGE | Molini di Triora | 349 50 04 921 - 347 46 62 632<br>bottegalavanda@libero.it |
+| GLI AUSENDA | Molini di Triora | 340 23 07 199<br>info@gliausenda.it |
+| IL RIFUGIO DI ARTEMIDE | Perinaldo | 0184 67 21 31<br>artemide.c@libero.it |
+| CA' DE NA | Pigna | 0184 24 17 31<br>info@agricadena.it |
+| A MACCIA | Ranzo | 0183 31 80 03<br>info@amaccia.it |
+| LA FATTORIA | Ranzo | 338 44 26 766<br>agriturismolafattoria@gmail.com |
+| MONACI TEMPLARI | Seborga | 349 79 31 720<br>info@monacitemplari.it |
+| IL ROCCOLO | Vasia | 0183 28 21 45<br>monica@agricotta.com |
+| LA FATTORIA DI CASTEL APPIO | Ventimiglia | 347 27 39 681<br>domenico_cannizzaro@fastwebnet.it |

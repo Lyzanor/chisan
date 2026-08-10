@@ -19,3 +19,27 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | COPERATIVA AGRICOLA DOLEGNA DEL COLLIO SOC.COOP. A.R.L. | Dolegna del Collio | VIA ZORUTTI, 28 34070 | preparación, producción — piensos | 2027-04-12 | [IT-BIO-017.380-0073168.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0073168.2024.001.pdf) |
 | Coslovich Cristian | Grado | Via Valle n. 20 34073 | producción — vegetales sin transformar | 2028-05-14 | [IT-BIO-021.380-0038081.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0038081.2025.001.pdf) |
 | Da Simon Veliscig Enrico Di Drius Daniele | Cormons | Via San Rocco, 17 34071 | preparación, producción — vegetales sin transformar, piensos | 2029-05-13 | [IT-BIO-017.380-0057585.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0057585.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+9 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 5, `Lácteos y quesos` 2, `Miel` 2.
+
+Fuentes de este lote:
+
+- Regione Friuli-Venezia Giulia — elenco fattorie didattiche e sociali (open data) — <https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Società agricola Barbieri Adele s.r.l. | Cormons | `Carne` + `Aceite` + `Legumbres y cereales` | viticoltura, cerealicoltura, olivicultura, allevamento di animali azienda agricola | 0404529483<br>umdellac@tin.it |
+| Azienda agricola cav. Luciano Grudina di Michele Grudina | Dolegna del Collio | `Carne` + `Frutos secos` + `Fruta y verdura` | frutticoltura (ciliege, castagne, susine, fichi, mele…), allevamento di animali da cortile, vitivinicoltura azienda agricola con offerta agrituristica | 0481629009<br>info@grudina.it<br>[web](https://www.grudina.it) |
+| Società agricola Samsa Paolo & C. s.s | Fogliano Redipuglia | `Carne` + `Miel` | pascolo certificato biologico (dal 1996) ed allevamento a carattere estensivo allo stato brado con metodo Grass Fed (alimentati solo con erba) di bovini, asinini, ovini e suini. Apicoltura. azienda agricola con offerta a | 04811995220<br>info@parcorurale.it<br>[web](https://www.parcorurale.it) |
+| Azienda agricola Andrea Felchero | Medea | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | cerealicoltura, viticoltura, orticoltura, allevamento di animali di bassa corte e suini azienda agricola con offerta agrituristica | 048167200<br>info@lisrosis.it<br>[web](https://www.lisrosis.it) |
+| Azienda agricola Ortofrutticola Medea Società Agricola Srl | Medea | `Carne` + `Fruta y verdura` | Produzione ortofrutticola, produzione di mais (a basso impatto ambientale) Allevamento di animali da cortile, cavalli e cani azienda agricola | ortofrutticolamedea@gmail.com |
+| Azienda agricola Devetak Sara | Savogna d'Isonzo | `Lácteos y quesos` + `Carne` + `Miel` | allevamento animali da cortile, caprini, orticoltura, frutticoltura,apicoltura, produzione naturale e trasformazione naturale di ortaggi e frutta e altri prodotti primari dell'azienda;in conversione biologica azienda agr | info@devetak.com<br>[web](https://www.devetak.com) |
+| Azienda agricola di Pezzetta Alessandro | Villesse | `Lácteos y quesos` + `Carne` + `Aceite` | CONVENZIONALE: allevamento di animali da cortile, suini, bovini, caprini, equini, orticoltura, cerealicoltura;IN CONVERSIONE BIOLOGICA: viticoltura, olivicoltura. azienda agricola | 048191144<br>kainos2@alice.it |
+| Azienda agricola c/o Istituto Brignoli-Einaudi-Marconi | Gradisca d'Isonzo | `Miel` + `Legumbres y cereales` + `Fruta y verdura` | Convenzionale:orticoltura, frutticoltura, floricoltura, cerealicoltura,vitivinivoltura e apicoltura azienda agricola | 048199863<br>gois006009@istruzione.it<br>[web](http:/bem.goiss.it) |
+| Azienda agricola La Staccionata S.S. | Staranzano | `Miel` + `Legumbres y cereales` + `Fruta y verdura` | Cerealicoltura,orticoltura e frutticoltura.Cavalli,pony,animali da cortile, caprette, api. azienda agricola con offerta agrituristica | la.staccionata.ss@gmail.com |

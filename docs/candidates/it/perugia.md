@@ -22,3 +22,123 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BALDUCCINI MARIA ALESSANDRA | Perugia | VIA BALDESCHI N. 25 06123 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-23 | [IT-BIO-009.380-0031702.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0031702.2025.001.pdf) |
 | BANCONI ALESSANDRO | Spoleto | FRAZIONE MONTEBIBICO 7 06049 | producción — vegetales sin transformar | 2028-07-21 | [IT-BIO-009.380-0057693.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0057693.2025.001.pdf) |
 | BARBACCI NICOLETTA | Gubbio | VIA LEONARDO DA VINCI 97 C 06024 | producción — vegetales sin transformar | 2029-01-26 | [IT-BIO-006.380-0005488.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0005488.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+94 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 10, `Cerveza` 4.
+
+Fuentes de este lote:
+
+- Consorzio di Tutela del Prosciutto di Norcia IGP — produttori — <https://www.prosciuttodinorcia.com/consorzio/>
+- Regione Umbria — elenco regionale delle fattorie didattiche (open data) — <https://dati.regione.umbria.it/dataset/elenco-fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Antica Norcineria F.lli Ansuini | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 816809<br>[web](https://www.ansuininorcia.com) |
+| Battisti Srl | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0763 316386<br>[web](https://www.gruppobattisti.it) |
+| Lanzi | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 816119<br>[web](https://www.lanzisrl.it) |
+| Patrizi | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 829329 |
+| Poggio San Giorgio | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 817794<br>[web](https://www.poggiosangiorgio.com) |
+| Prosciuttificio Lui Renzini | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743816518<br>[web](https://www.renzini.it) |
+| Prosciuttificio San Benedetto | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 939010<br>[web](https://www.prosciuttosanbenedetto.it/prosciutto.di.norcia/) |
+| Prosciuttificio Valle Oblita | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 99163<br>[web](https://www.valleoblita.it/ita/) |
+| SAL.PI Uno | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0861 870973<br>[web](https://www.salpi.it) |
+| Todiano Prosciutti | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 938093<br>[web](https://www.todianoprosciutti.it) |
+| Birra dell'Eremo | Assisi | `Cerveza` | birra artigianale | [web](https://www.birradelleremo.it/) |
+| Birrificio Artigianale Fortebraccio | Montone | `Cerveza` | birra artigianale | [web](https://www.birrafortebraccio.com) |
+| Birrificio Alto Tevere | San Giustino | `Cerveza` | birra artigianale | [web](https://www.birrificioaltotevere.com) |
+| FABBRICA DELLA BIRRA PERUGIA | Torgiano | `Cerveza` | birra artigianale | [web](https://www.birraperugia.it) |
+
+### Sin producto declarado por el registro (80)
+
+El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
+
+| Candidato | Comune | Contacto |
+|---|---|---|
+| AGRICOLA NIZZI SRL | Assisi | agricola@nizzi.com<br>[web](https://www.nizzi.com) |
+| AGRITURISMO CASA NUOVA | Assisi | info@agriturismocasanuova.it<br>[web](https://www.agriturismocasanuova.it) |
+| AZ. AGR. TORTOIOLI ELENA-AGRITURISMO 'IL PODERE' | Assisi | tortoioli@tiscali.it<br>[web](https://www.agriturismoilpodere.com) |
+| AZIENDA AGRICOLA LE MANDRIE SRL | Assisi | mandrie10@gmail.com |
+| SOC. AGRICOLA CAPEZZALE SRL | Assisi | laura.zacchi@mignini-petrini.it |
+| TENUTA LE SILVE DI MARCO SIRIGNANI | Assisi | m.sirignani@lesilve.it |
+| TILIVINI SOC. AGRICOLA S.S | Assisi | info@tilivini.com<br>[web](https://www.tilivini.com) |
+| AGRITURISMO IL CERRETO | Bettona | info@agricer.it<br>[web](https://www.agricer.it) |
+| AZ. AGR. SERVETTINI MAURIZIO | Bettona | maury7729@gmail.com |
+| FATTORIA DIDATTICA 'LE TORTE' | Bettona | siena.ele@libero.it |
+| AGRICOLA LUCARELLI - FATTORIA DIDATTICA 'GRANARIUM' | Bevagna | info@granarium.it<br>[web](https://www.granarium.it) |
+| CULTURA UMBRIA SOCIETﾷ AGRICOLA | Campello sul Clitunno | francesca@montefalcomob.com<br>[web](https://www.montefalcomob.com) |
+| AZIENDA AGRICOLA FRATELLI ANGELUCCI - AGRITURISMO TORREANTICA | Cannara | info@agricolaangelucci.it<br>[web](https://www.agricolaangelucci.it) |
+| AZ. AGRICOLA DE NICOLO MARIA SAS | Cascia | info@azagricolabiodenicolo.it |
+| AZ.AGR. E AGRITURISTICA LA QUERCIA DEL PENTIMENTO | Castiglione del Lago | info@laquerciadelpentimento.it<br>[web](https://www.laquerciadelpentimento.it) |
+| BERNA FABIO MARIA | Castiglione del Lago | agriturismo@melagrani.it<br>[web](https://www.melagrani.it) |
+| IL POGGIO DI GATTOBIGIO ANNA | Castiglione del Lago | info@vitivinicolailpoggio.com<br>[web](https://www.vitivinicolapoggio.com) |
+| SOC. AGR. LA CERRETA S.R.L. | Castiglione del Lago | amministrazione@cuoredetruria.it<br>[web](https://www.cuoredetruria.it) |
+| SOCIETﾷ AGRICOLA BITTARELLI PATRIZIO E FIGLI S.S. | Castiglione del Lago | info@agricolabittarello.it<br>[web](https://www.agricolabittarelli.it) |
+| SOCIETﾷ AGRICOLA CAGLIOFIORE SS DI PASTORI ALESSANDRO E SARA | Cerreto di Spoleto | info@cagliofiore.it<br>[web](https://www.cagliofiore.it) |
+| AGRITURISMO 'MADONNA DELLE GRAZIE' | Cittﾅ Della Pieve | info@madonnadellegrazie.it<br>[web](https://www.madonnadellegrazie.it) |
+| AGRT. CASA SAN MARTINO | Cittﾅ Di Castello | info@casa-sanmartino.com<br>[web](https://www.casa-sanmartino.com) |
+| AZ. AGR. LE BURGNE | Cittﾅ Di Castello | info@agriturismoleburgne.it<br>[web](https://www.agriturismoleburgne.it) |
+| AZ. AGR. LUCA GIROLAMO STALTERI | Cittﾅ Di Castello | lucastalteri@gmail.com<br>[web](https://www.illombricofelice.com) |
+| AZIENDA AGRICOLA BIANCONI VINCENZO | Cittﾅ Di Castello | borgomontecedrone@gmail.com<br>[web](https://www.agriturismomontecedrone.com) |
+| SOCIETﾷ AGRICOLA RENO SAS DI ELENA CARAFFINI & C. | Cittﾅ Di Castello | agricolareno@alice.it |
+| FATTORIA DIDATTICA 'UNICORNO' | Corciano | cbrozzi@tast.it |
+| FATTORIA DIDATTICA 'I 5 ELEMENTI' | Costacciaro | daniela.fan@libero.it<br>[web](https://www.casalelafornace.it) |
+| AZIENA AGR.BIOLOGICA PROSPERI SILVANA-AGRITURISMO L'OASI | Foligno | info@agrioasi.com<br>[web](https://www.agrioasi.com) |
+| AZ.AGR. DEL QUONDAM CELLO | Giano dell'Umbria | info@delquondam.it<br>[web](https://www.fattoriadelquondam.it) |
+| FATTORIA DIDATTICA DI ANGELELLI MONIA | Gualdo Cattaneo | info@parcoacquarossa.com |
+| SOCIETﾷ AGRICOLA 'IL CAVALIERE S.S.' | Gualdo Cattaneo | info@agriturismoilcavaliere.com<br>[web](https://www.agriturismoilcavaliere.com) |
+| FATTORIA DIDATTICA 'AGRITURISMO IL CASALINO' | Gualdo Tadino | info@agriturismo-ilcasalino.it<br>[web](https://www.agriturismo-ilcasalino.it) |
+| ABBAZIA DI VALLINGEGNO | Gubbio | gm@nutrition.it*<br>[web](https://www.nutrition.it) |
+| ABCD FATTORIA DIDATTICA | Gubbio | friz.cri@tin.it |
+| AGRITURISMO AMPUGNANO | Gubbio | info@ampugnano.it<br>[web](https://www.agriturismoampugnano.it) |
+| AGRITURISMO IL GINEPRO - FATTORIA DIDATTICA VILLA DAMA | Gubbio | info@villadama.it<br>[web](https://www.villadama.it) |
+| AZ. AGR. BATTISTELLI STEFANO | Gubbio | molinosettecamini@yahoo.it<br>[web](https://www.molinosettecamini.com) |
+| AZ. AGR. DANIELA BALDUCHELLI SALVI MARCHETTI | Gubbio | info@guinzano.it<br>[web](https://www.guinzano.it) |
+| AZ.AGR. VILLA FASSIA | Gubbio | info@fassia.com |
+| AZ.AGR.MONTEMAGGIORE | Gubbio | pierosen@gmail.com<br>[web](https://www.montemaggiorebio.it) |
+| AZIENDA AGRARIA 'IL CANTO DELL'ASINO' | Gubbio | info@ilcantodellasino.it<br>[web](https://www.ilcantodellasino.it) |
+| AZIENDA AGRARIA MONTELUJANO | Gubbio | info@montelujano.com<br>[web](https://www.montelujano.com) |
+| AZIENDA AGRARIA POGGIOVALLE | Gubbio | carlofucello@financo.it |
+| FATTORIA DIDATTICA L'AQUILONE | Gubbio | aquilone@aquilone.it<br>[web](https://www.aquilone.it) |
+| FATTORIA LA TORRE - VILLA DAMA NOME AGRITURISMO | Gubbio | info@villadama.it<br>[web](https://www.villadama.it) |
+| IL PALAZZACCIO | Gubbio | farorosso@urbaniweb.com<br>[web](https://www.agriturismo) |
+| MANNA PASQUALE AZ. AGR. | Gubbio | antonellazanotti@libero.it |
+| SOC. AGRICOLA. CASELLA DEL PIANO | Gubbio | casella@caselladelpiano.com<br>[web](https://www.caselladelpiano.com) |
+| SOCIETﾷ AGRARIA LA SCUDERIA S.S. | Gubbio | info@lascuderiagubbio.it<br>[web](https://www.lascuderiagubbio.it) |
+| SOCIETﾷ SEMPLICE AGRICOLA IL PAPAVERO DI TOGNOLONI ROBERTO E MENICHETTI GIULIETTA | Gubbio | r.tognoloni@alice.it<br>[web](https://www.ilpapavero.org) |
+| AGRITURISMO MONTEBUONO | Magione | info@lecaserosse.com<br>[web](https://www.lecaserosse.com) |
+| AZ. AGR. IPPOGRIFO | Magione | infoippogrifo@libero.it<br>[web](https://www.fattoriaippogrifo.com) |
+| AZIENDA AGRICOLA PUCCIARELLA S.R.L. | Magione | emanuelebizzi@pucciarella.it<br>[web](https://www.pucciarella.it) |
+| LA CASA DICAMPAGNA | Magione | info@lacasadicampagna.it<br>[web](https://www.lacasadicampagna.it) |
+| AGRITURISMO LACANDA DELL NOCI | Marsciano | info@locandadellenoci.it<br>[web](https://www.locandadellenoci.it) |
+| AGRITURISMO TORRE PIANTAROSA | Marsciano | info@torrepiantarosa.com<br>[web](https://www.torrepiantarosa.com) |
+| AZ. AGRARIA CASTELLO BERNIERE | Marsciano | info@castelloberniere.it<br>[web](https://www.castelloberniere.it) |
+| AZIENDA AGRICOLA TORRE COLOMBAIA | Marsciano | info@torrecolombaia.it<br>[web](https://www.torrecolombaia.it) |
+| FATTORIA DIDATTICA 'LA BADIA' | Marsciano | manuela.baccarelli@libero.it |
+| PIEVE DEL CASTELLO FARM HOUSE | Marsciano | info@pievedelcastello.com<br>[web](https://www.pievedelcastello.com) |
+| AGRITURISMO FONTANA DELLE PERE | Massa Martana | info@fontanadellepere.it<br>[web](https://www.fontanadellepere.it) |
+| AZ. AGRARIA IL MONTE | Monte S. Maria Tiberina | info@agriturismoilmonte.com*<br>[web](https://www.agriturismoilmonte.com) |
+| AZ. AGRICOLA TABARRINI GIAMPAOLO | Montefalco | info@tabarrini.com<br>[web](https://www.tabarrini.com) |
+| AGRITURISMO I DUE MONDI | Montone | info@iduemondi.it<br>[web](https://www.iduemondi.it) |
+| LA FARNACE SOCIETﾷ AGRICOLA SEMPLICE | Montone | info@mielisa.it |
+| AZ. AGRARIA' IL COLLE DI PASCIGLIANO' | Nocera Umbra | moriconi.giulia@libero.it<br>[web](https://www.campagnaamica.it) |
+| FATTORIA DIDATTICA 'VALLE DEL POGGIO' | Nocera Umbra | info@valledelpoggio.it |
+| AGRITURISMO PARADISO SELVAGGIO | Paciano | info@vacanzepaciano.it<br>[web](https://www.vacanzepaciano.it) |
+| FONTANARO ORGANIC FARM HOUSE AND HOLIDAY VILLAS | Paciano | luciapinelli@tin.it<br>[web](https://www.countryslowliving.com) |
+| SOCIETﾷ AGRICOLA F.A.S.A. FARM S.S. | Passignano sul Trasimeno | flavio.orsini@alice.it<br>[web](https://www.scuolainfattoria.it) |
+| AZIENDA AGRARIA MARZAGHI MARINELLA-AGRITURISMO BORGO LAURICE | Perugia | borgolaurice@virgilio.it<br>[web](https://www.borgolaurice.it) |
+| AZIENDA AGRICOLA 'BERTI' | Perugia | frantoioberti@frantoioberti.it<br>[web](https://www.frantoioberti.it) |
+| BENNICELLI FARM | Perugia | a.debernardinis@alfapro.it |
+| BORGOBELLO S.S. | Perugia | info@podereborgobello.it<br>[web](https://www.podereborgobello.it) |
+| FATTORIA IL BRUCO | Perugia | fattoriailbruco@libero.it<br>[web](https://www.fattoriailbruco.com) |
+| LA ROSA DEL BORGETTO S.S | Perugia | info@larosadelborghetto.it |
+| SAN LORENZO DELLA RABATTA SRL | Perugia | info@sanlorenzodellarabatta.com<br>[web](https://www.sanlorenzodellarabatta.com) |
+| LA CASA DEI CINI SAS | Piegaro | info@lacasadeicini.it<br>[web](https://www.lacasadeicini.it) |
+| 'LA CERQUA' | Pietralunga | cerqua@cerqua.it<br>[web](https://www.cerqua.it) |
+
+> Se han recortado 19 candidatos adicionales de esta provincia para no inflar la nota; proceden de las mismas fuentes y se recuperan volviendo a consultarlas.

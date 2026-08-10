@@ -24,3 +24,57 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | AZIENDA AGRICOLA LE PRE' VERT SOCIETA' AGRICOLA SE | Roma | VIALE DELLE MILIZIE, 114 00192 | producción — vegetales sin transformar | 2028-06-10 | [IT-BIO-009.380-0101662.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0101662.2025.001.pdf) |
 | AZIENDA AGRICOLA TENUTA IL CORBEZZOLO DI SESTILI FLAVIA | Grottaferrata | Via XXV Luglio, 1 00046 | producción — vegetales sin transformar | 2028-11-27 | [IT-BIO-014.380-0110093.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0110093.2025.001.pdf) |
 | AZIENDA AGRICOLA TENUTA TERRE DELL'AGRO DI COLETTA RAFFAELLO E C. SOCIETA' SEMPLICE | Fiumicino | VIA PORTO CIVITANOVA   FRAZIONE FREGENE 17 00054 | producción — vegetales sin transformar | 2028-04-01 | [IT-BIO-006.380-0097684.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0097684.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+38 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 9, `Cerveza` 6, `Carne` 5, `Lácteos y quesos` 4, `Pescado` 4, `Fruta y verdura` 3, `Legumbres y cereales` 3, `Miel` 3, `Huevos` 1.
+
+Fuentes de este lote:
+
+- Regione Lazio — aziende concessionarie del marchio «Natura in Campo» (open data) — <https://dati.lazio.it/dataset/elenco-aziende-agricole-concessionarie-marchio-natura-in-campo>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Soc. Coop. Sociale Capodarco | Grottaferrata | `Aceite` + `Miel` + `Frutos secos` | fragole bio, olive bio, olio extravergine di oliva bio, ortaggi freschi biologici certificati, miele di acacia bio, miele di bosco bio, miele di castagno bio, miele di eucalipto bio, miele millefiori bio, prodotti dolcia | 06/94549191, 06/87790213<br>agricoltura@capodarco.it<br>[web](https://www.agricolturacapodarco.it) |
+| Azienda Guidi Giorgio | Mazzano Romano | `Aceite` + `Frutos secos` | Nocciole, uva da vino, foraggio, olive da olio | 3382029416<br>gi.guidi@alice.it |
+| Az. Agr. Giannetti Sandro | Montorio Romano | `Aceite` | Olio extravergine di oliva biologico , ciliegia di Ravenna | 0774/62731, 338 5695253<br>sandro.giannetti@alice.it |
+| Azienda Agricola Antiqua di Cola Maria | Roma | `Aceite` + `Legumbres y cereales` + `Otros` | Ceci, Fagiolo Ciabattone,pasta di olive, zucchine con fiore | 06/87120148, 392/9555446<br>azienda.colamaria@gmail.com |
+| Azienda Agricola Casale Vecchio srl | Roma | `Aceite` + `Condimentos` + `Conservas` | prodotti ortofrutticoli stagionali certificati biologici, cipolla rossa in agrodolce bio, crema di carciofi e mandorle bio, crema di cipolla dorata bio, crema di melanzane bio crema di melanzane (con capperi) bio, crema | 340/4206753, 340/4206775<br>info@casalevecchio.com<br>[web](https://www.casalevecchio.com) |
+| Azienda Agricola Cavendo Tutus di Merluzzi Loredana | Roma | `Aceite` + `Condimentos` + `Conservas` | Aglio, albicocche, basilico, bieta, bietina, broccoletti di rape, broccoletti romaneschi, broccoli siciliani, cappucci, carciofi, cardi e carducci, cavoletti di Bruxelles, cavolfiori, cavoli, cavoli neri, cicoria, melanz | 328/5782843, 06/66162970<br>cavendotutus@mclink.it |
+| Co.Br.Ag.Or | Roma | `Aceite` + `Fruta y verdura` | olio extra vergine di oliva biologico, grano duro biologico, prodotti ortofrutticoli biologici certificati | 063386271, 388/1712890<br>cobragor@tiscali.it |
+| Az. Agrituristica Il Rifugio dei Cardinali | Santa Marinella | `Aceite` + `Conservas` | Scorsone nero, melanzane grigliate sott'olio, zucchine grigliate sott'olio, ciambella al vino | 0766/513758, 338/9208856<br>info@rifugiodeicardinali.it |
+| Az. Agr. San Gregorio in Sabina di Cecilia Cicerchia | Torrita Tiberina | `Aceite` + `Fruta y verdura` | ortaggi e frutta in conversione biologica, olio extra vergine di oliva in conversione biologico | 0765/30043<br>info@sangregorioinsabina.it, cecilia.cicerchia@libero.it<br>[web](https://www.sangregorioinsabina.it) |
+| Az. Agr. di Serafini Lucia | Camerata Nuova | `Carne` | Carne bovina ootenuta da animali allevati in biologico | 0774/924120, 338/3317136<br>serafini.lucia@tiscali.it |
+| Az. Di Gianlorenzo Anna Maria | Montorio Romano | `Carne` + `Aceite` + `Dulces y repostería` | Amaretti, biscotti, ciambelle al vino, ciambelle con l'anice, ciambella da sposa, crostata di visciole, fave dei morti, filone sciapo da 1 Kg, la copeta (o nociata), pane integrale al forno a legna, pangiallo, panini all | 335-6580056, 0774-62205<br>a.trecciola@tiscali.it, anticofornoalegna@yahoo.it |
+| Az. Agricola ed Agriturismo il Castoro di Pietro Di Domenico | Roma | `Carne` | Animale Bovino da carne biologico | 06/99802020, 335/336789<br>info@azagricolailcastoro.it |
+| Soc. Agr. Fortunato sas | Roma | `Carne` + `Dulces y repostería` + `Fruta y verdura` | coppa, mortadella, lonzino, lonza, guanciale, pancetta, lardo di S. Nicola, porchetta, coppiette di maiale, corallina, sallsiccia secca (semplice e aromatizzata), salame paesano, caciotta di mucca, marzolina, fettuccine, | 06 87120518<br>fortunatoaziendaagricola@gmail.com<br>[web](https://www.aziendagricolafortunato.it) |
+| Az Agr Guendalina Morani | Tolfa | `Carne` + `Aceite` + `Conservas` | Prodotti orticoli biologici, carne bovina maremmana biologica, carciofini sott'olio biologici, zucchine sott'olio biologiche | 0766/571878, 338/7066354<br>azienda.morani@tiscali.it |
+| RITUAL LAB | Formello | `Cerveza` | birra artigianale | [web](https://www.ritual-lab.it/) |
+| Birra Oxiana | Pomezia | `Cerveza` | birra artigianale | [web](https://www.birraoxiana.it/) |
+| ECB - Eternal City Brewing | Roma | `Cerveza` | birra artigianale | [web](https://www.eternalcitybrewing.it/) |
+| Jungle Juice Brewing | Roma | `Cerveza` | birra artigianale | [web](https://www.junglejuicebrewing.com/) |
+| Rebel's | Roma | `Cerveza` | birra artigianale | [web](https://www.rebelsbrewery.it/) |
+| Birrificio Lepino | Segni | `Cerveza` | birra artigianale | [web](https://www.birrificiolepino.it) |
+| Azienda Panificio Liberati snc | Nazzano | `Fruta y verdura` | Amaretti, ciambelline/ciambelle al vino o con l'anice, treccia all'anice, calzone con verdure (fallone), pane con le patate, pangiallo, mostaccioli, pizza bianca, ciriola romana, pizza rossa | 0765/332422, 0765/332657, 327/0425377<br>info@panificioliberati.it |
+| Soc. Coop. Il Trattore srl | Roma | `Fruta y verdura` | Prodotti orticoli biologici certificati | 06/65742168, 06/65759826<br>info@iltrattore.it |
+| Az Agr Roncella Giuseppe | Santa Marinella | `Fruta y verdura` | carciofo di Tarquinia o della maremma viterbese, finocchio di Tarquinia, broccolo romanesco | 0766/570270<br>s.roncella@alice.it |
+| Azienda agricola Semia bio di Roberta De Vincenzi | Roma | `Huevos` + `Fruta y verdura` | ortaggi trasformati bio, ortaggi freschi bio, uova bio | 340/4206775<br>roberta.devincenzi@gmail.com, roberta.devincenzi@pec.it |
+| Az. Agr. Angelo Mostarda | Roma | `Legumbres y cereales` | Zucchina con fiore, broccolo romanesco, ceci | 06/3382791, 349/6467036<br>a.m.zurakowska@gmail.com |
+| I Casali del Pino soc agr srl | Roma | `Legumbres y cereales` + `Otros` | Farro perlato biologico, farina di farro biologico, farro spezzato biologico, lenticchie biologiche, cece biologico, caciotta genuina romana biologica, cacio fiore biologico | — |
+| Tocchella Ugo | Roma | `Legumbres y cereales` | ceci, farro | 06/6559124<br>fontidellamagliana@libero.it, ugo.tocchella@fastwebnet.it |
+| Azienda V.D.P. di Molinari Marzia | Arcinazzo Romano | `Lácteos y quesos` + `Condimentos` + `Otros` | primo sale di capra, formaggio di capra stagionato, formaggio di capra semi-stagionato, ricotta di capra, formaggio a pasta molle di capra | Roma<br>marzia.molinari@tiscali.it |
+| Az. Agr. Di Croce Giulia | Camerata Nuova | `Lácteos y quesos` | Formaggio pecorino (caciotta genuina romana), ricotta di pecora | 0774/924072, 0774/924451, 347/0198923<br>giulia.dicroce@tiscali.it |
+| Forno Maratta di Agata Cianti | Subiaco | `Lácteos y quesos` + `Carne` + `Aceite` | Salame del Re, subiachini, tisichelle, ciambelle all'anice , ciambelle al vino, tozzetti, biscotti (al latte), amaretti, crostata/crostatine di visciole, pane con le patate (purea di patate), pizza di pasqua, pane con le | 0774/85226, 0774/83347, 328/7349775<br>emaseg@hotmail.com, stefanoalesi@hotmail.com |
+| La Casa del Pane snc di Appodia Domenico | Subiaco | `Lácteos y quesos` + `Carne` + `Dulces y repostería` | Salame del Re, tisichelle, ciambelle con l'anice al vino, tozzetti di pasta frolla, biscotti (al latte), amaretti, giglietti, crostata/crostatine di visciole, pane con le patate (purea di patate), pizza di pasqua | 0774/85516, 328/8628282<br>scarambi@libero.it |
+| Apicoltura Monte Funicolo | Castelnuovo di Porto | `Miel` + `Frutos secos` | Miele Millefiori Biologico, miele di acacia biologico, miele di castagno biologico, miele di bosco biologico | 06/9078498<br>info@apicolturamontefunicolo.it |
+| Az. Agr. Colline di Veio di Rita Franceschini | Roma | `Miel` | Miele millefiori biologico | 06/30888747, 339/5391132<br>ritafranceschini@libero.it |
+| Azienda Miele dautore di Locicero Alessio Antonio | Vallepietra | `Miel` + `Legumbres y cereales` | Miele monoflora di eucalipto, fagiolone di Vallepietra | 06/92703908, 3407424054<br>mieledautore@libero.it |
+| Az. Agr. Francocci Fabio | Anguillara Sabazia | `Pescado` | Broccoletti di Anguillara, zucchina con fiore | 329/0903750<br>francoccifabio@yahoo.it |
+| Az. Agricola Screpanti | Roma | `Pescado` | Zucchina con fiore, broccolo romanesco, broccoletto di Anguillara, mentuccia romana | 327/6215028, 06/6243440<br>gabrielescrepanti@virgilio.it |
+| Morlupi | Roma | `Pescado` | broccoletto di anguillara, broccolo romanesco, zucchina con fiore | 06/9996358<br>azienda.morlupi@yahoo.it |
+| Az. Agr. Rossi Silvia | Trevignano Romano | `Pescado` | Broccoletti di Anguillara, broccolo romanesco, zucchina con fiore | 347/8131751<br>ortodinonno@gmail.com |

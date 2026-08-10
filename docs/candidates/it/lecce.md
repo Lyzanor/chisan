@@ -24,3 +24,22 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BLEVE MARIANNA | Taurisano | VIA MONTEGRAPPA, 57 73056 | producción — vegetales sin transformar | 2028-08-22 | [IT-BIO-009.380-0104860.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0104860.2025.001.pdf) |
 | BOTTAZZO LORENZO | Ugento | VIA VITTORIO VENETO 15 73059 | producción — vegetales sin transformar | 2028-08-27 | [IT-BIO-021.380-0105159.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0105159.2025.001.pdf) |
 | BRUNITTA SOCIETA' SEMPLICE AGRICOLA | Minervino di Lecce | VIA BENEDETTO CROCE, 55 73027 | producción — vegetales sin transformar | 2029-02-10 | [IT-BIO-018.380-0074721.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-018.380-0074721.2026.002.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+3 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 2, `Aceite` 1.
+
+Fuentes de este lote:
+
+- Regione Puglia — Elenco Regionale Operatori Agrituristici (open data) — <https://dati.puglia.it/ckan/dataset/fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| OLEARIA MURRONE SOCIETA' AGRICOLA S.R.L. | Caprarica di Lecce | `Aceite` | — | — |
+| BIRRIFICIO B94 | Lecce | `Cerveza` | birra artigianale | [web](https://www.birrificiob94.it) |
+| OFFICINE BIRRAI | Lecce | `Cerveza` | birra artigianale | [web](https://www.officinebirrai.it) |

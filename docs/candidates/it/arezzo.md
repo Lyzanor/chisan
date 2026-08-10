@@ -24,3 +24,47 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BRUNO ELIANA | Civitella in Val di Chiana | C/DA BELLIZIA 87100 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-07-07 | [IT-BIO-007.380-0019003.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0019003.2025.003.pdf) |
 | CACCIALUPI JACOPO | Arezzo | LOCALITA' ANTRIA 29/E 52100 | producción — vegetales sin transformar | 2028-07-16 | [IT-BIO-007.380-0090829.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090829.2025.001.pdf) |
 | CAIZZI MARINI GILBERTO | Arezzo | LARGO SEVERINI N. 10 52100 | producción — vegetales sin transformar | 2027-03-25 | [IT-BIO-007.380-0014783.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0014783.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+28 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 27, `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Consorzio Olio Toscano IGP — aziende associate — <https://www.oliotoscanoigp.it/aziende/>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| BANELLI ANNA MARIA | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | wine@ilpalazzo.eu |
+| BARTOLINI DAVID | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | davidbartolini73@gmail.com |
+| BIOBACCHE SOC.AGR. S.S. | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@biobacchetoscane.com |
+| FATTORIA FONTE VENEZIANA SOC. SEMPLICE AGR. | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@fattoriafonteveneziana.it |
+| FATTORIA IL MURO DELLA FAMIGLIA PANCARO | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | pancarofederico@gmail.com |
+| IAPPY SOC. AGR. S.S. | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | tommaso.vezzosi@iappy.it |
+| TENUTE DI FRATERNITA SRL | Arezzo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@tenutedifraternita.it |
+| TENUTA SAN FRANCESCO DI MICHI SANDRO | Bucine | `Aceite` | Olio extravergine di oliva Toscano IGP | tenutasanfrancesco@alice.it |
+| TENUTA LA PINETA DI SCORTECCI GIUSEPPE | Castiglion Fibocchi | `Aceite` | Olio extravergine di oliva Toscano IGP | info@tenutalapineta.it |
+| AZ. AGR. BUCCELLETTI VIVAI DI VINCENZO E C. S.S. | Castiglion Fiorentino | `Aceite` | Olio extravergine di oliva Toscano IGP | vivai@buccelletti.it |
+| FARALLI MANUELA | Castiglion Fiorentino | `Aceite` | Olio extravergine di oliva Toscano IGP | info@fontevinaglia.it |
+| LIBERATORI LAURA | Castiglion Fiorentino | `Aceite` | Olio extravergine di oliva Toscano IGP | lauraliberatori@virgilio.it |
+| AZ. AGR. CASTELLO DI MONTEGONZI SOC.AGR. | Cavriglia | `Aceite` | Olio extravergine di oliva Toscano IGP | castellodimontegonzi@gmail.com |
+| MACCHI CASSIA LUCA | Civitella in Val di Chiana | `Aceite` | Olio extravergine di oliva Toscano IGP | lucamacchicassia@hotmail.com |
+| TERRAZZI LUCA | Civitella in Val di Chiana | `Aceite` | Olio extravergine di oliva Toscano IGP | lterra23@gmail.com |
+| ANTICA QUERCIA VERDE DI FERLAN JOSIANE KERIE ANNE | Cortona | `Aceite` | Olio extravergine di oliva Toscano IGP | anticaquerciaverde@gmail.com |
+| DEL PASQUA SRL | Foiano della Chiana | `Aceite` | Olio extravergine di oliva Toscano IGP | dpemanuele@libero.it |
+| CIUFFENNA SOC. AGRICOLA COOP. | Loro Ciuffenna | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliotoscanoigp.it |
+| EJAMU DI LUPPINO E C. S.S. SOCIETA' AGRICOLA | Loro Ciuffenna | `Aceite` | Olio extravergine di oliva Toscano IGP | ejamuagricola@gmail.com |
+| FROSININI IGINO | Loro Ciuffenna | `Aceite` | Olio extravergine di oliva Toscano IGP | igino@frosinini.it |
+| FALTONI GIANCARLO | Marciano della Chiana | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliotoscanoigp.it |
+| AZIENDA AGRICOLA CARATELLI | Monte San Savino | `Aceite` | Olio extravergine di oliva Toscano IGP | caratelli@email.it |
+| CARATELLI MARIA ROSA | Monte San Savino | `Aceite` | Olio extravergine di oliva Toscano IGP | aacaratelli@gmail.com |
+| OLEIFICIO TOSCANO MORETTINI S.R.L. | Monte San Savino | `Aceite` | Olio extravergine di oliva Toscano IGP | info@morettini.it |
+| CANU LIBERO | San Giovanni Valdarno | `Aceite` | Olio extravergine di oliva Toscano IGP | info@ruzzalepre.it |
+| IL PINO BIOAGRICOLTURA S.S. | Terranuova Bracciolini | `Aceite` | Olio extravergine di oliva Toscano IGP | mail@ilpino.com |
+| SOC.AGR. F.LLI BONACCINI | Terranuova Bracciolini | `Aceite` | Olio extravergine di oliva Toscano IGP | ilpiano@bonaccini.com |
+| Birrificio Calibro22 | Castelfranco Piandiscò | `Cerveza` | birra artigianale | [web](https://www.calibro22.it) |

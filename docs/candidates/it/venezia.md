@@ -24,3 +24,21 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BILIATO ORNELLA | Salzano | VIA TOSCANIGO, 9 30030 | producción — vegetales sin transformar | 2027-11-11 | [IT-BIO-004.380-0025489.2024.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0025489.2024.003.pdf) |
 | BOATTO VASCO LADISLAO | San Stino di Livenza | VIA FOSSON 54 30029 | producción — vegetales sin transformar | 2027-10-20 | [IT-BIO-015.380-0026830.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0026830.2024.001.pdf) |
 | BOCCALETTO ANNA | San Donà di Piave | VIA GUSSO  2 30027 | producción — vegetales sin transformar | 2029-07-07 | [IT-BIO-006.380-0013249.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0013249.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+3 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 3.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Agri-Birrificio B2O | Caorle | `Cerveza` | birra artigianale | [web](https://www.birrificiob2o.it) |
+| Corti Veneziane | Dolo | `Cerveza` | birra artigianale | [web](https://www.cortiveneziane.com) |
+| Birrificio Artigianale Veneziano | Maerne Di Martellago | `Cerveza` | birra artigianale | [web](https://www.bavsrl.it/) |

@@ -24,3 +24,28 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | PEREGO SILVIA MARIA | Arcore | VIA GRAN SASSO 24 20043 | producción — vegetales sin transformar | 2029-03-16 | [IT-BIO-007.380-0011160.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0011160.2026.001.pdf) |
 | Riboldi Emanuele | Triuggio | VIA S Ambrogio 68 20844 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2027-08-19 | [IT-BIO-007.380-0012257.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0012257.2024.001.pdf) |
 | SABATINO ROSALBA | Biassono | VIA DELLE VIGNE N 35 20853 | producción — vegetales sin transformar | 2026-12-19 | [IT-BIO-004.380-0059394.2023.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0059394.2023.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+9 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 4, `Lácteos y quesos` 2, `Fruta y verdura` 1, `Legumbres y cereales` 1, `Miel` 1.
+
+Fuentes de este lote:
+
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| LA Brewery | Bernareggio | `Cerveza` | birra artigianale | [web](https://labreweryshop.com/) |
+| BIRRIFICIO RURALE | Desio | `Cerveza` | birra artigianale | [web](https://www.birrificiorurale.it) |
+| CARROBIOLO | Monza | `Cerveza` | birra artigianale | [web](https://www.birradelcarrobiolo.it/) |
+| Birra Eretica | Ornago | `Cerveza` | birra artigianale | [web](https://www.birraeretica.it/) |
+| Besana S.S. | Besana Brianza | `Fruta y verdura` | Cavalli, Pony, ortaggi e frutta, animali da cortile | 338.2619691<br>fattoriabesana@gmail.com<br>[web](http://www.fattoriabesana.it) |
+| Fattoria Didattica ASINOteca | Bellusco | `Legumbres y cereales` | Produzione cerealicola, foraggera e zootecnica. | 338.2575426<br>asinoteca@gmail.com<br>[web](http://www.asinoteca.it) |
+| Brusignone | Besana Brianza | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda coltiva cereali e ortaggi che in parte vengono destinati al nutrimento degli animali ed in parte alla ristorazione. Si coltivano anche frutti di bosco, utilizzati sia per l’agriturismo sia per la trasformazione | 335.5975100<br>info@agricolabrusignone.com<br>[web](http://www.agricolabrusignone.com) |
+| La Botanica | Fraz. Birago - Lentate Sul Seveso | `Lácteos y quesos` + `Carne` + `Miel` | L'azienda produce latte alta qualità, yogurt, formaggi, gelato, sorbetto, ghiacciolo, farina di mais, gastronomia, pizza, salumi, miele, confetture, salse, mostarde, biscotti, pasticceria. I prodotti in vendita sono latt | 0362.560261<br>la.botanica@tiscali.it<br>[web](http://www.aziendaagricolabotanica.it) |
+| Scuola Agraria del Parco di Monza | Monza | `Miel` + `Legumbres y cereales` + `Fruta y verdura` | Cerealicolo con semina a rotazione annuale di vari cereali, orticolo con coltivazione di un orto biologico a scopo didattico e apistico con produzione e vendita di miele. | 039.2302979<br>fattoriadidattica@monzaflora.it<br>[web](http://www.monzaflora.it) |

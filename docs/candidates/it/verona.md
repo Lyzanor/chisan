@@ -23,3 +23,24 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BONSAVER ENNIO | Pastrengo | VIA MONTE FORTIN 2 37010 | producción — vegetales sin transformar | 2028-11-14 | [IT-BIO-009.380-0047405.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0047405.2025.002.pdf) |
 | BURATO ANNALIA | San Giovanni Ilarione | VIA ROSSETT, I 37035 | producción — vegetales sin transformar | 2028-09-03 | [IT-BIO-016.380-0010923.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-016.380-0010923.2025.001.pdf) |
 | CA' DE MADDALENETTI SOCIETA' AGRICOLA S.S. | San Giovanni Lupatoto | VIA PRIMO MAGGIO 35 37057 | producción — vegetales sin transformar | 2029-01-08 | [IT-BIO-009.380-0076783.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0076783.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+6 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 6.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| BIRRIFICIO BENACO 70 | Affi | `Cerveza` | birra artigianale | [web](https://www.benaco70.it) |
+| Birra Mastino | Bussolengo | `Cerveza` | birra artigianale | [web](https://birramastino.it) |
+| Ca' Verzini | Illasi | `Cerveza` | birra artigianale | [web](https://www.caverzini.it/) |
+| Birrificio Lesster | Stallavena Di Grezzana | `Cerveza` | birra artigianale | [web](https://www.lesster.it/) |
+| Birrificio Campostela | Villa Bartolomea | `Cerveza` | birra artigianale | — |
+| Brew Gruff | Villafranca di Verona | `Cerveza` | birra artigianale | [web](https://www.brewgruff.it/) |

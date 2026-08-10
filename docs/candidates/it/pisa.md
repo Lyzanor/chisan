@@ -24,3 +24,39 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | CAPPELLINI GABRIELE | San Miniato | VIA G B LANDESCHI 17D 56028 | producción — vegetales sin transformar | 2029-03-10 | [IT-BIO-007.380-0017390.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0017390.2026.001.pdf) |
 | CASTRONOVO GEMMA | Pomarance | VIA SAN MICHELE 1 56045 | producción — vegetales sin transformar | 2028-07-22 | [IT-BIO-007.380-0084657.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0084657.2025.001.pdf) |
 | CELLETTI VALENTINA | Volterra | Mazzolla, snc 56048 | producción — vegetales sin transformar | 2028-12-15 | [IT-BIO-014.380-0093618.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0093618.2025.003.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+21 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 21.
+
+Fuentes de este lote:
+
+- Consorzio Olio Toscano IGP — aziende associate — <https://www.oliotoscanoigp.it/aziende/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| OLEIFICIO SOCIALE DI BUTI SCARL | Buti | `Aceite` | Olio extravergine di oliva Toscano IGP | rinnovamento@tin.it |
+| OLIO POLIDORI SRL | Buti | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliopolidori.it |
+| RUSCHI CRISTIANA | Calci | `Aceite` | Olio extravergine di oliva Toscano IGP | cristianaruschi@virgilio.it |
+| SOC.AGR.PODERE DEL PARI SRL | Calci | `Aceite` | Olio extravergine di oliva Toscano IGP | leonardo.paolino@extrasys.it |
+| CAPROTTI CARLO SILVIO | Casale Marittimo | `Aceite` | Olio extravergine di oliva Toscano IGP | carlo.caprotti@tiscali.it |
+| POGGIO ETRUSCO SSA | Casale Marittimo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@poggioetrusco.it |
+| CACIAGLI ROBERTA | Casciana Terme Lari | `Aceite` | Olio extravergine di oliva Toscano IGP | info@verdoliva.eu |
+| NOVO FRANTOIO DELL'AZIENDA AGRICOLA IL RUSCELLO DI GUIDO NENNA | Chianni | `Aceite` | Olio extravergine di oliva Toscano IGP | lacintasenese@gmail.com |
+| AZ. AGRICOLA LANDI LEONIDA DI LANDI MARILENA | Guardistallo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliotoscanoigp.it |
+| BALLETTI GIULIANA | Monteverdi Marittimo | `Aceite` | Olio extravergine di oliva Toscano IGP | giorgio.piglia@katamail.com |
+| FATTORIA VILLA SALETTA SOCIETA' AGRICOLA S.R.L. | Palaia | `Aceite` | Olio extravergine di oliva Toscano IGP | info@villasaletta.com |
+| SOC. AGR. USIGLIAN DEL VESCOVO SRL | Palaia | `Aceite` | Olio extravergine di oliva Toscano IGP | info@usigliandelvescovo.it |
+| LUPI SPARTACO | Peccioli | `Aceite` | Olio extravergine di oliva Toscano IGP | spartaco.lupi@yahoo.it |
+| TENUTA DI GHIZZANO SOCIETA' AGRICOLA S.S. | Peccioli | `Aceite` | Olio extravergine di oliva Toscano IGP | info@tenutadighizzano.com |
+| BELLESI ALBERTO | San Miniato | `Aceite` | Olio extravergine di oliva Toscano IGP | bellesialberto@gmail.com |
+| FRANTOIO SANMINIATESE | San Miniato | `Aceite` | Olio extravergine di oliva Toscano IGP | info@frantoiosanminiatese.it |
+| IN SERRATA SOCIETA' SEMPLICE AGRICOLA | San Miniato | `Aceite` | Olio extravergine di oliva Toscano IGP | info@inserrata.com |
+| LA CASAROSSA SSA | Santa Luce | `Aceite` | Olio extravergine di oliva Toscano IGP | napolimarco90@libero.it |
+| PODERE SAN BARTOLOMEO SOC.AGR.SEMPLICE | Santa Luce | `Aceite` | Olio extravergine di oliva Toscano IGP | simona@poderesanbartolomeo.com |
+| AZ. AGR. MIRTETO E VENZANO SRL | Volterra | `Aceite` | Olio extravergine di oliva Toscano IGP | jpchomette@obone.be |
+| LOTTINI IVANO | Volterra | `Aceite` | Olio extravergine di oliva Toscano IGP | info@agriturismosanmichele.it |

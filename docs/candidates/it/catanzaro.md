@@ -24,3 +24,31 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | AZIENDA AGRICOLA RENDA PINA | Conflenti | SAN MAZZEO COSCARO 88040 | producción — vegetales sin transformar | 2028-09-07 | [IT-BIO-004.380-0091988.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0091988.2025.001.pdf) |
 | BARBIERI ANTONIO | Borgia | PIAZZA ORTONA 9 88021 | producción — vegetales sin transformar | 2028-07-22 | [IT-BIO-004.380-0103630.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0103630.2025.001.pdf) |
 | BASERGA MARIANGIOLA | Pentone | VIA NAZIONALE SILA 7 88050 | producción — vegetales sin transformar | 2028-11-11 | [IT-BIO-004.380-0059389.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0059389.2025.001.pdf) |
+
+## Preselección regional con identidad y oferta públicas — 2026-08-10
+
+Parte del lote de 25 candidatos para Calabria. Los cuatro aparecen entre las bodegas del [elenco oficial ARSAC de Vinitaly 2026](https://www.arsacweb.it/calabria-vinitaly-2026/), que confirma una identidad comercial y producción vinícola activas. Sus webs públicas permiten además situar la bodega o los viñedos en esta provincia. Antes de publicar hay que resolver contacto, coordenadas de la unidad productiva y categoría final.
+
+| Candidato público | Comune productivo provisional | Producto propio visible | Fuente complementaria / siguiente comprobación |
+|---|---|---|---|
+| Statti | Lamezia Terme | vino, aceite, leche y cítricos | [web del productor](https://www.statti.com/); separar las líneas publicables y fijar la unidad |
+| Cantine Lento | Amato | vino | [web del productor](https://www.cantinelento.it/); confirmar bodega y datos de contacto |
+| Le Moire | Motta Santa Lucia | vino | [web del productor](https://lemoire.it/); confirmar dirección y contacto |
+| Dell'Aera Vigneti & Cantina | Soveria Simeri | vino, fruta y aceite | [web del productor](https://dellaeravini.it/); concretar oferta alimentaria y unidad productiva |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+2 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 2.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Yle | Catanzaro | `Cerveza` | birra artigianale | [web](https://www.birrayle.it) |
+| 'a Magara | Nocera Terinese | `Cerveza` | birra artigianale | [web](https://www.alchimiacalabra.it/) |

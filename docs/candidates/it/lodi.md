@@ -23,3 +23,30 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | MANZONI NATALE | Comazzo | CNA NUOVA  snc 26833 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-04-16 | [IT-BIO-023.380-0017018.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0017018.2026.001.pdf) |
 | Rocca Cinzia Az. Agr. Podere Monticelli | Villanova del Sillaro | Cascina Monticelli 26818 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-07-23 | [IT-BIO-005.380-0046399.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0046399.2026.001.pdf) |
 | RUSSI ELETTRA DONATA MARIA ROSA | Lodi | VIA DEL PULIGNANO 2/A 26900 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura, vegetales sin transformar | 2027-01-15 | [IT-BIO-012.380-0061110.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0061110.2024.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+10 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 4, `Legumbres y cereales` 2, `Carne` 1, `Cerveza` 1, `Conservas` 1, `Fruta y verdura` 1.
+
+Fuentes de este lote:
+
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Le Cascine | Terranova dei Passerini | `Carne` + `Condimentos` + `Conservas` | L’azienda, in conversione a biologico, alleva suini, bovini di razza Limousine linea vacca vitello, lepri e animali di bassa corte. Le coltivazioni praticate sono di frumento tenero e duro, mais, erbai, orticole, fiori a | 0377.833588<br>info@agriturismolecascine.it<br>[web](http://www.agriturismolecascine.it) |
+| Brewfist | Codogno | `Cerveza` | birra artigianale | — |
+| Cascina Grazzanello | Mairago | `Conservas` + `Frutos secos` + `Legumbres y cereales` | Coltivazione di piante ad alto fusto, pioppi, frassini e produzione di mais, grano, orzo, soia e noci. L’azienda produce anche confetture. L’Ecomuseo della cascina fa parte del Sistema Museale del Lodigiano. | 0371.487261<br>grazzanello@tiscali.it<br>[web](http://www.grazzanello.it) |
+| POAM | Merlino | `Fruta y verdura` | ORTOFRUTTA | — |
+| San Gabriele Mulinás | Caselle Lurani | `Legumbres y cereales` | Azienda cerealicola con produzione di riso. | 0371.96046<br>info@mulinas.com<br>[web](http://www.mulinas.com) |
+| Virolo | Mulazzano | `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva riso, mais, orzo e ortaggi. | 02.989044<br>tenutavirolo@tiscali.it<br>[web](http://www.tenutavirolo.it) |
+| Baronchelli | Borgo San Giovanni | `Lácteos y quesos` + `Legumbres y cereales` | Azienda cerealicola e zootecnica con produzione di latte di alta qualità e vendita di prodotti aziendali. | 335.7735973<br>info@lattecrudobaronchelli.it<br>[web](http://www.aziendaagricolabaronchelli.com) |
+| I.T.A.S. "A. Tosi" | Codogno | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda collegata all’Istituto agrario è ad indirizzo cerealicolo, orticolo e floricolo con allevamento di bovini da latte razza Frisona e Brunalpina. Si producono formaggi freschi e stagionati Provolone.Vendita di mie | 0377.32250, 0377.37265 fax, 338.5699313<br>Iota01000I@istruzione.it<br>[web](http://www.agrariotosi.it) |
+| Podere Iseppina - I.P.S.A.A. "E.MERLI" | Lodi | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | L’azienda collegata all’Istituto agrario coltiva cereali, ortaggi e alleva bovini da carne. Trasformazione in azienda di latticini stagionati e prodotti da forno. | 0371.30185<br>podereiseppinalodi@libero.it |
+| Toninelli F.lli | Marudo | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Allevamento di ovini, suini, bovini da latte. Produzione di riso Carnaroli, salumi.Si vendono prodotti quali riso, salumi e vini. | 0371.98058<br>info@agriturismoluna.it<br>[web](http://www.agriturismoluna.it.) |

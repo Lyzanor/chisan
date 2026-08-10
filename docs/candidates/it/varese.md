@@ -24,3 +24,37 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | CORIGLIANO CARMELO | Varese | VIA CAVOUR 12 21100 | producción — vegetales sin transformar | 2026-09-20 | [IT-BIO-004.380-0044833.2023.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0044833.2023.001.pdf) |
 | Fattoria Pasquè Soc. Agr. S.S. | Casale Litta | Via Primo Maggio, 11 21020 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-05-26 | [IT-BIO-005.380-0100693.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0100693.2025.001.pdf) |
 | FONTEINCANTATA AZIENDA AGRICOLA  DI CAMPIOTTI  ANTONELLA | Casciago | VIA ALLA FONTANA 11 21020 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura | 2028-01-13 | [IT-BIO-004.380-0068626.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0068626.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+18 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 10, `Cerveza` 6, `Carne` 2.
+
+Fuentes de este lote:
+
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Al Cavallino Bianco | Cassano Valcuvia | `Carne` + `Conservas` + `Frutos secos` | L’azienda alleva bovini, suini. Produce salumi ed insaccati, patè d’anatra, confetture e torte. Si coltivano frutta e verdure dell’orto, marroni di Cuneo, nocciole, noci e mele. | 335.5997718<br>alcavallinocassano@gmail.com<br>[web](http://www.alcavallino.it) |
+| La Fattoria | Sesto Calende | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva cereali, alberi da frutta e alleva con metodo ecocompatibile capre, vacche e maiali utilizzati per la produzione di salumi e carni. | 0331.924897<br>lafattoriadidattica.va@virgilio.it<br>[web](http://www.lafattoriadidattica.com) |
+| BIRRA OV | Busto Arsizio | `Cerveza` | birra artigianale | [web](https://www.birraov.com/it/) |
+| PicoBrew | Busto Arsizio | `Cerveza` | birra artigianale | [web](https://www.picobrew.it/) |
+| Birrificio Settimo | Carnago | `Cerveza` | birra artigianale | [web](https://www.birrificiosettimo.it/) |
+| VETRA | Caronno Pertusella | `Cerveza` | birra artigianale | [web](https://vetra.beer) |
+| 50&50 | Varese | `Cerveza` | birra artigianale | [web](https://www.50e50.beer) |
+| The Wall Italian Craft Beer | Venegono Inferiore | `Cerveza` | birra artigianale | [web](https://www.thewallbeer.com/) |
+| Il Vecchio Castagno | Angera | `Lácteos y quesos` + `Carne` + `Miel` | Azienda con allevamenti di caprini e bovini, api e animali di bassa corte. Produzione di piccoli frutti, frutta e ortaggi, insaccati, Azienda con allevamenti di caprini e bovini, api e animali di bassa corte. Produzione | 0331.975131<br>ilvecchiocastagno@gmail.com<br>[web](http://www.ilvecchiocastagno.com) |
+| Fattoria Canale | Azzate | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda alleva suini, avicoli e api. Produce carne, insaccati, latte, formaggi, miele, confetture e marmellate destinati alla ristorazione. | 0332.459673<br>liliana.canale@tin.it<br>[web](http://www.canaleagriturismo.com) |
+| Pasquè | Bernate Di Casale Litta | `Lácteos y quesos` + `Carne` + `Miel` | Azienda zootecnica. Si allevano equini, bovini, suini, ovini, caprini, avicoli, animali di bassa corte. Si producono insaccati, latticini freschi e stagionati. Si pratica l’apicoltura. | 0332.948307<br>fattoria@pasque.it<br>[web](http://www.pasque.it) |
+| Wilma Tschang | Castelveccana | `Lácteos y quesos` + `Carne` + `Miel` | Azienda agricola con allevamento di equini, bovini da carne, galline, papere e conigli. Si coltivano diverse piante da frutto: kiwi, meli, cachi, noci e ciliegi. Si produce la formaggella del Luinese. Si allevano api. | 0332.520865<br>info@agriturismocelestino.it<br>[web](http://www.agriturismocelestino.it) |
+| Bonè | Cocquio-Trevisago | `Lácteos y quesos` + `Carne` + `Conservas` | Azienda zootecnica con coltivazione di frutta e ortaggi. Produzione di insaccati, latticini, confetture, pane e dolci. Allevamento di suini, bovini, ovini e caprini. | 0332.700463<br>info@agriturismo-bone.com, martinalocatelli@libero.it,<br>[web](http://www.agriturismo-bone.com) |
+| Kedo | Curiglia con Monteviasco | `Lácteos y quesos` + `Carne` | Produzione di salumi e formaggi ottenuti da animali allevati al pascolo. | 333.4306701<br>info@agriturismokedo.it<br>[web](http://www.agriturismokedo.it.) |
+| Società agricola La Rondine s.s. | Lonate Ceppino | `Lácteos y quesos` + `Carne` + `Helados` | Allevamento di mucche da latte, tori e vitellini, produzione di gelato artigianale. | 0331.840312<br>eventi@agrilarondine.it<br>[web](http://www.agrilarondine.it) |
+| Ul Sasson | Marzio | `Lácteos y quesos` + `Carne` | L’azienda alleva bovini da carne e da latte, ovicaprini, suini, equini e animali di bassa corte. Produce formaggi e insaccati. | 0332.727857, 340.5037208<br>info@agriturismolocatelli.it |
+| Ai Boschi | Origgio | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda, situata in una zona di produzione di patate, cipolle, verze e zucche, coltiva frumento, orzo, segale, triticale e mais. Produce insaccati, latticini e confetture e alleva bovini, suini, ovini, caprini, equini, | 02.96730110<br>info@aiboschi.it<br>[web](http://www.aiboschi.it) |
+| Berti Camillo | Taino | `Lácteos y quesos` + `Carne` + `Fruta y verdura` | produzione di verdure, frutta, formaggi di capra e salumi | 0331.957533<br>berti.camillo@libero.it, info@bertiaziendaagricola.it<br>[web](http://www.bertiaziendaagricola.it) |

@@ -23,3 +23,52 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | SOCIETA' AGRICOLA AGRINAVIGLIO S.R.L. | Milan | VIA ALZAIA NAVIGLIO GRANDE 70/74 20146 | producción — vegetales sin transformar | 2029-01-24 | [IT-BIO-007.380-0002303.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0002303.2026.001.pdf) |
 | SOCIETA' AGRICOLA CASE DI ANCI DI LIBORIO AUGELLO & C. S.A.S. | Milan | VIA FONTANA 11 20100 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-02 | [IT-BIO-004.380-0069477.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0069477.2025.002.pdf) |
 | SOCIETA' AGRICOLA IL GERMOGLIO DI GABRIELE PANDOLFO E C. SAS | Milan | VIA GIOBERTI 1 20123 | producción — vegetales sin transformar | 2029-03-12 | [IT-BIO-006.380-0031975.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0031975.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+31 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 9, `Lácteos y quesos` 9, `Cerveza` 6, `Fruta y verdura` 5, `Condimentos` 2.
+
+Fuentes de este lote:
+
+- Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Vivai Natura | Basiglio | `Carne` + `Huevos` + `Fruta y verdura` | Vivai Natura è una piccola azienda multifunzionale che accosta la coltivazione delle piante di bambù per uso ornamentale alla coltivazione di ortaggi con metodi naturali; pratica l'allevamento rurale all'aperto di gallin | 347.0669224, 338.3448690<br>info@vivainatura.it<br>[web](http://www.vivainatura.it) |
+| Cascina Caremma | Besate | `Carne` + `Aceite` + `Condimentos` | Azienda biologica con produzioni cerealicole, vitivinicole, frutticole, orticole ed allevamenti vari.Produzione e vendita di prodotti biologici: farine, salumi, riso, olio, tisane, aceto balsamico. Vendita di altri prodo | 02.9050020 tel<br>info@caremma.com<br>[web](http://www.caremma.com) |
+| Agriturismo Culturale e Didattico Murnee | Busto Garolfo | `Carne` + `Condimentos` + `Legumbres y cereales` | Bovini da carne, cereali per alimentazione umana, orticole e officinali destinate all’ingrosso. Lana per uso artistico. | 0331.567428, 347.9945369<br>info@murnee.it<br>[web](http://www.murnee.it) |
+| Il Regno dei Rapaci | Gessate | `Carne` | Centro di allevamento e addestramento di rapaci. | 333.4827765<br>dinobendotti@virgilio.it |
+| Agriturismo Didattico Paloschi | Milano | `Carne` | L'attività dell'azienda consiste nella produzione di foraggio e nell'allevamento di pony utilizzati a fini didattici. | 02.40912957<br>adp@cascinasora.it<br>[web](http://www.cascinasora.it) |
+| Cascina Fiorentina | Morimondo | `Carne` + `Legumbres y cereales` | L’azienda coltiva cereali ed alleva alcuni esemplari di bovini, suini, conigli ed animali di bassa corte. | 02.94961970<br>cascinafiorentina@libero.it |
+| Cascina Bullona | Ponte Di Magenta | `Carne` + `Miel` + `Conservas` | L’azienda coltiva cereali, alleva bovini, suini e api e produce insaccati, sott'oli e sott'aceti, confetture, torte, biscotti.Vendita di insaccati, confetture, conserve, torte, biscotti, farina, riso. | 02.97293135, 02.97292091<br>bullona@agriturismobullona.it<br>[web](http://www.agriturismobullona.it) |
+| Società agricola Cascina Salazzara S.S. | Pontevecchio Di Magenta | `Carne` + `Miel` + `Legumbres y cereales` | Azienda biologica certificata ad indirizzo cerealicolo con foraggio e allevamento di api. Miele biologico e suoi derivati. | 02.9790934 - 333.9031747 - 348.7038210<br>info@cascinasalazzara.it<br>[web](http://www.cascinasalazzara.it) |
+| Cirenaica | Robecchetto con Induno | `Carne` + `Conservas` + `Legumbres y cereales` | L’azienda coltiva cereali ed alleva suini, bovini da carne e animali di bassa corte. Produce insaccati e conserve, coltiva un orto ed un frutteto per l’utilizzo nel proprio ristoro e vendita diretta. | 0331.875855<br>info@cirenaica.it<br>[web](http://www.cirenaica.it) |
+| Birrificio AcmE | Basiano | `Cerveza` | birra artigianale | [web](https://www.birrificioacme.it/) |
+| Birrificio Cascinazza | Buccinasco | `Cerveza` | birra artigianale | [web](https://prodotticascinazza.it/) |
+| Serra Storta | Buscate | `Cerveza` | birra artigianale | [web](https://www.serrastorta.it) |
+| Birrificio WAR | Cassina de' Pecchi | `Cerveza` | birra artigianale | [web](https://www.birrificiowar.it/) |
+| BIRRIFICIO DI LEGNANO | Legnano | `Cerveza` | birra artigianale | — |
+| BIRRIFICIO LAMBRATE | Milano | `Cerveza` | birra artigianale | [web](https://www.birrificiolambrate.com) |
+| L'Aia | Cassinetta di Lugagnano | `Condimentos` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva secondo il metodo dell’agricoltura biologica: cereali mais, orzo, frumento dai quali ricava farine integrali e non, frutti antichi, verdure, piante officinali ed aromatiche. | 02.9424900<br>agriturismoaia@hotmail.it<br>[web](http://www.agriturismoaia.it) |
+| Canonaco Matteo -Acetaia Corte D’Este | Milano | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
+| APOL INDUSTRIALE | Milano | `Fruta y verdura` | ORTOFRUTTA | — |
+| Panizzari Angelo | San Colombano al Lambro | `Fruta y verdura` | Azienda ad indirizzo orticolo e vitivinicolo con produzione e trasformazione delle uve. | 0371.897613<br>info@panizzariwine.it<br>[web](http://www.panizzari.net) |
+| A.O.P. UNOLOMBARDIA | San Giuliano Milanese | `Fruta y verdura` | ORTOFRUTTA | — |
+| O.P. ORTONATURA | Settala | `Fruta y verdura` | ORTOFRUTTA | — |
+| OP ORGANIZZAZIONE PRODUTTORI ORTOFRUTTICOLI ASSOCIATI P.O.A. | Vernate | `Fruta y verdura` | ORTOFRUTTA | — |
+| Fattoria Didattica Cascina Castellazzo | Basiano | `Lácteos y quesos` + `Carne` | L'attività dell'azienda agricola verte sull'allevamento di capre da latte di razza Camosciata delle Alpi. Tutta la produzione viene trasformata nel caseificio aziendale e venduta nello spaccio aziendale.Caprini, freschi | 320.4865523<br>fattoriadelcastellazzo@yahoo.it, f.castellazzobimbi@gmail.co |
+| Guzzafame | Gaggiano | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda è principalmente dedita alla zootecnia, alleva circa 300 bovini da latte, produce latticini e circa 4000 litri di latte al giorno. La maggior parte dei 74 ettari è destinata all’alimentazione del bestiame, la r | 345.0592882<br>didattica@cascinaguzzafame.it<br>[web](http://www.cascinaguzzafame.it) |
+| Il Tenchio | Lacchiarella | `Lácteos y quesos` + `Carne` + `Huevos` | Produzione di insaccati, riso, patate, cipolle, latte di capra, salami, uova, ecc. | 02.9008263<br>info@iltenchio.it<br>[web](http://www.iltenchio.it) |
+| Cascina Battivacco | Milano | `Lácteos y quesos` + `Carne` + `Huevos` | L’azienda agricola produce riso ed alleva bovini, equini ed altri animali per scopo didattico caprini, cunicoli e avicoli. | 02.8133351, 347.7245667 Lucia<br>fattoria.didattica@cascinabattivacco.it<br>[web](http://www.cascinabattivacco.it) |
+| Cascina Selva | Ozzero | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Azienda biologica con allevamenti di bovine da latte produzione di latticini e coltivazione di cereali | 02.9407039<br>info@cascinaselva.it<br>[web](http://www.cascinaselva.it) |
+| SANTANGIOLINA LATTE FATTORIE LOMBARDE | San Colombano al Lambro | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
+| Cascina Codazza | San Zenone al Lambro | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Coltivazione di mais, prati stabili, triticale, cereali autunno-vernini e allevamento da latte. | 333.7144815<br>agri.codazza@yahoo.it<br>[web](http://www.fattoriedidattiche.biz) |
+| Le Cave del Ceppo | Trezzo sull'Adda | `Lácteos y quesos` + `Carne` + `Cerveza` | L’azienda agricola produce insaccati e latticini. Alleva asini, capre, cinghiali e volatili. Si vendono, inoltre, prodotti quali formaggi, salumi, marmellate, riso, vino, farina , birra, miele. | 02.90962295<br>agricola_ceppo@lecavedelceppo.it<br>[web](http://www.lecavedelceppo.it) |
+| Femegro | Zibido San Giacomo | `Lácteos y quesos` + `Miel` + `Conservas` | L’azienda produce riso, latte crudo, latticini freschi, yogurt, dessert, confetture, miele. | 02.90002435, 338.1863153<br>info@cascinafemegro.it<br>[web](http://www.cascinafemegro.it) |

@@ -24,3 +24,25 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | AZIENDA AGRICOLA ELAIA594 SOCIETA' AGRICOLA SEMPLICE | Noto | VICOLO ELORO 3 96017 | producción — vegetales sin transformar | 2029-01-21 | [IT-BIO-006.380-0004266.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0004266.2026.001.pdf) |
 | Azienda Agricola Fabio Salini | Noto | C.da Vallevascelli, Snc 96017 | producción — vegetales sin transformar | 2028-08-06 | [IT-BIO-005.380-0104274.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0104274.2025.001.pdf) |
 | AZIENDA AGRICOLA GROTTONE SOCIETA' SEMPLICE SOCIETA' AGRICOLA | Priolo Gargallo | CONTRADA SPINAGALLO 1 96010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-06-05 | [IT-BIO-007.380-0090299.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090299.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+7 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 7.
+
+Fuentes de este lote:
+
+- CoRFiLaC — DOP Ragusano, allevatori iscritti all’Albo — <https://corfilac.it/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| AZ.AGR.BAGLIERI &PAPPALARDO S.S.AGRICOLA | Noto | `Lácteos y quesos` | Ragusano DOP | — |
+| BAGLIERI GIOVANNI | Noto | `Lácteos y quesos` | Ragusano DOP | — |
+| CARPINO MARCO | Noto | `Lácteos y quesos` | Ragusano DOP | — |
+| GIURDANELLA ORAZIO | Noto | `Lácteos y quesos` | Ragusano DOP | — |
+| SMRIGLIO SALVATORE | Noto | `Lácteos y quesos` | Ragusano DOP | — |
+| AZ. AGR. COMMALDO SUPERIORE S.S. DI CACCAMO GIOVANNI | Rosolini | `Lácteos y quesos` | Ragusano DOP | — |
+| GIUNTA GIOVANNI | Rosolini | `Lácteos y quesos` | Ragusano DOP | — |

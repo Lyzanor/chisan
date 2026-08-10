@@ -27,3 +27,60 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 ## Resolución no obvia — 2026-08-09
 
 - **EUROZOO SRL** — La identidad pública actual suministra productos agrícolas y `petfood`, no una oferta propia apta para el catálogo de alimentación humana. Se conserva un registro `reject` en el ledger de evidencia del área.
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+39 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 20, `Fruta y verdura` 7, `Carne` 5, `Miel` 3, `Cerveza` 1, `Condimentos` 1, `Destilados y licores` 1, `Legumbres y cereales` 1.
+
+Fuentes de este lote:
+
+- Consorzio del Formaggio Parmigiano Reggiano — trova caseificio — <https://www.parmigianoreggiano.com/it/caseifici-trova-caseificio>
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| O.P.A.S. | Giorgio Di Mantova | `Carne` | CARNI SUINE | — |
+| Rara AVIS | Mantova | `Carne` + `Fruta y verdura` | Allevamento di anatidi e vendita, birdwatching, piante acquatiche, studi di impatto ambientale, vivaismo, orto botanico | 335.6584766<br>info@rara-avis.it<br>[web](http://www.rara-avis.it/) |
+| Corte Galvagnina | Marcaria | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | Azienda ad indirizzo cerealicolo, vitivinicolo e ortofrutticolo con allevamento di animali da cortile. Bosco. | 0376.969059<br>info@cortegalvagnina.it<br>[web](http://www.cortegalvagnina.it.) |
+| Corte Valle San Martino | Moglia | `Carne` + `Huevos` + `Legumbres y cereales` | Si coltivano mais, orzo, grano, frutta e vite. Si allevano bovini, suini, avicoli e ovini e si producono insaccati tra cui il "salam casalin dei contadini mantovani". In azienda c’è un parco botanico con oltre 100 essenz | 0376.557943<br>cortevallesanmartino@alice.it |
+| Bio Welt-La fattoria sul fiume | Pozzolo Di Marmirolo | `Carne` + `Huevos` + `Legumbres y cereales` | L’attività dell’azienda è basata principalmente sull’allevamento allo stato semibrado di bovini, cavalli, asini, maiali, pecore e avicoli. Si coltivano cereali e kiwi e si vendono succo di kiwi e insaccati. | 0376.460086 fax<br>bio-welt@libero.it |
+| Mister B Brewery | San Giorgio Bigarello | `Cerveza` | birra artigianale | [web](https://www.misterb.beer) |
+| Corte Cascine | Borgoforte Borgo Virgilio | `Condimentos` + `Conservas` + `Fruta y verdura` | L’azienda coltiva alberi da frutto, ortaggi, erbe aromatiche e pratica la pioppicoltura da legno. Produce confetture, mostarde e passata di pomodoro. | 0376.648175<br>info@cortecascine.it<br>[web](http://www.cortecascine.it) |
+| Corte Pagliare Verdieri | Commessaggio | `Destilados y licores` + `Condimentos` + `Legumbres y cereales` | Azienda a conduzione biologica. Cerealicoltura e viticoltura. Produzione di Lambrusco viadanese biologico, aceto, agrodolce, grappa. | 0376.98526<br>cortepagliare@libero.it<br>[web](http://www.agriturismomantova.it) |
+| O.P. VERDEINTESA | Goito | `Fruta y verdura` | ORTOFRUTTA | — |
+| OP SOCIETA' COOPERATIVA AGRICOLA GUIDIZZOLO | Guidizzolo | `Fruta y verdura` | ORTOFRUTTA | — |
+| AOP MANTUAFRUIT | Rodigo | `Fruta y verdura` | ORTOFRUTTA | — |
+| FRANCESCON O.P. SOCIETA' AGRICOLA | Rodigo | `Fruta y verdura` | ORTOFRUTTA | — |
+| C.OR.MA. | San Giovanni del Dosso | `Fruta y verdura` | ORTOFRUTTA | — |
+| LORENZINI NATURAMICA O.P. | Sermide | `Fruta y verdura` | ORTOFRUTTA | — |
+| O.P SERMIDE ORTOFRUIT | Sermide | `Fruta y verdura` | ORTOFRUTTA | — |
+| Ai piedi dell'arcobaleno | Sermide | `Legumbres y cereales` + `Fruta y verdura` | Ortaggi, frutta, cereali, erba medica. | 328.4912554<br>vallicelli.elisa@libero.it |
+| NUOVO CASEIFICIO ANDREASI | Borgo Mantovano | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| Cascina Sguazzarina | Castel Goffredo | `Lácteos y quesos` + `Carne` + `Destilados y licores` | Cerealicoltura e frutticoltura. Allevamento di equini, caprini, bovini, avicoli e suini. Produzione di aceto, agro dolce, grappa di Lambrusco viadanese biologico. | 0376.781203<br>casc.sguazzarina@libero.it<br>[web](http://www.cascinasguazzarina.it) |
+| LATTERIA AGRICOLA BEGOZZO | Gonzaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA AGRICOLA MARZETTE | Gonzaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA AGRICOLA VENERA VECCHIA | Gonzaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| SOCIETÀ AGRICOLA FIENILNUOVO- 1644 | Gonzaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| NATURA AGRICOLA DI BARBIERI F.LLI | Moglia | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO COOPERATIVO PIRONDA | Motteggiana | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA SOCIALE GONFO | Motteggiana | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEARIA S.ANTONIO | Pegognaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO CARAMASCHE | Pegognaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO CROCE | Pegognaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| CASEIFICIO FRIZZA | Pegognaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA VO' GRANDE | Pegognaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| ZANETTI | Pegognaga | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA AGRICOLA ARRIVABENE | Poggio Rusco | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA AGRICOLA QUISTELLO | Quistello | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| Corte Strale | Roverbella | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | L’azienda agricola Strale con la coltivazione dei terreni produce, oltre al riso, tutti i foraggi necessari per l’allevamento delle vacche da latte. Il latte munto viene poi conferito ad una latteria cooperativa di cui è | 345.8184305<br>cortestrale@gmail.com |
+| CASEIFICIO RAZIONALE NOVESE | San Benedetto Po | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| LATTERIA SOCIALE ROCCHETTA | Suzzara | `Lácteos y quesos` | Parmigiano Reggiano DOP | — |
+| Le Bine | Acquanegra sul Chiese | `Miel` + `Fruta y verdura` | L’azienda pratica la selvicoltura arboricoltura da legno, coltiva un frutteto, orto ed alleva api ed animali di bassa corte. | 348.3850901<br>francesco.cicciocecere@gmail.com<br>[web](http://www.lebine.it) |
+| La Rovere | Marcaria | `Miel` + `Conservas` + `Legumbres y cereales` | L’azienda produce cereali, frutta e verdura. Alleva animali da cortile galline, oche, capre e anatree api per la produzione di miele.Vendita di ortaggi, frutta, confetture e miele. | 0376.968019, 349.6954282<br>mariarosa@agriturismolarovere.it<br>[web](http://www.agriturismolarovere.it) |
+| Ai Pendolini | Monzambano | `Miel` + `Conservas` + `Fruta y verdura` | L’azienda coltiva frutta, ulivi e ortaggi. Alleva api, produce miele e trasforma gli ortaggi e la frutta in confetture e mostarde La smielatura e la trasformazione dei prodotti vengono realizzati nel proprio laboratorio | 045.7553833<br>fattoria@ilboscodelgarda.it<br>[web](http://www.ilboscodelgarda.it) |

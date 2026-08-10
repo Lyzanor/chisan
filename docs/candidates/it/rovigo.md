@@ -22,3 +22,19 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BRULLARE SAS SOCIETA' AGRICOLA DI LIONELLO LUIGINA & C. | Villadose | VIA TEANO 18 45010 | producción — vegetales sin transformar | 2028-07-30 | [IT-BIO-006.380-0103997.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0103997.2025.001.pdf) |
 | CANAL DEI CUORI SRL SOC.AGRICOLA | Adria | VIA RONCONI, 4 45011 | producción — vegetales sin transformar | 2028-03-19 | [IT-BIO-007.380-0047618.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0047618.2025.001.pdf) |
 | CAPOLAVIA AZIENDA AGRICOLA DI  MARCHETTO ANDREA | Rovigo | VIA RODOLFO ROSSI 66 45100 | producción — vegetales sin transformar | 2029-05-22 | [IT-BIO-006.380-0028227.2026.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0028227.2026.003.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| NEBULA | Lendinara | `Cerveza` | birra artigianale | [web](https://www.rattabrew.it/) |

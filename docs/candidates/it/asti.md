@@ -23,3 +23,19 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | IANIA SABRINA | Mongardino | VIA SAN PIETRO 16 14040 | producción — vegetales sin transformar | 2028-11-12 | [IT-BIO-009.380-0057697.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0057697.2025.002.pdf) |
 | MAGGIORA EMANUELE | Refrancore | CORSO UMBERTO I 10 14030 | producción — vegetales sin transformar, piensos | 2028-07-28 | [IT-BIO-015.380-0045371.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0045371.2025.001.pdf) |
 | MARAMAO S.C.A.S. | Canelli | VIA RICCADONNA 185 14053 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-02-11 | [IT-BIO-004.380-0001332.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0001332.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birrificio Sagrin | Calamandrana | `Cerveza` | birra artigianale | [web](https://www.sagrin.it) |

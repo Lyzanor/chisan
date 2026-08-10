@@ -23,3 +23,41 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | Caruso Giuseppe | Vittoria | CONTRADA DIRILLO AGRO DI VITTORIA 97019 | producción — vegetales sin transformar | 2028-08-07 | [IT-BIO-008.380-0096405.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0096405.2026.001.pdf) |
 | CASCONE ROSARIO | Ragusa | VIA M BUONARROTI 40 97100 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-04-15 | [IT-BIO-004.380-0060858.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0060858.2025.001.pdf) |
 | CATANIA SILVANA | Chiaramonte Gulfi | CONTRADA CAVA PIANA 97012 | producción — vegetales sin transformar | 2028-06-16 | [IT-BIO-004.380-0072628.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0072628.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+22 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 21, `Cerveza` 1.
+
+Fuentes de este lote:
+
+- CoRFiLaC — DOP Ragusano, allevatori iscritti all’Albo — <https://corfilac.it/>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birrificio Tarì | Modica | `Cerveza` | birra artigianale | — |
+| LO PRESTI SALVATORE | Chiaramonte Gulfi | `Lácteos y quesos` | Ragusano DOP | — |
+| LOPRESTI SANTO | Chiaramonte Gulfi | `Lácteos y quesos` | Ragusano DOP | — |
+| CAPPELLO GIUSEPPE | Ispica | `Lácteos y quesos` | Ragusano DOP | — |
+| FLORIDIA GIOVANNI | Ispica | `Lácteos y quesos` | Ragusano DOP | — |
+| SVEVA MICHELE | Modica | `Lácteos y quesos` | Ragusano DOP | — |
+| ANTOCI GIUSEPPE | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| AZ. AGR. GULINO CARMELO & DIMARTINO M.ROSA S.S. | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| AZ.AGR. LISSANDRELLO SALVATORE & FIGLI S.S. | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| AZIENDA AGRICOLA ALLEVAMENTO DI TUMINO GIUSEPPE & C. S.S. C | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| CRISCIONE GIUSEPPE ED EMANUELE S.S. | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| CRISCIONE ROSARIO | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| DISTEFANO GIORGIO | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| GARRAFA DANIELA | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| MASSARI CARMELO | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| MEZZASALMA DANIELA | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| SCHININA' GIORGIO | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| SOC. AGR. FRATELLI LISSANDRELLO ANGELO E GIOVANNI | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| SOCIETA AGRICOLA F.LLI CATALDI RICCARDO & FRANCESCO S.S. | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| SPATA AZ.AGR.S.S. DEI F.LLI EMANUELE E SALVATORE | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| TUMINO FRANCESCO | Ragusa | `Lácteos y quesos` | Ragusano DOP | — |
+| CILIA CARMELO | Santa Croce Camerina | `Lácteos y quesos` | Ragusano DOP | — |

@@ -23,3 +23,36 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | PINOCHI FRANCO | Monsummano Terme | VIA RIO BECHINI N. 632 51015 | producción — vegetales sin transformar | 2029-01-19 | [IT-BIO-007.380-0002362.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0002362.2026.001.pdf) |
 | SERAFINI ELENA | Chiesina Uzzanese | VIA LIV DI SOTTO 133 51013 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-23 | [IT-BIO-009.380-0001015.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0001015.2025.001.pdf) |
 | SOC. AGR. CORTI BALDI S.S. | Buggiano | VIA FICOCCHIO, 118 51011 | producción — vegetales sin transformar | 2028-10-19 | [IT-BIO-015.380-0040384.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0040384.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+18 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 18.
+
+Fuentes de este lote:
+
+- Consorzio Olio Toscano IGP — aziende associate — <https://www.oliotoscanoigp.it/aziende/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| GIUNTOLI FEDERICA | Chiesina Uzzanese | `Aceite` | Olio extravergine di oliva Toscano IGP | asia.consulenze@gmail.com |
+| MONTALBANO AGRICOLA ALIMENTARE TOSCANA S.P.A. | Lamporecchio | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliomontalbano.it |
+| OLEIFICIO SOCIALE VALDINIEVOLE SOC. COOP. AGRICOLA | Massa e Cozzile | `Aceite` | Olio extravergine di oliva Toscano IGP | oleificiovaldinievole@alice.it |
+| SOCIETA' AGRICOLA CAMPIONI S.S. | Massa e Cozzile | `Aceite` | Olio extravergine di oliva Toscano IGP | info@frantoiodicroci.it |
+| AZIENDA AGRICOLA BARDELLI DI SPIZZICHINO NICCOLO' | Monsummano Terme | `Aceite` | Olio extravergine di oliva Toscano IGP | cvtamata@gmail.com |
+| AZ. AGR CAVALZANI GIOVANNI | Pescia | `Aceite` | Olio extravergine di oliva Toscano IGP | info@agriturismolamarginella.it |
+| ANTICO POGGIOLO DI INNOCENTI STEFANO | Pistoia | `Aceite` | Olio extravergine di oliva Toscano IGP | info@anticopoggiolo.it |
+| AZ AGR VANNUCCI PIANTE DI VANNUCCI VANNINO | Pistoia | `Aceite` | Olio extravergine di oliva Toscano IGP | sede@vannuccipiante.it |
+| AZ.AGR. VILLA CECCHI DI BERRETTI PAOLO | Pistoia | `Aceite` | Olio extravergine di oliva Toscano IGP | info@villacecchi.it |
+| FRANTOIO VALLE ARGENTATA DI SPAMPANI ANTONELLA | Pistoia | `Aceite` | Olio extravergine di oliva Toscano IGP | frantoiovalleargentata@virgilio.it |
+| MARINI GIUSEPPE E FIGLI SOCIETA' SEMPLICE AGRICOLA | Pistoia | `Aceite` | Olio extravergine di oliva Toscano IGP | info@marinifarm.it |
+| TORREGHIOTTA SOCIETA' AGRICOLA S.R.L. | Pistoia | `Aceite` | Olio extravergine di oliva Toscano IGP | albeves@hotmail.com |
+| IL CALESSE S.R.L. SOCIETA' AGRICOLA | Quarrata | `Aceite` | Olio extravergine di oliva Toscano IGP | info@agriturismoilcalesse.it |
+| PODERE LA FRANTOIA DI MATTEINI FABRIZIO | Quarrata | `Aceite` | Olio extravergine di oliva Toscano IGP | info@poderelafrantoia.it |
+| FATTORIA IL CASSERO DI GIOVANNETTI PAOLO | Serravalle Pistoiese | `Aceite` | Olio extravergine di oliva Toscano IGP | info@fattoriailcassero.com |
+| FRANTOIO CECCHI | Uzzano | `Aceite` | Olio extravergine di oliva Toscano IGP | frantoiocecchi@gmail.com |
+| SOCIETA' AGRICOLA I CIPRESSI | Uzzano | `Aceite` | Olio extravergine di oliva Toscano IGP | agricolacipressi@virgilio.it |
+| TRONCHETTI GIAMPIERO | Uzzano | `Aceite` | Olio extravergine di oliva Toscano IGP | info@aziendabellandi.it |

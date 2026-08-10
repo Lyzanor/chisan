@@ -23,3 +23,29 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | CAPELLI LAURA | Piateda | VIA DELLE TEGIACCHE 5 23020 | producción — vegetales sin transformar | 2027-02-19 | [IT-BIO-007.380-0006904.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0006904.2025.001.pdf) |
 | CASA VINICOLA LA TORRE COOP. AGR. ZANOLARI | Bianzone | VIA TEGLIO, 10 23030 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-02-06 | [IT-BIO-007.380-0020391.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0020391.2025.002.pdf) |
 | CATTANEO DARIO | Postalesio | VIA ROMA 4 23010 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2027-05-24 | [IT-BIO-007.380-0047737.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0047737.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+9 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 3, `Carne` 2, `Cerveza` 2, `Fruta y verdura` 1, `Miel` 1.
+
+Fuentes de este lote:
+
+- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
+- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Pellegrini Consuelo | Albosaggia | `Carne` | L’azienda alleva bovini ed equini, svolge attività di ippoturismo e attività ludico ricreative rivolte a qualsiasi tipo di utenza, in un’oasi di pace e tranquillità. | 347.8089140<br>p.lelo@libero.it<br>[web](http://www.meriggioequitazione.it) |
+| Lunalpina | Castione Andevenno | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | Cereali autoctoni, ortaggi ed erbe spontanee, trasformazione e panificazione. Allevamento di cavalli e asini. | 340.3641625<br>nadialotti@virgilio.it<br>[web](http://www.lunalpina.com) |
+| Birrificio Pintalpina | Chiuro | `Cerveza` | birra artigianale | [web](https://www.pintalpina.it) |
+| Birrificio Legnone | Dubino | `Cerveza` | birra artigianale | [web](https://www.birrificiolegnone.com/) |
+| O.P. SOCIETA' AGRICOLA MELAVI' | Ponte in Valtellina | `Fruta y verdura` | ORTOFRUTTA | — |
+| La Fiorida | Mantello | `Lácteos y quesos` + `Carne` + `Miel` | Dall’allevamento delle bovine, dei suini e delle capre, vengono ricavate le materie prime per produrre direttamente formaggi, latticini, salumi e carni fresche. In vendita all’interno dello spaccio anche prodotti tipici | 0342.680846, 345.2987679<br>didattica@lafiorida.com<br>[web](http://www.lafiorida.com) |
+| Sempreverde | Morbegno | `Lácteos y quesos` + `Carne` + `Miel` | Cura e manutenzione del paesaggio inclusi parchi, giardini e aiuole; Coltivazione di colture permanenti; allevamento di cavalli e altri equini; allevamento di ovini e caprini, bovini, silvicoltura ed altre attività fores | 338.5946020<br>fattoriadidsv@gmail.com<br>[web](http://www.fattoriasempreverde.it) |
+| Sopralapanca | Postalesio | `Lácteos y quesos` + `Carne` | Azienda con allevamento di capre della razza Frisa Valtellinese e Camosciata delle Alpi. Produzione di formaggi. | 0342.563265<br>dariocattaneo2000@libero.it<br>[web](http://www.formaggiocaprino.com) |
+| Apicoltura Mieleria Moltoni | Villa di Tirano | `Miel` + `Legumbres y cereales` | L’azienda possiede 400 alveari, produce miele e coltiva cereali piccola produzione | 0342.795370<br>lamieleria@email.it |

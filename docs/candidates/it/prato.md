@@ -22,3 +22,32 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | DEL BELLO SOCIETA' AGRICOLA S.S. | Vaiano | VIA DEL BELLO 2 59021 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2027-03-18 | [IT-BIO-007.380-0068653.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0068653.2025.001.pdf) |
 | FATTORIA DELLE GINESTRE SOCIETÀ AGRICOLA S.S. | Carmignano | Via delle Ginestre, 18 59015 | producción — vegetales sin transformar | 2029-01-12 | [IT-BIO-014.380-0029685.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0029685.2026.001.pdf) |
 | FATTORIA DIOGUARDI DI DIOGUARDI LUCA | Prato | Via Traversa della Rugea, 9 59100 | producción — vegetales sin transformar | 2029-01-13 | [IT-BIO-014.380-0083230.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0083230.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+13 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 12, `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Consorzio Olio Toscano IGP — aziende associate — <https://www.oliotoscanoigp.it/aziende/>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| FATTORIA DI COLLE DI MORETTI FABRIZIO E C. SAS SOC.AGRICOLA | Cantagallo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@fattoriadicolle.it |
+| RASTRELLI ANTONELLA | Carmignano | `Aceite` | Olio extravergine di oliva Toscano IGP | info@poderemidolla.com |
+| SOC.AGRICOLA FRIGIONAIA S.S. | Carmignano | `Aceite` | Olio extravergine di oliva Toscano IGP | info@frigionaia.it |
+| TENUTA ARTIMINO SOC. AGR. A R.L. | Carmignano | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliotoscanoigp.it |
+| OLEIFICIO ORLANDINI SRL | Montemurlo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliorlandini.com |
+| SOC. AGR. FELICE AGRICOLTURA S.S. | Montemurlo | `Aceite` | Olio extravergine di oliva Toscano IGP | feliceagricoltura@gmail.com |
+| AZ. AGR. PIAGGIA DI VANNUCCI SILVIA | Poggio a Caiano | `Aceite` | Olio extravergine di oliva Toscano IGP | info@piaggia.com |
+| AZIENDA AGRICOLA GARIBALDI DI HAN JIN IL | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | milano@s-sette.com |
+| AZIENDA AGRICOLA IL MULINACCIO SRL | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | info@ilmulinaccio.it |
+| SAF SOCIETA' AGRICOLA E FORESTALE S.R.L. | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | saf@aleph.srl |
+| SOC. AGR. CERI S.R.L A SOCIO UNICO | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | edoardo@tenutaceri.it |
+| VILLA RUCELLAI - FATTORIA DI CANNETO S.A.S. | Prato | `Aceite` | Olio extravergine di oliva Toscano IGP | lorenzo@villarucellai.it |
+| MOSTODOLCE | Vaiano | `Cerveza` | birra artigianale | [web](https://www.mostodolce.it) |

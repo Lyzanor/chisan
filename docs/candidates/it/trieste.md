@@ -23,3 +23,27 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | Skerk Sandi | Duino Aurisina | Prepotto, 20 21030 | producción — vegetales sin transformar | 2029-06-27 | [IT-BIO-017.380-0046927.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0046927.2026.001.pdf) |
 | SOC. AGR. KOHISCE SRL | Duino Aurisina | LOC DUINO 81 34011 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-12-10 | [IT-BIO-006.380-0059451.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0059451.2025.001.pdf) |
 | Stoka Andrea | Duino Aurisina | Loc. Ceroglie n. 44 34011 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-02-05 | [IT-BIO-021.380-0036536.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0036536.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+8 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Carne` 4, `Lácteos y quesos` 2, `Cerveza` 1, `Miel` 1.
+
+Fuentes de este lote:
+
+- Regione Friuli-Venezia Giulia — elenco fattorie didattiche e sociali (open data) — <https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Az.Agr. Le Torri di Slivia - s.s. di Corrado e Roberta Greco | Duino Aurisina | `Carne` + `Fruta y verdura` | Convenzionale:allevamento di animali da cortile, suini, equini.Orticoltura e vitivinicoltura. azienda agricola con offerta agrituristica | 0402025022<br>info@letorridislivia.net<br>[web](https://www.letorrisislivia.net) |
+| Azienda agricola Antonic di Stoka Andrea | Duino Aurisina | `Carne` + `Legumbres y cereales` | convenzionale: allevamento di animali da cortile, suini, asini, ovini, cavalli, cerealicoltura, orticultura. azienda agricola con offerta agrituristica | 040299798<br>info@asinoberto.it<br>[web](https://www.asinoberto.it) |
+| Azienda agricola di Biro Zoltan Andrea | Sgonico | `Carne` + `Miel` + `Fruta y verdura` | Allevamento di animali da cortile, asini, cavalli, api, frutticoltura. azienda agricola con offerta agrituristica | centroequestre.sanprimo@gmail.com<br>[web](https://www.centroequestresanprimo.it) |
+| Fattoria Carsica Bajta di Skerlj Andrej, Nevo & C. | Sgonico | `Carne` | allevamento di suini e bovini allo stato brado, vitivinicoltura azienda agricola con offerta agrituristica | 0402296090<br>Info@bajta.it<br>[web](https://www.bajta.it) |
+| ANTIKORPO BREWING | Sgonico | `Cerveza` | birra artigianale | [web](https://www.antikorpobrewing.com) |
+| Azienda agricola Country Eden di Marucelli Omar | Monrupino | `Lácteos y quesos` + `Carne` | Allevamento di animali da cortile, ovini, equiniTrasformazione di prodotti caseari. azienda agricola con offerta agrituristica | 040327279<br>arsi.presidente@virgilio.it |
+| Gruden - Zbogar s.s. | Sgonico | `Lácteos y quesos` + `Carne` + `Condimentos` | allevamento di animali (bovini, equini, caprini, suini, galline ovaiole allo stato brado), orticoltura, frutticoltura, floricoltura, piante officinali, vigneto azienda agricola con offerta agrituristica | 040229191 |
+| Azienda agricola Ziani Maria | Trieste | `Miel` + `Fruta y verdura` | apicoltura, frutticoltura, floricoltura, animali da cortile e da compagnia azienda agricola | 0402158246 |

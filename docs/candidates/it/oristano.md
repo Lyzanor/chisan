@@ -23,3 +23,22 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | AZIENDA OLIVICOLA IBBA SOCIETA' SEMPLICE AGRICOLA | Oristano | CASE SPARSE LOC TIRIA   49 A 09170 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-06-05 | [IT-BIO-006.380-0037835.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0037835.2026.001.pdf) |
 | Azienda Olivicola Pili Soc. Agr. | Seneghe | Via Tharros, 18 09070 | producción — vegetales sin transformar | 2027-11-12 | [IT-BIO-005.380-0059519.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0059519.2026.001.pdf) |
 | AZIENDA OLIVICOLA SEMIDANA SOCIETA' AGRICOLA SEMPLICE | Riola Sardo | S S 192 KM 120 00 09070 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-07-12 | [IT-BIO-004.380-0052523.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0052523.2026.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+3 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Lácteos y quesos` 2, `Cerveza` 1.
+
+Fuentes de este lote:
+
+- Consorzio per la tutela del Pecorino Sardo DOP — caseifici — <https://www.pecorinosardo.it/consorzio/i-caseifici-produttori-della-dop>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birra Puddu | Santa Giusta | `Cerveza` | birra artigianale | [web](https://www.birrapuddu.it/) |
+| SE.PI. FORMAGGI SRL | Marrubiu | `Lácteos y quesos` | Pecorino Sardo DOP | 0783.858037 |
+| SOC. COOP. C.A.O. | Oristano | `Lácteos y quesos` | Pecorino Sardo DOP | 0783.301831 |

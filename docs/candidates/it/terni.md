@@ -24,3 +24,43 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | FOGLIANI LUIGI | Terni | Via E. Barbarasa, 11 05100 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-12-03 | [IT-BIO-014.380-0040909.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0040909.2025.002.pdf) |
 | IL CENOBIO AZIENDA AGRICOLA FORESTALE S.R.L. | Orvieto | Piazza dell'Erba, 4 05018 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-01-21 | [IT-BIO-014.380-0036147.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0036147.2026.001.pdf) |
 | IL MOLINO SOCIETA AGRICOLA SEMPLICE | Montecastrilli | VIA TENENTE PETRUCCI 5 05026 | producción — vegetales sin transformar | 2028-10-27 | [IT-BIO-004.380-0101164.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0101164.2025.002.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+17 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Cerveza` 2.
+
+Fuentes de este lote:
+
+- Regione Umbria — elenco regionale delle fattorie didattiche (open data) — <https://dati.regione.umbria.it/dataset/elenco-fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Birrificio Amerino | Amelia | `Cerveza` | birra artigianale | [web](https://www.birrificioamerino.it/) |
+| BIRRALFINA | Orvieto | `Cerveza` | birra artigianale | [web](https://birralfina.com/) |
+
+### Sin producto declarado por el registro (15)
+
+El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
+
+| Candidato | Comune | Contacto |
+|---|---|---|
+| RES NOVA IL COLLE S.S. AGRICOLA | Acquasparta | resnova.ilcolle@gmail.com<br>[web](https://www.resnova-ilcolle.weebly.com) |
+| AZIENDA AGRICOLA VALLETIERI | Avigliano Umbro | annalisa.perelli@gmail.com |
+| AZIENDA AGRICOLA E AGRITURISTICA* 'FATTORIA LE CASETTE' | Baschi | lecasetteumbria@gmail.com |
+| FATTORIA BIOLOGICA WALDEN | Ficulle | agriturismowalden@gmail.com<br>[web](https://www.fattoriawalden.it) |
+| CASARﾷ SOC. AGRIC. S.S | Fornole Di Amelia | casara.soc.agricola@gmail.com |
+| ETIC ITALIA SOCIETﾷ AGRICOLA A.R.L. | Guardea | scrivi@per.umbria.it<br>[web](https://www.per.umbria.it) |
+| AZ. AGR. FONTANAPINTA | Narni | carissimibruno@gmail.com<br>[web](https://www.pasticciandonarni.it) |
+| AZIENDA IL COLLICELLO SOC. SEMPLICE AGRICOLA | Narni | info@ilcollicello.com<br>[web](https://www.ilcollicello.com) |
+| FATTORIA DIDATTICA ' LA COLLINA INCANTATA' | Narni | info@fattoriacollinaincantata.com<br>[web](https://www.fattoriacollinaincantata.com) |
+| AZ.AGR.BEFANI KATIA | San Gemini | aziendaagricolabefanikatia@virgilio.it |
+| SANTA MARIA | San Venanzo | info@agrisantamaria.it<br>[web](https://www.agrisantamaria.it) |
+| SOCIETﾷ AGRICOLA FORESTALE SAN VENANZO | San Venanzo | claudiadegasperi@gmail.com |
+| AZ AGR. PEGORARO LORENZO | Terni | danilofratini@libero.it |
+| FATTORIA DIDATTICA LA MELA ROSSA 2003 | Terni | lamelarossa@alice.it*<br>[web](https://www.lamelarossa.net) |
+| PASSACANTANDO GIANCARLO | Terni | giancarlo.passacantando@technital.it |

@@ -23,3 +23,66 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | FRANZESE ALFONSO | Nola | VIA PALMA 75 80035 | producción — vegetales sin transformar | 2028-05-20 | [IT-BIO-007.380-0090065.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090065.2025.002.pdf) |
 | GALANO MARIO | Massa Lubrense | VIA ROTABILE MASSA TURRO 32 80061 | producción — vegetales sin transformar | 2028-07-22 | [IT-BIO-009.380-0002402.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0002402.2025.001.pdf) |
 | GIUSEPPE COPPOLA | Sant'Antonio Abate | VIA CASA ATTANASIO 80057 | producción — vegetales sin transformar | 2028-07-28 | [IT-BIO-020.380-0103782.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-020.380-0103782.2025.001.pdf) |
+
+## Categorías poco representadas — barrido del 2026-08-10
+
+47 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 12, `Conservas` 10, `Lácteos y quesos` 8, `Fruta y verdura` 7, `Miel` 7, `Cerveza` 2, `Condimentos` 1.
+
+Fuentes de este lote:
+
+- Regione Campania — Albo regionale delle fattorie didattiche (open data) — <https://dati.regione.campania.it/catalogo/Fattorie-didattiche>
+- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| Le radici del Mediterraneo | Ercolano | `Aceite` + `Conservas` + `Fruta y verdura` | olivo e olio, conserve e confetture, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-362.html) |
+| La Spadara | Forio D'Ischia | `Aceite` + `Conservas` + `Fruta y verdura` | olivo e olio, conserve e confetture, frutta, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-167.html) |
+| Le Tore | Massa Lubrense | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-100.html) |
+| Azienda agricola La Masseria di Gargiulo Ferdinando | Massalubrense | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-348.html) |
+| Masseria Cortile grande | Napoli | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-191.html) |
+| Tenuta Monte Sant'Angelo srl | Napoli | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-291.html) |
+| Eremo Camaldoli - Congregazione dei Missionari della Divina Redenzione | Nola | `Aceite` + `Miel` + `Fruta y verdura` | olivo e olio, miele e api, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-224.html) |
+| Tenuta Agrituristica Rubinacci | Palma Campania | `Aceite` + `Conservas` | olivo e olio, conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-256.html) |
+| Fondo Galatea | Piano di Sorrento | `Aceite` | olivo e olio | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-43.html) |
+| Il Cocchiere | Poggiomarino | `Aceite` + `Conservas` | olivo e olio, conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-257.html) |
+| Masseria Panico di Eredi Beneduce Ettore | Somma Vesuviana | `Aceite` + `Conservas` + `Fruta y verdura` | olivo e olio, conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-9.html) |
+| Astapiana Villa Giusso | Vico Equense | `Aceite` + `Fruta y verdura` | olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-84.html) |
+| Microbirrificio Artigianale Incanto | Casalnuovo di Napoli | `Cerveza` | birra artigianale | [web](https://www.birrificioincanto.it/) |
+| Birra KBirr | Giugliano in Campania | `Cerveza` | birra artigianale | [web](https://www.birrakbirr.com) |
+| Tenuta Fidentea | Pozzuoli | `Condimentos` | erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-380.html) |
+| Piscina Mirabile | Bacoli | `Conservas` + `Fruta y verdura` | conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-238.html) |
+| Società Agricola Villa Romano srl | Napoli | `Conservas` + `Fruta y verdura` + `Condimentos` | conserve e confetture, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-429.html) |
+| La Vigna di Ciriello Angela | Pollena Trocchia | `Conservas` + `Fruta y verdura` + `Condimentos` | conserve e confetture, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-396.html) |
+| Somma Vesuvio Grand Tour – Fattoria La Cinciallegra | Pollena Trocchia | `Conservas` + `Miel` | conserve e confetture, miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-292.html) |
+| Azienda Vitivinicola Montespina di Iovino Antonio | Pozzuoli | `Conservas` + `Fruta y verdura` + `Condimentos` | conserve e confetture, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-364.html) |
+| Il Quarto Miglio srl di Verde Ciro | Quarto | `Conservas` | conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-289.html) |
+| Villa Palmentiello | Sant'Antonio Abate | `Conservas` | conserve e confetture | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-242.html) |
+| Soc. Agricola Pandora srl | Sorrento | `Conservas` + `Fruta y verdura` + `Condimentos` | conserve e confetture, ortaggi, frutta, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-363.html) |
+| Cooperativa Agrituristica La Ginestra | Vico Equense | `Conservas` + `Miel` + `Fruta y verdura` | conserve e confetture, miele e api, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-10.html) |
+| La Masseria | Villaricca | `Conservas` + `Fruta y verdura` | conserve e confetture, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-161.html) |
+| La Sibilla | Bacoli | `Fruta y verdura` | ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-83.html) |
+| Ischia Bio srl | Barano d'Ischia | `Fruta y verdura` | ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-395.html) |
+| Masseria Manone | Marigliano | `Fruta y verdura` | ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-50.html) |
+| Convivium srl Società Agricola | Pozzuoli | `Fruta y verdura` + `Condimentos` | ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-331.html) |
+| San Martino | Pozzuoli | `Fruta y verdura` + `Condimentos` | ortaggi, frutta, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-360.html) |
+| Guidone Laura - L'Orto del Vesuvio | San Sebastiano al Vesuvio | `Fruta y verdura` | ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-304.html) |
+| Tenuta Le Lune del Vesuvio di Parisi Grazia & C. sas | Terzigno | `Fruta y verdura` | ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-399.html) |
+| Masseria Antuono | Giugliano in Campania | `Lácteos y quesos` + `Fruta y verdura` | latte e formaggi, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-231.html) |
+| Masseria Pignata di Pignata Francesco | Giugliano in Campania | `Lácteos y quesos` + `Fruta y verdura` | latte e formaggi, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-295.html) |
+| Il Turuziello di Benedetto De Gregorio | Massa Lubrense | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-326.html) |
+| Azienda Agricola Balestrieri Vittorio | Napoli | `Lácteos y quesos` + `Fruta y verdura` | latte e formaggi, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-287.html) |
+| La fattoria di Paola | Pimonte | `Lácteos y quesos` + `Aceite` + `Fruta y verdura` | latte e formaggi, olivo e olio, ortaggi, frutta | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-180.html) |
+| Albatros di Carbone Antonio & C. sas – Società Agricola | Quarto | `Lácteos y quesos` + `Carne` + `Fruta y verdura` | latte e formaggi, salumi e carni, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-290.html) |
+| Caso Antonino | Vico Equense | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-303.html) |
+| La cantina del Fattore | Vico Equense | `Lácteos y quesos` + `Fruta y verdura` | latte e formaggi, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-350.html) |
+| Centro Don Orione | Ercolano | `Miel` + `Condimentos` | miele e api, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-249.html) |
+| Il giglio della valle | Marano di Napoli | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-392.html) |
+| Società Agricola Villanova srl | Napoli | `Miel` + `Fruta y verdura` + `Condimentos` | miele e api, ortaggi, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-414.html) |
+| Istituto Zooprofilattico Sperimentale del Mezzogiorno | Portici | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-217.html) |
+| Il Giardino dell'Orco | Pozzuoli | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-398.html) |
+| Jole srl Società Agricola | San Giorgio a Cremano | `Miel` + `Condimentos` | miele e api, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-405.html) |
+| Bel Vesuvio Inn di Sorrentino Anna | San Sebastiano al Vesuvio | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-342.html) |
