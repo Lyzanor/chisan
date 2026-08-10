@@ -701,3 +701,33 @@ Productores reales del DAR detectados al cerrar cada municipio; integrarlos solo
 - **Aguilar de Segarra:** Cal Figuera (ous; citat a directoris del Bages)
 - **Avinyó:** Torras Salvans, Ricard (marca Salers el Vinyes, vedella; DAR 620962240)
 - **Oristà:** Puig Orriols, Albert (carn de conill; DAR 626898877)
+
+## Passada Proper.cat — tancada el 2026-08-10
+
+Revisades les 24 pistes de la passada. S'han publicat 11 unitats productives,
+s'han descartat 2 pistes amb decisió d'evidència i 11 continuen en observació:
+la recerca no ha trobat una font actual suficient per afirmar activitat i oferta
+pública pròpia. No s'han publicat dades antigues com si fossin vigents.
+
+Publicats: Cal Santamaria, Can Domènech, Can Fermí, Cervesa Ninkasi, Cervesa
+Tous d'Anoia, Embotits Obradors, Enric Rovira, La Petita Granja de Claret, Mas
+Glosset, Molí d'Oli de Rajadell i Murallius.
+
+Descartats: Activa't–Casa Costafreda (projecte social/formatiu sense oferta
+agroalimentària pública pròpia acreditada) i Bonapasta (marca elaborada per La
+Moianesa, unitat ja publicada). Les decisions completes són a
+`data/evidence/es/catalunya/barcelona.jsonl`.
+
+| candidat revisat | motiu per mantenir-lo en observació | fonts comprovades |
+|---|---|---|
+| Ben Plantats | El domini propi no respon i no s'ha localitzat cap senyal actual independent d'activitat o venda. | [Proper](https://www.proper.cat/guia/llistats/ben-plantats/) · [web](https://www.benplantats.cat/) |
+| Cal Felip | Només hi ha la fitxa històrica de Proper; falta activitat i contacte vigents. | [Proper](https://www.proper.cat/guia/llistats/cal-felip-a-fals/) |
+| El Cove | La presència social localitzada és antiga i no prova cultiu ni cistelles actuals. | [Proper](https://www.proper.cat/guia/llistats/el-cove/) · [Facebook](https://www.facebook.com/elcove.navarcles/) |
+| El Molí del Castell | La web no aporta activitat recent i continua el conflicte Calders/Monistrol de Calders. | [Proper](https://www.proper.cat/guia/llistats/el-moli-del-castell/) · [web](https://hortaelmolidelcastell.wordpress.com/) |
+| El Rebost de l'Anna | No s'ha pogut confirmar que l'obrador, i no només el comerç, continuï actiu. | [Proper](https://www.proper.cat/guia/llistats/el-rebost-de-lanna/) |
+| GinBages / Spirit Design | Domini inactiu i cap prova actual d'una unitat elaboradora pròpia. | [Proper](https://www.proper.cat/guia/llistats/ginbages/) · [web](http://www.spiritdesign.cat/) |
+| Ilda's Town Beer | La web no respon i les mencions recents de consum no demostren producció vigent. | [Proper](https://www.proper.cat/guia/llistats/ildas-town-beer/) · [web](https://ildas.es/) |
+| Nous de Monistrolet | No s'ha identificat marca, contacte públic ni oferta actual. | [Proper](https://www.proper.cat/guia/llistats/nous-de-monistrolet/) |
+| Oliveres del Cardoner / The Booc | Domini inaccesible i cap senyal actual que resolgui la relació marca-productor. | [Proper](https://www.proper.cat/guia/llistats/oliveres-del-cardoner/) · [web](http://www.thebooc.com/es/) |
+| Ous Clarassó | Els directoris apunten a comerç/distribució a Igualada però no identifiquen la unitat productiva. | [Proper](https://www.proper.cat/guia/llistats/ous-claraso/) |
+| Tomating | El domini no respon i no hi ha senyal actual de cultiu o venda des de les notícies societàries de 2020. | [Proper](https://www.proper.cat/guia/llistats/tomating/) · [web](http://www.tomating.com/) |
