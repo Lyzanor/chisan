@@ -86,3 +86,48 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 倉吉ビール (Brew Lab Kurayoshi) | Kurayoshi | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 
 **Ya integrado, no volver a proponer:** 久米桜酒造 (matriz de 大山Gビール) ya está en `tottori.csv`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/tottori.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **1 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 大山ハム | 米子市 | Carne | búsqueda dirigida + web propia | https://daisenham.sanin.jp/ | jamón y embutido |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/tottori.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/tottori> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| のぎ屋 | 倉吉市 | Pescado | https://www.tabechoku.com/producers/21659 | 2015年、生まれ育った横浜から祖父の家がある鳥取へ移住しました。祖父と1年足らずの生活を共にした後、田畑を継ぐことに。同時に就農し、春〜秋 |
+| 竹信農園 | 北栄町 | Pescado | https://www.tabechoku.com/producers/28459 | 日本有数のスイカの名産地・鳥取県北栄町の旧大栄地区でスイカなどの栽培に毎日取り組んでいます。 |
+| LUCK HILL（ラックヒル） | 大山町 | Pescado | https://www.tabechoku.com/producers/22280 | 海と山に囲まれた自然豊かな『大山町』から自然栽培野菜をお届けします。小さな農園ですが、のびのび育った野菜たちは大きなエネルギーを持っています |
+| 西田園芸 | 鳥取市 | Pescado | https://www.tabechoku.com/producers/25191 | 鳥取市郊外でミニトマトなどを栽培。お客様に「美味しかった！」と言っていただけるように日々美味しい野菜づくりに取り組んでいます。化学肥料不使用 |
+| 米蔵砂川屋 | 鳥取市 | Pescado | https://www.tabechoku.com/producers/21719 | 江戸時代から代々受け継がれる田んぼと、「安全・安心なお米を届けたい」という想いから生まれた【鹿野のさくら姫米】。 |
+| 鹿野地鶏 | 鳥取市 | Carne | https://www.tabechoku.com/producers/20892 | 一時は消滅の危機に陥った、鹿野地鶏。『鳥取県及び鳥取市』と民間企業の協力により、2018年12月に見事復活を果たしました。 |
+| アイディケきのこ事業部 | 八頭町 | Setas | https://www.tabechoku.com/producers/29414 | 鳥取県八頭にてきくらげを栽培しております。 |
+| ISN | 岩美町 | Setas | https://www.tabechoku.com/producers/22807 | 私たちは、きのこの研究・栽培に力を入れている【きのこ王国とっとり】と呼ばれる鳥取県で、原料から国産にこだわり、自社で製造した菌床を使用して、 |
+| 木子ぽっぽ | 鳥取市 | Setas | https://www.tabechoku.com/producers/23345 | 鳥取県鳥取市で原木しいたけをつくっています。 |
+| あんどう青果 | 倉吉市 | Miel | https://www.tabechoku.com/producers/29352 | こだわりの野菜、そしてはちみつを、全国の方に召し上がっていただきたく、出品をはじめました(*^^*) |
+| Mファーム | 伯耆町 | Pan y cereal | https://www.tabechoku.com/producers/3078222 | 子供達も安心して食べれるお米を作れたらと |
+| 大山農園 | 大山町 | Pan y cereal | https://www.tabechoku.com/producers/3078132 | 鳥取県の大山のふもとでコシヒカリを作っています。大山は自然が豊かで水が綺麗なことで有名です。そんな環境の中で丁寧に愛情を込めてコシヒカリを作 |
+| つむぎfarm | 鳥取市 | Pan y cereal | https://www.tabechoku.com/producers/3078364 | 鳥取県でお米や野菜を育てている「つむぎfarm」です。 |
+| 鳥取の清流 御子垣農園 | 鳥取市 | Pan y cereal | https://www.tabechoku.com/producers/3078423 | 鳥取市の清流のほとりで、家族でお米を育てています。 |
+| 岸田秀果園 | 倉吉市 | Fruta y verdura | https://www.tabechoku.com/producers/21478 | 鳥取県倉吉市にて、梨を専門として日々、栽培管理に汗を流しております岸田秀果園と申します。こちらを通じて当園の梨がたくさんの方に届き、１人でも |
+| 西谷農園 | 倉吉市 | Fruta y verdura | https://www.tabechoku.com/producers/3077223 | 私は西谷農園の6代目の西谷昭博です。 |
+| 丸山農園 | 八頭町 | Fruta y verdura | https://www.tabechoku.com/producers/22066 | 梨・柿の産地、鳥取県より甘くておいしい果実をお届け致します(^^)/ |
+| 梨屋 こうさてん十 | 大山町 | Fruta y verdura | https://www.tabechoku.com/producers/3078098 | 鳥取県の名峰「大山」のおひざもとで、新甘泉をメインに梨を栽培しています。 |
+| たにがみ農園 | 鳥取市 | Fruta y verdura | https://www.tabechoku.com/producers/27820 | 鳥取県鳥取市で代々梨専業農家を営んでいる「たにがみ農園」です。 |
+| Farm Nakahara | 北栄町 | ⚠ por decidir | https://www.tabechoku.com/producers/3077700 | はじめまして！ |
+| ふくの喜 | 琴浦町 | ⚠ por decidir | https://www.tabechoku.com/producers/29594 | 大山や蒜山といった山々に囲まれ、日本海が望める自然豊かな場所で農業を営んでいます。 |
+| らっきょう市場 | 鳥取市 | ⚠ por decidir | https://www.tabechoku.com/producers/26882 | 初めまして、らっきょう市場の有田です。 |

@@ -89,3 +89,36 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 
 **Ya integrado, no volver a proponer:** 雲海酒造 ya está en `miyazaki.csv` como `Destilados y licores`.
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/miyazaki.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/miyazaki> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 豊漁丸-Houryoumaru- | 串間市 | Pescado | https://www.tabechoku.com/producers/21975 | 宮崎県串間市で、祖父の代から続く漁師をしています。現在は夫婦で「豊漁丸（ほうりょうまる）」として🍀、伊勢エビ🦞・アサヒガニ🦀・アカハタなどの |
+| 浅野水産 | 日南市 | Pescado | https://www.tabechoku.com/producers/3078999 | 宮崎県日南市で、近海カツオの一本釣り漁船「第五清龍丸」の船頭をしています、浅野兼吾です。 |
+| じろう畑とまさみの食卓 | 都農町 | Pescado | https://www.tabechoku.com/producers/20570 | 〈じろう畑とまさみの食卓〉 農園名の由来は、食べ物も人も元気に育つ畑から、みんなで囲む幸せな食卓をわかり易く伝えたいという想いから名づけまし |
+| 宮崎釜炒り茶 月人(げっと) | 延岡市 | Té e infusiones | https://www.tabechoku.com/producers/26219 | 延岡市北方町で釜炒り茶を生産しています！ |
+| 河野茶園 | 農町 | Té e infusiones | https://www.tabechoku.com/producers/25307 | 宮崎県都農町で代々茶業を営む河野茶園です。 |
+| 上原ファーム | 城市 | Carne | https://www.tabechoku.com/producers/22410 | 愛しい豚達ですが、可愛がるだけではなく、大切な命を育て、命をいただいて、食卓に「幸せ」を届ける。 |
+| みやざき地頭鶏 百笑村 | 宮崎市 | Carne | https://www.tabechoku.com/producers/20990 | 宮崎市田野町にて宮崎県産ブランド地鶏「みやざき地頭鶏」を雛からオスは120日以上、メスは150日以上飼育しております。弊社処理場にて処理加工 |
+| 天然山蜜工房 | 門川町 | Carne | https://www.tabechoku.com/producers/23142 | 宮崎県の海や山に囲まれた自然豊かな町で、養鶏業を営んでおります。 |
+| きくらげ堂　日向店 | 日向市 | Setas | https://www.tabechoku.com/producers/28667 | 昨年より栽培を始め |
+| しげながきのこ | 綾町 | Setas | https://www.tabechoku.com/producers/24155 | きのこづくりの職人が |
+| kai fam. しいたけ農園 | 諸塚村 | Setas | https://www.tabechoku.com/producers/28579 | 私たちは、結婚してから42年間、宮崎県の諸塚村という小さな村で、ずーーっと原木生しいたけを周年栽培でつくり続けています。原木しいたけは、休ま |
+| ブォンミエーレビーファーム | 宮崎市 | Miel | https://www.tabechoku.com/producers/23187 | ブォンミエーレビーファームは、イタリア人養蜂家マテオと家族が2015年から移住地の宮崎で営なむ小さな養蜂場です。ブォンミエーレとは、イタリア |
+| クリムゾンフィールド | 宮崎市 | Conservas | https://www.tabechoku.com/producers/28310 | 宮崎県で主に中玉トマトをつくっています。よく食べられる野菜なので農薬を使わずに育てています。そのためお店に出せないトマトが多くでるので、それ |
+| 本多荘輔の情熱にんにく畑 | 小林市 | Huevos | https://www.tabechoku.com/producers/22654 | ＜伝統にんにく卵黄＞で有名な健康家族の自社農場。 |
+| キリシマハイコーヒー農園 | 城市 | Café | https://www.tabechoku.com/producers/29545 | 私は宮崎県都城市で国産コーヒーとピーマンを生産している農家です。 |
+| CITRUS JAPAN | 日南市 | Bebidas sin alcohol | https://www.tabechoku.com/producers/28468 | 南国宮崎の南に位置する日南市でレモンの生産と、『日南レモン』を使ったシロップを販売しています。 |
+| 桑畑青果 | 宮崎市 | Pan y cereal | https://www.tabechoku.com/producers/29261 | 私たちは、長きにわたり野菜の卸売業・米の栽培等を行ってきましたが、ハーブの持つ力にみせられ、令和3年よりハーブの栽培・加工を開始しました。ま |
+| 高千穂ムラたび | 高千穂町 | Pan y cereal | https://www.tabechoku.com/producers/22601 | 高千穂ムラたびが社屋を構えるのは、神話の郷・高千穂町の秘境、秋元集落。人口約100人のいわゆる“限界集落”と呼ばれる土地で、お米の栽培とお米 |
+| 宮崎バナナのネクストファーム | 川南町 | Fruta y verdura | https://www.tabechoku.com/producers/22923 | 「陸の孤島」宮崎県の川南町で国産・無農薬のバナナを栽培していますネクストファームの内田と申します。先祖代々の土地の風化を止めたく、3年前より |
+| 綾町発！ゆういちの野菜 | 綾町 | Fruta y verdura | https://www.tabechoku.com/producers/26330 | 綾町は宮崎県のほぼ中央に位置し、総面積の80％が森林で占められる自然豊かな町です。私たち夫婦は27年前にこの地に新規就農し、現在は主に有機人 |
+| 奇日根 | 宮崎市 | ⚠ por decidir | https://www.tabechoku.com/producers/25445 | 宮崎県宮崎市でバラを生産している有限会社奇日根（くひね）です。 |
+| 山内ファーム（宮崎） | 小林市 | ⚠ por decidir | https://www.tabechoku.com/producers/20084 | 宮崎県小林市に山内ファームはあります。 |

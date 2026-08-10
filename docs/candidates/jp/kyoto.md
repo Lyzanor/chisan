@@ -111,3 +111,61 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | ラフインターナショナル (家守堂) | Kyoto | Cerveza | JBA | yamorido.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 
 **Ya integrado, no volver a proponer:** 澤井醤油本店, 黄桜 y 金鵄正宗 (matriz de 京都町家ビール) ya están en `kyoto.csv`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/kyoto.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/kyoto.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **13 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 亀屋良長 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.kameya-yoshinaga.com/ | 京都市下京区四条堀川町東入ル北側醒ヶ井角 |
+| 俵屋吉富 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.kyogashi.co.jp/ | 京都市上京区室町通上立売上ル |
+| 塩芳軒 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.kyogashi.com/ | 京都市上京区黒門通中立売上ル |
+| 尾張屋 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.honke-owariya.co.jp/ | 京都市中京区車屋町通二条下ル |
+| 鼓月 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.kogetsu.com/ | 京都市中京区旧二条通七本松西入ル |
+| 吉水園 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.yoshimizuen.jp | 京都市東山区三条通白川橋東3丁目夷町 157 |
+| 大原女家 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.oharameya.co.jp/ | 京都市東山区祇園町北側 248 |
+| 京都和菓子協会※現在準備中 | 京都市 | Dulces y repostería | 和菓子協会 | — | 京都市左京区二条通川端東入ル吉永町 271-1美よし菓舗内 |
+| 渡辺製菓株式会社 | 亀岡市 | Aperitivos | 全国米菓工業組合 | http://www.hozugawaarare.com | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 有限会社種茂商店 | 京都市 | Aperitivos | 全国米菓工業組合 | http://kyoto-tanemo.com | 米菓製造業（菓子卸等へ販売） |
+| 武中製菓株式会社 | 京都市 | Aperitivos | 全国米菓工業組合 | https://takenakaseika.shopinfo.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 有限会社藤澤永正堂 | 京都市 | Aperitivos | 全国米菓工業組合 | http://www.kuramaan.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社かなだや | 京都市 | Aperitivos | 全国米菓工業組合 | http://www.kanadaya.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/kyoto.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kyoto> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| にしまるふぁーむ | 京丹後市 | Pescado | https://www.tabechoku.com/producers/25825 | 京丹後市久美浜の砂地で野菜作りをしています。夏には、小玉スイカやカボチャを、秋にはトマトやさつま芋を、冬にはキャベツや人参を作っています。 |
+| カメダ | 京丹後市 | Pescado | https://www.tabechoku.com/producers/26372 | 京都府京丹後市で農業をしています。地元の農業法人で研修後、平成29年に独立。 日本海に面した京都府北部にある丹後地域は、メダカやコウノトリな |
+| 森井ファームのお茶 | 木津川市 | Té e infusiones | https://www.tabechoku.com/producers/20684 | 京都の南をゆったりと流れる木津川のほど近く、自然豊かな里山に森井ファームはあります。 |
+| -京野菜とお茶-ARISA GARDEN 京都 | 舞鶴市 | Té e infusiones | https://www.tabechoku.com/producers/24886 | 食べチョクアワード |
+| 戸川養鶏場 | 南丹市 | Carne | https://www.tabechoku.com/producers/20945 | 京都府のほぼ中央に位置し、京都市の北西にある"かやぶきの里"で知られる南丹市美山町で平飼いたまごの養鶏農家をしています。 |
+| 田歌舎 | 南丹市 | Carne | https://www.tabechoku.com/producers/26297 | 田歌舎の食料自給率は９割以上。通年お米や野菜は買わず1.5haの農地で育て、肉は猟で得た鹿や猪、育てた鴨を。春は野草に山菜、秋はキノコ。施設 |
+| 京茸（きょうたけ） | 京都市 | Setas | https://www.tabechoku.com/producers/25355 | 〜明日の食卓にも京茸でサプライズとハッピーを〜 |
+| きのこLAB | 京都市 | Setas | https://www.tabechoku.com/producers/3077875 | 京都市山科区にて菌床しいたけ、菌床きくらげの栽培を行っています。 |
+| ほたるの森 | 南丹市 | Miel | https://www.tabechoku.com/producers/3078403 | 自然豊かな京都府南丹市で、ニホンミツバチの養蜂をはじめました。群数は多くありませんので採蜜できる量はすくないですが、貴重で栄養満点の蜂蜜をど |
+| シュシュミエル | 宮津市 | Miel | https://www.tabechoku.com/producers/23285 | 神々の宿る天橋立で養蜂を家業とする2代目として、豊かな自然と清らかな水の里で国産天然蜂蜜を完熟のみ採取し、非加熱でお届けしています。 |
+| 山国さきがけセンター | 京都市 | Legumbres | https://www.tabechoku.com/producers/21483 | 私たちは、できるかぎり農薬や肥料を使わない、大豆づくり、米づくりを行っています。農業生産法人として地産地消を推進し、素材を生かした商品づくり |
+| 七人の侍 | 南丹市 | Legumbres | https://www.tabechoku.com/producers/24636 | 京都の丹波地域で、休耕田を活かした黒枝豆の栽培を行っているグループです。高齢化が進み耕作放棄地が増える中、１０年前、１人の農家と６人の仲間が |
+| 京美山・山椒農園  (内儀家) | 京都市 | Condimentos | https://www.tabechoku.com/producers/23693 | 京都・木屋町、ゆるやかな高瀬川のほとりで、 |
+| 祇園ちりめん山椒　ひさ伍 | 京都市 | Condimentos | https://www.tabechoku.com/producers/3077845 | 京都の大自然京丹波町で |
+| 青谷梅工房 | 城陽市 | Conservas | https://www.tabechoku.com/producers/22226 | 元小学校の教員です。自然保護活動の中で青谷梅林と出会いました。青谷にしか生産されない城州白という香りの良い質の良い梅があります。しかし農家は |
+| にちか | 綾部市 | Dulces y repostería | https://www.tabechoku.com/producers/3077669 | 毎日、子供たちに、安心して安全なおやつを食べてほしくて、作り始めたお菓子たちが『にちか』です。 |
+| 栗園大栗峠 | 綾部市 | Frutos secos | https://www.tabechoku.com/producers/28611 | 私は、京都府綾部市で丹波くりを栽培しています。 |
+| nouji-oomoto | 亀岡市 | Pan y cereal | https://www.tabechoku.com/producers/3078895 | 有機ＪＡＳを取得したお米を新規で販売中！　令和７年　京都府産　穴穂米　３キロ　５キロ　１０キロ　白米　玄米 |
+| イツジ農園 | 長岡京市 | Pan y cereal | https://www.tabechoku.com/producers/24611 | イツジ農園では、京都西山の地下水で栽培期間中農薬不使用・化学肥料不使用のお米を作っています。 都市近郊の稲作でも、美味しいお米を作りたい。 |
+| 今川農園 | 京丹波町 | Fruta y verdura | https://www.tabechoku.com/producers/3078726 | 京都府京丹波町で生まれ育ち、3代続くくり農家として現在父親に教わりながら修行中。 |
+| 京都大原　つくだ農園 | 京都市 | Fruta y verdura | https://www.tabechoku.com/producers/25 | つくだ農園は本物の有機農家。 |
+| ひろ農林 | 京都市 | ⚠ por decidir | https://www.tabechoku.com/producers/26282 | 京都市内から北西へ25㎞、自然豊かな京北町で農業と林業を営んでいます。 |

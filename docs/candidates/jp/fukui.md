@@ -77,3 +77,50 @@ Los dos complementos de Fukui proceden de la lista oficial municipal «ふくい
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/fukui.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 有限会社杉本清味堂 | 大野市 | Aperitivos | 全国米菓工業組合 | https://www.seimido.com | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
+| 株式会社吉村甘露堂 | 大野市 | Aperitivos | 全国米菓工業組合 | https://yoshimuraokaki.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 亀屋製菓株式会社 | 福井市 | Aperitivos | 全国米菓工業組合 | https://kameya-s.com | 米菓製造業（菓子卸等へ販売） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/fukui.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/fukui> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 瀬越水産　新盛丸 | 坂井市 | Pescado | https://www.tabechoku.com/producers/27295 | 【小さい船だからこそ、出来る技がある】 |
+| 魚屋の喰い処まつ田 | 福井市 | Pescado | https://www.tabechoku.com/producers/23694 | 福井県越前海岸で地魚と越前ガニを中心としたレストランと魚介類の販売をしています。身長189cm体重115キロの巨体を生かして自然の恵みを皆様 |
+| あまちゃん | 福井市 | Pescado | https://www.tabechoku.com/producers/27409 | 田舎で、採れたての魚介類の販売をはじめました。産地からの直送でしか味わえない、鮮度抜群の魚介類は絶品です！もうスーパーでは買えないかも（笑） |
+| 茂右衛門農場 | 鯖江市 | Pescado | https://www.tabechoku.com/producers/29269 | もうえもんでは環境をまもり身体にもやさしい特別栽培で、すべてのお米を子供を育てるように大切にそだてています。 |
+| 鯖江スマイルファーム | 鯖江市 | Pescado | https://www.tabechoku.com/producers/22562 | こんにちは、鯖江スマイルファームの五十嵐理（おさむ）です。農園名は、すべての人を笑顔にしたいという思いから名付けました。できる限り農薬を使わ |
+| サンビーフ齊藤牧場 | 坂井市 | Carne | https://www.tabechoku.com/producers/3078574 | 福井県越前三国の海岸からほど近い、のどかな農耕地区で和牛を肥育しています。 |
+| テトテヲ | 坂井市 | Carne | https://www.tabechoku.com/producers/20837 | 坂井市三国町の海の近くで福井県初の福地鶏約900羽を飼っています。またその卵「ふくたまご」を使い、加工品の製造もしています。 |
+| 昇竜 | 大野市 | Setas | https://www.tabechoku.com/producers/21269 | 私たちは、福井県大野市の和泉地区で特産の九頭竜まいたけを製造しております。皆様の豊かな食生活と食卓での笑顔のために、安心・安全で良品質な商品 |
+| こころファーム | 福井市 | Setas | https://www.tabechoku.com/producers/23132 | 乾燥シイタケや粉しいたけは全て手作りです。 |
+| 本多農園 | 勝山市 | Legumbres | https://www.tabechoku.com/producers/22998 | 福井県勝山市で稲作を中心に、蕎麦、大麦、大豆などを生産しています。 |
+| 晴レハレ農園｜走るコケ子の健康卵 | 永平寺町 | Huevos | https://www.tabechoku.com/producers/29342 | 🐓メルカリ卵で今話題！【晴れのち、もっと晴れ】のレモンイエローな放し飼い健康卵。ホッカホカの発酵飼料(10種類配合)と天然緑餌と谷川天然水で |
+| 滝本米　農園 | 勝山市 | Pan y cereal | https://www.tabechoku.com/producers/25557 | 滝本米 農園が大切にしていることは、 |
+| シマダ農園 | 小浜市 | Pan y cereal | https://www.tabechoku.com/producers/23859 | 代々受け継いだ水田で、コシヒカリなどの水稲を栽培しています。自社で栽培から精米・加工・出荷まですべてを行います。無洗米や真空少量パック詰めの |
+| ヤスノ農園 | 福井市 | Pan y cereal | https://www.tabechoku.com/producers/3078493 | 福井で30年、家族でお米を育てています。 |
+| 米農房そまねこ | 若狭町 | Pan y cereal | https://www.tabechoku.com/producers/27469 | ２０１４年、福井県若狭町の山の麓の棚田でお米の栽培を始めました。 |
+| 西農園 | 坂井市 | Fruta y verdura | https://www.tabechoku.com/producers/29409 | 私達は福井県坂井市に位置し、坂井北部丘陵地は県内最大の園芸産地です。とても良い土壌で栽培された梨園は樹齢50年以上。一年かけ慎重かつ大切に管 |
+| ゆみたか農園 | 坂井市 | Fruta y verdura | https://www.tabechoku.com/producers/29572 | ＼忙しい毎日を頑張っているあなたへ／ |
+| もんちゃん農園 | 福井市 | Fruta y verdura | https://www.tabechoku.com/producers/28017 | 子供がおいしい！って野菜を食べて育って欲しい、じゃあ夫婦で作ろうか。とはじめた農業。自然豊かな田舎、福井県で夫婦で農家してます。 |
+| 農園たや | 福井市 | Fruta y verdura | https://www.tabechoku.com/producers/23979 | ▶ 農園紹介 |
+| グリーンファームすみや | あわら市 | ⚠ por decidir | https://www.tabechoku.com/producers/26490 | 【福井県あわら市のグリーンファーム角屋、斎藤貴です。】 |
+| ターナーズファーム | 福井市 | ⚠ por decidir | https://www.tabechoku.com/producers/29444 | 令和6年１月１日に新規就農致しました。 |
+| 徳橋農場 | 鯖江市 | ⚠ por decidir | https://www.tabechoku.com/producers/23857 | こんにちは！徳橋農場です。 |

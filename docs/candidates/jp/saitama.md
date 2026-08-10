@@ -90,3 +90,54 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 
 **Ya integrado, no volver a proponer:** 弓削多醤油 y Coedo Brewery ya están en `saitama.csv`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/saitama.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/saitama.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **5 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 磯崎家本舗 | 越谷市 | Dulces y repostería | 和菓子協会 | http://www.okashiyasann.com/ | 越谷市蒲生茜町 8-16 |
+| 有限会社川野武次郎商店 | 宮代町 | Aperitivos | 全国米菓工業組合 | https://r.goope.jp/takejirou | 米菓製造・販売業（直売所有り）、米菓生地製造業・販売業 工場見学について 工場見学について 有限会社川野武次郎商店では、工場見学を開催しております。 詳細、お申込みは下記よりお問い合わせください。 工場名 本社工場 対象者 園児、小中学生等に限定 お問い合わせ・お申し込み先 本社 0480-35-1894 0480-35-1894 七福米菓製造所 |
+| 宮坂米菓株式会社 | 川越市 | Aperitivos | 全国米菓工業組合 | http://miyasakabeika.co.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社松崎米菓 | 深谷市 | Aperitivos | 全国米菓工業組合 | http://www.matsuzakibeika.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| ㈲三上製麺 | 所沢市 | Pan y cereal | 全乾麺 | https://www.mikami-s.co.jp/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/saitama.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/saitama> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 米農家りんご堂 | 春日部市 | Pescado | https://www.tabechoku.com/producers/3078044 | 元禄時代から先祖代々米作りを営んでおります。丁寧に子育てをするようにお米を作っています。食卓の笑顔のお供になるような美味しいお米をお届けした |
+| 鏡農園 | 深谷市 | Pescado | https://www.tabechoku.com/producers/29561 | 祖父の農業を引き継ぎ20代で就農し右も左もわからない状態から地元の先輩に助けられようやくここまでやってきました。弟2人も就農し、地元では鏡３ |
+| あかいし農園 | 熊谷市 | Pescado | https://www.tabechoku.com/producers/20100 | 実家が農家で、地元の特産野菜である大和芋を守っていきたいと思ったことと、子供が生まれて安心して食べられる、こだわりのある野菜を作りたいと思い |
+| 元狭山　友野園 | 入間市 | Té e infusiones | https://www.tabechoku.com/producers/25604 | 埼玉県入間市で茶園を持ち栽培から製造、販売を家族全員で行っています |
+| いるま鬼丸 | 入間市 | Té e infusiones | https://www.tabechoku.com/producers/20279 | 狭山茶の産地として有名な、埼玉県入間市にてにんにくの栽培をしています。 |
+| 池乃屋園 | 入間市 | Té e infusiones | https://www.tabechoku.com/producers/23808 | 江戸時代後期より狭山茶の販売をしております。 |
+| 森屋農場 | 小川町 | Carne | https://www.tabechoku.com/producers/25607 | 21年前に父から養鶏を引き継ぎました。 |
+| 村田農産 | 毛呂山町 | Setas | https://www.tabechoku.com/producers/21559 | 私はスーパーでなかなか見かけないようなしいたけを作りたく栽培を始めたのがきっかけです。 |
+| 塩谷農園 | 秩父市 | Setas | https://www.tabechoku.com/producers/26842 | 私たちは埼玉県秩父市のしいたけ農家です。 |
+| 彩Honey | さいたま市 | Miel | https://www.tabechoku.com/producers/22755 | わたしたちは埼玉県さいたま市にて養蜂を行っています。 |
+| 山﨑養蜂 | 川口市 | Miel | https://www.tabechoku.com/producers/3077743 | 埼玉県杉戸町で採蜜した安心の国産純粋はちみつをお届けします。 |
+| 塩原農園 | 本庄市 | Condimentos | https://www.tabechoku.com/producers/3077769 | 担い手不足や荒廃する農地を解消するため、30歳を期に脱サラし日々奮闘中。自由な発想で、いろいろな野菜づくりに挑戦しています。 |
+| ちちぶ丸山農園 | 秩父市 | Conservas | https://www.tabechoku.com/producers/21022 | ちちぶ丸山農園は土壌にとことんこだわり、「おいしいを通じて幸せと感動をお届けしたい」という想いで生産と加工品開発を行っています。 |
+| いちご家×栗原農園 | 吉見町 | Frutos secos | https://www.tabechoku.com/producers/3078638 | 埼玉県吉見町産。 |
+| カントリーファーム | 深谷市 | Pan y cereal | https://www.tabechoku.com/producers/24501 | ［自己紹介］埼玉県深谷市で女性一人農業をやっています😃　トラクターから収穫、出荷まで、毎日フル回転で頑張っています❣️ そんな私が作ったトウ |
+| 西田農園 | 熊谷市 | Pan y cereal | https://www.tabechoku.com/producers/21058 | ✨米・穀類【1位】受賞✨【栽培期間中農薬不使用コシヒカリ＆低農薬米】自然にも身体にも優しく美味しいお米をお届け出来ますよう【土づくり】にこだ |
+| Pino farm | 羽生市 | Pan y cereal | https://www.tabechoku.com/producers/24902 | 私たちは、最高級なお米や野菜を作り出したいというこだわりから2020年に脱サラをして家族で農業を始め、現在数種類のお米と野菜の生産販売を行っ |
+| 有機農家ないとう農園 | 伊奈町 | Fruta y verdura | https://www.tabechoku.com/producers/26303 | 「あんしん、あんぜん、おいしい」の一歩先へ。 |
+| 鈴木農園 | 加須市 | Fruta y verdura | https://www.tabechoku.com/producers/25321 | 樹齢20 年の幹からできるいちじくは、完熟ふわとろ　絶品です。 |
+| 管理栄養士が育てる固定種/在来種のお野菜・自然栽培ナチュベジ＊ウィル | 飯能市 | Fruta y verdura | https://www.tabechoku.com/producers/27227 | 「美味しさと生命力」を食卓へ |
+| 大野農場 | 川越市 | ⚠ por decidir | https://www.tabechoku.com/producers/21275 | わたしたち大野農場は、江戸時代より農業を生業としてきました。 |
+| 国分牧場 | 東松山市 | ⚠ por decidir | https://www.tabechoku.com/producers/28092 | 埼玉県東松山市で牧場を営んでいます。 |

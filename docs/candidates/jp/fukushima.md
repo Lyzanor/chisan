@@ -113,3 +113,69 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 清水産業 (猪苗代ビール) | Inawashiro | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/fukushima.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/fukushima.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+- Estado: **21 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 大正堂製菓 | いわき市 | Dulces y repostería | 和菓子協会 | https://www.instagram.com/taishodo1967/ | いわき市錦町江栗 2-31 |
+| みよし | いわき市 | Dulces y repostería | 和菓子協会 | https://j-miyoshi.jp/index.html | いわき市平谷川瀬 1-11-3 |
+| 玉家玉振堂 | 二本松市 | Dulces y repostería | 和菓子協会 | https://gtamaya.com/ | 二本松市竹田 1-77 |
+| 玉嶋屋 | 二本松市 | Dulces y repostería | 和菓子協会 | https://tamasimaya.com/ | 二本松市本町 1-88 |
+| 四季菓匠長岡家 | 会津坂下町 | Dulces y repostería | 和菓子協会 | https://www.wagashi-nagaokaya.jp/ | 河沼郡会津坂下町字逆水 23-2 |
+| 太郎庵 | 会津坂下町 | Dulces y repostería | 和菓子協会 | https://www.taroan.co.jp/ | 河沼郡会津坂下町福原前 4108-1 |
+| 熊野屋 | 会津若松市 | Dulces y repostería | 和菓子協会 | https://kumadango.net/ | 会津若松市日新町 12-23 |
+| 手づくり菓子工房 大野屋 | 桑折町 | Dulces y repostería | 和菓子協会 | https://r.goope.jp/ohnoya/ | 伊達郡桑折町本町 3 |
+| 日乃出屋物産店 | 猪苗代町 | Dulces y repostería | 和菓子協会 | http://www.oishisazukuri.com/ | 耶麻郡猪苗代町大字蚕養字沼尻山甲 2855-131 |
+| 白河菓匠大黒屋 | 白河市 | Dulces y repostería | 和菓子協会 | http://www.s-daikokuya.jp/ | 白河市中町 44 |
+| 船橋屋製菓 | 相馬市 | Dulces y repostería | 和菓子協会 | https://www.cestsibon.jp/funabashiya.html | 相馬市中村字大町 73 |
+| 福々和本舗 | 福島市 | Dulces y repostería | 和菓子協会 | https://fuku29.co.jp/ | 福島市松浪町 4-18 |
+| 松屋清風庵 | 福島市 | Dulces y repostería | 和菓子協会 | https://fukushima028.wixsite.com/matsuya-seihuan | 福島市北町 3-43 |
+| 柏屋 | 郡山市 | Dulces y repostería | 和菓子協会 | https://www.usukawa.co.jp/ | 郡山市富久山町久保田字宮田 127-5 |
+| 丹波家柿羊羹本舗 | 郡山市 | Dulces y repostería | 和菓子協会 | http://tadafuku.com/shop/tanbaya/ | 郡山市咲田 1-16-5 |
+| 郡山銘菓庵大黒屋 | 郡山市 | Dulces y repostería | 和菓子協会 | https://www.koriyama-daikokuya.com/ | 郡山市中町 14-8 |
+| お菓子処かど屋 | 郡山市 | Dulces y repostería | 和菓子協会 | https://r.goope.jp/kadoya-nakata/ | 郡山市中田町高倉字下ノ沢 84 |
+| かんのや | 郡山市 | Dulces y repostería | 和菓子協会 | https://www.yubeshi.co.jp/ | 郡山市西田町大田字宮木田 3 |
+| ㈱奈良屋 | 南会津町 | Pan y cereal | 全乾麺 | https://www.naraya-soba.com/ | 機械製乾めん |
+| 池田食品工業㈱ | 福島市 | Pan y cereal | 全乾麺 | http://menno-ikeda.co.jp/ | 機械製乾めん |
+| ㈱あらい屋製麺所 | 郡山市 | Pan y cereal | 全乾麺 | http://www.araiya.net/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/fukushima.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/fukushima> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| フェルムナチュレール・コクブン | 伊達市 | Pescado | https://www.tabechoku.com/producers/20430 | 私たちは福島県北地方の伊達市で自然型農業を営む農園です。「土と自然を豊かにすることが、人にも本当の豊かさと健康をもたらす。」を信条に、農薬や |
+| Bellファーム | 会津若松市 | Pescado | https://www.tabechoku.com/producers/3078656 | 福島県会津若松市。四方を山々に囲まれたこの盆地は、古くから日本屈指の米どころとして知られています。私たちの米作りを支えるのは、磐梯山から流れ |
+| おびすや | 相馬市 | Pescado | https://www.tabechoku.com/producers/3078559 | 福島県相馬市にある日本百景のひとつ「松川浦」から青のり佃煮をお届けします！ |
+| 須藤農彩園 | 郡山市 | Pescado | https://www.tabechoku.com/producers/24205 | 食卓が彩り豊かになるように！ |
+| HANA-MASA | 猪苗代町 | Carne | https://www.tabechoku.com/producers/28649 | 当社の位置する猪苗代町は福島県のほぼ中央、猪苗代湖の北岸に面し東西北の三方を会津磐梯山をはじめとする山々に囲まれた自然豊かな町です。当社は花 |
+| 会津猪苗代カンダファーム | 猪苗代町 | Carne | https://www.tabechoku.com/producers/29277 | 会津磐梯山と猪苗代湖に抱かれた猪苗代町で、水稲栽培を中心に営む農家です。 |
+| 肉の秋元本店 | 白河市 | Carne | https://www.tabechoku.com/producers/21221 | 「美味しいお肉で幸せをつくりたい」　福島県白河市の静かな里山で、豊かな大自然から湧き出た水を味わい、緑に抱かれた広々とした農場で豚たちはのん |
+| 浜福青果 | 福島市 | Setas | https://www.tabechoku.com/producers/3077708 | 私たちは2021年5月に無農薬・無科学肥料のしいたけ農園を立ち上げました。しいたけの香りを引き出し肉厚なぷりぷり食感を実現するために栽培方法 |
+| 滝桜湖養蜂 滝桜湖つみとりブルーベリー園 | 三春町 | Miel | https://www.tabechoku.com/producers/21208 | 元々はサラリーマンで休日に気分転換も兼ねて実家の養蜂業とブルーベリー園を手伝う程度の関わりでしたが、関わるほどにその奥深さと難しさお客様の感 |
+| 郡山あさか野養蜂場 | 郡山市 | Miel | https://www.tabechoku.com/producers/3078130 | みつばちを通して美しい自然環境と健康を |
+| おさんぽたまご | 伊達市 | Huevos | https://www.tabechoku.com/producers/29598 | ・『しあわせ山の おさんぽたまご』と申します。 |
+| グルテンフリーお米のパン工房穂鹿 | 天栄村 | Huevos | https://www.tabechoku.com/producers/27044 | 周りに山しかないよう山奥地で、農薬・肥料不使用(自然栽培）・天日干しでお米を栽培し，そのお米を100%使ってパンとお菓子を作っています。小麦 |
+| 三栗野むぎ農園 | 国見町 | Frutos secos | https://www.tabechoku.com/producers/28597 | 東京から福島県に移住し夫婦で農業を始めました。農場ネコ2匹をサブメンバーに野菜作りを楽しんでいます。 |
+| まるとう果樹園 | 国見町 | Pan y cereal | https://www.tabechoku.com/producers/3079118 | 福島県と宮城県の県境である国見町で約16品種のモモをメインに、現在３年目のブドウ、お米(コシヒカリ)、あんぽ柿を生産しております。 |
+| 西村農園 | 大玉村 | Pan y cereal | https://www.tabechoku.com/producers/23242 | 西村農園は安達太良山の麓に広がる肥沃な粘土質の土　澄んだ水自然豊かな農園です家族3人で減農薬減化学肥料で　コシヒカリ　こがねもち　福島県オリ |
+| 母の味　阿部農縁 あべのうえん | 須賀川市 | Pan y cereal | https://www.tabechoku.com/producers/24408 | 福島県須賀川市にある大正時代から四代続く農家です。看護師寺山佐智子が17年前に就農しました。　東日本大震災をきっかけに、法人化　株式会社阿部 |
+| 大野農園 | 石川町 | Fruta y verdura | https://www.tabechoku.com/producers/21306 | 1975年創業、「りんご・もも・なし・ぶどう」と果物専門に栽培する農園です。 |
+| まるせい果樹園 | 福島市 | Fruta y verdura | https://www.tabechoku.com/producers/27869 | はじめまして！ |
+| 菱沼農園 | 福島市 | Fruta y verdura | https://www.tabechoku.com/producers/20876 | 私たちは福島県福島市でさくらんぼ・桃・ぶどう・りんごの4品目の果物を栽培しております。 |
+| 桐の里産業 | 三島町 | ⚠ por decidir | https://www.tabechoku.com/producers/22557 | 三島町は福島県の西部に位置し、尾瀬を源流とする只見川沿いにある山間の町です。三島町の雄大な自然の中でエゴマを育てています。この地方で昔から作 |
+| 大和川ファーム | 喜多方市 | ⚠ por decidir | https://www.tabechoku.com/producers/26013 | 地域の景観を守り地域の自然と共存し地域の発展に寄与する。これが大和川グループの信念です。 |
+| アグリパークとみおか | 富岡町 | ⚠ por decidir | https://www.tabechoku.com/producers/3078744 | ～手間を惜しまない。だから、この一粒が輝く～ |

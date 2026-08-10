@@ -154,3 +154,70 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 丸勝産業 (はこだてビール) | Hakodate | Cerveza | JBA | hakodate-factory.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/hokkaido/hokkaido.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/hokkaido.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **21 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| はこだて柳屋 | 函館市 | Dulces y repostería | 和菓子協会 | http://hakodate-yanagiya.com/ | 函館市万代町 3-13 |
+| 新倉屋 | 小樽市 | Dulces y repostería | 和菓子協会 | http://www.hanazonodango.co.jp/ | 小樽市花園銀座街 |
+| 北の自然菓　柳月 | 音更町 | Dulces y repostería | 和菓子協会 | http://www.ryugetsu.co.jp/ | 河東郡音更町下音更北 9西18-2 |
+| 株式会社美好屋 | 札幌市 | Aperitivos | 全国米菓工業組合 | https://www.miyoshiya-mochi.com | 米菓製造・販売業（直売所有り） |
+| サザエ食品株式会社 | 札幌市 | Aperitivos | 全国米菓工業組合 | https://www.sazae.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
+| 吉川食品株式会社 | 砂川市 | Aperitivos | 全国米菓工業組合 | https://yoshikawafoods.co.jp/ | 米菓製造・販売業（直売所有り） |
+| 下館工房 | ⚠ | Carne | búsqueda dirigida + web propia | https://www.shimodate-koubou.jp/ | ⚠ municipio sin confirmar |
+| 薫製工房ハントヴェルク | ⚠ | Carne | búsqueda dirigida + web propia | https://handwerk-official.com/ | ⚠ municipio sin confirmar; cerdo whey de Tokachi |
+| 北海道千歳ハム | 千歳市 | Carne | búsqueda dirigida + web propia | https://www.chitoseham.co.jp/ | tienda de fábrica |
+| サルーミハヤシ | 札幌市 | Carne | búsqueda dirigida + web propia | https://www.salumihayashi.com/ | salami y embutido curado |
+| 六花亭製菓 | 帯広市 | Dulces y repostería | búsqueda dirigida + web propia | https://www.rokkatei.co.jp/ | ⚠ escala grande, triar |
+| 北菓楼 | 砂川市 | Dulces y repostería | búsqueda dirigida + web propia | https://www.kitakaro.com/ | ⚠ escala grande, triar |
+| 柳月 | 音更町 | Dulces y repostería | búsqueda dirigida + web propia | https://www.ryugetsu.co.jp/ | ⚠ escala grande, triar; sede en 河東郡音更町 |
+| 菅野養蜂場 | ⚠ | Miel | búsqueda dirigida + web propia | https://honeyfarm-kanno.com/ | ⚠ municipio sin confirmar |
+| ナルセ養蜂場 | ⚠ | Miel | búsqueda dirigida + web propia | https://naruse-bee.jp/ | ⚠ municipio sin confirmar; Tokachi |
+| 十勝養蜂園 | 上士幌町 | Miel | búsqueda dirigida + web propia | https://tokachiyohoen.com/ | ⚠ municipio tomado de la ficha, no de la web |
+| 札幌山本養蜂園 | 札幌市 | Miel | búsqueda dirigida + web propia | https://www.koguma-honey.com/ | dirección en `/company-information/` |
+| 藤井水産（鮭匠ふじい） | ⚠ | Pescado | búsqueda dirigida + web propia | https://fujiisuisan.co.jp/ | ⚠ municipio sin confirmar (Nemuro según la ficha, Betsukai en la web) |
+| 圓子水産 | 斜里町 | Pescado | búsqueda dirigida + web propia | https://marukosuisan.com/ | pescador de Shiretoko (Utoro) con planta propia; municipio resuelto con la ficha de 食べチョク |
+| 海産問屋カネニ | 広尾町 | Pescado | búsqueda dirigida + web propia | https://www.kaneni.com/ | ⚠ mayorista con marca propia, triar si elabora |
+| 佐藤水産 | 札幌市 | Pescado | búsqueda dirigida + web propia | https://www.sato-suisan.co.jp/ | salmón, ikura, sujiko; ⚠ sede en Sapporo y planta en Ishikari, confirmar unidad productiva |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/hokkaido/hokkaido.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/hokkaido> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 床岡農園 | 三笠市 | Pescado | https://www.tabechoku.com/producers/24843 | 床岡農園は、北海道でも有名な豪雪地帯、三笠市にあります。自然の恵みを十分に受けた広大な農地約30haで、お米を中心に、メロン、かぼちゃ、スイ |
+| 遠藤農園 | 千歳市 | Pescado | https://www.tabechoku.com/producers/22033 | 遠藤農園のお野菜いかがでしょうか？^o^ |
+| 岩村　雅弘 | 森町 | Pescado | https://www.tabechoku.com/producers/21398 | 北海道噴火湾森町で牡蠣とホタテを養殖しています。 |
+| 丸の野水産 | 羅臼町 | Pescado | https://www.tabechoku.com/producers/27483 | 北海道「知床」羅臼町の刺し網漁師を営んでる丸の野水産です。 |
+| まむふぁむ | 増毛町 | Carne | https://www.tabechoku.com/producers/29667 | NEW　鹿肉ジビエ、はじまりました。 |
+| えんどう畜産 | 士幌町 | Carne | https://www.tabechoku.com/producers/29478 | お客様の「心に残る」お肉をつくりたい。 |
+| ハッピープレイス | 島牧村 | Carne | https://www.tabechoku.com/producers/27199 | 北海道でオーガニックトマトの生産と、放し飼いで鶏を育てています。 |
+| 雪あかり | 鹿追町 | Carne | https://www.tabechoku.com/producers/26547 | 私たちは北海道十勝で家族で放牧養豚を営んでいます。 |
+| 渋田きのこ園 | 厚沢部町 | Setas | https://www.tabechoku.com/producers/20798 | 北海道のきれいな水と空気、適した環境のもと |
+| オフイビラ源吾農場 | 本別町 | Legumbres | https://www.tabechoku.com/producers/21479 | 北海道の十勝の本別町で、大豆、あずき、金時豆、小麦、じゃがいも などを育てています！ |
+| 鈴木牧場 | 広尾町 | Lácteos y quesos | https://www.tabechoku.com/producers/20321 | 十勝オーガニック牛乳 （有機・グラスフェッド・放牧・ノンホモ・低温殺菌・A2ミルク） |
+| 東山農場 | 栗山町 | Frutos secos | https://www.tabechoku.com/producers/21959 | 当農場は北海道夕張郡栗山町に位置する、夫婦二人で営む小さな農場です。北海道の雄大な自然の美しさに惚れ込み東京から移住後、栗山町でメロン栽培の |
+| エゾの杜 | 池田町 | Vino | https://www.tabechoku.com/producers/26238 | 北海道十勝にあるワインで有名な街、池田町にある会社です。「エゾシカ等解体加工処理施設」に認定されています。 |
+| うまいべ農園 | 中富良野町 | Pan y cereal | https://www.tabechoku.com/producers/22802 | 北海道中富良野町で小さい農家を営んでおります。栽培している作物はトウモロコシ、ミニトマト、米の３つです。 |
+| アグ・デ・パンケ農園 | 蘭越町 | Pan y cereal | https://www.tabechoku.com/producers/21409 | 北海道ニセコエリア　蘭越町で25年間無農薬の野菜を栽培、直販している農家です。 |
+| 原崎農園 | 鷹栖町 | Pan y cereal | https://www.tabechoku.com/producers/20244 | アスパラガスと色々な野菜と豆麦米・北海道鷹栖町の脱サラ農家（1代目） |
+| 富良野　加納農園 | 富良野市 | Fruta y verdura | https://www.tabechoku.com/producers/21619 | 北海道富良野市の赤肉メロン・アスパラ・とうきび・かぼちゃを栽培する農家です。 |
+| VEGGIEHILLS（ベジヒルズ） | 当別町 | Fruta y verdura | https://www.tabechoku.com/producers/21997 | 私たち夫婦は2019年に東京から北海道に移住し、2020年4月からここ当別町高岡の畑で野菜の栽培を始めました。この恵み豊かな自然に感謝しつつ |
+| 瀬戸牛農園 | 西興部村 | Fruta y verdura | https://www.tabechoku.com/producers/24269 | 瀬戸牛農園は、北海道のオホーツク海側にある⻄興部（にしおこっぺ）村にあります。 |
+| とくながファーム | 千歳市 | ⚠ por decidir | https://www.tabechoku.com/producers/23627 | 北海道の大自然の中で、両親と一つ一つ丁寧に育てています。 |
+| 玉手農場 | 留寿都村 | ⚠ por decidir | https://www.tabechoku.com/producers/20109 | 『大地を耕し笑顔を生み出す』 |
+| 野尻農場 | 音更町 | ⚠ por decidir | https://www.tabechoku.com/producers/3077638 |  |

@@ -141,3 +141,50 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 
 **Ya integrado, no volver a proponer:** 来福酒造 y 木内酒造 ya están en `ibaraki.csv`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/ibaraki.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **2 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| さ志まや製菓株式会社 | 境町 | Aperitivos | 全国米菓工業組合 | https://sashimayaseika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| ㈲西村製麺所 | 結城市 | Pan y cereal | 全乾麺 | https://yuki-udon.com/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/ibaraki.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/ibaraki> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 大川水産 | 潮来市 | Pescado | https://www.tabechoku.com/producers/27423 | こんにちは。大川水産の大川です。 |
+| 塙商店 | 笠間市 | Pescado | https://www.tabechoku.com/producers/29210 | 塙商店は、戦後の昭和２３年に米集荷業に参画したことから始まり、以後４代に渡って米流通業の老舗として従事してきました。 |
+| 涸沼川水産 | 茨城町 | Pescado | https://www.tabechoku.com/producers/21081 | 『食べチョクアワード水産物部門』 |
+| 松田製茶 | 八千代町 | Té e infusiones | https://www.tabechoku.com/producers/21731 | 松田製茶は茨城県の南西部に位置する八千代町で、特徴のあるおいしい猿島茶(さしま茶)を作るために、ブラックアーチ農法という独自の農法によりお茶 |
+| 山西牧場 | 坂東市 | Carne | https://www.tabechoku.com/producers/20303 | 一口で価値観が変わる【飲める脂】の豚肉をお届けします。 |
+| デーメテールの恵み｜烏骨鶏がいる農園 | 鉾田市 | Carne | https://www.tabechoku.com/producers/22053 | デーメテールの恵みは、茨城県鉾田市にある小さな実験農園です。 |
+| ミートセンター菊地畜産 | 鉾田市 | Carne | https://www.tabechoku.com/producers/21426 | 茨城県鉾田市の自然に囲まれた「菊地豚牧場」では、豚にとって快適な環境づくりを第一に、毎日顔を見て触れ、声をかけながら愛情を込めて育てています |
+| 七会きのこセンター | 城里町 | Setas | https://www.tabechoku.com/producers/23355 | 茨城県東茨城郡城里町（旧七会村地区）にて菌床きのこの生産及び販売をしております。 |
+| ハラキン | 鹿嶋市 | Setas | https://www.tabechoku.com/producers/28633 | 1976年に茨城県鹿嶋市でキノコの栽培をスタートしました。現在はブナシメジと生きくらげをメインに栽培しているキノコ一筋の会社です。特に生きく |
+| 野村商店 | つくばみらい市 | Legumbres | https://www.tabechoku.com/producers/24339 | "大豆もやし一筋"作り続けて５０年、三代に渡って変わらぬ味の襷を繋げ、創業以来初めてとなる一般販売を行います。 |
+| 永井農業 加宝地ほしいも | ひたちなか市 | Conservas | https://www.tabechoku.com/producers/21710 | わたしたち永井農業は明治より約１００年の干し芋作りの歴史があり、 今日でもお客様のニーズに応えられるよう土作りから始め形状、 甘さを追求し、 |
+| 常陸農園 | 常陸太田市 | Conservas | https://www.tabechoku.com/producers/24207 | 茨城県常陸太田市の自然豊かなで冷涼な気候の環境を利用して干し芋を作っています！ |
+| 甘藷農園　燈屋 | 石岡市 | Conservas | https://www.tabechoku.com/producers/26541 | 【焼き芋・干し芋を作りたい！】という長年の夢を叶えるべく【まずはさつまいもを作ろう！】という事で昨年、一からさつまいも作りに奮闘！ |
+| 岩田青果 | 八千代町 | Dulces y repostería | https://www.tabechoku.com/producers/24147 | 昔懐かし「プリンスメロン」と新鮮で甘味高い「とうもろこし」の生産、販売を行っております！ |
+| 果じゅまる園 | 石岡市 | Frutos secos | https://www.tabechoku.com/producers/27488 | 茨城県石岡市の広域認定農業者として妻と数名の従業員で果樹園を営んでおります。主に栗とフィンガーライムを生産しています。39歳の若手農家として |
+| ファームマロン | 笠間市 | Frutos secos | https://www.tabechoku.com/producers/23774 | 私たちは、６０歳代の熟年夫婦です。栗園では、栗栽培40年の経験を活かし、笠間ブランド栗生産者の一躍として、更に美味しい栗作りを目指しています |
+| パチャママ農園 | 下妻市 | Pan y cereal | https://www.tabechoku.com/producers/20202 | 農園名の「パチャママ」は南米アンデスの現地語で「母なる大地」を意味する言葉で、現地の先住民たちが昔から信仰している豊穣を司る大地の神です。 |
+| 酒詰農園 | 取手市 | Pan y cereal | https://www.tabechoku.com/producers/22170 | 我が家は元禄時代からの家系で先祖代々農業をしておりおよそ150年前から6世代にわたり米作りをしてきました。 |
+| オラソル農園 Hola Sol Hacienda | 古河市 | Fruta y verdura | https://www.tabechoku.com/producers/21523 | Hola Sol Hacienda オラ ソル アシエンダはスペイン語で、Holaは「こんにちは」Solは「太陽」Haciendaは「大農園 |
+| 茂賀屋 | 桜川市 | Fruta y verdura | https://www.tabechoku.com/producers/3077868 | 私たちは、茨城県桜川市で生産農家を営んでおります。 |
+| 岡野ブルーベリーガーデン | つくば市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077225 | 筑波山の麓に広がるつくば市で、約40年前から両親が育ててきたブルーベリーの苗木を引き継ぎ、定年退職後に夫婦で、安心安全で健康的なおいしいブル |
+| コロタファーム | 那珂市 | ⚠ por decidir | https://www.tabechoku.com/producers/29422 | 都内の飲食店で働いておりましたが、結婚を機に帰省し就農しました🧑‍🌾 |

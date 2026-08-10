@@ -83,3 +83,59 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | N-1 (254BeeeR) | Yokohama | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 
 **Ya integrado, no volver a proponer:** 熊澤酒造 (湘南ビール) y 黄金井酒造 (さがみビール) ya están en `kanagawa.csv` como `Sake`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/kanagawa.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/kanagawa.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **10 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 右京 | 小田原市 | Dulces y repostería | 和菓子協会 | http://www.ukyou.jp/ | 小田原市本町 4-3-29 |
+| 菓子匠　末広庵 | 川崎市 | Dulces y repostería | 和菓子協会 | http://www.suehiroan.co.jp/ | 川崎市川崎区東田町 3-16 |
+| 文明堂 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.yokohama-bunmeido.co.jp/ | 横浜市中区伊勢佐木町 4-114
+ライオンズプラザ伊勢佐木町通り 1F |
+| 磯子風月堂 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.h5.dion.ne.jp/~isofuu | 横浜市磯子区磯子 2-21-7 |
+| 御菓子司　名月 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.meigetsu.org/ | 横浜市金沢区六浦町 5-23-29 |
+| 銚子屋 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.choshiya.co.jp/ | 横浜市中区伊勢佐木町 7-150 |
+| ちもと | 箱根町 | Dulces y repostería | 和菓子協会 | http://yumochi.com/ | 足柄下郡箱根町湯本 509 |
+| 合資会社三河屋 | 厚木市 | Aperitivos | 全国米菓工業組合 | http://atsugimikawaya.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社美濃屋あられ | 横浜市 | Aperitivos | 全国米菓工業組合 | https://www.minoya-arare.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 有限会社三河屋 | 茅ヶ崎市 | Aperitivos | 全国米菓工業組合 | https://www.mikawaya.co.jp/ | 米菓製造・販売業（直売所有り） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/kanagawa.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kanagawa> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| カメーダ農園 | 横浜市 | Pescado | https://www.tabechoku.com/producers/27186 | 慶長時代より続く農家の18代目で、就農して24年になります。消費者の方々に喜んで頂けるようにと日々野菜作りに精進しております。 |
+| 勘網 | 横須賀市 | Pescado | https://www.tabechoku.com/producers/27630 | 神奈川県の相模湾で定置網漁業（小型）を行っています。 |
+| 鉄釜ひじき　海藻の房丸 | 横須賀市 | Pescado | https://www.tabechoku.com/producers/27682 | 創業70年。鉄釜ひじき、わかめ、昆布の養殖販売。神奈川県横須賀市の浦賀で家族で釣り船を営み、同時に鉄釜ひじきわかめ昆布の養殖をしています。期 |
+| 丸良水産 | 横須賀市 | Pescado | https://www.tabechoku.com/producers/20410 | 私は神奈川県横須賀市の走水という浜で海苔漁師をしています。 |
+| 【ジビエ総本家】小田原貴族ブランド | 小田原市 | Carne | https://www.tabechoku.com/producers/3078438 | #🍖今までの肉では物足りない本物を知るあなたへ🍖 |
+| くだかけ農園 | 山北町 | Carne | https://www.tabechoku.com/producers/3078860 | 神奈川県最後の秘境とも言われる西丹沢の山奥にある、一軒家の農家です。平飼い養鶏で卵を生産し、鶏糞を発酵させて野菜や米も生産しています。田畑は |
+| 有機農園けのひ | 愛川町 | Carne | https://www.tabechoku.com/producers/23483 | 神奈川県愛川町で有機農業を営む小さな農園です。露地で年間80種類くらいの野菜を育てる他、ひまわりの油を絞ったり、農園で採れた野菜をたっぷり使 |
+| みやじ豚 | 藤沢市 | Carne | https://www.tabechoku.com/producers/22147 | みやじ豚の宮治勇輔（みやじゆうすけ）です、こんにちは！ |
+| 永島農園 | 横浜市 | Setas | https://www.tabechoku.com/producers/21387 | 横浜市の南端、金沢区で椎茸と木耳の生産をしている永島太一郎と申します。 |
+| ぶるべの樹 | 相模原市 | Conservas | https://www.tabechoku.com/producers/21182 | 「ぶるべの樹」は、神奈川県でブルーベリーを生産、加工品製造・販売も行なう小さな農園です。６次産業化を主軸に、夏には期間限定でブルーベリー狩り |
+| さとくら農園 | 相模原市 | Conservas | https://www.tabechoku.com/producers/3078762 | 神奈川丹沢山麗の集落から元オーナーシェフの園主による野菜セットと加工品(準備を進めております)をご用意致します。里山暮らしの食の豊かさと、四 |
+| 佐野農園 | 伊勢原市 | Pan y cereal | https://www.tabechoku.com/producers/29222 | 神奈川県西部「大山(おおやま)」の麓で、安心安全を第一に米、果樹(梨，ブドウ)、野菜(筍)等を作っています。 小さな取組みが、少しずつでも、 |
+| 霜島農園 | 厚木市 | Pan y cereal | https://www.tabechoku.com/producers/26962 | 霜島農園の霜島邦夫です。神奈川県厚木市に直売所を構え、主にブドウ、その他お米やもち麦を皆様に提供しています。地域の皆様やお客様に支えられ今年 |
+| お米農家　曽我 | 小田原市 | Pan y cereal | https://www.tabechoku.com/producers/26947 | 酒匂川の流域で、先祖代々お米を栽培しています。 |
+| 渋谷ファーム | 藤沢市 | Pan y cereal | https://www.tabechoku.com/producers/23858 | 神奈川県藤沢市でトマト、きゅうり、ブロッコリー、お米、時々レタス、ほうれん草、ミディトマト、ミニトマトなどなど |
+| あすなろファーム | 小田原市 | Fruta y verdura | https://www.tabechoku.com/producers/21955 | 年退職後、素人から3000坪を有す敷地で梅の原種でクエン酸が豊富な杉田梅や野菜の栽培を20年近くやってきました。 |
+| 鈴也ファーム | 横須賀市 | Fruta y verdura | https://www.tabechoku.com/producers/20806 | フォルクスワーゲン車のディーラーを経て2011年に家業の農家を継ぎました。 |
+| 榎本農園 | 湯河原町 | Fruta y verdura | https://www.tabechoku.com/producers/23067 | 「違いの分かる、高品質なみかんを皆様の食卓に届けたい」 |
+| 子どもの野菜湘南藤沢農場 | 藤沢市 | Fruta y verdura | https://www.tabechoku.com/producers/22165 | 2014年に多摩市役所を定年退職する最後の一年に、小学校の総合学習で野菜の有機栽培の授業と給食事務を担当。丁度その頃調布市で児童が給食を食べ |
+| NO-RA ～農楽～ | 愛川町 | ⚠ por decidir | https://www.tabechoku.com/producers/21386 | 2009年に美しい河川と自然に囲まれた神奈川県愛川町で新規就農しました。 |
+| Kururu farm | 横浜市 | ⚠ por decidir | https://www.tabechoku.com/producers/22819 | Kururu farm |
+| ニッポンルーバス | 海老名市 | ⚠ por decidir | https://www.tabechoku.com/producers/28446 | 小さい頃から農業に関心をもって、大学では農学を学び、オランダやインドネシアへの農業留学を通じて、自らで農業をする決心をしました。小さい頃から |

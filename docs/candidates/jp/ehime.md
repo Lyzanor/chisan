@@ -88,3 +88,56 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 野中蒲鉾 | ⚠ Uwajima | Pescado | propia | — | じゃこ天 de prensado manual; confirmar identidad; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
 
 **Ya integrado, no volver a proponer:** 梅錦山川 ya está en `ehime.csv` como `Sake`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/ehime.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/ehime.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **7 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 一六本舗 | 松山市 | Dulces y repostería | 和菓子協会 | http://www.itm-gr.co.jp/ | 松山市東石井 1-2-20 |
+| 中野本舗 | 松山市 | Dulces y repostería | 和菓子協会 | http://www.usuzumi.co.jp/ | 松山市井門町 1331-1 |
+| 東陽製菓株式会社 | 西条市 | Aperitivos | 全国米菓工業組合 | http://www.touyouseika.jp/ | 米菓製造・販売業（直売所有り） |
+| 野中かまぼこ店 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.jakoten.co.jp/ | ⚠ municipio sin confirmar (Uwajima); じゃこ天 |
+| 井上蒲鉾本舗 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.e-jyakoten.co.jp/ | ⚠ la web devuelve 403 al bot (no es sitio muerto); municipio sin confirmar |
+| 河内屋蒲鉾 | 宇和島市 | Pescado | búsqueda dirigida + web propia | https://www.kawachiya1848.co.jp/ | じゃこ天; casa de 1848 |
+| おがた蒲鉾 | 西予市 | Pescado | búsqueda dirigida + web propia | https://www.ogata-kamaboko.co.jp/ | じゃこ天 |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/ehime.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/ehime> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 木嶋水産 | 伊方町 | Pescado | https://www.tabechoku.com/producers/26700 | 日本一細長い半島「佐田岬半島」で漁業を営んでいます。釜揚げしらす、ちりめんじゃこ、わかめ、その他魚介類の製造販売をしています。佐田岬のリアス |
+| NOT FARM | 八幡浜市 | Pescado | https://www.tabechoku.com/producers/3079048 | 愛媛県八幡浜市。100年以上の歴史を刻む老舗みかん農園から、NOTFARMは生まれました。確かな技術と伝統があるからこそ、私たちは「農家らし |
+| 松本功次（由良のアワビ屋） | 宇和島市 | Pescado | https://www.tabechoku.com/producers/23638 | 愛媛の宇和島市にある由良半島で主にアワビとヒオウギ貝の養殖を行っております【由良のアワビ屋】です。 |
+| 川原鮮魚 | 西予市 | Pescado | https://www.tabechoku.com/producers/26556 | 2021年、８月に、加工場を、立ち上げました。今までは、漁師だけをしていましたが、沢山の人に、 |
+| にのらく茶園　有機国産べにふうき専門 | 内子町 | Té e infusiones | https://www.tabechoku.com/producers/28007 | 日本生まれの美味しい紅茶品種「べにふうき」だけにこだわり、栽培から製茶まで自分たちで行う小さな農園です。20年前に畑を開いた時からオーガニッ |
+| ＴＯＹＯＫＥＮ | 今治市 | Carne | https://www.tabechoku.com/producers/28144 | 美味しい海賊卵（烏骨鶏卵）を召し上がっていただくため、鶏たちがストレスなく、より自然に近い環境で育つために放し飼い飼育を選択しました。 |
+| 大友農園 | 松山市 | Carne | https://www.tabechoku.com/producers/3078159 | 自己紹介させていただきます/えっと/大友農園の大友良介です/1976年生まれ兵庫県出身/水瓶座のO型です/高校卒業後上京して音楽ばかりやって |
+| 島馬ファーム瀬戸内 | 松山市 | Carne | https://www.tabechoku.com/producers/3078566 | 瀬戸内海の離島・中島で、動物（ポニー・山羊）とともに循環型農業を実践中です。 自家製馬糞堆肥で柑橘を大切に育てています。 かつて耕作放棄地だ |
+| 森の風 | 鬼北町 | Setas | https://www.tabechoku.com/producers/28654 | 豊かな自然が残る清流四万十川の愛媛県側の源流地域、鬼北町で育まれたえごま油と原木乾燥しいたけをご賞味ください |
+| シトラスベースひめまる | 伊方町 | Dulces y repostería | https://www.tabechoku.com/producers/3077649 | 私たちは、夫婦2人で日本一のミカン産地といわれる西宇和のなかでも最高の立地条件（全ての園地が南西向きで海抜150メートル以下）に恵まれた段々 |
+| メニークエスト | 西予市 | Dulces y repostería | https://www.tabechoku.com/producers/3077350 | 愛媛県は日本有数の和栗の産地。全国の老舗和洋菓子メーカーから絶大な評価を得ています。 |
+| GUILD Farm | 松山市 | Cerveza | https://www.tabechoku.com/producers/3077713 | 柑橘王国愛媛で、柑橘とお米を育てています。自然栽培で生産し、パックごはんや愛媛県産原料100%オーガニックビールなど、6次加工にも力を入れて |
+| まるき農園 | 今治市 | Pan y cereal | https://www.tabechoku.com/producers/29523 | 私たちは夫婦二人、愛媛県の大三島で農薬化学肥料不使用で旬のお野菜や柑橘、お米を栽培している農家です。ここ大三島の有機栽培野菜の美味しさに魅了 |
+| ethnic green farm廣川農園 | 東温市 | Pan y cereal | https://www.tabechoku.com/producers/20116 | 愛媛県でエスニック料理に使う野菜を中心にこだわりの有機肥料と菌を使い、露地栽培で年間1ヘクタールの畑で約40品目の野菜、米を栽培し全国の飲食 |
+| SUNNYSIDE FARM | 松山市 | Pan y cereal | https://www.tabechoku.com/producers/29052 | 愛媛県松山市窪野町・久谷町を中心に農薬・肥料・除草剤に頼らずお米やお野菜を栽培しています。農家の高齢化、担い手不足が問題となっている日本の現 |
+| 里居農園（さといのうえん） | 西予市 | Pan y cereal | https://www.tabechoku.com/producers/20790 | 地元、愛媛県で合計8ヘクタールほどの土地でお米とお野菜を年間40品目程度栽培しています。 |
+| えひめ　二宮果樹園 | 八幡浜市 | Fruta y verdura | https://www.tabechoku.com/producers/22586 | 愛媛県八幡浜市でかんきつを栽培している農家です |
+| 新口農園【みかん・柑橘グランプリ2026最高金賞受賞】 | 八幡浜市 | Fruta y verdura | https://www.tabechoku.com/producers/25606 | 愛媛県八幡浜市川上町。ここは、空・海・石垣からの「三つの太陽」が降り注ぐ、日本でも指折りの柑橘の聖地です。100年の歴史の中で磨き上げた新口 |
+| 吉本農園 | 愛南町 | Fruta y verdura | https://www.tabechoku.com/producers/18 | 小高い駄馬にある当園地では、たくさんの種類のみかんを栽培しています。 また、農林大臣賞という素晴らしい賞を頂くことが出来ました。 |
+| 四万十ミライ | 久万高原町 | ⚠ por decidir | https://www.tabechoku.com/producers/27748 | 食べチョクご利用の皆さまはじめまして |
+| OrangeStoreニノミヤ | 八幡浜市 | ⚠ por decidir | https://www.tabechoku.com/producers/21129 | ５年間で【９万８千件】を超えるご注文をいただいています。 |
+| ニノミヤファーム | 八幡浜市 | ⚠ por decidir | https://www.tabechoku.com/producers/22932 | 愛媛県八幡浜市から愛をこめて |

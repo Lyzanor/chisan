@@ -127,3 +127,58 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/yamagata.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/yamagata.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **9 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 杵屋 | 上山市 | Dulces y repostería | 和菓子協会 | http://www.kineya.co.jp/ | 上山市弁天 2-3-12 |
+| 乃し梅本舗　佐藤屋 | 山形市 | Dulces y repostería | 和菓子協会 | http://satoya-matsubei.com/ | 山形市十日町 3-10-36 |
+| 十一屋 | 山形市 | Dulces y repostería | 和菓子協会 | http://www.juichiya.co.jp/ | 山形市七日町 1-4-32 |
+| 木村屋 | 鶴岡市 | Dulces y repostería | 和菓子協会 | http://www.kimuraya.co.jp/ | 鶴岡市山王町 9-25 |
+| 株式会社モミの木 | 山形市 | Aperitivos | 全国米菓工業組合 | https://www.mominoki.gr.jp | 米菓製造業（菓子卸等へ販売） |
+| 蔵王米菓株式会社 | 村山市 | Aperitivos | 全国米菓工業組合 | https://zaou.co.jp/ | 米菓製造・販売業（直売所有り） |
+| 酒田米菓株式会社 | 酒田市 | Aperitivos | 全国米菓工業組合 | https://www.sakatabeika.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓生地製造業・販売業、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
+| ㈱卯月製麺 | 寒河江市 | Pan y cereal | 全乾麺 | https://ja-jp.facebook.com/uzukiseimen/ | 機械製乾めん |
+| 城北麺工株式会社 | 山形市 | Pan y cereal | 全乾麺 | http://www.yamagata-johoku.co.jp/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/yamagata.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/yamagata> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| アンスリーファーム | 寒河江市 | Pescado | https://www.tabechoku.com/producers/20966 | 平成29年･令和2年･令和3年、山形県さくらんぼ品評会にて山形県1位の農林水産大臣賞 |
+| いしまるファーム | 尾花沢市 | Pescado | https://www.tabechoku.com/producers/29290 | 私たちは夏すいか日本一の産地尾花沢ですいかを生産しています。 |
+| たむちゃん農園 | 遊佐町 | Pescado | https://www.tabechoku.com/producers/26804 | 2022年4月に新規就農したばかりの、たむちゃん農園田村と申します。ミニトマト、メロン、すいかを中心に栽培しています。11年、大田市場の仲卸 |
+| 上山観光フルーツ園 | 上山市 | Carne | https://www.tabechoku.com/producers/25212 | 山形県上山市の蔵王を見晴らす丘の上で、サクランボ、プラム、桃、ぶどう、りんご、梨を中心に多品目の果物を生産しています。 |
+| 漆山果樹園 | 南陽市 | Carne | https://www.tabechoku.com/producers/20865 | 漆山果樹園の歴史は80年以上続くぶどう専門農家です。デラウェアと高級ぶどう３０種類を栽培しています。常温乾燥機でドライフルーツや野菜の製造販 |
+| 平田牧場 | 酒田市 | Carne | https://www.tabechoku.com/producers/20661 | 私たち平田牧場は、品種開発や子豚生産、肥育から加工・流通・販売に至るまで、すべて自社で行っている会社です。 |
+| 山形の森と田園 | 西川町 | Setas | https://www.tabechoku.com/producers/20428 | 「山形の森と田園」は、東北南部山形県で育まれた天然山菜・天然きのこやそれらの加工食品、山ぶどう原液ジュースや四季折々の野菜・果物・お米等を全 |
+| すくすくやさい畑 | 鶴岡市 | Legumbres | https://www.tabechoku.com/producers/23991 | 山形県鶴岡市で米、だだちゃ豆（枝豆）、ねぎ、その他葉物野菜などを両親と作っています。 |
+| 農園　阿部惣右衛門 | 鶴岡市 | Legumbres | https://www.tabechoku.com/producers/3078700 | 和多志は山形県鶴岡市の出羽三山の麓で農業をしております。霊峰月山からの雪解け水などの恵みを受けて、お米や大豆・柿を栽培しています。 |
+| 苺屋佐藤 | 寒河江市 | Conservas | https://www.tabechoku.com/producers/27079 | 🍓夏いちご(夏秋いちご)の生産、いちごの加工品販売 |
+| 栗原果樹園 | 東根市 | Frutos secos | https://www.tabechoku.com/producers/23721 | ▶ご挨拶◀ |
+| 松栗 | 東根市 | Frutos secos | https://www.tabechoku.com/producers/20962 | 山形県東根市で”美味しい果物で笑顔を世界中に…”をスローガンに果樹栽培を行っております。 |
+| oboco grapes | 高畠町 | Vino | https://www.tabechoku.com/producers/29426 | 「oboco grapes」は、デラウェア、シャインマスカット等の大粒ぶどう、ワイン用ぶどうを栽培するぶどう専業農園です。 |
+| 山形ゆりあふぁーむ | 三川町 | Pan y cereal | https://www.tabechoku.com/producers/20670 | 山形県の米どころ庄内平野の三川町で、ゆかいな300匹の仲間（カモ）ともにつくる有機栽培のお米と、特別栽培米をつくる楽しい小さな農家です。規模 |
+| 儀三郎の無洗米 | 最上町 | Pan y cereal | https://www.tabechoku.com/producers/28384 | 山形県最上町、分水嶺のほど近く。 |
+| マルヘイ農園 | 米沢市 | Pan y cereal | https://www.tabechoku.com/producers/20000 | 私はこのお米を作っている専業農家の安部平左ェ門です。 |
+| 天童市　東海林農園 | 天童市 | Fruta y verdura | https://www.tabechoku.com/producers/29085 | 山形県天童市で果樹農家をしております |
+| 羽柴果樹園 | 東根市 | Fruta y verdura | https://www.tabechoku.com/producers/26048 | 山形県東根市で果樹園を経営しています。 |
+| まるたか果樹園 | 東根市 | Fruta y verdura | https://www.tabechoku.com/producers/20877 | はじめまして！まるたか果樹園です。 |
+| Farm おとらふ | 寒河江市 | ⚠ por decidir | https://www.tabechoku.com/producers/25319 | ----------------------------------------- |
+| あなたの食の帰る場所361° | 山形市 | ⚠ por decidir | https://www.tabechoku.com/producers/23621 | はじめまして！たくさんのページの中から、私たちのページにお越しいただきありがとうございます。 |
+| 渡部康貴（よそべい） | 鶴岡市 | ⚠ por decidir | https://www.tabechoku.com/producers/21139 | 與惣兵衛（よそべい）こと渡部康貴です。 |

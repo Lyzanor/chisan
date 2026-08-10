@@ -90,3 +90,66 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | Milks | Nagoya | Lácteos y quesos | ChFun | milks-cheese.com | revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
 | 南蔵商店 | ⚠ | Condimentos | Shokunin | — | el listado no publica municipio; revisado 2026-08-10: la ficha no publica municipio o contacto directo suficiente |
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/aichi.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/aichi.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **18 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 野田屋菓子舗 | 一宮市 | Dulces y repostería | 和菓子協会 | https://www.instagram.com/nodayakashiho/ | 一宮市今伊勢町馬寄呑光寺 4 |
+| 亀屋芳広 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www.kameya-yoshihiro.co.jp/ | 名古屋市熱田区伝馬 1-4-7 |
+| 美濃忠 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www.minochu.jp/ | 名古屋市中区丸の内 1-5-31 |
+| 両口屋是清 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www.ryoguchiya-korekiyo.co.jp/ | 名古屋市中区丸の内 3-14-23 |
+| 納屋橋饅頭　万松庵 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www.7884.co.jp/ | 名古屋市中区大須 2-6-11 |
+| 御菓子所　しらいし | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www5.ocn.ne.jp/~siraisi/ | 名古屋市千種区今池 4-10-17 |
+| 長寿園菓子舗 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www3.plala.or.jp/wagashi | 名古屋市昭和区菊園町 1-16 |
+| 山田餅本店 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www.yamadamochihonten.co.jp/ | 名古屋市瑞穂区瑞穂通 1-18 |
+| きよめ餅総本家 | 名古屋市 | Dulces y repostería | 和菓子協会 | http://www.kiyome.net | 名古屋市熱田区神宮 3-7-21 |
+| 備前屋 | 岡崎市 | Dulces y repostería | 和菓子協会 | http://www.bizenya.co.jp/ | 岡崎市伝馬通 2-17 |
+| お菓子処岩井本店 | 犬山市 | Dulces y repostería | 和菓子協会 | http://www.asahi-net.or.jp/~ea7m-iwi/ | 犬山市東古券 462 |
+| 松屋長春 | 稲沢市 | Dulces y repostería | 和菓子協会 | http://www14.ocn.ne.jp/~matsuya/ | 稲沢市小沢 3-13-21 |
+| 菊一あられ株式会社 | 一宮市 | Aperitivos | 全国米菓工業組合 | http://www.kikuichi-arare.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 宮部製菓株式会社 | 北名古屋市 | Aperitivos | 全国米菓工業組合 | http://www.miyabeseika.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓生地製造業・販売業 |
+| 合資会社三河屋本店 | 名古屋市 | Aperitivos | 全国米菓工業組合 | http://www.mikawayahonten.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社白木 | 名古屋市 | Aperitivos | 全国米菓工業組合 | http://www.arareya.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
+| 株式会社都あられ田口本舗 | 名古屋市 | Aperitivos | 全国米菓工業組合 | http://miyakoarare.shop3.makeshop.jp/ | 米菓製造・販売業（直売所有り） |
+| 竹新製菓株式会社 | 知多市 | Aperitivos | 全国米菓工業組合 | http://www.tatushin.co.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/aichi.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/aichi> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 第三久進丸 | 南知多町 | Pescado | https://www.tabechoku.com/producers/27326 | 愛知県で漁師をしてます。 |
+| 元氣のお裾分けbox。 | 豊橋市 | Pescado | https://www.tabechoku.com/producers/22036 | 愛知県東三河の子育て中の小さな農家が協力し合い自分達の子供に食べてもらいたいこだわりの詰まったお野菜、果物、お米などを生産販売しています。旬 |
+| こだわり農家のお蜜柑屋食べﾁｮｸ店 | 豊橋市 | Pescado | https://www.tabechoku.com/producers/28818 | 愛知県豊橋市にて、15種類以上の柑橘類を栽培、販売している柑橘専門の農業法人です。オリジナル配合の肥料を用いるなど、品種に合わせたこだわり栽 |
+| いしかわ製茶 | 豊田市 | Té e infusiones | https://www.tabechoku.com/producers/21989 | 開拓から一度も農薬を使用していない奇跡の茶園。煎茶・抹茶・碾茶製造販売。日本初のオーガニック抹茶農家です。 |
+| 下村畜産 | 大府市 | Carne | https://www.tabechoku.com/producers/3078000 | 初代が農耕用の牛飼いを始めた事をきっかけに、８０年あまりの歳月が流れました。三代に渡り最高品質の牛を育てるためにこだわっているのが「繁殖から |
+| 豊あぐり | 豊橋市 | Setas | https://www.tabechoku.com/producers/26605 | 愛知県豊橋市にある『菌床しいたけ』農家です。 |
+| 門脇 靖 | 名古屋市 | Miel | https://www.tabechoku.com/producers/27309 | 愛知県日進市で農業と養蜂を営んでいます。自分がまず食べたいと思うような、健康的で、美味しい蜂蜜と野菜をお届けしたいと思います。 |
+| 榎本はちみつベリーファーム | 豊川市 | Miel | https://www.tabechoku.com/producers/21367 | ブルーベリー栽培20年、養蜂歴19年。自分で搾った非加熱はちみつの美味しさに感動して農家の道へ。 |
+| 宮澤農園 | 武豊町 | Legumbres | https://www.tabechoku.com/producers/28804 | 本農園は2023年に食べチョク様から生落花生の販売を行わせて頂いております。2025年からは八朔、甘夏、国産グレープフルーツの販売も行わせて |
+| 神重農産 | 碧南市 | Legumbres | https://www.tabechoku.com/producers/21204 | 神重農産は、「元気になる野菜作り」をコンセプトに愛知県碧南市でを新玉ねぎ、にんじん、落花生を育てている農園です。 |
+| mama's農園 | 豊田市 | Legumbres | https://www.tabechoku.com/producers/24379 | クルマの街豊田市で、米・麦・大豆・野菜を生産しています。 |
+| サトウ | 弥富市 | Dulces y repostería | https://www.tabechoku.com/producers/28523 | 木曽川下流域の海抜０メートル地帯に畑を有し、豊富な地下水の恵みを受けながら、いちじく（ドーフィン・バナーネ）をはじめ、びわ（茂木・田中）、キ |
+| ぽんてり農園 | 豊田市 | Dulces y repostería | https://www.tabechoku.com/producers/26158 | 自家製ジャムの原料は、農薬等使用せずに出来た果物です。 |
+| 横江克也 | 豊田市 | Huevos | https://www.tabechoku.com/producers/20997 | 2011年に新規就農した横江夫妻です。豊田市（旧旭町）の山間地にして、有機野菜の栽培、名古屋コーチンの平飼い飼育、卵の加工品など、自分たちが |
+| サンビレッジ | 小牧市 | Destilados y licores | https://www.tabechoku.com/producers/22278 | 愛知県小牧市にある知的障がい者通所施設『サンビレッジ』の就労支援事業で農業を行っています。市内5か所の耕作放棄地で野菜に愛情を込め、手を掛け |
+| 清須ライスセンター | 豊橋市 | Pan y cereal | https://www.tabechoku.com/producers/21003 | 弊社は、もともとお米農家で、お米の生産から加工、販売まで一貫して行っています。私たちは山に近い米づくりの盛んな地区の田んぼで稲作を行っており |
+| ソーラー農園おばら未来ファーム | 豊田市 | Pan y cereal | https://www.tabechoku.com/producers/22143 | 父が栽培していた愛知・岐阜県境の中山間地にある希少な自然栽培のブルーベリー畑を夫婦で引き継ぎました。同時に周辺の耕作放棄地4,000平米を借 |
+| わいわいファーム | 豊田市 | Pan y cereal | https://www.tabechoku.com/producers/28101 | 愛知県豊田市旭地区は、きれいな水と自然に恵まれ、昼夜の寒暖差が大きいため、おいしいお米や野菜が育つ地域です。しかし高齢化、後継者不足、人口減 |
+| 自然野菜まきの | 常滑市 | Fruta y verdura | https://www.tabechoku.com/producers/3079054 | 愛知県の温暖な知多地域・常滑で「自然野菜まきの」は野菜を育てています。 |
+| とと農園 | 美浜町 | Fruta y verdura | https://www.tabechoku.com/producers/23623 | 〜「農」で「食」と「心」ととのう。〜 |
+| Berry＆Sun | 瀬戸市 | ⚠ por decidir | https://www.tabechoku.com/producers/27253 | 幼いころから、瀬戸市の自然豊かな町で育ち、植物や昆虫、野鳥などの生物はとても身近な存在でした。 |
+| パッチファーム | 田原市 | ⚠ por decidir | https://www.tabechoku.com/producers/20081 | 2015年4月、Patch Farm(パッチファーム)は始まりました。 |

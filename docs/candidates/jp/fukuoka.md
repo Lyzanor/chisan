@@ -109,3 +109,55 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 門司港レトロビール | Kitakyushu | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/fukuoka.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/fukuoka.php> (nombre, dirección y web propia de cada socio)
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **7 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 左衛門 | 古賀市 | Dulces y repostería | 和菓子協会 | http://www.saemon.jp/ | 古賀市鹿部 335-19 |
+| つか菓子舗 | 福岡市 | Dulces y repostería | 和菓子協会 | http://www2.plala.or.jp/tukakasiho/ | 福岡市中尾 3-4-5 |
+| 原口園（扶桑庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://haraguchien.co.jp/ | ⚠ la web mezcla Fukuoka y Yame: resolver la unidad productiva |
+| 山口製茶園（茶幸庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://www.chakouan.com/ | ⚠ municipio sin confirmar |
+| 牛島製茶 | 八女市 | Té e infusiones | búsqueda dirigida + web propia | https://www.yame.co.jp/ | 八女茶, 1921 |
+| 古賀製茶本舗 | 八女市 | Té e infusiones | búsqueda dirigida + web propia | https://koganoyamecha.co.jp/ | 八女茶 |
+| 浅野園 | 大牟田市 | Té e infusiones | búsqueda dirigida + web propia | https://www.asanoen.com/ | 製造直売 |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/fukuoka.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/fukuoka> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 川﨑果樹園 | 北九州市 | Pescado | https://www.tabechoku.com/producers/26096 | 園芸農家に生まれ自然と、身近な植物に、関心を抱きながら生活して来ました。小学生の頃、温室の天窓の開け閉めの手伝いをしていたことで、植物にとっ |
+| マサエイ水産加工 | 宗像市 | Pescado | https://www.tabechoku.com/producers/21079 | 食べチョクでアカモクを中心に出品しています！ |
+| オーガニックハーブ農園　Pala’au | 筑紫野市 | Pescado | https://www.tabechoku.com/producers/28391 | ハーバリストとして活動するにあたり、無農薬・化学肥料不使用で安心・安全なオーガニックハーブを提供したいと考え夫婦でハーブ農園を始めました。そ |
+| たつみ園 | 八女市 | Té e infusiones | https://www.tabechoku.com/producers/22353 | わたし達は福岡県南部に位置する自然が豊かな八女茶の本場上陽町で家族四人で営んでいる田舎のお茶屋です。清らかな水と豊かな自然に恵まれるこの地で |
+| グリーンワールド八女 | 八女市 | Té e infusiones | https://www.tabechoku.com/producers/21484 | 八女市は、福岡県南部、熊本県と大分県の県境に位置し、高級茶の八女茶の産地です。八女茶の栽培・加工から始まり、緑茶の製造技術の活かした大麦若葉 |
+| お茶の千代乃園 | 八女市 | Té e infusiones | https://www.tabechoku.com/producers/20127 | 福岡県八女市矢部村、標高600mの雪ふる山の中で有機栽培(オーガニック）でお茶作りを営む「千代乃園」です。農薬･化学肥料不使用で育てた八女茶 |
+| やまもり養鶏場 | うきは市 | Carne | https://www.tabechoku.com/producers/22408 | 当農場では鶏の健康・餌・環境、全てに妥協しない卵づくりを日々続けています🥚 |
+| 【博多黒毛和牛】あか村総本家 | 赤村 | Carne | https://www.tabechoku.com/producers/3077218 | 🍖市場になかなか出回らない🍖黒毛和牛専門『あか村総本家』 |
+| 博多すぎたけ商店（ドリームマッシュ） | 大木町 | Setas | https://www.tabechoku.com/producers/22849 | 福岡県大木町を拠点とする当社では、長年にわたり多種多様のきのこ栽培を行っており、きのこのパイオニアとして活動しております。また、野生の品種か |
+| K.ファーム | 糸島市 | Setas | https://www.tabechoku.com/producers/3078320 | 2024年10月に脱サラしてきくらげ栽培を始めました。 |
+| 須田養蜂場 | 豊前市 | Miel | https://www.tabechoku.com/producers/23375 | 福岡県豊前市で夫婦2人でやっています小さなハチミツ屋です。 |
+| よかもんいちご | うきは市 | Conservas | https://www.tabechoku.com/producers/23050 | 当園は、平成21年創業、福岡県南東部に位置するうきは市浮羽町でイチゴの生産、販売、観光農園（イチゴ狩り）、加工品の販売を営んでいます。 |
+| 丘の上ファーム | 宗像市 | Conservas | https://www.tabechoku.com/producers/24276 | 丘の上ファームと申します。何らかのハンディのある人を含め20人足らずの従業員で毎日明るく楽しくまた、真剣に皆でスプラウトにんにくを栽培してい |
+| 杏里ファーム | 柳川市 | Café | https://www.tabechoku.com/producers/23968 | 私たち杏里ファームは福岡県柳川市で魅力のある農業を目指し、マンゴーやパッションフルーツ、コーヒーなどの南国フルーツの栽培、それらのフルーツや |
+| やまんた農園 | 広川町 | Frutos secos | https://www.tabechoku.com/producers/22939 | 無農薬の美味しいみかんや栗を |
+| 能古島おがわ農園 | 福岡市 | Frutos secos | https://www.tabechoku.com/producers/21006 | 博多湾の能古島(のこのしま)という離島で、【ブルーベリー】と【ピーナッツもやし】を栽培しております。 |
+| うるう農園~福岡のいちご~ | 久留米市 | Pan y cereal | https://www.tabechoku.com/producers/22204 | 福岡県久留米市のいちご農園【うるう農園】です |
+| 白石アグリ | 遠賀町 | Pan y cereal | https://www.tabechoku.com/producers/29509 | はじめまして、私は福岡県遠賀町で50年以上米作りをおります。年齢は70歳を超えました。 |
+| 農業福島園 | 宗像市 | Fruta y verdura | https://www.tabechoku.com/producers/29244 | 高校進学とともに祖父母の後継ぎとして農家になることを決意しました。理由は、夏休みに遊びにいくと2時間も昼寝をしている祖父を見て「百姓ってこれ |
+| いりえさんちの野菜 | 那珂川市 | Fruta y verdura | https://www.tabechoku.com/producers/3077818 | 福岡市に隣接する水と緑の町、那珂川市で家内制手工業で農業を営んでおります。 |
+| 肉のたかむく | 柳川市 | ⚠ por decidir | https://www.tabechoku.com/producers/21540 | 2013年11月1日に会社設立。 |
+| オーガニックナガミツファーム | 糸島市 | ⚠ por decidir | https://www.tabechoku.com/producers/20007 | オーガニックナガミツファームは福岡県糸島市の認定農業者です。 |

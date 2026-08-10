@@ -28,6 +28,42 @@ fichero identifica la asociación o fuente concreta usada.
 > datos contradictorios, unidad productiva en otra prefectura o dominio secuestrado. No son
 > descartes automáticos y no deben incorporarse sin resolver primero el motivo anotado.
 
+> **Categorías infrarrepresentadas — 2ª pasada 2026-08-10:** **362 candidatos nuevos**
+> en **45 prefecturas**, todos `unverified` y todos fuera de sake y destilado. Las ocho
+> regiones quedan por encima de 20: Kansai 88, Chubu 79, Kanto 53, Tohoku 45,
+> Kyushu-Okinawa 28, Chugoku 25, Shikoku 23, Hokkaido 21. Tres directorios nacionales
+> hacen el grueso porque publican **nombre, dirección y web propia en la misma fila**,
+> que es lo que faltaba en la pasada de gremios: 全国和菓子協会 (dulce, 181),
+> 全国米菓工業組合 (senbei/arare, 77 tras filtrar por 業種) y 全国乾麺協同組合連合会
+> (fideo seco, 45). El resto son verticales buscados a mano donde no hay directorio:
+> pescado elaborado (じゃこ天, 宗田節, 蒲鉾, 海苔), té de Yame/Ureshino/Chiran,
+> 乾しいたけ de Oita, embutido y miel de Hokkaido. Detalle en la nota de cada prefectura.
+>
+> **Cruzar solo por dominio no basta.** El cruce por dominio cazó 12 ya publicados, pero
+> otros cuatro (安岡蒲鉾, 無茶々園, 三谷製糖, まえばら農園) estaban en el CSV con **otro
+> dominio de la misma casa** — `.co.jp` frente a `.com`, o `maebara-farm.jp` frente a
+> `maebarafarm.jp` — y solo salieron al cruzar por 社名 normalizado. Hacer las dos pasadas.
+
+> **Venta directa — 3ª pasada 2026-08-10:** **1.034 candidatos nuevos, 22 en cada una de
+> las 47 áreas**, de <https://www.tabechoku.com/producers/[prefectura]>. Es la primera fuente
+> japonesa encontrada que **generaliza por área sin ser un gremio de bebida**: cubre las 47
+> prefecturas con 51-96 productores cada una tras deduplicar, y da municipio completo. Reparto
+> por categoría: Pescado 169, Pan y cereal 147, Fruta y verdura 145, Carne 102, Setas 90,
+> Té 40, Legumbres 37, Miel 36, Conservas 32, Condimentos 29, y 121 sin clasificar.
+>
+> **Su techo es distinto al de un padrón, y por eso vale.** Es un mercado de venta directa:
+> prueba que el productor **vende hoy y vende él mismo**, que es justo lo que un registro no
+> prueba y lo que obliga a dejar filas en `parcial`. Lo que no da es el dominio propio —
+> el enlace es la ficha del mercado — así que cosechar dominio sigue siendo el paso previo
+> a cada alta. La categoría de esas tablas es **provisional**, inferida de la descripción.
+>
+> **Fuentes descartadas en esta pasada, para no repetir el intento:** `miso.or.jp`
+> (directorio de miso por prefectura, pero protegido con contraseña), `zenmi.jp` y
+> `soysauce.or.jp` (padrón solo para socios), 全豆連 (roster de 412 tofuerías en PDF, pero
+> sin municipio ni web y con cobertura muy desigual), ANKA (solo marcas nacionales),
+> el PDF de 6次産業化 de MAFF (`nintei-70.pdf`, 403 a cualquier cliente que no sea navegador)
+> y Wikidata por `P452` (menos de 70 empresas de alimentación con web en todo Japón).
+
 ## El gremio de bebida es la fuente que generaliza
 
 Para este barrido, **cada prefectura tiene un gremio de bebida alcohólica y

@@ -93,3 +93,50 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 
 **Ya integrado, no volver a proponer:** 薩摩酒造 ya está en `kagoshima.csv`; su cervecería de Makurazaki sería otra planta del mismo grupo.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/kagoshima.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 枦川製茶 | 南九州市 | Té e infusiones | búsqueda dirigida + web propia | https://chiran-cha.jp/ | 知覧茶, 自園自製 |
+| 仁田尾の知覧茶園 | 南九州市 | Té e infusiones | búsqueda dirigida + web propia | https://chirancha.jp/ | 知覧茶 |
+| 美老園 | 鹿児島市 | Té e infusiones | búsqueda dirigida + web propia | https://birouen.com/ | ⚠ casa de té con 140 años; comprobar que elabora y no solo vende |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/kagoshima.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kagoshima> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 昌徳丸 | 肝付町 | Pescado | https://www.tabechoku.com/producers/29410 | ニーズの高い大衆魚とは裏腹に、廃棄されることもある「未利用魚・低利用魚」がいることをご存じでしょうか？ |
+| 【8000万年の叡智】幻の甑島鮮魚 | 薩摩川内市 | Pescado | https://www.tabechoku.com/producers/3077554 | 【8000万年の叡智】天下の一流寿司チェーン『スシロー』が惚れ込む幻の甑島ブランド鮮魚 |
+| 【 村岡製茶 】知覧後岳銘茶 | 南九州市 | Té e infusiones | https://www.tabechoku.com/producers/23780 | ●知覧茶の中でも上級茶の産地とされる「後岳」 |
+| 知覧心茶堂 | 南九州市 | Té e infusiones | https://www.tabechoku.com/producers/20087 | 良品質である事。良心である事。 |
+| きくなが養鶏場 | 南九州市 | Carne | https://www.tabechoku.com/producers/22470 | 鳥刺し屋として創業40年・きくなが養鶏場では処理工程での安全と品質向上を図り独自の処理方法を確立してきました（吊り下げ式外剥ぎ）菊永方式。 |
+| 種子島夢まるGaRDeN | 西之表市 | Carne | https://www.tabechoku.com/producers/25842 | 2023年　〜食べチョクアワード畜産部門　✨第4位✨入賞〜 |
+| 鶴田養蜂場  (鶴田農園) | 指宿市 | Miel | https://www.tabechoku.com/producers/20842 | 鹿児島県指宿市で養蜂業を営む傍ら、フィンガーライムの栽培もしています。 |
+| 高野養蜂場 | 鹿児島市 | Miel | https://www.tabechoku.com/producers/20327 | こんにちは。温暖な鹿児島の地で養蜂を営んでます。4月〜5月初旬までレンゲ蜜を5月中旬〜6月中旬まで百花蜜を採取してます。 |
+| マルマメン工房 | 霧島市 | Legumbres | https://www.tabechoku.com/producers/62 | 私たちマルマメン工房は、鹿児島県霧島市霧島永水で農薬、化学肥料を使わず数種類の大豆や麦を栽培しています。 |
+| 上場高原ビーフ | 出水市 | Condimentos | https://www.tabechoku.com/producers/29105 | コスモスがきれいに咲き誇る里で黒毛和種の雌牛を550頭飼育しています。徹底した牛への健康管理を心掛け、15年かけて完成したオリジナル飼料の配 |
+| 三輪ファーム | 霧島市 | Conservas | https://www.tabechoku.com/producers/3078799 | 鹿児島県霧島市にて、バジルやその他の軟弱野菜を中心に農業を行っています。また、中山間地域の川原という地区で、自社で生産された作物をたっぷり使 |
+| トカラnanairo | 十島村 | Dulces y repostería | https://www.tabechoku.com/producers/23732 | 日本最後の秘境と言われ、無垢の自然が色濃く残るトカラ列島（鹿児島県鹿児島郡十島村）で栽培した農産物（国産バナナ、島らっきょう、パッションフル |
+| 自然放牧場　お多福たまご | 霧島市 | Huevos | https://www.tabechoku.com/producers/20160 | 餌・水・環境にとことんこだわり抜いた |
+| 田口　純弘 | 南九州市 | Café | https://www.tabechoku.com/producers/26038 | 鹿児島県南九州市の開聞岳の見える大自然の中で、ブルーベリーとフィンガーライム、コーヒーの栽培をしています。 |
+| さつまゆうすい農場　そのやま農園 | 湧水町 | Frutos secos | https://www.tabechoku.com/producers/29333 | 霧島連山の端っこ『栗野岳』を望む人口8,500人の小さな町ゆうすい町。 |
+| みしま焼酎　無垢の蔵 | 三島村 | Destilados y licores | https://www.tabechoku.com/producers/23582 | こんにちは、みしま焼酎 無垢の蔵 杜氏の坂元です。 |
+| 南九州ルバーブ農園 Red Sticks | 姶良市 | Pan y cereal | https://www.tabechoku.com/producers/26087 | 温暖な鹿児島で冷涼な気候を好むルバーブの栽培、特に国内では希少な赤いルバーブの栽培に力を入れております。青果だけでなく加工品の製造・販売も手 |
+| 久米村農園 | 霧島市 | Pan y cereal | https://www.tabechoku.com/producers/3078723 | 錦江湾の奥の日当たりの良い温暖な気候の福山町は昔から美味しいミカンの産地です。70年以上前から両親は素晴らしいみかんを育てており、幼い頃から |
+| うとさんち | 阿久根市 | Fruta y verdura | https://www.tabechoku.com/producers/23676 | 鹿児島県にて白いとうもろこし「雪やこんコーン」と、さつまいも「南国蜜芋」を栽培しています。 |
+| 中尾農園 | 鹿児島市 | Fruta y verdura | https://www.tabechoku.com/producers/21342 | 2013年から温室ハウス内でのシャインマスカットの栽培を始め、2020年の夏から食べチョク様で販売させていただいています、お客様の声を直にい |
+| さかうえ | 志布志市 | ⚠ por decidir | https://www.tabechoku.com/producers/22642 | さかうえは全スタッフの約半数が30代以下という第一次産業では珍しい企業体です。 |
+| 中園ファーム | 西之表市 | ⚠ por decidir | https://www.tabechoku.com/producers/3078353 | 先祖代々受け継いだ土地で農業に励んでいます。 |

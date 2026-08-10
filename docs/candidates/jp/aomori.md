@@ -81,3 +81,36 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | カネク醸造 (八戸ビール) | Hachinohe | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/aomori.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/aomori> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 新栄農場 | むつ市 | Pescado | https://www.tabechoku.com/producers/20860 | にんにくとすいかに本気！ |
+| 盛漁丸 | 中泊町 | Pescado | https://www.tabechoku.com/producers/26686 | 地元にて飲食店、底建網漁、素潜り漁をしています。 |
+| KANEHO | 大間町 | Pescado | https://www.tabechoku.com/producers/26918 | 本州最北端の大間で旬な魚介類、漁師直送の魚介類を加工、販売しています。 |
+| 釈迦のりんご園 | 平川市 | Pescado | https://www.tabechoku.com/producers/58 | ★☆りんご王国青森県でも県内１の品質で認められる「広船産りんご」★☆ |
+| ユウキファーム | 弘前市 | Pescado | https://www.tabechoku.com/producers/25493 | ユウキファームのりんご園地では「完熟」「美容」「感謝」と３つのこだわりをモットーとしており、ユウキファームオリジナルの収穫前日までりんごを実 |
+| LOCO-SIKIミート | 七戸町 | Carne | https://www.tabechoku.com/producers/21044 | 子豚生産から肥育豚出荷までの一貫生産しています。誕生から出荷まで同一腹の豚を同一の豚房で肥育しているので、ストレスが少ない健康な豚を育ててい |
+| おおわにシャモロックファーム | 大鰐町 | Carne | https://www.tabechoku.com/producers/3077535 | 私たちは、毎日食べるための鶏肉ではなく、「今日はちゃんとしたものを食べた」と記憶に残る一食を届けたいと考えています。 |
+| オーク牧場 | 田子町 | Carne | https://www.tabechoku.com/producers/26473 | 2020年に就農し、青森県の田子町（たっこまち）でにんにくと和牛の生産をしています。100％オーク牧場産の堆肥をふんだんに使った畑でにんにく |
+| さくらの杜　（さくらのもり） | 弘前市 | Setas | https://www.tabechoku.com/producers/24838 | 弊社はさくらの街で有名な青森県弘前市で、菌床栽培による生しいたけ、各種野菜、加工品の生産・販売をしております。自社ハウス内にて農薬不使用、適 |
+| しあわせj-Farm | 平川市 | Conservas | https://www.tabechoku.com/producers/26873 | 青森県平川市「しあわせj-Farm」は、「株式会社ジョイ・ワールド・パシフィック」が運営する農業生産部門で、いちごの通年生産、にんにくの生産 |
+| ツガルユキドケファーム | つがる市 | Pan y cereal | https://www.tabechoku.com/producers/27264 | 本州最北の平野、｢津軽平野」の土壌と気候を活かし、そして脈々と受け継がれてきた農業知識、その土台に新しい技術を融合させ、”青森はりんごだけじ |
+| グルメ通り　SHOP | つがる市 | Pan y cereal | https://www.tabechoku.com/producers/29622 | 青森県の西北部、津軽平野の西側に位置しておりますつがる市にて「にんにく、米、小麦」の栽培・加工及び販売をしております。 |
+| みっきいファーム | 五所川原市 | Pan y cereal | https://www.tabechoku.com/producers/3078593 | 就農して15年　妻と2人で美味しいお米を皆様にお届け出来るよう真心込めて日々農作業をしています |
+| たっちゃんちの食材 | 十和田市 | Pan y cereal | https://www.tabechoku.com/producers/29095 | 私たちは、青森県十和田市で主に、「にんにく」「ごぼう」「お米」を生産している農家です。 |
+| 權之丞 | 弘前市 | Pan y cereal | https://www.tabechoku.com/producers/27574 | 皆さんはじめまして！株式会社權之丞（ごんのじょう）と申します。私たちは、青森県弘前市でりんごとお米を栽培している農家です。私達は兄弟で父の跡 |
+| なんごうゆめファーム | 八戸市 | Fruta y verdura | https://www.tabechoku.com/producers/20165 | 農薬、化学肥料を一切使用せず、MOA自然農法に学び、こだわった野菜を販売しています。 |
+| 津軽農園 | 弘前市 | Fruta y verdura | https://www.tabechoku.com/producers/23597 | 当園はりんご生産量日本一を誇る青森県の、最もりんご栽培が盛んな津軽地方で親子三代80年近く続いている農園です。 |
+| もりやま園 | 弘前市 | Fruta y verdura | https://www.tabechoku.com/producers/23770 | 青森県弘前市で100年以上、りんごづくりを続けている「もりやま園」です。 |
+| 鎌田林檎園 | 黒石市 | Fruta y verdura | https://www.tabechoku.com/producers/22386 | 2020年9月よりこちらで販売スタートしまして、多くのお客様にご購入、リーピートしていただけて、心より感謝しております。 |
+| メルふぁーむ | つがる市 | ⚠ por decidir | https://www.tabechoku.com/producers/28589 | メルふぁーむのメルと申します。 |
+| 十三湖からの贈り物 | 五所川原市 | ⚠ por decidir | https://www.tabechoku.com/producers/3078329 | はじめまして！🚢 |
+| 未来丸 | 深浦町 | ⚠ por decidir | https://www.tabechoku.com/producers/3078215 | 深浦の海が好きすぎて、この海のものを全国に届けています。 |

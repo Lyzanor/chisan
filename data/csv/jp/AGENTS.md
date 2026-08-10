@@ -15,3 +15,5 @@
 ## Source ceilings
 - Prefectural alcohol guilds and national guild indexes can support listed identity, product type and municipality, but usually not the producer's domain, current activity or online sales; without a current direct source they normally cap verification at `parcial`.
 - SAKETIMES and user-supplied lists are discovery or supporting sources, not automatic admission.
+- National trade-guild member directories for non-alcoholic food (和菓子協会, 米菓工業組合, 乾麺協同組合連合会) publish name, street address and the member's own domain in one row, so they carry identity, municipality and product type further than the alcohol guilds. They still prove membership, not current activity or online sales.
+- 本場の本物 (`honbamon.com`) certifies a regional product and names only the sponsoring cooperative, never the individual makers. Use it to locate a vertical, then go to that cooperative for the member list.

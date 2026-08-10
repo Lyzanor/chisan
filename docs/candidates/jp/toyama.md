@@ -94,3 +94,54 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 宇奈月ビール | Kurobe | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/toyama.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/toyama.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **6 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 山岸ちまき本舗 | 氷見市 | Dulces y repostería | 和菓子協会 | http://www.chimaki-hompo.jp/ | 氷見市十二町 3799-2 |
+| 引網香月堂 | 高岡市 | Dulces y repostería | 和菓子協会 | http://www.hikiami.co.jp/ | 高岡市伏木湊町 1-1 |
+| 日の出屋製菓産業株式会社 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://www.hinodeya-seika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、その他（米菓を含むコメ加工品製造・販売等） |
+| 株式会社丸米製菓 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://maru-yonezo.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社赤坂柿山 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://www.kakiyama.com/ | 米菓製造・販売業（直売所有り） |
+| 株式会社北越 | 砺波市 | Aperitivos | 全国米菓工業組合 | https://hokuetu.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/toyama.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/toyama> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| メカニックファーム | 南砺市 | Pescado | https://www.tabechoku.com/producers/3078430 | 弊社は富山県南砺市で主にさつまいもを栽培しております。 |
+| 農家　信 | 南砺市 | Pescado | https://www.tabechoku.com/producers/27511 | はじめまして農家信代表の山腰です。私は干柿産地の有名な富山県南砺市で2021年に農家として独立し、あんぽ柿を生産、加工、販売をしております。 |
+| ″旨いを届ける″　聖徳丸 | 朝日町 | Pescado | https://www.tabechoku.com/producers/21261 | 天然の生簀＊富山湾で漁師をしている |
+| TOYAMA 8008 やおや | 富山市 | Té e infusiones | https://www.tabechoku.com/producers/21402 | 弊社は、造園屋さんや飲料メーカーなどから排出される枝草や茶カスなどの産業廃棄物を受け入れ、堆肥や培土を製造している会社です。 |
+| 悠牧豚 | 富山市 | Carne | https://www.tabechoku.com/producers/20666 | 北陸初、放牧型の養豚事業を夫婦でしています。農福連携事業の一環で設立、生産から販売、プロデュースも行っています。全国植樹祭の出展やANA国際 |
+| 富山福舞本舗 | 富山市 | Setas | https://www.tabechoku.com/producers/20415 | 私たちは富山県八尾町できくらげを菌床から国産にこだわり建屋内でハウス栽培を行い農薬薬品を使わず新鮮肉厚純国産きくらげを栽培しております。一つ |
+| 松田 　貴志 | 砺波市 | Setas | https://www.tabechoku.com/producers/28785 | 東京から富山へUターンをし、家業でもある170年以上の歴史ある富山県特産の「大門素麺」を継ぐ事にしました。しかし、「大門素麺」は冬のみしか作 |
+| 八百万屋（もりのわ） | 高岡市 | Setas | https://www.tabechoku.com/producers/22154 | きのこ栽培用の菌床製造から、きのこの栽培・販売を一貫体制で行っています。 |
+| ハニーオアシス | 小矢部市 | Miel | https://www.tabechoku.com/producers/21794 | 元々、兵庫県芦屋市にて、蜂蜜専門店を夫婦で営んでいましたが、こだわり抜いた蜂蜜を自ら採蜜するため、主人が一人、15年ほど前に富山に単身移住し |
+| 中山農産 | 高岡市 | Legumbres | https://www.tabechoku.com/producers/23183 | お米、ハトムギを中心に人参、里芋、枝豆、キャベツ、大根、エゴマなどの野菜を生産販売しています。 |
+| 速川活性化協議会 | 氷見市 | Conservas | https://www.tabechoku.com/producers/25756 | 平成27年に速川地区の活性化を目的に設立されたNPO法人です。主な活動としては、耕作放棄地を利用して年間10トンにも及ぶさつまいもの栽培や、 |
+| 富山のたまご屋　仁光園 (にこうえん) | 高岡市 | Huevos | https://www.tabechoku.com/producers/3077849 | はじめまして、富山のたまご屋 仁光園（にこうえん）です。 |
+| やまふじぶどう園 | 富山市 | Vino | https://www.tabechoku.com/producers/3078801 | 100年続く富山の葡萄園&ワイナリー。 |
+| FUNFARMのづみ野 | 富山市 | Pan y cereal | https://www.tabechoku.com/producers/20432 | わたしたちFUN FARM のづみ野は、富山市八尾町の自然豊かな山あいの中で、「おいしく、安心して食べられるということ」をテーマに米や野菜、 |
+| KOWA CO., LTD. | 富山市 | Pan y cereal | https://www.tabechoku.com/producers/3078529 | 富山で七代続く家族が中心の米農家です。 |
+| AGUMOGU | 富山市 | Pan y cereal | https://www.tabechoku.com/producers/3077292 | AGUMOGU(あぐもぐ)は、お客様が安心して食べられるお米を作り、健康と環境に優しい持続可能な農業に取り組んでおります。 |
+| 太田果樹園 | 富山呉羽の梨 | 富山市 | Fruta y verdura | https://www.tabechoku.com/producers/3079200 | 1980年頃に先代が開園した農園で、有機質肥料にこだわり呉羽梨を大切に育てています。当園の自慢は、樹上でじっくり甘みを引き出した「樹上完熟」 |
+| 氷見キウイランド | 高岡市 | Fruta y verdura | https://www.tabechoku.com/producers/3079140 | 2019年より富山県氷見市赤毛で土づくりから始め、10数種の特色のあるキウイフルーツの栽培をしております。自然への感謝と生産者の誇りを胸に、 |
+| bossa farm | 黒部市 | Fruta y verdura | https://www.tabechoku.com/producers/26528 | ボッサファームは立山連峰のミネラル豊富な水が流れる扇状地黒部市で、ぶどうの生産・加工・販売を行っている直売農家です。草を刈って肥料とする草生 |
+| 土遊野 | 富山市 | ⚠ por decidir | https://www.tabechoku.com/producers/20012 | 土遊野紹介動画 |
+| 竹田牧場 | 富山市 | ⚠ por decidir | https://www.tabechoku.com/producers/26572 | こんにちは！竹田牧場長の竹田です。 |
+| tateyama breeze | 立山町 | ⚠ por decidir | https://www.tabechoku.com/producers/28440 | 『毎日食べるものだからこそ安全・安心を』 |

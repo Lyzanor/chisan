@@ -211,3 +211,64 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 新保企画 (Strange Brewing) | Minamiuonuma | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 
 **Ya integrado, no volver a proponer:** エチゴビール ya está en `niigata.csv`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/niigata.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/niigata.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **15 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| かなざわ総本舗 | 上越市 | Dulces y repostería | 和菓子協会 | http://www.syutujin.com/ | 上越市稲田 4-11-5 |
+| 大阪屋 | 新潟市 | Dulces y repostería | 和菓子協会 | http://www.niigata-osakaya.com/ | 新潟市江南区大渕 1631-8 |
+| 小冨士屋 | 新潟市 | Dulces y repostería | 和菓子協会 | http://www4.ocn.ne.jp/~kofujiya/index.htm | 新潟市岩室温泉 576 |
+| 米百表本舗 | 長岡市 | Dulces y repostería | 和菓子協会 | http://www7.ocn.ne.jp/~kome100 | 長岡市大手通 1-3-2 |
+| 越乃雪本舗大和屋 | 長岡市 | Dulces y repostería | 和菓子協会 | http://www.koshinoyuki-yamatoya.co.jp/ | 長岡市柳原町 3-3 |
+| 阿部幸製菓株式会社 | 小千谷市 | Aperitivos | 全国米菓工業組合 | https://www.abeko.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓生地製造業・販売業 |
+| 竹内製菓株式会社 | 小千谷市 | Aperitivos | 全国米菓工業組合 | https://www.takeuchiseika.com/ | 米菓製造・販売業（直売所有り） |
+| 株式会社末広製菓 | 新潟市 | Aperitivos | 全国米菓工業組合 | https://www.suehiroseika.co.jp/ | 米菓製造業（菓子卸等へ販売） |
+| さくら製菓株式会社 | 新発田市 | Aperitivos | 全国米菓工業組合 | https://www.sakura-do.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社ブルボン | 柏崎市 | Aperitivos | 全国米菓工業組合 | https://www.bourbon.co.jp/ | 米菓製造業（菓子卸等へ販売） |
+| 株式会社新野屋 | 柏崎市 | Aperitivos | 全国米菓工業組合 | https://www.aranoya.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
+| 浪花屋製菓株式会社 | 長岡市 | Aperitivos | 全国米菓工業組合 | https://www.naniwayaseika.co.jp/ | 米菓製造業（菓子卸等へ販売） |
+| 有限会社山文 | 魚沼市 | Aperitivos | 全国米菓工業組合 | https://www.echigo-yamabun.com/ | 米菓製造業（菓子卸等へ販売）、その他（米菓を含むコメ加工品製造・販売等） |
+| ㈱玉垣製麺所 | 十日町市 | Pan y cereal | 全乾麺 | https://www.tsumarisoba.co.jp/ | 機械製乾めん |
+| ㈱松代そば善屋 | 十日町市 | Pan y cereal | 全乾麺 | http://www.matsudaisoba.co.jp/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/niigata.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/niigata> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| カニ直売所　弥吉丸 | 佐渡市 | Pescado | https://www.tabechoku.com/producers/26670 | 朱鷺の舞う島『新潟県佐渡島』で【浜茹で紅ズワイガニ】を生産しています。 紅ズワイガニを通じてお客様の食卓に笑顔をご提供できたらいいなという思 |
+| こまがた農園 | 南魚沼市 | Pescado | https://www.tabechoku.com/producers/22769 | 世界有数の豪雪地帯・新潟県南魚沼市。 |
+| ひらくの里ファーム | 南魚沼市 | Pescado | https://www.tabechoku.com/producers/26274 | 新潟県南魚沼市の五十沢地域に位置する「ひらくの里ファーム」です。「地域の未来を切り拓く」をテーマに農業から農村の持続可能な発展を目指していま |
+| うおぬま小岩農園 | 魚沼市 | Pescado | https://www.tabechoku.com/producers/28230 | 米処魚沼の山間で2000年からお米の減農薬・無農薬栽培を続けている農家です。 |
+| マリーズファーム | 魚沼市 | Pescado | https://www.tabechoku.com/producers/29641 | マリーズファームは、日本有数の豪雪地、新潟県魚沼市でブルーベリーとラズベリーを生産する果樹農園です。それまでほとんど取組例のなかった「ブルー |
+| ふくのまめ | 新潟市 | Té e infusiones | https://www.tabechoku.com/producers/29452 | 新潟市黒鳥は黒埼茶豆で有名なおいしい枝豆の産地です。早朝に収穫した枝豆をすぐに選別・冷蔵し、その日のうちに発送しています。6月下旬から10月 |
+| サンファーム泉 | 五泉市 | Carne | https://www.tabechoku.com/producers/24718 | 新潟県五泉市という緑豊かな街で、アロニアベリーという珍しい果実を無化学肥料栽培しております。使用する肥料も地元畜産農家の牛堆肥のみ使用してお |
+| 大地創造職人　反町敏彦 | 長岡市 | Setas | https://www.tabechoku.com/producers/21777 | 日本一の花火、新潟県長岡市で妻そしてスタッフと力を合わせ、お米とキノコを育てています。 |
+| 斎藤農園 | 阿賀町 | Setas | https://www.tabechoku.com/producers/26044 | 新潟県阿賀野川上流の奥阿賀地域で、一年を通してしいたけ、季節によりきくらげや原木まいたけ、栗などを栽培しています。 |
+| ふぁーむ 黒川 | 上越市 | Legumbres | https://www.tabechoku.com/producers/3079148 | 新潟県上越市の山に囲まれた自然豊かな環境で枝豆中心に野菜を栽培しています。 |
+| 自然栽培米の米屋　六花 | 三条市 | Pan y cereal | https://www.tabechoku.com/producers/23580 | 新潟県の中央部、粟ケ岳、守門岳を源流とする清流、五十嵐川、守門川からの雪解け水で自然栽培米の生産をしています。 |
+| 山本農園 | 南魚沼市 | Pan y cereal | https://www.tabechoku.com/producers/28133 | 上等なお米を作るために試行錯誤を重ね、現状に満足せず、常にお米のために力を注いできました。お米は繊細です。 |
+| 松井ファーム | 南魚沼市 | Pan y cereal | https://www.tabechoku.com/producers/3078422 | 名峰、越後山脈に連なる桂山の麓で有機栽培、特別栽培米の米作りをはじめ、 |
+| しみず農園 | 長岡市 | Pan y cereal | https://www.tabechoku.com/producers/29297 | 米どころ新潟県長岡市100年以上前から農業を営んでおります。 |
+| ライス | 長岡市 | Pan y cereal | https://www.tabechoku.com/producers/3078091 | 米どころ新潟のお米を生産している山間地の小規模農家です。食の安心・安全を目指しJAの指導を受け、減農薬栽培を心がけています。 |
+| 佐藤大農園 | 三条市 | Fruta y verdura | https://www.tabechoku.com/producers/23605 | 新潟県三条市で曽祖父の代から約135年間、茄子を作り続けてきた農園です。新潟県内では最も古くから丸茄子を作っています。 |
+| たかはし果樹園 | 加茂市 | Fruta y verdura | https://www.tabechoku.com/producers/27639 | たかはし果樹園は新潟県加茂市にある |
+| 桃川農園 | 村上市 | Fruta y verdura | https://www.tabechoku.com/producers/23416 | はじめまして、桃川農園の佐藤譲（さとう　ゆずる）と申します。 |
+| FISH VEGGIES - フィッシュベジ　食べチョク店 | 長岡市 | Fruta y verdura | https://www.tabechoku.com/producers/25211 | 私達は新潟県長岡市で、ミライの技術と言われているアクアポニックス農法を活用して国内で初めてお野菜の大量生産、通年生産に成功しました。 |
+| 小出農場 | 妙高市 | ⚠ por decidir | https://www.tabechoku.com/producers/23403 | 水、空気が美味しい事から新潟県妙高市関山に移り住んで約30年。 |
+| 三浦　麻鈴 | 小千谷市 | ⚠ por decidir | https://www.tabechoku.com/producers/28919 | 新潟県小千谷市育ちの三浦麻鈴といいます。 |
+| 農房　丸蔦食品　星義美 | 魚沼市 | ⚠ por decidir | https://www.tabechoku.com/producers/20600 | 「なす漬けがあればマンマいっくらでも食える」中学、同い年の従兄弟が言いました。 |

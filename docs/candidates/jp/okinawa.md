@@ -99,3 +99,50 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 石垣島ビール | Ishigaki | Cerveza | JBA | ishigaki-beer.com | revisado 2026-08-10: el dominio está secuestrado por contenido de casino y no hay fuente primaria actual utilizable |
 
 **Ya integrado, no volver a proponer:** ヘリオス酒造 ya está en `okinawa.csv` como `Destilados y licores`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/okinawa.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 与那覇食品 | ⚠ | Pan y cereal | búsqueda dirigida + web propia | https://yonaha.co.jp/ | ⚠ 中頭郡: falta el municipio concreto; 沖縄そば |
+| セイワ食品 | 浦添市 | Pan y cereal | búsqueda dirigida + web propia | https://mozukuudon.com/ | もずくうどん con mozuku de Iheya |
+| 西崎製麺所 | 糸満市 | Pan y cereal | búsqueda dirigida + web propia | https://www.nishizakimen.com/ | 沖縄そば y fideos de mozuku/yomogi |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/okinawa.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/okinawa> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| グインのアーサ | 伊是名村 | Pescado | https://www.tabechoku.com/producers/29559 | 沖縄本島北部の離島、伊是名島(いぜなじま)。夫婦ふたりでアーサの養殖をしています。アーサは和名を“ヒトエグサ”といい、薄くて柔らかく手のひら |
+| INOCCHIのもずく屋本舗 | 宮古島市 | Pescado | https://www.tabechoku.com/producers/22732 | 沖縄県宮古島でもずく養殖漁業を始めて、20年目の漁師です。皆さんに美味しいもずくをお届け致します。 |
+| 新鮮組 | 宮古島市 | Pescado | https://www.tabechoku.com/producers/26548 | 沖縄県宮古島でモズク養殖をメインに漁業を営んでいる新鮮組と申します！ |
+| 海ぶどう屋さん　富永養殖 | 糸満市 | Pescado | https://www.tabechoku.com/producers/21135 | 2014年から糸満市にある養殖場にて海ぶどうの養殖業を営んでおります。 |
+| 久米島赤鶏牧場 | 久米島町 | Carne | https://www.tabechoku.com/producers/22949 | 私たちの牧場は、自然豊かな沖縄県久米島の、海に臨むなだらかな山の麓に位置しています。 |
+| 伊集農園 | 八重瀬町 | Carne | https://www.tabechoku.com/producers/21170 | 伊集農園は初代が戦後、養豚、野菜、さとうきび栽培を中心に農業を始めました。現在マンゴー栽培を中心に、二代目と三代目のワンチームで質の高いマン |
+| 我那覇畜産 | 名護市 | Carne | https://www.tabechoku.com/producers/22102 | 私たちは、やんばる（沖縄北部）の恵まれた大自然の中で、やんばるのおいしい水と高品質な飼料、出荷するまでの間は健康で、幸せに愛情を掛けて育てた |
+| 命豚ふぁーむ | 沖縄市 | Carne | https://www.tabechoku.com/producers/21722 | 沖縄の大自然の中で丁寧に時間をかけて育てた「命豚」"ヌチブタ" |
+| みーぐる工房 | 伊江村 | Condimentos | https://www.tabechoku.com/producers/27313 | みーぐる工房は、沖縄県西部北部の本部港よりフェリーに乗船30分間の船旅青く美しい海に囲まれた自然豊かな一等一村の島伊江島で、海の恵みである「 |
+| シークヮーサーショップ | 大宜味村 | Condimentos | https://www.tabechoku.com/producers/22681 | 沖縄県の北部に位置する「シークヮーサーの里」大宜味村（おおぎみそん）のシークヮーサーを100%使った製品をお届けします。 |
+| みやぎ農園青果物出荷組合 | 南城市 | Huevos | https://www.tabechoku.com/producers/24047 | 沖縄の旬な野菜・果物、たまご、加工品をまとめて出荷している組合です。 |
+| INAHO FARM | 名護市 | Lácteos y quesos | https://www.tabechoku.com/producers/22246 | 沖縄のヤンバルにあるINAHO FARMです。我々は、東京ドーム35個分50万坪の広大な大自然の中で、全て無農薬で、養蜂、山地酪農、稲作、果 |
+| 久米総合開発 | 久米島町 | Pan y cereal | https://www.tabechoku.com/producers/20922 | 車海老の生産量日本一の産地、 |
+| 自然農園 MONSOON FARM & MUSIC | 南城市 | Pan y cereal | https://www.tabechoku.com/producers/28883 | わたしたち MONSOON FARM & MUSICは 沖縄県南城市にある家族経営の小さな自然農園です。 草も虫も敵とせず 米、バナナ、ハー |
+| 南の島の恵み農園 | 恩納村 | Pan y cereal | https://www.tabechoku.com/producers/22647 | 私達は沖縄県恩納村の真栄田岬で沖縄そば屋を経営しております。真栄田岬は神秘的に青く光り輝く青の洞窟がある事で有名な観光地です。青の洞窟ご当地 |
+| てぃーだふぁーむ | 今帰仁村 | Fruta y verdura | https://www.tabechoku.com/producers/24535 | 脱OLさんが、沖縄県で無農薬栽培に奮闘中。 |
+| ふるさとマンゴー農園 | 名護市 | Fruta y verdura | https://www.tabechoku.com/producers/28574 | 女性マンゴー農家。 |
+| 石垣島新鮮野菜きまぐれ〜kimagure〜 | 石垣市 | Fruta y verdura | https://www.tabechoku.com/producers/26913 | 石垣島にてパイナップルやマンゴー |
+| 畑人 | 糸満市 | Fruta y verdura | https://www.tabechoku.com/producers/3078505 | 沖縄県糸満市で農産物直売所を営みながら、野菜や果物を生産しております。 |
+| 志慶真ファーム | 今帰仁村 | ⚠ por decidir | https://www.tabechoku.com/producers/28702 | 沖縄本島北部。「やんばる」と呼ばれる未だ手付かずの自然が残る豊かな地域の一角にある村、今帰仁村。 |
+| イナミファーム | 名護市 | ⚠ por decidir | https://www.tabechoku.com/producers/26275 | 東京で35年間会社勤務をしておりました。 |
+| 西表ジャングルファーム | 竹富町 | ⚠ por decidir | https://www.tabechoku.com/producers/25055 | 世界自然遺産登録の西表島で、花卉園芸を中心に |

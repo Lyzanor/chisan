@@ -155,3 +155,66 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 明石ビール工房TOKI | Akashi | Cerveza | JBA | toki-akashi.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 
 **Ya integrado, no volver a proponer:** 白鶴酒造 ya está en `hyogo.csv`, así que 神戸ワイナリー sería otra fila del mismo grupo, no un alta nueva.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/hyogo.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/hyogo.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **17 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 春光堂 | 加古川市 | Dulces y repostería | 和菓子協会 | http://shunkodo.com/ | 加古川市加古川町寺家町 11-2 |
+| 藤江屋分大 | 明石市 | Dulces y repostería | 和菓子協会 | http://www.f-bundai.co.jp/ | 明石市本町 1-12-17 |
+| 亀井堂総本店 | 神戸市 | Dulces y repostería | 和菓子協会 | http://www.kameido.co.jp/ | 神戸市中央区元町通 6-3-17 |
+| 本高砂屋 | 神戸市 | Dulces y repostería | 和菓子協会 | http://www.hontaka.co.jp/ | 神戸市東灘区向洋町西 5-1 |
+| 常盤堂 | 神戸市 | Dulces y repostería | 和菓子協会 | http://tokiwado.jp/ | 神戸市東灘区御影中町 4-8-22 |
+| あおやま菓匠 | 芦屋市 | Dulces y repostería | 和菓子協会 | http://www.namagashi.com/ | 芦屋市呉川町 2-17 |
+| 芦屋柳月堂玉川 | 芦屋市 | Dulces y repostería | 和菓子協会 | http://www.ashiya-wagashi.com/ | 芦屋市大原町 9-1-0026 ラポルテ東館地下1階 |
+| 植垣米菓株式会社 | 加古川市 | Aperitivos | 全国米菓工業組合 | http://www.uegaki-beika.co.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 法楽屋高見製菓株式会社 | 加古川市 | Aperitivos | 全国米菓工業組合 | https://hourakuya.web.fc2.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓生地製造業・販売業、米菓販売業（その他菓子を含む卸・小売業） |
+| 合名会社アリモト | 加西市 | Aperitivos | 全国米菓工業組合 | https://www.ippuku.com/ | 米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
+| 株式会社サザエ食品 | 西宮市 | Aperitivos | 全国米菓工業組合 | http://www.sazae-shokuhin.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米穀粉製造・販売業、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
+| イトメン㈱ | たつの市 | Pan y cereal | 全乾麺 | https://www.itomen.com/ | 機械製乾めん |
+| カネス製麺㈱ | たつの市 | Pan y cereal | 全乾麺 | http://www.kanesuseimen.co.jp/ | 機械製乾めん |
+| 森崎製麺所 | 南あわじ市 | Pan y cereal | 全乾麺 | https://www.awajimen.com/ | 手延べ干しめん |
+| 高尾製粉製麺㈱ | 姫路市 | Pan y cereal | 全乾麺 | http://takaoseimen.co.jp/ | 機械製乾めん |
+| 東亜食品工業㈱ | 姫路市 | Pan y cereal | 全乾麺 | http://www.toafoods.co.jp/ | 機械製乾めん |
+| 田靡製麺㈱ | 姫路市 | Pan y cereal | 全乾麺 | https://www.tanabiki-seimen.com/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/hyogo.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/hyogo> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 鴨庄村のりょう農園 | 丹波市市 | Pescado | https://www.tabechoku.com/producers/20553 | 元々サラリーマンでしたが、農業研修を受け、令和元年に独立し兵庫県丹波市にて自然栽培で農業をしております。 |
+| 前拓水産 | 南あわじ市 | Pescado | https://www.tabechoku.com/producers/23340 | ほんとうに美味しいと感じたものだけを、漁師がお届けします。 |
+| 淡路ゆうき耕房 | 南あわじ市 | Pescado | https://www.tabechoku.com/producers/20699 | 納豆菌と運命の出会いから13年。試行錯誤を繰り返し、ようやく残留農薬検出せずの安心で美味しい玉ねぎを皆様にお届けする事ができました。 |
+| 里山ブルーベリー農園Wacca | 川西市 | Pescado | https://www.tabechoku.com/producers/3078544 | 兵庫県最東の川西市にある『里山ブルーベリー農園/カフェWacca』(ワッカ) です。私たちが農薬不使用で丹精込めて作った農産物でからだももこ |
+| 丹波篠山 細見農園 | 丹波篠山市 | Carne | https://www.tabechoku.com/producers/20352 | 私達は丹波篠山市で4代続く養鶏業と農業を行っております。 |
+| 丹波篠山　めぶき農房 | 丹波篠山市 | Carne | https://www.tabechoku.com/producers/23776 | 兵庫県丹波篠山市で農薬や化学肥料・畜産堆肥を使わずに１６種類の在来種大豆や小豆、丹波黒大豆枝豆や餅米を栽培しています。 |
+| 中田農園 | 淡路市 | Carne | https://www.tabechoku.com/producers/3077226 | 淡路島で祖父の代から50年以上、お米と玉ねぎの栽培と繁殖和牛を飼育しています。 |
+| 奥山ジビエ　IKUTO MEAT | 豊岡市 | Carne | https://www.tabechoku.com/producers/27101 | 奥山ジビエは兵庫県豊岡市の最南部に位置する小さな集落である奥山村で鹿肉、猪肉（ジビエ）の生産、販売を行っております。奥山の豊かな自然で育った |
+| Shinobee Honey | 宍粟市 | Miel | https://www.tabechoku.com/producers/22672 | はちみつ本来の香り、栄養を自然のままご提供するため、非加熱・無添加の身体が喜ぶ生はちみつをミツバチと二人三脚でつくっています。 |
+| シンフォニアファーム | 三田市 | Legumbres | https://www.tabechoku.com/producers/21639 | 【無施肥・無投薬の自然栽培農家】人と自然が共生する兵庫六甲山北側の里山で、多品目の野菜を、無施肥・無投薬（農薬肥料堆肥不使用）で栽培している |
+| JOURNEYTAIL-ｼﾞｬｰﾆｰﾃｲﾙ- 丹波篠山 | 丹波篠山市 | Legumbres | https://www.tabechoku.com/producers/29420 | 【黒枝豆はやっぱり本場丹波ささやま！】 |
+| 七代目藤岡農場 | 多可町 | Legumbres | https://www.tabechoku.com/producers/23755 | 自然豊かな町、兵庫県多可郡多可町で農業を営んでおります20代若手農家の藤岡です。【山田錦】酒米、にんにく、【丹波黒】大豆・枝豆を中心に栽培し |
+| 折鶴 | 宝塚市 | Conservas | https://www.tabechoku.com/producers/3077771 | 巣箱の管理から採蜜・発酵・瓶詰めまで。全ての工程を1人で丁寧に行っています。 |
+| 丹波篠山ファームMaegawa | 丹波篠山市 | Pan y cereal | https://www.tabechoku.com/producers/23990 | 丹波篠山市の山すそでひっそりと農業やってます(^^)メインはコシヒカリ・黒豆・メロン、丹波篠山育ちのイタリア野菜などです♪ゆる〜い感じで楽し |
+| Hope Will 淡路島 | 南あわじ市 | Pan y cereal | https://www.tabechoku.com/producers/20748 | 淡路島でお米と露地野菜(レタス類、玉ねぎ、キャベツ、ブロッコリー、青ネギ)を栽培しています。 |
+| あいファーム | 南あわじ市 | Pan y cereal | https://www.tabechoku.com/producers/3079097 | 私たち「あいファーム」は、淡路島の豊かな自然に囲まれた畑で、たまねぎをとお米を育てています。 |
+| 農園くるり | 三木市 | Fruta y verdura | https://www.tabechoku.com/producers/24774 | 新規就農11年目を迎えます。 |
+| 淡路島の玉ねぎ屋さん〜KR.vegetable〜 | 南あわじ市 | Fruta y verdura | https://www.tabechoku.com/producers/21100 | 私たちは、大量生産ではなく、１玉１玉に価値のある玉ねぎを提供することにこだわっています。土作りから肥料などにもこだわり、一般的な玉ねぎ生産に |
+| あさひサンファーム | 南あわじ市 | Fruta y verdura | https://www.tabechoku.com/producers/23569 | たまねぎの生産地として有名な淡路島南部・南あわじ市で代々たまねぎ農家を営んでいます。 |
+| 丹波篠山 ひなたファーム | 丹波篠山市 | ⚠ por decidir | https://www.tabechoku.com/producers/20037 | 丹波篠山市は、兵庫県の中部地域、京都、姫路、神戸、大阪からほぼ1時間前後に位置する盆地です。 |
+| とまとや中村阮 | 稲美町 | ⚠ por decidir | https://www.tabechoku.com/producers/23397 | とまと好きの |
+| むらおか夢アグリ | 香美町 | ⚠ por decidir | https://www.tabechoku.com/producers/28701 | ▼紹介▼ |

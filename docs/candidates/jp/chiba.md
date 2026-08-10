@@ -83,3 +83,53 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 
 **Ya integrado, no volver a proponer:** 寒菊銘醸 ya está en `chiba.csv` como `Sake`; 九十九里オーシャンビール sería otra fila del mismo obrador.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/chiba.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/chiba.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+- Estado: **5 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| ささや | 千葉市 | Dulces y repostería | 和菓子協会 | http://www.k-sasaya.jp | 千葉市稲毛区緑町 1-24-2 |
+| もりしん | 千葉市 | Dulces y repostería | 和菓子協会 | http://www.morishin-chiba.com | 千葉市若葉区みつわ台 2-10-16 |
+| なごみの米屋 | 成田市 | Dulces y repostería | 和菓子協会 | http://www.nagomi-yoneya.co.jp/ | 成田市上町 500 |
+| 房洋堂 | 館山市 | Dulces y repostería | 和菓子協会 | http://www.boyodo.co.jp | 館山市安布里 780 |
+| 茂野製麺㈱ | 鎌ヶ谷市 | Pan y cereal | 全乾麺 | https://www.shigeno.co.jp/ | 機械製乾めん |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/chiba.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/chiba> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 東京湾水産 | 富津市 | Pescado | https://www.tabechoku.com/producers/20925 | 漁師一筋38年！ |
+| 不動丸 | 旭市 | Pescado | https://www.tabechoku.com/producers/20417 | 千葉県九十九里浜最東端の旭市で漁師をさせて頂いております、不動丸・遠藤です。 |
+| 鈴常丸 | 船橋市 | Pescado | https://www.tabechoku.com/producers/22463 | 千葉県船橋市で貝捲き漁師をしてます鈴木と申します。 |
+| ジェリービーンズ | 多古町 | Carne | https://www.tabechoku.com/producers/24550 | 消費者が安心して口にできる、おいしい豚肉を届けたい。 |
+| 戸辺養鶏場 | 野田市 | Carne | https://www.tabechoku.com/producers/23733 | 戸辺養鶏場は昭和33年（1958年）より、千葉県野田市で運営しています。 |
+| 豊受きのこ園 | 我孫子市 | Setas | https://www.tabechoku.com/producers/25605 | 千葉県我孫子市で千葉県産菌床しいたけ栽培をしています豊受きのこ園です。 |
+| きのこ屋でんべえ | 旭市 | Setas | https://www.tabechoku.com/producers/20616 | 千葉県北東部の旭市でマッシュルームを栽培しています。 |
+| ハチミツさん | いすみ市 | Miel | https://www.tabechoku.com/producers/21957 | 私たちは2015年にミツバチと出会い、ミツバチ自体の可愛さ、ミツバチ社会の不思議さ、飼育の面白さ、奥深さ、そして自然の蜂蜜の美味しさに魅了さ |
+| ONE DROP FARM | 市原市 | Miel | https://www.tabechoku.com/producers/3077998 | 千葉県市原市の里山ではちみつと有機野菜を生産しています。 |
+| 留守農場 | 八街市 | Legumbres | https://www.tabechoku.com/producers/22946 | 落花生の産地である、千葉県八街市にて親子3代にわたって年間60種類の野菜を生産しています。 |
+| 大倉モーモー農園 | 千葉市 | Legumbres | https://www.tabechoku.com/producers/3078158 | 千葉市の自然豊かな地で、牛の堆肥を使った土作りにこだわり、生育には農薬を使わずに落花生を育てています。 |
+| ヤマハン | 旭市 | Legumbres | https://www.tabechoku.com/producers/28505 | 千葉県旭市で落花生の卸問屋を営んでいます。 |
+| 漬物工房彩 | 香取市 | Conservas | https://www.tabechoku.com/producers/24128 | (株)漬物工房彩は、10年前に設立した千葉県香取市の漬物加工を営む農場及び食品製造会社です。食を扱う企業として「安心、安全、高品質な商品をお |
+| 輝農塾 | 千葉市 | Pan y cereal | https://www.tabechoku.com/producers/23284 | 千葉市緑区にて、お米の栽培をしております。 |
+| ののま自然農園 | 君津市 | Pan y cereal | https://www.tabechoku.com/producers/20073 | 千葉県君津市にて、不自然でない暮らしを目指して農薬や肥料を使わずに野菜やお米を栽培しています。 |
+| ラグエルジャパン | 市原市 | Pan y cereal | https://www.tabechoku.com/producers/29583 | 【高滝湖ブルーベリー】湖畔にすむ小さな妖精の物語（ラグエルジャパンブランド） |
+| ベジLIFE!! | 我孫子市 | Fruta y verdura | https://www.tabechoku.com/producers/73 | 野菜を通じて“人生を素晴らしいモノにしませんか？”そんな意味を込めて『ベジLIFE!!』という農園を始めました。 |
+| 和か葉農園 | 野田市 | Fruta y verdura | https://www.tabechoku.com/producers/29215 | オーガニック野菜を中心に栽培しています！ |
+| こもれび果実 | 鎌ヶ谷市 | Fruta y verdura | https://www.tabechoku.com/producers/3079015 | 2025年から千葉県 鎌ケ谷市にて梨の生産・販売をスタートさせました。 |
+| アグリヨシノ | 八街市 | ⚠ por decidir | https://www.tabechoku.com/producers/26865 | ◆お客さまへのごあいさつ◆ |
+| おかざきファーム | 南房総市 | ⚠ por decidir | https://www.tabechoku.com/producers/25506 | 2020年より夫婦で農業を始めました。 |
+| ksfarm | 白井市 | ⚠ por decidir | https://www.tabechoku.com/producers/22632 | 食べチョク3年目 |

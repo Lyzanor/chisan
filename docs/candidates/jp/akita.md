@@ -110,3 +110,55 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | あきた野ワイナリー (森吉山ファーム) | ⚠ | Vino | JWA | — | el índice no publica municipio; revisado 2026-08-10: la ficha institucional no aporta contacto o web primaria suficiente para verificar actividad actual |
 
 **Ya integrado, no volver a proponer:** 浅舞酒造 ya está en `akita.csv` como `Sake`.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/akita.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/akita.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **7 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 木村屋商店 | 横手市 | Dulces y repostería | 和菓子協会 | http://www.chuokai-akita.or.jp/okasi/kimuraya/ | 横手市大町 5-23 |
+| 三松堂 | 秋田市 | Dulces y repostería | 和菓子協会 | http://www.chuokai-akita.or.jp/okasi/sansyoudo/ | 秋田市中通 5-7-8 |
+| 勝月 | 秋田市 | Dulces y repostería | 和菓子協会 | http://www.chuokai-akita.or.jp/okasi/syougetu/ | 秋田市保戸野通町 2-1 |
+| 旭南高砂堂 | 秋田市 | Dulces y repostería | 和菓子協会 | http://www.okashiyasan.co.jp | 秋田市旭南 1-18-25 |
+| かおる堂 | 秋田市 | Dulces y repostería | 和菓子協会 | http://www.kaorudo.jp | 秋田市川尻町字大川反 170 |
+| 菓子舗榮太楼 | 秋田市 | Dulces y repostería | 和菓子協会 | http://www.eitaro.net/ | 秋田市高陽幸町 9-11 |
+| 秋田いなふく米菓株式会社 | 秋田市 | Aperitivos | 全国米菓工業組合 | https://www.akitainafuku.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/akita.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/akita> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| フジノ果 | 横手市 | Pescado | https://www.tabechoku.com/producers/28005 | 2022年4月より新規就農。先々代から80年続くりんごに加え、新規作物としてももとすいかを栽培予定。 |
+| nohmask農園 | 横手市 | Pescado | https://www.tabechoku.com/producers/3078060 | 秋田県南部の「横手盆地」で育てた栄養価の高い安心安全な「お米と野菜」をお届けします。小規模ながら代々農業を営んでおり兼業稲作に努めてきました |
+| オヤマダファーム | 男鹿市 | Pescado | https://www.tabechoku.com/producers/3078346 | 秋田県男鹿市にてあきたこまちをメインに生産しております。 |
+| 農園晴晴（はればれ） | 能代市 | Pescado | https://www.tabechoku.com/producers/22867 | 秋田の北の方にあるちっちゃな農園です。自慢のニンニクは、農薬を使用せずに育てた滋味あふれる逸品です。ほかに自家栽培の野菜を使った漬物は、ぜひ |
+| がっこ | 仙北市 | Carne | https://www.tabechoku.com/producers/21571 | 秋田県仙北市で夫婦2人で農業、畜産をやっております。 |
+| 瀧田養鶏場　たまごの樹 | 秋田市 | Carne | https://www.tabechoku.com/producers/24424 | 昭和40年ごろに、酪農経営から養鶏業に転換し100羽から生産を開始しました。 |
+| レンチナス奥羽伊勢 | 八峰町 | Setas | https://www.tabechoku.com/producers/27719 | 私たちは秋田県八峰町できのこ農家を経営しております |
+| 間木しいたけハウス@東成瀬テックソリューションズ | 東成瀬村 | Setas | https://www.tabechoku.com/producers/3077504 | 私たちは、東成瀬村で地域おこし協力隊として村の方たちに広い分野でお手伝いさせていただいております。 |
+| 秋田しいたけ農園 | 湯沢市 | Setas | https://www.tabechoku.com/producers/3078920 | 秋田県湯沢市で50年間しいたけの生産と販売をしています。 |
+| 能延通商 | 能代市 | Setas | https://www.tabechoku.com/producers/29177 | 白神山地のふもと秋田県能代市で、椎茸や野菜等を栽培しています。丹精込めて育てた肉厚でぷりぷりな生椎茸をぜひ、 |
+| ヒロファーム | 羽後町 | Legumbres | https://www.tabechoku.com/producers/3077240 | 枝豆農家になり１8年になりますが食味にこだわって食べて美味しいと思う枝豆を作っています。年々勉強する事ばかりですがこれからも誰が食べても美味 |
+| 十和田アクアポニックス農場 | 小坂町 | Frutos secos | https://www.tabechoku.com/producers/3077874 | はじめまして。秋田県小坂町で「アクアポニックス」という農法で、おさかなと野菜を生産している十和田アクアポニックス農場の栗山哲です。 十和田湖 |
+| ひない渡辺農園しどけ村 | 大館市 | Pan y cereal | https://www.tabechoku.com/producers/28868 | 「良い土、水、風　旬な野菜」をモットーに、健康を第一に考え、愛情をたっぷり注いで育てた四季折々の野菜、果物、米などの作物を提供します。 |
+| 佐藤農園 | 大館市 | Pan y cereal | https://www.tabechoku.com/producers/26581 | 忠犬ハチ公の里で有名な秋田県大館市の山間でお米を生産しています。七代続く農家で、家族一緒に環境に配慮した減農薬栽培を行っています。地元特産の |
+| 🌾こまちの田園 | 横手市 | Pan y cereal | https://www.tabechoku.com/producers/3077992 | 秋田の米所で明治時代から続く、老舗の米農家です。米農家の集大成として、"大切な人の身体をつくるお米"をコンセプトに安心・安全・美味しいお米を |
+| 白神産物まなぶ | 能代市 | Pan y cereal | https://www.tabechoku.com/producers/26747 | 私は現在秋田県能代市に住んでおります。そばには世界遺産白神山地そして、秋田音頭の歌にある桧山がすぐそばにございます。日本海側で海山川に囲まれ |
+| Snow Field Market | 湯沢市 | Fruta y verdura | https://www.tabechoku.com/producers/3078606 | 秋田県湯沢市で稲、トマト、セリ、アスパラを作付けしています。 |
+| 吉村 | 湯沢市 | Fruta y verdura | https://www.tabechoku.com/producers/23071 | 秋田県湯沢市にて化学肥料を減らし乳酸菌を使用した野菜作りをしています。 |
+| 果実庵とざわ | 鹿角市 | Fruta y verdura | https://www.tabechoku.com/producers/20062 | 「果実庵とざわ」は秋田県鹿角市で営まれているりんご農園です。 |
+| OLAHO / おらほ | 大館市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077761 | はじままして、OLAHO（おらほ）です。 |
+| きずな | 横手市 | ⚠ por decidir | https://www.tabechoku.com/producers/23827 | 夏は高温多湿、冬は低温豪雪で豊饒な地「秋田県横手市」 |
+| 鮎乃家 | 湯沢市 | ⚠ por decidir | https://www.tabechoku.com/producers/24716 | 鮎（あゆ）と共に歩んで創業60年。 |

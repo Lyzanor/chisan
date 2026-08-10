@@ -140,3 +140,57 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 中田 (まめまめびーる) | ⚠ Shodoshima | Cerveza | JBA | — | la isla tiene dos municipios (小豆島町 y 土庄町); solo Facebook; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 
 **Ya integrado, no volver a proponer:** las 14 bodegas del 小豆島醤油協同組合 ya están en `kagawa.csv` como `Condimentos`, igual que Toyo Olive como `Aceite`. Cuatro de ellas —ヤマヒサ, タケサン, 金両, ヤマサン醤油— aparecen también en el padrón de aceite certificado de Kagawa: es **otro producto de un productor ya publicado**, no un alta.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/kagawa.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/kagawa.php> (nombre, dirección y web propia de cada socio)
+  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **8 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 夢菓房たから | 高松市 | Dulces y repostería | 和菓子協会 | http://e-takara.jp/ | 高松市春日町 214 |
+| ㈱藤井製麺 | 三木町 | Pan y cereal | 全乾麺 | http://www.fujimen.com/ | 機械製乾めん |
+| 伊藤製麺所 | 土庄町 | Pan y cereal | 全乾麺 | https://shoudoshima-soumen.com/ | 手延べ干しめん |
+| ㈲大喜多製粉所 | 宇多津町 | Pan y cereal | 全乾麺 | http://www.shokokai.or.jp/37/okita/index.htm | 機械製乾めん |
+| 安田食品工業（瀬戸よ志） | 小豆島町 | Conservas | búsqueda dirigida + web propia | https://www.yasudanotukudani.co.jp/ | 佃煮 del 醤の郷; 小豆郡小豆島町安田 |
+| 島乃香 | 小豆島町 | Conservas | búsqueda dirigida + web propia | https://www.simanoca.co.jp/ | 佃煮 de kombu; 小豆郡小豆島町馬木 |
+| 島じまん | 小豆島町 | Conservas | búsqueda dirigida + web propia | https://www.shimajiman.co.jp/ | 佃煮; 小豆郡小豆島町苗羽, dos plantas en la misma calle |
+| 小豆島食品 | ⚠ | Conservas | búsqueda dirigida + web propia | https://www.shodoshima-shokuhin.co.jp/ | ⚠ la portada no publica dirección; tienda propia 『島の味』 |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/kagawa.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kagawa> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 大塩水産 直売店 | さぬき市 | Pescado | https://www.tabechoku.com/producers/24332 | 「獲る・加工する・直売する」全て自社で行うから新鮮! |
+| 葉っぱ舎（はっぱや） | 三木町 | Pescado | https://www.tabechoku.com/producers/21290 | 当園は瀬戸内海と讃岐山脈に囲まれ、海風が爽やかに吹く香川県東讃地区にあります。 |
+| 伊吹島プロジェクト | 観音寺市 | Pescado | https://www.tabechoku.com/producers/20817 | 香川県の西端にある離島　伊吹島のいわし漁師の集まりです |
+| もりやま農園 | 高松市 | Pescado | https://www.tabechoku.com/producers/25832 | 瀬戸内の温暖な気候に育まれた香川県高松市のもりやま農園です。自然と都市がほどよく調和したこの地で、瀬戸内の太陽の光をたっぷり浴びた野菜を大切 |
+| オイノコ舎 | 三豊市 | Carne | https://www.tabechoku.com/producers/26647 | 瀬戸内海に面した温暖な香川県、里山と平野が広がる三豊市で、イノシシ肉（ジビエ）をはじめ、季節に応じた自然の恵みを販売しています。 |
+| 阿讃きのこ屋 | まんのう町 | Setas | https://www.tabechoku.com/producers/27803 | 四国阿讃山脈にて原木自然栽培キノコや竹の子などを生産しています。瀬戸内海に面した温暖な香川県ではありますが徳島との県境地域は別世界で冬には凍 |
+| さぬきくらげの店 | 三木町 | Setas | https://www.tabechoku.com/producers/21285 | 香川県は三木町の自然の中、三木富士「白山（しらやま）」のふもとで丹精込めて育てたきくらげです。 |
+| さぬきのこ | 三豊市 | Setas | https://www.tabechoku.com/producers/27763 | 2010年から、父母ヶ浜で有名な香川県三豊市で自家製菌床を作り、限りなく自然な環境で栽培をすることにこだわったしいたけを生産しています。自家 |
+| あい・あーる椎茸店 | 丸亀市 | Setas | https://www.tabechoku.com/producers/27853 | 弊社は香川県丸亀市にて農福連携事業として高齢者の方と一緒に菌床椎茸づくりに取り組んでいます。 |
+| 空海の郷 | まんのう町 | Miel | https://www.tabechoku.com/producers/24861 | 平成14年から香川県まんのう町で、お米や小麦、いちごや野菜の栽培のほか、養蜂事業を立ち上げハチミツの採蜜もしています。 |
+| ADL | 小豆島町 | Legumbres | https://www.tabechoku.com/producers/24702 | 【小豆島アクアポニックス農園】 |
+| 瀬戸内オリーブ園 | 坂出市 | Aceite | https://www.tabechoku.com/producers/24631 | 香川県坂出市のオリーブオイル生産者です。 |
+| 三豊の栗園　ゆたふぁむ | 三豊市 | Frutos secos | https://www.tabechoku.com/producers/29016 | 食べ応えのある大粒の栗をお届けします。 |
+| にじの百姓 | まんのう町 | Pan y cereal | https://www.tabechoku.com/producers/22989 | 香川県まんのう町の自然栽培農家です。農薬と肥料を使わずに太陽と土と水の力で米と野菜を育てています。 |
+| 虹の邑農園 | 善通寺市 | Pan y cereal | https://www.tabechoku.com/producers/26266 | ▼香川県で米麦の農家を営む3代目です！ |
+| 日本農産 | 坂出市 | Pan y cereal | https://www.tabechoku.com/producers/24947 | 私たちが農業を営んでいるのは穏やかな瀬戸内海に面した香川県坂出市です。うどんの本場讃岐では薬味として欠かせない青ネギをメインで栽培しています |
+| ハラシモベース | 三豊市 | Fruta y verdura | https://www.tabechoku.com/producers/24543 | 【祖父が手植えした柿の木をずっと繋いでいきたい】 |
+| さぬき新居農園 | 丸亀市 | Fruta y verdura | https://www.tabechoku.com/producers/3077668 | 2025年食べチョクで販売開始しました。親父から引き継ぎ2020年からさぬきのめざめ専業農家として香川県丸亀市で就農しました。さぬきのめざめ |
+| 川田明美 | 高松市 | Fruta y verdura | https://www.tabechoku.com/producers/28332 | 夫婦で、ぶどうと柑橘の栽培をしています。けして広くない果樹園。その分、丁寧に愛情を持って育てています。 |
+| TAGATAME【タガタメ】 | さぬき市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077301 | ＼海と山に囲まれた自然豊かな町、さぬき市小田からお届けします。/ |
+| めざめ | 丸亀市 | ⚠ por decidir | https://www.tabechoku.com/producers/24617 | 『これまでの「農業」の概念を変えていきたい、農業の新しい未来を創っていきたい。』そんな想いで会社名を「めざめ」と名付けました。 |
+| Fumico farm | 高松市 | ⚠ por decidir | https://www.tabechoku.com/producers/27495 | こんにちは、Fumico farm の奈々です。 |

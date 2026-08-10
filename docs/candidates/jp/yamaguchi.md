@@ -82,3 +82,50 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/yamaguchi.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 宇部蒲鉾 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.ubekama.com/ | ⚠ desde 2024 opera como 北九州ニッスイ宇部工場: comprobar quién elabora hoy |
+| 杉本利兵衛本店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; 焼き抜き蒲鉾 en Hofu |
+| 村田蒲鉾店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; Hagi |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/yamaguchi.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/yamaguchi> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 西岡養蜂場 | 下関市 | Pescado | https://www.tabechoku.com/producers/3077346 | 「ハチミツはその季節、その土地に、どのような花々が咲いていたかを教えてくれるタイムカプセルだ」と、知り合いから教わりました。 |
+| 七福丸 | 宇部市 | Pescado | https://www.tabechoku.com/producers/25133 | 山口県西部の瀬戸内海で小型底曳き漁師をしています。 |
+| 竜王丸　中村竜司 | 萩市 | Pescado | https://www.tabechoku.com/producers/22411 | 山口県萩市で漁師をしています。 |
+| 茶菜農園 | 大島群周防大島町 | Té e infusiones | https://www.tabechoku.com/producers/29164 | 山口県の瀬戸内の楽園、周防大島でみかんとお米を育てています。 |
+| 小野養豚 | 萩市萩市 | Carne | https://www.tabechoku.com/producers/28907 | 萩むつみ豚を育てている小野養豚は、養豚を始めて50年以上になります。 |
+| 長門アグリスト | 長門市 | Carne | https://www.tabechoku.com/producers/23229 | 長門アグリストは養鶏事業を起点とした会社です。 |
+| ルネサンスエコファーム | 防府市 | Carne | https://www.tabechoku.com/producers/21739 | 防府市右田の山で自然卵養鶏を行っています。 |
+| RYOMA KINOKO FARM | 下関市 | Setas | https://www.tabechoku.com/producers/3077426 | 山口県下関市豊田町の自然豊かな森の中で、原木椎茸農園を営んでおります。椎茸を育てるクヌギの伐採から収穫まで手作業でこだわりを持って行っており |
+| きくらげの里 | 柳井市 | Setas | https://www.tabechoku.com/producers/22735 | きくらげの里では「安心・安全な食材を提供して健康生活を応援したい」「農業の6次産業化で地域を活性化する」を目的に純国産きくらげの栽培・販売を |
+| 土ノ音 | 周防大島町 | Condimentos | https://www.tabechoku.com/producers/28103 | 銀座や大阪の有名料亭で修行を重ねた料理人はコロナを機に周防大島という温暖な気候と自然に恵まれた島に移住、『大好きな野菜を育て、野菜を使った調 |
+| 白上わさび | 岩国市 | Condimentos | https://www.tabechoku.com/producers/26683 | 私たちは、2020年にわさびブランド「白上わさび」を立ち上げました。わさび本来の味や風味を引き出すような栽培方法を日々研究しながら、日本一綺 |
+| fu do ku kan Bamboo | 周南市 | Conservas | https://www.tabechoku.com/producers/25434 | 山口県の自然豊かな里山で唐辛子農家をしています。農薬も化学肥料も使わずに、自然にも人にも優しい農業を心がけています。唐辛子を使った加工品も作 |
+| マロマロファーム | 田布施町 | Frutos secos | https://www.tabechoku.com/producers/3078282 | 約50年続いてきた栗農園をこの度、引き継ぐことになりました、藏田と申します。 |
+| 【百万石ブランド】長州植村総本家 | 下関市 | Pan y cereal | https://www.tabechoku.com/producers/28827 | 【幻の百万石ブランド】米蔵100年の歴史を誇る超希少米 |
+| 西日本建設サービス | 宇部市 | Pan y cereal | https://www.tabechoku.com/producers/23488 | この度秋吉ファームガーデン閉園に伴い、ブルーベリーの販売を西日本建設サービス㈱（日立建設株式会社グループ企業）にて引き継ぐ事となりました。商 |
+| あわや自然農園 | 山口市 | Pan y cereal | https://www.tabechoku.com/producers/29168 | 兼業期間を含め27年間有機農業を営んでいます。「暮らしが仕事、仕事が暮らし」という基本姿勢で、できる限り自給をした循環型の生活から生まれる野 |
+| ユーフォリア | 下関市 | Fruta y verdura | https://www.tabechoku.com/producers/23194 | 明治から続く伝統ある「安岡ねぎ」に惚れ込んでいます。JA職員時代、広がっていく耕作放棄地と引退される多くの先輩農家の方々を目の当たりにし、地 |
+| ホホヱミ農園 | 長門市 | Fruta y verdura | https://www.tabechoku.com/producers/3077728 | ホホヱミ農園は山口県の西端にある向津具半島です。 |
+| 粟屋農場 | 防府市 | Fruta y verdura | https://www.tabechoku.com/producers/20059 | 新規就農09年から粟屋農場では、自然栽培を実践中 |
+| 畦花 azehana | 下関市 | ⚠ por decidir | https://www.tabechoku.com/producers/25784 | はじめまして。畦花 azehanaの中司（なかつかさ）です。 |
+| 嵩海丸 | 下関市 | ⚠ por decidir | https://www.tabechoku.com/producers/28825 | ２０１８年に妻と結婚し、夫婦二人で夫婦舟で頑張っています。 |
+| 【長州床波の海人】瀬戸内ブランド | 宇部市 | ⚠ por decidir | https://www.tabechoku.com/producers/3078611 | 山口県宇部市・床波 |

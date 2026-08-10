@@ -89,3 +89,61 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | Far Yeast Brewing | Shibuya | Cerveza | JBA | faryeast.com | sede en Shibuya, planta en Kosuge (Yamanashi); resolver unidad productiva; revisado 2026-08-10: la web confirma la planta en Kosuge (Yamanashi), no una unidad productiva en Shibuya |
 
 **Ya integrado, no volver a proponer:** 石川酒造 (Fussa) ya está en `tokyo.csv` como `Sake`; 多満自慢ビール sería otra fila del mismo obrador.
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/tokyo.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/tokyo.php> (nombre, dirección y web propia de cada socio)
+  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
+- Estado: **13 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 亀澤堂 | 千代田区 | Dulces y repostería | 和菓子協会 | http://www.kamezawado.co.jp/ | 千代田区神田神保町 1-12-1 |
+| さゝま | 千代田区 | Dulces y repostería | 和菓子協会 | http://www.sasama.co.jp/ | 千代田区神田神保町 1-23 |
+| 庄之助 | 千代田区 | Dulces y repostería | 和菓子協会 | http://www.syounosuke.net/ | 千代田区神田須田町 1-8-5 |
+| 鶴屋八幡 | 千代田区 | Dulces y repostería | 和菓子協会 | http://www.turuyahatiman.co.jp/ | 千代田区麹町 2-4 |
+| 宝来屋本店 | 千代田区 | Dulces y repostería | 和菓子協会 | http://wagashi.houraiya.co.jp/ | 千代田区九段南 2-4-15 |
+| 神田橘昌文錢堂 | 千代田区 | Dulces y repostería | 和菓子協会 | http://www.kanda-bunsendo.com/ | 千代田区神田神保町 1-13-2 |
+| 株式会社金吾堂製菓 | 中野区 | Aperitivos | 全国米菓工業組合 | https://www.kingodo.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 王様製菓株式会社 | 台東区 | Aperitivos | 全国米菓工業組合 | https://www.osama-do.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社東あられ本鋪 | 墨田区 | Aperitivos | 全国米菓工業組合 | https://www.azuma-arare.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
+| 株式会社中央軒煎餅 | 板橋区 | Aperitivos | 全国米菓工業組合 | https://www.chuoken.co.jp/ | 米菓製造・販売業（直売所有り） |
+| 有限会社其角 (きかく) | 江東区 | Aperitivos | 全国米菓工業組合 | https://www.kikaku-sembei.co.jp/ | 米菓製造・販売業（直売所有り） |
+| 株式会社赤坂柿山 | 港区 | Aperitivos | 全国米菓工業組合 | https://www.kakiyama.com | 米菓製造・販売業（直売所有り） |
+| 株式会社たぬき煎餅 | 港区 | Aperitivos | 全国米菓工業組合 | https://www.tanuki10.com/ | 米菓製造・販売業（直売所有り） |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/tokyo.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/tokyo> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| 西野農園 | 三宅島三宅村 | Pescado | https://www.tabechoku.com/producers/21057 | 1952年大阪生まれ。約40年前に都内農水産物輸入商社を脱サラし第一次産業自営を目指し三宅島に移住しました。花卉栽培と潜水漁業で生計を立てて |
+| KOUYA MITA | 国立市 | Pescado | https://www.tabechoku.com/producers/24696 | 自然農法が好きでしたが、収穫が思うようにできなかったので、症状が出たとき最低限の種類の４農薬を使い、肥料も化成肥料１m２あたり20～50gな |
+| Ks'フラワー | 大島町 | Pescado | https://www.tabechoku.com/producers/23343 | 伊豆大島にてブバルディアという花卉を生産しているものです。秋から翌春にかけてはキヌサヤエンドウを生産しています。親子3代で東京の椿の島で美味 |
+| 高橋果樹園 | 立川市 | Pescado | https://www.tabechoku.com/producers/28145 | 東京産の美味しい果物を作りたい、その思いから果樹栽培に取り組みました。髙橋果樹園の歴史はブルーベリーから始まり、そこからイチジクや桃、ブドウ |
+| 青梅 清水農園 | 青梅市 | Pescado | https://www.tabechoku.com/producers/21565 | 「美味しいから食べてみて！」 |
+| 狭山茶 森藤園 | 瑞穂町 | Té e infusiones | https://www.tabechoku.com/producers/26446 | 森藤園は、西多摩郡瑞穂町で茶の栽培・製造・販売までを一貫しておこなっている狭山茶の製造直売農家です。 |
+| モリンガ＆モリンガ | 目黒区 | Té e infusiones | https://www.tabechoku.com/producers/25797 | 沖縄の契約農家で栽培された有機モリンガを使用し、沖縄県内で加工したお茶やパウダー、タブレット、青汁を販売している小さな会社です。 |
+| 小さな畑の贈り物（ちいはた） | 足立区 | Carne | https://www.tabechoku.com/producers/3077553 | 東京・足立区の小さな畑で、少量多品目の野菜づくりをしています。地元の直売所では、フルーツトマト「シュガープラム」や白いとうもろこし「雪の妖精 |
+| きのこたろう | 八王子市 | Setas | https://www.tabechoku.com/producers/20841 | こんにちは。 |
+| KINOKO TOKYO | 大田区 | Setas | https://www.tabechoku.com/producers/3077918 | 東京都大田区昭和島、羽田空港や海の見えるおしゃれなビルの6階でしいたけ栽培を行っています。 |
+| Number8 | 豊島区 | Miel | https://www.tabechoku.com/producers/22895 | 元は飲食業に携わっておりましたが、サラリーマンを卒業し、岡山の地元で親が営んでいる養蜂をお手伝いしています。 |
+| The Fruits Company™ | 文京区 | Bebidas sin alcohol | https://www.tabechoku.com/producers/23177 | 「規格外フルーツ」を100%ストレートジュースに。だからコンセプトは「フルーツの救世主」。私たちは拒否されたフルーツを、デザインされたストレ |
+| farm watanabe | 三鷹市 | Pan y cereal | https://www.tabechoku.com/producers/28554 | 吉祥寺近くにある小さな畑で、少量多品目栽培しています。一般的な野菜はもちろん、ハーブ、イタリア野菜、果樹の栽培もしており、直売所で販売してい |
+| 八丈島ばたけ | 八丈島八丈町 | Pan y cereal | https://www.tabechoku.com/producers/22922 | 生まれ育った八丈島の魅力をより多くの人に知ってほしいと、50代半ばで脱サラし、夫婦二人三脚で八丈島レモンと明日葉を中心に栽培を始めました。是 |
+| Base Side Farm | 瑞穂町 | Pan y cereal | https://www.tabechoku.com/producers/20438 | 東京の西のほう、横田基地のすぐそばで新規就農しました。 |
+| 鴨志田農園 | 三鷹市 | Fruta y verdura | https://www.tabechoku.com/producers/20240 | 東京都三鷹市の住宅街に囲まれた一角で、年間45から50品目を栽培しています。 |
+| みろくふぁーむ | 八丈町 | Fruta y verdura | https://www.tabechoku.com/producers/3078204 | みろくふぁーむ株式会社は、東京都八丈島を拠点に国産アボカド栽培に挑戦する農園です。台風や潮風など厳しい自然環境に向き合いながら、レモンやミニ |
+| 大沼農園 | 新島村 | Fruta y verdura | https://www.tabechoku.com/producers/21215 | 東京都の離島　新島で農業をしています。 |
+| 繁昌農園Tokyo | 青梅市 | Fruta y verdura | https://www.tabechoku.com/producers/57 | 東京生まれ、東京育ちで農業とは無縁の環境で、自然や農に大きな憧れを持ち、地元東京で有機農業をすることを決めました。 |
+| エシカルベジタブルス | 八王子市 | ⚠ por decidir | https://www.tabechoku.com/producers/28466 | 八王子市で自立訓練（生活訓練）、就労移行支援事業を行っている、農福連携の福祉事業所エシカルベジタブルス（愛称：エシベジ）です。 |
+| 食べチョク公式 | 港区 | ⚠ por decidir | https://www.tabechoku.com/producers/27604 | 食べチョクに出品する生産者さんが育てた国産フルーツや、規格外・余剰になった食材を活用し、特殊冷凍技術で“旬のおいしさ”をそのまま閉じ込めた冷 |
+| 食べチョク公式 【Vivid TABLE】 | 港区 | ⚠ por decidir | https://www.tabechoku.com/producers/3078367 | 食べチョク【Vivid TABLE】専用アカウントです。 |

@@ -84,3 +84,52 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | 吉永鰹節店 | Tosa | Conservas | propia | — | 鰹節; 宇佐町, sin dominio confirmado; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
 | 馬路村農協 | Umaji | Fruta y verdura | propia | yuzu.or.jp | yuzu transformado; cooperativa, triar; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+
+## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/kochi.csv`.
+- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
+- Fuentes de esta tanda:
+  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
+- Estado: **5 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+
+| nombre (社名) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 馬路村農協 | 馬路村 | Fruta y verdura | búsqueda dirigida + web propia | https://www.yuzu.or.jp/ | ⚠ cooperativa de yuzu, triar; 安芸郡馬路村 |
+| たけまさ商店 | ⚠ | Pescado | búsqueda dirigida + web propia | https://takemasa-syouten.com/ | ⚠ municipio sin confirmar (Tosashimizu); 宗田節, centenaria |
+| 土佐清水食品 | 土佐清水市 | Pescado | búsqueda dirigida + web propia | https://tosashimizu.co.jp/ | 宗田節 |
+| 新谷商店 | 土佐清水市 | Pescado | búsqueda dirigida + web propia | https://soudabushi.com/ | 宗田節 y ahumados |
+| ヤマア | 土佐清水市 | Pescado | búsqueda dirigida + web propia | https://yamaa-souda.com/ | 宗田節 |
+
+## Venta directa — 3ª pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/kochi.csv`.
+- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kochi> (dos páginas, leídas el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
+- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+
+| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
+|---|---|---|---|---|
+| YUZU LIFE | 三原村 | Pescado | https://www.tabechoku.com/producers/25351 | 高知県三原村でゆずを栽培しています。屋号のYUZU LIFEには”ゆずでお客様の暮らしを豊かに、私たちはゆずで生きていく”という気持ちを込め |
+| いちえん農場 | 四万十市 | Pescado | https://www.tabechoku.com/producers/21110 | 20代で林業をかじり、30歳で農業を継ぎ、40代では漁業にも取り組んでみようかと思っているおっさんです。”生まれ育った環境を守り活かしたい“ |
+| 土佐の漁師 | 室戸市 | Pescado | https://www.tabechoku.com/producers/26854 | 高知県の最南東、 室戸市を拠点に漁師を営んでおり、自社所有船で近海マグロ漁をしております。 |
+| ヤドリギ製茶 | 本山町 | Té e infusiones | https://www.tabechoku.com/producers/24575 | 私たちは四国のど真ん中・高知県本山町という地域で、林業をナリワイとする夫婦です。木の伐採作業を行う上で、どうしても伐らざるをえないクロモジを |
+| 岡﨑ファーム | いの町 | Carne | https://www.tabechoku.com/producers/24571 | 2020年末に地元高知県にUターンし、新規就農者として高知県いの町の山奥で、師匠の使わなくなった鶏舎を借りて土佐ジローの養鶏を始めました。 |
+| 超たまご田所養鶏場 | 南国市 | Carne | https://www.tabechoku.com/producers/26736 | 南国土佐のいごっそう（頑固者）が、飼料はもちろん、水や鶏舎の土壌開発にまでこだわって育てたにわとり、そんなにわとりが生む卵だから、黄身は濃厚 |
+| 四万十ポーク農場直営店　デュロックファーム | 四万十町 | Carne | https://www.tabechoku.com/producers/24626 | 全国的にも有名な高知県四万十川の上中流域に位置する自然豊かな地域、四万十町という場所で「四万十ポーク」というブランド豚を自社農場で育てており |
+| 仁淀川きくらげ｜高知県仁淀川町産 | 仁淀川町 | Setas | https://www.tabechoku.com/producers/20739 | はじめまして。 |
+| グレイスファーム | 南国市 | Setas | https://www.tabechoku.com/producers/28592 | 令和元年から生きくらげの生産に取り組んでいます。 |
+| 宗安寺きのこセンター | 高知市 | Setas | https://www.tabechoku.com/producers/28921 | 高知市鏡川の畔で、鏡川のきれいな水を使用しプリプリの国産キクラゲを育てています。ビタミンD、鉄分、食物繊維、カルシウムが大変豊富に含まれてい |
+| おおとよ塩かえる農園 | 大豊町 | Condimentos | https://www.tabechoku.com/producers/21075 | おおとよ塩かえる農園は、10年前に東京から高知の山奥に移住した、農業未経験だった夫婦二人が営む小さな農園です。 |
+| 田野屋紫蘭 | 安田町 | Condimentos | https://www.tabechoku.com/producers/3077886 | 私たちは夫婦で完全天日塩職人をしています。元々は２人とも埼玉県春日部市役所の公務員でしたが塩職人になるべく田野屋塩二郎の下、３年間修業をして |
+| やまみずき農園（マル・シェリア） | 四万十市 | Conservas | https://www.tabechoku.com/producers/22194 | -高知県の四万十川と太平洋が出会う岬にある農園で、農園女子が育てた農薬・化学肥料不使用の野菜や加工品を生産し、直販所や直営店舗（農園マルシェ |
+| たまごのおくだ | 南国市 | Huevos | https://www.tabechoku.com/producers/20908 | 私は先祖代々の稲作農家育ちの８代目です。 |
+| 坂本農園（高知県） | いの町 | Pan y cereal | https://www.tabechoku.com/producers/24959 | 高知県いの町の仁淀川のすぐそばで、ブドウや土佐文旦などの果樹をメインに栽培しております。 |
+| 南国にしがわ農園 | 南国市 | Pan y cereal | https://www.tabechoku.com/producers/23790 | 完全無農薬はもちろん肥料や除草剤も使わない、究極のオーガニックと言われる徹底した自然農法を実践し、2013年9月に有機JAS認証を取得してい |
+| 土佐水谷農園 | 土佐市 | Pan y cereal | https://www.tabechoku.com/producers/23287 | こんにちは。土佐文旦発祥の地、高知県土佐市の土佐水谷農園です。私たちの農園では、土佐文旦を約1ヘクタールの園地で栽培しています。その他季節の |
+| マルシン生姜ファーム | 四万十市 | Fruta y verdura | https://www.tabechoku.com/producers/28545 | 私たちは、清流四万十川の下流域で生姜のハウス栽培をおこなっております。新規就農で農業の世界に入り9年目ですが、今までの生姜のイメージを変えて |
+| 林田孝好 | 奈半利町 | Fruta y verdura | https://www.tabechoku.com/producers/26177 | 兼業農家からスタートして専業農家として農業歴60年。 |
+| 篤農 | 香南市 | Fruta y verdura | https://www.tabechoku.com/producers/20869 | 私達は約40年になるメロン栽培技術の蓄積があります。 |
+| やの一果彩 | 土佐市 | ⚠ por decidir | https://www.tabechoku.com/producers/28729 | 「やの一果彩」の土佐文旦は、土佐文旦発祥の地で70年以上にわたり受け継がれてきた伝統と誇りの結晶です。 |
+| 坂本直幸 | 土佐清水市 | ⚠ por decidir | https://www.tabechoku.com/producers/25423 | 高知県の海と山に囲まれた自然いっぱいの山奥で農業を営んでおります。夏はハウス生姜を、秋は露地生姜を収穫しております。 |
