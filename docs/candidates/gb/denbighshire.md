@@ -24,7 +24,6 @@ productive municipality, current offer and phone/email before admission.
 | Heavy Industry Brewing | Manufacturers/packers; rating/inspection 2015-12-03 | Bryn Llyfannan Chapel Lane, Henllan, Denbigh, Denbighshire, LL16 5AR | [921318](https://api.ratings.food.gov.uk/Establishments/921318) |
 | Sheenagh's Llangollen Honey | Farmers/growers; rating/inspection 2018-08-15 | Ceirios Fron Bache, Llangollen, Denbighshire, LL20 7BP | [1078066](https://api.ratings.food.gov.uk/Establishments/1078066) |
 | Snowdonia Cheese Company Limited | Manufacturers/packers; rating/inspection 2025-10-28 | Unit 14 Cefndy Road Employment Park, Rhyl, Denbighshire, LL18 2HJ | [921028](https://api.ratings.food.gov.uk/Establishments/921028) |
-| Chilly Cow Ice Cream | Manufacturers/packers; rating/inspection 2026-03-18 | Chilly Cow Ice Cream Stryt Fawr, Llanychan, Ruthin, Denbighshire, LL15 1UF | [921466](https://api.ratings.food.gov.uk/Establishments/921466) |
 | Daz’s Extravagant Cakes & Bakes | Manufacturers/packers; rating/inspection 2025-01-07 | Y Shed Station Yard Pen Y Maes, Meliden, Prestatyn, Denbighshire, LL19 8PY | [1760551](https://api.ratings.food.gov.uk/Establishments/1760551) |
 | Dyserth Butchers | Manufacturers/packers; rating/inspection 2025-08-13 | Chailey High Street, Dyserth, Rhyl, Denbighshire, LL18 6AA | [932747](https://api.ratings.food.gov.uk/Establishments/932747) |
 | Graig Farm | Farmers/growers | LL15 | [1899060](https://api.ratings.food.gov.uk/Establishments/1899060) |

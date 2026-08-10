@@ -23,7 +23,6 @@ productive municipality, current offer and phone/email before admission.
 | Cotham Cheese Company | Manufacturers/packers | 8 Abbotsford Road, Cotham, Bristol, BS6 6HB | [1960931](https://api.ratings.food.gov.uk/Establishments/1960931) |
 | Treasure Island Sweets Limited | Manufacturers/packers; rating/inspection 2025-05-02 | Unit 5 Barnack Trading Centre, Novers Hill, Knowle, Bristol, BS3 5QE | [385196](https://api.ratings.food.gov.uk/Establishments/385196) |
 | Unwin's Brewery | Manufacturers/packers | 25 Oxford Street, St Philips, Bristol, BS2 0QT | [1887768](https://api.ratings.food.gov.uk/Establishments/1887768) |
-| Extract Coffee Roasters Ltd | Manufacturers/packers; rating/inspection 2025-05-12 | Roastery Works, Unit 1 New Gatton Road, St Werburghs, Bristol, BS2 9SH | [668221](https://api.ratings.food.gov.uk/Establishments/668221) |
 | Mr T G Pullins Bakery | Manufacturers/packers; rating/inspection 2025-06-16 | 8 Cotham Hill, Cotham, Bristol, BS6 6LF | [1790145](https://api.ratings.food.gov.uk/Establishments/1790145) |
 | Parsons Bakery Limited | Manufacturers/packers; rating/inspection 2024-10-30 | 105 South Liberty Lane, Ashton, Bristol, BS3 2SZ | [312317](https://api.ratings.food.gov.uk/Establishments/312317) |
 | Radek's Chocolate | Manufacturers/packers; rating/inspection 2025-06-04 | 5-7 Clay Hill, Fishponds Trading Estate, Bristol, BS5 7ES | [895654](https://api.ratings.food.gov.uk/Establishments/895654) |

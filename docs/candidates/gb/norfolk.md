@@ -29,7 +29,6 @@ productive municipality, current offer and phone/email before admission.
 | Heath Farm Shop | Manufacturers/packers; rating/inspection 2025-09-16 | Lynn Lane, Great Massingham, King's Lynn, Norfolk, PE32 2HJ | [1046002](https://api.ratings.food.gov.uk/Establishments/1046002) |
 | Humpty Dumpty Brewery And Shop | Manufacturers/packers; rating/inspection 2025-08-14 | Church Road, Reedham, Norfolk, NR13 3TZ | [1607161](https://api.ratings.food.gov.uk/Establishments/1607161) |
 | Lime Tree Farm Egg Packer, Frozen Beef Sales | Manufacturers/packers; rating/inspection 2025-09-24 | Lime Tree Farm, Fairstead Lane, Hempnall, Norfolk, NR15 2RD | [648142](https://api.ratings.food.gov.uk/Establishments/648142) |
-| Mrs Temple's Cheese | Manufacturers/packers; rating/inspection 2026-03-09 | Copys Green Farm, Copys Green, Wighton, Norfolk, NR23 1NY | [691687](https://api.ratings.food.gov.uk/Establishments/691687) |
 | NVCS Ltd (Green Farm Fresh) | Manufacturers/packers; rating/inspection 2025-07-01 | NVCS Ltd 1 Green Farm Industrial Units, Wendover Road, Rackheath, Norwich, NR13 6LQ | [1607682](https://api.ratings.food.gov.uk/Establishments/1607682) |
 | Panther Brewery | Manufacturers/packers; rating/inspection 2025-06-24 | 1 Collers Way, Reepham, Norfolk, NR10 4SW | [1837160](https://api.ratings.food.gov.uk/Establishments/1837160) |
 | Sheringham Smokehouse | Manufacturers/packers; rating/inspection 2026-06-05 | 28 Station Road, Sheringham, Norfolk, NR26 8RF | [1373429](https://api.ratings.food.gov.uk/Establishments/1373429) |

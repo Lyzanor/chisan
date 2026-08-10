@@ -17,8 +17,6 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Castle Farm Dairy (Ice Cream) | Manufacturers/packers; rating/inspection 2026-02-17 | Castle Farm, Bishton Road, Bishton, Newport, NP18 2DZ | [1876224](https://api.ratings.food.gov.uk/Establishments/1876224) |
-| Castle Farm Dairy | Manufacturers/packers; rating/inspection 2024-11-01 | Castle Farm, Bishton Road, Bishton, Newport, NP18 2DZ | [1456148](https://api.ratings.food.gov.uk/Establishments/1456148) |
 | Farmhouse Bakery | Manufacturers/packers; rating/inspection 2025-03-04 | 130 Chepstow Road, Newport, South Wales, NP19 8EF | [6324](https://api.ratings.food.gov.uk/Establishments/6324) |
 | Wilcrick Farm Produce | Farmers/growers; rating/inspection 2024-03-12 | Newhouse Farm, Wilcrick Lane, Magor, Newport, NP26 3DA | [1647955](https://api.ratings.food.gov.uk/Establishments/1647955) |
 | Berry Hill Farm Shop | Farmers/growers; rating/inspection 2014-03-21 | Berryhill Farm, Cardiff Road, Newport, South Wales, NP10 8UD | [200554](https://api.ratings.food.gov.uk/Establishments/200554) |

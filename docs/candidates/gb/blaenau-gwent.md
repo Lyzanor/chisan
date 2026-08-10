@@ -17,7 +17,6 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Tudor Brewery | Manufacturers/packers; rating/inspection 2024-01-24 | Unit A, Llanhilleth Industrial, Llanhilleth, Abertillery, NP13 2RX | [805586](https://api.ratings.food.gov.uk/Establishments/805586) |
 | Shoda Sauces Europe | Manufacturers/packers; rating/inspection 2025-04-16 | Unit 19-20, Rising Sun Industrial Estate, Blaina, Blaenau Gwent, NP13 3JW | [669776](https://api.ratings.food.gov.uk/Establishments/669776) |
 | Adam St Allotments Apiary | Manufacturers/packers; rating/inspection 2017-11-22 | NP13 | [1020487](https://api.ratings.food.gov.uk/Establishments/1020487) |
 | Gwent Snack Foods | Manufacturers/packers; rating/inspection 2025-03-11 | Unit 18/19, Barleyfields Industrial Estate, Nantyglo, Ebbw Vale, NP23 4LU | [1437092](https://api.ratings.food.gov.uk/Establishments/1437092) |

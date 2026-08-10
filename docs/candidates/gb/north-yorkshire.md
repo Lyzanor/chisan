@@ -25,7 +25,6 @@ productive municipality, current offer and phone/email before admission.
 | Bull Farm Produce | Manufacturers/packers; rating/inspection 2024-06-19 | 11 High Street, Burton In Lonsdale, LA6 3JU | [1861451](https://api.ratings.food.gov.uk/Establishments/1861451) |
 | Collaboration Spirits | Manufacturers/packers; rating/inspection 2024-02-10 | Western House Business Park East Road, Melsonby, DL10 5NF | [1851884](https://api.ratings.food.gov.uk/Establishments/1851884) |
 | J Mace Honey and Jam | Manufacturers/packers | YO32 | [1976591](https://api.ratings.food.gov.uk/Establishments/1976591) |
-| Lacey's Cheese Ltd | Manufacturers/packers; rating/inspection 2025-03-10 | Reeth Dales Centre Silver Street, Reeth, DL11 6SP | [1852048](https://api.ratings.food.gov.uk/Establishments/1852048) |
 | Masham Bakery -t/a Bake Masham | Farmers/growers; rating/inspection 2025-04-30 | 10 Church Street, Masham, HG4 4DR | [1869309](https://api.ratings.food.gov.uk/Establishments/1869309) |
 | New Sheepfold Farm | Farmers/growers; rating/inspection 2024-03-07 | TS9 | [1852366](https://api.ratings.food.gov.uk/Establishments/1852366) |
 | Rectory Farm Milk Shack Ltd | Farmers/growers; rating/inspection 2026-03-18 | BD23 | [1861491](https://api.ratings.food.gov.uk/Establishments/1861491) |

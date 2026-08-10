@@ -22,7 +22,6 @@ productive municipality, current offer and phone/email before admission.
 | Curran's Bakery/Coffee Shop | Manufacturers/packers; rating/inspection 2022-09-21 | Clooney Road, Tullybrisland, Greysteel, Londonderry, BT47 3GE | [1112792](https://api.ratings.food.gov.uk/Establishments/1112792) |
 | Honeybear Ice-Cream | Manufacturers/packers | BT48 | [1943358](https://api.ratings.food.gov.uk/Establishments/1943358) |
 | Corndale Farm | Manufacturers/packers; rating/inspection 2026-03-30 | 89 Dowland Road, Grannagh, Limavady, Londonderry, BT49 0HR | [1427620](https://api.ratings.food.gov.uk/Establishments/1427620) |
-| Dart Mountain Cheese Ltd | Manufacturers/packers; rating/inspection 2025-09-18 | 26 Tamnagh Road, Tamnagh, Claudy, Londonderry, BT47 4DN | [902041](https://api.ratings.food.gov.uk/Establishments/902041) |
 | Mussenden Honey | Farmers/growers | 39 Ballywoolen Road, Ballywoolen, Castlerock, Londonderry, BT51 4XF | [1409199](https://api.ratings.food.gov.uk/Establishments/1409199) |
 | Portna Bees | Farmers/growers | 72 Woodland Park, Kilrea, Kilrea, Londonderry, BT51 5SH | [1743129](https://api.ratings.food.gov.uk/Establishments/1743129) |
 | The Farmhouse Larder | Manufacturers/packers; rating/inspection 2024-09-05 | 26 Ballynagarve Road, Drumenagh, Magherafelt, Co. Londonderry, BT45 6NB | [1178893](https://api.ratings.food.gov.uk/Establishments/1178893) |

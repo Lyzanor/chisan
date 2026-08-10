@@ -28,7 +28,6 @@ productive municipality, current offer and phone/email before admission.
 | Brow Top Farm Shop | Manufacturers/packers; rating/inspection 2024-01-10 | THE BROW, FLIMBY BROW, FLIMBY, MARYPORT, CA15 8TB | [1550101](https://api.ratings.food.gov.uk/Establishments/1550101) |
 | Keswick Brewing Co | Manufacturers/packers; rating/inspection 2024-03-08 | THE OLD BREWERY, BREWERY LANE, KESWICK, CA12 5BY | [1549438](https://api.ratings.food.gov.uk/Establishments/1549438) |
 | Morecambe Bay Oysters | Farmers/growers; rating/inspection 2022-12-16 | Seasalter (Walney) Ltd, Old Gravel Works, Walney, Barrow-in-Furness, LA14 3YG | [1138146](https://api.ratings.food.gov.uk/Establishments/1138146) |
-| Thornby Moor Dairy | Manufacturers/packers; rating/inspection 2024-01-04 | CROFTON HALL, CROFTON, THURSBY, CARLISLE, CA5 6QB | [1549934](https://api.ratings.food.gov.uk/Establishments/1549934) |
 | Carlisle Brewing Co. | Manufacturers/packers | Unit 2, 12a Kingstown Broadway, Carlisle, CA3 0HA | [850394](https://api.ratings.food.gov.uk/Establishments/850394) |
 | Langholm Distillery ltd | Manufacturers/packers; rating/inspection 2026-04-01 | Unit 14 Brougham Hall, Brougham, Penrith, CA10 2DE | [1881340](https://api.ratings.food.gov.uk/Establishments/1881340) |
 | Low Nest Distillery | Manufacturers/packers | LOW NEST FARM, NADDLE, KESWICK, CA12 4TF | [1971590](https://api.ratings.food.gov.uk/Establishments/1971590) |

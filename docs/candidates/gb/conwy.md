@@ -27,9 +27,7 @@ productive municipality, current offer and phone/email before admission.
 | Glyn Farm Cider | Manufacturers/packers; rating/inspection 2026-02-10 | Fferm Y Glyn Gower Road, Trefriw, Conwy, LL27 0RZ | [707178](https://api.ratings.food.gov.uk/Establishments/707178) |
 | Bryn Cocyn Organic Farm | Farmers/growers; rating/inspection 2026-01-28 | Glan Y Ffos, Llannefydd, Conwy, LL16 5DH | [654382](https://api.ratings.food.gov.uk/Establishments/654382) |
 | Cottage Orchard | Farmers/growers | Glan Nug, Pentrefoelas, Conwy, LL24 0TL | [1838788](https://api.ratings.food.gov.uk/Establishments/1838788) |
-| Conwy Brewery Ltd | Manufacturers/packers; rating/inspection 2025-04-15 | Unit 2 Ty Mawr Tan Y Graig Road, Llysfaen, Conwy, LL29 8UE | [550508](https://api.ratings.food.gov.uk/Establishments/550508) |
 | Snowdonia Distillery | Manufacturers/packers; rating/inspection 2026-02-17 | Mochdre Business Park Mochdre, Colwyn Bay, LL28 5HA | [1920166](https://api.ratings.food.gov.uk/Establishments/1920166) |
-| Wild Horse Brewing Company | Manufacturers/packers; rating/inspection 2025-10-22 | Unit 4 Cae Bach, Llandudno, Conwy, LL30 1DR | [760306](https://api.ratings.food.gov.uk/Establishments/760306) |
 | Cadwgan Bakery | Manufacturers/packers; rating/inspection 2026-03-20 | 364 Abergele Road, Old Colwyn, Colwyn Bay, Conwy, LL29 9LU | [93322](https://api.ratings.food.gov.uk/Establishments/93322) |
 | Great British Cheese Company | Manufacturers/packers; rating/inspection 2017-06-16 | Llandudno Pier North Parade, Llandudno, Conwy, LL30 2LP | [983764](https://api.ratings.food.gov.uk/Establishments/983764) |
 | A P Game | Farmers/growers; rating/inspection 2026-02-27 | LL29 | [1910362](https://api.ratings.food.gov.uk/Establishments/1910362) |

@@ -27,7 +27,6 @@ productive municipality, current offer and phone/email before admission.
 | Plas Glas Blue Slate Gin | Manufacturers/packers; rating/inspection 2025-06-12 | 97 Y Stryd Fawr, Y Bala, Gwynedd, LL23 7AE | [1833086](https://api.ratings.food.gov.uk/Establishments/1833086) |
 | Snowdonia Cheese Company Ltd | Manufacturers/packers | Llechwedd Slate Mines, Talywaenydd, Blaenau Ffestiniog, Gwynedd, LL41 3NB | [1454643](https://api.ratings.food.gov.uk/Establishments/1454643) |
 | The Snowdonia Honey Company | Farmers/growers | Tyddyn Whisgin Bach, Waunfawr, Gwynedd, LL55 2TL | [1584690](https://api.ratings.food.gov.uk/Establishments/1584690) |
-| Wacky Wedge Cheese Company Ltd | Manufacturers/packers; rating/inspection 2026-07-07 | Uned 15 Cei Llechi, Caernarfon, Gwynedd, LL55 2PB | [1921243](https://api.ratings.food.gov.uk/Establishments/1921243) |
 | Aber Falls Distillery Limited | Manufacturers/packers; rating/inspection 2023-08-14 | Fferm Aber Station Road, Abergwyngregyn, Gwynedd, LL33 0LB | [1057365](https://api.ratings.food.gov.uk/Establishments/1057365) |
 | Bwyd Mor Abersoch Seafood | Manufacturers/packers; rating/inspection 2025-09-26 | Llain Henryd, Sarn Bach, Gwynedd, LL53 7DA | [896124](https://api.ratings.food.gov.uk/Establishments/896124) |
 | Dolaugwyn Native Breed Meats Cig Bridiau Cynhenid Dolaugwyn | Farmers/growers; rating/inspection 2022-11-25 | Dolau Gwyn, Bryncrug, Gwynedd, LL36 9UL | [1432134](https://api.ratings.food.gov.uk/Establishments/1432134) |

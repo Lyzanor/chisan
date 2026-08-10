@@ -24,7 +24,6 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Inn Farm Dairy | Manufacturers/packers; rating/inspection 2024-02-20 | Inn Farm Cutler Lane Weston Underwood Ashbourne Derbyshire, DE6 4PD | [1052885](https://api.ratings.food.gov.uk/Establishments/1052885) |
 | Shottle Farm Brewery And Bull Shed | Manufacturers/packers; rating/inspection 2026-06-19 | Handley Farm Wilderbrook Lane Shottle Belper Derbyshire, DE56 2DT | [728179](https://api.ratings.food.gov.uk/Establishments/728179) |
 | Oak Hill Orchard Farm | Manufacturers/packers; rating/inspection 2024-11-26 | DE4 | [1767218](https://api.ratings.food.gov.uk/Establishments/1767218) |
 | Rhubarb Farm CIC | Farmers/growers; rating/inspection 2025-06-24 | Rhubarb Farm, Main Road, Nether Langwith, Nottinghamshire, NG20 9DR | [945143](https://api.ratings.food.gov.uk/Establishments/945143) |
@@ -40,7 +39,6 @@ productive municipality, current offer and phone/email before admission.
 | Shiny Brewing Company | Manufacturers/packers; rating/inspection 2024-08-19 | Unit 10 Old Hall Mill Business Park, Alfreton Road, Little Eaton, DE21 5EJ | [841943](https://api.ratings.food.gov.uk/Establishments/841943) |
 | Taddington Brewery Ltd | Manufacturers/packers; rating/inspection 2024-10-02 | Blackwell Hall, Blackwell, Derbyshire, SK17 9TQ | [1626334](https://api.ratings.food.gov.uk/Establishments/1626334) |
 | The Milking Parlour: Tollgate Brewery Limited | Manufacturers/packers; rating/inspection 2024-10-30 | Staunton Lane, Calke, Ashby De La Zouch Derbyshire, LE65 1RG | [1134110](https://api.ratings.food.gov.uk/Establishments/1134110) |
-| Thornbridge Brewery Limited | Manufacturers/packers; rating/inspection 2025-03-18 | 1-8 Lakeside Building, Buxton Road, Bakewell, Derbyshire, DE45 1GS | [1626368](https://api.ratings.food.gov.uk/Establishments/1626368) |
 | Bradshaw Fields Farm | Farmers/growers; rating/inspection 2026-04-09 | SK23 | [1895158](https://api.ratings.food.gov.uk/Establishments/1895158) |
 | Dad's Bees | Manufacturers/packers; rating/inspection 2025-11-07 | 21 Bramlyn Court, Clowne, Chesterfield, S43 4QA | [438551](https://api.ratings.food.gov.uk/Establishments/438551) |
 | Drone Valley Brewery | Manufacturers/packers; rating/inspection 2023-01-24 | Unit 2, Unstone Industrial Complex, Main Road, Unstone, S18 4AB | [911354](https://api.ratings.food.gov.uk/Establishments/911354) |

@@ -24,7 +24,6 @@ productive municipality, current offer and phone/email before admission.
 | Spittal House Farm Ltd (Dairy) | Farmers/growers; rating/inspection 2024-03-24 | Newmains Farm, Dumfries, Southerness, DG2 8AD | [1180878](https://api.ratings.food.gov.uk/Establishments/1180878) |
 | Upper Portrak Farm (Dairy) | Farmers/growers; rating/inspection 2022-01-12 | Upper Portrack Farm, Dumfries, Holywood, DG2 0SD | [1181013](https://api.ratings.food.gov.uk/Establishments/1181013) |
 | West Kirkland Farm Ltd (Dairy) | Farmers/growers; rating/inspection 2024-03-04 | Newton Stewart, DG8 9TE | [1722074](https://api.ratings.food.gov.uk/Establishments/1722074) |
-| Galloway Farmhouse Cheese | Manufacturers/packers; rating/inspection 2020-03-18 | Millairies, Newton Stewart, Sorbie, DG8 8AL | [764811](https://api.ratings.food.gov.uk/Establishments/764811) |
 | James Logan & Sons (Dairy) | Farmers/growers; rating/inspection 2024-03-04 | Scotsfield Farm, Annan, Creca, DG12 6RR | [1722032](https://api.ratings.food.gov.uk/Establishments/1722032) |
 | James A McGarva (Dairy) | Farmers/growers; rating/inspection 2024-03-18 | Horseclose Farm, Annan, Cummertrees, DG12 5PZ | [1722054](https://api.ratings.food.gov.uk/Establishments/1722054) |
 | Messrs James Copeland & Sons (Dairy) | Farmers/growers; rating/inspection 2024-05-13 | 1 Kilfillan, Newton Stewart, Glenluce, DG8 0JN | [1743401](https://api.ratings.food.gov.uk/Establishments/1743401) |
@@ -39,6 +38,5 @@ productive municipality, current offer and phone/email before admission.
 | J M L Milligan (Dairy) | Farmers/growers; rating/inspection 2016-12-21 | Culvennan Farm, Castle Douglas, DG7 2LJ | [1181075](https://api.ratings.food.gov.uk/Establishments/1181075) |
 | St James Smokehouse (Fish Filleting) | Manufacturers/packers; rating/inspection 2024-06-12 | Unit 2 Station Yard, Annan, Station Road, DG12 6BA | [1281339](https://api.ratings.food.gov.uk/Establishments/1281339) |
 | The Bee Orchard | Farmers/growers; rating/inspection 2018-11-30 | DG2 | [1152579](https://api.ratings.food.gov.uk/Establishments/1152579) |
-| St James Smokehouse (Scotland) Ltd | Manufacturers/packers; rating/inspection 2024-06-12 | 1 Station Road, Annan, DG12 6BA | [1281388](https://api.ratings.food.gov.uk/Establishments/1281388) |
 | Waulkmill Cider Orchard | Manufacturers/packers; rating/inspection 2016-05-06 | Burnfoot Farmhouse, Langholm, Westerkirk, DG13 0NG | [893358](https://api.ratings.food.gov.uk/Establishments/893358) |
 | K & I Miller & Sons Ltd (Dairy) | Farmers/growers; rating/inspection 2017-06-01 | Lockerbie, Lochmaben, DG11 1SA | [1181026](https://api.ratings.food.gov.uk/Establishments/1181026) |

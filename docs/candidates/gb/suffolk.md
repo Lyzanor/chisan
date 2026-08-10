@@ -17,8 +17,6 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Fen Farm Dairy | Manufacturers/packers; rating/inspection 2026-02-18 | Fen Farm, Flixton Road, Bungay, Suffolk, NR35 1PD | [1074864](https://api.ratings.food.gov.uk/Establishments/1074864) |
-| Suffolk Farmhouse Cheeses | Manufacturers/packers; rating/inspection 2025-11-06 | Suffolk Farmhouse Cheeses., Whitegate Farm, Norwich Road, Creeting St Mary, IP6 8PG | [1136619](https://api.ratings.food.gov.uk/Establishments/1136619) |
 | Farmhouse Bakery | Manufacturers/packers; rating/inspection 2025-03-31 | 56 Thoroughfare, Halesworth, Suffolk, IP19 8AR | [1074416](https://api.ratings.food.gov.uk/Establishments/1074416) |
 | Hall Farm Butchers | Manufacturers/packers; rating/inspection 2025-02-25 | 25 Market Hill, Framlingham, Woodbridge, Suffolk, IP13 9AN | [1796443](https://api.ratings.food.gov.uk/Establishments/1796443) |
 | Mr Bees Brewery | Manufacturers/packers; rating/inspection 2017-04-27 | Searsons Farm, Cordys Lane, Trimley St Mary, Suffolk, IP11 0UD | [963405](https://api.ratings.food.gov.uk/Establishments/963405) |

@@ -34,7 +34,6 @@ productive municipality, current offer and phone/email before admission.
 | Ferm Believers Fermented Foods | Manufacturers/packers; rating/inspection 2025-02-10 | Prince Albert Public House, 2 Broadway, Bexleyheath, Kent, DA6 7LE | [1754227](https://api.ratings.food.gov.uk/Establishments/1754227) |
 | Hestia's Smokehouse | Manufacturers/packers; rating/inspection 2025-02-20 | Unit F07, Acton Business Centre, School Road, Park Royal, NW10 6TD | [1594624](https://api.ratings.food.gov.uk/Establishments/1594624) |
 | Ignition Brewery Limited | Manufacturers/packers; rating/inspection 2026-05-09 | The Sydenham Centre, 44A Sydenham Road, London, SE26 5QF | [1599570](https://api.ratings.food.gov.uk/Establishments/1599570) |
-| La Latteria- Samia Dairy Limited | Manufacturers/packers; rating/inspection 2025-03-12 | 5 & 7 Cumberland Business Park, Cumberland Avenue, London, NW10 7RT | [988736](https://api.ratings.food.gov.uk/Establishments/988736) |
 | Old Oak Brewery | Manufacturers/packers; rating/inspection 2026-07-31 | Unit 2, Woodward Buildings, 1 Victoria Road, Acton, W3 6FA | [1902278](https://api.ratings.food.gov.uk/Establishments/1902278) |
 | Penge Brewing Co | Manufacturers/packers; rating/inspection 2025-08-08 | 21 Southey Street, Penge, London, SE20 7JD | [959837](https://api.ratings.food.gov.uk/Establishments/959837) |
 | Perivale Brewery | Manufacturers/packers; rating/inspection 2026-02-18 | Horsenden Farm, Horsenden Lane North, Greenford, Ealing, UB6 7PQ | [1213466](https://api.ratings.food.gov.uk/Establishments/1213466) |

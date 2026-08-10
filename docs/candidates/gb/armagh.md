@@ -19,7 +19,6 @@ productive municipality, current offer and phone/email before admission.
 |---|---|---|---|
 | M & W FARM MEATS | Manufacturers/packers; rating/inspection 2025-09-02 | Scotch Street, Moy Road, Portadown, BT62 1SA | [755372](https://api.ratings.food.gov.uk/Establishments/755372) |
 | J Mills Honey | Farmers/growers | BT66 | [1603598](https://api.ratings.food.gov.uk/Establishments/1603598) |
-| Long Meadow Cider | Manufacturers/packers; rating/inspection 2026-04-20 | 87 Loughgall Road, Kilmoriarty, Portadown, Armagh, BT62 4EG | [755828](https://api.ratings.food.gov.uk/Establishments/755828) |
 | Pin Box Farm | Manufacturers/packers; rating/inspection 2024-11-28 | 20 Cloncore Road, Cloncore, Portadown, Armagh, BT62 1UT | [755897](https://api.ratings.food.gov.uk/Establishments/755897) |
 | Sweet Bakes | Manufacturers/packers; rating/inspection 2022-11-03 | BT61 | [1551690](https://api.ratings.food.gov.uk/Establishments/1551690) |
 | Butcher Shop & Deli | Manufacturers/packers; rating/inspection 2026-01-13 | 11 Brownstown Road, Corcrain, Portadown, Armagh, BT62 4EB | [1020603](https://api.ratings.food.gov.uk/Establishments/1020603) |

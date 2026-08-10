@@ -31,7 +31,6 @@ productive municipality, current offer and phone/email before admission.
 | Little Angley Farm | Farmers/growers; rating/inspection 2022-10-14 | Glassenbury Road, Cranbrook, Kent, TN17 2QJ | [1543105](https://api.ratings.food.gov.uk/Establishments/1543105) |
 | Longland Farm | Farmers/growers; rating/inspection 2024-10-31 | Longland Farm Exted Hill, ELHAM, CT4 6UD | [1786878](https://api.ratings.food.gov.uk/Establishments/1786878) |
 | Beardy Baker | Farmers/growers; rating/inspection 2026-06-15 | Unit 11C, Barton Business Park, Appledown Way, Canterbury, CT1 3AA | [1371406](https://api.ratings.food.gov.uk/Establishments/1371406) |
-| Cheesemakers Of Canterbury | Manufacturers/packers; rating/inspection 2026-05-26 | Unit 3, Lamberhurst Farm, Dargate Road, Yorkletts, ME13 9EP | [713931](https://api.ratings.food.gov.uk/Establishments/713931) |
 | Davenport Vineyards | Manufacturers/packers; rating/inspection 2025-05-01 | Hazel Street Farm, Spelmonden Road, Horsmonden, Tonbridge, TN12 8EF | [1813397](https://api.ratings.food.gov.uk/Establishments/1813397) |
 | Gilda Bakery Ltd | Farmers/growers; rating/inspection 2025-07-18 | Shop, Court Lodge Farm, Frog Lane, Bishopsbourne, CT4 5HU | [1520923](https://api.ratings.food.gov.uk/Establishments/1520923) |
 | Kingcott Dairy | Manufacturers/packers; rating/inspection 2026-01-21 | Iden Manor Farm, Cranbrook Road, Staplehurst, Kent, TN12 0ES | [720768](https://api.ratings.food.gov.uk/Establishments/720768) |

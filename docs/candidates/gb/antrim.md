@@ -21,8 +21,6 @@ productive municipality, current offer and phone/email before admission.
 | Lisnahay Farm Meats | Manufacturers/packers; rating/inspection 2026-03-12 | BT40 | [1889434](https://api.ratings.food.gov.uk/Establishments/1889434) |
 | Twisted Bakes and Coffee | Manufacturers/packers; rating/inspection 2026-02-05 | 6 Loughill Road, Loughill, Ballymena, Antrim, BT44 9LT | [1906741](https://api.ratings.food.gov.uk/Establishments/1906741) |
 | Hillstown Farm Shop | Manufacturers/packers; rating/inspection 2025-10-21 | 128 Glebe Road, Creagh, Randalstown, Antrim, BT41 3DT | [742525](https://api.ratings.food.gov.uk/Establishments/742525) |
-| Hinch Distillery | Manufacturers/packers; rating/inspection 2024-10-03 | 19 Carryduff Road, Carrickmaddyroe, Lisburn, Down, BT27 6TZ | [1286004](https://api.ratings.food.gov.uk/Establishments/1286004) |
-| Lacada Brewery Ltd | Manufacturers/packers; rating/inspection 2025-04-17 | 7 Victoria Street, Port Rush, Portrush, Antrim, BT56 8DL | [867096](https://api.ratings.food.gov.uk/Establishments/867096) |
 | A C Meats Ltd | Manufacturers/packers; rating/inspection 2026-06-08 | 119 Doagh Road, Croghfern, Newtownabbey, Antrim, BT36 6AA | [1634950](https://api.ratings.food.gov.uk/Establishments/1634950) |
 | A MULHOLLAND BUTCHER | Manufacturers/packers; rating/inspection 2025-11-27 | 55 Sloan Street, Largymore, Lisburn, Antrim, BT27 5AG | [749643](https://api.ratings.food.gov.uk/Establishments/749643) |
 | Benchmark Bread | Manufacturers/packers; rating/inspection 2024-05-28 | 647 Shore Road, Drumnadrough, Newtownabbey, Antrim, BT37 0ST | [1724406](https://api.ratings.food.gov.uk/Establishments/1724406) |

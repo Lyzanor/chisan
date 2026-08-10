@@ -20,7 +20,6 @@ productive municipality, current offer and phone/email before admission.
 | CWM FARM DAIRY (FP006) | Manufacturers/packers; rating/inspection 2026-03-27 | Cwm Farm, Bolahaul Road, Cwmffrwd, Carmarthen, SA31 2LP | [916443](https://api.ratings.food.gov.uk/Establishments/916443) |
 | Thorning Farm Bakery | Manufacturers/packers | Thorning Farm, Pendine, Carmarthen, SA33 4PN | [1759720](https://api.ratings.food.gov.uk/Establishments/1759720) |
 | Coles Brewery | Manufacturers/packers; rating/inspection 2026-03-23 | White Hart Inn, Llanddarog, Carmarthen, SA32 8NT | [1567511](https://api.ratings.food.gov.uk/Establishments/1567511) |
-| Cwm Gwendrath Valley Dairy (FP109) | Manufacturers/packers; rating/inspection 2026-03-30 | Penrhiw, Cwmisfael, Carmarthen, SA32 8BY | [1765589](https://api.ratings.food.gov.uk/Establishments/1765589) |
 | Dairy Partners Wales Ltd (FP003) | Manufacturers/packers; rating/inspection 2026-02-04 | The Creamery, Aberarad, Newcastle Emlyn, SA38 9DQ | [829003](https://api.ratings.food.gov.uk/Establishments/829003) |
 | Fforest Isaf Farm Eggs (FP095) | Manufacturers/packers; rating/inspection 2024-10-04 | Fforest Isaf, Pontantwn, Kidwelly, SA17 5NG | [1765588](https://api.ratings.food.gov.uk/Establishments/1765588) |
 | Llaeth Beynon Dairy ( FP097) | Manufacturers/packers; rating/inspection 2025-10-08 | Goitrefach, Hendy, Swansea, SA4 0YA | [1350951](https://api.ratings.food.gov.uk/Establishments/1350951) |

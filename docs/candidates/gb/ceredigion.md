@@ -18,7 +18,6 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Blue Grass Honey Farm | Farmers/growers | Glas Teilo, Lledrod, Ceredigion, SY23 4HX | [863068](https://api.ratings.food.gov.uk/Establishments/863068) |
-| Holden Farm Dairy | Manufacturers/packers; rating/inspection 2026-03-17 | Bwlchwernen Fawr, Llwynygroes, Ceredigion, SA48 8PS | [863080](https://api.ratings.food.gov.uk/Establishments/863080) |
 | NEW QUAY HONEY FARM | Manufacturers/packers; rating/inspection 2026-06-12 | Maesnewydd, Cross Inn, Ceredigion, SA44 6NN | [864360](https://api.ratings.food.gov.uk/Establishments/864360) |
 | Blaencamel Farm | Farmers/growers; rating/inspection 2010-02-06 | Blaencamel, Cilcennin, Ceredigion, SA48 8DB | [863693](https://api.ratings.food.gov.uk/Establishments/863693) |
 | Endeavour Shellfish | Farmers/growers | Aberystwyth Marina Y Lanfa, Trefechan, Aberystwyth, Ceredigion, SY23 1AS | [1513268](https://api.ratings.food.gov.uk/Establishments/1513268) |

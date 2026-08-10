@@ -32,7 +32,6 @@ productive municipality, current offer and phone/email before admission.
 | Weston Manor Farm | Farmers/growers; rating/inspection 2021-06-03 | Weston Manor Farm Weston Lane, Corscombe, Dorset, DT2 0PB | [1802479](https://api.ratings.food.gov.uk/Establishments/1802479) |
 | Apex Brewing Co. | Manufacturers/packers; rating/inspection 2026-05-11 | Patson Hill Farm Patson Hill Lane, Trent, Dorset, DT9 4SY | [1927486](https://api.ratings.food.gov.uk/Establishments/1927486) |
 | Black Ven Distillery | Manufacturers/packers; rating/inspection 2024-11-05 | Long Close Clappentail Lane, Lyme Regis, Dorset, DT7 3LZ | [1772829](https://api.ratings.food.gov.uk/Establishments/1772829) |
-| Book & Bucket Cheese Co. | Manufacturers/packers; rating/inspection 2026-08-05 | Unit 2 Manor Farm Salisbury Street, Cranborne, Dorset, BH21 5RL | [1526027](https://api.ratings.food.gov.uk/Establishments/1526027) |
 | Boscombe Brewing Company Ltd | Farmers/growers; rating/inspection 2025-01-31 | BH7 | [1417320](https://api.ratings.food.gov.uk/Establishments/1417320) |
 | DORSET BREWING COMPANY LTD | Manufacturers/packers; rating/inspection 2025-03-05 | Unit 7 Lawrence Drive, Crossways, Dorset, DT2 8BF | [1802474](https://api.ratings.food.gov.uk/Establishments/1802474) |
 | Kate's Honey | Farmers/growers | 3 Westleaze, Charminster, Dorset, DT2 9PZ | [1958818](https://api.ratings.food.gov.uk/Establishments/1958818) |

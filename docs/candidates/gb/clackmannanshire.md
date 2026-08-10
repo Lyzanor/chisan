@@ -17,7 +17,6 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Harviestoun Brewery | Manufacturers/packers; rating/inspection 2025-05-28 | Alva Industrial Estate Road, Alva, Clackmannanshire, FK12 5DQ | [692783](https://api.ratings.food.gov.uk/Establishments/692783) |
 | Hillfoots Honey | Farmers/growers; rating/inspection 2026-06-02 | FK13 | [1957317](https://api.ratings.food.gov.uk/Establishments/1957317) |
 | Ochil Fudge Ltd | Manufacturers/packers; rating/inspection 2025-12-09 | Unit 1, Millar Court, Whins Road, Alloa, FK10 3SA | [1077928](https://api.ratings.food.gov.uk/Establishments/1077928) |
 | Aimee's Home Bakes | Manufacturers/packers; rating/inspection 2025-07-25 | FK10 | [1842119](https://api.ratings.food.gov.uk/Establishments/1842119) |

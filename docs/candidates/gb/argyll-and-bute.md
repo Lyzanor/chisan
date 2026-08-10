@@ -25,7 +25,6 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Lotts Seafoods | Farmers/growers; rating/inspection 2024-07-09 | Allwynds Lotts Isle Of Islay Argyll And Bute PA42 7DD, PA42 7DD | [1739660](https://api.ratings.food.gov.uk/Establishments/1739660) |
-| Ardnahoe Distillery | Manufacturers/packers; rating/inspection 2019-04-10 | Ardnahoe Distillery Port Askaig Isle Of Islay Argyll And Bute PA46 7RN, PA46 7RN | [1134290](https://api.ratings.food.gov.uk/Establishments/1134290) |
 | Caol Ila Distillery | Manufacturers/packers; rating/inspection 2022-03-04 | Caolila Distillery Caol Ila Isle Of Islay Argyll And Bute PA46 7RL, PA46 7RL | [1475217](https://api.ratings.food.gov.uk/Establishments/1475217) |
 | Evanachan Farm | Manufacturers/packers; rating/inspection 2023-08-02 | Evanachan Farm Otter Ferry Tighnabruaich Argyll And Bute PA21 2DH, PA21 2DH | [1672595](https://api.ratings.food.gov.uk/Establishments/1672595) |
 | Highland Fold Ice Cream (At Your Table) | Manufacturers/packers; rating/inspection 2024-09-24 | Food From Argyll Kitchen Oban Livestock Centre Oban Argyll And Bute PA34 4SD, PA34 4SD | [1764531](https://api.ratings.food.gov.uk/Establishments/1764531) |

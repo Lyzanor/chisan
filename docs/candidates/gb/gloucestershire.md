@@ -36,6 +36,5 @@ productive municipality, current offer and phone/email before admission.
 | Inferno Brewery Ltd | Manufacturers/packers; rating/inspection 2024-10-15 | 17 Station Street, Tewkesbury, Gloucestershire, GL20 5NJ | [1059211](https://api.ratings.food.gov.uk/Establishments/1059211) |
 | Manor Farm Chedworth | Manufacturers/packers; rating/inspection 2024-08-27 | Chedworth Village Hall, Fields Road, Chedworth, Cheltenham, GL54 4NQ | [1698306](https://api.ratings.food.gov.uk/Establishments/1698306) |
 | Piston Distillery | Manufacturers/packers; rating/inspection 2025-02-18 | Unit 2, Bamfurlong Industrial Park, Bamfurlong Lane, Staverton, GL51 6SX | [1579125](https://api.ratings.food.gov.uk/Establishments/1579125) |
-| Smarts Traditional Gloucester Cheese | Manufacturers/packers; rating/inspection 2025-04-30 | Old Ley Court, Chapel Lane, Churcham, Gloucestershire, GL2 8AR | [10005](https://api.ratings.food.gov.uk/Establishments/10005) |
 | Stroud Brewery Ltd | Manufacturers/packers; rating/inspection 2024-11-12 | Stroud Brewery, Kingfisher Business Park, London Road, Thrupp, GL5 2BY | [1109527](https://api.ratings.food.gov.uk/Establishments/1109527) |
 | Stroud Smokehouse | Manufacturers/packers; rating/inspection 2025-12-03 | Unit 18, Canal Iron Works, London Road, Brimscombe, GL5 2SH | [1377797](https://api.ratings.food.gov.uk/Establishments/1377797) |

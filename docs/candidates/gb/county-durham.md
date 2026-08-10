@@ -27,7 +27,6 @@ productive municipality, current offer and phone/email before admission.
 | Kemps Cider | Manufacturers/packers; rating/inspection 2018-03-02 | Dairy Farm, The Green, BRAFFERTON, DARLINGTON, DL1 3LA | [1039377](https://api.ratings.food.gov.uk/Establishments/1039377) |
 | McColl's Brewery | Manufacturers/packers; rating/inspection 2024-09-27 | UNIT 4 RANDOLPH INDUSTRIAL ESTATE, EVENWOOD, DL14 9SJ | [955626](https://api.ratings.food.gov.uk/Establishments/955626) |
 | Ox Close Farm Ltd | Manufacturers/packers; rating/inspection 2026-05-18 | OXCLOSE FARM, SHADFORTH, DH6 1NH | [1301361](https://api.ratings.food.gov.uk/Establishments/1301361) |
-| Teesdale Cheesemakers | Manufacturers/packers; rating/inspection 2026-05-20 | POND FARM 11 COPLEY LANE, COPLEY, DL13 5LW | [1104087](https://api.ratings.food.gov.uk/Establishments/1104087) |
 | W L Distillery | Manufacturers/packers; rating/inspection 2025-06-26 | UNIT 4E SOUTH HETTON INDUSTRIAL ESTATE BESSEMER ROAD, SOUTH HETTON, DH6 2UZ | [1241397](https://api.ratings.food.gov.uk/Establishments/1241397) |
 | Yarm Distillery | Manufacturers/packers; rating/inspection 2024-05-10 | 8a Wass Way, Durham Lane Industrial Park, TS16 0RG | [1363934](https://api.ratings.food.gov.uk/Establishments/1363934) |
 | Dark Sky Brewery Ltd | Manufacturers/packers; rating/inspection 2023-09-29 | BARCLAYS BANK HOUSE MARKET PLACE, MIDDLETON-IN-TEESDALE, DL12 0QG | [1631526](https://api.ratings.food.gov.uk/Establishments/1631526) |

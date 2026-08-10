@@ -20,7 +20,6 @@ productive municipality, current offer and phone/email before admission.
 | THE YORKSHIRE CHEESE FARM | Manufacturers/packers; rating/inspection 2025-11-18 | Lawns Farm, York Lane, Morthen, Rotherham, S66 9JH | [1514930](https://api.ratings.food.gov.uk/Establishments/1514930) |
 | Anston Grange Farm Butcher's Shop | Farmers/growers; rating/inspection 2023-08-31 | Anston Grange Farm, Lindrick Dale, Worksop, S81 8BD | [1282162](https://api.ratings.food.gov.uk/Establishments/1282162) |
 | Home Farm Bakery | Manufacturers/packers; rating/inspection 2025-02-25 | 230 Pontefract Road, Lundwood, S71 5PN | [397560](https://api.ratings.food.gov.uk/Establishments/397560) |
-| Our Cow Molly Dairy Ice-Cream & Farm Shop/Cafe | Manufacturers/packers; rating/inspection 2026-02-25 | Cliffe House Farm, Hill Top Road, Dungworth, Sheffield, S6 6GW | [436586](https://api.ratings.food.gov.uk/Establishments/436586) |
 | 50% Sweet Bakery | Manufacturers/packers; rating/inspection 2025-09-26 | UNIT 6 Farfield Road, Neepsend, Sheffield, S3 8AA | [1872340](https://api.ratings.food.gov.uk/Establishments/1872340) |
 | Ambell Farm DK - 025 | Farmers/growers; rating/inspection 2024-03-19 | Ambell Farm Kirk Lane, Sykehouse, Doncaster, DN14 9AN | [576160](https://api.ratings.food.gov.uk/Establishments/576160) |
 | Bank House Farm | Farmers/growers; rating/inspection 2025-02-05 | Bank House Farm High Levels Bank, Thorne, Doncaster, DN8 5SL | [1662026](https://api.ratings.food.gov.uk/Establishments/1662026) |
@@ -29,7 +28,6 @@ productive municipality, current offer and phone/email before admission.
 | Hawkins Distillery | Manufacturers/packers; rating/inspection 2024-03-07 | Unit 16 Baltic Works, Effingham Road, Sheffield, S9 3QA | [1685299](https://api.ratings.food.gov.uk/Establishments/1685299) |
 | J & A M Battye T/A Firs Farm | Farmers/growers; rating/inspection 2026-04-02 | Firs Farm, Ringinglow Road, Sheffield, S11 7TD | [437887](https://api.ratings.food.gov.uk/Establishments/437887) |
 | New York Cheesecake Co | Manufacturers/packers; rating/inspection 2025-05-27 | 55 Arksey Lane, Bentley, Doncaster, DN5 0RX | [1832581](https://api.ratings.food.gov.uk/Establishments/1832581) |
-| Our Cow Molly Dairy Ltd | Manufacturers/packers; rating/inspection 2026-06-16 | Cliffe House Farm, Hill Top, Dungworth, Sheffield, S6 6GW | [894943](https://api.ratings.food.gov.uk/Establishments/894943) |
 | Woodsetts Honey | Farmers/growers; rating/inspection 2026-04-13 | 6 Cross Field Drive, Woodsetts, Worksop, S81 8SP | [1922509](https://api.ratings.food.gov.uk/Establishments/1922509) |
 | Wortley Farm Shop | Manufacturers/packers; rating/inspection 2025-09-04 | Wortley Farm Shop, Park Avenue, Wortley Sheffield, S35 7DB | [1809687](https://api.ratings.food.gov.uk/Establishments/1809687) |
 | Balqees Raw Honey | Manufacturers/packers; rating/inspection 2024-09-12 | Units 12 And 13 Carbrook Hall Industrial Estate, Dunlop Street, Sheffield, S9 2HR | [1711637](https://api.ratings.food.gov.uk/Establishments/1711637) |

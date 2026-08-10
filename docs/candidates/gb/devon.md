@@ -36,7 +36,6 @@ productive municipality, current offer and phone/email before admission.
 | Clearwater Brewery | Manufacturers/packers; rating/inspection 2025-10-15 | Clearwater Brewery Ltd, Unit 1, Little Court, Gammaton Road, EX39 4FG | [1661601](https://api.ratings.food.gov.uk/Establishments/1661601) |
 | Courtneys Of Whimple - Cider Apple Products | Manufacturers/packers; rating/inspection 2025-06-20 | Oak Lodge, Southbrook Lane, Whimple, Exeter, EX5 2PD | [625120](https://api.ratings.food.gov.uk/Establishments/625120) |
 | Cruwys Morchard Shoot | Manufacturers/packers; rating/inspection 2025-11-03 | CM Sporting Club Ltd, Cruwys Morchard Studio, Pennymoor, Tiverton, EX16 8PH | [1810668](https://api.ratings.food.gov.uk/Establishments/1810668) |
-| Curworthy Cheese | Manufacturers/packers; rating/inspection 2026-03-23 | Stockbeare Farm, Jacobstowe, EX20 3PZ | [1420966](https://api.ratings.food.gov.uk/Establishments/1420966) |
 | Daisy's Dairy-EVO 85 | Manufacturers/packers; rating/inspection 2024-10-02 | South Waterhayne Farm, Yarcombe, Honiton, EX14 9AX | [1414845](https://api.ratings.food.gov.uk/Establishments/1414845) |
 | Daynes Farm limited | Manufacturers/packers; rating/inspection 2026-06-17 | Daynes Farm, Harberton, TQ9 7FB | [1578390](https://api.ratings.food.gov.uk/Establishments/1578390) |
 | Devon Distillery Ltd | Manufacturers/packers; rating/inspection 2025-01-24 | Unit 8, South Devon Food Hub, Longcombe, TQ9 6PW | [1692660](https://api.ratings.food.gov.uk/Establishments/1692660) |

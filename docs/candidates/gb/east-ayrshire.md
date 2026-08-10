@@ -19,7 +19,6 @@ productive municipality, current offer and phone/email before admission.
 |---|---|---|---|
 | Ayrshire Riviera Cider | Farmers/growers; rating/inspection 2025-03-21 | Ayrshire Riviera Cider, Unit 11, Umberley Road, Loreny Industrial Estate, KA1 5LB | [1846209](https://api.ratings.food.gov.uk/Establishments/1846209) |
 | Blowin Free Gin | Manufacturers/packers; rating/inspection 2026-05-21 | Blowin Free Gin, Altonhill Farm, Kilmarnock Road, Kilmaurs, KA3 2NR | [1947769](https://api.ratings.food.gov.uk/Establishments/1947769) |
-| Mossgiel Milk t/a Mossgiel Organic Farm | Manufacturers/packers; rating/inspection 2017-03-14 | Mossgiel Milk t/a Mossgiel Organic Farm, West Mossgiel Farm, Mauchline, East Ayrshire, KA5 5LL | [1056042](https://api.ratings.food.gov.uk/Establishments/1056042) |
 | Afton Glen Meats, Kenny Lucas | Manufacturers/packers; rating/inspection 2026-03-11 | Afton Glen Meats Kenny Lucas, 8-16 Cross Street, Galston, East Ayrshire, KA4 8AL | [1427873](https://api.ratings.food.gov.uk/Establishments/1427873) |
 | Ayrshire Honey | Manufacturers/packers; rating/inspection 2019-08-29 | Ayrshire Honey, Fieldridge, Kilmarnock, East Ayrshire, KA2 9AD | [696732](https://api.ratings.food.gov.uk/Establishments/696732) |
 | Browning The Bakers | Manufacturers/packers; rating/inspection 2026-01-28 | Browning The Bakers, Block 1, Bonnyton Industrial Estate, Munro Place, KA1 2NP | [839468](https://api.ratings.food.gov.uk/Establishments/839468) |
