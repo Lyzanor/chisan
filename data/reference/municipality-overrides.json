@@ -1621,6 +1621,16 @@
       }
     ]
   },
+  "de": {
+    "wartenberg": [
+      {
+        "lat": 50.6145901,
+        "lon": 9.4623115,
+        "label": "Wartenberg (Vogelsbergkreis, Hessen)",
+        "region": "westdeutschland"
+      }
+    ]
+  },
   "nl": {
     "altena": {
       "lat": 51.765663,
