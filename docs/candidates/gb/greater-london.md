@@ -1,0 +1,44 @@
+# Greater London — open leads (2026-08-10)
+
+Discovery workspace for unresolved producer leads. None is verified or
+approved for publication. Resolve accepted/rejected/already-present items
+under the normal CSV and evidence workflow and prune them from this file.
+
+## FSA productive-type sweep (2026-08-10)
+
+Official-source follow-up completed on 2026-08-10. Entries still listed below remain `hold`: the public material reviewed did not establish the full admission gate or a definitive exclusion.
+
+Live Food Standards Agency API sweep of `Manufacturers/packers` and
+`Farmers/growers`. The register supports the published trading name,
+registered address and business type only; it does not establish a current
+own offer, a public contact or that the named unit meets the full KM0 gate.
+Each item is therefore a `hold` lead. Confirm identity, qualifying activity,
+productive municipality, current offer and phone/email before admission.
+
+| Candidate | Registry signal | Registered address | FSA record |
+|---|---|---|---|
+| Meat, fish and cheese | Manufacturers/packers; rating/inspection 2025-12-15 | Meat fish and cheese, Shop At, 57 Newington Green, London, N16 9PX | [1601796](https://api.ratings.food.gov.uk/Establishments/1601796) |
+| Honeyrose Bakery Ltd | Manufacturers/packers; rating/inspection 2025-01-22 | Premier House, Disraeli Road, London, NW10 7AX | [533167](https://api.ratings.food.gov.uk/Establishments/533167) |
+| Doreen’s Jamaican homemade rum cakes | Manufacturers/packers; rating/inspection 2025-01-22 | Unit 2 Mellish Industrial Estate Harrington Way, Woolwich, Greenwich, SE18 5NR | [1388272](https://api.ratings.food.gov.uk/Establishments/1388272) |
+| Botany Bay Farm Shop | Farmers/growers; rating/inspection 2025-02-22 | Farm Shop Botany Bay Farm, 230 The Ridgeway, ENFIELD, EN2 8AP | [317752](https://api.ratings.food.gov.uk/Establishments/317752) |
+| Ducks Hill Farm Eggs | Farmers/growers; rating/inspection 2025-01-09 | Windy Ridge, Ducks Hill Road, Northwood, HA6 2SP | [1399388](https://api.ratings.food.gov.uk/Establishments/1399388) |
+| Jamie Ferments | Manufacturers/packers; rating/inspection 2025-11-20 | 60 Springbank Road, Hither Green, London, SE13 6SN | [1600279](https://api.ratings.food.gov.uk/Establishments/1600279) |
+| Sweet Jenny's Honey | Manufacturers/packers; rating/inspection 2024-11-05 | KT3 | [1386657](https://api.ratings.food.gov.uk/Establishments/1386657) |
+| Raga Foods Ltd T/A Raga' Gelato | Manufacturers/packers; rating/inspection 2025-06-13 | Unit 25, 284 Water Road, Wembley, HA0 1HX | [1564148](https://api.ratings.food.gov.uk/Establishments/1564148) |
+| Anomaly Brewing | Manufacturers/packers; rating/inspection 2025-03-04 | 59 Glebe Gardens, New Malden, KT3 5RU | [1386543](https://api.ratings.food.gov.uk/Establishments/1386543) |
+| Bohem Brewery | Manufacturers/packers; rating/inspection 2026-06-18 | Unit 5 Littleline House, 43 West Road, Tottenham, London, N17 0RE | [1132471](https://api.ratings.food.gov.uk/Establishments/1132471) |
+| Bone Idyll Distillery | Manufacturers/packers; rating/inspection 2024-10-28 | 2 Water Lane, Kingston Upon Thames, KT1 1AE | [1527163](https://api.ratings.food.gov.uk/Establishments/1527163) |
+| Brixton Brewery And Taproom | Manufacturers/packers; rating/inspection 2025-09-17 | Arches 547 And 548, Brixton Station Road, London, SW9 8PF | [623103](https://api.ratings.food.gov.uk/Establishments/623103) |
+| Cold Stone Creamery | Manufacturers/packers; rating/inspection 2024-05-15 | 144 Portobello Road, LONDON, W11 2DZ | [1716182](https://api.ratings.food.gov.uk/Establishments/1716182) |
+| Ealing Honey | Farmers/growers; rating/inspection 2017-02-09 | 123 Perryn Road, Acton, W3 7LT | [1032833](https://api.ratings.food.gov.uk/Establishments/1032833) |
+| Ferm Believers Fermented Foods | Manufacturers/packers; rating/inspection 2025-02-10 | Prince Albert Public House, 2 Broadway, Bexleyheath, Kent, DA6 7LE | [1754227](https://api.ratings.food.gov.uk/Establishments/1754227) |
+| Hestia's Smokehouse | Manufacturers/packers; rating/inspection 2025-02-20 | Unit F07, Acton Business Centre, School Road, Park Royal, NW10 6TD | [1594624](https://api.ratings.food.gov.uk/Establishments/1594624) |
+| Ignition Brewery Limited | Manufacturers/packers; rating/inspection 2026-05-09 | The Sydenham Centre, 44A Sydenham Road, London, SE26 5QF | [1599570](https://api.ratings.food.gov.uk/Establishments/1599570) |
+| La Latteria- Samia Dairy Limited | Manufacturers/packers; rating/inspection 2025-03-12 | 5 & 7 Cumberland Business Park, Cumberland Avenue, London, NW10 7RT | [988736](https://api.ratings.food.gov.uk/Establishments/988736) |
+| Old Oak Brewery | Manufacturers/packers; rating/inspection 2026-07-31 | Unit 2, Woodward Buildings, 1 Victoria Road, Acton, W3 6FA | [1902278](https://api.ratings.food.gov.uk/Establishments/1902278) |
+| Penge Brewing Co | Manufacturers/packers; rating/inspection 2025-08-08 | 21 Southey Street, Penge, London, SE20 7JD | [959837](https://api.ratings.food.gov.uk/Establishments/959837) |
+| Perivale Brewery | Manufacturers/packers; rating/inspection 2026-02-18 | Horsenden Farm, Horsenden Lane North, Greenford, Ealing, UB6 7PQ | [1213466](https://api.ratings.food.gov.uk/Establishments/1213466) |
+| Pirate's Grog Rum | Manufacturers/packers; rating/inspection 2025-03-13 | Unit 25, Milmead Industrial Centre, Mill Mead Road, Tottenham, N17 9QU | [1796056](https://api.ratings.food.gov.uk/Establishments/1796056) |
+| Portobello Brewing Company Ltd | Manufacturers/packers; rating/inspection 2025-09-25 | Unit 6, Mitre Bridge Industrial Park, Mitre Way, London, W10 6AU | [546155](https://api.ratings.food.gov.uk/Establishments/546155) |
+| Pressure Drop Brewing | Manufacturers/packers; rating/inspection 2024-10-17 | Unit 6, Lockwood Industrial Park, Mill Mead Road, Tottenham, N17 9QP | [1035190](https://api.ratings.food.gov.uk/Establishments/1035190) |
+| Sweet As Sauces | Manufacturers/packers; rating/inspection 2024-06-12 | KT3 | [1695532](https://api.ratings.food.gov.uk/Establishments/1695532) |
