@@ -153,32 +153,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/tohoku/yamagata.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/yamagata> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/yamagata> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 17, Pan y cereal 2, Carne 1, Legumbres 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| アンスリーファーム | 寒河江市 | Pescado | https://www.tabechoku.com/producers/20966 | 平成29年･令和2年･令和3年、山形県さくらんぼ品評会にて山形県1位の農林水産大臣賞 |
-| いしまるファーム | 尾花沢市 | Pescado | https://www.tabechoku.com/producers/29290 | 私たちは夏すいか日本一の産地尾花沢ですいかを生産しています。 |
-| たむちゃん農園 | 遊佐町 | Pescado | https://www.tabechoku.com/producers/26804 | 2022年4月に新規就農したばかりの、たむちゃん農園田村と申します。ミニトマト、メロン、すいかを中心に栽培しています。11年、大田市場の仲卸 |
-| 上山観光フルーツ園 | 上山市 | Carne | https://www.tabechoku.com/producers/25212 | 山形県上山市の蔵王を見晴らす丘の上で、サクランボ、プラム、桃、ぶどう、りんご、梨を中心に多品目の果物を生産しています。 |
-| 漆山果樹園 | 南陽市 | Carne | https://www.tabechoku.com/producers/20865 | 漆山果樹園の歴史は80年以上続くぶどう専門農家です。デラウェアと高級ぶどう３０種類を栽培しています。常温乾燥機でドライフルーツや野菜の製造販 |
-| 平田牧場 | 酒田市 | Carne | https://www.tabechoku.com/producers/20661 | 私たち平田牧場は、品種開発や子豚生産、肥育から加工・流通・販売に至るまで、すべて自社で行っている会社です。 |
-| 山形の森と田園 | 西川町 | Setas | https://www.tabechoku.com/producers/20428 | 「山形の森と田園」は、東北南部山形県で育まれた天然山菜・天然きのこやそれらの加工食品、山ぶどう原液ジュースや四季折々の野菜・果物・お米等を全 |
-| すくすくやさい畑 | 鶴岡市 | Legumbres | https://www.tabechoku.com/producers/23991 | 山形県鶴岡市で米、だだちゃ豆（枝豆）、ねぎ、その他葉物野菜などを両親と作っています。 |
-| 農園　阿部惣右衛門 | 鶴岡市 | Legumbres | https://www.tabechoku.com/producers/3078700 | 和多志は山形県鶴岡市の出羽三山の麓で農業をしております。霊峰月山からの雪解け水などの恵みを受けて、お米や大豆・柿を栽培しています。 |
-| 苺屋佐藤 | 寒河江市 | Conservas | https://www.tabechoku.com/producers/27079 | 🍓夏いちご(夏秋いちご)の生産、いちごの加工品販売 |
-| 栗原果樹園 | 東根市 | Frutos secos | https://www.tabechoku.com/producers/23721 | ▶ご挨拶◀ |
-| 松栗 | 東根市 | Frutos secos | https://www.tabechoku.com/producers/20962 | 山形県東根市で”美味しい果物で笑顔を世界中に…”をスローガンに果樹栽培を行っております。 |
-| oboco grapes | 高畠町 | Vino | https://www.tabechoku.com/producers/29426 | 「oboco grapes」は、デラウェア、シャインマスカット等の大粒ぶどう、ワイン用ぶどうを栽培するぶどう専業農園です。 |
-| 山形ゆりあふぁーむ | 三川町 | Pan y cereal | https://www.tabechoku.com/producers/20670 | 山形県の米どころ庄内平野の三川町で、ゆかいな300匹の仲間（カモ）ともにつくる有機栽培のお米と、特別栽培米をつくる楽しい小さな農家です。規模 |
-| 儀三郎の無洗米 | 最上町 | Pan y cereal | https://www.tabechoku.com/producers/28384 | 山形県最上町、分水嶺のほど近く。 |
-| マルヘイ農園 | 米沢市 | Pan y cereal | https://www.tabechoku.com/producers/20000 | 私はこのお米を作っている専業農家の安部平左ェ門です。 |
-| 天童市　東海林農園 | 天童市 | Fruta y verdura | https://www.tabechoku.com/producers/29085 | 山形県天童市で果樹農家をしております |
-| 羽柴果樹園 | 東根市 | Fruta y verdura | https://www.tabechoku.com/producers/26048 | 山形県東根市で果樹園を経営しています。 |
-| まるたか果樹園 | 東根市 | Fruta y verdura | https://www.tabechoku.com/producers/20877 | はじめまして！まるたか果樹園です。 |
-| Farm おとらふ | 寒河江市 | ⚠ por decidir | https://www.tabechoku.com/producers/25319 | ----------------------------------------- |
-| あなたの食の帰る場所361° | 山形市 | ⚠ por decidir | https://www.tabechoku.com/producers/23621 | はじめまして！たくさんのページの中から、私たちのページにお越しいただきありがとうございます。 |
-| 渡部康貴（よそべい） | 鶴岡市 | ⚠ por decidir | https://www.tabechoku.com/producers/21139 | 與惣兵衛（よそべい）こと渡部康貴です。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 平田牧場 | 酒田市 | Carne | ficha | — | https://www.tabechoku.com/producers/20661 |  |
+| 農園　阿部惣右衛門 | 鶴岡市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/3078700 |  |
+| 山形ゆりあふぁーむ | 三川町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/20670 |  |
+| マルヘイ農園 | 米沢市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/20000 |  |
+| 上山観光フルーツ園 | 上山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25212 |  |
+| 漆山果樹園 | 南陽市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20865 |  |
+| 天童市　東海林農園 | 天童市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29085 |  |
+| アンスリーファーム | 寒河江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20966 |  |
+| 苺屋佐藤 | 寒河江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27079 |  |
+| Farm おとらふ | 寒河江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25319 |  |
+| いしまるファーム | 尾花沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29290 |  |
+| あなたの食の帰る場所361° | 山形市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23621 |  |
+| 栗原果樹園 | 東根市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23721 |  |
+| 羽柴果樹園 | 東根市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26048 |  |
+| 松栗 | 東根市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20962 |  |
+| まるたか果樹園 | 東根市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20877 |  |
+| 山形の森と田園 | 西川町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20428 | 山形県西村山郡西川町 |
+| たむちゃん農園 | 遊佐町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26804 | 山形県飽海郡遊佐町藤崎字家ノ上 |
+| oboco grapes | 高畠町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29426 | 山形県東置賜郡高畠町 |
+| すくすくやさい畑 | 鶴岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23991 |  |
+| 渡部康貴（よそべい） | 鶴岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21139 |  |
+| 儀三郎の無洗米 | 最上町 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/28384 | 山形県最上郡最上町 |

@@ -112,32 +112,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/shikoku/ehime.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/ehime> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/ehime> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **21 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 9, Pescado 3, Té e infusiones 2, Huevos 2, Pan y cereal 2, Bebidas sin alcohol 2, Setas 1, Condimentos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 木嶋水産 | 伊方町 | Pescado | https://www.tabechoku.com/producers/26700 | 日本一細長い半島「佐田岬半島」で漁業を営んでいます。釜揚げしらす、ちりめんじゃこ、わかめ、その他魚介類の製造販売をしています。佐田岬のリアス |
-| NOT FARM | 八幡浜市 | Pescado | https://www.tabechoku.com/producers/3079048 | 愛媛県八幡浜市。100年以上の歴史を刻む老舗みかん農園から、NOTFARMは生まれました。確かな技術と伝統があるからこそ、私たちは「農家らし |
-| 松本功次（由良のアワビ屋） | 宇和島市 | Pescado | https://www.tabechoku.com/producers/23638 | 愛媛の宇和島市にある由良半島で主にアワビとヒオウギ貝の養殖を行っております【由良のアワビ屋】です。 |
-| 川原鮮魚 | 西予市 | Pescado | https://www.tabechoku.com/producers/26556 | 2021年、８月に、加工場を、立ち上げました。今までは、漁師だけをしていましたが、沢山の人に、 |
-| にのらく茶園　有機国産べにふうき専門 | 内子町 | Té e infusiones | https://www.tabechoku.com/producers/28007 | 日本生まれの美味しい紅茶品種「べにふうき」だけにこだわり、栽培から製茶まで自分たちで行う小さな農園です。20年前に畑を開いた時からオーガニッ |
-| ＴＯＹＯＫＥＮ | 今治市 | Carne | https://www.tabechoku.com/producers/28144 | 美味しい海賊卵（烏骨鶏卵）を召し上がっていただくため、鶏たちがストレスなく、より自然に近い環境で育つために放し飼い飼育を選択しました。 |
-| 大友農園 | 松山市 | Carne | https://www.tabechoku.com/producers/3078159 | 自己紹介させていただきます/えっと/大友農園の大友良介です/1976年生まれ兵庫県出身/水瓶座のO型です/高校卒業後上京して音楽ばかりやって |
-| 島馬ファーム瀬戸内 | 松山市 | Carne | https://www.tabechoku.com/producers/3078566 | 瀬戸内海の離島・中島で、動物（ポニー・山羊）とともに循環型農業を実践中です。 自家製馬糞堆肥で柑橘を大切に育てています。 かつて耕作放棄地だ |
-| 森の風 | 鬼北町 | Setas | https://www.tabechoku.com/producers/28654 | 豊かな自然が残る清流四万十川の愛媛県側の源流地域、鬼北町で育まれたえごま油と原木乾燥しいたけをご賞味ください |
-| シトラスベースひめまる | 伊方町 | Dulces y repostería | https://www.tabechoku.com/producers/3077649 | 私たちは、夫婦2人で日本一のミカン産地といわれる西宇和のなかでも最高の立地条件（全ての園地が南西向きで海抜150メートル以下）に恵まれた段々 |
-| メニークエスト | 西予市 | Dulces y repostería | https://www.tabechoku.com/producers/3077350 | 愛媛県は日本有数の和栗の産地。全国の老舗和洋菓子メーカーから絶大な評価を得ています。 |
-| GUILD Farm | 松山市 | Cerveza | https://www.tabechoku.com/producers/3077713 | 柑橘王国愛媛で、柑橘とお米を育てています。自然栽培で生産し、パックごはんや愛媛県産原料100%オーガニックビールなど、6次加工にも力を入れて |
-| まるき農園 | 今治市 | Pan y cereal | https://www.tabechoku.com/producers/29523 | 私たちは夫婦二人、愛媛県の大三島で農薬化学肥料不使用で旬のお野菜や柑橘、お米を栽培している農家です。ここ大三島の有機栽培野菜の美味しさに魅了 |
-| ethnic green farm廣川農園 | 東温市 | Pan y cereal | https://www.tabechoku.com/producers/20116 | 愛媛県でエスニック料理に使う野菜を中心にこだわりの有機肥料と菌を使い、露地栽培で年間1ヘクタールの畑で約40品目の野菜、米を栽培し全国の飲食 |
-| SUNNYSIDE FARM | 松山市 | Pan y cereal | https://www.tabechoku.com/producers/29052 | 愛媛県松山市窪野町・久谷町を中心に農薬・肥料・除草剤に頼らずお米やお野菜を栽培しています。農家の高齢化、担い手不足が問題となっている日本の現 |
-| 里居農園（さといのうえん） | 西予市 | Pan y cereal | https://www.tabechoku.com/producers/20790 | 地元、愛媛県で合計8ヘクタールほどの土地でお米とお野菜を年間40品目程度栽培しています。 |
-| えひめ　二宮果樹園 | 八幡浜市 | Fruta y verdura | https://www.tabechoku.com/producers/22586 | 愛媛県八幡浜市でかんきつを栽培している農家です |
-| 新口農園【みかん・柑橘グランプリ2026最高金賞受賞】 | 八幡浜市 | Fruta y verdura | https://www.tabechoku.com/producers/25606 | 愛媛県八幡浜市川上町。ここは、空・海・石垣からの「三つの太陽」が降り注ぐ、日本でも指折りの柑橘の聖地です。100年の歴史の中で磨き上げた新口 |
-| 吉本農園 | 愛南町 | Fruta y verdura | https://www.tabechoku.com/producers/18 | 小高い駄馬にある当園地では、たくさんの種類のみかんを栽培しています。 また、農林大臣賞という素晴らしい賞を頂くことが出来ました。 |
-| 四万十ミライ | 久万高原町 | ⚠ por decidir | https://www.tabechoku.com/producers/27748 | 食べチョクご利用の皆さまはじめまして |
-| OrangeStoreニノミヤ | 八幡浜市 | ⚠ por decidir | https://www.tabechoku.com/producers/21129 | ５年間で【９万８千件】を超えるご注文をいただいています。 |
-| ニノミヤファーム | 八幡浜市 | ⚠ por decidir | https://www.tabechoku.com/producers/22932 | 愛媛県八幡浜市から愛をこめて |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| にのらく茶園　有機国産べにふうき専門 | 内子町 | Té e infusiones | productos | オーガニックのべにふうき緑茶 煮出しがオススメ たっぷり25リットル分 · オーガニックの本格和紅茶 べにふうきのベーシックブレンド | https://www.tabechoku.com/producers/28007 | repr. 東　晃佑 |
+| メニークエスト | 西予市 | Té e infusiones | productos | 栗産地のこだわり『ほとんど栗のテリーヌ』＆『城川オリジナルモンブラン3個入』 · 動物性原材料不使用【プラントベーススイーツ】ほとんど栗のテリーヌ · 栗産地こだわりの『城川オリジナルモンブラン』3個入 | https://www.tabechoku.com/producers/3077350 | repr. 菊地沙也加 |
+| 四万十ミライ | 久万高原町 | Huevos | productos | 【樹上完熟】南国土佐 完熟生ブルーベリー１ｋｇ 農薬不使用 自然栽培 四万十 · 【天然記念物】原種比内鶏の有精卵６個 数量限定お試しセット · 【樹上完熟】四万十和栗１ｋｇ ２Ｌサイズ以上 農薬不使用 自然栽培 四万十産 | https://www.tabechoku.com/producers/27748 |  |
+| ＴＯＹＯＫＥＮ | 今治市 | Huevos | productos | 栄養満点宝箱！！ 今治育ちの烏骨鶏 海賊卵（烏骨鶏卵） ６個入り×２パック  · 栄養満点宝箱！！ 今治育ちの烏骨鶏 海賊卵（烏骨鶏卵） ６個入り （熨斗可能 | https://www.tabechoku.com/producers/28144 | repr. 創業：2020年11月 |
+| 森の風 | 鬼北町 | Setas | productos | 現役宮司が栽培 自然への感謝を込めた原木乾燥しいたけ （原形 60g x 4 · 現役宮司が栽培 自然への感謝を込めた原木乾燥しいたけセット（原形 60g、ス · 現役宮司が栽培 自然への感謝を込めた原木乾燥しいたけ （粉末 80g x 4 | https://www.tabechoku.com/producers/28654 | repr. 二宮美日; 愛媛県北宇和郡鬼北町 |
+| 木嶋水産 | 伊方町 | Pescado | productos | 【まとめ発送】さだ岬の生わかめ5kg【新鮮冷凍】（200g×25袋） · 【冷凍のあわせ買いに】シャキッ！さだ岬の生わかめ（冷凍）200g×1袋 · シャキッ！さだ岬の生わかめ１kg（200g×5袋）【新鮮冷凍】 | https://www.tabechoku.com/producers/26700 | premio 食べチョクAWARD; 愛媛県西宇和郡伊方町 |
+| 松本功次（由良のアワビ屋） | 宇和島市 | Pescado | productos | 養殖活ヒオウギ貝80（殻長75～84ミリ）20個入り 生きたままお届けします · 養殖活ヒオウギ貝80（殻長75～84ミリ）40個入り 生きたままお届けします · 養殖活アワビ500ｇ（約4～7個入り） 愛媛宇和島産 生きたままお届けします | https://www.tabechoku.com/producers/23638 | repr. 松本　功次 |
+| 川原鮮魚 | 西予市 | Pescado | productos | 【夏ギフト】タイセット(魚 · 魚加工品詰め合わせセット(ノーマル)7袋 · 魚詰め合わせセット(味付け)7袋 | https://www.tabechoku.com/producers/26556 | premio 食べチョクAWARD |
+| ethnic green farm廣川農園 | 東温市 | Condimentos | productos | 農薬、化学肥料不使用！香り豊かな赤紫蘇！1㎏ · ハラペーニョ 1kg · 農薬、化学肥料不使用！香り豊かな赤紫蘇！2㎏ | https://www.tabechoku.com/producers/20116 |  |
+| 吉本農園 | 愛南町 | Pan y cereal | productos | 【2026年河内晩柑！今なら20％増量中】爽やかジューシー果実！家庭用3㎏→ · 【只今20%増量中！！】爽やかジューシー果実！河内晩柑！みかけごめん5㎏→6 · 【2026年河内晩柑!今なら20％増量中！！】爽やかジューシー果実！家庭用8 | https://www.tabechoku.com/producers/18 | repr. 吉本敏幸; premio 食べチョクAWARD; 愛媛県南宇和郡愛南町 |
+| SUNNYSIDE FARM | 松山市 | Pan y cereal | productos | 【R７年度産】生活排水なしの一番水 自然栽培窪野米イセヒカリ10㎏【玄米】 · 【R8年産】予約販売 自然栽培米 イセヒカリ15㎏【玄米】※定期購入時はパス · 【R8年産】予約販売 生活排水なしの一番水 自然栽培窪野米イセヒカリ20㎏【 | https://www.tabechoku.com/producers/29052 | repr. 創業：2023年04月 |
+| シトラスベースひめまる | 伊方町 | Bebidas sin alcohol | productos | 《果汁100％糖度：13.9》ひめまる・石地みかんジュース720ml×３本 · とにかく甘い！ひめまる石地みかん（ご家庭用・5Kg） · 濃厚果汁！南津海（なつみ）優品・５Kg | https://www.tabechoku.com/producers/3077649 | repr. 創業：1984年09月; 愛媛県西宇和郡伊方町 |
+| 島馬ファーム瀬戸内 | 松山市 | Bebidas sin alcohol | productos | 【飲み比べセット】カラマンダリン&伊予柑 果汁100%ストレートジュース 7 · 【愛媛県中島産】味濃厚なカラマンダリン サイズ混合5kg · 【愛媛県中島産】味濃厚春みかん！カラマンダリン農薬不使用 サイズ混合5キロ | https://www.tabechoku.com/producers/3078566 | repr. 岡田海渡 |
+| まるき農園 | 今治市 | Fruta y verdura | productos | 丸ごと生しぼり！〖農薬不使用〗3本入飲み比べ柑橘ジュース🍊温州みかん/八朔/ · トロッと玉ねぎ【農薬化学肥料不使用】とても甘い10キロ30個前後 · 【セットでお届け！】農薬化学肥料不使用キラピカ野菜BOX8品ぴゅあみかんジュ | https://www.tabechoku.com/producers/29523 | repr. 井原　大喜 |
+| OrangeStoreニノミヤ | 八幡浜市 | Fruta y verdura | productos | 【これを選べば間違いなし】まるで天然ゼリー！まどんな（ご家庭用・2㎏）×２箱 · 【無添加】夕やけみかんジュース 720ml×６本 · 【超おすすめ！】まどんな（ご家庭用・２㎏）+夕やけみかん（ご家庭用・２㎏）※ | https://www.tabechoku.com/producers/21129 | repr. 二宮正道; premio 食べチョクAWARD |
+| NOT FARM | 八幡浜市 | Fruta y verdura | productos | 【OUTTAKES】訳あり 青ゆず2kg 愛媛県産 青柚子 BLUE YUZ · 【OUTTAKES】訳あり グリーンレモン 5kg 愛媛県産【防腐剤・ワック · 【OUTTAKES】訳あり 青ゆず5kg 愛媛県産 青柚子 BLUE YUZ | https://www.tabechoku.com/producers/3079048 | repr. 創業：2018年11月 |
+| えひめ　二宮果樹園 | 八幡浜市 | Fruta y verdura | productos | 種がないレモン箱込約3㌔ · 種がないジューシーレモン箱込約1㌔ · 箱込約1㌔ マイヤーレモン 皮までバリバリ食べれる美味しさ | https://www.tabechoku.com/producers/22586 |  |
+| ニノミヤファーム | 八幡浜市 | Fruta y verdura | productos | 【贈答品】愛媛の段畑まどんな 9〜12玉×2箱 · 【予約でほぼ売り切れる】美味しいみかん！「段畑みかん」箱込み3キロ · 【予約でほぼ売り切れる】美味しいみかん！「段畑みかん」箱込み5キロ | https://www.tabechoku.com/producers/22932 | repr. 二宮充輝 |
+| 新口農園【みかん・柑橘グランプリ2026最高金賞受賞】 | 八幡浜市 | Fruta y verdura | productos | 【ギフトGP2026ダブル受賞】PREMIUMみかんジュース（1000ml× · 【訳ありだけど美味しさそのまま】河内晩柑 7kg【ほのかな甘みに爽やかな酸味 · 【訳ありだけど美味しさそのまま】河内晩柑 5kg【ほのかな甘みに爽やかな酸味 | https://www.tabechoku.com/producers/25606 | repr. 新口太公 |
+| 大友農園 | 松山市 | Fruta y verdura | productos | せとうちの島育ち！ えひめ中島レモン 5kg · せとうちの島育ち！ えひめ中島レモン 10kg · せとうちの島育ち！ えひめ中島いよかん 10kg | https://www.tabechoku.com/producers/3078159 | repr. 創業：2011年09月 |
+| GUILD Farm | 松山市 | Fruta y verdura | productos | 【加工用】香り満点！瀬戸内カットレモン（冷凍・1kg） · 【ジャム用】香り満点！レモンの皮（冷凍・1kg） · 【ジャム用】香り満点！伊予柑の皮（冷凍・1kg） | https://www.tabechoku.com/producers/3077713 | repr. 創業：2021年02月 |
+| 里居農園（さといのうえん） | 西予市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20790 |  |

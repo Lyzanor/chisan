@@ -110,32 +110,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kanto/kanagawa.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kanagawa> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kanagawa> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 14, Pescado 3, Carne 2, Pan y cereal 2, Setas 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| カメーダ農園 | 横浜市 | Pescado | https://www.tabechoku.com/producers/27186 | 慶長時代より続く農家の18代目で、就農して24年になります。消費者の方々に喜んで頂けるようにと日々野菜作りに精進しております。 |
-| 勘網 | 横須賀市 | Pescado | https://www.tabechoku.com/producers/27630 | 神奈川県の相模湾で定置網漁業（小型）を行っています。 |
-| 鉄釜ひじき　海藻の房丸 | 横須賀市 | Pescado | https://www.tabechoku.com/producers/27682 | 創業70年。鉄釜ひじき、わかめ、昆布の養殖販売。神奈川県横須賀市の浦賀で家族で釣り船を営み、同時に鉄釜ひじきわかめ昆布の養殖をしています。期 |
-| 丸良水産 | 横須賀市 | Pescado | https://www.tabechoku.com/producers/20410 | 私は神奈川県横須賀市の走水という浜で海苔漁師をしています。 |
-| 【ジビエ総本家】小田原貴族ブランド | 小田原市 | Carne | https://www.tabechoku.com/producers/3078438 | #🍖今までの肉では物足りない本物を知るあなたへ🍖 |
-| くだかけ農園 | 山北町 | Carne | https://www.tabechoku.com/producers/3078860 | 神奈川県最後の秘境とも言われる西丹沢の山奥にある、一軒家の農家です。平飼い養鶏で卵を生産し、鶏糞を発酵させて野菜や米も生産しています。田畑は |
-| 有機農園けのひ | 愛川町 | Carne | https://www.tabechoku.com/producers/23483 | 神奈川県愛川町で有機農業を営む小さな農園です。露地で年間80種類くらいの野菜を育てる他、ひまわりの油を絞ったり、農園で採れた野菜をたっぷり使 |
-| みやじ豚 | 藤沢市 | Carne | https://www.tabechoku.com/producers/22147 | みやじ豚の宮治勇輔（みやじゆうすけ）です、こんにちは！ |
-| 永島農園 | 横浜市 | Setas | https://www.tabechoku.com/producers/21387 | 横浜市の南端、金沢区で椎茸と木耳の生産をしている永島太一郎と申します。 |
-| ぶるべの樹 | 相模原市 | Conservas | https://www.tabechoku.com/producers/21182 | 「ぶるべの樹」は、神奈川県でブルーベリーを生産、加工品製造・販売も行なう小さな農園です。６次産業化を主軸に、夏には期間限定でブルーベリー狩り |
-| さとくら農園 | 相模原市 | Conservas | https://www.tabechoku.com/producers/3078762 | 神奈川丹沢山麗の集落から元オーナーシェフの園主による野菜セットと加工品(準備を進めております)をご用意致します。里山暮らしの食の豊かさと、四 |
-| 佐野農園 | 伊勢原市 | Pan y cereal | https://www.tabechoku.com/producers/29222 | 神奈川県西部「大山(おおやま)」の麓で、安心安全を第一に米、果樹(梨，ブドウ)、野菜(筍)等を作っています。 小さな取組みが、少しずつでも、 |
-| 霜島農園 | 厚木市 | Pan y cereal | https://www.tabechoku.com/producers/26962 | 霜島農園の霜島邦夫です。神奈川県厚木市に直売所を構え、主にブドウ、その他お米やもち麦を皆様に提供しています。地域の皆様やお客様に支えられ今年 |
-| お米農家　曽我 | 小田原市 | Pan y cereal | https://www.tabechoku.com/producers/26947 | 酒匂川の流域で、先祖代々お米を栽培しています。 |
-| 渋谷ファーム | 藤沢市 | Pan y cereal | https://www.tabechoku.com/producers/23858 | 神奈川県藤沢市でトマト、きゅうり、ブロッコリー、お米、時々レタス、ほうれん草、ミディトマト、ミニトマトなどなど |
-| あすなろファーム | 小田原市 | Fruta y verdura | https://www.tabechoku.com/producers/21955 | 年退職後、素人から3000坪を有す敷地で梅の原種でクエン酸が豊富な杉田梅や野菜の栽培を20年近くやってきました。 |
-| 鈴也ファーム | 横須賀市 | Fruta y verdura | https://www.tabechoku.com/producers/20806 | フォルクスワーゲン車のディーラーを経て2011年に家業の農家を継ぎました。 |
-| 榎本農園 | 湯河原町 | Fruta y verdura | https://www.tabechoku.com/producers/23067 | 「違いの分かる、高品質なみかんを皆様の食卓に届けたい」 |
-| 子どもの野菜湘南藤沢農場 | 藤沢市 | Fruta y verdura | https://www.tabechoku.com/producers/22165 | 2014年に多摩市役所を定年退職する最後の一年に、小学校の総合学習で野菜の有機栽培の授業と給食事務を担当。丁度その頃調布市で児童が給食を食べ |
-| NO-RA ～農楽～ | 愛川町 | ⚠ por decidir | https://www.tabechoku.com/producers/21386 | 2009年に美しい河川と自然に囲まれた神奈川県愛川町で新規就農しました。 |
-| Kururu farm | 横浜市 | ⚠ por decidir | https://www.tabechoku.com/producers/22819 | Kururu farm |
-| ニッポンルーバス | 海老名市 | ⚠ por decidir | https://www.tabechoku.com/producers/28446 | 小さい頃から農業に関心をもって、大学では農学を学び、オランダやインドネシアへの農業留学を通じて、自らで農業をする決心をしました。小さい頃から |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 永島農園 | 横浜市 | Setas | ficha | — | https://www.tabechoku.com/producers/21387 |  |
+| 勘網 | 横須賀市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27630 |  |
+| 鉄釜ひじき　海藻の房丸 | 横須賀市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27682 |  |
+| 丸良水産 | 横須賀市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20410 |  |
+| 【ジビエ総本家】小田原貴族ブランド | 小田原市 | Carne | ficha | — | https://www.tabechoku.com/producers/3078438 |  |
+| みやじ豚 | 藤沢市 | Carne | ficha | — | https://www.tabechoku.com/producers/22147 |  |
+| 霜島農園 | 厚木市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26962 |  |
+| お米農家　曽我 | 小田原市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26947 |  |
+| 佐野農園 | 伊勢原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29222 |  |
+| あすなろファーム | 小田原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21955 |  |
+| くだかけ農園 | 山北町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078860 | 神奈川県足柄上郡山北町 |
+| NO-RA ～農楽～ | 愛川町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21386 | 神奈川県愛甲郡愛川町 |
+| 有機農園けのひ | 愛川町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23483 |  |
+| Kururu farm | 横浜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22819 |  |
+| カメーダ農園 | 横浜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27186 |  |
+| 鈴也ファーム | 横須賀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20806 |  |
+| ニッポンルーバス | 海老名市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28446 |  |
+| 榎本農園 | 湯河原町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23067 | 神奈川県足柄下郡湯河原町 |
+| ぶるべの樹 | 相模原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21182 |  |
+| さとくら農園 | 相模原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078762 |  |
+| 渋谷ファーム | 藤沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23858 |  |
+| 子どもの野菜湘南藤沢農場 | 藤沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22165 |  |

@@ -111,32 +111,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kyushu-okinawa/kumamoto.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kumamoto> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kumamoto> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 9, Miel 2, Pescado 2, Carne 2, Destilados y licores 1, Cerveza 1, Té e infusiones 1, Lácteos y quesos 1, Setas 1, Dulces y repostería 1, Pan y cereal 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 乙姫丸&乙姫屋 | 上天草市 | Pescado | https://www.tabechoku.com/producers/29326 | 熊本上天草の湯島で4代に渡り漁師業をしております。魚はもちろん！素潜り魚で雲丹、サザエ、ワカメ等も取っております。またワタリガニは毎年沢山の |
-| SHIN FARM | 山鹿市 | Pescado | https://www.tabechoku.com/producers/23624 | SHINFARMは、スイカの名産地熊本県北部に位置する山鹿市にあります。自然豊かで歴史と文化が薫るまち。令和7年虹の大地FARMから独立し、 |
-| 峯 樹木園(みねじゅもくえん) | 合志市 | Té e infusiones | https://www.tabechoku.com/producers/27390 | 阿蘇を望む熊本県合志市で桑の葉・桑の実の生産をしております。樹木医である園主が自社農園で農薬不使用にて栽培しております。GAP認証を取得して |
-| 斉藤製茶園 | 菊池市 | Té e infusiones | https://www.tabechoku.com/producers/21428 | ★有機JAS認定茶園★ |
-| ファームヨシダ | 大津町 | Carne | https://www.tabechoku.com/producers/23681 | 父の代から養豚を譲り受け、現在家族を中心に農場・イベント販売・通信販売を行っております。 |
-| 阿蘇さとう農園 | 阿蘇市 | Carne | https://www.tabechoku.com/producers/22542 | 代表がＵターン就農し始めた農園です。私たちは【阿蘇に暮らし続けるために】を理念とし次世代につなぐための小さなモデルづくりに取り組んでいます。 |
-| せんい生活 熊本県人吉市 | 人吉市 | Setas | https://www.tabechoku.com/producers/23159 | 私たちは、10年以上、熊本県人吉市できくらげ、温泉しいたけを栽培、製造しております。私ももう70歳台後半になりました。 |
-| 西岡養蜂園 | 八代市 | Miel | https://www.tabechoku.com/producers/24303 | 西岡養蜂園の根元は、ミツバチを増やす養蜂業にあります。 |
-| 山麓はっち | 菊鹿町 | Miel | https://www.tabechoku.com/producers/3078025 | 熊本県北山麓で2008年より古来からの野生種日本みつばちの養蜂•管理•採蜜•販売を行っています。非加熱•非加糖•非薬剤•殺ダニ剤不使用•自然 |
-| 農園ベルの樹 | 南阿蘇村 | Legumbres | https://www.tabechoku.com/producers/3077183 | 熊本出身の2人が、移住先の南阿蘇村で営む農園。南阿蘇村農業みらい公社での研修を経て2024年3月独立。有機農法でさつまいも（数種類）、かぼち |
-| 夢アグリ | 山鹿市 | Condimentos | https://www.tabechoku.com/producers/3079170 | 株式会社夢アグリは、この地で作物を育てる畑や田んぼに天日塩（非加熱塩）を撒く「抗酸化塩栽培」で、作物を育てています。特に米の栽培では”農事組 |
-| 右田柑橘 | 玉名市 | Conservas | https://www.tabechoku.com/producers/20604 | わたしたちは熊本県で代々続くみかん農家です。古くから安全でおいしいみかんを、こだわってつくってきました。現在は有機JAS認証も取得し、加工品 |
-| 山口果樹園 | 宇城市 | Dulces y repostería | https://www.tabechoku.com/producers/27848 | 宇城市三角町で極早生みかん、早生みかん、ポンカン、スイートスプリング、不知火を栽培している山口果樹園です。 |
-| 山のいぶき | 南小国町 | Lácteos y quesos | https://www.tabechoku.com/producers/21278 | 牧場主の高村武志は高校卒業後、父の後を継いで酪農を始めました。妻と二人、25年以上にわたって毎日欠かさず牛と向き合っています。 |
-| 松下農園 | 熊本市 | Frutos secos | https://www.tabechoku.com/producers/25081 | 私は、先代が土の大切さにこだわり、長年築いてくれた山あいの果樹園を大事に守りたいと受け継ぎ、今も除草剤や農薬を使用しない栽培に取り組み、梅、 |
-| たなか果樹園 | 芦北町 | Destilados y licores | https://www.tabechoku.com/producers/24233 | 熊本県の南部、芦北町で柑橘類・完熟マンゴーを家族で、栽培しています。アミノ酸・Ca・鉄などのミネラルを葉面散布して、味のある果物を作ります。 |
-| 自然薯のくわはら | 錦町 | Destilados y licores | https://www.tabechoku.com/producers/20764 | 熊本の県南に位置した当農園は昼夜の寒暖差が激しい人吉盆地と日本三代急流の球磨川沿いにあります。昔から稲作が盛んで米焼酎(球磨焼酎)が有名で、 |
-| hiroファーム | 八代市 | Pan y cereal | https://www.tabechoku.com/producers/3078074 | 熊本県　八代市でい草、米、レタスを作ってる農家になります。 |
-| 西村農園（熊本県） | 宇城市 | Pan y cereal | https://www.tabechoku.com/producers/25243 | 熊本県のほぼ中央、宇城市小川町の中山間地域にて、米、梨、太秋、生姜、セリを栽培しています　R8熊本地震にて梨の被害　8割ほど（約6000個） |
-| のむちゃん農園 | 宇城市 | Fruta y verdura | https://www.tabechoku.com/producers/26248 | 熊本県不知火町の海岸沿いで先祖代々（4代目）の果樹栽培（みかん系・ぶどう系23種類）をしております。 |
-| 吉次園 | 熊本市 | Fruta y verdura | https://www.tabechoku.com/producers/21660 | 初めまして。熊本市北区植木町で「観光農園 吉次園」を営んでおります、前田と申します。 |
-| あか牛の三協グループ | 熊本市 | ⚠ por decidir | https://www.tabechoku.com/producers/20578 | 熊本・阿蘇で「あか牛」の生産・販売を行っています。大自然の中で育つ旨味たっぷりのあか牛「甲誠牛」を是非お試し下さい。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 自然薯のくわはら | 錦町 | Destilados y licores | ficha | — | https://www.tabechoku.com/producers/20764 | 熊本県球磨郡錦町 |
+| あか牛の三協グループ | 熊本市 | Cerveza | ficha | — | https://www.tabechoku.com/producers/20578 |  |
+| 西岡養蜂園 | 八代市 | Miel | ficha | — | https://www.tabechoku.com/producers/24303 |  |
+| 山麓はっち | 菊鹿町 | Miel | ficha | — | https://www.tabechoku.com/producers/3078025 |  |
+| 斉藤製茶園 | 菊池市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21428 |  |
+| 山のいぶき | 南小国町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/21278 | 熊本県阿蘇郡南小国町 |
+| せんい生活 熊本県人吉市 | 人吉市 | Setas | ficha | — | https://www.tabechoku.com/producers/23159 |  |
+| 乙姫丸&乙姫屋 | 上天草市 | Pescado | ficha | — | https://www.tabechoku.com/producers/29326 |  |
+| のむちゃん農園 | 宇城市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26248 |  |
+| ファームヨシダ | 大津町 | Carne | ficha | — | https://www.tabechoku.com/producers/23681 | 熊本県菊池郡大津町 |
+| 阿蘇さとう農園 | 阿蘇市 | Carne | ficha | — | https://www.tabechoku.com/producers/22542 |  |
+| 峯 樹木園(みねじゅもくえん) | 合志市 | Dulces y repostería | ficha | — | https://www.tabechoku.com/producers/27390 |  |
+| 夢アグリ | 山鹿市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3079170 |  |
+| hiroファーム | 八代市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078074 |  |
+| 農園ベルの樹 | 南阿蘇村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077183 |  |
+| 山口果樹園 | 宇城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27848 |  |
+| 西村農園（熊本県） | 宇城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25243 |  |
+| SHIN FARM | 山鹿市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23624 |  |
+| 松下農園 | 熊本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25081 |  |
+| 吉次園 | 熊本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21660 |  |
+| 右田柑橘 | 玉名市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20604 |  |
+| たなか果樹園 | 芦北町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24233 | 熊本県葦北郡芦北町 |

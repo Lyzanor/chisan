@@ -124,32 +124,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/aichi.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/aichi> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/aichi> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **22 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 6, Dulces y repostería 3, Helados 2, Miel 2, Carne 2, Destilados y licores 1, Té e infusiones 1, Huevos 1, Setas 1, Pescado 1, Legumbres 1, Pan y cereal 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 第三久進丸 | 南知多町 | Pescado | https://www.tabechoku.com/producers/27326 | 愛知県で漁師をしてます。 |
-| 元氣のお裾分けbox。 | 豊橋市 | Pescado | https://www.tabechoku.com/producers/22036 | 愛知県東三河の子育て中の小さな農家が協力し合い自分達の子供に食べてもらいたいこだわりの詰まったお野菜、果物、お米などを生産販売しています。旬 |
-| こだわり農家のお蜜柑屋食べﾁｮｸ店 | 豊橋市 | Pescado | https://www.tabechoku.com/producers/28818 | 愛知県豊橋市にて、15種類以上の柑橘類を栽培、販売している柑橘専門の農業法人です。オリジナル配合の肥料を用いるなど、品種に合わせたこだわり栽 |
-| いしかわ製茶 | 豊田市 | Té e infusiones | https://www.tabechoku.com/producers/21989 | 開拓から一度も農薬を使用していない奇跡の茶園。煎茶・抹茶・碾茶製造販売。日本初のオーガニック抹茶農家です。 |
-| 下村畜産 | 大府市 | Carne | https://www.tabechoku.com/producers/3078000 | 初代が農耕用の牛飼いを始めた事をきっかけに、８０年あまりの歳月が流れました。三代に渡り最高品質の牛を育てるためにこだわっているのが「繁殖から |
-| 豊あぐり | 豊橋市 | Setas | https://www.tabechoku.com/producers/26605 | 愛知県豊橋市にある『菌床しいたけ』農家です。 |
-| 門脇 靖 | 名古屋市 | Miel | https://www.tabechoku.com/producers/27309 | 愛知県日進市で農業と養蜂を営んでいます。自分がまず食べたいと思うような、健康的で、美味しい蜂蜜と野菜をお届けしたいと思います。 |
-| 榎本はちみつベリーファーム | 豊川市 | Miel | https://www.tabechoku.com/producers/21367 | ブルーベリー栽培20年、養蜂歴19年。自分で搾った非加熱はちみつの美味しさに感動して農家の道へ。 |
-| 宮澤農園 | 武豊町 | Legumbres | https://www.tabechoku.com/producers/28804 | 本農園は2023年に食べチョク様から生落花生の販売を行わせて頂いております。2025年からは八朔、甘夏、国産グレープフルーツの販売も行わせて |
-| 神重農産 | 碧南市 | Legumbres | https://www.tabechoku.com/producers/21204 | 神重農産は、「元気になる野菜作り」をコンセプトに愛知県碧南市でを新玉ねぎ、にんじん、落花生を育てている農園です。 |
-| mama's農園 | 豊田市 | Legumbres | https://www.tabechoku.com/producers/24379 | クルマの街豊田市で、米・麦・大豆・野菜を生産しています。 |
-| サトウ | 弥富市 | Dulces y repostería | https://www.tabechoku.com/producers/28523 | 木曽川下流域の海抜０メートル地帯に畑を有し、豊富な地下水の恵みを受けながら、いちじく（ドーフィン・バナーネ）をはじめ、びわ（茂木・田中）、キ |
-| ぽんてり農園 | 豊田市 | Dulces y repostería | https://www.tabechoku.com/producers/26158 | 自家製ジャムの原料は、農薬等使用せずに出来た果物です。 |
-| 横江克也 | 豊田市 | Huevos | https://www.tabechoku.com/producers/20997 | 2011年に新規就農した横江夫妻です。豊田市（旧旭町）の山間地にして、有機野菜の栽培、名古屋コーチンの平飼い飼育、卵の加工品など、自分たちが |
-| サンビレッジ | 小牧市 | Destilados y licores | https://www.tabechoku.com/producers/22278 | 愛知県小牧市にある知的障がい者通所施設『サンビレッジ』の就労支援事業で農業を行っています。市内5か所の耕作放棄地で野菜に愛情を込め、手を掛け |
-| 清須ライスセンター | 豊橋市 | Pan y cereal | https://www.tabechoku.com/producers/21003 | 弊社は、もともとお米農家で、お米の生産から加工、販売まで一貫して行っています。私たちは山に近い米づくりの盛んな地区の田んぼで稲作を行っており |
-| ソーラー農園おばら未来ファーム | 豊田市 | Pan y cereal | https://www.tabechoku.com/producers/22143 | 父が栽培していた愛知・岐阜県境の中山間地にある希少な自然栽培のブルーベリー畑を夫婦で引き継ぎました。同時に周辺の耕作放棄地4,000平米を借 |
-| わいわいファーム | 豊田市 | Pan y cereal | https://www.tabechoku.com/producers/28101 | 愛知県豊田市旭地区は、きれいな水と自然に恵まれ、昼夜の寒暖差が大きいため、おいしいお米や野菜が育つ地域です。しかし高齢化、後継者不足、人口減 |
-| 自然野菜まきの | 常滑市 | Fruta y verdura | https://www.tabechoku.com/producers/3079054 | 愛知県の温暖な知多地域・常滑で「自然野菜まきの」は野菜を育てています。 |
-| とと農園 | 美浜町 | Fruta y verdura | https://www.tabechoku.com/producers/23623 | 〜「農」で「食」と「心」ととのう。〜 |
-| Berry＆Sun | 瀬戸市 | ⚠ por decidir | https://www.tabechoku.com/producers/27253 | 幼いころから、瀬戸市の自然豊かな町で育ち、植物や昆虫、野鳥などの生物はとても身近な存在でした。 |
-| パッチファーム | 田原市 | ⚠ por decidir | https://www.tabechoku.com/producers/20081 | 2015年4月、Patch Farm(パッチファーム)は始まりました。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| サンビレッジ | 小牧市 | Destilados y licores | productos | 【夏ギフト】 芋グラッセの凝縮感、甘さが香る 本格芋焼酎Sun 720㎖ 2 · 【夏ギフト】芋グラッセの凝縮感、甘さが香る 本格芋焼酎Sun 720㎖ 25 · 【夏ギフト】芋グラッセの凝縮感、甘さが香る 本格芋焼酎Sun 720㎖ 6本 | https://www.tabechoku.com/producers/22278 |  |
+| 神重農産 | 碧南市 | Helados | productos | 便利で簡単！自然解凍で食べれる【冷凍塩ゆで地豆250ｇ×5袋】 · 便利で簡単！自然解凍で食べれる【冷凍塩ゆで地豆250ｇ×3袋】 · 便利で簡単！自然解凍で食べれる【冷凍塩ゆで地豆250ｇ×1袋】 | https://www.tabechoku.com/producers/21204 |  |
+| mama's農園 | 豊田市 | Helados | productos | 【令和7年産 】甘くてもちもち ミルキークイーン3㎏ · 【令和7年産 】甘くてもちもち ミルキークイーン5㎏ · 【令和7年産 】甘くてもちもち ミルキークイーン2㎏ | https://www.tabechoku.com/producers/24379 |  |
+| 門脇 靖 | 名古屋市 | Miel | productos | 自然のしずく 日本蜜蜂のはちみつ（L）430g 6300円 · 自然のしずく 日本蜜蜂のはちみつ（M）280g 4300円 · 自然のしずく 日本蜜蜂のはちみつ（S）130g 2100円 | https://www.tabechoku.com/producers/27309 |  |
+| 榎本はちみつベリーファーム | 豊川市 | Miel | productos | 【メール便】国産純粋非加熱生はちみつ（パウチタイプ）150g× 2本 · 【冷凍】【20年間農薬不使用】使いやすい冷凍ブルーベリー １キロ · ３キロ同梱【冷凍】【20年間農薬不使用】使いやすい冷凍ブルーベリー | https://www.tabechoku.com/producers/21367 |  |
+| いしかわ製茶 | 豊田市 | Té e infusiones | productos | 開拓から一度も農薬使ってません！有機JAS認証煎茶 上 200ｇ · 開拓から一度も農薬を使っていない茶園のオーガニックかぶせ茶(商品名高級煎茶) · 【スマートレター発送】送料お得２個セット♪開拓から一度も農薬使ってません！ロ | https://www.tabechoku.com/producers/21989 | repr. 石川龍樹 |
+| 横江克也 | 豊田市 | Huevos | productos | 名古屋コーチン平飼い有精卵 24個入り · 名古屋コーチン平飼い有精卵 48個入り | https://www.tabechoku.com/producers/20997 | repr. 横江克也 |
+| 豊あぐり | 豊橋市 | Setas | productos | 《冷凍》【国産菌床しいたけ】濃厚＆肉厚しいたけ！傘＆スライスの詰め合わせ(全 · 《冷凍》【国産菌床しいたけ】濃厚＆肉厚しいたけを冷凍スライスでお手軽に！(６ · 《乾燥》【国産菌床しいたけ】濃厚＆肉厚しいたけを使い勝手の良い乾燥スライスで | https://www.tabechoku.com/producers/26605 |  |
+| 第三久進丸 | 南知多町 | Pescado | productos | 漁師が作る！旬の干物セット！ · 豪華貝類バーベキューセット · ヒガンフグ 磨き 唐揚げ | https://www.tabechoku.com/producers/27326 | repr. 創業：2022年06月; 愛知県知多郡南知多町豊浜 |
+| 下村畜産 | 大府市 | Carne | productos | 【10個限定】黒毛和牛『下村牛』焼肉4種食べ比べセット （カルビ・ロース・あ · 【期間・数量限定】「下村牛」特選サーロイン塊肉1.0㎏ · 黒毛和牛『下村牛』焼肉用あかみ1.0㎏ | https://www.tabechoku.com/producers/3078000 |  |
+| わいわいファーム | 豊田市 | Carne | productos | 【採れたて発送】愛知県豊田市旭産ハラペーニョ500g（約20個） · 【採れたて発送】愛知県 豊田市旭産 韓国唐辛子（青） 500g · 【採れたて発送】愛知県 豊田市旭産 韓国唐辛子（青） 100g | https://www.tabechoku.com/producers/28101 |  |
+| 宮澤農園 | 武豊町 | Legumbres | productos | 生落花生（おおまさり）（栽培中は農薬未使用） · 生落花生（おおまさり） （栽培中は農薬未使用） · 生落花生（おおまさり) （栽培中は農薬未使用） | https://www.tabechoku.com/producers/28804 | repr. 創業：2020年04月; 愛知県知多郡武豊町 |
+| Berry＆Sun | 瀬戸市 | Dulces y repostería | productos | ”ベリーさん”の完熟ブルーベリー・ちび旨 500g（125g×4パック）【生 · ”ベリーさん”の完熟ブルーベリー品種ミックス 500g（125g×4パック） · ”ベリーさん”の完熟ブルーベリー品種ミックス 1㎏（125g×8パック）【生 | https://www.tabechoku.com/producers/27253 | repr. 創業：2022年06月 |
+| 元氣のお裾分けbox。 | 豊橋市 | Dulces y repostería | productos | お野菜セットMセット · 【メール便】愛知県東三河産 全草乾燥よもぎ20g×2 · 【朝市限定】カット冷凍柿６個セット | https://www.tabechoku.com/producers/22036 |  |
+| ソーラー農園おばら未来ファーム | 豊田市 | Dulces y repostería | productos | ジャムを作ろう！健康生活！超お値打ち冷凍ブルーベリー（500g×2パック）【 · 【生食用･謝恩特別価格】品種ミックス採れたてブルーベリー（250g×2 パッ · 【冷凍】旬の甘みをそのまま冷凍！大粒プレミアム冷凍ブルーベリー（250g×2 | https://www.tabechoku.com/producers/22143 | repr. 創業：2018年01月 |
+| 清須ライスセンター | 豊橋市 | Pan y cereal | productos | 【節減対象農薬6割減】コシヒカリ 白米5kg【令和7年・愛知県産】 · 【節減対象農薬6割減】あいちのかおり 白米5kg【令和7年・愛知県産】 · 【グルテンフリー】米粉の焼きそば 128g×5袋（グルテンフリーソース付）（ | https://www.tabechoku.com/producers/21003 | premio 食べチョクAWARD |
+| 自然野菜まきの | 常滑市 | Fruta y verdura | productos | ★訳あり★じゃがいもグラウンドペチカ（デストロイヤー）ご家庭用 4.0kg【 · ★訳あり★じゃがいもグラウンドペチカ（デストロイヤー）ご家庭用 1.8kg【 · 紫の皮×黄金の果肉！ねっとり甘いじゃがいもグラウンドペチカ（デストロイヤー） | https://www.tabechoku.com/producers/3079054 | repr. 牧野一夫 |
+| サトウ | 弥富市 | Fruta y verdura | productos | 美味しくて健康に！愛知弥富いちじく『桝井ドーフィン』12玉 専用化粧箱入り · 袋掛け栽培！愛知弥富びわ『茂木』12～18ヶ入り×2P 専用化粧箱入り · 袋掛け栽培！愛知弥富びわ『田中』12～18ヶ入り×2P 専用化粧箱入り | https://www.tabechoku.com/producers/28523 |  |
+| パッチファーム | 田原市 | Fruta y verdura | productos | 懐かしのトゲトゲきゅうり 1キロ · ≪畑をぐるっと収穫≫旬彩野菜バスケット＊80サイズ 7〜8品 · 【がぶっと丸かじり】ピーマン | https://www.tabechoku.com/producers/20081 |  |
+| とと農園 | 美浜町 | Fruta y verdura | productos | 【朝どれ】オクラ 2〜4品種セット1.5kg【栽培期間中 化学肥料化学農薬不 · ※予約商品※2027年生たけのこ1.5kg ( 2〜4本入) 採れたてをお届 · 【朝どれ】オクラ2〜4品種セット600g【栽培期間中 化学肥料化学農薬不使用 | https://www.tabechoku.com/producers/23623 | 愛知県知多郡美浜町 |
+| こだわり農家のお蜜柑屋食べﾁｮｸ店 | 豊橋市 | Fruta y verdura | productos | 【先行予約★2027年3月発送分】🏆みかん柑橘グランプリ2026最高金賞含む · 【先行予約★2027年3月発送分】【２箱まとめ買い】🏆みかん柑橘グランプリ2 · 【先行予約★2027年3月発送分】🏆みかん柑橘グランプリ2026最高金賞含む | https://www.tabechoku.com/producers/28818 | repr. 川合健晃 |
+| ぽんてり農園 | 豊田市 | Fruta y verdura | productos | ★半額セール！★ ゆずジャム / ペクチン不使用！ ★ 50％OFF ★ 柚 | https://www.tabechoku.com/producers/26158 |  |

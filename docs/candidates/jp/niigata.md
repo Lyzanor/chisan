@@ -243,32 +243,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/niigata.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/niigata> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/niigata> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 8, Pan y cereal 6, Pescado 3, Setas 2, Cerveza 1, Carne 1, Legumbres 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| カニ直売所　弥吉丸 | 佐渡市 | Pescado | https://www.tabechoku.com/producers/26670 | 朱鷺の舞う島『新潟県佐渡島』で【浜茹で紅ズワイガニ】を生産しています。 紅ズワイガニを通じてお客様の食卓に笑顔をご提供できたらいいなという思 |
-| こまがた農園 | 南魚沼市 | Pescado | https://www.tabechoku.com/producers/22769 | 世界有数の豪雪地帯・新潟県南魚沼市。 |
-| ひらくの里ファーム | 南魚沼市 | Pescado | https://www.tabechoku.com/producers/26274 | 新潟県南魚沼市の五十沢地域に位置する「ひらくの里ファーム」です。「地域の未来を切り拓く」をテーマに農業から農村の持続可能な発展を目指していま |
-| うおぬま小岩農園 | 魚沼市 | Pescado | https://www.tabechoku.com/producers/28230 | 米処魚沼の山間で2000年からお米の減農薬・無農薬栽培を続けている農家です。 |
-| マリーズファーム | 魚沼市 | Pescado | https://www.tabechoku.com/producers/29641 | マリーズファームは、日本有数の豪雪地、新潟県魚沼市でブルーベリーとラズベリーを生産する果樹農園です。それまでほとんど取組例のなかった「ブルー |
-| ふくのまめ | 新潟市 | Té e infusiones | https://www.tabechoku.com/producers/29452 | 新潟市黒鳥は黒埼茶豆で有名なおいしい枝豆の産地です。早朝に収穫した枝豆をすぐに選別・冷蔵し、その日のうちに発送しています。6月下旬から10月 |
-| サンファーム泉 | 五泉市 | Carne | https://www.tabechoku.com/producers/24718 | 新潟県五泉市という緑豊かな街で、アロニアベリーという珍しい果実を無化学肥料栽培しております。使用する肥料も地元畜産農家の牛堆肥のみ使用してお |
-| 大地創造職人　反町敏彦 | 長岡市 | Setas | https://www.tabechoku.com/producers/21777 | 日本一の花火、新潟県長岡市で妻そしてスタッフと力を合わせ、お米とキノコを育てています。 |
-| 斎藤農園 | 阿賀町 | Setas | https://www.tabechoku.com/producers/26044 | 新潟県阿賀野川上流の奥阿賀地域で、一年を通してしいたけ、季節によりきくらげや原木まいたけ、栗などを栽培しています。 |
-| ふぁーむ 黒川 | 上越市 | Legumbres | https://www.tabechoku.com/producers/3079148 | 新潟県上越市の山に囲まれた自然豊かな環境で枝豆中心に野菜を栽培しています。 |
-| 自然栽培米の米屋　六花 | 三条市 | Pan y cereal | https://www.tabechoku.com/producers/23580 | 新潟県の中央部、粟ケ岳、守門岳を源流とする清流、五十嵐川、守門川からの雪解け水で自然栽培米の生産をしています。 |
-| 山本農園 | 南魚沼市 | Pan y cereal | https://www.tabechoku.com/producers/28133 | 上等なお米を作るために試行錯誤を重ね、現状に満足せず、常にお米のために力を注いできました。お米は繊細です。 |
-| 松井ファーム | 南魚沼市 | Pan y cereal | https://www.tabechoku.com/producers/3078422 | 名峰、越後山脈に連なる桂山の麓で有機栽培、特別栽培米の米作りをはじめ、 |
-| しみず農園 | 長岡市 | Pan y cereal | https://www.tabechoku.com/producers/29297 | 米どころ新潟県長岡市100年以上前から農業を営んでおります。 |
-| ライス | 長岡市 | Pan y cereal | https://www.tabechoku.com/producers/3078091 | 米どころ新潟のお米を生産している山間地の小規模農家です。食の安心・安全を目指しJAの指導を受け、減農薬栽培を心がけています。 |
-| 佐藤大農園 | 三条市 | Fruta y verdura | https://www.tabechoku.com/producers/23605 | 新潟県三条市で曽祖父の代から約135年間、茄子を作り続けてきた農園です。新潟県内では最も古くから丸茄子を作っています。 |
-| たかはし果樹園 | 加茂市 | Fruta y verdura | https://www.tabechoku.com/producers/27639 | たかはし果樹園は新潟県加茂市にある |
-| 桃川農園 | 村上市 | Fruta y verdura | https://www.tabechoku.com/producers/23416 | はじめまして、桃川農園の佐藤譲（さとう　ゆずる）と申します。 |
-| FISH VEGGIES - フィッシュベジ　食べチョク店 | 長岡市 | Fruta y verdura | https://www.tabechoku.com/producers/25211 | 私達は新潟県長岡市で、ミライの技術と言われているアクアポニックス農法を活用して国内で初めてお野菜の大量生産、通年生産に成功しました。 |
-| 小出農場 | 妙高市 | ⚠ por decidir | https://www.tabechoku.com/producers/23403 | 水、空気が美味しい事から新潟県妙高市関山に移り住んで約30年。 |
-| 三浦　麻鈴 | 小千谷市 | ⚠ por decidir | https://www.tabechoku.com/producers/28919 | 新潟県小千谷市育ちの三浦麻鈴といいます。 |
-| 農房　丸蔦食品　星義美 | 魚沼市 | ⚠ por decidir | https://www.tabechoku.com/producers/20600 | 「なす漬けがあればマンマいっくらでも食える」中学、同い年の従兄弟が言いました。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 農房　丸蔦食品　星義美 | 魚沼市 | Cerveza | ficha | — | https://www.tabechoku.com/producers/20600 |  |
+| 大地創造職人　反町敏彦 | 長岡市 | Setas | ficha | — | https://www.tabechoku.com/producers/21777 |  |
+| 斎藤農園 | 阿賀町 | Setas | ficha | — | https://www.tabechoku.com/producers/26044 | 新潟県東蒲原郡阿賀町 |
+| カニ直売所　弥吉丸 | 佐渡市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26670 |  |
+| ひらくの里ファーム | 南魚沼市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26274 |  |
+| うおぬま小岩農園 | 魚沼市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28230 |  |
+| サンファーム泉 | 五泉市 | Carne | ficha | — | https://www.tabechoku.com/producers/24718 |  |
+| ふくのまめ | 新潟市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/29452 |  |
+| こまがた農園 | 南魚沼市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/22769 |  |
+| 山本農園 | 南魚沼市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/28133 |  |
+| 松井ファーム | 南魚沼市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078422 |  |
+| 小出農場 | 妙高市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/23403 |  |
+| 三浦　麻鈴 | 小千谷市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/28919 |  |
+| ライス | 長岡市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078091 |  |
+| 佐藤大農園 | 三条市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23605 |  |
+| 自然栽培米の米屋　六花 | 三条市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23580 |  |
+| ふぁーむ 黒川 | 上越市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3079148 |  |
+| たかはし果樹園 | 加茂市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27639 |  |
+| 桃川農園 | 村上市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23416 |  |
+| しみず農園 | 長岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29297 |  |
+| FISH VEGGIES - フィッシュベジ　食べチョク店 | 長岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25211 |  |
+| マリーズファーム | 魚沼市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29641 |  |

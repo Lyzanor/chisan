@@ -126,32 +126,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/nagano.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/nagano> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/nagano> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 12, Setas 2, Pescado 2, Cerveza 1, Lácteos y quesos 1, Huevos 1, Carne 1, Condimentos 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 信州あゆ　臼田養魚場 | 上田市 | Pescado | https://www.tabechoku.com/producers/21897 | こんにちは！創業130年、臼田養魚場の5代目、臼田雄司です。 |
-| 安曇野ファミリー農産 果物部門4年連続1位&殿堂入り&りんごグランプリ2025最高金賞1位 信州りんご 幻のりんご | 安曇野市 | Pescado | https://www.tabechoku.com/producers/21528 | りんごグランプリ2025最高金賞1位🍎✨食べチョクアワード4年連続果物部門1位&殿堂入り🍎100,000件以上のご注文&20,000件以上の |
-| ぶどう園さんすけ | 松本市 | Pescado | https://www.tabechoku.com/producers/3077274 | 3ガク都〈山岳・音楽・学問〉の街・信州松本で、3人の元気な息子達と同じように愛情を込めた美味しいぶどうを作っています。 |
-| くりのみ園 | 小布施町 | Carne | https://www.tabechoku.com/producers/20587 | くりのみ園は、栽培において農薬不使用・自家鶏糞堆肥を使用した自然循環農法で野菜や米を作っています。 |
-| ハヤシファーム | 飯田市 | Carne | https://www.tabechoku.com/producers/20911 | 長野県飯田市で豚肉の生産と販売を行っています。 |
-| 宮澤きのこ園 | 上田市 | Setas | https://www.tabechoku.com/producers/24325 | 長野県上田市できのこ農家を50年。 |
-| 宮入きのこ園 | 山ノ内町 | Setas | https://www.tabechoku.com/producers/21745 | 世界中の誰もが知っている“スノーモンキー”で有名な町。緑と温泉が豊かな山ノ内町で『ぶなしめじ』の栽培を経営しています。品質・食味・食感にこだ |
-| キノコ村 | 須坂市 | Setas | https://www.tabechoku.com/producers/24009 | キノコ村は、長野県須坂市・菅平高原のふもとの山里にて３０数年、個性があって、おいしいキノコの栽培に取り組んでおります。もとになる種菌から育成 |
-| KTM ファーム | 信濃町 | Legumbres | https://www.tabechoku.com/producers/21425 | KTMファームは、東京から2014年信濃町に移住したグラフィックデザイナーが立ち上げた農園です。地元の方々に支えられ、移住2年目、2015年 |
-| 信州塩尻 つむぐ農園 | 塩尻市 | Condimentos | https://www.tabechoku.com/producers/20624 | 長野県の自然豊かな山間地で、土地柄や気候に合わせた季節の野菜やハーブを育てています。 |
-| 丸六穂高わさび問屋 | 安曇野市 | Condimentos | https://www.tabechoku.com/producers/3078876 | 創業1900年、安曇野穂高と松本で清らかな湧水と自然を守り、守られつつ、わさびを育ててきました。 |
-| 小布施牧場 | 小布施町 | Lácteos y quesos | https://www.tabechoku.com/producers/25300 | 栗と葛飾北斎と美しい町並みで知られる長野県小布施町の郊外にある、ジャージー牛の牧場です。ジャージー牛乳は、高タンパクでビタミンやミネラルなど |
-| カエルフルーツカンパニー | 小布施町 | Frutos secos | https://www.tabechoku.com/producers/22368 | 私たちは栗と葛飾北斎で有名な小布施町で果物農家をしているIターン農家です。 |
-| 八ヶ岳ルバーブハウス/ハコブネプロジェクト | 富士見町 | Cerveza | https://www.tabechoku.com/producers/28414 | 八ヶ岳山麓、長野県富士見町で「赤いルバーブ」を栽培しています。赤いルバーブに魅せられて移住を決意し73歳から農業に挑戦。生ルバーブをはじめビ |
-| こばやしや | 上田市 | Pan y cereal | https://www.tabechoku.com/producers/25017 | 信州・長野県上田市で曽祖父〜祖父〜父親と100年続く米農家。最近、やっと継ぐ決意をいたしました。作り手も消費者も皆んながHappy!!｢美味 |
-| のろまん農場 | 中野市 | Pan y cereal | https://www.tabechoku.com/producers/20298 | 年間約60品種の桃を栽培する変態桃農家です。標高2,000ｍを超える山々に囲まれた自然豊かな地域で、果樹農家を営んでおります。食べた方々の心 |
-| 軽井沢 ohanami farm | 軽井沢町 | Pan y cereal | https://www.tabechoku.com/producers/27329 | 長野県軽井沢町長倉の地でおひさまコーン(とうもろこし)、大和ルージュ(赤いとうもろこし)、白い妖精(白とうもろこし)、ズッキーニ、カラーピー |
-| つながり自然農園 | 佐久市 | Fruta y verdura | https://www.tabechoku.com/producers/20049 | 長野県佐久市、標高約700mの内山地区。里山らしい自然ゆたかなこの町に、つながり自然農園はあります。 |
-| 石農園 | 長野市 | Fruta y verdura | https://www.tabechoku.com/producers/28793 | 石農園は小布施町に果樹を中心とした栽培を行っております。 |
-| 新実農園 | 飯田市 | Fruta y verdura | https://www.tabechoku.com/producers/22899 | ◇ご挨拶 |
-| 信州安曇野　銀乃果 | 安曇野市 | ⚠ por decidir | https://www.tabechoku.com/producers/26749 | ようこそ、銀乃果(ぎんのか)へ！ |
-| TURUTA | 小布施町 | ⚠ por decidir | https://www.tabechoku.com/producers/26093 | 私達にご興味頂きありがとうございます。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 八ヶ岳ルバーブハウス/ハコブネプロジェクト | 富士見町 | Cerveza | ficha | — | https://www.tabechoku.com/producers/28414 | 長野県諏訪郡富士見町境 |
+| 小布施牧場 | 小布施町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/25300 | 長野県上高井郡小布施町 |
+| くりのみ園 | 小布施町 | Huevos | ficha | — | https://www.tabechoku.com/producers/20587 | 長野県上高井郡小布施町 |
+| 宮澤きのこ園 | 上田市 | Setas | ficha | — | https://www.tabechoku.com/producers/24325 |  |
+| 宮入きのこ園 | 山ノ内町 | Setas | ficha | — | https://www.tabechoku.com/producers/21745 | 長野県下高井郡山ノ内町 |
+| 信州あゆ　臼田養魚場 | 上田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21897 |  |
+| ぶどう園さんすけ | 松本市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077274 |  |
+| ハヤシファーム | 飯田市 | Carne | ficha | — | https://www.tabechoku.com/producers/20911 |  |
+| 丸六穂高わさび問屋 | 安曇野市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/3078876 |  |
+| カエルフルーツカンパニー | 小布施町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/22368 | 長野県上高井郡小布施町 |
+| こばやしや | 上田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25017 |  |
+| のろまん農場 | 中野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20298 |  |
+| つながり自然農園 | 佐久市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20049 |  |
+| KTM ファーム | 信濃町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21425 | 長野県上水内郡信濃町 |
+| 信州塩尻 つむぐ農園 | 塩尻市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20624 |  |
+| 信州安曇野　銀乃果 | 安曇野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26749 |  |
+| 安曇野ファミリー農産 果物部門4年連続1位&殿堂入り&りんごグランプリ2025最高金賞1位 信州りんご 幻のりんご | 安曇野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21528 |  |
+| TURUTA | 小布施町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26093 | 長野県上高井郡小布施町 |
+| 軽井沢 ohanami farm | 軽井沢町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27329 | 長野県北佐久郡軽井沢町長倉 |
+| 石農園 | 長野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28793 |  |
+| キノコ村 | 須坂市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24009 |  |
+| 新実農園 | 飯田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22899 |  |

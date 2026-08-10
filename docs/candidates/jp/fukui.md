@@ -95,32 +95,33 @@ Los dos complementos de Fukui proceden de la lista oficial municipal «ふくい
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/fukui.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/fukui> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/fukui> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **14 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 7, Pan y cereal 6, Pescado 4, Setas 2, Huevos 1, Carne 1, Legumbres 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 瀬越水産　新盛丸 | 坂井市 | Pescado | https://www.tabechoku.com/producers/27295 | 【小さい船だからこそ、出来る技がある】 |
-| 魚屋の喰い処まつ田 | 福井市 | Pescado | https://www.tabechoku.com/producers/23694 | 福井県越前海岸で地魚と越前ガニを中心としたレストランと魚介類の販売をしています。身長189cm体重115キロの巨体を生かして自然の恵みを皆様 |
-| あまちゃん | 福井市 | Pescado | https://www.tabechoku.com/producers/27409 | 田舎で、採れたての魚介類の販売をはじめました。産地からの直送でしか味わえない、鮮度抜群の魚介類は絶品です！もうスーパーでは買えないかも（笑） |
-| 茂右衛門農場 | 鯖江市 | Pescado | https://www.tabechoku.com/producers/29269 | もうえもんでは環境をまもり身体にもやさしい特別栽培で、すべてのお米を子供を育てるように大切にそだてています。 |
-| 鯖江スマイルファーム | 鯖江市 | Pescado | https://www.tabechoku.com/producers/22562 | こんにちは、鯖江スマイルファームの五十嵐理（おさむ）です。農園名は、すべての人を笑顔にしたいという思いから名付けました。できる限り農薬を使わ |
-| サンビーフ齊藤牧場 | 坂井市 | Carne | https://www.tabechoku.com/producers/3078574 | 福井県越前三国の海岸からほど近い、のどかな農耕地区で和牛を肥育しています。 |
-| テトテヲ | 坂井市 | Carne | https://www.tabechoku.com/producers/20837 | 坂井市三国町の海の近くで福井県初の福地鶏約900羽を飼っています。またその卵「ふくたまご」を使い、加工品の製造もしています。 |
-| 昇竜 | 大野市 | Setas | https://www.tabechoku.com/producers/21269 | 私たちは、福井県大野市の和泉地区で特産の九頭竜まいたけを製造しております。皆様の豊かな食生活と食卓での笑顔のために、安心・安全で良品質な商品 |
-| こころファーム | 福井市 | Setas | https://www.tabechoku.com/producers/23132 | 乾燥シイタケや粉しいたけは全て手作りです。 |
-| 本多農園 | 勝山市 | Legumbres | https://www.tabechoku.com/producers/22998 | 福井県勝山市で稲作を中心に、蕎麦、大麦、大豆などを生産しています。 |
-| 晴レハレ農園｜走るコケ子の健康卵 | 永平寺町 | Huevos | https://www.tabechoku.com/producers/29342 | 🐓メルカリ卵で今話題！【晴れのち、もっと晴れ】のレモンイエローな放し飼い健康卵。ホッカホカの発酵飼料(10種類配合)と天然緑餌と谷川天然水で |
-| 滝本米　農園 | 勝山市 | Pan y cereal | https://www.tabechoku.com/producers/25557 | 滝本米 農園が大切にしていることは、 |
-| シマダ農園 | 小浜市 | Pan y cereal | https://www.tabechoku.com/producers/23859 | 代々受け継いだ水田で、コシヒカリなどの水稲を栽培しています。自社で栽培から精米・加工・出荷まですべてを行います。無洗米や真空少量パック詰めの |
-| ヤスノ農園 | 福井市 | Pan y cereal | https://www.tabechoku.com/producers/3078493 | 福井で30年、家族でお米を育てています。 |
-| 米農房そまねこ | 若狭町 | Pan y cereal | https://www.tabechoku.com/producers/27469 | ２０１４年、福井県若狭町の山の麓の棚田でお米の栽培を始めました。 |
-| 西農園 | 坂井市 | Fruta y verdura | https://www.tabechoku.com/producers/29409 | 私達は福井県坂井市に位置し、坂井北部丘陵地は県内最大の園芸産地です。とても良い土壌で栽培された梨園は樹齢50年以上。一年かけ慎重かつ大切に管 |
-| ゆみたか農園 | 坂井市 | Fruta y verdura | https://www.tabechoku.com/producers/29572 | ＼忙しい毎日を頑張っているあなたへ／ |
-| もんちゃん農園 | 福井市 | Fruta y verdura | https://www.tabechoku.com/producers/28017 | 子供がおいしい！って野菜を食べて育って欲しい、じゃあ夫婦で作ろうか。とはじめた農業。自然豊かな田舎、福井県で夫婦で農家してます。 |
-| 農園たや | 福井市 | Fruta y verdura | https://www.tabechoku.com/producers/23979 | ▶ 農園紹介 |
-| グリーンファームすみや | あわら市 | ⚠ por decidir | https://www.tabechoku.com/producers/26490 | 【福井県あわら市のグリーンファーム角屋、斎藤貴です。】 |
-| ターナーズファーム | 福井市 | ⚠ por decidir | https://www.tabechoku.com/producers/29444 | 令和6年１月１日に新規就農致しました。 |
-| 徳橋農場 | 鯖江市 | ⚠ por decidir | https://www.tabechoku.com/producers/23857 | こんにちは！徳橋農場です。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| テトテヲ | 坂井市 | Huevos | ficha | — | https://www.tabechoku.com/producers/20837 | premio 食べチョクAWARD |
+| 昇竜 | 大野市 | Setas | productos | 採りたて！九頭竜まいたけ（１株）【福井県産舞茸】 · 採りたて！九頭竜まいたけ（２株）【福井県産舞茸】 · 採りたて！九頭竜まいたけ（３株）【福井県産舞茸】 | https://www.tabechoku.com/producers/21269 | repr. 創業：1998年06月 |
+| こころファーム | 福井市 | Setas | productos | 乾燥粉シイタケ 8個入り | https://www.tabechoku.com/producers/23132 |  |
+| 瀬越水産　新盛丸 | 坂井市 | Pescado | productos | 【夏ギフト】🏆食べチョク2026年クラフトグランプリ入賞🏆 忙しい毎日の食卓 · ⭐️ 売り切れ対策で増産！ぷりっと甘い“むき身甘えび” 時短ですぐ食卓へ最新 · 【贈答用】🦐海老の食べ比べセット🦐 ブランド認定ふくい甘えび+幻のガサ海老  | https://www.tabechoku.com/producers/27295 |  |
+| 魚屋の喰い処まつ田 | 福井市 | Pescado | productos | 【父の日ギフト】ネバネバシャキシャキ食感が病みつき！無添加！天然！越前産のあ · 【父の日ギフト】ネバネバシャキシャキ食感が病みつき！無添加！天然！越前産のあ · 【父の日ギフト】日本海産 無添加 干し甘えび 30g 2パック | https://www.tabechoku.com/producers/23694 |  |
+| あまちゃん | 福井市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27409 |  |
+| 鯖江スマイルファーム | 鯖江市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22562 |  |
+| サンビーフ齊藤牧場 | 坂井市 | Carne | productos | BBQ 焼肉セット 若狭牛 赤身・霜降 食べ比べ 希少部位入り 1kg （4 · 焼肉食べ比べセット 若狭牛 お試し極撰5部位 350g(70g×5) 特製焼 · 【期間限定100g増量中！】 若狭牛 コク旨赤身肉 500g（250g×2パ | https://www.tabechoku.com/producers/3078574 | repr. 齊藤力 |
+| グリーンファームすみや | あわら市 | Legumbres | productos | 無添加 自家製青大豆味噌で美味しく腸活はいかがですか！！ | https://www.tabechoku.com/producers/26490 |  |
+| 滝本米　農園 | 勝山市 | Pan y cereal | productos | 新米予約 令和8年 コシヒカリ 滝本米 オリジナル 玄米 5kg×2袋 農薬 · 新米予約 令和8年 コシヒカリ 滝本米 プレミアム 玄米 30kg 農薬不使 · 新米予約 令和8年 コシヒカリ 滝本米 プレミアム 玄米 10kg 農薬不使 | https://www.tabechoku.com/producers/25557 |  |
+| シマダ農園 | 小浜市 | Pan y cereal | productos | 【令和7年産】 福井県産こしひかり3ｋｇ · 【令和7年産】 福井県産こしひかり２ｋｇ · 新米【令和８年産】 福井県産こしひかり２ｋｇ | https://www.tabechoku.com/producers/23859 |  |
+| ヤスノ農園 | 福井市 | Pan y cereal | productos | 贈り物に！ギフト用！容器付き！食味92点! 令和7年福井産コシヒカリ3㎏（精 · 食味92点! 最高クラス！令和7年福井産コシヒカリ3㎏（精米） · 食味92点! 最高クラス！令和7年福井産コシヒカリ5㎏（精米） | https://www.tabechoku.com/producers/3078493 |  |
+| 米農房そまねこ | 若狭町 | Pan y cereal | ficha | ２００ｇ×４ 古代米ミックス黒赤緑 農薬不使用 有機肥料使用 有機ＪＡＳ · ２００ｇ×２ 古代米ミックス黒赤緑 農薬不使用 有機肥料使用 有機ＪＡＳ · ８００ｇ 古代米ミックス黒赤緑 農薬不使用 有機肥料使用 有機ＪＡＳ | https://www.tabechoku.com/producers/27469 | 福井県三方上中郡若狭町 |
+| 茂右衛門農場 | 鯖江市 | Pan y cereal | productos | 令和7年度ふっくら！炊きたての甘い香り文殊山菜花米コシヒカリ５kg 玄米 · 令和7年度ふっくら！炊きたての甘い香り文殊山菜花米コシヒカリ５kg 白米 | https://www.tabechoku.com/producers/29269 | repr. 上坂季美好 |
+| 徳橋農場 | 鯖江市 | Pan y cereal | productos | おろしそばに最適! 福井県産 辛味大根(品種名:からいね) 400~600g · おろしそばに最適! 福井県産 辛味大根(品種名:からいね) 2kg · おろしそばに最適! 福井県産 辛味大根B品(品種名:旭山) 4kg | https://www.tabechoku.com/producers/23857 |  |
+| 本多農園 | 勝山市 | Fruta y verdura | productos | ★再販★Lサイズ多め【汁物・芋煮など】煮ても揚げても絶品里芋（3㎏）！ホクホ · ★再販★Lサイズ多め【汁物・芋煮など】煮ても揚げても美味しい里芋（5㎏）！『 · 【超便利！すぐ調理できる里芋付き】煮ても揚げても絶品里芋（3㎏）ホクホク「勝 | https://www.tabechoku.com/producers/22998 |  |
+| 西農園 | 坂井市 | Fruta y verdura | ficha | 【数量限定 ご家庭用※訳あり※】甘くてまあるい瑞々しさをお届け！！たっぷり豊 · 【数量限定！！予約受付中】甘くてまあるい瑞々しさをお届け！！たっぷり豊水⒉5 · 【数量限定！！予約受付中】甘くてまあるい瑞々しさをお届け！！たっぷり豊水５k | https://www.tabechoku.com/producers/29409 | repr. 西  善昭 |
+| ゆみたか農園 | 坂井市 | Fruta y verdura | productos | 【8月発送】最高の甘さになる極限まで樹上完熟‼︎一玉ぺろっ！と食べれちゃうあ · 【9月発送】のどごし！感じるジューシーさと甘みの中に絶妙な酸味！魅力たっぷり | https://www.tabechoku.com/producers/29572 | repr. 齊藤　かおり |
+| 晴レハレ農園｜走るコケ子の健康卵 | 永平寺町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29342 | repr. 芳沢郁哉 |
+| もんちゃん農園 | 福井市 | Fruta y verdura | ficha | 【夏ギフト】今朝どれ発送します！福井特産越のルビー！（2キロ） | https://www.tabechoku.com/producers/28017 | repr. 平林　隆豊 |
+| ターナーズファーム | 福井市 | Fruta y verdura | productos | 令和9年6月中旬〜 高糖度でシャリっと美味しい。金色に輝く福井市特産金福すい · [7/8頃〜発送開始]砂丘地区で栽培された甘くてジューシーなアンデスメロン · [7/1頃〜発送開始]砂丘地区で栽培された甘くてジューシーなアンデスメロン | https://www.tabechoku.com/producers/29444 | repr. 田中明将 |
+| 農園たや | 福井市 | Fruta y verdura | ficha | 【小分け】第55回日本農業賞大賞受賞！ベビーリーフ【100g×３袋】 · 【小分け】第55回日本農業賞大賞受賞！ベビーリーフ【100g×10袋】 · 【小分け】第55回日本農業賞大賞受賞！ベビーリーフ【100g×5袋】 | https://www.tabechoku.com/producers/23979 | repr. 田谷　徹 |

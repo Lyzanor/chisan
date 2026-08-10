@@ -102,32 +102,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/shikoku/tokushima.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/tokushima> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/tokushima> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 7, Pescado 6, Setas 4, Pan y cereal 2, Té e infusiones 1, Carne 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 殖彩 | 小松島市 | Pescado | https://www.tabechoku.com/producers/22762 | 小松島市は生物多様性農業を推進しており、その活動のなかで高品質な有機野菜やネオニコチノイド系農薬の危険性にふれたことを機に専業の有機農家とな |
-| 旭物産 | 徳島市 | Pescado | https://www.tabechoku.com/producers/22921 | 徳島の鳴門の水流の速い広い生簀で育てたブランド「すだちぶり」をぜひご堪能ください。私共旭物産は「美味しく、より安全・安心なお魚を皆様に提供し |
-| 谷藤農園 | 東みよし町 | Pescado | https://www.tabechoku.com/producers/3078244 | 徳島西部阿波池田近くで農園しています。安心安全をもっとうに生産しています。農業して40年位になります。よろしくお願いします。 |
-| 芝原水産 | 鳴門市 | Pescado | https://www.tabechoku.com/producers/22680 | 私は芝原一弘と言います。鳴門の海でわかめ養殖を父の代から初めて50年近くなります。わかめの種苗生産から養殖、収穫、加工,、販売をしていまして |
-| 茶園 北地の丘 | 三好市 | Té e infusiones | https://www.tabechoku.com/producers/22999 | 私たち、茶園北地の丘は家族5人で始めた小さな農家です。 |
-| 山河農場 | 美波町 | Carne | https://www.tabechoku.com/producers/22774 | 四国は徳島県の南の方、海辺の町の山の中、きれいな川のほとりにて、猪鹿猿と戦いながら、小さな畑でコツコツと、野菜作りをしています |
-| 森のきのこ屋 | 徳島市 | Setas | https://www.tabechoku.com/producers/3078097 | きのこを作って40年！原材料から全て国産のきのこを自信を持ってお届けします。ぜひ一度食べてみてください。 |
-| 徳島椎茸ファーム | 松茂町 | Setas | https://www.tabechoku.com/producers/29247 | 椎茸嫌いの子供たちにも美味しく楽しく椎茸を食べてもらいたい。 |
-| やまのこ農園 | 石井町 | Setas | https://www.tabechoku.com/producers/24238 | 椎茸生産量日本一の徳島県で切磋琢磨しながらより良い椎茸生産を目指しております。 |
-| 神山社中 | 神山町 | Setas | https://www.tabechoku.com/producers/23879 | 徳島県神山町でお米と椎茸を中心に、時々野菜も育てています。 |
-| NARUMI FARM | 上勝町 | Conservas | https://www.tabechoku.com/producers/23701 | 上勝町の山の上で有機農業をやっています。夏場のミニトマトを中心に有機野菜、トマトピューレ、ハーブティーなどの加工品も作っています。 |
-| 三木農園 | つるぎ町 | Pan y cereal | https://www.tabechoku.com/producers/22169 | 私達は標高400ｍの山で昔ながらの農業をしています。急傾斜地の農法が世界農業遺産に認定され私達も雑穀や野菜を作っています。 |
-| 田村　周平 | 吉野川市 | Pan y cereal | https://www.tabechoku.com/producers/25284 | 私たちは、兼業農家の若手夫婦で、毎年家族でお米作りに取り組んでいます。 |
-| 自然農園マユコベ | 徳島市 | Pan y cereal | https://www.tabechoku.com/producers/24976 | 透きとおる清流、吉野川の恵みをいただきながら活動をしている自然農園マユコベです。化学肥料・農薬・動物性堆肥を使用しないいわゆる「自然栽培」を |
-| ますだファーム | 徳島市 | Pan y cereal | https://www.tabechoku.com/producers/3078280 | 徳島県で豊かな自然の中、子どもと共にお米作りを営んでいます。 農家直送でコシヒカリと徳島県奨励米のあきさかりを栽培中です。 美味しいお水と澄 |
-| シシトトラ(浅野農園) | 上勝町 | Fruta y verdura | https://www.tabechoku.com/producers/25736 | 「シシトトラ」 |
-| 田口農園　徳島 | 東みよし町 | Fruta y verdura | https://www.tabechoku.com/producers/22594 | にし阿波世界農業遺産の紹介 |
-| 西村農園（徳島県） | 美馬市 | Fruta y verdura | https://www.tabechoku.com/producers/23934 | 【販売時期のお知らせ】 |
-| 吉成農場 | 鳴門市 | Fruta y verdura | https://www.tabechoku.com/producers/29258 | 私たちは江戸時代（1768年）から続く農家です。温暖な気候に恵まれた徳島県鳴門市でさつまいも（なると金時・紅はるか）を生産しています。「安全 |
-| 嵯峨峡ファーム | 佐那河内村 | ⚠ por decidir | https://www.tabechoku.com/producers/28788 | 【記憶に残る食材】 |
-| 阿波ツクヨミファーム | 阿波市 | ⚠ por decidir | https://www.tabechoku.com/producers/10 | 徳島県北央部にある阿波市。 |
-| ニワトリノニワ | 阿波市 | ⚠ por decidir | https://www.tabechoku.com/producers/20978 | 日本の食糧自給率低迷を解決したいとバイオテクノロジー産業から脱サラし農業を始めました。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 茶園 北地の丘 | 三好市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/22999 |  |
+| 森のきのこ屋 | 徳島市 | Setas | ficha | — | https://www.tabechoku.com/producers/3078097 |  |
+| 徳島椎茸ファーム | 松茂町 | Setas | ficha | — | https://www.tabechoku.com/producers/29247 |  |
+| やまのこ農園 | 石井町 | Setas | ficha | — | https://www.tabechoku.com/producers/24238 | 徳島県名西郡石井町 |
+| 神山社中 | 神山町 | Setas | ficha | — | https://www.tabechoku.com/producers/23879 | 徳島県名西郡神山町 |
+| シシトトラ(浅野農園) | 上勝町 | Pescado | ficha | — | https://www.tabechoku.com/producers/25736 | 徳島県勝浦郡上勝町 |
+| 嵯峨峡ファーム | 佐那河内村 | Pescado | ficha | — | https://www.tabechoku.com/producers/28788 |  |
+| 旭物産 | 徳島市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22921 |  |
+| 谷藤農園 | 東みよし町 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078244 | 徳島県三好郡東みよし町足代914-2 |
+| 山河農場 | 美波町 | Pescado | ficha | — | https://www.tabechoku.com/producers/22774 | 徳島県海部郡美波町 |
+| 芝原水産 | 鳴門市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22680 |  |
+| ニワトリノニワ | 阿波市 | Carne | ficha | — | https://www.tabechoku.com/producers/20978 |  |
+| 田村　周平 | 吉野川市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/25284 |  |
+| ますだファーム | 徳島市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078280 |  |
+| 三木農園 | つるぎ町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22169 | 徳島県美馬郡つるぎ町 |
+| NARUMI FARM | 上勝町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23701 | 徳島県勝浦郡上勝町 |
+| 殖彩 | 小松島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22762 |  |
+| 自然農園マユコベ | 徳島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24976 |  |
+| 田口農園　徳島 | 東みよし町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22594 | 徳島県三好郡東みよし町 |
+| 西村農園（徳島県） | 美馬市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23934 |  |
+| 吉成農場 | 鳴門市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29258 |  |
+| 阿波ツクヨミファーム | 阿波市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/10 |  |

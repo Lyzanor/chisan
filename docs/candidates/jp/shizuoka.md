@@ -116,32 +116,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/shizuoka.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/shizuoka> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/shizuoka> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Pescado 5, Fruta y verdura 5, Té e infusiones 2, Huevos 2, Setas 2, Carne 2, Condimentos 2, Miel 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 山竹商店 山田勝美 | 沼津市 | Pescado | https://www.tabechoku.com/producers/24652 | 日本屈指の駿河湾で底曳網漁を営む山竹商店・山田勝美です。年間を通して旅館・食堂へ卸販売、直販をしております。 |
-| マルセイ水産 | 沼津市 | Pescado | https://www.tabechoku.com/producers/23447 | 静岡県東部、国内有数の水質を誇る【駿河湾】に面する沼津市西浦。 |
-| カネナカ淡水魚 | 浜松市 | Pescado | https://www.tabechoku.com/producers/21106 | 静岡県浜松市で『浜名湖産うなぎ』の養殖と加工をしております。 |
-| 佐京園 | 島田市 | Té e infusiones | https://www.tabechoku.com/producers/21849 | 静岡県金谷地区で江戸時代より300年続くお茶農家。現在13代目。 |
-| むら茶園 | 島田市 | Té e infusiones | https://www.tabechoku.com/producers/21441 | 静岡県島田市で昔ながらの芯までしっかり蒸した本物の深蒸し茶を始めとした抹茶、ほうじ茶などを栽培～販売まで行っているお茶農家です。世界農業遺産 |
-| farm1987 | 下田市 | Carne | https://www.tabechoku.com/producers/26097 | はじめまして。静岡県下田市にて、夫婦で自然養鶏(24時間放牧)を行なっています、稲田と申します。2021年12月より、南米チリ原産アローカナ |
-| もりしま黒豚 | 浜松市 | Carne | https://www.tabechoku.com/producers/23874 | 初めまして。静岡県浜松市浜北区で黒豚を育てています森島宏昌です。 |
-| 富士きのこセンター | 富士市 | Setas | https://www.tabechoku.com/producers/21189 | 富士きのこセンターは、富士山の麓の静岡県富士市で40年ほど前に父が始めて私は2代目になります。 |
-| 大井川電機製作所キノコ部 | 島田市 | Setas | https://www.tabechoku.com/producers/23518 | 私たちは静岡県の山間地で自動車用の電球を製造している会社ですが、地域の雇用を守るため、その技術を活かしてホホホタケの栽培をはじめました。 |
-| abeille | 函南町 | Miel | https://www.tabechoku.com/producers/21211 | 「南箱根の生はちみつ」は自家採取です。南箱根は伊豆高原の玄関口で標高３００～６００メートルの広い場所に数多くの花、樹木花が生い茂る素晴らしい |
-| edama | 牧之原市 | Legumbres | https://www.tabechoku.com/producers/24491 | 10年前から枝豆を中心とした農業をはじめました。毎年勉強ばかりですが、毎年少しですが成長も感じています。今年が一番美味しい！と毎年思える枝豆 |
-| 五代目わさび師『坂ぐち』浅田良一 | 伊豆市 | Condimentos | https://www.tabechoku.com/producers/21056 | はじめまして、創業100年超えの五代目わさび師、浅田良一です🍀。ここ静岡県伊豆市は、わさび(根茎)の生産量＆産出額ともに日本一🍀。携帯電話も |
-| 市川わさび園 | 静岡市 | Condimentos | https://www.tabechoku.com/producers/28338 | こんにちは！市川わさび園の市川しょうごです😊 |
-| とやま農園 | 浜松市 | Conservas | https://www.tabechoku.com/producers/3077174 | 静岡県のみかんの産地三ケ日町で、みかんの生産と加工品を生産販売をしています。 |
-| ふもとのジャージー牧場 | 富士宮市 | Lácteos y quesos | https://www.tabechoku.com/producers/29299 | 朝霧高原の耕作放棄地と森を利用して、ジャージー牛を放牧しています。 |
-| 里山栗田ファーム | 菊川市 | Frutos secos | https://www.tabechoku.com/producers/26934 | ご覧頂き誠にありがとうございます😊 |
-| なごみ農園 | 富士宮市 | Pan y cereal | https://www.tabechoku.com/producers/29 | 富士山麓の自然豊かな環境で、年間200品種ほどの米、野菜、穀物、くだものを栽培しています。 |
-| 森島農園 | 浜松市 | Pan y cereal | https://www.tabechoku.com/producers/21485 | 静岡県浜松市で、米・小松菜・季節の露地野菜・サラダ野菜などの栽培をしている農業法人です。 |
-| シックスベリーファーマーズ 松田農園 | 焼津市 | Fruta y verdura | https://www.tabechoku.com/producers/29230 | 江戸時代から続く農家で、いちご生産歴は50年以上です。 |
-| メークリヒカイト | 磐田市 | Fruta y verdura | https://www.tabechoku.com/producers/21913 | 静岡県磐田市で果物の栽培をしている鈴木です。 |
-| ポットハウス | 東伊豆町 | ⚠ por decidir | https://www.tabechoku.com/producers/24087 | 当ポットハウスは実就園の直売店です。 |
-| 浜名湖ﾌｧｰﾑ | 湖西市 | ⚠ por decidir | https://www.tabechoku.com/producers/22374 | 静岡県湖西市でうずらを飼育しています。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| abeille | 函南町 | Miel | ficha | — | https://www.tabechoku.com/producers/21211 | 静岡県田方郡函南町 |
+| 佐京園 | 島田市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21849 |  |
+| むら茶園 | 島田市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21441 |  |
+| farm1987 | 下田市 | Huevos | ficha | — | https://www.tabechoku.com/producers/26097 |  |
+| 浜名湖ﾌｧｰﾑ | 湖西市 | Huevos | ficha | — | https://www.tabechoku.com/producers/22374 |  |
+| 富士きのこセンター | 富士市 | Setas | ficha | — | https://www.tabechoku.com/producers/21189 |  |
+| 大井川電機製作所キノコ部 | 島田市 | Setas | ficha | — | https://www.tabechoku.com/producers/23518 |  |
+| 山竹商店 山田勝美 | 沼津市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24652 |  |
+| マルセイ水産 | 沼津市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23447 |  |
+| カネナカ淡水魚 | 浜松市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21106 | 静岡県浜松市西区馬郡町 |
+| edama | 牧之原市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24491 |  |
+| メークリヒカイト | 磐田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21913 |  |
+| ふもとのジャージー牧場 | 富士宮市 | Carne | ficha | — | https://www.tabechoku.com/producers/29299 |  |
+| もりしま黒豚 | 浜松市 | Carne | ficha | — | https://www.tabechoku.com/producers/23874 |  |
+| 五代目わさび師『坂ぐち』浅田良一 | 伊豆市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/21056 |  |
+| 市川わさび園 | 静岡市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/28338 |  |
+| 里山栗田ファーム | 菊川市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/26934 |  |
+| なごみ農園 | 富士宮市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29 |  |
+| ポットハウス | 東伊豆町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24087 | 静岡県賀茂郡東伊豆町 |
+| とやま農園 | 浜松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077174 |  |
+| 森島農園 | 浜松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21485 |  |
+| シックスベリーファーマーズ 松田農園 | 焼津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29230 |  |

@@ -165,32 +165,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/shikoku/kagawa.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/kagawa> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kagawa> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 10, Setas 4, Pescado 3, Carne 1, Condimentos 1, Aceite 1, Frutos secos 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 大塩水産 直売店 | さぬき市 | Pescado | https://www.tabechoku.com/producers/24332 | 「獲る・加工する・直売する」全て自社で行うから新鮮! |
-| 葉っぱ舎（はっぱや） | 三木町 | Pescado | https://www.tabechoku.com/producers/21290 | 当園は瀬戸内海と讃岐山脈に囲まれ、海風が爽やかに吹く香川県東讃地区にあります。 |
-| 伊吹島プロジェクト | 観音寺市 | Pescado | https://www.tabechoku.com/producers/20817 | 香川県の西端にある離島　伊吹島のいわし漁師の集まりです |
-| もりやま農園 | 高松市 | Pescado | https://www.tabechoku.com/producers/25832 | 瀬戸内の温暖な気候に育まれた香川県高松市のもりやま農園です。自然と都市がほどよく調和したこの地で、瀬戸内の太陽の光をたっぷり浴びた野菜を大切 |
-| オイノコ舎 | 三豊市 | Carne | https://www.tabechoku.com/producers/26647 | 瀬戸内海に面した温暖な香川県、里山と平野が広がる三豊市で、イノシシ肉（ジビエ）をはじめ、季節に応じた自然の恵みを販売しています。 |
-| 阿讃きのこ屋 | まんのう町 | Setas | https://www.tabechoku.com/producers/27803 | 四国阿讃山脈にて原木自然栽培キノコや竹の子などを生産しています。瀬戸内海に面した温暖な香川県ではありますが徳島との県境地域は別世界で冬には凍 |
-| さぬきくらげの店 | 三木町 | Setas | https://www.tabechoku.com/producers/21285 | 香川県は三木町の自然の中、三木富士「白山（しらやま）」のふもとで丹精込めて育てたきくらげです。 |
-| さぬきのこ | 三豊市 | Setas | https://www.tabechoku.com/producers/27763 | 2010年から、父母ヶ浜で有名な香川県三豊市で自家製菌床を作り、限りなく自然な環境で栽培をすることにこだわったしいたけを生産しています。自家 |
-| あい・あーる椎茸店 | 丸亀市 | Setas | https://www.tabechoku.com/producers/27853 | 弊社は香川県丸亀市にて農福連携事業として高齢者の方と一緒に菌床椎茸づくりに取り組んでいます。 |
-| 空海の郷 | まんのう町 | Miel | https://www.tabechoku.com/producers/24861 | 平成14年から香川県まんのう町で、お米や小麦、いちごや野菜の栽培のほか、養蜂事業を立ち上げハチミツの採蜜もしています。 |
-| ADL | 小豆島町 | Legumbres | https://www.tabechoku.com/producers/24702 | 【小豆島アクアポニックス農園】 |
-| 瀬戸内オリーブ園 | 坂出市 | Aceite | https://www.tabechoku.com/producers/24631 | 香川県坂出市のオリーブオイル生産者です。 |
-| 三豊の栗園　ゆたふぁむ | 三豊市 | Frutos secos | https://www.tabechoku.com/producers/29016 | 食べ応えのある大粒の栗をお届けします。 |
-| にじの百姓 | まんのう町 | Pan y cereal | https://www.tabechoku.com/producers/22989 | 香川県まんのう町の自然栽培農家です。農薬と肥料を使わずに太陽と土と水の力で米と野菜を育てています。 |
-| 虹の邑農園 | 善通寺市 | Pan y cereal | https://www.tabechoku.com/producers/26266 | ▼香川県で米麦の農家を営む3代目です！ |
-| 日本農産 | 坂出市 | Pan y cereal | https://www.tabechoku.com/producers/24947 | 私たちが農業を営んでいるのは穏やかな瀬戸内海に面した香川県坂出市です。うどんの本場讃岐では薬味として欠かせない青ネギをメインで栽培しています |
-| ハラシモベース | 三豊市 | Fruta y verdura | https://www.tabechoku.com/producers/24543 | 【祖父が手植えした柿の木をずっと繋いでいきたい】 |
-| さぬき新居農園 | 丸亀市 | Fruta y verdura | https://www.tabechoku.com/producers/3077668 | 2025年食べチョクで販売開始しました。親父から引き継ぎ2020年からさぬきのめざめ専業農家として香川県丸亀市で就農しました。さぬきのめざめ |
-| 川田明美 | 高松市 | Fruta y verdura | https://www.tabechoku.com/producers/28332 | 夫婦で、ぶどうと柑橘の栽培をしています。けして広くない果樹園。その分、丁寧に愛情を持って育てています。 |
-| TAGATAME【タガタメ】 | さぬき市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077301 | ＼海と山に囲まれた自然豊かな町、さぬき市小田からお届けします。/ |
-| めざめ | 丸亀市 | ⚠ por decidir | https://www.tabechoku.com/producers/24617 | 『これまでの「農業」の概念を変えていきたい、農業の新しい未来を創っていきたい。』そんな想いで会社名を「めざめ」と名付けました。 |
-| Fumico farm | 高松市 | ⚠ por decidir | https://www.tabechoku.com/producers/27495 | こんにちは、Fumico farm の奈々です。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 阿讃きのこ屋 | まんのう町 | Setas | ficha | — | https://www.tabechoku.com/producers/27803 | 香川県仲多度郡まんのう町 |
+| さぬきくらげの店 | 三木町 | Setas | ficha | — | https://www.tabechoku.com/producers/21285 | 香川県木田郡三木町 |
+| さぬきのこ | 三豊市 | Setas | ficha | — | https://www.tabechoku.com/producers/27763 |  |
+| あい・あーる椎茸店 | 丸亀市 | Setas | ficha | — | https://www.tabechoku.com/producers/27853 |  |
+| 大塩水産 直売店 | さぬき市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24332 |  |
+| 葉っぱ舎（はっぱや） | 三木町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21290 | 香川県木田郡三木町 |
+| 伊吹島プロジェクト | 観音寺市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20817 |  |
+| オイノコ舎 | 三豊市 | Carne | ficha | — | https://www.tabechoku.com/producers/26647 |  |
+| にじの百姓 | まんのう町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/22989 | 香川県仲多度郡まんのう町 |
+| 瀬戸内オリーブ園 | 坂出市 | Aceite | ficha | — | https://www.tabechoku.com/producers/24631 |  |
+| 三豊の栗園　ゆたふぁむ | 三豊市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/29016 |  |
+| TAGATAME【タガタメ】 | さぬき市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077301 |  |
+| 空海の郷 | まんのう町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24861 | 香川県仲多度郡まんのう町 |
+| ハラシモベース | 三豊市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24543 |  |
+| さぬき新居農園 | 丸亀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077668 |  |
+| 虹の邑農園 | 善通寺市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26266 |  |
+| 日本農産 | 坂出市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24947 |  |
+| ADL | 小豆島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24702 | 香川県小豆郡小豆島町 |
+| もりやま農園 | 高松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25832 |  |
+| 川田明美 | 高松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28332 |  |
+| Fumico farm | 高松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27495 |  |
+| めざめ | 丸亀市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/24617 |  |

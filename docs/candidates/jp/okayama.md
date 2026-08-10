@@ -111,32 +111,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chugoku/okayama.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/okayama> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/okayama> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 11, Pescado 3, Pan y cereal 3, Sake 1, Miel 1, Lácteos y quesos 1, Setas 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 南條海苔 | 倉敷市 | Pescado | https://www.tabechoku.com/producers/25711 | 下津井漁港にて、三代続く海苔養殖 |
-| 漁師からの直行便 七福丸 | 倉敷市 | Pescado | https://www.tabechoku.com/producers/20452 | 初めまして＾＾私は岡山県倉敷市「下津井」という漁師町で |
-| 華丸 | 岡山市 | Pescado | https://www.tabechoku.com/producers/22078 | 今年、令和７年は、４月末頃～９月３０日まで、鮮魚販売させて頂く予定です。 |
-| OEC KINGDOM | 総社市 | Pescado | https://www.tabechoku.com/producers/21292 | 岡山県中南部にある総社市で夫婦2人でぶどう栽培を始めました。 2017年、大好きなぶどうを作りたい！そう思い研修を経てぶどう農家になりました |
-| キジトラ招福堂 | 井原市 | Carne | https://www.tabechoku.com/producers/22823 | 移住先の岡山でジビエと自家製どぶろくや糀をつかった里山料理を提供する農家民宿「ねこのひたいの宿 山王ちぐら」を営んでいます。 |
-| 石毛おうち牧場 | 岡山市 | Carne | https://www.tabechoku.com/producers/3078152 | 2025年４月より岡山へ移住し小規模な畜産牧場を始めました。 |
-| セリフ | 西粟倉村 | Carne | https://www.tabechoku.com/producers/3077787 | 人口約1,300人の西粟倉村で、私たちは地域資源を活かした循環型の平飼い養鶏に取り組んでいます。 |
-| 倉敷きのこ園 | 倉敷市 | Setas | https://www.tabechoku.com/producers/26777 | 今年で創業17年目を迎える倉敷きのこ園は、倉敷の山間にあり、桃園に囲まれた自然豊かな場所にあります。 |
-| 美甘養蜂園 | 津山市 | Miel | https://www.tabechoku.com/producers/26695 | 美甘養蜂園は昭和31年から半世紀余り、岡山県北東部地域の津山市で養蜂を営んでいます。このあたりは盆地で朝夕の寒暖差が大きいためレンゲの花をは |
-| おくだただし | 倉敷市 | Condimentos | https://www.tabechoku.com/producers/25288 | 岡山県倉敷市で桃を中心に果物を栽培しています。 |
-| グリーンバード葡萄園 | 岡山市 | Vino | https://www.tabechoku.com/producers/27462 | 倉敷市山地の圃場で葡萄を栽培しています。マスカットオブアレキサンドリア、シャインマスカット、雄宝、リザマート、紫苑などを栽培しています。他に |
-| タンポポ農園食べチョク店 | 岡山市 | Pan y cereal | https://www.tabechoku.com/producers/28188 | 晴れの国岡山でシャインマスカットを中心にぶどう栽培とブルーベリーなどの果物や米の栽培を行なっています。 |
-| 志産米倶楽部 | 岡山市 | Pan y cereal | https://www.tabechoku.com/producers/23645 | 温暖な気候の平場で高温に強い良食味の美味しいお米を |
-| ふるいち農園 | 岡山市 | Pan y cereal | https://www.tabechoku.com/producers/24916 | ふるいち農園は、家族で営む小さな農園です。私で４代目となり、先祖代々米麦農家です。これまで守られてきた土地や文化をこれからも維持、発展させ、 |
-| オノファクトリー. | 総社市 | Pan y cereal | https://www.tabechoku.com/producers/25184 | 米どころ🌾総社市新本の朝日米農家です。 |
-| きびもも園 | 岡山市 | Fruta y verdura | https://www.tabechoku.com/producers/28750 | 当園は岡山白桃の有数産地として知られ、清水白桃発祥の地でもある岡山市一宮地区にあります。 |
-| Nini farm | 岡山市 | Fruta y verdura | https://www.tabechoku.com/producers/24368 | 葡萄が大好物なNini farm園主の岡田です。 |
-| 井上農園@Tamano | 玉野市 | Fruta y verdura | https://www.tabechoku.com/producers/21558 | 岡山県玉野市在住の井上英治と申します。 |
-| まこもたけ直売所 | 里庄町 | Fruta y verdura | https://www.tabechoku.com/producers/24261 | 中華料理の高級食材である「マコモタケ」を１０年前から栽培し、関東地区、近畿地区を中心に、全国販売しています。生産量は年間１２㌧、周辺の耕作者 |
-| 👨🏻‍🌾 medicuse 👩🏻‍🌾 | 岡山市 | ⚠ por decidir | https://www.tabechoku.com/producers/22098 | 🏅2020年 AWARD受賞 |
-| あぐりビジネス | 玉野市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077532 | 岡山県の南に位置する玉野市は、海も山も近く、瀬戸内の穏やかな気候に恵まれた地域です。 |
-| Lino ＆ Kai Farm（リノ アンド カイファーム） | 真庭市 | ⚠ por decidir | https://www.tabechoku.com/producers/22043 | ◆お客さまへのごあいさつ◆ |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| キジトラ招福堂 | 井原市 | Sake | ficha | — | https://www.tabechoku.com/producers/22823 |  |
+| 美甘養蜂園 | 津山市 | Miel | ficha | — | https://www.tabechoku.com/producers/26695 |  |
+| 石毛おうち牧場 | 岡山市 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/3078152 |  |
+| 倉敷きのこ園 | 倉敷市 | Setas | ficha | — | https://www.tabechoku.com/producers/26777 |  |
+| 南條海苔 | 倉敷市 | Pescado | ficha | — | https://www.tabechoku.com/producers/25711 |  |
+| 漁師からの直行便 七福丸 | 倉敷市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20452 |  |
+| 華丸 | 岡山市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22078 |  |
+| 志産米倶楽部 | 岡山市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/23645 |  |
+| オノファクトリー. | 総社市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/25184 |  |
+| セリフ | 西粟倉村 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3077787 | 岡山県英田郡西粟倉村 |
+| あぐりビジネス | 玉野市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/3077532 |  |
+| おくだただし | 倉敷市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25288 |  |
+| グリーンバード葡萄園 | 岡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27462 |  |
+| タンポポ農園食べチョク店 | 岡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28188 |  |
+| きびもも園 | 岡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28750 |  |
+| 👨🏻‍🌾 medicuse 👩🏻‍🌾 | 岡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22098 |  |
+| ふるいち農園 | 岡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24916 |  |
+| Nini farm | 岡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24368 |  |
+| 井上農園@Tamano | 玉野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21558 |  |
+| Lino ＆ Kai Farm（リノ アンド カイファーム） | 真庭市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22043 |  |
+| OEC KINGDOM | 総社市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21292 |  |
+| まこもたけ直売所 | 里庄町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24261 | 岡山県浅口郡里庄町 |

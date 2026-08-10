@@ -133,32 +133,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kyushu-okinawa/saga.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/saga> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/saga> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 8, Huevos 3, Setas 2, Pan y cereal 2, Miel 1, Lácteos y quesos 1, Pescado 1, Carne 1, Legumbres 1, Conservas 1, Dulces y repostería 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| みつせ鶏本舗 | 吉野ヶ里町 | Pescado | https://www.tabechoku.com/producers/3078630 | 「美味しい鶏肉をお届けしたい」その想いから、みつせ鶏は生まれました。北部九州の自然に囲まれた環境で、鶏にできるだけ負担をかけず、ゆっくり大切 |
-| はしま海苔 | 小城市 | Pescado | https://www.tabechoku.com/producers/3078216 | 佐賀県小城市芦刈町で3代続く海苔養殖家、橋間勝由です。 |
-| 嬉野茶　池田農園 | 嬉野市 | Té e infusiones | https://www.tabechoku.com/producers/21819 | 佐賀県嬉野は五００年以上続く |
-| 松永緑茶園 | 嬉野市 | Té e infusiones | https://www.tabechoku.com/producers/23567 | 〜茶に幸せを込めて〜 |
-| 本間農園 | 神埼市 | Carne | https://www.tabechoku.com/producers/20652 | 採卵養鶏を中心に農業をしています。平飼い有精卵「ほんまの卵」、たくさんの人に美味しく食べてもらっています。本物の作物を基盤として、心も体も満 |
-| 上田養鶏場 | 鹿島市 | Carne | https://www.tabechoku.com/producers/23452 | 女性養鶏家として2020年5月にスタートした若い養鶏場です。母鶏の健康を第一に考えた優しい卵つくりを心がけています。母鶏みんなが普段からエサ |
-| 小室　光春 | 佐賀市 | Setas | https://www.tabechoku.com/producers/24350 | 太陽光発電システムの下でしいたけ栽培をしています |
-| 満天きくらげ | 有田町 | Setas | https://www.tabechoku.com/producers/21655 | 私は佐賀県西部にある創業およそ100年になる瓦屋の中に、女性も活躍できる部署として他の女性社員と一緒に農産物生産事業部を立ち上げ、2019年 |
-| はらまき養蜂場 | 神埼市 | Miel | https://www.tabechoku.com/producers/22806 | 私たちは、夫婦二人で、自然豊かな佐賀県、神埼市の背振山麓と平坦地に、蜂箱を置いています。二人の目が届く範囲の蜂場で、蜜蜂を大切に育てていす。 |
-| 光吉農産 | 佐賀市 | Legumbres | https://www.tabechoku.com/producers/3077373 | 光吉農産は明治時代から四代続く米農家です。現在は五代目となる息子二人と一緒に米・麦・大豆・唐辛子を生産しています。丹精込めて作ったお米を食べ |
-| えがちゃん農園 | 佐賀市 | Conservas | https://www.tabechoku.com/producers/21650 | 元々飲食店を経営してて、美味しい野菜を探し求めてお店をやっていましたが、今は逆に美味しい素材を提供する農家に転身して10年が経ちます。農家に |
-| 小池農園漬物加工所 | 鹿島市 | Conservas | https://www.tabechoku.com/producers/23713 | 私たち小池農園漬物加工所は「安心して食べていただける自然食品」を目指し保存料・着色料を使わない製法で漬物加工・販売してる農家です。 |
-| ジョブクリエイト | 小城市 | Dulces y repostería | https://www.tabechoku.com/producers/27438 | 障がい者就労継続支援B型事業所で、自家農園で皆さんが愛情をこめて栽培したブルーベリーや梅、イチジク、レモンなどを使ってジャムやお菓子作りをし |
-| ベリーフォレスト | 鳥栖市 | Dulces y repostería | https://www.tabechoku.com/producers/3077495 | 佐賀県鳥栖市でいちご・ジャム・瞬間冷凍いちごを販売している「ベリーフォレスト」です🍓 |
-| 素ヱコ農園 | 伊万里市 | Huevos | https://www.tabechoku.com/producers/23834 | 佐賀県伊万里市で、一人黙々と農業してた末子(すえこ)ばあちゃんの農業を継ぎました。ばあちゃんは、昔の卵は栄養満点で薬の代わりとして重宝されて |
-| ミルン牧場 | 佐賀市 | Lácteos y quesos | https://www.tabechoku.com/producers/28847 | 私たちは、「自然のままの牛乳本来の美味しさを皆様にお届けする」ことを目的として、1968年から酪農を営んでいます。九州における酪農産業の6次 |
-| 自然栽培専門店「自然栽培園北村」 | 佐賀市 | Pan y cereal | https://www.tabechoku.com/producers/8 | 日本有数の米どころ佐賀県の佐賀平野で太陽と水と土だけしか使わない自然農法を30年以上実践し、無肥料・無農薬・無堆肥でコシヒカリを育てています |
-| 白浜農産 | 白石町 | Pan y cereal | https://www.tabechoku.com/producers/16 | 【令和6年新米・予約開始中】こんにちは！九州屈指の農業好適地帯・白石町で、代々米作りを行う「白浜農産」です。田んぼの総面積は30町(東京ドー |
-| 丸尾農園 | 伊万里市 | Fruta y verdura | https://www.tabechoku.com/producers/22431 | 佐賀県伊万里市大川町は100年以上の歴史ある梨の産地です！ |
-| 山和農園 | 伊万里市 | Fruta y verdura | https://www.tabechoku.com/producers/20436 | 祖父が35年前に山を開いて始まった、三世代で真面目な美味しさを届ける山和農園です。 |
-| トゥルーバファーム佐賀 | 唐津市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077599 | レモンの旬到来！！リスボンとマイヤーレモンを販売中です。 |
-| れんこんの家 やました | 白石町 | ⚠ por decidir | https://www.tabechoku.com/producers/22132 | 父から受け継ぎ、就農して２8年。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| はらまき養蜂場 | 神埼市 | Miel | ficha | — | https://www.tabechoku.com/producers/22806 |  |
+| ミルン牧場 | 佐賀市 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/28847 |  |
+| 素ヱコ農園 | 伊万里市 | Huevos | ficha | — | https://www.tabechoku.com/producers/23834 |  |
+| 本間農園 | 神埼市 | Huevos | ficha | — | https://www.tabechoku.com/producers/20652 |  |
+| 上田養鶏場 | 鹿島市 | Huevos | ficha | — | https://www.tabechoku.com/producers/23452 |  |
+| 小室　光春 | 佐賀市 | Setas | ficha | — | https://www.tabechoku.com/producers/24350 |  |
+| 満天きくらげ | 有田町 | Setas | ficha | — | https://www.tabechoku.com/producers/21655 | 佐賀県西松浦郡有田町 |
+| はしま海苔 | 小城市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078216 |  |
+| みつせ鶏本舗 | 吉野ヶ里町 | Carne | ficha | — | https://www.tabechoku.com/producers/3078630 | 佐賀県神埼郡吉野ヶ里町 |
+| 光吉農産 | 佐賀市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/3077373 |  |
+| 小池農園漬物加工所 | 鹿島市 | Conservas | ficha | — | https://www.tabechoku.com/producers/23713 |  |
+| ジョブクリエイト | 小城市 | Dulces y repostería | ficha | — | https://www.tabechoku.com/producers/27438 |  |
+| 自然栽培専門店「自然栽培園北村」 | 佐賀市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/8 |  |
+| 白浜農産 | 白石町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/16 | 佐賀県杵島郡白石町 |
+| 丸尾農園 | 伊万里市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22431 |  |
+| 山和農園 | 伊万里市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20436 |  |
+| えがちゃん農園 | 佐賀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21650 |  |
+| トゥルーバファーム佐賀 | 唐津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077599 |  |
+| 嬉野茶　池田農園 | 嬉野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21819 |  |
+| 松永緑茶園 | 嬉野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23567 |  |
+| れんこんの家 やました | 白石町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22132 | 佐賀県杵島郡白石町 |
+| ベリーフォレスト | 鳥栖市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077495 |  |

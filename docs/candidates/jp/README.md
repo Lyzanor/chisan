@@ -48,14 +48,27 @@ fichero identifica la asociación o fuente concreta usada.
 > las 47 áreas**, de <https://www.tabechoku.com/producers/[prefectura]>. Es la primera fuente
 > japonesa encontrada que **generaliza por área sin ser un gremio de bebida**: cubre las 47
 > prefecturas con 51-96 productores cada una tras deduplicar, y da municipio completo. Reparto
-> por categoría: Pescado 169, Pan y cereal 147, Fruta y verdura 145, Carne 102, Setas 90,
-> Té 40, Legumbres 37, Miel 36, Conservas 32, Condimentos 29, y 121 sin clasificar.
+> por categoría tras el enriquecimiento: Fruta y verdura 431, Pescado 123, Pan y cereal 96,
+> Setas 85, Carne 66, Miel 36, Huevos 34, Frutos secos 26, Té 22, Legumbres 21, Condimentos 19,
+> y 18 sin clasificar.
 >
 > **Su techo es distinto al de un padrón, y por eso vale.** Es un mercado de venta directa:
 > prueba que el productor **vende hoy y vende él mismo**, que es justo lo que un registro no
 > prueba y lo que obliga a dejar filas en `parcial`. Lo que no da es el dominio propio —
 > el enlace es la ficha del mercado — así que cosechar dominio sigue siendo el paso previo
-> a cada alta. La categoría de esas tablas es **provisional**, inferida de la descripción.
+> a cada alta.
+>
+> **Enriquecido el mismo día.** Cada fila lleva municipio (con el 郡 cuando lo hay, que es la
+> trampa que avisa el `AGENTS.md` del país), categoría, **cómo se cerró esa categoría**,
+> los productos que el productor tiene a la venta y el representante cuando la ficha lo da.
+> La columna `cerrada por` es el semáforo: `productos` es categoría leída del catálogo real
+> —**165 filas**, las que se alcanzaron antes del límite de peticiones— y `ficha` es inferida
+> de su descripción, o sea provisional. Solo **18 de 1.034** quedan en `⚠ por decidir`.
+>
+> **El límite es de la fuente, no del método:** 食べチョク corta por 405 a partir de unas
+> 180 fichas seguidas y luego bloquea el sitio entero durante un rato. Reanudar la cosecha
+> de fichas —a un ritmo de una cada 2 s, o repartida en varios días— cierra la categoría por
+> productos de las 869 restantes sin trabajo nuevo de investigación: el listado de ids ya está.
 >
 > **Fuentes descartadas en esta pasada, para no repetir el intento:** `miso.or.jp`
 > (directorio de miso por prefectura, pero protegido con contraseña), `zenmi.jp` y

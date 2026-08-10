@@ -131,38 +131,39 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 後藤製菓 | 廿日市市 | Dulces y repostería | 和菓子協会 | http://www.goto-miyajima.com/ | 廿日市市宮島町 1162-2 |
 | 藤い屋 | 廿日市市 | Dulces y repostería | 和菓子協会 | http://www.fujiiya.co.jp/ | 廿日市市宮島町 1129 |
 | 寺本水産 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.teramotosuisan.jp/ | ⚠ municipio sin confirmar; ostra de Hiroshima |
-| 名原水産 | ⚠ | Pescado | búsqueda dirigida + web propia | https://nabarasuisan.com/ | ⚠ municipio sin confirmar |
+| 名原水産 | 呉市 | Pescado | búsqueda dirigida + web propia | https://nabarasuisan.com/ | 呉市音戸町高須, dirección del 特定商取引法 |
 | 長船養殖場（かきアイランド） | 坂町 | Pescado | búsqueda dirigida + web propia | https://osafune.com/ | ⚠ 安芸郡坂町; punto de venta propio |
 
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chugoku/hiroshima.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/hiroshima> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/hiroshima> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 12, Pescado 4, Pan y cereal 3, Huevos 2, Miel 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 石野水産　瀬戸内ちりめん　ひじき | 呉市倉橋町 | Pescado | https://www.tabechoku.com/producers/20429 | 石野水産は広島県最南端のちりめんの網元 |
-| 宮原水産 | 呉市倉橋町 | Pescado | https://www.tabechoku.com/producers/21672 | 私たちの会社は、広島県の呉市倉橋町のきらきら光る海でちりめん漁・かき養殖をしている宮原水産です。うちの主人で４代目になります。初代のご先祖様 |
-| かなわ海産 | 江田島市 | Pescado | https://www.tabechoku.com/producers/20446 | 【広島かき老舗】かなわは慶応3年（1867年）創業以来、生食用かきのみを生産してまいりました。 |
-| ふじい農園 | 神石高原町 | Pescado | https://www.tabechoku.com/producers/23033 | 広島県東部にある神石高原町で、アスパラガスとぶどうを中心に栽培しています。慣行栽培をもとに、なるべく農薬や化学肥料を使わないように栽培してい |
-| せんチャンファーム | 三原市 | Té e infusiones | https://www.tabechoku.com/producers/21099 | せんチャンファームのある広島県三原市久井町は標高３７５mの爽やかな高原の地。高原特有の昼夜の寒暖差の中、土作りからこだわり、ミネラル豊富な天 |
-| 鶏家すずたろう | 北広島町 | Carne | https://www.tabechoku.com/producers/3079036 | 「食べて笑顔になれる安心安全の卵を目指して」 |
-| ながみねファーム | 福山市 | Carne | https://www.tabechoku.com/producers/29270 | ながみねファームは、自然養鶏をベースに循環型農業として自然卵（有精卵）を育む平飼い養鶏農家です。ヒヨコのうちから抗生物質等の薬剤は一切使わず |
-| 平田農園 | 広島市 | Miel | https://www.tabechoku.com/producers/29200 | 定年退職後、農業の傍ら一群から養蜂を始める。その後ミツバチに魅せられ日本はちみつマイスターの資格を取得し本格的に養蜂業に参入。地の利を活かし |
-| 広島かき愛好会 | 呉市 | Condimentos | https://www.tabechoku.com/producers/3077903 | 私は20代前半のころリクルートに努めておりましたが、広島かき業界・産業に出会い、心打たれました。 |
-| あじば農園（食べチョク） | 尾道市 | Dulces y repostería | https://www.tabechoku.com/producers/23484 | 季節のみかん・レモン・レモンケーキ　あじば農園です。 |
-| レモンの卵農園 | 大崎上島町 | Huevos | https://www.tabechoku.com/producers/3077862 | レモンの卵農園は、広島県の瀬戸内海にある離島、大崎上島町にあります。 |
-| こめ奉行☆やよい | 世羅町 | Pan y cereal | https://www.tabechoku.com/producers/22767 | 広島県世羅町でお米を栽培する生産農家です♪ |
-| 内藤精米所 | 呉市安浦町 | Pan y cereal | https://www.tabechoku.com/producers/25572 | 当店では広島県産のお米を専門で取り扱っています |
-| あちゅらむ農園 | 安芸高田市 | Pan y cereal | https://www.tabechoku.com/producers/24779 | 実家は兼業農業でお米をつくっていましたが、それはあくまでも自給できる程度のものでした。 |
-| 米ファーム　藤原 | 庄原市 | Pan y cereal | https://www.tabechoku.com/producers/3078581 | 広島県庄原市東城町で米農家をしています。 |
-| 弘法菜園 | 北広島町 | Fruta y verdura | https://www.tabechoku.com/producers/3077934 | 広島県の寒冷地帯、北広島町大朝から鮮度抜群の新鮮野菜をお届けします。 |
-| Remon.Lab | 尾道市 | Fruta y verdura | https://www.tabechoku.com/producers/23795 | 国産レモンの生産量日本一の瀬戸田で柑橘の総合商社として取り組んでいます。 |
-| 西屋農園 | 尾道市 | Fruta y verdura | https://www.tabechoku.com/producers/3077314 | 農家一筋60年！ |
-| 日本農園 | 廿日市市 | Fruta y verdura | https://www.tabechoku.com/producers/20811 | 皆さんこんにちは。 |
-| なちゅbio | 三次市 | ⚠ por decidir | https://www.tabechoku.com/producers/20896 | ◆自己紹介 |
-| 大世渡商会 | 呉市上蒲刈 | ⚠ por decidir | https://www.tabechoku.com/producers/20470 | 私達の故郷、広島県呉市蒲刈島！ |
-| あおいくま | 福山市 | ⚠ por decidir | https://www.tabechoku.com/producers/27628 | ご覧いただきありがとうごさいます。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 平田農園 | 広島市 | Miel | ficha | — | https://www.tabechoku.com/producers/29200 |  |
+| 鶏家すずたろう | 北広島町 | Huevos | ficha | — | https://www.tabechoku.com/producers/3079036 | 広島県山県郡北広島町6597 |
+| ながみねファーム | 福山市 | Huevos | ficha | — | https://www.tabechoku.com/producers/29270 |  |
+| 広島かき愛好会 | 呉市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077903 |  |
+| 石野水産　瀬戸内ちりめん　ひじき | 呉市倉橋町 | Pescado | ficha | — | https://www.tabechoku.com/producers/20429 |  |
+| 宮原水産 | 呉市倉橋町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21672 |  |
+| かなわ海産 | 江田島市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20446 |  |
+| こめ奉行☆やよい | 世羅町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/22767 | 広島県世羅郡世羅町上津田 |
+| 内藤精米所 | 呉市安浦町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/25572 |  |
+| あちゅらむ農園 | 安芸高田市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/24779 |  |
+| せんチャンファーム | 三原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21099 |  |
+| なちゅbio | 三次市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20896 |  |
+| 弘法菜園 | 北広島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077934 | 広島県山県郡北広島町大朝 |
+| 大世渡商会 | 呉市上蒲刈 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20470 |  |
+| レモンの卵農園 | 大崎上島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077862 | 広島県豊田郡大崎上島町 |
+| あじば農園（食べチョク） | 尾道市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23484 |  |
+| Remon.Lab | 尾道市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23795 |  |
+| 西屋農園 | 尾道市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077314 |  |
+| 米ファーム　藤原 | 庄原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078581 |  |
+| 日本農園 | 廿日市市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20811 |  |
+| ふじい農園 | 神石高原町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23033 | 広島県神石郡神石高原町 |
+| あおいくま | 福山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27628 |  |

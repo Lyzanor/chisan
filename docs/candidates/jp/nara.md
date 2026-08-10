@@ -151,32 +151,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kansai/nara.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/nara> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/nara> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 13, Huevos 3, Setas 3, Pan y cereal 2, Legumbres 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| ウエヒラファーム | 五條市 | Pescado | https://www.tabechoku.com/producers/3079009 | 奈良県五條市でスイカ🍉を栽培している26歳夫婦です！ |
-| 旬の果物 小西農園 | 五條市 | Pescado | https://www.tabechoku.com/producers/21105 | 奈良県五條市の清流 吉野川のマイナスイオンの恵み、紀伊山脈の美しい空気の恵み、人情ある地域の中で果物を中心にトウモロコシ、梨、柿などを栽培し |
-| 自然ごちそう農園 | 宇陀市 | Pescado | https://www.tabechoku.com/producers/28859 | 農薬と化学肥料を一切使わず野菜を作っています。肥料は有機を少量使いますが、できるだけ無肥料で栽培（自然栽培）するように頑張っています。 |
-| 自然農園　やまぞえの | 山添村 | Pescado | https://www.tabechoku.com/producers/3077201 | 奈良県山添村で農業を営んでいる家族です。山添村で生まれ育った70歳の農業経験豊かな父を筆頭に、兄夫婦、娘夫婦（私）が農業を手伝っています。山 |
-| しもで農園 | 天理市 | Té e infusiones | https://www.tabechoku.com/producers/23596 | 奈良県の山間地で昭和41年から55年間、原木栽培にこだわって椎茸を育ててます。生まれ育った周りの自然と、健康で美味しい原木しいたけを皆さんに |
-| ハンサムガーデン | 宇陀市 | Carne | https://www.tabechoku.com/producers/23199 | 奈良県の東部大和高原(春～秋季)から生駒山系のふもと富雄(冬季)へと渡りながらレタス類とサラダ野菜を周年で栽培しています。近隣から調達できる |
-| ビークスガーデン | 桜井市 | Carne | https://www.tabechoku.com/producers/3078480 | 奈良県の大和高原で、平飼い養鶏をしています。 |
-| みやび農園 | 十津川村 | Setas | https://www.tabechoku.com/producers/21307 | 菌床栽培のしいたけを出荷しています。 |
-| しいたけ農園musubi舎 | 奈良市 | Setas | https://www.tabechoku.com/producers/29225 | 私たちは、就労支援A型事業所で施設外就労の一環として椎茸栽培を行っており、農福連携に力を入れています！全員の特徴にあった作業選定をしながら、 |
-| 中谷農園とキノコ倶楽部 | 宇陀市 | Setas | https://www.tabechoku.com/producers/22914 | 奈良県宇陀市の |
-| さなて豆農園 | 大淀町 | Legumbres | https://www.tabechoku.com/producers/28185 | わたしたちは、奈良県吉野地方の大淀町で枝豆などを育てる「さなて豆農園」です。両親の代から農地や種豆を受け継ぎ、農園をはじめました。 |
-| 山柚 | 山添村 | Conservas | https://www.tabechoku.com/producers/26558 | 私共は2015年11月に柚子の加工品を販売する会社として起業致しました。 |
-| 古都　風雅ファーム | 奈良市 | Huevos | https://www.tabechoku.com/producers/21255 | 『美味しい卵に出会いたくて』 |
-| 奈良おおの農園 | 奈良市 | Pan y cereal | https://www.tabechoku.com/producers/79 | 奈良西部の富雄三碓で300年以上続くお米農家、大野收一郎です。 |
-| NaraGreen農園 | 奈良市 | Pan y cereal | https://www.tabechoku.com/producers/3077923 | 奈良県奈良市で、代々続く米作りを行っている岡田と申します。長年この地で稲作に取り組んできた父の後を継ぎ、現在も家族で米作りを続けています。特 |
-| お米日和 | 桜井市 | Pan y cereal | https://www.tabechoku.com/producers/3078900 | ほんものの美味しいお米を目指して、奈良県桜井市にて自然栽培でのお米づくりのみを行っている農業法人です。 |
-| 草野自然農園 | 下北山村 | Fruta y verdura | https://www.tabechoku.com/producers/28521 | 奈良県、三重県、和歌山県の三県境にある奈良県下北山村の草野自然農園です。 |
-| Lip幸せいちご園 | 五條市 | Fruta y verdura | https://www.tabechoku.com/producers/26001 | 奈良県五條市の若手農家が育てる、美味しい果実たち |
-| 西畑園芸 | 大和郡山市 | Fruta y verdura | https://www.tabechoku.com/producers/27449 | 私は、以前から大好きだったブルーベリー  を栽培したいと思い、2010年に２０本２種類からスタートしました。今では、４００本１０種類のブルー |
-| CAP35 | 三郷町 | ⚠ por decidir | https://www.tabechoku.com/producers/24497 | CAP35は農業を主体としたNPO法人で、雇用を目的に設立しました。 |
-| 23ファーム（ふみファーム） | 橿原市 | ⚠ por decidir | https://www.tabechoku.com/producers/3078953 | 初めまして。 |
-| スマイル葛城農業 | 葛城市 | ⚠ por decidir | https://www.tabechoku.com/producers/27370 | 私たちは奈良県葛城市太田を拠点とし、高齢化が進んでいる葛城市の耕作放棄地を活用し地域復興や活性化をモットーに、取り組んでいます。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 古都　風雅ファーム | 奈良市 | Huevos | ficha | — | https://www.tabechoku.com/producers/21255 |  |
+| 奈良おおの農園 | 奈良市 | Huevos | ficha | — | https://www.tabechoku.com/producers/79 |  |
+| ビークスガーデン | 桜井市 | Huevos | ficha | — | https://www.tabechoku.com/producers/3078480 |  |
+| みやび農園 | 十津川村 | Setas | ficha | — | https://www.tabechoku.com/producers/21307 | 奈良県吉野郡十津川村 |
+| しもで農園 | 天理市 | Setas | ficha | — | https://www.tabechoku.com/producers/23596 |  |
+| しいたけ農園musubi舎 | 奈良市 | Setas | ficha | — | https://www.tabechoku.com/producers/29225 |  |
+| さなて豆農園 | 大淀町 | Legumbres | ficha | — | https://www.tabechoku.com/producers/28185 | 奈良県吉野郡大淀町 |
+| NaraGreen農園 | 奈良市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3077923 |  |
+| お米日和 | 桜井市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078900 |  |
+| CAP35 | 三郷町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24497 | 奈良県生駒郡三郷町 |
+| 草野自然農園 | 下北山村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28521 |  |
+| ウエヒラファーム | 五條市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3079009 |  |
+| Lip幸せいちご園 | 五條市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26001 |  |
+| 旬の果物 小西農園 | 五條市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21105 |  |
+| 西畑園芸 | 大和郡山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27449 | 奈良県大和郡山市 |
+| 中谷農園とキノコ倶楽部 | 宇陀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22914 |  |
+| ハンサムガーデン | 宇陀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23199 |  |
+| 自然ごちそう農園 | 宇陀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28859 |  |
+| 山柚 | 山添村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26558 | 奈良県山辺郡山添村 |
+| 自然農園　やまぞえの | 山添村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077201 |  |
+| 23ファーム（ふみファーム） | 橿原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078953 |  |
+| スマイル葛城農業 | 葛城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27370 |  |

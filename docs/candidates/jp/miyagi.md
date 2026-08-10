@@ -134,32 +134,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/tohoku/miyagi.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/miyagi> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/miyagi> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Pan y cereal 5, Pescado 4, Fruta y verdura 4, Huevos 2, Setas 2, Carne 2, Cerveza 1, Vino 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| たみこの海パック | 南三陸町 | Pescado | https://www.tabechoku.com/producers/21734 | 漁業従事者として3７年。 |
-| 松島牡蠣屋 | 松島町 | Pescado | https://www.tabechoku.com/producers/22251 | 日本三景の宮城県松島で漁師をしております。 |
-| ㊥マルナカ遠藤水産 | 石巻市 | Pescado | https://www.tabechoku.com/producers/22401 | ㊥マルナカ遠藤水産は三陸沖に面した小さな漁村、宮城県石巻市の「十三浜」で、主に、わかめ、昆布の生産から加工、販売までを家族でおこなっておりま |
-| Yatsu ファーム | 丸森町 | Carne | https://www.tabechoku.com/producers/3078415 | 宮城県丸森町で祖父の代から畜産業を営んでおり、米作りも行っております。 |
-| 丹庄ファーム | 仙台市 | Carne | https://www.tabechoku.com/producers/3078731 | 宮城県仙台市で、国産原料の自家配合飼料を使用して、平飼いで養鶏を行っている、小さな農場です。 |
-| 石巻Eggファーム | 石巻市 | Carne | https://www.tabechoku.com/producers/26154 | 2020年に石巻Eggファームを立ち上げさせて頂きました。石巻の豊かな自然を生かし平飼いによる養鶏を行っています。ニワトリが自由に動き回りス |
-| 七つ森ふもと舞茸 | 大和町 | Setas | https://www.tabechoku.com/producers/24624 | 東北の中心地仙台から北に約20キロ |
-| キタザワ花園 | 気仙沼市 | Setas | https://www.tabechoku.com/producers/28678 | 海の近くで、きくらげ（キクラゲ）を栽培しています。今年で栽培３年目になります。内陸や山間部などで栽培する場合の多いきくらげですが、当園はミネ |
-| 木漏れ日農園 | 登米市 | Huevos | https://www.tabechoku.com/producers/21755 | 宮城県登米市の山あいで野菜や平飼い有精卵、日本ミツバチの蜂蜜を生産しています。 |
-| おおえだファーム | 角田市 | Huevos | https://www.tabechoku.com/producers/22373 | おおえだファームのたまごへのこだわり |
-| 蕪栗グリーンファーム | 大崎市 | Frutos secos | https://www.tabechoku.com/producers/27920 | 体に優しいものが自然にも優しい。 |
-| 黒澤農産 | 栗原市 | Frutos secos | https://www.tabechoku.com/producers/3078127 | 宮城県栗原市にあります |
-| 秋保ワイナリー | 仙台市 | Vino | https://www.tabechoku.com/producers/3078032 | 秋保ワイナリーは東日本大震災で大きな被害を受けた宮城県の生産者をワインと食のマリアージュを通して応援するために、沢山の方々に支えられ、201 |
-| もりのした | 岩沼市 | Pan y cereal | https://www.tabechoku.com/producers/26155 | お客様が喜んでくれるお米をつくる！を信条に、長年の経験・勘・自分たちの舌を何よりの”食味計”として自信を持ってお届けできるお米を日々追求して |
-| いなほ | 登米市 | Pan y cereal | https://www.tabechoku.com/producers/21095 | 私たちが暮らす宮城県北の登米市米山町は古くから米の名産地として知られています。代表の鈴木豊はこの地で４００年余り続く米農家の長男に生まれ、第 |
-| エービーfam | 登米市 | Pan y cereal | https://www.tabechoku.com/producers/21887 | 東北最大の北上川が貫流し豊富な水資源と肥沃な耕土に恵まれた土地で環境にやさしい米づくりをしています。 |
-| 美食農園 ラ・ファータ【La fata】 | 名取市 | Fruta y verdura | https://www.tabechoku.com/producers/23338 | ｢おいしい！｣この一言に元気をもらっています！ |
-| デリシャスファーム | 大崎市 | Fruta y verdura | https://www.tabechoku.com/producers/3078833 | 私たちは「一口で違いがわかる野菜づくり」を目指し、こだわりのトマトを中心に旬の野菜を栽培しています。 |
-| あかま里山農園 | 石巻市 | Fruta y verdura | https://www.tabechoku.com/producers/22020 | 子どもの頃から大好きな里山で、さまざまな作物を育てています。一年中、常に何かを育てているからこそ可能になる、有機肥料の活用など循環型の農業を |
-| エコファーム高橋 | 栗原市 | ⚠ por decidir | https://www.tabechoku.com/producers/23272 | 家族で営んでいる小さな農場です。 |
-| Lifetime nature&farming | 石巻市 | ⚠ por decidir | https://www.tabechoku.com/producers/24954 | 〜自分たちが食べたいものしか、お届けできない〜 |
-| 太良衛門 | 角田市 | ⚠ por decidir | https://www.tabechoku.com/producers/27504 | ●こだわりの環境づくり |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 丹庄ファーム | 仙台市 | Cerveza | ficha | — | https://www.tabechoku.com/producers/3078731 |  |
+| 秋保ワイナリー | 仙台市 | Vino | ficha | — | https://www.tabechoku.com/producers/3078032 |  |
+| 石巻Eggファーム | 石巻市 | Huevos | ficha | — | https://www.tabechoku.com/producers/26154 |  |
+| おおえだファーム | 角田市 | Huevos | ficha | — | https://www.tabechoku.com/producers/22373 |  |
+| 七つ森ふもと舞茸 | 大和町 | Setas | ficha | — | https://www.tabechoku.com/producers/24624 | 宮城県黒川郡大和町 |
+| キタザワ花園 | 気仙沼市 | Setas | ficha | — | https://www.tabechoku.com/producers/28678 |  |
+| たみこの海パック | 南三陸町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21734 | 宮城県本吉郡南三陸町 |
+| 松島牡蠣屋 | 松島町 | Pescado | ficha | — | https://www.tabechoku.com/producers/22251 | 宮城県宮城郡松島町 |
+| ㊥マルナカ遠藤水産 | 石巻市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22401 |  |
+| 太良衛門 | 角田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27504 |  |
+| Yatsu ファーム | 丸森町 | Carne | ficha | — | https://www.tabechoku.com/producers/3078415 | 宮城県伊具郡丸森町 |
+| 蕪栗グリーンファーム | 大崎市 | Carne | ficha | — | https://www.tabechoku.com/producers/27920 |  |
+| もりのした | 岩沼市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26155 |  |
+| 黒澤農産 | 栗原市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078127 |  |
+| エコファーム高橋 | 栗原市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/23272 |  |
+| エービーfam | 登米市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/21887 |  |
+| Lifetime nature&farming | 石巻市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/24954 |  |
+| あかま里山農園 | 石巻市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/22020 |  |
+| 美食農園 ラ・ファータ【La fata】 | 名取市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23338 |  |
+| デリシャスファーム | 大崎市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078833 |  |
+| 木漏れ日農園 | 登米市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21755 |  |
+| いなほ | 登米市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21095 |  |

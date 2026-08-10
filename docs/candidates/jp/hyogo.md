@@ -189,32 +189,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kansai/hyogo.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/hyogo> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/hyogo> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 12, Legumbres 3, Miel 2, Pescado 2, Carne 2, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 鴨庄村のりょう農園 | 丹波市市 | Pescado | https://www.tabechoku.com/producers/20553 | 元々サラリーマンでしたが、農業研修を受け、令和元年に独立し兵庫県丹波市にて自然栽培で農業をしております。 |
-| 前拓水産 | 南あわじ市 | Pescado | https://www.tabechoku.com/producers/23340 | ほんとうに美味しいと感じたものだけを、漁師がお届けします。 |
-| 淡路ゆうき耕房 | 南あわじ市 | Pescado | https://www.tabechoku.com/producers/20699 | 納豆菌と運命の出会いから13年。試行錯誤を繰り返し、ようやく残留農薬検出せずの安心で美味しい玉ねぎを皆様にお届けする事ができました。 |
-| 里山ブルーベリー農園Wacca | 川西市 | Pescado | https://www.tabechoku.com/producers/3078544 | 兵庫県最東の川西市にある『里山ブルーベリー農園/カフェWacca』(ワッカ) です。私たちが農薬不使用で丹精込めて作った農産物でからだももこ |
-| 丹波篠山 細見農園 | 丹波篠山市 | Carne | https://www.tabechoku.com/producers/20352 | 私達は丹波篠山市で4代続く養鶏業と農業を行っております。 |
-| 丹波篠山　めぶき農房 | 丹波篠山市 | Carne | https://www.tabechoku.com/producers/23776 | 兵庫県丹波篠山市で農薬や化学肥料・畜産堆肥を使わずに１６種類の在来種大豆や小豆、丹波黒大豆枝豆や餅米を栽培しています。 |
-| 中田農園 | 淡路市 | Carne | https://www.tabechoku.com/producers/3077226 | 淡路島で祖父の代から50年以上、お米と玉ねぎの栽培と繁殖和牛を飼育しています。 |
-| 奥山ジビエ　IKUTO MEAT | 豊岡市 | Carne | https://www.tabechoku.com/producers/27101 | 奥山ジビエは兵庫県豊岡市の最南部に位置する小さな集落である奥山村で鹿肉、猪肉（ジビエ）の生産、販売を行っております。奥山の豊かな自然で育った |
-| Shinobee Honey | 宍粟市 | Miel | https://www.tabechoku.com/producers/22672 | はちみつ本来の香り、栄養を自然のままご提供するため、非加熱・無添加の身体が喜ぶ生はちみつをミツバチと二人三脚でつくっています。 |
-| シンフォニアファーム | 三田市 | Legumbres | https://www.tabechoku.com/producers/21639 | 【無施肥・無投薬の自然栽培農家】人と自然が共生する兵庫六甲山北側の里山で、多品目の野菜を、無施肥・無投薬（農薬肥料堆肥不使用）で栽培している |
-| JOURNEYTAIL-ｼﾞｬｰﾆｰﾃｲﾙ- 丹波篠山 | 丹波篠山市 | Legumbres | https://www.tabechoku.com/producers/29420 | 【黒枝豆はやっぱり本場丹波ささやま！】 |
-| 七代目藤岡農場 | 多可町 | Legumbres | https://www.tabechoku.com/producers/23755 | 自然豊かな町、兵庫県多可郡多可町で農業を営んでおります20代若手農家の藤岡です。【山田錦】酒米、にんにく、【丹波黒】大豆・枝豆を中心に栽培し |
-| 折鶴 | 宝塚市 | Conservas | https://www.tabechoku.com/producers/3077771 | 巣箱の管理から採蜜・発酵・瓶詰めまで。全ての工程を1人で丁寧に行っています。 |
-| 丹波篠山ファームMaegawa | 丹波篠山市 | Pan y cereal | https://www.tabechoku.com/producers/23990 | 丹波篠山市の山すそでひっそりと農業やってます(^^)メインはコシヒカリ・黒豆・メロン、丹波篠山育ちのイタリア野菜などです♪ゆる〜い感じで楽し |
-| Hope Will 淡路島 | 南あわじ市 | Pan y cereal | https://www.tabechoku.com/producers/20748 | 淡路島でお米と露地野菜(レタス類、玉ねぎ、キャベツ、ブロッコリー、青ネギ)を栽培しています。 |
-| あいファーム | 南あわじ市 | Pan y cereal | https://www.tabechoku.com/producers/3079097 | 私たち「あいファーム」は、淡路島の豊かな自然に囲まれた畑で、たまねぎをとお米を育てています。 |
-| 農園くるり | 三木市 | Fruta y verdura | https://www.tabechoku.com/producers/24774 | 新規就農11年目を迎えます。 |
-| 淡路島の玉ねぎ屋さん〜KR.vegetable〜 | 南あわじ市 | Fruta y verdura | https://www.tabechoku.com/producers/21100 | 私たちは、大量生産ではなく、１玉１玉に価値のある玉ねぎを提供することにこだわっています。土作りから肥料などにもこだわり、一般的な玉ねぎ生産に |
-| あさひサンファーム | 南あわじ市 | Fruta y verdura | https://www.tabechoku.com/producers/23569 | たまねぎの生産地として有名な淡路島南部・南あわじ市で代々たまねぎ農家を営んでいます。 |
-| 丹波篠山 ひなたファーム | 丹波篠山市 | ⚠ por decidir | https://www.tabechoku.com/producers/20037 | 丹波篠山市は、兵庫県の中部地域、京都、姫路、神戸、大阪からほぼ1時間前後に位置する盆地です。 |
-| とまとや中村阮 | 稲美町 | ⚠ por decidir | https://www.tabechoku.com/producers/23397 | とまと好きの |
-| むらおか夢アグリ | 香美町 | ⚠ por decidir | https://www.tabechoku.com/producers/28701 | ▼紹介▼ |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| Shinobee Honey | 宍粟市 | Miel | ficha | — | https://www.tabechoku.com/producers/22672 |  |
+| 折鶴 | 宝塚市 | Miel | ficha | — | https://www.tabechoku.com/producers/3077771 |  |
+| 前拓水産 | 南あわじ市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23340 |  |
+| 淡路ゆうき耕房 | 南あわじ市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20699 |  |
+| 丹波篠山 細見農園 | 丹波篠山市 | Carne | ficha | — | https://www.tabechoku.com/producers/20352 |  |
+| 奥山ジビエ　IKUTO MEAT | 豊岡市 | Carne | ficha | — | https://www.tabechoku.com/producers/27101 |  |
+| JOURNEYTAIL-ｼﾞｬｰﾆｰﾃｲﾙ- 丹波篠山 | 丹波篠山市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/29420 |  |
+| 丹波篠山　めぶき農房 | 丹波篠山市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/23776 |  |
+| 七代目藤岡農場 | 多可町 | Legumbres | ficha | — | https://www.tabechoku.com/producers/23755 | 兵庫県多可郡多可町 |
+| 農園くるり | 三木市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24774 |  |
+| シンフォニアファーム | 三田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21639 |  |
+| 鴨庄村のりょう農園 | 丹波市市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20553 |  |
+| 丹波篠山 ひなたファーム | 丹波篠山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20037 |  |
+| 丹波篠山ファームMaegawa | 丹波篠山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23990 |  |
+| Hope Will 淡路島 | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20748 |  |
+| あいファーム | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3079097 |  |
+| 淡路島の玉ねぎ屋さん〜KR.vegetable〜 | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21100 |  |
+| あさひサンファーム | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23569 |  |
+| 里山ブルーベリー農園Wacca | 川西市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078544 |  |
+| 中田農園 | 淡路市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077226 |  |
+| むらおか夢アグリ | 香美町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28701 | 兵庫県美方郡香美町村岡区原 |
+| とまとや中村阮 | 稲美町 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/23397 | 兵庫県加古郡稲美町 |

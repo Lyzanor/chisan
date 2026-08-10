@@ -101,32 +101,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kanto/gunma.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/gunma> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/gunma> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 13, Setas 2, Carne 2, Miel 1, Té e infusiones 1, Pescado 1, Condimentos 1, Pan y cereal 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| Strawberry farm 木村農園 | 藤岡市 | Pescado | https://www.tabechoku.com/producers/22260 | 2004年「このイチゴが作りたい」との思いから 千葉県船橋市 新京成線北習志野駅近く『Kitchen風の子』と言う名のカフェレストランを閉め |
-| 佐藤悠治 | 長野原町 | Pescado | https://www.tabechoku.com/producers/26279 | ここ長野原町は浅間山北麓に位置し、標高の高い浅間高原は、その冷涼な気候と火山灰土壌の豊かな土で、夏秋野菜の一大産地になっています。生まれ育っ |
-| PureOrto(ピュアオルト) | 高崎市 | Pescado | https://www.tabechoku.com/producers/26181 | 素直さや純粋な気持ちを忘れず、小さくても継続して野菜作りができるようにと願いを込めて「PureOrto(ピュアオルト)」という屋号をつけまし |
-| ぐんま製茶 | 桐生市 | Té e infusiones | https://www.tabechoku.com/producers/21072 | 群馬県桐生市で地元産日本茶生産、製造、販売まで一貫して行っております。その技術を生かし群馬県特産の「桑の葉」を原料に「ぐんまの桑茶」を15年 |
-| 近藤スワインポーク | 前橋市 | Carne | https://www.tabechoku.com/producers/25993 | 群馬県前橋市、自然豊かな赤城山の麓で丹精込めて健康な豚を育てています。 |
-| 松井ファーム | 前橋市 | Carne | https://www.tabechoku.com/producers/25729 | 群馬県前橋市は恵まれた自然環境の下に、畜産や野菜の他にも果実の生産も盛んです。当園では60年以上にわたり、この前橋市の地でいちごの生産を行っ |
-| 堀越ファーム | 藤岡市 | Carne | https://www.tabechoku.com/producers/25962 | 養豚農家です。 |
-| 沼田きのこ園 | 沼田市 | Setas | https://www.tabechoku.com/producers/23646 | 天狗の霊峰 迦葉山のふもと、群馬県沼田市の豊かな自然の中で自家製造菌床にてきのこ栽培を40年以上続けています。芳香、歯ごたえ、成分などの「き |
-| キノコ・輪大 | 高崎市 | Setas | https://www.tabechoku.com/producers/26818 | 私共のページをご覧いただき感謝致します！ |
-| 百∞蜜 ももみつ | 長野原町 | Miel | https://www.tabechoku.com/producers/28735 | 標高差1000m、人里から山間までミツバチと一緒に群馬を旅して集めたはちみつは、それぞれに色や香り、味わいが異なります。その一期一会の味をま |
-| 福ちゃん農園 | 沼田市 | Legumbres | https://www.tabechoku.com/producers/28560 | 群馬県北部の中山間地域で枝豆（天狗印枝豆）、軟化うど、こんにゃくの栽培をしています。 |
-| いいじま農園 | 高崎市 | Legumbres | https://www.tabechoku.com/producers/26107 | 落花生と大豆については、農薬、化学肥料、動物由来の肥料、除草剤等、いっさい使用しないで栽培しています。 |
-| ベリーこいど園 | 下仁田町 | Condimentos | https://www.tabechoku.com/producers/24204 | 群馬県下仁田町でブルーベリー・下仁田ネギ・山椒・わらび・鷹の爪などを栽培しています。 |
-| KimidoriFarm＆Kitchen | 高山村 | Conservas | https://www.tabechoku.com/producers/3078535 | 「おいしい、やさしい、ここちよい」をモットーに、群馬県高山村の自然に寄り添った野菜と手軽な農産加工品をお届けしています。 |
-| 金井農園 | 沼田市 | Pan y cereal | https://www.tabechoku.com/producers/26157 | 群馬県沼田市で、経営面積35ha、年間出荷量180ｔの米専業農家です。 |
-| 菜の実工房 | 渋川市 | Pan y cereal | https://www.tabechoku.com/producers/3077851 | 群馬県子持山の麓で、定年後先祖代々の田畑で農業をしています。安全、美味しさにこだわり、米と野菜栽培に奮闘する毎日です。掲載している写真は、農 |
-| 木菜米ルファーム | 邑楽町 | Pan y cereal | https://www.tabechoku.com/producers/29620 | 父や祖母から引き継ぎ、サッカーコーチから農家へ転身しました。 |
-| めぐみ農園 | 嬬恋村 | Fruta y verdura | https://www.tabechoku.com/producers/29473 | 群馬県嬬恋村のめぐみ農園です⛰️ |
-| 小川農園　Ogawa  Farmers | 富岡市 | Fruta y verdura | https://www.tabechoku.com/producers/3077361 | 「ヤギのうんち」や有機肥料を使用し、農薬（種子消毒、除草剤、葉消毒）は化学薬品を使用せず、ヤギがかじっても安心の自然豊かな土壌で野菜作りをし |
-| マルイ農園 | 富岡市 | Fruta y verdura | https://www.tabechoku.com/producers/27620 | 群馬県富岡市でドラゴンフルーツのハウス栽培に挑戦し、7年目になりました♪ |
-| 十文字ヴィレッジ | 高崎市 | ⚠ por decidir | https://www.tabechoku.com/producers/20820 | 昔から水はけがよく、良質な黒土が評価されている土地で農業を行っています。 |
-| しおこぶファーム | 高崎市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077965 | "日々の暮らしにちょっとした楽しみを" |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 百∞蜜 ももみつ | 長野原町 | Miel | ficha | — | https://www.tabechoku.com/producers/28735 | 群馬県吾妻郡長野原町 |
+| ぐんま製茶 | 桐生市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21072 |  |
+| 沼田きのこ園 | 沼田市 | Setas | ficha | — | https://www.tabechoku.com/producers/23646 |  |
+| キノコ・輪大 | 高崎市 | Setas | ficha | — | https://www.tabechoku.com/producers/26818 |  |
+| PureOrto(ピュアオルト) | 高崎市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26181 |  |
+| 近藤スワインポーク | 前橋市 | Carne | ficha | — | https://www.tabechoku.com/producers/25993 |  |
+| 堀越ファーム | 藤岡市 | Carne | ficha | — | https://www.tabechoku.com/producers/25962 |  |
+| ベリーこいど園 | 下仁田町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/24204 | 群馬県甘楽郡下仁田町 |
+| 金井農園 | 沼田市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26157 |  |
+| 松井ファーム | 前橋市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25729 |  |
+| めぐみ農園 | 嬬恋村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29473 | 群馬県吾妻郡嬬恋村 |
+| 小川農園　Ogawa  Farmers | 富岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077361 |  |
+| マルイ農園 | 富岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27620 |  |
+| 福ちゃん農園 | 沼田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28560 |  |
+| 菜の実工房 | 渋川市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077851 |  |
+| Strawberry farm 木村農園 | 藤岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22260 |  |
+| 木菜米ルファーム | 邑楽町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29620 |  |
+| 佐藤悠治 | 長野原町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26279 | 群馬県吾妻郡長野原町 |
+| KimidoriFarm＆Kitchen | 高山村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078535 | 群馬県吾妻郡高山村 |
+| 十文字ヴィレッジ | 高崎市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20820 |  |
+| いいじま農園 | 高崎市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26107 |  |
+| しおこぶファーム | 高崎市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077965 |  |

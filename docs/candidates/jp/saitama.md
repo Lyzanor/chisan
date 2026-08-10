@@ -112,32 +112,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kanto/saitama.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/saitama> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/saitama> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 10, Miel 2, Té e infusiones 2, Setas 2, Carne 2, Pan y cereal 2, Frutos secos 2.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 米農家りんご堂 | 春日部市 | Pescado | https://www.tabechoku.com/producers/3078044 | 元禄時代から先祖代々米作りを営んでおります。丁寧に子育てをするようにお米を作っています。食卓の笑顔のお供になるような美味しいお米をお届けした |
-| 鏡農園 | 深谷市 | Pescado | https://www.tabechoku.com/producers/29561 | 祖父の農業を引き継ぎ20代で就農し右も左もわからない状態から地元の先輩に助けられようやくここまでやってきました。弟2人も就農し、地元では鏡３ |
-| あかいし農園 | 熊谷市 | Pescado | https://www.tabechoku.com/producers/20100 | 実家が農家で、地元の特産野菜である大和芋を守っていきたいと思ったことと、子供が生まれて安心して食べられる、こだわりのある野菜を作りたいと思い |
-| 元狭山　友野園 | 入間市 | Té e infusiones | https://www.tabechoku.com/producers/25604 | 埼玉県入間市で茶園を持ち栽培から製造、販売を家族全員で行っています |
-| いるま鬼丸 | 入間市 | Té e infusiones | https://www.tabechoku.com/producers/20279 | 狭山茶の産地として有名な、埼玉県入間市にてにんにくの栽培をしています。 |
-| 池乃屋園 | 入間市 | Té e infusiones | https://www.tabechoku.com/producers/23808 | 江戸時代後期より狭山茶の販売をしております。 |
-| 森屋農場 | 小川町 | Carne | https://www.tabechoku.com/producers/25607 | 21年前に父から養鶏を引き継ぎました。 |
-| 村田農産 | 毛呂山町 | Setas | https://www.tabechoku.com/producers/21559 | 私はスーパーでなかなか見かけないようなしいたけを作りたく栽培を始めたのがきっかけです。 |
-| 塩谷農園 | 秩父市 | Setas | https://www.tabechoku.com/producers/26842 | 私たちは埼玉県秩父市のしいたけ農家です。 |
-| 彩Honey | さいたま市 | Miel | https://www.tabechoku.com/producers/22755 | わたしたちは埼玉県さいたま市にて養蜂を行っています。 |
-| 山﨑養蜂 | 川口市 | Miel | https://www.tabechoku.com/producers/3077743 | 埼玉県杉戸町で採蜜した安心の国産純粋はちみつをお届けします。 |
-| 塩原農園 | 本庄市 | Condimentos | https://www.tabechoku.com/producers/3077769 | 担い手不足や荒廃する農地を解消するため、30歳を期に脱サラし日々奮闘中。自由な発想で、いろいろな野菜づくりに挑戦しています。 |
-| ちちぶ丸山農園 | 秩父市 | Conservas | https://www.tabechoku.com/producers/21022 | ちちぶ丸山農園は土壌にとことんこだわり、「おいしいを通じて幸せと感動をお届けしたい」という想いで生産と加工品開発を行っています。 |
-| いちご家×栗原農園 | 吉見町 | Frutos secos | https://www.tabechoku.com/producers/3078638 | 埼玉県吉見町産。 |
-| カントリーファーム | 深谷市 | Pan y cereal | https://www.tabechoku.com/producers/24501 | ［自己紹介］埼玉県深谷市で女性一人農業をやっています😃　トラクターから収穫、出荷まで、毎日フル回転で頑張っています❣️ そんな私が作ったトウ |
-| 西田農園 | 熊谷市 | Pan y cereal | https://www.tabechoku.com/producers/21058 | ✨米・穀類【1位】受賞✨【栽培期間中農薬不使用コシヒカリ＆低農薬米】自然にも身体にも優しく美味しいお米をお届け出来ますよう【土づくり】にこだ |
-| Pino farm | 羽生市 | Pan y cereal | https://www.tabechoku.com/producers/24902 | 私たちは、最高級なお米や野菜を作り出したいというこだわりから2020年に脱サラをして家族で農業を始め、現在数種類のお米と野菜の生産販売を行っ |
-| 有機農家ないとう農園 | 伊奈町 | Fruta y verdura | https://www.tabechoku.com/producers/26303 | 「あんしん、あんぜん、おいしい」の一歩先へ。 |
-| 鈴木農園 | 加須市 | Fruta y verdura | https://www.tabechoku.com/producers/25321 | 樹齢20 年の幹からできるいちじくは、完熟ふわとろ　絶品です。 |
-| 管理栄養士が育てる固定種/在来種のお野菜・自然栽培ナチュベジ＊ウィル | 飯能市 | Fruta y verdura | https://www.tabechoku.com/producers/27227 | 「美味しさと生命力」を食卓へ |
-| 大野農場 | 川越市 | ⚠ por decidir | https://www.tabechoku.com/producers/21275 | わたしたち大野農場は、江戸時代より農業を生業としてきました。 |
-| 国分牧場 | 東松山市 | ⚠ por decidir | https://www.tabechoku.com/producers/28092 | 埼玉県東松山市で牧場を営んでいます。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 彩Honey | さいたま市 | Miel | ficha | — | https://www.tabechoku.com/producers/22755 |  |
+| 山﨑養蜂 | 川口市 | Miel | ficha | — | https://www.tabechoku.com/producers/3077743 |  |
+| 元狭山　友野園 | 入間市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/25604 |  |
+| 池乃屋園 | 入間市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/23808 |  |
+| 村田農産 | 毛呂山町 | Setas | ficha | — | https://www.tabechoku.com/producers/21559 | 埼玉県入間郡毛呂山町 |
+| 塩谷農園 | 秩父市 | Setas | ficha | — | https://www.tabechoku.com/producers/26842 |  |
+| 大野農場 | 川越市 | Carne | ficha | — | https://www.tabechoku.com/producers/21275 |  |
+| 国分牧場 | 東松山市 | Carne | ficha | — | https://www.tabechoku.com/producers/28092 |  |
+| カントリーファーム | 深谷市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/24501 |  |
+| 西田農園 | 熊谷市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/21058 |  |
+| いちご家×栗原農園 | 吉見町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/3078638 | 埼玉県比企郡吉見町 |
+| 森屋農場 | 小川町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/25607 | 埼玉県比企郡小川町腰越矢崎 |
+| 有機農家ないとう農園 | 伊奈町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26303 |  |
+| いるま鬼丸 | 入間市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20279 |  |
+| 鈴木農園 | 加須市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25321 |  |
+| 米農家りんご堂 | 春日部市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078044 |  |
+| 塩原農園 | 本庄市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077769 |  |
+| 鏡農園 | 深谷市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29561 |  |
+| あかいし農園 | 熊谷市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20100 |  |
+| ちちぶ丸山農園 | 秩父市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21022 |  |
+| Pino farm | 羽生市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24902 |  |
+| 管理栄養士が育てる固定種/在来種のお野菜・自然栽培ナチュベジ＊ウィル | 飯能市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27227 |  |

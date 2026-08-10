@@ -106,32 +106,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chugoku/shimane.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/shimane> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/shimane> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 8, Pescado 5, Setas 3, Carne 2, Pan y cereal 2, Miel 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| しじみ漁師の店 大竹屋 | 出雲市 | Pescado | https://www.tabechoku.com/producers/23831 | 大竹屋は創業42年の漁師が営む鮮魚店です。 |
-| 奥宇賀屋｜三代目しじみ漁師 | 出雲市 | Pescado | https://www.tabechoku.com/producers/28561 | ＼はじめまして／島根県”宍道湖”でしじみ漁師をしている奥宇賀屋と申します。 |
-| 永幸丸 【岩牡蠣養殖・素潜り】 | 松江市 | Pescado | https://www.tabechoku.com/producers/24173 | いま、本当に必要なことはなにか・！ |
-| ぴたごらファーム | 奥出雲町 | Té e infusiones | https://www.tabechoku.com/producers/26025 | 私達ぴたごらフォームは島根県奥出雲町に夫婦2人で始めた野菜・お米・健康茶・お花を自然栽培で育てる菜園です。 |
-| 森田園芸 | 益田市 | Té e infusiones | https://www.tabechoku.com/producers/27321 | 島根県益田市でスーパーフード、青パパイアをメインに栽培してます。　葉と茎を乾燥させてお茶にしています。　実は野菜として、販売します。　その他 |
-| Fattoria Natura | 出雲市 | Carne | https://www.tabechoku.com/producers/22339 | ご縁の国、島根県出雲市でぶどう園を営んでいます。ヤギ、鶏と農業を組み合わせた環境と動物に優しい循環型農業でぶどうを栽培しています。 |
-| エコファームささだ | 大田市 | Carne | https://www.tabechoku.com/producers/20791 | 弊社の地鶏は完全無薬で長期間飼育しています |
-| さとうのんびり農園 | 雲南市 | Carne | https://www.tabechoku.com/producers/26428 | 健康的な鶏の育成を心がけています。 |
-| 出雲の小さなきくらげ屋さん | 出雲市 | Setas | https://www.tabechoku.com/producers/3077978 | 神話の國・出雲の豊かな自然に囲まれた小さな農園で、純国産の『黒いきくらげ』と、希少な「白いきくらげ」を家族で大切に育てています。無農薬栽培に |
-| 八谷原木きのこ | 浜田市 | Setas | https://www.tabechoku.com/producers/23351 | 私は、島根県浜田市黒澤の山林にて原木による椎茸、なめこの栽培、ヒノキなどの植林に取り組んでいます。きのこの発生は、植菌から2～3年夏を越した |
-| ますだ季の香 | 益田市 | Setas | https://www.tabechoku.com/producers/28217 | ますだ季の香は、島根県益田市の自社施設で舞茸を生産し販売をしております。 |
-| りせらや養蜂園 | 江津市 | Miel | https://www.tabechoku.com/producers/3077853 | 島根県の山奥で養蜂をしております。農薬を避けるために、田畑や果樹園付近には巣箱は置かず季節ごとに咲く自然の花々の蜂蜜をミツバチからお裾分けし |
-| アグリプラント甲斐の木 | 江津市 | Condimentos | https://www.tabechoku.com/producers/22391 | 島根県江津市でフルーツトマト栽培をしています。私たちの町は、田舎ですが自然豊かな環境に恵まれています。障がいを持たれている方々と共に行い農福 |
-| やまあいピクルス | 江津市 | Conservas | https://www.tabechoku.com/producers/27723 | やまあいピクルスは、江津市の山間部の耕作放棄地を耕作地に戻すための事業の一環として、農業に取り組みを始めました。当初は、農業と言っても、苔の |
-| 𠮷野屋 | 大田市 | Pan y cereal | https://www.tabechoku.com/producers/27676 | 私たちは三瓶山の麓にある「志学」という町で、家族で建設業をしながら、お米と白ネギの栽培をしています。 |
-| マルカミ農縁 | 松江市 | Pan y cereal | https://www.tabechoku.com/producers/3078808 | 松江市の里山にて柿　米(酒米、食用米) |
-| HYAKUSYOU　岩本 | 隠岐の島町 | Pan y cereal | https://www.tabechoku.com/producers/3078497 | 島根県　隠岐の島の兼業農家です。こちらは離島の中山間地域で田んぼ　１１枚約１２アールで米を作っています。田んぼの土は粘土質の深田で毎年機械が |
-| ヤシロファーム | 出雲市 | Fruta y verdura | https://www.tabechoku.com/producers/21921 | 自然とともに・地域とともにをモットーにお客様目線で栽培・販売しています。 |
-| 安藤農園 | 松江市 | Fruta y verdura | https://www.tabechoku.com/producers/3078087 | 島根県松江市で野菜の種と苗の販売を行う専門店です。 |
-| Mueller's Farm  ムラーズファーム | 海士町 | Fruta y verdura | https://www.tabechoku.com/producers/20680 | 🌱有機JAS認証農園 |
-| SPIRA FARM | 出雲市 | ⚠ por decidir | https://www.tabechoku.com/producers/21532 | 2020年４月に、生まれ育った故郷の出雲市にUターンして新規就農しました。 |
-| ひだまりファーム | 津和野町 | ⚠ por decidir | https://www.tabechoku.com/producers/28404 | はじめまして、ひだまりファームの篠原です。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| りせらや養蜂園 | 江津市 | Miel | ficha | — | https://www.tabechoku.com/producers/3077853 |  |
+| 出雲の小さなきくらげ屋さん | 出雲市 | Setas | ficha | — | https://www.tabechoku.com/producers/3077978 |  |
+| 八谷原木きのこ | 浜田市 | Setas | ficha | — | https://www.tabechoku.com/producers/23351 |  |
+| ますだ季の香 | 益田市 | Setas | ficha | — | https://www.tabechoku.com/producers/28217 |  |
+| しじみ漁師の店 大竹屋 | 出雲市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23831 |  |
+| 奥宇賀屋｜三代目しじみ漁師 | 出雲市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28561 |  |
+| ヤシロファーム | 出雲市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21921 |  |
+| 永幸丸 【岩牡蠣養殖・素潜り】 | 松江市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24173 |  |
+| Mueller's Farm  ムラーズファーム | 海士町 | Pescado | ficha | — | https://www.tabechoku.com/producers/20680 | 島根県隠岐郡海士町 |
+| エコファームささだ | 大田市 | Carne | ficha | — | https://www.tabechoku.com/producers/20791 |  |
+| さとうのんびり農園 | 雲南市 | Carne | ficha | — | https://www.tabechoku.com/producers/26428 |  |
+| 𠮷野屋 | 大田市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/27676 |  |
+| HYAKUSYOU　岩本 | 隠岐の島町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078497 | 島根県隠岐郡隠岐の島町 |
+| SPIRA FARM | 出雲市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/21532 |  |
+| Fattoria Natura | 出雲市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22339 |  |
+| ぴたごらファーム | 奥出雲町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26025 | 島根県仁多郡奥出雲町 |
+| 安藤農園 | 松江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078087 |  |
+| マルカミ農縁 | 松江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078808 |  |
+| アグリプラント甲斐の木 | 江津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22391 |  |
+| やまあいピクルス | 江津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27723 |  |
+| ひだまりファーム | 津和野町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28404 | 島根県鹿足郡津和野町 |
+| 森田園芸 | 益田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27321 |  |

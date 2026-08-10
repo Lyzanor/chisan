@@ -108,32 +108,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/gifu.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/gifu> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/gifu> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **11 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 4, Carne 3, Pan y cereal 3, Frutos secos 3, Setas 2, Condimentos 2, Sake 1, Miel 1, Té e infusiones 1, Pescado 1, Legumbres 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| マナの菜園 | 八百津町 | Pescado | https://www.tabechoku.com/producers/25690 | 私たちは、魚と野菜をいっしょに育てる「アクアポニックス」という農法で、栽培期間中は農薬や化学肥料を使わない安心して食べられる野菜を皆さまにお |
-| 石井養殖 | 大垣市 | Pescado | https://www.tabechoku.com/producers/21973 | 初めまして、石井養殖🐟の石井優二です。 |
-| 原田酒造場 | 高山市 | Pescado | https://www.tabechoku.com/producers/20929 | 飛騨高山の古い街並「上三之町」で「飛騨の酒 山車」という日本酒を醸造販売しております。江戸末期創業で現社長の私で10代目になります。「旨い酒 |
-| 成瀬農場 | 瑞浪市 | Té e infusiones | https://www.tabechoku.com/producers/22310 | 岐阜県瑞浪市で茶園を経営しています。 |
-| 恵那どり本舗 | 中津川市 | Carne | https://www.tabechoku.com/producers/3077894 | 「恵那どり」は、岐阜県中津川市に本社を構える地元企業トーノーデリカグループが開発した独自の銘柄鶏です。 |
-| 菖蒲谷牧場 | 揖斐川町 | Carne | https://www.tabechoku.com/producers/24485 | 《岐阜の自然が育てた、お米育ち豚》 |
-| プラムナチュール | 郡上市 | Carne | https://www.tabechoku.com/producers/26361 | プラムナチュールは昔ながらの自然製法にこだわり、ひとつひとつ手作業で |
-| 東海アグリハウス | 安八町 | Setas | https://www.tabechoku.com/producers/3077786 | 資材販売に農業部門を新たに設置して椎茸栽培を始めました。肉厚なのはもちろん、ぎゅ！と詰まった椎茸を栽培しています。 |
-| きらな農園 | 美濃加茂市 | Setas | https://www.tabechoku.com/producers/3077508 | 岐阜県美濃加茂市の自然豊かな環境のもと「しいたけ」「まいたけ」を限りなく天然に近い状態で育てております。「原木」で育て上げた木の子達は「旨味 |
-| なめこファーム飛騨 | 高山市 | Setas | https://www.tabechoku.com/producers/23897 | 🍄 安心安全な原材料。飛騨地方産100％の原木から作られたおが粉と上質な飛騨高山の地下水を使用。 |
-| 堀養蜂園 | 瑞浪市 | Miel | https://www.tabechoku.com/producers/20720 | 岐阜県東濃地域にて定置養蜂をおこなっております。山々に囲まれた自然豊かな地域で、みつばちと共に暮らし、はちみつの生産を行なっています。季節と |
-| 大塚農園 | 岐阜市 | Legumbres | https://www.tabechoku.com/producers/21318 | 岐阜のブランド枝豆を夏に、秋蒔きほうれん草を冬に、代々に渡り生産しています。味にこだわり、安全安心にこだわり、伝統ある栽培方法をゼロベースか |
-| Bブリッジ | 岐阜市 | Legumbres | https://www.tabechoku.com/producers/24257 | 私たちは外国人と日本人が知恵と情熱を降り注ぎ、土作りを大切に「ぎふ清流GAP認証」を取得し、栄養価が高く安全安心な野菜作りに日々邁進しており |
-| 飛騨山椒 | 高山市 | Condimentos | https://www.tabechoku.com/producers/3077628 | 岐阜県奥飛騨温泉郷（旧上宝村）に代々伝わる山椒の生産から加工、販売までを一貫して行っています。 |
-| 山猫園 | 恵那市 | Frutos secos | https://www.tabechoku.com/producers/22341 | 岐阜県の恵那市と中津川市で栗を栽培しています。 |
-| ななしん米 | 揖斐川町 | Pan y cereal | https://www.tabechoku.com/producers/25909 | 岐阜県揖斐郡で農薬・肥料不使用のハツシモと緑米を自然栽培しています。私たちが育てるお米は一貫して自家生産にこだわり、種まきから収穫まですべて |
-| すけろく自然農園 | 飛騨市 | Pan y cereal | https://www.tabechoku.com/producers/25828 | 飛騨の豊かな自然に負荷をかけないよう配慮し、様々な生き物や草と一緒に野菜を栽培しています。主に雑穀、豆類、食用ほおずきが中心です。愛知県江南 |
-| 山田もち店 | 高山市 | Pan y cereal | https://www.tabechoku.com/producers/23313 | 岐阜県の飛騨高山でもち米メインの米農家をしています！ |
-| ひこうきやさい | 各務原市 | Fruta y verdura | https://www.tabechoku.com/producers/21995 | 岐阜県各務原市にて、クリーンルーム水耕栽培による農薬不使用の安心して食べて頂ける作物づくりを目指しています。 |
-| つむぎ果樹園 | 高山市 | Fruta y verdura | https://www.tabechoku.com/producers/3077268 | つむぎ果樹園では「飛騨のたからもも」という名で地域商社と共同でブランディングを行い桃を栽培、販売しています。 |
-| 川瀬ファーム | 岐阜市 | ⚠ por decidir | https://www.tabechoku.com/producers/3078736 | こんにちは😊 |
-| GLÜCK GARTEN | 高山市 | ⚠ por decidir | https://www.tabechoku.com/producers/29596 | こんにちは、GLÜCK GARTENです。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 原田酒造場 | 高山市 | Sake | productos | 【モンドセレクション16年連続金賞】飛騨高山の最強辛口酒「山車 金印 辛くち · 【ご贈答に！】お祝い事にはこのお酒！「山車 慶祝めでた酒セット」1800ml · 【ご贈答に！】米の旨味がふんわり充実！「山車 特別純米セット」720ml×2 | https://www.tabechoku.com/producers/20929 |  |
+| 堀養蜂園 | 瑞浪市 | Miel | ficha | — | https://www.tabechoku.com/producers/20720 |  |
+| 成瀬農場 | 瑞浪市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/22310 |  |
+| きらな農園 | 美濃加茂市 | Setas | ficha | — | https://www.tabechoku.com/producers/3077508 |  |
+| なめこファーム飛騨 | 高山市 | Setas | productos | 【朝どれ】【20パック入】『飛騨高山』飛騨ジャンボなめこ約180g×20パッ · 【朝どれ】【4パック入】『飛騨高山』飛騨ジャンボなめこ約180g×4パック入 · 【朝どれ】【10パック入】『飛騨高山』飛騨ジャンボなめこ約180g×10パッ | https://www.tabechoku.com/producers/23897 | repr. 中村朋博 |
+| マナの菜園 | 八百津町 | Pescado | ficha | — | https://www.tabechoku.com/producers/25690 |  |
+| 東海アグリハウス | 安八町 | Carne | ficha | — | https://www.tabechoku.com/producers/3077786 | 岐阜県安八郡安八町 |
+| 菖蒲谷牧場 | 揖斐川町 | Carne | productos | 【１袋１００ｇ入り】脂が甘くてさっぱり★薄切り豚肉１.６kg詰め合わせ。４部 · 脂が甘くてさっぱり！薄切り豚肉１.６kg詰合せ（４部位食べ比べセット） · 豚肩ロース肉 カツ・ステーキ用 ２枚（１００ｇ×２枚） | https://www.tabechoku.com/producers/24485 | premio 食べチョクAWARD; 岐阜県揖斐郡揖斐川町 |
+| プラムナチュール | 郡上市 | Carne | ficha | — | https://www.tabechoku.com/producers/26361 | 岐阜県郡上市 |
+| 大塚農園 | 岐阜市 | Legumbres | productos | ＜うまっ！＞やみつき必須！うんめえ枝豆！ 1800ｇ · ＜うまっ！＞やみつき必須！うんめえ枝豆！ 900g 【朝どれ】 · ＜うまっ！＞やみつき必須！うんめえ枝豆！ 2700g | https://www.tabechoku.com/producers/21318 |  |
+| 恵那どり本舗 | 中津川市 | Condimentos | productos | 【お一人様1回お試しSET】肉質の違いを楽しむ満足セット『恵那どり』もも・む · ＼ジューシーで旨みたっぷり！／岐阜県産 【恵那どり】 もも肉 4kg （冷蔵 · 恵那どりのカット済もも肉 1Kg×3袋（バラ冷凍） | https://www.tabechoku.com/producers/3077894 | repr. 創業：1991年04月 |
+| 飛騨山椒 | 高山市 | Condimentos | productos | 【ほどよい辛さと爽やかな香り】山椒屋が作った山椒七味 · 【食のプロが愛する逸品】絶品の山椒・山椒七味 ギフト箱セット · 【ミシュラン店でも販売！】ピリリと痺れる山椒茶漬け（7個入り） | https://www.tabechoku.com/producers/3077628 | repr. 内藤一彦 |
+| 川瀬ファーム | 岐阜市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078736 |  |
+| ななしん米 | 揖斐川町 | Pan y cereal | productos | 【農薬・肥料不使用】優秀金賞受賞！自然栽培米ハツシモ【5kg】【玄米】【令和 · 【農薬・肥料不使用】金賞受賞！自然栽培米ハツシモ【10kg】【玄米】【令和7 · 【農薬・肥料不使用】優秀金賞受賞！自然栽培米ハツシモ【10kg】【玄米】【令 | https://www.tabechoku.com/producers/25909 | 岐阜県揖斐郡揖斐川町 |
+| 山田もち店 | 高山市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/23313 |  |
+| ひこうきやさい | 各務原市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/21995 |  |
+| 石井養殖 | 大垣市 | Frutos secos | productos | 「骨までやわらか手作り甘露煮」 骨までやわらか。ご飯がすすむ一尾。養殖場の手 · [訳アリ] 骨まで柔らか！ ニジマス甘露煮フレークタイプ 250g x2p · にじます唐揚げ カットタイプ 【お腹も満足 たっぷり500ｇ】 唐揚げ粉付き | https://www.tabechoku.com/producers/21973 | premio 食べチョクAWARD |
+| 山猫園 | 恵那市 | Frutos secos | productos | 旨味ぎっしり！完熟大粒生栗1kg · お買い得！訳あり栗1kg · お買い得！訳あり栗2kg | https://www.tabechoku.com/producers/22341 |  |
+| Bブリッジ | 岐阜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24257 |  |
+| すけろく自然農園 | 飛騨市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25828 |  |
+| つむぎ果樹園 | 高山市 | Fruta y verdura | productos | 【朝どれ】（家庭用） 糖度11度以上 1.5～2.0kg（4-8玉） · 【夏ギフト】👑食べチョクギフトグランプリ2026銅賞👑桃ジェラート（桃６品種 · 【夏ギフト】飛騨の新品種！『つむぎ』 糖度13度以上 1.5kg（4-6玉） | https://www.tabechoku.com/producers/3077268 | repr. 創業：2021年05月 |
+| GLÜCK GARTEN | 高山市 | Fruta y verdura | productos | ひとくちで広がるジューシーな甘さ。ニューメロン 2kg · ひとくちで広がるジューシーな甘さ。ニューメロン 800g · 【規格外品】自然栽培の花ズッキーニ 12本 | https://www.tabechoku.com/producers/29596 | repr. 津川　暢彰 |

@@ -136,32 +136,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kansai/osaka.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/osaka> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/osaka> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 15, Pescado 2, Destilados y licores 1, Setas 1, Carne 1, Pan y cereal 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 大阪最南端漁師 | 岬町 | Pescado | https://www.tabechoku.com/producers/3077779 | 大阪最南端、岬町にて |
-| 五十緑農園 | 岸和田市 | Pescado | https://www.tabechoku.com/producers/3078697 | 五十緑農園（いそろく のうえん）は、2024年に親子で農業を始めました。農園の名前は一緒に暮らすウロコインコ「五十緑（いそろく）」の緑鮮やか |
-| カネサン | 泉佐野市 | Pescado | https://www.tabechoku.com/producers/3078722 | 大阪・泉州沖で漁を行う漁師です。 |
-| みなみがわ農園 | 貝塚市 | Pescado | https://www.tabechoku.com/producers/22643 | はじめまして。みなみがわ農園の南川法子です。大阪府貝塚市在住、大阪市出身。 |
-| 健康サポート農園 | 箕面市 | Té e infusiones | https://www.tabechoku.com/producers/24566 | オーガニックレストラン運営時、肥料の種類によってアレルギーがあるという事を知り、土づくりからスタート。健康に良い野菜作りには欠かせない微生物 |
-| Hill House | 交野市 | Carne | https://www.tabechoku.com/producers/21277 | ☆生駒山系の麓で養鶏、農園を営んでおります☆ |
-| 泉州きくらげ | 泉大津市 | Setas | https://www.tabechoku.com/producers/26684 | 大阪府泉大津市で純国産の農薬不使用のきくらげを栽培しております。 |
-| アズマ養蜂場　みつばち農園 | 富田林市 | Miel | https://www.tabechoku.com/producers/22575 | アズマ養蜂場　みつばち農園は、大阪府の南部　金剛山の麓　みかん畑ひろがる里山にあります。創業５６年になる大阪の老舗養蜂場です。 |
-| コンパニョーニファームズ | 吹田市 | Legumbres | https://www.tabechoku.com/producers/27355 | 小豆島の蒲生地区にあるオリーブ農園「コンパニョーニ・ファームズ」。荒れ果てていた耕作放棄地を開墾し、2015年に誕生しました。剪定作業をはじ |
-| ファームぱんぷりん | 大阪市 | Conservas | https://www.tabechoku.com/producers/21236 | 2010年から和歌山県紀美野町で1.5㌶農園で、葉物、根菜野菜を減農薬,有機肥料栽培で育てる、多品目栽培農園を立ち上げました。現在は紫蘇梅干 |
-| 能勢町栗農家　銀まろ | 能勢町 | Frutos secos | https://www.tabechoku.com/producers/25141 | わたしたちは大阪府能勢町に実家を持つ栗農家です。 |
-| あやかるハウス | 羽曳野市 | Bebidas sin alcohol | https://www.tabechoku.com/producers/24919 | 袋（バッグ）栽培という方法で、天然由来のオリジナル培地、飲料用の水、こだわりの肥料を使用しフルーツミニトマトの生産をしております。 |
-| ハッピーファーム | 羽曳野市 | Vino | https://www.tabechoku.com/producers/25715 | 脱サラして大阪羽曳野市でイチジクを中心に季節のお野菜をつくっています。化学農薬や化学肥料を使わず、微生物や生態系の多様性を利用した、環境に配 |
-| 能勢 田口農園 | 能勢町 | Pan y cereal | https://www.tabechoku.com/producers/27772 | 当園は摂津と丹波の国境いに位置する能勢、その山奥の清らかな水、昼夜の寒暖差が大きい気候で、農薬をほとんど使わずに有機肥料で、“毎日口に入れて |
-| リバーサイドガーデン | 阪南市 | Pan y cereal | https://www.tabechoku.com/producers/3077187 | 大阪府の南部の阪南市の山あい、6月には蛍の飛び交う川のほとりで、ニンニクと生姜を栽培をしています。医療関係の仕事の経験もあり、健康の基本はた |
-| れんげの恵 | 高槻市 | Pan y cereal | https://www.tabechoku.com/producers/3078437 | 大阪・淀川の清らかな水と、れんげの咲く自然豊かな田んぼで３０年以上農薬を使わない有機農法でお米を育てています。 |
-| 福田農園（大阪府） | 岸和田市 | Fruta y verdura | https://www.tabechoku.com/producers/23482 | 泉州の水なすの美味しさをより多くの方に知ってほしいと思っています。 |
-| ことりはぶどう園 | 泉南市 | Fruta y verdura | https://www.tabechoku.com/producers/24957 | 大阪泉州の土地で |
-| アガタ果樹園(ぶどう） | 貝塚市 | Fruta y verdura | https://www.tabechoku.com/producers/22049 | 現在、永年勤務させて頂いたJAを退職後、好きだった農業につける喜びに感謝しています。 |
-| 野村ファーム | 交野市 | ⚠ por decidir | https://www.tabechoku.com/producers/21763 | こんにちは。野村ファームの谷本です。 |
-| 河内鴨ツムラ本店 | 大阪松原産 | 最高級 国産合鴨肉 | 創業1870年 | 松原市 | ⚠ por decidir | https://www.tabechoku.com/producers/20801 | 創業1870年。大阪松原産、最高級『河内鴨』1日200羽限定で販売しております。 |
-| HICOM Smart Farm 泉佐野ファクトリー | 泉佐野市 | ⚠ por decidir | https://www.tabechoku.com/producers/29659 | 私たちは、大阪府泉佐野市の「ハイコムスマートファーム 泉佐野ファクトリー」です。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| コンパニョーニファームズ | 吹田市 | Destilados y licores | ficha | — | https://www.tabechoku.com/producers/27355 |  |
+| 泉州きくらげ | 泉大津市 | Setas | ficha | — | https://www.tabechoku.com/producers/26684 |  |
+| 大阪最南端漁師 | 岬町 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077779 | 大阪府泉南郡岬町 |
+| カネサン | 泉佐野市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078722 |  |
+| 河内鴨ツムラ本店 / 大阪松原産 / 最高級 国産合鴨肉 / 創業1870年 | 松原市 | Carne | ficha | — | https://www.tabechoku.com/producers/20801 |  |
+| れんげの恵 | 高槻市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078437 |  |
+| 能勢町栗農家　銀まろ | 能勢町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/25141 | 大阪府豊能郡能勢町 |
+| Hill House | 交野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21277 |  |
+| 野村ファーム | 交野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21763 |  |
+| ファームぱんぷりん | 大阪市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21236 |  |
+| アズマ養蜂場　みつばち農園 | 富田林市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22575 |  |
+| 五十緑農園 | 岸和田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078697 |  |
+| 福田農園（大阪府） | 岸和田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23482 |  |
+| HICOM Smart Farm 泉佐野ファクトリー | 泉佐野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29659 |  |
+| ことりはぶどう園 | 泉南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24957 |  |
+| 健康サポート農園 | 箕面市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24566 |  |
+| あやかるハウス | 羽曳野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24919 |  |
+| ハッピーファーム | 羽曳野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25715 |  |
+| 能勢 田口農園 | 能勢町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27772 | 大阪府豊能郡能勢町 |
+| みなみがわ農園 | 貝塚市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22643 |  |
+| アガタ果樹園(ぶどう） | 貝塚市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22049 |  |
+| リバーサイドガーデン | 阪南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077187 |  |

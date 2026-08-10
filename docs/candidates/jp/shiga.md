@@ -105,32 +105,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kansai/shiga.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/shiga> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/shiga> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 9, Pescado 4, Pan y cereal 3, Carne 2, Lácteos y quesos 1, Huevos 1, Setas 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 木村水産 | 彦根市 | Pescado | https://www.tabechoku.com/producers/20960 | 鮎の専門店「木村水産（あゆの店きむら）」では原料である鮎から丹念に育てています。 |
-| グリーン愛ランド清香園（セイカエン） | 東近江市 | Pescado | https://www.tabechoku.com/producers/26850 | 1992年より、鈴鹿山系より流れ出る地下50mの天然水による細ネギの水耕周年栽培。冬期は無農薬、夏期は殺虫剤のスポット散布のみの少農薬栽培で |
-| 香貴丸プロダクツ | 湖南市 | Pescado | https://www.tabechoku.com/producers/25295 | 滋賀県の伝統野菜である「弥平唐辛子」は、生産者が減少し、このままでは消滅してしまうかもしれないという状況でした。滋賀の伝統野菜を守りたいとい |
-| すぐるや | 近江八幡市 | Pescado | https://www.tabechoku.com/producers/23111 | 滋賀県の琵琶湖にて漁業を営んでます。 |
-| 湖魚処　ペスカ | 高島市 | Pescado | https://www.tabechoku.com/producers/28176 | 前川智 |
-| 清葉庵 | 大津市 | Carne | https://www.tabechoku.com/producers/20636 | 琵琶湖のほとり、滋賀県大津市で平飼いで鶏を飼育し、自家平飼い卵を使用し農家が農家をフューチャーして複数の農産物を使用しブリュレを手作りで製造 |
-| ナチュラル　フォレスト | 長浜市 | Carne | https://www.tabechoku.com/producers/21096 | 琵琶湖の北部に位置する山々を駆け巡る猪・鹿を捕獲・解体をし販売しています。 |
-| TUNAGU | 長浜市 | Setas | https://www.tabechoku.com/producers/26475 | 私たちは滋賀県湖北地方で、地域の障がい者や高齢者など様々な人が関わりノウフク連携で農産物の栽培を行っています。参加する誰もが生き生きと活動し |
-| みなくちファーム | 高島市 | Setas | https://www.tabechoku.com/producers/21312 | 琵琶湖のほとり、滋賀県高島市マキノ町で無農薬にて野菜と原木椎茸、ハーブの栽培を行っています。 |
-| 草野農場 | 長浜市 | Legumbres | https://www.tabechoku.com/producers/26673 | 草野農場二代目の草野大地と申します！滋賀県長浜市で父と二人、お米、古代米、オクラ、さつまいも、大豆を栽培し、農産物加工で甘酒の素を製造・販売 |
-| 滋賀農業公園ブルーメの丘 | 日野町 | Lácteos y quesos | https://www.tabechoku.com/producers/25359 | 滋賀農業公園ブルーメの丘は滋賀県湖東の日野町にある酪農をテーマとした体験型農業公園です。鈴鹿山脈のふもとに位置し、自然と共に生きる公園です。 |
-| 山中農産 | 東近江市 | Pan y cereal | https://www.tabechoku.com/producers/3078619 | 私たち山中農産は「大地の恵みに真心を込めて」という言葉をモットーに、豊かな自然に囲まれた滋賀県の蒲生平野でお米や野菜を作っている農園です。 |
-| RICE IS COMEDY | 長浜市 | Pan y cereal | https://www.tabechoku.com/producers/24585 | 地元である滋賀県長浜市の農業、特に米作りに関する問題に直面した地元出身の20～30代のメンバーが集まり、『Rice is comedy（米づ |
-| お米の家倉 | 長浜市 | Pan y cereal | https://www.tabechoku.com/producers/22104 | ”農業をカッコよく、食卓に笑顔を。”をモットーに、子どもに誇れる農業家を目指し、持続可能で次世代につなげる農業を日々楽しみながら模索していま |
-| 針江のんきぃふぁーむ | 高島市 | Pan y cereal | https://www.tabechoku.com/producers/21157 | 弥生の先人の米作りの跡が残る、滋賀県高島市針江地区。 |
-| 尾崎が育てた野菜。 | 大津市 | Fruta y verdura | https://www.tabechoku.com/producers/21854 | 次の世代にこの野菜を。 |
-| ワダケン（リアルソイルハウス） | 栗東市 | Fruta y verdura | https://www.tabechoku.com/producers/22247 | 私たちは、天然成分100％の植物栄養液のみを使用する『和らぎ農法』で農作物を栽培しており、栽培期間中において、農薬・化学肥料・動物性堆肥は不 |
-| こひろファーム | 湖南市 | Fruta y verdura | https://www.tabechoku.com/producers/27485 | 滋賀県湖南市でいちご農家をしています。2015年に「自分の作ったいちごや野菜でみんなを笑顔にしたい！」と一念発起し塗装業を辞め農業大学で農業 |
-| 高野いちご園 | 竜王町 | Fruta y verdura | https://www.tabechoku.com/producers/21544 | 農園の由来は代々いちご園を経営していた「高野夫婦」から受け継ぐことになり、敬意をもってそのまま「高野いちご園」でやらせて頂いております。 |
-| ファームランドわかば | 東近江市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077413 | 御覧いただきありがとうございます。 |
-| 近江園田ふぁーむ | 近江八幡市 | ⚠ por decidir | https://www.tabechoku.com/producers/28794 | こんにちは！近江園田ふぁーむです。 |
-| 大吉牧場 | 高島市 | ⚠ por decidir | https://www.tabechoku.com/producers/21427 | 創業明治29年。「人に、味に、誠を尽くす」をモットーに、自社牧場での肥育から自社での加工、商品化、配送の一環流通で日々近江牛の「美味しさを」 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 滋賀農業公園ブルーメの丘 | 日野町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/25359 | 滋賀県蒲生郡日野町 |
+| 清葉庵 | 大津市 | Huevos | ficha | — | https://www.tabechoku.com/producers/20636 |  |
+| TUNAGU | 長浜市 | Setas | ficha | — | https://www.tabechoku.com/producers/26475 |  |
+| 木村水産 | 彦根市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20960 |  |
+| グリーン愛ランド清香園（セイカエン） | 東近江市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26850 |  |
+| すぐるや | 近江八幡市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23111 |  |
+| 湖魚処　ペスカ | 高島市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28176 |  |
+| ナチュラル　フォレスト | 長浜市 | Carne | ficha | — | https://www.tabechoku.com/producers/21096 |  |
+| 大吉牧場 | 高島市 | Carne | ficha | — | https://www.tabechoku.com/producers/21427 |  |
+| 近江園田ふぁーむ | 近江八幡市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/28794 |  |
+| RICE IS COMEDY | 長浜市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/24585 |  |
+| お米の家倉 | 長浜市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/22104 |  |
+| 尾崎が育てた野菜。 | 大津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21854 |  |
+| ファームランドわかば | 東近江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077413 |  |
+| 山中農産 | 東近江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078619 |  |
+| ワダケン（リアルソイルハウス） | 栗東市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22247 |  |
+| 香貴丸プロダクツ | 湖南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25295 |  |
+| こひろファーム | 湖南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27485 |  |
+| 高野いちご園 | 竜王町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21544 | 滋賀県蒲生郡竜王町 |
+| 草野農場 | 長浜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26673 |  |
+| みなくちファーム | 高島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21312 |  |
+| 針江のんきぃふぁーむ | 高島市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/21157 |  |

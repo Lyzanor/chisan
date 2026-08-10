@@ -192,32 +192,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/hokkaido/hokkaido.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/hokkaido> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/hokkaido> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 10, Carne 3, Pescado 2, Vino 1, Lácteos y quesos 1, Huevos 1, Setas 1, Legumbres 1, Frutos secos 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 床岡農園 | 三笠市 | Pescado | https://www.tabechoku.com/producers/24843 | 床岡農園は、北海道でも有名な豪雪地帯、三笠市にあります。自然の恵みを十分に受けた広大な農地約30haで、お米を中心に、メロン、かぼちゃ、スイ |
-| 遠藤農園 | 千歳市 | Pescado | https://www.tabechoku.com/producers/22033 | 遠藤農園のお野菜いかがでしょうか？^o^ |
-| 岩村　雅弘 | 森町 | Pescado | https://www.tabechoku.com/producers/21398 | 北海道噴火湾森町で牡蠣とホタテを養殖しています。 |
-| 丸の野水産 | 羅臼町 | Pescado | https://www.tabechoku.com/producers/27483 | 北海道「知床」羅臼町の刺し網漁師を営んでる丸の野水産です。 |
-| まむふぁむ | 増毛町 | Carne | https://www.tabechoku.com/producers/29667 | NEW　鹿肉ジビエ、はじまりました。 |
-| えんどう畜産 | 士幌町 | Carne | https://www.tabechoku.com/producers/29478 | お客様の「心に残る」お肉をつくりたい。 |
-| ハッピープレイス | 島牧村 | Carne | https://www.tabechoku.com/producers/27199 | 北海道でオーガニックトマトの生産と、放し飼いで鶏を育てています。 |
-| 雪あかり | 鹿追町 | Carne | https://www.tabechoku.com/producers/26547 | 私たちは北海道十勝で家族で放牧養豚を営んでいます。 |
-| 渋田きのこ園 | 厚沢部町 | Setas | https://www.tabechoku.com/producers/20798 | 北海道のきれいな水と空気、適した環境のもと |
-| オフイビラ源吾農場 | 本別町 | Legumbres | https://www.tabechoku.com/producers/21479 | 北海道の十勝の本別町で、大豆、あずき、金時豆、小麦、じゃがいも などを育てています！ |
-| 鈴木牧場 | 広尾町 | Lácteos y quesos | https://www.tabechoku.com/producers/20321 | 十勝オーガニック牛乳 （有機・グラスフェッド・放牧・ノンホモ・低温殺菌・A2ミルク） |
-| 東山農場 | 栗山町 | Frutos secos | https://www.tabechoku.com/producers/21959 | 当農場は北海道夕張郡栗山町に位置する、夫婦二人で営む小さな農場です。北海道の雄大な自然の美しさに惚れ込み東京から移住後、栗山町でメロン栽培の |
-| エゾの杜 | 池田町 | Vino | https://www.tabechoku.com/producers/26238 | 北海道十勝にあるワインで有名な街、池田町にある会社です。「エゾシカ等解体加工処理施設」に認定されています。 |
-| うまいべ農園 | 中富良野町 | Pan y cereal | https://www.tabechoku.com/producers/22802 | 北海道中富良野町で小さい農家を営んでおります。栽培している作物はトウモロコシ、ミニトマト、米の３つです。 |
-| アグ・デ・パンケ農園 | 蘭越町 | Pan y cereal | https://www.tabechoku.com/producers/21409 | 北海道ニセコエリア　蘭越町で25年間無農薬の野菜を栽培、直販している農家です。 |
-| 原崎農園 | 鷹栖町 | Pan y cereal | https://www.tabechoku.com/producers/20244 | アスパラガスと色々な野菜と豆麦米・北海道鷹栖町の脱サラ農家（1代目） |
-| 富良野　加納農園 | 富良野市 | Fruta y verdura | https://www.tabechoku.com/producers/21619 | 北海道富良野市の赤肉メロン・アスパラ・とうきび・かぼちゃを栽培する農家です。 |
-| VEGGIEHILLS（ベジヒルズ） | 当別町 | Fruta y verdura | https://www.tabechoku.com/producers/21997 | 私たち夫婦は2019年に東京から北海道に移住し、2020年4月からここ当別町高岡の畑で野菜の栽培を始めました。この恵み豊かな自然に感謝しつつ |
-| 瀬戸牛農園 | 西興部村 | Fruta y verdura | https://www.tabechoku.com/producers/24269 | 瀬戸牛農園は、北海道のオホーツク海側にある⻄興部（にしおこっぺ）村にあります。 |
-| とくながファーム | 千歳市 | ⚠ por decidir | https://www.tabechoku.com/producers/23627 | 北海道の大自然の中で、両親と一つ一つ丁寧に育てています。 |
-| 玉手農場 | 留寿都村 | ⚠ por decidir | https://www.tabechoku.com/producers/20109 | 『大地を耕し笑顔を生み出す』 |
-| 野尻農場 | 音更町 | ⚠ por decidir | https://www.tabechoku.com/producers/3077638 |  |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| エゾの杜 | 池田町 | Vino | ficha | — | https://www.tabechoku.com/producers/26238 | 北海道中川郡池田町 |
+| 鈴木牧場 | 広尾町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/20321 | 北海道広尾郡広尾町 |
+| ハッピープレイス | 島牧村 | Huevos | ficha | — | https://www.tabechoku.com/producers/27199 | 北海道島牧郡島牧村 |
+| 渋田きのこ園 | 厚沢部町 | Setas | ficha | — | https://www.tabechoku.com/producers/20798 | 北海道檜山郡厚沢部町美和 |
+| 岩村　雅弘 | 森町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21398 | 北海道茅部郡森町 |
+| 丸の野水産 | 羅臼町 | Pescado | ficha | — | https://www.tabechoku.com/producers/27483 | 北海道目梨郡羅臼町 |
+| まむふぁむ | 増毛町 | Carne | ficha | — | https://www.tabechoku.com/producers/29667 | 北海道増毛郡増毛町別苅608番地7 |
+| えんどう畜産 | 士幌町 | Carne | ficha | — | https://www.tabechoku.com/producers/29478 | 北海道河東郡士幌町 |
+| 雪あかり | 鹿追町 | Carne | ficha | — | https://www.tabechoku.com/producers/26547 |  |
+| オフイビラ源吾農場 | 本別町 | Legumbres | ficha | — | https://www.tabechoku.com/producers/21479 | 北海道中川郡本別町 |
+| 瀬戸牛農園 | 西興部村 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/24269 | 北海道北海道紋別郡西興部村 |
+| 床岡農園 | 三笠市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24843 |  |
+| うまいべ農園 | 中富良野町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22802 | 北海道空知郡中富良野町 |
+| とくながファーム | 千歳市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23627 |  |
+| 遠藤農園 | 千歳市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22033 |  |
+| 富良野　加納農園 | 富良野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21619 |  |
+| VEGGIEHILLS（ベジヒルズ） | 当別町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21997 | 北海道石狩郡当別町 |
+| 東山農場 | 栗山町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21959 | 北海道夕張郡栗山町 |
+| 玉手農場 | 留寿都村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20109 | 北海道虻田郡留寿都村 |
+| アグ・デ・パンケ農園 | 蘭越町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21409 | 北海道磯谷郡蘭越町 |
+| 原崎農園 | 鷹栖町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20244 | 北海道上川郡鷹栖町 |
+| 野尻農場 | 音更町 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/3077638 | 北海道河東郡音更町 |

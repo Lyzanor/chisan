@@ -162,32 +162,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/ishikawa.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/ishikawa> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/ishikawa> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 9, Pescado 4, Setas 3, Pan y cereal 2, Té e infusiones 1, Lácteos y quesos 1, Dulces y repostería 1, Frutos secos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| ハイネファーム | かほく市 | Pescado | https://www.tabechoku.com/producers/26680 | 石川県かほく市にて「きのこ農家」をしております。きのこが好きすぎて、脱サラしてきのこ農家になりました。「旬の物は旬の時期に食べて欲しい」と言 |
-| 第八豊丸 | 志賀町 | Pescado | https://www.tabechoku.com/producers/28327 | 自然豊かな志賀町。この町で生まれ育ち、漁師をして約28年、親方として独立して15年になります。底引き網漁・ごち網漁、夏には潜水漁業を行い漁を |
-| 味きらら☆福田農園 | 志賀町 | Pescado | https://www.tabechoku.com/producers/22405 | 石川県のすいか、れんこん農家です。 |
-| 淡水養魚場「白山堂」 | 白山市 | Pescado | https://www.tabechoku.com/producers/20771 | はじめまして！石川県白山市、霊峰白山の麓にある淡水養魚場「白山堂」の3代目、坪田です。 |
-| 義祥丸水産 | 穴水町 | Pescado | https://www.tabechoku.com/producers/22973 | 私は33歳の時に東京都から石川県穴水町に移住し、牡蠣養殖・刺し網漁・たこつぼ漁を営んでいます。　特に牡蠣養殖（真牡蠣・岩牡蠣）に力を入れてい |
-| ハーブ農園ペザン | 津幡町 | Té e infusiones | https://www.tabechoku.com/producers/21981 | ハーブティー専門店であるハーブ農園ペザンのオンラインショップ。自社農園産ハーブ(15年以上、無農薬、無肥料、無堆肥)のフリーズドライハーブテ |
-| ほくベジ | 穴水町 | Setas | https://www.tabechoku.com/producers/27450 | ほくベジは、石川県の奥能登「穴水町」で、土づくりにこだわった畑を運営しているセット野菜販売専門の農家です。栽培期間中、農薬・化学肥料を使用せ |
-| のとっこ | 能登町 | Setas | https://www.tabechoku.com/producers/29294 | 私たちは、石川県能登町でしいたけときくらげの栽培をおこなっています。2020年の品評会では、全国996品の中から最優秀賞をいただきました。香 |
-| 佐の川園 | 能美市 | Setas | https://www.tabechoku.com/producers/29617 | 東側には雄大なる霊峰白山、西側には日本海と緑豊かな穏やかな石川県の土地で、伸び伸びと楽しくきのこ栽培を行っています。 |
-| ぶどうの森農園 | 金沢市 | Dulces y repostería | https://www.tabechoku.com/producers/20935 | ぶどうの森農園は、石川県を中心にレストランやブライダル、洋菓子の製造・販売をしている「株式会社ぶどうの森」が経営しています。 |
-| 宮本自然農園 | 金沢市 | Lácteos y quesos | https://www.tabechoku.com/producers/23455 | アロエ栽培専業の農園です。雪国の北陸でハウス栽培しています。アロエを毎日デザートとしてヨーグルトと一緒に食べ続けてください。血液が浄化されて |
-| んめえ米 | 加賀市 | Pan y cereal | https://www.tabechoku.com/producers/26366 | 石川県の山に囲まれたのどかな町で、百三十年前から代々お米を作ってます。 |
-| ハルサ | 能登町 | Pan y cereal | https://www.tabechoku.com/producers/23203 | 能登半島の先端能登町で30代の若い生産者で野菜づくりをしています。米どころの北陸のイメージがあるかもしれませんが、実は日本海に突き出た能登町 |
-| 岡元農場 | 能美市 | Pan y cereal | https://www.tabechoku.com/producers/3078773 | 岡元農場は、石川県能美市で代々農業を営む農家です。白山連峰から流れ出る清らかな水と、肥沃な大地という恵まれた自然環境を最大限に活かし、安心・ |
-| 加賀米野菜基地（かがこめやさいきち） | 金沢市 | Pan y cereal | https://www.tabechoku.com/producers/23048 | 石川県の「加賀地方」で育てた栄養価の高い安心安全な「お米と野菜」を多くの人へお届けしたい、 |
-| こすもす自然農園 | 河北郡河北潟干拓地区内 | Fruta y verdura | https://www.tabechoku.com/producers/28888 | こんにちは。 |
-| アグリコ | 穴水町 | Fruta y verdura | https://www.tabechoku.com/producers/3077166 | 石川県の能登地方・穴水町の自然に囲まれた山間でトマトを中心とした色々な野菜を栽培しています。 |
-| 百姓ひろばオズランド | 羽咋市 | Fruta y verdura | https://www.tabechoku.com/producers/20169 | 「大切なことは楽しく学ぶ！」をモットーに、自然栽培で自然災害と闘う百姓ひろばオズランド。固定種・在来種の野菜を可能な限り自家採種し、無肥料・ |
-| ほんだ農場 | 能美市 | Fruta y verdura | https://www.tabechoku.com/producers/28949 | 「人のこと・地球のことを考えて」をモットーに環境と健康に気を配った無農薬有機栽培農業に取り組んでいます。 |
-| ぶるベジ | 白山市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077842 | その一口で、家族が笑顔に。 |
-| 金沢ちはらファーム | 金沢市 | ⚠ por decidir | https://www.tabechoku.com/producers/27064 | 《🎉感謝🌸2026年で14年目を迎えました🎉》 |
-| OTM オーティーエム | 金沢市 | ⚠ por decidir | https://www.tabechoku.com/producers/21225 | オーティーエム[OTM]とはOrganic Trade Markの略語。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| ハーブ農園ペザン | 津幡町 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21981 | 石川県河北郡津幡町 |
+| 宮本自然農園 | 金沢市 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/23455 |  |
+| ハイネファーム | かほく市 | Setas | ficha | — | https://www.tabechoku.com/producers/26680 |  |
+| のとっこ | 能登町 | Setas | ficha | — | https://www.tabechoku.com/producers/29294 | 石川県鳳珠郡能登町 |
+| 佐の川園 | 能美市 | Setas | ficha | — | https://www.tabechoku.com/producers/29617 |  |
+| 第八豊丸 | 志賀町 | Pescado | ficha | — | https://www.tabechoku.com/producers/28327 | 石川県羽咋郡志賀町 |
+| 淡水養魚場「白山堂」 | 白山市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20771 |  |
+| 義祥丸水産 | 穴水町 | Pescado | ficha | — | https://www.tabechoku.com/producers/22973 | 石川県鳳珠郡穴水町中居南 |
+| ほんだ農場 | 能美市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28949 |  |
+| 金沢ちはらファーム | 金沢市 | Dulces y repostería | ficha | — | https://www.tabechoku.com/producers/27064 |  |
+| んめえ米 | 加賀市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26366 |  |
+| 岡元農場 | 能美市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078773 |  |
+| ハルサ | 能登町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/23203 |  |
+| 味きらら☆福田農園 | 志賀町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22405 | 石川県羽咋郡志賀町 |
+| こすもす自然農園 | 河北郡河北潟干拓地区内 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28888 | 石川県河北郡河北潟干拓地区内 |
+| ぶるベジ | 白山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077842 |  |
+| ほくベジ | 穴水町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27450 | 石川県鳳珠郡穴水町 |
+| アグリコ | 穴水町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077166 | 石川県鳳珠郡穴水町大郷 |
+| 百姓ひろばオズランド | 羽咋市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20169 |  |
+| ぶどうの森農園 | 金沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20935 |  |
+| 加賀米野菜基地（かがこめやさいきち） | 金沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23048 |  |
+| OTM オーティーエム | 金沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21225 |  |

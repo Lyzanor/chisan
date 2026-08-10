@@ -150,32 +150,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/tohoku/fukushima.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/fukushima> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/fukushima> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **22 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 10, Pan y cereal 5, Miel 2, Huevos 1, Setas 1, Condimentos 1, Aceite 1, Conservas 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| フェルムナチュレール・コクブン | 伊達市 | Pescado | https://www.tabechoku.com/producers/20430 | 私たちは福島県北地方の伊達市で自然型農業を営む農園です。「土と自然を豊かにすることが、人にも本当の豊かさと健康をもたらす。」を信条に、農薬や |
-| Bellファーム | 会津若松市 | Pescado | https://www.tabechoku.com/producers/3078656 | 福島県会津若松市。四方を山々に囲まれたこの盆地は、古くから日本屈指の米どころとして知られています。私たちの米作りを支えるのは、磐梯山から流れ |
-| おびすや | 相馬市 | Pescado | https://www.tabechoku.com/producers/3078559 | 福島県相馬市にある日本百景のひとつ「松川浦」から青のり佃煮をお届けします！ |
-| 須藤農彩園 | 郡山市 | Pescado | https://www.tabechoku.com/producers/24205 | 食卓が彩り豊かになるように！ |
-| HANA-MASA | 猪苗代町 | Carne | https://www.tabechoku.com/producers/28649 | 当社の位置する猪苗代町は福島県のほぼ中央、猪苗代湖の北岸に面し東西北の三方を会津磐梯山をはじめとする山々に囲まれた自然豊かな町です。当社は花 |
-| 会津猪苗代カンダファーム | 猪苗代町 | Carne | https://www.tabechoku.com/producers/29277 | 会津磐梯山と猪苗代湖に抱かれた猪苗代町で、水稲栽培を中心に営む農家です。 |
-| 肉の秋元本店 | 白河市 | Carne | https://www.tabechoku.com/producers/21221 | 「美味しいお肉で幸せをつくりたい」　福島県白河市の静かな里山で、豊かな大自然から湧き出た水を味わい、緑に抱かれた広々とした農場で豚たちはのん |
-| 浜福青果 | 福島市 | Setas | https://www.tabechoku.com/producers/3077708 | 私たちは2021年5月に無農薬・無科学肥料のしいたけ農園を立ち上げました。しいたけの香りを引き出し肉厚なぷりぷり食感を実現するために栽培方法 |
-| 滝桜湖養蜂 滝桜湖つみとりブルーベリー園 | 三春町 | Miel | https://www.tabechoku.com/producers/21208 | 元々はサラリーマンで休日に気分転換も兼ねて実家の養蜂業とブルーベリー園を手伝う程度の関わりでしたが、関わるほどにその奥深さと難しさお客様の感 |
-| 郡山あさか野養蜂場 | 郡山市 | Miel | https://www.tabechoku.com/producers/3078130 | みつばちを通して美しい自然環境と健康を |
-| おさんぽたまご | 伊達市 | Huevos | https://www.tabechoku.com/producers/29598 | ・『しあわせ山の おさんぽたまご』と申します。 |
-| グルテンフリーお米のパン工房穂鹿 | 天栄村 | Huevos | https://www.tabechoku.com/producers/27044 | 周りに山しかないよう山奥地で、農薬・肥料不使用(自然栽培）・天日干しでお米を栽培し，そのお米を100%使ってパンとお菓子を作っています。小麦 |
-| 三栗野むぎ農園 | 国見町 | Frutos secos | https://www.tabechoku.com/producers/28597 | 東京から福島県に移住し夫婦で農業を始めました。農場ネコ2匹をサブメンバーに野菜作りを楽しんでいます。 |
-| まるとう果樹園 | 国見町 | Pan y cereal | https://www.tabechoku.com/producers/3079118 | 福島県と宮城県の県境である国見町で約16品種のモモをメインに、現在３年目のブドウ、お米(コシヒカリ)、あんぽ柿を生産しております。 |
-| 西村農園 | 大玉村 | Pan y cereal | https://www.tabechoku.com/producers/23242 | 西村農園は安達太良山の麓に広がる肥沃な粘土質の土　澄んだ水自然豊かな農園です家族3人で減農薬減化学肥料で　コシヒカリ　こがねもち　福島県オリ |
-| 母の味　阿部農縁 あべのうえん | 須賀川市 | Pan y cereal | https://www.tabechoku.com/producers/24408 | 福島県須賀川市にある大正時代から四代続く農家です。看護師寺山佐智子が17年前に就農しました。　東日本大震災をきっかけに、法人化　株式会社阿部 |
-| 大野農園 | 石川町 | Fruta y verdura | https://www.tabechoku.com/producers/21306 | 1975年創業、「りんご・もも・なし・ぶどう」と果物専門に栽培する農園です。 |
-| まるせい果樹園 | 福島市 | Fruta y verdura | https://www.tabechoku.com/producers/27869 | はじめまして！ |
-| 菱沼農園 | 福島市 | Fruta y verdura | https://www.tabechoku.com/producers/20876 | 私たちは福島県福島市でさくらんぼ・桃・ぶどう・りんごの4品目の果物を栽培しております。 |
-| 桐の里産業 | 三島町 | ⚠ por decidir | https://www.tabechoku.com/producers/22557 | 三島町は福島県の西部に位置し、尾瀬を源流とする只見川沿いにある山間の町です。三島町の雄大な自然の中でエゴマを育てています。この地方で昔から作 |
-| 大和川ファーム | 喜多方市 | ⚠ por decidir | https://www.tabechoku.com/producers/26013 | 地域の景観を守り地域の自然と共存し地域の発展に寄与する。これが大和川グループの信念です。 |
-| アグリパークとみおか | 富岡町 | ⚠ por decidir | https://www.tabechoku.com/producers/3078744 | ～手間を惜しまない。だから、この一粒が輝く～ |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 滝桜湖養蜂 滝桜湖つみとりブルーベリー園 | 三春町 | Miel | productos | 【令和7年新蜜です】国産純粋生はちみつ【アカシア蜜】1000ｇ | https://www.tabechoku.com/producers/21208 | 福島県田村郡三春町 |
+| 郡山あさか野養蜂場 | 郡山市 | Miel | productos | 【非加熱・無添加】すっきりした甘さ 初夏の百花蜜 150ｇ · 【非加熱・無添加】秋の花たちが奏でる濃密なひとしずく 秋の百花蜜 150g · 【非加熱・無添加】春の香り、ぎゅっと 春の百花蜜 150g | https://www.tabechoku.com/producers/3078130 | 福島県郡山市 |
+| おさんぽたまご | 伊達市 | Huevos | productos | 燻製玉子24玉（鶏卵の燻製玉子６個入４パック） · 鶏卵三種４パック(生卵２パック・温泉玉子１パック・燻製玉子１パック) | https://www.tabechoku.com/producers/29598 | repr. 三浦一義 |
+| 浜福青果 | 福島市 | Setas | productos | 肉厚ぷりぷり！しいたけたっぷり1kg+おまけ50g | https://www.tabechoku.com/producers/3077708 |  |
+| 肉の秋元本店 | 白河市 | Condimentos | productos | 【御中元ギフト】牛タンの三五八漬け 500g入り · 清流豚セット（豚バラブロック1kg・豚肩ロースブロック1kg） · 【白河高原清流豚】バラブロック 1kg | https://www.tabechoku.com/producers/21221 |  |
+| 桐の里産業 | 三島町 | Aceite | productos | えごま油(100g)３本セット 三島町産えごまを100％使用！生絞り · 始めよう。健康への新習慣！三島町産えごまを100％使用！生絞り えごま油 ( · 【お試しサイズ】始めよう！健康への新習慣！三島町産えごまを100％使用！生絞 | https://www.tabechoku.com/producers/22557 | 福島県大沼郡三島町 |
+| おびすや | 相馬市 | Conservas | productos | 【生食感】おびすやの青のり佃煮食べ比べ 180g×各2p · 【生食感】おびすやの青のり佃煮アサリ入り180g×4p · 【生食感】おびすやのピリカラ青のり佃煮 180g×4p | https://www.tabechoku.com/producers/3078559 | repr. 久田則雄 |
+| Bellファーム | 会津若松市 | Pan y cereal | productos | 会津米 令和7年産 虹のきらめき 10キロ （玄米） · 会津米 令和7年産 虹のきらめき 中米 10㎏ （白米） · 会津米 令和7年産 虹のきらめき 10キロ （白米） | https://www.tabechoku.com/producers/3078656 |  |
+| 大和川ファーム | 喜多方市 | Pan y cereal | productos | 雪蔵銀ぴか米ミルキークイーン（10kg） · 雪蔵銀ぴか米（ミルキークイーン）5㎏ · 【R8年産新米予約】雪蔵銀ぴか米ミルキークイーン（10kg） | https://www.tabechoku.com/producers/26013 | premio 食べチョクAWARD |
+| 西村農園 | 大玉村 | Pan y cereal | productos | 大玉村で育てたる美味しいお米 コシヒカリ 精米5キロ · 新米大玉村で育てたる美味しいお米 コシヒカリ 精米5kg×2袋 | https://www.tabechoku.com/producers/23242 | 福島県安達郡大玉村 |
+| グルテンフリーお米のパン工房穂鹿 | 天栄村 | Pan y cereal | productos | グルテンフリー 自然栽培米パン（1斤） · グルテンフリー 自然栽培米パン おすすめ3種セット （プレーン 玄米 砂糖不 · グルテンフリー 自然栽培玄米パン（1斤） | https://www.tabechoku.com/producers/27044 |  |
+| 会津猪苗代カンダファーム | 猪苗代町 | Pan y cereal | productos | 【新米予約】ギネス「世界最高米®」原料米認定 白米5キロ 会津産ゆうだい21 · 【新米予約】ギネス認定「世界最高米®」会津産ゆうだい21 白米2キロ 2年連 · 【新米予約】ギネス認定「世界最高米®」2年連続日本一！会津産ゆうだい21【令 | https://www.tabechoku.com/producers/29277 |  |
+| フェルムナチュレール・コクブン | 伊達市 | Fruta y verdura | productos | 【再販 数量限定】自然栽培のフランボワーズ (ラズベリー)シロップ · 初物！【ポケットボトル】自然栽培エルダーフラワーのコーディアルシロップ · 【国内希少！】自然栽培の桃のコンフィチュール | https://www.tabechoku.com/producers/20430 |  |
+| 三栗野むぎ農園 | 国見町 | Fruta y verdura | productos | 【定期便】旬の野菜セット(定番野菜・イタリア野菜)箱込み1.8kg · 新鮮ツヤツヤのズッキーニ【ゼルダ緑・ジャッロ黄・ライム浅緑】300g×6p · 大入りズッキーニ【ゼルダ緑・ジャッロ黄・ライム薄緑・パリーノ丸】350g×1 | https://www.tabechoku.com/producers/28597 | repr. 三栗野祐司; 福島県伊達郡国見町 |
+| まるとう果樹園 | 国見町 | Fruta y verdura | productos | 福島県産モモ『川中島白桃』贈答用5ｋｇ １３～１８玉 クール便 【夏ギフト】 · 福島県産モモ『川中島白桃』贈答用2ｋｇ 6玉 【夏ギフト】 · 福島県産モモ『川中島白桃』贈答用3ｋｇ 9～12玉 クール便 【夏ギフト】 | https://www.tabechoku.com/producers/3079118 | repr. 佐藤　勇輝; 福島県伊達郡国見町 |
+| アグリパークとみおか | 富岡町 | Fruta y verdura | productos | 【高糖度｜JGAP取得】完熟シャインマスカット特選３房(500ｇ×3房) · 【高糖度｜JGAP取得】完熟シャインマスカット ２房（５００ｇ×２房） · 【高糖度｜JGAP取得】完熟シャインマスカット お試し1房(500ｇ×1房) | https://www.tabechoku.com/producers/3078744 | repr. 新妻哲二; 福島県双葉郡富岡町大字本岡字本町西632‐1 |
+| HANA-MASA | 猪苗代町 | Fruta y verdura | productos | 【朝どれ】フルーツとうもろこし『あまいんです』20本 希少な１番果のみを厳選 · 【朝どれ】フルーツとうもろこし『あまいんです』10本 希少な１番果のみを厳選 · 甘い！雪下キャベツ 5ｋｇ（3-4玉） | https://www.tabechoku.com/producers/28649 | repr. 渡部雅幸 |
+| 大野農園 | 石川町 | Fruta y verdura | productos | 【まどか・3kg程度】パリッと硬くて甘くて味が濃い！ · 【梨：幸水・2kg程度】濃厚な甘く瑞々しい和梨 · 【あかつき・2kg程度】人気NO１！福島県のブランド桃 | https://www.tabechoku.com/producers/21306 | repr. 大野栄峰; premio 食べチョクAWARD; 福島県石川郡石川町 |
+| まるせい果樹園 | 福島市 | Fruta y verdura | productos | （2026年 予約販売）【朝どれ】お買い得!まるせい果樹園の桃 晩生種【おま · （2026年 予約販売）【夏ギフト】 【朝どれ】 まるせい果樹園の桃【ゆうぞ · （2026年 予約販売） 【朝どれ】まるせい果樹園の桃 梨と桃の詰め合わせ  | https://www.tabechoku.com/producers/27869 | premio 食べチョクAWARD |
+| 菱沼農園 | 福島市 | Fruta y verdura | productos | 桃名人厳選 桃【ご家庭用 訳あり商品】白桃約3ｋｇ(8-12玉） · 桃名人厳選 桃【ご家庭用 訳あり商品】白桃約2ｋｇ(5-9玉） · 桃名人厳選 桃 『川中島白桃』2ｋｇ（5-8玉） | https://www.tabechoku.com/producers/20876 | premio 食べチョクAWARD |
+| 須藤農彩園 | 郡山市 | Fruta y verdura | productos | 採りたて！シャキシャキ美味いつるありインゲン たっぷり1kg/ · お子さんもパクパク沢山食べちゃう甘いミディトマト フルティカ 1.8kg | https://www.tabechoku.com/producers/24205 | repr. 須藤佳英; 福島県郡山市 |
+| 母の味　阿部農縁 あべのうえん | 須賀川市 | Fruta y verdura | productos | 【あかつき】3ｋｇ（8～12玉） 福島の完熟もも · 【あかつき】2ｋｇ（6～9玉） 福島の完熟もも · 【新じゃが】ほくほく男爵いも 2kg｜肉じゃが・ポテトサラダ・カレーに！ | https://www.tabechoku.com/producers/24408 | repr. 寺山　佐智子 |

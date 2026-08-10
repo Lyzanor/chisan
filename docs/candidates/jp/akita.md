@@ -133,32 +133,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/tohoku/akita.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/akita> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/akita> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **17 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Pan y cereal 5, Fruta y verdura 5, Setas 4, Pescado 2, Huevos 1, Legumbres 1, Condimentos 1, Conservas 1, Frutos secos 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| フジノ果 | 横手市 | Pescado | https://www.tabechoku.com/producers/28005 | 2022年4月より新規就農。先々代から80年続くりんごに加え、新規作物としてももとすいかを栽培予定。 |
-| nohmask農園 | 横手市 | Pescado | https://www.tabechoku.com/producers/3078060 | 秋田県南部の「横手盆地」で育てた栄養価の高い安心安全な「お米と野菜」をお届けします。小規模ながら代々農業を営んでおり兼業稲作に努めてきました |
-| オヤマダファーム | 男鹿市 | Pescado | https://www.tabechoku.com/producers/3078346 | 秋田県男鹿市にてあきたこまちをメインに生産しております。 |
-| 農園晴晴（はればれ） | 能代市 | Pescado | https://www.tabechoku.com/producers/22867 | 秋田の北の方にあるちっちゃな農園です。自慢のニンニクは、農薬を使用せずに育てた滋味あふれる逸品です。ほかに自家栽培の野菜を使った漬物は、ぜひ |
-| がっこ | 仙北市 | Carne | https://www.tabechoku.com/producers/21571 | 秋田県仙北市で夫婦2人で農業、畜産をやっております。 |
-| 瀧田養鶏場　たまごの樹 | 秋田市 | Carne | https://www.tabechoku.com/producers/24424 | 昭和40年ごろに、酪農経営から養鶏業に転換し100羽から生産を開始しました。 |
-| レンチナス奥羽伊勢 | 八峰町 | Setas | https://www.tabechoku.com/producers/27719 | 私たちは秋田県八峰町できのこ農家を経営しております |
-| 間木しいたけハウス@東成瀬テックソリューションズ | 東成瀬村 | Setas | https://www.tabechoku.com/producers/3077504 | 私たちは、東成瀬村で地域おこし協力隊として村の方たちに広い分野でお手伝いさせていただいております。 |
-| 秋田しいたけ農園 | 湯沢市 | Setas | https://www.tabechoku.com/producers/3078920 | 秋田県湯沢市で50年間しいたけの生産と販売をしています。 |
-| 能延通商 | 能代市 | Setas | https://www.tabechoku.com/producers/29177 | 白神山地のふもと秋田県能代市で、椎茸や野菜等を栽培しています。丹精込めて育てた肉厚でぷりぷりな生椎茸をぜひ、 |
-| ヒロファーム | 羽後町 | Legumbres | https://www.tabechoku.com/producers/3077240 | 枝豆農家になり１8年になりますが食味にこだわって食べて美味しいと思う枝豆を作っています。年々勉強する事ばかりですがこれからも誰が食べても美味 |
-| 十和田アクアポニックス農場 | 小坂町 | Frutos secos | https://www.tabechoku.com/producers/3077874 | はじめまして。秋田県小坂町で「アクアポニックス」という農法で、おさかなと野菜を生産している十和田アクアポニックス農場の栗山哲です。 十和田湖 |
-| ひない渡辺農園しどけ村 | 大館市 | Pan y cereal | https://www.tabechoku.com/producers/28868 | 「良い土、水、風　旬な野菜」をモットーに、健康を第一に考え、愛情をたっぷり注いで育てた四季折々の野菜、果物、米などの作物を提供します。 |
-| 佐藤農園 | 大館市 | Pan y cereal | https://www.tabechoku.com/producers/26581 | 忠犬ハチ公の里で有名な秋田県大館市の山間でお米を生産しています。七代続く農家で、家族一緒に環境に配慮した減農薬栽培を行っています。地元特産の |
-| 🌾こまちの田園 | 横手市 | Pan y cereal | https://www.tabechoku.com/producers/3077992 | 秋田の米所で明治時代から続く、老舗の米農家です。米農家の集大成として、"大切な人の身体をつくるお米"をコンセプトに安心・安全・美味しいお米を |
-| 白神産物まなぶ | 能代市 | Pan y cereal | https://www.tabechoku.com/producers/26747 | 私は現在秋田県能代市に住んでおります。そばには世界遺産白神山地そして、秋田音頭の歌にある桧山がすぐそばにございます。日本海側で海山川に囲まれ |
-| Snow Field Market | 湯沢市 | Fruta y verdura | https://www.tabechoku.com/producers/3078606 | 秋田県湯沢市で稲、トマト、セリ、アスパラを作付けしています。 |
-| 吉村 | 湯沢市 | Fruta y verdura | https://www.tabechoku.com/producers/23071 | 秋田県湯沢市にて化学肥料を減らし乳酸菌を使用した野菜作りをしています。 |
-| 果実庵とざわ | 鹿角市 | Fruta y verdura | https://www.tabechoku.com/producers/20062 | 「果実庵とざわ」は秋田県鹿角市で営まれているりんご農園です。 |
-| OLAHO / おらほ | 大館市 | ⚠ por decidir | https://www.tabechoku.com/producers/3077761 | はじままして、OLAHO（おらほ）です。 |
-| きずな | 横手市 | ⚠ por decidir | https://www.tabechoku.com/producers/23827 | 夏は高温多湿、冬は低温豪雪で豊饒な地「秋田県横手市」 |
-| 鮎乃家 | 湯沢市 | ⚠ por decidir | https://www.tabechoku.com/producers/24716 | 鮎（あゆ）と共に歩んで創業60年。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 瀧田養鶏場　たまごの樹 | 秋田市 | Huevos | productos | １０個入れパック入り国産鶏種もみじの新鮮たまご36個(４０個入り４個割れ保障 · 純国産鶏種「さくら」３６個（10個入れ４パック入り４個割れ保障 · 新鮮たまごえをたっぷり使った！濃厚たまごプリン（６個） | https://www.tabechoku.com/producers/24424 | premio 食べチョクAWARD |
+| レンチナス奥羽伊勢 | 八峰町 | Setas | productos | 溢れ出す旨み汁！秋田県八峰町産ブランド椎茸【黒椎茸】3玉入り · 白神山地の湧水で育った【お買い得】肉厚椎茸500g×2袋 · 白神山地の湧水で育った訳あり肉厚椎茸500g×2袋 | https://www.tabechoku.com/producers/27719 | repr. 伊勢隼人; 秋田県山本郡八峰町 |
+| 間木しいたけハウス@東成瀬テックソリューションズ | 東成瀬村 | Setas | ficha | — | https://www.tabechoku.com/producers/3077504 | repr. 近藤純光; 秋田県雄勝郡東成瀬村 |
+| 秋田しいたけ農園 | 湯沢市 | Setas | productos | 【2026年秋予約】肉厚ジュワっと系「秋田」初収穫！原木しいたけ（1kg） · 【2026年秋予約】お試しパック発売！肉厚ジュワっと系「秋田」初収穫！原木し · 【2026年秋予約】肉厚ジュワっと系「秋田」初収穫！原木しいたけ（2kg） | https://www.tabechoku.com/producers/3078920 |  |
+| 能延通商 | 能代市 | Setas | productos | 旨みたっぷり！乾燥シイタケ（スライス50g×5p） · 旨味たっぷり！乾燥しいたけ(スライス 25g×5p) · シャキシャキとした食感、癖のない味わいな「空心菜」100ｇ | https://www.tabechoku.com/producers/29177 | repr. 工藤美恵 |
+| フジノ果 | 横手市 | Pescado | productos | 【小玉スイカ】贈答あきた夏丸チッチェ3Lサイズ1玉入れ【準備出来次第発送】 · 【小玉スイカ】家庭用あきた夏丸チッチェ3Lサイズ1玉入れ【準備出来次第発送】 · 【小玉スイカ】贈答あきた夏丸チッチェLサイズ2玉入れ【準備出来次第発送】 | https://www.tabechoku.com/producers/28005 | repr. 藤原　正宏 |
+| 果実庵とざわ | 鹿角市 | Pescado | productos | ※出荷調整中※【2箱セット】☆農薬不使用りんご☆と特別栽培りんご(品種おまか · ※出荷調整中※☆農薬不使用りんご☆と特別栽培りんご(品種おまかせ)詰め合わせ · 【ご家庭用】【2箱セット】🌸🎐春夏もりんごをかかせない方へ「りんごおまかせ便 | https://www.tabechoku.com/producers/20062 | repr. 創業：2001年06月; premio 食べチョクAWARD |
+| ヒロファーム | 羽後町 | Legumbres | productos | 旨さ倍増！秋の枝豆！250g✕4 · 品種お任せ新鮮枝豆250g×8p · 品種お任せ新鮮枝豆250g×4 | https://www.tabechoku.com/producers/3077240 | repr. 佐藤浩之; 秋田県雄勝郡羽後町 |
+| 農園晴晴（はればれ） | 能代市 | Condimentos | productos | クラフトコーラキット/くろもじと山椒 和洋スパイス/静かな森のスパイス · 山菜ミズ 皮むき済みすぐ調理OK シャキシャキネバネバ 白神山麓天然 ５００ · 山菜ミズ｜白神山麓の静かな恵み｜シャキシャキ＆とろり食感の天然もの 1kg | https://www.tabechoku.com/producers/22867 |  |
+| がっこ | 仙北市 | Conservas | productos | 箸が止まらないお漬物「いぶりがっこ」ハーフサイズ2袋セット！200g×2 · パリッポリッ箸が止まらないお漬物『いぶりがっこ』スライス2袋セット！ · 【秋田の晩酌セット】〜燻しの深みを2通りで〜いぶりがっこ2点セット | https://www.tabechoku.com/producers/21571 |  |
+| 佐藤農園 | 大館市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26581 |  |
+| nohmask農園 | 横手市 | Pan y cereal | productos | 【令和８年新米】秋田県産あきたこまち１０月中旬以降発送【予約】１０ｋｇ · お米５kgとにんにく（白黒）＆季節野菜セット（極甘ミニトマト入） · お米３kgとにんにく(白黒)＆季節野菜セット(旬枝豆・極甘ミニトマト入） | https://www.tabechoku.com/producers/3078060 |  |
+| 🌾こまちの田園 | 横手市 | Pan y cereal | productos | 農薬85%カット！幻のあきたこまち 10kg · 農薬85%カット！幻のあきたこまち 5kg · 【朝市限定】農薬85%カット！幻のあきたこまち 10kg | https://www.tabechoku.com/producers/3077992 | repr. 創業：1900年03月 |
+| オヤマダファーム | 男鹿市 | Pan y cereal | productos | 【令和8年産新米予約・大特価】秋田県産あきたこまち 白米20kg · 【令和8年産新米予約・大特価】秋田県産あきたこまち 玄米30kg · 【令和8年産もち米新米・大特価】秋田県産きぬのはだ 精米10kg | https://www.tabechoku.com/producers/3078346 |  |
+| 白神産物まなぶ | 能代市 | Pan y cereal | productos | 【秋田の名産】世界遺産白神山地近郊の大自然で育った天然で粘りがあるミズ 50 · 【秋田の名産】世界遺産白神山地近郊の大自然で育ったおいしいメロン二玉 完全予 · 大自然世界遺産白神山地付近で取れたおいしい天然フキ（1kg） | https://www.tabechoku.com/producers/26747 | repr. 白神産物まなぶ |
+| 十和田アクアポニックス農場 | 小坂町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/3077874 | repr. 創業：2023年12月 |
+| ひない渡辺農園しどけ村 | 大館市 | Fruta y verdura | productos | オクラとトマトのセット<オクラ40本/トマト1400g>【朝どれ】【夏ギフト · 小玉スイカ〈特大1玉〉 シャリっと甘い！あきた夏丸チッチェ【夏ギフト】 · キュウリ12本 【朝どれ】シャキッとパリッと生でガブッと丸かじり！キュウリ本 | https://www.tabechoku.com/producers/28868 | premio 食べチョクAWARD |
+| OLAHO / おらほ | 大館市 | Fruta y verdura | ficha | 訳あり★送料一律★R8年産にんにくバラ【高級品種♪白玉王】 | https://www.tabechoku.com/producers/3077761 | repr. 創業：2016年04月 |
+| きずな | 横手市 | Fruta y verdura | productos | 大玉スイカ 秋田アカオニ７㎏以上 · 8/11発送限定 あきた夏丸チッチェ1玉（2.7㎏前後） · 8/11発送限定 小玉すいか あきた夏丸チッチェ２玉（１玉 約３㎏～2.6k | https://www.tabechoku.com/producers/23827 |  |
+| Snow Field Market | 湯沢市 | Fruta y verdura | productos | 幻エイト 完熟桃太郎エイト（2㎏規格）ゼリーたっぷり甘酸ジューシーな希少栽培 · 幻エイト 完熟桃太郎エイト(1㎏)ゼリーたっぷり甘酸ジューシーな希少栽培トマ · 幻エイト 完熟桃太郎エイト（大容量4㎏規格）ゼリーたっぷり甘酸ジューシーな希 | https://www.tabechoku.com/producers/3078606 |  |
+| 吉村 | 湯沢市 | Fruta y verdura | productos | 【小サイズ３玉入り】【夏ギフト】訳あり 小玉スイカ 3玉 糖度上昇中 本当に · 【小サイズ6玉入り】【夏ギフト】訳あり 小玉スイカ 3玉 糖度上昇中 本当に · 「旬」すいか 秋田県産 大玉1玉入 フレッシュスイカ 夏の風物詩 ギフト お | https://www.tabechoku.com/producers/23071 |  |
+| 鮎乃家 | 湯沢市 | ⚠ por decidir | — | 温めるだけで名店の味《こまち鮎》鮎の塩焼き こだわりの炭火焼３本 熨斗対応可 · 温めるだけで名店の味《こまち鮎》鮎の塩焼き こだわりの炭火焼５本 熨斗対応可 · 温めるだけで名店の味《こまち鮎》鮎の燻製 究極の酒のつまみ ５本 熨斗対応可 | https://www.tabechoku.com/producers/24716 |  |

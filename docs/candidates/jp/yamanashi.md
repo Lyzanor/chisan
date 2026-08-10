@@ -110,32 +110,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/chubu/yamanashi.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/yamanashi> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/yamanashi> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 18, Setas 2, Pescado 1, Carne 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| Fairy Valley（フェアリーバレー） | 北杜市 | Pescado | https://www.tabechoku.com/producers/28680 | 農業系の企業に勤めているのですが、農産物生産者の方々が楽しそうに働く姿に憧れて、兼業として農業に取り組み始めました。 |
-| and farm | 南アルプス市 | Pescado | https://www.tabechoku.com/producers/28390 | 「デザートのある食卓を、もっと豊かに」 |
-| 前田龍珠園 | 甲州市 | Pescado | https://www.tabechoku.com/producers/20719 | 自家農園は、山梨県勝沼町にある800㎡程度の小さな農園です。日本ワインの歴史は、土屋龍憲氏と高野正誠氏、二人の青年が明治10年にフランスに渡 |
-| 山の幸ファーム | 笛吹市 | Pescado | https://www.tabechoku.com/producers/28620 | 日本一桃の里といわれる山梨県一宮町で桃と葡萄を栽培をしています。東京から移住後、農園で働いたことをきっかけに果樹栽培に魅せられました。農家で |
-| HOPE園 | 笛吹市 | Pescado | https://www.tabechoku.com/producers/24250 | 東京・大阪出身の新婚夫婦の営む、桃とぶどう農場"HOPE園"（ほーぷえん）です。お客様の健康のため、自然のため、そして自分たちのために減農薬 |
-| 大月のびのびファーム | 大月市 | Carne | https://www.tabechoku.com/producers/3078481 | 豚・羊・馬を森林の中で良質の餌と自由に運動できる環境で育ててます。 |
-| 丹波山倶楽部 | 丹波山村 | Setas | https://www.tabechoku.com/producers/23601 | 多摩川源流に位置する、関東一小さな村で自然に寄り添った農業を行っております。耕作放棄地を利用して、地域に伝わる伝統野菜、原木栽培による舞茸を |
-| 甲州きくらげ | 甲州市 | Setas | https://www.tabechoku.com/producers/25092 | 【この食材は凄い…】 |
-| HARU FARM | 甲州市 | Condimentos | https://www.tabechoku.com/producers/3077591 | 家族３人小規模農家です。山梨県甲州市塩山地区の標高約650mの高台に位置する畑から朝収穫した桃をその日のうちに出荷いたします。お届けする桃は |
-| 大和ファーム | 北杜市 | Conservas | https://www.tabechoku.com/producers/23678 | 水のきれいな八ヶ岳の麓で「医食農同源」「100年先の未来に種をまく暮らし方」「ココロとカラダを整える農家」をテーマにカラダに取り入れて健康に |
-| まるいち農産加工所 | 市川三郷町 | Aceite | https://www.tabechoku.com/producers/23008 | 平成２９年に開設し、山梨県西八代郡市川三郷町で農産物や農産加工品の販売を行っています。自己所有の畑の他に耕作放棄地を借りて様々な作物を育てて |
-| こぴっと | 北杜市 | Pan y cereal | https://www.tabechoku.com/producers/22275 | 私たちは自然豊かな八ヶ岳南麓山梨県北杜市標高700ｍで稲作を中心に行う農業法人です。減農薬・有機肥料の特別栽培にこだわり「自然と人に優しい米 |
-| 自然農菜園　はたけや | 甲州市 | Pan y cereal | https://www.tabechoku.com/producers/3077465 | 2015年に山梨県甲州市に移住。以来、除草剤や農薬、持込み肥料を一切使わない自然農で野菜や穀類をつくっています。 |
-| 百笑　有田農園 | 留市 | Pan y cereal | https://www.tabechoku.com/producers/3078147 | 富士の湧水流れる自然豊かな山梨県都留市にて、夫婦でお米と固定種・在来種の野菜を育てています。農薬も肥料も使わず、自然の力を信じる「自然栽培」 |
-| もぐもぐ農園 | 南アルプス市 | Fruta y verdura | https://www.tabechoku.com/producers/22231 | 先祖から受け継いだ農地で農業を営んでおります。 |
-| For Farm | 山梨市 | Fruta y verdura | https://www.tabechoku.com/producers/3077819 | For Farmは、山梨県の峡東地域でおいしいぶどうを栽培しています。また、巨峰を栽培している「山梨市牧丘町」は、日本一の『巨峰の丘』として |
-| ぶどうの樹 | 甲州市 | Fruta y verdura | https://www.tabechoku.com/producers/22215 | ぶどうの町、山梨県の「かつぬま町」で代々ぶどう農家をしています。今年は天候にも恵まれ、とても美味しいぶどうが育っています。 |
-| 赤白園 | 甲州市 | Fruta y verdura | https://www.tabechoku.com/producers/23585 | 果樹王国山梨県勝沼町で 5代続く葡萄栽培をしています。 |
-| 星野果樹園 | 笛吹市 | Fruta y verdura | https://www.tabechoku.com/producers/24945 | はじめまして! |
-| 結理苑 | 北杜市 | ⚠ por decidir | https://www.tabechoku.com/producers/28389 | 結理苑の諸橋正達(青年農業士)と由理子です |
-| 【富士信玄とうもろこし】大澤園 | 富士河口湖町 | ⚠ por decidir | https://www.tabechoku.com/producers/26893 | #【TVで話題沸騰中】一流レストラン御用達とうもろこし『富士信玄ブランド』 |
-| アーリーファーム | 笛吹市 | ⚠ por decidir | https://www.tabechoku.com/producers/29231 | アーリーファームです。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| 丹波山倶楽部 | 丹波山村 | Setas | ficha | — | https://www.tabechoku.com/producers/23601 | 山梨県北都留郡丹波山村 |
+| 甲州きくらげ | 甲州市 | Setas | ficha | — | https://www.tabechoku.com/producers/25092 |  |
+| 結理苑 | 北杜市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28389 |  |
+| 大月のびのびファーム | 大月市 | Carne | ficha | — | https://www.tabechoku.com/producers/3078481 |  |
+| 大和ファーム | 北杜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23678 |  |
+| こぴっと | 北杜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22275 |  |
+| Fairy Valley（フェアリーバレー） | 北杜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28680 |  |
+| and farm | 南アルプス市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28390 |  |
+| もぐもぐ農園 | 南アルプス市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22231 |  |
+| 【富士信玄とうもろこし】大澤園 | 富士河口湖町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26893 | 山梨県南都留郡富士河口湖町 |
+| For Farm | 山梨市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077819 |  |
+| まるいち農産加工所 | 市川三郷町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23008 | 山梨県西八代郡市川三郷町 |
+| HARU FARM | 甲州市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077591 |  |
+| ぶどうの樹 | 甲州市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22215 |  |
+| 自然農菜園　はたけや | 甲州市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077465 |  |
+| 前田龍珠園 | 甲州市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20719 |  |
+| 赤白園 | 甲州市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23585 |  |
+| 百笑　有田農園 | 留市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078147 |  |
+| 山の幸ファーム | 笛吹市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28620 |  |
+| アーリーファーム | 笛吹市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29231 |  |
+| HOPE園 | 笛吹市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24250 |  |
+| 星野果樹園 | 笛吹市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24945 |  |

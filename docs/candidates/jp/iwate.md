@@ -121,32 +121,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/tohoku/iwate.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/iwate> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/iwate> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 5, Setas 3, Carne 3, Miel 2, Pescado 2, Condimentos 2, Pan y cereal 2, Lácteos y quesos 1, Frutos secos 1, ⚠ por decidir 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 中野圭 | 大船渡市 | Pescado | https://www.tabechoku.com/producers/26287 | 岩手県大船渡市は越喜来（おきらい）崎浜（さきはま）という小さな港町で漁業を営んでおります。 |
-| 魚武 | 田野畑村 | Pescado | https://www.tabechoku.com/producers/27172 | 岩手県北三陸田野畑で先祖代々漁師の家系で育ち私も幼い頃から父親と漁に出ていました。 |
-| サンファーム | 盛岡市 | Pescado | https://www.tabechoku.com/producers/22314 | 他の生産者が栽培していない様々な品種のりんご、スイートネクタリン、さくらんぼ、ベリーなどを栽培しています。「土作りから丸ごと岩手」をコンセプ |
-| 柿木畜産 | 久慈市 | Carne | https://www.tabechoku.com/producers/22389 | 岩手県が発祥の「短角和牛」を育てています。この地が育んだ牛に、この地の食べものを与え、この地ならではの最高の短角和牛を目指し日々挑戦しており |
-| うたがき優命園 | 奥州市 | Carne | https://www.tabechoku.com/producers/28385 | 20代で首都圏から岩手県の里山地域に移住して平飼い養鶏をはじめて、平飼い養鶏歴30年の夫婦です。現在は、20代の後継者や研修生と共に5人体制 |
-| しあわせ牧場 | 宮古市 | Carne | https://www.tabechoku.com/producers/21360 | 365日ずーっと自然放牧で牛、ヤギ、羊を育てています。人間はできる限り自然のまま自由に生きる彼らを見守ります。 |
-| 安比まいたけ | 八幡平市 | Setas | https://www.tabechoku.com/producers/28175 | 安比高原の麓にて、自然の雨風を受けながら自然の栽培環境にこだわった手作りのまいたけ栽培を始めて40年。小規模ながら何度も全国的なTV、新聞に |
-| 安俱里まほら岩手 | 盛岡市 | Setas | https://www.tabechoku.com/producers/25815 | 私たちは、”本州一寒い”といわれる「薮川」という地域で、原木きのこを主体とし、農産物の生産を行っております。冬は氷点下20度になることもしば |
-| 長瀬農園 | 軽米町 | Setas | https://www.tabechoku.com/producers/3077472 | 岩手県で、春は岩手県産の天然ふきのとう、天然の山ウド、こごみ、あいこ、の山菜、秋は松茸、香茸をネット販売しております。 |
-| ハチミツ農家YoYo | 盛岡市 | Miel | https://www.tabechoku.com/producers/3078424 | 盛岡市の郊外、のどかな田園に囲まれた小さな農園で畑作と養蜂を営んでいます。 |
-| 巣鴨養蜂園 | 西和賀町 | Miel | https://www.tabechoku.com/producers/20076 | 雑味のない天然のはちみつの良さを、できるだけ多くの皆様にお届けしたいという思いで、故郷の岩手県西和賀町で巣箱つくりから瓶詰めまで、すべて手作 |
-| ほそかわ農園 | 矢巾町 | Legumbres | https://www.tabechoku.com/producers/24231 | 岩手県の矢巾町という小さな町で【ミニトマト】【落花生】を中心に農園を営んでいるほそかわ農園と申します。代々この地で農家を営んできて私は9代目 |
-| 佐々研山葵農園 | 岩泉町 | Condimentos | https://www.tabechoku.com/producers/29417 | 誰も知らない、日本一の畑わさび産地。 |
-| いわいずみ和做美 | 岩泉町 | Condimentos | https://www.tabechoku.com/producers/3077939 | 岩手県北東部に位置する岩泉町は、北上山地の豊かな自然に抱かれた、清流と緑あふれる町です。この恵まれた環境こそが、香り高く、上質な畑わさびを育 |
-| 岩手　牧草の丘 | 金ケ崎町 | Lácteos y quesos | https://www.tabechoku.com/producers/26782 | 戦後　先祖が入植開墾開拓し、原生林だった大地を現在では、豊かな肥沃な広大な農地となり、酪農を中心に頑張っております。自治会活動も盛んで全国豊 |
-| 米農家　仁左ェ門 | 滝沢市 | Pan y cereal | https://www.tabechoku.com/producers/20510 | 平成7年から現在まで、岩手県で「アイガモ農法」による農薬・化学肥料不使用のお米を作っています。 |
-| タカハシ農園 | 花巻市 | Pan y cereal | https://www.tabechoku.com/producers/3077889 | 岩手花巻で１３代続く稲作農家です。こだわりをもって栽培したお米をみなさんに直接お届けしたいと思い、直販をスタートしました。 |
-| 太陽商会 | 花巻市 | Pan y cereal | https://www.tabechoku.com/producers/21008 | 宮沢賢治の故郷イーハトーブ花巻で、有機肥料とEM（有用な微生物群）活用による米・小麦・野菜を中心とした農産物を生産している農業生産法人です。 |
-| 上小田代 | 奥州市 | Fruta y verdura | https://www.tabechoku.com/producers/24141 | 岩手県奥州市の農業法人です。古く江戸時代、寛政の時代からつづく農家。 |
-| 由井野菜園 | 滝沢市 | Fruta y verdura | https://www.tabechoku.com/producers/20631 | 生まれ育った町、岩手県滝沢市で２０１６年から農業を始めました。北に岩手山、東に姫神山が見える素敵な場所で夫婦２人で農薬・化学肥料を使わずに旬 |
-| やんべファーム | 盛岡市 | ⚠ por decidir | https://www.tabechoku.com/producers/20883 | 昨年も、多くの方々にご注文頂きありがとうございましたm(_ _)m |
-| またくるファーム | 盛岡市 | ⚠ por decidir | https://www.tabechoku.com/producers/24711 | いらっしゃいませ！ |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| ハチミツ農家YoYo | 盛岡市 | Miel | ficha | — | https://www.tabechoku.com/producers/3078424 |  |
+| 巣鴨養蜂園 | 西和賀町 | Miel | ficha | — | https://www.tabechoku.com/producers/20076 |  |
+| 岩手　牧草の丘 | 金ケ崎町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/26782 | 岩手県胆沢郡金ケ崎町 |
+| 安比まいたけ | 八幡平市 | Setas | ficha | — | https://www.tabechoku.com/producers/28175 |  |
+| 安俱里まほら岩手 | 盛岡市 | Setas | ficha | — | https://www.tabechoku.com/producers/25815 |  |
+| 長瀬農園 | 軽米町 | Setas | ficha | — | https://www.tabechoku.com/producers/3077472 | 岩手県九戸郡軽米町大字軽米19-83 |
+| 魚武 | 田野畑村 | Pescado | ficha | — | https://www.tabechoku.com/producers/27172 | 岩手県下閉伊郡田野畑村 |
+| やんべファーム | 盛岡市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20883 |  |
+| 柿木畜産 | 久慈市 | Carne | ficha | — | https://www.tabechoku.com/producers/22389 |  |
+| うたがき優命園 | 奥州市 | Carne | ficha | — | https://www.tabechoku.com/producers/28385 |  |
+| しあわせ牧場 | 宮古市 | Carne | ficha | — | https://www.tabechoku.com/producers/21360 |  |
+| 佐々研山葵農園 | 岩泉町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/29417 | 岩手県下閉伊郡岩泉町 |
+| いわいずみ和做美 | 岩泉町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/3077939 | 岩手県下閉伊郡岩泉町 |
+| 米農家　仁左ェ門 | 滝沢市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/20510 |  |
+| タカハシ農園 | 花巻市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3077889 |  |
+| 上小田代 | 奥州市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/24141 |  |
+| 由井野菜園 | 滝沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20631 |  |
+| サンファーム | 盛岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22314 |  |
+| またくるファーム | 盛岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24711 |  |
+| ほそかわ農園 | 矢巾町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24231 | 岩手県紫波郡矢巾町 |
+| 太陽商会 | 花巻市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21008 |  |
+| 中野圭 | 大船渡市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/26287 |  |

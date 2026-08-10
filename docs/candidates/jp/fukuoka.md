@@ -123,7 +123,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | 左衛門 | 古賀市 | Dulces y repostería | 和菓子協会 | http://www.saemon.jp/ | 古賀市鹿部 335-19 |
 | つか菓子舗 | 福岡市 | Dulces y repostería | 和菓子協会 | http://www2.plala.or.jp/tukakasiho/ | 福岡市中尾 3-4-5 |
-| 原口園（扶桑庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://haraguchien.co.jp/ | ⚠ la web mezcla Fukuoka y Yame: resolver la unidad productiva |
+| 原口園（扶桑庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://haraguchien.co.jp/ | ⚠ `/pages/company` da 福岡市博多区, que es la sede: el té es de Yame. Falta situar la unidad productiva antes de escribir la fila |
 | 山口製茶園（茶幸庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://www.chakouan.com/ | ⚠ municipio sin confirmar |
 | 牛島製茶 | 八女市 | Té e infusiones | búsqueda dirigida + web propia | https://www.yame.co.jp/ | 八女茶, 1921 |
 | 古賀製茶本舗 | 八女市 | Té e infusiones | búsqueda dirigida + web propia | https://koganoyamecha.co.jp/ | 八女茶 |
@@ -132,32 +132,33 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 ## Venta directa — 3ª pasada 2026-08-10
 
 - CSV destino: `data/csv/jp/kyushu-okinawa/fukuoka.csv`.
-- Fuente: **食べチョク**, listado de productores de la prefectura, <https://www.tabechoku.com/producers/fukuoka> (dos páginas, leídas el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: el enlace de abajo es la ficha del mercado, y el dominio hay que cosecharlo antes de cada alta.
-- La categoría es **provisional**: sale de la descripción de la ficha, no de una comprobación. `⚠ por decidir` es que el texto no daba para clasificar.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura. Sake excluido a propósito: ya es el 56% del catálogo japonés.
+- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/fukuoka> (listado y ficha leídos el 2026-08-10).
+- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
+- **20 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
+- Mezcla: Fruta y verdura 7, Té e infusiones 3, Setas 2, Carne 2, Pan y cereal 2, Destilados y licores 1, Miel 1, Huevos 1, Pescado 1, Legumbres 1, Condimentos 1.
+- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
 
-| nombre | municipio | categoría (provisional) | ficha | qué hace, según la fuente |
-|---|---|---|---|---|
-| 川﨑果樹園 | 北九州市 | Pescado | https://www.tabechoku.com/producers/26096 | 園芸農家に生まれ自然と、身近な植物に、関心を抱きながら生活して来ました。小学生の頃、温室の天窓の開け閉めの手伝いをしていたことで、植物にとっ |
-| マサエイ水産加工 | 宗像市 | Pescado | https://www.tabechoku.com/producers/21079 | 食べチョクでアカモクを中心に出品しています！ |
-| オーガニックハーブ農園　Pala’au | 筑紫野市 | Pescado | https://www.tabechoku.com/producers/28391 | ハーバリストとして活動するにあたり、無農薬・化学肥料不使用で安心・安全なオーガニックハーブを提供したいと考え夫婦でハーブ農園を始めました。そ |
-| たつみ園 | 八女市 | Té e infusiones | https://www.tabechoku.com/producers/22353 | わたし達は福岡県南部に位置する自然が豊かな八女茶の本場上陽町で家族四人で営んでいる田舎のお茶屋です。清らかな水と豊かな自然に恵まれるこの地で |
-| グリーンワールド八女 | 八女市 | Té e infusiones | https://www.tabechoku.com/producers/21484 | 八女市は、福岡県南部、熊本県と大分県の県境に位置し、高級茶の八女茶の産地です。八女茶の栽培・加工から始まり、緑茶の製造技術の活かした大麦若葉 |
-| お茶の千代乃園 | 八女市 | Té e infusiones | https://www.tabechoku.com/producers/20127 | 福岡県八女市矢部村、標高600mの雪ふる山の中で有機栽培(オーガニック）でお茶作りを営む「千代乃園」です。農薬･化学肥料不使用で育てた八女茶 |
-| やまもり養鶏場 | うきは市 | Carne | https://www.tabechoku.com/producers/22408 | 当農場では鶏の健康・餌・環境、全てに妥協しない卵づくりを日々続けています🥚 |
-| 【博多黒毛和牛】あか村総本家 | 赤村 | Carne | https://www.tabechoku.com/producers/3077218 | 🍖市場になかなか出回らない🍖黒毛和牛専門『あか村総本家』 |
-| 博多すぎたけ商店（ドリームマッシュ） | 大木町 | Setas | https://www.tabechoku.com/producers/22849 | 福岡県大木町を拠点とする当社では、長年にわたり多種多様のきのこ栽培を行っており、きのこのパイオニアとして活動しております。また、野生の品種か |
-| K.ファーム | 糸島市 | Setas | https://www.tabechoku.com/producers/3078320 | 2024年10月に脱サラしてきくらげ栽培を始めました。 |
-| 須田養蜂場 | 豊前市 | Miel | https://www.tabechoku.com/producers/23375 | 福岡県豊前市で夫婦2人でやっています小さなハチミツ屋です。 |
-| よかもんいちご | うきは市 | Conservas | https://www.tabechoku.com/producers/23050 | 当園は、平成21年創業、福岡県南東部に位置するうきは市浮羽町でイチゴの生産、販売、観光農園（イチゴ狩り）、加工品の販売を営んでいます。 |
-| 丘の上ファーム | 宗像市 | Conservas | https://www.tabechoku.com/producers/24276 | 丘の上ファームと申します。何らかのハンディのある人を含め20人足らずの従業員で毎日明るく楽しくまた、真剣に皆でスプラウトにんにくを栽培してい |
-| 杏里ファーム | 柳川市 | Café | https://www.tabechoku.com/producers/23968 | 私たち杏里ファームは福岡県柳川市で魅力のある農業を目指し、マンゴーやパッションフルーツ、コーヒーなどの南国フルーツの栽培、それらのフルーツや |
-| やまんた農園 | 広川町 | Frutos secos | https://www.tabechoku.com/producers/22939 | 無農薬の美味しいみかんや栗を |
-| 能古島おがわ農園 | 福岡市 | Frutos secos | https://www.tabechoku.com/producers/21006 | 博多湾の能古島(のこのしま)という離島で、【ブルーベリー】と【ピーナッツもやし】を栽培しております。 |
-| うるう農園~福岡のいちご~ | 久留米市 | Pan y cereal | https://www.tabechoku.com/producers/22204 | 福岡県久留米市のいちご農園【うるう農園】です |
-| 白石アグリ | 遠賀町 | Pan y cereal | https://www.tabechoku.com/producers/29509 | はじめまして、私は福岡県遠賀町で50年以上米作りをおります。年齢は70歳を超えました。 |
-| 農業福島園 | 宗像市 | Fruta y verdura | https://www.tabechoku.com/producers/29244 | 高校進学とともに祖父母の後継ぎとして農家になることを決意しました。理由は、夏休みに遊びにいくと2時間も昼寝をしている祖父を見て「百姓ってこれ |
-| いりえさんちの野菜 | 那珂川市 | Fruta y verdura | https://www.tabechoku.com/producers/3077818 | 福岡市に隣接する水と緑の町、那珂川市で家内制手工業で農業を営んでおります。 |
-| 肉のたかむく | 柳川市 | ⚠ por decidir | https://www.tabechoku.com/producers/21540 | 2013年11月1日に会社設立。 |
-| オーガニックナガミツファーム | 糸島市 | ⚠ por decidir | https://www.tabechoku.com/producers/20007 | オーガニックナガミツファームは福岡県糸島市の認定農業者です。 |
+| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
+|---|---|---|---|---|---|---|
+| いりえさんちの野菜 | 那珂川市 | Destilados y licores | productos | 博多の赤玉ねぎ 福岡産 1.9kg · 博多の赤玉ねぎ 福岡産 4.9kg · 博多の玉ねぎ2種類【玄海丸、レッドスター】4.9kg | https://www.tabechoku.com/producers/3077818 |  |
+| 須田養蜂場 | 豊前市 | Miel | productos | 春の完熟はちみつ 里山 1kg【非加熱・国産はちみつ】福岡県豊前市産 · 春の完熟はちみつ 里山 1kg 2本セット【非加熱・国産はちみつ】福岡県豊前 · 春の完熟はちみつ 里山 450g【非加熱・国産はちみつ】福岡県豊前市産 | https://www.tabechoku.com/producers/23375 |  |
+| たつみ園 | 八女市 | Té e infusiones | productos | 【新茶】八女茶｜玉露入り煎茶ティーバッグ30個入３袋セット｜毎日たっぷり楽し · 常連さん人気｜八女茶お得な5本セット · 【✨リピーター様率No1✨新茶】たつみ園の八女茶白折300ｇ３本セット！ | https://www.tabechoku.com/producers/22353 |  |
+| グリーンワールド八女 | 八女市 | Té e infusiones | productos | 【ネコポス便】（国産）お茶 八女抹茶入水出し煎茶ティーバッグ75g（5g×1 · 【ネコポス便】無添加‼ 国産青汁緑茶！ スティックタイプ【1g×11包×4袋 · 【国産】お茶 八女抹茶入水出し煎茶ティーバッグ75g（5g×15P） | https://www.tabechoku.com/producers/21484 | premio 食べチョクAWARD |
+| お茶の千代乃園 | 八女市 | Té e infusiones | productos | 春陽100ｇ×3+白折（月）100ｇ×3 · 茶の道40年の園主が育てた八女茶【上級煎茶：深雪】100ｇ×4袋 クリックポ · 八女茶を全国へ！煎茶春陽と深雪と白折(月)のセット | https://www.tabechoku.com/producers/20127 | repr. 創業：1981年01月; premio 食べチョクAWARD |
+| やまもり養鶏場 | うきは市 | Huevos | productos | 【夏ギフト】塩で食べる卵かけご飯🍚やまもりたまご【20個入】白身の甘みを味わ · 【朝市限定】【お塩で食べられる🐣🍚卵かけご飯】やまもりたまご【30個入】白身 · 【朝市限定】【塩で食べる卵かけご飯🍚】やまもりたまご【20個入】白身の甘みを | https://www.tabechoku.com/producers/22408 | premio 食べチョクAWARD |
+| 博多すぎたけ商店（ドリームマッシュ） | 大木町 | Setas | productos | 冷凍『しめじ』＆『えのき』セット各500g 独自冷凍技術で風味食感そのまま！ · お得な冷凍きのこ４種セット(各500g×4種) 独自冷凍技術で風味食感そのま · 冷凍『博多すぎたけ』＆『しめじ』セット各500g 独自冷凍技術で風味食感その | https://www.tabechoku.com/producers/22849 |  |
+| K.ファーム | 糸島市 | Setas | ficha | — | https://www.tabechoku.com/producers/3078320 | repr. 河野将太 |
+| マサエイ水産加工 | 宗像市 | Pescado | productos | 【お得な定期便限定】宗像のあかもく１０個＋２個 （増量） · 【おまけ付き】 宗像のあかもく☆１０個＋１個（増量） · 【春の海藻生活はじめよう。】宗像のあかもく１５個 ネバネバ海藻 | https://www.tabechoku.com/producers/21079 | repr. 代表取締役　正好　輝旭; premio 食べチョクAWARD |
+| 肉のたかむく | 柳川市 | Carne | productos | 黒毛和牛 焼ハンバーグ 10個セット (150g×10個) 和風ソース (1 · 馬刺し！！熊本県自家牧場産！！特選霜降240g＋醤油48㎖ · 【数量限定】九州産 黒毛和牛 切り落とし 1.2kg (600g×2パック) | https://www.tabechoku.com/producers/21540 | premio 食べチョクAWARD |
+| 【博多黒毛和牛】あか村総本家 | 赤村 | Carne | productos | 【中毒性ある憧れの塊肉】一度はやってみたかった贅沢の極み『極厚ポンドステーキ · 【一度で何度も美味しい絶大なる人気】数種類の部位が入った赤字覚悟のお得セット · 【みんなが喜ぶ揺るぎない王道ステーキ】根強い人気を誇る厚切りステーキあか村黒 | https://www.tabechoku.com/producers/3077218 | 福岡県田川郡赤村 |
+| 能古島おがわ農園 | 福岡市 | Legumbres | productos | 落花生の風味がそのまま！ピーナッツもやし 800g · 落花生の風味がそのまま！ピーナッツもやし 300g · 落花生の風味がそのまま！ピーナッツもやし 500g | https://www.tabechoku.com/producers/21006 | repr. 創業：2016年11月 |
+| 農業福島園 | 宗像市 | Condimentos | productos | 【自然栽培】農薬・肥料不使用の玄米粉 600g · 【自然栽培】農薬・肥料不使用の製菓用米粉 800g · 【自然栽培】農業福島園謹製 国産白玉粉 400g | https://www.tabechoku.com/producers/29244 | repr. 福島光志 |
+| 杏里ファーム | 柳川市 | Pan y cereal | productos | 農家が作るつきたて極み餅！10個入(約500g)×5セット 合計50個 約2 · B品ちょっと小ぶりの【朝どれ】超高糖度！とうもろこし界の王様『ドルチェドリー · 【朝どれ】超高糖度！とうもろこし界の王様極甘『ドルチェドリーム』（約4.5k | https://www.tabechoku.com/producers/23968 |  |
+| 白石アグリ | 遠賀町 | Pan y cereal | productos | 【新米予約】令和8年産 つきあかり 白米14Kg 【福岡県の農家直送】 · 【新米予約】令和8年産 元気つくし 白米4.5Kg 【福岡県の農家直送】 · 【新米予約】令和8年産 つきあかり 玄米4.5Kg 【福岡県の農家直送】 | https://www.tabechoku.com/producers/29509 | repr. 創業：2024年01月; 福岡県遠賀郡遠賀町 |
+| よかもんいちご | うきは市 | Fruta y verdura | productos | 【いちご食べ比べ】完熟あまおう×〇〇苺（お任せ）【270ｇ】4パック · 【ギフト】あまおう苺【270ｇ】4パック 朝採り直送！ · 【ギフト】あまおう苺【270ｇ】6パック 朝採り直送！ | https://www.tabechoku.com/producers/23050 |  |
+| うるう農園~福岡のいちご~ | 久留米市 | Fruta y verdura | productos | 【予約販売 2026年11月下旬～順次発送】あまおう苺 人気の定番サイズ 2 · 【予約販売 2026年11月下旬～順次発送】いちごの王様！あまおう苺 人気サ · 【予約販売 2027年1月中旬～順次発送】【冷凍いちご】あまおういちご たっ | https://www.tabechoku.com/producers/22204 | repr. 創業：2017年04月 |
+| 川﨑果樹園 | 北九州市 | Fruta y verdura | productos | 💫《季節のギフトに最適》新鮮ぶどう·シャインマスカット2房【高級化粧箱入り· · 🍇《季節のギフトに最適》 彩り鮮やかぶどう2房《シャインマスカット&ナガノパ · 🌟 《季節のギフトに最適》彩り鮮やかぶどう2房《シャインマスカット&藤稔》【 | https://www.tabechoku.com/producers/26096 |  |
+| 丘の上ファーム | 宗像市 | Fruta y verdura | ficha | 食欲をそそる香り！スライスドライにんにく（恵みの輝き）【5パックセット】 · 【熟成黒にんにく 恵みの黒】 一缶にポリフェノール760mg含有 毎日一粒  | https://www.tabechoku.com/producers/24276 |  |
+| やまんた農園 | 広川町 | Fruta y verdura | productos | 【50箱限定予約販売】注文殺到！朝採りシャインマスカット！食べてビックリ糖度 · 【50箱限定予約販売】注文殺到！朝採りシャインマスカット！食べてビックリ糖度 | https://www.tabechoku.com/producers/22939 | repr. 創業：2020年11月; 福岡県八女郡広川町 |
+| オーガニックハーブ農園　Pala’au | 筑紫野市 | Fruta y verdura | productos | 夏にピッタリのハーブ！鮮やかなレッドのハイビスカスローゼル 自然栽培で育てた · 自然栽培 フレッシュレモングラス ３００ｇ￥１,８００ 数量限定 30パック · 本年度収穫のハーブティーの販売開始します！！ 《希少》青りんごの香り！のリラ | https://www.tabechoku.com/producers/28391 | repr. 執行朋子 |
+| オーガニックナガミツファーム | 糸島市 | Fruta y verdura | productos | 売上第２位❗️☆畑直送☆【福岡県糸島産】朝獲れ＊サラダ用野菜セット、7品目前 · ☆畑直送☆畑で採れた果物をプレゼント‼️こだわり有機栽培野菜10品前後セット · 売上第１位❗️☆畑直送☆【福岡県糸島産】朝獲れ＊無NO薬野菜セット(10品前 | https://www.tabechoku.com/producers/20007 |  |
