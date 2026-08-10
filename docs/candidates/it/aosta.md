@@ -24,3 +24,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | LILLAZ VILMA | Verrayes | FRAZ. PAYE' N. 27 11020 | producción — vegetales sin transformar | 2028-08-27 | [IT-BIO-021.380-0072138.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0072138.2025.002.pdf) |
 | LUGON DAVIDE | Pollein | LOCALITA' GRAND POLLEIN 17 11020 | producción — vegetales sin transformar | 2028-09-10 | [IT-BIO-021.380-0096372.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0096372.2025.002.pdf) |
 | MARCELLAN SABRINA | Antey-Saint-André | FRAZIONE LILLAZ 1 11020 | producción — vegetales sin transformar | 2029-03-18 | [IT-BIO-021.380-0073233.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0073233.2026.001.pdf) |
+
+## Retención posterior a la revisión — 2026-08-10
+
+| Candidato | Motivo de retención | Fuente revisada / siguiente comprobación |
+|---|---|---|
+| Henriet Cristina | La ficha regional describe afinado, envasado y distribución de quesos comprados a terceros, y el registro empresarial confirma actividad mayorista, pero no se ha localizado una oferta propia actual suficientemente trazable. No es una exclusión definitiva. | [Ficha regional](https://www.regione.vda.it/artigianato/ateliermetiers_padiglionenogastronomico/Padiglione_Enogastronomico/henriet_cristina_i.aspx); buscar marca o catálogo primario actual. |

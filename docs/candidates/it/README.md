@@ -6,4 +6,6 @@ Se publicaron 87 productores con evidencia suficiente y se retiraron sus entrada
 
 Los 2.110 casos que permanecen en las listas están revisados, pero no son publicables todavía: el certificado acredita un operador y un alcance ecológico, aunque no demuestra por sí solo una oferta alimentaria pública actual ni que la dirección declarada sea una unidad productiva. Se mantienen como retenciones para una fuente futura, no como descartes definitivos.
 
-La fecha de corte es 2026-08-09; cualquier candidato añadido después pertenece al siguiente lote.
+El lote posterior añadido el 2026-08-10 también quedó revisado: los productores con oferta y unidad productiva suficientemente acreditadas se trasladaron a sus CSV y se retiraron de las notas provinciales. Henriet Cristina permanece retenida en Aosta porque las fuentes disponibles prueban afinado y distribución, pero no una oferta propia actual suficientemente trazable.
+
+La fecha de corte es 2026-08-10; cualquier candidato añadido después pertenece al siguiente lote.
