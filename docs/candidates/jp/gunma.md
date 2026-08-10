@@ -66,3 +66,15 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 上州なっぱの会 | 加部精一　ほ場1　他 | 群馬県吾妻郡東吾妻町萩生3576　他 | 有機農産物 | 2008F-1 |
 | 清水　健一 | 創葉舎（清水　健一、清水　英子） | 群馬県北群馬郡榛東村新井3725-2　他 | 有機農産物 | 08-007 |
 | （株）岡直三郎商店 大間々工場 | （株）社岡直三郎商店 大間々工場 | 群馬県みどり市大間々町大間々1012 | 有機加工食品 | 08-054B |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/gunma.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

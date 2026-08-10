@@ -69,3 +69,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社　阿波酢造 | 株式会社　阿波酢造　他 | 徳島県勝浦郡勝浦町大字生名字神ノ木52番地1　他 | 有機加工食品 | 09B-048 |
 | 株式会社　小川生薬 | 01番製造所 | 徳島県三好市三野町清水1399 | 有機加工食品 | 36489200101 |
 | 特定非営利活動法人　里業ランド木頭 | ３番ほ場 | 徳島県那賀郡那賀町木頭西宇字東5 | 有機農産物 | 12A-049 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/tokushima.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+  - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 阿波ナチュラルチーズ工房 チーズの灯 | Naruto | Lácteos y quesos | ChFun | — | sin dominio en la fuente; revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |

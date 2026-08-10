@@ -93,3 +93,21 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社宇治香園　本社工場 | 株式会社宇治香園　本社工場　他 | 京都府木津川市山城町上狛西下60　他 | 有機加工食品 | JU990319-0086-0 |
 | （株）碧翆園 | （株）碧翆園本社工場 | 京都府城陽市中・中ノ郷51 | 有機加工食品 | JT020131PR-0484-0 |
 | 株式会社ユーアンドミー | 株式会社ユーアンドミー製造工場 | 京都府亀岡市大井町並河2-6-1 | 有機加工食品 | 07B-005 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/kyoto.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **3** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 一乗寺ブリュワリー | Kyoto | Cerveza | JBA | ichijoji-brewery.com | Tokio/Kioto: el barrio no es municipio; queda 'Kyoto'; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| グランドリミテ (KIXビール) | Kyoto | Cerveza | JBA | kixbeer.com | revisado 2026-08-10: el dominio redirige a Izumisano Brewing y la unidad productiva está en Osaka, no Kyoto |
+| ラフインターナショナル (家守堂) | Kyoto | Cerveza | JBA | yamorido.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** 澤井醤油本店, 黄桜 y 金鵄正宗 (matriz de 京都町家ビール) ya están en `kyoto.csv`.

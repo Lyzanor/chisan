@@ -64,3 +64,22 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 有限会社　碧山園 | H　他 | 神奈川県愛甲郡愛川町角田1521-1　他 | 有機農産物 | A18-042006 |
 | ハマヤ（株）湘南工場 | ハマヤ（株）湘南工場 | 神奈川県平塚市堤町3-10 | 有機加工食品 | HJ010322PR-1581-0 |
 | 長島　和裕 | アイヅチ農園 | 神奈川県愛甲郡愛川町三増道城原1419-1、1420-1、1417　他 | 有機農産物 | 19-001 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/kanagawa.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 牧歌 | Atsugi | Lácteos y quesos | ChFun | — | solo Facebook en la fuente; revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
+| 鈴廣かまぼこ (箱根ビール) | Odawara | Cerveza | JBA | hakone-beer.com | kamaboko + cerveza; decidir categoría dominante; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 横浜ベイブルーイング | Yokohama | Cerveza | JBA | baybrewing.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| N-1 (254BeeeR) | Yokohama | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** 熊澤酒造 (湘南ビール) y 黄金井酒造 (さがみビール) ya están en `kanagawa.csv` como `Sake`.

@@ -136,3 +136,22 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社　山本貢資商店 | （株）山本貢資商店 | 兵庫県西宮市山口町阪神流通センター1-107-1 | 有機加工食品 | JY991005PR-0717-0 |
 | 植垣米菓（株） | 植垣米菓（株） | 兵庫県加古川市平岡町高畑520-10 | 有機加工食品 | JU010202PR-0269-0 |
 | 古跡真一 | 1　他 | 兵庫県加東市山国東野2013-29　他 | 有機農産物 | 05A-003 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/hyogo.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **3** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| AI-N International (六甲ビール) | Kobe | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 小西酒造 | Itami | Cerveza | JBA | — | matriz de sake histórica; sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 明石ビール工房TOKI | Akashi | Cerveza | JBA | toki-akashi.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** 白鶴酒造 ya está en `hyogo.csv`, así que 神戸ワイナリー sería otra fila del mismo grupo, no un alta nueva.

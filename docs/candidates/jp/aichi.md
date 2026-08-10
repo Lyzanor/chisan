@@ -75,3 +75,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 盛田株式会社 | 盛田株式会社小鈴谷工場　他 | 愛知県常滑市小鈴谷字亀井21-1番地　他 | 有機加工食品 | MPJP1096-01 |
 | イチビキ（株）第1工場 | イチビキ（株）第1工場 | 愛知県豊川市御油町美世賜210 | 有機加工食品 | JI000612PR-0166-0 |
 | 合資会社　山安 | 合資会社山安 | 愛知県豊橋市大手町57 | 有機加工食品 | JY010314PR-0373-0 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/aichi.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| Milks | Nagoya | Lácteos y quesos | ChFun | milks-cheese.com | revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
+| 南蔵商店 | ⚠ | Condimentos | Shokunin | — | el listado no publica municipio; revisado 2026-08-10: la ficha no publica municipio o contacto directo suficiente |

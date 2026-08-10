@@ -67,3 +67,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | ㈱あいない | 27/山際 | 青森県八戸市南郷大字市野沢字高森5 | 有機農産物 | JA231127FA-1954 |
 | すこやか自然農園株式会社 | 東　他 | 青森県上北郡六戸町大字折茂字沖山106-14　他 | 有機農産物 | J02A-2324 |
 | （一社）日本販売農業協同団体連合会 | あおぞら農園　ほ場1　他 | 青森県むつ市大畑町字本門字寺前8番地　他 | 有機農産物 | 2024F-9 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/aomori.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| カネク醸造 (八戸ビール) | Hachinohe | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

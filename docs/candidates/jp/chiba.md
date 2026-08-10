@@ -67,3 +67,19 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 自然農法成田生産組合 | 高橋　博　６　他 | 千葉県富里市富山298-4　他 | 有機農産物 | JS000828FA-0128-0 |
 | 柏原誠 | 圃場1-1 | 千葉県香取郡多古町林字金成台1527 | 有機農産物 | JS000828FA-0869-56 |
 | 大谷晴美 | 大谷晴美1  他 | 千葉県香取郡多古町喜多井野750  他 | 有機農産物 | JK020910FA-0673-5 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/chiba.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+
+**Ya integrado, no volver a proponer:** 寒菊銘醸 ya está en `chiba.csv` como `Sake`; 九十九里オーシャンビール sería otra fila del mismo obrador.

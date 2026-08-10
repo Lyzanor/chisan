@@ -69,3 +69,23 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社生活の木 | 株式会社生活の木　他 | 東京都渋谷区神宮前6-3-8他 | 有機加工食品 | AFASSEQ-AP-140601 |
 | 株式会社大和 | 株式会社大和　商品室 | 東京都中央区日本橋堀留町1-10-19第一川端ビル6階 | 有機加工食品 | B14-072501 |
 | 世田谷畑人 | B　他 | 東京都世田谷区大蔵1-256-1　他 | 有機農産物 | A16-042801 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/tokyo.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| TYハーバーブルワリー (タイソンズアンドカンパニー) | Shinagawa | Cerveza | JBA | tyharborbrewing.co.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 大黒社 (暁ブルワリー) | Shibuya | Cerveza | JBA | barbar.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| Izumi Brewery | Komae | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| Far Yeast Brewing | Shibuya | Cerveza | JBA | faryeast.com | sede en Shibuya, planta en Kosuge (Yamanashi); resolver unidad productiva; revisado 2026-08-10: la web confirma la planta en Kosuge (Yamanashi), no una unidad productiva en Shibuya |
+
+**Ya integrado, no volver a proponer:** 石川酒造 (Fussa) ya está en `tokyo.csv` como `Sake`; 多満自慢ビール sería otra fila del mismo obrador.

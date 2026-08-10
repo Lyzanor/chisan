@@ -78,3 +78,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 山麓園 | 山麓園 | 鹿児島県熊毛郡屋久島町麦生335‐257　他 | 有機農産物 | 94号 |
 | 株式会社　堀口園 | 株式会社堀口園本社工場　他 | 鹿児島県志布志市有明町野神字大堀3451-8　他 | 有機加工食品 | 加工1003号 |
 | 折田園 | 1 他 | 鹿児島県南九州市知覧町西元上塚13251 他 | 有機農産物 | 71 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/kagoshima.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+
+**Ya integrado, no volver a proponer:** 薩摩酒造 ya está en `kagoshima.csv`; su cervecería de Makurazaki sería otra planta del mismo grupo.

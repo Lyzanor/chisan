@@ -66,3 +66,14 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社ファーム広瀬 | ほ場1　他 | 福井県越前市岡本町9字西川原19番1    他 | 有機農産物 | 2025F-4 |
 
 Los dos complementos de Fukui proceden de la lista oficial municipal «ふくいの恵み» (productos y operadores certificados, ejercicio R6), porque el registro JAS solo dejó 18 operadores nuevos tras la deduplicación: <https://www.city.fukui.lg.jp/sigoto/syoukou/renkei/kakouhinninteijigyou_d/fil/R6ichiran.pdf>.
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/fukui.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

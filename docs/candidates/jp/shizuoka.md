@@ -78,3 +78,20 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社伊藤園 静岡相良工場 | 株式会社伊藤園 静岡相良工場 | 静岡県牧之原市女神21 | 有機加工食品 | 01-12B |
 | （株）かねも | （株）かねも | 静岡県掛川市掛川70 | 有機加工食品 | JK050426PR-0817-0 |
 | 永倉精麦株式会社 | 永倉精麦株式会社　他 | 静岡県駿東郡長泉町東野50-18　他 | 有機加工食品 | MPJP1081 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/shizuoka.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| チーズ工房HAKU | Hamamatsu | Lácteos y quesos | ChFun | cheesehaku.hamazo.tv | revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
+| 浜松アクトビール | Hamamatsu | Cerveza | JBA | 9199.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 御殿場高原ビール | Gotemba | Cerveza | JBA | gkb.co.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 酪農王国 (風の谷のビール) | Kannami | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

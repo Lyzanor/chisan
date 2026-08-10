@@ -94,3 +94,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 友和産業株式会社 | 第1工場　他 | 福岡県八女市蒲原1993-2 | 有機加工食品 | SEZ-22100441 |
 | 株式会社ヒビキスパイス | 株式会社ヒビキスパイス　若松工場 | 福岡県北九州市若松区響町1丁目43番地 | 有機加工食品 | 加-0079 |
 | 株式会社カトウ | 株式会社カトウ　他 | 福岡県八女市黒木町本分4513　他 | 有機加工食品 | 1009-B01 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/fukuoka.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 門司港レトロビール | Kitakyushu | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

@@ -99,3 +99,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 佐藤和也 | 佐藤和也K-1他 | 宮城県加美郡加美町字原町東154他 | 有機農産物 | JA70417FA-0768-7 |
 | 鈴木　要 | 1　他 | 宮城県大崎市田尻小塩字蓬田北4　他 | 有機農産物 | S-163 |
 | 自然農法登米普及会 | 伊藤克成 10 他 | 宮城県登米市南方町新原浦49 他 | 有機農産物 | 2007F-14 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/miyagi.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 鬼首 (鳴子の風) | Osaki | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

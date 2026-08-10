@@ -75,3 +75,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 日本のうえん | 日本のうえん（八須　理明） | 埼玉県児玉郡神川町大字新宿字大清水865-1　他 | 有機農産物 | 8215-208-00 |
 | 株式会社　えもり農園 | 江守広章 | 埼玉県熊谷市大塚杉戸田204-1　他 | 有機農産物 |  |
 | ヤマキ醸造株式会社（豆庵豆腐工房） | ヤマキ醸造株式会社（豆庵豆腐工房） | 埼玉県児玉郡神川町大字下阿久原955 | 有機加工食品 | 150903-001 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/saitama.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+
+**Ya integrado, no volver a proponer:** 弓削多醤油 y Coedo Brewery ya están en `saitama.csv`.

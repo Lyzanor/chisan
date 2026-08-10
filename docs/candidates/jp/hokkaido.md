@@ -141,3 +141,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | いずみ農園 | O-1　他 | 北海道帯広市西10条北3丁目3　他 | 有機農産物 | 第14006号-01 |
 | 佐伯農園 | O-1　他 | 北海道虻田郡洞爺湖町洞爺町417 | 有機農産物 | 100092001 |
 | オホーツク髙橋農場 | 01 他 | 北海道網走郡美幌町田中1236 | 有機農産物 | A06-110202 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/hokkaido/hokkaido.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JiCheese** — 北海道地チーズ博 — 工房・メーカー, <https://jicheese.com/producer/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 丸勝産業 (はこだてビール) | Hakodate | Cerveza | JBA | hakodate-factory.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

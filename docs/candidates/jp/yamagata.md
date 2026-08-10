@@ -114,3 +114,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 農事組合法人太ももの会　代表 渋谷嘉明 | 1　他 | 山形県酒田市広野昭和91-1　他 | 有機農産物 | 17 |
 | 石井　光司 | 石井光司　UF-1　他 | 山形県鶴岡市添川字洗田91－イ　他 | 有機農産物 | JA70417FA-1048-13 |
 | 岡部農園　代表 岡部栄一 | ①　他 | 山形県鶴岡市羽黒町大字仙道一本松72-1-3-(1)　他 | 有機農産物 | 19 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/yamagata.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

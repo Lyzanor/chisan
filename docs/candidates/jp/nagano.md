@@ -84,3 +84,19 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 塩尻有機栽培研究会 | 保育園南　他 | 長野県塩尻市塩尻町233　他 | 有機農産物 | NA-08061201 |
 | 農事組合法人野沢農産生産組合 | １他 | 長野県野沢温泉村豊郷字蟹明3177　他 | 有機農産物 | A-08-0070 |
 | 株式会社タスク | 株式会社タスク有機食品工場 | 長野県長野市信州新町水内3381 | 有機加工食品 | MPJP1594 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/nagano.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 信州とみ (ゆらり館) | Tomi | Cerveza | JBA | yurarikan.com | sociedad municipal de promoción, triar; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** 玉村本店 (Tamamura Honten) y 麗人酒造 ya están en `nagano.csv`; el 麗人 de la lista de cerveza es el mismo obrador.

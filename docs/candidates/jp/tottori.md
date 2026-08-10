@@ -69,3 +69,20 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | (株)ゼンヤクノ－ | ㈱ゼンヤクノー本社　他 | 鳥取県鳥取市賀露町4001　他 | 有機加工食品 | JZ190514PR-1649 |
 | 株式会社伯耆のきのこ　代表取締役　三鴨真樹 | ほ場番号1　他 | 鳥取県日吉津村富吉656　他 | 有機農産物 | A19-0037 |
 | 鳥取きくらげ生産グループ　緑工房　代表　河村雄太 | ほ場番号1　他 | 鳥取県鳥取市服部483-1 | 有機農産物 | A19-0039 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/tottori.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **3** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| AKARI Brewing | Tottori | Cerveza | JBA | akaribrewing.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| Think & (JAP Brewery) | Yonago | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 倉吉ビール (Brew Lab Kurayoshi) | Kurayoshi | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** 久米桜酒造 (matriz de 大山Gビール) ya está en `tottori.csv`.

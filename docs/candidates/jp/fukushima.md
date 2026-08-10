@@ -99,3 +99,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | ゆず太郎の郷　松本広行 | 柚子南　他 | 福島県双葉郡楢葉町大字井出字槻26　他 | 有機農産物 | 福島県認証第43号 |
 | 猪苗代ブルーベリーれいちゃん農場　野矢 健正 | ブルーベリー園１ | 福島県耶麻郡猪苗代町大字川桁字林口2 | 有機農産物 | 福島県認定第47号 |
 | アクツフーズ(株) | アクツフーズ（株）第一工場・倉庫　他 | 福島県石川郡古殿町竹貫字千足52・54・56　他 | 有機加工食品 | JA090915PR-1087-0 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/fukushima.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 清水産業 (猪苗代ビール) | Inawashiro | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

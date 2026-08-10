@@ -71,3 +71,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 農事組合法人ゆふいん蕎麦農場 | 農事組合法人ゆふいん蕎麦農場 | 大分県由布市湯布院町中川字城ヶ岳1968－1 | 有機農産物 | 0074 |
 | 二宮茶園 | 2-A | 大分県国東市国東町小原5836-54 | 有機農産物 | 0075 |
 | 大分有機かぼす農園株式会社 | 6 | 大分県臼杵市大字乙見字大平864，865，866 | 有機農産物 | 0085 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/oita.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| ゆふいんビール | Yufu | Cerveza | JBA | yufuinbeer.co.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 久住高原開発公社 | Taketa | Cerveza | JBA | — | sociedad de desarrollo, triar; sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

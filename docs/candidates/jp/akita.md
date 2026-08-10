@@ -93,3 +93,20 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 白神郷ふたつい有機クラブ | 1　他 | 秋田県能代市二ツ井町切石字新田240　他 | 有機農産物 | S-214 |
 | かたっこ米 | １　他 | 秋田県南秋田郡大潟村西野16-31,32　他 | 有機農産物 | 有機農産物認証生産第23号 |
 | 有限会社北浦郷 | １　他 | 秋田県仙北市角館町八割字内山383　他 | 有機農産物 | 有機農産物認証生産第24号 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/tohoku/akita.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| わらび座 (田沢湖ビール) | ⚠ Semboku | Cerveza | JBA | warabi.co.jp | la fuente se leyó «Senbon»; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| あきた野ワイナリー (森吉山ファーム) | ⚠ | Vino | JWA | — | el índice no publica municipio; revisado 2026-08-10: la ficha institucional no aporta contacto o web primaria suficiente para verificar actividad actual |
+
+**Ya integrado, no volver a proponer:** 浅舞酒造 ya está en `akita.csv` como `Sake`.

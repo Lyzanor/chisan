@@ -95,3 +95,19 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 寺岡有機農場有限会社 | 世羅A1　他 | 広島県世羅郡世羅町賀茂10144-151　他 | 有機農産物 | 114-078 |
 | 豆の木 | 山本1　他 | 広島県安芸高田市吉田町下入江1485　他 | 有機農産物 | 115-010 |
 | 引田　義道 | 1　他 | 広島県庄原市東城町竹森751番地　他 | 有機農産物 | 115-023 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/hiroshima.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+  - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| マルヒロ水産 | ⚠ | Pescado | propia | namakaki.co.jp | ostra; falta municipio; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |

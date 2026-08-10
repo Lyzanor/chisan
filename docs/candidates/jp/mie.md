@@ -70,3 +70,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 井村屋株式会社 | 井村屋株式会社　あのつFACTORY | 三重県津市あのつ台一丁目8番1中勢北部サイエンスシティ内 | 有機加工食品 | 第1322号 |
 | 竹尾茶業株式会社 | 1 他 | 三重県津市芸濃町林百々2056　他 | 有機農産物 | 24-01 |
 | うえやま農園 | 1 他 | 三重県名張市赤目町柏原1473 他 | 有機農産物 | 24-30 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/mie.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 伊勢ワイン | Ise | Vino | JWA | — | revisado 2026-08-10: la ficha institucional no aporta contacto o web primaria suficiente para verificar actividad actual |

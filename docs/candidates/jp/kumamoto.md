@@ -80,3 +80,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | （株）丸美屋　菊水工場 | （株）丸美屋　菊水工場 | 熊本県玉名郡和水町内田2211 | 有機加工食品 | JM000928-PR0081-0 |
 | 浦川繁 | ４　他 | 熊本県天草市新和町大多尾塩屋浦4323-30　他 | 有機農産物 | 0611-A02 |
 | 岩永英康 | １　他 | 熊本県上益城郡山都町麻山イケノクボ2122-1　他 | 有機農産物 | 0611-A18 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/kumamoto.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

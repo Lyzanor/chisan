@@ -194,3 +194,20 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 斉藤　勇雄 | １他 | 新潟県阿賀野市駒林千刈8204　他 | 有機農産物 | A－05－0057 |
 | 株式会社ごはん | A3-7　他 | 新潟県中魚沼郡津南町下船渡己6257　他 | 有機農産物 | A－00－0010 |
 | 有限会社　ファーミング・スタッフ | １他 | 新潟県柏崎市西山町北野字仲田3604,3605　他 | 有機農産物 | A－00－0012 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/niigata.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+- Estado: revisión cerrada el 2026-08-10; **3** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 天朝閣 (スワンレイクビール) | Agano | Cerveza | JBA | swanlake.co.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 八海山 (泉ビール) | Minamiuonuma | Cerveza | JBA | izumivillage.jp | matriz de sake; comprobar si procede fila aparte; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 新保企画 (Strange Brewing) | Minamiuonuma | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** エチゴビール ya está en `niigata.csv`.

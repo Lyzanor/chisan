@@ -83,3 +83,19 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | おきなわオーガニック産地育成協議会 | 泉川農園①　他 | 沖縄県中頭郡北中城村渡口410　他 | 有機農産物 | IOTA-SS-62 |
 | 農業生産法人(株)シーフォーグループ | 有機ほ場①他 | 沖縄県宮古島市下地字上地1016-1他 | 有機農産物 | IOTA-SS-63 |
 | ソフィエル・ペアー（株） | 幸地①ほ他 | 沖縄県中頭郡西原町幸地下安次座906番地1他 | 有機農産物 | IOTA-SS-65 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/okinawa.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 宮古島チーズ工房 | Miyakojima | Lácteos y quesos | ChFun | miyakojima-cheese.com | revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
+| 石垣島ビール | Ishigaki | Cerveza | JBA | ishigaki-beer.com | revisado 2026-08-10: el dominio está secuestrado por contenido de casino y no hay fuente primaria actual utilizable |
+
+**Ya integrado, no volver a proponer:** ヘリオス酒造 ya está en `okinawa.csv` como `Destilados y licores`.

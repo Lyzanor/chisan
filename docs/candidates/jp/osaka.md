@@ -68,3 +68,20 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 上野農園 | カイト　他 | 大阪府堺市中区深井畑山町169-1　他 | 有機農産物 | 1110-01A |
 | 株式会社フリゴ　北港物流センター | 株式会社フリゴ　北港物流センター | 大阪府大阪市此花区北港白津1丁目7番11号 | 有機加工食品 | MPJP1711 |
 | 株式会社大和川食産 | 株式会社大和川食産 | 大阪府東大阪市水走4-8-4 | 有機加工食品 | 09B-004 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/osaka.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 寿酒造 (國乃長ビール) | Takatsuki | Cerveza | JBA | — | matriz de sake; comprobar duplicado; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| クラフトビアベース | Osaka | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** 箕面ビール y Marca Brewing ya están en `osaka.csv`.

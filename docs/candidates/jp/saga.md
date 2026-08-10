@@ -98,3 +98,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 山田農園 | 椎の木　他 | 佐賀県唐津市巌木町天川1000　他 | 有機農産物 | SES-27051101 |
 | 株式会社マルハ園芸 | れんこん洗浄・選別　他 | 佐賀県杵島郡白石町大字新拓46-4 | 有機加工食品 | 1508-B01 |
 | 合同会社Ｒelation　Ｔea | 第一工場他 | 佐賀県武雄市山内町三間坂甲13350-1他 | 有機加工食品 | SEZ-28012001 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/saga.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+  - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

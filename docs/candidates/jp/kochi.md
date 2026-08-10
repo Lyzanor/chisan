@@ -69,3 +69,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 宇藤　誠朗 | 高知県長岡郡大豊町佐賀山宮ノ鳴162番地1　他 | 高知県長岡郡大豊町佐賀山宮ノ鳴162番地1　他 | 有機農産物 | 39344100501～5 |
 | 株式会社高知前川種苗　代表取締役前川卓也 | B14-1001-001 | 高知県高知市相生町6-3 | 有機加工食品 | B14-1001-001～002 |
 | 株式会社はるひ畑 | A15-1001-002 | 高知県長岡郡大豊町津家桧生1547-37 | 有機農産物 | CF-A-046 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/kochi.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 吉永鰹節店 | Tosa | Conservas | propia | — | 鰹節; 宇佐町, sin dominio confirmado; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+| 馬路村農協 | Umaji | Fruta y verdura | propia | yuzu.or.jp | yuzu transformado; cooperativa, triar; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |

@@ -122,3 +122,21 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社　木下 | 1　他 | 香川県坂出市高屋町下新開甲1684-1　他 | 有機農産物 | 114-036 |
 | 株式会社フジサワ | 株式会社フジサワ | 香川県綾歌郡綾川町枌所東字西山50 | 有機加工食品 | 372012003 |
 | サルボ両備株式会社 | A　他 | 香川県小豆郡土庄町字水ヶ浦3040-1　他 | 有機農産物 | 119-002 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/kagawa.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **OliveKagawa** — 香川県 — オリーブオイル認定製造事業者 (2025-03), <https://www.my-kagawa.jp/olive/feature/manufacturer/top>
+  - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 中田 (まめまめびーる) | ⚠ Shodoshima | Cerveza | JBA | — | la isla tiene dos municipios (小豆島町 y 土庄町); solo Facebook; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+**Ya integrado, no volver a proponer:** las 14 bodegas del 小豆島醤油協同組合 ya están en `kagawa.csv` como `Condimentos`, igual que Toyo Olive como `Aceite`. Cuatro de ellas —ヤマヒサ, タケサン, 金両, ヤマサン醤油— aparecen también en el padrón de aceite certificado de Kagawa: es **otro producto de un productor ya publicado**, no un alta.

@@ -70,3 +70,21 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 名水美人ファクトリー株式会社　岡山工場 | 名水美人ファクトリー株式会社　岡山第2工場　他 | 岡山県小田郡矢掛町中６８６－１　他 | 有機農産物 | SES-05012501 |
 | はやしま有機の郷 | 生産065-001-01号　他 | 岡山県都窪郡早島町早島3678-1　他 | 有機農産物 | 生産065号 |
 | 有限会社想庵 | 有限会社想庵　万富工場 | 岡山県岡山市瀬戸町万富314-2 | 有機加工食品 | MPJP1615 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/okayama.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 倉敷チーズ工房ハルパル | Kurashiki | Lácteos y quesos | ChFun | kurashiki-cheese.shopinfo.jp | revisado 2026-08-10: la web oficial propuesta devuelve 404 |
+| 多胡本家酒造場 (作州津山ビール) | Tsuyama | Cerveza | JBA | tsuyamabeer.co.jp | matriz de sake; comprobar duplicado; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 全工房 (吉備土手下麦酒) | Okayama | Cerveza | JBA | kibidote.jp | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| サッポロビール 岡山ワイナリー | Akaiwa | Vino | JWA | — | planta de grupo nacional; la ficha confirma la planta, pero no una identidad de producto local atribuible; revisado 2026-08-10: la ficha confirma una planta nacional, pero no una identidad de producto local atribuible |

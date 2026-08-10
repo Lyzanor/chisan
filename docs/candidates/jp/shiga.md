@@ -72,3 +72,15 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | （株）チェリオコーポレーション | （株）チェリオコーポレーション　滋賀工場 | 滋賀県東近江市鯰江町200-1 | 有機加工食品 |  |
 | (株）リスペクト | (株）リスペクト　他 | 滋賀県大津市仰木2-6-3　他 | 有機加工食品 | NB-16090502 |
 | （株）マルヨシ近江茶 | （株）マルヨシ近江茶 | 滋賀県甲賀市土山町大野2723 | 有機加工食品 | JM151218PR-1363-0 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/shiga.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

@@ -20,6 +20,14 @@ fichero identifica la asociación o fuente concreta usada.
 > discutible se conservan fechados en la nota de su prefectura; no deben
 > reinterpretarse como descartes definitivos en la siguiente pasada.
 
+> **Categorías infrarrepresentadas 2026-08-10 — revisión cerrada:** revisados los **453
+> candidatos** de las 47 prefecturas, con sake y shochu deliberadamente fuera. Se publicaron
+> **390 productores** con unidad productiva localizada y evidencia vigente; el catálogo pasó
+> de 1.118 a 1.508 filas. Los **63 casos retenidos** siguen en la nota de su prefectura con un
+> motivo individual: falta de fuente primaria actual, localización o contacto insuficientes,
+> datos contradictorios, unidad productiva en otra prefectura o dominio secuestrado. No son
+> descartes automáticos y no deben incorporarse sin resolver primero el motivo anotado.
+
 ## El gremio de bebida es la fuente que generaliza
 
 Para este barrido, **cada prefectura tiene un gremio de bebida alcohólica y

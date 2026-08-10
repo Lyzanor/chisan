@@ -70,3 +70,21 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 山崎　学 | 愛媛県今治市上浦町井口4765番地 | 愛媛県今治市上浦町井口4765番地 | 有機農産物 | 382021027 |
 | 株式会社　アール・シー・フードパック | （株）アール・シー・フードパック | 愛媛県西予市宇和町卯之町2丁目575番地 | 有機加工食品 | 38214200201 |
 | 二宮　裕基茂 | 愛媛県八幡浜市日土町ツバキ谷5-280-1　他 | 愛媛県八幡浜市日土町ツバキ谷5-280-1　他 | 有機農産物 | 382041004 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/shikoku/ehime.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
+- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 井上蒲鉾本舗 | ⚠ Uwajima | Pescado | propia | — | じゃこ天; confirmar municipio y web; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+| 田中蒲鉾本店 | ⚠ Uwajima | Pescado | propia | — | じゃこ天; confirmar municipio y web; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+| 河内屋 | ⚠ Uwajima | Pescado | propia | — | じゃこ天; confirmar municipio y web; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+| 野中蒲鉾 | ⚠ Uwajima | Pescado | propia | — | じゃこ天 de prensado manual; confirmar identidad; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+
+**Ya integrado, no volver a proponer:** 梅錦山川 ya está en `ehime.csv` como `Sake`.

@@ -128,3 +128,15 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 東　浩一 | 湖東町331　他 | 石川県小松市湖東町331　他 | 有機農産物 | JH100511FA-1112-0 |
 | 農家ふじた | 新2　他 | 石川県小松市木場町新43、44、45　 他 | 有機農産物 | 2010F-5 |
 | 株式会社スギヨファーム 代表取締役 杉野 哲也 | 圃場1 | 石川県七尾市能登島町上野３３ | 有機農産物 | 58 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/ishikawa.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **OnoShoyu** — 大野醤油醸造協業組合 — 組合案内, <https://www.oonomurasaki.jp/pages/3/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 小山屋醤油店 | Nanao | Condimentos | OnoShoyu | — | 相生町; sin dominio en la fuente; revisado 2026-08-10: el padrón oficial publica dos números de calle incompatibles para la misma identidad |

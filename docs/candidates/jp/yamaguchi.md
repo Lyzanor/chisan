@@ -69,3 +69,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社サンピット | 4　他 | 山口県熊毛郡平生町大字平生町546－2、546－4、546－6、546－7、551－33　他 | 有機農産物 | 19A-0003 |
 | 株式会社藤本コーポレーション | S1、S2（発生・収穫） | 山口県柳井市南浜３丁目１－１ | 有機農産物 | 農-0153 |
 | 農業クエスト | 6　他 | 山口県岩国市周東町祖生547-1　他 | 有機農産物 | J35A-2010 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/yamaguchi.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

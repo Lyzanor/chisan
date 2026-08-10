@@ -71,3 +71,15 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 有限会社北村製茶 | 圃場番号１ | 長崎県北松浦郡佐々町迎木場免４２５番地１８ | 有機農産物 | SES-04101902 |
 | 百笑会プラス | 1　他 | 長崎県東彼杵郡波佐見町村木郷1687,1689,1685　他 | 有機農産物 | 2305-A01 |
 | 雲仙農園 | 2　他 | 長崎県雲仙市吾妻町永中名永中道256番　他 | 有機農産物 | 42-01 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kyushu-okinawa/nagasaki.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

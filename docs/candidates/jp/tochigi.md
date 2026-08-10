@@ -66,3 +66,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 星野恵美子 | 1　他 | 栃木県那須塩原市二区町500-10　他 | 有機農産物 |  |
 | 株式会社東京フード | 株式会社東京フード | 栃木県佐野市赤坂町940-3 | 有機加工食品 | AFASSEQ-AP-160201 |
 | 手塚英史 | 手塚英史 | 栃木県宇都宮市下小倉町上原1068　他 | 有機農産物 | S-207 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kanto/tochigi.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| うしとらブルワリー | Shimotsuke | Cerveza | JBA | facebook.com/ushitorabrewery | sin dominio propio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

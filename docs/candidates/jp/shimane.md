@@ -69,3 +69,19 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 有限会社宝箱 | ②　他 | 島根県松江市大庭町1631-8,1631-9,1631-10,1631-11　他 | 有機農産物 | 10A-0003 |
 | さんべ食品工業株式会社 | さんべ食品工業株式会社 | 島根県大田市大田町大田イ403－5 | 有機加工食品 | 10J-0002 |
 | 高畑環境ファーム清水農園　清水溥万 | 1　他 | 島根県邑智郡美郷町高畑17-1（イ）　他 | 有機農産物 | 17A-0001 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chugoku/shimane.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 島根ビール | Matsue | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+| 石見麦酒 (石見酒造) | Gotsu | Cerveza | JBA | iwami-bakushu.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

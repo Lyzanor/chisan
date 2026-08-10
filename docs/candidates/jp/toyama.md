@@ -80,3 +80,17 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 株式会社匠美 | 株式会社 匠美 坂井沢豆乳工場 | 富山県中新川郡立山町坂井沢154-1 | 有機加工食品 | 21-077B |
 | 株式会社食養の杜とやま | 株式会社食養の杜とやま　射水工場 | 富山県射水市今開発195番地 | 有機加工食品 | B-23-0009 |
 | 株式会社森の環 | 株式会社森の環 | 富山県砺波市本小林6, 高岡市葦附1239-22, 射水市串田112-1 | 有機農産物 | 2223-801-00 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/toyama.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| 宇奈月ビール | Kurobe | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |

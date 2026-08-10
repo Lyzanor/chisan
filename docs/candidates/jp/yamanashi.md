@@ -81,3 +81,15 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 熊木剛彦 | 段差上 他 | 山梨県北杜市長坂町長坂下条字清水頭596-1 他 | 有機農産物 | J40-13-01 |
 | 富岡　丈明 | 富岡農園 | 山梨県北杜市小淵沢町松向時柳沢2571　他 | 有機農産物 | 14-003 |
 | まるた農場 | 菊原さん 他 | 山梨県北杜市高根町村山北割2218-1 他 | 有機農産物 | J40-14-01 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/chubu/yamanashi.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|

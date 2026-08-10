@@ -92,7 +92,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|
 | 株式会社　松音商会 | （株）松音商会　他 | 奈良県大和郡山市北郡山町63-2　他 | 有機加工食品 | JM010831PR-0426-0 |
 | 大和まごころ会 | 熊代敬三　1　他 | 奈良県五條市牧町2512　他 | 有機農産物 | JY110922FA-1163-0 |
-| 片上醤油 | 片上醤油 | 奈良県御所市森脇329 | 有機加工食品 | 03B-002 |
 | （有）山口農園 | ア他 | 奈良県宇陀市榛原大貝674　他 | 有機農産物 | ＪＹ001027FA-0062-0 |
 | 白銀オーガニック | 白銀オーガニックA 他 | 奈良県五條市西吉野町奥谷1897　他 | 有機加工食品 | 0702-01 |
 | 京都グレインシステム株式会社 | 京都グレインシステム（株）奈良工場 | 奈良県奈良市小倉町1224 | 有機加工食品 | 04B-001 |
@@ -110,3 +109,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 腰岡　大聖 | 露地Ａ　他 | 奈良県宇陀市大字陀東平尾４７３ | 有機農産物 | JK150311FA-1328-0 |
 | フジエダ珈琲株式会社 | フジエダ珈琲株式会社 | 奈良県大和郡山市大江町112－1 | 有機加工食品 | 16B-003、16C-002 |
 | 上久保淳一 | ほ場1 | 奈良県奈良市月ヶ瀬桃香野4096-3 | 有機農産物 | 29-07 |
+
+## Categorías infrarrepresentadas — pasada 2026-08-10
+
+- CSV destino: `data/csv/jp/kansai/nara.csv`.
+- Alcance: categorías con poca o ninguna fila en el catálogo japonés (queso, cerveza artesana, condimentos, aceite, conservas, fruta, dulces, vino). No toca `Sake` ni `Destilados y licores`.
+- Fuentes de esta tanda:
+  - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
+  - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
+  - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
+- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+
+| nombre (fuente) | municipio | categoría | fuente | web | notas |
+|---|---|---|---|---|---|
+| ラッテ・たかまつ | Katsuragi | Lácteos y quesos | ChFun | latte-takamatsu.com | revisado 2026-08-10: el dominio está secuestrado por contenido de juego y la guía no basta para verificar actividad actual |
+| 片上醤油 | ⚠ | Condimentos | Shokunin | — | el listado no publica municipio; revisado 2026-08-10: la ficha no publica municipio o contacto directo suficiente |
