@@ -27,24 +27,39 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-33 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+39 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+
+Reparto por categoría propuesta: `Aceite` 8, `Destilados y licores` 1.
 
 Fuentes de este lote:
 
+- Consorzio di Tutela Olio DOP Riviera Ligure — produttori — <https://www.oliorivieraligure.it/produttori/>
 - Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
+
+En 3 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
-### Sin producto declarado por el registro (33)
+| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+|---|---|---|---|---|
+| PIGATO BIO VIO | Albenga | `Aceite` | «DATA O DEGUSTAZIONE REGALA UNA GIFT CARD Menu principale Cantina Vini Olio extravergine Grappa di Pigato Agriturismo Appartamenti Prenotazioni Dintorn» | 335 65 46 917<br>info@biovio.it<br>[web](http://biovio.it) |
+| SOMMARIVA TRADIZIONE AGRICOLA | Albenga | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/559222 |
+| AZIENDA AGRICOLA MORRO FABIO | Andora | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/80079 |
+| COOP OLIVICOLA DI ARNASCO | Arnasco | `Aceite` | «Cooperativa Olivicola Arnasco Cooperativa Olivicola Arnasco Chi Siamo Il Frantoio Visita al Frantoio Museo dell’olivo e de» | 0182 76 11 78<br>info@coopolivicolarnasco.it<br>[web](http://coopolivicolarnasco.it) |
+| FRATELLI AMORETTI DI LORENZO | Laigueglia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/690005 |
+| OLEIFICIO POLLA NICOLO’ | Loano | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 019/668027 |
+| AZIENDA OLIVICOLA CANAIELLA | Savona | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 019/860190 |
+| AZIENDA AGRICOLA FRANTOIO GAGLIOLO SANDRO | Stellanello | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/668148 |
+| CA' DA BASURA | Ortovero | `Destilados y licores` | «, raffinati, delicati ma intensi e persistenti… SCHEDA TECNICA GRAPPE GRAPPA DI VERMENTINO GRAPPA DI PIGATO GRAPPA DI VERMENTINO Gusto morbido e ben e» | 339 12 66 776<br>info@durin.it<br>[web](http://durin.it) |
+
+### Sin producto declarado por el registro (30)
 
 El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
 
 | Candidato | Comune | Contacto |
 |---|---|---|
-| PIGATO BIO VIO | Albenga | 335 65 46 917<br>info@biovio.it |
 | TERRA INGAUNA | Albenga | 320 14 33 620<br>terraingauna@gmail.com |
 | FLORICOLTURA SCOTTO | Albisola Superiore | 019 48 29 47 |
-| COOP OLIVICOLA DI ARNASCO | Arnasco | 0182 76 11 78<br>info@coopolivicolarnasco.it |
 | VENTO D'ARGENTO (Le Terre del Barone) | Borghetto Santo Spirito | 0182 970272<br>info@leterredelbarone.itÿ |
 | VIVAI MICHELINI | Borghetto Santo Spirito | 0182 94 06 00<br>info@michelinivivai.it |
 | ALLEVAMENTO DELLE ACQUE | Cairo Montenotte | 335 59 11 375<br>scuderiaponteromano@gmail.com |
@@ -64,7 +79,6 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | LO SCOIATTOLO | Giusvalla | 019 70 72 03<br>agrloscoiattolo@tiscali.it |
 | MUNARIN CATERINA | Mioglia | 019 73 22 60<br>agriturismomunarin@gmail.com |
 | ASPETTANDO IL SOLE | Orco Feglino | 019 69 91 46<br>aspettando.ilsole@hotmail.it |
-| CA' DA BASURA | Ortovero | 339 12 66 776<br>info@durin.it |
 | CA' DI TRINCIA | Pietra Ligure | 019 61 55 91<br>info@caditrincia.it |
 | IL CORBEZZOLO | Quiliano | 349 32 33 588<br>masciamatteo@yahoo.it |
 | LA CA' DELL'ALPE | Rialto | 019 68 80 30<br>agriturismofinaleligure@gmail.com |

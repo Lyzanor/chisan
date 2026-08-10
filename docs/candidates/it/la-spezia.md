@@ -26,22 +26,28 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-17 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+19 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 1.
+Reparto por categoría propuesta: `Aceite` 2, `Cerveza` 1, `Fruta y verdura` 1.
 
 Fuentes de este lote:
 
+- Consorzio di Tutela Olio DOP Riviera Ligure — produttori — <https://www.oliorivieraligure.it/produttori/>
 - Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
 - Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+En 1 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
+| AZIENDA AGRICOLA FRANCESCO CURRARINO | Levanto | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 340/4639038 |
+| FRANTOIO E MOLINO AMBROSINI ROBERTO | Sarzana | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0187/620453 |
 | Taverna del Vara | Maissana | `Cerveza` | birra artigianale | [web](https://www.tavernadelvara.it/) |
+| LA ROSA CANINA | Lerici | `Fruta y verdura` | «piacere del riposo, del cibo genuino e curato. Siamo �bio�: i nostri ortaggi crescono con le semplici cure manuali, gli animali allevati in azienda ma» | 0187 96 67 19<br>info@larosacanina.net<br>[web](http://larosacanina.net) |
 
-### Sin producto declarado por el registro (16)
+### Sin producto declarado por el registro (15)
 
 El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
 
@@ -55,7 +61,6 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | IL FILO DI PAGLIA | Carro | 349 78 68 625<br>agriturismo.ilfilodipaglia@gmail.com |
 | IL CARPANEDO | La Spezia | 347 17 39 488<br>fattoriadelcarpanedo@gmail.com |
 | TAGGIASCO ENRICO | La Spezia | 0187 50 13 62<br>sarabottinelli@hotmail.it |
-| LA ROSA CANINA | Lerici | 0187 96 67 19<br>info@larosacanina.net |
 | DEGLI OLIVI | Levanto | aziendaagricoladegliolivi@cdh.it |
 | MILLEFIORI | Levanto | 0187 89 98 06<br>agrimillefiori@virgilio.it |
 | CA' MARCANTONIO | Maissana | 329 39 24 199<br>info@camarcantonio.it |

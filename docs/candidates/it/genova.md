@@ -26,23 +26,41 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-45 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+57 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 2.
+Reparto por categoría propuesta: `Aceite` 13, `Cerveza` 2, `Fruta y verdura` 1, `Lácteos y quesos` 1.
 
 Fuentes de este lote:
 
+- Consorzio di Tutela Olio DOP Riviera Ligure — produttori — <https://www.oliorivieraligure.it/produttori/>
 - Regione Liguria — Fattorie Didattiche (open data geoportale) — <https://dati.regione.liguria.it/dataset/fattorie-didattiche>
 - Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+
+En 3 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
+| AZIENDA AGRICOLA SOLARI MASSIMO | Chiavari | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/382036 |
+| BARBIERI SERGIO DI BARBIERI PIERO | Chiavari | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185308665 |
+| LA FAVOLA DELLA MIGNOLA DI MAURA GRIMALDI – L’OLIVETO DI MOZART | Lavagna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 335/7509920 |
+| ALESSIO CASARETTO | Leivi | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 348/5142772 |
+| COOPERATIVA AGRICOLA RURALE ISOLA DI BORGONOVO | Mezzanego | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 349/0063440 |
+| AZIENDA AGRICOLA TERRE VERAE | Neirone | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 348/3198617 |
+| AZIENDA AGRICOLA ALEPPO | Rapallo | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | — |
+| AGRICOLA SANTA BARBARA SS | Santa Margherita Ligure | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/280413 |
+| AZIENDA AGRICOLA ADRIANO CASAZZA | Santa Margherita Ligure | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/281740 |
+| LUCCHI E GUASTALLI SRL | Santo Stefano Magra | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0187/633329 |
+| AZIENDA AGRICOLA MUZIO ALDO | Sestri Levante | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/457135 |
+| OLIVICOLTORI SESTRESI | Sestri Levante | `Aceite` | «Olivicoltori Sestresi Olivicoltori Sestresi --> --> Azienda Contatti --> E-Commerce +39.0185.44341 English -->» | 0185 44 341<br>amministrazione@olivicoltori.net<br>[web](http://olivicoltori.net) |
+| TERRAZZE BACIGALUPO DI BRAGOLI SANDRO | Tribogna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 349/3516563 |
 | Birrificio Exuvia | Campo Ligure | `Cerveza` | birra artigianale | [web](https://birrificioexuvia.it/) |
 | Maltus Faber | Genova | `Cerveza` | birra artigianale | [web](https://www.maltusfaber.com/) |
+| VALDOLIVO | Cogoleto | `Fruta y verdura` | «terna ci permette di mantenere alti gli standard... Leggi di più News Ortaggi di stagione biologici certificati in pronta consegna Continuano le conse» | 010 91 88 130<br>info@agriturismovaldolivo.it<br>[web](http://agriturismovaldolivo.it) |
+| MONTEROSSO | Rossiglione | `Lácteos y quesos` | «etto "Gustosi per natura" del Parco del Beigua Chi desidera gustare i nostri formaggi e le prelibatezze delle aziende che collaborano con noi può comp» | 348 54 88 927<br>info@agriturismomonterosso.it<br>[web](http://agriturismomonterosso.it) |
 
-### Sin producto declarado por el registro (43)
+### Sin producto declarado por el registro (40)
 
 El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
 
@@ -64,7 +82,6 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | SILVERADO | Castiglione Chiavarese | 333 96 76 940<br>info@fattoriasilverado.it |
 | PILAN | Ceranesi | 338 58 32 453<br>maurovigo@alice.it |
 | VILLA LEVATA | Ceranesi | 010 78 41 84<br>lalevata_parodi@yahoo.it |
-| VALDOLIVO | Cogoleto | 010 91 88 130<br>info@agriturismovaldolivo.it |
 | LE PECORE NERE | Crocefieschi | marco@lepecorenere.net |
 | J.B.RANCH | Genova | 334 7183785<br>info@jbranch.eu |
 | LA VECCHIA FATTORIA | Genova | 010 34 50 827<br>XX |
@@ -80,7 +97,6 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | SOGNANDO VILLA EDERA | Rapallo | 333 78 54 717<br>info@sognandovillaedera.com |
 | ANTONIALI GIANFRACO | Ronco Scrivia | 010 96 51 356<br>gianfrancoantoniali@libero.it |
 | LA PATARINA | Rossiglione | 010 92 55 65<br>subbrero.daniela@gmail.com |
-| MONTEROSSO | Rossiglione | 348 54 88 927<br>info@agriturismomonterosso.it |
 | VALLE CHIAPPELLA | San Colombano Certenoli | 0185 34 58 88<br>chiappel@tin.it |
 | LA FATTORIA DI MARTA | Sant'Olcese | 010 71 61 81<br>lafattoriadimarta@alice.it |
 | LA MORONA | Sant'Olcese | 010 70 92 442<br>info@lamorona.genova.it |
@@ -88,6 +104,5 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | LA CASA SUL POGGIO | Santo Stefano d'Aveto | 0185 88 018<br>info@lacasasulpoggio.it |
 | AUTRA | Savignone | 010 96 90 992<br>autra@hotmail.it |
 | IL GIARDINO DELLE DALIE | Savignone | 339 58 37 572<br>dalieforever@hotmail.com |
-| OLIVICOLTORI SESTRESI | Sestri Levante | 0185 44 341<br>amministrazione@olivicoltori.net |
 | LA FATTORIA NEL BOSCO | Tiglieto | 010 92 95 45<br>info@lafattorianelbosco.com |
 | PENSA | Torriglia | 347 04 01 287<br>agricolapensa@libero.it |

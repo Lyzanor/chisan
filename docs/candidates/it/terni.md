@@ -29,21 +29,25 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 17 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Cerveza` 2.
+Reparto por categoría propuesta: `Cerveza` 2, `Aceite` 1, `Fruta y verdura` 1.
 
 Fuentes de este lote:
 
 - Regione Umbria — elenco regionale delle fattorie didattiche (open data) — <https://dati.regione.umbria.it/dataset/elenco-fattorie-didattiche>
 - Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
+En 2 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
+
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
+| SANTA MARIA | San Venanzo | `Aceite` | «l'Agriturismo Santa Maria Attiva/disattiva navigazione Home Il nostro Olio extra vergine d’oliva La nostra cucina Chi Siamo La Nostra Storia L’Azienda» | info@agrisantamaria.it<br>[web](https://www.agrisantamaria.it) |
 | Birrificio Amerino | Amelia | `Cerveza` | birra artigianale | [web](https://www.birrificioamerino.it/) |
 | BIRRALFINA | Orvieto | `Cerveza` | birra artigianale | [web](https://birralfina.com/) |
+| FATTORIA DIDATTICA ' LA COLLINA INCANTATA' | Narni | `Fruta y verdura` | «e colline umbre, valorizza i prodotti locali della tenuta Giovannini: ortaggi, carni e vini. La cucina propone piatti tradizionali umbri rivisitati, c» | info@fattoriacollinaincantata.com<br>[web](https://www.fattoriacollinaincantata.com) |
 
-### Sin producto declarado por el registro (15)
+### Sin producto declarado por el registro (13)
 
 El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
 
@@ -57,9 +61,7 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | ETIC ITALIA SOCIETﾷ AGRICOLA A.R.L. | Guardea | scrivi@per.umbria.it<br>[web](https://www.per.umbria.it) |
 | AZ. AGR. FONTANAPINTA | Narni | carissimibruno@gmail.com<br>[web](https://www.pasticciandonarni.it) |
 | AZIENDA IL COLLICELLO SOC. SEMPLICE AGRICOLA | Narni | info@ilcollicello.com<br>[web](https://www.ilcollicello.com) |
-| FATTORIA DIDATTICA ' LA COLLINA INCANTATA' | Narni | info@fattoriacollinaincantata.com<br>[web](https://www.fattoriacollinaincantata.com) |
 | AZ.AGR.BEFANI KATIA | San Gemini | aziendaagricolabefanikatia@virgilio.it |
-| SANTA MARIA | San Venanzo | info@agrisantamaria.it<br>[web](https://www.agrisantamaria.it) |
 | SOCIETﾷ AGRICOLA FORESTALE SAN VENANZO | San Venanzo | claudiadegasperi@gmail.com |
 | AZ AGR. PEGORARO LORENZO | Terni | danilofratini@libero.it |
 | FATTORIA DIDATTICA LA MELA ROSSA 2003 | Terni | lamelarossa@alice.it*<br>[web](https://www.lamelarossa.net) |
