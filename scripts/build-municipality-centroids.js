@@ -48,6 +48,22 @@
 //     outnumber the current ones several times over. Labels in nl and fy: a
 //     Frisian municipality is officially named in Frisian (Súdwest-Fryslân,
 //     Tytsjerksteradiel) and a Dutch source will still write the Dutch form.
+//   - United Kingdom: the one country with no "municipality of" class to ask
+//     for. Its local-government units are counties, districts and councils,
+//     none of which a producer address names, and the settlement layer below
+//     them is classified differently in each nation: England has civil
+//     parishes (which stop at unparished towns), Scotland has none at all, and
+//     what an address actually carries is a city, town, village or hamlet. So
+//     the catalog is the union of those classes (`classes`), asked for one at
+//     a time and restricted by country (P17 = Q145). Each class is a direct
+//     P31 match: the transitive P31/P279* walk the other countries use returns
+//     HTTP 502 here, because it has to explore the whole settlement subtree of
+//     a country with ~40.000 of them. Labels in en / cy / gd, so a Welsh or
+//     Gaelic address (Y Fenni, Caernarfon) resolves as well as the English
+//     spelling. Marked `dropAmbiguous` like France and Germany, and for a
+//     stronger reason: English village names repeat relentlessly (Newton,
+//     Sutton, Weston, Whitchurch), so an arbitrary winner would turn correct
+//     rows into blocking geo errors.
 //
 // The "mul" label
 // - Wikidata's multilingual label holds the name of an entity spelled the same
@@ -86,6 +102,16 @@
 //                                                         already committed, add
 //                                                         the ones the source grew
 //   node scripts/build-municipality-centroids.js --refresh    take the rebuild as is
+//   node scripts/build-municipality-centroids.js --only gb   rebuild one country,
+//                                                         leave every other
+//                                                         catalog exactly as
+//                                                         committed
+//
+// - Rebuilding every country in one run means ~15 requests to an endpoint that
+//   rate-limits and truncates bodies under load; one failure past the retries
+//   loses the whole run. When the reason to re-run concerns a single country —
+//   opening one, or filling a gap its rows exposed — `--only <code>` is both
+//   faster and the smaller diff.
 //
 // Notes
 // - Self-contained: uses native fetch (Node 18+), no extra deps.
@@ -187,18 +213,35 @@ const COUNTRIES = [
     extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
     dropAmbiguous: true,
   },
+  {
+    slug: "united-kingdom",
+    code: "gb",
+    label: "United Kingdom",
+    classes: ["wd:Q515", "wd:Q3957", "wd:Q1115575", "wd:Q532", "wd:Q5084", "wd:Q486972"],
+    countryClass: "wd:Q145",
+    langs: ["mul", "en", "cy", "gd"],
+    canonicalLang: "en",
+    extraFilter: "",
+    dropAmbiguous: true,
+  },
 ];
 
-function buildQueries(country) {
+// `rootClass` walks a subclass tree; `classes` asks for a list of exact types
+// instead, one request each. A country uses one or the other, never both.
+function buildQueries(country, cls) {
+  const type = cls
+    ? `wdt:P31 ${cls};
+        wdt:P17 ${country.countryClass};`
+    : `wdt:P31/wdt:P279* ${country.rootClass};`;
   return {
     labels: `SELECT ?item ?label ?coord WHERE {
-  ?item wdt:P31/wdt:P279* ${country.rootClass};
+  ?item ${type}
         wdt:P625 ?coord.
 ${country.extraFilter}  ?item rdfs:label ?label.
   FILTER(LANG(?label) IN (${langFilter(country.langs)})).
 }`,
     alt: `SELECT ?item ?alt WHERE {
-  ?item wdt:P31/wdt:P279* ${country.rootClass};
+  ?item ${type}
         wdt:P625 ?coord;
         skos:altLabel ?alt.
 ${country.extraFilter}  FILTER(LANG(?alt) IN (${langFilter(country.langs)})).
@@ -255,6 +298,24 @@ function normalize(value) {
     .trim();
 }
 
+// Two items under one name are only ambiguous if they are two different places.
+// Wikidata routinely holds a town and its civil parish, or a settlement and its
+// community, as separate items carrying the same label — most of what looks like
+// a homonym in the United Kingdom is that. Dropping the key over it would cost
+// the gate a name it can resolve perfectly well, and anything this close is the
+// same place for the purpose of a 15 km warning band anyway.
+const SAME_PLACE_KM = 10;
+
+function distanceKm(a, b) {
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLon = toRad(b.lon - a.lon);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLon / 2) ** 2;
+  return 6371 * 2 * Math.asin(Math.sqrt(h));
+}
+
 function parseWkt(wkt) {
   const m = wkt.match(/Point\(\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*\)/);
   if (!m) return null;
@@ -301,17 +362,26 @@ async function collectFromGeoApi(country) {
 
 async function collectItems(country) {
   if (country.endpoint) return collectFromGeoApi(country);
-  const queries = buildQueries(country);
 
-  console.log(`[${country.label}] fetching labels from Wikidata...`);
+  const items = new Map(); // qid -> { coord, labels: Set, canonical }
+  for (const cls of country.classes ?? [null]) {
+    await collectQueryPair(country, cls, items);
+  }
+  return items;
+}
+
+async function collectQueryPair(country, cls, items) {
+  const queries = buildQueries(country, cls);
+  const tag = cls ? `${country.label} ${cls}` : country.label;
+
+  console.log(`[${tag}] fetching labels from Wikidata...`);
   const labelsRaw = await withRetry(() => fetchSparql(queries.labels));
   console.log(`  ${labelsRaw.results.bindings.length} label bindings`);
 
-  console.log(`[${country.label}] fetching altLabels from Wikidata...`);
+  console.log(`[${tag}] fetching altLabels from Wikidata...`);
   const altRaw = await withRetry(() => fetchSparql(queries.alt));
   console.log(`  ${altRaw.results.bindings.length} altLabel bindings`);
 
-  const items = new Map(); // qid -> { coord, labels: Set, canonical }
   for (const b of labelsRaw.results.bindings) {
     const qid = b.item.value.split("/").pop();
     const coord = parseWkt(b.coord.value);
@@ -329,8 +399,6 @@ async function collectItems(country) {
     const entry = items.get(qid);
     if (entry) entry.labels.add(b.alt.value);
   }
-
-  return items;
 }
 
 async function main() {
@@ -338,10 +406,16 @@ async function main() {
   const path = await import("node:path");
 
   const refresh = process.argv.includes("--refresh");
+  const onlyFlag = process.argv.indexOf("--only");
+  const only = onlyFlag === -1 ? null : process.argv[onlyFlag + 1] || null;
+  if (only && !COUNTRIES.some((country) => country.code === only)) {
+    throw new Error(`--only ${only}: no country with that code in data/csv`);
+  }
   const lookup = {};
   const summaries = [];
 
   for (const country of COUNTRIES) {
+    if (only && country.code !== only) continue;
     const items = await collectItems(country);
     const catalog = {};
     const owners = new Map(); // key -> qid, inside this country only
@@ -356,7 +430,11 @@ async function main() {
         const owner = owners.get(key);
         if (owner && owner !== qid) {
           collisions++;
-          if (country.dropAmbiguous && catalog[key]) {
+          if (
+            country.dropAmbiguous &&
+            catalog[key] &&
+            distanceKm(catalog[key], entry.coord) > SAME_PLACE_KM
+          ) {
             delete catalog[key];
             keys--;
             dropped++;
@@ -396,7 +474,9 @@ async function main() {
   let kept = 0;
   for (const country of COUNTRIES) {
     const base = previous[country.code] ?? {};
-    const built = lookup[country.code];
+    // A country skipped by --only has no rebuild, so it keeps exactly what the
+    // committed file holds.
+    const built = lookup[country.code] ?? {};
     merged[country.code] = { ...built, ...base };
     preserved += Object.keys(base).filter(
       (key) => key in built && JSON.stringify(base[key]) !== JSON.stringify(built[key]),

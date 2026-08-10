@@ -1647,5 +1647,55 @@
       "lon": 6.089382,
       "label": "Bergen (Limburg)"
     }
+  },
+  "gb": {
+    "limavady": [
+      {
+        "lat": 55.053,
+        "lon": -6.946,
+        "label": "Limavady",
+        "region": "northern-ireland"
+      }
+    ],
+    "newmarket": [
+      {
+        "lat": 52.2436,
+        "lon": 0.4053,
+        "label": "Newmarket (Suffolk)",
+        "region": "east-of-england"
+      }
+    ],
+    "newchurch": [
+      {
+        "lat": 50.66454,
+        "lon": -1.20834,
+        "label": "Newchurch (Isle of Wight)",
+        "region": "south-east"
+      }
+    ],
+    "doddington": [
+      {
+        "lat": 55.5865,
+        "lon": -2.0049,
+        "label": "Doddington (Northumberland)",
+        "region": "north-east"
+      }
+    ],
+    "stewarton": [
+      {
+        "lat": 55.68,
+        "lon": -4.515,
+        "label": "Stewarton (East Ayrshire)",
+        "region": "scotland"
+      }
+    ],
+    "batcombe": [
+      {
+        "lat": 51.1538,
+        "lon": -2.4354,
+        "label": "Batcombe (Somerset)",
+        "region": "south-west"
+      }
+    ]
   }
 }
