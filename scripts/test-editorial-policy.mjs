@@ -17,6 +17,7 @@ const REQUIRED_DIMENSIONS = new Set([
   "freshness",
   "geography",
   "candidate-lifecycle",
+  "category-assignment",
 ]);
 const CASE_KEYS = new Set([
   "id",
@@ -38,6 +39,7 @@ const FACT_KEYS = new Set([
   "municipalityEvidence",
   "onlineSalesEvidence",
   "onlineSalesChannels",
+  "categoryAssignment",
 ]);
 
 function unknownKeys(value, allowed) {
@@ -46,7 +48,7 @@ function unknownKeys(value, allowed) {
 
 function main() {
   const suite = JSON.parse(fs.readFileSync(CASES_PATH, "utf8"));
-  assert.equal(suite.version, 2, "evaluation suite version must be 2");
+  assert.equal(suite.version, 3, "evaluation suite version must be 3");
   assert.ok(Array.isArray(suite.cases), "evaluation suite requires cases");
   assert.ok(suite.cases.length > 0, "evaluation suite cannot be empty");
 

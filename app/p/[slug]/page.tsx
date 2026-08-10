@@ -35,6 +35,16 @@ function buildPhoneHref(phone: string): string {
   return phone ? `tel:${phone}` : "";
 }
 
+function formatFieldValue(key: string, value: string): string {
+  if (!value) {
+    return "—";
+  }
+
+  return key.toLocaleLowerCase() === "categorias adicionales"
+    ? value.split("|").join(", ")
+    : value;
+}
+
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const query = await searchParams;
@@ -57,7 +67,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
 
   return {
     title: producer.name,
-    description: `${producer.city} · ${producer.category}`,
+    description: `${producer.city} · ${producer.categories.join(" · ")}`,
   };
 }
 
@@ -129,7 +139,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
             <p className="detail-eyebrow">Producer profile</p>
             <h1>{producer.name}</h1>
             <p className="detail-subtitle">
-              {producer.city} · {producer.category}
+              {producer.city} · {producer.categories.join(" · ")}
               {subcategory ? ` · ${subcategory}` : ""}
             </p>
             <div className="detail-links">
@@ -184,7 +194,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
                 {Object.entries(producer.fields).map(([key, value]) => (
                   <tr key={key}>
                     <td>{getFieldLabel(key)}</td>
-                    <td>{value || "—"}</td>
+                    <td>{formatFieldValue(key, value)}</td>
                   </tr>
                 ))}
               </tbody>

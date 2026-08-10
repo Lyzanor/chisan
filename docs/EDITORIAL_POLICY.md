@@ -64,6 +64,38 @@ admission claims are otherwise sufficient. Copy only the fields it publishes,
 leave `web` empty when no official site is established, and keep
 `Venta online=no comprobado` unless remote sales are separately proven.
 
+## Category assignment
+
+Categories describe material output made by the qualifying productive unit,
+not every product associated with its brand, shop, restaurant or visitor
+offer. Assign them only from evidence that supports the relevant production.
+
+`categoria` is the required primary category: the best single description of
+the unit's defining or most prominent producer activity. `categorias
+adicionales` records other distinct, material product lines made by that same
+unit. For example, a kura that makes both sake and beer may use `Sake` as its
+primary category and `Cerveza` as an additional one; a mixed farm that produces
+both dairy and eggs may use either as primary according to its public identity
+and record the other as additional.
+
+Apply these boundaries:
+
+- Keep one row, slug, location and evidence identity for the productive unit;
+  never duplicate it by category.
+- A separately sold product line can support an additional category. A flavour,
+  ingredient, raw input, by-product, tasting-menu item or occasional workshop
+  output does not do so by itself.
+- Products merely resold or stocked alongside the producer's own output do not
+  qualify. A farm shop is not categorised by its third-party assortment.
+- `productos estrella` and `descripcion` may corroborate the decision but are
+  not parsed as taxonomy. Confirm each category from a suitable source rather
+  than inferring it mechanically from free text.
+- Use `Otros` only when no registered category fits a qualifying output, not as
+  a substitute for recording several known categories.
+
+The exact representation, separators and controlled values are defined in
+`docs/CSV_CONTRACT.md`.
+
 ## Decision order
 
 Resolve exclusions before assigning a verification level. `purge` applies to a

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Exact 20-column header shared by all area CSVs, in this order.
+// Exact 21-column header shared by all area CSVs, in this order.
 // Documented in docs/CSV_CONTRACT.md, section "Canonical header".
 const CANONICAL_HEADER = [
   "slug",
@@ -23,6 +23,7 @@ const CANONICAL_HEADER = [
   "verificacion",
   "Venta online",
   "Canal de venta",
+  "categorias adicionales",
 ];
 
 const DESCRIPTION_MIN_LENGTH = 30;
@@ -49,6 +50,8 @@ const SALES_CHANNEL_VALUES = new Set([
 ]);
 const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
+const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
+const CATEGORY_SEPARATOR = "|";
 const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
 // different municipio: a blocking error (wrong lat/lon or wrong municipio).
@@ -209,6 +212,18 @@ function categoryStem(value) {
     .split(" ")
     .map((word) => word.replace(/s$/, ""))
     .join(" ");
+}
+
+function readAdditionalCategories(value) {
+  const raw = cleanCell(value);
+  return raw ? raw.split(CATEGORY_SEPARATOR).map((token) => token.trim()) : [];
+}
+
+function categoryReplacement(category) {
+  return (
+    RETIRED_CATEGORIES.get(category) ??
+    PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category))
+  );
 }
 
 function slugifySegment(value) {
@@ -793,9 +808,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
     if (category && !VALID_CATEGORIES.has(category)) {
       // Naming the replacement matters more than the rejection: most of these
       // are a retired label typed again, not a new one being proposed.
-      const replacement =
-        RETIRED_CATEGORIES.get(category) ??
-        PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
+      const replacement = categoryReplacement(category);
       push(
         "error",
         line,
@@ -805,6 +818,57 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
           ? `categoria '${category}' was retired; use '${replacement}'`
           : `categoria '${category}' is not a valid category`,
       );
+    }
+
+    const additionalCategories = readAdditionalCategories(
+      fields[ADDITIONAL_CATEGORIES_COLUMN],
+    );
+    const seenAdditionalCategories = new Set();
+    for (const additionalCategory of additionalCategories) {
+      if (!additionalCategory) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${ADDITIONAL_CATEGORIES_COLUMN} contains an empty token; join categories with a single '${CATEGORY_SEPARATOR}'`,
+        );
+        continue;
+      }
+
+      if (additionalCategory === category) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${ADDITIONAL_CATEGORIES_COLUMN} repeats primary categoria '${category}'`,
+        );
+      }
+
+      if (seenAdditionalCategories.has(additionalCategory)) {
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          `${ADDITIONAL_CATEGORIES_COLUMN} repeats '${additionalCategory}'`,
+        );
+      }
+      seenAdditionalCategories.add(additionalCategory);
+
+      if (!VALID_CATEGORIES.has(additionalCategory)) {
+        const replacement = categoryReplacement(additionalCategory);
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          replacement
+            ? `${ADDITIONAL_CATEGORIES_COLUMN} '${additionalCategory}' was retired; use '${replacement}'`
+            : `${ADDITIONAL_CATEGORIES_COLUMN} '${additionalCategory}' is not a valid category`,
+        );
+      }
     }
 
     const phoneRaw = cleanCell(fields.telefono);
@@ -844,6 +908,9 @@ function runQualityAudit({ rows, push, centroids, scope }) {
     const name = cleanCell(fields.nombre);
     const city = cleanCell(fields.municipio);
     const category = cleanCell(fields.categoria);
+    const additionalCategories = readAdditionalCategories(
+      fields[ADDITIONAL_CATEGORIES_COLUMN],
+    ).filter(Boolean);
     const description = cleanCell(fields.descripcion);
     const address = cleanCell(fields.direccion);
     const phone = cleanCell(fields.telefono);
@@ -884,6 +951,32 @@ function runQualityAudit({ rows, push, centroids, scope }) {
           id,
           slug,
           `categoria '${category}' was retired; reassign to '${replacesRetired}' or argue the label back into data/reference/categories.json`,
+        );
+      }
+    }
+
+    for (const additionalCategory of additionalCategories) {
+      const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(
+        normalizeSearch(additionalCategory),
+      );
+      if (preferredCategory && additionalCategory !== preferredCategory) {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          `${ADDITIONAL_CATEGORIES_COLUMN} should use preferred label '${preferredCategory}' instead of '${additionalCategory}'`,
+        );
+      }
+
+      const replacesRetired = RETIRED_CATEGORIES.get(additionalCategory);
+      if (replacesRetired && VALID_CATEGORIES.has(additionalCategory)) {
+        push(
+          "warning",
+          line,
+          id,
+          slug,
+          `${ADDITIONAL_CATEGORIES_COLUMN} '${additionalCategory}' was retired; reassign to '${replacesRetired}' or argue the label back into data/reference/categories.json`,
         );
       }
     }

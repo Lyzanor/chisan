@@ -1,5 +1,5 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-antico-forno-a-legna-non-solo-pane,Antico Forno a Legna Non Solo Pane,Fondi,Pan y cereal,,,,,,,,,,,41.361199,13.430455,,pendiente,no comprobado,
-forno-buon-gusto,Forno Buon Gusto,Latina,Pan y cereal,,,,,,,,,,,41.452020,12.873062,,pendiente,no comprobado,
-forno-83,Forno 83,Minturno,Pan y cereal,,,,,,,,,,,41.253733,13.719129,,pendiente,no comprobado,
-cantina-porta-nova,Cantina Porta Nova,Terracina,Vino,,,,,,,,,,,41.292359,13.249056,,pendiente,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+antico-forno-a-legna-non-solo-pane,Antico Forno a Legna Non Solo Pane,Fondi,Pan y cereal,,,,,,,,,,,41.361199,13.430455,,pendiente,no comprobado,,
+forno-buon-gusto,Forno Buon Gusto,Latina,Pan y cereal,,,,,,,,,,,41.452020,12.873062,,pendiente,no comprobado,,
+forno-83,Forno 83,Minturno,Pan y cereal,,,,,,,,,,,41.253733,13.719129,,pendiente,no comprobado,,
+cantina-porta-nova,Cantina Porta Nova,Terracina,Vino,,,,,,,,,,,41.292359,13.249056,,pendiente,no comprobado,,

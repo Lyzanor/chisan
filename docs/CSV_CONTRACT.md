@@ -42,10 +42,11 @@ data/csv/<country>/<region>/<area>.csv
 
 ## Canonical header
 
-Every area CSV has exactly these 20 columns in this order:
+Every area CSV has exactly these 21 columns in this order. New columns are
+appended so existing field positions remain stable:
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
 ```
 
 All columns are physically present in every file. “Optional” below means that a
@@ -79,6 +80,7 @@ whitespace.
 | `verificacion` | required | Exact token: `pendiente`, `parcial` or `verificado`. |
 | `Venta online` | required | Exact token: `sí`, `no` or `no comprobado`. |
 | `Canal de venta` | conditional | Zero or more allowed channel tokens joined with `|`; only when `Venta online=sí`. |
+| `categorias adicionales` | optional | Zero or more exact category tokens joined with `|`; each represents another material product line of the same productive unit. |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -116,7 +118,8 @@ remain while they are investigated or purged.
   a legal name only when no distinct public identity exists; omit legal suffixes
   unless they are part of the public name.
 - `productos estrella` contains only concrete confirmed outputs. Do not repeat
-  `categoria`, invent representative products or turn it into prose.
+  `categoria` or `categorias adicionales`, invent representative products or
+  turn it into prose.
 - `descripcion` states what this producer makes or does and may add supported
   place, method or history. Exclude promotional claims, search text, citations,
   source commentary and shared templates.
@@ -128,7 +131,11 @@ remain while they are investigated or purged.
 `data/reference/categories.json` is the machine-readable authority:
 
 - `categories` is the exact allowed set. `categoria` contains one value, not a
-  list; choose the best primary fit and use `productos estrella` for detail.
+  list, and identifies the producer's primary fit.
+- `categorias adicionales` is optional. It contains exact values from the same
+  registry joined with `|`, for example `Cerveza|Destilados y licores`. Empty
+  tokens, duplicates, and repetition of the primary `categoria` are blocking.
+  The order carries no ranking or evidentiary meaning.
 - `preferredAliases` identifies non-canonical wording and produces a quality
   warning.
 - `retiredCategories` records replacements. A retired value no longer present
@@ -138,6 +145,23 @@ remain while they are investigated or purged.
 Categories are shared catalog identifiers and are not translated per country.
 Add one only for a durable producer type that cannot be represented by the
 existing taxonomy; update the registry, UI mapping and tests together.
+
+One producer remains one row even when it has several categories. Category
+filters match the union of `categoria` and `categorias adicionales`, while
+`categoria` remains the default category for compact presentation. The public
+`category` URL parameter stays singular because each filter selects one facet.
+Never duplicate a row to make it appear in another category, and never derive
+additional categories automatically from free text in `productos estrella` or
+`descripcion`.
+
+Assign an additional category only when suitable public evidence establishes a
+material product line made by the same qualifying productive unit. Resale,
+ingredients, occasional hospitality output, and a product merely stocked in a
+farm shop do not qualify. `docs/EDITORIAL_POLICY.md` owns the decision rule.
+
+CSV column names are stable schema identifiers and are not translated per
+country. Their historical language is independent of the language used for
+editor-authored prose.
 
 ## Verification and sales states
 
@@ -235,7 +259,8 @@ live in `AGENTS.md`.
 
 `npx pnpm check:csv` blocks publication for physical-schema errors, missing core
 values, invalid controlled values or formats, duplicate area-local slugs,
-incoherent field combinations and geographic mismatches above `100 km`.
+invalid primary or additional categories, incoherent field combinations and
+geographic mismatches above `100 km`.
 
 `npx pnpm check:csv:data-quality` is an advisory defect worklist. It reports
 probable social-link errors, duplicate `nombre + municipio`, duplicated long

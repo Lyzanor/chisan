@@ -12,6 +12,8 @@ export type ProducerCsvRow = {
   name: string;
   city: string;
   category: string;
+  additionalCategories: string[];
+  categories: string[];
   featuredProducts: string;
   imageSrc: string;
   latitude: number | null;
@@ -25,6 +27,7 @@ export type ProducerMapPoint = {
   name: string;
   city: string;
   category: string;
+  categories: string[];
   latitude: number;
   longitude: number;
 };
@@ -256,6 +259,8 @@ export function listCountrySlugs(): string[] {
 const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 const ONLINE_SALES_COLUMN = "Venta online";
 const DEFAULT_ONLINE_SALES_VALUE = "no comprobado";
+const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
+const CATEGORY_SEPARATOR = "|";
 
 function cleanCell(value: string | undefined): string {
   return (value ?? "").replace(/\s+/g, " ").trim();
@@ -292,6 +297,22 @@ function readSlug(fields: Record<string, string>, name: string, city: string, id
 
 function readFeaturedProducts(fields: Record<string, string>): string {
   return fields["productos estrella"] || fields.subcategoria || "";
+}
+
+function readAdditionalCategories(fields: Record<string, string>): string[] {
+  const rawValue = fields[ADDITIONAL_CATEGORIES_COLUMN] || "";
+  const seen = new Set<string>();
+
+  return rawValue
+    .split(CATEGORY_SEPARATOR)
+    .map(cleanCell)
+    .filter((category) => {
+      if (!category || seen.has(category)) {
+        return false;
+      }
+      seen.add(category);
+      return true;
+    });
 }
 
 function readImageSrc(fields: Record<string, string>): string {
@@ -451,6 +472,10 @@ async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
     const name = fields.nombre || `Fila ${id}`;
     const city = fields.municipio || "Sin municipio";
     const category = fields.categoria || "Sin categoría";
+    const additionalCategories = readAdditionalCategories(fields).filter(
+      (additionalCategory) => additionalCategory !== category,
+    );
+    const categories = [category, ...additionalCategories];
     const featuredProducts = readFeaturedProducts(fields);
     const imageSrc = readImageSrc(fields);
     const slug = readSlug(fields, name, city, id);
@@ -463,6 +488,8 @@ async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
       name,
       city,
       category,
+      additionalCategories,
+      categories,
       featuredProducts,
       imageSrc,
       latitude: readLatitude(fields),
@@ -515,9 +542,11 @@ export async function listCategories(area = ""): Promise<string[]> {
   const counts = new Map<string, number>();
 
   for (const row of rows) {
-    const key = row.category.trim();
-    if (!key) continue;
-    counts.set(key, (counts.get(key) ?? 0) + 1);
+    for (const category of row.categories) {
+      const key = category.trim();
+      if (!key) continue;
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
   }
 
   return [...counts.entries()]
@@ -535,7 +564,12 @@ export async function listMunicipalitySummaries(
   const counts = new Map<string, number>();
 
   for (const row of rows) {
-    if (normalizedCategory && normalizeSearch(row.category) !== normalizedCategory) {
+    if (
+      normalizedCategory &&
+      !row.categories.some(
+        (rowCategory) => normalizeSearch(rowCategory) === normalizedCategory,
+      )
+    ) {
       continue;
     }
 
@@ -579,6 +613,7 @@ export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] 
         name: row.name,
         city: row.city,
         category: row.category,
+        categories: row.categories,
         latitude: row.latitude,
         longitude: row.longitude,
       },
@@ -600,7 +635,9 @@ export async function searchProducers(
       normalizeSearch(row.city).includes(normalizedMunicipality);
     const byCategory =
       !normalizedCategory ||
-      normalizeSearch(row.category) === normalizedCategory;
+      row.categories.some(
+        (rowCategory) => normalizeSearch(rowCategory) === normalizedCategory,
+      );
 
     return byMunicipality && byCategory;
   });

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "cases": [
     {
       "id": "verified-from-current-reliable-evidence",
@@ -556,6 +556,88 @@
         "action": "already-present"
       },
       "why": "The note is pruned after matching the existing row; merge is reserved for a source slug that was actually published."
+    },
+    {
+      "id": "assign-a-material-second-product-line",
+      "dimensions": ["category-assignment"],
+      "description": "The same productive unit demonstrably makes and sells both sake and craft beer, while its restaurant is only a visitor offer.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": [],
+        "categoryAssignment": {
+          "primary": "Sake",
+          "candidates": [
+            {
+              "category": "Cerveza",
+              "relationship": "own-material-output",
+              "evidence": "primary"
+            },
+            {
+              "category": "Comida preparada",
+              "relationship": "hospitality",
+              "evidence": "primary"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "action": "keep",
+        "verification": "verificado",
+        "onlineSales": "no comprobado",
+        "salesChannels": [],
+        "primaryCategory": "Sake",
+        "additionalCategories": ["Cerveza"]
+      },
+      "why": "A separately produced beer line is an additional category; operating a restaurant does not make prepared food another producer category."
+    },
+    {
+      "id": "do-not-classify-a-farm-by-resold-assortment",
+      "dimensions": ["category-assignment"],
+      "description": "A dairy farm sells third-party eggs and uses chocolate as an ingredient, but only its dairy production is established.",
+      "facts": {
+        "existenceStatus": "confirmed",
+        "scope": "producer",
+        "operatingStatus": "active",
+        "territory": "matching",
+        "duplicate": "none",
+        "identityEvidence": "primary",
+        "activityEvidence": "primary",
+        "municipalityEvidence": "primary",
+        "onlineSalesEvidence": "not-checked",
+        "onlineSalesChannels": [],
+        "categoryAssignment": {
+          "primary": "Lácteos y quesos",
+          "candidates": [
+            {
+              "category": "Huevos",
+              "relationship": "resale",
+              "evidence": "primary"
+            },
+            {
+              "category": "Chocolate",
+              "relationship": "ingredient",
+              "evidence": "primary"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "action": "keep",
+        "verification": "verificado",
+        "onlineSales": "no comprobado",
+        "salesChannels": [],
+        "primaryCategory": "Lácteos y quesos",
+        "additionalCategories": []
+      },
+      "why": "Resale and ingredients do not establish material output by the productive unit."
     }
   ]
 }

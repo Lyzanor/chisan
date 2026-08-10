@@ -36,6 +36,15 @@ function normalize(value) {
     .toLowerCase();
 }
 
+function rowCategories(row) {
+  return [
+    cleanCell(row.categoria),
+    ...cleanCell(row["categorias adicionales"])
+      .split("|")
+      .map(cleanCell),
+  ].filter(Boolean);
+}
+
 function parseArgs(argv) {
   let target = null;
   let category = null;
@@ -43,10 +52,10 @@ function parseArgs(argv) {
 
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
-    if (arg === "--category" && argv[i + 1]) {
+    if ((arg === "--category" || arg === "--categoria") && argv[i + 1]) {
       category = argv[i + 1];
       i += 1;
-    } else if (arg === "--pending") {
+    } else if (arg === "--pending" || arg === "--pendientes") {
       onlyPending = true;
     } else if (!arg.startsWith("--")) {
       target = arg;
@@ -87,7 +96,9 @@ async function main() {
   const { target, category, onlyPending } = parseArgs(process.argv.slice(2));
 
   if (!target) {
-    console.error("Usage: node scripts/list-area.js <area|path> [--category X] [--pending]");
+    console.error(
+      "Usage: node scripts/list-area.js <area|path> [--category X|--categoria X] [--pending|--pendientes]",
+    );
     process.exit(1);
   }
 
@@ -115,7 +126,12 @@ async function main() {
     const verif = normalize(row.verificacion) || "otro";
     counts[verif in counts ? verif : "otro"] += 1;
 
-    if (catFilter && normalize(row.categoria) !== catFilter) continue;
+    if (
+      catFilter &&
+      !rowCategories(row).some((rowCategory) => normalize(rowCategory) === catFilter)
+    ) {
+      continue;
+    }
     if (onlyPending && verif !== "pendiente") continue;
 
     lines.push(
@@ -124,6 +140,7 @@ async function main() {
         cleanCell(row.nombre),
         cleanCell(row.municipio),
         cleanCell(row.categoria),
+        cleanCell(row["categorias adicionales"]),
         cleanCell(row.verificacion),
         cleanCell(row["Venta online"]),
       ].join(" | "),
@@ -135,9 +152,13 @@ async function main() {
     `# ${rows.length} filas — verificado ${counts.verificado} · parcial ${counts.parcial} · pendiente ${counts.pendiente}` +
       (counts.otro ? ` · otro ${counts.otro}` : ""),
   );
-  console.log("# slug | nombre | municipio | categoria | verificacion | Venta online");
+  console.log(
+    "# slug | nombre | municipio | categoria | categorias adicionales | verificacion | Venta online",
+  );
   if (catFilter || onlyPending) {
-    console.log(`# (filtrado${catFilter ? ` categoria=${categoria}` : ""}${onlyPending ? " pendientes" : ""}: ${lines.length} filas)`);
+    console.log(
+      `# (filtrado${catFilter ? ` categoria=${category}` : ""}${onlyPending ? " pendientes" : ""}: ${lines.length} filas)`,
+    );
   }
   for (const line of lines) console.log(line);
 }

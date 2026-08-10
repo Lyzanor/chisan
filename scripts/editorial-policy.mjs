@@ -12,11 +12,75 @@ const SALES_CHANNELS = new Set([
   "suscripcion",
   "marketplace",
 ]);
+const CATEGORY_RELATIONSHIPS = new Set([
+  "own-material-output",
+  "resale",
+  "ingredient",
+  "hospitality",
+  "incidental-output",
+  "unknown",
+]);
+const CATEGORY_ASSIGNMENT_KEYS = new Set(["primary", "candidates"]);
+const CATEGORY_CANDIDATE_KEYS = new Set([
+  "category",
+  "relationship",
+  "evidence",
+]);
 
 function assertEnum(value, allowed, field) {
   if (!allowed.has(value)) {
     throw new Error(`Unsupported ${field}: '${value}'`);
   }
+}
+
+function assertExactKeys(value, allowed, field) {
+  const unknown = Object.keys(value).filter((key) => !allowed.has(key));
+  if (unknown.length) {
+    throw new Error(`Unsupported ${field} field(s): ${unknown.join(", ")}`);
+  }
+}
+
+export function evaluateCategoryAssignment(assignment) {
+  if (!assignment || typeof assignment !== "object" || Array.isArray(assignment)) {
+    throw new Error("categoryAssignment must be an object");
+  }
+  assertExactKeys(assignment, CATEGORY_ASSIGNMENT_KEYS, "categoryAssignment");
+
+  const primaryCategory = String(assignment.primary ?? "").trim();
+  if (!primaryCategory) {
+    throw new Error("categoryAssignment.primary is required");
+  }
+  if (!Array.isArray(assignment.candidates)) {
+    throw new Error("categoryAssignment.candidates must be an array");
+  }
+
+  const additionalCategories = [];
+  const seen = new Set([primaryCategory]);
+  for (const candidate of assignment.candidates) {
+    if (!candidate || typeof candidate !== "object" || Array.isArray(candidate)) {
+      throw new Error("categoryAssignment candidates must be objects");
+    }
+    assertExactKeys(candidate, CATEGORY_CANDIDATE_KEYS, "category candidate");
+    assertEnum(candidate.relationship, CATEGORY_RELATIONSHIPS, "category relationship");
+    assertEnum(candidate.evidence, EVIDENCE_STRENGTHS, "category evidence");
+
+    const category = String(candidate.category ?? "").trim();
+    if (!category) {
+      throw new Error("category candidate category is required");
+    }
+    if (
+      candidate.relationship !== "own-material-output" ||
+      candidate.evidence === "none" ||
+      seen.has(category)
+    ) {
+      continue;
+    }
+
+    seen.add(category);
+    additionalCategories.push(category);
+  }
+
+  return { primaryCategory, additionalCategories };
 }
 
 export function evaluateEditorialFacts(facts) {
@@ -154,10 +218,14 @@ export function evaluateEditorialFacts(facts) {
     onlineSales = "no";
   }
 
-  return {
+  const decision = {
     action: "keep",
     verification,
     onlineSales,
     salesChannels,
   };
+
+  return facts.categoryAssignment
+    ? { ...decision, ...evaluateCategoryAssignment(facts.categoryAssignment) }
+    : decision;
 }

@@ -1,4 +1,4 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-le-galichet,Le Galichet,La Boissière-de-Montaigu,Carne,,"Puyravault, 85600 La Boissière-de-Montaigu",,,,,https://www.lesvergersdugalichet.com,,,,46.951755,-1.185916,,pendiente,no comprobado,
-tirton-francis,Tirton Francis,La Roche-sur-Yon,Carne,,"103 Route des Barbontes, 85000 La Roche-sur-Yon",,,,,https://www.facebook.com/earlfrancistirton,,,,46.646583,-1.363528,,pendiente,no comprobado,
-le-bas-des-moulins,Le Bas des Moulins,Vix,Legumbres y cereales,,"1 Rue Derriere les Champs, 85770 Vix",,,,,https://www.panierdeschamps.com,,,,46.365652,-0.863607,,pendiente,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+le-galichet,Le Galichet,La Boissière-de-Montaigu,Carne,,"Puyravault, 85600 La Boissière-de-Montaigu",,,,,https://www.lesvergersdugalichet.com,,,,46.951755,-1.185916,,pendiente,no comprobado,,
+tirton-francis,Tirton Francis,La Roche-sur-Yon,Carne,,"103 Route des Barbontes, 85000 La Roche-sur-Yon",,,,,https://www.facebook.com/earlfrancistirton,,,,46.646583,-1.363528,,pendiente,no comprobado,,
+le-bas-des-moulins,Le Bas des Moulins,Vix,Legumbres y cereales,,"1 Rue Derriere les Champs, 85770 Vix",,,,,https://www.panierdeschamps.com,,,,46.365652,-0.863607,,pendiente,no comprobado,,

@@ -164,15 +164,19 @@ console.log(`\n== ${municipio} (${csvPath}) — ${rows.length} ${all ? "filas" :
 const matchedDar = new Set();
 for (const r of rows) {
   const m = bestMatch(r);
+  const categories = [r.categoria, ...(r["categorias adicionales"] || "").split("|")]
+    .map((category) => category.trim())
+    .filter(Boolean)
+    .join(" · ");
   if (m) {
     matchedDar.add(m.d);
     const d = m.d;
-    console.log(`✓ ${r.slug}  [${r.categoria}]  «${r.nombre}»`);
+    console.log(`✓ ${r.slug}  [${categories}]  «${r.nombre}»`);
     console.log(`    DAR(${m.why}): ${d.nom_productor}${d.marca_comercial ? ` · marca=${d.marca_comercial}` : ""} · [${d.municipi}]`);
     console.log(`    productes: ${(d.productes || "").slice(0, 72)}`);
     console.log(`    venda_directa=${d.venda_directa} circuit_curt=${d.venda_circuit_curt} · tel=${d.tel_fon} · ${d.correu}`);
   } else {
-    console.log(`·  ${r.slug}  [${r.categoria}]  «${r.nombre}»  — sin match DAR  (web=${(r.web || "").slice(0, 34)} IG=${r.Instagram ? "sí" : "-"})`);
+    console.log(`·  ${r.slug}  [${categories}]  «${r.nombre}»  — sin match DAR  (web=${(r.web || "").slice(0, 34)} IG=${r.Instagram ? "sí" : "-"})`);
   }
 }
 

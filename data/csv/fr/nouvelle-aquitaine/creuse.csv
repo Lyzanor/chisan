@@ -1,4 +1,4 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-pepinieres-contarin,Pepinieres Contarin,Bétête,Carne,,"9 Rue de l'Étang, 23270 Bétête",,,,,https://pepinieres-contarin.com/,,,,46.361303,2.077829,,pendiente,no comprobado,
-gaec-barthot,GAEC Barthot,Chénérailles,Carne,,"14, Route de Vaugueix, 23130 Chénérailles",,,,,,,,,46.107320,2.177200,,pendiente,no comprobado,
-earl-patard,EARL Patard,Roches,Carne,,"Domaine de Courjat, 23270 Roches",,,,,https://www.fermedecourjat.fr,,,,46.277600,1.989600,,pendiente,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+pepinieres-contarin,Pepinieres Contarin,Bétête,Carne,,"9 Rue de l'Étang, 23270 Bétête",,,,,https://pepinieres-contarin.com/,,,,46.361303,2.077829,,pendiente,no comprobado,,
+gaec-barthot,GAEC Barthot,Chénérailles,Carne,,"14, Route de Vaugueix, 23130 Chénérailles",,,,,,,,,46.107320,2.177200,,pendiente,no comprobado,,
+earl-patard,EARL Patard,Roches,Carne,,"Domaine de Courjat, 23270 Roches",,,,,https://www.fermedecourjat.fr,,,,46.277600,1.989600,,pendiente,no comprobado,,

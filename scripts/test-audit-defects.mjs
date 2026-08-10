@@ -126,6 +126,20 @@ test("the migration queue counts as workload, not as a coverage signal", () => {
   assert.equal(CHECKS.find((c) => c.id === "categoria-variante").kind, "cola");
 });
 
+test("the migration queue inspects additional categories", () => {
+  const check = CHECKS.find((c) => c.id === "categoria-variante");
+  const rows = [
+    { slug: "multi", categoria: "Sake", "categorias adicionales": "Cerveza retirada|Vino" },
+    { slug: "simple", categoria: "Sake", "categorias adicionales": "Cerveza" },
+  ];
+  assert.deepEqual(
+    check
+      .run({ rows }, { categoryVariants: new Set(["Cerveza retirada"]) })
+      .map((row) => row.slug),
+    ["multi"],
+  );
+});
+
 // Cross-template detection, on synthetic rows only: hardcoding real producers
 // would turn the check into the brand list it exists to avoid.
 const crossTemplate = (rows) =>
@@ -136,6 +150,7 @@ const crossTemplate = (rows) =>
         slug: `fila-${i}`,
         nombre: "",
         categoria: "",
+        "categorias adicionales": "",
         "productos estrella": "",
         descripcion: "",
         ...r,
@@ -168,6 +183,20 @@ test("a mixed producer that lists both categories is not contamination", () => {
   assert.deepEqual(
     flagged([
       { nombre: "Casa Sintética", categoria: "Aceite", "productos estrella": "Aceite de oliva, vino tinto" },
+    ]),
+    [],
+  );
+});
+
+test("a product line assigned as an additional category is not contamination", () => {
+  assert.deepEqual(
+    flagged([
+      {
+        nombre: "Kura Sintética",
+        categoria: "Sake",
+        "categorias adicionales": "Cerveza",
+        "productos estrella": "Cerveza artesana",
+      },
     ]),
     [],
   );

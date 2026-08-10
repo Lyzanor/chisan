@@ -7,6 +7,7 @@ const LABELS: Record<string, string> = {
   nombre: "Name",
   municipio: "Municipality",
   categoria: "Category",
+  "categorias adicionales": "Additional categories",
   subcategoria: "Subcategory",
   direccion: "Address",
   descripcion: "Description",

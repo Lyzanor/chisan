@@ -138,7 +138,7 @@ function BoundsAwareMarkers({
           <Popup>
             <strong>{point.name}</strong>
             <br />
-            {point.city} · {point.category}
+            {point.city} · {point.categories.join(" · ")}
             <br />
             <Link href={buildProducerHref(point, { area })}>Open profile</Link>
           </Popup>

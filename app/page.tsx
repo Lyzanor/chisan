@@ -166,7 +166,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             <article className="catalog-featured-producer">
               <p className="catalog-kicker">Selected</p>
               <h2>{highlightedItem.name}</h2>
-              <p>{highlightedItem.city} · {highlightedItem.category}</p>
+              <p>{highlightedItem.city} · {highlightedItem.categories.join(" · ")}</p>
               <div className="catalog-featured-actions">
                 <Link href={buildCatalogHref({ area, category })}>See all</Link>
                 <Link href={buildProducerHref(highlightedItem, { area })}>Open profile</Link>
@@ -187,6 +187,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               {visibleItems.map((item) => {
                 const subcategory = getFieldValue(item.fields, "subcategoria");
                 const address = getFieldValue(item.fields, "direccion");
+                const categorySummary = item.categories.join(" · ");
 
                 return (
                   <li key={item.slug} className={highlightedItem?.slug === item.slug ? "is-selected" : ""}>
@@ -201,7 +202,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                       <span>
                         <strong>{item.name}</strong>
                         <small>
-                          {item.city} · {subcategory || item.category}
+                          {item.city} · {subcategory || categorySummary}
                           {address ? ` · ${address}` : ""}
                         </small>
                       </span>

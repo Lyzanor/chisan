@@ -129,6 +129,12 @@ The same reasons and claim minimums apply to `reject` and `purge`:
 
 A source supports only its listed claims.
 
+For `categoria` and `categorias adicionales`, the sources carrying
+`producer-activity` must support the material outputs behind the assignment.
+The exact category tokens remain CSV data and are not duplicated inside
+`decision`; a source note may identify which output it establishes when that is
+not obvious.
+
 ## Source types
 
 Allowed values are `official-site`, `official-store`, `official-social`,

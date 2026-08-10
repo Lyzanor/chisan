@@ -72,6 +72,13 @@ const norm = (s) =>
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
+const rowCategories = (row) => [
+  row.categoria,
+  ...(row["categorias adicionales"] ?? "")
+    .split("|")
+    .map((category) => category.trim()),
+].filter(Boolean);
+
 const hostOf = (url) => {
   const m = (url ?? "").match(/^https?:\/\/(?:www\.)?([^/?#]+)/i);
   return m ? m[1].toLowerCase() : "";
@@ -140,9 +147,9 @@ export const CATEGORY_MARKERS = {
   Helados: ["helado", "helados", "gelat", "gelats", "gelateria", "sorbete", "sorbetes"],
 };
 
-// Rows whose `productos estrella` describes a different category than the one
-// the row is filed under: the 2026-06-21 bulk import copied that field, and the
-// description with it, across category boundaries.
+// Rows whose `productos estrella` describes a category not assigned to the
+// row: the 2026-06-21 bulk import copied that field, and the description with
+// it, across category boundaries.
 //
 // Only `productos estrella` triggers. `descripcion` was measured as a trigger
 // too and rejected: it is prose, so it flags legitimate mentions (a brewery
@@ -190,7 +197,7 @@ export function loadCrossTemplate(rows) {
     for (const row of provinceRows) {
       const estrella = (row["productos estrella"] ?? "").trim();
       if (!estrella || !row.categoria) continue;
-      const own = canonical(row.categoria);
+      const assigned = new Set(rowCategories(row).map(canonical));
       // The trade name is not a product: "Conservas Senra" does not make a
       // fish cannery a preserves maker, and dropping its words is what stops
       // the check from reading brands as evidence.
@@ -210,15 +217,15 @@ export function loadCrossTemplate(rows) {
       const parts = estrella.split(/[,;|]/).map((p) => norm(p)).filter(Boolean);
       if (parts.length && parts.every((p) => labels.has(p))) {
         const named = [...new Set(parts.map((p) => labels.get(p)))];
-        if (!named.includes(own)) {
+        if (!named.some((category) => assigned.has(category))) {
           hits.set(`${area}/${row.slug}`, named);
           continue;
         }
       }
 
-      if (!markers.has(own)) continue;
-      if (categoriesNamedBy(estrella).has(own)) continue;
-      foreign.delete(own);
+      if (![...assigned].some((category) => markers.has(category))) continue;
+      if ([...categoriesNamedBy(estrella)].some((category) => assigned.has(category))) continue;
+      for (const category of assigned) foreign.delete(category);
       if (foreign.size) hits.set(`${area}/${row.slug}`, [...foreign]);
     }
   }
@@ -233,8 +240,9 @@ export function loadCategoryVariants() {
   const usage = new Map();
   for (const { rows } of readAreas({ all: true })) {
     for (const row of rows) {
-      if (!row.categoria) continue;
-      usage.set(row.categoria, (usage.get(row.categoria) ?? 0) + 1);
+      for (const category of rowCategories(row)) {
+        usage.set(category, (usage.get(category) ?? 0) + 1);
+      }
     }
   }
   const canonical = new Set(usage.keys());
@@ -431,15 +439,18 @@ export const CHECKS = [
   {
     id: "categoria-variante",
     kind: "cola",
-    label: "`categoria` retirada del registro, o variante minoritaria de otra en uso",
-    hint: "el filtro de la app agrupa por string exacto: estas filas son invisibles desde la etiqueta que las sustituye",
-    run: ({ rows }, ctx) => rows.filter((r) => ctx.categoryVariants.has(r.categoria)),
+    label: "categoría primaria o adicional retirada del registro, o variante minoritaria de otra en uso",
+    hint: "los filtros leen ambas columnas con tokens exactos: corrige la variante en el campo donde aparezca",
+    run: ({ rows }, ctx) =>
+      rows.filter((row) =>
+        rowCategories(row).some((category) => ctx.categoryVariants.has(category)),
+      ),
   },
   {
     id: "plantilla-cruzada",
     kind: "cola",
-    label: "`productos estrella` describe una categoría distinta de la de la fila",
-    hint: "candidatos, no veredictos: abre la ficha y decide si sobra el producto o sobra la categoría",
+    label: "`productos estrella` describe una categoría no asignada a la fila",
+    hint: "candidatos, no veredictos: decide si sobra el producto o falta/cambia una categoría con evidencia suficiente",
     run: ({ rows, area }, ctx) =>
       rows.filter((r) => ctx.crossTemplate.has(`${area}/${r.slug}`)),
   },

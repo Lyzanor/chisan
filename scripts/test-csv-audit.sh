@@ -120,38 +120,47 @@ otra-fila,Masia Uno,Abrera,Carniceria,Vino,Carrer Major 4,Descripcion suficiente
 CSV
 
 cat >"$TMP_DIR/sales-channel.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp
-canal-bad,Masia Bad,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,,verificado,sí,ecommerce|tienda
-canal-estado,Masia Estado,Abrera,Vino,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,verificado,no,whatsapp
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp,
+canal-bad,Masia Bad,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,,verificado,sí,ecommerce|tienda,
+canal-estado,Masia Estado,Abrera,Vino,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,verificado,no,whatsapp,
 CSV
 
 cat >"$TMP_DIR/canonical-ok.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp,Cerveza
+CSV
+
+cat >"$TMP_DIR/additional-categories.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+multi-ok,Kura Ok,Abrera,Sake,"Sake, cerveza",Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,,,,41.51,1.90,,pendiente,no,,Cerveza
+multi-primary,Kura Primary,Abrera,Sake,Sake,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,primary@example.com,https://example.com,,,,41.52,1.91,,pendiente,no,,Sake
+multi-duplicate,Kura Duplicate,Abrera,Sake,Sake,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,duplicate@example.com,https://example.com,,,,41.53,1.92,,pendiente,no,,Cerveza|Cerveza
+multi-empty,Kura Empty,Abrera,Sake,Sake,Carrer Major 4,Descripcion suficientemente larga para validar,,+34600000003,empty@example.com,https://example.com,,,,41.54,1.93,,pendiente,no,,Cerveza||Vino
+multi-invalid,Kura Invalid,Abrera,Sake,Sake,Carrer Major 5,Descripcion suficientemente larga para validar,,+34600000004,invalid@example.com,https://example.com,,,,41.55,1.94,,pendiente,no,,Cerveza artesana
 CSV
 
 # Controlled values are matched exactly: folded case and a missing accent are drift.
 cat >"$TMP_DIR/inexact-values.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-valor-acento,Masia Acento,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,si,
-valor-mayus,Masia Mayus,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,Verificado,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+valor-acento,Masia Acento,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,si,,
+valor-mayus,Masia Mayus,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,Verificado,no,,
 CSV
 
 cat >"$TMP_DIR/identity-required.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-sin-identidad,,Abrera,,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+sin-identidad,,Abrera,,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 
 cat >"$TMP_DIR/multi-email.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-dos-correos,Masia Correos,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,uno@example.com; dos@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+dos-correos,Masia Correos,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,uno@example.com; dos@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 
 cat >"$TMP_DIR/junk-social.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-social-basura,Masia Social,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/,https://www.instagram.com/explore/tags/queso/,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
-social-pagina,Masia Pagina,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://www.facebook.com/p/Masia-Pagina-100063712593417,https://www.instagram.com/masiapagina,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+social-basura,Masia Social,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/,https://www.instagram.com/explore/tags/queso/,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
+social-pagina,Masia Pagina,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://www.facebook.com/p/Masia-Pagina-100063712593417,https://www.instagram.com/masiapagina,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
 CSV
 
 # A UTF-8 BOM (typical of spreadsheet exports) is a blocking error.
@@ -201,9 +210,9 @@ CSV
 )
 
 cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-verif-sin-contacto,Masia Verif,Abrera,Vino,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,verificado,no comprobado,
-verif-geo-malo,Masia Lejos,Abrera,Vino,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,,verificado,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+verif-sin-contacto,Masia Verif,Abrera,Vino,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,verificado,no comprobado,,
+verif-geo-malo,Masia Lejos,Abrera,Vino,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,,verificado,no comprobado,,
 CSV
 
 cat >"$TMP_DIR/geo-blocking.csv" <<'CSV'
@@ -215,20 +224,39 @@ CSV
 # canonical-header comparison, which names the offending position.
 run_expect_failure "$TMP_DIR/out-missing.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/missing-column.csv"
-grep -q "header is not the canonical 20-column header (column 17 is 'verificacion' instead of 'imagen')" "$TMP_DIR/out-missing.txt"
+grep -q "header is not the canonical 21-column header (column 17 is 'verificacion' instead of 'imagen')" "$TMP_DIR/out-missing.txt"
 
 run_expect_failure "$TMP_DIR/out-duplicate-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/duplicate-header.csv"
-grep -q "header is not the canonical 20-column header (column 12 is 'web' instead of 'Facebook')" "$TMP_DIR/out-duplicate-header.txt"
+grep -q "header is not the canonical 21-column header (column 12 is 'web' instead of 'Facebook')" "$TMP_DIR/out-duplicate-header.txt"
 
-# The exact canonical 20-column header passes contract mode.
+# The exact canonical 21-column header passes contract mode.
 run_expect_success "$TMP_DIR/out-canonical-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/canonical-ok.csv"
 
-# All 20 columns present but out of order is a blocking error.
+# A category filter matches an additional category and accepts the documented
+# Spanish command aliases.
+run_expect_success "$TMP_DIR/out-list-additional.txt" \
+  node "$ROOT_DIR/scripts/list-area.js" "$TMP_DIR/canonical-ok.csv" --categoria Cerveza
+grep -q "canal-ok .* Vino .* Cerveza" "$TMP_DIR/out-list-additional.txt"
+
+# All legacy columns present but out of order is a blocking error.
 run_expect_failure "$TMP_DIR/out-wrong-order-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/wrong-order-header.csv"
-grep -q "header is not the canonical 20-column header (column 12 is 'Instagram' instead of 'Facebook')" "$TMP_DIR/out-wrong-order-header.txt"
+grep -q "header is not the canonical 21-column header (column 12 is 'Instagram' instead of 'Facebook')" "$TMP_DIR/out-wrong-order-header.txt"
+
+# Additional categories use exact registry tokens separated by one `|`, may not
+# repeat the primary category and may not contain duplicates or empty tokens.
+run_expect_failure "$TMP_DIR/out-additional-categories.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/additional-categories.csv"
+grep -q "ERROR line 3 .* categorias adicionales repeats primary categoria 'Sake'" "$TMP_DIR/out-additional-categories.txt"
+grep -q "ERROR line 4 .* categorias adicionales repeats 'Cerveza'" "$TMP_DIR/out-additional-categories.txt"
+grep -q "ERROR line 5 .* categorias adicionales contains an empty token" "$TMP_DIR/out-additional-categories.txt"
+grep -q "ERROR line 6 .* categorias adicionales 'Cerveza artesana' was retired; use 'Cerveza'" "$TMP_DIR/out-additional-categories.txt"
+if grep -q "ERROR line 2 .* categorias adicionales" "$TMP_DIR/out-additional-categories.txt"; then
+  echo "Error: valid additional categories must pass the contract" >&2
+  exit 1
+fi
 
 run_expect_failure "$TMP_DIR/out-crlf.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/crlf.csv"
@@ -291,9 +319,9 @@ grep -q "ERROR line 2 .* km from Abrera centroid (threshold 100 km)" "$TMP_DIR/o
 # and the order is not stable, so the check tries them all — but only trusts the
 # answer when the halves agree on where the town is.
 cat >"$TMP_DIR/municipio-bilingue.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-bilingue-ok,Masia Bilingue,Ujué / Uxue,Vino,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.47981,-1.49709,,pendiente,no,
-paren-ok,Masia Parentesis,Granollers (Palou),Vino,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.60833,2.28889,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+bilingue-ok,Masia Bilingue,Ujué / Uxue,Vino,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.47981,-1.49709,,pendiente,no,,
+paren-ok,Masia Parentesis,Granollers (Palou),Vino,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.60833,2.28889,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-bilingue.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-bilingue.csv"
@@ -312,8 +340,8 @@ fi
 # spelling and coordinates 30 km away, the check has to fire. This is what
 # proves the geo-check runs on these rows instead of silently skipping them.
 cat >"$TMP_DIR/municipio-bilingue-lejos.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-bilingue-lejos,Masia Lejos,Puente la Reina / Gares,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.90,-1.60,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+bilingue-lejos,Masia Lejos,Puente la Reina / Gares,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.90,-1.60,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-bilingue-lejos.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-bilingue-lejos.csv"
@@ -323,8 +351,8 @@ grep -q "WARNING line 2 .* km from Puente la Reina centroid" "$TMP_DIR/out-munic
 # district of Sant Cugat, 96 km apart. Taking the first half would invent that
 # gap on a correct row, so a disagreement means the lookup says nothing.
 cat >"$TMP_DIR/municipio-homonimo.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-homonimo,Masia Homonima,La Floresta (Sant Cugat del Vallès),Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.47354,2.08524,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+homonimo,Masia Homonima,La Floresta (Sant Cugat del Vallès),Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.47354,2.08524,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-homonimo.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-homonimo.csv"
@@ -337,8 +365,8 @@ fi
 # A real pedanía the lookup does not cover stays skipped and silent: it is a
 # documented gap, not a defect to report.
 cat >"$TMP_DIR/municipio-pedania.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-pedania,Masia Pedania,Aldea Sintetica de Arriba,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+pedania,Masia Pedania,Aldea Sintetica de Arriba,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-pedania.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-pedania.csv"
@@ -394,8 +422,8 @@ grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y cereal' i
 
 # A label that was never registered keeps the plain rejection.
 cat >"$TMP_DIR/unknown-category.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-cat-inventada,Masia Inventada,Abrera,Categoria Inventada,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+cat-inventada,Masia Inventada,Abrera,Categoria Inventada,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-unknown-category.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/unknown-category.csv"
@@ -408,8 +436,8 @@ if [[ -z "$RETIRED_GONE" ]]; then
   exit 1
 fi
 cat >"$TMP_DIR/retired-rejected.csv" <<CSV
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-cat-retirada,Masia Retirada,Abrera,$RETIRED_GONE,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+cat-retirada,Masia Retirada,Abrera,$RETIRED_GONE,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-retired-rejected.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/retired-rejected.csv"
@@ -419,8 +447,8 @@ grep -qF "categoria '$RETIRED_GONE' was retired; use '$RETIRED_GONE_TARGET'" "$T
 # rows stay visible, but it does not block anyone else's gate.
 if [[ -n "$RETIRED_VALID" ]]; then
   cat >"$TMP_DIR/retired-pending.csv" <<CSV
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-cat-pendiente,Masia Pendiente,Abrera,$RETIRED_VALID,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+cat-pendiente,Masia Pendiente,Abrera,$RETIRED_VALID,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
   run_expect_success "$TMP_DIR/out-retired-pending.txt" \
     node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/retired-pending.csv"
@@ -437,9 +465,9 @@ fi
 # validating, so this keeps testing the folding even though the catalog no
 # longer has a real plural pair for it to catch.
 cat >"$TMP_DIR/plural-variants.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-plural-uno,Masia Plural,Abrera,Sintetica,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
-plural-dos,Masia Singular,Abrera,Sinteticas,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+plural-uno,Masia Plural,Abrera,Sintetica,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
+plural-dos,Masia Singular,Abrera,Sinteticas,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-plural-variants.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/plural-variants.csv"
@@ -449,9 +477,9 @@ grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-
 
 # Two genuinely different categories in one CSV must not be folded together.
 cat >"$TMP_DIR/distinct-categories.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-distinta-uno,Masia Bodega,Abrera,Vino,Vino,Carrer Major 1,Descripcion de la bodega con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,
-distinta-dos,Masia Miel,Abrera,Miel,Miel,Carrer Major 2,Descripcion del colmenar con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+distinta-uno,Masia Bodega,Abrera,Vino,Vino,Carrer Major 1,Descripcion de la bodega con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
+distinta-dos,Masia Miel,Abrera,Miel,Miel,Carrer Major 2,Descripcion del colmenar con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-distinct-categories.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/distinct-categories.csv"
@@ -479,12 +507,12 @@ grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-
 # of Chiva in Valencia, 10.751 km apart. Each row is measured against its own
 # country's catalog, so both pass without anyone curating the collision.
 cat >"$JP_DIR/scoped-jp.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-kura-chiba,Kura Chiba,Chiba,Sake,Sake,1-1 Chuo,Bodega de sake con datos propios en la ciudad,,,,https://example.com,,,,35.60728,140.10636,,pendiente,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+kura-chiba,Kura Chiba,Chiba,Sake,Sake,1-1 Chuo,Bodega de sake con datos propios en la ciudad,,,,https://example.com,,,,35.60728,140.10636,,pendiente,no comprobado,,
 CSV
 cat >"$TMP_DIR/scoped-es.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-celler-chiva,Celler de Chiva,Chiva,Vino,Vino,Carrer Major 1,Bodega con datos propios en el municipio,,,,https://example.com,,,,39.47138,-0.71971,,pendiente,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+celler-chiva,Celler de Chiva,Chiva,Vino,Vino,Carrer Major 1,Bodega con datos propios en el municipio,,,,https://example.com,,,,39.47138,-0.71971,,pendiente,no comprobado,,
 CSV
 run_expect_success "$TMP_DIR/out-scoped-jp.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$JP_DIR/scoped-jp.csv"

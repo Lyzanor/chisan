@@ -1,5 +1,5 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta
-antica-cantina-leonardi,Antica Cantina Leonardi,Montefiascone,Vino,,,,,,,,,,,42.541231,12.032956,,pendiente,no comprobado,
-brachino-renzo-panificio,Brachino Renzo Panificio,Montefiascone,Pan y cereal,,,,,,,,,,,42.539633,12.035520,,pendiente,no comprobado,
-cantina-stefanoni,Cantina Stefanoni,Montefiascone,Vino,,,,,,,,,,,42.536935,12.027136,,pendiente,no comprobado,
-azienda-agricola-mastropietro,Azienda agricola Mastropietro,Viterbo,Carne,,,,,,,,,,,42.418526,12.114902,,pendiente,no comprobado,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+antica-cantina-leonardi,Antica Cantina Leonardi,Montefiascone,Vino,,,,,,,,,,,42.541231,12.032956,,pendiente,no comprobado,,
+brachino-renzo-panificio,Brachino Renzo Panificio,Montefiascone,Pan y cereal,,,,,,,,,,,42.539633,12.035520,,pendiente,no comprobado,,
+cantina-stefanoni,Cantina Stefanoni,Montefiascone,Vino,,,,,,,,,,,42.536935,12.027136,,pendiente,no comprobado,,
+azienda-agricola-mastropietro,Azienda agricola Mastropietro,Viterbo,Carne,,,,,,,,,,,42.418526,12.114902,,pendiente,no comprobado,,

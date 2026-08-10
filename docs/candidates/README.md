@@ -19,9 +19,10 @@ La cabecera identifica, como mínimo:
 - alcance de la pasada y trabajo pendiente.
 
 Por candidato conserva solo lo necesario para continuar: nombre publicado,
-municipio y categoría probables, enlace de origen, motivo por el que puede
-encajar y dudas aún abiertas. Si falta un dato, indícalo; no lo completes por
-intuición. Un candidato anotado se considera pendiente, por lo que no necesita
+municipio, categoría principal y posibles categorías adicionales, enlace de
+origen, motivo por el que puede encajar y dudas aún abiertas. Si falta un dato,
+indícalo; no lo completes por intuición. Un candidato anotado se considera
+pendiente, por lo que no necesita
 una tabla de estados.
 
 ## Flujo

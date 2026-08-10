@@ -22,13 +22,32 @@ if (!rows.length) {
 }
 
 const first = rows[0];
+const multiCategory = rows.find((row) => (row["categorias adicionales"] || "").trim());
+const additionalCategories = (multiCategory?.["categorias adicionales"] || "")
+  .split("|")
+  .map((category) => category.trim())
+  .filter(Boolean);
 const payload = {
   slug: (first.slug || "").trim(),
   name: (first.nombre || "").trim(),
   category: (first.categoria || "").trim(),
+  multiSlug: (multiCategory?.slug || "").trim(),
+  multiName: (multiCategory?.nombre || "").trim(),
+  multiPrimaryCategory: (multiCategory?.categoria || "").trim(),
+  multiAdditionalCategory: additionalCategories[0] || "",
+  multiSecondAdditionalCategory: additionalCategories[1] || "",
 };
-if (!payload.slug || !payload.name || !payload.category) {
-  console.error("First CSV row is missing required fields for test fixture.");
+if (
+  !payload.slug ||
+  !payload.name ||
+  !payload.category ||
+  !payload.multiSlug ||
+  !payload.multiName ||
+  !payload.multiPrimaryCategory ||
+  !payload.multiAdditionalCategory ||
+  !payload.multiSecondAdditionalCategory
+) {
+  console.error("CSV rows are missing required fields for behavior fixtures.");
   process.exit(1);
 }
 
@@ -60,6 +79,11 @@ FIXTURE_JSON="$(extract_sample)"
 SLUG="$(node -p "JSON.parse(process.argv[1]).slug" "$FIXTURE_JSON")"
 NAME="$(node -p "JSON.parse(process.argv[1]).name" "$FIXTURE_JSON")"
 CATEGORY="$(node -p "JSON.parse(process.argv[1]).category" "$FIXTURE_JSON")"
+MULTI_SLUG="$(node -p "JSON.parse(process.argv[1]).multiSlug" "$FIXTURE_JSON")"
+MULTI_NAME="$(node -p "JSON.parse(process.argv[1]).multiName" "$FIXTURE_JSON")"
+MULTI_PRIMARY_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiPrimaryCategory" "$FIXTURE_JSON")"
+MULTI_ADDITIONAL_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiAdditionalCategory" "$FIXTURE_JSON")"
+MULTI_SECOND_ADDITIONAL_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiSecondAdditionalCategory" "$FIXTURE_JSON")"
 
 ./node_modules/.bin/next dev --port "$PORT" >/tmp/km0-test-dev.log 2>&1 &
 DEV_PID=$!
@@ -101,6 +125,17 @@ if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
   echo "Error: filtered search did not contain expected producer '$NAME'." >&2
   exit 1
 fi
+
+for MULTI_FILTER_CATEGORY in "$MULTI_ADDITIONAL_CATEGORY" "$MULTI_SECOND_ADDITIONAL_CATEGORY"; do
+  HTML_FILTERED_ADDITIONAL="$(curl -fsS --get "$BASE_URL/" \
+    --data-urlencode "area=barcelona" \
+    --data-urlencode "category=$MULTI_FILTER_CATEGORY")"
+
+  if [[ "$HTML_FILTERED_ADDITIONAL" != *"$MULTI_NAME"* ]]; then
+    echo "Error: category '$MULTI_FILTER_CATEGORY' did not contain expected producer '$MULTI_NAME'." >&2
+    exit 1
+  fi
+done
 
 HTML_NO_MATCH="$(curl -fsS --get "$BASE_URL/" \
   --data-urlencode "area=barcelona" \
@@ -144,6 +179,17 @@ done
 
 if [[ "$DETAIL_OK" -ne 1 ]]; then
   echo "Error: detail page /p/$SLUG?area=barcelona does not render expected content." >&2
+  exit 1
+fi
+
+HTML_MULTI_DETAIL="$(curl -fsS "$BASE_URL/p/$MULTI_SLUG?area=barcelona" | sed 's/<!-- -->//g')"
+if [[
+  "$HTML_MULTI_DETAIL" != *"$MULTI_NAME"* ||
+  "$HTML_MULTI_DETAIL" != *"$MULTI_PRIMARY_CATEGORY"* ||
+  "$HTML_MULTI_DETAIL" != *"$MULTI_ADDITIONAL_CATEGORY"* ||
+  "$HTML_MULTI_DETAIL" != *"$MULTI_SECOND_ADDITIONAL_CATEGORY"*
+]]; then
+  echo "Error: multi-category detail does not render the producer and both category types." >&2
   exit 1
 fi
 
