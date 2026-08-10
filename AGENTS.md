@@ -93,6 +93,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 
 ## Multi-Agent And Git
 - `AGENTS.md` is the shared contract. A country guide narrows operating context, source ceilings and local interpretation; it may not override this contract or create a separate workflow.
+- Work directly on `main`. Agents must not create, switch to or push agent-owned branches unless the user explicitly requests a branch or pull request. In a dirty multi-agent worktree, keep unrelated work unstaged and commit and push only the current task's scope to `main`.
 - Review another agent's changes as intentional work first. If a change appears to violate a rule but improves factual correctness, preserve it, validate it, and document the reason rather than reverting by default.
 - Commit CSV/data-contract changes together when they depend on each other. Keep unrelated area work out of your stage.
 - A branch is not live work until you check `git diff main...<branch> -- data/csv`: several are already merged or behind. Delete a branch that is behind instead of merging it.
