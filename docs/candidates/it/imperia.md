@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-54 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+22 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 37, `Conservas` 1.
+Reparto por categoría propuesta: `Aceite` 5, `Conservas` 1.
 
 Fuentes de este lote:
 
@@ -42,42 +42,10 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
-| AZIENDA AGRICOLA IL CASCIN | Arzeno D'Oneglia - Cesio | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/652664 |
 | L'ADAGIO | Badalucco | `Aceite` | «gn roi box Prodotti in evidenza Olio al Basilico Condimento a base di Olio Extra Vergine di Oliva aromatizzato al basilico Condimento a base di olio e» | 0184 40 80 04<br>info@olioroi.com<br>[web](http://olioroi.com) |
-| OLIO ROI | Badalucco | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0184/408004 |
-| FRANTOIO OLEARIO MARVALDI GIUSEPPE | Borgomaro | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/54016 |
-| PODERE DONZELLA | Castellaro | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 348/0114560 |
-| RAINERI SPA | Chiusanico | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/529050 |
-| RANISE AGROALIMENTARE | Chiusanico | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/767966 |
-| AZIENDA AGRICOLA DAMIANO SS | Chiusavecchia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/52717 |
-| FRATELLI MERANO | Chiusavecchia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/529032 |
-| GANDOLFO SAS | Chiusavecchia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/52888 |
-| OLIO ANFOSSO SAS | Chiusavecchia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/52418 |
-| FRANTOIO VENTURINO BARTOLOMEO | Diano S. Pietro | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/429505 |
-| SAGUATO SRL | Diano S. Pietro | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/49280 |
-| FRANTOIO GHIGLIONE | Dolcedo | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/280043 |
-| AMORETTI & GAZZANO | Imperia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/294342 |
-| BENZA FRANTOIANO | Imperia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/280132 |
-| FRANTOIO DI SANT’AGATA D’ONEGLIA | Imperia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/293472 |
-| FRATELLI CARLI | Imperia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/720000 |
-| GIUSEPPE CALVI & C. | Imperia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/292851 |
-| SOCIETA’ AGRICOLA FOENA SRL | Imperia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 393/9456854 |
-| AZIENDA AGRICOLA CARLO SIFFREDI | Lucinasco | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/555009 |
-| AZIENDA AGRICOLA DINOABBO SS | Lucinasco | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/52441 |
-| AZIENDA AGRICOLA TERRA LEGGIADRA SSA | Lucinasco | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 366/8103579 |
 | NONNI DEVIA | Lucinasco | `Aceite` | «olio extravergine di oliva Azienda Agricola Cristina Armato olio extravergine di oliva Azienda Agricola Cristi» | 338 14 75 966<br>info@olioarmato.it<br>[web](http://olioarmato.it) |
-| AZIENDA AGRICOLA ROSSI ROBERTO – ARSOLEA | Pietrabruna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 389/5713249 |
-| AZIENDA AGRICOLA TORRE DEI PAPONI | Pietrabruna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/930020 |
-| FRANTOIO ULIVI DI LIGURIA | Pietrabruna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/90121 |
-| AZIENDA AGRICOLA BASSAN | Pompeiana | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 334/9561439 |
-| AZIENDA AGRICOLA BELOLLARI E FIGLI | Pontedassio | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 321/9955560 |
-| PIETRO ISNARDI SRL | Pontedassio | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0183/7981 |
 | A MACCIA | Ranzo | `Aceite` | «ostri prodotti. Da sempre l'azienda punta ad una produzione di vini e olio extra vergine d'oliva di qualità, rivolgendo costantemente la massima cura » | 0183 31 80 03<br>info@amaccia.it<br>[web](http://amaccia.it) |
-| SOC. SEMPL. AGR. IN TERRA | Rezzo | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 392/5666154 |
 | MONACI TEMPLARI | Seborga | `Aceite` | «gli ospiti possono rilassarsi e godere della natura. MONACI TEMPLARI Olio Extravergine Oliva MONACI TEMPLARI Olio Extravergine Oliva Read more MIELE M» | 349 79 31 720<br>info@monacitemplari.it<br>[web](http://monacitemplari.it) |
-| CASA OLEARIA TAGGIASCA | Taggia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0184/486044 |
-| FLORCOOP SANREMO SCA | Taggia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0184 51650 |
-| FRANTOIO BOERI GIUSEPPE | Taggia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0184/475301 |
 | IL ROCCOLO | Vasia | `Aceite` | «Olio Cotta Agriturismo Olio Extra Vergine taggiasca biocosmesi Olio Cotta Agriturismo Olio Extra Vergine taggiasca biocosmesi Salta a» | 0183 28 21 45<br>monica@agricotta.com<br>[web](http://agricotta.com) |
 | GLI ORTI | Chiusanico | `Conservas` | «llo Olive taggiasche denocciolate 190 gr. 7,50 € Aggiungi al carrello Patè di olive taggiasche 180 gr 4,50 € Aggiungi al carrello Pesto con basilico g» | 0183 52 90 30<br>help@borgatacastello.com<br>[web](http://borgatacastello.com) |
 

@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-39 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+33 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 8, `Destilados y licores` 1.
+Reparto por categoría propuesta: `Aceite` 2, `Destilados y licores` 1.
 
 Fuentes de este lote:
 
@@ -43,13 +43,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | PIGATO BIO VIO | Albenga | `Aceite` | «DATA O DEGUSTAZIONE REGALA UNA GIFT CARD Menu principale Cantina Vini Olio extravergine Grappa di Pigato Agriturismo Appartamenti Prenotazioni Dintorn» | 335 65 46 917<br>info@biovio.it<br>[web](http://biovio.it) |
-| SOMMARIVA TRADIZIONE AGRICOLA | Albenga | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/559222 |
-| AZIENDA AGRICOLA MORRO FABIO | Andora | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/80079 |
 | COOP OLIVICOLA DI ARNASCO | Arnasco | `Aceite` | «Cooperativa Olivicola Arnasco Cooperativa Olivicola Arnasco Chi Siamo Il Frantoio Visita al Frantoio Museo dell’olivo e de» | 0182 76 11 78<br>info@coopolivicolarnasco.it<br>[web](http://coopolivicolarnasco.it) |
-| FRATELLI AMORETTI DI LORENZO | Laigueglia | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/690005 |
-| OLEIFICIO POLLA NICOLO’ | Loano | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 019/668027 |
-| AZIENDA OLIVICOLA CANAIELLA | Savona | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 019/860190 |
-| AZIENDA AGRICOLA FRANTOIO GAGLIOLO SANDRO | Stellanello | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0182/668148 |
 | CA' DA BASURA | Ortovero | `Destilados y licores` | «, raffinati, delicati ma intensi e persistenti… SCHEDA TECNICA GRAPPE GRAPPA DI VERMENTINO GRAPPA DI PIGATO GRAPPA DI VERMENTINO Gusto morbido e ben e» | 339 12 66 776<br>info@durin.it<br>[web](http://durin.it) |
 
 ### Sin producto declarado por el registro (30)

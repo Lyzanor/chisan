@@ -25,9 +25,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-106 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+96 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 10, `Carne` 11, `Cerveza` 1, `Conservas` 2, `Fruta y verdura` 1, `Legumbres y cereales` 1.
+Reparto por categoría propuesta: `Aceite` 10, `Carne` 1, `Cerveza` 1, `Conservas` 2, `Fruta y verdura` 1, `Legumbres y cereales` 1.
 
 Fuentes de este lote:
 
@@ -52,16 +52,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | AGRITURISMO S. CATERINA DI CRETONI MARIA | Spoleto | `Aceite` | «A STORIA LA STRUTTURA LA CUCINA LA FATTORIA LA PISCINA OSPITALITA’ IL FRANTOIO TERRITORIO ATTIVITA’ NEWS CONTATTI BOOKING Menu Home La meta ideale per» | info@agrisantacaterina.it<br>[web](https://www.agrisantacaterina.it) |
 | AZIENDA AGRICOLA/CENTRO AGRITURISTICO L'ELIANTEMO | Spoleto | `Aceite` | «azienda biologica si estende su una superficie di circa 10 ettari tra oliveto e seminativi. Scopri Contattaci +39 347 318 8672 agriturismo.eliantemo@g» | eliantemo@fastwebnet.it<br>[web](https://www.eliantemo.com) |
 | AGRT. CASA SAN MARTINO | Cittﾅ Di Castello | `Carne` | «ta qualità e ben curato, la nostra fattoria è il posto giusto per te. Allevamento di Bovini Chianina: Alla Fattoria Casa San Martino, alleviamo con pa» | info@casa-sanmartino.com<br>[web](https://www.casa-sanmartino.com) |
-| Antica Norcineria F.lli Ansuini | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 816809<br>[web](https://www.ansuininorcia.com) |
-| Battisti Srl | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0763 316386<br>[web](https://www.gruppobattisti.it) |
-| Lanzi | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 816119<br>[web](https://www.lanzisrl.it) |
-| Patrizi | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 829329 |
-| Poggio San Giorgio | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743 817794<br>[web](https://www.poggiosangiorgio.com) |
-| Prosciuttificio Lui Renzini | Norcia | `Carne` | Prosciutto di Norcia IGP | +39 0743816518<br>[web](https://www.renzini.it) |
-| Prosciuttificio San Benedetto | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 939010<br>[web](https://www.prosciuttosanbenedetto.it/prosciutto.di.norcia/) |
-| Prosciuttificio Valle Oblita | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 99163<br>[web](https://www.valleoblita.it/ita/) |
-| SAL.PI Uno | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0861 870973<br>[web](https://www.salpi.it) |
-| Todiano Prosciutti | Preci | `Carne` | Prosciutto di Norcia IGP | +39 0743 938093<br>[web](https://www.todianoprosciutti.it) |
 | Birra dell'Eremo | Assisi | `Cerveza` | birra artigianale | [web](https://www.birradelleremo.it/) |
 | SOCIETﾷ AGRICOLA CAGLIOFIORE SS DI PASTORI ALESSANDRO E SARA | Cerreto di Spoleto | `Conservas` | «canti Cialde croccanti, un’antica tradizione umbra delle feste sacre. Confetture extra Confetture artigianali con frutta coltivata in maniera naturale» | info@cagliofiore.it<br>[web](https://www.cagliofiore.it) |
 | AGRITURISMO LACANDA DELL NOCI | Marsciano | `Conservas` | «o, allevare gli animali, produrre olio, vino e formaggi, preparare le marmellate … sono cose che facciamo da oltre 40 anni e che continuiamo a fare og» | info@locandadellenoci.it<br>[web](https://www.locandadellenoci.it) |

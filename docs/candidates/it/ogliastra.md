@@ -27,9 +27,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-3 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+1 candidato para esta provincia, tomado de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Lácteos y quesos` 2, `Cerveza` 1.
+Reparto por categoría propuesta: `Cerveza` 1.
 
 Fuentes de este lote:
 
@@ -41,5 +41,3 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | Birrificio Keja | Bari Sardo | `Cerveza` | birra artigianale | — |
-| CASEIFICIO SILVIO BOI | Cardedu | `Lácteos y quesos` | Pecorino Sardo DOP | 0782.75802 |
-| SOC. COOP. ALLEVATORI SANT’ANTONIO | Tertenia | `Lácteos y quesos` | Pecorino Sardo DOP | 0782.93713 |

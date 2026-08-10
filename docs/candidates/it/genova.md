@@ -26,9 +26,9 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-55 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+43 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
-Reparto por categoría propuesta: `Aceite` 13, `Fruta y verdura` 1, `Lácteos y quesos` 1.
+Reparto por categoría propuesta: `Aceite` 1, `Fruta y verdura` 1, `Lácteos y quesos` 1.
 
 Fuentes de este lote:
 
@@ -41,19 +41,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
-| AZIENDA AGRICOLA SOLARI MASSIMO | Chiavari | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/382036 |
-| BARBIERI SERGIO DI BARBIERI PIERO | Chiavari | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185308665 |
-| LA FAVOLA DELLA MIGNOLA DI MAURA GRIMALDI – L’OLIVETO DI MOZART | Lavagna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 335/7509920 |
-| ALESSIO CASARETTO | Leivi | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 348/5142772 |
-| COOPERATIVA AGRICOLA RURALE ISOLA DI BORGONOVO | Mezzanego | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 349/0063440 |
-| AZIENDA AGRICOLA TERRE VERAE | Neirone | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 348/3198617 |
-| AZIENDA AGRICOLA ALEPPO | Rapallo | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | — |
-| AGRICOLA SANTA BARBARA SS | Santa Margherita Ligure | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/280413 |
-| AZIENDA AGRICOLA ADRIANO CASAZZA | Santa Margherita Ligure | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/281740 |
-| LUCCHI E GUASTALLI SRL | Santo Stefano Magra | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0187/633329 |
-| AZIENDA AGRICOLA MUZIO ALDO | Sestri Levante | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 0185/457135 |
 | OLIVICOLTORI SESTRESI | Sestri Levante | `Aceite` | «Olivicoltori Sestresi Olivicoltori Sestresi --> --> Azienda Contatti --> E-Commerce +39.0185.44341 English -->» | 0185 44 341<br>amministrazione@olivicoltori.net<br>[web](http://olivicoltori.net) |
-| TERRAZZE BACIGALUPO DI BRAGOLI SANDRO | Tribogna | `Aceite` | Olio extravergine di oliva Riviera Ligure DOP | 349/3516563 |
 | VALDOLIVO | Cogoleto | `Fruta y verdura` | «terna ci permette di mantenere alti gli standard... Leggi di più News Ortaggi di stagione biologici certificati in pronta consegna Continuano le conse» | 010 91 88 130<br>info@agriturismovaldolivo.it<br>[web](http://agriturismovaldolivo.it) |
 | MONTEROSSO | Rossiglione | `Lácteos y quesos` | «etto "Gustosi per natura" del Parco del Beigua Chi desidera gustare i nostri formaggi e le prelibatezze delle aziende che collaborano con noi può comp» | 348 54 88 927<br>info@agriturismomonterosso.it<br>[web](http://agriturismomonterosso.it) |
 
