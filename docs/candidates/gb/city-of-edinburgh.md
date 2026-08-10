@@ -20,10 +20,8 @@ productive municipality, current offer and phone/email before admission.
 | James Anderson Butchers | Manufacturers/packers; rating/inspection 2026-01-13 | 51 Great Junction Street, Edinburgh, EH6 5HX | [663499](https://api.ratings.food.gov.uk/Establishments/663499) |
 | Brimful Brewing Ltd | Manufacturers/packers; rating/inspection 2025-12-29 | 23-27 Broughton Street Lane, Edinburgh, EH1 3LY | [1904805](https://api.ratings.food.gov.uk/Establishments/1904805) |
 | Closet Brewing | Manufacturers/packers; rating/inspection 2025-05-21 | 23 The Loan, Edinburgh, EH30 9SD | [1748907](https://api.ratings.food.gov.uk/Establishments/1748907) |
-| Edinburgh Gin Distillery | Manufacturers/packers; rating/inspection 2026-04-29 | 29a East Market Street, Edinburgh, EH8 8FS | [1940850](https://api.ratings.food.gov.uk/Establishments/1940850) |
 | Gleann Mor Spirits Company Ltd | Manufacturers/packers; rating/inspection 2025-02-25 | Bankhead Industrial Estate, Edinburgh, EH11 4BP | [1790361](https://api.ratings.food.gov.uk/Establishments/1790361) |
 | Holyrood Distillery | Manufacturers/packers; rating/inspection 2024-04-18 | 9 Royal Elizabeth Yard, Edinburgh, EH29 9EN | [1702308](https://api.ratings.food.gov.uk/Establishments/1702308) |
-| Lind & Lime Distillery | Manufacturers/packers; rating/inspection 2026-05-21 | 24 Coburg Street, Edinburgh, EH6 6HB | [1649390](https://api.ratings.food.gov.uk/Establishments/1649390) |
 | North British Distillery | Manufacturers/packers; rating/inspection 2024-11-22 | 9 Wheatfield Road, Edinburgh, EH11 2PX | [663251](https://api.ratings.food.gov.uk/Establishments/663251) |
 | Stenroth Workers Cooperative (Stenroth Brewery) | Manufacturers/packers; rating/inspection 2025-05-21 | 23 The Loan, Edinburgh, EH30 9SD | [1801606](https://api.ratings.food.gov.uk/Establishments/1801606) |
 | Bellfield Brewery | Manufacturers/packers; rating/inspection 2020-02-25 | 46 Stanley Place, Edinburgh, EH7 5TB | [1227981](https://api.ratings.food.gov.uk/Establishments/1227981) |

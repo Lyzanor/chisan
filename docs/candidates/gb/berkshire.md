@@ -25,10 +25,7 @@ productive municipality, current offer and phone/email before admission.
 | Grays Farm | Farmers/growers; rating/inspection 2023-03-24 | Grays Farm, Heathlands Road, Wokingham, RG40 3AN | [283117](https://api.ratings.food.gov.uk/Establishments/283117) |
 | Honeys of Henley | Farmers/growers; rating/inspection 2024-07-09 | Hall & Hunter Partnership Goffs Barn, Wargrave Road, Wargrave, RG10 8DJ | [980662](https://api.ratings.food.gov.uk/Establishments/980662) |
 | Barkham Manor Farm | Manufacturers/packers; rating/inspection 2024-09-09 | Barkham Manor Farm, Barkham Road, Barkham, RG41 4DQ | [282671](https://api.ratings.food.gov.uk/Establishments/282671) |
-| Hawkridge Distillers | Manufacturers/packers; rating/inspection 2024-11-04 | East Barn Manor Farm Barns Newbury Hill, Hampstead Norreys, Thatcham, West Berkshire, RG18 0TR | [1779893](https://api.ratings.food.gov.uk/Establishments/1779893) |
-| Indie Rabble Brewery And Tap Room | Manufacturers/packers; rating/inspection 2025-07-03 | Idie Rabble, 27 - 28 The Arches, Alma Road, Windsor, SL4 1QZ | [1738207](https://api.ratings.food.gov.uk/Establishments/1738207) |
 | Delphic Brewing Company | Manufacturers/packers; rating/inspection 2025-10-17 | Delphic Brewing Company Mayors Lane, Newbury, West Berkshire, RG14 5DR | [1822673](https://api.ratings.food.gov.uk/Establishments/1822673) |
-| Field + Theory Brewing Co | Manufacturers/packers | Mayfield Farm Ilsley Road, Compton, Newbury, West Berkshire, RG20 7BR | [1955369](https://api.ratings.food.gov.uk/Establishments/1955369) |
 | L\&O Farm Produce | Manufacturers/packers | Farmhouse, Coningsby Farm, Coningsby Lane, Fifield, SL6 2PF | [1882375](https://api.ratings.food.gov.uk/Establishments/1882375) |
 | Linden Estate Winery | Manufacturers/packers; rating/inspection 2022-07-28 | Moorbridge Winery Lambourn Road, Boxford, Newbury, West Berkshire, RG20 8DA | [1363126](https://api.ratings.food.gov.uk/Establishments/1363126) |
 | Mortimer Brewing Company | Manufacturers/packers | Butlers Lands Farm, Mortimer, Reading, West Berkshire, RG7 2AG | [1941613](https://api.ratings.food.gov.uk/Establishments/1941613) |

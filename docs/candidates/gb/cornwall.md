@@ -26,7 +26,6 @@ productive municipality, current offer and phone/email before admission.
 | Penrock Distillery | Manufacturers/packers; rating/inspection 2026-04-23 | The Old Lifeboat Station, Church End, East Looe, Looe, PL13 1BX | [1935449](https://api.ratings.food.gov.uk/Establishments/1935449) |
 | Polbathic Cider | Manufacturers/packers; rating/inspection 2024-09-27 | The Granary, Old Road, Polbathic, Torpoint, PL11 3EX | [1718943](https://api.ratings.food.gov.uk/Establishments/1718943) |
 | Scilly Cider Co | Manufacturers/packers; rating/inspection 2026-07-08 | Carn Friars Farm, Carn Friars, St Mary's, Isles Of Scilly, TR21 0NZ | [1562475](https://api.ratings.food.gov.uk/Establishments/1562475) |
-| Wasted Apple, Fentenfenna Farm CIC | Manufacturers/packers; rating/inspection 2025-10-15 | Fentenfenna Farm, Ruthvoes, St Columb Major, St Columb, TR9 6HT | [1720509](https://api.ratings.food.gov.uk/Establishments/1720509) |
 | Helford River Distillery Ltd | Manufacturers/packers; rating/inspection 2022-03-08 | Bodergy, Budock Vean Lane, Mawnan Smith, Falmouth, TR11 5LH | [1215491](https://api.ratings.food.gov.uk/Establishments/1215491) |
 | Hester's Harvest' Trevozah Farm Produce | Farmers/growers; rating/inspection 2025-12-03 | PL15 | [900599](https://api.ratings.food.gov.uk/Establishments/900599) |
 | Peninnis Farm | Farmers/growers | King Edwards Road, Hugh Town, St Mary's, Isles Of Scilly | [1148901](https://api.ratings.food.gov.uk/Establishments/1148901) |

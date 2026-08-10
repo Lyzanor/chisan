@@ -18,7 +18,6 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Little Martha Brewing | Manufacturers/packers; rating/inspection 2026-02-16 | Unit 2 The Arches, Silverthorne Lane, St Philips, Bristol, BS2 0QD | [1809397](https://api.ratings.food.gov.uk/Establishments/1809397) |
-| The Spirit of Bristol Distillery | Manufacturers/packers; rating/inspection 2026-03-24 | Unit 2, Third Way, Avonmouth, Bristol, BS11 9HL | [1783291](https://api.ratings.food.gov.uk/Establishments/1783291) |
 | Bristol Meat Machine Cutting Room | Manufacturers/packers; rating/inspection 2025-08-05 | Unit 1B, 1 Bonville Trading Estate, Brislington, Bristol, BS4 5QU | [1097187](https://api.ratings.food.gov.uk/Establishments/1097187) |
 | Cotham Cheese Company | Manufacturers/packers | 8 Abbotsford Road, Cotham, Bristol, BS6 6HB | [1960931](https://api.ratings.food.gov.uk/Establishments/1960931) |
 | Treasure Island Sweets Limited | Manufacturers/packers; rating/inspection 2025-05-02 | Unit 5 Barnack Trading Centre, Novers Hill, Knowle, Bristol, BS3 5QE | [385196](https://api.ratings.food.gov.uk/Establishments/385196) |

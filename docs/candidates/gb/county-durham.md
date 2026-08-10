@@ -21,7 +21,6 @@ productive municipality, current offer and phone/email before admission.
 | Broom Mill Farm Shop | Manufacturers/packers; rating/inspection 2026-06-17 | BROOM MILL FARM SHOP, BILDERSHAW, DL14 9PJ | [304393](https://api.ratings.food.gov.uk/Establishments/304393) |
 | Gelato Tutti | Farmers/growers; rating/inspection 2025-03-25 | 7 Edward Street, DARLINGTON, DL1 2UP | [1590655](https://api.ratings.food.gov.uk/Establishments/1590655) |
 | Urban Farm Mushrooms | Manufacturers/packers; rating/inspection 2024-06-12 | 1 - 3 Lodge Street, Darlington, DL1 1TD | [1706581](https://api.ratings.food.gov.uk/Establishments/1706581) |
-| Durham Brewery | Manufacturers/packers; rating/inspection 2025-04-03 | UNIT 6A BOWBURN NORTH INDUSTRIAL ESTATE BOWBURN NORTH INDUSTRIAL ESTATE ROAD, BOWBURN, DH6 5PF | [1836786](https://api.ratings.food.gov.uk/Establishments/1836786) |
 | Hill Island Brewery | Manufacturers/packers; rating/inspection 2025-07-03 | UNIT 7 FOWLERS YARD, DURHAM, DH1 3RA | [802340](https://api.ratings.food.gov.uk/Establishments/802340) |
 | Hopper House Brew Farm | Manufacturers/packers; rating/inspection 2026-06-04 | HOPPER HOUSE FARM BREWERY, SEDGEFIELD, TS21 2HL | [1620409](https://api.ratings.food.gov.uk/Establishments/1620409) |
 | Kemps Cider | Manufacturers/packers; rating/inspection 2018-03-02 | Dairy Farm, The Green, BRAFFERTON, DARLINGTON, DL1 3LA | [1039377](https://api.ratings.food.gov.uk/Establishments/1039377) |
