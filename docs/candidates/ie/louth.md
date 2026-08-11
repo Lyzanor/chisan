@@ -60,8 +60,8 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 
 | Lead | Category | Why it is still open |
 |---|---|---|
-| Callaghan's Butchers | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
-| Commins Butchers | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Callaghan's Butchers | Carne | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
+| Commins Butchers | Carne | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Haynestown Meats | Carne | Haynestown Meats publishes only a trade counter at Toughers Business Park, Naas, Co. Kildare; the site does not place a productive unit in Louth. |
 | King of Kefir | Lácteos y quesos | King of Kefir publishes no address. Its candidate municipio Clara sits on a source coordinate in Co. Offaly while its phone is a Drogheda number, so the location is unresolved. Its category is water kefir, a non-dairy drink, not Lácteos y quesos. |
 | KooKee | Otros | KooKee publishes no address; its candidate municipio Dundalk is an inferred nearest settlement 1.3 km from the source coordinate. |

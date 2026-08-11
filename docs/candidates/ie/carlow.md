@@ -63,7 +63,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Émile Pâtissier Ltd | Otros | The site carried for Émile Pâtissier is cowgirl.ie, a domain listed for sale; the URL must not be carried and the bakery needs another current source. |
 | Flying Tumbler | Otros | Flying Tumbler publishes a whiskey brand with a shop and age gate but no distillery, address or production detail; whether a productive unit exists in Carlow is unresolved. |
 | Moyleabbey Organic | Otros | The site carried for Moyleabbey Organic is burrensmokehouse.com, the Burren Smokehouse in Lisdoonvarna, Co. Clare — a different entity in a different county. The URL must not be carried. |
-| Tuismitheoirí na Gaeltachta | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Tuismitheoirí na Gaeltachta | Otros | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Walsh Whiskey | Destilados y licores | Walshwhiskey.com publishes only 'Walsh Whiskey Offices' at Deerpark Business Park, Carlow. A head office does not place a productive unit, and the site does not establish where Writers' Tears and The Irishman are now distilled or matured. |
 
 ## Needs one more fact — 17

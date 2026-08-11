@@ -54,13 +54,12 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 4
+## Held after verification — 3
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
 | Lead | Category | Why it is still open |
 |---|---|---|
-| Greenfield Foods Ltd | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
 | Lough Egish Foods | Otros | The site carried for Lough Egish Foods is dmcfoods.ie, a ready-meal manufacturer trading as DMC Foods with sites in more than one county; identity and productive location are unresolved. |
 | Monaghan Mushrooms Group | Setas ? | Monaghan.eu publishes only the Tyholland group headquarters for Monaghan Mushrooms; a head office does not place the productive unit, and the growing site behind it is not established. |
 | The Nestbox Egg Company | Huevos | The site carried for The Nestbox Egg Company is goldenirish.com, a separate Golden Irish Eggs brand identity; the connection between the two is unresolved. |

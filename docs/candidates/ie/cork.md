@@ -54,29 +54,26 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 18
+## Held after verification — 15
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
 | Lead | Category | Why it is still open |
 |---|---|---|
 | Barryroe Cooperative | Otros | Barryroe Co-Operative publishes an agri retail, feed and milk business with a Eurospar; whether an own food offer under its own producer identity exists is unresolved. |
-| Clonakilty Distillery | Destilados y licores | The SiteGround bot challenge holds against a browser session as well as every automated route, so the site could not be read from here at all. |
 | D.P Murphy & Sons | Carne | The site carried for D.P Murphy & Sons is patrickmurphyandsons.ie, a smokeless coal and solid fuel supplier; the URL must not be carried. |
 | Dan Moloney's Butchers | Carne | The domain serves a password-protected "Site Under Maintenance" page. A maintenance page is not proof of closure; the lead is unresolved. |
 | Hegarty Cheese | Lácteos y quesos | Hegarty Cheese publishes only 'made near Cork city'; its candidate municipio Ballintemple is an inferred urban nearest settlement that does not match a farmhouse dairy. |
 | Horgan Meats | Carne ? | The site carried for Horgan Meats is horgans.com, Horgan's Delicatessen Supplies at Mitchelstown, a food wholesaler; a different identity and a distributor rather than a producer. |
-| Kinsale Mead Co | Miel ? | The SiteGround bot challenge holds against a browser session as well as every automated route, so the site could not be read from here at all. |
 | Lee Valley Eggs | Huevos | Leevalleyireland.com answers an Azure WAF challenge; a challenge is not a dead site, and Lee Valley Eggs needs a second route. |
 | MoonFish | Pescado | Moonfish.ie no longer resolves to the producer: the domain now serves the Hosting Ireland site. A lapsed domain is not proof of closure and the URL must not be carried. |
-| O'Mahony Family Butchers | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| O'Mahony Family Butchers | Carne | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Sheehan Brothers Glanmire | Otros | Sheehan Brothers Butchers publishes shops at Mallow, Glanmire, Kanturk and St Luke's Cross without naming a productive unit; which one the row would represent is unresolved. |
 | Sheehan Brothers St Luke Cross | Otros | See the Sheehan Brothers Glanmire record; the St Luke's Cross entry is another shop of the same business. |
-| The Good Fish Co | Pescado | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
 | The Grumpy Bakers | Pan y cereal | The Grumpy Bakers publishes outlets in both Midleton and Cork city without naming where it bakes; the productive unit is unresolved. |
 | The Menu Cakery | Pan y cereal | The Menu Cakery publishes a T12 Cork city Eircode while its lead coordinate sits at Halfway; the municipality is unresolved. |
 | The Stuffed Olive | Pan y cereal | The Stuffed Olive in Bantry publishes a café, food and wine store with ready meals, salads and cakes; which of it is own production rather than resale is unresolved. |
-| West Cork Eggs | Huevos | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| West Cork Eggs | Huevos | The SiteGround challenge escalates to a captcha that has to be solved by hand, so the site cannot be read by any automated route or by an agent. It needs a person in a browser. |
 | West Cork Sea Salt | Otros | West Cork Sea Salt publishes no address; its candidate municipio South Parish is an inferred Cork city nearest settlement that contradicts the West Cork name. |
 
 ## Needs one more fact — 107

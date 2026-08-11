@@ -65,7 +65,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Butcher.ie | Carne ? | Butcher.ie publishes no address; its candidate municipio Smithfield is an inferred nearest settlement 1.4 km from the source coordinate. |
 | Cinnamood | Pan y cereal | Cinnamood publishes a German-language specialty bakery brand with no Dublin address or production site. |
 | Clondalkin Cheesemaker | Otros | See the Dublin Hills Goats Cheese record; same distributor site. |
-| Cornucopia | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Cornucopia | Otros | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Corrigan's Butchers Finglas | Carne ? | Corrigan's Butchers publishes Drumcondra (D09) and Finglas (D11) shops without naming a productive unit; which one the row would represent is unresolved. |
 | Cosgrave's The Butcher Shop Ballybrack | Carne ? | Cosgraves Butchers was filed four times (Ballybrack, Clarehall, Crumlin, Santry) against one site, and each lead's candidate municipio contradicts its branch name; the productive unit is unresolved. |
 | Cosgrave's The Butcher Shop Clarehall | Carne ? | See the Cosgraves Ballybrack record; same site, branch municipio contradicted by the candidate coordinate. |

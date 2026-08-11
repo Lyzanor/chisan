@@ -54,7 +54,7 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 5
+## Held after verification — 4
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
@@ -63,7 +63,6 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Dr Coys Health Foods | Otros | Dr. Coy's publishes an office at The Cova, Trafalgar Road, Greystones and a chocolate and health-food range but no production site; whether it makes rather than commissions the range is unresolved. |
 | Keadeen Mountain Farms | Otros | Keadeen Mountain Farms publishes only 'Co. Wicklow'; its candidate municipio Kiltegan is an inferred nearest settlement 3.7 km from the source coordinate. |
 | National Organic Products Ltd | Otros | National Organic Products publishes the Bunalun Organic grocery brand across many product lines but no production site; whether it makes rather than commissions its range is unresolved. |
-| O'Hanlon's Herbs | Fruta y verdura | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
 | Sally Gap Foods | Otros | The site carried for Sally Gap Foods is powerscourthotel.com, which answers a Cloudflare interstitial; the URL belongs to a hotel and must not be carried. |
 
 ## Needs one more fact — 35

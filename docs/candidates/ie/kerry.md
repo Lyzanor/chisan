@@ -66,7 +66,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Dingle Pie Company | Otros | The site carried for Dingle Pie Company is thedinglepub.com, an entertainment venue; the pie maker needs its own source. |
 | OrganiGo | Otros | OrganiGo describes itself as a ready-to-eat organic vegetable producer but the live site sells compliance training and consultancy; what it currently produces is unresolved. |
 | Seamus O'Sullivan Master Butchers | Carne | The site carried for Seamus O'Sullivan Master Butchers is blocalcard.com, a customer loyalty-card platform; the URL must not be carried. |
-| Sneem Black Pudding | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Sneem Black Pudding | Carne | The SiteGround challenge escalates to a captcha that has to be solved by hand, so the site cannot be read by any automated route or by an agent. It needs a person in a browser. |
 | the Little Cheese Company | Lácteos y quesos | The Little Cheese Company and Dingle Peninsula Cheese were filed against the same shop site, thelittlecheeseshop.ie; neither identity is established by it. |
 
 ## Needs one more fact — 48

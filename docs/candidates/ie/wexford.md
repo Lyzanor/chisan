@@ -62,7 +62,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 |---|---|---|
 | Boyle's Butchers | Carne | The site answers HTTP 503 on every automated route tried. A temporary server error is not proof of closure; the lead is unresolved. |
 | Firehouse Bakery | Pan y cereal | Firehouse Bakery publishes its bakery and cookery school at Delgany, Co. Wicklow alongside Wexford and Cork Eircodes; which unit belongs in Wexford is unresolved. |
-| Kelly's Bakery | Pan y cereal | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Kelly's Bakery | Pan y cereal | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | OUTCAST BRANDS | Otros | Blood Monkey Gin publishes a brand and shop for Outcast Brands but no distillery, address or production detail; whether a productive unit exists in Wexford is unresolved. |
 | Stafford Spirits Ltd | Destilados y licores | Jackfordspirits.com serves a Plesk default page with no site behind it; Stafford Spirits needs a current source and the URL must not be carried. |
 | Thai Gold - Thai Food Co Limited | Otros | Thai Gold publishes no address; its candidate municipio Piercetown is an inferred nearest settlement 2.7 km from the source coordinate. |

@@ -61,7 +61,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Lead | Category | Why it is still open |
 |---|---|---|
 | Costello's Brewing Co. | Cerveza | Costellosbrewco.ie no longer resolves to the brewery: the domain now serves an online casino. A lapsed domain is not proof of closure, so the URL must not be carried and Costello's needs a current source. |
-| Little Milk Company | Lácteos y quesos | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Little Milk Company | Lácteos y quesos | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 
 ## Needs one more fact — 24
 
