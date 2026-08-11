@@ -22,7 +22,6 @@ actuals. Oli de Particular ja correspon a `Clos de la Torre` i no es reobre.
 | [Agrícola Alabau SCP](https://localmaker.org/listing/agricola-alabau-scp) | Fontanilles | Préssecs i nectarines; confirmar finca i venda actuals. |
 | [Arnau Ramaders SL](https://localmaker.org/listing/arnau-ramaders-sl) | Sant Gregori | Boví i elaborats; confirmar oferta pròpia i dimensió admissible. |
 | [Associació Baussitges d'Amics de Vaca de l'Albera](https://localmaker.org/listing/associacio-baussitges-damics-de-vaca-de-lalbera) | Figueres | Boví; cal identificar si l'associació opera una unitat/producte propi publicable. |
-| [Avícola Gironès – Avícola del Gironès SL](https://localmaker.org/listing/avicola-girones-avicola-del-girones-sl) | Sant Julià de Ramis | Ous; confirmar marca i venda directa actuals. |
 | [Càrniques de Cerdanya SL](https://localmaker.org/listing/carniques-de-cerdanya-sl) | Puigcerdà | Boví i elaborats; confirmar obrador propi. |
 | [Carns de Confiança SL](https://localmaker.org/listing/carns-de-confianca-sl) | Campdevànol | Boví i elaborats; confirmar producció i oferta pública pròpies. |
 | [Carola Díaz-Aguado, Marta](https://localmaker.org/listing/carola-diaz-aguado-marta) | Figueres | Boví; revisar juntament amb Lluís Carola Queraltó per possible unitat compartida. |

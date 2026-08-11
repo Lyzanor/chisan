@@ -26,13 +26,10 @@ Celler Cooperatiu de Cornudella ja estan coberts i no es reobren.
 | [Ariadna Oliva Velasco](https://localmaker.org/listing/ariadna-oliva-velasco) | Tivissa | Horta; confirmar contacte i venda. |
 | [Ca la Simona – Josep Ramon Alabart March](https://localmaker.org/listing/ca-la-simona-josep-ramon-alabart-march) | El Pinell de Brai | Vi i cireres; confirmar celler/finca i activitat. |
 | [Ca Nicolau – Jordi Nicolau Tell](https://localmaker.org/listing/ca-nicolau-jordi-nicolau-tell) | Constantí | Horta, ceba i calçot; confirmar finca i canal públic. |
-| [Cal Brisda – SERMA CB](https://localmaker.org/listing/cal-brisda-serma-cb) | La Torre de l'Espanyol | AOVE i ametlles; confirmar marca i molí/finca. |
 | [Càrniques Sancho SL](https://localmaker.org/listing/carniques-sancho-sl) | Roquetes | Cabrum, xai i elaborats; confirmar obrador i separar olives/garrofes si no són materials. |
 | [Carreras Guasch, Frederic](https://localmaker.org/listing/carreras-guasch-frederic) | Santa Oliva | Meló; confirmar marca/contacte i venda. |
 | [Cireres Riola – Jordi Martí Bigorra](https://localmaker.org/listing/cireres-riola-jordi-marti-bigorra) | Tivissa | Cireres, oli i ametlles; confirmar finca i activitat. |
-| [Coll de Noguera – Jordi Artells Franco](https://localmaker.org/listing/coll-de-noguera-jordi-artells-franco) | Montblanc | Pollastre i ous; confirmar marca i canal actuals. |
 | [Cooperativa Agrícola de Llorenç del Penedès](https://localmaker.org/listing/cooperativa-agricola-de-llorenc-del-penedes) | Llorenç del Penedès | Vins, caves i oli; resoldre abans si és la mateixa entitat/unitat que CEOLPE. |
-| [Cultius La Puput SCP](https://localmaker.org/listing/cultius-la-puput-scp) | Aiguamúrcia | Farines, cereals, oli, llegums i fruits secs; confirmar marca i oferta pròpia. |
 | [Desitg – Jordi Audi Vallespí](https://localmaker.org/listing/desitg-jordi-audi-vallespi) | Aldover | Oli, ametlles, cítrics i garrofes; confirmar finca i marca. |
 | [Eco Pagesos – David Aymi Abella](https://localmaker.org/listing/eco-pagesos-david-aymi-abella) | La Palma d'Ebre | Oli, olives i ametlles; confirmar unitat i venda actuals. |
 | [El Jardí de les Bruixes](https://localmaker.org/listing/el-jardi-de-les-bruixes) | Poboleda | Plantes medicinals; només encaixa si hi ha infusions/aliments propis, no per teràpies o formació. |
@@ -46,7 +43,6 @@ Celler Cooperatiu de Cornudella ja estan coberts i no es reobren.
 | [Llaberia – Agroalimentación Germans Llaberia SL](https://localmaker.org/listing/llaberia-agroalimentacion-germans-llaberia-sl) | Montbrió del Camp | Horta i cítrics; confirmar unitat, marca i escala. |
 | [Lo Collet – Andreu Gil Colell](https://localmaker.org/listing/lo-collet-andreu-gil-colell) | Alcanar | Clementines i taronges; confirmar finca i marca. |
 | [Lo Figueral – Pau Arasa Carot](https://localmaker.org/listing/lo-figueral-pau-arasa-carot) | Riudecanyes | Xai i AOVE; confirmar oferta pròpia de la mateixa unitat. |
-| [Mas de Cleto – Domènec Niella Pitarch](https://localmaker.org/listing/mas-de-cleto-domenec-niella-pitarch) | Horta de Sant Joan | Cabrum i elaborats; confirmar obrador i venda. |
 | [Mel Gimeno – Aaron Gimeno Brocate](https://localmaker.org/listing/mel-gimeno-aaron-gimeno-brocate) | Santa Bàrbara | Mel; confirmar explotació i marca. |
 | [Mel/Oli/Fruita Vallespí – José Maria Vallespi Salvador](https://localmaker.org/listing/mel-oli-fruita-vallespi-jose-maria-vallespi-salvador) | Benifallet | Oli, mel i préssecs; confirmar unitat i oferta actuals. |
 | [Nicolau i Ester SCP](https://localmaker.org/listing/nicolau-i-ester-scp) | Riudoms | Horta i fruita; confirmar marca/contacte i venda. |
