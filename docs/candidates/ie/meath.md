@@ -1,212 +1,171 @@
 # Meath — open leads (2026-08-11)
 
 Discovery workspace for unresolved producer leads. Target CSV:
-`data/csv/ie/leinster/meath.csv`. Nothing recorded here is verified or
-approved for publication. Resolve each lead under the normal CSV and evidence
-workflow and prune it from this file.
+`data/csv/ie/leinster/meath.csv`. Nothing here is verified or approved
+for publication. Resolve each lead under the normal CSV and evidence workflow
+and prune it from this file.
 
-## Official register and OpenStreetMap sweep (2026-08-11)
+## Sourcing (2026-08-11)
 
 Sources, all read 2026-08-11:
 
-- DAFM register of approved and registered meat establishments —
-  `AllApprovedPlants_2026.xlsx` and `AllApprovedPlants_2026_Formerly_LA_Plants.xlsx`
-  from <https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/dafm-approved-establishments/>.
-  Publishes approval number, name, town, county and which activities are approved.
-- DAFM register of milk and dairy establishments, published 17 July 2026, from the
-  same page. Publishes legal name, trading name, address, species and the
-  establishment's own size class.
-- FSAI list of HSE-approved establishments —
-  <https://oapi.fsai.ie/HSEApprovedEstablishments.aspx>. Publishes approval
-  number, trading name, address, county, business type and activity.
+- DAFM registers of approved meat establishments and of milk and dairy
+  establishments (the latter published 17 July 2026), from
+  <https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/dafm-approved-establishments/>.
+- FSAI list of HSE-approved establishments,
+  <https://oapi.fsai.ie/HSEApprovedEstablishments.aspx>.
+- FarmFinder Ireland, <https://farmfinder.ie/county/meath>, plus each producer
+  page for its structured website, coordinates and upstream source.
+- Midlands Food & Drink Directory,
+  <https://www.midlandsireland.ie/food-and-drink-directory/> (Laois, Longford,
+  Offaly and Westmeath only).
 - OpenStreetMap food-production and food-shop tags via Overpass.
-- FarmFinder Ireland county listing — <https://farmfinder.ie/county/meath>.
-- Midlands Food & Drink Directory —
-  <https://www.midlandsireland.ie/food-and-drink-directory/> (its
-  `producers_directory` REST collection). Covers only Laois, Longford, Offaly
-  and Westmeath.
 
-What these establish, and what they do not: an approval proves that the named
-establishment is registered for that activity at that address as of the published
-date. It does not prove a current own-brand offer, a public contact, remote
-ordering, or that the unit sells to the public at all — a great many exist to
-process for other businesses, and the register lists industrial plants beside
-farmhouse ones. An OSM tag proves only what a mapper recorded, and its county
-here is the tag's own where present and inferred from position otherwise. The
-Midlands directory is self-submitted by the businesses in it, so it shows how a
-producer presents itself, not an audited fact, and it publishes no contact
-details. FarmFinder is an aggregator that republishes other directories and cites
-them per entry, so it is broad but second-hand and can carry stale or
-auto-generated rows. Every lead below is a `hold`: confirm identity, qualifying
-activity, productive municipality and a current contact on the producer's own
-source before admission.
+Every website below was resolved and probed on 2026-08-11: a URL that returned
+NXDOMAIN, was unreachable, or was a mangled address such as
+`http://info@example.ie` has been removed rather than carried, because a
+directory keeps publishing a link long after the domain lapses. A 403 is recorded
+as alive, not dead.
 
-Category shown is the tag or register activity mapped onto the shared registry;
-it is a starting guess, not a decision.
+Ceilings. A register approval proves the establishment is registered for that
+activity at that address on the published date — not a current own-brand offer,
+a public contact, remote ordering, or that it sells to the public. FarmFinder's
+structured fields (website, coordinates, the upstream directory it cites) are
+usable, but its prose is auto-generated and must never be copied into
+`descripcion`. The Midlands directory is self-submitted. An OSM tag proves only
+what a mapper recorded. Every entry here is still a `hold`.
 
-### Production signal — 91 leads
+`Municipio?` is a candidate, not a decision: where the source gave no town it is
+the nearest settlement to the published coordinates, with the distance shown.
+Confirm it against the producer's own address before it enters a CSV.
 
-Registered for making a product, mapped with a production craft tag, or
-listed as a producer by the regional directory.
+Category is the register activity or tag mapped onto the shared registry — a
+starting guess. A trailing `?` means it was inferred from the trade name or the
+domain because the source stated none.
 
-| Lead | Town | Category | Source signal | Contact | Ref |
+A `⚠` on a website means the domain shares no word with the trade name. That is
+often legitimate — Drioglann Loch Measc trades as Lough Mask Distillery, Con Traas
+as The Apple Farm — but it is also what a parent company, a stockist or a
+mis-scrape looks like, so check it before copying the URL into `web`.
+
+Removed in this pass as out of scope: national-scale brands, hospitality
+(cafés, restaurants, pubs), retail and forecourt names, resale-only shop tags
+(delicatessen, confectioner, cheesemonger), abattoir or cutting-plant approvals
+with no own offer and no directory backing, and bare OSM nodes carrying no
+website, phone or email to verify against.
+
+## Ready to verify — 24
+
+A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+
+| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
+|---|---|---|---|---|---|---|
+| The Studio Coffee | Laytown-Bettystown-Mornington (nearest, 1.3 km) | Café | www.thestudiocoffee.com | 086 195 3860 | 53.6967797, -6.2636975 | [FarmFinder](https://farmfinder.ie/producer/the-studio-coffee); via Bord Bia Origin Green |
+| Ashbourne Meat Processors | Ashbourne (nearest, 1.7 km) | Carne | ashmeats.ie ⚠ | (045) 875 400 | 53.497831, -6.408857 | [FarmFinder](https://farmfinder.ie/producer/ashbourne-meat-processors) |
+| Brogan's Butchers | Kilcarn (nearest, 1.5 km) | Carne | www.brogansathboy.com | (046) 943 2122 | 53.638087, -6.656358 | [FarmFinder](https://farmfinder.ie/producer/brogan-s-butchers); via Associated Craft Butchers of Ireland |
+| Callaghan Butchers Bettystown | Bettystown (nearest, 1.3 km) | Carne | callaghansbutchersbettystown.com | 041 9887885 | 53.709901, -6.233114 | [FarmFinder](https://farmfinder.ie/producer/callaghan-butchers-bettystown); via Irish Butchers Guild |
+| Gleeson Meats Navan | Navan (nearest, 0.7 km) | Carne | www.gleesonsfreshfoods.ie | (046) 902 3717 | 53.659085, -6.684069 | [FarmFinder](https://farmfinder.ie/producer/gleeson-meats-navan); via Associated Craft Butchers of Ireland |
+| Hugh Maguire Butchers | Ashbourne (nearest, 0.6 km) | Carne | hughmaguirebutchers.com | (01) 849 9919 | 53.507343, -6.39386 | [FarmFinder](https://farmfinder.ie/producer/hugh-maguire-butchers) |
+| Celtic Chocolates | Drumraney (nearest, 3.5 km) | Chocolate ? | celticchocolates.eu | (046) 955 7077 | 53.51253, -7.737189 | [FarmFinder](https://farmfinder.ie/producer/celtic-chocolates); via SuperValu Food Academy |
+| Chez Emily Chocolate Boutique | Ashbourne (nearest, 0.3 km) | Chocolate | chezemily.ie | — | 53.5097793, -6.3967317 | OSM node/5282162465 |
+| Lir Chocolates | Kilcarn (nearest, 1.3 km) | Chocolate ? | www.lirchocolates.com | (046) 909 1046 | 53.6385619, -6.6625404 | [FarmFinder](https://farmfinder.ie/producer/lir-chocolates); via Bord Bia Origin Green |
+| Slane Distillery | Slane (nearest, 1.4 km) | Destilados y licores | www.slaneirishwhiskey.com | — | 53.7110106, -6.5641675 | OSM relation/9278985 |
+| Clarkes Fresh Fruit | Stamullen (nearest, 1.6 km) | Fruta y verdura | www.clarkesfreshfruit.ie | (01) 841 3262 | 53.618815, -6.2862675 | [FarmFinder](https://farmfinder.ie/producer/clarkes-fresh-fruit); via Bord Bia Origin Green |
+| Gleann Gabhra | Kilcarn (nearest, 2 km) | Lácteos y quesos | www.boynevalleycheese.ie ⚠ | 086 384 4162 | 53.617621, -6.644656 | [FarmFinder](https://farmfinder.ie/producer/gleann-gabhra) |
+| Sheridan's Cheesemongers Ltd | Virginia Rd Station Virginia | Lácteos y quesos | sheridanscheesemongers.com | +353 46 9245110 · warehouse@sheridanscheesemongers.com | — | DAFM dairy IE1949 |
+| A Bit on the Side | Moylagh (nearest, 1.2 km) | Otros | www.abitontheside.ie | hilary@abitontheside.ie | 53.7245148, -7.17728 | [FarmFinder](https://farmfinder.ie/producer/a-bit-on-the-side); via NeighbourFood |
+| AP Fine Foods Ltd | Ráth Chairn (nearest, 1.3 km) | Otros | www.apfinefoods.com | (046) 901 5665 | 53.62231380000001, -6.858154799999999 | [FarmFinder](https://farmfinder.ie/producer/ap-fine-foods-ltd); via Bord Bia Origin Green |
+| Battle of The Butters | Tullyallen (nearest, 1.2 km) | Otros | www.battleoftheboyne.ie | (041) 980 9950 | 53.7233896, -6.4233809 | [FarmFinder](https://farmfinder.ie/producer/battle-of-the-butters); via SuperValu Food Academy |
+| BR Marketing Ltd | Clonee (nearest, 0.4 km) | Otros | www.brmarketing.ie | (01) 885 0800 | 53.4101942, -6.43929 | [FarmFinder](https://farmfinder.ie/producer/br-marketing-ltd); via Organic Trust |
+| Filligans | Kentstown (nearest, 2 km) | Otros | www.finnegansfarm.ie ⚠ | (041) 982 5153 | 53.618119, -6.5076915 | [FarmFinder](https://farmfinder.ie/producer/filligans); via SuperValu Food Academy |
+| Finnegan's Farm | Kentstown (nearest, 2.4 km) | Otros | www.finnegansfarm.ie | (041) 982 5153 | 53.61304200000001, -6.506074 | [FarmFinder](https://farmfinder.ie/producer/finnegans-farm); via Bord Bia Origin Green |
+| Gorse Foods | Moyvoughly (nearest, 2 km) | Otros | pegus.ie ⚠ | 086 256 5671 | 53.428437, -7.729557 | [FarmFinder](https://farmfinder.ie/producer/gorse-foods); via SuperValu Food Academy |
+| Newgrange Gold Ltd | Navan (nearest, 2.2 km) | Otros | www.newgrangegold.ie | (041) 982 4273 | 53.672081, -6.689194 | [FarmFinder](https://farmfinder.ie/producer/newgrange-gold-ltd); via Food Culture Ireland |
+| O'Brien Fine Foods | Ráth Chairn (nearest, 1.3 km) | Otros | obrienfinefoods.ie | (046) 901 5665 | 53.62231380000001, -6.858154799999999 | [FarmFinder](https://farmfinder.ie/producer/obrien-fine-foods); via Bord Bia Origin Green |
+| Shackletons Milling Ltd | Ashbourne (nearest, 1.1 km) | Otros | www.shackletonsmilling.co.uk | (01) 835 3111 | 53.5172885, -6.4112157 | [FarmFinder](https://farmfinder.ie/producer/shackletons-milling-ltd); via Bord Bia Origin Green |
+| Kerrigan's Mushrooms | Kells (nearest, 5.3 km) | Setas ? | www.kerrigansmushrooms.ie | (046) 924 0670 | 53.689122000000005, -6.8309121 | [FarmFinder](https://farmfinder.ie/producer/kerrigans-mushrooms); via Bord Bia Origin Green |
+
+## Needs one more fact — 35
+
+Either an own website or a register-backed municipio, but not both.
+
+| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
+|---|---|---|---|---|---|---|
+| Andrew Mahon | Drumree | Carne | — | — | — | DAFM meat 2780 |
+| Euro Farm Foods (registered as Cooksgrove Ltd. T/A Euro Farm Foods) | Duleek | Carne | — | — | — | DAFM meat 297 |
+| Farm House Foods (registered as DC Meats LTD T/A Farm House Foods) | Dunshaughlin | Carne | — | — | — | DAFM meat 3039 |
+| Hogan's Turkeys Limited | Kells | Carne | — | — | — | DAFM meat 827 |
+| Killua Castle (registered as Luna Ventures Limited T/A Killua Castle) | Kells | Carne | — | — | — | DAFM meat 3016 |
+| Lorenzen's LTD (registered as Charlie Walshe T/A Lorenzen's LTD) | Kilmessan | Carne | — | — | — | DAFM meat 2959 |
+| Murtagh Meats | Navan (nearest, 1.3 km) | Carne | — | (046) 904 0400 | 53.641221, -6.681301 | [FarmFinder](https://farmfinder.ie/producer/murtagh-meats); via Associated Craft Butchers of Ireland |
+| PC Meats | Enfield | Carne | — | — | — | DAFM meat 2961 |
+| Robert's Butchery & Smokehouse LTD | Navan | Carne | — | — | — | DAFM meat 3035 |
+| Rustic Kitchen (registered as Nugent Foods LTD T/A Rustic Kitchen) | Ashbourne | Carne | — | — | — | DAFM meat 2884 |
+| Ryan's Farm (registered as Iaroo LTD T/A Ryan's Farm) | Kells | Carne | — | — | — | DAFM meat 2769 |
+| The Smokin'Butcher LTD | Navan | Carne | — | — | — | DAFM meat 3036 |
+| The Whole Hoggs (registered as Peter Whelan T/A The Whole Hoggs) | Slane | Carne | — | — | — | DAFM meat 2972 |
+| The Wooded Pig (registered as Bird Farm Ltd T/A The Wooded Pig) | Tara | Carne | — | — | — | DAFM meat 2916 |
+| Thomas Doherty (registered as Thomas Doherty Meats (Kells) LTD T/A Thomas Doherty) | Kells | Carne | — | — | — | DAFM meat 2966 |
+| Bulmers Ireland | Kells (nearest, 1.7 km) | Cerveza | — | — | 53.7377141, -6.8972778 | OSM node/11983111404 |
+| Rathcore Eggs | Enfield (nearest, 3.7 km) | Huevos | — | — | 53.44657748025275, -6.845587798260914 | [FarmFinder](https://farmfinder.ie/producer/rathcore-eggs); via yourhonestybox.com |
+| Bonnybo milk | Baylin (nearest, 4.2 km) | Lácteos y quesos | — | — | 53.40573490090719, -7.883699806484206 | [FarmFinder](https://farmfinder.ie/producer/bonnybo-milk); via yourhonestybox.com |
+| Complex Nutrition Ltd | Unit 36 Navan Enterprise | Lácteos y quesos | — | — | — | DAFM dairy IE1988 |
+| Emeri Nutrition Co. Limited | IDA Business Park Johnstown, | Lácteos y quesos | — | — | — | DAFM dairy 1712 |
+| Four Acre Foods (registered as Four Acre Family Farm Foods Ltd) | Unit 1, Oaktree Business | Lácteos y quesos | — | — | — | DAFM dairy IE2190 |
+| McGrane's Milk Barn (registered as Conor & Mark McGrane) | Walterstown, Garlow Cross, Navan, | Lácteos y quesos | — | — | — | DAFM dairy IE2163 |
+| McGranes Milk Barn | Skryne (nearest, 2.6 km) | Lácteos y quesos | — | — | 53.608578896310334, -6.556424221673022 | [FarmFinder](https://farmfinder.ie/producer/mcgranes-milk-barn); via yourhonestybox.com |
+| Shamsini Dairy (registered as Bashar Alawad) | Stackallen Slane Co. Meath | Lácteos y quesos | — | — | — | DAFM dairy IE2230 |
+| The Milk Well Ltd | The Milk Well Ltd. | Lácteos y quesos | — | — | — | DAFM dairy IE2205 |
+| Riverpark Honey | Skryne (nearest, 2.6 km) | Miel | — | — | 53.562724, -6.5667995 | [FarmFinder](https://farmfinder.ie/producer/riverpark-honey); via yourhonestybox.com |
+| Katelyns Konfections | Duleek (nearest, 0.7 km) | Otros | — | — | 53.657082902505785, -6.426811567662817 | [FarmFinder](https://farmfinder.ie/producer/katelyns-konfections); via yourhonestybox.com |
+| Maperath Farm | Carnaross (nearest, 2.4 km) | Otros | — | +353879027070 · info@maperathfarm.ie | 53.7631732, -6.9267963 | [FarmFinder](https://farmfinder.ie/producer/maperath-farm); via NeighbourFood |
+| McCormack Family Farms | Kiltale (nearest, 1.6 km) | Otros | — | (046) 902 5695 | 53.518063299999994, -6.691167900000001 | [FarmFinder](https://farmfinder.ie/producer/mccormack-family-farms); via Bord Bia Origin Green |
+| Meadowsweet Organic Farm | Kilcarn (nearest, 3.9 km) | Otros | — | — | 53.60377082387633, -6.626599622471037 | [FarmFinder](https://farmfinder.ie/producer/meadowsweet-organic-farm); via yourhonestybox.com |
+| Megs Desserts | Multyfarnham (nearest, 1.1 km) | Otros | — | — | 53.62574893449254, -7.390286183028833 | [FarmFinder](https://farmfinder.ie/producer/megs-desserts); via yourhonestybox.com |
+| Navan | Navan (nearest, 2.4 km) | Otros | — | — | 53.664157237754424, -6.650323260263002 | [FarmFinder](https://farmfinder.ie/producer/navan); via yourhonestybox.com |
+| Primrose Pantry | Shandonagh (nearest, 2.8 km) | Otros | — | — | 53.546876390237486, -7.433080467746206 | [FarmFinder](https://farmfinder.ie/producer/primrose-pantry); via yourhonestybox.com |
+| Spice Atlas | Kilmainhamwood (nearest, 2.7 km) | Otros | — | 0852083882 | 53.8742642, -6.803378 | [FarmFinder](https://farmfinder.ie/producer/spice-atlas); via Food Culture Ireland |
+| Think Twice | Yellow Furze (nearest, 2.4 km) | Otros | — | +353861905634 · info@thinktwice.ie | 53.6497514, -6.5884245 | [FarmFinder](https://farmfinder.ie/producer/think-twice); via NeighbourFood |
+
+## Name and county only — 27
+
+The source names the business and its county and little else. Cheapest to resolve in bulk against a sector directory rather than one at a time.
+
+| Lead | Municipio? | Category | Source signal | Contact | Source |
 |---|---|---|---|---|---|
-| The Studio Coffee | — | Café | listed | — | FarmFinder https://farmfinder.ie/producer/the-studio-coffee |
-| Alright Pumpkin | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/alright-pumpkin |
-| Andrew Mahon | Drumree | Carne | Meat Preparations | — | DAFM meat 2780 |
-| Ashbourne Meat Processors | — | Carne | Producer; Beef, Lamb, Pork, Poultry; via Irish Meat Producers Directory | — | FarmFinder https://farmfinder.ie/producer/ashbourne-meat-processors |
-| Ballymad Farm | — | Carne | Farm; NeighbourFood, Beef, Lamb, Pork | — | FarmFinder https://farmfinder.ie/producer/ballymad-farm |
-| Brogan's Butchers | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/brogan-s-butchers |
-| Callaghan Butchers Bettystown | — | Carne | Producer; Irish Butchers Guild, Beef, Lamb, Pork | — | FarmFinder https://farmfinder.ie/producer/callaghan-butchers-bettystown |
-| Cullentra Farm Shop & Open Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/cullentra-farm-shop-and-open-farm |
-| Elmgrove Irish Flower Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/elmgrove-irish-flower-farm |
-| Euro Farm Foods (registered as Cooksgrove Ltd. T/A Euro Farm Foods) | Duleek | Carne | Slaughtering, Cutting only; also FarmFinder https://farmfinder.ie/producer/cooksgrove-ltd-t-a-euro-farm-foods | — | DAFM meat 297 |
-| Farm House Foods (registered as DC Meats LTD T/A Farm House Foods) | Dunshaughlin | Carne | Minced Meat, Meat Preparations, Meat Products Non RTE | — | DAFM meat 3039 |
-| Gleeson Meats Navan | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/gleeson-meats-navan |
-| Hogan's Turkeys Limited | Kells | Carne | Minced Meat, Meat Preparations | — | DAFM meat 827 |
-| Hogans Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/hogans-farm |
-| Hugh Maguire Butchers | — | Carne | Producer; Beef, Lamb, Pork, Poultry; via Irish Meat Producers Directory | — | FarmFinder https://farmfinder.ie/producer/hugh-maguire-butchers |
-| Killua Castle (registered as Luna Ventures Limited T/A Killua Castle) | Kells | Carne | Minced Meat, Meat Preparations, Meat Products Non RTE | — | DAFM meat 3016 |
-| Lorenzen's LTD (registered as Charlie Walshe T/A Lorenzen's LTD) | Kilmessan | Carne | Meat Preparations, Meat Products Non RTE; also FarmFinder https://farmfinder.ie/producer/lorenzen-s-butchers | — | DAFM meat 2959 |
-| Meath Sunflower Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/meath-sunflower-farm |
-| Murtagh Meats | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/murtagh-meats |
-| Newbarn Farm Shop | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/newbarn-farm-shop |
-| PC Meats | Enfield | Carne | Minced Meat, Meat Preparations, Meat Products Non RTE | — | DAFM meat 2961 |
-| Robert's Butchery & Smokehouse LTD | Navan | Carne | Minced Meat, Meat Products RTE | — | DAFM meat 3035 |
-| Rustic Kitchen (registered as Nugent Foods LTD T/A Rustic Kitchen) | Ashbourne | Carne | Meat Products Non RTE | — | DAFM meat 2884 |
-| Ryan's Farm (registered as Iaroo LTD T/A Ryan's Farm) | Kells | Carne | Minced Meat, Meat Preparations, Meat Products Non RTE | — | DAFM meat 2769 |
-| The Smokin'Butcher LTD | Navan | Carne | Minced Meat, Meat Preparations, Meat Products Non RTE; also FarmFinder https://farmfinder.ie/producer/the-smokin-butcher | — | DAFM meat 3036 |
-| The Whole Hoggs (registered as Peter Whelan T/A The Whole Hoggs) | Slane | Carne | Meat Preparations | — | DAFM meat 2972 |
-| The Wooded Pig (registered as Bird Farm Ltd T/A The Wooded Pig) | Tara | Carne | Meat Products RTE | — | DAFM meat 2916 |
-| Thomas Doherty (registered as Thomas Doherty Meats (Kells) LTD T/A Thomas Doherty) | Kells | Carne | Minced Meat, Meat Preparations, Meat Products Non RTE | — | DAFM meat 2966 |
-| Boann Distillery | — | Cerveza | Producer; Beer, Cider, Spirits, Wine | — | FarmFinder https://farmfinder.ie/producer/boann-distillery |
-| Bulmers Ireland | — | Cerveza | craft=brewery; product=beer | — | OSM node/11983111404 |
-| Slane Distillery | — | Destilados y licores | craft=distillery; product=whiskey | www.slaneirishwhiskey.com | OSM relation/9278985 |
-| Clarkes Fresh Fruit | — | Fruta y verdura | listed | — | FarmFinder https://farmfinder.ie/producer/clarkes-fresh-fruit |
-| Egg & Vegetable Vending Machine (Dunshaughlin) | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/egg-and-vegetable-vending-machine-dunshaughlin |
-| Egg Vending Machine (Gardenrath Road Upper, Meath) | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/egg-vending-machine-gardenrath-road-upper-meath |
-| Egg Vending Machine (Main Street, Meath) | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/egg-vending-machine-main-street-meath |
-| Egg Vending Machine (Oldcastle Road, Meath) | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/egg-vending-machine-oldcastle-road-meath |
-| Fresh Eggs and Potatoes | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/fresh-eggs-and-potatoes |
-| Rathcore Eggs | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/rathcore-eggs |
-| Bonnybo milk | — | Lácteos y quesos | listed | — | FarmFinder https://farmfinder.ie/producer/bonnybo-milk |
-| Boyne Valley Cheese (registered as Michael Finegan) | Mullagha Farm Slane Co. | Lácteos y quesos | Caprine, SMALL - MEDIUM; also FarmFinder https://farmfinder.ie/producer/boyne-valley-farmhouse-cheese | — | DAFM dairy IE2121 |
-| Complex Nutrition Ltd | Unit 36 Navan Enterprise | Lácteos y quesos | N/A, SMALL - MEDIUM; also FarmFinder https://farmfinder.ie/producer/complex-nutrition-limited | — | DAFM dairy IE1988 |
-| Emeri Nutrition Co. Limited | IDA Business Park Johnstown, | Lácteos y quesos | N/A, size not stated | — | DAFM dairy 1712 |
-| Four Acre Foods (registered as Four Acre Family Farm Foods Ltd) | Unit 1, Oaktree Business | Lácteos y quesos | Bovine, SMALL | — | DAFM dairy IE2190 |
-| Gleann Gabhra | — | Lácteos y quesos | Producer; Dairy, Eggs, Cheese, Farm Gate; via Curated B2C Directory | — | FarmFinder https://farmfinder.ie/producer/gleann-gabhra |
-| McGrane's Milk Barn (registered as Conor & Mark McGrane) | Walterstown, Garlow Cross, Navan, | Lácteos y quesos | Bovine, SMALL | — | DAFM dairy IE2163 |
-| McGranes Milk Barn | — | Lácteos y quesos | listed | — | FarmFinder https://farmfinder.ie/producer/mcgranes-milk-barn |
-| Shamsini Dairy (registered as Bashar Alawad) | Stackallen Slane Co. Meath | Lácteos y quesos | Bovine, SMALL | — | DAFM dairy IE2230 |
-| Sheridan's Cheesemongers Ltd | Virginia Rd Station Virginia | Lácteos y quesos | N/A, SMALL - MEDIUM; also OSM node/8007216614 | sheridanscheesemongers.com · +353 46 9245110 · warehouse@sheridanscheesemongers.com | DAFM dairy IE1949 |
-| The Milk Well Ltd | The Milk Well Ltd. | Lácteos y quesos | Bovine, Small | — | DAFM dairy IE2205 |
-| Riverpark Honey | — | Miel | listed | — | FarmFinder https://farmfinder.ie/producer/riverpark-honey |
-| A Bit on the Side | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/a-bit-on-the-side |
-| AP Fine Foods Ltd | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/ap-fine-foods-ltd |
-| Battle of The Butters | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/battle-of-the-butters |
-| BR Marketing Ltd | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/br-marketing-ltd |
-| Celtic Chocolates | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/celtic-chocolates |
-| Conynghams | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/conynghams |
-| Coole Swan | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/coole-swan |
-| Dominic Gryson | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/dominic-gryson |
-| Filligans | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/filligans |
-| Finnegan's Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/finnegans-farm |
-| Flowers by Izzy | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/flowers-by-izzy |
-| Gorse Foods | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/gorse-foods |
-| Highdell Organic Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/highdell-organic-farm |
-| Katelyns Konfections | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/katelyns-konfections |
-| Kerrigan's Mushrooms | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/kerrigans-mushrooms |
-| Lir Chocolates | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/lir-chocolates |
-| Maperath Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/maperath-farm |
-| McCormack Family Farms | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/mccormack-family-farms |
-| Meade Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/meade-farm |
-| Meadowsweet Organic Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/meadowsweet-organic-farm |
-| Megs Desserts | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/megs-desserts |
-| Michael McDermott | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/michael-mcdermott |
-| Navan | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/navan |
-| Newgrange Gold Ltd | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/newgrange-gold-ltd |
-| O'Brien Fine Foods | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/obrien-fine-foods |
-| Primrose Pantry | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/primrose-pantry |
-| Rathkennery Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/rathkennery-farm |
-| Rock Farm Slane | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/rock-farm-slane |
-| Ryans' Organic Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/ryans-organic-farm |
-| Shackletons Milling Ltd | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/shackletons-milling-ltd |
-| Shalvanstown Organic Farm, Co. Meath | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/shalvanstown-organic-farm-co-meath |
-| Sonairte | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/sonairte |
-| Spice Atlas | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/spice-atlas |
-| Swainstown Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/swainstown-farm |
-| The Royal County Association | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/the-royal-county-association |
-| Think Twice | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/think-twice |
-| Baska Bakery | — | Pan y cereal | Producer; Organic, Bread & Bakery, Sourdough, Farm Gate; via Real Bread Ireland / Irish Bakeries Directory | — | FarmFinder https://farmfinder.ie/producer/baska-bakery |
-| Kells Wholemeal | — | Pan y cereal | Producer; Bread & Bakery, SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/kells-wholemeal |
-| Ruby’s Bakery | — | Pan y cereal | listed | — | FarmFinder https://farmfinder.ie/producer/rubys-bakery |
-| Connolly Seafood | — | Pescado | listed | — | FarmFinder https://farmfinder.ie/producer/connolly-seafood-meath |
-| The Cider Mill | — | Sidra | listed | — | FarmFinder https://farmfinder.ie/producer/the-cider-mill |
-
-### Facility or shopfront only — 36 leads
-
-An abattoir, cutting plant or retail shopfront. The source places food
-activity here but establishes no production of an own sellable product, so these
-need the heavier triage: many will turn out to process for other businesses or to
-be resale only.
-
-| Lead | Town | Category | Source signal | Contact | Ref |
-|---|---|---|---|---|---|
-| Boyne Valley Meats Ltd | Garristown | Carne | Cutting only | — | DAFM meat 2012 |
-| Brady's Butchers | Newcastle | Carne | shop=butcher | — | OSM node/6266246323 |
-| Brogans Butchers | — | Carne | shop=butcher | — | OSM way/844222271 |
-| Coogan Meats Ltd | Trim | Carne | Slaughtering, Cutting only | — | DAFM meat 2352 |
-| David's | — | Carne | shop=butcher | — | OSM node/1676709603 |
-| Dawn Meats Slane (registered as Dawn Meats Ireland UC T/A Dawn Meats Slane) | Navan | Carne | Slaughtering only; national-scale brand | — | DAFM meat 384 |
-| Eugene Kiely's Butchers | Trim | Carne | shop=butcher | — | OSM node/3397131284 |
-| Floods Butchers | Oldcastle | Carne | Slaughtering only | — | DAFM meat 2378 |
-| Frank Doolan Butchers | Batterstown | Carne | shop=butcher | — | OSM way/404266943 |
-| George's | — | Carne | shop=butcher | — | OSM node/12639035746 |
-| Gleeson's Butchers | — | Carne | shop=butcher | — | OSM node/12866849996 |
-| High Maguire | Ashbourne | Carne | shop=butcher | — | OSM node/5282137840 |
-| Irish Country Meats Navan (registered as Anglo Beef Processors Ireland UC T/A Irish Country Meats Navan) | Navan | Carne | Slaughtering, Cutting only; national-scale brand | — | DAFM meat 363 |
-| J Flood | — | Carne | shop=butcher | — | OSM way/1214614817 |
-| Kepak Clonee Unlimited Company | Clonee | Carne | Slaughtering only; national-scale brand | — | DAFM meat 317 |
-| Liffey Meats | — | Carne | Producer; Beef, Lamb, Pork, Poultry; via Irish Meat Producers Directory; national-scale brand | — | FarmFinder https://farmfinder.ie/producer/liffey-meats |
-| Macken's Butchers | — | Carne | shop=butcher | — | OSM node/12633267433 |
-| Mahon Butchers | Dunshaughlin | Carne | shop=butcher | — | OSM node/1224425343 |
-| Sean McGrane | — | Carne | shop=butcher | — | OSM node/1722820753 |
-| Shane M. Curran | — | Carne | shop=butcher | — | OSM node/3366687780 |
-| The Rare Breed | Ratoath | Carne | shop=butcher | — | OSM node/10307418406 |
-| Traditional Meat Company | Oldcastle | Carne | Slaughtering, Cutting only | — | DAFM meat 2732 |
-| Chez Emily Chocolate Boutique | — | Chocolate | shop=chocolate | chezemily.ie | OSM node/5282162465 |
-| Ciara's Candy | — | Dulces y repostería | shop=confectionery | — | OSM node/11247605264 |
-| Tara News | Dunshaughlin | Dulces y repostería | shop=confectionery | — | OSM node/1224425340 |
-| Crafted | Dunshaughlin | Otros | shop=deli | — | OSM node/13148418293 |
-| New Barn Farm | — | Otros | shop=farm | — | OSM node/2280188841 |
-| Annaville Home Bakery | — | Pan y cereal | shop=bakery | — | OSM node/1798089229 |
-| Doreens Home Bakery | — | Pan y cereal | shop=bakery | — | OSM way/846052861 |
-| Harvest Home | Trim | Pan y cereal | shop=bakery | — | OSM node/3399485864 |
-| K + L | — | Pan y cereal | shop=bakery | — | OSM node/6137485020 |
-| McCloskey’s | — | Pan y cereal | shop=bakery | — | OSM node/12866875202 |
-| Oscar's Home | Trim | Pan y cereal | shop=bakery | — | OSM node/12353704427 |
-| Picolina | — | Pan y cereal | shop=bakery | — | OSM way/1187584792 |
+| Alright Pumpkin | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | [FarmFinder](https://farmfinder.ie/producer/alright-pumpkin) |
+| Ballymad Farm | — | Carne | Farm; NeighbourFood, Beef, Lamb, Pork | — | [FarmFinder](https://farmfinder.ie/producer/ballymad-farm) |
+| Cullentra Farm Shop & Open Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | [FarmFinder](https://farmfinder.ie/producer/cullentra-farm-shop-and-open-farm) |
+| Hogans Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | [FarmFinder](https://farmfinder.ie/producer/hogans-farm) |
+| Meath Sunflower Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | [FarmFinder](https://farmfinder.ie/producer/meath-sunflower-farm) |
+| Newbarn Farm Shop | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | [FarmFinder](https://farmfinder.ie/producer/newbarn-farm-shop) |
+| Boann Distillery | — | Cerveza | Producer; Beer, Cider, Spirits, Wine | — | [FarmFinder](https://farmfinder.ie/producer/boann-distillery) |
+| Fresh Eggs and Potatoes | — | Huevos | listed | — | [FarmFinder](https://farmfinder.ie/producer/fresh-eggs-and-potatoes) |
+| Conynghams | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/conynghams) |
+| Coole Swan | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/coole-swan) |
+| Dominic Gryson | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/dominic-gryson) |
+| Highdell Organic Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/highdell-organic-farm) |
+| Meade Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/meade-farm) |
+| Michael McDermott | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/michael-mcdermott) |
+| Rathkennery Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/rathkennery-farm) |
+| Rock Farm Slane | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/rock-farm-slane) |
+| Ryans' Organic Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/ryans-organic-farm) |
+| Shalvanstown Organic Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/shalvanstown-organic-farm-co-meath) |
+| Sonairte | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/sonairte) |
+| Swainstown Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/swainstown-farm) |
+| Baska Bakery | — | Pan y cereal | Producer; Organic, Bread & Bakery, Sourdough, Farm Gate; via Real Bread Ireland / Irish Bakeries Directory | — | [FarmFinder](https://farmfinder.ie/producer/baska-bakery) |
+| Kells Wholemeal | — | Pan y cereal | Producer; Bread & Bakery, SuperValu Food Academy | — | [FarmFinder](https://farmfinder.ie/producer/kells-wholemeal) |
+| Ruby’s Bakery | — | Pan y cereal | listed | — | [FarmFinder](https://farmfinder.ie/producer/rubys-bakery) |
 | Sweet Planet | Dunshaughlin | Pan y cereal | shop=bakery | dunshaughlinbakery@gmail.com | OSM node/4746018807 |
 | The Crusty Corner | Dunboyne | Pan y cereal | shop=bakery | +353 1 8015 763 | OSM node/12241548881 |
-## Irish craft beer directory sweep (2026-08-11)
-
-Source: <https://irishcraftbeer.ie/breweries/>, read 2026-08-11. The directory
-publishes a brewery name, a county, sometimes a town, and a URL, and flags some
-entries as closed. It establishes none of those as current, does not give the
-productive town for most entries, and its county attribution is unreliable — it
-lists Big Hand Brewery under Dublin behind a Welsh domain. Every entry below is
-therefore a `hold` lead: confirm identity, qualifying activity, productive
-municipality, a public contact and the remote-order status on the producer's own
-current source before admission.
-
-| Lead | Location as listed | Listed domain |
-|---|---|---|
-| Brú Brewery | — | brubrewery.ie |
-| Boyne Brewhouse | — | boynebrewhouse.ie |
+| Connolly Seafood | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/connolly-seafood-meath) |
+| The Cider Mill | — | Sidra | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-cider-mill) |
 
 ## Remaining search work
 
-- The official establishment registers (DAFM approved establishments, FSAI
-  approved food premises) have not been scoped for this county. They are the
-  exhaustive-registry lane and nothing here substitutes for them.
-- No category outside the ones named above has been swept for this county.
+- The SFPA register of approved seafood establishments is not yet scoped; its
+  index page served no document or table to the fetcher.
+- Three national directories are gated: Guaranteed Irish (login), the Irish
+  Organic Association producer finder (no content without a browser) and the
+  Bord Bia directory (403).
+- County food networks exist for several counties and are not yet scoped.

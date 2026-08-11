@@ -1,188 +1,161 @@
 # Wexford — open leads (2026-08-11)
 
 Discovery workspace for unresolved producer leads. Target CSV:
-`data/csv/ie/leinster/wexford.csv`. Nothing recorded here is verified or
-approved for publication. Resolve each lead under the normal CSV and evidence
-workflow and prune it from this file.
+`data/csv/ie/leinster/wexford.csv`. Nothing here is verified or approved
+for publication. Resolve each lead under the normal CSV and evidence workflow
+and prune it from this file.
 
-## Official register and OpenStreetMap sweep (2026-08-11)
+## Sourcing (2026-08-11)
 
 Sources, all read 2026-08-11:
 
-- DAFM register of approved and registered meat establishments —
-  `AllApprovedPlants_2026.xlsx` and `AllApprovedPlants_2026_Formerly_LA_Plants.xlsx`
-  from <https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/dafm-approved-establishments/>.
-  Publishes approval number, name, town, county and which activities are approved.
-- DAFM register of milk and dairy establishments, published 17 July 2026, from the
-  same page. Publishes legal name, trading name, address, species and the
-  establishment's own size class.
-- FSAI list of HSE-approved establishments —
-  <https://oapi.fsai.ie/HSEApprovedEstablishments.aspx>. Publishes approval
-  number, trading name, address, county, business type and activity.
+- DAFM registers of approved meat establishments and of milk and dairy
+  establishments (the latter published 17 July 2026), from
+  <https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/dafm-approved-establishments/>.
+- FSAI list of HSE-approved establishments,
+  <https://oapi.fsai.ie/HSEApprovedEstablishments.aspx>.
+- FarmFinder Ireland, <https://farmfinder.ie/county/wexford>, plus each producer
+  page for its structured website, coordinates and upstream source.
+- Midlands Food & Drink Directory,
+  <https://www.midlandsireland.ie/food-and-drink-directory/> (Laois, Longford,
+  Offaly and Westmeath only).
 - OpenStreetMap food-production and food-shop tags via Overpass.
-- FarmFinder Ireland county listing — <https://farmfinder.ie/county/wexford>.
-- Midlands Food & Drink Directory —
-  <https://www.midlandsireland.ie/food-and-drink-directory/> (its
-  `producers_directory` REST collection). Covers only Laois, Longford, Offaly
-  and Westmeath.
 
-What these establish, and what they do not: an approval proves that the named
-establishment is registered for that activity at that address as of the published
-date. It does not prove a current own-brand offer, a public contact, remote
-ordering, or that the unit sells to the public at all — a great many exist to
-process for other businesses, and the register lists industrial plants beside
-farmhouse ones. An OSM tag proves only what a mapper recorded, and its county
-here is the tag's own where present and inferred from position otherwise. The
-Midlands directory is self-submitted by the businesses in it, so it shows how a
-producer presents itself, not an audited fact, and it publishes no contact
-details. FarmFinder is an aggregator that republishes other directories and cites
-them per entry, so it is broad but second-hand and can carry stale or
-auto-generated rows. Every lead below is a `hold`: confirm identity, qualifying
-activity, productive municipality and a current contact on the producer's own
-source before admission.
+Every website below was resolved and probed on 2026-08-11: a URL that returned
+NXDOMAIN, was unreachable, or was a mangled address such as
+`http://info@example.ie` has been removed rather than carried, because a
+directory keeps publishing a link long after the domain lapses. A 403 is recorded
+as alive, not dead.
 
-Category shown is the tag or register activity mapped onto the shared registry;
-it is a starting guess, not a decision.
+Ceilings. A register approval proves the establishment is registered for that
+activity at that address on the published date — not a current own-brand offer,
+a public contact, remote ordering, or that it sells to the public. FarmFinder's
+structured fields (website, coordinates, the upstream directory it cites) are
+usable, but its prose is auto-generated and must never be copied into
+`descripcion`. The Midlands directory is self-submitted. An OSM tag proves only
+what a mapper recorded. Every entry here is still a `hold`.
 
-### Production signal — 77 leads
+`Municipio?` is a candidate, not a decision: where the source gave no town it is
+the nearest settlement to the published coordinates, with the distance shown.
+Confirm it against the producer's own address before it enters a CSV.
 
-Registered for making a product, mapped with a production craft tag, or
-listed as a producer by the regional directory.
+Category is the register activity or tag mapped onto the shared registry — a
+starting guess. A trailing `?` means it was inferred from the trade name or the
+domain because the source stated none.
 
-| Lead | Town | Category | Source signal | Contact | Ref |
+A `⚠` on a website means the domain shares no word with the trade name. That is
+often legitimate — Drioglann Loch Measc trades as Lough Mask Distillery, Con Traas
+as The Apple Farm — but it is also what a parent company, a stockist or a
+mis-scrape looks like, so check it before copying the URL into `web`.
+
+Removed in this pass as out of scope: national-scale brands, hospitality
+(cafés, restaurants, pubs), retail and forecourt names, resale-only shop tags
+(delicatessen, confectioner, cheesemonger), abattoir or cutting-plant approvals
+with no own offer and no directory backing, and bare OSM nodes carrying no
+website, phone or email to verify against.
+
+## Ready to verify — 19
+
+A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+
+| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
+|---|---|---|---|---|---|---|
+| Boyle's Butchers | New Ross | Carne | boylesbutchers.ie | — | 52.3886584, -6.9519274 | OSM node/11805245596 |
+| Finan Smokehouse | New Ross (nearest, 0.6 km) | Carne | www.duncannonsmokehouse.ie | (051) 421 910 | 52.3944892, -6.936174 | [FarmFinder](https://farmfinder.ie/producer/finan-smokehouse); via SuperValu Food Academy |
+| Richie Doyle Butcher | Wexford | Carne | richiedoylebutchers.ie | +353 53 912 3634 | 52.327926, -6.468875 | [FarmFinder](https://farmfinder.ie/producer/richie-doyle-butcher); via Associated Craft Butchers of Ireland |
+| Stafford Spirits Ltd | Enniscorthy (nearest, 2.7 km) | Destilados y licores | www.jackfordspirits.com | 087 996 4945 | 52.482710499999996, -6.5893365 | [FarmFinder](https://farmfinder.ie/producer/stafford-spirits-ltd); via Bord Bia Origin Green |
+| Slaney Farms Produce Ltd | Enniscorthy (nearest, 2.8 km) | Fruta y verdura ? | slaneyfarms.com | +353539235095 · kylie@slaneyfarms.com | 52.4806795, -6.5886211 | [FarmFinder](https://farmfinder.ie/producer/slaney-farms-produce-ltd); via NeighbourFood |
+| Bean and Goose | Wexford (nearest, 3.5 km) | Otros | beanandgoose.ie | 086 185 7558 | 52.324072, -6.416276 | [FarmFinder](https://farmfinder.ie/producer/bean-and-goose); via SuperValu Food Academy |
+| Marlfield House | Moyvoughly (nearest, 1.2 km) | Otros | www.marlfieldhouse.com | (053) 942 1124 | 53.427727, -7.68507 | [FarmFinder](https://farmfinder.ie/producer/marlfield-house); via SuperValu Food Academy |
+| Ocean Leaves | Piercetown (nearest, 5.1 km) | Otros | oceanleaves.ie | (053) 917 5995 | 52.2420082, -6.474326 | [FarmFinder](https://farmfinder.ie/producer/ocean-leaves); via Organic Trust |
+| OUTCAST BRANDS | Enniscorthy (nearest, 2.7 km) | Otros | www.bloodmonkeygin.com ⚠ | 087 996 4945 | 52.482710499999996, -6.5893365 | [FarmFinder](https://farmfinder.ie/producer/outcast-brands); via Bord Bia Origin Green |
+| Rathgarogue Organic Farm | Ballywilliam (nearest, 2.6 km) | Otros | www.organicpork.ie ⚠ | +353353871775191 · info@organicpork.ie | 52.4297971, -6.8656456 | [FarmFinder](https://farmfinder.ie/producer/rathgarogue-organic-farm); via NeighbourFood |
+| Thai Gold - Thai Food Co Limited | Piercetown (nearest, 2.7 km) | Otros | www.thaigold.eu/en | (053) 916 8078 | 52.305607200000004, -6.464408799999999 | [FarmFinder](https://farmfinder.ie/producer/thai-gold-thai-food-co-limited); via Organic Trust |
+| Trudies Catering Kitchen ltd. | Rosbercon (village) (nearest, 1.7 km) | Otros | www.trudieskitchen.com | (051) 425 529 | 52.3869018, -6.9685125 | [FarmFinder](https://farmfinder.ie/producer/trudies-catering-kitchen-ltd); via Bord Bia Origin Green |
+| Wilton Mills | Bree (nearest, 2 km) | Otros | wiltonmills.ie | sinead.whelan@gmail.com | 52.4479228, -6.626274 | [FarmFinder](https://farmfinder.ie/producer/wilton-mills); via NeighbourFood |
+| Bakehouse | New Ross | Pan y cereal | www.thebakehouse.ie | — | 52.3953554, -6.9443723 | OSM node/8220671195 |
+| Firehouse Bakery | Gorey | Pan y cereal | thefirehouse.ie | — | 52.6767143, -6.291068 | OSM node/12281721844 |
+| Kelly's Bakery | Wexford | Pan y cereal | kellysbakery.ie | — | 52.3594458, -6.4501675 | OSM node/6731908545 |
+| Yola | Wexford | Pan y cereal | yolabakery.ie | — | 52.3287652, -6.4809889 | OSM node/6121093474 |
+| Ronan's Fish Shop | New Ross | Pescado | www.duncannonfish.com | — | 52.3918816, -6.9394227 | OSM node/7884685626 |
+| The Wine Buff Gorey | Gorey (nearest, 0.2 km) | Vino | www.thewinebuff.com/the-wine-buff-gorey | +353878365676 · gorey@thewinebuff.com | 52.6758892, -6.2937144 | [FarmFinder](https://farmfinder.ie/producer/the-wine-buff-gorey); via NeighbourFood |
+
+## Needs one more fact — 33
+
+Either an own website or a register-backed municipio, but not both.
+
+| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
+|---|---|---|---|---|---|---|
+| Alan Redmond Butchers | Gorey (nearest, 1.7 km) | Carne | — | — | 52.662541, -6.281166 | [FarmFinder](https://farmfinder.ie/producer/alan-redmond-butchers); via Associated Craft Butchers of Ireland |
+| Butchers Best | Rosbercon (village) (nearest, 0.3 km) | Carne | — | — | 52.398459, -6.955513 | [FarmFinder](https://farmfinder.ie/producer/butchers-best); via Associated Craft Butchers of Ireland |
+| Doyle & Sons Butchers | Wexford (nearest, 1 km) | Carne | — | — | 52.333322, -6.474135 | [FarmFinder](https://farmfinder.ie/producer/doyle-and-sons-butchers); via Associated Craft Butchers of Ireland |
+| Drover Foods Ltd | Wexford | Carne | — | — | — | DAFM meat 546 |
+| Furlong Family Butchers | Gorey (nearest, 1.7 km) | Carne | — | — | 52.662308, -6.300649 | [FarmFinder](https://farmfinder.ie/producer/furlong-family-butchers); via Associated Craft Butchers of Ireland |
+| John Pettitt | Murrintown | Carne | — | — | — | DAFM meat 3053 |
+| Kavanagh Meats Enniscorthy ULC | Enniscorthy | Carne | — | — | — | DAFM meat 404 |
+| Kennedy's Butchers Bunclody | Bunclody (nearest, 0.9 km) | Carne | — | — | 52.644109, -6.65966 | [FarmFinder](https://farmfinder.ie/producer/kennedy-s-butchers-bunclody); via Associated Craft Butchers of Ireland |
+| M&M Meats | Enniscorthy (nearest, 0.8 km) | Carne | — | — | 52.504906, -6.554778 | [FarmFinder](https://farmfinder.ie/producer/mandm-meats); via Associated Craft Butchers of Ireland |
+| O'Neills Dry Cure Bacon Co (registered as O'Neills Foods LTD T/A O'Neills Dry Cure Bacon Co) | Enniscorthy | Carne | — | — | — | DAFM meat 2851 |
+| Pettits Kitchen | Sleedagh Farm Sleedagh Murrintown | Carne | — | — | — | FSAI HSE 4093 |
+| Stafford's Butchers | Enniscorthy (nearest, 0.9 km) | Carne ? | — | — | 52.495043, -6.558051 | [FarmFinder](https://farmfinder.ie/producer/stafford-s-butchers); via Associated Craft Butchers of Ireland |
+| The Saucy Butcher | Wexford (nearest, 1 km) | Carne ? | — | — | 52.346395, -6.466512 | [FarmFinder](https://farmfinder.ie/producer/the-saucy-butcher); via Associated Craft Butchers of Ireland |
+| Zanna Cookhouse Limited (Clonard) | Whitemill Industrial estateClonardWexfor | Carne | — | — | — | FSAI HSE 4092 |
+| Clever Man | Wexford | Cerveza | — | — | 52.3289618, -6.4927969 | OSM node/10816143284 |
+| Wexford Home Preserves | Wexford (nearest, 0.1 km) | Conservas ? | — | — | 52.339667, -6.461931 | [FarmFinder](https://farmfinder.ie/producer/wexford-home-preserves); via SuperValu Food Academy |
+| Greenhill Fruit Farm Ltd | Bree (nearest, 3.2 km) | Fruta y verdura | — | 086 825 7389 | 52.440025299999995, -6.6511301 | [FarmFinder](https://farmfinder.ie/producer/greenhill-fruit-farm-ltd); via Bord Bia Origin Green |
+| Natural Ice cream Wholesale Ltd | Unit 12 Wexford Enterprise | Helados | — | — | — | DAFM dairy IE 1997 |
+| Egg & Spud Shed | Craanford (nearest, 3.2 km) | Huevos | — | — | 52.65491285359227, -6.375598222387905 | [FarmFinder](https://farmfinder.ie/producer/egg-spud-shed); via yourhonestybox.com |
+| Coolhull Farm Ltd | Strandfield Business Park, Rosslare | Lácteos y quesos | — | — | — | DAFM dairy IE1009 |
+| FairField farm fresh milk | Enniscorthy (nearest, 2.8 km) | Lácteos y quesos | — | +353871313380 | 52.5041658, -6.6065339 | [FarmFinder](https://farmfinder.ie/producer/fairfield-farm-fresh-milk); via NeighbourFood |
+| Future Nutrition Ltd | Railway Stores Templeshannon Enniscorthy | Lácteos y quesos | — | — | — | DAFM dairy 1718 |
+| Killowen Farm (registered as Greenvalley Farms Ltd) | Killowen Farm The Beeches | Lácteos y quesos | — | — | — | DAFM dairy IE1875 |
+| Saltrock Dairy Ltd | Kildermot Gorey Co Wexford | Lácteos y quesos | — | — | — | DAFM dairy IE2167 |
+| Tara Hill Honey | Wexford (nearest, 0.8 km) | Miel | — | — | 52.335461, -6.451159 | [FarmFinder](https://farmfinder.ie/producer/tara-hill-honey); via SuperValu Food Academy |
+| Aldridge Farm | Duncannon (nearest, 2.1 km) | Otros | — | — | 52.21256482189792, -6.903731738058232 | [FarmFinder](https://farmfinder.ie/producer/aldridge-farm); via yourhonestybox.com |
+| Clone/Ferns | Johnswell (nearest, 4.9 km) | Otros | — | — | 52.73188713847757, -7.224506799041479 | [FarmFinder](https://farmfinder.ie/producer/clone-ferns); via yourhonestybox.com |
+| Fat tomato | Ballyoughter (nearest, 3.1 km) | Otros | — | — | 52.591571161486115, -6.398107678072393 | [FarmFinder](https://farmfinder.ie/producer/fat-tomato-wexford); via yourhonestybox.com |
+| Isle of Crackers | Ballygarrett (nearest, 2.4 km) | Otros | — | 087 398 3248 | 52.5922415, -6.2153588 | [FarmFinder](https://farmfinder.ie/producer/isle-of-crackers); via SuperValu Food Academy |
+| Jacob Blackcurrants | Bree (nearest, 2.8 km) | Otros | — | +353539239570 · birnamlodge@gmail.com | 52.4601875, -6.6065155 | [FarmFinder](https://farmfinder.ie/producer/jacob-blackcurrants); via NeighbourFood |
+| Sadies Hen house | Camolin (nearest, 3.5 km) | Otros | — | — | 52.626356703535365, -6.473089953093369 | [FarmFinder](https://farmfinder.ie/producer/sadies-hen-house); via yourhonestybox.com |
+| Slaney Valley | Curracloe (nearest, 2 km) | Otros | — | — | 52.411232, -6.388304 | [FarmFinder](https://farmfinder.ie/producer/slaney-valley); via SuperValu Food Academy |
+| The Hot box | Ferns (nearest, 2.1 km) | Otros | — | — | 52.57916523141672, -6.479853068470551 | [FarmFinder](https://farmfinder.ie/producer/the-hot-box); via yourhonestybox.com |
+
+## Name and county only — 24
+
+The source names the business and its county and little else. Cheapest to resolve in bulk against a sector directory rather than one at a time.
+
+| Lead | Municipio? | Category | Source signal | Contact | Source |
 |---|---|---|---|---|---|
-| Naturally Cordial Ltd | — | Bebidas sin alcohol | listed | — | FarmFinder https://farmfinder.ie/producer/naturally-cordial-ltd |
-| The Farm Shop Wexford & The Cheeky cow Coffee | — | Café | listed | — | FarmFinder https://farmfinder.ie/producer/the-farm-shop-wexford-and-the-cheeky-cow-coffee |
-| Alan Redmond Butchers | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/alan-redmond-butchers |
-| Butchers Best | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/butchers-best |
-| Doyle & Sons Butchers | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/doyle-and-sons-butchers |
-| Drover Foods Ltd | Wexford | Carne | Minced Meat, Meat Preparations, Meat Products RTE | — | DAFM meat 546 |
-| Finan Smokehouse | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/finan-smokehouse |
-| Furlong Family Butchers | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/furlong-family-butchers |
-| John Pettitt | Murrintown | Carne | Minced Meat, Meat Preparations | — | DAFM meat 3053 |
-| Kavanagh Meats Enniscorthy ULC | Enniscorthy | Carne | Minced Meat, Meat Preparations | — | DAFM meat 404 |
-| Kennedy's Butchers Bunclody | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/kennedy-s-butchers-bunclody |
-| M&M Meats | — | Carne | Producer; Beef, Lamb, Pork, Poultry | — | FarmFinder https://farmfinder.ie/producer/mandm-meats |
-| O'Neills Dry Cure Bacon Co (registered as O'Neills Foods LTD T/A O'Neills Dry Cure Bacon Co) | Enniscorthy | Carne | Meat Preparations, Meat Products Non RTE | — | DAFM meat 2851 |
-| Pettits Kitchen | Sleedagh Farm Sleedagh Murrintown | Carne | Manufacturer; Meat Products (not ready to eat) | — | FSAI HSE 4093 |
-| Richie Doyle Butcher | Wexford | Carne | Producer; Beef, Lamb, Pork, Poultry; also OSM node/10916751777 | richiedoylebutchers.ie · +353 53 912 3634 | FarmFinder https://farmfinder.ie/producer/richie-doyle-butcher |
-| Zanna Cookhouse Limited (Clonard) | Whitemill Industrial estateClonardWexfor | Carne | Manufacturer; Meat Products (not ready to eat); also FarmFinder https://farmfinder.ie/producer/zanna-cookhouse-ltd | — | FSAI HSE 4092 |
-| Brennan's Brewery | — | Cerveza | listed | — | FarmFinder https://farmfinder.ie/producer/brennans-brewery |
-| Clever Man | Wexford | Cerveza | craft=brewery | — | OSM node/10816143284 |
-| Yellowbelly Beer | — | Cerveza | listed | — | FarmFinder https://farmfinder.ie/producer/yellowbelly-beer |
-| Stafford Spirits Ltd | — | Destilados y licores | listed | — | FarmFinder https://farmfinder.ie/producer/stafford-spirits-ltd |
-| Ballycross Apple Farm | — | Fruta y verdura | Farm; Fruit, Vegetables, SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/ballycross-apple-farm |
-| Greenhill Fruit Farm Ltd | — | Fruta y verdura | listed | — | FarmFinder https://farmfinder.ie/producer/greenhill-fruit-farm-ltd |
-| Greens Berry Farm | — | Fruta y verdura | Farm; Fruit, Vegetables, SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/greens-berry-farm |
-| Natural Ice cream Wholesale Ltd | Unit 12 Wexford Enterprise | Helados | Bovine, SMALL - MEDIUM | — | DAFM dairy IE 1997 |
-| Egg & Spud Shed | — | Huevos | listed | — | FarmFinder https://farmfinder.ie/producer/egg-spud-shed |
-| Coolhull Farm Ltd | Strandfield Business Park, Rosslare | Lácteos y quesos | Bovine, SMALL - MEDIUM; also FarmFinder https://farmfinder.ie/producer/coolhull-farm-paganini | — | DAFM dairy IE1009 |
-| FairField farm fresh milk | — | Lácteos y quesos | listed | — | FarmFinder https://farmfinder.ie/producer/fairfield-farm-fresh-milk |
-| Future Nutrition Ltd | Railway Stores Templeshannon Enniscorthy | Lácteos y quesos | Bovine, size not stated; also FarmFinder https://farmfinder.ie/producer/future-nutrition | — | DAFM dairy 1718 |
-| Killowen Farm (registered as Greenvalley Farms Ltd) | Killowen Farm The Beeches | Lácteos y quesos | Bovine, SMALL - MEDIUM | — | DAFM dairy IE1875 |
-| Killowen Yoghurt | — | Lácteos y quesos | listed | — | FarmFinder https://farmfinder.ie/producer/killowen-yoghurt |
-| Nutricia Infant Nutrition Irl Ltd | Rocklands Wexford | Lácteos y quesos | Bovine, INFANT FORMULA | — | DAFM dairy 1704 |
-| Saltrock Dairy Ltd | Kildermot Gorey Co Wexford | Lácteos y quesos | Bovine, SMALL | — | DAFM dairy IE2167 |
-| Tara Hill Honey | — | Miel | listed | — | FarmFinder https://farmfinder.ie/producer/tara-hill-honey |
-| Aldridge Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/aldridge-farm |
-| Atlantis of Kilmore Quay | Wexford | Otros | listed; also OSM node/11756473277 | www.atlantisofkilmorequay.ie | FarmFinder https://farmfinder.ie/producer/atlantis-of-kilmore-quay |
-| Bean and Goose | — | Otros | Producer; NeighbourFood, SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/bean-and-goose |
-| Clone/Ferns | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/clone-ferns |
-| County Wexford Association | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/county-wexford-association |
-| Courtown Sea Angling Centre | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/courtown-sea-angling-centre-wexford |
-| Fat tomato | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/fat-tomato-wexford |
-| Gilbert, Shay | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/gilbert-shay |
-| Gorey Association | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/gorey-association |
-| Green's Farm Shop | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/greens-farm-shop |
-| Isle of Crackers | — | Otros | Producer; SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/isle-of-crackers |
-| J. Caxard | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/j-caxard-wexford |
-| Jacob Blackcurrants | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/jacob-blackcurrants |
-| Karoo Farmshop & Cafe | — | Otros | Farm; Farm Gate, Farm Shops Ireland | — | FarmFinder https://farmfinder.ie/producer/karoo-farmshop-and-cafe |
-| Kavanagh, Andy | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/kavanagh-andy |
-| Kilmore seafresh | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/kilmore-seafresh |
-| Kingfisher Fresh Ltd/ Wild Irish Seafoods | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/kingfisher-fresh-ltd-wild-irish-seafoods |
-| Mannion’s Farm Shop | — | Otros | Farm; Farm Gate, Farm Shops Ireland | — | FarmFinder https://farmfinder.ie/producer/mannion-s-farm-shop |
-| Marlfield House | — | Otros | Producer; SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/marlfield-house |
-| New Ross Beekeepers Association | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/new-ross-beekeepers-association |
-| Ocean Leaves | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/ocean-leaves |
-| OUTCAST BRANDS | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/outcast-brands |
-| Produce Vending Machine (Wexford) | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/produce-vending-machine-wexford |
-| Rathgarogue Organic Farm | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/rathgarogue-organic-farm |
-| Regan Organic Farm | — | Otros | Farm; Organic, Vegetables, Farm Gate, Farm Shops Ireland | — | FarmFinder https://farmfinder.ie/producer/regan-organic-farm |
-| Sadies Hen house | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/sadies-hen-house |
-| Slaney Farms Produce Ltd | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/slaney-farms-produce-ltd |
-| Slaney Valley | — | Otros | Producer; SuperValu Food Academy, remaining), About, About FarmFinder | — | FarmFinder https://farmfinder.ie/producer/slaney-valley |
-| Sofrimar | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/sofrimar |
-| South Wexford Beekeepers Association | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/south-wexford-beekeepers-association |
-| Stafford's Butchers | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/stafford-s-butchers |
-| Thai Gold - Thai Food Co Limited | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/thai-gold-thai-food-co-limited |
-| The Hot box | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/the-hot-box |
-| The Saucy Butcher | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/the-saucy-butcher |
-| The Strand Cahore | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/the-strand-cahore |
-| Trudies Catering Kitchen ltd. | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/trudies-catering-kitchen-ltd |
-| Wexford Home Preserves | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/wexford-home-preserves |
-| Wexford Town Market | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/wexford-town-market |
-| Wheelock Fruits | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/wheelock-fruits |
-| Wilton Mills | — | Otros | listed | — | FarmFinder https://farmfinder.ie/producer/wilton-mills |
-| Irish Pride Bakery | — | Pan y cereal | Producer; Bread & Bakery, SuperValu Food Academy | — | FarmFinder https://farmfinder.ie/producer/irish-pride-bakery |
-| Meyler's Fish Merchants | — | Pescado | listed | — | FarmFinder https://farmfinder.ie/producer/meylers-fish-merchants-wexford |
-| Seaview Fresh Fish Shop | — | Pescado | listed | — | FarmFinder https://farmfinder.ie/producer/seaview-fresh-fish-shop-wexford |
-| The Wine Buff Gorey | — | Vino | listed | — | FarmFinder https://farmfinder.ie/producer/the-wine-buff-gorey |
-
-### Facility or shopfront only — 27 leads
-
-An abattoir, cutting plant or retail shopfront. The source places food
-activity here but establishes no production of an own sellable product, so these
-need the heavier triage: many will turn out to process for other businesses or to
-be resale only.
-
-| Lead | Town | Category | Source signal | Contact | Ref |
-|---|---|---|---|---|---|
-| ABP Slaney (registered as Anglo Beef Processors Ireland UC T/A ABP Slaney) | Bunclody | Carne | Meat Preparations; national-scale brand | — | DAFM meat 296 |
-| Boyle's Butchers | New Ross | Carne | shop=butcher | boylesbutchers.ie | OSM node/11805245596 |
-| Butcher's Best | New Ross | Carne | shop=butcher | — | OSM node/13063150420 |
-| Christopher Byrne | Enniscorthy | Carne | Slaughtering, Cutting only | — | DAFM meat 2360 |
-| Christy Byrne | Camolin | Carne | shop=butcher | — | OSM node/6240053102 |
-| Irish Country Meats Camolin (registered as Anglo Beef Processors Ireland UC T/A Irish Country Meats Camolin) | Camolin | Carne | Minced Meat, Meat Preparations; national-scale brand | — | DAFM meat 367 |
-| Regan Organic Produce | Enniscorthy | Carne | Slaughtering, Cutting only | — | DAFM meat 2877 |
-| Richard Doyle | Cleariestown | Carne | Slaughtering only | — | DAFM meat 2350 |
-| T. Cahill Craft Butcher | Ferns | Carne | shop=butcher | tcahillcraftbutcher.ie | OSM node/1768112943 |
-| Wickham Bros. | Enniscorthy | Carne | shop=butcher | — | OSM node/9353932865 |
-| Bridget's Sweet Boutique | New Ross | Dulces y repostería | shop=confectionery | — | OSM node/11802635145 |
-| Kandyland | Courtown | Dulces y repostería | shop=confectionery | — | OSM node/4237372758 |
-| Mags Jelly Heaven | Wexford | Dulces y repostería | shop=confectionery | — | OSM node/4953007432 |
-| Ann McDonald's | New Ross | Otros | shop=deli | www.annmcdonaldscafe.com | OSM node/884332268 |
-| Green Acres Store | Wexford | Otros | shop=deli | greenacres.ie/collections/all?sort_by=best-selling | OSM node/10736657514 |
-| Kelly's Deli | Rosslare | Otros | shop=deli | — | OSM way/515012413 |
-| Myles Doyle | Gorey | Otros | shop=deli | myselectgrocer.com | OSM node/1680832124 |
-| Wholesome Health Store | Gorey | Otros | shop=deli | — | OSM node/3647707203 |
-| Bakehouse | New Ross | Pan y cereal | shop=bakery | www.thebakehouse.ie | OSM node/8220671195 |
-| Doughnuts and Hotdogs | Courtown | Pan y cereal | shop=bakery | — | OSM node/1950904076 |
-| Elsa Bakes | Wexford | Pan y cereal | shop=bakery | — | OSM node/11001611365 |
-| Firehouse Bakery | Gorey | Pan y cereal | shop=bakery | thefirehouse.ie | OSM node/12281721844 |
-| Kelly's Bakery | Wexford | Pan y cereal | shop=bakery | kellysbakery.ie | OSM node/6731908545 |
-| Sweet Passion | Camolin | Pan y cereal | shop=bakery | — | OSM node/6502224012 |
-| Yola | Wexford | Pan y cereal | shop=bakery | yolabakery.ie | OSM node/6121093474 |
-| Niamh's Trawler Catch | New Ross | Pescado | shop=seafood | — | OSM node/11805226055 |
-| Ronan's Fish Shop | New Ross | Pescado | shop=seafood | www.duncannonfish.com | OSM node/7884685626 |
-## Irish craft beer directory sweep (2026-08-11)
-
-Source: <https://irishcraftbeer.ie/breweries/>, read 2026-08-11. The directory
-publishes a brewery name, a county, sometimes a town, and a URL, and flags some
-entries as closed. It establishes none of those as current, does not give the
-productive town for most entries, and its county attribution is unreliable — it
-lists Big Hand Brewery under Dublin behind a Welsh domain. Every entry below is
-therefore a `hold` lead: confirm identity, qualifying activity, productive
-municipality, a public contact and the remote-order status on the producer's own
-current source before admission.
-
-| Lead | Location as listed | Listed domain |
-|---|---|---|
-| YellowBelly Beer Ltd | — | yellowbellybeer.ie |
+| Naturally Cordial Ltd | — | Bebidas sin alcohol | listed | — | [FarmFinder](https://farmfinder.ie/producer/naturally-cordial-ltd) |
+| The Farm Shop Wexford & The Cheeky cow Coffee | — | Café | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-farm-shop-wexford-and-the-cheeky-cow-coffee) |
+| T. Cahill Craft Butcher | Ferns | Carne | shop=butcher | — | OSM node/1768112943 |
+| Brennan's Brewery | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/brennans-brewery) |
+| Yellowbelly Beer | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/yellowbelly-beer) |
+| Ballycross Apple Farm | — | Fruta y verdura | Farm; Fruit, Vegetables, SuperValu Food Academy | — | [FarmFinder](https://farmfinder.ie/producer/ballycross-apple-farm) |
+| Greens Berry Farm | — | Fruta y verdura | Farm; Fruit, Vegetables, SuperValu Food Academy | — | [FarmFinder](https://farmfinder.ie/producer/greens-berry-farm) |
+| Killowen Yoghurt | — | Lácteos y quesos | listed | — | [FarmFinder](https://farmfinder.ie/producer/killowen-yoghurt); via NeighbourFood |
+| Courtown Sea Angling Centre | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/courtown-sea-angling-centre-wexford) |
+| Gilbert, Shay | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/gilbert-shay) |
+| Green's Farm Shop | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/greens-farm-shop) |
+| J. Caxard | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/j-caxard-wexford) |
+| Kavanagh, Andy | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/kavanagh-andy) |
+| Kilmore seafresh | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/kilmore-seafresh) |
+| Mannion’s Farm Shop | — | Otros | Farm; Farm Gate, Farm Shops Ireland | — | [FarmFinder](https://farmfinder.ie/producer/mannion-s-farm-shop) |
+| Regan Organic Farm | — | Otros | Farm; Organic, Vegetables, Farm Gate, Farm Shops Ireland | — | [FarmFinder](https://farmfinder.ie/producer/regan-organic-farm) |
+| Sofrimar | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/sofrimar) |
+| The Strand Cahore | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-strand-cahore) |
+| Wexford Town Market | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/wexford-town-market) |
+| Wheelock Fruits | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/wheelock-fruits) |
+| Irish Pride Bakery | — | Pan y cereal | Producer; Bread & Bakery, SuperValu Food Academy | — | [FarmFinder](https://farmfinder.ie/producer/irish-pride-bakery) |
+| Kingfisher Fresh Ltd/ Wild Irish Seafoods | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/kingfisher-fresh-ltd-wild-irish-seafoods) |
+| Meyler's Fish Merchants | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/meylers-fish-merchants-wexford) |
+| Seaview Fresh Fish Shop | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/seaview-fresh-fish-shop-wexford) |
 
 ## Remaining search work
 
-- The official establishment registers (DAFM approved establishments, FSAI
-  approved food premises) have not been scoped for this county. They are the
-  exhaustive-registry lane and nothing here substitutes for them.
-- No category outside the ones named above has been swept for this county.
+- The SFPA register of approved seafood establishments is not yet scoped; its
+  index page served no document or table to the fetcher.
+- Three national directories are gated: Guaranteed Irish (login), the Irish
+  Organic Association producer finder (no content without a browser) and the
+  Bord Bia directory (403).
+- County food networks exist for several counties and are not yet scoped.

@@ -4,9 +4,9 @@
 - Phase: opening. The tree covers the 26 counties; a first sourced batch is
   published in 12 of them and the rest are empty. Derive live queues with
   `npx pnpm check:defects --country ie`.
-- Active lane: producer discovery per county in `docs/candidates/ie/<area>.md`,
-  starting from sector associations and working towards the official
-  establishment registers, which are not yet scoped.
+- Active lane: verifying the triaged leads in `docs/candidates/ie/<area>.md`,
+  which now cover all 26 counties and are ranked by how close each is to being a
+  row.
 
 ## Country rules
 - `region` is the traditional province and `area` the traditional county. The
@@ -41,4 +41,14 @@
 - Sector directories die with their domains. `cais.ie` (the farmhouse
   cheesemakers' association), `corleggy.com` and `connemarasmokehouse.ie` are
   NXDOMAIN, confirmed by a second route, so the real producers behind them need
-  another current source rather than a resurrected URL.
+  another current source rather than a resurrected URL. The dairy register is
+  that source: it still lists Corleggy Cheese as approved, which is what a dead
+  domain never proved either way.
+- The registers answer 403 to a plain fetch and 200 to `curl` with a browser
+  user-agent, and their own columns are the objective triage: the dairy list
+  states each establishment's size and whether it is a trader, cold store or
+  non-processing milk purchaser, and the meat list separates making a product
+  from slaughtering and cutting for others. Neither distinction can be inferred
+  from a name.
+- A directory keeps publishing a website long after the domain lapses, so
+  resolve it before treating the URL as the producer's own.
