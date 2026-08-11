@@ -29,5 +29,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| LA BRULERIE DES FILATIERS | BAYSWATER | Toulouse | 28 RUE DES FILATIERS 31000 TOULOUSE | Café | 10.83Z — Transformation du thé et du café | 2013-10 | [SIREN 797666096](https://annuaire-entreprises.data.gouv.fr/entreprise/797666096) |
-| BRASSERIE DU GUE DES MOINES | PAILLE-FREYBURGER | Bruguières | ZI DE LA BRIQUETERIE 31 RUE DE LA BRIQUETERIE 31150 BRUGUIERES | Cerveza | 11.05Z — Fabrication de bière | 2015-01 | [SIREN 809295553](https://annuaire-entreprises.data.gouv.fr/entreprise/809295553) · [web sin contrastar](https://www.leguedesmoines.fr/) |

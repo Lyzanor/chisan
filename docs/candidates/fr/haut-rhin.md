@@ -23,6 +23,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| VINCENT STRACKAR CHOCOLATIER CONFISEUR | CHOCOLATERIE CONFISERIE VINCENT STRACKAR | Kaysersberg Vignoble | 27 RUE DU GENERAL DE GAULLE 68240 KAYSERSBERG VIGNOBLE | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-07 | [SIREN 752815209](https://annuaire-entreprises.data.gouv.fr/entreprise/752815209) |
 | FROMAGERIE DU PAYS WELSCHE | — | Lapoutroie | (333A) 333 LA CROIX D'ORBEY 68650 LAPOUTROIE | Lácteos y quesos | 10.51C — Fabrication de fromage | 1994-12 | [SIREN 399663210](https://annuaire-entreprises.data.gouv.fr/entreprise/399663210) · [web sin contrastar](http://www.brasseriedupayswelche.fr) |
 | MOULIN MARCHAND | FARINES ET GRAINES DE LA WEISS | Orbey | 5 ROUTE DE COLMAR 68370 ORBEY | Pan y cereal | 10.61A — Meunerie | 2022-01 | [SIREN 909080582](https://annuaire-entreprises.data.gouv.fr/entreprise/909080582) |

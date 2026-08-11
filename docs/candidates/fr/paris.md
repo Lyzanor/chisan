@@ -34,5 +34,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | TCHOUDELISS | KADIATOU TRASSOUDAINE | PARIS | 141 RUE CASTAGNARY 75015 PARIS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2015-05 | [SIREN 811681915](https://annuaire-entreprises.data.gouv.fr/entreprise/811681915) |
-| LA BRULERIE DU RENDEZ - VOUS | DISCAR | PARIS | 7 RUE DU RENDEZ-VOUS 75012 PARIS | Café | 10.83Z — Transformation du thé et du café | 1997-08 | [SIREN 414276501](https://annuaire-entreprises.data.gouv.fr/entreprise/414276501) |
 | SAUCES PAPILLON | PAPILLON FOODS | PARIS | 107 RUE D'ABOUKIR 75002 PARIS | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2022-01 | [SIREN 909761173](https://annuaire-entreprises.data.gouv.fr/entreprise/909761173) |

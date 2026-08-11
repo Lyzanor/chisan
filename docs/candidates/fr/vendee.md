@@ -32,6 +32,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | GUIDO'S ROLLS/CABANE GUIDO | GUIDO FAVROU | La Tranche-sur-Mer | SKATE PARK RUE DU PERTHUIS BRETON 85360 LA TRANCHE-SUR-MER | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 1990-03 | [SIREN 353789753](https://annuaire-entreprises.data.gouv.fr/entreprise/353789753) |
-| BRASSERIE LA CIBULLE | SARL BONNIN | Maillé | 6 RUE SAINT-NICOLAS 85420 MAILLE | Cerveza | 11.05Z — Fabrication de bière | 2016-02 | [SIREN 818253700](https://annuaire-entreprises.data.gouv.fr/entreprise/818253700) · [web sin contrastar](https://www.lacibulle.fr) |
 | L'ATELIER DU FRUIT | ERIC BEZRUKI | Coëx | 15 RUE LA PETITE GROUINIERE 85220 COEX | Conservas | 10.39B — Transformation et conservation de fruits | 1992-07 | [SIREN 387811268](https://annuaire-entreprises.data.gouv.fr/entreprise/387811268) |
-| CROQUEZ LA VENDEE | SARL CHEVALIER VALERIE | Bretignolles-sur-Mer | 2 RUE DU PIED DE CHAUME 85470 BRETIGNOLLES-SUR-MER | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2014-12 | [SIREN 808435572](https://annuaire-entreprises.data.gouv.fr/entreprise/808435572) |

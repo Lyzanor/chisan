@@ -26,6 +26,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LA FERME MARGUERITE | CHRISTOPHE DELAMARE | Sainte-Marguerite-sur-Duclair | 87 ROUTE DE DUCLAIR 76480 SAINTE-MARGUERITE-SUR-DUCLAIR | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2025-01 | [SIREN 939327359](https://annuaire-entreprises.data.gouv.fr/entreprise/939327359) |
-| BRASSERIE UNION-B | UNION-B | Malaunay | 40 RUE DE LA CLERETTE 76770 MALAUNAY | Cerveza | 11.05Z — Fabrication de bière | 2017-12 | [SIREN 834174120](https://annuaire-entreprises.data.gouv.fr/entreprise/834174120) · [web sin contrastar](https://www.union-b.fr) |
 | CHOCOLATERIE BEYER | MAXIME FESSARD | Rouen | 17 RUE GRAND PONT 76000 ROUEN | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2014-02 | [SIREN 801418492](https://annuaire-entreprises.data.gouv.fr/entreprise/801418492) |
 | LA FERME AUX OISEAUX | DOMINIQUE STALDER | Angerville-la-Martel | 267 IMPASSE DES CHARMES 76540 ANGERVILLE-LA-MARTEL | Conservas | 10.39B — Transformation et conservation de fruits | 1997-04 | [SIREN 411953714](https://annuaire-entreprises.data.gouv.fr/entreprise/411953714) |

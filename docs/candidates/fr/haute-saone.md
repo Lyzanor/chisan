@@ -31,4 +31,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | LES PRESSEURS DE L'EST | — | Fougerolles-Saint-Valbert | 214 214 CROSLIERES 70220 FOUGEROLLES-SAINT-VALBERT | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2021-03 | [SIREN 897451035](https://annuaire-entreprises.data.gouv.fr/entreprise/897451035) |
 | DISTILLERIE DES 400 COUPS | 400 COUPS | Rioz | LE CHAILLAUX 70190 RIOZ | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2024-02 | [SIREN 984881342](https://annuaire-entreprises.data.gouv.fr/entreprise/984881342) |
-| FORICHER - MOULINS DORMOY | SOCIETE FORICHER - MOULINS DORMOY | Fougerolles-Saint-Valbert | FOUGROLLES 329 329 LE CHATEAU 70220 FOUGEROLLES-SAINT-VALBERT | Pan y cereal | 10.61A — Meunerie | 2009-03 | [SIREN 511447971](https://annuaire-entreprises.data.gouv.fr/entreprise/511447971) |

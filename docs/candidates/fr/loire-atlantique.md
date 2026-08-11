@@ -31,7 +31,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LA BRULERIE | TORREFACTION SABARD | Nantes | 24 RUE DE LA MARNE 44000 NANTES | Café | 10.83Z — Transformation du thé et du café | 2023-07 | [SIREN 977830272](https://annuaire-entreprises.data.gouv.fr/entreprise/977830272) |
-| LA ROUTE DU CACAO | CHOCOLATERIE PINEAU | Le Croisic | 4 PLACE BOSTON 44490 LE CROISIC | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-05 | [SIREN 751599937](https://annuaire-entreprises.data.gouv.fr/entreprise/751599937) |
-| BRUNO CACAO | BRUNO GUILLARD CHOCOLATIER | Nantes | 114 RUE DES HAUTS PAVES 44000 NANTES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1998-08 | [SIREN 419764139](https://annuaire-entreprises.data.gouv.fr/entreprise/419764139) |
 | CHOCOLATERIE T.CHENAIS | SSTC | Treillières | 11 RUE DE RENNES 44119 TREILLIERES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2018-07 | [SIREN 841370646](https://annuaire-entreprises.data.gouv.fr/entreprise/841370646) |
 | PALUDIERE | FABIENNE DANIEL | Guérande | GRAND PALUMER 44350 GUERANDE | Condimentos | 08.93Z — Production de sel | 1990-01 | [SIREN 381589852](https://annuaire-entreprises.data.gouv.fr/entreprise/381589852) |

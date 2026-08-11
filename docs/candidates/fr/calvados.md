@@ -28,8 +28,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| LE TORREFACTEUR | DHM | Épron | BATIMENT ETINCELLE 2 RUE HUBERTINE AUCLERT 14610 EPRON | Café | 10.83Z — Transformation du thé et du café | 2003-04 | [SIREN 448330829](https://annuaire-entreprises.data.gouv.fr/entreprise/448330829) |
-| MOBSBY'S BRASSERIE ARTISANALE | ADAM MOBSBY | Vire Normandie | SAINT-GERMAIN-DE-TALLEVENDE-LA-LANDE-V 2301 ROUTE DE LA DIADE 14500 VIRE NORMANDIE | Cerveza | 11.05Z — Fabrication de bière | 2018-05 | [SIREN 842200834](https://annuaire-entreprises.data.gouv.fr/entreprise/842200834) · [web sin contrastar](https://www.mobsbys.com) |
 | LA ROUTE DU CACAO | CHOCOLATERIE MERIMEE | Lisieux | 5 RUE ARISTIDE BRIAND 14100 LISIEUX | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2010-09 | [SIREN 524393881](https://annuaire-entreprises.data.gouv.fr/entreprise/524393881) |
 | SAFRAN DE NORMANDIE | ANNIE GUERARD | La Hoguette | LD LE MOULIN 14700 LA HOGUETTE | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2012-07 | [SIREN 752628339](https://annuaire-entreprises.data.gouv.fr/entreprise/752628339) |
 | BISCUITERIE L'ECOLE EST FINIE | MELISSA KINYOCK | Caen | 3 RUE PROFESSEUR MAURICE GUIBE 14000 CAEN | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2023-08 | [SIREN 978630937](https://annuaire-entreprises.data.gouv.fr/entreprise/978630937) |

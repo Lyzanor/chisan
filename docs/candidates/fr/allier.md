@@ -32,5 +32,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | SALSA VEGGIE | RAFIKA GHOURCHI | Montluçon | 111 AVENUE DE LA REPUBLIQUE 03100 MONTLUCON | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2004-04 | [SIREN 478274707](https://annuaire-entreprises.data.gouv.fr/entreprise/478274707) |
-| DISTILLERIE DE MONSIEUR BALTHAZAR | — | Hérisson | 8 PLACE DE LA REPUBLIQUE 03190 HERISSON | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2000-12 | [SIREN 434242822](https://annuaire-entreprises.data.gouv.fr/entreprise/434242822) · [web sin contrastar](http://whisky-hedgehog.fr) |
 | PISCICULTURE DES POUBOTS | JULIEN CORETE | Franchesse | LIEU DIT LES POUBOTS 03160 FRANCHESSE | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2006-01 | [SIREN 485214969](https://annuaire-entreprises.data.gouv.fr/entreprise/485214969) |

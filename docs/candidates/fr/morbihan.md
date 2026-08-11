@@ -27,8 +27,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| L CHANVRE | — | Péaule | 5717 PONT SAILLANT 56130 PEAULE | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2006-05 | [SIREN 490293602](https://annuaire-entreprises.data.gouv.fr/entreprise/490293602) |
 | POMM'S FACTORY | NATHALIE JOLLY | Baud | LANN VREHAN 56150 BAUD | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2018-09 | [SIREN 842401192](https://annuaire-entreprises.data.gouv.fr/entreprise/842401192) |
 | BROOKLYN JUICE CO | PHILIPPE PIERRE | Sauzon | 2 RUE SAINT NICOLAS 56360 SAUZON | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2013-05 | [SIREN 793015496](https://annuaire-entreprises.data.gouv.fr/entreprise/793015496) |
 | BRULERIE DE BELLE-ILE-EN-MER | PLUM | Le Palais | 7 RUE WILLAUMEZ 56360 LE PALAIS | Café | 10.83Z — Transformation du thé et du café | 2020-06 | [SIREN 898994322](https://annuaire-entreprises.data.gouv.fr/entreprise/898994322) · [web sin contrastar](https://www.kaerilis.org/) |
-| DISTILLERIE BLEIZ-MOR | LOIC LE GUHENNEC | Étel | 4 RUE VICTOR HUGO 56410 ETEL | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2021-12 | [SIREN 909089740](https://annuaire-entreprises.data.gouv.fr/entreprise/909089740) · [web sin contrastar](https://www.distilleriebleizmor.fr/) |

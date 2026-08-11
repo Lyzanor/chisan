@@ -18,7 +18,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DE LA VIDISSE AUBERT Etienne | AUBERT ETIENNE | SAINT-PAUL | LA VIDISSE 19150 | actividad | Prairie permanente, Estives ou alpages collectifs, Pain frais | 2026 | [nº Bio 151817](https://annuaire.agencebio.org/operateur/151817) |
 | FORET | FOrêt Réinsertion Environnement en pays de Tulle | Naves | 595 Lestrade 19460 | actividad | Prairie temporaire, Mélanges Céréaliers (sans légumineuses), Prairie permanente | 2026 | [nº Bio 66202](https://annuaire.agencebio.org/operateur/66202) |
 | GOUTTE NEGRE | EARL GOUTTE-NEGRE | TARNAC | POULET Marc 19170 | actividad | Génisses renouvellement (>8 mois), Blé tendre, Sarrasin | 2026 | [nº Bio 157353](https://annuaire.agencebio.org/operateur/157353) |
-| Highlands de la Vézère / EI Laurent Cessac | CESSAC LAURENT | Estivaux | 326 LIEU DIT BOUNEIX 19410 | actividad | Taureaux (>24 mois), Safran, Estives ou alpages collectifs | 2026 | [nº Bio 10459](https://annuaire.agencebio.org/operateur/10459) |
 | LA FERME D'ORIGAN MERENS Marjolaine | LA FERME D'ORIGAN | Meymac | Combe Prunde 19250 | actividad | Béliers, Estives ou alpages collectifs, Mélanges Céréales-légumineuses | 2026 | [nº Bio 142308](https://annuaire.agencebio.org/operateur/142308) |
 | LA FONTAINE DU BERLE DUMONT Claudine | SCEA DE LA FONTAINE DE BERLE | CHAUFFOUR-SUR-VELL | 1355 RTE DE BERLE 19500 | actividad | Autres préparations et conserves à base de fruits et légumes, Autres huiles végétales, brutes, Noix | 2026 | [nº Bio 101267](https://annuaire.agencebio.org/operateur/101267) |
 | LAFON DE LAGENESTE Clément | LAFON DE LAGENESTE FRANCOISE | Saint Clément | 3 route de l'Anis 19700 | actividad | Châtaignes et marrons, Prairie permanente | 2026 | [nº Bio 149211](https://annuaire.agencebio.org/operateur/149211) |
@@ -30,5 +29,8 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| BRASSERIE DES ANGES | STEPHANIE COULANGE | Chamboulive | PLACE DE LA CHAPELLE 19450 CHAMBOULIVE | Cerveza | 11.05Z — Fabrication de bière | 2013-09 | [SIREN 795087808](https://annuaire-entreprises.data.gouv.fr/entreprise/795087808) · [web sin contrastar](https://brasseriedesanges.com/) |
 | B.B.CHOCOLATIER -BORZEIX-BESSE -B.B.CHOCOLATIER BORZEIX-BESSE -COMPTOIR DU CHOCOLAT DE TREIGNAC-B.B. | BORZEIX-BESSE | Treignac | 3-5 3 AVENUE LEON VACHER 19260 TREIGNAC | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1999-12 | [SIREN 428768543](https://annuaire-entreprises.data.gouv.fr/entreprise/428768543) |
+
+## Descartes documentados — 2026-08-11
+
+- **Highlands de la Vézère** — fuera de alcance: La oferta pública actual es ganado Highland vivo para cría, no alimentos o bebidas para consumo humano. [Agence Bio](https://annuaire.agencebio.org/operateur/10459) · [fuente pública](https://www.highlands-vezere.fr/)

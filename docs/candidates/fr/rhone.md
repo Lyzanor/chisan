@@ -28,4 +28,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | ATELIER BONNEVIE | JULIA BONNEVIE | Saint-Cyr-au-Mont-d'Or | 2 CHEMIN DES CHARBOTTES 69450 SAINT-CYR-AU-MONT-D'OR | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2023-10 | [SIREN 981008469](https://annuaire-entreprises.data.gouv.fr/entreprise/981008469) |
-| UNICO ARTISAN GLACIER | UNICO ARTISAN | LYON | 91 MONTEE DE LA GRANDE COTE 69001 LYON | Helados | 10.52Z — Fabrication de glaces et sorbets | 2017-05 | [SIREN 830068920](https://annuaire-entreprises.data.gouv.fr/entreprise/830068920) |

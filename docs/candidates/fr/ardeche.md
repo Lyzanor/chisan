@@ -30,5 +30,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | L'OLEICOLE DES CEVENNES | MOULIN A HUILE D'OLIVE FROMENT | Les Vans | 397 ROUTE DES CEVENNES 07140 LES VANS | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 1991-11 | [SIREN 383711397](https://annuaire-entreprises.data.gouv.fr/entreprise/383711397) |
-| PIERRE CHAUVET CHOCOLATIER | PIERRE CHAUVET | Ucel | 111 RTE DE VALS LES BAINS 07200 UCEL | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1993-08 | [SIREN 392170486](https://annuaire-entreprises.data.gouv.fr/entreprise/392170486) |
 | LES CHATAIGNIERS DE CHANTELOUBE | JEROME COSTE | Vallées-d'Antraigues-Asperjoc | CHANTELOUBE 07530 VALLEES-D'ANTRAIGUES-ASPERJOC | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2011-02 | [SIREN 530574326](https://annuaire-entreprises.data.gouv.fr/entreprise/530574326) |

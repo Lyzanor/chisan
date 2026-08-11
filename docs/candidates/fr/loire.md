@@ -28,6 +28,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| PATRICK FONT | ATELIER PATRICK FONT | Tartaras | 6 ROUTE DE GIVORS 42800 TARTARAS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2012-10 | [SIREN 788591840](https://annuaire-entreprises.data.gouv.fr/entreprise/788591840) |
-| LES BIERES DU PILAT | BRASSERIE DU PILAT | Saint-Julien-Molin-Molette | ZONE ARTISANALE 56 LE GRAND PRE 42220 SAINT-JULIEN-MOLIN-MOLETTE | Cerveza | 11.05Z — Fabrication de bière | 2002-04 | [SIREN 441780426](https://annuaire-entreprises.data.gouv.fr/entreprise/441780426) · [web sin contrastar](https://www.brasseriedupilat.com/) |
 | CIDRERIE DU PILAT | — | Saint-Étienne | 24 RUE PEYRET-LALLIER 42100 SAINT-ETIENNE | Sidra | 11.03Z — Fabrication de cidre et de vins de fruits | 2024-01 | [SIREN 983255217](https://annuaire-entreprises.data.gouv.fr/entreprise/983255217) |

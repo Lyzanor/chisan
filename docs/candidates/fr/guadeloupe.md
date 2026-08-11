@@ -23,7 +23,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FERME DE GASCHET CHATEAUBON Jean-Charles | DOMAINE DE GASCHET | PORT-LOUIS | LD GASCHET PELLETAN PLAISANCE 97117 | actividad | Autres fruits tropicaux et subtropicaux n.c.a., Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 139468](https://annuaire.agencebio.org/operateur/139468) |
 | GAEC GENELAN | GENELAN PIERRE SIMON | LE MOULE | 258 ROUTE DE BELLEVUE 97160 | actividad | Autres fruits à pépins, Cannes à sucre | 2026 | [nº Bio 12564](https://annuaire.agencebio.org/operateur/12564) |
 | GIMENEZ Emmanuel | GIMENEZ-RICHARDSON EMMANUEL JACQUES | SAINT MARTIN | Golden Grove Garden 90 Route de Colombier 97150 | actividad | Autres fruits à pépins, Génisses renouvellement (>8 mois), Autres bovins et bovidés | 2026 | [nº Bio 32126](https://annuaire.agencebio.org/operateur/32126) |
-| GOBERT Sarah (EI) | GOBERT SARAH SYLVIE | Goyave | Bois sec Chemin des mineurs 97128 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Autres huiles végétales, brutes, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques | 2026 | [nº Bio 25196](https://annuaire.agencebio.org/operateur/25196) |
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
 
@@ -37,7 +36,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | COFFEA | SOPAVE | Baie-Mahault | 322 CENTRE COMMERCIAL DESTRELAND 97122 BAIE-MAHAULT | Café | 10.83Z — Transformation du thé et du café | 2012-06 | [SIREN 751376211](https://annuaire-entreprises.data.gouv.fr/entreprise/751376211) |
 | SWEETHE | 7VA GROUPE | Basse-Terre | 10 RUE GERMAIN CASSE 97100 BASSE-TERRE | Café | 10.83Z — Transformation du thé et du café | 2014-10 | [SIREN 804584738](https://annuaire-entreprises.data.gouv.fr/entreprise/804584738) |
 | CAFE EDOUARD | SOC EDOUARD ET FILS | Lamentin | ZONE INDUSTRIELLE DE JAULA 97129 LAMENTIN | Café | 10.83Z — Transformation du thé et du café | 1980-04 | [SIREN 319488979](https://annuaire-entreprises.data.gouv.fr/entreprise/319488979) |
-| BRASSERIE SAZILE | SAS BRASSERIE SAZILE | Baie-Mahault | JARRY 19 RUE DE L'INDUSTRIE 97122 BAIE-MAHAULT | Cerveza | 11.05Z — Fabrication de bière | 2021-11 | [SIREN 905304978](https://annuaire-entreprises.data.gouv.fr/entreprise/905304978) |
 | BRASSERIE ARTISANALE DE DESHAIES | — | Deshaies | 1265 ALLEE RIFLET 97126 DESHAIES | Cerveza | 11.05Z — Fabrication de bière | 2016-02 | [SIREN 817827322](https://annuaire-entreprises.data.gouv.fr/entreprise/817827322) |
 | BIERES DE LA LEZARDE | — | Petit-Bourg | VERNOU 1 ALLEE MERWART 97170 PETIT-BOURG | Cerveza | 11.05Z — Fabrication de bière | 2014-11 | [SIREN 805310091](https://annuaire-entreprises.data.gouv.fr/entreprise/805310091) |
 | LVB CONFISERIE | AIME LEANDRY | Capesterre-Belle-Eau | ALLEE DUMANOIR 92 LOTISSEMENT MOULIN A EAU 97130 CAPESTERRE-BELLE-EAU | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2013-01 | [SIREN 794819425](https://annuaire-entreprises.data.gouv.fr/entreprise/794819425) |
@@ -49,7 +47,10 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | GITES ENTRE LES CHAMPS | LE SURVIVAL | Le Moule | SAINTE-MARGUERITE 6 RUE GASTON MONNERVILLE 97160 LE MOULE | Conservas | 10.39B — Transformation et conservation de fruits | 2016-06 | [SIREN 821022159](https://annuaire-entreprises.data.gouv.fr/entreprise/821022159) |
 | GMCS | CLAUDETTE MAYET | Les Abymes | JASPARD 97139 LES ABYMES | Conservas | 10.39B — Transformation et conservation de fruits | 2005-04 | [SIREN 482100443](https://annuaire-entreprises.data.gouv.fr/entreprise/482100443) |
 | SOLEIL CARAIBES PLUS | JOHNY SOUKCHAINE | Saint-François | SECTION DUBEDOU 97118 SAINT-FRANCOIS | Conservas | 10.39A — Autre transformation et conservation de légumes | 2015-03 | [SIREN 810589606](https://annuaire-entreprises.data.gouv.fr/entreprise/810589606) |
-| SOCIETE D'EXPLOITATION DE LA DISTILLERIE BIELLE | — | Grand-Bourg | LD BIELLE 97112 GRAND-BOURG | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 1900-01 | [SIREN 304877657](https://annuaire-entreprises.data.gouv.fr/entreprise/304877657) · [web sin contrastar](https://rhumbielle.com/) |
 | LES DELICES D'ASTREL | ASTREL ULME | Baie-Mahault | LE BOURG 38 RUE GAMBETTA 97122 BAIE-MAHAULT | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2023-06 | [SIREN 953891611](https://annuaire-entreprises.data.gouv.fr/entreprise/953891611) |
 | HEAVEN'T DESIGN AGENCY | INGAST | Les Abymes | 4 BAZIN 97139 LES ABYMES | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2022-11 | [SIREN 922360656](https://annuaire-entreprises.data.gouv.fr/entreprise/922360656) |
 | GOURMET | ROYAL GOURMET | Sainte-Rose | PONT CANAL LE BOYER 97115 SAINTE-ROSE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2015-07 | [SIREN 813012879](https://annuaire-entreprises.data.gouv.fr/entreprise/813012879) |
+
+## Descartes documentados — 2026-08-11
+
+- **Jardin d'Ayo** — fuera de alcance: La gama pública actual son aceites esenciales, aceites vegetales y cosméticos, sin una oferta alimentaria que encaje. [Agence Bio](https://annuaire.agencebio.org/operateur/25196) · [fuente pública](https://www.jardindayo.com/)

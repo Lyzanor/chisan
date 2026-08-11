@@ -30,7 +30,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| TORREFACTION D'AURON | SYLVIE LEBEAU | Bourges | 75 RUE D'AURON 18000 BOURGES | Café | 10.83Z — Transformation du thé et du café | 1992-12 | [SIREN 390009611](https://annuaire-entreprises.data.gouv.fr/entreprise/390009611) |
 | LE MOULIN A CAFE | ISABELLE PEZARD | Saint-Amand-Montrond | 14 RUE PORTE MUTIN 18200 SAINT-AMAND-MONTROND | Café | 10.83Z — Transformation du thé et du café | 2005-02 | [SIREN 480831627](https://annuaire-entreprises.data.gouv.fr/entreprise/480831627) |
 | MICRO BRASSERIE VERIDIK | MAXIME LEBOEUF | Mehun-sur-Yèvre | 119 AVENUE JEAN CHATELET 18500 MEHUN-SUR-YEVRE | Cerveza | 11.05Z — Fabrication de bière | 2020-03 | [SIREN 882606338](https://annuaire-entreprises.data.gouv.fr/entreprise/882606338) · [web sin contrastar](https://www.facebook.com/61565728241745/) |
 | CONFISERIE CHARLES VII CHOCOLATERIE DAME AGNES | NICOLAS PIERRE VIOLLET | Bourges | 14 CHEMIN LEGNIER 18000 BOURGES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2006-03 | [SIREN 488790858](https://annuaire-entreprises.data.gouv.fr/entreprise/488790858) |

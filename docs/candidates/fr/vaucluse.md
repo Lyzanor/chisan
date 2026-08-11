@@ -24,6 +24,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| BRASSERIE DES DIVERS GENS | LA BRASSERIE INTERDITE | Pertuis | 167 RUE ROBERVAL 84120 PERTUIS | Cerveza | 11.05Z — Fabrication de bière | 2021-03 | [SIREN 895230449](https://annuaire-entreprises.data.gouv.fr/entreprise/895230449) · [web sin contrastar](https://biere-artisanale-luberon.fr) |
 | LE MOULIN DES TAILLADES | — | Bédarrides | 43 CHEMIN DES TAILLADES 84370 BEDARRIDES | Pan y cereal | 10.61A — Meunerie | 2021-10 | [SIREN 904094018](https://annuaire-entreprises.data.gouv.fr/entreprise/904094018) |
-| PISCICULTURE LE PETIT LARGE TALLET | CHRISTINE TALLET | Saumane-de-Vaucluse | 231 CHE LE PETIT LARGE 84800 SAUMANE-DE-VAUCLUSE | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2015-10 | [SIREN 813733961](https://annuaire-entreprises.data.gouv.fr/entreprise/813733961) · [web sin contrastar](http://truite-provence.fr/) |

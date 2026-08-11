@@ -24,7 +24,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| MOULIN A HUILE DU PARTEGAL | GUILLAUME KAUFFMANN | La Farlède | 159 CHEMIN DES LAURES 83210 LA FARLEDE | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2008-10 | [SIREN 507927358](https://annuaire-entreprises.data.gouv.fr/entreprise/507927358) |
 | TORREFACTION | CAFEZINHO | Fréjus | 66 RUE JEAN JAURES 83600 FREJUS | Café | 10.83Z — Transformation du thé et du café | 2020-10 | [SIREN 889702494](https://annuaire-entreprises.data.gouv.fr/entreprise/889702494) |
 | LA BISCUITERIE SAINT TROPEZ | BISCUITERIE DE NIOOULARGO | Saint-Tropez | 3 TRAVERSE DES CALFATS 83990 SAINT-TROPEZ | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2020-05 | [SIREN 884348715](https://annuaire-entreprises.data.gouv.fr/entreprise/884348715) |
 | GLACIER NESS | BIGNESS | Fréjus | RESIDENCE AIGUE MARINE BAT A 109 QUAI DE CLEOPATRE 83600 FREJUS | Helados | 10.52Z — Fabrication de glaces et sorbets | 2018-03 | [SIREN 838157840](https://annuaire-entreprises.data.gouv.fr/entreprise/838157840) |

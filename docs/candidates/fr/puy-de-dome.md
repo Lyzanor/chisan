@@ -29,4 +29,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| SAINT NECTAIRE FERMIER VAISSAIRE PAPON L'ARVERNE | ETS VAISSAIRE PAPON | Saint-Diéry | LOT D'ENTRP.  LA GENOUILLADE 11 CHE DE PELINDE 63320 SAINT-DIERY | Lácteos y quesos | 10.51C — Fabrication de fromage | 1986-01 | [SIREN 334958519](https://annuaire-entreprises.data.gouv.fr/entreprise/334958519) |

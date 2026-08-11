@@ -28,6 +28,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| LA BRULERIE COMTOISE | YSB | Dole | ET 44 42 GRANDE RUE 39100 DOLE | Café | 10.83Z — Transformation du thé et du café | 2019-12 | [SIREN 879483600](https://annuaire-entreprises.data.gouv.fr/entreprise/879483600) |
 | LE SAFRAN BLEU | CLAUDE ANCEDY | Chissey-sur-Loue | 60 GRANDE RUE 39380 CHISSEY-SUR-LOUE | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2009-01 | [SIREN 509865168](https://annuaire-entreprises.data.gouv.fr/entreprise/509865168) |
 | PISCICULTURE DES GROTTES | ROLAND GAILLARD | Les Planches-près-Arbois | 15 RUE DE LA BAUME 39600 LES PLANCHES-PRES-ARBOIS | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2009-01 | [SIREN 509116133](https://annuaire-entreprises.data.gouv.fr/entreprise/509116133) |

@@ -30,6 +30,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | BRULERIE SAINT MARTIN | MURIELLE POIRRIER | Soissons | 16 RUE SAINT-MARTIN 02200 SOISSONS | Café | 10.83Z — Transformation du thé et du café | 1993-10 | [SIREN 397820416](https://annuaire-entreprises.data.gouv.fr/entreprise/397820416) |
 | BMC | BRASSERIE DE LA MONTAGNE COURONNEE | Laon | 1 A RUE GEORGES ERMANT 02000 LAON | Cerveza | 11.05Z — Fabrication de bière | 2019-01 | [SIREN 847884822](https://annuaire-entreprises.data.gouv.fr/entreprise/847884822) |
-| LA CHOCOLATIERE | HELENE DECOSTER | Holnon | 10 RUE CHARLES VAVASSEUR 02760 HOLNON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2023-09 | [SIREN 979128857](https://annuaire-entreprises.data.gouv.fr/entreprise/979128857) |
 | JEAN FRANCOIS FERON CHOCOLATIER | CHOCOLATERIE FERON | Soissons | 4 RUE DE LA BUERIE 02200 SOISSONS | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2009-08 | [SIREN 514343037](https://annuaire-entreprises.data.gouv.fr/entreprise/514343037) |
 | L'ATELIER DE CLAIRE | CLAIRE BLANDIER | Tergnier | 4 CHEMIN DE BOISSY 02700 TERGNIER | Conservas | 10.39B — Transformation et conservation de fruits | 2019-11 | [SIREN 878423011](https://annuaire-entreprises.data.gouv.fr/entreprise/878423011) |

@@ -29,5 +29,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| L'ATELIER CREATIF MATTHIEU CLOT | — | Rodez | 9 AVENUE DE L'ENTREPRISE 12000 RODEZ | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-10 | [SIREN 789203528](https://annuaire-entreprises.data.gouv.fr/entreprise/789203528) · [web sin contrastar](http://www.aici-chocolatier.fr/) |
 | MOULIN MEJANE | VINCENT MEJANE | Espeyrac | LA MOLENERIE 12140 ESPEYRAC | Pan y cereal | 10.61A — Meunerie | 2014-07 | [SIREN 804208825](https://annuaire-entreprises.data.gouv.fr/entreprise/804208825) |

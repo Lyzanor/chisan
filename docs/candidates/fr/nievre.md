@@ -29,6 +29,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| HUILERIE DU MOULIN DE L'ILE | — | Donzy | 14 RUE DE L'EMINENCE 58220 DONZY | Aceite | 10.41B — Fabrication d'huiles et graisses raffinées | 2012-08 | [SIREN 754004018](https://annuaire-entreprises.data.gouv.fr/entreprise/754004018) · [web sin contrastar](https://www.huileriedumoulin.fr/) |
 | LA VINAIGRERIE UN POIL FOL | YVES LEBRUN | Savigny-Poil-Fol | 1 ROUTE DE LA POMMERAY 58170 SAVIGNY-POIL-FOL | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 1996-05 | [SIREN 407689827](https://annuaire-entreprises.data.gouv.fr/entreprise/407689827) |
 | L'ANDRESIENNE | WILLY PONCET | Saint-André-en-Morvan | LD ATHEE 27 RUE DE LA CHAUME AUX OUAILLES 58140 SAINT-ANDRE-EN-MORVAN | Conservas | 10.39B — Transformation et conservation de fruits | 2019-05 | [SIREN 850115932](https://annuaire-entreprises.data.gouv.fr/entreprise/850115932) |

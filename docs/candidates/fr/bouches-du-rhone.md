@@ -28,5 +28,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | TORREFACTION ST-ROCH | CMS | Gardanne | 7 COURS DE LA REPUBLIQUE 13120 GARDANNE | Café | 10.83Z — Transformation du thé et du café | 2017-08 | [SIREN 831269774](https://annuaire-entreprises.data.gouv.fr/entreprise/831269774) |
-| CAFE CORTO | TORREFACTION PROVENCE | MARSEILLE | 319 RUE SAINT PIERRE 13005 MARSEILLE | Café | 10.83Z — Transformation du thé et du café | 2018-08 | [SIREN 841894447](https://annuaire-entreprises.data.gouv.fr/entreprise/841894447) |
 | EPICES VILLAGE | COMADA SAS | Martigues | 1 PLACE JOSEPH FASCIOLA 13500 MARTIGUES | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2015-03 | [SIREN 810100545](https://annuaire-entreprises.data.gouv.fr/entreprise/810100545) |

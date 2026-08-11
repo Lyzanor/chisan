@@ -20,7 +20,6 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | DU ROC MILLOT Guillaume | EARL DU ROC | ROLLAINVILLE | FERME DE L ETANCHE 88300 | actividad | Lin fibre, Petit épeautre, Trèfle | 2026 | [nº Bio 138823](https://annuaire.agencebio.org/operateur/138823) |
 | DURAND Gwenaëlle | Gwenaëlle Durand | MADECOURT | 272 GRAND RUE 88270 | actividad | Autres préparations et conserves à base de fruits et légumes, Autres fruits à pépins, Plants et semences potagers, à l'exclusion des semences de betteraves | 2026 | [nº Bio 7163](https://annuaire.agencebio.org/operateur/7163) |
 | EURL HUIN AGRICULTURE | EURL HUIN ARNAUD DENIS JEAN FERNAND AGRICULTURE | LA BOURGONCE | 94 LE VILLAGE 88470 | actividad | Veaux (< 8mois), Génisses engraissement (>8 mois), Génisses renouvellement (>8 mois) | 2026 | [nº Bio 51022](https://annuaire.agencebio.org/operateur/51022) |
-| ferme du champ de fontaine | VALSECCHI BENOIT | fays | 526 grande rue 88600 | actividad | Vaches allaitantes, Prairie temporaire, Génisses renouvellement (>8 mois) | 2026 | [nº Bio 6570](https://annuaire.agencebio.org/operateur/6570) |
 | GAEC DU MOIRET | EARL YVES THENOT | Contrexéville | 3 cour des Château des Anglais 88140 | actividad | Veaux (< 8mois), Génisses renouvellement (>8 mois), Prairie permanente | 2026 | [nº Bio 11698](https://annuaire.agencebio.org/operateur/11698) |
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)

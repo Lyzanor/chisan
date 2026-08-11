@@ -33,6 +33,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | HOMELANIE | MELANIE PHILIP | Nice | 3 RUE DU LYCEE 06000 NICE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2015-05 | [SIREN 810953224](https://annuaire-entreprises.data.gouv.fr/entreprise/810953224) |
-| LA BRASSERIE ARTISANALE DE NICE | B.A.N | Nice | 14 AVENUE VILLERMONT 06000 NICE | Cerveza | 11.05Z — Fabrication de bière | 2015-02 | [SIREN 809604275](https://annuaire-entreprises.data.gouv.fr/entreprise/809604275) · [web sin contrastar](https://brasserie-nice.com/) |
 | EDINNA CREATION | MARIE TONTA | Cagnes-sur-Mer | BATIMENT E 54 AVENUE DE GRASSE 06800 CAGNES-SUR-MER | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2025-04 | [SIREN 942788803](https://annuaire-entreprises.data.gouv.fr/entreprise/942788803) |
-| BISCUITERIE BD'ANTIBES | LES BISCUITERIES DU SUD | Antibes | 2047 ROUTE DE NICE 06600 ANTIBES | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2018-01 | [SIREN 834757148](https://annuaire-entreprises.data.gouv.fr/entreprise/834757148) · [web sin contrastar](https://www.biscuiteriedantibes.com/) |

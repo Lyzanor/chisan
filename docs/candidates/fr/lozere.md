@@ -31,5 +31,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| LES CHATAIGNES DU PETIT MAS | ALICE AMOUROUX | Saint-Michel-de-Dèze | LA BARRAQUE 48160 SAINT-MICHEL-DE-DEZE | Frutos secos | 01.25Z — Culture d'autres fruits d'arbres ou arbustes et de fruits à coque | 2024-01 | [SIREN 983894965](https://annuaire-entreprises.data.gouv.fr/entreprise/983894965) |
 | PISCICULTURE DE FLORAC | TRUITE DE FLORAC | Florac Trois Rivières | 8 IMP DU FOURNIOL 48400 FLORAC TROIS RIVIERES | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2023-06 | [SIREN 953357134](https://annuaire-entreprises.data.gouv.fr/entreprise/953357134) |

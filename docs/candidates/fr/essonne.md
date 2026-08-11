@@ -26,5 +26,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | KUUURE | DAVID DOS SENTOS LENZA | Brunoy | BP 43 IMPASSE DE LA MAIRIE 91800 BRUNOY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 1995-10 | [SIREN 402270870](https://annuaire-entreprises.data.gouv.fr/entreprise/402270870) |
-| L ATELIER DES JARDINS GOURMANDS | SYLVIE YANNIC-ARNOULT | Épinay-sur-Orge | 42 RUE DES MEUNIERS 91360 EPINAY-SUR-ORGE | Conservas | 10.39B — Transformation et conservation de fruits | 2018-09 | [SIREN 842120511](https://annuaire-entreprises.data.gouv.fr/entreprise/842120511) |
 | L'ATELIER DE STEPH | STEPHANIE VALLEE | Brétigny-sur-Orge | BATIMENT 5 LA MARINIERE 20 RUE ALBERT CAMUS 91220 BRETIGNY-SUR-ORGE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2025-03 | [SIREN 941300725](https://annuaire-entreprises.data.gouv.fr/entreprise/941300725) |

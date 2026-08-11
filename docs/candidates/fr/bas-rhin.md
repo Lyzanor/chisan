@@ -23,5 +23,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LA COMPAGNIE DES TORREFACTEURS | CAFES RECK | Strasbourg | 24 RUE DE LA ROCHELLE 67100 STRASBOURG | Café | 10.83Z — Transformation du thé et du café | 1957-01 | [SIREN 578506339](https://annuaire-entreprises.data.gouv.fr/entreprise/578506339) |
-| BRASSERIE DE SAINT-PIERRE | ALSABIERES | Saint-Pierre | 30 RUE PRINCIPALE 67140 SAINT-PIERRE | Cerveza | 11.05Z — Fabrication de bière | 1986-01 | [SIREN 334926086](https://annuaire-entreprises.data.gouv.fr/entreprise/334926086) · [web sin contrastar](https://www.lasaintpierre.com/) |
-| BRASSERIE LA PERLE | BIERES ARTZNER | Strasbourg | 10 PLACE DE L'ABATTOIR 67200 STRASBOURG | Cerveza | 11.05Z — Fabrication de bière | 2009-07 | [SIREN 513083147](https://annuaire-entreprises.data.gouv.fr/entreprise/513083147) · [web sin contrastar](https://www.biere-perle.com/) |

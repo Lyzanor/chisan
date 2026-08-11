@@ -29,6 +29,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| TORREFACTION DAGOBERT | STIF | Châtillon-sur-Chalaronne | 86 IMPASSE CHRISTIAN BARNARD 01400 CHATILLON-SUR-CHALARONNE | Café | 10.83Z — Transformation du thé et du café | 2017-10 | [SIREN 832194666](https://annuaire-entreprises.data.gouv.fr/entreprise/832194666) |
-| MON CAFE GOURMET | SANDRA VOLO | Lagnieu | 44 RUE GAMBETTA 01150 LAGNIEU | Café | 10.83Z — Transformation du thé et du café | 2017-03 | [SIREN 828729863](https://annuaire-entreprises.data.gouv.fr/entreprise/828729863) · [web sin contrastar](https://www.moncafegourmet.fr/) |
-| HESTIA BISCUITERIE | EMELINE GODIN | Saint-Paul-de-Varax | 215 RUE DE LA DOMBES 01240 SAINT-PAUL-DE-VARAX | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2022-09 | [SIREN 918926338](https://annuaire-entreprises.data.gouv.fr/entreprise/918926338) |

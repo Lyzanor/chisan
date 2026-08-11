@@ -27,6 +27,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| HUILERIE AVERNOISE | — | Avernes | 43 RUE DE CHANTEREINE 95450 AVERNES | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2017-08 | [SIREN 832806350](https://annuaire-entreprises.data.gouv.fr/entreprise/832806350) |
 | BRULERIE DE CERGY | LA BRULERIE PELINE | Cergy | 14 RUE DES GALERIES 95000 CERGY | Café | 10.83Z — Transformation du thé et du café | 2014-08 | [SIREN 803899194](https://annuaire-entreprises.data.gouv.fr/entreprise/803899194) |
 | MAISON FERCOT | MF DISTILLERIE | Sannois | 99 ALLEE DE CORMEILLES 95110 SANNOIS | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2019-01 | [SIREN 848181020](https://annuaire-entreprises.data.gouv.fr/entreprise/848181020) · [web sin contrastar](https://www.lesapeurbrasseur.com/) |

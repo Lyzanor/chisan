@@ -26,6 +26,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| BRASSERIE DU GRAND PARIS | MY BEER COMPANY | Saint-Denis | 103 RUE CHARLES MICHELS 93200 SAINT-DENIS | Cerveza | 11.05Z — Fabrication de bière | 2011-07 | [SIREN 533304952](https://annuaire-entreprises.data.gouv.fr/entreprise/533304952) · [web sin contrastar](https://www.bgp.paris) |
 | VOODOO | CAROLINE BELLANDE | Aulnay-sous-Bois | 51 RUE JULES PRINCET 93600 AULNAY-SOUS-BOIS | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2023-11 | [SIREN 981560899](https://annuaire-entreprises.data.gouv.fr/entreprise/981560899) |
 | KANAPATHY PARVATHY | NITHILA KANAPATHIPPILLAI | Bobigny | 17 RUE HERZOG 93000 BOBIGNY | Pan y cereal | 10.61A — Meunerie | 2016-07 | [SIREN 822544912](https://annuaire-entreprises.data.gouv.fr/entreprise/822544912) |

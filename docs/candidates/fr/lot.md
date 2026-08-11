@@ -26,5 +26,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| LE MOULIN DE ST-CERE | FOXA TOURN' | Saint-Céré | 55 RUE CROIX DE LAGARDE 46400 SAINT-CERE | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2023-09 | [SIREN 979906096](https://annuaire-entreprises.data.gouv.fr/entreprise/979906096) · [web sin contrastar](https://www.moulindesaintcere.com/) |
-| BIERES RATZ | BRASSERIE ARTISANALE RATZ | Fontanes | PARC D'ACTIVITES DE CAHORS SUD 725 AV DE SAINT EXUPERY 46230 FONTANES | Cerveza | 11.05Z — Fabrication de bière | 2001-02 | [SIREN 435093281](https://annuaire-entreprises.data.gouv.fr/entreprise/435093281) · [web sin contrastar](https://biereratz.fr/) |

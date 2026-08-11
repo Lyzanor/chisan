@@ -23,5 +23,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| LE TEMPS DU CHOCOLAT | FB CHOCOLATERIE 11 | Narbonne | 28 RUE JEAN JAURES 11100 NARBONNE | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2022-05 | [SIREN 913329629](https://annuaire-entreprises.data.gouv.fr/entreprise/913329629) |
 | L'HARMONIE DES SAVEURS | VERONIQUE OLTRA | Castelnaudary | CHEMIN DU BREIL 197 IMPASSE DU BREIL 11400 CASTELNAUDARY | Té e infusiones | 10.83Z — Transformation du thé et du café | 1991-10 | [SIREN 383488608](https://annuaire-entreprises.data.gouv.fr/entreprise/383488608) |

@@ -32,4 +32,3 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | LA BRULERIE DE CAFE | EMILIE KUROWSKI | Auch | 1 RUE DE LA SOMME 32000 AUCH | Café | 10.83Z — Transformation du thé et du café | 2019-03 | [SIREN 847635380](https://annuaire-entreprises.data.gouv.fr/entreprise/847635380) |
 | LA CONSERVERIE DES PRODUCTEURS | YVES CHAMPOMIER | Termes-d'Armagnac | 525 RUE DE LA COLLINE 32400 TERMES-D'ARMAGNAC | Conservas | 10.39A — Autre transformation et conservation de légumes | 2023-08 | [SIREN 978037604](https://annuaire-entreprises.data.gouv.fr/entreprise/978037604) |
-| MARIE DUFFAU ET DELORD | ETABLISSEMENTS DELORD FRERES | Lannepax | 14 RUE DE L'ALAMBIC 32190 LANNEPAX | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 1965-01 | [SIREN 396520017](https://annuaire-entreprises.data.gouv.fr/entreprise/396520017) · [web sin contrastar](https://www.armagnacdelord.com) |

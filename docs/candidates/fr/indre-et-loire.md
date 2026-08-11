@@ -25,7 +25,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| ARBOL TORREFACTEUR | CATIMOR | Saint-Avertin | 23 AVENUE DU GENERAL DE GAULLE 37550 SAINT-AVERTIN | Café | 10.83Z — Transformation du thé et du café | 2023-07 | [SIREN 953039294](https://annuaire-entreprises.data.gouv.fr/entreprise/953039294) |
-| CONFISERIE HALLARD | JEREMY COUTON | Loches | 62 T AVENUE ARISTIDE BRIAND 37600 LOCHES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2021-02 | [SIREN 893582072](https://annuaire-entreprises.data.gouv.fr/entreprise/893582072) |
 | BISCUITERIE NOMADE | FANNY BALLARD-GUERARD | Civray-de-Touraine | 618 RUE DES HAUTS DE VAUX 37150 CIVRAY-DE-TOURAINE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2005-01 | [SIREN 479495269](https://annuaire-entreprises.data.gouv.fr/entreprise/479495269) |
-| BISCUITERIE AMERANTINE | YANNICK MOLINIER | Céré-la-Ronde | 2A 2 IMPASSE DE LA FORGE 37460 CERE-LA-RONDE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2016-06 | [SIREN 820008910](https://annuaire-entreprises.data.gouv.fr/entreprise/820008910) |

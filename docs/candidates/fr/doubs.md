@@ -29,6 +29,5 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| BRASSERIE ARTISANALE LA BONNE BOUIL | BRASSERIE ARTISANALE LA BONNE BOUILLE | Pontarlier | 14 RUE DU MAGASIN 25300 PONTARLIER | Cerveza | 11.05Z — Fabrication de bière | 2015-11 | [SIREN 814786109](https://annuaire-entreprises.data.gouv.fr/entreprise/814786109) · [web sin contrastar](https://www.brasseriebonnebouille.com/) |
 | L'ATELIER DU COOKIE | LORIANE RAMOS | Besançon | 65 RUE DE DOLE 25000 BESANCON | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2024-09 | [SIREN 931106637](https://annuaire-entreprises.data.gouv.fr/entreprise/931106637) |
 | GLACES CANDIDO MARTINEZ | CANDIDO MARTINEZ | Besançon | 89 GRANDE-RUE 25000 BESANCON | Helados | 10.52Z — Fabrication de glaces et sorbets | 2017-03 | [SIREN 828240259](https://annuaire-entreprises.data.gouv.fr/entreprise/828240259) |

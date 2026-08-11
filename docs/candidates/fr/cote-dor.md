@@ -28,5 +28,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LE PETIT BOURGUIGNON | LPB TORREFACTION | Longvic | BATIMENT D 7 BOULEVARD EIFFEL 21600 LONGVIC | Café | 10.83Z — Transformation du thé et du café | 2019-04 | [SIREN 849495767](https://annuaire-entreprises.data.gouv.fr/entreprise/849495767) |
-| FABRICE GILLOTTE | AU PARRAIN GENEREUX | Dijon | 21 RUE DU BOURG 21000 DIJON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1957-01 | [SIREN 015751142](https://annuaire-entreprises.data.gouv.fr/entreprise/015751142) · [web sin contrastar](https://dijon.chocolats-pralus.com/) |
 | LA CHOCOLATIERE SEBASTIEN HENON | LA CHOCOLATIERE | Plombières-lès-Dijon | 9 CHEMIN DU PLATEAU 21370 PLOMBIERES-LES-DIJON | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2010-08 | [SIREN 523682581](https://annuaire-entreprises.data.gouv.fr/entreprise/523682581) |

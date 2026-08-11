@@ -34,7 +34,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LES HUILES DE SAINT MALO | — | Dol-de-Bretagne | 1 AVENUE DE LA BAIE 35120 DOL-DE-BRETAGNE | Aceite | 10.41B — Fabrication d'huiles et graisses raffinées | 2023-07 | [SIREN 978183531](https://annuaire-entreprises.data.gouv.fr/entreprise/978183531) |
-| DURAND CHOCOLATIER | PARCHISTIA | Rennes | 5 QUAI CHATEAUBRIAND 35000 RENNES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2014-07 | [SIREN 803206978](https://annuaire-entreprises.data.gouv.fr/entreprise/803206978) |
-| YVAN CHEVALIER CHOCOLATIER PATISSIER | YC CHOCOLAT | Rennes | 2 RUE DES CHEVRONS 35000 RENNES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2020-01 | [SIREN 893289082](https://annuaire-entreprises.data.gouv.fr/entreprise/893289082) |
 | BRUNO LE DERF | ATELIER BRUNO LE DERF | Vitré | ROUTE DES EAUX 35500 VITRE | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-06 | [SIREN 752732990](https://annuaire-entreprises.data.gouv.fr/entreprise/752732990) |
-| DISTILLERIE FEVRIER | DKF | Domloup | 6 RUE DE HEDE 35410 DOMLOUP | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2023-04 | [SIREN 951293877](https://annuaire-entreprises.data.gouv.fr/entreprise/951293877) · [web sin contrastar](https://distillerie-fevrier.fr/) |

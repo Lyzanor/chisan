@@ -27,5 +27,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
-| MICROBRASSERIE THETYS | THETYS | Saint-Clair-de-la-Tour | ZA LA CORDERIE 450 RUE DU SERPENTIN 38110 SAINT-CLAIR-DE-LA-TOUR | Cerveza | 11.05Z — Fabrication de bière | 2019-12 | [SIREN 879471571](https://annuaire-entreprises.data.gouv.fr/entreprise/879471571) · [web sin contrastar](https://brasserie-thetys.com/) |
 | L ATELIER FLORETTE & SES CONCOCTIONS | KARINE FLORET | Saint-Geoire-en-Valdaine | 251 ROUTE DU BOURG 38620 SAINT-GEOIRE-EN-VALDAINE | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2013-09 | [SIREN 794861302](https://annuaire-entreprises.data.gouv.fr/entreprise/794861302) |

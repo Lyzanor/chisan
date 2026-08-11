@@ -30,6 +30,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | AKWABA | GERMAINE GBALET | Évreux | 2 B RUE DU COUDRAY 27000 EVREUX | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2007-07 | [SIREN 498595818](https://annuaire-entreprises.data.gouv.fr/entreprise/498595818) |
-| LES DEUX AMANTS | BRASSERIE DES DEUX AMANTS | Val-de-Reuil | POLE D'AGRIC. BIO LES HAUTS PRES 1 VOIE DES VENDAISES 27100 VAL-DE-REUIL | Cerveza | 11.05Z — Fabrication de bière | 2017-04 | [SIREN 829081272](https://annuaire-entreprises.data.gouv.fr/entreprise/829081272) · [web sin contrastar](https://lesdeuxamants.com/) |
 | LESTRELLA | CELINE DUBOC | La Chapelle-Longueville | 5 RUE DU RUISSEAU 27950 LA CHAPELLE-LONGUEVILLE | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2015-12 | [SIREN 815131339](https://annuaire-entreprises.data.gouv.fr/entreprise/815131339) |
-| ADRIEN & CIE | — | Le Lesme | 5 RUE DE LA GRANDE RUE 27160 LE LESME | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2017-10 | [SIREN 831818125](https://annuaire-entreprises.data.gouv.fr/entreprise/831818125) · [web sin contrastar](https://www.adrienetcie.fr) |

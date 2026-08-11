@@ -29,5 +29,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | VITALIBOX | LYDIA GUIGUE | Chalon-sur-Saône | 6 RUE SAINT-VINCENT 71100 CHALON-SUR-SAONE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2008-05 | [SIREN 504694324](https://annuaire-entreprises.data.gouv.fr/entreprise/504694324) |
-| BRASSERIE LA COULEUVRE | MATTHIEU BRENDLEN | Dompierre-les-Ormes | MEULIN LD LA FIN DE MEULIN 71520 DOMPIERRE-LES-ORMES | Cerveza | 11.05Z — Fabrication de bière | 1991-10 | [SIREN 383320470](https://annuaire-entreprises.data.gouv.fr/entreprise/383320470) · [web sin contrastar](https://www.facebook.com/brasserielacouleuvre) |
 | LES CONFITURIERS DU MORVAN | FINE FOOD BOURGOGNE | La Celle-en-Morvan | LIEUDIT PRE BOUCHE LD PRE BOUCHE 71400 LA CELLE-EN-MORVAN | Conservas | 10.39B — Transformation et conservation de fruits | 2006-03 | [SIREN 488958810](https://annuaire-entreprises.data.gouv.fr/entreprise/488958810) |

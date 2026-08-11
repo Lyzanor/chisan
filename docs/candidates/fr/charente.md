@@ -31,5 +31,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | BRULERIE DU VALOIS CAFES RASSET | BRULERIE DU VALOIS | Angoulême | 14 RUE DES POSTES 16000 ANGOULEME | Café | 10.83Z — Transformation du thé et du café | 2002-05 | [SIREN 441969615](https://annuaire-entreprises.data.gouv.fr/entreprise/441969615) |
-| JUKEBOX | BRASSERIE JUKEBOX | Cognac | 48 RUE ARMAND SIMARD 16100 COGNAC | Cerveza | 11.05Z — Fabrication de bière | 2022-01 | [SIREN 908582943](https://annuaire-entreprises.data.gouv.fr/entreprise/908582943) · [web sin contrastar](https://brasseriejukebox.com/) |
 | CHOCOLATERIE D'ANTAN | MAJOJ | La Rochefoucauld-en-Angoumois | 6-8 6 RUE DES GAILLAUDES 16110 LA ROCHEFOUCAULD-EN-ANGOUMOIS | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2002-09 | [SIREN 443596705](https://annuaire-entreprises.data.gouv.fr/entreprise/443596705) |
