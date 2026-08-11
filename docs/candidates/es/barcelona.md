@@ -731,3 +731,47 @@ Moianesa, unitat ja publicada). Les decisions completes són a
 | Oliveres del Cardoner / The Booc | Domini inaccesible i cap senyal actual que resolgui la relació marca-productor. | [Proper](https://www.proper.cat/guia/llistats/oliveres-del-cardoner/) · [web](http://www.thebooc.com/es/) |
 | Ous Clarassó | Els directoris apunten a comerç/distribució a Igualada però no identifiquen la unitat productiva. | [Proper](https://www.proper.cat/guia/llistats/ous-claraso/) |
 | Tomating | El domini no respon i no hi ha senyal actual de cultiu o venda des de les notícies societàries de 2020. | [Proper](https://www.proper.cat/guia/llistats/tomating/) · [web](http://www.tomating.com/) |
+
+## Passada LocalMaker — candidats nets (2026-08-11)
+
+Revisat l'índex públic complet de [LocalMaker](https://www.localmaker.org/map)
+(364 fitxes en el tall del 2026-08-11) i creuat per nom, marca, raó social,
+municipi i adreça contra els quatre CSV de Catalunya i les notes obertes. La
+font es presenta com a directori i la majoria de fitxes estan marcades com a
+`Unverified`: aquestes pistes **no proven activitat actual, oferta pública ni
+venda en línia** i continuen en estat `unverified` fins a verificació 1-a-1.
+
+No es tornen a obrir ACTUS / Agrícola Terricabras Colom, Agrària de Torelló,
+Horticultura Meya, David Aragües Carrera, Caves El Mas Ferrer, Oli Ferré Amell
+ni Roser Vallverdú Garriga perquè ja eren a la cua d'aquest document. Tampoc
+es dupliquen les files existents d'Alaball Berros, Alta Alella, Caves Avinyó,
+Agrícola El Progrés-Garbí, Granja Escola Can Pere, Agrària Can Viver,
+Fruita Família Catasús, Granja Tubau, Torremalla, Kibus Beer, Món Ecològic,
+Avícola Súria, Mel Morató, Parc de les Olors, Sínia Sant Gervasi i Kombutxa
+(marca de Mūn Ferments).
+
+| candidat LocalMaker | municipi publicat | pista d'encaix / cautela |
+|---|---|---|
+| [Aurora Terés](https://localmaker.org/listing/aurora-teres) | Vilanova i la Geltrú | Tocineria i xarcuteria; confirmar obrador propi i no només comerç. |
+| [Carns J. Mònico](https://localmaker.org/listing/carns-j-monico) | Teià | Productes carnis; confirmar elaboració pròpia i unitat productiva. |
+| [Cofradía de Pescadores de Sitges](https://localmaker.org/listing/cofradia-de-pescadores-de-sitges) | Sitges | Peix fresc artesanal; verificar que la confraria tingui oferta pública pròpia admissible. |
+| [Dosmon](https://localmaker.org/listing/dosmon) | Dosrius | Punxó morú i xoriços d'elaboració artesana; confirmar obrador i activitat. |
+| [El Rebost del Maresme](https://localmaker.org/listing/el-rebost-del-maresme) | Premià de Mar | Preparats alimentaris; fitxa molt genèrica, cal identificar producte i obrador propis. |
+| [L'Eva dels rollitos](https://localmaker.org/listing/leva-dels-rollitos) | Vallirana | «Productes elaborats i agrícoles» sense detall; encaix condicionat a identificar producte i marca propis. |
+| [La Garrofa](https://localmaker.org/listing/la-garrofa) | Vilanova i la Geltrú | Horta i fruita ecològica/local; confirmar unitat i canal públic. |
+| [La Pageseta – Maria Giner Gómez](https://localmaker.org/listing/la-pageseta-maria-giner-gomez) | Canovelles | Productes d'horta; pista personal del registre de venda de proximitat. |
+| [La Solana de Collbàs – Josep Saumell Calaf](https://localmaker.org/listing/la-solana-de-collbas-josep-saumell-calaf) | Carme | AOVE i ametlles; verificar marca, finca i oferta vigent. |
+| [Pedro Ojeda Peláez](https://localmaker.org/listing/pedro-ojeda-pelaez) | Torelló | Mel, pol·len i pròpoli; confirmar marca/contacte actuals. |
+| [Prat de Dalt – Enric Ullar Berenguer](https://localmaker.org/listing/prat-de-dalt-enric-ullar-berenguer) | Caldes de Montbui | Boví i elaborats carnis; confirmar venda pròpia i dimensió admissible. |
+| [Set Pots, melmelades artesanes](https://localmaker.org/listing/set-pots-melmelades-artesanes) | Subirats (Ordal) | Melmelades artesanes; verificar obrador i activitat recent. |
+| [Tugas Cooperativa Agroecològica SCCL](https://localmaker.org/listing/tugas-cooperativa-agroecologica-sccl) | Sant Climent de Llobregat | Horta, fruita i aromàtiques; comprovar si és la mateixa unitat que Tugas i Companyia / Salvador Tugas abans d'afegir. |
+| [Vallorganic SLU](https://localmaker.org/listing/vallorganic-slu) | Barcelona | Oli, nous, ametlles i figues; l'adreça sembla administrativa, cal ubicar la finca productiva. |
+| [Vilateca](https://localmaker.org/listing/vilateca) | Martorell | Fruita dolça i oli; confirmar identitat pública i unitat productiva. |
+| [Xarcuteria Ca l'Adela](https://localmaker.org/listing/xarcuteria-ca-ladela) | Caldes d'Estrac | Productes carnis; confirmar obrador propi i no només venda al detall. |
+
+Queden fora de la cua alimentària les fitxes de ceràmica o pintura
+(Aguadé, Atelier Molí, Cerámica La Nuestra, Espai Tubau, Kema, La Pintoràmica,
+Taller Gingell), planta ornamental (Aimsat), artesania sense producte
+alimentari identificat (Isabel Serres, Josep Massana), llavors per a cultiu
+(Les Refardes) i la fitxa col·lectiva Patates del Bufet d'Orís, ja coberta per
+La Noguereda i sense una unitat nova identificable.
