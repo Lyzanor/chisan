@@ -1116,6 +1116,14 @@
         "region": "chubu"
       }
     ],
+    "ibaraki": [
+      {
+        "lat": 36.28689,
+        "lon": 140.42453,
+        "label": "Ibaraki (Ibaraki)",
+        "region": "kanto"
+      }
+    ],
     "ichinomiya": [
       {
         "lat": 35.30389,
@@ -1245,6 +1253,14 @@
         "lat": 36.8019,
         "lon": 140.751,
         "label": "Kitaibaraki",
+        "region": "kanto"
+      }
+    ],
+    "koga": [
+      {
+        "lat": 36.17825,
+        "lon": 139.75544,
+        "label": "Koga (Ibaraki)",
         "region": "kanto"
       }
     ],
@@ -1522,6 +1538,14 @@
         "lon": 138.81739,
         "label": "Yuzawa (湯沢町, Niigata)",
         "region": "chubu"
+      }
+    ],
+    "十島村": [
+      {
+        "lat": 29.837789,
+        "lon": 129.852953,
+        "label": "Toshima (Kagoshima)",
+        "region": "kyushu-okinawa"
       }
     ]
   },

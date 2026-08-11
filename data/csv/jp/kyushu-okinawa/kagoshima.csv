@@ -1,7 +1,7 @@
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
 hombo-shuzo-kagoshima,Hombo Shuzo,Kagoshima,Destilados y licores,"Shochu, Mars Whisky",,,,,,https://www.hombo.co.jp/,,,,31.596810,130.557140,,parcial,no comprobado,,
 kanosuke-distillery-hioki,Kanosuke Distillery,Hioki,Destilados y licores,Kanosuke,,,,,,https://kanosuke.com/,,,,31.633720,130.402440,,parcial,no comprobado,,
-nishi-shuzo-hioki,Nishi Shuzo,Hioki,Destilados y licores,,〒894-0012 鹿児島県奄美市名瀬小俣町11-21,,,+81997520171,,https://www.nishihira-shuzo.com/,,,,,,,parcial,no comprobado,,
+nishihira-shuzo-amami,Nishihira Shuzo,Amami,Destilados y licores,,鹿児島県奄美市名瀬小俣町11-21,,,+81997520171,,https://www.nishihira-shuzo.com/,,,,28.370523,129.501190,,parcial,no comprobado,,
 komasa-jozo-hioki,Komasa Jozo,Hioki,Destilados y licores,,〒899-3101 鹿児島県日置市日吉町日置3314,,,+81992923535,,https://komasa.co.jp/,,,,31.603041,130.36264,,parcial,no comprobado,,
 hamada-shuzo-denzoin-ichikikushikino,Hamada Shuzo (Denzoin),Ichikikushikino,Destilados y licores,,,,,,,https://www.hamadasyuzou.co.jp/denzouin/about,,,,31.728224,130.253265,,parcial,no comprobado,,
 satsuma-kinzangura-ichikikushikino,Satsuma Kinzangura,Ichikikushikino,Destilados y licores,,〒896-0073 鹿児島県いちき串木野市野下13665,,,+81996212110,,https://hamadasyuzou.co.jp/kinzan/,,,,31.75046,130.281937,,parcial,no comprobado,,
@@ -46,7 +46,7 @@ tabechoku-25842,種子島夢まるGaRDeN,Nishinoomote,Carne,,,Produces meat at i
 tabechoku-62,マルマメン工房,Kirishima,Legumbres,大豆,,Produces soybeans at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,
 tabechoku-26087,南九州ルバーブ農園 Red Sticks,Aira,Fruta y verdura,,,Produces fruit and vegetables at its Aira unit.,,,,,,,,31.728220,130.627810,,parcial,sí,marketplace,
 tabechoku-3078353,中園ファーム,Nishinoomote,Frutos secos,,,Produces nuts at its Nishinoomote unit.,,,,,,,,30.732440,130.997030,,parcial,sí,marketplace,
-tabechoku-23732,トカラnanairo,十島村,Fruta y verdura,,,Produces fruit and vegetables at its Mishima unit.,,,,,,,,,,,parcial,sí,marketplace,
+tabechoku-23732,トカラnanairo,十島村,Fruta y verdura,,鹿児島県鹿児島郡十島村中之島,Produces fruit and vegetables on Nakanoshima in the Tokara Islands.,,,,,,,,29.849651,129.866074,,parcial,sí,marketplace,
 tabechoku-29333,さつまゆうすい農場 そのやま農園,Yūsui-chō,Fruta y verdura,栗,,Produces chestnuts at its Yūsui-chō unit.,,,,,,,,31.951670,130.721060,,parcial,sí,marketplace,
 tabechoku-23676,うとさんち,Akune,Fruta y verdura,,,Produces fruit and vegetables at its Akune unit.,,,,,,,,32.014530,130.192670,,parcial,sí,marketplace,
 tabechoku-3078799,三輪ファーム,Kirishima,Fruta y verdura,野菜,,Produces vegetables at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,
