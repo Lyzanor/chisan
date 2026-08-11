@@ -54,56 +54,30 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 44
+## Held after verification — 18
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Bresnan's | Cork | Carne | bresnans.ie | — | 51.8776096, -8.4377473 | OSM node/12895153197 |
-| Clonakilty Black Pudding | Clonakilty (nearest, 1.8 km) | Carne | www.clonakiltyblackpudding.ie/visitor-centre | (023) 883 4835 | 51.60863, -8.884067 | [FarmFinder](https://farmfinder.ie/producer/clonakilty-black-pudding); via SuperValu Food Academy |
-| Coughlan's Meats | Cork | Carne | www.coughlanmeats.com | +353 21 427 2068 · alan@coughlanmeats.com | 51.8976617, -8.4744097 | OSM way/915559663 |
-| D.P Murphy & Sons | Midleton (nearest, 2.1 km) | Carne | www.patrickmurphyandsons.ie | (021) 431 7317 | 51.927465, -8.172469 | [FarmFinder](https://farmfinder.ie/producer/d-p-murphy-and-sons); via Associated Craft Butchers of Ireland |
-| Dan Moloney's Butchers | Bandon (nearest, 1.2 km) | Carne | danmoloneys.ie | (023) 884 4206 | 51.74618, -8.725461 | [FarmFinder](https://farmfinder.ie/producer/dan-moloney-s-butchers); via Associated Craft Butchers of Ireland |
-| Davidson's Craft Butchers | Whitechurch (nearest, 3.8 km) | Carne | davidsonscraftbutchers.com | (021) 451 8184 | 51.9477, -8.525134 | [FarmFinder](https://farmfinder.ie/producer/davidson-s-craft-butchers); via Associated Craft Butchers of Ireland |
-| Durcan Meats | Cork | Carne | www.tomdurcanmeats.ie | +353 21 427 9141 · info@tomdurcanmeats.ie | 51.895579, -8.480421 | [FarmFinder](https://farmfinder.ie/producer/durcan-meats); via Associated Craft Butchers of Ireland |
-| Feoil O' Criostoir | Ballincollig (nearest, 0.9 km) | Carne | www.foc.ie ⚠ | (021) 487 5533 | 51.886894, -8.57506 | [FarmFinder](https://farmfinder.ie/producer/feoil-o-criostoir); via Associated Craft Butchers of Ireland |
-| Horgan Meats | Kilbeheny (nearest, 2.4 km) | Carne ? | www.horgans.com | (025) 41200 | 52.273883, -8.2130044 | [FarmFinder](https://farmfinder.ie/producer/horgan-meats); via SuperValu Food Academy |
-| Jim Crowley Craft Butchers | Midleton Abbey (nearest, 0.4 km) | Carne ? | www.jimcrowleybutchers.com | 021 4613542 | 51.907356, -8.166078 | [FarmFinder](https://farmfinder.ie/producer/jim-crowley-craft-butchers); via Irish Butchers Guild |
-| McCarthy Meats | Wilton (nearest, 0.6 km) | Carne ? | mccarthysmeatmarket.ie | (021) 434 6218 | 51.8796067, -8.5166631 | [FarmFinder](https://farmfinder.ie/producer/mccarthy-meats); via SuperValu Food Academy |
-| O'Crualaoi Butchers Ballincollig | Ballincollig (nearest, 0.8 km) | Carne ? | www.ocrualaoi.com | +353 21 439 9034 | 51.883085, -8.578344 | [FarmFinder](https://farmfinder.ie/producer/o-crualaoi-butchers-ballincollig); via Irish Butchers Guild |
-| O'Crualaoi Butchers Fermoy | Fermoy (nearest, 1.9 km) | Carne ? | www.ocrualaoi.com | 025 49100 | 52.124976, -8.276551 | [FarmFinder](https://farmfinder.ie/producer/o-crualaoi-butchers-fermoy); via Irish Butchers Guild |
-| O'Crualaoi Butchers Wilton | Knockraha (nearest, 4.4 km) | Carne ? | www.ocrualaoi.com | 021 4343003 | 51.978253, -8.396225 | [FarmFinder](https://farmfinder.ie/producer/o-crualaoi-butchers-wilton); via Irish Butchers Guild |
-| O'Mahony Family Butchers | Cork | Carne | www.omahonysbutchers.com | +353 21 427 0254 · info@omahonysbutchers.com | 51.8975737, -8.4747974 | OSM way/915559615 |
-| Blarney Brewing Company | Cork | Cerveza | www.blarneybrewing.ie | sales@blarneybrewing.ie | 51.9179004, -8.4755764 | OSM node/13371533172 |
-| Original 7 | Cork | Cerveza | www.original7.ie | hey@original7.ie | 51.9012167, -8.4820193 | OSM node/11010844910 |
-| Koko Kinsale | Kinsale | Chocolate | www.kokokinsale.com | +353 86 781 5591 | 51.7050804, -8.522173 | OSM node/7380807024 |
-| The Chocolate Shop | Cork | Chocolate | www.chocolate.ie | +353 21 425 4448 | 51.8979107, -8.4740632 | OSM way/915559638 |
-| Clonakilty Distillery | Clonakilty | Destilados y licores | www.clonakiltydistillery.ie | +353 23 884 0635 | 51.6214545, -8.88618 | OSM way/60709213 |
-| Lee Valley Eggs | Millstreet (nearest, 1.9 km) | Huevos | leevalleyireland.com | (026) 49170 | 52.0452349, -9.0734329 | [FarmFinder](https://farmfinder.ie/producer/lee-valley-eggs); via SuperValu Food Academy |
-| West Cork Eggs | Shandon (nearest, 1.1 km) | Huevos | www.skeaghanore.ie ⚠ | (028) 37428 | 51.908883, -8.487831 | [FarmFinder](https://farmfinder.ie/producer/west-cork-eggs); via SuperValu Food Academy |
-| Hegarty Cheese | Ballintemple (nearest, 1 km) | Lácteos y quesos | www.hegartycheese.ie | 089 471 5020 | 51.8939942, -8.4200939 | [FarmFinder](https://farmfinder.ie/producer/hegarty-cheese); via SuperValu Food Academy |
-| Irish Natural Yogurt | Clonakilty (nearest, 1.2 km) | Lácteos y quesos | www.irish-yogurts.ie | (023) 883 4745 | 51.6196465, -8.9088265 | [FarmFinder](https://farmfinder.ie/producer/irish-natural-yogurt); via SuperValu Food Academy |
-| Killowen Yogurt | Carrignavar (nearest, 1.9 km) | Lácteos y quesos | killowen.ie | (053) 924 4819 | 51.973493, -8.462931 | [FarmFinder](https://farmfinder.ie/producer/killowen-yogurt); via SuperValu Food Academy |
-| Kinsale Mead Co | Kinsale | Miel ? | www.kinsalemeadco.ie | +353 21 477 3538 | — | [FarmFinder](https://farmfinder.ie/producer/kinsale-mead-co) |
-| Barryroe Cooperative | Blackpool (nearest, 2.3 km) | Otros | www.barryroeco-op.ie | (023) 884 0000 | 51.934858, -8.471157 | [FarmFinder](https://farmfinder.ie/producer/barryroe-cooperative); via SuperValu Food Academy |
-| Irish Yogurts | Mahon (nearest, 0.7 km) | Otros | www.irish-yogurts.ie | (023) 883 4745 | 51.894434, -8.400869 | [FarmFinder](https://farmfinder.ie/producer/irish-yogurts); via SuperValu Food Academy |
-| McCarthy's Of Kanturk | Whitechurch (nearest, 2.3 km) | Otros | www.mccarthysofkanturk.ie | — | 51.960946, -8.516206 | [FarmFinder](https://farmfinder.ie/producer/mccarthy-s-of-kanturk); via Associated Craft Butchers of Ireland |
-| Sheehan Brothers Glanmire | Cork | Otros | sheehanbrothersbutchers.com | +353 21 450 5075 | 51.916368, -8.397643 | [FarmFinder](https://farmfinder.ie/producer/sheehan-brothers-glanmire); via Associated Craft Butchers of Ireland |
-| Sheehan Brothers St Luke Cross | Metropolitan Cork (nearest, 0.5 km) | Otros | sheehanbrothersbutchers.com | (021) 450 5075 | 51.903402, -8.462432 | [FarmFinder](https://farmfinder.ie/producer/sheehan-brothers-st-luke-cross); via Associated Craft Butchers of Ireland |
-| West Cork Sea Salt | South Parish (nearest, 0.7 km) | Otros | www.westcorkseasalt.ie | — | 51.896207, -8.4823 | [FarmFinder](https://farmfinder.ie/producer/west-cork-sea-salt); via Food Culture Ireland |
-| Cameron Bakery | Cork (nearest, 0.6 km) | Pan y cereal | www.cameronbakery.com | +353 21 241 3977 · cameronbakery@gmail.com | 51.8975276, -8.4802573 | OSM node/6196444287 |
-| Diva Boutique Bakery | Ballinspittle | Pan y cereal | www.divaboutiquebakery.com | +353 21 477 8465 | — | [FarmFinder](https://farmfinder.ie/producer/diva-boutique-bakery) |
-| The Grumpy Bakers | Cork (nearest, 0.3 km) | Pan y cereal | www.thegrumpybakers.ie | +353 86 107 1393 | 51.8978587, -8.4756481 | OSM node/12539294502 |
-| The Menu Cakery | Halfway | Pan y cereal | themenucakery.com | +353 87 414 8020 | 51.8046718, -8.5699016 | OSM node/13609763271 |
-| The Natural Foods Bakery Blackrock | Cork | Pan y cereal | www.thenaturalfoodsbakery.com | +353 21 461 4555 | 51.8973959, -8.413391 | OSM way/593521751 |
-| The Stuffed Olive | Bantry | Pan y cereal | thestuffedolive.wordpress.com | +353 27 55883 · thestuffedolive@gmail.com | 51.6790992, -9.4502889 | OSM node/3080325234 |
-| Ballycotton Seafood Ltd | Garryvoe | Pescado | www.ballycottonseafood.ie | +353 21 427 2093 · info@ballycottonseafood.ie | 51.871511, -8.01885 | OSM node/2753231727 |
-| Belvelly Smoked Salmon | Belvelly (nearest, 0.7 km) | Pescado | www.frankhederman.com ⚠ | +353 21 481 1089 · shipping@frankhederman.com | 51.8850996, -8.3101924 | OSM way/512070981 |
-| Hederman's Smoke House | Cork | Pescado | www.frankhederman.com | +353 21 481 1089 · shipping@frankhederman.com | 51.897592, -8.4742214 | OSM way/915559620 |
-| MoonFish | Fermoy | Pescado | moonfish.ie | — | 52.1375458, -8.2756923 | OSM node/2277800332 |
-| The Good Fish Co | Kinsale | Pescado | www.goodfish.ie | +353 21 477 7443 | 51.7061219, -8.5247337 | OSM node/5282651632 |
-| Killahora Orchards | Montenotte (nearest, 0.2 km) | Sidra ? | killahoraorchards.ie/?utm_source=google&utm_medium=organic&utm_campaign=gbp | 086 171 3763 | 51.907423, -8.440655 | [FarmFinder](https://farmfinder.ie/producer/killahora-orchards); via SuperValu Food Academy |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Barryroe Cooperative | Otros | Barryroe Co-Operative publishes an agri retail, feed and milk business with a Eurospar; whether an own food offer under its own producer identity exists is unresolved. |
+| Clonakilty Distillery | Destilados y licores | The SiteGround bot challenge holds against a browser session as well as every automated route, so the site could not be read from here at all. |
+| D.P Murphy & Sons | Carne | The site carried for D.P Murphy & Sons is patrickmurphyandsons.ie, a smokeless coal and solid fuel supplier; the URL must not be carried. |
+| Dan Moloney's Butchers | Carne | The domain serves a password-protected "Site Under Maintenance" page. A maintenance page is not proof of closure; the lead is unresolved. |
+| Hegarty Cheese | Lácteos y quesos | Hegarty Cheese publishes only 'made near Cork city'; its candidate municipio Ballintemple is an inferred urban nearest settlement that does not match a farmhouse dairy. |
+| Horgan Meats | Carne ? | The site carried for Horgan Meats is horgans.com, Horgan's Delicatessen Supplies at Mitchelstown, a food wholesaler; a different identity and a distributor rather than a producer. |
+| Kinsale Mead Co | Miel ? | The SiteGround bot challenge holds against a browser session as well as every automated route, so the site could not be read from here at all. |
+| Lee Valley Eggs | Huevos | Leevalleyireland.com answers an Azure WAF challenge; a challenge is not a dead site, and Lee Valley Eggs needs a second route. |
+| MoonFish | Pescado | Moonfish.ie no longer resolves to the producer: the domain now serves the Hosting Ireland site. A lapsed domain is not proof of closure and the URL must not be carried. |
+| O'Mahony Family Butchers | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Sheehan Brothers Glanmire | Otros | Sheehan Brothers Butchers publishes shops at Mallow, Glanmire, Kanturk and St Luke's Cross without naming a productive unit; which one the row would represent is unresolved. |
+| Sheehan Brothers St Luke Cross | Otros | See the Sheehan Brothers Glanmire record; the St Luke's Cross entry is another shop of the same business. |
+| The Good Fish Co | Pescado | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| The Grumpy Bakers | Pan y cereal | The Grumpy Bakers publishes outlets in both Midleton and Cork city without naming where it bakes; the productive unit is unresolved. |
+| The Menu Cakery | Pan y cereal | The Menu Cakery publishes a T12 Cork city Eircode while its lead coordinate sits at Halfway; the municipality is unresolved. |
+| The Stuffed Olive | Pan y cereal | The Stuffed Olive in Bantry publishes a café, food and wine store with ready meals, salads and cakes; which of it is own production rather than resale is unresolved. |
+| West Cork Eggs | Huevos | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| West Cork Sea Salt | Otros | West Cork Sea Salt publishes no address; its candidate municipio South Parish is an inferred Cork city nearest settlement that contradicts the West Cork name. |
 
 ## Needs one more fact — 107
 

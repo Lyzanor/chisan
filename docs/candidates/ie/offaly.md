@@ -54,17 +54,14 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 5
+## Held after verification — 2
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| KO Kombucha | Rath (nearest, 0.3 km) | Bebidas sin alcohol | www.kokombucha.com | +353896011926 · tracy@kokombucha.com | 53.1361722, -7.8103408 | [FarmFinder](https://farmfinder.ie/producer/ko-kombucha); via NeighbourFood |
-| Bon Chocolatiers | Tullamore (nearest, 1.2 km) | Chocolate ? | www.bonchocolatiers.ie | 086 867 0304 | 53.2730685, -7.485558600000001 | [FarmFinder](https://farmfinder.ie/producer/bon-chocolatiers); via Bord Bia Origin Green |
-| Perrys Preserves | Streamstown (nearest, 3.1 km) | Conservas ? | www.wildirishforagers.ie ⚠ | 085 747 6761 | 53.466066, -7.596433 | [FarmFinder](https://farmfinder.ie/producer/perrys-preserves); via SuperValu Food Academy |
-| Irish Casing Company | Tullamore (nearest, 0.5 km) | Otros | www.irishcasings.com | (057) 932 1714 | 53.2686315, -7.4935722999999985 | [FarmFinder](https://farmfinder.ie/producer/irish-casing-company); via Bord Bia Origin Green |
-| Slieve Bloom Organics | Pollagh (nearest, 5 km) | Otros | www.slievebloomorganics.ie | 086 053 0102 · info@slievebloomorganics.ie | 53.2344303, -7.7338716 | [FarmFinder](https://farmfinder.ie/producer/slieve-bloom-organics); via Food Culture Ireland |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| KO Kombucha | Bebidas sin alcohol | Kokombucha.com no longer resolves to the producer: the domain now serves an unrelated Chinese-language corporate site. A lapsed domain is not proof of closure, so KO Kombucha needs a current source and the URL must not be carried. |
+| Slieve Bloom Organics | Otros | Slievebloomorganics.ie serves an unbranded e-commerce platform template with no producer content; the farm behind the lead needs another current source. |
 
 ## Needs one more fact — 18
 

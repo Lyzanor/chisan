@@ -54,31 +54,19 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 19
+## Held after verification — 7
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Boyle's Butchers | New Ross | Carne | boylesbutchers.ie | — | 52.3886584, -6.9519274 | OSM node/11805245596 |
-| Finan Smokehouse | New Ross (nearest, 0.6 km) | Carne | www.duncannonsmokehouse.ie | (051) 421 910 | 52.3944892, -6.936174 | [FarmFinder](https://farmfinder.ie/producer/finan-smokehouse); via SuperValu Food Academy |
-| Richie Doyle Butcher | Wexford | Carne | richiedoylebutchers.ie | +353 53 912 3634 | 52.327926, -6.468875 | [FarmFinder](https://farmfinder.ie/producer/richie-doyle-butcher); via Associated Craft Butchers of Ireland |
-| Stafford Spirits Ltd | Enniscorthy (nearest, 2.7 km) | Destilados y licores | www.jackfordspirits.com | 087 996 4945 | 52.482710499999996, -6.5893365 | [FarmFinder](https://farmfinder.ie/producer/stafford-spirits-ltd); via Bord Bia Origin Green |
-| Slaney Farms Produce Ltd | Enniscorthy (nearest, 2.8 km) | Fruta y verdura ? | slaneyfarms.com | +353539235095 · kylie@slaneyfarms.com | 52.4806795, -6.5886211 | [FarmFinder](https://farmfinder.ie/producer/slaney-farms-produce-ltd); via NeighbourFood |
-| Bean and Goose | Wexford (nearest, 3.5 km) | Otros | beanandgoose.ie | 086 185 7558 | 52.324072, -6.416276 | [FarmFinder](https://farmfinder.ie/producer/bean-and-goose); via SuperValu Food Academy |
-| Marlfield House | Moyvoughly (nearest, 1.2 km) | Otros | www.marlfieldhouse.com | (053) 942 1124 | 53.427727, -7.68507 | [FarmFinder](https://farmfinder.ie/producer/marlfield-house); via SuperValu Food Academy |
-| Ocean Leaves | Piercetown (nearest, 5.1 km) | Otros | oceanleaves.ie | (053) 917 5995 | 52.2420082, -6.474326 | [FarmFinder](https://farmfinder.ie/producer/ocean-leaves); via Organic Trust |
-| OUTCAST BRANDS | Enniscorthy (nearest, 2.7 km) | Otros | www.bloodmonkeygin.com ⚠ | 087 996 4945 | 52.482710499999996, -6.5893365 | [FarmFinder](https://farmfinder.ie/producer/outcast-brands); via Bord Bia Origin Green |
-| Rathgarogue Organic Farm | Ballywilliam (nearest, 2.6 km) | Otros | www.organicpork.ie ⚠ | +353353871775191 · info@organicpork.ie | 52.4297971, -6.8656456 | [FarmFinder](https://farmfinder.ie/producer/rathgarogue-organic-farm); via NeighbourFood |
-| Thai Gold - Thai Food Co Limited | Piercetown (nearest, 2.7 km) | Otros | www.thaigold.eu/en | (053) 916 8078 | 52.305607200000004, -6.464408799999999 | [FarmFinder](https://farmfinder.ie/producer/thai-gold-thai-food-co-limited); via Organic Trust |
-| Trudies Catering Kitchen ltd. | Rosbercon (village) (nearest, 1.7 km) | Otros | www.trudieskitchen.com | (051) 425 529 | 52.3869018, -6.9685125 | [FarmFinder](https://farmfinder.ie/producer/trudies-catering-kitchen-ltd); via Bord Bia Origin Green |
-| Wilton Mills | Bree (nearest, 2 km) | Otros | wiltonmills.ie | sinead.whelan@gmail.com | 52.4479228, -6.626274 | [FarmFinder](https://farmfinder.ie/producer/wilton-mills); via NeighbourFood |
-| Bakehouse | New Ross | Pan y cereal | www.thebakehouse.ie | — | 52.3953554, -6.9443723 | OSM node/8220671195 |
-| Firehouse Bakery | Gorey | Pan y cereal | thefirehouse.ie | — | 52.6767143, -6.291068 | OSM node/12281721844 |
-| Kelly's Bakery | Wexford | Pan y cereal | kellysbakery.ie | — | 52.3594458, -6.4501675 | OSM node/6731908545 |
-| Yola | Wexford | Pan y cereal | yolabakery.ie | — | 52.3287652, -6.4809889 | OSM node/6121093474 |
-| Ronan's Fish Shop | New Ross | Pescado | www.duncannonfish.com | — | 52.3918816, -6.9394227 | OSM node/7884685626 |
-| The Wine Buff Gorey | Gorey (nearest, 0.2 km) | Vino | www.thewinebuff.com/the-wine-buff-gorey | +353878365676 · gorey@thewinebuff.com | 52.6758892, -6.2937144 | [FarmFinder](https://farmfinder.ie/producer/the-wine-buff-gorey); via NeighbourFood |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Boyle's Butchers | Carne | The site answers HTTP 503 on every automated route tried. A temporary server error is not proof of closure; the lead is unresolved. |
+| Firehouse Bakery | Pan y cereal | Firehouse Bakery publishes its bakery and cookery school at Delgany, Co. Wicklow alongside Wexford and Cork Eircodes; which unit belongs in Wexford is unresolved. |
+| Kelly's Bakery | Pan y cereal | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| OUTCAST BRANDS | Otros | Blood Monkey Gin publishes a brand and shop for Outcast Brands but no distillery, address or production detail; whether a productive unit exists in Wexford is unresolved. |
+| Stafford Spirits Ltd | Destilados y licores | Jackfordspirits.com serves a Plesk default page with no site behind it; Stafford Spirits needs a current source and the URL must not be carried. |
+| Thai Gold - Thai Food Co Limited | Otros | Thai Gold publishes no address; its candidate municipio Piercetown is an inferred nearest settlement 2.7 km from the source coordinate. |
+| Wilton Mills | Otros | Wilton Mills at Bree publishes a small organic farm with animals and accommodation but no food offer; what it sells is unresolved. |
 
 ## Needs one more fact — 33
 

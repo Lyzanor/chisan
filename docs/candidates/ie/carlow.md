@@ -54,19 +54,17 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 7
+## Held after verification — 5
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Murphy's Butchers Tullow | Tullow (nearest, 1 km) | Carne | murphysbutcherstullow.ie | (059) 915 1316 | 52.792034, -6.729626 | [FarmFinder](https://farmfinder.ie/producer/murphy-s-butchers-tullow); via Associated Craft Butchers of Ireland |
-| Walsh Whiskey | Palatine (nearest, 2.3 km) | Destilados y licores | www.walshwhiskey.com | (059) 913 3232 | 52.853632, -6.8840135 | [FarmFinder](https://farmfinder.ie/producer/walsh-whiskey); via Bord Bia Origin Green |
-| Codd Mushrooms | Tullow (nearest, 5.4 km) | Fruta y verdura | www.coddmushrooms.ie | (059) 916 3031 | 52.8472976, -6.7592206 | [FarmFinder](https://farmfinder.ie/producer/codd-mushrooms); via Bord Bia Origin Green |
-| Émile Pâtissier Ltd | Carlow (nearest, 2.1 km) | Otros | www.cowgirl.ie ⚠ | (059) 913 0573 | 52.841651899999995, -6.9070798 | [FarmFinder](https://farmfinder.ie/producer/mile-p-tissier-ltd); via Bord Bia Origin Green |
-| Flying Tumbler | Nurney (nearest, 2.4 km) | Otros | flyingtumbler.com | — | 52.7451961, -6.8758341 | [FarmFinder](https://farmfinder.ie/producer/flying-tumbler); via Bord Bia Origin Green |
-| Moyleabbey Organic | Shandon (nearest, 0.2 km) | Otros | www.burrensmokehouse.com/) ⚠ | (059) 862 3800 | 51.902941, -8.472326 | [FarmFinder](https://farmfinder.ie/producer/moyleabbey-organic-co-kildare); via Irish Organic Association |
-| Tuismitheoirí na Gaeltachta | Fennagh (nearest, 3 km) | Otros | www.tuismitheoiri.ie | +35391869571 · eolas@tuismitheoiri.ie | 52.6906096, -6.8249424 | [FarmFinder](https://farmfinder.ie/producer/tuismitheoir-na-gaeltachta); via NeighbourFood |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Émile Pâtissier Ltd | Otros | The site carried for Émile Pâtissier is cowgirl.ie, a domain listed for sale; the URL must not be carried and the bakery needs another current source. |
+| Flying Tumbler | Otros | Flying Tumbler publishes a whiskey brand with a shop and age gate but no distillery, address or production detail; whether a productive unit exists in Carlow is unresolved. |
+| Moyleabbey Organic | Otros | The site carried for Moyleabbey Organic is burrensmokehouse.com, the Burren Smokehouse in Lisdoonvarna, Co. Clare — a different entity in a different county. The URL must not be carried. |
+| Tuismitheoirí na Gaeltachta | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Walsh Whiskey | Destilados y licores | Walshwhiskey.com publishes only 'Walsh Whiskey Offices' at Deerpark Business Park, Carlow. A head office does not place a productive unit, and the site does not establish where Writers' Tears and The Irishman are now distilled or matured. |
 
 ## Needs one more fact — 17
 

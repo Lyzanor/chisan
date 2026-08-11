@@ -54,35 +54,25 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 23
+## Held after verification — 13
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Juice Press Orchards | Rathmore (nearest, 3 km) | Bebidas sin alcohol | www.mulrines.ie ⚠ | (074) 913 1009 | 53.2437317, -6.5541287 | [FarmFinder](https://farmfinder.ie/producer/juice-press-orchards); via Bord Bia Origin Green |
-| Cribbin Family Butchers | Johnstown (nearest, 3.7 km) | Carne | www.cribbinbutchers.ie | 045 888750 | 53.209753, -6.651576 | [FarmFinder](https://farmfinder.ie/producer/cribbin-family-butchers); via Irish Butchers Guild |
-| Gorman Butchers | Castledermot (nearest, 3.5 km) | Carne ? | www.ogormanmeats.ie | (059) 914 4714 | 52.8860754, -6.8092609 | [FarmFinder](https://farmfinder.ie/producer/gorman-butchers); via SuperValu Food Academy |
-| Morell Meats | Ballyoulster (nearest, 1.4 km) | Carne | dawnmeats.com ⚠ | (046) 955 1041 | 53.348195, -6.532303 | [FarmFinder](https://farmfinder.ie/producer/morell-meats); via Associated Craft Butchers of Ireland |
-| Nolan Butchers of Kilcullen | Newbridge (nearest, 2.9 km) | Carne | nolansofkilcullen.com | (045) 481 229 | 53.194775, -6.832809 | [FarmFinder](https://farmfinder.ie/producer/nolan-butchers-of-kilcullen); via Associated Craft Butchers of Ireland |
-| O'Gorman Meats Castledermot | Allen (nearest, 0.3 km) | Carne | www.ogormanmeats.ie | (059) 914 4201 | 53.233663, -6.860866 | [FarmFinder](https://farmfinder.ie/producer/o-gorman-meats-castledermot); via Associated Craft Butchers of Ireland |
-| Lily O'Brien's Chocolates | Newbridge (nearest, 1.2 km) | Chocolate ? | www.lilyobriens.ie | (045) 486 800 | 53.165658199999996, -6.805249 | [FarmFinder](https://farmfinder.ie/producer/lily-obriens-chocolates); via Bord Bia Origin Green |
-| Buitelaar Production (IRE) | Castledermot (nearest, 2 km) | Otros | buitelaaragriculture.com | (059) 916 2588 | 52.90874350000001, -6.8085355 | [FarmFinder](https://farmfinder.ie/producer/buitelaar-production-ire); via Bord Bia Origin Green |
-| Burtown House | Kildare (nearest, 0.6 km) | Otros | www.burtownhouse.ie | (059) 862 3865 | 53.15673, -6.917597 | [FarmFinder](https://farmfinder.ie/producer/burtown-house-co-kildare); via Irish Organic Association |
-| CROP | Maddenstown (nearest, 2.2 km) | Otros | www.crop.ie | +35387639050 | 53.1596699, -6.8453071 | [FarmFinder](https://farmfinder.ie/producer/crop); via NeighbourFood |
-| Dawn Farms | Johnstown (nearest, 1.6 km) | Otros | www.dawnfarms.ie | (045) 875 555 | 53.2330334, -6.644237 | [FarmFinder](https://farmfinder.ie/producer/dawn-farms); via Bord Bia Origin Green |
-| DSG Packaging Ltd | Ladytown (nearest, 0.7 km) | Otros | dsgpack.ie ⚠ | (045) 884 200 | 53.2035839, -6.7431613 | [FarmFinder](https://farmfinder.ie/producer/dsg-packaging-ltd); via Organic Trust |
-| Fused by Fiona Uyema | Kilcullen (nearest, 2.8 km) | Otros | fusedbyfionauyema.com | (045) 481 791 | 53.154336199999996, -6.753938499999999 | [FarmFinder](https://farmfinder.ie/producer/fused-by-fiona-uyema); via Bord Bia Origin Green |
-| Green Isle Foods | Johnstown (nearest, 1.4 km) | Otros | www.greenislefoods.ie | (045) 574 574 | 53.232437399999995, -6.6401672 | [FarmFinder](https://farmfinder.ie/producer/green-isle-foods); via Bord Bia Origin Green |
-| Hoffmanns Fine Foods | Rosemount (nearest, 2.2 km) | Otros | www.redmondfinefoods.ie | (045) 883 570 | 53.413751, -7.639219 | [FarmFinder](https://farmfinder.ie/producer/hoffmanns-fine-foods); via SuperValu Food Academy |
-| Jane Russells | Drumraney (nearest, 0.8 km) | Otros | janerussells.ie | (045) 480 100 | 53.481133, -7.762545 | [FarmFinder](https://farmfinder.ie/producer/jane-russells); via SuperValu Food Academy |
-| Lullymore Foods | Ballycumber (nearest, 1.7 km) | Otros | www.lullymoreheritagepark.com | (045) 870 238 | 53.323398, -7.70944 | [FarmFinder](https://farmfinder.ie/producer/lullymore-foods); via SuperValu Food Academy |
-| Moyallon Foods | Clane (nearest, 0.5 km) | Otros | www.ballymooneyfoods.com ⚠ | (045) 892 000 | 53.2965571, -6.688676 | [FarmFinder](https://farmfinder.ie/producer/moyallon-foods); via SuperValu Food Academy |
-| Nellys Simply Soup | Johnstown (nearest, 1.5 km) | Otros | www.nellysdublin.com | (01) 598 4608 | 53.2324931, -6.642644700000001 | [FarmFinder](https://farmfinder.ie/producer/nellys-simply-soup); via SuperValu Food Academy |
-| Pharmapac Ltd | Ladytown (nearest, 0.7 km) | Otros | www.pharmapac.ie | (045) 447 516 | 53.2033573, -6.743764499999999 | [FarmFinder](https://farmfinder.ie/producer/pharmapac-ltd); via Organic Trust |
-| Brigid's Cake Room | Clane (nearest, 0 km) | Pan y cereal | www.brigidscakeroom.ie | — | 53.29231, -6.6859489 | OSM node/11284926922 |
-| Lekker Food Collection | Thomastown | Pan y cereal | www.lekkerfoodco.ie | — | 52.526129, -7.1385535 | OSM node/8657163857 |
-| Natural Bakery | Maynooth | Pan y cereal | thenaturalbakery.ie | +353 1 5048 357 · maynoothtnb@gmail.com | 53.3819009, -6.5941229 | OSM node/788664368 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Brigid's Cake Room | Pan y cereal | The site answers HTTP 402 on every automated route tried; the lead is unresolved and needs a browser session. |
+| CROP | Otros | Crop.ie serves an unfinished website-builder template carrying only a personal name and phone number; no producer content. |
+| Dawn Farms | Otros | Dawn Farms publishes bespoke cooked meat manufacturing for foodservice brands and no production site; whether an own offer and a Kildare unit exist is unresolved. |
+| Fused by Fiona Uyema | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Green Isle Foods | Otros | Green Isle Foods publishes a brand family and a fish-processing arm but no production site; a head office does not place the productive unit. |
+| Hoffmanns Fine Foods | Otros | The site carried for Hoffmanns Fine Foods is redmondfinefoods.ie, a Naas ingredient distributor; a different identity and a distributor rather than a producer. |
+| Jane Russells | Otros | Janerussells.ie serves an Operations Automation default page with no site behind it; the sausage maker needs a current source and the URL must not be carried. |
+| Juice Press Orchards | Bebidas sin alcohol | The site carried for Juice Press Orchards is mulrines.ie, the Mulrines juice business whose published contact is a Donegal number; neither the identity nor a Kildare unit is established. |
+| Lullymore Foods | Otros | The site carried for Lullymore Foods is lullymoreheritagepark.com, a visitor attraction and pet farm; a different identity. |
+| Morell Meats | Carne | The site carried for Morell Meats is dawnmeats.com, the Dawn Meats group with an X91 Waterford Eircode; a different identity. |
+| Moyallon Foods | Otros | The site carried for Moyallon Foods is ballymooneyfoods.com, trading as Ballymooney Foods and Wild Irish Game; a different identity. |
+| Natural Bakery | Pan y cereal | The Natural Bakery publishes stores in Maynooth and several Dublin locations without naming a bakery; which unit is productive and where is unresolved. |
+| Nellys Simply Soup | Otros | The site carried for Nelly's Simply Soup is nellysdublin.com, a Dublin café and wine bar in Portobello and Drumcondra; a different identity in a different area. |
 
 ## Needs one more fact — 42
 

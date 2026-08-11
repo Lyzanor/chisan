@@ -54,15 +54,11 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 3
+## Held after verification — 0
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Carrow Coffee Roasters | Coolaney (nearest, 2.8 km) | Café | www.carrow.ie | — | 54.1534, -8.6036 | [FarmFinder](https://farmfinder.ie/producer/carrow-coffee-roasters); via Organic Trust |
-| Good4u | Achonry (nearest, 4 km) | Otros | good4u.co | (071) 918 0031 | 54.116195, -8.643933 | [FarmFinder](https://farmfinder.ie/producer/good4u); via SuperValu Food Academy |
-| Kate's Kitchen | Sligo | Otros | kateskitchen.ie | — | 54.2705704, -8.4730034 | OSM node/2468205731 |
+Nothing from that tier is still open in this county.
 
 ## Needs one more fact — 5
 

@@ -54,38 +54,21 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 26
+## Held after verification — 9
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| O'Donnells Crisps | Kilsheelan (nearest, 0.8 km) | Aperitivos ? | www.odonnellscrisps.com | — | 52.3707748, -7.574152499999999 | [FarmFinder](https://farmfinder.ie/producer/odonnells-crisps); via Bord Bia Origin Green |
-| Folains Preserves | Rosegreen (nearest, 2.5 km) | Conservas ? | www.crossoguepreserves.com | (0504) 54416 | 52.490622, -7.839495 | [FarmFinder](https://farmfinder.ie/producer/folains-preserves); via SuperValu Food Academy |
-| Crossogue Preserves | Golden (nearest, 2.7 km) | Fruta y verdura | www.crossoguepreserves.com | (0504) 54416 | 52.516409, -7.953332 | [FarmFinder](https://farmfinder.ie/producer/crossogue-preserves) |
-| Tipperary Organic Ice Cream | Cashel (nearest, 3.5 km) | Helados | www.tipperary-coop.ie | (062) 33111 | 52.485024, -7.892664 | [FarmFinder](https://farmfinder.ie/producer/tipperary-organic-ice-cream); via SuperValu Food Academy |
-| Golden Irish Eggs | Dualla (nearest, 3.6 km) | Huevos | www.magnersfarm.com ⚠ | 086 337 8717 | 52.511272, -7.836576 | [FarmFinder](https://farmfinder.ie/producer/golden-irish-eggs); via SuperValu Food Academy |
-| Cashel Blue Cheese | Cashel (nearest, 1.7 km) | Lácteos y quesos | www.cashelblue.com | (052) 613 2797 | 52.503615, -7.875367 | [FarmFinder](https://farmfinder.ie/producer/cashel-blue-cheese); via SuperValu Food Academy |
-| Compsey Creamery | Mullinahone (nearest, 2 km) | Lácteos y quesos ? | www.compsey.com | (052) 915 3900 | 52.499572699999995, -7.506629599999999 | [FarmFinder](https://farmfinder.ie/producer/compsey-creamery); via Bord Bia Origin Green |
-| Kilkenny Cheese Limited | Templetuohy (nearest, 5.8 km) | Lácteos y quesos | www.kilkennycheese.ie | (0504) 45112 | 52.7337874, -7.6898313 | [FarmFinder](https://farmfinder.ie/producer/kilkenny-cheese-limited); via Bord Bia Origin Green |
-| Galtee Honey Farm | Bouladuff (nearest, 3.5 km) | Miel | galteehoney.com | 0876743030 | 52.6848215, -7.8981472 | [FarmFinder](https://farmfinder.ie/producer/galtee-honey-farm); via Food Culture Ireland |
-| Borrisoleigh Bottling Ltd | Borrisoleigh (nearest, 0.5 km) | Otros | www.bblco.ie ⚠ | (0504) 50525 | 52.7511619, -7.9571316 | [FarmFinder](https://farmfinder.ie/producer/borrisoleigh-bottling-ltd); via Bord Bia Origin Green |
-| Bulmer's Ireland | Priorstown (nearest, 3.1 km) | Otros | www.bulmers.ie | (052) 744 8270 | 52.3611997, -7.6473016 | [FarmFinder](https://farmfinder.ie/producer/bulmers-ireland); via Bord Bia Origin Green |
-| Con Traas Ltd | New Inn (nearest, 3.8 km) | Otros | theapplefarm.com ⚠ | — | 52.4738, -7.8943 | [FarmFinder](https://farmfinder.ie/producer/con-traas-ltd); via Organic Trust |
-| Emerald Oils | New Inn (nearest, 1.7 km) | Otros | www.emeraldoils.ie | (052) 746 2828 | 52.4448663, -7.8582657 | [FarmFinder](https://farmfinder.ie/producer/emerald-oils); via SuperValu Food Academy |
-| Golden Island | Boherlahan (nearest, 4.7 km) | Otros | goldenislandshoppingcentre.ie | (090) 647 6760 | 52.54986, -7.953377 | [FarmFinder](https://farmfinder.ie/producer/golden-island); via Irish Organic Association |
-| Good Herdsmen Ltd | Cahir (nearest, 0.5 km) | Otros | www.goodherdsmen.ie | — | 52.373055, -7.931287699999999 | [FarmFinder](https://farmfinder.ie/producer/good-herdsmen-ltd); via Organic Trust |
-| Green Goose | Borrisokane (nearest, 0.3 km) | Otros | thegreen1918.ie | (067) 27500 | 52.9931492, -8.1283759 | [FarmFinder](https://farmfinder.ie/producer/green-goose); via Organic Trust |
-| Hayes' Farm of Tipperary | Two-Mile Borris (nearest, 2.3 km) | Otros | www.hayesfarm.ie | +35350444325 · sales@tippcheese.ie | 52.6529535, -7.7047285 | [FarmFinder](https://farmfinder.ie/producer/hayes-farm-of-tipperary); via NeighbourFood |
-| Nancys Fancies | Cahir (nearest, 1.6 km) | Otros | nancysfancies.ie | 086 878 6398 | 52.3825725, -7.9455217 | [FarmFinder](https://farmfinder.ie/producer/nancys-fancies); via SuperValu Food Academy |
-| NutShed | Nenagh (nearest, 0.3 km) | Otros | www.nutshed.ie | — | 52.8608511, -8.200721099999999 | [FarmFinder](https://farmfinder.ie/producer/nutshed); via Bord Bia Origin Green |
-| Oak Park Foods | Clonmel (nearest, 2.1 km) | Otros | www.oakparkfoods.ie | (052) 744 1600 | 52.3676548, -7.6911939 | [FarmFinder](https://farmfinder.ie/producer/oak-park-foods); via SuperValu Food Academy |
-| Ponaire Limited | Newport (nearest, 0.1 km) | Otros | www.ponaire.ie | (061) 373 713 | 52.7111721, -8.407485099999999 | [FarmFinder](https://farmfinder.ie/producer/ponaire-limited); via Organic Trust |
-| Ribworld | Fethard (nearest, 0.9 km) | Otros | www.ribworld.ie | (052) 613 2374 | 52.473188699999994, -7.6917265 | [FarmFinder](https://farmfinder.ie/producer/ribworld); via Bord Bia Origin Green |
-| Rivesci | Clonmel (nearest, 0.3 km) | Otros | rivesci.ie | — | 52.3517329, -7.7152932 | [FarmFinder](https://farmfinder.ie/producer/rivesci); via Food Culture Ireland |
-| Sean Loughnane (Galway) Limited | Lagganstown (nearest, 2 km) | Otros | www.loughnanes.ie | — | 52.4737, -7.9961 | [FarmFinder](https://farmfinder.ie/producer/sean-loughnane-galway-limited); via Bord Bia Origin Green |
-| Soil Renew Ireland Limited | Ardcroney (nearest, 0.6 km) | Otros | soilrenewireland.ie | 086 851 8129 | 52.932505799999994, -8.1493872 | [FarmFinder](https://farmfinder.ie/producer/soil-renew-ireland-limited); via Organic Trust |
-| Tipperary Coop | Tipperary (nearest, 0.3 km) | Otros | www.arratipp.ie ⚠ | (062) 33111 | 52.4720942, -8.1618148 | [FarmFinder](https://farmfinder.ie/producer/tipperary-coop); via Bord Bia Origin Green |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Borrisoleigh Bottling Ltd | Otros | Bblco.ie serves an under-construction placeholder; Borrisoleigh Bottling needs a current source. |
+| Compsey Creamery | Lácteos y quesos ? | Compsey Creamery publishes cream cheese, mascarpone and cottage cheese made for foodservice providers, manufacturers and processors; whether it has an own offer attributable through sale is unresolved. |
+| Golden Irish Eggs | Huevos | The site carried for Golden Irish Eggs is magnersfarm.com, a regenerative farm trading as Magners Farm; the identities differ and the farm publishes no Irish address. |
+| Golden Island | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Green Goose | Otros | The site carried for Green Goose is thegreen1918.ie, a Borrisokane bar and restaurant; the URL must not be carried. |
+| Kilkenny Cheese Limited | Lácteos y quesos | Kilkenny Cheese is a Tirlán and Royal A-ware joint venture whose plant sits at Belview on the Kilkenny-Waterford border under an X91 Eircode; the lead was filed in the tipperary note and its area is unresolved. |
+| Ribworld | Otros | RibWorld publishes a business-to-business rib and pulled-pork range under Sofina Foods with no consumer offer or own address; scope and location are unresolved. |
+| Tipperary Coop | Otros | Arratipp publishes Tipperary Co-op's dairy ingredients, powders and agri retail arms; whether an own consumer food offer exists is unresolved. |
+| Tipperary Organic Ice Cream | Helados | The site carried for Tipperary Organic Ice Cream is arratippstores.ie, an ArraTipp DIY, agri and hardware store; the URL must not be carried. |
 
 ## Needs one more fact — 51
 

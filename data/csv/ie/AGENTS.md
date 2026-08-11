@@ -1,12 +1,12 @@
 # Ireland
 
 ## Operating state
-- Phase: opening. The tree covers the 26 counties; a first sourced batch is
-  published in 12 of them and the rest are empty. Derive live queues with
-  `npx pnpm check:defects --country ie`.
-- Active lane: verifying the triaged leads in `docs/candidates/ie/<area>.md`,
-  which now cover all 26 counties and are ranked by how close each is to being a
-  row.
+- Phase: opening. The tree covers the 26 counties and every one of them now
+  publishes rows. Derive live queues with `npx pnpm check:defects --country ie`.
+- Active lane: the `Needs one more fact` and `Name and county only` tiers in
+  `docs/candidates/ie/<area>.md`. The tier that had a live own website was
+  fetched and resolved; what it left open is listed per county under
+  `Held after verification`, with the blocker recorded so it is not re-fetched.
 
 ## Country rules
 - `region` is the traditional province and `area` the traditional county. The

@@ -54,17 +54,14 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 5
+## Held after verification — 2
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Ryan's Food Emporium | Westport (nearest, 3.3 km) | Carne | www.ryansfoodemporium.com | (094) 954 6035 | 53.804091, -9.490689 | [FarmFinder](https://farmfinder.ie/producer/ryan-s-food-emporium); via Associated Craft Butchers of Ireland |
-| Marlene's Chocolate Haven | Westport | Chocolate | marleneschochaven.com | +353 86 440 8444 | 53.8000571, -9.5234396 | OSM node/4338636241 |
-| Drioglann Loch Measc Teo | Finny, County Mayo (nearest, 5.6 km) | Destilados y licores ? | www.loughmaskdistillery.com ⚠ | (094) 954 4701 | 53.6117347, -9.444084 | [FarmFinder](https://farmfinder.ie/producer/drioglann-loch-measc-teo); via Bord Bia Origin Green |
-| IrishAmerican Distillery | Bun an Churraigh (nearest, 0.3 km) | Destilados y licores | www.irishamericanwhiskeys.com | +353 98 47898 | 53.9707586, -9.9823164 | OSM way/184683107 |
-| Knockatee Cheese | Aughagower (nearest, 3.6 km) | Lácteos y quesos | www.knd.ie ⚠ | 087 053 9451 | 53.730918, -9.462659 | [FarmFinder](https://farmfinder.ie/producer/knockatee-cheese); via SuperValu Food Academy |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| IrishAmerican Distillery | Destilados y licores | IrishAmerican Whiskeys publishes an 'Our Distillery' page but no address or production detail; whether it operates a distillery in Mayo or bonds sourced whiskey is unresolved. |
+| Ryan's Food Emporium | Carne | Ryan's Food Emporium in Cong publishes butchery, deli, bakery and catering under one roof; which products it makes rather than resells is unresolved. Its municipio is Cong, not Westport. |
 
 ## Needs one more fact — 30
 

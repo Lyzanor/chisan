@@ -54,23 +54,18 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 11
+## Held after verification — 6
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Old World Master Butchers | Limerick (nearest, 0.3 km) | Carne | www.michaeloloughlinbutchers.ie ⚠ | (061) 414 102 | 52.667792, -8.625249 | [FarmFinder](https://farmfinder.ie/producer/old-world-master-butchers); via Associated Craft Butchers of Ireland |
-| Limerick Spirits Company Limited | Limerick (nearest, 0.3 km) | Destilados y licores | thomondgatewhiskey.com ⚠ | (061) 414 900 | 52.662749, -8.622283 | [FarmFinder](https://farmfinder.ie/producer/limerick-spirits-company-limited); via Bord Bia Origin Green |
-| Noinin Organic Herb & Vegetable Farm | Adare (nearest, 5 km) | Fruta y verdura | www.noinin.ie | +35361640822 · noininherbalproducts@gmail.com | 52.5188316, -8.7958347 | [FarmFinder](https://farmfinder.ie/producer/noinin-organic-herb-vegetable-farm); via NeighbourFood |
-| Cahill Cheese | Castletroy (nearest, 0.3 km) | Lácteos y quesos | cahillscheese.ie | (069) 62365 | 52.666261, -8.54844 | [FarmFinder](https://farmfinder.ie/producer/cahill-cheese); via SuperValu Food Academy |
-| Old Cottage Honey | Abington (nearest, 2.4 km) | Miel | www.oldcottagehoney.ie | — | 52.6331155, -8.4544145 | [FarmFinder](https://farmfinder.ie/producer/old-cotage-honey); via Food Culture Ireland |
-| Glenstal Foods Ltd | Abington (nearest, 1.5 km) | Otros | www.glenstalfoods.com | (061) 386 511 | 52.6339744, -8.397619599999999 | [FarmFinder](https://farmfinder.ie/producer/glenstal-foods-ltd); via Bord Bia Origin Green |
-| HL Commodity Foods Manufacturing LTD | Hospital (nearest, 0.3 km) | Otros | hlcf.ie ⚠ | (061) 383 801 | 52.4724606, -8.4277828 | [FarmFinder](https://farmfinder.ie/producer/hl-commodity-foods-manufacturing-ltd); via Bord Bia Origin Green |
-| Juspy | Limerick (nearest, 0.6 km) | Otros | www.juspy.com | leonie@juspy.com | 52.6614759, -8.6293975 | [FarmFinder](https://farmfinder.ie/producer/juspy); via NeighbourFood |
-| Key Ingredients Europe Limited | Annacotty (nearest, 1.7 km) | Otros | www.keyingredients.ie | (061) 358 977 | 52.662613, -8.507509599999999 | [FarmFinder](https://farmfinder.ie/producer/key-ingredients-europe-limited); via Bord Bia Origin Green |
-| Premier Molasses Co Ltd | Foynes (nearest, 1.1 km) | Otros | premiermolasses.ie | (069) 65311 | 52.612946099999995, -9.1009867 | [FarmFinder](https://farmfinder.ie/producer/premier-molasses-co-ltd); via Organic Trust |
-| Seeds Ireland | Garryowen (nearest, 2.2 km) | Otros | www.seedsireland.ie | (061) 320 900 | 52.6498706, -8.586414 | [FarmFinder](https://farmfinder.ie/producer/seeds-ireland); via Organic Trust |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Cahill Cheese | Lácteos y quesos | The site answers HTTP 503 on every automated route tried. A temporary server error is not proof of closure; the lead is unresolved. |
+| Glenstal Foods Ltd | Otros | Glenstal Foods publishes its headquarters in Murroe and an own-brand cheddar and butter range but no production site; a head office does not place the productive unit. |
+| Juspy | Otros | Juspy publishes a collagen and protein blend brand with a shop but no address or production site; whether a productive unit exists in Limerick is unresolved. |
+| Noinin Organic Herb & Vegetable Farm | Fruta y verdura | The readable page presents Noinin Herbal Products — herbal preparations made in small batches from plants the owners grow biodynamically — not the vegetable offer the lead implies. Whether any output is food or drink rather than a herbal remedy is unresolved. |
+| Old Cottage Honey | Miel | Old Cottage Honey publishes no address; its candidate municipio Abington is an inferred nearest settlement 2.4 km from the source coordinate. |
+| Old World Master Butchers | Carne | The site carried for Old World Master Butchers is michaeloloughlinbutchers.ie, trading as Michael O'Loughlin Butchers at 6 Upper William Street, Limerick; the relationship between the two names is unresolved. |
 
 ## Needs one more fact — 31
 

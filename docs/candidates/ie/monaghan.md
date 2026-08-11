@@ -54,17 +54,16 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 5
+## Held after verification — 4
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Annalitten Foods Ltd | Castleblayney (nearest, 4.5 km) | Huevos | annalitteneggs.ie | (042) 974 3623 | 54.0846127, -6.706800899999999 | [FarmFinder](https://farmfinder.ie/producer/annalitten-foods-ltd); via Bord Bia Origin Green |
-| The Nestbox Egg Company | Oram (nearest, 1.8 km) | Huevos | www.goldenirish.com ⚠ | (042) 974 0000 | 54.1378419, -6.71671 | [FarmFinder](https://farmfinder.ie/producer/the-nestbox-egg-company); via Bord Bia Origin Green |
-| Greenfield Foods Ltd | Smithborough (nearest, 4.4 km) | Otros | www.greenfieldfoods.ie | (047) 57014 | 54.2420732, -7.1347861 | [FarmFinder](https://farmfinder.ie/producer/greenfield-foods-ltd); via Bord Bia Origin Green |
-| Lough Egish Foods | Threemilehouse (nearest, 5.9 km) | Otros | www.swiftfinefoods.com ⚠ | (042) 974 5435 | 54.180126, -6.977547 | [FarmFinder](https://farmfinder.ie/producer/lough-egish-foods); via SuperValu Food Academy |
-| Monaghan Mushrooms Group | Castleshane (nearest, 4 km) | Setas ? | www.monaghan-mushrooms.com | (047) 38200 | 54.266734199999995, -6.9052544000000005 | [FarmFinder](https://farmfinder.ie/producer/monaghan-mushrooms-group); via Bord Bia Origin Green |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Greenfield Foods Ltd | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Lough Egish Foods | Otros | The site carried for Lough Egish Foods is dmcfoods.ie, a ready-meal manufacturer trading as DMC Foods with sites in more than one county; identity and productive location are unresolved. |
+| Monaghan Mushrooms Group | Setas ? | Monaghan.eu publishes only the Tyholland group headquarters for Monaghan Mushrooms; a head office does not place the productive unit, and the growing site behind it is not established. |
+| The Nestbox Egg Company | Huevos | The site carried for The Nestbox Egg Company is goldenirish.com, a separate Golden Irish Eggs brand identity; the connection between the two is unresolved. |
 
 ## Needs one more fact — 24
 

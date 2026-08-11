@@ -54,36 +54,25 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 24
+## Held after verification — 13
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| The Studio Coffee | Laytown-Bettystown-Mornington (nearest, 1.3 km) | Café | www.thestudiocoffee.com | 086 195 3860 | 53.6967797, -6.2636975 | [FarmFinder](https://farmfinder.ie/producer/the-studio-coffee); via Bord Bia Origin Green |
-| Ashbourne Meat Processors | Ashbourne (nearest, 1.7 km) | Carne | ashmeats.ie ⚠ | (045) 875 400 | 53.497831, -6.408857 | [FarmFinder](https://farmfinder.ie/producer/ashbourne-meat-processors) |
-| Brogan's Butchers | Kilcarn (nearest, 1.5 km) | Carne | www.brogansathboy.com | (046) 943 2122 | 53.638087, -6.656358 | [FarmFinder](https://farmfinder.ie/producer/brogan-s-butchers); via Associated Craft Butchers of Ireland |
-| Callaghan Butchers Bettystown | Bettystown (nearest, 1.3 km) | Carne | callaghansbutchersbettystown.com | 041 9887885 | 53.709901, -6.233114 | [FarmFinder](https://farmfinder.ie/producer/callaghan-butchers-bettystown); via Irish Butchers Guild |
-| Gleeson Meats Navan | Navan (nearest, 0.7 km) | Carne | www.gleesonsfreshfoods.ie | (046) 902 3717 | 53.659085, -6.684069 | [FarmFinder](https://farmfinder.ie/producer/gleeson-meats-navan); via Associated Craft Butchers of Ireland |
-| Hugh Maguire Butchers | Ashbourne (nearest, 0.6 km) | Carne | hughmaguirebutchers.com | (01) 849 9919 | 53.507343, -6.39386 | [FarmFinder](https://farmfinder.ie/producer/hugh-maguire-butchers) |
-| Celtic Chocolates | Drumraney (nearest, 3.5 km) | Chocolate ? | celticchocolates.eu | (046) 955 7077 | 53.51253, -7.737189 | [FarmFinder](https://farmfinder.ie/producer/celtic-chocolates); via SuperValu Food Academy |
-| Chez Emily Chocolate Boutique | Ashbourne (nearest, 0.3 km) | Chocolate | chezemily.ie | — | 53.5097793, -6.3967317 | OSM node/5282162465 |
-| Lir Chocolates | Kilcarn (nearest, 1.3 km) | Chocolate ? | www.lirchocolates.com | (046) 909 1046 | 53.6385619, -6.6625404 | [FarmFinder](https://farmfinder.ie/producer/lir-chocolates); via Bord Bia Origin Green |
-| Slane Distillery | Slane (nearest, 1.4 km) | Destilados y licores | www.slaneirishwhiskey.com | — | 53.7110106, -6.5641675 | OSM relation/9278985 |
-| Clarkes Fresh Fruit | Stamullen (nearest, 1.6 km) | Fruta y verdura | www.clarkesfreshfruit.ie | (01) 841 3262 | 53.618815, -6.2862675 | [FarmFinder](https://farmfinder.ie/producer/clarkes-fresh-fruit); via Bord Bia Origin Green |
-| Gleann Gabhra | Kilcarn (nearest, 2 km) | Lácteos y quesos | www.boynevalleycheese.ie ⚠ | 086 384 4162 | 53.617621, -6.644656 | [FarmFinder](https://farmfinder.ie/producer/gleann-gabhra) |
-| Sheridan's Cheesemongers Ltd | Virginia Rd Station Virginia | Lácteos y quesos | sheridanscheesemongers.com | +353 46 9245110 · warehouse@sheridanscheesemongers.com | — | DAFM dairy IE1949 |
-| A Bit on the Side | Moylagh (nearest, 1.2 km) | Otros | www.abitontheside.ie | hilary@abitontheside.ie | 53.7245148, -7.17728 | [FarmFinder](https://farmfinder.ie/producer/a-bit-on-the-side); via NeighbourFood |
-| AP Fine Foods Ltd | Ráth Chairn (nearest, 1.3 km) | Otros | www.apfinefoods.com | (046) 901 5665 | 53.62231380000001, -6.858154799999999 | [FarmFinder](https://farmfinder.ie/producer/ap-fine-foods-ltd); via Bord Bia Origin Green |
-| Battle of The Butters | Tullyallen (nearest, 1.2 km) | Otros | www.battleoftheboyne.ie | (041) 980 9950 | 53.7233896, -6.4233809 | [FarmFinder](https://farmfinder.ie/producer/battle-of-the-butters); via SuperValu Food Academy |
-| BR Marketing Ltd | Clonee (nearest, 0.4 km) | Otros | www.brmarketing.ie | (01) 885 0800 | 53.4101942, -6.43929 | [FarmFinder](https://farmfinder.ie/producer/br-marketing-ltd); via Organic Trust |
-| Filligans | Kentstown (nearest, 2 km) | Otros | www.finnegansfarm.ie ⚠ | (041) 982 5153 | 53.618119, -6.5076915 | [FarmFinder](https://farmfinder.ie/producer/filligans); via SuperValu Food Academy |
-| Finnegan's Farm | Kentstown (nearest, 2.4 km) | Otros | www.finnegansfarm.ie | (041) 982 5153 | 53.61304200000001, -6.506074 | [FarmFinder](https://farmfinder.ie/producer/finnegans-farm); via Bord Bia Origin Green |
-| Gorse Foods | Moyvoughly (nearest, 2 km) | Otros | pegus.ie ⚠ | 086 256 5671 | 53.428437, -7.729557 | [FarmFinder](https://farmfinder.ie/producer/gorse-foods); via SuperValu Food Academy |
-| Newgrange Gold Ltd | Navan (nearest, 2.2 km) | Otros | www.newgrangegold.ie | (041) 982 4273 | 53.672081, -6.689194 | [FarmFinder](https://farmfinder.ie/producer/newgrange-gold-ltd); via Food Culture Ireland |
-| O'Brien Fine Foods | Ráth Chairn (nearest, 1.3 km) | Otros | obrienfinefoods.ie | (046) 901 5665 | 53.62231380000001, -6.858154799999999 | [FarmFinder](https://farmfinder.ie/producer/obrien-fine-foods); via Bord Bia Origin Green |
-| Shackletons Milling Ltd | Ashbourne (nearest, 1.1 km) | Otros | www.shackletonsmilling.co.uk | (01) 835 3111 | 53.5172885, -6.4112157 | [FarmFinder](https://farmfinder.ie/producer/shackletons-milling-ltd); via Bord Bia Origin Green |
-| Kerrigan's Mushrooms | Kells (nearest, 5.3 km) | Setas ? | www.kerrigansmushrooms.ie | (046) 924 0670 | 53.689122000000005, -6.8309121 | [FarmFinder](https://farmfinder.ie/producer/kerrigans-mushrooms); via Bord Bia Origin Green |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| A Bit on the Side | Otros | A Bit on the Side publishes no address; its candidate municipio Moylagh is an inferred nearest settlement 1.2 km from the source coordinate. |
+| AP Fine Foods Ltd | Otros | AP Fine Foods publishes brands and a shared Ráth Chairn contact with O'Brien Fine Foods but no production site or own address; identity and location are unresolved. |
+| Battle of The Butters | Otros | The site carried for Battle of The Butters is the Battle of the Boyne Visitor Centre page on heritageireland.ie; the URL must not be carried. |
+| Brogan's Butchers | Carne | The published URL returns 404. A missing page is not proof of closure: the producer needs a current URL before it can be resolved. |
+| Callaghan Butchers Bettystown | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Clarkes Fresh Fruit | Fruta y verdura | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Filligans | Otros | The meath note filed Filligans against finnegansfarm.ie, the Finnegan's Farm site; the Filligans identity is not established by it. |
+| Gleeson Meats Navan | Carne | Gleesons Fresh Foods publishes shops in Navan and several Dublin locations with Dublin Eircodes only; which unit is productive and where is unresolved. |
+| Gorse Foods | Otros | Pegus.ie answers a Cloudflare interstitial; a challenge is not a dead site, and Gorse Foods needs a second route. |
+| Lir Chocolates | Chocolate ? | Lir Chocolates publishes no address; its candidate municipio Kilcarn is an inferred nearest settlement 1.3 km from the source coordinate. |
+| Newgrange Gold Ltd | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| O'Brien Fine Foods | Otros | O'Brien Fine Foods publishes brands and partnerships but no production site; the lead's coordinate sits at Ráth Chairn while the company's plant is not named on the site. |
+| The Studio Coffee | Café | The Studio Coffee Roasters publishes no address; its candidate municipio is the joint census town Laytown-Bettystown-Mornington, inferred 1.3 km from the source coordinate. |
 
 ## Needs one more fact — 35
 

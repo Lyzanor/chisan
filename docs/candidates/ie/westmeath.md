@@ -54,18 +54,13 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 6
+## Held after verification — 1
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Richmount Cordial Company | Mullingar (nearest, 4 km) | Bebidas sin alcohol | www.richmountcordials.ie | 087 646 4757 | 53.5577902, -7.3478558 | [FarmFinder](https://farmfinder.ie/producer/richmount-cordial-company); via Food Culture Ireland |
-| Herterich Artisan Butchers ltd | Castlepollard (County Westmeath) (nearest, 0.1 km) | Carne | herterichartisanmeats.ie | (043) 334 6597 | 53.678505, -7.2996941 | [FarmFinder](https://farmfinder.ie/producer/herterich-artisan-butchers-ltd); via SuperValu Food Academy |
-| Sheelin Meats | Mullingar (nearest, 1.9 km) | Carne | www.sheelinmeats.ie | +353 44 934 1664 | 53.5252193, -7.3657391 | OSM node/13109364138 |
-| Honey Harvest | Drumraney (nearest, 4.4 km) | Miel | www.honeyharvest.ie | — | 53.5173114, -7.7201984 | [FarmFinder](https://farmfinder.ie/producer/honey-harvest); via Food Culture Ireland |
-| Athlone | Athlone (nearest, 0.8 km) | Otros | www.athlone.ie | — | 53.427799, -7.931959 | [FarmFinder](https://farmfinder.ie/producer/athlone); via Irish Organic Association |
-| Wines Direct Ltd | Mullingar (nearest, 2.4 km) | Otros | winesdirect.ie | +353868533758 · sales@winesdirect.ie | 53.5432598, -7.345243 | [FarmFinder](https://farmfinder.ie/producer/wines-direct-ltd); via NeighbourFood |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Sheelin Meats | Carne | Sheelin Meats runs three butcher shops across Cavan and Westmeath; which of them is a productive unit rather than a retail counter is unresolved. |
 
 ## Needs one more fact — 16
 

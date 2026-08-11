@@ -54,13 +54,11 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 1
+## Held after verification — 0
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Agvance Nutrition | Ballyfin (nearest, 1.5 km) | Otros | agvance.ie | (057) 851 0155 | 53.0522852, -7.398504099999999 | [FarmFinder](https://farmfinder.ie/producer/agvance-nutrition); via Organic Trust |
+Nothing from that tier is still open in this county.
 
 ## Needs one more fact — 11
 

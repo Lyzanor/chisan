@@ -54,30 +54,18 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 18
+## Held after verification — 6
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Dreambeans Coffee | Dundalk (nearest, 1.2 km) | Café | dreambeanscoffee.ie | +353429332417 · service@dreambeanscoffee.ie | 53.9999917, -6.3827962 | [FarmFinder](https://farmfinder.ie/producer/dreambeans-coffee); via NeighbourFood |
-| Callaghan's Butchers | Ardee (nearest, 1.2 km) | Carne | www.callaghansbutchersardee.com | (041) 685 3253 | 53.844697, -6.533536 | [FarmFinder](https://farmfinder.ie/producer/callaghan-s-butchers); via Associated Craft Butchers of Ireland |
-| Commins Butchers | Ardee (nearest, 1.2 km) | Carne | www.comminsbutchers.com | (041) 685 3430 | 53.866153, -6.539009 | [FarmFinder](https://farmfinder.ie/producer/commins-butchers); via Associated Craft Butchers of Ireland |
-| Dublin Meat Company | Drogheda (nearest, 0.6 km) | Carne | www.dublinmeatcompany.com | (041) 983 4341 | 53.714508, -6.34294 | [FarmFinder](https://farmfinder.ie/producer/dublin-meat-company) |
-| Haynestown Meats | Drumcar (nearest, 3.7 km) | Carne | www.haynestownmeats.ie | (045) 856 021 | 53.860015, -6.43434 | [FarmFinder](https://farmfinder.ie/producer/haynestown-meats) |
-| Carlingford Brewing Co. | Carlingford | Cerveza | carlingfordbrewing.ie | +353429397519 · info@carlingfordbrewing.ie | — | [FarmFinder](https://farmfinder.ie/producer/carlingford-brewing-co) |
-| Dundalk Bay Brewery Co | Dundalk | Cerveza | www.dbbd.ie ⚠ | info@dbbd.ie | — | [FarmFinder](https://farmfinder.ie/producer/dundalk-bay-brewery-co) |
-| NearyNógs Stoneground Chocolates | Greenore (nearest, 5.4 km) | Chocolate | www.nearynogs.com | — | 54.0761638, -6.0951628 | OSM way/1177474088 |
-| Belview Egg Farm Ltd | Beaulieu Cross (nearest, 1.7 km) | Huevos | belview.ie | (041) 982 2512 | 53.752582999999994, -6.3174025 | [FarmFinder](https://farmfinder.ie/producer/belview-egg-farm-ltd); via Bord Bia Origin Green |
-| King of Kefir | Clara (nearest, 2 km) | Lácteos y quesos | www.kingofkefir.ie | (041) 685 7660 | 53.357873, -7.597518 | [FarmFinder](https://farmfinder.ie/producer/king-of-kefir); via SuperValu Food Academy |
-| Fyffes | Tallanstown (nearest, 3.8 km) | Otros | www.fyffes.com | — | 53.9227, -6.4896 | [FarmFinder](https://farmfinder.ie/producer/fyffes); via Organic Trust |
-| KooKee | Dundalk (nearest, 1.3 km) | Otros | kookee.ie | — | 54.0025446, -6.4204502 | [FarmFinder](https://farmfinder.ie/producer/kookee); via Food Culture Ireland |
-| Oriel Marine Extracts | Clogherhead (nearest, 1 km) | Otros | www.orielseasalt.com | (041) 988 9624 | 53.797194999999995, -6.2263364999999995 | [FarmFinder](https://farmfinder.ie/producer/oriel-marine-extracts); via Bord Bia Origin Green |
-| Silver Hill Duck | Tallanstown (nearest, 3.9 km) | Otros | www.silverhillfarm.ie | — | 53.9252, -6.4889 | [FarmFinder](https://farmfinder.ie/producer/silver-hill-duck); via Bord Bia Origin Green |
-| The Spoonful Food Company Ltd | Collon (nearest, 3.5 km) | Otros | www.spoonfulbotanical.com | 085 169 2326 | 53.7590797, -6.4515978 | [FarmFinder](https://farmfinder.ie/producer/the-spoonful-food-company-ltd); via Bord Bia Origin Green |
-| Valentia Island Vermouth | Tallanstown (nearest, 3.9 km) | Otros | valentiaislandvermouth.ie | — | 53.9252, -6.4889 | [FarmFinder](https://farmfinder.ie/producer/valentia-island-vermouth); via Bord Bia Origin Green |
-| The Home Bakery | Dundalk (nearest, 0.2 km) | Pan y cereal | www.thehomebakery.ie | +353 42 933 4392 | 54.0048145, -6.3977926 | OSM node/2989107649 |
-| Nu Infusions | Ardee (nearest, 0.7 km) | Té e infusiones ? | www.nuinfusions.com | 086 150 8271 | 53.8525931, -6.5284929 | [FarmFinder](https://farmfinder.ie/producer/nu-infusions); via Irish Organic Association |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Callaghan's Butchers | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Commins Butchers | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Haynestown Meats | Carne | Haynestown Meats publishes only a trade counter at Toughers Business Park, Naas, Co. Kildare; the site does not place a productive unit in Louth. |
+| King of Kefir | Lácteos y quesos | King of Kefir publishes no address. Its candidate municipio Clara sits on a source coordinate in Co. Offaly while its phone is a Drogheda number, so the location is unresolved. Its category is water kefir, a non-dairy drink, not Lácteos y quesos. |
+| KooKee | Otros | KooKee publishes no address; its candidate municipio Dundalk is an inferred nearest settlement 1.3 km from the source coordinate. |
+| The Home Bakery | Pan y cereal | Thehomebakery.ie answers a Cloudflare interstitial to a plain fetch. A challenge is not a dead site; the bakery needs a second route before it can be resolved. |
 
 ## Needs one more fact — 34
 

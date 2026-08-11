@@ -54,33 +54,17 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 21
+## Held after verification — 5
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Irish Decal Products Ltd. T/A Brady's Coffee Company | Kilcoole (nearest, 0.7 km) | Café | www.bradyscoffee.ie | (01) 201 1016 | 53.1002005, -6.061385899999999 | [FarmFinder](https://farmfinder.ie/producer/irish-decal-products-ltd-t-a-bradys-coffee-company); via Bord Bia Origin Green |
-| McCabe's Coffee LTD | Newtownmountkennedy (nearest, 0.6 km) | Café | mccabecoffee.com/?utm_source=google&utm_medium=gbp | (01) 437 0877 | 53.0850363, -6.105825200000001 | [FarmFinder](https://farmfinder.ie/producer/mccabes-coffee-ltd); via Bord Bia Origin Green |
-| Rí-Rá Brewing Co. | Kilcoole | Cerveza | www.ri-ra.beer ⚠ | — | — | [FarmFinder](https://farmfinder.ie/producer/r-r-brewing-co) |
-| Glendalough Distillery | Newtownmountkennedy (nearest, 0.6 km) | Destilados y licores | www.glendaloughdistillery.com | — | 53.084955, -6.1071463 | OSM node/6473071071 |
-| O'Hanlon's Herbs | Glenealy (nearest, 1.3 km) | Fruta y verdura | www.ohanlonherbs.ie | (0404) 44999 | 52.9779251, -6.1526829 | [FarmFinder](https://farmfinder.ie/producer/o-hanlon-s-herbs); via SuperValu Food Academy |
-| Bees 4 Me 2 | Wicklow (nearest, 0.6 km) | Miel ? | irishhoney.ie ⚠ | 087 967 6515 · bees4me2@gmail.com | 52.9802376, -6.0414184 | [FarmFinder](https://farmfinder.ie/producer/bees-4-me-2); via irishhoney.ie |
-| Atlantic Aromatics Ltd | Little Bray (nearest, 0.3 km) | Otros | www.atlanticaromatics.com | (01) 286 5399 | 53.205268, -6.1166011 | [FarmFinder](https://farmfinder.ie/producer/atlantic-aromatics-ltd); via Organic Trust |
-| Bomar Ltd - Bomar Aromatherapy | Kilcoole (nearest, 1.4 km) | Otros | bomar.ie | (01) 287 5110 | 53.106015, -6.0439845 | [FarmFinder](https://farmfinder.ie/producer/bomar-ltd-bomar-aromatherapy); via Organic Trust |
-| Dr Coys Health Foods | Greystones (nearest, 0.7 km) | Otros | www.drcoys.ie | (01) 287 1074 | 53.1504365, -6.0716092 | [FarmFinder](https://farmfinder.ie/producer/dr-coys-health-foods); via SuperValu Food Academy |
-| Glenhaven Quality Foods | Arklow (nearest, 2.2 km) | Otros | www.glenhaven.ie | (0402) 39000 | 52.8126445, -6.1541812 | [FarmFinder](https://farmfinder.ie/producer/glenhaven-quality-foods); via Bord Bia Origin Green |
-| GoBia Ltd. | Wicklow (nearest, 0.8 km) | Otros | www.gobia.com | — | 52.9809, -6.0446 | [FarmFinder](https://farmfinder.ie/producer/gobia-ltd); via Bord Bia Origin Green |
-| Irish Botanica | Wicklow (nearest, 0.9 km) | Otros | www.irishbotanica.ie | — | 52.9808, -6.0458 | [FarmFinder](https://farmfinder.ie/producer/irish-botanica); via Organic Trust |
-| Irish Pure | Baltinglass (nearest, 1.6 km) | Otros | www.pureirishice.ie | (059) 645 0195 | 52.9321219, -6.691573 | [FarmFinder](https://farmfinder.ie/producer/irish-pure); via SuperValu Food Academy |
-| Janets Country Fayre Ltd | Kilcoole (nearest, 0.6 km) | Otros | www.janetscountryfayre.com/products | (01) 201 8008 | 53.1032214, -6.0716657 | [FarmFinder](https://farmfinder.ie/producer/janets-country-fayre-ltd); via Food Culture Ireland |
-| Keadeen Mountain Farms | Kiltegan (nearest, 3.7 km) | Otros | keadeenmountainfarms.ie | 0857382876 | 52.9255438, -6.6488505 | [FarmFinder](https://farmfinder.ie/producer/keadeen-mountain-farms); via Food Culture Ireland |
-| Miena's | Wicklow (nearest, 0.8 km) | Otros | www.mienas.ie | — | 52.9809, -6.0446 | [FarmFinder](https://farmfinder.ie/producer/mienas); via Bord Bia Origin Green |
-| National Organic Products Ltd | Bray (nearest, 2.1 km) | Otros | www.nationalorganic.com | (01) 901 2761 | 53.1825981, -6.1166949 | [FarmFinder](https://farmfinder.ie/producer/national-organic-products-ltd); via Organic Trust |
-| Sally Gap Foods | Wicklow (nearest, 4.1 km) | Otros | www.powerscourthotel.com ⚠ | (01) 274 8888 | 52.952106, -6.077518 | [FarmFinder](https://farmfinder.ie/producer/sally-gap-foods); via SuperValu Food Academy |
-| Sussed Nutrition Limited | Rathnew (nearest, 2.1 km) | Otros | www.wicklowrapeseedoil.ie ⚠ | (0404) 79574 | 52.9722402, -6.0767413 | [FarmFinder](https://farmfinder.ie/producer/sussed-nutrition-limited); via Bord Bia Origin Green |
-| Amazing Cakes | Little Bray (nearest, 0.5 km) | Pan y cereal | amazingcakes.ie | — | 53.2076698, -6.115059 | OSM node/8404601594 |
-| Scéal Bakery | Greystones (nearest, 0.9 km) | Pan y cereal | www.scealbakery.com | — | 53.1517561, -6.066916 | OSM node/11636095682 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Dr Coys Health Foods | Otros | Dr. Coy's publishes an office at The Cova, Trafalgar Road, Greystones and a chocolate and health-food range but no production site; whether it makes rather than commissions the range is unresolved. |
+| Keadeen Mountain Farms | Otros | Keadeen Mountain Farms publishes only 'Co. Wicklow'; its candidate municipio Kiltegan is an inferred nearest settlement 3.7 km from the source coordinate. |
+| National Organic Products Ltd | Otros | National Organic Products publishes the Bunalun Organic grocery brand across many product lines but no production site; whether it makes rather than commissions its range is unresolved. |
+| O'Hanlon's Herbs | Fruta y verdura | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Sally Gap Foods | Otros | The site carried for Sally Gap Foods is powerscourthotel.com, which answers a Cloudflare interstitial; the URL belongs to a hotel and must not be carried. |
 
 ## Needs one more fact — 35
 

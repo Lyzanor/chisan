@@ -54,17 +54,13 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 5
+## Held after verification — 1
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Morans Mega Jam Ltd | Dowra (nearest, 4.3 km) | Conservas | www.moransmegajam.ie | (049) 436 7556 | 54.1401622, -8.0524782 | [FarmFinder](https://farmfinder.ie/producer/morans-mega-jam-ltd); via Food Culture Ireland |
-| Scotts Irish Whisky | Rossinver (nearest, 3.5 km) | Destilados y licores | scottsirish.com | +44 28 6865 8568 · it@scottsirish.com | 54.4169666, -8.0862675 | OSM way/995887984 |
-| Artessa | Carrick-on-Shannon (nearest, 1 km) | Otros | www.artessa.ie | (071) 959 0120 | 53.9458889, -8.0748759 | [FarmFinder](https://farmfinder.ie/producer/artessa); via Organic Trust |
-| National Organic Training Skillnet | Drumshanbo (nearest, 1.2 km) | Otros | nots.ie ⚠ | (071) 964 0688 | 54.0393993, -8.0316168 | [FarmFinder](https://farmfinder.ie/producer/national-organic-training-skillnet); via Organic Trust |
-| The French Market Ltd. | Dowra (nearest, 1.7 km) | Otros | www.thefrenchmarket.ie | — | 54.1247, -8.0025 | [FarmFinder](https://farmfinder.ie/producer/the-french-market-ltd); via Organic Trust |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Scotts Irish Whisky | Destilados y licores | Scott's Irish Whisky publishes no Irish address on its site and lists a +44 28 Northern Ireland contact; the distillery's location needs settling before it can be placed in Leitrim. |
 
 ## Needs one more fact — 11
 

@@ -54,17 +54,13 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 5
+## Held after verification — 1
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Áine Handmade Chocolate | Stradone (nearest, 1.5 km) | Chocolate | www.chocolates.ie | (049) 432 3744 | 53.98136350000001, -7.2362467 | [FarmFinder](https://farmfinder.ie/producer/ine-handmade-chocolate); via Bord Bia Origin Green |
-| Moran's Mega Jam | Cavan (nearest, 2.6 km) | Conservas | www.moransmegajam.ie | (049) 436 7556 | 53.987659199999996, -7.3201969 | [FarmFinder](https://farmfinder.ie/producer/morans-mega-jam); via Bord Bia Origin Green |
-| Ben's Eggs | Ballyjamesduff (nearest, 1.8 km) | Huevos | www.eggspress.ie | — | 53.8648875, -7.1908972 | [FarmFinder](https://farmfinder.ie/producer/bens-eggs); via OpenStreetMap (ODbL — © OpenStreetMap contributors) |
-| Breffni Foods | Drumkilly (nearest, 5.8 km) | Otros | www.breffnimushrooms.com | (049) 433 6824 | 53.938814, -7.315937 | [FarmFinder](https://farmfinder.ie/producer/breffni-foods); via SuperValu Food Academy |
-| sauceman ltd | Canningstown (nearest, 4.6 km) | Otros | www.sauceman.ie | (042) 966 0555 | 54.020402, -7.053242 | [FarmFinder](https://farmfinder.ie/producer/sauceman-ltd); via Bord Bia Origin Green |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Ben's Eggs | Huevos | The site carried for Ben's Eggs is eggspress.ie, which sells egg vending machines rather than eggs; the egg producer behind the lead needs its own source. |
 
 ## Needs one more fact — 25
 

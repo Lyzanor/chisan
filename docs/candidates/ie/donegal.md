@@ -54,22 +54,19 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 10
+## Held after verification — 7
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Kombucha Na Dálaigh | Cloughaneely (nearest, 5.2 km) | Bebidas sin alcohol | nadalaigh.ie | 0872523932 | 55.0910915, -8.1815535 | [FarmFinder](https://farmfinder.ie/producer/kombucha-na-dalaigh); via Food Culture Ireland |
-| Donegal Brewing Company | Ballyshannon | Cerveza | diceys.com ⚠ | +353719851371 · sales@diceys.com | 54.5028533, -8.1900238 | OSM node/9094594628 |
-| Northbound Brewing | Lenamore (nearest, 7.9 km) | Cerveza | www.northboundbrewery.com | — | 55.0350222, -7.1946305 | OSM node/8639876849 |
-| Ardara Distillery | Ardara (nearest, 0.3 km) | Destilados y licores | www.sliabhliagdistillers.com | — | 54.7615763, -8.4079394 | OSM way/1072070010 |
-| Quality Sea Veg | Keadue (nearest, 1.7 km) | Fruta y verdura | qualityseaveg.ie | (074) 954 2159 | 55.0022111, -8.4450492 | [FarmFinder](https://farmfinder.ie/producer/quality-sea-veg); via SuperValu Food Academy |
-| Nomadic Dairy | Crossroads (nearest, 1.5 km) | Lácteos y quesos | www.nomadic-dairy.com | +353 74 914 9678 · hello@nomadic-dairy.com | 54.7891029, -7.6683181 | OSM node/7966971679 |
-| Bentley and Sons | Kilmacrenan (nearest, 3.3 km) | Miel | www.bentleyandsons.ie | 086 260 6742 | 55.003611, -7.804722 | [FarmFinder](https://farmfinder.ie/producer/bentley-and-sons); via Food Culture Ireland |
-| Algaran Teo Health & Beauty Products | Malin Beg (nearest, 3 km) | Otros | www.seaweedproducts.ie | (074) 973 0773 | 54.694741500000006, -8.770569499999999 | [FarmFinder](https://farmfinder.ie/producer/algaran-teo-health-and-beauty-products); via Organic Trust |
-| Living Green | Donegal (nearest, 1 km) | Otros | livinggreen.ie | — | 54.6549, -8.1041 | [FarmFinder](https://farmfinder.ie/producer/living-green); via Organic Trust |
-| Mallow Mia | Newtown Cunningham (nearest, 4.7 km) | Otros | www.mallowmia.com | 086 273 6181 | 54.99170600000001, -7.5575841 | [FarmFinder](https://farmfinder.ie/producer/mallow-mia); via Bord Bia Origin Green |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Ardara Distillery | Destilados y licores | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Donegal Brewing Company | Cerveza | The site carried for Donegal Brewing Company is diceys.com, the Dicey Reilly's off-licence in Ballyshannon; the retail site does not establish the brewery as a productive unit. |
+| Kombucha Na Dálaigh | Bebidas sin alcohol | Kombucha Na Dálaigh publishes no address; its candidate municipio Cloughaneely is an inferred nearest settlement 5.2 km from the source coordinate. |
+| Living Green | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Mallow Mia | Otros | Mallow Mia publishes only 'from Co. Donegal'; its candidate municipio Newtown Cunningham is an inferred nearest settlement 4.7 km from the source coordinate. |
+| Northbound Brewing | Cerveza | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Quality Sea Veg | Fruta y verdura | The shop is behind a maintenance notice, but the catalogue behind it names the range — organic sea herbs and sea veg, dulse and sweet kombu crisps, wakame noodle soup and carragheen — and publishes 074 954 2159. Identity and qualifying activity are settled; the municipio is not, because the candidate Keadue is an inferred nearest settlement 1.7 km from the source coordinate, and remote ordering cannot be reviewed while the shop is down. |
 
 ## Needs one more fact — 24
 

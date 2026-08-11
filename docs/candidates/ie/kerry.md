@@ -54,35 +54,20 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 23
+## Held after verification — 8
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Burke's Butchers | Killorglin | Carne | burkesbutchers.com | +353 66 976 2689 | 52.1078926, -9.7870367 | OSM node/13967956502 |
-| Derrynane Smokehouse | Farranfore (nearest, 5 km) | Carne | www.ringofkerry.net ⚠ | 089 264 2388 | 52.126034, -9.547546 | [FarmFinder](https://farmfinder.ie/producer/derrynane-smokehouse); via SuperValu Food Academy |
-| Seamus O'Sullivan Master Butchers | Blennerville (nearest, 2.6 km) | Carne | www.blocalcard.com ⚠ | 066 7126225 | 52.264334, -9.700522 | [FarmFinder](https://farmfinder.ie/producer/seamus-o-sullivan-master-butchers); via Irish Butchers Guild |
-| Skellig Meats | Kilcummin Farmhill (nearest, 4 km) | Carne | www.skelligmeats.com | (066) 947 4889 | 52.096428, -9.527553 | [FarmFinder](https://farmfinder.ie/producer/skellig-meats); via Associated Craft Butchers of Ireland |
-| Sneem Black Pudding | Sneem (nearest, 1.5 km) | Carne | www.sneemblackpudding.ie | (064) 664 5213 | 51.828902, -9.884975 | [FarmFinder](https://farmfinder.ie/producer/sneem-black-pudding); via SuperValu Food Academy |
-| Lorge Chocolatier | Bonane (nearest, 0.2 km) | Chocolate ? | lorge.ie | (064) 667 9994 | 51.8171139, -9.5372611 | [FarmFinder](https://farmfinder.ie/producer/lorge-chocolatier); via SuperValu Food Academy |
-| Skellig Distillers Limited | Cahersiveen (nearest, 1.8 km) | Destilados y licores ? | skelligsix18distillery.ie | (066) 940 0618 | 51.9356528, -10.2400916 | [FarmFinder](https://farmfinder.ie/producer/skellig-distillers-limited); via Bord Bia Origin Green |
-| Teeling Whiskey Company | The Liberties (nearest, 0.4 km) | Destilados y licores | teelingwhiskey.com | +353 1 531 0888 · hello@teelingwhiskey.com | 53.3375927, -6.2771033 | OSM way/228705547 |
-| Ballyhar Farm Produce | Farranfore (nearest, 5.4 km) | Fruta y verdura ? | www.ballyhar.com | +353872272115 | 52.1232074, -9.5597799 | [FarmFinder](https://farmfinder.ie/producer/ballyhar-farm-produce); via NeighbourFood |
-| Dingle Peninsula Cheese | Dingle/Daingean Uí Chúis (nearest, 1.5 km) | Lácteos y quesos | www.thelittlecheeseshop.ie ⚠ | 087 757 8672 | 52.130194, -10.269966 | [FarmFinder](https://farmfinder.ie/producer/dingle-peninsula-cheese); via SuperValu Food Academy |
-| Lee Strand Cooperative Creamery Ltd | Ballyseedy (nearest, 2.6 km) | Lácteos y quesos ? | www.leestrand.ie | (066) 712 1084 | 52.263996, -9.6920802 | [FarmFinder](https://farmfinder.ie/producer/lee-strand-cooperative-creamery-ltd); via Bord Bia Origin Green |
-| the Little Cheese Company | Dingle/Daingean Uí Chúis (nearest, 0.5 km) | Lácteos y quesos | thelittlecheeseshop.ie | dinglecheeseshop@gmail.com | 52.1405069, -10.2710571 | [FarmFinder](https://farmfinder.ie/producer/the-little-cheese-company); via SuperValu Food Academy |
-| BioAtlantis Ltd | Ballyseedy (nearest, 2.5 km) | Otros | www.bioatlantis.com | (066) 711 8477 | 52.272655799999995, -9.676329899999999 | [FarmFinder](https://farmfinder.ie/producer/bioatlantis-ltd); via Organic Trust |
-| Blasta Delights | Drumraney (nearest, 5.6 km) | Otros | www.blastadelights.ie | 087 969 7560 | 53.510566, -7.68127 | [FarmFinder](https://farmfinder.ie/producer/blasta-delights); via Food Culture Ireland |
-| Bricín | Killarney (nearest, 0.3 km) | Otros | www.bricin.ie | 0646634902 · info@bricin.ie | 52.0609822, -9.5101981 | [FarmFinder](https://farmfinder.ie/producer/bric-n); via NeighbourFood |
-| Dingle Pie Company | Dingle/Daingean Uí Chúis (nearest, 1.1 km) | Otros | www.thedinglepub.com | (066) 915 1583 | 52.133519, -10.27614 | [FarmFinder](https://farmfinder.ie/producer/dingle-pie-company); via SuperValu Food Academy |
-| Dingle Sea Salt | Dún Chaoin (nearest, 0.7 km) | Otros | www.dingleseasalt.ie | 0873982241 | 52.138333, -10.461944 | [FarmFinder](https://farmfinder.ie/producer/dingle-sea-salt); via Food Culture Ireland |
-| Dingle Sushi | Dingle/Daingean Uí Chúis (nearest, 2.2 km) | Otros | www.dinglesushi.com | 087 690 0943 | 52.126182, -10.259661 | [FarmFinder](https://farmfinder.ie/producer/dingle-sushi); via SuperValu Food Academy |
-| Folláin | Fossa (nearest, 0.8 km) | Otros | www.follain.ie | — | 52.0667, -9.5667 | [FarmFinder](https://farmfinder.ie/producer/foll-in); via Bord Bia Origin Green |
-| OrganiGo | Farranfore (nearest, 3.7 km) | Otros | www.organigo.ie | accounts@organigo.ie | 52.1453345, -9.5174011 | [FarmFinder](https://farmfinder.ie/producer/organigo); via NeighbourFood |
-| West of Dingle | Dingle/Daingean Uí Chúis (nearest, 0.8 km) | Otros | www.westofdingle.ie | 086 103 2440 | 52.144999, -10.265173 | [FarmFinder](https://farmfinder.ie/producer/west-of-dingle); via Food Culture Ireland |
-| Catherine's Bakery | The Liberties (nearest, 0 km) | Pan y cereal | catherinescafeandbakery.com | — | 53.3417293, -6.2789831 | OSM node/13739763829 |
-| Lovin' Catering | The Liberties (nearest, 0.3 km) | Pan y cereal | lovincatering.com | +353 1 454 4912 · lovincatering@gmail.com | 53.3407017, -6.2742004 | OSM node/1403258746 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Catherine's Bakery | Pan y cereal | Catherinescafeandbakery.com answers a Cloudflare interstitial, and the lead's coordinate falls in the Liberties, Dublin rather than Kerry; both identity and area are unresolved. |
+| Derrynane Smokehouse | Carne | The site carried for Derrynane Smokehouse is ringofkerry.net, the Derrynane Bay House B&B; the URL must not be carried. |
+| Dingle Peninsula Cheese | Lácteos y quesos | The site carried for Dingle Peninsula Cheese is thelittlecheeseshop.ie, a Dingle cheese shop that sources and matures other makers' cheese; the cheesemaker needs its own source. |
+| Dingle Pie Company | Otros | The site carried for Dingle Pie Company is thedinglepub.com, an entertainment venue; the pie maker needs its own source. |
+| OrganiGo | Otros | OrganiGo describes itself as a ready-to-eat organic vegetable producer but the live site sells compliance training and consultancy; what it currently produces is unresolved. |
+| Seamus O'Sullivan Master Butchers | Carne | The site carried for Seamus O'Sullivan Master Butchers is blocalcard.com, a customer loyalty-card platform; the URL must not be carried. |
+| Sneem Black Pudding | Carne | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| the Little Cheese Company | Lácteos y quesos | The Little Cheese Company and Dingle Peninsula Cheese were filed against the same shop site, thelittlecheeseshop.ie; neither identity is established by it. |
 
 ## Needs one more fact — 48
 

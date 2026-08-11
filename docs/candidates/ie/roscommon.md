@@ -54,15 +54,13 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 3
+## Held after verification — 1
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Waldron Family Meats | Brideswell (nearest, 3.9 km) | Carne ? | www.waldronmeats.ie | (090) 648 8220 | 53.47356, -8.1435836 | [FarmFinder](https://farmfinder.ie/producer/waldron-family-meats); via Bord Bia Origin Green |
-| Sean Butler | Castlerea (nearest, 0.4 km) | Otros | www.hillsideholisticfarm.ie ⚠ | 087 230 8152 | 53.769724599999996, -8.4954593 | [FarmFinder](https://farmfinder.ie/producer/sean-butler); via Organic Trust |
-| Benny's Deli & Bakery | Castlerea | Pan y cereal | www.bennysdeli.com | — | 53.7691966, -8.4949112 | OSM way/843036059 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Sean Butler | Otros | Hillside Holistic Farm publishes an organic farm and holistic healing centre with bookings and mentoring; no food or drink offer established. |
 
 ## Needs one more fact — 11
 

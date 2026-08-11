@@ -54,19 +54,14 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 7
+## Held after verification — 2
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Grogan & Brown Artisan Butchers | Johnswell (nearest, 0.7 km) | Carne | groganandbrownbutchers.com | 056 7764799 | 52.705917, -7.179298 | [FarmFinder](https://farmfinder.ie/producer/grogan-and-brown-artisan-butchers); via Irish Butchers Guild |
-| Costello's Brewing Co. | Kilkenny | Cerveza | www.costellosbrewco.ie | +353868102320 | — | [FarmFinder](https://farmfinder.ie/producer/costellos-brewing-co) |
-| Sullivan's Brewing Co. | Kilkenny | Cerveza | www.sullivansbrewingcompany.com | +353 56 779 7980 · info@sullivansbrewingcompany.com | — | [FarmFinder](https://farmfinder.ie/producer/sullivans-brewing-co) |
-| Iverk Produce ltd | Piltown (nearest, 0.9 km) | Fruta y verdura ? | www.iverkproduce.com | (051) 437 030 | 52.3420281, -7.331642699999999 | [FarmFinder](https://farmfinder.ie/producer/iverk-produce-ltd); via Bord Bia Origin Green |
-| Little Milk Company | Kilkenny (nearest, 2.8 km) | Lácteos y quesos | thelittlemill.ie/where-to-buy | (056) 772 7551 | 52.650753, -7.292469 | [FarmFinder](https://farmfinder.ie/producer/little-milk-company); via SuperValu Food Academy |
-| Store-All Logistics | Slieverue (nearest, 0.7 km) | Otros | www.store-all.ie | (051) 831 200 | 52.288941699999995, -7.0638599 | [FarmFinder](https://farmfinder.ie/producer/store-all-logistics); via Organic Trust |
-| The Cookie Co-op | Kilkenny | Pan y cereal | www.thecookiecoop.ie | +353 86 887 2045 · info@thecookiecoop.ie | 52.6508129, -7.2538099 | OSM node/11056743300 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Costello's Brewing Co. | Cerveza | Costellosbrewco.ie no longer resolves to the brewery: the domain now serves an online casino. A lapsed domain is not proof of closure, so the URL must not be carried and Costello's needs a current source. |
+| Little Milk Company | Lácteos y quesos | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
 
 ## Needs one more fact — 24
 

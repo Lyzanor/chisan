@@ -54,21 +54,16 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 9
+## Held after verification — 4
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Billy Murphy Craft Butchers | Waterford | Carne | www.billymurphy.ie | — | 52.250137, -7.136335 | OSM node/7985139815 |
-| Dunphy's Butchers | Waterford | Carne | www.waterfordshoppingcentrelisduggan.com/dunphys ⚠ | — | 52.2502296, -7.137041 | OSM node/660310485 |
-| Curraghmore Whiskey Ltd | Portlaw (nearest, 3 km) | Destilados y licores | www.curraghmorewhiskey.com | 089 988 7724 | 52.290146899999996, -7.359272099999999 | [FarmFinder](https://farmfinder.ie/producer/curraghmore-whiskey-ltd); via Bord Bia Origin Green |
-| O'Connell Whiskey Merchants | Kilmacthomas (nearest, 1.2 km) | Destilados y licores | wdoconnell.com | (051) 340 044 | 52.200986699999994, -7.406964899999999 | [FarmFinder](https://farmfinder.ie/producer/oconnell-whiskey-merchants); via Bord Bia Origin Green |
-| GIY | Ardkeen (nearest, 0.6 km) | Fruta y verdura ? | giy.ie/pages/weekly-veg-box | 051 584422 | 52.2470868, -7.0809359 | [FarmFinder](https://farmfinder.ie/producer/giy); via Food Culture Ireland |
-| E Flahavan & Sons Ltd | Kilmacthomas (nearest, 0.4 km) | Otros | flahavans.ie | (051) 294 107 | 52.2101005, -7.4252702 | [FarmFinder](https://farmfinder.ie/producer/e-flahavan-and-sons-ltd); via Bord Bia Origin Green |
-| Flavahans | Kilmacthomas (nearest, 1.6 km) | Otros | flahavans.ie ⚠ | (051) 294 107 | 52.2192321, -7.4333254 | [FarmFinder](https://farmfinder.ie/producer/flavahans); via SuperValu Food Academy |
-| Newbard Organic Farm Ltd | Cappoquin (nearest, 3.5 km) | Otros | www.newbardfarm.com | 0851893774 | 52.1724543, -7.9131569 | [FarmFinder](https://farmfinder.ie/producer/newbard-organic-farm-ltd); via Food Culture Ireland |
-| The Italian Bakery | Waterford | Pan y cereal | thestableyard.ie/italian-bakery ⚠ | — | 52.2613298, -7.112283 | OSM node/10011652111 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Billy Murphy Craft Butchers | Carne | Billymurphy.ie returns a hosting 'Account Suspended' page. A suspended host is not proof of closure, so the butcher needs a current source and the URL must not be carried. |
+| Curraghmore Whiskey Ltd | Destilados y licores | Curraghmore Whiskey publishes a single-estate brand tied to Curraghmore Estate but no distillery, address or maturation site; whether a productive unit sits in Portlaw is unresolved. |
+| Dunphy's Butchers | Carne | The published URL returns 404. A missing page is not proof of closure: the producer needs a current URL before it can be resolved. |
+| GIY | Fruta y verdura ? | GIY publishes a charity, cookery school and GROW HQ café in Waterford city plus a veg box grown on a farm at Curraghmore Estate; which unit and municipality the producer row would represent is unresolved. |
 
 ## Needs one more fact — 25
 

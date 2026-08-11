@@ -54,26 +54,14 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 14
+## Held after verification — 2
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| B.Molloy Master Butchers | Roslevan, Ennis (nearest, 2.3 km) | Carne | bmolloymasterbutchers.wordpress.com | (065) 686 8350 | 52.844182, -8.98902 | [FarmFinder](https://farmfinder.ie/producer/b-molloy-master-butchers); via Associated Craft Butchers of Ireland |
-| The Clare Jam Company Ltd | Doolin (nearest, 3.5 km) | Conservas | www.theclarejamcompany.com | (065) 707 4778 | 52.991506, -9.4063435 | [FarmFinder](https://farmfinder.ie/producer/the-clare-jam-company-ltd); via Bord Bia Origin Green |
-| Lahinch Seaweed | Lahinch (nearest, 2.1 km) | Fruta y verdura | www.wildatlanticseaweedbaths.com | — | 52.919117, -9.354375 | [FarmFinder](https://farmfinder.ie/producer/lahinch-seaweed); via SuperValu Food Academy |
-| Moyhill Community Farm | Killone Abbey (nearest, 3.4 km) | Fruta y verdura | www.moyhillfarm.com | 087 130 1937 | 52.816402, -9.051332 | [FarmFinder](https://farmfinder.ie/producer/moyhill-community-farm) |
-| Aillwee Burren Gold Cheese | Ballyvaughan (nearest, 3 km) | Lácteos y quesos | aillweeburrenexperience.ie/burrengoldcheese | (065) 707 7036 | 53.0891282, -9.143667400000002 | [FarmFinder](https://farmfinder.ie/producer/aillwee-burren-gold-cheese); via CAIS - Association of Irish Farmhouse Cheesemakers |
-| Kilshanny Cheese | Barefield (nearest, 1.9 km) | Lácteos y quesos | www.st-tola.ie ⚠ | (065) 683 6633 | 52.89178, -8.975743 | [FarmFinder](https://farmfinder.ie/producer/kilshanny-cheese); via SuperValu Food Academy |
-| St Tola Irish Goat Cheese | Roslevan, Ennis (nearest, 1.7 km) | Lácteos y quesos | www.st-tola.ie | (065) 683 6633 | 52.843245, -8.972631 | [FarmFinder](https://farmfinder.ie/producer/st-tola-irish-goat-cheese); via Food Culture Ireland |
-| Dromoland Castle | Ruan (nearest, 0.5 km) | Otros | www.dromoland.ie | (061) 368 144 | 52.926579, -8.975942 | [FarmFinder](https://farmfinder.ie/producer/dromoland-castle); via SuperValu Food Academy |
-| Hurst Botanicals | Clarecastle (nearest, 0.2 km) | Otros | www.hurstbotanicals.ie | 0656712621 | 52.8147497, -8.9660853 | [FarmFinder](https://farmfinder.ie/producer/hurst-botanicals); via Food Culture Ireland |
-| Irish Seed Savers | Mount Temple (nearest, 2.3 km) | Otros | www.irishseedsavers.ie | (061) 921 866 | 53.450509, -7.786771 | [FarmFinder](https://farmfinder.ie/producer/irish-seed-savers); via Irish Organic Association |
-| Saint Tola | Inagh (nearest, 3.4 km) | Otros | www.st-tola.ie | (065) 683 6633 | 52.9059025, -9.1753182 | [FarmFinder](https://farmfinder.ie/producer/saint-tola); via SuperValu Food Academy |
-| Savage Craic | Ballyvaughan (nearest, 4.9 km) | Otros | savagecraic.ie | — | 53.0767089, -9.1840271 | [FarmFinder](https://farmfinder.ie/producer/savage-craic); via Food Culture Ireland |
-| Siar Photography | Roslevan, Ennis (nearest, 0.8 km) | Otros | www.siarphotography.ie | +353879917813 · hello@siarphotography.ie | 52.8550368, -8.9732168 | [FarmFinder](https://farmfinder.ie/producer/siar-photography); via NeighbourFood |
-| O'Connors | Roslevan, Ennis (nearest, 1.6 km) | Pan y cereal | oconnorsbakery.com | — | 52.8457331, -8.9765574 | OSM node/11883512198 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Kilshanny Cheese | Lácteos y quesos | The site carried for Kilshanny Cheese is st-tola.ie, a different Clare cheesemaker; Kilshanny Farmhouse Cheese needs its own current source. |
+| Lahinch Seaweed | Fruta y verdura | The site carried for Lahinch Seaweed is wildatlanticseaweedbaths.com, a seaweed bathhouse at Doolin Pier; the URL must not be carried and the seaweed harvester needs its own source. |
 
 ## Needs one more fact — 28
 

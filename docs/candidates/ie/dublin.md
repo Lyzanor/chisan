@@ -54,77 +54,51 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 65
+## Held after verification — 39
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Butcher.ie | Smithfield (nearest, 1.4 km) | Carne ? | butcher.ie | — | 53.345748, -6.298829 | [FarmFinder](https://farmfinder.ie/producer/butcher-ie) |
-| Corrigan's Butchers Finglas | Dublin | Carne ? | www.corrigansbutchers.com | 01 8344643 | 53.387873, -6.306395 | [FarmFinder](https://farmfinder.ie/producer/corrigan-s-butchers-finglas); via Irish Butchers Guild |
-| Cosgrave's The Butcher Shop Ballybrack | Dublin | Carne ? | www.cosgraves.ie | (01) 275 1817 | 53.337023, -6.195526 | [FarmFinder](https://farmfinder.ie/producer/cosgrave-s-the-butcher-shop-ballybrack); via Associated Craft Butchers of Ireland |
-| Cosgrave's The Butcher Shop Clarehall | Fairview (nearest, 0.2 km) | Carne ? | www.cosgraves.ie | (01) 871 2003 | 53.363253, -6.229016 | [FarmFinder](https://farmfinder.ie/producer/cosgrave-s-the-butcher-shop-clarehall); via Associated Craft Butchers of Ireland |
-| Cosgrave's The Butcher Shop Crumlin | Priorswood (nearest, 1.5 km) | Carne ? | www.cosgraves.ie | (01) 455 0329 | 53.406877, -6.217805 | [FarmFinder](https://farmfinder.ie/producer/cosgrave-s-the-butcher-shop-crumlin); via Associated Craft Butchers of Ireland |
-| Cosgrave's The Butcher Shop Santry | Walkinstown (nearest, 0.6 km) | Carne ? | www.cosgraves.ie | (01) 842 5534 | 53.330661, -6.339357 | [FarmFinder](https://farmfinder.ie/producer/cosgrave-s-the-butcher-shop-santry); via Associated Craft Butchers of Ireland |
-| Doyle Catering Meats | Rathcoole | Carne | doylecateringmeats.com | +353 1 458 9905 · info@doylecateringmeats.com | — | DAFM meat 2358 |
-| Dublin Meat Company (registered as DPB Meats Ltd T/A Dublin Meat Company) | Swords | Carne | www.dublinmeatcompany.com | +353 1 210 8681 | — | DAFM meat 2903 |
-| Ennis Butchers | Southside (nearest, 0.5 km) | Carne ? | www.ennisbutchers.ie | (01) 454 9282 | 53.335411, -6.270729 | [FarmFinder](https://farmfinder.ie/producer/ennis-butchers) |
-| Etherson Family Butchers | Dublin | Carne ? | www.ethersonsbutchers.ie | (01) 868 2046 | 53.289995, -6.233187 | [FarmFinder](https://farmfinder.ie/producer/etherson-family-butchers); via Associated Craft Butchers of Ireland |
-| Fenlons | Stillorgan (nearest, 0.3 km) | Carne | fenelons.ie ⚠ | +353 1 288 1185 | 53.2893247, -6.2008221 | OSM node/1056711326 |
-| Gleeson Meats Balbriggan | Poppintree (nearest, 0.6 km) | Carne ? | www.gleesonsfreshfoods.ie | (01) 841 6481 | 53.395022, -6.284747 | [FarmFinder](https://farmfinder.ie/producer/gleeson-meats-balbriggan); via Associated Craft Butchers of Ireland |
-| Gleeson Meats Blanchardstown | The Liberties (nearest, 0.4 km) | Carne ? | www.gleesonsfreshfoods.ie | (01) 822 1814 | 53.33834, -6.281009 | [FarmFinder](https://farmfinder.ie/producer/gleeson-meats-blanchardstown); via Associated Craft Butchers of Ireland |
-| Hick's | Dún Laoghaire | Carne | hicks.ie | +353 1 280 1433 · dunlaoghairefoodco@gmail.com | 53.2928077, -6.137495 | OSM node/6178795475 |
-| Higgins Family Butchers | Harmonstown (nearest, 1 km) | Carne ? | www.higginsbutchers.ie | (01) 839 0090 | 53.387207, -6.185824 | [FarmFinder](https://farmfinder.ie/producer/higgins-family-butchers) |
-| J.W. Smyth Butchers | Raheny | Carne ? | www.jwsmythbutchers.ie | (01) 831 3862 | 53.397222, -6.0785 | [FarmFinder](https://farmfinder.ie/producer/j-w-smyth-butchers); via Associated Craft Butchers of Ireland |
-| JW Smiths Butcher | Portmarnock (nearest, 0 km) | Carne | jwsmythbutchers.ie ⚠ | — | 53.4214194, -6.1369418 | OSM node/1947468213 |
-| Kerrigan Butchers Donaghmede | Sandymount (nearest, 0.5 km) | Carne ? | www.kerriganmeats.ie | (01) 847 6869 | 53.324254, -6.199449 | [FarmFinder](https://farmfinder.ie/producer/kerrigan-butchers-donaghmede); via Associated Craft Butchers of Ireland |
-| Kerrigan Butchers Malahide | Malahide (nearest, 0.8 km) | Carne ? | kerrigans.ie | (01) 845 1529 | 53.456736, -6.161012 | [FarmFinder](https://farmfinder.ie/producer/kerrigan-butchers-malahide); via Associated Craft Butchers of Ireland |
-| Kerrigans Butchers | Leopardstown (nearest, 0.9 km) | Carne ? | kerrigans.flipdish.menu/?utm_source=GBP.website&utm_medium=GBP&utm_campaign=br14087-website | (01) 845 1529 | 53.271424, -6.18861 | [FarmFinder](https://farmfinder.ie/producer/kerrigans-butchers) |
-| Larry's Marino Fair | Dublin | Carne | marketfair.ie | — | 53.3709415, -6.2388245 | OSM way/975311026 |
-| Leavy's Butchers | East Wall (nearest, 1.5 km) | Carne ? | colmleavybutchers.ie | (01) 295 6877 | 53.348331, -6.213431 | [FarmFinder](https://farmfinder.ie/producer/leavy-s-butchers); via Associated Craft Butchers of Ireland |
-| The Scarlet Heifer | Foxrock (nearest, 0.6 km) | Carne | www.thescarletheifer.com | — | 53.2663402, -6.1834408 | OSM node/10951811254 |
-| Changing Times Brewery | Glasnevin | Cerveza | www.changingtimesbrewery.com | — | 53.3724219, -6.2935584 | OSM node/12415312348 |
-| Jack Smyth Brewing Company | Tallaght | Cerveza | www.boxtyhouse.ie ⚠ | +35314140032 · info@boxtyhouse.ie | 53.2932581, -6.3537734 | OSM node/9100218750 |
-| The 5 Lamps Brewery | Dublin | Cerveza | the5lampsbrewery.com | — | 53.3359545, -6.2658686 | OSM way/525723347 |
-| The Old Schoolhouse | Swords | Cerveza | theoldschoolhouse.ie | +353 1 8404 160 · info@theoldschoolhouse.ie | 53.4567343, -6.2228014 | OSM way/228009652 |
-| Pearse Lyons | Dublin | Destilados y licores | www.pearselyonsdistillery.com | +353 1 691 6000 · info@pearselyonsdistillery.com | 53.3437206, -6.2894327 | OSM way/239059341 |
-| Roe & Co Distillery | Dublin | Destilados y licores | www.roeandcowhiskey.com ⚠ | — | 53.3438825, -6.2858094 | OSM node/9984256981 |
-| Blazing Salads | Dunsink (nearest, 1.4 km) | Fruta y verdura ? | www.blazingsalads.com | (01) 671 8288 | 53.374769, -6.339413 | [FarmFinder](https://farmfinder.ie/producer/blazing-salads); via Dublin Food Chain |
-| Dublin Hills Goats Cheese | Southside (nearest, 0.4 km) | Lácteos y quesos | www.traditionalcheese.ie ⚠ | (01) 409 0400 | 53.34115, -6.265495 | [FarmFinder](https://farmfinder.ie/producer/dublin-hills-goats-cheese); via Food Culture Ireland |
-| Dubliner Cheese | Perrystown (nearest, 1 km) | Lácteos y quesos | www.sheridanscheesemongers.com ⚠ | (01) 679 3143 | 53.310163, -6.327195 | [FarmFinder](https://farmfinder.ie/producer/dubliner-cheese); via SuperValu Food Academy |
-| Dublins Hill Goats Cheese | Balally (nearest, 1.7 km) | Lácteos y quesos | www.traditionalcheese.ie ⚠ | (01) 409 0400 | 53.272901, -6.253993 | [FarmFinder](https://farmfinder.ie/producer/dublins-hill-goats-cheese); via SuperValu Food Academy |
-| Toons Bridge Dairy | Dublin | Lácteos y quesos ? | www.toonsbridgedairy.com | +35314443877 | 53.3423661, -6.2643889 | OSM node/5337172888 |
-| Asia Market Dublin | East Wall (nearest, 1 km) | Otros | www.asiamarket.ie | (01) 409 7072 | 53.348996, -6.248265 | [FarmFinder](https://farmfinder.ie/producer/asia-market-dublin); via Dublin Food Chain |
-| Avoca | Poppintree (nearest, 2 km) | Otros | www.avoca.com/en/stores-and-cafes/suffolk-street?utm_source=google-my-business/suffolk-street&utm_medium=organic&utm_campaign=web-link&utm_content= | (01) 677 4215 | 53.397164, -6.313149 | [FarmFinder](https://farmfinder.ie/producer/avoca); via Dublin Food Chain |
-| Clondalkin Cheesemaker | Southside (nearest, 0.6 km) | Otros | www.traditionalcheese.ie | (01) 409 0400 | 53.342951, -6.265709 | [FarmFinder](https://farmfinder.ie/producer/clondalkin-cheesemaker); via Dublin Food Chain |
-| Cornucopia | Dunsink (nearest, 0.8 km) | Otros | www.cornucopia.ie | (01) 677 7583 | 53.382827, -6.330023 | [FarmFinder](https://farmfinder.ie/producer/cornucopia); via Dublin Food Chain |
-| Dalkey Handmade Food | Killiney (nearest, 1.8 km) | Otros | www.dalkeyhandmadesoaps.ie | 087 131 7497 | 53.274571, -6.092275 | [FarmFinder](https://farmfinder.ie/producer/dalkey-handmade-food); via SuperValu Food Academy |
-| Dempsey & Byrne | Monkstown (nearest, 1.1 km) | Otros | davybyrnes.com | (01) 472 1010 | 53.286116, -6.142417 | [FarmFinder](https://farmfinder.ie/producer/dempsey-and-byrne); via Associated Craft Butchers of Ireland |
-| Dublin Flea Market | Grangegorman (nearest, 0.3 km) | Otros | www.libertymarket.ie | (01) 280 8683 | 53.353468, -6.274491 | [FarmFinder](https://farmfinder.ie/producer/dublin-flea-market); via Dublin Food Chain |
-| Dublin Herbalist | Southside (nearest, 0.2 km) | Otros | theirishherbalist.ie | 086 341 6252 | 53.338871, -6.261449 | [FarmFinder](https://farmfinder.ie/producer/dublin-herbalist); via SuperValu Food Academy |
-| Dublin Herbalists | Southside (nearest, 0.1 km) | Otros | www.dublinherbalists.ie | 083 106 7630 | 53.336309, -6.263927 | [FarmFinder](https://farmfinder.ie/producer/dublin-herbalists); via Dublin Food Chain |
-| Dublin Port Company Markets | Broadstone (nearest, 0.9 km) | Otros | thegreendoor.ie ⚠ | 085 855 2665 | 53.357637, -6.263926 | [FarmFinder](https://farmfinder.ie/producer/dublin-port-company-markets); via Dublin Food Chain |
-| F.X. Buckley Deansgrange | Deansgrange | Otros | www.fxbuckleybutchers.ie | +353 1 558 4680 | 53.360035, -6.305426 | [FarmFinder](https://farmfinder.ie/producer/f-x-buckley-deansgrange); via Associated Craft Butchers of Ireland |
-| F.X. Buckley Rathcoole | Coolock (nearest, 1.2 km) | Otros | www.fxbuckleybutchers.ie | (01) 401 3925 | 53.381714, -6.217596 | [FarmFinder](https://farmfinder.ie/producer/f-x-buckley-rathcoole); via Associated Craft Butchers of Ireland |
-| F.X. Buckley Rathfarnham | Rathfarnham (nearest, 1.5 km) | Otros | fxbuckleybutchers.ie | (01) 493 2547 | 53.287734, -6.272383 | [FarmFinder](https://farmfinder.ie/producer/f-x-buckley-rathfarnham); via Associated Craft Butchers of Ireland |
-| Honest to Goodness Market Glasnevin | Ballygall (nearest, 0.5 km) | Otros | glasnevinfoodmarket.com | — | 53.380645, -6.269895 | [FarmFinder](https://farmfinder.ie/producer/honest-to-goodness-market-glasnevin); via Dublin Food Chain |
-| Keogh's Farm | Southside (nearest, 0.9 km) | Otros | www.keoghs.ie | (01) 843 3175 | 53.341164, -6.251365 | [FarmFinder](https://farmfinder.ie/producer/keogh-s-farm); via Dublin Food Chain |
-| Lilliput Stores | Ballygall (nearest, 1.1 km) | Otros | www.lilliputstores.com | (01) 672 9516 | 53.380486, -6.291307 | [FarmFinder](https://farmfinder.ie/producer/lilliput-stores); via Dublin Food Chain |
-| Artybaker | Pembroke Township (nearest, 1.2 km) | Pan y cereal | artybaker.com | — | 53.3395505, -6.2373039 | OSM node/13544379821 |
-| Brown Bag Bakery | Blanchardstown (nearest, 0.4 km) | Pan y cereal | www.brownbagbakery.ie | — | 53.3836691, -6.3818952 | OSM node/13759613436 |
-| Butler's Pantry | Blackrock (nearest, 0.8 km) | Pan y cereal | thebutlerspantry.ie | +353 1 288 5505 | 53.3007344, -6.1891885 | OSM node/2301397536 |
-| Cinnamood | Dublin | Pan y cereal | cinnamoodrolls.com | — | 53.3496722, -6.2596616 | OSM way/353991662 |
-| Croissantly | Dún Laoghaire | Pan y cereal | croissantlybakery.ie | hello@croissantly.com | 53.2918611, -6.136701 | OSM node/6184690202 |
-| Fable Bakery | Dún Laoghaire (nearest, 1.2 km) | Pan y cereal | fablebakery.com | — | 53.2901041, -6.1313661 | OSM node/13566318201 |
-| il Valentino | Dublin | Pan y cereal | www.ilvalentino.ie | — | 53.3426047, -6.2390303 | OSM node/3338276450 |
-| Ladurée Dublin | Dublin | Pan y cereal | ladureeireland.com | — | 53.3429671, -6.2621548 | OSM node/5212682322 |
-| The Bretzel Bakery | Portobello (nearest, 0.4 km) | Pan y cereal | www.bretzel.ie | +353 1 4759445 · bretzelshop@bretzel.ie | 53.3312357, -6.2649791 | OSM node/1408878833 |
-| Twist | Dublin | Pan y cereal | www.twistbakerydublin.com | info@twistbakerydublin.com | 53.3460014, -6.2619494 | OSM node/5109507722 |
-| Yami Yami | Poppintree (nearest, 1.4 km) | Pan y cereal | yami-yami.ie | hello@yami-yami.ie | 53.403672, -6.3032756 | OSM node/13525591401 |
-| George's Fish Shop | Dún Laoghaire | Pescado | georgesfishshop.com | +353 1 230 3011 · info@georgesfishshop.com | 53.2857425, -6.1547564 | OSM node/6204207097 |
-| Roberts of Dalkey | Dalkey | Pescado | robertsofdalkey.ie | +353 1 557 0037 | 53.2773914, -6.1038197 | OSM way/237916666 |
-| Fallon & Byrne | Dunsink (nearest, 1.1 km) | Vino ? | www.fallonandbyrne.com/our-restaurants/the-wine-cellar | (01) 472 1010 | 53.389468, -6.321975 | [FarmFinder](https://farmfinder.ie/producer/fallon-and-byrne); via Dublin Food Chain |
-| Solera Wine Merchants Limited | Dublin | Vino | www.solera.ie | +353 1 1547 0562 | 53.3541766, -6.2954937 | OSM node/12114580057 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Artybaker | Pan y cereal | Artybaker publishes four Dublin Eircodes and no single address; which is the bakery is unresolved. |
+| Blazing Salads | Fruta y verdura ? | Blazing Salads publishes a vegan wholefood deli with a click-and-collect menu; which of its range it makes rather than resells is unresolved. |
+| Butcher.ie | Carne ? | Butcher.ie publishes no address; its candidate municipio Smithfield is an inferred nearest settlement 1.4 km from the source coordinate. |
+| Cinnamood | Pan y cereal | Cinnamood publishes a German-language specialty bakery brand with no Dublin address or production site. |
+| Clondalkin Cheesemaker | Otros | See the Dublin Hills Goats Cheese record; same distributor site. |
+| Cornucopia | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Corrigan's Butchers Finglas | Carne ? | Corrigan's Butchers publishes Drumcondra (D09) and Finglas (D11) shops without naming a productive unit; which one the row would represent is unresolved. |
+| Cosgrave's The Butcher Shop Ballybrack | Carne ? | Cosgraves Butchers was filed four times (Ballybrack, Clarehall, Crumlin, Santry) against one site, and each lead's candidate municipio contradicts its branch name; the productive unit is unresolved. |
+| Cosgrave's The Butcher Shop Clarehall | Carne ? | See the Cosgraves Ballybrack record; same site, branch municipio contradicted by the candidate coordinate. |
+| Cosgrave's The Butcher Shop Crumlin | Carne ? | See the Cosgraves Ballybrack record; same site, branch municipio contradicted by the candidate coordinate. |
+| Cosgrave's The Butcher Shop Santry | Carne ? | See the Cosgraves Ballybrack record; same site, branch municipio contradicted by the candidate coordinate. |
+| Dempsey & Byrne | Otros | The site carried for Dempsey & Byrne is davybyrnes.com, a Dublin pub; the URL must not be carried. |
+| Doyle Catering Meats | Carne | Doylecateringmeats.com now serves a parked page of sponsored listings; the URL must not be carried and Doyle Catering Meats needs a current source. |
+| Dublin Flea Market | Otros | The site returns a near-empty body (745 bytes) with no producer content; the lead is unresolved and needs another source. |
+| Dublin Hills Goats Cheese | Lácteos y quesos | Three cheese leads (Dublin Hills Goats Cheese, Dublins Hill Goats Cheese, Clondalkin Cheesemaker) were filed against traditionalcheese.ie, a specialty cheese distributor; none of the three identities is established by it. |
+| Dubliner Cheese | Lácteos y quesos | The site carried for Dubliner Cheese is sheridanscheesemongers.com, a cheesemonger; the Dubliner brand is made elsewhere and needs its own source. |
+| Dublins Hill Goats Cheese | Lácteos y quesos | See the Dublin Hills Goats Cheese record; same distributor site. |
+| Ennis Butchers | Carne ? | Ennis Butchers publishes only 'Rialto, Dublin' with no address, and its candidate municipio is the generic 'Southside'. |
+| F.X. Buckley Deansgrange | Otros | F.X. Buckley was filed three times (Deansgrange, Rathcoole, Rathfarnham) against one site that describes only the Deansgrange shop; the productive unit is unresolved. |
+| F.X. Buckley Rathcoole | Otros | See the F.X. Buckley Deansgrange record; same site, branch unresolved. |
+| F.X. Buckley Rathfarnham | Otros | See the F.X. Buckley Deansgrange record; same site, branch unresolved. |
+| Fable Bakery | Pan y cereal | Fable Bakery publishes a D02 Eircode and delivery to offices but no address or bakery location. |
+| Fenlons | Carne | Fenelons publishes no address; its candidate municipio Stillorgan is inferred from the source coordinate. |
+| Gleeson Meats Balbriggan | Carne ? | Gleesons Fresh Foods was filed for Balbriggan and Blanchardstown against one site whose Eircodes name neither; the productive unit is unresolved. See also the meath lead. |
+| Gleeson Meats Blanchardstown | Carne ? | See the Gleesons Balbriggan record; same site, branch unresolved. |
+| Hick's | Carne | The published URL returns 404. A missing page is not proof of closure: the producer needs a current URL before it can be resolved. |
+| Honest to Goodness Market Glasnevin | Otros | The site carried for Honest to Goodness Market Glasnevin is the Glasnevin Food Market page at 38a Barrow Road, Dublin 11; whether it is a producer or a market venue is unresolved. |
+| il Valentino | Pan y cereal | Il Valentino serves an unconfigured site titled 'Your Site Title' carrying two Dublin Eircodes; the bakery needs a current source. |
+| Jack Smyth Brewing Company | Cerveza | The site carried for Jack Smyth Brewing Company is boxtyhouse.ie, Gallagher's Boxty House restaurant; the URL must not be carried. |
+| Keogh's Farm | Otros | Keogh's Crisps publishes only 'North County Dublin' for its family farm; its candidate municipio is the generic 'Southside', which contradicts that. |
+| Kerrigan Butchers Donaghmede | Carne ? | Kerrigans Butchers was filed three times against two sites; the Flipdish listing names 58b Grange Drive, Baldoyle while the candidate municipios say Sandymount, Malahide and Leopardstown. The productive unit is unresolved. |
+| Kerrigan Butchers Malahide | Carne ? | See the Kerrigans Donaghmede record; same business, branch unresolved. |
+| Kerrigans Butchers | Carne ? | See the Kerrigans Donaghmede record; this lead points at the Flipdish ordering page rather than the producer's own site. |
+| Larry's Marino Fair | Carne | The site answers HTTP 402 on every automated route tried; the lead is unresolved and needs a browser session. |
+| Leavy's Butchers | Carne ? | Colm Leavy Butchers publishes no address; its candidate municipio East Wall is an inferred nearest settlement 1.5 km from the source coordinate. |
+| Roberts of Dalkey | Pescado | Robertsofdalkey.ie serves an empty Apache directory index, so no site stands behind the domain. That is not proof of closure; the producer needs another current source and the URL must not be carried. |
+| The 5 Lamps Brewery | Cerveza | The 5 Lamps publishes a Dublin beer brand with no brewery, address or production detail; whether a productive unit exists is unresolved. |
+| The Scarlet Heifer | Carne | The Scarlet Heifer publishes Leopardstown and Foxrock shops under a D18 Eircode without naming a productive unit. |
+| Yami Yami | Pan y cereal | Yami Yami publishes 'Fresh daily in Charlestown' with no address; Charlestown is a shopping centre rather than a town, so the municipality is unresolved. |
 
 ## Needs one more fact — 75
 

@@ -54,33 +54,18 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Ready to verify — 21
+## Held after verification — 6
 
-A live own website plus a municipio candidate: one fetch of that site should settle identity, activity, location and remote ordering.
+Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
-| Lead | Municipio? | Category | Website | Contact | Coordinates | Source |
-|---|---|---|---|---|---|---|
-| Brady's Butchers Athenry | Athenry (nearest, 0.4 km) | Carne | www.bradysbutchers.com | (091) 844 009 | 53.299866, -8.752421 | [FarmFinder](https://farmfinder.ie/producer/brady-s-butchers-athenry); via Associated Craft Butchers of Ireland |
-| Burkes Butchers | Milltown | Carne | burkesbutchers.com | — | 52.1447423, -9.7180624 | OSM node/13566088416 |
-| Connemara Mountain Lamb | Galway (nearest, 0.3 km) | Carne | www.nationalparks.ie/connemara ⚠ | (095) 41054 | 53.272717, -9.053647 | [FarmFinder](https://farmfinder.ie/producer/connemara-mountain-lamb-co-galway); via Irish Organic Association |
-| Divillys | Oranmore (nearest, 3.6 km) | Carne | divillymeats.ie | +353 91 795 200 · info@divillymeats.com | 53.2986816, -8.9240286 | OSM node/7964718006 |
-| McDonagh Butchers Kilkerrin | Menlo (nearest, 2.6 km) | Carne ? | www.mcgrealsfoods.ie ⚠ | (091) 753 088 | 53.309853, -9.023964 | [FarmFinder](https://farmfinder.ie/producer/mcdonagh-butchers-kilkerrin); via Associated Craft Butchers of Ireland |
-| Grá Chocolates | Galway (nearest, 3.6 km) | Chocolate ? | grachocolates.com/collections/shop | 085 229 4653 | 53.291041899999996, -9.0047037 | [FarmFinder](https://farmfinder.ie/producer/gr-chocolates); via Bord Bia Origin Green |
-| Truffle | Galway | Chocolate | www.trufflegalway.com | +353 91 456 484 | 53.2736619, -9.0529748 | OSM node/10136105408 |
-| Ahascragh Distillers Ltd | Ahascragh (nearest, 0.4 km) | Destilados y licores ? | ahascraghdistillery.com | (090) 968 8935 | 53.396838599999995, -8.3354552 | [FarmFinder](https://farmfinder.ie/producer/ahascragh-distillers-ltd); via Bord Bia Origin Green |
-| Tribe Irish Gin School | Galway | Destilados y licores | tribegin.ie | — | 53.2612305, -9.0744791 | OSM node/10207487947 |
-| Terryland Fruit & Veg Market | Galway (nearest, 1.4 km) | Fruta y verdura | terrylandfruitandveg.com | (091) 564 495 | 53.283328, -9.041877 | [FarmFinder](https://farmfinder.ie/producer/terryland-fruit-and-veg-market) |
-| Leahy Beekeeping | Loughnavalley (nearest, 7.2 km) | Miel ? | leahybeekeeping.com | 083 478 0022 | 53.508932, -7.628425 | [FarmFinder](https://farmfinder.ie/producer/leahy-beekeeping); via SuperValu Food Academy |
-| A NATURAL LIFE by Dr Suraya Diaz | Caltra (nearest, 4.8 km) | Otros | www.naturallifebydrdiaz.com | (091) 804 998 | 53.454384, -8.370614 | [FarmFinder](https://farmfinder.ie/producer/a-natural-life-by-dr-suraya-diaz); via Organic Trust |
-| Barry John Sausages | Galway (nearest, 0.5 km) | Otros | www.barryjohnsausages.ie | — | 53.2707, -9.0568 | [FarmFinder](https://farmfinder.ie/producer/barry-john-sausages); via Bord Bia Origin Green |
-| Blakes Always Organic Ltd | Moycullen (nearest, 3.7 km) | Otros | blakesalwaysorganic.ie | (071) 964 0537 | 53.346645, -9.125971 | [FarmFinder](https://farmfinder.ie/producer/blakes-always-organic-ltd); via Food Culture Ireland |
-| Gran Grans Foods LTD | Kilcolgan (nearest, 0.3 km) | Otros | grangransfoods.ie | 087 234 0345 | 53.2114334, -8.8704746 | [FarmFinder](https://farmfinder.ie/producer/gran-grans-foods-ltd); via Bord Bia Origin Green |
-| GreenEarth Organics | Galway (nearest, 1.8 km) | Otros | www.greenearthorganics.ie | (091) 793 768 | 53.284701, -9.065346 | [FarmFinder](https://farmfinder.ie/producer/greenearth-organics-co-galway); via Irish Organic Association |
-| Nibbed | Athenry (nearest, 2.7 km) | Otros | www.nibbed.ie | — | 53.2871605, -8.7805351 | [FarmFinder](https://farmfinder.ie/producer/nibbed); via Bord Bia Origin Green |
-| Saraâs Choice | Moycullen (nearest, 0.3 km) | Otros | www.saraschoice.com | (091) 868 272 | 53.3403523, -9.1835858 | [FarmFinder](https://farmfinder.ie/producer/sara-s-choice); via Organic Trust |
-| Sheridans Cheesemongers Box | Galway | Otros | www.sheridanscheesemongers.com | +353 91 564 829 | — | [FarmFinder](https://farmfinder.ie/producer/sheridans-cheesemongers-box); via FarmFinder Team |
-| The Multidimensional Natural Medicine Institute | Caltra (nearest, 4.7 km) | Otros | naturallife.institute | (091) 804 998 | 53.454559499999995, -8.3711834 | [FarmFinder](https://farmfinder.ie/producer/the-multidimensional-natural-medicine-institute); via Organic Trust |
-| O'Connor's Bakery | Galway | Pan y cereal | www.oconnorsbakery.com/c/locations/44#salthill | — | 53.2614348, -9.0743267 | OSM node/9393278901 |
+| Lead | Category | Why it is still open |
+|---|---|---|
+| Barry John Sausages | Otros | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Connemara Mountain Lamb | Carne | The site carried for Connemara Mountain Lamb is nationalparks.ie, the Connemara National Park page; the URL must not be carried and the producer needs its own source. |
+| McDonagh Butchers Kilkerrin | Carne ? | The site carried for McDonagh Butchers Kilkerrin is mcgrealsfoods.ie, trading as McGreals Craft Butchers and Mace Supermarket; a different identity. |
+| Nibbed | Otros | Nibbed Cacao publishes no address; its candidate municipio Athenry is an inferred nearest settlement 2.7 km from the source coordinate. |
+| Saraâs Choice | Otros | The domain fails TLS or refuses connection on every route tried (both schemes, both www variants, certificate checks relaxed). A transport failure is not proof of closure; the lead is unresolved. |
+| Terryland Fruit & Veg Market | Fruta y verdura | The site returns a near-empty body (552 bytes) with no producer content; the lead is unresolved and needs another source. |
 
 ## Needs one more fact — 43
 
