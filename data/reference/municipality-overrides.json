@@ -1697,5 +1697,39 @@
         "region": "south-west"
       }
     ]
+  },
+  "ie": {
+    "dublin": [
+      {
+        "lat": 53.34972,
+        "lon": -6.26028,
+        "label": "Dublin",
+        "region": "leinster"
+      }
+    ],
+    "stradbally": [
+      {
+        "lat": 53.017,
+        "lon": -7.153,
+        "label": "Stradbally (Laois)",
+        "region": "leinster"
+      }
+    ],
+    "bunacurry": [
+      {
+        "lat": 53.97832,
+        "lon": -9.97211,
+        "label": "Bunacurry (Achill, Mayo)",
+        "region": "connacht"
+      }
+    ],
+    "cuffesgrange": [
+      {
+        "lat": 52.61478,
+        "lon": -7.3309,
+        "label": "Cuffesgrange (Kilkenny)",
+        "region": "leinster"
+      }
+    ]
   }
 }

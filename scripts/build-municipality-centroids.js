@@ -64,6 +64,19 @@
 //     stronger reason: English village names repeat relentlessly (Newton,
 //     Sutton, Weston, Whitchurch), so an arbitrary winner would turn correct
 //     rows into blocking geo errors.
+//   - Ireland: the same settlement union as the United Kingdom and for the same
+//     absence of a municipality layer — an Irish address carries a town or
+//     village, never one of the 31 local authorities. Asked for one class at a
+//     time and restricted by country (P17 = Q27), because the transitive
+//     P31/P279* walk times out here too. The townland, the layer below the
+//     village that rural addresses do sometimes name, is deliberately left out:
+//     Wikidata holds ~60.000 of them, their names repeat far more than
+//     settlement names do, and one that shares a name with a real town (Fermoy)
+//     would take that town's key down with it. Labels in en and ga, so a
+//     Gaeltacht producer writing An Daingean or An Spidéal resolves as well as
+//     the English spelling. Marked `dropAmbiguous` for the usual reason: Ballina
+//     in Mayo and Ballina in Tipperary are 150 km apart, past the blocking
+//     threshold, so an arbitrary winner would fail a correct row.
 //
 // The "mul" label
 // - Wikidata's multilingual label holds the name of an entity spelled the same
@@ -220,6 +233,17 @@ const COUNTRIES = [
     classes: ["wd:Q515", "wd:Q3957", "wd:Q1115575", "wd:Q532", "wd:Q5084", "wd:Q486972"],
     countryClass: "wd:Q145",
     langs: ["mul", "en", "cy", "gd"],
+    canonicalLang: "en",
+    extraFilter: "",
+    dropAmbiguous: true,
+  },
+  {
+    slug: "ireland",
+    code: "ie",
+    label: "Ireland",
+    classes: ["wd:Q515", "wd:Q3957", "wd:Q532", "wd:Q5084", "wd:Q486972"],
+    countryClass: "wd:Q27",
+    langs: ["mul", "en", "ga"],
     canonicalLang: "en",
     extraFilter: "",
     dropAmbiguous: true,

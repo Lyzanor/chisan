@@ -1,0 +1,172 @@
+{
+  "label": "Ireland",
+  "unit": {
+    "one": "county",
+    "many": "counties"
+  },
+  "regionUnit": {
+    "one": "province",
+    "many": "provinces"
+  },
+  "aliases": {
+    "ceatharlach": "carlow",
+    "baile-atha-cliath": "dublin",
+    "cill-dara": "kildare",
+    "cill-chainnigh": "kilkenny",
+    "laoighis": "laois",
+    "leix": "laois",
+    "an-longfort": "longford",
+    "longfort": "longford",
+    "lu": "louth",
+    "an-mhi": "meath",
+    "uibh-fhaili": "offaly",
+    "an-iarmhi": "westmeath",
+    "loch-garman": "wexford",
+    "cill-mhantain": "wicklow",
+    "an-clar": "clare",
+    "corcaigh": "cork",
+    "ciarrai": "kerry",
+    "luimneach": "limerick",
+    "tiobraid-arann": "tipperary",
+    "port-lairge": "waterford",
+    "gaillimh": "galway",
+    "liatroim": "leitrim",
+    "maigh-eo": "mayo",
+    "ros-comain": "roscommon",
+    "sligeach": "sligo",
+    "an-cabhan": "cavan",
+    "dun-na-ngall": "donegal",
+    "tir-chonaill": "donegal",
+    "muineachan": "monaghan"
+  },
+  "regions": [
+    {
+      "slug": "leinster",
+      "label": "Leinster",
+      "areas": [
+        {
+          "slug": "carlow",
+          "label": "Carlow"
+        },
+        {
+          "slug": "dublin",
+          "label": "Dublin"
+        },
+        {
+          "slug": "kildare",
+          "label": "Kildare"
+        },
+        {
+          "slug": "kilkenny",
+          "label": "Kilkenny"
+        },
+        {
+          "slug": "laois",
+          "label": "Laois"
+        },
+        {
+          "slug": "longford",
+          "label": "Longford"
+        },
+        {
+          "slug": "louth",
+          "label": "Louth"
+        },
+        {
+          "slug": "meath",
+          "label": "Meath"
+        },
+        {
+          "slug": "offaly",
+          "label": "Offaly"
+        },
+        {
+          "slug": "westmeath",
+          "label": "Westmeath"
+        },
+        {
+          "slug": "wexford",
+          "label": "Wexford"
+        },
+        {
+          "slug": "wicklow",
+          "label": "Wicklow"
+        }
+      ]
+    },
+    {
+      "slug": "munster",
+      "label": "Munster",
+      "areas": [
+        {
+          "slug": "clare",
+          "label": "Clare"
+        },
+        {
+          "slug": "cork",
+          "label": "Cork"
+        },
+        {
+          "slug": "kerry",
+          "label": "Kerry"
+        },
+        {
+          "slug": "limerick",
+          "label": "Limerick"
+        },
+        {
+          "slug": "tipperary",
+          "label": "Tipperary"
+        },
+        {
+          "slug": "waterford",
+          "label": "Waterford"
+        }
+      ]
+    },
+    {
+      "slug": "connacht",
+      "label": "Connacht",
+      "areas": [
+        {
+          "slug": "galway",
+          "label": "Galway"
+        },
+        {
+          "slug": "leitrim",
+          "label": "Leitrim"
+        },
+        {
+          "slug": "mayo",
+          "label": "Mayo"
+        },
+        {
+          "slug": "roscommon",
+          "label": "Roscommon"
+        },
+        {
+          "slug": "sligo",
+          "label": "Sligo"
+        }
+      ]
+    },
+    {
+      "slug": "ulster",
+      "label": "Ulster",
+      "areas": [
+        {
+          "slug": "cavan",
+          "label": "Cavan"
+        },
+        {
+          "slug": "donegal",
+          "label": "Donegal"
+        },
+        {
+          "slug": "monaghan",
+          "label": "Monaghan"
+        }
+      ]
+    }
+  ]
+}
