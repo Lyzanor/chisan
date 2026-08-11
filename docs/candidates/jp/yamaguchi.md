@@ -1,28 +1,11 @@
 # Yamaguchi — candidatos
 
-- CSV: `data/csv/jp/chugoku/yamaguchi.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/chugoku/yamaguchi.csv` (41 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/yamaguchi> (40 bodegas, leído 2026-08-04). Gremio: 山口県酒造組合, <http://y-shuzo.com/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Asahi Shuzo | 旭酒造 | Iwakuni ⚠ |
-| Sakai Shuzo | 酒井酒造 | Iwakuni |
-| Ohmine Shuzo | 大嶺酒造 | Mine |
-| Iwasaki Shuzo | 岩崎酒造 | Hagi |
-| Ichimaru Shuzo | 一〇酒造 | Hagi |
-| Okazaki Shuzojo | 岡崎酒造場 | Hagi |
-| Abunotsuru Shuzo | 阿武の鶴酒造 | Abu |
-| Kono Shuzo | 河野酒造 | Abu |
-| Otsu Shurui Jozo | 大津酒類醸造 | Nagato |
-| Kozaki Shuzo | 小崎酒造 | Nagato |
-| Otokojiman Shuzo | 男自慢酒造 | Shunan |
-| Kanemitsu Shuzo | 金光酒造 | Yamaguchi ⚠ |
-| Kinbundo Shuzo | 金分銅酒造 | Kudamatsu |
-| Kodama Shuzo | 児玉酒造 | Shimonoseki |
 
 ## Trampas
 - ⚠ **旭酒造 (Iwakuni) es la del 獺祭 (Dassai)**, probablemente el sake japonés
@@ -47,6 +30,8 @@ confirmar contra la web de cada bodega.
   外郎 (uiro) de Yamaguchi-shi.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 17 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -78,10 +63,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 ## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
 
@@ -89,44 +71,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
 - Fuentes de esta tanda:
   - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **3 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 宇部蒲鉾 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.ubekama.com/ | ⚠ desde 2024 opera como 北九州ニッスイ宇部工場: comprobar quién elabora hoy |
-| 杉本利兵衛本店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; 焼き抜き蒲鉾 en Hofu |
-| 村田蒲鉾店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; Hagi |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chugoku/yamaguchi.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/yamaguchi> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 7, Pescado 4, Setas 2, Pan y cereal 2, ⚠ por decidir 2, Miel 1, Huevos 1, Carne 1, Condimentos 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 西岡養蜂場 | 下関市 | Miel | ficha | — | https://www.tabechoku.com/producers/3077346 |  |
-| ルネサンスエコファーム | 防府市 | Huevos | ficha | — | https://www.tabechoku.com/producers/21739 |  |
-| RYOMA KINOKO FARM | 下関市 | Setas | ficha | — | https://www.tabechoku.com/producers/3077426 |  |
-| きくらげの里 | 柳井市 | Setas | ficha | — | https://www.tabechoku.com/producers/22735 |  |
-| 嵩海丸 | 下関市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28825 |  |
-| 七福丸 | 宇部市 | Pescado | ficha | — | https://www.tabechoku.com/producers/25133 |  |
-| 【長州床波の海人】瀬戸内ブランド | 宇部市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078611 |  |
-| 竜王丸　中村竜司 | 萩市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22411 |  |
-| ホホヱミ農園 | 長門市 | Carne | ficha | — | https://www.tabechoku.com/producers/3077728 |  |
-| 白上わさび | 岩国市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/26683 |  |
-| 小野養豚 | 萩市萩市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/28907 |  |
-| 粟屋農場 | 防府市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/20059 |  |
-| マロマロファーム | 田布施町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/3078282 | 山口県熊毛郡田布施町 |
-| ユーフォリア | 下関市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23194 |  |
-| fu do ku kan Bamboo | 周南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25434 |  |
-| 土ノ音 | 周防大島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28103 | 山口県大島郡周防大島町戸田 |
-| 茶菜農園 | 大島群周防大島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29164 |  |
-| 西日本建設サービス | 宇部市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23488 |  |
-| あわや自然農園 | 山口市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29168 |  |
-| 長門アグリスト | 長門市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23229 |  |
-| 畦花 azehana | 下関市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/25784 |  |
-| 【百万石ブランド】長州植村総本家 | 下関市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/28827 |  |
+| 宇部蒲鉾 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.ubekama.com/ | ⚠ desde 2024 opera como 北九州ニッスイ宇部工場: comprobar quién elabora hoy; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 杉本利兵衛本店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; 焼き抜き蒲鉾 en Hofu; revisado 2026-08-11: retenido (NOURL, falta confirmar actividad o unidad productiva) |
+| 村田蒲鉾店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; Hagi; revisado 2026-08-11: retenido (NOURL, falta confirmar actividad o unidad productiva) |

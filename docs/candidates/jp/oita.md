@@ -2,27 +2,10 @@
 
 - CSV: `data/csv/jp/kyushu-okinawa/oita.csv` (1 fila: Hita Tenryosui, bebidas). Dedup: ninguna de abajo solapa.
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/oita> (31 bodegas, leído 2026-08-04). Gremio: 大分県酒造組合, <http://www.oita-sake.or.jp/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Categoría para todas: `Sake`, con la salvedad de abajo. El rōmaji de `nombre` y
 `municipio` es propuesta a confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Inoue Shuzo | 井上酒造 | Hita |
-| Oimatsu Shuzo | 老松酒造 | Hita ⚠ |
-| Kuncho Shuzo | クンチョウ酒造 | Hita |
-| Kuge Honten | 久家本店 | Usuki |
-| Kotegawa Shuzo | 小手川酒造 | Usuki |
-| Emoto Shoten | 江本商店 | Usa |
-| Oita Meijo | 大分銘醸 | Usa |
-| Kubo Shuzo | 久保酒造 | Usa |
-| Aso Honten | 麻生本店 | Yufu |
-| Daichi Shuzo | 大地酒造 | Saiki |
-| Ono Shuzo | 小野酒造 | Kitsuki |
-| Kamenoi Shuzo | 亀の井酒造 | Kusu |
-| Kayashima Shuzo | 萱島酒造 | Kunisaki |
-| Kira Shuzo | 吉良酒造 | Bungoono |
 
 ## Trampas
 - **`hita` ya está desambiguado** en `data/reference/municipality-overrides.json`
@@ -49,6 +32,8 @@ Categoría para todas: `Sake`, con la salvedad de abajo. El rōmaji de `nombre` 
   (nació en Kyushu y hay obradores pequeños); 日田の水と醤油.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 17 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -79,7 +64,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
-- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **2 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -93,46 +78,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/oita.php> (nombre, dirección y web propia de cada socio)
   - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **5 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **3 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 但馬屋老舗 | 竹田市 | Dulces y repostería | 和菓子協会 | http://www.tajimaya-roho.co.jp/ | 竹田市竹田町 40 |
-| マルトモ物産 | 中津市 | Setas | búsqueda dirigida + web propia | https://www.marutomo-kanbutsu.co.jp/ | ⚠ mayorista de secos, triar antes de dar de alta |
-| やまよし | 別府市 | Setas | búsqueda dirigida + web propia | https://www.shiitake-ya.co.jp/ | 乾しいたけ; ⚠ comprobar si elabora o distribuye |
-| 大分乾物 | 国東市 | Setas | búsqueda dirigida + web propia | https://www.oitakanbutu.com/ | 原木乾しいたけ del Kunisaki |
-| オーエスケー | 杵築市 | Setas | búsqueda dirigida + web propia | http://osk-shiitake.com/ | 乾しいたけ; ⚠ proveedor del gremio, triar |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/oita.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/oita> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 6, Pescado 4, Setas 2, Carne 2, Pan y cereal 2, Frutos secos 2, Miel 1, Huevos 1, Condimentos 1, Aceite 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 日本ミツバチ専門　吉田養蜂所 | 宇佐市 | Miel | ficha | — | https://www.tabechoku.com/producers/21695 |  |
-| 元さん農園 | 佐伯市 | Huevos | ficha | — | https://www.tabechoku.com/producers/26898 |  |
-| かやの椎茸屋 | 佐伯市 | Setas | ficha | — | https://www.tabechoku.com/producers/20340 |  |
-| 産地直送　菜葉屋 | 大分市 | Setas | ficha | — | https://www.tabechoku.com/producers/23656 |  |
-| KASORE NATURAL 九重農場（旧：Y・Yふぁ～む） | 九重町 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077151 | 大分県玖珠郡九重町 |
-| 豊後マダコ | 佐伯市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078831 |  |
-| カズフジ | 佐伯市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28273 |  |
-| 新栄丸 | 佐伯市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21210 |  |
-| さとやま農園 | 大分市 | Carne | ficha | — | https://www.tabechoku.com/producers/26949 |  |
-| 安心院ソーセージ　宇佐ジビエファクトリー | 宇佐市 | Carne | ficha | — | https://www.tabechoku.com/producers/20918 |  |
-| まくファーム | 別府市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/3077214 |  |
-| 油花 | 豊後高田市 | Aceite | ficha | — | https://www.tabechoku.com/producers/21039 |  |
-| 平和農園 | 由布市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/27467 |  |
-| 自然栽培米　月日(つきひ) | 豊後高田市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/23192 |  |
-| 栗秋農園 | 日田市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/3079039 |  |
-| オノ農場 | 臼杵市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/28400 |  |
-| Baji西洋野菜研究所 | 大分市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22120 |  |
-| 雪乃屋 | 宇佐市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23066 |  |
-| おもとの丘ファーム | 宇佐市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24965 |  |
-| やーやまや | 杵築市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23949 |  |
-| アトリエ天使のバラ | 杵築市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25034 |  |
-| 一粒万倍 | 竹田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27597 |  |
+| マルトモ物産 | 中津市 | Setas | búsqueda dirigida + web propia | https://www.marutomo-kanbutsu.co.jp/ | ⚠ mayorista de secos, triar antes de dar de alta; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| やまよし | 別府市 | Setas | búsqueda dirigida + web propia | https://www.shiitake-ya.co.jp/ | 乾しいたけ; ⚠ comprobar si elabora o distribuye; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| オーエスケー | 杵築市 | Setas | búsqueda dirigida + web propia | http://osk-shiitake.com/ | 乾しいたけ; ⚠ proveedor del gremio, triar; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |

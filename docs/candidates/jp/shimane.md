@@ -1,28 +1,11 @@
 # Shimane — candidatos
 
-- CSV: `data/csv/jp/chugoku/shimane.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/chugoku/shimane.csv` (49 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/shimane> (34 bodegas, leído 2026-08-04). Gremio: 島根県酒造組合, <http://www.shimane-sake.or.jp/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Izumo es, según el 出雲国風土記, donde se documenta el sake más antiguo de Japón.
 Categoría para todas: `Sake`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Oroku Shuzo | 王祿酒造 | Matsue |
-| Kisuki Shuzo | 木次酒造 | Unnan ⚠ |
-| Asahi Shuzo (Kyokujitsu) | 旭日酒造 | Izumo |
-| Itakura Shuzo | 板倉酒造 | Izumo |
-| Ichinomiya Shuzo | 一宮酒造 | Oda |
-| Kimura Shuzo | 木村酒造 | Oda ⚠ |
-| Aoto Shuzo | 青砥酒造 | Yasugi |
-| Akana Shuzo | 赤名酒造 | Iinan |
-| Ikezuki Shuzo | 池月酒造 | Ohnan |
-| Kamofuku Shuzo | 加茂福酒造 | Ohnan |
-| Okuizumo Shuzo | 奥出雲酒造 | Okuizumo |
-| Kasen Shuzo | 華泉酒造 | Tsuwano |
-| Okadaya Honten | 岡田屋本店 | Masuda |
-| Oki Shuzo | 隠岐酒造 | Okinoshima |
 
 ## Trampas
 - ⚠ **木次酒造 (sake) y 木次乳業 (Kisuki Nyugyo, lácteos) son dos empresas
@@ -46,6 +29,8 @@ Categoría para todas: `Sake`.
   una de las tres capitales del té y el dulce de Japón.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -79,60 +64,9 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **2 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 島根ビール | Matsue | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
 | 石見麦酒 (石見酒造) | Gotsu | Cerveza | JBA | iwami-bakushu.com | revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chugoku/shimane.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/shimane.php> (nombre, dirección y web propia de cada socio)
-  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **5 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 福泉堂 | 出雲市 | Dulces y repostería | 和菓子協会 | http://www.shishisu.com/ | 出雲市斐川町直江町 5158 |
-| 風流堂 | 松江市 | Dulces y repostería | 和菓子協会 | http://www.furyudo.jp | 松江市白潟本町 15 |
-| 彩雲堂 | 松江市 | Dulces y repostería | 和菓子協会 | http://www.saiundo.co.jp/ | 松江市天神町 124 |
-| 福田屋 | 松江市 | Dulces y repostería | 和菓子協会 | http://www.matsue-fukudaya.com/ | 松江市中原町 159 |
-| 中浦食品 | 松江市 | Conservas | búsqueda dirigida + web propia | https://www.nakaura-f.co.jp/ | 板わかめ, tsukudani; fundada 1686 |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chugoku/shimane.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/shimane> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 8, Pescado 5, Setas 3, Carne 2, Pan y cereal 2, Miel 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| りせらや養蜂園 | 江津市 | Miel | ficha | — | https://www.tabechoku.com/producers/3077853 |  |
-| 出雲の小さなきくらげ屋さん | 出雲市 | Setas | ficha | — | https://www.tabechoku.com/producers/3077978 |  |
-| 八谷原木きのこ | 浜田市 | Setas | ficha | — | https://www.tabechoku.com/producers/23351 |  |
-| ますだ季の香 | 益田市 | Setas | ficha | — | https://www.tabechoku.com/producers/28217 |  |
-| しじみ漁師の店 大竹屋 | 出雲市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23831 |  |
-| 奥宇賀屋｜三代目しじみ漁師 | 出雲市 | Pescado | ficha | — | https://www.tabechoku.com/producers/28561 |  |
-| ヤシロファーム | 出雲市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21921 |  |
-| 永幸丸 【岩牡蠣養殖・素潜り】 | 松江市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24173 |  |
-| Mueller's Farm  ムラーズファーム | 海士町 | Pescado | ficha | — | https://www.tabechoku.com/producers/20680 | 島根県隠岐郡海士町 |
-| エコファームささだ | 大田市 | Carne | ficha | — | https://www.tabechoku.com/producers/20791 |  |
-| さとうのんびり農園 | 雲南市 | Carne | ficha | — | https://www.tabechoku.com/producers/26428 |  |
-| 𠮷野屋 | 大田市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/27676 |  |
-| HYAKUSYOU　岩本 | 隠岐の島町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078497 | 島根県隠岐郡隠岐の島町 |
-| SPIRA FARM | 出雲市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/21532 |  |
-| Fattoria Natura | 出雲市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22339 |  |
-| ぴたごらファーム | 奥出雲町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26025 | 島根県仁多郡奥出雲町 |
-| 安藤農園 | 松江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078087 |  |
-| マルカミ農縁 | 松江市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078808 |  |
-| アグリプラント甲斐の木 | 江津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22391 |  |
-| やまあいピクルス | 江津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27723 |  |
-| ひだまりファーム | 津和野町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28404 | 島根県鹿足郡津和野町 |
-| 森田園芸 | 益田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27321 |  |

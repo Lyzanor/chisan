@@ -1,27 +1,11 @@
 # Kanagawa — candidatos
 
-- CSV: `data/csv/jp/kanto/kanagawa.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/kanto/kanagawa.csv` (53 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/kanagawa> (13 bodegas, censo completo). Gremio: 神奈川県酒造組合, <http://www.kanagawa-jizake.or.jp/>.
-- Estado: cola abierta, 13 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Las 13 bodegas de Kanagawa están en el **oeste rural** (Ashigara, Hadano, Atsugi)
 y ninguna en Yokohama ni Kawasaki. Categoría: `Sake`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Izumibashi Shuzo | 泉橋酒造 | Ebina |
-| Kumazawa Shuzo | 熊澤酒造 | Chigasaki |
-| Kikkawa Jozo | 吉川醸造 | Isehara |
-| Kanai Shuzoten | 金井酒造店 | Hadano |
-| Koganei Shuzo | 黄金井酒造 | Atsugi |
-| Oyataka Shuzo | 大矢孝酒造 | Aikawa |
-| Kubota Shuzo | 久保田酒造 | Sagamihara |
-| Shimizu Shuzo | 清水酒造 | Sagamihara |
-| Ishii Jozo | 石井醸造 | Oi |
-| Inoue Shuzo | 井上酒造 | Oi |
-| Kawanishiya Shuzoten | 川西屋酒造店 | Yamakita |
-| Seto Shuzoten | 瀬戸酒造店 | Kaisei |
-| Nakazawa Shuzo | 中澤酒造 | Matsuda |
 
 ## Trampas
 - **熊澤酒造 (Chigasaki)** hace sake *y* 湘南ビール: es **una fila**, con la
@@ -39,6 +23,8 @@ y ninguna en Yokohama ni Kawasaki. Categoría: `Sake`.
   himono (un gremio propio y bien documentado), té de Ashigara, 足柄 wasabi.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 20 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -73,7 +59,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
-- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **4 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -91,52 +77,8 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/kanagawa.php> (nombre, dirección y web propia de cada socio)
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **10 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **1 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 右京 | 小田原市 | Dulces y repostería | 和菓子協会 | http://www.ukyou.jp/ | 小田原市本町 4-3-29 |
-| 菓子匠　末広庵 | 川崎市 | Dulces y repostería | 和菓子協会 | http://www.suehiroan.co.jp/ | 川崎市川崎区東田町 3-16 |
-| 文明堂 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.yokohama-bunmeido.co.jp/ | 横浜市中区伊勢佐木町 4-114
-ライオンズプラザ伊勢佐木町通り 1F |
-| 磯子風月堂 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.h5.dion.ne.jp/~isofuu | 横浜市磯子区磯子 2-21-7 |
-| 御菓子司　名月 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.meigetsu.org/ | 横浜市金沢区六浦町 5-23-29 |
-| 銚子屋 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.choshiya.co.jp/ | 横浜市中区伊勢佐木町 7-150 |
-| ちもと | 箱根町 | Dulces y repostería | 和菓子協会 | http://yumochi.com/ | 足柄下郡箱根町湯本 509 |
-| 合資会社三河屋 | 厚木市 | Aperitivos | 全国米菓工業組合 | http://atsugimikawaya.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 株式会社美濃屋あられ | 横浜市 | Aperitivos | 全国米菓工業組合 | https://www.minoya-arare.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 有限会社三河屋 | 茅ヶ崎市 | Aperitivos | 全国米菓工業組合 | https://www.mikawaya.co.jp/ | 米菓製造・販売業（直売所有り） |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kanto/kanagawa.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kanagawa> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 14, Pescado 3, Carne 2, Pan y cereal 2, Setas 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 永島農園 | 横浜市 | Setas | ficha | — | https://www.tabechoku.com/producers/21387 |  |
-| 勘網 | 横須賀市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27630 |  |
-| 鉄釜ひじき　海藻の房丸 | 横須賀市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27682 |  |
-| 丸良水産 | 横須賀市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20410 |  |
-| 【ジビエ総本家】小田原貴族ブランド | 小田原市 | Carne | ficha | — | https://www.tabechoku.com/producers/3078438 |  |
-| みやじ豚 | 藤沢市 | Carne | ficha | — | https://www.tabechoku.com/producers/22147 |  |
-| 霜島農園 | 厚木市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26962 |  |
-| お米農家　曽我 | 小田原市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26947 |  |
-| 佐野農園 | 伊勢原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29222 |  |
-| あすなろファーム | 小田原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21955 |  |
-| くだかけ農園 | 山北町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078860 | 神奈川県足柄上郡山北町 |
-| NO-RA ～農楽～ | 愛川町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21386 | 神奈川県愛甲郡愛川町 |
-| 有機農園けのひ | 愛川町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23483 |  |
-| Kururu farm | 横浜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22819 |  |
-| カメーダ農園 | 横浜市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27186 |  |
-| 鈴也ファーム | 横須賀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20806 |  |
-| ニッポンルーバス | 海老名市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28446 |  |
-| 榎本農園 | 湯河原町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23067 | 神奈川県足柄下郡湯河原町 |
-| ぶるべの樹 | 相模原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21182 |  |
-| さとくら農園 | 相模原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078762 |  |
-| 渋谷ファーム | 藤沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23858 |  |
-| 子どもの野菜湘南藤沢農場 | 藤沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22165 |  |
+| 磯子風月堂 | 横浜市 | Dulces y repostería | 和菓子協会 | http://www.h5.dion.ne.jp/~isofuu | 横浜市磯子区磯子 2-21-7; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |

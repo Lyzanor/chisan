@@ -1,6 +1,6 @@
 # Ibaraki — candidatos
 
-- CSV: `data/csv/jp/kanto/ibaraki.csv` (13 filas, todas altas de esta pasada).
+- CSV: `data/csv/jp/kanto/ibaraki.csv` (77 filas tras la revisión integral de 2026-08-11).
 - Origen: listado aportado por el usuario, `listado_125_productores_locales_japon.xlsx` (consolidado 2026-08-04), bloque de Ibaraki. Fuentes que cita: el portal de exportación de la prefectura <https://exports.pref.ibaraki.jp/en/company/> (ficha por empresa), 日本酒造組合中央会 <https://japansake.or.jp/sakagura/en/ibaraki/> y web propia.
 - Estado: **13 integradas** en el CSV el 2026-08-04 como `parcial` — las que traen dominio propio. Quedan 21: 8 con solo ficha del portal de exportación, 3 sin municipio usable, 2 órganos colectivos, 1 filial industrial (Calbee) y las 6 bodegas del gremio sin web localizada.
 
@@ -12,38 +12,7 @@ fila que hay que acotar antes de escribirla.
 
 | nombre | municipio | categoría | A/B | web / fuente |
 |---|---|---|---|---|
-| Isemata Beikoku Seifun | Hitachiota | Pan y cereal | A | soba-isemata.com |
-| Iijima Chikusan | Hokota | Carne | A | iijima1129.co.jp |
-| Iiyama Seicha | Yachiyo | Té e infusiones | A | ficha exports.pref.ibaraki.jp (id 715446) |
-| Hitachi Fugetsudo | Hitachi | Dulces y repostería | A | ficha exports.pref.ibaraki.jp (id 715380) |
-| Fujita Apple Orchard | Daigo | Fruta y verdura | A | applefujita-llc.com |
-| Fukasaku Farm | Hokota | Fruta y verdura | A | fukasaku.com |
-| Terunuma | Tokai | Fruta y verdura | A | ficha exports.pref.ibaraki.jp (id 714729) |
-| Nemoto Tsukemono | Mito | Conservas | A | nemotuke.com |
-| Ibaraki Mogitate Factory | Ibaraki (町) | Comida preparada | A | ficha exports.pref.ibaraki.jp (id 715034) |
-| Aoki Brewing | Koga | Sake | B | japansake.or.jp (gremio) |
-| Kiuchi Brewery 1823 | Naka | Sake | B | kiuchibrewery.co.jp ⚠ ver nota |
-| Sudo Honke | Kasama | Sake | B | japansake.or.jp (gremio) |
-| Yoshikubo Sake Brewery | Mito | Sake | B | japansake.or.jp (gremio) |
-| Raifuku Sake Brewing | Chikusei | Sake | B | japansake.or.jp (gremio) |
-| Nishioka-Honten | Sakuragawa | Sake | B | japansake.or.jp (gremio) |
-| Tsukinoi Shuzouten | Oarai | Sake | B | japansake.or.jp (gremio) |
-| Komatsu Suisan | Kitaibaraki | Pescado | B | shirasu.com |
-| Nemotoen | Bando | Té e infusiones | B | nemotoen.com |
-| Fujiya / Tsukuba Purin | Sakuragawa | Dulces y repostería | B | ficha exports.pref.ibaraki.jp (id 715108) |
-| Hanamizuki | Tsukuba | Dulces y repostería | B | ficha exports.pref.ibaraki.jp (id 715270) |
-| Kamejirushi Confectionery | Mito | Dulces y repostería | B | kamejirushi.co.jp |
-| Kogetsuan | ⚠ sin municipio | Dulces y repostería | B | ficha exports.pref.ibaraki.jp (id 715050) |
-| Kasyo Miyakawa | Daigo | Dulces y repostería | B | ficha exports.pref.ibaraki.jp (id 715184) |
 | Calbee Kaitsuka Sweet Potato | Kasumigaura | Fruta y verdura | B | exports.pref.ibaraki.jp ⚠ filial de Calbee |
-| Daruma Foods | ⚠ sin municipio | Legumbres | B | ficha exports.pref.ibaraki.jp (id 714641) |
-| Higeta Shokuhin | ⚠ sin municipio | Legumbres | B | ficha exports.pref.ibaraki.jp (id 714756) |
-| Kozawa Foods | Naka | Legumbres | B | kozawafoods.jp |
-| Kurosawa Shoyuten | Hitachinaka | Condimentos | B | fujini-shouyu.co.jp |
-| Shibanuma Soy Sauce | Tsuchiura | Condimentos | B | shibanuma.com |
-| Anko no Machi | Kitaibaraki | Comida preparada | B | ficha exports.pref.ibaraki.jp (id 715220) |
-| Meiri Shurui | Mito | Destilados y licores | B | meirishurui.com |
-| Kiuchi Brewing and Distilling / Hitachino Nest | Naka | Cerveza | B | kiuchibrewery.co.jp ⚠ ver nota |
 
 ## Trampas de este bloque
 
@@ -74,22 +43,6 @@ había 7. Fuente: <https://jp.sake-times.com/sakagura/ibaraki>. Deduplicado
 contra el CSV (木内酒造) y contra la tabla de arriba (青木酒造). Ninguna trae
 dominio. Categoría: `Sake`.
 
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Aiyu Shuzo | 愛友酒造 | Itako |
-| Asakawa Shuzo | 浅川酒造 | Hitachiomiya |
-| Isaka Shuzoten | 井坂酒造店 | Hitachiota |
-| Ota Meijo | 太田銘醸 | Hitachiota |
-| Okabe | 岡部合名 | Hitachiota |
-| Goretsu Tominaga Shuzoten | 剛烈富永酒造店 | Hitachiota |
-| Ishioka Shuzo | 石岡酒造 | Ishioka |
-| Isokura Shuzo | 磯蔵酒造 | Kasama |
-| Inaba Shuzo | 稲葉酒造 | Tsukuba |
-| Urazato Shuzoten | 浦里酒造店 | Tsukuba |
-| Iekyucho Honten | 家久長本店 | Daigo |
-| Kahoku Shuzo | 珂北酒造 | Daigo |
-| Kinmon Shuzo | 金門酒造 | Toride |
-
 **宏和商工 日立酒造工場 (Hitachi)** es una planta de un grupo: triar antes de
 escribir fila.
 
@@ -101,6 +54,8 @@ escribir fila.
   portal: encontrar la web propia es el primer trabajo de cada lote.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 19 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -135,10 +90,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 **Ya integrado, no volver a proponer:** 来福酒造 y 木内酒造 ya están en `ibaraki.csv`.
 
@@ -149,43 +101,8 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **2 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **1 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| さ志まや製菓株式会社 | 境町 | Aperitivos | 全国米菓工業組合 | https://sashimayaseika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| ㈲西村製麺所 | 結城市 | Pan y cereal | 全乾麺 | https://yuki-udon.com/ | 機械製乾めん |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kanto/ibaraki.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/ibaraki> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 9, Pescado 3, Setas 2, Carne 2, Conservas 2, Té e infusiones 1, Pan y cereal 1, Frutos secos 1, ⚠ por decidir 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 松田製茶 | 八千代町 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21731 | 茨城県結城郡八千代町 |
-| 七会きのこセンター | 城里町 | Setas | ficha | — | https://www.tabechoku.com/producers/23355 | 茨城県東茨城郡城里町 |
-| ハラキン | 鹿嶋市 | Setas | ficha | — | https://www.tabechoku.com/producers/28633 |  |
-| 大川水産 | 潮来市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27423 |  |
-| 涸沼川水産 | 茨城町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21081 | 茨城県東茨城郡茨城町上石崎 |
-| コロタファーム | 那珂市 | Pescado | ficha | — | https://www.tabechoku.com/producers/29422 |  |
-| 山西牧場 | 坂東市 | Carne | ficha | — | https://www.tabechoku.com/producers/20303 |  |
-| ミートセンター菊地畜産 | 鉾田市 | Carne | ficha | — | https://www.tabechoku.com/producers/21426 |  |
-| 永井農業 加宝地ほしいも | ひたちなか市 | Conservas | ficha | — | https://www.tabechoku.com/producers/21710 |  |
-| 常陸農園 | 常陸太田市 | Conservas | ficha | — | https://www.tabechoku.com/producers/24207 |  |
-| 塙商店 | 笠間市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/29210 |  |
-| 果じゅまる園 | 石岡市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/27488 |  |
-| 野村商店 | つくばみらい市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24339 |  |
-| パチャママ農園 | 下妻市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20202 |  |
-| 岩田青果 | 八千代町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24147 | 茨城県結城郡八千代町 |
-| 酒詰農園 | 取手市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22170 |  |
-| オラソル農園 Hola Sol Hacienda | 古河市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21523 |  |
-| 茂賀屋 | 桜川市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077868 |  |
-| 甘藷農園　燈屋 | 石岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26541 |  |
-| ファームマロン | 笠間市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23774 |  |
-| デーメテールの恵み｜烏骨鶏がいる農園 | 鉾田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22053 |  |
-| 岡野ブルーベリーガーデン | つくば市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/3077225 |  |
+| さ志まや製菓株式会社 | 境町 | Aperitivos | 全国米菓工業組合 | https://sashimayaseika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |

@@ -1,54 +1,11 @@
 # Iwate — candidatos
 
-- CSV: `data/csv/jp/tohoku/iwate.csv` (6 filas, altas del 2026-08-05).
+- CSV: `data/csv/jp/tohoku/iwate.csv` (59 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/iwate> (22 bodegas, leído 2026-08-04). Gremio: 岩手県酒造組合, <http://www.ginga.or.jp/~syuzou/>.
 - Estado: **6 integradas** el 2026-08-05, todas `verificado`, 5 con tienda propia — el mejor ratio de venta directa de la pasada. Evidencia en `data/evidence/jp/tohoku/iwate.jsonl`.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Kikunotsukasa Shuzo | 菊の司酒造 | Morioka |
-| Sakuragao Shuzo | 桜顔酒造 | Morioka |
-| Azumamine Shuzoten | 吾妻嶺酒造店 | Shiwa |
-| Tsuki no Wa Shuzoten | 月の輪酒造店 | Shiwa |
-| Hirota Shuzoten | 廣田酒造店 | Shiwa |
-| Takahashi Shuzoten | 高橋酒造店 | Shiwa |
-| Kawamura Shuzoten | 川村酒造店 | Hanamaki |
-| Kikuzakari Shuzo | 喜久盛酒造 | Kitakami |
-| Iwanoi Shuzo | 磐乃井酒造 | Ichinoseki |
-| Ryoban Shuzo | 両磐酒造 | Ichinoseki |
-| Iwate Meijo | 岩手銘醸 | Oshu |
-| Kamihei Shuzo | 上閉伊酒造 | Tono |
-| Senkin Shuzo | 泉金酒造 | Iwaizumi |
-| Washinoo | わしの尾 | Hachimantai |
-
-## Integradas 2026-08-05 (6) — todas verificado
-
-| bodega | municipio | resultado |
-|---|---|---|
-| Nanbu Bijin | Ninohe | verificado · venta sí |
-| Sekinoichi Shuzo | Ichinoseki | verificado · venta sí |
-| Suisen Shuzo | **Ofunato** ⚠ | verificado · venta sí |
-| Akabu Shuzo | **Morioka** ⚠ | verificado · venta sí |
-| Hamachidori | Kamaishi | verificado · venta sí |
-| Asabiraki | Morioka | verificado · sin carrito |
-
-⚠ **Dos de las seis cambiaron de municipio por el tsunami de 2011**, y el
-candidato las daba en el sitio antiguo:
-- **酔仙酒造** era de Rikuzentakata; aquel kura fue destruido y hoy elabora en el
-  Ofunato-gura. La fila toma **Ofunato**, porque el área es donde se produce.
-- **赤武酒造** era de Otsuchi y se reconstruyó en **Morioka**.
-
-Es el segundo caso de sede contra planta tras Niizawa en `miyagi.md`, y aquí
-son dos de seis: **en la costa de Tohoku hay que confirmar el municipio actual
-antes de escribir la fila**, no dar por buena la dirección histórica.
-
-- **世嬉の一 elabora sake y la cerveza Iwate Kura en el mismo recinto**: una sola
-  fila, con la categoría que pesa, como ya se decidió para Kiuchi en `ibaraki.md`.
-- **Cinco de seis con tienda propia** es el mejor ratio de venta directa de toda
-  la pasada. La costa de Iwate vende online porque su mercado local se hundió.
 
 ## Trampas
 - **紫波町 (Shiwa) concentra cuatro bodegas** con apellidos frecuentes
@@ -62,6 +19,8 @@ antes de escribir la fila**, no dar por buena la dirección histórica.
   Kuzumaki, marisco de Sanriku, 醤油/味噌 de Hanamaki.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -94,11 +53,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 田野畑山地酪農牛乳 milk port NAO | Tanohata | Lácteos y quesos | ChFun | yamachi.jp | revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
 | たまやま温泉Lab | Morioka | Lácteos y quesos | ChFun | — | sin dominio en la fuente; revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
 
 **Ya integrado, no volver a proponer:** 世嬉の一酒造 ya está en `iwate.csv`.
@@ -109,45 +67,9 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/iwate.php> (nombre, dirección y web propia de cada socio)
-- Estado: **4 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **2 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 松栄堂 | 一関市 | Dulces y repostería | 和菓子協会 | http://www.shoeidoh.co.jp/ | 一関市地主町 3-36 |
-| 菓子処おざわ | 一関市 | Dulces y repostería | 和菓子協会 | http://www.echna.ne.jp/~okashi | 一関市花泉町字地平 17-23 |
-| 三陸菓匠さいとう | 大船渡市 | Dulces y repostería | 和菓子協会 | http://www.saitoseika.co.jp/ | 大船渡市大船渡町台 26-18 |
-| 大丸屋 | 盛岡市 | Dulces y repostería | 和菓子協会 | http://www.e-daimaruya.com/ | 盛岡市本町通 1-9-42 |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/tohoku/iwate.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/iwate> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 5, Setas 3, Carne 3, Miel 2, Pescado 2, Condimentos 2, Pan y cereal 2, Lácteos y quesos 1, Frutos secos 1, ⚠ por decidir 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| ハチミツ農家YoYo | 盛岡市 | Miel | ficha | — | https://www.tabechoku.com/producers/3078424 |  |
-| 巣鴨養蜂園 | 西和賀町 | Miel | ficha | — | https://www.tabechoku.com/producers/20076 |  |
-| 岩手　牧草の丘 | 金ケ崎町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/26782 | 岩手県胆沢郡金ケ崎町 |
-| 安比まいたけ | 八幡平市 | Setas | ficha | — | https://www.tabechoku.com/producers/28175 |  |
-| 安俱里まほら岩手 | 盛岡市 | Setas | ficha | — | https://www.tabechoku.com/producers/25815 |  |
-| 長瀬農園 | 軽米町 | Setas | ficha | — | https://www.tabechoku.com/producers/3077472 | 岩手県九戸郡軽米町大字軽米19-83 |
-| 魚武 | 田野畑村 | Pescado | ficha | — | https://www.tabechoku.com/producers/27172 | 岩手県下閉伊郡田野畑村 |
-| やんべファーム | 盛岡市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20883 |  |
-| 柿木畜産 | 久慈市 | Carne | ficha | — | https://www.tabechoku.com/producers/22389 |  |
-| うたがき優命園 | 奥州市 | Carne | ficha | — | https://www.tabechoku.com/producers/28385 |  |
-| しあわせ牧場 | 宮古市 | Carne | ficha | — | https://www.tabechoku.com/producers/21360 |  |
-| 佐々研山葵農園 | 岩泉町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/29417 | 岩手県下閉伊郡岩泉町 |
-| いわいずみ和做美 | 岩泉町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/3077939 | 岩手県下閉伊郡岩泉町 |
-| 米農家　仁左ェ門 | 滝沢市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/20510 |  |
-| タカハシ農園 | 花巻市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3077889 |  |
-| 上小田代 | 奥州市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/24141 |  |
-| 由井野菜園 | 滝沢市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20631 |  |
-| サンファーム | 盛岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22314 |  |
-| またくるファーム | 盛岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24711 |  |
-| ほそかわ農園 | 矢巾町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24231 | 岩手県紫波郡矢巾町 |
-| 太陽商会 | 花巻市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21008 |  |
-| 中野圭 | 大船渡市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/26287 |  |
+| 菓子処おざわ | 一関市 | Dulces y repostería | 和菓子協会 | http://www.echna.ne.jp/~okashi | 一関市花泉町字地平 17-23; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
+| 大丸屋 | 盛岡市 | Dulces y repostería | 和菓子協会 | http://www.e-daimaruya.com/ | 盛岡市本町通 1-9-42; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |

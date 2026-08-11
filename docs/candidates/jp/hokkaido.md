@@ -1,6 +1,6 @@
 # Hokkaido — candidatos
 
-- CSV: `data/csv/jp/hokkaido/hokkaido.csv` (37 filas, todas altas de esta pasada).
+- CSV: `data/csv/jp/hokkaido/hokkaido.csv` (145 filas tras la revisión integral de 2026-08-11).
 - Fuentes: Hokkaido Wine Cluster, <https://winecluster.org/contents/winery/> (censo de bodegas de la isla, con municipio y dominio) y 日本ワイナリー協会, <https://www.winery.or.jp/winery-map/area/hokkaido/> (ficha por bodega, sin dominio propio).
 - Estado: **37 integradas** en el CSV el 2026-08-04 como `parcial`. Quedan fuera 5 bodegas: Yoichi Winery, Otobe Winery y えべおつWein (las dos fuentes discrepan en municipio, ver aviso), Boss Agri y Domaine Towa (sin dominio en la fuente).
 
@@ -10,45 +10,7 @@ El rōmaji de `nombre` y `municipio` es propuesta a confirmar.
 
 | nombre (rōmaji propuesto) | 社名 | municipio | web |
 |---|---|---|---|
-| Tokachi Wine (Ikeda Winery) | 池田町ブドウ・ブドウ酒研究所 | Ikeda | tokachi-wine.com |
-| Furano Wine | 富良野市ぶどう果樹研究所 | Furano | furanowine.jp |
-| Hakodate Wine | はこだてわいん | Nanae | hakodatewine.co.jp |
-| Hokkaido Wine | 北海道ワイン | Otaru | hokkaidowine.com |
-| Yoichi Winery (Nippon Seishu) | 日本清酒 余市ワイナリー | Yoichi ⚠ | nipponseishu.co.jp/yoichiwine |
-| Otobe Winery (Sapporo Shusei) | 札幌酒精 おとべワイナリー | Otobe ⚠ | sapporo-shusei.jp |
-| Chitose Winery | 北海道中央葡萄酒 千歳ワイナリー | Chitose | chitose-winery.jp |
-| Tsukiura Winery | 月浦ワイナリー | Toyako | tsukiurawine.jp |
-| Yamazaki Winery | 山崎ワイナリー | Mikasa | yamazaki-winery.co.jp |
-| Housui Winery | 宝水ワイナリー | Iwamizawa | housui-winery.co.jp |
-| Maoi Distillery | MAOI 馬追蒸溜所 | Naganuma | maoidistillery.com |
-| Okushiri Winery | 奥尻ワイナリー | Okushiri | okushiri-winery.com |
-| Sapporo Fujino Winery | さっぽろ藤野ワイナリー | Sapporo | vm-net.ne.jp/elk/fujino |
-| Berry Berry Farm & Winery / Domaine Ichi | ベリーベリーファーム＆ワイナリー | Niki | organicwine.jp |
-| Hakkenzan Winery | 八剣山ワイナリー | Sapporo | hakkenzanwinery.com |
-| 10R Winery | １０Rワイナリー | Iwamizawa | 10rwinery.jp |
-| Nora Kura | 農楽蔵 | Hokuto | nora-kura.jp |
-| Nobori Jozo | 登醸造 | Yoichi | noborijozo.com |
-| Matsubara Nouen | 松原農園 | Rankoshi ⚠ | matsubarawine.com |
-| OSA Winery | オサワイナリー | Otaru | osawinery.com |
-| Niki Hills Winery | 仁木ヒルズワイナリー | Niki | nikihills.co.jp |
-| Niseko Winery | ニセコワイナリー | Niseko | yoteigreenbusiness.com |
-| Winery YUMENOMORI | ワイナリーYUMENOMORI | Yoichi | winery-yumenomori.com |
-| TADA WINERY (Tada Nouen) | 多田農園 | Kamifurano | ninjin-koubou.com |
-| Camel Farm Winery | キャメルファーム | Yoichi | camelfarm.co.jp |
 | Vina de oro bodega | Vina de oro bodega | Niki | vina-de-oro-bodega.net |
-| Domaine Raison | Domaine Raison | Nakafurano | domaine-raison.com |
-| Aizawa Winery | 相澤ワイナリー | Obihiro | aizawanouen.com |
-| Shinga Winery | 森臥ワイナリー | Nayoro | shinga-shinga.jimdofree.com |
-| Sapporo Wine | さっぽろワイン | Sapporo | sapporo-wine.com |
-| Memuro Winery | めむろワイナリー | Memuro | memurowinery.jp |
-| Boss Agri Winery | ボスアグリワイナリー | Kitami | (sin dominio en la fuente) |
-| Domaine Yui | ドメーヌユイ | Yoichi | facebook.com/domaineyui |
-| Tokachi Makiba no Ie Winery | 十勝まきばの家ワイナリー | Ikeda | makibanoie.com/winery |
-| Yukikawa Jozo | 雪川醸造 | Higashikawa | snowriverwines.com |
-| Kaminokuni Winery | 上ノ国ワイナリー | Kaminokuni | kaminokuni-winery.jp |
-| DUE PUNTI | DUE PUNTI | Hokuto | due-punti-vineyards.com |
-| Ebeotsu Wein | えべおつWein | Takikawa ⚠ | facebook.com/ebeotsu.Wein |
-| De Montille & Hokkaido | ド・モンティーユ＆北海道 | Hakodate | demontille-hokkaido.com |
 
 ⚠ **Las dos fuentes se contradicen en el municipio**, y siempre por lo mismo:
 una da la **sede social** y la otra la **bodega**. Manda dónde se produce.
@@ -73,9 +35,7 @@ arriba, que es solo de bodegas.
 
 | nombre | municipio | categoría | A/B | web |
 |---|---|---|---|---|
-| Kyodogakusha Shintoku Farm | Shintoku | Lácteos y quesos | A | kyodogakusha.org — quesería de comunidad agrícola, el perfil más limpio de los cuatro |
-| Tonden Farm | Ebetsu | Carne | A | tondenfarm.co.jp |
-| Yotsuba Milk Products | ⚠ Sapporo o Tokachi | Lácteos y quesos | A | yotsuba.co.jp ⚠ federación láctea de escala nacional: sede en Sapporo, plantas en Tokachi. Candidata a descarte por masa |
+| Yotsuba Milk Products | ⚠ Sapporo o Tokachi | Lácteos y quesos | A | yotsuba.co.jp ⚠ revisada 2026-08-11: la escala no excluye, pero la sede y las plantas están en municipios distintos y falta fijar una unidad productiva atribuible |
 | Yokoyama Flour Milling | ⚠ sin municipio | Pan y cereal | B | ficha en japanfoodhub.jp — el origen puso «Hokkaidō» de localidad, que es el área entera |
 
 Estas cuatro abren por fin el frente lácteo/cárnico de la isla, que la tabla de
@@ -90,18 +50,6 @@ Ninguna trae dominio en la fuente. Categoría: `Sake`.
 
 | nombre (rōmaji propuesto) | 社名 | municipio |
 |---|---|---|
-| Otokoyama | 男山 | Asahikawa |
-| Takasago Shuzo | 高砂酒造 | Asahikawa |
-| Kamikawa Taisetsu Shuzo | 上川大雪酒造 | Kamikawa |
-| Kunimare Shuzo | 国稀酒造 | Mashike |
-| Kinteki Shuzo | 金滴酒造 | Shintotsukawa |
-| Kobayashi Shuzo | 小林酒造 | Kuriyama |
-| Tanaka Shuzo | 田中酒造 | Otaru |
-| Niseko Shuzo | 二世古酒造 | Kutchan |
-| Fukutsukasa Shuzo | 福司酒造 | Kushiro |
-| Usui Katsusaburo Shoten | 碓氷勝三郎商店 | Nemuro |
-| Nippon Seishu | 日本清酒 | Sapporo ⚠ |
-| Sapporo Shusei Kogyo | 札幌酒精工業 | Sapporo ⚠ |
 | Godo Shusei Asahikawa | 合同酒精 旭川工場 | Asahikawa ⚠ planta, triar |
 
 ⚠ **日本清酒 y 札幌酒精 ya aparecen arriba** como matrices de 余市ワイナリー y
@@ -117,6 +65,8 @@ escribir, no después.
 - Sin abrir: sake (北海道酒造組合), lácteos, marisco, ramen/miso.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 19 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -149,7 +99,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JiCheese** — 北海道地チーズ博 — 工房・メーカー, <https://jicheese.com/producer/>
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -163,62 +113,15 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/hokkaido.php> (nombre, dirección y web propia de cada socio)
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
   - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **21 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **8 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| はこだて柳屋 | 函館市 | Dulces y repostería | 和菓子協会 | http://hakodate-yanagiya.com/ | 函館市万代町 3-13 |
-| 新倉屋 | 小樽市 | Dulces y repostería | 和菓子協会 | http://www.hanazonodango.co.jp/ | 小樽市花園銀座街 |
-| 北の自然菓　柳月 | 音更町 | Dulces y repostería | 和菓子協会 | http://www.ryugetsu.co.jp/ | 河東郡音更町下音更北 9西18-2 |
-| 株式会社美好屋 | 札幌市 | Aperitivos | 全国米菓工業組合 | https://www.miyoshiya-mochi.com | 米菓製造・販売業（直売所有り） |
-| サザエ食品株式会社 | 札幌市 | Aperitivos | 全国米菓工業組合 | https://www.sazae.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
-| 吉川食品株式会社 | 砂川市 | Aperitivos | 全国米菓工業組合 | https://yoshikawafoods.co.jp/ | 米菓製造・販売業（直売所有り） |
-| 下館工房 | ⚠ | Carne | búsqueda dirigida + web propia | https://www.shimodate-koubou.jp/ | ⚠ municipio sin confirmar |
-| 薫製工房ハントヴェルク | ⚠ | Carne | búsqueda dirigida + web propia | https://handwerk-official.com/ | ⚠ municipio sin confirmar; cerdo whey de Tokachi |
-| 北海道千歳ハム | 千歳市 | Carne | búsqueda dirigida + web propia | https://www.chitoseham.co.jp/ | tienda de fábrica |
-| サルーミハヤシ | 札幌市 | Carne | búsqueda dirigida + web propia | https://www.salumihayashi.com/ | salami y embutido curado |
-| 六花亭製菓 | 帯広市 | Dulces y repostería | búsqueda dirigida + web propia | https://www.rokkatei.co.jp/ | ⚠ escala grande, triar |
-| 北菓楼 | 砂川市 | Dulces y repostería | búsqueda dirigida + web propia | https://www.kitakaro.com/ | ⚠ escala grande, triar |
-| 柳月 | 音更町 | Dulces y repostería | búsqueda dirigida + web propia | https://www.ryugetsu.co.jp/ | ⚠ escala grande, triar; sede en 河東郡音更町 |
-| 菅野養蜂場 | ⚠ | Miel | búsqueda dirigida + web propia | https://honeyfarm-kanno.com/ | ⚠ municipio sin confirmar |
-| ナルセ養蜂場 | ⚠ | Miel | búsqueda dirigida + web propia | https://naruse-bee.jp/ | ⚠ municipio sin confirmar; Tokachi |
-| 十勝養蜂園 | 上士幌町 | Miel | búsqueda dirigida + web propia | https://tokachiyohoen.com/ | ⚠ municipio tomado de la ficha, no de la web |
-| 札幌山本養蜂園 | 札幌市 | Miel | búsqueda dirigida + web propia | https://www.koguma-honey.com/ | dirección en `/company-information/` |
-| 藤井水産（鮭匠ふじい） | ⚠ | Pescado | búsqueda dirigida + web propia | https://fujiisuisan.co.jp/ | ⚠ municipio sin confirmar (Nemuro según la ficha, Betsukai en la web) |
-| 圓子水産 | 斜里町 | Pescado | búsqueda dirigida + web propia | https://marukosuisan.com/ | pescador de Shiretoko (Utoro) con planta propia; municipio resuelto con la ficha de 食べチョク |
-| 海産問屋カネニ | 広尾町 | Pescado | búsqueda dirigida + web propia | https://www.kaneni.com/ | ⚠ mayorista con marca propia, triar si elabora |
-| 佐藤水産 | 札幌市 | Pescado | búsqueda dirigida + web propia | https://www.sato-suisan.co.jp/ | salmón, ikura, sujiko; ⚠ sede en Sapporo y planta en Ishikari, confirmar unidad productiva |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/hokkaido/hokkaido.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/hokkaido> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 10, Carne 3, Pescado 2, Vino 1, Lácteos y quesos 1, Huevos 1, Setas 1, Legumbres 1, Frutos secos 1, ⚠ por decidir 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| エゾの杜 | 池田町 | Vino | ficha | — | https://www.tabechoku.com/producers/26238 | 北海道中川郡池田町 |
-| 鈴木牧場 | 広尾町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/20321 | 北海道広尾郡広尾町 |
-| ハッピープレイス | 島牧村 | Huevos | ficha | — | https://www.tabechoku.com/producers/27199 | 北海道島牧郡島牧村 |
-| 渋田きのこ園 | 厚沢部町 | Setas | ficha | — | https://www.tabechoku.com/producers/20798 | 北海道檜山郡厚沢部町美和 |
-| 岩村　雅弘 | 森町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21398 | 北海道茅部郡森町 |
-| 丸の野水産 | 羅臼町 | Pescado | ficha | — | https://www.tabechoku.com/producers/27483 | 北海道目梨郡羅臼町 |
-| まむふぁむ | 増毛町 | Carne | ficha | — | https://www.tabechoku.com/producers/29667 | 北海道増毛郡増毛町別苅608番地7 |
-| えんどう畜産 | 士幌町 | Carne | ficha | — | https://www.tabechoku.com/producers/29478 | 北海道河東郡士幌町 |
-| 雪あかり | 鹿追町 | Carne | ficha | — | https://www.tabechoku.com/producers/26547 |  |
-| オフイビラ源吾農場 | 本別町 | Legumbres | ficha | — | https://www.tabechoku.com/producers/21479 | 北海道中川郡本別町 |
-| 瀬戸牛農園 | 西興部村 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/24269 | 北海道北海道紋別郡西興部村 |
-| 床岡農園 | 三笠市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24843 |  |
-| うまいべ農園 | 中富良野町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22802 | 北海道空知郡中富良野町 |
-| とくながファーム | 千歳市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23627 |  |
-| 遠藤農園 | 千歳市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22033 |  |
-| 富良野　加納農園 | 富良野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21619 |  |
-| VEGGIEHILLS（ベジヒルズ） | 当別町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21997 | 北海道石狩郡当別町 |
-| 東山農場 | 栗山町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21959 | 北海道夕張郡栗山町 |
-| 玉手農場 | 留寿都村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20109 | 北海道虻田郡留寿都村 |
-| アグ・デ・パンケ農園 | 蘭越町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21409 | 北海道磯谷郡蘭越町 |
-| 原崎農園 | 鷹栖町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20244 | 北海道上川郡鷹栖町 |
-| 野尻農場 | 音更町 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/3077638 | 北海道河東郡音更町 |
+| 下館工房 | ⚠ | Carne | búsqueda dirigida + web propia | https://www.shimodate-koubou.jp/ | ⚠ municipio sin confirmar; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 薫製工房ハントヴェルク | ⚠ | Carne | búsqueda dirigida + web propia | https://handwerk-official.com/ | ⚠ municipio sin confirmar; cerdo whey de Tokachi; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 菅野養蜂場 | ⚠ | Miel | búsqueda dirigida + web propia | https://honeyfarm-kanno.com/ | ⚠ municipio sin confirmar; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| ナルセ養蜂場 | ⚠ | Miel | búsqueda dirigida + web propia | https://naruse-bee.jp/ | ⚠ municipio sin confirmar; Tokachi; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 藤井水産（鮭匠ふじい） | ⚠ | Pescado | búsqueda dirigida + web propia | https://fujiisuisan.co.jp/ | ⚠ municipio sin confirmar (Nemuro según la ficha, Betsukai en la web); revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 圓子水産 | 斜里町 | Pescado | búsqueda dirigida + web propia | https://marukosuisan.com/ | pescador de Shiretoko (Utoro) con planta propia; municipio resuelto con la ficha de 食べチョク; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 海産問屋カネニ | 広尾町 | Pescado | búsqueda dirigida + web propia | https://www.kaneni.com/ | ⚠ mayorista con marca propia, triar si elabora; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+| 佐藤水産 | 札幌市 | Pescado | búsqueda dirigida + web propia | https://www.sato-suisan.co.jp/ | salmón, ikura, sujiko; ⚠ sede en Sapporo y planta en Ishikari, confirmar unidad productiva; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |

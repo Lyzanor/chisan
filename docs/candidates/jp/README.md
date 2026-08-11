@@ -1,5 +1,20 @@
 # Japón — índice de candidatos y bandeja de entrada
 
+> **Revisión total 2026-08-11:** reconciliados todos los candidatos de las 47
+> prefecturas contra el catálogo actual y revisadas las dos tandas nuevas. Se
+> publican **1.304 productores**: 277 `verificado` y 1.027 `parcial`; 1.176 tienen
+> venta remota vigente demostrada. Se resolvieron además cuatro exclusiones
+> definitivas, tres candidatos asignados inicialmente al área equivocada y dos
+> duplicados dentro de las notas. Se podaron **896 entradas que ya estaban
+> publicadas** pero seguían copiadas en las bandejas.
+>
+> Quedan **1.014 candidatos retenidos**, no importados como filas especulativas:
+> 863 del lote JAS (el certificado no demuestra por sí solo identidad pública,
+> oferta propia y actividad actual), 55 de la primera pasada infrarrepresentada,
+> 91 de la segunda, dos de venta directa y tres heredados. Cada caso conserva en
+> su prefectura la carencia concreta que impide publicarlo. La escala empresarial
+> no se ha usado como motivo de exclusión.
+
 Ficheros por prefectura en esta carpeta, más los sueltos que aún no dan para
 abrir el suyo. Las reglas comunes están en `docs/candidates/README.md`; cada
 fichero identifica la asociación o fuente concreta usada.

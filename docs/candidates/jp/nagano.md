@@ -1,6 +1,6 @@
 # Nagano — candidatos
 
-- CSV: `data/csv/jp/chubu/nagano.csv` (77 filas).
+- CSV: `data/csv/jp/chubu/nagano.csv` (123 filas tras la revisión integral de 2026-08-11).
 - Fuente: 長野県酒造組合. **Lee las fichas japonesas, `/intro/<area>/`, no las inglesas
   `/breweries/<area>/`**: las inglesas pierden bodegas, romanizan mal y traducen
   razones sociales por marcas. Diez áreas: Kitaazumi, Matsumoto, Kiso, Iida,
@@ -63,6 +63,8 @@
 
 ## Lote JAS ecológico nacional — 2026-08-08
 
+> **Reauditoría 2026-08-11:** 17 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
+
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
@@ -93,7 +95,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -108,51 +110,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/nagano.php> (nombre, dirección y web propia de cada socio)
   - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
-- Estado: **10 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **3 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 大西屋 | 伊那市 | Dulces y repostería | 和菓子協会 | http://www.oonishiya.com/ | 伊那市美すず 358-3 |
-| 花柳 | 松本市 | Dulces y repostería | 和菓子協会 | http://shop.hanayagi.cc/ | 松本市深志 3-7-49 |
-| 千登勢菓子店 | 高遠町 | Dulces y repostería | 和菓子協会 | http://www.takato-chitose.com | 上伊那郡高遠町小原 553-4 |
-| キッセイ商事㈱ 澤志庵製麺所 | 塩尻市 | Pan y cereal | 全乾麺 | https://www.kissei-shoji.co.jp/ | 機械製乾めん |
-| ㈱沢製麺 | 箕輪町 | Pan y cereal | 全乾麺 | http://www.sawaseimen.co.jp/ | 機械製乾めん |
-| ㈱おびなた | 長野市 | Pan y cereal | 全乾麺 | https://www.obinata.co.jp/ | 機械製乾めん |
-| 柄木田製粉㈱ | 長野市 | Pan y cereal | 全乾麺 | http://www.karakida.co.jp/ | 機械製乾めん |
-| 信州戸隠そば㈱ | 長野市 | Pan y cereal | 全乾麺 | https://shinshusoba.net/ | 機械製乾めん |
-| 戸隠松本製麺㈱ | 長野市 | Pan y cereal | 全乾麺 | http://www.soba-matsumoto.com/ | 機械製乾めん |
-| ㈱小妻屋本店 | 須坂市 | Pan y cereal | 全乾麺 | http://kozumaya.ocnk.net/ | 機械製乾めん |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chubu/nagano.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/nagano> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 12, Setas 2, Pescado 2, Cerveza 1, Lácteos y quesos 1, Huevos 1, Carne 1, Condimentos 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 八ヶ岳ルバーブハウス/ハコブネプロジェクト | 富士見町 | Cerveza | ficha | — | https://www.tabechoku.com/producers/28414 | 長野県諏訪郡富士見町境 |
-| 小布施牧場 | 小布施町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/25300 | 長野県上高井郡小布施町 |
-| くりのみ園 | 小布施町 | Huevos | ficha | — | https://www.tabechoku.com/producers/20587 | 長野県上高井郡小布施町 |
-| 宮澤きのこ園 | 上田市 | Setas | ficha | — | https://www.tabechoku.com/producers/24325 |  |
-| 宮入きのこ園 | 山ノ内町 | Setas | ficha | — | https://www.tabechoku.com/producers/21745 | 長野県下高井郡山ノ内町 |
-| 信州あゆ　臼田養魚場 | 上田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21897 |  |
-| ぶどう園さんすけ | 松本市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077274 |  |
-| ハヤシファーム | 飯田市 | Carne | ficha | — | https://www.tabechoku.com/producers/20911 |  |
-| 丸六穂高わさび問屋 | 安曇野市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/3078876 |  |
-| カエルフルーツカンパニー | 小布施町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/22368 | 長野県上高井郡小布施町 |
-| こばやしや | 上田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25017 |  |
-| のろまん農場 | 中野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20298 |  |
-| つながり自然農園 | 佐久市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20049 |  |
-| KTM ファーム | 信濃町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21425 | 長野県上水内郡信濃町 |
-| 信州塩尻 つむぐ農園 | 塩尻市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20624 |  |
-| 信州安曇野　銀乃果 | 安曇野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26749 |  |
-| 安曇野ファミリー農産 果物部門4年連続1位&殿堂入り&りんごグランプリ2025最高金賞1位 信州りんご 幻のりんご | 安曇野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21528 |  |
-| TURUTA | 小布施町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26093 | 長野県上高井郡小布施町 |
-| 軽井沢 ohanami farm | 軽井沢町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27329 | 長野県北佐久郡軽井沢町長倉 |
-| 石農園 | 長野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28793 |  |
-| キノコ村 | 須坂市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24009 |  |
-| 新実農園 | 飯田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22899 |  |
+| 花柳 | 松本市 | Dulces y repostería | 和菓子協会 | http://shop.hanayagi.cc/ | 松本市深志 3-7-49; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
+| 千登勢菓子店 | 高遠町 | Dulces y repostería | 和菓子協会 | http://www.takato-chitose.com | 上伊那郡高遠町小原 553-4; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| ㈱沢製麺 | 箕輪町 | Pan y cereal | 全乾麺 | http://www.sawaseimen.co.jp/ | 機械製乾めん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |

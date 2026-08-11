@@ -1,28 +1,11 @@
 # Tokushima — candidatos
 
-- CSV: `data/csv/jp/shikoku/tokushima.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/shikoku/tokushima.csv` (44 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/tokushima> (21 bodegas, leído 2026-08-04). Gremio: 徳島県酒造組合, <https://tokushimasake.com/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Naruto Shuzo | 鳴門酒造 | Naruto |
-| Tsukasagiku Shuzo | 司菊酒造 | Mima |
-| Tsunomine Shuzo | 津乃峰酒造 | Anan |
-| Chikakiyo Shuzo | 近清酒造 | Anan |
-| Naka Shuzo | 那賀酒造 | Naka |
-| Agawa Shuzo | 阿川酒造 | Tsurugi |
-| Karakuchi Shuzo | 可楽智酒造 | Higashimiyoshi |
-| Chuwa Shoten | 中和商店 | Miyoshi |
-| Kondo Matsutaro Shoten | 近藤松太郎商店 | Tokushima |
-| Saito Shuzojo | 斎藤酒造場 | Tokushima |
-| Seitama | 勢玉 | Tokushima |
-| Sadasaku Shurui Jozojo | 定作酒類醸造場 | Katsuura |
-| Nisshin Shurui (Taiko) | 日新酒類 太閤酒造場 | Awa |
-| Ise Shuzo | 伊勢酒造 | Yoshinogawa ⚠ |
 
 ## Trampas
 - ⚠ **La fuente sitúa 伊勢酒造 en 麻植郡山川町, que ya no existe**: se fusionó en
@@ -44,6 +27,8 @@ confirmar contra la web de cada bodega.
   Además: 鳴門金時 (batata), 半田そうめん, 鳴門わかめ, 阿波尾鶏.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 20 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -78,57 +63,8 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
   - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 阿波ナチュラルチーズ工房 チーズの灯 | Naruto | Lácteos y quesos | ChFun | — | sin dominio en la fuente; revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/shikoku/tokushima.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/tokushima.php> (nombre, dirección y web propia de cada socio)
-  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 和菓子処山陽堂 | 小松島市 | Dulces y repostería | 和菓子協会 | http://komatsushima.ne.jp/sanyodo/ | 小松島市南小松島町 13-27 |
-| 日の出楼 | 徳島市 | Dulces y repostería | 和菓子協会 | http://www.hinodero.com/ | 徳島市二軒屋町 1-8 |
-| はなぜん | 阿南市 | Té e infusiones | búsqueda dirigida + web propia | https://awabancha-hanazen.co.jp/ | 阿波晩茶 |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/shikoku/tokushima.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/tokushima> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 7, Pescado 6, Setas 4, Pan y cereal 2, Té e infusiones 1, Carne 1, ⚠ por decidir 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 茶園 北地の丘 | 三好市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/22999 |  |
-| 森のきのこ屋 | 徳島市 | Setas | ficha | — | https://www.tabechoku.com/producers/3078097 |  |
-| 徳島椎茸ファーム | 松茂町 | Setas | ficha | — | https://www.tabechoku.com/producers/29247 |  |
-| やまのこ農園 | 石井町 | Setas | ficha | — | https://www.tabechoku.com/producers/24238 | 徳島県名西郡石井町 |
-| 神山社中 | 神山町 | Setas | ficha | — | https://www.tabechoku.com/producers/23879 | 徳島県名西郡神山町 |
-| シシトトラ(浅野農園) | 上勝町 | Pescado | ficha | — | https://www.tabechoku.com/producers/25736 | 徳島県勝浦郡上勝町 |
-| 嵯峨峡ファーム | 佐那河内村 | Pescado | ficha | — | https://www.tabechoku.com/producers/28788 |  |
-| 旭物産 | 徳島市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22921 |  |
-| 谷藤農園 | 東みよし町 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078244 | 徳島県三好郡東みよし町足代914-2 |
-| 山河農場 | 美波町 | Pescado | ficha | — | https://www.tabechoku.com/producers/22774 | 徳島県海部郡美波町 |
-| 芝原水産 | 鳴門市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22680 |  |
-| ニワトリノニワ | 阿波市 | Carne | ficha | — | https://www.tabechoku.com/producers/20978 |  |
-| 田村　周平 | 吉野川市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/25284 |  |
-| ますだファーム | 徳島市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078280 |  |
-| 三木農園 | つるぎ町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22169 | 徳島県美馬郡つるぎ町 |
-| NARUMI FARM | 上勝町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23701 | 徳島県勝浦郡上勝町 |
-| 殖彩 | 小松島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22762 |  |
-| 自然農園マユコベ | 徳島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24976 |  |
-| 田口農園　徳島 | 東みよし町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22594 | 徳島県三好郡東みよし町 |
-| 西村農園（徳島県） | 美馬市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23934 |  |
-| 吉成農場 | 鳴門市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29258 |  |
-| 阿波ツクヨミファーム | 阿波市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/10 |  |

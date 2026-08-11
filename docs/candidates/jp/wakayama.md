@@ -1,28 +1,11 @@
 # Wakayama — candidatos
 
-- CSV: `data/csv/jp/kansai/wakayama.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/kansai/wakayama.csv` (42 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/wakayama> (19 bodegas, leído 2026-08-04). Gremio: 和歌山県酒造組合, <http://wa-syuzouren.sakura.ne.jp/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Nate Shuzoten | 名手酒造店 | Kainan |
-| Nakano BC | 中野BC | Kainan |
-| Tsuho Shuzo | 通宝酒造 | Kainan |
-| Shimamoto Shuzojo | 島本酒造場 | Kainan |
-| Sekaiitto | 世界一統 | Wakayama |
-| Tabata Shuzo | 田端酒造 | Wakayama |
-| Tencho Shimamura Shuzo | 天長島村酒造 | Wakayama |
-| Shuho Shuzo | 祝砲酒造 | Wakayama |
-| Kokonoe Zakka | 九重雜賀 | Kinokawa |
-| Takagaki Shuzo | 高垣酒造 | Aridagawa |
-| Hatsuzakura Shuzo | 初桜酒造 | Katsuragi |
-| Kishino Shuzo Honke | 岸野酒造本家 | Gobo |
-| Nakao Shuzoten | 中尾酒造店 | Kimino |
-| Ozaki Shuzo | 尾崎酒造 | Shingu ⚠ |
 
 ## Trampas
 - ⚠ **尾崎酒造 (Shingu, Wakayama)** no es 尾崎酒造 (Ajigasawa, Aomori), ya listada
@@ -47,6 +30,8 @@ confirmar contra la web de cada bodega.
   salsa de soja japonesa** y conserva obradores en madera.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 20 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -82,53 +67,4 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kansai/wakayama.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/wakayama.php> (nombre, dirección y web propia de cada socio)
-- Estado: **1 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 鈴屋 | 田辺市 | Dulces y repostería | 和菓子協会 | http://dxcake.jp/ | 田辺市湊 1022 |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kansai/wakayama.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/wakayama> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 12, Pescado 4, Miel 3, Conservas 2, Setas 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 梅田養蜂場 | 岩出市 | Miel | ficha | — | https://www.tabechoku.com/producers/22479 |  |
-| ㊂西村養蜂場 | 海南市 | Miel | ficha | — | https://www.tabechoku.com/producers/27147 |  |
-| 村上養蜂 | 紀の川市 | Miel | ficha | — | https://www.tabechoku.com/producers/21174 |  |
-| 【冷水しいたけ農園】 | 橋本市 | Setas | ficha | — | https://www.tabechoku.com/producers/26988 |  |
-| 潮岬製塩所 | 古座川町 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078209 | 和歌山県東牟婁郡古座川町 |
-| 上野山翔史(福扇水産) | 有田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24297 |  |
-| 底物屋　浜田博光 | 由良町 | Pescado | ficha | — | https://www.tabechoku.com/producers/28796 | 和歌山県日高郡由良町 |
-| 湯川水産 | 白浜町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21070 | 和歌山県西牟婁郡白浜町 |
-| 塩の梅 | みなべ町 | Conservas | ficha | — | https://www.tabechoku.com/producers/25849 | 和歌山県日高郡みなべ町谷口 |
-| 梅ボーイズ 山本将志郎 | みなべ町 | Conservas | ficha | — | https://www.tabechoku.com/producers/26463 | 和歌山県日高郡みなべ町晩稲 |
-| 感動果物農家山本農園 | 和歌山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21800 |  |
-| 井関農園 | 有田川町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28536 | 和歌山県有田郡有田川町奥 |
-| 伊藤農園 | 有田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24333 |  |
-| 紀州伊藤園 | 有田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22322 |  |
-| 田中農園 | 橋本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28130 |  |
-| キタヤマ果樹園 | 橋本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27980 |  |
-| 根っこ農園 | 橋本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077163 |  |
-| 藤田農園 | 橋本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26764 |  |
-| ひとみず | 白浜町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23502 | 和歌山県西牟婁郡白浜町 |
-| ロハス農園 | 紀の川市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26795 |  |
-| キタオ農園 | 紀の川市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22668 |  |
-| 紀州からの贈り物（わんこ様） | 那智勝浦町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24272 |  |
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.

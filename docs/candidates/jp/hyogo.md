@@ -1,6 +1,6 @@
 # Hyogo — candidatos
 
-- CSV: `data/csv/jp/kansai/hyogo.csv` (8 filas, altas del 2026-08-05).
+- CSV: `data/csv/jp/kansai/hyogo.csv` (76 filas tras la revisión integral de 2026-08-11).
 - Fuente: 灘五郷酒造組合 (Nada Gogo Sake Brewers Association), <https://www.nadagogo.ne.jp/brewery/> — los 25 miembros (24 de sake, 1 de encurtidos), agrupados por los cinco 郷.
 - Estado: **8 integradas** el 2026-08-05 (6 `verificado`, 2 `parcial`), 4 con tienda propia; quedan 17 de Nada y 11 del resto de la prefectura. Evidencia en `data/evidence/jp/kansai/hyogo.jsonl`.
 
@@ -13,62 +13,7 @@ Categoría: `Sake` salvo la última fila.
 
 | nombre (rōmaji propuesto) | 社名 | marca | 郷 | municipio |
 |---|---|---|---|---|
-| Izumi Shuzo | 泉酒造 | 仙介・琥泉 | 御影郷 | Kobe |
-| Yasufuku Matashiro Shoten | 安福又四郎商店 | 大黒正宗 | 御影郷 | Kobe |
-| Ota Shuzo | 太田酒造 | 千代田蔵 | 魚崎郷 | Kobe ⚠ |
 | Takara Shuzo | 宝酒造 | 松竹梅 | 魚崎郷 | Kobe ⚠ |
-| Hamafukutsuru Meijo | 浜福鶴銘醸 | 浜福鶴 | 魚崎郷 | Kobe |
-| Nihonsakari | 日本盛 | 日本盛 | 西宮郷 | Nishinomiya |
-| Kokusan Shuzo | 國産酒造 | 灘自慢 Nadajiman | 西宮郷 | Nishinomiya |
-| Kitani Shuzo | 木谷酒造 | 喜一 Kiichi | 西宮郷 | Nishinomiya |
-| Motonoda Shuzo | 本野田酒造 | 金鷹 Kintaka | 西宮郷 | Nishinomiya |
-| Shochikubai Shuzo | 松竹梅酒造 | 灘一 Nadaichi | 西宮郷 | Nishinomiya ⚠ |
-| Osawa Honke Shuzo | 大澤本家酒造 | 寳娘 Takaramusume | 西宮郷 | Nishinomiya |
-| Kitayama Shuzo | 北山酒造 | 島美人 Shimabijin | 西宮郷 | Nishinomiya |
-| Mandai Osawa Jozo | 万代大澤醸造 | 德若 Tokuwaka | 西宮郷 | Nishinomiya |
-| Ozeki | 大関 | 大関 | 今津郷 | Nishinomiya |
-| Imazu Shuzo | 今津酒造 | 扇正宗 Ogimasamune | 今津郷 | Nishinomiya |
-| Takashima Shurui Shokuhin | 髙嶋酒類食品 | 甲南漬 Konanzuke | 御影郷 | Kobe — categoría `Condimentos` (encurtidos en sake kasu, no bodega) |
-
-## Integradas 2026-08-05 (8) — las ocho grandes de Nada
-
-| bodega | municipio | resultado |
-|---|---|---|
-| Kenbishi Shuzo | Kobe | verificado · venta sí |
-| Sawanotsuru | Kobe | verificado · venta sí |
-| Kobe Shushinkan (Fukuju) | Kobe | verificado · venta sí |
-| Tatsuuma-Honke Shuzo (Hakushika) | Nishinomiya | verificado · venta sí |
-| Hakutsuru Shuzo | Kobe ⚠ | verificado · sin carrito |
-| Hakutaka | Nishinomiya | verificado · sin carrito |
-| Kikumasamune Shuzo | Kobe | **parcial** · web con 403 |
-| Sakuramasamune | Kobe | **parcial** · web sin respuesta |
-
-⚠ **Hakutsuru es el caso límite del criterio de masa** que dejó fuera a Gekkeikan
-en `kyoto.md`: es la mayor productora de sake de Japón. Entra porque elabora
-íntegramente en Nada, con kura-museo y marca propia — pero si ese criterio se
-endurece hacia la deslocalización, **esta fila hay que revisarla**. Queda dicho
-para que la próxima pasada no tenga que re-deducirlo.
-
-- **菊正宗 devuelve 403** con user-agent de navegador: cuarto caso de bloqueo de
-  bot tras Yamahisa, Kyokuho y Kitaya. No es sitio muerto, pero sin lectura
-  propia se queda `parcial`.
-- **櫻正宗 no respondió** ni por HTTP ni por HTTPS. De esta casa salieron la
-  levadura kyokai nº 1 y el propio uso de «Masamune» como nombre de sake.
-- **Kenbishi tiene web en `.co.jp` y tienda en `.com`**: dos dominios de la misma
-  casa, no un cruce.
-
-⚠ Antes de dar de alta:
-- **太田酒造** tiene su sede en 草津市 (Shiga) y en Nada opera el 灘工場; **宝酒造**
-  tiene sede en Kioto. Si la unidad de Nada no es una entidad con marca e
-  identidad propias, la fila correcta puede ser la de su prefectura de origen, no
-  Hyogo. Verificar antes de meterlas aquí (`docs/EDITORIAL_POLICY.md`, grupos).
-- **松竹梅酒造** (marca 灘一, Nishinomiya) es empresa distinta de **宝酒造** (marca
-  松竹梅). Nombres casi idénticos: no fusionar filas.
-
-**Revisión 2026-08-09:** Takara Shuzo sigue retenida. La dirección de Kobe es
-una planta del grupo de Kioto y no se localizó una identidad minorista autónoma
-de esa unidad que justifique una fila propia. Revisar si aparece una marca de
-planta; no tratarlo como descarte definitivo.
 
 ## Fuera de Nada (11, pasada 2026-08-04)
 
@@ -77,20 +22,6 @@ El censo son **97 bodegas** — Hyogo es la primera de Japón en número — fre
 las 25 de Nada. Fuente: <https://jp.sake-times.com/sakagura/hyogo>, orden
 alfabético. Deduplicado contra la tabla de Nada. Ninguna trae dominio.
 Categoría: `Sake`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Akashi Shurui Jozo | 明石酒類醸造 | Akashi |
-| Ibaraki Shuzo | 茨木酒造 | Akashi |
-| Eigashima Shuzo | 江井ヶ嶋酒造 | Akashi |
-| Izawa Honke | 井澤本家 | Inami |
-| Eisen Shuzo | 栄泉酒造 | Inami |
-| Itami Oimatsu Shuzo | 伊丹老松酒造 | Itami |
-| Oimatsu Shuzo | 老松酒造 | Shiso |
-| Izushi Shuzo | 出石酒造 | Toyooka |
-| Inami Shuzo | 稲見酒造 | Miki |
-| Uchida Shuzo | 打田酒造 | Tanba |
-| Okuma Shuzo | 大熊酒造 | Kato |
 
 ## Trampas de este bloque
 - **伊丹老松酒造 (Itami) y 老松酒造 (Shiso) son dos empresas**, y hay una tercera
@@ -111,6 +42,8 @@ Categoría: `Sake`.
 - Sin abrir: carne de Tajima/Kobe, 明石 pescado, 淡路 cebolla, soja/miso.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 20 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -146,7 +79,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **3** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **3 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -164,58 +97,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/hyogo.php> (nombre, dirección y web propia de cada socio)
   - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **17 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **4 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 春光堂 | 加古川市 | Dulces y repostería | 和菓子協会 | http://shunkodo.com/ | 加古川市加古川町寺家町 11-2 |
-| 藤江屋分大 | 明石市 | Dulces y repostería | 和菓子協会 | http://www.f-bundai.co.jp/ | 明石市本町 1-12-17 |
-| 亀井堂総本店 | 神戸市 | Dulces y repostería | 和菓子協会 | http://www.kameido.co.jp/ | 神戸市中央区元町通 6-3-17 |
-| 本高砂屋 | 神戸市 | Dulces y repostería | 和菓子協会 | http://www.hontaka.co.jp/ | 神戸市東灘区向洋町西 5-1 |
-| 常盤堂 | 神戸市 | Dulces y repostería | 和菓子協会 | http://tokiwado.jp/ | 神戸市東灘区御影中町 4-8-22 |
-| あおやま菓匠 | 芦屋市 | Dulces y repostería | 和菓子協会 | http://www.namagashi.com/ | 芦屋市呉川町 2-17 |
-| 芦屋柳月堂玉川 | 芦屋市 | Dulces y repostería | 和菓子協会 | http://www.ashiya-wagashi.com/ | 芦屋市大原町 9-1-0026 ラポルテ東館地下1階 |
-| 植垣米菓株式会社 | 加古川市 | Aperitivos | 全国米菓工業組合 | http://www.uegaki-beika.co.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 法楽屋高見製菓株式会社 | 加古川市 | Aperitivos | 全国米菓工業組合 | https://hourakuya.web.fc2.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓生地製造業・販売業、米菓販売業（その他菓子を含む卸・小売業） |
-| 合名会社アリモト | 加西市 | Aperitivos | 全国米菓工業組合 | https://www.ippuku.com/ | 米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
-| 株式会社サザエ食品 | 西宮市 | Aperitivos | 全国米菓工業組合 | http://www.sazae-shokuhin.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米穀粉製造・販売業、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等） |
-| イトメン㈱ | たつの市 | Pan y cereal | 全乾麺 | https://www.itomen.com/ | 機械製乾めん |
-| カネス製麺㈱ | たつの市 | Pan y cereal | 全乾麺 | http://www.kanesuseimen.co.jp/ | 機械製乾めん |
-| 森崎製麺所 | 南あわじ市 | Pan y cereal | 全乾麺 | https://www.awajimen.com/ | 手延べ干しめん |
-| 高尾製粉製麺㈱ | 姫路市 | Pan y cereal | 全乾麺 | http://takaoseimen.co.jp/ | 機械製乾めん |
-| 東亜食品工業㈱ | 姫路市 | Pan y cereal | 全乾麺 | http://www.toafoods.co.jp/ | 機械製乾めん |
-| 田靡製麺㈱ | 姫路市 | Pan y cereal | 全乾麺 | https://www.tanabiki-seimen.com/ | 機械製乾めん |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kansai/hyogo.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/hyogo> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 12, Legumbres 3, Miel 2, Pescado 2, Carne 2, ⚠ por decidir 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| Shinobee Honey | 宍粟市 | Miel | ficha | — | https://www.tabechoku.com/producers/22672 |  |
-| 折鶴 | 宝塚市 | Miel | ficha | — | https://www.tabechoku.com/producers/3077771 |  |
-| 前拓水産 | 南あわじ市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23340 |  |
-| 淡路ゆうき耕房 | 南あわじ市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20699 |  |
-| 丹波篠山 細見農園 | 丹波篠山市 | Carne | ficha | — | https://www.tabechoku.com/producers/20352 |  |
-| 奥山ジビエ　IKUTO MEAT | 豊岡市 | Carne | ficha | — | https://www.tabechoku.com/producers/27101 |  |
-| JOURNEYTAIL-ｼﾞｬｰﾆｰﾃｲﾙ- 丹波篠山 | 丹波篠山市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/29420 |  |
-| 丹波篠山　めぶき農房 | 丹波篠山市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/23776 |  |
-| 七代目藤岡農場 | 多可町 | Legumbres | ficha | — | https://www.tabechoku.com/producers/23755 | 兵庫県多可郡多可町 |
-| 農園くるり | 三木市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24774 |  |
-| シンフォニアファーム | 三田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21639 |  |
-| 鴨庄村のりょう農園 | 丹波市市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20553 |  |
-| 丹波篠山 ひなたファーム | 丹波篠山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20037 |  |
-| 丹波篠山ファームMaegawa | 丹波篠山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23990 |  |
-| Hope Will 淡路島 | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20748 |  |
-| あいファーム | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3079097 |  |
-| 淡路島の玉ねぎ屋さん〜KR.vegetable〜 | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21100 |  |
-| あさひサンファーム | 南あわじ市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23569 |  |
-| 里山ブルーベリー農園Wacca | 川西市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078544 |  |
-| 中田農園 | 淡路市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077226 |  |
-| むらおか夢アグリ | 香美町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28701 | 兵庫県美方郡香美町村岡区原 |
-| とまとや中村阮 | 稲美町 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/23397 | 兵庫県加古郡稲美町 |
+| 春光堂 | 加古川市 | Dulces y repostería | 和菓子協会 | http://shunkodo.com/ | 加古川市加古川町寺家町 11-2; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 藤江屋分大 | 明石市 | Dulces y repostería | 和菓子協会 | http://www.f-bundai.co.jp/ | 明石市本町 1-12-17; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 植垣米菓株式会社 | 加古川市 | Aperitivos | 全国米菓工業組合 | http://www.uegaki-beika.co.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 高尾製粉製麺㈱ | 姫路市 | Pan y cereal | 全乾麺 | http://takaoseimen.co.jp/ | 機械製乾めん; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |

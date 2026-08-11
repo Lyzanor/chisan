@@ -1,28 +1,11 @@
 # Tottori — candidatos
 
-- CSV: `data/csv/jp/chugoku/tottori.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/chugoku/tottori.csv` (40 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/tottori> (20 bodegas, leído 2026-08-04). Gremio: el de Tottori lo aloja la propia prefectura, <https://www.pref.tottori.lg.jp/jizake/> — es el único caso de los 47 en que el gremio no tiene dominio propio.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Chiyomusubi Shuzo | 千代むすび酒造 | Sakaiminato |
-| Inata Honten | 稲田本店 | Yonago |
-| Kumezakura Shuzo | 久米桜酒造 | Hoki |
-| Suwa Shuzo | 諏訪酒造 | Chizu |
-| Gensui Shuzo | 元帥酒造 | Kurayoshi |
-| Takada Shuzo | 高田酒造 | Kurayoshi ⚠ |
-| Nakai Shuzo | 中井酒造 | Kurayoshi |
-| Otani Shuzo | 大谷酒造 | Kotoura |
-| Ehara Shuzo Honten | 江原酒造本店 | Kotoura |
-| Umetsu Shuzo | 梅津酒造 | Hokuei |
-| Kunshi Shuzo | 君司酒造 | Tottori |
-| Ota Shuzojo | 太田酒造場 | Wakasa ⚠ |
-| Takada Shuzojo | 高田酒造場 | Iwami ⚠ |
-| Oiwa Shuzo Honten | 大岩酒造本店 | Kofu |
 
 ## Trampas
 - ⚠ **高田酒造 (Kurayoshi) y 高田酒造場 (Iwami) son dos empresas de esta misma
@@ -44,6 +27,8 @@ confirmar contra la web de cada bodega.
   らっきょう de las dunas, lácteos y helado de Daisen, 鳥取和牛.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 20 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -77,7 +62,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
-- Estado: revisión cerrada el 2026-08-10; **3** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **3 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -93,42 +78,8 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
 - Fuentes de esta tanda:
   - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **1 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **1 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 大山ハム | 米子市 | Carne | búsqueda dirigida + web propia | https://daisenham.sanin.jp/ | jamón y embutido |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chugoku/tottori.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/tottori> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 12, Setas 3, Pan y cereal 3, Pescado 2, Miel 1, Carne 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| あんどう青果 | 倉吉市 | Miel | ficha | — | https://www.tabechoku.com/producers/29352 |  |
-| アイディケきのこ事業部 | 八頭町 | Setas | ficha | — | https://www.tabechoku.com/producers/29414 |  |
-| ISN | 岩美町 | Setas | ficha | — | https://www.tabechoku.com/producers/22807 | 鳥取県岩美郡岩美町浦富 |
-| 木子ぽっぽ | 鳥取市 | Setas | ficha | — | https://www.tabechoku.com/producers/23345 |  |
-| らっきょう市場 | 鳥取市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26882 |  |
-| 鳥取の清流 御子垣農園 | 鳥取市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078423 |  |
-| 鹿野地鶏 | 鳥取市 | Carne | ficha | — | https://www.tabechoku.com/producers/20892 |  |
-| Mファーム | 伯耆町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078222 | 鳥取県西伯郡伯耆町 |
-| 大山農園 | 大山町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078132 |  |
-| 米蔵砂川屋 | 鳥取市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/21719 |  |
-| のぎ屋 | 倉吉市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21659 |  |
-| 岸田秀果園 | 倉吉市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21478 |  |
-| 西谷農園 | 倉吉市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077223 |  |
-| 丸山農園 | 八頭町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22066 | 鳥取県八頭郡八頭町 |
-| 竹信農園 | 北栄町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28459 | 鳥取県東伯郡北栄町下種 |
-| Farm Nakahara | 北栄町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077700 | 鳥取県東伯郡北栄町 |
-| 梨屋 こうさてん十 | 大山町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078098 | 鳥取県西伯郡大山町 |
-| LUCK HILL（ラックヒル） | 大山町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22280 | 鳥取県西伯郡大山町 |
-| ふくの喜 | 琴浦町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29594 | 鳥取県東伯郡琴浦町 |
-| つむぎfarm | 鳥取市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078364 |  |
-| 西田園芸 | 鳥取市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25191 |  |
-| たにがみ農園 | 鳥取市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27820 |  |
+| 大山ハム | 米子市 | Carne | búsqueda dirigida + web propia | https://daisenham.sanin.jp/ | jamón y embutido; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |

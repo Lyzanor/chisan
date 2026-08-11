@@ -1,46 +1,11 @@
 # Toyama — candidatos
 
-- CSV: `data/csv/jp/chubu/toyama.csv` (5 filas, altas del 2026-08-05).
+- CSV: `data/csv/jp/chubu/toyama.csv` (45 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/toyama> (20 bodegas, leído 2026-08-04). Gremio: 富山県酒造組合, <http://www.toyama-sake.or.jp/>.
 - Estado: **5 integradas** el 2026-08-05, todas `verificado`; quedan 9 de la tabla. Evidencia en `data/evidence/jp/chubu/toyama.jsonl`.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Tamaasahi Shuzo | 玉旭酒造 | Toyama |
-| Fukutsuru Shuzo | 福鶴酒造 | Toyama |
-| Kiyoto Shuzojo | 清都酒造場 | Takaoka |
-| Ginban Shuzo | 銀盤酒造 | Kurobe |
-| Kuroda Shuzo | 黒田酒造 | Oyabe |
-| Narimasa Shuzo | 成政酒造 | Nanto |
-| Chiyozuru Shuzo | 千代鶴酒造 | Namerikawa |
-| Hongo Shuzo | 本江酒造 | Uozu |
-| Hayashi Shuzojo | 林酒造場 | Asahi ⚠ |
-
-## Integradas 2026-08-05 (5) — todas verificado
-
-| bodega | municipio | resultado |
-|---|---|---|
-| Masuda Shuzoten (Masuizumi) | Toyama | verificado · sin carrito |
-| Fumigiku Shuzo (Haneya) | Toyama | verificado · sin carrito |
-| Tateyama Shuzo | Tonami | verificado · sin carrito |
-| Sanshoraku Shuzo | Nanto | verificado · sin carrito |
-| Takazawa Shuzojo | Himi ⚠ | verificado · sin carrito |
-
-⚠ **高澤酒造場 perdió su kura en el terremoto de Noto de enero de 2024** y está
-reconstruyendo con micromecenazgo. Sigue activa, así que no es purga, pero es el
-mismo aviso que las bodegas de Wajima en `ishikawa.md`: aquí «sigue abierta»
-exige evidencia reciente y hay que revisarla en la próxima pasada.
-
-- **Ninguna de las cinco publica carrito.** Toyama es, de las prefecturas
-  recorridas, la que menos venta directa tiene: cinco de cinco sin tienda.
-- **El gremio de Toyama no publica dominios**, al contrario que el de Yamagata:
-  sus páginas `/pages/NN/` dan el listado de socios y los datos de la propia
-  asociación, no la ficha con web de cada bodega.
-- **`tateyamabrewing.jp` no casa con el nombre de la empresa**; se confirmó que
-  es suyo por el registro de empresas del ayuntamiento de Tonami.
 
 ## Trampas
 - ⚠ **朝日町 (Asahi)**: hay municipios llamados Asahi en Toyama, Yamagata, Nagano,
@@ -57,6 +22,8 @@ exige evidencia reciente y hay que revisarla en la próxima pasada.
   白えび y ホタルイカ (marisco de la bahía), 昆布〆, 干し柿 de Nanto.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -89,7 +56,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -102,47 +69,9 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/toyama.php> (nombre, dirección y web propia de cada socio)
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **6 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **2 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 山岸ちまき本舗 | 氷見市 | Dulces y repostería | 和菓子協会 | http://www.chimaki-hompo.jp/ | 氷見市十二町 3799-2 |
-| 引網香月堂 | 高岡市 | Dulces y repostería | 和菓子協会 | http://www.hikiami.co.jp/ | 高岡市伏木湊町 1-1 |
-| 日の出屋製菓産業株式会社 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://www.hinodeya-seika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、その他（米菓を含むコメ加工品製造・販売等） |
-| 株式会社丸米製菓 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://maru-yonezo.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 株式会社赤坂柿山 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://www.kakiyama.com/ | 米菓製造・販売業（直売所有り） |
-| 株式会社北越 | 砺波市 | Aperitivos | 全国米菓工業組合 | https://hokuetu.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chubu/toyama.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/toyama> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 8, Setas 3, Pescado 2, Sake 1, Vino 1, Miel 1, Lácteos y quesos 1, Huevos 1, Carne 1, Dulces y repostería 1, Pan y cereal 1, Bebidas sin alcohol 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| AGUMOGU | 富山市 | Sake | ficha | — | https://www.tabechoku.com/producers/3077292 |  |
-| やまふじぶどう園 | 富山市 | Vino | ficha | — | https://www.tabechoku.com/producers/3078801 |  |
-| ハニーオアシス | 小矢部市 | Miel | ficha | — | https://www.tabechoku.com/producers/21794 |  |
-| 竹田牧場 | 富山市 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/26572 |  |
-| 富山のたまご屋　仁光園 (にこうえん) | 高岡市 | Huevos | ficha | — | https://www.tabechoku.com/producers/3077849 |  |
-| 富山福舞本舗 | 富山市 | Setas | ficha | — | https://www.tabechoku.com/producers/20415 |  |
-| 松田 　貴志 | 砺波市 | Setas | ficha | — | https://www.tabechoku.com/producers/28785 |  |
-| 八百万屋（もりのわ） | 高岡市 | Setas | ficha | — | https://www.tabechoku.com/producers/22154 |  |
-| 農家　信 | 南砺市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27511 |  |
-| ″旨いを届ける″　聖徳丸 | 朝日町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21261 | 富山県下新川郡朝日町 |
-| 悠牧豚 | 富山市 | Carne | ficha | — | https://www.tabechoku.com/producers/20666 |  |
-| 土遊野 | 富山市 | Dulces y repostería | ficha | — | https://www.tabechoku.com/producers/20012 |  |
-| KOWA CO., LTD. | 富山市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078529 |  |
-| TOYAMA 8008 やおや | 富山市 | Bebidas sin alcohol | ficha | — | https://www.tabechoku.com/producers/21402 |  |
-| メカニックファーム | 南砺市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078430 |  |
-| FUNFARMのづみ野 | 富山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20432 |  |
-| 太田果樹園 / 富山呉羽の梨 | 富山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3079200 |  |
-| 速川活性化協議会 | 氷見市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25756 |  |
-| tateyama breeze | 立山町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28440 | 富山県中新川郡立山町 |
-| 中山農産 | 高岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23183 |  |
-| 氷見キウイランド | 高岡市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3079140 |  |
-| bossa farm | 黒部市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26528 |  |
+| 日の出屋製菓産業株式会社 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://www.hinodeya-seika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、その他（米菓を含むコメ加工品製造・販売等）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 株式会社丸米製菓 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://maru-yonezo.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |

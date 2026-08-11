@@ -1,34 +1,12 @@
 # Okinawa — candidatos
 
-- CSV: `data/csv/jp/kyushu-okinawa/okinawa.csv` (0 filas). Dedup: nada que cruzar.
+- CSV: `data/csv/jp/kyushu-okinawa/okinawa.csv` (50 filas tras la revisión integral de 2026-08-11).
 - Fuente: listado de 酒造所 de おきなわ物語 (portal oficial de turismo de la prefectura), <https://www.okinawastory.jp/feature/awamori/list> (leído 2026-08-04). Gremio: 沖縄県酒造組合, <https://www.okinawa-awamori.or.jp/> — **47 酒造所 y 1 cooperativa**; su certificado TLS fallaba el 2026-08-04, ver README.
-- Estado: cola abierta, 20 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Aquí el gremio no es de sake ni de shochu: es de **泡盛 (awamori)**, destilado de
 arroz índico con koji negro, con Indicación Geográfica (琉球泡盛) y unos 500 años
 de historia. Categoría para todas: `Destilados y licores`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Zuisen Shuzo | 瑞穂酒造 | Naha |
-| Shikina Shuzo | 識名酒造 | Naha |
-| Ishikawa Shuzojo | 石川酒造場 | Nishihara ⚠ |
-| Chatan Choro Shuzo | 北谷長老酒造 | Chatan |
-| Shinzato Shuzo | 新里酒造 | Okinawa |
-| Higa Shuzo | 比嘉酒造 | Yomitan |
-| Kamimura Shuzo | 神村酒造 | Uruma |
-| Taikoku Shuzo | 泰石酒造 | Uruma |
-| Sakiyama Shuzosho | 崎山酒造廠 | Kin |
-| Kin Shuzo | 金武酒造 | Kin |
-| Onna Shuzosho | 恩納酒造所 | Onna |
-| Sakimoto Shuzo | 咲元酒造 | Onna ⚠ |
-| Ryusen Shuzo | 龍泉酒造 | Nago |
-| Tsukayama Shuzosho | 津嘉山酒造所 | Nago |
-| Helios Shuzo | ヘリオス酒造 | Nago |
-| Yamakawa Shuzo | 山川酒造 | Motobu |
-| Nakijin Shuzo | 今帰仁酒造 | Nakijin |
-| Izena Shuzosho | 伊是名酒造所 | Izena |
-| Iheya Shuzo | 伊平屋酒造所 | Iheya |
 
 ## Trampas
 
@@ -61,6 +39,8 @@ de historia. Categoría para todas: `Destilados y licores`.
 
 ## Lote JAS ecológico nacional — 2026-08-08
 
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
+
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
@@ -91,59 +71,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
-- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 宮古島チーズ工房 | Miyakojima | Lácteos y quesos | ChFun | miyakojima-cheese.com | revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
-| 石垣島ビール | Ishigaki | Cerveza | JBA | ishigaki-beer.com | revisado 2026-08-10: el dominio está secuestrado por contenido de casino y no hay fuente primaria actual utilizable |
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 **Ya integrado, no volver a proponer:** ヘリオス酒造 ya está en `okinawa.csv` como `Destilados y licores`.
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/okinawa.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 与那覇食品 | 西原町 | Pan y cereal | búsqueda dirigida + web propia | https://yonaha.co.jp/ | 中頭郡西原町小那覇, de `/company/`; 沖縄そば |
-| セイワ食品 | 浦添市 | Pan y cereal | búsqueda dirigida + web propia | https://mozukuudon.com/ | もずくうどん con mozuku de Iheya |
-| 西崎製麺所 | 糸満市 | Pan y cereal | búsqueda dirigida + web propia | https://www.nishizakimen.com/ | 沖縄そば y fideos de mozuku/yomogi |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/okinawa.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/okinawa> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 13, ⚠ por decidir 3, Pescado 2, Carne 2, Condimentos 1, Pan y cereal 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| グインのアーサ | 伊是名村 | Pescado | ficha | — | https://www.tabechoku.com/producers/29559 | 沖縄県島尻郡伊是名村 |
-| INOCCHIのもずく屋本舗 | 宮古島市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22732 |  |
-| 我那覇畜産 | 名護市 | Carne | ficha | — | https://www.tabechoku.com/producers/22102 |  |
-| 命豚ふぁーむ | 沖縄市 | Carne | ficha | — | https://www.tabechoku.com/producers/21722 |  |
-| シークヮーサーショップ | 大宜味村 | Condimentos | ficha | — | https://www.tabechoku.com/producers/22681 | 沖縄県国頭郡大宜味村 |
-| 南の島の恵み農園 | 恩納村 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/22647 |  |
-| 久米島赤鶏牧場 | 久米島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22949 | 沖縄県島尻郡久米島町 |
-| 志慶真ファーム | 今帰仁村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28702 | 沖縄県国頭郡今帰仁村 |
-| てぃーだふぁーむ | 今帰仁村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24535 | 沖縄県国頭郡今帰仁村 |
-| 伊集農園 | 八重瀬町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21170 | 沖縄県島尻郡八重瀬町 |
-| みやぎ農園青果物出荷組合 | 南城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24047 |  |
-| 自然農園 MONSOON FARM & MUSIC | 南城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28883 |  |
-| INAHO FARM | 名護市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22246 |  |
-| ふるさとマンゴー農園 | 名護市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28574 |  |
-| イナミファーム | 名護市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26275 |  |
-| 石垣島新鮮野菜きまぐれ〜kimagure〜 | 石垣市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26913 |  |
-| 西表ジャングルファーム | 竹富町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25055 | 沖縄県八重山郡竹富町 |
-| 海ぶどう屋さん　富永養殖 | 糸満市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21135 |  |
-| 畑人 | 糸満市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078505 |  |
-| 久米総合開発 | 久米島町 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/20922 | 沖縄県島尻郡久米島町字北原 |
-| みーぐる工房 | 伊江村 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/27313 | 沖縄県国頭郡伊江村 |
-| 新鮮組 | 宮古島市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/26548 |  |

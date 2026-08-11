@@ -1,52 +1,12 @@
 # Hiroshima — candidatos
 
-- CSV: `data/csv/jp/chugoku/hiroshima.csv` (9 filas, altas del 2026-08-05).
+- CSV: `data/csv/jp/chugoku/hiroshima.csv` (62 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/hiroshima> (56 bodegas, leído 2026-08-04). Gremio: 広島県酒造組合, <http://www.hirosake.or.jp/>.
 - Estado: **9 integradas** el 2026-08-05 (7 `verificado`, 2 `parcial`); quedan 7 de la tabla y ~40 del censo. Evidencia en `data/evidence/jp/chugoku/hiroshima.jsonl`.
 
 **西条 (Saijo), en Higashihiroshima, es una de las tres capitales del sake de
 Japón** junto a Nada (Hyogo) y Fushimi (Kioto), con las bodegas alineadas en una
 sola calle. Categoría para todas: `Sake`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Umeda Shuzojo | 梅田酒造場 | Hiroshima |
-| Ikuma Shuzo | 生熊酒造 | Shobara |
-| Kitamura Jozojo | 北村醸造場 | Shobara |
-| Ono Shuzo | 小野酒造 | Kitahiroshima ⚠ |
-| Aseed Brew | アシードブリュー | Fukuyama |
-| Kawamoto Eisuke | 川本英介 | Akiota |
-
-## Integradas 2026-08-05 (9) — salidas de la cola de arriba
-
-| bodega | municipio | resultado |
-|---|---|---|
-| Kamotsuru Shuzo | Higashihiroshima | verificado · venta sí |
-| Kamoizumi Shuzo | Higashihiroshima | verificado · venta sí |
-| Imada Shuzo Honten | Higashihiroshima | verificado · venta sí |
-| Enoki Shuzo | Kure | verificado · venta sí |
-| Etajima Meijo | Etajima | verificado · venta sí |
-| Nakao Jozo | **Takehara** | verificado · venta sí |
-| Kanemitsu Shuzo | Higashihiroshima | verificado · sin carrito |
-| Kyokuho Shuzo | Hiroshima | **parcial** · web bloqueada |
-| Aihara Shuzo | Kure | **parcial** · sin web |
-
-**El buscador del gremio no sirve**: `hirosake.org/app/service?brewery` se pinta
-con JavaScript y en plano no devuelve nada. Hiroshima cuesta como Fukushima, una
-búsqueda por bodega — no como Yamagata.
-
-- **Imada Shuzo Honten sale de la bandeja del `README.md`** de esta carpeta: ya
-  está en el CSV y no debe volver a proponerse. Su dominio público es el de la
-  marca, `fukucho.jp`, no la razón social.
-- **Nakao Jozo (Takehara) no estaba en la tabla**: salió del mismo censo al
-  cazar dominios. Su web falla por HTTPS con **el certificado de `bizmw.com`, el
-  mismo hosting que Morii Shokuhin en Nara**, y responde 200 por HTTP. Ese
-  proveedor ya ha dado dos falsos muertos: probar HTTP antes de descartar.
-- **旭鳳酒造 devuelve 403 con cuerpo mínimo**: bloqueo de bot, no sitio muerto
-  (tercer caso tras Yamahisa). Sin poder leer la ficha se queda `parcial`.
-- **相原酒造 (Ugo no Tsuki) no tiene web propia.** Tercer caso del patrón, tras
-  Hiroki en Fukushima y Takagi en Yamagata: marcas muy valoradas y sin dónde
-  enlazar, todas `parcial`.
 
 ## Trampas
 - **今田酒造本店 (Imada Shuzo Honten, Higashihiroshima)** ya está en la bandeja
@@ -73,6 +33,8 @@ búsqueda por bodega — no como Yamagata.
   お好み焼き のソース (Otafuku y las casas pequeñas), 比婆牛.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 17 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -106,11 +68,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
   - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| マルヒロ水産 | ⚠ | Pescado | propia | namakaki.co.jp | ostra; falta municipio; revisado 2026-08-10: la fuente directa no permitió confirmar conjuntamente identidad, actividad actual y municipio productivo |
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 ## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
 
@@ -119,51 +77,13 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/hiroshima.php> (nombre, dirección y web propia de cada socio)
   - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **10 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **6 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 鶴屋安芸 | 仙呉市 | Dulces y repostería | 和菓子協会 | http://www.tsuruya-aki.co.jp/ | 仙呉市本通 4-7-8 |
-| 銀月堂 | 広島市 | Dulces y repostería | 和菓子協会 | http://www.enjoy.ne.jp/~gingetsudo/ | 広島市中区大手町 5-9-16 |
-| 浅野四十二万石本舗　天光堂 | 広島市 | Dulces y repostería | 和菓子協会 | http://www.tenkoudou42.com/ | 広島市中区千田町 2-11-8 |
-| ツネモト | 広島市 | Dulces y repostería | 和菓子協会 | http://okabe-bld.co.jp/tunemoto/ | 広島市安佐南区川内 1-18-22 |
-| にしき堂 | 広島市 | Dulces y repostería | 和菓子協会 | http://nisikido.lolipop.jp/ | 広島市東区光町 1-13-23 |
-| 後藤製菓 | 廿日市市 | Dulces y repostería | 和菓子協会 | http://www.goto-miyajima.com/ | 廿日市市宮島町 1162-2 |
-| 藤い屋 | 廿日市市 | Dulces y repostería | 和菓子協会 | http://www.fujiiya.co.jp/ | 廿日市市宮島町 1129 |
-| 寺本水産 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.teramotosuisan.jp/ | ⚠ municipio sin confirmar; ostra de Hiroshima |
-| 名原水産 | 呉市 | Pescado | búsqueda dirigida + web propia | https://nabarasuisan.com/ | 呉市音戸町高須, dirección del 特定商取引法 |
-| 長船養殖場（かきアイランド） | 坂町 | Pescado | búsqueda dirigida + web propia | https://osafune.com/ | ⚠ 安芸郡坂町; punto de venta propio |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chugoku/hiroshima.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/hiroshima> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 12, Pescado 4, Pan y cereal 3, Huevos 2, Miel 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 平田農園 | 広島市 | Miel | ficha | — | https://www.tabechoku.com/producers/29200 |  |
-| 鶏家すずたろう | 北広島町 | Huevos | ficha | — | https://www.tabechoku.com/producers/3079036 | 広島県山県郡北広島町6597 |
-| ながみねファーム | 福山市 | Huevos | ficha | — | https://www.tabechoku.com/producers/29270 |  |
-| 広島かき愛好会 | 呉市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077903 |  |
-| 石野水産　瀬戸内ちりめん　ひじき | 呉市倉橋町 | Pescado | ficha | — | https://www.tabechoku.com/producers/20429 |  |
-| 宮原水産 | 呉市倉橋町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21672 |  |
-| かなわ海産 | 江田島市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20446 |  |
-| こめ奉行☆やよい | 世羅町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/22767 | 広島県世羅郡世羅町上津田 |
-| 内藤精米所 | 呉市安浦町 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/25572 |  |
-| あちゅらむ農園 | 安芸高田市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/24779 |  |
-| せんチャンファーム | 三原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21099 |  |
-| なちゅbio | 三次市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20896 |  |
-| 弘法菜園 | 北広島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077934 | 広島県山県郡北広島町大朝 |
-| 大世渡商会 | 呉市上蒲刈 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20470 |  |
-| レモンの卵農園 | 大崎上島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077862 | 広島県豊田郡大崎上島町 |
-| あじば農園（食べチョク） | 尾道市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23484 |  |
-| Remon.Lab | 尾道市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23795 |  |
-| 西屋農園 | 尾道市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077314 |  |
-| 米ファーム　藤原 | 庄原市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078581 |  |
-| 日本農園 | 廿日市市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20811 |  |
-| ふじい農園 | 神石高原町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23033 | 広島県神石郡神石高原町 |
-| あおいくま | 福山市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27628 |  |
+| 鶴屋安芸 | 仙呉市 | Dulces y repostería | 和菓子協会 | http://www.tsuruya-aki.co.jp/ | 仙呉市本通 4-7-8; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 銀月堂 | 広島市 | Dulces y repostería | 和菓子協会 | http://www.enjoy.ne.jp/~gingetsudo/ | 広島市中区大手町 5-9-16; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
+| ツネモト | 広島市 | Dulces y repostería | 和菓子協会 | http://okabe-bld.co.jp/tunemoto/ | 広島市安佐南区川内 1-18-22; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| にしき堂 | 広島市 | Dulces y repostería | 和菓子協会 | http://nisikido.lolipop.jp/ | 広島市東区光町 1-13-23; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 藤い屋 | 廿日市市 | Dulces y repostería | 和菓子協会 | http://www.fujiiya.co.jp/ | 廿日市市宮島町 1129; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+| 寺本水産 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.teramotosuisan.jp/ | ⚠ municipio sin confirmar; ostra de Hiroshima; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |

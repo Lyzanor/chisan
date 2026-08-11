@@ -1,32 +1,11 @@
 # Kagoshima — candidatos
 
-- CSV: `data/csv/jp/kyushu-okinawa/kagoshima.csv` (2 filas: Hombo Shuzo y Kanosuke Distillery, destilados). Dedup: ver la nota sobre 本坊酒造.
+- CSV: `data/csv/jp/kyushu-okinawa/kagoshima.csv` (56 filas tras la revisión integral de 2026-08-11).
 - Fuente: 鹿児島県酒造組合, <https://www.honkakushochu.or.jp/kuramoto/> — **122 蔵元**, el gremio más grande de esta pasada (leído 2026-08-04).
-- Estado: cola abierta, 17 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Aquí el gremio no es de sake: es de **本格焼酎** de batata, con Indicación
 Geográfica (薩摩焼酎). Categoría para todas: `Destilados y licores`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Nishi Shuzo | 西酒造 | Hioki ⚠ |
-| Komasa Jozo | 小正醸造 | Hioki ⚠ |
-| Hamada Shuzo (Denzoin) | 濵田酒造 傳藏院蔵 | Ichikikushikino ⚠ |
-| Satsuma Kinzangura | 薩摩金山蔵 | Ichikikushikino ⚠ |
-| Shirakawa Shuzo | 白石酒造 | Hioki ⚠ |
-| Wakamatsu Shuzo | 若松酒造 | Hioki ⚠ |
-| Yamatozakura Shuzo | 大和桜酒造 | Hioki ⚠ |
-| Tasaki Shuzo | 田崎酒造 | Ichikikushikino ⚠ |
-| Matsuzaki Shuzo | 松﨑酒造 | Hioki ⚠ |
-| Nangoku Shuzo | 南国酒造 | Hioki ⚠ |
-| Satsuma Hamadaya Denbee | 薩州濵田屋伝兵衛 | Ichikikushikino ⚠ |
-| Sata Souji Shoten | 佐多宗二商店 | Minamikyushu ⚠ |
-| Sakurai Shuzo | 櫻井酒造 | Minamikyushu ⚠ |
-| Satsuma Shuzo (Ei) | 薩摩酒造 頴娃蒸溜所 | Minamikyushu ⚠ |
-| Satsuma Muso | さつま無双 | Kagoshima |
-| Azuma Shuzo | 東酒造 | Kagoshima |
-| Sanwa Shuzo | 三和酒造 | Kagoshima ⚠ |
-| Sagara Shuzo | 相良酒造 | Kagoshima |
 
 ## Trampas
 - ⚠ **El gremio agrupa por「エリア」, y sus áreas NO son municipios.**「伊集院」es
@@ -58,6 +37,8 @@ Geográfica (薩摩焼酎). Categoría para todas: `Destilados y licores`.
 
 ## Lote JAS ecológico nacional — 2026-08-08
 
+> **Reauditoría 2026-08-11:** 16 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
+
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
@@ -87,57 +68,6 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 **Ya integrado, no volver a proponer:** 薩摩酒造 ya está en `kagoshima.csv`; su cervecería de Makurazaki sería otra planta del mismo grupo.
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/kagoshima.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **3 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 枦川製茶 | 南九州市 | Té e infusiones | búsqueda dirigida + web propia | https://chiran-cha.jp/ | 知覧茶, 自園自製 |
-| 仁田尾の知覧茶園 | 南九州市 | Té e infusiones | búsqueda dirigida + web propia | https://chirancha.jp/ | 知覧茶 |
-| 美老園 | 鹿児島市 | Té e infusiones | búsqueda dirigida + web propia | https://birouen.com/ | ⚠ casa de té con 140 años; comprobar que elabora y no solo vende |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/kagoshima.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kagoshima> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 6, Pescado 3, Carne 3, Miel 2, Té e infusiones 2, Destilados y licores 1, Café 1, Huevos 1, Legumbres 1, Pan y cereal 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| みしま焼酎　無垢の蔵 | 三島村 | Destilados y licores | ficha | — | https://www.tabechoku.com/producers/23582 | 鹿児島県鹿児島郡三島村 |
-| 田口　純弘 | 南九州市 | Café | ficha | — | https://www.tabechoku.com/producers/26038 |  |
-| 鶴田養蜂場  (鶴田農園) | 指宿市 | Miel | ficha | — | https://www.tabechoku.com/producers/20842 |  |
-| 高野養蜂場 | 鹿児島市 | Miel | ficha | — | https://www.tabechoku.com/producers/20327 |  |
-| 【 村岡製茶 】知覧後岳銘茶 | 南九州市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/23780 |  |
-| 知覧心茶堂 | 南九州市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/20087 |  |
-| 自然放牧場　お多福たまご | 霧島市 | Huevos | ficha | — | https://www.tabechoku.com/producers/20160 |  |
-| 上場高原ビーフ | 出水市 | Pescado | ficha | — | https://www.tabechoku.com/producers/29105 |  |
-| 昌徳丸 | 肝付町 | Pescado | ficha | — | https://www.tabechoku.com/producers/29410 | 鹿児島県肝属郡肝付町 |
-| 【8000万年の叡智】幻の甑島鮮魚 | 薩摩川内市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077554 |  |
-| きくなが養鶏場 | 南九州市 | Carne | ficha | — | https://www.tabechoku.com/producers/22470 |  |
-| さかうえ | 志布志市 | Carne | ficha | — | https://www.tabechoku.com/producers/22642 |  |
-| 種子島夢まるGaRDeN | 西之表市 | Carne | ficha | — | https://www.tabechoku.com/producers/25842 |  |
-| マルマメン工房 | 霧島市 | Legumbres | ficha | — | https://www.tabechoku.com/producers/62 |  |
-| 南九州ルバーブ農園 Red Sticks | 姶良市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26087 |  |
-| 中園ファーム | 西之表市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/3078353 |  |
-| トカラnanairo | 十島村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23732 | 鹿児島県鹿児島郡十島村 |
-| さつまゆうすい農場　そのやま農園 | 湧水町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29333 |  |
-| うとさんち | 阿久根市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23676 |  |
-| 三輪ファーム | 霧島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078799 |  |
-| 久米村農園 | 霧島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078723 |  |
-| 中尾農園 | 鹿児島市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21342 |  |

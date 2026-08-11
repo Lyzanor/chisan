@@ -1,14 +1,8 @@
 # Shizuoka — candidatos
 
-- CSV: `data/csv/jp/chubu/shizuoka.csv` (3 filas, todas altas de esta pasada).
+- CSV: `data/csv/jp/chubu/shizuoka.csv` (53 filas tras la revisión integral de 2026-08-11).
 - Origen: listado aportado por el usuario, `listado_125_productores_locales_japon.xlsx` (2026-08-04).
 - Estado: **las 3 integradas** en el CSV el 2026-08-04 como `parcial`. Cola vacía; el valor de este fichero es ahora el «Qué falta».
-
-| nombre | municipio | categoría | A/B | web |
-|---|---|---|---|---|
-| Suzuki Choju Shoten / Yamacho | Mori | Té e infusiones | B | 100nen-meicha.jp |
-| Baird Brewing | Izu (Shuzenji) | Cerveza | B | bairdbeer.com |
-| West Coast Brewing | Shizuoka (Mochimune) | Cerveza | B | westcoastbrewing.jp |
 
 Mochimune es un barrio de la ciudad de **Shizuoka** y Shuzenji de **Izu**: el
 `municipio` es la ciudad, no el barrio.
@@ -19,23 +13,6 @@ Cola nueva: el fichero estaba vacío de candidatos. Fuente: censo de 酒蔵 de
 SAKETIMES, <https://jp.sake-times.com/sakagura/shizuoka> (30 bodegas, leído
 2026-08-04). Gremio: 静岡県酒造組合, <http://www.shizuoka-sake.jp/>.
 Ninguna trae dominio. Categoría: `Sake`.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Isojiman Shuzo | 磯自慢酒造 | Yaizu |
-| Aoshima Shuzo | 青島酒造 | Fujieda |
-| Shidaizumi Shuzo | 志太泉酒造 | Fujieda |
-| Sugii Shuzo | 杉井酒造 | Fujieda |
-| Eikun Shuzo | 英君酒造 | Shizuoka |
-| Kanzawagawa Shuzojo | 神沢川酒造場 | Shizuoka |
-| Kunpai Shuzo | 君盃酒造 | Shizuoka |
-| Sanwa Shuzo | 三和酒造 | Shizuoka |
-| Shizuoka Hiraki Shuzo | 静岡平喜酒造 | Shizuoka |
-| Suruga Shuzojo | 駿河酒造場 | Shizuoka |
-| Omuraya Shuzojo | 大村屋酒造場 | Shimada |
-| Enshu Yamanaka Shuzo | 遠州山中酒造 | Kakegawa |
-| Kokko Shuzo | 國香酒造 | Fukuroi |
-| Senju Shuzo | 千寿酒造 | Iwata |
 
 Seis están en 静岡市, que tras las fusiones es enorme y con tres 区: el
 `municipio` es `Shizuoka`, como ya se decidió arriba para Mochimune.
@@ -55,6 +32,8 @@ Frentes que sí quedan abiertos:
   Numazu (himono), fresa de Kunōzan.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -87,7 +66,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **4** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **4 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -103,46 +82,9 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/shizuoka.php> (nombre, dirección y web propia de cada socio)
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **5 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **2 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| いせや本店 | 沼津市 | Dulces y repostería | 和菓子協会 | http://www.heisaku.com/ | 沼津市幸町 2 |
-| 菓子舗　間瀬 | 熱海市 | Dulces y repostería | 和菓子協会 | http://www.mase-jp.com/ | 熱海市網代 400-1 |
-| 平松商店 | 掛川市 | Aperitivos | 全国米菓工業組合 | 会社　http://hiramatsu-shoten.com | 米菓製造・販売業（直売所有り） |
-| 有限会社花見煎餅 | 沼津市 | Aperitivos | 全国米菓工業組合 | https://www.numazu-hanami.com | 米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
-| 株式会社伊奈製菓 | 静岡市 | Aperitivos | 全国米菓工業組合 | http://inasenbei.com | 米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/chubu/shizuoka.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/shizuoka> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Pescado 5, Fruta y verdura 5, Té e infusiones 2, Huevos 2, Setas 2, Carne 2, Condimentos 2, Miel 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| abeille | 函南町 | Miel | ficha | — | https://www.tabechoku.com/producers/21211 | 静岡県田方郡函南町 |
-| 佐京園 | 島田市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21849 |  |
-| むら茶園 | 島田市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21441 |  |
-| farm1987 | 下田市 | Huevos | ficha | — | https://www.tabechoku.com/producers/26097 |  |
-| 浜名湖ﾌｧｰﾑ | 湖西市 | Huevos | ficha | — | https://www.tabechoku.com/producers/22374 |  |
-| 富士きのこセンター | 富士市 | Setas | ficha | — | https://www.tabechoku.com/producers/21189 |  |
-| 大井川電機製作所キノコ部 | 島田市 | Setas | ficha | — | https://www.tabechoku.com/producers/23518 |  |
-| 山竹商店 山田勝美 | 沼津市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24652 |  |
-| マルセイ水産 | 沼津市 | Pescado | ficha | — | https://www.tabechoku.com/producers/23447 |  |
-| カネナカ淡水魚 | 浜松市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21106 | 静岡県浜松市西区馬郡町 |
-| edama | 牧之原市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24491 |  |
-| メークリヒカイト | 磐田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/21913 |  |
-| ふもとのジャージー牧場 | 富士宮市 | Carne | ficha | — | https://www.tabechoku.com/producers/29299 |  |
-| もりしま黒豚 | 浜松市 | Carne | ficha | — | https://www.tabechoku.com/producers/23874 |  |
-| 五代目わさび師『坂ぐち』浅田良一 | 伊豆市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/21056 |  |
-| 市川わさび園 | 静岡市 | Condimentos | ficha | — | https://www.tabechoku.com/producers/28338 |  |
-| 里山栗田ファーム | 菊川市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/26934 |  |
-| なごみ農園 | 富士宮市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29 |  |
-| ポットハウス | 東伊豆町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24087 | 静岡県賀茂郡東伊豆町 |
-| とやま農園 | 浜松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077174 |  |
-| 森島農園 | 浜松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21485 |  |
-| シックスベリーファーマーズ 松田農園 | 焼津市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29230 |  |
+| いせや本店 | 沼津市 | Dulces y repostería | 和菓子協会 | http://www.heisaku.com/ | 沼津市幸町 2; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+| 平松商店 | 掛川市 | Aperitivos | 全国米菓工業組合 | 会社　http://hiramatsu-shoten.com | 米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (NOURL, falta confirmar actividad o unidad productiva) |

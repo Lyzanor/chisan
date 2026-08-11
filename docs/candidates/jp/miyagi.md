@@ -1,63 +1,11 @@
 # Miyagi — candidatos
 
-- CSV: `data/csv/jp/tohoku/miyagi.csv` (9 filas, altas del 2026-08-05).
+- CSV: `data/csv/jp/tohoku/miyagi.csv` (55 filas tras la revisión integral de 2026-08-11).
 - Fuente: 宮城県酒造組合 (gremio, autoritativo), <https://miyagisake.jp/kuramoto/> — los 24 miembros con 社名 y municipio (leído 2026-08-04).
 - Estado: **9 integradas** el 2026-08-05 (7 `verificado`, 2 `parcial`); quedan 15. Evidencia en `data/evidence/jp/tohoku/miyagi.jsonl`.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Abekan Shuzo | 阿部勘酒造 | Shiogama |
-| Uchigasaki Shuzoten | 内ヶ崎酒造店 | Tomiya |
-| Sasaki Shuzoten | 佐々木酒造店 | Natori |
-| Moritami Shuzoten | 森民酒造店 | Osaki |
-| Kanbai Shuzo | 寒梅酒造 | Osaki |
-| Tanaka Shuzoten | 田中酒造店 | Kami |
-| Yamawa Shuzoten | 山和酒造店 | Kami |
-| Nakayu Shuzoten | 中勇酒造店 | Kami |
-| Kawakei Shoten | 川敬商店 | Misato |
-| Chida Shuzo | 千田酒造 | Kurihara |
-| Kanenoi Shuzo | 金の井酒造 | Kurihara |
-| Ishikoshi Jozo | 石越醸造 | Tome |
-| Kakuboshi | 角星 | Kesennuma |
-| Onuma Shuzoten | 大沼酒造店 | Murata |
-| Zao Shuzo | 蔵王酒造 | Shiroishi |
-
-## Integradas 2026-08-05 (9)
-
-| bodega | municipio | resultado |
-|---|---|---|
-| Ichinokura | Osaki | verificado · venta sí |
-| Otokoyama Honten | Kesennuma | verificado · venta sí |
-| Katsuyama Shuzo | Sendai | verificado · venta sí |
-| Saura (Urakasumi) | Shiogama | verificado · tienda física |
-| Niizawa Jozoten | Osaki ⚠ | verificado · sin carrito |
-| Hagino Shuzo | Kurihara | verificado · sin carrito |
-| Taiwagura Shuzo | Taiwa | verificado · sin carrito |
-| Suminoe Shuzo | Ishinomaki | **parcial** · sin web |
-| Heiko Shuzo | Ishinomaki | **parcial** · sin web |
-
-⚠ **Miyagi tiene tres municipios que resolvían al sitio equivocado**, y es la
-prefectura con más homónimos vistos hasta ahora:
-- `kami` → 香美町 (Hyogo) en vez de 加美町, donde están tres bodegas de la cola.
-- `shiroishi` → 白石町 (Saga) en vez de 白石市, donde está 蔵王酒造.
-- `misato` → 美郷町 (Shimane), y además hay 美里町 en Kumamoto y en Saitama.
-
-Los dos primeros quedan resueltos en `municipality-overrides.json` el
-2026-08-05, **antes** de escribir esas filas. `misato` sigue sin resolver
-porque hace falta decidir entre cuatro candidatos: hacerlo al integrar 川敬商店.
-
-- ⚠ **Niizawa es un caso de sede contra planta.** Tras 2011 trasladó la
-  elaboración a **Kawasaki-machi** y reconstruyó la sede en Osaki en 2013. La
-  fila toma Osaki, que es lo que dan el gremio y su domicilio social, pero si la
-  unidad productiva sigue en Kawasaki hay que corregirla.
-- **`urakasumi.com/shop/` son tiendas físicas**, no carrito. Tercer falso
-  positivo de la palabra «shop» tras Sachihime y Nabeshima en `saga.md`.
-- **Suminoe y Heiko no tienen web propia**: cuarto y quinto caso del patrón tras
-  Hiroki, Takagi y Aihara. Las marcas cotizadas del segmento premium venden por
-  distribuidor y no publican nada.
 
 ## Trampas
 - El gremio da **barrio, no municipio** en varias (仙台市泉区, 大崎市松山,
@@ -74,6 +22,8 @@ porque hace falta decidir entre cuatro candidatos: hacerlo al integrar 川敬商
   de Sendai, arroz Hitomebore, 味噌/醤油.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 20 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -108,59 +58,8 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 鬼首 (鳴子の風) | Osaki | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/tohoku/miyagi.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/miyagi.php> (nombre, dirección y web propia de cada socio)
-  - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
-  - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **4 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| 九重本舗　玉澤 | 仙台市 | Dulces y repostería | 和菓子協会 | http://tamazawa.jp/ | 仙台市太白区郡山 4-2-1 |
-| みやぎのあられ | 亘理町 | Aperitivos | 全国米菓工業組合 | https://www.miyaginoarare.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） 全国米菓工業組合秋田県支部 |
-| 株式会社精華堂霰総本舗 宮城工場 | 大崎市 | Aperitivos | 全国米菓工業組合 | https://seikadoarare.co.jp | 米菓製造・販売業（直売所有り） |
-| 機械製乾めん・ 手延べ干しめん製造 乾めんのお話 各地の代表的なめん 乾めんレシピ 製麺技士の居る 工場一覧 七夕・そうめんの日 リンク パンフレット・ ポスター 会員専用 PL保険 製麺技士の居る工場一覧 (株)きちみ製麺 | 白石市 | Pan y cereal | 全乾麺 | https://www.tsurigane.com/ | 機械製乾めん |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/tohoku/miyagi.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/miyagi> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Pan y cereal 5, Pescado 4, Fruta y verdura 4, Huevos 2, Setas 2, Carne 2, Cerveza 1, Vino 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 丹庄ファーム | 仙台市 | Cerveza | ficha | — | https://www.tabechoku.com/producers/3078731 |  |
-| 秋保ワイナリー | 仙台市 | Vino | ficha | — | https://www.tabechoku.com/producers/3078032 |  |
-| 石巻Eggファーム | 石巻市 | Huevos | ficha | — | https://www.tabechoku.com/producers/26154 |  |
-| おおえだファーム | 角田市 | Huevos | ficha | — | https://www.tabechoku.com/producers/22373 |  |
-| 七つ森ふもと舞茸 | 大和町 | Setas | ficha | — | https://www.tabechoku.com/producers/24624 | 宮城県黒川郡大和町 |
-| キタザワ花園 | 気仙沼市 | Setas | ficha | — | https://www.tabechoku.com/producers/28678 |  |
-| たみこの海パック | 南三陸町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21734 | 宮城県本吉郡南三陸町 |
-| 松島牡蠣屋 | 松島町 | Pescado | ficha | — | https://www.tabechoku.com/producers/22251 | 宮城県宮城郡松島町 |
-| ㊥マルナカ遠藤水産 | 石巻市 | Pescado | ficha | — | https://www.tabechoku.com/producers/22401 |  |
-| 太良衛門 | 角田市 | Pescado | ficha | — | https://www.tabechoku.com/producers/27504 |  |
-| Yatsu ファーム | 丸森町 | Carne | ficha | — | https://www.tabechoku.com/producers/3078415 | 宮城県伊具郡丸森町 |
-| 蕪栗グリーンファーム | 大崎市 | Carne | ficha | — | https://www.tabechoku.com/producers/27920 |  |
-| もりのした | 岩沼市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/26155 |  |
-| 黒澤農産 | 栗原市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078127 |  |
-| エコファーム高橋 | 栗原市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/23272 |  |
-| エービーfam | 登米市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/21887 |  |
-| Lifetime nature&farming | 石巻市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/24954 |  |
-| あかま里山農園 | 石巻市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/22020 |  |
-| 美食農園 ラ・ファータ【La fata】 | 名取市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23338 |  |
-| デリシャスファーム | 大崎市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078833 |  |
-| 木漏れ日農園 | 登米市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21755 |  |
-| いなほ | 登米市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21095 |  |

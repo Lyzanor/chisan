@@ -2,39 +2,11 @@
 
 - CSV: `data/csv/jp/kyushu-okinawa/kumamoto.csv` (1 fila: Sugi Bee Garden, miel). Dedup: ninguna de abajo solapa. En la bandeja del `README.md` sigue Kumamoto Flour Milling.
 - Fuentes: 球磨焼酎酒造組合, <https://kumashochu.or.jp/product/> (los 27 socios con municipio, leído 2026-08-04) y 熊本酒造組合, <http://www.kumamoto-sake.com/intro/> (las casas de sake).
-- Estado: cola abierta, 18 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Kumamoto tiene **dos gremios y dos productos**. El de 球磨 (Kuma) es shochu de
 arroz con **Indicación Geográfica** — una de las cuatro denominaciones de
 destilado reconocidas de Japón — y concentra 27 destilerías en un valle.
-
-## 球磨焼酎 (14) — categoría `Destilados y licores`
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Sengetsu Shuzo | 繊月酒造 | Hitoyoshi |
-| Torikai Shuzo | 鳥飼酒造 | Hitoyoshi |
-| Fukano Shuzo | 深野酒造 | Hitoyoshi |
-| Yamato Ichi Shuzomoto | 大和一酒造元 | Hitoyoshi |
-| Jufuku Shuzojo | 寿福酒造場 | Hitoyoshi |
-| Takada Shuzojo | 高田酒造場 | Asagiri ⚠ |
-| Miyahara Shuzojo | 宮原酒造場 | Asagiri |
-| Matsumoto Shuzojo | 松本酒造場 | Asagiri |
-| Matsunoizumi Shuzo | 松の泉酒造 | Asagiri |
-| Tsutsumi Shuzo | 堤酒造 | Asagiri |
-| Tsunematsu Shuzo Honten | 恒松酒造本店 | Taragi |
-| Kinoshita Jozojo | 木下醸造所 | Taragi ⚠ |
-| Fusanotsuyu | 房の露 | Taragi |
-| Toyonaga Shuzo | 豊永酒造 | Yunomae |
-
-## 清酒 (4) — categoría `Sake`
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Kumamoto-ken Shuzo Kenkyujo | 熊本県酒造研究所 | Kumamoto |
-| Zuiyo | 瑞鷹 | Kumamoto |
-| Tsujun Shuzo | 通潤酒造 | Yamato |
-| Hananoka Shuzo | 花の香酒造 | Nagomi |
 
 ## Trampas
 - ⚠ **高田酒造場 (Asagiri, Kumamoto)** no es 高田酒造場 (Iwami, Tottori) ni
@@ -57,6 +29,8 @@ destilado reconocidas de Japón — y concentra 27 destilerías en un valle.
   海苔 de Ariake.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -89,55 +63,4 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
-- Estado: revisión cerrada el 2026-08-10; **0** casos retenidos con motivo individual y sin publicar.
-
-| nombre (fuente) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-
-## Categorías infrarrepresentadas — 2ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/kumamoto.csv`.
-- Alcance: verticales que el catálogo japonés casi no tiene y que en Japón son evidentes — dulce tradicional, senbei/arare, fideo seco, pescado elaborado, té, seta, embutido, miel, conserva y fruta. Fuera `Sake` y `Destilados y licores`; fuera también cerveza y vino, que los barrió la pasada anterior del mismo día.
-- Fuentes de esta tanda:
-  - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/kumamoto.php> (nombre, dirección y web propia de cada socio)
-  - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **2 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
-
-| nombre (社名) | municipio | categoría | fuente | web | notas |
-|---|---|---|---|---|---|
-| きくもとや | 熊本市 | Dulces y repostería | 和菓子協会 | http://kikumotoya.com/ | 熊本市春日 2-13-6 |
-| カネリョウ海藻 | 宇土市 | Pescado | búsqueda dirigida + web propia | https://www.kaneryo.co.jp/ | alga y nori de Ariake |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kyushu-okinawa/kumamoto.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kumamoto> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 9, Miel 2, Pescado 2, Carne 2, Destilados y licores 1, Cerveza 1, Té e infusiones 1, Lácteos y quesos 1, Setas 1, Dulces y repostería 1, Pan y cereal 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 自然薯のくわはら | 錦町 | Destilados y licores | ficha | — | https://www.tabechoku.com/producers/20764 | 熊本県球磨郡錦町 |
-| あか牛の三協グループ | 熊本市 | Cerveza | ficha | — | https://www.tabechoku.com/producers/20578 |  |
-| 西岡養蜂園 | 八代市 | Miel | ficha | — | https://www.tabechoku.com/producers/24303 |  |
-| 山麓はっち | 菊鹿町 | Miel | ficha | — | https://www.tabechoku.com/producers/3078025 |  |
-| 斉藤製茶園 | 菊池市 | Té e infusiones | ficha | — | https://www.tabechoku.com/producers/21428 |  |
-| 山のいぶき | 南小国町 | Lácteos y quesos | ficha | — | https://www.tabechoku.com/producers/21278 | 熊本県阿蘇郡南小国町 |
-| せんい生活 熊本県人吉市 | 人吉市 | Setas | ficha | — | https://www.tabechoku.com/producers/23159 |  |
-| 乙姫丸&乙姫屋 | 上天草市 | Pescado | ficha | — | https://www.tabechoku.com/producers/29326 |  |
-| のむちゃん農園 | 宇城市 | Pescado | ficha | — | https://www.tabechoku.com/producers/26248 |  |
-| ファームヨシダ | 大津町 | Carne | ficha | — | https://www.tabechoku.com/producers/23681 | 熊本県菊池郡大津町 |
-| 阿蘇さとう農園 | 阿蘇市 | Carne | ficha | — | https://www.tabechoku.com/producers/22542 |  |
-| 峯 樹木園(みねじゅもくえん) | 合志市 | Dulces y repostería | ficha | — | https://www.tabechoku.com/producers/27390 |  |
-| 夢アグリ | 山鹿市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3079170 |  |
-| hiroファーム | 八代市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078074 |  |
-| 農園ベルの樹 | 南阿蘇村 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077183 |  |
-| 山口果樹園 | 宇城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27848 |  |
-| 西村農園（熊本県） | 宇城市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25243 |  |
-| SHIN FARM | 山鹿市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23624 |  |
-| 松下農園 | 熊本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25081 |  |
-| 吉次園 | 熊本市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21660 |  |
-| 右田柑橘 | 玉名市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/20604 |  |
-| たなか果樹園 | 芦北町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24233 | 熊本県葦北郡芦北町 |
+- Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.

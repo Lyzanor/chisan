@@ -1,6 +1,6 @@
 # Kagawa — candidatos
 
-- CSV: `data/csv/jp/shikoku/kagawa.csv` (15 filas: 6 bodegas + 9 casas de salsa de soja, altas del 2026-08-04).
+- CSV: `data/csv/jp/shikoku/kagawa.csv` (88 filas tras la revisión integral de 2026-08-11).
 - Fuentes: 香川県酒造組合, <https://sanuki-sake.com/> (6 miembros, censo completo, **con dominio**) y 小豆島醤油協同組合, <https://shima-shoyu.com/> (14 socios + 4 casas de la isla fuera del gremio). Ambas leídas 2026-08-04.
 - Estado: **sake ✅ integrado** (las 6) y **醤油 ✅ 9 de 18** (2026-08-04). Quedan 9 sin dominio localizado.
 
@@ -8,51 +8,10 @@ Kagawa es la prefectura más pequeña de Japón y solo tiene **6 bodegas de sake
 así que el grueso de candidatos viene del otro lado: **小豆島 (Shodoshima)**, la
 isla del醤油, donde sobreviven ~18 casas en un radio de 5 km.
 
-## Sake — ✅ INTEGRADO 2026-08-04
-
-Las 6 del censo entraron en `data/csv/jp/shikoku/kagawa.csv`: cinco
-`verificado` y una `parcial`. Evidencia en `data/evidence/jp/shikoku/kagawa.jsonl`.
-
-| bodega | municipio | resultado |
-|---|---|---|
-| MORIKUNI | Shodoshima | verificado · venta online sí |
-| Nishino Kinryo | Kotohira | verificado · venta online sí |
-| Ayakiku Shuzo | Ayagawa | verificado · venta sin comprobar |
-| Yushin Shuzo | Ayagawa | verificado · venta sin comprobar ⚠ |
-| Kawatsuru Shuzo | Kanonji | verificado · venta sin comprobar |
-| Maruo Honten | Kotohira | **parcial** · sin web propia |
-
-Lo que salió al abrirlas:
-- ⚠ **Yushin Shuzo es hoy sobre todo una cosmética.** Su negocio principal es el
-  extracto Rice Power y su tienda (`ricepowershop.jp`) vende cremas, no bebida.
-  Sigue declarando sake artesanal y es socia del gremio, así que entra como
-  `Sake`, pero su venta online **no** sostiene la bebida.
-- **La lectura automática de `ayakiku.com` devolvió otra razón social
-  (「淡路菊水酒造」) y otro municipio (Takamatsu).** La ficha del gremio dice
-  綾菊酒造, Ayagawa, 山田下 3393-1 — y coinciden código postal, número y teléfono,
-  así que era ruido de lectura, no un cruce de empresas. Ante la duda, manda el
-  gremio.
-- **`kawatsuru.com/shop/` es un localizador de tiendas físicas**, no un carrito:
-  no sostiene `Venta online=sí`.
-- **Maruo Honten (悦凱陣) no tiene web propia** pese a ser conocida fuera de Japón:
-  entra `parcial` y sin enlace, como las bodegas de Nara del gremio.
-
 ## 醤油 de Shodoshima — 9 integradas de 18 (2026-08-04)
 
 Categoría `Condimentos`. Siete `verificado`, una `parcial` y una fuera.
 Cinco con tienda propia.
-
-| casa | municipio | resultado |
-|---|---|---|
-| Shokin Shoyu | Shodoshima | verificado · venta sí |
-| Yamasan Shoyu | Shodoshima | verificado · venta sí |
-| Kinryo Shoyu | Shodoshima | verificado · venta sí |
-| Takahashi Shoten (Yamamo) | Shodoshima | verificado · venta sí |
-| Takesan | Shodoshima | verificado · venta sí |
-| Yamaroku Shoyu | Shodoshima | verificado · venta sin comprobar |
-| Sakai Shoyu Kogyo | Shodoshima | verificado · venta sin comprobar |
-| Yamahisa | Shodoshima | **parcial** · dominio con WAF |
-| Yamahira Shoyuten | **Tonosho** | verificado · venta sí |
 
 Lo que salió al abrirlas:
 - **El dominio de 左海醤油工業 que publica la prensa está mudado.**
@@ -100,6 +59,8 @@ Lo que salió al abrirlas:
 
 ## Lote JAS ecológico nacional — 2026-08-08
 
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
+
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
 | Nombre oficial del operador | Centro productivo declarado | Dirección del centro | Tipo JAS | Nº de certificación |
@@ -133,7 +94,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **OliveKagawa** — 香川県 — オリーブオイル認定製造事業者 (2025-03), <https://www.my-kagawa.jp/olive/feature/manufacturer/top>
   - **propia** — búsqueda dirigida por producto; ficha o web propia del productor
-- Estado: revisión cerrada el 2026-08-10; **1** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **1 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -149,49 +110,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/kagawa.php> (nombre, dirección y web propia de cada socio)
   - **全国乾麺協同組合連合会** — 製麺技士の居る工場一覧, <https://www.kanmen.com/factory/>
   - búsqueda dirigida por vertical, con la dirección leída en la web del propio productor
-- Estado: **8 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **4 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 夢菓房たから | 高松市 | Dulces y repostería | 和菓子協会 | http://e-takara.jp/ | 高松市春日町 214 |
-| ㈱藤井製麺 | 三木町 | Pan y cereal | 全乾麺 | http://www.fujimen.com/ | 機械製乾めん |
-| 伊藤製麺所 | 土庄町 | Pan y cereal | 全乾麺 | https://shoudoshima-soumen.com/ | 手延べ干しめん |
-| ㈲大喜多製粉所 | 宇多津町 | Pan y cereal | 全乾麺 | http://www.shokokai.or.jp/37/okita/index.htm | 機械製乾めん |
-| 安田食品工業（瀬戸よ志） | 小豆島町 | Conservas | búsqueda dirigida + web propia | https://www.yasudanotukudani.co.jp/ | 佃煮 del 醤の郷; 小豆郡小豆島町安田 |
-| 島乃香 | 小豆島町 | Conservas | búsqueda dirigida + web propia | https://www.simanoca.co.jp/ | 佃煮 de kombu; 小豆郡小豆島町馬木 |
-| 島じまん | 小豆島町 | Conservas | búsqueda dirigida + web propia | https://www.shimajiman.co.jp/ | 佃煮; 小豆郡小豆島町苗羽, dos plantas en la misma calle |
-| 小豆島食品 | ⚠ | Conservas | búsqueda dirigida + web propia | https://www.shodoshima-shokuhin.co.jp/ | ⚠ la portada no publica dirección; tienda propia 『島の味』 |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/shikoku/kagawa.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/kagawa> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 10, Setas 4, Pescado 3, Carne 1, Condimentos 1, Aceite 1, Frutos secos 1, ⚠ por decidir 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| 阿讃きのこ屋 | まんのう町 | Setas | ficha | — | https://www.tabechoku.com/producers/27803 | 香川県仲多度郡まんのう町 |
-| さぬきくらげの店 | 三木町 | Setas | ficha | — | https://www.tabechoku.com/producers/21285 | 香川県木田郡三木町 |
-| さぬきのこ | 三豊市 | Setas | ficha | — | https://www.tabechoku.com/producers/27763 |  |
-| あい・あーる椎茸店 | 丸亀市 | Setas | ficha | — | https://www.tabechoku.com/producers/27853 |  |
-| 大塩水産 直売店 | さぬき市 | Pescado | ficha | — | https://www.tabechoku.com/producers/24332 |  |
-| 葉っぱ舎（はっぱや） | 三木町 | Pescado | ficha | — | https://www.tabechoku.com/producers/21290 | 香川県木田郡三木町 |
-| 伊吹島プロジェクト | 観音寺市 | Pescado | ficha | — | https://www.tabechoku.com/producers/20817 |  |
-| オイノコ舎 | 三豊市 | Carne | ficha | — | https://www.tabechoku.com/producers/26647 |  |
-| にじの百姓 | まんのう町 | Condimentos | ficha | — | https://www.tabechoku.com/producers/22989 | 香川県仲多度郡まんのう町 |
-| 瀬戸内オリーブ園 | 坂出市 | Aceite | ficha | — | https://www.tabechoku.com/producers/24631 |  |
-| 三豊の栗園　ゆたふぁむ | 三豊市 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/29016 |  |
-| TAGATAME【タガタメ】 | さぬき市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077301 |  |
-| 空海の郷 | まんのう町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24861 | 香川県仲多度郡まんのう町 |
-| ハラシモベース | 三豊市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24543 |  |
-| さぬき新居農園 | 丸亀市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077668 |  |
-| 虹の邑農園 | 善通寺市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/26266 |  |
-| 日本農産 | 坂出市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24947 |  |
-| ADL | 小豆島町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24702 | 香川県小豆郡小豆島町 |
-| もりやま農園 | 高松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25832 |  |
-| 川田明美 | 高松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/28332 |  |
-| Fumico farm | 高松市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27495 |  |
-| めざめ | 丸亀市 | ⚠ por decidir | — | — | https://www.tabechoku.com/producers/24617 |  |
+| ㈱藤井製麺 | 三木町 | Pan y cereal | 全乾麺 | http://www.fujimen.com/ | 機械製乾めん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 伊藤製麺所 | 土庄町 | Pan y cereal | 全乾麺 | https://shoudoshima-soumen.com/ | 手延べ干しめん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| ㈲大喜多製粉所 | 宇多津町 | Pan y cereal | 全乾麺 | http://www.shokokai.or.jp/37/okita/index.htm | 機械製乾めん; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
+| 小豆島食品 | ⚠ | Conservas | búsqueda dirigida + web propia | https://www.shodoshima-shokuhin.co.jp/ | ⚠ la portada no publica dirección; tienda propia 『島の味』; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |

@@ -1,28 +1,11 @@
 # Osaka — candidatos
 
-- CSV: `data/csv/jp/kansai/osaka.csv` (2 filas: Minoh Beer y Marca Brewing, cerveza). Dedup: ninguna de abajo solapa.
+- CSV: `data/csv/jp/kansai/osaka.csv` (76 filas tras la revisión integral de 2026-08-11).
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/osaka> (17 bodegas, leído 2026-08-04). Gremio: 大阪府酒造組合, <http://osaka-sake.com/>.
-- Estado: cola abierta, 14 `unverified` (2026-08-04). **Ninguna trae dominio**: cosecharlo es el trabajo previo a cada alta.
+- Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
 Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta a
 confirmar contra la web de cada bodega.
-
-| nombre (rōmaji propuesto) | 社名 | municipio |
-|---|---|---|
-| Akishika Shuzo | 秋鹿酒造 | Nose |
-| Goshun | 呉春 | Ikeda ⚠ |
-| Kiyotsuru Shuzo | 清鶴酒造 | Takatsuki |
-| Kotobuki Shuzo | 寿酒造 | Takatsuki |
-| Daimon Shuzo | 大門酒造 | Katano |
-| Takashima Shuzo | 高島酒造 | Ibaraki ⚠ |
-| Nakao Shuzo | 中尾酒造 | Ibaraki ⚠ |
-| Saijo | 西條合資 | Kawachinagano |
-| Sakai Meijo | さかい銘醸 | Sakai |
-| Kitashoji Shuzoten | 北庄司酒造店 | Izumisano |
-| Isaka Shuzojo | 井坂酒造場 | Kishiwada |
-| Gancho | 元朝 | Kishiwada |
-| Naniwa Shuzo | 浪花酒造 | Hannan |
-| Nagataki Shuzo (Yao) | 長瀧酒造 八尾蔵 | Yao |
 
 ## Trampas
 - ⚠ **茨木市 (Ibaraki, Osaka) no es 茨城県 (Ibaraki, prefectura) ni 茨城町**. Es la
@@ -45,6 +28,8 @@ confirmar contra la web de cada bodega.
   昆布 y 佃煮 de Osaka, 醤油 de Sakai.
 
 ## Lote JAS ecológico nacional — 2026-08-08
+
+> **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.
 
 Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con las tablas anteriores de esta prefectura. Fuente principal: registro vigente de operadores con certificación orgánica JAS del Ministerio de Agricultura (MAFF), estado a 2026-06-30: <https://www.maff.go.jp/j/jas/attach/xls/jas_business_operators-148.xlsx>. Se han retenido únicamente `認証生産行程管理者` (responsables certificados del proceso de producción) con centro productivo en la prefectura y certificación de producto agrícola, ganadero o alimento transformado; se excluyeron importadores y meros fraccionadores. La certificación y la dirección del centro son evidencia de descubrimiento, no sustituyen la comprobación de identidad pública, actividad actual, productos concretos, municipio vigente ni canal de venta.
 
@@ -77,7 +62,7 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **ChFun** — Cheese Fun! — 全国チーズ工房ガイド, <https://cheese-fun.jp/guide/>
   - **JBA** — 全国地ビール醸造者協議会 — 会員リスト, <http://www.beer.gr.jp/member/>
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
-- Estado: revisión cerrada el 2026-08-10; **2** casos retenidos con motivo individual y sin publicar.
+- Estado: revisión 2026-08-11; **2 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
@@ -93,76 +78,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/osaka.php> (nombre, dirección y web propia de cada socio)
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: **35 `unverified`** (2026-08-10). Deduplicados por dominio contra el CSV en HEAD. `municipio` va en japonés porque es lo que publica la fuente: el rōmaji es trabajo de la integración, no de esta nota.
+- Estado: revisión 2026-08-11; **9 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
-| 夢菓匠　冨久屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.wagashi.org/fukuya/ | 大阪市都島区高倉町 1-7-1 |
-| 御菓子司　絹笠 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.honke-kinugasa.jp/ | 大阪市旭区大宮 2-16-9 |
-| 鶴屋八幡 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.tsuruyahachiman.co.jp/ | 大阪市中央区今橋 4-4-9 |
-| 菊屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.kikuya-osaka.jp/ | 大阪市中央区高麗橋 2-2-12 |
-| 大阪の駿河屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://o-surugaya.com/ | 大阪市中央区平野町 1-8-13 |
-| 三都屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.mitoya-kuromon.com/ | 大阪市中央区日本橋 1-22-21 |
-| 浪芳庵 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.rakuten.co.jp/namiyoshi/ | 大阪市中央区難波 4-8-5 |
-| 庵月 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.angetsu.co.jp/ | 大阪市中央区東心斎橋 2-8-29 |
-| 松葉屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.hon-matsubaya.co.jp// | 大阪市天王寺区真法院町 1-14 |
-| （株）天王寺源氏堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www1.enekoshop.jp/shop/genjidou// | 大阪市天王寺区夕陽丘 4-17 |
-| 大阪府生菓子協同組合 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.wagashi-osaka.or.jp/ | 大阪市阿倍野区西田辺町 1-20-12 |
-| （有）福田屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.noneman.net/ | 大阪市阿倍野区美章園 2-15-12 |
-| 浪花餅 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.naniwamochi.com/ | 大阪市阿倍野区阿倍野元町 3-19 |
-| 河内駿河屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.kawachisurugaya.co.jp/ | 大阪市東住吉区住道矢田 1-22-2 |
-| （株）高砂堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://store.shopping.yahoo.co.jp/takasagodo/ | 大阪市西区本町 1-7-7 |
-| 大六堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.dairokudo.com | 大阪市大正区三軒家西 3-6-10 |
-| 平和堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www4.ocn.ne.jp/~heiwadou/ | 大阪市大正区鶴町 2-8-7 |
-| 釣鐘屋本舗 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.tsuriganeyahonpo.co.jp/ | 大阪市浪速区恵美須東 1-7-11 |
-| 甘泉堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://wagashi.shop8.makeshop.jp/ | 大阪市西成区花園南 1-4-22 |
-| リクロー | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.rikuro.co.jp/ | 大阪市西成区千本北 2-28-10 |
-| 千壽堂春蘭 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.geocities.jp/wjwwh948/newpage2.htm | 大阪市生野区舎利寺 2-3-13 |
-| 平野郷菓　梅月堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://baigetudou.com/ | 大阪市平野区平野本町 4-13-4 |
-| （株）幸成堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.wagashi-kouseido.com/ | 大阪市住之江区北島 3-1-35 |
-| 御菓子司　梅屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.umeya-net.com/ | 大阪市城東区新喜多東 1-2-1 |
-| （株）浪速育松月 | 大阪市 | Dulces y repostería | 和菓子協会 | http://shogetsu-sweets.jp | 大阪市北区中津 7-8-3 |
-| あもや南春日 | 大阪市 | Dulces y repostería | 和菓子協会 | http://amoya.jp/ | 大阪市生野区生野東 4-1-43 |
-| 高橋製菓株式会社 | 大阪市 | Aperitivos | 全国米菓工業組合 | http://www.takahashi-seika.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓生地製造業・販売業 |
-| 株式会社法善寺あられ | 大阪市 | Aperitivos | 全国米菓工業組合 | http://www.houzenji-arare.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 株式会社いづみあられ本舗 | 岸和田市 | Aperitivos | 全国米菓工業組合 | http://www.izumiarare.com | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 株式会社山田製菓 | 東大阪市 | Aperitivos | 全国米菓工業組合 | http://www.yamadaseika.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り） |
-| 株式会社井崎商店 | 松原市 | Aperitivos | 全国米菓工業組合 | http://www.izakiarare.com/ | 米菓製造業（菓子卸等へ販売） |
-| とよす株式会社 | 池田市 | Aperitivos | 全国米菓工業組合 | http://www.toyosu.co.jp | 米菓製造・販売業（直売所有り）、その他（米菓を含むコメ加工品製造・販売等） |
-| 株式会社相生 | 羽曳野市 | Aperitivos | 全国米菓工業組合 | http://www.aioi-rgm.co.jp/ | 米菓製造業（菓子卸等へ販売）、米菓販売業（その他菓子を含む卸・小売業） |
-| 新興製菓有限会社 | 阪南市 | Aperitivos | 全国米菓工業組合 | https://shinkouseika.square.site/ | 米菓製造・販売業（直売所有り） |
-| 辻茂製菓有限会社 | 阪南市 | Aperitivos | 全国米菓工業組合 | http://www.tsujimoseika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業） |
-
-## Venta directa — 3ª pasada 2026-08-10
-
-- CSV destino: `data/csv/jp/kansai/osaka.csv`.
-- Fuente: **食べチョク**, ficha por productor bajo <https://www.tabechoku.com/producers/osaka> (listado y ficha leídos el 2026-08-10).
-- Techo de la fuente: es un mercado de venta directa, no un padrón. Sostiene identidad, municipio, catálogo de productos y **que el productor vende hoy y lo hace él mismo** — justo lo que un registro no prueba. Lo que no da es el dominio propio: cosecharlo sigue siendo el paso previo a cada alta.
-- **0 de 22** llevan la categoría cerrada contra los productos que el productor tiene a la venta; el resto sale de su descripción y queda como provisional. `⚠ por decidir` es que ninguna de las dos daba.
-- Mezcla: Fruta y verdura 15, Pescado 2, Destilados y licores 1, Setas 1, Carne 1, Pan y cereal 1, Frutos secos 1.
-- Estado: **22 `unverified`** (2026-08-10). Deduplicados por nombre normalizado contra el CSV y contra las tablas anteriores de esta prefectura.
-
-| nombre | municipio | categoría | cerrada por | productos a la venta | ficha | notas |
-|---|---|---|---|---|---|---|
-| コンパニョーニファームズ | 吹田市 | Destilados y licores | ficha | — | https://www.tabechoku.com/producers/27355 |  |
-| 泉州きくらげ | 泉大津市 | Setas | ficha | — | https://www.tabechoku.com/producers/26684 |  |
-| 大阪最南端漁師 | 岬町 | Pescado | ficha | — | https://www.tabechoku.com/producers/3077779 | 大阪府泉南郡岬町 |
-| カネサン | 泉佐野市 | Pescado | ficha | — | https://www.tabechoku.com/producers/3078722 |  |
-| 河内鴨ツムラ本店 / 大阪松原産 / 最高級 国産合鴨肉 / 創業1870年 | 松原市 | Carne | ficha | — | https://www.tabechoku.com/producers/20801 |  |
-| れんげの恵 | 高槻市 | Pan y cereal | ficha | — | https://www.tabechoku.com/producers/3078437 |  |
-| 能勢町栗農家　銀まろ | 能勢町 | Frutos secos | ficha | — | https://www.tabechoku.com/producers/25141 | 大阪府豊能郡能勢町 |
-| Hill House | 交野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21277 |  |
-| 野村ファーム | 交野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21763 |  |
-| ファームぱんぷりん | 大阪市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/21236 |  |
-| アズマ養蜂場　みつばち農園 | 富田林市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22575 |  |
-| 五十緑農園 | 岸和田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3078697 |  |
-| 福田農園（大阪府） | 岸和田市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/23482 |  |
-| HICOM Smart Farm 泉佐野ファクトリー | 泉佐野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/29659 |  |
-| ことりはぶどう園 | 泉南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24957 |  |
-| 健康サポート農園 | 箕面市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24566 |  |
-| あやかるハウス | 羽曳野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/24919 |  |
-| ハッピーファーム | 羽曳野市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/25715 |  |
-| 能勢 田口農園 | 能勢町 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/27772 | 大阪府豊能郡能勢町 |
-| みなみがわ農園 | 貝塚市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22643 |  |
-| アガタ果樹園(ぶどう） | 貝塚市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/22049 |  |
-| リバーサイドガーデン | 阪南市 | Fruta y verdura | ficha | — | https://www.tabechoku.com/producers/3077187 |  |
+| 三都屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.mitoya-kuromon.com/ | 大阪市中央区日本橋 1-22-21; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 浪芳庵 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.rakuten.co.jp/namiyoshi/ | 大阪市中央区難波 4-8-5; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
+| （株）天王寺源氏堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www1.enekoshop.jp/shop/genjidou// | 大阪市天王寺区夕陽丘 4-17; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 浪花餅 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.naniwamochi.com/ | 大阪市阿倍野区阿倍野元町 3-19; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| （株）高砂堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://store.shopping.yahoo.co.jp/takasagodo/ | 大阪市西区本町 1-7-7; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+| 大六堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.dairokudo.com | 大阪市大正区三軒家西 3-6-10; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 平和堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www4.ocn.ne.jp/~heiwadou/ | 大阪市大正区鶴町 2-8-7; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+| 釣鐘屋本舗 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.tsuriganeyahonpo.co.jp/ | 大阪市浪速区恵美須東 1-7-11; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+| 千壽堂春蘭 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.geocities.jp/wjwwh948/newpage2.htm | 大阪市生野区舎利寺 2-3-13; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
