@@ -19,7 +19,6 @@ productive municipality, current offer and phone/email before admission.
 |---|---|---|---|
 | East Yonderton Farm | Farmers/growers; rating/inspection 2023-07-05 | Easter Yonderton Farm, Walkinshaw Road, Paisley, Renfrewshire, PA4 9LP | [136585](https://api.ratings.food.gov.uk/Establishments/136585) |
 | South Muirdykes Farm | Farmers/growers; rating/inspection 2023-07-05 | South Muirdykes Farm House, Bowfield Road, Howwood, Johnstone Renfrewshire, PA9 1DB | [225587](https://api.ratings.food.gov.uk/Establishments/225587) |
-| The Glasgow Distillery Company | Manufacturers/packers; rating/inspection 2025-10-20 | Unit B, 2 Deanside Road, Hillington Park, Glasgow, G52 4XB | [912524](https://api.ratings.food.gov.uk/Establishments/912524) |
 | Hebridean Shellfish Ltd | Manufacturers/packers; rating/inspection 2026-07-20 | Unit 10 Mossedge Industrial Estate, Moss Road, Linwood, Paisley, PA3 3HR | [1849334](https://api.ratings.food.gov.uk/Establishments/1849334) |
 | Big Bear Bakery | Manufacturers/packers; rating/inspection 2025-07-16 | Block B3/1/G (Lower), 15 Edison Street, Hillington Park, Glasgow Renfrewshire, G52 4JW | [138602](https://api.ratings.food.gov.uk/Establishments/138602) |
 | John Mitchell and Son Butchers | Manufacturers/packers; rating/inspection 2026-01-21 | 2 Bridgewater Shopping Centre, Bridgewater Place, Erskine, Renfrewshire, PA8 7AA | [42113](https://api.ratings.food.gov.uk/Establishments/42113) |

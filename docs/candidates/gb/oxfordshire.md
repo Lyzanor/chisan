@@ -23,14 +23,8 @@ productive municipality, current offer and phone/email before admission.
 | Showell Farm | Farmers/growers; rating/inspection 2022-06-17 | Little Tew, Chipping Norton, Oxfordshire, OX7 5TH | [1106139](https://api.ratings.food.gov.uk/Establishments/1106139) |
 | The Winery at Hundred Hills / Stonor Valley Winery | Farmers/growers; rating/inspection 2021-09-01 | Bank Farm The Old Road, Pishill, Henley-On-Thames Oxon, RG9 6HJ | [1290124](https://api.ratings.food.gov.uk/Establishments/1290124) |
 | Cowley Butchers And Groceries | Farmers/growers; rating/inspection 2024-08-01 | 435 Cowley Road, Oxford, Oxfordshire, OX4 2DL | [1401889](https://api.ratings.food.gov.uk/Establishments/1401889) |
-| Loddon Brewery | Manufacturers/packers; rating/inspection 2026-03-04 | Dunsden Green Farm Church Lane, Dunsden, Reading, RG4 9QD | [271713](https://api.ratings.food.gov.uk/Establishments/271713) |
 | Still On The Hill Ltd Trd As Oxford Artisan Distillery | Manufacturers/packers; rating/inspection 2024-02-09 | The Bungalow, The Depot, Cheney Lane, Oxford, OX3 7QJ | [1015466](https://api.ratings.food.gov.uk/Establishments/1015466) |
-| Amwell Springs Brewery Co. | Manufacturers/packers; rating/inspection 2017-10-04 | Westfield Farm House Westfield Road, Cholsey, Wallingford Oxon, OX10 9LS | [996280](https://api.ratings.food.gov.uk/Establishments/996280) |
-| Bman Brewery LTD | Manufacturers/packers; rating/inspection 2022-04-13 | Unit 50 Monument Business Park Warpsgrove Lane, Chalgrove, Oxford, OX44 7RW | [1467651](https://api.ratings.food.gov.uk/Establishments/1467651) |
 | Bradwell Grove Farm | Farmers/growers; rating/inspection 2026-05-19 | GL7 | [1947880](https://api.ratings.food.gov.uk/Establishments/1947880) |
-| The Henley Distillery | Manufacturers/packers; rating/inspection 2026-01-15 | East Barn Hampstead Farm, Henley-On-Thames, RG9 4LG | [1374501](https://api.ratings.food.gov.uk/Establishments/1374501) |
-| The Loose Cannon Brewery | Manufacturers/packers; rating/inspection 2022-07-25 | 6 Suffolk Way Abingdon, Oxfordshire, OX14 5JX | [264232](https://api.ratings.food.gov.uk/Establishments/264232) |
-| Twisted Tree Brewery | Manufacturers/packers; rating/inspection 2024-06-05 | Park Farm, Tusmore, Oxfordshire, OX27 7SH | [1684110](https://api.ratings.food.gov.uk/Establishments/1684110) |
 | Ardington Bakery | Manufacturers/packers; rating/inspection 2026-06-29 | The Old Bakehouse Bakers Yard, Ardington, Wantage, OX12 8PT | [318240](https://api.ratings.food.gov.uk/Establishments/318240) |
 | Chippy Honey | Manufacturers/packers | 1 Stopford Place, Chipping Norton, Oxfordshire, OX7 5SL | [1401478](https://api.ratings.food.gov.uk/Establishments/1401478) |
 | Cyrus and Jordan Honey | Farmers/growers; rating/inspection 2025-04-17 | OX10 | [1786741](https://api.ratings.food.gov.uk/Establishments/1786741) |

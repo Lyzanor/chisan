@@ -22,17 +22,13 @@ productive municipality, current offer and phone/email before admission.
 | Veronica Farm Fudge | Manufacturers/packers; rating/inspection 2024-07-11 | Veronica Farm, South'ard, Bryher, Isles Of Scilly, TR23 0PR | [894974](https://api.ratings.food.gov.uk/Establishments/894974) |
 | Cheese At Wadebridge | Manufacturers/packers; rating/inspection 2025-03-10 | Foundry House, Polmorla Road, Wadebridge, Cornwall, PL27 7NB | [1801782](https://api.ratings.food.gov.uk/Establishments/1801782) |
 | Clay Country Dairy | Manufacturers/packers; rating/inspection 2026-07-06 | Trevear Farm, Trevear Road, St Stephen, St Austell, PL26 7PU | [1957077](https://api.ratings.food.gov.uk/Establishments/1957077) |
-| Copperfish Distillery And Bar | Manufacturers/packers; rating/inspection 2026-07-08 | Copperfish Distillery, Marine Store, The Quay, East Looe, PL13 1DX | [1006934](https://api.ratings.food.gov.uk/Establishments/1006934) |
-| Penrock Distillery | Manufacturers/packers; rating/inspection 2026-04-23 | The Old Lifeboat Station, Church End, East Looe, Looe, PL13 1BX | [1935449](https://api.ratings.food.gov.uk/Establishments/1935449) |
 | Polbathic Cider | Manufacturers/packers; rating/inspection 2024-09-27 | The Granary, Old Road, Polbathic, Torpoint, PL11 3EX | [1718943](https://api.ratings.food.gov.uk/Establishments/1718943) |
 | Scilly Cider Co | Manufacturers/packers; rating/inspection 2026-07-08 | Carn Friars Farm, Carn Friars, St Mary's, Isles Of Scilly, TR21 0NZ | [1562475](https://api.ratings.food.gov.uk/Establishments/1562475) |
 | Helford River Distillery Ltd | Manufacturers/packers; rating/inspection 2022-03-08 | Bodergy, Budock Vean Lane, Mawnan Smith, Falmouth, TR11 5LH | [1215491](https://api.ratings.food.gov.uk/Establishments/1215491) |
 | Hester's Harvest' Trevozah Farm Produce | Farmers/growers; rating/inspection 2025-12-03 | PL15 | [900599](https://api.ratings.food.gov.uk/Establishments/900599) |
 | Peninnis Farm | Farmers/growers | King Edwards Road, Hugh Town, St Mary's, Isles Of Scilly | [1148901](https://api.ratings.food.gov.uk/Establishments/1148901) |
-| Rock Gin Cornish | Manufacturers/packers; rating/inspection 2023-07-27 | Cornwall Rock Gin Co Ltd, 34 - 39 Clear Space, Dunveth Business Park, Wadebridge, PL27 7FE | [1605967](https://api.ratings.food.gov.uk/Establishments/1605967) |
 | Berrymans Bakery | Manufacturers/packers; rating/inspection 2024-08-02 | Sea View Terrace, Redruth, Cornwall, TR15 2EE | [439163](https://api.ratings.food.gov.uk/Establishments/439163) |
 | Dilmuir Honey | Farmers/growers; rating/inspection 2026-03-11 | TR4 | [1859788](https://api.ratings.food.gov.uk/Establishments/1859788) |
 | Rosewall Bakery | Manufacturers/packers; rating/inspection 2025-07-14 | Clarence House, Clarence Street, Penzance, Cornwall, TR18 2PA | [1452299](https://api.ratings.food.gov.uk/Establishments/1452299) |
 | Scilly Chocolate Shop | Manufacturers/packers; rating/inspection 2024-02-02 | Popplestones, Rams Valley, Hugh Town, St Mary's, TR21 0JX | [1641844](https://api.ratings.food.gov.uk/Establishments/1641844) |
 | TC Game | Farmers/growers | Mill Stream, Withiel Mill, Ruthern, Bodmin, PL30 5LT | [1093800](https://api.ratings.food.gov.uk/Establishments/1093800) |
-| The Island Bakery | Manufacturers/packers; rating/inspection 2024-07-17 | The Bakery, Higher Town, St Martin's, Isles Of Scilly, TR25 0QL | [895034](https://api.ratings.food.gov.uk/Establishments/895034) |

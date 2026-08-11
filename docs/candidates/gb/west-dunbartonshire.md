@@ -18,10 +18,7 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Cochno Farm | Farmers/growers; rating/inspection 2026-03-16 | farm 33, Cochno Farm, Cochno Road, HardgateClydebank, G81 5QL | [1905919](https://api.ratings.food.gov.uk/Establishments/1905919) |
-| Auchentoshan Distillery | Manufacturers/packers; rating/inspection 2025-03-27 | Auchentoshan Distillery, Great Western Road, Mountblow, Clydebank, G81 4SJ | [89706](https://api.ratings.food.gov.uk/Establishments/89706) |
 | Jack and the Beanstalk Farm | Farmers/growers; rating/inspection 2023-04-27 | Carman Stables, Cardross Road, Renton, G82 4PU | [1286703](https://api.ratings.food.gov.uk/Establishments/1286703) |
-| Loch Lomond Brewery Ltd | Manufacturers/packers; rating/inspection 2025-10-02 | Unit 11, Block 2 Vale of Leven Industrial Estate, Dumbarton, G82 3PD | [1286852](https://api.ratings.food.gov.uk/Establishments/1286852) |
-| No Limits Brewing | Manufacturers/packers; rating/inspection 2026-04-22 | 25 Lime Road, Broadmeadow Industrial Estate, Dumbarton, G82 2RP | [1078191](https://api.ratings.food.gov.uk/Establishments/1078191) |
 | Blackbird Bakery | Manufacturers/packers; rating/inspection 2026-05-14 | 380 Main Street, Bonhill, Alexandria, G83 9HT | [1922061](https://api.ratings.food.gov.uk/Establishments/1922061) |
 | Sweet Tooth by Carla | Manufacturers/packers; rating/inspection 2025-12-16 | 260 Glasgow Road, Clydebank, G81 1PG | [1384747](https://api.ratings.food.gov.uk/Establishments/1384747) |
 | The Specky Baker | Manufacturers/packers; rating/inspection 2024-03-25 | 137 Duntocher Road, Clydebank, G81 3LU | [1691293](https://api.ratings.food.gov.uk/Establishments/1691293) |

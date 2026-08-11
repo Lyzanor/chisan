@@ -24,14 +24,11 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Deerness Distillery | Manufacturers/packers; rating/inspection 2025-09-17 | Newhall, Stove Road, Deerness, KW17 2QJ | [1616202](https://api.ratings.food.gov.uk/Establishments/1616202) |
 | Moar Orkney Honey | Farmers/growers | Rosebank, Denwick Road, Deerness, KW17 2QL | [1766716](https://api.ratings.food.gov.uk/Establishments/1766716) |
 | Orkney Honey | Farmers/growers | Rothiesholm Garson Loan, Garson Road, Stromness, KW16 3LE | [1888711](https://api.ratings.food.gov.uk/Establishments/1888711) |
 | Rossmyre Honey | Farmers/growers | Rossmyre, Old Finstown Road, Firth, KW15 1TS | [1888709](https://api.ratings.food.gov.uk/Establishments/1888709) |
-| Highland Distillers Ltd | Manufacturers/packers; rating/inspection 2020-03-16 | Highland Park Distillery, Holm Road, Kirkwall, KW15 1SU | [1616226](https://api.ratings.food.gov.uk/Establishments/1616226) |
 | Kimland Distillery Ltd | Manufacturers/packers | 2 Lettan, North Loch Road, Sanday, KW17 2BP | [1928718](https://api.ratings.food.gov.uk/Establishments/1928718) |
 | Shapinsay Honey | Farmers/growers | Old Lodge, Shapinsay, KW17 2DX | [1888710](https://api.ratings.food.gov.uk/Establishments/1888710) |
-| Highland Brewing Company | Manufacturers/packers; rating/inspection 2023-03-02 | Swannay Brewery, Birsay, KW17 2NP | [1616195](https://api.ratings.food.gov.uk/Establishments/1616195) |
 | Milldam Croft | Farmers/growers | Milldam, Barrenha Road, North Ronaldsay, KW17 2BE | [1515617](https://api.ratings.food.gov.uk/Establishments/1515617) |
 | Rendall's Bakery Ltd | Manufacturers/packers; rating/inspection 2026-05-20 | Willowbank, Willow Road, Kirkwall, KW15 1NJ | [1515623](https://api.ratings.food.gov.uk/Establishments/1515623) |
 | The Motley Way Bakery | Manufacturers/packers; rating/inspection 2026-06-08 | Bewan, Hyndgreenie Road, Papa Westray, KW17 2BU | [1766702](https://api.ratings.food.gov.uk/Establishments/1766702) |
@@ -44,6 +41,5 @@ productive municipality, current offer and phone/email before admission.
 | Norse Pilgrim Limited (SC602712) | Farmers/growers | Parkhall, Strathore Road, Shapinsay, KW17 2DZ | [1534878](https://api.ratings.food.gov.uk/Establishments/1534878) |
 | John Foster | Farmers/growers | 1 Sands Park, Deerness, KW17 2QW | [1534877](https://api.ratings.food.gov.uk/Establishments/1534877) |
 | Jolly's of Orkney | Manufacturers/packers; rating/inspection 2026-03-03 | Jolly's Of Orkney - Factory, Scotts Road, St Ola, KW15 1GR | [565008](https://api.ratings.food.gov.uk/Establishments/565008) |
-| Orkney Distilling Ltd | Manufacturers/packers; rating/inspection 2026-01-30 | The Orkney Distillery, Ayre Road, Kirkwall, KW15 1QX | [1009476](https://api.ratings.food.gov.uk/Establishments/1009476) |
 | Orkney Wine Company (Production) | Manufacturers/packers; rating/inspection 2026-03-05 | Orkney Wine Company, Lamb Holm, Holm, KW17 2SF | [565029](https://api.ratings.food.gov.uk/Establishments/565029) |
 | Pierowall Fish | Manufacturers/packers; rating/inspection 2025-10-22 | Pierowall Fish Ltd, Broughton Road, Westray, KW17 2DA | [565177](https://api.ratings.food.gov.uk/Establishments/565177) |

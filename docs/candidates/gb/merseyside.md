@@ -18,25 +18,17 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Adam Lurie - Honey | Farmers/growers | 41 Carisbrooke Drive, Southport, PR9 7JD | [1125039](https://api.ratings.food.gov.uk/Establishments/1125039) |
-| Azvex Brewing Company | Manufacturers/packers; rating/inspection 2025-03-05 | 16 - 18 Gibraltar Row, Liverpool, L3 7HJ | [1736277](https://api.ratings.food.gov.uk/Establishments/1736277) |
-| The Handmade Gin Company | Manufacturers/packers; rating/inspection 2019-09-03 | 25 Bassendale Road, Bromborough, Wirral, Merseyside, CH62 3QL | [1177894](https://api.ratings.food.gov.uk/Establishments/1177894) |
-| Table Chocolate | Manufacturers/packers; rating/inspection 2025-02-18 | 2 Logan Road, Birkenhead, Poulton, Wirral, CH41 1JJ | [1756667](https://api.ratings.food.gov.uk/Establishments/1756667) |
 | The Bake Hub | Manufacturers/packers; rating/inspection 2024-09-05 | 27 Millers Bridge Industrial Estate, Seymour Street, Bootle, L20 1EE | [1263390](https://api.ratings.food.gov.uk/Establishments/1263390) |
 | The Bakery Barn | Manufacturers/packers; rating/inspection 2025-02-13 | Well Barn, Unit 10B Little Crosby Road, Little Crosby, L23 4TS | [1418894](https://api.ratings.food.gov.uk/Establishments/1418894) |
 | The Liverpool Cheesecake Company | Manufacturers/packers; rating/inspection 2023-01-24 | 23 Goodlass Road, Liverpool, L24 9HJ | [1525242](https://api.ratings.food.gov.uk/Establishments/1525242) |
 | Joe Black Coffee | Manufacturers/packers; rating/inspection 2026-06-23 | 30 Millers Bridge Industrial Estate, Seymour Street, Bootle, L20 1EE | [747415](https://api.ratings.food.gov.uk/Establishments/747415) |
-| North By Sud-Ouest Charcuterie | Manufacturers/packers; rating/inspection 2026-03-31 | Unit 1 101 St Johns Road, Liverpool, L20 8BH | [1568423](https://api.ratings.food.gov.uk/Establishments/1568423) |
-| Pastille Bakery | Manufacturers/packers; rating/inspection 2026-05-20 | Unit 9 King Edward Industrial Estate Gibraltar Row, Liverpool, L3 7HJ | [1725733](https://api.ratings.food.gov.uk/Establishments/1725733) |
 | Roly’s Fudge | Manufacturers/packers; rating/inspection 2025-11-11 | 17 The Colonnades Gower Street, Liverpool, L3 4AA | [1802376](https://api.ratings.food.gov.uk/Establishments/1802376) |
-| The Chocolate Cellar | Manufacturers/packers; rating/inspection 2019-03-28 | 50 New Chester Road, New Ferry, Wirral, Merseyside, CH62 5AB | [1128251](https://api.ratings.food.gov.uk/Establishments/1128251) |
-| Neighbourhood Coffee Company Limited | Manufacturers/packers; rating/inspection 2026-05-07 | Unit 22 Sandon Industrial Estate Sandon Way, Liverpool, L5 9YN | [1697768](https://api.ratings.food.gov.uk/Establishments/1697768) |
 | Millies Cupcakes | Manufacturers/packers; rating/inspection 2021-09-10 | 17 Wylam Road, Liverpool, L13 4BF | [1397808](https://api.ratings.food.gov.uk/Establishments/1397808) |
 | Wild N Bee | Manufacturers/packers; rating/inspection 2023-05-31 | L37 | [1087951](https://api.ratings.food.gov.uk/Establishments/1087951) |
 | Cakehole Vegan Bakery | Manufacturers/packers; rating/inspection 2021-10-14 | L1 0 | [1244474](https://api.ratings.food.gov.uk/Establishments/1244474) |
 | Raby Eggs | Farmers/growers; rating/inspection 2018-11-08 | Raby Nurseries, Benty Heath Lane, Raby, Wirral, CH64 1SB | [705844](https://api.ratings.food.gov.uk/Establishments/705844) |
 | The Liverpool Jam Company | Manufacturers/packers; rating/inspection 2015-04-28 | L17 | [535003](https://api.ratings.food.gov.uk/Establishments/535003) |
 | Butter and Crumb | Farmers/growers | 13 Cambridge Drive, Crosby, L23 7UB | [1909549](https://api.ratings.food.gov.uk/Establishments/1909549) |
-| Colbier Brew Co | Manufacturers/packers; rating/inspection 2024-12-17 | Unit 7 The Bridgewater Complex, 36 Canal Street, Bootle, L20 8AH | [1785273](https://api.ratings.food.gov.uk/Establishments/1785273) |
 | KPFF LTD | Manufacturers/packers; rating/inspection 2025-07-29 | Units 345 & Cold Store (Unit 14), Valley Road, Bidston, Wirral, CH41 7ED | [1400251](https://api.ratings.food.gov.uk/Establishments/1400251) |
 | Nutrilic | Manufacturers/packers; rating/inspection 2025-04-10 | 22 Millers Bridge Industrial Estate, Seymour Street, Bootle, L20 1EE | [1268033](https://api.ratings.food.gov.uk/Establishments/1268033) |
 | Artisane | Manufacturers/packers; rating/inspection 2025-11-26 | Unit 5a The Dairy Long Lane, Liverpool, L9 7BH | [1369792](https://api.ratings.food.gov.uk/Establishments/1369792) |

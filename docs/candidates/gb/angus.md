@@ -38,12 +38,10 @@ productive municipality, current offer and phone/email before admission.
 | Jas McLaren & Son Bakers Ltd | Manufacturers/packers; rating/inspection 2024-09-05 | 22 - 26 Market Street Forfar, DD8 3EW | [63842](https://api.ratings.food.gov.uk/Establishments/63842) |
 | Keptie Bakery (Letham) | Manufacturers/packers; rating/inspection 2025-03-06 | 16 The Square Letham Forfar, DD8 2PZ | [147447](https://api.ratings.food.gov.uk/Establishments/147447) |
 | James Ewart Ltd | Manufacturers/packers; rating/inspection 2025-11-05 | 14 - 16 High Street Monifieth Dundee, DD5 4AE | [87611](https://api.ratings.food.gov.uk/Establishments/87611) |
-| Sacred Grounds Coffee Company Ltd | Manufacturers/packers; rating/inspection 2024-01-19 | Unit 15 Arbroath Business Centre 31 Dens Road Arbroath, DD11 1RS | [852709](https://api.ratings.food.gov.uk/Establishments/852709) |
 | T Frost (Bakers) Ltd | Manufacturers/packers; rating/inspection 2024-10-09 | 16 - 20 Ferry Street Montrose, DD10 8DA | [146653](https://api.ratings.food.gov.uk/Establishments/146653) |
 | Caffe Barista | Farmers/growers; rating/inspection 2026-07-22 | 127 High Street Arbroath, DD11 1DP | [76193](https://api.ratings.food.gov.uk/Establishments/76193) |
 | Guthrie Castle | Farmers/growers; rating/inspection 2026-05-06 | Guthrie Castle Guthrie Forfar, DD8 2TP | [74285](https://api.ratings.food.gov.uk/Establishments/74285) |
 | B Swankie | Farmers/growers; rating/inspection 2026-07-07 | 10 East Mary Street Arbroath, DD11 1PR | [61894](https://api.ratings.food.gov.uk/Establishments/61894) |
 | Jeremy Gow | Farmers/growers; rating/inspection 2023-01-25 | Pitscandly Farmhouse Pitscandly Forfar, DD8 3NZ | [1737966](https://api.ratings.food.gov.uk/Establishments/1737966) |
 | Alex Cargill Fish | Manufacturers/packers; rating/inspection 2024-05-13 | 33 West Newgate Arbroath, DD11 1BZ | [111067](https://api.ratings.food.gov.uk/Establishments/111067) |
-| Angus Alchemy Ltd | Manufacturers/packers; rating/inspection 2026-05-25 | Woodhill Barry Carnoustie, DD7 7SD | [1696140](https://api.ratings.food.gov.uk/Establishments/1696140) |
 | Arbroath Quality Fish | Manufacturers/packers; rating/inspection 2026-06-02 | Fish House 53 High Street Arbroath, DD11 1AN | [112494](https://api.ratings.food.gov.uk/Establishments/112494) |

@@ -23,13 +23,8 @@ productive municipality, current offer and phone/email before admission.
 | Easterton Farm Venison | Farmers/growers; rating/inspection 2009-11-06 | Easterton Farm Birnie Elgin Moray, IV30 8SP | [19450](https://api.ratings.food.gov.uk/Establishments/19450) |
 | Glenrinnes Farm Ltd | Farmers/growers | Glenrinnes Lodge Dufftown Keith Moray, AB55 4BS | [1523170](https://api.ratings.food.gov.uk/Establishments/1523170) |
 | Springfield Farm | Farmers/growers; rating/inspection 2011-01-21 | Bogton Road Forres Moray, IV36 3TW | [19955](https://api.ratings.food.gov.uk/Establishments/19955) |
-| Ballindalloch Distillery LLP | Manufacturers/packers; rating/inspection 2024-12-11 | Ballindalloch Distillery Ballindalloch Moray, AB37 9AA | [1803334](https://api.ratings.food.gov.uk/Establishments/1803334) |
-| Glenmoray Distillery | Manufacturers/packers; rating/inspection 2024-12-13 | Elgin Moray, IV30 1YE | [18896](https://api.ratings.food.gov.uk/Establishments/18896) |
 | Mains Of Moy Farm | Manufacturers/packers; rating/inspection 2026-06-01 | Mains Of Moy Farm Mains Of Moy Forres Moray, IV36 2SP | [1956243](https://api.ratings.food.gov.uk/Establishments/1956243) |
-| Mind Hop Brewery | Manufacturers/packers; rating/inspection 2025-11-26 | Kirkton Farm Alves Elgin Moray, IV30 8UY | [1853818](https://api.ratings.food.gov.uk/Establishments/1853818) |
-| Speyside Brewing Company Ltd | Manufacturers/packers; rating/inspection 2025-12-17 | 10 - 11 West Road Forres Moray, IV36 2GW | [1531852](https://api.ratings.food.gov.uk/Establishments/1531852) |
 | The Cabrach Distillery CIC | Manufacturers/packers; rating/inspection 2025-08-28 | Inverharroch Lower Cabrach Huntly Moray, AB54 4EH | [1863767](https://api.ratings.food.gov.uk/Establishments/1863767) |
-| Glenrinnes Distillery | Manufacturers/packers; rating/inspection 2019-04-12 | Glenrinnes Dufftown Keith Moray, AB55 4DB | [1067062](https://api.ratings.food.gov.uk/Establishments/1067062) |
 | The Moray Honey Company Ltd | Manufacturers/packers; rating/inspection 2025-06-03 | Wester Califer Forres Moray, IV36 2RN | [1291410](https://api.ratings.food.gov.uk/Establishments/1291410) |
 | Beet This Food Sauce Ltd | Manufacturers/packers; rating/inspection 2026-05-22 | IV30 | [1101817](https://api.ratings.food.gov.uk/Establishments/1101817) |
 | Christies Butcher | Manufacturers/packers; rating/inspection 2026-04-29 | 13 - 15 West Church Street Buckie Moray, AB56 1BN | [1941074](https://api.ratings.food.gov.uk/Establishments/1941074) |

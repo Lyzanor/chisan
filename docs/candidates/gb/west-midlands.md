@@ -18,15 +18,8 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Dark Rock Brewing | Farmers/growers | Dark Rock Brewing also t/a Harris Filters, 40-43 Zoar Street, Lower Gornal, Dudley, DY3 2PA | [1756098](https://api.ratings.food.gov.uk/Establishments/1756098) |
-| Birmingham Brewing Company | Manufacturers/packers; rating/inspection 2025-09-18 | 17 Stirchley Trading Estate, Hazelwell Road, Birmingham, B30 2PF | [1203797](https://api.ratings.food.gov.uk/Establishments/1203797) |
-| Glasshouse Brewery | Manufacturers/packers; rating/inspection 2024-11-20 | Unit 6B Waterside Business Park, Kings Norton, B30 3DR, Birmingham, B30 3DR | [1126942](https://api.ratings.food.gov.uk/Establishments/1126942) |
 | Rock and Roll Brewhouse | Manufacturers/packers; rating/inspection 2026-03-12 | 19 Hall Street, Birmingham, B18 6BS | [1417053](https://api.ratings.food.gov.uk/Establishments/1417053) |
-| 52 Degrees Brewing | Manufacturers/packers | Unit 8a-10A, Gatehouse Trading Estate, Lichfield Road, WS8 6JZ | [1621417](https://api.ratings.food.gov.uk/Establishments/1621417) |
 | Its Honey | Manufacturers/packers; rating/inspection 2025-03-06 | Unit 8 Ashcourt, Crystal Drive, Smethwick, B66 1QG | [1207606](https://api.ratings.food.gov.uk/Establishments/1207606) |
-| New Invention Brewery Ltd | Manufacturers/packers; rating/inspection 2022-11-18 | Unit 6, Pinfold Industrial Estate, Field Close, Bloxwich, WS3 3JS | [1576021](https://api.ratings.food.gov.uk/Establishments/1576021) |
-| Newbridge Brewery Ltd | Manufacturers/packers | Units 3 To 4, Moseley Road, Bilston, Wolverhampton, WV14 6JD | [1759599](https://api.ratings.food.gov.uk/Establishments/1759599) |
-| Sarah Hughes Brewery | Manufacturers/packers; rating/inspection 2019-10-14 | 129 Bilston Street, Sedgley, Dudley, DY3 1JE | [1554309](https://api.ratings.food.gov.uk/Establishments/1554309) |
-| West Midlands Distillery | Manufacturers/packers | Units 22-24, Waterfront East, Brierley Hill, DY5 1XD | [1780841](https://api.ratings.food.gov.uk/Establishments/1780841) |
 | AL-NOOR HALAL MEAT B'HAM LTD | Manufacturers/packers; rating/inspection 2025-09-10 | 177 Bordesley Green East, Bordesley Green, Birmingham, B9 5SR | [1875517](https://api.ratings.food.gov.uk/Establishments/1875517) |
 | Carey Butchers Ltd | Manufacturers/packers; rating/inspection 2025-06-17 | 12 Springhill Lane, Wolverhampton, West Midlands, WV4 4SH | [661533](https://api.ratings.food.gov.uk/Establishments/661533) |
 | Davis West Indian Bakery | Manufacturers/packers; rating/inspection 2024-07-30 | 76 Soho Road, Birmingham, B21 9BN | [598291](https://api.ratings.food.gov.uk/Establishments/598291) |

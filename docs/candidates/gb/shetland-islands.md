@@ -17,7 +17,6 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Lerwick Distillery Ltd | Manufacturers/packers; rating/inspection 2026-05-01 | 32 Market Street, Lerwick, Shetland, ZE1 0JP | [1797682](https://api.ratings.food.gov.uk/Establishments/1797682) |
 | Anderson Butchers Limited | Manufacturers/packers; rating/inspection 2026-01-21 | Brugarth, Whiteness, Shetland, ZE2 9GJ | [408953](https://api.ratings.food.gov.uk/Establishments/408953) |
 | Scalloway Meat Company Ltd | Manufacturers/packers; rating/inspection 2026-05-14 | Main Street, Scalloway, Shetland, ZE1 0TR | [1394041](https://api.ratings.food.gov.uk/Establishments/1394041) |
 | Sound Butchers | Manufacturers/packers; rating/inspection 2025-06-05 | Rudda Park, Lerwick, Shetland, ZE1 0SD | [1298793](https://api.ratings.food.gov.uk/Establishments/1298793) |

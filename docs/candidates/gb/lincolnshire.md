@@ -17,15 +17,10 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Mill Farm Cider | Manufacturers/packers; rating/inspection 2024-04-24 | Manor Grange, Gelston, Lincolnshire, NG32 2AE | [1665176](https://api.ratings.food.gov.uk/Establishments/1665176) |
 | Fen's Edge Honey | Farmers/growers; rating/inspection 2026-06-03 | Cats Cradle, 17 Deeping Road, Baston, Lincolnshire, PE6 9NP | [1838892](https://api.ratings.food.gov.uk/Establishments/1838892) |
-| Brewster's Brewery | Manufacturers/packers; rating/inspection 2025-09-24 | Burnside Industrial Estate, Turnpike Close, Grantham, Lincolnshire, NG31 7XU | [237905](https://api.ratings.food.gov.uk/Establishments/237905) |
-| Shadow Bridge Brewery & Tap Room | Manufacturers/packers; rating/inspection 2025-08-07 | The Business Centre, 15-19 Normanby Road, Scunthorpe, North Lincolnshire, DN15 8QZ | [1813917](https://api.ratings.food.gov.uk/Establishments/1813917) |
 | The Cheese Society | Manufacturers/packers; rating/inspection 2026-01-13 | Unit M Peregrine Mews, Dowding Road, Lincoln, Lincolnshire, LN3 4PH | [1060748](https://api.ratings.food.gov.uk/Establishments/1060748) |
-| Lymn Bank Farm Ltd | Manufacturers/packers; rating/inspection 2022-08-15 | Cheese Smoke House, Lymn Bank Farm, Lymn Bank Thorpe St Peter Skegness, PE24 4PJ | [157121](https://api.ratings.food.gov.uk/Establishments/157121) |
 | Poplar Farm Shop | Manufacturers/packers; rating/inspection 2018-05-21 | Poplar Farm, Crabtree Lane, Sutton On Sea, LN12 2RS | [433255](https://api.ratings.food.gov.uk/Establishments/433255) |
 | Robin Rose Bakes | Farmers/growers; rating/inspection 2025-02-05 | 1a Farrier Road, Lincoln, Lincolnshire, LN6 3RU | [1793513](https://api.ratings.food.gov.uk/Establishments/1793513) |
-| The Undairy Co | Manufacturers/packers; rating/inspection 2026-06-26 | 14 Brigg Road, Barton Upon Humber, North Lincolnshire, DN18 5DH | [1948603](https://api.ratings.food.gov.uk/Establishments/1948603) |
 | Askers Bakery | Manufacturers/packers; rating/inspection 2025-03-07 | Askers Bakery, Kings Mill Lane, Stamford, Lincolnshire, PE9 2QS | [237772](https://api.ratings.food.gov.uk/Establishments/237772) |
 | Beeken Bees | Farmers/growers; rating/inspection 2025-04-23 | PE11 | [1500119](https://api.ratings.food.gov.uk/Establishments/1500119) |
 | Berberis House Apiary | Farmers/growers; rating/inspection 2025-05-28 | PE12 | [243126](https://api.ratings.food.gov.uk/Establishments/243126) |

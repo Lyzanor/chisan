@@ -25,16 +25,10 @@ productive municipality, current offer and phone/email before admission.
 | Bank House Farm | Farmers/growers; rating/inspection 2025-02-05 | Bank House Farm High Levels Bank, Thorne, Doncaster, DN8 5SL | [1662026](https://api.ratings.food.gov.uk/Establishments/1662026) |
 | Hangram Lane Farm | Farmers/growers | Hangram Lane Farm, Hangram Lane, Sheffield, S11 7TQ | [522207](https://api.ratings.food.gov.uk/Establishments/522207) |
 | Thorpes Poultry Farm and Farm Shop | Farmers/growers; rating/inspection 2024-12-04 | Greaves Lane, High Green, Sheffield, S35 4GR | [437881](https://api.ratings.food.gov.uk/Establishments/437881) |
-| Hawkins Distillery | Manufacturers/packers; rating/inspection 2024-03-07 | Unit 16 Baltic Works, Effingham Road, Sheffield, S9 3QA | [1685299](https://api.ratings.food.gov.uk/Establishments/1685299) |
 | J & A M Battye T/A Firs Farm | Farmers/growers; rating/inspection 2026-04-02 | Firs Farm, Ringinglow Road, Sheffield, S11 7TD | [437887](https://api.ratings.food.gov.uk/Establishments/437887) |
 | New York Cheesecake Co | Manufacturers/packers; rating/inspection 2025-05-27 | 55 Arksey Lane, Bentley, Doncaster, DN5 0RX | [1832581](https://api.ratings.food.gov.uk/Establishments/1832581) |
 | Woodsetts Honey | Farmers/growers; rating/inspection 2026-04-13 | 6 Cross Field Drive, Woodsetts, Worksop, S81 8SP | [1922509](https://api.ratings.food.gov.uk/Establishments/1922509) |
 | Wortley Farm Shop | Manufacturers/packers; rating/inspection 2025-09-04 | Wortley Farm Shop, Park Avenue, Wortley Sheffield, S35 7DB | [1809687](https://api.ratings.food.gov.uk/Establishments/1809687) |
 | Balqees Raw Honey | Manufacturers/packers; rating/inspection 2024-09-12 | Units 12 And 13 Carbrook Hall Industrial Estate, Dunlop Street, Sheffield, S9 2HR | [1711637](https://api.ratings.food.gov.uk/Establishments/1711637) |
-| Brewery of Saint Mars of the Desert | Manufacturers/packers | The Brewery at Eagle Works, 90 Stevenson Road, Sheffield, S9 3XG | [1071266](https://api.ratings.food.gov.uk/Establishments/1071266) |
-| Doncaster Brewery | Manufacturers/packers; rating/inspection 2025-02-19 | 7 Young Street, Doncaster, DN1 3EL | [679894](https://api.ratings.food.gov.uk/Establishments/679894) |
-| Gorilla Brewing Company Ltd | Manufacturers/packers; rating/inspection 2023-12-04 | Unit 3 Glasshouse Lane Cliff Street, Mexborough, Doncaster, S64 9HU | [920611](https://api.ratings.food.gov.uk/Establishments/920611) |
-| Neepsend Brewery Ltd | Manufacturers/packers | Warehouse A Unit 13, 92 Burton Road, Sheffield, S3 8DA | [1337421](https://api.ratings.food.gov.uk/Establishments/1337421) |
-| Stancill Brewery Ltd | Manufacturers/packers | Parkwood Industrial Estate, Unit 2 Oakham Drive, Sheffield, S3 9QX | [779273](https://api.ratings.food.gov.uk/Establishments/779273) |
 | 50% Sweet | Manufacturers/packers; rating/inspection 2025-08-20 | UNIT 12, Farfield Road, Sheffield, S3 8AB | [1839762](https://api.ratings.food.gov.uk/Establishments/1839762) |
 | Breeosh Bakery | Manufacturers/packers; rating/inspection 2024-10-10 | Unit 4c Sth Yorks Frsh Prod/F, Parkway Drive, Sheffield, S9 4WN | [779258](https://api.ratings.food.gov.uk/Establishments/779258) |

@@ -21,14 +21,9 @@ productive municipality, current offer and phone/email before admission.
 | Broom Mill Farm Shop | Manufacturers/packers; rating/inspection 2026-06-17 | BROOM MILL FARM SHOP, BILDERSHAW, DL14 9PJ | [304393](https://api.ratings.food.gov.uk/Establishments/304393) |
 | Gelato Tutti | Farmers/growers; rating/inspection 2025-03-25 | 7 Edward Street, DARLINGTON, DL1 2UP | [1590655](https://api.ratings.food.gov.uk/Establishments/1590655) |
 | Urban Farm Mushrooms | Manufacturers/packers; rating/inspection 2024-06-12 | 1 - 3 Lodge Street, Darlington, DL1 1TD | [1706581](https://api.ratings.food.gov.uk/Establishments/1706581) |
-| Hill Island Brewery | Manufacturers/packers; rating/inspection 2025-07-03 | UNIT 7 FOWLERS YARD, DURHAM, DH1 3RA | [802340](https://api.ratings.food.gov.uk/Establishments/802340) |
-| Hopper House Brew Farm | Manufacturers/packers; rating/inspection 2026-06-04 | HOPPER HOUSE FARM BREWERY, SEDGEFIELD, TS21 2HL | [1620409](https://api.ratings.food.gov.uk/Establishments/1620409) |
 | Kemps Cider | Manufacturers/packers; rating/inspection 2018-03-02 | Dairy Farm, The Green, BRAFFERTON, DARLINGTON, DL1 3LA | [1039377](https://api.ratings.food.gov.uk/Establishments/1039377) |
-| McColl's Brewery | Manufacturers/packers; rating/inspection 2024-09-27 | UNIT 4 RANDOLPH INDUSTRIAL ESTATE, EVENWOOD, DL14 9SJ | [955626](https://api.ratings.food.gov.uk/Establishments/955626) |
 | Ox Close Farm Ltd | Manufacturers/packers; rating/inspection 2026-05-18 | OXCLOSE FARM, SHADFORTH, DH6 1NH | [1301361](https://api.ratings.food.gov.uk/Establishments/1301361) |
 | W L Distillery | Manufacturers/packers; rating/inspection 2025-06-26 | UNIT 4E SOUTH HETTON INDUSTRIAL ESTATE BESSEMER ROAD, SOUTH HETTON, DH6 2UZ | [1241397](https://api.ratings.food.gov.uk/Establishments/1241397) |
-| Yarm Distillery | Manufacturers/packers; rating/inspection 2024-05-10 | 8a Wass Way, Durham Lane Industrial Park, TS16 0RG | [1363934](https://api.ratings.food.gov.uk/Establishments/1363934) |
-| Dark Sky Brewery Ltd | Manufacturers/packers; rating/inspection 2023-09-29 | BARCLAYS BANK HOUSE MARKET PLACE, MIDDLETON-IN-TEESDALE, DL12 0QG | [1631526](https://api.ratings.food.gov.uk/Establishments/1631526) |
 | Kev The Butchers Direct Meats | Manufacturers/packers; rating/inspection 2025-06-04 | Unit 46 Hartlepool Enterprise Centre, Brougham Terrace, Hartlepool, TS24 8EY | [1609980](https://api.ratings.food.gov.uk/Establishments/1609980) |
 | My Old Dad's Honey Ltd | Farmers/growers; rating/inspection 2025-11-17 | DH3 | [1877055](https://api.ratings.food.gov.uk/Establishments/1877055) |
 | North Dene Honey | Farmers/growers; rating/inspection 2025-01-23 | DL15 | [1130989](https://api.ratings.food.gov.uk/Establishments/1130989) |

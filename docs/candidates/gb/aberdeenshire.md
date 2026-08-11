@@ -31,8 +31,5 @@ productive municipality, current offer and phone/email before admission.
 | Burnobennie Distillery Ltd | Manufacturers/packers; rating/inspection 2026-05-22 | Unit 10 - 11, East Banchory Business Park, Burn O'bennie Road Banchory, AB31 5ZU | [1623433](https://api.ratings.food.gov.uk/Establishments/1623433) |
 | Castleton Farm Shop | Manufacturers/packers; rating/inspection 2026-03-05 | Castleton Farm, Fordoun, Laurencekirk, AB30 1JX | [559432](https://api.ratings.food.gov.uk/Establishments/559432) |
 | Crowhillock Farm | Manufacturers/packers; rating/inspection 2026-02-24 | Crowhillock, Kinneff, Inverbervie, DD10 0TL | [1911054](https://api.ratings.food.gov.uk/Establishments/1911054) |
-| Wark Farm Pies | Manufacturers/packers; rating/inspection 2024-03-14 | Wark Farm, Cushnie, Alford, AB33 8LL | [113205](https://api.ratings.food.gov.uk/Establishments/113205) |
 | Bodachra Brewing Company | Manufacturers/packers; rating/inspection 2018-09-19 | 57 Denview Road, Potterton, Aberdeenshire, AB23 8ZL | [1019131](https://api.ratings.food.gov.uk/Establishments/1019131) |
-| Braemar Brewing Co Ltd | Manufacturers/packers; rating/inspection 2023-11-27 | Airlie House, Chapel Brae, Braemar, AB35 5YT | [1345539](https://api.ratings.food.gov.uk/Establishments/1345539) |
 | Easterton Cider | Manufacturers/packers; rating/inspection 2023-04-17 | The Steading Easterton Of Logie, Pitcaple, Inverurie, AB51 5EL | [1429601](https://api.ratings.food.gov.uk/Establishments/1429601) |
-| Glenglassaugh Distillery Company Ltd | Manufacturers/packers; rating/inspection 2012-07-30 | Glassaugh, Portsoy, Aberdeenshire, AB45 2SQ | [679182](https://api.ratings.food.gov.uk/Establishments/679182) |

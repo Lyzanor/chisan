@@ -17,13 +17,11 @@ productive municipality, current offer and phone/email before admission.
 
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
-| Peckforton Farm Dairy | Farmers/growers; rating/inspection 2025-05-07 | Manor Farm Peckforton Hall Lane, Peckforton, Tarporley, CW6 9TH | [948533](https://api.ratings.food.gov.uk/Establishments/948533) |
 | Hill Farm Real Food | Farmers/growers; rating/inspection 2024-12-11 | Hill Farm Back Lane, Alpraham, Cheshire East, CW6 9LL | [1289374](https://api.ratings.food.gov.uk/Establishments/1289374) |
 | Berryfields farmhouse creamery | Manufacturers/packers | SY13 | [1903294](https://api.ratings.food.gov.uk/Establishments/1903294) |
 | Orchards Farm | Manufacturers/packers | CH3 | [1926149](https://api.ratings.food.gov.uk/Establishments/1926149) |
 | Dairy Zone Ltd | Farmers/growers; rating/inspection 2026-02-16 | Crab Mill Farm Baddiley Lane, Baddiley, Nantwich, CW5 8BP | [1501492](https://api.ratings.food.gov.uk/Establishments/1501492) |
 | Davies Dairy | Farmers/growers; rating/inspection 2026-03-25 | Back Lane Farm Back Lane, Ashley, Altrincham, WA15 0QJ | [1289538](https://api.ratings.food.gov.uk/Establishments/1289538) |
-| Groobarbs Wild Farm | Farmers/growers; rating/inspection 2025-03-07 | Mag Lane, High Legh, Cheshire East, WA16 0AA | [1094638](https://api.ratings.food.gov.uk/Establishments/1094638) |
 | Hill Farm Eggs | Farmers/growers; rating/inspection 2024-12-11 | Hill Farm Back Lane, Alpraham, Cheshire East, CW6 9LL | [1127175](https://api.ratings.food.gov.uk/Establishments/1127175) |
 | Pear Tree farm Shop | Farmers/growers; rating/inspection 2025-01-20 | Pear Tree Farm Dog Lane, Brereton, Cheshire East, CW11 1RR | [1095817](https://api.ratings.food.gov.uk/Establishments/1095817) |
 | Park View Farm | Farmers/growers; rating/inspection 2025-12-01 | 47 Southworth Lane, WA2 0RA | [420710](https://api.ratings.food.gov.uk/Establishments/420710) |

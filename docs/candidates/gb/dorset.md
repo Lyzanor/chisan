@@ -24,17 +24,13 @@ productive municipality, current offer and phone/email before admission.
 | Buckridge Dairy | Farmers/growers; rating/inspection 2025-05-28 | Lushes Farm Ram's Hill, Marnhull, Dorset, DT10 1HD | [1811784](https://api.ratings.food.gov.uk/Establishments/1811784) |
 | Kingswood Farm | Farmers/growers | Kingswood Farm New Road, Studland, Corfe Castle, Dorset, BH20 5JQ | [1691940](https://api.ratings.food.gov.uk/Establishments/1691940) |
 | Noddy's Cider Ltd. | Farmers/growers; rating/inspection 2026-03-30 | Nether Cerne Manor, Nether Cerne, Dorset, DT2 7AJ | [1803188](https://api.ratings.food.gov.uk/Establishments/1803188) |
-| Eight Arch Brewing Co | Farmers/growers; rating/inspection 2023-09-20 | Unit 3a Stone Lane Industrial Estate, Wimborne Minster, Dorset, BH21 1HB | [1667308](https://api.ratings.food.gov.uk/Establishments/1667308) |
 | Horty's Honey | Farmers/growers; rating/inspection 2025-01-16 | 17 Sandford Terrace, Sandford, Dorset, BH20 7AG | [1790797](https://api.ratings.food.gov.uk/Establishments/1790797) |
 | Houghton Springs Trout Farm LTD | Farmers/growers | Houghton Springs Trout Farm Ltd Water Lane, Winterborne Houghton, Dorset, DT11 0PD | [1958838](https://api.ratings.food.gov.uk/Establishments/1958838) |
 | LAKE FARM DORSET | Farmers/growers | Lake Farm, Toller Whelme, Dorset, DT8 3NU | [1906123](https://api.ratings.food.gov.uk/Establishments/1906123) |
-| Waylands Sixpenny Brewery Ltd | Farmers/growers; rating/inspection 2023-10-11 | Holwell Farm, Cranborne, Dorset, BH21 5QP | [1667344](https://api.ratings.food.gov.uk/Establishments/1667344) |
 | Weston Manor Farm | Farmers/growers; rating/inspection 2021-06-03 | Weston Manor Farm Weston Lane, Corscombe, Dorset, DT2 0PB | [1802479](https://api.ratings.food.gov.uk/Establishments/1802479) |
-| Apex Brewing Co. | Manufacturers/packers; rating/inspection 2026-05-11 | Patson Hill Farm Patson Hill Lane, Trent, Dorset, DT9 4SY | [1927486](https://api.ratings.food.gov.uk/Establishments/1927486) |
 | Black Ven Distillery | Manufacturers/packers; rating/inspection 2024-11-05 | Long Close Clappentail Lane, Lyme Regis, Dorset, DT7 3LZ | [1772829](https://api.ratings.food.gov.uk/Establishments/1772829) |
 | Boscombe Brewing Company Ltd | Farmers/growers; rating/inspection 2025-01-31 | BH7 | [1417320](https://api.ratings.food.gov.uk/Establishments/1417320) |
 | DORSET BREWING COMPANY LTD | Manufacturers/packers; rating/inspection 2025-03-05 | Unit 7 Lawrence Drive, Crossways, Dorset, DT2 8BF | [1802474](https://api.ratings.food.gov.uk/Establishments/1802474) |
 | Kate's Honey | Farmers/growers | 3 Westleaze, Charminster, Dorset, DT2 9PZ | [1958818](https://api.ratings.food.gov.uk/Establishments/1958818) |
 | Lydden Vale Honey | Farmers/growers | Jangel Woolfords Water, Buckland Newton, Dorset, DT2 7DP | [1501102](https://api.ratings.food.gov.uk/Establishments/1501102) |
-| Remedy Oak Brewing Company | Manufacturers/packers; rating/inspection 2025-09-16 | Remedy Oak Golf Club Horton Road, Woodlands, Dorset, BH21 8ND | [1598155](https://api.ratings.food.gov.uk/Establishments/1598155) |
 | The Garden Bees Honey | Farmers/growers; rating/inspection 2019-10-16 | 81 Ulwell Road, Swanage, Dorset, BH19 1QU | [1201259](https://api.ratings.food.gov.uk/Establishments/1201259) |

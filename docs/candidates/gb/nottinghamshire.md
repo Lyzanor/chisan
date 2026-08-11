@@ -30,19 +30,13 @@ productive municipality, current offer and phone/email before admission.
 | Breadmill Bakery | Manufacturers/packers; rating/inspection 2023-08-03 | Unit 29 Sneinton Market, Avenue C, Nottingham, NG1 1DW | [1615083](https://api.ratings.food.gov.uk/Establishments/1615083) |
 | Flourish Bakes | Farmers/growers; rating/inspection 2025-12-23 | NG12 | [1884527](https://api.ratings.food.gov.uk/Establishments/1884527) |
 | Happy Bee Gluten Free Bakery | Manufacturers/packers; rating/inspection 2025-11-11 | NG8 | [1856846](https://api.ratings.food.gov.uk/Establishments/1856846) |
-| Black Iris Brewery | Manufacturers/packers; rating/inspection 2025-10-31 | Unit 1, 27 Shipstone Street, Nottingham, NG7 6GJ | [726720](https://api.ratings.food.gov.uk/Establishments/726720) |
 | Eglantine Vineyard | Manufacturers/packers; rating/inspection 2024-06-13 | Ash Lane, Costock, Nottinghamshire, LE12 6UX | [1360037](https://api.ratings.food.gov.uk/Establishments/1360037) |
 | Hungary Lane Farm Shop | Manufacturers/packers; rating/inspection 2024-02-20 | Hungary Lane Farm, Hungary Lane, Sutton Bonington, Nottinghamshire, LE12 5NB | [1699786](https://api.ratings.food.gov.uk/Establishments/1699786) |
-| Liquid Light Brewing Company | Manufacturers/packers; rating/inspection 2026-07-08 | 9 Robin Hood Industrial Estate, Alfred Street South, Nottingham, NG3 1GE | [1355754](https://api.ratings.food.gov.uk/Establishments/1355754) |
-| Neon Raptor Brewing Co. | Manufacturers/packers; rating/inspection 2026-01-10 | Unit 14 Sneinton Market, Avenue A, Nottingham, NG1 1DT | [978916](https://api.ratings.food.gov.uk/Establishments/978916) |
-| Ruddy Fine Gin | Manufacturers/packers; rating/inspection 2025-10-28 | Trent Instruments Ltd, Unit 39, Nottingham South And Wilford Industrial Estate, Ruddington Lane, NG11 7EP | [1251300](https://api.ratings.food.gov.uk/Establishments/1251300) |
 | Holly Farm Eggs | Manufacturers/packers | Holly Farm, Grassthorpe Road, Normanton On Trent, Nottinghamshire, NG23 6RX | [1128970](https://api.ratings.food.gov.uk/Establishments/1128970) |
 | Linear Brewing Company Ltd | Manufacturers/packers | Home Farm House, Lodge Lane, Screveton, Nottinghamshire, NG13 8JL | [1823089](https://api.ratings.food.gov.uk/Establishments/1823089) |
 | Quorn House Cider | Manufacturers/packers | Quorn House, Folly Hall Lane, Hickling Pastures, Nottinghamshire, LE14 3QB | [1806628](https://api.ratings.food.gov.uk/Establishments/1806628) |
 | The Sacred Ape Distillery Ltd | Manufacturers/packers | Unit G7 Roden House, Roden Street, Nottingham, NG3 1JH | [1976924](https://api.ratings.food.gov.uk/Establishments/1976924) |
 | Turners Quality Bakers 2025 Ltd | Farmers/growers | Turners Quality Bakers, Unit 18, Canalside Industrial Park, Kinoulton Road, NG12 3BE | [1833359](https://api.ratings.food.gov.uk/Establishments/1833359) |
-| Wolds Wine Estate | Farmers/growers | Vineyard Glamping At Wolds Wine Estate, Thurlby Lane, Stanton On The Wolds, Nottinghamshire | [1894181](https://api.ratings.food.gov.uk/Establishments/1894181) |
 | Brumptons Butchers | Manufacturers/packers; rating/inspection 2026-03-18 | Brumptons Butchers, 3 Plumtree Road, Cotgrave, Nottinghamshire, NG12 3HT | [266127](https://api.ratings.food.gov.uk/Establishments/266127) |
-| Lincoln Green Brewing Company Ltd | Manufacturers/packers; rating/inspection 2023-09-28 | Wigwam Lane, NG15 7SZ | [376219](https://api.ratings.food.gov.uk/Establishments/376219) |
 | Little Star Brewery | Manufacturers/packers; rating/inspection 2023-07-13 | 33 Church Street, Old Basford, NG6 0GA | [942563](https://api.ratings.food.gov.uk/Establishments/942563) |
 | Okende Bakery | Manufacturers/packers; rating/inspection 2025-01-03 | 16 Gordon Road, West Bridgford, Nottinghamshire, NG2 5LN | [1789856](https://api.ratings.food.gov.uk/Establishments/1789856) |

@@ -25,13 +25,11 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Lotts Seafoods | Farmers/growers; rating/inspection 2024-07-09 | Allwynds Lotts Isle Of Islay Argyll And Bute PA42 7DD, PA42 7DD | [1739660](https://api.ratings.food.gov.uk/Establishments/1739660) |
-| Caol Ila Distillery | Manufacturers/packers; rating/inspection 2022-03-04 | Caolila Distillery Caol Ila Isle Of Islay Argyll And Bute PA46 7RL, PA46 7RL | [1475217](https://api.ratings.food.gov.uk/Establishments/1475217) |
 | Evanachan Farm | Manufacturers/packers; rating/inspection 2023-08-02 | Evanachan Farm Otter Ferry Tighnabruaich Argyll And Bute PA21 2DH, PA21 2DH | [1672595](https://api.ratings.food.gov.uk/Establishments/1672595) |
 | Highland Fold Ice Cream (At Your Table) | Manufacturers/packers; rating/inspection 2024-09-24 | Food From Argyll Kitchen Oban Livestock Centre Oban Argyll And Bute PA34 4SD, PA34 4SD | [1764531](https://api.ratings.food.gov.uk/Establishments/1764531) |
 | Inverlonan - Bakery | Manufacturers/packers; rating/inspection 2025-07-16 | Strontoiller Farm Glenlonan Argyll And Bute PA34 4QE, PA34 4QE | [1852448](https://api.ratings.food.gov.uk/Establishments/1852448) |
 | Jura Tipsy Truffles | Manufacturers/packers; rating/inspection 2025-05-01 | 1 Croft Park Craighouse Isle Of Jura Argyll And Bute PA60 7XD, PA60 7XD | [1828520](https://api.ratings.food.gov.uk/Establishments/1828520) |
 | The Ginger Breadman | Manufacturers/packers; rating/inspection 2026-04-30 | 15 Maitland Street Helensburgh Argyll And Bute G84 7PD, G84 7PD | [1486043](https://api.ratings.food.gov.uk/Establishments/1486043) |
-| Isle Of Mull Chocolate Ltd | Manufacturers/packers; rating/inspection 2023-01-19 | The Pier Head Craignure Isle Of Mull Isle Of Mull Argyll And Bute PA65 6AY, PA65 6AY | [1597453](https://api.ratings.food.gov.uk/Establishments/1597453) |
 | The Electric Bakery | Manufacturers/packers; rating/inspection 2019-05-28 | 21-23 Watergate Rothesay Isle Of Bute PA20 9AB, PA20 9AB | [1366181](https://api.ratings.food.gov.uk/Establishments/1366181) |
 | Tiree Coffee Company | Manufacturers/packers; rating/inspection 2025-01-24 | Rhinns Scarinish Isle Of Tiree Argyll And Bute PA77 6UH, PA77 6UH | [1795510](https://api.ratings.food.gov.uk/Establishments/1795510) |
 | Western Isles Bakery | Manufacturers/packers; rating/inspection 2024-12-04 | PA37 | [1785585](https://api.ratings.food.gov.uk/Establishments/1785585) |

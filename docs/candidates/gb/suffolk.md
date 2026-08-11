@@ -24,10 +24,7 @@ productive municipality, current offer and phone/email before admission.
 | J R Blackmore Low Farm Eggs | Farmers/growers; rating/inspection 2024-03-08 | Low Farm, Cratfield Road, Huntingfield, Suffolk, IP19 0QB | [659571](https://api.ratings.food.gov.uk/Establishments/659571) |
 | Tide Mill Baker | Farmers/growers | IP12 | [1942132](https://api.ratings.food.gov.uk/Establishments/1942132) |
 | Briarbank Brewing Co | Manufacturers/packers; rating/inspection 2024-06-21 | Briarbank Brewing Company, 70 Fore Street, Ipswich, Suffolk, IP4 1LB | [1705606](https://api.ratings.food.gov.uk/Establishments/1705606) |
-| Maynard House Orchards | Manufacturers/packers; rating/inspection 2026-03-30 | The Orchards, The Street, Bradfield Combust, Suffolk, IP30 0LP | [1674816](https://api.ratings.food.gov.uk/Establishments/1674816) |
-| Roughacre Brewery | Manufacturers/packers; rating/inspection 2026-07-11 | Clare Hall Barns, Cavendish Road, Clare, CO10 8PJ | [1674118](https://api.ratings.food.gov.uk/Establishments/1674118) |
 | The Fisk Farm Ltd | Manufacturers/packers; rating/inspection 2024-06-21 | Oxley Dairy, Shingle Street, Hollesley, Woodbridge, IP12 3BD | [1728580](https://api.ratings.food.gov.uk/Establishments/1728580) |
-| Greene King Brewing | Manufacturers/packers; rating/inspection 2023-07-17 | Greene King PLC (Bottling Plant) Old Speckled, Kempson Way, Bury St Edmunds, Suffolk, IP32 7AR | [1915196](https://api.ratings.food.gov.uk/Establishments/1915196) |
 | Home Farm Nacton | Manufacturers/packers | Mobile Home, Felixstowe Road, Purdis Farm, Ipswich, IP10 0DE | [1944466](https://api.ratings.food.gov.uk/Establishments/1944466) |
 | Manor Farm Eggs | Manufacturers/packers; rating/inspection 2018-08-20 | Manor End, Freckenham Road, Worlington, Suffolk, IP28 8SN | [1673556](https://api.ratings.food.gov.uk/Establishments/1673556) |
 | Suffolk Smokehouse | Manufacturers/packers | The Food Hub, Unit 4, Blood Hall Lane, Debenham, IP14 6JX | [1827320](https://api.ratings.food.gov.uk/Establishments/1827320) |
@@ -37,4 +34,3 @@ productive municipality, current offer and phone/email before admission.
 | Cornish Bakery | Manufacturers/packers; rating/inspection 2024-12-02 | Unit B, 37 Buttermarket, Bury St Edmunds, Suffolk, IP33 1DW | [1674415](https://api.ratings.food.gov.uk/Establishments/1674415) |
 | Fellows Farm | Farmers/growers | IP6 | [1931661](https://api.ratings.food.gov.uk/Establishments/1931661) |
 | Hyams Bakery | Manufacturers/packers; rating/inspection 2026-03-25 | 13 Market Hill, Brandon, Suffolk, IP27 0AA | [1673499](https://api.ratings.food.gov.uk/Establishments/1673499) |
-| Marimba World Chocolate | Manufacturers/packers; rating/inspection 2025-12-16 | Marimba World Chocolate Limited 6 Coppice End, Northern Way, Bury St Edmunds, Suffolk, IP32 6NL | [1673695](https://api.ratings.food.gov.uk/Establishments/1673695) |

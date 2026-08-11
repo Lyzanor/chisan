@@ -29,7 +29,6 @@ productive municipality, current offer and phone/email before admission.
 | D Barclay Butcher | Manufacturers/packers; rating/inspection 2026-06-01 | 14 Central Avenue, Ardrossan, Ayrshire, KA22 7DX | [529044](https://api.ratings.food.gov.uk/Establishments/529044) |
 | R Stalker & Son Butcher | Manufacturers/packers; rating/inspection 2025-11-11 | 9 New Street, Dalry, Ayrshire, KA24 5AH | [529071](https://api.ratings.food.gov.uk/Establishments/529071) |
 | Sweet Treats | Manufacturers/packers; rating/inspection 2024-07-22 | KA22 | [1631353](https://api.ratings.food.gov.uk/Establishments/1631353) |
-| Arran Brew Ltd., | Manufacturers/packers; rating/inspection 2026-02-12 | Cladach, Cladach Access Road, Brodick, Isle Of Arran, KA27 8DE | [529622](https://api.ratings.food.gov.uk/Establishments/529622) |
 | Lime Tree Larder | Manufacturers/packers; rating/inspection 2025-01-23 | Auchencloigh Farm, Auchencloigh Farm Access Road, Kilbirnie, Ayrshire, KA25 7LJ | [529663](https://api.ratings.food.gov.uk/Establishments/529663) |
 | Robin's Herbs | Manufacturers/packers; rating/inspection 2024-09-17 | Robins Croft, The Packing Shed, Sandbraes, KA27 8RE | [529818](https://api.ratings.food.gov.uk/Establishments/529818) |
 | A D Paton | Manufacturers/packers; rating/inspection 2025-03-11 | 14 Aitken Street, Largs, Ayrshire, KA30 8AU | [529158](https://api.ratings.food.gov.uk/Establishments/529158) |

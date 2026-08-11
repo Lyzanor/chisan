@@ -18,9 +18,6 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Kibblecote Dairy | Manufacturers/packers; rating/inspection 2025-07-30 | Rushbrook Farm, Poultney Lane, Kimcote, Leicestershire, LE17 5RX | [1432061](https://api.ratings.food.gov.uk/Establishments/1432061) |
-| Kingarth Farm | Manufacturers/packers; rating/inspection 2025-09-24 | Town Street, Burton Overy, Leicestershire, LE8 9DT | [898142](https://api.ratings.food.gov.uk/Establishments/898142) |
-| The Milk Shack, Toll Gate Farm | Manufacturers/packers; rating/inspection 2026-03-16 | Toll Gate Farm, Cotes-de-val, Leicestershire, LE17 4LY | [1045837](https://api.ratings.food.gov.uk/Establishments/1045837) |
-| Treehouse Brewery Ltd | Manufacturers/packers; rating/inspection 2026-01-23 | Three Cranes, Cavendish Bridge, Shardlow, Derby, DE72 2HL | [1453778](https://api.ratings.food.gov.uk/Establishments/1453778) |
 | Seven Shires Distillery | Manufacturers/packers | Unit D4, Welland Industrial Estate, Valley Way, Market Harborough, LE16 7PS | [1663525](https://api.ratings.food.gov.uk/Establishments/1663525) |
 | Aarti Sweet Centre | Manufacturers/packers; rating/inspection 2024-02-27 | First Floor, 97 Hildyard Road, Leicester, LE4 5GG | [1593953](https://api.ratings.food.gov.uk/Establishments/1593953) |
 | Baker St Cakes | Manufacturers/packers; rating/inspection 2024-11-29 | 340A - 340B St Saviours Road, Leicester, LE5 4HJ | [1539239](https://api.ratings.food.gov.uk/Establishments/1539239) |
@@ -34,9 +31,7 @@ productive municipality, current offer and phone/email before admission.
 | W F Chapman Butchers | Manufacturers/packers; rating/inspection 2025-09-30 | W F Chapman Butchers, 13 High Street, Lutterworth, Leics, LE17 4AT | [354844](https://api.ratings.food.gov.uk/Establishments/354844) |
 | A Holmes Butchers Ltd | Manufacturers/packers; rating/inspection 2024-12-05 | 52 High Street, Coalville, Leicestershire, LE67 3EE | [32302](https://api.ratings.food.gov.uk/Establishments/32302) |
 | Ashapura Millers | Manufacturers/packers; rating/inspection 2024-07-30 | 43A St Bernards Street, Leicester, LE4 5JR | [494218](https://api.ratings.food.gov.uk/Establishments/494218) |
-| Cidentro Cider House | Manufacturers/packers; rating/inspection 2025-03-04 | LE14 | [1207356](https://api.ratings.food.gov.uk/Establishments/1207356) |
 | Leicestershire Honey | Farmers/growers | LE7 | [1535562](https://api.ratings.food.gov.uk/Establishments/1535562) |
-| Naughty Hare Distillery | Manufacturers/packers; rating/inspection 2026-06-04 | LE65 | [1655171](https://api.ratings.food.gov.uk/Establishments/1655171) |
 | Walton Lodge Farm Also T/A Happy Cow Farm | Manufacturers/packers; rating/inspection 2025-02-04 | LE9 | [940114](https://api.ratings.food.gov.uk/Establishments/940114) |
 | Whissendine Honey | Farmers/growers | LE13 | [1050335](https://api.ratings.food.gov.uk/Establishments/1050335) |
 | Game | Manufacturers/packers | 31 Carillon Court, Loughborough, LE11 3XA | [552963](https://api.ratings.food.gov.uk/Establishments/552963) |

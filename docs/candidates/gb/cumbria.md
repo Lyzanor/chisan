@@ -26,7 +26,6 @@ productive municipality, current offer and phone/email before admission.
 |---|---|---|---|
 | Pow Heads Farm Meat | Manufacturers/packers; rating/inspection 2024-09-10 | POW HEADS, MEALSGATE, WIGTON, CA7 1DF | [1550642](https://api.ratings.food.gov.uk/Establishments/1550642) |
 | Brow Top Farm Shop | Manufacturers/packers; rating/inspection 2024-01-10 | THE BROW, FLIMBY BROW, FLIMBY, MARYPORT, CA15 8TB | [1550101](https://api.ratings.food.gov.uk/Establishments/1550101) |
-| Keswick Brewing Co | Manufacturers/packers; rating/inspection 2024-03-08 | THE OLD BREWERY, BREWERY LANE, KESWICK, CA12 5BY | [1549438](https://api.ratings.food.gov.uk/Establishments/1549438) |
 | Morecambe Bay Oysters | Farmers/growers; rating/inspection 2022-12-16 | Seasalter (Walney) Ltd, Old Gravel Works, Walney, Barrow-in-Furness, LA14 3YG | [1138146](https://api.ratings.food.gov.uk/Establishments/1138146) |
 | Carlisle Brewing Co. | Manufacturers/packers | Unit 2, 12a Kingstown Broadway, Carlisle, CA3 0HA | [850394](https://api.ratings.food.gov.uk/Establishments/850394) |
 | Langholm Distillery ltd | Manufacturers/packers; rating/inspection 2026-04-01 | Unit 14 Brougham Hall, Brougham, Penrith, CA10 2DE | [1881340](https://api.ratings.food.gov.uk/Establishments/1881340) |
@@ -34,13 +33,9 @@ productive municipality, current offer and phone/email before admission.
 | Mosser Cider | Manufacturers/packers | HIGH MOSSER GATE, MOSSER, COCKERMOUTH, CA13 0SR | [1550330](https://api.ratings.food.gov.uk/Establishments/1550330) |
 | Slack House Organic Farm | Manufacturers/packers; rating/inspection 2026-07-21 | Slack House Farm, Gilsland, CA8 7DB | [464672](https://api.ratings.food.gov.uk/Establishments/464672) |
 | The Cheese Larder | Manufacturers/packers | Station Yard, Station Road, Kendal, LA9 6BT | [1453374](https://api.ratings.food.gov.uk/Establishments/1453374) |
-| Tractor Shed Brewery Ltd | Manufacturers/packers | THE TRACTOR SHED, CALVA BROW, WORKINGTON, CA14 1DB | [1550041](https://api.ratings.food.gov.uk/Establishments/1550041) |
 | Underscar Manor Winery | Manufacturers/packers | UNDERSCAR, UNDERSKIDDAW, KESWICK, CA12 4PH | [1744252](https://api.ratings.food.gov.uk/Establishments/1744252) |
-| Unsworths Yard Brewery Ltd | Manufacturers/packers; rating/inspection 2026-06-25 | 4 Unsworth Yard, Cartmel, LA11 6PN | [299325](https://api.ratings.food.gov.uk/Establishments/299325) |
 | Bake House | Manufacturers/packers; rating/inspection 2025-03-11 | 18 St Georges Terrace, Millom, Cumbria, LA18 4DB | [230244](https://api.ratings.food.gov.uk/Establishments/230244) |
 | Cumbrian Artisan Bakery | Manufacturers/packers; rating/inspection 2025-06-10 | 3 B Kentmere Mills, Silver Street, Staveley, LA8 9QR | [951446](https://api.ratings.food.gov.uk/Establishments/951446) |
 | Greenlands Farm | Farmers/growers | CA13 | [1762513](https://api.ratings.food.gov.uk/Establishments/1762513) |
 | Harvest Bakery | Manufacturers/packers; rating/inspection 2024-03-13 | 15 Holborn Hill, Millom, Cumbria, LA18 5BE | [229910](https://api.ratings.food.gov.uk/Establishments/229910) |
-| Hesket Newmarket Brewery Ltd | Manufacturers/packers | BARN AT REAR OF OLD CROWN PUB, HESKET NEWMARKET, CA7 8JG | [1549507](https://api.ratings.food.gov.uk/Establishments/1549507) |
 | Low Stanger Farm | Manufacturers/packers | LOW STANGER FARM, COCKERMOUTH, CA13 9TS | [1549548](https://api.ratings.food.gov.uk/Establishments/1549548) |
-| More? The Artisan Bakery Ltd | Manufacturers/packers; rating/inspection 2025-06-17 | Mill Yard, Back Lane, Staveley, LA8 9LR | [298923](https://api.ratings.food.gov.uk/Establishments/298923) |

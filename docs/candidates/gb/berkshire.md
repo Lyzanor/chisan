@@ -25,10 +25,8 @@ productive municipality, current offer and phone/email before admission.
 | Grays Farm | Farmers/growers; rating/inspection 2023-03-24 | Grays Farm, Heathlands Road, Wokingham, RG40 3AN | [283117](https://api.ratings.food.gov.uk/Establishments/283117) |
 | Honeys of Henley | Farmers/growers; rating/inspection 2024-07-09 | Hall & Hunter Partnership Goffs Barn, Wargrave Road, Wargrave, RG10 8DJ | [980662](https://api.ratings.food.gov.uk/Establishments/980662) |
 | Barkham Manor Farm | Manufacturers/packers; rating/inspection 2024-09-09 | Barkham Manor Farm, Barkham Road, Barkham, RG41 4DQ | [282671](https://api.ratings.food.gov.uk/Establishments/282671) |
-| Delphic Brewing Company | Manufacturers/packers; rating/inspection 2025-10-17 | Delphic Brewing Company Mayors Lane, Newbury, West Berkshire, RG14 5DR | [1822673](https://api.ratings.food.gov.uk/Establishments/1822673) |
 | L\&O Farm Produce | Manufacturers/packers | Farmhouse, Coningsby Farm, Coningsby Lane, Fifield, SL6 2PF | [1882375](https://api.ratings.food.gov.uk/Establishments/1882375) |
 | Linden Estate Winery | Manufacturers/packers; rating/inspection 2022-07-28 | Moorbridge Winery Lambourn Road, Boxford, Newbury, West Berkshire, RG20 8DA | [1363126](https://api.ratings.food.gov.uk/Establishments/1363126) |
-| Mortimer Brewing Company | Manufacturers/packers | Butlers Lands Farm, Mortimer, Reading, West Berkshire, RG7 2AG | [1941613](https://api.ratings.food.gov.uk/Establishments/1941613) |
 | Agosti Gelato | Manufacturers/packers; rating/inspection 2026-03-16 | The Old Stables, Kings Lane, Cookham, Maidenhead, SL6 9AY | [1293282](https://api.ratings.food.gov.uk/Establishments/1293282) |
 | Cooper's Honey & Bees | Farmers/growers; rating/inspection 2024-03-27 | SL6 | [1550770](https://api.ratings.food.gov.uk/Establishments/1550770) |
 | Donnington Castle House Farm | Farmers/growers | RG14 | [1975452](https://api.ratings.food.gov.uk/Establishments/1975452) |

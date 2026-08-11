@@ -18,15 +18,8 @@ productive municipality, current offer and phone/email before admission.
 | Candidate | Registry signal | Registered address | FSA record |
 |---|---|---|---|
 | Orchard Honey | Farmers/growers | SG12 | [715503](https://api.ratings.food.gov.uk/Establishments/715503) |
-| Potash Farm Foods | Manufacturers/packers; rating/inspection 2025-11-06 | College Farm, Wingrave Road, Gubblecote, Tring Herts, HP23 4QG | [1895214](https://api.ratings.food.gov.uk/Establishments/1895214) |
 | Bullscroft Farm | Farmers/growers; rating/inspection 2019-01-29 | North Hill, Chorleywood, Rickmansworth, Hertfordshire, WD3 6HA | [1133645](https://api.ratings.food.gov.uk/Establishments/1133645) |
-| The Calf at Foot Dairy | Farmers/growers; rating/inspection 2026-07-15 | Warrens Green Farm Warrens Green Lane, Weston, Hertfordshire, SG4 7ED | [1949540](https://api.ratings.food.gov.uk/Establishments/1949540) |
-| Foxholes Farm Shop | Manufacturers/packers; rating/inspection 2025-05-31 | The Farm Shop, Foxholes Farm, London Road, Hertford, SG13 7NT | [337604](https://api.ratings.food.gov.uk/Establishments/337604) |
 | Harts.Honey | Farmers/growers | 12 Silverdale Road, Bushey, Hertfordshire, WD23 2LZ | [1924276](https://api.ratings.food.gov.uk/Establishments/1924276) |
-| Apple Cottage Cider | Manufacturers/packers; rating/inspection 2025-10-31 | Radwell Mill House Radwell Lane, Radwell, Hertfordshire, SG7 5ET | [961243](https://api.ratings.food.gov.uk/Establishments/961243) |
-| Buntingford Brewery | Manufacturers/packers; rating/inspection 2026-05-19 | Greys Farm Therfield Road, Royston, Hertfordshire, SG8 9NW | [991911](https://api.ratings.food.gov.uk/Establishments/991911) |
-| New River Brewery Ltd | Manufacturers/packers | New River Brewery Ltd Unit 47, Hoddesdon Industrial Centre, Pindar Road, Hoddesdon, EN11 0FF | [1467232](https://api.ratings.food.gov.uk/Establishments/1467232) |
-| Tring Brewery Company | Manufacturers/packers; rating/inspection 2019-01-30 | Unit 2 Dunsley Farm, London Road, Tring, Hertfordshire, HP23 6HA | [761538](https://api.ratings.food.gov.uk/Establishments/761538) |
 | Butchery & Village Store | Manufacturers/packers; rating/inspection 2025-11-17 | Brookfield Farm, Aston End Road, Aston, Stevenage, SG2 7EU | [336775](https://api.ratings.food.gov.uk/Establishments/336775) |
 | Cake & Bake Limited | Manufacturers/packers; rating/inspection 2026-01-20 | 11 Brickfields Industrial Estate, Finway Road, Hemel Hempstead, Hertfordshire, HP2 7QA | [1809930](https://api.ratings.food.gov.uk/Establishments/1809930) |
 | Chiltern Fish & Game Ltd | Manufacturers/packers; rating/inspection 2025-03-27 | Silk Mill Way Depot, Silk Mill Way, Tring, Hertfordshire, HP23 5EP | [1012503](https://api.ratings.food.gov.uk/Establishments/1012503) |

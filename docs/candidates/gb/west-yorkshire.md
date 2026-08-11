@@ -34,14 +34,9 @@ productive municipality, current offer and phone/email before admission.
 | Holmfirth Vineyard | Manufacturers/packers; rating/inspection 2026-03-04 | Woodhouse Farm, Woodhouse Lane, Holmbridge, Holmfirth, HD9 2QR | [906677](https://api.ratings.food.gov.uk/Establishments/906677) |
 | Jolly Boys Brewery | Manufacturers/packers; rating/inspection 2026-02-06 | Wakefield Exchange, Union Street, Wakefield, WF1 3AD | [1832826](https://api.ratings.food.gov.uk/Establishments/1832826) |
 | Local Honey | Farmers/growers | 7 Tees Close, Castleford, WF10 3DL | [1949331](https://api.ratings.food.gov.uk/Establishments/1949331) |
-| Lost Cause Brewing Company Ltd | Manufacturers/packers; rating/inspection 2026-02-16 | Unit B4, Speedwell Road, Whitwood, Castleford, WF10 5PX | [1920043](https://api.ratings.food.gov.uk/Establishments/1920043) |
 | Michael Lee Fine Cheeses Ltd | Manufacturers/packers; rating/inspection 2024-09-16 | Unit 8 And 9, Lister Park, Featherstone, Pontefract, WF7 6FE | [314191](https://api.ratings.food.gov.uk/Establishments/314191) |
-| Northern Monk Brewing Co | Manufacturers/packers; rating/inspection 2024-03-12 | The Old Flax Store, Marshall Mills, Marshall Street, Holbeck, LS11 9YJ | [730910](https://api.ratings.food.gov.uk/Establishments/730910) |
 | Robertshaws Farm Shop | Manufacturers/packers; rating/inspection 2025-06-12 | Oats Royd Bakery, Brighouse Road, Denholme, Bradford, BD13 4HH | [328321](https://api.ratings.food.gov.uk/Establishments/328321) |
 | Ryan Jepson Cheeses | Manufacturers/packers; rating/inspection 2026-01-27 | Unit HM4, Holmfield Mills, Holdsworth Road, Holmfield, HX3 6SN | [1654753](https://api.ratings.food.gov.uk/Establishments/1654753) |
 | Smokehouse Bradford | Manufacturers/packers; rating/inspection 2026-02-03 | Unit 17 Bowling Court Industrial Estate, Mary Street, Bradford, BD4 8TT | [326098](https://api.ratings.food.gov.uk/Establishments/326098) |
-| Speights Gin | Manufacturers/packers; rating/inspection 2024-11-22 | 50 Rowan Way, Northowram, Halifax, Calderdale, HX3 7WF | [1546618](https://api.ratings.food.gov.uk/Establishments/1546618) |
-| Yorkshire Spirits Ltd | Manufacturers/packers; rating/inspection 2024-02-12 | Unit 2, Hagg Wood Stone Quarry, Woodhead Road, Honley, HD9 6PW | [1697678](https://api.ratings.food.gov.uk/Establishments/1697678) |
-| Anthology Brewing Company | Manufacturers/packers | Unit 6 Armley Link, Armley Road, Armley, Leeds, LS12 2QN | [1073641](https://api.ratings.food.gov.uk/Establishments/1073641) |
 | Blue Sky Baker - Bakery | Farmers/growers | Unit 1, Pennine Industrial Park, Valley Road, Hebden Bridge, HX7 7BZ | [1729123](https://api.ratings.food.gov.uk/Establishments/1729123) |
 | Crib Farm Juices | Manufacturers/packers | Crib Farm, New Lane, Sowerby, Sowerby Bridge, HX2 6JJ | [1717917](https://api.ratings.food.gov.uk/Establishments/1717917) |
