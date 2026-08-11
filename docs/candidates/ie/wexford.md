@@ -54,18 +54,17 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 7
+## Held after verification — 6
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
 | Lead | Category | Why it is still open |
 |---|---|---|
-| Boyle's Butchers | Carne | The site answers HTTP 503 on every automated route tried. A temporary server error is not proof of closure; the lead is unresolved. |
+| Boyle's Butchers | Carne | Boylesbutchers.ie serves a "Coming soon" placeholder while the site is rebuilt. That is not proof of closure; the butcher needs another current source. |
 | Firehouse Bakery | Pan y cereal | Firehouse Bakery publishes its bakery and cookery school at Delgany, Co. Wicklow alongside Wexford and Cork Eircodes; which unit belongs in Wexford is unresolved. |
 | Kelly's Bakery | Pan y cereal | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | OUTCAST BRANDS | Otros | Blood Monkey Gin publishes a brand and shop for Outcast Brands but no distillery, address or production detail; whether a productive unit exists in Wexford is unresolved. |
 | Stafford Spirits Ltd | Destilados y licores | Jackfordspirits.com serves a Plesk default page with no site behind it; Stafford Spirits needs a current source and the URL must not be carried. |
-| Thai Gold - Thai Food Co Limited | Otros | Thai Gold publishes no address; its candidate municipio Piercetown is an inferred nearest settlement 2.7 km from the source coordinate. |
 | Wilton Mills | Otros | Wilton Mills at Bree publishes a small organic farm with animals and accommodation but no food offer; what it sells is unresolved. |
 
 ## Needs one more fact — 33

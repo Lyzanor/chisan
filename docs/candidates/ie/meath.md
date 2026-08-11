@@ -54,7 +54,7 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 12
+## Held after verification — 11
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
@@ -68,8 +68,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Clarkes Fresh Fruit | Fruta y verdura | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Filligans | Otros | The meath note filed Filligans against finnegansfarm.ie, the Finnegan's Farm site; the Filligans identity is not established by it. |
 | Gleeson Meats Navan | Carne | Gleesons Fresh Foods publishes shops in Navan and several Dublin locations with Dublin Eircodes only; which unit is productive and where is unresolved. |
-| Gorse Foods | Otros | Pegus.ie answers a Cloudflare interstitial; a challenge is not a dead site, and Gorse Foods needs a second route. |
-| Lir Chocolates | Chocolate ? | Lir Chocolates publishes no address; its candidate municipio Kilcarn is an inferred nearest settlement 1.3 km from the source coordinate. |
+| Gorse Foods | Otros | Pegus.ie is the Pegus equine feed brand, not Gorse Foods. The URL must not be carried, and horse feed would be out of scope in any case. |
 | O'Brien Fine Foods | Otros | O'Brien Fine Foods publishes brands and partnerships but no production site; the lead's coordinate sits at Ráth Chairn while the company's plant is not named on the site. |
 | The Studio Coffee | Café | The Studio Coffee Roasters publishes no address; its candidate municipio is the joint census town Laytown-Bettystown-Mornington, inferred 1.3 km from the source coordinate. |
 

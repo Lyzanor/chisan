@@ -54,19 +54,18 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 8
+## Held after verification — 7
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
 | Lead | Category | Why it is still open |
 |---|---|---|
-| Catherine's Bakery | Pan y cereal | Catherinescafeandbakery.com answers a Cloudflare interstitial, and the lead's coordinate falls in the Liberties, Dublin rather than Kerry; both identity and area are unresolved. |
+| Catherine's Bakery | Pan y cereal | Catherinescafeandbakery.com is Catherines Cafe & Bakery, a breakfast and takeaway café in the Liberties, Dublin — a hospitality business, and in Dublin rather than the Kerry file it was listed in. |
 | Derrynane Smokehouse | Carne | The site carried for Derrynane Smokehouse is ringofkerry.net, the Derrynane Bay House B&B; the URL must not be carried. |
 | Dingle Peninsula Cheese | Lácteos y quesos | The site carried for Dingle Peninsula Cheese is thelittlecheeseshop.ie, a Dingle cheese shop that sources and matures other makers' cheese; the cheesemaker needs its own source. |
 | Dingle Pie Company | Otros | The site carried for Dingle Pie Company is thedinglepub.com, an entertainment venue; the pie maker needs its own source. |
 | OrganiGo | Otros | OrganiGo describes itself as a ready-to-eat organic vegetable producer but the live site sells compliance training and consultancy; what it currently produces is unresolved. |
 | Seamus O'Sullivan Master Butchers | Carne | The site carried for Seamus O'Sullivan Master Butchers is blocalcard.com, a customer loyalty-card platform; the URL must not be carried. |
-| Sneem Black Pudding | Carne | The SiteGround challenge escalates to a captcha that has to be solved by hand, so the site cannot be read by any automated route or by an agent. It needs a person in a browser. |
 | the Little Cheese Company | Lácteos y quesos | The Little Cheese Company and Dingle Peninsula Cheese were filed against the same shop site, thelittlecheeseshop.ie; neither identity is established by it. |
 
 ## Needs one more fact — 48

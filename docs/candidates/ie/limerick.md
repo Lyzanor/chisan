@@ -60,7 +60,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 
 | Lead | Category | Why it is still open |
 |---|---|---|
-| Cahill Cheese | Lácteos y quesos | The site answers HTTP 503 on every automated route tried. A temporary server error is not proof of closure; the lead is unresolved. |
+| Cahill Cheese | Lácteos y quesos | Cahillscheese.ie answers "Site is unavailable" through a browser as well as every automated route. That is not proof of closure; the cheesemaker needs another current source. |
 | Glenstal Foods Ltd | Otros | Glenstal Foods publishes its headquarters in Murroe and an own-brand cheddar and butter range but no production site; a head office does not place the productive unit. |
 | Juspy | Otros | Juspy publishes a collagen and protein blend brand with a shop but no address or production site; whether a productive unit exists in Limerick is unresolved. |
 | Noinin Organic Herb & Vegetable Farm | Fruta y verdura | The readable page presents Noinin Herbal Products — herbal preparations made in small batches from plants the owners grow biodynamically — not the vegetable offer the lead implies. Whether any output is food or drink rather than a herbal remedy is unresolved. |

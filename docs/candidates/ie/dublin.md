@@ -54,7 +54,7 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 39
+## Held after verification — 38
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
@@ -89,7 +89,6 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Honest to Goodness Market Glasnevin | Otros | The site carried for Honest to Goodness Market Glasnevin is the Glasnevin Food Market page at 38a Barrow Road, Dublin 11; whether it is a producer or a market venue is unresolved. |
 | il Valentino | Pan y cereal | Il Valentino serves an unconfigured site titled 'Your Site Title' carrying two Dublin Eircodes; the bakery needs a current source. |
 | Jack Smyth Brewing Company | Cerveza | The site carried for Jack Smyth Brewing Company is boxtyhouse.ie, Gallagher's Boxty House restaurant; the URL must not be carried. |
-| Keogh's Farm | Otros | Keogh's Crisps publishes only 'North County Dublin' for its family farm; its candidate municipio is the generic 'Southside', which contradicts that. |
 | Kerrigan Butchers Donaghmede | Carne ? | Kerrigans Butchers was filed three times against two sites; the Flipdish listing names 58b Grange Drive, Baldoyle while the candidate municipios say Sandymount, Malahide and Leopardstown. The productive unit is unresolved. |
 | Kerrigan Butchers Malahide | Carne ? | See the Kerrigans Donaghmede record; same business, branch unresolved. |
 | Kerrigans Butchers | Carne ? | See the Kerrigans Donaghmede record; this lead points at the Flipdish ordering page rather than the producer's own site. |

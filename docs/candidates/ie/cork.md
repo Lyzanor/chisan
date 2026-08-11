@@ -65,7 +65,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Dan Moloney's Butchers | Carne | The domain serves a password-protected "Site Under Maintenance" page. A maintenance page is not proof of closure; the lead is unresolved. |
 | Hegarty Cheese | Lácteos y quesos | Hegarty Cheese publishes only 'made near Cork city'; its candidate municipio Ballintemple is an inferred urban nearest settlement that does not match a farmhouse dairy. |
 | Horgan Meats | Carne ? | The site carried for Horgan Meats is horgans.com, Horgan's Delicatessen Supplies at Mitchelstown, a food wholesaler; a different identity and a distributor rather than a producer. |
-| Lee Valley Eggs | Huevos | Leevalleyireland.com answers an Azure WAF challenge; a challenge is not a dead site, and Lee Valley Eggs needs a second route. |
+| Lee Valley Eggs | Huevos | Leevalleyireland.com is Lee Valley Ireland, a clothing and gifts business at Inchigeela founded by the Hurley family — not the egg producer. The URL must not be carried and the producer needs its own source. |
 | MoonFish | Pescado | Moonfish.ie no longer resolves to the producer: the domain now serves the Hosting Ireland site. A lapsed domain is not proof of closure and the URL must not be carried. |
 | O'Mahony Family Butchers | Carne | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Sheehan Brothers Glanmire | Otros | Sheehan Brothers Butchers publishes shops at Mallow, Glanmire, Kanturk and St Luke's Cross without naming a productive unit; which one the row would represent is unresolved. |
@@ -73,7 +73,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | The Grumpy Bakers | Pan y cereal | The Grumpy Bakers publishes outlets in both Midleton and Cork city without naming where it bakes; the productive unit is unresolved. |
 | The Menu Cakery | Pan y cereal | The Menu Cakery publishes a T12 Cork city Eircode while its lead coordinate sits at Halfway; the municipality is unresolved. |
 | The Stuffed Olive | Pan y cereal | The Stuffed Olive in Bantry publishes a café, food and wine store with ready meals, salads and cakes; which of it is own production rather than resale is unresolved. |
-| West Cork Eggs | Huevos | The SiteGround challenge escalates to a captcha that has to be solved by hand, so the site cannot be read by any automated route or by an agent. It needs a person in a browser. |
+| West Cork Eggs | Huevos | The SiteGround challenge escalates to a captcha that a person has to solve, in a real browser as well as every automated route. Reading it needs a person, not another fetch. |
 | West Cork Sea Salt | Otros | West Cork Sea Salt publishes no address; its candidate municipio South Parish is an inferred Cork city nearest settlement that contradicts the West Cork name. |
 
 ## Needs one more fact — 107

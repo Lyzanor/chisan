@@ -54,18 +54,17 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 7
+## Held after verification — 6
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
 | Lead | Category | Why it is still open |
 |---|---|---|
-| Ardara Distillery | Destilados y licores | The SiteGround challenge escalates to a captcha that has to be solved by hand, so the site cannot be read by any automated route or by an agent. It needs a person in a browser. |
+| Ardara Distillery | Destilados y licores | The SiteGround challenge escalates to a captcha that a person has to solve, in a real browser as well as every automated route. Reading it needs a person, not another fetch. |
 | Donegal Brewing Company | Cerveza | The site carried for Donegal Brewing Company is diceys.com, the Dicey Reilly's off-licence in Ballyshannon; the retail site does not establish the brewery as a productive unit. |
 | Kombucha Na Dálaigh | Bebidas sin alcohol | Kombucha Na Dálaigh publishes no address; its candidate municipio Cloughaneely is an inferred nearest settlement 5.2 km from the source coordinate. |
 | Living Green | Otros | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
-| Mallow Mia | Otros | Mallow Mia publishes only 'from Co. Donegal'; its candidate municipio Newtown Cunningham is an inferred nearest settlement 4.7 km from the source coordinate. |
-| Northbound Brewing | Cerveza | The site answers a SiteGround bot challenge (HTTP 202 with an sgcaptcha redirect) on every automated route tried, including a second user-agent, both schemes and the www variant. A challenge is not a dead site: the lead is unresolved, not excluded, and needs a browser session. |
+| Northbound Brewing | Cerveza | The SiteGround challenge escalates to a captcha that a person has to solve, in a real browser as well as every automated route. Reading it needs a person, not another fetch. |
 | Quality Sea Veg | Fruta y verdura | The shop is behind a maintenance notice, but the catalogue behind it names the range — organic sea herbs and sea veg, dulse and sweet kombu crisps, wakame noodle soup and carragheen — and publishes 074 954 2159. Identity and qualifying activity are settled; the municipio is not, because the candidate Keadue is an inferred nearest settlement 1.7 km from the source coordinate, and remote ordering cannot be reviewed while the shop is down. |
 
 ## Needs one more fact — 24

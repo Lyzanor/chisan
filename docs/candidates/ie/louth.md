@@ -54,7 +54,7 @@ Removed in this pass as out of scope: national-scale brands, hospitality
 with no own offer and no directory backing, and bare OSM nodes carrying no
 website, phone or email to verify against.
 
-## Held after verification — 6
+## Held after verification — 5
 
 Every lead that was ready to verify was fetched on 2026-08-11. The ones below did not resolve; the reason is recorded so the next pass starts from it rather than repeating the fetch.
 
@@ -65,7 +65,6 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Haynestown Meats | Carne | Haynestown Meats publishes only a trade counter at Toughers Business Park, Naas, Co. Kildare; the site does not place a productive unit in Louth. |
 | King of Kefir | Lácteos y quesos | King of Kefir publishes no address. Its candidate municipio Clara sits on a source coordinate in Co. Offaly while its phone is a Drogheda number, so the location is unresolved. Its category is water kefir, a non-dairy drink, not Lácteos y quesos. |
 | KooKee | Otros | KooKee publishes no address; its candidate municipio Dundalk is an inferred nearest settlement 1.3 km from the source coordinate. |
-| The Home Bakery | Pan y cereal | Thehomebakery.ie answers a Cloudflare interstitial to a plain fetch. A challenge is not a dead site; the bakery needs a second route before it can be resolved. |
 
 ## Needs one more fact — 34
 

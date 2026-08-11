@@ -63,7 +63,7 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Brigid's Cake Room | Pan y cereal | The site answers HTTP 402 on every automated route tried; the lead is unresolved and needs a browser session. |
 | CROP | Otros | Crop.ie serves an unfinished website-builder template carrying only a personal name and phone number; no producer content. |
 | Dawn Farms | Otros | Dawn Farms publishes bespoke cooked meat manufacturing for foodservice brands and no production site; whether an own offer and a Kildare unit exist is unresolved. |
-| Fused by Fiona Uyema | Otros | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
+| Fused by Fiona Uyema | Otros | The SiteGround challenge escalates to a captcha that a person has to solve, in a real browser as well as every automated route. Reading it needs a person, not another fetch. |
 | Green Isle Foods | Otros | Green Isle Foods publishes a brand family and a fish-processing arm but no production site; a head office does not place the productive unit. |
 | Hoffmanns Fine Foods | Otros | The site carried for Hoffmanns Fine Foods is redmondfinefoods.ie, a Naas ingredient distributor; a different identity and a distributor rather than a producer. |
 | Jane Russells | Otros | Janerussells.ie serves an Operations Automation default page with no site behind it; the sausage maker needs a current source and the URL must not be carried. |
