@@ -37,3 +37,9 @@ Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionale
 Quedan **0 candidatos nuevos** en este corte: 0 perfiles de explotación, 0 unidades manufactureras adicionales y 0 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
 
 Las tres fuentes no dejan candidatos nuevos para esta zona tras la deduplicación. El resultado cero se conserva como cierre del corte, no como afirmación de que no pueda aparecer una fuente futura.
+
+## Hallazgo incidental pendiente — 2026-08-12
+
+| Nombre público | Commune | Unidad productiva | Producción | Fuentes |
+|---|---|---|---|---|
+| Atelier Bombylius / La Ferme de Wilma | Périgny-sur-Yerres | 9 Domaine de Saint-Leu, 94520 Périgny-sur-Yerres | Hortalizas, fruta, aromáticas y conservas ecológicas | [web propia](https://www.atelierbombylius.fr/la-ferme/) · [Agence Bio](https://annuaire.agencebio.org/operateur/144162) |

@@ -28,3 +28,9 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | DADOU MACARONS & CHOCOLAT | RECEP PERE ET FILS | Le Vésinet | 9 PLACE DE L'EGLISE 78110 LE VESINET | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2015-01 | [SIREN 809105232](https://annuaire-entreprises.data.gouv.fr/entreprise/809105232) |
 | LA LAITERIE DE LA FERME DE VILTAIN | — | Jouy-en-Josas | LE PETIT VILTAIN 78350 JOUY EN JOSAS | Lácteos y quesos | 10.51A — Fabrication de lait liquide et de produits frais | 1981-10 | [SIREN 322751009](https://annuaire-entreprises.data.gouv.fr/entreprise/322751009) |
 | LA TORREFACTION DU DONJON | TODD&CO | Houdan | 13 GRANDE RUE 78550 HOUDAN | Té e infusiones | 10.83Z — Transformation du thé et du café | 2023-09 | [SIREN 979338266](https://annuaire-entreprises.data.gouv.fr/entreprise/979338266) |
+
+## Hallazgo incidental pendiente — 2026-08-12
+
+| Nombre público | Razón social | Commune | Unidad productiva | Producción | Fuentes |
+|---|---|---|---|---|---|
+| Domaine La Bouche du Roi | SCEA Domaine de Davron | Davron | 12 Rue Saint-Jacques, 78810 Davron | Vino de un viñedo ecológico de 27 ha | [SIRENE](https://annuaire-entreprises.data.gouv.fr/entreprise/839244506) · [Agence Bio](https://annuaire.agencebio.org/operateur/143582) · [Vitijob](https://www.vitijob.com/entreprise/10308/scea-domaine-de-davron) |

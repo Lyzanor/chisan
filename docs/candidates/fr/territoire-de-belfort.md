@@ -1,28 +1,13 @@
 # Candidatos — Territoire de Belfort
 
-Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con actividad activa de `Production`, producciones declaradas y certificación `ENGAGEE` en el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/); sus datos proceden de organismos certificadores y se actualizan durante los controles, según la [ficha oficial del conjunto de datos](https://www.data.gouv.fr/datasets/professionnels-engages-en-bio). Se han excluido coincidencias normalizadas con los productores ya publicados en Francia. Se priorizó el nombre público (`nomAnnuaire`) y, dentro del departamento, una dirección marcada como lugar de actividad. Cuando el registro solo ofrece una sede local, se indica como unidad por confirmar. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca, el alimento concreto, la actividad actual, la commune vigente y que la dirección elegida sea la unidad productiva, no solo la sede legal.
+Lote revisado por completo el 2026-08-12. Se publicaron siete unidades: La Nounette, Ferme de l’Étang Fourchu, EARL de la Rosemontoise, Le Verger sur la Côte, GAEC Wurgler Frères, Ferme des Champs Lambert y Ferme Viron. La señal EARL des Prairas ya estaba publicada como Fromagerie des Prairas. Marie-Laure Boehler se descartó por limitarse a pastos y alimento para animales. Les Ateliers de la Pierre-qui-Vire se trasladó a Yonne, donde se ubica la producción actual de Frênette. Las decisiones y fuentes quedan en `data/evidence/fr/bourgogne-franche-comte/territoire-de-belfort.jsonl`.
 
-| Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
-|---|---|---|---|---|---|---|---|
-| LA NOUNETTE (EI) | La Nounette | joncherey | 24 rue de belfort 90100 | actividad | Autres fruits à noyau, Autres fruits à pépins | 2026 | [nº Bio 39473](https://annuaire.agencebio.org/operateur/39473) |
-| MENUISERIE STALDER | STALDER FRANCIS | LEPUIX | 52 RUE DE LA CHARRIERE 90200 | actividad | Culture inconnue, Veaux (< 8mois), Prairie permanente | 2026 | [nº Bio 140259](https://annuaire.agencebio.org/operateur/140259) |
-| SASU LES ATELIERS DE LA PIERRE-QUI-VIRE | LES ATELIERS DE LA PIERRE QUI VIRE | Lepuix | 14 Rue de Chauveroche 90200 | sede; unidad por confirmar | Autres boissons fermentées non distillées, Autres produits alimentaires n.c.a. | 2025 | [nº Bio 47191](https://annuaire.agencebio.org/operateur/47191) |
-| BOEHLER MARIE-LAURE ODILE | BOEHLER MARIE-LAURE ODILE | MENONCOURT | 13 RUE DU VIEUX LAVOIR 90150 | actividad | Aliments pour animaux de ferme, Prairie permanente | 2026 | [nº Bio 137371](https://annuaire.agencebio.org/operateur/137371) |
-| EARL CANAL OLIVIER | EARL CANAL OLIVIER | GIROMAGNY | 2 Rue de la 1ère Division Française libre 90200 | actividad | Prairie permanente | 2026 | [nº Bio 68888](https://annuaire.agencebio.org/operateur/68888) |
-| EARL DE L'ETANG FOURCHU | EARL DE L'ETANG FOURCHU | FLORIMONT | FERME DE L ETANG FOURCHU 90100 | actividad | Maïs fourrager, Taureaux (>24 mois), Prairie permanente | 2026 | [nº Bio 117379](https://annuaire.agencebio.org/operateur/117379) |
-| EARL DE LA ROSEMONTOISE | EARL DE LA ROSEMONTOISE | ROUGEGOUTTE | 13 RTE DE CHAUX 90200 | actividad | Vaches allaitantes, Viande bovine, fraîche ou réfrigérée, Génisses renouvellement (>8 mois) | 2026 | [nº Bio 137936](https://annuaire.agencebio.org/operateur/137936) |
-| EARL DES PRAIRAS | EARL DES PRAIRAS | LEPUIX-NEUF | 7 RUE D'ALSACE 90100 | actividad | Prairie permanente, Sorgho, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 143095](https://annuaire.agencebio.org/operateur/143095) |
-| FAIVRE SYLVAIN | FAIVRE SYLVAIN | CHARMOIS | 8 RUE DE MEROUX 90140 | actividad | Prairie temporaire, Mélanges Céréales-légumineuses, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement) | 2026 | [nº Bio 305403](https://annuaire.agencebio.org/operateur/305403) |
-| GAEC DU MONT BONNET | GAEC DU MONT BONNET | ETUEFFONT | 11 QUARTIER DU MONT BONNET 90170 | actividad | Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Génisses renouvellement (>8 mois), Blé tendre | 2026 | [nº Bio 67137](https://annuaire.agencebio.org/operateur/67137) |
-| GAEC LE VERGER SUR LA COTE | GAEC LE VERGER SUR LA COTE | Rougegoutte | LE VERGER SUR LA COTE 8 Chemin Du Quet 90200 | actividad | Abricots, Légumes frais plein champ, Cerises | 2026 | [nº Bio 62909](https://annuaire.agencebio.org/operateur/62909) |
-| GAEC WURGLER FRERES | GAEC WURGLER FRERES | LACOLLONGE | 1 RUE D ALSACE 90150 | actividad | Génisses renouvellement (>8 mois), Veaux (< 8mois), Fromages | 2026 | [nº Bio 143888](https://annuaire.agencebio.org/operateur/143888) |
-| GINOT Steve | GINOT Steve | LACHAPELLE-SOUS-ROUGEMONT | CHE DU CHENOIS 90360 | actividad | Blé tendre, Prairie temporaire, Prairie permanente | 2026 | [nº Bio 154489](https://annuaire.agencebio.org/operateur/154489) |
-| GOUAT SANDRINE | GOUAT SANDRINE | AUXELLES-HAUT | 29 RUE DES ROCHES 90200 | actividad | Prairie permanente, Brebis laitières, Culture inconnue | 2026 | [nº Bio 135992](https://annuaire.agencebio.org/operateur/135992) |
+Quedan cinco señales en espera, no rechazadas:
 
-## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
-
-Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
-
-| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
-|---|---|---|---|---|---|---|---|
-| EMMANUEL VIRON | — | Chavanatte | 7 RUE DU LAVOIR 90100 CHAVANATTE | Pan y cereal | 10.61A — Meunerie | 2022-01 | [SIREN 909509127](https://annuaire-entreprises.data.gouv.fr/entreprise/909509127) |
+| Señal | Commune | Estado | Qué falta |
+|---|---|---|---|
+| Francis Stalder | Lepuix | `hold` | El registro 2026 muestra cría de terneros, pero la identidad pública localizada corresponde a su carpintería y no demuestra una oferta alimentaria propia. |
+| EARL Canal Olivier | Giromagny | `hold` | La empresa ganadera sigue activa, pero la certificación solo muestra pastos y no apareció producto alimentario ni venta pública atribuible. |
+| Sylvain Faivre | Charmois | `hold` | Solo se confirman cultivos y una actividad hortícola pública; falta una oferta alimentaria propia y actual. |
+| GAEC du Mont Bonnet | Étueffont | `hold` | El GAEC lechero y cerealista está activo, pero no se localizó transformación o venta alimentaria pública propia. |
+| Steve Ginot | Lachapelle-sous-Rougemont | `hold` | El registro confirma cereales y pastos, sin marca, transformación o canal alimentario público localizado. |
