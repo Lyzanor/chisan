@@ -592,6 +592,7 @@ integrado, descartado con motivo o marcado reconsiderable-con-señal.**
 
 | Fecha | Lote | Sesión/agente | Resultado |
 |---|---|---|---|
+| 2026-08-12 | — | Claude | Pasada **eje urbano + padrones gremiales**, abierta desde una medida de densidad (ciudad 1/7.124 hab vs resto de provincia 1/1.313, **5,4×**) cuya causa es que todas las vetas barridas son de marco agrario. 4 frentes nuevos → **20 candidatos netos `unverified`**: A gremial (Unió de Licoristes 3/23; La Païssa formatgers 5/65 con 92% ya presente), B guías urbanas (5, tres tostadores con tueste propio verificado), C **padrón RIAAC como open data `p28j-xe65`** (11.232 filas, 4.727 en la provincia, con CCAE y lat/lon — sustituye a los PDF de GIA; sonda de almazaras 4/22), D Benvinguts a Pagès 2026, 5 rutas de la provincia (4/27, 85% ya estaba). Incidencia: **Mas Buret duplicado** en dos municipios. Ninguna alta al CSV: todo queda para verificación 1-a-1. |
 | 2026-07-16 | 14 | Claude | ✅ Lote 14 (flecos) cerrado: 12 diferidos resueltos 1-a-1 → **1 alta** (Paul and Pippa, Barberà del Vallès, parcial), 3 ya estaban (grafía), 3 rechazos de gate (Ral d'Avinyó=grupo industrial, Sanmartí 1850=retail, R115=SL extinguida), 6 sin señal (reconsiderables). CSV 2544→2545, gates verdes. **Pasada flujo 2026 sin flecos pendientes.** |
 | 2026-07-16 | 13 | Claude | ✅ Lote 13 (residual, vino dirigido): bloque de cellers/cavas de los snapshots XPT+Gastroteca → **23 altas** (12 verificado, 11 parcial; 1 VO=sí: J. Fortuny Fàbregas) tras cruce preciso con grep y descarte de ~7 ya-presentes. CSV 2521→2544, evidencia +23, gates verdes. Vacía el residual de valor de la pasada; lotes 2/7/8 quedan cerrados por diseño (baja señal). |
 | 2026-07-16 | 12 | Claude | ✅ Lote 12 (frente B) cerrado como **snapshot/delta-base, 0 altas**: CCPAE = registro de certificación de toda Catalunya (5.085 operadores), dragnet de baja señal (logística/distribuidores/aceites), sin fecha de alta; no hay dataset abierto y el buscador es Dojo hostil (conducido con navegador). Sonda Berguedà (63): ~90% en bruto, elaboradores ya en CSV. El subconjunto de marca ya entró vía XPT/Gastroteca/mercats. Hallazgo + método de deltas en `barcelona-snapshot-ccpae.md`. **Cierra el frente B (lotes 9-12: +13 altas, 2508→2521).** |
@@ -771,3 +772,115 @@ Taller Gingell), planta ornamental (Aimsat), artesania sense producte
 alimentari identificat (Isabel Serres, Josep Massana), llavors per a cultiu
 (Les Refardes) i la fitxa col·lectiva Patates del Bufet d'Orís, ja coberta per
 La Noguereda i sense una unitat nova identificable.
+
+## Pasada «eje urbano + padrones gremiales» — candidatos netos (2026-08-12)
+
+**Diagnóstico que abre la pasada.** Densidad medida sobre HEAD (2.417 filas):
+ciudad de Barcelona 233 filas ≈ 1 por 7.124 hab · cinturón AMB 357 ≈ 1 por
+4.341 · resto de provincia 1.827 ≈ 1 por 1.313. **5,4× de diferencia.** La
+causa es estructural, no de esfuerzo: todas las vetas ya barridas están
+enmarcadas en lo agrario (venda de proximitat *exige* ser payés, CCPAE
+certifica fincas, Gastroteca / XPT / Benvinguts a Pagès / parcs de la DIBA son
+turismo rural). Un obrador urbano con RGSEAA y sin tierra es invisible al 100%
+de ellas. Lo confirma la mezcla de la ciudad: 40% Pan y cereal frente a
+Conservas=1, Aceite=1, Destilados=1, Frutos secos=1, Miel=1.
+
+Corolario operativo: **cambiar el eje de enumeración** de territorial a
+*gremial* (qué fabricas) y a *padrón* (quién está registrado). Los cuatro
+frentes de abajo son eso. Todos los candidatos quedan `unverified`: ninguno
+tiene aún fuente viva que acredite identidad + actividad + municipio a la vez.
+
+### A — Padrones gremiales y sectoriales
+
+Cruzado el listado de socios de la [Unió de Licoristes de Catalunya](https://licoristesdecatalunya.com/ca/industria-de-begudes-espirituoses/)
+(23 socios). Fuera por industrial/distribución: Bardinet, Bacardí, Osborne
+(Anís del Mono ya está), Miguel Torres, Antonio Mascaró. Sin ubicar todavía:
+Iberlicor SL (Barcelona), Abcliqueur/WKYREGAL (Barcelona), Master Distiller SL,
+Ricart SL, Azul y Rojo.
+
+| candidato | municipio | pista de encaje / cautela |
+|---|---|---|
+| Perucchi 1876 | Badalona | Vermut tiene **1 sola fila** en toda la provincia. C/ Joaquim Vayreda 6, +34 933842626, leído de su web viva (da 403 a fetch normal, 200 con UA de navegador). ⚠️ la marca la compró MaserGrup/Vermuts Miró: **confirmar que la elaboración sigue en Badalona y no en Reus** antes de dar el alta. |
+| L'Agrícola Regional, S.A. (Aromes de Montserrat) | Monistrol de Montserrat | Licor de hierbas del monasterio, método tradicional. `museu@larsa-montserrat.com`, +34 938777745. ⚠️ **está en Gastroteca**: pasó por el lote 9 y no se integró — revisar por qué antes de reabrir. |
+| Falima – Fàbrica de Licors La Manresana | Sant Joan de Vilatorrada | ⚠️ **no está en Manresa pese al nombre** (razón social ≠ unidad productiva). 300 referencias incluyendo vodka y tequila → pasar por el filtro maquila/industrial. Lo defendible es su ratafia de marca propia, Cal Masover. |
+
+Cruzada la [lista de formatgers i iogurters de Catalunya de La Païssa](https://www.lapaissa.com/llista-de-tots-els-formatgers-i-iogurters-de-catalunya/)
+(tabla con CP, municipio, comarca y web; 65 fichas con CP 08xxx). **60 de 65 ya
+estaban (92%)** — confirma que la veta láctea sigue saturada, como cerró el
+lote 5. Falso positivo corregido: *Pujol Grau, Ramón* (Gurb) es Granja
+Armengol, ya en CSV bajo la marca.
+
+| candidato | municipio | pista de encaje / cautela |
+|---|---|---|
+| Productes El Canadell | Santa Maria d'Oló | Flams, matons, formatge fresc i curat, nata. ⚠️ su web declara «SOM GRUP AGROFRESC» y el contacto es `marketing@agrofresc.com` con teléfono *placeholder* (+34 600 000 888) → marca de grupo, triar contra el gate y no copiar ese teléfono. |
+| La Fanzella del Montseny | Montseny | ⚠️ el dominio `lafanzelladelmontseny.cat` **no resuelve** (HTTP 000). Un fetch fallido no es un sitio muerto: confirmar por otra vía antes de descartar o de dar el alta. |
+| Granja del Montseny | Fogars de Montclús | Solo presencia en Facebook (`granjadelmontsenyoficial`); falta acreditar obrador propio y oferta pública. |
+| Granja Búfula | Vallcebre | Solo Instagram (`granjabufula_eco`). Berguedà, comarca poco poblada en el CSV. |
+
+### B — Guías urbanas de consumo (categorías de manufactura ciudadana)
+
+El eje que ninguna fuente barrida cubre. Los tres primeros tuestan su propio
+café, verificado en su web viva.
+
+| candidato | municipio | pista de encaje / cautela |
+|---|---|---|
+| Tornado Café Coffee Roasters | Granollers | Microtostador desde 2006, tostadoras construidas por ellos. Pl. Lluís Perpinyà 18, `info@tornadocafe.es`, tienda con checkout, IG + FB. **Granollers tiene 20 filas y cero Café.** |
+| Abyss Coffee Roasters | Barcelona - Sant Martí | Roastery café en local. Av. Diagonal 93, 08019 (el CP fija el distrito, no la calle). Checkout Shopify, IG `@abysscoffee`. |
+| La Cherry Coffee Co. | Barcelona - Eixample | Desde 2015, C/ Lepant 330, 08025, +34 651400985, checkout, IG + FB. ⚠️ **tuestan «al Vallès»**: la unidad productiva no está en el Eixample — fijarla antes de poner coordenadas. |
+| La Conservera BCN (Cop de Foc, SCCL) | Barcelona - Eixample | Bailèn 58. ⚠️ híbrido: declara «producciones propias» pero también distribución exclusiva de terceros. Acotar qué elabora antes de decidir. |
+| Querida Carmen | Barcelona - Eixample | Conservas tradicionales B2B para restauración. ⚠️ Muntaner 200, 4º 3ª **es una dirección administrativa**, no un obrador: localizar la unidad productiva. |
+
+### C — Padrón RIAAC como open data (no los PDF)
+
+Hallazgo de método: el Registre d'Indústries Agràries i Alimentàries está
+publicado como dataset consultable, [`p28j-xe65`](https://analisi.transparenciacatalunya.cat/resource/p28j-xe65.json)
+(11.232 filas; 4.727 en las 13 comarcas de la provincia), con nombre,
+dirección, CP, municipio, comarca, CCAE de actividad principal **y lat/lon**.
+Sustituye a los `Titularitat-GIA.pdf` / `Activitats-GIA.pdf` que veníamos
+usando y permite cortes por actividad en vez de barrer a ciegas.
+
+Es un dragnet: incluye mataderos, salas de despiece, piensos y hasta envases de
+madera. **Sirve por cortes finos, no como importación.** Sonda hecha sobre el
+corte más limpio — `almàssera` (44 registros, 22 establecimientos únicos, la
+duplicación es por múltiples inscripciones del mismo establecimiento) contra
+las 48 filas de Aceite: 14 ya cubiertos, 3 presentes en otra categoría, 1 falso
+negativo de normalización (*Esteve Ribera, Juan* en el Bruc = Oli Montbruc).
+Recordatorio: el padrón lista **razón social, no marca** — el cruce útil es
+municipio + actividad, y luego identificación 1-a-1.
+
+| candidato | municipio | pista de encaje / cautela |
+|---|---|---|
+| OCTER, SL | Esparreguera | Almazara; 6 inscripciones en el registro (operación de cierto tamaño). Sin fila de Aceite en el municipio. Identificar marca comercial. |
+| Torras Forns, Rosa Mª | Castellar del Vallès | Almazara. Sin fila de Aceite en el municipio. Razón social: falta marca y oferta pública. |
+| Caballé Enrich, Josep | Ullastrell | Almazara. Sin fila de Aceite en el municipio (Celler Can Morral del Molí es Vino). |
+| Dashang Investement Trading España, SLU | Avinyonet del Penedès | ⚠️ almazara registrada pero razón social de *trading*: probable granel/exportación sin marca propia. Prioridad baja. |
+
+Cortes del padrón todavía sin explotar, ordenados por hueco del catálogo:
+`Elaboració de iogurts` (35), `Obtenció d'oli d'oliva verge` (hecho),
+`Preparació i conservació d'hortalisses` (69) y `Preparació i conservació de
+fruites` (38) contra Conservas (36), y `Elaboració de formatges frescos` (79).
+
+### D — Eje temporal: Benvinguts a Pagès 2026 (lote 2)
+
+Recorridas las **5 rutas de la provincia** en [benvingutsapages.cat](https://benvingutsapages.cat/rutes/)
+(Costa de Barcelona 1-3, Paisatges de Barcelona 1-2). Descontados restaurantes,
+alojamientos y viveros ornamentales quedan 27 productores: **23 ya estaban
+(85%)**, 4 netos. Rinde ~15%, en línea con la cata del lote 1.
+
+| candidato | municipio | pista de encaje / cautela |
+|---|---|---|
+| Can Traver | Bigues i Riells del Fai | Explotación participante; falta identificar producto, marca y canal propios. |
+| Finca els Corrals Nous | Sabadell | Explotación en término de Sabadell; confirmar oferta pública propia. |
+| La Muntada – 5 Quarteres | Sant Llorenç Savall | Confirmar unidad productiva y si «5 Quarteres» es la marca. |
+| ~~Molí d'Oli Josep Lluch~~ | Guardiola de Font-rubí | **Probable duplicado**: el RIAAC lo registra como *Lluch Molinari, Pere* en Font-rubí y el CSV ya tiene «Família Lluch – Molí i Celler» allí. Guardiola es un núcleo de Font-rubí. Verificar antes de tratarlo como alta. |
+
+### Incidencia detectada de paso — resuelta
+
+**Mas Buret estaba duplicado** (misma marca, misma categoría Miel) en
+`oliva-codina-jose-maria-sant-marti-de-tous` y
+`mas-buret-santa-magdalena-de-montbui`. Fusionado el 2026-08-12 en
+`mas-buret-santa-margarida-de-montbui`: mismo correo `info@masburet.com` y
+mismo dominio, y proper.cat sitúa la explotación en **el Saió, CP 08710**, que
+es Santa Margarida de Montbui — no Sant Martí de Tous. Las coordenadas de la
+fila absorbida caían 3,6 km al oeste. Los dos slugs viejos quedan como
+`merge` en el ledger de evidencia.
