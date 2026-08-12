@@ -41,3 +41,19 @@ productive municipality, current offer and phone/email before admission.
 | Bread & Bakes | Manufacturers/packers; rating/inspection 2026-03-23 | 134b Victoria Street, Lurgan, BT67 9DH | [1908082](https://api.ratings.food.gov.uk/Establishments/1908082) |
 | Don’t Go Baking My Heart Vegan Bakery | Manufacturers/packers; rating/inspection 2021-08-18 | 17 Cedar Wood, Bleary, Portadown, Down, BT63 5FS | [1389643](https://api.ratings.food.gov.uk/Establishments/1389643) |
 | Greenmount Farm | Manufacturers/packers; rating/inspection 2025-09-29 | BT61 | [979835](https://api.ratings.food.gov.uk/Establishments/979835) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Ballylisk of Armagh | Named as a cheese producer by Great British Chefs Northern Ireland cheese | Tandragee, County Armagh | — | — |

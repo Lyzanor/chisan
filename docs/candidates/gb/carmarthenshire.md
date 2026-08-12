@@ -39,3 +39,19 @@ productive municipality, current offer and phone/email before admission.
 | TREGROES WAFFLE BAKERY | Manufacturers/packers; rating/inspection 2026-01-12 | Unit 2 Llandysul Industrial Estate, Llandysul, Carmarthenshire, SA44 4AE | [984270](https://api.ratings.food.gov.uk/Establishments/984270) |
 | Celtic Preserves ltd | Manufacturers/packers; rating/inspection 2023-05-19 | Unit 1 Beechwood Industrial Estate, Talley Road, Llandeilo, Carmarthenshire, SA19 7HR | [916461](https://api.ratings.food.gov.uk/Establishments/916461) |
 | Parsons Pickles (FP018) | Manufacturers/packers; rating/inspection 2025-09-09 | Ashburnham Works, Burry Port, Carmarthenshire, SA16 0ET | [855047](https://api.ratings.food.gov.uk/Establishments/855047) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Bryngaer Goats Cheese | Specialist Cheesemakers Association member (cheesemaker) | Bwich Y Fforest, Llandovery, Carmarthenshire, SA20 0US | [site](http://www.bryngaergoats.co.uk)<br>katie@bryngaergoats.co.uk | — |

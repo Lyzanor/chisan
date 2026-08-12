@@ -34,3 +34,20 @@ productive municipality, current offer and phone/email before admission.
 | Kate's Honey | Farmers/growers | 3 Westleaze, Charminster, Dorset, DT2 9PZ | [1958818](https://api.ratings.food.gov.uk/Establishments/1958818) |
 | Lydden Vale Honey | Farmers/growers | Jangel Woolfords Water, Buckland Newton, Dorset, DT2 7DP | [1501102](https://api.ratings.food.gov.uk/Establishments/1501102) |
 | The Garden Bees Honey | Farmers/growers; rating/inspection 2019-10-16 | 81 Ulwell Road, Swanage, Dorset, BH19 1QU | [1201259](https://api.ratings.food.gov.uk/Establishments/1201259) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Woodlands Dairy Limited | Specialist Cheesemakers Association member (cheesemaker) | Unit 27A Sunrise Business Park, Higher Shaftesbury Road, Blandford, Dorset, DT11 8ST | [site](http://www.woodlandsdairy.co.uk)<br>0845 467 9894<br>sam.boyt@woodlandsdairy.co.uk | — |
+| Ford Farm Cheesemakers | Named as a cheese producer by Ford Farm / Somerdale cheese producers (makes Wookey Hole Cave Aged Cheddar) | Ashley Chase Estate, Litton Cheney, Dorset | — | — |

@@ -40,3 +40,21 @@ productive municipality, current offer and phone/email before admission.
 | Georgio'S Ice Cream | Manufacturers/packers; rating/inspection 2025-04-28 | Glan Padarn 49 Stryd Fawr, Llanberis, Gwynedd, LL55 4EU | [150792](https://api.ratings.food.gov.uk/Establishments/150792) |
 | Gwenynfa Pen Y Bryn Apiary | Manufacturers/packers; rating/inspection 2021-10-22 | Ty Cerrig, Ganllwyd, Gwynedd, LL40 2TN | [1267070](https://api.ratings.food.gov.uk/Establishments/1267070) |
 | Gwynedd Confectioners | Manufacturers/packers; rating/inspection 2025-12-15 | Uned 21 Ystâd Ddiwydiannol Y Bala, Y Bala, Gwynedd, LL23 7NL | [121752](https://api.ratings.food.gov.uk/Establishments/121752) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Cosyn Cymru | Specialist Cheesemakers Association member (cheesemaker) | 2 Gwernydd Gerlan, Bethesda, Gwynedd, LL57 3TY | [site](http://www.cosyn.cymru)<br>07813 463666<br>carrierimes@gmail.com | — |
+| South Caernarvon Creameries Ltd | FSA Manufacturers/packers; rating/inspection 2026-02-03 | Hufenfa De Arfon, Y Ffôr, Gwynedd | — | [134065](https://api.ratings.food.gov.uk/Establishments/134065) |
+| South Caernarfon Creameries Ltd | FSA Manufacturers/packers; rating/inspection 1901-01-01 | Cae Cethin, Llanfair, Gwynedd | — | [1493042](https://api.ratings.food.gov.uk/Establishments/1493042) |

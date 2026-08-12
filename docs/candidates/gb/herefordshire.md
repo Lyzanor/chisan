@@ -47,3 +47,24 @@ productive municipality, current offer and phone/email before admission.
 | The Clover Mill | Manufacturers/packers; rating/inspection 2014-05-15 | WR13 | [632909](https://api.ratings.food.gov.uk/Establishments/632909) |
 | The Little Meal House | Farmers/growers; rating/inspection 2025-05-31 | Townsend Farm, Brampton Abbotts, HR9 7JE | [1623427](https://api.ratings.food.gov.uk/Establishments/1623427) |
 | Third Eye Brew Company | Manufacturers/packers; rating/inspection 2024-09-12 | Units 4 To 5 Three Elms Trading Estate, Bakers Lane, Hereford, HR4 9PU | [1636460](https://api.ratings.food.gov.uk/Establishments/1636460) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Hancocks Meadow Farm | Specialist Cheesemakers Association member (cheesemaker) | Valley View, Ballingham Hill, Hereford, HR2 6NN | [site](http://www.hancocksmeadowfarm.co.uk)<br>07547 788770<br>paulinehealey1@gmail.com | — |
+| JS + GM Winterton | Specialist Cheesemakers Association member (cheesemaker) | Acton Beauchamp, Worcester, Herefordshire, WR6 5AD | davidwinterton@gmail.com | — |
+| Long Lane Dairy | Specialist Cheesemakers Association member (cheesemaker) | Sycamore Cottage, Long Lane, Peterchurch, Herefordshire, HR2 0TE | 07790 613777<br>katiecordle@gmail.com | — |
+| Monkland Cheese Dairy | Specialist Cheesemakers Association member (cheesemaker) | The Pleck, Leominster, HR6 9DB | 07771 812 683<br>monklandcheesemakers@gmail.com | — |
+| Neals Yard Creamery | Specialist Cheesemakers Association member (cheesemaker) | Caeperthy, Arthurs Stone Lane, Dorstone, Herefordshire, HR3 6AX | [site](http://www.nealsyardcreamery.co.uk)<br>01981 500395<br>orders@nealsyardcreamery.co.uk | — |
+| Wye Creamery | Specialist Cheesemakers Association member (cheesemaker) | White House Cottage, How Caple, Herefordshire, HR1 4SR | 07500 016828<br>bryn25@hotmail.co.uk | — |

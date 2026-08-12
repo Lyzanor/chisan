@@ -36,3 +36,22 @@ productive municipality, current offer and phone/email before admission.
 | Ghostpit Distillery | Manufacturers/packers | UNIT 11 BATTEN ROAD, DOWNTON, SP5 3HU | [1241601](https://api.ratings.food.gov.uk/Establishments/1241601) |
 | Pete's Micro Bakery | Manufacturers/packers; rating/inspection 2025-10-28 | Three Trees Farm Shop, The Ridgeway, Chiseldon, Swindon, SN4 0HT | [1885273](https://api.ratings.food.gov.uk/Establishments/1885273) |
 | Aldbourne Cider | Manufacturers/packers; rating/inspection 2024-06-26 | SN8 | [1710200](https://api.ratings.food.gov.uk/Establishments/1710200) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Brinkworth Dairy | Specialist Cheesemakers Association member (cheesemaker) | Hill End Farm, Brinkworth, Chippenham, Wiltshire, SN15 5AZ | [site](http://www.brinkworthdairy.co.uk)<br>07977 580281<br>cericryer@hotmail.com | — |
+| Lyburn Farmhouse Cheesemakers | Specialist Cheesemakers Association member (cheesemaker) | Lyburn Farm, Landford, Salisbury, Wiltshire, SP5 2DN | [site](http://www.lyburncheese.co.uk)<br>07941 536380<br>cheese@lyburnfarm.co.uk | — |
+| Rosary Goats Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Rosary, Partridge Hill, Landford, Salisbury, Wiltshire, SP5 2BB | [site](http://www.rosarygoatscheese.co.uk)<br>01794 322196<br>info@rosarygoatscheese.co.uk | — |
+| Millbrook Dairy Company | Named as a cheese producer by Somerdale cheese producers | South West England | — | — |

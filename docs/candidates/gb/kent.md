@@ -37,3 +37,20 @@ productive municipality, current offer and phone/email before admission.
 | Tankerton Bakery | Farmers/growers; rating/inspection 2024-03-06 | 113 Tankerton Road, East Of Tankerton Circus, Whitstable, Kent, CT5 2AN | [1407418](https://api.ratings.food.gov.uk/Establishments/1407418) |
 | Bore Place (on Farm Pasteurising) | Manufacturers/packers | Bore Place Conference And Study Centre, Bore Place, Bore Place Road, Chiddingstone, TN8 7AR | [1669079](https://api.ratings.food.gov.uk/Establishments/1669079) |
 | Breakwater Brewery and Taproom | Manufacturers/packers; rating/inspection 2026-05-27 | St Martins Yard Lorne Road, Dover, Kent, CT16 2AA | [958557](https://api.ratings.food.gov.uk/Establishments/958557) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Winterdale Cheesemakers | Specialist Cheesemakers Association member (cheesemaker) | Platt House Farm, Fairseat Lane, Wrotham, Sevenoaks, Kent, TN15 7QB | [site](http://www.winterdale.co.uk)<br>07971289256<br>winterdalecheese@gmail.com | — |
+| Curd And Cure Limited | FSA Manufacturers/packers; rating/inspection 2025-07-23 | Staplehurst Nurseries, Clapper Lane, Staplehurst, Kent | — | [1022976](https://api.ratings.food.gov.uk/Establishments/1022976) |

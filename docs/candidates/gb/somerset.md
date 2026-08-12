@@ -36,3 +36,36 @@ productive municipality, current offer and phone/email before admission.
 | Barley Wood Cider Barn | Manufacturers/packers; rating/inspection 2026-06-02 | Walled Garden Barley Wood Walled Garden, Long Lane, Wrington, Bristol, BS40 5SA | [905466](https://api.ratings.food.gov.uk/Establishments/905466) |
 | Bossington Farm | Manufacturers/packers; rating/inspection 2024-10-24 | Bossington Road, Selworthy, Minehead, Somerset, TA24 8HF | [1808006](https://api.ratings.food.gov.uk/Establishments/1808006) |
 | Brent House Farm Milk Store | Manufacturers/packers; rating/inspection 2026-05-28 | Brent House Farm, Edingworth Road, Edingworth, BS24 0JA | [1048584](https://api.ratings.food.gov.uk/Establishments/1048584) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Batch Farm Cheesemakers Ltd | Specialist Cheesemakers Association member (cheesemaker) | Batch Farm, East Pennard, Shepton Mallet, Somerset, BA4 6TU | [site](http://www.gouldscheddar.co.uk)<br>01749 860319<br>hello@batchfarmcheesemakers.co.uk | — |
+| Bath Soft Cheese Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Park Farm, Kelston, Bath, Avon, BA1 9AG | [site](http://www.parkfarm.co.uk)<br>01225 331601<br>hugh@parkfarm.co.uk | — |
+| Chapel Cross Tea Room | Specialist Cheesemakers Association member (cheesemaker) | Chapel Cross, South Cadbury, Nr Yeovil, Somerset, BA22 7ET | 01963 440501<br>chapelcross@gmail.com | — |
+| The Cheddar Gorge Cheese Company | Specialist Cheesemakers Association member (cheesemaker); FSA productive registration | The Cliffs, Cheddar, Somerset, BS27 3QA | [site](http://www.cheddaronline.co.uk)<br>01934 742810<br>tom.rhodes@cheddargorgecheese.com | [42450](https://api.ratings.food.gov.uk/Establishments/42450) |
+| Easterdown Cheese | Specialist Cheesemakers Association member (cheesemaker) | Easterdown, Upton, Taunton, Somerset, TA4 2JB | [site](http://www.easterdown.com)<br>07802 704064<br>cheese@easterdown.com | — |
+| Feltham's Farm Ltd | Specialist Cheesemakers Association member (cheesemaker) | Felthams Farm, Horsington Marsh, Templecombe, Somerset, BA8 0EN | [site](http://www.felthamsfarm.com)<br>01963 370857<br>info@felthamsfarm.com | — |
+| Homewood Cheeses | Specialist Cheesemakers Association member (cheesemaker) | Unit 4, The Old Sawmill, Cleeve Hill, Ubley, Bristol, Avon, BS40 6PE | [site](http://www.homewoodcheeses.co.uk)<br>01761 463498<br>info@homewoodcheeses.co.uk | — |
+| J A & E Montgomery Ltd | Specialist Cheesemakers Association member (cheesemaker) | Manor Farm, North Cadbury, Yeovil, Somerset, BA22 7DW | 07768 856973<br>jamesmontgomery389@btinternet.com | — |
+| Keen's Cheddar Ltd | Specialist Cheesemakers Association member (cheesemaker) | Moorhayes Farm, Verrington Lane, Wincanton, Somerset, BA9 8JR | [site](http://www.keenscheddar.co.uk)<br>07711 691915<br>keenscheddar@hotmail.com | — |
+| The Newt in Somerset | Specialist Cheesemakers Association member (cheesemaker) | Hadspen, Bruton, Somerset, BA7 7NG | [site](http://www.thenewtinsomerset.com)<br>01963 577700<br>accounts@thenewtinsomerset.com | — |
+| The Somerset Cheese Co | Specialist Cheesemakers Association member (cheesemaker) | Ditcheat Hill Farm, Ditcheat, Shepton Mallet, Somerset, BA4 6TL | 01749 860237<br>info@somersetcheese.co.uk | — |
+| Wandering Ewe Dairy | Specialist Cheesemakers Association member (cheesemaker) | Failand Hill Farm, Horse Race Lane, Bristol, BS8 3TY | 07783418003<br>info@wanderingewe.co.uk | — |
+| West Country Water Buffalo Ltd | Specialist Cheesemakers Association member (cheesemaker) | Higher Oakley Farm, Chilthorne Domer, Yeovil, Somerset, BA22 8LS | [site](http://www.westcountrywaterbuffalo.com)<br>07798 656380<br>info@westcountrywaterbuffalo.com | — |
+| White Lake Cheese | Specialist Cheesemakers Association member (cheesemaker) | Bagborough Farm, Pylle, Shepton Mallet, Somerset, BA4 6SX | 07709 312817<br>storm@whitelake.co.uk | — |
+| Times Past Cheese Dairy | FSA Manufacturers/packers; rating/inspection 2026-06-23 | Unit 3 Badgworth Barns, Notting Hill Way, Weare | — | [1616143](https://api.ratings.food.gov.uk/Establishments/1616143) |
+| Quantock Cheese | Named as a cheese producer by FarmingUK cheese makers directory | Somerset | — | — |
+| Brue Valley | Named as a cheese producer by FarmingUK cheese makers directory | Somerset | — | — |
+| Barber's Farmhouse Cheesemakers | Named as a cheese producer by Somerdale cheese producers | Ditcheat, Somerset | — | — |

@@ -32,3 +32,19 @@ productive municipality, current offer and phone/email before admission.
 | Bakers With Spirit | Manufacturers/packers; rating/inspection 2025-07-21 | TD9 | [1786736](https://api.ratings.food.gov.uk/Establishments/1786736) |
 | Robbie Pringle's Fresh Food Produce | Manufacturers/packers; rating/inspection 2025-09-25 | Pringles Butcher Shop 77 High Street, Hawick, Scottish Borders, TD9 9BL | [27569](https://api.ratings.food.gov.uk/Establishments/27569) |
 | Braw Sauces | Manufacturers/packers; rating/inspection 2026-06-17 | EH46 | [1665048](https://api.ratings.food.gov.uk/Establishments/1665048) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Stichill Jerseys | Named as a cheese producer by VisitScotland / Scottish Food Guide (makes Kelsae and Stichill cheese) | Garden Cottage Farm, Stichill, Kelso, Scottish Borders | — | — |

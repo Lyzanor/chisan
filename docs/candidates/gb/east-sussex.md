@@ -30,3 +30,23 @@ productive municipality, current offer and phone/email before admission.
 | Buds Farm | Manufacturers/packers; rating/inspection 2024-11-20 | Buds Farm Stonehurst Lane, Five Ashes, East Sussex, TN20 6LJ | [1705362](https://api.ratings.food.gov.uk/Establishments/1705362) |
 | Eridge Dairy | Manufacturers/packers; rating/inspection 2024-09-05 | Mead Farm Sandhill Lane, Boars Head, East Sussex, TN3 9LR | [1756519](https://api.ratings.food.gov.uk/Establishments/1756519) |
 | Golden Horn Farm | Manufacturers/packers; rating/inspection 2025-06-27 | Golden Horn Farm Deadmantree Hill, Barcombe, East Sussex, BN8 4SX | [1806908](https://api.ratings.food.gov.uk/Establishments/1806908) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Alsop & Walker Ltd | Specialist Cheesemakers Association member (cheesemaker) | Coles Hall Barns, Heathfield Road, Five Ashes, East Sussex, TN20 6JJ | [site](http://www.Alsopandwalker.co.uk)<br>01825 831810<br>Arthur@alsopandwalker.co.uk | — |
+| Golden Cross Cheese Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Greenacres Farm, Holmes Hill, Lewes, East Sussex, BN8 6JA | [site](http://www.goldencrosscheese.co.uk)<br>07501 506616<br>info@goldencrosscheese.co.uk | — |
+| Thyme & Labour Ltd | Specialist Cheesemakers Association member (cheesemaker) | 3 Balliol Cottages, Lower High Street, Wadhurst, East sussex, TN5 6BB | 07576 615278<br>etoryoth@gmail.com | — |
+| The Traditional Cheese Dairy Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Burnt House Farm, Bray Hill Lane, Heathfield, East Sussex, TN21 0PG | [site](http://www.)<br>01435 813406<br>andydelves@me.com | — |
+| Whitehouse Farm Oast | Specialist Cheesemakers Association member (cheesemaker) | Danegate, Eridge, Tunbridge Wells, East Sussex, TN3 9HX | whitehousefarmoast@gmail.com | — |

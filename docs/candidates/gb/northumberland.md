@@ -39,3 +39,19 @@ productive municipality, current offer and phone/email before admission.
 | Creel & Reel Seafood | Manufacturers/packers; rating/inspection 2026-03-10 | Chathill, Northumberland, NE68 7UY | [1474692](https://api.ratings.food.gov.uk/Establishments/1474692) |
 | Glentons Bakery | Manufacturers/packers; rating/inspection 2025-06-17 | 2 Meadowfield, North Seaton, Northumberland, NE63 9TR | [859988](https://api.ratings.food.gov.uk/Establishments/859988) |
 | Hammond Charcuterie | Manufacturers/packers; rating/inspection 2026-01-21 | Windmill Way West, Ramparts Business Park, Berwick-Upon-Tweed, TD15 1UN | [922194](https://api.ratings.food.gov.uk/Establishments/922194) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Northumberland Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | Make Me Rich Farm, Blagdon, Seaton Burn, Northumberland, NE13 6BZ | [site](http://www.northumberlandcheese.co.uk)<br>01670 789798<br>jacks@northumberland-cheese.co.uk | — |

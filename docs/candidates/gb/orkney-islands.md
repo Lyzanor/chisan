@@ -43,3 +43,21 @@ productive municipality, current offer and phone/email before admission.
 | Jolly's of Orkney | Manufacturers/packers; rating/inspection 2026-03-03 | Jolly's Of Orkney - Factory, Scotts Road, St Ola, KW15 1GR | [565008](https://api.ratings.food.gov.uk/Establishments/565008) |
 | Orkney Wine Company (Production) | Manufacturers/packers; rating/inspection 2026-03-05 | Orkney Wine Company, Lamb Holm, Holm, KW17 2SF | [565029](https://api.ratings.food.gov.uk/Establishments/565029) |
 | Pierowall Fish | Manufacturers/packers; rating/inspection 2025-10-22 | Pierowall Fish Ltd, Broughton Road, Westray, KW17 2DA | [565177](https://api.ratings.food.gov.uk/Establishments/565177) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Burnside Cheese | Specialist Cheesemakers Association member (cheesemaker) | Braevilla, Rendall, Orkney, KW17 2NZ | [site](http://www.burnsidecheese.co.uk)<br>07765 863026<br>Barry@burnsidecheese.co.uk | — |
+| Wilson of Westray | Named as a cheese producer by Provender Brown Scottish cheesemakers | Westray, Orkney | — | — |
+| The Orkney Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Sandwick, Orkney | — | — |

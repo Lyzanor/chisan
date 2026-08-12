@@ -39,3 +39,19 @@ productive municipality, current offer and phone/email before admission.
 | Auntie April | Manufacturers/packers; rating/inspection 2024-09-04 | 78 Torrens Drive, Cyncoed, Cardiff, CF23 6DR | [1735524](https://api.ratings.food.gov.uk/Establishments/1735524) |
 | CAKE BOX | Manufacturers/packers; rating/inspection 2025-07-09 | 96 Cowbridge Road East, Riverside, Cardiff, CF11 9DX | [1841408](https://api.ratings.food.gov.uk/Establishments/1841408) |
 | Grey Rabbit Cakes and Cupcakes | Manufacturers/packers; rating/inspection 2024-12-18 | 10 Cefn Penuel, Pentyrch, Cardiff, CF15 9TB | [1255100](https://api.ratings.food.gov.uk/Establishments/1255100) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Ty Caws | Specialist Cheesemakers Association member (cheesemaker) | 28 Castle Arcade, Cardiff, Cardiff, CF10 1BW | [site](http://WWW.TYCAWS.COM)<br>07939 014 526<br>OWEN@TYCAWS.COM | — |

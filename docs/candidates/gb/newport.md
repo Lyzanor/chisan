@@ -35,3 +35,19 @@ productive municipality, current offer and phone/email before admission.
 | Ostuni Bakery Ltd | Manufacturers/packers | Unit 3, Evtol Trading Estate, Frederick Street, Newport, NP20 2DR | [1950353](https://api.ratings.food.gov.uk/Establishments/1950353) |
 | Golden Meats | Manufacturers/packers; rating/inspection 2024-01-25 | NP19 | [1588833](https://api.ratings.food.gov.uk/Establishments/1588833) |
 | Halo Foods | Manufacturers/packers; rating/inspection 2025-12-03 | Unit 26, Estuary Road, Queensway Meadows Industrial Estate, Newport, NP19 4SP | [563891](https://api.ratings.food.gov.uk/Establishments/563891) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Usk Valley Cheese Company | Specialist Cheesemakers Association member (cheesemaker) | 45 The Nurseries, Langstone, Newport, NP18 2NT | [site](http://www.uskvalleycheese.com)<br>01633 226960<br>info@uskvalleycheese.com | — |

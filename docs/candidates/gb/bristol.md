@@ -36,3 +36,19 @@ productive municipality, current offer and phone/email before admission.
 | Ice Mill | Manufacturers/packers | 31 Picton Lane, Montpelier, Bristol, BS6 5PX | [1406675](https://api.ratings.food.gov.uk/Establishments/1406675) |
 | Chatty Craft | Farmers/growers; rating/inspection 2025-03-10 | 622 Portway, Shirehampton, Bristol, BS11 9QE | [1292849](https://api.ratings.food.gov.uk/Establishments/1292849) |
 | DC Ocean Foods Ltd | Manufacturers/packers; rating/inspection 2025-10-20 | 21 Brislington Hill, Brislington, Bristol, BS4 5BE | [1843016](https://api.ratings.food.gov.uk/Establishments/1843016) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| The Goaty Orchard | Specialist Cheesemakers Association member (cheesemaker) | 3 Green Oak Crescent, Greenbank Road, Bristol, BS5 6FB | 07957 209057<br>chdezeeuw@googlemail.com | — |

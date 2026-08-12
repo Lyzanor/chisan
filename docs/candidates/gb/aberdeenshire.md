@@ -33,3 +33,20 @@ productive municipality, current offer and phone/email before admission.
 | Crowhillock Farm | Manufacturers/packers; rating/inspection 2026-02-24 | Crowhillock, Kinneff, Inverbervie, DD10 0TL | [1911054](https://api.ratings.food.gov.uk/Establishments/1911054) |
 | Bodachra Brewing Company | Manufacturers/packers; rating/inspection 2018-09-19 | 57 Denview Road, Potterton, Aberdeenshire, AB23 8ZL | [1019131](https://api.ratings.food.gov.uk/Establishments/1019131) |
 | Easterton Cider | Manufacturers/packers; rating/inspection 2023-04-17 | The Steading Easterton Of Logie, Pitcaple, Inverurie, AB51 5EL | [1429601](https://api.ratings.food.gov.uk/Establishments/1429601) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Cambus O'May Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Creamery, Cambus O'May, Balleter, Aberdeenshire, AB35 5SD | [site](http://www.cambusomay.com)<br>01339 753113<br>ian@cambusomay.com | — |
+| Middleton Farms | Specialist Cheesemakers Association member (cheesemaker) | Middleton of Rora, Longside, Peterhead, Aberdeenshire, AB42 4US | 07721 649102<br>bruce@roradairy.co.uk | — |

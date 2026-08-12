@@ -45,3 +45,19 @@ productive municipality, current offer and phone/email before admission.
 | Addlestone Honey | Farmers/growers; rating/inspection 2025-11-06 | KT15 | [1849964](https://api.ratings.food.gov.uk/Establishments/1849964) |
 | Bee Friends | Farmers/growers; rating/inspection 2025-04-09 | GU3 | [1355583](https://api.ratings.food.gov.uk/Establishments/1355583) |
 | Beez Knees Dorking Honey | Farmers/growers; rating/inspection 2025-12-18 | RH5 | [1812844](https://api.ratings.food.gov.uk/Establishments/1812844) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Cheese On The Wey Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit 1, The Old Dairy, Pierrepont Farm, The Reeds Road, Frensham, Surrey, GU10 3BS | [site](http://www.cheeseonthewey.co.uk)<br>01252 444088<br>john@cheeseonthewey.co.uk | — |

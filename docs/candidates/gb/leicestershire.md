@@ -36,3 +36,21 @@ productive municipality, current offer and phone/email before admission.
 | Whissendine Honey | Farmers/growers | LE13 | [1050335](https://api.ratings.food.gov.uk/Establishments/1050335) |
 | Game | Manufacturers/packers | 31 Carillon Court, Loughborough, LE11 3XA | [552963](https://api.ratings.food.gov.uk/Establishments/552963) |
 | Goldings Distillery Ltd | Manufacturers/packers; rating/inspection 2022-07-18 | CV13 | [1520339](https://api.ratings.food.gov.uk/Establishments/1520339) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Everest Dairies Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit L Vulcan Business Centre, Vulcan Road, Leicester, LE5 3EB | [site](http://www.everestdairies.com)<br>0116 2530909<br>technical@everestdairies.com | — |
+| Leicestershire Handmade Cheese Co | Specialist Cheesemakers Association member (cheesemaker) | Sparkenhoe Farm, Upton, Nr Nuneaton, CV13 6JX | [site](http://www.leicestershirecheese.co.uk)<br>01455 213863<br>jo@leicestershirecheese.co.uk | — |
+| Webster's Dairy | Named as a cheese producer by FarmingUK cheese makers directory | Saxelbye, Leicestershire | — | — |

@@ -32,3 +32,19 @@ productive municipality, current offer and phone/email before admission.
 | Isle Of Wight Bees Ltd | Farmers/growers | PO36 | [1959531](https://api.ratings.food.gov.uk/Establishments/1959531) |
 | Pure Medham Honey | Farmers/growers; rating/inspection 2020-02-05 | PO31 | [541979](https://api.ratings.food.gov.uk/Establishments/541979) |
 | Whitwell Honey | Farmers/growers; rating/inspection 2014-08-19 | PO38 | [698662](https://api.ratings.food.gov.uk/Establishments/698662) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Isle Of Wight Cheese Company, Production Facility | FSA Manufacturers/packers; rating/inspection 2025-06-11 | Queen Bower Dairy, Alverstone Road, Newchurch, Isle Of Wight | — | [541788](https://api.ratings.food.gov.uk/Establishments/541788) |

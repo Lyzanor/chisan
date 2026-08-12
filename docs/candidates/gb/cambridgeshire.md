@@ -39,3 +39,19 @@ productive municipality, current offer and phone/email before admission.
 | Bowler's Brewery | Manufacturers/packers; rating/inspection 2024-03-25 | PE6 | [1371449](https://api.ratings.food.gov.uk/Establishments/1371449) |
 | Cambridge Bakers | Manufacturers/packers; rating/inspection 2025-10-15 | 9 Robert Davies Court Nuffield Road, Cambridge, Cambridgeshire, CB4 1TP | [1473656](https://api.ratings.food.gov.uk/Establishments/1473656) |
 | Firetree Chocolate Limited | Manufacturers/packers; rating/inspection 2025-07-14 | 3 Holkham Road, Orton Southgate, Peterborough, PE2 6TE | [1063769](https://api.ratings.food.gov.uk/Establishments/1063769) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| St Ives Cheese | FSA Manufacturers/packers; rating/inspection 2025-07-21 | Huntingdonshire | — | [1094461](https://api.ratings.food.gov.uk/Establishments/1094461) |

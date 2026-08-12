@@ -39,3 +39,25 @@ productive municipality, current offer and phone/email before admission.
 | Archers Ice Cream | Manufacturers/packers; rating/inspection 2025-10-30 | The Station Station Yard, Richmond, DL10 4LD | [1851939](https://api.ratings.food.gov.uk/Establishments/1851939) |
 | B-Wizz Bees | Farmers/growers | TS7 | [1841603](https://api.ratings.food.gov.uk/Establishments/1841603) |
 | Baxters Bees | Farmers/growers | LS24 | [1898354](https://api.ratings.food.gov.uk/Establishments/1898354) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Botton Village Creamery | Specialist Cheesemakers Association member (cheesemaker) | CVT, Botton Village, Danby, Whitby, North Yorkshire, YO21 2NJ | [site](http://www.camphillvillagetrust.org.uk)<br>01287 661 272<br>botton.creamery@CVT.org.uk | — |
+| Curlew Dairy | Specialist Cheesemakers Association member (cheesemaker) | The Corner House, Wensley, Leyburn, North Yorkshire, DL8 4HN | [site](http://www.curlewdairy.co.uk)<br>07746 086504<br>sam@curlewdairy.co.uk | — |
+| Lowfields Farm Limited T/A Lowfields | Specialist Cheesemakers Association member (cheesemaker) | Lowfields Farm, Westhouse, Ingleton, Carnforth, North Yorkshire, LA6 3PF | 07599 674365<br>lowfieldsfarm@outlook.com | — |
+| Rosedale Goats (formerly B G Farming) | Specialist Cheesemakers Association member (cheesemaker) | Abbey Farm Cottage, Alder Carr Lane, Rosedale Abbey, Pickering, North Yorkshire, YO18 8SD | [site](http://www.abbeyfarmcottagerosedale.com)<br>07714 217195<br>suzie@abbeyfarmcottagerosedale.com | — |
+| Shepherds Purse Cheeses Ltd | Specialist Cheesemakers Association member (cheesemaker) | Leachfield Grange, Newsham, Thirsk, North Yorkshire, YO7 4DJ | [site](http://www.shepherdspurse.co.uk)<br>01845 587220<br>caroline@shepherdspurse.co.uk | — |
+| Stonebeck Cheese | Specialist Cheesemakers Association member (cheesemaker) | Low Riggs Farm, Middlesmoor, Harrogate, North Yorkshire, HG3 5TA | [site](http://www.stonebeckcheese.co.uk/)<br>01423 755122<br>info@stonebeckcheese.co.uk | — |
+| Ribblesdale Cheese | Named as a cheese producer by Great British Life / Yorkshire Dales | Hawes, North Yorkshire | — | — |

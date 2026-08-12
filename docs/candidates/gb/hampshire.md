@@ -38,3 +38,19 @@ productive municipality, current offer and phone/email before admission.
 | Puck Cider | Manufacturers/packers; rating/inspection 2025-11-14 | Dummer Down Farm, Duxford Lane, Dummer, Basingstoke, RG25 2AR | [1765724](https://api.ratings.food.gov.uk/Establishments/1765724) |
 | Queenwood Farm Partnership/Lockerley Estate | Manufacturers/packers; rating/inspection 2024-09-26 | Manor Farm, The Coach Road, East Tytherley, Salisbury, SP5 1LE | [1259999](https://api.ratings.food.gov.uk/Establishments/1259999) |
 | Roger Smith Distillery | Manufacturers/packers; rating/inspection 2026-01-16 | Priory Farm Priory Lane, Selborne, Alton, Hampshire, GU34 3BU | [1798943](https://api.ratings.food.gov.uk/Establishments/1798943) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Laverstoke Park Farm | Named as a cheese producer by Speciality/regional South East cheese coverage | Overton, Hampshire | — | — |

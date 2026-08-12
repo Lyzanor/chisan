@@ -41,3 +41,19 @@ productive municipality, current offer and phone/email before admission.
 | Noel's Family Butcher | Manufacturers/packers; rating/inspection 2025-08-18 | 21 High Street, Bargoed, CF81 8RA | [1836637](https://api.ratings.food.gov.uk/Establishments/1836637) |
 | Nos Da Bakery Ltd | Manufacturers/packers | Shop Unit B, 44 Tredegar Street, Risca, Newport, NP11 6BU | [1969609](https://api.ratings.food.gov.uk/Establishments/1969609) |
 | Rogers Estate Coffee (Uk) Ltd | Manufacturers/packers; rating/inspection 2024-02-29 | Unit P - Q, Trecenydd Business Park, Trecenydd, Caerphilly, CF83 2RZ | [748955](https://api.ratings.food.gov.uk/Establishments/748955) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Castle Dairies | Named as a cheese producer by Somerdale cheese producers | Caerphilly, South Wales | — | — |

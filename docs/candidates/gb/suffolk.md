@@ -34,3 +34,22 @@ productive municipality, current offer and phone/email before admission.
 | Cornish Bakery | Manufacturers/packers; rating/inspection 2024-12-02 | Unit B, 37 Buttermarket, Bury St Edmunds, Suffolk, IP33 1DW | [1674415](https://api.ratings.food.gov.uk/Establishments/1674415) |
 | Fellows Farm | Farmers/growers | IP6 | [1931661](https://api.ratings.food.gov.uk/Establishments/1931661) |
 | Hyams Bakery | Manufacturers/packers; rating/inspection 2026-03-25 | 13 Market Hill, Brandon, Suffolk, IP27 0AA | [1673499](https://api.ratings.food.gov.uk/Establishments/1673499) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Broughton Hall Dairy | Specialist Cheesemakers Association member (cheesemaker) | Broughton Hall Farm, Stonham Aspal, Stowmarket, Suffolk, IP14 6AD | 07763 738459<br>hello@broughtonhalldairy.co.uk | — |
+| Horham Dairy & Care Farm CIC | Specialist Cheesemakers Association member (cheesemaker) | Stradbroke Road,, Horham, Eye, Suffolk, IP21 5DZ | [site](http://www.horhamdairyandcarefarm.org)<br>07752 168156<br>alison.hunt100@gmail.com | — |
+| St Jude's Cheese | Specialist Cheesemakers Association member (cheesemaker) | Fig Tree Cottage, Stradbroke, Suffolk, IP21 5JJ | 07771 618 385<br>julie@stjudecheese.com | — |
+| Wilton Farm (Wissington) | Named as a cheese producer by Norfolk Deli East Anglian cheese | Wissington, Suffolk | — | — |

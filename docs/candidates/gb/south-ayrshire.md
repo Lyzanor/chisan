@@ -42,3 +42,19 @@ productive municipality, current offer and phone/email before admission.
 | Renaldo's | Manufacturers/packers; rating/inspection 2025-05-12 | 96-98 Sandgate, Ayr, South Ayrshire, KA7 1BX | [64090](https://api.ratings.food.gov.uk/Establishments/64090) |
 | Wee Troon Candy | Manufacturers/packers; rating/inspection 2025-05-12 | 12 Union Street, Troon, South Ayrshire, KA10 6BS | [21920](https://api.ratings.food.gov.uk/Establishments/21920) |
 | Hall's Of Scotland | Manufacturers/packers; rating/inspection 2018-08-14 | Halls Of Scotland Ltd, Glenburn Road, Prestwick, South Ayrshire, KA9 2NS | [1410309](https://api.ratings.food.gov.uk/Establishments/1410309) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Barwheys Dairy | Named as a cheese producer by FarmingUK cheese makers directory | Ayrshire | — | — |

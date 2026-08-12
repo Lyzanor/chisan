@@ -41,3 +41,19 @@ productive municipality, current offer and phone/email before admission.
 | Vanilla Joe's | Manufacturers/packers; rating/inspection 2026-03-17 | 88e Montgomery Lane, Irvine, North Ayrshire, KA12 8PW | [1563620](https://api.ratings.food.gov.uk/Establishments/1563620) |
 | Wooleys of Arran | Manufacturers/packers; rating/inspection 2026-03-03 | Wooleys Of Arran, Brodick, Isle Of Arran, KA27 8AJ | [529605](https://api.ratings.food.gov.uk/Establishments/529605) |
 | J Climie | Manufacturers/packers; rating/inspection 2024-05-30 | 74 Main Street, West Kilbride, North Ayrshire, KA23 9BN | [1628007](https://api.ratings.food.gov.uk/Establishments/1628007) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| The Wee Dalry Dairy Ltd | Specialist Cheesemakers Association member (cheesemaker) | 11 Main Street, Dalry, Ayrshire, KA24 5DL | 07496 681209<br>rspencer18@btinternet.com | — |

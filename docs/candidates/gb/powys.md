@@ -39,3 +39,20 @@ productive municipality, current offer and phone/email before admission.
 | Ashburnham Bakery | Manufacturers/packers; rating/inspection 2026-02-17 | Heol Las Road, Talgarth, Brecon, Powys, LD3 0PH | [330994](https://api.ratings.food.gov.uk/Establishments/330994) |
 | Baras Bakes | Manufacturers/packers; rating/inspection 2025-05-27 | 8 High Street, Knighton, Powys, LD7 1AT | [1809019](https://api.ratings.food.gov.uk/Establishments/1809019) |
 | Bee Bitches | Farmers/growers; rating/inspection 2025-05-28 | SY21 | [1815476](https://api.ratings.food.gov.uk/Establishments/1815476) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Llaeth Y Bont | Specialist Cheesemakers Association member (cheesemaker) | Newbridge Farm, Meifod, Powys, SY22 6HS | [site](http://www.bontnewydd.com)<br>07790 603438<br>lwbontnewydd@gmail.com | — |
+| Stratlab Holdings Ltd t/a Caws Gynog | Specialist Cheesemakers Association member (cheesemaker) | Bwich-y-Ffridd, Newtown, Powys, SY16 3HX | [site](https://www.cawsgynog.co.uk)<br>info@cawsgynog.co.uk | — |

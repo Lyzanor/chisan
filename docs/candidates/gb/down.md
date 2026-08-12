@@ -47,3 +47,19 @@ productive municipality, current offer and phone/email before admission.
 | Richmond Bakery | Manufacturers/packers; rating/inspection 2025-07-08 | 18 Newry Street, Ballyvally, Banbridge, Down, BT32 3HA | [755111](https://api.ratings.food.gov.uk/Establishments/755111) |
 | THE BREAD BOX BAKERY | Manufacturers/packers; rating/inspection 2025-02-25 | 5 Meeting Street, Drumbroneth, Dromore, Down, BT25 1AQ | [984872](https://api.ratings.food.gov.uk/Establishments/984872) |
 | WINDSOR HOME BAKERY | Manufacturers/packers; rating/inspection 2026-01-08 | 36-38 Newry Street, Ballyvally, Banbridge, Down, BT32 3HA | [768636](https://api.ratings.food.gov.uk/Establishments/768636) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Mike's Fancy Cheese | Specialist Cheesemakers Association member (cheesemaker) | Ards Business Centre, Unit 1 Jubilee Road, Stranford Park, Newtownards, Co.Down, BT23 4YH | [site](http://www.mfcheese.com)<br>07794 570420<br>info@mfcheese.com | — |

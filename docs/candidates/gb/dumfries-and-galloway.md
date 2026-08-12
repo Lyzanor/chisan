@@ -40,3 +40,26 @@ productive municipality, current offer and phone/email before admission.
 | The Bee Orchard | Farmers/growers; rating/inspection 2018-11-30 | DG2 | [1152579](https://api.ratings.food.gov.uk/Establishments/1152579) |
 | Waulkmill Cider Orchard | Manufacturers/packers; rating/inspection 2016-05-06 | Burnfoot Farmhouse, Langholm, Westerkirk, DG13 0NG | [893358](https://api.ratings.food.gov.uk/Establishments/893358) |
 | K & I Miller & Sons Ltd (Dairy) | Farmers/growers; rating/inspection 2017-06-01 | Lockerbie, Lochmaben, DG11 1SA | [1181026](https://api.ratings.food.gov.uk/Establishments/1181026) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Finlay's Farm Ltd | Specialist Cheesemakers Association member (cheesemaker) | Rainton, Gatehouse of Fleet, Castle Douglas, Dumfries, DG7 2DR | [site](http://www.creamogalloway.co.uk)<br>01557 814 040<br>laura@theethicaldairy.co.uk | — |
+| The Kedar Cheese Company | Specialist Cheesemakers Association member (cheesemaker); FSA productive registration | Beyond The Burn Farm, Mouswald, Dumfries, DG1 4LX | 07754 187389<br>glochhead@btconnect.com | [1180869](https://api.ratings.food.gov.uk/Establishments/1180869) |
+| Loch Arthur Camphill Community | Specialist Cheesemakers Association member (cheesemaker) | Loch Arthur Camphill Community, Beeswing, Dumfries, DG2 8JQ | [site](http://www.locharthur.org.uk)<br>07749 610 855<br>barry@locharthur.org.uk | — |
+| Arla Foods Ltd (Cheese) | FSA Manufacturers/packers; rating/inspection 2024-06-27 | Lockerbie Creamery, Lockerbie | — | [1180994](https://api.ratings.food.gov.uk/Establishments/1180994) |
+| Caledonian Cheese Company Ltd | FSA Manufacturers/packers; rating/inspection 2024-09-29 | Commerce Road, Stranraer | — | [1181168](https://api.ratings.food.gov.uk/Establishments/1181168) |
+| Loch Arthur Creamery | FSA Manufacturers/packers; rating/inspection 2024-07-30 | Dumfries, Beeswing | — | [1281398](https://api.ratings.food.gov.uk/Establishments/1281398) |
+| The Damn Fine Cheese Company | FSA Farmers/growers; rating/inspection 2024-01-22 | Dumfries and Galloway | — | [1434598](https://api.ratings.food.gov.uk/Establishments/1434598) |
+| The Ethical Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Gatehouse of Fleet, Dumfries and Galloway | — | — |

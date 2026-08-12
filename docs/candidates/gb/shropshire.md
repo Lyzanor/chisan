@@ -34,3 +34,23 @@ productive municipality, current offer and phone/email before admission.
 | Wroxeter Roman Vineyard | Manufacturers/packers; rating/inspection 2023-03-31 | Wroxeter Roman Vineyard Brookside, Wroxeter, Shrewsbury, Shropshire, SY5 6PQ | [116879](https://api.ratings.food.gov.uk/Establishments/116879) |
 | Blue Stone Farm | Manufacturers/packers | Blue Stone Farm, Newcastle, Shropshire, SY7 8PE | [1934948](https://api.ratings.food.gov.uk/Establishments/1934948) |
 | Eden Honey Bees | Farmers/growers; rating/inspection 2026-07-22 | SY4 | [1841046](https://api.ratings.food.gov.uk/Establishments/1841046) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| A. W Preece T/A The Dairy Door | Specialist Cheesemakers Association member (cheesemaker) | Manor Farm, Wyke, Much Wenlock, Shropshire, TF13 6PA | [site](http://www.thedairydoor.co.uk)<br>07484 243185<br>milliep96@gmail.com | — |
+| Appleby's | Specialist Cheesemakers Association member (cheesemaker) | Hawkstone Abbey Farm, Marchamley, Shrewsbury, Shropshire, SY4 5LN | [site](http://www.applebyscheese.co.uk)<br>07932 254718<br>sarah.appleby@applebyscheese.co.uk | — |
+| Moyden's Handmade Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Creamery, Lockley Villa Farm, Wistanswick, Market Drayton, Shropshire, TF9 2AY | [site](http://www.mrmoyden.com)<br>07967 607317<br>mrmoyden@live.co.uk | — |
+| Silly Cow Cheese | FSA Manufacturers/packers; rating/inspection 1901-01-01 | Offices At O H C Building, Whitchurch, Shropshire | — | [1972158](https://api.ratings.food.gov.uk/Establishments/1972158) |
+| Belton Farm | Named as a cheese producer by Speciality Food Magazine directory | Whitchurch, Shropshire | — | — |

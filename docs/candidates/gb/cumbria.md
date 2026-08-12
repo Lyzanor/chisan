@@ -39,3 +39,27 @@ productive municipality, current offer and phone/email before admission.
 | Greenlands Farm | Farmers/growers | CA13 | [1762513](https://api.ratings.food.gov.uk/Establishments/1762513) |
 | Harvest Bakery | Manufacturers/packers; rating/inspection 2024-03-13 | 15 Holborn Hill, Millom, Cumbria, LA18 5BE | [229910](https://api.ratings.food.gov.uk/Establishments/229910) |
 | Low Stanger Farm | Manufacturers/packers | LOW STANGER FARM, COCKERMOUTH, CA13 9TS | [1549548](https://api.ratings.food.gov.uk/Establishments/1549548) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Appleby Creamery Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit 3A, Cross Croft, Appleby-in-Westmorland, Cumbria, CA16 6HX | [site](http://www.applebycreamery.com)<br>07904 570820<br>cheese@applebycreamery.com | — |
+| E & D.E. Horn | Specialist Cheesemakers Association member (cheesemaker) | Slack House Farm, Gilsland, Brampton, Cumbria, CA8 7DB | [site](http://www.slackhousefarm.co.uk)<br>016977 47351<br>slackhouseorganicfarm@gmail.com | — |
+| F&R Farms Ltd | Specialist Cheesemakers Association member (cheesemaker) | Piper Hole, Ravenstonedale, Kirkby Stephen, Cumbria, CA17 4NN | 07789 725264<br>frank37hunter@btinternet.com | — |
+| Helm Bar Dairy | Specialist Cheesemakers Association member (cheesemaker) | Moorside Farm, Culgaith, Penrith, Cumbria, CA10 1QU | 07929 873234<br>freyafindlay8@gmail.com | — |
+| The Torpenhow Cheese Company | Specialist Cheesemakers Association member (cheesemaker) | Park House, Wigton, Torpenhow, Cumbria, CA7 1JZ | [site](http://www.torpenhoworganic.co.uk)<br>01697 334410<br>cheese@torpenhoworganic.co.uk | — |
+| Whin Yeats Dairy | Specialist Cheesemakers Association member (cheesemaker) | Whin Yeats, Hutton Roof, Carnforth, Lancashire, LA6 2PJ | [site](http://www.whinyeatsdairy.com)<br>07841 480233<br>info@whinyeatsdairy.com | — |
+| Mawbray Cheese Company | FSA Manufacturers/packers; rating/inspection 2025-03-28 | Cumberland | — | [1550608](https://api.ratings.food.gov.uk/Establishments/1550608) |
+| Thornby Moor Dairy | Named as a cheese producer by Made in Cumbria / own site | Thursby, Cumbria | — | — |
+| St James Cheese | Named as a cheese producer by Living North local cheesemakers | near Grange-over-Sands, Cumbria | — | — |

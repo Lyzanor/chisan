@@ -39,3 +39,22 @@ productive municipality, current offer and phone/email before admission.
 | Cinnamon Grove Gin / Distillery | Manufacturers/packers | Cinnamon Grove Old Hakin Road, Merlins Bridge, Haverfordwest, Pembrokeshire, SA61 1XG | [1077195](https://api.ratings.food.gov.uk/Establishments/1077195) |
 | Langdon Farm Enterprises Ltd | Manufacturers/packers; rating/inspection 2025-08-28 | Langdon Farm Guest House, Begelly, Pembrokeshire, SA68 0NJ | [1080271](https://api.ratings.food.gov.uk/Establishments/1080271) |
 | Marys Farmhouse Icecream | Manufacturers/packers; rating/inspection 2026-03-16 | The Fairfield Heol Parc Y Ffair, Crymych, Pembrokeshire, SA41 3QE | [856310](https://api.ratings.food.gov.uk/Establishments/856310) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Caerfai Organic Cheese | Specialist Cheesemakers Association member (cheesemaker) | D.W & C.M Evans, Caerfai Farm, St Davids, Haverfordwest, Pembrokeshire, SA62 6QT | [site](http://www.caerfai.co.uk)<br>01437 720548<br>chrismevans69@hotmail.com | — |
+| Griffiths and Latter Limited | Specialist Cheesemakers Association member (cheesemaker) | Penrhiw, Llandwnda, Goodwick, Pembrokeshire, SA64 0AQ | 07875 219746<br>griffithsandlatter@penrhiwfarm.co.uk | — |
+| Pant Mawr Farmhouse Cheeses | Specialist Cheesemakers Association member (cheesemaker) | Pant Mawr, Rosebush, Clynderwen, Pembrokeshire, SA66 7QU | [site](http://www.pantmawrcheeses.co.uk)<br>01437 532627<br>david@pantmawrcheeses.co.uk | — |
+| The First Milk Cheese Company Ltd | FSA Manufacturers/packers; rating/inspection 2026-07-13 | The First Milk Cheese Co Ltd Haverfordwest Creamery Pembroke Road, Haverfordwest, Pembrokeshire | — | [856464](https://api.ratings.food.gov.uk/Establishments/856464) |

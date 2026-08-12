@@ -31,3 +31,19 @@ productive municipality, current offer and phone/email before admission.
 | Oxford Farmhouse | Manufacturers/packers; rating/inspection 2023-11-02 | Oakley Road Horton-cum-studley, Oxford, OX33 1BG | [1652172](https://api.ratings.food.gov.uk/Establishments/1652172) |
 | Pudlicote Farm | Farmers/growers; rating/inspection 2023-04-25 | OX7 | [1260736](https://api.ratings.food.gov.uk/Establishments/1260736) |
 | Sires Hill Bakery | Manufacturers/packers; rating/inspection 2025-10-16 | Unit 8 Highlands Farm High Road, Brightwell-Cum-Sotwell, Wallingford Oxon, OX10 0QX | [272489](https://api.ratings.food.gov.uk/Establishments/272489) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Nettlebed Creamery | Specialist Cheesemakers Association member (cheesemaker) | Nettlebed, Henley on Thames, Oxon, RG9 5DA | [site](http://www.nettlebedcreamery.com)<br>07770 947030<br>heather@nettlebedcreamery.com | — |

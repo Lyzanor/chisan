@@ -37,3 +37,21 @@ productive municipality, current offer and phone/email before admission.
 | Bradshaw Fields Farm | Farmers/growers; rating/inspection 2026-04-09 | SK23 | [1895158](https://api.ratings.food.gov.uk/Establishments/1895158) |
 | Dad's Bees | Manufacturers/packers; rating/inspection 2025-11-07 | 21 Bramlyn Court, Clowne, Chesterfield, S43 4QA | [438551](https://api.ratings.food.gov.uk/Establishments/438551) |
 | Global Distillery Company | Manufacturers/packers; rating/inspection 2024-09-18 | 7 Perkins Way, Mansfield Road, Derby, DE21 4AW | [1489343](https://api.ratings.food.gov.uk/Establishments/1489343) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Bailey + Benbow | Specialist Cheesemakers Association member (cheesemaker) | Wakebridge Farm, Nr Matlock, Derbyshire, DE4 5HD | 07737 050666<br>johnthevetbailey@icloud.com | — |
+| Bradburys Cheese | Specialist Cheesemakers Association member (cheesemaker) | Staden Business Park, Staden Lane, Buxton, Derbyshire, SK17 9RZ | [site](http://www.bradburyscheese.co.uk)<br>01298 23180<br>rp@bradburyscheese.co.uk | — |
+| Fratemarco Cheese Co | Specialist Cheesemakers Association member (cheesemaker); FSA productive registration | 15 Meadowfield Close, Glossop, Derbyshire, SK13 2BL | 07846 899324<br>vinceuknorth@gmail.com | [1832187](https://api.ratings.food.gov.uk/Establishments/1832187) |

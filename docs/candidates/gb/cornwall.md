@@ -32,3 +32,23 @@ productive municipality, current offer and phone/email before admission.
 | Rosewall Bakery | Manufacturers/packers; rating/inspection 2025-07-14 | Clarence House, Clarence Street, Penzance, Cornwall, TR18 2PA | [1452299](https://api.ratings.food.gov.uk/Establishments/1452299) |
 | Scilly Chocolate Shop | Manufacturers/packers; rating/inspection 2024-02-02 | Popplestones, Rams Valley, Hugh Town, St Mary's, TR21 0JX | [1641844](https://api.ratings.food.gov.uk/Establishments/1641844) |
 | TC Game | Farmers/growers | Mill Stream, Withiel Mill, Ruthern, Bodmin, PL30 5LT | [1093800](https://api.ratings.food.gov.uk/Establishments/1093800) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Cornish Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | Cheesewring Dairy, Knowle Farm, Upton Cross, Liskeard, Cornwall, PL14 5BG | [site](http://www.cornishcheese.co.uk)<br>07813 703933<br>enquiries@cornishcheese.co.uk | — |
+| Lynher Dairies Cheese Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Ponsanooth, Truro, Cornwall, TR3 7JQ | [site](http://www.lynherdairies.co.uk)<br>07967 628350<br>cmead@lynherdairies.co.uk | — |
+| The Artisan Food Collective Ltd T/A Whalesborough Cheese | Specialist Cheesemakers Association member (cheesemaker) | Norton Barton Farm, Bude, Cornwall, EX23 9LG | [site](http://www.whalesboroughcheese.co.uk)<br>07881 465985<br>david.rowe@cornishcharcuterie.co.uk | — |
+| Allett Dairy Goats | Named as a cheese producer by FarmingUK cheese makers directory | Cornwall | — | — |
+| Cornish Gouda Company | Named as a cheese producer by Cornish cheese trade coverage | Looe, Cornwall | — | — |

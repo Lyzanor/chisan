@@ -35,3 +35,19 @@ productive municipality, current offer and phone/email before admission.
 | Hall Teasses Farm | Manufacturers/packers; rating/inspection 2018-11-15 | Hillteasses Farmhouse Teasses Estate Teasses Woodside Leven Fife, KY8 5PG | [1093214](https://api.ratings.food.gov.uk/Establishments/1093214) |
 | Hannah Whisky Merchants | Manufacturers/packers; rating/inspection 2021-02-26 | Unit 25 West Way Business Park West Way Hillend Industrial Park Dalgety Bay Dunfermline Fife, KY11 9AE | [1344568](https://api.ratings.food.gov.uk/Establishments/1344568) |
 | Lucky Ewe (Cheese Production) | Manufacturers/packers; rating/inspection 2023-05-25 | 15 Ceres Road Cupar Fife, KY15 5JT | [1157704](https://api.ratings.food.gov.uk/Establishments/1157704) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| The Buffalo Farm Produce Ltd | Specialist Cheesemakers Association member (cheesemaker) | Bankhead of Raith, Kirkcaldy, Fife, KY2 5YF | 01592 210220<br>Steve@thebuffalofarm.co.uk | — |

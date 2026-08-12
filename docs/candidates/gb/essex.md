@@ -40,3 +40,20 @@ productive municipality, current offer and phone/email before admission.
 | Salix Farm Christmas Turkeys | Manufacturers/packers; rating/inspection 2024-12-17 | Salix Farm, Hill Road, Great Sampford, Saffron Walden, CB10 2QE | [478535](https://api.ratings.food.gov.uk/Establishments/478535) |
 | St Botolophs Brewery | Manufacturers/packers; rating/inspection 2024-10-22 | St Botolphs Brewery, 8 Gladwin Road, Colchester, Essex, CO2 7HS | [1585719](https://api.ratings.food.gov.uk/Establishments/1585719) |
 | Tuffon Hall Vineyard | Manufacturers/packers; rating/inspection 2025-05-06 | Tuffon Hall, Graves Hall Road, Sible Hedingham, Essex, CO9 3LL | [1823218](https://api.ratings.food.gov.uk/Establishments/1823218) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Ivy Walnut Creamery | Specialist Cheesemakers Association member (cheesemaker) | Old Hall Road, Haverhill, Essex, CB9 7EJ | ivywalnutcreamery@outlook.com | — |
+| Sunny Ventures Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit 21 Thurrock Trade Park, Oliver Road, Grays, Essex, RM20 3AL | 07956 574753<br>info.sunnyventuresltd@gmail.com | — |

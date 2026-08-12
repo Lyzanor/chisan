@@ -41,3 +41,19 @@ productive municipality, current offer and phone/email before admission.
 | Clyde Valley Prep | Manufacturers/packers; rating/inspection 2026-06-02 | Fairyknowe, Unit 1 Stonedyke Road, Carluke, Lanarkshire, ML8 4BQ | [1634936](https://api.ratings.food.gov.uk/Establishments/1634936) |
 | Clydesdale Community Initiatives | Manufacturers/packers; rating/inspection 2025-09-04 | Langloch Farm, Hyndford Road, Lanark, ML11 9TA | [1000382](https://api.ratings.food.gov.uk/Establishments/1000382) |
 | The Sandwich Factory (Scotland) Ltd | Manufacturers/packers; rating/inspection 2026-02-26 | Unit 6 and 7 John Hillhouse Industrial Estate, 211 Cambuslang Road, Cambuslang, Glasgow, G72 7TS | [1804758](https://api.ratings.food.gov.uk/Establishments/1804758) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Errington Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | Walston Braehead Farm, Carnwath, Lanarkshire, ML11 8NF | [site](http://www.erringtoncheese.co.uk)<br>01899 810257<br>selina@erringtoncheese.co.uk | — |

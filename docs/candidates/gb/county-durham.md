@@ -34,3 +34,25 @@ productive municipality, current offer and phone/email before admission.
 | Dalton Moor Farm | Manufacturers/packers; rating/inspection 2026-06-18 | SR7 | [802411](https://api.ratings.food.gov.uk/Establishments/802411) |
 | Dragon Slayer Distillery LTD | Manufacturers/packers; rating/inspection 2025-03-11 | DL2 | [1427453](https://api.ratings.food.gov.uk/Establishments/1427453) |
 | Fika Coffee Roasters Ltd | Manufacturers/packers; rating/inspection 2026-06-30 | UNIT 2B, RIVERSIDE INDUSTRIAL ESTATE, LANGLEY PARK, DH7 9TT | [1279421](https://api.ratings.food.gov.uk/Establishments/1279421) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Coachyard Creamery, Then | Specialist Cheesemakers Association member (cheesemaker) | Little Newsham Hall, nr Winston, County Durham, DL2 3QN | 01833 660298<br>marksamuelson@btinternet.com | — |
+| Cotherstone Cheese Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Quarryhouse Farm, Marwood, Barnard Castle, County Durham, DL12 9QL | 01833 650351<br>gordonbcross@hotmail.com | — |
+| Edge End Farming | Specialist Cheesemakers Association member (cheesemaker) | 20 Town Head, Middleton in Teesdale, Durham, DL12 0RN | Edgeendfarming@gmail.com | — |
+| Weardale Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | Rydale, Hamsterley, Bishop Auckland, Co. Durham, DL15 8DX | [site](http://www.weardalecheese.net)<br>07564 196019<br>simon.raine@weardalecheese.net | — |
+| Parlour Made Dairy | Named as a cheese producer by Living North local cheesemakers | Sedgefield, County Durham | — | — |
+| Embleton Hall Dairies | Named as a cheese producer by Green Durham local food producers | County Durham | — | — |
+| Leaside Cheesemakers | Named as a cheese producer by Green Durham local food producers | County Durham | — | — |

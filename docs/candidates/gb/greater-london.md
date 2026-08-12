@@ -34,3 +34,23 @@ productive municipality, current offer and phone/email before admission.
 | Penge Brewing Co | Manufacturers/packers; rating/inspection 2025-08-08 | 21 Southey Street, Penge, London, SE20 7JD | [959837](https://api.ratings.food.gov.uk/Establishments/959837) |
 | Pirate's Grog Rum | Manufacturers/packers; rating/inspection 2025-03-13 | Unit 25, Milmead Industrial Centre, Mill Mead Road, Tottenham, N17 9QU | [1796056](https://api.ratings.food.gov.uk/Establishments/1796056) |
 | Sweet As Sauces | Manufacturers/packers; rating/inspection 2024-06-12 | KT3 | [1695532](https://api.ratings.food.gov.uk/Establishments/1695532) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Harvey & Brockless | Specialist Cheesemakers Association member (cheesemaker) | 44-54 Stewarts Road, London, SW8 4DF | [site](http://www.harveyandbrockless.co.uk)<br>0207 819 6044<br>Nicky.Philp@harveyandbrockless.co.uk | — |
+| Kappacasein Ltd | Specialist Cheesemakers Association member (cheesemaker) | 1 Voyager Industrial Estate, Streatham, London, SE16 4RP | [site](http://www.kappacasein.com)<br>07837 756852<br>bill@kappacasein.com | — |
+| Gringa Dairy | Named as a cheese producer by Foodism London artisan cheesemakers | Peckham, London | — | — |
+| Kappacasein Dairy | Named as a cheese producer by Foodism London artisan cheesemakers | Bermondsey, London | — | — |
+| The Urban Dairy | Named as a cheese producer by Foodism London artisan cheesemakers | Tottenham, London | — | — |

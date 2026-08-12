@@ -39,3 +39,20 @@ productive municipality, current offer and phone/email before admission.
 | Popty Kates Bakery | Manufacturers/packers; rating/inspection 2025-02-11 | Popty Kates Bakery Crud Yr Awel, Synod Inn, Ceredigion, SA44 6JA | [1794551](https://api.ratings.food.gov.uk/Establishments/1794551) |
 | Tresaith Honey | Farmers/growers; rating/inspection 2023-11-28 | SA43 | [1513270](https://api.ratings.food.gov.uk/Establishments/1513270) |
 | Wheatear bakery | Manufacturers/packers; rating/inspection 2026-04-29 | High Street Arcade 6 High Street, Cardigan, SA43 1HJ | [1824560](https://api.ratings.food.gov.uk/Establishments/1824560) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Caws Pen Helyg | Specialist Cheesemakers Association member (cheesemaker); FSA productive registration | Cwm Helyg Rhydyfelin, Aberystwyth, SY23 4QE | 07961 315622<br>rogerhy@aol.com | [1378615](https://api.ratings.food.gov.uk/Establishments/1378615) |
+| Caws Cymru | FSA Manufacturers/packers; rating/inspection 2026-04-20 | Unit 5 Tanygroes Industrial Estate, Tanygroes, Ceredigion | — | [1002820](https://api.ratings.food.gov.uk/Establishments/1002820) |

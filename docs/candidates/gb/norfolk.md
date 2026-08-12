@@ -29,3 +29,23 @@ productive municipality, current offer and phone/email before admission.
 | Sheringham Smokehouse | Manufacturers/packers; rating/inspection 2026-06-05 | 28 Station Road, Sheringham, Norfolk, NR26 8RF | [1373429](https://api.ratings.food.gov.uk/Establishments/1373429) |
 | Staithe Smokehouse | Manufacturers/packers; rating/inspection 2026-06-02 | Back of The White Horse, The White Horse, Main Road, Brancaster Staithe, PE31 8BY | [1090010](https://api.ratings.food.gov.uk/Establishments/1090010) |
 | Stump Rat Brewing Co Ltd / Jegger's | Manufacturers/packers; rating/inspection 2026-03-06 | Unit 1, Hall Farm Barns, Swaffham Road, East Raynham, NR21 7EE | [1888439](https://api.ratings.food.gov.uk/Establishments/1888439) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Ferndale Cheeses | Specialist Cheesemakers Association member (cheesemaker) | Ferndale Farm, Little Barningham, Norwich, Norfolk, NR11 7AG | 01263 577640<br>arthurferndalefarm@gmail.com | — |
+| L & R Enefer | Specialist Cheesemakers Association member (cheesemaker) | Wilton Farm, 193 Main Street, Hockwold, Thetford, Norfolk, IP26 4NA | [site](http://www.wiltonfarmnorfolk.co.uk)<br>07765 120166<br>lrenefer@aol.com | — |
+| Norfolk & Better Ltd | Specialist Cheesemakers Association member (cheesemaker) | Dawe Estates, Manor Farm, Willow Corner, Carbrooke, Thetford, Norfolk, IP25 6SS | [site](http://www.norfolkandbetter.com)<br>07793 529688<br>creamery@dawe.co.uk | — |
+| Ferndale Farm Norfolk Cheeses | Named as a cheese producer by Norfolk Deli East Anglian cheese | Norwich, Norfolk | — | — |
+| The Goat Shed | Named as a cheese producer by Norfolk Deli East Anglian cheese | Fielding Cottage, Honingham, Norfolk | — | — |

@@ -41,3 +41,19 @@ productive municipality, current offer and phone/email before admission.
 | Yorkes of Dundee | Manufacturers/packers; rating/inspection 2026-02-06 | 30-34 Strathmartine Road, Dundee, DD3 7RJ | [615478](https://api.ratings.food.gov.uk/Establishments/615478) |
 | A Matthew | Manufacturers/packers; rating/inspection 2026-06-11 | 31 Caird Avenue, Dundee, DD3 8AS | [615480](https://api.ratings.food.gov.uk/Establishments/615480) |
 | D Grewar and Son | Manufacturers/packers; rating/inspection 2026-04-29 | 144-146 Albert Street, Dundee, DD4 6QW | [615479](https://api.ratings.food.gov.uk/Establishments/615479) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Howgate Cheese | Named as a cheese producer by Taste of Scotland Scottish cheese | Dundee | — | — |

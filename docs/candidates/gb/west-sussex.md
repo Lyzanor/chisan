@@ -40,3 +40,21 @@ productive municipality, current offer and phone/email before admission.
 | Woodhorn Farm | Manufacturers/packers; rating/inspection 2025-09-18 | Woodhorn Group, Unit 6, Woodhorn Farm, Woodhorn Lane, PO20 2BX | [1621588](https://api.ratings.food.gov.uk/Establishments/1621588) |
 | Adur Brewery | Manufacturers/packers; rating/inspection 2018-10-22 | Adur Brewery, Charlton Court Barn, Mouse Lane, Steyning, BN44 3DG | [1082865](https://api.ratings.food.gov.uk/Establishments/1082865) |
 | Country Farm Cakes Ltd | Manufacturers/packers; rating/inspection 2022-04-24 | Country Farm Cakes Ltd, Unit 8 Pondtail Farm, Coolham Road West Grinstead, Horsham, RH13 8LN | [546407](https://api.ratings.food.gov.uk/Establishments/546407) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| DAAAG Farming LLP, the Naked Farm | Specialist Cheesemakers Association member (cheesemaker) | The Street, Warninglid, West Sussex, RH17 5SJ | info@evergreenrural.co.uk | — |
+| Goodwood Estate Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Home Farm, Goodwood, Chichester, West Sussex, PO18 0QF | [site](http://www.goodwood.com)<br>01243 755150<br>farm@goodwood.com | — |
+| Huddlestone Farmers Ltd | Specialist Cheesemakers Association member (cheesemaker) | Huddlestone Farm, Horsham Road, Steyning, Sussex, BN44  3AD | [site](http://www.huddlestonefarmersltd.co.uk)<br>07889 000734<br>matt@huddlestonefarmersltd.co.uk | — |

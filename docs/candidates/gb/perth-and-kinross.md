@@ -32,3 +32,21 @@ productive municipality, current offer and phone/email before admission.
 | The Abernyte Brewery | Manufacturers/packers; rating/inspection 2022-09-15 | SOUTH LATCH FARM ABERNYTE, PERTH, PH14 9SU | [1953725](https://api.ratings.food.gov.uk/Establishments/1953725) |
 | Alan Dobbie Butchers | Manufacturers/packers; rating/inspection 2026-03-27 | A W DOBBIE BUTCHERS THE CROSS, ERROL, PERTH, PH2 7QW | [1953144](https://api.ratings.food.gov.uk/Establishments/1953144) |
 | Allans Butchers | Manufacturers/packers; rating/inspection 2025-04-16 | 201 HIGH STREET, AUCHTERARDER, PH3 1AF | [1954205](https://api.ratings.food.gov.uk/Establishments/1954205) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Drumturk Cheese | Specialist Cheesemakers Association member (cheesemaker) | Sheildrum, Bridge of Cally, Blairgowrie, Perthshire, PH10 7JX | [site](https://drumturkcheeses.weebly.com/)<br>01250 886267<br>denise@drumturkcheeses.com | — |
+| Drumturk Cheeses | FSA Manufacturers/packers; rating/inspection 2026-06-09 | Perth and Kinross | — | [1953644](https://api.ratings.food.gov.uk/Establishments/1953644) |
+| Strathearn Cheese Company | Named as a cheese producer by Provender Brown Scottish cheesemakers | Perthshire | — | — |

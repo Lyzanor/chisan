@@ -36,3 +36,24 @@ productive municipality, current offer and phone/email before admission.
 | Bidlea Distillery | Manufacturers/packers; rating/inspection 2026-06-26 | BIDLEA DAIRY TWEMLOW LANE, CREWE, CW4 8DS | [1903429](https://api.ratings.food.gov.uk/Establishments/1903429) |
 | Sykes Farm Limited / Willington Press | Farmers/growers; rating/inspection 2025-12-02 | CW6 | [1870338](https://api.ratings.food.gov.uk/Establishments/1870338) |
 | Tatton Brewery | Manufacturers/packers | Unit 7 Longridge Trading Estate Longridge, Knutsford, Cheshire East, WA16 8PR | [1902925](https://api.ratings.food.gov.uk/Establishments/1902925) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Burt's Cheese | Specialist Cheesemakers Association member (cheesemaker) | Ash Farm, Ash Lane, Ollerton, Cheshire, WA16 8RQ | [site](http://www.burtscheese.co.uk)<br>07709 394292<br>claire@burtscheese.com | — |
+| Godfrey C Williams & Son | Specialist Cheesemakers Association member (cheesemaker) | Corner House, 9/11 The Square, Sandbach, Cheshire, CW11 1AP | [site](http://www.godfreycwilliams.co.uk)<br>07880 715868<br>gcigwilliams@gmail.com | — |
+| H S Bourne | Specialist Cheesemakers Association member (cheesemaker) | The Bank, Threapwood, Malpas, Cheshire, SY14 7AL | [site](http://www.hsbourne.co.uk)<br>07889 766658<br>bournescheshirecheese@gmail.com | — |
+| Hayfields Dairy | Specialist Cheesemakers Association member (cheesemaker) | Hayfields Farm, Heywood Lane, Audlem, Cheshire, CW3 0EX | [site](http://www.hayfieldsdairy.co.uk)<br>01270 811394<br>lucy@hayfieldsdairy.co.uk | — |
+| Bexton Cheese | FSA Manufacturers/packers; rating/inspection 2026-01-14 | WA16 | — | [892746](https://api.ratings.food.gov.uk/Establishments/892746) |
+| Heler Foods | Named as a cheese producer by Somerdale cheese producers | Laurels Farm, Cheshire | — | — |

@@ -39,3 +39,20 @@ productive municipality, current offer and phone/email before admission.
 | 3 Sisters Bread Co | Manufacturers/packers; rating/inspection 2025-11-26 | NP15 | [1894950](https://api.ratings.food.gov.uk/Establishments/1894950) |
 | Bakere (The) | Manufacturers/packers; rating/inspection 2025-06-11 | NP7 | [1849528](https://api.ratings.food.gov.uk/Establishments/1849528) |
 | Caerwent Craft Chocolate | Manufacturers/packers; rating/inspection 2026-03-18 | NP26 | [1587365](https://api.ratings.food.gov.uk/Establishments/1587365) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Brookes Wye Valley Dairy Co. Ltd | Specialist Cheesemakers Association member (cheesemaker) | Panta Farm, Devauden, Chepstow, Monmouthshire, NP16 6PS | [site](http://www.brookesdairy.com)<br>07748 677741<br>hannahbrooke18@hotmail.com | — |
+| Abergavenny Fine Foods | Named as a cheese producer by Visit Wales / Welsh Cheese Company | Blaenavon / Abergavenny, Wales | — | — |

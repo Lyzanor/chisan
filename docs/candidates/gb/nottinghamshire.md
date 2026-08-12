@@ -40,3 +40,22 @@ productive municipality, current offer and phone/email before admission.
 | Brumptons Butchers | Manufacturers/packers; rating/inspection 2026-03-18 | Brumptons Butchers, 3 Plumtree Road, Cotgrave, Nottinghamshire, NG12 3HT | [266127](https://api.ratings.food.gov.uk/Establishments/266127) |
 | Little Star Brewery | Manufacturers/packers; rating/inspection 2023-07-13 | 33 Church Street, Old Basford, NG6 0GA | [942563](https://api.ratings.food.gov.uk/Establishments/942563) |
 | Okende Bakery | Manufacturers/packers; rating/inspection 2025-01-03 | 16 Gordon Road, West Bridgford, Nottinghamshire, NG2 5LN | [1789856](https://api.ratings.food.gov.uk/Establishments/1789856) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Primrose Creamery | Specialist Cheesemakers Association member (cheesemaker) | School of Artisan Food, Lower Motor Yard, Welbeck, Nottinghamshire, S80 3LR | 07552 2317094<br>jakegoldstein92@gmail.com | — |
+| Stichelton Dairy Ltd | Specialist Cheesemakers Association member (cheesemaker) | Collingthwaite Farm, Cuckney, Mansfield, Nottinghamshire, NG20 9NP | [site](http://www.stichelton.co.uk)<br>01623 844883<br>joe@stichelton.co.uk | — |
+| Colston Bassett and District Dairy | Named as a cheese producer by Stilton Cheese producers page | Colston Bassett, Nottinghamshire | — | — |
+| Shirevale | Named as a cheese producer by Stilton Cheese producers page | Nottinghamshire | — | — |

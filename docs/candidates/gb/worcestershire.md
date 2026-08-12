@@ -40,3 +40,19 @@ productive municipality, current offer and phone/email before admission.
 | Continental Bakery | Manufacturers/packers; rating/inspection 2025-06-10 | 102-103 Stourbridge Road, Kidderminster, Worcestershire, DY10 2QB | [686640](https://api.ratings.food.gov.uk/Establishments/686640) |
 | Fuffle From Fudgeheaven | Manufacturers/packers; rating/inspection 2025-01-22 | 2 The Coach House, Canalside Craft Centre, Hanbury Road, Stoke Prior, B60 4JZ | [809926](https://api.ratings.food.gov.uk/Establishments/809926) |
 | Ma Bakers - Ma Bakers On The Run | Manufacturers/packers; rating/inspection 2025-03-10 | 12 Cranham Drive, Worcester, WR4 9PA | [1560284](https://api.ratings.food.gov.uk/Establishments/1560284) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| D & L Goodman (Windrush Valley Handcrafted Goat Cheese) | Specialist Cheesemakers Association member (cheesemaker) | Lapwing Cottage, Marsh Court, Gloucester, Gloucestershire, GL19 4PN | [site](https://www.marshcourt.com)<br>Louise@marshcourt.com | — |

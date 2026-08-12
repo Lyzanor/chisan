@@ -40,3 +40,20 @@ productive municipality, current offer and phone/email before admission.
 | Treanor Meats | Manufacturers/packers; rating/inspection 2026-03-31 | 19 Tirmurty Road, Tirmurty, Omagh, Tyrone, BT79 7TZ | [783467](https://api.ratings.food.gov.uk/Establishments/783467) |
 | Donaghmore Butchery | Manufacturers/packers; rating/inspection 2026-03-24 | 34 Main Street, Donaghmore, Co. Tyrone, BT70 3EZ | [996631](https://api.ratings.food.gov.uk/Establishments/996631) |
 | GK Traditional Family Butchers Ltd | Manufacturers/packers; rating/inspection 2025-04-10 | 6a Creggan Road, Carrickmore, Carrickmore, Tyrone, BT79 9BD | [783377](https://api.ratings.food.gov.uk/Establishments/783377) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Old Town Creameries | FSA Manufacturers/packers; rating/inspection 2024-10-07 | Newtownstewart Co.Tyrone, Newtownstewart | — | [1755065](https://api.ratings.food.gov.uk/Establishments/1755065) |
+| Fivemiletown Creamery | Named as a cheese producer by IrishCentral Northern Ireland cheesemakers | Fivemiletown, County Tyrone | — | — |

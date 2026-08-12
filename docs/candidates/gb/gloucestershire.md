@@ -35,3 +35,21 @@ productive municipality, current offer and phone/email before admission.
 | Manor Farm Chedworth | Manufacturers/packers; rating/inspection 2024-08-27 | Chedworth Village Hall, Fields Road, Chedworth, Cheltenham, GL54 4NQ | [1698306](https://api.ratings.food.gov.uk/Establishments/1698306) |
 | Piston Distillery | Manufacturers/packers; rating/inspection 2025-02-18 | Unit 2, Bamfurlong Industrial Park, Bamfurlong Lane, Staverton, GL51 6SX | [1579125](https://api.ratings.food.gov.uk/Establishments/1579125) |
 | Stroud Smokehouse | Manufacturers/packers; rating/inspection 2025-12-03 | Unit 18, Canal Iron Works, London Road, Brimscombe, GL5 2SH | [1377797](https://api.ratings.food.gov.uk/Establishments/1377797) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Daylesford Organic Farm | Specialist Cheesemakers Association member (cheesemaker) | Daylesford Nr Kingham, Moreton-in-Marsh, Gloucestershire, GL56 0YG | [site](http://www.daylesford.com)<br>01608 731716<br>joel.stevens@daylesford.com | — |
+| Godsells Cheese | Specialist Cheesemakers Association member (cheesemaker) | Church Farm, Leonard Stanley, Stonehouse, Gloucesteshire, GL10 3NP | [site](http://www.godsellscheese.com)<br>01453 827802<br>godsellscheese@btinternet.com | — |
+| King Stone Dairy Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Old Parlour, Manor Farm, Chedworth, Gloucestershire, GL54 4BU | [site](http://www.kingstonedairy.com)<br>07527 002181<br>david.j.jowett@gmail.com | — |

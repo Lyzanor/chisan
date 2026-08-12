@@ -36,3 +36,20 @@ productive municipality, current offer and phone/email before admission.
 | Premier Seafoods Limited | Manufacturers/packers; rating/inspection 2026-05-12 | Riby Street, Grimsby, DN31 3HF | [675590](https://api.ratings.food.gov.uk/Establishments/675590) |
 | Rochewood Farm | Farmers/growers | PE20 | [1972448](https://api.ratings.food.gov.uk/Establishments/1972448) |
 | Scream Brewing Company LTD | Manufacturers/packers | 2 Weeslby Road, Grimsby, DN32 0PP | [1891292](https://api.ratings.food.gov.uk/Establishments/1891292) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Cote Hill Cheese | Specialist Cheesemakers Association member (cheesemaker) | Cote Hill Farm, Osgodby, Market Rasen, Lincolnshire, LN8 3PD | [site](http://www.cotehill.com)<br>07732 066646<br>info@cotehill.com | — |
+| Lincolnshire Poacher Cheese | Specialist Cheesemakers Association member (cheesemaker) | Estate Office, Ulceby Grange,, Ulceby, Near Alford, Lincolnshire, LN13 OHE | [site](http://www.lincolnshirepoachercheese.com)<br>07950 372552<br>tim@lincolnshirepoachercheese.com | — |

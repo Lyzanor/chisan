@@ -45,3 +45,19 @@ productive municipality, current offer and phone/email before admission.
 | Samantha Newell | Manufacturers/packers; rating/inspection 2024-07-09 | 4 Maclachlan Road Helensburgh Argyll And Bute G84 9BU, G84 9BU | [1739709](https://api.ratings.food.gov.uk/Establishments/1739709) |
 | Shirley M OB74 | Farmers/growers; rating/inspection 2024-12-05 | PA34 | [1785573](https://api.ratings.food.gov.uk/Establishments/1785573) |
 | Bute Venison Ltd | Manufacturers/packers; rating/inspection 2023-07-19 | Piperhall Sawmill Mount Stuart Isle Of Bute PA20 9NA, PA20 9NA | [1672593](https://api.ratings.food.gov.uk/Establishments/1672593) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Isle of Kintyre/Inverloch Cheese Co | Specialist Cheesemakers Association member (cheesemaker) | 26 Kirk Street, Campbelltown, Argyll, PA28 6BL | 01586 552692<br>info@scotcheese.com | — |

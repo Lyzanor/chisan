@@ -40,3 +40,24 @@ productive municipality, current offer and phone/email before admission.
 | Smokehouse Bradford | Manufacturers/packers; rating/inspection 2026-02-03 | Unit 17 Bowling Court Industrial Estate, Mary Street, Bradford, BD4 8TT | [326098](https://api.ratings.food.gov.uk/Establishments/326098) |
 | Blue Sky Baker - Bakery | Farmers/growers | Unit 1, Pennine Industrial Park, Valley Road, Hebden Bridge, HX7 7BZ | [1729123](https://api.ratings.food.gov.uk/Establishments/1729123) |
 | Crib Farm Juices | Manufacturers/packers | Crib Farm, New Lane, Sowerby, Sowerby Bridge, HX2 6JJ | [1717917](https://api.ratings.food.gov.uk/Establishments/1717917) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Derek Priestley & Son Cheese | Specialist Cheesemakers Association member (cheesemaker) | Cow Gate Farm, Cow Hill Gate Lane, Ogden, Halifax, West Yorkshire, HX2 9PB | 07377 527370<br>lukepriestley62@gmail.com | — |
+| Pextenement Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | Pextenement Farm, East Lee Lane, Eastwood, Todmorden, Lancashire, OL14 8RW | [site](http://www.pextenement.co.uk)<br>07725 517934<br>carl@pextenement.co.uk | — |
+| Pumpkin Place T/A the Eldwick Creamery | Specialist Cheesemakers Association member (cheesemaker) | 29 Sheriff Lane, Elwick,, West Yorkshire, BD16 3EN | 07384 143224<br>daniel.greenwood@hotmail.com | — |
+| Yorkshire Fine Cheese (Milkwood Artisans Ltd) | Specialist Cheesemakers Association member (cheesemaker) | The Dairy, Barncliffe Mills, Near Bank, Shelley, West Yorkshire, HD8 8LU | jjhampshire21@gmail.com | — |
+| Yorkshire Pecorino cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | 1 Adel Garth, Adel, Leeds, LS16 8JU | [site](http://www.olianas.co.uk)<br>07717 116110<br>mario@olianas.co.uk | — |
+| Yorkshire Pecorino | Named as a cheese producer by Living North local cheesemakers | Otley, near Leeds, West Yorkshire | — | — |

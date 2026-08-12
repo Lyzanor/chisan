@@ -41,3 +41,19 @@ productive municipality, current offer and phone/email before admission.
 | W.W. Wales Ltd (Butcher) | Manufacturers/packers; rating/inspection 2022-10-07 | W.W. Wales Ltd (Butcher), Unit 4, Glencairn Industrial Estate, Kilmarnock | [1560683](https://api.ratings.food.gov.uk/Establishments/1560683) |
 | Catrina's Gifts | Farmers/growers; rating/inspection 2017-03-16 | Catrina's Gifts, 55 Bute Road, Cumnock, East Ayrshire, KA18 1BE | [642402](https://api.ratings.food.gov.uk/Establishments/642402) |
 | TP Niven Ltd | Farmers/growers; rating/inspection 2025-02-26 | TP Niven Ltd, Barskimming Road, Mauchline, East Ayrshire, KA5 5HQ | [1803570](https://api.ratings.food.gov.uk/Establishments/1803570) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Ballochmyle Fine Cheese | Specialist Cheesemakers Association member (cheesemaker) | East Montgarswood Farm, Mauchlinie, Ayrshire, KA5 6HN | 01290 551297<br>robert.shaw@talktalk.net | — |

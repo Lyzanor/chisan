@@ -36,3 +36,24 @@ productive municipality, current offer and phone/email before admission.
 | Cruwys Morchard Shoot | Manufacturers/packers; rating/inspection 2025-11-03 | CM Sporting Club Ltd, Cruwys Morchard Studio, Pennymoor, Tiverton, EX16 8PH | [1810668](https://api.ratings.food.gov.uk/Establishments/1810668) |
 | Daisy's Dairy-EVO 85 | Manufacturers/packers; rating/inspection 2024-10-02 | South Waterhayne Farm, Yarcombe, Honiton, EX14 9AX | [1414845](https://api.ratings.food.gov.uk/Establishments/1414845) |
 | Daynes Farm limited | Manufacturers/packers; rating/inspection 2026-06-17 | Daynes Farm, Harberton, TQ9 7FB | [1578390](https://api.ratings.food.gov.uk/Establishments/1578390) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Country Cheeses | Specialist Cheesemakers Association member (cheesemaker) | Market Road, Tavistock, Devon, PL19 0BW | [site](http://www.countrycheeses.co.uk)<br>01822 615035<br>info@countrycheeses.co.uk | — |
+| Stone Tree Dairy | Specialist Cheesemakers Association member (cheesemaker) | Higher Swannaton Farm, Swannaton Road, Dartmouth, Devon, TQ6 0JS | [site](http://www.stonetreedairy.com)<br>07775 602259<br>info@stonetreedairy.com | — |
+| Ticklemore Cheese Dairy | Specialist Cheesemakers Association member (cheesemaker) | Sharpham Barton Lane,, Ashprington, Totnes, Devon, TQ9 7DX | [site](http://www.ticklemorecheese.co.uk)<br>01803 732737<br>info@ticklemorecheese.co.uk | — |
+| Gay's Creamery Ltd | FSA Manufacturers/packers; rating/inspection 2025-07-30 | 20 Brunswick Place Dawlish Devon | — | [12615](https://api.ratings.food.gov.uk/Establishments/12615) |
+| Sharpham Cheese | FSA Manufacturers/packers; rating/inspection 1901-01-01 | Unit 1, South Devon Food Hub, Longcombe | — | [1779395](https://api.ratings.food.gov.uk/Establishments/1779395) |
+| Ticklemore Cheese | Named as a cheese producer by Wikipedia list of British cheeses | Ashprington, Devon | — | — |

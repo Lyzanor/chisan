@@ -45,3 +45,21 @@ productive municipality, current offer and phone/email before admission.
 | Keanchulish Deer Farm | Farmers/growers | Keanchulish Ardmair, Ullapool, Highland, IV26 2TW | [1275398](https://api.ratings.food.gov.uk/Establishments/1275398) |
 | Knockanbuie Farm Deer Larder | Farmers/growers | Knockanbuie, Tulchan Estate, Grantown on Spey, PH26 3PW | [562149](https://api.ratings.food.gov.uk/Establishments/562149) |
 | Knoydart Farm CIC | Farmers/growers | Milburn, Knoydart, PH41 4PL | [1738028](https://api.ratings.food.gov.uk/Establishments/1738028) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Connage Highland Dairy | Specialist Cheesemakers Association member (cheesemaker) | Milton of Connage, Ardersier, Inverness, IV2 7QU | [site](http://www.connage.co.uk)<br>01667 462000<br>info@connage.co.uk | — |
+| Highland Fine Cheeses | Named as a cheese producer by Provender Brown Scottish cheesemakers | Tain, Highland | — | — |
+| West Highland Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Achmore, Highland | — | — |

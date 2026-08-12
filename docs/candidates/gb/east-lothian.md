@@ -52,3 +52,19 @@ verify the productive unit and own offer before considering a CSV row.
 | Linton Butcher | Retailers - other | Linton Butchers 12 High Street East Linton East Lothian, EH40 3AB | [16411](https://api.ratings.food.gov.uk/Establishments/16411) |
 | McKirdy Brothers Butchers | Retailers - other | McKirdy Butchers 22 Links Road Port Seton East Lothian, EH32 0DU | [20687](https://api.ratings.food.gov.uk/Establishments/20687) |
 | No. 10 Bakery | Retailers - other | 10 Stanley Road Gullane East Lothian, EH31 2AD | [1875865](https://api.ratings.food.gov.uk/Establishments/1875865) |
+
+## Cheese producer sweep (2026-08-12)
+
+Cheese-specific pass over the whole country: Specialist Cheesemakers
+Association member directory, a full local filter of the Food Standards
+Agency register for `Manufacturers/packers` and `Farmers/growers`, and
+national and regional cheese directories. None of those sources establishes
+a current own offer, a public contact or that the named unit meets the full
+KM0 gate, and a directory listing proves neither present activity nor that
+the cheese is made at the address shown. Each item is therefore a `hold`
+lead. Confirm identity, qualifying activity, productive municipality,
+current offer and phone/email before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+| Yester Farm Dairies | Named as a cheese producer by Scottish Food Guide cheese trail | Yester Mains, Gifford, East Lothian | — | — |
