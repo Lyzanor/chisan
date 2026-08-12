@@ -19,3 +19,40 @@ Segunda revisión individual del 2026-08-09. Quedan 15 operadores certificados r
 | C.V. Poelma | Kloosterburen | Dijksterweg 31 9977TD | El registro acredita explotación mixta, no productos concretos comercializados bajo su identidad. | [NL-BIO-01.528-0005520.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/NL-BIO-01.528-0005520.2026.002.pdf) |
 | Dartelstal B.V. | Beerta | Ulsderweg 8 9686 | La granja porcina está activa, pero la marca Hamletz no demuestra una oferta actual inequívoca en 2026 y el producto minorista localizado figura retirado. | [NL-BIO-01.528-0007401.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/NL-BIO-01.528-0007401.2025.001.pdf) |
 | De Groene Weiden | Opende | Peebos 15 9865 | Los directorios solo acreditan avicultura y contacto; falta una oferta pública propia de huevos. | [NL-BIO-01.528-0000618.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/NL-BIO-01.528-0000618.2025.001.pdf) |
+
+## Cheese and farm-dairy sweep (2026-08-12)
+
+Target: `data/csv/nl/noord-nederland/groningen.csv`, category `Lácteos y quesos`.
+Country-wide pass over four sources, read 2026-08-12, deduplicated against the
+published NL catalog by name, domain and street number. Nothing here is
+verified: each row still needs identity, own production, the productive
+gemeente, current activity and a public own offer.
+
+- [Bond van Boerderij-Zuivelbereiders](https://boerderijzuivel.nl/verkooppunten/) —
+  318 sales points of the farm-dairy makers' association. Supports membership,
+  address and contact; it does not say which dairy products the member makes,
+  that the point is the productive unit, or that it is currently active.
+- OpenStreetMap via Overpass — `craft`, `shop=cheese|farm|dairy`, cheese
+  `produce`/`product` or a cheese-maker name. Supports a POI, nothing about the
+  business. Streets matching on name and plain urban cheese shops were dropped.
+- [broodsmakelijk.nl](https://broodsmakelijk.nl/adres/kopenbijdeboer/kaasboerderij/nl) —
+  `kaasboerderij` and `zuivelboerderij` overviews per province plus detail pages.
+  A hobby directory: its status and product icons are claims, not proof.
+- [zoekdeboer.nl](https://zoekdeboer.nl/kaas/) — the `kaas` category, 125 entries.
+  It mixes makers with shops that resell cheese, so each entry was triaged
+  against its own prose; resellers were dropped rather than carried here.
+
+Gemeente comes from the PDOK locatieserver, woonplaats in italics when it
+differs. Where a row says the match was fuzzy, confirm street, number and any
+house letter before trusting it.
+
+| Candidate | Gemeente | Address | Contact | Source | Signal and open questions |
+|---|---|---|---|---|---|
+| Damster Boerenzuivel | Eemsdelta *(Appingedam)* | Eemskanaal zz 2, Appingedam | [damsterboerenzuivel.nl](https://damsterboerenzuivel.nl/)<br>`info@damsterboerenzuivel.nl` | BvBZ | — |
+| Puur Schaap | Groningen *(Woltersum)* | Bouwerschapweg 60, 9795 TA Woltersum | [puurschaap.nl](http://www.puurschaap.nl)<br>`06-51765820`<br>`info@puurschaap.nl` | BvBZ | — |
+| WaddenMax | Het Hogeland *(Hornhuizen)* | Ommelanderweg 32, 9978 TC Hornhuizen | [waddenmax.nl](http://www.waddenmax.nl)<br>`0595-435144`<br>`info@waddenmax.nl` | BvBZ | — |
+| Zuivelboerderij De Driesprong | Het Hogeland *(Noordwolde)* | Noordwolderweg 6, 9784PA Noordwolde | [zuivelboerderijdedriesprong.nl](https://zuivelboerderijdedriesprong.nl)<br>`+31683257585`<br>`info@zuivelboerderijdedriesprong.nl` | broodsmakelijk | De Driesprong is een zuivelbedrijf. De melk van de koeien worden zuivelproducten gemaakt en het vlees komt van speciaal daarvoor gehouden runderen. [icons: milk, other dairy, eggs, meat] |
+| Biologische geitenhouderij de Oude Streek | Westerkwartier *(Zevenhuizen)* | Oudestreek 37, 9354AD Zevenhuizen | [machedoux.nl](http://www.machedoux.nl)<br>`+31594632514` | broodsmakelijk | Listed as kaasboerderij in the province overview; product icons: organic, boerenkaas, honey |
+| Melktap Trimunt | Westerkwartier *(Marum)* | Kloosterweg 5, 9363 VJ Marum | — | zoekdeboer | Organic dairy farm selling Trimunter-branded yoghurt, kefir, ice cream and cheese |
+| Veldzicht Zuivel | Westerkwartier *(Niekerk)* | Niekerkerdiep 8, 9822 TH Niekerk | [veldzichtzuivel.nl](http://www.veldzichtzuivel.nl/)<br>`06-36149322` | BvBZ | — |
+| Zuivel Zevenhuizen | Westerkwartier *(Zevenhuizen)* | Oudestreek 29, 9354 AD Zevenhuizen | — | BvBZ | — |
