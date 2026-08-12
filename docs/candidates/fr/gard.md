@@ -30,3 +30,51 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | LES CONFITURES DE JUSTINE ET BAPTISTE - LE MAS DES GOURMANDISES | STEVEN MEGARD | Bezouce | MAS NEGUE POULIN 30320 BEZOUCE | Conservas | 10.39B — Transformation et conservation de fruits | 2022-02 | [SIREN 909281115](https://annuaire-entreprises.data.gouv.fr/entreprise/909281115) |
 | PEPINE | CIDRERIE PEPINE | Vergèze | MAS CHAPEL 1500 CHEMIN DE MINTEAU 30310 VERGEZE | Sidra | 11.03Z — Fabrication de cidre et de vins de fruits | 2022-04 | [SIREN 911851244](https://annuaire-entreprises.data.gouv.fr/entreprise/911851244) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **27 candidatos nuevos** en este corte: 1 unidad manufacturera adicional y 26 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LA FROMAGERIE DES LOUBES | Montignargues | LES LOUBES 30190 | `32843112700021` | agrément UE `30.180.002` | [SIREN 328431127](https://annuaire-entreprises.data.gouv.fr/entreprise/328431127) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| FERME DE VALCROZE | SALZE YAN | Alzon | Chemin de Valcroze 30770 | actividad | 2026 | [nº Bio 48000](https://annuaire.agencebio.org/operateur/48000) |
+| LES TERRES NOIRES BARBIER Emilie | BARBIER EMILIE | Arrigas | LACAMP 30770 | actividad | 2026 | [nº Bio 150933](https://annuaire.agencebio.org/operateur/150933) |
+| GAEC CALVET-BREDOIRE | CALVET BREDOIRE | Bréau-Et-Salagosse | LE PRÉ DE SERRE ROUTE DE SALAGOSSE 30120 | actividad | 2025 | [nº Bio 160326](https://annuaire.agencebio.org/operateur/160326) |
+| BURON Emeline / LA BERGERIE DU MOUZOULES | BURON Emeline / LA BERGERIE DU MOUZOULES | Breau Mars | Le col du Mouzoulès 30120 | actividad | 2026 | [nº Bio 60203](https://annuaire.agencebio.org/operateur/60203) |
+| FERME AGROFORESTIERE DE BAGNE LOUP | GAEC DE BAGNE LOUP | Brouzet-Lès-Quissac | lieu dit de bagneloup 30260 | actividad | 2026 | [nº Bio 281112](https://annuaire.agencebio.org/operateur/281112) |
+| LA FERME DU TRAVESSOU - BROUSSAL NOEMIE | La ferme du travessou | Campestre Et Luc | lieu dit le travessou 30770 | actividad | 2025 | [nº Bio 61050](https://annuaire.agencebio.org/operateur/61050) |
+| Troupeau de l' airal | Mikael Jonathan | Deaux | 509 mas airal 30360 | actividad | 2026 | [nº Bio 304131](https://annuaire.agencebio.org/operateur/304131) |
+| MAS DU PREMIGET | MAS DU PREMIGET | Gailhan | 3 ROUTE DES VIGNOLES 30260 | actividad | 2026 | [nº Bio 301325](https://annuaire.agencebio.org/operateur/301325) |
+| EARL FROMAGERIE FERMIERE SAUVEPLANE | EARL FROMAGERIE FERMIERE SAUVEPLANE | Le Vigan | CAMPIS 30120 | actividad | 2026 | [nº Bio 147756](https://annuaire.agencebio.org/operateur/147756) |
+| PLANQUE Sylvain | PLANQUE Sylvain | Le Vigan | Mas d'Endevieille 763 route de la Merlière 30120 | actividad | 2026 | [nº Bio 122826](https://annuaire.agencebio.org/operateur/122826) |
+| VIDAL VIOLETTE | VIDAL VIOLETTE | Les Mages | LA BERGERIE DE LA ROUVIERE 30960 | actividad | 2026 | [nº Bio 44634](https://annuaire.agencebio.org/operateur/44634) |
+| MAS RIVIERE | MAS RIVIERE | Molieres-Sur-Ceze | AURIOL ET VALESCURE 30410 | actividad | 2026 | [nº Bio 57349](https://annuaire.agencebio.org/operateur/57349) |
+| FREALDO ERINO PIERRE | FREALDO ERINO PIERRE | Montclus | 981 route de pont saint esprit 30630 | actividad | 2025 | [nº Bio 2551](https://annuaire.agencebio.org/operateur/2551) |
+| GAEC FROMAGERIE DU PETIT GALES | GAEC FROMAGERIE DU PETIT GALES | Montclus | 981 ROUTE DE PONT SAINT-ESPRIT 30630 | actividad | 2026 | [nº Bio 302498](https://annuaire.agencebio.org/operateur/302498) |
+| DES CABRIOLES | DES CABRIOLES | Riviières | 1820 Hameau de Aubarine 30430 | actividad | 2026 | [nº Bio 40001](https://annuaire.agencebio.org/operateur/40001) |
+| GAEC DE POMMARET | GAEC DE POMMARET | Saint-André-De-Majencoules | POMMARET 30570 | actividad | 2025 | [nº Bio 129032](https://annuaire.agencebio.org/operateur/129032) |
+| GAEC LES CAPRICES DES CEVENNES | LES CAPRICES DES CEVENNES | Saint André De Valborgne | DUBOZ Sébastien et FAYOLLET Emilie Mas du Fesc 30940 | actividad | 2026 | [nº Bio 141692](https://annuaire.agencebio.org/operateur/141692) |
+| LA FERME D’OZ | La ferme d'Oz | Saint André De Valborgne | Auzillargues 30940 | actividad | 2026 | [nº Bio 58732](https://annuaire.agencebio.org/operateur/58732) |
+| LA FERME DE TOULAIR LAEVENS Marie et Julien | LA FERME DE TOULAIR | Saint Christol De Rodières | 1900 ROUTE DÉPARTEMENTALE SUD TOULAIR 30760 | actividad | 2026 | [nº Bio 36099](https://annuaire.agencebio.org/operateur/36099) |
+| THOMAS LECLERE - FERME DE ROUVILLE | LECLERE THOMAS | Saint-Jean-Du-Gard | MAS DE ROUVILLE 30270 | actividad | 2026 | [nº Bio 46274](https://annuaire.agencebio.org/operateur/46274) |
+| LA BERGERIE DU SAVEL | GOULEME Stéphanie | Saint-Roman-De-Codieres | LE BOUVET 30440 | actividad | 2026 | [nº Bio 135589](https://annuaire.agencebio.org/operateur/135589) |
+| MAS HUBERT | MOREL LYDIE | Sainte Croix De Caderle | Les Mouzignels 30460 | actividad | 2026 | [nº Bio 147795](https://annuaire.agencebio.org/operateur/147795) |
+| GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN NOUGUIER | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN NOUGUIER | Tornac | 2087 CHEMIN D'ASPERES 30140 | actividad | 2026 | [nº Bio 300797](https://annuaire.agencebio.org/operateur/300797) |
+| GAEC LES CHEVRES DU TREVEZEL | GAEC LES CHEVRES DU TREVEZEL | Treves | LE VILLARET ET GRANASSIERE 30750 | actividad | 2026 | [nº Bio 59034](https://annuaire.agencebio.org/operateur/59034) |
+| ASSOCIATION MAS DE CARLES | ASSOCIATION MAS DE CARLES | Villeneuve-Les-Avignon | RTE DE PUJAUT 30400 | actividad | 2026 | [nº Bio 145909](https://annuaire.agencebio.org/operateur/145909) |
+| LA BERGERIE DE BAUTE TRICHARD Anaïs et RAY Benjamin | LA BERGERIE DE LA BAUTE | Vissec | 16 Le Pignot Lieu Dit la Boute 30770 | actividad | 2026 | [nº Bio 41356](https://annuaire.agencebio.org/operateur/41356) |

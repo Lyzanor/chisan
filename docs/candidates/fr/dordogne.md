@@ -21,3 +21,73 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | LA FERME DE BARRAUD DUBREU Clément | DUBREU CLEMENT ELOI | MUSSIDAN | 11 RUE DE BARRAUD 24400 | actividad | Figues, Pêches, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 141667](https://annuaire.agencebio.org/operateur/141667) |
 | LA FERME DE POUZOL | RODIER BENJAMIN PIERRE BERNARD | Corgnac sur l'Isle | RODIER Benjamin Lieu Dit Pouzol 24800 | actividad | Légumes frais n.c.a., Pommes de table, Autres fruits à pépins | 2026 | [nº Bio 138704](https://annuaire.agencebio.org/operateur/138704) |
 | LES JARDINS DU GRAND PA DURET Alexandre | LES JARDINS DU GRAND PA | Teyjat | Caillaud 24300 | actividad | Estives ou alpages collectifs, Autres légumes à feuilles ou à tiges, Noix | 2026 | [nº Bio 7592](https://annuaire.agencebio.org/operateur/7592) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **49 candidatos nuevos** en este corte: 6 perfiles de explotación, 6 unidades manufactureras adicionales y 37 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| Ferme des Terres Vieilles | Familles Latournerie - Mazouaud | Brantome En Perigord | 24310 Brantôme en Périgord | Bienvenue à la ferme des Terres Vieilles, élevage caprin à production laitière (transformation de fromages fermiers). Nos chèvres sont nourries exclusivement… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/nouvelle-aquitaine/dordogne/brantome-en-perigord/ferme/ferme-des-terres-vieilles/299996) |
+| La Chèvre et le Chou | Jennifer Kendall | Meyrals | 535 route de Versailles / 24220 Meyrals | Elevage de chèvres en agriculture biologique. Transformation fromagère fermière. | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/nouvelle-aquitaine/dordogne/meyrals/ferme/la-chevre-et-le-chou/664379) |
+| La Bon'o'Venture | Laëtitia et Stéphane Bonnot | Rouffignac Saint Cernin De Reilhac | Les Landes de la Salvetat / 24580 Rouffignac-Saint-Cernin-de-Reilhac | Ferme située à 5 kms de Rouffignac Saint Cernin, en pleine nature (campagne et forêt, chemins de randonnée). Éleveur de chèvres laitières avec transformation… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/nouvelle-aquitaine/dordogne/rouffignac-saint-cernin-de-reilhac/ferme/la-bon-o-venture/616400) |
+| La Ferme à Roulettes | Marie-Camille Trogan | Saint Vivien | 552 route de Mira / 24230 Saint-Vivien | A l'entrée du Périgord Pourpre, Marie-Camille transforme le lait de ses chèvres poitevines en délicieux fromages au lait… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/nouvelle-aquitaine/dordogne/saint-vivien/ferme/la-ferme-a-roulettes/646471) |
+| Ferme de la Brunie | Bertrand Rouquie | Sainte Nathalene | 715 chemin de la Brunie / 24200 Sainte-Nathalène | Ferme laitière située en sarladais, en agriculture raisonnée. Le lait de nos vaches Montbeliardes est transformé à la ferme en : Tomme du Sarladais, fromage… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/nouvelle-aquitaine/dordogne/sainte-nathalene/ferme/ferme-de-la-brunie/117536) |
+| Chèvrerie du Lac de Roudet | Robin Lachaize | Sarlat La Caneda | Rue Jean Racine / 24200 Sarlat-la-Canéda | Petite exploitation en périphérie de Sarlat de 100 chèvres alpines chamoisées. Ouverture de début mars au 24 décembre inclus. Du lundi au samedi de 10h30… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/nouvelle-aquitaine/dordogne/sarlat-la-caneda/ferme/chevrerie-du-lac-de-roudet/529526) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| ZDEG ZILIOTTO LAETITIA - LA FROMAGERIE LES P TITS CHEVRES | Bassillac Et Auberoche | MILHAC D AUBEROCHE 3561 RTE DE PERIGUEUX 24330 | `85028375500013` | dérogation | [SIREN 850283755](https://annuaire-entreprises.data.gouv.fr/entreprise/850283755) |
+| FROMARSAC | Marsac Sur L'Isle | LA PRUNERIE 86 RUE DU 08 MAI 24430 | `33126008300018` | agrément UE `24.256.002` | [SIREN 331260083](https://annuaire-entreprises.data.gouv.fr/entreprise/331260083) |
+| FROMAGERIES DES CHAUMES | Saint-Antoine-De-Breuilh | 1941 ROUTE DES LAURENTS 24230 | `31483018300039` | agrément UE `24.370.002` | [SIREN 314830183](https://annuaire-entreprises.data.gouv.fr/entreprise/314830183) |
+| PICANDINE SAS | Saint-Astier | LA BORIE 24110 | `38028013100034` | agrément UE `24.372.001` | [SIREN 380280131](https://annuaire-entreprises.data.gouv.fr/entreprise/380280131) |
+| CHENE VERT | Saint-Martial-De-Valette | ZAE GRAND MASSONNEAU 24300 | `38502204100029` | agrément UE `24.451.003` | [SIREN 385022041](https://annuaire-entreprises.data.gouv.fr/entreprise/385022041) |
+| LE CHEVREFEUILLE | Saint-Martial-De-Valette | SAINT MARTIAL DE VALETTE LAVAUD 24300 | `35049461300010` | agrément UE `24.451.001` | [SIREN 350494613](https://annuaire-entreprises.data.gouv.fr/entreprise/350494613) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| DULAC François | DULAC FRANCOIS PAUL GEORGES | Bars | Le Chambord 196 Impase des caprins 24210 | actividad | 2026 | [nº Bio 109243](https://annuaire.agencebio.org/operateur/109243) |
+| AUX BREBIS DELICES TINLE Olivier | AUX BREBIS DELICES | Bassilac-Et-Auberoche | Laborde - Le change 2072 Route de Hautefort 24640 | actividad | 2026 | [nº Bio 157855](https://annuaire.agencebio.org/operateur/157855) |
+| Ferme de la Joie Naît | GAUTHIER Josselin EI | Beaumont | 214 Impasse de la Plane 24440 | actividad | 2026 | [nº Bio 60297](https://annuaire.agencebio.org/operateur/60297) |
+| LES MOUTCHOUX | GAEC Les Mout'choux | Beaumontois En Perigord | 428 RTE DE GUILLAUMOT 24440 | actividad | 2026 | [nº Bio 56752](https://annuaire.agencebio.org/operateur/56752) |
+| LA CHEVRERIE D'ANTRYCA | CALBRY ANGRAND VALERIE LILIANE CHARLOTTE | Bergerac | Mr et Mme CALBRY ANGRAND Claude et Valérie Impasse des Charmes - La Conne 24100 | actividad | 2026 | [nº Bio 157812](https://annuaire.agencebio.org/operateur/157812) |
+| LAULHERE VINCENT | LAULHERE VINCENT | Borreze | LD LE FRAYSSET 24590 | actividad | 2026 | [nº Bio 138513](https://annuaire.agencebio.org/operateur/138513) |
+| GOUILLY-FROSSARD MARIE | GOUILLY-FROSSARD MARIE | Campagnac-Les-Quercy | LD LE ROC 24550 | actividad | 2025 | [nº Bio 43319](https://annuaire.agencebio.org/operateur/43319) |
+| LA FERME DE LA CHAPELLE TRAVERSE Jean-Pierre et Alexandre | TRAVERSE JEAN-PIERRE | Carlux | 511 Rue Chapelle Saint Jean 24370 | actividad | 2026 | [nº Bio 144289](https://annuaire.agencebio.org/operateur/144289) |
+| LECOMTE XAVIER | LECOMTE XAVIER | Douchapt | 1 Route de Maison Neuve 24350 | actividad | 2025 | [nº Bio 100612](https://annuaire.agencebio.org/operateur/100612) |
+| CAMPENAERTS NATASCHA GUSTAAF | CAMPENAERTS NATASCHA GUSTAAF | Faurilles | 1003 route du sorbier 24560 | actividad | 2026 | [nº Bio 150019](https://annuaire.agencebio.org/operateur/150019) |
+| LA BERGERIE DES GRANGES - Vincent DESMAISONS | LA BERGERIE DES GRANGES | Granges D'Ans | Bussac 24390 | actividad | 2026 | [nº Bio 131766](https://annuaire.agencebio.org/operateur/131766) |
+| FERME DE LORIOT VIROULAUD François | VIROULAUD FRANCOIS ADRIEN | Hautefort | BREGERAC OUEST 24390 | actividad | 2026 | [nº Bio 139348](https://annuaire.agencebio.org/operateur/139348) |
+| GAEC BOST-FERRET | GAEC BOST-FERRET | Jumilhac-Le-Grand | 635 ROUTE DU QUARTZ 24630 | actividad | 2026 | [nº Bio 61397](https://annuaire.agencebio.org/operateur/61397) |
+| GAEC O CHAMPS DES POSSIBLES | GAEC O CHAMPS DES POSSIBLES | Jumilhac-Le-Grand | 1332 CHE DE VEYRINAS 24630 | actividad | 2026 | [nº Bio 64650](https://annuaire.agencebio.org/operateur/64650) |
+| DUNN GEORGINA CHRISTINE ROBINS | DUNN GEORGINA CHRISTINE ROBINS | La Tour-Blanche-Cercles | 554 ROUTE DES LAVOIRS 24320 | actividad | 2026 | [nº Bio 303263](https://annuaire.agencebio.org/operateur/303263) |
+| GAEC D'EYSSAL | GAEC D'EYSSAL | Lamonzie-Montastruc | LD DOMAINE D'EYSSAL 24520 | actividad | 2026 | [nº Bio 148796](https://annuaire.agencebio.org/operateur/148796) |
+| BERGERIE DE LANOUAILLE | BERGERIE DE LANOUAILLE | Lanouaille | 1560 Route des Etangs 24270 | actividad | 2026 | [nº Bio 66626](https://annuaire.agencebio.org/operateur/66626) |
+| SAVEURS MAJUSCULES | SAVEURS MAJUSCULES | Lanouaille | 2680 Route des deux loue 24270 | actividad | 2026 | [nº Bio 66552](https://annuaire.agencebio.org/operateur/66552) |
+| GAEC LA FARTALHA | GAEC LA FARTALHA | Leguillac-De-L'Auche | 1251 ROUTE DES CHAMPS 24110 | actividad | 2026 | [nº Bio 142975](https://annuaire.agencebio.org/operateur/142975) |
+| ANGHELONE Emilie | Entreprise Individuelle | Lolme | 8402 Route de Cahors 24540 | actividad | 2026 | [nº Bio 31732](https://annuaire.agencebio.org/operateur/31732) |
+| GOULET DAMIEN YVES | GOULET DAMIEN YVES | Mareuil En Perigord | POUTIGNAC 24340 | actividad | 2026 | [nº Bio 157084](https://annuaire.agencebio.org/operateur/157084) |
+| KENDALL Jennifer | KENDALL Jennifer | Meyrals | LD Les Versailles 24220 | actividad | 2026 | [nº Bio 132561](https://annuaire.agencebio.org/operateur/132561) |
+| DES GRISES | DES GRISES | Mialet | Lieu Dit Saint Jean De Fougeras 24450 | actividad | 2026 | [nº Bio 48440](https://annuaire.agencebio.org/operateur/48440) |
+| LORIEUX PIERRE CLAUDE | LORIEUX PIERRE CLAUDE | Minzac | LA CHEVALERIE 24610 | actividad | 2026 | [nº Bio 146123](https://annuaire.agencebio.org/operateur/146123) |
+| FENEUILLE Peggy | FENEUILLE Peggy | Molieres | 6 Rue du Dernier Duel 24480 | actividad | 2026 | [nº Bio 200507](https://annuaire.agencebio.org/operateur/200507) |
+| DE LA COUTAUDE | DE LA COUTAUDE | Sadillac | DOS SANTOS SILVA Valérie et CANIVET Flavien LE BOURG 24500 | actividad | 2026 | [nº Bio 117481](https://annuaire.agencebio.org/operateur/117481) |
+| DESVARD BASTIEN DAMIEN | DESVARD BASTIEN DAMIEN | Saint-Antoine-De-Breuilh | 120 Route du Ruisseau Carré 24230 | actividad | 2026 | [nº Bio 16123](https://annuaire.agencebio.org/operateur/16123) |
+| LA FERME DE LA MOUTHE | PERRIOL ISABELLE CLAUDE | Saint Avit Riviere | PERRIOL Isabelle Lieu dit la mouthe 24540 | actividad | 2026 | [nº Bio 136677](https://annuaire.agencebio.org/operateur/136677) |
+| JERECZEK YVES | JERECZEK YVES | Saint Germain Et Mons | Domaine Des Guichards 24520 | actividad | 2026 | [nº Bio 140622](https://annuaire.agencebio.org/operateur/140622) |
+| CAUVEZ LUCILE JEANINE | CAUVEZ LUCILE JEANINE | Saint-Paul-La-Roche | LD LOR 24800 | actividad | 2026 | [nº Bio 22440](https://annuaire.agencebio.org/operateur/22440) |
+| LECOMTE HELENA EVELYNE ELIANE | LECOMTE Helena | Saint Paul La Roche | La Roche Blanche 24800 | actividad | 2026 | [nº Bio 42775](https://annuaire.agencebio.org/operateur/42775) |
+| EARL FERME DE TEINTEILLAC | EARL FERME DE TEINTEILLAC | Saint-Romain-Et-Saint-Clement | 879 CHEMIN DU BIGEAU 24800 | actividad | 2026 | [nº Bio 117654](https://annuaire.agencebio.org/operateur/117654) |
+| FERME BELARDIA | FERME BELARDIA | Saint Saud Lacoussière | 120 Impasse Les Peycheres 24470 | actividad | 2026 | [nº Bio 133894](https://annuaire.agencebio.org/operateur/133894) |
+| LES FORGERONS BOULLIER Marie et FABERT Gautier | GAEC DES FORGERONS | Sainte-Croix-De-Mareuil | 187 Chem. des Forgeronss 24340 | actividad | 2026 | [nº Bio 121968](https://annuaire.agencebio.org/operateur/121968) |
+| LABARUSSIAS Brigitte | LABRUSSIAS BRIGITTE BRIGITTE | Sainte-Foy-De-Belves | Moulin de Barde 24170 | actividad | 2026 | [nº Bio 157640](https://annuaire.agencebio.org/operateur/157640) |
+| Bêle des bois | MARTINEAU ELVINA | Sanilhac | LD BAS MARTEL 24750 | actividad | 2026 | [nº Bio 9670](https://annuaire.agencebio.org/operateur/9670) |
+| BRIDAMI GESNOUIN David | BRIDAMI | Teyjat | LD VAUBRUNET 24300 | actividad | 2026 | [nº Bio 158473](https://annuaire.agencebio.org/operateur/158473) |

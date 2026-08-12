@@ -31,3 +31,42 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | AKWABA | GERMAINE GBALET | Évreux | 2 B RUE DU COUDRAY 27000 EVREUX | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2007-07 | [SIREN 498595818](https://annuaire-entreprises.data.gouv.fr/entreprise/498595818) |
 | LESTRELLA | CELINE DUBOC | La Chapelle-Longueville | 5 RUE DU RUISSEAU 27950 LA CHAPELLE-LONGUEVILLE | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2015-12 | [SIREN 815131339](https://annuaire-entreprises.data.gouv.fr/entreprise/815131339) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **18 candidatos nuevos** en este corte: 13 perfiles de explotación, 1 unidades manufactureras adicionales y 4 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| L'Esprit Normand | Olivia ESPRIT | Berville La Campagne | 16 rue du Puits / 27170 Berville-la-Campagne | L' ESPRIT NORMAND est notre projet commun à Fabrice et moi. Nous transformons le lait issus de nos vaches en bons produits laitiers. Venez… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/berville-la-campagne/ferme/l-esprit-normand/212800) |
+| Ferme des Colombos | Justine ELIE | Bouquelon | 152 Chemin Boel / 27500 Bouquelon | Après avoir été employée pendant deux ans, les propriètaires voulant céder, Justine a repris l'exploitation de la ferme des Colombos. Cette très jeune… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/bouquelon/ferme/ferme-des-colombos/666807) |
+| La Bikette Caugéenne | Alexandra BEAUCOUSIN | Cauge | Chemin des Hautes Forrières / 27180 Caugé | Venez déguster le fromage et voir les chèvres ainsi que la traite à 17h tous les jours du 15 mars au 20 janvier la boutique est ouverte… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/cauge/ferme/la-bikette-caugeenne/278960) |
+| Ferme des Peupliers | Edouard CHEDRU | Flipou | 4, rue des Peupliers / 27380 Flipou | La Ferme des Peupliers, située à Flipou, est une ferme familiale. Depuis plus de 60 ans, elle fabrique des produits laitiers fermiers, préparés… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/flipou/ferme/ferme-des-peupliers/436231) |
+| Chevrerie du Mesnil | Colette Heutte | Fort Moville | Chèvrerie du mesnil / 27210 Fort-Moville | A Fort Moville, dans le hameau Le Mesnil dans un cadre de verdure typiquement normand, Colette et son fils Nicolas , élèvent aujourd'hui un peu plus de… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/fort-moville/ferme/chevrerie-du-mesnil/435335) |
+| Ferme des Peupliers/Gravigny | Edouard Chedru | Gravigny | 1 Chemin des Armalots / 27930 Gravigny | Edouard et Antoine Chedru ont repris la ferme de Gravigny en 2012. En 2014, le nouvel atelier de transformation est inauguré. Élevage de vaches laitières… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/gravigny/ferme/ferme-des-peupliers-gravigny/285840) |
+| La Chèvrerie d'Elise | Sandra BUISSON | Le Plessis Hebert | 9 Rue de la Mare du Four / 27120 Le Plessis-Hébert | Bienvenue à la Chèvrerie d'Elise où Sandra (fille d'Elise) et sa famille sont passionnées par l'agriculture et en particulier l'élevage : l'élevage des… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/le-plessis-hebert/ferme/la-chevrerie-d-elise/161200) |
+| Ferme des Pâtures | Hugo DUEDAL | Le Val Dore | 10 rue St Pierre / 27190 Le Val-Doré | En Pays d'Ouche, cette ferme très ancienne est encore aujourd'hui une exploitation moderne d'élevage allaitant et céréalier, et un élevage de brebis laitières.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/le-val-dore/ferme/ferme-des-patures/90440) |
+| Ferme le Chesne | Marin DUGARDIN | Piencourt | 3 bis rue du Chene / 27230 Piencourt | Marin s'est installé sur la ferme familiale début 2023. Il veut valoriser la production laitière et aller plus loin dans le produit, il a choisi de transformer… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/piencourt/ferme/ferme-le-chesne/673355) |
+| Ferme de la Chapelle Brestot | Ghislaine et François Delavoipiere | Rougemontiers | 35 route de Pont Audemer / 27350 Rougemontiers | L'EARL de la Chapelle Brestot est une exploitation familiale qui commercialise une gamme diversifiée de produits en vente directe. Elle est… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/rougemontiers/ferme/ferme-de-la-chapelle-brestot/466203) |
+| La ferme de Saint Germain de Fresney | Sylvain GUICHEUX | Saint Germain De Fresney | Route de Garencières / 27220 Saint-Germain-de-Fresney | Michèle et Sylvain vous proposent leurs produits laitiers, en direct de leur explotation. De bons produits au lait frais des vaches de la ferme. Tous… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/saint-germain-de-fresney/ferme/la-ferme-de-saint-germain-de-fresney/626517) |
+| Du pré au lait | Philippe AUBE | Saint Maclou | 820 CHEMIN DE LA BRIERE / 27210 Saint-Maclou | Après une reconversion professionnelle, avec le souhait de valoriser le lait produit sur l'exploitation familiale, d'une cinquantaine de… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/saint-maclou/ferme/du-pre-au-lait/678986) |
+| Le Rucher de Cantiers | Charlotte LEREVEREND | Vexin Sur Epte | 4 bis rue de l'école / 27420 Vexin-sur-Epte | Au Rucher de Cantiers, retrouvez l'authenticité de vrais produits fermiers, réalisés à la ferme de la graine au produit… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/eure/vexin-sur-epte/ferme/le-rucher-de-cantiers/616569) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| SOCIETE DE LA FROMAGERIE BOURSIN | Croisy-Sur-Eure | 27120 | `30446546100016` | agrément UE `27.190.001` | [SIREN 304465461](https://annuaire-entreprises.data.gouv.fr/entreprise/304465461) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| SALAZAR PIERRE | SALAZAR PIERRE | Berville-La-Campagne | 8 RUE DU PUIT 27170 | actividad | 2026 | [nº Bio 131733](https://annuaire.agencebio.org/operateur/131733) |
+| EARL LE CHANT DES MEULES | EARL LE CHANT DES MEULES | Bezu-Saint-Eloi | 5 CHE DE LA FERME 27660 | actividad | 2026 | [nº Bio 136162](https://annuaire.agencebio.org/operateur/136162) |
+| GAEC FERME DES PATURES | GAEC FERME DES PATURES | Le Val Dore | 10 RUE SAINT PIERRE ORVAUX 27190 | actividad | 2026 | [nº Bio 174324](https://annuaire.agencebio.org/operateur/174324) |
+| FERME DE PINCHELOUP LELIEVRE Benoît et Paola | GAEC FERME DE PINCHELOUP | Tourville-Sur-Pont-Audemer | 1591 RTE DE PINCHELOUP 27500 | actividad | 2026 | [nº Bio 147984](https://annuaire.agencebio.org/operateur/147984) |

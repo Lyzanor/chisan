@@ -34,3 +34,44 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | HOMELANIE | MELANIE PHILIP | Nice | 3 RUE DU LYCEE 06000 NICE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2015-05 | [SIREN 810953224](https://annuaire-entreprises.data.gouv.fr/entreprise/810953224) |
 | EDINNA CREATION | MARIE TONTA | Cagnes-sur-Mer | BATIMENT E 54 AVENUE DE GRASSE 06800 CAGNES-SUR-MER | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2025-04 | [SIREN 942788803](https://annuaire-entreprises.data.gouv.fr/entreprise/942788803) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **22 candidatos nuevos** en este corte: 2 perfiles de explotación, 1 unidades manufactureras adicionales y 19 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| GAEC AGREE FROMAGERIE DE LA RORIA | Saint-Etienne-De-Tinee | LA RORIA 06660 | `40240914800010` | dérogation | [SIREN 402409148](https://annuaire-entreprises.data.gouv.fr/entreprise/402409148) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| BARBAGLI ALAIN JEAN-CLAUDE RO | BARBAGLI ALAIN JEAN-CLAUDE RO | Amirat | 141 CHE SAINT JEAN 06910 | actividad | 2026 | [nº Bio 107950](https://annuaire.agencebio.org/operateur/107950) |
+| GAEC DE SAINT JEAN | GAEC DE SAINT JEAN | Andon Thorrenc | Ferme de l'Escaillon - 2250 Route de Cas tellane 06750 | actividad | 2025 | [nº Bio 159703](https://annuaire.agencebio.org/operateur/159703) |
+| saveur caprine | SOLDATI Sabine | Breil-Sur-Roya | 3103 CHEMIN DE PRAGHIOU 06540 | actividad | 2026 | [nº Bio 135612](https://annuaire.agencebio.org/operateur/135612) |
+| GAEC LA BERGERIE LA GIUGGIOLA | GAEC LA BERGERIE LA GIUGGIOLA | Brianconnet | ROUTE DE LA SAGNE 06850 | actividad | 2026 | [nº Bio 64786](https://annuaire.agencebio.org/operateur/64786) |
+| SONNTAG-WIRTH Véronique, Charles | SONNTAG VERONIQUE-MARIE | Collongues | 59 allée de Gastinelle 06910 | actividad | 2026 | [nº Bio 144501](https://annuaire.agencebio.org/operateur/144501) |
+| MADAME AMELIA BEGUE | BEGUE AMELIA NADINE | Daluis | QUARTIER SAINT MARTIN 06470 | actividad | 2025 | [nº Bio 18511](https://annuaire.agencebio.org/operateur/18511) |
+| Ferme Ousta Cabra | GAEC OUSTA LOROSCIO | Entraunes | LIEU DIT L'OUSTAMURA 06470 | actividad | 2026 | [nº Bio 67629](https://annuaire.agencebio.org/operateur/67629) |
+| FROEHLICH THIERRY LUCIEN CAMILLE | FROEHLICH THIERRY LUCIEN CAMILLE | Guillaumes | LA RIBIERE 06470 | actividad | 2026 | [nº Bio 26303](https://annuaire.agencebio.org/operateur/26303) |
+| TAMALOUS ROGERI JULIE SIC VALENTIN ET ANNIE | SEP LES TAMALOUS Valentin SIC Julie ROGERI Annie SIC | La Bollène-Vésubie | La Dorgane 06450 | actividad | 2025 | [nº Bio 22322](https://annuaire.agencebio.org/operateur/22322) |
+| GIROD DOMINIQUE GABRIELLE | GIROD DOMINIQUE GABRIELLE | La Penne | 2128 ch de besseuges 06260 | actividad | 2026 | [nº Bio 110060](https://annuaire.agencebio.org/operateur/110060) |
+| VIDALINC LORIS ERIC BRUNO | VIDALINC LORIS ERIC BRUNO | La Rochette | Ferme du Grand Cheinet 06260 | actividad | 2026 | [nº Bio 50452](https://annuaire.agencebio.org/operateur/50452) |
+| ASCENZI MICKAEL PIERRE MARC | ASCENZI MICKAEL PIERRE MARC | Lantosque | Quartier Mirail 06450 | actividad | 2026 | [nº Bio 69517](https://annuaire.agencebio.org/operateur/69517) |
+| dalbera prescillia | prescillia dalbera | Lantosque | QUARTIER MIRAIL 06450 LANTOSQUE 06450 | actividad | 2026 | [nº Bio 69516](https://annuaire.agencebio.org/operateur/69516) |
+| ADELINE AKERMANN - AD BLUE FARM | AKERMANN ADELINE | Mandelieu La Napoule | CHEMIN DE LA VIEILLE FERME 06210 | actividad | 2025 | [nº Bio 3870](https://annuaire.agencebio.org/operateur/3870) |
+| LES PETITS FRUITS DE MOUANS A. Falinski | FALINSKI ALEXANDRE STANISLAS | Mouans Sartoux | 305 CHEMIN DU BIVOUAC 06370 | actividad | 2025 | [nº Bio 129160](https://annuaire.agencebio.org/operateur/129160) |
+| GAEC DE LA FERME DU BAUSSON | GAEC DE LA FERME DU BAUSSON | Peille | RTE DU COL DE LA MADONE 06440 | actividad | 2025 | [nº Bio 54340](https://annuaire.agencebio.org/operateur/54340) |
+| MONSIEUR ROBIN DELANNOY | DELANNOY ROBIN | Saint-Martin-Vesubie | CHEMIN DE BERTHEMONT LIEU DIT LE PESTIER 06450 | actividad | 2025 | [nº Bio 135951](https://annuaire.agencebio.org/operateur/135951) |
+| PEGLION René | PEGLION RENE | Sospel | 3571 Route du Moulinet 06380 | actividad | 2026 | [nº Bio 112717](https://annuaire.agencebio.org/operateur/112717) |
+| DE PEIJAN | DE PEIJAN | Valbonne | LA CHEVRERIE DE VALBONNE 06560 | actividad | 2026 | [nº Bio 148211](https://annuaire.agencebio.org/operateur/148211) |

@@ -28,3 +28,56 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | LA FERME MARGUERITE | CHRISTOPHE DELAMARE | Sainte-Marguerite-sur-Duclair | 87 ROUTE DE DUCLAIR 76480 SAINTE-MARGUERITE-SUR-DUCLAIR | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2025-01 | [SIREN 939327359](https://annuaire-entreprises.data.gouv.fr/entreprise/939327359) |
 | CHOCOLATERIE BEYER | MAXIME FESSARD | Rouen | 17 RUE GRAND PONT 76000 ROUEN | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2014-02 | [SIREN 801418492](https://annuaire-entreprises.data.gouv.fr/entreprise/801418492) |
 | LA FERME AUX OISEAUX | DOMINIQUE STALDER | Angerville-la-Martel | 267 IMPASSE DES CHARMES 76540 ANGERVILLE-LA-MARTEL | Conservas | 10.39B — Transformation et conservation de fruits | 1997-04 | [SIREN 411953714](https://annuaire-entreprises.data.gouv.fr/entreprise/411953714) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **32 candidatos nuevos** en este corte: 10 perfiles de explotación, 6 unidades manufactureras adicionales y 16 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| La Chèvrerie du Val de Bures | Sarah et Angelin BAZIN-BEHAJAINA | Bellencombre | Route des longs vallons / 76680 Bellencombre | La ferme du Val de Bures est un paradis pour petits et grands. Le troupeau de chèvres laitières permet l'élaboration de fromages que Angelin et Sarah… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/bellencombre/ferme/la-chevrerie-du-val-de-bures/156840) |
+| Les Volailles du Prieuré | Laurent ANQUETIL | Breaute | 8 Rue de la Libération / 76110 Bréauté | Bonjour et bienvenue aux " volailles du prieuré "ou Laurent et Arthur vous accueillent au cœur du pays de Caux Notre exploitation… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/breaute/ferme/les-volailles-du-prieure/452847) |
+| La Ferme des Châtaigniers | Famille MOLARD | Catenay | 90 rue des Châtaigniers / 76116 Catenay | Bienvenue à la Ferme des Châtaigniers. Samuel, Nicolas et Mickael vous y accueilleront les bras ouverts au mileu de leurs animaux (vaches laitières, cochons,… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/catenay/ferme/la-ferme-des-chataigniers/471100) |
+| La Vache de Louvicamp | Lucie et Marc ENGERANT | Mesnil Mauger | 10 Rue de Beaussault / 76440 Mesnil-Mauger | Au détour d'un virage, sur les bords de la Béthune, vous apercevrez la ferme laitière dans un écrin de verdure. Entrez dans le petit chemin et, derrière… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/mesnil-mauger/ferme/la-vache-de-louvicamp/255887) |
+| Chèvrerie La petite Caulette | Cindy HAILLET | Petit Caux | 4 PLACE NOTRE DAME / 76630 Petit-Caux | C'est en 2020 que Cindy décide de quitter son travail pour s'installer aux côtés de son mari, éleveur de vaches lalitières… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/petit-caux/ferme/chevrerie-la-petite-caulette/629548) |
+| La Fromagerie du Petit Frévillais | Elodie Malandain | Saint Martin De L If | 678 rue de Croixmare / 76190 Saint Martin de l'If | Vous ne connaissez pas encore les bons produits de la Famille MALANDAIN ? 𝐋𝐚 𝐅𝐫𝐨𝐦𝐚𝐠𝐞𝐫𝐢𝐞 𝐝𝐮 𝐏𝐞𝐭𝐢𝐭 𝐅𝐫é𝐯𝐢𝐥𝐥𝐚𝐢𝐬 est une institution à découvrir… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/saint-martin-de-l-if/ferme/la-fromagerie-du-petit-frevillais/679191) |
+| La Ferme Dumesnil | Corinne DUMESNIL | Saint Vincent Cramesnil | 221 ROUTE DU CASTILLON / 76430 Saint-Vincent-Cramesnil | Gérée par Mmes Dumesnil, ses 6 salariés, notre fromagerie artisanale est située à 15 minutes du Havre, à 1h… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/saint-vincent-cramesnil/ferme/la-ferme-dumesnil/221495) |
+| Chèvrerie de l'Ailly | Adeline Bellanger | Sainte Marguerite Sur Mer | 295 Rue de la Ferme / 76119 Sainte-Marguerite-sur-Mer | Adeline Bellanger vient d’ouvrir la Chèvrerie de l’Ailly, où elle vend les fromages qu’elle fabrique avec le lait de ses 43 chèvres à Sainte-Marguerite-sur-Mer.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/sainte-marguerite-sur-mer/ferme/chevrerie-de-l-ailly/673957) |
+| Ferme des 5 Frères | Charles Bréant | Terres De Caux | 100 Rue de la Cayenne, / 76640 Terres-de-Caux | Véritable histoire de famille, Charles, Pierre, Victor, Côme et Martin Bréant travaillent sur la ferme familiale dans le Pays de Caux… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/terres-de-caux/ferme/ferme-des-5-freres/658136) |
+| La Bergerie du Hameau Joyeux | Géraldine FRILLAY | Terres De Caux | 299, route de Fauville / 76640 Terres-de-Caux | Géraldine et Patrice ont créé la Bergerie du Hameau Joyeux. Géraldine FRILLAY et Patrice FRILLAY se sont lancés par… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/normandie/seine-maritime/terres-de-caux/ferme/la-bergerie-du-hameau-joyeux/679419) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LEVEQUE | Bailleul-Neuville | 44 RUE DE GREMONVAL 76660 | `45367262800014` | agrément UE `76.052.003` | [SIREN 453672628](https://annuaire-entreprises.data.gouv.fr/entreprise/453672628) |
+| SARL DE LA FERME DU PERE CAUCHOIS | Breaute | CHEZ M ANTOINE DELAHAIS 2450 ROUTE DU HERTELAY 76110 | `51992190200010` | dérogation | [SIREN 519921902](https://annuaire-entreprises.data.gouv.fr/entreprise/519921902) |
+| RENAUX CELINE - FROMAGERIE DE LA GARENNE | Heuqueville | 200 IMP DE LA GARENNE 76280 | `87876061000013` | dérogation | [SIREN 878760610](https://annuaire-entreprises.data.gouv.fr/entreprise/878760610) |
+| ENTREMONT ALLIANCE | Maromme | ZONE INDUSTRIELLE LA MAINE 1 RUE DENIS PAPIN 76150 | `32552045000322` | agrément UE `76.410.009` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+| ALLEAUME ERIC | Nesle-Hodeng | 65 CHEMIN DES MACMONTS 76270 | `44995266200012` | agrément UE `76.459.001` | [SIREN 449952662](https://annuaire-entreprises.data.gouv.fr/entreprise/449952662) |
+| FROMAGERIE DU PAYS DE BRAY - FPB | Neufchatel-En-Bray | ZONE INDUSTRIELLE SAINTE RADEGONDE RUE SAINTE RADEGONDE 76270 | `49281314200014` | agrément UE `76.462.001` | [SIREN 492813142](https://annuaire-entreprises.data.gouv.fr/entreprise/492813142) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| TOUZARD TOUZARD Mathieu | SCEA TOUZARD | Assigny | 2 rue St Médard 76630 | actividad | 2026 | [nº Bio 11620](https://annuaire.agencebio.org/operateur/11620) |
+| GAEC FROMAGERIE DE LA QUESNE | FROMAGERIE DE LA QUESNE | Bois-Héroult | 1230 CHEMIN DE LA QUESNE 76750 | actividad | 2025 | [nº Bio 100588](https://annuaire.agencebio.org/operateur/100588) |
+| La ferme de Beaulieu | EI ROUYERE Marianne | Bois L'Évêque | Hameau de Beaulieu 76120 | actividad | 2026 | [nº Bio 300500](https://annuaire.agencebio.org/operateur/300500) |
+| EARL FERME DE LA FOSSE A L EAU | FERME DE LA FOSSE A L EAU | Bosc Bordel | 1159 ROUTE DE LA FOSSE A L EAU 76750 | actividad | 2025 | [nº Bio 105327](https://annuaire.agencebio.org/operateur/105327) |
+| DOMAINE DE MERVAL - Ferme du lycée agricole du Pays de Bray | EPLEFPA DE LA SEINE MARITIME | Bremontier Merval | Château de Merval Route d'Argueil 76220 | actividad | 2026 | [nº Bio 112038](https://annuaire.agencebio.org/operateur/112038) |
+| RANNOU MATHILDE LUCIE | RANNOU MATHILDE LUCIE | Calleville-Les-Deux-Eglises | 103 RUE DES MARRONNIERS 76890 | actividad | 2026 | [nº Bio 136282](https://annuaire.agencebio.org/operateur/136282) |
+| EARL MOINET | EARL MOINET | Dampierre-En-Bray | 2448 CHE DE HYAUMET 76220 | actividad | 2026 | [nº Bio 145723](https://annuaire.agencebio.org/operateur/145723) |
+| SCEA FERME DONNET | SCEA FERME DONNET | Epreville | 21 HAMEAU DE GOURNAY 76400 | actividad | 2026 | [nº Bio 29548](https://annuaire.agencebio.org/operateur/29548) |
+| LA CHEVRERIE D'HAUSSEZ SAINTEMARIE Pascal | SAINTEMARIE PASCAL BERNARD PAUL | Haussez | 3 RUE DU CHATEAU BLEU 76440 | actividad | 2026 | [nº Bio 135775](https://annuaire.agencebio.org/operateur/135775) |
+| DAUCE FABRICE | DAUCE FABRICE | Le Thil Riberpre | Les Chèvres de RIBERPRE 76440 | actividad | 2026 | [nº Bio 149824](https://annuaire.agencebio.org/operateur/149824) |
+| FIHUE Gautier | FIHUE Gautier | Osmoy Saint Valery | 148 Les Bosquets 76660 | actividad | 2026 | [nº Bio 139089](https://annuaire.agencebio.org/operateur/139089) |
+| GAEC GENTY | GAEC GENTY | Richemont | 122 RUE CENTRALE 76390 | actividad | 2026 | [nº Bio 173948](https://annuaire.agencebio.org/operateur/173948) |
+| LES POTES AU LAIT | LES POTES AU LAIT | Roncherolles-Sur-Le-Vivier | 1197 ROUTE DE DARNETAL 76160 | actividad | 2026 | [nº Bio 63885](https://annuaire.agencebio.org/operateur/63885) |
+| CRETTE Enguerrand | CRETTE DE PALLUEL DARCEL ENGUERRAND | Roumare | 1391 Chemin du Grand Melmont 76480 | actividad | 2026 | [nº Bio 10553](https://annuaire.agencebio.org/operateur/10553) |
+| GAEC LES PRES D'ARTEMARE | GAEC LES PRES D'ARTEMARE | Saint-Vaast-Dieppedalle | 308 IMP D'ARTEMARE 76450 | actividad | 2026 | [nº Bio 111846](https://annuaire.agencebio.org/operateur/111846) |
+| ANTHORE Elisabeth | ANTHORE Elisabeth | Sasseville | Chévrerie du Vieux manoir 2Route du Sucre 76450 | actividad | 2026 | [nº Bio 117162](https://annuaire.agencebio.org/operateur/117162) |

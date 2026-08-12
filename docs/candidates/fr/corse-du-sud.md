@@ -38,3 +38,44 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | RINASCITA | MARIA CASANOVA | Levie | RUE SORBA 20170 LEVIE | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2016-11 | [SIREN 823505862](https://annuaire-entreprises.data.gouv.fr/entreprise/823505862) |
 | BISCUITERIE REVES D'ENFANTS | ELISA DENIS | Cozzano | 11 STRETTA DI NEIDDONI 20148 COZZANO | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2025-01 | [SIREN 102141801](https://annuaire-entreprises.data.gouv.fr/entreprise/102141801) |
 | BISCUITERIE ARTISANALE ARRIGHI-CARCOPINO | PAULE ARRIGHI | Sarrola-Carcopino | MANDRIOLO 20167 SARROLA-CARCOPINO | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2012-02 | [SIREN 539802017](https://annuaire-entreprises.data.gouv.fr/entreprise/539802017) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **20 candidatos nuevos** en este corte: 12 perfiles de explotación, 2 unidades manufactureras adicionales y 6 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| LA RIVIERE | Stéphane ROTILY FORCIOLI | Arbellara | 20110 Arbellara | A mi chemin entre Sartène et Propriano à 6 Km de la mer, sur l'exploitation agricole. En bordure de la rivière Rizzanese entre le pont génois de Spina… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/arbellara/ferme/la-riviere/161494) |
+| EARL FIORE DI LATTE | Johanna SOTON | Arro | 20151 Arro | Située dans la région du Cruzzini à Arbori Johanna Soton vous propose fromage de chèvre fermier au lait cru et charcuterie Corse. Installée au cœur… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/arro/ferme/earl-fiore-di-latte/357510) |
+| U PALMENTU | FRANCOIS VINCENTI | Bastelicaccia | U PALMENTU / 20129 Bastelicaccia | Producteur depuis l'an 2000, Francois vous accueille au coeur de son exploitation dans sa nouvelle fromagerie à Bastelicaccia route d'Ocana… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/bastelicaccia/ferme/u-palmentu/644618) |
+| Charcuterie MANNEI | Stéphane MANNEI | Bocognano | Corsaccia / 20136 Bocognano | Charmante petite charcuterie à l'ancienne (transmise depuis 1903), située au centre du village de Bocognano, à 30 mètre d'une fontaine monumentale. Notre… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/bocognano/ferme/charcuterie-mannei/437854) |
+| EQUI LIBRIU | KELLY VENOT | Cognocoli Monticchi | 20123 Cognocoli-Monticchi | Equi-Libriu est une ferme équestre située dans un cadre de pleine nature. Pour les amoureux de chevaux en liberté, du sport équestre sous toutes ses formes,… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/cognocoli-monticchi/ferme/equi-libriu/644810) |
+| Domaine de PISCIA | Marc et Christine FINIDORI | Figari | DOMAINE DE PISCIA / 20114 Figari | Le Domaine de Piscia surplombe la plaine de Figari et les cotes Sud de l'île à 28KM de Bonifaccio et 21KM de Porto Vecchio. Bâtisse en pierre isolée dans… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/figari/ferme/domaine-de-piscia/149451) |
+| LA BERGERIE U ROTOLU | JEAN FRANCOIS BRUNELLI | Grosseto Prugna | ROTOLO / 20166 Grosseto-Prugna | Dans leur petit atelier, situé à quelques kilomètres en retrait de la station balnéaire de Porticcio, Sylvie et son époux… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/grosseto-prugna/ferme/la-bergerie-u-rotolu/592218) |
+| CAPRA | GERALDINE GAVARINI | Peri | route de Péri / 20167 Peri | Géraldine Gavarini est productrice de fromage corse fermier. Elle réalise aussi du yaourt et du beurre au lait de chèvre, du… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/peri/ferme/capra/644837) |
+| SANT'ANTONE_ LA CAVE DES CORSAIRES | ANTOINE FUCHS | Piana | 20115 Piana | Installé à Piana, en Corse-du-Sud, Antoine Fuchs élève ses chèvres et transforme le lait à la ferme au sein… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/piana/ferme/sant-antone-la-cave-des-corsaires/679465) |
+| U PIAZILLE DI RUDONE | Xavier POLI | Rosazia | Place de l'église / 20121 Rosazia | Elevage porcin/Caprin, transformation formagère et charcuterie fermière "conservation Bio en cours" et vente sur place de fromage et de charcuterie.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/rosazia/ferme/u-piazille-di-rudone/380321) |
+| U GRANATU | Dominique Pantaloni | Tavera | 20163 Tavera | Située à Tavera, au cœur de la vallée de la Gravona, l’exploitation U Granatu est une exploitation authentique de l’intérieur… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/tavera/ferme/u-granatu/679378) |
+| CELLI Sebastien et Stephanie | Sebastien CELLI | Ucciani | 20133 Ucciani | Fromage de chèvre, brocciu Fromage de chèvre, brocciu | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/corse/corse-du-sud/ucciani/ferme/celli-sebastien-et-stephanie/380327) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| FROMAGERIE "A TROVA" | Alata | LD TROVA 20167 | `40178158800017` | agrément UE `2A.006.005` | [SIREN 401781588](https://annuaire-entreprises.data.gouv.fr/entreprise/401781588) |
+| COOPERATIVE FROMAGERE DU MOYEN TARAVO | Petreto-Bicchisano | RTE DE PORTO POLLO LD VIGNARACCIA 20140 | `31868775300034` | agrément UE `2A.211.004` | [SIREN 318687753](https://annuaire-entreprises.data.gouv.fr/entreprise/318687753) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| MAMELI JEAN ANDRE | MAMELI JERAN ANDRE | Ajaccio | Appt Castellani Qtier Saint Joseph 20090 | actividad | 2025 | [nº Bio 145993](https://annuaire.agencebio.org/operateur/145993) |
+| BOCOGNANO XAVIER | BOCOGNANO XAVIER | Cauro | LD Cardetu Plaine de St-Jean 20117 | actividad | 2026 | [nº Bio 150527](https://annuaire.agencebio.org/operateur/150527) |
+| FROMAGERIE DE MARIE | FROMAGERIE DE MARIE | Figari | Strada di Piscia 20114 | actividad | 2026 | [nº Bio 73516](https://annuaire.agencebio.org/operateur/73516) |
+| VALICELLA MARELLESI Pia | VALICELLA | Porto Vecchio | La Marine Route de Marina Village 20137 | actividad | 2026 | [nº Bio 143644](https://annuaire.agencebio.org/operateur/143644) |
+| ALBERTINI Jean-Luc | ALBERTINI JEAN LUC | Vico | Appricciani 20160 | actividad | 2026 | [nº Bio 48956](https://annuaire.agencebio.org/operateur/48956) |
+| LUGREZI Félix | LUGREZI FELIX | Villanova | Le Poggio - 20167 | actividad | 2026 | [nº Bio 170500](https://annuaire.agencebio.org/operateur/170500) |

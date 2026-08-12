@@ -27,3 +27,43 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 - **Atmosvert** — fuera de alcance: Vivero de permacultura que vende árboles, arbustos y otras plantas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/141505) · [fuente pública](https://www.atmosvert.fr/)
 - **Au jardin de Christine** — fuera de alcance: La única oferta publicada son plantones hortícolas, no alimentos ni bebidas. [Agence Bio](https://annuaire.agencebio.org/operateur/172340)
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **19 candidatos nuevos** en este corte: 4 unidades manufactureras adicionales y 15 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| FROMAGERIES PERREAULT | Ahun | BUSSEAU-SUR CREUSE 2 ROUTE DE BUSSEAU GARE 23150 | `31608562000052` | agrément UE `23.001.001` | [SIREN 316085620](https://annuaire-entreprises.data.gouv.fr/entreprise/316085620) |
+| SE CHAVEGRAND | Maison-Feyne | LASCOUX 23800 | `45041442000015` | agrément UE `23.117.001` | [SIREN 450414420](https://annuaire-entreprises.data.gouv.fr/entreprise/450414420) |
+| MONTAGNE IVANNE - LA FROMAGERIE D'IVANNE | Merinchal | 12 RUE DE LACHAUD 23420 | `94032635800014` | dérogation | [SIREN 940326358](https://annuaire-entreprises.data.gouv.fr/entreprise/940326358) |
+| FROMAGERIE DE VEDRENAS - LA FROMAGERIE DE VEDRENAS | Montboucher | VEDRENAS 528 ROUTE DES SOURCES 23400 | `83071377200010` | dérogation | [SIREN 830713772](https://annuaire-entreprises.data.gouv.fr/entreprise/830713772) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| DELFAU Pierre-Henri | DELFAU PIERRE HENRI | Azerables | LE MUR DES BROSSSES 23160 | actividad | 2026 | [nº Bio 46153](https://annuaire.agencebio.org/operateur/46153) |
+| GAEC DOMAINE DU TUMULUS | GAEC DOMAINE DU TUMULUS | Bonnat | LE POUYOU 23220 | actividad | 2025 | [nº Bio 24296](https://annuaire.agencebio.org/operateur/24296) |
+| VREDENBREGT Anna VREDENBREGT Anne-Lise | VREDENBREGT ANNA HELENA LISON | Charron | 1 PONT DE LA FORET 23700 | actividad | 2026 | [nº Bio 52528](https://annuaire.agencebio.org/operateur/52528) |
+| EARL L'ARBRE DE VIE | EARL L'ARBRE DE VIE | Clugnat | LA BARRE 23270 | actividad | 2025 | [nº Bio 152119](https://annuaire.agencebio.org/operateur/152119) |
+| BERGERIE DE LA CHAPELLE SAINTE FOY - DEGOSSELY Marc | DEGOSSELY MARC | Crozant | 1 la chapelle Ste Foy 23160 | actividad | 2026 | [nº Bio 107662](https://annuaire.agencebio.org/operateur/107662) |
+| FERME DE LA CALLUNE | FERME DE LA CALLUNE (SCEA) | Gentioux-Pigerolles | LES SALLES 23340 | actividad | 2026 | [nº Bio 300770](https://annuaire.agencebio.org/operateur/300770) |
+| GAEC FERME DES TILLEULS CREUSOISE | GAEC FERME DES TILLEULS CREUSOISE | Le Grand-Bourg | NIBOULEIX 23240 | actividad | 2026 | [nº Bio 487](https://annuaire.agencebio.org/operateur/487) |
+| GAEC Tragoscele | GAEC TRAGOSCELE | Magnat L'Etrange | 1 AU PONT 23260 | actividad | 2026 | [nº Bio 51386](https://annuaire.agencebio.org/operateur/51386) |
+| GAEC DE LA BRANDE | GAEC DE LA BRANDE | Maison-Feyne | 1 RUE PRINCIPALE 23800 | actividad | 2026 | [nº Bio 136745](https://annuaire.agencebio.org/operateur/136745) |
+| SCEA FERME DU PREVERT | SCEA FERME DU PREVERT | Maisonnisses | 2 MAZEIMARD 23150 | actividad | 2026 | [nº Bio 24624](https://annuaire.agencebio.org/operateur/24624) |
+| GIBERT DAMIEN | GIBERT DAMIEN | Reterre | LA FERME DU CABRI"O"LAIT 3 LE PUY SAUZET 23110 | actividad | 2026 | [nº Bio 102662](https://annuaire.agencebio.org/operateur/102662) |
+| EARL HISTOIRES DE LAITS | HISTOIRES DE LAITS | Saint-Martin-Sainte-Catherine | 4 LES MAS 23430 | actividad | 2025 | [nº Bio 58373](https://annuaire.agencebio.org/operateur/58373) |
+| GROSS ALAIN ALBERT | GROSS ALAIN ALBERT | Saint Moreil | La Vialle 23400 | actividad | 2026 | [nº Bio 139242](https://annuaire.agencebio.org/operateur/139242) |
+| DURAND MATTHIEU EMILE AUGUSTE | DURAND MATTHIEU EMILE AUGUSTE | Saint-Yrieix-La-Montagne | 12 SERRE 23460 | actividad | 2026 | [nº Bio 22158](https://annuaire.agencebio.org/operateur/22158) |
+| LOU SENDAROU (GAEC) | GAEC LOU SENDAROU | Soubrebost | LE MASMOUTARD 23250 | actividad | 2026 | [nº Bio 100191](https://annuaire.agencebio.org/operateur/100191) |

@@ -54,3 +54,11 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 ## Descartes documentados — 2026-08-11
 
 - **Jardin d'Ayo** — fuera de alcance: La gama pública actual son aceites esenciales, aceites vegetales y cosméticos, sin una oferta alimentaria que encaje. [Agence Bio](https://annuaire.agencebio.org/operateur/25196) · [fuente pública](https://www.jardindayo.com/)
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **0 candidatos nuevos** en este corte: 0 perfiles de explotación, 0 unidades manufactureras adicionales y 0 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+Las tres fuentes no dejan candidatos nuevos para esta zona tras la deduplicación. El resultado cero se conserva como cierre del corte, no como afirmación de que no pueda aparecer una fuente futura.

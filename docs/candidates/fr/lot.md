@@ -26,3 +26,61 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **37 candidatos nuevos** en este corte: 10 perfiles de explotación, 5 unidades manufactureras adicionales y 22 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| FERME DE RAILLETTE - Famille ARCOUTEL | Odile ARCOUTEL | Alvignac | Raillette / 46500 Alvignac | Située à mi-chemin entre Padirac et Rocamadour, l'exploitation familiale de Raillette est engagée dans une démarche de… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/alvignac/ferme/ferme-de-raillette-famille-arcoutel/359295) |
+| EARL DOURNES ESPINACO | Karine ESPINACO | Capdenac | 856 route de la Pierre levée / 46100 Capdenac | De la chèvre au cabécou, le goût authentique du Lot. Avec soin nous élevons près de 150 chèvres alpines. Leur… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/capdenac/ferme/earl-dournes-espinaco/679273) |
+| GAEC de Lagarouste | Christophe BONNET | Ginouillac | 46300 Ginouillac | Elevage de vaches Au coeur du Parc Naturel Régional des Causses du Quercy, la Ferme de Lagarouste est un élevage familial de vaches laitières.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/ginouillac/ferme/gaec-de-lagarouste/475303) |
+| FERME DU LAC DES TERMES | Charlotte Letient | Issendolus | 626 chemin de Gruffiel / 46500 Issendolus | Notre ferme familiale rassemble un troupeau de chèvres poitevines, un troupeau de vache jersiaises et un groupe de cochons, conduits en… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/issendolus/ferme/ferme-du-lac-des-termes/304862) |
+| GAEC des Champs Bons | Dominique CHAMBON | Lachapelle Auzac | GAEC des Champs Bons / 46200 Lachapelle-Auzac | Notre ferme est ouverte toute l'année, la traite est quotidienne et tout le lait y est transformé en fromage par nos soins. Exploitation… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/lachapelle-auzac/ferme/gaec-des-champs-bons/475061) |
+| FROMAGERIE LAHORE | Philippe LAHORE | Payrac | Fromagerie Lahore / 46350 Payrac | Venez découvrir la fromagerie Lahore, la ferme des chèvres qui pâturent. Une ferme familiale et authentique où nous fabriquons… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/payrac/ferme/fromagerie-lahore/409381) |
+| Ferme de Trespécoul | Sophie CHRISTOPHE | Peyrilles | 46310 / 46310 Peyrilles | La Ferme de Trespecoul éleve 30 vaches laitières sur 50 ha de pairies en Agriculture Biologique. Les vaches pâturent au minimum 8… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/peyrilles/ferme/ferme-de-trespecoul/539780) |
+| FERME DE VIGNE HAUTE | Eric CHAUFFETON | Reilhac | 277 chemin de vigne haute / 46500 Reilhac | Nous sommes heureux de vous accueillir dans notre ferme familiale sur les causses de Gramat, ou nous transformons toute notre production de lait de chèvres… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/reilhac/ferme/ferme-de-vigne-haute/506162) |
+| FERME DE LETOU | Vincent VALETTE | Saint Cirq Lapopie | Ferme de Létou / 46330 Saint-Cirq-Lapopie | Nichée au coeur d'une forêt verdoyante, à 2 pas de St Cirq Lapopie. Venez découvrir la production du fromage AOP Rocamadour… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/saint-cirq-lapopie/ferme/ferme-de-letou/567761) |
+| GAEC LE VAL DU MAZET | Carole GILBERT | Terrou | Le Mazet / 46120 Terrou | Savourez l’authenticité des fromages fermiers de Caroline, Estelle et Julien! Au cœur du Ségala lotois, le GAEC Le Val… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/lot/terrou/ferme/gaec-le-val-du-mazet/679283) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LES FERMIERS DU ROCAMADOUR | Alvignac | 668 RTE DE GRAMAT 46500 | `50340897300017` | agrément UE `46.003.003` | [SIREN 503408973](https://annuaire-entreprises.data.gouv.fr/entreprise/503408973) |
+| SOCIETE FROMAGERE DE LOUBRESSAC | Loubressac | VAILLES 46130 | `47951856500011` | agrément UE `46.177.001` | [SIREN 479518565](https://annuaire-entreprises.data.gouv.fr/entreprise/479518565) |
+| LA FROMAGERIE DU QUERCY | Montfaucon | 1219 ROUTE DE CAMPAGNAC 46240 | `38381434000014` | agrément UE `46.204.002` | [SIREN 383814340](https://annuaire-entreprises.data.gouv.fr/entreprise/383814340) |
+| JEANNE JEANNE - CHEZ DAME JEANNE | Prayssac | LIEU DIT AUX ROUGES 100 CHE DES NAUZES 46220 | `98327609800016` | dérogation | [SIREN 983276098](https://annuaire-entreprises.data.gouv.fr/entreprise/983276098) |
+| FERME LA BORIE D'IMBERT | Rocamadour | 2515 ROUTE DE LACAVE 46500 | `88759243400013` | agrément UE `46.240.008` | [SIREN 887592434](https://annuaire-entreprises.data.gouv.fr/entreprise/887592434) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| FERME DE LA HULOTTE | FERME DE LA HULOTTE | Cajarc | LD MARTIGNE 46160 | actividad | 2026 | [nº Bio 109633](https://annuaire.agencebio.org/operateur/109633) |
+| LA CHEVRERIE DE CASTELNAU CROS Clemence | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN LA CHEVRERIE DE CASTELNAU | Castelnau Montratier | Ferme Caudié 46170 | actividad | 2026 | [nº Bio 181817](https://annuaire.agencebio.org/operateur/181817) |
+| DE LA TRAULE | DE LA TRAULE | Durbans | LD LA TRAULE 46320 | actividad | 2026 | [nº Bio 145521](https://annuaire.agencebio.org/operateur/145521) |
+| LES CABRIOLES DE BALAJOU | LES CABRIOLES DE BALAJOU | Figeac | 147 route de Balajou 46100 | actividad | 2026 | [nº Bio 142600](https://annuaire.agencebio.org/operateur/142600) |
+| LA FERME EN PAILLE | LA FERME EN PAILLE | Gramat | Ravet Patrice Michèle Gratuze SCEA LA FERME EN PAILLE Le Gravier 46500 GRAMAT 46500 | actividad | 2026 | [nº Bio 140718](https://annuaire.agencebio.org/operateur/140718) |
+| GAEC LA DOURMELLE | GAEC LA DOURMELLE | Issepts | BAUZOU MAS DE BIGORRE 46320 | actividad | 2026 | [nº Bio 110802](https://annuaire.agencebio.org/operateur/110802) |
+| LA BELLE ESTIVE GENOT Frédéric et Agnès | LA BELLE ESTIVE | Lacapelle Marival | Lasfargues 46120 | actividad | 2026 | [nº Bio 45629](https://annuaire.agencebio.org/operateur/45629) |
+| GAEC LA FERME DE LA RAUZE | GAEC LA FERME DE LA RAUZE | Le Bourg | Les Tragneres 46120 | actividad | 2026 | [nº Bio 146934](https://annuaire.agencebio.org/operateur/146934) |
+| GAEC LA FERME DU CLOT | GAEC LA FERME DU CLOT | Les Arques | LD LEYRISSOU 46250 | actividad | 2026 | [nº Bio 53703](https://annuaire.agencebio.org/operateur/53703) |
+| LA FERME DU VIVANT | LA FERME DU VIVANT | Les Pechs Du Vers | CHEMIN DE BEL AIR 46360 | actividad | 2026 | [nº Bio 67287](https://annuaire.agencebio.org/operateur/67287) |
+| LA FERME DE CEVIN HELIN Sophie | LA FERME DE CEVIN | Lherm | Les estanels 46150 | actividad | 2026 | [nº Bio 110820](https://annuaire.agencebio.org/operateur/110820) |
+| GAEC DE LATAPOUNE | DE LATAPOUNE | Livernon | 447 ROUTE DU MAS DE LATAPOUNE 46320 | actividad | 2026 | [nº Bio 45980](https://annuaire.agencebio.org/operateur/45980) |
+| LA TERRE | LA TERRE | Livernon | 245 chemin de la Terre 46320 | actividad | 2026 | [nº Bio 146802](https://annuaire.agencebio.org/operateur/146802) |
+| GOYARD Morgane | GOYARD Morgane | Montfaucon | La ferme de Morgane - Coussard 46240 | actividad | 2026 | [nº Bio 39517](https://annuaire.agencebio.org/operateur/39517) |
+| CHRISTOPHE Sophie Ferme de Trespécoul | CHRISTOPHE SOPHIE | Peyrilles | LD TRESPECOUL 46310 | actividad | 2026 | [nº Bio 36723](https://annuaire.agencebio.org/operateur/36723) |
+| DE L AUTRE CHEVRE | GAEC DE L'AUTRE CHEVRE | Prudhomat | GAUBERT 46130 | actividad | 2026 | [nº Bio 155241](https://annuaire.agencebio.org/operateur/155241) |
+| ROCHE DIDIER | ROCHE DIDIER | Rocamadour | LE COUDERC 46500 | actividad | 2025 | [nº Bio 130453](https://annuaire.agencebio.org/operateur/130453) |
+| HANTRAYE MARIE-CHRISTINE | HANTRAYE MARIE-CHRISTINE | Saint-Bressou | LD LE PLANTADIS 46120 | actividad | 2026 | [nº Bio 58712](https://annuaire.agencebio.org/operateur/58712) |
+| LA FERME DES PETIOTS SCHUSTER Yvette et BALDY Julien | LA FERME DES PETIOTS | Saint-Denis-Catus | 235 CHE DE LA MOULINE 46150 | actividad | 2026 | [nº Bio 52503](https://annuaire.agencebio.org/operateur/52503) |
+| FERME DES GARIOTTES NIEULET Nicolas | FERME DES GARIOTTES | Saint-Martin-Labouval | 1718 Route de Nissac 46330 | actividad | 2026 | [nº Bio 13294](https://annuaire.agencebio.org/operateur/13294) |
+| LES PIEDS DANS L'HERBE | LES PIEDS DANS L'HERBE | Theminettes | LE BOURG 46120 | actividad | 2026 | [nº Bio 111841](https://annuaire.agencebio.org/operateur/111841) |
+| HUGON HERMINE | HUGON HERMINE | Viazac | LD LAROMIGUIERE 46100 | actividad | 2026 | [nº Bio 56357](https://annuaire.agencebio.org/operateur/56357) |

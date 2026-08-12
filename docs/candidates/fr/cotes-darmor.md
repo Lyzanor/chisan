@@ -33,3 +33,66 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | LA MAISON DES CAFES | TORREFACTEUR DE DINAN-VAL DE RANCE | Dinan | 11 RUE THIERS 22100 DINAN | Café | 10.83Z — Transformation du thé et du café | 2017-02 | [SIREN 828107912](https://annuaire-entreprises.data.gouv.fr/entreprise/828107912) |
 | CAREXQUIS | SARL BRIAND ET FILS | Guingamp | 18 BOULEVARD MENDES FRANCE 22200 GUINGAMP | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2008-09 | [SIREN 507608248](https://annuaire-entreprises.data.gouv.fr/entreprise/507608248) |
 | BISCUITERIE MENOU LES DELICES DE L'ARGOAT | ETABLISSEMENTS JACQUES MENOU | Plougonver | 16 RUE DE LA GARE 22810 PLOUGONVER | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 1980-01 | [SIREN 318402997](https://annuaire-entreprises.data.gouv.fr/entreprise/318402997) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **42 candidatos nuevos** en este corte: 7 unidades manufactureras adicionales y 35 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LAITERIE NOUVELLE DE L'ARGUENON | Crehen | BELLEVUE 22130 | `02555012000015` | agrément UE `22.049.001` | [SIREN 025550120](https://annuaire-entreprises.data.gouv.fr/entreprise/025550120) |
+| LAITERIE NOUVELLE DE L'ARGUENON | Crehen | 1 LA PLANCHE 22130 | `02555012000056` | agrément UE `22.049.017` | [SIREN 025550120](https://annuaire-entreprises.data.gouv.fr/entreprise/025550120) |
+| ENTREMONT ALLIANCE | Glomel | ZA DE GOPEREN 22110 | `32552045000280` | agrément UE `22.061.015` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+| QUENIAT GWENAELLE - LA TOMMEUH D'API | Loguivy-Plougras | LD QUENEQUEN VRAZ 22780 | `80459825800015` | dérogation | [SIREN 804598258](https://annuaire-entreprises.data.gouv.fr/entreprise/804598258) |
+| ENTREMONT ALLIANCE | Loudeac | ZI DEKERSUGUET RUE ARTHUR ENAUD 22600 | `32552045000231` | agrément UE `22.136.002` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+| LES FERMES VAUMADEUC - LE VAUMADEUC | Pleneuf-Val-Andre | 9 CHEMIN DU VAUMADEUC 22370 | `80967643000014` | agrément UE `22.186.001` | [SIREN 809676430](https://annuaire-entreprises.data.gouv.fr/entreprise/809676430) |
+| ENTREMONT ALLIANCE | Saint-Agathon | ZI DE BELLEVUE 22200 | `32552045000249` | agrément UE `22.272.001` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| FERME DES AULNAYS | EARL FERME DES AULNAYS | Evran | 23 LA TOUCHE 22630 | actividad | 2026 | [nº Bio 148025](https://annuaire.agencebio.org/operateur/148025) |
+| CHEVRERIE DE FREHEL | CHEVRERIE DE FREHEL | Frehel | Le Tertre Morgan 22240 | actividad | 2026 | [nº Bio 149694](https://annuaire.agencebio.org/operateur/149694) |
+| GAEC DE LA LAITERIE DE TREGORN | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU DE LA LAITERIE DE TREGORN | Glomel | LE MOULIN DE CRAZIUS - TREGORNAN 22110 | actividad | 2025 | [nº Bio 174514](https://annuaire.agencebio.org/operateur/174514) |
+| GAEC PORS DON | GAEC PORS DON | Gommenec H | PORS DON 22290 | actividad | 2026 | [nº Bio 62736](https://annuaire.agencebio.org/operateur/62736) |
+| DE TY LOSQUET | DE TY LOSQUET | Graces | TY LOSQUET 22200 | actividad | 2026 | [nº Bio 131880](https://annuaire.agencebio.org/operateur/131880) |
+| LA FERME DE LA DONAITERIE BLANCHARD Mickaël | LA FERME DE LA DONAITERIE | La Motte | LA DONAITERIE 22600 | actividad | 2026 | [nº Bio 110845](https://annuaire.agencebio.org/operateur/110845) |
+| GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN PAMPILLES ET CABRIOLES | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN PAMPILLES ET CABRIOLES | Lamballe-Armor | LA CROIX TRINCHANT 22400 | actividad | 2026 | [nº Bio 144385](https://annuaire.agencebio.org/operateur/144385) |
+| LA BERGERIE DE PENNKREC'H | LA BERGERIE DE PENN KREC'H | Landebaeron | 1 PENN KREC'H 22140 | actividad | 2026 | [nº Bio 5570](https://annuaire.agencebio.org/operateur/5570) |
+| EARL BERGERIE DE KROAZ MIN | EARL BERGERIE DE KROAZ MIN | Lannion | Croas Min route de Pleumeur 22300 | actividad | 2026 | [nº Bio 67340](https://annuaire.agencebio.org/operateur/67340) |
+| GAEC DE KIRIO | GAEC DE KIRIO | Lanvellec | Le Penker - Saint Carré 22420 | actividad | 2026 | [nº Bio 51332](https://annuaire.agencebio.org/operateur/51332) |
+| DECHERF Benjamin | DECHERF Benjamin | Le Quiou | LA FERME DE LA SALAMANDRE 18 La Cour Neuve 22630 | actividad | 2026 | [nº Bio 149019](https://annuaire.agencebio.org/operateur/149019) |
+| DU RHUN | CLOZEL YANN | Le Vieux Marche | LAUDREN Elise et CLOZEL Yann Rhun Faoues 22420 | actividad | 2026 | [nº Bio 104383](https://annuaire.agencebio.org/operateur/104383) |
+| GAEC FERME MAMM DOUAR | GAEC FERME MAMM DOUAR | Lescouet Gouarec | FERME MAMM DOUAR KERRESTO 22570 | actividad | 2026 | [nº Bio 59339](https://annuaire.agencebio.org/operateur/59339) |
+| POUILLET EDWARD | POUILLET EDWARD | Lescouet-Gouarec | PONT AR HAER 22570 | actividad | 2026 | [nº Bio 142174](https://annuaire.agencebio.org/operateur/142174) |
+| Ferme de Poulprenn | BOUGEROL JOCELYN | Mellionnec | LD POUL PRENN 22110 | actividad | 2026 | [nº Bio 150415](https://annuaire.agencebio.org/operateur/150415) |
+| GOSSELIN LOIC ROBERT HENRY | GOSSELIN LOIC ROBERT HENRY | Paimpol | 3 CHEMIN DE KERBIGUET 22500 | actividad | 2026 | [nº Bio 16088](https://annuaire.agencebio.org/operateur/16088) |
+| GAEC DU PONT PIVERT | GAEC DU PONT PIVERT | Plevenon | 21 rue du Pont Pivert 22240 | actividad | 2026 | [nº Bio 51838](https://annuaire.agencebio.org/operateur/51838) |
+| LA CHÈVRERIE DU CAP | DELEPLACE ERIC | Plevenon | LA VILLE HORIEUX 22240 | actividad | 2026 | [nº Bio 117219](https://annuaire.agencebio.org/operateur/117219) |
+| GAEC DE KERVOULIDIC | GAEC DE KERVOULIDIC | Plevin | 4 KERVOULIDIC 22340 | actividad | 2026 | [nº Bio 62964](https://annuaire.agencebio.org/operateur/62964) |
+| GAEC DU WERN | GAEC DU WERN | Ploubezre | LE LAUNAY 22300 | actividad | 2025 | [nº Bio 108413](https://annuaire.agencebio.org/operateur/108413) |
+| LA BERGERIE DU MENE | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU BERGERIE DU MENE | Plouguenast-Langast | LE CAS DE PERA 22150 | actividad | 2026 | [nº Bio 150267](https://annuaire.agencebio.org/operateur/150267) |
+| EARL LA FERME DE KERMOEL | EARL LA FERME DE KERMOEL | Plouguernevel | 2 Kervert 22110 | actividad | 2026 | [nº Bio 109616](https://annuaire.agencebio.org/operateur/109616) |
+| GAEC LE BUIS SONNANT | GROUPEMENT AGRICOLE D'XPLOITATION AGRICOLE LE BUIS SONNANT | Plouguernevel | KERLEAU - KERLEO 22110 | actividad | 2025 | [nº Bio 103510](https://annuaire.agencebio.org/operateur/103510) |
+| DORVEN MORGANE | DORVEN MORGANE | Plouguiel | LANNEC KERANO RUE DES 7 ILES 22220 | actividad | 2026 | [nº Bio 156483](https://annuaire.agencebio.org/operateur/156483) |
+| GAEC AR FROSTAILH | AR FROSTAILH | Plounévez-Moëdec | 11 KEREVEN 22810 | actividad | 2025 | [nº Bio 100701](https://annuaire.agencebio.org/operateur/100701) |
+| GAEC LA BERGERIE DU DOUR ELEGO | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN LA BERGERIE DU DOUR ELEGO | Plufur | Wazh Wenn 22310 | actividad | 2025 | [nº Bio 48991](https://annuaire.agencebio.org/operateur/48991) |
+| LA VIEILLE BRANCHE BORAUD Julien | LA VIEILLE BRANCHE | Pont-Melvez | KERNICOL 22390 | actividad | 2026 | [nº Bio 34848](https://annuaire.agencebio.org/operateur/34848) |
+| GAEC LA RAINETTE | GAEC LA RAINETTE | Rostrenen | KERBRAZ 22110 | actividad | 2026 | [nº Bio 111003](https://annuaire.agencebio.org/operateur/111003) |
+| CHEVRERIE LANN AR MOR BRIAND Christophe | GAEC CHEVRERIE LANN AR MOR | Trebeurden | Chemin du Goaquer 22560 | actividad | 2026 | [nº Bio 150181](https://annuaire.agencebio.org/operateur/150181) |
+| HERNU MARIE | HERNU MARIE | Treduder | 2 KERVAZIOU 22310 | actividad | 2026 | [nº Bio 110271](https://annuaire.agencebio.org/operateur/110271) |
+| GAEC BARIO'LAIT | GAEC BARIO'LAIT | Tregueux | LA PORTE ALLAIN 22950 | actividad | 2026 | [nº Bio 61303](https://annuaire.agencebio.org/operateur/61303) |
+| L'étable Filante | DE HAAS CLAUDINE | Tremargat | TOUL HOTON 22110 | actividad | 2026 | [nº Bio 67069](https://annuaire.agencebio.org/operateur/67069) |
+| La ferme de Boket Laezh | GAEC LA FERME BOKET LAEZH | Tremargat | 9 Hent Porz Ar C'Ham 22110 | actividad | 2025 | [nº Bio 129209](https://annuaire.agencebio.org/operateur/129209) |
+| LES CHEVRES DE KERGONAN LE BOEDEC Nolwenn & CASTREC Mathieu | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU LES CHEVRES DE KERGONAN | Tremargat | lieu dit Kergonan 22110 | actividad | 2026 | [nº Bio 22595](https://annuaire.agencebio.org/operateur/22595) |
+| DAHIREL MORGANE | DAHIREL MORGANE | Treogan | 3 LE BUZIT 22340 | actividad | 2025 | [nº Bio 19813](https://annuaire.agencebio.org/operateur/19813) |

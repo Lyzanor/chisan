@@ -27,3 +27,17 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | KUUURE | DAVID DOS SENTOS LENZA | Brunoy | BP 43 IMPASSE DE LA MAIRIE 91800 BRUNOY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 1995-10 | [SIREN 402270870](https://annuaire-entreprises.data.gouv.fr/entreprise/402270870) |
 | L'ATELIER DE STEPH | STEPHANIE VALLEE | Brétigny-sur-Orge | BATIMENT 5 LA MARINIERE 20 RUE ALBERT CAMUS 91220 BRETIGNY-SUR-ORGE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2025-03 | [SIREN 941300725](https://annuaire-entreprises.data.gouv.fr/entreprise/941300725) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Queda **1 candidato nuevo** en este corte: 0 perfiles de explotación, 0 unidades manufactureras adicionales y 1 explotación bio adicional. La clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| FERME DE POISSARD | FERME DE POISSARD | Roinville | ROUTE DE POISSARD 91410 | actividad | 2025 | [nº Bio 65855](https://annuaire.agencebio.org/operateur/65855) |
+
+- **Ferme de Poissard — en espera (revisada 2026-08-12).** La empresa caprina sigue activa y el [Ayuntamiento de Roinville](https://mairie-roinville.fr/inauguration-de-la-boulangerie) atribuye expresamente a Pauline Badin queso de cabra y miel elaborados en la commune. No se encontró teléfono, correo, web, red social ni otro canal público propio utilizable; se mantiene como candidata hasta disponer de un contacto o canal público verificable.

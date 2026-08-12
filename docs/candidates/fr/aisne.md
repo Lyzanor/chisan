@@ -32,3 +32,44 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | BMC | BRASSERIE DE LA MONTAGNE COURONNEE | Laon | 1 A RUE GEORGES ERMANT 02000 LAON | Cerveza | 11.05Z — Fabrication de bière | 2019-01 | [SIREN 847884822](https://annuaire-entreprises.data.gouv.fr/entreprise/847884822) |
 | JEAN FRANCOIS FERON CHOCOLATIER | CHOCOLATERIE FERON | Soissons | 4 RUE DE LA BUERIE 02200 SOISSONS | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2009-08 | [SIREN 514343037](https://annuaire-entreprises.data.gouv.fr/entreprise/514343037) |
 | L'ATELIER DE CLAIRE | CLAIRE BLANDIER | Tergnier | 4 CHEMIN DE BOISSY 02700 TERGNIER | Conservas | 10.39B — Transformation et conservation de fruits | 2019-11 | [SIREN 878423011](https://annuaire-entreprises.data.gouv.fr/entreprise/878423011) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **20 candidatos nuevos** en este corte: 8 perfiles de explotación, 6 unidades manufactureras adicionales y 6 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| La Fromagerie de la Haye | Louise DUFRENE | Armentieres Sur Ourcq | 7 rue de la Haye / 02210 Armentières-sur-Ourcq | La fromagerie de la Haye vous propose ses fromages 100% lait de vache : du frais, salé ou sucré, de la crème fraîche, des tommes… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/armentieres-sur-ourcq/ferme/la-fromagerie-de-la-haye/635016) |
+| Les Biquettes de la Bruyères | Stéphanie FAUVET | Dhuys Et Morin En Brie | 1 LES BOCHAGES D'EN BAS FONTENELLE EN BRIE / 02330 Dhuys et Morin-en-Brie | Vivez une expérience gourmande et authentique à la ferme !Plongez au cœur de la vie à la ferme et faites connaissance avec… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/dhuys-et-morin-en-brie/ferme/les-biquettes-de-la-bruyeres/677843) |
+| Les chèvres de Monsieur Julien | Romain JULIEN | Francilly Selency | 15 rue Bellevue / 02760 Francilly-Selency | Romain Julien est un producteur de lait de chèvres près de St-Quentin. Grâce au lait de ses chèvres monsieur Julien produit… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/francilly-selency/ferme/les-chevres-de-monsieur-julien/461590) |
+| La Ferme de la Fontaine Orion | Aurélie HALLEUX-LABROCHE | Haution | 1 rue Hurtebise / 02140 Haution | Dans une ferme typique de Thiérache, venez découvrir le fromage AOC du pays : le Maroilles. Bâtiments en briques, ancienne grange… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/haution/ferme/la-ferme-de-la-fontaine-orion/101199) |
+| La Chévr'ine | Séverine Foulon | Missy Les Pierrepont | 27 Grande Rue / 02350 Missy-lès-Pierrepont | Installée depuis 2022 à Missy lès Pierrepont, Séverine FOULON a un élevage de chèvres laitières Séverine… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/missy-les-pierrepont/ferme/la-chevr-ine/647237) |
+| Les Volailles Fermières de Montaigu EARL MARQUET | Daniel MARQUET | Montaigu | 21 rue de Laon / 02820 Montaigu | Dans notre ferme de 1857, les volailles, le porc et les lapins n'auront plus de secret pour vous. De l'élevage au consommateur. Aucun intermédiaire.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/montaigu/ferme/les-volailles-fermieres-de-montaigu-earl-marquet/131596) |
+| La Ferme de la Pâturelle | Carine Timmerman | Quierzy | 51, rue Henri Berthe / 02300 Quierzy | Dans la vallée de l'Oise, site classé par l'Europe pour la richesse de sa faune et de sa flore, notre ferme respecte les bonnes… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/quierzy/ferme/la-ferme-de-la-paturelle/187289) |
+| La Ferme du Val Vermand | Bérangère MOLET | Saint Martin Riviere | 4 rue du Val Vermand / 02110 Saint-Martin-Rivière | La Ferme du Val Vermand, producteurs de fromages yaourts et cosmétiques au lait de nos chèvres. Nous sommes égaement producteurs… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/aisne/saint-martin-riviere/ferme/la-ferme-du-val-vermand/646294) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LAILAND | Aubigny-Aux-Kaisnes | 9 RUE DE LA CROIX ST CLAUDE 02590 | `43922028600017` | agrément UE `02.032.001` | [SIREN 439220286](https://annuaire-entreprises.data.gouv.fr/entreprise/439220286) |
+| FROMAGERIE DU DOLLOIR | Chezy-Sur-Marne | 4- 4 CHE DU CSA, LES ROCHES 02570 | `91752779800016` | agrément UE `02.186.001` | [SIREN 917527798](https://annuaire-entreprises.data.gouv.fr/entreprise/917527798) |
+| LES FROMAGERS DE THIERACHE - FROMAGERIE DU NOUVION | Le Nouvion-En-Thierache | 28 RUE DE LA CROIX 02170 | `31533256900013` | agrément UE `02.558.002` | [SIREN 315332569](https://annuaire-entreprises.data.gouv.fr/entreprise/315332569) |
+| ETABLISSEMENTS LESIRE ET ROGER | Mondrepuis | 9 RUE DARDENNES 02500 | `33718090500024` | agrément UE `02.495.001` | [SIREN 337180905](https://annuaire-entreprises.data.gouv.fr/entreprise/337180905) |
+| LAITERIE DES ETANGS DE SOMMERON | Sommeron | RUE DE LA CAPELLE 02260 | `83578005700013` | agrément UE `02.725.001` | [SIREN 835780057](https://annuaire-entreprises.data.gouv.fr/entreprise/835780057) |
+| SARL LEDUC | Sommeron | 4 RTE DE LA CAPELLE 02260 | `34540559100016` | agrément UE `02.725.002` | [SIREN 345405591](https://annuaire-entreprises.data.gouv.fr/entreprise/345405591) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| EI TOMASIEWIEZ Ilona | EI Ilona Tomasiewiez | Charly-Sur-Marne | FERME DE LA GENETRE 02310 | actividad | 2026 | [nº Bio 55941](https://annuaire.agencebio.org/operateur/55941) |
+| OG FERME DE MOYEMBRIE | ORGANISME GESTION FERME MOYEMBRIE | Coucy Le Château Auffrique | 8 AVENUE ALTENKESSEL 02380 | actividad | 2026 | [nº Bio 145528](https://annuaire.agencebio.org/operateur/145528) |
+| FERME DU VAL FESTIF PILLAULT Emmanuel | PILLAULT EMMANUEL BASILE MICHEL | Froidmont Cohartille | 17 rue du calvaire 02270 | actividad | 2026 | [nº Bio 132933](https://annuaire.agencebio.org/operateur/132933) |
+| DERKENNE JESSIE | DERKENNE JESSIE | Mondrepuis | 26 RUE LES MONDREPUIS 02500 | actividad | 2026 | [nº Bio 170572](https://annuaire.agencebio.org/operateur/170572) |
+| FERME DE LA MARNOISE (EARL) | FERME DE LA MARNOISE | Mondrepuis | 47 RUE DARDENNES 02500 | actividad | 2026 | [nº Bio 140747](https://annuaire.agencebio.org/operateur/140747) |
+| PEERS JOSEPH & FANNY PEERS Joseph | EARL PEERS JOSEPH ET FANNY | Montlevon | La Maison Rouge 02330 | sede; unidad por confirmar | 2026 | [nº Bio 6228](https://annuaire.agencebio.org/operateur/6228) |

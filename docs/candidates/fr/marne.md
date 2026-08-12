@@ -27,3 +27,17 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | SMILE | CHOUJAA ALDAFFAIE | Reims | 9 RUE DES CAPUCINS 51100 REIMS | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2019-01 | [SIREN 847573722](https://annuaire-entreprises.data.gouv.fr/entreprise/847573722) |
 | LE SAFRAN DE CELESTE ET OCEANE | SANDRINE BERNIER-DELPORTE | Mourmelon-le-Grand | 120 RUE DU MARECHAL FOCH 51400 MOURMELON-LE-GRAND | Condimentos | 01.28Z — Culture de plantes à épices, aromatiques, médicinales | 2011-10 | [SIREN 538749714](https://annuaire-entreprises.data.gouv.fr/entreprise/538749714) |
 | DISTILLERIE GUILLON | G.W. | Val de Livre | HAM DE VERTUELLE 51150 VAL DE LIVRE | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2007-05 | [SIREN 497549675](https://annuaire-entreprises.data.gouv.fr/entreprise/497549675) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Queda **1 candidato nuevo** en este corte: 0 perfiles de explotación, 0 unidades manufactureras adicionales y 1 explotación bio adicional. Es una señal de descubrimiento, no un alta: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| LAUNEY LAUNEY Virginie | EARL LAUNEY | Les Essarts-Le-Vicomte | 7 LA PAIMBAUDIERE 51310 | actividad | 2026 | [nº Bio 142872](https://annuaire.agencebio.org/operateur/142872) |
+
+Pendiente tras la revisión del 2026-08-12: Agence Bio y el certificado Ecocert confirman la explotación lechera y categorías certificadas de transformación de leche, pero no una marca pública ni una oferta propia y actual de queso. Un anuncio de 2020 describía la transformación y la venta directa solo como un proyecto posible; hace falta una fuente pública vigente que pruebe que se materializó.

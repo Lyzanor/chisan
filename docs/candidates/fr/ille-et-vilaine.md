@@ -35,3 +35,74 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | LES HUILES DE SAINT MALO | — | Dol-de-Bretagne | 1 AVENUE DE LA BAIE 35120 DOL-DE-BRETAGNE | Aceite | 10.41B — Fabrication d'huiles et graisses raffinées | 2023-07 | [SIREN 978183531](https://annuaire-entreprises.data.gouv.fr/entreprise/978183531) |
 | BRUNO LE DERF | ATELIER BRUNO LE DERF | Vitré | ROUTE DES EAUX 35500 VITRE | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2012-06 | [SIREN 752732990](https://annuaire-entreprises.data.gouv.fr/entreprise/752732990) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **50 candidatos nuevos** en este corte: 13 perfiles de explotación, 8 unidades manufactureras adicionales y 29 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| FERME DU CHALET | Christelle, Pascal, Gwendal et Gurvan MANCEL | Acigne | Le Chalet / 35690 Acigné | Sur notre exploitation familiale proche de Rennes (nord-est), nous élevons des vaches laitières en agriculture biologique, nourries à… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/acigne/ferme/ferme-du-chalet/657236) |
+| LA PETITE CREMERIE DE SOPHIE | Sophie et Régis LERAY | Corps Nuds | 15 Le Bois Ricoult / 35150 Corps-Nuds | Nous aurons plaisir à vous accueillir sur notre exploitation laitière à Corps Nuds au Sud de Rennes. Nous transformons une partie de notre lait à la ferme.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/corps-nuds/ferme/la-petite-cremerie-de-sophie/640792) |
+| Chèvrerie de la Poterie | Catherine BOITEUX | Dinge | 31 La Poterie / 35440 Dingé | Notre ferme est située à mi-chemin entre Rennes et Saint Malo. Nous avons développé la vente directe grâce à… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/dinge/ferme/chevrerie-de-la-poterie/656998) |
+| FERME KER LANNOUE - FROMAGERIE FERMIERE | Yannick, Marie-Odile, François, Adélaïde et Eva BOUILLIS | Epiniac | 2 Lannoué / 35120 Epiniac | Petits et grands, soyez les bienvenus dans notre ferme familiale depuis 4 générations ! Diplômé d'une licence de Maître… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/epiniac/ferme/ferme-ker-lannoue-fromagerie-fermiere/622443) |
+| FERME DE LA SABLONNIERE | Stéphane GICQUEL | Guipry Messac | La Sablonnière / 35480 Guipry-Messac | La Ferme de la Sablonnière est située à Guipry entre Rennes et Redon, proche de la vallée de la Vilaine. Depuis 2003, Jérôme, David, Stéphane et David… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/guipry-messac/ferme/ferme-de-la-sablonniere/406121) |
+| La Chèvrerie d'Aurore | Aurore DONIO | Le Tronchet | Villegate / 35540 Le Tronchet | La chèvrerie d'Aurore est un elevage de chèvre Poitevine et Alpine bio. Tout le lait de mes chèvres est transformé à… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/le-tronchet/ferme/la-chevrerie-d-aurore/640415) |
+| La Ferme Lait Gaillardises | Aude et Pierrick GAILLARD | Maen Roch | La Desnière - MAEN ROCH / 35460 Maen Roch | Notre démarche, c’est la volonté de conserver la ferme familiale telle qu’elle est, et telle qu’elle nous a été transmise, tout en améliorant la valorisation… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/maen-roch/ferme/la-ferme-lait-gaillardises/311219) |
+| Ferme du p'tit bois | Anaïs BONHOMME Emmanuel, Karine De Rugy et | Meillac | Ferme du P'tit bois / 35270 Meillac | La ferme du P'tit bois vous propose ses fromages fermiers au lait cru. La ferme du P'tit bois est une exploitation agricole familiale engagée… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/meillac/ferme/ferme-du-p-tit-bois/440687) |
+| La ferme Fruit des Prés : Fromages & Glaces de Mellé | Angéline, Elisa, Quentin DUBOIS et Guillaume JOURDAIN Guillaume AUBER et | Melle | 70 La Guennerais / 35420 Mellé | Notre ferme laitière biologique se situe dans le pays de Fougères, au paysage préservé et riche en histoire. Elle vous propose… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/melle/ferme/la-ferme-fruit-des-pres-fromages-glaces-de-melle/669980) |
+| Les nouveaux Jardins d'orgères | Vincent BASCAZEAUX | Orgeres | 15 La Plumelière / 35230 Orgères | Bienvenue aux Nouveaux Jardins d’Orgères, ferme bio familiale située au cœur de l’Ille-et-Vilaine, à quelques… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/orgeres/ferme/les-nouveaux-jardins-d-orgeres/679163) |
+| La Ferme de Ville-Prêtre | Marie-Annick et Philippe RONSOUX | Pleine Fougeres | 6 bis, Ville Pretre / 35610 Pleine-Fougères | Depuis 2007, dans notre ferme familiale, nous vous proposons des fromages au lait cru et des produits laitiers. Vous pouvez visiter librement la ferme… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/pleine-fougeres/ferme/la-ferme-de-ville-pretre/267152) |
+| La Chèvrerie des Landes | Vincent DELATOUCHE | Saint Sauveur Des Landes | La croix / 35133 Saint-Sauveur-des-Landes | Venez à la ferme de la Chèvrerie des Landes pour découvrir des fromages de chèvres différents. Après avoir visité… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/saint-sauveur-des-landes/ferme/la-chevrerie-des-landes/653298) |
+| Ferme de Brocéliande | Marjolaine LEFEUVRE | Talensac | La Touche Rolland / 35160 Talensac | Bienvenue à la Ferme de Brocéliande ! Au cœur de la légendaire forêt de Brocéliande, terre de Merlin et… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/bretagne/ille-et-vilaine/talensac/ferme/ferme-de-broceliande/679442) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LA GERMILLOTTE | Andouille-Neuville | 1 RUE DU HERON CENTRE 35250 | `92227863500029` | agrément UE `35.003.001` | [SIREN 922278635](https://annuaire-entreprises.data.gouv.fr/entreprise/922278635) |
+| FROMAPAC | Chateaubourg | LES PORTES DE BRETAGNE LES PORTES DE BRETAGNE 35220 | `40218054100029` | agrément UE `35.068.004` | [SIREN 402180541](https://annuaire-entreprises.data.gouv.fr/entreprise/402180541) |
+| MALIGUEN | Chavagne | LE HAUT CRAMOUX 35310 | `89890790200016` | dérogation | [SIREN 898907902](https://annuaire-entreprises.data.gouv.fr/entreprise/898907902) |
+| FROMAGERIE DU MEZARD | Erbree | LE MEZARD 35500 | `51837631400010` | agrément UE `35.105.003` | [SIREN 518376314](https://annuaire-entreprises.data.gouv.fr/entreprise/518376314) |
+| MARIE-LINE LEROUX - LA LYRE A FROMAGE | Marpire | 19 B RUE DES BUCHETIERES 35220 | `88036608300025` | agrément UE `35.166.002` | [SIREN 880366083](https://annuaire-entreprises.data.gouv.fr/entreprise/880366083) |
+| ENTREMONT ALLIANCE | Montauban-De-Bretagne | AV DE LA GARE 35360 | `32552045000082` | agrément UE `35.184.003` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+| SOCIETE FROMAGERE DE RETIERS | Retiers | FROMY 35240 | `40303232900019` | agrément UE `35.239.001` | [SIREN 403032329](https://annuaire-entreprises.data.gouv.fr/entreprise/403032329) |
+| HICKS ERICA | Treverien | LA CHAPELLE TREVINAL 35190 | `48424194800013` | dérogation | [SIREN 484241948](https://annuaire-entreprises.data.gouv.fr/entreprise/484241948) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| CHALET (GAEC DU) | GAEC DU CHALET | Acigne | LD LE CHALET 35690 | actividad | 2025 | [nº Bio 10535](https://annuaire.agencebio.org/operateur/10535) |
+| EARL LA CHEVRERIE D'AMANLIS | EARL LA CHEVRERIE D'AMANLIS | Amanlis | 4 LE PATIS LOYER 35150 | actividad | 2026 | [nº Bio 10147](https://annuaire.agencebio.org/operateur/10147) |
+| la ferme du grand pâtis (GAEC ) | GAEC LA FERME DU GRAND PATIS | Bais | GAEC Les Charmes Mme et Mr RUBEILLON Michel et Yolande Le Grand Patis Godeloup 35680 | actividad | 2026 | [nº Bio 106224](https://annuaire.agencebio.org/operateur/106224) |
+| EARL DE MESNEUF | EARL DE MESNEUF | Bourgbarre | 7 LD MESNEUF 35230 | actividad | 2026 | [nº Bio 158350](https://annuaire.agencebio.org/operateur/158350) |
+| LERAY Aurélien | Aurélien Leray | Chanteloup | L ETANG 35150 | actividad | 2026 | [nº Bio 16071](https://annuaire.agencebio.org/operateur/16071) |
+| GAEC FERME DE LA BERTRIE | GAEC FERME DE LA BERTRIE | Domalain | LD LA BERTRIE 35680 | actividad | 2025 | [nº Bio 103033](https://annuaire.agencebio.org/operateur/103033) |
+| LEMOINE SUzanna | Ty Bufala | Erbree | L AUFRAIRIE 35500 | actividad | 2025 | [nº Bio 61757](https://annuaire.agencebio.org/operateur/61757) |
+| DES CLOCHETTES | DES CLOCHETTES | Erce-Pres-Liffre | 14 NOYALET 35340 | actividad | 2026 | [nº Bio 55458](https://annuaire.agencebio.org/operateur/55458) |
+| GAEC DE LA REINE DES PRES | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE DE LA REINE DES PRES | Gahard | LA MAZURE 35490 | actividad | 2025 | [nº Bio 129161](https://annuaire.agencebio.org/operateur/129161) |
+| GAEC DE LA PINAIS | GAEC DE LA PINAIS | Guipry-Messac | 23 LA PINAIS 35480 | actividad | 2026 | [nº Bio 149178](https://annuaire.agencebio.org/operateur/149178) |
+| GAEC LA FERME DU GUYOULT | GAEC LA FERME DU GUYOULT | La Boussac | 12 LA CLAYE 35120 | actividad | 2026 | [nº Bio 66997](https://annuaire.agencebio.org/operateur/66997) |
+| EARL LA CHAINE | EARL LA CHAINE | La Chapelle-Saint-Aubert | 8 LE BOIS GILLES LA CHAINE 35140 | actividad | 2026 | [nº Bio 171830](https://annuaire.agencebio.org/operateur/171830) |
+| HERVE HELENE MARION JACQUELINE | HERVE HELENE MARION JACQUELINE | Laille | 16 LA ROUESNAIS 35890 | actividad | 2025 | [nº Bio 159541](https://annuaire.agencebio.org/operateur/159541) |
+| LARCHER GUILLAUME | LARCHER GUILLAUME | Lassy | LA CHAPINAIS 35580 | actividad | 2026 | [nº Bio 101006](https://annuaire.agencebio.org/operateur/101006) |
+| VANDEWALLE SOPHIE GENEVIEVE JACQUELINE | VANDEWALLE SOPHIE GENEVIEVE JACQUELINE | Le Minihic-Sur-Rance | LE CLOS DU PRESSOIR 35870 | actividad | 2026 | [nº Bio 23591](https://annuaire.agencebio.org/operateur/23591) |
+| GAEC LA CHEVRERIE DE LA RIVIERE | LA CHEVRERIE DE LA RIVIERE | Le Theil De Bretagne | LA CHEVRERIE DE LA RIVIERE - LA RIVIERE 35240 | actividad | 2025 | [nº Bio 44404](https://annuaire.agencebio.org/operateur/44404) |
+| GAEC KER BREGERE | GAEC KER BREGERE | Maxent | 21 LIEU DIT LANDROUIN 35380 | actividad | 2025 | [nº Bio 106877](https://annuaire.agencebio.org/operateur/106877) |
+| GRANDAIS Jérôme | GRANDAIS JEROME ETIENNE MICHEL | Miniac Morvan | 62 la Ville Aubry 35540 | actividad | 2025 | [nº Bio 8885](https://annuaire.agencebio.org/operateur/8885) |
+| LA FERME DE L'HOTIE | HIGNET LAURENT GILBERT ANDRE | Paimpont | 208 LA TOUCHE GUERIN 35380 | actividad | 2026 | [nº Bio 154572](https://annuaire.agencebio.org/operateur/154572) |
+| GAEC DU HERON | GAEC DU HERON | Pire-Chance | LA LANDE D'HEREUX 35150 | actividad | 2026 | [nº Bio 36362](https://annuaire.agencebio.org/operateur/36362) |
+| EARL AU PRE DE LA TERRE | EARL AU PRE DE LA TERRE | Plélanle Grand | 4 le pas mainguy 35380 | actividad | 2025 | [nº Bio 4534](https://annuaire.agencebio.org/operateur/4534) |
+| GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU FERME DE LA CHESNAYE | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU FERME DE LA CHESNAYE | Plesder | Le chesnaye 35720 | actividad | 2026 | [nº Bio 103028](https://annuaire.agencebio.org/operateur/103028) |
+| GAEC MAXSOPOLO | GAEC MAXSOPOLO | Rannee | LA RIVIERE 35130 | actividad | 2025 | [nº Bio 105578](https://annuaire.agencebio.org/operateur/105578) |
+| LA FERME DES 4 VENTS | JUHEL JEAN-CLAUDE GERARD RENE | Saint Broladre | La Villemain 35120 | actividad | 2026 | [nº Bio 110870](https://annuaire.agencebio.org/operateur/110870) |
+| CELLIER Timothée | CELLIER TIMOTHEE OLIVIER | Saint M'Herve | HERMEILLON 35500 | actividad | 2026 | [nº Bio 20949](https://annuaire.agencebio.org/operateur/20949) |
+| POMEL AUDREY CORINNE CECILE | POMEL AUDREY CORINNE CECILE | Saint-Malo-De-Phily | 4 LE PETIT BOUEXIC 35480 | actividad | 2026 | [nº Bio 60250](https://annuaire.agencebio.org/operateur/60250) |
+| DES MARGATIERS THIEULANT Arnaud et Torres Marie | GAEC DES MARGATIERS | Saint Suliac | La Crèmerie de Saint Suliac Malequere 35430 | actividad | 2026 | [nº Bio 105102](https://annuaire.agencebio.org/operateur/105102) |
+| GAEC DE LA BELLE ETOILE | GAEC DE LA BELLE ETOILE | Sens De Bretagne | LA CHAUVELAIS 35490 | actividad | 2025 | [nº Bio 117859](https://annuaire.agencebio.org/operateur/117859) |
+| GAEC LA CHEVRERIE DES PERRIERES | GAEC LA CHEVRERIE DES PERRIERES | Ste Anne Sur Vilaine | 25 ENTRELANDES 35390 | actividad | 2025 | [nº Bio 100565](https://annuaire.agencebio.org/operateur/100565) |

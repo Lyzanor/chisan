@@ -33,3 +33,38 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | LE MOULIN A CAFE | ISABELLE PEZARD | Saint-Amand-Montrond | 14 RUE PORTE MUTIN 18200 SAINT-AMAND-MONTROND | Café | 10.83Z — Transformation du thé et du café | 2005-02 | [SIREN 480831627](https://annuaire-entreprises.data.gouv.fr/entreprise/480831627) |
 | MICRO BRASSERIE VERIDIK | MAXIME LEBOEUF | Mehun-sur-Yèvre | 119 AVENUE JEAN CHATELET 18500 MEHUN-SUR-YEVRE | Cerveza | 11.05Z — Fabrication de bière | 2020-03 | [SIREN 882606338](https://annuaire-entreprises.data.gouv.fr/entreprise/882606338) · [web sin contrastar](https://www.facebook.com/61565728241745/) |
 | CONFISERIE CHARLES VII CHOCOLATERIE DAME AGNES | NICOLAS PIERRE VIOLLET | Bourges | 14 CHEMIN LEGNIER 18000 BOURGES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2006-03 | [SIREN 488790858](https://annuaire-entreprises.data.gouv.fr/entreprise/488790858) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **16 candidatos nuevos** en este corte: 2 perfiles de explotación, 6 unidades manufactureras adicionales y 8 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LES 13 BLES | Loye-Sur-Arnon | 6 RUE DES 13 BLES 18170 | `79309572000017` | dérogation | [SIREN 793095720](https://annuaire-entreprises.data.gouv.fr/entreprise/793095720) |
+| EUR PRO DU CHER | Lunery | LD DOMAINE DE CHAMPROY 18400 | `48204623200013` | agrément UE `18.133.050` | [SIREN 482046232](https://annuaire-entreprises.data.gouv.fr/entreprise/482046232) |
+| FROMAGERIE D ORVAL | Orval | 23 RTE DE CULAN 18200 | `32917541800014` | agrément UE `18.172.050` | [SIREN 329175418](https://annuaire-entreprises.data.gouv.fr/entreprise/329175418) |
+| LAITERIES H. TRIBALLAT | Rians | 650 RTE DE MALVETTE 18220 | `58372064400017` | agrément UE `18.194.050` | [SIREN 583720644](https://annuaire-entreprises.data.gouv.fr/entreprise/583720644) |
+| DUBOIS ROMAIN - ROMAIN DUBOIS | Saint-Satur | RUE DES CHAMPS 18300 | `78859125300018` | agrément UE `18.233.050` | [SIREN 788591253](https://annuaire-entreprises.data.gouv.fr/entreprise/788591253) |
+| ETABLISSEMENTS DUBOIS-BOULAY | Sancerre | CHAVIGNOL 18300 | `69372026000019` | agrément UE `18.241.051` | [SIREN 693720260](https://annuaire-entreprises.data.gouv.fr/entreprise/693720260) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| Gaec Des étangs | GAEC DES ETANGS | Ardenais | 84 Route des Etangs 18170 | actividad | 2026 | [nº Bio 47031](https://annuaire.agencebio.org/operateur/47031) |
+| GAEC BIO BOSKA | GAEC BIO BOSKA | Chassy | Domaine de Villiers 18800 | actividad | 2026 | [nº Bio 150108](https://annuaire.agencebio.org/operateur/150108) |
+| BEDU Anaïs | BEDU ANAIS | Ivoy-Le-Pre | LD LE MOULIN DE LA PIERRE 18380 | actividad | 2026 | [nº Bio 37482](https://annuaire.agencebio.org/operateur/37482) |
+| CLEMENTINE CHALLET | CHALLET CLEMENTINE MARIE | Loye Sur Arnon | LA PATUROLLERIE 18170 | actividad | 2026 | [nº Bio 46456](https://annuaire.agencebio.org/operateur/46456) |
+| EARL LA FERME DES 13 BLES | EARL LA FERME DES 13 BLES | Loye-Sur-Arnon | 1 LA PLACE 18170 | actividad | 2026 | [nº Bio 305759](https://annuaire.agencebio.org/operateur/305759) |
+| BILLON Béatrice | BILLON Béatrice | Saint-Laurent | RTE DE VIGNOUX SUR BARANGEON 18330 | actividad | 2026 | [nº Bio 150658](https://annuaire.agencebio.org/operateur/150658) |
+| HURAND JULIEN NICOLAS | HURAND JULIEN NICOLAS | Saint Vitte | 41 route de la Forge 18360 | actividad | 2026 | [nº Bio 28725](https://annuaire.agencebio.org/operateur/28725) |
+| GAEC DU CARROIR | GAEC DU CARROIR | Sidiailles | 12 Route des Hauts de la Varenne 18270 | actividad | 2026 | [nº Bio 148953](https://annuaire.agencebio.org/operateur/148953) |

@@ -28,3 +28,29 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | CHAMBOULE TOUT | VERONIQUE CHELLIT | La Rochelle | 20 RUE GILL 17000 LA ROCHELLE | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2013-02 | [SIREN 791153166](https://annuaire-entreprises.data.gouv.fr/entreprise/791153166) |
 | VICTORIA'S JUICES | VICTORIA TAMBURRINI | Périgny | 34 RUE DES CHARMES 17180 PERIGNY | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2022-07 | [SIREN 914952239](https://annuaire-entreprises.data.gouv.fr/entreprise/914952239) |
 | LA SALINE AUX 4 VENTS | LAURE MORISSET ROBIGO | Saint-Georges-d'Oléron | CHERAY 4 CANTON DE LA GUERENNE 17190 SAINT-GEORGES-D'OLERON | Condimentos | 08.93Z — Production de sel | 2021-07 | [SIREN 901428029](https://annuaire-entreprises.data.gouv.fr/entreprise/901428029) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **10 candidatos nuevos** en este corte: 2 unidades manufactureras y 8 explotaciones bio. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| TONTON FROMAGE | Nere | LIEU-DIT M 9 ROUTE DE LA VALLEE 17510 | `99006434700018` | agrément UE `17.257.003` | [SIREN 990064347](https://annuaire-entreprises.data.gouv.fr/entreprise/990064347) |
+| LE PETIT TAUGONNAIS | Taugon | 13 RUE DE L AUNIS 17170 | `84776789400029` | dérogation | [SIREN 847767894](https://annuaire-entreprises.data.gouv.fr/entreprise/847767894) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| HERAUD Roxane | HERAUD Roxanne | Cercoux | 3 Route de Quillet 17270 | actividad | 2026 | [nº Bio 52921](https://annuaire.agencebio.org/operateur/52921) |
+| LANOUE PAULINE MATHILDE | LANOUE PAULINE MATHILDE | Clion | 15 RUE DE LANSAC 17240 | actividad | 2026 | [nº Bio 21468](https://annuaire.agencebio.org/operateur/21468) |
+| BISSONNET FRANCOIS JEAN MARIE | BISSONNET FRANCOIS JEAN MARIE | Epargnes | LE MAINE SUR JARD 17120 | actividad | 2025 | [nº Bio 129568](https://annuaire.agencebio.org/operateur/129568) |
+| BODARD (GAEC) | BODARD | La Clotte | 13 RTE DE LA CHAMBONNERIE 17360 | actividad | 2026 | [nº Bio 170893](https://annuaire.agencebio.org/operateur/170893) |
+| EARL LA RONDELLERIE | EARL LA RONDELLERIE | Sablonceaux | LA RONDELLERIE 17600 | actividad | 2026 | [nº Bio 140883](https://annuaire.agencebio.org/operateur/140883) |
+| SCEA LES GLYCINES | SCEA LES GLYCINES | Saint-Hilaire-De-Villefranche | 3 RUE DES GLYCINES 17770 | actividad | 2026 | [nº Bio 60678](https://annuaire.agencebio.org/operateur/60678) |
+| STEPHANIE MASSON | MASSON STEPHANIE PAULE CARINE | Saint-Thomas-De-Conac | 35 RTE BASSE 17150 | actividad | 2025 | [nº Bio 54327](https://annuaire.agencebio.org/operateur/54327) |
+| BABIN Sébastien | BABIN Sébastien | Saint Xandre | 14 allée Candé 17138 | actividad | 2026 | [nº Bio 140612](https://annuaire.agencebio.org/operateur/140612) |

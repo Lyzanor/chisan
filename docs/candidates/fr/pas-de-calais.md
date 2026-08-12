@@ -32,3 +32,42 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | FLEUR DE SEL | FLEUR DE SEL DES 2 CAPS | Les Attaques | 1872 RUE DE L'ECLUSE CARREE 62730 LES ATTAQUES | Condimentos | 08.93Z — Production de sel | 2017-02 | [SIREN 827731217](https://annuaire-entreprises.data.gouv.fr/entreprise/827731217) |
 | LA MANUFACTURE DU TOUQUET | INALTO | Le Touquet-Paris-Plage | 29 RUE SAINT-LOUIS 62520 LE TOUQUET-PARIS-PLAGE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2015-09 | [SIREN 813471901](https://annuaire-entreprises.data.gouv.fr/entreprise/813471901) |
 | BISCUITERIE EN NORD, SALAINORD | BISCUITERIE EN NORD | Tournehem-sur-la-Hem | 117 RUE DE L'ETANG 62890 TOURNEHEM-SUR-LA-HEM | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2013-09 | [SIREN 794950931](https://annuaire-entreprises.data.gouv.fr/entreprise/794950931) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **18 candidatos nuevos** en este corte: 5 perfiles de explotación, 4 unidades manufactureras adicionales y 9 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| E.A.R.L Leduc | Nicolas Leduc | Brunembert | Rue du Wint / 62240 Brunembert | Vous aimez les pommes ? Alors venez les découvrir sous toutes leurs formes. Nicolas et Mickael sont passionnés et les cultivent en agriculture… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/pas-de-calais/brunembert/ferme/e-a-r-l-leduc/103215) |
+| La Chevriette | Christine Lesay | Framecourt | 27, rue pricipale / 62130 Framecourt | "Qu'elle était jolie avec sa barbiche de sous-officier, ses sabots noirs et luisants..."Bien sûr en venant visiter "La Chevriette", vous ne verrez pas… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/pas-de-calais/framecourt/ferme/la-chevriette/137111) |
+| La Ferme du XVIIe Siècle | Geneviève et Hugues Carlu | Frencq | 6, grande rue / 62630 Frencq | Nos fromages vous séduiront! Venez les découvrir! A la ferme du XVIIème siècle, Geneviève fabrique des fromages au lait entier à pâte pressée. Les spécialités… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/pas-de-calais/frencq/ferme/la-ferme-du-xviie-siecle/109808) |
+| FERME LEBRUN | Pascal Lebrun | Oignies | 9 rue Jules Guesde / 62590 Oignies | Nous vous accueillons dans notre point de vente à la ferme où vous découvrirez notre gamme de produits locaux, notamment les produits laitiers avec le… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/pas-de-calais/oignies/ferme/ferme-lebrun/618308) |
+| Trésors du Puits du Sart | Christèle et Bertrand Pâques | Saint Martin Boulogne | Lieu dit Le Bédouatre / 62280 Saint-Martin-Boulogne | Venez découvrir quelques bons plats régionaux et quelques spécialités à base de canard dont Christelle a le secret ainsi que les produits laitiers. Sur… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/pas-de-calais/saint-martin-boulogne/ferme/tresors-du-puits-du-sart/161201) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LES TROIS BASTIONS | Arras | 99 ALL DE LA CITADELLE 62000 | `89893443500014` | agrément UE `62.041.030` | [SIREN 898934435](https://annuaire-entreprises.data.gouv.fr/entreprise/898934435) |
+| MIENNEE ANNE - LA FROMAGERIE DE BELMEIS | Beaumetz-Les-Aire | BIS 10 B RUE D'AIRE 62960 | `82501272700012` | dérogation | [SIREN 825012727](https://annuaire-entreprises.data.gouv.fr/entreprise/825012727) |
+| FROMAGERIE SAINTE GODELEINE | Wierre-Effroy | LD FERME AUBERGE DU VERT 62720 | `43400622700012` | agrément UE `62.889.030` | [SIREN 434006227](https://annuaire-entreprises.data.gouv.fr/entreprise/434006227) |
+| FROMAGERIE SAINTE GODELEINE | Wierre-Effroy | LIEUDIT LES COUTURES 62720 | `43400622700020` | agrément UE `62.889.001` | [SIREN 434006227](https://annuaire-entreprises.data.gouv.fr/entreprise/434006227) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| GAEC DU BREUCQ | GAEC DU BREUCQ | Conteville-Les-Boulogne | 524 RUE DES FONTENETTES 62126 | actividad | 2026 | [nº Bio 300489](https://annuaire.agencebio.org/operateur/300489) |
+| LEMAIRE NICOLAS | LEMAIRE NICOLAS | Fressin | 43 RUE DE LA LOMBARDIE 62140 | actividad | 2026 | [nº Bio 9030](https://annuaire.agencebio.org/operateur/9030) |
+| DU BAS-LOQUIN DUSAUTOIR Benoit | SOCIETE CIVILE D'EXPLOITATION AGRICOLE DU BAS LOQUIN | Haut-Loquin | 38 RUE DU BAS LOQUIN 62850 | actividad | 2026 | [nº Bio 11527](https://annuaire.agencebio.org/operateur/11527) |
+| DELDICQUE PIERRE | DELDICQUE | Helfaut | 94 RUE DU HAPSART 62570 | actividad | 2026 | [nº Bio 105174](https://annuaire.agencebio.org/operateur/105174) |
+| LE JARDIN D'ELODIE DEMARTHE Elodie | DEMARTHE ELODIE RAYMONDE ODETTE | Helfaut | 422 RUE PROFONDE 62570 | actividad | 2026 | [nº Bio 148978](https://annuaire.agencebio.org/operateur/148978) |
+| LAITS FROMAGERS DU BOULONNAIS (SAS) | LAITS FROMAGERS DU BOULONNAIS | Herbinghen | 330 IMPASSE DU PIRE ALLER 1061 RUE PRINCIPALE 62850 | actividad | 2025 | [nº Bio 45125](https://annuaire.agencebio.org/operateur/45125) |
+| MAGNIEZ Valérie | MAGNIEZ VALERIE CLAIRE | Hesmond | 28 RTE D'EMBRY 62990 | actividad | 2026 | [nº Bio 112110](https://annuaire.agencebio.org/operateur/112110) |
+| GAEC FERME DES TILLEULS CREUSOISE | GAEC FERME DES TILLEULS CREUSOISE | La Thieuloye | 55 Rue du 8 Mai 62130 | actividad | 2026 | [nº Bio 487](https://annuaire.agencebio.org/operateur/487) |
+| LINGRAND LINGRAND Hervé | GAEC LINGRAND | Leforest | 55 RUE JEAN JAURES 62790 | actividad | 2026 | [nº Bio 111989](https://annuaire.agencebio.org/operateur/111989) |

@@ -33,3 +33,54 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | GUIDO'S ROLLS/CABANE GUIDO | GUIDO FAVROU | La Tranche-sur-Mer | SKATE PARK RUE DU PERTHUIS BRETON 85360 LA TRANCHE-SUR-MER | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 1990-03 | [SIREN 353789753](https://annuaire-entreprises.data.gouv.fr/entreprise/353789753) |
 | L'ATELIER DU FRUIT | ERIC BEZRUKI | Coëx | 15 RUE LA PETITE GROUINIERE 85220 COEX | Conservas | 10.39B — Transformation et conservation de fruits | 1992-07 | [SIREN 387811268](https://annuaire-entreprises.data.gouv.fr/entreprise/387811268) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **30 candidatos nuevos** en este corte: 9 perfiles de explotación, 5 unidades manufactureras adicionales y 16 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| La Chèvre du Vrizon | Julien MAILLAUD | Benet | 80 route de Bouillé-Courdault / 85490 Benet | Julien et Franck élèvent un troupeau de 170 chèvres de race Saanen et 7 vaches de race Jersiaise.Ils vous proposent toute une gamme de fromages de chèvre… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/benet/ferme/la-chevre-du-vrizon/419020) |
+| Les Petits Maraichins | Julie PEROCHEAU | Bois De Cene | 2138 route du grand marais / 85710 Bois-de-Céné | Bienvenue chez les Petits Maraichins ! Nous sommes au coeur du marais breton vendéen. Eleveurs de vaches laitières, nous sommes la 3ème… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/bois-de-cene/ferme/les-petits-maraichins/679101) |
+| La Marmite Fromagère | Amélie Chataigner | La Gaubretiere | La Samillière / 85130 La Gaubretière | Amélie, Kévin et Mickaël ont démarré l'aventure de la Marmite Fromagère courant 2025. La Marmite Fromagère,… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/la-gaubretiere/ferme/la-marmite-fromagere/679081) |
+| La Ferme de la Rochette | Audrey et David Chabot | Le Bernard | rue de la plaine / 85560 Le Bernard | Nous sommes producteurs laitiers et situés sur la commune du Bernard en Vendée. Nous proposons une offre diversifiée de produits… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/le-bernard/ferme/la-ferme-de-la-rochette/621298) |
+| La Ferme de Nermoux | Mathilde COSSON | Nalliers | NERMOUX / 85370 Nalliers | La ferme de Nermoux, ce sont des fromages au lait de vache bio produits à Nalliers, au nord du Parc Naturel Régional du Marais Poitevin.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/nalliers/ferme/la-ferme-de-nermoux/371215) |
+| Fromagerie de Rié | Jimmy RENAUD | Notre Dame De Riez | 260 route de Commequiers / 85270 Notre-Dame-de-Riez | Au demeurant, c'est une histoire de famille. Nous sommes 2 frères, Jimmy et Julien, récemment installés à Notre Dame de… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/notre-dame-de-riez/ferme/fromagerie-de-rie/653400) |
+| Ferme du Pinier | Marie-Monique, Joseph-Marie, Charles, Nicolas et Cassandra ALLETRU | Saint Martin Lars En Sainte Hermine | 85210 Saint-Martin-Lars-en-Sainte-Hermine | Marie-Monique et Cassandra fabriquent des fromages de vache dans un laboratoire spécialement aménagé sur la ferme en prolongement de la laiterie. Elles… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/saint-martin-lars-en-sainte-hermine/ferme/ferme-du-pinier/459516) |
+| La Laiterie de Flavie | Laure JACQUES, Marie et Olivier GIRARD | Sainte Flaive Des Loups | la poitevinière / 85150 Sainte-Flaive-des-Loups | La Laiterie de Flavie, vous connaissez ? C’est laquelle des productrices Flavie ? Petit indice, c’est à Sainte-Flaive-des-Loups.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/sainte-flaive-des-loups/ferme/la-laiterie-de-flavie/660906) |
+| LES FROMAGES DE LA CHEVRIE | anais et ludovic GELOT | Treize Vents | 85590 Treize-Vents | Anais et Ludo sauront vous faire partager leur passion du métier d'éleveurs paysans. Ils produisent et transforment le lait de leurs chèvres dans leur… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/pays-de-la-loire/vendee/treize-vents/ferme/les-fromages-de-la-chevrie/620491) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| EURIAL | Bellevigny | BELLEVILLE SUR VIE BD DE L'INDUSTRIE 85170 | `35354335800033` | agrément UE `85.019.001` | [SIREN 353543358](https://annuaire-entreprises.data.gouv.fr/entreprise/353543358) |
+| LAITERIE DE LA LEMANCE | Chanverrie | VENDEOPOLE RUE RENE LAENNEC 85130 | `80373895400020` | agrément UE `85.302.001` | [SIREN 803738954](https://annuaire-entreprises.data.gouv.fr/entreprise/803738954) |
+| SARL SASKIA | Froidfond | LA FERRONIERE 85300 | `53967208900015` | agrément UE `85.095.001` | [SIREN 539672089](https://annuaire-entreprises.data.gouv.fr/entreprise/539672089) |
+| EURIAL FOOD SERVICE & INDUSTRY | Lucon | QUAI EST DU PORT 85400 | `81506390400032` | agrément UE `85.128.001` | [SIREN 815063904](https://annuaire-entreprises.data.gouv.fr/entreprise/815063904) |
+| FROMAGERIES LESCURE | Saint Michel En L'Herm | USINE DE SAINT MICHEL RUE DE LA LAITERIE 85580 | `79404095600045` | agrément UE `85.255.001` | [SIREN 794040956](https://annuaire-entreprises.data.gouv.fr/entreprise/794040956) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| FOURNY Yves-Irène (EARL) | EARL FOURNY YVES IRENE | Aizenay | La Barbière 85190 | actividad | 2026 | [nº Bio 103274](https://annuaire.agencebio.org/operateur/103274) |
+| fromagerie ferdinand et donatien | FETIVEAU FREDERIC | Bouin | BEL AIR 85230 | actividad | 2026 | [nº Bio 68778](https://annuaire.agencebio.org/operateur/68778) |
+| SEILLER FRANCK | SEILLER FRANCK | Chantonnay | Le Logis de L'Angle 85110 | actividad | 2026 | [nº Bio 135312](https://annuaire.agencebio.org/operateur/135312) |
+| FERME DE LIEGUE (EARL) | FERME DE LIEGUE | Chanverrie | Liègue 85130 | actividad | 2025 | [nº Bio 140867](https://annuaire.agencebio.org/operateur/140867) |
+| FERME DE LA FUTAIE MALLET Nathalie | GAEC FERME DE LA FUTAIE | La Chaize Le Vicomte | la futaie 85315 | actividad | 2026 | [nº Bio 154447](https://annuaire.agencebio.org/operateur/154447) |
+| SARL LAITIVA | SARL LAITIVA | La Roche-Sur-Yon | 243 Route des Fontenelles 85000 | actividad | 2026 | [nº Bio 26559](https://annuaire.agencebio.org/operateur/26559) |
+| VADAKARN URSAULT Dominique | URSAULT DOMINIQUE | Le Girouard | LA CHANCELIERE 85150 | actividad | 2026 | [nº Bio 103633](https://annuaire.agencebio.org/operateur/103633) |
+| FROMAGE DE PERRURE MINAULT Claire | FROMAGE DE PERRURE | Mervent | 6 RUE LA GRANDE PERRURE 85200 | actividad | 2026 | [nº Bio 150706](https://annuaire.agencebio.org/operateur/150706) |
+| DE LA COULEE VERTE (GAEC) | DE LA COULEE VERTE | Montaigu-Vendee | 24 LA GATELIERE 85600 | actividad | 2025 | [nº Bio 45107](https://annuaire.agencebio.org/operateur/45107) |
+| LA SOURCE SOULARD Denis | GAEC LA SOURCE | Montournais | LE PERRIER 85700 | actividad | 2026 | [nº Bio 173565](https://annuaire.agencebio.org/operateur/173565) |
+| LA FERME DE CAMILLE | GAEC MARTINEAU | Saint Florent Des Bois | La Veillonniere 85310 | actividad | 2026 | [nº Bio 112222](https://annuaire.agencebio.org/operateur/112222) |
+| FERME DU CAP'VERT (GAEC LA) | LA FERME DU CAP'VERT | Saint Mathurin | 3 Les Biottières 85150 | actividad | 2026 | [nº Bio 106556](https://annuaire.agencebio.org/operateur/106556) |
+| EARL DU VIEUX MANOIR | EARL DU VIEUX MANOIR | Saint-Pierre-Du-Chemin | LA JARROUSSELIERE 85120 | actividad | 2026 | [nº Bio 51872](https://annuaire.agencebio.org/operateur/51872) |
+| REVOL MAUD VALENTINE | REVOL MAUD VALENTINE | Sallertaine | 102 Chemin de Bel Air 85300 | actividad | 2026 | [nº Bio 60025](https://annuaire.agencebio.org/operateur/60025) |
+| LA BERGERIE DU BRANDAIS RAVON Damien | LA BERGERIE DU BRANDAIS | Talmont-Saint-Hilaire | 172 RUE DU BRANDAIS 85440 | actividad | 2026 | [nº Bio 122549](https://annuaire.agencebio.org/operateur/122549) |
+| GELOT LUDOVIC | GELOT LUDOVIC | Treize-Vents | LA CHEVRIE 85590 | actividad | 2025 | [nº Bio 18022](https://annuaire.agencebio.org/operateur/18022) |

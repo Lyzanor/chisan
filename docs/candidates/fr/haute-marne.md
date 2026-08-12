@@ -35,3 +35,34 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LES SAVEURS D'ANNALICE | BIANCO BOSS | Richebourg | 8 B RUE DE LA LEVEE DE CESAR 52120 RICHEBOURG | Aceite | 10.41A — Fabrication d'huiles et graisses brutes | 2001-09 | [SIREN 439085671](https://annuaire-entreprises.data.gouv.fr/entreprise/439085671) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **11 candidatos nuevos** en este corte: 1 perfiles de explotación, 8 unidades manufactureras adicionales y 2 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| FROMAGERIE MARCOUX - LAITERIE DU VAL DE PRESLES | Andilly-En-Bassigny | 1 RUE DU PETIT PARIS 52360 | `41411010600013` | agrément UE `52.009.001` | [SIREN 414110106](https://annuaire-entreprises.data.gouv.fr/entreprise/414110106) |
+| FROMAGERIE JACQUES DELIN - LES FROMAGERS DE CHEVILLON | Chevillon | 7 RUE DU JAROT 52170 | `37984800500086` | agrément UE `52.123.001` | [SIREN 379848005](https://annuaire-entreprises.data.gouv.fr/entreprise/379848005) |
+| FROMAGERIE JACQUES DELIN - LES FROMAGERS DE CHEVILLON | Chevillon | 9 RUE DU BOCARD 52170 | `37984800500094` | agrément UE `52.123.002` | [SIREN 379848005](https://annuaire-entreprises.data.gouv.fr/entreprise/379848005) |
+| B.G. | Illoud | GRANDE RUE CS 012 52150 | `33133927500017` | agrément UE `52.247.001` | [SIREN 331339275](https://annuaire-entreprises.data.gouv.fr/entreprise/331339275) |
+| ENTREMONT ALLIANCE | Langres | RUE DE PEIGNEY 52200 | `32552045000199` | agrément UE `52.380.001` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+| FROMAGERIE GERMAIN | Le Montsaugeonnais | VAUX SOUS AUBIGNY ZAE CHAMP MIOLIN 52190 | `61385008000029` | agrément UE `52.405.001` | [SIREN 613850080](https://annuaire-entreprises.data.gouv.fr/entreprise/613850080) |
+| FROMAGERIE SCHERTENLEIB | Saulxures | 6 RUE DE LA LAITERIE 52140 | `52966201700019` | agrément UE `52.465.001` | [SIREN 529662017](https://annuaire-entreprises.data.gouv.fr/entreprise/529662017) |
+| ENTREMONT ALLIANCE | Val-De-Meuse | 1 RUE ANNE MARIE LEGROS 52140 | `32552045000116` | agrément UE `52.332.001` | [SIREN 325520450](https://annuaire-entreprises.data.gouv.fr/entreprise/325520450) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| DUPAQUIER Marylène | DUPAQUIER MARYLENE | Colmier-Le-Haut | 33 GRANDE RUE 52160 | actividad | 2026 | [nº Bio 140086](https://annuaire.agencebio.org/operateur/140086) |
+| EARL LABREVEUX | EARL LABREVEUX | Doulevant-Le-Chteau | 14 GRANDE RUE VILLIERS AUX CHENES 52110 | actividad | 2025 | [nº Bio 153901](https://annuaire.agencebio.org/operateur/153901) |

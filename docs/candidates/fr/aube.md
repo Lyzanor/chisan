@@ -30,3 +30,17 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | CHOCOLATERIE TEMOINS | TEMOINS | Troyes | 9 RUE DE LA REPUBLIQUE 10000 TROYES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 1990-05 | [SIREN 378943039](https://annuaire-entreprises.data.gouv.fr/entreprise/378943039) |
 | LA PETITE BISCUITERIE | DAVID MICHEL | Maizières-la-Grande-Paroisse | 7 BD ANTOINE DE SAINT EXUPERY 10510 MAIZIERES-LA-GRANDE-PAROISSE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 1996-05 | [SIREN 407654169](https://annuaire-entreprises.data.gouv.fr/entreprise/407654169) |
 | UNE PATISSERIE POUR KY | STEPHANIE LECAILLON | Saint-Léger-sous-Brienne | 33 GRANDE RUE 10500 SAINT-LEGER-SOUS-BRIENNE | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2023-10 | [SIREN 979296316](https://annuaire-entreprises.data.gouv.fr/entreprise/979296316) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Queda **1 candidato nuevo** en este corte: una explotación bio adicional. La clasificación registral no demuestra por sí sola una identidad pública ni un canal de contacto utilizable.
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| TARGY ARMELLE | TARGY ARMELLE | Landreville | FERME DU FRAGNE 10110 | actividad | 2026 | [nº Bio 10273](https://annuaire.agencebio.org/operateur/10273) |
+
+- **Ferme du Fragne — en espera (revisada 2026-08-12).** Agence Bio confirma en 2026 la explotación de ovejas lecheras, los quesos y los yogures, pero no publica teléfono, correo, web ni red social, y no se encontró una identidad comercial o canal público propio adicional. Se mantiene hasta disponer de un contacto verificable.

@@ -1,27 +1,22 @@
 # Candidatos — Meuse
 
-Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con actividad activa de `Production`, producciones declaradas y certificación `ENGAGEE` en el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/); sus datos proceden de organismos certificadores y se actualizan durante los controles, según la [ficha oficial del conjunto de datos](https://www.data.gouv.fr/datasets/professionnels-engages-en-bio). Se han excluido coincidencias normalizadas con los productores ya publicados en Francia. Se priorizó el nombre público (`nomAnnuaire`) y, dentro del departamento, una dirección marcada como lugar de actividad. Cuando el registro solo ofrece una sede local, se indica como unidad por confirmar. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca, el alimento concreto, la actividad actual, la commune vigente y que la dirección elegida sea la unidad productiva, no solo la sede legal.
+Investigación del 2026-08-08, revisada por completo el 2026-08-12. El corte partía de operadores activos del [directorio oficial de Agence Bio](https://annuaire.agencebio.org/) y se contrastó con fuentes públicas de identidad, oferta y venta. Cinco candidatos se publicaron —GAEC d’Argonne, Au Vert d’un Pré, Élevage de la Portelle, GAEC des Raillis y Ferme du Vallet Bona— y se podaron de la cola. Los trece casos siguientes quedan retenidos porque la certificación o el registro prueban la explotación, pero no una oferta alimentaria propia y pública suficiente para una ficha del catálogo.
 
-| Nombre público declarado | Razón social | Commune provisional | Dirección local | Tipo de ubicación | Producciones declaradas (muestra) | Último control | Fuente |
-|---|---|---|---|---|---|---|---|
-| AU VERT ! | PIERRE ERIC PHILIPPE | Hargeville sur Chée | 5 rue Gautrot 55000 | actividad | Rhubarbe, Gel fixe, friche, gel spécifique n’entrant pas en rotation, Noix | 2026 | [nº Bio 170309](https://annuaire.agencebio.org/operateur/170309) |
-| BALON RENE MICHEL ALBERT | Balon René | Brouennes | 56 Grande Rue 55700 | actividad | Veaux (< 8mois), Autres bovins et bovidés, Tournesol | 2026 | [nº Bio 42007](https://annuaire.agencebio.org/operateur/42007) |
-| BEAUXEROIS Jean-François | BEAUXEROIS JEAN FRANCOIS MICHEL | MAULAN | 1 CHE DE LA VALLOTTE 55500 | actividad | Pommes de table, Trèfle, Luzerne | 2026 | [nº Bio 135638](https://annuaire.agencebio.org/operateur/135638) |
-| Courtois Julien | individuel | Wiseppe | 1 route de saulmory 55700 | actividad | Viande bovine, fraîche ou réfrigérée, Bœufs, Génisses renouvellement (>8 mois) | 2026 | [nº Bio 58314](https://annuaire.agencebio.org/operateur/58314) |
-| D'ARGONNE | GAEC RECONNU D ARGONNE | RECICOURT | 4 rue du Château 55120 | actividad | Mélanges fourragers, Lentilles, sèches, Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 149439](https://annuaire.agencebio.org/operateur/149439) |
-| damien watrin | AU VERT D'UN PRE | BELLERAY | 9 RTE DE BILLEMONT 55100 | actividad | Melons, Autres plantes à épices, aromatiques, médicinales et pharmaceutiques, Culture inconnue | 2026 | [nº Bio 141704](https://annuaire.agencebio.org/operateur/141704) |
-| DE COUSTILLE PHILIPPE Jean | SCEA DE COUSTILLE | BUXIERES-SOUS-LES-COTES | 23 Grande rue - Buxerulles 55300 | actividad | Prunes, Autres fruits à noyau, Pêches | 2026 | [nº Bio 10766](https://annuaire.agencebio.org/operateur/10766) |
-| DE L'OREE DES CHAMPS FRANCOIS Vivien | SCEA DE L'OREE DES CHAMPS | Bras-sur-Meuse | Rue Emile Lecourtier 7 55100 | actividad | Parcours herbeux (hors estives collectives), Gel fixe, friche, gel spécifique n’entrant pas en rotation, Sorgho | 2026 | [nº Bio 49014](https://annuaire.agencebio.org/operateur/49014) |
-| DE LA CROISETTE PALIN Florent | GAEC RECONNU DE LA CROISETTE | BRABANT-LE-ROI | 20 RUE FAVARDE 55800 | actividad | Prairie temporaire, Triticale, Parcours herbeux (hors estives collectives) | 2026 | [nº Bio 138424](https://annuaire.agencebio.org/operateur/138424) |
-| DE LA JONQUIERE CHASTEL Fabien | GAEC DE LA JONQUIERE | Lahaymeix | 1 Chem. de Bannoncourt 55260 | actividad | Autres produits alimentaires n.c.a., Prairie permanente, Lait de vache, brut | 2026 | [nº Bio 142552](https://annuaire.agencebio.org/operateur/142552) |
-| DE LA PORTELLE GROOT KOERKAMP Simon | DE LA PORTELLE | MARRE | 2bis petite rue haute 55100 | actividad | Prairie permanente, Vaches laitières, vivantes, Luzerne | 2026 | [nº Bio 148423](https://annuaire.agencebio.org/operateur/148423) |
-| DES RAILLIS SCHMITT Sébastien et Arnaud | GAEC RECONNU DES RAILLIS | NANCOIS-LE-GRAND | 4 RUE BOUTEA 55500 | actividad | Fèves, sèches (yc féveroles), Pommes de terre (hors féculière), Vaches allaitantes | 2026 | [nº Bio 105006](https://annuaire.agencebio.org/operateur/105006) |
-| DU CHAMP MOULIN PINCHERELLE Joël et PINCHERELLE Steven | SCEA DU CHAMP MOULIN | VERY | FERME DU CHAMP MOULIN 55270 | actividad | Mélanges Céréaliers (sans légumineuses), Génisses renouvellement (>8 mois), Gel fixe, friche, gel spécifique n’entrant pas en rotation | 2026 | [nº Bio 143609](https://annuaire.agencebio.org/operateur/143609) |
-| DU VIEUX RUISSEAU REINBOLT Hervé | EARL DU VIEUX RUISSEAU | Les Hauts de Chée | 25 rue Principale 55000 | actividad | Prairie permanente, Vaches allaitantes, Taureaux (>24 mois) | 2026 | [nº Bio 138532](https://annuaire.agencebio.org/operateur/138532) |
-| EQUINOXE GAUNY Emmanuel | EXPLOITATION AGRICOLE A RESPONSABILITE LIMITEE EQUINOXE | GIMECOURT | 2 RUE JEANNE D ARC 55260 | actividad | Avoine, Trèfle, Semences de céréales, légumineuses et oléagineux (à l'exclusion du riz) | 2026 | [nº Bio 12300](https://annuaire.agencebio.org/operateur/12300) |
-| FERME DU VALLET BONA FROMONT Nicolas | FERME DU VALLET BONA | MELIGNY-LE-GRAND | 9 RUE SAINT AUBIN 55190 | actividad | Légumes frais n.c.a., Culture inconnue, Pommes de table | 2026 | [nº Bio 21686](https://annuaire.agencebio.org/operateur/21686) |
-| FERME MATEOMARD  JACQUEMIN Jean Marie | JACQUEMIN JEAN MARIE | Geville | Ferme mateomard 55200 | actividad | Trèfle, Estives ou alpages collectifs, Veaux (< 8mois) | 2026 | [nº Bio 28557](https://annuaire.agencebio.org/operateur/28557) |
-| GAEC LES FEUILLES VERTES | GAEC DES FEUILLES VERTES | LAVIGNEVILLE | 13 RUE DES LILAS 55300 | actividad | Lait de vache, brut, Autres surfaces non productive et surfaces non agricoles, Prairie permanente | 2026 | [nº Bio 159093](https://annuaire.agencebio.org/operateur/159093) |
+| Candidato retenido | Commune | Motivo pendiente | Fuente de partida |
+|---|---|---|---|
+| AU VERT ! / Pierre Eric Philippe | Hargeville-sur-Chée | No se localizó identidad pública diferenciada ni oferta; el registro solo declara ruibarbo y nueces entre superficies no productivas. | [Agence Bio](https://annuaire.agencebio.org/operateur/170309) |
+| René Balon | Brouennes | Ganadería y venta mayorista registradas, sin marca, producto minorista ni canal público propio. | [Agence Bio](https://annuaire.agencebio.org/operateur/42007) |
+| Jean-François Beauxerois | Maulan | La certificación cubre manzana y cultivos, pero no se localizó oferta pública actual ni canal de la explotación. | [Agence Bio](https://annuaire.agencebio.org/operateur/135638) |
+| Julien Courtois | Wiseppe | Explotación bio iniciada en 2024 y carne bovina certificada, sin identidad comercial ni oferta directa publicada. | [Agence Bio](https://annuaire.agencebio.org/operateur/58314) |
+| SCEA de Coustille | Buxières-sous-les-Côtes | Arboricultura bio activa y unidad productiva plausibles, pero sin producto a la venta, contacto o identidad pública propios. | [Agence Bio](https://annuaire.agencebio.org/operateur/10766) |
+| SCEA de l’Orée des Champs | Bras-sur-Meuse | Solo aparecen cultivos y sede legal; no se demostró una oferta alimentaria propia destinada al público. | [Agence Bio](https://annuaire.agencebio.org/operateur/49014) |
+| GAEC de la Croisette | Brabant-le-Roi | Registro de policultivo y teléfono, sin alimento concreto ni oferta pública atribuible. | [Agence Bio](https://annuaire.agencebio.org/operateur/138424) |
+| GAEC de la Jonquière | Lahaymeix | Se documentó inversión en prensa de aceite, pero no una línea de producto actual ni un canal público de la finca. | [Agence Bio](https://annuaire.agencebio.org/operateur/142552) |
+| SCEA du Champ Moulin | Véry | Explotación lechera activa; no hay marca, transformación propia ni oferta pública de leche o derivados. | [Agence Bio](https://annuaire.agencebio.org/operateur/143609) |
+| EARL du Vieux Ruisseau | Les Hauts-de-Chée | Ganadería bovina certificada, sin producto o venta directa publicados. | [Agence Bio](https://annuaire.agencebio.org/operateur/138532) |
+| EARL Equinoxe | Gimecourt | Semillas y cereales certificados, pero sin producto alimentario minorista ni identidad pública propia. | [Agence Bio](https://annuaire.agencebio.org/operateur/12300) |
+| Ferme Mateomard | Geville | Ganadería y cultivos certificados, sin oferta pública actual ni canal propio más allá de la localización de la finca. | [Agence Bio](https://annuaire.agencebio.org/operateur/28557) |
+| GAEC des Feuilles Vertes | Lavigneville | Leche cruda certificada, sin prueba de venta pública, transformación o marca propia. | [Agence Bio](https://annuaire.agencebio.org/operateur/159093) |
 
 ## Descartes documentados — 2026-08-09
 
@@ -29,8 +24,14 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
 
-Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10): 1 operador(es) de este département con actividad declarada activa en el registro SIRENE dentro de categorías KM0 poco cubiertas en Francia. Son señales de descubrimiento, no altas: el registro prueba identidad legal, código de actividad y ubicación declarada, no la marca pública, la oferta propia actual ni que la dirección sea la unidad productiva.
+La única señal del barrido, Glaces de Meuse, se publicó el 2026-08-12 tras confirmar en su web vigente la fabricación artesanal con leche de la finca familiar, la gama, la unidad de Nouillonpont y el pedido por teléfono o correo. No quedan candidatos abiertos en este carril.
 
-| Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
-|---|---|---|---|---|---|---|---|
-| GLACES DE MEUSE | DANIEL REMY | Nouillonpont | 7 RUE WOECOURT 55230 NOUILLONPONT | Helados | 10.52Z — Fabrication de glaces et sorbets | 1988-04 | [SIREN 344881701](https://annuaire-entreprises.data.gouv.fr/entreprise/344881701) |
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Los nueve candidatos del corte se publicaron el 2026-08-12 tras confirmar identidad pública, fabricación propia, unidad productiva y oferta actual. El caso inicialmente débil de Emmanuel Bonot se resolvió al enlazar su certificación bio vigente con la identidad pública `Ferme de l’Osière` y su oferta documentada de quesos y yogures.
+
+### Hallazgos incidentales para un lote posterior
+
+El carnet práctico territorial consultado durante la verificación reveló cuatro productores adicionales que no formaban parte del corte nacional. La revisión se cerró el 2026-08-12 con tres altas —Les Alpines de Meuse, Fromagerie des Doucettes y Chèvrerie des Trois Cabris— y el rechazo de Chèvrerie de Maïa: el Tribunal de Comercio de Bar-le-Duc convirtió su procedimiento en liquidación judicial el 2 de abril de 2026.

@@ -27,3 +27,35 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | L ATELIER PAYTRA FOUQUET | JANICK PAYTRA | Saint-Denis-de-Pile | 36 ROUTE DE PINAUD 33910 SAINT-DENIS-DE-PILE | Conservas | 10.39B — Transformation et conservation de fruits | 2019-04 | [SIREN 849899885](https://annuaire-entreprises.data.gouv.fr/entreprise/849899885) |
 | SADIRAC | CIDRERIE HIC | Sadirac | 57 ROUTE DE SAINT-CAPRAIS 33670 SADIRAC | Sidra | 11.03Z — Fabrication de cidre et de vins de fruits | 2021-07 | [SIREN 900990987](https://annuaire-entreprises.data.gouv.fr/entreprise/900990987) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **13 candidatos nuevos** en este corte: 2 perfiles de explotación, 3 unidades manufactureras adicionales y 8 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| DESARNAULT AMANDA - OLAVACHE | Aillas | 1 LACAMPAGNE 33124 | `92836957800010` | dérogation | [SIREN 928369578](https://annuaire-entreprises.data.gouv.fr/entreprise/928369578) |
+| OH LAIT LAIT | Bordeaux | 52 RUE DE LA COMPAGNIE DU MIDI 33800 | `98752823900013` | dérogation | [SIREN 987528239](https://annuaire-entreprises.data.gouv.fr/entreprise/987528239) |
+| FROMAGERIE BEAUSEJOUR | Gironde-Sur-Dropt | 1564 RTE DE BEAUSEJOUR. 33190 | `79876046800016` | agrément UE `33.187.216` | [SIREN 798760468](https://annuaire-entreprises.data.gouv.fr/entreprise/798760468) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| BONNAUD Michael | Domaine De Montagne | Capian | DOMAINE DE MONTAGNE 457 Montagne 33550 | actividad | 2026 | [nº Bio 150446](https://annuaire.agencebio.org/operateur/150446) |
+| EARL LA FERME DES JAROUILLES | EARL LA FERME DES JAROUILLES | Coutras | Num 36 LES LANDES 33230 | actividad | 2025 | [nº Bio 117037](https://annuaire.agencebio.org/operateur/117037) |
+| Domaine du grand brignac | Wojciechowski Alexandra | Donnezac | 4 lieudit Grand brignac 33860 | actividad | 2026 | [nº Bio 66949](https://annuaire.agencebio.org/operateur/66949) |
+| CHATEAU POULY VAN DER AREND Paulus | GAEC AGREE CHATEAU POULY | Gornac | 1 poulit nord 33540 | actividad | 2026 | [nº Bio 181948](https://annuaire.agencebio.org/operateur/181948) |
+| IRIBERRI IRIBERRI Txomin et Pauline | GAEC IRIBERRI | Labescau | 1 Peberin 33690 | actividad | 2026 | [nº Bio 147213](https://annuaire.agencebio.org/operateur/147213) |
+| La petite ferme d'aurore | Labrue Aurore | Saint Antoine Sur L'Isle | LA PETITE FERME D'AURORE 534 route de la double 33660 | actividad | 2026 | [nº Bio 54778](https://annuaire.agencebio.org/operateur/54778) |
+| GAEC LA GRANDE CHAUX | GAEC LA GRANDE CHAUX | Saint Christophe De Double | GUTTIERREZ Eric et Elisabeth 26 La Grande Chaux 33230 | actividad | 2026 | [nº Bio 110109](https://annuaire.agencebio.org/operateur/110109) |
+| CHATEAU LE PIS - MAZIERE | EARL CHATEAU LE PIS | Taillecavat | 1 PIECE NEUVE 33580 | actividad | 2025 | [nº Bio 130386](https://annuaire.agencebio.org/operateur/130386) |

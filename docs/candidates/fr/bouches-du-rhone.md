@@ -29,3 +29,40 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | TORREFACTION ST-ROCH | CMS | Gardanne | 7 COURS DE LA REPUBLIQUE 13120 GARDANNE | Café | 10.83Z — Transformation du thé et du café | 2017-08 | [SIREN 831269774](https://annuaire-entreprises.data.gouv.fr/entreprise/831269774) |
 | EPICES VILLAGE | COMADA SAS | Martigues | 1 PLACE JOSEPH FASCIOLA 13500 MARTIGUES | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2015-03 | [SIREN 810100545](https://annuaire-entreprises.data.gouv.fr/entreprise/810100545) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **19 candidatos nuevos** en este corte: 3 perfiles de explotación, 3 unidades manufactureras adicionales y 13 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| LAITAJ | Marseille | 58 CHE DU VALLON DES PINS 13015 | `53531687100016` | agrément UE `13.215.105` | [SIREN 535316871](https://annuaire-entreprises.data.gouv.fr/entreprise/535316871) |
+| LA LAITERIE MARSEILLAISE | Marseille 7 | 86 RUE SAINTE 13007 | `85304008700019` | dérogation | [SIREN 853040087](https://annuaire-entreprises.data.gouv.fr/entreprise/853040087) |
+| PEDINI KARINE | Peynier | DEVANCON HAUT 8 CHE DE POURRACHON 13790 | `50511929700016` | dérogation | [SIREN 505119297](https://annuaire-entreprises.data.gouv.fr/entreprise/505119297) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| LECAT SANTINI Fannelie - FAN DE CHEVRE | LECAT SANTINI Fannelie - FAN DE CHEVRE | Cassis | 13 Avenue Emile Bodin 13260 | actividad | 2026 | [nº Bio 304536](https://annuaire.agencebio.org/operateur/304536) |
+| LA CABRO D OR | LA CABRO D'OR | Cuges-Les-Pins | 2507 RD 8 13780 | actividad | 2026 | [nº Bio 58305](https://annuaire.agencebio.org/operateur/58305) |
+| FABRE LAURINE CYRIELLE ANAIS | FABRE LAURINE CYRIELLE ANAIS | Eyguières | Draille des Grignans 13430EYGUIÈRES 13430 | actividad | 2026 | [nº Bio 9847](https://annuaire.agencebio.org/operateur/9847) |
+| AJELLO LAURENT | AJELLO LAURENT | Gemenos | 95 ALLEE DE LA JARDINIERE 13420 | actividad | 2026 | [nº Bio 173831](https://annuaire.agencebio.org/operateur/173831) |
+| GAEC FAUDON | GAEC FAUDON | Grans | 645 Chemin de la Petite Carraire Quartier des Patis 13450 | actividad | 2025 | [nº Bio 103694](https://annuaire.agencebio.org/operateur/103694) |
+| GAEC LA JACOURELLE | LA JACOURELLE | La Roque-D'Anthéron | ROUTE SAINT ANNE 13640 | actividad | 2025 | [nº Bio 107213](https://annuaire.agencebio.org/operateur/107213) |
+| GAEC CHEVRERIE DES PERRIERES | GAEC CHEVRERIE DES PERRIERES | Lambesc | 5444 LES PEIRIERES 13410 | actividad | 2025 | [nº Bio 27310](https://annuaire.agencebio.org/operateur/27310) |
+| MAZERAT HUGO PHILIPPE MARIE | MAZERAT HUGO PHILIPPE MARIE | Mallemort | DOMAINE DU VERGON 13370 | actividad | 2026 | [nº Bio 40307](https://annuaire.agencebio.org/operateur/40307) |
+| FERMETTE DE LA CROIX D'ESTRINE | THORON BERNARD PIERRE YVES | Martigues | Fermette de la croix d'estrine 13500 | actividad | 2026 | [nº Bio 134244](https://annuaire.agencebio.org/operateur/134244) |
+| LA CHEVRERIE DE PIERREDEON | E.I TAUZIAS FLORIAN | Mouries | DOMAINE DE PIERREDON 13890 | actividad | 2026 | [nº Bio 63395](https://annuaire.agencebio.org/operateur/63395) |
+| GAEC de la Ferme St Joseph | GAEC | Peyrolles En Provence | 474 chemin de St Joseph 13860 | actividad | 2026 | [nº Bio 58672](https://annuaire.agencebio.org/operateur/58672) |
+| IVANSCHITZ Veith | IVANSCHITZ Veith | Salon De Provence | 4 chemin de la miette 13300 | actividad | 2026 | [nº Bio 132297](https://annuaire.agencebio.org/operateur/132297) |
+| LA FERME DE CHAGNE BRUN Sébastien | GAEC RECONNU LA FERME DE CHAGNE | Senas | Route de Chagne 13560 | actividad | 2026 | [nº Bio 136659](https://annuaire.agencebio.org/operateur/136659) |

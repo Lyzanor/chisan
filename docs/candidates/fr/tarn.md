@@ -31,3 +31,53 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|
 | LA FERME AU VILLAGE | FRANCOISE CARAYOL | Lautrec | RUE DU MERCADIAL 81440 LAUTREC | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2006-06 | [SIREN 490491404](https://annuaire-entreprises.data.gouv.fr/entreprise/490491404) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **29 candidatos nuevos** en este corte: 8 perfiles de explotación, 3 unidades manufactureras adicionales y 18 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| Ferme de Lamarque | Marie et Frédéric JOUGLA | Angles | Lamarque / 81260 Anglès | Les produits fermiers ont la particularité d'avoir un goût différent selon la saison et leur terroir. Situés à 800 m d'altitude, nous proposons une agriculture… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/angles/ferme/ferme-de-lamarque/74625) |
+| Ferme de la Jasse Calmels | Audrey Malhie | Berlats | La Jasse Calmels / 81260 Berlats | Soyez les bienvenues à la Ferme de la Jasse Calmels. Venez voir l'élevage de veau sous la mère ainsi que visiter la chèvrerie.… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/berlats/ferme/ferme-de-la-jasse-calmels/181312) |
+| La fromagerie des biquettes ( GAEC DAMIEN) | Vitor Carmona | Graulhet | 789 route saint Sernin / 81300 Graulhet | Installée au sud-est de Graulhet, la fromagerie des biquettes vous propose une large gamme de produits laitiers et de fromages au lait de brebis… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/graulhet/ferme/la-fromagerie-des-biquettes-gaec-damien/679358) |
+| Fromagerie fermière du buisson blanc | Sylvie BASSE | Le Segur | Le Bouyalard / 81640 Le Ségur | Située au cœur du Ségala Tarnais, la ferme du Bouyalard produit depuis plusieurs générations un lait de vache aux saveurs… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/le-segur/ferme/fromagerie-fermiere-du-buisson-blanc/358116) |
+| La Ferme des Zazous | Aline COUTAREL | Montredon Labessonnie | 81360 Montredon-Labessonnié | La Ferme des Zazous, c'est l'histoire de Claire, Clémence, Benoît et Aline qui avaient envie d'agriculture et de collectif. Nous… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/montredon-labessonnie/ferme/la-ferme-des-zazous/637883) |
+| Le Félinol | Camille ROQUE | Murat Sur Vebre | 81320 Murat-sur-Vèbre | Au Gaec de la Métairie de Félines, vous trouverez des brebis de race Lacaune, qui donne un lait riche pour la fabrication du roquefort mais… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/murat-sur-vebre/ferme/le-felinol/679196) |
+| Les Bufflonnes de Peyras | Louison DEVIENNE | Parisot | 895, route de Loupiac / 81310 Parisot | Petite ferme d'élevage d'une dizaine de Bufflonnes à Parisot dans le Tarn. Les Bufflonnes profitent des prairies avec leur… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/parisot/ferme/les-bufflonnes-de-peyras/679197) |
+| La ferme de la Métairie Basse | Delphine GAY-VABRE | Saint Amans Soult | 2 chemin de La métairie basse / 81240 Saint-Amans-Soult | David et Delphine seront heureux de vous faire découvrir et partager leur passion ainsi que leur production de fromage (tome, pérail de vache et fromage… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/occitanie/tarn/saint-amans-soult/ferme/la-ferme-de-la-metairie-basse/318714) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| SEGALAFROM | Carmaux | 195 AV DE RODEZ 81400 | `43534769500023` | agrément UE `81.060.088` | [SIREN 435347695](https://annuaire-entreprises.data.gouv.fr/entreprise/435347695) |
+| SAS FROMAGERIE LE PIC | Penne | LD LE PIC 81140 | `38840008700010` | agrément UE `81.206.009` | [SIREN 388400087](https://annuaire-entreprises.data.gouv.fr/entreprise/388400087) |
+| LAITERIE FABRE FRERES SA | Viane | LD LA BUZATIE 81530 | `31462524500019` | agrément UE `81.314.001` | [SIREN 314625245](https://annuaire-entreprises.data.gouv.fr/entreprise/314625245) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| DU PUECH D'ALBY LEROY Thomas et Laetitia | EARL DU PUECH D'ALBY | Almayrac | LD PUECH D'ALBY 81190 | actividad | 2026 | [nº Bio 10161](https://annuaire.agencebio.org/operateur/10161) |
+| GAEC DU RODIER | GAEC DU RODIER | Angles | DUBOUCHAUD Sébastien 7 route du Rodier - Rouairoux 81260 | actividad | 2026 | [nº Bio 141457](https://annuaire.agencebio.org/operateur/141457) |
+| DES PINS PARASOLS REY Anne | EARL DES PINS PARASOLS | Bellegarde | Tapies 2443 route de Millau 81430 | actividad | 2026 | [nº Bio 135474](https://annuaire.agencebio.org/operateur/135474) |
+| EARL LE BOUSCAL | EARL LE BOUSCAL | Denat | LE BOUSCAL 81120 | actividad | 2026 | [nº Bio 146605](https://annuaire.agencebio.org/operateur/146605) |
+| CADENAT BENJAMIN | CADENAT BENJAMIN | Lacapelle-Escroux | LD LA PARRAGE 81530 | actividad | 2026 | [nº Bio 11139](https://annuaire.agencebio.org/operateur/11139) |
+| GAEC LIODREY | GAEC LIODREY | Le Garric | LE TRUEL 81450 | actividad | 2026 | [nº Bio 100249](https://annuaire.agencebio.org/operateur/100249) |
+| GAEC BOUCLETTE ET COMPAGNIE | GAEC BOUCLETTE ET COMPAGNIE | Montredon-Labessonnie | LE ROC 81360 | actividad | 2026 | [nº Bio 8932](https://annuaire.agencebio.org/operateur/8932) |
+| GAEC LA FERME DU BOUYSSET | GAEC LA FERME DU BOUYSSET | Penne | Le Bouysset 81140 | actividad | 2026 | [nº Bio 132750](https://annuaire.agencebio.org/operateur/132750) |
+| Chèvrerie du Vallon des Laurens | ROUCARIES CELINE | Rabastens | 801 route de St Martin - Les Laurens 81800 | actividad | 2026 | [nº Bio 138077](https://annuaire.agencebio.org/operateur/138077) |
+| DES GARRIGUES CARAYON Yoann | GAEC DES GARRIGUES | Rayssac | LES GARRIGUES 81330 | actividad | 2026 | [nº Bio 157690](https://annuaire.agencebio.org/operateur/157690) |
+| KOSMALSKI PIERRE EDOUARD | KOSMALSKI PIERRE EDOUARD | Rayssac | Ferme d'ARTIGUES 81330 | actividad | 2025 | [nº Bio 130398](https://annuaire.agencebio.org/operateur/130398) |
+| GAEC PAULIN | GAEC PAULIN | Saint-Gauzens | LE PLO DE BELLEGARDE 81390 | actividad | 2026 | [nº Bio 9832](https://annuaire.agencebio.org/operateur/9832) |
+| Reines des Près | Reines des Près | Saint Jean De Marcel | 335 chemin de Moureviel 81350 | actividad | 2025 | [nº Bio 67763](https://annuaire.agencebio.org/operateur/67763) |
+| GALAUP ADELINE ELODIE VANESSA | GALAUP ADELINE ELODIE VANESSA | Saint-Michel-De-Vax | Place de la mairie 81140 | actividad | 2026 | [nº Bio 36116](https://annuaire.agencebio.org/operateur/36116) |
+| VAREILLES LAURENT OLIVIER | VAREILLES LAURENT OLIVIER | Saint Salvy De La Baume | 881 ROUTE DE CABROL 81490 | actividad | 2026 | [nº Bio 62901](https://annuaire.agencebio.org/operateur/62901) |
+| La ferme d'Al Truc | MESTRE PIERRE JOAN | Saint-Sulpice-La-Pointe | AL TRUC 81370 | actividad | 2026 | [nº Bio 304947](https://annuaire.agencebio.org/operateur/304947) |
+| DE RIVET MAFFRE Hélène et Thierry | GAEC DE RIVET | Tonnac | 3391 ROUTE DE RIVET 81170 | actividad | 2026 | [nº Bio 137938](https://annuaire.agencebio.org/operateur/137938) |
+| BUREL ANDRE BASTIEN GWENDAL ANDRE | BUREL ANDRE BASTIEN GWENDAL ANDRE | Vindrac Alayrac | Andignac 81170 | actividad | 2026 | [nº Bio 141878](https://annuaire.agencebio.org/operateur/141878) |

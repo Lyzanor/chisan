@@ -19,3 +19,34 @@ Investigación del 2026-08-08. Estos 20 operadores aparecen como `Ferme`, con ac
 | FILLON Sébastien et Béatrice | FILLON SEBASTIEN FRANCOIS | ST JEAN DE LA BLAQUIÈRE | Route du VialaGué du Maro 34700 | actividad | Vins de raisin, Jachère, gel entrant en rotation (yc bandes tampon et surfaces non exploitées temporairement), Culture inconnue | 2026 | [nº Bio 103467](https://annuaire.agencebio.org/operateur/103467) |
 | INDIVISION JALLAIS RAYMONDE PITIOT DIDIER | IND PITIOT.D ET JALLAIS R | MONTAGNAC | MAS DE NOVI 34530 | actividad | Raisin de cuve | 2026 | [nº Bio 151072](https://annuaire.agencebio.org/operateur/151072) |
 | JOCELYNE TAFFARD | TAFFARD-POOT JOSSELINE JACQUELINE | Olmet-et-Villecun | LIEU DIT LA ROQUE 34700 | actividad | Légumes frais plein champ, Plants et semences potagers, à l'exclusion des semences de betteraves | 2026 | [nº Bio 152386](https://annuaire.agencebio.org/operateur/152386) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **15 candidatos nuevos** en este corte: 2 unidades manufactureras adicionales y 13 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| FROMAGES DU SALAGOU - FORMAGES DU SALAGOU | Lodeve | LE CAPITOUL 34700 | `53758892300012` | agrément UE `34.142.250` | [SIREN 537588923](https://annuaire-entreprises.data.gouv.fr/entreprise/537588923) |
+| FELICITAS | Mauguio | 210 RUE GEORGES MANDEL 34130 | `93360676600014` | agrément UE `34.154.006` | [SIREN 933606766](https://annuaire-entreprises.data.gouv.fr/entreprise/933606766) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| GAEC LA PART DU LOUP | GAEC LA PART DU LOUP | Avène | HAMEAU LES PLANES 34260 | actividad | 2026 | [nº Bio 159781](https://annuaire.agencebio.org/operateur/159781) |
+| GAEC DU BOIS BAS | GAEC DU BOIS BAS | Ferrals Les Montagnes | 1 route de la montagne noire 34210 | actividad | 2026 | [nº Bio 300357](https://annuaire.agencebio.org/operateur/300357) |
+| LA FERME DES BOUQUETS | gaec la ferme des bouquets | La Caunette | HAM DE LA GARRIGUE 1 route de st pons 34210 | actividad | 2026 | [nº Bio 300751](https://annuaire.agencebio.org/operateur/300751) |
+| VALLEE DE LAUROUX | VALLEE DE LAUROUX | Lauroux | Chemin des cailles Le village 34700 | actividad | 2026 | [nº Bio 114258](https://annuaire.agencebio.org/operateur/114258) |
+| DU CAUSSE CAMPLO Guillaume et BOUGEAULT Juliette | GAEC DU CAUSSE | Le Caylar | RTE DE SAINT-PIERRE 34520 | actividad | 2026 | [nº Bio 40437](https://annuaire.agencebio.org/operateur/40437) |
+| EARL DOMAINE DE VIEULAC | DOMAINE DE VIEULAC | Minerve | HAMEAU DE VIEULAC 34210 | actividad | 2026 | [nº Bio 108764](https://annuaire.agencebio.org/operateur/108764) |
+| MARC ERIC | MARC ERIC | Neffies | 1 CHE DES LOUBIERES 34320 | actividad | 2026 | [nº Bio 112164](https://annuaire.agencebio.org/operateur/112164) |
+| GAEC L'OREE DES CHENES | GAEC L'OREE DES CHENES | Puechabon | 42 RTE DE LAVENE 34150 | actividad | 2026 | [nº Bio 53961](https://annuaire.agencebio.org/operateur/53961) |
+| KIM-LIEN LESAGE - LA FERMILIALE | LA FERMILIALE | Quarante | 2 BIS IMPASSE EMILIE POUYTES 34310 | actividad | 2025 | [nº Bio 56384](https://annuaire.agencebio.org/operateur/56384) |
+| CHEVRERIE DE LA BUEGES TOURKEVITCH Camille | TOURKEVITCH CAMILLE | Saint André De Bueges | Chemin de Vareilhes 34190 | actividad | 2026 | [nº Bio 148962](https://annuaire.agencebio.org/operateur/148962) |
+| DU BOUT DU MONDE BARA Morgane / BARA Hippolyte / TEXIER Roxane | DU BOUT DU MONDE | Saint-Etienne-De-Gourgas | HAM DE LA ROQUE 34700 | actividad | 2026 | [nº Bio 41251](https://annuaire.agencebio.org/operateur/41251) |
+| GAEC LA FONTAINE DE LACAN | DE LA FONTAINE DE LACAN | Saint Pargoire | LD LAFON DE LACAN 34230 | actividad | 2026 | [nº Bio 19526](https://annuaire.agencebio.org/operateur/19526) |
+| GAEC DU PAS DU LOUP | Gaec | Villeveyrac | 25 Route de Montagnac 34560 | actividad | 2026 | [nº Bio 53172](https://annuaire.agencebio.org/operateur/53172) |

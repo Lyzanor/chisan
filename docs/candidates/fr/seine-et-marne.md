@@ -35,3 +35,40 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | LEPINAY CHOCOLATIER | LES TROIS CHOCOLATS | Saint-Thibault-des-Vignes | 5 RUE DE LA NOUE GUIMANTE 77400 SAINT-THIBAULT-DES-VIGNES | Chocolate | 10.82Z — Fabrication de cacao, chocolat et produits de confiserie | 2000-11 | [SIREN 433749132](https://annuaire-entreprises.data.gouv.fr/entreprise/433749132) |
 | SENEGAMBIAN BITES | SERRAY KEBE | Chelles | MAISON 5 22 CHEMIN DU SEMPIN 77500 CHELLES | Condimentos | 10.84Z — Fabrication de condiments et assaisonnements | 2018-02 | [SIREN 835213745](https://annuaire-entreprises.data.gouv.fr/entreprise/835213745) |
 | LA MERINGUERIE FRANCAISE | NATACHA JOURNOU FREDET | Provins | 21 RUE DU PALAIS 77160 PROVINS | Dulces y repostería | 10.72Z — Fabrication de biscuits et pâtisseries de conservation | 2013-12 | [SIREN 799004304](https://annuaire-entreprises.data.gouv.fr/entreprise/799004304) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **16 candidatos nuevos** en este corte: 7 perfiles de explotación, 7 unidades manufactureras adicionales y 2 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Perfiles de explotación con señal explícita de queso
+
+| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
+|---|---|---|---|---|---|---|
+| Ferme des Petits Bois | Brigitte DELPECH | Montigny Lencoup | 16 rue de Marolles / 77520 Montigny-Lencoup | Nous sommes producteurs fermiers à la ferme au hameau Orvilliers, à la sortie de Montigny Lencoup (au rond point qui dessert Montereau Fontainebleau… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/montigny-lencoup/ferme/ferme-des-petits-bois/541969) |
+| Ferme des Parrichets | Vanessa et Stéphane DARCHE | Mouroux | 105 rue de la Croix Saint Claude / 77120 Mouroux | Eleveurs de poules pondeuses en plein air, nous vendons en direct à la ferme nos oeufs extra frais. Venez également découvrir nos délicieuses rillettes… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/mouroux/ferme/ferme-des-parrichets/105635) |
+| Bergerie de la Fontaine Clairette | Catherine JOUBERT | Nanteau Sur Lunain | Route des Ricordeaux / 77710 Nanteau-sur-Lunain | La bergerie et toutes les brebis sont heureuses de vous accueillir sur la ferme pour vous présenter ses petits agneaux et vous faire déguster ses bons… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/nanteau-sur-lunain/ferme/bergerie-de-la-fontaine-clairette/224484) |
+| Ferme Sainte Colombe | Nicolas et Camille GRYMONPREZ | Saint Mars Vieux Maisons | 28 rue Sainte Colombe / 77320 Saint-Mars-Vieux-Maisons | Bienvenue à la Ferme Sainte Colombe! Nous (Nicolas et Camille) avons relevé le défi de reprendre cette ferme laitière labellisée en agriculture biologique,… | dérogation · [SIREN 824547921](https://annuaire-entreprises.data.gouv.fr/entreprise/824547921) | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/saint-mars-vieux-maisons/ferme/ferme-sainte-colombe/526994) |
+| Ferme de Saint Thibault | Brigitte BRODIER | Saint Thibault Des Vignes | 80 Rue Pasteur / 77400 Saint-Thibault-des-Vignes | Aux portes de la ville nouvelle, dans un îlot de verdure, venez découvrir notre ferme de polycultures-élevage environnée de prairies. Ferme laitière et… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/saint-thibault-des-vignes/ferme/ferme-de-saint-thibault/352151) |
+| La Ferme de Mauperthuis | Sylvie PAQUET, Aurore et Joris BOROWIEC | Sancy | D 21 / 77580 Sancy | A la ferme de Mauperthuis nous travaillons en famille. Nous sommes Sylvie, sa fille Aurore et son mari Joris. Ensemble nous travaillons sur la ferme,… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/sancy/ferme/la-ferme-de-mauperthuis/400454) |
+| FERME DE LA VALLIERE-Les fromages de chèvre Moret | Bertin, Clément, Anne MORET et Mathilde REYGROBELLET | Tancrou | 59 Grande Rue / 77440 Tancrou | Venez nous rencontrer et découvrir notre élevage de chèvres alpines à la ferme de la Vallière à Tancrou, dans la vallée de la Marne. Nos 200 chèvres produisent… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/ile-de-france/seine-et-marne/tancrou/ferme/ferme-de-la-valliere-les-fromages-de-chevre-moret/431095) |
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| COMPAGNIE FROMAGERE EDMOND DE ROTHSCHILD | Favieres | DOMAINE DES TRENTE ARPENTS 77220 | `38264502600016` | agrément UE `77.177.001` | [SIREN 382645026](https://annuaire-entreprises.data.gouv.fr/entreprise/382645026) |
+| SA DU PRE FORET | Fontenay-Tresigny | RUE EDOUARD BRANLY 77610 | `33365909200014` | agrément UE `77.192.001` | [SIREN 333659092](https://annuaire-entreprises.data.gouv.fr/entreprise/333659092) |
+| SOCIETE FROMAGERE DE MEAUX | Meaux | RUE JEHAN DE BRIE 77100 | `41991262100010` | agrément UE `77.284.011` | [SIREN 419912621](https://annuaire-entreprises.data.gouv.fr/entreprise/419912621) |
+| BRIES DE SAINT REMY | Saint-Remy-De-La-Vanne | MONTMOGIS 77320 | `85327313400025` | agrément UE `77.432.004` | [SIREN 853273134](https://annuaire-entreprises.data.gouv.fr/entreprise/853273134) |
+| BRIES DE SAINT REMY | Saint-Simeon | 19 AV DU GRAND MORIN 77169 | `85327313400033` | agrément UE `77.436.002` | [SIREN 853273134](https://annuaire-entreprises.data.gouv.fr/entreprise/853273134) |
+| LA FERME DE SIGY | Sigy | 62 CHE DEPARTEMENTAL 77520 | `79448186100019` | agrément UE `77.452.001` | [SIREN 794481861](https://annuaire-entreprises.data.gouv.fr/entreprise/794481861) |
+| FROMAGERIE ROUZAIRE | Tournan-En-Brie | 10 RUE DE LA MADELEINE 77220 | `78695092300015` | agrément UE `77.470.002` | [SIREN 786950923](https://annuaire-entreprises.data.gouv.fr/entreprise/786950923) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| RHLIOUCH Ilham / LES CYCLOPES | Les Cyclopes | Larchant | 27 rue de paris 77760 | actividad | 2026 | [nº Bio 58582](https://annuaire.agencebio.org/operateur/58582) |
+| EARL CHAMPIN | CHAMPIN | Ozouer-Le-Voulgis | HAMEAU DE LA GOULARDERIE 77390 | actividad | 2025 | [nº Bio 118696](https://annuaire.agencebio.org/operateur/118696) |

@@ -33,3 +33,41 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | SALSA VEGGIE | RAFIKA GHOURCHI | Montluçon | 111 AVENUE DE LA REPUBLIQUE 03100 MONTLUCON | Bebidas sin alcohol | 10.32Z — Préparation de jus de fruits et légumes | 2004-04 | [SIREN 478274707](https://annuaire-entreprises.data.gouv.fr/entreprise/478274707) |
 | PISCICULTURE DES POUBOTS | JULIEN CORETE | Franchesse | LIEU DIT LES POUBOTS 03160 FRANCHESSE | Pescado | 03.22Z — Aquaculture en eau douce (pisciculture) | 2006-01 | [SIREN 485214969](https://annuaire-entreprises.data.gouv.fr/entreprise/485214969) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **22 candidatos nuevos** en este corte: 3 unidades manufactureras adicionales y 19 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+### Unidades manufactureras adicionales (DGAL × SIRENE)
+
+| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
+|---|---|---|---|---|---|
+| FORMAGERIE DE PIERREFITE | Chamberat | LA BOURSE 03370 | `49234279500027` | agrément UE `03.051.008` | [SIREN 492342795](https://annuaire-entreprises.data.gouv.fr/entreprise/492342795) |
+| SOCIETE LAITIERE DE VICHY - LAITERIE MOUSSIER | Creuzier-Le-Neuf | ZAC DES ANCISES LIEUDIT RUE DES MORLATTES 03300 | `45056863900030` | agrément UE `03.093.001` | [SIREN 450568639](https://annuaire-entreprises.data.gouv.fr/entreprise/450568639) |
+| FROMAGES BACH | Gannat | 9 RUE DES PRES LIATS 03800 | `88363635900027` | agrément UE `03.118.001` | [SIREN 883636359](https://annuaire-entreprises.data.gouv.fr/entreprise/883636359) |
+
+### Explotaciones bio adicionales con producción `Fromages`
+
+| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
+|---|---|---|---|---|---|---|
+| SJONGERS Hugo | S'JONGERS HUGO LIVIEN IRENE | Agonges | LD PILLARD 03210 | actividad | 2026 | [nº Bio 150767](https://annuaire.agencebio.org/operateur/150767) |
+| BIRIN-PUTHINIER (GAEC) | GAEC BIRIN-PUTHINIER | Ainay Le Chateau | DOMAINE DE L'AMOUR 03360 | actividad | 2026 | [nº Bio 101734](https://annuaire.agencebio.org/operateur/101734) |
+| TOURRET Cédric | TOURRET Cédric | Ainay-Le-Chateau | LD GRANDVAUX 03360 | actividad | 2026 | [nº Bio 143600](https://annuaire.agencebio.org/operateur/143600) |
+| PASCAL | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN PASCAL | Bourbon L'Archambault | LD LES GAULMINS 03160 | actividad | 2026 | [nº Bio 136496](https://annuaire.agencebio.org/operateur/136496) |
+| GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU DE LA LICORNE | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU DE LA LICORNE | Chouvigny | LD LE BREUIL 03450 | actividad | 2026 | [nº Bio 149166](https://annuaire.agencebio.org/operateur/149166) |
+| GROSS ALAIN ALBERT | GROSS ALAIN ALBERT | Couzon | La Beaume 03160 | actividad | 2026 | [nº Bio 139242](https://annuaire.agencebio.org/operateur/139242) |
+| GAEC CHEZ LE PROUX | GAEC CHEZ LE PROUX | Dompierre-Sur-Besbre | CHEZ LE PROUX 03290 | actividad | 2026 | [nº Bio 54607](https://annuaire.agencebio.org/operateur/54607) |
+| GAEC DE LA GIEZE | GAEC DE LA GIEZE | Ferrieres-Sur-Sichon | LD LA GIEZE 03250 | actividad | 2026 | [nº Bio 67089](https://annuaire.agencebio.org/operateur/67089) |
+| DELANGHE Laetitia | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE DES PREAUX | Fleuriel | LD LES PREAUX 03140 | actividad | 2026 | [nº Bio 149041](https://annuaire.agencebio.org/operateur/149041) |
+| GAEC LE CH'TI CABRI | GAEC LE CH'TI CABRI | Louroux-De-Beaune | 3 LIEU DIT LES GRANGES 03600 | actividad | 2026 | [nº Bio 70003](https://annuaire.agencebio.org/operateur/70003) |
+| KOOPMANN TEUN | KOOPMANN TEUN | Louroux Hodement | Crevant 03190 | actividad | 2026 | [nº Bio 140733](https://annuaire.agencebio.org/operateur/140733) |
+| WIRTH Morgane | LOQUET MORGANE | Marigny | 533 Chem. de Rotière 03210 | actividad | 2026 | [nº Bio 157861](https://annuaire.agencebio.org/operateur/157861) |
+| CALIA Corinne FERME DE LA PASSIFLORE | CALIA CORINNE | Rocles | FERME DE LA PASSIFLORE Village D'Ar 03240 | actividad | 2026 | [nº Bio 172725](https://annuaire.agencebio.org/operateur/172725) |
+| FRITSCH Jean-Luc | FRITSCH Jean-Luc | Saint Aubin Le Monial | Laume 03160 | actividad | 2026 | [nº Bio 103152](https://annuaire.agencebio.org/operateur/103152) |
+| MICHON Cyrille | MICHON Cyrille | Saint Clément | Driffort Compagnat 03250 | actividad | 2026 | [nº Bio 137141](https://annuaire.agencebio.org/operateur/137141) |
+| GAEC FERME DE CHAMARON | GAEC FERME DE CHAMARON | Saint-Didier-En-Donjon | Les Sirets 03130 | actividad | 2026 | [nº Bio 148003](https://annuaire.agencebio.org/operateur/148003) |
+| HUGLA Pierre (EI) | HUGLA PIERRE FREDERIC | Saint Hilaire | Lieu dit les salles 03440 | actividad | 2026 | [nº Bio 60697](https://annuaire.agencebio.org/operateur/60697) |
+| LES CHAMPS COURTS | LES CHAMPS COURTS | Treban | 1226 RTE DE CHAMPCOURT 03240 | actividad | 2026 | [nº Bio 40261](https://annuaire.agencebio.org/operateur/40261) |
+| CHARBY LOUIS | CHARBY LOUIS | Vieure | LES PETITS MALLAIS 03430 | actividad | 2026 | [nº Bio 106204](https://annuaire.agencebio.org/operateur/106204) |

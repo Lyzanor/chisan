@@ -28,3 +28,11 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 |---|---|---|---|---|---|---|---|
 | VOODOO | CAROLINE BELLANDE | Aulnay-sous-Bois | 51 RUE JULES PRINCET 93600 AULNAY-SOUS-BOIS | Destilados y licores | 11.01Z — Production de boissons alcooliques distillées | 2023-11 | [SIREN 981560899](https://annuaire-entreprises.data.gouv.fr/entreprise/981560899) |
 | KANAPATHY PARVATHY | NITHILA KANAPATHIPPILLAI | Bobigny | 17 RUE HERZOG 93000 BOBIGNY | Pan y cereal | 10.61A — Meunerie | 2016-07 | [SIREN 822544912](https://annuaire-entreprises.data.gouv.fr/entreprise/822544912) |
+
+## Productores de queso — barrido nacional del 2026-08-12
+
+Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
+
+Quedan **0 candidatos nuevos** en este corte: 0 perfiles de explotación, 0 unidades manufactureras adicionales y 0 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+
+Las tres fuentes no dejan candidatos nuevos para esta zona tras la deduplicación. El resultado cero se conserva como cierre del corte, no como afirmación de que no pueda aparecer una fuente futura.
