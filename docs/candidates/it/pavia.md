@@ -63,3 +63,11 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Cascina Venesia | Mezzanino | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | L’azienda è specializzata nella coltivazione di cereali orzo, grano e mais e nell’allevamento di animali di bassa corte, nonchè asini, caprini e daini. | 339.4605062<br>contatti@cascinavenesia.it<br>[web](http://www.cascinavenesia.it) |
 | Pescarolo del Molino Miradolo | Robbio | `Lácteos y quesos` + `Carne` + `Miel` | Azienda ad indirizzo cerealicolo, ortofrutticolo, con ulivi e vitigni; allevamento di caprini e avicoli . Produzione di salami d’oca crudi e cotti e salami “d’la duja” . Apicoltura. | 0384.671146<br>fulvio@fulviopescarolo.it<br>[web](http://www.fulviopescarolo.it.) |
 | La Sorgente | Varzi | `Lácteos y quesos` + `Condimentos` + `Huevos` | L’azienda alleva avicoli, conigli e caprini. Coltiva verdura, legumi, spezie e frutta. | 0383.53295, 333.8092944<br>info@lasorgenteagriturismo.it<br>[web](http://www.lasorgenteagriturismo.it) |
+
+## Productores de queso — caso todavía sin resolver
+
+El barrido sanitario del 2026-08-11 quedó revisado el 2026-08-12. Se publicaron las unidades con identidad y oferta productora contrastables y se documentaron los descartes en el ledger de evidencia. Solo queda retenido este caso porque la autorización sanitaria no permite identificar una marca u oferta pública concreta:
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Motivo de retención |
+|---|---|---|---|---|
+| YEP SRL | Pavia | Via Mario Ponzio 7 | `UE IT S261Q` | La sociedad figura activa en producción de derivados lácteos, pero no aparece una identidad comercial, catálogo ni fuente pública que permita saber qué producto propio ofrece actualmente. |

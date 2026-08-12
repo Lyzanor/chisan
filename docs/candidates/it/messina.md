@@ -1,26 +1,31 @@
 # Candidatos — Messina
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+## Ecológicos — revisión del 2026-08-12
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| AGRINISI SOCIETA' AGRICOLA A R.L. | Fiumedinisi | CONTRADA VECCHIO 98022 | producción — vegetales sin transformar | 2029-02-18 | [IT-BIO-022.380-0111510.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-022.380-0111510.2026.001.pdf) |
-| ALIBERTI ANTONINO | Santa Teresa di Riva | Via Francesco Crispi, 60 98028 | producción — vegetales sin transformar | 2028-08-24 | [IT-BIO-008.380-0109036.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0109036.2025.001.pdf) |
-| ALLEVAMENTI MORFIA SOCIETA' COOPERATIVA | Montalbano Elicona | CONTRADA CASALE 98065 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-07-29 | [IT-BIO-023.380-0103938.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0103938.2025.001.pdf) |
-| ALTA COLLINA S.A.S. SOCIETA' AGRICOLA DI GIACOMO CALA' LESINA & C. | Capo d'Orlando | VIA ELIO VITTORINI N 10 98071 | producción — vegetales sin transformar | 2028-10-07 | [IT-BIO-008.380-0107833.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0107833.2025.001.pdf) |
-| APICULTURA COLLINE DEL FITALIA SOC. AGR. A R.L. SEMPLIFICATA | San Salvatore di Fitalia | CONTRADA SAN VITO, SNC 98070 | preparación, producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-01-28 | [IT-BIO-008.380-0085726.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0085726.2026.001.pdf) |
-| APISTEI ADRIAN IULIAN | Militello Rosmarino | VIA CHIASSO 2 98070 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-10-28 | [IT-BIO-004.380-0046995.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0046995.2025.001.pdf) |
-| AQUILA GIUSEPPA | Santo Stefano di Camastra | CONTRADA PASSO BARONE 98077 | producción — vegetales sin transformar | 2028-09-10 | [IT-BIO-004.380-0105948.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0105948.2025.001.pdf) |
-| Aquila Salvatore | Caronia | Via Foscolo, 50 98072 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-04-21 | [IT-BIO-008.380-0054198.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0054198.2025.001.pdf) |
-| ARASI NUNZIO | Brolo | VIA DON LUIGI STURZO 14 98061 | producción — vegetales sin transformar | 2028-02-09 | [IT-BIO-004.380-0094939.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0094939.2025.001.pdf) |
-| ARICO' RAMONA | Saponara | CONTRADA S. BARBARA 35 98047 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-16 | [IT-BIO-004.380-0098545.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0098545.2025.002.pdf) |
-| ARMELI ROSARIO | Acquedolci | VIA ALBANO 6 98070 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-09-29 | [IT-BIO-004.380-0048911.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0048911.2025.003.pdf) |
-| ARTOCCHI MARIO | Patti | CONTRADA MORERI SOPRANI 25 98066 | producción — vegetales sin transformar | 2028-09-01 | [IT-BIO-004.380-0092105.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0092105.2025.001.pdf) |
-| AVENI CIRINO RENZO | Tripi | VICO FURNARI 4 98060 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-12-09 | [IT-BIO-004.380-0013849.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0013849.2025.002.pdf) |
-| AZ. AGRICOLA MORELLO SALVATORE | San Fratello | VIA RICCA SALERNO 103 98075 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-10-27 | [IT-BIO-004.380-0051093.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0051093.2025.002.pdf) |
-| AZ. AGRICOLA ZOOTECNICA A. FIORIGLIO DI FIORIGLIO BIAGIO & C. SAS SOCIETA' AGRICOLA | Mistretta | C DA BAFI' SN 98073 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-07-17 | [IT-BIO-008.380-0103576.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0103576.2025.001.pdf) |
-| AZ.AGRICOLA PORTUSI DI GATTO CESARE | Tripi | VIA FRANCESCO TODARO 178 98060 | producción — vegetales sin transformar | 2028-11-18 | [IT-BIO-004.380-0109777.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0109777.2025.001.pdf) |
-| AZIENDA AGRICOLA "ALBANA CONCETTINA" | Montalbano Elicona | VIA PROVVIDENZA 21 98065 | producción — vegetales sin transformar | 2028-11-26 | [IT-BIO-004.380-0004630.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0004630.2025.001.pdf) |
-| AZIENDA AGRICOLA BONANNO PIETRO | Caronia | VIA CARACCIOLO 19 98072 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-08-03 | [IT-BIO-004.380-0093067.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0093067.2025.002.pdf) |
-| AZIENDA AGRICOLA CONTRADA BRACCONIERE | Cesarò | VIA MERCATO 151 98033 | producción — vegetales sin transformar | 2028-07-07 | [IT-BIO-004.380-0102889.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0102889.2025.001.pdf) |
-| AZIENDA AGRICOLA DI CAPUTO MARCO | San Teodoro | VIA SAN MATTEO 4 98030 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-08-07 | [IT-BIO-023.380-0024223.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0024223.2025.001.pdf) |
+De los 20 operadores TRACES descubiertos el 2026-08-08 se incorporó Apicultura Colline del Fitalia, reconciliada con Giuseppe Scurria, el Presidio Slow Food de la abeja negra sicula y actividad apícola regional de 2025. Los demás se mantienen como pistas porque no se pudo confirmar una oferta propia al público:
+
+| Operador pendiente | Comune | Motivo concreto |
+|---|---|---|
+| AGRINISI SOCIETA' AGRICOLA A R.L. | Fiumedinisi | Sociedad muy reciente; el objeto social no prueba qué alimento produce o vende actualmente. |
+| ALIBERTI ANTONINO | Santa Teresa di Riva | La antigua identidad Naturacrea no ofrece producto o actividad pública actuales. |
+| ALLEVAMENTI MORFIA SOCIETA' COOPERATIVA | Montalbano Elicona | Se confirma explotación bovina activa, pero no leche, carne o queso propio vendido al público. |
+| ALTA COLLINA S.A.S. SOCIETA' AGRICOLA | Capo d'Orlando | No se localizó marca, producto propio o unidad productiva pública. |
+| APISTEI ADRIAN IULIAN | Militello Rosmarino | Se confirma empresa/apicultor, pero no marca de miel ni contacto de venta. |
+| AQUILA GIUSEPPA | Santo Stefano di Camastra | Solo se confirma la explotación y ayudas; falta producto comercial identificable. |
+| AQUILA SALVATORE | Caronia | Ganadería activa en 2024, sin producto propio o venta directa públicamente atribuible. |
+| ARASI NUNZIO | Brolo | No se localizó marca o producto alimentario propio verificable. |
+| ARICO' RAMONA | Saponara | El certificado no pudo reconciliarse con una oferta alimentaria pública inequívoca. |
+| ARMELI ROSARIO | Acquedolci | Solo constan explotación y certificado; falta producto, marca y canal. |
+| ARTOCCHI MARIO | Patti | Sin identidad comercial o producto propio actual localizado. |
+| AVENI CIRINO RENZO | Tripi | Se confirma explotación, no una oferta alimentaria propia al público. |
+| AZ. AGRICOLA MORELLO SALVATORE | San Fratello | No se encontró marca, producto o contacto directo verificables. |
+| AZ. AGRICOLA ZOOTECNICA A. FIORIGLIO | Mistretta | Ya está publicada como Azienda Fioriglio desde su unidad quesera; no se duplica. |
+| AZ.AGRICOLA PORTUSI DI GATTO CESARE | Tripi | Solo consta producción vegetal certificada, sin producto final o canal público. |
+| AZIENDA AGRICOLA ALBANA CONCETTINA | Montalbano Elicona | No se localizó identidad comercial o alimento propio verificable. |
+| AZIENDA AGRICOLA BONANNO PIETRO | Caronia | Ganadería certificada sin producto propio o venta directa públicamente identificable. |
+| AZIENDA AGRICOLA CONTRADA BRACCONIERE | Cesarò | No se pudo confirmar marca, producto final o contacto comercial. |
+| AZIENDA AGRICOLA DI CAPUTO MARCO | San Teodoro | Se confirma explotación ganadera, pero no producto alimentario ofrecido al público. |
+
+## Productores de queso — revisión del 2026-08-12
+
+Lote cerrado con diez productores publicados. Permanecen cuatro titulares sanitarios sin identidad/oferta pública actual suficiente —Savoca Calogero (Cesarò), Caseificio Rosario di Lo Monaco Mario (Letojanni), Azienda Agricola Iris (Librizzi) y Cassata Mauro (Pettineo)— y la nueva unidad Nebrolat de Torregrotta hasta que la marca explique públicamente su función. La autorización sanitaria acredita capacidad, no actividad comercial actual.

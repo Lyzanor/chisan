@@ -1,40 +1,21 @@
 # Candidatos — Rovigo
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Pendientes tras la revisión del 2026-08-12. Proceden del [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index) y mantienen certificado ecológico vigente, pero la certificación por sí sola no demuestra una identidad comercial, un alimento concreto ofrecido al mercado ni la ubicación productiva. Se retiraron de esta nota los candidatos publicados, rechazados o ya reconciliados.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| AGRICOLA MANZALI SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Ceneselli | VIA MAGHERINO, 2350 45030 | producción — vegetales sin transformar | 2028-07-13 | [IT-BIO-016.380-0023491.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-016.380-0023491.2025.001.pdf) |
-| AZ. AGR. BARCHESSA DI  DOLFINI MARCO | Rovigo | Via M G BALBI VALIER 102 45100 | producción — vegetales sin transformar | 2029-08-03 | [IT-BIO-006.380-0024576.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0024576.2026.001.pdf) |
-| AZ. AGR. BIOLOGICA  LUCCHIARI ROBERTO | Lendinara | VIA SAGUEDO CENTRO 4 45026 | producción — vegetales sin transformar | 2029-06-09 | [IT-BIO-006.380-0030650.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0030650.2026.001.pdf) |
-| Az. Agr. Soriana di Siviero Cristina & C. s.s. | Porto Viro | Fraz. Ca' Cappellino, 14 45014 | producción — vegetales sin transformar | 2027-07-03 | [IT-BIO-005.380-0080863.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0080863.2026.001.pdf) |
-| AZ. AGR. VALLESE LUCA | Adria | VIA CA' TRON 35 CA EMO 45011 | producción — vegetales sin transformar | 2028-07-24 | [IT-BIO-015.380-0025881.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0025881.2025.002.pdf) |
-| Azienda Agricola Annamaria di Crocco Tomas | Loreo | Via Belvedere, 421 45017 | producción — vegetales sin transformar | 2027-06-19 | [IT-BIO-005.380-0015103.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0015103.2026.001.pdf) |
-| AZIENDA AGRICOLA IRIDE DI BARBINI ALESSANDRO | Rovigo | VIA ANNA FRANK N 25 45100 | producción — vegetales sin transformar | 2029-05-03 | [IT-BIO-004.380-0028044.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0028044.2026.002.pdf) |
-| AZIENDA AGRICOLA QUIRINA DI  SALVAN CARLO | Costa di Rovigo | VIA MARTIRI RESISTENZA 317 45023 | producción — vegetales sin transformar | 2029-05-29 | [IT-BIO-006.380-0003897.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0003897.2026.001.pdf) |
-| BALLARIN LUIGI | Porto Tolle | VIA PIETRO CALEFFI 11 45018 | producción — algas sin transformar | 2028-05-14 | [IT-BIO-006.380-0095980.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0095980.2025.002.pdf) |
-| BARCARO GIUSEPPE | Rovigo | VIA CITTADELLA 12 45100 | producción — vegetales sin transformar | 2028-03-19 | [IT-BIO-007.380-0089857.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0089857.2026.001.pdf) |
-| BARONE SALVATORE | Rosolina | CONTRADA PERNICIA 45010 | producción — vegetales sin transformar | 2029-04-20 | [IT-BIO-009.380-0015820.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0015820.2026.001.pdf) |
-| BARUTTO ANDREA | Ariano nel Polesine | VIA LINEA 45012 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-05-22 | [IT-BIO-006.380-0100544.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0100544.2025.001.pdf) |
-| BELLUCO GIUSEPPE | Corbola | VIA PILASTRI, 4000 45015 | producción — vegetales sin transformar | 2029-05-13 | [IT-BIO-007.380-0018823.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0018823.2026.001.pdf) |
-| BENATTI VALTER | Melara | VIA PAGANA 30 45037 | producción — vegetales sin transformar | 2027-05-08 | [IT-BIO-004.380-0011753.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0011753.2024.001.pdf) |
-| BOSCHINI FABIO | Salara | VIA DANTE ALIGHIERI, 2129 45030 | producción — vegetales sin transformar | 2027-11-25 | [IT-BIO-007.380-0061952.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0061952.2025.001.pdf) |
-| BRULLARE SAS SOCIETA' AGRICOLA DI LIONELLO LUIGINA & C. | Villadose | VIA TEANO 18 45010 | producción — vegetales sin transformar | 2028-07-30 | [IT-BIO-006.380-0103997.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0103997.2025.001.pdf) |
-| CANAL DEI CUORI SRL SOC.AGRICOLA | Adria | VIA RONCONI, 4 45011 | producción — vegetales sin transformar | 2028-03-19 | [IT-BIO-007.380-0047618.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0047618.2025.001.pdf) |
-| CAPOLAVIA AZIENDA AGRICOLA DI  MARCHETTO ANDREA | Rovigo | VIA RODOLFO ROSSI 66 45100 | producción — vegetales sin transformar | 2029-05-22 | [IT-BIO-006.380-0028227.2026.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0028227.2026.003.pdf) |
-
-## Categorías poco representadas — barrido del 2026-08-10
-
-1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Cerveza` 1.
-
-Fuentes de este lote:
-
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| NEBULA | Lendinara | `Cerveza` | birra artigianale | [web](https://www.rattabrew.it/) |
+| Candidato | Comune certificado | Motivo de retención |
+|---|---|---|
+| AGRICOLA MANZALI SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Ceneselli | El registro empresarial actual solo permite afirmar actividad agrícola mixta; no aparece una marca ni una oferta alimentaria propia concreta. |
+| AZ. AGR. BARCHESSA DI DOLFINI MARCO | Rovigo | No se localizó una huella pública útil fuera del certificado para probar producto y oferta propia. |
+| AZ. AGR. BIOLOGICA LUCCHIARI ROBERTO | Lendinara | La actividad pública se limita al cultivo permanente sin producto comercial o identidad de mercado atribuible. |
+| Az. Agr. Soriana di Siviero Cristina & C. s.s. | Porto Viro | No se localizó una fuente pública que concrete producto, marca y oferta actual. |
+| AZ. AGR. VALLESE LUCA | Adria | No se localizó una fuente pública que concrete producto, marca y oferta actual. |
+| Azienda Agricola Annamaria di Crocco Tomas | Loreo | El registro actual solo describe cereales, legumbres y oleaginosas; falta una oferta propia que llegue al mercado. |
+| AZIENDA AGRICOLA IRIDE DI BARBINI ALESSANDRO | Rovigo | Hay actividad hortícola actual, pero la dirección pública apunta a Bagnolo di Po y no se encontró una oferta propia que permita resolver identidad y unidad productiva. |
+| BALLARIN LUIGI | Porto Tolle | La fuente empresarial solo permite afirmar acuicultura marina; faltan especie, marca y oferta pública propia. |
+| BARCARO GIUSEPPE | Rovigo | Los resultados públicos remiten principalmente a una identidad profesional de ingeniería; no se pudo atribuir con seguridad una actividad alimentaria al operador certificado. |
+| BARONE SALVATORE | Rosolina | Los resultados se confunden con homónimos sicilianos y no permiten atribuir producto o identidad pública al operador de Rosolina. |
+| BARUTTO ANDREA | Ariano nel Polesine | El registro solo describe cultivos y ganadería mixtos; falta un producto propio ofrecido bajo una identidad pública. |
+| BELLUCO GIUSEPPE | Corbola | Solo aparece como cultivador de cereales y oleaginosas, sin marca ni oferta alimentaria propia verificable. |
+| BENATTI VALTER | Melara | Solo consta actividad cerealista; además existe un homónimo inmobiliario, por lo que no se puede asignar una identidad pública segura. |
+| BOSCHINI FABIO | Salara | Consta como fruticultor de pepita y hueso, pero no se encontró una oferta propia o marca pública atribuible. |
+| CANAL DEI CUORI SRL SOC.AGRICOLA | Adria | La finca y su uso para eventos son actuales, pero no se encontró un alimento propio ofrecido al mercado bajo esta identidad. |

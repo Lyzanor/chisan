@@ -1,11 +1,26 @@
 # Candidatos — Caltanissetta
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Barrido ecológico revisado el 2026-08-12. Se publicaron Azienda Agricola Agnesi Michele, La Uliva, Azienda Agricola Don Bartolo y Fattoria Di Gesu después de reconciliar el certificado `ISSUED` de [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index) con una identidad pública, un producto alimentario concreto y el comune de la unidad. Los 16 operadores siguientes permanecen abiertos; el certificado acredita alcance ecológico, pero todavía no permite atribuir una oferta pública concreta con seguridad.
+
+- Associazione I Girasoli Onlus publica principalmente actividad social y de acogida, sin gama alimentaria atribuible a la unidad certificada.
+- B.Agri tiene documentación de inversión para fruta y frutos secos, pero no aparece aún una marca, producto terminado o canal comercial actual.
+- Bio Organic Hemp solo aparece en registros administrativos y de terrenos; falta confirmar qué alimento vende y bajo qué identidad.
+- Bognanni Francesco figura como viticultor, sin vino, uva u otro producto ofrecido públicamente por la explotación.
+- Bongiovanni Marilena presenta identidades públicas incompatibles —panadería y explotación hortofrutícola, con direcciones y NIF distintos— que deben reconciliarse antes de publicar.
+- Buttiglieri Valentina figura como productora de fruta y frutos secos, pero no se ha localizado una oferta o contacto comercial atribuible.
+- Cammalleri Rocco terminó en 2025 un laboratorio, oleificio, pistachero y cítricos en Gurgazzi; falta comprobar la marca y la gama que efectivamente ha salido al mercado.
+- Cancemi Vincenzo no puede vincularse con seguridad a las empresas homónimas localizadas ni a un producto alimentario concreto.
+- Capici Rosario tiene alcance de cereal, legumbre y ganadería, pero no una gama pública ni un canal atribuible.
+- Cinardo Onofrio Walter solo conserva huella registral y certificadora; falta identidad comercial, producto y contacto.
+- Di Vara Roberto no presenta una oferta alimentaria pública atribuible a la explotación certificada.
+- Dilena Mario aparece en expedientes agrícolas y ganaderos, pero no se ha encontrado marca, producto o venta actual.
+- Diliberto Daniela Maria Antonia aparece en una solicitud de diversificación agraria, todavía sin producto o identidad comercial publicados.
+- Ferraro Rosa solo aparece en certificación y ayudas, sin alimento concreto ofrecido al público.
+- Fiordaliso Marika muestra una explotación mixta con équidos, pero no una gama alimentaria verificable.
+- Gambino Giuseppe Enrico solo aparece en expedientes de ayuda y captación de agua, sin producto ni canal comercial público.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
-| AGNESI MICHELE | Villalba | C/DA ROBA 93010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-09-15 | [IT-BIO-007.380-0047217.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0047217.2025.001.pdf) |
-| ALABISO MARCO | Riesi | VIA MORANDI SNC 93016 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-09-11 | [IT-BIO-006.380-0106156.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0106156.2025.001.pdf) |
 | ASSOCIAZIONE I GIRASOLI ONLUS | Mazzarino | CORSO VITTORIO EMANUELE, 214 - 93013 | producción — vegetales sin transformar | 2028-09-04 | [IT-BIO-002.380-0105565.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-002.380-0105565.2025.001.pdf) |
 | B.AGRI SOCIETA' AGRICOLA SEMPLICE | Riesi | VIA CARMELO INGLESE N 11 - 93016 | producción — vegetales sin transformar | 2028-07-10 | [IT-BIO-002.380-0102201.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-002.380-0102201.2025.002.pdf) |
 | BIO ORGANIC HEMP S.R.L. | Mazzarino | CONTRADA SOFIANA S N C 93013 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-11-11 | [IT-BIO-004.380-0027869.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0027869.2025.001.pdf) |
@@ -16,11 +31,22 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | CANCEMI VINCENZO | Caltanissetta | VIA DUE FONTANE SNC 93100 | producción — vegetales sin transformar | 2028-09-02 | [IT-BIO-023.380-0083518.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0083518.2025.001.pdf) |
 | CAPICI ROSARIO | Mazzarino | VIA MONFALCONE 14 93013 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-19 | [IT-BIO-012.380-0099395.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0099395.2026.001.pdf) |
 | Cinardo Onofrio Walter | Mazzarino | Contrada Castellucci, snc 93013 | producción — vegetales sin transformar | 2028-07-31 | [IT-BIO-008.380-0105457.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0105457.2025.001.pdf) |
-| Di Bartolo Alessandro Giuseppe Luigi | Sommatino | Via Goito, 29 93019 | producción — vegetales sin transformar | 2028-05-26 | [IT-BIO-008.380-0100794.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0100794.2025.002.pdf) |
-| DI GESU FRANCESCO | Villalba | STRADA PROVINCIALE 30   CONTRADA BELICI 93010 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-04-03 | [IT-BIO-006.380-0086605.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0086605.2025.001.pdf) |
 | DI VARA ROBERTO | Mazzarino | Via Sardegna, 6 93013 | producción — vegetales sin transformar | 2028-09-23 | [IT-BIO-014.380-0040658.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0040658.2025.002.pdf) |
 | DILENA MARIO | Sutera | C/DA MARROBBIO 93014 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-07-13 | [IT-BIO-018.380-0103246.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-018.380-0103246.2025.001.pdf) |
 | Diliberto Daniela Maria Antonia | San Cataldo | Via Don Bosco, 110 93017 | producción — vegetales sin transformar | 2028-07-20 | [IT-BIO-008.380-0104325.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0104325.2025.001.pdf) |
 | FERRARO ROSA | Marianopoli | VIA ROMAGNA, 2 93010 | producción — vegetales sin transformar | 2028-07-11 | [IT-BIO-007.380-0090591.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090591.2025.001.pdf) |
 | FIORDALISO MARIKA | Caltanissetta | C/DA TRABONELLA SNC 93100 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-10-17 | [IT-BIO-007.380-0037025.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0037025.2025.001.pdf) |
 | Gambino Giuseppe Enrico | Butera | C.da Disueri snc 93011 | producción — vegetales sin transformar | 2028-06-22 | [IT-BIO-008.380-0102297.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0102297.2025.001.pdf) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+6 unidades productivas siguen pendientes de una identidad pública y una oferta quesera actuales. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Se publicaron Caseificio Arnone, Caseificio Storico Ficarra y Caseificio Gadduzzo después de reconciliar sus unidades sanitarias con fuentes públicas recientes. El Cammarata Luca de este lote no es la homónima Azienda Agricola Biologica Luca Cammarata: difieren la dirección productiva y la identificación fiscal, por lo que no se fusionan. Centro Latte Sicilia conserva una unidad recién autorizada, pero aún no publica una oferta quesera propia; Cusenza, Rizza, LA.BA. y Fardella tampoco ofrecen una identidad comercial y una gama actuales suficientemente atribuibles. Corte revisado: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| CAMMARATA LUCA | Caltanissetta | CONTRADA PESCAZZO - SAN LEONARDO sn, CALTANISSETTA (CL) | `UE IT P5W6K` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUL-15 |
+| CENTRO LATTE SICILIA S.R.L. | Caltanissetta | VIA MANFREDI CHIARAMONTE - ZONA IND. 1, CALTANISSETTA (CL) | `UE IT 19 42` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-JAN-26 |
+| CUSENZA LUIGI | Caltanissetta | C/DA SAN MARTINO , CALTANISSETTA (CL) | `UE IT 19 181` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+| RIZZA GIUSEPPE | Caltanissetta | VIALE L. MONACO, 46, CALTANISSETTA (CL) | `UE IT 19 811` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JUN-19 |
+| LA.BA.S.R.L. | Gela | ZONA INDUSTRIALE II STRADA , GELA (CL) | `UE IT 19 195` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+| PICCOLO CASEIFICIO FARDELLA DI FARDELLA CLEMENTE | Mazzarino | CONTRADA FALATANO , MAZZARINO (CL) | `UE IT 19 799` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |

@@ -23,3 +23,36 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | Bobba Remo | Cigliano | Via Fratelli Rosselli, 40 13043 | producción — vegetales sin transformar | 2029-07-15 | [IT-BIO-008.380-0061554.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0061554.2026.002.pdf) |
 | Bongo Matteo | Vercelli | Larizzate - Cascina Varola sn 13100 | producción — vegetales sin transformar | 2029-01-11 | [IT-BIO-008.380-0046009.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0046009.2026.001.pdf) |
 | BONO CLAUDIO | Santhià | C.SO SEMPIONE CASC. CERETTO, 53/A 13048 | producción — vegetales sin transformar | 2026-10-03 | [IT-BIO-007.380-0016552.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0016552.2026.002.pdf) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+26 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| FERRERO DAVIDE | Alagna Valsesia | VIA ALPE OTRO DORF 1, ALAGNA VALSESIA (VC) | `UE IT 01 2031` | vacuno menos de 60 d/más de 60 d | 18-FEB-19 |
+| VENARA UGO | Alagna Valsesia | VIA ALPE SCARPIA DI OTRO SN, ALAGNA VALSESIA (VC) | `UE IT 01 598` | vacuno menos de 60 d | 02-JAN-19 |
+| VALSESIA S.R.L. | Balocco | STRADA PROVINCIALE TORINO-SVIZZERA-FRAZ.CROCICCHIO sn, BALOCCO (VC) | `UE IT 01 89` | vacuno menos de 60 d | 27-MAY-22 |
+| SORELLE FACCIOTTI SOCIETA' SEMPLICE AGRICOLA | Boccioleto | LOCALITA' POMAROLO SN, BOCCIOLETO (VC) | `UE IT P4Q5Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUL-24 |
+| TOSI MARINO | Boccioleto | VIA ALPE ORACCIO sn, BOCCIOLETO (VC) | `UE IT R8Z28` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 02-JAN-19 |
+| BONETTA ERMES | Borgosesia | FRAZIONE SCALAGNA DI FORESTO SN, BORGOSESIA (VC) | `UE IT 01 340` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 27-NOV-18 |
+| LA MINERA DI BERTONCINI FRANCESCO | Borgosesia | REGIONE SCALAGNA 20, BORGOSESIA (VC) | `UE IT W5P8A` | vacuno menos de 60 d/más de 60 d | 02-AUG-22 |
+| CERRI S.R.L. | Buronzo | VIA BALOCCO, 4, BURONZO (VC) | `UE IT 01 50` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-OCT-20 |
+| FRANZINI MARCO | Campertogno | VIA ALPE CASCINE SN, CAMPERTOGNO (VC) | `UE IT 01 2179` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 01-AUG-22 |
+| SORELLE FACCIOTTI SOCIETA' SEMPLICE AGRICOLA | Carcoforo | VIA ALPE CILETTO SNC, CARCOFORO (VC) | `UE IT G3G4V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-NOV-24 |
+| CER.MAC. - S.N.C. DI MACCO MARIA E C. | Carisio | VIA TORINO FRAZIONE CROCICCHIO 1, CARISIO (VC) | `UE IT 01 307` | vacuno menos de 60 d/más de 60 d | 05-DEC-18 |
+| LA GIUNCA' DISTRIBUZIONE SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Fobello | VIA CIRCONVALLAZIONE S/N, FOBELLO (VC) | `UE IT Z584E` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JAN-20 |
+| VENARA UGO | Guardabosone | VIA LOC. MOLINO 5, GUARDABOSONE (VC) | `UE IT 01 315` | vacuno menos de 60 d | 02-JAN-19 |
+| CASEIFICIO ALTA VALSESIA SOCIETA' COOPERATIVA AGRICOLA | Piode | VIA VARALLO 5, PIODE (VC) | `UE IT 01 306` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 17-FEB-23 |
+| DEMILIANI DAVIDE | Piode | VIA ALPE PIANA SN, PIODE (VC) | `UE IT 01 597` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUN-17 |
+| FRATELLI BACHER SOCIETA' SEMPLICE AGRICOLA | Rassa | LOCALITA' ALPE SORBELLA SN, RASSA (VC) | `UE IT X113M` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-OCT-20 |
+| GUGLIELMINA SILVANO | Rassa | VIA ALPE FRAZIONE FONTANA SN, RASSA (VC) | `UE IT 01 596` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 03-JAN-19 |
+| MANTELLO FRANCO | Rassa | VIA ALPE PIANA D`OVAGO SN, RASSA (VC) | `UE IT 01 2032` | vacuno menos de 60 d | 07-JAN-19 |
+| ANTONIETTI DIEGO | Rima San Giuseppe | LOCALITA' SAN LAZZARO SNC, RIMA SAN GIUSEPPE (VC) | `UE IT T2Q2W` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-OCT-16 |
+| AZIENDA AGRICOLA CASCINA VAL PITTA S.S. | Rima San Giuseppe | LOCALITA' ALPE VALLE' INFERIORE SN, RIMA SAN GIUSEPPE (VC) | `UE IT 01 2017` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-SEP-17 |
+| DEFILIPPI MARTA | Rima San Giuseppe | VIA ALPE LAVAZZEI S/N, RIMA SAN GIUSEPPE (VC) | `UE IT R3M40` | vacuno menos de 60 d/más de 60 d | 03-SEP-21 |
+| BONETTA ERMES | Sabbia | LOCALITA' ALPE CAMPO SN, SABBIA (VC) | `UE IT 01 595` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 27-NOV-18 |
+| AZIENDA AGRICOLA FATTORIA BIANCANEVE DI NEGRA FRANCESCO | Scopello | VIA GIARE LOC. CHIOSO SNC, SCOPELLO (VC) | `UE IT X132R` | caprino menos de 60 d/más de 60 d | 18-MAY-15 |
+| AZIENDA AGRICOLA CERINI SOCIETA' SEMPLICE AGRICOLA | Varallo | FRAZIONE ANICETI 11, VARALLO (VC) | `UE IT 01 331` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JAN-19 |
+| GARBACCIO LIVIO | Varallo | VIA ALPE LINCE`E sn, VARALLO (VC) | `UE IT N1U5C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-MAY-19 |
+| TOSI MARINO | Varallo | VIA FRAZ. BALANGERA 19 sn, VARALLO (VC) | `UE IT 01 317` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 03-JAN-19 |

@@ -1,41 +1,35 @@
 # Candidatos — Alessandria
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión del 2026-08-12. El lote ecológico, las cerveceras, las autorizaciones queseras y el consorcio Roccaverano se contrastaron contra fuentes públicas actuales. Las altas, exclusiones y reasignaciones resueltas se retiraron de esta cola y quedaron reflejadas en los CSV y en `data/evidence/it/piemonte/`. Permanecen únicamente los casos que todavía no permiten vincular con seguridad una identidad comercial actual y un alimento propio ofrecido al público.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| A.A. DEREGIBUS ADELMO DI SOLINAS MATTEO | Ozzano Monferrato | VIA DIONIGI FRAZ ROLLINI 40 15039 | producción — vegetales sin transformar | 2029-03-06 | [IT-BIO-006.380-0018810.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0018810.2026.002.pdf) |
-| AZ. AGR. TERRE DEL BARE DI LUGANO MAURIZIO | Volpedo | VIA ARGHEZZANA 21 15059 | producción — vegetales sin transformar | 2028-08-21 | [IT-BIO-006.380-0044318.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0044318.2025.001.pdf) |
-| AZIENDA AGRICOLA COGGIOLA GIOVANNI SOCIETA' SEMPLICE AGRICOLA | Frassineto Po | VIA ENRICO TOTI 25 15040 | producción — vegetales sin transformar | 2028-04-16 | [IT-BIO-007.380-0039863.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0039863.2025.002.pdf) |
-| AZIENDA AGRICOLA LA SALVIA BIANCA SOCIETA' SEMPLICE AGRICOLA | Villadeati | VIA VADARENGO 18 15020 | producción — vegetales sin transformar | 2028-07-13 | [IT-BIO-004.380-0030837.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0030837.2025.002.pdf) |
-| AZIENDA AGRICOLA TIZIANA NICOLA | Odalengo Grande | CASCINA ARBOLINA  1 15020 | producción — vegetales sin transformar | 2028-08-27 | [IT-BIO-006.380-0002555.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0002555.2025.001.pdf) |
-| BIANCHI FILIPPO | Rosignano Monferrato | CASCINA CASTAGNONI 67 B 15030 | producción — vegetales sin transformar | 2028-11-21 | [IT-BIO-009.380-0040458.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0040458.2025.001.pdf) |
-| BIANCO MAURO | Odalengo Grande | VIA TORRE S. QUIRICO 5 15020 | producción — vegetales sin transformar | 2029-02-09 | [IT-BIO-004.380-0026427.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0026427.2026.001.pdf) |
-| BOCCACCIO ILEANA | Tagliolo Monferrato | LOCALITA' PIANOMOGLIA 21 15070 | producción — vegetales sin transformar | 2028-11-10 | [IT-BIO-006.380-0037513.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0037513.2025.002.pdf) |
-| BREGSTEIN RICARDO | Avolasca | VIA ALESSANDRO CERRUTI 28 15050 | producción — vegetales sin transformar | 2028-05-19 | [IT-BIO-006.380-0029374.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0029374.2025.001.pdf) |
-| CAFFER MAURIZIO | Villamiroglio | VIA ALEMANNO, 9 15020 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-09-04 | [IT-BIO-007.380-0043750.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0043750.2025.003.pdf) |
-| CARPICECI ANITA | Gabiano | Via Santo Stefano, 20 15020 | producción — vegetales sin transformar | 2028-09-02 | [IT-BIO-014.380-0030340.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0030340.2025.001.pdf) |
-| CASCINA LA SIGNORINA DI LUCIANO MONTAGNA & C. SOCIETA' AGRICOLA IN ACCOMANDITA SEMPLICE | Ovada | VIA G D BUFFA 22 15076 | producción — vegetales sin transformar | 2028-09-10 | [IT-BIO-006.380-0033158.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0033158.2025.003.pdf) |
-| CASSINA DAVIDE | Villamiroglio | VIA MOLINO DEL CONTE 3 15020 | producción — vegetales sin transformar | 2028-10-02 | [IT-BIO-009.380-0058310.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0058310.2025.002.pdf) |
-| CORSALE FILIPPA | Momperone | LOCALITA' CASTELLO SNC 15050 | producción — vegetales sin transformar | 2028-07-20 | [IT-BIO-004.380-0021668.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0021668.2025.002.pdf) |
-| GARRONE SIMONA | Cartosio | VIA CASERITI 6 15015 | producción — vegetales sin transformar | 2029-01-13 | [IT-BIO-006.380-0067466.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0067466.2026.001.pdf) |
-| L'ORO DELLE API DI GIAVOTTO MATTIA | Parodi Ligure | VIA XX SETTEMBRE 42/A 15060 | preparación, producción — ganado y productos ganaderos sin transformar, vino | 2028-05-19 | [IT-BIO-006.380-0076398.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0076398.2025.001.pdf) |
-| LA BORGHINA DI BORGHINO PIERINO | Cuccaro Monferrato | FRAZIONE BORGHINA 15 15040 | producción — vegetales sin transformar | 2028-09-03 | [IT-BIO-004.380-0034702.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0034702.2025.002.pdf) |
-| LA MARRA ALESSANDRO | Molare | VIA SANTUARIO 53 A 15074 | producción — vegetales sin transformar | 2028-09-29 | [IT-BIO-015.380-0067504.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0067504.2025.001.pdf) |
+## Operadores ecológicos pendientes
 
-## Categorías poco representadas — barrido del 2026-08-10
+Todos conservan certificado `ISSUED` en [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), pero el certificado acredita alcance ecológico y no por sí solo una oferta pública concreta.
 
-2 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+| Operador | Comune | Motivo concreto de retención |
+|---|---|---|
+| A.A. Deregibus Adelmo di Solinas Matteo | Ozzano Monferrato | No se encontró marca pública ni alimento concreto atribuible a la unidad certificada. |
+| Azienda Agricola Coggiola Giovanni | Frassineto Po | Solo aparece actividad registral vegetal; falta una oferta directa identificable. |
+| Azienda Agricola La Salvia Bianca | Villadeati | No se localizó un producto alimentario público propio asociado de forma inequívoca. |
+| Azienda Agricola Tiziana Nicola | Odalengo Grande | La actividad hortícola registral no permite confirmar una oferta actual al consumidor. |
+| Bianchi Filippo | Rosignano Monferrato | La coincidencia con Cascina Castagnoni no prueba qué productos propios se comercializan. |
+| Bianco Mauro | Odalengo Grande | Solo se pudo corroborar la identidad agrícola, no un producto concreto público. |
+| Bregstein Ricardo | Avolasca | Se confirma viticultura, pero no una marca ni un vino propio actualmente ofrecido. |
+| Carpiceci Anita | Gabiano | La explotación mixta aparece en registros, sin una oferta alimentaria pública atribuible. |
+| Cassina Davide — Molino del Conte | Villamiroglio | Hay referencias históricas a maíz y actividad agrícola, pero no oferta pública actual suficiente. |
+| Corsale Filippa | Momperone | El registro actual indica cultivo de cereal, sin marca o producto propio al público. |
+| L’Oro delle Api di Giavotto Mattia | Parodi Ligure | La apicultura está activa registralmente, pero los sitios homónimos encontrados pertenecen a otras regiones; falta una identidad pública inequívoca. |
+| La Borghina di Borghino Pierino | Cuccaro Monferrato | Solo se localizaron ayudas y registros agrícolas, sin producto alimentario comercial identificable. |
+| La Marra Alessandro | Molare | Se confirma cultivo de fruta y conversión ecológica, pero no una oferta directa pública actual. |
 
-Reparto por categoría propuesta: `Cerveza` 2.
+## Autorizaciones queseras pendientes
 
-Fuentes de este lote:
+La fuente de apertura es el [registro sanitario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Las autorizaciones siguen vigentes, pero no bastan para publicar sin una identidad y una oferta propias contrastables.
 
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| CANEDIGUERRA | Alessandria | `Cerveza` | birra artigianale | [web](https://www.canediguerra.com) |
-| Birrificio Artigianale Kamun | Predosa | `Cerveza` | birra artigianale | — |
+| Operador | Comune | Unidad autorizada | Motivo concreto de retención |
+|---|---|---|---|
+| Gaino Luca | Cartosio | Via Alliata 1 — `UE IT J3W0M` | No se encontró identidad pública actual ni queso ofrecido bajo una marca atribuible. |
+| Cascina Vetriata di Nicoletti Roberto Virginio | Casale Monferrato | Strada Pontestura 44 — `UE IT L2T3Y` | Solo aparece la explotación en registros; falta una oferta quesera pública actual. |
+| Erbi Roberta | Malvicino | Località Gelati 5 — `UE IT N2E2B` | No se pudo localizar una identidad comercial o producto concreto vigente. |
+| Bozzo Poggio Stefania | Oviglio | Cascina Rossi — `UE IT M2J92` | Se confirma la explotación bovina, pero no una línea propia de queso ofrecida al público. |
+| Mignone Arturo | Ponzone | Frazione Cimaferle 79 — `UE IT 01 294` | No se encontró una oferta quesera pública actual que complete la autorización sanitaria. |

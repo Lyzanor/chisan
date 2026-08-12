@@ -1,41 +1,43 @@
 # Candidatos — Forlì-Cesena
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión del 2026-08-12. Se contrastó todo el lote ecológico de TRACES NT y el candidato del consorcio de aceto. Il Bagolaro y Azienda Agricola Il Pozzo se incorporaron al CSV; los casos resueltos se retiraron de la cola y cuentan con evidencia. Permanecen únicamente las identidades para las que todavía falta una oferta alimentaria pública atribuible o una reconciliación segura.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ABBONDANZA DENIS | Cesenatico | VIA CANALE BONIFICAZIONE 316 47042 | producción — vegetales sin transformar | 2028-05-08 | [IT-BIO-009.380-0018689.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0018689.2025.001.pdf) |
-| ARBORY DI BERTIN LISA FLINT | Cesena | VIA SORRIVOLI 4080 47023 | producción — vegetales sin transformar | 2028-06-16 | [IT-BIO-009.380-0059293.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0059293.2025.001.pdf) |
-| AZ. AGR. FACCIANI FERNANDA | Mercato Saraceno | VIA ROMAGNA, 5473 47025 | producción — vegetales sin transformar | 2028-09-18 | [IT-BIO-009.380-0052116.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0052116.2025.001.pdf) |
-| AZ. AGR. IL BAGOLARO DI TEDALDI CLAUDIO | Forlimpopoli | VIA SAN LEONARDO 480 47034 | producción — vegetales sin transformar | 2028-04-23 | [IT-BIO-009.380-0002780.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0002780.2025.001.pdf) |
-| AZ. AGR. IL POZZO DI FERRI FILIPPO & RAFFAELLA SOC. SEMPLICE | Montiano | VIA BEVERANO 100 47020 | producción — vegetales sin transformar | 2028-06-16 | [IT-BIO-009.380-0059292.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0059292.2025.001.pdf) |
-| AZ. AGR. MONTEGIUSTO DI SOMENZI CARLO | Mercato Saraceno | VIA MONTEGIUSTO, 1801 - CELLA 47025 | producción — vegetales sin transformar | 2028-08-06 | [IT-BIO-004.380-0104384.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0104384.2025.001.pdf) |
-| AZ. AGRICOLA CUZZOLINO VINCENZO | Meldola | STRADA MELDOLA - TEODORANO 23/A 47014 | producción — vegetales sin transformar | 2028-08-06 | [IT-BIO-009.380-0036616.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0036616.2025.001.pdf) |
-| AZIENDA AGRICOLA  FORESTALE MONTALERA S.R.L. | Forlì | Via Enrico Forlanini, 9 47122 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-11-24 | [IT-BIO-014.380-0001947.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0001947.2025.002.pdf) |
-| BALDAZZI DANIELA | Borghi | VIA G DI VITTORIO 60 47030 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-12-17 | [IT-BIO-007.380-0090565.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090565.2025.001.pdf) |
-| BERGAMASCHI F.LLI SOCIETA' AGRICOLA S.S. | Predappio | V.SAMBUCO, N 24 47016 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-06-24 | [IT-BIO-004.380-0006695.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0006695.2025.001.pdf) |
-| BERNINI MARTINA | Portico e San Benedetto | VIA SAN PIETRO CASTAGNETO SOTTO 12 47010 | producción — vegetales sin transformar | 2028-09-24 | [IT-BIO-006.380-0106999.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0106999.2025.001.pdf) |
-| BIONDI DINO | Premilcuore | VIA VILLA MAGGIO 47/A 47010 | producción — vegetales sin transformar | 2029-02-16 | [IT-BIO-009.380-0002383.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0002383.2026.001.pdf) |
-| BOCCHINI ALESSANDRA | Cesena | VIA VICINALE MASSA 588 47522 | producción — vegetales sin transformar | 2028-09-10 | [IT-BIO-009.380-0027101.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0027101.2025.001.pdf) |
-| BRASCHI ALESSANDRO | Cesena | VIA GARAMPA, 1939 47023 | producción — vegetales sin transformar | 2028-06-09 | [IT-BIO-009.380-0058161.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0058161.2025.001.pdf) |
-| CARIOLI ATTILIO | Forlimpopoli | VIA SANT'ANDREA 2976 47034 | producción — vegetales sin transformar | 2029-02-04 | [IT-BIO-009.380-0076171.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0076171.2026.001.pdf) |
-| Caruso Salvatore | Sogliano al Rubicone | Via San Paolo, 15 47030 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-04-29 | [IT-BIO-008.380-0050598.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0050598.2025.001.pdf) |
-| CASADEI ROSSI NICOLA | Forlì | LOC MARSIGNANO - FONDI 24 MARSIGNANO 47016 | producción — vegetales sin transformar | 2028-06-03 | [IT-BIO-009.380-0057656.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0057656.2025.001.pdf) |
-| CIANI CARLO | Forlì | VIA DELLE MURA 7 47122 | producción — vegetales sin transformar | 2028-07-15 | [IT-BIO-009.380-0103251.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0103251.2025.001.pdf) |
-| CIMATTI GIULIO | Forlì | VIA BONDIOLA, 2 INT. 1 BAGNOLO 47122 | producción — vegetales sin transformar | 2029-02-25 | [IT-BIO-007.380-0065132.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0065132.2026.002.pdf) |
+## Operadores ecológicos pendientes
 
-## Categorías poco representadas — barrido del 2026-08-10
+Los certificados `ISSUED` de [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index) acreditan operador y alcance ecológico, pero no sustituyen la comprobación de marca, producto y unidad productiva actuales.
 
-1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+| Operador | Comune provisional | Motivo concreto de retención |
+|---|---|---|
+| Ortoevo di Abbondanza Denis | Cesenatico | La actividad agrícola está vigente, pero no se encontró una oferta alimentaria pública concreta; una ficha comercial lo clasifica además como centro de jardinería. |
+| Arbory di Bertin Lisa Flint | Cesena | Solo se confirma el cultivo de fruta; falta marca, producto comercial y contacto del productor. |
+| Az. Agr. Facciani Fernanda | Mercato Saraceno | El registro acredita explotación mixta, sin una oferta propia actual identificable. |
+| Az. Agr. Montegiusto di Somenzi Carlo | Mercato Saraceno | La marca pública Santa Maria a Montegiusto produce cereal en Verghereto, pero no se halló una fuente que la vincule documentalmente con Somenzi ni con la unidad certificada de Cella. |
+| Az. Agricola Cuzzolino Vincenzo | Meldola | Solo aparece la identidad mercantil; no hay alimento propio ofrecido públicamente. |
+| Azienda Agricola Forestale Montalera | Forlì | La dirección certificada es societaria y las referencias públicas no permiten ubicar una unidad alimentaria productiva ni productos concretos en la provincia. |
+| Baldazzi Daniela | Borghi | Se localizó un censo antiguo de avicultura, pero no actividad comercial ni producto actual al consumidor. |
+| Bergamaschi F.lli Società Agricola | Predappio | Los registros confirman cultivos y ganado, sin marca ni alimento propio actual atribuible. |
+| Bernini Martina | Portico e San Benedetto | Se confirma cultivo de cereal y legumbres, pero no una oferta pública propia. |
+| Biondi Dino | Premilcuore | Solo consta actividad cerealista registral, sin marca o producto directo verificable. |
+| Bocchini Alessandra | Cesena | La explotación participa en proyectos de fruticultura biodinámica, pero no se encontró un canal público o producto propio diferenciado. |
+| Braschi Alessandro | Cesena | Se confirma viticultura, pero no una bodega, marca de vino o contacto público atribuible. |
+| Carioli Attilio | Forlimpopoli | Solo hay fichas de explotación agrícola; falta producto concreto y oferta actual. |
+| Azienda Agricola Oro Liquido di Caruso Salvatore | Sogliano al Rubicone | Se confirma olivicultura, pero el sitio homónimo hallado pertenece a una explotación siciliana; no debe prestarse esa identidad a la unidad romañola. |
+| Casadei Rossi Nicola | Forlì | No se encontró una identidad agrícola pública inequívoca ni producto alimentario actual. |
+| Ciani Carlo | Forlì | Los resultados atribuibles no permiten distinguir la explotación de homónimos ni probar un alimento propio. |
+| Cimatti Giulio | Forlì | Se confirma cultivo de fruta activo, pero no marca, venta directa o producto público concreto. |
 
-Reparto por categoría propuesta: `Condimentos` 1.
+## Condimentos pendiente
 
-Fuentes de este lote:
+| Operador | Comune | Motivo concreto de retención |
+|---|---|---|
+| Pagani Paolo | Cesenatico | El Consorzio Aceto Balsamico Tradizionale di Modena lo lista como asociado, pero no publica marca, acetaia productiva, contacto ni producto comercial atribuible. |
 
-- Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
+## Autorizaciones queseras pendientes
 
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+El [registro sanitario nacional](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) acredita autorización, no una identidad comercial actual. El resto del lote quesero ya fue resuelto en el CSV y la evidencia.
 
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Pagani Paolo | Cesenatico | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
+| Operador | Comune | Unidad autorizada | Motivo concreto de retención |
+|---|---|---|---|
+| Farabegoli Paolo | Gambettola | Largo Don Poloni 34 — `UE IT W880K` | No se pudo vincular de forma segura con una oferta quesera pública. |
+| Latteria Sociale Sogliano al Rubicone | Sogliano al Rubicone | Località Vignola — `UE IT J4L94` | La sociedad figura en liquidación y no presenta oferta actual. |
+| Tera S.a.s. di Grotti Elsa & C. | Sogliano al Rubicone | Via Strigara 51 — `UE IT 08 1135` | Conserva autorización, pero no una identidad comercial productora atribuible. |

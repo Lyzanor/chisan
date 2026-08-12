@@ -107,3 +107,154 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Il Cavaliere dei Conti di Nicolso Marco | Vietri sul Mare | `Lácteos y quesos` | latte e formaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-343.html) |
 | Azienda Agricola Mellis di Foti Enrico | Postiglione | `Miel` | miele e api | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-421.html) |
 | Museo Vivente Dieta Mediterranea | Pollica | `Pescado` | acquacoltura-pesca | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-408.html) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+144 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| CASEIFICIO ROSANNA DI POTOLICCHIO DONATO | Acerno | VIA MADONNA DELLE GRAZIE 26 , ACERNO (SA) | `UE IT 15 446` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| IL CASEIFICIO POLITO S.R.L. SOCIETA' AGRICOLA | Agropoli | VIA MATTINE SNC, AGROPOLI (SA) | `UE IT Z153U` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-FEB-22 |
+| LATTERIA FABULA S.R.L. | Agropoli | VIA SALVO D'ACQUISTO 17, AGROPOLI (SA) | `UE IT G2R7P` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 12-JUN-24 |
+| CASEIFICIO BUFALI` S.R.L. | Albanella | VIA GAGARIN FRAZIONE MATINELLA , ALBANELLA (SA) | `UE IT 15 734` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| CASEIFICIO LA BUFALAT" - S.R.L. - | Albanella | VIA PROVINCIALE - FOGLIO 7 - PARTICELLA 829 - CATASTO 2, ALBANELLA (SA) | `UE IT 15 688` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
+| CASEIFICIO LA VALLESINA S.R.L. | Albanella | VIA PROVINCIALE, FRAZ. MATINELLA 4, ALBANELLA (SA) | `UE IT K0E12` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-MAY-22 |
+| CASEIFICIO LA VALLESINA S.R.L. | Albanella | VIA TEMPA DELLE GUARDIE, 26 , ALBANELLA (SA) | `UE IT Q834R` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-JUN-12 |
+| CASEIFICIO TENUTA LANZA DI LANZA GIUSEPPE | Albanella | VIA FAVORITA 30, ALBANELLA (SA) | `UE IT L7J0L` | vacuno menos de 60 d/más de 60 d | 12-JUN-14 |
+| LA BUFALA S.R.L. SEMPLIFICATA | Altavilla Silentina | VIA FALAGATO 104, ALTAVILLA SILENTINA (SA) | `UE IT S7T0U` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-NOV-17 |
+| LA CONTADINA S.R.L. | Altavilla Silentina | VIA FALANGATO 146, ALTAVILLA SILENTINA (SA) | `UE IT 15 451` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-OCT-20 |
+| LA TENUTA BIANCA DI DI MASI GIOVANNI | Altavilla Silentina | VIA FALAGATO 109, ALTAVILLA SILENTINA (SA) | `UE IT Q4H1T` | vacuno menos de 60 d/más de 60 d | 22-JAN-18 |
+| SOCIETA' AGRICOLA CARROZZA SOCIETA' A RESPONSABILITA' LIMITATA | Altavilla Silentina | CONTRADA DIMESSA snc, ALTAVILLA SILENTINA (SA) | `UE IT 15 606` | vacuno menos de 60 d | 03-OCT-17 |
+| CASEIFICIO ORTA D'ANGRI DI FUSCO DOMENICO | Angri | VIA ORTA CORCIA /76 , ANGRI (SA) | `UE IT 15 183` | vacuno menos de 60 d | 03-MAR-11 |
+| COOPERATIVA SATU. LATT. DEI F.LLI SATURNO | Angri | VIA GIOVANNI XXIII,25 , ANGRI (SA) | `UE IT 15 324` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| FEGE' S.R.L. | Angri | VIA NAZIONALE 256ex236, ANGRI (SA) | `UE IT 2024 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-MAR-26 |
+| TENUTA CHIRICO SRL SOCIETA' AGRICOLA | Ascea | CONTRADA ZAMPINI, VIA ISACIA 29, ASCEA (SA) | `UE IT 15 316` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-DEC-20 |
+| CASEIFICIO SENATORE SRL | Atena Lucana | C.DA MAGLIANIELLO , ATENA LUCANA (SA) | `UE IT 15 67` | vacuno menos de 60 d/más de 60 d | 03-MAR-11 |
+| CASEIFICIO S. GIUSEPPE DI MORELLO DONATO & C. - S.N.C. | Atena Lucana | VIA STAZIONE SNC, ATENA LUCANA (SA) | `UE IT 15 432` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-18 |
+| ANTICA GELATERIA MATTEO SRL | Baronissi | VIA D.CIRILLO 19 , BARONISSI (SA) | `UE IT 15 571` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-NOV-11 |
+| CASEIFICIO DEI DUE PRINCIPATI S.R.L. | Baronissi | VIA DEI DUE PRINCIPATI 40, BARONISSI (SA) | `UE IT L7L2Q` | vacuno menos de 60 d/más de 60 d | 14-FEB-20 |
+| TRITICUM S.R.L. | Baronissi | VIA SALVATORE ALLENDE 43/I, BARONISSI (SA) | `UE IT P3L5B` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 24-OCT-19 |
+| CASEIFICIO EREDI LANZARA ANTONIO DI GIUSEPPE LANZARA S.N.C. | Battipaglia | VIA SPINETA S.P. 135 - LOC VILLANI SNC, BATTIPAGLIA (SA) | `UE IT S677V` | vacuno menos de 60 d/más de 60 d | 02-NOV-21 |
+| CASEIFICIO LA FATTORIA - S.R.L. DI PARAGGIO LUCIANO & C. | Battipaglia | VIA S.GIOVANNI BOSCO 4, BATTIPAGLIA (SA) | `UE IT 15 117` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-SEP-16 |
+| EREDI DI GAETANO IEMMA SOCIETA' SEMPLICE AGRICOLA | Battipaglia | VIA VELIA 2, BATTIPAGLIA (SA) | `UE IT 15 567` | vacuno menos de 60 d/más de 60 d | 26-NOV-14 |
+| GIFFONIELLO S.R.L. | Battipaglia | VIA BOSCO II SNC, BATTIPAGLIA (SA) | `UE IT U1D7D` | vacuno menos de 60 d/más de 60 d | 27-JAN-25 |
+| LATTICINI SALERNITANI" - S.R.L. - | Battipaglia | VIA BELVEDERE 245/247, BATTIPAGLIA (SA) | `UE IT 15 108` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-AUG-18 |
+| MOZ ART - L'ARTE DELLA MOZZARELLA - SOCIETA' A RESPONSABILITA' LI | Battipaglia | VIA BRODOLINI 54, BATTIPAGLIA (SA) | `UE IT 15 153` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-JUL-16 |
+| OMAGGIO AL FORMAGGIO" DI CITRO VINCENZO | Battipaglia | VIA BELVEDERE 280, BATTIPAGLIA (SA) | `UE IT B685G` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-MAR-22 |
+| SAB SRL | Battipaglia | STRADA PROVINCIALE, 175 (LITORANEA) , BATTIPAGLIA (SA) | `UE IT 15 812` | vacuno menos de 60 d | 25-NOV-11 |
+| CASEIFICIO NIGRO TOMMASO SNC | Bellizzi | VIA PASCOLI N. 42/44 , BELLIZZI (SA) | `UE IT 15 145` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-AUG-09 |
+| COLLE BIANCO S.R.L. | Bellizzi | VIA ROMA 6, BELLIZZI (SA) | `UE IT 15 146` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-FEB-24 |
+| DITTA MAIL S.R.L. | Bellizzi | VIA DELLE INDUSTRIE 60 , BELLIZZI (SA) | `UE IT 15 526` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| FILIERA LATTE BUFALINO SOCIETA' AGRICOLA A R.L. | Bellizzi | VIA DELLE INDUSTRIE 1/C, BELLIZZI (SA) | `UE IT 15 650` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-APR-26 |
+| FORMAGGI LA MANTECA S.R.L. | Bellizzi | VIA CAMPO EMINENTE 66/68, BELLIZZI (SA) | `UE IT M6P6K` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-FEB-19 |
+| F.LLI LUPO S.R.L. | Caggiano | LOCALITA' PIEDI L`ARMA 18, CAGGIANO (SA) | `UE IT 15 510` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-OCT-22 |
+| P.& P.S.R.L. | Caggiano | LOCALITÀ MATTINA 2 , CAGGIANO (SA) | `UE IT 15 328` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-FEB-14 |
+| AZIENDA AGRICOLA CONFORTI VINCENZO | Calvanico | VIA ROMA 21, CALVANICO (SA) | `UE IT K4Y3J` | vacuno menos de 60 d/más de 60 d | 08-MAY-24 |
+| FATTORIE D'AMBROSIO S.R.L. | Campagna | VIA PROVINCIALE PER GALDO 178, CAMPAGNA (SA) | `UE IT M9D6P` | vacuno menos de 60 d/más de 60 d | 02-JUL-26 |
+| FIORE BIANCO SOCIETA' COOPERATIVA | Campagna | VIA STRADA PRIVATA ANTONIO RIZZO SNC, CAMPAGNA (SA) | `UE IT X1L6K` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 02-DEC-21 |
+| LA FATTORIA DI CAMPAGNA S.A.S. DI D'AMBROSIO MARY & F.LLI | Campagna | VIA VISCIGLITO SNC, CAMPAGNA (SA) | `UE IT H659X` | vacuno más de 60 d | 13-FEB-19 |
+| LA PERLA DEL SELE S.R.L. | Campagna | LOCALITA' PONTE BARBIERI 105, CAMPAGNA (SA) | `UE IT 15 313` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-AUG-15 |
+| TRE STELLE FOOD S.R.L. | Campagna | VIA AUSELLA - LOCALITA' PONTE BARBIERI 2, CAMPAGNA (SA) | `UE IT H3U42` | vacuno menos de 60 d | 24-SEP-24 |
+| AZIENDA AGRICOLA "SAN SALVATORE" DI PAGANO GIUSEPPE | Capaccio | STRADA STATALE 18 LOCALITA' CAFASSO SNC, CAPACCIO (SA) | `UE IT F8R5C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JAN-19 |
+| AZIENDA CASEARIA SALATI IANNITTI GIOVANNI" - S.R.L. - | Capaccio | VIA LINORA snc, CAPACCIO (SA) | `UE IT 15 319` | vacuno menos de 60 d | 13-AUG-14 |
+| CASEIFICIO DI BENEDETTO - SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Capaccio | VIA SABATELLA SS.18 KM 87 SNC, CAPACCIO (SA) | `UE IT 15 120` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JUN-21 |
+| CASEIFICIO LA FATTORIA DEL CASARO | Capaccio | FRAZIONE PAESTUM VIA LICINELLA C.DA ULIVETO 5 , CAPACCIO (SA) | `UE IT 15 474` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| CERRATO VINCENZO | Capaccio | CAPACCIO (SA) SS18 KM.96+550 , CAPACCIO (SA) | `UE IT K624C` | vacuno menos de 60 d/más de 60 d | 18-JUN-12 |
+| COOPERATIVA AGRICOLA MAESTRI LATTARI | Capaccio | VIA PORTA MARINA 29, CAPACCIO (SA) | `UE IT 15 739` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-NOV-25 |
+| COOPERATIVA AGRICOLA MAESTRI LATTARI | Capaccio | VIA TORRICELLE 1/3, CAPACCIO (SA) | `UE IT 15 379` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-MAR-26 |
+| ESPOSITO GEMMA | Capaccio | VIA FEUDO TEMPA SAN PAOLO SNC, CAPACCIO (SA) | `UE IT F3C38` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-AUG-14 |
+| F.LLI DI LASCIO S.R.L. | Capaccio | VIA CERRO , CAPACCIO (SA) | `UE IT 15 116` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| LA BIANCA DI PAESTUM S.A.S. DI ZULLO CIRO & C. | Capaccio | VIA DELLA STREGARA, 36 , CAPACCIO (SA) | `UE IT X424J` | vacuno menos de 60 d | 25-NOV-10 |
+| LA BUFALARA DI VINCENZO E NUNZIANTE BARLOTTI | Capaccio | VIA TORRE DI MARE, 1 , CAPACCIO (SA) | `UE IT 15 565` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| LA PERLA DEL MEDITERRANEO S.R.L. | Capaccio | VIA PROVINCIALE PONTE BARIZZO-MATINELLE 212, CAPACCIO (SA) | `UE IT 15 769` | vacuno menos de 60 d | 15-JUL-24 |
+| PA.GI. CASEARIA S.R.L.S. | Capaccio | VIA FRANCESCO GREGORIO 55, CAPACCIO (SA) | `UE IT U0N9V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 18-FEB-26 |
+| RIVABIANCA COOPERATIVA ALLEVATORI DI BUFALE PIANA DI PAESTUM SOCIETA' AGRICOLA | Capaccio | STRADA STATALE 18 KM.93 SNC, CAPACCIO (SA) | `UE IT 15 74` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-NOV-15 |
+| SOCIETA' AGRICOLA LA MOZZATELLA DEL CILENTO S.R.L. | Capaccio | VIA RETTIFILO 272, CAPACCIO (SA) | `UE IT 15 504` | vacuno menos de 60 d/más de 60 d | 13-MAY-14 |
+| CIFRODELLI GIOVANNI | Castelnuovo Di Conza | VIA S. ILARIONE 9, CASTELNUOVO DI CONZA (SA) | `UE IT P4U4X` | vacuno menos de 60 d/más de 60 d | 02-DEC-22 |
+| CASEIFICIO MAMMA ROSA S.R.L. | Castel San Giorgio | VIA LUIGI GUERRASIO 125, CASTEL SAN GIORGIO (SA) | `UE IT E1M7W` | vacuno menos de 60 d | 04-MAR-21 |
+| BISOGNO S.R.L. | Cava De' Tirreni | VIA XXV LUGLIO 115, CAVA DE' TIRRENI (SA) | `UE IT 15 717` | vacuno menos de 60 d | 06-JUN-22 |
+| LA GUSTOSA DI BISOGNO S.R.L. | Cava De' Tirreni | VIA XXV LUGLIO 115, CAVA DE' TIRRENI (SA) | `UE IT 15 185` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-OCT-23 |
+| LA TRAMONTINA S.R.L. | Cava De' Tirreni | VIA XXV LUGLIO 271 , CAVA DE' TIRRENI (SA) | `UE IT 15 23` | vacuno menos de 60 d/más de 60 d | 24-JUN-13 |
+|  MONTELLA A. DI MONTELLA GIOVANNI & C. - S.N.C. | Cava De' Tirreni | VIA XXV LUGLIO 267, CAVA DE' TIRRENI (SA) | `UE IT 15 312` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-OCT-14 |
+| I FILADELFI 1828 DI MARCO AMENDOLA - S.A.S. | Cicerale | LOCALITA' SALVITELLE SNC, CICERALE (SA) | `UE IT D2M8R` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 29-JUL-15 |
+| FORMAGGI MOSCATO S.R.L. | Colliano | LOCALITA' ISCA, ZONA PIP SNC, COLLIANO (SA) | `UE IT F5E44` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-JAN-25 |
+| LULLO RAFFAELE - CASEIFICIO LA COLLIANO | Colliano | VIA SERRA 81, COLLIANO (SA) | `UE IT 15 378` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-DEC-17 |
+| AGRICOLA VALLEPIANA S.R.L. | Eboli | LOC.S.CHIARELLA S.P.201 N. 1 , EBOLI (SA) | `UE IT 15 628` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| AZIENDA AGRICOLA DI CHRISTIAN CONTINI | Eboli | LOCALITA' CORNITO SNC, EBOLI (SA) | `UE IT 15 586` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-APR-17 |
+| BURRIFICIO TRE RONDINI - S.R.L. | Eboli | STRADA STATALE SS.18 BIVIO CIOFFI SNC, EBOLI (SA) | `UE IT 15 322` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-JUN-19 |
+| CASEIFICIO AGRILAT - SOCIETA' COOPERATIVA | Eboli | VIA SAN NICOLA VARSO SS.18 SNC, EBOLI (SA) | `UE IT 15 519` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-OCT-18 |
+| CASEIFICIO ARGIVA SRL | Eboli | VIA ISCA ROTONDA S.S. 18 SNC, EBOLI (SA) | `UE IT G0B5R` | vacuno menos de 60 d | 23-FEB-23 |
+| CASEIFICIO D'ANZILIO S.R.L. | Eboli | STRADA STATALE 18 LOC.CORNO D`ORO SNC, EBOLI (SA) | `UE IT 15 329` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-MAR-17 |
+| CASEIFICIO ESPOSITO - S.R.L. | Eboli | VIALE PAESTUM (GIA'BIVIO S.CECILIA PAL. DI BENEDETTO) 39, EBOLI (SA) | `UE IT 15 377` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-21 |
+| CASEIFICIO LA CILENTANA SOCIETA' COOPERATIVA | Eboli | VIA SP 262 LOC. SERRETELLE snc, EBOLI (SA) | `UE IT B2556` | vacuno menos de 60 d | 16-OCT-14 |
+| CASEIFICIO TRE STELLE | Eboli | SS.18 LOC. CIOFFI , EBOLI (SA) | `UE IT 15 387` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| C. GALDI S.R.L. | Eboli | LOCALITA' BIVIO CIOFFI SNC, EBOLI (SA) | `UE IT 15 45` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUN-14 |
+| DITTA CASEIFICIO ROSARIA DI LA ROCCA ANGELO SRL | Eboli | VIA IV MADONNA DEL SOCCORSO , EBOLI (SA) | `UE IT 15 384` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-AUG-09 |
+| GIULIANO ANTONIO | Eboli | VIA S.S. N.18 BIVIO CIOFFI, 326 , EBOLI (SA) | `UE IT B1S6C` | vacuno menos de 60 d | 05-MAY-10 |
+| LA ROCCA DEI SAPORI S.R.L. | Eboli | VIA PROVINCIALE DEL CORNITO 7-9, EBOLI (SA) | `UE IT P6B0J` | vacuno menos de 60 d | 06-MAR-20 |
+| NONNO PEPPE S.R.L.S. | Eboli | VIA LITORANEA - C.DA AVERSANA SNC, EBOLI (SA) | `UE IT S6087` | vacuno menos de 60 d/más de 60 d | 08-MAY-26 |
+| PODERE SAN VINCENZO S.R.L. | Eboli | VIA SS 18 KM.84+100 S. CECILIA SNC, EBOLI (SA) | `UE IT W2A5M` | vacuno menos de 60 d | 11-MAY-17 |
+| SOCIETA' AGRICOLA AGRIMIRRA S.S. | Eboli | VIA ACQUA DEI PIOPPI 46, EBOLI (SA) | `UE IT K2X6Z` | vacuno menos de 60 d/más de 60 d | 02-MAR-20 |
+| AZIENDA AGRICOLA DANIELE DI D'APONTE MARIA & C. - SOCIETA' AGRICO LA IN NOME COLLETTIVO | Fisciano | VIA CERVITO (FARALDO) 20/22, FISCIANO (SA) | `UE IT 15 696` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-SEP-17 |
+| CASEIFICIO E CREMERIA MONTELLA - SOCIETA' A RESPONSABILITA' LIMITATA | Fisciano | VIA VIA IV NOVEMBRE 13, FISCIANO (SA) | `UE IT 15 152` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-JUN-23 |
+| CASEIFICIO STELLA DI RESCIGNO ELIANA | Fisciano | VIA PONTE DON MELILLO N. 38 , FISCIANO (SA) | `UE IT 15 151` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| MILK SRL | Fisciano | LOCALITÀ CANFORA , FISCIANO (SA) | `UE IT 15 90` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-NOV-11 |
+| VALLEBIANCA S.R.L. | Fisciano | VIA FARALDO 26/B, FISCIANO (SA) | `UE IT 15 525` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-SEP-23 |
+| IN GIRO S.R.L. | Giffoni Sei Casali | LOCALITA' SERRONI SNC, GIFFONI SEI CASALI (SA) | `UE IT H4S76` | vacuno menos de 60 d/más de 60 d | 09-SEP-22 |
+| CASEIFICIO VERACE FRANCO | Giffoni Valle Piana | VIA PEZZOTTO 90 , GIFFONI VALLE PIANA (SA) | `UE IT 15 148` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| MANNARA S.R.L. | Mercato San Severino | VIA MARCELLO 26/28, MERCATO SAN SEVERINO (SA) | `UE IT U2L6X` | vacuno menos de 60 d | 18-JUN-25 |
+| CASEIFICIO L'ORO DI BATTIPAGLIA S.R.L. | Montecorvino Pugliano | VIA DONIZZETTI LOC SAN VITO SNC, MONTECORVINO PUGLIANO (SA) | `UE IT K0W2Y` | vacuno menos de 60 d/más de 60 d | 22-JAN-26 |
+| CASEIFICIO SAN LEONARDO - S.R.L. | Montecorvino Rovella | VIA FRATELLI ROSSELLI 358, MONTECORVINO ROVELLA (SA) | `UE IT B8C3E` | vacuno menos de 60 d/más de 60 d | 04-FEB-25 |
+| TENUTA PROVENZA" DI PROVENZA MICHELE | Montecorvino Rovella | CONTRADA SAN LORENZO 38, MONTECORVINO ROVELLA (SA) | `UE IT U8F8W` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 29-DEC-20 |
+| CAMPOLONGO S.P.A. | Montesano Sulla Marcellana | VIA FILARO 25/B GIA N, MONTESANO SULLA MARCELLANA (SA) | `UE IT 15 187` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-FEB-25 |
+| D.M.D. SOCIETA' AGRICOLA | Montesano Sulla Marcellana | VIA MARCELLINO SNC, MONTESANO SULLA MARCELLANA (SA) | `UE IT G3D7T` | vacuno menos de 60 d/más de 60 d | 18-AUG-20 |
+| CASEIFICIO SAN MAURO SOCIETA` COOPERATIVA | Nocera Inferiore | VIA VILLANOVA, 197 -199 , NOCERA INFERIORE (SA) | `UE IT K1L3T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+| PODERE DEI LEONI S.R.L. | Nocera Inferiore | VIA PETRARCA 34, NOCERA INFERIORE (SA) | `UE IT D5C37` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-24 |
+| CASEIFICIO AZALEA" DI CAMPEGLIA & GIORDANO - S.R.L. | Nocera Superiore | VIA ALVEO 25, NOCERA SUPERIORE (SA) | `UE IT 15 9` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-NOV-20 |
+| GE.MA.PA. SRL | Nocera Superiore | VIA NAZIONALE, 393 , NOCERA SUPERIORE (SA) | `UE IT 9 2297 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| BONTA' DEL CILENTO SOCIETA' AGRICOLA A RESPONSABILITA' LIMITATA | Ogliastro Cilento | LOCALITA' DIFESA SNC, OGLIASTRO CILENTO (SA) | `UE IT P5Q38` | vacuno menos de 60 d/más de 60 d | 27-MAY-25 |
+| CASEIFICIO SESSA SRL | Oliveto Citra | VIA ISCA , OLIVETO CITRA (SA) | `UE IT 15 787` | vacuno menos de 60 d/más de 60 d | 14-SEP-10 |
+| FORMAGGI MOSCATO S.R.L. | Oliveto Citra | VIA SERRONI 14, OLIVETO CITRA (SA) | `UE IT 15 436` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-OCT-18 |
+| LATTERIA DIANO S.R.L. | Padula | VIA VADONATO SNC, PADULA (SA) | `UE IT 15 524` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-JAN-26 |
+| MARTELLO BRUNO | Padula | VIA FERRERO 1, PADULA (SA) | `UE IT T5P8D` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-MAY-25 |
+| CASEIFICIO AURORA - S.R.L. | Pagani | VIA ALBANESE IÂ° TRAV. 31, PAGANI (SA) | `UE IT D2N4T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d, ovino menos de 60 d/más de 60 d | 07-JAN-26 |
+| FATTORIA DELL`ALENTO SOCIETA` AGRICOLA A.R.L. | Perito | LOCALITÀ ISCA DELL`ABATE , PERITO (SA) | `UE IT 15 532` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-FEB-14 |
+| MONTECATINI S.R.L. | Pontecagnano Faiano | VIA C. COLOMBO 24, PONTECAGNANO FAIANO (SA) | `UE IT 15 167` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-SEP-20 |
+| MORESE FILIPPO | Pontecagnano Faiano | VIA ABATE CONFORTI 1, PONTECAGNANO FAIANO (SA) | `UE IT P0C21` | vacuno menos de 60 d | 21-SEP-21 |
+| CASEIFICIO S. ANNA S.R.L. | Sala Consilina | VIA BARCA SNC, SALA CONSILINA (SA) | `UE IT 15 59` | vacuno menos de 60 d/más de 60 d | 13-JUL-16 |
+| CASEIFICIO S.ANTONIO" DI PAVENTA GIOVANNI & C. - S.N.C. | Sala Consilina | VIA S.ANDREA SNC, SALA CONSILINA (SA) | `UE IT 15 326` | caprino menos de 60 d/más de 60 d | 03-OCT-24 |
+| KASANNA DI NICOLA MEMOLI | Sala Consilina | CORSO VITTORIO EMANUELE 21, SALA CONSILINA (SA) | `UE IT F1Y11` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-JAN-22 |
+| ILKA SRL | Salerno | VIA NAZIONALE LOC. FUORNI , SALERNO (SA) | `UE IT 15 441` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| LA REGINA S.R.L. | Salerno | VIA DELLE CALABRIE-FUORNI 64-66, SALERNO (SA) | `UE IT 15 440` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-JUN-14 |
+| CASEIFICIO DI CAPUA S.R.L. | San Cipriano Picentino | VIA CASALINO 5/7, SAN CIPRIANO PICENTINO (SA) | `UE IT 15 166` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-AUG-15 |
+| CASEIFICIO IACULLO DI GALANTE ANTONIO | San Gregorio Magno | VIA ROMA 131, SAN GREGORIO MAGNO (SA) | `UE IT 15 382` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-SEP-15 |
+| MILK AND WOOL FARM S.R.L. SEMPLIFICATA | San Mango Piemonte | VIA SANTA CATERINA 30, SAN MANGO PIEMONTE (SA) | `UE IT A139R` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-JUN-23 |
+| INDUSTRIA ALIMENTARE TANAGRINA - S.R.L. | San Pietro Al Tanagro | VIA DELLA SORGENTE SNC, SAN PIETRO AL TANAGRO (SA) | `UE IT 15 8` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUN-19 |
+| CASEIFICIO SATURNO GIOVANNI S.R.L. | Sant'Egidio Del Monte Albino | VIA ORAZIO 64, SANT'EGIDIO DEL MONTE ALBINO (SA) | `UE IT 15 397` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-SEP-17 |
+| CASEIFICIO GIOVANNI SASSO SOCIETA' A RESPONSABILITA' LIMITATASEMP LIFICATA | Sanza | VIA VAL D'AGRI 29, SANZA (SA) | `UE IT H8Q8W` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JAN-22 |
+| CASEIFICIO MEDITERRANEO SOCIETA' COOPERATIVA | Sanza | CONTRADA POZZACCHIA 5, SANZA (SA) | `UE IT 15 779` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAY-14 |
+| CASEIFICIO SALLUZZI VINCENZO DI SALLUZZI MICHELE | Sassano | VIA S.RICCARDO , SASSANO (SA) | `UE IT 15 670` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| DIANO CASEARIA S.P.A. | Sassano | VIA CAVARELLI 5, SASSANO (SA) | `UE IT V4V5C` | vacuno menos de 60 d/más de 60 d | 12-APR-22 |
+| FRATELLI CIMINO S.R.L. | Sassano | VIA MOLINELLA SNC, SASSANO (SA) | `UE IT 15 113` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-FEB-22 |
+| LA BOVARINA S.R.L. | Sassano | VIA PONTE FABBRICHE 36, SASSANO (SA) | `UE IT 15 330` | vacuno menos de 60 d/más de 60 d | 10-JUN-15 |
+| LA VECCHIA FATTORIA DI LIBRETTI MICHELE | Sassano | VIA MACCHIA MEZZANA , SASSANO (SA) | `UE IT 15 568` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-FEB-14 |
+| CASEIFICIO CELOTTO SAVERIO E FRATELLI S.R.L. | Scafati | VIA G. VITIELLO 5/9, SCAFATI (SA) | `UE IT F169M` | vacuno menos de 60 d/más de 60 d | 08-MAR-16 |
+| CASEARIA PERSANO SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Serre | VIA BIANCANEVE 1857 SNC, SERRE (SA) | `UE IT D656J` | vacuno menos de 60 d | 12-FEB-21 |
+| CASEARIA SAB LA BUFALINA SOCIETA' COOPERATIVA | Serre | VIA PADULA 15, SERRE (SA) | `UE IT 15 419` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-MAR-22 |
+| CASEIFICIO DOMENICO ROMAGNUOLO S.R.L. | Serre | VIA PADULA 12, SERRE (SA) | `UE IT 15 380` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-FEB-22 |
+| CASEIFICIO F.LLI CICATELLI S.R.L. | Serre | CONTRADA PADULA 20, SERRE (SA) | `UE IT N0F2N` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-SEP-23 |
+| CASEIFICIO LA VILLANELLA S.R.L. | Serre | LOCALITA' S.S. 19 KM 23 PAGLIARONE SNC, SERRE (SA) | `UE IT 15 809` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-19 |
+| SURGELAT S.R.L. | Serre | LOCALITA' PAGLIARONE SNC, SERRE (SA) | `UE IT J9M3R` | vacuno menos de 60 d/más de 60 d | 04-MAR-22 |
+| CAMPANIALAT S.R.L. | Siano | VIALE KENNEDY 2, SIANO (SA) | `UE IT N7T1G` | vacuno menos de 60 d/más de 60 d | 04-OCT-17 |
+| CASEIFICIO SAVARESE S.R.L. | Siano | VIALE KENNEDY 2, SIANO (SA) | `UE IT B7P2F` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-OCT-23 |
+| CASEIFICIO ORCO S.R.L. | Sicignano Degli Alburni | VIA II EUROPA snc, SICIGNANO DEGLI ALBURNI (SA) | `UE IT 15 388` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-19 |
+| CASEIFICIO ALVANO S.N.C. | Teggiano | VIA PRATO N. 7 , TEGGIANO (SA) | `UE IT 15 164` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-13 |
+| DITTA LA TEGGIANINA S.A.S. | Teggiano | VIA PANTANO , TEGGIANO (SA) | `UE IT 15 78` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-FEB-14 |
+| MONTI VERDI 918 S.R.L. | Teggiano | VIA MESOLE 1, TEGGIANO (SA) | `UE IT 15 79` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-APR-21 |
+| ANTICA LATTERIA DI TRAMONTI S.R.L. | Tramonti | LOCALITA' FORNOVECCHIO SC, TRAMONTI (SA) | `UE IT 15 460` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-19 |
+| CASEIFICIO OLIVA DI OLIVA SILVIO E C. S.A.S. | Tramonti | VIA TRUGNANO 15 , TRAMONTI (SA) | `UE IT 15 118` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-09 |
+| DITTA CAMPANILE ANTONIO | Tramonti | VIA CHIUNZI N. 87 , TRAMONTI (SA) | `UE IT 15 491` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-MAY-11 |
+| EREDI DI MANZI CATERINA S.N.C. DI VICEDOMINI MARIO & C. | Tramonti | VIA COSTANTINO DI LIETO 28, TRAMONTI (SA) | `UE IT 15 503` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-24 |
+| VITAGLIANO MAURIZIO | Tramonti | VIA CAMPINOLA 28, TRAMONTI (SA) | `UE IT 15 191` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-AUG-14 |
+| AZIENDA AGRICOLA STARZE" DI ALOIA & DI BARTOLOMEO - S.S. | Vallo Della Lucania | LOCALITA' STARZE - FRAZIONE PATTANO SNC, VALLO DELLA LUCANIA (SA) | `UE IT L1H7V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-DEC-16 |

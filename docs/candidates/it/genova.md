@@ -91,3 +91,7 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | IL GIARDINO DELLE DALIE | Savignone | 339 58 37 572<br>dalieforever@hotmail.com |
 | LA FATTORIA NEL BOSCO | Tiglieto | 010 92 95 45<br>info@lafattorianelbosco.com |
 | PENSA | Torriglia | 347 04 01 287<br>agricolapensa@libero.it |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote cerrado: sus dos unidades quedaron incorporadas al CSV y reconciliadas con evidencia. Corte: 2026-08-11.

@@ -36,3 +36,45 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
 | BEER IN | Valdilana | `Cerveza` | birra artigianale | [web](https://www.birrificiobeerin.it/) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+32 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| ANTONIOTTI ANDREA | Andorno Micca | STRADA DEGLI EREMITI 52, ANDORNO MICCA (BI) | `UE IT 01 912` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-SEP-16 |
+| BOTALLA S.R.L. | Biella | VIA RAMELLA GERMANIN 5, BIELLA (BI) | `UE IT 01 380` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-NOV-16 |
+| CASEIFICIO ROSSO S.R.L. | Biella | VIA SERRALUNGA 11/13, BIELLA (BI) | `UE IT 01 381` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-APR-25 |
+| RAMELLA PIETRO | Biella | VIA CASE SPARSE SAN BIAGIO 1, BIELLA (BI) | `UE IT L6Z3B` | vacuno menos de 60 d | 03-APR-20 |
+| RAMELLA PRALUNGO GIUSEPPE | Biella | VIA CASE SPARSE 5, BIELLA (BI) | `UE IT 01 392` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-20 |
+| RAMELLA PRALUNGO ROBERTO | Biella | VIA SAN GIOVANNI CASE SPARSE 37, BIELLA (BI) | `UE IT J321G` | vacuno menos de 60 d/más de 60 d | 28-FEB-25 |
+| CANOVA ANDREA | Borriana | REGIONE GALLIANO VIA ROSSETTI SN, BORRIANA (BI) | `UE IT 01 651` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-NOV-17 |
+| DEBERNARDI MAURO | Cossato | FRAZIONE SPOLINA CASCINA COLOMBERA S/N, COSSATO (BI) | `UE IT E3K4D` | vacuno menos de 60 d/más de 60 d | 18-MAY-15 |
+| BERTAGNOLIO ILDA | Donato | VIA ALPE CAVANNA SNC, DONATO (BI) | `UE IT B3U33` | vacuno menos de 60 d | 03-APR-20 |
+| BERTAGNOLIO MARINO | Donato | ALPE GRE , DONATO (BI) | `UE IT R4054` | vacuno menos de 60 d | 02-SEP-13 |
+| BERTAGNOLIO MARINO | Donato | CASCINA PONEIRA 2, DONATO (BI) | `UE IT 01 774` | vacuno menos de 60 d/más de 60 d | 08-JUN-21 |
+| AZIENDA AGRICOLA MONTEFINO DI ACQUADRO MARINA | Graglia | VIA REG. TAGLIA' 1, GRAGLIA (BI) | `UE IT 01 604` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUL-23 |
+| BOTALLA S.R.L. | Mongrando | VIA MOMBARONE 19, MONGRANDO (BI) | `UE IT Z4N4W` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAY-24 |
+| GARBELLA TAVERNIN EDIS | Mosso | LOCALITA' PRAPIANO 38, MOSSO (BI) | `UE IT R270C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-MAY-18 |
+| GIACOMONE PIERFLAVIO | Mosso | VIA F.NE ROLANDO 7, MOSSO (BI) | `UE IT 01 388` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-DEC-23 |
+| PRINA MELLO SECONDO | Mosso | VIA ALPE ARTIGNAGA SN, MOSSO (BI) | `UE IT 01 606` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-APR-19 |
+| SISTEMI AGRO BIOLOGICI SOCIETA' AGRICOLA S.R.L. | Mottalciata | VIA MAESTRA SNC, MOTTALCIATA (BI) | `UE IT P4G8C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-MAY-16 |
+| PELLEREI CRISTINA | Muzzano | CASCINA SANTO SPIRITO REG. SALVINA SNC, MUZZANO (BI) | `UE IT C183H` | vacuno más de 60 d | 03-APR-20 |
+| AZIENDA AGRICOLA ROSSO BAIETTO PIETRO | Netro | REGIONE CANDORNO 2, NETRO (BI) | `UE IT 01 574` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-AUG-24 |
+| SOCIETA' AGRICOLA ALBERTANA S.S. DI MARCO CAVALLERO E SARA GIRELL I | Netro | REGIONE CASTIGNOLIO 2, NETRO (BI) | `UE IT 01 502` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-MAY-21 |
+| CASEIFICIO VALLE ELVO - SOCIETA' AGRICOLA COOPERATIVA | Occhieppo Superiore | VIA OPIFICI 22, OCCHIEPPO SUPERIORE (BI) | `UE IT 01 788` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-20 |
+| CASEIFICIO ROSSO S.R.L. | Pollone | VIA P.G. FRASSATI 146, POLLONE (BI) | `UE IT 01 829` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-MAR-25 |
+| PERETTO SERAFINO | Pollone | REGIONE PIANDREMO 14, POLLONE (BI) | `UE IT 01 627` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-20 |
+| AZIENDA AGRICOLA CA' NEL BOSCO SOCIETA' SEMPLICE AGRICOLA | Portula | FRAZIONE GILA 25/B, PORTULA (BI) | `UE IT V9K5J` | caprino menos de 60 d/más de 60 d | 18-APR-17 |
+| COPPA MAURO | Ronco Biellese | VIA PROVINCIALE 3, RONCO BIELLESE (BI) | `UE IT 01 879` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-APR-19 |
+| CA D'ANDREI DI TABELLINI VALERIA | Sagliano Micca | VIA TRENTO 2, SAGLIANO MICCA (BI) | `UE IT 01 538` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-NOV-24 |
+| MAZZUCHETTI RICCARDO | Sagliano Micca | VIA CAPPELLARO 13, SAGLIANO MICCA (BI) | `UE IT G2C6P` | vacuno menos de 60 d/más de 60 d | 07-JUL-20 |
+| PRINA MELLO UGO | Sandigliano | VIA ANDRIANA 5, SANDIGLIANO (BI) | `UE IT 01 465` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-MAY-19 |
+| LOVERA NELLA | Sordevolo | CASCINA CALCINERA VIA BAGNERI 8, SORDEVOLO (BI) | `UE IT H1E0J` | vacuno menos de 60 d/más de 60 d | 03-APR-18 |
+| RAMELLA TIZIANA | Sordevolo | CASCINA CROCE, VIA BAGNERI 14, SORDEVOLO (BI) | `UE IT 01 654` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUN-19 |
+| RAMELLA TIZIANA | Sordevolo | VIA ALPE MUANDA SN, SORDEVOLO (BI) | `UE IT 01 2160` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUN-19 |
+| BOZZO LORETTA | Trivero | FRAZIONE GIARDINO 4/B, TRIVERO (BI) | `UE IT 01 620` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-20 |
+## Toma Piemontese DOP — control de operadores del 2026-08-11
+
+El [elenco oficial de operadores idóneos](https://www.inoq.it/ArchivioIdonei/toma.pdf), actualizado internamente al 13-07-2026, contiene tres operadores de Biella con rol `CASEIFICIO`: Botalla en Mongrando, Caseificio Rosso en Biella y Caseificio Valle Elvo en Occhieppo Superiore. Los tres quedaron reconciliados con las unidades sanitarias ya incluidas en esta cola; no produjo candidatos nuevos.

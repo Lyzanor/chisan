@@ -120,3 +120,15 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | FRANTOIO CORTONESE DI SALVADORI S.R.L. | Firenze | `Aceite` | Olio extravergine di oliva Toscano IGP | frantoio@frantoiocortonese.com |
 
 > Se han recortado 127 candidatos adicionales de esta provincia para no inflar la nota; proceden de las mismas fuentes y se recuperan volviendo a consultarlas.
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote revisado el 2026-08-12: nueve unidades se publicaron con oferta y ubicación contrastadas. Quedan cinco retenciones. R.M. no tiene identidad pública localizable; I Medicei publica platos preparados pero no una oferta propia de queso; Sardaformaggi presenta Burchio como oficina y depósito y sitúa su fábrica en Buddusò; La Fonte atribuye su producción a Asciano, no a la nueva dirección de Firenze; y Centrale del Latte no desglosa qué queso fabrica específicamente en Olmatello.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| R.M. SRL | Castelfiorentino | VIA NEWTON 20, CASTELFIORENTINO (FI) | `UE IT 3081` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAR-16 |
+| I MEDICEI SPA | Empoli | VIA FERDINANDO SANTI 17, EMPOLI (FI) | `UE IT 3027` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-NOV-24 |
+| SARDAFORMAGGI S.P.A. | Figline E Incisa Valdarno | LOCALITA' BURCHIO 25/C, FIGLINE E INCISA VALDARNO (FI) | `UE IT 09 22` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-OCT-15 |
+| CASEIFICIO LA FONTE S.R.L. | Firenze | VIA BRONZINO 1, FIRENZE (FI) | `UE IT C7Z4W` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 17-NOV-25 |
+| CENTRALE DEL LATTE D'ITALIA S.P.A. | Firenze | VIA DELL`OLMATELLO 20, FIRENZE (FI) | `UE IT 09 484` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUN-26 |

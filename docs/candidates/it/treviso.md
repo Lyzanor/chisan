@@ -41,3 +41,47 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | CASA VECCIA MICROBIRRIFICIO | Camalò | `Cerveza` | birra artigianale | [web](https://www.ivanborsato.it) |
 | LZO | Conegliano | `Cerveza` | birra artigianale | — |
 | Meraki Birrificio Artigianale | Susegana | `Cerveza` | birra artigianale | [web](https://www.birrameraki.it) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+37 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| EURIAL ITALIA S.P.A. | Borso Del Grappa | VIA MOLINETTO 76, BORSO DEL GRAPPA (TV) | `UE IT 05 87` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-SEP-18 |
+| CASEIFICIO TOMASONI S.R.L. | Breda Di Piave | VIA BOVON 3, BREDA DI PIAVE (TV) | `UE IT 05 216` | vacuno menos de 60 d/más de 60 d | 12-JUL-16 |
+| FRESCOLAT S.R.L. | Caerano Di San Marco | VIA PAOLO VIGANO' 22, CAERANO DI SAN MARCO (TV) | `UE IT K2M1Z` | vacuno menos de 60 d/más de 60 d | 17-MAY-16 |
+| CASEIFICIO MARION S.R.L. | Castelfranco Veneto | VIA CIRCONVALLAZIONE EST 80, CASTELFRANCO VENETO (TV) | `UE IT 05 141` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 15-JAN-16 |
+| CENTRO VENETO FORMAGGI SRL | Cavaso Del Tomba | VIA LERINA 7, CAVASO DEL TOMBA (TV) | `UE IT L091L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-DEC-20 |
+| CENTRO VENETO FORMAGGI SRL | Cavaso Del Tomba | VIA VALCAVASIA 40, CAVASO DEL TOMBA (TV) | `UE IT 05 114` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-DEC-20 |
+| LATTERIA DI ROVERBASSO S.R.L. | Codognè | VIA ROMA 211 , CODOGNÈ (TV) | `UE IT 05 236` | vacuno menos de 60 d/más de 60 d | 19-FEB-14 |
+| ARTE GELATO S.R.L. | Conegliano | VIA FRANCESCO FABBRI 7, CONEGLIANO (TV) | `UE IT 05 264` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-MAR-18 |
+| LATTERIA DI SOLIGO SOCIETA' AGRICOLA COOPERATIVA | Farra Di Soligo | VIA I SETTEMBRE 32, FARRA DI SOLIGO (TV) | `UE IT 05 121` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-NOV-23 |
+| LATTERIA DI SOLIGO SOCIETA' AGRICOLA COOPERATIVA | Fregona | VIA DELL'INDUSTRIA 37, FREGONA (TV) | `UE IT E6Z81` | vacuno menos de 60 d/más de 60 d | 19-MAY-20 |
+| LATTERIA MONTELLO S.P.A. | Giavera Del Montello | VIA FANTE D`ITALIA 26, GIAVERA DEL MONTELLO (TV) | `UE IT 05 112` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 07-MAR-18 |
+| ITCOOK S.R.L. | Istrana | VIA TRE COMUNI 2/A, ISTRANA (TV) | `UE IT M4P8K` | vacuno menos de 60 d | 07-MAY-24 |
+| LATTERIA MONTELLIANA SNC DI BOLZONELLO FABIANO E MENEGAZZO DANIELA | Maserada Sul Piave | VIA A. CACCIANIGA 48 , MASERADA SUL PIAVE (TV) | `UE IT 05 211` | vacuno menos de 60 d/más de 60 d | 19-SEP-13 |
+| FATTORIA CURTO DI CURTO GIANCARLO | Miane | VIA S. VITO 50, MIANE (TV) | `UE IT D801P` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-MAY-23 |
+| PANDOLFO STEFANO | Monfumo | VIA FARNEA 29, MONFUMO (TV) | `UE IT X2P1K` | vacuno menos de 60 d | 09-FEB-24 |
+| CA' BASTIAN SOCIETA' AGRICOLA S.S. | Montebelluna | VIA CONTARINI 7, MONTEBELLUNA (TV) | `UE IT R4S8C` | vacuno menos de 60 d/más de 60 d | 01-JUN-21 |
+| LATTERIA E CASEIFICIO MORO S.R.L. | Motta Di Livenza | VIA POSTUMIA, 28/1 , MOTTA DI LIVENZA (TV) | `UE IT 05 219` | vacuno menos de 60 d/más de 60 d | 05-MAR-13 |
+| GELATI S.R.L. | Nervesa Della Battaglia | VIA MONTELLO 6, NERVESA DELLA BATTAGLIA (TV) | `UE IT 05 366` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-APR-18 |
+| CASEIFICIO LIA DI BARATTIN GIANNI & C. SNC | Ormelle | VIA LIETTE 5/A, ORMELLE (TV) | `UE IT C7X08` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-17 |
+| CASEIFICIO MONTEGRAPPA S.R.L. | Pieve Del Grappa | VIA GIARE 5, PIEVE DEL GRAPPA (TV) | `UE IT 05 301` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-MAY-15 |
+| CASEIFICIO F.LLI CASTELLAN S.R.L. | Ponte Di Piave | VIA SOTTOTREVISO 45, PONTE DI PIAVE (TV) | `UE IT 05 220` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 04-AUG-15 |
+| LATTERIA SANT'ANDREA SOCIETA' AGRICOLA COOPERATIVA | Povegliano | VIA CAPITELLO 62/66, POVEGLIANO (TV) | `UE IT 05 217` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-FEB-19 |
+| TREVISANALAT S.P.A. | Resana | VIA ROMA 111, RESANA (TV) | `UE IT P419Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JAN-25 |
+| IL CASEIFICIO DI RONCADE SRL DI RENZO BETTIOL | Roncade | VIA PANTIERA, 5 , RONCADE (TV) | `UE IT 05 215` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 09-APR-13 |
+| LOVAGRICOLA S.A.S. DI LOVATO FILIPPO & C. | Roncade | VIA GALLI 35/A, RONCADE (TV) | `UE IT 05 111` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-APR-17 |
+| PERENZIN LATTERIA S.R.L. | San Pietro Di Feletto | VIA CERVANO 85 , SAN PIETRO DI FELETTO (TV) | `UE IT 05 244` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-APR-11 |
+| SOCIETA' AGRICOLA MONTEVERDE S.A.S. DI COLASURDO MICHELE & C. | San Zenone Degli Ezzelini | VIA MEZZO CIEL 9, SAN ZENONE DEGLI EZZELINI (TV) | `UE IT R9R7L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-18 |
+| AZ.AGR. VENTURIN SOCIETA' AGRICOLA S.S. | Spresiano | VIA RISORGIMENTO 6, SPRESIANO (TV) | `UE IT J437H` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-NOV-18 |
+| BORGOLUCE SOCIETA' AGRICOLA S.S. | Susegana | VIA MANDRE 45, SUSEGANA (TV) | `UE IT V3Q78` | vacuno menos de 60 d/más de 60 d | 27-OCT-16 |
+| LATTERIA SOCIALE DI TARZO E REVINE LAGO SOCIETA' AGRICOLA COOPERATIVA | Tarzo | VIA COLMAGGIORE DI SOPRA 51 , TARZO (TV) | `UE IT 05 237` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-AUG-13 |
+| GIUSEPPE LORENZON C.I.E. S.R.L. | Treviso | VIA PIAVE 49, TREVISO (TV) | `UE IT 05 255` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-APR-18 |
+| LATTERIE VENETE S.P.A. | Vedelago | VIA BASSANESE 2/INT.3, VEDELAGO (TV) | `UE IT X7076` | vacuno más de 60 d, caprino más de 60 d, ovino más de 60 d | 05-SEP-18 |
+| LATTERIE VENETE S.P.A. | Vedelago | VIA BASSANESE 2, VEDELAGO (TV) | `UE IT 05 104` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-FEB-15 |
+| AZIENDA AGRICOLA PONTEVECCHIO S.S. SOCIETA' AGRICOLA | Vidor | VIA MONTE GRAPPA 57/A, VIDOR (TV) | `UE IT L3R4X` | vacuno menos de 60 d/más de 60 d | 29-JUN-15 |
+| GARBELOTTO FORMAGGI S.R.L. | Vittorio Veneto | VIA S. ANTONIO 69, VITTORIO VENETO (TV) | `UE IT 05 275` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-MAR-18 |
+| TONIOLO CASEARIA SPA | Volpago Del Montello | VIA SACCARDO FRAZ. SELVA 37, VOLPAGO DEL MONTELLO (TV) | `UE IT 05 153` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-19 |
+| CASEIFICIO TONON S.R.L. | Zero Branco | VIA ALESSANDRINI 77/A, ZERO BRANCO (TV) | `UE IT 05 34` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 25-MAY-26 |

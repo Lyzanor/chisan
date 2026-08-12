@@ -55,3 +55,11 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Ul Sasson | Marzio | `Lácteos y quesos` + `Carne` | L’azienda alleva bovini da carne e da latte, ovicaprini, suini, equini e animali di bassa corte. Produce formaggi e insaccati. | 0332.727857, 340.5037208<br>info@agriturismolocatelli.it |
 | Ai Boschi | Origgio | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda, situata in una zona di produzione di patate, cipolle, verze e zucche, coltiva frumento, orzo, segale, triticale e mais. Produce insaccati, latticini e confetture e alleva bovini, suini, ovini, caprini, equini, | 02.96730110<br>info@aiboschi.it<br>[web](http://www.aiboschi.it) |
 | Berti Camillo | Taino | `Lácteos y quesos` + `Carne` + `Fruta y verdura` | produzione di verdure, frutta, formaggi di capra e salumi | 0331.957533<br>berti.camillo@libero.it, info@bertiaziendaagricola.it<br>[web](http://www.bertiaziendaagricola.it) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+1 unidad productiva sigue pendiente de una identidad pública y una oferta quesera actuales. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Se publicaron Norden, GreenFantasy, Il Vallone, Libera & Laudi, Pian Del Lares, Caprivalcuvia, Caseificio Sommese y Prealpi tras reconciliar marca, unidad y gama vigente. En Libera & Laudi, los números 106 del registro y 1842 de la web oficial geocodifican el mismo punto de Via Varese y corresponden a la misma razón social y NIF. ITA 3 conserva autorización, pero no se localizó una marca ni una oferta propia pública que permita presentarla como productor al usuario. Corte revisado: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| ITA 3 SRL | Gornate-Olona | VIA DEI TIGLI 13 - LOC. BICICCERA , GORNATE-OLONA (VA) | `UE IT 03 1263` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-FEB-10 |

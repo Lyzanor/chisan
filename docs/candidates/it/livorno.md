@@ -65,3 +65,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | REBUA MARIA PIA | San Vincenzo | `Aceite` | Olio extravergine di oliva Toscano IGP | antichipalmenti@gmail.com |
 | AZIENDA AGRICOLA GIOVANI SOCIETA' SEMPLICE | Suvereto | `Aceite` | Olio extravergine di oliva Toscano IGP | info@giovaniolio.it |
 | ORTOLANI CESARE | Suvereto | `Aceite` | Olio extravergine di oliva Toscano IGP | cesare.ortolani@alice.it |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| COCOCCIONI & FIGLI SRL | Livorno | VIA DEI RAMAI 5, LIVORNO (LI) | `UE IT X7L62` |  | 19-JAN-23 |
+| GRASSI LEOPOLDO S.A.S. DI GRASSI FLORINDO E MAURO E C. | Livorno | VIA DELLA FONTANELLA 83, LIVORNO (LI) | `UE IT 09 348` |  | 14-MAR-19 |

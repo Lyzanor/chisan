@@ -39,3 +39,37 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 |---|---|---|---|---|
 | Birrificio Estense | Este | `Cerveza` | birra artigianale | [web](https://birrificioestense.it/) |
 | Artigiani della birra | Piombino Dese | `Cerveza` | birra artigianale | [web](https://www.artigianidellabirra.it/) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+23 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| CASEIFICIO MORANDI DI MORANDI ANGELA, ELENA E CHIARA S.N.C. | Anguillara Veneta | VIA PONTE 145, ANGUILLARA VENETA (PD) | `UE IT 05 162` | vacuno menos de 60 d | 28-DEC-22 |
+| CASEIFICIO GIOACHIN ENNIO S.R.L. | Arre | VIA POZZALE 3, ARRE (PD) | `UE IT 05 185` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-MAR-23 |
+| DOLCE GELATO DI ZURINI MAURIZIO | Borgoricco | VIA MUSSOLINI 3, BORGORICCO (PD) | `UE IT 05 328` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-OCT-24 |
+| FRANCESCHI ENZO | Borgoricco | VIA ROMA 60, BORGORICCO (PD) | `UE IT 05 202` | vacuno menos de 60 d/más de 60 d | 15-SEP-23 |
+| BRAZZALE SOCIETA' PER AZIONI IN FORMA ABBREVIATA "BRAZZALE S.P.A. | Campodoro | VIA TORREROSSA 30, CAMPODORO (PD) | `UE IT B2G3K` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-JUN-26 |
+| LATTEBUSCHE - LATTERIA DELLA VALLATA FELTRINA - SOCIETA' COOPERATIVA AGRICOLA - CON SIGLA LATTEBUSCH | Carmignano Di Brenta | VIA BREDA 10/B, CARMIGNANO DI BRENTA (PD) | `UE IT 05 210` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-AUG-21 |
+| LATTERIA SOCIALE CENTRO SOCIETA' COOPERATIVA AGRICOLA | Gazzo | VIA ROMA 20/1, GAZZO (PD) | `UE IT 05 81` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JAN-23 |
+| SOCIETÀ AGRICOLA LA CAPRA D`ORO DI MARCHIRON GIACOMO E CECCATO RENATA S.S. | Gazzo | VIA TORTUOSA, 29 , GAZZO (PD) | `UE IT 05 409` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-FEB-13 |
+| GELATI VALBRENTA S.R.L. | Grantorto | VIA P. JOLANDA 1 , GRANTORTO (PD) | `UE IT 05 333` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUL-11 |
+| CASEIFICIO RUSSO S.N.C. DI FIOR MARILENA & C. | Massanzago | VIA MOLINO BAGLIONI 8 , MASSANZAGO (PD) | `UE IT 05 203` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-MAR-13 |
+| GELITE DI BABBOLIN VALERIO | Montegrotto Terme | VIA T. SPERI , MONTEGROTTO TERME (PD) | `UE IT 05 390` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAR-13 |
+| DE ZUANNE SERGIO | Padova | VIA SVIZZERA 12 , PADOVA (PD) | `UE IT 1880 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAR-13 |
+| PREFERITA S.R.L. | Padova | VIA GERMANIA 20 , PADOVA (PD) | `UE IT 1605 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-13 |
+| OLISMO SRL | Pernumia | VIA DELL'ARTIGIANATO 12/B, PERNUMIA (PD) | `UE IT W6Q00` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-JUL-26 |
+| SOCIETA' AGRICOLA SCACCO DI SCACCO SIMONE E C. S.S. | Piove Di Sacco | VIA PORTO 47/B, PIOVE DI SACCO (PD) | `UE IT 05 137` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAR-21 |
+| CASEIFICIO F.LLI NOBILI S.R.L. | Rubano | VIA E. FERMI 13, RUBANO (PD) | `UE IT 05 308` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUL-17 |
+| DALLA LIBERA ALBANO S.A.S. DI DALLA LIBERA DIMITRI & C. | Rubano | VIA SAVERI 6 , RUBANO (PD) | `UE IT 05 289` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAR-13 |
+| LATTEBUSCHE - LATTERIA DELLA VALLATA FELTRINA - SOCIETA' COOPERATIVA AGRICOLA - CON SIGLA LATTEBUSCH | San Pietro In Gu | VIA CAPPELLO 17, SAN PIETRO IN GU (PD) | `UE IT 05 31` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-OCT-19 |
+| CASEIFICIO 2000 DI PASQUESI ELIA | Sant'Urbano | VIA DON COSTANTE MARTELLO 10, SANT'URBANO (PD) | `UE IT 05 184` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-SEP-16 |
+| CASEIFICIO PASQUESI S.N.C. DI PASQUESI RICCARDO & C. | Sant'Urbano | VIA PADRE GIACOMO 9, SANT'URBANO (PD) | `UE IT 05 187` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-MAR-26 |
+| LATTE3 S.R.L. | Selvazzano Dentro | VIA PELOSA 78, SELVAZZANO DENTRO (PD) | `UE IT R6E5L` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 13-MAR-19 |
+| MUCCA VERDE SOCIETA' COOPERATIVA | Urbana | VIA DEL LAVORO NORD 371, URBANA (PD) | `UE IT Q802J` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-MAR-25 |
+| CASEIFICIO FOCCHESATO GIANPIETRO S.R.L. | Villafranca Padovana | VIA CÀ ZEN 1, VILLAFRANCA PADOVANA (PD) | `UE IT 05 206` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUN-14 |
+
+## Productores de queso — contraste Grana Padano DOP del 2026-08-11
+
+La planta `PD704` de Lattebusche publicada por el [Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/lattebusche-s-c-a/) coincide con la unidad sanitaria ya candidata en Via Cappello 17, San Pietro in Gu. No produjo candidatos nuevos; el punto de Carmignano di Brenta que menciona la ficha es un spaccio, no otra quesería Grana Padano.

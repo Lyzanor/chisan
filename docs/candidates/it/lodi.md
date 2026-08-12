@@ -1,52 +1,52 @@
 # Candidatos — Lodi
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión cerrada el 2026-08-12 para los lotes ecológico TRACES (corte 2026-08-08), categorías poco representadas (corte 2026-08-10) y productores de queso del registro sanitario (corte 2026-08-11). `I.T.A.S. A. Tosi` aparecía en los lotes regional y sanitario y se consolidó en una sola unidad. Resultado de 41 identidades únicas: 26 publicadas, 3 excluidas y 12 retenidas con una carencia explícita. Las altas y exclusiones están trazadas en `data/evidence/it/lombardia/lodi.jsonl`.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ANANIA VITALIANO | Lodi | LOCALITA' GALICI SNC 88812 | producción — vegetales sin transformar | 2028-04-16 | [IT-BIO-004.380-0081738.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0081738.2025.001.pdf) |
-| Az. Agr. Cielo e Terra di Ozzimo Francesco | Salerano sul Lambro | Via Nazioni Unite, 10 26857 | producción — vegetales sin transformar | 2027-06-07 | [IT-BIO-005.380-0033238.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0033238.2026.001.pdf) |
-| AZIENDA AGRICOLA GRUPPI FRATELLI S.S. SOCIETA' AGRICOLA | San Rocco al Porto | CASCINA SAN SISTO 26865 | producción — vegetales sin transformar | 2027-07-12 | [IT-BIO-007.380-0044560.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0044560.2026.001.pdf) |
-| BARBAGLIO MARCO | Secugnago | CNA SANT IGNAZIO 26826 | producción — vegetales sin transformar | 2029-07-14 | [IT-BIO-020.380-0111315.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-020.380-0111315.2026.002.pdf) |
-| BRAMBILLA FRATELLI SOCIETA' AGRICOLA | Merlino | VIA IV NOVEMBRE 1 26833 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-01 | [IT-BIO-023.380-0044037.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0044037.2026.001.pdf) |
-| CACCIALANZA ALESSANDRO | Casalpusterlengo | CASCINA DEL LAGO 26841 | producción — vegetales sin transformar | 2026-08-28 | [IT-BIO-007.380-0039701.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0039701.2025.002.pdf) |
-| CORBELLINI GIAMPIERO | Pieve Fissiraga | CASCINA PEZZOLO 2 26854 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2027-07-16 | [IT-BIO-007.380-0021002.2026.004](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0021002.2026.004.pdf) |
-| CREMONESI CLAUDIA | Graffignana | VIA CARLO ALBERTO DALLA CHIESA N 35 26813 | producción — vegetales sin transformar | 2028-10-17 | [IT-BIO-007.380-0049132.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0049132.2025.001.pdf) |
-| De Vecchi Achille | Zelo Buon Persico | Cascina Molinetto, snc 26839 | producción — vegetales sin transformar | 2028-05-01 | [IT-BIO-008.380-0099511.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0099511.2025.001.pdf) |
-| DEGAVI STEFANO | Casalpusterlengo | VICOLO M PILLA 6 26841 | producción — vegetales sin transformar | 2029-06-03 | [IT-BIO-006.380-0030513.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0030513.2026.001.pdf) |
-| DORDONI CHIARA ERNESTE S.S. - SOCIETA' AGRICOLA | Caselle Landi | CASCINA NUOVA 26842 | producción — vegetales sin transformar | 2028-12-11 | [IT-BIO-007.380-0000394.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0000394.2026.001.pdf) |
-| GREENFARM SOCIETA' AGRICOLA | Sant'Angelo Lodigiano | CASCINA BATTISTINA SNC 26866 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-04-20 | [IT-BIO-009.380-0025398.2026.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0025398.2026.003.pdf) |
-| GRUPPI GIANPIERO AZIENDA AGRICOLA CA' BIANCA | San Rocco al Porto | CASCINA CA' BIANCA SNC 26865 | producción — vegetales sin transformar | 2029-07-02 | [IT-BIO-007.380-0032798.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0032798.2026.002.pdf) |
-| L'ERBOLARIO SOCIETA' BENEFIT SRL | Lodi | VIALE MILANO 74 26900 | producción — vegetales sin transformar | 2027-03-21 | [IT-BIO-006.380-0069483.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0069483.2024.001.pdf) |
-| LA FONTANA DI COMAZZO SOCIETA' AGRICOLA | Comazzo | CASCINA MOLINO TORCHIO  SNC 26833 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2029-04-21 | [IT-BIO-023.380-0071803.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0071803.2026.001.pdf) |
-| LODIGIANI RICCARDO | Bertonico | VIA PAPA PAOLO VI 3 26821 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2028-06-24 | [IT-BIO-007.380-0090353.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090353.2025.002.pdf) |
-| MANZONI NATALE | Comazzo | CNA NUOVA  snc 26833 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-04-16 | [IT-BIO-023.380-0017018.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0017018.2026.001.pdf) |
-| Rocca Cinzia Az. Agr. Podere Monticelli | Villanova del Sillaro | Cascina Monticelli 26818 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-07-23 | [IT-BIO-005.380-0046399.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0046399.2026.001.pdf) |
-| RUSSI ELETTRA DONATA MARIA ROSA | Lodi | VIA DEL PULIGNANO 2/A 26900 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura, vegetales sin transformar | 2027-01-15 | [IT-BIO-012.380-0061110.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0061110.2024.001.pdf) |
+Fuentes de apertura:
 
-## Categorías poco representadas — barrido del 2026-08-10
+- [TRACES NT — operadores ecológicos](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index)
+- [Regione Lombardia — fattorie didattiche](https://www.regione.lombardia.it/wps/wcm/connect/95ce99be-7f48-43c5-9f31-acb68bf20414/elenco%2BFD%2Baggiornato%2Bal%2B20.12.2024.pdf)
+- [Regione Lombardia — organizzazioni di produttori riconosciute](https://www.dati.lombardia.it/d/bdkn-hkwa)
+- [Unionbirrai — soci produttori](https://www.unionbirrai.it/it/soci/mappa/)
+- [Ministero della Salute — establecimientos autorizados](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/)
 
-10 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+## Publicados en Lodi
 
-Reparto por categoría propuesta: `Lácteos y quesos` 4, `Legumbres y cereales` 2, `Carne` 1, `Cerveza` 1, `Conservas` 1, `Fruta y verdura` 1.
+| Origen | Productores incorporados |
+|---|---|
+| Ecológicos | Cascina Pezzolo; Al Chiar di Luma; Molino delle Bufale — Azienda Agricola De Vecchi; La Fontana di Comazzo; Podere Monticelli; Elisir Apicoltura Biologica |
+| Fattorie y cerveza | Le Cascine Riboni; Brewfist; Cascina Grazzanello; San Gabriele Mulinàs; Tenuta Virolo; Azienda Agricola Baronchelli; Podere Iseppina; Agriturismo Luna — Toninelli F.lli; I.T.A.S. A. Tosi — Azienda Agraria |
+| Quesos / registro sanitario | Cascina Dedè; Agrigelateria Guado; Caseificio Angelo Croce; Caseificio Carena; I.T.A.S. A. Tosi — Azienda Agraria; Caseificio Mor Stabilini; Centrale del Latte d'Italia — Stabilimento di Lodi; Caseificio Zucchelli; Industria Casearia Raimondi; Cascina Bordonazza; Stella Bianca; Cascina Biraga |
 
-Fuentes de este lote:
+Las unidades con identidad y producción suficientes pero sin una presencia comercial propia reciente o completa se publican como `parcial`. `Al Chiar di Luma` se clasifica por sus huevos, pasta y hortalizas propias; `Agriturismo Luna — Toninelli F.lli`, por sus salumi, arroz y conservas. Ninguna de las dos se fuerza a `Lácteos y quesos` por la propuesta provisional del lote.
 
-- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
-- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+## Excluidos
 
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+| Candidato | Motivo |
+|---|---|
+| Anania Vitaliano | Località Galici corresponde a Casabona (KR), no a Lodi; la identidad pública localizada es además comercio de materiales y no ofrece un alimento propio concreto que permita reasignarla. |
+| L'Erbolario Società Benefit | La planta de Lodi produce fitocosméticos y extractos para cosmética, fuera del alcance alimentario del catálogo. |
+| POAM | Organización reconocida de productores hortofrutícolas, no una unidad productiva individual. |
 
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Le Cascine | Terranova dei Passerini | `Carne` + `Condimentos` + `Conservas` | L’azienda, in conversione a biologico, alleva suini, bovini di razza Limousine linea vacca vitello, lepri e animali di bassa corte. Le coltivazioni praticate sono di frumento tenero e duro, mais, erbai, orticole, fiori a | 0377.833588<br>info@agriturismolecascine.it<br>[web](http://www.agriturismolecascine.it) |
-| Brewfist | Codogno | `Cerveza` | birra artigianale | — |
-| Cascina Grazzanello | Mairago | `Conservas` + `Frutos secos` + `Legumbres y cereales` | Coltivazione di piante ad alto fusto, pioppi, frassini e produzione di mais, grano, orzo, soia e noci. L’azienda produce anche confetture. L’Ecomuseo della cascina fa parte del Sistema Museale del Lodigiano. | 0371.487261<br>grazzanello@tiscali.it<br>[web](http://www.grazzanello.it) |
-| POAM | Merlino | `Fruta y verdura` | ORTOFRUTTA | — |
-| San Gabriele Mulinás | Caselle Lurani | `Legumbres y cereales` | Azienda cerealicola con produzione di riso. | 0371.96046<br>info@mulinas.com<br>[web](http://www.mulinas.com) |
-| Virolo | Mulazzano | `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva riso, mais, orzo e ortaggi. | 02.989044<br>tenutavirolo@tiscali.it<br>[web](http://www.tenutavirolo.it) |
-| Baronchelli | Borgo San Giovanni | `Lácteos y quesos` + `Legumbres y cereales` | Azienda cerealicola e zootecnica con produzione di latte di alta qualità e vendita di prodotti aziendali. | 335.7735973<br>info@lattecrudobaronchelli.it<br>[web](http://www.aziendaagricolabaronchelli.com) |
-| I.T.A.S. "A. Tosi" | Codogno | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda collegata all’Istituto agrario è ad indirizzo cerealicolo, orticolo e floricolo con allevamento di bovini da latte razza Frisona e Brunalpina. Si producono formaggi freschi e stagionati Provolone.Vendita di mie | 0377.32250, 0377.37265 fax, 338.5699313<br>Iota01000I@istruzione.it<br>[web](http://www.agrariotosi.it) |
-| Podere Iseppina - I.P.S.A.A. "E.MERLI" | Lodi | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | L’azienda collegata all’Istituto agrario coltiva cereali, ortaggi e alleva bovini da carne. Trasformazione in azienda di latticini stagionati e prodotti da forno. | 0371.30185<br>podereiseppinalodi@libero.it |
-| Toninelli F.lli | Marudo | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Allevamento di ovini, suini, bovini da latte. Produzione di riso Carnaroli, salumi.Si vendono prodotti quali riso, salumi e vini. | 0371.98058<br>info@agriturismoluna.it<br>[web](http://www.agriturismoluna.it.) |
+## Retenidos tras revisión
+
+Estos candidatos ya fueron contrastados; no deben publicarse sin resolver la carencia indicada.
+
+| Candidato | Carencia que mantiene la retención |
+|---|---|
+| Az. Agr. Cielo e Terra di Ozzimo Francesco | Certificado y explotación localizados, pero sin producto alimentario propio y oferta pública actual suficientemente concretos. |
+| Azienda Agricola Gruppi Fratelli | El certificado acredita cultivo ecológico, no una marca, producto comercial concreto o canal público atribuible a la unidad. |
+| Barbaglio Marco | Actividad agrícola vigente, sin una oferta alimentaria propia al público que permita describir una ficha útil. |
+| Brambilla Fratelli Società Agricola | Alcance ecológico mixto vigente, pero no se pudo identificar qué alimento propio y vendible ofrece esta unidad. |
+| Caccialanza Alessandro | La explotación existe, pero solo aparece como finca/cultivo y no con marca, producto concreto o venta pública corroborada. |
+| Degavi Stefano | No se localizó una identidad pública alimentaria separable del certificado ni un producto concreto. |
+| Dordoni Chiara Erneste | Se confirma la explotación y su actividad agrícola, pero no una elaboración u oferta propia actual al consumidor. |
+| Greenfarm Società Agricola | Actividad mixta de cultivo y cría, sin catálogo, marca o producto alimentario público atribuible con precisión. |
+| Gruppi Gianpiero — Azienda Agricola Ca' Bianca | El certificado cubre cultivos, pero falta una oferta pública concreta de cereales, legumbres u otro producto propio. |
+| Lodigiani Riccardo / Apicoltura Beesiol | La relación entre operador, marca y unidad productiva no quedó suficientemente corroborada por una fuente pública propia o institucional. |
+| Manzoni Natale | Certificación y ayudas agrarias confirman actividad, pero no una marca, producto vendible o contacto público de la explotación. |
+| PAN.DI S.r.l. | La autorización UE IT 03 1894 acredita capacidad láctea; la presencia pública actual solo demuestra comercio mayorista y no identifica una marca ni productos propios de la planta. |
+
+## Reconciliación Grana Padano DOP
+
+Las dos fichas del directorio vigente del Consorzio Grana Padano para Dedè en Borghetto Lodigiano comparten dirección y contacto con `Cascina Dedè`; corresponden a una sola unidad ya publicada y no generan productores adicionales.

@@ -1,45 +1,26 @@
 # Candidatos — Massa-Carrara
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Investigación del 2026-08-08, revisada el 2026-08-12. De los 20 operadores ecológicos con certificado `ISSUED` en [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), 8 se han publicado y retirado de esta cola tras confirmar producto, identidad y unidad productiva. Quedan 12 leads sin prueba pública suficiente para una fila responsable:
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| A.A. PODERE CAVAJOLA | Carrara | VIA MONTEVERDE 62 54033 | producción — vegetales sin transformar | 2029-03-03 | [IT-BIO-007.380-0111884.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0111884.2026.002.pdf) |
-| AGRI WINE ITALY SRL SOCIETA' AGRICOLA | Carrara | LARGO XXV APRILE 8 54033 | producción — vegetales sin transformar | 2028-08-28 | [IT-BIO-007.380-0032002.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0032002.2025.001.pdf) |
-| ALBANESE RENATO | Zeri | FRAZ. CASTOGLIO - ROSSANO - 54029 | producción — vegetales sin transformar | 2028-08-28 | [IT-BIO-007.380-0091231.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0091231.2025.001.pdf) |
-| ALBANI SILVIA | Fosdinovo | VIA CAMPAGNA 3 54035 | producción — vegetales sin transformar | 2029-06-04 | [IT-BIO-006.380-0048429.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0048429.2026.001.pdf) |
-| ANTOGNETTI CINZIA | Villafranca in Lunigiana | LOC. MULINO SNC 54028 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-04-13 | [IT-BIO-007.380-0014693.2026.004](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0014693.2026.004.pdf) |
-| ARAUJO DE LUCENA JACQUELINE | Villafranca in Lunigiana | VIA DELL'ARDITO 31 FORNOLI 54028 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura | 2028-07-19 | [IT-BIO-007.380-0090672.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090672.2026.001.pdf) |
-| ARCADIA DI ALEX ZUCCHETTO E C. SAS SOC. AGR. | Licciana Nardi | VIA DELLA GHIAIA 54016 | producción — vegetales sin transformar | 2028-09-30 | [IT-BIO-004.380-0107331.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0107331.2025.001.pdf) |
-| ATTUONI FRANCESCA | Fosdinovo | LOCALITA' TORCHIANA 54035 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2026-11-27 | [IT-BIO-007.380-0056284.2023.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0056284.2023.001.pdf) |
-| AZ. AGR. CASTELDELPIANO DI RUFFALDI SABINA | Licciana Nardi | VIA PIANO 10 54016 | preparación, producción — vegetales sin transformar, piensos | 2029-01-14 | [IT-BIO-004.380-0067090.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0067090.2026.001.pdf) |
-| AZ.AGR. LA QUINTA TERRA DI COUELLE ANNE CLAIRE | Fosdinovo | GIGNOLA 54035 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-08-02 | [IT-BIO-004.380-0011471.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0011471.2026.001.pdf) |
-| AZIENDA AGRARIA LA VALLE SOCIETA' AGRICOLA | Fivizzano | STRADA STATALE DEL CERRETO KM 6 9 54013 | producción — vegetales sin transformar | 2028-01-15 | [IT-BIO-007.380-0089774.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0089774.2025.001.pdf) |
-| AZIENDA AGRICOLA CONTI CORNELIA VALLANCE | Filattiera | VIA DOBBIANA SNC 54023 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-01-19 | [IT-BIO-004.380-0093845.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0093845.2025.001.pdf) |
-| AZIENDA BIOLOGICA BORIASSI SILVIA E ANDREA SOCIETA' AGRICOLA | Fosdinovo | VIA CANIPAROLA 19 54035 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-05-15 | [IT-BIO-006.380-0054435.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0054435.2026.001.pdf) |
-| BALDASSINI SIMONE | Podenzana | Via Provinciale 184 54010 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2029-01-27 | [IT-BIO-007.380-0008687.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0008687.2026.002.pdf) |
-| BALESTRA GIUSEPPE | Pontremoli | VIA CASE SPARSE VIGNOLA 4 54027 | producción — vegetales sin transformar | 2028-12-21 | [IT-BIO-004.380-0100256.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0100256.2025.002.pdf) |
-| BARBIERI BARBARA | Montignoso | VIA BOZZONE, 16 54038 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2026-09-27 | [IT-BIO-007.380-0045963.2023.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0045963.2023.001.pdf) |
-| BERTACCINI GRAZIELLA | Bagnone | VIA CORLAGA 13 54021 | producción — vegetales sin transformar | 2028-02-16 | [IT-BIO-004.380-0095230.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0095230.2025.001.pdf) |
-| BERTONI VERA | Zeri | CASE SPARSE CASTOGLIO ROSSANO 54029 | producción — vegetales sin transformar | 2029-05-11 | [IT-BIO-007.380-0018338.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0018338.2026.001.pdf) |
-| BIANCHI SIMONA | Bagnone | VIA VALLESCURA,, 6 54021 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-16 | [IT-BIO-007.380-0013632.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0013632.2026.001.pdf) |
-| BIBBIANI LORENZO | Carrara | VIALE XX SETTEMBRE 298 54033 | producción — ganado y productos ganaderos sin transformar, vino | 2028-07-16 | [IT-BIO-007.380-0090832.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090832.2026.001.pdf) |
+| Candidato | Comune | Motivo pendiente |
+|---|---|---|
+| A.A. Podere Cavajola | Carrara | El certificado acredita cultivo vegetal, pero no aparece un producto final, marca u oferta pública atribuible. |
+| Agri Wine Italy SRL Società Agricola | Carrara | La razón social sugiere vino, pero no se ha localizado una bodega, etiqueta o unidad productiva pública atribuible. |
+| Renato Albanese | Zeri | Solo consta la certificación de vegetales sin transformar; falta producto final y canal público. |
+| Silvia Albani | Fosdinovo | Solo consta producción vegetal genérica, sin cultivo ni producto comercial identificable. |
+| Arcadia di Alex Zucchetto e C. | Licciana Nardi | El objeto societario menciona agricultura y lácteos, pero no hay actividad alimentaria final actual verificable. |
+| Francesca Attuoni / Magù | Fosdinovo | Se confirma fruticultura, pero no un producto final propio ni una oferta pública actual. |
+| Casteldelpiano di Ruffaldi Sabina | Licciana Nardi | Certificación vegetal y de piensos sin producto final o marca pública localizados. |
+| Azienda Agricola Conti Cornelia Vallance / Podere Conti | Filattiera | Explotación mixta activa, pero sin producto final concreto y público atribuible a esta unidad. |
+| Barbara Barbieri | Montignoso | La actividad apícola tuvo oferta alimentaria, pero la titular falleció en junio de 2026 y no está resuelta su continuidad o sucesión. |
+| Graziella Bertaccini | Bagnone | Se confirma olivicultura, pero no aceite embotellado propio, marca o venta pública. |
+| Vera Bertoni | Zeri | Se confirma cría ovina/caprina, pero no queso, carne u otro producto final público. |
+| Lorenzo Bibbiani | Carrara | El certificado incluye vino, pero no se ha encontrado bodega, etiqueta ni producto público atribuible. |
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-3 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+Barrido del 2026-08-10, cerrado el 2026-08-12: los 3 candidatos se han publicado tras confirmar actividad y producto propios. Frantoio Moro y Azienda Agricola Francesca Ferrari aportan aceite Toscano IGP; Birrificio Apuano aporta cerveza artesana y mantiene compra online actual. Las decisiones y fuentes quedan en el ledger de evidencia del área.
 
-Reparto por categoría propuesta: `Aceite` 2, `Cerveza` 1.
+## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Fuentes de este lote:
-
-- Consorzio Olio Toscano IGP — aziende associate — <https://www.oliotoscanoigp.it/aziende/>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| FRANTOIO MORO SRL | Fosdinovo | `Aceite` | Olio extravergine di oliva Toscano IGP | info@oliomoro.it |
-| AZ AGR FERRARI FRANCESCA | Pontremoli | `Aceite` | Olio extravergine di oliva Toscano IGP | lucchettiferrari@gmail.com |
-| Birrificio Apuano | Massa | `Cerveza` | birra artigianale | [web](https://www.birrificioapuano.it) |
+0 unidades nuevas en el [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) tras limitar el corte a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso, y deduplicar contra el CSV y esta nota. Se excluyeron recogida, tratamiento térmico, afinado y mero porcionado o rallado. El resultado cero cierra solo este barrido sanitario: todavía deben reconciliarse consorcios, registros regionales y productores con venta directa no sujetos a esta autorización. Corte: 2026-08-11.

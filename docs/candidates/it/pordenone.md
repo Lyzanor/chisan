@@ -1,64 +1,50 @@
 # Candidatos — Pordenone
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión editorial del 2026-08-12. Se publicaron nueve productores locales y se reasignaron dos identidades a su unidad productiva real: Tenute Tomasella a Mansuè (Treviso) y PanPiuma–Arte Bianca a Marghera (Venezia). Las decisiones están en los respectivos ledgers de evidencia.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
+## Retenciones activas
+
+Estas 32 identidades siguen abiertas: el registro acredita explotación o actividad, pero no basta para publicar una oferta propia actual sin riesgo de inventar producto, contacto o unidad productiva.
+
+| Candidato | Comune | Motivo concreto de retención |
+|---|---|---|
+| Agriangie | Porcia | Solo se confirma cultivo de cereales, legumbres y oleaginosas; no hay producto final ni venta pública atribuible. |
+| Agricola Rossetto | Clauzetto | Se confirma ganadería lechera, pero no queso, leche envasada o venta directa bajo marca propia. |
+| Alisurs | Spilimbergo | El certificado confirma cultivos, sin marca pública, catálogo o contacto comercial. |
+| Az. Agr. Biologica Pradis | Clauzetto | Se confirma ganadería y cultivos, pero no una oferta alimentaria propia actual diferenciada de otras explotaciones de Pradis. |
+| Az. Agr. Biemme | Maniago | Solo hay rastro registral de cultivos; falta producto final y canal público. |
+| Conti di Maniago / Martinengo Filippo | Maniago | Las referencias mezclan sedes y actividades forestales, agrarias y de alojamiento; falta una oferta alimentaria actual atribuible a la unidad de Maniago. |
+| Azienda Agricola Ligont | Budoia | El certificado acredita cultivos, sin marca o producto comercial identificable. |
+| Azzaro Maria | Vito d'Asio | El registro incluye ganado, vino y acuicultura, pero no se localizó identidad pública ni producto actual. |
+| Barna Erminio | Pinzano al Tagliamento | Solo consta producción vegetal certificada; falta producto final propio. |
+| Biasin Jala | Cimolais | Solo consta producción vegetal certificada; falta marca, contacto y oferta. |
+| Bignolin Alex | Pinzano al Tagliamento | Se confirma explotación mixta en Borgo Ampiano, pero no una gama alimentaria propia vendida al público. |
+| Bonin Angelina | Spilimbergo | Solo consta producción vegetal certificada; falta producto final propio. |
+| Bortolussi Stefano | Sesto al Reghena | El registro acredita animales y cultivos, pero no producto alimentario comercial atribuible. |
+| Bossi Fabio | Cavasso Nuovo | Solo consta producción vegetal certificada; falta marca y canal público. |
+| Bravin Rosa Pia | Budoia | Se confirma explotación mixta, sin oferta alimentaria propia actual localizable. |
+| La Contrada dell'Oca | Fanna | El registro regional describe aceite propio, pero la web ya no funciona y no se pudo confirmar oferta o contacto actual. |
+| Boschian Cuch Gemma, Mazzocco Catia y Gasparetto Sandro | Aviano | El registro confirma ganadería y cultivos; no hay marca o venta pública atribuible. |
+| Roberto Villalta | Pasiano di Pordenone | Explotación mixta registral sin producto final propio o contacto comercial público. |
+| Cooperativa A.R.C.A. | Pasiano di Pordenone | Se confirma agricultura social, pero no una gama alimentaria propia actualmente a la venta. |
+| TerreFini / Il Salice Ridente | Pasiano di Pordenone | El dominio remite a una página aparcada y no permite confirmar oferta actual. |
+| Azienda Agricola Tina | San Giorgio della Richinvelda | El registro menciona avicultura, fruta, vino y cereal, sin identidad comercial o venta pública actual. |
+| Cooperativa Controvento / Parco San Floriano | Polcenigo | La web confirma gestión rural y productos locales, pero no distingue qué alimentos son producción propia de la cooperativa. |
+| Sottosopra | Tramonti di Sotto | La web declarada no responde y no se encontró una oferta actual verificable. |
+| Società Agricola Vivan | San Giorgio della Richinvelda | El registro acredita fruta, hortaliza, cereal y aromáticas, sin marca o canal público. |
+| Azienda Agricola Canton Angela | Azzano Decimo | Explotación registrada sin producto alimentario final ni venta directa verificable. |
+| Salvador Valerio | Pordenone | Se confirma horticultura, pero no marca, catálogo ni punto de venta actual atribuible. |
+| Azienda Agraria IIS Il Tagliamento | Spilimbergo | La granja escolar se confirma, pero no una oferta alimentaria pública actual con catálogo y contacto de compra. |
+| Brisotto Andrea | Pasiano di Pordenone | Explotación y agriturismo registrados, sin web funcional o producto propio actual localizable. |
+| Fattoria Sociale Il Ponte | Prata di Pordenone | La actividad social sigue vigente, pero no se localizó alimento propio ofrecido al público. |
+| Antica Dimora / Pognici Luciano | Pinzano al Tagliamento | Se confirma alojamiento y producción ecológica, pero las fuentes actuales no concretan alimento propio a la venta. |
+| Peron Giancarlo, Marco e Bortolin Maria | San Quirino | El registro acredita vacuno lechero, pero no queso o leche envasada bajo marca propia ni venta directa. |
+| Orto Goloso / Andreazza Roberto | Budoia | El registro menciona miel, huevos y hortalizas; la web responde de forma intermitente y no se pudo comprobar catálogo o venta actual. |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote revisado el 2026-08-12. Se publicaron doce unidades con actividad y oferta propias contrastadas. Queda una planta reciente de Latteria di Visinale en retención: el registro sanitario prueba la unidad y su autorización, pero las fuentes públicas de la marca todavía atribuyen el catálogo y la venta directa a Via dei Donatori 10 y no explican el papel productivo de esta segunda dirección.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| Agriangie S.S.A. | Porcia | Via Della Centa, 8/a 33080 | producción — vegetales sin transformar | 2027-11-13 | [IT-BIO-005.380-0028032.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0028032.2025.002.pdf) |
-| Agricola Rossetto - Societa` Semplice Agricola | Clauzetto | Via Pradis Di Sopra, 28 33090 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-10-24 | [IT-BIO-005.380-0057980.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0057980.2024.001.pdf) |
-| ALISURS SOCIETA' SEMPLICE AGRICOLA | Spilimbergo | VIA MORENICA 1/A 33097 | producción — vegetales sin transformar | 2029-04-23 | [IT-BIO-021.380-0113505.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0113505.2026.001.pdf) |
-| ARTE BIANCA S.R.L. | Porcia | VIA LUIGI GALVANI, 8 33080 | producción — vegetales sin transformar | 2029-06-29 | [IT-BIO-017.380-0041362.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0041362.2026.001.pdf) |
-| Az. Agr. Biologica Pradis S.S.A. | Clauzetto | Via Pradis Di Sopra, 56 33090 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-01-30 | [IT-BIO-005.380-0002989.2024.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0002989.2024.002.pdf) |
-| AZ.AGR.BIEMME SOCIETA' SEMPLICE AGRICOLA | Maniago | VIA ANTONIO ROSA BRUSTOLO, 1/B 33085 | producción — vegetales sin transformar | 2027-07-02 | [IT-BIO-017.380-0040388.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0040388.2024.001.pdf) |
-| AZIENDA AGRICOLA CONTI DI MANIAGO DI MARTINENGO FILIPPO S.S. - SOCIETA' AGRICOLA | Maniago | VIA CASTELLO, 8 33085 | producción — vegetales sin transformar | 2029-05-18 | [IT-BIO-017.380-0056893.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0056893.2026.001.pdf) |
-| AZIENDA AGRICOLA LIGONT DI CALLEGARI MARCELLO | Budoia | VIA PER LIGONT 3 33070 | producción — vegetales sin transformar | 2027-10-14 | [IT-BIO-004.380-0086869.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0086869.2024.001.pdf) |
-| Azienda Agricola Tomasella Paolo & C. S.A.S. | Brugnera | Via Ungaresca n. 14 33070 | preparación, producción — vegetales sin transformar, piensos | 2029-07-29 | [IT-BIO-021.380-0050277.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0050277.2026.001.pdf) |
-| Azzaro Maria | Vito d'Asio | VIA IV NOVEMBRE N.65 33090 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura | 2029-07-08 | [IT-BIO-021.380-0031667.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0031667.2026.001.pdf) |
-| BARNA ERMINIO | Pinzano al Tagliamento | VIA ROMA N. 27 - FRAZIONE VALERIANO 33094 | producción — vegetales sin transformar | 2027-12-09 | [IT-BIO-009.380-0027630.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0027630.2024.001.pdf) |
-| BIASIN JALA | Cimolais | VIA SAN MARCO 118 33080 | producción — vegetales sin transformar | 2029-04-20 | [IT-BIO-021.380-0063440.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0063440.2026.001.pdf) |
-| Bignolin Alex | Pinzano al Tagliamento | Localita Borgo Ampiano n. 61 33094 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-07-24 | [IT-BIO-021.380-0040572.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0040572.2025.002.pdf) |
-| BONIN ANGELINA | Spilimbergo | VIA VACILE 9 33097 | producción — vegetales sin transformar | 2029-03-04 | [IT-BIO-009.380-0065056.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0065056.2026.002.pdf) |
-| BORGO TITOL SOC. AGRICOLA S.S. | Tramonti di Sopra | BORGO TITOL N. 1 33090 | producción — vegetales sin transformar | 2027-11-18 | [IT-BIO-004.380-0037996.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0037996.2024.001.pdf) |
-| BORTOLUSSI STEFANO | Sesto al Reghena | VIA PIAVE 28 - FRAZ BAGNAROLA 33079 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-06-29 | [IT-BIO-017.380-0095431.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0095431.2026.001.pdf) |
-| BOSCO DEL MERLO - LE VIGNE DI LUCIA SOCIETA' SEMPLICE AGRICOLA DI LUCIA PALADIN | Pravisdomini | VIA POSTUMIA 2 33076 | producción — vegetales sin transformar | 2029-04-10 | [IT-BIO-006.380-0113035.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0113035.2026.001.pdf) |
-| BOSSI FABIO | Cavasso Nuovo | LOCALITA' CASE DI NON SNC 33092 | producción — vegetales sin transformar | 2026-09-06 | [IT-BIO-007.380-0041583.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0041583.2025.001.pdf) |
-| BRAVIN ROSA PIA | Budoia | VIA CIALATA 9 33070 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-01-18 | [IT-BIO-004.380-0024532.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0024532.2026.001.pdf) |
-
-## Categorías poco representadas — barrido del 2026-08-10
-
-24 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Carne` 16, `Fruta y verdura` 18, `Aceite` 3, `Condimentos` 4, `Legumbres y cereales` 10, `Huevos` 2, `Lácteos y quesos` 4, `Miel` 1.
-
-Fuentes de este lote:
-
-- Regione Friuli-Venezia Giulia — elenco fattorie didattiche e sociali (open data) — <https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Azienda agricola Pancotto Luca | Caneva | `Carne` + `Fruta y verdura` | Convenzionale: pascolo, bosco, verdura e piccoli frutti, vitivinicoltura, mais.Allevamento: bovini, asini, cavalli, pecore, suini e galline azienda agricola con offerta agrituristica | 0434797145<br>info@cortivopancotto.it<br>[web](https://www.cortivopancotto.it) |
-| Azienda agricola La Contrada dell'Oca di Paola Ceregatti | Fanna | `Carne` + `Aceite` + `Condimentos` | - L'olio extravergine di oliva è la principale produzione aziendale, franto in proprio il giorno stesso della raccolta seguendo antiche tradizioni locali pur avvalendosi di moderna tecnologia.- Il vivaio di piante antich | 042777309<br>lacontradadelloca@gmail.com<br>[web](https://www.lacontradadelloca.org) |
-| Boschian Cuch Gemma, Mazzocco Catia, Gasparetto Sandro s.s. | Marsure Di Aviano | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | allevamento di bovini e animali da cortile, foraggicoltura, orticoltura, frutticoltura, cerealicoltura azienda agricola | 0434656196<br>catinuta@libero.it |
-| Azienda agricola Roberto Villalta | Pasiano di Pordenone | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | cerealicoltura, foraggicoltura, viticoltura, orticoltura, frutticoltura, allevamento di animali azienda agricola | 0434621566 |
-| Cooperativa A.R.C.A. Soc. Coop. S.r.l. O.N.L.U.S. | Pasiano di Pordenone | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | convenzionale: allevamento animali di bassa corte e di animali per pet-therapy e onoterapiabiologica: foraggicoltura, orticoltura e cerealicoltura azienda agricola con produzione biologica | 0434422001<br>info@arca.coop<br>[web](https://www.arca.coop) |
-| Società agricola TerreFini srl di Bianchi Claudio | Pasiano di Pordenone | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | cerealicoltura, orticoltura,frutticoltura, allevamento di animali azienda agricola con offerta agrituristica | 0434604233<br>info@ilsaliceridente.com<br>[web](https://www.ilsaliceridente.com) |
-| Azienda agricola l'Acero Rosso di Camol Valter | Sacile | `Carne` + `Condimentos` + `Fruta y verdura` | orticoltura, frutticoltura, floricoltura, piante officinali, allevamento di animali da cortile, equini azienda agricola con offerta agrituristica | agriturismo@acerorosso.net<br>[web](https://www.acerorosso.net) |
-| Azienda agricola Tina di Lenarduzzi Fausto, Dino e Barbara S.S. | San Giorgio della Richinvelda | `Carne` + `Huevos` + `Legumbres y cereales` | Convenzionale:-allevamento di avicoli-frutticoltura, viticoltura e cerealicoltura azienda agricola con offerta agrituristica | — |
-| Cooperativa sociale Controvento | San Giovanni Di Polcenigo | `Carne` + `Aceite` + `Fruta y verdura` | in conversione biologica: allevamento di animali da cortile, suini, asini, ovini, orticoltura, frutticoltura, olivicoltura | info@parcosanfloriano.it<br>[web](https://www.parcosanfloriano.it) |
-| Società agricola Le Quattro stagioni di Gattel Daniela & C. s.s. | San Martino Di Campagna - Aviano | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | viticoltura, orticoltura, frutticoltura, cerealicoltura, allevamento animali da cortile azienda agricola | 0434657086<br>info@aziendalequattrostagioni.com<br>[web](https://www.aziendalequattrostragioni.com) |
-| Azienda agricola Sottosopra S.S. | Tramonti di Sotto | `Carne` + `Fruta y verdura` | Azienda convenzionale:-allevamento di ovini, suini, animali da cortile-orticoltura. azienda agricola | info@sottosoprafvg.it<br>[web](https://www.sottosopra.fvg.it) |
-| Azienda agricola Fattoria Gelindo dei Magredi di Trevisanutto Pietro Enrico, Giancarlo, Gelindo, Tiziano, Donatello | Vivaro | `Carne` + `Fruta y verdura` | convenzionale: allevamento cavalli, bovini, suini, animali da cortileproduzione biologica: orticoltura in serra, frutticoltura (pomacee)preparazione biologica: succo di mela, sidro azienda agricola,azienda agricola con o | 042797037<br>info@gelindo.it<br>[web](https://www.gelindo.it) |
-| Società agricola Vivan di Antonio e Michele S.S. | San Giorgio della Richinvelda | `Condimentos` + `Legumbres y cereales` + `Fruta y verdura` | frutticoltura (melo, vite, kiwi), orticoltura (patate, zucche), cerealicoltura, piante officinali. azienda agricola | 042794124<br>agricolavivan@gmailcom |
-| Azienda agricola di Canton Angela | Azzano Decimo | `Fruta y verdura` | Ungulati selvatici, cavalli, ovini, pappagalli, animali da cortile, orticole, piccoli frutti azienda agricola | 0434640035 |
-| Cooperativa sociale Il Piccolo Principe-onlus | Località Comunali San Vito Al Tagliamento | `Fruta y verdura` | Convenzionale (integrata): floricoltura e orticoltura azienda agricola | 0434870949<br>lavolpe@ilpiccoloprincipe.pn.it<br>[web](https://www.ilpiccoloprincipe.pn.it) |
-| Azienda agricola I Vini di Emilio Bulfon di Emilio Bulfon & C. | Pinzano al Tagliamento | `Fruta y verdura` | vitivinicoltura, orticoltura azienda agricola con offerta agrituristica | 0432950061<br>[web](https://www.bulfon.it) |
-| Azienda Agricola Salvador Valerio | Pordenone | `Fruta y verdura` | Ortofloricoltura convenzionale, integrata con coltivazione dell'orto condotta con metodo biologico. azienda agricola | 0434578826 |
-| Azienda Agraria IIS "Il Tagliamento" | Spilimbergo | `Legumbres y cereales` + `Fruta y verdura` | floricoltura, frutticoltura (melo e vite), cerealicoltura, orticoltura (patate e zucche) azienda agricola | 042740392<br>PNIS00400G@istruzione.it<br>[web](https://www.isspilimbergo.it/azienda) |
-| Azienda agricola Brisotto Andrea | Villotta Di Pasiano | `Legumbres y cereales` + `Fruta y verdura` | convenzionale: frutticoltura, orticoltura, foraggicoltura, cerealicoltura azienda agricola con offerta agrituristica | 0434621540<br>info.agri.laquercia@gmail.org |
-| Impresa Sociale "Il Ponte" Soc. Coop. O.N.L.U.S. | Ghirano Di Prata | `Lácteos y quesos` + `Carne` + `Fruta y verdura` | allevamento di animali da cortile, suini, asini, caprini, orticoltura azienda agricola | 0434626870<br>info@fattoriasocialeilponte.it<br>[web](https://www.fattoriasocialeilponte.it) |
-| Azienda agricola Pradons S.S. | Meduno | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | PRODUZIONE CONVENZIONALE: allevamento di suini, bovini, caprini, animali da cortile.PRODUZIONE BIOLOGICA: orticoltura, frutticoltura e cerealicoltura. azienda agricola con offerta agrituristica, produzione e preparazione | 042786310<br>info@agriturismoaipradons.it<br>[web](https://www.agriturismopradons.it) |
-| Azienda agricola e agrituristica Antica Dimora di Pognici Luciano | Pinzano al Tagliamento | `Lácteos y quesos` + `Carne` + `Aceite` | convenzionale: floricolturain conversione biologica: foraggicoltura, olivicoltura, vitivinicoltura, orticoltura, frutticoltura (pomacee e drupacee), cerealicoltura, allevamento animali da cortile, bovini, ovini, caprini, | 0432950782<br>fattoria@valerianoanticadimora.it<br>[web](https://www.valerianoanticadimora.it) |
-| Azienda agricola Peron Giancarlo, Marco e Bortolin Maria | Strada San Foca - San Quirino | `Lácteos y quesos` + `Carne` | Allevamento bovino, indirizzo lattiero azienda agricola | 0434917016 |
-| Azienda agricola Andreazza Roberto | Budoia | `Miel` + `Condimentos` + `Huevos` | convenzionale: miele, piccola produzione uova, produzione cereali e fieno;in conversione con biologico: ortaggi, fragole e piante aromatiche. azienda agricola con produzione, preparazione e raccolta biologica | info@ortogoloso.it<br>[web](https://www.ortogoloso.it) |
+| LATTERIA DI VISINALE S.R.L. | Pasiano di Pordenone | VIA DELLA VECCHIA CERAMICA 5, PASIANO DI PORDENONE (PN) | `UE IT Y4V8B` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JUL-25 |

@@ -1,45 +1,27 @@
 # Candidatos — Gorizia
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión editorial del 2026-08-12. Se publicaron 14 productores con identidad, unidad productiva y oferta alimentaria pública atribuible. La Cooperativa Agricola Dolegna del Collio se descartó: su ficha cooperativa actual describe un servicio de maquinaria de embotellado para socios, no producto propio. Las decisiones publicadas y la exclusión quedaron registradas en `data/evidence/it/friuli-venezia-giulia/gorizia.jsonl`.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
+## Retenciones activas
+
+Estos nueve candidatos siguen abiertos. El registro ecológico o institucional acredita actividad agraria, pero todavía no permite atribuir una oferta alimentaria propia y actual con suficiente precisión.
+
+| Candidato | Comune | Fuente de partida | Motivo concreto de retención |
+|---|---|---|---|
+| Allevamento San Lorenzo di Meneghello e Parentin | Grado | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0026970.2025.001.pdf) | Se confirma explotación con animales y cultivos, pero no una gama alimentaria propia ofrecida al público. |
+| Az. Agr. Santinelli Gorizia | Gorizia | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0049432.2026.001.pdf) | Solo aparecen registros administrativos; falta marca pública, producto concreto y contacto comercial atribuible. |
+| Bagolin Lorena | Grado | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0045070.2026.001.pdf) | El certificado confirma cultivos; las referencias de venta directa localizadas son antiguas y no prueban oferta actual. |
+| Bonazza Andrea | Turriaco | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0029125.2024.002.pdf) | Se confirma producción de cereales, legumbres y oleaginosas, pero no producto final propio ni canal público. |
+| Bront Michela | Mariano del Friuli | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0075701.2024.001.pdf) | Las referencias encontradas mezclan la titular con otras marcas y no permiten atribuirle una oferta actual sin riesgo de duplicado. |
+| Centro Zootecnico Goriziano | Savogna d'Isonzo | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0094549.2025.001.pdf) | La cooperativa presta apoyo zootécnico y lechero, pero no se localizó un alimento propio comercializado bajo su identidad. |
+| Coslovich Cristian | Grado | [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0038081.2025.001.pdf) | El certificado acredita cultivos, sin marca, producto final o contacto de venta actual atribuible. |
+| Parco Rurale Alture di Polazzo / Samsa Paolo | Fogliano Redipuglia | [web oficial](https://www.parcorurale.it/) | La web confirma ganadería ecológica extensiva y apicultura, pero no concreta carne o miel propia actualmente a la venta. |
+| Pezzetta Alessandro | Villesse | [registro regional](https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk) | El registro confirma una explotación mixta, pero no una marca u oferta alimentaria pública; no debe confundirse con Pezzetta S.r.l. |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Unidad revisada el 2026-08-12. Latte Carso ya está publicada por su planta principal de Via Trieste 19, respaldada además por el Consorzio Montasio. La nueva autorización `H5R2S` de Via Aquileia 2 se mantiene en retención y no genera una segunda fila: la web oficial, el consorcio y el catálogo comercial siguen atribuyendo la identidad, los productos y los contactos a Via Trieste 19 y todavía no explican la función productiva diferenciada de la nueva dirección.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| Allevamento San Lorenzo Di Meneghello e Parentin Societa Agricola Societa Semplice | Grado | LOCALITA' ZEMOLE 3 34073 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-10-08 | [IT-BIO-021.380-0026970.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0026970.2025.001.pdf) |
-| Az. Agr. Brumat Gabriele | Medea | Corso Friuli, 46 34076 | preparación, producción — vegetales sin transformar, piensos | 2027-10-25 | [IT-BIO-005.380-0014058.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0014058.2026.001.pdf) |
-| Az. Agr. Gradis`Ciutta di Princic Robert | San Floriano del Collio | Loc. Giasbana, 32/a 34170 | preparación, producción — vegetales sin transformar, piensos | 2027-07-23 | [IT-BIO-005.380-0042374.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0042374.2026.001.pdf) |
-| AZ. AGR. SANTINELLI GORIZIA SOC. AGR. S. | Gorizia | VIA DEL MONTESANTO 131/17 34170 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-03-27 | [IT-BIO-006.380-0049432.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0049432.2026.001.pdf) |
-| AZIENDA AGRICOLA BERGOMAS MASSIMO | Mariano del Friuli | VIA TRIESTE 1 RAZIONE CORONA 34070 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2027-02-28 | [IT-BIO-009.380-0001607.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0001607.2024.001.pdf) |
-| Bagolin Lorena | Grado | VIA VALLE 11 34073 | producción — vegetales sin transformar | 2029-04-20 | [IT-BIO-021.380-0045070.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0045070.2026.001.pdf) |
-| BASTIANI STEFANO | Cormons | VIA SAVAIAN 36 34071 | producción — vegetales sin transformar | 2027-04-23 | [IT-BIO-021.380-0074864.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0074864.2024.001.pdf) |
-| BONAZZA ANDREA | Turriaco | VIA PIAVE 49 34070 | producción — vegetales sin transformar | 2026-09-29 | [IT-BIO-007.380-0029125.2024.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0029125.2024.002.pdf) |
-| Bront Michela | Mariano del Friuli | Via Leonardo da Vinci n. 42 34070 | preparación, producción — vegetales sin transformar, piensos | 2027-05-05 | [IT-BIO-021.380-0075701.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0075701.2024.001.pdf) |
-| CASTELVECCHIO SOC. AGR. A R.L. | Sagrado | VIA CASTELNUOVO 2 34078 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-11-04 | [IT-BIO-006.380-0051139.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0051139.2025.001.pdf) |
-| CENTRO ZOOTECNICO GORIZIANO SOC. COOP. AGR. | Savogna d'Isonzo | VIA STRADALTA 77 34070 | producción — vegetales sin transformar | 2028-01-31 | [IT-BIO-006.380-0094549.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0094549.2025.001.pdf) |
-| COCEANI RENZO | Moraro | Via Moraro, 15 34070 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2027-02-09 | [IT-BIO-009.380-0020858.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0020858.2024.001.pdf) |
-| COPERATIVA AGRICOLA DOLEGNA DEL COLLIO SOC.COOP. A.R.L. | Dolegna del Collio | VIA ZORUTTI, 28 34070 | preparación, producción — piensos | 2027-04-12 | [IT-BIO-017.380-0073168.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0073168.2024.001.pdf) |
-| Coslovich Cristian | Grado | Via Valle n. 20 34073 | producción — vegetales sin transformar | 2028-05-14 | [IT-BIO-021.380-0038081.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0038081.2025.001.pdf) |
-| Da Simon Veliscig Enrico Di Drius Daniele | Cormons | Via San Rocco, 17 34071 | preparación, producción — vegetales sin transformar, piensos | 2029-05-13 | [IT-BIO-017.380-0057585.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0057585.2026.001.pdf) |
-
-## Categorías poco representadas — barrido del 2026-08-10
-
-9 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Carne` 5, `Lácteos y quesos` 2, `Miel` 2.
-
-Fuentes de este lote:
-
-- Regione Friuli-Venezia Giulia — elenco fattorie didattiche e sociali (open data) — <https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Società agricola Barbieri Adele s.r.l. | Cormons | `Carne` + `Aceite` + `Legumbres y cereales` | viticoltura, cerealicoltura, olivicultura, allevamento di animali azienda agricola | 0404529483<br>umdellac@tin.it |
-| Azienda agricola cav. Luciano Grudina di Michele Grudina | Dolegna del Collio | `Carne` + `Frutos secos` + `Fruta y verdura` | frutticoltura (ciliege, castagne, susine, fichi, mele…), allevamento di animali da cortile, vitivinicoltura azienda agricola con offerta agrituristica | 0481629009<br>info@grudina.it<br>[web](https://www.grudina.it) |
-| Società agricola Samsa Paolo & C. s.s | Fogliano Redipuglia | `Carne` + `Miel` | pascolo certificato biologico (dal 1996) ed allevamento a carattere estensivo allo stato brado con metodo Grass Fed (alimentati solo con erba) di bovini, asinini, ovini e suini. Apicoltura. azienda agricola con offerta a | 04811995220<br>info@parcorurale.it<br>[web](https://www.parcorurale.it) |
-| Azienda agricola Andrea Felchero | Medea | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | cerealicoltura, viticoltura, orticoltura, allevamento di animali di bassa corte e suini azienda agricola con offerta agrituristica | 048167200<br>info@lisrosis.it<br>[web](https://www.lisrosis.it) |
-| Azienda agricola Ortofrutticola Medea Società Agricola Srl | Medea | `Carne` + `Fruta y verdura` | Produzione ortofrutticola, produzione di mais (a basso impatto ambientale) Allevamento di animali da cortile, cavalli e cani azienda agricola | ortofrutticolamedea@gmail.com |
-| Azienda agricola Devetak Sara | Savogna d'Isonzo | `Lácteos y quesos` + `Carne` + `Miel` | allevamento animali da cortile, caprini, orticoltura, frutticoltura,apicoltura, produzione naturale e trasformazione naturale di ortaggi e frutta e altri prodotti primari dell'azienda;in conversione biologica azienda agr | info@devetak.com<br>[web](https://www.devetak.com) |
-| Azienda agricola di Pezzetta Alessandro | Villesse | `Lácteos y quesos` + `Carne` + `Aceite` | CONVENZIONALE: allevamento di animali da cortile, suini, bovini, caprini, equini, orticoltura, cerealicoltura;IN CONVERSIONE BIOLOGICA: viticoltura, olivicoltura. azienda agricola | 048191144<br>kainos2@alice.it |
-| Azienda agricola c/o Istituto Brignoli-Einaudi-Marconi | Gradisca d'Isonzo | `Miel` + `Legumbres y cereales` + `Fruta y verdura` | Convenzionale:orticoltura, frutticoltura, floricoltura, cerealicoltura,vitivinivoltura e apicoltura azienda agricola | 048199863<br>gois006009@istruzione.it<br>[web](http:/bem.goiss.it) |
-| Azienda agricola La Staccionata S.S. | Staranzano | `Miel` + `Legumbres y cereales` + `Fruta y verdura` | Cerealicoltura,orticoltura e frutticoltura.Cavalli,pony,animali da cortile, caprette, api. azienda agricola con offerta agrituristica | la.staccionata.ss@gmail.com |
+| LATTE CARSO S.P.A. | Villesse | VIA AQUILEIA 2, VILLESSE (GO) | `UE IT H5R2S` | vacuno menos de 60 d | 13-FEB-26 |

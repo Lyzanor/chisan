@@ -1,47 +1,26 @@
 # Candidatos — Trieste
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión editorial del 2026-08-12. Se publicaron diez productores con oferta propia comprobada, entre ellos Kmetija Antonič–Asino Berto por su Pecorino del Carso. Los candidatos aceptados se retiraron de esta cola y sus fuentes quedaron en `data/evidence/it/friuli-venezia-giulia/trieste.jsonl`.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| Az. Agr. Kmetija ZAHAR di Tania Stefani | San Dorligo della Valle | Localita` San Antonio In Bosco, 58 34018 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-07-08 | [IT-BIO-005.380-0005009.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0005009.2026.001.pdf) |
-| Az. Agr. Zidarich Di Zidarich Beniamino | Duino Aurisina | Località Prepotto, 23 34011 | producción — vegetales sin transformar | 2029-06-26 | [IT-BIO-017.380-0035335.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0035335.2026.001.pdf) |
-| Azienda Agricola Pipan Klaric Società Semplice | Duino Aurisina | Malchina, 58/A 34011 | producción — vegetales sin transformar | 2029-05-18 | [IT-BIO-017.380-0001686.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0001686.2026.001.pdf) |
-| AZIENDA AGRICOLA SKABAR MILOS | Monrupino | LOCALITA' REPEN 170 34016 | producción — vegetales sin transformar | 2028-02-19 | [IT-BIO-021.380-0095535.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0095535.2025.001.pdf) |
-| Azienda Agricola Skerlj Di Skerli Kristina E Skerli Matej | Sgonico | Via Sales, 44 34010 | producción — vegetales sin transformar | 2029-06-12 | [IT-BIO-017.380-0089339.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0089339.2026.001.pdf) |
-| Berdon Diego | San Dorligo della Valle | Loc S Giuseppe Della Chiusa 120 34018 | producción — vegetales sin transformar | 2028-03-05 | [IT-BIO-021.380-0021056.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0021056.2025.001.pdf) |
-| CARLI ALEN | Duino Aurisina | LOCALITA' SLIVIA, 2/B 34011 | producción — vegetales sin transformar | 2029-06-26 | [IT-BIO-017.380-0056927.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0056927.2026.001.pdf) |
-| COMUNELLA - SRENJA GROZZANA-GROCANA | San Dorligo della Valle | LOC GROZZANA  56 34018 | producción — vegetales sin transformar | 2028-03-10 | [IT-BIO-006.380-0096443.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0096443.2025.001.pdf) |
-| DE VONDERWEID MAURIZIO | San Dorligo della Valle | VIA J RESSEL, 2/7 34018 | producción — vegetales sin transformar | 2029-01-13 | [IT-BIO-007.380-0093809.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0093809.2026.002.pdf) |
-| FABEC FRANC | Duino Aurisina | LOCALITA' MALCHINA, 48/A 34011 | preparación, producción — vegetales sin transformar | 2029-06-12 | [IT-BIO-017.380-0003718.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0003718.2026.001.pdf) |
-| KOSMAC ANDREJ | San Dorligo della Valle | LOCALITA' DOLINA, 528 34018 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-06-29 | [IT-BIO-017.380-0058038.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0058038.2026.001.pdf) |
-| KOSUTA JARA | Duino Aurisina | LOCALITA' S CROCE, 9/PR 34011 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-06-29 | [IT-BIO-017.380-0050794.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0050794.2026.001.pdf) |
-| LEGHISSA MICHELE | Duino Aurisina | LOC. MEDEAZZA, 5 34011 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-05-11 | [IT-BIO-017.380-0044596.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0044596.2026.001.pdf) |
-| MARUCELLI OMAR - JOZEF | Monrupino | LOC. REPEN, 173 34016 | producción — vegetales sin transformar | 2029-05-11 | [IT-BIO-017.380-0057432.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0057432.2026.001.pdf) |
-| Milic Società Agricola Semplice | Sgonico | Località Sagrado, 2 34010 | producción — vegetales sin transformar | 2029-06-26 | [IT-BIO-017.380-0057017.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0057017.2026.001.pdf) |
-| Regent Franco | Sgonico | Via Devincina 34 34010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-11-12 | [IT-BIO-005.380-0086933.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0086933.2025.001.pdf) |
-| Skerk Sandi | Duino Aurisina | Prepotto, 20 21030 | producción — vegetales sin transformar | 2029-06-27 | [IT-BIO-017.380-0046927.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0046927.2026.001.pdf) |
-| SOC. AGR. KOHISCE SRL | Duino Aurisina | LOC DUINO 81 34011 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-12-10 | [IT-BIO-006.380-0059451.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0059451.2025.001.pdf) |
-| Stoka Andrea | Duino Aurisina | Loc. Ceroglie n. 44 34011 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-02-05 | [IT-BIO-021.380-0036536.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0036536.2025.001.pdf) |
+## Retenciones activas
 
-## Categorías poco representadas — barrido del 2026-08-10
+| Candidato | Comune | Motivo concreto de retención |
+|---|---|---|
+| Berdon Diego | San Dorligo della Valle | El certificado confirma cultivos, sin marca, producto final o contacto de venta. |
+| Carli Alen | Duino Aurisina | Solo consta producción vegetal certificada; falta oferta alimentaria pública atribuible. |
+| Comunella Srenja Grozzana-Grocana | San Dorligo della Valle | La entidad comunal figura como operador de cultivos, pero no se localizó producto propio comercializado. |
+| De Vonderweid Maurizio | San Dorligo della Valle | Solo hay rastro registral de producción vegetal, sin marca ni canal público. |
+| Kosmac Andrej | San Dorligo della Valle | El certificado acredita ganado y cultivos, pero no una gama propia actual; no debe confundirse con Rado Kocjančič. |
+| Kosuta Jara | Duino Aurisina | Explotación mixta certificada sin producto final, marca o contacto comercial localizable. |
+| Leghissa Michele | Duino Aurisina | Se confirma ganado y cultivos, sin oferta alimentaria propia actual atribuible. |
+| Country Eden / Marucelli Omar | Monrupino | Las fuentes confirman fattoria social y elaboración didáctica de queso, pero no catálogo o venta pública actual. |
+| Regent Franco | Sgonico | Se confirma explotación ganadera y vegetal, sin producto final o punto de venta propio. |
+| Società Agricola Kohišče | Duino Aurisina | Registro activo de explotación mixta, pero no se pudo atribuir una oferta pública concreta a esta sociedad. |
+| Le Torri di Slivia | Duino Aurisina | Las referencias de salumi, vino y hortalizas son antiguas y el dominio facilitado no corresponde claramente a una web actual operativa. |
+| Biro Zoltan Andrea / Centro Equestre San Primo | Sgonico | La actividad pública se centra en el centro ecuestre; no se confirmó carne, miel o fruta propia actualmente a la venta. |
+| Gruden-Zbogar | Sgonico | El registro enumera una explotación muy diversa, pero no se localizó una marca o gama alimentaria pública actual. |
+| Ziani Maria | Trieste | El registro menciona miel y fruta, sin marca, catálogo o contacto comercial actual verificable. |
 
-7 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Reparto por categoría propuesta: `Carne` 6, `Fruta y verdura` 3, `Legumbres y cereales` 1, `Miel` 2, `Lácteos y quesos` 2, `Condimentos` 1.
-
-Fuentes de este lote:
-
-- Regione Friuli-Venezia Giulia — elenco fattorie didattiche e sociali (open data) — <https://www.dati.friuliveneziagiulia.it/d/ad7h-yqrk>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Az.Agr. Le Torri di Slivia - s.s. di Corrado e Roberta Greco | Duino Aurisina | `Carne` + `Fruta y verdura` | Convenzionale:allevamento di animali da cortile, suini, equini.Orticoltura e vitivinicoltura. azienda agricola con offerta agrituristica | 0402025022<br>info@letorridislivia.net<br>[web](https://www.letorrisislivia.net) |
-| Azienda agricola Antonic di Stoka Andrea | Duino Aurisina | `Carne` + `Legumbres y cereales` | convenzionale: allevamento di animali da cortile, suini, asini, ovini, cavalli, cerealicoltura, orticultura. azienda agricola con offerta agrituristica | 040299798<br>info@asinoberto.it<br>[web](https://www.asinoberto.it) |
-| Azienda agricola di Biro Zoltan Andrea | Sgonico | `Carne` + `Miel` + `Fruta y verdura` | Allevamento di animali da cortile, asini, cavalli, api, frutticoltura. azienda agricola con offerta agrituristica | centroequestre.sanprimo@gmail.com<br>[web](https://www.centroequestresanprimo.it) |
-| Fattoria Carsica Bajta di Skerlj Andrej, Nevo & C. | Sgonico | `Carne` | allevamento di suini e bovini allo stato brado, vitivinicoltura azienda agricola con offerta agrituristica | 0402296090<br>Info@bajta.it<br>[web](https://www.bajta.it) |
-| Azienda agricola Country Eden di Marucelli Omar | Monrupino | `Lácteos y quesos` + `Carne` | Allevamento di animali da cortile, ovini, equiniTrasformazione di prodotti caseari. azienda agricola con offerta agrituristica | 040327279<br>arsi.presidente@virgilio.it |
-| Gruden - Zbogar s.s. | Sgonico | `Lácteos y quesos` + `Carne` + `Condimentos` | allevamento di animali (bovini, equini, caprini, suini, galline ovaiole allo stato brado), orticoltura, frutticoltura, floricoltura, piante officinali, vigneto azienda agricola con offerta agrituristica | 040229191 |
-| Azienda agricola Ziani Maria | Trieste | `Miel` + `Fruta y verdura` | apicoltura, frutticoltura, floricoltura, animali da cortile e da compagnia azienda agricola | 0402158246 |
+El barrido sanitario nacional no produjo unidades adicionales en esta provincia. Kmetija Antonič se incorporó desde el registro regional y su web propia, que identifica el Pecorino del Carso elaborado en la fattoria. Corte: 2026-08-12.

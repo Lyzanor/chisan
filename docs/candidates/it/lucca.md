@@ -50,3 +50,11 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | FRANTOIO DI MASSAROSA SRL | Massarosa | `Aceite` | Olio extravergine di oliva Toscano IGP | info@frantoiodimassarosa.it |
 | SOC. AGR. PARADIS AGRICOLE SRL | Pietrasanta | `Aceite` | Olio extravergine di oliva Toscano IGP | azienda@paradisagricole.it |
 | Radical Brewery | Porcari | `Cerveza` | birra artigianale | — |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+1 unidad productiva pendiente de contrastar, extraída del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. Magie di Latte, Bertagni, Contipelli, Artlatte, Latteria Del Carlo y Marovelli se aceptaron y pasaron al CSV con evidencia. Alival permanece retenida porque fuentes actuales sitúan el cierre de la empresa y sus plantas en la primavera de 2023; la autorización sanitaria no basta para contradecir el cierre ni publicar actividad actual. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| ALIMENTARIA VALDINIEVOLE S.P.A. PIU' BREVEMENTE INDICATA COME: "ALIVAL S.P.A. | Porcari | VIA BARSOTTO, 3, PORCARI (LU) | `UE IT 09 10` | vacuno menos de 60 d | 12-JUN-15 |

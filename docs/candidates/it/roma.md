@@ -73,3 +73,39 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Az. Agricola Screpanti | Roma | `Pescado` | Zucchina con fiore, broccolo romanesco, broccoletto di Anguillara, mentuccia romana | 327/6215028, 06/6243440<br>gabrielescrepanti@virgilio.it |
 | Morlupi | Roma | `Pescado` | broccoletto di anguillara, broccolo romanesco, zucchina con fiore | 06/9996358<br>azienda.morlupi@yahoo.it |
 | Az. Agr. Rossi Silvia | Trevignano Romano | `Pescado` | Broccoletti di Anguillara, broccolo romanesco, zucchina con fiore | 347/8131751<br>ortodinonno@gmail.com |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+29 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| PITZALIS BRUNO | Anguillara Sabazia | VIA DEL CASALE DI SPANORA, 40 , ANGUILLARA SABAZIA (RM) | `UE IT 12 180` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAR-13 |
+| IL VECCHIO OVILE SOCIETA' COOPERATIVA A R.L. | Anzio | VIA DEI GELSI 168, ANZIO (RM) | `UE IT B9C61` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JUL-15 |
+| DE IULIIS MASSIMO | Castel Gandolfo | VIA SAN SEBASTIANO 12, CASTEL GANDOLFO (RM) | `UE IT 12 184` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-APR-21 |
+| SAPORI DI BUFALA S.R.L. | Fiano Romano | VIA TIBERINA 49, FIANO ROMANO (RM) | `UE IT C7M1G` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-FEB-23 |
+| DE ANGELIS SABATINO | Fiumicino | VIA DI TAGLIATELLA 397, FIUMICINO (RM) | `UE IT J5V8V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-SEP-24 |
+| EREDI DI GIOVANNI BRANDIZZI SOCIETA' SEMPLICE | Fiumicino | VIA AURELIA 2449, FIUMICINO (RM) | `UE IT W3C88` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-OCT-14 |
+| GRANDAURELIA FORMAGGI S.R.L. | Fiumicino | VIA EMILIO PASQUINI 211, FIUMICINO (RM) | `UE IT T8V87` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-SEP-20 |
+| ANTICHI SAPORI S.R.L. | Fonte Nuova | VIA DELLE MIMOSE 36/A, FONTE NUOVA (RM) | `UE IT Y4V6Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-AUG-25 |
+| NONNO PEPPE SRLS | Formello | VIA DEGLI OLMETTI 44, FORMELLO (RM) | `UE IT K1D10` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 17-JUL-24 |
+| LA QUERCIA SRL | Guidonia Montecelio | VIA ENRICO FORLANINI, 37/39/41 , GUIDONIA MONTECELIO (RM) | `UE IT 12 38` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-13 |
+| DI MARCO ALESSANDRO | Montelibretti | LOCALITA' TINTE ROSSE SNC , MONTELIBRETTI (RM) | `UE IT F8W1G` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-12 |
+| LA BOTTEGA DEL CASARO S.R.L. | Monterotondo | VIA SALARIA, 195 , MONTEROTONDO (RM) | `UE IT D517H` | vacuno menos de 60 d/más de 60 d | 30-DEC-11 |
+| F.LLI ZONETTI SOCIETA' A RESPONSABILITA' LIMITATA | Nerola | VIA SALARIA VECCHIA 11, NEROLA (RM) | `UE IT M790T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-DEC-21 |
+| ZONETTI LUIGI ENNIO E C.SRL | Nerola | VIA ROMANA, 7 , NEROLA (RM) | `UE IT 12 37` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-FEB-13 |
+| SOCIETA' AGRICOLA DAMIGELLI S.S. | Palestrina | VIA PRATO BINI 1, PALESTRINA (RM) | `UE IT 12 223` | vacuno menos de 60 d/más de 60 d | 30-OCT-24 |
+| AGRICOLTURA NUOVA SOCIETA` COOP. SOCIALE AGRICOLA INTEGRATA | Roma Capitale | VIA VALLE DI PERNA, 315 , ROMA CAPITALE (RM) | `UE IT 12 212` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-JUL-10 |
+| CASEIFICIO DE JULIIS ENIO E FIGLI SRL | Roma Capitale | VIA G. G. MENDEL 151, ROMA CAPITALE (RM) | `UE IT 12 48` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-AUG-16 |
+| CENTRO ALIMENTARE FALCONI DI FALCONI FABIO | Roma Capitale | VIA DELL`ASTORE 7, ROMA CAPITALE (RM) | `UE IT M2F3J` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-AUG-17 |
+| DON NINO PRODUZIONE S.R.L. | Roma Capitale | PIAZZA TOMMASO DE CRISTOFORIS 4/a, ROMA CAPITALE (RM) | `UE IT Z5M24` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-OCT-25 |
+| EREDI DI MARZIANTONIO SOC. AGRICOLA A R.L. | Roma Capitale | VIA CASALE DELLE PULCI, 85 , ROMA CAPITALE (RM) | `UE IT E6128` | vacuno menos de 60 d/más de 60 d | 18-MAY-11 |
+| FAIC - SOCIETA A RESPONSABILITA LIMITATA | Roma Capitale | VIA ALEXANDRE GUSTAVE EIFFEL 100 isolaB37, ROMA CAPITALE (RM) | `UE IT T6U1A` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUL-17 |
+| FORMAGGI BOCCEA - SOCIETA' A RESPONSABILITA' LIMITATA | Roma Capitale | VIA LOCANA 97, ROMA CAPITALE (RM) | `UE IT 12 59` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-FEB-18 |
+| HIGH QUALITY FOOD S.R.L. | Roma Capitale | VIA DI PIETRALATA 179, ROMA CAPITALE (RM) | `UE IT M8Y3T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-APR-18 |
+| IPERCARNI S.R.L. | Roma Capitale | VIA DEI RUDERI DI TORRENOVA, 75 , ROMA CAPITALE (RM) | `UE IT 3011 S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-DEC-10 |
+| LA COTARDA SOCIETA' AGRICOLA A R.L.C.R. | Roma Capitale | VIA ANAGNINA 436/438, ROMA CAPITALE (RM) | `UE IT G411S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-NOV-24 |
+| PEWEX - AL.PA. - SOCIETA' A RESPONSABILITA' LIMITATA | Roma Capitale | VIA CASILINA 1670, ROMA CAPITALE (RM) | `UE IT E4N1C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUL-24 |
+| SANTA MARIA S.R.L. | Roma Capitale | VIA SANTA MARIA DI GALERIA, 564 , ROMA CAPITALE (RM) | `UE IT 12 57` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-MAR-13 |
+| SOCIETA' AGRICOLA BELLADONNA S.R.L. | Roma Capitale | VIA DELLA MARCIGLIANA 352, ROMA CAPITALE (RM) | `UE IT B175Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JUL-26 |
+| CASEAREA AGRI IN S.R.L. | Torrita Tiberina | VIA DELLA VALLE CARBONE SNC, TORRITA TIBERINA (RM) | `UE IT D8S5Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-NOV-24 |

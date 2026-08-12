@@ -1,25 +1,31 @@
 # Candidatos — Asti
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Lote ecológico revisado el 2026-08-12. Ocho operadores se publicaron en Asti tras identificar su oferta actual: Forteto della Luja, Azienda Agricola Mario Torelli, Azienda Agricola Il Ciliegio, Ca' del Prete, Case Corini, xSbaglio, Azienda Agricola Maggiora y Maramao. L'Era della Nocciola se reconcilió con su unidad productiva pública de Torre Bormida y se publicó en Cuneo, no en la dirección administrativa certificada de Costigliole d'Asti. Quedan diez titulares revisados en retención: el certificado acredita cultivo, pero no se pudo atribuir una oferta alimentaria pública concreta y actual.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| Agricola Florean Di Florean Andrea | Viarigi | Via Cavour, 2 14030 | producción — vegetales sin transformar | 2028-11-25 | [IT-BIO-008.380-0041223.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0041223.2026.001.pdf) |
-| ARPIONE PAOLA | Bubbio | REGIONE PANTALINI  157 14051 | producción — vegetales sin transformar | 2028-09-26 | [IT-BIO-006.380-0065836.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0065836.2025.002.pdf) |
-| AZ. AGR. FORTETO DELLA LUJA S.S. | Loazzolo | VIA REGIONE CANDELETTE 4 14051 | producción — vegetales sin transformar | 2029-03-04 | [IT-BIO-006.380-0055556.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0055556.2026.001.pdf) |
-| AZ. AGR. I SOFFIONI DI CHIAIS FEDERICO | Buttigliera d'Asti | VIA MORIONDO 64 14021 | producción — vegetales sin transformar | 2028-07-29 | [IT-BIO-006.380-0039214.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0039214.2025.001.pdf) |
-| AZ. AGR. MARIO TORELLI DI TORELLI GIANFRANCO | Bubbio | REGIONE SAN GRATO 142/BIS 14051 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-01-08 | [IT-BIO-006.380-0037821.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0037821.2026.001.pdf) |
-| AZ.AGR. IL CILIEGIO DI MORELLO DAVIDE ANTONIO | Moncalvo | Strada Gessi 10 14036 | producción — vegetales sin transformar | 2028-05-15 | [IT-BIO-006.380-0036752.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0036752.2025.001.pdf) |
-| AZIENDA AGRICOLA L'ERA DELLA NOCCIOLA DI CAZZULO ROBERTO | Costigliole d'Asti | STRADA CANELLI 106 FRAZ BOGLIETTO 14055 | producción — vegetales sin transformar | 2028-07-28 | [IT-BIO-004.380-0016676.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0016676.2025.001.pdf) |
-| BEVILACQUA FABRIZIO | Dusino San Michele | VIA GENERALE GIVOGRE 2 14010 | producción — vegetales sin transformar | 2028-08-31 | [IT-BIO-019.380-0060110.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-019.380-0060110.2025.002.pdf) |
-| CA' DEL PRETE DI LUCA FERRERO | Pino d'Asti | Via Maestra, 55 14020 | preparación, producción — vegetales sin transformar, piensos | 2028-05-19 | [IT-BIO-008.380-0100328.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0100328.2025.001.pdf) |
-| CASCINA RURAL DI LONGO FEDERICO | Montafia | VIA VALDELSERRO 2A 14014 | preparación, producción — vegetales sin transformar, piensos | 2028-04-17 | [IT-BIO-006.380-0040274.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0040274.2025.001.pdf) |
-| CASCINA S. NAZARIO SOCIETA' SEMPLICE AGRICOLA | Montechiaro d'Asti | REGIONE REALE 2 14025 | producción — vegetales sin transformar | 2029-03-12 | [IT-BIO-017.380-0083076.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-017.380-0083076.2026.002.pdf) |
-| CASE CORINI SOCIETA' IN ACCOMANDITA SEMPLICE IN AGRICOLTURA DI CORINO GUIDO | Costigliole d'Asti | STRADA SAN MARTINO, 8 14055 | producción — vegetales sin transformar | 2028-12-15 | [IT-BIO-014.380-0050024.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0050024.2025.001.pdf) |
-| CHIESA SUSANNA MARIA | Moransengo-Tonengo | VIA VILLA 10 14023 | producción — vegetales sin transformar | 2028-08-19 | [IT-BIO-015.380-0057410.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0057410.2025.001.pdf) |
-| GABUTTO GIANMARCO | Castelletto Molina | VIA ROMA 35 14040 | producción — vegetales sin transformar | 2028-08-07 | [IT-BIO-015.380-0008963.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0008963.2025.001.pdf) |
-| GALLESE MASSIMO | Roccaverano | REGIONE LANGA LEPROTTO  51 14050 | producción — vegetales sin transformar | 2029-01-12 | [IT-BIO-006.380-0064241.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0064241.2026.001.pdf) |
-| GATTI FEDERICA | Nizza Monferrato | STRADA BAGLIO 22 14049 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-10-13 | [IT-BIO-015.380-0047987.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0047987.2025.001.pdf) |
-| IANIA SABRINA | Mongardino | VIA SAN PIETRO 16 14040 | producción — vegetales sin transformar | 2028-11-12 | [IT-BIO-009.380-0057697.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0057697.2025.002.pdf) |
-| MAGGIORA EMANUELE | Refrancore | CORSO UMBERTO I 10 14030 | producción — vegetales sin transformar, piensos | 2028-07-28 | [IT-BIO-015.380-0045371.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0045371.2025.001.pdf) |
-| MARAMAO S.C.A.S. | Canelli | VIA RICCADONNA 185 14053 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2029-02-11 | [IT-BIO-004.380-0001332.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0001332.2026.001.pdf) |
+| Titular retenido | Comune | Motivo pendiente |
+|---|---|---|
+| Agricola Florean di Florean Andrea | Viarigi | Sin marca, contacto ni producto comercial público atribuible localizado. |
+| Arpione Paola | Bubbio | El certificado prueba cultivo, pero no apareció una oferta alimentaria propia. |
+| Azienda Agricola I Soffioni di Chiais Federico | Buttigliera d'Asti | La actividad frutícola está registrada, pero no se localizó catálogo, marca o venta propia actual. |
+| Bevilacqua Fabrizio | Dusino San Michele | Sin producto concreto, identidad comercial o contacto público suficientemente atribuibles. |
+| Cascina Rural di Longo Federico | Montafia | La identidad pública es un agriturismo; no se pudo distinguir una gama alimentaria envasada propia del servicio de restauración. |
+| Cascina S. Nazario | Montechiaro d'Asti | Solo se corroboraron el cultivo certificado y la identidad registral. |
+| Chiesa Susanna Maria | Moransengo-Tonengo | Sin oferta alimentaria, marca o contacto público atribuible localizado. |
+| Gabutto Gianmarco | Castelletto Molina | La identidad registral está activa, pero no apareció producto comercial propio. |
+| Gallese Massimo | Roccaverano | Sin marca, catálogo ni contacto público atribuibles pese al certificado vigente. |
+| Iania Sabrina / La Tomatica in Commedia | Mongardino | La actividad pública localizable es de alojamiento; no se pudo probar una oferta agrícola propia concreta separada del agriturismo. |
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote contrastado el 2026-08-12. Se publicaron quince de las veinte unidades sanitarias: Capre e Cavoli, Caseificio Balzi, Caseificio Pepe 1924, Azienda Agricola C. Bianca, I Formaggi di Moasca, Azienda Agricola Stutz, Cascina Valeggia, I Formaggi di Bianchina, Traversa Wilma, Abrile Giuseppe, Azienda Agricola Amaltea, Buttiero & Dotta, La Masca, Musolino Giuseppa y Agrilanga. Cascina Valeggia queda `parcial` porque la dirección productiva autorizada no coincide con el punto público de agriturismo y venta; las otras catorce se publicaron `verificado`.
+
+| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
+|---|---|---|---|---|
+| GHIONE ENRICA FRANCA | Roccaverano | Località Picollo Boglioli 11 | `UE IT 01 621` | La autorización continúa publicada, pero ya no figura entre los elaboradores del consorcio vigente y no se localizó una oferta propia actual. |
+| ROSSELLO ENRICO | Roccaverano | Regione Ceretta Tatorba 30 | `UE IT 01 500` | Figura en directorios locales históricos, pero no en el consorcio actual y no apareció un catálogo o contacto público reciente atribuible. |
+| FERRERO BRUNO | Serole | Via Rocchino 28 | `UE IT 01 460` | Solo se corroboraron la autorización y la identidad registral; no una oferta pública actual de queso. |
+| FERRERO LORENZA | Serole | Regione Rocchino 28 Bis | `UE IT G8B47` | La actividad agrícola sigue siendo localizable, pero no se pudo atribuir marca, contacto ni quesos actuales. |
+| AZIENDA AGRICOLA MOLINO DI MOLINO PIERO | Valfenera | Strada Valmaggiore 2 | `UE IT 01 840` | La explotación lechera está activa, pero la única referencia a su antigua marca quesera es histórica y no prueba una oferta propia actual. |
+
+## Roccaverano DOP — barrido del consorcio del 2026-08-11
+
+Bricco della Croce y Caseificio di Roccaverano, las dos identidades del consorcio que no estaban en el barrido sanitario, se reconciliaron y publicaron. El miembro identificado únicamente como productor de leche queda fuera del lote; no se inventó una ficha de elaborador.

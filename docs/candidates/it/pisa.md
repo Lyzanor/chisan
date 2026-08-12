@@ -60,3 +60,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | PODERE SAN BARTOLOMEO SOC.AGR.SEMPLICE | Santa Luce | `Aceite` | Olio extravergine di oliva Toscano IGP | simona@poderesanbartolomeo.com |
 | AZ. AGR. MIRTETO E VENZANO SRL | Volterra | `Aceite` | Olio extravergine di oliva Toscano IGP | jpchomette@obone.be |
 | LOTTINI IVANO | Volterra | `Aceite` | Olio extravergine di oliva Toscano IGP | info@agriturismosanmichele.it |
+
+## Pecorino Toscano DOP — control de caseifici del 2026-08-11
+
+La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene dos plantas en Pisa: Granarolo, antiguo Caseificio Pinzani, en Volterra y Busti Formaggi en Fauglia. Ambas quedaron reconciliadas con unidades sanitarias ya incluidas en esta cola; no produjo candidatos nuevos.

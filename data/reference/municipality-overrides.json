@@ -667,6 +667,16 @@
       }
     ]
   },
+  "it": {
+    "ponti": [
+      {
+        "lat": 44.62742,
+        "lon": 8.36564,
+        "label": "Ponti (Alessandria)",
+        "region": "piemonte"
+      }
+    ]
+  },
   "fr": {
     "aigne": [
       {

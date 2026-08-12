@@ -80,3 +80,48 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Fontana dei Salici | San Nicola Baronia | `Lácteos y quesos` + `Aceite` + `Pescado` | latte e formaggi, olivo e olio, acquacoltura-pesca | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-208.html) |
 | Mariconda Vito | Vallata | `Lácteos y quesos` + `Aceite` + `Fruta y verdura` | latte e formaggi, olivo e olio, ortaggi | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-322.html) |
 | Padri Benedettini Montevergine | Mercogliano | `Miel` + `Condimentos` | miele e api, erbe e piante officinali | [web](http://www.agricoltura.regione.campania.it/fattorie/scheda-246.html) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+38 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| CASEIFICIO LO CONTE S.R.L. | Ariano Irpino | VIA PETRARA 8, ARIANO IRPINO (AV) | `UE IT 15 399` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JUL-25 |
+| SOCIETA' AGRICOLA ACCADIA VERDE S.R.L. | Ariano Irpino | VIA PIANO DEL NOZZO, LOCALITA' CAMPOREALE 111, ARIANO IRPINO (AV) | `UE IT S5A2W` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-MAR-21 |
+| TERMINIO SOCIETA' A RESPONSABILITA' LIMITATA | Atripalda | VIA TUFAROLE 62, ATRIPALDA (AV) | `UE IT 15 51` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JUN-19 |
+| CASEIFICIO LACENO DOMENICO NIGRO SAS DI NIGRO SALVATORE E GIUSEPPINA & C | Bagnoli Irpino | C/DA ROSOLE , BAGNOLI IRPINO (AV) | `UE IT 15 507` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-APR-10 |
+| CASEIFICIO RAIAMAGRA DI FERNANDO DELL'ANGELO | Bagnoli Irpino | S.S.LACENO , BAGNOLI IRPINO (AV) | `UE IT 15 545` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-DEC-09 |
+| PECORINO BAGNOLESE SOCIETA' COOPERATIVA AGRICOLA A R.L. | Bagnoli Irpino | CONTRADA ROSOLE SNC, BAGNOLI IRPINO (AV) | `UE IT T6C7E` | ovino menos de 60 d | 02-JUL-25 |
+| ARMINIO GAETANO | Bisaccia | CONTRADA PILONE , BISACCIA (AV) | `UE IT U6V15` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-OCT-09 |
+| CASEIFICIO ALTO SELE DI NIGRO ANIELLO | Calabritto | LOCALITA` CASTRUZZO , CALABRITTO (AV) | `UE IT 15 690` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
+| CASEIFICIO D & D DI DI CECCA LUIGI S.A.S. | Calitri | CONTRADA C.DA FICOCCHIA AREA PIP SNC, CALITRI (AV) | `UE IT G8C3Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-JUL-20 |
+| SAPORI DI LATTE SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Cassano Irpino | VIA FORO FELICE GIA' CONTRADA CORSO CORSO snc, CASSANO IRPINO (AV) | `UE IT 15 794` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-FEB-25 |
+| CASEIFICIO GAETA S.R.L. | Contrada | VIA NAZIONALE SPARSE 24, CONTRADA (AV) | `UE IT 15 611` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-NOV-25 |
+| LA FONTE DEL FORMAGGIO S.R.L. | Contrada | VIA NAZIONALE P.I.P SNC, CONTRADA (AV) | `UE IT S1A8Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-SEP-15 |
+| CASEARIA LANZA S.R.L. | Flumeri | VIA SAN PIETRO 10 gia' sn, FLUMERI (AV) | `UE IT 15 450` | vacuno menos de 60 d/más de 60 d | 27-JAN-21 |
+| PERLAT SRL | Greci | CONTRADA BRECCIALE S.S.90 BIS (EX KM. 44,880) 5, GRECI (AV) | `UE IT 15 805` | vacuno menos de 60 d/más de 60 d | 29-DEC-21 |
+| CASEIFICIO RICCIO CATERINA SRL | Grottaminarda | VIA FEUDO CORTESANO 51/a, GROTTAMINARDA (AV) | `UE IT 15 106` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-MAY-16 |
+| CARMASCIANDO SOCIETA' AGRICOLA S.R.L. | Guardia Lombardi | CONTRADA CARMASCIANO snc, GUARDIA LOMBARDI (AV) | `UE IT Y6K2X` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JAN-18 |
+| CASEIFICIO CARACCIOLO S.R.L. | Lauro | VIA NUOVA 8, LAURO (AV) | `UE IT D563G` | vacuno menos de 60 d | 14-APR-25 |
+| NATURA ALTA IRPINIA S.R.L. | Lioni | VIA CERRETE MACCHIONE AREA P.I.P. SNC, LIONI (AV) | `UE IT N7W27` | vacuno menos de 60 d/más de 60 d | 14-APR-14 |
+| CASEIFICIO FRANCAROSA DI SERVENTI GIUSEPPE | Montecalvo Irpino | C/DA BOSCO , MONTECALVO IRPINO (AV) | `UE IT Y8D76` | vacuno menos de 60 d | 12-OCT-09 |
+| IRPINIA LATTICINI S.R.L. | Montecalvo Irpino | CONTRADA MAURIELLO 25 EX 37/A, MONTECALVO IRPINO (AV) | `UE IT 15 375` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JAN-20 |
+| CASEIFICIO - AZIENDA AGRICOLA "LA BRUNA ALPINA" DI VITTORIO SORRENTINO | Montella | CONTRADA CERRETE, 1 1, MONTELLA (AV) | `UE IT 15 773` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-FEB-26 |
+| CASEIFICIO GAMBONE S.N.C.DI EZIO GAMBONE E C. | Montella | STRADA PROVINCIALE SAN FRANCESCO , MONTELLA (AV) | `UE IT 15 91` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
+| CASEIFICIO MOSCARIELLO GERARDO DI CIOCIOLA IMMACOLATA | Montella | VIA CARBONARA N.21 , MONTELLA (AV) | `UE IT 15 372` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-SEP-11 |
+| MON.LATTE - SOCIETA' COOPERATIVA AGRICOLA | Montella | CONTRADA BARUSO SNC, MONTELLA (AV) | `UE IT N0C15` | vacuno menos de 60 d/más de 60 d | 11-DEC-23 |
+| BUCCIERO VIRGILIO | Montoro | CONTRADA MONTE 40, MONTORO (AV) | `UE IT Q4121` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-JUN-25 |
+| CASEIFICIO PRINCIPATO SRL | Montoro | VIA TURCI FRAZ P.ZZA DI PANDOLA , MONTORO (AV) | `UE IT 15 765` | vacuno menos de 60 d | 23-MAR-11 |
+| CASEIFICIO SAN PIO S.R.L. | Pietradefusi | C/DA VERTECCHIA ZONA PIP , PIETRADEFUSI (AV) | `UE IT 15 789` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
+| CASEAREA CAUDINA S.R.L. | Rotondi | VIA APPIA KM.240 , ROTONDI (AV) | `UE IT 15 418` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
+| CARMINE ZITOLA S.R.L. | San Sossio Baronia | VIA PIANO 193, SAN SOSSIO BARONIA (AV) | `UE IT 15 376` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JAN-20 |
+| I CASARI DEL SOLE S.R.L. | Santo Stefano Del Sole | VIA PROVINCIALE TURCI 5 19, SANTO STEFANO DEL SOLE (AV) | `UE IT H2E5D` | vacuno menos de 60 d/más de 60 d, caprino más de 60 d, ovino más de 60 d | 13-FEB-15 |
+| CASEIFICIO COSTA DELLE ROSE SRL | Savignano Irpino | VIA NAZIONALE SNC, SAVIGNANO IRPINO (AV) | `UE IT 15 370` | vacuno menos de 60 d/más de 60 d | 26-MAR-14 |
+| CASEIFICIO VIGORITA S.R.L. | Serino | VIA LAURI 23/A, SERINO (AV) | `UE IT H8J3R` | vacuno menos de 60 d/más de 60 d | 16-OCT-14 |
+| CASEIFICIO VIGORITA VITTORIO | Serino | VIA FERROVIA 2, SERINO (AV) | `UE IT A4389` | vacuno menos de 60 d/más de 60 d | 13-MAY-15 |
+| VIGORITA VITTORIO S.N.C DI GENNARO E SABINO VIGORITA | Serino | VIA FIUME SABATO , SERINO (AV) | `UE IT 15 94` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-MAY-09 |
+| CASEIFICIO S. CIRIACO SRL | Torre Le Nocelle | VIA S.IULIANO AREA PIP , TORRE LE NOCELLE (AV) | `UE IT 15 705` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
+| CASEIFICIO CICCARELLA GAETANO | Vallata | C/DA SFERRACAVALLO , VALLATA (AV) | `UE IT 15 369` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
+| CASEIFICIO VALLE DEL DRAGONE DI RISOLI MICHELE | Volturara Irpina | VIA LAGOROSSO S.C. , VOLTURARA IRPINA (AV) | `UE IT V8N3S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+| COOPERATIVA DI SVILUPPO AGRICOLO MOLARA SOCIETA' COOPERATIVA AGRI COLA IN SIGLA " COOPERATIVA AGRICO | Zungoli | VIA TOPPO DELL'ANNO SNC, ZUNGOLI (AV) | `UE IT H4V3P` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-18 |

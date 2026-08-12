@@ -1,70 +1,68 @@
 # Candidatos — Milano
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión cerrada el 2026-08-12 para los tres lotes abiertos: 20 unidades del registro sanitario de quesos (corte 2026-08-11), 27 candidatos de categorías poco representadas (corte 2026-08-10) y 19 operadores ecológicos TRACES (corte 2026-08-08). `Guzzafame` y `Società Agricola Fratelli Monti` son la misma unidad productiva y se consolidaron en una sola fila. Resultado de 65 identidades únicas: 35 publicadas en Milano, 1 reasignada a Rimini, 8 excluidas y 21 retenidas con una carencia concreta. Las decisiones publicadas y excluidas están trazadas en `data/evidence/it/lombardia/milano.jsonl`.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ARRIGONI FRANCESCA | Corbetta | VIA ERNESTO PARINI 57/11 20011 | producción — vegetales sin transformar | 2028-01-07 | [IT-BIO-007.380-0042420.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0042420.2026.001.pdf) |
-| ASP SOLAR ITALIA ALPHA SRL SOCIETA' AGRICOLA | Carugate | Via Dell'Artigianato 2 20061 | producción — vegetales sin transformar | 2029-03-13 | [IT-BIO-012.380-0009175.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0009175.2026.001.pdf) |
-| AZIENDA AGRICOLA  PALMA ALBERTO | Milan | VIA ROMAGNOLI ETTORE  1 20121 | producción — vegetales sin transformar | 2028-04-10 | [IT-BIO-006.380-0098404.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0098404.2025.001.pdf) |
-| Azienda Agricola Valsolda S.r.l.s. - Societa' Agricola | Milan | Via Andegari, 4 20121 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2028-10-06 | [IT-BIO-021.380-0036565.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0036565.2025.001.pdf) |
-| CASCINA GUASTALLA SOCIETA' AGRICOLA | Noviglio | CASCINA GUASTALLA SNC 20082 | producción — vegetales sin transformar | 2028-05-08 | [IT-BIO-007.380-0090214.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090214.2025.001.pdf) |
-| CASCINA LEMA DI RAFFAELE DE CIECHI  DE CIECHI RAFFAELE | Robecco sul Naviglio | STRADA PRIVATA SCOTTI 20087 | producción — vegetales sin transformar | 2029-03-18 | [IT-BIO-023.380-0101857.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0101857.2026.001.pdf) |
-| CASE DELL'OLMO SOCIETA' AGRICOLA S.R.L | Milan | PIAZZA DELLA REPUBBLICA,32 20124 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-09-03 | [IT-BIO-004.380-0105560.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0105560.2025.001.pdf) |
-| GAUDIO DANIEL | Milan | VIA WASHINGTON, 90 - 20146 | producción — vegetales sin transformar | 2028-07-28 | [IT-BIO-002.380-0103819.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-002.380-0103819.2025.001.pdf) |
-| Ioppolo Sergio Giuseppe | Milan | Via Pastrengo, 13 20159 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-01-09 | [IT-BIO-005.380-0093305.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0093305.2025.003.pdf) |
-| LA DARSENA S.N.C. SOCIETA' AGRICOLA DI PIERO MANZONI | Milan | VIA VITTOR PISANI 16 20124 | producción — vegetales sin transformar | 2028-10-07 | [IT-BIO-009.380-0027973.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0027973.2025.001.pdf) |
-| Massa Saluzzo Alberto | Milan | Via Del Caravaggio, 1 20144 | producción — vegetales sin transformar | 2027-10-22 | [IT-BIO-005.380-0023084.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0023084.2025.001.pdf) |
-| OLTREMONTE SOCIETA' AGRICOLA A RESPONSABILITA' LIMITATA | Milan | CORSO PLEBISCITI 17 20129 | producción — vegetales sin transformar | 2029-03-06 | [IT-BIO-007.380-0009422.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0009422.2026.001.pdf) |
-| P. & V. IMMOBILIARE SRL | Milan | VIA CILEA 106 20151 | producción — vegetales sin transformar | 2028-07-02 | [IT-BIO-006.380-0073277.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0073277.2025.001.pdf) |
-| PERSEA CASTELLO SOCIETA' AGRICOLA S.R.L. | Milan | VIA GIOVANNI DA PROCIDA 36 20149 | producción — vegetales sin transformar | 2026-09-28 | [IT-BIO-007.380-0046298.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0046298.2025.001.pdf) |
-| RUSCA PAOLA | Milan | VIA DEL DON 3 20123 | producción — vegetales sin transformar | 2028-09-22 | [IT-BIO-009.380-0031716.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0031716.2025.002.pdf) |
-| SARTORIO ELENA | Milan | PIAZZA MONDADORI ARNOLDO 3 20122 | producción — vegetales sin transformar | 2029-03-19 | [IT-BIO-007.380-0019716.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0019716.2026.001.pdf) |
-| SOCIETA' AGRICOLA AGRINAVIGLIO S.R.L. | Milan | VIA ALZAIA NAVIGLIO GRANDE 70/74 20146 | producción — vegetales sin transformar | 2029-01-24 | [IT-BIO-007.380-0002303.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0002303.2026.001.pdf) |
-| SOCIETA' AGRICOLA CASE DI ANCI DI LIBORIO AUGELLO & C. S.A.S. | Milan | VIA FONTANA 11 20100 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-02 | [IT-BIO-004.380-0069477.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0069477.2025.002.pdf) |
-| SOCIETA' AGRICOLA IL GERMOGLIO DI GABRIELE PANDOLFO E C. SAS | Milan | VIA GIOBERTI 1 20123 | producción — vegetales sin transformar | 2029-03-12 | [IT-BIO-006.380-0031975.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0031975.2026.001.pdf) |
+Fuentes de apertura del lote:
 
-## Categorías poco representadas — barrido del 2026-08-10
+- [Ministero della Salute — establecimientos autorizados para alimentos de origen animal](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/)
+- [Regione Lombardia — fattorie didattiche](https://www.regione.lombardia.it/wps/wcm/connect/95ce99be-7f48-43c5-9f31-acb68bf20414/elenco%2BFD%2Baggiornato%2Bal%2B20.12.2024.pdf?CACHEID=ROOTWORKSPACE-95ce99be-7f48-43c5-9f31-acb68bf20414-pfzK4G4&MOD=AJPERES)
+- [Regione Lombardia — organizzazioni di produttori riconosciute](https://www.dati.lombardia.it/d/bdkn-hkwa)
+- [Unionbirrai — soci produttori](https://www.unionbirrai.it/it/soci/mappa/)
+- [TRACES NT — directorio de operadores ecológicos](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index)
 
-27 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+## Publicados en Milano
 
-Reparto por categoría propuesta: `Carne` 16, `Huevos` 3, `Fruta y verdura` 7, `Aceite` 1, `Condimentos` 4, `Legumbres y cereales` 7, `Miel` 4, `Conservas` 3, `Cerveza` 3, `Lácteos y quesos` 9.
+| Lote | Productores incorporados |
+|---|---|
+| Quesos / registro sanitario | Nuova Castelli e Cairati; Gelmini Carlo; Gelateria Cortinovis; Cascina Guzzafame / Fratelli Monti; Caseificio Salernitano; Caseificio Papetti; Cascina Colombina; Caseificio Miccoli; Caseificio Fiordilatte Milano; Peck; Arioli Achille; Caseificio Di Domenico; Fratelli Pedretti; Bindi Dessert; Amaltea San Vittore Olona; Cascina Cortenuova; Granarolo Pasturago |
+| Fattorie y cerveza | Vivai Natura; Cascina Caremma; Agriturismo Murnee; Cascina Bullona; Cascina Salazzara; Birrificio WAR; Birrificio di Legnano; Agriturismo L'Aia; Panizzari; Il Tenchio; Cascina Battivacco; Cascina Selva; Le Cave del Ceppo; Cascina Femegro |
+| Ecológicos | Agrestum; Cascina Guastalla; Cascina Lema; Agrinaviglio |
 
-Fuentes de este lote:
+Las plantas con presencia pública insuficiente para una verificación completa se publican honestamente como `parcial`. `Birrificio di Legnano` se publica sin web porque el dominio visible está comprometido por contenido ajeno. Panizzari se clasifica por su actividad real como `Vino`, no por la categoría provisional del registro.
 
-- Consorzio Aceto Balsamico Tradizionale di Modena DOP — acetaie associate — <https://www.balsamicotradizionale.it/le-acetaie-associate/>
-- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
-- Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+## Reasignado
 
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+| Candidato | Decisión |
+|---|---|
+| Oltremonte | Publicado en `rimini.csv`: la unidad productiva pública está en Via Monte 54, San Leo (RN); Milano es una dirección del operador, no la explotación. |
 
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Vivai Natura | Basiglio | `Carne` + `Huevos` + `Fruta y verdura` | Vivai Natura è una piccola azienda multifunzionale che accosta la coltivazione delle piante di bambù per uso ornamentale alla coltivazione di ortaggi con metodi naturali; pratica l'allevamento rurale all'aperto di gallin | 347.0669224, 338.3448690<br>info@vivainatura.it<br>[web](http://www.vivainatura.it) |
-| Cascina Caremma | Besate | `Carne` + `Aceite` + `Condimentos` | Azienda biologica con produzioni cerealicole, vitivinicole, frutticole, orticole ed allevamenti vari.Produzione e vendita di prodotti biologici: farine, salumi, riso, olio, tisane, aceto balsamico. Vendita di altri prodo | 02.9050020 tel<br>info@caremma.com<br>[web](http://www.caremma.com) |
-| Agriturismo Culturale e Didattico Murnee | Busto Garolfo | `Carne` + `Condimentos` + `Legumbres y cereales` | Bovini da carne, cereali per alimentazione umana, orticole e officinali destinate all’ingrosso. Lana per uso artistico. | 0331.567428, 347.9945369<br>info@murnee.it<br>[web](http://www.murnee.it) |
-| Il Regno dei Rapaci | Gessate | `Carne` | Centro di allevamento e addestramento di rapaci. | 333.4827765<br>dinobendotti@virgilio.it |
-| Agriturismo Didattico Paloschi | Milano | `Carne` | L'attività dell'azienda consiste nella produzione di foraggio e nell'allevamento di pony utilizzati a fini didattici. | 02.40912957<br>adp@cascinasora.it<br>[web](http://www.cascinasora.it) |
-| Cascina Fiorentina | Morimondo | `Carne` + `Legumbres y cereales` | L’azienda coltiva cereali ed alleva alcuni esemplari di bovini, suini, conigli ed animali di bassa corte. | 02.94961970<br>cascinafiorentina@libero.it |
-| Cascina Bullona | Ponte Di Magenta | `Carne` + `Miel` + `Conservas` | L’azienda coltiva cereali, alleva bovini, suini e api e produce insaccati, sott'oli e sott'aceti, confetture, torte, biscotti.Vendita di insaccati, confetture, conserve, torte, biscotti, farina, riso. | 02.97293135, 02.97292091<br>bullona@agriturismobullona.it<br>[web](http://www.agriturismobullona.it) |
-| Società agricola Cascina Salazzara S.S. | Pontevecchio Di Magenta | `Carne` + `Miel` + `Legumbres y cereales` | Azienda biologica certificata ad indirizzo cerealicolo con foraggio e allevamento di api. Miele biologico e suoi derivati. | 02.9790934 - 333.9031747 - 348.7038210<br>info@cascinasalazzara.it<br>[web](http://www.cascinasalazzara.it) |
-| Cirenaica | Robecchetto con Induno | `Carne` + `Conservas` + `Legumbres y cereales` | L’azienda coltiva cereali ed alleva suini, bovini da carne e animali di bassa corte. Produce insaccati e conserve, coltiva un orto ed un frutteto per l’utilizzo nel proprio ristoro e vendita diretta. | 0331.875855<br>info@cirenaica.it<br>[web](http://www.cirenaica.it) |
-| Birrificio WAR | Cassina de' Pecchi | `Cerveza` | birra artigianale | [web](https://www.birrificiowar.it/) |
-| BIRRIFICIO DI LEGNANO | Legnano | `Cerveza` | birra artigianale | — |
-| L'Aia | Cassinetta di Lugagnano | `Condimentos` + `Legumbres y cereales` + `Fruta y verdura` | L’azienda coltiva secondo il metodo dell’agricoltura biologica: cereali mais, orzo, frumento dai quali ricava farine integrali e non, frutti antichi, verdure, piante officinali ed aromatiche. | 02.9424900<br>agriturismoaia@hotmail.it<br>[web](http://www.agriturismoaia.it) |
-| Canonaco Matteo -Acetaia Corte D’Este | Milano | `Condimentos` | Aceto Balsamico Tradizionale di Modena DOP | — |
-| APOL INDUSTRIALE | Milano | `Fruta y verdura` | ORTOFRUTTA | — |
-| Panizzari Angelo | San Colombano al Lambro | `Fruta y verdura` | Azienda ad indirizzo orticolo e vitivinicolo con produzione e trasformazione delle uve. | 0371.897613<br>info@panizzariwine.it<br>[web](http://www.panizzari.net) |
-| A.O.P. UNOLOMBARDIA | San Giuliano Milanese | `Fruta y verdura` | ORTOFRUTTA | — |
-| O.P. ORTONATURA | Settala | `Fruta y verdura` | ORTOFRUTTA | — |
-| OP ORGANIZZAZIONE PRODUTTORI ORTOFRUTTICOLI ASSOCIATI P.O.A. | Vernate | `Fruta y verdura` | ORTOFRUTTA | — |
-| Fattoria Didattica Cascina Castellazzo | Basiano | `Lácteos y quesos` + `Carne` | L'attività dell'azienda agricola verte sull'allevamento di capre da latte di razza Camosciata delle Alpi. Tutta la produzione viene trasformata nel caseificio aziendale e venduta nello spaccio aziendale.Caprini, freschi | 320.4865523<br>fattoriadelcastellazzo@yahoo.it, f.castellazzobimbi@gmail.co |
-| Guzzafame | Gaggiano | `Lácteos y quesos` + `Carne` + `Miel` | L’azienda è principalmente dedita alla zootecnia, alleva circa 300 bovini da latte, produce latticini e circa 4000 litri di latte al giorno. La maggior parte dei 74 ettari è destinata all’alimentazione del bestiame, la r | 345.0592882<br>didattica@cascinaguzzafame.it<br>[web](http://www.cascinaguzzafame.it) |
-| Il Tenchio | Lacchiarella | `Lácteos y quesos` + `Carne` + `Huevos` | Produzione di insaccati, riso, patate, cipolle, latte di capra, salami, uova, ecc. | 02.9008263<br>info@iltenchio.it<br>[web](http://www.iltenchio.it) |
-| Cascina Battivacco | Milano | `Lácteos y quesos` + `Carne` + `Huevos` | L’azienda agricola produce riso ed alleva bovini, equini ed altri animali per scopo didattico caprini, cunicoli e avicoli. | 02.8133351, 347.7245667 Lucia<br>fattoria.didattica@cascinabattivacco.it<br>[web](http://www.cascinabattivacco.it) |
-| Cascina Selva | Ozzero | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Azienda biologica con allevamenti di bovine da latte produzione di latticini e coltivazione di cereali | 02.9407039<br>info@cascinaselva.it<br>[web](http://www.cascinaselva.it) |
-| SANTANGIOLINA LATTE FATTORIE LOMBARDE | San Colombano al Lambro | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
-| Cascina Codazza | San Zenone al Lambro | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Coltivazione di mais, prati stabili, triticale, cereali autunno-vernini e allevamento da latte. | 333.7144815<br>agri.codazza@yahoo.it<br>[web](http://www.fattoriedidattiche.biz) |
-| Le Cave del Ceppo | Trezzo sull'Adda | `Lácteos y quesos` + `Carne` + `Cerveza` | L’azienda agricola produce insaccati e latticini. Alleva asini, capre, cinghiali e volatili. Si vendono, inoltre, prodotti quali formaggi, salumi, marmellate, riso, vino, farina , birra, miele. | 02.90962295<br>agricola_ceppo@lecavedelceppo.it<br>[web](http://www.lecavedelceppo.it) |
-| Femegro | Zibido San Giacomo | `Lácteos y quesos` + `Miel` + `Conservas` | L’azienda produce riso, latte crudo, latticini freschi, yogurt, dessert, confetture, miele. | 02.90002435, 338.1863153<br>info@cascinafemegro.it<br>[web](http://www.cascinafemegro.it) |
+## Excluidos
+
+| Candidato | Motivo |
+|---|---|
+| Il Regno dei Rapaci | Cría, adiestramiento y actividad didáctica con rapaces; no ofrece producción alimentaria propia. |
+| Agriturismo Didattico Paloschi | Forraje y ponis para actividad didáctica; no hay alimento propio vendible. |
+| APOL Industriale | Organización de productores y comercialización, no unidad productiva. |
+| A.O.P. Unolombardia | Organización de productores, no unidad productiva. |
+| O.P. Ortonatura | Organización de productores, no unidad productiva. |
+| P.O.A. Organizzazione Produttori Ortofrutticoli Associati | Organización de productores, no unidad productiva. |
+| Santangiolina Latte Fattorie Lombarde | Milano no es unidad productiva; las plantas públicas están en Cereta di Volta Mantovana y Pandino. |
+| ASP Solar Italia Alpha | La actividad pública corroborada es un proyecto fotovoltaico en Licodia Eubea (CT), no producción alimentaria en Milano. |
+
+## Retenidos tras revisión
+
+Estos candidatos ya se revisaron; no deben publicarse sin resolver la carencia indicada.
+
+| Candidato | Carencia que mantiene la retención |
+|---|---|
+| I Silos di Pirovano | Autorización sanitaria vigente, pero sin identidad pública y oferta propia suficientes. |
+| Caseificio Artigianale Nicomilk | Autorización sanitaria vigente, pero sin catálogo o marca pública actual verificable. |
+| Gori Dr. Enzo / Alimenti Primari | No se pudo demostrar una oferta quesera propia al consumidor ligada a la unidad autorizada. |
+| Cascina Fiorentina | No aparece una fuente pública actual de producto o marca propia. |
+| Cirenaica | La fuente candidata describe producción, pero la oferta pública actual no quedó suficientemente corroborada. |
+| Canonaco Matteo / Acetaia Corte D'Este | Identidad y ubicación productiva ambiguas; no se pudo ligar la acetaia de Modena a una unidad en Milano. |
+| Fattoria Castellazzo | El registro regional describe una quesería caprina, pero falta corroboración pública actual de la unidad y su oferta. |
+| Cascina Codazza | Contacto actual localizado, sin evidencia pública reciente de venta directa o producto propio. |
+| Palma Alberto | El certificado no permite resolver marca, producto ni unidad productiva pública. |
+| Azienda Agricola Valsolda | Domicilio urbano y alcance certificado sin explotación pública identificable. |
+| Case dell'Olmo | No se pudo separar una unidad productiva concreta del domicilio societario de Milano. |
+| Gaudio Daniel | Falta identidad comercial, producto y unidad productiva pública. |
+| Ioppolo Sergio Giuseppe | El certificado no basta para identificar una explotación y oferta concreta. |
+| La Darsena | La explotación localizada está en Giussago (PV), pero no se encontró una oferta alimentaria pública propia que permita publicarla allí. |
+| Massa Saluzzo Alberto | Falta marca, producto alimentario concreto y ubicación productiva corroborada. |
+| P&V Immobiliare | La identidad pública inmobiliaria contradice el certificado agrícola; no hay unidad alimentaria demostrada. |
+| Persea Castello | Productor real con fincas en Calabria y Sardegna, pero no hay desglose público suficiente para asignar productos y coordenadas a una unidad concreta. |
+| Rusca Paola | Documentación regional apunta a una explotación fuera de Milano; falta resolver la unidad y oferta exactas. |
+| Sartorio Elena | La actividad pública apunta a olivar en Capalbio (GR), sin marca u oferta propia actual verificable. |
+| Case di Anci | La identidad parece corresponder a Sicilia, pero no se encontró una unidad pública y marca suficientemente corroboradas. |
+| Il Germoglio | La explotación pública está en Gubbio (PG), pero no se verificó una oferta alimentaria propia concreta. |

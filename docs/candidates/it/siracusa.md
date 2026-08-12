@@ -46,3 +46,15 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | SMRIGLIO SALVATORE | Noto | `Lácteos y quesos` | Ragusano DOP | — |
 | AZ. AGR. COMMALDO SUPERIORE S.S. DI CACCAMO GIOVANNI | Rosolini | `Lácteos y quesos` | Ragusano DOP | — |
 | GIUNTA GIOVANNI | Rosolini | `Lácteos y quesos` | Ragusano DOP | — |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote revisado el 2026-08-11. Se publicaron seis unidades: Caseificio Mongibella, Caseificio Rizzo Enzo, Albacara Bio y Azienda Agricola Floridia Salvatrice por su producción quesera; Agribio Conti por su oferta pública actual de arroz y legumbres; y Mediffer bajo su marca de helados Gelateria Aretusea. Quedan cinco expedientes en retención porque la autorización sanitaria no basta para atribuirles una marca y oferta alimentaria pública actuales. En particular, `frescolat.it` pertenece a otra sociedad de Caerano di San Marco (Treviso) y no se ha vinculado con la explotación Scalisi de Carlentini.
+
+| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
+|---|---|---|---|---|
+| FRESCOLAT DI SCALISI GIACOMO MARIA E FRANCESCO S.S. SOCIETA' AGRICOLA | Carlentini | CONTRADA SAN DEMETRIO sn | `UE IT 19 143` | Explotación y teléfono localizables, pero sin marca ni catálogo público atribuible; el sitio homónimo hallado es de una empresa distinta del Véneto. |
+| LO MONACO SEBASTIANO | Ferla | CONTRADA PIRATO | `UE IT U863B` | Solo consta la unidad sanitaria; no se localizó oferta pública actual. |
+| AZIENDA COCO - SOCIETA' SEMPLICE AGRICOLA | Lentini | CONTRADA SIGONA SNC | `UE IT 19 705` | Solo consta la unidad sanitaria; no se localizó marca ni producto propio ofrecido al público. |
+| NIELI SALVATORE | Noto | CONTRADA SPARANO snc | `UE IT 19 302` | La actividad agraria aparece en registros recientes, pero sin marca ni oferta quesera pública atribuible. |
+| IGNACCOLO GIUSEPPINA | Rosolini | VIA MASACCIO 31 | `UE IT 19 868` | La cría ovina y caprina y la autorización están documentadas, pero no una oferta alimentaria pública actual. |

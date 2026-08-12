@@ -56,3 +56,13 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | FRANTOIO CECCHI | Uzzano | `Aceite` | Olio extravergine di oliva Toscano IGP | frantoiocecchi@gmail.com |
 | SOCIETA' AGRICOLA I CIPRESSI | Uzzano | `Aceite` | Olio extravergine di oliva Toscano IGP | agricolacipressi@virgilio.it |
 | TRONCHETTI GIAMPIERO | Uzzano | `Aceite` | Olio extravergine di oliva Toscano IGP | info@aziendabellandi.it |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote contrastado el 2026-08-12. Se publicaron 11 productores: ocho caseificios o explotaciones lácteas y tres pastificios cuya actividad pública real se clasificó como `Pan y cereal`. Se conservaron tres retenciones donde la autorización sanitaria no basta para atribuir una oferta propia actual.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Motivo de retención |
+|---|---|---|---|---|
+| MARIETTA PASTE ALIMENTARI SOCIETA' A RESPONSABILITA' LIMITATA | Montecatini-Terme | VIA GIUSEPPE MAZZINI 60, MONTECATINI-TERME (PT) | `UE IT 09 437` | La autorización fue actualizada en 2026, pero no aparece un catálogo o marca pública que permita separar sus productos de los de P&P Paste Alimentari. |
+| LAZZERETTI CATERING S.R.L. | Pieve A Nievole | VIA FONDA 1, PIEVE A NIEVOLE (PT) | `UE IT U125R` | La actividad pública vigente es mayorista y suministro de alimentos; el registro no declara queso concreto y no se encontró producción propia atribuible. |
+| MUCCI LEONARDO | Quarrata | VIA CORBELLICCE 88, QUARRATA (PT) | `UE IT 09 170` | La explotación ovina y caprina sigue activa, pero no hay marca, catálogo ni canal público que confirme qué derivados propios ofrece actualmente. |

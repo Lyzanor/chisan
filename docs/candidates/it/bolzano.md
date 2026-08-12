@@ -49,3 +49,61 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 |---|---|---|---|---|
 | Batzen | Bolzano | `Cerveza` | birra artigianale | [web](https://www.batzen.it) |
 | gustAhr | Valle Aurina | `Cerveza` | birra artigianale | — |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+51 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| LUECH DA PCEI DI CRAZZOLARA LUCA | Badia | N/A VIA PECEI 17, BADIA (BZ) | `UE IT 41 60` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-JUN-22 |
+| VALENTIN MICHELE | Badia | N/A VIA PARÜS 7, BADIA (BZ) | `UE IT 41 103` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JAN-19 |
+| LATTE MONTAGNA ALTO ADIGE SOCIETA' AGRICOLA COOPERATIVA | Bolzano | N/A VIA INNSBRUCK 43, BOLZANO (BZ) | `UE IT 41 7` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JAN-19 |
+| PATZLEINER DAVID | Braies | N/A BRAIES DI FUORI 37, BRAIES (BZ) | `UE IT 41 16` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JAN-19 |
+| PROSCH WERNER | Bressanone | N/A MASO GOSTNER, VICOLO DI SOPRA 8, BRESSANONE (BZ) | `UE IT J674A` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-FEB-25 |
+| K. BERNARDI SRL | Brunico | VIA STUCK 6, BRUNICO (BZ) | `UE IT 9 736 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-NOV-15 |
+| LATTE MONTAGNA ALTO ADIGE SOCIETA' AGRICOLA COOPERATIVA | Brunico | N/A FALZES N. 19, BRUNICO (BZ) | `UE IT 41 4` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUN-14 |
+| EDER ROLAND | Campo Tures | N/A VIA ACERETO 38, CAMPO TURES (BZ) | `UE IT R4118` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-18 |
+| WEITLANER STEFAN | Campo Tures | N/A AHORNACH, VIA AUSSERGASSE 29, CAMPO TURES (BZ) | `UE IT 41 77` | vacuno menos de 60 d/más de 60 d | 13-MAR-23 |
+| INNERHOFER JOSEF | Chienes | N/A VIA VALLE PUSTERIA 5, CHIENES (BZ) | `UE IT 41 98` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUN-14 |
+| AMO' S.R.L. | Cornedo All'Isarco | N/A ZONA PRODUTTIVA CARDANO 21, CORNEDO ALL'ISARCO (BZ) | `UE IT E3F7J` | vacuno menos de 60 d/más de 60 d | 08-APR-26 |
+| ALMINTERESSENTSCHAFT KAPRON/LANGTAUFERS | Curon Venosta | N/A PERWARG, VALLELUNGA 0, CURON VENOSTA (BZ) | `UE IT 41 46` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JAN-26 |
+| EIGENVERWALTUNG DER BUERGERLICHEN NUTZUNGSRECHTE FRAKTION RESCHEN | Curon Venosta | FRAZIONE RESIA, ALTDORF 0, CURON VENOSTA (BZ) | `UE IT 41 45` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-JUL-24 |
+| HOHENEGGER ROBERT | Curon Venosta | N/A VALLELUNGA - MELAG 104/A, CURON VENOSTA (BZ) | `UE IT 41 68` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 16-JUN-25 |
+| VICINIA ALPE VIVANA | Curon Venosta | N/A CURON VENOSTA 34, CURON VENOSTA (BZ) | `UE IT 41 27` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JUL-24 |
+| LATTERIA TRE CIME - MONDO LATTE - SOCIETA' AGRICOLA COOPERATIVA | Dobbiaco | N/A VIA PUSTERIA 3c, DOBBIACO (BZ) | `UE IT 41 91` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-JUL-24 |
+| LATTERIA LAGUNDO COOPERATIVA - SOCIETA' AGRICOLA | Lagundo | VIA PLARS DI MEZZO 29, LAGUNDO (BZ) | `UE IT 41 12` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-NOV-14 |
+| KOFLER VIKTOR & ANDREAS S.N.C. | Lana | VIA BOLZANO 78/2, LANA (BZ) | `UE IT D210T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUL-24 |
+| AGETHLE ALEXANDER | Malles Venosta | FRAZIONE SCHLEIS 8, MALLES VENOSTA (BZ) | `UE IT 41 74` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JAN-23 |
+| ALM- UND WEIDEINTERESSENTSCHAFT AMBERG | Malles Venosta | N/A MALGA HÖFER 0, MALLES VENOSTA (BZ) | `UE IT F7G72` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JAN-26 |
+| ALM- UND WEIDEINTERESSENTSCHAFT SCHLINIG | Malles Venosta | N/A SLINGIA 44/B, MALLES VENOSTA (BZ) | `UE IT 41 26` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JAN-26 |
+| AMMINISTRAZIONE SEPARATA B.U.C. DELLA FRAZIONE DI BURGUSIO | Malles Venosta | N/A BURGUSIO 13, MALLES VENOSTA (BZ) | `UE IT 41 38` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JAN-26 |
+| EIGENVERWALTUNG BUERGERLICHER NUTZUNGSRECHTE SCHLEIS | Malles Venosta | N/A MALGA DI CLUSIO _, MALLES VENOSTA (BZ) | `UE IT X6Z7N` | vacuno menos de 60 d/más de 60 d | 16-JUL-26 |
+| LATTERIA BURGUSIO - SOCIETA' AGRICOLA COOPERATIVA | Malles Venosta | N/A BURGUSIO 77, MALLES VENOSTA (BZ) | `UE IT 41 11` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JAN-26 |
+| PATSCHEIDER ERNST | Malles Venosta | N/A ULTEN 115, MALLES VENOSTA (BZ) | `UE IT T6U4A` | vacuno menos de 60 d/más de 60 d | 26-OCT-20 |
+| EBERHOEFER RUDOLF | Martello | N/A GAND 53, MARTELLO (BZ) | `UE IT 41 79` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-JAN-19 |
+| LATTERIA SOCIALE MERANO SOCIETA' AGRICOLA COOPERATIVA | Merano | VIA VIA CAVA, N. 5 5, MERANO (BZ) | `UE IT 41 2` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-JUL-17 |
+| KOEHL STEFAN | Nova Ponente | N/A VIA LEHNER - LEHNERWEG 15, NOVA PONENTE (BZ) | `UE IT 41 106` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-JAN-19 |
+| BGO - COOPERATIVA DI COMUNITA' ALTA VAL VENOSTA - SOCIETA' COOPERATIVA | Prato Allo Stelvio | N/A VIA ARGENTIERI 16, PRATO ALLO STELVIO (BZ) | `UE IT K8R7A` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-FEB-19 |
+| POLIG MATTHIAS | Racines | N/A VIA PASSO GIOVO 5/A, RACINES (BZ) | `UE IT N802Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-DEC-22 |
+| VOLGGER GENUSS SAS DI HOTEL GASSENHOF SRL | Racines | N/A RIDANNA, DORF 30, RACINES (BZ) | `UE IT F1Q10` | vacuno menos de 60 d/más de 60 d | 05-JUN-24 |
+| OBERHOF DES ARNOLD PAUL | Rasun Anterselva | N/A HOFERBACHSTR. 12, RASUN ANTERSELVA (BZ) | `UE IT R9E7L` | vacuno menos de 60 d/más de 60 d | 08-SEP-22 |
+| ZINGERLE MANUEL | Rio Di Pusteria | N/A UNTERLAENDE 3, RIO DI PUSTERIA (BZ) | `UE IT H1C4X` | caprino menos de 60 d/más de 60 d | 02-MAR-23 |
+| MAYR DES SULZENBACHER FRIEDRICH | San Candido | N/A VIA KRANZHOF 6/A, SAN CANDIDO (BZ) | `UE IT 41 17` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JAN-19 |
+| VEIDER DES WEITLANER PAUL PETER | San Candido | N/A FRAZ. VERSCIACO, VIA HIEBLER 1, SAN CANDIDO (BZ) | `UE IT A7387` | vacuno menos de 60 d/más de 60 d | 15-JAN-19 |
+| CASEIFICIO MONTANO DELLA VAL PASSIRIA BIO SOCIETA' AGRICOLA COOPERATIVA | San Martino In Passiria | N/A GEWERBEZONE LAHN 7/1, SAN MARTINO IN PASSIRIA (BZ) | `UE IT 41 88` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JUL-24 |
+| GRUBER GEORG | Sarentino | N/A REINSWALD, HINTERPROSL 21/A, SARENTINO (BZ) | `UE IT J321C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 13-MAR-23 |
+| PREMSTALLER HELMUT | Sarentino | N/A DURNHOLZ / VALDURNA 10, SARENTINO (BZ) | `UE IT Y562Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-APR-21 |
+| HOTEL KNOLL DES NIEDERKOFLER GUENTHER | Selva Dei Molini | N/A LAPPAGO 205, SELVA DEI MOLINI (BZ) | `UE IT 41 47` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-APR-20 |
+| OBERHOLLENZER KARL | Selva Dei Molini | N/A PAESE 100, SELVA DEI MOLINI (BZ) | `UE IT 41 80` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-JUN-14 |
+| STEINER MICHAEL | Selva Dei Molini | VIA PAESE 53, SELVA DEI MOLINI (BZ) | `UE IT 41 75` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 02-AUG-23 |
+| CASEIFICIO SESTO SOCIETA' AGRICOLA COOPERATIVA | Sesto | N/A VIA BERSAGLIO 6, SESTO (BZ) | `UE IT 41 8` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-JAN-19 |
+| VILLGRATER ANDREAS | Sesto | N/A UNTEROLTLHOF VIA MONTE ELMO 11B, SESTO (BZ) | `UE IT 41 104` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-MAY-15 |
+| LEITNER KARL | Terento | N/A VIA MARGEN 26, TERENTO (BZ) | `UE IT X2T81` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-MAY-23 |
+| INTERESSENZA MALGA MITTER PRAVIERT | Tubre | N/A PPRAVIERT 0, TUBRE (BZ) | `UE IT 41 43` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-JUL-24 |
+| MAIR KARL | Val Di Vizze | N/A FOSSA TRUES 0, VAL DI VIZZE (BZ) | `UE IT 41 22` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-MAR-23 |
+| CAPRIZ S.R.L. | Vandoies | N/A VIA PUSTERIA 1, VANDOIES (BZ) | `UE IT D0C5J` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 15-JAN-19 |
+| CENTRO LATTE BRESSANONE - SOCIETA' AGRICOLA COOPERATIVA ABBREVIATO: BRIMI | Varna | N/A VIA BRENNERO 2, VARNA (BZ) | `UE IT 41 5` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-MAY-15 |
+| DE GUST SAS DI BAUMGARTNER JOHANN & CO. | Varna | N/A ZONA BSACKERAU 1, VARNA (BZ) | `UE IT Q0K03` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-JAN-26 |
+| FACHSCHULE FUER LANDWIRTSCHAFT UND HAUSWIRTSCHAFT SALERN | Varna | N/A VIA SALERN 26, VARNA (BZ) | `UE IT G4U46` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-OCT-24 |
+| COOPERATIVA LATTERIA VIPITENO SOCIETA' AGRICOLA | Vipiteno | N/A VIA GIOVO 108, VIPITENO (BZ) | `UE IT 41 6` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-MAR-15 |

@@ -1,26 +1,54 @@
 # Candidatos — Sulcis Iglesiente
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Investigación del 2026-08-08, revisada el 2026-08-12. Se publicaron AERRE Società Agricola, Azienda Elia Argiolas, Tenuta La Sabbiosa (Biomar) y La Casa di Sophia (Luisa Camoglio) después de conectar el certificado ecológico con producto, identidad y unidad productiva actuales. Permanecen 16 retenciones: el certificado prueba actividad ecológica, pero todavía no permite atribuir a cada operador una oferta alimentaria propia publicable. Los bloqueos concretos se resumen debajo.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
-| AERRE SOCIETA' SEMPLICE AGRICOLA | Calasetta | VIA MARCONI 5 09011 | producción — vegetales sin transformar | 2026-12-01 | [IT-BIO-006.380-0047348.2023.004](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0047348.2023.004.pdf) |
 | ALBAI PIERLUIGI | Teulada | VIA MADONNA DEL CARMINE N 28 09019 | producción — vegetales sin transformar | 2029-06-18 | [IT-BIO-007.380-0114439.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0114439.2026.001.pdf) |
 | ARCERI MARIO ANGELO | Santadi | IS LOIS 09010 | producción — vegetales sin transformar | 2028-01-14 | [IT-BIO-007.380-0093550.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0093550.2025.001.pdf) |
-| ARGIOLAS ELIA | Narcao | VIA NAZIONALE 4 B 09010 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-09 | [IT-BIO-006.380-0013414.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0013414.2025.001.pdf) |
 | AZIENDA AGRICOLA F.LLI ZANDA SOC. SEMPLICE | Villamassargia | LOCALITA S'ORTU MANNU 09010 | producción — vegetales sin transformar | 2029-07-28 | [IT-BIO-006.380-0115363.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0115363.2026.001.pdf) |
 | AZIENDA AGRICOLA MANCA E FARRIS S.S. | Calasetta | LOC BRICCO LE PIANE SNC 09011 | producción — vegetales sin transformar | 2029-07-12 | [IT-BIO-004.380-0114957.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0114957.2026.001.pdf) |
 | BASCHIERI FRANCESCO | Iglesias | VIA DELEDDA 7/A 09016 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-12-16 | [IT-BIO-009.380-0045827.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0045827.2024.001.pdf) |
-| BIOMAR SOCIETA' COOPERATIVA AGRICOLA | Calasetta | LOCALITA' CUSSORGIA SNC 09011 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2027-12-23 | [IT-BIO-007.380-0024568.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0024568.2025.001.pdf) |
 | BIOS SOCIETA' SEMPLICE AGRICOLA | Carloforte | VIA MONSIGNOR MARIO GHISA 31 09014 | producción — vegetales sin transformar | 2029-05-20 | [IT-BIO-006.380-0111244.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0111244.2026.002.pdf) |
 | BOI ALESSANDRO | San Giovanni Suergiu | VICO 5 VITTORIO EMANUELE SNC 09010 | producción — vegetales sin transformar | 2029-04-13 | [IT-BIO-009.380-0113086.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0113086.2026.001.pdf) |
 | BULLEGAS BEPPE GIUSEPPE | Narcao | VIA PESUS N°12 09010 | producción — vegetales sin transformar | 2028-12-12 | [IT-BIO-007.380-0042963.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0042963.2025.001.pdf) |
 | BULLITA SEBASTIAN | Sant'Antioco | LOCALITA' TURRI 5 SANT'ANTIOCO 5 09017 | producción — vegetales sin transformar | 2029-07-09 | [IT-BIO-006.380-0114919.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0114919.2026.001.pdf) |
 | CABONI SAMUEL MATTEO DEMIAN | Masainas | VIA PASCOLI 2 09010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-08-05 | [IT-BIO-006.380-0115552.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0115552.2026.001.pdf) |
-| CAMOGLIO LUISA | Calasetta | LOC. SPIAGGIA GRANDE 09011 | preparación, producción — vegetales sin transformar, piensos | 2029-01-27 | [IT-BIO-015.380-0086581.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0086581.2026.001.pdf) |
 | CAMPUS VANESSA | Narcao | VICO II° ROSAS N.3 FRAZ.TERRUBIA 09010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-01-26 | [IT-BIO-007.380-0032630.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0032630.2026.001.pdf) |
 | CASA RURALE SOCIETA AGRICOLA S.S. | San Giovanni Suergiu | VIA G VERDI   2/A 09010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-04-09 | [IT-BIO-006.380-0098301.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0098301.2025.001.pdf) |
 | CASULA DAVIDE | Iglesias | VIA GOCEANO 14 09016 | producción — vegetales sin transformar | 2029-06-22 | [IT-BIO-004.380-0114498.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0114498.2026.001.pdf) |
 | CASULA STEFANO | Gonnesa | LOCALITA' SI BASCA 18 09010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-04-20 | [IT-BIO-004.380-0113320.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0113320.2026.001.pdf) |
 | CHIRIGU NICOLETTA | Sant'Anna Arresi | LOCALITA' IS SARAIS 12 09010 | producción — vegetales sin transformar | 2028-07-24 | [IT-BIO-007.380-0020211.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0020211.2026.001.pdf) |
 | CINUS LUCA | Nuxis | VIA MEAZZA 2 09010 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-05-26 | [IT-BIO-006.380-0028460.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0028460.2025.001.pdf) |
+
+### Resultado de la revisión ecológica
+
+| Operador | Motivo de retención |
+|---|---|
+| ALBAI PIERLUIGI | La explotación mixta se vincula al Agriturismo Is Arenas Biancas, pero su web no identifica qué alimento propio produce y vende. |
+| ARCERI MARIO ANGELO | La ficha empresarial solo concreta cereal, legumbre y oleaginosas; faltan marca, producto comercial y contacto del productor. |
+| AZIENDA AGRICOLA F.LLI ZANDA SOC. SEMPLICE | Solo aparecen expedientes administrativos antiguos; no se encontró producto, marca o canal público actual. |
+| AZIENDA AGRICOLA MANCA E FARRIS S.S. | El certificado sigue siendo la única fuente sustantiva; falta aislar unidad, cultivo comercial y presencia pública propia. |
+| BASCHIERI FRANCESCO | Se identifica la razón pública Saludi e Trigu y la explotación ganadera, pero no una oferta alimentaria concreta atribuible y vigente. |
+| BIOS SOCIETA SEMPLICE AGRICOLA | No aparece identidad comercial, producto concreto ni contacto público separable del certificado de Carloforte. |
+| BOI ALESSANDRO | Solo se confirma la existencia de una empresa agrícola en San Giovanni Suergiu; falta producto y canal público. |
+| BULLEGAS BEPPE GIUSEPPE | El biodistrito confirma centro agrícola y viñedo en Narcao, pero no una etiqueta de vino u otro producto propio actualmente comercializado. |
+| BULLITA SEBASTIAN | Bullita comercializa vinos seleccionados en distintos puntos de Cerdeña; no se demuestra que procedan de la unidad ecológica de Turri. |
+| CABONI SAMUEL MATTEO DEMIAN | Las fuentes mezclan explotación ecológica, artesanía de cuero y servicios; no se pudo atribuir un alimento concreto a la unidad de Masainas. |
+| CAMPUS VANESSA | Las fichas empresariales solo describen explotación mixta; faltan producto, identidad comercial y contacto público. |
+| CASA RURALE SOCIETA AGRICOLA S.S. | Se confirma actividad primaria en San Giovanni Suergiu, pero no qué alimento ofrece ni bajo qué marca o canal. |
+| CASULA DAVIDE | La explotación mixta y sus inversiones están activas, pero no existe una oferta alimentaria pública atribuible. |
+| CASULA STEFANO | Se confirma ganadería ovina y caprina en Si Basca, pero no transformación ni venta directa de leche, carne o queso propios. |
+| CHIRIGU NICOLETTA | Las búsquedas actuales conducen al alojamiento y a registros ecológicos antiguos, sin producto alimentario público atribuible. |
+| CINUS LUCA | Solo se localizan fichas empresariales genéricas; falta producto concreto, marca, contacto y unidad de venta corroborada. |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+4 unidades productivas siguen pendientes de una identidad pública y una oferta quesera actuales. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y se reasignó por comune mediante la [clasificación territorial ISTAT vigente desde 2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se publicaron Caseificio Iesum, Latteria Sociale Santadi y Agricola Allevatori Tallaroga tras reconciliar la unidad sanitaria con fuentes públicas actuales; Allevatori Sulcitani ya estaba en el CSV. Los cuatro registros restantes conservan autorización sanitaria, pero las búsquedas no permitieron atribuirles con seguridad una marca y una oferta propia vigente. Corte revisado: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| BRAU ANTONANGELO | Carbonia | LOCALITA' MEDAU BRAU 6, CARBONIA (SU) | `UE IT Q618T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-APR-18 |
+| FLUMINESE DI MATTIA MONTALBANO | Fluminimaggiore | VIA GARIBALDI 46, FLUMINIMAGGIORE (SU) | `UE IT Z1B87` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-MAR-20 |
+| TRE EMME PICCOLA SOC. COOP. ARL | Santadi | VIA IS SOLLAIS, 5 , SANTADI (SU) | `UE IT 20 178` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+| CARDIA ALESSIA | Villamassargia | LOCALITA' MONTE GIOIOSA SNC, VILLAMASSARGIA (SU) | `UE IT J1B82` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-20 |

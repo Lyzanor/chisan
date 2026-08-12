@@ -1,24 +1,29 @@
 # Candidatos — Chieti
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión del lote ecológico cerrada el 2026-08-12. Se publicaron Caniloro, Cantina Villamagna y Cantine Agriverde. Andrea Basile se reconcilió como Azienda Viticola TrèA y se trasladó a Pescara porque la fuente propia sitúa allí sus viñedos; Francavilla al Mare es solo la sede legal. Permanecen los siguientes casos sin ficha publicable:
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
+| Candidato pendiente | Motivo concreto de retención |
+|---|---|
+| Alinovi Giancarlo | Solo consta producción vegetal ecológica genérica, sin producto final o marca pública. |
+| La Terra Promessa di Primiterra Morena | La actividad pública localizada se limita a cultivos permanentes; falta catálogo y unidad comercial. |
+| Azienda Agricola Teresa del Castello | Se acredita cultivo y ganado, pero no un alimento final propio vendible. |
+| Contrada Amarena | La empresa aparece activa en olivicultura, sin fuente reciente que atribuya aceite envasado, marca y contacto comercial. |
+| Battista Giuseppina | Solo se localizan cultivos mixtos y el certificado ecológico, no una oferta alimentaria pública. |
+| Caniglia Nicola Umberto | Participa como explotación lechera en una macrofiliera, pero no transforma ni vende un producto propio identificable. |
+| Carullo Bruno | No aparece producto concreto, marca pública ni contacto comercial aparte de registros administrativos. |
+| Civitarese Carlo Donato | Los registros acreditan cultivos permanentes, sin oferta alimentaria propia atribuible. |
+| Colaizzo Tullio | Consta ganadería y actividad agriturística, pero no producto final, marca ni canal público suficiente. |
+| Como Nicola | El certificado acredita ganado y cultivos; no se localizó catálogo ni identidad comercial actual. |
+| Consalvo Marianicola | Demeter confirma uva y olivas, pero no vino o aceite elaborado y comercializado por la propia finca. |
+| Costantini Antonio (Giuliano Teatino) | No es la bodega homónima de Città Sant’Angelo; falta una identidad pública inequívoca y producto propio. |
+| Crugnale Maria Giovanna | La actividad localizada es cultivo de uva, sin vino o marca propia atribuible. |
+| D'Andrea Giuseppina | Solo consta cultivo de frutos oleosos, sin aceite envasado ni canal público propio. |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Solis opera públicamente como empresa energética y logística frigorífica, sin una oferta quesera propia atribuible; Talone Ezio figura como explotación bovina lechera activa, pero las búsquedas del 2026-08-11 no localizaron una marca ni una oferta pública de quesos con contacto. Los otros nueve candidatos se incorporaron al CSV; Gocce di Latte by Iannone se deduplicó bajo su identidad pública Caseificio Iannone y la unidad de Iannone Florestano se publicó separadamente como Caseificio Flò. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| ABBONIZIO ELISABETTA | Lanciano | C DA SANT'ONOFRIO 133 66034 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-07-10 | [IT-BIO-009.380-0048999.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0048999.2025.001.pdf) |
-| ALINOVI GIANCARLO | Vasto | VIA SAN ROCCO 139 66054 | producción — vegetales sin transformar | 2028-04-03 | [IT-BIO-009.380-0050455.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0050455.2025.001.pdf) |
-| AZIENDA AGRICOLA LA TERRA PROMESSA DI PRIMITERRA MORENA | Torrevecchia Teatina | VIA SAN SAVINO  10 66010 | producción — vegetales sin transformar | 2029-03-19 | [IT-BIO-006.380-0019528.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0019528.2026.001.pdf) |
-| AZIENDA AGRICOLA TERESA DEL CASTELLO | Civitaluparella | CNT COLICIELI 1 66040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-02-12 | [IT-BIO-009.380-0111420.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0111420.2026.001.pdf) |
-| AZIENDA AGRITURISTICA BIOLOGICA CONTRADA AMARENA S.R.L. | Tufillo | CONTRADA AMARENA 66050 | producción — vegetales sin transformar | 2028-10-19 | [IT-BIO-004.380-0093987.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0093987.2025.002.pdf) |
-| BASILE ANDREA | Francavilla al Mare | VIA ADRIATICA SUD 89 66023 | producción — vegetales sin transformar | 2028-09-25 | [IT-BIO-009.380-0018690.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0018690.2025.002.pdf) |
-| BATTISTA GIUSEPPINA | San Buono | C.DA VALTORZETTI N.01 66050 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-09-29 | [IT-BIO-009.380-0046370.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0046370.2025.001.pdf) |
-| CANIGLIA NICOLA UMBERTO | Casoli | C.DA QUARTO DA CAPO 15 66043 | producción — vegetales sin transformar | 2028-07-17 | [IT-BIO-009.380-0092925.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0092925.2025.001.pdf) |
-| CANTINA SOCIALE VILLAMAGNA SOC.AGRIC.COOP | Villamagna | VIALE REGINA MARGHERITA 169/171 66010 | preparación, producción — vegetales sin transformar, piensos | 2029-03-03 | [IT-BIO-006.380-0007477.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0007477.2026.001.pdf) |
-| CANTINE AGRIVERDE S.R.L. | Ortona | VIA STORTINI 32/A 66026 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-09-10 | [IT-BIO-006.380-0006054.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0006054.2025.002.pdf) |
-| CARULLO BRUNO | Orsogna | C.DA FEUDUCCIO 6 66036 | producción — vegetales sin transformar | 2028-08-05 | [IT-BIO-009.380-0037868.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0037868.2025.001.pdf) |
-| CIVITARESE CARLO DONATO | Ortona | C.DA CIVITARESE 44 66026 | producción — vegetales sin transformar | 2028-07-02 | [IT-BIO-007.380-0090798.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090798.2025.001.pdf) |
-| COLAIZZO TULLIO | Rosello | VIA DELL'IMPERO  14 66040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-01-13 | [IT-BIO-006.380-0067227.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0067227.2026.001.pdf) |
-| COMO NICOLA | Palena | VIA CROCETTA SAN ANTONIO, 32 66017 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-01-09 | [IT-BIO-007.380-0093337.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0093337.2025.002.pdf) |
-| CONSALVO MARIANICOLA RITA LUCIA | Casoli | VIA COLLEBARONE 18 66043 | producción — vegetales sin transformar | 2029-07-28 | [IT-BIO-009.380-0010344.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0010344.2026.002.pdf) |
-| COSTANTINI ANTONIO | Giuliano Teatino | VIA NEVI, 185 66010 | producción — vegetales sin transformar | 2028-11-07 | [IT-BIO-009.380-0022001.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0022001.2025.002.pdf) |
-| CRUGNALE MARIA GIOVANNA | Pollutri | CERCHIGROSSI, 7 66020 | producción — vegetales sin transformar | 2028-10-08 | [IT-BIO-009.380-0048711.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0048711.2025.001.pdf) |
-| D'ANDREA GIUSEPPINA | Casoli | C/DA SERRE N.3 66043 | producción — vegetales sin transformar | 2027-03-01 | [IT-BIO-009.380-0066431.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0066431.2024.001.pdf) |
+| SOLIS S.P.A. | Atessa | Via del Rasolone - località Piazzano snc | `UE IT S7R5R` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-23 |
+| TALONE EZIO | Casoli | Via Quarto da Capo 227 | `UE IT X8T4V` | vacuno menos de 60 d | 04-NOV-25 |

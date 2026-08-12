@@ -1,26 +1,32 @@
 # Candidatos — Matera
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Investigación ecológica del 2026-08-08, revisada el 2026-08-12. De los 20 operadores con certificado `ISSUED` en [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), cuatro se han publicado y retirado de esta cola: Azienda Agricola Leonardo Angelone, Azienda Montesano, Azienda Agricola Teresa Bernardo y Solo Lucano de Giuseppe Castellaneta. Quedan 16 leads sin producto final público o sin una identidad comercial suficientemente atribuible.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ABATE TERESA | Tricarico | VIA BADIA 4 75019 | producción — vegetales sin transformar | 2028-07-28 | [IT-BIO-012.380-0044839.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0044839.2025.001.pdf) |
-| ACINAPURA ANTONIO | Policoro | VIA SIRIS,158 75025 | producción — vegetales sin transformar | 2028-07-01 | [IT-BIO-004.380-0102596.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0102596.2025.001.pdf) |
-| ADDUCI ROCCO LEONARDO | San Giorgio Lucano | CONTRADA SODANO 75027 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-10-10 | [IT-BIO-020.380-0071524.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-020.380-0071524.2025.001.pdf) |
-| ANCONA GIOVANNI | Policoro | VIALE SALERNO 28 75025 | producción — vegetales sin transformar | 2028-02-19 | [IT-BIO-006.380-0095459.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0095459.2025.001.pdf) |
-| ANGELONE LEONARDO | Policoro | VIALE SALERNO 95 75025 | producción — vegetales sin transformar | 2028-10-21 | [IT-BIO-006.380-0023540.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0023540.2025.002.pdf) |
-| AZ. AGR. SQUICCIARINO & C. SS | Salandra | C.DA BRADANELLI snc 75017 | producción — vegetales sin transformar | 2028-07-02 | [IT-BIO-012.380-0020156.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0020156.2025.001.pdf) |
-| AZIENDA AGRICOLA MONTESANO S.S. | Tricarico | VIA SAN GIOVANNI 4 75019 | producción — vegetales sin transformar | 2028-09-30 | [IT-BIO-012.380-0038532.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0038532.2025.001.pdf) |
-| BARBARITO  FRANCESCO | Garaguso | CDA PANTONI SNC 75010 | producción — vegetales sin transformar | 2028-05-30 | [IT-BIO-006.380-0044062.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0044062.2025.001.pdf) |
-| BARBARITO SALVATORE | Garaguso | CORSO VITTORIO EMANUELE 31 - 75010 - 75010 | producción — vegetales sin transformar | 2027-02-13 | [IT-BIO-007.380-0063882.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0063882.2026.001.pdf) |
-| BARISANO ANTONIO | Stigliano | VIA CIALDINI 68 75018 | producción — vegetales sin transformar | 2028-07-01 | [IT-BIO-012.380-0037331.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0037331.2025.001.pdf) |
-| BERARDI GIUSEPPE | Gorgoglione | VIA MARCO POLO 9 75010 | producción — vegetales sin transformar | 2028-03-31 | [IT-BIO-012.380-0048614.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0048614.2025.001.pdf) |
-| BERNARDO TERESA | Colobraro | PIAZZETTA NAPOLI 1 75021 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-09-15 | [IT-BIO-009.380-0040927.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0040927.2025.002.pdf) |
-| Bolettieri Nicola | Grassano | Vico III S. Giuseppe, 12 75014 | producción — vegetales sin transformar | 2028-07-08 | [IT-BIO-008.380-0102909.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0102909.2025.002.pdf) |
-| BRINDISI LORENZO ANTONIO | Matera | VIA TRE CORONE, 16 75100 | producción — vegetales sin transformar | 2028-08-27 | [IT-BIO-004.380-0007210.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0007210.2025.001.pdf) |
-| CANTASANO FRANCESCO | Tursi | LOCALITA RABATANA SN 75028 | producción — vegetales sin transformar | 2028-11-20 | [IT-BIO-008.380-0109860.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0109860.2025.001.pdf) |
-| CAPUTO DIONISIO | Matera | RECINTO MASTRONARDI 1 75100 | producción — vegetales sin transformar | 2029-03-10 | [IT-BIO-006.380-0018455.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0018455.2026.001.pdf) |
-| CASTELLANETA GIUSEPPE | Matera | VIA SANTA CATERINA DA SIENA 2 75100 | producción — vegetales sin transformar | 2028-07-28 | [IT-BIO-012.380-0049782.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0049782.2025.001.pdf) |
-| CASTELLANO LEONARDO | Matera | VIA DEGLI SVEVI 3 75100 | producción — vegetales sin transformar | 2028-07-16 | [IT-BIO-004.380-0097014.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0097014.2025.002.pdf) |
-| CICORELLA MARIAGRAZIA | Montescaglioso | VIA GIULIO VERNE 17 75024 | producción — vegetales sin transformar | 2029-02-25 | [IT-BIO-006.380-0064357.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0064357.2026.001.pdf) |
-| CIPRIANO ROSARIO GIUSEPPE | Montalbano Jonico | VIA TORINO N.39 75023 | producción — vegetales sin transformar | 2028-07-27 | [IT-BIO-004.380-0049474.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0049474.2025.001.pdf) |
+| Candidato | Comune provisional | Motivo pendiente |
+|---|---|---|
+| Abate Teresa | Tricarico | Solo consta producción vegetal genérica; no se localizó cultivo, producto final, marca o contacto público. |
+| Acinapura Antonio | Policoro | La búsqueda devuelve otros miembros y un estudio agronómico homónimo, pero no una oferta alimentaria atribuible a este operador. |
+| Adduci Rocco Leonardo | San Giorgio Lucano | La actividad registral se limita al cultivo de cereal; no consta harina, pasta u otro producto final propio. |
+| Ancona Giovanni | Policoro | Se confirma cultivo permanente activo, pero no la especie, marca, producto final ni venta directa. |
+| Az. Agr. Squicciarino & C. | Salandra | La sociedad cultiva cereal, pero no aparece transformación, marca o producto final propio. |
+| Barbarito Francesco | Garaguso | No se localizó una identidad agrícola pública inequívoca ni producto final atribuible. |
+| Barbarito Salvatore | Garaguso | Solo se confirma cultivo de cereal y legumbres a granel, sin producto final o marca pública. |
+| Barisano Antonio | Stigliano | Las coincidencias no permiten separar al operador de homónimos ni demostrar producto alimentario final. |
+| Berardi Giuseppe | Gorgoglione | Explotación mixta activa, pero sin producto final, marca u oferta pública localizados. |
+| Bolettieri Nicola | Grassano | Las coincidencias públicas remiten a una pizzería y a un agrónomo; no permiten atribuir una oferta agrícola al certificado. |
+| Brindisi Lorenzo Antonio | Matera | Solo constan terrenos y certificación vegetal; falta producto final, marca y unidad de venta pública. |
+| Cantasano Francesco | Tursi | No aparece una identidad agrícola pública inequívoca ni producto final atribuible. |
+| Caputo Dionisio | Matera | Se confirma cultivo de cereales, legumbres y oleaginosas, pero no una marca o transformación propia; se descartó el homónimo de Genzano. |
+| Castellano Leonardo | Matera | Se confirma fruticultura, pero no fruta concreta, producto final, contacto o canal público. |
+| Cicorella Mariagrazia | Montescaglioso | Actividad cerealista reciente, sin producto final transformado o marca pública. |
+| Cipriano Rosario Giuseppe | Montalbano Jonico | Se confirma olivicultura activa, pero no aceite embotellado propio, marca o venta pública. |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote revisado el 2026-08-11. Se publicaron nueve unidades: Totem Food, Azienda Agricola Di Gilio, Caseificio Abbatangelo, Bontà del Latte, Caseificio del Pino, Caseificio Maggiore, Azienda Agricola Cavalli, Casari Lucani bajo su marca Caseificio Heraclea y Caseificio Lavanga. En los dos últimos casos se reconcilió la denominación sanitaria con la identidad pública y la continuidad empresarial sin fusionar plantas distintas. Quedan tres expedientes en retención por no disponer de una marca y oferta pública actuales suficientemente atribuibles.
+
+| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
+|---|---|---|---|---|
+| MONTEMURRO VINCENZO | Grottole | CONTRADA CASTELLANA snc | `UE IT 17 63` | Solo se pudo confirmar la explotación y la autorización sanitaria; no una oferta quesera pública actual. |
+| GALGANO NICOLA | Irsina | VIA MARCO POLO 2 | `UE IT 17 77` | Una autorización ambiental de 2024 confirma la actividad casearia, pero no se localizó marca, contacto ni catálogo público atribuible. |
+| SOCIETA' AGRICOLA GIURA S.S. | Tricarico | CONTRADA SERRA DEL PONTE snc | `UE IT Y3864` | Hay menciones antiguas a quesos Giura y registros agrarios recientes, pero no una oferta pública actual que permita publicar una ficha útil. |

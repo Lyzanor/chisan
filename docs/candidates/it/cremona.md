@@ -57,3 +57,44 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | PRODUTTORI LATTE ASSOCIATI CREMONA (PLAC) | Persico Dosimo | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
 | LATTERIA SORESINA | Soresina | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
 | Apiflor | Pescarolo ed Uniti | `Miel` + `Condimentos` + `Legumbres y cereales` | L’azienda alleva api e produce miele e cera per la creazione di sculture e candele. Coltiva crisantemi, ortaggi ed erbe officinali. Vengono coltivati anche mais, cereali ed erba medica; frutteto con svariate qualità di f | 338.8975175<br>api.flor@libero.it<br>[web](http://www.apiflor.com) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+30 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| EGIDIO GALBANI SOCIETA' A RESPONSABILITA' LIMITATA IN BREVE "EGIDIO GALBANI S.R.L." O "E.GA. S.R.L. | Casale Cremasco-Vidolasco | VIA ROMA 1/3, CASALE CREMASCO-VIDOLASCO (CR) | `UE IT 03 3` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-SEP-16 |
+| POZZALI LODIGRANA S.R.L. | Casaletto Ceredano | PIAZZA SAN PIETRO 4, CASALETTO CEREDANO (CR) | `UE IT 03 28` | vacuno más de 60 d | 27-OCT-23 |
+| PADANIA ALIMENTI S.R.L. O IN FORMA ABBREVIATA PADANIA S.R.L. | Casalmaggiore | VIA E. FERMI 79, CASALMAGGIORE (CR) | `UE IT 03 156` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-19 |
+| SOC.COOP. AGRIC. RIUNITI CREMONESI MANTOVANI ARCREMAN ARL | Casalmaggiore | VIA CASE SPARSE 16 , CASALMAGGIORE (CR) | `UE IT 03 412` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JAN-12 |
+| SOCIETA' AGRICOLA F.LLI CAFFI SOCIETA' SEMPLICE | Grumello Cremonese Ed Uniti | VIA DANTE 3, GRUMELLO CREMONESE ED UNITI (CR) | `UE IT G998S` | vacuno menos de 60 d/más de 60 d | 09-JAN-24 |
+| SOCIETA' AGRICOLA CA DE' ALEMANNI DI SANTINI BEATRICE, SANTINI AL BERTO E LAZZARI ALESSANDRA MARIA C | Malagnino | LOCALITA' CA' DE ALEMANNI 1, MALAGNINO (CR) | `UE IT 03 1816` | vacuno menos de 60 d/más de 60 d | 10-APR-17 |
+| CASEIFICIO ZUCCHELLI ANTONIO DI ZUCCHELLI CARMELITA & C. S.N.C. | Ostiano | VIA OSSE 14, OSTIANO (CR) | `UE IT 03 189` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-APR-16 |
+| CASEIFICIO SANGIOVANNI S.R.L. | Palazzo Pignano | VIA TORLINO 40, PALAZZO PIGNANO (CR) | `UE IT 03 252` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 13-JUN-23 |
+| ANTICA LATTERIA AGRICOLA DI PANDINO S.R.L. | Pandino | VIA MILANO 112, PANDINO (CR) | `UE IT 03 559` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 14-JUN-23 |
+| CASEIFICIO CONTE AJMO SNC DI MIRAGOLI ROBERTO & C. | Pandino | VIA G. BIANCHI 30, PANDINO (CR) | `UE IT 03 517` | vacuno menos de 60 d | 02-SEP-14 |
+| GIOVANNI UBERTI 1896 S.R.L. | Pandino | VIA BOVIS 3, PANDINO (CR) | `UE IT 03 627` | vacuno menos de 60 d | 01-JUL-19 |
+| ISTITUTO D'ISTRUZIONE SUPERIORE "STANGA | Pandino | VIA BOVIS 4, PANDINO (CR) | `UE IT 03 280` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JUL-19 |
+| SANTANGIOLINA LATTE FATTORIE LOMBARDE SOC.AGR.COOPERATIVA | Pandino | VIA GUIDO ROSSA 3, PANDINO (CR) | `UE IT 03 1868` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 04-MAY-23 |
+| PRODUTTORI LATTE ASSOCIATI CREMONA - SOCIETA' COOPERATIVA AGRICOL A (P.L.A.C.) | Persico Dosimo | VIA OSTIANO 70, PERSICO DOSIMO (CR) | `UE IT 03 55` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-DEC-17 |
+| LATTERIA SORESINA SOCIETA' COOPERATIVA AGRICOLA | Piadena Drizzona | VIA ROMA 44, PIADENA DRIZZONA (CR) | `UE IT 03 27` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-19 |
+| GENNARO AURICCHIO S.P.A. | Pieve San Giacomo | VIA SOLFERINO 1, PIEVE SAN GIACOMO (CR) | `UE IT 03 180` | vacuno menos de 60 d/más de 60 d | 12-JUN-17 |
+| LATTERIA PIZZIGHETTONESE SOCIETA' AGRICOLA COOPERATIVA | Pizzighettone | VIA MONTE GRAPPA 87/89, PIZZIGHETTONE (CR) | `UE IT 03 60` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-MAY-19 |
+| ZUVADELLI MICHELE E FLAVIO SAS | Quintano | VIA CREMA -VAILATE 4 , QUINTANO (CR) | `UE IT 03 1585` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUL-11 |
+| ALIMENTARI NORDITALIA S.P.A.ALINOR C/SIGLA "ALINOR SPA | Ripalta Cremasca | VIA VITTORIO VENETO 1/C, RIPALTA CREMASCA (CR) | `UE IT 03 158` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-SEP-14 |
+| CASALASCO SOCIETA' AGRICOLA S.P.A. | Rivarolo Del Re Ed Uniti | VIA STRADA PROVINCIALE 32, RIVAROLO DEL RE ED UNITI (CR) | `UE IT 701 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JAN-22 |
+| CASELLA BURRO S.R.L. | Rivarolo Del Re Ed Uniti | VIA BALILLA 7/B, RIVAROLO DEL RE ED UNITI (CR) | `UE IT 03 45` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-SEP-19 |
+| DEMETRA SITOS SRL | San Daniele Po | VIA ARISTIDE MARETTI SNC, SAN DANIELE PO (CR) | `UE IT N0B61` | vacuno menos de 60 d | 31-JAN-25 |
+| SAVIOLA S.P.A. | San Giovanni In Croce | VIA BUSI 59, SAN GIOVANNI IN CROCE (CR) | `UE IT 03 267` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-FEB-19 |
+| BONIZZI S.R.L. | Soncino | VIA BERGAMO 6, SONCINO (CR) | `UE IT 03 112` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-OCT-18 |
+| LATTERIA SORESINA SOCIETA' COOPERATIVA AGRICOLA | Soresina | VIA DEI MILLE 13/17, SORESINA (CR) | `UE IT 03 171` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-SEP-18 |
+| GRASSELLI FABIO | Stagno Lombardo | VIA G. PAGLIARI 54, STAGNO LOMBARDO (CR) | `UE IT 03 1257` | vacuno menos de 60 d/más de 60 d | 26-MAY-16 |
+| LATTERIA SORESINA SOCIETA' COOPERATIVA AGRICOLA | Stagno Lombardo | VIA BASSA CASALMAGGIORE 4, STAGNO LOMBARDO (CR) | `UE IT 03 94` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-17 |
+| CARIONI SOCIETA' AGRICOLA CONSORTILE A RESPONSABILITA' LIMITATA | Trescore Cremasco | VIA DESGIOI 5, TRESCORE CREMASCO (CR) | `UE IT 03 1430` | vacuno menos de 60 d, caprino menos de 60 d | 17-JAN-25 |
+| MAGAZZINI GENERALI DI CREMA S.R.L. | Trescore Cremasco | VIA DE GASPERI 2, TRESCORE CREMASCO (CR) | `UE IT 03 104` | vacuno más de 60 d | 26-FEB-25 |
+| LATTERIA SOCIALE CA' DE' STEFANI SOCIETA' COOPERATIVA AGRICOLA | Vescovato | VIA PADANA INFERIORE 12, VESCOVATO (CR) | `UE IT 03 212` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-MAR-17 |
+
+## Productores de queso — contraste Grana Padano DOP del 2026-08-11
+
+Todas las plantas de Cremona publicadas en el [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) quedaron reconciliadas con candidatos existentes, incluidas las cuatro unidades de Latteria Soresina (`CR117`, `CR103`, `CR122` y la planta `BS655` asignada a Brescia) y la planta de Fattorie Cremona en Persico Dosimo (`CR106`). No produjo candidatos nuevos.

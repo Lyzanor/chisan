@@ -1,26 +1,29 @@
 # Candidatos — Medio Campidano
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Investigación ecológica del 2026-08-08, revisada el 2026-08-12. De los 20 operadores con certificado `ISSUED` en [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), siete se han resuelto en seis filas publicadas: Anna Maria Ardu, La Casa dell'Uovo, Su Massaiu —que reconcilia las certificaciones de Fernando y Alessandro Atzeni—, Sole di Sardegna, Bioels y Azienda Gentilis. Quedan 13 leads sin producto final público o sin identidad comercial suficientemente atribuible.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| 2 Effe Societa` Agricola Semplice | San Gavino Monreale | Via Mazzini, 45 09037 | producción — vegetales sin transformar | 2027-09-06 | [IT-BIO-005.380-0012465.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0012465.2025.001.pdf) |
-| ABIS FABRIZIO | Sanluri | VIA SASSARI, 22 09025 | producción — vegetales sin transformar | 2029-06-22 | [IT-BIO-004.380-0114514.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0114514.2026.001.pdf) |
-| ARDU ANNA MARIA | Lunamatrona | VIA PIER LUIGI DA PALESTRINA 09022 | producción — vegetales sin transformar | 2029-08-05 | [IT-BIO-004.380-0023532.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0023532.2026.002.pdf) |
-| ARU ELISABETTA | Villacidro | VIA CAGLIARI 67 09039 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2029-07-23 | [IT-BIO-009.380-0010067.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0010067.2026.001.pdf) |
-| ATZENI ALESSANDRO | Turri | LOCALITA' COARVIGU SNC 09020 | producción — vegetales sin transformar | 2029-05-26 | [IT-BIO-009.380-0012432.2026.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0012432.2026.003.pdf) |
-| ATZENI BRUNO | Turri | PIAZZA MARTIRI 27 09020 | producción — vegetales sin transformar | 2029-07-21 | [IT-BIO-007.380-0115196.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0115196.2026.001.pdf) |
-| ATZENI FERNANDO | Turri | LOCALITA' COARVIGU 09020 | producción — vegetales sin transformar | 2029-06-03 | [IT-BIO-009.380-0016632.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0016632.2026.001.pdf) |
-| ATZENI MARIANO | Guspini | VIA N MACHIAVELLI 29 09036 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-10 | [IT-BIO-004.380-0112193.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0112193.2026.001.pdf) |
-| ATZENI SPARTACO | Sardara | LOCALITA' PERDAS NIEDDAS SNC 09030 | producción — vegetales sin transformar | 2029-06-17 | [IT-BIO-004.380-0114411.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0114411.2026.001.pdf) |
-| AZIENDA AGRICOLA ORRU SOC.SEMPLICE | Serramanna | VIA PERU' 2 - 09038 - 09038 | producción — vegetales sin transformar | 2029-04-10 | [IT-BIO-007.380-0113022.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0113022.2026.001.pdf) |
-| AZIENDA AGRICOLA SOLE DI SARDEGNA DI LOCCI | Barumini | VIALE  SU NURAXI N.6 09021 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-09-24 | [IT-BIO-007.380-0048619.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0048619.2026.001.pdf) |
-| BIOAGRI SARDEGNA SOCIETA' SEMPLICE AGRICOLA | Guspini | LOCALITA' CORTE ARENA S N 09036 | producción — vegetales sin transformar | 2028-11-26 | [IT-BIO-004.380-0044846.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0044846.2025.002.pdf) |
-| BIOELS SOCIETA' SEMPLICE AGRICOLA | Pauli Arbarei | VIA SATTA 2 09020 | producción — vegetales sin transformar | 2029-06-18 | [IT-BIO-006.380-0038321.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0038321.2026.001.pdf) |
-| BOLLIRI DANIELE | Samassi | VIA PITAGORA  2 - 09030 - 09030 | producción — vegetales sin transformar | 2029-05-26 | [IT-BIO-007.380-0114017.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0114017.2026.001.pdf) |
-| BONSE S.R.L. SOCIETA' AGRICOLA | Samassi | VIA G M ANGIOY N.11 09030 | producción — vegetales sin transformar | 2029-04-17 | [IT-BIO-007.380-0113219.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0113219.2026.001.pdf) |
-| BRODU MARIO | Guspini | VIA V ALFIERI 9 09036 | producción — vegetales sin transformar | 2028-11-19 | [IT-BIO-004.380-0046674.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0046674.2025.001.pdf) |
-| CABIDDU GIORGIO | Samassi | LOC SA CANNERA IS ULMUS SNC 09030 | producción — vegetales sin transformar | 2029-06-10 | [IT-BIO-007.380-0114253.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0114253.2026.001.pdf) |
-| CASU MARCO SALOMONE | Gesturi | VIA REGINA ELENA 18 INT 2 09020 | producción — vegetales sin transformar | 2029-05-26 | [IT-BIO-007.380-0114026.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0114026.2026.001.pdf) |
-| CAULI SALVATORE | Samassi | VIA MUNICIPIO, 59 09030 | producción — vegetales sin transformar | 2029-04-28 | [IT-BIO-007.380-0113616.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0113616.2026.001.pdf) |
-| CERA GIAN LUIGI | Guspini | VIA CESARE PAVESE 2 09036 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-11-19 | [IT-BIO-004.380-0048859.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0048859.2025.001.pdf) |
+| Candidato | Comune provisional | Motivo pendiente |
+|---|---|---|
+| 2 Effe Società Agricola Semplice | San Gavino Monreale | El objeto social enumera muchas actividades posibles, pero solo se confirma cultivo de arroz y no una marca o producto final público. |
+| Abis Fabrizio | Sanluri | Cultivo de cereal, legumbre y oleaginosa sin producto final transformado, marca o venta pública. |
+| Atzeni Bruno | Turri | Se confirma comercio mayorista de cereal y legumbre, pero no producto final propio ni unidad de venta directa. |
+| Atzeni Mariano | Guspini | Ganadería bovina activa, sin carne, leche u otro producto final público atribuible. |
+| Atzeni Spartaco | Sardara | Se confirma cultivo hortícola, pero no producto concreto, marca, contacto o venta directa. |
+| Azienda Agricola Orru Soc. Semplice | Serramanna | Las búsquedas devuelven varias explotaciones Orrù distintas; no se pudo atribuir una oferta a esta sociedad. |
+| Bioagri Sardegna | Guspini | Certificación y parcelas activas, pero sin cultivo concreto, marca o producto público localizados. |
+| Bolliri Daniele | Samassi | Empresa agrícola activa de cultivos no permanentes, sin producto final, marca o canal público. |
+| Bonse SRL Società Agricola | Samassi | Se confirma actividad hortícola y proyecto agrisolar, pero no producto final o marca de venta pública. |
+| Brodu Mario | Guspini | Colabora como proveedor cerealista de Agrobass, pero no consta producto final propio ni canal directo atribuible. |
+| Cabiddu Giorgio | Samassi | Se confirma producción hortícola y de alcachofa, pero la comercialización aparece vinculada a una cooperativa y no a una marca propia. |
+| Casu Marco Salomone | Gesturi | Explotación ovina/caprina activa sin queso, carne u otro producto final público. |
+| Cauli Salvatore | Samassi | Actividad agrícola registral sin producto concreto, marca o venta directa localizados. |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+L'Armentizia Moderna, Caseificio Deidda, la unidad P.A.C. de Villacidro y Onnis Formaggi se aceptaron y pasaron al CSV con evidencia; CEN.TRA.L. ya estaba publicado como Central Formaggi. Lecis Maura y Muntoni Maria Morena solo conservan identidad registral o referencias antiguas, y la identidad pública actual de Sapori della Fattoria corresponde a su carnicería sin una oferta propia actual de queso localizable; las tres permanecen retenidas. El barrido parte del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/), limitado a establecimientos `AUTORIZZATA` con fabricación explícita de queso. Corte: 2026-08-11.
+
+| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
+|---|---|---|---|---|
+| LECIS MAURA | Samassi | LOCALITÀ CASIARONI | `UE IT 20 320` | No se localizó marca, contacto ni oferta quesera pública actual atribuible. |
+| MUNTONI MARIA MORENA | Villacidro | LOCALITÀ SANTU MIALI | `UE IT 20 324` | Solo se conserva la autorización registral de 2008 y referencias antiguas sin catálogo actual. |
+| SAPORI DELLA FATTORIA DI FAUSTO GIOI E BARBARA MARONGIU | Villacidro | LOCALITÀ PISCINA SANGUINI | `UE IT P5R47` | La identidad pública actual corresponde a la carnicería y no permite demostrar queso propio vigente. |

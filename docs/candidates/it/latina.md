@@ -52,3 +52,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Pane Dolci e Tradizioni di Sezze | Sabaudia | `Frutos secos` + `Dulces y repostería` + `Otros` | Crostata di visciole di Sezze, Pasta di mandorle di Sezze, Tozzetti, Biscotti di Sezze,Tortolo di Sezze, Ciambelle al vino, Ciambelle allacqua | 345/5876388, 348/8203102<br>dolcitradizionisezze@libero.it |
 | La Piana del Sciuscello di Paolo De Feo | Ventotene | `Legumbres y cereales` | lenticchia di Ventotene, ceci, cicerchia, zucchina con fiore | 06/0183520, 349/4207875<br>pdfeo1@alice.it<br>[web](https://www.lenticchiadiventotene.it) |
 | Azienda Lo Spicchio s.r.l. | Minturno | `Lácteos y quesos` | Caciocavallo di bufala (semplice o affumicato), ricotta di bufala, caciotta di bufala, burrata di bufala, provola di bufala | 0771/622250, 340/9249402<br>lospicchiosrl@libero.it |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+Lote revisado y cerrado el 2026-08-12: las trece unidades encajan y se publicaron. Doce se incorporaron como productores lácteos —F.lli Petrucci, la planta Granarolo de Aprilia, Casearia Casabianca, Caseificio Paolella, Caseificio La Fasana, Sapori Unici, Caseificio Lo Spicchio, las plantas diferenciadas de Francia en Pontinia y Sonnino, Caseificio Perseo, Azienda Agricola Circe y Caseificio Valle Amaseno— y la unidad de Antonella Romano se publicó bajo su identidad pública real, Sayonara il Gelato, en `Helados`. No se fusionaron plantas distintas ni quedan expedientes queseros de este barrido en retención.

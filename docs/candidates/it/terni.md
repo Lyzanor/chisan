@@ -1,67 +1,48 @@
-# Candidatos — Terni
+# Candidatos pendientes — Terni
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Reconciliación del 2026-08-12. Se revisaron los 20 certificados ecológicos de TRACES NT, las 16 pistas del registro regional/Unionbirrai y el barrido sanitario, que no produjo queserías candidatas en esta provincia. Se publicaron seis identidades: BirrAlfina–Tenuta San Giuseppe, Oleificio di Guardea, Il Cenobio, Agriturismo Santa Maria, Fattoria La Collina Incantata–Cantina Giovannini y Fattoria Biologica Walden. BirrAlfina y el certificado de Alessandro Achilli se reconciliaron en una sola ficha. Las altas se retiraron de esta nota y sus decisiones están en `data/evidence/it/umbria/terni.jsonl`.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ACHILLI ALESSANDRO | Orvieto | VIA NETTUNO 8 05018 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-08-27 | [IT-BIO-004.380-0012690.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0012690.2025.001.pdf) |
-| AGRICOLA GERGONE SRL-SOCIETA' AGRICOLA | Monteleone d'Orvieto | VOCABOLO GERGONE N 3 05017 | producción — vegetales sin transformar | 2028-10-13 | [IT-BIO-004.380-0108114.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0108114.2025.001.pdf) |
-| ANDREOLI MIRELLA | Amelia | VIA DELLE RIMEMBRANZE 76/A 05022 | producción — vegetales sin transformar | 2029-02-22 | [IT-BIO-004.380-0111620.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0111620.2026.001.pdf) |
-| AZIENDA AGRICOLA BIOLOGICA JANAS561012 | Porano | FRAZIONE COLLE OMBROSO 05010 | producción — vegetales sin transformar | 2029-03-11 | [IT-BIO-009.380-0053686.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0053686.2026.002.pdf) |
-| AZIENDA AGRICOLA POGGIO AZZUANO DI CARDUCCI ANDREA S.A.S | San Gemini | VIA ROMA N. 49 05029 | producción — vegetales sin transformar | 2027-02-14 | [IT-BIO-007.380-0064114.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0064114.2025.001.pdf) |
-| BALDONI SILVIA | Terni | STRADA DI PIEDIMONTE 15/B 05100 | producción — vegetales sin transformar | 2028-01-30 | [IT-BIO-007.380-0061431.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0061431.2025.002.pdf) |
-| BAUR HERMANN ANTON | Orvieto | PODERE S. CROCE SAN QUIRICO 23 05018 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-09-30 | [IT-BIO-009.380-0004533.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0004533.2025.001.pdf) |
-| BELTRAME LUCIA JANE | San Venanzo | Strada Vicinale Santa Cristina, snc 05010 | producción — vegetales sin transformar | 2028-10-12 | [IT-BIO-014.380-0039205.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0039205.2025.001.pdf) |
-| BISONNI GIORDANO | Terni | STRADA DI BOLZELLO 23/B 05100 | producción — vegetales sin transformar | 2028-07-04 | [IT-BIO-009.380-0062140.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0062140.2025.002.pdf) |
-| BRACONE ELISA | Narni | VOCABOLO ASPROMONTE QUINTO 4 - 05035 - 05035 | producción — vegetales sin transformar | 2029-02-09 | [IT-BIO-007.380-0111318.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0111318.2026.001.pdf) |
-| CAROLA PATRIZIA | Amelia | STR.DEL CIMITERO DI MONTECAMPANO, 24 05022 | producción — vegetales sin transformar | 2028-01-09 | [IT-BIO-007.380-0093355.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0093355.2025.002.pdf) |
-| COOPERATIVA OLEIFICIO CC.DD. DI GUARDEA SOC. COOP. AGRICOLA | Guardea | VIA CASAVECCHIA 23 05025 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-06-23 | [IT-BIO-009.380-0001924.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0001924.2025.001.pdf) |
-| COSTANTINI BRUNO | Terni | STRADA DI SAN CARLO, 29 05100 | producción — vegetales sin transformar | 2029-01-19 | [IT-BIO-007.380-0005757.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0005757.2026.001.pdf) |
-| DANIELLI RICCARDO | Allerona | VIA GUIDO ROSSA 11 - 05011 - 05011 | producción — vegetales sin transformar | 2029-02-27 | [IT-BIO-007.380-0008081.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0008081.2026.001.pdf) |
-| DE SIMONI SANTINA | Otricoli | STRADA FLAMINIA 2/C 05030 | producción — vegetales sin transformar | 2028-11-05 | [IT-BIO-007.380-0000761.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0000761.2025.001.pdf) |
-| FATTORIA S. EUFIZIO SOCIETA' AGRICOLA SEMPLICE | Narni | STRADA S. EUFIZIO, 3 05035 | producción — vegetales sin transformar | 2027-12-03 | [IT-BIO-007.380-0091920.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0091920.2025.001.pdf) |
-| FEDELI MICHELE | Orvieto | VIA DELLE ACACIE N 19 05018 | producción — vegetales sin transformar | 2028-02-18 | [IT-BIO-004.380-0095423.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0095423.2025.001.pdf) |
-| FOGLIANI LUIGI | Terni | Via E. Barbarasa, 11 05100 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-12-03 | [IT-BIO-014.380-0040909.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0040909.2025.002.pdf) |
-| IL CENOBIO AZIENDA AGRICOLA FORESTALE S.R.L. | Orvieto | Piazza dell'Erba, 4 05018 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-01-21 | [IT-BIO-014.380-0036147.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0036147.2026.001.pdf) |
-| IL MOLINO SOCIETA AGRICOLA SEMPLICE | Montecastrilli | VIA TENENTE PETRUCCI 5 05026 | producción — vegetales sin transformar | 2028-10-27 | [IT-BIO-004.380-0101164.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0101164.2025.002.pdf) |
+## Certificados ecológicos sin oferta pública suficiente
 
-## Categorías poco representadas — barrido del 2026-08-10
+El certificado acredita actividad y dirección, pero estos titulares aún carecen de una marca y producto alimentario público actual suficientemente atribuibles.
 
-16 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Aceite` 1, `Cerveza` 1, `Fruta y verdura` 1.
-
-Fuentes de este lote:
-
-- Regione Umbria — elenco regionale delle fattorie didattiche (open data) — <https://dati.regione.umbria.it/dataset/elenco-fattorie-didattiche>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-En 2 de estas filas el registro no declaraba el producto y se ha confirmado abriendo la web de la propia finca el 2026-08-10; la cita entre comillas es el texto que lo acredita y el enlace de la fila es esa web. Se revisaron una a una y se descartaron las que solo hablaban de paisaje, de talleres para visitantes o del desayuno del agriturismo.
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| SANTA MARIA | San Venanzo | `Aceite` | «l'Agriturismo Santa Maria Attiva/disattiva navigazione Home Il nostro Olio extra vergine d’oliva La nostra cucina Chi Siamo La Nostra Storia L’Azienda» | info@agrisantamaria.it<br>[web](https://www.agrisantamaria.it) |
-| BIRRALFINA | Orvieto | `Cerveza` | birra artigianale | [web](https://birralfina.com/) |
-| FATTORIA DIDATTICA ' LA COLLINA INCANTATA' | Narni | `Fruta y verdura` | «e colline umbre, valorizza i prodotti locali della tenuta Giovannini: ortaggi, carni e vini. La cucina propone piatti tradizionali umbri rivisitati, c» | info@fattoriacollinaincantata.com<br>[web](https://www.fattoriacollinaincantata.com) |
-
-### Sin producto declarado por el registro (13)
-
-El albo regional publica identidad, comune y contacto, pero no la familia de producto. Quedan como pista de descubrimiento: hay que fijar el producto antes de asignarles categoría.
-
-| Candidato | Comune | Contacto |
+| Candidato | Comune provisional | Motivo de retención |
 |---|---|---|
-| RES NOVA IL COLLE S.S. AGRICOLA | Acquasparta | resnova.ilcolle@gmail.com<br>[web](https://www.resnova-ilcolle.weebly.com) |
-| AZIENDA AGRICOLA VALLETIERI | Avigliano Umbro | annalisa.perelli@gmail.com |
-| AZIENDA AGRICOLA E AGRITURISTICA* 'FATTORIA LE CASETTE' | Baschi | lecasetteumbria@gmail.com |
-| FATTORIA BIOLOGICA WALDEN | Ficulle | agriturismowalden@gmail.com<br>[web](https://www.fattoriawalden.it) |
-| CASARﾷ SOC. AGRIC. S.S | Fornole Di Amelia | casara.soc.agricola@gmail.com |
-| ETIC ITALIA SOCIETﾷ AGRICOLA A.R.L. | Guardea | scrivi@per.umbria.it<br>[web](https://www.per.umbria.it) |
-| AZ. AGR. FONTANAPINTA | Narni | carissimibruno@gmail.com<br>[web](https://www.pasticciandonarni.it) |
-| AZIENDA IL COLLICELLO SOC. SEMPLICE AGRICOLA | Narni | info@ilcollicello.com<br>[web](https://www.ilcollicello.com) |
-| AZ.AGR.BEFANI KATIA | San Gemini | aziendaagricolabefanikatia@virgilio.it |
-| SOCIETﾷ AGRICOLA FORESTALE SAN VENANZO | San Venanzo | claudiadegasperi@gmail.com |
-| AZ AGR. PEGORARO LORENZO | Terni | danilofratini@libero.it |
-| FATTORIA DIDATTICA LA MELA ROSSA 2003 | Terni | lamelarossa@alice.it*<br>[web](https://www.lamelarossa.net) |
-| PASSACANTANDO GIANCARLO | Terni | giancarlo.passacantando@technital.it |
+| AGRICOLA GERGONE SRL | Monteleone d'Orvieto | I Gergoni sigue como alojamiento; la mención de vino y aceite localizada es secundaria y no fija una gama propia actual. |
+| ANDREOLI MIRELLA | Amelia | No apareció identidad comercial ni producto concreto atribuible. |
+| AZIENDA AGRICOLA BIOLOGICA JANAS561012 | Porano | Certificación vegetal vigente sin marca o catálogo público reconciliado. |
+| AZIENDA AGRICOLA POGGIO AZZUANO DI CARDUCCI ANDREA S.A.S. | San Gemini | La búsqueda devuelve sobre todo el topónimo; falta identidad comercial y oferta propia. |
+| BALDONI SILVIA | Terni | Certificación vegetal sin presencia pública alimentaria atribuible. |
+| BAUR HERMANN ANTON / Tenuta Santa Croce | Orvieto | El registro vitivinícola confirma al operador, pero no apareció una marca o gama pública actual de vino. |
+| BELTRAME LUCIA JANE | San Venanzo | No se localizó producto alimentario concreto ni canal público propio. |
+| BISONNI GIORDANO | Terni | Actividad agraria vigente sin marca y producto comercial reconciliados. |
+| BRACONE ELISA | Narni | Certificación vegetal reciente sin oferta pública atribuible. |
+| CAROLA PATRIZIA | Amelia | No apareció marca ni producto actual asociado con seguridad a la titular. |
+| COSTANTINI BRUNO | Terni | Certificación vegetal sin identidad comercial o gama alimentaria pública. |
+| DANIELLI RICCARDO | Allerona | No se localizó presencia pública suficiente para fijar producto y contacto. |
+| DE SIMONI SANTINA | Otricoli | Certificación vegetal sin marca o producto comercial concreto. |
+| FATTORIA S. EUFIZIO SOCIETA' AGRICOLA SEMPLICE | Narni | Se confirma cría Chianina, pero no una oferta pública actual de carne propia. |
+| FEDELI MICHELE | Orvieto | Certificación vegetal sin identidad y oferta pública reconciliadas. |
+| FOGLIANI LUIGI | Terni | El alcance certificado es amplio, pero no se pudo fijar el alimento realmente ofrecido. |
+| IL MOLINO SOCIETA AGRICOLA SEMPLICE | Montecastrilli | Solo se localizaron referencias empresariales genéricas, sin marca o producto vendible. |
+
+## Pistas del registro regional todavía abiertas
+
+| Candidato | Comune | Motivo de retención |
+|---|---|---|
+| Res Nova Il Colle | Acquasparta | La web actual describe talleres con huerto, miel, conserva, uva y olivo, pero no una gama propia ofrecida al público. |
+| Azienda Agricola Valletieri | Avigliano Umbro | Sin web o producto público atribuible localizado. |
+| Fattoria Le Casette | Baschi | Sin identidad comercial y oferta alimentaria pública suficientes. |
+| Casarà Società Agricola | Amelia | Sin canal público que permita fijar producto y unidad. |
+| Etic Italia Società Agricola | Guardea | El dominio localizado presenta una red territorial y no una gama propia atribuible a la sociedad. |
+| Azienda Agricola Fontanapinta | Narni | El enlace conduce a una actividad culinaria; falta reconciliarla con producto agrícola propio. |
+| Il Collicello | Narni | La web confirma punto de venta y mercados, pero no expone una lista recuperable que permita asignar categoría y productos sin inferencia. |
+| Azienda Agricola Befani Katia | San Gemini | Se confirma la explotación, no el producto alimentario concreto ofrecido. |
+| Società Agricola Forestale San Venanzo | San Venanzo | Sin marca o gama alimentaria pública localizada. |
+| Azienda Agricola Pegoraro Lorenzo | Terni | Sin contacto comercial o producto público atribuible. |
+| Fattoria Didattica La Mela Rossa 2003 | Terni | El dominio no permite confirmar una oferta propia actual. |
+| Passacantando Giancarlo | Terni | Sin identidad comercial o producto alimentario público localizado. |
+
+## Queserías
+
+El barrido sanitario nacional del 2026-08-11 no produjo unidades candidatas en Terni.

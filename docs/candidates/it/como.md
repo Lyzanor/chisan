@@ -46,3 +46,34 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | La Sorgente S.A. | Gravedona ed Uniti | `Lácteos y quesos` + `Carne` + `Miel` | Produzione di miele, castagne e di frutti di bosco lamponi, more, mirtilli. Confetture e conserve di frutta e di verdura.Allevamento di ovi-caprini, animali da cortile e api. Coltivazione e trasformazione dei prodotti az | 338.2394740<br>info@agriturismolasorgente.com<br>[web](http://www.agriturismolasorgente.com) |
 | Le Cicogne | Olgiate Comasco | `Lácteos y quesos` + `Carne` | Allevamento di bovini, caprini, suini e animali di bassa corte quali oche e anatre. Nella fattoria sono presenti varie specie di pappagalli, pavoni, fagiani e struzzi. | 031.944704<br>desyre23@live.it |
 | Azienda agricola biologica San Damiano | Cantù | `Miel` + `Conservas` + `Fruta y verdura` | L’azienda coltiva piccoli frutti, kiwi, amarene, fragole, orticole e produce confetture e miele. | 348.5432021<br>biologicasandamiano@gmail.com<br>[web](http://www.biologicasandamiano.com) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+24 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| LA QUINTALINA SOCIETA' AGRICOLA - SOCIETA' SEMPLICE | Anzano Del Parco | VIA PER MONGUZZO 46, ANZANO DEL PARCO (CO) | `UE IT S2K4L` | caprino menos de 60 d/más de 60 d | 11-JAN-19 |
+| LATTERIA SOCIALE VALTELLINA SOCIETA' COOPERATIVA AGRICOLA OPPURE | Bellagio | VIA A. VOLTA 36, BELLAGIO (CO) | `UE IT 03 441` | vacuno menos de 60 d/más de 60 d | 14-DEC-17 |
+| RUSCONI CARLO | Bene Lario | VIA PIO XI 9/B, BENE LARIO (CO) | `UE IT 03 316` | vacuno menos de 60 d/más de 60 d | 05-NOV-15 |
+| CASALE ROCCOLO DI BULGHERONI FABIO ATTILIO | Binago | VIA CASALE ROCCOLO 3, BINAGO (CO) | `UE IT W4B84` | caprino menos de 60 d/más de 60 d | 03-JAN-25 |
+| AZIENDA AGRICOLA GADDI DI RUIU GIACOMO LUIGI | Blessagno | LOC. LANFRANCONA -ALPE DI BLESSAGNO , BLESSAGNO (CO) | `UE IT 03 919` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-NOV-10 |
+| CASEIFICIO LA CONTADINA DI NACLERIO ANGELO | Cantù | VIA CESARE CANTU' 5, CANTÙ (CO) | `UE IT 03 1364` | vacuno menos de 60 d/más de 60 d | 05-OCT-15 |
+| AZ. AGRICOLA RUSCONI CARLO | Cavargna | ALPE TABANO , CAVARGNA (CO) | `UE IT 03 1890` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-DEC-11 |
+| CASEIFICIO MEDITERRANEO S.A.S. DI DIGREGORIO MICHELE E C. | Cermenate | VIA MONTESORDO 34, CERMENATE (CO) | `UE IT X3T72` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 24-JUL-15 |
+| MAFFIOLI SIMONA | Cusino | LOCALITA' ALPE ROZZO SNC, CUSINO (CO) | `UE IT 03 915` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 19-SEP-16 |
+| CASEIFICIO GERMANI S.R.L. | Faloppio | VIA DELLE VIGNE 2, FALOPPIO (CO) | `UE IT 03 67` | vacuno menos de 60 d, caprino menos de 60 d | 04-AUG-25 |
+| MARTINELLI MICHELE | Grandola Ed Uniti | LOCALITA' LOGONE - ALPE LOGONE SNC, GRANDOLA ED UNITI (CO) | `UE IT 03 910` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-15 |
+| MARTINELLI MICHELE | Grandola Ed Uniti | VIA BINADONE 3, GRANDOLA ED UNITI (CO) | `UE IT 03 1502` | vacuno menos de 60 d/más de 60 d | 05-NOV-15 |
+| ALBINI IVAN | Gravedona Ed Uniti | VIA ROMA 36, GRAVEDONA ED UNITI (CO) | `UE IT 03 476` | vacuno más de 60 d, caprino más de 60 d | 04-NOV-15 |
+| MORALLI MARIO | Gravedona Ed Uniti | LOCALITA' ALPE POSSOLO SNC, GRAVEDONA ED UNITI (CO) | `UE IT 03 784` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-OCT-21 |
+| LATTERIA DI SAN FEDELE S.A.S. DI GALLO SIMONA & C. | Lurate Caccivio | VIA PROVINCIALE 122 , LURATE CACCIVIO (CO) | `UE IT D4Z37` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-12 |
+| PIAZZI GIULIANO | Montemezzo | LOCALITA' ALPE PIAZZA SNC, MONTEMEZZO (CO) | `UE IT 03 904` | vacuno menos de 60 d/más de 60 d | 14-SEP-20 |
+| BOSSIO DIEGO | Peglio | LOCALITA' ALPE MOTTA SNC, PEGLIO (CO) | `UE IT 03 909` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 14-JUL-16 |
+| ALBINI IVAN | Plesio | LOCALITA' ALPE NESDALE SNC, PLESIO (CO) | `UE IT F7999` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 26-AUG-16 |
+| AGROBIOLOGICA VAL MULINI SOCIETA' AGRICOLA DEI FRATELLI BROGGI MA RZIO E GIORGIO SOCIETA' SEMPLICE | Ronago | VIA CAPPELLETTA SNC, RONAGO (CO) | `UE IT 03 1766` | vacuno menos de 60 d/más de 60 d | 07-OCT-15 |
+| LATTICINI CERNOBBIO S.R.L. | San Fermo Della Battaglia | VIA I MAGGIO 11, SAN FERMO DELLA BATTAGLIA (CO) | `UE IT 03 1511` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-OCT-15 |
+| AZIENDA AGRICOLA SAN MARTINO DI GALLI MARCO | San Siro | FRAZIONE SAN MARTINO SNC, SAN SIRO (CO) | `UE IT 03 1588` | caprino menos de 60 d/más de 60 d | 17-MAR-20 |
+| CASTELLAZZI RAFFAELE | Tremezzina | LOCALITA' ALPE DI OSSUCCIO SNC, TREMEZZINA (CO) | `UE IT 03 923` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 17-JAN-24 |
+| CIAPESSONI SOCIETA' AGRICOLA | Tremezzina | LOCALITA' ALPE DI LENNO SNC, TREMEZZINA (CO) | `UE IT 03 905` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JAN-24 |
+| MARIANI FABIO | Valsolda | LOC. BOLGIA - ALPE BOLGIA , VALSOLDA (CO) | `UE IT 03 907` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-DEC-11 |

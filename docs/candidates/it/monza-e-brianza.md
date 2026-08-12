@@ -1,49 +1,47 @@
 # Candidatos — Monza e Brianza
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión cerrada el 2026-08-12 para los lotes ecológico TRACES (corte 2026-08-08), categorías poco representadas (corte 2026-08-10) y la última autorización quesera pendiente (corte 2026-08-11). `Brusignone` aparecía en dos lotes y se consolidó en una sola unidad. Resultado de 27 identidades únicas: 12 publicadas en Monza e Brianza, 2 reasignadas a su provincia productiva real y 13 retenidas con una carencia explícita. Las decisiones publicadas y las reasignaciones están trazadas en `data/evidence/it/lombardia/monza-e-brianza.jsonl`.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ADA SOCIETA' AGRICOLA A.R.L. | Besana in Brianza | via lovati 29 20842 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2029-05-05 | [IT-BIO-007.380-0000047.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0000047.2026.001.pdf) |
-| ALBALUCE DI ELIANA SCARPA AZ. AGR. | Albiate | VIA PASUBIO, 1 20847 | preparación, producción — vegetales sin transformar, piensos | 2028-05-22 | [IT-BIO-015.380-0100765.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0100765.2025.001.pdf) |
-| APICOLTURA APIQU DI PAOLO CANATTIERI | Usmate Velate | VIA ALFRED NOBEL 2 20865 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura, vegetales sin transformar | 2029-02-04 | [IT-BIO-012.380-0006139.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0006139.2026.001.pdf) |
-| AZIENDA AGRICOLA BRUSIGNONE S.S. SOCIETA' AGRICOLA | Besana in Brianza | LOCALITA' CASCINA BRUSIGNONE SNC 20842 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-02-24 | [IT-BIO-007.380-0052355.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0052355.2025.003.pdf) |
-| Azienda Agricola Cascina Gallina di Daniele Gianni | Busnago | Via San Rocco, 28 20874 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2027-04-30 | [IT-BIO-005.380-0026786.2024.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0026786.2024.003.pdf) |
-| AZZOLINA ANTONINO ANDREA | Vimercate | VIA INDIPENDENZA 36 20871 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-06-27 | [IT-BIO-007.380-0031151.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0031151.2026.001.pdf) |
-| Bauccio Marco Antonio | Brugherio | Via Filippo Turati, 4 20861 | producción — vegetales sin transformar | 2028-10-19 | [IT-BIO-008.380-0088894.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0088894.2025.001.pdf) |
-| COLOSIO GIUSEPPE E SERGIO S.S. SOC. AGR. | Muggiò | V.LE SAN GIORGIO, 3- PARCO 20052 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2027-03-19 | [IT-BIO-007.380-0003126.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0003126.2025.001.pdf) |
-| CRITELLI ROSARIO | Renate | VIA GRAZIA DELEDDA 21 20838 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-11-26 | [IT-BIO-004.380-0110053.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0110053.2025.001.pdf) |
-| DELL'ORTO GIACOMO | Besana in Brianza | VIA SAN CLEMENTE 12 20842 | preparación, producción — ganado y productos ganaderos sin transformar, vino, animales y productos de acuicultura | 2027-06-12 | [IT-BIO-012.380-0079476.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0079476.2024.001.pdf) |
-| FEDELI FABIO | Vimercate | VIA VELASCA 8/9 20059 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2027-11-04 | [IT-BIO-007.380-0001190.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0001190.2026.001.pdf) |
-| GEA COOPERATIVA SOCIALE AGRICOLA A R.L. | Concorezzo | VIA LIBERTA' 132 20863 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-07-20 | [IT-BIO-007.380-0038377.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0038377.2026.001.pdf) |
-| GHEZZI FRANCESCO AZIENDA AGRICOLA VILLA LICIA | Bernareggio | VIA RISORGIMENTO C.NA S ANNA SNC 20881 | producción — animales y productos de acuicultura, vegetales sin transformar | 2027-04-23 | [IT-BIO-007.380-0074636.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0074636.2025.002.pdf) |
-| L'ARCOBALENO DI ROSSI STEFANIA | Besana in Brianza | VIA CROCE BENEDETTO 8 20842 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2027-06-14 | [IT-BIO-012.380-0079678.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0079678.2024.001.pdf) |
-| MATTIOLI LEDA | Seregno | Via Bottego, 23 20038 | producción — vegetales sin transformar | 2029-05-19 | [IT-BIO-009.380-0022930.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0022930.2026.002.pdf) |
-| ORTICOLTURA IL RICCIO DI  PEREGO MARGHERITA | Cavenago di Brianza | VIA PIAVE 12 20040 | producción — vegetales sin transformar | 2028-02-17 | [IT-BIO-006.380-0095258.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0095258.2025.001.pdf) |
-| PALOMBI MAURIZIO AZ AGR | Vedano al Lambro | VIA TRIESTE. 17 20854 | producción — vegetales sin transformar | 2028-07-13 | [IT-BIO-015.380-0082186.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0082186.2025.001.pdf) |
-| PEREGO SILVIA MARIA | Arcore | VIA GRAN SASSO 24 20043 | producción — vegetales sin transformar | 2029-03-16 | [IT-BIO-007.380-0011160.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0011160.2026.001.pdf) |
-| Riboldi Emanuele | Triuggio | VIA S Ambrogio 68 20844 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2027-08-19 | [IT-BIO-007.380-0012257.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0012257.2024.001.pdf) |
-| SABATINO ROSALBA | Biassono | VIA DELLE VIGNE N 35 20853 | producción — vegetales sin transformar | 2026-12-19 | [IT-BIO-004.380-0059394.2023.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0059394.2023.001.pdf) |
+Fuentes de apertura:
 
-## Categorías poco representadas — barrido del 2026-08-10
+- [TRACES NT — operadores ecológicos](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index)
+- [Regione Lombardia — fattorie didattiche](https://www.regione.lombardia.it/wps/wcm/connect/95ce99be-7f48-43c5-9f31-acb68bf20414/elenco%2BFD%2Baggiornato%2Bal%2B20.12.2024.pdf?CACHEID=ROOTWORKSPACE-95ce99be-7f48-43c5-9f31-acb68bf20414-pfzK4G4&MOD=AJPERES)
+- [Unionbirrai — soci produttori](https://www.unionbirrai.it/it/soci/mappa/)
+- [Ministero della Salute — establecimientos autorizados](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/)
 
-7 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+## Publicados en Monza e Brianza
 
-Reparto por categoría propuesta: `Cerveza` 2, `Fruta y verdura` 2, `Legumbres y cereales` 2, `Lácteos y quesos` 2, `Carne` 2, `Conservas` 1, `Miel` 2.
+| Origen | Productores incorporados |
+|---|---|
+| Ecológicos | Brusignone; Cascina Gallina; Miele Dell'Orto; GEA Cooperativa Sociale Agricola; Azienda Agricola Villa Licia; Orticoltura Il Riccio |
+| Fattorie y cerveza | LA Brewery; Birra del Carrobiolo; Fattoria Besana; La Botanica; Scuola Agraria del Parco di Monza |
+| Sanitario | Zero+4, clasificada por su actividad pública real como `Dulces y repostería`, no como quesería |
 
-Fuentes de este lote:
+`Orticoltura Il Riccio` y `Scuola Agraria del Parco di Monza` quedan honestamente como `parcial`: la identidad y producción son suficientes para publicar, pero la fuente comercial propia es limitada o la prueba explícita de venta no es reciente.
 
-- Regione Lombardia — elenco fattorie didattiche lombarde (open data) — <https://www.dati.lombardia.it/d/j25r-r7bk>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+## Reasignados
 
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+| Candidato | Destino y motivo |
+|---|---|
+| Miele Ada / ADA Società Agricola | Publicado en `cosenza.csv`: la dirección pública actual de la actividad es Via Fontanelle 98, Corigliano-Rossano (CS); Besana es dirección registral del operador. |
+| Albaluce di Eliana Scarpa | Publicado en `grosseto.csv`: los viñedos y la sede productiva oficial están en Sant'Antonio di Campagnatico (GR); Albiate es sede legal. |
 
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| LA Brewery | Bernareggio | `Cerveza` | birra artigianale | [web](https://labreweryshop.com/) |
-| CARROBIOLO | Monza | `Cerveza` | birra artigianale | [web](https://www.birradelcarrobiolo.it/) |
-| Besana S.S. | Besana Brianza | `Fruta y verdura` | Cavalli, Pony, ortaggi e frutta, animali da cortile | 338.2619691<br>fattoriabesana@gmail.com<br>[web](http://www.fattoriabesana.it) |
-| Fattoria Didattica ASINOteca | Bellusco | `Legumbres y cereales` | Produzione cerealicola, foraggera e zootecnica. | 338.2575426<br>asinoteca@gmail.com<br>[web](http://www.asinoteca.it) |
-| Brusignone | Besana Brianza | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda coltiva cereali e ortaggi che in parte vengono destinati al nutrimento degli animali ed in parte alla ristorazione. Si coltivano anche frutti di bosco, utilizzati sia per l’agriturismo sia per la trasformazione | 335.5975100<br>info@agricolabrusignone.com<br>[web](http://www.agricolabrusignone.com) |
-| La Botanica | Fraz. Birago - Lentate Sul Seveso | `Lácteos y quesos` + `Carne` + `Miel` | L'azienda produce latte alta qualità, yogurt, formaggi, gelato, sorbetto, ghiacciolo, farina di mais, gastronomia, pizza, salumi, miele, confetture, salse, mostarde, biscotti, pasticceria. I prodotti in vendita sono latt | 0362.560261<br>la.botanica@tiscali.it<br>[web](http://www.aziendaagricolabotanica.it) |
-| Scuola Agraria del Parco di Monza | Monza | `Miel` + `Legumbres y cereales` + `Fruta y verdura` | Cerealicolo con semina a rotazione annuale di vari cereali, orticolo con coltivazione di un orto biologico a scopo didattico e apistico con produzione e vendita di miele. | 039.2302979<br>fattoriadidattica@monzaflora.it<br>[web](http://www.monzaflora.it) |
+## Retenidos tras revisión
+
+Estos candidatos ya fueron contrastados; no deben publicarse sin resolver la carencia indicada.
+
+| Candidato | Carencia que mantiene la retención |
+|---|---|
+| Apicoltura Apiqu di Paolo Canattieri | Certificación vigente, pero no se localizó marca, oferta pública actual ni unidad productiva suficientemente corroboradas. |
+| Azzolina Antonino Andrea | Solo se pudo confirmar existencia agrícola y certificado; faltan producto, marca y canal público. |
+| Bauccio Marco Antonio | El certificado no permite identificar oferta alimentaria concreta ni explotación pública. |
+| Colosio Giuseppe e Sergio | Falta una fuente pública actual que detalle producto vendible y unidad productiva. |
+| Critelli Rosario | No se encontró identidad alimentaria pública; los resultados homónimos no permiten atribución segura. |
+| Fedeli Fabio | Actividad registral de cultivo de hortalizas, sin marca, producto público ni punto de venta corroborado. |
+| L'Arcobaleno di Rossi Stefania | Actividad registral de frutales, pero sin oferta pública, contacto o unidad comercial identificables. |
+| Mattioli Leda | El certificado no se pudo enlazar a una marca, producto o explotación pública. |
+| Palombi Maurizio | No se identificó una oferta alimentaria propia y actual ligada al operador certificado. |
+| Perego Silvia Maria | Se confirma cultivo de hortalizas, pero no marca, venta pública ni coordenada productiva fiable. |
+| Riboldi Emanuele | La actividad agrícola existe, pero la identidad candidata no se pudo separar con seguridad de Fratelli Riboldi/Vivai Riboldi ni asociar a un producto público concreto. |
+| Sabatino Rosalba | Sin identidad comercial, producto público ni unidad productiva corroborada más allá del certificado. |
+| Fattoria Didattica ASINOteca | La fuente describe producción cerealícola, forrajera y zootécnica, pero no una oferta alimentaria propia actual al público. |

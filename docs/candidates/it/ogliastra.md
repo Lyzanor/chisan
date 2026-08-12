@@ -1,43 +1,40 @@
 # Candidatos — Ogliastra
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+## Ecológicos — revisión del 2026-08-12
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ARESU LUISA | Loceri | VIA ROMA 60 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-04-08 | [IT-BIO-004.380-0067596.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0067596.2026.001.pdf) |
-| ARMENTI MARCO | Villagrande Strisaili | VIA CESARE BATTISTI 67 08049 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-11-12 | [IT-BIO-004.380-0023654.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0023654.2025.002.pdf) |
-| ARZU CLAUDIA | Talana | VIA NAZAURO SAURO N.20 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-06-09 | [IT-BIO-007.380-0024503.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0024503.2026.001.pdf) |
-| ARZU GIAN LUCA | Talana | VIA NUORO N.2 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-07-16 | [IT-BIO-007.380-0115095.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0115095.2026.001.pdf) |
-| ARZU GIOVANNI | Talana | LOC SANT'EFISIO SNC 08040 | producción — vegetales sin transformar | 2029-07-07 | [IT-BIO-004.380-0114864.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0114864.2026.001.pdf) |
-| ARZU SIMONA | Talana | VIA VITTORIO EMANUELE N°78 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-06-23 | [IT-BIO-007.380-0027917.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0027917.2026.001.pdf) |
-| ASONI PAMELA | Ilbono | VIA SU LACCIU 1/A 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-06-11 | [IT-BIO-004.380-0049417.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0049417.2025.002.pdf) |
-| AZIENDA AGRICOLA ' CONCOLEDDA ' SS | Villagrande Strisaili | VIA DEFFENU N.65 08049 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-06-29 | [IT-BIO-007.380-0028874.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0028874.2026.002.pdf) |
-| AZIENDA AGRICOLA BACCU LONGU DI ELEONORA CONTU S.S. | Tertenia | VIA NUORO 56/3 08047 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-08 | [IT-BIO-004.380-0023340.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0023340.2026.001.pdf) |
-| AZIENDA AGRICOLA LANCIONI FRANCA | Arzana | Via Don Giovanni Bosco, 39 08040 | producción — vegetales sin transformar | 2029-04-07 | [IT-BIO-014.380-0112866.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0112866.2026.001.pdf) |
-| AZIENDA AGRICOLA OLIANAS ALESSANDRO E FIGLIO SS | Villagrande Strisaili | VIA GRAZIA DELEDDA 79 08049 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-10 | [IT-BIO-004.380-0065081.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0065081.2026.001.pdf) |
-| AZIENDA AGRICOLA SU FENU SRLS | Talana | LOCALITA' SU FENU SNC 08040 | producción — vegetales sin transformar | 2029-07-01 | [IT-BIO-004.380-0114760.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0114760.2026.001.pdf) |
-| BALZANO DAVIDE | Arzana | VIA CASE SPARSE SNC 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-07-14 | [IT-BIO-007.380-0048888.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0048888.2026.001.pdf) |
-| BARRILI ANDREA | Villagrande Strisaili | VIA G ANJOI 34 08049 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-05-18 | [IT-BIO-004.380-0003866.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0003866.2026.001.pdf) |
-| BARRUI LUIGI ANTONIO | Tortolì | VIA LANUSEI 20 08048 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-11-05 | [IT-BIO-004.380-0059107.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0059107.2025.002.pdf) |
-| BETTARELLI ANTONELLA | Talana | VIA NAZARIO SAURO N.20 B SC 2 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-09 | [IT-BIO-007.380-0112073.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0112073.2026.001.pdf) |
-| BIDOTTI PIER PAOLO | Villagrande Strisaili | VIA DANTE N 38 08049 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-29 | [IT-BIO-004.380-0011760.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0011760.2026.001.pdf) |
-| BITTULERI SIMONE | Arzana | VIA PORTOGALLO 3 08040 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-03-01 | [IT-BIO-004.380-0034694.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0034694.2026.001.pdf) |
-| BRENDAS SALVATORE | Tertenia | LOC MAROSINI 3 08047 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-10-06 | [IT-BIO-004.380-0056251.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0056251.2025.001.pdf) |
-| BRUNDU FRANCESCO | Villagrande Strisaili | VICO 4 ATTILIO DEFFENU N.88 08049 | producción — ganado y productos ganaderos sin transformar | 2029-04-23 | [IT-BIO-007.380-0113446.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0113446.2026.001.pdf) |
+Lote de 20 operadores descubierto el 2026-08-08 en TRACES NT y revisado individualmente. Ninguno se publica solo por cultivar o criar: las búsquedas actuales no exponen marca alimentaria, producto propio vendido al público y contacto suficientes para convertirlos en filas útiles. Se mantienen como pistas:
 
-## Categorías poco representadas — barrido del 2026-08-10
+| Operador pendiente | Comune | Motivo concreto |
+|---|---|---|
+| ARESU LUISA | Loceri | Solo se confirma cultivo de frutos oleosos; falta aceite embotellado, marca y canal público. |
+| ARMENTI MARCO | Villagrande Strisaili | Se confirma explotación ganadera, pero no producto alimentario propio ni venta directa. |
+| ARZU CLAUDIA | Talana | Solo constan certificado y ficha empresarial, sin producto o identidad comercial. |
+| ARZU GIAN LUCA | Talana | Los resultados remiten a una pizzería homónima y no permiten atribuirle producto agrícola. |
+| ARZU GIOVANNI | Talana | No se localizó marca, producto propio ni contacto público de la explotación. |
+| ARZU SIMONA | Talana | Se confirma el actual criadero bovino, pero no leche o carne propia ofrecida al público. |
+| ASONI PAMELA | Ilbono | No se localizó una identidad comercial o producto alimentario verificable. |
+| AZIENDA AGRICOLA CONCOLEDDA S.S. | Villagrande Strisaili | Se confirma ganadería bovina de carne, pero no oferta propia ni canal público. |
+| AZIENDA AGRICOLA BACCU LONGU DI ELEONORA CONTU S.S. | Tertenia | Solo aparece en ayudas y certificación; falta producto, marca y contacto actuales. |
+| AZIENDA AGRICOLA LANCIONI FRANCA | Arzana | No se encontró producto alimentario propio o identidad pública reconciliable. |
+| AZIENDA AGRICOLA OLIANAS ALESSANDRO E FIGLIO S.S. | Villagrande Strisaili | Las fuentes administrativas confirman la explotación, no una oferta alimentaria al público. |
+| AZIENDA AGRICOLA SU FENU SRLS | Talana | Sociedad ganadera reciente; el objeto social no demuestra que ya venda alimentos propios. |
+| BALZANO DAVIDE | Arzana | Sin marca, producto o canal verificable; los resultados nominales son ambiguos. |
+| BARRILI ANDREA | Villagrande Strisaili | Solo constan ayudas y certificación, sin producto comercial identificable. |
+| BARRUI LUIGI ANTONIO | Tortolì | Se confirma horticultura activa, pero no marca, punto de venta o contacto del productor. |
+| BETTARELLI ANTONELLA | Talana | Se confirma ganadería bovina activa, pero no producto propio ofrecido al público. |
+| BIDOTTI PIER PAOLO | Villagrande Strisaili | Se confirma ganadería ovina y caprina, sin queso, carne o leche comercializados públicamente. |
+| BITTULERI SIMONE | Arzana | Se confirma explotación bovina de carne, pero no venta directa o marca alimentaria. |
+| BRENDAS SALVATORE | Tertenia | Se confirma el rebaño, pero no producto propio ni actividad comercial pública actual. |
+| BRUNDU FRANCESCO | Villagrande Strisaili | No se localizó una explotación alimentaria inequívoca más allá del certificado. |
 
-1 candidato para esta provincia, tomado de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+## Categorías poco representadas — revisión del 2026-08-12
 
-Reparto por categoría propuesta: `Cerveza` 1.
+El único candidato, Birrificio Keja, quedó incorporado al CSV con sus cervezas, fábrica de Bari Sardo, contacto y tienda online actual.
 
-Fuentes de este lote:
+## Productores de queso — revisión del 2026-08-12
 
-- Consorzio per la tutela del Pecorino Sardo DOP — caseifici — <https://www.pecorinosardo.it/consorzio/i-caseifici-produttori-della-dop>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
+Se incorporaron dos de las tres unidades sanitarias pendientes: Azienda Agricola F.lli Loi y Minicaseificio Cannas Antonio Onorato. Ambas conservan `parcial` porque la autorización es actual, pero la corroboración pública de sus productos no es suficientemente reciente para `verificado`.
 
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Birrificio Keja | Bari Sardo | `Cerveza` | birra artigianale | — |
+| Unidad pendiente | Comune | Motivo concreto |
+|---|---|---|
+| SCATTU ALBERTO — UE IT 20 305 | Gairo | La autorización sanitaria sigue vigente, pero no se encontró identidad comercial, queso concreto, contacto o actividad pública reciente. |

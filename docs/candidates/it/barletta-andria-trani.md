@@ -23,3 +23,60 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | FRATEPIETRO ILARIA | Andria | C.DA POZZELLE DELLE MURGE 76123 | producción — vegetales sin transformar | 2027-07-01 | [IT-BIO-007.380-0080764.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0080764.2025.002.pdf) |
 | FUMARULO NICOLA | Barletta | VIA CIOCE SEN D N 14 INT 9 76121 | producción — vegetales sin transformar | 2028-10-03 | [IT-BIO-006.380-0042849.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0042849.2025.002.pdf) |
 | GUGLIELMI FRANCESCORIANA | Andria | VIA GIUSEPPE GARIBALDI 46 76123 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-02-02 | [IT-BIO-012.380-0008488.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0008488.2026.001.pdf) |
+
+## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+50 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
+|---|---|---|---|---|---|
+| ASSELITI DOMENICO E DE FATO GRAZIELLA CASEIFICIO S.N.C. | Andria | VIA DA VILLA,8/10 ANG. VIA MORGIGNI , ANDRIA (BT) | `UE IT A6J1R` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-MAR-10 |
+| CASEIFICIO ANDRIESE S.R.L. | Andria | VIA N.NEMESIANO ZONA PIP SN, ANDRIA (BT) | `UE IT N7Q2Y` | vacuno menos de 60 d/más de 60 d | 23-MAY-16 |
+| CASEIFICIO DEL '90 S.R.L. | Andria | VIALE DON L. STURZO 59, ANDRIA (BT) | `UE IT 16 19` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-NOV-24 |
+| CASEIFICIO EUROPA DI ARUANNO ANGELO E NICOLA S.N.C. | Andria | VIA VALERUIO FLACCO 13-23, ANDRIA (BT) | `UE IT G2X3C` | vacuno menos de 60 d | 28-DEC-18 |
+| CASEIFICIO F.LLI SIMONE S.R.L. | Andria | VIA MERCADANTE 41 , ANDRIA (BT) | `UE IT 16 69` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-FEB-13 |
+| CASEIFICIO MATERA S.R.L. | Andria | VIA BOVIO 39, ANDRIA (BT) | `UE IT 16 24` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-JUN-26 |
+| CASEIFICIO PRIMO LATTE SOCIETA' A RESPONSABILITA' LIMITATA | Andria | VIA PUBLIO VARRONE ZONA PIP SN, ANDRIA (BT) | `UE IT S4X31` | vacuno menos de 60 d | 20-JUN-24 |
+| CASEIFICIO SACRO CUORE DI LORUSSSO RICCARDO E C. S.N.C. | Andria | VIA MURGE,46 , ANDRIA (BT) | `UE IT E123P` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-SEP-09 |
+| CASEIFICIO SANTA CROCE S.R.L. | Andria | VIA MARCANTONIO 15, ANDRIA (BT) | `UE IT Y2K4N` | vacuno menos de 60 d | 29-JUL-25 |
+| CASEIFICIO SAPOR LATTE DI NICOLA FORNELLI | Andria | VIALE P. NENNI 173, ANDRIA (BT) | `UE IT R636Z` | vacuno menos de 60 d | 20-DEC-22 |
+| DITTA CASEIFICIO S. SAVINO DEI FRATELLI BARILE | Andria | VIA CANOSA 19 , ANDRIA (BT) | `UE IT 16 260` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-FEB-13 |
+| F.LLI NUZZI DI NUZZI SALVATORE & C.S.N.C. | Andria | VIA MARCELLINO AMMIANO, ZONA PIP 13, ANDRIA (BT) | `UE IT T8H0E` | vacuno menos de 60 d/más de 60 d | 02-MAR-15 |
+| IEVA & RELLA S.N.C. DI IEVA GIOVANNI E RELLA TERESA | Andria | VIA PERUGIA ANGOLO VIA CAMPOBASSO 61, ANDRIA (BT) | `UE IT N5S4C` | vacuno menos de 60 d | 28-JAN-21 |
+| LACTE S.R.L. | Andria | VIA BARLETTA 198/C , ANDRIA (BT) | `UE IT H2M50` | vacuno más de 60 d | 11-MAR-13 |
+| LA PERLA BIANCA SRLS | Andria | VIA BARLETTA 58, ANDRIA (BT) | `UE IT W7B28` | vacuno menos de 60 d/más de 60 d | 19-JUN-17 |
+| L'AURORA S.R.L. | Andria | VIA VIA BARLETTA 235/237, ANDRIA (BT) | `UE IT 16 10` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-20 |
+| LE DELIZIE DEL LATTE DI FUCCI VINCENZO | Andria | VIA TRENTINO, 4, ANDRIA (BT) | `UE IT Q0H1Q` | vacuno menos de 60 d | 26-MAR-18 |
+| MATERA SEBASTIANO | Andria | VIA FERRUCCI 213, ANDRIA (BT) | `UE IT E8Q3C` | vacuno menos de 60 d | 28-DEC-18 |
+| MONTRONE S.P.A. | Andria | VIA CORATO 391, ANDRIA (BT) | `UE IT 16 353` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-FEB-15 |
+| OLANDA RICCARDO - CASEIFICIO - | Andria | VIA S. MARIA DEI MIRACOLI 150, ANDRIA (BT) | `UE IT 16 23` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-OCT-20 |
+| SANGUEDOLCE S.R.L. | Andria | VIA S.P. 130(ANDRIA-TRANI) KM 7+893, ANDRIA (BT) | `UE IT 16 384` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-MAR-26 |
+| CASEIFICIO ANDRIESE BONTA` GENUINA S.R.L. | Barletta | VIA BARBERINI 2 , BARLETTA (BT) | `UE IT 16 125` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-FEB-13 |
+| CASEIFICIO DI ABBASCIANO RICCARDO | Barletta | VIA STRANIERO 26-26/A , BARLETTA (BT) | `UE IT X2Y0M` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-MAY-09 |
+| CASEIFICIO DONNA CELESTE DI ROCIOLA ELEONORA | Barletta | VIA ROMA 169, BARLETTA (BT) | `UE IT R493C` | vacuno menos de 60 d | 29-SEP-16 |
+| CASEIFICIO FATTA E MANGIATA DEI F.LLI CASSATELLA EMANUELE, CASSAT ELLA ANGELO E CASSATELLA MIRKO S.N | Barletta | VIA F. BORROMINI 1, BARLETTA (BT) | `UE IT F5H6T` | vacuno menos de 60 d | 10-APR-26 |
+| CASEIFICIO GL GENUINITA' DI LATTE DI GAMBARROTA RUGGIERO | Barletta | VIA FALCONE BORSELLINO 55/A-55B, BARLETTA (BT) | `UE IT H8T24` | vacuno menos de 60 d | 22-JUL-24 |
+| CASEIFICIO RELLA DI POLICASTRO ANTONELLA | Barletta | VIA PRASCINA 93, BARLETTA (BT) | `UE IT Q5M83` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-FEB-24 |
+| DITTA CASEIFICIO ANDRIESE BONTA` GENUINA SRL | Barletta | VIA ANDRIA 131 , BARLETTA (BT) | `UE IT 16 53` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-FEB-13 |
+| DITTA IL BOCCONCINO SRL | Barletta | VIA VENOSA 15 , BARLETTA (BT) | `UE IT 16 290` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-FEB-13 |
+| GIAGNOTTI S.N.C. DI NICOLA E FABRIZIO PASQUALE GIAGNIOTTI | Barletta | VIA GORIZIA N. 2-4 , BARLETTA (BT) | `UE IT U135X` | vacuno menos de 60 d | 16-FEB-12 |
+| LE BONTA' DEL LATTE S.A.S. DI ZAGARIA M. & C. | Barletta | VIA PADRE RAFFAELE DI BARI 23, BARLETTA (BT) | `UE IT D5A44` | vacuno menos de 60 d/más de 60 d | 22-MAR-23 |
+| PICCOLI PIACERI S.R.L. | Barletta | VIA TRANI INT. 2 314, BARLETTA (BT) | `UE IT C169H` | vacuno menos de 60 d | 08-JAN-26 |
+| CASEIFICIO VOGLIA DI LATTE S.R.L. | Bisceglie | VIA RUVO 93, BISCEGLIE (BT) | `UE IT 16 389` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-FEB-15 |
+| DELIZIE DEL LATTE DI MARTINA NICOLA | Bisceglie | VIA M. GIULIANI 11/13, BISCEGLIE (BT) | `UE IT Z5A37` | vacuno menos de 60 d | 19-JUL-16 |
+| LE DELIZIE CASEARIE S.R.L. | Bisceglie | VIA BERLINO 22/D-E, BISCEGLIE (BT) | `UE IT H7N5J` | vacuno menos de 60 d | 11-NOV-19 |
+| QUACQUARELLI TERESA SILVIA | Bisceglie | CORSO DR. SERGIO COSMAI 17, BISCEGLIE (BT) | `UE IT F810M` | vacuno menos de 60 d | 28-DEC-18 |
+| TAMBONE SRL | Bisceglie | VIA ATENE,55 , BISCEGLIE (BT) | `UE IT 16 418` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-SEP-09 |
+| CASEIFICIO BACIO DI LATTE DI FERDINANDO E ANTONIO CELENTANO S.N.C | Canosa Di Puglia | VIA SERG.MAGG. NICOLA CAPURSO 2/4, CANOSA DI PUGLIA (BT) | `UE IT 16 269` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-MAY-16 |
+| CASEIFICIO SAN SAVINO DEI F.LLI MICHELE E GIUSEPPE BARILE S.N.C. | Canosa Di Puglia | VIA CORSICA, 29/D , CANOSA DI PUGLIA (BT) | `UE IT X8K7B` | vacuno menos de 60 d | 30-NOV-10 |
+| DITTA CASEIFICIO CENTRONE S.R.L. | Canosa Di Puglia | VIA BOVIO 118 B , CANOSA DI PUGLIA (BT) | `UE IT 16 67` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-FEB-13 |
+| AZIENDA AGRICOLA ROSELLI SABINO DI ROSELLI ANTONIO | Minervino Murge | CONTRADA IAMBRENGHI SN, MINERVINO MURGE (BT) | `UE IT 16 301` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JUL-17 |
+| FORENZA MICHELE | Minervino Murge | CONTRADA MULA SANA sn, MINERVINO MURGE (BT) | `UE IT F295H` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-SEP-19 |
+| LATTERIA AL CORSO DI TEDONE ALDINO | Minervino Murge | VIALE DI VITTORIO, 85 , MINERVINO MURGE (BT) | `UE IT U5D5B` | vacuno menos de 60 d | 07-APR-10 |
+| CASEIFICI DEL RE DI PAPA GIUSEPPE E TEDESCO MICHELE S.N.C. | San Ferdinando Di Puglia | VIA SALANDRA N. 3/A , SAN FERDINANDO DI PUGLIA (BT) | `UE IT V1R4M` | vacuno menos de 60 d | 27-MAY-10 |
+| CASEIFICIO BACIO DI LATTE DI CELENTANO FERDINANDO | San Ferdinando Di Puglia | VIA FOGGIA sn, SAN FERDINANDO DI PUGLIA (BT) | `UE IT L2051` | vacuno menos de 60 d | 30-SEP-19 |
+| ZIANNI DOMENICO | Spinazzola | VIA IMBRIANI 45, SPINAZZOLA (BT) | `UE IT D4E2S` | vacuno más de 60 d | 08-SEP-22 |
+| CASEIFICIO FAVOLA BIANCA DI RELLA MICHELE | Trani | VIA GATTOLA MONDELLI, 47 , TRANI (BT) | `UE IT X597B` | vacuno menos de 60 d | 27-MAY-10 |
+| GIORGIO ROSA | Trani | VIA BACHELET 41/43, TRANI (BT) | `UE IT X5C4H` | vacuno menos de 60 d | 28-MAY-15 |
+| LE BONTA' CASEARIE S.R.L. DI PETRUZZELLI | Trani | VIA NIGRO ANG. VIA UMBERTO 41/43, TRANI (BT) | `UE IT W705G` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAR-24 |
+| SOLDANO VINCENZO | Trinitapoli | VIA F.LLI CERVI ,154 , TRINITAPOLI (BT) | `UE IT 16 393` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-08 |
