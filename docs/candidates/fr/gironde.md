@@ -32,30 +32,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
 
-Quedan **13 candidatos nuevos** en este corte: 2 perfiles de explotación, 3 unidades manufactureras adicionales y 8 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+Lote cerrado el 2026-08-12: las 13 señales quedaron resueltas en **11 unidades productivas publicadas** (8 `verificado` y 3 `parcial`) y 2 perfiles sin ficha separada. `Lacampagne` es el lugar colectivo donde trabaja OlaVache y se consolidó bajo esa unidad quesera; `Les Délices du Médoc` fue descartado porque el propio perfil atribuye sus quesos a otros productores. Oh Lait Lait se mantiene activo pese a un directorio contradictorio sobre una dirección anterior: su web vigente y el registro sanitario de 2026 sostienen la unidad actual. Domaine du Grand Brignac, Château Pouly y GAEC Iriberri quedan parciales por falta de un canal público controlado que permita completar gama y contacto.
 
-### Perfiles de explotación con señal explícita de queso
-
-| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
-|---|---|---|---|---|---|---|
-
-### Unidades manufactureras adicionales (DGAL × SIRENE)
-
-| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
-|---|---|---|---|---|---|
-| DESARNAULT AMANDA - OLAVACHE | Aillas | 1 LACAMPAGNE 33124 | `92836957800010` | dérogation | [SIREN 928369578](https://annuaire-entreprises.data.gouv.fr/entreprise/928369578) |
-| OH LAIT LAIT | Bordeaux | 52 RUE DE LA COMPAGNIE DU MIDI 33800 | `98752823900013` | dérogation | [SIREN 987528239](https://annuaire-entreprises.data.gouv.fr/entreprise/987528239) |
-| FROMAGERIE BEAUSEJOUR | Gironde-Sur-Dropt | 1564 RTE DE BEAUSEJOUR. 33190 | `79876046800016` | agrément UE `33.187.216` | [SIREN 798760468](https://annuaire-entreprises.data.gouv.fr/entreprise/798760468) |
-
-### Explotaciones bio adicionales con producción `Fromages`
-
-| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
-|---|---|---|---|---|---|---|
-| BONNAUD Michael | Domaine De Montagne | Capian | DOMAINE DE MONTAGNE 457 Montagne 33550 | actividad | 2026 | [nº Bio 150446](https://annuaire.agencebio.org/operateur/150446) |
-| EARL LA FERME DES JAROUILLES | EARL LA FERME DES JAROUILLES | Coutras | Num 36 LES LANDES 33230 | actividad | 2025 | [nº Bio 117037](https://annuaire.agencebio.org/operateur/117037) |
-| Domaine du grand brignac | Wojciechowski Alexandra | Donnezac | 4 lieudit Grand brignac 33860 | actividad | 2026 | [nº Bio 66949](https://annuaire.agencebio.org/operateur/66949) |
-| CHATEAU POULY VAN DER AREND Paulus | GAEC AGREE CHATEAU POULY | Gornac | 1 poulit nord 33540 | actividad | 2026 | [nº Bio 181948](https://annuaire.agencebio.org/operateur/181948) |
-| IRIBERRI IRIBERRI Txomin et Pauline | GAEC IRIBERRI | Labescau | 1 Peberin 33690 | actividad | 2026 | [nº Bio 147213](https://annuaire.agencebio.org/operateur/147213) |
-| La petite ferme d'aurore | Labrue Aurore | Saint Antoine Sur L'Isle | LA PETITE FERME D'AURORE 534 route de la double 33660 | actividad | 2026 | [nº Bio 54778](https://annuaire.agencebio.org/operateur/54778) |
-| GAEC LA GRANDE CHAUX | GAEC LA GRANDE CHAUX | Saint Christophe De Double | GUTTIERREZ Eric et Elisabeth 26 La Grande Chaux 33230 | actividad | 2026 | [nº Bio 110109](https://annuaire.agencebio.org/operateur/110109) |
-| CHATEAU LE PIS - MAZIERE | EARL CHATEAU LE PIS | Taillecavat | 1 PIECE NEUVE 33580 | actividad | 2025 | [nº Bio 130386](https://annuaire.agencebio.org/operateur/130386) |
+No quedan señales de queso abiertas de este corte en Gironde.

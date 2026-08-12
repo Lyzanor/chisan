@@ -28,29 +28,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 ## Productores de queso — barrido nacional del 2026-08-12
 
-Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
-
-Quedan **10 candidatos nuevos** en este corte: 2 perfiles de explotación, 2 unidades manufactureras adicionales y 6 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
-
-### Perfiles de explotación con señal explícita de queso
-
-| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
-|---|---|---|---|---|---|---|
-
-### Unidades manufactureras adicionales (DGAL × SIRENE)
-
-| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
-|---|---|---|---|---|---|
-| SCMB CAVE DU FROMAGER - CAVE DU FROMAGER | Bollene | 2 AV PASTEUR 84500 | `88438945300017` | dérogation | [SIREN 884389453](https://annuaire-entreprises.data.gouv.fr/entreprise/884389453) |
-| FROMAGERIE LE VENTOUX | Vedene | ZACDE CHALANCON 1 107 ALLEE LEON FOUCAULT 84270 | `35341626600016` | agrément UE `84.141.002` | [SIREN 353416266](https://annuaire-entreprises.data.gouv.fr/entreprise/353416266) |
-
-### Explotaciones bio adicionales con producción `Fromages`
-
-| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
-|---|---|---|---|---|---|---|
-| BIRON GEOFFREY | Les Bannes du Ventoux | Brantes | 69 ROUTE DU COL DE FONTAUBE 84390 | actividad | 2026 | [nº Bio 67279](https://annuaire.agencebio.org/operateur/67279) |
-| ESAT TOURVILLE COALLIA | COALLIA | Caseneuve | MOULIN DES RAMADES 84750 | actividad | 2026 | [nº Bio 115186](https://annuaire.agencebio.org/operateur/115186) |
-| Francois GREGOIRE | Francois GREGOIRE | Goult | 2204 chm des la Bégude 84220 | actividad | 2026 | [nº Bio 115290](https://annuaire.agencebio.org/operateur/115290) |
-| LA BOURGUETTE ESAT LE GRAND REAL | ASSOCIATION LA BOURGUETTE - SIEGE SOCIAL | La Bastidonne | 722 quartier les Gourguettes 84120 | actividad | 2026 | [nº Bio 148118](https://annuaire.agencebio.org/operateur/148118) |
-| gabrielle durin | LE PETIT LUBERON | Lauris | LA TUILLERE 84360 | actividad | 2026 | [nº Bio 154638](https://annuaire.agencebio.org/operateur/154638) |
-| JOFFRE MARTINE NATHALIE | JOFFRE MARTINE NATHALIE | Villars | 330 RTE DE LA RIAILLE HAMEAU LES EYMIEUX 84400 | actividad | 2026 | [nº Bio 46671](https://annuaire.agencebio.org/operateur/46671) |
+Revisión cerrada el 2026-08-12. Las ocho señales pendientes de esta sección se resolvieron y se retiraron de la cola: siete unidades se publicaron con su identidad comercial y datos vigentes; Cave du Fromager se descartó porque su catálogo público actual atribuye los quesos a productores de otros departamentos y no acredita una elaboración alimentaria propia, pese al código registral de fabricación. Las decisiones y fuentes quedan en el ledger de evidencia de Vaucluse.

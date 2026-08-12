@@ -37,34 +37,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
 
-Quedan **15 candidatos nuevos** en este corte: 1 unidad manufacturera adicional y 14 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
+Lote cerrado el 2026-08-12: las 15 señales se corresponden con **15 unidades productivas publicadas** (13 `verificado` y 2 `parcial`). SCEA des Thermes y GAEC Vigneaux quedan parciales porque el registro vigente sostiene la actividad quesera y la ubicación, pero no se encontró un canal público propio suficiente para completar responsablemente especie, gama o contacto. En el resto se reconciliaron los nombres públicos —entre ellos La Chèvre et le Chou para GAEC Méliet y Les Chèvres du Bouet para Charlotte Garres— y solo se marcaron ventas online cuando había pedido activo comprobable.
 
-### Perfiles de explotación con señal explícita de queso
-
-| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
-|---|---|---|---|---|---|---|
-
-### Unidades manufactureras adicionales (DGAL × SIRENE)
-
-| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
-|---|---|---|---|---|---|
-| LES PETITES LOUCHES | Ornezan | CHE DU HOURCOT 32260 | `90841768600015` | agrément UE `32.302.001` | [SIREN 908417686](https://annuaire-entreprises.data.gouv.fr/entreprise/908417686) |
-
-### Explotaciones bio adicionales con producción `Fromages`
-
-| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
-|---|---|---|---|---|---|---|
-| EARL LA FERME AU CARRAU | EARL LA FERME AU CARRAU | Aurimont | 890 CHEMIN DE CARRAU 32450 | actividad | 2026 | [nº Bio 305031](https://annuaire.agencebio.org/operateur/305031) |
-| DU MONASTERE STE MARIE DE BOULAUR DESJOBERT Maylis | MONASTERE SAINTE MARIE DE BOULAUR | Boulaur | 56 rue de l'Abbaye 32450 | actividad | 2026 | [nº Bio 144496](https://annuaire.agencebio.org/operateur/144496) |
-| LA FERME DU TOUJA EMONET-DENAND Amélie | LA FERME DU TOUJA | Cazaubon | Le Touja 135 ROUTE DE CAMPAGNE 32150 | actividad | 2026 | [nº Bio 110909](https://annuaire.agencebio.org/operateur/110909) |
-| GAEC MELIET | GAEC MELIET | Laas | MELIET 32170 | actividad | 2025 | [nº Bio 106465](https://annuaire.agencebio.org/operateur/106465) |
-| MARIE VANDEVILLE - LA FERME DE MANESTIN | VANDEVILLE MARIE LUCILE | Monpardiac | LE CASTERA 32170 | actividad | 2026 | [nº Bio 48847](https://annuaire.agencebio.org/operateur/48847) |
-| La ferme aux Clochettes | Morgane NOEL | Monties | 424 route de Monties 32420 | actividad | 2025 | [nº Bio 24336](https://annuaire.agencebio.org/operateur/24336) |
-| LA FERME DU TEMPS LONG - NGUYEN HUU LOIC | NGUYEN HUU LOIC PHILIPPE | Monties | lieu dit DUCASSE 32420 | actividad | 2025 | [nº Bio 33456](https://annuaire.agencebio.org/operateur/33456) |
-| EARL LA FERME DU SERRE | LA FERME DU SERRE | Ordan Larroque | 20 Impasse du Serre 32350 | actividad | 2025 | [nº Bio 51047](https://annuaire.agencebio.org/operateur/51047) |
-| DES THERMES SERRE Georges | SCEA DES THERMES | Pavie | La Plaine 32550 | actividad | 2026 | [nº Bio 116909](https://annuaire.agencebio.org/operateur/116909) |
-| GAEC LA FERME DU RAGUET | GAEC LA FERME DU RAGUET | Riguepeu | Le Raguet 32320 | actividad | 2026 | [nº Bio 110900](https://annuaire.agencebio.org/operateur/110900) |
-| FERME GUILLOT | FERME GUILLOT | Saint Arailles | Guillot 32350 | actividad | 2026 | [nº Bio 145630](https://annuaire.agencebio.org/operateur/145630) |
-| LA FERME MAPALOU Anne GESTA | GESTA ANNE MICHELLE | Samatan | Route de l'Isle Jourdain - La Houme 32130 | actividad | 2026 | [nº Bio 7092](https://annuaire.agencebio.org/operateur/7092) |
-| GARRES CHARLOTTE | GARRES CHARLOTTE | Scieurac Et Floures | Lieu-dit Le Bouet 32230 | actividad | 2026 | [nº Bio 7275](https://annuaire.agencebio.org/operateur/7275) |
-| GAEC VIGNEAUX | GAEC VIGNEAUX | Seissan | 1520 route de Simorre Lieu dit Vigneaux 32260 | actividad | 2025 | [nº Bio 120443](https://annuaire.agencebio.org/operateur/120443) |
+No quedan señales de queso abiertas de este corte en Gers.

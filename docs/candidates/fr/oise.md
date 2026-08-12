@@ -38,31 +38,4 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 ## Productores de queso — barrido nacional del 2026-08-12
 
-Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
-
-Quedan **10 candidatos nuevos** en este corte: 6 perfiles de explotación, 1 unidades manufactureras adicionales y 3 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
-
-### Perfiles de explotación con señal explícita de queso
-
-| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
-|---|---|---|---|---|---|---|
-| Ferme de la Badrouille | Lydie BELLU | Buicourt | 4 rue de Gournay / 60380 Buicourt | Cette petite ferme familiale vous propose de succulents fromages de chèvre aux diverses saveurs. Elevage caprins de 90 chèvres situé à 20 kms à l'Ouest… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/oise/buicourt/ferme/ferme-de-la-badrouille/176816) |
-| Ferme des 4 saisons | Mélanie & Grégory BONNEMENT-LOIRE | Chevrieres | 597 rue de Beauvais / 60710 Chevrières | Notre exploitation située dans l'Oise près de Compiègne, est agréée bienvenue à la ferme en tant que ferme de découverte, ferme pédagogique. Nous vous… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/oise/chevrieres/ferme/ferme-des-4-saisons/320650) |
-| Ferme de la chapelle St Jean | Anselme BEAUDOIN | Gremevillers | 2, rue Alexis Maillet / 60380 Grémévillers | Venez gouter nos délicieux fromages, maintes fois récompensés, au sein de notre ferme familiale, ça vaut le détour.… | agrément UE `60.288.031` · [SIREN 920861531](https://annuaire-entreprises.data.gouv.fr/entreprise/920861531) | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/oise/gremevillers/ferme/ferme-de-la-chapelle-st-jean/150703) |
-| Ferme de la Vieille Rue | Bruno LUCIEN | Lachapelle Aux Pots | 18, RUE DES SABLES ROUGES / 60650 Lachapelle-aux-Pots | En plein coeur du Pays de Bray, nous transformons le lait de nos Montbéliardes en véritables produits laitiers fermiers. La ferme est une exploitation… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/oise/lachapelle-aux-pots/ferme/ferme-de-la-vieille-rue/517073) |
-| La Chèvrerie des Vignes | Emmanuel BROUAYE | Le Mesnil Saint Firmin | 21 rue d'en haut / 60120 Le Mesnil-Saint-Firmin | Découvrez les sensations fromagères de la Chèvrerie des Vignes sur notre site chevreriedesvignes.fr Depuis 20 ans, Emmanuel Brouaye agriculteur,éleveur,fromager… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/oise/le-mesnil-saint-firmin/ferme/la-chevrerie-des-vignes/666907) |
-| EARL La Barb'iquette Chèvrerie du Plessier sur Bulles | SEBASTIEN BARBIER | Le Plessier Sur Bulles | Chemin de Coiseaux / 60130 Le Plessier-sur-Bulles | Sébastien et Véronique éleveurs et producteurs de fromage de chèvres et brebis dans l'Oise. Nous vous recevons dans notre… | — | [perfil](https://www.bienvenue-a-la-ferme.com/fr/hauts-de-france/oise/le-plessier-sur-bulles/ferme/earl-la-barb-iquette-chevrerie-du-plessier-sur-bulles/517040) |
-
-### Unidades manufactureras adicionales (DGAL × SIRENE)
-
-| Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
-|---|---|---|---|---|---|
-| SAS FROMAGERIE JEAN-MARIE BEAUDOIN | Villers-Sur-Auchy | ORSIMONT 6 RUE DU GRAND CHEMIN 60650 | `85214292600017` | dérogation | [SIREN 852142926](https://annuaire-entreprises.data.gouv.fr/entreprise/852142926) |
-
-### Explotaciones bio adicionales con producción `Fromages`
-
-| Nombre público | Razón social | Commune | Dirección | Tipo de ubicación | Último control | Fuente |
-|---|---|---|---|---|---|---|
-| GAEC LES AURIOLS | GAEC LES AURIOLS | Compiegne | 8 rue Nicephore Niepce 60200 | actividad | 2025 | [nº Bio 160093](https://annuaire.agencebio.org/operateur/160093) |
-| DELARGILLIERE VINCENT HUBERT MICHEL | DELARGILLIERE VINCENT HUBERT MICHEL | Pierrefitte-En-Beauvaisis | 29 RUE DU BRAY 60112 | actividad | 2026 | [nº Bio 131604](https://annuaire.agencebio.org/operateur/131604) |
-| BEAUDOIN ISAAC | BEAUDOIN ISAAC | Villers-Sur-Auchy | 1 RUE DE LA SOURCE 60650 | actividad | 2026 | [nº Bio 68887](https://annuaire.agencebio.org/operateur/68887) |
+Revisión cerrada el 2026-08-12. Las diez señales se resolvieron y se retiraron de la cola: ocho unidades se publicaron con su identidad comercial y datos vigentes; GAEC Les Auriols se descartó porque la unidad láctea homónima está en Sigoyer (Hautes-Alpes), e Isaac Beaudoin porque no se encontró una oferta alimentaria pública propia distinta de la Fromagerie Jean-Marie Beaudoin. Las decisiones y fuentes quedan en el ledger de evidencia de Oise.
