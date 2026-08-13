@@ -36,34 +36,23 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
 
-Quedan **118 candidatos nuevos** en este corte: 7 perfiles de explotación, 101 unidades manufactureras adicionales y 10 explotaciones bio adicionales. Son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
-
-### Perfiles de explotación con señal explícita de queso
-
-| Candidato | Responsable | Commune | Dirección publicada | Señal pública | Cruce oficial | Ficha |
-|---|---|---|---|---|---|---|
+Quedan **86 candidatos nuevos** en este corte: 76 unidades manufactureras y 10 explotaciones bio. La cifra original incluía por error siete perfiles de explotación sin filas reales; además, veinticinco fruitières con fabricación y venta directa confirmadas se publicaron el 2026-08-13 y se retiraron de la cola. Las restantes son señales de descubrimiento, no altas: antes de publicar hay que confirmar identidad pública, fabricación propia actual, commune productiva y contacto; la clasificación registral o sanitaria no demuestra por sí sola una oferta al público ni venta online.
 
 ### Unidades manufactureras adicionales (DGAL × SIRENE)
 
 | Unidad declarada | Commune | Dirección de la unidad | SIRET | Registro sanitario | Fuente empresarial |
 |---|---|---|---|---|---|
-| SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DU PAYS DE COURBET | Amancey | ZONE INDUSTRIELLE 30 SOUS LE BOIS 25330 | `77831091200044` | agrément UE `25.015.003` | [SIREN 778310912](https://annuaire-entreprises.data.gouv.fr/entreprise/778310912) |
 | FROMAGERIE BADOZ | Amathay-Vesigneux | LD MAILLOT 25330 | `39328005200068` | agrément UE `25.016.002` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
 | SOC COOP AGRIC FROM FRUIT ARC S-S CICON | Arc-Sous-Cicon | 31 GRANDE RUE FROMAGERIE 25520 | `77827209600034` | agrément UE `25.025.001` | [SIREN 778272096](https://annuaire-entreprises.data.gouv.fr/entreprise/778272096) |
 | COOPERATIVE DES MONTS DE JOUX | Bannans | 36 RUE LAURENT TROUTET 25560 | `77827548700016` | agrément UE `25.041.001` | [SIREN 778275487](https://annuaire-entreprises.data.gouv.fr/entreprise/778275487) |
-| SOC COOP AGR FROM FR PLATEAU BELLEHERBE | Belleherbe | FROMAGERIE 22 GRANDE RUE 25380 | `77827777200019` | agrément UE `25.051.001` | [SIREN 778277772](https://annuaire-entreprises.data.gouv.fr/entreprise/778277772) |
 | FROMAGERIE NAPIOT - FROMAGERIE DU VAL D'USIERS | Bians Les Usiers | BIANS-LES-USIERS 2385 ROUTE DU VAL 25520 | `32308569600025` | agrément UE `25.282.002` | [SIREN 323085696](https://annuaire-entreprises.data.gouv.fr/entreprise/323085696) |
-| SOC COOP AGRIC FROMAGE. FRUIT BONNETAGE | Bonnetage | 4 RUE DE BESANCON 25210 | `77830018600013` | agrément UE `25.074.001` | [SIREN 778300186](https://annuaire-entreprises.data.gouv.fr/entreprise/778300186) |
 | SOC COOPERATIVE DE FROMAGERIE | Bonnetage | FROMAGERIE 6 RTE DE CERNEUX MONNOT 25210 | `77830017800028` | agrément UE `25.074.002` | [SIREN 778300178](https://annuaire-entreprises.data.gouv.fr/entreprise/778300178) |
 | SOC COOP AGR FROM FRUIT PLATEAU BOUCLANS | Bouclans | 20 RUE JEAN LALLEMAND FROMAGERIE 25360 | `77830033500024` | agrément UE `25.078.001` | [SIREN 778300335](https://annuaire-entreprises.data.gouv.fr/entreprise/778300335) |
-| SOC COOP AGRIC FROMAG. FRUIT. BOUJAILLES | Boujailles | 2 RUE DU CRET 25560 | `77830049100017` | agrément UE `25.079.001` | [SIREN 778300491](https://annuaire-entreprises.data.gouv.fr/entreprise/778300491) |
 | SOC COOP AGRIC FROMAGE FRUIT. BREMONDANS | Bremondans | 5 RUE DE LA FRUITIERE 25530 | `77830095400030` | agrément UE `25.089.001` | [SIREN 778300954](https://annuaire-entreprises.data.gouv.fr/entreprise/778300954) |
 | COOPERATIVE DES MONTS DE JOUX | Bulle | RUE COMBE GREMOND 25560 | `77827548700081` | agrément UE `25.100.002` | [SIREN 778275487](https://annuaire-entreprises.data.gouv.fr/entreprise/778275487) |
 | SCAF LA FRUITIERE DE LA RIVIERE DRUGEON | Bulle | 18 RUE DES HAUTS DE DRUGEON 25560 | `77834486100027` | agrément UE `25.100.001` | [SIREN 778344861](https://annuaire-entreprises.data.gouv.fr/entreprise/778344861) |
 | SARL DES MONTS DE JOUX | Chaffois | 25300 | `38136878600020` | agrément UE `25.110.001` | [SIREN 381368786](https://annuaire-entreprises.data.gouv.fr/entreprise/381368786) |
 | FROMAGERIE MONNIN | Chantrans | ZUF LA VIE D ORNANS 25330 | `39531508800033` | agrément UE `25.120.001` | [SIREN 395315088](https://annuaire-entreprises.data.gouv.fr/entreprise/395315088) |
-| SOC COOP AGRIC FROMAGE. CHAPELLE D'HUIN | Chapelle-D'Huin | 26 GRANDE RUE 25270 | `77830246300014` | agrément UE `25.122.001` | [SIREN 778302463](https://annuaire-entreprises.data.gouv.fr/entreprise/778302463) |
-| SOC COOP FROMAG FRUITIERE CHAPELLE BOIS | Chapelle-Des-Bois | 2 PL DE LA FRUITIERE 25240 | `77830238000010` | agrément UE `25.121.001` | [SIREN 778302380](https://annuaire-entreprises.data.gouv.fr/entreprise/778302380) |
 | SOC COOP AGR FROMAG FRUIT CHARMAUVILLERS | Charmauvillers | 6 GRANDE RUE 25470 | `77830255400010` | agrément UE `25.124.001` | [SIREN 778302554](https://annuaire-entreprises.data.gouv.fr/entreprise/778302554) |
 | COOPERATIVE DES MONTS DE JOUX | Charquemont | RUE PIERRE MENDES FRANCE 25140 | `77827548700024` | agrément UE `25.127.001` | [SIREN 778275487](https://annuaire-entreprises.data.gouv.fr/entreprise/778275487) |
 | SOC COOP.FROMAGERIE FRUITIERE LOUE LISON | Chay | BAT FROMAGERIE 52 RUE PRINCIPALE 25440 | `77830372700011` | agrément UE `25.143.001` | [SIREN 778303727](https://annuaire-entreprises.data.gouv.fr/entreprise/778303727) |
@@ -72,8 +61,6 @@ Quedan **118 candidatos nuevos** en este corte: 7 perfiles de explotación, 101 
 | SARL DES MONTS DE JOUX | Courvieres | 25560 | `38136878600061` | agrément UE `25.176.001` | [SIREN 381368786](https://annuaire-entreprises.data.gouv.fr/entreprise/381368786) |
 | SCAF COOPERATIVE DES FERMIERS HAUT-DOUBS | Damprichard | 20 RUE DES ECOLES 25450 | `77832209900020` | agrément UE `25.193.001` | [SIREN 778322099](https://annuaire-entreprises.data.gouv.fr/entreprise/778322099) |
 | SARL DES MONTS DE JOUX | Domprel | 25510 | `38136878600079` | agrément UE `25.203.001` | [SIREN 381368786](https://annuaire-entreprises.data.gouv.fr/entreprise/381368786) |
-| SOC COOP FROMAGERIE FRUITIERE DE DOUBS | Doubs | 1 RUE DE LA FRUITIERE 25300 | `77830757900020` | agrément UE `25.204.001` | [SIREN 778307579](https://annuaire-entreprises.data.gouv.fr/entreprise/778307579) |
-| SCAF LA FRUITIERE DES COTEAUX D'ORNANS | Echevannes | FROMAGERIE 2 RUE DE LA MARIE 25580 | `77830788400024` | agrément UE `25.211.001` | [SIREN 778307884](https://annuaire-entreprises.data.gouv.fr/entreprise/778307884) |
 | SOC COOP AGRI FROM FRUIT PREMIERS SAPINS | Epenoy | 4 RUE DES GRANGES 25800 | `77830836100022` | agrément UE `25.219.001` | [SIREN 778308361](https://annuaire-entreprises.data.gouv.fr/entreprise/778308361) |
 | STE COOP AGRI DE FROMAGERIE LA FRUITIERE | Etalans | 41 GRANDE RUE 25580 | `77830863500029` | agrément UE `25.222.001` | [SIREN 778308635](https://annuaire-entreprises.data.gouv.fr/entreprise/778308635) |
 | LEHMANN - SARL LEHMANN | Etupes | 390 AV RENE JACOT 25460 | `48522004000029` | agrément UE `25.228.001` | [SIREN 485220040](https://annuaire-entreprises.data.gouv.fr/entreprise/485220040) |
@@ -84,8 +71,6 @@ Quedan **118 candidatos nuevos** en este corte: 7 perfiles de explotación, 101 
 | FROMAGERIE BADOZ | Fournets-Luisans | 1 RUE BAS DES FOURNETS 25390 | `39328005200126` | agrément UE `25.288.001` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
 | POITREY LA BELLE ETOILE | Franois | 12 RTE DE LA BELLE ETOILE 25770 | `50008213600028` | agrément UE `25.258.001` | [SIREN 500082136](https://annuaire-entreprises.data.gouv.fr/entreprise/500082136) |
 | FROMAGERIES MARCEL PETITE | Frasne | 7 RUE DE LA FONTAINE SAINT PIERRE 25560 | `66282020800145` | agrément UE `25.259.002` | [SIREN 662820208](https://annuaire-entreprises.data.gouv.fr/entreprise/662820208) |
-| SOC COOP AGRIC FROMAG FRUIT. DE FRASNE | Frasne | MAIRIE MAIRIE 25560 | `62281046300027` | agrément UE `25.259.001` | [SIREN 622810463](https://annuaire-entreprises.data.gouv.fr/entreprise/622810463) |
-| SOC COOP FROMAGERIE FRUITIERE DE GILLEY | Gilley | FROMAGERIE AVENUE JEAN DE LATTRE 25650 | `77831336100017` | agrément UE `25.271.001` | [SIREN 778313361](https://annuaire-entreprises.data.gouv.fr/entreprise/778313361) |
 | SARL DES MONTS DE JOUX | Grand'Combe Chateleu | FROMAGERIE 20 LE BEUGNON 25570 | `38136878600053` | agrément UE `25.285.003` | [SIREN 381368786](https://annuaire-entreprises.data.gouv.fr/entreprise/381368786) |
 | FROMAGERIES MARCEL PETITE | Granges-Narboz | 22 RUE BERNARD PALISSY 25300 | `66282020800061` | agrément UE `25.293.001` | [SIREN 662820208](https://annuaire-entreprises.data.gouv.fr/entreprise/662820208) |
 | P.F.C.E. | Guyans-Durnes | 17 RUE DE LA FRUITIERE 25580 | `71282097600074` | agrément UE `25.300.001` | [SIREN 712820976](https://annuaire-entreprises.data.gouv.fr/entreprise/712820976) |
@@ -93,12 +78,8 @@ Quedan **118 candidatos nuevos** en este corte: 7 perfiles de explotación, 101 
 | SOC COOP AGRIC FROMAG INDEVILLERS GLERE | Indevillers | AU CHAMP DU RANG SOUS LE FRETE 25470 | `30164240100030` | agrément UE `25.314.003` | [SIREN 301642401](https://annuaire-entreprises.data.gouv.fr/entreprise/301642401) |
 | SOC COOP AGRIC FROM. FRUIT CHAUX GILLEY | La Chaux | 12 B RUE DU DOCTEUR GIRARD 25650 | `77830353700022` | agrément UE `25.139.001` | [SIREN 778303537](https://annuaire-entreprises.data.gouv.fr/entreprise/778303537) |
 | FROMAGERIE BADOZ | La Longeville | LD L ETRAVERS 25650 | `39328005200100` | agrément UE `25.347.002` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
-| SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DES LACS | Labergement-Sainte-Marie | 1 RUE DERRIERE CHEZ SAGET 25160 | `77831833700038` | agrément UE `25.320.001` | [SIREN 778318337](https://annuaire-entreprises.data.gouv.fr/entreprise/778318337) |
 | SOC COOP AGRIC FROMAG FRUIT LAVANS VUIL. | Lavans-Vuillafans | 13 CHEMIN NEUF 25580 | `77831969900030` | agrément UE `25.331.001` | [SIREN 778319699](https://annuaire-entreprises.data.gouv.fr/entreprise/778319699) |
 | P.F.C.E. | Lavernay | 25170 | `71282097600017` | agrément UE `25.332.001` | [SIREN 712820976](https://annuaire-entreprises.data.gouv.fr/entreprise/712820976) |
-| SOC COOP AGRIC FROMA FRUIT LAVIRON | Laviron | 1 ZONE ARTISANALE SUR LES ROCHE 25510 | `77831983000031` | agrément UE `25.333.002` | [SIREN 778319830](https://annuaire-entreprises.data.gouv.fr/entreprise/778319830) |
-| SCAF FRUITIERE LES FINS COMTE | Les Fins | RUE DU PARADIS ROUTE DE MAICHE 25500 | `77831067200028` | agrément UE `25.240.002` | [SIREN 778310672](https://annuaire-entreprises.data.gouv.fr/entreprise/778310672) |
-| SOC COOP AGRI FROMAG FRUIT FINS SUCHAUX | Les Fins | LES FINS SUCHAUX 1 RUE DES TILLEULS 25500 | `30164242700019` | agrément UE `25.240.003` | [SIREN 301642427](https://annuaire-entreprises.data.gouv.fr/entreprise/301642427) |
 | SOC COOP AG FROMAG FRUIT MIROIR DU COMTE | Les Fontenelles | 2 RUE DE LA GARE 25210 | `77831142300017` | agrément UE `25.248.001` | [SIREN 778311423](https://annuaire-entreprises.data.gouv.fr/entreprise/778311423) |
 | P.F.C.E. | Les Fourgs | 40 GRANDE RUE 25300 | `71282097600082` | agrément UE `25.254.001` | [SIREN 712820976](https://annuaire-entreprises.data.gouv.fr/entreprise/712820976) |
 | SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DE SAINT ANTOINE - LES HOPITAUX | Les Hopitaux-Vieux | 2 IMP DES BIEFS 25370 | `77831700800044` | agrément UE `25.308.002` | [SIREN 778317008](https://annuaire-entreprises.data.gouv.fr/entreprise/778317008) |
@@ -107,34 +88,25 @@ Quedan **118 candidatos nuevos** en este corte: 7 perfiles de explotación, 101 
 | FROMAGERIE BADOZ | Levier | 25270 | `39328005200035` | agrément UE `25.334.001` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
 | SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DES PATURAGES DU LOMONT | Lomont-Sur-Crete | FROMAGERIE 2 PLACE DE LA MAIRIE 25110 | `31935741400022` | agrément UE `25.341.001` | [SIREN 319357414](https://annuaire-entreprises.data.gouv.fr/entreprise/319357414) |
 | SOC COOP FROM FRUIT LONGEVELLE CHAMESEY | Longevelle Les Russey | MAIRIE 25380 | `77832098600020` | agrément UE `25.344.001` | [SIREN 778320986](https://annuaire-entreprises.data.gouv.fr/entreprise/778320986) |
-| LONGEVILLES MT D'OR FROMAGERIE ARNAUD | Longevilles-Mont-D'Or | 41 RUE DE L'ETOILE 25370 | `40313056000010` | agrément UE `25.348.001` | [SIREN 403130560](https://annuaire-entreprises.data.gouv.fr/entreprise/403130560) |
 | SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DE LA REVEROTTE | Loray | 5 B GRANDE RUE 25390 | `77832146300029` | agrément UE `25.349.002` | [SIREN 778321463](https://annuaire-entreprises.data.gouv.fr/entreprise/778321463) |
-| SCAF LA FRUITIERE DE LA SEIGNETTE | Maisons-Du-Bois-Lievremont | 6 RUE DE LA GARE 25650 | `77832066300025` | agrément UE `25.357.001` | [SIREN 778320663](https://annuaire-entreprises.data.gouv.fr/entreprise/778320663) |
 | SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DE LA BRUNE LA MARE | Maisons-Du-Bois-Lievremont | FROMAGERIE DE LA BRUNE 25650 | `77832065500021` | agrément UE `25.357.002` | [SIREN 778320655](https://annuaire-entreprises.data.gouv.fr/entreprise/778320655) |
 | SANCEY RICHARD FROMAGERIE DU MONT D'OR - FROMAGERIE DU MONT D'OR & LA GRANGE AUX | Metabief | 2 RUE DU MOULIN 25370 | `49244238900010` | agrément UE `25.380.001` | [SIREN 492442389](https://annuaire-entreprises.data.gouv.fr/entreprise/492442389) |
 | SOCIETE DE PRODUCTION DE LA FROMAGERIE DE MONTBELIARD | Montbeliard | 60 RUE JACQUES FOILLET 25200 | `85096949400010` | agrément UE `25.388.002` | [SIREN 850969494](https://annuaire-entreprises.data.gouv.fr/entreprise/850969494) |
-| SOC COOP AGRIC FROMAG. FRUIT. MONTLEBON | Montlebon | LD SUR LA SEIGNE 25500 | `77833164500011` | agrément UE `25.403.001` | [SIREN 778331645](https://annuaire-entreprises.data.gouv.fr/entreprise/778331645) |
 | FRUITIERE DE MONTMAHOUX | Nans-Sous-Sainte-Anne | GRANDE RUE 25330 | `43150585800032` | agrément UE `25.420.003` | [SIREN 431505858](https://annuaire-entreprises.data.gouv.fr/entreprise/431505858) |
 | SOC COOP AGRI FROMAG FRUIT NARBIEF BIZOT | Narbief | 15 RUE DE LA FRUITIERE 25210 | `77833431800020` | agrément UE `25.421.001` | [SIREN 778334318](https://annuaire-entreprises.data.gouv.fr/entreprise/778334318) |
 | SOC COOP AGRICOLE DE FROMAGERIE | Noel-Cerneux | ZI SOUS LES CHARRIERES 25500 | `77827762400020` | agrément UE `25.425.001` | [SIREN 778277624](https://annuaire-entreprises.data.gouv.fr/entreprise/778277624) |
-| SOC COOP AGRIC FROMAGERIE FRUIT. LOMONT | Noirefontaine | FROMAGERIE 21 RUE DES HERBIERS 25190 | `77835730100028` | agrément UE `25.426.001` | [SIREN 778357301](https://annuaire-entreprises.data.gouv.fr/entreprise/778357301) |
 | FROMAGERIE MULIN | Noironte | LD CHAMPS BRELAND 25170 | `32235649400011` | agrément UE `25.427.002` | [SIREN 322356494](https://annuaire-entreprises.data.gouv.fr/entreprise/322356494) |
 | COOPERATIVE DES MONTS DE JOUX | Orchamps-Vennes | FROMAGERIE 25390 | `77827548700032` | agrément UE `25.432.002` | [SIREN 778275487](https://annuaire-entreprises.data.gouv.fr/entreprise/778275487) |
-| SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE A COMTE PASSAVANT CHAZOT | Passavant | GRANDE RUE 25360 | `77833669300016` | agrément UE `25.446.001` | [SIREN 778336693](https://annuaire-entreprises.data.gouv.fr/entreprise/778336693) |
 | FROMAGERIE DE CLERVAL | Pays-De-Clerval | 738 GRANDE VOIE 25340 | `71282062000029` | agrément UE `25.531.001` | [SIREN 712820620](https://annuaire-entreprises.data.gouv.fr/entreprise/712820620) |
 | SASU PATURAGES COMTOIS - CANCOILLOTTE FLEURON DES GOURMETS | Pays-De-Clerval | 9 RUE LEONEL DE MOUSTIER CLERVAL 25340 | `50919946900024` | agrément UE `25.156.003` | [SIREN 509199469](https://annuaire-entreprises.data.gouv.fr/entreprise/509199469) |
 | SOC AFFINAGE JOLY | Pierrefontaine-Les-Varans | 17 RUE DE BELLEHERBE 25510 | `39873984700018` | agrément UE `25.453.002` | [SIREN 398739847](https://annuaire-entreprises.data.gouv.fr/entreprise/398739847) |
-| SOC COOP AGRIC FROM FRUIT PIERREFONTAINE | Pierrefontaine-Les-Varans | FROMAGERIE 3 RUE DE LA FRUITIERE 25510 | `77833705500017` | agrément UE `25.453.001` | [SIREN 778337055](https://annuaire-entreprises.data.gouv.fr/entreprise/778337055) |
 | COOPERATIVE DES MONTS DE JOUX | Pontarlier | RUE PAUL EDOUARD DUBIED 25300 | `77827548700057` | agrément UE `25.462.004` | [SIREN 778275487](https://annuaire-entreprises.data.gouv.fr/entreprise/778275487) |
 | FROMAGERIE BADOZ | Pontarlier | 4 RUE EIFFEL 25300 | `39328005200019` | agrément UE `25.462.002` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
 | FROMAGERIE BADOZ | Pontarlier | 30 RUE ARAGO 25300 | `39328005200027` | agrément UE `25.462.005` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
 | FROMAGERIE BADOZ | Pontarlier | 1 RUE DENIS PAPIN 25300 | `39328005200118` | agrément UE `25.462.003` | [SIREN 393280052](https://annuaire-entreprises.data.gouv.fr/entreprise/393280052) |
-| SOC COOP AGR FROM FRUIT BOLANDOZ REUGNEY | Reugney | SUR LE CRET 25330 | `77829990900029` | agrément UE `25.489.001` | [SIREN 778299909](https://annuaire-entreprises.data.gouv.fr/entreprise/778299909) |
-| SOC COOP. AGRICOLE FROMAGERIE LE RUSSEY | Russey (Le) | 13 RUE LECLERC 25210 | `77834650200017` | agrément UE `25.512.001` | [SIREN 778346502](https://annuaire-entreprises.data.gouv.fr/entreprise/778346502) |
 | FROMAGERIES MARCEL PETITE | Saint-Antoine | FORT LUCOTTE 25370 | `66282020800020` | agrément UE `25.514.002` | [SIREN 662820208](https://annuaire-entreprises.data.gouv.fr/entreprise/662820208) |
 | SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DES SOURCES DE LA LOUE | Saint-Gorgon-Main | RTE D OUHANS 25520 | `77830944300043` | agrément UE `25.517.001` | [SIREN 778309443](https://annuaire-entreprises.data.gouv.fr/entreprise/778309443) |
 | FROMAGERIE MICHELIN FABRICE | Saint-Point-Lac | 2 PL DE LA MAIRIE 25160 | `47848103900012` | agrément UE `25.525.002` | [SIREN 478481039](https://annuaire-entreprises.data.gouv.fr/entreprise/478481039) |
-| STE AGRICOLE FRUITIERES VALLON DE SANCEY | Sancey | 55 GRANDE RUE 25430 | `77834878900018` | agrément UE `25.530.001` | [SIREN 778348789](https://annuaire-entreprises.data.gouv.fr/entreprise/778348789) |
 | FROMAGERIE DE LA HAUTE COMBE | Septfontaines | 1 RUE DE LA COMBE DE L'ENCLOS 25270 | `78994965800023` | agrément UE `25.541.002` | [SIREN 789949658](https://annuaire-entreprises.data.gouv.fr/entreprise/789949658) |
 | SOC COOP. FROMAGERIE FRUITIERES REUNIS | Trevillers | 11 RUE DES FRUITIERES 25470 | `77835259100011` | agrément UE `25.571.001` | [SIREN 778352591](https://annuaire-entreprises.data.gouv.fr/entreprise/778352591) |
 | SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE DES VILLAGES REUNIS | Valdahon | ZONE DE L ECOT 13 ROUTE DE VERNIERFONTAINE 25800 | `77827528900057` | agrément UE `25.578.001` | [SIREN 778275289](https://annuaire-entreprises.data.gouv.fr/entreprise/778275289) |
@@ -145,8 +117,6 @@ Quedan **118 candidatos nuevos** en este corte: 7 perfiles de explotación, 101 
 | SCAF FRUITIERE COMTE DE VERNIERFONTAINE | Vernierfontaine | 324 RUE CLEMENDAL 25580 | `77835645100022` | agrément UE `25.605.001` | [SIREN 778356451](https://annuaire-entreprises.data.gouv.fr/entreprise/778356451) |
 | LEHMANN | Vieux-Charmont | PRE PATIOTE ZONE ARTISANALE DE L ALLAN 25600 | `48522004000037` | agrément UE `25.614.003` | [SIREN 485220040](https://annuaire-entreprises.data.gouv.fr/entreprise/485220040) |
 | SOC COOP AGRIC FROMAG FRUIT. DES JARRONS | Ville-Du-Pont | LES JARRONS 25650 | `30470985000016` | agrément UE `25.620.001` | [SIREN 304709850](https://annuaire-entreprises.data.gouv.fr/entreprise/304709850) |
-| SCAF LA FRUITIERE DE VILLERS -LES MAJORS | Villers-Le-Lac | FROMAGERIE 25130 | `77831875800027` | agrément UE `25.321.001` | [SIREN 778318758](https://annuaire-entreprises.data.gouv.fr/entreprise/778318758) |
-| SOCIETE COOPERATIVE AGRICOLE DE FROMAGERIE LA FRUITIERE SUR LA VOIE DU SEL | Villers-Sous-Chalamont | FROMAGERIE RUE DU CHALET 25270 | `77827223700034` | agrément UE `25.627.001` | [SIREN 778272237](https://annuaire-entreprises.data.gouv.fr/entreprise/778272237) |
 | MONTS & TERROIRS | Vuillafans | LIEU-DIT EN MERILLOT RUE DES DEUX TUNNELS 25840 | `64545010700190` | agrément UE `25.633.001` | [SIREN 645450107](https://annuaire-entreprises.data.gouv.fr/entreprise/645450107) |
 
 ### Explotaciones bio adicionales con producción `Fromages`

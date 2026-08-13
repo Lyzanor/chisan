@@ -39,3 +39,9 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 ## Productores de queso — barrido nacional del 2026-08-12
 
 Revisión cerrada el 2026-08-12. Las diez señales se resolvieron y se retiraron de la cola: ocho unidades se publicaron con su identidad comercial y datos vigentes; GAEC Les Auriols se descartó porque la unidad láctea homónima está en Sigoyer (Hautes-Alpes), e Isaac Beaudoin porque no se encontró una oferta alimentaria pública propia distinta de la Fromagerie Jean-Marie Beaudoin. Las decisiones y fuentes quedan en el ledger de evidencia de Oise.
+
+## Hallazgo incidental pendiente — 2026-08-13
+
+| Nombre público | Commune | Unidad productiva | Producción | Requisito pendiente | Fuentes |
+|---|---|---|---|---|---|
+| Bio Verger Potager | Le Hamel | 280 rue Monsieur, Hameau de Rieux, 60210 Le Hamel | frutas, más de 60 verduras, zumo, mermelada, lentejas y harina | confirmar coordenadas y contacto público vigente antes de publicar | [Oise](https://oise.fr/marche-fermier-digital/fruits-et-legumes/sarl-bio-verger-potager-4208) · [mensaje de la productora](https://www.pommesdamisbondy.org/producteurs/billets-des-producteurs/le-billet-de-clotilde/) · [Ecocert](https://certificat.ecocert.com/entreprise/B8567E32-D167-412E-951B-2DBB13C3351F) |

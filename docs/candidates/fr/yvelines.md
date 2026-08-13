@@ -34,3 +34,10 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 | Nombre público | Razón social | Commune | Unidad productiva | Producción | Fuentes |
 |---|---|---|---|---|---|
 | Domaine La Bouche du Roi | SCEA Domaine de Davron | Davron | 12 Rue Saint-Jacques, 78810 Davron | Vino de un viñedo ecológico de 27 ha | [SIRENE](https://annuaire-entreprises.data.gouv.fr/entreprise/839244506) · [Agence Bio](https://annuaire.agencebio.org/operateur/143582) · [Vitijob](https://www.vitijob.com/entreprise/10308/scea-domaine-de-davron) |
+
+## Hallazgos incidentales pendientes — 2026-08-13
+
+| Nombre público | Commune | Unidad productiva | Producción | Requisito pendiente | Fuentes |
+|---|---|---|---|---|---|
+| Micro Ferme des Lilas | Longvilliers | Longvilliers, Yvelines | plantas aromáticas y medicinales; posible transformación | confirmar una oferta alimentaria pública actual, no solo plantas tintóreas o formaciones | [sitio oficial](https://www.microfermedeslilas.fr/formation-jardin-bio-permaculture) · [Destination Yvelines](https://www.destination-yvelines.fr/cueillettes-et-produits-locaux/micro-ferme-des-lilas/) |
+| La Ferme Nature & Découvertes | Versailles | granja urbana de Versailles | frutas, verduras y aromáticas | confirmar identidad de venta, contacto y punto exacto antes de publicar | [sitio oficial](https://www.lafermenatureetdecouvertes.fr/histoire) · [Ville de Versailles](https://www.versailles.fr/fileadmin/www.versailles.fr/MEDIA/Kiosque/Magazines_de_la_Ville/2025/Magazine_Versailles_-_Mai_2025.pdf) |
