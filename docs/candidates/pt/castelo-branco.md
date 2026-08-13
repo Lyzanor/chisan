@@ -1,14 +1,11 @@
 # Castelo Branco — candidatos
 
-Revisión del 2026-08-10. Las altas y exclusiones resueltas están trasladadas al
-CSV y al ledger de evidencia. Queda un caso en espera.
+- CSV destino: `data/csv/pt/centro/castelo-branco.csv`
+- Fecha de búsqueda: 2026-08-13 (actualización sectorial de cerveza) y 2026-08-10 (revisión integral).
+- Fuentes de descubrimiento: [Provart Sertã](https://mediotejo.net/provart-regressa-a-serta-para-um-brinde-coletivo-a-cerveja-artesanal-c-video/), [NiT](https://www.nit.pt) y webs de productores.
+- Alcance y trabajo pendiente: verificar continuidad de obradores y canales de venta directa.
 
-| nombre | concelho | estado | qué falta |
-|---|---|---|---|
-| Legend's | Sertã | hold | La marca y su fábrica local están documentadas hasta 2022; no se encontró actividad, oferta ni presencia pública posterior suficiente para una alta actual. |
-| Quinta das Olelas — Olelas Brut | Castelo Branco | candidato | [quintadasolelas.pt](https://quintadasolelas.pt) · Elaboración artesanal de cerveza de mel de medronheiro (método champenoise) en Retaxo, Castelo Branco; verificar canal de venta directa y contacto cervecero. |
-
-Fuentes del caso en espera:
-
-- <https://mediotejo.net/provart-regressa-a-serta-para-um-brinde-coletivo-a-cerveja-artesanal-c-video/>
-- <https://www.nit.pt/comida/gourmet-e-vinhos/serta-recebe-17-marcas-de-cerveja-artesanal-para-provar-a-ouvir-boa-musica-ao-vivo>
+| nombre | concelho | categoría propuesta | estado | qué falta / fuente |
+|---|---|---|---|---|
+| Legend's | Sertã | Cerveza | hold | [MedioTejo](https://mediotejo.net/provart-regressa-a-serta-para-um-brinde-coletivo-a-cerveja-artesanal-c-video/) · fábrica documentada hasta 2022; falta actividad y presencia pública posterior suficiente para alta |
+| Quinta das Olelas — Olelas Brut | Castelo Branco | Cerveza | candidato | [quintadasolelas.pt](https://quintadasolelas.pt) · Elaboración artesanal de cerveza de mel de medronheiro (método champenoise) en Retaxo, Castelo Branco; verificar canal de venta directa |

@@ -1,24 +1,22 @@
-# Vila Real — candidatos en espera
+# Vila Real — candidatos
 
-Revisión integral del 2026-08-10. Los candidatos aceptados, rechazados o ya
-presentes se reconciliaron con el CSV y el ledger de evidencia. Solo permanecen
-los casos que necesitan una fuente nueva para resolver identidad, fabricación
-propia o unidad productiva.
+- CSV destino: `data/csv/pt/norte/vila-real.csv`
+- Fecha de búsqueda: 2026-08-13 (actualización sectorial de cerveza) y 2026-08-10 (revisión integral).
+- Fuentes de descubrimiento: [Produtos Tradicionais Portugueses (PTPT)](https://www.ptpt.pt/produtores), [OpenBreweryDB](https://www.openbrewerydb.org), [Untappd](https://untappd.com) y registros empresariales.
+- Alcance y trabajo pendiente: contrastar unidades físicas de transformación, obradores propios y canales de venta directa.
 
-| estado | nombre | concelho | categoría propuesta | motivo del hold |
+| estado | nombre | concelho | categoría propuesta | fuente / motivo del hold |
 |---|---|---|---|---|
-| `hold` | Enchidos Tradicionais — S. V. da Raia / Lugar da Eira | Chaves | Carne | La fuente confirma producción familiar, pero no permite cerrar una identidad comercial pública ni una dirección de la unidad. |
-| `hold` | Fumeiro Condez | Chaves | Carne | No se localizó una fuente pública actual que identifique la unidad productiva. |
-| `hold` | Artefumo — Fumeiro e Produtos Regionais, Lda | Chaves | Carne | La sociedad sigue activa, pero las fuentes públicas actuales apuntan a tienda/restaurante y no permiten ubicar una fábrica propia de fumeiro. |
-| `hold` | Salsicharia Makuta | Chaves | Carne | No se encontró una identidad pública actual inequívoca ni la unidad de elaboración. |
-| `hold` | Casa de Souto Velho | Chaves | Carne | La explotación y el restaurante están activos, pero no se demostró una oferta pública separada de producto elaborado para el catálogo. |
-| `hold` | Carvalho de Moura | Montalegre | a confirmar | El directorio publica identidad y contacto, pero no qué producto elabora. |
-| `hold` | Dália Doce | Montalegre | Dulces y repostería | El directorio publica identidad y contacto, pero no un producto concreto ni fabricación propia. |
-| `hold` | Aromas e Sabores de Pitões | Montalegre | a confirmar | Falta identificar el producto y la unidad de elaboración. |
-| `hold` | Sabores do Gerês — Casa do Igreja | Montalegre | a confirmar | Falta identificar el producto y la unidad de elaboración. |
-| `hold` | Judia | Valpaços | Cerveza | La marca y la venta online siguen activas, pero no se pudo demostrar que la cerveza se fabrique en una unidad propia del concelho en vez de por contrato. |
-| `candidato` | Cerveja Bila | Vila Real | Cerveza | Microcervecería con instalaciones en Pavilhão 5 do Lote 158, Zona Industrial de Constantim, 5000-082 Vila Real; verificar venta directa y catálogo actualizado. |
+| `hold` | Enchidos Tradicionais — S. V. da Raia / Lugar da Eira | Chaves | Carne | [PTPT](https://www.ptpt.pt/produtores) · producción familiar; falta cerrar identidad comercial pública y dirección de la unidad |
+| `hold` | Fumeiro Condez | Chaves | Carne | [PTPT](https://www.ptpt.pt/produtores) · falta fuente pública actual que identifique la unidad productiva |
+| `hold` | Artefumo — Fumeiro e Produtos Regionais, Lda | Chaves | Carne | [PTPT](https://www.ptpt.pt/produtores) · sociedad activa; fuentes actuales apuntan a tienda/restaurante sin ubicar fábrica propia |
+| `hold` | Salsicharia Makuta | Chaves | Carne | [PTPT](https://www.ptpt.pt/produtores) · falta identidad pública actual inequívoca y unidad de elaboración |
+| `hold` | Casa de Souto Velho | Chaves | Carne | [PTPT](https://www.ptpt.pt/produtores) · explotación y restaurante activos; falta oferta pública separada de producto elaborado |
+| `hold` | Carvalho de Moura | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · publica identidad y contacto, pero no qué producto elabora |
+| `hold` | Dália Doce | Montalegre | Dulces y repostería | [PTPT](https://www.ptpt.pt/produtores) · publica identidad y contacto, pero falta producto concreto y fabricación propia |
+| `hold` | Aromas e Sabores de Pitões | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · falta identificar producto y unidad de elaboración |
+| `hold` | Sabores do Gerês — Casa do Igreja | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · falta identificar producto y unidad de elaboración |
+| `hold` | Judia | Valpaços | Cerveza | [Untappd](https://untappd.com) · marca activa; falta demostrar que se fabrique en unidad propia del concelho y no por contrato |
+| `candidato` | Cerveja Bila | Vila Real | Cerveza | [openbrewerydb.org](https://www.openbrewerydb.org) · [Untappd](https://untappd.com/w/cerveja-bila/330533) · Microcervecería en Pavilhão 5 do Lote 158, Zona Industrial de Constantim, 5000-082 Vila Real; verificar venta directa y catálogo |
 
-Las quintas del Douro ya publicadas como bodegas se enriquecen con `Aceite`
-solo cuando una fuente directa demuestra producción material; la Casa dos
-Lagares/Fragulho quedó resuelta de ese modo durante esta revisión.
+Las quintas del Douro ya publicadas como bodegas se enriquecen con `Aceite` solo cuando una fuente directa demuestra producción material (ej. Casa dos Lagares/Fragulho).

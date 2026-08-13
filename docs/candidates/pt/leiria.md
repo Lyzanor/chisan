@@ -1,16 +1,12 @@
 # Leiria — candidatos
 
-Pasada de categorías infrarrepresentadas del 2026-08-10 (ver
-`docs/candidates/pt/README.md`). CSV destino: `data/csv/pt/centro/leiria.csv`.
-Revisión editorial del 2026-08-10: las altas y descartes resueltos se retiraron
-de esta cola. Permanecen únicamente tres marcas de cerveza sin unidad
-productiva actual demostrable.
-
-Peniche pertenece a este distrito y es uno de los tres polos conserveros del
-país: `Conservas` está a cero en Leiria.
+- CSV destino: `data/csv/pt/centro/leiria.csv`
+- Fecha de búsqueda: 2026-08-13 (actualización sectorial de cerveza) y 2026-08-10 (revisión de categorías infrarrepresentadas).
+- Fuentes de descubrimiento: [Cervejeiros de Portugal](https://www.cervejeirosdeportugal.pt), [Produtos Tradicionais Portugueses (PTPT)](https://www.ptpt.pt/produtores), [Untappd](https://untappd.com) y guías sectoriales.
+- Alcance y trabajo pendiente: verificar si las marcas históricas mantienen fábrica propia activa frente a cese o producción contratada. Peniche pertenece a este distrito y es polo conservero pendiente de cobertura.
 
 | nombre | concelho | categoría propuesta | fuente | qué falta |
 |---|---|---|---|---|
-| Corema | Marinha Grande | Cerveza | CAP2019 | `hold`: no se localizó actividad, marca o fábrica actual posterior al listado de 2019 |
-| Rolls Beer | Pombal | Cerveza | CAP2019 | `hold`: hay consumos registrados en 2025, pero ninguna presencia directa o dirección productiva que pruebe continuidad de la fábrica |
-| Xó Carago | Leiria | Cerveza | CAP2019 | `hold`: la última actividad empresarial inequívoca localizada es de 2022 y no permite afirmar producción actual |
+| Corema | Marinha Grande | Cerveza | [Untappd](https://untappd.com) | `hold`: no se localizó actividad, marca o fábrica actual posterior a listados históricos |
+| Rolls Beer | Pombal | Cerveza | [Untappd](https://untappd.com) | `hold`: hay consumos registrados en 2025, pero ninguna presencia directa o dirección productiva que pruebe continuidad de la fábrica |
+| Xó Carago | Leiria | Cerveza | [Untappd](https://untappd.com) | `hold`: la última actividad empresarial inequívoca localizada es de 2022 y no permite afirmar producción actual |
