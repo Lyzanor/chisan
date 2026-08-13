@@ -30,6 +30,13 @@ Categoría para todas: `Sake`.
   vivo, con lonja propia); 有田焼 y 伊万里焼 (cerámica, fuera de catálogo pero
   arrastran obradores de 器 y té).
 
+## Hallazgo heredado pendiente
+
+- **Riken Nosan-Kako** — `Pan y cereal`, Saga; el listado aportado por el usuario
+  propone `riken-nosan.com`. Confirmar oferta alimentaria propia para público y
+  unidad productiva antes de publicar; una actividad B2B de materia prima no
+  basta.
+
 ## Lote JAS ecológico nacional — 2026-08-08
 
 > **Reauditoría 2026-08-11:** 19 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.

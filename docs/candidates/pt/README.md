@@ -1,82 +1,44 @@
-# Portugal — pasada de categorías infrarrepresentadas (2026-08-10)
+# Guía de candidatos — Portugal
 
-Portugal publica 449 filas de `Vino` sobre 530: el hueco del catálogo portugués
-no es geográfico, es de categoría. `Aceite`, `Pan y cereal`, `Frutos secos`,
-`Legumbres y cereales`, `Café` y `Setas` estaban a cero pese a ser producciones
-centrales del país, y `Conservas` (3), `Carne` (9) o `Miel` (3) no llegaban a
-representar sectores enteros.
+Aplica la [guía común](../README.md) y las
+[reglas y techos de fuentes de Portugal](../../../data/csv/pt/AGENTS.md). Este
+documento describe fuentes y trampas reutilizables; cada distrito o archipiélago
+mantiene en su propio fichero el corte, los candidatos y el trabajo pendiente.
 
-Esta pasada busca candidatos **no vinícolas** en las siete regiones, en
-categorías que encajan con lo que Portugal produce de verdad: conservas de
-pescado en Matosinhos, Olhão y Figueira; fumeiro en Trás-os-Montes; azeite en
-Alentejo, Ribatejo y Trás-os-Montes; queso DOP en Nisa, Serpa, Cuba y las
-Azores; doçaria conventual en Aveiro, Coimbra, Lamego y Madeira; flor de sal y
-frutos secos en el Algarve; chá, licores y lácteos en las Azores; mel-de-cana y
-rum agrícola en Madeira.
+## Fuentes de descubrimiento
 
-## Qué es y qué no es esta lista
+Esta lista es orientativa, no un censo ni una cola nacional. Cita en cada nota
+de área la fuente concreta realmente utilizada y su fecha de consulta.
 
-Cada entrada trae nombre, concelho declarado y la fuente donde apareció.
-**Ninguna está verificada.** Un registro sectorial acredita existencia,
-pertenencia o certificación; no acredita actividad vigente, oferta propia ni que
-la dirección publicada sea la unidad productiva. Antes de publicar cualquier
-fila hay que confirmar marca pública, producto concreto y concelho de la unidad
-productiva, y deduplicar contra el CSV del área.
+- [Produtos Tradicionais Portugueses](https://www.ptpt.pt/produtores) (PTPT),
+  de la DGADR, publica fichas de productores tradicionales con dirección y
+  contacto.
+- La [Associação Nacional dos Industriais de Conservas de
+  Peixe](https://anicp.pt/associados/) (ANICP) y la [Casa do
+  Azeite](https://casadoazeite.pt/pt/associados) publican directorios
+  sectoriales de asociados.
+- [Marca Açores](https://www.marcaacores.pt/promotores) permite descubrir
+  promotores certificados por categoría e isla.
+- Los consejos reguladores, cámaras municipales y asociaciones locales pueden
+  conducir a productores concretos de una DOP, IGP o especialidad regional.
+- Los listados empresariales y turísticos solo son señales de descubrimiento.
+  Una guía histórica de cerveza, por ejemplo, no demuestra actividad ni una
+  instalación propia actuales.
 
-Los nombres ya presentes en `data/csv/pt/**` se excluyeron al compilar la lista.
+Un directorio sectorial acredita únicamente lo que publica: pertenencia,
+certificación, identidad o ubicación declarada. Antes de publicar confirma la
+marca, el producto propio actual, el concelho de la unidad productiva y el
+contacto. Un gestor de denominación o una asociación no es una alta; úsalo para
+llegar a sus productores.
 
-## Fuentes usadas
+## Trampas recurrentes
 
-- **PTPT** — [directorio de productores de Produtos Tradicionais Portugueses](https://www.ptpt.pt/produtores)
-  (DGADR, 493 fichas con dirección y contacto).
-- **ANICP** — [asociados de la Associação Nacional dos Industriais de Conservas de Peixe](https://anicp.pt/associados/).
-- **Casa do Azeite** — [asociados](https://casadoazeite.pt/pt/associados).
-- **JN-Azeite** — [guía de productores de azeite del Jornal de Negócios](https://www.jornaldenegocios.pt/mais/conferencias/azeite/detalhe/azeite___guia_de_produtores).
-- **Marca Açores** — [directorio de promotores certificados](https://www.marcaacores.pt/promotores)
-  (301 fichas con dirección, filtrables por categoría e isla).
-- **CM-Nisa** — [productores de Queijo de Nisa](https://www.cm-nisa.pt/index.php/marca-enisa/aderentes/produtores-de-queijo).
-- **Montalegre** — [productores de la Associação de Produtores de Fumeiro da Terra Fria Barrosã](https://fumeirodemontalegre.pt/2026/produtores-outros).
-- **Alijó** — [productores de azeite de D'Olival ao Azeite D'Ouro](https://dolivalaoazeitedouro.cm-alijo.pt/produtores/).
-- **Al-Bio** — [productores de la Associação Agroecológica do Algarve](https://al-bio.pt/produtores/).
-- **AEAlgarve** — [empresas agroalimentares de las áreas empresariales del Algarve](https://aealgarve.pt/empresas).
-- **PortalNacional** — [empresas alimentares de Madeira por actividad](http://portalnacional.com.pt/madeira/empresas/alimentacao/).
-- **CAP2019** — [listado de marcas de cerveja artesanal portuguesa](https://cervejaartesanalportuguesa.pt/cervejas/).
-  Es de 2019: sirve para descubrir, **no** para afirmar actividad. Muchas marcas
-  eran proyectos *gypsy* sin instalación propia. Comprobar una a una.
-
-## Cobertura por región
-
-419 entradas en total: 389 candidatos a productor y 30 agrupamientos gestores o
-asociaciones sectoriales, marcados con `—` en la columna de categoría. Estos
-últimos **no** son altas: son la vía documentada hacia los productores concretos
-de un DOP/IGP cuando el registro no los publica uno a uno.
-
-| región | entradas | ficheros |
-|---|---|---|
-| Norte | 98 | `braga`, `braganca`, `porto`, `viana-do-castelo`, `vila-real` |
-| Centro | 94 | `aveiro`, `castelo-branco`, `coimbra`, `guarda`, `leiria`, `viseu` |
-| Lisboa e Vale do Tejo | 45 | `lisboa`, `santarem`, `setubal` |
-| Alentejo | 53 | `beja`, `evora`, `portalegre` |
-| Algarve | 36 | `faro` |
-| Açores | 56 | `acores` |
-| Madeira | 37 | `madeira` |
-
-## Trampas detectadas al compilar
-
-- **El azeite alentejano y duriense sale casi siempre de bodegas ya publicadas.**
-  Casa Relvas, Esporão, J. Portugal Ramos, Quinta do Crasto, Quinta do Noval o
-  Ventozelo venden azeite propio: ahí el cambio es `categorias adicionales`, no
-  una fila nueva. Está anotado fila a fila en `evora.md` y `vila-real.md`.
-- **El lagar y la bodega pueden estar en distritos distintos.** El lagar de
-  Esporão está en Serpa (Beja) y la adega en Reguengos (Évora).
-- **La marca miente sobre el concelho.** `Fumeiro Artesanal de Seia` produce en
-  Oliveira do Hospital (Coimbra) y `Queijaria do Pico` en Praia da Vitória
-  (Terceira).
-- **PTPT mezcla productores con puntos de venta.** El directorio incluye
-  restaurantes y pastelerías que solo revenden el producto tradicional, y en
-  Boticas y Ul lista particulares con domicilio privado: no son candidatos.
-- **El listado de cerveza artesanal es de 2019** y muchas marcas eran proyectos
-  *gypsy*. Ninguna entrada `CAP2019` vale sin comprobar instalación y actividad.
-- **Madeira no tiene directorio de productores.** El registro empresarial que
-  hubo que usar incluye importadores y sociedades sin actividad productiva; el
-  IVBAM, que sí publica la lista oficial de rum y poncha, no fue accesible.
+- Un lagar, una adega, la sede y la tienda pueden estar en distritos distintos;
+  manda la unidad que realiza la producción calificante.
+- El nombre comercial puede citar una localidad distinta del concelho real.
+- PTPT y otros directorios mezclan ocasionalmente productores con restaurantes,
+  comercios o particulares sin oferta productiva pública.
+- Las rutas, ferias y escaparates colectivos apoyan descubrimiento, pero no
+  sustituyen la identidad y actividad del productor.
+- En Madeira y Açores, verifica la isla y usa el área del archipiélago definida
+  por el catálogo.

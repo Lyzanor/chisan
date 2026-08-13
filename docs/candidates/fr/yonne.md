@@ -22,7 +22,7 @@ Estado de la pasada del 2026-08-12: Domaine de la Grande Chaume permanece en esp
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
 
-Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10). La revisión del 2026-08-12 publicó Biscuiterie de Bourgogne al confirmar fábrica, gama y tienda online. Las otras dos señales permanecen abiertas: el registro prueba identidad legal, código de actividad y ubicación declarada, no una oferta alimentaria propia.
+Pasada por región descrita en [guía nacional](README.md#sirene-como-fuente-de-descubrimiento). La revisión del 2026-08-12 publicó Biscuiterie de Bourgogne al confirmar fábrica, gama y tienda online. Las otras dos señales permanecen abiertas: el registro prueba identidad legal, código de actividad y ubicación declarada, no una oferta alimentaria propia.
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|

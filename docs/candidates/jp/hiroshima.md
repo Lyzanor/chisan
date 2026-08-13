@@ -9,8 +9,9 @@ Japón** junto a Nada (Hyogo) y Fushimi (Kioto), con las bodegas alineadas en un
 sola calle. Categoría para todas: `Sake`.
 
 ## Trampas
-- **今田酒造本店 (Imada Shuzo Honten, Higashihiroshima)** ya está en la bandeja
-  del `README.md` de esta carpeta: no volver a proponerla como nueva.
+- **今田酒造本店 (Imada Shuzo Honten, Higashihiroshima)** ya está publicado
+  como `imada-shuzo-honten-higashihiroshima`: no volver a proponerlo como alta
+  nueva.
 - ⚠ **北広島町 (Kitahiroshima, Hiroshima) no es 北広島市 (Kitahiroshima,
   Hokkaido)**. Mismo nombre, 1.400 km. Si la fila se escribe con el municipio a
   secas, el gate geográfico la manda a Hokkaido y es error bloqueante —

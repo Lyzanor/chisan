@@ -8,8 +8,8 @@ Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta
 confirmar contra la web de cada bodega.
 
 ## Trampas
-- **八戸酒造 (Hachinohe Shuzo, Hachinohe)** ya está en la bandeja del `README.md`
-  de esta carpeta: no volver a proponerla como nueva.
+- **八戸酒造 (Hachinohe Shuzo, Hachinohe)** ya está publicado como
+  `hachinohe-shuzo-hachinohe`: no volver a proponerlo como alta nueva.
 - **合同酒精 八戸工場** y **八戸酒類 (五戸工場 / 八鶴工場)** son plantas de un
   grupo, no bodegas con identidad propia. Triar antes de escribir fila: la
   unidad correcta puede ser el grupo en otra prefectura.

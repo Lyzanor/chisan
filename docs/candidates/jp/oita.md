@@ -9,9 +9,8 @@ Categoría para todas: `Sake`, con la salvedad de abajo. El rōmaji de `nombre` 
 
 ## Trampas
 - **`hita` ya está desambiguado** en `data/reference/municipality-overrides.json`
-  frente a su homónimo español (`AGENTS.md` de Japón, y ya avisado en el
-  `README.md` de esta carpeta por Hita Tenryosui). Las tres bodegas de Hita pasan
-  el gate sin tocar nada.
+  frente a su homónimo español. Hita Tenryosui ya usa esa resolución y las tres
+  bodegas de Hita pasan el gate sin tocar nada.
 - ⚠ **老松酒造 (Hita, Oita)** es el tercer 老松 del catálogo: los otros son
   伊丹老松酒造 (Itami) y 老松酒造 (Shiso), ambos en `hyogo.md`. Tres empresas.
 - **亀の井酒造 (Kusu, Oita)** no es 亀の井酒造 (Tsuruoka, Yamagata), la de

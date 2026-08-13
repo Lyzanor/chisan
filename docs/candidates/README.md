@@ -4,7 +4,26 @@
 fuente de verdad y la app no la lee: un productor publicado vive en
 `data/csv/**` y una decisión cerrada, en `data/evidence/**`.
 
-## Organización
+## Responsabilidades
+
+Los README de este árbol son guías, no paneles de estado:
+
+- este fichero define el formato y el ciclo de vida comunes;
+- `docs/candidates/<country>/README.md`, cuando exista, solo añade métodos de
+  descubrimiento reutilizables para ese país;
+- `docs/candidates/<country>/<area>.md` contiene la cola activa, las fuentes y
+  consultas concretas, la fecha de corte y el trabajo pendiente del área;
+- `data/csv/<country>/AGENTS.md` contiene las reglas y los techos de fuentes
+  duraderos del país;
+- `data/csv/**` y `data/evidence/**` conservan, respectivamente, las filas
+  publicadas y las decisiones cerradas.
+
+No pongas en un README recuentos de candidatos, áreas revisadas, resultados de
+un lote, fechas de cierre ni listas de pendientes: son estado derivado y se
+desactualizan en cuanto cambia un fichero de área. Tampoco mantengas un índice
+manual de áreas; el árbol de ficheros ya cumple esa función.
+
+## Organización de las notas
 
 Usa un fichero por área:
 `docs/candidates/<country>/<area>.md`. Abre un fichero temático adicional solo

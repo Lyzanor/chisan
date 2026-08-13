@@ -14,7 +14,7 @@ Investigación del 2026-08-08, revisada por completo el 2026-08-13. Los siete op
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
 
-Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10), revisada por completo el 2026-08-13. Victoria's Juices y La Saline aux 4 Vents se publicaron tras confirmar su oferta y actividad actuales. Chamboule Tout permanece como señal: la empresa sigue activa con código de preparación de zumos, pero no apareció una presencia pública reciente que permita verificar una oferta concreta bajo esa marca.
+Pasada por región descrita en [guía nacional](README.md#sirene-como-fuente-de-descubrimiento), revisada por completo el 2026-08-13. Victoria's Juices y La Saline aux 4 Vents se publicaron tras confirmar su oferta y actividad actuales. Chamboule Tout permanece como señal: la empresa sigue activa con código de preparación de zumos, pero no apareció una presencia pública reciente que permita verificar una oferta concreta bajo esa marca.
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|

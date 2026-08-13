@@ -16,7 +16,7 @@ Motivo de espera tras la revisión: EARL de l'Aubette y Ferme de Saint-Gervais t
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
 
-Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10), revisada el 2026-08-13. Solo queda pendiente La Brûlerie de Cergy: el registro muestra la apertura de liquidación judicial en enero de 2026, pero no basta para afirmar el cierre definitivo ni la continuidad de la oferta.
+Pasada por región descrita en [guía nacional](README.md#sirene-como-fuente-de-descubrimiento), revisada el 2026-08-13. Solo queda pendiente La Brûlerie de Cergy: el registro muestra la apertura de liquidación judicial en enero de 2026, pero no basta para afirmar el cierre definitivo ni la continuidad de la oferta.
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|

@@ -11,8 +11,8 @@ Categoría para todas: `Sake`. El rōmaji de `nombre` y `municipio` es propuesta
 confirmar contra la web de cada bodega.
 
 ## Trampas
-- **大七酒造 (Daishichi, Nihonmatsu)** ya está en la bandeja del `README.md` de
-  esta carpeta: no volver a proponerla como nueva.
+- **大七酒造 (Daishichi, Nihonmatsu)** ya está publicado como
+  `daishichi-sake-brewery-nihonmatsu`: no volver a proponerlo como alta nueva.
 - **豊國酒造 (Furudono, 石川郡) y 豊国酒造 (Aizubange, 河沼郡) son dos empresas
   distintas** que solo se diferencian en un kanji (國/国). No fusionar filas.
 - **榮川酒造株式会社 (Bandai) y 榮川酒造合資会社 (Minamiaizu)**: misma trampa, la

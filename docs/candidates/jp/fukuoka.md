@@ -28,6 +28,12 @@ Niigata. Categoría para todas: `Sake`.
   Hakata, no solo las industriales); あまおう (fresa con marca registrada);
   久留米/博多 ラーメン y sus caldos; 醤油 y 味噌 de Yanagawa; 柳川のうなぎ.
 
+## Hallazgo heredado pendiente
+
+- **Taiyo Flour Milling** — `Pan y cereal`, Fukuoka; el listado aportado por el
+  usuario propone `taiyomil.com`. Confirmar que existe una oferta alimentaria
+  propia accesible al público y localizar la unidad productiva antes de publicar.
+
 ## Lote JAS ecológico nacional — 2026-08-08
 
 > **Reauditoría 2026-08-11:** 18 candidatos siguen retenidos tras cruzarlos de nuevo contra el CSV actual. El registro JAS prueba la certificación y el centro, pero no basta por sí solo para acreditar identidad pública, oferta propia y actividad actual; no se publica ninguna fila sin resolver esas tres piezas.

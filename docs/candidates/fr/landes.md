@@ -20,7 +20,7 @@ Investigación del 2026-08-08, revisada por completo el 2026-08-13. Los ocho ope
 
 ## Barrido SIRENE de categorías infrarrepresentadas (2026-08-10)
 
-Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorías-infrarrepresentadas-2026-08-10), revisada por completo el 2026-08-13. Las dos señales se conservan: L'Atelier de Jean no muestra todavía una gama pública actual; para Vivera solo apareció una descripción genérica de directorio y el dominio sugerido en el barrido pertenece a otra empresa, por lo que no se incorporó.
+Pasada por región descrita en [guía nacional](README.md#sirene-como-fuente-de-descubrimiento), revisada por completo el 2026-08-13. Las dos señales se conservan: L'Atelier de Jean no muestra todavía una gama pública actual; para Vivera solo apareció una descripción genérica de directorio y el dominio sugerido en el barrido pertenece a otra empresa, por lo que no se incorporó.
 
 | Nombre declarado | Razón social | Commune | Dirección | Categoría propuesta | Actividad declarada (NAF) | Alta | Fuentes |
 |---|---|---|---|---|---|---|---|

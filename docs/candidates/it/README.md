@@ -1,17 +1,10 @@
-# Italia — revisión integral de candidatos
+# Guía de candidatos — Italia
 
-Revisión cerrada el 2026-08-09 sobre los 2.200 operadores con certificado ecológico `ISSUED` que componían la cola TRACES NT. Se contrastaron identidad pública, actividad actual, producto propio, comune productivo, datos de contacto y venta remota con presencia empresarial pública y las fuentes oficiales disponibles.
+Aplica la [guía común](../README.md) y las
+[reglas y techos de fuentes de Italia](../../../data/csv/it/AGENTS.md).
 
-Se publicaron 87 productores con evidencia suficiente y se retiraron sus entradas de las listas provinciales. También se cerraron tres exclusiones no obvias —cría de aves cinegéticas vivas, almacenamiento/petfood y suministros/petfood— mediante registros `reject` y notas en sus áreas, para que no se pierda el razonamiento. El caso Ravidà permanece expresamente retenido por la discrepancia entre una marca pública activa y un titular certificado que figura en liquidación.
-
-Los 2.110 casos que permanecen en las listas están revisados, pero no son publicables todavía: el certificado acredita un operador y un alcance ecológico, aunque no demuestra por sí solo una oferta alimentaria pública actual ni que la dirección declarada sea una unidad productiva. Se mantienen como retenciones para una fuente futura, no como descartes definitivos.
-
-El lote posterior añadido el 2026-08-10 también quedó revisado: los productores con oferta y unidad productiva suficientemente acreditadas se trasladaron a sus CSV y se retiraron de las notas provinciales. Henriet Cristina permanece retenida en Aosta porque las fuentes disponibles prueban afinado y distribución, pero no una oferta propia actual suficientemente trazable.
-
-La revisión ampliada del 2026-08-10 recorrió además los 175 candidatos cerveceros que disponían de web, los 33 candidatos de preselección regional con identidad pública fuerte y dos bloques completos de consorcios DOP: Prosciutto di San Daniele y Aceto Balsamico Tradizionale di Modena. Se publicaron 207 productores tras contrastar actividad, producto propio, comune, contacto y, cuando procedía, canal de venta online: 133 cerveceros, 30 de preselección regional, 14 prosciuttifici y 30 acetaie. Quince de las acetaie se recuperaron del bloque que la nota provincial había abreviado, y durante la reconciliación se corrigieron tres contactos que habían quedado desplazados al productor contiguo. Los casos con dominios caídos, aparcados o ambiguos, webs no verificables o conflicto de identidad permanecen en sus notas para revisión manual; no se han convertido en altas ni en rechazos por falta de prueba concluyente.
-
-Una segunda revisión del 2026-08-10 cerró dos bloques de denominación completos: los 10 socios actuales del Prosciutto di Norcia IGP y los 19 caseifici activos que el Consorzio del Pecorino Sardo DOP identifica con planta y contacto. Se publicaron 29 productores con evidencia por unidad productiva. El barrido sardo recuperó además Fattorie Gennargentu y Latteria Sociale di Pozzomaggiore, ausentes de las notas, y excluyó la entidad que el propio consorcio marca como producción DOP cesada. Dolianova, Ortacesus y Silius se asignaron a Cagliari, corrigiendo la agrupación temática de la nota de origen, mientras Carbonia permanece en Sulcis-Iglesiente.
-
-La fecha de corte es 2026-08-10; cualquier candidato añadido después pertenece al siguiente lote.
-
-La revisión profunda continuó con los 52 candidatos que declaraban Olio Riviera Ligure DOP en Imperia, Savona, Genova y La Spezia. Todos se reconciliaron con las fichas vigentes del consorcio: 37 unidades con presencia propia comprobable quedaron verificadas y 15 sin web viva quedaron parciales, siempre con identidad, actividad certificada, comune, dirección y contacto respaldados por el consejo regulador. Lucchi e Guastalli se reasignó de la nota de Genova a La Spezia porque su unidad productiva está en Santo Stefano di Magra.
+Este README es solo un punto de entrada estable. Cada provincia documenta sus
+fuentes, su corte y sus pendientes en el fichero correspondiente. Los totales de
+TRACES, consorcios, categorías o revisiones nacionales no pertenecen aquí; las
+decisiones cerradas se consultan en `data/evidence/it/**` y las filas vigentes,
+en `data/csv/it/**`.

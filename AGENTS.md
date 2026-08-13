@@ -25,13 +25,14 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `country.json` owns level names, display labels, ordering and aliases. Reference files own centroid coverage and geographic disambiguation. Do not duplicate either in prose.
 - Every country folder has a short `AGENTS.md` with exactly three concerns: `Operating state`, `Country rules` and `Source ceilings`. `Operating state` records a coarse phase and active work lanes; exact current queues come from `npx pnpm check:defects --country <iso>`, the CSV, evidence and candidate notes. `Country rules` records only durable local geography, identity or naming traps. `Source ceilings` records what material country-wide sources can and cannot prove.
 - Keep the guide small. Never copy counts, area lists, aliases, category lists, per-area progress or general workflow into it. Update the phase or active lane when the country's work changes; remove a source note once it no longer affects current decisions.
-- Active discovery and per-area progress belong in `docs/candidates/[country]/[area].md`; decisions belong in `data/evidence/**`. The country guide may point to those lanes but does not reproduce them.
+- Active discovery and per-area progress belong in `docs/candidates/[country]/[area].md`; decisions belong in `data/evidence/**`. A `docs/candidates/[country]/README.md`, when useful, is a stable guide to reusable discovery methods only: it never indexes areas or summarizes batches, counts, cutoffs or current queues. The country guide may point to those lanes but does not reproduce them.
 - Never carry a source or interpretation rule across countries merely because it worked in one. Opening a country requires its folder, `country.json`, `AGENTS.md` and centroid support, not a code change.
 
 ## Canonical Docs
 - `docs/CSV_CONTRACT.md`: published-row schema, field and empty-value semantics, controlled values, cross-field invariants and validation model.
 - `docs/EVIDENCE_CONTRACT.md`: JSONL evidence shape, claims, source types and decision records.
 - `docs/EDITORIAL_POLICY.md`: decision model for eligibility, verification, exclusions and online sales.
+- `docs/candidates/README.md`: stable guide to the temporary discovery workspace, candidate minimums, incidental findings, document responsibilities and resolution lifecycle.
 - `docs/GEOLOCATION.md`: producer coordinate workflow — productive-unit sourcing, geocoding, precision, review and future tooling.
 - `docs/IMAGES.md`: producer image workflow — format, sourcing, naming, enrichment tooling, junk signatures.
 

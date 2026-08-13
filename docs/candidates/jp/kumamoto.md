@@ -1,6 +1,6 @@
 # Kumamoto — candidatos
 
-- CSV: `data/csv/jp/kyushu-okinawa/kumamoto.csv` (1 fila: Sugi Bee Garden, miel). Dedup: ninguna de abajo solapa. En la bandeja del `README.md` sigue Kumamoto Flour Milling.
+- CSV: `data/csv/jp/kyushu-okinawa/kumamoto.csv` (1 fila: Sugi Bee Garden, miel). Dedup: ninguna de abajo solapa.
 - Fuentes: 球磨焼酎酒造組合, <https://kumashochu.or.jp/product/> (los 27 socios con municipio, leído 2026-08-04) y 熊本酒造組合, <http://www.kumamoto-sake.com/intro/> (las casas de sake).
 - Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
@@ -27,6 +27,12 @@ destilado reconocidas de Japón — y concentra 27 destilerías en un valle.
   lácteos y pastos de Aso; **い草** (junco de tatami, no alimentario); 熊本ラーメン,
   からし蓮根, デコポン (el cítrico nació aquí), 塩トマト de Yatsushiro,
   海苔 de Ariake.
+
+## Hallazgo heredado pendiente
+
+- **Kumamoto Flour Milling** — `Pan y cereal`; el listado aportado por el
+  usuario propone `bears-k.co.jp`, pero deja la unidad entre Kumamoto y Tamana.
+  Confirmar marca minorista, actividad y municipio productivo antes de publicar.
 
 ## Lote JAS ecológico nacional — 2026-08-08
 
