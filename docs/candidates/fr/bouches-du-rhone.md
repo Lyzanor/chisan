@@ -66,3 +66,9 @@ Quedan **19 candidatos nuevos** en este corte: 3 perfiles de explotación, 3 uni
 | GAEC de la Ferme St Joseph | GAEC | Peyrolles En Provence | 474 chemin de St Joseph 13860 | actividad | 2026 | [nº Bio 58672](https://annuaire.agencebio.org/operateur/58672) |
 | IVANSCHITZ Veith | IVANSCHITZ Veith | Salon De Provence | 4 chemin de la miette 13300 | actividad | 2026 | [nº Bio 132297](https://annuaire.agencebio.org/operateur/132297) |
 | LA FERME DE CHAGNE BRUN Sébastien | GAEC RECONNU LA FERME DE CHAGNE | Senas | Route de Chagne 13560 | actividad | 2026 | [nº Bio 136659](https://annuaire.agencebio.org/operateur/136659) |
+
+## Hallazgo incidental pendiente — 2026-08-13
+
+| Nombre público | Responsable | Commune | Unidad productiva | Producción | Fuente |
+|---|---|---|---|---|---|
+| Ma Petite Oliveraie | Jean-Baptiste Atlan | Maillane | Mas Chastuel, 13910 Maillane | Aceite de oliva de 2.000 olivos repartidos en seis parcelas | [perfil del productor](https://laruchequiditoui.fr/fr-FR/producers/54840/farm) |

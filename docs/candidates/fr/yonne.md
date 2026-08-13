@@ -31,12 +31,6 @@ Pasada por región descrita en [README.md](README.md#barrido-sirene-de-categorí
 
 Estado de la pasada del 2026-08-12: Pisciculture Inokoi solo permite confirmar cría y venta genérica de peces, sin demostrar que sean pescado alimentario en vez de ornamental. Véronique Giet solo conserva actividad registral de torrefacción y té, sin marca o catálogo público localizados. Ambas permanecen en espera.
 
-## Hallazgo incidental — 2026-08-12
-
-| Señal | Commune | Oferta confirmada | Fuentes | Estado |
-|---|---|---|---|---|
-| Les Ateliers de la Pierre-qui-Vire | Saint-Léger-Vauban | Frênette, boisson pétillante et légèrement alcoolisée à base de plantes produite par les moines | [Parc naturel régional du Morvan 2026](https://www.parcdumorvan.org/wp-content/uploads/2026/04/affiche-depliant-2026-web-1.pdf) · [empresa activa](https://www.pappers.fr/entreprise/les-ateliers-de-la-pierre-qui-vire-315229591) | `ready` — trasladada desde Territoire de Belfort; falta incorporarla al CSV de Yonne con ubicación productiva exacta. |
-
 ## Productores de queso — barrido nacional del 2026-08-12
 
 Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionales: [Bienvenue à la ferme](https://www.bienvenue-a-la-ferme.com/fr/recherche?categories[]=products&product_categories[]=cremerie&q=fromage), red de las Cámaras de Agricultura, filtrada a perfiles de `Producteur` clasificados en `Fromages et crèmerie` cuya ficha contiene `fromage`; la [sección IX láctea de la DGAL](https://agriculture.gouv.fr/liste-des-etablissements-agrees-ce-conformement-au-reglement-ce-ndeg8532004-lists-ue-approved), cruzada por SIRET con empresas activas cuya actividad principal en [SIRENE](https://recherche-entreprises.api.gouv.fr/docs/) es `10.51C — Fabrication de fromage`; y el [directorio oficial de Agence Bio](https://annuaire.agencebio.org/), limitado a perfiles activos de `Ferme`, certificado `ENGAGEE` y producción controlada `Fromages`. Se excluyeron mercados y tiendas colectivas, y se deduplicó contra el CSV y los candidatos ya documentados en este département.
