@@ -43,35 +43,28 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-28 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Lote contrastado el 2026-08-12. Se publicaron siete unidades con producción y oferta propia acreditadas: Biancometa, Caseificio Di Nucci, Caseificio Di Pasquo, La Matesina, Caseificio Pallotta, Caseificio Antonio Pulsone e Figli y Fonte Luna. Los 21 casos siguientes permanecen abiertos por una carencia concreta; la autorización sanitaria por sí sola no prueba una marca pública y una oferta actual.
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| BIANCOMETA DI PRONI TOMMASO | Acquaviva D'Isernia | CORSO CARBONARI 18, ACQUAVIVA D'ISERNIA (IS) | `UE IT B104X` | caprino menos de 60 d/más de 60 d | 03-NOV-25 |
-| CASEIFICIO DI NUCCI S.R.L. | Agnone | VIA ZONA ARTIGIANALE GIOVANNI PAOLO II SNC, AGNONE (IS) | `UE IT 14 60` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-JUL-24 |
-| CASEIFICIO DI PASQUO SRL | Agnone | ZONA INDUSTRIALE GIOVANNI PAOLO II (Z.A) 5, AGNONE (IS) | `UE IT 14 85` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-18 |
-| DI MENNA ALBERTO | Agnone | CONTRADA RIGAINI 18, AGNONE (IS) | `UE IT 14 12` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-MAY-17 |
-| DI PIETRO GIANLUCA | Agnone | CONTRADA GIAMMOROTONDO S.N.C. , AGNONE (IS) | `UE IT M9D1U` | vacuno más de 60 d | 28-DEC-09 |
-| S.S. "CI.CA" DI CIMAGLIA ANNIBALE E CANDELA FABRIZIO | Bagnoli Del Trigno | CONTRADA POZZO CANNIELLO SNC, BAGNOLI DEL TRIGNO (IS) | `UE IT 14 70` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| CASEIFICIO ARTIGIANALE DI RE ANTONIO | Cantalupo Nel Sannio | VIA NAZIONALE 19, CANTALUPO NEL SANNIO (IS) | `UE IT D3627` | vacuno menos de 60 d/más de 60 d | 21-AUG-17 |
-| CASEIFICIO ARTIGIANALE LA MATESINA DI SPINA LIBERATO E BARBATO SI LVANO & C. - S.N.C., IN SIGLA CASE | Cantalupo Nel Sannio | LOCALITA' LIMATELLE S.N.C., CANTALUPO NEL SANNIO (IS) | `UE IT Z9Z6Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-DEC-19 |
-| DI MENNA ANTONELLA | Capracotta | CONTRADA MACCHIA 9, CAPRACOTTA (IS) | `UE IT E2K87` | vacuno menos de 60 d | 03-AUG-18 |
-| DI RIENZO LUCIANO | Capracotta | CONTRADA MACCHIA 2, CAPRACOTTA (IS) | `UE IT G3U1V` | vacuno menos de 60 d/más de 60 d | 03-SEP-20 |
-| FRATELLI PALLOTTA DI PALLOTTA SALVATORE E C. SOCIETA' IN NOME COL LETTIVO | Capracotta | VIA NICOLA FALCONI SNC, CAPRACOTTA (IS) | `UE IT 14 50` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-DEC-16 |
-| SOCIETA' COOPERATIVA AGRICOLA SAN NICOLA | Capracotta | VIA LOCALITA` FONTE PEZZENTE 2, CAPRACOTTA (IS) | `UE IT 14 80` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| CASEIFICIO S. STEFANO DI ROBERTO D'ANDREA E C. S.N.C. | Carovilli | VIA ROMA S.N.C., CAROVILLI (IS) | `UE IT 14 61` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-JUL-17 |
-| IL PASTORE SERAFINO DI D'ANDREA MAURO | Carovilli | VIA FONTECIANELLA SNC, CAROVILLI (IS) | `UE IT G758G` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-NOV-22 |
-| CASEIFICIO MOLISE SOCIETA' A RESPONSABILITA' LIMITATA | Carpinone | VIA ZONA INDUSTRIALE SNC, CARPINONE (IS) | `UE IT 14 8` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| CASEIFICIO LA ROCCOLANA DI MUCCILLI REMO | Castelpetroso | VIA SANTUARIO 2, CASTELPETROSO (IS) | `UE IT 14 48` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-AUG-17 |
-| CASEARIA CARRINO DI CARRINO FRANCESCO | Frosolone | VIA S. ONOFRIO SNC, FROSOLONE (IS) | `UE IT 14 19` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-AUG-17 |
-| FATTORIA FONTE PAOLO - SOCIETA' AGRICOLA A RESPONSABILITA' SEMPLI FICATA | Frosolone | VIA FONTE MURATA 4, FROSOLONE (IS) | `UE IT U574R` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-JUN-17 |
-| IANIRO ENRICO | Frosolone | VIA COLLECARRISE 32, FROSOLONE (IS) | `UE IT H9C6X` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| O.S.I.P. (ORGANIZZAZIONE SPETTACOLI INTERNAZIONALI D INTERESSE PU BBLICO) S.R.L. IN FORMA BREVE O. | Frosolone | CONTRADA COLLE MORELLO SNC, FROSOLONE (IS) | `UE IT 14 72` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| PALANGIO LAURA | Frosolone | VIA FONTE MURATA SNC, FROSOLONE (IS) | `UE IT N737G` | vacuno menos de 60 d/más de 60 d | 15-MAY-19 |
-| CASEIFICIO ANTONIO PULSONE & FIGLI S.R.L. | Isernia | VIA LATINA 68, ISERNIA (IS) | `UE IT 14 47` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| LA SERENELLA DI D'AGOSTINO COSMO & C. SOCIETA' IN ACCOMANDITA SEMPLICE | Miranda | CONTRADA FONTE NUOVA SNC, MIRANDA (IS) | `UE IT 14 20` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| AZIENDA AGRICOLA COSTANTINI DI NERI GIOIA | Rocchetta A Volturno | VIA STRADA PROVINCIALE 1, ROCCHETTA A VOLTURNO (IS) | `UE IT 14 75` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-AUG-17 |
-| VALENTE ALESSANDRO | Sesto Campano | VIA INSORTI D`UNGHERIA 13, SESTO CAMPANO (IS) | `UE IT 14 49` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAY-17 |
-| FONTE LUNA - SOCIETA' COOPERATIVA AGRICOLA | Vastogirardi | LOCALITA' STERPARO S.N.C., VASTOGIRARDI (IS) | `UE IT 14 71` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-JUL-17 |
-| LOMBARDI DONATO | Vastogirardi | CONTRADA C.DA PANTANELLI SNC, VASTOGIRARDI (IS) | `UE IT G7S5N` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d | 02-APR-26 |
-| CASEIFICIO ERMINIO PERRELLA DI PERRELLA RENATO & C. S.N.C. | Venafro | VIA COLONIA GIULIA 154, VENAFRO (IS) | `UE IT 14 46` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-JUN-17 |
+| Candidato retenido | Comune provisional | Motivo pendiente |
+|---|---|---|
+| DI MENNA ALBERTO | Agnone | No se localizó oferta pública actual vinculada a la unidad de Contrada Rigaini. |
+| DI PIETRO GIANLUCA | Agnone | No se localizó identidad pública ni oferta propia actual vinculada a Contrada Giammorotondo. |
+| S.S. CI.CA | Bagnoli del Trigno | No se encontró marca pública ni catálogo propio actual de la unidad autorizada. |
+| CASEIFICIO ARTIGIANALE DI RE ANTONIO | Cantalupo nel Sannio | Una feria reciente confirma actividad, pero falta catálogo propio o presencia directa con datos suficientes. |
+| DI MENNA ANTONELLA | Capracotta | No se encontró marca pública ni oferta propia actual vinculada a Contrada Macchia 9. |
+| DI RIENZO LUCIANO | Capracotta | No se encontró marca pública ni oferta propia actual vinculada a Contrada Macchia 2. |
+| COOPERATIVA AGRICOLA SAN NICOLA | Capracotta | No se localizó una presencia actual que documente productos propios y contacto público. |
+| CASEIFICIO S. STEFANO | Carovilli | Hay productos en un marketplace y presencia ferial, pero falta reconciliar la identidad legal, el contacto y la unidad productiva. |
+| IL PASTORE SERAFINO | Carovilli | No se localizó oferta pública actual vinculada a la unidad de Via Fontecianella. |
+| CASEIFICIO MOLISE | Carpinone | La actividad aparece en una feria reciente, pero falta una fuente directa con catálogo, contacto e identidad de marca suficientes. |
+| CASEIFICIO LA ROCCOLANA | Castelpetroso | Solo se encontraron directorios; falta oferta propia actual y reconciliar el titular Muccilli. |
+| CASEARIA CARRINO | Frosolone | Solo se confirmó la actividad por directorios y registro; falta catálogo o presencia pública propia actual. |
+| FATTORIA FONTE PAOLO | Frosolone | No se localizó una presencia pública actual que pruebe productos propios y contacto. |
+| IANIRO ENRICO | Frosolone | No se localizó identidad pública ni oferta propia actual vinculada a Via Collecarrise. |
+| O.S.I.P. | Frosolone | El titular no ofrece una identidad casearia pública reconciliable con la unidad de Colle Morello. |
+| PALANGIO LAURA | Frosolone | No se localizó identidad pública ni oferta propia actual vinculada a Via Fonte Murata. |
+| LA SERENELLA | Miranda | No se encontró una presencia directa actual que documente productos propios y contacto. |
+| AZIENDA AGRICOLA COSTANTINI | Rocchetta a Volturno | Hay productos actuales en marketplace, pero falta reconciliar la marca, el titular y la unidad productiva. |
+| VALENTE ALESSANDRO | Sesto Campano | No se localizó identidad pública ni oferta propia actual vinculada a Via Insorti d'Ungheria. |
+| LOMBARDI DONATO | Vastogirardi | La autorización es reciente, pero aún no se encontró marca pública ni oferta propia actual. |
+| CASEIFICIO ERMINIO PERRELLA | Venafro | La web de marca actual identifica a Tualat y una sede en Verona; falta demostrar su relación vigente con la planta de Venafro. |

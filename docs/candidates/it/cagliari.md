@@ -25,52 +25,17 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | ARGIOLAS ROBERTO | Gergei | VIA LOGUDORO N.11 - 08030 | producción — vegetales sin transformar | 2029-04-17 | [IT-BIO-007.380-0113224.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0113224.2026.001.pdf) |
 | ASONI ANGELO | Capoterra | LOC. PLANEMESU 09012 | preparación, producción — vegetales sin transformar | 2029-05-24 | [IT-BIO-004.380-0003253.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0003253.2026.001.pdf) |
 
-## Categorías poco representadas — barrido del 2026-08-10
+## Productores de queso — pendientes tras el barrido sanitario del 2026-08-11
 
-1 candidato para esta provincia, tomado de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+8 unidades siguen en retención tras el contraste del 2026-08-12. Proceden del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y tienen autorización para fabricar queso, pero aún falta resolver una contradicción de actividad o encontrar una identidad pública y oferta propia suficientemente actuales. Los candidatos aceptados, los ya publicados y las plantas auxiliares reconciliadas se han podado.
 
-Reparto por categoría propuesta: `Cerveza` 1.
-
-Fuentes de este lote:
-
-- Consorzio per la tutela del Pecorino Sardo DOP — caseifici — <https://www.pecorinosardo.it/consorzio/i-caseifici-produttori-della-dop>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
+| Candidato declarado | Comune | Dirección de la unidad | Autorización | Motivo pendiente |
 |---|---|---|---|---|
-| BIRRIFICIO BARLEY | Maracalagonis | `Cerveza` | birra artigianale | [web](https://www.barley.it/birrificio.html) |
-
-## Productores de queso — barrido sanitario nacional del 2026-08-11
-
-26 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y reasignadas por comune mediante la [clasificación territorial ISTAT vigente desde 2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). El lote se limita a establecimientos `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. Las fuentes acreditan unidad, comune y autorización sanitaria, pero no por sí solas la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| SARDA LATTICINI S.R.L. | Cagliari | CIRCONVALLAZIONE PIRRI SS. 131 KM 2 - VIA LIGAS 43, CAGLIARI (CA) | `UE IT 20 87` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-JUL-18 |
-| CODONESU GIAN LUCA | Castiadas | LOCALITA' CAMISA snc, CASTIADAS (SU) | `UE IT 20 322` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUL-18 |
-| FORMAGGI PICCIAU S.R.L. | Decimomannu | ZONA INDUSTRIALE STADA STATALE 130 KM14.300 SNC, DECIMOMANNU (CA) | `UE IT J568J` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-OCT-22 |
-| ICA DI ENNIO ARGIOLAS S.R.L. O IN FORMA ABBREVIATA ARGIOLAS FORMA GGI S.R.L. | Dolianova | STRADA PROVINCIALE SP 14 3/5, DOLIANOVA (SU) | `UE IT 20 18` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-JUL-18 |
-| FORMAGGI ARESU S.R.L. ARTIGIANA | Donori | ZONA INDUSTRIALE VIA IS ARENAS 5, DONORI (SU) | `UE IT 20 81` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-JUL-18 |
-| VERGARA FOOD DI VITTORIO VERGARA | Elmas | VIA DELL'ACQUEDOTTO ROMANO SNC, ELMAS (CA) | `UE IT K3K3L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-MAY-16 |
-| FARCI RINO | Escalaplano | VIA MASCAGNI 3, ESCALAPLANO (SU) | `UE IT S1Y0N` | ovino más de 60 d | 04-AUG-21 |
-| FRATELLI MAODDI S.R.L. | Genoni | LOCALITA' SANTA MARIA snc, GENONI (SU) | `UE IT 20 29` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-NOV-21 |
-| CASEIFICIO ANTONIO GARAU DAL 1880 S.R.L. | Mandas | VIA CAGLIARI 173, MANDAS (SU) | `UE IT 20 119` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-DEC-15 |
-| SARDAFORM DI CAPPAI ENRICO S.A.S. | Muravera | LOCALITA' SANTA MARIA SS 125 KM 61.800 SNC, MURAVERA (SU) | `UE IT 20 287` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-JUL-18 |
-| BIORA SRL | Nuragus | VIA SANT'ELIA, 1 , NURAGUS (SU) | `UE IT 20 79` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| FRATELLI MAODDI S.R.L. | Nuragus | ZONA INDUSTRIALE ZONA INDUSTRIALE SNC, NURAGUS (SU) | `UE IT 20 124` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-14 |
-| CANCEDDA MARIANO | Nurri | LOCALITÀ NABIDERA , NURRI (SU) | `UE IT 20 204` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| INDUSTRIA CASEARIA SERRA RAFFAELE & C. SNC | Nurri | VIA FONTANA NUOVA, 37 , NURRI (SU) | `UE IT 20 28` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| ORGANIZZAZIONE PRODUTTORI UNIONE PASTORI SOCIETA' COOPERATIVA AGRICOLA | Nurri | ZONA INDUSTRIALE LOCALITÀ TACCU S.P. N. 10 57, NURRI (SU) | `UE IT 20 231` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-MAR-17 |
-| ORGANIZZAZIONE PRODUTTORI UNIONE PASTORI SOCIETA' COOPERATIVA AGRICOLA | Nurri | ZONA INDUSTRIALE LOC. TACCU STRADA PROV. 10 SNC, NURRI (SU) | `UE IT 20 106` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-JUL-18 |
-| INDUSTRIA CASEARIA AGROALIMENTARE SERRA S.R.L. | Ortacesus | ZONA INDUSTRIALE LOCALITÀ BAU SUEDDI SNC, ORTACESUS (SU) | `UE IT 20 196` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUL-18 |
-| QUARTU 2A S.R.L. | Quartu Sant'Elena | VIA PADRE PICCI 50, QUARTU SANT'ELENA (CA) | `UE IT 20 84` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-JAN-19 |
-| CASEARIA PODDA S.R.L. | Sestu | VIA CAGLIARI 383, SESTU (CA) | `UE IT 20 37` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-MAR-25 |
-| GENTILI SAPORI SARDI S.R.L. | Sestu | STRADA PROVINCIALE N. 8 BIVIO DI SESTU KM 7.700 SNC, SESTU (CA) | `UE IT 20 85` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-DEC-25 |
-| SOC. SEMPLICE F.LLI FRAU | Siliqua | LOCALITÀ MONTE ACCAS , SILIQUA (SU) | `UE IT 20 246` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-08 |
-| MURTAS FORMAGGI S.R.L. | Sillius | ZONA INDUSTRIALE LOC. IS NAIS - ZONA P.I.P. SNC, SILLIUS (SU) | `UE IT N331Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-MAY-26 |
-| NONNIS GIOVANNI GIUSEPPE | Sillius | VIA CAGLIARI 48, SILLIUS (SU) | `UE IT 20 170` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-23 |
-| CASEIFICIO COCCO STEFANO FU FRANCESCO | Sinnai | Z.I. AREA PIP , SINNAI (CA) | `UE IT D1V1S` | ovino menos de 60 d/más de 60 d | 15-MAY-12 |
-| MATTANA FRANCESCO | Sinnai | VIA S. BENEDETTO CROCE, 29 , SINNAI (CA) | `UE IT 20 82` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| FORMAGGI VALDES DI VALDES VITTORIO & C. S.A.S. | Villasor | VIA CAVOUR 21, VILLASOR (SU) | `UE IT 20 129` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-JUL-18 |
+| SARDA LATTICINI S.R.L. | Cagliari | Circonvallazione Pirri S.S. 131 km 2 / Via Ligas 43 | `UE IT 20 87` | La autorización sigue listada, pero fuentes empresariales actuales indican liquidación judicial; falta una fuente oficial que resuelva actividad o cierre. |
+| VERGARA FOOD DI VITTORIO VERGARA | Elmas | Via dell'Acquedotto Romano snc | `UE IT K3K3L` | No se ha localizado marca pública, catálogo propio ni canal actual atribuible a esta unidad. |
+| BIORA SRL | Nuragus | Via Sant'Elia 1 | `UE IT 20 79` | La identidad empresarial pública encontrada no permite atribuir una marca ni una oferta quesera actual a esta unidad. |
+| CANCEDDA MARIANO | Nurri | Località Nabidera | `UE IT 20 204` | Solo consta la autorización sanitaria y referencias ganaderas antiguas; falta oferta pública actual. |
+| INDUSTRIA CASEARIA SERRA RAFFAELE & C. SNC | Nurri | Via Fontana Nuova 37 | `UE IT 20 28` | No se ha encontrado una marca, catálogo o contacto público actual que distinga esta unidad de otros Serra. |
+| QUARTU 2A S.R.L. | Quartu Sant'Elena | Via Padre Picci 50 | `UE IT 20 84` | La sociedad figura activa, pero no aparece una identidad comercial ni una oferta propia utilizable. |
+| GENTILI SAPORI SARDI S.R.L. | Sestu | S.P. 8, bivio di Sestu km 7,700 | `UE IT 20 85` | Hay actividad mayorista y autorización reciente, pero no se ha podido confirmar marca y productos propios frente a mera distribución. |
+| SOCIETÀ AGRICOLA F.LLI FRAU | Siliqua | Località Monte Accas | `UE IT 20 246` | Fuentes antiguas vinculan el producto Pastore Monte Accas, pero falta una fuente directa o institucional reciente que confirme continuidad. |

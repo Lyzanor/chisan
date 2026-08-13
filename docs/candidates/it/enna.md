@@ -1,6 +1,8 @@
 # Candidatos — Enna
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Investigación del 2026-08-08, contrastada el 2026-08-12. De los 20 operadores con certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), se publicó Tenuta Collotta: su web actual reconcilia la unidad productiva de Contrada Bubbudello, los cultivos, los transformados propios y un ecommerce operativo.
+
+Permanecen 19 candidatos. Agri Invest solo ofrece rastro societario de cultivo oleícola y su expediente municipal de inicio de producción primaria fue archivado por falta de documentación; Grottacalda mantiene identidad pública como agriturismo, pero no un catálogo estable y directo de productos agrícolas propios. En los otros 17 casos, el certificado o los registros empresariales prueban actividad agraria, pero no una marca pública actual con producto alimentario propio y canal de contacto atribuible a la unidad. Se conservan para una futura fuente directa; la dirección provisional procede del certificado y el comune se asignó mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/).
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
@@ -19,7 +21,6 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | Avola Maria | Enna | C.da S. Antonio, Snc 94100 | producción — vegetales sin transformar | 2027-07-10 | [IT-BIO-005.380-0004833.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0004833.2026.001.pdf) |
 | Azienda Agricola ``Grottacalda`` Di Agozzino Tommaso | Piazza Armerina | Contrada Grottacalda, Snc 94015 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-08-23 | [IT-BIO-005.380-0038368.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0038368.2025.001.pdf) |
 | AZIENDA AGRICOLA RINDONE S.S | Pietraperzia | VIA MOSCA 51 94016 | producción — vegetales sin transformar | 2028-10-31 | [IT-BIO-012.380-0070418.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0070418.2025.001.pdf) |
-| AZIENDA AGRICOLA TENUTA COLLOTTA DI COLLOTTA SALVATORE | Barrafranca | VIA GALVANI 3 94012 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-10-15 | [IT-BIO-004.380-0013834.2025.004](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0013834.2025.004.pdf) |
 | BALSAMO SANTINA MARIA | Piazza Armerina | C/DA POLINO, SNC 94015 | producción — vegetales sin transformar | 2028-06-10 | [IT-BIO-018.380-0101743.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-018.380-0101743.2025.001.pdf) |
 | BARDARE' SALVATORE | Piazza Armerina | Via G Matteotti, 27 94015 | producción — vegetales sin transformar | 2029-03-04 | [IT-BIO-009.380-0003181.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0003181.2026.001.pdf) |
 | Bernunzo Michael | Barrafranca | Via Campania, 126 94012 | producción — vegetales sin transformar | 2027-09-19 | [IT-BIO-005.380-0085182.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0085182.2026.001.pdf) |
@@ -27,30 +28,46 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-29 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Lote contrastado el 2026-08-12. Se publicaron ocho unidades con oferta propia y planta reconciliadas: Centro Form, Caseificio San Giorgio, Il Cavalcatore, Caseificio Valvo, Caseificio Spitale, Caseificio Albereto, Caseificio dei Nebrodi y Caseificio Spina Santa. Permanecen 21 candidatos; el registro sanitario acredita la unidad, pero no bastó para demostrar una identidad pública y una oferta propia actuales.
+
+| Candidato retenido | Motivo pendiente |
+|---|---|
+| CASEIFICIO NATURA DI CARUSO DAVIDE | No se encontró presencia pública actual atribuible a la unidad de Contrada Balzana. |
+| CATERINA D'ANGELO | La sociedad aparece en directorios, pero falta catálogo propio y contacto público verificable. |
+| F.LLI D'ANGELO | No se localizó marca pública ni oferta propia actual vinculada a Contrada Dainamare. |
+| DI VENTI PIETRO | No se localizó identidad pública ni oferta propia actual vinculada a Contrada Tresauro. |
+| MIGNACCA LORENZO CALOGERO | No se localizó identidad pública ni oferta propia actual vinculada a Contrada San Pieri. |
+| BIO CALOGNO | Figura como operador de Provola dei Nebrodi DOP, pero falta presencia directa con productos y contacto. |
+| CACCIATO INSILLA GIACOMO | No se encontró marca pública ni oferta propia actual reconciliable con la unidad. |
+| EREDI COTTONARO PAOLO | No se encontró presencia pública actual que documente producción y productos propios. |
+| GRASSO ELISABETTA | La autorización es reciente, pero todavía falta marca pública y oferta propia actual. |
+| TRUSCIA | No se localizó identidad pública ni oferta propia actual vinculada a Contrada Girgia. |
+| COCUZZA ANGELO | No se localizó identidad pública ni oferta propia actual vinculada a Valle del Previte. |
+| CAMPIONE MICHELE | Fuentes regionales confirman actividad ganadera, pero no una marca casearia ni productos propios actuales. |
+| FERRARA SALVATORE | La autorización es reciente, pero todavía falta marca pública y oferta propia actual. |
+| GIUNTA FRANCESCO | No se localizó identidad pública ni oferta propia actual vinculada a Contrada Cannella. |
+| MANCUSO RENATO | No se localizó presencia directa actual con catálogo y contacto atribuible a Contrada Spirini. |
+| PANE ROBERTO | No se localizó identidad pública ni oferta propia actual vinculada a Contrada Vaccarra. |
+| CASEARI NATURA | El registro y la certificación confirman la unidad, pero falta una presencia pública actual con catálogo propio. |
+| CARDACI SALVATORE | La autorización es reciente, pero todavía falta marca pública y oferta propia actual. |
+| LA SOVRANA | La homónima presencia web pertenece a una distribuidora de Salerno; falta identificar públicamente la planta de Regalbuto. |
+| DI COSTA CATALDO | No se localizó marca pública ni oferta propia actual vinculada a Contrada Colle Sirio. |
+| GRASSO SALVATORE SEBASTIANO | No se localizó marca pública ni oferta propia actual vinculada a Contrada Mannia. |
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
 | CASEIFICIO NATURA DI CARUSO DAVIDE | Aidone | C/DA BALZANA , AIDONE (EN) | `UE IT 19 220` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | CATERINA D'ANGELO S.R.L. | Aidone | CONTRADA SAN BARTOLOMEO sn, AIDONE (EN) | `UE IT 19 128` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-MAY-17 |
-| CENTRO FORM S.R.L. | Aidone | CONTRADA MONTAGNA sn, AIDONE (EN) | `UE IT C8E5Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d | 23-NOV-18 |
-| CASEIFICIO SAN GIORGIO DI BUTTACCIO TARDIO MELISSA & C. S.A.S. E PER BREVITA' "CASEIFICIO SAN GIORG | Assoro | CONTRADA PIETRAMAGGIORE SN, ASSORO (EN) | `UE IT 19 107` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-OCT-19 |
 | F.LLI D'ANGELO SOC. COOP. AGRICOLA | Assoro | CONTRADA DAINAMARE sn, ASSORO (EN) | `UE IT V5Q3C` | caprino menos de 60 d, ovino menos de 60 d | 27-FEB-23 |
-|  IL CAVALCATORE S.R.L. | Assoro | CONTRADA CAVALCATORE s.n., ASSORO (EN) | `UE IT 19 233` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-JUL-16 |
 | DI VENTI PIETRO | Calascibetta | CONTRADA TRESAURO sn, CALASCIBETTA (EN) | `UE IT 19 669` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUL-21 |
 | MIGNACCA LORENZO CALOGERO | Catenanuova | CONTRADA S. PIERI , CATENANUOVA (EN) | `UE IT N0B6B` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | BIO CALOGNO DI MANCUSO PRIZZITANO & C. SOC AGRIC. SEMPLICE | Cerami | CONTRADA BUSICO sn, CERAMI (EN) | `UE IT K4E28` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-MAR-19 |
 | CACCIATO INSILLA GIACOMO | Cerami | VIA ROCCO CHINNICI 24, CERAMI (EN) | `UE IT Y7P5H` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-DEC-19 |
 | AZIENDA AGRICOLA EREDI COTTONARO PAOLO S.S. | Enna | CONTRADA RAJA SS 121 KM 98.800 SN, ENNA (EN) | `UE IT V402G` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-DEC-15 |
-| CASEIFICIO VALVO S.R.L. | Enna | CONTRADA SALERNO , ENNA (EN) | `UE IT 19 39` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JAN-14 |
 | GRASSO ELISABETTA | Enna | CONTRADA EVANGELO SNC, ENNA (EN) | `UE IT M3U6L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d | 02-OCT-24 |
-| SPITALE CASEIFICIO | Enna | C/DA CANNETI , ENNA (EN) | `UE IT 19 228` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | TRUSCIA | Enna | CONTRADA GIRGIA , ENNA (EN) | `UE IT 19 678` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | COCUZZA ANGELO | Gagliano Castelferrato | CONTRADA VALLE DEL PREVITE , GAGLIANO CASTELFERRATO (EN) | `UE IT 19 829` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | CAMPIONE MICHELE | Nicosia | CONTRADA CASALE sn, NICOSIA (EN) | `UE IT 19 234` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-JUN-20 |
-|  CASEIFICIO ALBERETO S.R.L. | Nicosia | CONTRADA ALBERETO SN, NICOSIA (EN) | `UE IT 19 761` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-OCT-20 |
-| CASEIFICIO DEI NEBRODI SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Nicosia | CONTRADA PERCIATA s.n., NICOSIA (EN) | `UE IT 19 232` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-SEP-19 |
-| CASEIFICIO SPINA SANTA SOCIETA' AGRICOLA S.R.L. | Nicosia | CONTRADA SPINA SANTA s.n., NICOSIA (EN) | `UE IT N8W6M` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-JUN-25 |
 | FERRARA SALVATORE | Nicosia | CONTRADA FICILINO SNC, NICOSIA (EN) | `UE IT 19 225` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-APR-26 |
 | GIUNTA FRANCESCO | Nicosia | CONTRADA CANNELLA , NICOSIA (EN) | `UE IT E526N` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-08 |
 | MANCUSO RENATO | Nicosia | CONTRADA SPIRINI S.N, NICOSIA (EN) | `UE IT U6S7Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-DEC-22 |

@@ -64,3 +64,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene dos plantas en Pisa: Granarolo, antiguo Caseificio Pinzani, en Volterra y Busti Formaggi en Fauglia. Ambas quedaron reconciliadas con unidades sanitarias ya incluidas en esta cola; no produjo candidatos nuevos.
+
+## Reasignaciones territoriales desde Lucca — 2026-08-12
+
+Fattoria La Tana de Silvia Baroncini se publicó en el CSV de Pisa tras reconciliar la dirección certificada con su identidad pública y la bodega de Crespina Lorenzana. Quedan dos candidatos recibidos con comune provisional erróneo:
+
+| Candidato | Comune correcto | Fuente | Motivo de retención |
+|---|---|---|---|
+| ARTEMIDA SOCIETA' AGRICOLA A RESPONSABILITA' LIMITATA | Crespina Lorenzana | [TRACES](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0036649.2026.001.pdf) | La dirección de Via I Pinucci 14 pertenece a Pisa; no se localizó una oferta alimentaria pública concreta. |
+| AZIENDA AGRICOLA COLLE PRANA DI GIOVANNI SFORZIN | Crespina Lorenzana | [TRACES](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0010845.2024.001.pdf) | Se corroboraron la explotación, el agriturismo y tres nombres de vino en un marketplace, pero falta una fuente pública actual que reconcilie de forma suficiente el catálogo con la unidad y su contacto. |

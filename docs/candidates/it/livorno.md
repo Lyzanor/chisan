@@ -68,7 +68,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Revisión cerrada el 2026-08-12. Ambas autorizaciones siguen en retención: las fuentes actuales presentan a Cococcioni & Figli como distribuidor alimentario B2B con laboratorio para productos trabajados, pero no identifican un queso propio; Grassi Leopoldo aparece como mayorista especializado en quesos, sin marca, catálogo de fabricación o producto propio atribuible. La autorización sanitaria no permite convertir distribución o manipulación en producción editorialmente demostrada.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|

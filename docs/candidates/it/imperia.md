@@ -72,11 +72,10 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | LA FATTORIA | Ranzo | 338 44 26 766<br>agriturismolafattoria@gmail.com |
 | LA FATTORIA DI CASTEL APPIO | Ventimiglia | 347 27 39 681<br>domenico_cannizzaro@fastwebnet.it |
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+## Productores de queso — retención activa
 
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Revisión del 2026-08-12. G. Alberti se publicó bajo sus identidades públicas Latte Alberti y Valli Genovesi tras confirmar la planta de Pontedassio, mozzarella y stracchino en las webs de la marca. Queda una sola unidad: la búsqueda mezcla su dirección con la explotación olivarera Giordano Alessandro y no ofrece una marca quesera atribuible a Matteo Giordano.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
 | AZIENDA AGRICOLA GIORDANO DI GIORDANO MATTEO | Imperia | VIA DON BELLONE 62, IMPERIA (IM) | `UE IT M0M2M` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-APR-22 |
-| G. ALBERTI & C. - SOCIETA' PER AZIONI | Pontedassio | VIA NAZIONALE 00, PONTEDASSIO (IM) | `UE IT 07 13` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-AUG-14 |

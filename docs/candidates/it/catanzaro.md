@@ -27,7 +27,7 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+1 candidato para esta provincia, tomado de registros oficiales y consorcios de tutela que publican productor, comune y contacto. Revisado el 2026-08-12 y retenido: el dominio declarado no devolvió contenido y no se localizó otra presencia actual que permita confirmar identidad, unidad productiva y oferta propia.
 
 Reparto por categoría propuesta: `Cerveza` 1.
 
@@ -37,41 +37,35 @@ Fuentes de este lote:
 
 La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
 
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Yle | Catanzaro | `Cerveza` | birra artigianale | [web](https://www.birrayle.it) |
+| Candidato retenido | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto | Motivo pendiente |
+|---|---|---|---|---|---|
+| Yle | Catanzaro | `Cerveza` | birra artigianale | [web](https://www.birrayle.it) | Falta una fuente pública actual que confirme la marca, el obrador y la oferta propia. |
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-28 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Lote contrastado el 2026-08-12. Se publicaron seis unidades cuya identidad pública, producción propia y comune quedaron suficientemente acreditados: Caseificio Mancuso, Caseificio Brizzi, Caseificio Corapi, A.B.Z. Tenuta Arpa, RO.VI.LAT y Dedoni. Permanecen 22 candidatos con una carencia editorial concreta; el registro sanitario confirma la autorización, pero no sustituye la oferta pública propia ni resuelve discrepancias de unidad.
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| MANCUSO CARMINE | Carlopoli | CONTRADA LUSTRA SNC, CARLOPOLI (CZ) | `UE IT F9Q5K` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-MAR-18 |
-| CASEIFICIO MANCUSO S.R.L. | Catanzaro | VIALE ISONZO 6, CATANZARO (CZ) | `UE IT 18 56` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-AUG-20 |
-| CASEIFICIO SILA SRL | Catanzaro | VIA A. CONSOLINI , CATANZARO (CZ) | `UE IT 18 41` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| SOCIETA' COOPERATIVA CASEIFICIO BUONAPARTE A.R.L. | Catanzaro | VIALE ISONZO 316/A , CATANZARO (CZ) | `UE IT 18 25` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-MAR-13 |
-| FABIANO SILVANA | Chiaravalle Centrale | C.DA PIRIVOGLIA , CHIARAVALLE CENTRALE (CZ) | `UE IT 18 24` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| FIUMARA FRANCESCO | Chiaravalle Centrale | CONTRADA SERRA RIZZO 1, CHIARAVALLE CENTRALE (CZ) | `UE IT 18 52` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-MAY-14 |
-| IL LATTAIO DI VONO ANTONIO | Chiaravalle Centrale | LOCALITA' FURNA, 55 , CHIARAVALLE CENTRALE (CZ) | `UE IT N4F09` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-JAN-11 |
-| SA.DO. S.R.L. | Curinga | CONTRADA LAGANELLO SNC, CURINGA (CZ) | `UE IT 18 20` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUL-18 |
-| I.L.C.A. S.A.S. DI ANNA LAGANI & C. | Davoli | VIALE CASSIODORO 46, DAVOLI (CZ) | `UE IT 18 59` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-FEB-17 |
-| VALENTINO ANGELA | Girifalco | VIA BOCCACCIO , GIRIFALCO (CZ) | `UE IT 18 97` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO F. LLI PIRRITANO SNC | Isca Sullo Ionio | LOCALITA` CERZACUPA CARDA , ISCA SULLO IONIO (CZ) | `UE IT 18 84` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| CASEIFICIO PAZZONE DI NISTICO SOSTENE & C. SAS | Isca Sullo Ionio | LOCALITA` PAZZONE , ISCA SULLO IONIO (CZ) | `UE IT 18 88` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| CASEIFICIO SAN GIOVANNI DI ANTONIO CURCIO & C. S.A.S. | Lamezia Terme | VIA DEGLI ITALI 126 , LAMEZIA TERME (CZ) | `UE IT T331S` | vacuno menos de 60 d/más de 60 d | 30-APR-13 |
-| CORAPI VITTORIO E C., S.N.C. | Lamezia Terme | VIA CALLERI 18, LAMEZIA TERME (CZ) | `UE IT 18 62` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-MAR-18 |
-| DE FAZIO GIUSEPPE | Lamezia Terme | C.DA SGARANO , LAMEZIA TERME (CZ) | `UE IT 18 102` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| A.B.Z AGROTURISTICA, BIOLOGICA, ZOOTECNICA SOCIETA' COOPERATIVA AGRICOLA IN SIGLA " A.B.Z SOCIETA' | Maida | LOCALITA' ARPA SNC, MAIDA (CZ) | `UE IT 18 136` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JUL-19 |
-| CASEIFICIO VALLE AMATO | Marcellinara | C.DA S. ELIA , MARCELLINARA (CZ) | `UE IT 18 51` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| AGRIFOR DI VONO VINCENZO & C. | Montepaone | VIA SAN FRANCESCO DI PAOLA , 41 , MONTEPAONE (CZ) | `UE IT 18 181` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| PROCOPIO SALVATORE | Olivadi | VIA BEATO ANTONIO , OLIVADI (CZ) | `UE IT 18 89` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO SAN VITO LATTE S.R.L. | Petrizzi | LOCALITA' MURO ROTTO SNC, PETRIZZI (CZ) | `UE IT J1L7J` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-JUL-17 |
-| CASEIFICIO PICCOLA SILA | Petronà | VIA PIETRE DELLA CHIESA , PETRONÀ (CZ) | `UE IT 18 69` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| VITALAT S.A.S. DI SQUILLACIOTI ASSUNTA & FIGLI | San Sostene | VIA NAZIONALE , SAN SOSTENE (CZ) | `UE IT C7N2E` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-12 |
-| RO.VI.LAT S.N.C. DI ROCCA VINCENZO E ELISABETTA | San Vito Sullo Ionio | VIA F. PALMIERI 82, SAN VITO SULLO IONIO (CZ) | `UE IT 18 39` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-JUN-21 |
-| SGOTTO MAURIZIO | San Vito Sullo Ionio | VIA F. SPASARI , SAN VITO SULLO IONIO (CZ) | `UE IT 18 22` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO F. LLI BIONDI SRL | Satriano | VIA MARCONI , SATRIANO (CZ) | `UE IT 18 71` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO MATOZZO TEODORO | Satriano | VIA MAMELI, 1 , SATRIANO (CZ) | `UE IT 18 180` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO AL S.I.L.A. DI CANINO CARMELA | Sorbo San Basile | LOCALITA` DIFISULA , SORBO SAN BASILE (CZ) | `UE IT 18 199` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO DEDONI | Squillace | C.DA PRATORA , SQUILLACE (CZ) | `UE IT 18 53` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+| Candidato retenido | Comune provisional | Motivo pendiente |
+|---|---|---|
+| MANCUSO CARMINE | Carlopoli | No se localizó marca pública ni oferta propia de queso vinculada a la unidad de Contrada Lustra. |
+| CASEIFICIO SILA SRL | Catanzaro | Solo se confirmó la sociedad y la autorización; falta catálogo o presencia pública actual del productor. |
+| CASEIFICIO BUONAPARTE | Catanzaro | La sociedad aparece activa, pero no se encontró oferta propia actual ni canal público atribuible al caseificio. |
+| FABIANO SILVANA / La Pastaiola e Il Casaro | Chiaravalle Centrale | Hay actividad empresarial y contacto, pero falta una fuente actual que documente productos propios concretos. |
+| FIUMARA FRANCESCO / Caseificio Cortese | Chiaravalle Centrale | Se reconcilió el nombre comercial, pero no una oferta pública actual de productos propios. |
+| IL LATTAIO DI VONO ANTONIO | Chiaravalle Centrale | No se encontró identidad pública actual ni catálogo propio vinculable a Località Furna. |
+| I.L.C.A. di Anna Lagani | Davoli | La empresa y el dominio existen, pero el sitio no ofreció contenido verificable sobre productos propios actuales. |
+| VALENTINO ANGELA | Girifalco | Fuentes públicas confirman el caseificio en Località Girello, pero no su oferta propia actual ni contacto comercial. |
+| CASEIFICIO F.LLI PIRRITANO | Isca sullo Ionio | No se localizó presencia pública actual que pruebe marca y productos propios. |
+| CASEIFICIO PAZZONE | Isca sullo Ionio | No se localizó presencia pública actual que pruebe marca y productos propios. |
+| CASEIFICIO SAN GIOVANNI | Lamezia Terme | No se encontró catálogo, web o presencia comercial actual atribuible a la unidad autorizada. |
+| DE FAZIO GIUSEPPE / Fior di Calabria | Lamezia Terme | Los directorios encontrados no bastan para acreditar actividad y oferta propia actuales. |
+| CASEIFICIO VALLE AMATO | Marcellinara | La unidad sanitaria figura en Marcellinara, mientras las fuentes actuales sitúan la actividad en Amato; falta reconciliar la planta. |
+| AGRIFOR DI VONO VINCENZO | Montepaone | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
+| PROCOPIO SALVATORE | Olivadi | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
+| CASEIFICIO SAN VITO LATTE | Petrizzi | La sociedad está activa, pero las fuentes empresariales no acreditan una oferta pública propia concreta. |
+| CASEIFICIO PICCOLA SILA | Petronà | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
+| VITALAT | San Sostene | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
+| SGOTTO MAURIZIO | San Vito sullo Ionio | No se encontró identidad pública actual ni oferta propia vinculada a la unidad de Via F. Spasari. |
+| CASEIFICIO F.LLI BIONDI | Satriano | La ficha sanitaria indica Satriano, pero la empresa actual aparece en Simeri Crichi; falta reconciliar identidad y planta. |
+| CASEIFICIO MATOZZO TEODORO | Satriano | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
+| CASEIFICIO AL S.I.L.A. | Sorbo San Basile | No se encontró identidad pública actual ni oferta propia vinculada a Località Difisula. |

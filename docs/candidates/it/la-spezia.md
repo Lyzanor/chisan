@@ -64,12 +64,3 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | ALLE SERRE | Sarzana | 0187 62 17 30<br>aziendadimostrativa@libero.it |
 | CIMABUE | Varese Ligure | 328 30 33 581<br>cimabueagrisociale@libero.it |
 | IL PELLEGRINO | Varese Ligure | 0525 88 264<br>info@ilpellegrino.eu |
-
-## Productores de queso — barrido sanitario nacional del 2026-08-11
-
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| CONDI' S.R.L. | Castelnuovo Magra | VIA XXIX NOVEMBRE 79, CASTELNUOVO MAGRA (SP) | `UE IT 1770` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-JUL-26 |
-| I FORMAGGI DELLA VAL DI VARA S.R.L. | Varese Ligure | LOCALITA' PERAZZA 1, VARESE LIGURE (SP) | `UE IT 07 27` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-DEC-24 |

@@ -24,39 +24,14 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | SOCIETA' SEMPLICE AGRICOLA VALLE APERTA | Premosello-Chiovenda | VIA BIONDA 27 28803 | producción — vegetales sin transformar | 2028-11-10 | [IT-BIO-006.380-0109363.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0109363.2025.001.pdf) |
 | TOMOLA ILDE | Pieve Vergonte | Via Sant'Anna, 1 28886 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-12-04 | [IT-BIO-014.380-0002133.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-014.380-0002133.2025.001.pdf) |
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+## Productores de queso — pendientes tras el contraste del 2026-08-12
 
-23 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Quedan 4 unidades en retención. Se incorporaron 16 unidades productivas con oferta propia suficientemente contrastada. Commissionaria Ossola y Spagliarisi & Natalini se descartaron como operadores comerciales sin producción propia demostrada; Bertolino se descartó porque su web vigente se define como comerciante y afinador y atribuye el queso de Crodo a la Latteria Sociale Antigoriana, que sí se publica en su planta de Oira. El perfil de Latteria Vigezzina quedó reconciliado con la Cooperativa Agricola Valle Vigezzo y ya no constituye un candidato separado.
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| GHIVARELLI ROBERTO | Antrona Schieranco | FRAZIONE CHEGGIO S/N, ANTRONA SCHIERANCO (VB) | `UE IT V8E34` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 31-JUL-14 |
-| AZ. AGRICOLA DI MATLI SILVANO | Baceno | VIA ALPE FORNO SN, BACENO (VB) | `UE IT 01 2047` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-19 |
-| BIGIO LOREDANA | Baceno | VIA ALPE BUSCAGNA SN, BACENO (VB) | `UE IT 01 2244` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-19 |
-| SOCIETA' AGRICOLA SEMPLICE LA TORRE DI OLZERI ADOLFO & C. | Baceno | VIA ALPE FONTANE SN, BACENO (VB) | `UE IT 01 2144` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-19 |
-| SOCIETA' AGRICOLA SEMPLICE LA TORRE DI OLZERI ADOLFO & C. | Baceno | VIA ALPE SANGIATTO SN, BACENO (VB) | `UE IT 01 2046` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUL-26 |
-| SOCIETA' SEMPLICE AGRICOLA DELLAPIAZZA | Bognanco | VIA ALPE MONSCERA SN, BOGNANCO (VB) | `UE IT 01 2078` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-17 |
-| COMMISSIONARIA OSSOLA SOCIETA' COOPERATIVA | Crevoladossola | VIA CHAVEZ 10 , CREVOLADOSSOLA (VB) | `UE IT 01 483` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JAN-13 |
-| LATTERIA SOCIALE ANTIGORIANA SOCIETA' AGRICOLA COOPERATIVA | Crevoladossola | LOCALITA' ARZALO' - FRAZ. OIRA sn, CREVOLADOSSOLA (VB) | `UE IT 01 769` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-AUG-25 |
-| SPAGLIARISI & NATALINI DI SPAGLIARISI VIVIANA E C. S.A.S. | Domodossola | VIA DE GASPERI, 21, DOMODOSSOLA (VB) | `UE IT 01 250` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-JAN-18 |
-| AGRITURISMO ROSS WALD DI BACHER ALESSIO | Formazza | VIA ALPE MORASCO SNC, FORMAZZA (VB) | `UE IT 01 2080` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-JUL-26 |
-| ALPEN DEI FRATELLI PENNATI S.S. | Formazza | VIA ALPE VANNINO sn, FORMAZZA (VB) | `UE IT 01 2001` | vacuno más de 60 d | 24-APR-19 |
-| BERNARDINI MASSIMO | Formazza | VIA ALPE TOGGIA ALTO (KASTEL) SN, FORMAZZA (VB) | `UE IT 01 2002` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-19 |
-| FORMAZZA AGRICOLA - SOCIETA' AGRICOLA COOPERATIVA | Formazza | FRAZIONE VALDO 36, FORMAZZA (VB) | `UE IT 01 844` | vacuno menos de 60 d/más de 60 d | 04-JAN-18 |
-| SANDRETTI CORRADO | Formazza | VIA ALPE BETTELMATT SN, FORMAZZA (VB) | `UE IT 01 2044` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-JUL-26 |
-| SCILLIGO GABRIELE | Formazza | VIA ALPE REGINA SN, FORMAZZA (VB) | `UE IT 01 2045` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-NOV-16 |
-| RAMONI VALENTINA | Malesco | VIA CIRCONVALLAZIONE 53/A, MALESCO (VB) | `UE IT C6L9Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-OCT-24 |
-| BURKI SOCIETA' SEMPLICE AGRICOLA | Piedimulera | VIA CASCINA MANINI 1, PIEDIMULERA (VB) | `UE IT C6P5M` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUL-26 |
-| SOCIETA' SEMPLICE AGRICOLA LA NOCE | Pieve Vergonte | VIA AL GABBIO 11, PIEVE VERGONTE (VB) | `UE IT D3X4Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JAN-20 |
-| ALPEN DEI FRATELLI PENNATI | Premia | ALPE ALECCIO - LOCALITA` CASABENEVOLI , PREMIA (VB) | `UE IT U1558` | vacuno más de 60 d | 15-FEB-13 |
-| COOPERATIVA AGRICOLA VALLE VIGEZZO - SOCIETA' AGRICOLA COOPERATIVA | Santa Maria Maggiore | VIA ALFREDO BELCASTRO 1, SANTA MARIA MAGGIORE (VB) | `UE IT 01 732` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-APR-20 |
-| SOCIETA' SEMPLICE AGRICOLA DELLAPIAZZA | Trontano | VIA CARDUCCI SNC, TRONTANO (VB) | `UE IT X4A84` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-MAY-25 |
-| ROSSI GIANPAOLO | Varzo | VIA PIAN DUL SCRICE sn, VARZO (VB) | `UE IT 01 2246` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-19 |
-| BERTOLINO S.N.C. DI ALESSANDRO, STEFANO E ANDREA BERTOLINO | Villadossola | VIA DELLA TECNICA 4, VILLADOSSOLA (VB) | `UE IT G1D9Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-APR-20 |
-## Ossolano DOP — barrido del consorcio del 2026-08-11
+| Candidato declarado | Comune | Dirección de la unidad | Motivo concreto de retención |
+|---|---|---|---|
+| GHIVARELLI ROBERTO | Antrona Schieranco | FRAZIONE CHEGGIO S/N, ANTRONA SCHIERANCO (VB) | Publicaciones institucionales antiguas acreditan el queso Cheggio, pero no apareció una señal pública actual de actividad u oferta desde la autorización de 2014. |
+| BIGIO LOREDANA | Baceno | VIA ALPE BUSCAGNA SN, BACENO (VB) | Solo se localizó material institucional histórico sobre producción en Alpe Buscagna; falta una señal actual que permita afirmar que la unidad sigue ofreciendo queso propio. |
+| SOCIETÀ AGRICOLA LA TORRE DI OLZERI ADOLFO & C. | Baceno | VIA ALPE FONTANE SN, BACENO (VB) | La empresa está activa y se publica la unidad de Alpe Sangiatto, pero las fuentes vigentes no confirman producción actual separada en Alpe Fontane. No se fusiona ni se duplica hasta reconciliar la segunda autorización. |
+| ROSSI GIANPAOLO | Varzo | VIA PIAN DUL SCRICE SN, VARZO (VB) | La autorización de 2019 no pudo reconciliarse con una identidad pública actual inequívoca en Varzo; las coincidencias recientes del mismo nombre remiten a otra empresa y otro territorio. |
 
-La relación vigente de productores del [Consorzio del Formaggio Ossolano DOP](https://ossolanodop.it/consorzio-formaggio-ossolano-dop/associati-produttori-formaggio-ossolano-dop/), reproducida por el [Parco Nazionale della Val Grande](https://www.parcovalgrande.it/prodotto.php?id=2593), contiene cinco operadores. Bertolino y Latteria di Crodo quedaron reconciliados con las unidades sanitarias ya presentes; Castagna S.r.l. publica únicamente afinado, porcionado y envasado, y La Casera se identifica expresamente como afinador. El único fabricante nuevo para la cola es:
-
-| Candidato | Comune | Dirección productiva publicada | Producto acreditado | Fuente complementaria |
-|---|---|---|---|---|
-| Latteria Vigezzina / Cooperativa Agricola Valle Vigezzo | Santa Maria Maggiore | Via Antonio Belcastro 1 | Ossolano DOP; quesos frescos y curados de vaca, cabra y oveja | Su [web oficial](https://www.latteriavigezzina.com/prodotti-caseari) describe fabricación diaria en el caseificio y publica dirección y gama; confirmar razón social y código sanitario antes de publicar. |

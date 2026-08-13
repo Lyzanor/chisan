@@ -24,40 +24,27 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | BIANCO ANGELA | Mazara del Vallo | VIA SANTA GEMMA, 24 91026 | producción — vegetales sin transformar | 2028-09-05 | [IT-BIO-007.380-0082032.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0082032.2025.001.pdf) |
 | BLUNDA IGNAZIO | Alcamo | VIA LOMBARDIA 6 91011 | producción — vegetales sin transformar | 2028-04-14 | [IT-BIO-004.380-0094496.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0094496.2025.002.pdf) |
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+## Productores de queso — revisión parcial del 2026-08-13
 
-31 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Se revisó el barrido sanitario nacional de 31 unidades. Se publicaron 15: doce productores lácteos y tres fabricantes cuya actividad pública real es el helado (`Gelateria Mozart`, `Artegel` y `Sigel Gelati`). Las altas incluyen las dos unidades distintas de Belice Formaggi solo cuando la identidad pública permite reconciliarlas: se publicó Gibellina y se retiene Santa Ninfa.
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| ADRAGNA GIUSEPPE | Alcamo | VIA VIA G. VERGA 42, ALCAMO (TP) | `UE IT 19 127` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-JUL-14 |
-| GICA S.R.L. | Alcamo | CONTRADA S. GAETANO SN, ALCAMO (TP) | `UE IT G8A83` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-MAY-17 |
-| LAGILAT DI AMODEO ROSALBA | Alcamo | VIA CIMABUE 2, ALCAMO (TP) | `UE IT D8Z78` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-MAY-26 |
-| EREDI DI SPATAFORA ANTONINO | Calatafimi-Segesta | CONTRADA KAGGERA SS. 133, KM. 342 sn, CALATAFIMI-SEGESTA (TP) | `UE IT 19 24` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUL-26 |
-| BERTUGLIA ALBA MARIA | Castelvetrano | VIA G. UNGARETI 2, CASTELVETRANO (TP) | `UE IT 19 106` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-NOV-25 |
-| CASEIFICIO CAMMARATA ISIDORO DI CAMMARATA PASQUALINA | Castelvetrano | VIA SEGGIO C/DA STELLA 204/5, CASTELVETRANO (TP) | `UE IT 19 110` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JUN-15 |
-| GELATERIA MOZART DI MICHELE E RICCARDO GIACALONE & C. S.N.C. | Castelvetrano | VIA AUTONOMIA SICILIANA OP 7, CASTELVETRANO (TP) | `UE IT 19 749` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-MAR-25 |
-| POMA GIOACCHINO | Custonaci | CONTRADA PURGATORIO snc, CUSTONACI (TP) | `UE IT 19 339` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-APR-14 |
-| BELICE FORMAGGI S.N.C. DI ONORIO VINCENZO & C. | Gibellina | LARGO DELLE ARTI E DEI MESTIERI snc, GIBELLINA (TP) | `UE IT Q2U8N` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-JUN-25 |
-| BIOPEK S.N.C. DI ANDREA E PIETRO MESSINA | Gibellina | VIA EMPEDOCLE RESTIVO, 11, GIBELLINA (TP) | `UE IT 19 36` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JUL-17 |
-| MANFRE' EDOARDO | Gibellina | VIA EMPEDOCLE ZONA PIP BLOCCO B CORPO 2 sn, GIBELLINA (TP) | `UE IT L4L14` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-NOV-16 |
-| ARTEGEL S.R.L. | Marsala | CONTRADA SAN SILVESTRO, 452/E-6, MARSALA (TP) | `UE IT 19 335` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-MAY-16 |
-| AZIENDA AGRICOLA IMPICCICHE' DI PULIZZI FRANCESCO GIUSEPPE | Marsala | CONTRADA SANTO PADRE DELLE PERRIERE s.n, MARSALA (TP) | `UE IT 19 876` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-MAY-22 |
-| DONATO SALVATORE | Marsala | CONTRADA CIAVOLO, N. 225/D , MARSALA (TP) | `UE IT H768N` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| EREDI DI OCCHIPINTI LUCIANO S.N.C. DI ANTONIO E MAURO-SALVATORE OCCHIPINTI | Marsala | CONTRADA MADONNA CAVA BUFALATA 144, MARSALA (TP) | `UE IT 19 325` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-NOV-14 |
-| GENNA FEDERICA | Marsala | CONTRADA COZZARO 263, MARSALA (TP) | `UE IT Q2L1G` | vacuno más de 60 d, ovino menos de 60 d | 21-JAN-22 |
-| GIAPPONE ANNA LISA | Marsala | CONTRADA MESSINELLO sn, MARSALA (TP) | `UE IT 19 148` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-OCT-22 |
-| IL PANELLINO D'ORO S.R.L. | Marsala | CONTRADA CIANCIO - SAN SILVESTRO , MARSALA (TP) | `UE IT K8J7H` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUN-13 |
-| SIGEL GELATI S.R.L. | Marsala | CONTRADA DIGERBATO, 503, MARSALA (TP) | `UE IT 19 119` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-APR-17 |
-| AZIENDA AGRICOLA PRENCI DI PRENCI LUIGI | Mazara Del Vallo | VIA MONSOGNOR COSTANTINO TRAPANI, ANGOLO VIA DEL FANTE 8, MAZARA DEL VALLO (TP) | `UE IT 19 843` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-MAR-23 |
-| CASEIFICIO MAZARA S.R.L. | Mazara Del Vallo | VIA FALCONE 71/A-C, MAZARA DEL VALLO (TP) | `UE IT T960X` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d | 10-JUN-22 |
-| PIZZO GIACOMO GIUSEPPE | Mazara Del Vallo | CONTRADA MIRABILE INCHIAPPARO , MAZARA DEL VALLO (TP) | `UE IT E2Z3V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAR-11 |
-| CASEIFICIO CANGEMI "VASTEDDA DEL BELICE" DI CANGEMI CALOGERO | Partanna | VICOLO BATTUMARI 25 25, PARTANNA (TP) | `UE IT 19 625` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-21 |
-| P.A. GROUP S.P.A. | Petrosino | VIA DEI PLATANI, 59/a, PETROSINO (TP) | `UE IT V3267` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-MAR-26 |
-| SAPORI ANTICHI S S | Poggioreale | CORSO UMBERTO I, 30, POGGIOREALE (TP) | `UE IT 19 864` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-FEB-20 |
-| AZIENDA CUCCHIARA SOCIETA' COOPERATIVA AGRICOLA | Salemi | CONTRADA TORRETTA sn, SALEMI (TP) | `UE IT 19 329` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-16 |
-| LATTICINI CAMMARATA DI PILOCANE ROSARIA | Salemi | CONTRADA BOVARELLA sn, SALEMI (TP) | `UE IT 19 334` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-JUN-21 |
-| LATTICINI GENCO DI GENCO PIETRO | Salemi | CONTRADA BORGESATI 71/F, SALEMI (TP) | `UE IT E2203` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-OCT-15 |
-| BELICE FORMAGGI S.N.C. DI ONORIO VINCENZO & C. | Santa Ninfa | CONTRADA SALINELLA sn, SANTA NINFA (TP) | `UE IT H1515` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-OCT-20 |
-| SICILFORMAGGI S.R.L. | Santa Ninfa | ZONA INDUSTRIALE ZONA ARTIGIANALE LOTTO 38G S.N., SANTA NINFA (TP) | `UE IT 19 63` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-APR-16 |
-| TRINACRIA FORMAGGI DI GIAMBALVO GIACOMO | Santa Ninfa | ZONA INDUSTRIALE ISOLATO E, LOTTI 29 E 30 s.n., SANTA NINFA (TP) | `UE IT H3Q4X` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-MAR-20 |
+Permanecen 16 casos abiertos. La autorización sanitaria prueba capacidad de transformación, pero aún no una oferta pública actual atribuible a la unidad:
+
+| Candidato | Comune | Autorización | Motivo concreto de retención |
+|---|---|---|---|
+| Adragna Giuseppe | Alcamo | `UE IT 19 127` | La actividad casearia está registrada, pero no se localizó gama propia, marca pública o canal actual atribuible a la planta. |
+| Gica S.r.l. | Alcamo | `UE IT G8A83` | Solo aparece actividad alimentaria mayorista genérica; falta producto propio concreto y reconciliación con la unidad de Contrada San Gaetano. |
+| Bertuglia Alba Maria | Castelvetrano | `UE IT 19 106` | No se encontró presencia pública inequívoca ni catálogo actual. |
+| Poma Gioacchino | Custonaci | `UE IT 19 339` | La autorización continúa vigente, pero no hay marca, producto o contacto comercial público suficiente. |
+| Donato Salvatore | Marsala | `UE IT H768N` | No se pudo atribuir una oferta casearia actual a la unidad de Contrada Ciavolo. |
+| Eredi di Occhipinti Luciano | Marsala | `UE IT 19 325` | Falta una identidad comercial actual que conecte la sociedad y la planta con productos concretos. |
+| Genna Federica | Marsala | `UE IT Q2L1G` | La unidad sanitaria no se acompaña de marca, catálogo o venta directa pública localizada. |
+| Giappone Anna Lisa | Marsala | `UE IT 19 148` | No se encontró una oferta pública actual atribuible a la planta de Contrada Messinello. |
+| Il Panellino d'Oro | Marsala | `UE IT K8J7H` | La identidad pública apunta a panadería industrial; falta reconciliar qué producto propio corresponde a esta autorización láctea y a qué categoría debe publicarse. |
+| Azienda Agricola Prenci | Mazara del Vallo | `UE IT 19 843` | Solo se acredita la unidad sanitaria y actividad ganadera; falta una oferta propia publicable. |
+| Caseificio Mazara | Mazara del Vallo | `UE IT T960X` | La empresa figura públicamente como mayorista lácteo y no se encontró catálogo propio que demuestre elaboración actual. |
+| Pizzo Giacomo Giuseppe | Mazara del Vallo | `UE IT E2Z3V` | No se localizó identidad comercial, producto concreto o contacto actual. |
+| P.A. Group | Petrosino | `UE IT V3267` | La razón social es ambigua y no se ha reconciliado con una marca u oferta alimentaria propia. |
+| Latticini Cammarata | Salemi | `UE IT 19 334` | El registro actual prueba compra de leche y planta autorizada, pero no una gama pública propia ni contacto comercial. |
+| Latticini Genco | Salemi | `UE IT E2203` | Hay testimonios de elaboración y venta local, pero falta una fuente pública actual con catálogo y dirección productiva reconciliada. |
+| Belice Formaggi — Santa Ninfa | Santa Ninfa | `UE IT H1515` | La marca pública y la actualización societaria de 2025 respaldan la planta de Gibellina; no se ha probado que Santa Ninfa siga siendo una segunda unidad comercial diferenciada. |

@@ -1,58 +1,47 @@
 # Candidatos — Vercelli
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Revisión del 2026-08-12. El barrido partió del directorio ecológico TRACES NT y del registro diario de establecimientos autorizados del Ministero della Salute. Las altas resueltas se trasladaron al CSV y a `data/evidence/it/piemonte/vercelli.jsonl`; aquí quedan solo los casos que todavía no permiten demostrar una oferta alimentaria propia y actual en una unidad productiva concreta.
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| A.A. SCALONE MATTEO | Roasio | VIA PORTIGLIE 2 13060 | producción — vegetales sin transformar | 2026-12-12 | [IT-BIO-006.380-0002553.2023.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0002553.2023.002.pdf) |
-| AGRICOLA AGORA' DI PIAZZA LUCA | Trino | VIA MONTE SANTO, 13 13039 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-06-03 | [IT-BIO-007.380-0031497.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0031497.2026.001.pdf) |
-| AGRICOLA SA.ZA. S.A.S. | Vercelli | VIA XX SETTEMBRE, 3 13100 | producción — vegetales sin transformar | 2029-07-28 | [IT-BIO-007.380-0042548.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0042548.2026.001.pdf) |
-| ANDOARDI LUCA | Roasio | VIA STATALE 67 13060 | producción — vegetales sin transformar | 2029-07-19 | [IT-BIO-015.380-0079944.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0079944.2026.001.pdf) |
-| ANDORNO CRISTIANO | Bianzè | CASCINA PACE, 46 13041 | producción — vegetales sin transformar | 2029-05-04 | [IT-BIO-007.380-0004339.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0004339.2026.001.pdf) |
-| Ardissino Carlo | Santhià | Via Strada Romperone ,14 13048 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2027-11-21 | [IT-BIO-005.380-0009163.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0009163.2026.002.pdf) |
-| Ardissino Erminia | Cigliano | Strada Saluggia, 17 13043 | producción — vegetales sin transformar | 2028-06-11 | [IT-BIO-007.380-0043918.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0043918.2026.001.pdf) |
-| ARDIZZONE FIORENZO | Tronzano Vercellese | CASCINA BELGIARDINO 13 13049 | producción — vegetales sin transformar | 2029-06-11 | [IT-BIO-015.380-0043195.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0043195.2026.001.pdf) |
-| ARNULFO LOREDANA | Tronzano Vercellese | TENUTA FOGLIETTA 8 13049 | producción — vegetales sin transformar | 2028-05-08 | [IT-BIO-007.380-0062694.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0062694.2025.002.pdf) |
-| Azienda Agricola Aurora Di Pissinis Giuseppe | Bianzè | Via Alice, 13 13041 | producción — vegetales sin transformar | 2027-07-31 | [IT-BIO-007.380-0047646.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0047646.2026.001.pdf) |
-| AZIENDA AGRICOLA RIS & FO' DI VERCELLONE SIMONE, FILIPPO E ANDREA | Desana | PIAZZA CASTELLO 7 13034 | producción — vegetales sin transformar | 2028-09-02 | [IT-BIO-008.380-0101251.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0101251.2025.002.pdf) |
-| AZIENDA AGRICOLA SAN LOUIS DI ARDISSINO DIMAS FRANCESCA | Cigliano | VIA FARINI 54 13043 | producción — vegetales sin transformar | 2028-07-10 | [IT-BIO-006.380-0033950.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0033950.2025.001.pdf) |
-| AZIENDA AGRICOLA VIOLTERRA DI PISSARDO PAOLA | Moncrivello | VICOLO GARIBALDI 1 13040 | producción — vegetales sin transformar | 2027-06-19 | [IT-BIO-004.380-0018279.2024.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0018279.2024.002.pdf) |
-| BALOCCO ANTONIO E VITTORIO S.S. | Tricerro | CASCINA GIOIOSA 13038 | producción — vegetales sin transformar | 2027-09-10 | [IT-BIO-007.380-0017096.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0017096.2026.001.pdf) |
-| BARONE PAOLA | Desana | CASCINA SANDRA SNC 13034 | producción — vegetales sin transformar | 2028-03-31 | [IT-BIO-007.380-0035154.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0035154.2025.002.pdf) |
-| BOBBA CLAUDIO | Bianzè | CASCINA AVOGADINA 70 13041 | producción — vegetales sin transformar | 2029-05-25 | [IT-BIO-007.380-0026222.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0026222.2026.001.pdf) |
-| Bobba Remo | Cigliano | Via Fratelli Rosselli, 40 13043 | producción — vegetales sin transformar | 2029-07-15 | [IT-BIO-008.380-0061554.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0061554.2026.002.pdf) |
-| Bongo Matteo | Vercelli | Larizzate - Cascina Varola sn 13100 | producción — vegetales sin transformar | 2029-01-11 | [IT-BIO-008.380-0046009.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-008.380-0046009.2026.001.pdf) |
-| BONO CLAUDIO | Santhià | C.SO SEMPIONE CASC. CERETTO, 53/A 13048 | producción — vegetales sin transformar | 2026-10-03 | [IT-BIO-007.380-0016552.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0016552.2026.002.pdf) |
+## Operadores ecológicos pendientes
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+Los certificados `ISSUED` acreditan operador, alcance ecológico y dirección, pero no una marca pública ni venta de alimento propio. Se buscaron nombre legal, dirección, titular y posibles marcas; se retienen estos 17 casos:
 
-26 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+| Candidato | Comune | Motivo de retención |
+|---|---|---|
+| A.A. Scalone Matteo | Roasio | Solo aparece el certificado de vegetales sin transformar; no se encontró marca, producto concreto ni canal público del productor. |
+| Agricola SA.ZA. di Vercellotti Paolo & C. | Vercelli | La actividad empresarial de cultivo de arroz está vigente, pero no se encontró una marca o presentación pública de arroz propio. |
+| Andoardi Luca | Roasio | La actividad pública es cultivo de fruta y frutos secos; falta una oferta alimentaria propia identificable. |
+| Andorno Cristiano | Bianzè | Solo consta el certificado de vegetales sin transformar, sin marca ni producto público concreto. |
+| Ardissino Carlo | Santhià | El certificado incluye producción y preparación, pero no se encontró identidad comercial ni alimento propio publicado. |
+| Ardissino Erminia | Cigliano | Solo consta el certificado de vegetales sin transformar, sin marca ni producto público concreto. |
+| Ardizzone Fiorenzo | Tronzano Vercellese | Solo consta el certificado de vegetales sin transformar, sin marca ni producto público concreto. |
+| Arnulfo Loredana | Tronzano Vercellese | La explotación y Cascina Foglietta son localizables, pero no una oferta alimentaria propia actual. |
+| Azienda Agricola Aurora di Pissinis Giuseppe | Bianzè | La empresa cerealista está activa, pero no se encontró marca ni producto propio vendido públicamente. |
+| Azienda Agricola Ris & Fo' | Desana | Consta el cultivo de arroz, pero no una marca o catálogo público que permita atribuirle producto propio. |
+| Azienda Agricola San Louis | Cigliano | La explotación figura en fuentes administrativas y ecológicas, sin alimento propio concreto ni identidad comercial pública. |
+| Azienda Agricola Violterra | Moncrivello | Solo consta el certificado ecológico; no se encontró oferta alimentaria propia actual. |
+| Balocco Antonio e Vittorio | Tricerro | La sociedad cerealista está activa, pero no se encontró producto propio presentado al público. |
+| Barone Paola | Desana | Solo consta el certificado ecológico de Cascina Sandra, sin marca ni alimento propio concreto. |
+| Bobba Claudio | Bianzè | Solo consta el certificado de vegetales sin transformar, sin marca ni producto público concreto. |
+| Bobba Remo | Cigliano | Solo consta el certificado de vegetales sin transformar, sin marca ni producto público concreto. |
+| Bono Claudio | Santhià | Solo consta el certificado de vegetales sin transformar, sin marca ni producto público concreto. |
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| FERRERO DAVIDE | Alagna Valsesia | VIA ALPE OTRO DORF 1, ALAGNA VALSESIA (VC) | `UE IT 01 2031` | vacuno menos de 60 d/más de 60 d | 18-FEB-19 |
-| VENARA UGO | Alagna Valsesia | VIA ALPE SCARPIA DI OTRO SN, ALAGNA VALSESIA (VC) | `UE IT 01 598` | vacuno menos de 60 d | 02-JAN-19 |
-| VALSESIA S.R.L. | Balocco | STRADA PROVINCIALE TORINO-SVIZZERA-FRAZ.CROCICCHIO sn, BALOCCO (VC) | `UE IT 01 89` | vacuno menos de 60 d | 27-MAY-22 |
-| SORELLE FACCIOTTI SOCIETA' SEMPLICE AGRICOLA | Boccioleto | LOCALITA' POMAROLO SN, BOCCIOLETO (VC) | `UE IT P4Q5Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUL-24 |
-| TOSI MARINO | Boccioleto | VIA ALPE ORACCIO sn, BOCCIOLETO (VC) | `UE IT R8Z28` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 02-JAN-19 |
-| BONETTA ERMES | Borgosesia | FRAZIONE SCALAGNA DI FORESTO SN, BORGOSESIA (VC) | `UE IT 01 340` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 27-NOV-18 |
-| LA MINERA DI BERTONCINI FRANCESCO | Borgosesia | REGIONE SCALAGNA 20, BORGOSESIA (VC) | `UE IT W5P8A` | vacuno menos de 60 d/más de 60 d | 02-AUG-22 |
-| CERRI S.R.L. | Buronzo | VIA BALOCCO, 4, BURONZO (VC) | `UE IT 01 50` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-OCT-20 |
-| FRANZINI MARCO | Campertogno | VIA ALPE CASCINE SN, CAMPERTOGNO (VC) | `UE IT 01 2179` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 01-AUG-22 |
-| SORELLE FACCIOTTI SOCIETA' SEMPLICE AGRICOLA | Carcoforo | VIA ALPE CILETTO SNC, CARCOFORO (VC) | `UE IT G3G4V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-NOV-24 |
-| CER.MAC. - S.N.C. DI MACCO MARIA E C. | Carisio | VIA TORINO FRAZIONE CROCICCHIO 1, CARISIO (VC) | `UE IT 01 307` | vacuno menos de 60 d/más de 60 d | 05-DEC-18 |
-| LA GIUNCA' DISTRIBUZIONE SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Fobello | VIA CIRCONVALLAZIONE S/N, FOBELLO (VC) | `UE IT Z584E` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JAN-20 |
-| VENARA UGO | Guardabosone | VIA LOC. MOLINO 5, GUARDABOSONE (VC) | `UE IT 01 315` | vacuno menos de 60 d | 02-JAN-19 |
-| CASEIFICIO ALTA VALSESIA SOCIETA' COOPERATIVA AGRICOLA | Piode | VIA VARALLO 5, PIODE (VC) | `UE IT 01 306` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 17-FEB-23 |
-| DEMILIANI DAVIDE | Piode | VIA ALPE PIANA SN, PIODE (VC) | `UE IT 01 597` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUN-17 |
-| FRATELLI BACHER SOCIETA' SEMPLICE AGRICOLA | Rassa | LOCALITA' ALPE SORBELLA SN, RASSA (VC) | `UE IT X113M` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-OCT-20 |
-| GUGLIELMINA SILVANO | Rassa | VIA ALPE FRAZIONE FONTANA SN, RASSA (VC) | `UE IT 01 596` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 03-JAN-19 |
-| MANTELLO FRANCO | Rassa | VIA ALPE PIANA D`OVAGO SN, RASSA (VC) | `UE IT 01 2032` | vacuno menos de 60 d | 07-JAN-19 |
-| ANTONIETTI DIEGO | Rima San Giuseppe | LOCALITA' SAN LAZZARO SNC, RIMA SAN GIUSEPPE (VC) | `UE IT T2Q2W` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-OCT-16 |
-| AZIENDA AGRICOLA CASCINA VAL PITTA S.S. | Rima San Giuseppe | LOCALITA' ALPE VALLE' INFERIORE SN, RIMA SAN GIUSEPPE (VC) | `UE IT 01 2017` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-SEP-17 |
-| DEFILIPPI MARTA | Rima San Giuseppe | VIA ALPE LAVAZZEI S/N, RIMA SAN GIUSEPPE (VC) | `UE IT R3M40` | vacuno menos de 60 d/más de 60 d | 03-SEP-21 |
-| BONETTA ERMES | Sabbia | LOCALITA' ALPE CAMPO SN, SABBIA (VC) | `UE IT 01 595` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 27-NOV-18 |
-| AZIENDA AGRICOLA FATTORIA BIANCANEVE DI NEGRA FRANCESCO | Scopello | VIA GIARE LOC. CHIOSO SNC, SCOPELLO (VC) | `UE IT X132R` | caprino menos de 60 d/más de 60 d | 18-MAY-15 |
-| AZIENDA AGRICOLA CERINI SOCIETA' SEMPLICE AGRICOLA | Varallo | FRAZIONE ANICETI 11, VARALLO (VC) | `UE IT 01 331` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JAN-19 |
-| GARBACCIO LIVIO | Varallo | VIA ALPE LINCE`E sn, VARALLO (VC) | `UE IT N1U5C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-MAY-19 |
-| TOSI MARINO | Varallo | VIA FRAZ. BALANGERA 19 sn, VARALLO (VC) | `UE IT 01 317` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 03-JAN-19 |
+Fuente de corte: [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), certificados revisados el 2026-08-12.
+
+## Unidades queseras pendientes
+
+El registro sanitario acredita que estas nueve unidades siguen autorizadas para fabricar queso, pero no basta por sí solo para probar producción u oferta comercial actual. No se fusionan con las sedes ya publicadas cuando la actividad de la unidad de alpeggio no está corroborada.
+
+| Titular / unidad | Comune actual | Autorización | Motivo de retención |
+|---|---|---|---|
+| Ferrero Davide — Alpe Otro Dorf | Alagna Valsesia | `UE IT 01 2031` | Hay referencias públicas a sus quesos Walser de 2021 y autorización vigente, pero no una fuente actual que confirme oferta propia en la unidad. |
+| Venara Ugo — Alpe Scarpia di Otro | Alagna Valsesia | `UE IT 01 598` | La marca y el caseificio base de Guardabosone están publicados; no se confirmó actividad actual separada en este alpeggio. |
+| Valsesia S.r.l. — Crocicchio | Balocco | `UE IT 01 89` | Solo se encontró la unidad sanitaria; falta marca, catálogo o venta pública de queso propio. |
+| Franzini Marco — Alpe Cascine | Campertogno | `UE IT 01 2179` | Solo se encontró la unidad sanitaria; falta identidad comercial y oferta pública actual. |
+| Cer.Mac. di Macco Maria & C. | Carisio | `UE IT 01 307` | La empresa quesera figura activa, pero no se encontró marca, producto concreto ni canal público atribuible. |
+| Demiliani Davide — Alpe Piana | Piode | `UE IT 01 597` | La explotación y la autorización son localizables, pero no una oferta quesera propia actual. |
+| Guglielmina Silvano — Alpe Fontana | Rassa | `UE IT 01 596` | La explotación bovina está activa y la unidad autorizada, sin catálogo o venta pública actual de queso propio. |
+| Mantello Franco — Alpe Piana d'Ovago | Rassa | `UE IT 01 2032` | La explotación lechera está activa y la unidad autorizada, sin oferta quesera pública actual. |
+| Fattoria Biancaneve di Negra Francesco | Scopello | `UE IT X132R` | Hay actividad administrativa reciente y una historia de producto de 2016, pero no una fuente actual de oferta propia. |
+
+Fuente de corte: [registro de establecimientos del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/), descarga diaria revisada el 2026-08-11.

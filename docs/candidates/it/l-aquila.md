@@ -19,6 +19,9 @@ Investigación del 2026-08-08. Quedan 15 operadores con certificado ecológico `
 | DI FABIO JURI | Sant'Eusanio Forconese | VIA PIE' DI COLLE , SNC 67020 | producción — vegetales sin transformar | 2028-11-04 | [IT-BIO-018.380-0109288.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-018.380-0109288.2025.001.pdf) |
 | DI IORIO  ANTONELLA | Navelli | VIA OSTERIA  6 67020 | producción — vegetales sin transformar | 2029-03-12 | [IT-BIO-006.380-0018319.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0018319.2026.001.pdf) |
 | FIORAVANTI BARBARA | Magliano de' Marsi | LOCALITA' NUCLEO INDUSTRIALE 67062 | producción — vegetales sin transformar | 2029-03-04 | [IT-BIO-022.380-0111918.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-022.380-0111918.2026.001.pdf) |
+| AZIENDA AGRICOLA ZOOTECNICA LE TRICAGLIE DI MACRO CHIARA | Pescasseroli | VIA LUNGO SANGRO 7/B 67032 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-06-18 | [IT-BIO-006.380-0016363.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0016363.2025.001.pdf) |
+
+Le Tricaglie se recibió inicialmente como Pescaglia (Lucca), pero dirección, CAP e identidad registral corresponden a Pescasseroli. Se mantiene aquí porque la cría bovina certificada no demuestra todavía queso, carne u otro alimento propio ofrecido al público.
 
 ## Categorías poco representadas — barrido del 2026-08-10
 

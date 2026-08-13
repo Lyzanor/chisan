@@ -1,28 +1,36 @@
 # Candidatos — Cremona
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Investigación del 2026-08-08. Estos 19 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+
+Lote revisado el 2026-08-13. Se publicaron Agricola Pagliari Le Tavernazze, Il Germoglio di Paola Vallari, Azienda Agricola Bodini Emanuele y Ca' Vecchia Bio. Agridreams se reconcilió con Tenuta Capo Boi y se publicó en Cagliari; Cristian Barbanotti se publicó en Piacenza; Color di Foglia también pertenece a Piacenza, pero sigue allí en retención porque no se ha localizado una oferta pública concreta. Los doce candidatos siguientes permanecen abiertos:
+
+- AEMME: la explotación lechera está activa, pero no se ha probado una oferta propia al público.
+- Agrinvest: operador cerealista activo, sin marca, catálogo o canal de venta directa reconciliados.
+- Apicoltura Arpina: la actividad apícola es actual, pero no aparece una identidad pública de producto o catálogo de miel.
+- Arenghi Alessandro: la producción ecológica está vigente, sin oferta alimentaria propia concreta al público.
+- Avicola Berneri: explotación agrícola activa, sin producto propio y canal público reconciliados.
+- Corte Piccola: continúa en registros ecológicos actuales, pero no se ha encontrado marca o catálogo vigente.
+- Dosso dei Frati: la actividad agrícola ecológica sigue vigente, sin oferta propia actual identificable.
+- Bandera Enrico: el certificado acredita producción vegetal, pero no una identidad comercial o producto público concreto.
+- Barilli Lorenzo: empresa cerealista activa, sin marca propia ni venta pública localizada.
+- Beduschi Giovanni: solo se han reconciliado certificación y actividad primaria, no una oferta alimentaria pública.
+- Braga Elena: explotación mixta activa, sin producto propio concreto y canal público verificable.
+- Cascina Saletti: operador ecológico actual y participante en una cadena hortofrutícola, pero sin oferta propia al consumidor separable de la organización agregadora.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
 | AEMME SOCIETA' AGRICOLA S.S. | Cremosano | VIA COLOMBARE 4/B 26010 | producción — vegetales sin transformar | 2027-04-22 | [IT-BIO-007.380-0074466.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0074466.2024.001.pdf) |
-| AGRICOLA PAGLIARI DI PAGLIARI E. & G. SS | Bonemerse | VIA CASALMAGGIORE, 2 26040 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-11-18 | [IT-BIO-007.380-0047848.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0047848.2025.001.pdf) |
-| AGRIDREAMS SOCIETA' AGRICOLA SRL | Crema | LARGO DELLA PACE 6 26013 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-07-10 | [IT-BIO-006.380-0078889.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0078889.2025.001.pdf) |
 | AGRINVEST SOCIETA' AGRICOLA A.R.L. | Vescovato | S S PADANA INFERIORE 1/A 26039 | producción — vegetales sin transformar | 2028-05-08 | [IT-BIO-007.380-0024114.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0024114.2026.001.pdf) |
 | APICOLTURA ARPINA DI SERGIO RONCHI | Ripalta Arpina | Via Circonvallazione 7 26010 | preparación, producción — ganado y productos ganaderos sin transformar, vino | 2029-01-16 | [IT-BIO-012.380-0006359.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0006359.2026.001.pdf) |
 | ARENGHI ALESSANDRO | Cremona | VIA BOSCONE 7 26100 | producción — vegetales sin transformar | 2029-05-15 | [IT-BIO-009.380-0067753.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0067753.2026.001.pdf) |
 | AVICOLA BERNERI SOCIETA' AGRICOLA S.S. | Rivolta d'Adda | VIA PALMIRO TOGLIATTI 7 - 26027 - 26027 | producción — vegetales sin transformar | 2027-10-10 | [IT-BIO-007.380-0027126.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0027126.2026.001.pdf) |
-| AZ. AGR. IL GERMOGLIO DI VALLARI PAOLA | Casalmaggiore | VIA GOITO 13 26041 | producción — vegetales sin transformar | 2029-04-21 | [IT-BIO-009.380-0005612.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0005612.2026.002.pdf) |
 | AZIENDA AGRICOLA CORTE PICCOLA DI BEGATTI MAURO e C. S.S. SOCIETA' AGRICOLA | Piadena Drizzona | VIA MAGGIORE 26034 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-06-28 | [IT-BIO-007.380-0045391.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0045391.2026.001.pdf) |
 | AZIENDA AGROBIOLOGICA DOSSO DEI FRATI SS SOCIETA' AGRICOLA | Cella Dati | VIA DOSSO DEI FRATI 2/H 26040 | producción — vegetales sin transformar | 2028-10-02 | [IT-BIO-023.380-0101863.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0101863.2025.002.pdf) |
 | BANDERA ENRICO | Cremona | VIA CASTELLEONE  89 26100 | producción — vegetales sin transformar | 2028-06-03 | [IT-BIO-006.380-0006077.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0006077.2025.002.pdf) |
-| BARBANOTTI CRISTIAN | Grumello Cremonese ed Uniti | VIA BELGIOIOSO 9 26023 | producción — vegetales sin transformar | 2028-12-22 | [IT-BIO-015.380-0052160.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-015.380-0052160.2026.001.pdf) |
 | BARILLI LORENZO | Casalmaggiore | VIA PALLAVICINI 9 CASALBELLOTTO 26041 | producción — vegetales sin transformar | 2029-05-05 | [IT-BIO-004.380-0008726.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0008726.2026.002.pdf) |
 | BEDUSCHI GIOVANNI | Casalmaggiore | VIA VALLE CASE SPARSE, 30 26041 | producción — vegetales sin transformar | 2029-06-15 | [IT-BIO-002.380-0044888.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-002.380-0044888.2026.001.pdf) |
-| BODINI EMANUELE | Gussola | VIA BELLENA  11/2 26040 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-07-29 | [IT-BIO-006.380-0055125.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0055125.2026.001.pdf) |
 | Braga Elena | Cella Dati | Via U. Dati, 20 26040 | producción — vegetales sin transformar | 2027-06-21 | [IT-BIO-005.380-0058368.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0058368.2026.001.pdf) |
 | CASCINA SALETTI SOCIETA' AGRICOLA S.S. | Crema | VIA PIETRO DONATI 3 26013 | producción — vegetales sin transformar | 2027-05-16 | [IT-BIO-012.380-0076607.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0076607.2024.001.pdf) |
-| CAVALLI  LORENZO | Casalmaggiore | VIA VALLE CASE SPARSE  10 26041 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-06-23 | [IT-BIO-006.380-0030919.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0030919.2026.001.pdf) |
-| COLOR DI FOGLIA DI ALESSIO DI NUCCI | Cremona | VIA GIOVANNI MARIA PLATINA 64 26100 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura | 2028-10-01 | [IT-BIO-009.380-0018100.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0018100.2025.002.pdf) |
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
@@ -36,64 +44,47 @@ Fuentes de este lote:
 - Regione Lombardia — organizzazioni di produttori agricoli riconosciute (open data) — <https://www.dati.lombardia.it/d/bdkn-hkwa>
 - Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
 
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
+Lote revisado el 2026-08-13. Se publicaron nueve productores: Isolagerre, Mad One Brewery, Il Campagnino, Azienda Agricola Maghenzani, Casalasco, Ca' de Alemanni, Fattorie Cremona, Latteria Soresina y Apiflor. Vivaibambù se rechazó porque su actividad actual es vivero ornamental, no producción alimentaria; Cascina Santa Maria se rechazó porque la unidad de Torlino Vimercati es forestal y la unidad alimentaria declarada está en Veneto. Los seis candidatos siguientes permanecen abiertos:
+
+- S. Alessandro: solo se ha localizado la antigua ficha didáctica, sin marca u oferta propia actual reconciliada.
+- Cascina Arcobaleno: las fuentes alimentarias localizadas son antiguas y no prueban un catálogo actual.
+- Cascina Mezzulo: el restaurante está activo, pero no se ha separado una oferta agrícola propia actual de la restauración.
+- Cascina Barosi: figura en registros actuales de agriturismo, sin una oferta alimentaria propia concreta y vigente.
+- Santa Maria Bressanoro: el alojamiento está activo, pero el sitio actual no concreta productos propios que sostengan las categorías propuestas.
+- Locanda San Martino: solo se han localizado referencias históricas y directorios, sin sitio o catálogo vigente reconciliado.
 
 | Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
 |---|---|---|---|---|
-| Isolagerre | Pizzighettone | `Carne` + `Conservas` + `Legumbres y cereales` | L’azienda coltiva mais, soia e cereali a paglia per la rotazione dei terreni. Allevamento di ponies, asini e cani di razza "Bovari del Bernese". Produzione di confetture e insaccati utilizzati esclusivamente per la risto | 335.456330<br>info@isolagerre.it<br>[web](http://www.isolagerre.it) |
 | S. Alessandro | Soncino | `Carne` + `Legumbres y cereales` + `Fruta y verdura` | Azienda cerealicola con produzione di ortaggi e allevamento di bovini da carne e di bachi da seta. | 0374.84176<br>agri.s.alessandro@tiscali.it |
-| Mad One | Casalmaggiore | `Cerveza` | birra artigianale | [web](https://mad-one.it/) |
-| Il Campagnino | Pessina Cremonese | `Condimentos` + `Conservas` + `Legumbres y cereales` | Coltivazione di cereali grano monococco e saraceno, mais rosso destinati all’agriturismo per la produzione di prodotti da forno e di ortaggi e frutta che vengono trasformati in confetture. Produzione di cosmetici natural | 0372.87020<br>rmignani@inwind.it<br>[web](http://www.agriturismoilcampagnino.it) |
-| Azienda agricola Maghenzani | Cremona | `Conservas` + `Fruta y verdura` | Produzione e vendita di frutta, verdura e confetture: frutti di bosco, orticole di stagione a pieno campo, patate, zucche. | 333.5734589<br>gmaghenzani@aliceposta.it<br>[web](http://www.facebook.com/giacomomaghenzani.1) |
-| Cascina Santa Maria | Torlino Vimercati | `Conservas` | Forestazione di latifoglie pregiate ex 2080 giunto al 16° anno di maturazione, prati stabili. Unità locale in Veneto con coltivazione a rotazione a soia, mais, frumento, colza, barbabietole da zucchero. Produzione di con | 0373.288925<br>info@cascina-santamaria.it<br>[web](http://www.cascina-santamaria.it) |
-| OP CONSORZIO CASALASCO DEL POMODORO | Rivarolo Del Re | `Fruta y verdura` | ORTOFRUTTA | — |
-| Vivaibambù | Credera Rubbiano | `Huevos` + `Fruta y verdura` | Vivaibambù è un azienda florovivaistica con produzione di bambù, piante acquatiche, fior di loto, ninfee, palme, graminacee e pesci. Vivaibambù ha la più grande collezione di bambù in Italia con oltre 140 tra specie e va | 0373.615070, 335.6283017<br>vivaibambu@tin.it<br>[web](http://www.vivaibambu.com) |
 | Cascina Arcobaleno | Capergnanica | `Legumbres y cereales` | Azienda biologica con prati stabili, cereali a rotazione, boschi di lunga e breve durata. | 0373.238112<br>cascinarcobaleno@hotmail.com<br>[web](http://www.cascinarcobaleno.hotmail.com) |
 | Cascina Mezzulo | Casalbuttano ed Uniti | `Legumbres y cereales` + `Fruta y verdura` | Attività cerealicola principalmente mais e orticola; produzione di legno pregiato, biomassa per riscaldamento, fasce tampone boscate. | 0374.361594<br>info@agriturismomezzulo.it<br>[web](http://www.agriturismomezzulo.it) |
 | Cascina Barosi | Annicco | `Lácteos y quesos` + `Carne` + `Legumbres y cereales` | Azienda zootecnica-cerealicola con allevamento di vacche da latte. L'azienda si diversifica nella produzione di energia elettrica da fonti rinnovabili solare termico, impianti fotovoltaici e biogas e ha una rete di teler | 338.6812591<br>benepiero@libero.it<br>[web](http://www.cascinabarosi.it) |
 | Santa Maria Bressanoro | Castelleone | `Lácteos y quesos` + `Carne` + `Conservas` | L’azienda coltiva meli, peri, peschi, susini, cachi e actinidia. Nel frutteto sono presenti anche antiche varietà di meli e peri. Alleva bovini da latte e produce confetture e salumi. L’attività aziendale è suddivisa in | 0374.351131<br>info@agriturismosantamaria.com<br>[web](http://www.agriturismosantamaria.com) |
 | Agriturismo "Locanda San Martino" - Fulzen Soc. Agricola | Grumello Cremonese ed Uniti | `Lácteos y quesos` + `Carne` + `Miel` | Piccolo allevamento di suini, bovini, highland, bufali, ovicaprini, avicoli oche, galline, capponi, anatre, conigli, asini, equidi, emu e arnie per la produzione di miele. Coltivazione a rotazione di mais, soia, loietto, | 347.2878756, 348.7936229<br>info@sanmartinoagriturismo.it<br>[web](http://www.sanmartinoagriturismo.it) |
-| Ca' De Alemanni | Malagnino | `Lácteos y quesos` + `Carne` + `Helados` | L’azienda coltiva circa 110 ettari con il metodo dell’agricoltura biologica. Le colture praticate sono mais, orzo, loietto, prato, medicaio e cereali foraggeri. Alleva 300 bovini da latte con produzione di formaggi vacci | 333.8727736<br>lazzari.alemanni@gmail.com<br>[web](http://www.facebook.com/agriturismocadealemanni) |
-| PRODUTTORI LATTE ASSOCIATI CREMONA (PLAC) | Persico Dosimo | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
-| LATTERIA SORESINA | Soresina | `Lácteos y quesos` | LATTE E PRODOTTI LATTIERO CASEARI | — |
-| Apiflor | Pescarolo ed Uniti | `Miel` + `Condimentos` + `Legumbres y cereales` | L’azienda alleva api e produce miele e cera per la creazione di sculture e candele. Coltiva crisantemi, ortaggi ed erbe officinali. Vengono coltivati anche mais, cereali ed erba medica; frutteto con svariate qualità di f | 338.8975175<br>api.flor@libero.it<br>[web](http://www.apiflor.com) |
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-30 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Lote revisado el 2026-08-13. De las 30 unidades, 21 se publicaron tras confirmar una identidad y una oferta propias actuales. Cuatro propuestas que también aparecían en el barrido de categorías escasas quedaron resueltas en el mismo contraste: Ca' de Alemanni, Fattorie Cremona, Latteria Soresina y Casalasco; esta última se publicó como `Conservas`, su actividad real, y no como quesería. Magazzini Generali di Crema se descartó de forma definitiva porque la actividad pública reconciliada es depósito, reenvasado y afinado, no elaboración propia. Las ocho filas siguientes permanecen abiertas por motivos concretos:
+
+- ARCREMAN: autorización vigente, pero sin marca pública ni catálogo propio actual reconciliado.
+- F.lli Caffi: la actividad quesera y el spaccio aparecen en fuentes empresariales, pero falta una identidad pública de producto suficientemente concreta.
+- Caseificio Zucchelli Antonio: autorización e identidad local confirmadas, sin catálogo o canal oficial actual.
+- Caseificio Sangiovanni: la planta sigue autorizada, pero el sitio publicado no permite contrastar hoy un catálogo específico y actual.
+- Istituto Stanga: falta demostrar que la planta educativa mantiene una oferta alimentaria propia al público.
+- Zuvadelli Michele e Flavio: aparece en el ámbito del Taleggio DOP, pero no se ha reconciliado una marca, catálogo y contacto público actuales.
+- Casella Burro: la actividad pública localizada es mantequilla y el dominio atribuido no ofrece un catálogo actual accesible; podría encajar en lácteos si se resuelve.
+- Demetra Sitos: solo se ha localizado la autorización sanitaria, sin identidad pública ni oferta propia reconciliadas.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| EGIDIO GALBANI SOCIETA' A RESPONSABILITA' LIMITATA IN BREVE "EGIDIO GALBANI S.R.L." O "E.GA. S.R.L. | Casale Cremasco-Vidolasco | VIA ROMA 1/3, CASALE CREMASCO-VIDOLASCO (CR) | `UE IT 03 3` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-SEP-16 |
-| POZZALI LODIGRANA S.R.L. | Casaletto Ceredano | PIAZZA SAN PIETRO 4, CASALETTO CEREDANO (CR) | `UE IT 03 28` | vacuno más de 60 d | 27-OCT-23 |
-| PADANIA ALIMENTI S.R.L. O IN FORMA ABBREVIATA PADANIA S.R.L. | Casalmaggiore | VIA E. FERMI 79, CASALMAGGIORE (CR) | `UE IT 03 156` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-19 |
 | SOC.COOP. AGRIC. RIUNITI CREMONESI MANTOVANI ARCREMAN ARL | Casalmaggiore | VIA CASE SPARSE 16 , CASALMAGGIORE (CR) | `UE IT 03 412` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JAN-12 |
 | SOCIETA' AGRICOLA F.LLI CAFFI SOCIETA' SEMPLICE | Grumello Cremonese Ed Uniti | VIA DANTE 3, GRUMELLO CREMONESE ED UNITI (CR) | `UE IT G998S` | vacuno menos de 60 d/más de 60 d | 09-JAN-24 |
-| SOCIETA' AGRICOLA CA DE' ALEMANNI DI SANTINI BEATRICE, SANTINI AL BERTO E LAZZARI ALESSANDRA MARIA C | Malagnino | LOCALITA' CA' DE ALEMANNI 1, MALAGNINO (CR) | `UE IT 03 1816` | vacuno menos de 60 d/más de 60 d | 10-APR-17 |
 | CASEIFICIO ZUCCHELLI ANTONIO DI ZUCCHELLI CARMELITA & C. S.N.C. | Ostiano | VIA OSSE 14, OSTIANO (CR) | `UE IT 03 189` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-APR-16 |
 | CASEIFICIO SANGIOVANNI S.R.L. | Palazzo Pignano | VIA TORLINO 40, PALAZZO PIGNANO (CR) | `UE IT 03 252` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 13-JUN-23 |
-| ANTICA LATTERIA AGRICOLA DI PANDINO S.R.L. | Pandino | VIA MILANO 112, PANDINO (CR) | `UE IT 03 559` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 14-JUN-23 |
-| CASEIFICIO CONTE AJMO SNC DI MIRAGOLI ROBERTO & C. | Pandino | VIA G. BIANCHI 30, PANDINO (CR) | `UE IT 03 517` | vacuno menos de 60 d | 02-SEP-14 |
-| GIOVANNI UBERTI 1896 S.R.L. | Pandino | VIA BOVIS 3, PANDINO (CR) | `UE IT 03 627` | vacuno menos de 60 d | 01-JUL-19 |
 | ISTITUTO D'ISTRUZIONE SUPERIORE "STANGA | Pandino | VIA BOVIS 4, PANDINO (CR) | `UE IT 03 280` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JUL-19 |
-| SANTANGIOLINA LATTE FATTORIE LOMBARDE SOC.AGR.COOPERATIVA | Pandino | VIA GUIDO ROSSA 3, PANDINO (CR) | `UE IT 03 1868` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 04-MAY-23 |
-| PRODUTTORI LATTE ASSOCIATI CREMONA - SOCIETA' COOPERATIVA AGRICOL A (P.L.A.C.) | Persico Dosimo | VIA OSTIANO 70, PERSICO DOSIMO (CR) | `UE IT 03 55` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-DEC-17 |
-| LATTERIA SORESINA SOCIETA' COOPERATIVA AGRICOLA | Piadena Drizzona | VIA ROMA 44, PIADENA DRIZZONA (CR) | `UE IT 03 27` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-19 |
-| GENNARO AURICCHIO S.P.A. | Pieve San Giacomo | VIA SOLFERINO 1, PIEVE SAN GIACOMO (CR) | `UE IT 03 180` | vacuno menos de 60 d/más de 60 d | 12-JUN-17 |
-| LATTERIA PIZZIGHETTONESE SOCIETA' AGRICOLA COOPERATIVA | Pizzighettone | VIA MONTE GRAPPA 87/89, PIZZIGHETTONE (CR) | `UE IT 03 60` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-MAY-19 |
 | ZUVADELLI MICHELE E FLAVIO SAS | Quintano | VIA CREMA -VAILATE 4 , QUINTANO (CR) | `UE IT 03 1585` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUL-11 |
-| ALIMENTARI NORDITALIA S.P.A.ALINOR C/SIGLA "ALINOR SPA | Ripalta Cremasca | VIA VITTORIO VENETO 1/C, RIPALTA CREMASCA (CR) | `UE IT 03 158` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-SEP-14 |
-| CASALASCO SOCIETA' AGRICOLA S.P.A. | Rivarolo Del Re Ed Uniti | VIA STRADA PROVINCIALE 32, RIVAROLO DEL RE ED UNITI (CR) | `UE IT 701 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JAN-22 |
 | CASELLA BURRO S.R.L. | Rivarolo Del Re Ed Uniti | VIA BALILLA 7/B, RIVAROLO DEL RE ED UNITI (CR) | `UE IT 03 45` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-SEP-19 |
 | DEMETRA SITOS SRL | San Daniele Po | VIA ARISTIDE MARETTI SNC, SAN DANIELE PO (CR) | `UE IT N0B61` | vacuno menos de 60 d | 31-JAN-25 |
-| SAVIOLA S.P.A. | San Giovanni In Croce | VIA BUSI 59, SAN GIOVANNI IN CROCE (CR) | `UE IT 03 267` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-FEB-19 |
-| BONIZZI S.R.L. | Soncino | VIA BERGAMO 6, SONCINO (CR) | `UE IT 03 112` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-OCT-18 |
-| LATTERIA SORESINA SOCIETA' COOPERATIVA AGRICOLA | Soresina | VIA DEI MILLE 13/17, SORESINA (CR) | `UE IT 03 171` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-SEP-18 |
-| GRASSELLI FABIO | Stagno Lombardo | VIA G. PAGLIARI 54, STAGNO LOMBARDO (CR) | `UE IT 03 1257` | vacuno menos de 60 d/más de 60 d | 26-MAY-16 |
-| LATTERIA SORESINA SOCIETA' COOPERATIVA AGRICOLA | Stagno Lombardo | VIA BASSA CASALMAGGIORE 4, STAGNO LOMBARDO (CR) | `UE IT 03 94` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-17 |
-| CARIONI SOCIETA' AGRICOLA CONSORTILE A RESPONSABILITA' LIMITATA | Trescore Cremasco | VIA DESGIOI 5, TRESCORE CREMASCO (CR) | `UE IT 03 1430` | vacuno menos de 60 d, caprino menos de 60 d | 17-JAN-25 |
-| MAGAZZINI GENERALI DI CREMA S.R.L. | Trescore Cremasco | VIA DE GASPERI 2, TRESCORE CREMASCO (CR) | `UE IT 03 104` | vacuno más de 60 d | 26-FEB-25 |
-| LATTERIA SOCIALE CA' DE' STEFANI SOCIETA' COOPERATIVA AGRICOLA | Vescovato | VIA PADANA INFERIORE 12, VESCOVATO (CR) | `UE IT 03 212` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-MAR-17 |
 
 ## Productores de queso — contraste Grana Padano DOP del 2026-08-11
 

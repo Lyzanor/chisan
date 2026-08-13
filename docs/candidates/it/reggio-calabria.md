@@ -25,39 +25,15 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | ANASTASI ROSARITA | Oppido Mamertina | VIA PROV.LE 38 FRAZ.CASTELLACE 89014 | producción — vegetales sin transformar | 2029-03-17 | [IT-BIO-004.380-0106028.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0106028.2026.002.pdf) |
 | ARENA VINCENZO | Melicuccà | VIA ROMA  33 89020 | producción — vegetales sin transformar | 2028-04-10 | [IT-BIO-006.380-0098389.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0098389.2025.001.pdf) |
 
-## Categorías poco representadas — barrido del 2026-08-10
+## Productores de queso — pendientes tras el barrido sanitario del 2026-08-11
 
-1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
-
-Reparto por categoría propuesta: `Cerveza` 1.
-
-Fuentes de este lote:
-
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| FUNKY DROP | Reggio Calabria | `Cerveza` | birra artigianale | — |
-
-## Productores de queso — barrido sanitario nacional del 2026-08-11
-
-26 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+14 unidades siguen en retención tras el contraste del 2026-08-12. Proceden del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y constan como autorizadas para fabricar queso, pero todavía falta una identidad pública actual, una oferta propia atribuible o resolver una contradicción de actividad. Las altas aceptadas, Barone G.R. Macrì —ya publicado—, Funky Drop y la unidad de gelato excluida se han podado.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| ANTICHI SAPORI DI COLLINA DI FABIANO GIUSEPPE | Ardore | C/DA SAN FILIPPO N. 1 , ARDORE (RC) | `UE IT W7V7U` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-OCT-13 |
-| COOP. VALLE DELL'ULIVO DI LAGANA' ANNUNZIATO ANTONIO GABRIELE | Bagaladi | VIA CASTELLI ZONA INDUSTRIALE SNC , BAGALADI (RC) | `UE IT M0H6K` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-OCT-09 |
-| LA COLLINA VERDE DI PRIOLO SALVATORE ANTONINO | Brancaleone | VIA MARAMBOLO SNC, BRANCALEONE (RC) | `UE IT 18 107` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-JAN-20 |
-| CASEIFICIO FATTORIA DELLA PIANA | Candidoni | C.DA SOVERETO , CANDIDONI (RC) | `UE IT 18 47` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
 | MELECA LUCIANA | Careri | C.DA ONORIO , CARERI (RC) | `UE IT 18 146` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
 | I.L.M.A. SNC DI VOZZO ILARIO | Caulonia | C.DA FERRANTELLO , CAULONIA (RC) | `UE IT 18 63` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| ILMA" S.N.C. DI VOZZO ILARIO & C. | Caulonia | CONTRADA CANNE SNC, CAULONIA (RC) | `UE IT D2S62` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d | 30-MAY-24 |
 | CASEIFICIO VAL DEL SOLE | Cinquefrondi | VIALE PERTINI , CINQUEFRONDI (RC) | `UE IT 18 58` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| CASEIFICIO VALSOLE S.R.L. | Cinquefrondi | VIA PIETRO COLLETTA SNC, CINQUEFRONDI (RC) | `UE IT M6L83` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d | 28-AUG-19 |
-| BARONE G.R. MACRI` SRL | Gerace | C.DA MODI , GERACE (RC) | `UE IT H262F` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| CASEIFICIO PRAJA | Gioia Tauro | VIA S.S.111 , GIOIA TAURO (RC) | `UE IT 18 65` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
 | SAOR ITALIA S.R.L. | Gioiosa Ionica | CONTRADA PALMA SNC, GIOIOSA IONICA (RC) | `UE IT 1620 L` | vacuno menos de 60 d/más de 60 d | 08-MAY-15 |
 | CASEIFICIO DEI MONTI DEL CHIARO | Mammola | VIA NICHOLAS GREEN , MAMMOLA (RC) | `UE IT V9N74` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-SEP-13 |
 | CASEIFICIO SAN CARMELO DI SALVATORE ELISA | Melicucco | VIA ANTONIO GRAMSCI 580, MELICUCCO (RC) | `UE IT Z3Q50` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-NOV-17 |
@@ -66,10 +42,14 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | LEOTTA ANDREA | Monasterace | VIA GOITO 3, MONASTERACE (RC) | `UE IT 18 117` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-SEP-25 |
 | CASEIFICIO PALMESE SNC | Palmi | VIA RILIEVO , PALMI (RC) | `UE IT 18 78` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
 | ALIVAL S.P.A. | Reggio Di Calabria | VIA DELLE INDUSTRIE S.GREGORIO , REGGIO DI CALABRIA (RC) | `UE IT 18 9` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-FEB-14 |
-| CASEIFICIO DELIZIE DELLA NATURA S.R.L. | Reggio Di Calabria | VIA CICCARELLO 28, REGGIO DI CALABRIA (RC) | `UE IT 18 64` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-OCT-19 |
-| GELATERIA DEL MARE SRL | Reggio Di Calabria | VIA SARACINELLO,135 , REGGIO DI CALABRIA (RC) | `UE IT 18 166` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | IL BAIOCCO SRL | Reggio Di Calabria | VIA SARACINELLO 40 , REGGIO DI CALABRIA (RC) | `UE IT K6L30` | vacuno menos de 60 d | 23-NOV-12 |
 | CASEIFICIO LA BAITA DI BAGNATO ANNUNZIATA | Rosarno | VIA PROVINCIALE , 33 , ROSARNO (RC) | `UE IT 18 92` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-APR-11 |
-| LE DELIZIE DELLA MOZZARELLA DI ARENA PASQUALE & C. SAS | San Ferdinando | VIA PROVINCIALE NORD N. 9 , SAN FERDINANDO (RC) | `UE IT B3708` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-FEB-13 |
-| CREAZZO GIUSEPPE | San Roberto | VIA PROVINCIALE LOC. S. ANGELO , SAN ROBERTO (RC) | `UE IT 18 91` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
 | GIMAR S.A.S. DI MARIA IMMACOLATA BORELLO & C. | Siderno | CORSO GARIBALDI ANGOLO VIA NENNI , SIDERNO (RC) | `UE IT F307Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-OCT-13 |
+
+Motivos concretos para mantener la retención:
+
+- Meleca Luciana, Monti del Chiaro, Campomarzo, Leotta Andrea, Caseificio Palmese y Gimar no tienen todavía una marca u oferta pública actual suficientemente atribuible.
+- La unidad antigua de ILMA (`UE IT 18 63`) y Caseificio Val del Sole (`UE IT 18 58`) no se han fusionado con las plantas modernas publicadas: falta aclarar si siguen siendo unidades productivas separadas.
+- Caseificio San Carmelo y Caseificio La Baita presentan señales públicas contradictorias entre actividad y cierre; la autorización sanitaria no resuelve por sí sola la continuidad comercial.
+- Caseificio Santa Maria de Pochiero tiene una ficha comercial reciente, pero la dirección y el teléfono no permiten enlazar con seguridad el negocio visible con la unidad sanitaria de Via Gramsci 591.
+- Saor Italia, Alival e Il Baiocco figuran como operadores industriales, pero falta distinguir fabricación propia de distribución y encontrar una oferta pública utilizable.

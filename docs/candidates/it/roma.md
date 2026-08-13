@@ -1,7 +1,12 @@
 # Candidatos — Roma
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+Lote ecológico contrastado el 2026-08-13. Los 20 certificados TRACES siguen vigentes, pero ninguno alcanza todavía el umbral editorial para publicarse en Roma: el certificado prueba al operador y su alcance ecológico, no que la dirección sea la unidad productiva ni que exista una oferta propia al público.
 
+- La unidad pública de Elio Iacchelli está en Velletri y mantiene actividad agrícola, pero la web no ofrece un catálogo alimentario propio suficientemente concreto para construir la fila.
+- Agricola Valvidone sitúa su proyecto productivo en Tuscania; Avicola Sabina opera públicamente en Monte Leone Sabino; Le Rocche d’Orvieto e Il Poggio del Falconiere remiten a Umbria; Azienda Agricola di Fietri produce vino en Toscana; y Avitabile Teresio aparece vinculado a producción agraria de Puglia. Sus direcciones romanas son sedes legales o no se corresponden con la unidad pública.
+- Aland Vera, Amorosi Giovanni, Andreini Maria, Angelini Lorenzo, AO, Appetecchia Michela, Armentano Giulia, Arnaldi Giorgio, Di Mezzaluna, F.lli Stefanini, Le Pré Vert, Tenuta Il Corbezzolo y Tenuta Terre dell’Agro conservan rastro registral, pero no una marca, unidad productiva y oferta alimentaria pública actuales que puedan reconciliarse sin conjeturas.
+
+Se mantienen las 20 filas como cola explícita, con el certificado y la dirección provisional, para poder reabrirlas cuando aparezca una fuente productiva directa.
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
 |---|---|---|---|---|---|
 | ''AZIENDA AGRICOLA ELIO IACCHELLI SOCIETA' SEMPLICE AGRICOLA'' | Roma | LARGO LUIGI ANTONELLI 4 00145 | producción — vegetales sin transformar | 2028-07-16 | [IT-BIO-009.380-0062518.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0062518.2025.002.pdf) |
@@ -27,85 +32,58 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
-33 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
+Lote contrastado el 2026-08-13. De los 33 candidatos se publicaron 27 unidades que sí conservan identidad pública, producción propia, comune y una oferta alimentaria atribuible: Agricoltura Capodarco, Giannetti Sandro, Casale Vecchio, Cavendo Tutus, Co.Br.Ag.Or., I Cardinali, San Gregorio in Sabina, Serafini Lucia, Antico Forno a Legna, Il Castoro, Azienda Agricola Fortunato, Guendalina Morani, Panificio Liberati, Il Trattore, Roncella, Semia Bio, Angelo Mostarda, I Casali del Pino, Fonti della Magliana, Di Croce Giulia, Forno Maratta, La Casa del Pane, Apicoltura Monte Funicolo, Colline di Veio, Miele d’Autore, Screpanti y Morlupi.
 
-Reparto por categoría propuesta: `Aceite` 12, `Miel` 4, `Frutos secos` 3, `Legumbres y cereales` 5, `Otros` 3, `Condimentos` 3, `Conservas` 4, `Fruta y verdura` 7, `Carne` 7, `Dulces y repostería` 3, `Cerveza` 1, `Huevos` 1, `Lácteos y quesos` 4, `Pescado` 4.
+Las propuestas de categoría se corrigieron contra la actividad real: los cuatro candidatos etiquetados como `Pescado` eran horticultores, y los dos hornos de Subiaco no demostraban producción propia de queso o carne. Permanecen seis candidatos sin publicar:
 
-Fuentes de este lote:
-
-- Regione Lazio — aziende concessionarie del marchio «Natura in Campo» (open data) — <https://dati.lazio.it/dataset/elenco-aziende-agricole-concessionarie-marchio-natura-in-campo>
-- Unionbirrai — elenco soci produttori — <https://www.unionbirrai.it/it/soci/mappa/>
-
-La inclusión aquí no equivale a aceptación. Un registro acredita la identidad, el comune declarado y, cuando lo publica, la familia de producto; no demuestra actividad actual, oferta propia al público ni venta online. La categoría de la tabla es una **propuesta** derivada del producto declarado por la fuente y hay que confirmarla contra la web o la marca del productor antes de publicar. Fecha de corte: 2026-08-10.
-
-| Candidato | Comune | Categoría propuesta | Producto declarado por la fuente | Contacto |
-|---|---|---|---|---|
-| Soc. Coop. Sociale Capodarco | Grottaferrata | `Aceite` + `Miel` + `Frutos secos` | fragole bio, olive bio, olio extravergine di oliva bio, ortaggi freschi biologici certificati, miele di acacia bio, miele di bosco bio, miele di castagno bio, miele di eucalipto bio, miele millefiori bio, prodotti dolcia | 06/94549191, 06/87790213<br>agricoltura@capodarco.it<br>[web](https://www.agricolturacapodarco.it) |
-| Azienda Guidi Giorgio | Mazzano Romano | `Aceite` + `Frutos secos` | Nocciole, uva da vino, foraggio, olive da olio | 3382029416<br>gi.guidi@alice.it |
-| Az. Agr. Giannetti Sandro | Montorio Romano | `Aceite` | Olio extravergine di oliva biologico , ciliegia di Ravenna | 0774/62731, 338 5695253<br>sandro.giannetti@alice.it |
-| Azienda Agricola Antiqua di Cola Maria | Roma | `Aceite` + `Legumbres y cereales` + `Otros` | Ceci, Fagiolo Ciabattone,pasta di olive, zucchine con fiore | 06/87120148, 392/9555446<br>azienda.colamaria@gmail.com |
-| Azienda Agricola Casale Vecchio srl | Roma | `Aceite` + `Condimentos` + `Conservas` | prodotti ortofrutticoli stagionali certificati biologici, cipolla rossa in agrodolce bio, crema di carciofi e mandorle bio, crema di cipolla dorata bio, crema di melanzane bio crema di melanzane (con capperi) bio, crema | 340/4206753, 340/4206775<br>info@casalevecchio.com<br>[web](https://www.casalevecchio.com) |
-| Azienda Agricola Cavendo Tutus di Merluzzi Loredana | Roma | `Aceite` + `Condimentos` + `Conservas` | Aglio, albicocche, basilico, bieta, bietina, broccoletti di rape, broccoletti romaneschi, broccoli siciliani, cappucci, carciofi, cardi e carducci, cavoletti di Bruxelles, cavolfiori, cavoli, cavoli neri, cicoria, melanz | 328/5782843, 06/66162970<br>cavendotutus@mclink.it |
-| Co.Br.Ag.Or | Roma | `Aceite` + `Fruta y verdura` | olio extra vergine di oliva biologico, grano duro biologico, prodotti ortofrutticoli biologici certificati | 063386271, 388/1712890<br>cobragor@tiscali.it |
-| Az. Agrituristica Il Rifugio dei Cardinali | Santa Marinella | `Aceite` + `Conservas` | Scorsone nero, melanzane grigliate sott'olio, zucchine grigliate sott'olio, ciambella al vino | 0766/513758, 338/9208856<br>info@rifugiodeicardinali.it |
-| Az. Agr. San Gregorio in Sabina di Cecilia Cicerchia | Torrita Tiberina | `Aceite` + `Fruta y verdura` | ortaggi e frutta in conversione biologica, olio extra vergine di oliva in conversione biologico | 0765/30043<br>info@sangregorioinsabina.it, cecilia.cicerchia@libero.it<br>[web](https://www.sangregorioinsabina.it) |
-| Az. Agr. di Serafini Lucia | Camerata Nuova | `Carne` | Carne bovina ootenuta da animali allevati in biologico | 0774/924120, 338/3317136<br>serafini.lucia@tiscali.it |
-| Az. Di Gianlorenzo Anna Maria | Montorio Romano | `Carne` + `Aceite` + `Dulces y repostería` | Amaretti, biscotti, ciambelle al vino, ciambelle con l'anice, ciambella da sposa, crostata di visciole, fave dei morti, filone sciapo da 1 Kg, la copeta (o nociata), pane integrale al forno a legna, pangiallo, panini all | 335-6580056, 0774-62205<br>a.trecciola@tiscali.it, anticofornoalegna@yahoo.it |
-| Az. Agricola ed Agriturismo il Castoro di Pietro Di Domenico | Roma | `Carne` | Animale Bovino da carne biologico | 06/99802020, 335/336789<br>info@azagricolailcastoro.it |
-| Soc. Agr. Fortunato sas | Roma | `Carne` + `Dulces y repostería` + `Fruta y verdura` | coppa, mortadella, lonzino, lonza, guanciale, pancetta, lardo di S. Nicola, porchetta, coppiette di maiale, corallina, sallsiccia secca (semplice e aromatizzata), salame paesano, caciotta di mucca, marzolina, fettuccine, | 06 87120518<br>fortunatoaziendaagricola@gmail.com<br>[web](https://www.aziendagricolafortunato.it) |
-| Az Agr Guendalina Morani | Tolfa | `Carne` + `Aceite` + `Conservas` | Prodotti orticoli biologici, carne bovina maremmana biologica, carciofini sott'olio biologici, zucchine sott'olio biologiche | 0766/571878, 338/7066354<br>azienda.morani@tiscali.it |
-| ECB - Eternal City Brewing | Roma | `Cerveza` | birra artigianale | [web](https://www.eternalcitybrewing.it/) |
-| Azienda Panificio Liberati snc | Nazzano | `Fruta y verdura` | Amaretti, ciambelline/ciambelle al vino o con l'anice, treccia all'anice, calzone con verdure (fallone), pane con le patate, pangiallo, mostaccioli, pizza bianca, ciriola romana, pizza rossa | 0765/332422, 0765/332657, 327/0425377<br>info@panificioliberati.it |
-| Soc. Coop. Il Trattore srl | Roma | `Fruta y verdura` | Prodotti orticoli biologici certificati | 06/65742168, 06/65759826<br>info@iltrattore.it |
-| Az Agr Roncella Giuseppe | Santa Marinella | `Fruta y verdura` | carciofo di Tarquinia o della maremma viterbese, finocchio di Tarquinia, broccolo romanesco | 0766/570270<br>s.roncella@alice.it |
-| Azienda agricola Semia bio di Roberta De Vincenzi | Roma | `Huevos` + `Fruta y verdura` | ortaggi trasformati bio, ortaggi freschi bio, uova bio | 340/4206775<br>roberta.devincenzi@gmail.com, roberta.devincenzi@pec.it |
-| Az. Agr. Angelo Mostarda | Roma | `Legumbres y cereales` | Zucchina con fiore, broccolo romanesco, ceci | 06/3382791, 349/6467036<br>a.m.zurakowska@gmail.com |
-| I Casali del Pino soc agr srl | Roma | `Legumbres y cereales` + `Otros` | Farro perlato biologico, farina di farro biologico, farro spezzato biologico, lenticchie biologiche, cece biologico, caciotta genuina romana biologica, cacio fiore biologico | — |
-| Tocchella Ugo | Roma | `Legumbres y cereales` | ceci, farro | 06/6559124<br>fontidellamagliana@libero.it, ugo.tocchella@fastwebnet.it |
-| Azienda V.D.P. di Molinari Marzia | Arcinazzo Romano | `Lácteos y quesos` + `Condimentos` + `Otros` | primo sale di capra, formaggio di capra stagionato, formaggio di capra semi-stagionato, ricotta di capra, formaggio a pasta molle di capra | Roma<br>marzia.molinari@tiscali.it |
-| Az. Agr. Di Croce Giulia | Camerata Nuova | `Lácteos y quesos` | Formaggio pecorino (caciotta genuina romana), ricotta di pecora | 0774/924072, 0774/924451, 347/0198923<br>giulia.dicroce@tiscali.it |
-| Forno Maratta di Agata Cianti | Subiaco | `Lácteos y quesos` + `Carne` + `Aceite` | Salame del Re, subiachini, tisichelle, ciambelle all'anice , ciambelle al vino, tozzetti, biscotti (al latte), amaretti, crostata/crostatine di visciole, pane con le patate (purea di patate), pizza di pasqua, pane con le | 0774/85226, 0774/83347, 328/7349775<br>emaseg@hotmail.com, stefanoalesi@hotmail.com |
-| La Casa del Pane snc di Appodia Domenico | Subiaco | `Lácteos y quesos` + `Carne` + `Dulces y repostería` | Salame del Re, tisichelle, ciambelle con l'anice al vino, tozzetti di pasta frolla, biscotti (al latte), amaretti, giglietti, crostata/crostatine di visciole, pane con le patate (purea di patate), pizza di pasqua | 0774/85516, 328/8628282<br>scarambi@libero.it |
-| Apicoltura Monte Funicolo | Castelnuovo di Porto | `Miel` + `Frutos secos` | Miele Millefiori Biologico, miele di acacia biologico, miele di castagno biologico, miele di bosco biologico | 06/9078498<br>info@apicolturamontefunicolo.it |
-| Az. Agr. Colline di Veio di Rita Franceschini | Roma | `Miel` | Miele millefiori biologico | 06/30888747, 339/5391132<br>ritafranceschini@libero.it |
-| Azienda Miele dautore di Locicero Alessio Antonio | Vallepietra | `Miel` + `Legumbres y cereales` | Miele monoflora di eucalipto, fagiolone di Vallepietra | 06/92703908, 3407424054<br>mieledautore@libero.it |
-| Az. Agr. Francocci Fabio | Anguillara Sabazia | `Pescado` | Broccoletti di Anguillara, zucchina con fiore | 329/0903750<br>francoccifabio@yahoo.it |
-| Az. Agricola Screpanti | Roma | `Pescado` | Zucchina con fiore, broccolo romanesco, broccoletto di Anguillara, mentuccia romana | 327/6215028, 06/6243440<br>gabrielescrepanti@virgilio.it |
-| Morlupi | Roma | `Pescado` | broccoletto di anguillara, broccolo romanesco, zucchina con fiore | 06/9996358<br>azienda.morlupi@yahoo.it |
-| Az. Agr. Rossi Silvia | Trevignano Romano | `Pescado` | Broccoletti di Anguillara, broccolo romanesco, zucchina con fiore | 347/8131751<br>ortodinonno@gmail.com |
-
+| Candidato retenido | Motivo pendiente |
+|---|---|
+| Azienda Guidi Giorgio | El registro atribuye avellanas, uva, forraje y aceitunas, pero no se encontró una identidad comercial pública ni una oferta propia actual reconciliable con Mazzano Romano. |
+| Azienda Agricola Antiqua di Cola Maria | Continúa activa como explotación de cereal en Roma, pero no se localizó marca, catálogo o punto de venta público que permita atribuirle la lista del registro. |
+| ECB — Eternal City Brewing | El dominio oficial devuelve 404 y solo quedan fichas históricas; falta confirmar que el birrificio y su planta romana sigan activos bajo esta identidad. |
+| V.D.P. di Molinari Marzia | La unidad quesera documentada está en Trevi nel Lazio, provincia de Frosinone, no en Arcinazzo Romano; falta reconciliar el certificado de origen con una unidad productiva actual antes de moverla de área. |
+| Azienda Agricola Francocci Fabio | Se confirma una explotación en Anguillara Sabazia, pero no una marca o una oferta pública actual de sus hortalizas. |
+| Orto di Nonno — Rossi Silvia | La empresa registral sigue activa, pero la presencia pública del punto de venta aparece como cesada; falta resolver la contradicción antes de publicar. |
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-29 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Lote contrastado el 2026-08-12. Se publicaron 13 unidades con planta y oferta propia reconciliadas: Gennargentu Formaggi, Il Vecchio Ovile, Biolà, Antichi Sapori, Caseificio Nonno Peppe, Formaggi La Quercia, Caseificio F.lli Zonetti, Agricoltura Nuova, Caseificio De Juliis, Formaggi Boccea, Caseificio Santa Maria, Oasi Kadir y Casearea Agri In.
+
+Permanecen 16 candidatos. El registro sanitario acredita la unidad, pero no bastó para demostrar una identidad pública y una oferta propia actuales; además, Sapori di Bufala figura cerrado y algunas autorizaciones pertenecen a supermercados o distribuidores cuya presencia pública no demuestra fabricación de una marca propia.
+
+| Candidato retenido | Motivo pendiente |
+|---|---|
+| DE IULIIS MASSIMO | No se encontró identidad pública actual atribuible a la planta de Castel Gandolfo; no se confunde con Caseificio De Juliis Enio e Figli de Roma. |
+| SAPORI DI BUFALA | El establecimiento público de Via Tiberina figura cerrado; falta confirmar si la planta autorizada sigue activa bajo otra identidad. |
+| DE ANGELIS SABATINO | No se localizó marca ni catálogo propio actual reconciliable con Via di Tagliatella. |
+| GRANDAURELIA FORMAGGI | Fuentes empresariales confirman actividad industrial, pero falta presencia directa actual con catálogo y contacto públicos. |
+| DI MARCO ALESSANDRO | No se localizó marca pública ni oferta propia actual vinculada a la unidad de Tinte Rosse. |
+| LA BOTTEGA DEL CASARO | El dominio actual pertenece a una tienda de Ceggia; falta una identidad vigente para la planta de Monterotondo. |
+| ZONETTI LUIGI ENNIO E C. | La planta histórica de Via Romana es distinta de F.lli Zonetti; falta oferta directa actual atribuible a esta unidad. |
+| SOCIETÀ AGRICOLA DAMIGELLI | Registro y rastro societario prueban la unidad, pero no una marca casearia ni productos propios públicos. |
+| CENTRO ALIMENTARE FALCONI | No se localizó identidad pública ni catálogo propio actual para la planta autorizada. |
+| DON NINO PRODUZIONE | La presencia pública corresponde a una cadena de pastelería y no documenta producción propia de queso en esta planta. |
+| EREDI DI MARZIANTONIO | No se localizó marca pública ni oferta casearia propia actual atribuible a Casale delle Pulci. |
+| FAIC | No se localizó identidad pública ni catálogo propio actual atribuible a la unidad de Via Eiffel. |
+| HIGH QUALITY FOOD | La presencia pública es la de un distribuidor multimarcas; no atribuye sus quesos comerciales a la planta de Pietralata. |
+| IPERCARNI | La presencia pública es una cadena de supermercados; no documenta una marca casearia propia elaborada en Torrenova. |
+| LA COTARDA | No se encontró identidad pública ni oferta propia actual atribuible a la planta de Via Anagnina. |
+| PEWEX — AL.PA. | La empresa publica selección y confección de quesos de terceros, no fabricación de una oferta casearia propia. |
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| PITZALIS BRUNO | Anguillara Sabazia | VIA DEL CASALE DI SPANORA, 40 , ANGUILLARA SABAZIA (RM) | `UE IT 12 180` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-MAR-13 |
-| IL VECCHIO OVILE SOCIETA' COOPERATIVA A R.L. | Anzio | VIA DEI GELSI 168, ANZIO (RM) | `UE IT B9C61` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JUL-15 |
 | DE IULIIS MASSIMO | Castel Gandolfo | VIA SAN SEBASTIANO 12, CASTEL GANDOLFO (RM) | `UE IT 12 184` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-APR-21 |
 | SAPORI DI BUFALA S.R.L. | Fiano Romano | VIA TIBERINA 49, FIANO ROMANO (RM) | `UE IT C7M1G` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-FEB-23 |
 | DE ANGELIS SABATINO | Fiumicino | VIA DI TAGLIATELLA 397, FIUMICINO (RM) | `UE IT J5V8V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-SEP-24 |
-| EREDI DI GIOVANNI BRANDIZZI SOCIETA' SEMPLICE | Fiumicino | VIA AURELIA 2449, FIUMICINO (RM) | `UE IT W3C88` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-OCT-14 |
 | GRANDAURELIA FORMAGGI S.R.L. | Fiumicino | VIA EMILIO PASQUINI 211, FIUMICINO (RM) | `UE IT T8V87` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-SEP-20 |
-| ANTICHI SAPORI S.R.L. | Fonte Nuova | VIA DELLE MIMOSE 36/A, FONTE NUOVA (RM) | `UE IT Y4V6Y` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-AUG-25 |
-| NONNO PEPPE SRLS | Formello | VIA DEGLI OLMETTI 44, FORMELLO (RM) | `UE IT K1D10` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 17-JUL-24 |
-| LA QUERCIA SRL | Guidonia Montecelio | VIA ENRICO FORLANINI, 37/39/41 , GUIDONIA MONTECELIO (RM) | `UE IT 12 38` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-13 |
 | DI MARCO ALESSANDRO | Montelibretti | LOCALITA' TINTE ROSSE SNC , MONTELIBRETTI (RM) | `UE IT F8W1G` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-12 |
 | LA BOTTEGA DEL CASARO S.R.L. | Monterotondo | VIA SALARIA, 195 , MONTEROTONDO (RM) | `UE IT D517H` | vacuno menos de 60 d/más de 60 d | 30-DEC-11 |
-| F.LLI ZONETTI SOCIETA' A RESPONSABILITA' LIMITATA | Nerola | VIA SALARIA VECCHIA 11, NEROLA (RM) | `UE IT M790T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-DEC-21 |
 | ZONETTI LUIGI ENNIO E C.SRL | Nerola | VIA ROMANA, 7 , NEROLA (RM) | `UE IT 12 37` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-FEB-13 |
 | SOCIETA' AGRICOLA DAMIGELLI S.S. | Palestrina | VIA PRATO BINI 1, PALESTRINA (RM) | `UE IT 12 223` | vacuno menos de 60 d/más de 60 d | 30-OCT-24 |
-| AGRICOLTURA NUOVA SOCIETA` COOP. SOCIALE AGRICOLA INTEGRATA | Roma Capitale | VIA VALLE DI PERNA, 315 , ROMA CAPITALE (RM) | `UE IT 12 212` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-JUL-10 |
-| CASEIFICIO DE JULIIS ENIO E FIGLI SRL | Roma Capitale | VIA G. G. MENDEL 151, ROMA CAPITALE (RM) | `UE IT 12 48` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-AUG-16 |
 | CENTRO ALIMENTARE FALCONI DI FALCONI FABIO | Roma Capitale | VIA DELL`ASTORE 7, ROMA CAPITALE (RM) | `UE IT M2F3J` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-AUG-17 |
 | DON NINO PRODUZIONE S.R.L. | Roma Capitale | PIAZZA TOMMASO DE CRISTOFORIS 4/a, ROMA CAPITALE (RM) | `UE IT Z5M24` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-OCT-25 |
 | EREDI DI MARZIANTONIO SOC. AGRICOLA A R.L. | Roma Capitale | VIA CASALE DELLE PULCI, 85 , ROMA CAPITALE (RM) | `UE IT E6128` | vacuno menos de 60 d/más de 60 d | 18-MAY-11 |
 | FAIC - SOCIETA A RESPONSABILITA LIMITATA | Roma Capitale | VIA ALEXANDRE GUSTAVE EIFFEL 100 isolaB37, ROMA CAPITALE (RM) | `UE IT T6U1A` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUL-17 |
-| FORMAGGI BOCCEA - SOCIETA' A RESPONSABILITA' LIMITATA | Roma Capitale | VIA LOCANA 97, ROMA CAPITALE (RM) | `UE IT 12 59` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-FEB-18 |
 | HIGH QUALITY FOOD S.R.L. | Roma Capitale | VIA DI PIETRALATA 179, ROMA CAPITALE (RM) | `UE IT M8Y3T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-APR-18 |
 | IPERCARNI S.R.L. | Roma Capitale | VIA DEI RUDERI DI TORRENOVA, 75 , ROMA CAPITALE (RM) | `UE IT 3011 S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-DEC-10 |
 | LA COTARDA SOCIETA' AGRICOLA A R.L.C.R. | Roma Capitale | VIA ANAGNINA 436/438, ROMA CAPITALE (RM) | `UE IT G411S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-NOV-24 |
 | PEWEX - AL.PA. - SOCIETA' A RESPONSABILITA' LIMITATA | Roma Capitale | VIA CASILINA 1670, ROMA CAPITALE (RM) | `UE IT E4N1C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUL-24 |
-| SANTA MARIA S.R.L. | Roma Capitale | VIA SANTA MARIA DI GALERIA, 564 , ROMA CAPITALE (RM) | `UE IT 12 57` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-MAR-13 |
-| SOCIETA' AGRICOLA BELLADONNA S.R.L. | Roma Capitale | VIA DELLA MARCIGLIANA 352, ROMA CAPITALE (RM) | `UE IT B175Q` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 31-JUL-26 |
-| CASEAREA AGRI IN S.R.L. | Torrita Tiberina | VIA DELLA VALLE CARBONE SNC, TORRITA TIBERINA (RM) | `UE IT D8S5Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-NOV-24 |

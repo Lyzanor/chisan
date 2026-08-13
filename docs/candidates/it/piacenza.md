@@ -1,83 +1,55 @@
 # Candidatos — Piacenza
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+## Operadores ecológicos — revisión del 2026-08-13
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| ABBAZIA DI NOSTRA SIGNORA DELLA TRINITA' | Morfasso | VIA MONTE MONASTERO 29020 | producción — vegetales sin transformar | 2028-07-23 | [IT-BIO-004.380-0076214.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0076214.2025.001.pdf) |
-| ACANTHA SOCIETA' AGRICOLA SRLS | Bettola | LOCALITA' SAN BOCETO SNC - CALENZANO 29021 | producción — vegetales sin transformar | 2028-10-29 | [IT-BIO-004.380-0078739.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0078739.2025.002.pdf) |
-| AGNELLI LUIGI | Bettola | LOCALITA' AGNELLI DI GROPPO DUCALE 29021 | producción — vegetales sin transformar | 2027-02-05 | [IT-BIO-006.380-0063015.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0063015.2024.001.pdf) |
-| AGRI D.L.L. SOCIETA' SEMPLICE AGRICOLA | Pontenure | STRADA PER PADERNA MONTANARO 18 29010 | producción — vegetales sin transformar | 2026-09-13 | [IT-BIO-007.380-0007877.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0007877.2025.001.pdf) |
-| AGRICOLA PIGAZZANO SOCIETA' SEMPLICE AGRICOLA | Piacenza | VICOLO SAN POLO 22 29121 | producción — vegetales sin transformar | 2029-02-12 | [IT-BIO-006.380-0067234.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0067234.2026.001.pdf) |
-| ALBERTELLI GIUSEPPE | Bettola | LOCALITA' UGHITTI 25 29021 | producción — vegetales sin transformar | 2029-01-16 | [IT-BIO-006.380-0037376.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0037376.2026.001.pdf) |
-| ARDARA SOCIETA' AGRICOLA S.S. | Piozzano | STRADA PROVINCIALE 65 N 88 29010 | producción — vegetales sin transformar | 2028-12-01 | [IT-BIO-004.380-0110170.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0110170.2025.001.pdf) |
-| Aurum Societa` Agricola S.s. | Pianello Val Tidone | Via Rossi, 4/a 36040 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-03-11 | [IT-BIO-005.380-0027738.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-005.380-0027738.2025.003.pdf) |
-| AZ. AGR. MONFERRINA DI GIANMARIA SFORZA FOGLIANI | Ziano Piacentino | LOCALITA' VICOBARONE SNC 29010 | producción — vegetales sin transformar | 2028-06-22 | [IT-BIO-004.380-0080565.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0080565.2025.001.pdf) |
-| AZIENDA AGRICOLA BINELLI RENATO | Gropparello | VIA ROBINIA, N 2 29025 | producción — vegetales sin transformar | 2028-04-27 | [IT-BIO-004.380-0014719.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0014719.2025.001.pdf) |
-| AZIENDA AGRICOLA CAMINATI DI CAMINATI NICOLETTA E C SAS SOC.AGR. | Rivergaro | VIA PIEVE DUGLIANA, N 75 29029 | producción — vegetales sin transformar | 2028-10-13 | [IT-BIO-004.380-0016709.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0016709.2025.001.pdf) |
-| AZIENDA AGRICOLA IL VEI DI BRAGHIERI SAVINO | Piozzano | VIA STRADA VOLPI 8 29010 | producción — vegetales sin transformar | 2029-02-16 | [IT-BIO-009.380-0032103.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0032103.2026.002.pdf) |
-| AZIENDA AGRICOLA LA CAMINATA DI SCOTTI LAURA | Coli | LOCALITA' CAMINATA BOSELLI 87 29020 | producción — vegetales sin transformar | 2029-03-04 | [IT-BIO-004.380-0112019.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0112019.2026.001.pdf) |
-| AZIENDA VITIVNICOLA SACCOMANI SOCIETA' AGRICOLA S.S. | Lugagnano Val d'Arda | LOC CROCE, N 1 29018 | producción — vegetales sin transformar | 2028-07-23 | [IT-BIO-004.380-0049497.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0049497.2025.001.pdf) |
-| BALLOTTA CRISTIANO | Bettola | LOCALITA' RECESIO 20 29021 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-03-13 | [IT-BIO-006.380-0038196.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0038196.2025.001.pdf) |
-| BERNAZZANI AZIENDA AGRICOLA S.S. | Bettola | LOCALITA'  POZZOLO SAN BERNARDINO 5 29021 | producción — vegetales sin transformar | 2027-03-18 | [IT-BIO-006.380-0068739.2024.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0068739.2024.001.pdf) |
-| BERTUZZI GABRIELLA | Bettola | LOCALITA' MASSARA VIGOLO 29021 | producción — ganado y productos ganaderos sin transformar, vegetales sin transformar | 2029-06-30 | [IT-BIO-006.380-0034122.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0034122.2026.001.pdf) |
-| BIO CULTYVIA SOCIETA' SEMPLICE AGRICOLA | Gossolengo | VIA TORRONE  15 29020 | producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-10-01 | [IT-BIO-023.380-0036099.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-023.380-0036099.2025.001.pdf) |
-| BOERI GIUSEPPE | Morfasso | CORNOLO, N 18 29020 | producción — vegetales sin transformar | 2029-03-15 | [IT-BIO-004.380-0012734.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0012734.2026.001.pdf) |
-| CA' DEL MONTE SOCIETA' AGRICOLA | Bettola | LOCALITA' LOC. PRATO BARBIERI 29021 | preparación, producción — ganado y productos ganaderos sin transformar, animales y productos de acuicultura, vegetales sin transformar | 2028-06-29 | [IT-BIO-004.380-0074948.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0074948.2025.001.pdf) |
+Se revisó el lote de 20 certificados `ISSUED` de [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index) levantado el 2026-08-08 y el candidato apícola Color di Foglia trasladado desde Cremona.
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+- Se publicaron cuatro productores de Piacenza: Mulino Sala — Ca' del Monte, BioCultyvia, Saccomani y Marinferno (marca de Azienda Agricola Monferrina).
+- Aurum se resolvió como error territorial: el CAP, el sitio oficial y el registro PPL Veneto sitúan la unidad en Val Liona, por lo que se publicó en Vicenza y se documentó la exclusión de Piacenza.
+- Los 16 casos siguientes permanecen abiertos. El certificado o registro acredita actividad agraria, pero todavía no una oferta alimentaria pública actual atribuible a la unidad.
 
-40 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+| Candidato | Comune provisional | Motivo concreto de retención |
+|---|---|---|
+| Abbazia di Nostra Signora della Trinità | Morfasso | La actividad registral menciona cereales y desarrollo agro-vitivinícola, pero no se encontró marca, producto vendible ni contacto comercial actual. |
+| Acantha Società Agricola | Bettola | Hay actividad cerealista e inversión reciente para un futuro agriturismo, pero no una oferta alimentaria pública ya operativa. |
+| Agnelli Luigi | Bettola | Solo se pudo confirmar el certificado ecológico de la unidad de Groppo Ducale; faltan identidad comercial y producto concreto. |
+| Agri D.L.L. Società Semplice Agricola | Pontenure | Los registros actuales acreditan producción primaria de cereales, legumbres y oleaginosas, no una marca o venta pública de producto propio. |
+| Agricola Pigazzano | Piacenza | La dirección encontrada es sede legal urbana y no se ha reconciliado con una unidad productiva ni con una oferta pública propia. |
+| Albertelli Giuseppe | Bettola | La explotación y su continuidad administrativa están acreditadas, pero no aparece catálogo, marca o canal público actual. |
+| Ardara Società Agricola | Piozzano | Sociedad cerealista de creación reciente; no se encontró producto alimentario concreto ofrecido al público. |
+| Azienda Agricola Binelli Renato | Gropparello | Actividad cerealista vigente, sin identidad de producto, contacto comercial o venta directa localizados. |
+| Azienda Agricola Caminati | Rivergaro | La empresa y la producción agrícola están activas, pero no se halló una oferta alimentaria pública atribuible a la unidad de Pieve Dugliara. |
+| Azienda Agricola Il Vei | Piozzano | La actividad pública encontrada se limita al cultivo de uva; falta una etiqueta propia u otro producto final comercializado. |
+| Azienda Agricola La Caminata di Laura Scotti | Coli | Las fuentes actuales describen principalmente cría equina y actividad forestal; el alcance ecológico vegetal no se traduce aún en una oferta alimentaria pública. |
+| Ballotta Cristiano | Bettola | Se acredita explotación bovina de carne y certificado ecológico, pero la referencia ganadera pública es antigua y no hay marca o canal de venta actual. |
+| Bernazzani Azienda Agricola | Bettola | No se encontró presencia pública inequívoca más allá del certificado ecológico. |
+| Bertuzzi Gabriella | Bettola | El certificado cubre ganado y vegetales, pero no se localizó producto propio concreto ni contacto comercial vigente. |
+| Boeri Giuseppe | Morfasso | La actividad cerealista está registrada, sin marca, catálogo o venta directa pública. |
+| Color di Foglia di Alessio Di Nucci | Piacenza | La actividad apícola figura activa y los registros públicos la sitúan en Piacenza, pero sigue sin aparecer una marca de miel u oferta pública concreta. |
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| CAPRISS SOCIETA' AGRICOLA S.A.S. DI ALESSIA ROTA E FILIPPO DI NICOLO' | Alseno | STRADA BIANCA 381, ALSENO (PC) | `UE IT N275U` | caprino menos de 60 d/más de 60 d | 15-MAY-23 |
-| CASEIFICIO COOPERATIVO CASANOVA SOCIETA' COOPERATIVA | Besenzone | VIA BOCETO INFEIORE 191, BESENZONE (PC) | `UE IT 08 424` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-FEB-23 |
-| CROCE GROSSA SCRL | Besenzone | STRADONE, 58 , BESENZONE (PC) | `UE IT 08 423` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| AZIENDA AGRICOLA SARTORI MARCO E BALLOTTA MARINELLA | Bettola | LOCALITA` MISSANO , BETTOLA (PC) | `UE IT 08 1116` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO SOCIALE VALTIDONE SOCIETÀ COOP.VA AGRICOLA | Borgonovo Val Tidone | LOC COLOMBAROLA , BORGONOVO VAL TIDONE (PC) | `UE IT 08 204` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| COLLA S.P.A. | Cadeo | LOCALITA' TARTAGLIA snc, CADEO (PC) | `UE IT 08 30` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-OCT-25 |
-| COLLA S.P.A. | Cadeo | STRADA S. ANNA 10, CADEO (PC) | `UE IT 08 29` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-OCT-25 |
-| SANTA VITTORIA SOCIETA' AGRICOLA COOPERATIVA ENUNCIABILE ANCHE SA NTA VITTORIA SOC. AGR. COOP. O ANC | Carpaneto Piacentino | VIA LOCALITÀ CASEIFICIO 25, CARPANETO PIACENTINO (PC) | `UE IT 08 211` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-FEB-23 |
-| CASEIFICIO CONTINI DI CONTINI DAMIANO | Castell'Arquato | BACEDASCO ALTO, 4 , CASTELL'ARQUATO (PC) | `UE IT 08 923` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| INDUSTRIA CASEARIA VILLA S.R.L. | Castell'Arquato | LOCALITA' LOC. MONTAGNANO 00, CASTELL'ARQUATO (PC) | `UE IT 08 605` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-FEB-23 |
-| AIMI FORMAGGI SRL | Castelvetro Piacentino | MARTIRI DUCHI E MOLINARI, 56 , CASTELVETRO PIACENTINO (PC) | `UE IT 08 247` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| LATTERIA SOCIALE SAN PIETRO IN CORTE PICCOLA SOCIETA' COOPERATIVA A RESPONSABILITA' LIMITATA ENUNCIA | Castelvetro Piacentino | LOCALITA' GORILETTO snc, CASTELVETRO PIACENTINO (PC) | `UE IT Z321Z` | vacuno más de 60 d | 17-JAN-25 |
-| AGRI PIACENZA LATTE SOCIETA' AGRICOLA CONSORTILE A RESPONSABILITA ' LIMITATA ENUNCIABILE ANCHE AGRI | Cortemaggiore | VIA FIORENZUOLA 13/a, CORTEMAGGIORE (PC) | `UE IT 08 203` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-DEC-22 |
-| CASEIFICIO COOPERATIVO CASA NUOVA SCRL | Cortemaggiore | CAORSO, 15 , CORTEMAGGIORE (PC) | `UE IT 08 186` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| CASEIFICIO SOCIALE CANALONE SCRL | Cortemaggiore | GALLUZZI, 29 , CORTEMAGGIORE (PC) | `UE IT 08 450` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| LATTICINI PARMA S.R.L. | Cortemaggiore | VIA G. ROSSETTI 10 10, CORTEMAGGIORE (PC) | `UE IT F5Z70` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 04-MAR-25 |
-| CASEIFICIO SOCIALE DI BASELICA DUCE SOCIETA' AGRICOLA COOPERATIVA ENUNCIABILE ANCHE CASEIFICIO SOCIA | Fiorenzuola D'Arda | STRADA COMUNALE PER CHIARAVALLE 1066, FIORENZUOLA D'ARDA (PC) | `UE IT 08 205` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-SEP-24 |
-| S.C.A. S.R.L. | Fiorenzuola D'Arda | VIA FRIULI 5, FIORENZUOLA D'ARDA (PC) | `UE IT 08 368` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-JUN-20 |
-| VALCOLATTE SOCIETA' A RESPONSABILITA' LIMITATA ENUNCIABILE ANCHE VALCOLATTE S.R.L. | Fiorenzuola D'Arda | VIA VIA EMILIA - STRADA STATALE 9 618, FIORENZUOLA D'ARDA (PC) | `UE IT 08 775` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-JAN-26 |
-| LATTEGRA - INDUSTRIA CASEARIA S.P.A. | Gragnano Trebbiense | LOCALITA' GRAGNANINO 00, GRAGNANO TREBBIENSE (PC) | `UE IT 08 35` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-SEP-24 |
-| CASEIFICIO SOCIALE VAL CHIAVENNA E VAL CHERO SCRL | Lugagnano Val D'Arda | BARACCHE, 4 , LUGAGNANO VAL D'ARDA (PC) | `UE IT 08 200` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| E. CERNUSCHI E C. S.R.L. | Lugagnano Val D'Arda | LOCALITA' TAGLIATA - ANTOGNANO RUSTIGAZZO 0, LUGAGNANO VAL D'ARDA (PC) | `UE IT 08 570` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-APR-23 |
-| CASEIFICIO BORGONOVO S.N.C. DI PALORMI ENNIO E PALORMI GIANFRANCO | Monticelli D'Ongina | LOCALITA' BORGONOVO SAN LORENZO 31, MONTICELLI D'ONGINA (PC) | `UE IT 08 395` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-FEB-23 |
-| PANIZZI CLICERIO SRL | Monticelli D'Ongina | OLZA FOGAROLE, 56 , MONTICELLI D'ONGINA (PC) | `UE IT 08 776` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-08 |
-| PRIMO - RUPP ITALIA SRL | Monticelli D'Ongina | VIA BREDA 55/B, MONTICELLI D'ONGINA (PC) | `UE IT W344E` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-AUG-21 |
-| RAINBOW S.R.L. | Monticelli D'Ongina | VIA BREDA 55, MONTICELLI D'ONGINA (PC) | `UE IT 08 354` | vacuno más de 60 d, caprino más de 60 d, ovino más de 60 d | 01-FEB-23 |
-| F.LLI GHIBAUDO DI GHIBAUDO BATTISTA E C. S.N.C. | Piacenza | VIA LABADINI 4, PIACENZA (PC) | `UE IT 08 1032` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-DEC-22 |
-| INDUSTRIA CASEARIA SERAFINI ROBERTO & C. - S.R.L. | Piacenza | STRADA STRADA AGAZZANA 59, PIACENZA (PC) | `UE IT 08 468` | vacuno menos de 60 d/más de 60 d | 08-JUL-17 |
-| CORTE BERNUZZO S.S. | Piozzano | VALLESCURA,11 , PIOZZANO (PC) | `UE IT 08 818` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| ZAMBELLI GIACOMO | Piozzano | STRADA MONTECANINO - LOC. VEZZANINO 7, PIOZZANO (PC) | `UE IT L485B` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-OCT-16 |
-| G. E G. | Pontenure | VIA MOSCHINI 34 , PONTENURE (PC) | `UE IT 08 854` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| VALCOLATTE SOCIETA' A RESPONSABILITA' LIMITATA ENUNCIABILE ANCHE VALCOLATTE S.R.L. | Pontenure | VIA VIA FIRENZE LOC. VALCONASSO 16 16, PONTENURE (PC) | `UE IT 08 697` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-OCT-20 |
-| CASCINA BOSCO GEROLO SOCIETA' AGRICOLA S.R.L. | Rivergaro | LOCALITA' GEROLO DI RIVERGARO 00, RIVERGARO (PC) | `UE IT 08 1115` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-FEB-23 |
-| SERVIZI SRL | Rivergaro | CHIESA, 33 , RIVERGARO (PC) | `UE IT 08 107` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 27-OCT-11 |
-| INDUSTRIA CASEARIA COLLA PAOLO S.R.L. | Rottofreno | VIA CASTELLO 63, ROTTOFRENO (PC) | `UE IT 08 182` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-FEB-23 |
-| F.LLI GUARNIERI SNC DI ESTINI VALENTINO & BERTOZZI GIAN LUCA | San Giorgio Piacentino | COLOMBO, 1/A , SAN GIORGIO PIACENTINO (PC) | `UE IT 08 658` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| CASEARI DALL`AGLIO SNC | Vernasca | RIO CORTO, 1 , VERNASCA (PC) | `UE IT 08 213` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| CASEIFICIO SOCIALE VERNASCA SCRL | Vernasca | VIA PRÈ VECCHIO , VERNASCA (PC) | `UE IT 08 746` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-13 |
-| LATTERIA SOCIALE COOPERATIVA TRE CASE SOC.COOP.A R L | Villanova Sull'Arda | VIA VIA STALLONE 35 FRAZ. SANT`AGATA 56, VILLANOVA SULL'ARDA (PC) | `UE IT 08 425` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-AUG-20 |
-| LATTERIA SOCIALE STALLONE S.C.A.R.L. | Villanova Sull'Arda | VIA DANTE ALIGHIERI 35 , VILLANOVA SULL'ARDA (PC) | `UE IT 08 108` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+## Productores de queso — barrido sanitario revisado el 2026-08-13
 
-## Productores de queso — contraste Grana Padano DOP del 2026-08-11
+Se contrastaron las 40 unidades del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y la segunda planta Lattegra publicada por el Consorzio Tutela Grana Padano. El resultado del lote es:
 
-La ficha vigente de [Lattegra Industria Casearia SpA en el Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/lattegra-industria-casearia-spa/) publica dos plantas. Gragnano Trebbiense (`PC509`) ya estaba en candidatos; se añade la segunda:
+- 26 unidades productivas publicadas, incluidas por separado las dos plantas Colla de Cadeo, las dos plantas Lattegra y las dos plantas Valcolatte.
+- 3 exclusiones definitivas documentadas en evidencia: Aimi Formaggi, Rainbow y F.lli Ghibaudo. Su identidad pública actual acredita afinado, envasado o comercio mayorista, no una oferta propia de elaboración que justifique el alta.
+- 12 candidatos permanecen abiertos. La autorización sanitaria prueba capacidad legal, no que exista hoy una marca pública y un producto propio atribuible a esa unidad.
 
-| Candidato | Comune | Dirección productiva | Matrícula Grana Padano | Nota de contraste |
-|---|---|---|---|---|
-| Lattegra Industria Casearia SpA — planta de Vigolo Marchese | Castell'Arquato, fr. Vigolo Marchese | Vigolo Marchese, 29014 Castell'Arquato (PC) | `PC546` | Unidad productiva distinta; falta reconciliar dirección completa y autorización sanitaria vigente. |
+### Retenciones pendientes
 
-Las demás matrículas provinciales quedan reconciliadas. `PC565` Saviola publica Via Emilia 618, Desmontata, la misma dirección de la unidad sanitaria candidata Valcolatte en Fiorenzuola d'Arda, por lo que se retiene como conflicto de identidad y no como productor adicional. Las dos matrículas de Colla (`PC523`/`PC524`) ya están cubiertas por sus dos unidades de Cadeo.
+| Candidato | Comune | Autorización | Motivo concreto de retención |
+|---|---|---|---|
+| Azienda Agricola Sartori Marco e Ballotta Marinella | Bettola | `UE IT 08 1116` | Autorización vigente, pero no se localizó marca, catálogo ni canal público actual de la unidad de Missano. |
+| S.C.A. Srl | Fiorenzuola d'Arda | `UE IT 08 368` | La presencia pública encontrada se orienta a ingredientes o servicios industriales y no permite atribuir una oferta propia concreta de queso. |
+| Caseificio Sociale Val Chiavenna e Val Chero | Lugagnano Val d'Arda | `UE IT 08 200` | Solo queda acreditada la unidad sanitaria; falta una oferta pública actual y contacto propio. |
+| E. Cernuschi e C. Srl | Lugagnano Val d'Arda | `UE IT 08 570` | No se encontró identidad comercial vigente ni catálogo atribuible a la planta de Rustigazzo. |
+| Panizzi Clicerio Srl | Monticelli d'Ongina | `UE IT 08 776` | Las referencias societarias localizadas no prueban actividad productiva pública actual ni una gama propia. |
+| Corte Bernuzzo S.S. | Piozzano | `UE IT 08 818` | La unidad sanitaria está en Piozzano, pero la identidad pública histórica remite a Cremona y no se ha reconciliado la marca con esta planta. |
+| Zambelli Giacomo | Piozzano | `UE IT L485B` | Autorización vigente sin marca pública, producto concreto ni contacto actual localizados. |
+| G. e G. | Pontenure | `UE IT 08 854` | El nombre no permite identificar de forma inequívoca una marca u oferta pública actual. |
+| Servizi Srl | Rivergaro | `UE IT 08 107` | Autorización vigente, pero no se localizó una identidad pública que conecte la sociedad con queso propio. |
+| F.lli Guarnieri | San Giorgio Piacentino | `UE IT 08 658` | Falta catálogo, marca o canal público actual atribuible a la unidad autorizada. |
+| Caseificio Sociale Vernasca | Vernasca | `UE IT 08 746` | La autorización sanitaria no se acompaña de una oferta pública actual verificable. |
+| Latteria Sociale Tre Case | Villanova sull'Arda | `UE IT 08 425` | Hay trazas administrativas de la planta, pero no catálogo ni contacto comercial actual que acrediten oferta propia. |
+
+La planta Lattegra de Vigolo Marchese (`PC546`) quedó reconciliada con la ficha vigente del Consorzio y se publicó como unidad distinta. El posible cruce `PC565` Saviola / Valcolatte en Via Emilia 618 se resolvió a favor de la identidad sanitaria y ambiental vigente de Valcolatte; no se creó una fila adicional.

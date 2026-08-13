@@ -82,12 +82,3 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | SOTTO LE STELLE | Vado Ligure | 019 88 83 55<br>carlo.traman@libero.it |
 | U BERIUN | Vendone | 0182 76 650<br>massimorevello@libero.it |
 | LA RAMERA | Villanova d'Albenga | 392 59 53 088<br>info@laramera.it |
-
-## Productores de queso — barrido sanitario nacional del 2026-08-11
-
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| FRASCHERI S.P.A. | Bardineto | VIA CESARE BATTISTI 29, BARDINETO (SV) | `UE IT 07 23` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-JUN-15 |
-| BUONA COMPAGNIA GOURMET S.P.A. | Savona | VIA DELLA NUNZIATA 8, SAVONA (SV) | `UE IT N2R69` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-JUN-17 |
