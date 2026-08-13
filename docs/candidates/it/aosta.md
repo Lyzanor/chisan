@@ -29,7 +29,7 @@ Investigación del 2026-08-08. Estos 16 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares únicos. En la revisión del 2026-08-13 se publicaron noventa y siete productores: los premiados y finalistas contrastables de Modon d'Or entre 2020 y 2025, Planaz Giuseppe y setenta y un productores presentes en el censo oficial de alpeggi y caseifici de Fontina DOP de 2025. Sus 141 autorizaciones se reconciliaron por titular y unidad productiva sin crear filas duplicadas; Le Foyer des Reines, Chenal Fabrizio y Jordaney se resolvieron además desde la cola ecológica. Quedan 122 unidades pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares únicos. En la revisión del 2026-08-13 se publicaron ciento cinco productores: los premiados y finalistas contrastables de Modon d'Or entre 2020 y 2025, Planaz Giuseppe y setenta y nueve productores presentes en el censo oficial de alpeggi y caseifici de Fontina DOP de 2025. Sus 150 autorizaciones se reconciliaron por titular y unidad productiva sin crear filas duplicadas; Le Foyer des Reines, Chenal Fabrizio y Jordaney se resolvieron además desde la cola ecológica. Quedan 113 unidades pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
@@ -53,7 +53,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | CUGNOD LORENZO ANSELMO | Brusson | LOCALITA' LAVASSEY E LAVASSEY SUPERIORE /, BRUSSON (AO) | `UE IT A3K81` | vacuno más de 60 d | 31-MAR-21 |
 | FROMAGERIE HAUT VAL D'AYAS SOC. COOP. | Brusson | FRAZIONE TROIS VILLAGES 1, BRUSSON (AO) | `UE IT 02 129` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 23-NOV-20 |
 | SOCIETA' AGRICOLA FRATELLI GIROD S.S. | Brusson | LOCALITA' MOUCHEROULAZ /, BRUSSON (AO) | `UE IT 02 617` | vacuno más de 60 d | 18-DEC-20 |
-| SOCIETA' AGRICOLA PERETTO S.S. | Brusson | LOCALITA' ALPE FONTANE /, BRUSSON (AO) | `UE IT S5B0M` | vacuno más de 60 d | 22-JUN-23 |
 | SOCIETA' AGRICOLA LA ROESAZ-SOCIETA' SEMPLICE | Challand-Saint-Victor | LOCALITA' CHALEX-DÈSOT /, CHALLAND-SAINT-VICTOR (AO) | `UE IT 02 582` | vacuno más de 60 d | 18-DEC-20 |
 | CHAMPAGNE SOC. COOP. | Chambave | FRAZIONE CHAMPAGNE /, CHAMBAVE (AO) | `UE IT 02 23` | vacuno menos de 60 d/más de 60 d | 17-NOV-20 |
 | IMPRESA EDILE CIGNETTI MATTEO COSTRUZIONI EDILI GENERALI | Champdepraz | LOCALITA' LOSSON /, CHAMPDEPRAZ (AO) | `UE IT Q0Z6K` | caprino más de 60 d | 17-NOV-20 |
@@ -81,7 +80,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | GIROD ALFREDO | Fontainemore | LOCALITA' PREZ DÉSOT E PIERRE BLANCHE DI MEITEN /, FONTAINEMORE (AO) | `UE IT 02 618` | vacuno más de 60 d | 23-NOV-20 |
 | LINTY STEFANO | Fontainemore | LOCALITA' NANTREY /, FONTAINEMORE (AO) | `UE IT 02 532` | vacuno más de 60 d | 18-JUL-22 |
 | VERCELLIN NOURISSAT AURELIO | Fontainemore | FRAZIONE PIANPERVERO 8, FONTAINEMORE (AO) | `UE IT 02 51` | vacuno más de 60 d | 21-DEC-20 |
-| BREDY UGO | Gignod | LOCALITA' SAVIN 1/A, GIGNOD (AO) | `UE IT W1Q6C` | vacuno más de 60 d | 30-JUL-25 |
 | C.A.V. SAS DI DUCLOS ELISEO | Gignod | FRAZIONE FRAZ. PETIT QUART 2/A, GIGNOD (AO) | `UE IT 02 52` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 23-APR-25 |
 | D. & D. DI DUCLOS L. & C. S.S. IN SIGLA D. & D. S.S. | Gignod | FRAZIONE PETIT QUART 2/A, GIGNOD (AO) | `UE IT Y8J48` | vacuno menos de 60 d/más de 60 d | 20-NOV-20 |
 | SOCIETA' AGRICOLA EXPLOITATION AGRICOLE S.S. F.RES QUENDOZ | Gignod | LOCALITA' MENDEY, CHALIGNE E TZA DE CHALIGNE /, GIGNOD (AO) | `UE IT P6B1V` | vacuno más de 60 d | 09-DEC-20 |
@@ -119,13 +117,8 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | YEUILLA MARILENA | Ollomont | FRAZIONE VOVECES /, OLLOMONT (AO) | `UE IT L8M5V` | vacuno más de 60 d | 22-FEB-21 |
 | VALLOMY CLAUDIA ANTONELLA | Perloz | LOCALITA' MONT-MILLIAN /, PERLOZ (AO) | `UE IT G7H1L` | vacuno más de 60 d | 24-MAY-21 |
 | BARDHOKU LEONARD | Pollein | LOCALITA' GRAND-POLLEIN 34, POLLEIN (AO) | `UE IT H5R1L` | vacuno más de 60 d | 12-NOV-21 |
-| DALBARD MAURIZIO | Pollein | LOCALITA' DREGIER 25, POLLEIN (AO) | `UE IT 02 4` | vacuno más de 60 d | 20-NOV-20 |
-| DALBARD PAOLO | Pollein | LOCALITA' DREGER 19, POLLEIN (AO) | `UE IT 02 91` | vacuno más de 60 d | 21-JUN-22 |
 | LE LAIT DE POLLEIN SOC. COOP. | Pollein | LOCALITA' ELIPORTO 12, POLLEIN (AO) | `UE IT T4X6H` | vacuno más de 60 d | 30-NOV-20 |
 | COLLIARD DANILO | Pontboset | LOCALITA' BOSET DAMON /, PONTBOSET (AO) | `UE IT T5M87` | vacuno más de 60 d | 17-NOV-20 |
-| SOCIETA' AGRICOLA PERETTO S.S. | Pont-Saint-Martin | PIAZZA CASCINE 2, PONT-SAINT-MARTIN (AO) | `UE IT B1K25` | vacuno menos de 60 d/más de 60 d | 18-DEC-20 |
-| ARLIAN MONIQUE | Quart | FRAZIONE EFFRAZ /, QUART (AO) | `UE IT 02 76` | vacuno más de 60 d | 05-JUL-23 |
-| MAISON AGRICOLE MOIN SOCIETA' SEMPLICE AGRICOLA SIGLA: MAISON AGRICOLE MOIN S.S. AGRICOLA | Quart | FRAZIONE VILLE SUR NUS 1, QUART (AO) | `UE IT 02 152` | vacuno menos de 60 d/más de 60 d | 30-NOV-20 |
 | INSTITUT AGRICOLE REGIONAL | Rhemes-Notre-Dame | LOCALITA' BRUIL /, RHEMES-NOTRE-DAME (AO) | `UE IT 02 524` | vacuno más de 60 d | 23-NOV-20 |
 | SOCIETA' AGRICOLA FRERES DIEMOZ S.S. | Saint-Christophe | FRAZIONE CHAMP-D'HONE 8, SAINT-CHRISTOPHE (AO) | `UE IT W5X3P` | vacuno más de 60 d | 18-DEC-20 |
 | LETTRY YULEN | Saint-Denis | FRAZIONE PETIT-BRUSON 58, SAINT-DENIS (AO) | `UE IT Y9M4Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 30-NOV-20 |
@@ -149,9 +142,7 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | LA FERME D'ANTEY DI MARCELLAN SABRINA | Valtournenche | LOCALITA' GRILLON /, VALTOURNENCHE (AO) | `UE IT U6F03` | vacuno más de 60 d | 30-NOV-20 |
 | SOCIETA' AGRICOLA LO NIC SOCIETA' SEMPLICE DI PIEILLER LORIS E VERCELLIN NOURISSAT LAURA SIGLABILE S | Valtournenche | LOCALITA' MANDAZ DESOT, MANDAZ DAMON /, VALTOURNENCHE (AO) | `UE IT B384T` | vacuno menos de 60 d/más de 60 d | 18-DEC-20 |
 | AGRICOLA IVONNE DI NICOLETTA IVONNE ANNA | Verrès | LOCALITA' AVEUSE /, VERRÈS (AO) | `UE IT Z4X63` | vacuno menos de 60 d/más de 60 d | 08-APR-25 |
-| PLANAZ DINO | Verrès | LOCALITA' TORILLE 87, VERRÈS (AO) | `UE IT E4L8E` | vacuno más de 60 d | 09-DEC-20 |
 | BROCARD THIERRY | Verrayes | LOCALITA' CHAMPLONG-DAMON /, VERRAYES (AO) | `UE IT V3084` | vacuno más de 60 d | 23-MAY-25 |
-| MARQUIS GIANCARLO | Verrayes | FRAZIONE CHESSILLIER 16/A, VERRAYES (AO) | `UE IT 02 11` | vacuno más de 60 d | 30-NOV-20 |
 | VALLET ALBERTO | Verrayes | FRAZIONE PAYE` /, VERRAYES (AO) | `UE IT 02 26` | vacuno más de 60 d | 20-JAN-26 |
 | VALLET ALBERTO | Verrayes | LOCALITA' PRÉLAZ /, VERRAYES (AO) | `UE IT 02 572` | vacuno más de 60 d | 20-APR-26 |
 | CHATEL ARGENT SOC. COOP. | Villeneuve | FRAZIONE TREPONT 74, VILLENEUVE (AO) | `UE IT 02 24` | vacuno más de 60 d | 17-NOV-20 |
