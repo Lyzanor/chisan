@@ -8,7 +8,8 @@ const ROOT = process.cwd();
 const CSV_ROOT = path.join(ROOT, "data", "csv");
 const DEFAULT_CONCURRENCY = 2;
 const API_URL = "https://places.googleapis.com/v1/places:searchText";
-const QUERY_VERSION = 3;
+const BASIC_QUERY_VERSION = 2;
+const ENRICHED_QUERY_VERSION = 3;
 const COUNTRY_NAMES = {
   de: "Deutschland",
   es: "España",
@@ -40,6 +41,9 @@ const GENERIC_NAME_TOKENS = new Set([
   "cerveceria", "cervejaria", "gasthaus", "gasthof", "gaststatte", "hotel", "privat",
   "restaurant", "wirtshaus",
 ]);
+const PRODUCTIVE_PLACE_TYPES = new Set([
+  "brewery", "farm", "manufacturer", "ranch", "supplier", "vineyard", "wholesaler", "winery",
+]);
 
 function usage() {
   console.log(`Usage: node scripts/review-google-maps.mjs --country <iso> [options]
@@ -53,6 +57,7 @@ Options:
   --decisions <path>  Apply reviewed accept/clear decisions from a JSON array (requires --apply).
   --clear-unresolved  Empty every ambiguous or missing legacy link (requires --apply).
   --repair-verification  Downgrade verified rows left without a public link (requires --apply).
+  --enrich            Request website, phone, type and business-status fields for ambiguous review.
   --help              Show this help.
 
 The API key is read from GOOGLE_MAPS_API_KEY or .env.local. The cache never
@@ -70,6 +75,7 @@ function parseArgs(argv) {
     else if (arg === "--decisions") args.decisions = argv[++i];
     else if (arg === "--clear-unresolved") args.clearUnresolved = true;
     else if (arg === "--repair-verification") args.repairVerification = true;
+    else if (arg === "--enrich") args.enrich = true;
     else if (arg === "--concurrency") args.concurrency = Number(argv[++i]);
     else if (arg === "--apply") args.apply = true;
     else if (arg === "--help" || arg === "-h") args.help = true;
@@ -285,8 +291,20 @@ function classify(row, candidates) {
   const clearlyFirst = !second || best.score - second.score >= 1.5 || exactNearby;
   const sourceMatch = best.hostMatch || best.phoneMatch;
   const sourceLocationOkay = best.distanceKm !== null && best.distanceKm <= 2;
+  const exactProductiveUnit = best.nameSimilarity >= 0.6
+    && best.municipalityMatch
+    && best.distanceKm !== null
+    && best.distanceKm <= 5
+    && best.types.some((type) => PRODUCTIVE_PLACE_TYPES.has(type));
+  const addressedProductiveUnit = best.nameSimilarity >= 0.5
+    && best.municipalityMatch
+    && best.addressSimilarity >= 0.8
+    && (best.distanceKm === null || best.distanceKm <= 0.15)
+    && best.types.some((type) => PRODUCTIVE_PLACE_TYPES.has(type));
   const status = ((identityOkay && locationOkay && addressOkay && clearlyFirst)
-    || (sourceMatch && sourceLocationOkay)) ? "accepted" : "ambiguous";
+    || (sourceMatch && sourceLocationOkay)
+    || exactProductiveUnit
+    || addressedProductiveUnit) ? "accepted" : "ambiguous";
   return { status, selected: status === "accepted" ? best : null, ranked };
 }
 
@@ -303,13 +321,16 @@ async function fetchJson(url, options, attempts = 4) {
   throw new Error("Places API retry loop exhausted");
 }
 
-async function searchPlaces(row, country, apiKey) {
+async function searchPlaces(row, country, apiKey, enrich) {
+  const fieldMask = enrich
+    ? "places.id,places.displayName,places.formattedAddress,places.location,places.websiteUri,places.nationalPhoneNumber,places.types,places.businessStatus"
+    : "places.id,places.displayName,places.formattedAddress,places.location";
   const body = await fetchJson(API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "X-Goog-Api-Key": apiKey,
-      "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.location,places.websiteUri,places.nationalPhoneNumber,places.types,places.businessStatus",
+      "X-Goog-FieldMask": fieldMask,
     },
     body: JSON.stringify({
       textQuery: buildQuery(row, country),
@@ -521,7 +542,8 @@ async function main() {
     for (const row of rows) {
       const oldUrl = clean(row["Google Maps"]);
       if (!oldUrl || currentPlaceId(oldUrl)) continue;
-      const key = `v${QUERY_VERSION}:${path.relative(CSV_ROOT, file)}:${row.slug}:${oldUrl}`;
+      const queryVersion = args.enrich ? ENRICHED_QUERY_VERSION : BASIC_QUERY_VERSION;
+      const key = `v${queryVersion}:${path.relative(CSV_ROOT, file)}:${row.slug}:${oldUrl}`;
       queue.push({ file, row, oldUrl, key });
     }
   }
@@ -544,7 +566,7 @@ async function main() {
         candidates: classification.ranked ?? rescored,
       };
     }
-    const candidates = (await searchPlaces(item.row, args.country, apiKey))
+    const candidates = (await searchPlaces(item.row, args.country, apiKey, args.enrich))
       .map((candidate) => scoreCandidate(item.row, candidate, args.country));
     const classification = classify(item.row, candidates);
     const stored = {
