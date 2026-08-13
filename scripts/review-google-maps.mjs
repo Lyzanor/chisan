@@ -50,6 +50,7 @@ function usage() {
 
 Options:
   --area <slug>       Limit the review to one area CSV.
+  --exclude-area <slug>  Skip one area CSV (repeatable).
   --apply             Apply only high-confidence matches to the CSV files.
   --concurrency <n>   Concurrent Places requests (default: ${DEFAULT_CONCURRENCY}).
   --cache <path>      Review cache (default: tmp/google-maps-review-<iso>.jsonl).
@@ -70,6 +71,7 @@ function parseArgs(argv) {
     const arg = argv[i];
     if (arg === "--country") args.country = argv[++i];
     else if (arg === "--area") args.area = argv[++i];
+    else if (arg === "--exclude-area") (args.excludeAreas ??= []).push(argv[++i]);
     else if (arg === "--cache") args.cache = argv[++i];
     else if (arg === "--report") args.report = argv[++i];
     else if (arg === "--decisions") args.decisions = argv[++i];
@@ -534,7 +536,11 @@ async function main() {
   if (!apiKey) throw new Error("GOOGLE_MAPS_API_KEY is missing (environment or .env.local)");
 
   const countryRoot = path.join(CSV_ROOT, args.country);
-  const files = walkCsvFiles(countryRoot).filter((file) => !args.area || path.basename(file, ".csv") === args.area);
+  const excludedAreas = new Set(args.excludeAreas ?? []);
+  const files = walkCsvFiles(countryRoot).filter((file) => {
+    const area = path.basename(file, ".csv");
+    return (!args.area || area === args.area) && !excludedAreas.has(area);
+  });
   if (args.area && !files.length) throw new Error(`area '${args.area}' was not found in ${args.country}`);
   const queue = [];
   for (const file of files.sort()) {
