@@ -308,7 +308,7 @@ i Giró, Miquel Pons, Alsina Sardà, Blancher, Vilarnau, Roger Goulart, Ramon
 Canals, Jovani Vins, Aymar, Fargas Fargas, Can Serra dels Exibis, Cellers
 Maset, Finca Viladellops, Mas Bertran, Planas Albareda, Júlia Bernet, Celler
 Viader, Vins El Cep, Segura Pujadas, Covides…) + de Vella Terra: Castell
-d'Age, Loxarel, Mas Candí, El Jardí dels Sentits, Can Lleó.
+d'Age, Loxarel, Mas Candí, El Jardí dels Sentits.
 
 **Residual (localizar en un lote futuro):** Nini Vins, Celler Sanromà,
 Pinyolet Vinyaters, Cas Quitxero (expositores Vella Terra sin localizar —
