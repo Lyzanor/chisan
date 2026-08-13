@@ -29,7 +29,7 @@ Investigación del 2026-08-08. Estos 16 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares únicos. En la revisión del 2026-08-13 se publicaron cincuenta y ocho productores: los premiados y finalistas contrastables de Modon d'Or entre 2020 y 2025, Planaz Giuseppe y treinta y dos productores presentes en el censo oficial de alpeggi y caseifici de Fontina DOP de 2025. Sus 85 autorizaciones se reconciliaron por titular y unidad productiva sin crear filas duplicadas; Le Foyer des Reines, Chenal Fabrizio y Jordaney se resolvieron además desde la cola ecológica. Quedan 178 unidades pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares únicos. En la revisión del 2026-08-13 se publicaron sesenta y ocho productores: los premiados y finalistas contrastables de Modon d'Or entre 2020 y 2025, Planaz Giuseppe y cuarenta y dos productores presentes en el censo oficial de alpeggi y caseifici de Fontina DOP de 2025. Sus 102 autorizaciones se reconciliaron por titular y unidad productiva sin crear filas duplicadas; Le Foyer des Reines, Chenal Fabrizio y Jordaney se resolvieron además desde la cola ecológica. Quedan 161 unidades pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
@@ -52,9 +52,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SARAILLON LEO | Aymavilles | LOCALITA' TITEUN /, AYMAVILLES (AO) | `UE IT 02 563` | vacuno más de 60 d | 09-DEC-20 |
 | SOCIETA' AGRICOLA GLASSIER & BERGER DI GLASSIER FABIO E BERGER ROMINA SOCIETA' SEMPLICE SIGLABILE IN | Bionaz | LOCALITA' CHALON E LA TSA /, BIONAZ (AO) | `UE IT M5J52` | vacuno más de 60 d | 21-JUN-22 |
 | SOCIETA' AGRICOLA GLASSIER & BERGER DI GLASSIER FABIO E BERGER ROMINA SOCIETA' SEMPLICE SIGLABILE IN | Bionaz | LOCALITA' LA QUELLOD /, BIONAZ (AO) | `UE IT 02 603` | vacuno más de 60 d | 18-DEC-20 |
-| SOCIETE' AGRICOLE BERRIER S.S. | Bionaz | LOCALITA' BERRIER /, BIONAZ (AO) | `UE IT 02 575` | vacuno más de 60 d | 18-DEC-20 |
-| SOCIETE' AGRICOLE BERRIER S.S. | Bionaz | LOCALITA' LEXERT 13, BIONAZ (AO) | `UE IT E3M89` | vacuno más de 60 d | 18-DEC-20 |
-| MARCOZ GILBERTO | Brissogne | FRAZIONE FRAZ. AYETTES 1, BRISSOGNE (AO) | `UE IT 02 95` | vacuno más de 60 d | 30-NOV-20 |
 | CUGNOD LORENZO ANSELMO | Brusson | LOCALITA' LAVASSEY E LAVASSEY SUPERIORE /, BRUSSON (AO) | `UE IT A3K81` | vacuno más de 60 d | 31-MAR-21 |
 | FROMAGERIE HAUT VAL D'AYAS SOC. COOP. | Brusson | FRAZIONE TROIS VILLAGES 1, BRUSSON (AO) | `UE IT 02 129` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 23-NOV-20 |
 | SOCIETA' AGRICOLA FRATELLI GIROD S.S. | Brusson | LOCALITA' MOUCHEROULAZ /, BRUSSON (AO) | `UE IT 02 617` | vacuno más de 60 d | 18-DEC-20 |
@@ -83,13 +80,10 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SOCIETE' AGRICOLE LA FERME DU GRAND PARADIS S.S. | Cogne | LOCALITA' VALNONTEY 32, COGNE (AO) | `UE IT 02 139` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 21-DEC-20 |
 | F.LLI PANIZZI S.A.S. DI PANIZZI MARCELLO E C. | Courmayeur | FRAZIONE LA SAXE - S.S. 26 /, COURMAYEUR (AO) | `UE IT 02 50` | vacuno más de 60 d, caprino menos de 60 d/más de 60 d | 23-NOV-20 |
 | MONTROSSET LEO | Courmayeur | LOCALITA' TRONCHEY /, COURMAYEUR (AO) | `UE IT Q2P5R` | vacuno más de 60 d | 17-MAR-26 |
-| SOCIETA' AGRICOLA DIEMOZ SOCIETA' SEMPLICE | Courmayeur | LOCALITA' LEX BLANCHE /, COURMAYEUR (AO) | `UE IT 02 627` | vacuno más de 60 d | 19-JUL-21 |
 | SOCIETA' AGRICOLA LA ROCHE FORT SOCIETA' SEMPLICE AGRICOLA | Courmayeur | LOCALITA' ROCHEFORT E LAVACHEY /, COURMAYEUR (AO) | `UE IT 02 664` | vacuno más de 60 d | 28-AUG-25 |
 | SOCIETA' AGRICOLA MONT BLANC S.S. | Courmayeur | RUE DU BIOLLEY 3, COURMAYEUR (AO) | `UE IT H985W` | caprino menos de 60 d/más de 60 d | 22-MAR-23 |
 | FOLLIOLEY DI FOLLIOLEY ENNIO & C. S.S. IN SIGLA FOLLIOLEY S.S. | Donnas | LOCALITA' PIANAS /, DONNAS (AO) | `UE IT 02 631` | vacuno más de 60 d, caprino más de 60 d | 23-NOV-20 |
 | SOCIETA' AGRICOLA GLAR DI CHERAZ ALESSANDRO & C. S.S. IN BREVITA SOCIETA' AGRICOLA GLAR S.S. | Donnas | LOCALITA' CHANTON /, DONNAS (AO) | `UE IT C1R37` | vacuno más de 60 d | 18-DEC-20 |
-| CHENTRE MARCO | Doues | LOCALITA' VERRIÈSE /, DOUES (AO) | `UE IT 02 620` | vacuno más de 60 d | 28-JUL-22 |
-| SOCIETA' AGRICOLA FAMILLE CUNEAZ & G S.S. | Etroubles | LOCALITA' MENOVY E ARVUS /, ETROUBLES (AO) | `UE IT D477G` | vacuno más de 60 d | 26-MAY-22 |
 | BARDHOKU LEONARD | Fontainemore | LOCALITA' CAPOLUOGO 85, FONTAINEMORE (AO) | `UE IT 02 59` | vacuno menos de 60 d/más de 60 d | 27-OCT-25 |
 | CONSOL EDI | Fontainemore | LOCALITA' VERCOSA, CRET DESOT -, FONTAINEMORE (AO) | `UE IT E642P` | vacuno más de 60 d | 16-JUN-23 |
 | CONSOL OLGA | Fontainemore | LOCALITA' CHAMPAS /, FONTAINEMORE (AO) | `UE IT Q188C` | vacuno más de 60 d | 17-NOV-20 |
@@ -103,7 +97,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | BREDY UGO | Gignod | LOCALITA' SAVIN 1/A, GIGNOD (AO) | `UE IT W1Q6C` | vacuno más de 60 d | 30-JUL-25 |
 | C.A.V. SAS DI DUCLOS ELISEO | Gignod | FRAZIONE FRAZ. PETIT QUART 2/A, GIGNOD (AO) | `UE IT 02 52` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 23-APR-25 |
 | D. & D. DI DUCLOS L. & C. S.S. IN SIGLA D. & D. S.S. | Gignod | FRAZIONE PETIT QUART 2/A, GIGNOD (AO) | `UE IT Y8J48` | vacuno menos de 60 d/más de 60 d | 20-NOV-20 |
-| MONT FALLERE S.S. SOCIETA' AGRICOLA | Gignod | LOCALITA' ALPE ARS E ALPE TSA D'ARS /, GIGNOD (AO) | `UE IT R3D3E` | vacuno más de 60 d | 10-MAY-21 |
 | SOCIETA' AGRICOLA EXPLOITATION AGRICOLE S.S. F.RES QUENDOZ | Gignod | LOCALITA' MENDEY, CHALIGNE E TZA DE CHALIGNE /, GIGNOD (AO) | `UE IT P6B1V` | vacuno más de 60 d | 09-DEC-20 |
 | AGRICOLE DE GRESSAN SOC. COOP. | Gressan | FRAZIONE SURPILLOD 5, GRESSAN (AO) | `UE IT 02 16` | vacuno más de 60 d | 11-NOV-20 |
 | CENTRALE LAITIERE VALLEE D'AOSTE - S.R.L. | Gressan | LOCALITA' LA CURE DE CHEVROT 11, GRESSAN (AO) | `UE IT 02 3` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-APR-25 |
@@ -111,7 +104,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | LINTY ALESSANDRO | Gressoney-La-Trinitè | LOCALITA' COURTLYS /, GRESSONEY-LA-TRINITÈ (AO) | `UE IT X272V` | vacuno más de 60 d | 30-NOV-20 |
 | MODINA MANUELA | Gressoney-La-Trinitè | LOCALITA' GABIET /, GRESSONEY-LA-TRINITÈ (AO) | `UE IT 02 662` | vacuno más de 60 d | 30-NOV-20 |
 | PERETTO ROBERTO | Gressoney-La-Trinitè | LOCALITA' IATZA, TSCHAVAL /, GRESSONEY-LA-TRINITÈ (AO) | `UE IT V1F11` | vacuno menos de 60 d/más de 60 d | 16-JUN-23 |
-| SOCIETE' AGRICOLE LA FERME DU MONT ROSE DI RONCO & C. S.S. IN SIGLA "SOCIETE' AGRICOLE LA FERME DU M | Gressoney-Saint-Jean | LOCALITA' KRÉCHTÉ, ARESO E ARESCOLL /, GRESSONEY-SAINT-JEAN (AO) | `UE IT 02 658` | vacuno más de 60 d | 18-DEC-20 |
 | SQUINOBAL GIUSEPPE | Gressoney-Saint-Jean | LOCALITA' STOBENE 7, GRESSONEY-SAINT-JEAN (AO) | `UE IT 02 137` | vacuno más de 60 d | 21-DEC-20 |
 | CONSOL FRANCO | Issime | LOCALITA' MATTU E KEKERATSCHJATZ /, ISSIME (AO) | `UE IT 02 660` | vacuno más de 60 d | 17-NOV-20 |
 | CONSOL OLGA | Issime | LOCALITA' RICOURT 134A, ISSIME (AO) | `UE IT M2311` | vacuno más de 60 d | 17-NOV-20 |
@@ -120,16 +112,12 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | RONCO MARCO | Issime | LOCALITA' ALPE STEIN E VLOAKCHI /, ISSIME (AO) | `UE IT N6G1F` | vacuno más de 60 d | 09-DEC-20 |
 | RONCO PIERANGELO | Issime | LOCALITA' TIIFI E MUNI /, ISSIME (AO) | `UE IT 02 623` | vacuno más de 60 d | 09-DEC-20 |
 | SOCIETA' AGRICOLA CONSOL - STEVENIN S.S. | Issime | FRAZIONE PRAZ 211, ISSIME (AO) | `UE IT D6K8Q` | vacuno más de 60 d | 18-DEC-20 |
-| SOCIETE' AGRICOLE LA FERME DU MONT ROSE DI RONCO & C. S.S. IN SIGLA "SOCIETE' AGRICOLE LA FERME DU M | Issime | FRAZIONE CHINCHERÉ 197, ISSIME (AO) | `UE IT X0H8Y` | vacuno más de 60 d | 18-DEC-20 |
-| SOCIETE' AGRICOLE LA FERME DU MONT ROSE DI RONCO & C. S.S. IN SIGLA "SOCIETE' AGRICOLE LA FERME DU M | Issime | LOCALITA' METTELTI E MATTU /, ISSIME (AO) | `UE IT U0V3Q` | vacuno más de 60 d | 18-DEC-20 |
 | TURRUDSCHU SOCIETA' SEMPLICE AGRICOLA | Issime | LOCALITA' SEINGLES SUPERIORE 172/A, ISSIME (AO) | `UE IT F9H60` | vacuno más de 60 d | 09-MAR-22 |
 | DUGUET PATRIZIO | Issogne | LOCALITA' BRENVES /, ISSOGNE (AO) | `UE IT 02 530` | vacuno más de 60 d | 20-NOV-20 |
 | NUZZI MICHAEL | Issogne | FRAZIONE FLEURAN, 41, ISSOGNE (AO) | `UE IT N6P7Z` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 20-MAY-21 |
 | THE QUENDOZ SOCIETA' SEMPLICE AGRICOLA | Jovencan | FRAZIONE PESSOLIN 24, JOVENCAN (AO) | `UE IT 02 9` | vacuno menos de 60 d/más de 60 d | 12-JUL-21 |
 | BRUMIN THIERRY | La Salle | FRAZIONE FAVREY 11, LA SALLE (AO) | `UE IT P2G0N` | vacuno más de 60 d | 20-JAN-26 |
 | BRUMIN THIERRY | La Salle | LOCALITA' LAZEY /, LA SALLE (AO) | `UE IT 02 574` | vacuno más de 60 d | 20-JAN-26 |
-| LO TOLLEY DI BIZEL SILVANO & C. S.S. SIGLABILE LO TOLLEY S.S. | La Salle | LOCALITA' ORS-DESOT, PRÉ-DE-THOULAZ, BONALEX E TRAMAIL DES ORS /, LA SALLE (AO) | `UE IT 02 629` | vacuno más de 60 d | 09-DEC-20 |
-| SOCIETA' AGRICOLA DIEMOZ SOCIETA' SEMPLICE | La Salle | FRAZIONE CHEVEREL /, LA SALLE (AO) | `UE IT 02 54` | vacuno más de 60 d | 20-NOV-20 |
 | SOCIETA' AGRICOLA LA ROCHE FORT SOCIETA' SEMPLICE AGRICOLA | La Salle | LOCALITA' CHATELARD SNC, LA SALLE (AO) | `UE IT N515X` | vacuno menos de 60 d/más de 60 d | 23-MAY-25 |
 | LES MUNIER SOCIETA SEMPLICE AGRICOLA | La Thuile | LOCALITA' CHAVANNE-DU-FOND, CHAVANNE-D'EN-BAS, CHAVANNE-D'EN-HAUT /, LA THUILE (AO) | `UE IT 02 577` | vacuno más de 60 d | 15-JUN-26 |
 | PETITJACQUES SOCIETA' SEMPLICE AGRICOLA | La Thuile | LOCALITA' CRETAZ /, LA THUILE (AO) | `UE IT 02 509` | vacuno más de 60 d | 11-MAY-21 |
@@ -151,8 +139,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SOCIETE' AGRICOLE LO TSARDON S.S. | Nus | FRAZIONE LA COUTAZ 1, NUS (AO) | `UE IT 02 73` | vacuno más de 60 d | 26-JAN-26 |
 | SOCIETE' AGRICOLE LO TSARDON S.S. | Nus | LOCALITA' LA TSA DE FONTANEY /, NUS (AO) | `UE IT Q502R` | vacuno más de 60 d | 26-JAN-26 |
 | SOCIETE' AGRICOLE LO TSARDON S.S. | Nus | LOCALITA' PLACES-DÉSOT /, NUS (AO) | `UE IT 02 650` | vacuno más de 60 d | 26-JAN-26 |
-| ANSELMET CHARLENE | Ollomont | LOCALITA' EVEQUES /, OLLOMONT (AO) | `UE IT D9S6Z` | vacuno más de 60 d | 19-JUN-24 |
-| CHENTRE MARCO | Ollomont | LOCALITA' PORCHÈRE E TZA DE PORCHÈRE /, OLLOMONT (AO) | `UE IT 02 579` | vacuno más de 60 d | 17-NOV-20 |
 | CONCA DI BY S.N.C. DI CRETON GINO E C. | Ollomont | LOCALITA' PAINA /, OLLOMONT (AO) | `UE IT 02 656` | vacuno más de 60 d | 20-APR-26 |
 | DESANDRE' JUSY | Ollomont | LOCALITA' PONT /, OLLOMONT (AO) | `UE IT 02 566` | vacuno más de 60 d | 20-NOV-20 |
 | JOTAZ SIMONE | Ollomont | LOCALITA' BERIO-DAMON /, OLLOMONT (AO) | `UE IT N6R7H` | vacuno más de 60 d | 03-MAY-21 |
@@ -164,7 +150,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | BARDHOKU LEONARD | Pollein | LOCALITA' GRAND-POLLEIN 34, POLLEIN (AO) | `UE IT H5R1L` | vacuno más de 60 d | 12-NOV-21 |
 | DALBARD MAURIZIO | Pollein | LOCALITA' DREGIER 25, POLLEIN (AO) | `UE IT 02 4` | vacuno más de 60 d | 20-NOV-20 |
 | DALBARD PAOLO | Pollein | LOCALITA' DREGER 19, POLLEIN (AO) | `UE IT 02 91` | vacuno más de 60 d | 21-JUN-22 |
-| DALBARD REMO | Pollein | LOCALITA' ELIPORTO 10, POLLEIN (AO) | `UE IT W1M0W` | vacuno más de 60 d | 20-NOV-20 |
 | LE LAIT DE POLLEIN SOC. COOP. | Pollein | LOCALITA' ELIPORTO 12, POLLEIN (AO) | `UE IT T4X6H` | vacuno más de 60 d | 30-NOV-20 |
 | LES MUNIER SOCIETA SEMPLICE AGRICOLA | Pollein | LOCALITA' MARCHAUCY DAMON /, POLLEIN (AO) | `UE IT 02 596` | vacuno más de 60 d | 20-JUN-24 |
 | COLLIARD DANILO | Pontboset | LOCALITA' BOSET DAMON /, PONTBOSET (AO) | `UE IT T5M87` | vacuno más de 60 d | 17-NOV-20 |
@@ -185,7 +170,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | JOCALLAZ PIERO LORENZO | Saint-Pierre | LOCALITA' THOULES /, SAINT-PIERRE (AO) | `UE IT Y2W6U` | vacuno más de 60 d | 30-NOV-20 |
 | LA FORGE S.S. | Saint-Pierre | LOCALITA' VERDJOUAN OR /, SAINT-PIERRE (AO) | `UE IT 02 571` | vacuno más de 60 d | 28-JUL-22 |
 | LES ECUREUILS DI BALLAURI E SCHMIDT SOCIETA' SEMPLICE AGRICOLA | Saint-Pierre | FRAZIONE HOMENE DESSUS 8, SAINT-PIERRE (AO) | `UE IT 02 37` | caprino menos de 60 d/más de 60 d | 11-NOV-20 |
-| MARCOZ GILBERTO | Saint-Pierre | LOCALITA' VETAN VILLETTE E VULMIAN /, SAINT-PIERRE (AO) | `UE IT 02 547` | vacuno más de 60 d | 30-NOV-20 |
 | THE QUENDOZ SOCIETA' SEMPLICE AGRICOLA | Saint-Pierre | LOCALITA' CHÂTELANAZ, LEYTANETTAZ DESOT SAINT-NICOLAS /, SAINT-PIERRE (AO) | `UE IT 02 511` | vacuno más de 60 d | 18-AUG-21 |
 | LANDRY IDILIO | Saint-Rhémy-En-Bosses | LOCALITA' L'ARP-DU-JEUX E CÈTES /, SAINT-RHÉMY-EN-BOSSES (AO) | `UE IT 02 513` | vacuno más de 60 d | 06-MAY-21 |
 | MARCOZ E FIGLI SOCIETA' SEMPLICE AGRICOLA | Saint-Rhémy-En-Bosses | LOCALITA' TSA DE MERDEUX /, SAINT-RHÉMY-EN-BOSSES (AO) | `UE IT J0R7J` | vacuno más de 60 d | 03-MAY-21 |
@@ -193,7 +177,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | AYMONOD DANIELE | Saint-Vincent | LOCALITA' TENSOZ NO, SAINT-VINCENT (AO) | `UE IT W021V` | caprino menos de 60 d/más de 60 d | 08-SEP-23 |
 | CORDEL LAURO | Saint-Vincent | LOCALITA' NOUARSAZ /, SAINT-VINCENT (AO) | `UE IT 02 675` | vacuno más de 60 d, caprino más de 60 d | 20-NOV-20 |
 | L'ETELA DU BERDZI SOCIETA' SEMPLICE AGRICOLA - SIGLABILE IN L'ETELA DU BERDZI S.S. AGRICOLA | Saint-Vincent | FRAZIONE GRUN 75, SAINT-VINCENT (AO) | `UE IT H6R35` | vacuno menos de 60 d/más de 60 d | 05-JAN-23 |
-| DALBARD REMO | Sarre | LOCALITA' MET-DE-BIONAZ E LES ALPES VIEILLES /, SARRE (AO) | `UE IT 02 651` | vacuno más de 60 d | 20-NOV-20 |
 | PONT E MARCOZ SOCIETA' SEMPLICE AGRICOLA | Sarre | LOCALITA' CHESÈRE, LA NOUVAZ, LES MOULINS E VIGNON /, SARRE (AO) | `UE IT 02 594` | vacuno más de 60 d | 24-DEC-21 |
 | SOCIETA' AGRICOLA FROMIERE S.S | Sarre | LOCALITA' FOURMIÈRE E TSA DE FOURMIÈRE /, SARRE (AO) | `UE IT 02 554` | vacuno más de 60 d | 20-APR-26 |
 | GRAND COMBIN - SOCIETE' COOPERATIVE A R.L. | Valpelline | FRAZIONE CHEZ LES CHUC /, VALPELLINE (AO) | `UE IT 02 12` | vacuno más de 60 d | 20-NOV-20 |
