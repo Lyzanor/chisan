@@ -23,10 +23,4 @@ Investigación ecológica del 2026-08-08, revisada el 2026-08-12. De los 20 oper
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote revisado el 2026-08-11. Se publicaron nueve unidades: Totem Food, Azienda Agricola Di Gilio, Caseificio Abbatangelo, Bontà del Latte, Caseificio del Pino, Caseificio Maggiore, Azienda Agricola Cavalli, Casari Lucani bajo su marca Caseificio Heraclea y Caseificio Lavanga. En los dos últimos casos se reconcilió la denominación sanitaria con la identidad pública y la continuidad empresarial sin fusionar plantas distintas. Quedan tres expedientes en retención por no disponer de una marca y oferta pública actuales suficientemente atribuibles.
-
-| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
-|---|---|---|---|---|
-| MONTEMURRO VINCENZO | Grottole | CONTRADA CASTELLANA snc | `UE IT 17 63` | Solo se pudo confirmar la explotación y la autorización sanitaria; no una oferta quesera pública actual. |
-| GALGANO NICOLA | Irsina | VIA MARCO POLO 2 | `UE IT 17 77` | Una autorización ambiental de 2024 confirma la actividad casearia, pero no se localizó marca, contacto ni catálogo público atribuible. |
-| SOCIETA' AGRICOLA GIURA S.S. | Tricarico | CONTRADA SERRA DEL PONTE snc | `UE IT Y3864` | Hay menciones antiguas a quesos Giura y registros agrarios recientes, pero no una oferta pública actual que permita publicar una ficha útil. |
+Lote cerrado el 2026-08-13. Se publicaron doce unidades: Totem Food, Azienda Agricola Di Gilio, Caseificio Abbatangelo, Bontà del Latte, Caseificio del Pino, Caseificio Maggiore, Azienda Agricola Cavalli, Casari Lucani bajo su marca Caseificio Heraclea, Caseificio Lavanga, Masseria Montemurro, Caseificio Galgano Nicola y Società Agricola Giura. En los casos sin canal comercial propio se mantuvo `parcial`: la ficha se apoya en actividad empresarial actual y una unidad productiva láctea identificada, sin inferir venta online ni datos de contacto ausentes.

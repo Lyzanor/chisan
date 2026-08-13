@@ -27,6 +27,20 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Revisión cerrada — 2026-08-13
+
+Se contrastaron las 53 unidades del corte. Quince fichas nuevas publicadas representan 16 unidades autorizadas: `caseificio-fratelli-papa` consolida las plantas de F.LLI PAPA y PAPA PAOLO bajo la misma identidad pública actual. Se aceptaron Leggieri, Gisoldo, Capano, Emmaus, Fusco, Fratelli Papa, Prencipe, San Salvatore, Il Corvino Bianco, Cannone, Il Parco, Caseificio Savino, Azienda Fiore, Casari Pugliesi y Capitanata Latte. En todos los casos la ficha queda `parcial` y `Venta online=no comprobado`: el registro sanitario fija titular, unidad y alcance; una fuente pública adicional confirma identidad y oferta actual, pero no se localizaron coordenadas primarias ni una venta remota demostrada, salvo los datos expresamente publicados en el CSV.
+
+Se rechazó **CASEIFICIO DI IADAROLA MICHELE**: la Regione Puglia publicó el 15-07-2026 la revocación del reconocimiento comunitario de la unidad de Foggia. La decisión queda en el ledger de evidencia.
+
+Las 36 unidades restantes siguen retenidas y no se han convertido en productores por estas razones:
+
+- **Sin oferta propia actual suficientemente explícita:** Spinetti Giuseppina, Caseificio Monte San Giovanni, Caseificio Romagnolo, Quacquarelli Massimo, S.A.S. LL. SMAF., Giovanditti Michelina, La Gastronomia del Gargano, Zarrilli, Caseificio Leone, Caseificio Vittoria, Ciuffreda, Palmieri, Rinaldi Rosa, Lombardi Antonio, Masseria Posta Amendola, SILAC, Tommasino, Zullo, Caseificio Boscia, Gisoldo Fabio, Melillo Vito, Steduto Vittoria, Immobiliare Casa Sollievo, Lombardi Anna Debora, Colantuono, Florio, Fattorie del Gargano, SGC, Caseificio Muzzarè, Caseif Idea, Savino Giovanni y Società Agricola Antonucci. El registro prueba autorización, no que exista hoy una marca pública con producto vendible.
+- **Identidad o continuidad no reconciliada:** las dos autorizaciones de Lamatrice/Del Tito aparecen hoy asociadas públicamente a “Il Giglio” y a otros titulares sin una cadena suficientemente sólida; Miano figura en el corte con comune Manfredonia, mientras el reconocimiento regional de julio de 2026 lo sitúa en Lucera.
+- **Actividad agrícola sin queso público demostrable:** Vivai Villanova consta como vivero y explotación ecológica, pero no se localizó una oferta quesera concreta.
+
+El listado bruto se conserva debajo como fotografía reproducible del corte sanitario; no constituye ya una cola pendiente. El bloque ecológico anterior continúa como carril separado hasta contrastar producto, unidad productiva y marca pública.
+
 53 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

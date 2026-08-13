@@ -20,8 +20,4 @@ Estos nueve candidatos siguen abiertos. El registro ecológico o institucional a
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Unidad revisada el 2026-08-12. Latte Carso ya está publicada por su planta principal de Via Trieste 19, respaldada además por el Consorzio Montasio. La nueva autorización `H5R2S` de Via Aquileia 2 se mantiene en retención y no genera una segunda fila: la web oficial, el consorcio y el catálogo comercial siguen atribuyendo la identidad, los productos y los contactos a Via Trieste 19 y todavía no explican la función productiva diferenciada de la nueva dirección.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| LATTE CARSO S.P.A. | Villesse | VIA AQUILEIA 2, VILLESSE (GO) | `UE IT H5R2S` | vacuno menos de 60 d | 13-FEB-26 |
+Unidad cerrada el 2026-08-13. Latte Carso ya está publicada por su planta principal de Via Trieste 19, respaldada además por su web y el Consorzio Montasio. La nueva autorización `H5R2S` de Via Aquileia 2 corresponde a la misma sociedad en el mismo municipio y no justifica duplicar al productor: queda reconciliada como unidad secundaria hasta que la marca publique una oferta diferenciada para esa dirección.

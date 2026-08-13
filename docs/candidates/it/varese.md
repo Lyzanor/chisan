@@ -58,8 +58,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-1 unidad productiva sigue pendiente de una identidad pública y una oferta quesera actuales. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Se publicaron Norden, GreenFantasy, Il Vallone, Libera & Laudi, Pian Del Lares, Caprivalcuvia, Caseificio Sommese y Prealpi tras reconciliar marca, unidad y gama vigente. En Libera & Laudi, los números 106 del registro y 1842 de la web oficial geocodifican el mismo punto de Via Varese y corresponden a la misma razón social y NIF. ITA 3 conserva autorización, pero no se localizó una marca ni una oferta propia pública que permita presentarla como productor al usuario. Corte revisado: 2026-08-11.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| ITA 3 SRL | Gornate-Olona | VIA DEI TIGLI 13 - LOC. BICICCERA , GORNATE-OLONA (VA) | `UE IT 03 1263` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-FEB-10 |
+Lote cerrado el 2026-08-13. Se publicaron Norden, GreenFantasy, Il Vallone, Libera & Laudi, Pian Del Lares, Caprivalcuvia, Caseificio Sommese y Prealpi tras reconciliar marca, unidad y gama vigente. En Libera & Laudi, los números 106 del registro y 1842 de la web oficial geocodifican el mismo punto de Via Varese y corresponden a la misma razón social y NIF. ITA 3 se descartó al identificar su marca pública ITA Food Improvers: fabrica ingredientes funcionales, conservantes y coadyuvantes para la industria alimentaria, no una línea propia de queso publicable en el catálogo.

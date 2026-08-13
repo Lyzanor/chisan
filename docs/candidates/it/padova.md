@@ -40,13 +40,10 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Birrificio Estense | Este | `Cerveza` | birra artigianale | [web](https://birrificioestense.it/) |
 | Artigiani della birra | Piombino Dese | `Cerveza` | birra artigianale | [web](https://www.artigianidellabirra.it/) |
 
-## Productores de queso — pendientes tras el contraste del 2026-08-12
+## Productores de queso — pendientes tras el contraste del 2026-08-13
 
-Quedan 3 unidades en retención. Las demás entradas del barrido sanitario se resolvieron en esta revisión: los productores con identidad y oferta propia suficientes se incorporaron al CSV; De Zuanne Sergio, Preferita y Dalla Libera Albano se descartaron como distribuidores o mayoristas sin gama propia demostrada. La autorización sanitaria sigue siendo una fuente válida para la unidad productiva, pero no sustituye la comprobación de una oferta pública propia.
+Queda 1 unidad en retención. Las demás entradas del barrido sanitario se resolvieron en esta revisión: los productores con identidad y oferta propia suficientes se incorporaron al CSV; De Zuanne Sergio, Preferita y Dalla Libera Albano se descartaron como distribuidores o mayoristas sin gama propia demostrada. Latteria Sociale Centro se publicó tras localizar una declaración institucional de 2025 que confirma su producción propia de Grana Padano, Gran Riserva y otros lácteos, junto con la venta directa en su spaccio de Gazzo. Brazzale Campodoro se cerró como asignación territorial impropia: las fuentes oficiales vigentes sitúan allí cría porcina y biogás y reservan la fabricación quesera italiana a Monte di Malo, que ya permanece en la cola de Vicenza. La autorización sanitaria sigue siendo una fuente válida para la unidad productiva, pero no sustituye la comprobación de una oferta pública propia.
 
 | Candidato declarado | Comune | Dirección de la unidad | Motivo concreto de retención |
 |---|---|---|---|
-| BRAZZALE S.P.A. | Campodoro | VIA TORREROSSA 30, CAMPODORO (PD) | El registro sanitario actualizado el 24-06-2026 autoriza fabricación de queso, pero la página oficial vigente de establecimientos describe Campodoro solo como cría porcina y planta de biogás y sitúa la producción quesera en otras plantas. Hay que reconciliar esa contradicción antes de publicar una unidad productiva. |
-| LATTERIA SOCIALE CENTRO SOCIETÀ COOPERATIVA AGRICOLA | Gazzo | VIA ROMA 20/1, GAZZO (PD) | La cooperativa y la autorización están activas, pero no apareció una marca, gama propia o canal público actual que permita describir honestamente su oferta al catálogo. |
 | OLISMO SRL | Pernumia | VIA DELL'ARTIGIANATO 12/B, PERNUMIA (PD) | La autorización sanitaria fue actualizada el 01-07-2026, pero no se encontró identidad pública ni oferta alimentaria propia contrastable. |
-

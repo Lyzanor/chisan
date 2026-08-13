@@ -21,9 +21,8 @@ Investigación iniciada el 2026-08-08 y revisada el 2026-08-12. El lote procede 
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Las búsquedas del 2026-08-11 confirman su existencia registral, pero no una identidad comercial y una oferta pública actual atribuibles con seguridad a la planta. Los otros ocho candidatos del lote se contrastaron e incorporaron al CSV; las dos plantas De Remigis se conservaron separadas porque el fabricante las presenta como centros productivos distintos.
+Lote extraído del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y revisado hasta el 2026-08-13. Pigliacampo Food se incorporó como parcial tras contrastar la planta activa con su oferta pública de primo sale y pecorinos; los otros ocho productores del lote ya estaban incorporados y las dos plantas De Remigis se conservaron separadas porque el fabricante las presenta como centros productivos distintos. Solo queda retenida Formaggi Hat: la autorización sanitaria sigue vigente y el directorio turístico de Atri conserva Pecorino Hat, pero la sociedad figura en liquidación y no hay actividad comercial actual suficiente para publicar ni un cierre definitivo que justifique descartarla.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
 | FORMAGGI HAT S.R.L.S. | Atri | Contrada San Martino 6 | `UE IT U0L4D` | vacuno y ovino menos de 60 d/más de 60 d | 31-MAR-15 |
-| PIGLIACAMPO FOOD S.R.L. | Giulianova | Zona Industriale Colleranesco snc | `UE IT B588U` | vacuno, caprino y ovino menos de 60 d/más de 60 d | 12-DEC-24 |

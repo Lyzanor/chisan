@@ -25,17 +25,6 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | ARGIOLAS ROBERTO | Gergei | VIA LOGUDORO N.11 - 08030 | producción — vegetales sin transformar | 2029-04-17 | [IT-BIO-007.380-0113224.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0113224.2026.001.pdf) |
 | ASONI ANGELO | Capoterra | LOC. PLANEMESU 09012 | preparación, producción — vegetales sin transformar | 2029-05-24 | [IT-BIO-004.380-0003253.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0003253.2026.001.pdf) |
 
-## Productores de queso — pendientes tras el barrido sanitario del 2026-08-11
+## Productores de queso — barrido sanitario del 2026-08-11
 
-8 unidades siguen en retención tras el contraste del 2026-08-12. Proceden del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y tienen autorización para fabricar queso, pero aún falta resolver una contradicción de actividad o encontrar una identidad pública y oferta propia suficientemente actuales. Los candidatos aceptados, los ya publicados y las plantas auxiliares reconciliadas se han podado.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Motivo pendiente |
-|---|---|---|---|---|
-| SARDA LATTICINI S.R.L. | Cagliari | Circonvallazione Pirri S.S. 131 km 2 / Via Ligas 43 | `UE IT 20 87` | La autorización sigue listada, pero fuentes empresariales actuales indican liquidación judicial; falta una fuente oficial que resuelva actividad o cierre. |
-| VERGARA FOOD DI VITTORIO VERGARA | Elmas | Via dell'Acquedotto Romano snc | `UE IT K3K3L` | No se ha localizado marca pública, catálogo propio ni canal actual atribuible a esta unidad. |
-| BIORA SRL | Nuragus | Via Sant'Elia 1 | `UE IT 20 79` | La identidad empresarial pública encontrada no permite atribuir una marca ni una oferta quesera actual a esta unidad. |
-| CANCEDDA MARIANO | Nurri | Località Nabidera | `UE IT 20 204` | Solo consta la autorización sanitaria y referencias ganaderas antiguas; falta oferta pública actual. |
-| INDUSTRIA CASEARIA SERRA RAFFAELE & C. SNC | Nurri | Via Fontana Nuova 37 | `UE IT 20 28` | No se ha encontrado una marca, catálogo o contacto público actual que distinga esta unidad de otros Serra. |
-| QUARTU 2A S.R.L. | Quartu Sant'Elena | Via Padre Picci 50 | `UE IT 20 84` | La sociedad figura activa, pero no aparece una identidad comercial ni una oferta propia utilizable. |
-| GENTILI SAPORI SARDI S.R.L. | Sestu | S.P. 8, bivio di Sestu km 7,700 | `UE IT 20 85` | Hay actividad mayorista y autorización reciente, pero no se ha podido confirmar marca y productos propios frente a mera distribución. |
-| SOCIETÀ AGRICOLA F.LLI FRAU | Siliqua | Località Monte Accas | `UE IT 20 246` | Fuentes antiguas vinculan el producto Pastore Monte Accas, pero falta una fuente directa o institucional reciente que confirme continuidad. |
+Lote cerrado el 2026-08-13. Se publicaron Vergara Food, Biora, Cancedda Mariano, Industria Casearia Serra Raffaele, Quartu 2A, Gentili Sapori Sardi y Caseificio Monte Accas–Fratelli Frau después de reconciliar autorización, identidad y actividad. Sarda Latticini se rechazó como cerrada: la liquidación judicial 98/2025 fue declarada por el Tribunal de Cagliari el 12-12-2025.

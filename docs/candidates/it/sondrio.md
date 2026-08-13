@@ -227,3 +227,9 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | PEDRINI ROBERTO | Villa Di Chiavenna | LOCALITA' ALPE MALINONE SNC, VILLA DI CHIAVENNA (SO) | `UE IT 03 1124` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 21-JUN-22 |
 | MARANTELLI COLOMBIN DAVIDE | Villa Di Tirano | VIA NAZIONALE 36, VILLA DI TIRANO (SO) | `UE IT K615M` | caprino menos de 60 d/más de 60 d | 03-OCT-23 |
 | TOGNELA PAOLO | Villa Di Tirano | LOCALITA' PISCE' SNC, VILLA DI TIRANO (SO) | `UE IT 03 1828` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-MAY-22 |
+
+### Cierre de la cola quesera del 2026-08-13
+
+El contraste con los padrones oficiales del Consorzio per la Tutela dei Formaggi Valtellina Casera e Bitto permitió publicar 12 caseifici de Valtellina Casera DOP y 41 alpeggi de Bitto DOP situados en la provincia de Sondrio. Cada alpeggio se conserva como unidad productiva independiente, con el comune de la unidad estacional y las coordenadas publicadas por el consorcio, aunque un mismo titular elabore en más de uno. Los ocho alpeggi del mismo padrón ubicados físicamente en Bergamo o Lecco se asignaron a sus CSV reales.
+
+Las autorizaciones sanitarias que no quedaron vinculadas a una de estas identidades productivas públicas permanecen retenidas en esta nota: prueban capacidad de elaborar queso, pero no bastan para atribuir una oferta propia actual. Con ello queda revisada y cerrada la cola, sin convertir automáticamente cada autorización en una ficha.

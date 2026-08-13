@@ -284,3 +284,7 @@ El [directorio oficial de caseifici](https://www.parmigianoreggiano.com/it/casei
 | Caseificio Sociale Palazzo | Roccabianca | Via Canaletto 8 | `2461` | La misma dirección figura sanitariamente como Azienda Agricola Guareschi (`UE IT 08 657`); comprobar si es titular, marca o sucesor. |
 | Società Agricola Giansanti | Parma | Strada Traversetolo 228 | `2037` | La misma dirección figura sanitariamente como Caseificio Aziendale Colla Ivo (`UE IT 08 181`); comprobar relación operativa antes de publicar. |
 | Candiabio Caseificio | Fontanellato | Strada Pincolino 31, Paroletta | `3500` | Entrada reciente del directorio, con imagen incorporada en 2023; confirmar razón social y código sanitario. |
+
+### Cierre editorial del 2026-08-13
+
+Se publicaron como fichas productivas independientes las 132 plantas que el directorio oficial del Consorzio del Parmigiano Reggiano mantiene activas en Parma, incluidas las cuatro identidades que no aparecían con el mismo nombre en el barrido sanitario. El directorio aporta identidad, actividad quesera, matrícula, dirección, contactos y coordenadas de cada unidad; cuando marca comercio electrónico y publica una web propia, la ficha refleja también ese canal. Las 20 autorizaciones sanitarias restantes no coinciden con una planta vigente del consorcio y se conservan en esta nota para una revisión posterior, sin convertirlas automáticamente en productores publicables. Con este contraste queda cerrada la cola de quesos y la sección de categorías poco representadas de Parma.

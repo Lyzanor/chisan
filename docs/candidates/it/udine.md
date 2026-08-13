@@ -43,12 +43,9 @@ El barrido de 51 candidatos quedó revisado. Se publicaron las unidades con prod
 
 ## Productores de queso — pendientes tras la revisión del 2026-08-12
 
-El barrido sanitario nacional quedó revisado unidad por unidad. Se publicaron 26 queserías o plantas cuya actividad productiva actual pudo vincularse a una identidad pública y a productos concretos. Permanecen cinco casos en retención: la autorización sanitaria por sí sola no permite atribuirles una oferta propia actual sin riesgo de mezclar sede, planta, fabricación para terceros o una actividad ya cambiada.
+El barrido sanitario nacional quedó conciliado de nuevo el 2026-08-13. Además de las 26 altas iniciales se publicaron la planta Parmalat–Latterie Friulane de Campoformido, la Latteria Sociale di Brazzacco y la Latteria di Piancada de los Fratelli Luvisutti, tras encontrar actividad y productos actuales atribuibles a cada unidad. Permanecen dos casos en retención: la autorización sanitaria por sí sola no permite atribuirles una oferta propia actual sin riesgo de mezclar sede, planta, fabricación para terceros o una actividad ya cambiada.
 
 | Candidato declarado | Comune | Motivo concreto de retención |
 |---|---|---|
-| PARMALAT S.P.A. | Campoformido | La autorización de 2026 confirma una planta habilitada, pero no se encontró una fuente pública que atribuya productos de queso concretos del grupo a esta unidad de Campoformido. |
 | ASQUINI ANNA | Majano | La autorización sigue publicada, pero no aparece una marca, oferta o contacto público actual que permita identificar el productor de cara al catálogo. |
-| LATTERIA SOCIALE DI BRAZZACCO SOCIETA' COOPERATIVA AGRICOLA | Moruzzo | Solo se pudo confirmar la antigua autorización; las referencias públicas halladas se refieren a la tradición local o a la Pro Loco, no a una quesería comercial activa. |
-| FRATELLI LUVISUTTI S.N.C. DI LUVISUTTI IVAN E C. | Palazzolo dello Stella | Directorios empresariales confirman el establecimiento, pero no una gama propia actual ni una identidad pública diferenciada de la actividad mayorista. |
 | BIOLAB S.R.L. | San Daniele del Friuli | La marca pública actual se dedica a alimentos vegetales y la planta fue adquirida como antiguo establecimiento cárnico; la autorización láctea no demuestra una línea de queso propia vigente. |

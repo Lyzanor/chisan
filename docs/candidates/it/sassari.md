@@ -26,6 +26,12 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Cierre editorial del lote — 2026-08-13
+
+Cola reconciliada completa: 15 fichas nuevas publicadas representan 16 unidades sanitarias —las dos plantas `SARGRA S.R.L.` se consolidan bajo su identidad comercial común Mannoni Formaggi— y otras 3 unidades ya estaban publicadas como Lait Latteria Ittiri, Pinna Formaggi y Latteria Sociale Pozzomaggiore. Las 35 unidades restantes se mantienen como instantánea de descubrimiento porque el registro sanitario por sí solo no permite confirmar una identidad comercial pública y una oferta propia actual. No hubo exclusiones definitivas.
+
+La mención `IN LIQUIDAZIONE - IN FALLIMENTO` de `CACIOC DIBONORVA S.R.L.` no se ha tratado como prueba suficiente de cierre: contradice una autorización todavía presente en el registro nacional y requiere una fuente concursal o registral inequívoca antes de una decisión destructiva. `CASEUS S.R.L.` también queda retenida: el dominio `caseus.it` encontrado pertenece a otra identidad y no se ha vinculado por homonimia. La fuente web de `Caseificio Il Barone Chessa` se limita deliberadamente a la cobertura del premio Casu 2025; no se atribuye `barone.it`, que corresponde a otro productor de Molise.
+
 54 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y reasignadas por comune mediante la [clasificación territorial ISTAT vigente desde 2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). El lote se limita a establecimientos `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. Las fuentes acreditan unidad, comune y autorización sanitaria, pero no por sí solas la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

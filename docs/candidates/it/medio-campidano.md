@@ -20,10 +20,8 @@ Investigación ecológica del 2026-08-08, revisada el 2026-08-12. De los 20 oper
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-L'Armentizia Moderna, Caseificio Deidda, la unidad P.A.C. de Villacidro y Onnis Formaggi se aceptaron y pasaron al CSV con evidencia; CEN.TRA.L. ya estaba publicado como Central Formaggi. Lecis Maura y Muntoni Maria Morena solo conservan identidad registral o referencias antiguas, y la identidad pública actual de Sapori della Fattoria corresponde a su carnicería sin una oferta propia actual de queso localizable; las tres permanecen retenidas. El barrido parte del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/), limitado a establecimientos `AUTORIZZATA` con fabricación explícita de queso. Corte: 2026-08-11.
+Lote revisado hasta el 2026-08-13. L'Armentizia Moderna, Caseificio Deidda, P.A.C., Onnis Formaggi, Lecis Maura y Muntoni Maria Morena pasaron al CSV; CEN.TRA.L. ya estaba publicado como Central Formaggi. Lecis y Muntoni quedan como `parcial` porque la actividad y autorización son actuales, pero sus productos y contactos se apoyan en material institucional histórico. Solo Sapori della Fattoria permanece retenida: la identidad pública actual corresponde a su carnicería y no demuestra queso propio vigente.
 
 | Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
 |---|---|---|---|---|
-| LECIS MAURA | Samassi | LOCALITÀ CASIARONI | `UE IT 20 320` | No se localizó marca, contacto ni oferta quesera pública actual atribuible. |
-| MUNTONI MARIA MORENA | Villacidro | LOCALITÀ SANTU MIALI | `UE IT 20 324` | Solo se conserva la autorización registral de 2008 y referencias antiguas sin catálogo actual. |
 | SAPORI DELLA FATTORIA DI FAUSTO GIOI E BARBARA MARONGIU | Villacidro | LOCALITÀ PISCINA SANGUINI | `UE IT P5R47` | La identidad pública actual corresponde a la carnicería y no permite demostrar queso propio vigente. |

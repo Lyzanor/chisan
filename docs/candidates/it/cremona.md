@@ -64,27 +64,7 @@ Lote revisado el 2026-08-13. Se publicaron nueve productores: Isolagerre, Mad On
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote revisado el 2026-08-13. De las 30 unidades, 21 se publicaron tras confirmar una identidad y una oferta propias actuales. Cuatro propuestas que también aparecían en el barrido de categorías escasas quedaron resueltas en el mismo contraste: Ca' de Alemanni, Fattorie Cremona, Latteria Soresina y Casalasco; esta última se publicó como `Conservas`, su actividad real, y no como quesería. Magazzini Generali di Crema se descartó de forma definitiva porque la actividad pública reconciliada es depósito, reenvasado y afinado, no elaboración propia. Las ocho filas siguientes permanecen abiertas por motivos concretos:
-
-- ARCREMAN: autorización vigente, pero sin marca pública ni catálogo propio actual reconciliado.
-- F.lli Caffi: la actividad quesera y el spaccio aparecen en fuentes empresariales, pero falta una identidad pública de producto suficientemente concreta.
-- Caseificio Zucchelli Antonio: autorización e identidad local confirmadas, sin catálogo o canal oficial actual.
-- Caseificio Sangiovanni: la planta sigue autorizada, pero el sitio publicado no permite contrastar hoy un catálogo específico y actual.
-- Istituto Stanga: falta demostrar que la planta educativa mantiene una oferta alimentaria propia al público.
-- Zuvadelli Michele e Flavio: aparece en el ámbito del Taleggio DOP, pero no se ha reconciliado una marca, catálogo y contacto público actuales.
-- Casella Burro: la actividad pública localizada es mantequilla y el dominio atribuido no ofrece un catálogo actual accesible; podría encajar en lácteos si se resuelve.
-- Demetra Sitos: solo se ha localizado la autorización sanitaria, sin identidad pública ni oferta propia reconciliadas.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| SOC.COOP. AGRIC. RIUNITI CREMONESI MANTOVANI ARCREMAN ARL | Casalmaggiore | VIA CASE SPARSE 16 , CASALMAGGIORE (CR) | `UE IT 03 412` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JAN-12 |
-| SOCIETA' AGRICOLA F.LLI CAFFI SOCIETA' SEMPLICE | Grumello Cremonese Ed Uniti | VIA DANTE 3, GRUMELLO CREMONESE ED UNITI (CR) | `UE IT G998S` | vacuno menos de 60 d/más de 60 d | 09-JAN-24 |
-| CASEIFICIO ZUCCHELLI ANTONIO DI ZUCCHELLI CARMELITA & C. S.N.C. | Ostiano | VIA OSSE 14, OSTIANO (CR) | `UE IT 03 189` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-APR-16 |
-| CASEIFICIO SANGIOVANNI S.R.L. | Palazzo Pignano | VIA TORLINO 40, PALAZZO PIGNANO (CR) | `UE IT 03 252` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 13-JUN-23 |
-| ISTITUTO D'ISTRUZIONE SUPERIORE "STANGA | Pandino | VIA BOVIS 4, PANDINO (CR) | `UE IT 03 280` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-JUL-19 |
-| ZUVADELLI MICHELE E FLAVIO SAS | Quintano | VIA CREMA -VAILATE 4 , QUINTANO (CR) | `UE IT 03 1585` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUL-11 |
-| CASELLA BURRO S.R.L. | Rivarolo Del Re Ed Uniti | VIA BALILLA 7/B, RIVAROLO DEL RE ED UNITI (CR) | `UE IT 03 45` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-SEP-19 |
-| DEMETRA SITOS SRL | San Daniele Po | VIA ARISTIDE MARETTI SNC, SAN DANIELE PO (CR) | `UE IT N0B61` | vacuno menos de 60 d | 31-JAN-25 |
+Lote cerrado el 2026-08-13. De las 30 unidades, 29 se publicaron tras confirmar una identidad y una actividad productiva actuales. Cuatro propuestas que también aparecían en el barrido de categorías escasas quedaron resueltas en el mismo contraste: Ca' de Alemanni, Fattorie Cremona, Latteria Soresina y Casalasco; esta última se publicó como `Conservas`, su actividad real, y no como quesería. Magazzini Generali di Crema se descartó de forma definitiva porque la actividad pública reconciliada es depósito, reenvasado y afinado, no elaboración propia. Las últimas ocho altas fueron ARCREMAN, Le Bufalizie de Fratelli Caffi, Caseificio Zucchelli Antonio, Caseificio Sangiovanni, la Scuola Casearia di Pandino del Istituto Stanga, Caseificio Zuvadelli, Casella Burro y Demetra Sitos. Zucchelli y Demetra Sitos quedan `parcial` porque las fuentes actuales prueban la actividad productiva, pero no un catálogo público pormenorizado; las demás disponen de fuente oficial o de consorcio con productos y contacto explícitos.
 
 ## Productores de queso — contraste Grana Padano DOP del 2026-08-11
 

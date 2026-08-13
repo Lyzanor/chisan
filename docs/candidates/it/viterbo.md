@@ -47,23 +47,15 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote cerrado el 2026-08-12. Se revisaron las 26 unidades y se publicaron quince: Alta Tuscia Formaggi, Radicetti, Agricola Fratelli Cattani, Formaggi Chiodetti, Tenuta Il Radichino, Mamma Maremma, Caseificio Maremma in Tuscia, Caseificio Aziendale Luisa, I Buonatavola Sini, Fattorie di Maremma, Azienda Agricola Tombini Lucio, 3A Formaggi, Azienda Agricola Monte Jugo, Caseificio Cioffi y Piccola Formaggeria Artigiana. Las razones sanitarias se reconciliaron con la marca pública de cada planta sin fusionar unidades distintas. Once expedientes quedan retenidos con motivo concreto. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y se limita a plantas autorizadas con fabricación explícita de queso.
+Lote revisado de nuevo el 2026-08-13. Se publicaron 23 de las 26 unidades: a las quince altas iniciales se añadieron Caseificio Pannucci, Caseificio Toscano, Latte di Nepi — I.P.A., Azienda Agricola Pellegrini, Industria Casearia Val Perino, Il Fiocchino, C.P.F. Produttori Formaggi y Latteria Santa Rosa. Las razones sanitarias se reconciliaron con la marca pública de cada planta sin fusionar unidades distintas. Tres expedientes quedan retenidos con motivo concreto. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y se limita a plantas autorizadas con fabricación explícita de queso.
 
 ### Retenciones del primer bloque
 
 | Candidato | Comune | Autorización | Motivo concreto de retención |
 |---|---|---|---|
 | Delrio Gian Luca | Bagnoregio | `UE IT T4J8X` | La autorización y la explotación agraria no conducen a una marca, catálogo o contacto comercial público actual. |
-| Caseificio Pannucci | Capodimonte | `UE IT 12 54` | Los directorios confirman la empresa y la actividad láctea, pero no se localizó una gama propia actual ni un canal público primario. |
-| Caseificio Toscano | Farnese | `UE IT 12 53` | Se confirma la unidad autorizada, pero no una identidad comercial inequívoca y una oferta propia actual separable de otros caseificios homónimos. |
-| I.P.A. Industria Prodotti Agroalimentari | Nepi | `UE IT N7X3Y` | La sociedad y la planta siguen activas, pero no se localizó marca pública, catálogo propio o contacto comercial atribuible al fabricante. |
-| Pellegrini Andrea e Simone | Nepi | `UE IT 12 213` | Los directorios confirman leche y queso para venta directa, pero no una marca, gama concreta o canal público vigente. |
-| Industria Casearia Val Perino | Piansano | `UE IT 12 86` | Los registros actuales confirman compra de leche y planta autorizada; la web enlazada no responde y no hay catálogo propio actual verificable. |
 | Caseificio del Cimino | Ronciglione | `UE IT 12 69` | La sociedad y el comercio siguen registrados, pero la actividad mercantil actual aparece como minorista y no se encontró una gama propia atribuible. |
-| Il Fiocchino di Brizi Antonio | Piansano | `UE IT 12 106` | La empresa y el establecimiento siguen activos, pero la web oficial está aparcada y la gama pública localizada es histórica; no se puede confirmar catálogo actual. |
-| C.P.F. Società Cooperativa Produttori Formaggi | Vetralla | `UE IT D6L2N` | La cooperativa sigue activa y un aviso de 2023 identifica el Canestrato di Totò, pero no hay catálogo o contacto comercial actual que permita una ficha útil. |
 | Italformaggi | Viterbo | `UE IT 12 80` | Se confirma la sociedad y la planta de Fondaccio, pero no una marca, catálogo o contacto público atribuible a su producción actual. |
-| Rosetto Fabrizio | Viterbo | `UE IT X493T` | Los registros laborales y sanitarios confirman actividad, sin identidad comercial ni productos propios ofrecidos públicamente. |
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene `Fattorie di Maremma`. La [web actual del grupo Val d'Apsa](https://www.caseificiovaldapsa.it/contattaci) enlaza esa marca con la planta de Casula S.r.l. en S.S. 74 Maremmana km 80,700, San Lorenzo Nuovo, publicada ya bajo su identidad comercial. Se conserva la equivalencia de marca y razón social sin duplicar la unidad.

@@ -29,52 +29,34 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 - **AZIENDE AGRICOLE RAVIDA' SOCIETA' AGRICOLA A.R.L. IN LIQUIDAZIONE** — La marca Ravidà mantiene web y ficha pública activas, pero el titular certificado figura expresamente `IN LIQUIDAZIONE`; se retiene hasta confirmar continuidad jurídica entre el certificado y la identidad pública actual.
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-43 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+## Productores de queso — barrido sanitario cerrado el 2026-08-13
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| CUOR DI PIZZA DI LA GAIPA CALOGERO S.R.L. | Agrigento | VIA UNITA' D'ITALIA 40/B, AGRIGENTO (AG) | `UE IT 19 49` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-NOV-20 |
-| FAZIO S.R.L. | Agrigento | VIA UNITA' D'ITALIA 58, AGRIGENTO (AG) | `UE IT 19 95` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-JAN-21 |
-| LA TRINACRIA DALLI CARDILLO S.P.A. | Agrigento | VIA BARONE L. MONTAPERTO 15, AGRIGENTO (AG) | `UE IT 19 175` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JUN-15 |
-| LA TRINACRIA DALLI CARDILLO S.P.A. | Agrigento | VIA UNITA` D`ITALIA, 84, AGRIGENTO (AG) | `UE IT 19 171` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-NOV-19 |
-| LE DELIZIE SRL | Agrigento | VIALE ZONA ASI, LOTTO 14 snc, AGRIGENTO (AG) | `UE IT 19 874` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUN-24 |
-| CASEIFICIO MODICA SRL | Aragona | VIA MINIERA POZZO NUOVO sn, ARAGONA (AG) | `UE IT 19 706` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-JUN-20 |
-| MANCUSO VINCENZO & C. SRL | Aragona | ZONA INDUSTRIALE ASI DI AGRIGENTO C/DA S. BENEDETTO S.N., ARAGONA (AG) | `UE IT 19 48` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-APR-26 |
-| CASEIFICIO SAN PELLEGRINO S.N.C. DEI FRATELLI RIBECCA | Caltabellotta | VIA ROMA 190-192, CALTABELLOTTA (AG) | `UE IT S9H5Y` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-DEC-15 |
-| AMORMINO GAETANO | Cammarata | CONTRADA PASQUALE , CAMMARATA (AG) | `UE IT 19 784` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-DEC-12 |
-| ASS. AGR.ZOOT.MECC.SA.VI.E.MA DI LO RE | Cammarata | C/DA CASALICCHIO , CAMMARATA (AG) | `UE IT 19 170` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CASEIFICIO CASABELLA SOCIETA' IN NOME COLLETTIVO DI LO RE SERGIO & LO RE FRANCESCO | Cammarata | CONTRADA CASABELLA, SNC, CAMMARATA (AG) | `UE IT 19 116` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAY-26 |
-| CASEIFICIO LI CHIANI SOCIETA' A RESPONSABILITA' LIMITATA | Cammarata | CONTRADA PIANA sn, CAMMARATA (AG) | `UE IT G8H5L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-FEB-21 |
-| COOPERATIVA AGRICOLA ZOOTECNICA TUMARRANO - SOCIETA' COOPERATIVA | Cammarata | CONTRADA GIURI - PASSO DEL BARBIERE SN, CAMMARATA (AG) | `UE IT S4Z8A` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-MAR-15 |
-| DI PIAZZA GIUSEPPE | Cammarata | CONTRADA PASQUALE , CAMMARATA (AG) | `UE IT 19 510` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-APR-11 |
-| GIAMBRONE MARCO | Cammarata | CONTRADA CONTRADA PASSO BARBIERE SNC, CAMMARATA (AG) | `UE IT 19 126` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 24-APR-25 |
-| LATTERIA GUANA' S.R.L.S." UNIPERSONALE | Cammarata | CONTRADA TUMARRANO SN, CAMMARATA (AG) | `UE IT Y5015` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 15-JUN-17 |
-| MANGIAPANE MARIA GIUSEPPA | Cammarata | C/DA CASALICCHIO , CAMMARATA (AG) | `UE IT 19 353` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| SOCIETA' AGRICOLA SEMPLICE COSTANZO | Cammarata | CONTRADA SORIA sn, CAMMARATA (AG) | `UE IT Q487C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-JUL-20 |
-| ARRIGO SALVATORE | Campobello Di Licata | CONTRADA SERRA DI MENDOLA , CAMPOBELLO DI LICATA (AG) | `UE IT 19 77` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-NOV-11 |
-| CASEIFICIO FRATELLI LEPRE DI LEPRE VINCENZO & C. S.A.S. | Campobello Di Licata | VIA TROTZKJI, 45 , CAMPOBELLO DI LICATA (AG) | `UE IT 19 608` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-SEP-13 |
-| C.L.G. S.R.L. | Canicattì | CONTRADA CORRIGE , CANICATTÌ (AG) | `UE IT 19 76` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-FEB-13 |
-| SOCIETA' AGRICOLA FERRANTE SOCIETA' SEMPLICE | Canicattì | CONTRADA PIDOCCHIO SNC, CANICATTÌ (AG) | `UE IT 19 136` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-APR-24 |
-| CASEUS DI GRACI GABRIELE ANGELO | Castrofilippo | CONTRADA AZZALORA ROCCACAMPANA s.n., CASTROFILIPPO (AG) | `UE IT 19 46` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 25-JUN-14 |
-| F.LLI TAIBI S.R.L. | Castrofilippo | VIA NAZIONALE 100, CASTROFILIPPO (AG) | `UE IT 19 45` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-DEC-19 |
-| MULONE ANNUNZIATA | Cattolica Eraclea | CORSO REGINA MARGHERITA 156, CATTOLICA ERACLEA (AG) | `UE IT 19 179` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-MAR-15 |
-| INTERRANTE SALVATORE | Menfi | CONTRADA CINQUANTA SNC, MENFI (AG) | `UE IT 19 161` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JAN-26 |
-| CASEIFICIO RIFOR S.A.S. DI QUADRONE SALVATORE DOMENICO | Montallegro | CONTRADA GORGO SN, MONTALLEGRO (AG) | `UE IT X5H54` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-APR-16 |
-| BAVETTA CALOGERO | Montevago | CONTRADA MASTRAGOSTINO , MONTEVAGO (AG) | `UE IT 19 513` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| AZIENDA AGRICOLA FRATELLI PALERMO S.S. | Sambuca Di Sicilia | CONTRADA S. GIOVANNI CELLARO , SAMBUCA DI SICILIA (AG) | `UE IT 19 94` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 03-FEB-09 |
-| DI LEONARDO CONCETTA | Sambuca Di Sicilia | CONTRADA SAN GIACOMO sn, SAMBUCA DI SICILIA (AG) | `UE IT 19 760` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-19 |
-| F.LLI PASINI SOCIETA' SEMPLICE AGRICOLA | Sambuca Di Sicilia | CONTRADA GALLUZZO SAN GIACOPELLO S.N, SAMBUCA DI SICILIA (AG) | `UE IT Q851B` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 12-FEB-20 |
-| KREADOC DI DI RAIMONDO MARIA ROSA | San Biagio Platani | CONTRADA MARCO AMELLA sn, SAN BIAGIO PLATANI (AG) | `UE IT 19 781` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-APR-15 |
-| SCIOCALMAR S.R.L. | San Biagio Platani | CONTRADA GENNARO , SAN BIAGIO PLATANI (AG) | `UE IT 19 684` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-SEP-10 |
-| SPERIKOTTA DI G.D'AGOSTINO & C. SOCIETA' IN ACCOMANDITA SEMPLICE | San Biagio Platani | VIA SENECA - CONTRADA SANT'ANTONIO sn, SAN BIAGIO PLATANI (AG) | `UE IT 19 792` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-APR-20 |
-| SOCIETA' SEMPLICE AGRICOLA PUZZILLO DEI F.LLI RUSSOTTO | San Giovanni Gemini | CONTRADA MELACO SN, SAN GIOVANNI GEMINI (AG) | `UE IT Q6V9F` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-SEP-23 |
-| AZIENDA AGRICOLA DI TODARO ALESSIO | Santa Margherita Di Belice | CONTRADA PIGNOLO sn, SANTA MARGHERITA DI BELICE (AG) | `UE IT U6S3R` | ovino menos de 60 d/más de 60 d | 25-JUL-23 |
-| CAMPANEDDA SOCIETA' AGRICOLA SEMPLICE | Santa Margherita Di Belice | CONTRADA MARIANA sn, SANTA MARGHERITA DI BELICE (AG) | `UE IT 19 166` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-MAR-22 |
-| CACCIATORE ANGELO | Santo Stefano Quisquina | CONTRADA BUONANOTTE PIANO DELL`APA SNC, SANTO STEFANO QUISQUINA (AG) | `UE IT 19 349` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-MAY-26 |
-| CACCIATORE GIOVANNI | Santo Stefano Quisquina | VIA ROSSINI N.11 , SANTO STEFANO QUISQUINA (AG) | `UE IT 19 73` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-MAY-13 |
-| MORTELLARO GIUSEPPE | Santo Stefano Quisquina | CONTRADA VOLTANO , SANTO STEFANO QUISQUINA (AG) | `UE IT E4F22` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-OCT-08 |
-| MT DI TROJA PASQUALE & C. SOCIETA' IN NOME COLLETTIVO | Santo Stefano Quisquina | VIA GIUSEPPE VERDI, 16, SANTO STEFANO QUISQUINA (AG) | `UE IT 19 112` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 28-JUN-21 |
-| SOCIETA' AGRICOLA PRESTI | Santo Stefano Quisquina | CONTRADA MOLINAZZO s.n., SANTO STEFANO QUISQUINA (AG) | `UE IT 19 172` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-DEC-19 |
-| CASEIFICIO RIZZUTI S.N.C DEI FRATELLI LUCIANO E GIOVANNI RIZZUTI | Sciacca | C/DA MILAZZO , SCIACCA (AG) | `UE IT 19 165` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-SEP-10 |
+Se contrastaron las 43 unidades del corte sanitario del 2026-08-11 con identidad pública, actividad actual, producto y unidad productiva. El cierre incorpora 24 productores al CSV, deja 16 casos en retención por falta de un vínculo público suficiente entre titular, planta y oferta propia actual, y documenta 3 exclusiones. El registro sanitario sigue siendo la prueba de autorización y ubicación, pero no sustituye la verificación editorial de una gama propia.
+
+### Retenciones
+
+| Candidato | Comune | Autorización | Motivo pendiente |
+|---|---|---|---|
+| FAZIO S.R.L. | Agrigento | UE IT 19 95 | No apareció una identidad pública actual que conecte inequívocamente la sociedad y la planta con una gama propia de queso. |
+| LA TRINACRIA DALLI CARDILLO S.P.A. — Via Barone L. Montaperto 15 | Agrigento | UE IT 19 175 | La unidad 19 171 sí quedó vinculada a producto; no se encontró una fuente que atribuya producto propio concreto a esta segunda planta. |
+| LE DELIZIE SRL | Agrigento | UE IT 19 874 | La sociedad y planta siguen localizables, pero no se encontró una oferta pública actual de queso atribuible a ellas. |
+| CASEIFICIO SAN PELLEGRINO S.N.C. DEI FRATELLI RIBECCA | Caltabellotta | UE IT S9H5Y | Hay continuidad como explotación primaria, pero falta una gama pública actual que permita describir sus quesos sin inferir. |
+| AMORMINO GAETANO | Cammarata | UE IT 19 784 | Solo quedó confirmada la autorización sanitaria; no una identidad comercial o producto público actual. |
+| ASS. AGR.ZOOT.MECC. SA.VI.E.MA DI LO RE | Cammarata | UE IT 19 170 | No se pudo reconciliar de forma segura con una identidad pública actual ni con el nuevo Caseificio Casabella. |
+| DI PIAZZA GIUSEPPE | Cammarata | UE IT 19 510 | El homónimo público dominante es ajeno a la actividad; no apareció una identidad casearia verificable. |
+| ARRIGO SALVATORE | Campobello di Licata | UE IT 19 77 | No se encontró una oferta pública actual que conecte titular y planta con quesos propios. |
+| CASEUS DI GRACI GABRIELE ANGELO | Castrofilippo | UE IT 19 46 | Se confirmó la continuidad administrativa de la planta, pero no una gama pública actual de producto. |
+| BAVETTA CALOGERO | Montevago | UE IT 19 513 | La explotación ganadera está activa, pero no apareció una oferta pública actual de queso propio. |
+| AZIENDA AGRICOLA FRATELLI PALERMO S.S. | Sambuca di Sicilia | UE IT 19 94 | Se confirmó explotación y pastoreo, no producto caseario público atribuible. |
+| DI LEONARDO CONCETTA | Sambuca di Sicilia | UE IT 19 760 | La actividad ganadera consta en fuentes regionales, pero falta producto caseario público actual. |
+| F.LLI PASINI SOCIETA' SEMPLICE AGRICOLA | Sambuca di Sicilia | UE IT Q851B | Rebaños activos y planta autorizada, sin gama pública de queso encontrada. |
+| SCIOCALMAR S.R.L. | San Biagio Platani | UE IT 19 684 | No se pudo identificar una marca, gama o presencia pública actual suficiente. |
+| SOCIETA' SEMPLICE AGRICOLA PUZZILLO DEI F.LLI RUSSOTTO | San Giovanni Gemini | UE IT Q6V9F | No apareció una identidad pública inequívoca ni una gama de producto. |
+| CAMPANEDDA SOCIETA' AGRICOLA SEMPLICE | Santa Margherita di Belice | UE IT 19 166 | La planta permanece autorizada, pero no se encontró una oferta pública actual atribuible. |
+
+### Exclusiones documentadas
+
+- **MANCUSO VINCENZO & C. SRL** — La actividad pública actual es producción de helado y postres congelados; la autorización láctea amplia no demuestra una línea propia de queso.
+- **CACCIATORE GIOVANNI** — La identidad pública actual se presenta como comercio y distribución de quesos seleccionados de otros productores, no como elaboración propia.
+- **MT DI TROJA PASQUALE & C. SNC** — La actividad pública actual es comercio mayorista de lácteos y huevos y no se halló queso propio atribuible a la unidad.

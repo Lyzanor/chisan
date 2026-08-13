@@ -68,9 +68,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Revisión cerrada el 2026-08-12. Ambas autorizaciones siguen en retención: las fuentes actuales presentan a Cococcioni & Figli como distribuidor alimentario B2B con laboratorio para productos trabajados, pero no identifican un queso propio; Grassi Leopoldo aparece como mayorista especializado en quesos, sin marca, catálogo de fabricación o producto propio atribuible. La autorización sanitaria no permite convertir distribución o manipulación en producción editorialmente demostrada.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| COCOCCIONI & FIGLI SRL | Livorno | VIA DEI RAMAI 5, LIVORNO (LI) | `UE IT X7L62` |  | 19-JAN-23 |
-| GRASSI LEOPOLDO S.A.S. DI GRASSI FLORINDO E MAURO E C. | Livorno | VIA DELLA FONTANELLA 83, LIVORNO (LI) | `UE IT 09 348` |  | 14-MAR-19 |
+Lote cerrado el 2026-08-13. Cococcioni & Figli se descartó como distribuidor alimentario B2B: su catálogo vigente vende productos de terceros y su política de 2025 solo menciona de forma genérica productos trabajados en el laboratorio, sin queso propio. Grassi Leopoldo se descartó como mayorista de lácteos y huevos, sin marca ni catálogo de fabricación. La autorización sanitaria no convierte distribución, reenvasado o manipulación en producción editorialmente demostrada.

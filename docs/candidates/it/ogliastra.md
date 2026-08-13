@@ -33,8 +33,4 @@ El único candidato, Birrificio Keja, quedó incorporado al CSV con sus cervezas
 
 ## Productores de queso — revisión del 2026-08-12
 
-Se incorporaron dos de las tres unidades sanitarias pendientes: Azienda Agricola F.lli Loi y Minicaseificio Cannas Antonio Onorato. Ambas conservan `parcial` porque la autorización es actual, pero la corroboración pública de sus productos no es suficientemente reciente para `verificado`.
-
-| Unidad pendiente | Comune | Motivo concreto |
-|---|---|---|
-| SCATTU ALBERTO — UE IT 20 305 | Gairo | La autorización sanitaria sigue vigente, pero no se encontró identidad comercial, queso concreto, contacto o actividad pública reciente. |
+Lote cerrado el 2026-08-13. Se incorporaron Azienda Agricola F.lli Loi, Minicaseificio Cannas Antonio Onorato y Azienda Agricola Alberto Scattu. Los tres conservan `parcial`: las autorizaciones son actuales, pero la corroboración pública de productos y contactos procede de fuentes institucionales históricas.

@@ -27,6 +27,12 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Cierre editorial del lote quesero — 2026-08-13
+
+Se contrastaron las 64 unidades con búsqueda nominal, sus sitios y tiendas oficiales, directorios institucionales actuales y el registro sanitario. Se publicaron **13 fichas**: BioSila, Caseificio Parrilla, Calabria Gusto, Morrone – Il piacere della tradizione, Caseificio La Montea, Fattoria Biò, Astorino Casearia, Dolci Pascoli, Tenuta Colle della Pomara, Società Agricola La Sorgente, Casearia Silana Vallefiore, Caseificio Iuliano e Il Cestino del Casaro. Las identidades Morrone/Casearia Silana se mantuvieron separadas porque corresponden a unidades y titulares distintos en Corigliano-Rossano y San Giovanni in Fiore. Se resolvió `Venta online=sí` únicamente para las seis tiendas con catálogo, precio y carrito o proceso de compra explícito; el resto queda en `no comprobado`.
+
+Las **51 unidades restantes** continúan retenidas: el registro acredita autorización industrial pero no ofrece por sí solo una marca y una oferta propia actual atribuibles. Entre los casos examinados, Vincenzo Roberti aparece en liquidación sin una oferta contemporánea demostrable; Granarolo, GIAS y Trade Erregi son plantas o actores industriales cuya autorización no permite reconstruir una ficha local útil; y otros nombres solo devuelven directorios genéricos, documentos administrativos antiguos o homónimos. No se declara rechazo definitivo porque no se encontró cese o revocación autoritativa para esas unidades. El lote quesero queda cerrado sin búsqueda pendiente; una señal pública nueva podrá reabrir cada retención.
+
 64 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

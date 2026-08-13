@@ -43,8 +43,4 @@ Estas 32 identidades siguen abiertas: el registro acredita explotación o activi
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote revisado el 2026-08-12. Se publicaron doce unidades con actividad y oferta propias contrastadas. Queda una planta reciente de Latteria di Visinale en retención: el registro sanitario prueba la unidad y su autorización, pero las fuentes públicas de la marca todavía atribuyen el catálogo y la venta directa a Via dei Donatori 10 y no explican el papel productivo de esta segunda dirección.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| LATTERIA DI VISINALE S.R.L. | Pasiano di Pordenone | VIA DELLA VECCHIA CERAMICA 5, PASIANO DI PORDENONE (PN) | `UE IT Y4V8B` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JUL-25 |
+Lote cerrado el 2026-08-13. Se publicaron doce unidades con actividad y oferta propias contrastadas. La planta reciente `Y4V8B` de Via della Vecchia Ceramica 5 se reconcilió como segunda unidad de Latteria di Visinale en el mismo municipio: la ficha existente ya representa al productor, su catálogo y su venta directa, por lo que no se creó un duplicado por dirección.

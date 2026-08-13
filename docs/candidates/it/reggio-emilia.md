@@ -232,3 +232,9 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Parmigiano Reggiano DOP — control completo del consorcio del 2026-08-11
 
 El [directorio oficial de caseifici](https://www.parmigianoreggiano.com/it/caseifici-trova-caseificio) contiene 75 plantas en Reggio Emilia. Todas quedaron reconciliadas por identidad, comune o dirección con candidatos ya incluidos en esta nota; no produjo candidatos nuevos. El contraste conservó cada matrícula como planta independiente, incluso cuando comparte titular o marca con otra unidad.
+
+### Cierre editorial del 2026-08-13
+
+Se publicaron como fichas productivas independientes las 75 plantas que el Consorzio del Parmigiano Reggiano mantiene activas en Reggio Emilia. El directorio oficial aporta identidad, actividad quesera, matrícula, dirección, contactos y coordenadas; cuando declara comercio electrónico y enlaza una web propia, la ficha conserva también ese canal. Las 39 autorizaciones sanitarias que no coinciden con una planta vigente del consorcio permanecen en esta nota para otra revisión, sin promoverlas por inferencia.
+
+En la cola de categorías poco representadas se publicó además Antica Acetaia Dodi: su web oficial identifica la acetaia de Albinea, sus productos DOP, los datos de contacto y un proceso de compra activo. UNIPEG se conserva como candidato sin publicar porque no se encontró una fuente primaria actual que pruebe una unidad productiva vigente bajo esa identidad. Quedan así cerradas la cola de quesos y la revisión de categorías poco representadas de Reggio Emilia.

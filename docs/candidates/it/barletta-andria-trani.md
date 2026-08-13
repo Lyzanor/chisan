@@ -24,7 +24,20 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | FUMARULO NICOLA | Barletta | VIA CIOCE SEN D N 14 INT 9 76121 | producción — vegetales sin transformar | 2028-10-03 | [IT-BIO-006.380-0042849.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-006.380-0042849.2025.002.pdf) |
 | GUGLIELMI FRANCESCORIANA | Andria | VIA GIUSEPPE GARIBALDI 46 76123 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2029-02-02 | [IT-BIO-012.380-0008488.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-012.380-0008488.2026.001.pdf) |
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+## Productores de queso — revisión cerrada el 2026-08-13
+
+El barrido sanitario se contrastó completo. Se publicaron 20 fichas correspondientes a 21 unidades del registro: las dos autorizaciones de Caseificio Andriese Bontà Genuina pertenecen a una sola identidad pública, Perina, y se representaron en una ficha anclada en la planta y sede pública de Via Andria 131. Las altas cuentan con actividad y oferta propia visibles; la ficha sanitaria se conserva como prueba de la unidad productiva. No se publicaron los nombres restantes porque no apareció una identidad pública actual con oferta propia explícita, o porque la marca hallada no pudo reconciliarse de forma inequívoca con el titular sanitario.
+
+Retenciones concretas para una revisión futura:
+
+- Andria: Caseificio F.lli Simone (la actividad se confirmó y sí se publicó); quedaron sin publicar Caseificio Matera, Caseificio Sacro Cuore, Sapor Latte, la unidad San Savino de Via Canosa, Ieva & Rella, Lacte, La Perla Bianca, Matera Sebastiano y la denominación histórica L'Aurora. Esta última no se fusionó con Andrialat: la web actual atribuye el producto a Mika srl, no al titular sanitario L'Aurora.
+- Barletta: Abbasciano, Donna Celeste, Fatta e Mangiata, GL Genuinità di Latte, Rella, Il Bocconcino, Giagnottti y Piccoli Piaceri. Hay rastros mercantiles o directorios, pero no una oferta propia actual suficientemente explícita.
+- Bisceglie: Delizie del Latte di Martina Nicola, Bianca Latticini/Quacquarelli y Tambone.
+- Canosa di Puglia y San Ferdinando: Bacio di Latte (dos titulares/unidades) y Caseifici del Re.
+- Minervino Murge: Azienda Agricola Roselli Sabino y Latteria al Corso. Forenza sí se publicó por su oferta ovina a latte crudo documentada.
+- Spinazzola, Trani y Trinitapoli: Zianni Domenico, Favola Bianca, Antichi Sapori Andriesi di Giorgio Rosa y Soldano Vincenzo.
+
+La tabla inferior queda como instantánea de origen del lote; ya no es una cola pendiente.
 
 50 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 

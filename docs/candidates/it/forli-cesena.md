@@ -34,10 +34,9 @@ Los certificados `ISSUED` de [TRACES NT](https://webgate.ec.europa.eu/tracesnt/d
 
 ## Autorizaciones queseras pendientes
 
-El [registro sanitario nacional](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) acredita autorización, no una identidad comercial actual. El resto del lote quesero ya fue resuelto en el CSV y la evidencia.
+El [registro sanitario nacional](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) acredita autorización, no una identidad comercial actual. Farabegoli Paolo se reconcilió el 2026-08-13 con su marca Romagna Terre mediante la coincidencia exacta de NIF y dirección; su web oficial confirma actividad, contacto y casi cincuenta quesos propios. Las otras dos unidades siguen retenidas.
 
 | Operador | Comune | Unidad autorizada | Motivo concreto de retención |
 |---|---|---|---|
-| Farabegoli Paolo | Gambettola | Largo Don Poloni 34 — `UE IT W880K` | No se pudo vincular de forma segura con una oferta quesera pública. |
 | Latteria Sociale Sogliano al Rubicone | Sogliano al Rubicone | Località Vignola — `UE IT J4L94` | La sociedad figura en liquidación y no presenta oferta actual. |
 | Tera S.a.s. di Grotti Elsa & C. | Sogliano al Rubicone | Via Strigara 51 — `UE IT 08 1135` | Conserva autorización, pero no una identidad comercial productora atribuible. |

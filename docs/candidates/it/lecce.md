@@ -45,6 +45,14 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Revisión cerrada — 2026-08-13
+
+Se contrastaron las 57 unidades del corte. Se publicaron 13 fichas nuevas que representan 14 unidades: Caseificio del Capo, Caseificio del Sole, Azienda Zootecnica Tirì, Sciacuddri, La Lattoria/Melcarne, Caseificio di Galatina, Caseificio Barone de Gallipoli, Caseifici Foscarini, Caseificio Dolce Latte, Caseificio Ruffo, Cuore di Latte, Alimilk/La Salentina y Caseificio Serafino. Las dos autorizaciones de Giannotta en Galatina se consolidan bajo una sola identidad pública actual. Solo Caseificio del Capo queda con `Venta online=sí`, pues su tienda propia muestra productos, precios, disponibilidad y envío; las demás fichas quedan `parcial` y `no comprobado`.
+
+Las otras 43 unidades quedan retenidas. En ellas el registro sanitario confirma autorización y comune, pero la búsqueda actual no permitió enlazar de forma suficiente una marca pública activa con una oferta propia concreta; se descartaron homónimos de otras provincias y no se convirtió una mera ficha societaria en prueba de venta. Esto afecta a todas las entradas del listado bruto inferior salvo las 14 unidades aceptadas citadas arriba. No hubo exclusiones definitivas: la ausencia de una huella pública suficiente no prueba cierre ni cese.
+
+Precauciones de identidad aplicadas: `barone.it` pertenece a un productor de Molise y no al Caseificio Barone de Gallipoli; los resultados de “La Fonte” de Toscana, Emilia-Romaña y Avellino no corresponden a la sociedad agrícola de San Cassiano; y los resultados genéricos de “Il Fiore del Latte” no se asignaron a la unidad de Lequile. El listado bruto se conserva debajo como fotografía reproducible del corte, pero ya no constituye una cola pendiente.
+
 57 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

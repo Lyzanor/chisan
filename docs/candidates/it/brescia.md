@@ -305,3 +305,7 @@ El [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadan
 | Azienda Agricola Balestre di De Stanchina C. e G. e Miglioli | Calvisano, loc. Malpaga | Via Ponterosso 22, 25012 Calvisano (BS) | `BS656` | Ausente por nombre y dirección en CSV y candidatos previos. |
 
 El resto del roster provincial quedó reconciliado. En particular, `BS620` Eredi Bonetta corresponde a la unidad candidata Caseificio Alfianello en Strada dei Santi Micheli 10/12-14/16; `BS639` Zanetti corresponde a la unidad de San Gervasio Bresciano, pese a la discrepancia `1`/`51` en el número de Via IV Novembre; y `BS655` es la planta de Latteria Soresina ya candidata en Chiari. No se crean duplicados para esas tres identidades.
+
+### Cierre de la cola quesera del 2026-08-13
+
+Se publicaron las 24 unidades productoras que el directorio vigente del Consorzio Tutela Grana Padano asigna a Brescia, cada una con su matrícula, dirección, contacto y coordenadas oficiales. Caseificio Lombardi (`BS617`) y Azienda Agricola Balestre (`BS656`), que no figuraban en el primer barrido sanitario con esa identidad, quedan resueltos por el padrón consorcial; las coincidencias descritas arriba se consolidan en una sola ficha por unidad. Las 195 autorizaciones sanitarias restantes permanecen retenidas porque el registro acredita capacidad de elaboración, pero no basta para probar una identidad pública y una oferta propia actual. Queda cerrada esta cola sin convertir automáticamente plantas autorizadas en productores del mapa.

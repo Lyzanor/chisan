@@ -107,6 +107,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Cierre editorial del lote quesero — 2026-08-13
+
+Se cruzaron las 64 autorizaciones con el directorio vivo del Consorzio del Formaggio Parmigiano Reggiano. El directorio consultado en esta revisión muestra **53 unidades modenesi**, todas publicadas como fichas productivas separadas cuando el mismo titular opera en direcciones distintas. Las 53 coinciden con el barrido sanitario. Las **11 autorizaciones sanitarias restantes** se retienen porque no aparecen como caseifici activos de Parmigiano Reggiano y la autorización general no basta para atribuirles una oferta pública actual; incluye elaboradores de otras familias lácteas y nombres sin marca comercial contrastable. No se infirió ecommerce desde la mera presencia consorcial.
+
+El directorio devuelve 53 plantas tanto en el corte exploratorio como en la consulta viva del 13 de agosto. El lote quesero queda cerrado sin búsquedas pendientes.
+
 64 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

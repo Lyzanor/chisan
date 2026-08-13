@@ -44,11 +44,8 @@ Investigación del 2026-08-08, revisada el 2026-08-12. Se publicaron AERRE Socie
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-4 unidades productivas siguen pendientes de una identidad pública y una oferta quesera actuales. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y se reasignó por comune mediante la [clasificación territorial ISTAT vigente desde 2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se publicaron Caseificio Iesum, Latteria Sociale Santadi y Agricola Allevatori Tallaroga tras reconciliar la unidad sanitaria con fuentes públicas actuales; Allevatori Sulcitani ya estaba en el CSV. Los cuatro registros restantes conservan autorización sanitaria, pero las búsquedas no permitieron atribuirles con seguridad una marca y una oferta propia vigente. Corte revisado: 2026-08-11.
+Lote revisado el 2026-08-13. Se publicaron Sa Craberia y Fluminese Formaggi tras reconciliar las unidades sanitarias con identidad, actividad y productos actuales. Cardia Alessia se reconcilió con Masseria de Nannai y se publicó por su oferta real de carnes y embutidos propios; su web actual no ofrece quesos. Tre Emme permanece retenida porque la sociedad figura en liquidación pese a que la unidad sanitaria todavía aparece en fuentes derivadas recientes.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| BRAU ANTONANGELO | Carbonia | LOCALITA' MEDAU BRAU 6, CARBONIA (SU) | `UE IT Q618T` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 11-APR-18 |
-| FLUMINESE DI MATTIA MONTALBANO | Fluminimaggiore | VIA GARIBALDI 46, FLUMINIMAGGIORE (SU) | `UE IT Z1B87` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-MAR-20 |
 | TRE EMME PICCOLA SOC. COOP. ARL | Santadi | VIA IS SOLLAIS, 5 , SANTADI (SU) | `UE IT 20 178` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| CARDIA ALESSIA | Villamassargia | LOCALITA' MONTE GIOIOSA SNC, VILLAMASSARGIA (SU) | `UE IT J1B82` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-JUL-20 |

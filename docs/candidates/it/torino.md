@@ -1,5 +1,11 @@
 # Candidatos — Torino
 
+## Cierre editorial del 2026-08-13
+
+Se publicaron Caseificio Longo y Azienda Agricola Valle Orco, los dos operadores de Torino que el elenco oficial actualizado al 13-07-2026 identifica con rol `CASEIFICIO` para Toma Piemontese DOP. Sus fuentes públicas actuales confirman unidad productiva, contactos y oferta propia. El resto del barrido sanitario se conserva en retención: la autorización de elaborar queso no acredita por sí sola una marca y una oferta pública vigentes.
+
+La revisión de categorías poco representadas se cerró con la publicación de Birrificio La Vecchia Ivrea, Birrificio Grado Plato y Birrificio La Piazza. Las tres webs oficiales confirman producción y contacto; sus procesos de tienda activos permiten marcar `Venta online=sí`.
+
 Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |

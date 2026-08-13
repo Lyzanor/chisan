@@ -21,9 +21,4 @@ Revisión del lote ecológico cerrada el 2026-08-12. Se publicaron Caniloro, Can
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Solis opera públicamente como empresa energética y logística frigorífica, sin una oferta quesera propia atribuible; Talone Ezio figura como explotación bovina lechera activa, pero las búsquedas del 2026-08-11 no localizaron una marca ni una oferta pública de quesos con contacto. Los otros nueve candidatos se incorporaron al CSV; Gocce di Latte by Iannone se deduplicó bajo su identidad pública Caseificio Iannone y la unidad de Iannone Florestano se publicó separadamente como Caseificio Flò. Corte: 2026-08-11.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| SOLIS S.P.A. | Atessa | Via del Rasolone - località Piazzano snc | `UE IT S7R5R` | vacuno menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 08-MAR-23 |
-| TALONE EZIO | Casoli | Via Quarto da Capo 227 | `UE IT X8T4V` | vacuno menos de 60 d | 04-NOV-25 |
+Lote cerrado el 2026-08-13, extraído del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Solis se cerró como falso positivo: su web vigente atribuye la unidad de Atessa a su negocio energético y de logística frigorífica, sin identidad u oferta quesera propia. Talone Ezio se publicó como `parcial` al confirmar explotación bovina lechera activa y autorización de 2025 para queso fresco de vaca, sin inventar marca ni contacto. Los otros nueve candidatos se incorporaron al CSV; Gocce di Latte by Iannone se deduplicó bajo su identidad pública Caseificio Iannone y la unidad de Iannone Florestano se publicó separadamente como Caseificio Flò.

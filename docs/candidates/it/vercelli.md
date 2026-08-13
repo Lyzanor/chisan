@@ -30,7 +30,7 @@ Fuente de corte: [directorio público TRACES NT](https://webgate.ec.europa.eu/tr
 
 ## Unidades queseras pendientes
 
-El registro sanitario acredita que estas nueve unidades siguen autorizadas para fabricar queso, pero no basta por sí solo para probar producción u oferta comercial actual. No se fusionan con las sedes ya publicadas cuando la actividad de la unidad de alpeggio no está corroborada.
+El registro sanitario acredita que estas unidades siguen autorizadas para fabricar queso, pero no basta por sí solo para probar producción u oferta comercial actual. Fattoria Biancaneve se publicó el 2026-08-13 después de confirmar actividad empresarial en 2026 y una presentación territorial actual con explotación, queso propio y contacto. No se fusionan con las sedes ya publicadas cuando la actividad de la unidad de alpeggio no está corroborada.
 
 | Titular / unidad | Comune actual | Autorización | Motivo de retención |
 |---|---|---|---|
@@ -42,6 +42,5 @@ El registro sanitario acredita que estas nueve unidades siguen autorizadas para 
 | Demiliani Davide — Alpe Piana | Piode | `UE IT 01 597` | La explotación y la autorización son localizables, pero no una oferta quesera propia actual. |
 | Guglielmina Silvano — Alpe Fontana | Rassa | `UE IT 01 596` | La explotación bovina está activa y la unidad autorizada, sin catálogo o venta pública actual de queso propio. |
 | Mantello Franco — Alpe Piana d'Ovago | Rassa | `UE IT 01 2032` | La explotación lechera está activa y la unidad autorizada, sin oferta quesera pública actual. |
-| Fattoria Biancaneve di Negra Francesco | Scopello | `UE IT X132R` | Hay actividad administrativa reciente y una historia de producto de 2016, pero no una fuente actual de oferta propia. |
 
 Fuente de corte: [registro de establecimientos del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/), descarga diaria revisada el 2026-08-11.

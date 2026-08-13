@@ -87,15 +87,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-5 unidades productivas siguen pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. Se retienen porque no se encontró una oferta pública actual atribuible con seguridad a la unidad o porque la identidad sanitaria no pudo reconciliarse con una marca operativa. Corte de revisión: 2026-08-12.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| ALIMENTARIA VALDINIEVOLE S.P.A. PIU' BREVEMENTE INDICATA COME: "ALIVAL S.P.A. | Cinigiano | LOCALITA' BORGO SANTA RITA snc, CINIGIANO (GR) | `UE IT 09 487` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-JUN-15 |
-| LOI PAOLA | Magliano In Toscana | LOCALITA' CUPI 53, MAGLIANO IN TOSCANA (GR) | `UE IT R1128` | ovino menos de 60 d/más de 60 d | 19-SEP-24 |
-| TANDA GIUSEPPE E MARIO SOCIETA' SEMPLICE AGRICOLA | Monterotondo Marittimo | LOCALITA' PODERE PATERNO SNC, MONTEROTONDO MARITTIMO (GR) | `UE IT 09 488` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-SEP-16 |
-| RUSTICI SOCIETA' AGRICOLA A RESPONSABILITA' LIMITATA | Orbetello | STRADA VICINALE BARCA DEL GRAZI 4, ORBETELLO (GR) | `UE IT K696E` | vacuno menos de 60 d/más de 60 d | 21-DEC-22 |
-| VERGARI GIORGIO | Roccalbegna | LOCALITA' PODERE MULINACCIO snc, ROCCALBEGNA (GR) | `UE IT V5P5A` | ovino menos de 60 d/más de 60 d | 12-JUN-15 |
+Lote cerrado el 2026-08-13. Se publicaron Podere Paterno, Biologica Rustici, Giorgio Vergari y Agrocasearia Paola Loi al confirmar oferta propia; Alival Borgo Santa Rita se cerró como centro de maduración y envasado, con la producción ya representada en sus plantas de Porcari y Pienza.
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene ocho plantas en Grosseto: Caseificio Il Fiorino, Caseificio Follonica, Caseificio Sociale Manciano, Caseificio Maremma, Rocca Toscana Formaggi, Consorzio Caseificio di Sorano, Formaggeria Toscana y Caseificio Seggiano. Las ocho quedaron reconciliadas con unidades sanitarias ya incluidas en esta cola; no produjo candidatos nuevos. Los operadores que el consorcio separa como envasadores o afinadores no se trataron como fabricantes.

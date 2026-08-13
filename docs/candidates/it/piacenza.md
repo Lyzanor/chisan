@@ -33,16 +33,13 @@ Se contrastaron las 40 unidades del [registro diario del Ministero della Salute]
 
 - 26 unidades productivas publicadas, incluidas por separado las dos plantas Colla de Cadeo, las dos plantas Lattegra y las dos plantas Valcolatte.
 - 3 exclusiones definitivas documentadas en evidencia: Aimi Formaggi, Rainbow y F.lli Ghibaudo. Su identidad pública actual acredita afinado, envasado o comercio mayorista, no una oferta propia de elaboración que justifique el alta.
-- 12 candidatos permanecen abiertos. La autorización sanitaria prueba capacidad legal, no que exista hoy una marca pública y un producto propio atribuible a esa unidad.
+- 9 candidatos permanecen abiertos. La autorización sanitaria prueba capacidad legal, no que exista hoy una marca pública y un producto propio atribuible a esa unidad. En la revisión adicional del 2026-08-13 se publicaron Sartori Marco & Ballotta Marinella, SCA y Caseificio Valchero — E. Cernuschi al localizar oferta, contacto y unidad productiva actuales.
 
 ### Retenciones pendientes
 
 | Candidato | Comune | Autorización | Motivo concreto de retención |
 |---|---|---|---|
-| Azienda Agricola Sartori Marco e Ballotta Marinella | Bettola | `UE IT 08 1116` | Autorización vigente, pero no se localizó marca, catálogo ni canal público actual de la unidad de Missano. |
-| S.C.A. Srl | Fiorenzuola d'Arda | `UE IT 08 368` | La presencia pública encontrada se orienta a ingredientes o servicios industriales y no permite atribuir una oferta propia concreta de queso. |
 | Caseificio Sociale Val Chiavenna e Val Chero | Lugagnano Val d'Arda | `UE IT 08 200` | Solo queda acreditada la unidad sanitaria; falta una oferta pública actual y contacto propio. |
-| E. Cernuschi e C. Srl | Lugagnano Val d'Arda | `UE IT 08 570` | No se encontró identidad comercial vigente ni catálogo atribuible a la planta de Rustigazzo. |
 | Panizzi Clicerio Srl | Monticelli d'Ongina | `UE IT 08 776` | Las referencias societarias localizadas no prueban actividad productiva pública actual ni una gama propia. |
 | Corte Bernuzzo S.S. | Piozzano | `UE IT 08 818` | La unidad sanitaria está en Piozzano, pero la identidad pública histórica remite a Cremona y no se ha reconciliado la marca con esta planta. |
 | Zambelli Giacomo | Piozzano | `UE IT L485B` | Autorización vigente sin marca pública, producto concreto ni contacto actual localizados. |

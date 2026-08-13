@@ -47,53 +47,18 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Brazzale S.p.a. | Ponte Di Malo | `Lácteos y quesos` | Asiago DOP | — |
 | Latteria di Soligo S.a.c. | Soligo | `Lácteos y quesos` | Asiago DOP | — |
 
-## Productores de queso — barrido sanitario nacional del 2026-08-11
+## Productores de queso — revisión del 2026-08-13
 
-41 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+Se revisaron las 41 unidades del barrido sanitario nacional. Se publicaron 34 unidades productivas con actividad y oferta propias demostradas, manteniendo separadas las plantas múltiples de Caseificio Dal Pozzolo, Brazzale y los grupos cooperativos. Se rechazaron tres falsos positivos: Spiller Primo y Guglielmi Claudio porque su actividad pública es comercio o afinado por cuenta de terceros, e IFEX Monticello porque la planta pública actual elabora platos preparados y no acredita queso propio.
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| DI MARTINO S.R.L. | Altavilla Vicentina | VIA PIAVE 10, ALTAVILLA VICENTINA (VI) | `UE IT 1396` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-MAR-18 |
-| CASEIFICIO COOPERATIVO DI ALTISSIMO SOCIETA' COOPERATIVA AGRICOLA | Altissimo | VIA GASSA 12, ALTISSIMO (VI) | `UE IT 05 82` | vacuno menos de 60 d/más de 60 d | 30-AUG-21 |
-| CASEIFICIO PENNAR ASIAGO SOCIETA' COOPERATIVA AGRICOLA | Asiago | VIA PENNAR 313, ASIAGO (VI) | `UE IT 05 22` | vacuno menos de 60 d/más de 60 d | 08-APR-14 |
-| CASEIFICIO SOCIALE PONTE DI BARBARANO SOCIETA' AGRICOLA COOPERATIVA | Barbarano Mossano | VIA CAPITELLO 2, BARBARANO MOSSANO (VI) | `UE IT 05 35` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 13-SEP-21 |
-| FATTORIA SAN MICHELE SOCIETA' AGRICOLA S.S. | Bassano Del Grappa | CONTRA' GAGGION BASSO 41 , BASSANO DEL GRAPPA (VI) | `UE IT 05 371` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-FEB-12 |
-| LATTERIA SOCIALE DI BOLZANO VICENTINO - SOCIETA' COOPERATIVA AGRICOLA | Bolzano Vicentino | VIA STRASILIA 2/B, BOLZANO VICENTINO (VI) | `UE IT 05 73` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-AUG-19 |
-| SPILLER PRIMO S.A.S. DI SPILLER GABRIEL & C. | Bolzano Vicentino | VIA A. MANZONI 11, BOLZANO VICENTINO (VI) | `UE IT 05 309` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-MAR-18 |
-| LATTERIA DI SOLIGO SOCIETA' AGRICOLA COOPERATIVA | Breganze | VIA DELLE MILIANE 6, BREGANZE (VI) | `UE IT 05 339` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JUL-25 |
-| LATTERIE VICENTINE SOCIETA' COOPERATIVA AGRICOLA | Bressanvido | VIA SAN BENEDETTO 19, BRESSANVIDO (VI) | `UE IT 05 100` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-JUN-19 |
-| ZARPELLON - S.P.A. | Camisano Vicentino | VIA BADIA 131/A, CAMISANO VICENTINO (VI) | `UE IT 05 155` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-DEC-22 |
-| COMALAT S.R.L. | Cartigliano | VIA DELLE INDUSTRIE 2, CARTIGLIANO (VI) | `UE IT 05 116` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-MAR-18 |
-| VECCCHIO MULINO SOCIETA' AGRICOLA | Cartigliano | VIA VECCHIO MULINO 11, CARTIGLIANO (VI) | `UE IT 05 231` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-MAY-14 |
-| SERMONDI SOCIETA' AGRICOLA SEMPLICE | Castegnero Nanto | VIA SERMONDI 10, CASTEGNERO NANTO (VI) | `UE IT T102P` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-MAY-14 |
-| LATTERIA SOCIALE VILLA DI CASTELGOMBERTO SOCIETA' COOPERATIVA AGR ICOLA | Castelgomberto | VIA VILLA 39/CD, CASTELGOMBERTO (VI) | `UE IT 05 89` | vacuno menos de 60 d/más de 60 d | 23-MAR-17 |
-| CASEIFICIO BASSO S.R.L. | Colceresa | VIA VENETO 64, COLCERESA (VI) | `UE IT 05 68` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-SEP-21 |
-| CASEIFICIO SOCIALE SAN VITO POVOLARO SOCIETA' COOPERATIVA AGRICOLA IN FORMA ABBREVIATA "CASEIFICIO S | Dueville | PIAZZA REDENTORE - FRAZ. POVOLARO - 50, DUEVILLE (VI) | `UE IT 05 46` | vacuno menos de 60 d/más de 60 d | 18-FEB-20 |
-| STEFANI FORMAGGI S.A.S. DI STEFANI LUCIO & C. | Dueville | VIA IV NOVEMBRE 35, DUEVILLE (VI) | `UE IT 05 76` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-JUL-23 |
-| CASEIFICIO FINCO GIANFRANCO - ENEGO - ALTOPIANO DI ASIAGO S.R.L. | Enego | VIA MEDAGLIA D'ORO LUIGI CAPPELLO 42, ENEGO (VI) | `UE IT 05 70` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-OCT-21 |
-| CASEIFICIO DAL POZZOLO S.R.L. | Grisignano Di Zocco | VIA ZANELLA 29, GRISIGNANO DI ZOCCO (VI) | `UE IT 05 136` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-MAR-18 |
-| CASEIFICIO DAL POZZOLO S.R.L. | Grumolo Delle Abbadesse | VIA OLE 8, GRUMOLO DELLE ABBADESSE (VI) | `UE IT 05 94` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 16-MAR-18 |
-| LATTERIA SOCIALE DI CASTELNOVO SOCIETA' COOPERATIVA AGRICOLA | Isola Vicentina | VIA S. ANTONIO 1, ISOLA VICENTINA (VI) | `UE IT 05 157` | vacuno menos de 60 d/más de 60 d | 31-JUL-14 |
-| FATTORIA CORTESE SOCIETA' AGRICOLA S.S. | Lusiana Conco | . VAL LASTARO s.n., LUSIANA CONCO (VI) | `UE IT H3R7T` | vacuno menos de 60 d/más de 60 d | 02-SEP-16 |
-| SCORZATO FABIO | Malo | VIA MONTE PALAZZO 25, MALO (VI) | `UE IT Z7Z12` | vacuno menos de 60 d | 24-NOV-22 |
-| AZIENDA AGRICOLA AIDI DI FLAVIO SARTORE | Marano Vicentino | VIA MOLETTE 25, MARANO VICENTINO (VI) | `UE IT 05 346` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-DEC-20 |
-| BRAZZALE SOCIETA' PER AZIONI IN FORMA ABBREVIATA "BRAZZALE S.P.A. | Monte Di Malo | VIA GIOVANNI XXIII 2, MONTE DI MALO (VI) | `UE IT 05 13` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-APR-16 |
-| SOSTER S.R.L. | Monteviale | VIA DELLA ROVERELLA 1, MONTEVIALE (VI) | `UE IT 05 364` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 29-JAN-25 |
-| IFEX GROUP S.R.L. | Monticello Conte Otto | VIA DEL LAVORO 8, MONTICELLO CONTE OTTO (VI) | `UE IT 9 114 L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-FEB-25 |
-| CASEIFICIO ALBIERO S.R.L. | Montorso Vicentino | VIA PONTE COCCO 10, MONTORSO VICENTINO (VI) | `UE IT 05 25` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 19-SEP-17 |
-| SOCIETA' COOPERATIVA AGRICOLA PRODUTTORI LATTE DI NOGAROLE VICENT INO | Nogarole Vicentino | PIAZZA GUGLIELMO MARCONI 13, NOGAROLE VICENTINO (VI) | `UE IT 05 27` | vacuno menos de 60 d/más de 60 d | 06-NOV-20 |
-| CASEIFICIO DI POSINA SOCIETA' COOPERATIVA AGRICOLA | Posina | VIA MACELLO 1, POSINA (VI) | `UE IT 05 61` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-SEP-22 |
-| MALGA SOCIALE MONTE ASOLONE - SOCIETA' COOPERATIVA AGRICOLA | Pove Del Grappa | VIA VAL DELLA GIARA 108, POVE DEL GRAPPA (VI) | `UE IT 05 404` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-JUN-26 |
-| CASEIFICIO SOCIALE CASONA DI POZZOLEONE - SOCIETA' COOPERATIVA AG RICOLA | Pozzoleone | VIA CASONA 13, POZZOLEONE (VI) | `UE IT 05 72` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-JUL-22 |
-| CASEIFICIO CASTELLAN URBANO S.A.S. DI BORDIGNON ARMIDA & C. IN SIGLA "CASEIFICIO CASTELLAN URBANO S. | Rosà | VIA GIOTTO 24, ROSÀ (VI) | `UE IT 05 118` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-MAR-18 |
-| LATTEBUSCHE - LATTERIA DELLA VALLATA FELTRINA - SOCIETA' COOPERAT IVA AGRICOLA - CON SIGLA LATTEBUSC | Sandrigo | VIA CHIZZALUNGA 1, SANDRIGO (VI) | `UE IT 05 88` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-AUG-25 |
-| CASEIFICIO DEL COLLE S.N.C. DI COLOMBARA ONESTO & F.LLI | Sovizzo | VIA SANTA MARIA ANNUNZIATA 6, SOVIZZO (VI) | `UE IT 05 334` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 30-JAN-20 |
-| CASEIFICIO SAN ROCCO SOC. COOPERATIVA AGRICOLA | Tezze Sul Brenta | VIA VIA TRE CASE 235, TEZZE SUL BRENTA (VI) | `UE IT 05 45` | vacuno menos de 60 d/más de 60 d | 27-AUG-24 |
-| LATTERIA SOCIALE DI TRISSINO SOCIETA' COOPERATIVA AGRICOLA | Trissino | VIA BATTISTI 34 , TRISSINO (VI) | `UE IT 05 74` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-OCT-08 |
-| GUGLIELMI CLAUDIO S.R.L. | Valdastico | VIA CAVALLARA 14/B, VALDASTICO (VI) | `UE IT D3X4L` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-APR-26 |
-| MEGA S.R.L. | Villaverla | VIA S. ANTONIO 22, VILLAVERLA (VI) | `UE IT U4L9F` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-JUN-22 |
-| BRAZZALE SOCIETA' PER AZIONI IN FORMA ABBREVIATA "BRAZZALE S.P.A. | Zanè | VIA PASUBIO 2, ZANÈ (VI) | `UE IT 05 97` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 10-FEB-22 |
-| FATTORIA VALDASTICO SOCIETA' AGRICOLA SEMPLICE | Zanè | VIA BUSIN, 28 , ZANÈ (VI) | `UE IT H7Y0T` | vacuno menos de 60 d/más de 60 d | 08-JUL-13 |
+Quedan cuatro establecimientos en retención. La autorización sanitaria por sí sola no permite publicar una marca o una oferta propia activa.
+
+| Candidato retenido | Comune | Dirección de la unidad | Motivo pendiente |
+|---|---|---|---|
+| DI MARTINO S.R.L. | Altavilla Vicentina | VIA PIAVE 10 | No se localizó marca, contacto o producto público atribuible a la planta. |
+| STEFANI FORMAGGI S.A.S. DI STEFANI LUCIO & C. | Dueville | VIA IV NOVEMBRE 35 | La sociedad y la autorización siguen visibles, pero no una gama propia actual. |
+| SCORZATO FABIO | Malo | VIA MONTE PALAZZO 25 | Sin identidad comercial, contacto o producto concreto fuera del registro sanitario. |
+| MEGA S.R.L. | Villaverla | VIA S. ANTONIO 22 | La planta figura autorizada y en el consorcio, pero no se encontró una oferta propia pública actual. |
 
 ## Productores de queso — contraste Grana Padano DOP del 2026-08-11
 

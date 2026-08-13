@@ -1,5 +1,11 @@
 # Candidatos — Nuoro
 
+## Cierre editorial del 2026-08-13
+
+El padrón del Consorzio per la Tutela del Pecorino Sardo DOP deja cuatro caseifici en el territorio actual de Nuoro: LA.CE.SA., Dorgali Pastori, Fattorie Gennargentu y la planta Auricchio de Macomer. Los cuatro ya se publicaron con su unidad productiva y sus contactos; las otras 64 autorizaciones sanitarias quedan retenidas porque no se pudo unir con igual solidez identidad pública, unidad y oferta propia vigente.
+
+También se publicó Birrificio Trulla. El consorcio cervecero lo mantiene en su roster de 2026 y el directorio sectorial actualizado documenta la nueva sede de Nuoro desde 2025, el contacto y tres cervezas en producción. Con ello quedan cerradas la cola quesera y la revisión de categorías poco representadas de esta área.
+
 Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |

@@ -24,10 +24,4 @@ Investigación ecológica del 2026-08-08, revisada el 2026-08-12. De los 20 oper
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Siete establecimientos se contrastaron e incorporaron al CSV. Tres unidades autorizadas permanecen retenidas porque el registro sanitario acredita la planta, pero no se encontró una oferta comercial pública actual que permita publicar identidad y productos útiles. Corte: 2026-08-11.
-
-| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
-|---|---|---|---|---|
-| PANZARELLA FRANCESCO | Francavilla Angitola | CONTRADA FRA GIUSEPPE SNC | `UE IT 18 27` | No se localizó marca, contacto ni oferta quesera pública actual. |
-| CORSARO FRANCESCO | Joppolo | C.DA CALCATERRA, FRAZ. CARONITI | `UE IT 18 202` | Solo consta la autorización sanitaria histórica, sin identidad comercial actual atribuible. |
-| MILESIA LAT SAS | Mileto | VIA EPISCOPIO, FONDO GALASSO | `UE IT 18 144` | No se encontró catálogo, contacto o marca pública vigente de la planta. |
+Diez establecimientos se contrastaron e incorporaron al CSV; lote cerrado el 2026-08-13. Caseificio La Collina se reconcilió con la denominación sanitaria y la empresa actual de Francesco Panzarella. Corsaro Francesco y Milesia Lat se publicaron como `parcial`: las fuentes actuales permiten fijar identidad, actividad, planta y familia de leche, pero no justifican inventar una gama, contacto o canal de venta más específico.

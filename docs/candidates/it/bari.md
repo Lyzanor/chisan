@@ -1,5 +1,11 @@
 # Candidatos — Bari
 
+## Cierre de la cola quesera del 2026-08-13
+
+Se revisaron las 184 autorizaciones sanitarias. Se publicaron 11 caseifici cuya identidad pública, unidad productiva y oferta propia actual quedaron confirmadas: Artigiana, Gioiella/Capurso, Deliziosa, Palazzo/Murgella, Nettis, Milano, Sette Colli, La Gioia Bella, Vivolat, Zoelat y Paradiso. El consorcio de la Mozzarella di Gioia del Colle DOP identifica expresamente a sus cinco fundadores, pero no publica el padrón nominal completo de las 45 empresas certificadas; por eso no se atribuyó esa DOP a otros candidatos por proximidad o plausibilidad.
+
+Las 173 autorizaciones restantes se conservan en esta nota tras la revisión: el registro sanitario demuestra capacidad para fabricar queso, pero no basta para establecer una marca pública, una oferta propia actual o la relación exacta entre titulares con varias plantas. Queda cerrada la cola sin promover instalaciones por inferencia.
+
 Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |

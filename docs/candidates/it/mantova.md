@@ -85,6 +85,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Cierre editorial del lote quesero — 2026-08-13
+
+Las 61 unidades sanitarias quedaron reconciliadas por unidad productiva. Se publicaron 44 fichas: 19 plantas vigentes del directorio de Parmigiano Reggiano DOP y 25 plantas vigentes del consorcio Grana Padano DOP, incluidas por separado las cinco unidades de Latteria Sociale Mantova. Las 17 restantes permanecen como leads porque la autorización para fabricar queso no se pudo completar con una identidad pública y una oferta propia actual inequívocas. Società Agricola F.lli De Cao se publicó además desde el contraste Grana Padano, pero no descuenta este lote porque no figuraba en el barrido sanitario inicial.
+
+Las explotaciones mixtas Cascina Sguazzarina y Corte Strale no se publicaron como queserías: la primera fuente enumera ganado pero atribuye como elaboraciones aceto, agrodolce y grappa; la segunda declara que entrega la leche a una cooperativa. En ninguno de los dos casos se infiere queso propio. Las dos plantas de Società Agricola Fienilnuovo permanecen separadas en la reconciliación: la ficha publicada corresponde a la unidad consorcial de Gonzaga y la autorización de Motteggiana sigue retenida al no mostrar una oferta pública diferenciada.
+
 61 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
@@ -156,10 +162,6 @@ El [directorio oficial de caseifici](https://www.parmigianoreggiano.com/it/casei
 
 ## Productores de queso — contraste Grana Padano DOP del 2026-08-11
 
-El [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) aporta una identidad productora no localizada en el barrido sanitario:
-
-| Candidato | Comune | Dirección productiva | Matrícula Grana Padano | Nota de contraste |
-|---|---|---|---|---|
-| Società Agricola F.lli De Cao S.S. | Borgo Virgilio, loc. Romanore | Via Brasiglia 325, Romanore di Borgo Virgilio (MN) | `MN407` | La ficha consorcial la describe como pequeña quesería de producción propia; falta reconciliar su autorización sanitaria. |
+El [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) aportó una identidad productora no localizada en el barrido sanitario. Società Agricola F.lli De Cao S.S. se reconcilió y publicó el 2026-08-13: la matrícula consorcial, la identidad activa, la quesería de empresa y el spaccio de Via Brasiglia 325 coinciden, y la oferta pública actual atribuye Grana Padano y salumi propios a la misma unidad.
 
 Las demás matrículas provinciales quedan representadas, incluidas las cinco plantas de Latteria Sociale Mantova (`MN412`, `MN427`, `MN437`, `MN448`, `MN473`), la planta de Fattorie Cremona en Viadana (`MN405`) y Caseificio Bagnolese en Casalromano (`MN481`).

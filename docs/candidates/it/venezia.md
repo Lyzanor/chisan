@@ -24,9 +24,4 @@ Revisión cerrada el 2026-08-12 para el lote abierto el 2026-08-08. Se incorpora
 
 ## Productores de queso retenidos
 
-Dos unidades del barrido sanitario nacional del 2026-08-11 siguen abiertas. Gabbiano carece de una oferta pública actual identificable. Food Idea/Cocai requiere reconciliar territorio: la ficha sanitaria actualizada el 2026-07-30 sitúa una planta en Pianiga, pero la web oficial declara la sede productiva en Piombino Dese (Padova).
-
-| Candidato declarado | Comune | Dirección de la unidad | Motivo pendiente |
-|---|---|---|---|
-| Gabbiano S.N.C. di Marchesan A. & C. | Caorle | Piazza Pio X 4, Caorle VE | La autorización sanitaria histórica enumera quesos, pero no aparece marca, actividad comercial actual ni oferta atribuible. |
-| Food Idea SRL | Pianiga | Via Friuli Venezia Giulia 61, Pianiga VE | Conflicto entre la planta sanitaria de Pianiga y la sede productiva oficial declarada en Piombino Dese; no publicar hasta identificar la unidad que realmente elabora. |
+Lote cerrado el 2026-08-13. Gabbiano se publicó como fabricante parcial de helados, que es su actividad empresarial atribuible, no como quesería. Food Idea/Cocai se reasignó a Padova: su web y autorización identifican Piombino Dese como planta productiva actual, mientras una fuente de 2025 describe Pianiga como un polo futuro en desarrollo.

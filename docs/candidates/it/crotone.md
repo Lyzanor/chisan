@@ -52,11 +52,4 @@ Investigación del 2026-08-08, revisada el 2026-08-12. Estos 20 operadores tiene
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote revisado el 2026-08-12: diez unidades se publicaron al poder conectar la planta con una identidad y oferta propias actuales. Permanecen cuatro retenciones. El antiguo establecimiento Chiellino de Papanice no tiene una identidad pública separable de la actual Casearia Crotonese de Poggio Pudano; I.M.C. Digit y Company Food carecen de marca y oferta pública contrastables; y APOCC solo aparece como planta en material técnico antiguo, sin un catálogo público actual atribuible.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| CASEIFICIO CHIELLINO DI CHIELLINO SALVATORE ANTONIO & C: S.N.C. | Crotone | VIA VIA VOLTA PAPANICE 17, CROTONE (KR) | `UE IT 18 176` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 05-JUN-14 |
-| I.M.C. DIGIT. S.R.L. | Crotone | VIA G. DONEGANI - LOC. PASSOVECCHIO SNC, CROTONE (KR) | `UE IT 18 68` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 15-OCT-19 |
-| A.P.O.C.C. - ASSOCIAZIONE PRODUTTORI OVINI E CAPRINI DELLA CALABRIA - SOCIETA' COOPERATIVA | Cutro | VIA VIA ROSITO C.DA TORRE SNC, CUTRO (KR) | `UE IT W4M6C` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 04-JAN-17 |
-| COMPANY FOOD SOCIETA' A RESPONSABILITA' LIMITATA SEMPLIFICATA | Cutro | VIA FONTANA SNC, CUTRO (KR) | `UE IT L7Z9V` | caprino menos de 60 d, ovino menos de 60 d | 03-MAR-20 |
+Lote cerrado el 2026-08-13. La planta antigua de Chiellino en Papanice se reconcilió con la Casearia Crotonese ya publicada en su identidad y unidad actuales de Poggio Pudano. A.P.O.C.C. se publicó tras confirmar su presencia en el registro sanitario actualizado el 24-07-2026 y actividad transformadora reciente. I.M.C. Digit y Company Food se descartaron: sus autorizaciones históricas ya no aparecen en el listado sanitario vigente y no se encontró una oferta alimentaria pública actual atribuible.

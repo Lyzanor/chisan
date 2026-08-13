@@ -266,3 +266,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Productores de queso — contraste Grana Padano DOP del 2026-08-11
 
 Las cuatro identidades de Bergamo del [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) quedaron reconciliadas con candidatos existentes. `BG506` Caseificio Torre Pallavicina corresponde al candidato sanitario Consorzio Cooperativo Produttori Latte Torre Pallavicina; no se duplica.
+
+### Cierre de la cola quesera del 2026-08-13
+
+Se publicaron como unidades productivas independientes las cuatro plantas de Bergamo que el Consorzio Tutela Grana Padano mantiene en su padrón de productores (`BG506`–`BG509`). Cada perfil aporta matrícula, identidad productiva, dirección, contacto y coordenadas; Caseificio Torre Pallavicina conserva la identidad pública del consorcio sin duplicar su razón sanitaria. También se añadieron los siete alpeggi bergamascos que el Consorzio Valtellina Casera e Bitto identifica como unidades productoras de Bitto DOP, conservando cada ubicación estacional por separado. Las autorizaciones sanitarias que no se vincularon a estas identidades públicas se mantienen en esta nota: acreditan capacidad para elaborar queso, pero no una marca pública y una oferta propia actual suficientemente contrastadas. Queda cerrada esta cola sin promover instalaciones por la sola autorización.

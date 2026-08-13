@@ -64,10 +64,6 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Pescarolo del Molino Miradolo | Robbio | `Lácteos y quesos` + `Carne` + `Miel` | Azienda ad indirizzo cerealicolo, ortofrutticolo, con ulivi e vitigni; allevamento di caprini e avicoli . Produzione di salami d’oca crudi e cotti e salami “d’la duja” . Apicoltura. | 0384.671146<br>fulvio@fulviopescarolo.it<br>[web](http://www.fulviopescarolo.it.) |
 | La Sorgente | Varzi | `Lácteos y quesos` + `Condimentos` + `Huevos` | L’azienda alleva avicoli, conigli e caprini. Coltiva verdura, legumi, spezie e frutta. | 0383.53295, 333.8092944<br>info@lasorgenteagriturismo.it<br>[web](http://www.lasorgenteagriturismo.it) |
 
-## Productores de queso — caso todavía sin resolver
+## Productores de queso — lote cerrado el 2026-08-13
 
-El barrido sanitario del 2026-08-11 quedó revisado el 2026-08-12. Se publicaron las unidades con identidad y oferta productora contrastables y se documentaron los descartes en el ledger de evidencia. Solo queda retenido este caso porque la autorización sanitaria no permite identificar una marca u oferta pública concreta:
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Motivo de retención |
-|---|---|---|---|---|
-| YEP SRL | Pavia | Via Mario Ponzio 7 | `UE IT S261Q` | La sociedad figura activa en producción de derivados lácteos, pero no aparece una identidad comercial, catálogo ni fuente pública que permita saber qué producto propio ofrece actualmente. |
+El barrido sanitario del 2026-08-11 queda cerrado. Las unidades con identidad y oferta productora contrastables se publicaron y los descartes quedaron documentados en el ledger de evidencia. La última retención, YEP Srl, se reconcilió con su identidad pública Caseificio Corte Bianca: la web propia declara la misma razón social y dirección y confirma producción diaria de mozzarella y venta en el spaccio aziendale.

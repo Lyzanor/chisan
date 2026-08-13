@@ -43,15 +43,11 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote contrastado el 2026-08-12. Se publicaron seis unidades cuya identidad pública, producción propia y comune quedaron suficientemente acreditados: Caseificio Mancuso, Caseificio Brizzi, Caseificio Corapi, A.B.Z. Tenuta Arpa, RO.VI.LAT y Dedoni. Permanecen 22 candidatos con una carencia editorial concreta; el registro sanitario confirma la autorización, pero no sustituye la oferta pública propia ni resuelve discrepancias de unidad.
+Lote contrastado de nuevo el 2026-08-13. A las seis altas iniciales se añadieron Caseificio Sila, Caseificio MC — Azienda Agricola Mancuso Carmine, La Pastaiola e Il Casaro, Caseificio Cortese, Valle Amato y Caseificio San Vito Latte. Valle Amato se asignó a Amato porque su web oficial identifica allí la unidad productiva y el spaccio, sin forzar la dirección sanitaria provisional de Marcellinara. Permanecen 16 candidatos con una carencia editorial concreta; el registro sanitario confirma la autorización, pero no sustituye la oferta pública propia ni resuelve discrepancias de unidad.
 
 | Candidato retenido | Comune provisional | Motivo pendiente |
 |---|---|---|
-| MANCUSO CARMINE | Carlopoli | No se localizó marca pública ni oferta propia de queso vinculada a la unidad de Contrada Lustra. |
-| CASEIFICIO SILA SRL | Catanzaro | Solo se confirmó la sociedad y la autorización; falta catálogo o presencia pública actual del productor. |
 | CASEIFICIO BUONAPARTE | Catanzaro | La sociedad aparece activa, pero no se encontró oferta propia actual ni canal público atribuible al caseificio. |
-| FABIANO SILVANA / La Pastaiola e Il Casaro | Chiaravalle Centrale | Hay actividad empresarial y contacto, pero falta una fuente actual que documente productos propios concretos. |
-| FIUMARA FRANCESCO / Caseificio Cortese | Chiaravalle Centrale | Se reconcilió el nombre comercial, pero no una oferta pública actual de productos propios. |
 | IL LATTAIO DI VONO ANTONIO | Chiaravalle Centrale | No se encontró identidad pública actual ni catálogo propio vinculable a Località Furna. |
 | I.L.C.A. di Anna Lagani | Davoli | La empresa y el dominio existen, pero el sitio no ofreció contenido verificable sobre productos propios actuales. |
 | VALENTINO ANGELA | Girifalco | Fuentes públicas confirman el caseificio en Località Girello, pero no su oferta propia actual ni contacto comercial. |
@@ -59,10 +55,8 @@ Lote contrastado el 2026-08-12. Se publicaron seis unidades cuya identidad públ
 | CASEIFICIO PAZZONE | Isca sullo Ionio | No se localizó presencia pública actual que pruebe marca y productos propios. |
 | CASEIFICIO SAN GIOVANNI | Lamezia Terme | No se encontró catálogo, web o presencia comercial actual atribuible a la unidad autorizada. |
 | DE FAZIO GIUSEPPE / Fior di Calabria | Lamezia Terme | Los directorios encontrados no bastan para acreditar actividad y oferta propia actuales. |
-| CASEIFICIO VALLE AMATO | Marcellinara | La unidad sanitaria figura en Marcellinara, mientras las fuentes actuales sitúan la actividad en Amato; falta reconciliar la planta. |
 | AGRIFOR DI VONO VINCENZO | Montepaone | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
 | PROCOPIO SALVATORE | Olivadi | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
-| CASEIFICIO SAN VITO LATTE | Petrizzi | La sociedad está activa, pero las fuentes empresariales no acreditan una oferta pública propia concreta. |
 | CASEIFICIO PICCOLA SILA | Petronà | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
 | VITALAT | San Sostene | No se encontró identidad pública actual ni oferta propia vinculada a la unidad. |
 | SGOTTO MAURIZIO | San Vito sullo Ionio | No se encontró identidad pública actual ni oferta propia vinculada a la unidad de Via F. Spasari. |

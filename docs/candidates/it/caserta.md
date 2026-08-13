@@ -1,5 +1,9 @@
 # Candidatos — Caserta
 
+## Cierre de la cola quesera del 2026-08-13
+
+Se publicaron las 42 plantas activas de Caserta que la mappa soci del Consorzio di Tutela Mozzarella di Bufala Campana DOP clasifica como `caseificio` o `caseificio con allevamento`. La fuente aporta identidad, autorización DOP cuando se muestra, dirección, contacto, ubicación y servicios; el canal `ecommerce` solo se marcó cuando el propio padrón lo declara. Las dos plantas de Fattorie Garofalo se mantienen separadas por tener identificadores y direcciones productivas distintas. Las autorizaciones sanitarias que no pudieron vincularse a este padrón quedan retenidas: no se publican por capacidad fabril sin identidad y oferta pública actuales.
+
 Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |

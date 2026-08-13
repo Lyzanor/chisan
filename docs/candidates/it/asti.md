@@ -16,15 +16,7 @@ Lote ecológico revisado el 2026-08-12. Ocho operadores se publicaron en Asti tr
 | Iania Sabrina / La Tomatica in Commedia | Mongardino | La actividad pública localizable es de alojamiento; no se pudo probar una oferta agrícola propia concreta separada del agriturismo. |
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote contrastado el 2026-08-12. Se publicaron quince de las veinte unidades sanitarias: Capre e Cavoli, Caseificio Balzi, Caseificio Pepe 1924, Azienda Agricola C. Bianca, I Formaggi di Moasca, Azienda Agricola Stutz, Cascina Valeggia, I Formaggi di Bianchina, Traversa Wilma, Abrile Giuseppe, Azienda Agricola Amaltea, Buttiero & Dotta, La Masca, Musolino Giuseppa y Agrilanga. Cascina Valeggia queda `parcial` porque la dirección productiva autorizada no coincide con el punto público de agriturismo y venta; las otras catorce se publicaron `verificado`.
-
-| Candidato retenido | Comune | Dirección de la unidad | Autorización | Motivo de retención |
-|---|---|---|---|---|
-| GHIONE ENRICA FRANCA | Roccaverano | Località Picollo Boglioli 11 | `UE IT 01 621` | La autorización continúa publicada, pero ya no figura entre los elaboradores del consorcio vigente y no se localizó una oferta propia actual. |
-| ROSSELLO ENRICO | Roccaverano | Regione Ceretta Tatorba 30 | `UE IT 01 500` | Figura en directorios locales históricos, pero no en el consorcio actual y no apareció un catálogo o contacto público reciente atribuible. |
-| FERRERO BRUNO | Serole | Via Rocchino 28 | `UE IT 01 460` | Solo se corroboraron la autorización y la identidad registral; no una oferta pública actual de queso. |
-| FERRERO LORENZA | Serole | Regione Rocchino 28 Bis | `UE IT G8B47` | La actividad agrícola sigue siendo localizable, pero no se pudo atribuir marca, contacto ni quesos actuales. |
-| AZIENDA AGRICOLA MOLINO DI MOLINO PIERO | Valfenera | Strada Valmaggiore 2 | `UE IT 01 840` | La explotación lechera está activa, pero la única referencia a su antigua marca quesera es histórica y no prueba una oferta propia actual. |
+Lote cerrado el 2026-08-13. Las veinte unidades sanitarias quedaron reconciliadas y publicadas. Ghione Enrica Franca sigue figurando en el repertorio público de Roccaverano; Rossello Enrico conserva una ficha quesera actual; Bruno y Lorenza Ferrero mantienen actividad casearia documentada; y Azienda Agricola Molino continúa operando públicamente como Agrilatteria del Pianalto, con tienda, contacto y catálogo. Los cuatro productores con información pública limitada se publicaron `parcial`; Agrilatteria del Pianalto, con ubicación y canal propios completos, se publicó `verificado`.
 
 ## Roccaverano DOP — barrido del consorcio del 2026-08-11
 

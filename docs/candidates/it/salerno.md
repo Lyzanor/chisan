@@ -1,5 +1,9 @@
 # Candidatos — Salerno
 
+## Cierre de la cola quesera del 2026-08-13
+
+Se publicaron las 29 plantas activas de Salerno que la mappa soci del Consorzio di Tutela Mozzarella di Bufala Campana DOP clasifica como caseifici. Cada ficha conserva dirección, contacto, ubicación, autorización DOP cuando se muestra y los servicios declarados; `Venta online=sí` se usó solo para los miembros cuyo registro consorcial marca `e_commerce`. Las autorizaciones sanitarias no reconciliadas con el padrón permanecen en esta nota, sin inferir de ellas una marca pública ni una oferta propia vigente.
+
 Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
 
 | Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |

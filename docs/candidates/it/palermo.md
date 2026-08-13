@@ -26,6 +26,12 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Cierre editorial del lote — 2026-08-13
+
+Las 65 unidades sanitarias quedaron contrastadas. Se publicaron 18 fichas que representan 19 unidades: las dos autorizaciones de Caseificio di Biddeci Nicola en la misma Contrada Conigliera se consolidan bajo su identidad pública Caseificio San Nicola. Las otras 46 unidades se retienen porque no apareció una oferta propia actual atribuible con suficiente seguridad o porque la actividad pública corresponde principalmente a distribución, pastelería o ingredientes. No hubo exclusiones definitivas.
+
+Se evitó atribuir `caseificiolamadonnina.it` al establecimiento de Lascari: ese dominio pertenece al homónimo de Salsomaggiore Terme, Parma. La ficha siciliana se apoya solo en su autorización y en la actividad pública reciente del punto de producción. Formaggi Sgroi queda retenida: aunque su planta conserva autorización láctea, las fuentes actuales identifican sobre todo un mayorista y operador de supermercados, sin gama propia de quesos trazable. Falcone S.r.l., Industria Dolciaria Carollo, Elenka e Il Croissant también se retienen porque la habilitación sanitaria no convierte su actividad pública de pastelería o ingredientes en una oferta quesera propia.
+
 65 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

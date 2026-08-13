@@ -24,12 +24,10 @@ Todos conservan certificado `ISSUED` en [TRACES NT](https://webgate.ec.europa.eu
 
 ## Autorizaciones queseras pendientes
 
-La fuente de apertura es el [registro sanitario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Las autorizaciones siguen vigentes, pero no bastan para publicar sin una identidad y una oferta propias contrastables.
+La fuente de apertura es el [registro sanitario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Gaino Luca se reconcilió el 2026-08-13 con Cascina Aliata mediante la coincidencia de titular y Località Alliata 1; se corrigió la ficha existente, que había mezclado erróneamente la dirección y el contacto de la explotación distinta de Simona Garrone con la web de Gaino. Cascina La Vetriata también se publicó tras localizar su minicaseificio caprino, productos y contacto actuales. Las otras autorizaciones siguen vigentes, pero no bastan para publicar sin una identidad y una oferta propias contrastables.
 
 | Operador | Comune | Unidad autorizada | Motivo concreto de retención |
 |---|---|---|---|
-| Gaino Luca | Cartosio | Via Alliata 1 — `UE IT J3W0M` | No se encontró identidad pública actual ni queso ofrecido bajo una marca atribuible. |
-| Cascina Vetriata di Nicoletti Roberto Virginio | Casale Monferrato | Strada Pontestura 44 — `UE IT L2T3Y` | Solo aparece la explotación en registros; falta una oferta quesera pública actual. |
 | Erbi Roberta | Malvicino | Località Gelati 5 — `UE IT N2E2B` | No se pudo localizar una identidad comercial o producto concreto vigente. |
 | Bozzo Poggio Stefania | Oviglio | Cascina Rossi — `UE IT M2J92` | Se confirma la explotación bovina, pero no una línea propia de queso ofrecida al público. |
 | Mignone Arturo | Ponzone | Frazione Cimaferle 79 — `UE IT 01 294` | No se encontró una oferta quesera pública actual que complete la autorización sanitaria. |

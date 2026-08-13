@@ -40,13 +40,10 @@ Barrido ecológico revisado el 2026-08-12. Se publicaron Azienda Agricola Agnesi
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-6 unidades productivas siguen pendientes de una identidad pública y una oferta quesera actuales. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). Se publicaron Caseificio Arnone, Caseificio Storico Ficarra y Caseificio Gadduzzo después de reconciliar sus unidades sanitarias con fuentes públicas recientes. El Cammarata Luca de este lote no es la homónima Azienda Agricola Biologica Luca Cammarata: difieren la dirección productiva y la identificación fiscal, por lo que no se fusionan. Centro Latte Sicilia conserva una unidad recién autorizada, pero aún no publica una oferta quesera propia; Cusenza, Rizza, LA.BA. y Fardella tampoco ofrecen una identidad comercial y una gama actuales suficientemente atribuibles. Corte revisado: 2026-08-11.
+El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y se volvió a conciliar el 2026-08-13. A las tres altas iniciales se sumaron Cammarata Luca–Pescazzo, Centro Latte Sicilia, Caseificio Cusenza, Caseificio Rizza y Piccolo Caseificio Fardella tras confirmar la continuidad de cada unidad o de su explotación. El Cammarata Luca de este lote no es la homónima Azienda Agricola Biologica Luca Cammarata: difieren la dirección productiva y la identificación fiscal, por lo que no se fusionan.
+
+Solo queda retenida LA.BA. S.R.L. en Gela: la autorización histórica no se ha podido reconciliar con una identidad alimentaria, producto o actividad empresarial públicos y actuales.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
-| CAMMARATA LUCA | Caltanissetta | CONTRADA PESCAZZO - SAN LEONARDO sn, CALTANISSETTA (CL) | `UE IT P5W6K` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JUL-15 |
-| CENTRO LATTE SICILIA S.R.L. | Caltanissetta | VIA MANFREDI CHIARAMONTE - ZONA IND. 1, CALTANISSETTA (CL) | `UE IT 19 42` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-JAN-26 |
-| CUSENZA LUIGI | Caltanissetta | C/DA SAN MARTINO , CALTANISSETTA (CL) | `UE IT 19 181` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| RIZZA GIUSEPPE | Caltanissetta | VIALE L. MONACO, 46, CALTANISSETTA (CL) | `UE IT 19 811` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 14-JUN-19 |
 | LA.BA.S.R.L. | Gela | ZONA INDUSTRIALE II STRADA , GELA (CL) | `UE IT 19 195` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
-| PICCOLO CASEIFICIO FARDELLA DI FARDELLA CLEMENTE | Mazzarino | CONTRADA FALATANO , MAZZARINO (CL) | `UE IT 19 799` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |

@@ -26,9 +26,4 @@ Lote ecológico revisado entre el 8 y el 12 de agosto de 2026 a partir del [dire
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-2 unidades productivas revisadas y retenidas, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y reasignadas por comune mediante la [clasificación territorial ISTAT vigente desde 2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). El lote se limita a establecimientos `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. Caseificio Peru, la planta Sardaformaggi de Buddusò, Columbu Formaggi, Tia Juanna y Pastori Oschiresi se aceptaron y pasaron al CSV con evidencia. Contini Costantina solo conserva una identidad registral y Careddu Liliana no tiene una oferta pública actual localizable más allá de directorios institucionales antiguos; ambas permanecen retenidas. Corte: 2026-08-11.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| CONTINI COSTANTINA | Olbia | LOCALITÀ S'ENA DE SA PIRA , OLBIA (SS) | `UE IT L7N4X` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-09 |
-| CAREDDU LILIANA | Padru | VIA NAZIONI UNITE, 9 , PADRU (SS) | `UE IT 20 114` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+Lote cerrado el 2026-08-13. Caseificio Peru, la planta Sardaformaggi de Buddusò, Columbu Formaggi, Tia Juanna y Pastori Oschiresi quedaron verificados. S'ena de Sa Pira/Caseificio Verde Oro y Careddu Liliana también pasaron al CSV, pero como `parcial`: la autorización sanitaria es actual y sus productos están individualizados, aunque la corroboración pública no es enteramente de primera parte o reciente.

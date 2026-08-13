@@ -64,6 +64,14 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
+### Revisión cerrada — 2026-08-13
+
+Se contrastaron las 53 unidades del corte y se publicaron seis identidades con enlace inequívoco entre unidad autorizada, actividad actual y oferta propia: Caseificio Giurdanella, Iblealat/Fattorie Iblee, Azienda Agricola Tumino, Occhipinti/Latticini di Fattoria, Ragusa Latte/Natura & Qualità y Progetto Natura. Occhipinti queda con `Venta online=sí` porque su tienda propia muestra catálogo, precios y compra; las otras cinco fichas quedan `parcial` y `no comprobado`.
+
+Se rechazó **LE MUCCHE DEL NONNO DI OCCHIPINTI MARIO & C.**: el decreto regional DDS 1141 recoge la solicitud de cese y revoca expresamente la autorización CE IT M952C. También se aclaró que la baja de Occhipinti Giuseppe como primer comprador de leche en 2025 no equivale al cese de su caseificio: la unidad sigue en el registro sanitario, su tienda está activa y el Consorzio del Ragusano DOP lo identifica como productor y presidente en 2025-2026.
+
+Las otras 46 unidades se retienen. El registro sanitario acredita capacidad productiva, pero no se localizó una identidad comercial actual suficientemente distintiva con oferta propia para cada titular. La pertenencia de familiares o personas homónimas al consorcio no se usó para fusionar unidades; por eso Lissandrello, Criscione, Dipasquale y las numerosas explotaciones Tumino u Occhipinti sin enlace público exacto permanecen sin publicar. Tampoco se confundieron la Casa del Formaggio/Dipasquale —actividad de selección y afinado— con las unidades productivas Dipasquale del corte. El listado bruto queda debajo como fotografía reproducible, no como cola pendiente.
+
 53 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |

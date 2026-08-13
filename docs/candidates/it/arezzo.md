@@ -71,13 +71,7 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote revisado el 2026-08-12. Se publicaron once unidades nuevas: Cooperativa Agricola Montemercole, Caseificio Muzzarè, Fattoria La Vialla, Gelnova, Toscobosco, Azienda Agricola Le Fabbrie, Boscovivo Tartufi, Caseificio Matteassi Onelio, Fattoria di Rimaggio, Caseificio di Talla — Pratomagno y Azienda Agricola Ascione. Gelnova se clasificó por su actividad pública real como fabricante de helados, no como quesería. Crocini y Rossi se descartaron con evidencia porque su identidad pública actual es la distribución mayorista de productos ajenos, sin una oferta propia atribuible. Quedan tres expedientes en retención porque la autorización sanitaria no basta para establecer una marca y oferta comercial actuales.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| SABATTI ROBERTO | Castel Focognano | VIA CASTELLO 18, CASTEL FOCOGNANO (AR) | `UE IT F3C6D` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-JUN-24 |
-| MAMELI ELISA | Cortona | LOCALITA' CHIANACCE 145, CORTONA (AR) | `UE IT 09 509` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-SEP-16 |
-| FATTORIA DI BUCENA 1928 SRL SOCIETA' AGRICOLA O IN FORMA ABBREVIATA FDB 1928 SRL SOCIETA' AGRICOLA | Poppi | LOCALITA' BUCENA 1, POPPI (AR) | `UE IT T2H2E` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 18-MAR-24 |
+Lote cerrado el 2026-08-13. Se publicaron catorce unidades nuevas, incluida Caseificio Bucena tras localizar su web y catálogo actuales. Gelnova se clasificó por su actividad pública real como fabricante de helados, no como quesería. Crocini y Rossi se descartaron con evidencia porque su identidad pública actual es la distribución mayorista de productos ajenos, sin una oferta propia atribuible. Sabatti Roberto y Mameli Elisa se incorporaron como `parcial`: ambos tienen identidad y unidad láctea vigentes; para Mameli se conservó además el catálogo histórico explícito de pecorinos, sin inferir contacto o venta actual.
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene una planta en Arezzo, Caseificio Matteassi Onelio en Foiano della Chiana. Quedó reconciliada con la unidad sanitaria ya incluida en esta cola; no produjo candidatos nuevos.

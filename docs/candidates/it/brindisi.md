@@ -27,11 +27,10 @@ Los certificados `ISSUED` de [TRACES NT](https://webgate.ec.europa.eu/tracesnt/d
 
 ## Unidades queseras aún sin oferta pública atribuible
 
-El [registro del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) confirma que estas nueve plantas siguen autorizadas para fabricar queso, pero el contraste del 2026-08-12 no encontró una oferta actual suficiente para publicarlas.
+El [registro del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) confirma que estas plantas siguen autorizadas para fabricar queso. Mozzarito se publicó el 2026-08-13 al localizar la identidad comercial actual, la tienda de Via Roma 1 y un producto de marca reciente —fior di latte—; las ocho restantes continúan sin una oferta actual suficiente.
 
 | Titular / unidad | Comune | Autorización | Motivo de retención |
 |---|---|---|---|
-| Mozzarito S.r.l.s. | Ceglie Messapica | `UE IT C9G5R` | Empresa y planta actuales, sin marca de consumo, catálogo ni presentación pública inequívoca. |
 | Caseificio Semeraro S.r.l. | Fasano | `UE IT N4R10` | Se confirma actividad societaria y sanitaria, pero no una oferta propia pública que distinga esta unidad de otros Semeraro. |
 | Ivone Pasquale | Fasano | `UE IT C652P` | Solo se localizó la autorización sanitaria. |
 | Zaccaria Francesco | Fasano | `UE IT 16 132` | Empresa quesera y contacto registral, sin productos concretos ni identidad pública de productor. |

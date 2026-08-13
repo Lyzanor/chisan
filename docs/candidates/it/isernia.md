@@ -43,28 +43,16 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote contrastado el 2026-08-12. Se publicaron siete unidades con producción y oferta propia acreditadas: Biancometa, Caseificio Di Nucci, Caseificio Di Pasquo, La Matesina, Caseificio Pallotta, Caseificio Antonio Pulsone e Figli y Fonte Luna. Los 21 casos siguientes permanecen abiertos por una carencia concreta; la autorización sanitaria por sí sola no prueba una marca pública y una oferta actual.
+Lote contrastado el 2026-08-13. Se publicaron diecinueve unidades con producción y oferta propia acreditadas. En la segunda revisión se resolvieron y retiraron de la cola Caseificio Di Menna Alberto, Caseificio Di Pietro, Caseificio Artigianale Di Re Antonio, La Masseria di Rienzo, Cooperativa Agricola San Nicola, Caseificio Santo Stefano, Il Pastore Serafino, Caseificio La Roccolana, Caseificio Ianiro Enrico, Caseificio La Serenella, Azienda Agricola Costantini y Caseificio Erminio Perrella. Los nueve casos siguientes permanecen abiertos por una carencia concreta; la autorización sanitaria por sí sola no prueba una marca pública y una oferta actual.
 
 | Candidato retenido | Comune provisional | Motivo pendiente |
 |---|---|---|
-| DI MENNA ALBERTO | Agnone | No se localizó oferta pública actual vinculada a la unidad de Contrada Rigaini. |
-| DI PIETRO GIANLUCA | Agnone | No se localizó identidad pública ni oferta propia actual vinculada a Contrada Giammorotondo. |
 | S.S. CI.CA | Bagnoli del Trigno | No se encontró marca pública ni catálogo propio actual de la unidad autorizada. |
-| CASEIFICIO ARTIGIANALE DI RE ANTONIO | Cantalupo nel Sannio | Una feria reciente confirma actividad, pero falta catálogo propio o presencia directa con datos suficientes. |
 | DI MENNA ANTONELLA | Capracotta | No se encontró marca pública ni oferta propia actual vinculada a Contrada Macchia 9. |
-| DI RIENZO LUCIANO | Capracotta | No se encontró marca pública ni oferta propia actual vinculada a Contrada Macchia 2. |
-| COOPERATIVA AGRICOLA SAN NICOLA | Capracotta | No se localizó una presencia actual que documente productos propios y contacto público. |
-| CASEIFICIO S. STEFANO | Carovilli | Hay productos en un marketplace y presencia ferial, pero falta reconciliar la identidad legal, el contacto y la unidad productiva. |
-| IL PASTORE SERAFINO | Carovilli | No se localizó oferta pública actual vinculada a la unidad de Via Fontecianella. |
 | CASEIFICIO MOLISE | Carpinone | La actividad aparece en una feria reciente, pero falta una fuente directa con catálogo, contacto e identidad de marca suficientes. |
-| CASEIFICIO LA ROCCOLANA | Castelpetroso | Solo se encontraron directorios; falta oferta propia actual y reconciliar el titular Muccilli. |
 | CASEARIA CARRINO | Frosolone | Solo se confirmó la actividad por directorios y registro; falta catálogo o presencia pública propia actual. |
 | FATTORIA FONTE PAOLO | Frosolone | No se localizó una presencia pública actual que pruebe productos propios y contacto. |
-| IANIRO ENRICO | Frosolone | No se localizó identidad pública ni oferta propia actual vinculada a Via Collecarrise. |
 | O.S.I.P. | Frosolone | El titular no ofrece una identidad casearia pública reconciliable con la unidad de Colle Morello. |
 | PALANGIO LAURA | Frosolone | No se localizó identidad pública ni oferta propia actual vinculada a Via Fonte Murata. |
-| LA SERENELLA | Miranda | No se encontró una presencia directa actual que documente productos propios y contacto. |
-| AZIENDA AGRICOLA COSTANTINI | Rocchetta a Volturno | Hay productos actuales en marketplace, pero falta reconciliar la marca, el titular y la unidad productiva. |
 | VALENTE ALESSANDRO | Sesto Campano | No se localizó identidad pública ni oferta propia actual vinculada a Via Insorti d'Ungheria. |
 | LOMBARDI DONATO | Vastogirardi | La autorización es reciente, pero aún no se encontró marca pública ni oferta propia actual. |
-| CASEIFICIO ERMINIO PERRELLA | Venafro | La web de marca actual identifica a Tualat y una sede en Verona; falta demostrar su relación vigente con la planta de Venafro. |

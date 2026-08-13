@@ -20,8 +20,4 @@ Revisión del lote ecológico cerrada el 2026-08-12. Se publicaron Al Belvedere,
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote revisado el 2026-08-12. Se publicaron quince unidades: Caseificio Agordino, Dal Gregge Bortoluzzi, Latteria Agricola di Tisoi, Pastificio Menazza, Latteria di Frontin, Latteria di Lentiai, las plantas de Lattebusche en Busche y Comelico, Il Colle del Tiglio, Latteria di Livinallongo, Casa di Pasta — Sessantasei, Latteria di Sedico, Latteria di Camolino, Busa dei Sbrase y Bio Cansiglio. T.O.DO. y Sessantasei se clasificaron por su actividad pública real como fabricantes de pasta, no como queserías. La autorización sanitaria de Agostini Alberto no permite todavía atribuirle una marca, un catálogo y un canal público actuales, por lo que queda en retención.
-
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
-| AGOSTINI ALBERTO | Selva Di Cadore | VIA BACALIN 6, SELVA DI CADORE (BL) | `UE IT 05 402` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 09-JUL-19 |
+Lote cerrado el 2026-08-13. Se publicaron dieciséis unidades: Caseificio Agordino, Dal Gregge Bortoluzzi, Latteria Agricola di Tisoi, Pastificio Menazza, Latteria di Frontin, Latteria di Lentiai, las plantas de Lattebusche en Busche y Comelico, Il Colle del Tiglio, Latteria di Livinallongo, Casa di Pasta — Sessantasei, Latteria di Sedico, Latteria di Camolino, Busa dei Sbrase, Bio Cansiglio y Milchhof Agostini. T.O.DO. y Sessantasei se clasificaron por su actividad pública real como fabricantes de pasta, no como queserías. Milchhof Agostini se incorporó al localizar señales públicas vigentes de la explotación, el punto de venta y su gama propia.

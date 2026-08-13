@@ -56,10 +56,4 @@ Estas pistas no tienen una web pública útil, presentan un dominio roto/ajeno, 
 
 ## Productores de queso — pendientes sanitarios
 
-El registro sanitario acredita autorización y ubicación, no la marca ni una oferta actual. Quedan tres unidades:
-
-| Candidato declarado | Comune | Dirección / autorización | Motivo pendiente |
-|---|---|---|---|
-| AZIENDA AGRICOLA BALDUCCI DI BALDUCCI GIULIA E BALDUCCI MARTINA SOCIETA' SEMPLICE AGRICOLA | Cerreto di Spoleto | Località Casa Ferrante, fraz. Macchia 19 · `UE IT J607F` | Quesería autorizada y explotación ovina/caprina activa, pero sin marca pública ni gama concreta actual. |
-| D.O.S. S.R.L. | Foligno | Via A. da Sangallo, loc. Paciana 2 · `UE IT W8542` | Autorización actualizada el 2026-08-06, sin reconciliación con marca u oferta pública de queso. |
-| FATTORIA PALAZZO ROSA SOCIETA' AGRICOLA SEMPLICE | Umbertide | Località Badia di Monte Corona · `UE IT M056B` | Finca y alojamiento activos, pero los canales actuales no presentan queso propio. |
+Lote cerrado el 2026-08-13. Azienda Agricola Balducci se publicó como `parcial`: los registros actuales confirman la explotación y la unidad autorizada para transformar leche caprina y ovina en Casa Ferrante, pero no se inventaron marca, contacto o catálogo detallado.

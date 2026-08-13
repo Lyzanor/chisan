@@ -77,12 +77,9 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-Lote contrastado el 2026-08-12. Se publicaron 10 productores: nueve industrias o caseificios y la planta de pizzas congeladas de European Pizza Group, clasificada por su actividad real como `Pan y cereal`. Se conservaron cinco retenciones sin oferta propia pública suficiente.
+Lote revisado el 2026-08-13. Se publicaron trece productores: Marcantonio, Cascina Cenicola y Fortunato se suman a las diez altas anteriores tras confirmar actividad actual y una unidad productiva quesera atribuible. Permanecen dos retenciones: Quattrotorri y Allevatori del Regio Tratturo figuran en liquidación, aunque subsistan autorizaciones o referencias históricas.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Motivo de retención |
 |---|---|---|---|---|
-| AZIENDA AGRICOLA F.LLI MARCANTONIO E FIGLI DI MARCANTONIO GIOVANNI | Castelfranco In Miscano | CONTRADA SAN LORENZO 2 | `UE IT R7113` | Autorización nueva en 2026, pero sin marca, catálogo ni contacto público que permita atribuir una oferta concreta. |
 | SOC. COOP. ALLEVATORI DEL REGIO TRATTURO ARL | Castelfranco In Miscano | CONTRADA SEARUSSO | `UE IT 15 770` | La transformación está autorizada, pero no aparece una identidad comercial ni un catálogo actual distinto del Caseificio Miscano cercano. |
-| CASCINA CENICOLA SOCIETA' COOPERATIVA AGRICOLA | Cerreto Sannita | VIA CESINE DI SOTTO 1 | `UE IT 15 695` | Cooperativa creada en 2025 y autorizada en 2026; todavía no hay productos o marca pública que se puedan publicar con precisión. |
 | QUATTROTORRI S.R.L. | Molinara | VIA CIRCONVALLAZIONE ROSATI 4 | `UE IT 15 270` | Solo se localizaron referencias laborales antiguas; no hay señal pública reciente de oferta propia. |
-| FORTUNATO GIUSEPPE | Morcone | CONTRADA PIANA 203 | `UE IT L2E6H` | Un catálogo regional histórico describe sus quesos, pero no se halló presencia comercial actual suficiente para confirmar la oferta. |

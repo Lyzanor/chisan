@@ -25,6 +25,8 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Categorías poco representadas — barrido del 2026-08-10
 
+**Cierre del lote — 2026-08-13.** Birrificio Artigianale Alba se publicó tras confirmar en su web la elaboración propia en Guarene, fichas técnicas actuales y contacto. Su destilado de cerveza queda como categoría adicional; no se infirió venta online.
+
 1 candidatos para esta provincia, tomados de registros oficiales y consorcios de tutela que publican productor, comune y contacto. El barrido busca familias de producto que el catálogo italiano casi no tiene: el volcado de apertura es 84 % `Pan y cereal` y `Vino`, y 17 de las 30 categorías están a cero en toda Italia. Por eso se han excluido de este lote las filas de vino y panadería.
 
 Reparto por categoría propuesta: `Cerveza` 1.
@@ -40,6 +42,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | Birrificio Artigianale Alba | Guarene | `Cerveza` | birra artigianale | [web](https://www.birrificioalba.it/) |
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
+
+### Cierre editorial del lote quesero — 2026-08-13
+
+Se revisaron las 87 autorizaciones sanitarias y las listas complementarias de Bra, Raschera, Toma Piemontese y Grana Padano. Se publicaron **12 fichas queseras**: Caseificio Ceirano & Villosio, Caseificio Francesco Rabbia, Caseificio Sepertino, Cooperativa Agricola La Poiana, I Segreti di Carla, Caseificio dell'Alta Langa, Fattorie Osella, Biraghi, Beppino Occelli, Caseificio Vincenzo Quaglia, Valgrana y Fattorie Fiandino. Once autorizaciones del barrido sanitario quedan representadas en nueve de esas fichas —las tres sociedades y plantas de Beppino Occelli se consolidan en una identidad comercial sin borrar su trazabilidad— y las tres altas restantes provienen del contraste consorcial. Solo La Poiana y Beppino Occelli acreditan tienda online completa.
+
+Las **76 autorizaciones sanitarias restantes** y los cinco nombres consorciales no publicados quedan retenidos, no rechazados. La autorización acredita capacidad pero no siempre una oferta propia pública actual; en otros casos hay afinado, distribución, liquidación o ambigüedad entre sociedades y plantas compartidas. En particular se conserva la cautela ya documentada para Cisalpino/Perla, Latterie Alpine/IN.AL.PI., Sabaco d'Oc y PE.RA. Formaggi. El lote quesero queda cerrado sin búsqueda nominal pendiente y puede reabrirse cuando aparezca una fuente atribuible a la unidad productiva.
 
 87 unidades productivas pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
