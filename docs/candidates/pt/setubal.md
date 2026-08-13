@@ -13,6 +13,7 @@ solo los casos que aún no permiten sostener una unidad productiva activa.
 | Farol | Almada | Cerveza | CAP2019 | `hold`: los resultados actuales corresponden a una marisquería que sirve cerveza, no acreditan la antigua marca productora |
 | Aldeana | Montijo | Cerveza | CAP2019 | `hold`: hay actividad de marca en 2025 y la sociedad registra fabricación de cerveza como actividad secundaria, pero no se pudo identificar la unidad donde se elabora |
 | Sacarrabos | Sines | Cerveza | CAP2019 | `hold`: directorios aún muestran el brewpub, mientras una reclamación de 2025 afirma que llevaba más de un año cerrado; falta confirmar si la producción sobrevivió al cierre del local |
+| Rafeira Taproom / Cerveja Rafeira | Setúbal | Cerveza | NiT · TheFork | `hold`: marca con taproom propio inaugurado en Rua da Cordoaria 17, Setúbal; falta verificar si elabora en fábrica propia o por contrato |
 
 `Sonoco Metal Packaging` (Alcochete) aparece en ANICP pero fabrica envases:
 descartada al compilar.

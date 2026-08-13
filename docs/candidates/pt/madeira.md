@@ -26,7 +26,7 @@ no demuestra por sí solo producción alimentaria vigente.
 | MADIF — Transformação de Frutas da Madeira | Ponta do Sol | Conservas | hold | producto concreto, marca y actividad actual |
 | Valvie | Ponta do Sol | a confirmar | hold | qué produce y con qué marca |
 | Fantastisugestão | Funchal | a confirmar | hold | qué produce y dónde |
-| Madeira Craft Beer | a confirmar | Cerveza | hold | concelho, fábrica propia y actividad actual |
+| Almirante do Atlântico / Madeira Craft Beer | Calheta | Cerveza | candidato | [madeiracraftbeer.com](https://madeiracraftbeer.com) · Microcervecería artesanal y taproom en Estrada Regional 222, Nº 776, Estreito da Calheta; verificar horarios y venta directa |
 | Licoraria do Vale das Freiras | a confirmar | Destilados y licores | hold | concelho, marca y unidad actual |
 | C.N.A. — Companhia Nova de Aguardente | a confirmar | Destilados y licores | hold | marca, concelho y fábrica actual |
 | Alvo dos Sentidos — Bebidas | Ponta do Sol | Destilados y licores | hold | marca pública y fabricación propia |

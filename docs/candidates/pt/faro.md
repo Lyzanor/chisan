@@ -20,6 +20,9 @@ una contradicción material.
 | `hold` | Abaladiça | Loulé | Cerveza | Solo se localizaron referencias históricas y actividad de consumo, no una fábrica propia actualmente operativa. |
 | `hold` | Afters Brewing Co. | São Brás de Alportel | Cerveza | No se halló una fuente pública actual que confirme fábrica y actividad. |
 | `hold` | Moura | Tavira | Cerveza | El perfil cervecero no publica gama ni actividad reciente suficiente para cerrar el alta o la exclusión. |
+| `candidato` | Dos Santos Craft Beer / Quinta dos Santos | Lagoa | Cerveza | [dossantoscraftbeer.com](https://dossantoscraftbeer.com) · Cervecería artesanal en Quinta dos Santos (Rua do Pestana Golf 1, Sesmarias, Carvoeiro, Lagoa) con fábrica a la vista y taproom. |
+| `candidato` | NOVO SUL brewing | Albufeira | Cerveza | [novosul-brewing.pt](https://novosul-brewing.pt) · Unidade Produtiva Artesanal (UPA 0801000404, CAE 11050) en Montechoro (Rua Estácio da Veiga Lote 67, Albufeira). |
+| `candidato` | Senescal Brewery | Castro Marim | Cerveza | [senescal.pt](http://www.senescal.pt) · Microcervecería artesanal en Castro Marim (Rua 25 de Abril, Castro Marim). |
 
 `Marisol` quedó resuelta como marca de Necton, no como productor separado. La
 Doçaria do Sul, APILGARBE, AGRUPA y Faro Beer Company quedaron excluidas por no

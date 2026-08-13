@@ -17,3 +17,10 @@ casos en `hold` por falta de prueba suficiente.
 | Manuel Serra | Vila do Conde | Aceite | hold | identidad completa, marca, lagar y actividad actual |
 | Biltre | Porto | Cerveza | hold | actividad actual y fábrica propia; posible proyecto contratado |
 | Loba | Porto | Cerveza | hold | actividad actual, dirección y fábrica propia |
+| A Fábrica da Picaria | Porto | Cerveza | candidato | [afabricadapicaria.pt](https://afabricadapicaria.pt) · Brewpub con fábrica y elaboración a la vista en Rua da Picaria 72, Porto |
+| Burguesa | Vila Nova de Gaia | Cerveza | candidato | [burguesa.pt](https://burguesa.pt) · Microcervecería artesanal con fábrica en Rua Luís de Camões 36, Vila Nova de Gaia (NIF 513291458) |
+| Lupum | Vila Nova de Gaia | Cerveza | candidato | Microcervecería y taproom (Lupum Wild Brewery) en Rua da Fontiela 207, Avintes, Vila Nova de Gaia |
+| Cerveja Dos Diabos | Porto | Cerveza | candidato | [dosdiabos.pt](https://dosdiabos.pt) · Microcervecería y taproom de Contorno Líquido Lda en Rua de Pinto Bessa 122, Armazém 2, Campanhã, Porto |
+| Madam Lindinha Lucas | Porto | Cerveza | hold | marca artesanal activa en eventos y restauración del Porto; falta verificar instalación propia vs elaboración por contrato |
+| Colossus Craft Brewery | Porto | Cerveza | hold | marca independiente con sede histórica en Rua Dom João IV 679; verificar si mantiene actividad productiva y fábrica propia |
+| Cerveja Pobeira | Póvoa de Varzim | Cerveza | hold | marca poveira con carrinha/bar de marca; falta verificar si elabora en instalación propia o por contrato |

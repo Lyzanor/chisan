@@ -13,3 +13,4 @@ repostería` y `Miel`.
 |---|---|---|---|---|
 | Pala Enchidos — Mário Pais Teixeira | Pinhel | Carne | PTPT | `hold`: consta `palaenchidos@gmail.com`, pero no se encontró marca, dirección productiva ni actividad pública reciente |
 | Alípio Agostinho | Pinhel | Carne | PTPT | `hold`: el nombre personal y la localidad Pala no bastan para separar su unidad de otros elaboradores ni probar actividad actual |
+| Cerveja 5Fs | Guarda | Cerveza | NiT · RTP · Tasca Farta | `hold`: proyecto cervecero artesanal vinculado a Ricardo Leal / Tasca Farta en Guarda; falta verificar si dispone de unidad productiva propia licenciada o elaboración por contrato |

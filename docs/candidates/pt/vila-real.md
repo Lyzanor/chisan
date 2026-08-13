@@ -17,6 +17,7 @@ propia o unidad productiva.
 | `hold` | Aromas e Sabores de Pitões | Montalegre | a confirmar | Falta identificar el producto y la unidad de elaboración. |
 | `hold` | Sabores do Gerês — Casa do Igreja | Montalegre | a confirmar | Falta identificar el producto y la unidad de elaboración. |
 | `hold` | Judia | Valpaços | Cerveza | La marca y la venta online siguen activas, pero no se pudo demostrar que la cerveza se fabrique en una unidad propia del concelho en vez de por contrato. |
+| `candidato` | Cerveja Bila | Vila Real | Cerveza | Microcervecería con instalaciones en Pavilhão 5 do Lote 158, Zona Industrial de Constantim, 5000-082 Vila Real; verificar venta directa y catálogo actualizado. |
 
 Las quintas del Douro ya publicadas como bodegas se enriquecen con `Aceite`
 solo cuando una fuente directa demuestra producción material; la Casa dos

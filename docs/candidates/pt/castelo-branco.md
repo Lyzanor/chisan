@@ -6,6 +6,7 @@ CSV y al ledger de evidencia. Queda un caso en espera.
 | nombre | concelho | estado | qué falta |
 |---|---|---|---|
 | Legend's | Sertã | hold | La marca y su fábrica local están documentadas hasta 2022; no se encontró actividad, oferta ni presencia pública posterior suficiente para una alta actual. |
+| Quinta das Olelas — Olelas Brut | Castelo Branco | candidato | [quintadasolelas.pt](https://quintadasolelas.pt) · Elaboración artesanal de cerveza de mel de medronheiro (método champenoise) en Retaxo, Castelo Branco; verificar canal de venta directa y contacto cervecero. |
 
 Fuentes del caso en espera:
 
