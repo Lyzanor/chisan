@@ -8,4 +8,3 @@
 | nombre | concelho | categoría propuesta | estado | qué falta / fuente |
 |---|---|---|---|---|
 | Legend's | Sertã | Cerveza | hold | [MedioTejo](https://mediotejo.net/provart-regressa-a-serta-para-um-brinde-coletivo-a-cerveja-artesanal-c-video/) · fábrica documentada hasta 2022; falta actividad y presencia pública posterior suficiente para alta |
-| Quinta das Olelas — Olelas Brut | Castelo Branco | Cerveza | candidato | [quintadasolelas.pt](https://quintadasolelas.pt) · Elaboración artesanal de cerveza de mel de medronheiro (método champenoise) en Retaxo, Castelo Branco; verificar canal de venta directa |

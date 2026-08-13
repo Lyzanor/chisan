@@ -17,6 +17,5 @@
 | `hold` | Aromas e Sabores de Pitões | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · falta identificar producto y unidad de elaboración |
 | `hold` | Sabores do Gerês — Casa do Igreja | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · falta identificar producto y unidad de elaboración |
 | `hold` | Judia | Valpaços | Cerveza | [Untappd](https://untappd.com) · marca activa; falta demostrar que se fabrique en unidad propia del concelho y no por contrato |
-| `candidato` | Cerveja Bila | Vila Real | Cerveza | [openbrewerydb.org](https://www.openbrewerydb.org) · [Untappd](https://untappd.com/w/cerveja-bila/330533) · Microcervecería en Pavilhão 5 do Lote 158, Zona Industrial de Constantim, 5000-082 Vila Real; verificar venta directa y catálogo |
 
 Las quintas del Douro ya publicadas como bodegas se enriquecen con `Aceite` solo cuando una fuente directa demuestra producción material (ej. Casa dos Lagares/Fragulho).

@@ -10,8 +10,6 @@ Germil, Queijaria Flor da Beira y Mickas Craft Beer. Quedan 16 casos en `hold`.
 | Coop. Agrícola de Penela da Beira | Penedono | a confirmar | hold | producto de marca propia y unidad de transformación |
 | Coop. Agr. de Utilidade Popular de Castanheiro do Sul | São João da Pesqueira | a confirmar | hold | producto de marca propia y unidad de transformación |
 | Padaria Lalinense | Lamego | Pan y cereal | hold | dirección, contacto, actividad actual y producto propio concreto |
-| Padaria Rina | Lamego | Pan y cereal | hold | la tienda actual existe, pero falta acreditar que fabrica y dónde |
-| Padaria Padoce | Lamego | Pan y cereal | hold | hay contratos de suministro, no una fuente actual de la unidad productiva |
 | Pão do Dia | Lamego | Pan y cereal | hold | identidad, dirección y fabricación propia actual |
 | Real Gastronomia | Lamego | Dulces y repostería | hold | fabricación propia, unidad y actividad actual |
 | Pastelaria Doce Lamego | Lamego | Dulces y repostería | hold | fabricación propia y ubicación de obrador |

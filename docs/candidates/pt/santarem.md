@@ -8,4 +8,3 @@
 | nombre | concelho | categoría propuesta | fuente | qué falta |
 |---|---|---|---|---|
 | Fumeiro Tradicional da Região dos Templários | Tomar | Carne | [PTPT](https://www.ptpt.pt/produtores) · [IPT](https://www.ipt.pt) | `hold` — hay referencias a la fábrica de Casal dos Frades y colaboración institucional, pero falta contacto, marca pública y prueba reciente de actividad comercial propia |
-| Fábrica de Cervejas do Ribatejo / Cerveja Gloriana | Salvaterra de Magos | Cerveza | [cm-salvaterrademagos.pt](https://www.cm-salvaterrademagos.pt) · [Facebook Cervejas do Tejo](https://www.facebook.com/cervejasdotejo) | Fábrica de cerveza artesanal en Avenida José Luís Brito Seabra 73, Salvaterra de Magos; verificar venta directa al público y horarios |

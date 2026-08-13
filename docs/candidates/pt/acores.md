@@ -7,5 +7,3 @@
 
 | nombre | concelho | categoría propuesta | fuente | qué falta |
 |---|---|---|---|---|
-| Cerveja Brianda | Angra do Heroísmo | Cerveza | [Açores 2020](https://azores.gov.pt) · [Facebook Brianda](https://www.facebook.com/briandacerveja) | Microproducción de cerveza artesanal de Bohemian Mountain Lda en Altares, Ilha Terceira; verificar contacto directo y punto de venta propio |
-| Cerveja Korisca | Lagoa | Cerveza | [cervejakorisca.com](https://cervejakorisca.com) | Cervecería artesanal de Azores Bitter Lda en Cabouco (Estrada do Pico Castelhano, Chã do Rego d'Água, Lagoa, São Miguel); verificar canal de venta y visitas |

@@ -7,11 +7,10 @@
 
 | nombre | concelho | categoría propuesta | fuente | qué falta |
 |---|---|---|---|---|
-| Sadina | Setúbal | Cerveza | [Untappd](https://untappd.com/CervejaSadina) | `hold`: el perfil indica que cesó, pero quedan consumos de botellas antiguas; falta fuente fiable de cierre empresarial definitivo |
 | Trevo | Almada | Cerveza | [Untappd](https://untappd.com/CervejaTrevo) | `hold`: solo se localizó historia de lanzamiento y puntos de venta antiguos, sin fábrica ni actividad reciente |
 | Farol | Almada | Cerveza | [Untappd](https://untappd.com) | `hold`: los resultados actuales corresponden a una marisquería que sirve cerveza, no acreditan la antigua marca productora |
 | Aldeana | Montijo | Cerveza | [Untappd](https://untappd.com/CervejaAldeana) | `hold`: hay actividad de marca en 2025 y fabricación como actividad secundaria, pero no se pudo identificar la unidad donde se elabora |
-| Sacarrabos | Sines | Cerveza | [Untappd](https://untappd.com/SacarrabosBeerCo) | `hold`: directorios muestran el brewpub, pero reseñas indican cierre; falta confirmar si la producción sobrevivió |
-| Rafeira Taproom / Cerveja Rafeira | Setúbal | Cerveza | [NiT](https://www.nit.pt) · [TheFork](https://www.thefork.com) | `hold`: marca con taproom propio inaugurado en Rua da Cordoaria 17, Setúbal; falta verificar si elabora en fábrica propia o por contrato |
 
 Sonoco Metal Packaging (Alcochete) aparece en ANICP pero fabrica envases: descartada al compilar.
+Sadina quedó descartada: la sociedad Poção Sadina figura sin actividad y el perfil oficial de la cervecera la declara cesada.
+Sacarrabos quedó descartada: el brewpub y unidad pública de la marca cerraron antes de 2024 y no apareció continuidad productiva separada.
