@@ -8,7 +8,7 @@ const ROOT = process.cwd();
 const CSV_ROOT = path.join(ROOT, "data", "csv");
 const DEFAULT_CONCURRENCY = 2;
 const API_URL = "https://places.googleapis.com/v1/places:searchText";
-const QUERY_VERSION = 2;
+const QUERY_VERSION = 3;
 const COUNTRY_NAMES = {
   de: "Deutschland",
   es: "España",
@@ -51,6 +51,8 @@ Options:
   --cache <path>      Review cache (default: tmp/google-maps-review-<iso>.jsonl).
   --report <path>     Current compact report (default: tmp/google-maps-review-<iso>-current.json).
   --decisions <path>  Apply reviewed accept/clear decisions from a JSON array (requires --apply).
+  --clear-unresolved  Empty every ambiguous or missing legacy link (requires --apply).
+  --repair-verification  Downgrade verified rows left without a public link (requires --apply).
   --help              Show this help.
 
 The API key is read from GOOGLE_MAPS_API_KEY or .env.local. The cache never
@@ -66,6 +68,8 @@ function parseArgs(argv) {
     else if (arg === "--cache") args.cache = argv[++i];
     else if (arg === "--report") args.report = argv[++i];
     else if (arg === "--decisions") args.decisions = argv[++i];
+    else if (arg === "--clear-unresolved") args.clearUnresolved = true;
+    else if (arg === "--repair-verification") args.repairVerification = true;
     else if (arg === "--concurrency") args.concurrency = Number(argv[++i]);
     else if (arg === "--apply") args.apply = true;
     else if (arg === "--help" || arg === "-h") args.help = true;
@@ -78,6 +82,11 @@ function parseArgs(argv) {
     throw new Error("--concurrency must be an integer from 1 to 10");
   }
   if (args.decisions && !args.apply) throw new Error("--decisions requires --apply");
+  if (args.clearUnresolved && !args.apply) throw new Error("--clear-unresolved requires --apply");
+  if (args.repairVerification && !args.apply) throw new Error("--repair-verification requires --apply");
+  if (args.clearUnresolved && args.decisions) {
+    throw new Error("--clear-unresolved and --decisions cannot be combined");
+  }
   return args;
 }
 
@@ -178,6 +187,18 @@ function currentPlaceId(value) {
   }
 }
 
+function hostname(value) {
+  try {
+    return new URL(clean(value)).hostname.toLowerCase().replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function phoneDigits(value) {
+  return clean(value).replace(/\D/g, "").slice(-9);
+}
+
 function buildQuery(row, country) {
   const categoryTerm = CATEGORY_TERMS[country]?.[row.categoria] ?? "";
   return [row.nombre, categoryTerm, row.direccion || row.municipio, COUNTRY_NAMES[country] || country]
@@ -210,6 +231,12 @@ function scoreCandidate(row, candidate, country) {
     candidate.location?.latitude,
     candidate.location?.longitude,
   );
+  const expectedHost = hostname(row.web);
+  const candidateHost = hostname(candidate.websiteUri);
+  const hostMatch = Boolean(expectedHost && candidateHost && expectedHost === candidateHost);
+  const expectedPhone = phoneDigits(row.telefono);
+  const candidatePhone = phoneDigits(candidate.nationalPhoneNumber);
+  const phoneMatch = Boolean(expectedPhone && candidatePhone && expectedPhone === candidatePhone);
 
   let score = identitySimilarity * 5 + addressSimilarity * 2;
   if (municipalityMatch) score += 2;
@@ -231,6 +258,12 @@ function scoreCandidate(row, candidate, country) {
     municipalityMatch,
     postcodeMatch,
     distanceKm: distanceKm === null ? null : Number(distanceKm.toFixed(3)),
+    websiteUri: clean(candidate.websiteUri),
+    nationalPhoneNumber: clean(candidate.nationalPhoneNumber),
+    types: candidate.types ?? [],
+    businessStatus: clean(candidate.businessStatus),
+    hostMatch,
+    phoneMatch,
     score: Number(score.toFixed(3)),
   };
 }
@@ -250,7 +283,10 @@ function classify(row, candidates) {
     && best.distanceKm !== null
     && best.distanceKm <= 0.15;
   const clearlyFirst = !second || best.score - second.score >= 1.5 || exactNearby;
-  const status = identityOkay && locationOkay && addressOkay && clearlyFirst ? "accepted" : "ambiguous";
+  const sourceMatch = best.hostMatch || best.phoneMatch;
+  const sourceLocationOkay = best.distanceKm !== null && best.distanceKm <= 2;
+  const status = ((identityOkay && locationOkay && addressOkay && clearlyFirst)
+    || (sourceMatch && sourceLocationOkay)) ? "accepted" : "ambiguous";
   return { status, selected: status === "accepted" ? best : null, ranked };
 }
 
@@ -273,7 +309,7 @@ async function searchPlaces(row, country, apiKey) {
     headers: {
       "Content-Type": "application/json",
       "X-Goog-Api-Key": apiKey,
-      "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.location",
+      "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.location,places.websiteUri,places.nationalPhoneNumber,places.types,places.businessStatus",
     },
     body: JSON.stringify({
       textQuery: buildQuery(row, country),
@@ -325,16 +361,52 @@ function applyReplacements(records) {
     let raw = fs.readFileSync(file, "utf8");
     for (const record of fileRecords) {
       const replacement = canonicalMapsUrl(record.row, record.selected.id);
-      const occurrences = raw.split(record.oldUrl).length - 1;
-      if (occurrences !== 1) {
-        throw new Error(`${path.relative(ROOT, file)}:${record.row.slug}: expected one old URL, found ${occurrences}`);
-      }
-      raw = raw.replace(record.oldUrl, replacement);
+      raw = replaceMapsUrl(raw, record, replacement);
       changedRows += 1;
     }
     fs.writeFileSync(file, raw);
   }
   return changedRows;
+}
+
+function replaceMapsUrl(raw, record, replacement) {
+  const prefixes = [`${record.row.slug},`, `"${record.row.slug}",`];
+  const lines = raw.split("\n");
+  const matches = lines
+    .map((line, index) => (prefixes.some((prefix) => line.startsWith(prefix)) ? index : -1))
+    .filter((index) => index >= 0);
+  if (matches.length !== 1) {
+    throw new Error(`${path.relative(ROOT, record.file)}:${record.row.slug}: expected one CSV row, found ${matches.length}`);
+  }
+  const index = matches[0];
+  const occurrences = lines[index].split(record.oldUrl).length - 1;
+  if (occurrences !== 1) {
+    throw new Error(`${path.relative(ROOT, record.file)}:${record.row.slug}: expected one old URL in row, found ${occurrences}`);
+  }
+  lines[index] = lines[index].replace(record.oldUrl, replacement);
+  return lines.join("\n");
+}
+
+function replaceVerification(raw, record, replacement) {
+  const prefixes = [`${record.row.slug},`, `"${record.row.slug}",`];
+  const lines = raw.split("\n");
+  const matches = lines
+    .map((line, index) => (prefixes.some((prefix) => line.startsWith(prefix)) ? index : -1))
+    .filter((index) => index >= 0);
+  if (matches.length !== 1) {
+    throw new Error(`${path.relative(ROOT, record.file)}:${record.row.slug}: expected one CSV row, found ${matches.length}`);
+  }
+  const index = matches[0];
+  const unquoted = ",verificado,";
+  const quoted = ",\"verificado\",";
+  if (lines[index].includes(unquoted)) {
+    lines[index] = lines[index].replace(unquoted, `,${replacement},`);
+  } else if (lines[index].includes(quoted)) {
+    lines[index] = lines[index].replace(quoted, `,\"${replacement}\",`);
+  } else {
+    throw new Error(`${path.relative(ROOT, record.file)}:${record.row.slug}: verificado token was not found`);
+  }
+  return lines.join("\n");
 }
 
 function applyDecisions(records, decisionsPath) {
@@ -374,12 +446,51 @@ function applyDecisions(records, decisionsPath) {
       const replacement = record.decision === "accept"
         ? canonicalMapsUrl(record.row, record.placeId)
         : "";
-      const occurrences = raw.split(record.oldUrl).length - 1;
-      if (occurrences !== 1) {
-        throw new Error(`${path.relative(ROOT, file)}:${record.row.slug}: expected one old URL, found ${occurrences}`);
-      }
-      raw = raw.replace(record.oldUrl, replacement);
+      raw = replaceMapsUrl(raw, record, replacement);
       changedRows += 1;
+    }
+    fs.writeFileSync(file, raw);
+  }
+  return changedRows;
+}
+
+function clearUnresolved(records) {
+  const unresolved = records.filter((record) => record.status !== "accepted");
+  const byFile = new Map();
+  for (const record of unresolved) {
+    const list = byFile.get(record.file) ?? [];
+    list.push(record);
+    byFile.set(record.file, list);
+  }
+  let changedRows = 0;
+  for (const [file, fileRecords] of byFile) {
+    let raw = fs.readFileSync(file, "utf8");
+    for (const record of fileRecords) {
+      raw = replaceMapsUrl(raw, record, "");
+      const hasOtherPublicLink = [record.row.web, record.row.Facebook, record.row.Instagram]
+        .some((value) => Boolean(clean(value)));
+      if (record.row.verificacion === "verificado" && !hasOtherPublicLink) {
+        raw = replaceVerification(raw, record, "parcial");
+      }
+      changedRows += 1;
+    }
+    fs.writeFileSync(file, raw);
+  }
+  return changedRows;
+}
+
+function repairVerification(files) {
+  let changedRows = 0;
+  for (const file of files) {
+    let raw = fs.readFileSync(file, "utf8");
+    const rows = parse(raw, { columns: true, skip_empty_lines: true });
+    for (const row of rows) {
+      const hasPublicLink = [row.web, row.Facebook, row.Instagram, row["Google Maps"]]
+        .some((value) => Boolean(clean(value)));
+      if (row.verificacion === "verificado" && !hasPublicLink) {
+        raw = replaceVerification(raw, { file, row }, "parcial");
+        changedRows += 1;
+      }
     }
     fs.writeFileSync(file, raw);
   }
@@ -465,6 +576,7 @@ async function main() {
     file: path.relative(ROOT, record.file),
     slug: record.row.slug,
     nombre: record.row.nombre,
+    categoria: record.row.categoria,
     municipio: record.row.municipio,
     direccion: record.row.direccion,
     telefono: record.row.telefono,
@@ -474,11 +586,12 @@ async function main() {
     selected: record.selected,
     candidates: record.candidates,
   })), null, 2)}\n`);
-  const changedRows = args.apply
+  let changedRows = args.apply
     ? (args.decisions
       ? applyDecisions(records, path.resolve(ROOT, args.decisions))
-      : applyReplacements(records))
+      : (args.clearUnresolved ? clearUnresolved(records) : applyReplacements(records)))
     : 0;
+  if (args.repairVerification) changedRows += repairVerification(files);
   console.log(`Google Maps review — ${args.country}${args.area ? `/${args.area}` : ""}`);
   console.log(`- queued legacy links: ${queue.length}`);
   console.log(`- accepted: ${counts.accepted}`);
