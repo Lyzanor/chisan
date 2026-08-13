@@ -32,7 +32,7 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
-El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares únicos. En la revisión del 2026-08-13 se publicaron catorce productores: los cinco premiados en Modon d'Or 2024, los cinco premiados y los otros cinco finalistas de 2025 (Frères Béthaz y La Comba repiten entre ediciones), más Planaz Giuseppe, publicado por la Regione como productor caseario. Sus 21 autorizaciones se reconciliaron por titular y alpeggio sin crear filas duplicadas. Quedan 242 unidades pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
+El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares únicos. En la revisión del 2026-08-13 se publicaron dieciocho productores: los cinco premiados en Modon d'Or 2024, los cinco premiados y los otros cinco finalistas de 2025 (Frères Béthaz y La Comba repiten entre ediciones), cuatro productores premiados en 2022 y Planaz Giuseppe, publicado por la Regione como productor caseario. Sus 29 autorizaciones se reconciliaron por titular y alpeggio sin crear filas duplicadas. Quedan 234 unidades pendientes de contrastar, extraídas del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/). El lote se limita a establecimientos con estado `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso; excluye recogida, tratamiento térmico, afinado y mero porcionado o rallado. La fuente acredita unidad, comune y autorización sanitaria, pero no por sí sola la oferta propia actual ni la identidad pública. Cada entrada queda en retención hasta contrastar ambas y reconciliar titulares con varias plantas sin fusionar unidades distintas. Corte: 2026-08-11.
 
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
@@ -77,7 +77,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SOCIETE' AGRICOLE BERRIER S.S. | Bionaz | LOCALITA' LEXERT 13, BIONAZ (AO) | `UE IT E3M89` | vacuno más de 60 d | 18-DEC-20 |
 | MARCOZ GILBERTO | Brissogne | FRAZIONE FRAZ. AYETTES 1, BRISSOGNE (AO) | `UE IT 02 95` | vacuno más de 60 d | 30-NOV-20 |
 | MOSQUET STEFANO | Brissogne | LOCALITA' GRAND BRISSOGNE 106, BRISSOGNE (AO) | `UE IT T6V4A` | vacuno menos de 60 d/más de 60 d | 09-DEC-20 |
-| VOLGET SOCIETA' SEMPLICE AGRICOLA | Brissogne | FRAZIONE CHEZ LES VOLGET E CHEZ LES VOLGET 5, BRISSOGNE (AO) | `UE IT 02 74` | vacuno menos de 60 d/más de 60 d | 04-AUG-25 |
 | CUGNOD LORENZO ANSELMO | Brusson | LOCALITA' LAVASSEY E LAVASSEY SUPERIORE /, BRUSSON (AO) | `UE IT A3K81` | vacuno más de 60 d | 31-MAR-21 |
 | FROMAGERIE HAUT VAL D'AYAS SOC. COOP. | Brusson | FRAZIONE TROIS VILLAGES 1, BRUSSON (AO) | `UE IT 02 129` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 23-NOV-20 |
 | PERETTO ADOLFO | Brusson | LOCALITA' ALPE MOURELASC E ALPE FINESTRA /, BRUSSON (AO) | `UE IT 02 637` | vacuno más de 60 d | 09-DEC-20 |
@@ -120,7 +119,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SOCIETA' AGRICOLA MONT BLANC S.S. | Courmayeur | RUE DU BIOLLEY 3, COURMAYEUR (AO) | `UE IT H985W` | caprino menos de 60 d/más de 60 d | 22-MAR-23 |
 | FOLLIOLEY DI FOLLIOLEY ENNIO & C. S.S. IN SIGLA FOLLIOLEY S.S. | Donnas | LOCALITA' PIANAS /, DONNAS (AO) | `UE IT 02 631` | vacuno más de 60 d, caprino más de 60 d | 23-NOV-20 |
 | SOCIETA' AGRICOLA GLAR DI CHERAZ ALESSANDRO & C. S.S. IN BREVITA SOCIETA' AGRICOLA GLAR S.S. | Donnas | LOCALITA' CHANTON /, DONNAS (AO) | `UE IT C1R37` | vacuno más de 60 d | 18-DEC-20 |
-| AZIENDA AGRICOLA LES CRETES DI FAVRE RINO & C. S.S. IN SIGLA LES CRETES S.S. | Doues | LOCALITA' ARVUS, PESSINOILLE E CHESERY /, DOUES (AO) | `UE IT 02 585` | vacuno más de 60 d | 11-NOV-20 |
 | CHENTRE MARCO | Doues | LOCALITA' VERRIÈSE /, DOUES (AO) | `UE IT 02 620` | vacuno más de 60 d | 28-JUL-22 |
 | SOCIETA' AGRICOLA FAMILLE CUNEAZ & G S.S. | Etroubles | LOCALITA' MENOVY E ARVUS /, ETROUBLES (AO) | `UE IT D477G` | vacuno más de 60 d | 26-MAY-22 |
 | DALBARD MANUEL | Fénis | LOCALITA' BIOLEY E GRAND ALPE /, FÉNIS (AO) | `UE IT R989F` | vacuno más de 60 d | 18-AUG-20 |
@@ -197,8 +195,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SOCIETE' AGRICOLE LO TSARDON S.S. | Nus | FRAZIONE LA COUTAZ 1, NUS (AO) | `UE IT 02 73` | vacuno más de 60 d | 26-JAN-26 |
 | SOCIETE' AGRICOLE LO TSARDON S.S. | Nus | LOCALITA' LA TSA DE FONTANEY /, NUS (AO) | `UE IT Q502R` | vacuno más de 60 d | 26-JAN-26 |
 | SOCIETE' AGRICOLE LO TSARDON S.S. | Nus | LOCALITA' PLACES-DÉSOT /, NUS (AO) | `UE IT 02 650` | vacuno más de 60 d | 26-JAN-26 |
-| VIAL RONNY | Nus | LOCALITA' CHAMP-PLAISANT-DAMON /, NUS (AO) | `UE IT E7P0B` | vacuno más de 60 d | 21-DEC-20 |
-| VIAL RONNY | Nus | LOCALITA' TSA DE PIERREY /, NUS (AO) | `UE IT 02 503` | vacuno más de 60 d | 16-MAY-25 |
 | ANSELMET CHARLENE | Ollomont | LOCALITA' EVEQUES /, OLLOMONT (AO) | `UE IT D9S6Z` | vacuno más de 60 d | 19-JUN-24 |
 | BREDY FRANCESCO | Ollomont | LOCALITA' BERRUARD E PLEYTAU /, OLLOMONT (AO) | `UE IT 02 630` | vacuno más de 60 d | 25-JUL-22 |
 | CHENTRE MARCO | Ollomont | LOCALITA' PORCHÈRE E TZA DE PORCHÈRE /, OLLOMONT (AO) | `UE IT 02 579` | vacuno más de 60 d | 17-NOV-20 |
@@ -210,7 +206,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | PESSION NICOLE | Ollomont | LOCALITA' BALME DE BAL, VAYES E THOULES /, OLLOMONT (AO) | `UE IT U4L6X` | vacuno más de 60 d | 29-MAY-25 |
 | SOCIETA' AGRICOLA FAMIGLIA ABRAM S.S. | Ollomont | LOCALITA' CRETES E TSA D'ANSERMIN /, OLLOMONT (AO) | `UE IT 02 655` | vacuno más de 60 d | 01-JUL-21 |
 | YEUILLA MARILENA | Ollomont | FRAZIONE VOVECES /, OLLOMONT (AO) | `UE IT L8M5V` | vacuno más de 60 d | 22-FEB-21 |
-| AZIENDA AGRICOLA LES CRETES DI FAVRE RINO & C. S.S. IN SIGLA LES CRETES S.S. | Oyace | FRAZIONE VERNOSSE /, OYACE (AO) | `UE IT 02 20` | vacuno más de 60 d | 11-NOV-20 |
 | CHENAL FABRIZIO | Oyace | FRAZIONE CONDEMINE /, OYACE (AO) | `UE IT 02 96` | vacuno más de 60 d | 17-NOV-20 |
 | VALLOMY CLAUDIA ANTONELLA | Perloz | LOCALITA' MONT-MILLIAN /, PERLOZ (AO) | `UE IT G7H1L` | vacuno más de 60 d | 24-MAY-21 |
 | BARDHOKU LEONARD | Pollein | LOCALITA' GRAND-POLLEIN 34, POLLEIN (AO) | `UE IT H5R1L` | vacuno más de 60 d | 12-NOV-21 |
@@ -239,7 +234,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | BORBEY GIULIO MARTINO | Saint-Nicolas | LOCALITA' LEYTANAZ DÉSOT E LEYTANAZ DAMON /, SAINT-NICOLAS (AO) | `UE IT 02 506` | vacuno más de 60 d | 14-MAY-24 |
 | SOCIETA' AGRICOLA HENCHOZ DI HENCHOZ LUCIA & C. SOCIETA' SEMPLICE | Saint-Nicolas | LOCALITA' SÉCHERON /, SAINT-NICOLAS (AO) | `UE IT V6H5T` | vacuno más de 60 d | 18-DEC-20 |
 | CERISE TIZIANA | Saint-Oyen | LOCALITA' BARASSON (SAINT-OYEN) ETRACAUDETTE (ETROUBLES) /, SAINT-OYEN (AO) | `UE IT D5G1S` | vacuno más de 60 d | 17-NOV-20 |
-| VOLGET SOCIETA' SEMPLICE AGRICOLA | Saint-Oyen | LOCALITA' FLASSIN DESOT E LOC TSA DE FLASSIN COMUNE DI SAINT-RHEMY-EN-BOSSES /, SAINT-OYEN (AO) | `UE IT 02 669` | vacuno más de 60 d | 17-OCT-22 |
 | GERBORE RENE' JEROME | Saint-Pierre | FRAZIONE COMBELLIN 10, SAINT-PIERRE (AO) | `UE IT W5181` | vacuno más de 60 d | 10-JUN-26 |
 | JOCALLAZ PIERO LORENZO | Saint-Pierre | LOCALITA' THOULES /, SAINT-PIERRE (AO) | `UE IT Y2W6U` | vacuno más de 60 d | 30-NOV-20 |
 | LA FORGE S.S. | Saint-Pierre | LOCALITA' VERDJOUAN OR /, SAINT-PIERRE (AO) | `UE IT 02 571` | vacuno más de 60 d | 28-JUL-22 |
@@ -258,7 +252,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | SOCIETA' AGRICOLA FROMIERE S.S | Sarre | LOCALITA' FOURMIÈRE E TSA DE FOURMIÈRE /, SARRE (AO) | `UE IT 02 554` | vacuno más de 60 d | 20-APR-26 |
 | BARREL SOCIETA' SEMPLICE AGRICOLA | Torgnon | FRAZIONE CHESOD 96, TORGNON (AO) | `UE IT S881G` | vacuno más de 60 d | 14-APR-21 |
 | BARREL SOCIETA' SEMPLICE AGRICOLA | Torgnon | LOCALITA' LA-NOUVA-DE-TELLINOD /, TORGNON (AO) | `UE IT B436X` | vacuno menos de 60 d/más de 60 d | 14-APR-21 |
-| SOCIETA' AGRICOLA FRERES PINET DI PINET FRANCESCO & C. S.S. SIGLABILE SOCIETA' AGRICOLA FRERES PINET | Torgnon | LOCALITA' CHATELARD-DAMON /, TORGNON (AO) | `UE IT 02 668` | vacuno más de 60 d | 23-NOV-20 |
 | MOSQUET STEFANO | Valgrisenche | LOCALITA' MONT FORCHAT, EPÉE, PREYON /, VALGRISENCHE (AO) | `UE IT 02 578` | vacuno más de 60 d | 09-DEC-20 |
 | PATAT SARA | Valgrisenche | LOCALITA' VERCONEY DAMON /, VALGRISENCHE (AO) | `UE IT 02 638` | vacuno más de 60 d | 18-MAR-25 |
 | PRAZ JULIEN | Valgrisenche | LOCALITA' BRUILLE, PLONTAZ, BOIS, REVERAZ DESOT, CLUSAZ AD AVISE /, VALGRISENCHE (AO) | `UE IT 02 622` | vacuno más de 60 d | 26-FEB-25 |
@@ -269,7 +262,6 @@ El barrido contiene realmente 263 autorizaciones —no 275— y 197 titulares ú
 | BELLEY PIERA | Valtournenche | LOCALITA' ERSAZ /, VALTOURNENCHE (AO) | `UE IT A2E0N` | vacuno más de 60 d | 11-NOV-20 |
 | BIELLER DIDIER | Valtournenche | LOCALITA' CHAMPLEVE /, VALTOURNENCHE (AO) | `UE IT X7867` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 26-MAR-21 |
 | LA FERME D'ANTEY DI MARCELLAN SABRINA | Valtournenche | LOCALITA' GRILLON /, VALTOURNENCHE (AO) | `UE IT U6F03` | vacuno más de 60 d | 30-NOV-20 |
-| SOCIETA' AGRICOLA FRERES PINET DI PINET FRANCESCO & C. S.S. SIGLABILE SOCIETA' AGRICOLA FRERES PINET | Valtournenche | LOCALITA' CORTINAZ-DAMON E CORTINAZ-DESOT /, VALTOURNENCHE (AO) | `UE IT C9V25` | vacuno más de 60 d | 18-DEC-20 |
 | SOCIETA' AGRICOLA LO NIC SOCIETA' SEMPLICE DI PIEILLER LORIS E VERCELLIN NOURISSAT LAURA SIGLABILE S | Valtournenche | LOCALITA' MANDAZ DESOT, MANDAZ DAMON /, VALTOURNENCHE (AO) | `UE IT B384T` | vacuno menos de 60 d/más de 60 d | 18-DEC-20 |
 | AGRICOLA IVONNE DI NICOLETTA IVONNE ANNA | Verrès | LOCALITA' AVEUSE /, VERRÈS (AO) | `UE IT Z4X63` | vacuno menos de 60 d/más de 60 d | 08-APR-25 |
 | PLANAZ DINO | Verrès | LOCALITA' TORILLE 87, VERRÈS (AO) | `UE IT E4L8E` | vacuno más de 60 d | 09-DEC-20 |
