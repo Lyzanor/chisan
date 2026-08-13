@@ -1,30 +1,28 @@
 # Candidatos — Trapani
 
-Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológico `ISSUED` en el [directorio público TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index), con actividad de producción o preparación y dirección en un comune asignado a esta zona mediante el [listado territorial de ISTAT actualizado al 21-02-2026](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/). Se han excluido coincidencias normalizadas con los productores ya publicados en Italia. La inclusión aquí no equivale a aceptación: antes de publicar hay que confirmar la marca pública, el producto alimentario concreto, la actividad actual y que la dirección certificada corresponda a la unidad productiva y no solo a la sede legal.
+## Operadores ecológicos — revisión cerrada del 2026-08-13
 
-| Nombre declarado | Comune provisional | Dirección certificada | Actividad / alcance ecológico | Vigente hasta | Certificado |
-|---|---|---|---|---|---|
-| AIGALA S.R.L. | Marsala | CONTRADA TERRENOVE 441/C 91025 | producción — vegetales sin transformar | 2027-05-31 | [IT-BIO-007.380-0031586.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0031586.2025.001.pdf) |
-| ALECCIA ANTONINO | Alcamo | VIA G. PUCCINI 26 91011 | producción — vegetales sin transformar | 2028-06-24 | [IT-BIO-004.380-0098544.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0098544.2025.002.pdf) |
-| ALECCIA DAMIANO | Alcamo | VIA CARMELO ONETO 8 91011 | producción — vegetales sin transformar | 2028-04-14 | [IT-BIO-004.380-0098608.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0098608.2025.001.pdf) |
-| ANGELO CALOGERO | Salemi | VIA SOFOCLE, 38 91018 | producción — animales y productos de acuicultura, vegetales sin transformar, piensos | 2028-07-21 | [IT-BIO-007.380-0090906.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0090906.2025.002.pdf) |
-| ANGILERI IGNAZIO | Marsala | VIA DELLO SBARCO 73 91025 | producción — vegetales sin transformar | 2028-07-29 | [IT-BIO-009.380-0005628.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0005628.2025.001.pdf) |
-| ANGILERI LEONARDO | Erice | VIA PERUGIA N 3 91016 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-04-21 | [IT-BIO-004.380-0033885.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0033885.2025.001.pdf) |
-| ANSALDI GIORGIO | Marsala | VIA CONTRADA CASAZZE 192/F 91025 | producción — vegetales sin transformar | 2027-04-04 | [IT-BIO-007.380-0072066.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0072066.2025.002.pdf) |
-| ASARO GIUSEPPE | Petrosino | TRAV. II K.26 91020 | producción — vegetales sin transformar | 2028-07-30 | [IT-BIO-007.380-0033170.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0033170.2025.003.pdf) |
-| ASTA LEONARDO | Alcamo | VIA PUCCINI N 123 91011 | producción — vegetales sin transformar | 2029-02-09 | [IT-BIO-004.380-0072149.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0072149.2026.001.pdf) |
-| AZIENDA AGRICOLA BIO ALECI S.R.L.S. | Salemi | CONTRADA BAGNITELLI 849/B 91018 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-12-11 | [IT-BIO-007.380-0091178.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0091178.2025.003.pdf) |
-| AZIENDA AGRICOLA RAGONA S.A.S. DI CALDERARO GIUSI ELENA | Gibellina | VIALE BELLINI 9 91024 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-10-19 | [IT-BIO-004.380-0052228.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0052228.2025.002.pdf) |
-| BARBARA SALVATORE | Trapani | VIA MARSALA, 593 91100 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-09-09 | [IT-BIO-018.380-0047188.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-018.380-0047188.2025.002.pdf) |
-| BARBERA FRANCESCA | Salemi | VIA VIGNAGRANDE 13 91018 | producción — vegetales sin transformar | 2028-09-16 | [IT-BIO-004.380-0105782.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0105782.2025.002.pdf) |
-| BARRACO ROSARIO | Marsala | CONTRADA CUORE DI GESU' 97 91025 | producción — vegetales sin transformar | 2028-06-05 | [IT-BIO-009.380-0059846.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0059846.2025.001.pdf) |
-| BASIRICO' PIETRO | Custonaci | VIA LENTINA 14 91015 | producción — animales y productos de acuicultura, vegetales sin transformar | 2028-09-14 | [IT-BIO-004.380-0023519.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0023519.2025.001.pdf) |
-| BERTOLINO DANIELE | Castelvetrano | VIA SOCRATE SNC 91022 | producción — vegetales sin transformar | 2028-07-02 | [IT-BIO-021.380-0102682.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0102682.2025.001.pdf) |
-| BERTOLINO SALVATORE | Marsala | VICOLO DELL'ACQUA 1 91025 | preparación, producción — animales y productos de acuicultura, vegetales sin transformar | 2028-10-06 | [IT-BIO-021.380-0066033.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-021.380-0066033.2025.001.pdf) |
-| BIANCO ANGELA | Mazara del Vallo | VIA SANTA GEMMA, 24 91026 | producción — vegetales sin transformar | 2028-09-05 | [IT-BIO-007.380-0082032.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0082032.2025.001.pdf) |
-| BLUNDA IGNAZIO | Alcamo | VIA LOMBARDIA 6 91011 | producción — vegetales sin transformar | 2028-04-14 | [IT-BIO-004.380-0094496.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0094496.2025.002.pdf) |
+Se revisaron los 19 certificados ecológicos `ISSUED` del barrido de [TRACES NT](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index). Se publicaron seis productores con identidad, producto propio y unidad productiva suficientemente reconciliados: `Bio Aleci`, `Azienda Agricola Ragona`, `Azienda Agricola Barbàra`, `Olio Duegocce`, `Basiricò Pietro` y `Agricola Bertolino`. Ragona es la única alta en la que se confirmó un proceso de pedido y pago online completo.
 
-## Productores de queso — revisión parcial del 2026-08-13
+Permanecen 13 casos abiertos. El certificado demuestra actividad ecológica, pero no basta por sí solo para atribuir una marca y oferta alimentaria pública a la unidad:
+
+| Candidato | Comune certificado | Motivo concreto de retención |
+|---|---|---|
+| Aigala S.r.l. | Marsala | Se acredita cultivo de uva, pero no se localizó marca, vino propio o canal público que permita distinguir su producto del posible suministro a terceros. |
+| Aleccia Antonino | Alcamo | Solo se encontró la explotación y el cultivo; falta producto alimentario propio y una identidad comercial publicable. |
+| Aleccia Damiano | Alcamo | El certificado continúa vigente, pero no aparece una marca, gama o contacto comercial atribuible con seguridad. |
+| Angelo Calogero | Salemi | El alcance incluye animales y vegetales, pero la búsqueda no identifica qué alimento propio ofrece ni bajo qué identidad pública. |
+| Angileri Ignazio | Marsala | La actividad registral confirma cultivos permanentes, sin producto propio concreto ni canal público actual. |
+| Angileri Leonardo | Erice | No se pudo reconciliar con seguridad con la bodega Istinto Naturale de Marsala ni con otra oferta propia de la unidad certificada de Erice. |
+| Ansaldi Giorgio | Marsala | El homónimo aparece vinculado familiarmente a Ansaldi Vini, pero la explotación certificada de Contrada Casazze no se puede identificar como una segunda unidad o marca productora. |
+| Asta Leonardo | Alcamo | Se acredita cultivo de uva; la antigua azienda didattica fue revocada y no se encontró una gama actual inequívoca de esta unidad. |
+| Barbera Francesca | Salemi | Hay actividad vitícola y terrenos, pero no vino, aceite u otro producto propio con identidad comercial pública. |
+| Barraco Rosario | Marsala | El certificado prueba cultivo, sin una marca, catálogo o contacto comercial suficiente para publicar. |
+| Bertolino Salvatore | Marsala | Existe una bodega pública de Salvatore y Gabriele Bertolino, pero sus direcciones y datos no permiten reconciliarla con seguridad con la unidad certificada de Vicolo dell'Acqua. |
+| Bianco Angela | Mazara del Vallo | No se localizó producto propio, marca o presencia pública inequívoca de la explotación certificada. |
+| Blunda Ignazio | Alcamo | Los resultados mezclan actividad agrícola, ortofructícola y un negocio de recambios; falta identificar la oferta alimentaria de la unidad certificada. |
+
+## Productores de queso — revisión cerrada del 2026-08-13
 
 Se revisó el barrido sanitario nacional de 31 unidades. Se publicaron 15: doce productores lácteos y tres fabricantes cuya actividad pública real es el helado (`Gelateria Mozart`, `Artegel` y `Sigel Gelati`). Las altas incluyen las dos unidades distintas de Belice Formaggi solo cuando la identidad pública permite reconciliarlas: se publicó Gibellina y se retiene Santa Ninfa.
 
