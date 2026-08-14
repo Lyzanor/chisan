@@ -1,6 +1,6 @@
 # Nara — candidatos
 
-- CSV: `data/csv/jp/kansai/nara.csv` (73 filas tras la revisión integral de 2026-08-11).
+- CSV: `data/csv/jp/kansai/nara.csv`.
 - Fuente: 奈良県酒造組合 (Nara Sake Brewers Association), <https://yamato-umazake.com/brewery-introduction/> — los 26 miembros del gremio, con marca, municipio y dominio propio.
 - Estado: **25 de 26 integradas** en el CSV el 2026-08-04 como `parcial`. Queda 1: Yoshimura Shuzo (Uda), dejada fuera porque su única URL es una ruta de hosting de proveedor (`begin.or.jp/~inadoya`) y hay que localizar dominio vivo.
 
@@ -25,10 +25,6 @@ Categoría para todos: `Sake` (`Bodega` quedó retirada el 2026-08-04).
   Makinouchi 345, tel. 0744-43-1072), empresa distinta de 三輪そうめん小西
   (tel. 0744-43-3113). **Dos Konishi en el mismo municipio**: entraron las dos,
   como filas separadas.
-- ⚠ **Kurokawa Honke no está en Yoshino, sino en Uda** (大宇陀). Y el dominio que
-  los directorios le atribuyen, `yoshinokuzu.com`, **no resuelve** (SERVFAIL):
-  no es un 404, es que el dominio no existe. Sin enlace verificable no se da de
-  alta (`docs/candidates/README.md`, alta mínima) — queda anotada.
 - **森井食品 fallaba por HTTPS** (certificado de `bizmw.com`) y responde 200 por
   HTTP: no era un sitio muerto. Coordenadas tomadas de su propio enlace de mapa.
   Sin tienda localizada, así que entró `verificado` con `Venta online=no comprobado`.

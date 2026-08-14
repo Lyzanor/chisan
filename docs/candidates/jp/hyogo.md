@@ -1,6 +1,6 @@
 # Hyogo — candidatos
 
-- CSV: `data/csv/jp/kansai/hyogo.csv` (76 filas tras la revisión integral de 2026-08-11).
+- CSV: `data/csv/jp/kansai/hyogo.csv`.
 - Fuente: 灘五郷酒造組合 (Nada Gogo Sake Brewers Association), <https://www.nadagogo.ne.jp/brewery/> — los 25 miembros (24 de sake, 1 de encurtidos), agrupados por los cinco 郷.
 - Estado: **8 integradas** el 2026-08-05 (6 `verificado`, 2 `parcial`), 4 con tienda propia; quedan 17 de Nada y 11 del resto de la prefectura. Evidencia en `data/evidence/jp/kansai/hyogo.jsonl`.
 
@@ -105,3 +105,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 藤江屋分大 | 明石市 | Dulces y repostería | 和菓子協会 | http://www.f-bundai.co.jp/ | 明石市本町 1-12-17; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 植垣米菓株式会社 | 加古川市 | Aperitivos | 全国米菓工業組合 | http://www.uegaki-beika.co.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 高尾製粉製麺㈱ | 姫路市 | Pan y cereal | 全乾麺 | http://takaoseimen.co.jp/ | 機械製乾めん; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+
+## Retenidos del barrido de Kobe — 2026-08-14
+
+| candidato | municipio | carencia actual |
+|---|---|---|
+| 神戸ワイナリー (Kobe Winery / 神戸ワイン) | Kobe | La asociación cedió la fabricación y venta a 白鶴酒造 el 2024-12-01 y cerró tienda, visitas y café. Falta una fuente directa posterior al traspaso que demuestre una unidad productiva pública separada de la fila ya publicada de Hakutsuru. |
+| Nick (ニック) | Kobe | La web correcta es <https://nick.co.jp/> y la operadora de la tienda es 株式会社ブロケード; `nick.style` pertenece a una persona ajena. La oferta propia está clara, pero no la unidad donde se elaboran los productos cárnicos. |
+| 大井肉店 (Oi Nikuten) | Kobe | La dirección vigente es 元町通7-2-5, no 元町通5-6-4. La tienda y sus preparados están activos, pero la fuente propia revisada no atribuye su elaboración a esa unidad. |

@@ -1,6 +1,6 @@
 # Shiga — candidatos
 
-- CSV: `data/csv/jp/kansai/shiga.csv` (44 filas tras la revisión integral de 2026-08-11).
+- CSV: `data/csv/jp/kansai/shiga.csv`.
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/shiga> (50 bodegas, leído 2026-08-04). Gremio: 滋賀県酒造組合, <http://shiga-sake.net/>.
 - Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
@@ -24,10 +24,8 @@ confirmar contra la web de cada bodega.
 
 ## Qué falta
 - Las ~36 bodegas restantes del censo.
-- Sin abrir: **鮒寿し (funazushi)**, el encurtido de pescado del Biwa, con
-  obradores familiares y siglos de historia — el producto más singular de la
-  prefectura; **近江牛 (Omi gyu)**, la carne más antigua de Japón; 赤こんにゃく de
-  Omihachiman, 丁字麸, 政所茶 y el té de Asamiya (de los primeros de Japón).
+- Sin abrir: **近江牛 (Omi gyu)**, la carne más antigua de Japón; 赤こんにゃく
+  de Omihachiman, 丁字麸, 政所茶 y el té de Asamiya (de los primeros de Japón).
 
 ## Lote JAS ecológico nacional — 2026-08-08
 

@@ -1,6 +1,6 @@
 # Kioto — candidatos
 
-- CSV: `data/csv/jp/kansai/kyoto.csv` (67 filas tras la revisión integral de 2026-08-11).
+- CSV: `data/csv/jp/kansai/kyoto.csv`.
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/kyoto> (51 bodegas, leído 2026-08-04). Gremio: 京都府酒造組合, <http://kyoto-sake.sakura.ne.jp>.
 - Estado: **8 integradas** el 2026-08-05, todas `verificado`, 5 con tienda propia. Evidencia en `data/evidence/jp/kansai/kyoto.jsonl`.
 
@@ -94,3 +94,9 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 大原女家 | 京都市 | Dulces y repostería | 和菓子協会 | http://www.oharameya.co.jp/ | 京都市東山区祇園町北側 248; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 武中製菓株式会社 | 京都市 | Aperitivos | 全国米菓工業組合 | https://takenakaseika.shopinfo.jp/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
 | 有限会社藤澤永正堂 | 京都市 | Aperitivos | 全国米菓工業組合 | http://www.kuramaan.jp | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+
+## Retenido del barrido de Kioto — 2026-08-14
+
+| candidato | municipio propuesto | carencia actual |
+|---|---|---|
+| 京都丹波高原チーズ工房 | Nantan | `kyoto-cheese.com` no resuelve y no se encontró una fuente competente que confirme esa identidad, la quesería ni la unidad propuesta en 八木町日置西谷14. No confundir con 丹波チーズ工房 de Tanba, Hyogo. |

@@ -1,6 +1,6 @@
 # Wakayama — candidatos
 
-- CSV: `data/csv/jp/kansai/wakayama.csv` (42 filas tras la revisión integral de 2026-08-11).
+- CSV: `data/csv/jp/kansai/wakayama.csv`.
 - Fuente: censo de 酒蔵 de SAKETIMES, <https://jp.sake-times.com/sakagura/wakayama> (19 bodegas, leído 2026-08-04). Gremio: 和歌山県酒造組合, <http://wa-syuzouren.sakura.ne.jp/>.
 - Estado: revisión integral cerrada el 2026-08-11; las entradas no publicadas se conservan abajo con la carencia concreta que impide incorporarlas.
 
@@ -14,20 +14,16 @@ confirmar contra la web de cada bodega.
 - **九重雜賀 (Kinokawa)** es sobre todo **casa de vinagre** (雑賀の酢) que además
   hace sake: la `categoria` que pese puede ser `Condimentos`, no `Sake`. Mirarlo
   antes de escribir.
-- **中野BC (Kainan)** es grande y hace licor de ume además de sake: entra por
-  identidad propia, pero decidir la categoría dominante.
 - 海草郡紀美野町 y 伊都郡かつらぎ町 no son municipio: la fila lleva el 町 —
   Kimino, Katsuragi.
 
 ## Qué falta
 - Las 5 bodegas restantes del censo.
 - **梅 (ciruela ume)**: Wakayama produce en torno al 60% del nacional y el
-  南高梅 de **Minabe y Tanabe** es Patrimonio Agrícola Mundial, con decenas de
-  elaboradores de umeboshi con marca y tienda propia. Es el frente más rico de
-  la prefectura y no hay ni una fila.
+  南高梅 de **Minabe y Tanabe** es Patrimonio Agrícola Mundial; ampliar la
+  cobertura más allá de 中田食品.
 - Sin abrir: **有田みかん** (mandarina con GI), 山椒 de Arida (casi todo el
-  nacional), かつお/まぐろ de Katsuura, 湯浅の醤油 — **Yuasa es la cuna de la
-  salsa de soja japonesa** y conserva obradores en madera.
+  nacional) y かつお/まぐろ de Katsuura.
 
 ## Lote JAS ecológico nacional — 2026-08-08
 
