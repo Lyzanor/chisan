@@ -22,3 +22,12 @@ Búsqueda de queserías artesanales, granjas queseras (fromageries fermières) y
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Barrido de productores de pescado y caviar (2026-08-14)
+
+Búsqueda de elaboradores de caviar, ahumaderos artesanales de salmón y proyectos de acuicultura y acuaponía en Brabant wallon. Las fuentes confirman instalaciones activas; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+| Pisciculture Collette (Vasch Aquaponics) | Explotación acuícola y cría de truchas integrada en sistema acuapónico en Bonlez. | Chaumont-Gistoux | [Collège des Producteurs](https://collegedesproducteurs.be) ⚠ Revisión 2026-08-14: retenido; la URL aportada es una portada sectorial genérica sin ficha atribuible. |
+| Aquaproduction SC | Instalación acuícola y vivero de producción y mantenimiento piscícola en Limal. | Wavre | [pagesdor](https://www.pagesdor.be/entreprise/Wavre/L30644318/Aquaproduction/) ⚠ Revisión 2026-08-14: retenido; solo se localizó un directorio comercial que no acredita oferta propia y actividad productiva actual. |

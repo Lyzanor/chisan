@@ -23,3 +23,12 @@ Búsqueda de queserías artesanales, escuelas fromagères, chèvreries y granjas
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
 | Fromagerie des Hauts-Pays | En espera: no se ha localizado una identidad pública, dirección productiva ni fuente independiente que confirme la supuesta quesería de Honnelles; el perfil social indicado no aporta una base verificable suficiente. | Honnelles | [facebook](https://www.facebook.com/fromageriedeshautspays/) |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Búsqueda de ahumaderos artesanales de pescado, pisciculturas familiares y centros de acuicultura en Hainaut. Las fuentes confirman instalaciones de producción activas; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+| Maison Fumesse | Saurisserie y empresa familiar en Ghlin (Mons) especializada en el ahumado artesanal de salmón al humo de haya pura y procesado de productos del mar. | Mons | [Hainaut Terre de Goûts](https://www.hainaut-terredegouts.be/)<br>[web](https://www.produitdelamer.be) ⚠ Revisión 2026-08-14: retenido; la URL aportada es la portada genérica del directorio y no la ficha del productor. |
+| Pisciculture de Battefer | Piscicultura artesanal gestionada por Franck y Louis Clip en Silenrieux, especializada en la cría y venta de salmónidos vivos y para consumo. | Cerfontaine | [Collège des Producteurs](https://collegedesproducteurs.be) ⚠ Revisión 2026-08-14: retenido; la URL aportada es una portada sectorial genérica sin ficha atribuible. |
