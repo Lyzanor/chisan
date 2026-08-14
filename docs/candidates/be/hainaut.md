@@ -8,3 +8,18 @@ Revisión individual del lote Apaq-W de 2026-08-08: 16 candidatos confirmados y 
 | Élevage de la Cour Daloze | En espera | Solo se localizó la ficha de descubrimiento, sin señal pública actual independiente. |
 | Au paradis des délices | En espera | Persisten fichas recientes, pero la presencia social no demuestra actividad actual de forma inequívoca. |
 | Boulangerie Carine Mercier | En espera | La evidencia externa hallada describe el obrador históricamente; no prueba actividad vigente en 2026. |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Hainaut para complementar el catálogo de la provincia. Las fuentes confirman instalaciones de producción activas; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
+## Barrido de queserías y productores lácteos (2026-08-13)
+
+Búsqueda de queserías artesanales, escuelas fromagères, chèvreries y granjas queseras con transformación propia en Hainaut. Las fuentes confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+| Fromagerie des Hauts-Pays | En espera: no se ha localizado una identidad pública, dirección productiva ni fuente independiente que confirme la supuesta quesería de Honnelles; el perfil social indicado no aporta una base verificable suficiente. | Honnelles | [facebook](https://www.facebook.com/fromageriedeshautspays/) |
