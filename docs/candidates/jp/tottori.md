@@ -83,3 +83,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 大山ハム | 米子市 | Carne | búsqueda dirigida + web propia | https://daisenham.sanin.jp/ | jamón y embutido; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Tottori con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **丸栄水産 (Maruei Suisan)** | 株式会社丸栄水産 | `境港市` | Pescado | https://marueisuisan.jp/ |Procesador y distribuidor directo en el puerto de Sakaiminato; especialista en cocido en caldera y selección de cangrejo Matsuba (matsuba-gani), cangrejo rojo de nieve (beni-zuwaigani) y atún salvaje. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro de empresas pesqueras de Sakaiminato |

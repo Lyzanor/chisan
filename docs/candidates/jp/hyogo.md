@@ -113,3 +113,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 神戸ワイナリー (Kobe Winery / 神戸ワイン) | Kobe | La asociación cedió la fabricación y venta a 白鶴酒造 el 2024-12-01 y cerró tienda, visitas y café. Falta una fuente directa posterior al traspaso que demuestre una unidad productiva pública separada de la fila ya publicada de Hakutsuru. |
 | Nick (ニック) | Kobe | La web correcta es <https://nick.co.jp/> y la operadora de la tienda es 株式会社ブロケード; `nick.style` pertenece a una persona ajena. La oferta propia está clara, pero no la unidad donde se elaboran los productos cárnicos. |
 | 大井肉店 (Oi Nikuten) | Kobe | La dirección vigente es 元町通7-2-5, no 元町通5-6-4. La tienda y sus preparados están activos, pero la fuente propia revisada no atribuye su elaboración a esa unidad. |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y acuicultores artesanos de pescado y marisco de Hyogo con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **嶋本水産 (Shimamoto Suisan)** | 株式会社嶋本水産 | `淡路市` | Pescado | https://shimamoto-suisan.com/ |Elaborador artesano en la isla de Awaji; secado y ahumado con carbón vegetal tradicional de pescados frescos de la bahía de Osaka y el mar interior de Seto (himono). ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro de productores de Awaji |

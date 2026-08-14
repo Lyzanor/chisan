@@ -83,3 +83,12 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 柳屋奉善 | 松阪市 | Dulces y repostería | 和菓子協会 | http://www15.plala.or.jp/yh99/ | 松阪市中町 1877; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y acuicultores artesanos de pescado y marisco de Mie con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **丸達水産 (Marutatsu Suisan)** | 有限会社丸達水産 | `志摩市` | Pescado | https://marutatsu-suisan.com/ |Acuicultura y distribución directa en Ise-Shima de langosta espinosa japonesa (Ise-ebi), oreja de mar / abulón y ostras de roca. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro pesquero de Shima |
+| **丸幸水産 (Maruko Suisan)** | 株式会社丸幸水産 | `鳥羽市` | Pescado | https://www.marukousuisan.com/ |Recolector y centro de acondicionamiento de mariscos de Toba; ostras de Uramura, almejas y crustáceos de la costa de Ise-Shima. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro comercial de Toba |

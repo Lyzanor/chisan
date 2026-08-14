@@ -75,3 +75,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | 日の出屋製菓産業株式会社 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://www.hinodeya-seika.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、その他（米菓を含むコメ加工品製造・販売等）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 株式会社丸米製菓 | 南砺市 | Aperitivos | 全国米菓工業組合 | https://maru-yonezo.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Toyama con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **川村水産 (Kawamura Suisan)** | 株式会社川村水産 | `滑川市` | Pescado | https://k-suisan.com/ |Obrador especializado en el puerto de Namerikawa; transformación de calamar luciérnaga (hotaru-ika) de la bahía de Toyama en okizuke, salazones tradicionales y marinados shiokara. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación comercial de Namerikawa |

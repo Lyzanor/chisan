@@ -94,3 +94,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre | municipio de la ficha | categoría provisional | ficha | motivo de retención |
 |---|---|---|---|---|
 | こすもす自然農園 | 河北郡河北潟干拓地区内 | Fruta y verdura | https://www.tabechoku.com/producers/28888 | The note identifies a reclaimed district rather than a municipality and the profile text does not resolve the productive unit. |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y pescadores artesanos de Ishikawa con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **輪島海望 (Wajima Kaibo)** | 株式会社海望 | `輪島市` | Pescado | https://wajima-kaibo.com/ |Elaborador artesanal del puerto de Wajima en la península de Noto; secado al aire marino de pez nodoguro (lubina de garganta negra), fugu salvaje de Noto y salazones de temporada. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro comercial de Wajima |

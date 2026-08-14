@@ -59,3 +59,12 @@ Los dos complementos de Fukui proceden de la lista oficial municipal «ふくい
 - Fuentes de esta tanda:
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
 - Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Fukui con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **越前かに成前 (Narimae)** | 株式会社成前 | `坂井市` | Pescado | https://www.narimae.com/ |Especialista en cangrejo de nieve de Echizen (Echizen-gani con etiqueta amarilla) en el puerto de Mikuni; cocido artesanal en calderas de agua marina con punto exacto de salazón. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación comercial del puerto de Mikuni |
+| **若狭小浜 丸海 (Marukai)** | 株式会社丸海 | `小浜市` | Pescado | https://www.shop-marukai.net/ |Obrador tradicional de Obama fundado en 1948; célebre por su «Wakasa Kodai-sasazuke» (pequeños besugos marinados en vinagre y sal curados en barrilitos de cedro con hojas de bambú). ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Gremio de sasazuke de Wakasa |

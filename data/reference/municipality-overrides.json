@@ -1076,6 +1076,20 @@
     ]
   },
   "jp": {
+    "setouchi": [
+      {
+        "lat": 34.66489,
+        "lon": 134.09285,
+        "label": "Setouchi (瀬戸内市, Okayama)",
+        "region": "chugoku"
+      },
+      {
+        "lat": 28.14644,
+        "lon": 129.31489,
+        "label": "Setouchi (瀬戸内町, Kagoshima)",
+        "region": "kyushu-okinawa"
+      }
+    ],
     "anan": [
       {
         "lat": 33.92178,

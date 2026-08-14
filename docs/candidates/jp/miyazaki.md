@@ -73,3 +73,12 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 **Ya integrado, no volver a proponer:** 雲海酒造 ya está en `miyazaki.csv` como `Destilados y licores`.
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, armadores y elaboradores artesanos de pescado y marisco de Miyazaki con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **美咲水産 (Misaki Suisan)** | 株式会社美咲水産 | `日南市` | Pescado | https://misakisuisan.com/ |Armador pesquero y elaborador en el puerto de Meitsu en Nichinan; especialista en bonito de caña simple (ippontsuri katsuo), atún fresco y preparados marinos de Hyuga-nada. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro pesquero de Nichinan Meitsu |
+| **上田水産 (Ueda Suisan)** | 株式会社上田水産 | `延岡市` | Pescado | https://uedasuisan.com/ |Obrador pesquero de Nobeoka en el mar de Hyuga; hervido y secado artesanal de chanquetes (kamaage chirimen / shirasu) recién desembarcados sin conservantes. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Cooperativa pesquera de Nobeoka |

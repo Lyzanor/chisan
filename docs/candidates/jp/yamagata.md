@@ -77,3 +77,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
   - **JWA** — 日本ワイナリー協会 — ワイナリーマップ, <https://www.winery.or.jp/winery-map/>
   - **Shokunin** — 職人醤油 — 提携蔵元一覧, <https://s-shoyu.com/kuramoto-list/>
 - Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Yamagata con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **菅原鮮魚 (Sugawara Sengyo / カネヤス)** | 有限会社カネヤス | `酒田市` | Pescado | https://sugawarasengyo.com/ |Elaborador y distribuidor pesquero de Sakata conectado directamente a la lonja del puerto de Shonai; preparado, corte y conservación de pescado fresco de temporada del mar de Japón. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro comercial del puerto de Sakata |

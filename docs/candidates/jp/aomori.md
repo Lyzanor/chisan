@@ -63,3 +63,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (fuente) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | カネク醸造 (八戸ビール) | Hachinohe | Cerveza | JBA | — | sin dominio en la fuente; revisado 2026-08-10: el padrón confirma el nombre, pero falta una fuente primaria actual que atribuya la cerveza a esta unidad |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Aomori con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **風合瀬水産 (Kase Suisan)** | 株式会社風合瀬水産 | `西津軽郡深浦町` | Pescado | https://kasesuisan.com/ |Elaborador de pescados y mariscos del mar de Japón en Fukaura; secado artesanal (himono), pepino de mar y pescado fresco costero. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Guía de productos locales de Fukaura |

@@ -81,3 +81,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | ㈱あらい屋製麺所 | 郡山市 | Pan y cereal | 全乾麺 | http://www.araiya.net/ | 機械製乾めん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Fukushima con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **飯塚水産 (Iizuka Suisan)** | 株式会社飯塚水産 | `相馬市` | Pescado | https://iizukasuisan.com/ |Elaborador pesquero del puerto de Haragama en Soma; procesado artesanal de chanquetes hervidos al punto de sal (kamaage shirasu) y pescados planos de Joban-mono. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación pesquera de Soma Haragama |

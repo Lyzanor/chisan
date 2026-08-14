@@ -100,3 +100,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | candidato | municipio propuesto | carencia actual |
 |---|---|---|
 | 京都丹波高原チーズ工房 | Nantan | `kyoto-cheese.com` no resuelve y no se encontró una fuente competente que confirme esa identidad, la quesería ni la unidad propuesta en 八木町日置西谷14. No confundir con 丹波チーズ工房 de Tanba, Hyogo. |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Kioto con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **丸久水産 (Marukyu Suisan)** | 株式会社丸久水産 | `宮津市` | Pescado | https://marukyusuisan.com/ |Elaborador pesquero del puerto de Miyazu en Tango; especialista en secado artesano (himono) de jurel, caballa y pescados de temporada del mar de Japón. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación comercial de Miyazu |

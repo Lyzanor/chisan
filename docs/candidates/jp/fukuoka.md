@@ -90,3 +90,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | つか菓子舗 | 福岡市 | Dulces y repostería | 和菓子協会 | http://www2.plala.or.jp/tukakasiho/ | 福岡市中尾 3-4-5; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 原口園（扶桑庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://haraguchien.co.jp/ | ⚠ `/pages/company` da 福岡市博多区, que es la sede: el té es de Yame. Falta situar la unidad productiva antes de escribir la fila; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | 山口製茶園（茶幸庵） | ⚠ | Té e infusiones | búsqueda dirigida + web propia | https://www.chakouan.com/ | ⚠ municipio sin confirmar; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, ostricultores y elaboradores artesanos de pescado, marisco y algas de Fukuoka con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **マルハチ水産 (Maruhachi Suisan)** | 有限会社マルハチ水産 | `糸島市` | Pescado | https://maruhachi-suisan.jp/ |Granja ostricola y cabañas de marisco en el puerto de Kafuri en Itoshima; cultivo de ostras de Itoshima en aguas limpias de la bahía con venta directa y asado en puerto. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación comercial de Itoshima |

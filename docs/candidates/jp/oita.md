@@ -84,3 +84,11 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | マルトモ物産 | 中津市 | Setas | búsqueda dirigida + web propia | https://www.marutomo-kanbutsu.co.jp/ | ⚠ mayorista de secos, triar antes de dar de alta; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | やまよし | 別府市 | Setas | búsqueda dirigida + web propia | https://www.shiitake-ya.co.jp/ | 乾しいたけ; ⚠ comprobar si elabora o distribuye; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | オーエスケー | 杵築市 | Setas | búsqueda dirigida + web propia | http://osk-shiitake.com/ | 乾しいたけ; ⚠ proveedor del gremio, triar; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
+
+Barrido sistemático de productores, acuicultores y elaboradores artesanos de pescado y marisco de Oita con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **ヤマジ水産 (Yamaji Suisan)** | 有限会社ヤマジ水産 | `佐伯市` | Pescado | https://yamaji-suisan.com/ |Elaborador artesano del canal de Bungo en Saiki; especialista en secado de jurel, caballa y sardina (himono) con sal marina artesanal y maduración en frío. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro comercial de Saiki |
