@@ -87,3 +87,11 @@ Quedan **35 candidatos nuevos** en este corte: 7 perfiles de explotación, 12 un
 | LEPELLETIER MATHILDE | LEPELLETIER MATHILDE | Saint Pierre En Auge | 183 CHEMIN DE LA FRANCE - AMMEVILLE 14170 | actividad | 2025 | [nº Bio 37965](https://annuaire.agencebio.org/operateur/37965) |
 | LA ROUSSELIERE LEFEBVRE Olivier | SCEA LA ROUSSELIERE | Souleuvre En Bocage | 4 LA ROUSSELIERE - SAINTE MARIE LAUMONT 14350 | actividad | 2026 | [nº Bio 46351](https://annuaire.agencebio.org/operateur/46351) |
 | LA FERME DU CHATEAU A VILLERVILLE | VIGREUX ISABELLE | Villerville | Ferme du Château Rue du Général Leclerc 14113 | actividad | 2026 | [nº Bio 149183](https://annuaire.agencebio.org/operateur/149183) |
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Les Huîtres de Fanny et Charles | Ostréiculture artisanale naturelle en baie d'Asnelles-Meuvaines, huîtres de Normandie | Meuvaines |[sitio web](https://www.huitres-fanny-charles.fr/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y la fuente localizada no acredita actividad actual suficiente. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y la fuente localizada no acredita actividad actual suficiente. |

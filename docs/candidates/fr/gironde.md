@@ -17,3 +17,12 @@ Revisión zona por zona con corte 2026-08-12. Se cruzaron tres fuentes nacionale
 Lote cerrado el 2026-08-12: las 13 señales quedaron resueltas en **11 unidades productivas publicadas** (8 `verificado` y 3 `parcial`) y 2 perfiles sin ficha separada. `Lacampagne` es el lugar colectivo donde trabaja OlaVache y se consolidó bajo esa unidad quesera; `Les Délices du Médoc` fue descartado porque el propio perfil atribuye sus quesos a otros productores. Oh Lait Lait se mantiene activo pese a un directorio contradictorio sobre una dirección anterior: su web vigente y el registro sanitario de 2026 sostienen la unidad actual. Domaine du Grand Brignac, Château Pouly y GAEC Iriberri quedan parciales por falta de un canal público controlado que permita completar gama y contacto.
 
 No quedan señales de queso abiertas de este corte en Gironde.
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Huîtres Laban | Ostréiculture traditionnelle au port de Larros, banc d'Arguin, dégustation et vente directe | Gujan-Mestras |[sitio web](https://www.huitres-laban.com/) ⚠ Revisión 2026-08-14: retenido; el dominio está secuestrado y la presencia actual localizada acredita comercio, no la producción propia. ⚠ Revisión 2026-08-14: retenido; el dominio está secuestrado y la presencia actual localizada acredita comercio, no la producción propia. |
+| Huîtres Mourlane | Ostréiculture familiale sur le bassin d'Arcachon et banc d'Arguin | Gujan-Mestras |[sitio web](https://www.huitres-mourlane.fr/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. |

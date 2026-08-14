@@ -77,3 +77,11 @@ Quedan **21 candidatos nuevos** en este corte: 3 perfiles de explotación, 13 un
 | LOEFGEN | LOEFGEN | Muracciole | LOEFGEN Harald Lieu Dit ARCA 20219 | actividad | 2026 | [nº Bio 41641](https://annuaire.agencebio.org/operateur/41641) |
 | VANESSA LAURICELLA - CINQUANTACAPRE | LAURICELLA VANESSA | Rusio | VILLAGE 20244 | actividad | 2025 | [nº Bio 51249](https://annuaire.agencebio.org/operateur/51249) |
 | RABINEAU Audrey | RABINEAU Audrey | Tox | LD FAVALE 20270 | actividad | 2026 | [nº Bio 139628](https://annuaire.agencebio.org/operateur/139628) |
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Aux Coquillages de Diana | Ostréiculture et mytiliculture sur l'étang de Diana à Aléria (huître Nustrale de Corse), dégustation et vente | Aléria |[fuente](https://www.visit-corsica.com/) ⚠ Revisión 2026-08-14: retenido; las fuentes actuales no distinguen con claridad el comercio de la unidad ostrícola que produce. ⚠ Revisión 2026-08-14: retenido; las fuentes actuales no distinguen con claridad el comercio de la unidad ostrícola que produce. |

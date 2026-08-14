@@ -92,3 +92,11 @@ Quedan **38 candidatos nuevos** en este corte: 7 perfiles de explotación, 9 uni
 | FERME DU PERRIERS | GAEC FERME DU PERRIERS | Saint-Lo | FERME DU PERRIER 50000 | actividad | 2026 | [nº Bio 147970](https://annuaire.agencebio.org/operateur/147970) |
 | GRIMAUX MAGALIE MURIEL | GRIMAUX MAGALIE MURIEL | Saint-Pierre-Langers | 5 RTE DE L'EPINE 50530 | actividad | 2026 | [nº Bio 56414](https://annuaire.agencebio.org/operateur/56414) |
 | HERVY Gabrielle | HERVY Gabrielle | Torigny-Les-Villes | 1 SEDOUY 50160 | actividad | 2026 | [nº Bio 139501](https://annuaire.agencebio.org/operateur/139501) |
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Huîtres Taillepied | Ostréiculture traditionnelle en pleine mer sur la côte ouest du Cotentin | Blainville-sur-Mer |[sitio web](https://www.huitrestaillepied.fr/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se pudo distinguir esta unidad de la homónima de Calvados. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se pudo distinguir esta unidad de la homónima de Calvados. |

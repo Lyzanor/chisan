@@ -112,3 +112,12 @@ Quedan **58 candidatos nuevos** en este corte: 5 perfiles de explotación, 11 un
 | EARL LA BERGERIE DE LA JOUE | LA BERGERIE DE LA JOUE | Vigneux-De-Bretagne | LA JOUE 44360 | actividad | 2025 | [nº Bio 180546](https://annuaire.agencebio.org/operateur/180546) |
 | BERGERIE DU MOUTON NOIR | GAEC BERGERIE DU MOUTON NOIR | Villeneuve-En-Retz | 94 LES CLOS MOUILLES 44580 | actividad | 2025 | [nº Bio 58993](https://annuaire.agencebio.org/operateur/58993) |
 | GAEC DU MARAIS CHAMPS | GAEC DU MARAIS CHAMPS | Villeneuve-En-Retz | Nombreuil 221 chemin des chênes verts 44580 | actividad | 2025 | [nº Bio 145720](https://annuaire.agencebio.org/operateur/145720) |
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Les Viviers de Banche | Conchyliculture et mytiliculture (moules de bouchot de la baie de Bourgneuf, huîtres), dégustation et vente | La Plaine-sur-Mer |[sitio web](https://www.viviersdebanche.com/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. |
+| Huîtres Lemoine | Ostréiculture en baie de Bourgneuf, huîtres creuses et plates élevées sur l'estran de Retz | Les Moutiers-en-Retz |[sitio web](https://www.huitres-lemoine.fr/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. |

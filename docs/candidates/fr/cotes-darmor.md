@@ -96,3 +96,11 @@ Quedan **42 candidatos nuevos** en este corte: 7 unidades manufactureras adicion
 | La ferme de Boket Laezh | GAEC LA FERME BOKET LAEZH | Tremargat | 9 Hent Porz Ar C'Ham 22110 | actividad | 2025 | [nº Bio 129209](https://annuaire.agencebio.org/operateur/129209) |
 | LES CHEVRES DE KERGONAN LE BOEDEC Nolwenn & CASTREC Mathieu | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU LES CHEVRES DE KERGONAN | Tremargat | lieu dit Kergonan 22110 | actividad | 2026 | [nº Bio 22595](https://annuaire.agencebio.org/operateur/22595) |
 | DAHIREL MORGANE | DAHIREL MORGANE | Treogan | 3 LE BUZIT 22340 | actividad | 2025 | [nº Bio 19813](https://annuaire.agencebio.org/operateur/19813) |
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Huîtres Vidament | Élevage artisanal d'huîtres creuses en pleine mer et dégustation à la cabane | Plougrescant |[sitio web](https://www.huitres-vidament.com/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y no se localizó una fuente actual suficiente. |

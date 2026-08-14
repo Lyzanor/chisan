@@ -106,3 +106,11 @@ Quedan **50 candidatos nuevos** en este corte: 13 perfiles de explotación, 8 un
 | DES MARGATIERS THIEULANT Arnaud et Torres Marie | GAEC DES MARGATIERS | Saint Suliac | La Crèmerie de Saint Suliac Malequere 35430 | actividad | 2026 | [nº Bio 105102](https://annuaire.agencebio.org/operateur/105102) |
 | GAEC DE LA BELLE ETOILE | GAEC DE LA BELLE ETOILE | Sens De Bretagne | LA CHAUVELAIS 35490 | actividad | 2025 | [nº Bio 117859](https://annuaire.agencebio.org/operateur/117859) |
 | GAEC LA CHEVRERIE DES PERRIERES | GAEC LA CHEVRERIE DES PERRIERES | Ste Anne Sur Vilaine | 25 ENTRELANDES 35390 | actividad | 2025 | [nº Bio 100565](https://annuaire.agencebio.org/operateur/100565) |
+
+## Barrido de productores de pescado y productos del mar (2026-08-14)
+
+Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Fuente |
+|---|---|---|---|
+| Maison Boutrais | Ostréiculteurs éleveurs-affineurs en baie de Cancale (Ostra Regal, Sentinelle) | Saint-Méloir-des-Ondes |[sitio web](https://www.maisonboutrais.com/) ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y la presencia comercial localizada no fija la unidad productiva actual. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no resuelve y la presencia comercial localizada no fija la unidad productiva actual. |
