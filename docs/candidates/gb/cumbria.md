@@ -63,3 +63,11 @@ current offer and phone/email before admission.
 | Mawbray Cheese Company | FSA Manufacturers/packers; rating/inspection 2025-03-28 | Cumberland | — | [1550608](https://api.ratings.food.gov.uk/Establishments/1550608) |
 | Thornby Moor Dairy | Named as a cheese producer by Made in Cumbria / own site | Thursby, Cumbria | — | — |
 | St James Cheese | Named as a cheese producer by Living North local cheesemakers | near Grange-over-Sands, Cumbria | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Cartmel Valley Game & Smokehouse | Traditional artisanal smokery curing and smoking salmon, trout, and game | The Smokehouse, Cartmel, Grange-over-Sands, LA11 7SS | [site](https://cartmelvalleysmokehouse.co.uk)<br>015395 36475<br>info@cartmelvalleygame.co.uk |

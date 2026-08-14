@@ -61,3 +61,12 @@ current offer and phone/email before admission.
 | Candidate | Signal | Location | Contact | FSA record |
 |---|---|---|---|---|
 | Isle of Kintyre/Inverloch Cheese Co | Specialist Cheesemakers Association member (cheesemaker) | 26 Kirk Street, Campbelltown, Argyll, PA28 6BL | 01586 552692<br>info@scotcheese.com | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Inverawe Smokehouse | Traditional oak-smoked salmon, trout, kippers and pâtés | Inverawe, Taynuilt, PA35 1HU | [site](https://www.inverawe.co.uk)<br>01866 822446<br>info@inverawe.co.uk |
+| The Argyll Smokery | Artisan small-batch hand-crafted kiln smoked Scottish salmon | 4 George Street, Dunoon, Argyll, PA23 8BE | [site](https://www.argyllsmokery.co.uk)<br>01369 704179<br>info@argyllsmokery.com |

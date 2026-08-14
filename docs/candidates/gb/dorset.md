@@ -51,3 +51,11 @@ current offer and phone/email before admission.
 |---|---|---|---|---|
 | Woodlands Dairy Limited | Specialist Cheesemakers Association member (cheesemaker) | Unit 27A Sunrise Business Park, Higher Shaftesbury Road, Blandford, Dorset, DT11 8ST | [site](http://www.woodlandsdairy.co.uk)<br>0845 467 9894<br>sam.boyt@woodlandsdairy.co.uk | — |
 | Ford Farm Cheesemakers | Named as a cheese producer by Ford Farm / Somerdale cheese producers (makes Wookey Hole Cave Aged Cheddar) | Ashley Chase Estate, Litton Cheney, Dorset | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Othniel Oysters | Major commercial oyster cultivation in the clean waters of Poole Harbour | Shellfish Depot, Rockley Road, Hamworthy, Poole, BH15 4LZ | [site](http://www.othnieloysters.co.uk)<br>01202 676648<br>info@othnieloysters.co.uk |

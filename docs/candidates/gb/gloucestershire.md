@@ -53,3 +53,11 @@ current offer and phone/email before admission.
 | Daylesford Organic Farm | Specialist Cheesemakers Association member (cheesemaker) | Daylesford Nr Kingham, Moreton-in-Marsh, Gloucestershire, GL56 0YG | [site](http://www.daylesford.com)<br>01608 731716<br>joel.stevens@daylesford.com | — |
 | Godsells Cheese | Specialist Cheesemakers Association member (cheesemaker) | Church Farm, Leonard Stanley, Stonehouse, Gloucesteshire, GL10 3NP | [site](http://www.godsellscheese.com)<br>01453 827802<br>godsellscheese@btinternet.com | — |
 | King Stone Dairy Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Old Parlour, Manor Farm, Chedworth, Gloucestershire, GL54 4BU | [site](http://www.kingstonedairy.com)<br>07527 002181<br>david.j.jowett@gmail.com | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Severn & Wye Smokery | Renowned artisan smokehouse curing and smoking wild eel, salmon, and river fish over oak | Chaxhill, Westbury-on-Severn, GL14 1QW | [site](https://severnandwye.co.uk)<br>01452 760190<br>sales@severnandwye.co.uk |

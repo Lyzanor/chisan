@@ -63,3 +63,15 @@ current offer and phone/email before admission.
 | Connage Highland Dairy | Specialist Cheesemakers Association member (cheesemaker) | Milton of Connage, Ardersier, Inverness, IV2 7QU | [site](http://www.connage.co.uk)<br>01667 462000<br>info@connage.co.uk | — |
 | Highland Fine Cheeses | Named as a cheese producer by Provender Brown Scottish cheesemakers | Tain, Highland | — | — |
 | West Highland Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Achmore, Highland | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Andy Race Fishmerchant | Traditional fish smoking (Mallaig kippers, hot/cold smoked salmon, shellfish) at Mallaig harbour | The Harbour, Mallaig, PH41 4PX | [site](https://andyrace.co.uk)<br>01687 462626<br>sales@andyrace.co.uk |
+| Isle of Ewe Smokehouse | Artisan fish smoking cured with sea salt and smoked with aromatic woods | Ormiscaig, Aultbea, Achnasheen, IV22 2JJ | [site](https://www.smoked-salmon.co.uk)<br>01445 731304<br>info@smoked-salmon.co.uk |
+| Caithness Smokehouse | Small artisan smokery smoking fresh local seafood over peat and oak | Inkstack, Barrock, Thurso, KW14 8SY | [site](https://caithnesssmokehouse.com)<br>01847 851722<br>caithnesssmokehouse@btinternet.com |
+
+- **Andy Race Fishmerchant:** The candidate domain now resolves to a domain-sale page; current productive activity and contact remain unresolved.

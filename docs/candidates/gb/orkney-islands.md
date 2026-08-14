@@ -61,3 +61,12 @@ current offer and phone/email before admission.
 | Burnside Cheese | Specialist Cheesemakers Association member (cheesemaker) | Braevilla, Rendall, Orkney, KW17 2NZ | [site](http://www.burnsidecheese.co.uk)<br>07765 863026<br>Barry@burnsidecheese.co.uk | — |
 | Wilson of Westray | Named as a cheese producer by Provender Brown Scottish cheesemakers | Westray, Orkney | — | — |
 | The Orkney Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Sandwick, Orkney | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Pierowall Fish | Manufacturers/packers; rating/inspection 2025-10-22 | Pierowall Fish Ltd, Broughton Road, Westray, KW17 2DA | [565177](https://api.ratings.food.gov.uk/Establishments/565177) |
+| Orkney Fishermen's Society | Fishermen's cooperative processing hand-caught Orkney brown crab and lobster | Deepdale Road, Stromness, Orkney, KW16 3DJ | [site](https://orkneycrab.co.uk)<br>01856 850400<br>info@orkneycrab.co.uk |

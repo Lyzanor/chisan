@@ -54,3 +54,11 @@ current offer and phone/email before admission.
 | Candidate | Signal | Location | Contact | FSA record |
 |---|---|---|---|---|
 | Laverstoke Park Farm | Named as a cheese producer by Speciality/regional South East cheese coverage | Overton, Hampshire | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Test Valley Trout | Family-run trout farm and processor operating on Hampshire's clear chalk streams | Romsey Road, Broughton, Stockbridge, SO20 8AZ | [site](https://testvalleytrout.co.uk)<br>01794 301277<br>info@testvalleytrout.co.uk |

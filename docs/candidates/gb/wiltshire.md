@@ -55,3 +55,11 @@ current offer and phone/email before admission.
 | Lyburn Farmhouse Cheesemakers | Specialist Cheesemakers Association member (cheesemaker) | Lyburn Farm, Landford, Salisbury, Wiltshire, SP5 2DN | [site](http://www.lyburncheese.co.uk)<br>07941 536380<br>cheese@lyburnfarm.co.uk | — |
 | Rosary Goats Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Rosary, Partridge Hill, Landford, Salisbury, Wiltshire, SP5 2BB | [site](http://www.rosarygoatscheese.co.uk)<br>01794 322196<br>info@rosarygoatscheese.co.uk | — |
 | Millbrook Dairy Company | Named as a cheese producer by Somerdale cheese producers | South West England | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Manningford Trout Fishery | Chalk stream trout farm rearing and preparing fresh brown and rainbow trout | Manningford Abbots, Pewsey, SN9 6JA | [site](https://manningfordfishery.co.uk)<br>01672 564079<br>info@manningfordfishery.co.uk |

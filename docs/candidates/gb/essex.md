@@ -57,3 +57,11 @@ current offer and phone/email before admission.
 |---|---|---|---|---|
 | Ivy Walnut Creamery | Specialist Cheesemakers Association member (cheesemaker) | Old Hall Road, Haverhill, Essex, CB9 7EJ | ivywalnutcreamery@outlook.com | — |
 | Sunny Ventures Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit 21 Thurrock Trade Park, Oliver Road, Grays, Essex, RM20 3AL | 07956 574753<br>info.sunnyventuresltd@gmail.com | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Colchester Oyster Fishery | Historic oyster beds and purification depot on Pyefleet Creek | North Meadow, East Mersea, Colchester, CO5 8TQ | [site](https://colchesteroysters.co.uk)<br>01206 384141<br>sales@colchesteroysters.co.uk |

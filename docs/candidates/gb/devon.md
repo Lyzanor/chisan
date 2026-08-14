@@ -57,3 +57,13 @@ current offer and phone/email before admission.
 | Gay's Creamery Ltd | FSA Manufacturers/packers; rating/inspection 2025-07-30 | 20 Brunswick Place Dawlish Devon | — | [12615](https://api.ratings.food.gov.uk/Establishments/12615) |
 | Sharpham Cheese | FSA Manufacturers/packers; rating/inspection 1901-01-01 | Unit 1, South Devon Food Hub, Longcombe | — | [1779395](https://api.ratings.food.gov.uk/Establishments/1779395) |
 | Ticklemore Cheese | Named as a cheese producer by Wikipedia list of British cheeses | Ashprington, Devon | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| River Teign Shellfish | Cultivation and harvesting of mussels and Pacific oysters on the River Teign | Back Beach, Teignmouth, TQ14 8TE | [site](https://riverteignshellfish.co.uk)<br>01626 779435<br>sales@riverteignshellfish.co.uk |
+
+- **River Teign Shellfish:** The candidate domain is unavailable, so current productive activity and public contact remain unresolved.

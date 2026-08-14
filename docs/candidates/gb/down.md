@@ -63,3 +63,12 @@ current offer and phone/email before admission.
 | Candidate | Signal | Location | Contact | FSA record |
 |---|---|---|---|---|
 | Mike's Fancy Cheese | Specialist Cheesemakers Association member (cheesemaker) | Ards Business Centre, Unit 1 Jubilee Road, Stranford Park, Newtownards, Co.Down, BT23 4YH | [site](http://www.mfcheese.com)<br>07794 570420<br>info@mfcheese.com | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Cuan Sea Fisheries | Oyster and mussel beds in Strangford Lough, depurating and shipping live shellfish | Sketrick Island, Killinchy, Newtownards, BT23 6QH | [site](https://cuanoysters.com)<br>028 9754 1334<br>sales@cuanoysters.com |
+| Dundrum Bay Oysters | Farmed oysters in the pristine tidal waters of Dundrum Inner Bay | 12 Church Avenue, Dundrum, Newcastle, BT33 0SL | [site](https://dundrumbayoysters.com)<br>028 4375 1421<br>info@dundrumbayoysters.com |

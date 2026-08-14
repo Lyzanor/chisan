@@ -56,3 +56,12 @@ current offer and phone/email before admission.
 |---|---|---|---|---|
 | Caws Pen Helyg | Specialist Cheesemakers Association member (cheesemaker); FSA productive registration | Cwm Helyg Rhydyfelin, Aberystwyth, SY23 4QE | 07961 315622<br>rogerhy@aol.com | [1378615](https://api.ratings.food.gov.uk/Establishments/1378615) |
 | Caws Cymru | FSA Manufacturers/packers; rating/inspection 2026-04-20 | Unit 5 Tanygroes Industrial Estate, Tanygroes, Ceredigion | — | [1002820](https://api.ratings.food.gov.uk/Establishments/1002820) |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Welsh Homestead Smokery | Manufacturers/packers; rating/inspection 2026-02-19 | Maesffynnon, Penuwch, Ceredigion, SY25 6RD | [1127878](https://api.ratings.food.gov.uk/Establishments/1127878) |
+| Rhydlewis Trout Farm & Smokery | Spring-fed trout farm and smokery producing oak-smoked trout and salmon | Rhydlewis, Llandysul, SA44 5QS | [site](https://rhydlewistroutfarm.co.uk)<br>01239 851224<br>info@rhydlewistroutfarm.co.uk |

@@ -58,3 +58,11 @@ current offer and phone/email before admission.
 | Griffiths and Latter Limited | Specialist Cheesemakers Association member (cheesemaker) | Penrhiw, Llandwnda, Goodwick, Pembrokeshire, SA64 0AQ | 07875 219746<br>griffithsandlatter@penrhiwfarm.co.uk | — |
 | Pant Mawr Farmhouse Cheeses | Specialist Cheesemakers Association member (cheesemaker) | Pant Mawr, Rosebush, Clynderwen, Pembrokeshire, SA66 7QU | [site](http://www.pantmawrcheeses.co.uk)<br>01437 532627<br>david@pantmawrcheeses.co.uk | — |
 | The First Milk Cheese Company Ltd | FSA Manufacturers/packers; rating/inspection 2026-07-13 | The First Milk Cheese Co Ltd Haverfordwest Creamery Pembroke Road, Haverfordwest, Pembrokeshire | — | [856464](https://api.ratings.food.gov.uk/Establishments/856464) |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Cardigan Bay Fish | Family-run processing of fresh fish, crab, and lobster caught in Cardigan Bay | The Slipway, St Dogmaels, SA43 3LN | [site](http://www.cardiganbayfish.co.uk)<br>01239 621043<br>info@cardiganbayfish.co.uk |

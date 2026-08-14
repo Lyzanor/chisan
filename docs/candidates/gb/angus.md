@@ -45,3 +45,12 @@ productive municipality, current offer and phone/email before admission.
 | Jeremy Gow | Farmers/growers; rating/inspection 2023-01-25 | Pitscandly Farmhouse Pitscandly Forfar, DD8 3NZ | [1737966](https://api.ratings.food.gov.uk/Establishments/1737966) |
 | Alex Cargill Fish | Manufacturers/packers; rating/inspection 2024-05-13 | 33 West Newgate Arbroath, DD11 1BZ | [111067](https://api.ratings.food.gov.uk/Establishments/111067) |
 | Arbroath Quality Fish | Manufacturers/packers; rating/inspection 2026-06-02 | Fish House 53 High Street Arbroath, DD11 1AN | [112494](https://api.ratings.food.gov.uk/Establishments/112494) |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Iain R. Spink's Original Smokies | Authentic PGI Arbroath Smokies cooked over hardwood fires in traditional barrels | 13 Hill Street, Arbroath, DD11 1AQ | [site](https://www.arbroathsmokies.net)<br>07780 877660<br>iain@arbroathsmokies.net |
+| M&M Spink | Traditional family smokehouse producing authentic Arbroath Smokies and hot-smoked salmon | 10 Seagate, Arbroath, DD11 5BJ | [site](https://www.mandmspink.co.uk)<br>01241 870420<br>info@mandmspink.co.uk |

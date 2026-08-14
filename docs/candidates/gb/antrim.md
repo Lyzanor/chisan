@@ -38,3 +38,11 @@ productive municipality, current offer and phone/email before admission.
 | The Daily Apron Bakery | Manufacturers/packers; rating/inspection 2025-01-09 | 12 Market Square North, Lisnagarvy, Lisburn, Antrim, BT28 1AF | [1423206](https://api.ratings.food.gov.uk/Establishments/1423206) |
 | The Wee Bakery | Manufacturers/packers; rating/inspection 2025-10-14 | Crebilly Road, Ballykeel, Ballymena, Antrim, BT42 4AZ | [1537205](https://api.ratings.food.gov.uk/Establishments/1537205) |
 | Tweedie Pies Home Bakery | Manufacturers/packers; rating/inspection 2025-11-05 | 28a Kings Road, White Head, Whitehead, Antrim, BT38 9PT | [1698848](https://api.ratings.food.gov.uk/Establishments/1698848) |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Walter Ewing / Ewing's Seafoods | Traditional artisan smokehouse in Shankill curing and beech-smoking salmon and cod since 1911 | 6-8 Shankill Road, Belfast, BT13 1FD | [site](https://ewingsseafoods.com)<br>028 9032 6790<br>info@ewingsseafoods.com |

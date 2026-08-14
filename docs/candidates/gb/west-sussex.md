@@ -58,3 +58,13 @@ current offer and phone/email before admission.
 | DAAAG Farming LLP, the Naked Farm | Specialist Cheesemakers Association member (cheesemaker) | The Street, Warninglid, West Sussex, RH17 5SJ | info@evergreenrural.co.uk | — |
 | Goodwood Estate Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Home Farm, Goodwood, Chichester, West Sussex, PO18 0QF | [site](http://www.goodwood.com)<br>01243 755150<br>farm@goodwood.com | — |
 | Huddlestone Farmers Ltd | Specialist Cheesemakers Association member (cheesemaker) | Huddlestone Farm, Horsham Road, Steyning, Sussex, BN44  3AD | [site](http://www.huddlestonefarmersltd.co.uk)<br>07889 000734<br>matt@huddlestonefarmersltd.co.uk | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Springs Smokery | Traditional South Downs smokehouse using Sussex oak logs in brick kilns | Edburton, Henfield, BN5 9LN | [site](https://www.springssmokedsalmon.co.uk)<br>01273 857338<br>info@springssmokedsalmon.co.uk |
+
+- **Springs Smokery:** The company remains active on Companies House, but the former Edburton productive site and current offer could not be reconciled.

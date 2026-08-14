@@ -54,3 +54,11 @@ current offer and phone/email before admission.
 | Gringa Dairy | Named as a cheese producer by Foodism London artisan cheesemakers | Peckham, London | — | — |
 | Kappacasein Dairy | Named as a cheese producer by Foodism London artisan cheesemakers | Bermondsey, London | — | — |
 | The Urban Dairy | Named as a cheese producer by Foodism London artisan cheesemakers | Tottenham, London | — | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Hansen & Lydersen | Traditional craft salmon smokehouse curing and smoking sustainable salmon in Stoke Newington | 3-5 Shelford Place, Stoke Newington, London, N16 9HS | [site](http://hansen-lydersen.com)<br>[Instagram](https://www.instagram.com/hansenlydersen/)<br>ole@hansen-lydersen.com |

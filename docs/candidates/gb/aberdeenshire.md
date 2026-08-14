@@ -50,3 +50,11 @@ current offer and phone/email before admission.
 |---|---|---|---|---|
 | Cambus O'May Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Creamery, Cambus O'May, Balleter, Aberdeenshire, AB35 5SD | [site](http://www.cambusomay.com)<br>01339 753113<br>ian@cambusomay.com | — |
 | Middleton Farms | Specialist Cheesemakers Association member (cheesemaker) | Middleton of Rora, Longside, Peterhead, Aberdeenshire, AB42 4US | 07721 649102<br>bruce@roradairy.co.uk | — |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Downies of Whitehills | Traditional fish processor and smoker on the Moray Firth coast | Low Shore, Whitehills, Banff, AB45 2VD | [site](https://downiesfish.co.uk)<br>01261 861204<br>info@downiesfish.co.uk |

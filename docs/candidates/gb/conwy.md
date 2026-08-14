@@ -46,3 +46,13 @@ productive municipality, current offer and phone/email before admission.
 | Tu Hwnt i'r Bont (Maddox Food Company ltd) | Manufacturers/packers; rating/inspection 2025-12-11 | LL26 | [40133](https://api.ratings.food.gov.uk/Establishments/40133) |
 | Betws y Bangers | Manufacturers/packers; rating/inspection 2025-03-14 | Aberconwy House Lon Muriau, Betws Y Coed, Conwy, LL24 0HD | [1696085](https://api.ratings.food.gov.uk/Establishments/1696085) |
 | Blas ar Fwyd ac Amser Da | Manufacturers/packers; rating/inspection 2026-07-30 | 34 Station Road, Llanrwst, Conwy, LL26 0BT | [374208](https://api.ratings.food.gov.uk/Establishments/374208) |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Conwy Mussel Company | Traditional hand-raked Conwy Mussels PDO harvested from the Conwy Estuary | The Quay, Conwy, LL32 8BB | [site](https://conwymussels.com)<br>01492 592689<br>info@conwymussels.com |
+
+- **Conwy Mussel Company:** The candidate domain currently resolves to an inactive destination; the current productive unit still needs independent confirmation.

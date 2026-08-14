@@ -41,3 +41,11 @@ productive municipality, current offer and phone/email before admission.
 | Sweet Sensations | Manufacturers/packers; rating/inspection 2026-03-05 | 10 Loves Road, Dunamoney, Magherafelt, Co. Londonderry, BT45 6NP | [762630](https://api.ratings.food.gov.uk/Establishments/762630) |
 | The Meat Locker | Manufacturers/packers; rating/inspection 2024-08-20 | 31 Loughermore Road, Dunbrock, Ballykelly, Londonderry, BT49 9HY | [835195](https://api.ratings.food.gov.uk/Establishments/835195) |
 | Usshers Ice Cream Manufacturer | Manufacturers/packers; rating/inspection 2026-02-12 | 111-115 Main Street, Garvagh, Garvagh, Londonderry, BT51 5AB | [834854](https://api.ratings.food.gov.uk/Establishments/834854) |
+
+## Fish producer review (2026-08-14)
+
+These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Foyle Oysters | Oyster growers cultivating Pacific oysters in the nutrient-rich waters of Lough Foyle | Lisahally, Londonderry, BT47 6FL | [site](https://foyleoysters.com)<br>028 7186 0001<br>info@foyleoysters.com |
