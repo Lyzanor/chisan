@@ -56,3 +56,12 @@ Formatgeria Taüll ja estan coberts per files existents.
 
 No s'anoten Un-defined.studio (ceràmica) ni Sikarra Nostra (agrobotiga sense
 producció pròpia identificada).
+
+## Passada Fruita i Verdura — Lleida (2026-08-14)
+
+Passada resolta. Les altes i els descarts han quedat documentats a
+`data/evidence/es/catalunya/lleida.jsonl`. Resta una pista en observació:
+
+| candidat | motiu per mantenir-lo en observació | fonts comprovades |
+|---|---|---|
+| SAT Frutas Vall de Mora | Només s'ha localitzat un registre SAT antic que acredita explotació i comercialització a Seròs; no hi ha una identitat de productor ni una oferta pròpia pública actual suficients. | [registre SAT](https://sac.gencat.cat/sacgencat/AppJava/document.jsp?doc=7_11215.pdf) |
