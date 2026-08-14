@@ -64,3 +64,13 @@ house letter before trusting it.
 | De Molkerei – Geitenzuivel van ’t wad | Waadhoeke *(Oudebildtzijl)* | Nieuwebildtdijk 60, 9078 PR Oudebildtzijl | [demolkerei.nl](http://www.demolkerei.nl)<br>`0518-421306`<br>`els@demolkerei.nl` | BvBZ | — |
 | Langeveld | Weststellingwerf *(Steggerda)* | Ericaweg 15, 8395TH Steggerda | — | BvBZ | — |
 | Schelhaas & Van Valkenhoef | Weststellingwerf *(Oosterstreek)* | Oosterseveldweg 45, 8388 MB Oosterstreek | `Bio-intveld@outlook.com` | BvBZ | — |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Fiskerijbedriuw De Jager (Iel en Mear) | Leeuwarden *(Grou)* | The proposed domain is unavailable and current listings conflict on the productive municipality; identity, current offer and location remain unresolved. | [web](https://iel-en-mear.frl/) |
+| Forellenvijver W. Dekker | Weststellingwerf *(Oosterstreek)* | The proposed domain is unavailable and no current source was found that proves own trout production and a public food offer. | [web](https://forellenvijverdekker.nl/) |
+| Forelvisvijvers de Hooidammen | De Fryske Marren *(Sint Nicolaasga)* | Only an older put-and-take registry entry was found; current activity and own food production remain unresolved. | [web](https://dehooidammen.nl/) |

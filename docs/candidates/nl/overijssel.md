@@ -70,3 +70,14 @@ house letter before trusting it.
 | Mts. Boxum/Biesvelder Grillkaas | Zwartewaterland *(Genemuiden)* | Sanssenhekkenweg 4, Genemuiden | [biesveldergrillkaas.nl](https://www.biesveldergrillkaas.nl/) | BvBZ | — |
 | Boerderij de Huppe | Zwolle | Kleine Veerweg 9, 8017 BP Zwolle | [dehuppe.nl](http://www.dehuppe.nl)<br>`06-51361055`<br>`Alfons.vanvilsteren@forfarmers.eu` | BvBZ | — |
 | Erve Slendebroek VOF | Zwolle | Kanaalweg 20, 8013 PC Zwolle | [erve-slendebroek.nl](http://www.erve-slendebroek.nl)<br>`06-51231206`<br>`info@erve-slendebroek.nl` | BvBZ | — |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Forellenkwekerij De Tipbosch | Hellendoorn | The proposed site is unavailable and no current source resolved activity and own food production. | [web](https://detipbosch.nl/) |
+| Forellenvijver Deep'n | Hof van Twente *(Diepenheim)* | The proposed site is unavailable and no current source resolved activity and own food production. | [web](https://forellenvijverdeepn.nl/) |
+| De Forelderij | Enschede | The proposed site is unavailable and no current source resolved activity and own food production. | [web](https://deforelderij.nl/) |
+| Forelvisvijvers De Koeln | Ommen *(Beerzerveld)* | The proposed domain is hijacked by an unrelated gambling site; current activity and own food production remain unresolved. | [web](https://dekoeln.nl/) |

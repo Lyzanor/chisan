@@ -118,3 +118,12 @@ house letter before trusting it.
 | Kaasboerderij de Jong | Zoeterwoude | Westeindseweg 20, 2381 EC Zoeterwoude | [kaasboerderijdejong.nl/home](https://kaasboerderijdejong.nl/home)<br>`06-14323421`<br>`info@kaasboerderijdejong.nl` | BvBZ + OSM | — |
 | Zuivelboerderij Leidse Kaas Koe | Zoeterwoude | Weipoortseweg 73, 2381NG Zoeterwoude | `+31715802771`<br>`info@deleidsekaaskoe.nl` | broodsmakelijk | Zuivelboerderij De Leidse Kaas Koe heeft ongeveer 100 koeien en maakt daar, in eigen kaasmakerij, zelf onder andere Leidse kaas maar ook 30+ kazen van. [icons: boerenkaas, other dairy, eggs, jam, juice] |
 | Kaasbest Zwijndrecht BV | Zwijndrecht | Hof van Holland 5, 3332 EH Zwijndrecht | — | BvBZ | — |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Palingrokerij Van Veen | Kaag en Braassem *(Roelofarendsveen)* | The proposed domain does not resolve and no sufficiently current source established an active own smokehouse offer. | [web](https://palingrokerijvanveen.nl/) |
+| Boschypaling | Katwijk | No current first-party or authoritative source was found that establishes an active own smokehouse offer. | — |

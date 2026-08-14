@@ -51,3 +51,11 @@ house letter before trusting it.
 | De Kandelaar | Dronten *(Biddinghuizen)* | Hoekwantweg 11, 8256 PS Biddinghuizen | [dekandelaar.eu](https://dekandelaar.eu)<br>`+31320288548` | zoekdeboer | Farm sells its own ambachtelijke boerenkaas alongside a milk tap |
 | Mts. van Blokland | Dronten *(Biddinghuizen)* | Zijdenettenweg 8, 8256 PL Biddinghuizen | `06-50624611`<br>`vanblokland@solcon.nl` | BvBZ | — |
 | Kaasboerderij Poldergenot | Noordoostpolder *(Rutten)* | Gemaalweg 10, 8313 PS Rutten | `06-12675742`<br>`info@poldergenot.nl` | BvBZ | — |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Het Urker Zalmhuys | Urk | The proposed domain is parked and no current source was found that proves an active own smokehouse offer. | [web](https://zalmhuys.nl/) |

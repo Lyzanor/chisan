@@ -56,3 +56,11 @@ house letter before trusting it.
 | Melktap Trimunt | Westerkwartier *(Marum)* | Kloosterweg 5, 9363 VJ Marum | — | zoekdeboer | Organic dairy farm selling Trimunter-branded yoghurt, kefir, ice cream and cheese |
 | Veldzicht Zuivel | Westerkwartier *(Niekerk)* | Niekerkerdiep 8, 9822 TH Niekerk | [veldzichtzuivel.nl](http://www.veldzichtzuivel.nl/)<br>`06-36149322` | BvBZ | — |
 | Zuivel Zevenhuizen | Westerkwartier *(Zevenhuizen)* | Oudestreek 29, 9354 AD Zevenhuizen | — | BvBZ | — |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Forelvisvijvers de Kolk | Oldambt *(Midwolda)* | The proposed site is unavailable and no sufficiently current source resolved activity and own production. | [web](https://dekolk-midwolda.nl/) |

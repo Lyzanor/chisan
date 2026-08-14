@@ -67,3 +67,13 @@ house letter before trusting it.
 | Schapenbedrijf De Waddel | Texel *(Den Burg)* | Westergeest 4, 1791 LJ Den Burg | — | zoekdeboer | Milks part of a 400-ewe Texel flock and makes raw-milk sheep cheese |
 | Zuivelboerderij Texel | Texel *(Oosterend)* | Schorrenweg 39, 1794 HE Oosterend | [zuivelboerderijtexel.nl](http://www.zuivelboerderijtexel.nl)<br>`06-11281227`<br>`corinerikkenberg@gmail.com` | BvBZ | — |
 | Noord-Hollands Hof | Wormerland *(Spijkerboor)* | Oudelandsdijk 11, 1458PN Spijkerboor | — | zoekdeboer | Farm vending with kefir, raw milk and boerenkaas; own production to confirm |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Van den Kommer Palingrokerij | Uitgeest | The proposed domain now belongs to an unrelated interiors business; no current source linked the historic smokehouse identity to an active productive unit. | [web](https://vandenkommer.nl/) |
+| Klooster Palingrokerij | Enkhuizen | The proposed site is unavailable and current activity and own public offer could not be established. | [web](https://kloosterpaling.nl/) |
+| Gebr. De Boer Monnickendam | Waterland *(Monnickendam)* | No current first-party or authoritative source was found that establishes an active smokehouse offer. | — |

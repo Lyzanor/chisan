@@ -72,3 +72,12 @@ house letter before trusting it.
 | Zuivelboerderij Noordam | West Betuwe *(Hellouw)* | Meikampgraaf 10, 4174 LB Hellouw | [zuivelboerderijnoordam.nl](http://www.zuivelboerderijnoordam.nl)<br>`0418-594075`<br>`winkelnoordam@gmail.com` | BvBZ | — |
 | Geitenkaasmakerij De Brömmels | Winterswijk *(Winterswijk Woold)* | Meerdinkweg 5, 7108 BJ Winterswijk Woold | [brommels.nl](http://www.brommels.nl)<br>`0543-564518`<br>`info@brommels.nl` | BvBZ + OSM | street matched on postcode only |
 | Melkveebedrijf Reijmer | Zevenaar | Kleine Matenweg 6, 6903 PD Zevenaar | — | BvBZ | — |
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
+
+| Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
+|---|---|---|---|
+| Forellenvijver Breukink | Bronckhorst *(Steenderen)* | The venue is currently active, but the reviewed source does not establish the candidate's claimed own food production and smoked-fish offer. | [web](https://forellenvijverbreukink.nl/) |
+| Forellenvisvijvers De Kamphoeve | Buren *(Ommeren)* | The proposed site is unavailable and no sufficiently current source resolved own production and a public food offer. | [web](https://kamphoeve.nl/) |
