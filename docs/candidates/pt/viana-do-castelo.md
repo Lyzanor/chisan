@@ -9,3 +9,12 @@
 |---|---|---|---|---|
 | Vaca das Cordas | Viana do Castelo | Cerveza | hold | [Racius](https://www.racius.com/antonio-eira-unipessoal-lda/) · [Untappd](https://untappd.com/w/ant-nio-eira-unipessoal-lda/394302) · la sociedad António Eira sigue activa y buscó cervecero para Chafé, pero falta prueba pública actual de que la marca Vaca das Cordas haya reanudado producción u oferta |
 | MoM Brewers | Caminha | Cerveza | hold | [cervejeirosdeportugal.pt](https://www.cervejeirosdeportugal.pt) · [Octavio & Giestal en Racius](https://www.racius.com/octavio-giestal-lda/) · proyecto vinculado a los organizadores del Artbeerfest en Caminha (Av. Dr. Dantas Carneiro Lote 1); falta verificar si dispone de fábrica propia o si opera mediante elaboración colaborativa/nómada |
+
+## Pescado — revisión 2026-08-14
+
+Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
+
+| candidato pendiente |
+|---|
+| Vianapesca O.P. \| Viana do Castelo \| Pescado \| hold \| [Vianapesca](https://vianapesca.pt) · organización de productores de pesca de Viana do Castelo, con flota artesanal, transformación, congelación y punto de venta directa de pescado |
+| Piscicultura do Rio Coura \| Paredes de Coura \| Pescado \| hold \| [DGRM](https://www.dgrm.mm.gov.pt) · viveros de truchas en el río Coura; verificar continuidad de la actividad y venta |

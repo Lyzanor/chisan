@@ -7,3 +7,11 @@
 
 | nombre | concelho | categoría propuesta | fuente | qué falta |
 |---|---|---|---|---|
+
+## Pescado — revisión 2026-08-14
+
+Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
+
+| candidato pendiente |
+|---|
+| Pescados do Norte \| Ribeira Grande \| Pescado \| [Lotaçor](https://lotacor.pt) \| `hold` — cooperativa de pesca y transformación de pescado en Rabo de Peixe; confirmar puntos de venta directa y oferta actual |

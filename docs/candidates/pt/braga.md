@@ -12,3 +12,11 @@
 
 Mútua de Basto aparece en PTPT pero es una mutua de seguros de ganado, no un productor: descartada al compilar.
 Rua Nova quedó descartada: el brewpub que elaboraba la cerveza en Rua Egas Moniz 94 figura permanentemente cerrado.
+
+## Pescado — revisión 2026-08-14
+
+Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
+
+| candidato pendiente |
+|---|
+| Pescadores de Apúlia e Esposende \| Esposende \| Pescado \| [Câmara Municipal de Esposende](https://municipio.esposende.pt) \| `hold` — secado artesanal y venta de pescado fresco de la costa norte; verificar si disponen de colectivo de venta constituido |

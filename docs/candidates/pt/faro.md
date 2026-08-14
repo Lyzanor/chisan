@@ -22,3 +22,15 @@
 
 `Marisol` quedó resuelta como marca de Necton, no como productor separado. `Quinta dos Santos` (Dos Santos Craft Beer) ya está publicada en el CSV de Faro (fila 21). Doçaria do Sul, APILGARBE, AGRUPA y Faro Beer Company quedaron excluidas por no constituir unidades productivas propias dentro del contrato editorial.
 `Algarve Rock` quedó descartada: Beautiful Bubble, sociedad vinculada al dominio y a la fábrica, figura inactiva y el perfil oficial de la cervecera declara el cese.
+
+## Pescado — revisión 2026-08-14
+
+Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
+
+| candidato pendiente |
+|---|
+| `hold` \| Alvostral \| Portimão \| Pescado \| [APA](https://aquacultores.pt) · producción de ostras en la Ria de Alvor; confirmar datos comerciales |
+| `hold` \| Eurodaqua \| Castro Marim \| Pescado \| [Europages](https://www.europages.pt) · acuicultura marina y estuarina en el río Guadiana / Castro Marim; verificar actividad comercial vigente |
+| `hold` \| Olhãopesca O.P. \| Olhão \| Pescado \| [Olhãopesca](https://olhaopesca.pt) · organización de productores de pesca de la Ria Formosa con sala de preparación y venta de pescado |
+| `hold` \| Cooperativa de Viveiristas da Ria Formosa \| Olhão \| Pescado \| [Docapesca](https://docapesca.pt) · cultivo y depuración de almeja buena y ostras en la Ria Formosa; verificar canal directo |
+| `hold` \| Barlapesca O.P. \| Portimão \| Pescado \| [Barlapesca](https://barlapesca.pt) · organización de armadores de pesca artesanal del Barlavento Algarvio con venta de pescado fresco |

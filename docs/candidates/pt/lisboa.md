@@ -16,3 +16,11 @@
 Miss Can quedó descartada como marca elaborada por A Poveira (conservas).
 Passarola quedó descartada: la fuente sectorial actual la marca fuera de actividad y la prensa confirma que la reedición de 2025 fue elaborada por Fermentage.
 Bolina quedó descartada como unidad independiente: la fábrica histórica fue absorbida por la instalación de Musa en Marvila y la sociedad de la marca figura inactiva.
+
+## Pescado — revisión 2026-08-14
+
+Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
+
+| candidato pendiente |
+|---|
+| Associação de Armadores de Pesca Artesanal de Cascais \| Cascais \| Pescado \| hold \| [Câmara Municipal de Cascais](https://cascais.pt) · organización de pescadores artesanales con punto de venta de pescado fresco en la lonja de Cascais |

@@ -18,3 +18,11 @@ Biltre quedó descartada: la sociedad de la fábrica de Vila Nova de Gaia figura
 Gencoal quedó incorporada como la fábrica de Vila do Conde que produce ASdoMAR. Jocosil y Ricardo Reynal quedaron descartadas como intermediarias/comercializadoras, y Conservas da Rocha como marca que agrega producto elaborado por conserveras terceras.
 
 Las asociaciones del Capão de Freamunde y de productores de melón se rechazaron porque representan explotaciones sin unidad de transformación propia.
+
+## Pescado — revisión 2026-08-14
+
+Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
+
+| candidato pendiente |
+|---|
+| Caximar — Comércio e Indústria de Bacalhau \| Vila do Conde \| Pescado \| hold \| [Caximar](https://caximar.pt) · unidad industrial de salazón, secado y curado tradicional de bacalao en Vila do Conde; verificar tienda de fábrica |
