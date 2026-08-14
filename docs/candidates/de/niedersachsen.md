@@ -22,3 +22,12 @@ Revisado individualmente el 2026-08-09. Resultado: dos productores confirmados y
 | Anika Gruhs | [DE-ÖKO-006.276-0004355.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0004355.2026.001.pdf) | Solo se confirmó la identidad y el teléfono de la dirección; faltan producto alimentario y oferta pública. |
 | Anja Kordisch | [DE-ÖKO-039.276-0065817.2025.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-039.276-0065817.2025.002.pdf) | Una fuente sectorial la identifica como criadora de Charolais, pero no prueba una oferta de carne u otro alimento bajo su identidad. |
 | Anja Martens | [DE-ÖKO-022.276-0070864.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-022.276-0070864.2025.001.pdf) | Los resultados públicos son homónimos o viveros no coincidentes; no se identificó la unidad de Milchweg 12 ni su producto. |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/norddeutschland/niedersachsen.csv`, categoría `Pescado`.
+Búsqueda de explotaciones acuícolas, piscifactorías de aguas continentales (*Forellenzuchten*, *Teichwirtschaften*), pesquerías profesionales lacustres y de marismas (*Binnenfischerei*) y tradicionales ahumaderos de anguilas (*Aalräuchereien*) con elaboración propia e instalaciones activas en Niedersachsen. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|
+| Forellenzucht Bätke | Dassel | Sievershausen 1, 37586 Dassel | [forellenzucht-baetke.de](https://www.forellenzucht-baetke.de) | [Web oficial](https://www.forellenzucht-baetke.de) | Piscifactoría de aguas de montaña en el macizo de Solling. Cría de trucha común, trucha arcoíris y salvelino alpino en agua pura de manantial, elaboración de ahumados artesanales y venta directa en granja. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no existe y no se localizó una fuente actual suficiente. |

@@ -21,3 +21,12 @@ Los quince casos restantes conservan certificado ecológico vigente, pero la bú
 | Bio Agrar GmbH Zölkow | [DE-ÖKO-034.276-0076410.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-034.276-0076410.2026.001.pdf) | La sociedad está activa y su objeto incluye producir y comercializar productos agrícolas, pero las fuentes públicas no concretan alimentos, marca ni oferta actual. |
 | Bio Angus Mecklenburg eGbR | [DE-ÖKO-034.276-0068476.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-034.276-0068476.2026.002.pdf) | Una oferta laboral pública de 2026 confirma la ganadería ecológica de carne en Friedrichsruhe. Mecklenburger Landpute vende Bio Angus regional, pero no atribuye públicamente esos productos a esta eGbR concreta. |
 | Bio Bende Inh. Jonathan Bende | [DE-ÖKO-034.276-0032976.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-034.276-0032976.2025.001.pdf) | No se encontró presencia pública verificable de la explotación de Ribnitzer Straße 51, sus productos propios ni una modalidad de comercialización. |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/norddeutschland/mecklenburg-vorpommern.csv`, categoría `Pescado`.
+Búsqueda de explotaciones acuícolas, pesquerías profesionales lacustres y costeras (*Binnenfischerei*, *Küstengemeinschaft*), ahumaderos artesanales históricos de pescado (*Fischräuchereien*) y piscifactorías de aguas continentales con elaboración propia e instalaciones activas en Mecklenburg-Vorpommern. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|
+| Räucherei Thurow | Kröslin | Dorfstraße 64, 17440 Kröslin (Freest) | [fischraeucherei-thurow.de](https://www.fischraeucherei-thurow.de) | [Web oficial](https://www.fischraeucherei-thurow.de) | El ahumadero de pescado más antiguo de Pomerania Occidental (*Vorpommern*), activo desde 1891 en el pueblo marinero de Freest. Ahumado tradicional en hornos de leña de pescado del Báltico y la desembocadura del Peene (arenque, platija, anguila, salmón) con tienda directa en el puerto. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no existe y las fuentes actuales localizadas corresponden a otra identidad empresarial de Freest. |

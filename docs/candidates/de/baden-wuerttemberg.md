@@ -57,3 +57,12 @@ propia actual bajo una identidad pública utilizable.
 | Albrecht und Elisa Löblein GbR | Niederstetten | Eichhof 12/1 97996 | ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-01-31 | [DE-ÖKO-073.276-0062192.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-073.276-0062192.2026.002.pdf) |
 | Albtrauf Rind eGbR | Sonnenbühl | Holdergasse 9 72820 | ganado y productos ganaderos sin transformar, alimentos transformados, vegetales sin transformar | 2027-01-31 | [DE-ÖKO-006.276-0050442.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0050442.2025.001.pdf) |
 | Alexander Boos | Herdwangen-Schönach | Burgstr. 41 78355 | vegetales sin transformar | 2028-01-31 | [DE-ÖKO-006.276-0008269.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0008269.2026.001.pdf) |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/sueddeutschland/baden-wuerttemberg.csv`, categoría `Pescado`.
+Búsqueda de piscifactorías de aguas bravas de la Selva Negra (*Schwarzwaldforellen*), pesquerías tradicionales del lago de Constanza (*Bodenseefelchen*, *Berufsfischerei*) y explotaciones acuícolas de manantial con elaboración y ahumado artesanal en Baden-Württemberg. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|
+| Bodenseefischerei Rieche | Konstanz | Strandbadstraße 14, 78467 Konstanz | [fischerei-rieche.de](https://www.fischerei-rieche.de) | [Web oficial](https://www.fischerei-rieche.de) | Familia de pescadores profesionales de larga tradición en la bahía de Constanza (*Konstanzer Bucht / Bodensee*). Pesca artesanal diaria de corégonos (*Felchen*), percas (*Kretzer*) y lucios, ahumadero tradicional sobre leña y venta directa de pescado fresco y ahumado a orillas del lago. ⚠ Revisión 2026-08-14: retenido; el dominio propuesto no existe y no se localizó una fuente primaria actual suficiente. |
