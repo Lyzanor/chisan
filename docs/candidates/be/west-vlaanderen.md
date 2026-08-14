@@ -15,3 +15,9 @@ Búsqueda de queserías de granja (hoevekaasmakerijen), queserías artesanales f
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Barrido de tostadores de café (2026-08-14)
+
+| Candidato | Estado pendiente | Municipio | Fuentes |
+|---|---|---|---|
+| Koffiebranderij Grymonprez | La página oficial publica contacto y horario, pero no una oferta propia actual ni una descripción suficiente de la actividad productiva; falta una fuente actual que cierre ambos extremos. | Roeselare | [web](https://koffiebranderijgrymonprez.com/)<br>[instagram](https://www.instagram.com/koffiebranderijgrymonprez/) |

@@ -15,3 +15,9 @@ Búsqueda de bergeries, chèvreries y fromageries artisanales de granja con elab
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Barrido de tostadores de café (2026-08-14)
+
+| Candidato | Estado pendiente | Municipio | Fuentes |
+|---|---|---|---|
+| Grains de Sablon | La web actual vende café tostado pero atribuye el producto a una colaboración con expertos; falta una fuente que confirme que la unidad de Bastogne realiza materialmente el tueste. | Bastogne | [web](https://grainsdesablon.com/)<br>[instagram](https://www.instagram.com/grainsdesablon/) |
