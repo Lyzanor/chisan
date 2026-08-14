@@ -78,16 +78,55 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Fuentes de esta tanda:
   - **全国和菓子協会** — 会員店リンク, <https://www.wagashi.or.jp/zenkoku_link/osaka.php> (nombre, dirección y web propia de cada socio)
   - **全国米菓工業組合** — 会員企業一覧, <https://www.arare-osenbei.jp/member/> (incluye 業種, que es lo que separa fabricante de mayorista)
-- Estado: revisión 2026-08-11; **9 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
+- Estado: revisión 2026-08-11; **7 retenidos** en la segunda pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 三都屋 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.mitoya-kuromon.com/ | 大阪市中央区日本橋 1-22-21; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
-| 浪芳庵 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.rakuten.co.jp/namiyoshi/ | 大阪市中央区難波 4-8-5; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
 | （株）天王寺源氏堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www1.enekoshop.jp/shop/genjidou// | 大阪市天王寺区夕陽丘 4-17; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 浪花餅 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.naniwamochi.com/ | 大阪市阿倍野区阿倍野元町 3-19; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | （株）高砂堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://store.shopping.yahoo.co.jp/takasagodo/ | 大阪市西区本町 1-7-7; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
 | 大六堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.dairokudo.com | 大阪市大正区三軒家西 3-6-10; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 平和堂 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www4.ocn.ne.jp/~heiwadou/ | 大阪市大正区鶴町 2-8-7; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
-| 釣鐘屋本舗 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.tsuriganeyahonpo.co.jp/ | 大阪市浪速区恵美須東 1-7-11; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
 | 千壽堂春蘭 | 大阪市 | Dulces y repostería | 和菓子協会 | http://www.geocities.jp/wjwwh948/newpage2.htm | 大阪市生野区舎利寺 2-3-13; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Candidatos abiertos del barrido 2026-08-13
+
+> **Segunda revisión 2026-08-14:** se revisaron de nuevo los 42 retenidos. Cinco pasan al CSV (和泉食品 / パロマソース, 瓢月堂, モンシェール箕面工場, プチ・プランス大阪工場 y 梅田ミツバチプロジェクト茶屋町養蜂場), dos se descartan por producción fuera de Osaka (宇治園 y ヒロコーヒー) y EMBANKMENT COFFEE se fusiona con la unidad productiva de Elmers Green ya publicada. Los 34 casos restantes siguen abiertos: la búsqueda adicional no aportó una prueba pública suficiente de unidad productiva actual, identidad o venta; no se convierten en descartes definitivos por mera falta de evidencia.
+
+| Candidato | Fuente revisada | Bloqueo concreto |
+|---|---|---|
+| 松前屋 | https://www.matumaeya.jp/company | La empresa declara venta y procesados de kombu, pero la fuente abierta no sitúa el obrador actual. |
+| おきな昆布 | https://www.okinakonbu.com/ | Hay fabricante y tienda online, pero falta vincular la producción al domicilio de Minamisenba. |
+| ニチエイ食品工業 | dominio aportado no operativo | Falta una fuente vigente que identifique la unidad productiva. |
+| をぐら屋貞信 | dominio aportado no operativo | Falta una fuente vigente que identifique la unidad productiva. |
+| 川﨑農園 | dominio aportado no operativo | Falta una fuente vigente que confirme explotación, municipio y venta actual. |
+| 水なす工房旬星 | dominio aportado no operativo | Falta una fuente vigente que confirme obrador y actividad actual. |
+| 餅匠しづく | sitio aportado no operativo | Debe resolverse la grafía/entidad actual y localizar el obrador, no solo la tienda. |
+| 浪芳庵 | https://namiyoshian.jp/ | Falta localizar en la fuente el obrador actual que produce para la marca. |
+| 福壽堂秀信 | https://fukujudo-hidenobu.co.jp/portfolio/ | La fuente prueba elaboración, pero falta confirmar la dirección productiva actual. |
+| 喜久寿 | sitio histórico no operativo | Falta una fuente directa vigente para actividad, contacto y obrador de Higashikohama. |
+| 八百源来弘堂 | http://www.yaogen.com/ | Falta confirmar que la dirección publicada es también el obrador actual. |
+| あみだ池大黒 | https://www.daikoku.ne.jp/ | La sede de Kitahorie no queda acreditada como unidad productiva. |
+| 千鳥屋宗家 | https://www.chidoriya.jp/company/ | La tienda de Hommachi no queda acreditada como obrador; la sede publicada está en Hyogo. |
+| 高岡福信 | https://takaokafukushin.com/ | Falta confirmar que la tienda de Doshomachi es también el obrador. |
+| 河藤 | https://kawatou.com/ | Falta una fuente vigente que sitúe la elaboración en Shitennoji. |
+| カカオティエ ゴカン | https://www.cacaotier-gokan.co.jp/ | La tienda se presenta como bean-to-bar, pero falta identificar el espacio productivo exacto. |
+| 五感 | https://www.patisserie-gokan.co.jp/ | Kitahama es una tienda emblemática; falta localizar la unidad que produce. |
+| ポアール | https://poire.jp/ | La tienda de Tezukayama no queda acreditada como obrador central. |
+| デリチュース | https://www.delicius.jp/ | Falta confirmar producción en el local propuesto y no solo venta. |
+| ル・シェルシェ | https://rechercher.jp/ | Falta una fuente directa que explicite elaboración en el domicilio propuesto. |
+| アシッドラシーヌ | https://acidracines.com/ | Falta una fuente directa que explicite elaboración en el domicilio propuesto. |
+| MOTO COFFEE | https://motocoffee.net/ | El local de Kitahama no queda acreditado como tostadero. |
+| GLITCH COFFEE OSAKA | https://glitchcoffee.com/ | Falta demostrar que el local de Osaka tuesta, en vez de recibir café del tostadero de la marca fuera de la prefectura. |
+| 千里熱風焙煎所 | https://senri-coffee.com/ | Falta una fuente directa vigente con identidad jurídica, dirección de tueste y contacto. |
+| ブーランジュリー グウ | https://www.boulangerie-gout.com/ | Falta confirmar que el domicilio propuesto alberga el obrador actual. |
+| パリ・アッシュ | https://parish.stores.jp/ | La tienda online no aporta una ficha suficiente de unidad productiva y contacto. |
+| ブーランジェリー タカギ | ficha antigua de Google Business | Falta una fuente propia o institucional vigente que confirme actividad y obrador. |
+| ブーランジェリー S.KAGAWA | https://skagawa.thebase.in/ | La tienda online no aporta una ficha suficiente de unidad productiva y contacto. |
+| 喜久屋製菓 | https://kikuya-seika.com/ | Falta una fuente vigente accesible que confirme producción y domicilio. |
+| 能勢ポーク / 能勢農業開発 | https://nosepork.com/ | Falta una fuente vigente accesible que confirme granja, identidad y venta actual. |
+| 寺内牧場 / 松原牛 | https://terauchi-farm.com/ | Falta una fuente vigente accesible que confirme explotación y dirección. |
+| 能勢銀寄栗生産組合 | https://ginyose.jp/ | Falta confirmar que la organización vende como productor identificable y localizar una unidad útil para el mapa. |
+| 高山真菜生産組合 | https://toyokan.net/project24/index.php/2026/03/24/event_mana2026/ | La actividad del colectivo es actual, pero falta un punto productivo/contacto estable y venta propia. |
+| 和泉養蜂場 | dominio aportado no operativo | Falta una fuente vigente que confirme explotación, ubicación y venta actual. |
