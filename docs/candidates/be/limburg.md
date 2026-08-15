@@ -22,3 +22,11 @@ Búsqueda de queserías artesanales y granjas queseras (hoevekaasmakerijen) con 
 | Kaasboerderij 't Goe Leve | En espera: el perfil social indicado no ofrece una identidad productiva, dirección ni señal pública actual verificable fuera de Facebook. | Zonhoven | [facebook](https://www.facebook.com/kaasboerderijtgoeleve/) |
 | Kaasboerderij Het Heerdterhof | En espera: no se ha localizado una fuente belga fiable que confirme la supuesta quesería activa y su unidad productiva en Bree. | Bree | [facebook](https://www.facebook.com/heerdterhof/) |
 | Kaasboerderij Bosmans | En espera: la web municipal genérica no identifica esta explotación y no se ha podido conectar el nombre con una quesería activa en Bocholt. | Bocholt | [web municipal](https://www.bocholt.be) |
+
+## Barrido de categorías ausentes en el catálogo (2026-08-15)
+
+Búsqueda dirigida a categorías del registro sin ningún productor en Limburg (Destilados y licores, Vino, Sidra, Chocolate, Conservas, Miel, Setas, Té e infusiones), a partir de webs propias y directorios turísticos regionales. Diez candidatos se integraron en el CSV con coordenadas del registro de direcciones flamenco; sus decisiones están en la evidencia del área. Queda pendiente el hueco de **Bebidas sin alcohol/Sidra fuera de Haspengouw** y no se ha barrido Aceite, Legumbres, Frutos secos ni Sake.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+| De Honingmijn | En espera: imkerij real con FAVV 9.006.502.698 y colmenas propias, pero su propia página de productos declara que «op dit moment enkel kaarsen beschikbaar» y deja los botones de Honing/Propolis desactivados. Sin oferta propia de alimento en mercado no pasa la puerta de admisión; revisar si la miel llega a venderse. | Oudsbergen (Opglabbeek) | [web](https://honingmijn.be/) · [instagram](https://www.instagram.com/honingmijn/) |
