@@ -77,6 +77,14 @@
 //     the English spelling. Marked `dropAmbiguous` for the usual reason: Ballina
 //     in Mayo and Ballina in Tipperary are 150 km apart, past the blocking
 //     threshold, so an arbitrary winner would fail a correct row.
+//   - United States: the official U.S. Census Bureau national Places Gazetteer
+//     for the 50 states and District of Columbia. It covers incorporated places
+//     and census-designated places and supplies their representative points.
+//     Legal/statistical suffixes (`city`, `town`, `village`, `borough`, `CDP`,
+//     consolidated-government forms...) are removed because producer addresses
+//     name Montpelier, not "Montpelier city". Puerto Rico is excluded because it
+//     is not in the country tree, and nationwide homonyms are dropped rather
+//     than choosing one state arbitrarily.
 //
 // The "mul" label
 // - Wikidata's multilingual label holds the name of an entity spelled the same
@@ -146,6 +154,8 @@
 const ENDPOINT = "https://query.wikidata.org/sparql";
 const GEO_API_COMMUNES =
   "https://geo.api.gouv.fr/communes?fields=code,nom,centre&format=json";
+const US_CENSUS_PLACES_GAZETTEER =
+  "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_place_national.zip";
 const USER_AGENT = "km0-municipio-centroids/1.0 (https://github.com/Lyzanor/km0)";
 const REQUEST_TIMEOUT_MS = 120000;
 
@@ -246,6 +256,13 @@ const COUNTRIES = [
     langs: ["mul", "en", "ga"],
     canonicalLang: "en",
     extraFilter: "",
+    dropAmbiguous: true,
+  },
+  {
+    slug: "united-states",
+    code: "us",
+    label: "United States",
+    gazetteer: US_CENSUS_PLACES_GAZETTEER,
     dropAmbiguous: true,
   },
 ];
@@ -362,6 +379,65 @@ async function fetchJson(url) {
   }
 }
 
+async function fetchBuffer(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, {
+      headers: { Accept: "application/zip", "User-Agent": USER_AGENT },
+      signal: controller.signal,
+    });
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+    }
+    return Buffer.from(await res.arrayBuffer());
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// The Census national download is one deflated text file in a ZIP archive.
+// Reading its central-directory metadata keeps this maintenance script
+// dependency-free and avoids shelling out to a platform-specific `unzip`.
+async function readFirstZipText(buffer) {
+  const END_OF_CENTRAL_DIRECTORY = 0x06054b50;
+  const CENTRAL_FILE_HEADER = 0x02014b50;
+  const LOCAL_FILE_HEADER = 0x04034b50;
+  const minOffset = Math.max(0, buffer.length - 65_557);
+  let endOffset = -1;
+
+  for (let offset = buffer.length - 22; offset >= minOffset; offset--) {
+    if (buffer.readUInt32LE(offset) === END_OF_CENTRAL_DIRECTORY) {
+      endOffset = offset;
+      break;
+    }
+  }
+  if (endOffset === -1) throw new Error("ZIP end-of-central-directory record not found");
+
+  const centralOffset = buffer.readUInt32LE(endOffset + 16);
+  if (buffer.readUInt32LE(centralOffset) !== CENTRAL_FILE_HEADER) {
+    throw new Error("ZIP central file header not found");
+  }
+
+  const compression = buffer.readUInt16LE(centralOffset + 10);
+  const compressedSize = buffer.readUInt32LE(centralOffset + 20);
+  const localOffset = buffer.readUInt32LE(centralOffset + 42);
+  if (buffer.readUInt32LE(localOffset) !== LOCAL_FILE_HEADER) {
+    throw new Error("ZIP local file header not found");
+  }
+
+  const nameLength = buffer.readUInt16LE(localOffset + 26);
+  const extraLength = buffer.readUInt16LE(localOffset + 28);
+  const dataOffset = localOffset + 30 + nameLength + extraLength;
+  const compressed = buffer.subarray(dataOffset, dataOffset + compressedSize);
+  if (compression === 0) return compressed.toString("utf8");
+  if (compression !== 8) throw new Error(`unsupported ZIP compression method ${compression}`);
+
+  const { inflateRawSync } = await import("node:zlib");
+  return inflateRawSync(compressed).toString("utf8");
+}
+
 // geo.api.gouv.fr returns the whole list in one document, so the retry wrapper
 // and the qid/altLabel machinery above have nothing to do here. The INSEE code
 // plays the part of the qid: it is what keeps two communes from merging into
@@ -384,7 +460,46 @@ async function collectFromGeoApi(country) {
   return items;
 }
 
+function stripCensusPlaceType(name) {
+  return name.replace(
+    /\s+(?:(?:city and borough|consolidated government|metro government|metropolitan government|unified government|urban county)(?: \(balance\))?|municipality|borough|village|town|city|CDP)$/i,
+    "",
+  );
+}
+
+async function collectFromCensusGazetteer(country) {
+  console.log(`[${country.label}] fetching places from the U.S. Census Bureau...`);
+  const archive = await withRetry(() => fetchBuffer(country.gazetteer));
+  const text = await readFirstZipText(archive);
+  const [headerLine, ...lines] = text.trim().split(/\r?\n/);
+  const headers = headerLine.split("|");
+  const index = Object.fromEntries(headers.map((header, position) => [header, position]));
+  const required = ["USPS", "GEOID", "NAME", "INTPTLAT", "INTPTLONG"];
+  if (required.some((header) => index[header] === undefined)) {
+    throw new Error(`unexpected Census Gazetteer header: ${headerLine}`);
+  }
+
+  const items = new Map();
+  for (const line of lines) {
+    if (!line) continue;
+    const row = line.split("|");
+    if (row[index.USPS] === "PR") continue;
+    const lat = Number(row[index.INTPTLAT]);
+    const lon = Number(row[index.INTPTLONG]);
+    const label = stripCensusPlaceType(row[index.NAME]);
+    if (!label || !Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+    items.set(row[index.GEOID], {
+      coord: { lat, lon },
+      labels: new Set([label]),
+      canonical: label,
+    });
+  }
+  console.log(`  ${items.size} current places`);
+  return items;
+}
+
 async function collectItems(country) {
+  if (country.gazetteer) return collectFromCensusGazetteer(country);
   if (country.endpoint) return collectFromGeoApi(country);
 
   const items = new Map(); // qid -> { coord, labels: Set, canonical }

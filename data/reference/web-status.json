@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05",
+  "generatedAt": "2026-08-15",
   "nota": "Snapshot de resolución de la columna `web`. Afirmación dinámica: caduca. Clasifica, no decide — un 403 no es un sitio muerto y un 200 no prueba que la web sea del productor. Regenerar con `pnpm check:links --all`.",
   "urls": {
     "http://0x100gluten.com/ca/0gluten": {
@@ -9488,6 +9488,12 @@
       "detail": "HTTP 200",
       "checkedAt": "2026-08-04"
     },
+    "https://bairdfarm.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-15"
+    },
     "https://balbas.es/": {
       "tag": "ok",
       "level": "ok",
@@ -11647,6 +11653,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://braggfarm.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-15"
     },
     "https://brotnousl.wixsite.com/brotnou": {
       "tag": "ok",
@@ -46831,6 +46843,12 @@
       "level": "ok",
       "detail": "HTTP 200",
       "checkedAt": "2026-07-28"
+    },
+    "https://www.morsefarm.com/": {
+      "tag": "ok",
+      "level": "ok",
+      "detail": "HTTP 200",
+      "checkedAt": "2026-08-15"
     },
     "https://www.moscovitas.com/": {
       "tag": "ok",
