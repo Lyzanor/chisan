@@ -7,21 +7,73 @@
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
-| Circle J Ranch | Ten Sleep | Por determinar | [USDA On-Farm Market #704927](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Our Wyoming Life Farm Store | Gillette | Por determinar | [USDA On-Farm Market #701521](https://www.usdalocalfoodportal.com/fe/datasharing/) · 2020-04-28 22:14:05 | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Ellis' Harvest Home | Lingle | Por determinar | [USDA On-Farm Market #704928](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Landon's Greenhouse Nursery | Sheridan | Por determinar | [USDA On-Farm Market #704929](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
 
-## Barrido de fruta, verdura y huerta (2026-08-15)
+## Barrido de carnes y ganaderías extensivas (2026-08-15)
 
-Candidatos de fincas hortícolas y frutícolas familiares, huertos de frutales patrimoniales, explotaciones de bayas y puestos de venta directa en finca con web oficial.
+Candidatos de ranchos ganaderos familiares, explotaciones de vacuno de pasto, bisontes criados en libertad, cordero de montaña y obradores de charcutería artesanal en Wyoming con unidad productiva y venta directa.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de cervecerías artesanas, sidrerías e hidromielerías (2026-08-15)
+
+Candidatos de microcervecerías independientes, productores de sidra salvaje de manzana local y elaboradores de hidromiel con fábrica propia en Wyoming.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de destilerías artesanas (2026-08-15)
+
+Candidatos de destilerías artesanales y obradores de licores botánicos y espirituosos con alambiques y elaboración propia en Wyoming.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de bodegas y viñedos de montaña (2026-08-15)
+
+Candidatos de viñedos familiares y bodegas de altura de Wyoming con cultivo de variedades de uva de clima frío y elaboración propia de vino.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de tostadores de café de especialidad (2026-08-15)
+
+Candidatos de microtostadurías artesanales y tostadores independientes de café de especialidad con obrador propio en Wyoming y venta directa en grano.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
 
 ## Barrido de apicultura y miel artesana (2026-08-15)
 
-Candidatos de apicultores locales, granjas apícolas y elaboradores de miel artesana de Wyoming con colmenares propios, venta directa y web oficial.
+Candidatos de apicultores locales, explotaciones apícolas familiares y elaboradores de miel cruda de Wyoming con colmenares propios, venta directa y web oficial.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de queserías y lácteos de granja (2026-08-15)
+
+Candidatos de queserías artesanas, microlecherías de pasto y obradores lácteos de granja en Wyoming con rebaño propio y venta directa.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de molinos, cereales, panaderías, chocolates y helados artesanos (2026-08-15)
+
+Candidatos de obradores de pan artesanal de masa madre, molinos de harina patrimonial, avena sin gluten, confiterías de miel, chocolaterías bean-to-bar y heladerías de granja en Wyoming.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de condimentos, salsas y conservas artesanales (2026-08-15)
+
+Candidatos de elaboradores artesanos de condimentos tradicionales, mezclas de especias para cecina y mermeladas de chokecherry salvaje de Wyoming.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de fruta, verdura, agricultura vertical y setas (2026-08-15)
+
+Candidatos de explotaciones agrícolas ecológicas, invernaderos verticales de alta montaña, cultivo de setas gourmet y huertas familiares en Wyoming.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
