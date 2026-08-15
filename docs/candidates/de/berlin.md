@@ -23,3 +23,8 @@ También se descartaron cuatro falsos positivos: **Abion Hotel Verwaltungs** es 
 | Dietrich Meyer | Berlin | Fürstenberger Str. 12 10435 | vegetales sin transformar | 2028-01-31 | [DE-ÖKO-022.276-0047947.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-022.276-0047947.2026.001.pdf) |
 | Dirk Kanter | Berlin | Boxhagener Straße 27 10245 | vegetales sin transformar | 2027-02-28 | [DE-ÖKO-021.276-0037727.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-021.276-0037727.2025.001.pdf) |
 | Fritz und Almuth Kröger GbR | Berlin | Lückhoffstraße 19 14129 | vegetales sin transformar | 2027-02-01 | [DE-ÖKO-034.276-0036869.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-034.276-0036869.2025.001.pdf) |
+
+## Candidatos retenidos tras la revisión de 2026-08-15
+
+- **Ölmühle an der Havel:** el dominio propuesto no resuelve y no aparece una fuente actual que sitúe una almazara productiva en Berlín. Mantener en espera.
+- **ManuTeeFaktur:** el dominio citado está secuestrado por contenido de apuestas; no se encontró una fuente propia actual que confirme continuidad y unidad productiva en Berlín. Mantener en espera, porque el dominio reciclado no prueba cierre.

@@ -22,3 +22,12 @@ Los cinco casos siguientes conservan un certificado ecológico vigente, pero la 
 | Carsten Martens | [DE-ÖKO-006.276-0035632.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0035632.2026.001.pdf) | No se encontró una oferta propia ni una fuente pública que describa qué cultiva en Finkenwerder Landscheideweg 269. |
 | Frank Holm | [DE-ÖKO-039.276-0071554.2025.003](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-039.276-0071554.2025.003.pdf) | [Moin Altengamme](https://moin-altengamme.de/hoefe/naturlandhof-holm/) confirma el Naturlandhof familiar y la dirección, pero no identifica el alimento propio ofrecido ni una modalidad de venta actual. |
 | Friederike Raczkowski | [DE-ÖKO-006.276-0042860.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0042860.2026.001.pdf) | Las fuentes públicas la vinculan a cría ecuestre y desde 2025 a ÖLT Ökologischer Landbau Tangstedt. Falta aclarar qué alimento ofrece y si la unidad productiva está en Hamburgo o en Schleswig-Holstein. |
+
+## Candidatos retenidos tras la revisión de 2026-08-15
+
+- **Le petit pêcheur «Malika»:** la ficha aportada devuelve 404 y no hay fuente actual suficiente para confirmar obrador propio.
+- **Imkerei Barmbek:** la portada general del Deutscher Imkerbund no identifica al productor ni una oferta concreta.
+- **Lemonaid & ChariTea:** la marca y la sede de Hamburgo están activas, pero no se ha situado una unidad productiva propia en el Land.
+- **leev:** falta una fuente actual que atribuya el prensado o embotellado a una unidad productiva propia en Hamburgo.
+- **samova:** la web prueba la marca y el comercio de té, no el lugar de mezcla o elaboración en Hamburgo.
+- **Die Pastafrauen Nudelmanufaktur:** el dominio no resuelve y no se localizó una fuente actual suficiente para confirmar actividad y obrador.

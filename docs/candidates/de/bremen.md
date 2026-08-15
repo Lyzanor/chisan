@@ -26,3 +26,8 @@ Se descartaron **Bürgerparkverein Bremen**, asociación que mantiene el parque 
 | Henning Früchtnicht | Bremen | Oberblockland 13 28357 | vegetales sin transformar | 2028-01-31 | [DE-ÖKO-006.276-0035695.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0035695.2026.001.pdf) |
 | Hermann Gartelmann | Bremen | Oberblockland 7 27721 | vegetales sin transformar | 2028-01-31 | [DE-ÖKO-006.276-0009645.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0009645.2026.001.pdf) |
 | Ibrahim Tülemen | Bremen | Nachtweide 99 28719 | ganado y productos ganaderos sin transformar, vegetales sin transformar | 2027-01-31 | [DE-ÖKO-006.276-0030627.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0030627.2025.001.pdf) |
+
+## Candidatos retenidos tras la revisión de 2026-08-15
+
+- **Dorcas Spirituosen Manufaktur:** el dominio citado no existe y no se localizó una fuente actual que confirme actividad y destilería propia.
+- **Bio-Gärtnerei Rhizom / ÖkoNet:** la ficha aportada devuelve 404 y no se encontró una oferta pública actual atribuible a la explotación.
