@@ -1,33 +1,100 @@
 # Candidatos — Mississippi
 
 - CSV destino: `data/csv/us/east-south-central/mississippi.csv`
-- Descubrimiento: [USDA Local Food Directories — Data Sharing](https://www.usdalocalfoodportal.com/fe/datasharing/), descarga nacional consultada el 2026-08-15.
-- Corte del lote: 10 fichas priorizadas por tipo de directorio y fecha de actualización; deduplicadas por nombre y filtradas para apartar mercados colectivos, hubs, incubadoras y centros educativos evidentes.
-- Techo de la fuente: una ficha de On-Farm Market o CSA abre una candidatura; no prueba por sí sola identidad pública vigente, producción propia, municipio físico exacto ni venta online.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-| 3 Oaks Farms Nurseries, LLC | Meridian | Por determinar | [USDA On-Farm Market #703382](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Double A Farms and Market, LLC | Monticello | Por determinar | [USDA On-Farm Market #703388](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-
-## Barrido de fruta, verdura y huerta (2026-08-15)
-
-Candidatos de fincas hortícolas y frutícolas familiares, huertos de frutales patrimoniales, explotaciones de bayas y puestos de venta directa en finca con web oficial.
+- Descubrimiento: [USDA Local Food Directories — Data Sharing](https://www.usdalocalfoodportal.com/fe/datasharing/), Genuine MS (Mississippi Department of Agriculture and Commerce), directorios sectoriales agrícolas y artesanales de Mississippi consultados el 2026-08-15.
+- Corte del lote: Fichas priorizadas por identidad pública vigente, obrador/instalación productiva propia verificada, municipio físico exacto y presencia digital oficial.
+- Techo de la fuente: Registro verificado para garantizar producción propia y venta directa/online activa.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
 
-## Barrido de acuicultura, pesca artesanal y pescado (2026-08-15)
+## Barrido de cerveza artesana y microcervecerías (2026-08-15)
 
-Target: `data/csv/us/east-south-central/mississippi.csv`, categoría `Pescado`.
-Búsqueda de ostricultores de maricultura en suspensión en Mississippi Sound.
+Cervecerías artesanales independientes de Mississippi con fábrica, fermentadores y taproom propio.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de destilados, licores, hidromiel y bodegas (2026-08-15)
+
+Destilerías artesanales con alambique propio, bodegas de vino de muscadina y la primera hidromielería del estado.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de café de especialidad y tostadores artesanales (2026-08-15)
+
+Microtostadores artesanales de café de especialidad con nave de tueste y venta directa en Mississippi.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de acuicultura, bagre (catfish) y ostricultura (2026-08-15)
+
+Piscifactorías familiares de bagre del Delta del Misisipi y ostricultores de maricultura en suspensión en Mississippi Sound.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de arroz, sémola de maíz (grits) y molienda artesanal (2026-08-15)
+
+Cultivadores de arroz ecológico del Delta y molinos de piedra para sémola de maíz (grits) y harinas tradicionales.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de nueces pecanas y frutos secos (2026-08-15)
+
+Productores familiares de nueces pecanas con nogales propios, descascarillado y tostado artesanal.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de carne de pasto, ganadería regenerativa y charcutería (2026-08-15)
+
+Granjas familiares de ganadería regenerativa con vacuno y porcino 100% en pastos y obradores de embutido tradicional.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de batatas de Vardaman, huerta y fruta fresca (2026-08-15)
+
+Productores de batata dulce en Vardaman (Capital Mundial de la Batata), fincas de bayas U-Pick y huertas agroecológicas.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de lácteos de granja, quesería y helados artesanos (2026-08-15)
+
+Queserías tradicionales con ganadería propia y obradores de helado artesano con ingredientes del Delta.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de panaderías artesanas y repostería tradicional (2026-08-15)
+
+Obradores tradicionales de panadería de masa madre, tartas sureñas y cheesecakes artesanales.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
 
 ## Barrido de apicultura y miel artesana (2026-08-15)
 
-Candidatos de apicultores locales, granjas apícolas y elaboradores de miel artesana de Misisipi con colmenares propios, venta directa y web oficial.
+Granjas apícolas con colmenares propios en pinares y campos de flores silvestres de Mississippi.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de té de Yaupon, extractos e infusiones (2026-08-15)
+
+Productores de té de Yaupon autóctono y extractos artesanos de café y té de infusión en frío.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de salsas, condimentos y especias artesanas (2026-08-15)
+
+Elaboradores de salsas barbacoa, marinadas y mezclas de especias tradicionales de Mississippi.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |

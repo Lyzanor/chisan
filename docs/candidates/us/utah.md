@@ -7,21 +7,17 @@
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
-| Bullhead Ranch | Benjamin | Por determinar | [USDA On-Farm Market #704584](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Cedar Crest Farm | Roy | Por determinar | [USDA On-Farm Market #704586](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Day Farms | Layton | Por determinar | [USDA On-Farm Market #704589](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| edABILITY Farm | Vernal | Por determinar | [USDA On-Farm Market #701643](https://www.usdalocalfoodportal.com/fe/datasharing/) · 2022-03-05 20:38:40 | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
 
-## Barrido de lácteos y quesos artesanos (2026-08-15)
+## Barrido de lácteos, quesos y helados artesanos (2026-08-15)
 
-Candidatos de queserías artesanas, obradores de granja y elaboradores tradicionales de Utah identificados con unidad productiva y web oficial.
+Candidatos de queserías artesanas, granjas lecheras con obrador y heladerías de elaboración propia en Utah identificados con unidad productiva y web oficial.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
 
-## Barrido de fruta, verdura y huerta (2026-08-15)
+## Barrido de chocolate bean-to-bar y confitería artesana (2026-08-15)
 
-Candidatos de fincas hortícolas y frutícolas familiares, huertos de frutales patrimoniales, explotaciones de bayas y puestos de venta directa en finca con web oficial.
+Candidatos de elaboradores de chocolate desde el grano (bean-to-bar) y obradores de confitería artesana con sede en Utah.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
@@ -33,9 +29,58 @@ Candidatos de destilerías artesanales de Utah con alambiques y elaboración pro
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
 
+## Barrido de cervecerías artesanales (2026-08-15)
+
+Candidatos de microcervecerías y fábricas de cerveza artesanal independientes de Utah con planta cervecera propia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de bodegas y sidrerías (Vino y Sidra) (2026-08-15)
+
+Candidatos de bodegas vinícolas, viñedos familiares y llagares de sidra natural de Utah con viñedo/manzanar o fermentación propia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de tostadores de café de especialidad (2026-08-15)
+
+Candidatos de obradores de tostado de café de especialidad artesanal con sede en Utah.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
 ## Barrido de apicultura y miel artesana (2026-08-15)
 
 Candidatos de apicultores locales, granjas apícolas y elaboradores de miel artesana de Utah con colmenares propios, venta directa y web oficial.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de ganadería regenerativa y carnes de pasto (2026-08-15)
+
+Candidatos de ranchos familiares y granjas de ganadería regenerativa con carne de pasto y venta directa al consumidor en Utah.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de fruta, verdura y huerta familiar (2026-08-15)
+
+Candidatos de fincas hortícolas y frutícolas familiares, huertos de frutales patrimoniales, explotaciones de bayas y puestos de venta directa en finca con web oficial.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de panadería artesana, harinas y cereal (2026-08-15)
+
+Candidatos de molinos harineros de grano patrimonial y obradores de panadería artesanal de masa madre con sede en Utah.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de conservas, condimentos y despensa artesanal (2026-08-15)
+
+Candidatos de elaboradores de conservas de fruta, condimentos, salsas artesanales y sales minerales de Utah.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |

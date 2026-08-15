@@ -7,16 +7,66 @@
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
-| Beeappy Farm | Gay | Por determinar | [USDA On-Farm Market #700173](https://www.usdalocalfoodportal.com/fe/datasharing/) · 2014-07-26 18:08:08 | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Buena Vista Farm | Old Fields | Por determinar | [USDA On-Farm Market #704909](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Eckart Family Farm | St Marys | Por determinar | [USDA On-Farm Market #704912](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Green Family Farm | Burlington | Por determinar | [USDA On-Farm Market #700351](https://www.usdalocalfoodportal.com/fe/datasharing/) · 2015-04-01 14:08:13 | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Gritt's Farm | Buffalo | Por determinar | [USDA On-Farm Market #704914](https://www.usdalocalfoodportal.com/fe/datasharing/) · sin fecha en el registro | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
-| Harmony Hill Farm | Shenandoah Junction | Por determinar | [USDA On-Farm Market #701460](https://www.usdalocalfoodportal.com/fe/datasharing/) · 2018-08-29 12:32:07 | Venta directa en finca declarada | Confirmar identidad, actividad, unidad productiva, municipio, producto y canal de venta. |
 
-## Barrido de fruta, verdura y huerta (2026-08-15)
+## Barrido de cerveza artesanal y microcervecerías (2026-08-15)
 
-Candidatos de fincas hortícolas y frutícolas familiares, huertos de frutales patrimoniales, explotaciones de bayas y puestos de venta directa en finca con web oficial.
+Candidatos de microcervecerías independientes y brewpubs de West Virginia con sala de elaboración propia y venta directa o distribución local.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de sidra, hidromiel y vino artesanal (2026-08-15)
+
+Candidatos de sidrerías con manzana de montaña, meaderies de miel apalache y bodegas vinícolas con viñedos y bodega propia en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de destilados y licores artesanos (2026-08-15)
+
+Candidatos de destilerías artesanales y obradores de moonshine, whiskey y bourbon con alambiques propios en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de sirope de arce, apicultura y miel artesana (2026-08-15)
+
+Candidatos de explotaciones azucareras con sugarhouse propio para sirope de arce puro y colmenares con extracción propia de miel virgen en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de tostadores de café de especialidad (2026-08-15)
+
+Candidatos de microtostaderos artesanales y tostadores independientes de café de especialidad con tostaduría propia y venta directa en grano en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de lácteos, queserías y setas cultivadas (2026-08-15)
+
+Candidatos de queserías artesanas de granja y explotaciones micológicas sostenibles con cultivo propio en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de despensa artesanal, salinas históricas, condimentos y chocolates (2026-08-15)
+
+Candidatos de salinas minerales patrimoniales, salsas, mermeladas de rampa/fruta autóctona, chili tradicional y chocolaterías de obrador en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de panaderías tradicionales, dulces y repostería (2026-08-15)
+
+Candidatos de panaderías históricas, creadores del auténtico pepperoni roll y obradores de repostería tradicional en West Virginia.
+
+| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
+| --- | --- | --- | --- | --- | --- |
+
+## Barrido de carne de pasto, fincas hortofrutícolas y huerta (2026-08-15)
+
+Candidatos de fincas ganaderas regenerativas a pasto, cultivos de rampas de montaña, frutales patrimoniales y huertas familiares en West Virginia.
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
