@@ -2003,5 +2003,63 @@
         "region": "western-cape"
       }
     ]
+  },
+  "us": {
+    "north hudson": [
+      {
+        "lat": 44.00217,
+        "lon": -73.79626,
+        "label": "North Hudson (Essex County, New York)",
+        "region": "middle-atlantic"
+      },
+      {
+        "lat": 44.99576,
+        "lon": -92.755,
+        "label": "North Hudson (St. Croix County, Wisconsin)",
+        "region": "east-north-central"
+      }
+    ],
+    "hamden": [
+      {
+        "lat": 42.20021,
+        "lon": -74.9843,
+        "label": "Hamden (Delaware County, New York)",
+        "region": "middle-atlantic"
+      },
+      {
+        "lat": 39.15853,
+        "lon": -82.5255,
+        "label": "Hamden (Vinton County, Ohio)",
+        "region": "east-north-central"
+      }
+    ],
+    "berne": [
+      {
+        "lat": 42.5927,
+        "lon": -74.11607,
+        "label": "Berne (Albany County, New York)",
+        "region": "middle-atlantic"
+      },
+      {
+        "lat": 40.65727,
+        "lon": -84.95551,
+        "label": "Berne (Adams County, Indiana)",
+        "region": "east-north-central"
+      }
+    ],
+    "earlton": [
+      {
+        "lat": 42.35564,
+        "lon": -73.90068,
+        "label": "Earlton (Greene County, New York)",
+        "region": "middle-atlantic"
+      },
+      {
+        "lat": 37.58742,
+        "lon": -95.46979,
+        "label": "Earlton (Neosho County, Kansas)",
+        "region": "west-north-central"
+      }
+    ]
   }
 }

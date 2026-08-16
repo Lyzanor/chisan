@@ -1,83 +1,25 @@
 # Candidatos — New York
 
 - CSV destino: `data/csv/us/middle-atlantic/new-york.csv`
-- Descubrimiento: [USDA Local Food Directories — Data Sharing](https://www.usdalocalfoodportal.com/fe/datasharing/) y prospección directa de productores artesanales del estado de Nueva York (2026-08-15).
-- Criterio de selección: Productores reales con unidad productiva propia (viñedos, bodegas, llagares de sidra, queserías de granja, cabañas de jarabe de arce, criaderos de ostras, microcervecerías, destilerías artesanas, microtostaderos, obradores bean-to-bar y molinos de grano).
-- Deduplicación: Verificado contra el CSV existente (`data/csv/us/middle-atlantic/new-york.csv`) con cero duplicados y 100% categorías controladas.
 
-## Barrido de bodegas y viñedos (2026-08-15)
+## Fuentes estructuradas que funcionan
 
-Candidatos de bodegas históricas, fincas vitivinícolas y elaboradores de vino de clima frío con viñedos propios en Finger Lakes, Long Island y Hudson Valley.
+- **Licencias activas de la State Liquor Authority** — `https://data.ny.gov/resource/9s3h-dpkz.json` (Socrata, sin clave). Filtrar por `description` (`Farm winery`, `Farm Brewer`, `Micro-Brewer`, `Distiller Class D (Farm Distiller)`, `Farm Cidery`, `Farm Meadery`…): ~1.700 licencias de producción con nombre legal, dirección del local, condado, vigencia y `georeference`. Techo: acredita al titular y el local, no la producción actual ni la marca pública; `legalname` es la razón social y hay que resolver la identidad pública aparte.
+- **Padrón de socios de la NYS Maple Producers Association** — `https://nysmaple.com/wp-json/wp/v2/maple-producers?per_page=100` (WP REST abierto). 417 fichas con dirección, lat/lon, teléfono, web, redes, líneas de producto y `member_expiration` (señal de vigencia). La fuente más rica del estado.
+- **Mapa de socios de la Empire State Honey Producers Association** — el iframe de `https://eshpa.org/buy-local` es un Google My Maps; el KML sale con `https://www.google.com/maps/d/kml?mid=14nSzjiLZDBUdK9tvvtoaoStEvIPZ74E&forcekml=1`. 27 fichas con dirección de recogida, teléfono, email y qué venden. Sin coordenadas útiles en el KML: geocodificar aparte.
+- **Geocodificador del US Census Bureau** — `https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?benchmark=Public_AR_Current&format=json`. Gratuito y sin clave, resuelve direcciones postales de EE. UU. a nivel de portal. Con `geographies/...&vintage=Current_Current` devuelve además el centroide de la *county subdivision*, que es lo que hace falta para los homónimos de `municipality-overrides.json`.
 
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
+Fuentes que no sirvieron: `nycheese.org` (NXDOMAIN), el mapa del NYS Cheese Council en `thecheeseclub.com/wp-json/wpgmza/v1/markers` (67 marcadores, casi todos de prueba), `newyorkwines.org/wp-json/wp/v2/winery` (vacío), y el directorio de la NY Cider Association (no publica socios).
 
-## Barrido de sidrerías artesanas y pomares (2026-08-15)
+## Método de resolución de identidad
 
-Candidatos de sidrerías de finca, pomares orgánicos y obradores tradicionales de sidra de Nueva York con llagar y prensado propios.
+El registro de la SLA da razón social, no marca. Para cerrar la identidad: derivar dominios candidatos del nombre, abrirlos, y aceptar solo si el `<title>` lleva una palabra de oficio (*brewing*, *cidery*, *distilling*, *winery*, *vineyard*, *cellars*, *spirits*) **y** comparte un token distintivo con el nombre. Sin la primera condición, `Lake George Distilling` cae en `lakegeorge.com` (guía turística) y `Long Island Spirits` en `longisland.com` (portal). Tasa de acierto ~34% sobre 781 nombres.
 
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
+Los teléfonos y correos hay que sacarlos de `href="tel:"` y `href="mailto:"`, nunca de un regex sobre el cuerpo: el texto plano devuelve números de plantilla (`+1 333 333 3333`, `2147483647`) y correos de andamiaje (`filler@godaddy.com`, `user@domain.com`, `contact@sansoxygen.com`, `info@ndiscovered.com`, `team@latofonts.com`, `impallari@gmail.com`).
 
-## Barrido de lácteos y quesos artesanos (2026-08-15)
+## Trabajo pendiente
 
-Candidatos de queserías de granja, queserías de pastor y obradores lácteos familiares del estado de Nueva York con rebaño u obrador propio.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de jarabe de arce y despensa artesanal (2026-08-15)
-
-Candidatos de explotaciones azucareras tradicionales de arce (sugarhouses) de las montañas Catskills, Adirondacks y valles de Nueva York con bosque y evaporación propios.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de acuicultura, ostricultura y pescado (2026-08-15)
-
-Candidatos de granjas de cultivo de ostras y mariscos en las bahías de Long Island (Peconic Bay, Moriches Bay, Long Island Sound) con cosecha y cría propias.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de cervecerías artesanas (2026-08-15)
-
-Candidatos de microcervecerías de granja y obradores cerveceros independientes de Nueva York con fábrica propia y cultivo o uso de ingredientes de proximidad.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de destilados y licores artesanos (2026-08-15)
-
-Candidatos de microdestilerías artesanales, alambiques de campo y elaboradores de Empire Rye whiskey del estado de Nueva York.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de tostadores y café de especialidad (2026-08-15)
-
-Candidatos de microtostaderos independientes de café de especialidad de Nueva York con nave de tostado propia y abastecimiento directo.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de chocolaterías bean-to-bar artesanas (2026-08-15)
-
-Candidatos de artesanos chocolateros y obradores bean-to-bar de Nueva York que elaboran chocolate puro a partir del grano de cacao.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de panaderías de masa madre y molinos de grano (2026-08-15)
-
-Candidatos de panaderías artesanas de fermentación lenta y molinos tradicionales que muelen a piedra cereales cultivados en Nueva York.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
-
-## Barrido de conservas, condimentos y setas de cultivo artesanal (2026-08-15)
-
-Candidatos de obradores de conservas artesanas, salsas con producto local y granjas micológicas de cultivo sostenible en Nueva York.
-
-| Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
-| --- | --- | --- | --- | --- | --- |
+- **~120 licencias SLA con web propia confirmada sin integrar** (sobre todo `Cerveza` y `Vino`): quedan fuera del lote de 2026-08-16 por cupo y reparto por condado, no por dudas. Rehacer el barrido con el mismo filtro para recuperarlas.
+- **~100 socios de maple con web viva sin integrar**: mismo motivo.
+- **Lácteos y quesos**: sigue sin fuente estructurada. `catapanodairyfarm.com` y `remembrancefarm.com` son leads reales pero están tras un muro anti-bot / render JS y no se pudieron leer.
+- **Categorías todavía a cero en el estado**: `Carne`, `Setas`, `Té e infusiones`, `Dulces y repostería`, `Frutos secos`, `Legumbres`, `Aperitivos`, `Aceite`.
