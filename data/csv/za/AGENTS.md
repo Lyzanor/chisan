@@ -1,11 +1,11 @@
 # South Africa
 
 ## Operating state
-- Phase: opening. The tree covers the 52 districts and metros and every area file
-  is still empty. Derive live queues with `npx pnpm check:defects --country za`.
-- Active lane: first discovery per area in `docs/candidates/za/<area>.md`,
-  starting with the wine sub-route associations, which are the only South
-  African producer lists that publish an address per member.
+- Phase: initial national coverage. Every district and metro has a first
+  producer roster; derive the current enrichment and re-verification queues
+  with `npx pnpm check:defects --country za`.
+- Active lane: strengthen partial rows with producer-owned sources, resolve
+  online sales and replace coarse or missing productive-unit details.
 
 ## Country rules
 - `region` is a province and `area` a district or metropolitan municipality.
@@ -62,3 +62,15 @@
 - OpenStreetMap is thin here: a national sweep of the producer crafts and farm
   shops returns about 130 named objects for the whole country, so it seeds
   provinces that have no association rather than covering any of them.
+- Overture Places is useful for nationwide discovery because it publishes a
+  category, point, locality and often a direct contact or linked social profile.
+  It supports a screened `parcial` row, not `verificado`: category errors and
+  non-productive retail or hospitality identities must be removed, and generic
+  farm labels need a more specific source before product claims are expanded.
+- The SANHA certified-establishment directory explicitly publishes food
+  activity, locality and contact and can support `parcial`; certification does
+  not by itself prove an official web identity or online sales.
+- The Department of Agriculture's 2021 abattoir list is authoritative for the
+  registration, address and activity it records, but it is historical. Keep
+  those rows `parcial` until a current primary or regulatory source confirms
+  ongoing activity.
