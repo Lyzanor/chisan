@@ -1,12 +1,11 @@
 # India
 
 ## Operating state
-- Phase: opening. The tree covers the 28 states and 8 union territories; most
-  areas are still empty files. Derive live queues with
-  `npx pnpm check:defects --country in`.
-- Active lane: first discovery per area in `docs/candidates/in/<area>.md`,
-  starting with the product families that have a bounded, named producer list
-  (tea gardens, wineries, coffee estates, spice and dairy cooperatives).
+- Phase: first coverage established across the 28 states and 8 union
+  territories. Derive live queues with `npx pnpm check:defects --country in`.
+- Active lane: re-verification, exact productive-unit geolocation and image
+  enrichment for the admitted producer roster; open new area candidate notes
+  only when a concrete later discovery batch begins.
 
 ## Country rules
 - `region` is a zone and `area` a state or union territory. The zones follow the
