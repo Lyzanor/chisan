@@ -2,12 +2,13 @@
 
 ## Operating state
 - Phase: opening. The tree covers the 23 provinces and the Ciudad Autónoma de
-  Buenos Aires; a first batch of 13 rows sits in nine of them. Derive live
-  queues with `npx pnpm check:defects --country ar`.
-- Active lane: first discovery per area in `docs/candidates/ar/<area>.md`. Wine
-  is the only category with a national named roster, so the opening batch leans
-  on it; the standing task is the opposite one, finding the bounded sources for
-  everything else the country makes.
+  Buenos Aires. Twelve areas now hold twenty or more rows; Chaco, Formosa and
+  Santa Cruz are still empty or near it. Derive live queues with
+  `npx pnpm check:defects --country ar`.
+- Active lane: the three areas with no material and the nine still under twenty
+  rows, tracked in `docs/candidates/ar/<area>.md`. Every current row rests on a
+  directory plus, where it answers, the producer's own site, so the other
+  standing lane is raising them from `parcial` and resolving `Venta online`.
 
 ## Country rules
 - `region` is one of the six statistical regions INDEC defined in 1980 and
@@ -42,6 +43,15 @@
   geographic gate at all.
 
 ## Source ceilings
+- The exhibitor guide of Caminos y Sabores, the national producers fair, is the
+  widest named roster the country publishes: about a thousand unique entries
+  across the 2024, 2025 and 2026 editions, each with the producer's address,
+  city, phone, email, site, socials and product lines. Two limits shape it. It
+  is a fair, so it proves the producer exhibited that July, not that it still
+  trades; and three provinces do not attend at all, so Chaco, Formosa and Santa
+  Cruz get nothing from it. The address is the one the exhibitor declares and is
+  sometimes a Buenos Aires office for production elsewhere, the same trap as the
+  winery directory below.
 - The Bodegas de Argentina member directory is the widest current named winery
   list the country publishes: about 200 entries with address, phone, website
   and email on one page. Two things in it will corrupt rows. It mixes wineries
