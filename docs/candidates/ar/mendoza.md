@@ -1,0 +1,150 @@
+# Mendoza — candidatos
+
+- CSV destino: `data/csv/ar/cuyo/mendoza.csv`
+- Fuente: directorio de socios de Bodegas de Argentina, https://bodegasdeargentina.org/socios-bodegas-de-argentina/ (una sola página con ~200 fichas: nombre, dirección, teléfono, web y correo)
+- Fecha de búsqueda: 2026-08-16
+- Alcance: solo vino, y solo lo que publica ese directorio. Los socios proveedores (bancos, corcho, vidrio, seguros, personal) ya están podados; lo que queda son bodegas sin verificar.
+
+## Cola sin resolver
+
+Dominios sondeados el 2026-08-16; el estado va anotado solo cuando no es un 200 limpio. Ninguna ficha está verificada: el directorio prueba la pertenencia a la cámara, no la actividad ni la localidad de la unidad productiva.
+
+- **Bodega A16** — Ciudad — `http://a16sa.com`
+- **Bodega Aaron Tubert** — `http://www.balbistarhotel.com.ar` no resuelve
+- **Bodega Alpamanta** — `http://www.alpamanta.com/contacto/` responde 404
+- **Bodega Alta Vista** — `http://www.altavistawines.com` responde 404
+- **Bodega Altos Las Hormigas** — Ciudad de Mendoza — `http://www.altoslashormigas.com`
+- **Bodega Andeluna Cellars** — Ciudad — `http://www.andeluna.com.ar`
+- **Bodega Antigal** — Maipú — `http://www.antigal.com`
+- **Bodega Antucura** — Ciudad — `http://www.antucura.com`
+- **Bodega Argento** — `http://www.bodegaargento.com`
+- **Bodega Atamisque** — Ciudad — `http://www.atamisque.com` responde 500
+- **Bodega Barberis** — Guaymallén — `http://www.bodegabarberis.com` responde 403
+- **Bodega Belasco De Baquedano** — Luján de Cuyo — `http://www.belascodebaquedano.com`
+- **Bodega Belhara Estate** — `http://www.belharaestate.com`
+- **Bodega Benegas** — Luján de Cuyo — `http://www.bodegabenegas.com`
+- **Bodega Bombal** — 4º Piso Dpto. — `https://bodegabombal.com/`
+- **Bodega Bressia** — Godoy Cruz — `http://www.bressiabodega.com`
+- **Bodega Budeguer** — Luján de Cuyo — `http://www.budeguer.com`
+- **Bodega Cabrini** — Luján de Cuyo — `http://www.cabrini.com.ar`
+- **Bodega Carelli** — Rivadavia — `http://www.bodegacarelli.com.ar`
+- **Bodega Carinae** — `http://www.carinaevinos.com`
+- **Bodega Casa De Uco** — Tunuyán — `http://www.casadeuco.com`
+- **Bodega Casarena** — Luján de Cuyo — `http://www.casarena.com`
+- **Bodega Chakana** — Luján de Cuyo — `http://www.chakanawines.com.ar`
+- **Bodega Chandon** — Luján de Cuyo — `http://www.chandon.com.ar`
+- **Bodega Cheval Des Andes** — Luján de Cuyo — `http://www.chevaldesandes.com`
+- **Bodega Clos De Chacras** — sin web en el directorio
+- **Bodega Clos De Los Siete** — Ciudad — `http://www.closdelossiete.com`
+- **Bodega Clément** — `http://www.clement.com.ar`
+- **Bodega Colosso Wines** — Cp 5507 — `http://www.colossowines.com`
+- **Bodega Comfiar** — Rodeo de la Cruz, Guaymallén — `http://-` no resuelve
+- **Bodega Corazón Del Sol** — Tunuyán — `http://www.corazondelsol.com`
+- **Bodega Cruzat** — Luján de Cuyo — `http://www.bodegacruzat.com`
+- **Bodega Cuvelier Los Andes** — Tunuyán — `http://www.cuvelierlosandes.com`
+- **Bodega Cánepa Martin** — `http://canepamartin.com` no resuelve
+- **Bodega De Los Clop** — Maipú — `http://www.bodegadelosclop.com`
+- **Bodega Diamandes** — Tunuyán — `http://www.diamandes.com`
+- **Bodega Divendres** — sin web en el directorio
+- **Bodega Domaine Bousquet** — Tupungato — `http://www.domainebousquet.com` no resuelve
+- **Bodega Domaine Le Billoud** — Guaymallén — `http://www.domainelebilloud.com`
+- **Bodega Dominio Del Plata** — Luján de Cuyo — `http://www.dominiodelplata.com.ar`
+- **Bodega Duret** — `http://bodegaduret.com`
+- **Bodega Durigutti Family Winemakers** — `http://www.durigutti.com` responde 403
+- **Bodega Eclipse** — Maipú — `http://www.bodegaeclipse.com.ar` no resuelve
+- **Bodega Escorihuela** — Godoy Cruz — `http://www.escorihuela.com.ar` no resuelve
+- **Bodega Fabre** — Luján de Cuyo — `http://www.bodegasfabre.com`
+- **Bodega Familia Cassone** — Lujan de Cuyo — `http://www.familiacassone.com.ar`
+- **Bodega Familia Crotta** — `http://www.crotta.com.ar`
+- **Bodega Familia Furlan** — `http://www.familia-furlan.com/`
+- **Bodega Familia Zanchetta** — `http://www.bodega-raffy-zanchetta.com`
+- **Bodega Finca Agostino** — Bº Trapiche Godoy Cruz — `http://www.fincaagostino.com`
+- **Bodega Finca El Origen** — `http://www.fincaelorigen.com`
+- **Bodega Finca Flichman** — Maipú — `http://www.flichman.com.ar`
+- **Bodega Finca La Celia** — Ciudad — `http://www.lacelia.com.ar` no resuelve
+- **Bodega Finca La Luz** — Tunuyán — `http://www.vinosdelaluz.com.ar` no resuelve
+- **Bodega Finca Mevi** — Maipú — `http://www.fincamevi.com.ar`
+- **Bodega Finca Savina** — `http://www.bodegafincasavina.com/`
+- **Bodega Flechas De Los Andes** — Ciudad — `http://www.flechasdelosandes.com.ar` responde 404
+- **Bodega Foster Lorca** — `http://www.grupofosterlorca.com/`
+- **Bodega Furlotti** — Luján de Cuyo — `http://www.bodegafurlotti.com`
+- **Bodega Gimenez Riili** — sin web en el directorio
+- **Bodega Gonzalez Videla** — Las Heras — sin web en el directorio
+- **Bodega Grupo Peñaflor** — Maipú — `http://www.grupopenaflor.com.ar`
+- **Bodega Hacienda Del Plata** — Luján de Cuyo — `http://www.haciendadelplata.com`
+- **Bodega Hinojosa** — Tunuyán — `http://www.bodegahinojosa.com`
+- **Bodega Huarpe** — Luján de Cuyo — `http://www.wht.com.ar/`
+- **Bodega Iudica Vinos** — `http://www.iudicavinos.com/` no resuelve
+- **Bodega Jean Bousquet** — `http://www.instagram.com/jeanbousquetarg/`
+- **Bodega Joffré** — Luján de Cuyo — `http://www.rjvinedos.com`
+- **Bodega Jorge Giol** — 3°p Of. G — sin web en el directorio
+- **Bodega Kaiken** — Luján de Cuyo — `http://www.kaikenwines.com`
+- **Bodega La Amalia** — Luján de Cuyo — `http://www.amalia.com.ar`
+- **Bodega La Rural** — Maipú — `http://www.bodegalarural.com.ar`
+- **Bodega Lagarde** — `http://www.lagarde.com.ar`
+- **Bodega Lamadrid Estate Wines** — `http://www.lamadridwines.com`
+- **Bodega Los Amores De Vista Flores** — `http://-` no resuelve
+- **Bodega Los Haroldos** — `http://losharoldos.com`
+- **Bodega Los Toneles** — Guaymallén — `http://www.bodegalostoneles.com`
+- **Bodega Luigi Bosca - Familia Arizu** — Luján de Cuyo — `http://www.luiguibosca.com.ar` no resuelve
+- **Bodega Luis Segundo Correas** — Ciudad — `http://www.bodegacorreas.com.ar`
+- **Bodega Luna Austral** — San Carlos — `http://www.lunaaustral.com.ar` responde 503
+- **Bodega Masi Tupungato** — Ciudad — `http://www.masitupungato.com`
+- **Bodega Mastroeni** — Luján de Cuyo — `http://www.bodegamastroeni.com` no resuelve
+- **Bodega Mendel** — Luján de Cuyo — `http://www.mendel.com.ar`
+- **Bodega Mendoza Vineyeards** — Godoy Cruz — `http://www.mendozavineyards.com`
+- **Bodega Monte Quieto Sa** — `http://www.montequieto.com`
+- **Bodega Monteviejo** — Tunuyán — `http://www.monteviejo.com.ar`
+- **Bodega Navarro Correas** — sin web en el directorio
+- **Bodega Nieto Senetiner** — `http://www.nietosenetiner.com.ar`
+- **Bodega Norton** — Luján de Cuyo — `http://www.norton.com.ar`
+- **Bodega Ojo De Agua** — Luján de Cuyo — `http://www.ojodevino.com` no resuelve
+- **Bodega Otero Ramos** — Ciudad — `http://oteroramoswinery.com`
+- **Bodega Palo Alto** — Maipú — `http://www.bodegapaloalto.com.ar`
+- **Bodega Piattelli** — Luján de Cuyo — `http://www.piattellivineyards.com`
+- **Bodega Polo** — Luján de Cuyo — `http://www.poloind.com.ar` no resuelve
+- **Bodega Proemio Wines** — Guaymallén — `http://www.proemiowines.com`
+- **Bodega Pulenta Estate** — `http://www.pulentaestate.com`
+- **Bodega Renacer** — Luján de Cuyo — `http://www.bodegarenacer.com.ar`
+- **Bodega Rfm** — Guaymallén — `http://www.bodegarfm.com.ar`
+- **Bodega Riccitelli Wines** — `http://matiasriccitelli.com`
+- **Bodega Roca** — San Rafael — `http://www.rocawines.com` responde 500
+- **Bodega Rosell Boher** — `http://www.rosellboher.com/`
+- **Bodega Rpb** — Maipú — `http://www.baggio.com.ar`
+- **Bodega Ruca Malén** — Luján de Cuyo — `http://www.bodegarucamalen.com`
+- **Bodega Ruggeri** — Luján de Cuyo — `http://www.bodegaruggeri.com.ar` no resuelve
+- **Bodega Rumel** — `http://www.instagram.com/bodegarumel/`
+- **Bodega Septima** — Luján de Cuyo — `http://www.bodegaseptima.com`
+- **Bodega Serrera Wines** — `http://serrera.com.ar`
+- **Bodega Sin Fin** — Ciudad — `http://www.bodegasinfin.com`
+- **Bodega Solo Contigo Wine** — Tunuyán — `http://solocontigowine.com/` responde 403
+- **Bodega Sottano** — Cp 5507 — `http://www.bodegasottano.com`
+- **Bodega Staphyle** — Luján de Cuyo — `http://www.staphyle.com.ar`
+- **Bodega Subterranea Dolium** — Luján de Cuyo — `http://www.dolium.com`
+- **Bodega Suter** — sin web en el directorio
+- **Bodega Tapiz** — Luján de Cuyo — `http://www.tapiz.com` responde 409
+- **Bodega Terrazas De Los Andes** — `http://www.terrazasdelosandes.com/es-ar`
+- **Bodega Tittarelli Wines** — `http://tittarelli.com.ar`
+- **Bodega Trapiche** — `http://www.vinosyspirits.com`
+- **Bodega Trivento** — Maipú — `http://www.trivento.com`
+- **Bodega Valle De Encuentro** — `http://-` no resuelve
+- **Bodega Vinorum** — Maipú — `http://www.altieri.com.ar`
+- **Bodega Vistalba** — Luján de Cuyo — `http://www.bodegavistalba.com`
+- **Bodega Vitivinicola Reyter** — Guaymallén — `http://www.bodegareyter.com.ar` no resuelve
+- **Bodega Viña Cobos** — Luján de Cuyo — `http://www.vinacobos.com`
+- **Bodega Viña Doña Paula** — Ciudad — `http://www.donapaula.com`
+- **Bodega Viña El Cerno** — Maipú — `http://www.elcerno-wines.com.ar` no resuelve
+- **Bodega Viña Las Perdices** — Luján de Cuyo — `http://www.lasperdices.com`
+- **Bodegas Bianchi** — San Rafael — `http://www.bodegasbianchi.com`
+- **Bodegas López** — Maipú — `http://www.bodegaslopez.com.ar`
+- **Bodegas Salentein** — Ciudad. — `http://www.bodegasalentein.com`
+- **Bodegas San Polo** — Ciudad — `http://www.sanpolo.com.ar`
+- **Bodegas Toso** — Guaymallén — `http://www.bodegastoso.com`
+- **Dervinsa Derivados Vinicos** — sin web en el directorio
+- **Grupo Avinea** — OFIC. 4 PB — sin web en el directorio
+
+## Trabajo pendiente
+
+Mendoza concentra 131 de los 157 socios que quedan sin resolver. La dirección del directorio es a menudo la oficina comercial: 39 entradas no nombran ninguna localidad y 13 dicen solo «Ciudad». Antes de escribir `municipio` hay que abrir la web del productor.
+
+Sin barrer: el padrón del INV (que en datos.gob.ar solo sale agregado por departamento), las rutas del vino provinciales y todo lo que no sea vino — aceite de oliva de Maipú y Luján, conservas, frutos secos.

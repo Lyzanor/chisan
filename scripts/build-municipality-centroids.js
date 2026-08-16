@@ -125,6 +125,21 @@
 //     name Montpelier, not "Montpelier city". Puerto Rico is excluded because it
 //     is not in the country tree, and nationwide homonyms are dropped rather
 //     than choosing one state arbitrarily.
+//   - Argentina: the official Georef API (apis.datos.gob.ar), the national
+//     geo-referencing service built on the IGN and INDEC catalogs, in four
+//     plain GETs. Wikidata is not used because the country publishes its own
+//     catalog with centroids, the way France and the United States do.
+//     No single Argentine layer is the one an address names: a producer writes
+//     the localidad (Chacras de Coria, Agrelo), a registry writes the
+//     departamento (Luján de Cuyo, San Rafael), and the municipio exists in
+//     some provinces and not others. So the catalog is the union of the four,
+//     but taken in that order and skipping a name an earlier layer already
+//     claimed, because the layers nest: a departamento centroid is the centre
+//     of an area the size of a Spanish province, tens of kilometres from the
+//     town of the same name, and under `dropAmbiguous` the pair cancels out.
+//     Collected naively that cost the catalog exactly the names the country
+//     runs on — San Rafael, Luján de Cuyo, Tupungato, Cafayate, Ushuaia all
+//     dropped, 3.924 keys. Settlement-first keeps them and yields 4.362.
 //
 // The "mul" label
 // - Wikidata's multilingual label holds the name of an entity spelled the same
@@ -196,6 +211,13 @@ const GEO_API_COMMUNES =
   "https://geo.api.gouv.fr/communes?fields=code,nom,centre&format=json";
 const US_CENSUS_PLACES_GAZETTEER =
   "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_place_national.zip";
+const GEOREF_API = "https://apis.datos.gob.ar/georef/api";
+// Coarser layers last: each one only contributes the names none of the finer
+// ones already carries. Georef caps `max` at 5.000 and the largest layer holds
+// 4.037, so one request still covers it; the collector compares the rows it got
+// against the total the response repeats, which is what will fail loudly if a
+// layer ever outgrows the cap.
+const GEOREF_LAYERS = ["localidades", "localidades-censales", "municipios", "departamentos"];
 const USER_AGENT = "km0-municipio-centroids/1.0 (https://github.com/Lyzanor/km0)";
 const REQUEST_TIMEOUT_MS = 120000;
 
@@ -338,6 +360,13 @@ const COUNTRIES = [
     code: "us",
     label: "United States",
     gazetteer: US_CENSUS_PLACES_GAZETTEER,
+    dropAmbiguous: true,
+  },
+  {
+    slug: "argentina",
+    code: "ar",
+    label: "Argentina",
+    georef: GEOREF_LAYERS,
     dropAmbiguous: true,
   },
 ];
@@ -573,8 +602,50 @@ async function collectFromCensusGazetteer(country) {
   return items;
 }
 
+// Georef answers one layer per request and repeats the layer total, so a short
+// page is a truncated read rather than a smaller country. The name a finer
+// layer already claimed is skipped here, before the generic key loop sees it:
+// that loop can only keep the first item or drop the key entirely, and both are
+// wrong for a departamento sitting 40 km from its own cabecera.
+async function collectFromGeorefApi(country) {
+  const items = new Map();
+  const claimed = new Set();
+
+  for (const layer of country.georef) {
+    console.log(`[${country.label}] fetching ${layer} from Georef...`);
+    const url = `${GEOREF_API}/${layer}?campos=id,nombre,centroide&max=5000`;
+    const page = await withRetry(() => fetchJson(url));
+    const rows = page[layer.replace(/-/g, "_")];
+    if (!Array.isArray(rows)) throw new Error(`Georef ${layer}: no ${layer} array in the response`);
+    if (rows.length !== page.total) {
+      throw new Error(`Georef ${layer}: got ${rows.length} of ${page.total} rows`);
+    }
+
+    let added = 0;
+    for (const row of rows) {
+      const lat = row.centroide?.lat;
+      const lon = row.centroide?.lon;
+      if (!row.nombre || !Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      const key = normalize(row.nombre);
+      if (!key || claimed.has(key)) continue;
+      items.set(`${layer}:${row.id}`, {
+        coord: { lat, lon },
+        labels: new Set([row.nombre]),
+        canonical: row.nombre,
+      });
+      added++;
+    }
+    // Claimed after the layer, not during it: two localidades sharing a name
+    // are a real homonym and must still reach the generic loop to cancel out.
+    for (const row of rows) claimed.add(normalize(row.nombre || ""));
+    console.log(`  ${rows.length} rows, ${added} names this layer does not repeat`);
+  }
+  return items;
+}
+
 async function collectItems(country) {
   if (country.gazetteer) return collectFromCensusGazetteer(country);
+  if (country.georef) return collectFromGeorefApi(country);
   if (country.endpoint) return collectFromGeoApi(country);
 
   const items = new Map(); // qid -> { coord, labels: Set, canonical }

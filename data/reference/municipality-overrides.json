@@ -1817,5 +1817,67 @@
         "region": "sur-sureste"
       }
     ]
+  },
+  "ar": {
+    "chilecito": [
+      {
+        "lat": -29.16244,
+        "lon": -67.49933,
+        "label": "Chilecito (La Rioja)",
+        "region": "noroeste"
+      }
+    ],
+    "el bolson": [
+      {
+        "lat": -41.96501,
+        "lon": -71.53439,
+        "label": "El Bolsón (Río Negro)",
+        "region": "patagonia"
+      }
+    ],
+    "general roca": [
+      {
+        "lat": -39.03151,
+        "lon": -67.57799,
+        "label": "General Roca (Río Negro)",
+        "region": "patagonia"
+      }
+    ],
+    "las heras": [
+      {
+        "lat": -32.85035,
+        "lon": -68.84048,
+        "label": "Las Heras (Mendoza)",
+        "region": "cuyo"
+      }
+    ],
+    "maipu": [
+      {
+        "lat": -32.98461,
+        "lon": -68.78821,
+        "label": "Maipú (Mendoza)",
+        "region": "cuyo"
+      },
+      {
+        "lat": -36.86298,
+        "lon": -57.88307,
+        "label": "Maipú (Buenos Aires)",
+        "region": "pampeana"
+      }
+    ],
+    "san carlos": [
+      {
+        "lat": -33.77207,
+        "lon": -69.0404,
+        "label": "San Carlos (Mendoza)",
+        "region": "cuyo"
+      },
+      {
+        "lat": -25.89317,
+        "lon": -65.92909,
+        "label": "San Carlos (Salta)",
+        "region": "noroeste"
+      }
+    ]
   }
 }

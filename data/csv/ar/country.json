@@ -1,0 +1,154 @@
+{
+  "label": "Argentina",
+  "unit": {
+    "one": "province",
+    "many": "provinces"
+  },
+  "regionUnit": {
+    "one": "region",
+    "many": "regions"
+  },
+  "aliases": {
+    "caba": "ciudad-de-buenos-aires",
+    "capital-federal": "ciudad-de-buenos-aires",
+    "ciudad-autonoma-de-buenos-aires": "ciudad-de-buenos-aires",
+    "provincia-de-buenos-aires": "buenos-aires",
+    "cordoba-ar": "cordoba-argentina",
+    "la-rioja-ar": "la-rioja-argentina",
+    "tierra-del-fuego-antartida-e-islas-del-atlantico-sur": "tierra-del-fuego"
+  },
+  "regions": [
+    {
+      "slug": "noroeste",
+      "label": "Noroeste",
+      "areas": [
+        {
+          "slug": "catamarca",
+          "label": "Catamarca"
+        },
+        {
+          "slug": "jujuy",
+          "label": "Jujuy"
+        },
+        {
+          "slug": "la-rioja-argentina",
+          "label": "La Rioja"
+        },
+        {
+          "slug": "salta",
+          "label": "Salta"
+        },
+        {
+          "slug": "santiago-del-estero",
+          "label": "Santiago del Estero"
+        },
+        {
+          "slug": "tucuman",
+          "label": "Tucumán"
+        }
+      ]
+    },
+    {
+      "slug": "nordeste",
+      "label": "Nordeste",
+      "areas": [
+        {
+          "slug": "chaco",
+          "label": "Chaco"
+        },
+        {
+          "slug": "corrientes",
+          "label": "Corrientes"
+        },
+        {
+          "slug": "formosa",
+          "label": "Formosa"
+        },
+        {
+          "slug": "misiones",
+          "label": "Misiones"
+        }
+      ]
+    },
+    {
+      "slug": "cuyo",
+      "label": "Cuyo",
+      "areas": [
+        {
+          "slug": "mendoza",
+          "label": "Mendoza"
+        },
+        {
+          "slug": "san-juan",
+          "label": "San Juan"
+        },
+        {
+          "slug": "san-luis",
+          "label": "San Luis"
+        }
+      ]
+    },
+    {
+      "slug": "pampeana",
+      "label": "Pampeana",
+      "areas": [
+        {
+          "slug": "buenos-aires",
+          "label": "Buenos Aires"
+        },
+        {
+          "slug": "cordoba-argentina",
+          "label": "Córdoba"
+        },
+        {
+          "slug": "entre-rios",
+          "label": "Entre Ríos"
+        },
+        {
+          "slug": "la-pampa",
+          "label": "La Pampa"
+        },
+        {
+          "slug": "santa-fe",
+          "label": "Santa Fe"
+        }
+      ]
+    },
+    {
+      "slug": "metropolitana",
+      "label": "Metropolitana",
+      "areas": [
+        {
+          "slug": "ciudad-de-buenos-aires",
+          "label": "Ciudad Autónoma de Buenos Aires"
+        }
+      ]
+    },
+    {
+      "slug": "patagonia",
+      "label": "Patagonia",
+      "areas": [
+        {
+          "slug": "chubut",
+          "label": "Chubut"
+        },
+        {
+          "slug": "neuquen",
+          "label": "Neuquén"
+        },
+        {
+          "slug": "rio-negro",
+          "label": "Río Negro"
+        },
+        {
+          "slug": "santa-cruz",
+          "label": "Santa Cruz"
+        },
+        {
+          "slug": "tierra-del-fuego",
+          "label": "Tierra del Fuego"
+        }
+      ]
+    }
+  ]
+}
