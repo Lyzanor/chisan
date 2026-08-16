@@ -369,6 +369,34 @@ const COUNTRIES = [
     georef: GEOREF_LAYERS,
     dropAmbiguous: true,
   },
+  {
+    // South African addresses name a town, never a council, so this catalog is
+    // settlements only. The municipality classes were tried and removed: a local
+    // municipality carries the name of its main town at the seat or polygon
+    // centre, which is tens of kilometres off, and the pair took George, Prince
+    // Albert and Oudtshoorn out of the catalog as homonyms. Suburb and
+    // neighbourhood are in because the Cape Town wine wards are typed that way
+    // and nothing else holds Durbanville, Constantia or Somerset West; big city
+    // is in because Cape Town and Pretoria carry no settlement class at all.
+    slug: "south-africa",
+    code: "za",
+    label: "South Africa",
+    classes: [
+      "wd:Q515",
+      "wd:Q1549591",
+      "wd:Q3957",
+      "wd:Q532",
+      "wd:Q5084",
+      "wd:Q486972",
+      "wd:Q188509",
+      "wd:Q123705",
+    ],
+    countryClass: "wd:Q258",
+    langs: ["mul", "en", "af"],
+    canonicalLang: "en",
+    extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
+    dropAmbiguous: true,
+  },
 ];
 
 // `rootClass` walks a subclass tree; `classes` asks for a list of exact types

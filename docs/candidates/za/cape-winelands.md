@@ -1,0 +1,292 @@
+# Cape Winelands — candidates
+
+- Target CSV: `data/csv/za/western-cape/cape-winelands.csv`
+- Source: Stellenbosch Wine Routes member listings, https://wineroute.co.za/ (enumerated from `wp-sitemap-posts-wineries-1.xml`); OpenStreetMap sweep of `craft=brewery|distillery|cheesemaker|oil_mill`, `microbrewery=yes`, `shop=farm|dairy` over South Africa, via Overpass
+- Searched: 16 August 2026
+- Batch scope: leads only. Nothing here is verified: the district comes from the
+  listing's own town or coordinates, the category from the source's own tag, and
+  neither is a substitute for reading the producer's site. Resolve identity,
+  qualifying activity and `municipio` before writing a row.
+
+## Stellenbosch Wine Routes members
+
+Route membership shows the producer trading in the sub-region at review time.
+It does not prove the entity is the productive unit and it does not place it:
+10 of these 101 pages publish an address; the others are filed here because the route
+is a Cape Winelands body, which is an assumption and not a source.
+The route's footprint crosses into the City of Cape Town, so read the producer's
+own site before writing `municipio`. `categoria`: `Vino`.
+
+- **Alto Wine Estate** · http://www.alto.co.za · 0218813884 · info@altowines.co.za
+  - listing: https://wineroute.co.za/wineries/alto-wine-estate-2/; route only, no address published
+- **Amperbo Boerdery** — Stellenbosch · https://amperbowines.co.za · +27824004188 · wines@amperboplaas.co.za
+  - listing: https://wineroute.co.za/wineries/amperbo-boerdery/; address: Bottelary, AmperBo Plaas, Fischerpad, Stellenbosch, 7600; placed by address
+- **Annandale Wine Estate** · http://www.annandale.co.za · +27726755558 · info@annandale.co.za
+  - listing: https://wineroute.co.za/wineries/annandale-wine-estate-2/; route only, no address published
+- **Asara Wine Estate and Hotel** · http://www.asara.co.za · +27218888000 · tasting@asara-wines.com
+  - listing: https://wineroute.co.za/wineries/asara-wine-estate-and-hotel-2/; route only, no address published
+- **Avontuur Estate** · https://www.visitstellenbosch.org/listing/avontuur-estate/ · 0218553450 · info@avontuurestate.co.za
+  - listing: https://wineroute.co.za/wineries/avontuur-estate-2/; route only, no address published
+- **Bartinney Private Cellar** · https://www.visitstellenbosch.org/listing/bartinney-wine-champagne-bar/ · 0218851013 · info@bartinney.co.za
+  - listing: https://wineroute.co.za/wineries/bartinney-private-cellar-2/; route only, no address published
+- **Bein Private Cellar** — Stellenbosch · http://www.beinwine.com · 0218813025 · lib@beinwine.com
+  - listing: https://wineroute.co.za/wineries/bein-private-cellar/; address: Bein Private Cellar, Vlottenburg, Stellenbosch, South Africa; placed by address
+- **Bellevue Wine Estate** · https://bellevue.co.za · 0218652055 · hello@bellevue.co.za
+  - listing: https://wineroute.co.za/wineries/bellevue-wine-estate-2/; route only, no address published
+- **Beyerskloof** · https://www.visitstellenbosch.org/listing/red-leaf-bistro/ · 0218652135 · enquiries@beyerskloof.co.za
+  - listing: https://wineroute.co.za/wineries/beyerskloof-2/; route only, no address published
+- **Blaauwklippen** · https://www.visitstellenbosch.org/listing/hamm-uys/ · 0218800133 · info@blaauwklippen.com
+  - listing: https://wineroute.co.za/wineries/blaauwklippen-2/; route only, no address published
+- **Boschkloof Wines** · http://www.boschkloofwines.com · 0663962689 · tastingroom@adept.co.za
+  - listing: https://wineroute.co.za/wineries/boschkloof-wines-2/; route only, no address published
+- **Cavalli Estate** · https://www.visitstellenbosch.org/listing/cavalli-restaurant/ · 0218553218 · info@cavalliestate.com
+  - listing: https://wineroute.co.za/wineries/cavalli-estate-2/; route only, no address published
+- **Clos Malverne** · https://www.visitstellenbosch.org/listing/clos-malverne/ · 0218652022 · info@closmalverne.co.za
+  - listing: https://wineroute.co.za/wineries/clos-malverne-2/; route only, no address published
+- **Clouds Estate** · https://cloudsestate.com · +27836270632 · marika@cloudsestate.co.za
+  - listing: https://wineroute.co.za/wineries/clouds-estate-2/; route only, no address published
+- **Compagniesdrift Wines** · http://www.compagniesdrift.com · 021 8433913/902 · info@compagniesdrift.com
+  - listing: https://wineroute.co.za/wineries/compagniesdrift-wines-2/; route only, no address published
+- **Dalla Cia Grappa & Wines** · http://www.dallacia.com · 0218884120 · info@dallacia.com
+  - listing: https://wineroute.co.za/wineries/dalla-cia-grappa-wines-2/; route only, no address published
+- **De Meye Wines** · http://www.demeye.co.za · 0630256110 · bookings@thetablerestaurant.co.za
+  - listing: https://wineroute.co.za/wineries/de-meye-wines-2/; route only, no address published
+- **De Morgenzon** · http://www.demorgenzon.com · +27218813030 · info@demorgenzon.com
+  - listing: https://wineroute.co.za/wineries/de-morgenzon-2/; route only, no address published
+- **De Toren Private Cellar** · http://www.de-toren.com · 0218813119 · info@de-toren.com
+  - listing: https://wineroute.co.za/wineries/de-toren-private-cellar-2/; route only, no address published
+- **De Waal Wines** · http://www.dewaal.co.za · 0218813711 · admin@dewaal.co.za
+  - listing: https://wineroute.co.za/wineries/de-waal-wines-2/; route only, no address published
+- **Delaire Graff Estate** · https://www.visitstellenbosch.org/listing/delaire-graff-restaurant/ · 0218858160 · info@delaire.co.za
+  - listing: https://wineroute.co.za/wineries/delaire-graff-estate-2/; route only, no address published
+- **Delheim Wines** · https://www.visitstellenbosch.org/listing/delheim-garden-restaurant/ · 0218884600 · info@delheim.com
+  - listing: https://wineroute.co.za/wineries/delheim-wines-2/; route only, no address published
+- **Dornier** · http://www.dornier.co.za · 021 8800557<br / · winelounge@dornier.co.za
+  - listing: https://wineroute.co.za/wineries/dornier-2/; route only, no address published
+- **Eikendal Vineyards** · http://www.eikendal.com · 0218551422 · info@eikendal.co.za
+  - listing: https://wineroute.co.za/wineries/eikendal-vineyards-2/; route only, no address published
+- **Ernie Els Wines** · https://www.visitstellenbosch.org/listing/ernie-els-restaurant/ · 0218813588 · info@ernieelswines.com
+  - listing: https://wineroute.co.za/wineries/ernie-els-wines-2/; route only, no address published
+- **Flagstone Winery** · https://flagstonewines.com · +27827583649 · ilze.fouche@accoladewines.com
+  - listing: https://wineroute.co.za/wineries/flagstone-winery-2/; route only, no address published
+- **Foothill Vineyards** — Stellenbosch · http://www.kleinwelmoed.co.za · 0218420045 · info@kleinwelmoed.co.za
+  - listing: https://wineroute.co.za/wineries/foothill-vineyards/; address: Klein Welmoed Guest House, Conference, Wine & Olive Estate, Stellenbosch, South Africa; placed by address
+- **Glenelly Estate** · https://www.visitstellenbosch.org/listing/the-vine-bistro-glenelly-estate/ · 0218096446 · tasting@glenelly.co.za
+  - listing: https://wineroute.co.za/wineries/glenelly-estate-2/; route only, no address published
+- **Grangehurst Winery** · https://www.visitstellenbosch.org/listing/grangehurst-cottages/ · 0218553625 · sales@grangehurst.co.za
+  - listing: https://wineroute.co.za/wineries/grangehurst-winery-2/; route only, no address published
+- **Groenland Wyne** · http://www.groenland.co.za · 0219038203 · sonita@groenland.co.za
+  - listing: https://wineroute.co.za/wineries/groenland-wyne-2/; route only, no address published
+- **Guardian Peak Winery and Grill** · https://www.visitstellenbosch.org/listing/guardian-peak-restaurant/ · 0218813899 · info@guardianpeak.com
+  - listing: https://wineroute.co.za/wineries/guardian-peak-winery-and-grill-2/; route only, no address published
+- **Hartenberg Wine Estate** · https://www.visitstellenbosch.org/listing/hartenberg-restuarant/ · 0218652541 · info@hartenbergestate.com
+  - listing: https://wineroute.co.za/wineries/hartenberg-wine-estate-2/; route only, no address published
+- **Hazendal Wine Estate** · https://www.visitstellenbosch.org/listing/babushka-deli/ · 0219035034 · bookings@hazendal.co.za
+  - listing: https://wineroute.co.za/wineries/hazendal-wine-estate-2/; route only, no address published
+- **Heins Family Wines** · https://www.w3.org/WAI/tutorials/images/decision-tree/ · +27724336746 · info@kleineliebe.co.za
+  - listing: https://wineroute.co.za/wineries/heins-family-wines-2/; route only, no address published
+- **Hidden Valley Wines** · https://www.hiddenvalleywines.co.za/ · +27218802646 · winetasting@hiddenvalleywines.co.za
+  - listing: https://wineroute.co.za/wineries/hidden-valley-wines-2/; route only, no address published
+- **Idiom Wines** · https://www.visitstellenbosch.org/listing/idiom-wines/ · 0218581088 · reservations@idiom.co.za
+  - listing: https://wineroute.co.za/wineries/idiom-wines-2/; route only, no address published
+- **Jordan Winery** · https://www.visitstellenbosch.org/listing/jordan-restaurant/ · 0218813441 · reservations@jordanwines.com
+  - listing: https://wineroute.co.za/wineries/jordan-winery-2/; route only, no address published
+- **Joubert Family Wines** · https://joubertfamilywines.com · +27218793407 · bookings@joubertfamilywines.com
+  - listing: https://wineroute.co.za/wineries/joubert-family-wines-2/; route only, no address published
+- **Journey’s End** · https://www.journeysend.co.za · +27218581929 · jeremy@journeysend.co.za
+  - listing: https://wineroute.co.za/wineries/journeys-end-2/; route only, no address published
+- **Kaapzicht Wine Estate** · http://www.kaapzicht.co.za · 0219061620 · carin@kaapzicht.co.za
+  - listing: https://wineroute.co.za/wineries/kaapzicht-wine-estate-2/; route only, no address published
+- **Kanonkop Wine Estate** · http://www.kanonkop.co.za · 0218844656 · wine@kanonkop.co.za
+  - listing: https://wineroute.co.za/wineries/kanonkop-wine-estate-2/; route only, no address published
+- **Kanu Wines** · http://www.kanu.co.za · +27218652488 · info@kanu.co.za
+  - listing: https://wineroute.co.za/wineries/kanu-wines-2-2/; route only, no address published
+- **Ken Forrester Wines** · http://www.kenforresterwines.com · +27218552374 · tastingroom@kenforresterwines.com
+  - listing: https://wineroute.co.za/wineries/ken-forrester-wines-2/; route only, no address published
+- **Klein Graniet** · http://www.dfwines.co.za · 0218899865 · sales@dfwines.co.za
+  - listing: https://wineroute.co.za/wineries/klein-graniet/; route only, no address published
+- **Kleine Zalze Wines** · https://www.visitstellenbosch.org/listing/kleine-zalze-restaurant/ · 0218800717 · quality@kleinezalze.co.za
+  - listing: https://wineroute.co.za/wineries/kleine-zalze-wines-2/; route only, no address published
+- **Koelenhof Winery** · http://www.koelenhof.co.za · 02186520201 · sales@koelenhof.co.za
+  - listing: https://wineroute.co.za/wineries/koelenhof-winery-2/; route only, no address published
+- **La Boucher Wines** · http://www.laboucherwines.co.za · +27649009243 · admin@laboucherwines.co.za
+  - listing: https://wineroute.co.za/wineries/la-boucher-wines-2/; route only, no address published
+- **Ladybird Vineyards** · http://www.ladybirdvineyards.co.za · +27218844511 · wine@ladybirdvineyards.co.za
+  - listing: https://wineroute.co.za/wineries/ladybird-vineyards-2/; route only, no address published
+- **Lanzerac** · https://www.visitstellenbosch.org/listing/lanzerac-deli/ · 0218871132 · winetasting@lanzerac.co.za
+  - listing: https://wineroute.co.za/wineries/lanzerac-2/; route only, no address published
+- **Le Bonheur Wine Estate** — Klapmuts · https://www.lebonheur.co.za · +27218755478 · winesales@lebonheur.co.za
+  - listing: https://wineroute.co.za/wineries/le-bonheur-wine-estate/; address: Le Bonheur Estate, R44, Klapmuts; placed by address
+- **Le Grand Domaine** · https://www.granddomaine.co.za/ · 0218658100 · debbie.thompson@granddomaine.co.za
+  - listing: https://wineroute.co.za/wineries/le-grand-domaine-2/; route only, no address published
+- **Le Pommier Wine Estate** · https://www.visitstellenbosch.org/listing/le-pommier-wine-estate/ · 0218851269 · marketing@lepommier.co.za
+  - listing: https://wineroute.co.za/wineries/le-pommier-wine-estate-2/; route only, no address published
+- **Lievland Vineyards** · http://www.lievland.co.za · 0213005153 · info@lievland.co.za
+  - listing: https://wineroute.co.za/wineries/lievland-vineyards-2/; route only, no address published
+- **Long Dog Wines** — Stellenbosch · https://www.longdogwines.co.za · +27829053371 · dennis@longdogwines.co.za
+  - listing: https://wineroute.co.za/wineries/long-dog-wines/; address: Lamberti Winery Farm 103 Stellenbosch, Arbeidslus, Stellenbosch, 7600; placed by address
+- **Longridge Wine Estate & Restaurant** · https://www.visitstellenbosch.org/listing/longridge-restaurant/ · 0218552005 · info@longrige.co.za
+  - listing: https://wineroute.co.za/wineries/longridge-wine-estate-restaurant-2/; route only, no address published
+- **Louisvale Wines** · http://www.louisvale.com · 0218652422 · mouton@louisvale.com
+  - listing: https://wineroute.co.za/wineries/louisvale-wines-2/; route only, no address published
+- **Lovane Boutique Wine Estate and Guesthouse** · http://www.lovane.co.za · 0218813827 · info@lovane.co.za
+  - listing: https://wineroute.co.za/wineries/lovane-boutique-wine-estate-and-guesthouse-2/; route only, no address published
+- **L’Avenir Wine Estate** · https://www.visitstellenbosch.org/listing/lavenir-country-lodge/ · 0218895001 · info@lavenir.co.za
+  - listing: https://wineroute.co.za/wineries/lavenir-wine-estate-2/; route only, no address published
+- **MAN Family Wines** · http://www.manwines.com · 0213005153 · info@manwines.com
+  - listing: https://wineroute.co.za/wineries/man-family-wines/; address: Lievland, South Africa; route only; address names no town in the catalog
+- **Meerlust Wine Estate** · http://www.meerlust.co.za · 0218433587 · info@meerlust.co.za
+  - listing: https://wineroute.co.za/wineries/meerlust-wine-estate-2/; route only, no address published
+- **Meinert Wines** — Stellenbosch · https://www.meinertwines.com · 0218652363 · admin@meinertwines.com
+  - listing: https://wineroute.co.za/wineries/meinert-wines/; address: Meinert Wines, Stellenbosch, South Africa; placed by address
+- **Middelvlei Wines** · https://www.visitstellenbosch.org/listing/middelvlei-boerebraai-restaurant/ · 0218832565 · info@middelvlei.co.za
+  - listing: https://wineroute.co.za/wineries/middelvlei-wines-2/; route only, no address published
+- **Miles Mossop Wines** — Stellenbosch · https://milesmossopwines.com · +27824134335 · office@milesmossopwines.com
+  - listing: https://wineroute.co.za/wineries/miles-mossop-wines-pty-ltd/; address: Stellenbosch, Western Cape, South Africa; placed by address
+- **Morgenster Wine & Olive Estate** · http://www.morgenster.co.za · 0218521738 · info@morgenster.co.za
+  - listing: https://wineroute.co.za/wineries/morgenster-wine-olive-estate-2/; route only, no address published
+- **Muratie** · https://www.visitstellenbosch.org/listing/muratie-farm-kitchen/ · 0218652330 · wine@muratie.co.za
+  - listing: https://wineroute.co.za/wineries/muratie-2/; route only, no address published
+- **Neethlingshof Estate** · https://www.visitstellenbosch.org/listing/the-salt-road-at-neethlingshof/ · 0218838975 · info@neethlingshof.co.za
+  - listing: https://wineroute.co.za/wineries/neethlingshof-estate-2/; route only, no address published
+- **Neil Ellis Wines** · http://www.neilellis.com · 0218870649 · info@neilellis.com
+  - listing: https://wineroute.co.za/wineries/neil-ellis-wines-2/; route only, no address published
+- **Oldenburg Vineyards** · https://www.visitstellenbosch.org/listing/the-homestead-at-oldenburg-vineyards/ · 0218851618 · tastingroom@oldenburgvineyards.com
+  - listing: https://wineroute.co.za/wineries/oldenburg-vineyards-2/; route only, no address published
+- **Overgaauw Wine Estate** — Stellenbosch · http://www.overgaauw.co.za · 0218813815 · info@overgaauw.co.za
+  - listing: https://wineroute.co.za/wineries/overgaauw-wine-estate/; address: Overgaauw Wine Estate, South Africa, Stellenbosch Kloof Road, Stellenbosch, South Africa; placed by address
+- **Peter Falke Wines** · http://www.peterfalkewines.com · 0218813677 · tasting@peterfalkewines.co.za
+  - listing: https://wineroute.co.za/wineries/peter-falke-wines-2/; route only, no address published
+- **Pink Valley Wines** · https://www.visitstellenbosch.org/listing/pink-valley-restaurant/ · 0218553744 · info@pinkvalleywines.com
+  - listing: https://wineroute.co.za/wineries/pink-valley-wines-2/; route only, no address published
+- **Post House Vineyards** · http://www.posthousewines.co.za · 0218422409 · nick@posthousewines.co.za
+  - listing: https://wineroute.co.za/wineries/post-house-vineyards-2/; route only, no address published
+- **Rainbow’s End Wine Estate** · http://www.rainbowsend.co.za · +27218851719 · tasting@rainbowsend.co.za
+  - listing: https://wineroute.co.za/wineries/rainbows-end-wine-estate-2/; route only, no address published
+- **Remhoogte Wine Estate** · http://www.remhoogte.co.za · 0218895005 · jean@remhoogte.co.za
+  - listing: https://wineroute.co.za/wineries/remhoogte-wine-estate-2/; route only, no address published
+- **Reyneke Wines** · https://www.reynekewines.co.za · +27218813451 · lauren@reynekewines.co.za
+  - listing: https://wineroute.co.za/wineries/reyneke-wines-2/; route only, no address published
+- **Rust en Vrede** · http://rustenvrede.com · 0218813881 · info@rustenvrede.com
+  - listing: https://wineroute.co.za/wineries/rust-en-vrede-2/; route only, no address published
+- **Saxenburg Wine Estate** · https://www.visitstellenbosch.org/listing/saxenburg-estates/ · 0219036113 · tastingroom@saxenburg.co.za
+  - listing: https://wineroute.co.za/wineries/saxenburg-wine-estate-2/; route only, no address published
+- **Simonsig Wine Estate** · https://www.simonsig.co.za · 0218884915 · tastingroom@simonsig.co.za
+  - listing: https://wineroute.co.za/wineries/simonsig-wine-estate-2/; route only, no address published
+- **Skilpadvlei Wine Farm** · https://www.visitstellenbosch.org/listing/skilpadvlei-restaurant/ · 0218813237 · info@skilpadvlei.co.za
+  - listing: https://wineroute.co.za/wineries/skilpadvlei-wine-farm-2/; route only, no address published
+- **Slaley Cellars** · http://www.slaley.co.za · 0218652123 · info@slaley.co.za
+  - listing: https://wineroute.co.za/wineries/slaley-cellars-2/; route only, no address published
+- **Somerbosch Wines** · https://www.visitstellenbosch.org/listing/somerbosch-bistro/ · 0218553615 · sales@somerbosch.co.za
+  - listing: https://wineroute.co.za/wineries/somerbosch-wines-2/; route only, no address published
+- **Spier Hotel & Wine Farm** · https://www.visitstellenbosch.org/listing/spier-hotel-restaurant-wine-bar/ · 0218091100 · info@spier.co.za
+  - listing: https://wineroute.co.za/wineries/spier-hotel-wine-farm-2/; route only, no address published
+- **Stark-Condé Wines** · https://www.visitstellenbosch.org/listing/postcard-cafe-at-stark-conde-wine-estate/ · 0219617700 · info@stark-conde.co.za
+  - listing: https://wineroute.co.za/wineries/stark-conde-wines-2/; route only, no address published
+- **Stellenbosch Vineyards** · https://stellenboschvineyards.co.za · +27218818062 · winet@stellvine.co.za
+  - listing: https://wineroute.co.za/wineries/stellenbosch-vineyards-2/; route only, no address published
+- **Stellenrust Wines** · http://www.stellenrust.co.za · 0218802283 · stipp@stellenrust.co.za
+  - listing: https://wineroute.co.za/wineries/stellenrust-wines-2/; route only, no address published
+- **Stellenzicht Wines** · https://stellenzicht.com · 0215690362 · winepod@stellenzicht.com
+  - listing: https://wineroute.co.za/wineries/stellenzicht-wines-2/; route only, no address published
+- **Taaibosch Wines** · https://taaiboschwines.com · +27218553744 · info@taaiboschwines.com
+  - listing: https://wineroute.co.za/wineries/taaibosch-wines-2/; route only, no address published
+- **The High Road Boutique Cellar** · http://www.thehighroad.co.za · 0760445020 · wine@thehighroad.co.za
+  - listing: https://wineroute.co.za/wineries/the-high-road-boutique-cellar-2/; route only, no address published
+- **Thelema Mountain Vineyards** · http://www.thelema.co.za · 0218851924 · info@thelema.co.za
+  - listing: https://wineroute.co.za/wineries/thelema-mountain-vineyards-2/; route only, no address published
+- **Uva Mira Mountain Vineyards** · http://www.uvamira.com · 0218801683 · info@uvamira.co.za
+  - listing: https://wineroute.co.za/wineries/uva-mira-mountain-vineyards-2/; route only, no address published
+- **Vergenoegd Löw Wine Estate** · https://vergenoegd.co.za/wine-tastings/ · 0218433248 · info@vergenoegd.co.za
+  - listing: https://wineroute.co.za/wineries/vergenoegd-low-wine-estate-2/; route only, no address published
+- **Villiera Wines** · http://www.villiera.com · 0218652002 · wine@villiera.com
+  - listing: https://wineroute.co.za/wineries/villiera-wines-2/; route only, no address published
+- **Vredenheim** · https://www.visitstellenbosch.org/listing/vredenheim-guest-house/ · 0218813878 · wine@vredenheim.co.za
+  - listing: https://wineroute.co.za/wineries/vredenheim-2/; route only, no address published
+- **Vriesenhof** · https://vriesenhof.co.za · 0218800284 · info@vriesenhof.co.za
+  - listing: https://wineroute.co.za/wineries/vriesenhof-2/; route only, no address published
+- **Warwick Estate** · https://www.visitstellenbosch.org/listing/warwick-wine-estate-restaurant/ · 0218844410 · reservations@warwickwine.com
+  - listing: https://wineroute.co.za/wineries/warwick-estate-2/; route only, no address published
+- **Waterford Estate** · https://www.visitstellenbosch.org/listing/waterford-estate-picnic-experience/ · 0218805300 · info@waterfordestate.co.za
+  - listing: https://wineroute.co.za/wineries/waterford-estate-2/; route only, no address published
+- **Weltevreden Estate** · https://www.berthawines.co.za/ · +27218896588 · info@berthawines.co.za
+  - listing: https://wineroute.co.za/wineries/weltevreden-estate-2/; route only, no address published
+- **Winshaw Vineyards** — Stellenbosch · http://winshaw.co.za · 0836509528 · jp@usana.co.za
+  - listing: https://wineroute.co.za/wineries/winshaw-vineyards/; address: Usana Farming Estate, Baden Powell Drive, Lynedoch, Stellenbosch, South Africa; placed by address
+- **Yonder Hill Wines** · https://yonderhill.co.za/ · 0218551008 · wines@yonderhill.co.za
+  - listing: https://wineroute.co.za/wineries/yonder-hill-wines-2/; route only, no address published
+- **Zevenwacht Wine Estate** · https://www.visitstellenbosch.org/listing/zevenwacht-restaurant-2/ · 0219005700 · wine-tasting@zevenwacht.co.za
+  - listing: https://wineroute.co.za/wineries/zevenwacht-wine-estate-2/; route only, no address published
+- **Zorgvliet Wines** · http://www.zorgvliet.com · 0218851399 · tastingroom@zorgvliet.com
+  - listing: https://wineroute.co.za/wineries/zorgvliet-wines-2/; route only, no address published
+
+## OpenStreetMap leads
+
+Mapper-contributed, not a registry: the name may be a tasting room, a farm stall
+or a defunct site, and the tag is only a hint at `categoria`.
+
+- **Affieplaas Padstal** — Robertson · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/node/7058695987
+- **Banhoek Farmstall** — Kylemore · `Fruta y verdura` (osm `farm`) · https://banhoekfarmstall.com/
+  - https://www.openstreetmap.org/node/12598670763
+- **Barrique** — Vlottenburg · `Cerveza` (osm `microbrewery`)
+  - https://www.openstreetmap.org/node/1700859507
+- **Blue Jay Farmstall** — Idas Valley · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/node/6635640404
+- **Boschendal Farm Shop & Butchery** — Simondium · `Fruta y verdura` (osm `farm`) · https://boschendal.com/eat/farm-shop-butchery/
+  - https://www.openstreetmap.org/node/3179008562
+- **CBC brewery tasting room** — Paarl · `Cerveza` (osm `brewery`)
+  - https://www.openstreetmap.org/node/5438402061
+- **CapeDry Montagu Farmstall** — Montagu · `Fruta y verdura` (osm `farm`) · +27 23 614 1134
+  - https://www.openstreetmap.org/node/481972655
+- **Die Pampoen Padstal** — Rawsonville · `Fruta y verdura` (osm `farm`) · +27233421224
+  - https://www.openstreetmap.org/node/7058695992
+- **Du Toits Kloof brewery?** — Rawsonville · `Cerveza` (osm `brewery`)
+  - https://www.openstreetmap.org/node/5133516924
+- **Hillbilly Farm Stall** — Wolseley, Western Cape · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/node/7205891049
+- **James Sedgwick Distillery** — Wellington · `Destilados y licores` (osm `distillery`) · +27 72 415 3440
+  - https://www.openstreetmap.org/node/4655124192
+- **Klipdrift Brandy** — Robertson · `Destilados y licores` (osm `distillery`)
+  - https://www.openstreetmap.org/node/4072892013
+- **Lactalis Factory Shop** — Bonnievale · `Lácteos y quesos` (osm `dairy`)
+  - https://www.openstreetmap.org/node/4087697628
+- **Le Roux & Fourie Vignerons** — Robertson · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/node/7058665480
+- **Lilypatrick** — Idas Valley · `Cerveza` (osm `brewery`)
+  - https://www.openstreetmap.org/node/10574842071
+- **Marbrin Olive Farm** — Ashton · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/way/894304365
+- **Monks Gin** — Dwarsrivier · `Cerveza` (osm `brewery`)
+  - https://www.openstreetmap.org/node/13514161301
+- **Owl's Rest** — Ashton · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/way/894304369
+- **Polkadraai Strawberry Farm** — Vlottenburg · `Fruta y verdura` (osm `farm`) · https://polkadraaifarm.co.za/ · +27 21 881 3854
+  - https://www.openstreetmap.org/node/4538336823
+- **Simonsberg Cheese** — Stellenbosch · `Lácteos y quesos` (osm `dairy`)
+  - https://www.openstreetmap.org/node/769054425
+- **Soul Barrel Brewery** — Simondium · `Cerveza` (osm `brewery`)
+  - https://www.openstreetmap.org/node/7205886327
+- **Spier Food Garden** — Vlottenburg · `Fruta y verdura` (osm `farm`) · https://www.spier.co.za/visit/food-garden/
+  - https://www.openstreetmap.org/node/9919352154
+- **Stellenbrau Brewery Taproom** — Stellenbosch · `Cerveza` (osm `microbrewery`) · https://stellenbrau.co.za/ · +27 21 883 3622
+  - https://www.openstreetmap.org/node/4204394191
+- **Stillman Distillery** — Simondium · `Destilados y licores` (osm `distillery`)
+  - https://www.openstreetmap.org/node/7205888711
+- **Timberlea Farm** — Idas Valley · `Fruta y verdura` (osm `farm`)
+  - https://www.openstreetmap.org/node/6635632353
+- **Tuk Tuk Microbrewery** — Franschhoek · `Cerveza` (osm `microbrewery`) · https://tuktuk.co.za/ · +27 21 492 2207
+  - https://www.openstreetmap.org/node/597341385
+- **Tweefontein Padstal** — Rawsonville · `Fruta y verdura` (osm `farm`) · +27233412824
+  - https://www.openstreetmap.org/node/4794132149
+- **Wilderer Gin** — Simondium · `Destilados y licores` (osm `distillery`)
+  - https://www.openstreetmap.org/node/6635652421
+
+## Pending
+
+- Three member pages in the route's sitemap answer HTTP 500 on every attempt and
+  are therefore unread, not absent: `le-riche-wines`, `knorhoek-wine-farm` and
+  `quoin-rock-wine-estate`. Retry them before treating the route as enumerated.
+- The other routes covering this district are unread: Franschhoek, Robertson, Breedekloof, Wellington.
+- The WOSA member index names wine producers this note does not; it carries no
+  address, so each one needs its own site to place it.

@@ -1,0 +1,293 @@
+{
+  "label": "South Africa",
+  "unit": {
+    "one": "district",
+    "many": "districts"
+  },
+  "regionUnit": {
+    "one": "province",
+    "many": "provinces"
+  },
+  "aliases": {
+    "city-of-cape-town": "cape-town",
+    "cape-metropolitan-council": "cape-town",
+    "city-of-johannesburg": "johannesburg",
+    "joburg": "johannesburg",
+    "city-of-tshwane": "tshwane",
+    "pretoria": "tshwane",
+    "city-of-ekurhuleni": "ekurhuleni",
+    "east-rand": "ekurhuleni",
+    "durban": "ethekwini",
+    "bloemfontein": "mangaung",
+    "port-elizabeth": "nelson-mandela-bay",
+    "gqeberha": "nelson-mandela-bay",
+    "east-london": "buffalo-city",
+    "uthungulu": "king-cetshwayo",
+    "elephant-coast": "umkhanyakude",
+    "o-r-tambo": "or-tambo"
+  },
+  "regions": [
+    {
+      "slug": "eastern-cape",
+      "label": "Eastern Cape",
+      "areas": [
+        {
+          "slug": "alfred-nzo",
+          "label": "Alfred Nzo"
+        },
+        {
+          "slug": "amathole",
+          "label": "Amathole"
+        },
+        {
+          "slug": "buffalo-city",
+          "label": "Buffalo City"
+        },
+        {
+          "slug": "chris-hani",
+          "label": "Chris Hani"
+        },
+        {
+          "slug": "joe-gqabi",
+          "label": "Joe Gqabi"
+        },
+        {
+          "slug": "nelson-mandela-bay",
+          "label": "Nelson Mandela Bay"
+        },
+        {
+          "slug": "or-tambo",
+          "label": "O.R. Tambo"
+        },
+        {
+          "slug": "sarah-baartman",
+          "label": "Sarah Baartman"
+        }
+      ]
+    },
+    {
+      "slug": "free-state",
+      "label": "Free State",
+      "areas": [
+        {
+          "slug": "fezile-dabi",
+          "label": "Fezile Dabi"
+        },
+        {
+          "slug": "lejweleputswa",
+          "label": "Lejweleputswa"
+        },
+        {
+          "slug": "mangaung",
+          "label": "Mangaung"
+        },
+        {
+          "slug": "thabo-mofutsanyana",
+          "label": "Thabo Mofutsanyana"
+        },
+        {
+          "slug": "xhariep",
+          "label": "Xhariep"
+        }
+      ]
+    },
+    {
+      "slug": "gauteng",
+      "label": "Gauteng",
+      "areas": [
+        {
+          "slug": "ekurhuleni",
+          "label": "City of Ekurhuleni"
+        },
+        {
+          "slug": "johannesburg",
+          "label": "City of Johannesburg"
+        },
+        {
+          "slug": "sedibeng",
+          "label": "Sedibeng"
+        },
+        {
+          "slug": "tshwane",
+          "label": "City of Tshwane"
+        },
+        {
+          "slug": "west-rand",
+          "label": "West Rand"
+        }
+      ]
+    },
+    {
+      "slug": "kwazulu-natal",
+      "label": "KwaZulu-Natal",
+      "areas": [
+        {
+          "slug": "amajuba",
+          "label": "Amajuba"
+        },
+        {
+          "slug": "ethekwini",
+          "label": "eThekwini"
+        },
+        {
+          "slug": "harry-gwala",
+          "label": "Harry Gwala"
+        },
+        {
+          "slug": "ilembe",
+          "label": "iLembe"
+        },
+        {
+          "slug": "king-cetshwayo",
+          "label": "King Cetshwayo"
+        },
+        {
+          "slug": "ugu",
+          "label": "Ugu"
+        },
+        {
+          "slug": "umgungundlovu",
+          "label": "uMgungundlovu"
+        },
+        {
+          "slug": "umkhanyakude",
+          "label": "uMkhanyakude"
+        },
+        {
+          "slug": "umzinyathi",
+          "label": "uMzinyathi"
+        },
+        {
+          "slug": "uthukela",
+          "label": "uThukela"
+        },
+        {
+          "slug": "zululand",
+          "label": "Zululand"
+        }
+      ]
+    },
+    {
+      "slug": "limpopo",
+      "label": "Limpopo",
+      "areas": [
+        {
+          "slug": "capricorn",
+          "label": "Capricorn"
+        },
+        {
+          "slug": "mopani",
+          "label": "Mopani"
+        },
+        {
+          "slug": "sekhukhune",
+          "label": "Sekhukhune"
+        },
+        {
+          "slug": "vhembe",
+          "label": "Vhembe"
+        },
+        {
+          "slug": "waterberg",
+          "label": "Waterberg"
+        }
+      ]
+    },
+    {
+      "slug": "mpumalanga",
+      "label": "Mpumalanga",
+      "areas": [
+        {
+          "slug": "ehlanzeni",
+          "label": "Ehlanzeni"
+        },
+        {
+          "slug": "gert-sibande",
+          "label": "Gert Sibande"
+        },
+        {
+          "slug": "nkangala",
+          "label": "Nkangala"
+        }
+      ]
+    },
+    {
+      "slug": "north-west",
+      "label": "North West",
+      "areas": [
+        {
+          "slug": "bojanala-platinum",
+          "label": "Bojanala Platinum"
+        },
+        {
+          "slug": "dr-kenneth-kaunda",
+          "label": "Dr Kenneth Kaunda"
+        },
+        {
+          "slug": "dr-ruth-segomotsi-mompati",
+          "label": "Dr Ruth Segomotsi Mompati"
+        },
+        {
+          "slug": "ngaka-modiri-molema",
+          "label": "Ngaka Modiri Molema"
+        }
+      ]
+    },
+    {
+      "slug": "northern-cape",
+      "label": "Northern Cape",
+      "areas": [
+        {
+          "slug": "frances-baard",
+          "label": "Frances Baard"
+        },
+        {
+          "slug": "john-taolo-gaetsewe",
+          "label": "John Taolo Gaetsewe"
+        },
+        {
+          "slug": "namakwa",
+          "label": "Namakwa"
+        },
+        {
+          "slug": "pixley-ka-seme",
+          "label": "Pixley ka Seme"
+        },
+        {
+          "slug": "zf-mgcawu",
+          "label": "ZF Mgcawu"
+        }
+      ]
+    },
+    {
+      "slug": "western-cape",
+      "label": "Western Cape",
+      "areas": [
+        {
+          "slug": "cape-town",
+          "label": "City of Cape Town"
+        },
+        {
+          "slug": "cape-winelands",
+          "label": "Cape Winelands"
+        },
+        {
+          "slug": "central-karoo",
+          "label": "Central Karoo"
+        },
+        {
+          "slug": "garden-route",
+          "label": "Garden Route"
+        },
+        {
+          "slug": "overberg",
+          "label": "Overberg"
+        },
+        {
+          "slug": "west-coast",
+          "label": "West Coast"
+        }
+      ]
+    }
+  ]
+}

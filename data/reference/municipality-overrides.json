@@ -1879,5 +1879,129 @@
         "region": "noroeste"
       }
     ]
+  },
+  "za": {
+    "blackheath": [
+      {
+        "lat": -33.97,
+        "lon": 18.706,
+        "label": "Blackheath (Cape Town)",
+        "region": "western-cape"
+      },
+      {
+        "lat": -26.133,
+        "lon": 27.967,
+        "label": "Blackheath (Johannesburg)",
+        "region": "gauteng"
+      }
+    ],
+    "chatsworth": [
+      {
+        "lat": -29.91,
+        "lon": 30.885,
+        "label": "Chatsworth (Durban)",
+        "region": "kwazulu-natal"
+      },
+      {
+        "lat": -33.546,
+        "lon": 18.583,
+        "label": "Chatsworth (Swartland)",
+        "region": "western-cape"
+      }
+    ],
+    "durbanville": [
+      {
+        "lat": -33.8317,
+        "lon": 18.6499,
+        "label": "Durbanville (Cape Town)",
+        "region": "western-cape"
+      }
+    ],
+    "elim": [
+      {
+        "lat": -34.592,
+        "lon": 19.758,
+        "label": "Elim (Overberg)",
+        "region": "western-cape"
+      },
+      {
+        "lat": -23.156,
+        "lon": 30.055,
+        "label": "Elim (Vhembe)",
+        "region": "limpopo"
+      }
+    ],
+    "goodwood": [
+      {
+        "lat": -33.911,
+        "lon": 18.551,
+        "label": "Goodwood (Cape Town)",
+        "region": "western-cape"
+      }
+    ],
+    "heidelberg": [
+      {
+        "lat": -34.083,
+        "lon": 20.95,
+        "label": "Heidelberg (Garden Route)",
+        "region": "western-cape"
+      },
+      {
+        "lat": -26.501,
+        "lon": 28.358,
+        "label": "Heidelberg (Sedibeng)",
+        "region": "gauteng"
+      }
+    ],
+    "jamestown": [
+      {
+        "lat": -33.979,
+        "lon": 18.848,
+        "label": "Jamestown (Stellenbosch)",
+        "region": "western-cape"
+      },
+      {
+        "lat": -31.121,
+        "lon": 26.807,
+        "label": "Jamestown (Joe Gqabi)",
+        "region": "eastern-cape"
+      }
+    ],
+    "middelburg": [
+      {
+        "lat": -25.768,
+        "lon": 29.455,
+        "label": "Middelburg (Nkangala)",
+        "region": "mpumalanga"
+      },
+      {
+        "lat": -31.494,
+        "lon": 25.017,
+        "label": "Middelburg (Chris Hani)",
+        "region": "eastern-cape"
+      }
+    ],
+    "richmond": [
+      {
+        "lat": -29.867,
+        "lon": 30.267,
+        "label": "Richmond (uMgungundlovu)",
+        "region": "kwazulu-natal"
+      },
+      {
+        "lat": -31.413,
+        "lon": 23.947,
+        "label": "Richmond (Pixley ka Seme)",
+        "region": "northern-cape"
+      }
+    ],
+    "worcester": [
+      {
+        "lat": -33.645,
+        "lon": 19.444,
+        "label": "Worcester (Cape Winelands)",
+        "region": "western-cape"
+      }
+    ]
   }
 }
