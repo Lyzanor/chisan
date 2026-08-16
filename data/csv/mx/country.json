@@ -1,0 +1,188 @@
+{
+  "label": "Mexico",
+  "unit": {
+    "one": "federal entity",
+    "many": "federal entities"
+  },
+  "regionUnit": {
+    "one": "mesoregion",
+    "many": "mesoregions"
+  },
+  "aliases": {
+    "cdmx": "ciudad-de-mexico",
+    "df": "ciudad-de-mexico",
+    "distrito-federal": "ciudad-de-mexico",
+    "mexico-city": "ciudad-de-mexico",
+    "edomex": "estado-de-mexico",
+    "mexico": "estado-de-mexico",
+    "estado-de-mexico-state": "estado-de-mexico",
+    "coahuila-de-zaragoza": "coahuila",
+    "michoacan-de-ocampo": "michoacan",
+    "veracruz-de-ignacio-de-la-llave": "veracruz",
+    "queretaro-de-arteaga": "queretaro",
+    "bc": "baja-california",
+    "bcs": "baja-california-sur",
+    "slp": "san-luis-potosi",
+    "nuevo-leon-state": "nuevo-leon"
+  },
+  "regions": [
+    {
+      "slug": "noroeste",
+      "label": "Noroeste",
+      "areas": [
+        {
+          "slug": "baja-california",
+          "label": "Baja California"
+        },
+        {
+          "slug": "baja-california-sur",
+          "label": "Baja California Sur"
+        },
+        {
+          "slug": "sinaloa",
+          "label": "Sinaloa"
+        },
+        {
+          "slug": "sonora",
+          "label": "Sonora"
+        }
+      ]
+    },
+    {
+      "slug": "noreste",
+      "label": "Noreste",
+      "areas": [
+        {
+          "slug": "chihuahua",
+          "label": "Chihuahua"
+        },
+        {
+          "slug": "coahuila",
+          "label": "Coahuila"
+        },
+        {
+          "slug": "durango",
+          "label": "Durango"
+        },
+        {
+          "slug": "nuevo-leon",
+          "label": "Nuevo León"
+        },
+        {
+          "slug": "tamaulipas",
+          "label": "Tamaulipas"
+        }
+      ]
+    },
+    {
+      "slug": "centro-occidente",
+      "label": "Centro-Occidente",
+      "areas": [
+        {
+          "slug": "aguascalientes",
+          "label": "Aguascalientes"
+        },
+        {
+          "slug": "colima",
+          "label": "Colima"
+        },
+        {
+          "slug": "guanajuato",
+          "label": "Guanajuato"
+        },
+        {
+          "slug": "jalisco",
+          "label": "Jalisco"
+        },
+        {
+          "slug": "michoacan",
+          "label": "Michoacán"
+        },
+        {
+          "slug": "nayarit",
+          "label": "Nayarit"
+        },
+        {
+          "slug": "queretaro",
+          "label": "Querétaro"
+        },
+        {
+          "slug": "san-luis-potosi",
+          "label": "San Luis Potosí"
+        },
+        {
+          "slug": "zacatecas",
+          "label": "Zacatecas"
+        }
+      ]
+    },
+    {
+      "slug": "centro",
+      "label": "Centro",
+      "areas": [
+        {
+          "slug": "ciudad-de-mexico",
+          "label": "Ciudad de México"
+        },
+        {
+          "slug": "estado-de-mexico",
+          "label": "Estado de México"
+        },
+        {
+          "slug": "hidalgo",
+          "label": "Hidalgo"
+        },
+        {
+          "slug": "morelos",
+          "label": "Morelos"
+        },
+        {
+          "slug": "tlaxcala",
+          "label": "Tlaxcala"
+        }
+      ]
+    },
+    {
+      "slug": "sur-sureste",
+      "label": "Sur-Sureste",
+      "areas": [
+        {
+          "slug": "campeche",
+          "label": "Campeche"
+        },
+        {
+          "slug": "chiapas",
+          "label": "Chiapas"
+        },
+        {
+          "slug": "guerrero",
+          "label": "Guerrero"
+        },
+        {
+          "slug": "oaxaca",
+          "label": "Oaxaca"
+        },
+        {
+          "slug": "puebla",
+          "label": "Puebla"
+        },
+        {
+          "slug": "quintana-roo",
+          "label": "Quintana Roo"
+        },
+        {
+          "slug": "tabasco",
+          "label": "Tabasco"
+        },
+        {
+          "slug": "veracruz",
+          "label": "Veracruz"
+        },
+        {
+          "slug": "yucatan",
+          "label": "Yucatán"
+        }
+      ]
+    }
+  ]
+}

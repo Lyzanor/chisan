@@ -99,6 +99,24 @@
 //     in English, and the romanisation variants a CSV may carry
 //     (Bangalore/Bengaluru, Calicut/Kozhikode) are English altLabels the alt
 //     query already collects. `dropAmbiguous` for the usual reason.
+//   - Mexico: "municipality of Mexico" (Q1952852) plus "territorial demarcation
+//     of Mexico City" (Q2734310), the 16 alcaldías, which are not municipios and
+//     sit outside that class. Asked for as exact types restricted by country
+//     (P17 = Q96) rather than through the subclass walk, because the two classes
+//     are unrelated. Together they return 2.477 items, the whole country. The
+//     settlement union the other class-based countries use is not an option
+//     here: Wikidata types barely 120 Mexican places as city or town, so
+//     `municipio` is the only layer with national coverage.
+//     The catch is that the Spanish label of a Mexican municipality is the
+//     administrative form — 2.470 of them read "Municipio de Tequila", which no
+//     producer address ever writes. The bare name a row carries lives in the
+//     altLabels the alt query already collects, and 2.465 of the 2.477 items
+//     have one, so the working keys come from there and the prefixed labels are
+//     inert extra keys. Labels in es and mul. `dropAmbiguous` for the usual
+//     reason, and Mexico is its most extreme case: municipality names honour the
+//     same national figures in state after state (Guadalupe, Juárez, Hidalgo,
+//     Morelos, Zaragoza), so an arbitrary winner would be wrong far more often
+//     than right.
 //   - United States: the official U.S. Census Bureau national Places Gazetteer
 //     for the 50 states and District of Columbia. It covers incorporated places
 //     and census-designated places and supplies their representative points.
@@ -302,6 +320,17 @@ const COUNTRIES = [
     langs: ["mul", "en"],
     canonicalLang: "en",
     extraFilter: "",
+    dropAmbiguous: true,
+  },
+  {
+    slug: "mexico",
+    code: "mx",
+    label: "Mexico",
+    classes: ["wd:Q1952852", "wd:Q2734310"],
+    countryClass: "wd:Q96",
+    langs: ["mul", "es"],
+    canonicalLang: "es",
+    extraFilter: "  FILTER NOT EXISTS { ?item wdt:P576 ?dissolved }\n",
     dropAmbiguous: true,
   },
   {

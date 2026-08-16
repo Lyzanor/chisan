@@ -1779,5 +1779,43 @@
         "region": "leinster"
       }
     ]
+  },
+  "mx": {
+    "cuauhtemoc": [
+      {
+        "lat": 28.76667,
+        "lon": -106.93333,
+        "label": "Cuauhtémoc (Chihuahua)",
+        "region": "noreste"
+      }
+    ],
+    "el arenal": [
+      {
+        "lat": 20.75,
+        "lon": -103.68333,
+        "label": "El Arenal (Jalisco)",
+        "region": "centro-occidente"
+      },
+      {
+        "lat": 20.22056,
+        "lon": -98.87806,
+        "label": "El Arenal (Hidalgo)",
+        "region": "centro"
+      }
+    ],
+    "tequila": [
+      {
+        "lat": 21.11667,
+        "lon": -103.78333,
+        "label": "Tequila (Jalisco)",
+        "region": "centro-occidente"
+      },
+      {
+        "lat": 18.71667,
+        "lon": -97.06667,
+        "label": "Tequila (Veracruz)",
+        "region": "sur-sureste"
+      }
+    ]
   }
 }
