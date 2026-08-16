@@ -10,9 +10,7 @@
 Dominios sondeados el 2026-08-16; el estado va anotado solo cuando no es un 200 limpio. Ninguna ficha está verificada: el directorio prueba la pertenencia a la cámara, no la actividad ni la localidad de la unidad productiva.
 
 - **Bodega Augusto Pulenta** — `http://www.augustopulenta.com`
-- **Bodega Chirino. Antigua Bodega** — Capital — `http://www.antiguabodega.com`
 - **Bodega Finca Las Moras** — sin web en el directorio
-- **Bodegas Bórbore** — San Martín — `http://www.bodegasborbore.com.ar`
 
 ## Trabajo pendiente
 

@@ -9,12 +9,7 @@
 
 Dominios sondeados el 2026-08-16; el estado va anotado solo cuando no es un 200 limpio. Ninguna ficha está verificada: el directorio prueba la pertenencia a la cámara, no la actividad ni la localidad de la unidad productiva.
 
-- **Bodega Dante Robino** — Capital Federal — `http://www.bodegadanterobino.com`
-- **Bodega Freixenet Argentina** — CABA — `http://www.freixenet.com.ar`
-- **Bodega Putruele** — Capital Federal — `http://www.putruele.com` responde 503
-- **Bodega San Huberto** — Capital Federal — `http://www.bodegassanhuberto.com` no resuelve
 - **Bodega Yancanello** — 4ª Piso — sin web en el directorio
-- **Bodegas Esmeralda** — CABA — `http://www.bodegasesmeralda.com.ar`
 
 ## Trabajo pendiente
 

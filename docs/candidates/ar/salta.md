@@ -10,10 +10,11 @@
 
 ## Trabajo pendiente
 
-Cafayate y los Valles Calchaquíes tienen decenas de bodegas que el directorio
-nacional no lista: la cámara salteña y las rutas del vino provinciales son el
-siguiente sitio donde mirar. Molinos, San Carlos y Angastaco resuelven en el
-catálogo de centroides, así que la geografía no es el obstáculo.
+Resuelto el vino: el Museo de la Vid y el Vino de Salta
+(`museodelavidyelvino.gov.ar/rutadelvino.php`) publica las bodegas de la Ruta
+del Vino con localidad, domicilio, teléfono y web, y de ahí salieron 31 filas
+en Cafayate, Animaná, Angastaco, Cachi, Molinos, Tolombón, Chicoana, La Viña y
+Payogasta.
 
 Fuera del vino, sin barrer: los pimentones y ajíes de la quebrada, las carnes
 de llama de la puna y los quesos de cabra del valle.
