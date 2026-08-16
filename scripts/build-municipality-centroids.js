@@ -77,6 +77,28 @@
 //     the English spelling. Marked `dropAmbiguous` for the usual reason: Ballina
 //     in Mayo and Ballina in Tipperary are 150 km apart, past the blocking
 //     threshold, so an arbitrary winner would fail a correct row.
+//   - India: another country with no "municipality of" class worth asking for —
+//     the one that exists (Q112684326) holds eight items. What an Indian address
+//     names is a city or town, so the catalog is the settlement union again,
+//     restricted by country (P17 = Q668) and asked for one class at a time,
+//     plus the two India-specific town classes (`census town of India`,
+//     `town in India`) that hold what the generic ones miss. The settlement
+//     classes alone are not enough here: an Indian city of any size is typed
+//     `big city`, `metropolis`, `megacity`, `largest city` or `state capital`
+//     and carries none of them, so Kolkata, Nashik, Darjeeling, Ahmedabad and
+//     Lucknow were all absent until those five were asked for as well. Leaving
+//     them out did worse than lose a key — with only the Uttarakhand Srinagar
+//     typed as a city, `srinagar` resolved 470 km from the Kashmiri one and no
+//     collision was ever detected. The village layer is
+//     deliberately left out for the same reason as the Irish townland, only
+//     larger: `village in India` (Q56436498) holds 75.172 items with
+//     coordinates, Indian village names repeat across states on a scale nothing
+//     else in the catalog approaches, and under `dropAmbiguous` a village
+//     sharing a name with a real town removes that town's key and the gate for
+//     every producer in it. Labels in en and mul: an Indian producer publishes
+//     in English, and the romanisation variants a CSV may carry
+//     (Bangalore/Bengaluru, Calicut/Kozhikode) are English altLabels the alt
+//     query already collects. `dropAmbiguous` for the usual reason.
 //   - United States: the official U.S. Census Bureau national Places Gazetteer
 //     for the 50 states and District of Columbia. It covers incorporated places
 //     and census-designated places and supplies their representative points.
@@ -254,6 +276,30 @@ const COUNTRIES = [
     classes: ["wd:Q515", "wd:Q3957", "wd:Q532", "wd:Q5084", "wd:Q486972"],
     countryClass: "wd:Q27",
     langs: ["mul", "en", "ga"],
+    canonicalLang: "en",
+    extraFilter: "",
+    dropAmbiguous: true,
+  },
+  {
+    slug: "india",
+    code: "in",
+    label: "India",
+    classes: [
+      "wd:Q515",
+      "wd:Q3957",
+      "wd:Q532",
+      "wd:Q5084",
+      "wd:Q486972",
+      "wd:Q16830604",
+      "wd:Q58339518",
+      "wd:Q1549591",
+      "wd:Q200250",
+      "wd:Q174844",
+      "wd:Q11271835",
+      "wd:Q51929311",
+    ],
+    countryClass: "wd:Q668",
+    langs: ["mul", "en"],
     canonicalLang: "en",
     extraFilter: "",
     dropAmbiguous: true,

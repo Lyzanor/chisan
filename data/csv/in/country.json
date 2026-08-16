@@ -1,0 +1,216 @@
+{
+  "label": "India",
+  "unit": {
+    "one": "state or union territory",
+    "many": "states and union territories"
+  },
+  "regionUnit": {
+    "one": "zone",
+    "many": "zones"
+  },
+  "aliases": {
+    "orissa": "odisha",
+    "pondicherry": "puducherry",
+    "uttaranchal": "uttarakhand",
+    "jammu-and-kashmir": "jammu-kashmir",
+    "andaman-and-nicobar-islands": "andaman-nicobar-islands",
+    "dadra-and-nagar-haveli-and-daman-and-diu": "dadra-nagar-haveli-daman-diu",
+    "dadra-nagar-haveli": "dadra-nagar-haveli-daman-diu",
+    "daman-diu": "dadra-nagar-haveli-daman-diu",
+    "tamilnadu": "tamil-nadu",
+    "madhyapradesh": "madhya-pradesh",
+    "uttarpradesh": "uttar-pradesh",
+    "himachal": "himachal-pradesh",
+    "arunachal": "arunachal-pradesh",
+    "andhra": "andhra-pradesh",
+    "new-delhi": "delhi",
+    "nct-delhi": "delhi",
+    "national-capital-territory-of-delhi": "delhi",
+    "bengala-occidental": "west-bengal",
+    "nueva-delhi": "delhi",
+    "islas-andaman-y-nicobar": "andaman-nicobar-islands",
+    "cachemira": "jammu-kashmir"
+  },
+  "regions": [
+    {
+      "slug": "northern",
+      "label": "Northern India",
+      "areas": [
+        {
+          "slug": "chandigarh",
+          "label": "Chandigarh"
+        },
+        {
+          "slug": "delhi",
+          "label": "Delhi"
+        },
+        {
+          "slug": "haryana",
+          "label": "Haryana"
+        },
+        {
+          "slug": "himachal-pradesh",
+          "label": "Himachal Pradesh"
+        },
+        {
+          "slug": "jammu-kashmir",
+          "label": "Jammu and Kashmir"
+        },
+        {
+          "slug": "ladakh",
+          "label": "Ladakh"
+        },
+        {
+          "slug": "punjab",
+          "label": "Punjab"
+        },
+        {
+          "slug": "rajasthan",
+          "label": "Rajasthan"
+        }
+      ]
+    },
+    {
+      "slug": "central",
+      "label": "Central India",
+      "areas": [
+        {
+          "slug": "chhattisgarh",
+          "label": "Chhattisgarh"
+        },
+        {
+          "slug": "madhya-pradesh",
+          "label": "Madhya Pradesh"
+        },
+        {
+          "slug": "uttar-pradesh",
+          "label": "Uttar Pradesh"
+        },
+        {
+          "slug": "uttarakhand",
+          "label": "Uttarakhand"
+        }
+      ]
+    },
+    {
+      "slug": "eastern",
+      "label": "Eastern India",
+      "areas": [
+        {
+          "slug": "andaman-nicobar-islands",
+          "label": "Andaman and Nicobar Islands"
+        },
+        {
+          "slug": "bihar",
+          "label": "Bihar"
+        },
+        {
+          "slug": "jharkhand",
+          "label": "Jharkhand"
+        },
+        {
+          "slug": "odisha",
+          "label": "Odisha"
+        },
+        {
+          "slug": "west-bengal",
+          "label": "West Bengal"
+        }
+      ]
+    },
+    {
+      "slug": "north-eastern",
+      "label": "North Eastern India",
+      "areas": [
+        {
+          "slug": "arunachal-pradesh",
+          "label": "Arunachal Pradesh"
+        },
+        {
+          "slug": "assam",
+          "label": "Assam"
+        },
+        {
+          "slug": "manipur",
+          "label": "Manipur"
+        },
+        {
+          "slug": "meghalaya",
+          "label": "Meghalaya"
+        },
+        {
+          "slug": "mizoram",
+          "label": "Mizoram"
+        },
+        {
+          "slug": "nagaland",
+          "label": "Nagaland"
+        },
+        {
+          "slug": "sikkim",
+          "label": "Sikkim"
+        },
+        {
+          "slug": "tripura",
+          "label": "Tripura"
+        }
+      ]
+    },
+    {
+      "slug": "western",
+      "label": "Western India",
+      "areas": [
+        {
+          "slug": "dadra-nagar-haveli-daman-diu",
+          "label": "Dadra and Nagar Haveli and Daman and Diu"
+        },
+        {
+          "slug": "goa",
+          "label": "Goa"
+        },
+        {
+          "slug": "gujarat",
+          "label": "Gujarat"
+        },
+        {
+          "slug": "maharashtra",
+          "label": "Maharashtra"
+        }
+      ]
+    },
+    {
+      "slug": "southern",
+      "label": "Southern India",
+      "areas": [
+        {
+          "slug": "andhra-pradesh",
+          "label": "Andhra Pradesh"
+        },
+        {
+          "slug": "karnataka",
+          "label": "Karnataka"
+        },
+        {
+          "slug": "kerala",
+          "label": "Kerala"
+        },
+        {
+          "slug": "lakshadweep",
+          "label": "Lakshadweep"
+        },
+        {
+          "slug": "puducherry",
+          "label": "Puducherry"
+        },
+        {
+          "slug": "tamil-nadu",
+          "label": "Tamil Nadu"
+        },
+        {
+          "slug": "telangana",
+          "label": "Telangana"
+        }
+      ]
+    }
+  ]
+}
