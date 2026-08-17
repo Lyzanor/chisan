@@ -57,6 +57,20 @@ candidate notes; do not import a speculative row as `pendiente`. If one is
 affirmatively false, reject it. Missing search results or a failed fetch prove
 neither.
 
+Candidate notes are active discovery workspaces, not decision ledgers. Keep
+source sweeps, batch scope, unresolved leads and pending search work in
+`docs/candidates/<country>/<area>.md`. When a candidate is accepted, rejected
+or found already present, remove its resolved entry while preserving the
+document's remaining discovery context. The lasting entity decision belongs in
+`data/evidence/**`; a negative tombstone should retain enough sources and
+factual notes to explain the exclusion without reopening the same research.
+
+Finding a lead while working another area is not itself an `other-area`
+rejection. Route it to the candidate note for its productive area when known;
+use `other-area` when the proposed placement in the area under review is the
+claim that was checked and disproved. If the productive area is still unknown,
+hold the lead with its location clues rather than guessing a destination.
+
 An authoritative institutional directory that explicitly identifies a
 qualifying producer, its productive municipality and a public phone or email
 can support a usable `parcial` row without an official website, provided the
@@ -154,6 +168,12 @@ offered by or on behalf of the producer.
 | The producer's current channels were reviewed and no remote-order mechanism is offered | `no` |
 | Not reviewed, ambiguous, inaccessible or temporarily broken | `no comprobado` |
 
+`no` does not require an exhaustive search of the internet. Review the
+producer's reasonably identifiable first-party channels far enough to determine
+that none offers remote ordering. If a material channel is inaccessible,
+stale, contradictory or left unreviewed, prefer `no comprobado`; do not contact
+the producer solely to prove a negative.
+
 An own shop, explicit phone/message/email ordering, subscription or official
 collective storefront may qualify. Independent third-party resale does not: it
 shows product availability, not a sales channel operated for the producer. A
@@ -163,18 +183,41 @@ does not establish remote ordering by itself.
 `Canal de venta` records the demonstrated mechanism and is filled only when
 `Venta online=sí`, using the values in `docs/CSV_CONTRACT.md`.
 
+## Boundary cases
+
+Use these outcomes when a superficially similar fact could lead to two different
+decisions:
+
+| Situation | Outcome | Boundary |
+|---|---|---|
+| Related businesses share an owner, address or centroid but operate distinct productive units | Keep separate rows | Shared context is a de-duplication signal, not proof of one unit |
+| Several brands or product lines resolve to the same productive unit | Keep one row; merge an already published duplicate | Product branding does not create another producer |
+| A large or group-owned unit retains an attributable place-based productive identity and own offer | Eligible if it passes the full scope test | Scale and ownership alone do not exclude |
+| A plant only provides contract production, processing or logistics and has no own attributable offer | `out-of-scope` | Productive activity without a qualifying public producer identity is insufficient |
+| A candidate is plausible but one admission claim remains unresolved | `hold` in candidates | Uncertainty creates neither a CSV row nor a rejection |
+| Products are purchasable only from an independent reseller | `Venta online=no comprobado` | Availability is not a channel operated by or on behalf of the producer |
+| A working shop of the producer's official group, designation or governed collective accepts the order | `Venta online=sí` | An official collective channel may operate on the producer's behalf |
+| A shop is inaccessible, under maintenance or has no working checkout | `Venta online=no comprobado` | Technical failure proves neither `no` nor closure |
+| Another category appears only as resale, ingredient, hospitality or incidental output | Do not assign it | Additional categories require a distinct material output made by the same unit |
+
 ## Evidence rules
 
 - Evidence is claim-specific: a source does not inherit authority over facts it
   does not publish.
 - Activity, closure and online sales are dynamic and require current evidence.
+- Currentness is claim-specific rather than a universal maximum age. Prefer a
+  source that makes the reviewed fact observable at review time; older dated
+  material may support identity or history but cannot establish a dynamic claim
+  by itself.
 - Registry absence, search failure, timeout, blocking, TLS/DNS error or a
   broken checkout is uncertainty, not proof of nonexistence, closure or no sale.
 - Empty or unresolved is preferable to a plausible invention.
 
 ## Policy maintenance
 
-The executable baseline lives in `data/evals/editorial-policy-cases.json` and
-`scripts/editorial-policy.mjs`. A material criteria change must update this
-document, the evaluator and at least one synthetic case; update `AGENTS.md`
-only when the workflow changes. Run `npx pnpm verify:ai`.
+This document is the single source for editorial decisions. A material criteria
+change belongs here; update `AGENTS.md` only when the workflow changes. Encode a
+rule in `check:csv`, `check:evidence` or `check:defects` only when the stored data
+can establish it mechanically, and test that real validator rather than a
+parallel synthetic decision model. Run `npx pnpm verify:ai` for validator or
+behavior changes.

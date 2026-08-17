@@ -1,114 +1,137 @@
 # Imágenes de productores
 
-Manual del flujo de imágenes: formato, fuentes, calidad, naming, tooling y
-auditoría de basura. El contrato del campo `imagen` (ruta, extensiones,
-validación) vive en `docs/CSV_CONTRACT.md` § Producer image contract; la
-validación se cierra con `npx pnpm check:images`.
+Este documento define el flujo visual: elección de fuente, composición,
+aplicación y revisión. El contrato del campo `imagen` vive en
+`docs/CSV_CONTRACT.md`; `npx pnpm check:images` valida los activos publicados.
 
-Revisa las imágenes después de estabilizar identidad y `slug`. Prefiere logo o
-imagotipo oficial antes que foto de producto. No aceptes banners, iconos, ayudas
-públicas, imágenes ajenas ni el primer resultado por puntuación.
+Una imagen es opcional. Revisa primero la identidad y el `slug`: dejar la celda
+vacía es preferible a publicar una marca equivocada.
 
-## Formato y composición
+## Qué imagen usar
 
-- Activo final preferido: **1600x1200 WebP** (4:3 horizontal), calidad `>= 88`,
-  en `/productores/<country>/<region>/<area>/<slug>.webp`.
-- Fondo plano `#F3F0E8`; logo centrado con alrededor de 10% de margen por lado.
-  El lado más largo del logo debería quedar en torno a 960 px o menos.
-- Mantén visible el fondo alrededor del logo. No estires el logo para rellenar
-  el lienzo.
-- Otros formatos válidos por contrato (`.png`, `.jpg`, `.avif`, etc.) siguen
-  siendo aceptables, pero usa `.webp` para activos nuevos.
+Prefiere una identidad visual atribuible al productor:
 
-## Fuente visual
+1. `Organization.logo` del JSON-LD de su web oficial.
+2. Logo o imagotipo publicado en esa web.
+3. `og:image` oficial cuando muestre claramente la marca.
+4. Foto de perfil de un canal social oficial.
+5. Favicon de resolución suficiente.
+6. Fuente institucional o reputada solo cuando no exista un canal propio usable.
 
-Prioridad de búsqueda, deteniéndote en el primer activo usable:
+Logo o imagotipo tiene prioridad sobre una foto de producto. Una foto propia
+puede ser el fallback cuando representa inequívocamente al productor. No uses
+stock, IA, competidores, directorios genéricos, ayudas públicas, premios ni el
+primer resultado del ranking sin mirarlo.
 
-1. `Organization.logo` del JSON-LD de la web oficial: es el sitio diciendo cuál
-   es su marca, en vez de adivinarlo por el nombre del fichero.
-2. Logo PNG/JPG en la web oficial.
-3. `og:image` de la web oficial si muestra marca.
-4. Foto de perfil de Instagram/Facebook oficial.
-5. Favicon de alta resolución.
-6. Fuentes reputadas (DOP/IGP, turismo, prensa) solo si los canales propios no ofrecen nada usable.
+La marca de una matriz, grupo o denominación no sustituye automáticamente la
+del productor. Puede ser correcta únicamente cuando esa es también su identidad
+pública atribuible. Si la unidad no publica identidad visual propia, deja
+`imagen` vacía.
 
-Prefiere marca sobre foto de producto. Usa foto propia del productor solo si no
-hay logo usable o si esa foto es parte reconocible de la identidad. No uses
-stock, IA, competidores ni imágenes de portales genéricos.
+`enrich:images` solo inspecciona la URL de `web` ya publicada en el CSV. No
+descubre fuentes fuera de esa web ni verifica propiedad, licencias o identidad;
+el ranking ordena candidatos y la revisión humana decide.
 
-**La marca de la matriz no vale como imagen del productor.** En webs de grupo, el
-activo mejor puntuado suele ser el logo del grupo, no el del productor
-(HispanoBodegas por Gormaz, Costa Food por Cárnicas Villar, Vichy Catalan por
-Monte Pinos, Viñas Familia Gil por Atalaya). Si el productor no publica identidad
-propia, **deja la celda vacía**: una celda vacía es recuperable, una imagen
-equivocada no se distingue de una correcta sin volver a mirarla.
+## Formato final
 
-## Calidad y tratamiento
+- Nuevo activo: WebP de **1600×1200** (4:3), calidad 90.
+- Ruta canónica:
+  `/productores/<country>/<region>/<area>/<slug>.webp`.
+- Fondo para logos: `#F3F0E8`, composición centrada y con aire visible.
+- Lado largo del logo: alrededor de 960 px.
+- No escales logos ni fotos por encima de 3× el original.
+- Rechaza fuentes con menos de 200 px en el lado largo.
+- No guardes originales, hojas de contacto ni variantes dentro de `public/`.
+- Un activo nuevo por productor; otros formatos históricos siguen siendo
+  válidos, pero los archivos de más de 2 MiB requieren revisión y normalización.
 
-- No escales más de **3x** el lado largo original; por encima de eso el resultado
-  se ve borroso.
-- Tras escalar más de `1.2x`, aplica enfoque suave.
-- **Suelo de 200 px** en el lado largo: la marca correcta renderizada ilegible
-  estropea el mapa igual que la basura y encima parece correcta en el CSV. El
-  script intenta antes recuperar el original (WordPress/Shopify lo codifican en
-  el nombre, Wix en la ruta).
-- El cromado de fondo y el oscurecido de tinta casi blanca son **topológicos**:
-  respetan el hueco interior de una letra o un icono. A una fotografía no se le
-  aplica ninguno de los dos.
+El cromado de fondos claros y el oscurecido de tinta casi blanca son
+topológicos: eliminan solo el fondo conectado al borde y conservan huecos
+interiores. Nunca se aplican a una imagen clasificada como foto.
 
-## Naming y tooling
+## Flujo seguro de enriquecimiento
 
-- El nombre del archivo debe coincidir con el `slug` del CSV y el path debe
-  reflejar el área: `/productores/<country>/<region>/<area>/<slug>.webp`. Un
-  activo por productor; no guardes variantes ni originales de trabajo en
-  `public/`. Si el destino canónico no coincide con el CSV stem, pasa
-  `--asset-dir <region>/<area>`.
-- Instala las herramientas opcionales solo cuando vayas a usar enriquecimiento:
-  ```bash
-  python3 -m pip install -r scripts/requirements-image-tools.txt
-  ```
-
-El flujo son tres pasos y **el del medio no es opcional**:
+Instala las dependencias opcionales solo cuando vayas a buscar o componer
+imágenes:
 
 ```bash
-npx pnpm enrich:images --area [area] --contact-sheet informe/[area]
-# mira las hojas; decide productor a productor
-npx pnpm enrich:images --area [area] --apply --slug [slug]
+python3 -m pip install -r scripts/requirements-image-tools.txt
 ```
 
-`--contact-sheet` compone cada candidato **exactamente como lo guardaría
-`--apply`** y los monta en hojas de 15. Lo que apruebas es lo que se escribe. El
-score ordena, no juzga: un logo de matriz, un banner de subvención, un sello de
-turismo y el logo de la agencia que hizo la web puntúan todos perfectamente.
+### 1. Generar candidatos
 
-- El script no escribe nada por defecto y aplica solo por `--slug`. Usa
-  `--allow-photos` cuando la foto propia sea el fallback buscado.
-- Comprueba con `git diff` que `--apply` solo tocó la columna `imagen`.
-- Si al terminar avisa de que una misma imagen sirve a varios productores,
-  míralos: el logo compartido de un grupo es legítimo, un sello o un plugin no.
-- Cierra cambios de imagen con `npx pnpm check:images`.
+```bash
+npx pnpm enrich:images --area [area] --contact-sheet .tmp/images/[area]
+```
 
-## Basura conocida y auditoría por hash
+Se puede añadir `--slug [slug]` para revisar uno solo y `--allow-photos` cuando
+se estén considerando fotos. El directorio de salida debe estar vacío para no
+mezclar hojas de ejecuciones distintas.
 
-El scorer puntúa alto activos que no son la marca. Firmas confirmadas (auditorías 2026-06/07):
-logos de plugins y consentimiento (CookieYes, GDPR, iconos de accesibilidad), temas y paneles web
-(WordPress, BRIDGE, Divi, Plesk, "FUSE"), hosting (IONOS), directorios (QDQ), banners de subvención
-(Kit Digital, Plan de Recuperación, FEADER/UE, Gobierno/Generalitat), marcas de directorio territorial
-(Alimentos de Guadalajara, Sabores Almería, Gusto Cádiz), sellos ajenos (Guild of Fine Food, DOP/premios),
-iconos de red social sueltos, burbujas de chat y tarjetas en blanco. Añadidas en 2026-07 (Albacete):
-el logo de la agencia que hizo la web («Powered by …»), sellos institucionales y de promoción
-(banderas autonómicas, turismo, rutas del vino) y capturas de la web entera.
+El comando no modifica el catálogo. Genera:
 
-Estas firmas se observaron en el catálogo español: subvenciones, sellos y
-directorios son locales, así que otro país verá su propio repertorio y lo
-anotará en sus propios docs en vez de heredar esta lista.
+- hojas con la composición final de cada candidato;
+- `candidates.json`, con URL, score, dimensiones y SHA-256 completo de la
+  composición mostrada.
 
-**Es un atajo, nunca la razón para no mirar el resultado**: la lista es
-retrospectiva por construcción y siempre irá un área por detrás.
+### 2. Elegir visualmente
 
-Auditoría retroactiva barata sin red: agrupa `public/productores/**/*.webp` por hash (`md5 -r`).
-**El mismo hash en marcas sin relación = basura** (vacía la celda `imagen` y borra el asset);
-el mismo hash dentro de un grupo empresarial o multi-local (Torres, Protos, Baluard…) es legítimo.
-La pasada 2026-07-17 (commit `6d8c1fa`) purgó así 130 imágenes en 19 provincias: los 27 clusters
-cross-marca inspeccionados resultaron ser todos basura. El hash no caza basura que aparece una sola
-vez: para eso sigue haciendo falta barrido visual por área (montajes con fondo gris/contraste).
+Comprueba que la imagen pertenece al productor, no a su matriz, agencia web,
+plugin, sello, directorio o programa de financiación. El identificador corto de
+la hoja corresponde al inicio del `digest` completo de `candidates.json`.
+
+### 3. Aplicar exactamente lo aprobado
+
+```bash
+npx pnpm enrich:images --area [area] --apply \
+  --slug [slug] --candidate [sha256]
+```
+
+Usa `--replace` únicamente para sustituir una imagen ya publicada y repite
+`--allow-photos` si el candidato aprobado era una foto. Si la exploración usó un
+`--threshold` o `--max-candidates` distinto, repítelo al aplicar.
+
+`--apply` exige un solo `slug` y un digest revisado. Vuelve a descargar los
+candidatos, acepta solo el contenido cuyo hash coincide, deriva la ruta canónica
+y cambia únicamente la celda `imagen`. Si el CSV cambia durante la operación,
+aborta sin escribir. No existe aplicación masiva ni selección automática del
+primer candidato.
+
+Después revisa el diff y ejecuta:
+
+```bash
+npx pnpm check:images
+```
+
+## Auditoría del catálogo
+
+`check:images` bloquea rutas inseguras, extensiones no admitidas, referencias
+ausentes y contenido que no parece una imagen reconocible. Mantiene como avisos
+las migraciones no destructivas: ruta o nombre no canónico, WebP con otras
+dimensiones, extensión que no coincide con el contenido, activo huérfano o más
+de 2 MiB.
+
+El resumen muestra cobertura, peso, formatos históricos y clusters de hashes
+duplicados. Para listar estos últimos:
+
+```bash
+npx pnpm check:images -- --duplicates
+```
+
+Un mismo hash puede ser legítimo dentro de un grupo o productor multilocal. En
+marcas sin relación suele revelar un logo de plugin, mercado, directorio,
+premio, institución o financiación. El hash es una señal de revisión, nunca una
+decisión automática, y no detecta la basura que aparece una sola vez.
+
+## Basura visual frecuente
+
+- consentimiento, accesibilidad, chat, pagos, loaders y placeholders;
+- logos del tema, CMS, hosting o agencia que construyó la web;
+- ayudas, administraciones, turismo, rutas, certificaciones y premios;
+- marcas de directorios o mercados que alojan a varios productores;
+- capturas completas, banners, iconos sociales y tarjetas vacías;
+- identidad de la matriz cuando no es la identidad pública del productor.
+
+La lista es orientativa y nunca reemplaza el barrido visual. Nuevos patrones
+locales deben influir en la revisión del área; no se convierten automáticamente
+en reglas globales para otros países.

@@ -3,7 +3,7 @@
 Find and normalize producer logo assets from official producer websites.
 
 Default mode is a dry run: it reports candidates and writes no CSV/assets.
-Use --apply to save the first acceptable candidate and update the CSV.
+Use --apply with one slug and a reviewed candidate digest to update the CSV.
 """
 
 from __future__ import annotations
@@ -12,13 +12,14 @@ import argparse
 import csv
 import hashlib
 import json
+import os
 import re
 import sys
 import time
 import unicodedata
 from collections import deque
 from dataclasses import asdict, dataclass
-from io import BytesIO
+from io import BytesIO, StringIO
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import unquote, urljoin, urlparse
@@ -48,8 +49,7 @@ CANVAS_SIZE = (1600, 1200)
 BACKGROUND_RGBA = (243, 240, 232, 255)
 LOW_CONTRAST_LOGO_RGBA = (73, 68, 60, 255)
 TARGET_LOGO_LONG_EDGE = 960
-MAX_LOGO_UPSCALE = 3.0
-MIN_SOURCE_LONG_EDGE = 200
+MAX_IMAGE_UPSCALE = 3.0
 # A 64px source upscaled 3x is mush on the canvas: the Soria/Albacete passes
 # found the right brand rendered unusably small more often than actual junk.
 MIN_ACCEPTED_LONG_EDGE = 200
@@ -83,29 +83,6 @@ IMAGE_HEADERS = {
     "Sec-Fetch-Site": "same-origin",
 }
 
-BLOCKED_DOMAINS = {
-    "alimentosdesegovia.es",
-    "alimentosdezamora.info",
-    "blogspot.com",
-    "burgosalimenta.com",
-    "burgosalimenta.es",
-    "dotoro.com",
-    "exquisiteza.es",
-    "facebook.com",
-    "gff.co.uk",
-    "instagram.com",
-    "linktr.ee",
-    "quesozamorano.com",
-    "sayago.com",
-    "sites.google.com",
-    "tiktok.com",
-    "twitter.com",
-    "wixsite.com",
-    "wordpress.com",
-    "x.com",
-    "youtube.com",
-}
-
 LOGO_HINTS = ("logo", "brand", "marca", "logotipo", "imagotipo", "isotipo")
 PHOTO_HINTS = ("hero", "banner", "slider", "background", "bg-", "cabecera", "portada")
 # Cheap prefilter only. It catches junk whose *filename* gives it away and
@@ -115,34 +92,18 @@ PHOTO_HINTS = ("hero", "banner", "slider", "background", "bg-", "cabecera", "por
 # shortcut, never as the reason to skip looking at the result.
 BAD_ASSET_HINTS = (
     "accessibility",
-    "brcgs",
-    "camara-comercio",
-    "cert_",
-    "cert-",
-    "consejo-regulador",
     "cookieyes",
-    "denominacion-de-origen",
-    "digitalizadores",
-    "feader",
-    "feder",
     "gdpr",
-    "kit-digital",
-    "logo-europa",
-    "logo-kit",
     "loader",
     "loading",
     "mastercard",
-    "next-generation",
     "onetap",
     "placeholder",
     "pixel",
-    "plan-de-recuperacion",
     "powered-by",
-    "ruta-del-vino",
     "safari-pinned-tab",
     "sprite",
     "trustpilot",
-    "union-europea",
     "whatsapp",
     "wp-content/plugins/",
     "wp-content/themes/",
@@ -182,16 +143,6 @@ def normalize_url(base_url: str, raw_url: str | None) -> str | None:
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         return None
     return url
-
-
-def host_matches(hostname: str, domain: str) -> bool:
-    host = hostname.lower()
-    return host == domain or host.endswith(f".{domain}")
-
-
-def is_blocked_domain(url: str) -> bool:
-    hostname = (urlparse(url).hostname or "").lower()
-    return any(host_matches(hostname, domain) for domain in BLOCKED_DOMAINS)
 
 
 def parsed_url_path(url: str) -> str:
@@ -264,8 +215,7 @@ def upstream_variants(url: str) -> list[str]:
 
 def jsonld_logo_urls(soup: BeautifulSoup) -> list[str]:
     """`Organization.logo` from JSON-LD: the site telling us which image is its
-    brand, rather than us guessing from a filename. Highest-precision source
-    available — it supplied roughly one in four accepted assets in the pilots."""
+    brand, rather than us guessing from a filename."""
     found: list[str] = []
     for tag in soup.find_all("script", attrs={"type": "application/ld+json"}):
         try:
@@ -616,7 +566,14 @@ class Asset:
 
     @property
     def digest(self) -> str:
-        return hashlib.md5(self.data).hexdigest()
+        return hashlib.sha256(self.data).hexdigest()
+
+
+def composed_digest(image: Image.Image) -> str:
+    """Identify the reviewed pixels, not just the downloaded source bytes."""
+    rgb = image.convert("RGB")
+    payload = f"{rgb.mode}:{rgb.width}x{rgb.height}:".encode() + rgb.tobytes()
+    return hashlib.sha256(payload).hexdigest()
 
 
 def fetch_best_asset(
@@ -657,12 +614,6 @@ def open_candidate_image(url: str, data: bytes, content_type: str) -> tuple[Imag
         return image.convert("RGBA"), None
     except Exception as exc:  # noqa: BLE001
         return None, f"image open failed: {exc}"
-
-
-def has_alpha(image: Image.Image) -> bool:
-    if "A" not in image.getbands():
-        return False
-    return image.getchannel("A").getextrema()[0] < 255
 
 
 def chromakey_near_white(image: Image.Image) -> Image.Image:
@@ -744,16 +695,18 @@ def tint_low_contrast_logo(image: Image.Image) -> Image.Image:
     return image
 
 
-def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
+def contain_logo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
+    image = image.convert("RGBA")
     original_width, original_height = image.size
-    had_alpha = has_alpha(image)
 
     # Both passes are safe on any logo now, with or without alpha: the chromakey
     # only removes background reachable from a corner, and the tint only darkens
     # near-white ink reachable from transparency. Gating them on `had_alpha`
     # used to let a near-white plate through on one path and swallow white
     # lettering on the other.
+    before_chromakey = image.tobytes()
     image = chromakey_near_white(image)
+    chromakey_applied = image.tobytes() != before_chromakey
 
     bbox = image.getbbox()
     if bbox:
@@ -769,10 +722,7 @@ def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image,
         raise ValueError(f"source too small: {original_width}x{original_height}")
 
     scale = TARGET_LOGO_LONG_EDGE / max(logo_width, logo_height)
-    if source_long_edge < MIN_SOURCE_LONG_EDGE:
-        scale = min(scale, 1.0)
-    else:
-        scale = min(scale, MAX_LOGO_UPSCALE)
+    scale = min(scale, MAX_IMAGE_UPSCALE)
 
     new_width = max(1, round(logo_width * scale))
     new_height = max(1, round(logo_height * scale))
@@ -789,11 +739,10 @@ def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image,
     return canvas, {
         "source_width": original_width,
         "source_height": original_height,
-        "source_below_floor": source_long_edge < MIN_SOURCE_LONG_EDGE,
         "scale": round(scale, 3),
         "rendered_width": new_width,
         "rendered_height": new_height,
-        "chromakey_applied": candidate.subject == "logo" and not had_alpha,
+        "chromakey_applied": chromakey_applied,
         "low_contrast_tint_applied": low_contrast_tint_applied,
     }
 
@@ -801,10 +750,14 @@ def contain_logo(candidate: Candidate, image: Image.Image) -> tuple[Image.Image,
 def cover_photo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
     original_width, original_height = image.size
     source_long_edge = max(original_width, original_height)
-    if source_long_edge < MIN_SOURCE_LONG_EDGE:
+    if source_long_edge < MIN_ACCEPTED_LONG_EDGE:
         raise ValueError(f"photo source too small: {original_width}x{original_height}")
 
     scale = max(CANVAS_SIZE[0] / original_width, CANVAS_SIZE[1] / original_height)
+    if scale > MAX_IMAGE_UPSCALE:
+        raise ValueError(
+            f"photo would require {scale:.1f}x upscale (maximum {MAX_IMAGE_UPSCALE:.0f}x)"
+        )
     resized_width = round(original_width * scale)
     resized_height = round(original_height * scale)
     resized = image.resize((resized_width, resized_height), resample=Image.Resampling.LANCZOS)
@@ -815,7 +768,6 @@ def cover_photo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
     return covered, {
         "source_width": original_width,
         "source_height": original_height,
-        "source_below_floor": False,
         "scale": round(scale, 3),
         "rendered_width": CANVAS_SIZE[0],
         "rendered_height": CANVAS_SIZE[1],
@@ -825,34 +777,38 @@ def cover_photo(image: Image.Image) -> tuple[Image.Image, dict[str, object]]:
 
 def inspect_candidate(
     candidate: Candidate, timeout: float, page: PageContext | None = None
-) -> tuple[dict[str, object], Asset | None]:
+) -> tuple[dict[str, object], Image.Image | None]:
     asset, error = fetch_best_asset(candidate, timeout, page)
     if asset is None:
         return {**asdict(candidate), "ok": False, "error": error}, None
 
-    width, height = asset.image.size
+    try:
+        if candidate.subject == "photo":
+            final_image, composition = cover_photo(asset.image)
+        else:
+            final_image, composition = contain_logo(asset.image)
+    except Exception as exc:  # noqa: BLE001
+        return {
+            **asdict(candidate),
+            "ok": False,
+            "content_type": asset.content_type,
+            "resolved_url": asset.url,
+            "source_digest": asset.digest,
+            "source_width": asset.image.width,
+            "source_height": asset.image.height,
+            "error": str(exc),
+        }, None
+
+    final_rgb = final_image.convert("RGB")
     return {
         **asdict(candidate),
         "ok": True,
         "content_type": asset.content_type,
         "resolved_url": asset.url,
-        "digest": asset.digest,
-        "source_width": width,
-        "source_height": height,
-        "source_below_floor": max(width, height) < MIN_SOURCE_LONG_EDGE,
-    }, asset
-
-
-def compose_candidate(candidate: Candidate, image: Image.Image) -> Image.Image | None:
-    """The final 1600x1200 exactly as --apply would save it."""
-    try:
-        if candidate.subject == "photo":
-            final_image, _ = cover_photo(image)
-        else:
-            final_image, _ = contain_logo(candidate, image)
-        return final_image.convert("RGB")
-    except Exception:  # noqa: BLE001
-        return None
+        "source_digest": asset.digest,
+        "digest": composed_digest(final_rgb),
+        **composition,
+    }, final_rgb
 
 
 def _ellipsize(text: str, limit: int) -> str:
@@ -881,6 +837,8 @@ def write_contact_sheets(entries: list[tuple[str, str, Image.Image]], out_dir: P
     Sheets are written from the same composition --apply uses, so what you
     approve is what gets saved.
     """
+    if out_dir.exists() and any(out_dir.iterdir()):
+        raise ValueError(f"contact-sheet directory must be empty: {out_dir}")
     out_dir.mkdir(parents=True, exist_ok=True)
     label_font, meta_font = _sheet_font(14), _sheet_font(12)
     columns, cell, pad, label_height = 5, 310, 14, 44
@@ -913,73 +871,149 @@ def write_contact_sheets(entries: list[tuple[str, str, Image.Image]], out_dir: P
     return written
 
 
-def process_candidate(
-    candidate: Candidate, output_path: Path, timeout: float, page: PageContext | None = None
-) -> tuple[bool, dict[str, object]]:
-    asset, error = fetch_best_asset(candidate, timeout, page)
-    if asset is None:
-        return False, {"error": error}
-
-    try:
-        if candidate.subject == "photo":
-            final_image, info = cover_photo(asset.image)
-        else:
-            final_image, info = contain_logo(candidate, asset.image)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        final_image.convert("RGB").save(output_path, "WEBP", quality=WEBP_QUALITY)
-        return True, {**info, "content_type": asset.content_type, "resolved_url": asset.url, "digest": asset.digest}
-    except Exception as exc:  # noqa: BLE001
-        return False, {"error": str(exc), "content_type": asset.content_type, "digest": asset.digest}
-
-
 def list_csv_paths(root: Path) -> list[Path]:
     # data/csv/<country>/<region>/<area>.csv
     return sorted((root / "data" / "csv").glob("*/*/*.csv"))
 
 
-def find_csv_path(root: Path, province: str | None, csv_path: str | None) -> Path:
-    if csv_path:
-        path = Path(csv_path)
-        return path if path.is_absolute() else root / path
+def find_csv_path(root: Path, area: str | None) -> Path:
+    if not area:
+        raise ValueError("Provide --area.")
 
-    if not province:
-        raise ValueError("Provide --area or --csv.")
-
-    matches = [path for path in list_csv_paths(root) if path.stem == province]
+    matches = [path for path in list_csv_paths(root) if path.stem == area]
     if not matches:
-        known = ", ".join(path.stem for path in list_csv_paths(root))
-        raise ValueError(f"No CSV found for province '{province}'. Known provinces: {known}")
+        raise ValueError(f"No CSV found for area '{area}'.")
     if len(matches) > 1:
         joined = ", ".join(str(path.relative_to(root)) for path in matches)
-        raise ValueError(f"Province '{province}' is ambiguous. Use --csv. Matches: {joined}")
+        raise ValueError(f"Area '{area}' is not globally unique: {joined}")
     return matches[0]
 
 
-def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> None:
-    temp_path = path.with_suffix(f"{path.suffix}.tmp")
-    # Force LF: csv.writer defaults to CRLF (\r\n), which breaks the repo's
-    # LF-only CSV contract (.gitattributes / check:csv). newline="" keeps the
-    # writer's lineterminator from being translated again on write.
-    with temp_path.open("w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
-    temp_path.replace(path)
-
-
-def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
-    with path.open("r", encoding="utf-8", newline="") as file:
-        reader = csv.DictReader(file)
-        fieldnames = list(reader.fieldnames or [])
-        rows = list(reader)
+def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]], bytes, str]:
+    raw_bytes = path.read_bytes()
+    raw = raw_bytes.decode("utf-8")
+    reader = csv.DictReader(StringIO(raw, newline=""))
+    fieldnames = list(reader.fieldnames or [])
+    rows = list(reader)
 
     if not fieldnames:
         raise ValueError(f"CSV has no header: {path}")
     if "imagen" not in fieldnames:
-        fieldnames.append("imagen")
-        for row in rows:
-            row["imagen"] = ""
-    return fieldnames, rows
+        raise ValueError(f"CSV has no imagen column: {path}")
+    return fieldnames, rows, raw_bytes, raw
+
+
+def csv_record_spans(raw: str) -> list[tuple[int, int]]:
+    """Return record spans without changing quoting or any unrelated byte."""
+    spans: list[tuple[int, int]] = []
+    start = 0
+    in_quotes = False
+    index = 0
+    while index < len(raw):
+        char = raw[index]
+        if char == '"':
+            if in_quotes and index + 1 < len(raw) and raw[index + 1] == '"':
+                index += 2
+                continue
+            in_quotes = not in_quotes
+        elif char == "\n" and not in_quotes:
+            spans.append((start, index))
+            start = index + 1
+        index += 1
+    if in_quotes:
+        raise ValueError("CSV contains an unterminated quoted field")
+    if start < len(raw):
+        spans.append((start, len(raw)))
+    return spans
+
+
+def csv_field_spans(record: str) -> list[tuple[int, int]]:
+    spans: list[tuple[int, int]] = []
+    start = 0
+    in_quotes = False
+    index = 0
+    while index < len(record):
+        char = record[index]
+        if char == '"':
+            if in_quotes and index + 1 < len(record) and record[index + 1] == '"':
+                index += 2
+                continue
+            in_quotes = not in_quotes
+        elif char == "," and not in_quotes:
+            spans.append((start, index))
+            start = index + 1
+        index += 1
+    if in_quotes:
+        raise ValueError("CSV record contains an unterminated quoted field")
+    spans.append((start, len(record)))
+    return spans
+
+
+def parse_csv_record(record: str) -> list[str]:
+    return next(csv.reader(StringIO(record, newline="")))
+
+
+def update_csv_image(raw: str, slug: str, image_path: str) -> str:
+    """Replace only the raw `imagen` cell for one slug.
+
+    Re-serializing a complete CSV normalizes otherwise valid quoting in hundreds
+    of files. Splicing the one field keeps every unrelated byte stable and makes
+    a one-image change safe to review.
+    """
+    records = csv_record_spans(raw)
+    if not records:
+        raise ValueError("CSV is empty")
+    header_start, header_end = records[0]
+    header = parse_csv_record(raw[header_start:header_end])
+    try:
+        slug_index = header.index("slug")
+        image_index = header.index("imagen")
+    except ValueError as exc:
+        raise ValueError("CSV requires slug and imagen columns") from exc
+
+    matches: list[tuple[int, int]] = []
+    for record_start, record_end in records[1:]:
+        record = raw[record_start:record_end]
+        values = parse_csv_record(record)
+        if slug_index >= len(values) or values[slug_index].strip() != slug:
+            continue
+        fields = csv_field_spans(record)
+        if image_index >= len(fields):
+            raise ValueError(f"CSV row for '{slug}' has no imagen cell")
+        field_start, field_end = fields[image_index]
+        matches.append((record_start + field_start, record_start + field_end))
+
+    if len(matches) != 1:
+        raise ValueError(f"expected one CSV row for slug '{slug}', found {len(matches)}")
+    start, end = matches[0]
+    return f"{raw[:start]}{image_path}{raw[end:]}"
+
+
+def write_selected_image(
+    csv_path: Path,
+    original_csv_bytes: bytes,
+    updated_csv: str,
+    output_path: Path,
+    image: Image.Image,
+) -> None:
+    """Stage both outputs and abort if the CSV changed during network work."""
+    if csv_path.read_bytes() != original_csv_bytes:
+        raise RuntimeError("CSV changed while candidates were being inspected; nothing was written")
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    suffix = f".{os.getpid()}.tmp"
+    image_temp = output_path.with_name(f".{output_path.name}{suffix}")
+    csv_temp = csv_path.with_name(f".{csv_path.name}{suffix}")
+    try:
+        image.save(image_temp, "WEBP", quality=WEBP_QUALITY)
+        csv_temp.write_text(updated_csv, encoding="utf-8", newline="")
+        if csv_path.read_bytes() != original_csv_bytes:
+            raise RuntimeError("CSV changed while outputs were staged; nothing was written")
+        image_temp.replace(output_path)
+        csv_temp.replace(csv_path)
+    finally:
+        image_temp.unlink(missing_ok=True)
+        csv_temp.unlink(missing_ok=True)
 
 
 def public_image_path(asset_dir: str, slug: str) -> str:
@@ -991,25 +1025,28 @@ def print_candidate_summary(candidate_info: dict[str, object], prefix: str = "  
     if candidate_info.get("source_width") and candidate_info.get("source_height"):
         size = f" {candidate_info['source_width']}x{candidate_info['source_height']}"
     status = "ok" if candidate_info.get("ok") else f"skip: {candidate_info.get('error')}"
+    digest = clean_cell(candidate_info.get("digest"))
+    candidate_id = f" id={digest[:12]}" if digest else ""
     print(
         f"{prefix} score={candidate_info['score']} {candidate_info['source']} "
-        f"{candidate_info['subject']}{size} [{status}] {candidate_info['url']}"
+        f"{candidate_info['subject']}{size}{candidate_id} [{status}] {candidate_info['url']}"
     )
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Find and normalize producer image assets.")
-    parser.add_argument("--area", help="Province CSV slug, e.g. cuenca or la-rioja.")
-    parser.add_argument("--csv", dest="csv_path", help="Explicit CSV path when province lookup is not enough.")
-    parser.add_argument("--asset-dir", help="Asset folder slug under public/productores/. Defaults to CSV stem.")
-    parser.add_argument("--apply", action="store_true", help="Write WebP assets and update the CSV.")
-    parser.add_argument("--replace", action="store_true", help="Process rows that already have imagen.")
+    parser.add_argument("--area", help="Globally unique area CSV slug, e.g. cuenca or la-rioja.")
+    parser.add_argument("--apply", action="store_true", help="Write one reviewed WebP asset and update its CSV cell.")
+    parser.add_argument(
+        "--candidate",
+        help="Reviewed candidate SHA-256 (or a unique prefix of at least 12 characters); required with --apply.",
+    )
+    parser.add_argument("--replace", action="store_true", help="Replace the existing image for the selected slug.")
     parser.add_argument("--allow-photos", action="store_true", help="Allow non-logo OG/Twitter photos as fallbacks.")
-    parser.add_argument("--allow-blocked-domains", action="store_true", help="Inspect social/aggregator domains.")
     parser.add_argument("--slug", action="append", default=[], help="Limit work to a producer slug. Repeatable.")
     parser.add_argument("--limit", type=int, help="Maximum number of eligible producers to inspect.")
     parser.add_argument("--threshold", type=int, default=15, help="Minimum candidate score to try.")
-    parser.add_argument("--max-candidates", type=int, default=5, help="Candidates inspected per producer in dry-run.")
+    parser.add_argument("--max-candidates", type=int, default=5, help="Maximum candidates inspected per producer.")
     parser.add_argument("--delay", type=float, default=1.0, help="Delay between producer websites.")
     parser.add_argument("--timeout", type=float, default=10.0, help="HTTP timeout in seconds.")
     parser.add_argument("--report", help="Optional JSON report path.")
@@ -1020,7 +1057,6 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "out in review sheets. Look at these before --apply; a scorer cannot tell a producer's "
         "brand from its parent company's logo, a subsidy banner or an award seal.",
     )
-    parser.add_argument("--list-provinces", action="store_true", help="List area CSV slugs and exit.")
     return parser
 
 
@@ -1032,30 +1068,70 @@ def main() -> int:
     args = parser.parse_args(argv)
     root = repo_root()
 
-    if args.list_provinces:
-        for path in list_csv_paths(root):
-            print(path.stem)
-        return 0
-
     if args.contact_sheet and args.apply:
         parser.error("--contact-sheet is for reviewing before you apply; run it without --apply.")
+    if args.apply and len(args.slug) != 1:
+        parser.error("--apply requires exactly one --slug.")
+    if args.apply and not args.candidate:
+        parser.error("--apply requires the reviewed --candidate digest from candidates.json.")
+    if not args.apply and args.candidate:
+        parser.error("--candidate is only meaningful with --apply.")
+    if args.candidate and not re.fullmatch(r"[a-fA-F0-9]{12,64}", args.candidate):
+        parser.error("--candidate must be 12 to 64 hexadecimal SHA-256 characters.")
+    if args.max_candidates < 1:
+        parser.error("--max-candidates must be at least 1.")
+    if args.limit is not None and args.limit < 1:
+        parser.error("--limit must be at least 1.")
+    if args.timeout <= 0 or args.delay < 0:
+        parser.error("--timeout must be positive and --delay cannot be negative.")
 
     try:
-        csv_path = find_csv_path(root, args.area, args.csv_path)
+        csv_path = find_csv_path(root, args.area)
     except ValueError as exc:
         parser.error(str(exc))
 
-    # Default to the canonical asset folder, which mirrors the CSV path
-    # (`data/csv/jp/kansai/kyoto.csv` -> `/productores/jp/kansai/kyoto/`). Using
-    # the bare stem used to drop assets at the top level, outside the folder
-    # `check:images` expects.
-    default_asset_dir = (
-        csv_path.relative_to(root / "data" / "csv").with_suffix("").as_posix()
-    )
-    asset_dir = args.asset_dir or default_asset_dir
+    # The destination is always canonical and derived from the registry path.
+    asset_dir = csv_path.relative_to(root / "data" / "csv").with_suffix("").as_posix()
     output_dir = root / "public" / "productores" / asset_dir
-    fieldnames, rows = read_csv(csv_path)
+    try:
+        _, rows, original_csv_bytes, original_csv = read_csv(csv_path)
+    except ValueError as exc:
+        parser.error(str(exc))
     wanted_slugs = set(args.slug)
+    known_slugs = {clean_cell(row.get("slug")) for row in rows}
+    unknown_slugs = wanted_slugs - known_slugs
+    if unknown_slugs:
+        parser.error(f"unknown slug(s) in {args.area}: {', '.join(sorted(unknown_slugs))}")
+
+    if wanted_slugs and not args.replace:
+        already_filled = [
+            clean_cell(row.get("slug"))
+            for row in rows
+            if clean_cell(row.get("slug")) in wanted_slugs and clean_cell(row.get("imagen"))
+        ]
+        if already_filled:
+            parser.error(
+                f"slug(s) already have imagen: {', '.join(already_filled)}; inspect first and pass --replace explicitly"
+            )
+
+    sheet_dir: Path | None = None
+    if args.contact_sheet:
+        sheet_dir = Path(args.contact_sheet)
+        if not sheet_dir.is_absolute():
+            sheet_dir = root / sheet_dir
+        if sheet_dir.resolve().is_relative_to((root / "public").resolve()):
+            parser.error("contact sheets are review artifacts and cannot be written under public/.")
+        if sheet_dir.exists() and any(sheet_dir.iterdir()):
+            parser.error(f"contact-sheet directory must be empty: {sheet_dir}")
+
+    report_path: Path | None = None
+    if args.report:
+        report_path = Path(args.report)
+        if not report_path.is_absolute():
+            report_path = root / report_path
+        if report_path.resolve().is_relative_to((root / "public").resolve()):
+            parser.error("reports are review artifacts and cannot be written under public/.")
+
     report: list[dict[str, object]] = []
     digest_owners: dict[str, list[str]] = {}
     sheet_entries: list[tuple[str, str, Image.Image]] = []
@@ -1065,7 +1141,7 @@ def main() -> int:
     mode = "APPLY" if args.apply else "DRY RUN"
     print(f"{mode}: {csv_path.relative_to(root)} -> /productores/{asset_dir}/")
     if not args.apply:
-        print("No files will be written. Re-run with --apply to save selected images.")
+        print("No CSV or public assets will be written. Re-run with --apply to save one selected image.")
 
     for index, row in enumerate(rows, start=1):
         slug = clean_cell(row.get("slug"))
@@ -1078,9 +1154,15 @@ def main() -> int:
         if current_image and not args.replace:
             continue
         if not web_url.startswith(("http://", "https://")):
-            continue
-        if is_blocked_domain(web_url) and not args.allow_blocked_domains:
-            report.append({"slug": slug, "name": name, "status": "skipped-blocked-domain", "web": web_url})
+            if wanted_slugs:
+                row_report = {
+                    "slug": slug,
+                    "name": name,
+                    "web": web_url,
+                    "status": "missing-web",
+                }
+                report.append(row_report)
+                print(f"[{index}/{len(rows)}] {name} ({slug}): no usable web URL")
             continue
         if args.limit is not None and inspected >= args.limit:
             break
@@ -1103,8 +1185,7 @@ def main() -> int:
             time.sleep(args.delay)
             continue
 
-        selected = None
-        selected_below_floor = None
+        matching_candidates: list[tuple[dict[str, object], Image.Image]] = []
         candidate_count = 0
         for candidate in candidates:
             if candidate.score < args.threshold:
@@ -1113,69 +1194,76 @@ def main() -> int:
                 continue
 
             candidate_count += 1
-            if not args.apply and candidate_count > args.max_candidates:
+            if candidate_count > args.max_candidates:
                 break
 
-            if args.apply:
-                output_path = output_dir / f"{slug}.webp"
-                ok, info = process_candidate(candidate, output_path, args.timeout, page)
-                candidate_info = {**asdict(candidate), "ok": ok, **info}
-                row_report["candidates"].append(candidate_info)
-                print_candidate_summary(candidate_info)
-                if ok:
-                    row["imagen"] = public_image_path(asset_dir, slug)
-                    if candidate_info.get("source_below_floor"):
-                        selected_below_floor = candidate_info
-                        continue
+            candidate_info, preview = inspect_candidate(candidate, args.timeout, page)
+            row_report["candidates"].append(candidate_info)
+            print_candidate_summary(candidate_info)
+            digest = clean_cell(candidate_info.get("digest"))
 
-                    selected = candidate_info
-                    break
+            if args.contact_sheet and preview is not None:
+                sheet_entries.append(
+                    (
+                        f"{name} ({slug})",
+                        f"id={digest[:12]} {candidate.source} {candidate.subject} "
+                        f"{candidate_info['source_width']}x{candidate_info['source_height']} score={candidate.score}",
+                        preview,
+                    )
+                )
+
+            if args.apply and preview is not None and digest.startswith(args.candidate.lower()):
+                matching_candidates.append((candidate_info, preview))
+
+        selected = None
+        if args.apply and matching_candidates:
+            distinct_digests = {clean_cell(info.get("digest")) for info, _ in matching_candidates}
+            if len(distinct_digests) > 1:
+                print("  candidate prefix is ambiguous; use the full digest from candidates.json")
+                row_report["status"] = "ambiguous-candidate"
             else:
-                candidate_info, asset = inspect_candidate(candidate, args.timeout, page)
-                row_report["candidates"].append(candidate_info)
-                print_candidate_summary(candidate_info)
-                if args.contact_sheet and asset is not None:
-                    preview = compose_candidate(candidate, asset.image)
-                    if preview is not None:
-                        sheet_entries.append(
-                            (
-                                f"{name} ({slug})",
-                                f"{candidate.source} {candidate.subject} "
-                                f"{asset.image.width}x{asset.image.height} score={candidate.score}",
-                                preview,
-                            )
-                        )
-
-        if args.apply and selected is None and selected_below_floor is not None:
-            selected = selected_below_floor
-
-        if args.apply and selected is not None:
-            updated += 1
-            row_report["status"] = "updated"
-            row_report["selected"] = selected
-            print(f"  selected -> {row['imagen']}")
+                selected, selected_image = matching_candidates[0]
+                image_path = public_image_path(asset_dir, slug)
+                output_path = output_dir / f"{slug}.webp"
+                try:
+                    updated_csv = update_csv_image(original_csv, slug, image_path)
+                    write_selected_image(
+                        csv_path,
+                        original_csv_bytes,
+                        updated_csv,
+                        output_path,
+                        selected_image,
+                    )
+                except (OSError, RuntimeError, ValueError) as exc:
+                    print(f"  apply failed: {exc}")
+                    row_report["status"] = "failed"
+                    row_report["error"] = str(exc)
+                    selected = None
+                else:
+                    updated += 1
+                    row_report["status"] = "updated"
+                    row_report["selected"] = selected
+                    print(f"  selected {selected['digest'][:12]} -> {image_path}")
 
         if not row_report["candidates"]:
             print("  no acceptable candidates after filtering")
             row_report["status"] = "no-acceptable-candidates"
 
-        if args.apply and selected is None and row_report["candidates"]:
+        if args.apply and selected is None and row_report["status"] == "candidates":
+            print("  reviewed candidate was not found among the inspected candidates; nothing written")
             row_report["status"] = "failed"
 
         for candidate_info in row_report["candidates"]:
-            digest = candidate_info.get("digest")
+            digest = candidate_info.get("source_digest")
             if digest:
                 digest_owners.setdefault(digest, []).append(f"{name} ({slug})")
 
         report.append(row_report)
         time.sleep(args.delay)
 
-    # The 6d8c1fa purge found 130 junk assets by hashing what was already
-    # committed. The same signal is available before writing anything: one
-    # binary serving two unrelated producers is a plugin logo, a directory
-    # badge or an award seal far more often than a real shared brand. It is a
-    # warning rather than a veto because a wine group or a multi-site producer
-    # legitimately reuses one logo (Torres, Protos, Baluard).
+    # One binary served to unrelated producers is often a plugin, directory or
+    # award asset. It remains a review signal because groups and multi-site
+    # producers can legitimately share a brand.
     collisions = {digest: owners for digest, owners in digest_owners.items() if len(set(owners)) > 1}
     if collisions:
         print(f"\nWarning: {len(collisions)} image(s) served to more than one producer in this run.")
@@ -1185,27 +1273,25 @@ def main() -> int:
         if len(collisions) > 10:
             print(f"  ... {len(collisions) - 10} more (see --report)")
 
-    if sheet_entries:
-        sheet_dir = Path(args.contact_sheet)
-        if not sheet_dir.is_absolute():
-            sheet_dir = root / sheet_dir
-        written = write_contact_sheets(sheet_entries, sheet_dir)
+    if sheet_dir is not None:
+        written = write_contact_sheets(sheet_entries, sheet_dir) if sheet_entries else []
+        sheet_dir.mkdir(parents=True, exist_ok=True)
+        candidate_report = sheet_dir / "candidates.json"
+        candidate_report.write_text(
+            json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
         print(f"\n{len(sheet_entries)} candidate(s) rendered to {len(written)} sheet(s) in {sheet_dir}")
+        print(f"Candidate digests and source URLs: {candidate_report}")
         print("Review them before --apply.")
 
-    if args.apply and updated:
-        write_csv(csv_path, fieldnames, rows)
-
-    if args.report:
-        report_path = Path(args.report)
-        if not report_path.is_absolute():
-            report_path = root / report_path
+    if report_path is not None:
         report_path.parent.mkdir(parents=True, exist_ok=True)
         report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"Report written to {report_path.relative_to(root)}")
+        print(f"Report written to {report_path}")
 
     print(f"Done. inspected={inspected} updated={updated}")
-    return 0
+    return 1 if args.apply and updated != 1 else 0
 
 
 if __name__ == "__main__":

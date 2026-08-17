@@ -51,3 +51,6 @@ __pycache__/
 
 # local temp files
 .tmp/
+/tmp/
+/scratch/
+/verified_clean_pool_round*.json

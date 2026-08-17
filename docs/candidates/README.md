@@ -44,11 +44,42 @@ indícalo; no lo completes por intuición. Un candidato anotado se considera
 pendiente, por lo que no necesita
 una tabla de estados.
 
+### Hallazgos incidentales
+
+No deseches un productor plausible y bien identificado solo porque aparezca
+fuera de la categoría o del área que acota la búsqueda actual. Tras comprobar
+que no está ya publicado, anótalo en el fichero del área geográfica que le
+corresponde —créalo si no existe— con la fuente, la fecha, su categoría, el
+motivo de encaje y lo que falte verificar. Márcalo como hallazgo incidental para
+que no se confunda con el alcance revisado del lote actual: pasa a un lote
+posterior de su área y no amplía ni bloquea el que está en curso.
+
+Si ya conoces el área correcta, trasladar allí el hallazgo no es un
+`reject:other-area`: usa ese rechazo solo cuando se haya evaluado y descartado
+una atribución concreta al área de origen. Si todavía falta resolver el área,
+consérvalo temporalmente en la nota donde apareció como `ubicación por
+resolver`, con la fuente y las pistas geográficas disponibles; muévelo cuando
+se aclare y no inventes su destino.
+
+El mismo criterio se aplica a los datos de una fila. Si una fuente abierta para
+el objetivo del lote confirma directamente otro campo útil del mismo productor
+—por ejemplo web, red social, contacto, dirección, coordenadas, productos,
+categoría o canal de venta—, actualiza el CSV y la evidencia que corresponda en
+el mismo cambio. Hazlo solo cuando la identidad esté bien casada y el dato sea
+explícito, respetando el contrato específico de cada campo. No abras búsquedas
+adicionales solo para completar campos vecinos; el aprovechamiento debe ser
+natural y acotado. Si el dato contradice el catálogo, resuelve la contradicción
+porque sí afecta a la corrección.
+
+Si el productor ya tiene un `keep`, actualiza ese registro en su línea actual y
+conserva las fuentes que sigan siendo relevantes; no añadas un segundo registro
+para el mismo `slug`.
+
 ## Flujo
 
 1. Descubre desde registros, organismos, directorios o fuentes públicas
    identificables; nunca desde memoria ni nombres plausibles.
-2. Deduplica antes de investigar con `npx pnpm list:area <area>` y búsquedas
+2. Deduplica antes de investigar con `npx pnpm list:producers <area>` y búsquedas
    dirigidas por nombre, marca, razón social, dominio, dirección o contacto.
 3. Verifica los criterios de `docs/EDITORIAL_POLICY.md` y los datos exigidos por
    `docs/CSV_CONTRACT.md`. Una fuente sostiene solo lo que realmente publica.
@@ -61,6 +92,11 @@ una tabla de estados.
      evidencia del área, y elimina la anotación.
    - **No resuelto:** déjalo en candidatos, indicando qué falta comprobar y la
      fecha del último intento.
+
+La cobertura de evidencia no bloquea el catálogo. En una pasada activa procura
+que la procedencia sobreviva al cierre: antes de podar un candidato aceptado o
+descartado, registra su decisión y sus fuentes; si todavía no puedes hacerlo con
+seguridad, conserva la anotación.
 
 No conviertas falta de resultados, una web inaccesible o evidencia insuficiente
 en descarte. `reject` exige una exclusión afirmativamente demostrada; `purge`

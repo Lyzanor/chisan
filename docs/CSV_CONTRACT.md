@@ -42,8 +42,9 @@ data/csv/<country>/<region>/<area>.csv
 
 ## Canonical header
 
-Every area CSV has exactly these 21 columns in this order. New columns are
-appended so existing field positions remain stable:
+Every area CSV has every column in the canonical header below, in this order.
+The column count is not a stable part of the contract: new columns may be
+appended so existing field positions remain stable.
 
 ```text
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
@@ -51,6 +52,14 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 
 All columns are physically present in every file. “Optional” below means that a
 cell may be empty, never that its column may be omitted.
+
+A schema widening is one atomic repository-wide change: update this header and
+the row schema, its machine-readable mirror in `scripts/audit-csv.js`, and
+every file under `data/csv/**` plus the contract fixtures. Update named
+consumers when the new field affects their behavior, then run
+`npx pnpm verify:ai`. The gate must reject a partial migration, but no
+documentation, error message or test should treat the current column count as
+permanent.
 
 Files must be valid CSV, UTF-8 without BOM, with LF line endings. Quote commas,
 quotes and line breaks using standard CSV escaping. Do not pad cells with
@@ -73,7 +82,7 @@ whitespace.
 | `web` | optional | Official producer HTTP(S) URL. |
 | `Facebook` | optional | Official producer Facebook profile/page HTTP(S) URL. |
 | `Instagram` | optional | Official producer Instagram profile HTTP(S) URL. |
-| `Google Maps` | optional | Canonical HTTP(S) Google Maps listing or exact reviewed location pin for the producer or productive unit. |
+| `Google Maps` | optional | Canonical HTTP(S) Google Maps listing, anchored by a reviewed Place ID, for the producer or productive unit. |
 | `lat` | paired | WGS84 latitude in decimal degrees, between `-90` and `90`. |
 | `lon` | paired | WGS84 longitude in decimal degrees, between `-180` and `180`. |
 | `imagen` | optional | Root-relative path to a local public image asset. |
@@ -226,16 +235,25 @@ must be valid HTTP(S) URLs and refer to the row's producer:
   network home, explore view or post permalink.
 - `Google Maps` must use a recognized Google Maps host and resolve to the
   producer or productive unit. The canonical form is
-  `https://www.google.com/maps/search/?api=1&query=<lat>%2C<lon>&query_place_id=<PLACE_ID>`
-  for a reviewed listing, or the same URL without `query_place_id` for an exact
-  reviewed coordinate with no matching listing. Text-only searches, shortened
-  `maps.app.goo.gl` links and copied interface URLs are advisory migration
-  warnings rather than blocking errors; do not add them to new or reviewed rows.
+  `https://www.google.com/maps/search/?api=1&query=<NAME>%2C<ADDRESS>&query_place_id=<PLACE_ID>`
+  for a reviewed listing. The query is the required fallback; the Place ID is
+  what anchors the URL to the accepted listing. Coordinate-only or text-only
+  searches, shortened `maps.app.goo.gl` links and copied interface URLs are
+  advisory migration warnings rather than blocking errors; do not add them to
+  new or reviewed rows. When the represented unit has no matching listing,
+  leave `Google Maps` empty and retain its reviewed position only in `lat`/`lon`.
 
-`direccion`, `lat`/`lon` and `Google Maps` must identify the same unit and role.
-Leave `Google Maps` empty for a centroid, locality-only or otherwise approximate
-point. Constructing a textual Maps search does not establish that its current
-result belongs to the producer.
+Prefer a link cross-published by the producer. Without a direct cross-link,
+retain it only when enough distinctive identity details agree, such as domain,
+address, phone, email or productive location. A matching name or a live
+HTTP response alone is not ownership; when the match remains ambiguous, leave
+the field empty.
+
+`direccion`, `lat`/`lon` and any `Google Maps` listing must identify the same
+unit and role. Leave `Google Maps` empty when that unit has no reviewed listing,
+including when `lat`/`lon` are exact, and for a centroid, locality-only or
+otherwise approximate point. Constructing a coordinate or textual Maps search
+does not establish that its current result belongs to the producer.
 
 Syntax, an HTTP response or a directory listing does not establish ownership,
 activity or online sales.
@@ -249,9 +267,11 @@ activity or online sales.
 - preferably use the canonical path
   `/productores/<country>/<region>/<area>/<slug>.webp`.
 
-`npx pnpm check:images` blocks unsafe, unsupported or missing assets and warns
-on non-canonical paths, stems or dimensions. Visual sourcing and preparation
-live in `docs/IMAGES.md`.
+`npx pnpm check:images` blocks unsafe, unsupported, missing or unrecognizable
+assets and warns on non-canonical paths, stems, dimensions, content/extension
+mismatches and excessive file size. It also reports legacy coverage and
+duplicate hashes for visual review. Visual sourcing and preparation live in
+`docs/IMAGES.md`.
 
 ## Producer identity
 
@@ -270,13 +290,21 @@ live in `AGENTS.md`.
 `npx pnpm check:csv` blocks publication for physical-schema errors, missing core
 values, invalid controlled values or formats, duplicate area-local slugs,
 invalid primary or additional categories, incoherent field combinations and
-geographic mismatches above `100 km`.
+geographic mismatches above `100 km`. The same pass emits non-blocking integrity
+warnings for unusable social-profile links, non-canonical Google Maps links and
+coordinates in the `15–100 km` review band.
 
-`npx pnpm check:csv:data-quality` is an advisory defect worklist. It reports
-probable social-link errors, duplicate `nombre + municipio`, duplicated long
-descriptions, category drift and coordinates in the `15–100 km` band. Empty
-optional fields and short descriptions are counted as suppressed gaps, not
-warnings: incompleteness is valid and must not be “fixed” with weak data.
+The full and changed-only runs load shared references once and report the scope
+that was actually checked: total rows, rows with and without coordinates,
+municipio-centroid matches, skipped lookups and coordinates copied from a
+centroid. A green result proves contract consistency, not geographic coverage
+or exactness. Run the command with one CSV or directory path for detailed
+warnings in that scope.
+
+`npx pnpm check:defects` owns the advisory editorial worklist: probable duplicate
+identities and descriptions, category drift, unresolved sales and other defects
+that require cross-row context or judgement. Empty optional fields and short
+descriptions are valid and are not reported as gaps.
 
 Neither audit verifies source quality, producer eligibility, current activity,
 link ownership or the truth of a value.
@@ -297,7 +325,8 @@ Use:
 
 ```bash
 npx pnpm check:csv                 # blocking contract, all CSVs
-npx pnpm check:csv:data-quality    # advisory data defects
+npx pnpm check:csv:changed         # same checks, changed CSVs only
+npx pnpm check:defects             # advisory editorial worklist
 npx pnpm check:images              # image field and assets
 npx pnpm verify:data               # data/reference/evidence/image change
 npx pnpm verify:ai                 # contract, validator or behavior change

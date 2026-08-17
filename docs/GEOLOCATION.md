@@ -104,6 +104,22 @@ La puntuación ordena candidatos; no los aprueba. Un `poi` con el nombre correct
 puede ser una tienda, y una coincidencia perfecta de calle y número puede ser la
 sede de una sociedad que produce en otro lugar.
 
+### Estado de una pasada
+
+No describas una geolocalización como `completa` sin precisar su alcance:
+
+- `revisada`: cada fila terminó clasificada con una precisión de trabajo o como
+  `sin-fuente`, aunque pueda seguir sin coordenadas;
+- `cubierta`: todas las filas tienen `lat`/`lon`, incluidas las que conservan un
+  punto aproximado `localidad` o `centroide`;
+- `exacta`: todas las filas representan una unidad productiva aceptada con
+  precisión `publicada`, `direccion` o `poi`; no quedan aproximaciones ni
+  `sin-fuente`.
+
+Una pasada puede estar revisada y cubierta sin ser exacta. Informa siempre del
+estado junto con los recuentos de coordenadas vacías, fallbacks y revisiones
+omitidas por falta de referencia municipal.
+
 ## Decisión de aceptación
 
 Acepta un candidato exacto solo cuando coincidan el país y el área, el
@@ -146,22 +162,25 @@ Publica el enlace según el resultado aceptado:
 
 | Resultado de la revisión | Valor de `Google Maps` |
 |---|---|
-| POI de Google contrastado con la unidad | URL canónica con `query_place_id`. |
-| Sin ficha de Google, pero con coordenadas exactas de precisión `publicada`, `direccion` o `poi` | URL canónica con `query=lat,lon`, sin atribuir a Google la procedencia del punto. |
-| Punto `interpolada`, `localidad` o `centroide`, rol dudoso o identidad no resuelta | Vacío. |
+| Ficha de Google contrastada con la unidad | URL canónica con nombre/dirección y `query_place_id`. |
+| Sin ficha propia de la unidad, aunque haya coordenadas exactas | Vacío; conserva `lat`/`lon` para el mapa de KM0. |
+| Ficha de una tienda, oficina u otra unidad distinta; rol dudoso o identidad no resuelta | Vacío. |
 
 Usa una [Maps URL](https://developers.google.com/maps/documentation/urls/get-started)
 universal y codificada:
 
 ```text
-https://www.google.com/maps/search/?api=1&query=<lat>%2C<lon>&query_place_id=<PLACE_ID>
-https://www.google.com/maps/search/?api=1&query=<lat>%2C<lon>
+https://www.google.com/maps/search/?api=1&query=<NOMBRE>%2C<DIRECCION>&query_place_id=<PLACE_ID>
 ```
 
-La primera forma abre la ficha aceptada y conserva el punto revisado como
-fallback; la segunda abre un pin sin afirmar que exista una ficha del productor.
-El `query=lat,lon` copia las coordenadas aceptadas de la fila, no otro punto
-aproximado obtenido durante la búsqueda.
+`query_place_id` es el ancla que abre la ficha aceptada; `query` es obligatorio y
+solo actúa como fallback si Google deja de resolver ese identificador. Incluye el
+nombre público y, cuando ayude a desambiguar, la dirección o el municipio. Un
+`query=lat,lon` sin Place ID abre únicamente un pin y no demuestra ni muestra la
+ficha del productor: no lo publiques en `Google Maps`, aunque el punto sea
+exacto. La posición sigue perteneciendo a `lat`/`lon` y el mapa interno la puede
+usar sin convertirla en un enlace externo.
+
 Una búsqueda textual construida con nombre o dirección es solo una consulta de
 revisión: aunque hoy devuelva el candidato esperado, no fija un resultado y no
 debe publicarse como ubicación resuelta. Tampoco uses como forma canónica enlaces
@@ -182,6 +201,19 @@ Los Place IDs pueden almacenarse y reutilizarse, pero Google recomienda
 La renovación vuelve a pasar por revisión editorial: un identificador obsoleto,
 un traslado o una ficha fusionada no autorizan a aceptar automáticamente el
 nuevo resultado.
+
+Los enlaces heredados sin Place ID forman una cola de migración, no una fuente
+de fichas. Localízalos por país o área con:
+
+```bash
+npx pnpm check:defects --check maps-sin-ficha --country <iso> --list
+npx pnpm check:defects --check maps-sin-ficha --area <area> --list
+```
+
+Para cada fila, sustituye el enlace solo después de abrir y contrastar una ficha
+de la misma unidad. Si no existe, vacía `Google Maps` y conserva las coordenadas
+correctas; no enlaces una tienda para evitar dejar el campo vacío. Registra la
+revisión en evidencia cuando resuelva o cambie una decisión publicada.
 
 ## Fallback municipal
 
@@ -259,6 +291,12 @@ seguro que `enrich:images`:
 - **benchmark**: ocultar coordenadas conocidas y medir por país acierto de
   municipio, dirección, distancia y falsos positivos antes de adoptar un motor.
 
+Ese límite afecta a la aplicación automática. Durante la revisión humana se
+puede incorporar un dato incidental que la fuente ya abierta confirme de forma
+directa, siguiendo el flujo general de `AGENTS.md` y dejando la procedencia que
+corresponda. El geocodificador no debe recolectar ni aplicar automáticamente
+campos vecinos.
+
 La cola debe distinguir `direccion`, `poi`, `localidad`, `centroide` y
 `sin-fuente`. La ausencia de coordenadas es una señal de cobertura, no un defecto
 automático: algunas filas terminarán correctamente vacías.
@@ -275,10 +313,13 @@ del informe.
 
 1. Revisa la identidad y dirección productiva de cada `slug` aceptado.
 2. Comprueba el diff: las coordenadas no deben arrastrar cambios de otros campos
-   salvo una corrección editorial justificada.
+   salvo una corrección editorial o un enriquecimiento incidental explícito y
+   justificado.
 3. Ejecuta `npx pnpm check:csv:changed` durante la iteración.
 4. Si se añadió evidencia, ejecuta `npx pnpm check:evidence:changed`.
 5. Cierra el lote con `npx pnpm verify:data`.
 
 Lee siempre los recuentos de fallbacks y municipios omitidos. Un resultado verde
 demuestra coherencia estructural, no cobertura completa ni posición exacta.
+Declara el cierre como `revisada`, `cubierta` o `exacta` según las definiciones
+anteriores.

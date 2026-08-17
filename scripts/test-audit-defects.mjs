@@ -13,6 +13,7 @@ import {
   CATEGORY_MARKERS,
   CHECKS,
   filterAreas,
+  findCategoryVariants,
   loadCategoryVariants,
   loadCrossTemplate,
   templateShape,
@@ -72,11 +73,67 @@ test("a row is off the map only when both coordinate cells are empty", () => {
 });
 
 test("published falsehood is always a cola", () => {
-  for (const id of ["sinteticas", "pendiente", "evidencia-prestada", "web-de-tercero"]) {
+  for (const id of [
+    "sinteticas",
+    "pendiente",
+    "evidencia-prestada",
+    "maps-sin-ficha",
+    "web-de-tercero",
+    "identidad-duplicada",
+    "descripcion-duplicada",
+  ]) {
     const check = CHECKS.find((c) => c.id === id);
     assert.ok(check, `missing check ${id}`);
     assert.equal(check.kind, "cola", `${id} must count as workload`);
   }
+});
+
+test("coordinate-only Maps links enter the listing migration queue", () => {
+  const check = CHECKS.find((candidate) => candidate.id === "maps-sin-ficha");
+  const rows = [
+    {
+      slug: "solo-pin",
+      "Google Maps": "https://www.google.com/maps/search/?api=1&query=41.51%2C1.90",
+    },
+    {
+      slug: "con-ficha",
+      "Google Maps":
+        "https://www.google.com/maps/search/?api=1&query=Masia&query_place_id=ChIJexample",
+    },
+    { slug: "vacio", "Google Maps": "" },
+  ];
+  assert.deepEqual(
+    check.run({ rows }).map((row) => row.slug),
+    ["solo-pin"],
+  );
+});
+
+test("duplicate identity is normalized within one area", () => {
+  const check = CHECKS.find((candidate) => candidate.id === "identidad-duplicada");
+  const rows = [
+    { slug: "a", nombre: "Masía Única", municipio: "León" },
+    { slug: "b", nombre: "masia unica", municipio: "Leon" },
+    { slug: "c", nombre: "Masía Única", municipio: "Astorga" },
+  ];
+  assert.deepEqual(
+    check.run({ rows }).map((row) => row.slug),
+    ["a", "b"],
+  );
+});
+
+test("only duplicated long descriptions enter the editorial queue", () => {
+  const check = CHECKS.find((candidate) => candidate.id === "descripcion-duplicada");
+  const shared = "Descripción suficientemente larga y propia del productor";
+  const rows = [
+    { slug: "a", descripcion: shared },
+    { slug: "b", descripcion: shared.toLowerCase() },
+    { slug: "c", descripcion: "Texto corto" },
+    { slug: "d", descripcion: "Texto corto" },
+  ];
+  assert.deepEqual(
+    check.run({ rows }).map((row) => row.slug),
+    ["a", "b"],
+  );
 });
 
 test("country and area scopes select only their live workset", () => {
@@ -138,6 +195,29 @@ test("the migration queue inspects additional categories", () => {
       .map((row) => row.slug),
     ["multi"],
   );
+});
+
+test("category variants fold plurals and keep the majority spelling", () => {
+  const variants = findCategoryVariants(
+    new Map([
+      ["Carne", 20],
+      ["Carnes", 3],
+      ["Vino", 10],
+    ]),
+  );
+  assert.deepEqual([...variants], ["Carnes"]);
+});
+
+test("category variants identify minority combo labels", () => {
+  const variants = findCategoryVariants(
+    new Map([
+      ["Aceite", 20],
+      ["Vino", 30],
+      ["Aceite y vino", 2],
+      ["Fruta y verdura", 15],
+    ]),
+  );
+  assert.deepEqual([...variants], ["Aceite y vino"]);
 });
 
 // Cross-template detection, on synthetic rows only: hardcoding real producers

@@ -5,12 +5,39 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
+import csvAudit from "./audit-csv.js";
 import { auditEvidence } from "./check-evidence.mjs";
 
-const HEADER =
-  "slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales";
-const ROW =
-  "productor-uno,Productor Uno,Abrera,Vino,Vino,Carrer Major 1,Productor sintético para probar el contrato,,+34600000000,uno@example.com,https://example.com,,,https://www.google.com/maps/place/Uno,41.5,1.9,,verificado,sí,ecommerce,";
+const { CANONICAL_HEADER } = csvAudit;
+const FORWARD_COMPATIBILITY_COLUMN = "future optional field";
+const ROW_FIELDS = {
+  slug: "productor-uno",
+  nombre: "Productor Uno",
+  municipio: "Abrera",
+  categoria: "Vino",
+  "productos estrella": "Vino",
+  direccion: "Carrer Major 1",
+  descripcion: "Productor sintético para probar el contrato",
+  telefono: "+34600000000",
+  correo: "uno@example.com",
+  web: "https://example.com",
+  "Google Maps": "https://www.google.com/maps/place/Uno",
+  lat: "41.5",
+  lon: "1.9",
+  verificacion: "verificado",
+  "Venta online": "sí",
+  "Canal de venta": "ecommerce",
+  [FORWARD_COMPATIBILITY_COLUMN]: "ignored safely",
+};
+
+function csvCell(value) {
+  const text = String(value ?? "");
+  return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+}
+
+const FIXTURE_HEADER = [...CANONICAL_HEADER, FORWARD_COMPATIBILITY_COLUMN];
+const HEADER = FIXTURE_HEADER.map(csvCell).join(",");
+const ROW = FIXTURE_HEADER.map((column) => csvCell(ROW_FIELDS[column])).join(",");
 
 function writeLedger(filePath, records) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });

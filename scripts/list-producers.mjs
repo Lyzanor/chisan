@@ -5,25 +5,18 @@
 // loading the whole CSV into context.
 //
 // Usage:
-//   node scripts/list-area.js cuenca
-//   node scripts/list-area.js data/csv/es/castilla-la-mancha/cuenca.csv
-//   node scripts/list-area.js cuenca --categoria "Vino"
-//   node scripts/list-area.js cuenca --pending
+//   node scripts/list-producers.mjs cuenca
+//   node scripts/list-producers.mjs data/csv/es/castilla-la-mancha/cuenca.csv
+//   node scripts/list-producers.mjs cuenca --categoria "Vino"
+//   node scripts/list-producers.mjs cuenca --pending
 
-let fs;
-let path;
-let parse;
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-async function loadDependencies() {
-  const [fsMod, pathMod, csvParse] = await Promise.all([
-    import("node:fs"),
-    import("node:path"),
-    import("csv-parse/sync"),
-  ]);
-  fs = fsMod;
-  path = pathMod;
-  parse = csvParse.parse;
-}
+import { parse } from "csv-parse/sync";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function cleanCell(value) {
   return String(value ?? "").replace(/\s+/g, " ").trim();
@@ -89,15 +82,13 @@ function resolveCsvPath(csvRoot, target) {
   return matches.length === 1 ? matches[0] : matches.length > 1 ? matches : null;
 }
 
-async function main() {
-  await loadDependencies();
-
+function main() {
   const csvRoot = path.join(__dirname, "..", "data", "csv");
   const { target, category, onlyPending } = parseArgs(process.argv.slice(2));
 
   if (!target) {
     console.error(
-      "Usage: node scripts/list-area.js <area|path> [--category X|--categoria X] [--pending|--pendientes]",
+      "Usage: node scripts/list-producers.mjs <area|path> [--category X|--categoria X] [--pending|--pendientes]",
     );
     process.exit(1);
   }
@@ -163,7 +154,9 @@ async function main() {
   for (const line of lines) console.log(line);
 }
 
-main().catch((error) => {
+try {
+  main();
+} catch (error) {
   console.error(error);
   process.exit(1);
-});
+}

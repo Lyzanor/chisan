@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-// Exact 21-column header shared by all area CSVs, in this order.
-// Documented in docs/CSV_CONTRACT.md, section "Canonical header".
-const CANONICAL_HEADER = [
+// Shared by every area CSV, in this order. Its length may grow through the
+// repository-wide migration documented in docs/CSV_CONTRACT.md.
+const CANONICAL_HEADER = Object.freeze([
   "slug",
   "nombre",
   "municipio",
@@ -24,9 +24,8 @@ const CANONICAL_HEADER = [
   "Venta online",
   "Canal de venta",
   "categorias adicionales",
-];
+]);
 
-const DESCRIPTION_MIN_LENGTH = 30;
 // Controlled values are matched exactly, not case/diacritic folded: the CSVs are
 // the product surface, so 'Sí' or 'VERIFICADO' are drift to fix, not variants to
 // accept silently.
@@ -62,6 +61,9 @@ const CENTROID_BLOCKING_DISTANCE_KM = 100;
 const CENTROID_FALLBACK_TOLERANCE_DEG = 1e-5;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipalities.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipality-overrides.json";
+const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const COUNTRY_PATTERN = /^[a-z]{2}$/;
+const COUNTRY_GUIDE_HEADINGS = ["## Operating state", "## Country rules", "## Source ceilings"];
 let PREFERRED_CATEGORY_ALIASES = new Map();
 let VALID_CATEGORIES = new Set();
 // Labels the 2026-06-21 consolidation folded into another one, mapped to their
@@ -70,87 +72,52 @@ let VALID_CATEGORIES = new Set();
 // only as a contract error. See docs/CSV_CONTRACT.md § Categories.
 let RETIRED_CATEGORIES = new Map();
 
-const MAP_ADDRESS_HINT_KEYWORDS = [
-  "avinguda",
-  "avenida",
-  "avda",
-  "cami",
-  "calle",
-  "carrer",
-  "carretera",
-  "ctra",
-  "disseminat",
-  "finca",
-  "hostal",
-  "lonja",
-  "masia",
-  "mercabarna",
-  "paratge",
-  "passatge",
-  "passeig",
-  "placa",
-  "plaza",
-  "poligon",
-  "ronda",
-  "travessera",
-  "urbanizacion",
-  "urbanitzacio",
-];
-const MAP_ADDRESS_PLACEHOLDER_MARKERS = [
-  "adreca no publica",
-  "contacte",
-  "contacto",
-  "distribucion",
-  "distribucio",
-  "nomada",
-  "no publica",
-  "servei a domicili",
-  "servicio por encargo",
-  "sin local fijo",
-  "sin local abierto al publico",
-  "venta ambulante",
-  "venta online",
-];
+function usage() {
+  console.log(`Usage: node scripts/audit-csv.js <csv-or-directory> [...]
+       node scripts/audit-csv.js --all
+       node scripts/audit-csv.js --changed
+       node scripts/audit-csv.js --registry <csv-root>
+
+Scopes:
+  --all       Audit every area CSV and the country/region/area registry.
+  --changed   Audit CSVs changed against HEAD and the current registry.
+  --registry  Audit only a country/region/area registry (mainly useful for tests).
+  -h, --help  Show this help.`);
+}
 
 function parseArgs(argv, resolvePath) {
-  let mode = "quality";
-  let csvPath = "data/csv/es/catalunya/barcelona.csv";
-  let summaryOnly = false;
+  let all = false;
+  let changed = false;
+  let registry = null;
+  let help = false;
+  const targets = [];
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
 
-    if (arg === "--mode" && argv[index + 1]) {
-      mode = argv[index + 1];
-      index += 1;
-      continue;
-    }
-
-    if (arg.startsWith("--mode=")) {
-      mode = arg.slice("--mode=".length);
-      continue;
-    }
-
-    if (arg === "--summary-only") {
-      summaryOnly = true;
-      continue;
-    }
-
-    if (!arg.startsWith("--")) {
-      csvPath = arg;
+    if (arg === "--all") {
+      all = true;
+    } else if (arg === "--changed") {
+      changed = true;
+    } else if (arg === "--registry") {
+      const registryPath = argv[++index];
+      if (!registryPath) throw new Error("--registry requires a CSV root path");
+      registry = resolvePath(registryPath);
+    } else if (arg === "--help" || arg === "-h") {
+      help = true;
+    } else if (arg.startsWith("--")) {
+      throw new Error(`unknown argument '${arg}'`);
+    } else {
+      targets.push(resolvePath(arg));
     }
   }
 
-  if (mode !== "contract" && mode !== "quality") {
-    console.error(`Error: unsupported mode '${mode}'. Use 'contract' or 'quality'.`);
-    process.exit(1);
+  const scopes = Number(all) + Number(changed) + Number(Boolean(registry)) + Number(targets.length > 0);
+  if (!help && scopes !== 1) {
+    throw new Error("choose exactly one scope: --all, --changed, or one or more paths");
   }
 
-  return {
-    mode,
-    csvPath: resolvePath(csvPath),
-    summaryOnly,
-  };
+  return { all, changed, registry, help, targets };
 }
 
 let dependenciesPromise;
@@ -168,18 +135,150 @@ async function getDependencies() {
     dependenciesPromise = Promise.all([
       import("node:fs"),
       import("node:path"),
+      import("node:child_process"),
       import("csv-parse/sync"),
-    ]).then(([fs, path, csvParse]) => {
+    ]).then(([fs, path, childProcess, csvParse]) => {
       loadCategoryConfig(fs, path);
       return {
         fs,
         path,
+        execFileSync: childProcess.execFileSync,
         parse: csvParse.parse,
       };
     });
   }
 
   return dependenciesPromise;
+}
+
+function directoryNames(fs, parent) {
+  return fs
+    .readdirSync(parent, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+}
+
+async function auditAreaRegistry(root = "data/csv") {
+  const { fs, path } = await getDependencies();
+  const registryRoot = path.resolve(root);
+  const errors = [];
+  const areas = new Map();
+
+  if (!fs.existsSync(registryRoot)) {
+    return { registryRoot, areas: 0, errors: [`Area registry not found: ${registryRoot}`] };
+  }
+
+  for (const country of directoryNames(fs, registryRoot)) {
+    if (!COUNTRY_PATTERN.test(country)) {
+      errors.push(`country '${country}' must be a lowercase ISO alpha-2 slug`);
+    }
+
+    const countryDir = path.join(registryRoot, country);
+    const countryGuidePath = path.join(countryDir, "AGENTS.md");
+    if (!fs.existsSync(countryGuidePath)) {
+      errors.push(`country '${country}' must contain AGENTS.md`);
+    } else {
+      const headings = fs
+        .readFileSync(countryGuidePath, "utf8")
+        .split(/\r?\n/)
+        .filter((line) => line.startsWith("## "));
+      if (JSON.stringify(headings) !== JSON.stringify(COUNTRY_GUIDE_HEADINGS)) {
+        errors.push(
+          `country guide '${country}/AGENTS.md' must use exactly: ${COUNTRY_GUIDE_HEADINGS.join(", ")}`,
+        );
+      }
+    }
+
+    for (const region of directoryNames(fs, countryDir)) {
+      if (!SLUG_PATTERN.test(region)) {
+        errors.push(`region '${country}/${region}' must be lowercase ASCII kebab-case`);
+      }
+
+      const regionDir = path.join(countryDir, region);
+      for (const file of fs.readdirSync(regionDir).sort()) {
+        if (!file.endsWith(".csv")) continue;
+
+        const area = file.slice(0, -4);
+        const relativePath = path.join(country, region, file);
+        if (!SLUG_PATTERN.test(area)) {
+          errors.push(`area '${relativePath}' must be lowercase ASCII kebab-case`);
+        }
+
+        const previous = areas.get(area);
+        if (previous) {
+          errors.push(
+            `area slug '${area}' is global and duplicated by '${previous}' and '${relativePath}'`,
+          );
+        } else {
+          areas.set(area, relativePath);
+        }
+      }
+    }
+  }
+
+  return { registryRoot, areas: areas.size, errors };
+}
+
+function printRegistryReport(result) {
+  if (result.errors.length > 0) {
+    console.error("Area registry contract failed");
+    for (const error of result.errors) console.error(`- ${error}`);
+    return false;
+  }
+  console.log(`Area registry contract OK (${result.areas} areas)`);
+  return true;
+}
+
+function walkCsvFiles(fs, path, target) {
+  if (!fs.existsSync(target)) throw new Error(`path not found: ${target}`);
+  const stat = fs.statSync(target);
+  if (stat.isFile()) {
+    if (!target.endsWith(".csv")) throw new Error(`not a CSV file: ${target}`);
+    return [target];
+  }
+  if (!stat.isDirectory()) throw new Error(`unsupported path: ${target}`);
+
+  const files = [];
+  for (const entry of fs.readdirSync(target, { withFileTypes: true })) {
+    const child = path.join(target, entry.name);
+    if (entry.isDirectory()) files.push(...walkCsvFiles(fs, path, child));
+    else if (entry.isFile() && entry.name.endsWith(".csv")) files.push(child);
+  }
+  return files.sort();
+}
+
+function changedCsvFiles(fs, path, execFileSync, root) {
+  const files = new Set();
+  const collect = (args) => {
+    let output = "";
+    try {
+      output = execFileSync("git", args, {
+        cwd: root,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      });
+    } catch {
+      return;
+    }
+    for (const relative of output.split(/\r?\n/).filter(Boolean)) {
+      const absolute = path.join(root, relative);
+      if (relative.endsWith(".csv") && fs.existsSync(absolute)) files.add(absolute);
+    }
+  };
+
+  collect(["diff", "--name-only", "--diff-filter=ACMR", "--", "data/csv"]);
+  collect(["diff", "--name-only", "--diff-filter=ACMR", "--cached", "--", "data/csv"]);
+  collect(["ls-files", "--others", "--exclude-standard", "--", "data/csv"]);
+  return [...files].sort();
+}
+
+async function resolveCsvFiles(args) {
+  const { fs, path, execFileSync } = await getDependencies();
+  const root = path.resolve(__dirname, "..");
+  if (args.all) return walkCsvFiles(fs, path, path.join(root, "data", "csv"));
+  if (args.changed) return changedCsvFiles(fs, path, execFileSync, root);
+  return [...new Set(args.targets.flatMap((target) => walkCsvFiles(fs, path, target)))].sort();
 }
 
 function cleanCell(value) {
@@ -201,17 +300,6 @@ function normalizeSearch(value) {
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
-}
-
-// Grouping key for the near-duplicate category warning. `normalizeSearch` only
-// folds case and accents, so `Carne` and `Carnes` sitting in the same CSV never
-// tripped it. Strip a trailing `s` per word and they collapse; stripping `es`
-// too would turn `carnes` into `carn` and lose the pair this exists for.
-function categoryStem(value) {
-  return normalizeSearch(value)
-    .split(" ")
-    .map((word) => word.replace(/s$/, ""))
-    .join(" ");
 }
 
 function readAdditionalCategories(value) {
@@ -343,10 +431,16 @@ function googleMapsQualityWarnings(url) {
   }
   if (!cleanCell(query)) {
     warnings.push("search URL must include a non-empty query");
-  } else if (!placeId && !isCoordinateMapsQuery(query)) {
-    warnings.push(
-      "textual search has no query_place_id and does not anchor a specific place",
-    );
+  } else if (!placeId) {
+    if (isCoordinateMapsQuery(query)) {
+      warnings.push(
+        "coordinate-only link opens a pin, not a producer listing; leave Google Maps empty unless a matching query_place_id is verified",
+      );
+    } else {
+      warnings.push(
+        "textual search has no query_place_id and does not anchor a specific place",
+      );
+    }
   }
 
   return warnings;
@@ -545,53 +639,11 @@ function describeCentroidGap(centroids, scope, lat, lon, declared, distance, lim
   return `lat/lon is ${distance.toFixed(1)} km from ${declared.label} centroid (threshold ${limitKm} km)${nearestNote}`;
 }
 
-function hasUsefulAddress(fields) {
-  const rawAddress = cleanCell(fields.direccion);
-  const normalizedAddress = normalizeSearch(rawAddress);
-
-  if (!normalizedAddress) {
-    return false;
-  }
-
-  const comparableValues = [
-    fields.municipio,
-    fields.categoria,
-    fields["productos estrella"],
-    fields.nombre,
-  ]
-    .map(normalizeSearch)
-    .filter(Boolean);
-
-  if (comparableValues.includes(normalizedAddress)) {
-    return false;
-  }
-
-  if (/@/.test(rawAddress)) {
-    return false;
-  }
-
-  if (/\d/.test(rawAddress) || /[,;/]/.test(rawAddress)) {
-    return true;
-  }
-
-  if (MAP_ADDRESS_HINT_KEYWORDS.some((keyword) => normalizedAddress.includes(keyword))) {
-    return true;
-  }
-
-  if (MAP_ADDRESS_PLACEHOLDER_MARKERS.some((marker) => normalizedAddress.includes(marker))) {
-    return false;
-  }
-
-  const tokenCount = normalizedAddress.split(" ").filter(Boolean).length;
-  return tokenCount >= 3 && normalizedAddress.length >= 18;
-}
-
 async function readCsv(csvPath) {
   const { fs, parse } = await getDependencies();
 
   if (!fs.existsSync(csvPath)) {
-    console.error(`Error: CSV not found at ${csvPath}`);
-    process.exit(1);
+    throw new Error(`CSV not found at ${csvPath}`);
   }
 
   const raw = fs.readFileSync(csvPath, "utf8");
@@ -626,6 +678,7 @@ function createIssueCollector() {
 
 function runContractAudit({ raw, headers, rows, push, centroids, scope, stats }) {
   const slugLines = new Map();
+  stats.rows += rows.length;
 
   // The canonical-header comparison below is positional, so it already covers a
   // missing, duplicated, extra or reordered column, with a message naming the
@@ -641,7 +694,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
       1,
       0,
       "(header)",
-      `header is not the canonical ${CANONICAL_HEADER.length}-column header (${detail}); see docs/CSV_CONTRACT.md`,
+      `header does not match the canonical header (${detail}); see docs/CSV_CONTRACT.md`,
     );
   }
 
@@ -693,6 +746,11 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
     const lon = parseCoordinate(lonRaw, 180, [1, 2, 3]);
     const verificationRaw = cleanCell(fields[VERIFICATION_COLUMN]);
     const onlineSalesRaw = cleanCell(fields[ONLINE_SALES_COLUMN]);
+    const hasValidCoordinates =
+      Boolean(latRaw && lonRaw) && !Number.isNaN(lat) && !Number.isNaN(lon);
+
+    if (!latRaw && !lonRaw) stats.withoutCoordinates += 1;
+    else if (hasValidCoordinates) stats.withCoordinates += 1;
 
     if ((latRaw && !lonRaw) || (!latRaw && lonRaw)) {
       push("error", line, id, slug, "lat and lon must both be present or both be empty");
@@ -716,7 +774,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
 
     // Coordinates so far from the declared municipio that they belong to a
     // different town: almost always a swapped/wrong lat/lon or a wrong municipio.
-    if (centroids && latRaw && lonRaw && !Number.isNaN(lat) && !Number.isNaN(lon)) {
+    if (centroids && hasValidCoordinates) {
       const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), scope);
       if (!centroid) {
         // No centroid for this municipio (pedanía, or a spelling the lookup does
@@ -724,6 +782,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
         // instead of letting the gap disappear.
         stats.geoSkipped += 1;
       } else {
+        stats.geoChecked += 1;
         if (
           Math.abs(lat - centroid.lat) <= CENTROID_FALLBACK_TOLERANCE_DEG &&
           Math.abs(lon - centroid.lon) <= CENTROID_FALLBACK_TOLERANCE_DEG
@@ -738,6 +797,14 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
             id,
             slug,
             describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_BLOCKING_DISTANCE_KM),
+          );
+        } else if (distance > CENTROID_MAX_DISTANCE_KM) {
+          push(
+            "warning",
+            line,
+            id,
+            slug,
+            describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_MAX_DISTANCE_KM),
           );
         }
       }
@@ -758,6 +825,18 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
       const hostError = validateHost(parsedUrl.url);
       if (hostError) {
         push("error", line, id, slug, `${column}: ${hostError}`);
+        continue;
+      }
+
+      if (column === "Facebook" || column === "Instagram") {
+        const profileError = socialProfileError(parsedUrl.url);
+        if (profileError) push("warning", line, id, slug, `${column}: ${profileError}`);
+      }
+
+      if (column === "Google Maps") {
+        for (const warning of googleMapsQualityWarnings(parsedUrl.url)) {
+          push("warning", line, id, slug, `Google Maps: ${warning}`);
+        }
       }
     }
 
@@ -937,318 +1016,197 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
   }
 }
 
-function runQualityAudit({ rows, push, centroids, scope }) {
-  const nameCityLines = new Map();
-  const categoryVariants = new Map();
-  // The same normalized descripcion on several rows is almost always template
-  // boilerplate inherited from a bulk import, not a producer-specific text.
-  // Short descriptions are skipped: below the minimum length they already get
-  // the optional-gap note and are too generic to prove a shared template.
-  const descriptionLines = new Map();
-
-  for (const [index, fields] of rows.entries()) {
-    const line = index + 2;
-    const id = index + 1;
-    const slug = cleanCell(fields.slug);
-    const name = cleanCell(fields.nombre);
-    const city = cleanCell(fields.municipio);
-    const category = cleanCell(fields.categoria);
-    const additionalCategories = readAdditionalCategories(
-      fields[ADDITIONAL_CATEGORIES_COLUMN],
-    ).filter(Boolean);
-    const description = cleanCell(fields.descripcion);
-    const address = cleanCell(fields.direccion);
-    const phone = cleanCell(fields.telefono);
-    const email = cleanCell(fields.correo);
-    const facebook = cleanCell(fields.Facebook);
-    const instagram = cleanCell(fields.Instagram);
-    const googleMaps = cleanCell(fields["Google Maps"]);
-    const lat = parseCoordinate(fields.lat, 90, [2, 1, 3]);
-    const lon = parseCoordinate(fields.lon, 180, [1, 2, 3]);
-
-    // Core-field gaps are real defects and always warn. Optional-field gaps
-    // (address, description, contact, social, Google Maps) are not defects:
-    // editorial policy treats empty as valid. They are pushed as "suppressed" so
-    // they never add per-row noise here, whatever the verification status.
-    const optionalGap = "suppressed";
-
-    // nombre, municipio and categoria being non-empty is a blocking contract
-    // rule; only the label preference is a matter of degree.
-    if (category) {
-      const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(normalizeSearch(category));
-      if (preferredCategory && category !== preferredCategory) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `categoria should use preferred label '${preferredCategory}' instead of '${category}'`,
-        );
-      }
-      // Retired labels still in the valid list: the rows the consolidation
-      // never reached, plus the ones typed again afterwards. The app groups by
-      // exact string, so whoever filters the replacement never sees these.
-      const replacesRetired = RETIRED_CATEGORIES.get(category);
-      if (replacesRetired && VALID_CATEGORIES.has(category)) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `categoria '${category}' was retired; reassign to '${replacesRetired}' or argue the label back into data/reference/categories.json`,
-        );
-      }
-    }
-
-    for (const additionalCategory of additionalCategories) {
-      const preferredCategory = PREFERRED_CATEGORY_ALIASES.get(
-        normalizeSearch(additionalCategory),
-      );
-      if (preferredCategory && additionalCategory !== preferredCategory) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `${ADDITIONAL_CATEGORIES_COLUMN} should use preferred label '${preferredCategory}' instead of '${additionalCategory}'`,
-        );
-      }
-
-      const replacesRetired = RETIRED_CATEGORIES.get(additionalCategory);
-      if (replacesRetired && VALID_CATEGORIES.has(additionalCategory)) {
-        push(
-          "warning",
-          line,
-          id,
-          slug,
-          `${ADDITIONAL_CATEGORIES_COLUMN} '${additionalCategory}' was retired; reassign to '${replacesRetired}' or argue the label back into data/reference/categories.json`,
-        );
-      }
-    }
-
-    for (const column of ["Facebook", "Instagram"]) {
-      const parsedUrl = readUrl(fields[column]);
-      if (!parsedUrl || parsedUrl.error) {
-        continue;
-      }
-      const profileError = socialProfileError(parsedUrl.url);
-      if (profileError) {
-        push("warning", line, id, slug, `${column}: ${profileError}`);
-      }
-    }
-
-    const parsedGoogleMaps = readUrl(googleMaps);
-    if (
-      parsedGoogleMaps &&
-      !parsedGoogleMaps.error &&
-      !validateGoogleMapsUrl(parsedGoogleMaps.url)
-    ) {
-      for (const warning of googleMapsQualityWarnings(parsedGoogleMaps.url)) {
-        push("warning", line, id, slug, `Google Maps: ${warning}`);
-      }
-    }
-
-    if (!address) {
-      push(optionalGap, line, id, slug, "direccion is empty");
-    }
-
-    if (!description) {
-      push(optionalGap, line, id, slug, "descripcion is empty");
-    } else if (description.length < DESCRIPTION_MIN_LENGTH) {
-      push(
-        optionalGap,
-        line,
-        id,
-        slug,
-        `descripcion is shorter than ${DESCRIPTION_MIN_LENGTH} characters`,
-      );
-    }
-
-    if (!phone && !email) {
-      push(optionalGap, line, id, slug, "telefono and correo are both empty");
-    }
-
-    if (!facebook && !instagram) {
-      push(optionalGap, line, id, slug, "Facebook and Instagram are both empty");
-    }
-
-    if (!googleMaps) {
-      push(optionalGap, line, id, slug, "Google Maps is empty");
-    }
-
-    if (!Number.isNaN(lat) && !Number.isNaN(lon) && (cleanCell(fields.lat) || cleanCell(fields.lon))) {
-      if (!hasUsefulAddress(fields)) {
-        push(optionalGap, line, id, slug, "coordinates are present but direccion is not useful for location review");
-      }
-
-      const centroid = lookupCentroid(centroids, city, scope);
-      if (centroid) {
-        const distance = haversineKm(lat, lon, centroid.lat, centroid.lon);
-        // Beyond the blocking distance the contract audit raises an error, so
-        // this warning covers only the "edge of term vs. neighbour" band.
-        if (
-          distance > CENTROID_MAX_DISTANCE_KM &&
-          distance <= CENTROID_BLOCKING_DISTANCE_KM
-        ) {
-          push(
-            "warning",
-            line,
-            id,
-            slug,
-            describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_MAX_DISTANCE_KM),
-          );
-        }
-      }
-    }
-
-    const normalizedNameCity = [normalizeSearch(name), normalizeSearch(city)]
-      .filter(Boolean)
-      .join("|");
-    if (normalizedNameCity) {
-      const lines = nameCityLines.get(normalizedNameCity) ?? [];
-      lines.push(line);
-      nameCityLines.set(normalizedNameCity, lines);
-    }
-
-    if (description.length >= DESCRIPTION_MIN_LENGTH) {
-      const normalizedDescription = normalizeSearch(description);
-      if (normalizedDescription) {
-        const lines = descriptionLines.get(normalizedDescription) ?? [];
-        lines.push(line);
-        descriptionLines.set(normalizedDescription, lines);
-      }
-    }
-
-    if (category) {
-      const stem = categoryStem(category);
-      const variants = categoryVariants.get(stem) ?? new Map();
-      const lines = variants.get(category) ?? [];
-      lines.push(line);
-      variants.set(category, lines);
-      categoryVariants.set(stem, variants);
-    }
-  }
-
-  for (const [key, lines] of nameCityLines.entries()) {
-    if (key && lines.length > 1) {
-      for (const line of lines) {
-        push(
-          "warning",
-          line,
-          line - 1,
-          rows[line - 2]?.slug ?? "",
-          `nombre + municipio looks duplicated on lines ${lines.join(", ")}`,
-        );
-      }
-    }
-  }
-
-  for (const [, lines] of descriptionLines.entries()) {
-    if (lines.length > 1) {
-      for (const line of lines) {
-        push(
-          "warning",
-          line,
-          line - 1,
-          rows[line - 2]?.slug ?? "",
-          `descripcion is duplicated on lines ${lines.join(", ")} (shared template boilerplate; write producer-specific descriptions)`,
-        );
-      }
-    }
-  }
-
-  for (const [, variants] of categoryVariants.entries()) {
-    if (variants.size > 1) {
-      const formattedVariants = [...variants.entries()]
-        .map(([variant, lines]) => `${variant} [${lines.join(", ")}]`)
-        .join("; ");
-
-      for (const [, lines] of variants.entries()) {
-        for (const line of lines) {
-          push(
-            "warning",
-            line,
-            line - 1,
-            rows[line - 2]?.slug ?? "",
-            `categoria has near-duplicate variants: ${formattedVariants}`,
-          );
-        }
-      }
-    }
-  }
+function createStats() {
+  return {
+    rows: 0,
+    withCoordinates: 0,
+    withoutCoordinates: 0,
+    geoChecked: 0,
+    geoSkipped: 0,
+    geoFallback: 0,
+  };
 }
 
-function printReport(
-  mode,
-  issues,
-  { summaryOnly = false, stats = { geoSkipped: 0, geoFallback: 0 } } = {},
-) {
+function addStats(total, current) {
+  for (const key of Object.keys(total)) total[key] += current[key];
+}
+
+async function auditCsv(csvPath, centroids) {
+  const { issues, push } = createIssueCollector();
+  const stats = createStats();
+
+  try {
+    const { raw, headers, rows } = await readCsv(csvPath);
+    runContractAudit({
+      raw,
+      headers,
+      rows,
+      push,
+      centroids,
+      scope: inferScope(csvPath),
+      stats,
+    });
+  } catch (error) {
+    push("error", 1, 0, "(file)", `cannot parse CSV: ${error.message}`);
+  }
+
+  return { csvPath, issues, stats };
+}
+
+function printStats(stats) {
+  console.log(`- rows: ${stats.rows}`);
+  console.log(`- rows with coordinates: ${stats.withCoordinates}`);
+  console.log(`- rows without coordinates: ${stats.withoutCoordinates}`);
+  console.log(`- rows checked against a municipio centroid: ${stats.geoChecked}`);
+  console.log(
+    `- geo-check skipped (municipio centroid not uniquely resolved): ${stats.geoSkipped} rows`,
+  );
+  console.log(`- centroid fallback coordinates: ${stats.geoFallback}`);
+}
+
+function printSingleReport(issues, stats) {
   const errors = issues.filter((issue) => issue.severity === "error");
   const warnings = issues.filter((issue) => issue.severity === "warning");
-  const suppressed = issues.filter((issue) => issue.severity === "suppressed");
-  const visible = issues.filter((issue) => issue.severity !== "suppressed");
-  const title =
-    mode === "contract" ? "CSV contract audit" : "CSV data-quality audit";
 
-  console.log(`${title} summary`);
+  console.log("CSV audit summary");
   console.log(`- errors: ${errors.length}`);
   console.log(`- warnings: ${warnings.length}`);
-  if (suppressed.length) {
-    console.log(
-      `- suppressed (absent optional fields; empty is a valid value): ${suppressed.length}`,
-    );
-  }
-  if (stats.geoSkipped) {
-    console.log(
-      `- geo-check skipped (municipio not in data/reference/municipalities.json): ${stats.geoSkipped} rows`,
-    );
-  }
-  if (stats.geoFallback) {
-    console.log(`- centroid fallback coordinates: ${stats.geoFallback}`);
-  }
+  printStats(stats);
+  console.log(`- status: ${errors.length ? "FAILED" : "OK"}`);
 
-  if (!visible.length) {
-    console.log("- status: OK");
-    return;
-  }
-
-  if (summaryOnly) {
-    return;
-  }
-
-  console.log("");
-  for (const issue of visible) {
+  if (issues.length) console.log("");
+  for (const issue of issues) {
     console.log(
       `${issue.severity.toUpperCase()} line ${issue.line} · id ${issue.id} · slug ${issue.slug}: ${issue.message}`,
     );
   }
 }
 
-async function main() {
-  const { path } = await getDependencies();
-  const { mode, csvPath, summaryOnly } = parseArgs(process.argv.slice(2), (targetPath) =>
-    path.resolve(process.cwd(), targetPath),
-  );
-  const { raw, headers, rows } = await readCsv(csvPath);
-  const { issues, push } = createIssueCollector();
-
-  const centroids = await loadCentroids();
-  const scope = inferScope(csvPath);
-  const stats = { geoSkipped: 0, geoFallback: 0 };
-
-  runContractAudit({ raw, headers, rows, push, centroids, scope, stats });
-
-  if (mode === "quality") {
-    runQualityAudit({ headers, rows, push, centroids, scope });
+function warningKind(message) {
+  if (message.startsWith("Google Maps:")) return "Google Maps migration";
+  if (message.startsWith("Facebook:") || message.startsWith("Instagram:")) {
+    return "social profile";
   }
-
-  printReport(mode, issues, { summaryOnly, stats });
-
-  const errorCount = issues.filter((issue) => issue.severity === "error").length;
-  process.exit(errorCount > 0 ? 1 : 0);
+  if (message.startsWith("lat/lon is ")) return "geography 15–100 km";
+  return "other";
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+async function main() {
+  const { path } = await getDependencies();
+  let args;
+  try {
+    args = parseArgs(process.argv.slice(2), (targetPath) => path.resolve(process.cwd(), targetPath));
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    usage();
+    process.exitCode = 1;
+    return;
+  }
+  if (args.help) {
+    usage();
+    return;
+  }
+  if (args.registry) {
+    const valid = printRegistryReport(await auditAreaRegistry(args.registry));
+    process.exitCode = valid ? 0 : 1;
+    return;
+  }
+
+  let files;
+  try {
+    files = await resolveCsvFiles(args);
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    process.exitCode = 1;
+    return;
+  }
+
+  const root = path.resolve(__dirname, "..");
+  let registry = null;
+  if (args.all || args.changed) {
+    registry = await auditAreaRegistry(path.join(root, "data", "csv"));
+  }
+
+  if (args.changed && files.length === 0) {
+    console.log("No changed CSV files under data/csv.");
+  }
+
+  const centroids = files.length ? await loadCentroids() : null;
+  const results = [];
+  for (const csvPath of files) results.push(await auditCsv(csvPath, centroids));
+
+  if (!args.all && !args.changed && results.length === 1) {
+    printSingleReport(results[0].issues, results[0].stats);
+    process.exitCode = results[0].issues.some((issue) => issue.severity === "error") ? 1 : 0;
+    return;
+  }
+
+  const totalStats = createStats();
+  let errors = registry?.errors.length ?? 0;
+  let warnings = 0;
+  let failedFiles = 0;
+  const warningFiles = [];
+  const warningKinds = new Map();
+
+  if (registry?.errors.length) {
+    console.log("Area registry contract failed");
+    for (const error of registry.errors) console.log(`- ${error}`);
+    console.log("");
+  }
+
+  for (const result of results) {
+    addStats(totalStats, result.stats);
+    const fileErrors = result.issues.filter((issue) => issue.severity === "error");
+    const fileWarnings = result.issues.filter((issue) => issue.severity === "warning");
+    errors += fileErrors.length;
+    warnings += fileWarnings.length;
+    for (const issue of fileWarnings) {
+      const kind = warningKind(issue.message);
+      warningKinds.set(kind, (warningKinds.get(kind) ?? 0) + 1);
+    }
+    if (fileErrors.length) {
+      failedFiles += 1;
+      console.log(`CSV audit failed: ${path.relative(root, result.csvPath)}`);
+      for (const issue of result.issues) {
+        console.log(
+          `- ${issue.severity.toUpperCase()} line ${issue.line} · slug ${issue.slug}: ${issue.message}`,
+        );
+      }
+      console.log("");
+    } else if (fileWarnings.length) {
+      warningFiles.push([path.relative(root, result.csvPath), fileWarnings.length]);
+    }
+  }
+
+  if (args.all && warningKinds.size) {
+    console.log("CSV audit warning summary");
+    for (const [kind, count] of [...warningKinds].sort((left, right) => right[1] - left[1])) {
+      console.log(`- ${kind}: ${count}`);
+    }
+    console.log("");
+  } else if (warningFiles.length) {
+    console.log("CSV audit warnings by file");
+    for (const [file, count] of warningFiles) console.log(`- ${file}: ${count}`);
+    console.log("");
+  }
+
+  console.log("CSV audit summary");
+  console.log(`- registry: ${registry ? `${registry.areas} areas` : "not checked"}`);
+  console.log(`- files: ${results.length}`);
+  console.log(`- failed files: ${failedFiles}`);
+  console.log(`- errors: ${errors}`);
+  console.log(`- warnings: ${warnings}`);
+  printStats(totalStats);
+  console.log(`- status: ${errors ? "FAILED" : "OK"}`);
+
+  process.exitCode = errors ? 1 : 0;
+}
+
+module.exports = { CANONICAL_HEADER, auditAreaRegistry };
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

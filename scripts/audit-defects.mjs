@@ -4,10 +4,8 @@
 //
 // Complements the existing gates rather than duplicating them:
 //   check:csv                -> blocking technical contract, per file
-//   check:csv:data-quality   -> warnings, per file
-//   check:defects (this)     -> editorial defects the other two cannot see,
-//                               because they need cross-file context or a
-//                               judgement the contract does not encode.
+//   check:defects (this)     -> advisory editorial worklist, including defects
+//                               that need cross-file context or judgement.
 //
 // Advisory only: it never exits non-zero. It answers "what is left to fix and
 // where", so a doc never has to freeze a count that rots.
@@ -17,7 +15,7 @@
 //   node scripts/audit-defects.mjs --country it
 //   node scripts/audit-defects.mjs --area soria
 //   node scripts/audit-defects.mjs --check sinteticas --list
-//   node scripts/audit-defects.mjs --check descripcion-generica --plantillas
+//   node scripts/audit-defects.mjs --check descripcion-generica --templates
 //   node scripts/audit-defects.mjs --json
 
 import fs from "node:fs";
@@ -37,9 +35,8 @@ const SHARED_DOMAIN_THRESHOLD = 3;
 
 // Descriptions that say nothing about *this* producer: either they narrate our
 // own cataloguing process, or they restate the category. Both are published
-// verbatim on the detail page. check:csv:data-quality already flags exact
-// duplicates per file; this catches the templated ones that happen to be unique
-// because the municipality differs.
+// verbatim on the detail page. Exact duplicates are their own check below; this
+// catches templated descriptions that differ only by producer or municipality.
 const GENERIC_DESCRIPTION = [
   /incorporad[oa] al cat[aá]logo areal/i,
   /revisad[oa] con [A-ZÁÉÍÓÚ]/,
@@ -61,7 +58,7 @@ const onlyCountry = flag("country");
 const onlyCheck = flag("check");
 const wantList = argv.includes("--list");
 const wantJson = argv.includes("--json");
-const wantPlantillas = argv.includes("--templates");
+const wantPlantillas = argv.includes("--templates") || argv.includes("--plantillas");
 
 const norm = (s) =>
   (s ?? "")
@@ -79,9 +76,36 @@ const rowCategories = (row) => [
     .map((category) => category.trim()),
 ].filter(Boolean);
 
+const duplicateRows = (rows, keyOf) => {
+  const groups = new Map();
+  for (const row of rows) {
+    const key = keyOf(row);
+    if (!key) continue;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
+  }
+  return [...groups.values()].filter((group) => group.length > 1).flat();
+};
+
 const hostOf = (url) => {
   const m = (url ?? "").match(/^https?:\/\/(?:www\.)?([^/?#]+)/i);
   return m ? m[1].toLowerCase() : "";
+};
+
+const isCoordinateOnlyMapsUrl = (value) => {
+  try {
+    const url = new URL(value);
+    const googleHost = /^([a-z0-9-]+\.)*google\.[a-z.]+$/i.test(url.hostname);
+    const query = (url.searchParams.get("query") ?? "").trim();
+    return (
+      googleHost &&
+      /^\/maps\/search\/?$/.test(url.pathname) &&
+      !url.searchParams.get("query_place_id")?.trim() &&
+      /^-?\d{1,2}(?:\.\d+)?\s*,\s*-?\d{1,3}(?:\.\d+)?$/.test(query)
+    );
+  } catch {
+    return false;
+  }
 };
 
 // Collapse the proper nouns out of a description so two rows that differ only
@@ -232,29 +256,14 @@ export function loadCrossTemplate(rows) {
   return hits;
 }
 
-export function loadCategoryVariants() {
-  // Always across every province, even under --area: which spelling is the
-  // majority is a property of the catalog, not of the file being inspected.
-  // Scoped to one province, Málaga's 2 `Carne` rows would look like the
-  // minority variant of its 4 `Carnes`, when nationally it is the reverse.
-  const usage = new Map();
-  for (const { rows } of readAreas({ all: true })) {
-    for (const row of rows) {
-      for (const category of rowCategories(row)) {
-        usage.set(category, (usage.get(category) ?? 0) + 1);
-      }
-    }
-  }
+export function findCategoryVariants(usage, retiredCategories = {}) {
   const canonical = new Set(usage.keys());
   const variants = new Set();
 
   // Retired labels that still carry rows. Registry, not heuristic: these were
   // ruled on once and the ruling has to survive the fact that some of them are
   // now the majority spelling in their own province.
-  const registry = JSON.parse(
-    fs.readFileSync(path.join(ROOT, "data", "reference", "categories.json"), "utf8"),
-  );
-  for (const label of Object.keys(registry.retiredCategories ?? {})) {
+  for (const label of Object.keys(retiredCategories)) {
     if (usage.has(label)) variants.add(label);
   }
 
@@ -297,6 +306,25 @@ export function loadCategoryVariants() {
   }
 
   return variants;
+}
+
+export function loadCategoryVariants() {
+  // Always across every province, even under --area: which spelling is the
+  // majority is a property of the catalog, not of the file being inspected.
+  // Scoped to one province, Málaga's 2 `Carne` rows would look like the
+  // minority variant of its 4 `Carnes`, when nationally it is the reverse.
+  const usage = new Map();
+  for (const { rows } of readAreas({ all: true })) {
+    for (const row of rows) {
+      for (const category of rowCategories(row)) {
+        usage.set(category, (usage.get(category) ?? 0) + 1);
+      }
+    }
+  }
+  const registry = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data", "reference", "categories.json"), "utf8"),
+  );
+  return findCategoryVariants(usage, registry.retiredCategories ?? {});
 }
 
 let areaCache = null;
@@ -377,6 +405,29 @@ export const CHECKS = [
       ),
   },
   {
+    id: "identidad-duplicada",
+    kind: "cola",
+    label: "mismo `nombre + municipio` normalizado en varias filas del área",
+    hint: "compara unidad productiva, contacto y dominio; fusiona solo si es la misma unidad",
+    run: ({ rows }) =>
+      duplicateRows(rows, (row) => {
+        const name = norm(row.nombre);
+        const municipality = norm(row.municipio);
+        return name && municipality ? `${name}|${municipality}` : "";
+      }),
+  },
+  {
+    id: "descripcion-duplicada",
+    kind: "cola",
+    label: "misma `descripcion` larga publicada en varias filas del área",
+    hint: "una descripción compartida suele ser plantilla; vacíala o escribe solo hechos propios",
+    run: ({ rows }) =>
+      duplicateRows(rows, (row) => {
+        const description = norm(row.descripcion);
+        return description.length >= 30 ? description : "";
+      }),
+  },
+  {
     id: "evidencia-prestada",
     kind: "cola",
     label: "`verificado` cuyo único enlace externo es un pin de Google Maps",
@@ -390,6 +441,13 @@ export const CHECKS = [
           !r.Facebook &&
           r["Google Maps"],
       ),
+  },
+  {
+    id: "maps-sin-ficha",
+    kind: "cola",
+    label: "`Google Maps` abre solo un pin de coordenadas, no una ficha del productor",
+    hint: "verifica una ficha de la misma unidad y publica su query_place_id; si no existe, vacía Google Maps y conserva lat/lon",
+    run: ({ rows }) => rows.filter((r) => isCoordinateOnlyMapsUrl(r["Google Maps"])),
   },
   {
     id: "web-de-tercero",
@@ -472,7 +530,7 @@ export const CHECKS = [
     id: "sin-imagen",
     kind: "senal",
     label: "sin `imagen`",
-    hint: "docs/IMAGES.md; enrich:images por slug con --contact-sheet, nunca --apply en bloque",
+    hint: "docs/IMAGES.md; revisa --contact-sheet y aplica un slug con el --candidate aprobado",
     run: ({ rows }) => rows.filter((r) => !r.imagen),
   },
   {

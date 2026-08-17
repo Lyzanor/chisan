@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-"""Regression tests for the pure parts of enrich:images.
-
-No network. Every case here is a defect that actually shipped or was caught in
-the Soria/Albacete passes, so a regression means a province of wrong images.
-"""
+"""Network-free regression tests for the pure parts of enrich:images."""
 
 from __future__ import annotations
 
 import importlib.util
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 SCRIPT = Path(__file__).resolve().parent / "enrich-producer-images.py"
@@ -140,10 +138,103 @@ check(
 )
 
 # --- a photo is never chromakeyed or tinted ----------------------------------
-photo = Image.new("RGBA", (400, 300), (250, 250, 250, 255))
+photo = Image.new("RGBA", (640, 480), (250, 250, 250, 255))
 covered, info = enrich.cover_photo(photo)
 check("cover_photo fills the canvas", covered.size, enrich.CANVAS_SIZE)
 check("cover_photo reports no chromakey", info["chromakey_applied"], False)
+
+try:
+    enrich.cover_photo(Image.new("RGBA", (400, 300), (250, 250, 250, 255)))
+except ValueError as exc:
+    check("photos are never upscaled beyond 3x", "maximum 3x" in str(exc), True)
+else:
+    failures.append("photos are never upscaled beyond 3x\n    expected ValueError")
+
+# The approved ID belongs to the rendered result. The same downloaded bytes
+# classified as a logo and as a photo produce different candidates.
+shared_asset = enrich.Asset(
+    image=Image.new("RGB", (640, 480), (120, 60, 30)),
+    data=b"same downloaded bytes",
+    content_type="image/png",
+    url="https://example.com/shared.png",
+)
+original_fetch_best_asset = enrich.fetch_best_asset
+enrich.fetch_best_asset = lambda *_args, **_kwargs: (shared_asset, None)
+try:
+    logo_info, _ = enrich.inspect_candidate(
+        enrich.Candidate("logo-img", shared_asset.url, "logo", "", 100), 1
+    )
+    photo_info, _ = enrich.inspect_candidate(
+        enrich.Candidate("og:image", shared_asset.url, "photo", "", 50), 1
+    )
+finally:
+    enrich.fetch_best_asset = original_fetch_best_asset
+check("the same source keeps one source digest", logo_info["source_digest"], photo_info["source_digest"])
+check("different reviewed compositions have different IDs", logo_info["digest"] != photo_info["digest"], True)
+
+# --- updating imagen preserves unrelated and future columns byte-for-byte ----
+raw_csv = (
+    "slug,nombre,imagen,nota\n"
+    'uno,"Nombre, con coma",,"texto, citado"\n'
+    "dos,Otro,,sin cambios\n"
+)
+updated_csv = enrich.update_csv_image(raw_csv, "uno", "/productores/xx/region/area/uno.webp")
+check(
+    "only the imagen cell changes",
+    updated_csv,
+    raw_csv.replace(",,\"texto, citado\"", ",/productores/xx/region/area/uno.webp,\"texto, citado\""),
+)
+
+with tempfile.TemporaryDirectory(prefix="km0-enrich-") as temp_dir:
+    temp = Path(temp_dir)
+    csv_path = temp / "area.csv"
+    image_path = temp / "uno.webp"
+    csv_path.write_text(raw_csv, encoding="utf-8", newline="")
+    enrich.write_selected_image(
+        csv_path,
+        raw_csv.encode("utf-8"),
+        updated_csv,
+        image_path,
+        Image.new("RGB", enrich.CANVAS_SIZE, (243, 240, 232)),
+    )
+    check("atomic writer keeps surgical CSV output", csv_path.read_text(encoding="utf-8"), updated_csv)
+    check("atomic writer creates the reviewed image", image_path.exists(), True)
+
+with tempfile.TemporaryDirectory(prefix="km0-enrich-concurrent-") as temp_dir:
+    temp = Path(temp_dir)
+    csv_path = temp / "area.csv"
+    image_path = temp / "uno.webp"
+    csv_path.write_text(raw_csv + "tres,Nuevo,,\n", encoding="utf-8", newline="")
+    try:
+        enrich.write_selected_image(
+            csv_path,
+            raw_csv.encode("utf-8"),
+            updated_csv,
+            image_path,
+            Image.new("RGB", enrich.CANVAS_SIZE, (243, 240, 232)),
+        )
+    except RuntimeError as exc:
+        check("concurrent CSV changes abort the write", "nothing was written" in str(exc), True)
+    else:
+        failures.append("concurrent CSV changes abort the write\n    expected RuntimeError")
+    check("concurrent abort leaves no image", image_path.exists(), False)
+
+# --- apply is impossible without an explicit slug and candidate -------------
+missing_slug = subprocess.run(
+    [sys.executable, str(SCRIPT), "--area", "does-not-matter", "--apply", "--candidate", "a" * 12],
+    capture_output=True,
+    text=True,
+    check=False,
+)
+check("apply requires exactly one slug", "--apply requires exactly one --slug" in missing_slug.stderr, True)
+
+missing_candidate = subprocess.run(
+    [sys.executable, str(SCRIPT), "--area", "does-not-matter", "--apply", "--slug", "one"],
+    capture_output=True,
+    text=True,
+    check=False,
+)
+check("apply requires a reviewed candidate", "--apply requires the reviewed --candidate" in missing_candidate.stderr, True)
 
 if failures:
     print(f"enrich:images tests FAILED ({len(failures)}):\n")

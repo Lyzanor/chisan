@@ -5,6 +5,19 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TMP_ROOT="$(mktemp -d)"
 trap 'rm -rf "$TMP_ROOT"' EXIT
 
+DOCUMENTED_HEADER="$(awk '
+  /^## Canonical header$/ { in_header = 1; next }
+  in_header && /^```text$/ { getline; print; exit }
+' "$ROOT_DIR/docs/CSV_CONTRACT.md")"
+MACHINE_HEADER="$(node -e '
+process.stdout.write(require(process.argv[1]).CANONICAL_HEADER.join(","));
+' "$ROOT_DIR/scripts/audit-csv.js")"
+
+if [[ "$DOCUMENTED_HEADER" != "$MACHINE_HEADER" ]]; then
+  echo "Error: docs/CSV_CONTRACT.md and scripts/audit-csv.js define different canonical headers" >&2
+  exit 1
+fi
+
 # The audit scopes the centroid lookup to the country and region it reads off
 # the path, so a fixture has to sit where a real area CSV sits or it gets no
 # geography check at all. Abrera, the municipio these fixtures use, is Catalan.
@@ -56,19 +69,19 @@ cat >"$REGISTRY_BAD_GUIDE/es/AGENTS.md" <<'GUIDE'
 GUIDE
 
 run_expect_success "$TMP_ROOT/out-registry-ok.txt" \
-  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_OK"
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_OK"
 grep -q "Area registry contract OK (2 areas)" "$TMP_ROOT/out-registry-ok.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-duplicate.txt" \
-  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_DUPLICATE"
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_DUPLICATE"
 grep -q "area slug 'ribera' is global and duplicated" "$TMP_ROOT/out-registry-duplicate.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-missing-guide.txt" \
-  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_MISSING_GUIDE"
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_MISSING_GUIDE"
 grep -q "country 'es' must contain AGENTS.md" "$TMP_ROOT/out-registry-missing-guide.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-bad-guide.txt" \
-  node "$ROOT_DIR/scripts/check-area-registry.mjs" "$REGISTRY_BAD_GUIDE"
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_BAD_GUIDE"
 grep -q "country guide 'es/AGENTS.md' must use exactly" "$TMP_ROOT/out-registry-bad-guide.txt"
 
 cat >"$TMP_DIR/missing-column.csv" <<'CSV'
@@ -110,13 +123,6 @@ CSV
 cat >"$TMP_DIR/invalid-online-sales.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
 fila-1,Uno,Abrera,Vino,Vino,Carrer 1,Descripcion suficientemente larga para validar,,600000000,uno@example.com,https://example.com,tal vez,https://facebook.com/uno,https://instagram.com/uno,https://www.google.com/maps/search/?api=1&query=Uno&query_place_id=abc,41.1,2.1,pendiente
-CSV
-
-cat >"$TMP_DIR/quality-warnings.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Venta online,Facebook,Instagram,Google Maps,lat,lon,verificacion
-fila-repetida,,Abrera,Vino,Vino,,Corta,, , ,,no comprobado,,,,41.1,2.1,pendiente
-fila-repetida-dos,Masia Uno,Abrera,Carnicería,Vino,Venta online,Descripcion suficientemente larga para validar,,600000000,masia@example.com,https://example.com,no comprobado,,,,41.2,2.2,parcial
-otra-fila,Masia Uno,Abrera,Carniceria,Vino,Carrer Major 4,Descripcion suficientemente larga para validar,,600000001,masia2@example.com,https://example.com,no comprobado,https://facebook.com/masia,,https://www.google.com/maps/place/Masia%20Uno,41.3,2.3,pendiente
 CSV
 
 cat >"$TMP_DIR/sales-channel.csv" <<'CSV'
@@ -192,17 +198,13 @@ bodega-uno,Celler Uno,Abrera,Vinos y bebidas,Vino,Carrer Major 2,Descripcion suf
 pan-uno,Forn Uno,Abrera,Panadería y repostería,Pan,Carrer Major 3,Descripcion suficientemente larga para validar,,600000002,tres@example.com,https://example.com,no comprobado,https://facebook.com/tres,https://instagram.com/tres,https://www.google.com/maps/place/Forn%20Uno,41.3,2.3,pendiente
 CSV
 
-# The retired-label cases read their labels off the live registry instead of
-# freezing one. G-CAT-2 keeps moving labels from "retired but still valid"
-# (warns, rows left to migrate) to "retired and rejected" (blocking error), so a
-# hardcoded fixture would break exactly when the migration it supports lands.
+# The retired-label case reads its label off the live registry instead of
+# freezing one, so the fixture follows taxonomy migrations.
 # Labels with a comma are skipped: they would need quoting inside the fixture.
 # One value per line, not tab-separated: bash counts a tab as IFS whitespace
 # even when IFS is set to one, so consecutive or leading empty fields collapse —
 # and "empty" is the normal state here once a migration finishes.
 {
-  read -r RETIRED_VALID
-  read -r RETIRED_VALID_TARGET
   read -r RETIRED_GONE
   read -r RETIRED_GONE_TARGET
 } < <(
@@ -212,10 +214,9 @@ CSV
     const usable = Object.entries(config.retiredCategories).filter(
       ([label, target]) => !label.includes(",") && !target.includes(","),
     );
-    const stillValid = usable.find(([label]) => valid.has(label)) ?? ["", ""];
     const rejected = usable.find(([label]) => !valid.has(label)) ?? ["", ""];
     // Trailing newline on purpose: `read` returns non-zero on EOF without one.
-    process.stdout.write(`${[...stillValid, ...rejected].join("\n")}\n`);
+    process.stdout.write(`${rejected.join("\n")}\n`);
   ' "$ROOT_DIR/data/reference/categories.json"
 )
 
@@ -233,32 +234,44 @@ CSV
 # A missing column and a duplicated column are both caught by the positional
 # canonical-header comparison, which names the offending position.
 run_expect_failure "$TMP_DIR/out-missing.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/missing-column.csv"
-grep -q "header is not the canonical 21-column header (column 17 is 'verificacion' instead of 'imagen')" "$TMP_DIR/out-missing.txt"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/missing-column.csv"
+grep -q "header does not match the canonical header (column 17 is 'verificacion' instead of 'imagen')" "$TMP_DIR/out-missing.txt"
 
 run_expect_failure "$TMP_DIR/out-duplicate-header.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/duplicate-header.csv"
-grep -q "header is not the canonical 21-column header (column 12 is 'web' instead of 'Facebook')" "$TMP_DIR/out-duplicate-header.txt"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/duplicate-header.csv"
+grep -q "header does not match the canonical header (column 12 is 'web' instead of 'Facebook')" "$TMP_DIR/out-duplicate-header.txt"
 
-# The exact canonical 21-column header passes contract mode.
+# The exact canonical header passes contract mode, regardless of its current length.
 run_expect_success "$TMP_DIR/out-canonical-header.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/canonical-ok.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/canonical-ok.csv"
+
+# The consolidated CLI requires an explicit scope and audits several inputs in
+# one process, which is how the full 500-area gate avoids reloading centroids.
+run_expect_failure "$TMP_DIR/out-no-scope.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js"
+grep -q "choose exactly one scope" "$TMP_DIR/out-no-scope.txt"
+
+run_expect_success "$TMP_DIR/out-multi-file.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/canonical-ok.csv" "$TMP_DIR/junk-social.csv"
+grep -qF -- "- files: 2" "$TMP_DIR/out-multi-file.txt"
+grep -qF -- "- rows: 3" "$TMP_DIR/out-multi-file.txt"
+grep -qF -- "- status: OK" "$TMP_DIR/out-multi-file.txt"
 
 # A category filter matches an additional category and accepts the documented
 # Spanish command aliases.
 run_expect_success "$TMP_DIR/out-list-additional.txt" \
-  node "$ROOT_DIR/scripts/list-area.js" "$TMP_DIR/canonical-ok.csv" --categoria Cerveza
+  node "$ROOT_DIR/scripts/list-producers.mjs" "$TMP_DIR/canonical-ok.csv" --categoria Cerveza
 grep -q "canal-ok .* Vino .* Cerveza" "$TMP_DIR/out-list-additional.txt"
 
 # All legacy columns present but out of order is a blocking error.
 run_expect_failure "$TMP_DIR/out-wrong-order-header.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/wrong-order-header.csv"
-grep -q "header is not the canonical 21-column header (column 12 is 'Instagram' instead of 'Facebook')" "$TMP_DIR/out-wrong-order-header.txt"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/wrong-order-header.csv"
+grep -q "header does not match the canonical header (column 12 is 'Instagram' instead of 'Facebook')" "$TMP_DIR/out-wrong-order-header.txt"
 
 # Additional categories use exact registry tokens separated by one `|`, may not
 # repeat the primary category and may not contain duplicates or empty tokens.
 run_expect_failure "$TMP_DIR/out-additional-categories.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/additional-categories.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/additional-categories.csv"
 grep -q "ERROR line 3 .* categorias adicionales repeats primary categoria 'Sake'" "$TMP_DIR/out-additional-categories.txt"
 grep -q "ERROR line 4 .* categorias adicionales repeats 'Cerveza'" "$TMP_DIR/out-additional-categories.txt"
 grep -q "ERROR line 5 .* categorias adicionales contains an empty token" "$TMP_DIR/out-additional-categories.txt"
@@ -269,60 +282,36 @@ if grep -q "ERROR line 2 .* categorias adicionales" "$TMP_DIR/out-additional-cat
 fi
 
 run_expect_failure "$TMP_DIR/out-crlf.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/crlf.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/crlf.csv"
 grep -q "line endings must be LF, found CR/CRLF" "$TMP_DIR/out-crlf.txt"
 
 run_expect_failure "$TMP_DIR/out-links.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/invalid-links.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/invalid-links.csv"
 grep -q "Facebook: must point to facebook.com" "$TMP_DIR/out-links.txt"
 
 run_expect_failure "$TMP_DIR/out-lat.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/invalid-lat.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/invalid-lat.csv"
 grep -q "lat must be between -90 and 90" "$TMP_DIR/out-lat.txt"
 
 run_expect_failure "$TMP_DIR/out-duplicate-slug.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/duplicate-slug.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/duplicate-slug.csv"
 grep -q "ERROR line 2 .* slug is duplicated" "$TMP_DIR/out-duplicate-slug.txt"
 
 run_expect_failure "$TMP_DIR/out-invalid-verification.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/invalid-verification.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/invalid-verification.csv"
 grep -q "verificacion must be one of: pendiente, parcial, verificado" "$TMP_DIR/out-invalid-verification.txt"
 
 run_expect_failure "$TMP_DIR/out-verificado-evidence.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/verificado-without-evidence.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/verificado-without-evidence.csv"
 grep -q "verificacion verificado requires coordinates and at least one external link" "$TMP_DIR/out-verificado-evidence.txt"
 
 run_expect_failure "$TMP_DIR/out-online-sales.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/invalid-online-sales.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/invalid-online-sales.csv"
 grep -q "Venta online must be one of: sí, no, no comprobado" "$TMP_DIR/out-online-sales.txt"
-
-run_expect_failure "$TMP_DIR/out-quality.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/quality-warnings.csv"
-# A missing identity field is blocking; the rest stay as warnings.
-grep -q "ERROR line 2 .* nombre is required" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 2 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 3 .* nombre + municipio looks duplicated" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-quality.txt"
-# Identical long descriptions across rows are flagged as template boilerplate.
-grep -q "WARNING line 3 .* descripcion is duplicated on lines 3, 4" "$TMP_DIR/out-quality.txt"
-grep -q "WARNING line 4 .* descripcion is duplicated on lines 3, 4" "$TMP_DIR/out-quality.txt"
-# Short descriptions never join the duplicate-description check.
-if grep -q "line 2 .* descripcion is duplicated" "$TMP_DIR/out-quality.txt"; then
-  echo "Error: short description must not raise the duplicate-description warning" >&2
-  exit 1
-fi
-# Optional-field gaps are suppressed, never warnings.
-for needle in "telefono and correo are both empty" "Google Maps is empty" "coordinates are present but direccion is not useful"; do
-  if grep -q "WARNING .* ${needle}" "$TMP_DIR/out-quality.txt"; then
-    echo "Error: optional-field gap '${needle}' must be suppressed, not a warning" >&2
-    exit 1
-  fi
-done
-grep -q "suppressed (absent optional fields" "$TMP_DIR/out-quality.txt"
 
 # Coordinates far enough to belong to another municipio are a blocking error.
 run_expect_failure "$TMP_DIR/out-geo-blocking.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/geo-blocking.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/geo-blocking.csv"
 grep -q "ERROR line 2 .* km from Abrera centroid (threshold 100 km)" "$TMP_DIR/out-geo-blocking.txt"
 
 # `municipio` written as two names. Either half may be the one the lookup knows
@@ -334,10 +323,9 @@ bilingue-ok,Masia Bilingue,Ujué / Uxue,Vino,Vino,Carrer Major 1,Descripcion de 
 paren-ok,Masia Parentesis,Granollers (Palou),Vino,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.60833,2.28889,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-bilingue.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-bilingue.csv"
-# The summary only prints the skipped line when something was skipped, so its
-# absence is what says both rows reached the geo-check.
-if grep -q "geo-check skipped" "$TMP_DIR/out-municipio-bilingue.txt"; then
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/municipio-bilingue.csv"
+# A zero skipped count says both rows reached the geo-check.
+if grep -q "geo-check skipped .*: [1-9]" "$TMP_DIR/out-municipio-bilingue.txt"; then
   echo "Error: both municipio spellings should resolve, nothing to skip" >&2
   exit 1
 fi
@@ -354,7 +342,7 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 bilingue-lejos,Masia Lejos,Puente la Reina / Gares,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.90,-1.60,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-bilingue-lejos.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-bilingue-lejos.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/municipio-bilingue-lejos.csv"
 grep -q "WARNING line 2 .* km from Puente la Reina centroid" "$TMP_DIR/out-municipio-bilingue-lejos.txt"
 
 # Territorial homonym: `La Floresta` is a municipality in Lleida and also a
@@ -365,7 +353,7 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 homonimo,Masia Homonima,La Floresta (Sant Cugat del Vallès),Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.47354,2.08524,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-homonimo.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-homonimo.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/municipio-homonimo.csv"
 grep -q "geo-check skipped .*: 1 rows" "$TMP_DIR/out-municipio-homonimo.txt"
 if grep -q "km from" "$TMP_DIR/out-municipio-homonimo.txt"; then
   echo "Error: an ambiguous municipio must be skipped, not resolved to one half" >&2
@@ -379,13 +367,13 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 pedania,Masia Pedania,Aldea Sintetica de Arriba,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-pedania.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/municipio-pedania.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/municipio-pedania.csv"
 grep -q "geo-check skipped .*: 1 rows" "$TMP_DIR/out-municipio-pedania.txt"
 
 # Canal de venta is blocking: an unknown token, or a channel set without an
 # actual online sale to describe, both fail the contract.
 run_expect_failure "$TMP_DIR/out-sales-channel.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/sales-channel.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/sales-channel.csv"
 grep -q "ERROR line 3 .* Canal de venta has invalid value.*'tienda'" "$TMP_DIR/out-sales-channel.txt"
 grep -q "ERROR line 4 .* Canal de venta is set but Venta online is not" "$TMP_DIR/out-sales-channel.txt"
 if grep -q "line 2 .* Canal de venta" "$TMP_DIR/out-sales-channel.txt"; then
@@ -395,28 +383,28 @@ fi
 
 # Controlled values must match the canonical spelling exactly.
 run_expect_failure "$TMP_DIR/out-inexact.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/inexact-values.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/inexact-values.csv"
 grep -q "ERROR line 2 .* Venta online must be one of: sí, no, no comprobado" "$TMP_DIR/out-inexact.txt"
 grep -q "ERROR line 3 .* verificacion must be one of: pendiente, parcial, verificado" "$TMP_DIR/out-inexact.txt"
 
 # nombre, municipio and categoria are required, not merely advisable.
 run_expect_failure "$TMP_DIR/out-identity.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/identity-required.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/identity-required.csv"
 grep -q "ERROR line 2 .* nombre is required" "$TMP_DIR/out-identity.txt"
 grep -q "ERROR line 2 .* categoria is required" "$TMP_DIR/out-identity.txt"
 
 # correo carries one address, not a list.
 run_expect_failure "$TMP_DIR/out-email.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/multi-email.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/multi-email.csv"
 grep -q "ERROR line 2 .* correo: .* must be a single valid email address" "$TMP_DIR/out-email.txt"
 
 run_expect_failure "$TMP_DIR/out-bom.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/bom.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/bom.csv"
 grep -q "must not start with a UTF-8 BOM" "$TMP_DIR/out-bom.txt"
 
 # Social links must reach a profile; Facebook's /p/<name>-<id> form is a real page.
 run_expect_success "$TMP_DIR/out-junk-social.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/junk-social.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/junk-social.csv"
 grep -q "WARNING line 2 .* Facebook: points to the network home page" "$TMP_DIR/out-junk-social.txt"
 grep -q "WARNING line 2 .* Instagram: points to a feed or explore page" "$TMP_DIR/out-junk-social.txt"
 if grep -q "line 3 .* \(Facebook\|Instagram\):" "$TMP_DIR/out-junk-social.txt"; then
@@ -424,11 +412,13 @@ if grep -q "line 3 .* \(Facebook\|Instagram\):" "$TMP_DIR/out-junk-social.txt"; 
   exit 1
 fi
 
-# Canonical Place ID and exact-coordinate links pass. Text searches, missing
-# api=1, short URLs and copied interface URLs remain non-blocking migration
-# warnings so the inherited catalog can be repaired progressively.
+# Only the canonical Place ID link passes. Coordinate-only and text searches,
+# missing api=1, short URLs and copied interface URLs remain non-blocking
+# migration warnings so the inherited catalog can be repaired progressively.
 run_expect_success "$TMP_DIR/out-google-maps-quality.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/google-maps-quality.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/google-maps-quality.csv"
+grep -q "WARNING line 3 .* Google Maps: coordinate-only link opens a pin" \
+  "$TMP_DIR/out-google-maps-quality.txt"
 grep -q "WARNING line 4 .* Google Maps: textual search has no query_place_id" \
   "$TMP_DIR/out-google-maps-quality.txt"
 grep -q "WARNING line 5 .* Google Maps: search URL must include api=1" \
@@ -437,16 +427,16 @@ grep -q "WARNING line 6 .* Google Maps: shortened maps.app.goo.gl URL is opaque"
   "$TMP_DIR/out-google-maps-quality.txt"
 grep -q "WARNING line 7 .* Google Maps: copied interface URL is not canonical" \
   "$TMP_DIR/out-google-maps-quality.txt"
-if grep -q "WARNING line [23] .* Google Maps:" "$TMP_DIR/out-google-maps-quality.txt"; then
-  echo "Error: canonical Place ID and exact-coordinate Maps URLs must not warn" >&2
+if grep -q "WARNING line 2 .* Google Maps:" "$TMP_DIR/out-google-maps-quality.txt"; then
+  echo "Error: a canonical Place ID Maps URL must not warn" >&2
   exit 1
 fi
 
 run_expect_failure "$TMP_DIR/out-categories.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/category-preferences.csv"
-grep -q "WARNING line 2 .* categoria should use preferred label 'Lácteos y quesos' instead of 'Quesos y lácteos'" "$TMP_DIR/out-categories.txt"
-grep -q "WARNING line 3 .* categoria should use preferred label 'Vino' instead of 'Vinos y bebidas'" "$TMP_DIR/out-categories.txt"
-grep -q "WARNING line 4 .* categoria should use preferred label 'Pan y cereal' instead of 'Panadería y repostería'" "$TMP_DIR/out-categories.txt"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/category-preferences.csv"
+grep -q "ERROR line 2 .* categoria 'Quesos y lácteos' was retired; use 'Lácteos y quesos'" "$TMP_DIR/out-categories.txt"
+grep -q "ERROR line 3 .* categoria 'Vinos y bebidas' was retired; use 'Vino'" "$TMP_DIR/out-categories.txt"
+grep -q "ERROR line 4 .* categoria 'Panadería y repostería' was retired; use 'Pan y cereal'" "$TMP_DIR/out-categories.txt"
 
 # A label that was never registered keeps the plain rejection.
 cat >"$TMP_DIR/unknown-category.csv" <<'CSV'
@@ -454,7 +444,7 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 cat-inventada,Masia Inventada,Abrera,Categoria Inventada,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-unknown-category.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/unknown-category.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/unknown-category.csv"
 grep -q "categoria 'Categoria Inventada' is not a valid category" "$TMP_DIR/out-unknown-category.txt"
 
 # A retired label out of the valid list cannot come back, and the error names
@@ -468,68 +458,13 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 cat-retirada,Masia Retirada,Abrera,$RETIRED_GONE,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-retired-rejected.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/retired-rejected.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/retired-rejected.csv"
 grep -qF "categoria '$RETIRED_GONE' was retired; use '$RETIRED_GONE_TARGET'" "$TMP_DIR/out-retired-rejected.txt"
 
-# A retired label still in the valid list is the G-CAT-2 queue: it warns, so the
-# rows stay visible, but it does not block anyone else's gate.
-if [[ -n "$RETIRED_VALID" ]]; then
-  cat >"$TMP_DIR/retired-pending.csv" <<CSV
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
-cat-pendiente,Masia Pendiente,Abrera,$RETIRED_VALID,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
-CSV
-  run_expect_success "$TMP_DIR/out-retired-pending.txt" \
-    node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/retired-pending.csv"
-  grep -qF "WARNING line 2" "$TMP_DIR/out-retired-pending.txt"
-  grep -qF "categoria '$RETIRED_VALID' was retired; reassign to '$RETIRED_VALID_TARGET'" \
-    "$TMP_DIR/out-retired-pending.txt"
-else
-  echo "note: no retired label left in the valid list, G-CAT-2 is done"
-fi
-
-# Singular and plural of the same label in one CSV: `normalizeSearch` folded
-# only case and accents, so this pair used to pass unnoticed inside a province.
-# The labels are invented on purpose. The near-duplicate warning groups before
-# validating, so this keeps testing the folding even though the catalog no
-# longer has a real plural pair for it to catch.
-cat >"$TMP_DIR/plural-variants.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
-plural-uno,Masia Plural,Abrera,Sintetica,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
-plural-dos,Masia Singular,Abrera,Sinteticas,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
-CSV
-run_expect_failure "$TMP_DIR/out-plural-variants.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/plural-variants.csv"
-grep -q "WARNING line 2 .* categoria has near-duplicate variants: Sintetica \[2\]; Sinteticas \[3\]" \
-  "$TMP_DIR/out-plural-variants.txt"
-grep -q "WARNING line 3 .* categoria has near-duplicate variants" "$TMP_DIR/out-plural-variants.txt"
-
-# Two genuinely different categories in one CSV must not be folded together.
-cat >"$TMP_DIR/distinct-categories.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
-distinta-uno,Masia Bodega,Abrera,Vino,Vino,Carrer Major 1,Descripcion de la bodega con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
-distinta-dos,Masia Miel,Abrera,Miel,Miel,Carrer Major 2,Descripcion del colmenar con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
-CSV
-run_expect_success "$TMP_DIR/out-distinct-categories.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/distinct-categories.csv"
-if grep -q "near-duplicate variants" "$TMP_DIR/out-distinct-categories.txt"; then
-  echo "Error: unrelated categories must not fold into one stem" >&2
-  exit 1
-fi
-
-run_expect_success "$TMP_DIR/out-verificado-suppression.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=quality "$TMP_DIR/verificado-suppression.csv"
-# Optional-field gaps are suppressed, not listed (whatever the verification status).
-if grep -q "Facebook and Instagram are both empty" "$TMP_DIR/out-verificado-suppression.txt"; then
-  echo "Error: optional-field gap should be suppressed" >&2
-  exit 1
-fi
-if grep -q "telefono and correo are both empty" "$TMP_DIR/out-verificado-suppression.txt"; then
-  echo "Error: optional-field gap should be suppressed" >&2
-  exit 1
-fi
-grep -q "suppressed (absent optional fields; empty is a valid value)" "$TMP_DIR/out-verificado-suppression.txt"
-# Correctness warnings still fire on verificado rows.
-grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-suppression.txt"
+# Empty optional fields are valid; the only warning here is the real geography gap.
+run_expect_success "$TMP_DIR/out-verificado-geo.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/verificado-suppression.csv"
+grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-verificado-geo.txt"
 
 # One municipio name, two countries: `chiba` is Chiba in Kantō and an alt label
 # of Chiva in Valencia, 10.751 km apart. Each row is measured against its own
@@ -543,11 +478,11 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 celler-chiva,Celler de Chiva,Chiva,Vino,Vino,Carrer Major 1,Bodega con datos propios en el municipio,,,,https://example.com,,,,39.47138,-0.71971,,pendiente,no comprobado,,
 CSV
 run_expect_success "$TMP_DIR/out-scoped-jp.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$JP_DIR/scoped-jp.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$JP_DIR/scoped-jp.csv"
 run_expect_success "$TMP_DIR/out-scoped-es.txt" \
-  node "$ROOT_DIR/scripts/audit-csv.js" --mode=contract "$TMP_DIR/scoped-es.csv"
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/scoped-es.csv"
 for scoped in jp es; do
-  if grep -q "geo-check skipped (municipio not in data/reference/municipalities.json): [1-9]" "$TMP_DIR/out-scoped-$scoped.txt"; then
+  if grep -q "geo-check skipped (municipio centroid not uniquely resolved): [1-9]" "$TMP_DIR/out-scoped-$scoped.txt"; then
     echo "Error: scoped lookup should resolve Chiba/Chiva in its own country" >&2
     exit 1
   fi

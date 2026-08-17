@@ -21,6 +21,10 @@ record per `slug`; Git keeps earlier versions. `reject`, `purge`, and `merge`
 records remain as tombstones, while `keep` records describe rows still present
 in the matching CSV.
 
+A later review updates that current record in place, retaining the sources and
+claims that remain relevant; it does not append a second record for the same
+`slug`.
+
 Evidence is advisory: an area or row may have no record. Coverage is derived at
 audit time from current CSV rows with matching `keep` records; there is no
 manual coverage manifest and incompleteness is not an error.
@@ -148,9 +152,9 @@ actually demonstrates.
 
 A `google-maps` source is a specific listing that the editor opened and matched
 to the row. A generated text-search URL is a query, not evidence of the result
-it happens to return. A coordinate-only Maps URL derived from another provider
-is a public navigation link; the upstream address or coordinate source, not
-Google, carries its `location` claim.
+it happens to return. A coordinate-only Maps URL is not a listing and is not
+published in `Google Maps`; the upstream address or coordinate source, not
+Google, carries the `location` claim for `lat`/`lon`.
 
 ## Notes
 
