@@ -40,3 +40,10 @@ productive municipality, current offer and phone/email before admission.
 | Garvald Factory Bakery | Manufacturers/packers; rating/inspection 2026-04-22 | 454 Gorgie Road, Edinburgh, EH11 2RN | [663212](https://api.ratings.food.gov.uk/Establishments/663212) |
 | George Bowman Butchers | Manufacturers/packers; rating/inspection 2025-11-27 | 44 Great Junction Street, Edinburgh, EH6 5LB | [663548](https://api.ratings.food.gov.uk/Establishments/663548) |
 | Granton Garden Bakery | Manufacturers/packers; rating/inspection 2025-03-26 | 73 Boswall Parkway, Edinburgh, EH5 2PW | [1198366](https://api.ratings.food.gov.uk/Establishments/1198366) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

@@ -99,3 +99,10 @@ Quedan **53 candidatos nuevos** en este corte: 15 perfiles de explotación, 8 un
 | GAEC FERME DE L'ILL | GAEC FERME DE L'ILL | Sausheim | 20 CHE DES PIERRES 68390 | actividad | 2026 | [nº Bio 149156](https://annuaire.agencebio.org/operateur/149156) |
 | GAEC FERME DE L'ESTIVE | GAEC FERME DE L'ESTIVE | Sondernach | 1 RUE DU LANDERSBACH 68380 | actividad | 2026 | [nº Bio 148795](https://annuaire.agencebio.org/operateur/148795) |
 | EARL DU LONDENBACH | EARL DU LONDENBACH | Soultzeren | 21 CHEMIN DU LONDENBACH 68140 | actividad | 2026 | [nº Bio 67857](https://annuaire.agencebio.org/operateur/67857) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Haut-Rhin. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

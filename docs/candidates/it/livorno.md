@@ -69,3 +69,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Lote cerrado el 2026-08-13. Cococcioni & Figli se descartó como distribuidor alimentario B2B: su catálogo vigente vende productos de terceros y su política de 2025 solo menciona de forma genérica productos trabajados en el laboratorio, sin queso propio. Grassi Leopoldo se descartó como mayorista de lácteos y huevos, sin marca ni catálogo de fabricación. La autorización sanitaria no convierte distribución, reenvasado o manipulación en producción editorialmente demostrada.
+

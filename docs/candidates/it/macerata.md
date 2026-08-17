@@ -24,3 +24,12 @@ Los otros dieciocho expedientes siguen en retención. El certificado `ISSUED` ac
 | CIAMBOTTI CATERINA | San Severino Marche | [IT-BIO-009.380-0030711.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0030711.2025.001.pdf) | La presencia pública del nombre corresponde a actividad asociativa; no acredita producto de la explotación ecológica. |
 | COCILOVA DANIELE | Cingoli | [IT-BIO-004.380-0011839.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0011839.2025.001.pdf) | Consta como criador de Vitellone Bianco IGP y explotación activa, pero no se halló carne propia en venta ni canal atribuible. |
 | COMPAGNONI GIANLUIGI | Macerata | [IT-BIO-004.380-0037917.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0037917.2025.001.pdf) | Sólo hay actividad registral de cereales, legumbres y oleaginosas; sin marca o producto público. |
+
+## Productores de trucha y piscicultura de montaña — barrido del 2026-08-14
+
+Investigación de productores de trucha en los manantiales de los Montes Sibilinos y valles del Nera y Scarsito (Visso y Sefro, Macerata). Se verificó crianza histórica en aguas puras de montaña y venta de truchas y derivados. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Troticoltura Cherubini | Visso | `Pescado` | Histórica explotación de truchicultura en el Parque Nacional de los Montes Sibilinos alimentada por las fuentes del río Nera (desde 1940): truchas fario, iridea y venta directa. | [web](https://www.troticolturacherubini.it/) |
+| Erede Rossi Silvio (Impianto di Sefro) | Sefro | `Pescado` | Histórica estación de cría y reproducción de truchas en aguas de manantial de Sefro, en el valle del Scarsito. | [web](https://www.trote.it/) |

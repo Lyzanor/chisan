@@ -101,3 +101,10 @@ Quedan **52 candidatos nuevos** en este corte: 8 perfiles de explotación, 4 uni
 | GRILLET MIREILLE | GRILLET MIREILLE | Valsonne | LE PLAT 69170 | actividad | 2026 | [nº Bio 10088](https://annuaire.agencebio.org/operateur/10088) |
 | COQUARD Jean-Baptiste | COQUARD JEAN BAPTISTE | Vaugneray | 406 CHE DE ROCHE COCU 69670 | actividad | 2026 | [nº Bio 140029](https://annuaire.agencebio.org/operateur/140029) |
 | CURTET JULIE | CURTET JULIE | Vaugneray | LD CHATANAY 69670 | actividad | 2026 | [nº Bio 150217](https://annuaire.agencebio.org/operateur/150217) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Rhône. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

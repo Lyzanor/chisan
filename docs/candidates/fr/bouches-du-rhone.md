@@ -72,3 +72,10 @@ Quedan **19 candidatos nuevos** en este corte: 3 perfiles de explotación, 3 uni
 | Nombre público | Responsable | Commune | Unidad productiva | Producción | Fuente |
 |---|---|---|---|---|---|
 | Ma Petite Oliveraie | Jean-Baptiste Atlan | Maillane | Mas Chastuel, 13910 Maillane | Aceite de oliva de 2.000 olivos repartidos en seis parcelas | [perfil del productor](https://laruchequiditoui.fr/fr-FR/producers/54840/farm) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Bouches-du-Rhône. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

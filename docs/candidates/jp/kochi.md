@@ -91,10 +91,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|
 | いちえん農場 | 四万十市 | ⚠ por decidir | https://www.tabechoku.com/producers/21110 | The profile describes agriculture and only a possible future fishing activity; the listed output remains unresolved. |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de armadores, elaboradores y transformadores artesanos de pescado de Kochi con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
 
 | Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
 |---|---|---|---|---|---|---|
-| **宮進商店 (Miyashin Shoten)** | 株式会社宮進商店 | `須崎市` | Pescado | https://miyashin.jp/ |Obrador centenario fundado en 1921 en Susaki; elaboración puramente tradicional de hueva de lisa/mújol curada al sol (Hon-Karasumi) con sal marina sin aditivos. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro artesanal de Susaki |

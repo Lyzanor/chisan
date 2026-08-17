@@ -13,3 +13,10 @@ La única señal, Cafés Reck, ya se había publicado tras confirmar el taller d
 ## Productores de queso — cerrado el 2026-08-12
 
 El corte quesero ya estaba cerrado: se publicaron 28 unidades nuevas y la ficha preexistente de Ferme Saint-Ulrich se revalidó y completó. Ferme Brandt-Arbogast se clasificó por su producción hortícola; Ferme Peter y Ferme Lisel por fruta y verdura; Ferme Humbert por sus lácteos actuales, sin atribuirle queso. El duplicado registral de Ferme Idoux se absorbió en su única decisión publicada. Erik Hauswald, Chèvrerie de l'Orée du Bois y Ferme du Steinberg permanecen en `parcial` por apoyarse solo en registros o fuentes institucionales indirectas.
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Bas-Rhin. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

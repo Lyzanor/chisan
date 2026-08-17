@@ -74,3 +74,12 @@ Los siguientes 18 certificados acreditan producción agraria, pero todavía no p
 | Garbelotto Formaggi | Vittorio Veneto | Su web actual presenta principalmente selección, afinado y distribución de productos de terceros; no se publica como productor propio. |
 
 La cola queda cerrada para este corte; los retenidos solo deben reabrirse con evidencia nueva de producto propio y actividad actual.
+
+## Productores de caviar, esturión y trucha — barrido del 2026-08-14
+
+Investigación de productores de caviar artesano y piscicultura en las aguas de risorgiva de la llanura del Sile y del Piave en Treviso. Se verificó crianza de esturiones en ciclo cerrado y piscicultura con venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Ittica Giaveri | Breda di Piave | `Pescado` | Histórico criadero de esturiones en aguas puras de risorgiva (San Bartolomeo di Breda di Piave): elaboración de caviar italiano de prestigio (Beluga Imperial, Osietra Classic, Baerii Heritage). | [web](https://www.caviargiaveri.com/) |
+| Itticoltura Tonini | Istrana | `Pescado` | Explotación de truchicultura y avannotteria en aguas de surgencia del río Sile para la cría y venta de truchas y peces de agua dulce. | [web](https://www.itticolturatonini.it/) |

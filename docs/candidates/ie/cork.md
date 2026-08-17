@@ -228,6 +228,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | K. O'Connell Fishmongers | Cork | Pescado | shop=seafood | +353 21 427 6380 · freshfish@eircom.net | OSM way/1374182957 |
 | Stonewell Cider | — | Sidra | listed | — | [FarmFinder](https://farmfinder.ie/producer/stonewell-cider) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Cork.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

@@ -59,3 +59,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Lote cerrado el 2026-08-13. Se publicaron Norden, GreenFantasy, Il Vallone, Libera & Laudi, Pian Del Lares, Caprivalcuvia, Caseificio Sommese y Prealpi tras reconciliar marca, unidad y gama vigente. En Libera & Laudi, los números 106 del registro y 1842 de la web oficial geocodifican el mismo punto de Via Varese y corresponden a la misma razón social y NIF. ITA 3 se descartó al identificar su marca pública ITA Food Improvers: fabrica ingredientes funcionales, conservantes y coadyuvantes para la industria alimentaria, no una línea propia de queso publicable en el catálogo.
+

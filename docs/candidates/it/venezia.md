@@ -25,3 +25,4 @@ Revisión cerrada el 2026-08-12 para el lote abierto el 2026-08-08. Se incorpora
 ## Productores de queso retenidos
 
 Lote cerrado el 2026-08-13. Gabbiano se publicó como fabricante parcial de helados, que es su actividad empresarial atribuible, no como quesería. Food Idea/Cocai se reasignó a Padova: su web y autorización identifican Piombino Dese como planta productiva actual, mientras una fuente de 2025 describe Pianiga como un polo futuro en desarrollo.
+

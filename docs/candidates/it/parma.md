@@ -288,3 +288,4 @@ El [directorio oficial de caseifici](https://www.parmigianoreggiano.com/it/casei
 ### Cierre editorial del 2026-08-13
 
 Se publicaron como fichas productivas independientes las 132 plantas que el directorio oficial del Consorzio del Parmigiano Reggiano mantiene activas en Parma, incluidas las cuatro identidades que no aparecían con el mismo nombre en el barrido sanitario. El directorio aporta identidad, actividad quesera, matrícula, dirección, contactos y coordenadas de cada unidad; cuando marca comercio electrónico y publica una web propia, la ficha refleja también ese canal. Las 20 autorizaciones sanitarias restantes no coinciden con una planta vigente del consorcio y se conservan en esta nota para una revisión posterior, sin convertirlas automáticamente en productores publicables. Con este contraste queda cerrada la cola de quesos y la sección de categorías poco representadas de Parma.
+

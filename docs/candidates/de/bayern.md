@@ -57,3 +57,11 @@ utilizable.
 | Alexander Brodmerkel | Bad Alexandersbad | Kleinwendern 1 95680 | vegetales sin transformar | 2027-01-31 | [DE-ÖKO-006.276-0033437.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0033437.2025.001.pdf) |
 | Alexander Diem | Oberaurach | Rathausstr. 15 96181 | vegetales sin transformar | 2027-01-31 | [DE-ÖKO-006.276-0013842.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0013842.2025.001.pdf) |
 | Alexander Dietz | Breitenbrunn | Oberer Anger 8 92363 | vegetales sin transformar | 2027-03-31 | [DE-ÖKO-005.276-0045885.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-005.276-0045885.2025.001.pdf) |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/sueddeutschland/bayern.csv`, categoría `Pescado`.
+Búsqueda de pesquerías profesionales tradicionales en los grandes lagos bávaros (*Chiemsee-Renken*, *Starnberger See*, *Tegernsee*, *Königssee*, *Schliersee*), explotaciones de carpas con denominación de origen protegida (*Aischgründer Karpfen g.g.A.*, *Oberpfälzer Karpfen g.g.A.*) y piscifactorías de aguas bravas de manantial alpino en Bayern. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|

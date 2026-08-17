@@ -78,3 +78,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | マスキン | 宇都宮市 | Dulces y repostería | 和菓子協会 | http://www.masukin-co.jp/ | 宇都宮市曲師町 3-9 曲師ビル; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 乙女屋 | 小山市 | Dulces y repostería | 和菓子協会 | http://www.otomeya.co.jp/ | 小山市間々田 1150; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
 | 紀州屋 | 鹿沼市 | Dulces y repostería | 和菓子協会 | http://www6.ocn.ne.jp/~kishuya/ | 鹿沼市今宮町 1619; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

@@ -52,6 +52,13 @@ house letter before trusting it.
 | Mts. van Blokland | Dronten *(Biddinghuizen)* | Zijdenettenweg 8, 8256 PL Biddinghuizen | `06-50624611`<br>`vanblokland@solcon.nl` | BvBZ | — |
 | Kaasboerderij Poldergenot | Noordoostpolder *(Rutten)* | Gemaalweg 10, 8313 PS Rutten | `06-12675742`<br>`info@poldergenot.nl` | BvBZ | — |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Flevoland. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y acuicultura (2026-08-14)
 
 Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
@@ -59,3 +66,28 @@ Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o
 | Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
 |---|---|---|---|
 | Het Urker Zalmhuys | Urk | The proposed domain is parked and no current source was found that proves an active own smokehouse offer. | [web](https://zalmhuys.nl/) |
+
+## Barrido de categorías ausentes en el catálogo de Flevoland (2026-08-15)
+
+Búsqueda dirigida a categorías con cero filas publicadas en
+`data/csv/nl/oost-nederland/flevoland.csv` (el CSV solo cubre hoy Fruta y
+verdura, Lácteos y quesos, Huevos, Cerveza, Café, Pescado y Otros). Diez
+candidatos nuevos, deduplicados por nombre contra el CSV publicado y contra
+los slugs ya presentes en `data/evidence/nl/oost-nederland/flevoland.jsonl`.
+Nada de esto está verificado: falta confirmar identidad, producción propia,
+gemeente productiva, actividad vigente y oferta pública para cada fila antes
+de integrar.
+
+| Candidato | Categoría propuesta | Municipio | Dirección | Web / Instagram | Señal |
+|---|---|---|---|---|---|
+| Wijngoed Wilgenhorst | Vino | Zeewolde | Helling 1, 3898 CA Zeewolde | [wijngoedwilgenhorst.nl](https://www.wijngoedwilgenhorst.nl/) · [@wijngoedwilgenhorst](https://www.instagram.com/wijngoedwilgenhorst) | Viñedo propio plantado en 2012 sobre suelo del antiguo Zuiderzee; primera cosecha propia vinificada en 2014. |
+| Wijngoed Noordpol | Vino | Dronten | Van der Plasschelaan 12, 8251 PG Dronten | [wijngoednoordpol.nl](https://www.wijngoednoordpol.nl/) · [@wijngoednoordpol](https://www.instagram.com/wijngoednoordpol/) | Viñedo propio de 2,5 ha, vinificación propia (3 vinos, ~800 botellas ya producidas). |
+| Wijngaard & Boerderijwinkel Maronesse | Vino | Noordoostpolder *(Marknesse)* | Steenwijkerweg 23, 8316 RH Marknesse | [maronesse.nl](https://maronesse.nl/) · [@wijngaard_maronesse](https://www.instagram.com/wijngaard_maronesse/) | Viñedo y bodega propios desde 2004, con tienda de granja adjunta. |
+| Jandlis Meat | Carne | Dronten | Hondweg 16, 8251 RB Dronten | [jandlis.nl](https://jandlis.nl/) · [@jandlismeat](https://www.instagram.com/jandlismeat) | Ganado propio (Verbeterd Roodbont, Belgisch Witblauw), sacrificio por encargo y venta de la propia carne en tienda de granja. |
+| Flevolamb | Carne | Dronten *(Biddinghuizen)* | Zijdenettenweg 13, 8256 PL Biddinghuizen | [flevolamb.nl](https://flevolamb.nl/) · [@flevolamb](https://www.instagram.com/flevolamb/) | Cordero biodinámico propio, entrega en Flevoland o recogida en la finca. |
+| Vink Fruitboerderij | Conservas | Noordoostpolder *(Kraggenburg)* | Zuiderringweg 13 II, 8317 RA Kraggenburg | [vinkfruitboerderij.nl](https://vinkfruitboerderij.nl/) · [@vinkfruitboerderij](https://www.instagram.com/vinkfruitboerderij/) | Fruta propia (manzana, pera, ciruela, mora) transformada en mermeladas y salsas bajo el propio label "Lekker Puur". |
+| De Kleine Distilleerderij | Destilados y licores | Zeewolde | Sjees 1a, 3897 AH Zeewolde | [dekleinedistilleerderij.nl](https://dekleinedistilleerderij.nl/) · [@dekleinedistilleerderij](https://www.instagram.com/dekleinedistilleerderij/) | Destilería artesanal propia desde 2017; gin, licores y Akvavit de elaboración propia. |
+| BioSpirits | Destilados y licores | Almere | Bolderweg 52, 1332 AW Almere | [biospirits.nl](https://biospirits.nl/) · [@biospirits](https://www.instagram.com/biospirits/) | Única destilería 100% ecológica certificada del Benelux; vodka, gin, ron y licores de fruta propios. |
+| Flevosap | Bebidas sin alcohol | Dronten *(Biddinghuizen)* | Prof. Zuurlaan 22, 8256 PE Biddinghuizen | [flevosap.nl](https://www.flevosap.nl/) · [@flevosap](https://www.instagram.com/flevosap/) | Zumo prensado y embotellado en la propia finca desde 1993. |
+| Imkerij De Kleine Stal | Miel | Noordoostpolder *(Emmeloord)* | Texellaan 27, Emmeloord | sin web propia · [@imkerij.de.kleine.stal](https://www.instagram.com/imkerij.de.kleine.stal/) | Apicultor único (Martin Overmars), colmenas propias en el noreste del polder, 8-9 variedades de miel a la venta. |
+

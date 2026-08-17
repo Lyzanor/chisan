@@ -75,3 +75,11 @@ El contraste Grana Padano DOP no produjo otra identidad nueva: Menegazzi, Ghidet
 | Caseificio Strambini | Zevio | La actividad comercial aparece en documentación local, pero falta una gama propia actual verificable. |
 
 La cola queda cerrada para este corte; los retenidos solo deben reabrirse con evidencia de producto propio y actividad actual.
+
+## Productores de pescado de lago — barrido del 2026-08-14
+
+Investigación de cooperativas de pescadores y elaboración artesanal de pescado del Lago de Garda (Verona). Se verificó pesca tradicional de lago, elaboración de pescado fresco y transformado con punto de venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cooperativa fra Pescatori Garda | Garda | `Pescado` | Histórica cooperativa de pescadores del Lago di Garda con punto de venta y transformación de lavarello (coregone), carpione, sardinas de lago (agone) y luccio. | [web](https://www.coopgarda.it/) |

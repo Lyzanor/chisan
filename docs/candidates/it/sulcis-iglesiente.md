@@ -49,3 +49,13 @@ Lote revisado el 2026-08-13. Se publicaron Sa Craberia y Fluminese Formaggi tras
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
 | TRE EMME PICCOLA SOC. COOP. ARL | Santadi | VIA IS SOLLAIS, 5 , SANTADI (SU) | `UE IT 20 178` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de productores de atún rojo de tonnara en Carloforte (Isla de San Pietro) y cooperativas de pesca y marisqueo en Sant'Antioco. Se verificó pesca tradicional, obrador de conserva y cría de moluscos con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Carloforte Tonnare - PIAM Ligure Sarda | Carloforte | `Pescado` + `Conservas` | Tonnara fissa histórica de Carloforte (Isola di San Pietro): pesca del tonno rosso di corsa y elaboración artesanal de conservas de atún en aceite de oliva en formato bauletto. | [web](https://www.carlofortetonnare.it/) |
+| Cooperativa Pescatori La Sulcitana | Sant'Antioco | `Pescado` | Cooperativa de pescadores de la laguna de Sant'Antioco: cría, depuración y stabulazione de ostras y mejillones (cozze dello stagno di Cirdu). | [web](https://www.lasulcitana.it/) |
+| Cooperativa Pescatori Alta Marea | Sant'Antioco | `Pescado` | Cooperativa activa desde 1998 en la pesca artesanal en el Golfo di Palmas y venta directa de pescado fresco local. | [web](https://www.cooperativaaltamarea.it/) |

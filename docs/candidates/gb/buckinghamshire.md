@@ -38,3 +38,10 @@ productive municipality, current offer and phone/email before admission.
 | Oaken Grove Vineyard | Manufacturers/packers; rating/inspection 2020-03-13 | Benhams Orchard, Benhams Lane, Fawley, Buckinghamshire, RG9 6JG | [1212178](https://api.ratings.food.gov.uk/Establishments/1212178) |
 | The Real Brewing Company | Manufacturers/packers; rating/inspection 2023-05-31 | The Bail, Silk Street, Waddesdon, Buckinghamshire, HP18 0JY | [1610403](https://api.ratings.food.gov.uk/Establishments/1610403) |
 | Vale Brewery Co | Manufacturers/packers | Unit 1 - 3 Tramway Business Park, Ludgershall Road, Brill, Buckinghamshire, HP18 9TY | [370172](https://api.ratings.food.gov.uk/Establishments/370172) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

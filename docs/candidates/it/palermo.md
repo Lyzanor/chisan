@@ -101,3 +101,14 @@ Se evitó atribuir `caseificiolamadonnina.it` al establecimiento de Lascari: ese
 | IL COLLE S.R.L. | Torretta | VIA PANAGULIS, 27, TORRETTA (PA) | `UE IT C573Y` | vacuno más de 60 d | 19-SEP-16 |
 | BASILE GIUSEPPE | Ventimiglia Di Sicilia | CONTRADA TRAVERSA , VENTIMIGLIA DI SICILIA (PA) | `UE IT 19 704` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 02-AUG-10 |
 | PRAVATA' MARCO | Vicari | VIA PORTELLA S.FRANCESCO , VICARI (PA) | `UE IT 19 371` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JAN-14 |
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de conserverías ittiche tradicionales, salazón artesanal de anchoas en Aspra (Bagheria) y transformación de atún y pescado azul en la provincia de Palermo. Se verificó unidad de elaboración propia y oferta al público activa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Balistreri Girolamo & C. | Bagheria | `Pescado` + `Conservas` | Histórico obrador en Aspra (desde 1947) de salazón manual de anchoas de Sicilia, filetes sott'olio y conservas de atún. | [web](https://www.balistrericollection.it/) |
+| Iconsitt | Bagheria | `Pescado` + `Conservas` | Salazón y elaboración artesanal de anchoas, sardinas y atún de pesca siciliana en el borgo marinaro de Aspra. | [web](https://www.iconsitt.it/) |
+| Coalma (Conserve Alimentari Macaluso) | Palermo | `Pescado` + `Conservas` | Histórica conservería siciliana (desde 1922) con planta en Palermo para la cocción y envasado de atún del Mediterráneo y pescado azul. | [web](https://www.coalma1922.it/) |
+| Nutritalia - Tonnara dell'Orsa | Trappeto | `Pescado` + `Conservas` | Elaboración tradicional de atún rojo y pescado azul siguiendo los métodos históricos de las tonnaras del Golfo di Castellammare. | [web](https://www.tonnaradellorsa.it/) |

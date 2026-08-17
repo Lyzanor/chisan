@@ -53,3 +53,11 @@ house letter before trusting it.
 | Biologische geitenhouderij Broeklander | Meppel *(Broekhuizen)* | Broekhuizen 22, 7965AB Broekhuizen | [broeklander.nl](http://www.broeklander.nl)<br>`+31627495638 of +31522445142` | broodsmakelijk | Geitenhouderij Broeklander werkt geheel biologisch. Men verkoopt niet alleen de geitenmelk maar maakt ook zelf geitenkaas. Men verkoopt ook geitenlamsvlees van eigen geiten. Wil je geitenmelk kopen? Neem dan zelf een fles mee.… |
 | Geitenboerderij Hansketien | Midden-Drenthe *(Mantinge)* | Steendervalsweg 37, 9436PL Mantinge | [hansketien.nl](http://www.hansketien.nl)<br>`+31645659216`<br>`info@hansketien.nl` | broodsmakelijk | Geitenboerderij Hansketien is een geitenboerderij op basis van de principes van biologisch-dynamische landbouw. Een uitgangspunt hierbij is het zoveel mogelijk rekening te houden met het diereigen gedrag. [icons: boerenkaas, meat] |
 | Kaaslust | Noordenveld *(Veenhuizen)* | Hoofdweg 138, 9341 BL Veenhuizen | [kaaslust.nl](https://kaaslust.nl) | zoekdeboer | Artisan cheese dairy in the restored Veenhuizen creamery, local weidemelk |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Drenthe. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+

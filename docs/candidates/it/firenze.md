@@ -128,3 +128,4 @@ Lote revisado el 2026-08-13. Mukki — Centrale del Latte della Toscana se publi
 | Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
 |---|---|---|---|---|---|
 | CASEIFICIO LA FONTE S.R.L. | Firenze | VIA BRONZINO 1, FIRENZE (FI) | `UE IT C7Z4W` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 17-NOV-25 |
+

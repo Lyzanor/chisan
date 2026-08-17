@@ -108,7 +108,6 @@ The source names the business and its county and little else. Cheapest to resolv
 | Burren Smokehouse | — | Carne | Producer; IOA Member, Organic, Beef, Lamb; via Curated B2C Directory | — | [FarmFinder](https://farmfinder.ie/producer/burren-smokehouse) |
 | Donnie O'Keefe | Roslevan, Ennis (nearest, 2.3 km) | Carne | shop=butcher | +353 65 682 3906 | OSM node/11878666373 |
 | Lunasa Farm | — | Carne | Farm; Beef, Lamb, Pork, Poultry; via Irish Meat Producers Directory | — | [FarmFinder](https://farmfinder.ie/producer/lunasa-farm) |
-| Dooliner Beer | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/dooliner-beer) |
 | Bunratty Mead and Liqueur Company | — | Destilados y licores | listed | — | [FarmFinder](https://farmfinder.ie/producer/bunratty-mead-and-liqueur-company) |
 | Sitalane Honey | — | Miel | listed | — | [FarmFinder](https://farmfinder.ie/producer/sitalane-honey); via yourhonestybox.com |
 | Ardboula Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/ardboula-farm) |
@@ -122,6 +121,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Hugo's Bakery | — | Pan y cereal | Producer; Bread & Bakery, Sourdough, Farm Gate; via Real Bread Ireland / Irish Bakeries Directory | — | [FarmFinder](https://farmfinder.ie/producer/hugo-s-bakery) |
 | Naturally Wild Sourdough | — | Pan y cereal | listed | — | [FarmFinder](https://farmfinder.ie/producer/naturally-wild-sourdough) |
 | CS Fish Ltd. | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/cs-fish-ltd-clare) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Clare.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

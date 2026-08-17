@@ -19,3 +19,11 @@ Los trece casos restantes conservan certificado ecológico vigente, pero la bús
 | Andreas Schäfer | [DE-ÖKO-005.276-0045879.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-005.276-0045879.2026.001.pdf) | El directorio de Ortslandwirte confirma al agricultor y la dirección de Rückers, pero no identifica los animales o cultivos destinados a alimentación ni su comercialización. |
 | Andreas und Markus Schüttler GbR | [DE-ÖKO-064.276-0006041.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-064.276-0006041.2026.001.pdf) | No se encontró presencia pública verificable de la explotación de Herrenlose 29, sus alimentos ni un canal de venta. |
 | Andree Hofmann | [DE-ÖKO-006.276-0013166.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0013166.2026.001.pdf) | La identidad y el municipio aparecen en fuentes cívicas y telefónicas, pero no se pudo acreditar una oferta alimentaria propia de la explotación certificada. |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/westdeutschland/hessen.csv`, categoría `Pescado`.
+Búsqueda de explotaciones acuícolas de aguas bravas de montaña (*Rhönforellen*, *Taunus*), piscifactorías de aguas puras de manantial y productores de caviar artesanal con instalaciones activas en Hessen. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|

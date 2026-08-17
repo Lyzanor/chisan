@@ -69,3 +69,11 @@ Lote cerrado el 2026-08-13. De las 30 unidades, 29 se publicaron tras confirmar 
 ## Productores de queso — contraste Grana Padano DOP del 2026-08-11
 
 Todas las plantas de Cremona publicadas en el [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) quedaron reconciliadas con candidatos existentes, incluidas las cuatro unidades de Latteria Soresina (`CR117`, `CR103`, `CR122` y la planta `BS655` asignada a Brescia) y la planta de Fattorie Cremona en Persico Dosimo (`CR106`). No produjo candidatos nuevos.
+
+## Productores de caviar y esturión — barrido del 2026-08-14
+
+Investigación de productores de caviar italiano y acuicultura de esturiones en las aguas puras de manantial de la llanura de Cremona (Pandino). Se verificó cría de esturiones, elaboración artesanal de caviar fresco y venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Adamas Caviar (Salmo-Pan S.r.l.) | Pandino | `Pescado` | Criadero de esturiones alimentado por aguas puras de risorgiva en Pandino: elaboración de caviar artesanal 100% italiano (Adamas Black, Golden, Imperial y esturión fresco/ahumado). | [web](https://www.adamascaviar.com/) |

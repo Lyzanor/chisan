@@ -32,3 +32,17 @@ productive municipality, current offer and phone/email before admission.
 | Donnington Castle House Farm | Farmers/growers | RG14 | [1975452](https://api.ratings.food.gov.uk/Establishments/1975452) |
 | Maidenhead Riverside Honey | Farmers/growers; rating/inspection 2024-04-05 | SL6 | [1542216](https://api.ratings.food.gov.uk/Establishments/1542216) |
 | Sweet Madness By Vincenzo Maio | Manufacturers/packers; rating/inspection 2025-04-03 | Heidi Studio, 37 - 38 The Arches, Alma Road, Windsor, SL4 1QZ | [1755466](https://api.ratings.food.gov.uk/Establishments/1755466) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

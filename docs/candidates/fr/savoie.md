@@ -108,3 +108,10 @@ Quedan **67 candidatos nuevos** en este corte: 17 perfiles de explotación, 32 u
 | GAEC DU FARDELIER | DU FARDELIER | Saint-Michel-De-Maurienne | LE MOLLARD DE BEAUNE 202 CHE DES FERMES 73140 | actividad | 2026 | [nº Bio 103875](https://annuaire.agencebio.org/operateur/103875) |
 | LA CHEVRERIE DES ARCOSSES | LA CHEVRERIE DES ARCOSSES | Villarodin-Bourget | 279 RTE DES COMBES 73500 | actividad | 2026 | [nº Bio 55247](https://annuaire.agencebio.org/operateur/55247) |
 | MONSIEUR PIERRE-LOiC BLANC | BLANC PIERRE-LOIC | Yenne | 1200 CHEMIN DU CHATEAU DE SOMONT 73170 | actividad | 2025 | [nº Bio 45079](https://annuaire.agencebio.org/operateur/45079) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Savoie. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

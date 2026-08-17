@@ -69,6 +69,13 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | 阿波ナチュラルチーズ工房 チーズの灯 | Naruto | Lácteos y quesos | ChFun | — | sin dominio en la fuente; revisado 2026-08-10: la guía no pudo enlazarse con una fuente primaria actual y localización completa |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, elaboradores y recolectores artesanos de pescado, marisco y algas de Tokushima con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
@@ -76,4 +83,3 @@ Barrido sistemático de productores, elaboradores y recolectores artesanos de pe
 | Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
 |---|---|---|---|---|---|---|
 | **福池水産 (Fukuike Suisan)** | 福池水産株式会社 | `鳴門市` | Pescado | https://fukuike.co.jp/ |Recolector y cultivador de algas wakame y besugo en el estrecho de Naruto; especialista en Naruto-wakame (alga wakame crujiente cultivada en los remolinos marinos de Naruto) con salazón tradicional. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro pesquero de Naruto |
-| **谷ちくわ店 (Tani Chikuwa)** | 株式会社谷ちくわ店 | `小松島市` | Pescado | https://tani-chikuwa.co.jp/ |Obrador tradicional de Komatsushima fundado en 1955; célebre por su Takechikuwa (pastel de pescado asado directamente sobre cañas de bambú natural) y pasteles de pescado katsu. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro artesanal de Komatsushima |

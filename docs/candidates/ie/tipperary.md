@@ -159,6 +159,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Adams Cider Company | — | Sidra | listed | — | [FarmFinder](https://farmfinder.ie/producer/adams-cider) |
 | Longways Cider | — | Sidra | listed | — | [FarmFinder](https://farmfinder.ie/producer/longways-cider) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Tipperary.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

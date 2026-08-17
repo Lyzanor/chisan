@@ -24,3 +24,4 @@ Revisión editorial del 2026-08-12. Se publicaron diez productores con oferta pr
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 El barrido sanitario nacional no produjo unidades adicionales en esta provincia. Kmetija Antonič se incorporó desde el registro regional y su web propia, que identifica el Pecorino del Carso elaborado en la fattoria. Corte: 2026-08-12.
+

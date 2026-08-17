@@ -85,3 +85,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 松屋長春 | 稲沢市 | Dulces y repostería | 和菓子協会 | http://www14.ocn.ne.jp/~matsuya/ | 稲沢市小沢 3-13-21; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 合資会社三河屋本店 | 名古屋市 | Aperitivos | 全国米菓工業組合 | http://www.mikawayahonten.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 株式会社白木 | 名古屋市 | Aperitivos | 全国米菓工業組合 | http://www.arareya.com/ | 米菓製造業（菓子卸等へ販売）、米菓製造・販売業（直売所有り）、米菓販売業（その他菓子を含む卸・小売業）、その他（米菓を含むコメ加工品製造・販売等）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

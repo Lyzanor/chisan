@@ -114,8 +114,6 @@ The source names the business and its county and little else. Cheapest to resolv
 | Cotter Organic Lamb T/A | — | Carne | listed | — | [FarmFinder](https://farmfinder.ie/producer/cotter-organic-lamb-t-a) |
 | Michael O' Loughlin | Limerick (nearest, 0.4 km) | Carne | shop=butcher | +353 61 414 102 | OSM node/5005535559 |
 | The Market Butcher | Newcastle West (nearest, 0.3 km) | Carne | shop=butcher | +353 69 61398 | OSM node/10821584792 |
-| JJ's Craft Brewing | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/jjs-craft-brewing) |
-| Treaty City Brewery | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/treaty-city-brewery) |
 | Canteen | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/canteen) |
 | Donegan, John | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/donegan-john) |
 | Happy Food at Home | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/happy-food-at-home) |
@@ -131,6 +129,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Rene Cusack Fish | — | Pescado | Producer; Seafood; also OSM node/5015273763; also OSM node/7914412837 | — | [FarmFinder](https://farmfinder.ie/producer/rene-cusack-fish) |
 | Saddlers | — | Pescado | Producer; Seafood | — | [FarmFinder](https://farmfinder.ie/producer/saddlers-limerick) |
 | SeaBreeze | — | Pescado | Producer; Seafood, remaining), About, About FarmFinder | — | [FarmFinder](https://farmfinder.ie/producer/seabreeze-limerick) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Limerick.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

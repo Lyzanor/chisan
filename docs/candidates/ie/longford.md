@@ -100,6 +100,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Jammy Rogers Bakery | — | Pan y cereal | Producer; Bread & Bakery, Sourdough, Farm Gate; via Real Bread Ireland / Irish Bakeries Directory | — | [FarmFinder](https://farmfinder.ie/producer/jammy-rogers-bakery) |
 | Heartlands Orchard | — | Sidra | Prepared Foods, Preserves | — | [Midlands directory](https://www.midlandsireland.ie/producers_directory/heartlands-orchard/) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Longford.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

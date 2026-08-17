@@ -77,3 +77,10 @@ Quedan **22 candidatos nuevos** en este corte: 6 perfiles de explotación, 1 uni
 | BIO AVENIR | GAEC BIO-AVENIR | Spay | LD LA FONTAINE 72700 | actividad | 2026 | [nº Bio 115841](https://annuaire.agencebio.org/operateur/115841) |
 | CHARPENTIER Cédric | CHARPENTIER CEDRIC | Vibraye | LA LANDE 72320 | actividad | 2026 | [nº Bio 32018](https://annuaire.agencebio.org/operateur/32018) |
 | ANNE MECHE | MECHE ANNE | Voivres-Les-Le-Mans | LE CHENE BEUNARD 72210 | actividad | 2026 | [nº Bio 136272](https://annuaire.agencebio.org/operateur/136272) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Sarthe. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

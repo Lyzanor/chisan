@@ -59,9 +59,9 @@ current offer and phone/email before admission.
 | Caws Rhyd Y Delyn | FSA Manufacturers/packers; rating/inspection 2025-03-05 | Rhydydelyn Fawr, Penmynydd Road, Llangefni, Isle Of Anglesey | — | [115266](https://api.ratings.food.gov.uk/Establishments/115266) |
 | Caws Mon Ltd | FSA Manufacturers/packers; rating/inspection 2025-12-03 | 8 Mona Industrial Park, Gwalchmai, Holyhead | — | [1721850](https://api.ratings.food.gov.uk/Establishments/1721850) |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

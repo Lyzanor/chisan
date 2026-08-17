@@ -19,3 +19,11 @@ Pendientes tras la revisión del 2026-08-12. Proceden del [directorio público T
 | BENATTI VALTER | Melara | Solo consta actividad cerealista; además existe un homónimo inmobiliario, por lo que no se puede asignar una identidad pública segura. |
 | BOSCHINI FABIO | Salara | Consta como fruticultor de pepita y hueso, pero no se encontró una oferta propia o marca pública atribuible. |
 | CANAL DEI CUORI SRL SOC.AGRICOLA | Adria | La finca y su uso para eventos son actuales, pero no se encontró un alimento propio ofrecido al mercado bajo esta identidad. |
+
+## Productores de pescado y marisco — barrido del 2026-08-14
+
+Investigación de productores de moluscos y marisco en la Sacca di Scardovari y el Delta del Po (Rovigo). Se verificó cultivo de la Cozza di Scardovari DOP, almejas y ostras con instalaciones de stabulazione y comercialización certificada. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Consorzio Cooperative Pescatori del Polesine | Porto Tolle | `Pescado` | Principal consorcio de productores del Delta del Po (Scardovari): cría y comercialización de la Cozza di Scardovari DOP, vongole veraci del Delta del Po y ostras del Delta (Tarbouriech). | [web](https://www.scardovari.org/) |

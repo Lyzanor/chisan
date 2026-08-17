@@ -55,3 +55,10 @@ Estado de la pasada del 2026-08-12: las dos unidades Marcillat de Corcieux queda
 | CURIEN Jean-Christophe | CURIEN JEAN CHRISTOPHE | Cleurie | 1 ROUTE DE PURIFAING 88120 | actividad | 2026 | [nº Bio 174033](https://annuaire.agencebio.org/operateur/174033) |
 
 Estado de la pasada del 2026-08-12: Ferme Saint-Marcel solo conserva la certificación y la identidad registral, sin catálogo alimentario público localizado; Emmanuel Gérard no muestra una marca ni una oferta pública atribuible; y Jean-Christophe Curien solo aparece como explotación bovina y operador bio, sin producto quesero público. Las tres señales permanecen en espera, no rechazadas.
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Vosges. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

@@ -58,3 +58,4 @@ Siete unidades productivas siguen pendientes de contrastar, extraídas del [regi
 | BOSSIO DIEGO | Peglio | LOCALITA' ALPE MOTTA SNC, PEGLIO (CO) | `UE IT 03 909` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 14-JUL-16 |
 | CASTELLAZZI RAFFAELE | Tremezzina | LOCALITA' ALPE DI OSSUCCIO SNC, TREMEZZINA (CO) | `UE IT 03 923` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d | 17-JAN-24 |
 | MARIANI FABIO | Valsolda | LOC. BOLGIA - ALPE BOLGIA , VALSOLDA (CO) | `UE IT 03 907` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-DEC-11 |
+

@@ -59,12 +59,17 @@ current offer and phone/email before admission.
 | Goodwood Estate Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Home Farm, Goodwood, Chichester, West Sussex, PO18 0QF | [site](http://www.goodwood.com)<br>01243 755150<br>farm@goodwood.com | — |
 | Huddlestone Farmers Ltd | Specialist Cheesemakers Association member (cheesemaker) | Huddlestone Farm, Horsham Road, Steyning, Sussex, BN44  3AD | [site](http://www.huddlestonefarmersltd.co.uk)<br>07889 000734<br>matt@huddlestonefarmersltd.co.uk | — |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|
 | Springs Smokery | Traditional South Downs smokehouse using Sussex oak logs in brick kilns | Edburton, Henfield, BN5 9LN | [site](https://www.springssmokedsalmon.co.uk)<br>01273 857338<br>info@springssmokedsalmon.co.uk |
-
-- **Springs Smokery:** The company remains active on Companies House, but the former Edburton productive site and current offer could not be reconciled.

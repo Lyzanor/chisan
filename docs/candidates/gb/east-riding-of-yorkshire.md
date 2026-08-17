@@ -40,3 +40,10 @@ productive municipality, current offer and phone/email before admission.
 | Pickards Butchers & Delicatessen | Manufacturers/packers; rating/inspection 2025-07-29 | 74 Carlisle Street, Goole, East Riding Of Yorkshire, DN14 5EP | [138959](https://api.ratings.food.gov.uk/Establishments/138959) |
 | Richardsons Old Town Bakery | Manufacturers/packers; rating/inspection 2024-10-30 | 43a Market Place, Bridlington, East Riding Of Yorkshire, YO16 4QL | [210823](https://api.ratings.food.gov.uk/Establishments/210823) |
 | Terroir Artisanal Chocolates | Manufacturers/packers; rating/inspection 2024-11-28 | 43 North Bar Within, Beverley, East Riding Of Yorkshire, HU17 8DG | [1783548](https://api.ratings.food.gov.uk/Establishments/1783548) |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

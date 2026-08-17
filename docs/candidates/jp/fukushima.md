@@ -82,6 +82,13 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | ㈱あらい屋製麺所 | 郡山市 | Pan y cereal | 全乾麺 | http://www.araiya.net/ | 機械製乾めん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Fukushima con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.

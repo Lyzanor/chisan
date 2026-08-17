@@ -233,3 +233,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 El contraste con los padrones oficiales del Consorzio per la Tutela dei Formaggi Valtellina Casera e Bitto permitió publicar 12 caseifici de Valtellina Casera DOP y 41 alpeggi de Bitto DOP situados en la provincia de Sondrio. Cada alpeggio se conserva como unidad productiva independiente, con el comune de la unidad estacional y las coordenadas publicadas por el consorcio, aunque un mismo titular elabore en más de uno. Los ocho alpeggi del mismo padrón ubicados físicamente en Bergamo o Lecco se asignaron a sus CSV reales.
 
 Las autorizaciones sanitarias que no quedaron vinculadas a una de estas identidades productivas públicas permanecen retenidas en esta nota: prueban capacidad de elaborar queso, pero no bastan para atribuir una oferta propia actual. Con ello queda revisada y cerrada la cola, sin convertir automáticamente cada autorización en una ficha.
+

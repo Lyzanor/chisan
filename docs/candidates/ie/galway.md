@@ -130,7 +130,6 @@ The source names the business and its county and little else. Cheapest to resolv
 | Mike Walsh Butcher | Athenry (nearest, 0.3 km) | Carne | shop=butcher | +353 91 844 023 | OSM way/331441523 |
 | Tony Carroll Family Butcher | Ballinasloe (nearest, 0.1 km) | Carne | shop=butcher | +353 90 964 4949 | OSM node/5141100258 |
 | William's Gate | Galway | Carne | shop=butcher | +353 91 771 604 | OSM node/10299343232 |
-| Boffin Brewing | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/boffin-brewing) |
 | Connemara Brewing Co. | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/connemara-brewing-co) |
 | Micil Distillery | — | Destilados y licores | listed | — | [FarmFinder](https://farmfinder.ie/producer/micil-distillery) |
 | Green Earth Organics | — | Fruta y verdura | Farm; Organic, Fruit, Vegetables, Delivery; via Curated B2C Directory | — | [FarmFinder](https://farmfinder.ie/producer/green-earth-organics) |
@@ -173,6 +172,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Moran's Oyster Cottage | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/moran-s-oyster-cottage) |
 | The Fisherman Factory Shop | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-fisherman-factory-shop-galway) |
 | Solaris Tea | — | Té e infusiones | listed | — | [FarmFinder](https://farmfinder.ie/producer/solaris-tea) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Galway.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

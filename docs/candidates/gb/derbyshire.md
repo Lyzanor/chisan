@@ -55,3 +55,10 @@ current offer and phone/email before admission.
 | Bailey + Benbow | Specialist Cheesemakers Association member (cheesemaker) | Wakebridge Farm, Nr Matlock, Derbyshire, DE4 5HD | 07737 050666<br>johnthevetbailey@icloud.com | — |
 | Bradburys Cheese | Specialist Cheesemakers Association member (cheesemaker) | Staden Business Park, Staden Lane, Buxton, Derbyshire, SK17 9RZ | [site](http://www.bradburyscheese.co.uk)<br>01298 23180<br>rp@bradburyscheese.co.uk | — |
 | Fratemarco Cheese Co | Specialist Cheesemakers Association member (cheesemaker); FSA productive registration | 15 Meadowfield Close, Glossop, Derbyshire, SK13 2BL | 07846 899324<br>vinceuknorth@gmail.com | [1832187](https://api.ratings.food.gov.uk/Establishments/1832187) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

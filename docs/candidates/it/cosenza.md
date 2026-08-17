@@ -101,3 +101,11 @@ Las **51 unidades restantes** continúan retenidas: el registro acredita autoriz
 | F.LLI TALARICO & C. SNC | Spezzano Della Sila | VIA GAUDENTI SNC, SPEZZANO DELLA SILA (CS) | `UE IT 18 48` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 21-MAR-19 |
 | MARCO ANTONIO S.R.L. - SOCIETA' AGRICOLA | Spezzano Della Sila | VIA DELL'AGRICOLTURA 73, SPEZZANO DELLA SILA (CS) | `UE IT 18 124` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 20-JAN-16 |
 | SIRIANNI NICOLA | Spezzano Della Sila | VIA ZAGARIA , SPEZZANO DELLA SILA (CS) | `UE IT 18 171` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 01-OCT-08 |
+
+## Productores de trucha y piscicultura de montaña — barrido del 2026-08-14
+
+Investigación de productores de trucha en el altiplano de la Sila (San Giovanni in Fiore, Cosenza). Se verificó crianza histórica en aguas puras de manantial de la Sila con venta directa de trucha fresca y fileteada. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Troticoltura Conte | San Giovanni in Fiore | `Pescado` | Histórica explotación de truchicultura de montaña en el Parque Nacional de la Sila (fundada en 1963): truchas fario e iridea criadas en aguas de manantial silano y venta directa. | [web](https://www.troticolturaconte.it/) |

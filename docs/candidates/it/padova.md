@@ -47,3 +47,4 @@ Queda 1 unidad en retención. Las demás entradas del barrido sanitario se resol
 | Candidato declarado | Comune | Dirección de la unidad | Motivo concreto de retención |
 |---|---|---|---|
 | OLISMO SRL | Pernumia | VIA DELL'ARTIGIANATO 12/B, PERNUMIA (PD) | La autorización sanitaria fue actualizada el 01-07-2026, pero no se encontró identidad pública ni oferta alimentaria propia contrastable. |
+

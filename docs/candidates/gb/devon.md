@@ -58,12 +58,17 @@ current offer and phone/email before admission.
 | Sharpham Cheese | FSA Manufacturers/packers; rating/inspection 1901-01-01 | Unit 1, South Devon Food Hub, Longcombe | — | [1779395](https://api.ratings.food.gov.uk/Establishments/1779395) |
 | Ticklemore Cheese | Named as a cheese producer by Wikipedia list of British cheeses | Ashprington, Devon | — | — |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|
 | River Teign Shellfish | Cultivation and harvesting of mussels and Pacific oysters on the River Teign | Back Beach, Teignmouth, TQ14 8TE | [site](https://riverteignshellfish.co.uk)<br>01626 779435<br>sales@riverteignshellfish.co.uk |
-
-- **River Teign Shellfish:** The candidate domain is unavailable, so current productive activity and public contact remain unresolved.

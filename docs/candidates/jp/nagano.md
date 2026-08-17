@@ -117,3 +117,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 花柳 | 松本市 | Dulces y repostería | 和菓子協会 | http://shop.hanayagi.cc/ | 松本市深志 3-7-49; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
 | 千登勢菓子店 | 高遠町 | Dulces y repostería | 和菓子協会 | http://www.takato-chitose.com | 上伊那郡高遠町小原 553-4; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | ㈱沢製麺 | 箕輪町 | Pan y cereal | 全乾麺 | http://www.sawaseimen.co.jp/ | 機械製乾めん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

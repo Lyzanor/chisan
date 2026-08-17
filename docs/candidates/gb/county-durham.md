@@ -56,3 +56,10 @@ current offer and phone/email before admission.
 | Parlour Made Dairy | Named as a cheese producer by Living North local cheesemakers | Sedgefield, County Durham | — | — |
 | Embleton Hall Dairies | Named as a cheese producer by Green Durham local food producers | County Durham | — | — |
 | Leaside Cheesemakers | Named as a cheese producer by Green Durham local food producers | County Durham | — | — |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

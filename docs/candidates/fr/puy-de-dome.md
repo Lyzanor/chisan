@@ -112,3 +112,10 @@ Quedan **62 candidatos nuevos** en este corte: 15 perfiles de explotación, 15 u
 | GAEC LA FERME DES CROQUEUSES DE RONCES | GAEC LA FERME DES CROQUEUSES DE RONCES | Teilhet | 81 LIEU-DIT LA BOGE 63560 | actividad | 2026 | [nº Bio 68585](https://annuaire.agencebio.org/operateur/68585) |
 | DUMAS CHANTAL CLAUDE | DUMAS CHANTAL CLAUDE | Thiers | PIGEROLLES 63300 | actividad | 2026 | [nº Bio 148286](https://annuaire.agencebio.org/operateur/148286) |
 | GAEC DE PIEDFROID | GAEC DE PIEDFROID | Tours-Sur-Meymont | PIEDFROID 63590 | actividad | 2026 | [nº Bio 39451](https://annuaire.agencebio.org/operateur/39451) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Puy-de-Dôme. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

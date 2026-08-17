@@ -87,3 +87,4 @@ Permanecen 16 candidatos. El registro sanitario acredita la unidad, pero no bast
 | IPERCARNI S.R.L. | Roma Capitale | VIA DEI RUDERI DI TORRENOVA, 75 , ROMA CAPITALE (RM) | `UE IT 3011 S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 07-DEC-10 |
 | LA COTARDA SOCIETA' AGRICOLA A R.L.C.R. | Roma Capitale | VIA ANAGNINA 436/438, ROMA CAPITALE (RM) | `UE IT G411S` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 22-NOV-24 |
 | PEWEX - AL.PA. - SOCIETA' A RESPONSABILITA' LIMITATA | Roma Capitale | VIA CASILINA 1670, ROMA CAPITALE (RM) | `UE IT E4N1C` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 17-JUL-24 |
+

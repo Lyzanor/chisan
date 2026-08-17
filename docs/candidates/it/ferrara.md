@@ -27,3 +27,11 @@ Estas pistas requieren una fuente pública adicional que vincule la identidad co
 - **Cavicchi Stefano** — La dirección certificada atribuida a Ferrara es incoherente. Sus fuentes oficiales sitúan los olivares y la producción en Avetrana y Manduria; se publicó como `olio-cavicchi` en Taranto y se dejó un `reject` por zona errónea en Ferrara.
 
 - **COFRIMAR SRL** — La actividad oficial actual es el almacenamiento frigorífico y el procesado de `petfood`, no una oferta pública propia para alimentación humana. Se conserva un registro `reject` en el ledger de evidencia del área.
+
+## Productores de pescado y marinados — barrido del 2026-08-14
+
+Investigación de elaboración artesanal y tradicional de pescado de valle en Comacchio (Delta del Po, Ferrara). Se verificó asado tradicional en espetos al fuego de leña y marinado de la Anguilla di Comacchio con venta directa al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Manifattura dei Marinati | Comacchio | `Pescado` + `Conservas` | Fábrica-museo y obrador activo de las Valli di Comacchio: elaboración artesanal de la "Anguilla Marinata Tradizionale delle Valli di Comacchio" (Presidio Slow Food) asada en chimeneas de leña y marinada en vinagre y salmuera. | [web](https://www.imarinatidicomacchio.it/) |

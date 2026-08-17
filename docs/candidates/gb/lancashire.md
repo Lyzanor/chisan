@@ -49,3 +49,17 @@ current offer and phone/email before admission.
 | Mrs Kirkham's Lancashire Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | Beesley's Farm, Mill Lane, Goosnargh, Preston, Lancashire, PR3 2JX | 01772 865335<br>kellie.w@mrskirkhamscheese.co.uk | — |
 | Leagram Organic Dairy | Named as a cheese producer by Great British Life Lancashire cheese producers | Chipping, Lancashire | — | — |
 | Grandma Singletons | Named as a cheese producer by FarmingUK cheese makers directory | Longridge, Lancashire | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

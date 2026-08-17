@@ -18,3 +18,11 @@ Revisado individualmente el 2026-08-09. Resultado: tres productores confirmados 
 | Anita und Simon Martin | [DE-ÖKO-006.276-0066294.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0066294.2025.001.pdf) | No se encontró identidad pública coincidente con Delsternerstraße 108 ni productos o comercialización atribuibles. |
 | Anna-Elisabeth Völlmecke | [DE-ÖKO-006.276-0007357.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0007357.2025.001.pdf) | No se pudo verificar públicamente la unidad de Bredengrund 1, sus animales o cultivos ni una oferta alimentaria. |
 | Annabelle und Peter Kirschstein | [DE-ÖKO-039.276-0038074.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-039.276-0038074.2026.001.pdf) | No aparece una marca productora, cultivo alimentario concreto o venta atribuible a la dirección de Bad Driburg. |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/westdeutschland/nordrhein-westfalen.csv`, categoría `Pescado`.
+Búsqueda de piscifactorías de aguas bravas y manantiales de montaña (*Eifelforellen*, *Sauerland*), parques acuícolas con elaboración y ahumaderos artesanales de pescado (*Fischräuchereien*) con instalaciones activas en Nordrhein-Westfalen. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|

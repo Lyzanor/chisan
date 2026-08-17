@@ -56,3 +56,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Lote revisado y cerrado el 2026-08-12: las trece unidades encajan y se publicaron. Doce se incorporaron como productores lácteos —F.lli Petrucci, la planta Granarolo de Aprilia, Casearia Casabianca, Caseificio Paolella, Caseificio La Fasana, Sapori Unici, Caseificio Lo Spicchio, las plantas diferenciadas de Francia en Pontinia y Sonnino, Caseificio Perseo, Azienda Agricola Circe y Caseificio Valle Amaseno— y la unidad de Antonella Romano se publicó bajo su identidad pública real, Sayonara il Gelato, en `Helados`. No se fusionaron plantas distintas ni quedan expedientes queseros de este barrido en retención.
+
+## Productores de pescado y marisco — barrido del 2026-08-14
+
+Investigación de productores de pescado, piscicultura lagunar y pesca artesanal en el litoral pontino (Sabaudia y Terracina). Se verificó cría/pesca lagunar y comercialización con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Azienda Vallicola del Lago di Paola | Sabaudia | `Pescado` | Explotación de pesca e itticoltura sostenible en el Lago di Paola / Parco Nazionale del Circeo: cría de lubinas (spigole), doradas (orate), mújoles y ostras. | [web](https://www.lagodipaola.it/) |
+| Cooperativa Pescatori La Sirena | Terracina | `Pescado` | Cooperativa de pesca artesanal del puerto de Terracina para la captura y valorización del pescado fresco del mar Tirreno. | [web](https://www.pescatorilasirena.it/) |

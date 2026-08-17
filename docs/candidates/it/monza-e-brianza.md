@@ -45,3 +45,4 @@ Estos candidatos ya fueron contrastados; no deben publicarse sin resolver la car
 | Riboldi Emanuele | La actividad agrícola existe, pero la identidad candidata no se pudo separar con seguridad de Fratelli Riboldi/Vivai Riboldi ni asociar a un producto público concreto. |
 | Sabatino Rosalba | Sin identidad comercial, producto público ni unidad productiva corroborada más allá del certificado. |
 | Fattoria Didattica ASINOteca | La fuente describe producción cerealícola, forrajera y zootécnica, pero no una oferta alimentaria propia actual al público. |
+

@@ -33,3 +33,4 @@ No se publican las siguientes identidades hasta que aparezca una oferta alimenta
 Del barrido ecológico permanecen retenidos por falta de marca pública, producto concreto o venta atribuible: `Agentur Landesdomäne – Agrarbetrieb Laimburg`, `Albert Anton Heiss`, `Alexander Mair`, `Alminteressentschaft Ritten`, `Alpenfrut Est`, `Alpinteressentschaft Plätzwiese`, `Gögelehof / Andreas Birkner Winkler`, `Andreas Ladurner`, `Andreas Steger`, `Anja Graf`, `Anna Maria Patscheider`, `Anna Maria Piffer` y `Anton Psenner`.
 
 Estas retenciones no son rechazos definitivos: un enlace oficial futuro que identifique el producto propio y su unidad productiva basta para reabrirlas.
+

@@ -34,3 +34,10 @@ productive municipality, current offer and phone/email before admission.
 | Adam Bakery | Manufacturers/packers | 3 Pountney Street, Wolverhampton, West Midlands, WV2 4HX | [1094038](https://api.ratings.food.gov.uk/Establishments/1094038) |
 | Anns Aga Bakes | Manufacturers/packers; rating/inspection 2012-05-09 | 57 Vicarage Road, Brandwood, Birmingham, B14 7QA | [604157](https://api.ratings.food.gov.uk/Establishments/604157) |
 | Cheese Wiz | Manufacturers/packers; rating/inspection 2026-02-02 | WV3 | [1902029](https://api.ratings.food.gov.uk/Establishments/1902029) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

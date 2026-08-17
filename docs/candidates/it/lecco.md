@@ -30,3 +30,11 @@ Garbagnati publica quesos y huevos de su explotación, pero la fuente disponible
 ### Incidental Bitto DOP del 2026-08-13
 
 Se añadió como unidad productiva independiente el alpeggio Varrone de Azienda Agricola Gavarot, situado en Premana. El padrón oficial de productores de Bitto DOP del consorcio publica explícitamente el alpeggio y sus coordenadas; esta fuente nueva resuelve la retención anterior para esa unidad concreta sin extender la conclusión a la autorización de Introbio.
+
+## Productores de pescado de lago — barrido del 2026-08-14
+
+Investigación de obradores de transformación artesanal y ahumado de pescado del Lago de Como en la ribera de Lecco (Mandello del Lario). Se verificó elaboración y secado tradicional de missoltini (agone essiccato), lavarello y truchas con venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Le Specialità Lariane | Mandello del Lario | `Pescado` + `Conservas` | Obrador artesano familiar en el Lago di Como: elaboración y ahumado de pescado de lago, "Missoltini" (agoni essiccati del Lario), filetes de lavarello y truchas lacustres. | [web](https://www.lespecialitalariane.it/) |

@@ -60,6 +60,13 @@ Quedan cuatro establecimientos en retención. La autorización sanitaria por sí
 | SCORZATO FABIO | Malo | VIA MONTE PALAZZO 25 | Sin identidad comercial, contacto o producto concreto fuera del registro sanitario. |
 | MEGA S.R.L. | Villaverla | VIA S. ANTONIO 22 | La planta figura autorizada y en el consorcio, pero no se encontró una oferta propia pública actual. |
 
-## Productores de queso — contraste Grana Padano DOP del 2026-08-11
-
 Las identidades de Vicenza del [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) quedaron reconciliadas con candidatos existentes. La ficha de Latterie Vicentine combina `VI616` (Bassano del Grappa) y `VI643` con la única dirección productiva publicada en Bressanvido; la identidad ya está candidata allí y `VI616` queda pendiente de aclarar antes de crear una segunda unidad sin dirección verificable. Lattebusche `VI625` coincide con la planta candidata de Sandrigo.
+
+## Productores de trucha y piscicultura de montaña — barrido del 2026-08-14
+
+Investigación de productores de trucha en los valles alpinos y prealpinos de Vicenza (Valle del Chiampo y Valdastico). Se verificó crianza extensiva en aguas puras de torrente de montaña y venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Trota d’Alta Valle | Crespadoro | `Pescado` | Crianza extensiva de truchas (fario e iridea) en las aguas de manantial de la alta Valle del Chiampo a los pies de las Pequeñas Dolomitas. | [web](https://www.trotadaltavalle.com/) |
+| Troticoltura F.lli Sella | Valdastico | `Pescado` | Explotación de truchicultura activa desde los años 80 alimentada por las aguas cristalinas del torrente Astico. | [web](https://www.troticolturasella.it/) |

@@ -46,3 +46,13 @@ Permanecen 16 casos abiertos. La autorización sanitaria prueba capacidad de tra
 | Latticini Cammarata | Salemi | `UE IT 19 334` | El registro actual prueba compra de leche y planta autorizada, pero no una gama pública propia ni contacto comercial. |
 | Latticini Genco | Salemi | `UE IT E2203` | Hay testimonios de elaboración y venta local, pero falta una fuente pública actual con catálogo y dirección productiva reconciliada. |
 | Belice Formaggi — Santa Ninfa | Santa Ninfa | `UE IT H1515` | La marca pública y la actualización societaria de 2025 respaldan la planta de Gibellina; no se ha probado que Santa Ninfa siga siendo una segunda unidad comercial diferenciada. |
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de productores y elaboradores de atún y salazones en la provincia de Trapani (Erice, Trapani y Favignana). Se verificó planta y elaboración propia de atún rojo, ventresca y bottarga con marca propia al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Nino Castiglione | Erice | `Pescado` + `Conservas` | Histórico conservificio de Trapani (desde 1933): elaboración de atún pinne gialle y atún rojo del Mediterráneo (marca Auriga). | [web](https://www.ninocastiglione.it/) |
+| Conservificio Ittico Tre Torri | Trapani | `Pescado` + `Conservas` | Elaboración y conserva artesanal inspirada en la tonnara trapanese: atún rojo, ventresca, buzzonaglia y bottarga. | [web](https://www.3torri.it/) |
+| L'Oro di Favignana | Favignana | `Pescado` + `Conservas` | Especialidades y conservas artesanales de atún rojo, bresaola de atún y bottarga elaboradas en la isla de Favignana. | [web](https://www.orodifavignana.it/) |

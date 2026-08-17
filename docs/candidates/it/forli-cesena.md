@@ -40,3 +40,4 @@ El [registro sanitario nacional](https://www.dati.salute.gov.it/it/dataset/stabi
 |---|---|---|---|
 | Latteria Sociale Sogliano al Rubicone | Sogliano al Rubicone | Località Vignola — `UE IT J4L94` | La sociedad figura en liquidación y no presenta oferta actual. |
 | Tera S.a.s. di Grotti Elsa & C. | Sogliano al Rubicone | Via Strigara 51 — `UE IT 08 1135` | Conserva autorización, pero no una identidad comercial productora atribuible. |
+

@@ -99,7 +99,6 @@ The source names the business and its county and little else. Cheapest to resolv
 | Sunshine Juice Ltd | — | Bebidas sin alcohol | listed | — | [FarmFinder](https://farmfinder.ie/producer/sunshine-juice-ltd) |
 | Coppenagh House Farm Shop | — | Carne | Farm; Beef, Pork, Fruit, Farm Gate | — | [FarmFinder](https://farmfinder.ie/producer/coppenagh-house-farm-shop) |
 | Quarrymount Meats and Farm Ltd | — | Carne | Farm; Beef, Lamb, Pork, Poultry | — | [FarmFinder](https://farmfinder.ie/producer/quarrymount-meats-and-farm-ltd) |
-| Carlow Brewing | — | Cerveza | Producer; Beer, Cider, Spirits, Wine | — | [FarmFinder](https://farmfinder.ie/producer/carlow-brewing) |
 | Royal Oak Distillery Ltd | — | Cerveza | Producer; Origin Green Member, Beer, Cider, Spirits | — | [FarmFinder](https://farmfinder.ie/producer/royal-oak-distillery-ltd) |
 | Malone Fruit Farm | — | Fruta y verdura | Farm; Fruit, Vegetables, Farm Gate, Farm Shops Ireland | — | [FarmFinder](https://farmfinder.ie/producer/malone-fruit-farm) |
 | Rings Farm | — | Otros | Farm; IOA Member, Organic, Vegetables, Farm Gate | — | [FarmFinder](https://farmfinder.ie/producer/rings-farm) |
@@ -108,6 +107,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Mary's Fish Galway | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/mary-s-fish-galway) |
 | Craigies Cider | — | Sidra | Producer; Cider, Farm Gate | — | [FarmFinder](https://farmfinder.ie/producer/craigies-cider) |
 | Falling Apple Cider | — | Sidra | Producer; Cider, Farm Gate | — | [FarmFinder](https://farmfinder.ie/producer/falling-apple-cider) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Carlow.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

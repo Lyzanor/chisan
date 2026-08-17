@@ -22,3 +22,11 @@ Los 14 casos siguientes permanecen abiertos porque el certificado prueba un oper
 | CARDINALI FABRIZIO | Cupramontana | VIA TORRE 54 60034 | [IT-BIO-004.380-0003030.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-004.380-0003030.2025.001.pdf) | Una crónica antigua menciona miel, mermeladas y zumo de uva vendidos en mercados, pero no existe una fuente comercial actual ni contacto que confirme que esa oferta siga disponible. |
 
 El barrido sanitario nacional de queso queda sin entradas pendientes en Ancona después de contrastar la unidad `UE IT J2K78`.
+
+## Productores de pescado y marisco salvaje — barrido del 2026-08-14
+
+Investigación de recolectores y pescadores artesanales del Mosciolo Selvatico di Portonovo en la Riviera del Conero (Ancona). Se verificó pesca submarina regulada de mejillón salvaje en arrecifes naturales con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cooperativa Pescatori di Portonovo | Ancona | `Pescado` | Pesca submarina artesanal y recolecta regulada del "Mosciolo Selvatico di Portonovo" (Presidio Slow Food), mejillón autóctono salvaje de los fondos rocosos del Monte Conero. | [web](https://www.portonovopesca.com/) |

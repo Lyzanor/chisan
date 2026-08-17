@@ -107,8 +107,6 @@ The source names the business and its county and little else. Cheapest to resolv
 | Molloys Butchers | Waterford | Carne | shop=butcher | +353 51 375 333 | OSM node/5556721530 |
 | Coffee House Lane | — | Cerveza | Producer; Beer, Cider, Spirits, Wine | — | [FarmFinder](https://farmfinder.ie/producer/coffee-house-lane) |
 | Dugarvan Brewing Company | — | Cerveza | Producer; Beer, Cider, Spirits, Wine | — | [FarmFinder](https://farmfinder.ie/producer/dugarvan-brewing-company) |
-| Hopfully Brewing | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/hopfully-brewing) |
-| Metalman Brewing | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/metalman-brewing) |
 | Blackwater Distillery | — | Destilados y licores | listed | — | [FarmFinder](https://farmfinder.ie/producer/blackwater-distillery) |
 | Clashganny Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/clashganny-farm) |
 | Clinton, Olivia | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/clinton-olivia) |
@@ -130,6 +128,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Flanagan Fish Merchant | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/flanagan-fish-merchant-waterford) |
 | Ronan's Fish Shop | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/ronans-fish-shop-waterford) |
 | Legacy Cider | — | Sidra | listed | — | [FarmFinder](https://farmfinder.ie/producer/legacy-cider) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Waterford.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

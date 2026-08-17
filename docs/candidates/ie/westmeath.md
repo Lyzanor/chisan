@@ -124,6 +124,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | The Fish Market | — | Pescado | Producer; Seafood | — | [FarmFinder](https://farmfinder.ie/producer/the-fish-market-westmeath) |
 | Willies Seafood | — | Pescado | Producer; Seafood, SuperValu Food Academy | — | [FarmFinder](https://farmfinder.ie/producer/willies-seafood) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Westmeath.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

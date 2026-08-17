@@ -220,3 +220,4 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 | ARRE' FORMAGGI S.R.L. | Turi | VIA CASAMASSIMA 95, TURI (BA) | `UE IT M934J` | caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 26-OCT-22 |
 | L'ARTE DEL CASARO SRLS | Turi | VIA P. PEDONE 15/17, TURI (BA) | `UE IT K5Y1E` | vacuno menos de 60 d | 10-JUN-22 |
 | QUARATO SEBASTIANO | Turi | VIA G. CISTERNINO N. 28/30 , TURI (BA) | `UE IT F2R7E` | vacuno menos de 60 d | 23-SEP-10 |
+

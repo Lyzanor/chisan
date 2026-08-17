@@ -115,6 +115,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | The Gluten Free Bakery | — | Pan y cereal | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-gluten-free-bakery) |
 | Sole & Sea | — | Pescado | Producer; Seafood | — | [FarmFinder](https://farmfinder.ie/producer/sole-and-sea-monaghan) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Monaghan.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

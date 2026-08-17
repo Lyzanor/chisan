@@ -61,3 +61,10 @@ current offer and phone/email before admission.
 | Candidate | Signal | Location | Contact | FSA record |
 |---|---|---|---|---|
 | Cheese On The Wey Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit 1, The Old Dairy, Pierrepont Farm, The Reeds Road, Frensham, Surrey, GU10 3BS | [site](http://www.cheeseonthewey.co.uk)<br>01252 444088<br>john@cheeseonthewey.co.uk | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

@@ -66,3 +66,11 @@ Estos candidatos ya se revisaron; no deben publicarse sin resolver la carencia i
 | Sartorio Elena | La actividad pública apunta a olivar en Capalbio (GR), sin marca u oferta propia actual verificable. |
 | Case di Anci | La identidad parece corresponder a Sicilia, pero no se encontró una unidad pública y marca suficientemente corroboradas. |
 | Il Germoglio | La explotación pública está en Gubbio (PG), pero no se verificó una oferta alimentaria propia concreta. |
+
+## Productores de caviar y esturión — barrido del 2026-08-14
+
+Investigación de productores de caviar artesanal y cría de esturiones en el Parco Agricolo Sud Milano (Cisliano). Se verificó cría de esturiones en aguas puras de capa freática y elaboración artesanal de caviar fresco y esturión ahumado. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Azienda Agricola Pisani Dossi | Cisliano | `Pescado` | Explotación artesanal en el Parco Agricolo Sud Milano: cría de esturiones en aguas puras de manantial, elaboración de caviar fresco sin conservantes y esturión ahumado. | [web](https://www.pisanidossi.com/) |

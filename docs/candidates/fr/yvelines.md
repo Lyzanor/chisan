@@ -41,3 +41,10 @@ Pasada por región descrita en [guía nacional](README.md#sirene-como-fuente-de-
 |---|---|---|---|---|---|
 | Micro Ferme des Lilas | Longvilliers | Longvilliers, Yvelines | plantas aromáticas y medicinales; posible transformación | confirmar una oferta alimentaria pública actual, no solo plantas tintóreas o formaciones | [sitio oficial](https://www.microfermedeslilas.fr/formation-jardin-bio-permaculture) · [Destination Yvelines](https://www.destination-yvelines.fr/cueillettes-et-produits-locaux/micro-ferme-des-lilas/) |
 | La Ferme Nature & Découvertes | Versailles | granja urbana de Versailles | frutas, verduras y aromáticas | confirmar identidad de venta, contacto y punto exacto antes de publicar | [sitio oficial](https://www.lafermenatureetdecouvertes.fr/histoire) · [Ville de Versailles](https://www.versailles.fr/fileadmin/www.versailles.fr/MEDIA/Kiosque/Magazines_de_la_Ville/2025/Magazine_Versailles_-_Mai_2025.pdf) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Yvelines. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

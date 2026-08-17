@@ -41,3 +41,10 @@ productive municipality, current offer and phone/email before admission.
 | Einkorn | Manufacturers/packers; rating/inspection 2026-06-23 | Einkorn, Unit 61 Coworkz Block A, Minerva Avenue Sealand, Flintshire, CH1 4QL | [1959523](https://api.ratings.food.gov.uk/Establishments/1959523) |
 | Farmers Boy Deeside Ltd | Manufacturers/packers; rating/inspection 2025-11-10 | Farmers Boy Deeside Ltd, Unit 105-106, Tenth Avenue Deeside Industrial Park, Flintshire, CH5 2UA | [104026](https://api.ratings.food.gov.uk/Establishments/104026) |
 | Flavour Moments Ltd | Manufacturers/packers; rating/inspection 2025-05-16 | Flavour Moments Ltd, Unit 1f Brymau Three Trading Estate, River Lane Saltney, Flintshire, CH4 8RQ | [1832351](https://api.ratings.food.gov.uk/Establishments/1832351) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

@@ -91,7 +91,6 @@ Either an own website or a register-backed municipio, but not both.
 | Pilgrim's Food Masters Ireland Ltd | Shillelagh | Carne | — | — | — | DAFM meat 501 |
 | The Good Life Company (registered as Steven Goode T/A The Good Life Company) | Arklow | Carne | — | — | — | DAFM meat 2893 |
 | The Hatchery (registered as Glenhaven Foods (Arklow) Unlimited T/A The Hatchery) | Avoca | Carne | — | — | — | DAFM meat 2058 |
-| Beaky Dargus Brewing Co. | Grangecon | Cerveza | — | +353868963643 · beakydargus@gmail.com | — | [FarmFinder](https://farmfinder.ie/producer/beaky-dargus-brewing-co) |
 | The Great Eastern Brewing Co. | Wicklow | Cerveza | — | greateasternbrewing@gmail.com | — | [FarmFinder](https://farmfinder.ie/producer/the-great-eastern-brewing-co) |
 | An Tairseach Organic Veg Box | — | Fruta y verdura | www.antairseach.ie | — | — | [FarmFinder](https://farmfinder.ie/producer/an-tairseach-organic-veg-box); via FarmFinder Team |
 | Goldenhill Farmhouse Ice cream (registered as Aoife and Damien Clarke) | Goldenhill Farm Goldenhill Three | Helados | — | — | — | DAFM dairy IE1927 |
@@ -137,6 +136,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Grá Arán | — | Pan y cereal | Producer; Bread & Bakery, Sourdough, Farm Gate; via Real Bread Ireland / Irish Bakeries Directory | — | [FarmFinder](https://farmfinder.ie/producer/gr-ar-n) |
 | Slow Dough Bakery | — | Pan y cereal | listed | — | [FarmFinder](https://farmfinder.ie/producer/slow-dough-bakery) |
 | Stone Oven Bakery | — | Pan y cereal | listed | — | [FarmFinder](https://farmfinder.ie/producer/stone-oven-bakery) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Wicklow.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

@@ -60,3 +60,12 @@ Se contrastaron las 43 unidades del corte sanitario del 2026-08-11 con identidad
 - **MANCUSO VINCENZO & C. SRL** — La actividad pública actual es producción de helado y postres congelados; la autorización láctea amplia no demuestra una línea propia de queso.
 - **CACCIATORE GIOVANNI** — La identidad pública actual se presenta como comercio y distribución de quesos seleccionados de otros productores, no como elaboración propia.
 - **MT DI TROJA PASQUALE & C. SNC** — La actividad pública actual es comercio mayorista de lácteos y huevos y no se halló queso propio atribuible a la unidad.
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de conserverías y obradores de salazón de pescado azul en el puerto de Sciacca (Agrigento). Se verificó elaboración artesanal de anchoas saladas, sardinas y atún con marca propia al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Azienda Ittico Conserviera Il Faro | Sciacca | `Pescado` + `Conservas` | Salazón artesanal y fileteado manual de anchoas y sardinas pescadas en el Canal de Sicilia, y conservas de atún. | [web](https://www.itticailfaro.it/) |
+| Scalia Acciughe (Benedetto Scalia & C.) | Sciacca | `Pescado` + `Conservas` | Histórico productor en Sciacca (desde 1973) de anchoas sotto sale, filetes de anchoa en aceite de oliva y pasta de anchoas. | [web](https://www.scaliaconserve.it/) |

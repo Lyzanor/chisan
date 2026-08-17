@@ -93,6 +93,13 @@ Quedan **38 candidatos nuevos** en este corte: 7 perfiles de explotación, 9 uni
 | GRIMAUX MAGALIE MURIEL | GRIMAUX MAGALIE MURIEL | Saint-Pierre-Langers | 5 RTE DE L'EPINE 50530 | actividad | 2026 | [nº Bio 56414](https://annuaire.agencebio.org/operateur/56414) |
 | HERVY Gabrielle | HERVY Gabrielle | Torigny-Les-Villes | 1 SEDOUY 50160 | actividad | 2026 | [nº Bio 139501](https://annuaire.agencebio.org/operateur/139501) |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Manche. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y productos del mar (2026-08-14)
 
 Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.

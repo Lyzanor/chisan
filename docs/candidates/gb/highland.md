@@ -10,7 +10,6 @@ still missing. Resolve or prune before adding a row.
 - Blocked by: summerislesfoods.com does not connect; no address confirmed.
 - Next: Check the FSA register for Highland before assuming it has closed.
 
-
 ## FSA productive-type sweep (2026-08-10)
 
 Official-source follow-up completed on 2026-08-10. Entries still listed below remain `hold`: the public material reviewed did not establish the full admission gate or a definitive exclusion.
@@ -64,14 +63,19 @@ current offer and phone/email before admission.
 | Highland Fine Cheeses | Named as a cheese producer by Provender Brown Scottish cheesemakers | Tain, Highland | — | — |
 | West Highland Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Achmore, Highland | — | — |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|
 | Andy Race Fishmerchant | Traditional fish smoking (Mallaig kippers, hot/cold smoked salmon, shellfish) at Mallaig harbour | The Harbour, Mallaig, PH41 4PX | [site](https://andyrace.co.uk)<br>01687 462626<br>sales@andyrace.co.uk |
 | Isle of Ewe Smokehouse | Artisan fish smoking cured with sea salt and smoked with aromatic woods | Ormiscaig, Aultbea, Achnasheen, IV22 2JJ | [site](https://www.smoked-salmon.co.uk)<br>01445 731304<br>info@smoked-salmon.co.uk |
 | Caithness Smokehouse | Small artisan smokery smoking fresh local seafood over peat and oak | Inkstack, Barrock, Thurso, KW14 8SY | [site](https://caithnesssmokehouse.com)<br>01847 851722<br>caithnesssmokehouse@btinternet.com |
-
-- **Andy Race Fishmerchant:** The candidate domain now resolves to a domain-sale page; current productive activity and contact remain unresolved.

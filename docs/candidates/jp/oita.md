@@ -85,6 +85,13 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | やまよし | 別府市 | Setas | búsqueda dirigida + web propia | https://www.shiitake-ya.co.jp/ | 乾しいたけ; ⚠ comprobar si elabora o distribuye; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | オーエスケー | 杵築市 | Setas | búsqueda dirigida + web propia | http://osk-shiitake.com/ | 乾しいたけ; ⚠ proveedor del gremio, triar; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, acuicultores y elaboradores artesanos de pescado y marisco de Oita con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.

@@ -73,6 +73,13 @@ house letter before trusting it.
 | Geitenkaasmakerij De Brömmels | Winterswijk *(Winterswijk Woold)* | Meerdinkweg 5, 7108 BJ Winterswijk Woold | [brommels.nl](http://www.brommels.nl)<br>`0543-564518`<br>`info@brommels.nl` | BvBZ + OSM | street matched on postcode only |
 | Melkveebedrijf Reijmer | Zevenaar | Kleine Matenweg 6, 6903 PD Zevenaar | — | BvBZ | — |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Gelderland. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y acuicultura (2026-08-14)
 
 Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
@@ -81,3 +88,4 @@ Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o
 |---|---|---|---|
 | Forellenvijver Breukink | Bronckhorst *(Steenderen)* | The venue is currently active, but the reviewed source does not establish the candidate's claimed own food production and smoked-fish offer. | [web](https://forellenvijverbreukink.nl/) |
 | Forellenvisvijvers De Kamphoeve | Buren *(Ommeren)* | The proposed site is unavailable and no sufficiently current source resolved own production and a public food offer. | [web](https://kamphoeve.nl/) |
+

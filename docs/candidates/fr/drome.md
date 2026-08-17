@@ -132,3 +132,10 @@ Quedan **79 candidatos nuevos** en este corte: 8 perfiles de explotación, 7 uni
 | MADAME CELINE BEYSSIER | BEYSSIER CELINE MARIE ANNICK | Vercoiran | 115 rue du four 26170 | actividad | 2026 | [nº Bio 129855](https://annuaire.agencebio.org/operateur/129855) |
 | GAEC FERME DE PRACOUTEL | FERME DE PRACOUTEL | Vesc | QUARTIER PRACOUTEL 26220 | actividad | 2026 | [nº Bio 107948](https://annuaire.agencebio.org/operateur/107948) |
 | MONSIEUR FLORENT SIMOND | SIMOND FLORENT LOUIS GABRIEL | Vesc | 145 chemin du Vieux Col d Espreaux COL D ESPREAUX 26220 | actividad | 2025 | [nº Bio 129788](https://annuaire.agencebio.org/operateur/129788) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Drôme. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

@@ -135,3 +135,10 @@ Quedan **84 candidatos nuevos** en este corte: 7 perfiles de explotación, 41 un
 | GAEC DE LA RAÏOLE | GAEC DE LA RAIOLE | Veyreau | LE VILLARET 12720 | actividad | 2026 | [nº Bio 115139](https://annuaire.agencebio.org/operateur/115139) |
 | G.A.E.C. CHEVRERIE DU PETIT COMPOSTELLE | G.A.E.C. CHEVRERIE DU PETIT COMPOSTELLE | Villeneuve | 202 CHEMIN DE SUBRETESQUE 12260 | actividad | 2025 | [nº Bio 69376](https://annuaire.agencebio.org/operateur/69376) |
 | GAEC FERME DE POMIES | GAEC FERME DE POMIES | Villeneuve | 379 CHEMIN DE POMIES 12260 | actividad | 2026 | [nº Bio 59313](https://annuaire.agencebio.org/operateur/59313) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Aveyron. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

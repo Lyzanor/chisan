@@ -27,3 +27,12 @@ Lote ecológico revisado entre el 8 y el 12 de agosto de 2026 a partir del [dire
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Lote cerrado el 2026-08-13. Caseificio Peru, la planta Sardaformaggi de Buddusò, Columbu Formaggi, Tia Juanna y Pastori Oschiresi quedaron verificados. S'ena de Sa Pira/Caseificio Verde Oro y Careddu Liliana también pasaron al CSV, pero como `parcial`: la autorización sanitaria es actual y sus productos están individualizados, aunque la corroboración pública no es enteramente de primera parte o reciente.
+
+## Productores de pescado y marisco — barrido del 2026-08-14
+
+Investigación de productores de miticultura y marisqueo en el Golfo de Olbia (Gallura). Se verificó cría de mejillones (Cozze di Olbia) con instalaciones de depuración y venta directa propia. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Olbiamitili Soc. Coop. Agricola | Olbia | `Pescado` | Histórica cooperativa de mitilicultores activa desde 1981 en la cría, depuración y comercialización de las Cozze di Olbia en el Golfo de Olbia. | [web](https://olbiamitili.it) |
+| Cozze di Olbia 4b (Quattro B Soc. Coop.) | Olbia | `Pescado` | Cría tradicional y selección de mejillones en el Golfo de Olbia (desde 1920) bajo las marcas Perlanera y Cuor di Mare. | [web](https://cozzediolbia4b.it) |

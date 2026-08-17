@@ -61,3 +61,17 @@ current offer and phone/email before admission.
 | Shepherds Purse Cheeses Ltd | Specialist Cheesemakers Association member (cheesemaker) | Leachfield Grange, Newsham, Thirsk, North Yorkshire, YO7 4DJ | [site](http://www.shepherdspurse.co.uk)<br>01845 587220<br>caroline@shepherdspurse.co.uk | — |
 | Stonebeck Cheese | Specialist Cheesemakers Association member (cheesemaker) | Low Riggs Farm, Middlesmoor, Harrogate, North Yorkshire, HG3 5TA | [site](http://www.stonebeckcheese.co.uk/)<br>01423 755122<br>info@stonebeckcheese.co.uk | — |
 | Ribblesdale Cheese | Named as a cheese producer by Great British Life / Yorkshire Dales | Hawes, North Yorkshire | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

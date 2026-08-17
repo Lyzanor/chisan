@@ -81,3 +81,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 松栄堂本舗 | 笠松町 | Dulces y repostería | 和菓子協会 | http://www.kasamatsu.or.jp/shop/syoeido/index.html | 羽島郡笠松町美笠通 3; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 兆司家 | 笠松町 | Dulces y repostería | 和菓子協会 | http://www.kasamatsu.or.jp/shop/chouziya/index.html | 羽島郡笠松町桜町 77-1; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 塗壁製菓合名会社 | 羽島市 | Aperitivos | 全国米菓工業組合 | http://www.nurikabeseika.co.jp | 米菓製造業（菓子卸等へ販売）; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

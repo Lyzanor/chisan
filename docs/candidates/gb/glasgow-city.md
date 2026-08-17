@@ -35,3 +35,10 @@ productive municipality, current offer and phone/email before admission.
 | Full Circle Bakes | Manufacturers/packers; rating/inspection 2024-02-22 | 3 Arrol Place, Glasgow, G40 3NY | [1702413](https://api.ratings.food.gov.uk/Establishments/1702413) |
 | Minted Ice Cream | Manufacturers/packers; rating/inspection 2026-04-29 | 262 Byres Road, Glasgow, G12 8SH | [1388555](https://api.ratings.food.gov.uk/Establishments/1388555) |
 | Neilson Butchers | Manufacturers/packers; rating/inspection 2026-02-17 | 52 Broomton Road, Glasgow, G21 3RU | [77484](https://api.ratings.food.gov.uk/Establishments/77484) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

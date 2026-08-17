@@ -101,3 +101,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | 小冨士屋 | 新潟市 | Dulces y repostería | 和菓子協会 | http://www4.ocn.ne.jp/~kofujiya/index.htm | 新潟市岩室温泉 576; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 米百表本舗 | 長岡市 | Dulces y repostería | 和菓子協会 | http://www7.ocn.ne.jp/~kome100 | 長岡市大手通 1-3-2; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

@@ -27,7 +27,6 @@ productive municipality, current offer and phone/email before admission.
 | Kallin Shellfish | Manufacturers/packers; rating/inspection 2026-01-27 | 8 Kallin, Grimsay, Isle Of North Uist, HS6 5HY | [1842005](https://api.ratings.food.gov.uk/Establishments/1842005) |
 | MacDuff Shellfish (Scotland) Limited | Manufacturers/packers; rating/inspection 2025-03-31 | Goat Island, Stornoway, Isle Of Lewis, HS1 2RS | [1893912](https://api.ratings.food.gov.uk/Establishments/1893912) |
 | North Uist Distillery | Manufacturers/packers; rating/inspection 2023-05-23 | Nunton, Balivanich, HS7 5LU | [1563729](https://api.ratings.food.gov.uk/Establishments/1563729) |
-| Salar Smokehouse | Manufacturers/packers; rating/inspection 2025-04-14 | 6A Uachdar, Isle of Benbecula, HS7 5LY | [1842034](https://api.ratings.food.gov.uk/Establishments/1842034) |
 | Maclean's Bakery | Manufacturers/packers; rating/inspection 2025-09-05 | Uachdar, Isle Of Benbecula, Balivanich, HS7 5LY | [1842018](https://api.ratings.food.gov.uk/Establishments/1842018) |
 | Stag Bakeries | Manufacturers/packers; rating/inspection 2025-11-04 | 8 Cannery Road, Isle Of Lewis, Stornoway, HS1 2SF | [1893922](https://api.ratings.food.gov.uk/Establishments/1893922) |
 | Isle of Eriskay Spirits Company Ltd | Manufacturers/packers; rating/inspection 2025-03-31 | HS8 | [1842039](https://api.ratings.food.gov.uk/Establishments/1842039) |
@@ -42,3 +41,10 @@ productive municipality, current offer and phone/email before admission.
 | Broadbay Bakes | Manufacturers/packers; rating/inspection 2024-04-24 | HS2 | [1762186](https://api.ratings.food.gov.uk/Establishments/1762186) |
 | Garrabost Bake Box | Manufacturers/packers; rating/inspection 2024-03-14 | HS2 | [1762183](https://api.ratings.food.gov.uk/Establishments/1762183) |
 | Heather's Sweet Treats | Manufacturers/packers; rating/inspection 2026-07-22 | HS6 | [1971771](https://api.ratings.food.gov.uk/Establishments/1971771) |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

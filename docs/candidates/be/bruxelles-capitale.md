@@ -12,3 +12,10 @@ Búsqueda de obradores artesanos de quesería, queserías urbanas y maestros afi
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Barrido de productores de pescado y ahumaderos (2026-08-14)
+
+Búsqueda de obradores artesanos de ahumado de salmón, pescaderías históricas con taller de elaboración propia y obradores marineros en Bruxelles-Capitale. Las fuentes confirman instalaciones de producción activas; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

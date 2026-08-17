@@ -51,3 +51,10 @@ multi-site seafood entries need especially careful unit-level review.
 | Island Larder Ltd | cakes-confectionery | [Taste of Shetland](https://www.tasteofshetland.com/members/island_larder_ltd-1) |
 | The Shetland Distillery Company Ltd | beverages | [Taste of Shetland](https://www.tasteofshetland.com/members/the_shetland_distillery_company_ltd-1) |
 | The Traditional Butcher | meat | [Taste of Shetland](https://www.tasteofshetland.com/members/the-traditional-butcher) |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

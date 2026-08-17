@@ -71,3 +71,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 - Estado: revisión 2026-08-11; **0 retenidos** en la primera pasada, cada uno con su carencia sin resolver anotada en la fila.
 
 **Ya integrado, no volver a proponer:** 薩摩酒造 ya está en `kagoshima.csv`; su cervecería de Makurazaki sería otra planta del mismo grupo.
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

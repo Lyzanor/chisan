@@ -32,3 +32,10 @@ productive municipality, current offer and phone/email before admission.
 | Balqees Raw Honey | Manufacturers/packers; rating/inspection 2024-09-12 | Units 12 And 13 Carbrook Hall Industrial Estate, Dunlop Street, Sheffield, S9 2HR | [1711637](https://api.ratings.food.gov.uk/Establishments/1711637) |
 | 50% Sweet | Manufacturers/packers; rating/inspection 2025-08-20 | UNIT 12, Farfield Road, Sheffield, S3 8AB | [1839762](https://api.ratings.food.gov.uk/Establishments/1839762) |
 | Breeosh Bakery | Manufacturers/packers; rating/inspection 2024-10-10 | Unit 4c Sth Yorks Frsh Prod/F, Parkway Drive, Sheffield, S9 4WN | [779258](https://api.ratings.food.gov.uk/Establishments/779258) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

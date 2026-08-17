@@ -59,3 +59,11 @@ Lote revisado de nuevo el 2026-08-13. Se publicaron 23 de las 26 unidades: a las
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene `Fattorie di Maremma`. La [web actual del grupo Val d'Apsa](https://www.caseificiovaldapsa.it/contattaci) enlaza esa marca con la planta de Casula S.r.l. en S.S. 74 Maremmana km 80,700, San Lorenzo Nuovo, publicada ya bajo su identidad comercial. Se conserva la equivalencia de marca y razón social sin duplicar la unidad.
+
+## Productores de pescado de lago — barrido del 2026-08-14
+
+Investigación de cooperativas de pesca y transformación artesanal de pescado de agua dulce en el Lago di Bolsena (Viterbo). Se verificó pesca tradicional de lago, elaboración propia y venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Lago Vivo (Cooperativa Pescatori Lago di Bolsena) | Marta | `Pescado` | Pesca tradicional en el Lago di Bolsena y transformación artesanal de pescado lacustre: filetes de coregone, hamburguesas de pescado de lago, carpaccios y pescados de agua dulce. | [web](https://www.lagovivo.eu/) |

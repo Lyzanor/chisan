@@ -65,6 +65,13 @@ house letter before trusting it.
 | Langeveld | Weststellingwerf *(Steggerda)* | Ericaweg 15, 8395TH Steggerda | — | BvBZ | — |
 | Schelhaas & Van Valkenhoef | Weststellingwerf *(Oosterstreek)* | Oosterseveldweg 45, 8388 MB Oosterstreek | `Bio-intveld@outlook.com` | BvBZ | — |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Fryslân. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y acuicultura (2026-08-14)
 
 Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
@@ -74,3 +81,4 @@ Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o
 | Fiskerijbedriuw De Jager (Iel en Mear) | Leeuwarden *(Grou)* | The proposed domain is unavailable and current listings conflict on the productive municipality; identity, current offer and location remain unresolved. | [web](https://iel-en-mear.frl/) |
 | Forellenvijver W. Dekker | Weststellingwerf *(Oosterstreek)* | The proposed domain is unavailable and no current source was found that proves own trout production and a public food offer. | [web](https://forellenvijverdekker.nl/) |
 | Forelvisvijvers de Hooidammen | De Fryske Marren *(Sint Nicolaasga)* | Only an older put-and-take registry entry was found; current activity and own food production remain unresolved. | [web](https://dehooidammen.nl/) |
+

@@ -107,6 +107,13 @@ Quedan **50 candidatos nuevos** en este corte: 13 perfiles de explotación, 8 un
 | GAEC DE LA BELLE ETOILE | GAEC DE LA BELLE ETOILE | Sens De Bretagne | LA CHAUVELAIS 35490 | actividad | 2025 | [nº Bio 117859](https://annuaire.agencebio.org/operateur/117859) |
 | GAEC LA CHEVRERIE DES PERRIERES | GAEC LA CHEVRERIE DES PERRIERES | Ste Anne Sur Vilaine | 25 ENTRELANDES 35390 | actividad | 2025 | [nº Bio 100565](https://annuaire.agencebio.org/operateur/100565) |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Ille-et-Vilaine. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y productos del mar (2026-08-14)
 
 Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.

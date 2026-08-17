@@ -262,3 +262,16 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | EREDI DI MANZI CATERINA S.N.C. DI VICEDOMINI MARIO & C. | Tramonti | VIA COSTANTINO DI LIETO 28, TRAMONTI (SA) | `UE IT 15 503` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 06-MAR-24 |
 | VITAGLIANO MAURIZIO | Tramonti | VIA CAMPINOLA 28, TRAMONTI (SA) | `UE IT 15 191` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 12-AUG-14 |
 | AZIENDA AGRICOLA STARZE" DI ALOIA & DI BARTOLOMEO - S.S. | Vallo Della Lucania | LOCALITA' STARZE - FRAZIONE PATTANO SNC, VALLO DELLA LUCANIA (SA) | `UE IT L1H7V` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 23-DEC-16 |
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de productores de pescado, conserverías ittiche tradicionales y salazones artesanales de la provincia de Salerno (Costiera Amalfitana y Cilento), enfocada en la Colatura di Alici di Cetara DOP y la pesca tradicional de Alici di Menaica (Slow Food). Se verificó actividad elaboradora propia con marca propia al público y venta directa/online. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Delfino Battista | Cetara | `Pescado` + `Conservas` | Elaboración tradicional de Colatura di Alici di Cetara DOP, alici salate, filetti di alici sott'olio e conserve di tonno artigianale. | [web](https://www.delfinobattistasrl.it/) |
+| Nettuno Cetara | Cetara | `Pescado` + `Conservas` | Producción artesana de Colatura di Alici di Cetara DOP (inclusa riserva in botti di rovere), acciughe salate e tonno di Cetara. | [web](https://www.nettunocetara.it/) |
+| Armatore | Cetara | `Pescado` + `Conservas` | Productor y transformador con flota propia: Colatura di Alici di Cetara DOP, alici salate e tonno rosso del Tirreno. | [web](https://www.armatorecetara.it/) |
+| Cetarii | Cetara | `Pescado` + `Conservas` | Laboratorio artesanal de salazón y elaboración de Colatura di Alici di Cetara DOP, filetti di alici e tonno. | [web](https://www.cetarii.it/) |
+| Alici di Menaica - Laboratorio Donatella Marino | Pisciotta | `Pescado` + `Conservas` | Pesca artesanal con red menaica en Marina di Pisciotta (Presidio Slow Food) y salazón de alici sotto sale e sott'olio. | [web](https://www.alicidimenaica.it/) |
+| Iasa | Pellezzano | `Pescado` + `Conservas` | Elaboración histórica de conservas de tonno in vasi di vetro, colatura di alici, sgombro e alici del Golfo di Salerno. | [web](https://www.iasasrl.it/) |

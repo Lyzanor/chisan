@@ -19,3 +19,11 @@ Revisión individual de la tanda TRACES de 19 operadores (corte 2026-08-09). Se 
 | Bio-Landwirtschafts GbR | Schkeuditz | Los registros confirman la explotación, pero no identifican producto alimentario ni acceso comercial público. |
 
 Estos casos no se consideran falsos: continúan como candidatos pendientes hasta que aparezca una fuente que una identidad, alimento, unidad productiva y actividad actual.
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/ostdeutschland/sachsen.csv`, categoría `Pescado`.
+Búsqueda de explotaciones acuícolas tradicionales de estanques (*Oberlausitzer Teichlandschaft*, *Moritzburger Teiche*), piscifactorías de aguas bravas de montaña (*Sächsische Schweiz*) y ahumaderos de pescado con elaboración propia e instalaciones activas en Sachsen. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|

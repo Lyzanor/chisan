@@ -57,6 +57,13 @@ house letter before trusting it.
 | Veldzicht Zuivel | Westerkwartier *(Niekerk)* | Niekerkerdiep 8, 9822 TH Niekerk | [veldzichtzuivel.nl](http://www.veldzichtzuivel.nl/)<br>`06-36149322` | BvBZ | — |
 | Zuivel Zevenhuizen | Westerkwartier *(Zevenhuizen)* | Oudestreek 29, 9354 AD Zevenhuizen | — | BvBZ | — |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Groningen. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y acuicultura (2026-08-14)
 
 Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
@@ -64,3 +71,4 @@ Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o
 | Candidato | Municipio propuesto | Motivo de retención | Fuente inicial |
 |---|---|---|---|
 | Forelvisvijvers de Kolk | Oldambt *(Midwolda)* | The proposed site is unavailable and no sufficiently current source resolved activity and own production. | [web](https://dekolk-midwolda.nl/) |
+

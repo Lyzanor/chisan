@@ -78,3 +78,11 @@ house letter before trusting it.
 | Kaasboerderij de Koepel | Woerden *(Harmelen)* | Harmelerwaard 3, 3481 LB Harmelen | — | BvBZ | — |
 | Kaasboerderij Janmaat | Woerden | Barwoutswaarder 57, 3449 HJ Woerden | [kaasboerderij-janmaat.nl](http://www.kaasboerderij-janmaat.nl)<br>`06-13235125`<br>`cjanmaat@telfort.nl` | BvBZ | — |
 | Kaasboerderij Van de Weerd | Woerden | Veldwijk 10, 3446 HB Woerden | `0348-430787`<br>`fam_vdweerd@hetnet.nl` | BvBZ | — |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Utrecht. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+

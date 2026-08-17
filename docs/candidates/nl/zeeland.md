@@ -48,6 +48,13 @@ house letter before trusting it.
 | Melkveebedrijf van den Hout | Sluis *(Nieuwvliet)* | Sint Bavodijk 53, 4504AB Nieuwvliet | `+31117371490` | broodsmakelijk | De familie van den Hout heeft een veeteeltbedrijf met circa tweehonderd koeien. Van de melk maakt men diverse zuivelproducten die men in het winkeltje verkoopt. [icons: vending, milk, other dairy] |
 | Zuivelboerderij Hoogelande | Veere *(Grijpskerke)* | Hogelandseweg 4, 4364 SB Grijpskerke | [hogelandseboerenzuivel.nl](http://www.hogelandseboerenzuivel.nl)<br>`06-10572293`<br>`lejo.vanee@kpnplanet.nl` | BvBZ | — |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Zeeland. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y acuicultura (2026-08-14)
 
 Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
@@ -56,3 +63,4 @@ Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o
 |---|---|---|---|
 | Vette & Verhaart (Qualimer) | Reimerswaal *(Yerseke)* | The current site establishes processing and products but not the candidate's claimed own cultivation plots; the admission claim remains unresolved. | [web](https://vetteverhaart.nl/) |
 | Visserijbedrijf Padmos (BRU 17) | Schouwen-Duiveland *(Bruinisse)* | The current site establishes a fish shop and restaurant but does not yet prove the candidate's claimed fishing or mussel-production unit. | [web](https://bru17.nl/) |
+

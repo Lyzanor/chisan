@@ -20,13 +20,5 @@ Germil, Queijaria Flor da Beira y Mickas Craft Beer. Quedan 16 casos en `hold`.
 | Pastelaria Espiga da Sé | Lamego | Dulces y repostería | hold | fabricación propia y ubicación de obrador |
 | Pastelaria Solar do Espírito Santo | Lamego | Dulces y repostería | hold | fabricación propia y ubicación de obrador |
 | Café Katedral | Lamego | Dulces y repostería | hold | distinguir cafetería de obrador productor |
-
-## Pescado — revisión 2026-08-14
-
-Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
-
-| candidato pendiente |
-|---|
-| Truticultura do Paivó \| Castro Daire \| Pescado \| hold \| [DGRM](https://www.dgrm.mm.gov.pt) · viveros de truchas en las aguas limpias del río Paivó; confirmar contacto y venta |
-| Truticultura do Carlos \| São Pedro do Sul \| Pescado \| hold \| [NiT](https://www.nit.pt) · vivero y pesca de truchas en Aguincho; verificar si ofrece venta directa de producto fresco independiente de la restauración |
-| Truticultura do Criz \| Santa Comba Dão \| Pescado \| hold \| [Iberinform](https://www.iberinform.pt) · piscifactoría de truchas en el río Criz; verificar actividad actual |
+| Truticultura do Carlos | São Pedro do Sul | Pescado | hold | [NiT](https://www.nit.pt) · vivero y pesca de truchas en Aguincho; verificar si ofrece venta directa de producto fresco independiente de la restauración |
+| Truticultura do Criz | Santa Comba Dão | Pescado | hold | [Iberinform](https://www.iberinform.pt) · piscifactoría de truchas en el río Criz; verificar actividad actual |

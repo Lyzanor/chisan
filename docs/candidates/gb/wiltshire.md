@@ -56,9 +56,16 @@ current offer and phone/email before admission.
 | Rosary Goats Cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Rosary, Partridge Hill, Landford, Salisbury, Wiltshire, SP5 2BB | [site](http://www.rosarygoatscheese.co.uk)<br>01794 322196<br>info@rosarygoatscheese.co.uk | — |
 | Millbrook Dairy Company | Named as a cheese producer by Somerdale cheese producers | South West England | — | — |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

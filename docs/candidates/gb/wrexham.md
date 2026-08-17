@@ -38,3 +38,10 @@ productive municipality, current offer and phone/email before admission.
 | Poundbakery | Manufacturers/packers; rating/inspection 2024-12-12 | 17 - 18 Hope Street, Wrexham, LL11 1BG | [1314484](https://api.ratings.food.gov.uk/Establishments/1314484) |
 | Village Bakery(Nutrition) Ltd | Manufacturers/packers; rating/inspection 2022-06-16 | Village Bakery Limited Ash Road South, Wrexham Industrial Estate, Wrexham, LL13 9UG | [1242178](https://api.ratings.food.gov.uk/Establishments/1242178) |
 | Meridian Foods | Manufacturers/packers; rating/inspection 2025-03-05 | Unit 68 Clywedog Road East, Wrexham Industrial Estate, Wrexham, LL13 9XN | [905326](https://api.ratings.food.gov.uk/Establishments/905326) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

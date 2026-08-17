@@ -48,7 +48,7 @@
 | Formatgeria de Tòrrec | Artesa de Segre | la noguera |  | Mercat de la Terra | fora de província |
 | Formatges Veciana | Veciana | anoia | Formatges i làctics de cabra amb ramat propi |  | ja al CSV → `formatges-veciana-segur-de-veciana` |
 | Fruitalpunt Bio | Alfarràs | segria | Fruita de pinyol de temporada i ecològica | Mercat de Pagès de Guinardó, Mercat de P | fora de província |
-| Horno Santa Madrona | Poble-sec | barcelona | Pa i rebosteria ecològica | Mercat de la Terra | ja al CSV → `horno-santa-madrona-barcelona-sants-montjuic` |
+| Horno Santa Madrona | Poble-sec | barcelona | Pa i rebosteria ecològica | Mercat de la Terra | ja al CSV → `horno-santa-madrona-barcelona` |
 | Ivis xocolata | Palamós | baix emporda | Xocolata artesana | Mercat de la Terra, Mercat de Pagès de F | fora de província |
 | La Magalla | Cabrera de Mar | marseme | Verdura de temporada i ecològica | Mercat de Pagès de Germanetes | ja al CSV → `la-magalla-cabrera-de-mar` |
 | La Petita Ànima | Vacarisses | valles occidental | Elaboració responsable de formatges |  | ja al CSV → `la-petita-anima-vacarisses` |
@@ -80,7 +80,7 @@ fuera de provincia.
 | Cal Sileta | fuera prov. (Vallbona de les Monges, Lleida) |
 | Tros D'Ordal | ja al CSV (`el-tros-dordal-s-l-subirats`) |
 | Gallecs | genèric (varios Gallecs ya en CSV) |
-| La Vestale | ja al CSV (`la-vestale-barcelona-sants-montjuic`) |
+| La Vestale | ja al CSV (`la-vestale-barcelona`) |
 | L'Amagat | fuera prov. (Baix Camp i Priorat) |
 | Garrofina | fuera prov. (garrofa, Aiguamúrcia, Alt Camp) |
 | Mami Taronja | fuera prov. (Alcanar, Montsià) |
@@ -90,7 +90,7 @@ fuera de provincia.
 | Els Hortells de la Marina | ja al CSV (`els-hortells-de-la-marina-baix-llobregat`) |
 | Flors Del Brugent | fuera prov. (Mont-ral, Alt Camp) |
 | Apit Integral | fuera prov. (Els Pallaresos, Tarragonès) |
-| Pinullet | ja al CSV (`pinullet-barcelona-gracia`) |
+| Pinullet | ja al CSV (`pinullet-barcelona`) |
 | Montalegre | fuera prov. (Pontils, Conca de Barberà) |
 | Fruits Colomer | fruita genèrica de temporada → no alta |
 | Clot de les Soleres | ja al CSV |

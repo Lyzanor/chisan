@@ -52,9 +52,16 @@ current offer and phone/email before admission.
 | Woodlands Dairy Limited | Specialist Cheesemakers Association member (cheesemaker) | Unit 27A Sunrise Business Park, Higher Shaftesbury Road, Blandford, Dorset, DT11 8ST | [site](http://www.woodlandsdairy.co.uk)<br>0845 467 9894<br>sam.boyt@woodlandsdairy.co.uk | — |
 | Ford Farm Cheesemakers | Named as a cheese producer by Ford Farm / Somerdale cheese producers (makes Wookey Hole Cave Aged Cheddar) | Ashley Chase Estate, Litton Cheney, Dorset | — | — |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

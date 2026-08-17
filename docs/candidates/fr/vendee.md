@@ -84,3 +84,10 @@ Quedan **30 candidatos nuevos** en este corte: 9 perfiles de explotación, 5 uni
 | REVOL MAUD VALENTINE | REVOL MAUD VALENTINE | Sallertaine | 102 Chemin de Bel Air 85300 | actividad | 2026 | [nº Bio 60025](https://annuaire.agencebio.org/operateur/60025) |
 | LA BERGERIE DU BRANDAIS RAVON Damien | LA BERGERIE DU BRANDAIS | Talmont-Saint-Hilaire | 172 RUE DU BRANDAIS 85440 | actividad | 2026 | [nº Bio 122549](https://annuaire.agencebio.org/operateur/122549) |
 | GELOT LUDOVIC | GELOT LUDOVIC | Treize-Vents | LA CHEVRIE 85590 | actividad | 2025 | [nº Bio 18022](https://annuaire.agencebio.org/operateur/18022) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Vendée. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

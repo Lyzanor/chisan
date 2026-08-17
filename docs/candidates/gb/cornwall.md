@@ -52,3 +52,10 @@ current offer and phone/email before admission.
 | The Artisan Food Collective Ltd T/A Whalesborough Cheese | Specialist Cheesemakers Association member (cheesemaker) | Norton Barton Farm, Bude, Cornwall, EX23 9LG | [site](http://www.whalesboroughcheese.co.uk)<br>07881 465985<br>david.rowe@cornishcharcuterie.co.uk | — |
 | Allett Dairy Goats | Named as a cheese producer by FarmingUK cheese makers directory | Cornwall | — | — |
 | Cornish Gouda Company | Named as a cheese producer by Cornish cheese trade coverage | Looe, Cornwall | — | — |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

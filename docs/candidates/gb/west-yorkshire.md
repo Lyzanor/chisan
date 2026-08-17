@@ -61,3 +61,10 @@ current offer and phone/email before admission.
 | Yorkshire Fine Cheese (Milkwood Artisans Ltd) | Specialist Cheesemakers Association member (cheesemaker) | The Dairy, Barncliffe Mills, Near Bank, Shelley, West Yorkshire, HD8 8LU | jjhampshire21@gmail.com | — |
 | Yorkshire Pecorino cheese Ltd | Specialist Cheesemakers Association member (cheesemaker) | 1 Adel Garth, Adel, Leeds, LS16 8JU | [site](http://www.olianas.co.uk)<br>07717 116110<br>mario@olianas.co.uk | — |
 | Yorkshire Pecorino | Named as a cheese producer by Living North local cheesemakers | Otley, near Leeds, West Yorkshire | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

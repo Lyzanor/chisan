@@ -10,7 +10,6 @@ still missing. Resolve or prune before adding a row.
 - Blocked by: springbank.scot answers 403 behind a bot challenge; no FSA entry found under 'Springbank'.
 - Next: Try the FSA register for Argyll and Bute by postcode area PA28, and re-read the site from another route.
 
-
 ## FSA productive-type sweep (2026-08-10)
 
 Official-source follow-up completed on 2026-08-10. Entries still listed below remain `hold`: the public material reviewed did not establish the full admission gate or a definitive exclusion.
@@ -62,9 +61,9 @@ current offer and phone/email before admission.
 |---|---|---|---|---|
 | Isle of Kintyre/Inverloch Cheese Co | Specialist Cheesemakers Association member (cheesemaker) | 26 Kirk Street, Campbelltown, Argyll, PA28 6BL | 01586 552692<br>info@scotcheese.com | — |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

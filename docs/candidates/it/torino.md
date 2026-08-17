@@ -203,6 +203,12 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | AZIENDA AGRICOLA MONNET IVAN | Villar Pellice | LOCALITA' INVERSO FIENMINUTO 27, VILLAR PELLICE (TO) | `UE IT 01 669` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-JAN-17 |
 | DAVIT NADINE | Villar Pellice | BORGATA MAUSSA SNC, VILLAR PELLICE (TO) | `UE IT 01 691` | caprino menos de 60 d, ovino menos de 60 d | 02-APR-21 |
 | AGU' CHIAFFREDO | Villar Perosa | VIA DEL CASTELLO 19, VILLAR PEROSA (TO) | `UE IT 01 910` | vacuno menos de 60 d/más de 60 d | 05-DEC-14 |
-## Toma Piemontese DOP — control de operadores del 2026-08-11
-
 El [elenco oficial de operadores idóneos](https://www.inoq.it/ArchivioIdonei/toma.pdf), actualizado internamente al 13-07-2026, contiene dos operadores de Torino con rol `CASEIFICIO`: Caseificio Longo en Rivarolo Canavese y Valle Orco di Cravero Maria e Frola Giuseppina en Montanaro. Ambos quedaron reconciliados con las unidades sanitarias ya incluidas en esta cola; no produjo candidatos nuevos.
+
+## Productores de trucha y piscicultura alpina — barrido del 2026-08-14
+
+Investigación de productores de trucha en la Val Chiusella (Torino). Se verificó crianza en aguas frías de montaña del torrente Chiusella y venta directa de pescado fresco y elaborado. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Trote Traversella | Traversella | `Pescado` | Explotación de truchicultura alpina en la alta Val Chiusella alimentada por aguas glaciares: trucha fario, iridea y transformados frescos. | [web](https://www.trotetraversella.it/) |

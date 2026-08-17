@@ -27,3 +27,14 @@ No se publican todavía porque falta una oferta alimentaria propia actual y atri
 - Caseificio Sociale Catinaccio y Caseificio Sociale Val di Fassa son unidades e identidades distintas y se publican por separado.
 
 La evidencia durable de cada alta está en `data/evidence/it/trentino-alto-adige/trento.jsonl`. Esta nota conserva únicamente las retenciones que podrían reabrirse con una fuente nueva.
+
+## Productores de trucha y piscicultura alpina — barrido del 2026-08-14
+
+Investigación de productores de trucha alpina y salmerino en las Giudicarie y valles trentinos (Trota del Trentino IGP y Salmerino del Trentino IGP). Se verificó crianza en aguas de montaña, obrador de ahumado y venta directa al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Troticoltura Armanini | Storo | `Pescado` + `Conservas` | Crianza alpina en Val Chiese (desde 1963): Trota del Trentino IGP, salmerino alpino, filetes ahumados en frío y caliente, y tartar de trucha. | [web](https://www.armanini.it/) |
+| Troticoltura Valenti | Sella Giudicarie | `Pescado` | Explotación de truchicultura biológica en Bondo alimentada por aguas del torrente Palvico / Parque Natural Adamello Brenta. | [web](https://www.troticolturavalenti.it/) |
+| Società Agricola Troticoltura F.lli Leonardi | Tre Ville | `Pescado` | Crianza tradicional y avannotteria de truchas (fario e iridea) y salvelinos en Preore a orillas del río Sarca (desde 1950). | [web](https://www.troticolturaleonardi.com/) |
+| ASTRO (Associazione Troticoltori Trentini) | Lavis | `Pescado` | Consorcio de productores y centro de elaboración de Trota del Trentino IGP y Salmerino del Trentino IGP en aguas puras de montaña. | [web](https://www.troteastro.it/) |

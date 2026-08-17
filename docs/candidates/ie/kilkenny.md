@@ -116,6 +116,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Lekker Food Co | — | Pan y cereal | Producer; Bread & Bakery, Sourdough, Farm Gate; via Real Bread Ireland / Irish Bakeries Directory | — | [FarmFinder](https://farmfinder.ie/producer/lekker-food-co) |
 | Le Caveau Wine Merchants | — | Vino | listed | — | [FarmFinder](https://farmfinder.ie/producer/le-caveau-wine-merchants) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Kilkenny.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

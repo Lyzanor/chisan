@@ -10,7 +10,6 @@ still missing. Resolve or prune before adding a row.
 - Blocked by: highlandparkwhisky.com answers 403 behind a bot challenge.
 - Next: Confirm the distillery address from the FSA register for Orkney Islands.
 
-
 ## FSA productive-type sweep (2026-08-10)
 
 Official-source follow-up completed on 2026-08-10. Entries still listed below remain `hold`: the public material reviewed did not establish the full admission gate or a definitive exclusion.
@@ -62,11 +61,11 @@ current offer and phone/email before admission.
 | Wilson of Westray | Named as a cheese producer by Provender Brown Scottish cheesemakers | Westray, Orkney | — | — |
 | The Orkney Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Sandwick, Orkney | — | — |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|
-| Pierowall Fish | Manufacturers/packers; rating/inspection 2025-10-22 | Pierowall Fish Ltd, Broughton Road, Westray, KW17 2DA | [565177](https://api.ratings.food.gov.uk/Establishments/565177) |
 | Orkney Fishermen's Society | Fishermen's cooperative processing hand-caught Orkney brown crab and lobster | Deepdale Road, Stromness, Orkney, KW16 3DJ | [site](https://orkneycrab.co.uk)<br>01856 850400<br>info@orkneycrab.co.uk |
+| Pierowall Fish | Island processor and smokery producing traditional smoked fish and fresh crab | Broughton Road, Pierowall, Westray, Orkney, KW17 2DA | [site](https://pierowallfish.co.uk)<br>01857 677271<br>kevin@pierowallfish.co.uk |

@@ -47,12 +47,10 @@ productive municipality, current offer and phone/email before admission.
 | Betws y Bangers | Manufacturers/packers; rating/inspection 2025-03-14 | Aberconwy House Lon Muriau, Betws Y Coed, Conwy, LL24 0HD | [1696085](https://api.ratings.food.gov.uk/Establishments/1696085) |
 | Blas ar Fwyd ac Amser Da | Manufacturers/packers; rating/inspection 2026-07-30 | 34 Station Road, Llanrwst, Conwy, LL26 0BT | [374208](https://api.ratings.food.gov.uk/Establishments/374208) |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|
 | Conwy Mussel Company | Traditional hand-raked Conwy Mussels PDO harvested from the Conwy Estuary | The Quay, Conwy, LL32 8BB | [site](https://conwymussels.com)<br>01492 592689<br>info@conwymussels.com |
-
-- **Conwy Mussel Company:** The candidate domain currently resolves to an inactive destination; the current productive unit still needs independent confirmation.

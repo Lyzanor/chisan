@@ -35,3 +35,10 @@ productive municipality, current offer and phone/email before admission.
 | Hand & Heart Creamery | Manufacturers/packers; rating/inspection 2026-06-12 | AL7 | [1950612](https://api.ratings.food.gov.uk/Establishments/1950612) |
 | Lickable Honey | Farmers/growers | EN6 | [1852734](https://api.ratings.food.gov.uk/Establishments/1852734) |
 | Lisa Allen - Herts Honey | Farmers/growers | SG4 | [1601258](https://api.ratings.food.gov.uk/Establishments/1601258) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

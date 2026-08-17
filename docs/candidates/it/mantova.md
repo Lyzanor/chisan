@@ -165,3 +165,11 @@ El [directorio oficial de caseifici](https://www.parmigianoreggiano.com/it/casei
 El [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) aportó una identidad productora no localizada en el barrido sanitario. Società Agricola F.lli De Cao S.S. se reconcilió y publicó el 2026-08-13: la matrícula consorcial, la identidad activa, la quesería de empresa y el spaccio de Via Brasiglia 325 coinciden, y la oferta pública actual atribuye Grana Padano y salumi propios a la misma unidad.
 
 Las demás matrículas provinciales quedan representadas, incluidas las cinco plantas de Latteria Sociale Mantova (`MN412`, `MN427`, `MN437`, `MN448`, `MN473`), la planta de Fattorie Cremona en Viadana (`MN405`) y Caseificio Bagnolese en Casalromano (`MN481`).
+
+## Productores de caviar y esturión — barrido del 2026-08-14
+
+Investigación de productores de caviar artesano y crianza de esturiones en el Parque Natural del Mincio (Goito, Mantova). Se verificó cría de esturiones en aguas puras de manantial y elaboración artesanal de caviar italiano. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cru Caviar (Caviar Import S.r.l.) | Goito | `Pescado` | Crianza sostenible de esturiones en el Parco del Mincio y elaboración de caviar italiano de selección artesanal (Cru Caviar: Beluga-Siberiano, Oscietra Classic, Royal Imperial). | [web](https://www.crucaviar.com/) |

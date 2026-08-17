@@ -73,3 +73,10 @@ Quedan **20 candidatos nuevos** en este corte: 8 perfiles de explotación, 6 uni
 | DERKENNE JESSIE | DERKENNE JESSIE | Mondrepuis | 26 RUE LES MONDREPUIS 02500 | actividad | 2026 | [nº Bio 170572](https://annuaire.agencebio.org/operateur/170572) |
 | FERME DE LA MARNOISE (EARL) | FERME DE LA MARNOISE | Mondrepuis | 47 RUE DARDENNES 02500 | actividad | 2026 | [nº Bio 140747](https://annuaire.agencebio.org/operateur/140747) |
 | PEERS JOSEPH & FANNY PEERS Joseph | EARL PEERS JOSEPH ET FANNY | Montlevon | La Maison Rouge 02330 | sede; unidad por confirmar | 2026 | [nº Bio 6228](https://annuaire.agencebio.org/operateur/6228) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Aisne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

@@ -114,3 +114,10 @@ Quedan **67 candidatos nuevos** en este corte: 42 unidades manufactureras adicio
 | LA BERGERIE DES FEES | LA BERGERIE DES FEES | Vallieres-Sur-Fier | 2123 RTE DE MORGENEX 74150 | actividad | 2025 | [nº Bio 12398](https://annuaire.agencebio.org/operateur/12398) |
 | LA FERME DE VALLORCINE | LA FERME DE VALLORCINE | Vallorcine | 451 ROUTE DU COL 451 - 453-LE PLAN DROIT 74660 | actividad | 2025 | [nº Bio 23257](https://annuaire.agencebio.org/operateur/23257) |
 | EARL LES P TIOUS VAULXOIS | EARL LES P'TIOUS VAULXOIS | Vaulx | Le Biolley 53 chemin du Col d'Angely 74150 | actividad | 2026 | [nº Bio 174110](https://annuaire.agencebio.org/operateur/174110) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Haute-Savoie. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

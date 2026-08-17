@@ -85,3 +85,10 @@ Quedan **35 candidatos nuevos** en este corte: 4 unidades manufactureras adicion
 | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN BELLIS PERENNIS | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN BELLIS PERENNIS | Valanjou | 7 La Grande Noé 49670 | actividad | 2026 | [nº Bio 10214](https://annuaire.agencebio.org/operateur/10214) |
 | LA VOIE LACTEE MIGAUD Julie | EARL LA VOIE LACTEE | Vivy | 6 RUE DES 3 COCARDES 49680 | actividad | 2026 | [nº Bio 17854](https://annuaire.agencebio.org/operateur/17854) |
 | XAVIER GABORIT | LE ROUME | Yzernay | LES MAZERIES 49360 | actividad | 2026 | [nº Bio 148329](https://annuaire.agencebio.org/operateur/148329) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Maine-et-Loire. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

@@ -88,3 +88,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | にしき堂 | 広島市 | Dulces y repostería | 和菓子協会 | http://nisikido.lolipop.jp/ | 広島市東区光町 1-13-23; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 藤い屋 | 廿日市市 | Dulces y repostería | 和菓子協会 | http://www.fujiiya.co.jp/ | 廿日市市宮島町 1129; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
 | 寺本水産 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.teramotosuisan.jp/ | ⚠ municipio sin confirmar; ostra de Hiroshima; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

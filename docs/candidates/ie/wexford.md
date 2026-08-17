@@ -138,6 +138,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Meyler's Fish Merchants | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/meylers-fish-merchants-wexford) |
 | Seaview Fresh Fish Shop | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/seaview-fresh-fish-shop-wexford) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Wexford.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

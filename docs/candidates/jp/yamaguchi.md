@@ -78,3 +78,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 宇部蒲鉾 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.ubekama.com/ | ⚠ desde 2024 opera como 北九州ニッスイ宇部工場: comprobar quién elabora hoy; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | 杉本利兵衛本店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; 焼き抜き蒲鉾 en Hofu; revisado 2026-08-11: retenido (NOURL, falta confirmar actividad o unidad productiva) |
 | 村田蒲鉾店 | ⚠ | Pescado | búsqueda dirigida | — | ⚠ sin dominio recogido; Hagi; revisado 2026-08-11: retenido (NOURL, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

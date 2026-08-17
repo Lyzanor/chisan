@@ -121,3 +121,10 @@ Quedan **72 candidatos nuevos** en este corte: 13 perfiles de explotación, 11 u
 | LES BIQUETTES DE CHAMBARAN CHIOCANINI Hugues | CHIOCANINI HUGUES LOUIS JOSEPH | Varacieux | 750 CHE DES PERRAUDIERES 38470 | actividad | 2026 | [nº Bio 111671](https://annuaire.agencebio.org/operateur/111671) |
 | LA BERMOTINE DOUCET Charlotte, SIEURIN Guillaume, RAYMOND Paul | LA BERMOTINE | Vaulnaveys-Le-Haut | 400 CHE DE MONTPERET 38410 | actividad | 2026 | [nº Bio 174747](https://annuaire.agencebio.org/operateur/174747) |
 | MADAME NELLY COULLET | COULLET NELLY PASCALE | Villeneuve De Marc | Les Biquettes des Valaises 2425 route des Valaises 38440 | actividad | 2026 | [nº Bio 129829](https://annuaire.agencebio.org/operateur/129829) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Isère. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

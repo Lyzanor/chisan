@@ -67,3 +67,10 @@ Quedan **24 candidatos nuevos** en este corte: 6 perfiles de explotación, 0 uni
 | Le Jas du Vignal | GAEC Le Jas du Vignal | Sillans La Cascade | Le Jas du Vignal chemin les Infournières 83690 | actividad | 2026 | [nº Bio 146577](https://annuaire.agencebio.org/operateur/146577) |
 | LES BREGONS NOIRS BARBIER Vincent | LES BREGONS NOIRS | Sillans-La-Cascade | Le Jas du Vignalchemin les Infournières 83690 | actividad | 2026 | [nº Bio 8315](https://annuaire.agencebio.org/operateur/8315) |
 | Les chèvres du P'tit collois | Les chèvres du p'tit collois | Trigance | 175 chemin de Font Rose Vallon du lavandou 83840 | actividad | 2026 | [nº Bio 308237](https://annuaire.agencebio.org/operateur/308237) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Var. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

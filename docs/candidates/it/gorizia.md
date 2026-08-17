@@ -21,3 +21,4 @@ Estos nueve candidatos siguen abiertos. El registro ecológico o institucional a
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Unidad cerrada el 2026-08-13. Latte Carso ya está publicada por su planta principal de Via Trieste 19, respaldada además por su web y el Consorzio Montasio. La nueva autorización `H5R2S` de Via Aquileia 2 corresponde a la misma sociedad en el mismo municipio y no justifica duplicar al productor: queda reconciliada como unidad secundaria hasta que la marca publique una oferta diferenciada para esa dirección.
+

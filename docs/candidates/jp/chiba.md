@@ -79,6 +79,13 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | もりしん | 千葉市 | Dulces y repostería | 和菓子協会 | http://www.morishin-chiba.com | 千葉市若葉区みつわ台 2-10-16; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado, marisco y algas de Chiba con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
@@ -86,5 +93,4 @@ Barrido sistemático de productores, elaboradores y transformadores artesanos de
 | Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
 |---|---|---|---|---|---|---|
 | **飯田徳治商店 (Iida Tokuji Shoten)** | 有限会社飯田徳治商店 | `銚子市` | Pescado | https://www.iida-tokuji.com/ |Obrador conservero artesanal del puerto de Choshi fundado en 1954; conserva artesana y semiconserva de sardina (iwashi) y caballa (saba) pescadas en el caladero de Choshi. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro conservero de Chiba |
-| **かね八 (Kanehachi)** | 株式会社かね八水産 | `勝浦市` | Pescado | https://kanehachi.co.jp/ |Procesador y distribuidor de pescado fresco en el puerto de Katsuura; especialista en bonito (katsuo de Katsuura) y virrey (kinmedai) con línea directa de subasta. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación comercial de Katsuura |
 | **鈴芳海苔 (Suzuyoshi Nori)** | 鈴芳海苔店 | `富津市` | Pescado | https://suzuyoshi-nori.com/ |Cultivo y tostado artesanal de alga nori tradicional de la bahía de Tokio (Edo-mae nori) en Futtsu, con procesamiento y secado en obrador propio. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro de productores de Futtsu |

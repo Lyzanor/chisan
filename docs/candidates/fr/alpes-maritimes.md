@@ -75,3 +75,10 @@ Quedan **22 candidatos nuevos** en este corte: 2 perfiles de explotación, 1 uni
 | MONSIEUR ROBIN DELANNOY | DELANNOY ROBIN | Saint-Martin-Vesubie | CHEMIN DE BERTHEMONT LIEU DIT LE PESTIER 06450 | actividad | 2025 | [nº Bio 135951](https://annuaire.agencebio.org/operateur/135951) |
 | PEGLION René | PEGLION RENE | Sospel | 3571 Route du Moulinet 06380 | actividad | 2026 | [nº Bio 112717](https://annuaire.agencebio.org/operateur/112717) |
 | DE PEIJAN | DE PEIJAN | Valbonne | LA CHEVRERIE DE VALBONNE 06560 | actividad | 2026 | [nº Bio 148211](https://annuaire.agencebio.org/operateur/148211) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Alpes-Maritimes. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

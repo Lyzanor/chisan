@@ -46,3 +46,11 @@ house letter before trusting it.
 | Bergerhof Melkvee | Venlo *(Velden)* | Rijksweg 1, 5941 AA Velden | [bergerhofvelden.nl](http://www.bergerhofvelden.nl)<br>`06-25060711`<br>`info@bergerhofvelden.nl` | BvBZ | — |
 | Zuivel van Nu | Venlo *(Velden)* | Schandelo 110, 5941 NH Velden | [zuivelvannu.nl](http://www.zuivelvannu.nl)<br>`06-48915994`<br>`Info@zuivelvannu.nl` | BvBZ | — |
 | De Bokkesprong | Venray *(Veulen)* | Veulensewg 61, 5814 AB Veulen | [bokkesprong.com](http://www.bokkesprong.com)<br>`0478-583713`<br>`info@bokkesprong.com` | BvBZ | street matched on postcode only |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Limburg. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+

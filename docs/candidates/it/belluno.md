@@ -21,3 +21,11 @@ Revisión del lote ecológico cerrada el 2026-08-12. Se publicaron Al Belvedere,
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Lote cerrado el 2026-08-13. Se publicaron dieciséis unidades: Caseificio Agordino, Dal Gregge Bortoluzzi, Latteria Agricola di Tisoi, Pastificio Menazza, Latteria di Frontin, Latteria di Lentiai, las plantas de Lattebusche en Busche y Comelico, Il Colle del Tiglio, Latteria di Livinallongo, Casa di Pasta — Sessantasei, Latteria di Sedico, Latteria di Camolino, Busa dei Sbrase, Bio Cansiglio y Milchhof Agostini. T.O.DO. y Sessantasei se clasificaron por su actividad pública real como fabricantes de pasta, no como queserías. Milchhof Agostini se incorporó al localizar señales públicas vigentes de la explotación, el punto de venta y su gama propia.
+
+## Productores de trucha y piscicultura de montaña — barrido del 2026-08-14
+
+Investigación de productores de trucha en el entorno del Parque Nacional de los Dolomitas Belluneses. Se verificó crianza en aguas frías de montaña y venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Trotarium | Sospirolo | `Pescado` | Explotación de truchicultura de montaña a los pies de los Dolomitas Belluneses con métodos sostenibles y venta directa de truchas frescas y transformadas. | [web](https://www.trotarium.it/) |

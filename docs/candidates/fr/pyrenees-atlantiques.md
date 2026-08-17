@@ -160,3 +160,10 @@ Quedan **106 candidatos nuevos** en este corte: 17 perfiles de explotación, 29 
 | MIREN AIRE | AIRE MIREN | Urepel | ITHURRIBELTZEA 64430 | actividad | 2025 | [nº Bio 108429](https://annuaire.agencebio.org/operateur/108429) |
 | MUJICA ALLANDE | MUJICA ALLANDE | Ustaritz | 238 chemin d'Apezaremborda 64480 | actividad | 2025 | [nº Bio 19451](https://annuaire.agencebio.org/operateur/19451) |
 | PAROT JOANA | PAROT JOANA | Ustaritz | 398 Chemin d'Elizagaraikoborda 64480 | actividad | 2025 | [nº Bio 9891](https://annuaire.agencebio.org/operateur/9891) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Pyrénées-Atlantiques. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

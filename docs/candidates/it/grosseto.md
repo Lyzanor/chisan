@@ -91,3 +91,11 @@ Lote cerrado el 2026-08-13. Se publicaron Podere Paterno, Biologica Rustici, Gio
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene ocho plantas en Grosseto: Caseificio Il Fiorino, Caseificio Follonica, Caseificio Sociale Manciano, Caseificio Maremma, Rocca Toscana Formaggi, Consorzio Caseificio di Sorano, Formaggeria Toscana y Caseificio Seggiano. Las ocho quedaron reconciliadas con unidades sanitarias ya incluidas en esta cola; no produjo candidatos nuevos. Los operadores que el consorcio separa como envasadores o afinadores no se trataron como fabricantes.
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de productores de pescado y conservas tradicionales de la Laguna de Orbetello en Maremma (Grosseto). Se verificó pesca lagunar tradicional, elaboración artesanal y punto de venta propio. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| I Pescatori di Orbetello (Cooperativa Pescatori di Orbetello) | Orbetello | `Pescado` + `Conservas` | Cooperativa fundada en 1946: pesca lagunar sostenible en Orbetello, producción artesanal de Bottarga di Muggine di Orbetello, sfumature di cefalo y anguilla scavecciata e affumicata (Presidio Slow Food). | [web](https://www.ipescatoriorbetello.it/) |

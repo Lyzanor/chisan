@@ -80,3 +80,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | nombre (社名) | municipio | categoría | fuente | web | notas |
 |---|---|---|---|---|---|
 | 木村屋商店 | 横手市 | Dulces y repostería | 和菓子協会 | http://www.chuokai-akita.or.jp/okasi/kimuraya/ | 横手市大町 5-23; revisado 2026-08-11: retenido (429, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

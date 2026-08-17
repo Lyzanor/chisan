@@ -67,3 +67,11 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 ## Productores de queso — lote cerrado el 2026-08-13
 
 El barrido sanitario del 2026-08-11 queda cerrado. Las unidades con identidad y oferta productora contrastables se publicaron y los descartes quedaron documentados en el ledger de evidencia. La última retención, YEP Srl, se reconcilió con su identidad pública Caseificio Corte Bianca: la web propia declara la misma razón social y dirección y confirma producción diaria de mozzarella y venta en el spaccio aziendale.
+
+## Productores de caviar y esturión — barrido del 2026-08-14
+
+Investigación de productores de caviar italiano y cría de esturiones en las aguas del Parco del Ticino (Cassolnovo, Lomellina, Pavia). Se verificó cría de esturiones en entorno fluvial protegido y elaboración de caviar italiano de alta gama con venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Ars Italica Caviar | Cassolnovo | `Pescado` | Cría de esturiones en las aguas puras del Parque del Ticino (Cassolnovo): elaboración de caviar italiano de excelencia (Oscietra, Sevruga, Da Vinci) y carne de esturión. | [web](https://www.arsitalica.it/) |

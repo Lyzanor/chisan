@@ -71,6 +71,13 @@ house letter before trusting it.
 | Boerderij de Huppe | Zwolle | Kleine Veerweg 9, 8017 BP Zwolle | [dehuppe.nl](http://www.dehuppe.nl)<br>`06-51361055`<br>`Alfons.vanvilsteren@forfarmers.eu` | BvBZ | — |
 | Erve Slendebroek VOF | Zwolle | Kanaalweg 20, 8013 PC Zwolle | [erve-slendebroek.nl](http://www.erve-slendebroek.nl)<br>`06-51231206`<br>`info@erve-slendebroek.nl` | BvBZ | — |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Overijssel. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y acuicultura (2026-08-14)
 
 Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o a evidencia de exclusión; quedan abiertos únicamente los siguientes candidatos por falta de una prueba suficiente y actual.
@@ -81,3 +88,4 @@ Revisión individual del 2026-08-14. Los casos resueltos se trasladaron al CSV o
 | Forellenvijver Deep'n | Hof van Twente *(Diepenheim)* | The proposed site is unavailable and no current source resolved activity and own food production. | [web](https://forellenvijverdeepn.nl/) |
 | De Forelderij | Enschede | The proposed site is unavailable and no current source resolved activity and own food production. | [web](https://deforelderij.nl/) |
 | Forelvisvijvers De Koeln | Ommen *(Beerzerveld)* | The proposed domain is hijacked by an unrelated gambling site; current activity and own food production remain unresolved. | [web](https://dekoeln.nl/) |
+

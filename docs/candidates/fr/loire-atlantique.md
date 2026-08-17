@@ -113,6 +113,13 @@ Quedan **58 candidatos nuevos** en este corte: 5 perfiles de explotación, 11 un
 | BERGERIE DU MOUTON NOIR | GAEC BERGERIE DU MOUTON NOIR | Villeneuve-En-Retz | 94 LES CLOS MOUILLES 44580 | actividad | 2025 | [nº Bio 58993](https://annuaire.agencebio.org/operateur/58993) |
 | GAEC DU MARAIS CHAMPS | GAEC DU MARAIS CHAMPS | Villeneuve-En-Retz | Nombreuil 221 chemin des chênes verts 44580 | actividad | 2025 | [nº Bio 145720](https://annuaire.agencebio.org/operateur/145720) |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Loire-Atlantique. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y productos del mar (2026-08-14)
 
 Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.

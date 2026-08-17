@@ -70,3 +70,10 @@ Quedan **18 candidatos nuevos** en este corte: 13 perfiles de explotación, 1 un
 | EARL LE CHANT DES MEULES | EARL LE CHANT DES MEULES | Bezu-Saint-Eloi | 5 CHE DE LA FERME 27660 | actividad | 2026 | [nº Bio 136162](https://annuaire.agencebio.org/operateur/136162) |
 | GAEC FERME DES PATURES | GAEC FERME DES PATURES | Le Val Dore | 10 RUE SAINT PIERRE ORVAUX 27190 | actividad | 2026 | [nº Bio 174324](https://annuaire.agencebio.org/operateur/174324) |
 | FERME DE PINCHELOUP LELIEVRE Benoît et Paola | GAEC FERME DE PINCHELOUP | Tourville-Sur-Pont-Audemer | 1591 RTE DE PINCHELOUP 27500 | actividad | 2026 | [nº Bio 147984](https://annuaire.agencebio.org/operateur/147984) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Eure. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

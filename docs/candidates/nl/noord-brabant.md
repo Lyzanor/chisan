@@ -82,3 +82,11 @@ house letter before trusting it.
 | Melkveebedrijf Teurlings | Tilburg *(Udenhout)* | Udenhout | — | zoekdeboer | Vending with Brabants Duingoed cheeses from the same collective; own share to confirm — no street address published |
 | Kaaz Valkenswaard | Valkenswaard | Zeelberg 20, 5555 XE Valkenswaard | [kaazvalkenswaard.nl](http://www.kaazvalkenswaard.nl)<br>`06-23478638`<br>`info@kaazvalkenswaard.nl` | BvBZ | — |
 | Boerderij Van Hees | Zundert *(Achtmaal)* | Kloothoefstraat 11, 4885 JG Achtmaal | [boerderijvanhees.nl](http://www.boerderijvanhees.nl)<br>`06-20911396` | BvBZ | — |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en Noord-Brabant. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+

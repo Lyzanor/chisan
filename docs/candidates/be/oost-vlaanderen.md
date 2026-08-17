@@ -19,3 +19,10 @@ Búsqueda de queserías artesanales, queserías cooperativas, granjas caprinas y
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Búsqueda de obradores artesanales de anguila (paling), ahumaderos de pescado, pescaderías con taller de elaboración propia y estanques de cría en Oost-Vlaanderen. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

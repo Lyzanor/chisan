@@ -91,6 +91,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Sligo Oysters | — | Pescado | Producer; Seafood, SuperValu Food Academy | — | [FarmFinder](https://farmfinder.ie/producer/sligo-oysters) |
 | Wild Atlantic Shellfish Limited | — | Pescado | Producer; Origin Green Member, Seafood, Bord Bia Origin Green | — | [FarmFinder](https://farmfinder.ie/producer/wild-atlantic-shellfish-limited) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Sligo.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

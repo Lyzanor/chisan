@@ -58,9 +58,16 @@ current offer and phone/email before admission.
 | Ivy Walnut Creamery | Specialist Cheesemakers Association member (cheesemaker) | Old Hall Road, Haverhill, Essex, CB9 7EJ | ivywalnutcreamery@outlook.com | — |
 | Sunny Ventures Ltd | Specialist Cheesemakers Association member (cheesemaker) | Unit 21 Thurrock Trade Park, Oliver Road, Grays, Essex, RM20 3AL | 07956 574753<br>info.sunnyventuresltd@gmail.com | — |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

@@ -110,3 +110,9 @@ Tras revisar los 141 candidatos, se retiraron de esta cola 61 altas nuevas, 1 ca
 | **浅野養鶏場 (Asano Poultry Farm Fuchu)** | `府中市` | Huevos | [asano-egg.com](https://asano-egg.com/) | [@asano_egg_fuchu](https://www.instagram.com/asano_egg_fuchu/) | Granja avícola en Fuchu que cría gallinas camperas y gallinas autóctonas Tokyo Ukokkei con alimentación natural para huevos frescos de alta calidad. | Asociación Avícola de Tokio |
 | **百草ファーム (Mogusa Farm Hino)** | `日野市` | Lácteos y quesos | [mokusafarm.com](https://mokusafarm.com/) | [@mokusafarm_gelato](https://www.instagram.com/mokusafarm_gelato/) | Granja lechera en Hino que produce leche fresca y elabora artesanalmente helados gelato con frutas y leche ordeñada en la misma mañana. | Directorio de granjas de Hino |
 | **奥多摩 わさび 井上農園 (Inoue Wasabi Farm Okutama)** | `奥多摩町` | Fruta y verdura | [okutama-wasabi-inoue.jp](https://okutama-wasabi-inoue.jp/) | [@okutama_wasabi_inoue](https://www.instagram.com/okutama_wasabi_inoue/) | Cultivo tradicional de wasabi fresco de terraza sobre corrientes de agua cristalina de manantial en los cañones de Okutama. | Asociación de Cultivadores de Wasabi de Okutama |
+
+### Pescado y salazones insulares
+
+| Nombre | Municipio | Categoría | Web | Instagram | Descripción / Especialidad | Fuente |
+|---|---|---|---|---|---|---|
+| **藍ヶ江水産 (Aigae Suisan)** | `八丈町` | Pescado | [kusaya.tokyo](https://kusaya.tokyo/) | [@aigaesuisan](https://www.instagram.com/aigaesuisan/) | Elaborador de kusaya artesanal en Hachijojima, empleando una madre de salmuera fermentada centenaria para curar y secar jurel azul marino y pez volador fresco de las islas Izu. | Registro de industrias pesqueras de Tokio insular |

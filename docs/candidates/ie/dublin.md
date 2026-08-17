@@ -95,7 +95,6 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Larry's Marino Fair | Carne | The site answers HTTP 402 on every automated route tried; the lead is unresolved and needs a browser session. |
 | Leavy's Butchers | Carne ? | Colm Leavy Butchers publishes no address; its candidate municipio East Wall is an inferred nearest settlement 1.5 km from the source coordinate. |
 | Roberts of Dalkey | Pescado | Robertsofdalkey.ie serves an empty Apache directory index, so no site stands behind the domain. That is not proof of closure; the producer needs another current source and the URL must not be carried. |
-| The 5 Lamps Brewery | Cerveza | The 5 Lamps publishes a Dublin beer brand with no brewery, address or production detail; whether a productive unit exists is unresolved. |
 | The Scarlet Heifer | Carne | The Scarlet Heifer publishes Leopardstown and Foxrock shops under a D18 Eircode without naming a productive unit. |
 | Yami Yami | Pan y cereal | Yami Yami publishes 'Fresh daily in Charlestown' with no address; Charlestown is a shopping centre rather than a town, so the municipality is unresolved. |
 
@@ -157,10 +156,8 @@ Either an own website or a register-backed municipio, but not both.
 | The Tram Café Limited | Unit 131D Slaney RoadDublin Industrial E | Carne | — | — | — | FSAI HSE 4109 |
 | Tom Whelan Meat Products Ltd | Clondalkin | Carne | — | — | — | DAFM meat 2356 |
 | Whelans of Dublin Pudding Manufacturers Ltd | Bluebell | Carne | — | — | — | DAFM meat 2357 |
-| Hopkins & Hopkins Brewing Company | Dublin | Cerveza | — | — | 53.3492827, -6.2761105 | OSM node/10775555715 |
 | Sanor | Ballymount (nearest, 1.5 km) | Cerveza | — | — | 53.3259345, -6.3665244 | OSM node/12638656543 |
 | Third Circle Brewing | Walkinstown (nearest, 0.8 km) | Cerveza | — | — | 53.3311589, -6.349899 | OSM node/8638179434 |
-| Urban Brewing | Dublin | Cerveza | — | +353 1 568 5989 | 53.3491172, -6.2480644 | OSM node/5073432440 |
 | Airfield Estate | Upper Kilmacud Road Dundrum | Lácteos y quesos | — | — | — | DAFM dairy IE2103 |
 | Aoife McNally | McNally Family Farm Balrickard | Lácteos y quesos | — | — | — | DAFM dairy IE1955 |
 | Bainne Bó (registered as Yvonne and Alan Fitzachary) | Hillcrest, St. Margaret's, Swords, | Lácteos y quesos | — | — | — | DAFM dairy IE2181 |
@@ -238,6 +235,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Kish Fish | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/kish-fish) |
 | Meat 'n' Plaice | Whitehall (nearest, 0.4 km) | Pescado | shop=seafood | +353 1 848 6839 · selectseafoods@hotmail.co.uk | OSM node/5391266556 |
 | The Catch Fish Shop | Cornelscourt | Pescado | shop=seafood | +353 1 289 2111 | OSM node/4272190209 |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Dublin.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

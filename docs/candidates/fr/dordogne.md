@@ -91,3 +91,10 @@ Quedan **49 candidatos nuevos** en este corte: 6 perfiles de explotación, 6 uni
 | LABARUSSIAS Brigitte | LABRUSSIAS BRIGITTE BRIGITTE | Sainte-Foy-De-Belves | Moulin de Barde 24170 | actividad | 2026 | [nº Bio 157640](https://annuaire.agencebio.org/operateur/157640) |
 | Bêle des bois | MARTINEAU ELVINA | Sanilhac | LD BAS MARTEL 24750 | actividad | 2026 | [nº Bio 9670](https://annuaire.agencebio.org/operateur/9670) |
 | BRIDAMI GESNOUIN David | BRIDAMI | Teyjat | LD VAUBRUNET 24300 | actividad | 2026 | [nº Bio 158473](https://annuaire.agencebio.org/operateur/158473) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Dordogne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

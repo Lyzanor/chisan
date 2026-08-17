@@ -75,12 +75,18 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 
 **Ya integrado, no volver a proponer:** ヘリオス酒造 ya está en `okinawa.csv` como `Destilados y licores`.
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, acuicultores y elaboradores artesanos de pescado, marisco y algas de Okinawa con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
 
 | Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
 |---|---|---|---|---|---|---|
-| **もずくセンター (Mozuku Center)** | 株式会社もずくセンター | `うるま市` | Pescado | https://okinawa-mozuku.com/ |Recolector y transformador artesanal de alga mozuku de Okinawa en Katsuren (Uruma); lavado con agua marina filtrada, salazón y envasado en fresco de mozuku de hebra gruesa de arrecife. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Cooperativa pesquera de Katsuren |
 | **大嶺水産 (Omine Suisan)** | 有限会社大嶺水産 | `糸満市` | Pescado | https://ominesuisan.com/ |Obrador tradicional de pasta de pescado (Okinawa kamaboko y chiki-agi) fundado en 1955 en el puerto de Itoman; elaboración diaria con pescado fresco y sal marina de Okinawa. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro artesanal de Itoman |
 | **八重山養殖 (Yaeyama Kuruma Ebi)** | 有限会社八重山養殖 | `石垣市` | Pescado | https://yaeyama-kurumaebi.com/ |Granja acuícola marina en la isla de Ishigaki; cría en aguas cristalinas de arrecife coralino de langostino tigre japonés (Kuruma-ebi de Yaeyama) con envío en vivo y congelado en origen. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Asociación comercial de Ishigaki |

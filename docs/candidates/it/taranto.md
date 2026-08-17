@@ -52,3 +52,11 @@ El barrido sanitario tuvo corte 2026-08-11 y se limitó a plantas `AUTORIZZATA`,
 | CASEIFICIO GOCCE DI LATTE S.R.L. | Pulsano | Sociedad nueva y autorización de julio de 2026; aún sin oferta pública propia, y los sitios homónimos son de otras provincias |
 | BATTISTA LUIGI | San Giorgio Ionico | Autorización vigente, sin identidad comercial o catálogo público localizado |
 | TARAS LATTE S.R.L. | Taranto | Autorización vigente, sin oferta pública actual propia localizada |
+
+## Productores de pescado y mitilicultura — barrido del 2026-08-14
+
+Investigación de productores y criadores de mejillones tradicionales en el Mar Piccolo de Taranto. Se verificó mitilicultura artesanal sostenible de la Cozza Tarantina (Presidio Slow Food) y comercialización con trazabilidad. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cooperativa Fratelli D'Andria (Cozza Tarantina) | Taranto | `Pescado` | Histórica empresa de mitilicultura y depuración en el Mar Piccolo de Taranto: cría sostenible de la "Cozza Tarantina" (Presidio Slow Food) con viveros tradicionales y venta directa. | [web](https://www.cozzatarantina.it/) |

@@ -88,3 +88,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 廣榮堂 | 岡山市 | Dulces y repostería | 和菓子協会 | http://www.koeido.co.jp/ | 岡山市中区藤原 60; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 三宅製菓本店 | 高梁市 | Dulces y repostería | 和菓子協会 | http://www.sweetsjapan.com/133okayama/10120286688.html | 高梁市成羽町下原 577; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | 山方永寿堂 | ⚠ | Dulces y repostería | búsqueda dirigida + web propia | https://www.eijudo.co.jp/ | ⚠ municipio sin confirmar (Okayama u otro); revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

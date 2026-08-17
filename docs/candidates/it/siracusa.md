@@ -52,3 +52,13 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 Lote revisado y conciliado el 2026-08-13. Se publicaron diez unidades: las seis resueltas en la primera revisión y, tras confirmar continuidad agraria y de transformación, Frescolat di Scalisi, Azienda Coco, Nieli Salvatore e Ignaccolo Giuseppina. `frescolat.it` sigue excluido porque pertenece a otra sociedad de Caerano di San Marco (Treviso).
 
 Queda retenido Lo Monaco Sebastiano: la explotación ganadera de Ferla está activa y la unidad de Contrada Pirato figuraba como transformadora láctea en 2025, pero ya no aparece en el listado sanitario nacional actualizado el 24-07-2026 y no se localizó una oferta alimentaria pública actual que permita cerrar la contradicción.
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de conserverías ittiche tradicionales y productores de pescado de la provincia de Siracusa, con foco en el polo marinero de Marzamemi (Pachino) y la costa siracusana (atún rojo, pez espada, bottarga y pescado azul). Se verificó obrador propio y marca comercial propia activa con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Campisi Conserve | Pachino | `Pescado` + `Conservas` | Histórica conservería artesanal de Marzamemi (desde 1854): atún rojo del Mediterráneo, bottarga de atún, pez espada y conservas de pescado azul. | [web](https://www.campisiconserve.it/) |
+| Adelfio | Pachino | `Pescado` + `Conservas` | Elaboración tradicional en Marzamemi (desde 1931) de tonno rosso di tonnara, bottarga di tonno, ventresca, buzzonaglia y salazones. | [web](https://www.adelfionline.com/) |
+| Drago Conserve | Siracusa | `Pescado` + `Conservas` | Conservería artesana en Siracusa (desde 1929) de filetes de atún (pinne gialle y rosso), pez espada, caballa (sgombro) y anchoas. | [web](https://www.dragoconserve.it/) |

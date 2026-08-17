@@ -39,9 +39,9 @@ productive municipality, current offer and phone/email before admission.
 | The Wee Bakery | Manufacturers/packers; rating/inspection 2025-10-14 | Crebilly Road, Ballykeel, Ballymena, Antrim, BT42 4AZ | [1537205](https://api.ratings.food.gov.uk/Establishments/1537205) |
 | Tweedie Pies Home Bakery | Manufacturers/packers; rating/inspection 2025-11-05 | 28a Kings Road, White Head, Whitehead, Antrim, BT38 9PT | [1698848](https://api.ratings.food.gov.uk/Establishments/1698848) |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

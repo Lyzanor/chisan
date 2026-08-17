@@ -17,14 +17,7 @@
 | `hold` | Aromas e Sabores de Pitões | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · falta identificar producto y unidad de elaboración |
 | `hold` | Sabores do Gerês — Casa do Igreja | Montalegre | a confirmar | [PTPT](https://www.ptpt.pt/produtores) · falta identificar producto y unidad de elaboración |
 | `hold` | Judia | Valpaços | Cerveza | [Untappd](https://untappd.com) · marca activa; falta demostrar que se fabrique en unidad propia del concelho y no por contrato |
+| `hold` | Truticultura de Boticas (Trutas do Barroso) | Boticas | Pescado | [Município de Boticas](https://cm-boticas.pt) · viveros y producción de truchas en el río Beça; confirmar contacto directo del titular de la explotación |
+| `hold` | Piscicultura do Alvão | Vila Real | Pescado | [ICNF](https://icnf.pt) · vivero de truticultura en aguas de la Serra do Alvão; verificar oferta comercial |
 
 Las quintas del Douro ya publicadas como bodegas se enriquecen con `Aceite` solo cuando una fuente directa demuestra producción material (ej. Casa dos Lagares/Fragulho).
-
-## Pescado — revisión 2026-08-14
-
-Los casos siguientes siguen abiertos: la investigación no acreditó todavía una unidad productiva alimentaria actual con identidad y ubicación suficientes.
-
-| candidato pendiente |
-|---|
-| `hold` \| Truticultura de Boticas (Trutas do Barroso) \| Boticas \| Pescado \| [Município de Boticas](https://cm-boticas.pt) · viveros y producción de truchas en el río Beça; confirmar contacto directo del titular de la explotación |
-| `hold` \| Piscicultura do Alvão \| Vila Real \| Pescado \| [ICNF](https://icnf.pt) · vivero de truticultura en aguas de la Serra do Alvão; verificar oferta comercial |

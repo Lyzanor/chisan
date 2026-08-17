@@ -57,3 +57,10 @@ current offer and phone/email before admission.
 | Candidate | Signal | Location | Contact | FSA record |
 |---|---|---|---|---|
 | The Wee Dalry Dairy Ltd | Specialist Cheesemakers Association member (cheesemaker) | 11 Main Street, Dalry, Ayrshire, KA24 5DL | 07496 681209<br>rspencer18@btinternet.com | — |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

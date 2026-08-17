@@ -27,7 +27,6 @@ productive municipality, current offer and phone/email before admission.
 | Lime Tree Farm Egg Packer, Frozen Beef Sales | Manufacturers/packers; rating/inspection 2025-09-24 | Lime Tree Farm, Fairstead Lane, Hempnall, Norfolk, NR15 2RD | [648142](https://api.ratings.food.gov.uk/Establishments/648142) |
 | NVCS Ltd (Green Farm Fresh) | Manufacturers/packers; rating/inspection 2025-07-01 | NVCS Ltd 1 Green Farm Industrial Units, Wendover Road, Rackheath, Norwich, NR13 6LQ | [1607682](https://api.ratings.food.gov.uk/Establishments/1607682) |
 | Sheringham Smokehouse | Manufacturers/packers; rating/inspection 2026-06-05 | 28 Station Road, Sheringham, Norfolk, NR26 8RF | [1373429](https://api.ratings.food.gov.uk/Establishments/1373429) |
-| Staithe Smokehouse | Manufacturers/packers; rating/inspection 2026-06-02 | Back of The White Horse, The White Horse, Main Road, Brancaster Staithe, PE31 8BY | [1090010](https://api.ratings.food.gov.uk/Establishments/1090010) |
 | Stump Rat Brewing Co Ltd / Jegger's | Manufacturers/packers; rating/inspection 2026-03-06 | Unit 1, Hall Farm Barns, Swaffham Road, East Raynham, NR21 7EE | [1888439](https://api.ratings.food.gov.uk/Establishments/1888439) |
 
 ## Cheese producer sweep (2026-08-12)
@@ -49,3 +48,17 @@ current offer and phone/email before admission.
 | Norfolk & Better Ltd | Specialist Cheesemakers Association member (cheesemaker) | Dawe Estates, Manor Farm, Willow Corner, Carbrooke, Thetford, Norfolk, IP25 6SS | [site](http://www.norfolkandbetter.com)<br>07793 529688<br>creamery@dawe.co.uk | — |
 | Ferndale Farm Norfolk Cheeses | Named as a cheese producer by Norfolk Deli East Anglian cheese | Norwich, Norfolk | — | — |
 | The Goat Shed | Named as a cheese producer by Norfolk Deli East Anglian cheese | Fielding Cottage, Honingham, Norfolk | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

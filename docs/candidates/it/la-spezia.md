@@ -64,3 +64,11 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | ALLE SERRE | Sarzana | 0187 62 17 30<br>aziendadimostrativa@libero.it |
 | CIMABUE | Varese Ligure | 328 30 33 581<br>cimabueagrisociale@libero.it |
 | IL PELLEGRINO | Varese Ligure | 0525 88 264<br>info@ilpellegrino.eu |
+
+## Productores de pescado y marisco — barrido del 2026-08-14
+
+Investigación de productores de miticultura y moluscos en el Golfo de La Spezia (Golfo dei Poeti). Se verificó cría centenaria de mejillones (muscoli), ostras, depuración y elaboración de conservas marinas. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cooperativa Mitilicoltori Spezzini | La Spezia | `Pescado` | Histórica cooperativa fundada en 1946 que agrupa a los muscolai del Golfo della Spezia: cría de "Muscoli della Spezia" (mejillones), ostras locales y conservas sott'olio. | [web](https://www.mitilicoltori.it/) |

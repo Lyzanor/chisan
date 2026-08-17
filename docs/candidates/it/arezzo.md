@@ -75,3 +75,4 @@ Lote cerrado el 2026-08-13. Se publicaron catorce unidades nuevas, incluida Case
 ## Pecorino Toscano DOP — control de caseifici del 2026-08-11
 
 La lista vigente de [caseifici del Consorzio del Pecorino Toscano DOP](https://www.pecorinotoscanodop.it/i-produttori/) contiene una planta en Arezzo, Caseificio Matteassi Onelio en Foiano della Chiana. Quedó reconciliada con la unidad sanitaria ya incluida en esta cola; no produjo candidatos nuevos.
+

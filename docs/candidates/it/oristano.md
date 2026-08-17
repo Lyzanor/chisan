@@ -27,3 +27,12 @@ Investigación del 2026-08-08. Estos 20 operadores tienen un certificado ecológ
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 La cola quesera quedó reconciliada por completo el 2026-08-13. Se publicaron treinta y cuatro identidades nuevas; SE.PI y CAO se reconciliaron con las filas que ya existían. Cadau Paolo se descartó porque la autoridad sanitaria revocó su autorización tras más de dos años de inactividad, y Arion Srl porque su identidad empresarial vigente corresponde a consultoría de seguridad y no fue posible vincular una oferta pública de producción alimentaria. El lote procede del [registro diario del Ministero della Salute](https://www.dati.salute.gov.it/it/dataset/stabilimenti-italiani-gli-alimenti-di-origine-animale/) y se limitó a establecimientos `AUTORIZZATA`, actividad `PP — STABILIMENTO DI TRASFORMAZIONE` y autorización explícita para fabricar queso. Corte de partida: 2026-08-11.
+
+## Productores de pescado y marisco — barrido del 2026-08-14
+
+Investigación de productores de bottarga di muggine en Cabras y mitilicoltura/pesca lagunare en el Golfo di Oristano. Se verificó elaboración artesanal y actividad productiva con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Tharros Pesca (Gusti Pregiati) | Cabras | `Pescado` | Laboratorio artesanal en Cabras (fundado por Pino Spanu) para la elaboración de bottarga di muggine di Cabras (en baffe y rallada) y mújol/pescado ahumado. | [web](https://www.gustipregiati.com/) |
+| Cooperativa Pescatori Arborea (Nieddittas) | Arborea | `Pescado` | Histórica cooperativa de pescadores y mitilicultores en el Golfo di Oristano / Stagno di Corru Mannu: cría y comercialización certificada de mejillones (cozze) y almejas. | [web](https://www.nieddittas.it/) |

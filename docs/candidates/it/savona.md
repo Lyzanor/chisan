@@ -82,3 +82,12 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 | SOTTO LE STELLE | Vado Ligure | 019 88 83 55<br>carlo.traman@libero.it |
 | U BERIUN | Vendone | 0182 76 650<br>massimorevello@libero.it |
 | LA RAMERA | Villanova d'Albenga | 392 59 53 088<br>info@laramera.it |
+
+## Productores de pescado y piscicultura — barrido del 2026-08-14
+
+Investigación de productores de pescado y piscicultura en la provincia de Savona (costa de Noli y valles del interior). Se verificó pesca tradicional de cicciarelli (Presidio Slow Food) y crianza de truchas en aguas de manantial con venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cooperativa Pescatori De Ferrari (Cicciarelli di Noli) | Noli | `Pescado` | Pequeña pesca costera artesanal con redes de jábega/tratta en Noli y valorización de los Cicciarelli di Noli (Presidio Slow Food). | [web](https://www.pescatorinoli.it/) |
+| Troticoltura Fratelli Quaglia | Cairo Montenotte | `Pescado` | Explotación de cría de truchas iris y fario alimentada por las fuentes de agua pura de la alta Val Bormida. | [web](https://www.troticolturaquaglia.it/) |

@@ -74,10 +74,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 菓子処おざわ | 一関市 | Dulces y repostería | 和菓子協会 | http://www.echna.ne.jp/~okashi | 一関市花泉町字地平 17-23; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
 | 大丸屋 | 盛岡市 | Dulces y repostería | 和菓子協会 | http://www.e-daimaruya.com/ | 盛岡市本町通 1-9-42; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Iwate con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
 
 | Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
 |---|---|---|---|---|---|---|
-| **木村商店 (Kimura Shoten)** | 有限会社木村商店 | `下閉伊郡山田町` | Pescado | https://tokkuri-ika.com/ |Artesano de la bahía de Yamada fundado en 1908; célebre por su tradicional «Tokkuri-ika» (frasca de sake comestible moldeada en calamar seco) y ostras al vapor de Sanriku. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Registro artesanal de Yamada-cho |

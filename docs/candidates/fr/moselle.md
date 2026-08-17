@@ -33,3 +33,10 @@ El corte se revisó el 2026-08-12: 11 unidades quedaron publicadas con su identi
 | Señal | Motivo | Fuente |
 |---|---|---|
 | KLEINWALD QUIRIN Philippe / KLEINWALD — Petit-Tenquin, dirección registral FERME DE ZELLEN 57660 | El registro bio declara queso, pero no permite enlazar de forma segura este operador con una marca pública. La Ferme pédagogique de Zellen visible actualmente corresponde a la familia Dubois, usa 69 rue de Zellen y documenta visitas y talleres de mantequilla, no una oferta propia de queso. No fusionar ambas identidades sin una fuente directa. | [nº Bio 146997](https://annuaire.agencebio.org/operateur/146997) · [ficha turística de Zellen](https://www.cirkwi.com/fr/point-interet/2104251-ferme-pedagogique-de-zellen) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Moselle. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

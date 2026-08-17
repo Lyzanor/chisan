@@ -39,3 +39,4 @@ Quedan retenidos ocho establecimientos autorizados. La autorización sanitaria p
 | SANSEVIERO DOMENICO | Marsico Nuovo | VIA GARIBALDI 13 | Sin señal pública actual de producto, contacto o marca. |
 | FONTANA SALVATORE | Melfi | CONTRADA MADAMA LAURA snc | La empresa agrícola coincide con la unidad autorizada, pero no publica una oferta quesera propia. |
 | MALASPINA RAFFAELE VINCENZO | Sant'Arcangelo | CONTRADA SALSA VALLE DELL'ANDRO snc | La identidad pública actual es cerealista; falta una fuente que confirme queso propio activo. |
+

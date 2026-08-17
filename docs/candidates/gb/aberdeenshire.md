@@ -51,9 +51,9 @@ current offer and phone/email before admission.
 | Cambus O'May Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | The Creamery, Cambus O'May, Balleter, Aberdeenshire, AB35 5SD | [site](http://www.cambusomay.com)<br>01339 753113<br>ian@cambusomay.com | — |
 | Middleton Farms | Specialist Cheesemakers Association member (cheesemaker) | Middleton of Rora, Longside, Peterhead, Aberdeenshire, AB42 4US | 07721 649102<br>bruce@roradairy.co.uk | — |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

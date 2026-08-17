@@ -309,3 +309,12 @@ El resto del roster provincial quedó reconciliado. En particular, `BS620` Eredi
 ### Cierre de la cola quesera del 2026-08-13
 
 Se publicaron las 24 unidades productoras que el directorio vigente del Consorzio Tutela Grana Padano asigna a Brescia, cada una con su matrícula, dirección, contacto y coordenadas oficiales. Caseificio Lombardi (`BS617`) y Azienda Agricola Balestre (`BS656`), que no figuraban en el primer barrido sanitario con esa identidad, quedan resueltos por el padrón consorcial; las coincidencias descritas arriba se consolidan en una sola ficha por unidad. Las 195 autorizaciones sanitarias restantes permanecen retenidas porque el registro acredita capacidad de elaboración, pero no basta para probar una identidad pública y una oferta propia actual. Queda cerrada esta cola sin convertir automáticamente plantas autorizadas en productores del mapa.
+
+## Productores de caviar, esturión y pescado de lago — barrido del 2026-08-14
+
+Investigación de productores de caviar sostenible en la llanura de Brescia (Calvisano) y pescado tradicional de lago en Monte Isola (Lago d'Iseo). Se verificó crianza de esturiones en aguas puras de risorgiva y salazón/secado tradicional de la sarda di Monte Isola con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Calvisius (Agroittica Lombarda) | Calvisano | `Pescado` | Líder mundial pionero en la cría sostenible de esturiones en aguas de manantial: caviar italiano (Calvisius Caviar: Beluga, Oscietra, Sevruga, Da Vinci) y carne de esturión fresca y ahumada. | [web](https://www.calvisius.it/) |
+| Pescheria Fratelli Archetti | Monte Isola | `Pescado` + `Conservas` | Elaboración tradicional y secado al sol y al aire de la "Sarda essiccata di Monte Isola" (Presidio Slow Food) en el Lago d'Iseo (activa desde 1961). | [web](https://www.pescheriafratelliarchetti.it/) |

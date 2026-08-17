@@ -131,6 +131,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | The Flatbread Company t/a Simpli Baked | — | Pan y cereal | Bakery; also FarmFinder https://farmfinder.ie/producer/simpli-baked | — | [Midlands directory](https://www.midlandsireland.ie/producers_directory/the-flatbread-company-t-a-simpli-baked/) |
 | Treat Box Patisserie | — | Pan y cereal | Bakery | — | [Midlands directory](https://www.midlandsireland.ie/producers_directory/treat-box-patisserie/) |
 
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Offaly.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
+
 ## Remaining search work
 
 - The SFPA register of approved seafood establishments is not yet scoped; its

@@ -25,3 +25,12 @@ Investigación ecológica del 2026-08-08, revisada el 2026-08-12. De los 20 oper
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Diez establecimientos se contrastaron e incorporaron al CSV; lote cerrado el 2026-08-13. Caseificio La Collina se reconcilió con la denominación sanitaria y la empresa actual de Francesco Panzarella. Corsaro Francesco y Milesia Lat se publicaron como `parcial`: las fuentes actuales permiten fijar identidad, actividad, planta y familia de leche, pero no justifican inventar una gama, contacto o canal de venta más específico.
+
+## Productores de pescado y conservas de atún calabrés — barrido del 2026-08-14
+
+Investigación de productores históricos de conservas de atún y pescado en Maierato y la Costa degli Dei (Vibo Valentia). Se verificó obrador artesanal de elaboración de atún en aceite de oliva, ventresca y bottarga con venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Giacinto Callipo Conserve Alimentari | Maierato | `Pescado` + `Conservas` | Histórica conservera calabresa (fundada en Pizzo en 1913): elaboración artesanal de filetes de atún claro, ventresca, tarantello y bottarga de atún. | [web](https://www.callipo.com/) |
+| Tonno Sardanelli | Maierato | `Pescado` + `Conservas` | Conservificio artesanal calabrés de atún y pescado en tarro de vidrio y lata, filetes de atún en aceite de oliva y especialidades del mar. | [web](https://www.tonnosardanelli.it/) |

@@ -89,10 +89,16 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | いせや本店 | 沼津市 | Dulces y repostería | 和菓子協会 | http://www.heisaku.com/ | 沼津市幸町 2; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
 | 平松商店 | 掛川市 | Aperitivos | 全国米菓工業組合 | 会社　http://hiramatsu-shoten.com | 米菓製造・販売業（直売所有り）; revisado 2026-08-11: retenido (NOURL, falta confirmar actividad o unidad productiva) |
 
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|
+
 ## Nuevos candidatos de pescado y marisco artesanal — barrido 2026-08-14
 
 Barrido sistemático de productores, elaboradores y transformadores artesanos de pescado y marisco de Shizuoka con instalaciones productivas propias, marca activa y venta/presencia web directa. Categoría: `Pescado`.
 
 | Nombre / Marca | Razón social | Municipio | Categoría | Web | Descripción / Especialidad | Fuente |
 |---|---|---|---|---|---|---|
-| **原藤商店 (Harato Shoten)** | 有限会社原藤商店 | `静岡市` | Pescado | https://harato.jp/ |Elaborador artesano del puerto de Yui en la bahía de Suruga; especialista en camarón sakura fresco, secado y hervido (sakura-ebi) y chanquetes shirasu. ⚠ Reviewed 2026-08-14: hold; the proposed domain is invalid, mismatched or insufficient and no current source yet establishes every admission claim.| Web oficial / Cooperativa pesquera del puerto de Yui |

@@ -25,6 +25,12 @@ Lote ecológico revisado entre el 8 y el 12 de agosto de 2026 a partir del [dire
 
 Lote revisado hasta el 2026-08-13. Casearia San Panfilo, Caseificio Voltigno y F.lli Del Mastro se aceptaron previamente; Lazzarini Federica se incorpora como `parcial` porque combina autorización vigente, actividad ovina actual y un catálogo histórico suficientemente atribuible. Aretusi Matteo se publica también como `parcial` al poder fijar actividad láctea, identidad, ubicación y familias de producto sin inventar marca o contacto. Cuore di Bontà figura en liquidación, pero la autorización aún aparece vigente; se retiene hasta poder acreditar continuidad o cierre definitivo.
 
-| Candidato declarado | Comune | Dirección de la unidad | Autorización | Quesos autorizados | Actualización |
-|---|---|---|---|---|---|
 | CUORE DI BONTA' SOCIETA' COOPERATIVA | Pescara | Via Tronto 10 | `UE IT 13 82` | vacuno, caprino y ovino menos de 60 d/más de 60 d | 15-SEP-17 |
+
+## Productores de trucha y piscicultura fluvial — barrido del 2026-08-14
+
+Investigación de productores de trucha en las aguas de manantial del río Tirino (Bussi sul Tirino, Pescara). Se verificó crianza en aguas cristalinas de río abruzzese y venta directa de pescado fresco. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Itticoltura Di Carlo | Bussi sul Tirino | `Pescado` | Explotación de truchicultura y piscicultura en las aguas de manantial del río Tirino en Abruzzo: cría de truchas (fario, iridea) y venta directa. | [web](https://www.itticolturadicarlo.it/) |

@@ -71,3 +71,10 @@ Quedan **25 candidatos nuevos** en este corte: 12 perfiles de explotación, 0 un
 | GROUPEMENT AGRICOLE D' EXPLOITATION EN COMMUN AGREE DE PASCANTO | GROUPEMENT AGRICOLE D' EXPLOITATION EN COMMUN AGREE DE PASCANTO | Saint-Laurent-De-Cerdans | LD LA FORGE DEL MITG 66260 | actividad | 2026 | [nº Bio 42086](https://annuaire.agencebio.org/operateur/42086) |
 | FROMAGERIE DE ST MICHEL DE CUXA | GAEC FROMAGERIE SAINT MICHEL DE CUXA | Taurinya | 16 RUE FR LAS CLOSES 66500 | actividad | 2026 | [nº Bio 46170](https://annuaire.agencebio.org/operateur/46170) |
 | France tock | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE FROMAGERIE DU FENOUILLEDES | Trilla | RUE 3 AOUT 1914 66220 | actividad | 2026 | [nº Bio 65373](https://annuaire.agencebio.org/operateur/65373) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Pyrénées-Orientales. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

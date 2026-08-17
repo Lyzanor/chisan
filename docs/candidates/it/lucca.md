@@ -18,3 +18,4 @@ Quedan los siguientes expedientes porque el certificado, registro o identidad me
 | TENUTA TRENTA VOLPI SRL SOC AGR | Lucca | [Olio Toscano IGP](https://www.oliotoscanoigp.it/aziende/) | La tenuta es localizable como alojamiento, pero no hay una oferta pública actual de aceite propio atribuible con seguridad. |
 
 El resto de candidatos del corte quedó resuelto y se retiró de esta nota; las decisiones publicadas están en `data/evidence/it/toscana/lucca.jsonl`.
+

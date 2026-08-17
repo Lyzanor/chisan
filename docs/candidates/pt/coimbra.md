@@ -1,9 +1,9 @@
 # Coimbra — candidatos
 
 - CSV destino: `data/csv/pt/centro/coimbra.csv`
-- Fecha de búsqueda: 2026-08-13 (actualización sectorial de cerveza) y 2026-08-10 (revisión integral).
-- Fuentes de descubrimiento: [Produtos Tradicionais Portugueses (PTPT)](https://www.ptpt.pt/produtores), [Racius](https://www.racius.com), [ViniPortugal](https://viniportugal.pt) y webs oficiales.
-- Alcance y trabajo pendiente: verificar obradores activos independientes y distinguir fabricación propia en locales de restauración frente a producción por contrato externo.
+- Fecha de búsqueda: 2026-08-14 (actualización sectorial de pescado), 2026-08-13 (cerveza) y 2026-08-10 (revisión integral).
+- Fuentes de descubrimiento: [Flatlantic](https://flatlantic.pt), [Stolt Sea Farm](https://stoltseafarm.com), [FigueiraFish](https://figueirafish.pt), [Fumeiro do Mar](https://fumeirodomar.pt), [Briosa Conservas](https://briosaconservas.com), [Lugrade](https://lugrade.pt), [Oceano Fresco](https://oceano-fresco.pt), [Produtos Tradicionais Portugueses (PTPT)](https://www.ptpt.pt/produtores) y webs oficiales.
+- Alcance y trabajo pendiente: verificar obradores y plantas acuícolas activas, viveros marinos y canales de venta directa para nuevas altas.
 
 | Productor candidato | Concelho declarado | Categoría propuesta | Estado y evidencia que falta / fuente |
 |---|---|---|---|

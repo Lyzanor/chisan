@@ -49,3 +49,12 @@ El barrido sanitario nacional quedó conciliado de nuevo el 2026-08-13. Además 
 |---|---|---|
 | ASQUINI ANNA | Majano | La autorización sigue publicada, pero no aparece una marca, oferta o contacto público actual que permita identificar el productor de cara al catálogo. |
 | BIOLAB S.R.L. | San Daniele del Friuli | La marca pública actual se dedica a alimentos vegetales y la planta fue adquirida como antiguo establecimiento cárnico; la autorización láctea no demuestra una línea de queso propia vigente. |
+
+## Productores de pescado y trucha — barrido del 2026-08-14
+
+Investigación de productores de trucha, piscicultura en aguas de risorgiva y pesca lagunar en la provincia de Udine (San Daniele del Friuli y Marano Lagunare). Se verificó crianza, ahumado artesanal en madera de haya y comercialización directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Friultrota (di Pighin S.r.l.) | San Daniele del Friuli | `Pescado` + `Conservas` | Piscicultura y ahumado artesanal en frío con madera de haya de la "Regina di San Daniele" (trucha ahumada friulana), salvelinos y esturión. | [web](https://www.friultrota.com/) |
+| Ittica Rio Selva | Codroipo | `Pescado` | Explotación de piscicultura y truchicultura biológica en aguas de manantial y risorgiva del Friuli (truchicultura activa desde 1963). | [web](https://www.rioselva.it/) |

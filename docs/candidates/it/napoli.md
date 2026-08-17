@@ -211,3 +211,4 @@ La inclusión aquí no equivale a aceptación. Un registro acredita la identidad
 | PIEMAR SOCIETA' A RESPONSABILITA' LIMITATA | Vico Equense | VIA SALA, FRAZ. MOIANO 24, VICO EQUENSE (NA) | `UE IT 15 98` | vacuno menos de 60 d/más de 60 d, caprino menos de 60 d/más de 60 d, ovino menos de 60 d/más de 60 d | 27-OCT-25 |
 | CA.RO. LATTE DI CAPUTO ROBERTO | Villaricca | VIA DELLA LIBERTA 422/426, VILLARICCA (NA) | `UE IT Q859C` | vacuno menos de 60 d, caprino menos de 60 d, ovino menos de 60 d | 09-JUN-26 |
 | PARENTE FERDINANDO | Villaricca | CORSO ITALIA 555, VILLARICCA (NA) | `UE IT L2Z7L` | vacuno menos de 60 d | 06-DEC-23 |
+

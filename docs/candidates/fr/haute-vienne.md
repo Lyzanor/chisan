@@ -85,3 +85,10 @@ Quedan **32 candidatos nuevos** en este corte: 11 perfiles de explotación, 2 un
 | RIVAILLE Stéphane | RIVAILLE STEPHANE THOMAS | Saint-Denis-Des-Murs | 4 LES SAGNES 87400 | actividad | 2026 | [nº Bio 5756](https://annuaire.agencebio.org/operateur/5756) |
 | GROULT Enora | GROULT Enora | Saint Gilles Les Forets | LA BOHEME 87130 | actividad | 2026 | [nº Bio 102294](https://annuaire.agencebio.org/operateur/102294) |
 | GAEC DE LA COLLINE | GAEC DE LA COLLINE | Saint-Julien-Le-Petit | LADRAT 87460 | actividad | 2026 | [nº Bio 149266](https://annuaire.agencebio.org/operateur/149266) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Haute-Vienne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

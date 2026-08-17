@@ -25,3 +25,10 @@ Búsqueda de queserías artesanales, granjas lecheras y explotaciones con obrado
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Barrido de productores de pescado y acuicultura (2026-08-14)
+
+Búsqueda de ahumaderos artesanales de salmón, obradores de pescado con sello Handmade in Belgium y estanques piscícolas en Vlaams-Brabant. Las fuentes confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

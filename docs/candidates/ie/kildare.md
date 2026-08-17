@@ -131,9 +131,6 @@ The source names the business and its county and little else. Cheapest to resolv
 |---|---|---|---|---|---|
 | Colm Coffey's | Kilmeage (nearest, 0.2 km) | Carne | shop=butcher | +353 45 890844 | OSM node/463710882 |
 | Farrington’s Brewery | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/farringtons-brewery) |
-| Kildare Brewing Company | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/kildare-brewing-company) |
-| The Dew Drop Brewhouse | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-dew-drop-brewhouse) |
-| Two Sisters Brewing | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/two-sisters-brewing) |
 | Gibney's preserves | — | Conservas | listed | — | [FarmFinder](https://farmfinder.ie/producer/gibney-s-preserves) |
 | Camphill Communities of Ireland - Camphill Community Grangebeg | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/camphill-communities-of-ireland-camphill-community-grangebeg) |
 | Cooke, Joseph | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/cooke-joseph) |
@@ -147,6 +144,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | East Coast Seafood | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/east-coast-seafood) |
 | Nick's Fish Newbridge | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/nicks-fish-newbridge-kildare) |
 | The Fish Market | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/the-fish-market) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Kildare.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

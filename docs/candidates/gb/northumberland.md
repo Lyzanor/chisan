@@ -55,3 +55,10 @@ current offer and phone/email before admission.
 | Candidate | Signal | Location | Contact | FSA record |
 |---|---|---|---|---|
 | Northumberland Cheese Company Ltd | Specialist Cheesemakers Association member (cheesemaker) | Make Me Rich Farm, Blagdon, Seaton Burn, Northumberland, NE13 6BZ | [site](http://www.northumberlandcheese.co.uk)<br>01670 789798<br>jacks@northumberland-cheese.co.uk | — |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

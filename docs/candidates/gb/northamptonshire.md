@@ -40,3 +40,10 @@ productive municipality, current offer and phone/email before admission.
 | Mario's Ice Cream | Manufacturers/packers; rating/inspection 2025-09-18 | 10 Tyne Road, Weedon Rd Indus Est, Northampton, NN5 5AF, NN5 5AF | [180315](https://api.ratings.food.gov.uk/Establishments/180315) |
 | Meatcraft | Manufacturers/packers; rating/inspection 2025-05-21 | 42 St Edmunds Street, Northampton, NN1 5HA, NN1 5HA | [1843212](https://api.ratings.food.gov.uk/Establishments/1843212) |
 | The Meat Box Boys | Manufacturers/packers; rating/inspection 2024-09-10 | Fishponds Farm, Lower Road, Stoke Albany, Northamptonshire, LE16 8PZ | [1320296](https://api.ratings.food.gov.uk/Establishments/1320296) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

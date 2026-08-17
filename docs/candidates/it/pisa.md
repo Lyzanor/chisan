@@ -73,3 +73,4 @@ Fattoria La Tana de Silvia Baroncini se publicó en el CSV de Pisa tras reconcil
 |---|---|---|---|
 | ARTEMIDA SOCIETA' AGRICOLA A RESPONSABILITA' LIMITATA | Crespina Lorenzana | [TRACES](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-007.380-0036649.2026.001.pdf) | La dirección de Via I Pinucci 14 pertenece a Pisa; no se localizó una oferta alimentaria pública concreta. |
 | AZIENDA AGRICOLA COLLE PRANA DI GIOVANNI SFORZIN | Crespina Lorenzana | [TRACES](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/IT-BIO-009.380-0010845.2024.001.pdf) | Se corroboraron la explotación, el agriturismo y tres nombres de vino en un marketplace, pero falta una fuente pública actual que reconcilie de forma suficiente el catálogo con la unidad y su contacto. |
+

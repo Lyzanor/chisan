@@ -88,6 +88,13 @@ Quedan **35 candidatos nuevos** en este corte: 7 perfiles de explotación, 12 un
 | LA ROUSSELIERE LEFEBVRE Olivier | SCEA LA ROUSSELIERE | Souleuvre En Bocage | 4 LA ROUSSELIERE - SAINTE MARIE LAUMONT 14350 | actividad | 2026 | [nº Bio 46351](https://annuaire.agencebio.org/operateur/46351) |
 | LA FERME DU CHATEAU A VILLERVILLE | VIGREUX ISABELLE | Villerville | Ferme du Château Rue du Général Leclerc 14113 | actividad | 2026 | [nº Bio 149183](https://annuaire.agencebio.org/operateur/149183) |
 
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Calvados. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|
+
 ## Barrido de productores de pescado y productos del mar (2026-08-14)
 
 Corte revisado: 2026-08-14. Permanecen solo las pistas sin evidencia suficiente para una decisión editorial.

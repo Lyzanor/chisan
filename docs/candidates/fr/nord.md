@@ -79,3 +79,10 @@ Quedan **28 candidatos nuevos** en este corte: 3 perfiles de explotación, 8 uni
 | guy vandromme | FERME DES CABRIS | Uxem | 13 RUE ALBERT POIDEVIN 59229 | actividad | 2026 | [nº Bio 147962](https://annuaire.agencebio.org/operateur/147962) |
 | MOREEL Céline et Benoît | CELINE ET BENOIT MOREEL | Vieux-Berquin | 399 LA GRANDE MARQUETTE 59232 | actividad | 2026 | [nº Bio 147804](https://annuaire.agencebio.org/operateur/147804) |
 | DEWALLE HUGUES JEAN | DEWALLE HUGUES JEAN | Villers Au Tertre | 501 rue de Fressain 59234 | actividad | 2026 | [nº Bio 104950](https://annuaire.agencebio.org/operateur/104950) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Nord. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

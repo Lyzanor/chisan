@@ -63,3 +63,17 @@ current offer and phone/email before admission.
 | Loch Arthur Creamery | FSA Manufacturers/packers; rating/inspection 2024-07-30 | Dumfries, Beeswing | — | [1281398](https://api.ratings.food.gov.uk/Establishments/1281398) |
 | The Damn Fine Cheese Company | FSA Farmers/growers; rating/inspection 2024-01-22 | Dumfries and Galloway | — | [1434598](https://api.ratings.food.gov.uk/Establishments/1434598) |
 | The Ethical Dairy | Named as a cheese producer by Scottish Food Guide cheese trail | Gatehouse of Fleet, Dumfries and Galloway | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

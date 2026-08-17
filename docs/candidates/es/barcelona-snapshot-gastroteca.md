@@ -41,7 +41,7 @@
 | Artcava | Avinyonet del Penedès | www.artcava.com | 938970228 | elaborador | ja al CSV → `artcava-avinyonet-del-penedes` |
 | Avinyó | Avinyonet del Penedès | www.avinyo.com | +34938970055 | pagès | ja al CSV → `caves-avinyo-avinyonet-del-penedes` |
 | Cuscó Berga | Avinyonet del Penedès | cuscoberga.com | +34676252550 | pagès | ja al CSV → `vins-i-caves-cusco-berga-avinyonet-del-penedes` |
-| Mas Candí | Avinyonet del Penedès | www.mascandi.com | +34680765275 | pagès | ja al CSV → `mas-candi-avinyonet-del-penedes-les-gunyoles` |
+| Mas Candí | Avinyonet del Penedès | www.mascandi.com | +34680765275 | pagès | ja al CSV → `mas-candi-avinyonet-del-penedes` |
 | Mas Comtal | Avinyonet del Penedès | www.mascomtal.com | +34938970052 | pagès | ja al CSV → `mas-comtal-avinyonet-del-penedes` |
 | 27 Club Brewery | Badalona | www.27clubbrewery.com/ | 685942831 | elaborador | nou (sense revisar 1-a-1) |
 | IDG Gastronomic | Badalona | www.idgastronomic.com/ | +34 934 289 308 | elaborador | nou (sense revisar 1-a-1) |
@@ -54,19 +54,19 @@
 | El Forn de Barberà | Barberà del Vallès |  | 935769953 | elaborador | ja al CSV → `el-forn-de-barbera-barbera-del-valles` |
 | Bacallaneria Perelló 1898 – Mercat de Sant Andreu | Barcelona | www.perello1898.com | +34933450055 | pagès | nou (sense revisar 1-a-1) |
 | Barcelona Beer Company | Barcelona | www.barcelonabeercompany.com | 936243742 | elaborador | ja al CSV → `barcelona-beer-company-llinars-del-valles` |
-| Bioma Kombucha | Barcelona | bioma.bio/ | 938099686 | elaborador | ja al CSV → `bioma-kombucha-barcelona-sant-marti` |
+| Bioma Kombucha | Barcelona | bioma.bio/ | 938099686 | elaborador | ja al CSV → `bioma-kombucha-barcelona` |
 | Bubub | Barcelona |  | +34651535444 | pagès | nou (sense revisar 1-a-1) |
-| Casa Gispert | Barcelona | www.casagispert.com | +34938446000 | pagès | ja al CSV → `casa-gispert-barcelona-ciutat-vella` |
+| Casa Gispert | Barcelona | www.casagispert.com | +34938446000 | pagès | ja al CSV → `casa-gispert-barcelona` |
 | Cervesa R115 | Barcelona | www.r115.cat | 686414687 | elaborador | nou (sense revisar 1-a-1) |
 | Ecoil de Josa | Barcelona | ecoiljosa.wixsite.com/ecoil-espanol | 934121900 | pagès | nou (sense revisar 1-a-1) |
-| Garage Beer Co. | Barcelona | www.garagebeer.co/cat/ | 933607940 | elaborador | ja al CSV → `garage-beer-co-barcelona-eixample` |
+| Garage Beer Co. | Barcelona | www.garagebeer.co/cat/ | 933607940 | elaborador | ja al CSV → `garage-beer-co-barcelona` |
 | Hernando Xarcuter-Carnisser | Barcelona | www.hernandoxarcuter.cat | 932003948 | elaborador | nou (sense revisar 1-a-1) |
 | Jamonarium | Barcelona | www.jamonarium.com/ | 931763594 | elaborador | nou (sense revisar 1-a-1) |
-| L’Obrador dels 15 | Barcelona | www.lobradordels15.com | 933519907 | elaborador | ja al CSV → `lobrador-dels-15-barcelona-horta-guinardo` |
-| La platjeta | Barcelona | www.laplatjeta.net | 645739053 | pagès | ja al CSV → `la-platjeta-cap-a-mar-barcelona-ciutat-vella-barceloneta` |
+| L’Obrador dels 15 | Barcelona | www.lobradordels15.com | 933519907 | elaborador | ja al CSV → `l-obrador-dels-15-barcelona` |
+| La platjeta | Barcelona | www.laplatjeta.net | 645739053 | pagès | ja al CSV → `la-platjeta-cap-a-mar-barcelona` |
 | Paul and Pippa | Barcelona | www.paulandpippa.com | 932061510 | elaborador | nou (sense revisar 1-a-1) |
 | Perelló 1898 Bacallaners | Barcelona | www.bacallaperello.com | +34934530340 | elaborador | nou (sense revisar 1-a-1) |
-| Xarcuteria Bosch | Barcelona | www.xarcuteriesbosch.com | 932324506 | elaborador | ja al CSV → `xarcuteries-bosch-barcelona-sant-marti` |
+| Xarcuteria Bosch | Barcelona | www.xarcuteriesbosch.com | 932324506 | elaborador | ja al CSV → `xarcuteries-bosch-barcelona` |
 | Celler Montau de Sadurní | Begues | www.montaudesadurni.com | 936390161 | pagès | ja al CSV → `caves-montau-de-sadurni-begues` |
 | Cal Guitart | Berga | www.calguitart.cat | 938210218 | pagès | ja al CSV → `cansaladeria-i-xarcuteria-guitart-berga` |
 | Cal Rovira (Berga) | Berga |  | +34938212520 | elaborador | nou (sense revisar 1-a-1) |
@@ -134,7 +134,7 @@
 | Cal Mossèn, “L’original coca de Folgueroles” | Folgueroles | www.calmossen.com | 938888287 | elaborador | nou (sense revisar 1-a-1) |
 | La Coca de Folgueroles® – L’autèntic pa de coca 100% natural | Folgueroles | lacocadefolgueroles.com/ | 938888222 | elaborador | ja al CSV → `la-coca-de-folgueroles-folgueroles` |
 | Bages Cargol Estany | Fonollosa | www.bagescargol.com/ | 938366203 | elaborador | ja al CSV → `estany-bages-cargol-fonollosa` |
-| Celler Més Que Paraules | Fonollosa | vinossinetiquetas.com/ | +34936556057 | pagès | ja al CSV → `mes-que-paraules-canet-de-fals-fonollosa` |
+| Celler Més Que Paraules | Fonollosa | vinossinetiquetas.com/ | +34936556057 | pagès | ja al CSV → `mes-que-paraules-fonollosa` |
 | El Rebost de Fals | Fonollosa | www.umac.cat | +34938368100 | pagès | nou (sense revisar 1-a-1) |
 | Granja Oliveras | Fonollosa |  | 938368169 | pagès | nou (sense revisar 1-a-1) |
 | Cava Martín Soler | Font-rubí | www.cavamartinsoler.com | +34938988220 | pagès | nou (sense revisar 1-a-1) |
@@ -151,7 +151,7 @@
 | Agrobotiga La Clotxa | Granollers | laclotxa.cat/ | 938794936 | pagès | nou (sense revisar 1-a-1) |
 | Barret Cerveses | Granollers | www.barret.cat | 667091817 | elaborador | **ALTA 2026-07-16** → `barret-cerveses-granollers` |
 | Bio Aliments Natura | Granollers | www.bionaturas.com | 938491381 | elaborador | nou (sense revisar 1-a-1) |
-| Caseus Afinadors de formatge | Granollers | www.caseusafinadors.com | +34664469820 | pagès | ja al CSV → `caseus-afinadors-granollers-palou` |
+| Caseus Afinadors de formatge | Granollers | www.caseusafinadors.com | +34664469820 | pagès | ja al CSV → `caseus-afinadors-granollers` |
 | Carns Martí | Gurb | www.carnsmarti.com | +34639343182 | pagès | nou (sense revisar 1-a-1) |
 | Agro Igualada Cooperativa | Igualada | www.agroigualada.com | +34938030917 | pagès | ja al CSV → `agro-igualada-cooperativa-igualada` |
 | Cansaladeria Mª Àngels Solé | Igualada |  | 938035566 | elaborador | nou (sense revisar 1-a-1) |
@@ -199,7 +199,7 @@
 | Collbaix | Manresa | www.cellerelmoli.com | +34931021965 | pagès | ja al CSV → `agromonistrolet-sl-rajadell` |
 | Consell Regulador de la DO Pla de Bages | Manresa | www.dopladebages.com | 938748236 | pagès | nou (sense revisar 1-a-1) |
 | Granja Poal | Manresa |  | +34689503887 | pagès | ja al CSV → `granja-poal-manresa` |
-| Tatjé de Viladordis | Manresa |  | 609663552 | pagès | ja al CSV → `tatje-de-viladordis-manresa-viladordis` |
+| Tatjé de Viladordis | Manresa |  | 609663552 | pagès | ja al CSV → `tatje-de-viladordis-manresa` |
 | Vins Petxina | Manresa | vinspetxina.myshopify.com/ | 937422001 | elaborador | nou (sense revisar 1-a-1) |
 | Celler Altrabanda | Martorelles | www.serraladadelamarina.com | +34935704534 | elaborador | nou (sense revisar 1-a-1) |
 | Agricultors Floriach | Mataró |  | +34937901204 | pagès | nou (sense revisar 1-a-1) |
@@ -322,7 +322,7 @@
 | Cava Torné & Bel | Sant Sadurní d'Anoia | tornebel.com | +34619157283 | pagès | nou (sense revisar 1-a-1) |
 | Caves Vilarnau | Sant Sadurní d'Anoia | www.vilarnau.es | +34938912361 | pagès | ja al CSV → `vilarnau-finca-can-petit-sant-sadurni-danoia` |
 | Jaume Giró i Giró | Sant Sadurní d'Anoia | www.cavagiro.com | 938910165 | pagès | ja al CSV → `jaume-giro-i-giro-celler-kripta-sant-sadurni-danoia` |
-| Jaume Marra Poch | Sant Sadurní d'Anoia |  | +34938911710 | pagès | ja al CSV → `jaume-marra-poch-sant-sadurni-danoia-can-catassus` |
+| Jaume Marra Poch | Sant Sadurní d'Anoia |  | +34938911710 | pagès | ja al CSV → `jaume-marra-poch-sant-sadurni-d-anoia` |
 | Juvé i Camps | Sant Sadurní d'Anoia | www.juveycamps.com | 938911000 | pagès | ja al CSV → `finca-espiells-sant-sadurni-d-anoia` |
 | Maria Rigol Ordi | Sant Sadurní d'Anoia | mariarigolordi.com/ | 938910194 | elaborador | ja al CSV → `maria-rigol-ordi-sant-sadurni-danoia` |
 | Mas Xarot | Sant Sadurní d'Anoia | www.masxarot.com | 938910396 | elaborador | nou (sense revisar 1-a-1) |
@@ -331,7 +331,7 @@
 | Rosell i Formosa | Sant Sadurní d'Anoia | www.roselliformosa.com | 938911013 | pagès | nou (sense revisar 1-a-1) |
 | Solà Raventós | Sant Sadurní d'Anoia | solaraventos.com | 938910837 | elaborador | ja al CSV → `sola-raventos-sant-sadurni-danoia` |
 | Vins el Cep | Sant Sadurní d'Anoia | vinselcep.com | 938912353 | elaborador | ja al CSV → `vins-el-cep-sant-sadurni-danoia` |
-| Celler Fargas Fargas | Sant Salvador de Guardiola | www.fargas-fargas.com | +34938358547 | pagès | ja al CSV → `celler-fargas-fargas-salelles-manresa` |
+| Celler Fargas Fargas | Sant Salvador de Guardiola | www.fargas-fargas.com | +34938358547 | pagès | ja al CSV → `celler-fargas-fargas-sant-salvador-de-guardiola` |
 | Formatges Muntanyola | Sant Salvador de Guardiola | www.formatgesmuntanyola.cat/ | 938358746 | elaborador | ja al CSV → `formatges-muntanyola-ampans-sant-salvador-de-guardiola` |
 | Urpina vins | Sant Salvador de Guardiola | www.urpina.cat/ | 938358746 | elaborador | ja al CSV → `formatges-muntanyola-ampans-sant-salvador-de-guardiola` |
 | Artelac | Sant Vicenç de Castellet | artelaclacticscasanueva.com | 646228193 | pagès | ja al CSV → `artelac-lactics-casanueva-sant-vicenc-de-castellet` |

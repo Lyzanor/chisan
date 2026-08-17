@@ -43,3 +43,10 @@ Las tres fuentes no dejan candidatos nuevos para esta zona tras la deduplicació
 | Nombre público | Commune | Unidad productiva | Producción | Fuentes |
 |---|---|---|---|---|
 | Atelier Bombylius / La Ferme de Wilma | Périgny-sur-Yerres | 9 Domaine de Saint-Leu, 94520 Périgny-sur-Yerres | Hortalizas, fruta, aromáticas y conservas ecológicas | [web propia](https://www.atelierbombylius.fr/la-ferme/) · [Agence Bio](https://annuaire.agencebio.org/operateur/144162) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Val-de-Marne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

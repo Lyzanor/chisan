@@ -10,7 +10,6 @@ still missing. Resolve or prune before adding a row.
 - Blocked by: whitstableoystercompany.com does not resolve; the FSA name search returns only an unrelated London mobile caterer.
 - Next: Separate the fishery from the restaurant group that shares the name before adding anything.
 
-
 ## FSA productive-type sweep (2026-08-10)
 
 Official-source follow-up completed on 2026-08-10. Entries still listed below remain `hold`: the public material reviewed did not establish the full admission gate or a definitive exclusion.
@@ -54,3 +53,17 @@ current offer and phone/email before admission.
 |---|---|---|---|---|
 | Winterdale Cheesemakers | Specialist Cheesemakers Association member (cheesemaker) | Platt House Farm, Fairseat Lane, Wrotham, Sevenoaks, Kent, TN15 7QB | [site](http://www.winterdale.co.uk)<br>07971289256<br>winterdalecheese@gmail.com | — |
 | Curd And Cure Limited | FSA Manufacturers/packers; rating/inspection 2025-07-23 | Staplehurst Nurseries, Clapper Lane, Staplehurst, Kent | — | [1022976](https://api.ratings.food.gov.uk/Establishments/1022976) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

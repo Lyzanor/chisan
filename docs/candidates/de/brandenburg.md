@@ -27,3 +27,11 @@ La misma revisión publicó seis productores:
 | Andreas Kringel | Schwielochsee | Siegadel 8 15913 | vegetales sin transformar | 2027-02-01 | [DE-ÖKO-034.276-0056425.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-034.276-0056425.2025.001.pdf) |
 | Andreas Liese | Löwenberger Land | OT Falkenthal Breite Str. 45 16775 | ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-02-01 | [DE-ÖKO-034.276-0020919.2026.002](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-034.276-0020919.2026.002.pdf) |
 | Angela Cornelius | Wollin | Hauptstraße 8 14778 | ganado y productos ganaderos sin transformar, vegetales sin transformar | 2028-01-31 | [DE-ÖKO-006.276-0028469.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0028469.2026.001.pdf) |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/ostdeutschland/brandenburg.csv`, categoría `Pescado`.
+Búsqueda de explotaciones de cría de carpas tradicionales (*Peitzer Karpfen*), pesquerías profesionales fluviales y lacustres (*Havelfischerei*, *Seenfischerei*) y ahumaderos de pescado (*Fischräuchereien*) con elaboración o captura propia e instalaciones activas en Brandenburg. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|

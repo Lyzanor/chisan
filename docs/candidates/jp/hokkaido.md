@@ -125,3 +125,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 圓子水産 | 斜里町 | Pescado | búsqueda dirigida + web propia | https://marukosuisan.com/ | pescador de Shiretoko (Utoro) con planta propia; municipio resuelto con la ficha de 食べチョク; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | 海産問屋カネニ | 広尾町 | Pescado | búsqueda dirigida + web propia | https://www.kaneni.com/ | ⚠ mayorista con marca propia, triar si elabora; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | 佐藤水産 | 札幌市 | Pescado | búsqueda dirigida + web propia | https://www.sato-suisan.co.jp/ | salmón, ikura, sujiko; ⚠ sede en Sapporo y planta en Ishikari, confirmar unidad productiva; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

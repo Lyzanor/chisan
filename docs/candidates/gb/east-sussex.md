@@ -50,3 +50,17 @@ current offer and phone/email before admission.
 | Thyme & Labour Ltd | Specialist Cheesemakers Association member (cheesemaker) | 3 Balliol Cottages, Lower High Street, Wadhurst, East sussex, TN5 6BB | 07576 615278<br>etoryoth@gmail.com | — |
 | The Traditional Cheese Dairy Co Ltd | Specialist Cheesemakers Association member (cheesemaker) | Burnt House Farm, Bray Hill Lane, Heathfield, East Sussex, TN21 0PG | [site](http://www.)<br>01435 813406<br>andydelves@me.com | — |
 | Whitehouse Farm Oast | Specialist Cheesemakers Association member (cheesemaker) | Danegate, Eridge, Tunbridge Wells, East Sussex, TN3 9HX | whitehousefarmoast@gmail.com | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

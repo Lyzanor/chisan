@@ -87,3 +87,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 |---|---|---|---|---|---|
 | 野中かまぼこ店 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.jakoten.co.jp/ | ⚠ municipio sin confirmar (Uwajima); じゃこ天; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
 | 井上蒲鉾本舗 | ⚠ | Pescado | búsqueda dirigida + web propia | https://www.e-jyakoten.co.jp/ | ⚠ la web devuelve 403 al bot (no es sitio muerto); municipio sin confirmar; revisado 2026-08-11: retenido (403, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

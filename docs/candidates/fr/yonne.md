@@ -54,3 +54,10 @@ Estado de la pasada del 2026-08-12: Etablissements Allard forma parte del grupo 
 | DELOS FLORINE | DELOS FLORINE | St Sauveur En Puisaye | 37 OLES ROBINEAUX DE LA MALRUE 89520 | actividad | 2025 | [nº Bio 40937](https://annuaire.agencebio.org/operateur/40937) |
 
 Estado de la pasada del 2026-08-12: Caroline Paquette-Fondriot, Mireille Caillol y Florine Delos solo conservan identidad registral y certificación, sin una marca, catálogo o canal alimentario público atribuible. Permanecen en espera, no rechazadas.
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Yonne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

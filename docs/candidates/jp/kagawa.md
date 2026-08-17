@@ -118,3 +118,10 @@ Veinte candidatos adicionales, sin coincidencia normalizada con el CSV ni con la
 | 伊藤製麺所 | 土庄町 | Pan y cereal | 全乾麺 | https://shoudoshima-soumen.com/ | 手延べ干しめん; revisado 2026-08-11: retenido (ERROR, falta confirmar actividad o unidad productiva) |
 | ㈲大喜多製粉所 | 宇多津町 | Pan y cereal | 全乾麺 | http://www.shokokai.or.jp/37/okita/index.htm | 機械製乾めん; revisado 2026-08-11: retenido (404, falta confirmar actividad o unidad productiva) |
 | 小豆島食品 | ⚠ | Conservas | búsqueda dirigida + web propia | https://www.shodoshima-shokuhin.co.jp/ | ⚠ la portada no publica dirección; tienda propia 『島の味』; revisado 2026-08-11: retenido (200, falta confirmar actividad o unidad productiva) |
+
+## Nuevos candidatos de cerveza artesana — barrido 2026-08-13
+
+Barrido sistemático de microcervecerías artesanales independientes con obrador propio, marca activa, presencia web y redes sociales. Categoría: `Cerveza`.
+
+| Nombre / Marca | Razón social | Municipio | Categoría | Web | Instagram | Notas de producción |
+|---|---|---|---|---|---|---|

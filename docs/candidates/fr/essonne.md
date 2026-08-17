@@ -16,3 +16,10 @@ Revisión completa del corte del 2026-08-12. Se publicaron Ferme de Gisy, Ferme 
 | Ferme de Poissard — Roinville | La empresa caprina sigue activa y el Ayuntamiento atribuye a Pauline Badin queso de cabra y miel, pero no se encontró contacto o canal público propio utilizable. | Teléfono, correo, web o perfil público de esta explotación, no de otra granja de la misma titular. |
 
 El barrido nacional de queserías queda resuelto para el corte: Ferme de Poissard es el único `hold`; no quedan otros candidatos de queso sin decisión.
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Essonne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

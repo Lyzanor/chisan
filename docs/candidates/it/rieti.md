@@ -23,3 +23,4 @@ Pendientes tras la revisión del 2026-08-12. Los operadores ecológicos proceden
 | CECCARELLI DIONILLA | Scandriglia | No se pudo separar con seguridad la identidad agrícola de una homónima con huella profesional ajena, ni localizar un producto propio. |
 | CELLENTANI FABIO | Montopoli di Sabina | El registro actual solo acredita cultivos no permanentes; no hay marca ni oferta alimentaria propia pública. |
 | PUCCI S.R.L. — unidad UE IT C2M97 | Rieti | La autorización sanitaria de Case Boccia/Vazia permite queso, pero no se localizó una identidad pública de esa sociedad o planta; los resultados «Pucci» pertenecen a empresas distintas de Ravenna, Firenze o Terni. |
+

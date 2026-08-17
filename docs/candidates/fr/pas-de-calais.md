@@ -71,3 +71,10 @@ Quedan **18 candidatos nuevos** en este corte: 5 perfiles de explotación, 4 uni
 | MAGNIEZ Valérie | MAGNIEZ VALERIE CLAIRE | Hesmond | 28 RTE D'EMBRY 62990 | actividad | 2026 | [nº Bio 112110](https://annuaire.agencebio.org/operateur/112110) |
 | GAEC FERME DES TILLEULS CREUSOISE | GAEC FERME DES TILLEULS CREUSOISE | La Thieuloye | 55 Rue du 8 Mai 62130 | actividad | 2026 | [nº Bio 487](https://annuaire.agencebio.org/operateur/487) |
 | LINGRAND LINGRAND Hervé | GAEC LINGRAND | Leforest | 55 RUE JEAN JAURES 62790 | actividad | 2026 | [nº Bio 111989](https://annuaire.agencebio.org/operateur/111989) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Pas-de-Calais. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

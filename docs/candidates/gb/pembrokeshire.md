@@ -59,9 +59,16 @@ current offer and phone/email before admission.
 | Pant Mawr Farmhouse Cheeses | Specialist Cheesemakers Association member (cheesemaker) | Pant Mawr, Rosebush, Clynderwen, Pembrokeshire, SA66 7QU | [site](http://www.pantmawrcheeses.co.uk)<br>01437 532627<br>david@pantmawrcheeses.co.uk | — |
 | The First Milk Cheese Company Ltd | FSA Manufacturers/packers; rating/inspection 2026-07-13 | The First Milk Cheese Co Ltd Haverfordwest Creamery Pembroke Road, Haverfordwest, Pembrokeshire | — | [856464](https://api.ratings.food.gov.uk/Establishments/856464) |
 
-## Fish producer review (2026-08-14)
+## Beer producer sweep (2026-08-13)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

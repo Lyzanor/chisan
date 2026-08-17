@@ -48,3 +48,11 @@ Se revisaron las 28 unidades del barrido sanitario nacional del 2026-08-11. Diez
 | COSTANZO MIRIAM | Randazzo | Via Tiziano sn — `UE IT 19 848` | La autorización de 2023 es reciente; no se localizó una identidad o gama pública vinculada a la planta. |
 | LA MARGHERITA DI ARMANDO / COSTANZO ZAMMATARO LUISA | Randazzo | Contrada Cambria-Flascio sn — `UE IT R7H74` | La explotación agrícola está activa, pero la presencia pública no demuestra productos queseros propios actualmente comercializados. |
 | PRODOTTI CASEARI S.R.L.S. | Vizzini | Via Aldo Moro snc — `UE IT F2Y1C` | Directorios empresariales confirman fabricación genérica, sin marca, catálogo o contacto público atribuible a una oferta propia. |
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de productores de pescado y conservas de la provincia de Catania con flota de pesca propia y elaboración artesanal. Se verificó cadena integrada de pesca y transformación con venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Testa Conserve | Catania | `Pescado` + `Conservas` | Familia histórica de pescadores sicilianos (desde 1800 en Ognina) con barcos propios y elaboración artesanal de atún rojo, anchoas y caballa. | [web](https://www.testaconserve.it/) |

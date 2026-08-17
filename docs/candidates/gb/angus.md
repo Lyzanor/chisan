@@ -46,9 +46,9 @@ productive municipality, current offer and phone/email before admission.
 | Alex Cargill Fish | Manufacturers/packers; rating/inspection 2024-05-13 | 33 West Newgate Arbroath, DD11 1BZ | [111067](https://api.ratings.food.gov.uk/Establishments/111067) |
 | Arbroath Quality Fish | Manufacturers/packers; rating/inspection 2026-06-02 | Fish House 53 High Street Arbroath, DD11 1AN | [112494](https://api.ratings.food.gov.uk/Establishments/112494) |
 
-## Fish producer review (2026-08-14)
+## Fish producer sweep (2026-08-14)
 
-These leads remain `hold`: the reviewed public material did not establish enough current evidence for the productive unit, qualifying activity, or identity. Recheck them before admission.
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
 
 | Candidate | Signal | Location | Contact |
 |---|---|---|---|

@@ -50,3 +50,10 @@ current offer and phone/email before admission.
 | Drumturk Cheese | Specialist Cheesemakers Association member (cheesemaker) | Sheildrum, Bridge of Cally, Blairgowrie, Perthshire, PH10 7JX | [site](https://drumturkcheeses.weebly.com/)<br>01250 886267<br>denise@drumturkcheeses.com | — |
 | Drumturk Cheeses | FSA Manufacturers/packers; rating/inspection 2026-06-09 | Perth and Kinross | — | [1953644](https://api.ratings.food.gov.uk/Establishments/1953644) |
 | Strathearn Cheese Company | Named as a cheese producer by Provender Brown Scottish cheesemakers | Perthshire | — | — |
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

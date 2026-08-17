@@ -40,3 +40,18 @@ productive municipality, current offer and phone/email before admission.
 | Julians Supermarket Ltd | Manufacturers/packers; rating/inspection 2026-03-20 | Unit 15, Prydwen Road, Fforestfach, SA5 4HN | [740898](https://api.ratings.food.gov.uk/Establishments/740898) |
 | Lil Puddings | Manufacturers/packers; rating/inspection 2024-04-11 | Unit 7, Penrice Court, Swansea Enterprise Park, SA6 8QW | [1082046](https://api.ratings.food.gov.uk/Establishments/1082046) |
 | Llew's Leaves | Farmers/growers | 2 Furzehill Green, Lunnon, SA2 7LQ | [1857962](https://api.ratings.food.gov.uk/Establishments/1857962) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|
+| Selwyn's Seafoods | Traditional cockles gathered from Burry Inlet, cooked and processed on the Gower Peninsula | Lynch Factory, Llanmorlais, Swansea, SA4 3TN | [site](https://selwynsseafoods.co.uk)<br>01792 851905<br>info@selwynsseafoods.co.uk |

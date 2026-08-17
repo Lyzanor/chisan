@@ -15,3 +15,11 @@ Revisado individualmente el 2026-08-09. Resultado: seis productores confirmados 
 | Anke Hallerbach | [DE-ÖKO-006.276-0047614.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0047614.2026.001.pdf) | Un directorio confirma Hof-Mehrbachtal y la dirección, pero no publica animales o cultivos alimentarios concretos ni su comercialización. |
 | Anneliese Kläsgen | [DE-ÖKO-006.276-0005861.2026.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-006.276-0005861.2026.001.pdf) | Solo aparece una referencia histórica de cría equina en Kalscheid 12; faltan identidad actual, cultivo alimentario y oferta pública. |
 | Anton Streicher | [DE-ÖKO-013.276-0070908.2025.001](https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/DE-ÖKO-013.276-0070908.2025.001.pdf) | Los registros confirman nombre y dirección, pero no un alimento concreto ni venta atribuible a la explotación. |
+
+## Barrido de acuicultura, piscifactorías y pesca artesanal / Pescado (2026-08-14)
+
+Target: `data/csv/de/westdeutschland/rheinland-pfalz.csv`, categoría `Pescado`.
+Búsqueda de piscifactorías de aguas puras de manantial (*Hunsrück*, *Saar-Ruwer*, *Pfälzerwald*), elaboradores de ahumados artesanales y obradores de pescado con instalaciones activas en Rheinland-Pfalz. Deduplicado contra el catálogo publicado y candidatos previos. Todos pendientes de verificación final de coordenadas, canales de venta directa y contacto antes de publicar.
+
+| Candidato | Municipio | Dirección / Sede | Contacto / Web / Instagram | Fuente / Señal | Motivo y notas |
+|---|---|---|---|---|---|

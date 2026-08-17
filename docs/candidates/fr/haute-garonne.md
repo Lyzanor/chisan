@@ -86,3 +86,10 @@ Quedan **36 candidatos nuevos** en este corte: 12 perfiles de explotación, 6 un
 | GAEC LA FERME PEYROT | GAEC LA FERME PEYROT | Sauveterre-De-Comminges | 5 RUE SAINT VINCENT 31510 | actividad | 2026 | [nº Bio 47770](https://annuaire.agencebio.org/operateur/47770) |
 | LE MEUR JORDANE | Jordane le meur | Sauveterre-De-Comminges | 64 PLACE SAINT HILAIRE 31510 | actividad | 2026 | [nº Bio 8343](https://annuaire.agencebio.org/operateur/8343) |
 | HERRMANN CULLEN MARION - FERME DE LA MIGNONNE | CULLEN MARION | Verfeil | LIEU-DIT LA MIGNONNE 31590 | actividad | 2025 | [nº Bio 171955](https://annuaire.agencebio.org/operateur/171955) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Haute-Garonne. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

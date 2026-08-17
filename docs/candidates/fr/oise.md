@@ -45,3 +45,10 @@ Revisión cerrada el 2026-08-12. Las diez señales se resolvieron y se retiraron
 | Nombre público | Commune | Unidad productiva | Producción | Requisito pendiente | Fuentes |
 |---|---|---|---|---|---|
 | Bio Verger Potager | Le Hamel | 280 rue Monsieur, Hameau de Rieux, 60210 Le Hamel | frutas, más de 60 verduras, zumo, mermelada, lentejas y harina | confirmar coordenadas y contacto público vigente antes de publicar | [Oise](https://oise.fr/marche-fermier-digital/fruits-et-legumes/sarl-bio-verger-potager-4208) · [mensaje de la productora](https://www.pommesdamisbondy.org/producteurs/billets-des-producteurs/le-billet-de-clotilde/) · [Ecocert](https://certificat.ecocert.com/entreprise/B8567E32-D167-412E-951B-2DBB13C3351F) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Oise. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

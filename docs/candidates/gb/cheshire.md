@@ -57,3 +57,10 @@ current offer and phone/email before admission.
 | Hayfields Dairy | Specialist Cheesemakers Association member (cheesemaker) | Hayfields Farm, Heywood Lane, Audlem, Cheshire, CW3 0EX | [site](http://www.hayfieldsdairy.co.uk)<br>01270 811394<br>lucy@hayfieldsdairy.co.uk | — |
 | Bexton Cheese | FSA Manufacturers/packers; rating/inspection 2026-01-14 | WA16 | — | [892746](https://api.ratings.food.gov.uk/Establishments/892746) |
 | Heler Foods | Named as a cheese producer by Somerdale cheese producers | Laurels Farm, Cheshire | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

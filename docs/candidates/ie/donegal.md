@@ -61,7 +61,6 @@ Every lead that was ready to verify was fetched on 2026-08-11. The ones below di
 | Lead | Category | Why it is still open |
 |---|---|---|
 | Ardara Distillery | Destilados y licores | The SiteGround challenge escalates to a captcha that a person has to solve, in a real browser as well as every automated route. Reading it needs a person, not another fetch. |
-| Donegal Brewing Company | Cerveza | The site carried for Donegal Brewing Company is diceys.com, the Dicey Reilly's off-licence in Ballyshannon; the retail site does not establish the brewery as a productive unit. |
 | Kombucha Na Dálaigh | Bebidas sin alcohol | Kombucha Na Dálaigh publishes no address; its candidate municipio Cloughaneely is an inferred nearest settlement 5.2 km from the source coordinate. |
 | Living Green | Otros | The SiteGround challenge did not clear in a browser session either; on this host it sometimes auto-redirects and sometimes escalates to a hand-solved captcha. It needs a person in a browser. |
 | Northbound Brewing | Cerveza | The SiteGround challenge escalates to a captcha that a person has to solve, in a real browser as well as every automated route. Reading it needs a person, not another fetch. |
@@ -130,6 +129,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Premier Fish Products | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/premier-fish-products) |
 | Sean Ward (Fish Exports) Ltd | — | Pescado | listed | — | [FarmFinder](https://farmfinder.ie/producer/sean-ward-fish-exports-ltd) |
 | Shines Seafood | — | Pescado | Producer; Seafood, SuperValu Food Academy; also FarmFinder https://farmfinder.ie/producer/killybegs-catch-ltd-shines-seafood | — | [FarmFinder](https://farmfinder.ie/producer/shines-seafood) |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Donegal.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

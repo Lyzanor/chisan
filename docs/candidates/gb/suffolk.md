@@ -53,3 +53,17 @@ current offer and phone/email before admission.
 | Horham Dairy & Care Farm CIC | Specialist Cheesemakers Association member (cheesemaker) | Stradbroke Road,, Horham, Eye, Suffolk, IP21 5DZ | [site](http://www.horhamdairyandcarefarm.org)<br>07752 168156<br>alison.hunt100@gmail.com | — |
 | St Jude's Cheese | Specialist Cheesemakers Association member (cheesemaker) | Fig Tree Cottage, Stradbroke, Suffolk, IP21 5JJ | 07771 618 385<br>julie@stjudecheese.com | — |
 | Wilton Farm (Wissington) | Named as a cheese producer by Norfolk Deli East Anglian cheese | Wissington, Suffolk | — | — |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|
+
+## Fish producer sweep (2026-08-14)
+
+Artisanal fish and seafood producer pass: traditional smokehouses, trout and freshwater fisheries, oyster and mussel farms, and coastal shellfish harvesters with direct production and own brand. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact |
+|---|---|---|---|

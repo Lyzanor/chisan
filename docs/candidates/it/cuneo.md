@@ -164,6 +164,13 @@ Barrido reconciliado contra las listas completas de socios productores del [Cons
 
 El [elenco oficial de operadores idóneos](https://www.inoq.it/ArchivioIdonei/toma.pdf), actualizado internamente al 13-07-2026, contiene ocho operadores de Cuneo con rol `CASEIFICIO`: Caseificio Rabbia Francesco, Caseificio Sepertino, Caseificio Vincenzo Quaglia, I Tesori della Terra, IN.AL.PI., Società Agricola La Bruna, Valform y Valgrana. Todos quedaron reconciliados con candidatos ya existentes; no produjo candidatos nuevos. El documento atribuye la planta de Peveragno, Via Beinette 4, a IN.AL.PI. y clasifica a Sabaco d'Oc en Cervasca únicamente como `STAGIONATORE/PORZIONATORE`, cautelas conservadas en el barrido Bra/Raschera anterior.
 
-## Productores de queso — contraste Grana Padano DOP del 2026-08-11
-
 Las cuatro identidades de Cuneo del [directorio vigente del Consorzio Tutela Grana Padano](https://www.granapadano.it/it-it/il-consorzio-di-tutela/i-protagonisti-i-consorziati/?r=1) quedaron reconciliadas con candidatos existentes; no produjo candidatos nuevos.
+
+## Productores de trucha y piscicultura alpina — barrido del 2026-08-14
+
+Investigación de productores de trucha alpina y transformación artesanal en los valles del Monviso y del Pesio (Cuneo). Se verificó crianza en aguas frías de montaña, elaboración de conservas/ahumados de trucha y venta directa. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Agritrutta | San Biagio di Mondovì | `Pescado` + `Conservas` | Crianza en aguas del torrente Pesio y transformación artesanal: trucha ahumada, paté de trucha, trucha en escabeche y conservas de agua dulce. | [web](https://www.agritrutta.it/) |
+| Troticoltura Canali Cavour (Le Trote) | Saluzzo | `Pescado` | Histórica explotación de truchicultura alpina (tres generaciones) alimentada por las aguas del Monviso, especializada en truchas vivas y transformadas. | [web](https://www.letrote.it/) |

@@ -79,3 +79,10 @@ Quedan **29 candidatos nuevos** en este corte: 9 perfiles de explotación, 9 uni
 | GROUAZEL ANNA SOLENN JADE | GROUAZEL ANNA SOLENN JADE | Mont-Saint-Jean | LD MAIREY 21320 | actividad | 2025 | [nº Bio 49974](https://annuaire.agencebio.org/operateur/49974) |
 | EARL TRESILLARD DEVULDER | TRESILLARD DEVULDER | Noiron Sur Beze | 2 rue de l'Orme 21310 | actividad | 2025 | [nº Bio 159736](https://annuaire.agencebio.org/operateur/159736) |
 | EARL DE LA LOGE DU COUCOU | EARL DE LA LOGE DU COUCOU | Saulieu | 12 CHEMIN DE LA LOGE DU COUCOU Le Conrieux 21210 | actividad | 2025 | [nº Bio 52412](https://annuaire.agencebio.org/operateur/52412) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Côte-d'Or. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

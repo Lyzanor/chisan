@@ -121,3 +121,10 @@ Quedan **75 candidatos nuevos** en este corte: 60 unidades manufactureras adicio
 | AU CHANT DES LULUS MOREAU Claire DELAFOLLYE Laurent | AU CHANT DES LULUS | Val D'Epy | Ecuria - Nantey 39160 | actividad | 2026 | [nº Bio 141359](https://annuaire.agencebio.org/operateur/141359) |
 | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE DU BOURNEY | GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN AGREE DU BOURNEY | Val Suran | 60 RUE DU CAFE 39320 | actividad | 2026 | [nº Bio 33911](https://annuaire.agencebio.org/operateur/33911) |
 | FAUDOT ALEXANDRE | FAUDOT ALEXANDRE | Vriange | 10 Rue des Perrières 39700 | actividad | 2025 | [nº Bio 56556](https://annuaire.agencebio.org/operateur/56556) |
+
+## Barrido de productores de cerveza (2026-08-13)
+
+Búsqueda de cervecerías artesanales e independientes con planta de elaboración propia en el departamento de Jura. Las fuentes consultadas confirman la actividad productiva e instalaciones propias; quedan registradas como candidaturas en espera para la verificación completa de coordenadas, contacto y canales de venta directa antes de su publicación en el catálogo.
+
+| Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
+|---|---|---|---|

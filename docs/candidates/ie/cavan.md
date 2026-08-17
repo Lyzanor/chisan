@@ -100,7 +100,6 @@ The source names the business and its county and little else. Cheapest to resolv
 
 | Lead | Municipio? | Category | Source signal | Contact | Source |
 |---|---|---|---|---|---|
-| Bréifne Gael Brewing | — | Cerveza | listed | — | [FarmFinder](https://farmfinder.ie/producer/breifne-gael-brewing) |
 | Forest Hill Farm | — | Huevos | Farm; Vegetables, Fruit, Eggs, Farm Gate | — | [FarmFinder](https://farmfinder.ie/producer/forest-hill-farm) |
 | Alpha Organics - Richard Moeran | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/alpha-organics-richard-moeran) |
 | Rathkenny Farm | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/rathkenny-farm) |
@@ -108,6 +107,14 @@ The source names the business and its county and little else. Cheapest to resolv
 | Temple Farms Ltd | — | Otros | listed | — | [FarmFinder](https://farmfinder.ie/producer/temple-farms-ltd) |
 | Cullys Craft Bakery | — | Pan y cereal | Producer; Bread & Bakery, Food Culture Ireland | — | [FarmFinder](https://farmfinder.ie/producer/cullys-craft-bakery) |
 | Killycavan Cakes & Bakes | — | Pan y cereal | listed; Preserves, Farm Gate, yourhonestybox.com, Honesty Box | — | [FarmFinder](https://farmfinder.ie/producer/killycavan-cakes-bakes); via yourhonestybox.com |
+
+
+## Craft beer sweep (2026-08-13)
+
+Sectorial discovery sweep for independent craft breweries and microbreweries in Co. Cavan.
+
+| Candidate | Municipio | Category | Website | Instagram | Notes / Facility |
+|---|---|---|---|---|---|
 
 ## Remaining search work
 

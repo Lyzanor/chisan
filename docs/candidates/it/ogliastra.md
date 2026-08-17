@@ -34,3 +34,11 @@ El único candidato, Birrificio Keja, quedó incorporado al CSV con sus cervezas
 ## Productores de queso — revisión del 2026-08-12
 
 Lote cerrado el 2026-08-13. Se incorporaron Azienda Agricola F.lli Loi, Minicaseificio Cannas Antonio Onorato y Azienda Agricola Alberto Scattu. Los tres conservan `parcial`: las autorizaciones son actuales, pero la corroboración pública de productos y contactos procede de fuentes institucionales históricas.
+
+## Productores de pescado y marisco — barrido del 2026-08-14
+
+Investigación de productores de pescado y marisco de la laguna de Tortolì en Ogliastra. Se verificó actividad pesquera, cría y transformación propia de bottarga y ostras con marca y venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| Cooperativa Pescatori Tortolì | Tortolì | `Pescado` | Gestión de la peschiera lagunar de Tortolì (desde 1316): producción de Bottarga di muggine selvatico "Peschiera Reale 1316", ostras Sandalia del Golfo di Arbatax y mejillones. | [web](https://www.pescatoritortoli.it/) |

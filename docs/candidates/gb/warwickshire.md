@@ -39,3 +39,10 @@ productive municipality, current offer and phone/email before admission.
 | Rustic Food Company | Farmers/growers; rating/inspection 2025-05-15 | 129 Regent Street, Leamington Spa, CV32 4NX | [241450](https://api.ratings.food.gov.uk/Establishments/241450) |
 | A C Bakes & Desserts | Manufacturers/packers; rating/inspection 2024-03-20 | CV10 | [1624209](https://api.ratings.food.gov.uk/Establishments/1624209) |
 | Itchy Honey | Manufacturers/packers | CV47 | [1956782](https://api.ratings.food.gov.uk/Establishments/1956782) |
+
+## Beer producer sweep (2026-08-13)
+
+Independent brewery pass: Food Standards Agency register for `Manufacturers/packers` cross-checked against independent brewery directories and active physical production. None of those sources establishes a current own offer, a public contact or that the named unit meets the full KM0 gate. Each item is therefore a `hold` lead. Confirm identity, qualifying activity, productive municipality, current offer and contact before admission.
+
+| Candidate | Signal | Location | Contact | FSA record |
+|---|---|---|---|---|

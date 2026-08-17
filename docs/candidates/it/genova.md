@@ -95,3 +95,12 @@ El albo regional publica identidad, comune y contacto, pero no la familia de pro
 ## Productores de queso — barrido sanitario nacional del 2026-08-11
 
 Lote cerrado: sus dos unidades quedaron incorporadas al CSV y reconciliadas con evidencia. Corte: 2026-08-11.
+
+## Productores de pescado y conservas ittiche — barrido del 2026-08-14
+
+Investigación de productores de anchoas del Mar Ligure IGP y cooperativas de pesca artesanal en la provincia de Génova (Sestri Levante y Camogli). Se verificó salazón tradicional en arbanelle de vidrio y pesca artesanal de tonnarella con venta al público. Fecha de corte: 2026-08-14.
+
+| Candidato | Comune | Categoría propuesta | Actividad / Producto declarado | Web / Contacto |
+|---|---|---|---|---|
+| L'Anciua | Sestri Levante | `Pescado` + `Conservas` | Elaboración y salazón artesanal de "Acciughe sotto sale del Mar Ligure IGP" en tarros de vidrio tradicionales (arbanelle). | [web](https://www.lanciua.it/) |
+| Cooperativa Pescatori Camogli | Camogli | `Pescado` | Histórica cooperativa de pescadores de Camogli: gestión de la tonnarella tradicional de Camogli y venta directa del pescado local del Golfo Paradiso. | [web](https://www.pescatoricamogli.it/) |
