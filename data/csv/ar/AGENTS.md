@@ -52,6 +52,14 @@
   Cruz get nothing from it. The address is the one the exhibitor declares and is
   sometimes a Buenos Aires office for production elsewhere, the same trap as the
   winery directory below.
+- The province of Buenos Aires runs the only provincial producer register that
+  publishes names: Mercados Bonaerenses, about 2,500 entries with trading name,
+  partido, localidad, product lines and the contact route the producer declared.
+  It is a programme roll, so it proves the producer registered to sell at the
+  provincial markets, not that it still trades, and most entries are filed under
+  a person's name rather than a brand. Its contact column ages badly: shops
+  taken down, domains that no longer resolve, and at least one that is now an
+  unrelated news portal. No other province publishes an equivalent.
 - The Bodegas de Argentina member directory is the widest current named winery
   list the country publishes: about 200 entries with address, phone, website
   and email on one page. Two things in it will corrupt rows. It mixes wineries
