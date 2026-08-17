@@ -42,6 +42,7 @@
 
 ### Monterrey
 
+- **Cuna de Piedra** — Chocolate; Chocolatería bean to bar cuyo taller está en Calzada San Pedro 205-A, Col. Miravalle, Monterrey, 64660 (tel. +52 81 8123 1766, hola@cunadepiedra.com); lead llegado del barrido de Ciudad de México; https://cunadepiedra.com/
 - **Cervecería Albur** — Cerveza; Cervecería artesanal regia reconocida por etiquetas como La Avenida, Mano Pachona y La Chida; https://cervezaalbur.mx/
 - **Cervecería Bracino** — Cerveza; Cerveza artesanal elaborada en Monterrey con estilos de inspiración europea; https://bracino.com/
 - **Cervecería Fausto** — Cerveza; Microcervecería artesanal de lotes pequeños con estilos experimentales y lupulados; https://cervezafausto.com/

@@ -1,56 +1,109 @@
 # Ciudad de México — candidates
 
 - Target CSV: `data/csv/mx/centro/ciudad-de-mexico.csv`
-- Sources: Redes de agricultura chinampera y agroecológica de Xochimilco y Milpa Alta; tostadurías de café de especialidad; microcervecerías artesanales urbanas; chocolaterías bean-to-bar; afinadores de quesos artesanales y dulcerías de amaranto de Tulyehualco.
-- Searched: 16 August 2026
-- Batch scope: unidades productivas reales ubicadas en las alcaldías de la Ciudad de México.
+- Sources: extracto DENUE 09 (05/2026) por clase SCIAN `311*`/`312*`; sitios y
+  tiendas propias de cada unidad; Mercado el 100 (`mercadoel100.org`) para
+  productores de venta directa.
+- Searched: 17 August 2026
+- Batch scope: unidades productivas con domicilio en las 16 alcaldías. Cerrado el
+  lote de 58 altas del barrido DENUE; lo que sigue son leads sin resolver.
 
 > [!NOTE]
-> **Sedes fiscales del CRT (no son productores de CDMX):**
-> El archivo de marcas del Consejo Regulador del Tequila lista empresas en Álvaro Obregón, Benito Juárez, Cuajimalpa, Cuauhtémoc y Miguel Hidalgo (Casa Cuervo, Tequilera Corralejo, etc.). Son sedes corporativas; sus destilerías están en Jalisco o Guanajuato. Las unidades productivas reales de la CDMX son las listadas a continuación.
+> **Sedes fiscales y de marca que no son productores de CDMX:** el archivo de
+> marcas del Consejo Regulador del Tequila y las clases `312144`/`312145` del
+> DENUE listan Casa Cuervo, Tequilera Corralejo, Casa Montelobos, Mezcal Amores,
+> 7 Misterios y Mezcal de Leyenda en Cuajimalpa, Miguel Hidalgo y Cuauhtémoc.
+> Son oficinas; las destilerías están en Jalisco, Guanajuato u Oaxaca.
 
-### Alvaro Obregon
+## Sin resolver
 
-- **Chocolates Le Caméléon** — Chocolate; Chocolatería artesanal de alta gama que fusiona técnicas belgas con cacaos finos mexicanos e ingredientes tradicionales; https://chocolateslecameleon.com
+Cada uno falla una sola claim de admisión; falta eso, no más búsqueda general.
 
-### Benito Juarez
+### Falta la unidad productiva
+- **Almanegra Café** — Café; su propio sitio dice que el grano lo tuesta
+  «Tostadora de Cafés Extraordinarios», así que no está establecido que tueste;
+  sucursales en Cuauhtémoc, Benito Juárez y Miguel Hidalgo; https://almanegra.cafe
+- **Boicot Café** — Café; seis barras (Condesa, Roma, Polanco, Coyoacán) y
+  «nuestro café, de Veracruz», pero ninguna tostaduría publicada;
+  https://boicotcafe.com
+- **Cacao Para Todos** — Chocolate; el DENUE lo tipa `311350` en Escandón pero se
+  presenta como festival y tienda de cacao; https://www.cacaoparatodos.mx
+- **MUCHO Museo del Chocolate** — Chocolate; museo en la colonia Juárez con
+  taller propio; falta separar la oferta propia de la museística;
+  http://www.mucho.org.mx
+- **Panadería Rosetta** — Pan y cereal; hornea su pan, pero pertenece a Grupo
+  Rosetta y `rosetta.com.mx` es el restaurante; falta acotar la unidad
+- **El Buen Campo** — Fruta y verdura; colectivo con chinampa propia en
+  Xochimilco (Etiqueta Chinampera nivel 3) y a la vez tienda de producto de
+  terceros; https://www.elbuencampo.com
 
-- **Almanegra Café** — Café; Microtostador y barras de café de especialidad enfocado en microlotes de pequeños caficultores de Oaxaca, Chiapas, Veracruz y Puebla; https://almanegra.cafe
-- **Café Passmar** — Café; Tostaduría artesanal y barra de café de autor en el Mercado Lázaro Cárdenas (Col. Del Valle), célebre por sus métodos de extracción; https://cafepassmar.com
+### Falta el domicilio productivo
+- **Blend Station** — Café; tuesta café de especialidad y publica solo «Colonia
+  Condesa, Cuauhtémoc, 06100»; https://blendstation.com.mx
+- **Sonata Tostadores** — Café; tostador artesanal sin domicilio publicado;
+  https://sonatatostadores.com
+- **Colgeber Cafés** — Café; tuesta en el local, en el centro de Azcapotzalco;
+  falta calle y número; https://colgebercafes.com
+- **Kakoa** — Chocolate; bean to bar con cacao de Chiapas; https://kakoa.com.mx
+- **Jangala** — Chocolate; producción de cacao de origen y barra propia;
+  https://jangala.mx
+- **Manos de Cacao** — Chocolate; bean to bar; https://www.manosdecacao.com
+- **Bebida Viva** — Bebidas sin alcohol; kombucha artesanal en +900 tiendas;
+  https://bebidaviva.mx
+- **Falling Piano Brewing Co.** — Cerveza; fábrica y taproom, la portada no da
+  domicilio; https://fallingpiano.com.mx
+- **Buna** — Café; tuesta café y procesa cacao, solo publica teléfono;
+  https://buna.mx
+- **Yolcan** — Fruta y verdura; red de chinamperos de Xochimilco; el dominio
+  `yolcan.com` resuelve a Shopify sin contenido propio
+- **Nopal Milpa Alta** — Fruta y verdura; colectivo de nopal verdura en San
+  Lorenzo Tlacoyucan y Villa Milpa Alta;
+  https://www.facebook.com/nopalmilpaalta/
 
-### Coyoacan
+### Dominio caído, identidad viva
+Para estos el DENUE da domicilio, coordenadas y clase, y falta un canal actual
+que confirme actividad.
+- **Chocolates Le Caméléon** — Chocolate; Álvaro Obregón
+- **Café Passmar** — Café; barra y tostaduría en el Mercado Lázaro Cárdenas, Del
+  Valle, Benito Juárez; `cafepassmar.com` es un placeholder de hosting
+- **Café Avellaneda** — Café; Coyoacán
+- **Quentin Café** — Café; Cuauhtémoc
+- **Chocolatería Besan** — Chocolate; Iztacalco (DENUE `311350`)
+- **Xocolatik** — Chocolate; Iztacalco (DENUE `311350`)
+- **Arte en Cacao / Chocolates Cadiff** — Chocolate; Benito Juárez
+- **Chocolatera Moctezuma** — Chocolate; Venustiano Carranza
+- **Panificadora La Espiga** — Pan y cereal; dos unidades, Miguel Hidalgo y
+  Cuauhtémoc
+- **Pastelería Suiza** — Pan y cereal; Roma Norte, Cuauhtémoc
+- **Trigo y Verso** — Pan y cereal; colonia Juárez, Cuauhtémoc
+- **Panetto** — Pan y cereal; San Jerónimo Aculco, La Magdalena Contreras
+- **Moiras Bakehouse** — Pan y cereal; San Ángel, Álvaro Obregón
+- **Paletería y Nevería Los Dinamos** — Helados; La Magdalena
+- **Tía Lupita** — Helados; Vallejo, Gustavo A. Madero
+- **La Pantera Fresca** — Helados; Roma Norte, Cuauhtémoc
+- **Postre-Frut** — Helados; Hipódromo, Cuauhtémoc
+- **Mas Q Mole / Molino de Chiles Secos La Bodeguita** — Condimentos; Tacubaya,
+  Miguel Hidalgo
+- **Dulces Típicos La Regia** — Dulces y repostería; Venustiano Carranza
+- **Rancho Vista Alegre** — Lácteos y quesos; La Raza, Azcapotzalco
 
-- **Café Avellaneda** — Café; Laboratorio, tostador y barra de especialidad en Coyoacán, pionero en tostado de microlotes de comercio directo; https://cafedeavellaneda.com
-- **Que Bo! Chocolatería Mexicana Evolutiva** — Chocolate; Bombonería y chocolatería artesanal creada por José Ramón Castillo, con cacao nacional y rellenos tradicionales; https://quebo.com.mx
+### Identidad ambigua
+- **Pastelería La Universal** — Pan y cereal; tres unidades con el mismo nombre
+  (dos en Azcapotzalco, una en la Tabacalera) y dos dominios distintos, uno de
+  ellos en venta. Falta saber si son una empresa o varias antes de abrir fila
+- **Productos del Convento / Chongos La Herradura** — Dulces y repostería;
+  Granjas de San Antonio, Iztapalapa; la marca pública no está establecida
 
-### Cuauhtemoc
+## Pendiente de barrer
 
-- **Arca Tierra** — Fruta y verdura; Red de agricultura regenerativa y chinampera con distribución de hortalizas agroecológicas, flores comestibles y canastas; https://arcatierra.com
-- **Buna - Café Rico al Fin** — Café; Tostador de café de especialidad de conservación y procesador de cacaos agroforestales mexicanos; https://buna.mx
-- **Cervecería Cru Cru** — Cerveza; Cervecería artesanal urbana en La Romita, elaborando estilos clásicos e innovaciones con sal de gusano y chapulín; https://crucru.mx
-- **Cerveza Cosaco** — Cerveza; Microcervecería artesanal independiente de la Ciudad de México (desde 2000), produciendo cervezas ales de barril sin filtrar ni pasteurizar; https://cervezacosaco.com
-- **Cuna de Piedra** — Chocolate; Chocolatería artesanal bean-to-bar que procesa semillas de cacao de Tabasco y Chiapas en barras de origen único; https://cunadepiedra.com
-- **Falling Piano Brewing Co.** — Cerveza; Fábrica urbana y taproom en la Roma Norte especializada en cervezas enlatadas frescas (IPAs, sours, stouts); https://fallingpiano.com.mx
-- **Forte Bread & Coffee** — Pan y cereal; Panadería artesanal de masa madre con fermentaciones largas horneadas a la leña y tostado propio de café; https://fortebreadandcoffee.com
-- **Morenos Brewery** — Cerveza; Cervecería artesanal independiente de la Roma Norte especializada en estilos lupulados modernos (Hazy IPA, DIPA, Imperial Stouts); https://morenosbeer.com
-- **MUCHO Chocolate (Taller Museo del Chocolate)** — Chocolate; Elaboración y rescate artesanal de chocolate de mesa, barras de molienda en piedra y confitería de cacao mexicano; https://mucho.org.mx
-- **Panadería Rosetta** — Pan y cereal; Panadería artesanal de la chef Elena Reygadas, referente del pan de masa madre, harinas nativas y repostería tradicional; https://panaderiarosetta.com
-- **Quentin Café** — Café; Tostaduría y barras de cafés de especialidad de orígenes finos mexicanos; https://quentincafe.com
-- **Tout Chocolat** — Chocolate; Alta chocolatería, bombonería y repostería artesanal creada por el maestro chocolatero Luis Robledo; https://toutchocolat.mx
-
-### Iztapalapa
-
-- **Cervecera Cyprez** — Cerveza; Planta cervecera artesanal independiente premiada internacionalmente por sus lagers, stouts e hidromieles; https://cerveceriacyprez.com
-
-### Milpa Alta
-
-- **Nopal Milpa Alta** — Fruta y verdura; Colectivo de productores agroecológicos de nopal verdura, nopal deshidratado y derivados en San Lorenzo Tlacoyucan y Villa Milpa Alta; https://www.facebook.com/nopalmilpaalta/
-
-### Tlalpan
-
-- **Monstruo de Agua** — Cerveza; Cervecería ecológica y jardín de bioagricultura en San Miguel Topilejo, elaborando cervezas híbridas con agua de lluvia y botánicos locales; https://monstruodeagua.mx
-
-### Xochimilco
-
-- **Dulces Regionales La Huasteca de Tulyehualco** — Dulces y repostería; Elaboración tradicional de alegrías de amaranto, palanquetas y confitería típica en Santiago Tulyehualco; https://www.facebook.com/dulcestipicosdelahuasteca/
-- **Yolcan** — Fruta y verdura; Red de agricultores chinamperos tradicionales que cultivan hortalizas, hierbas finas y verduras orgánicas; https://yolcan.com
+- El extracto DENUE 09 tiene ~15.600 unidades `311*`/`312*` y solo se triaron las
+  711 con sitio web declarado. Las unidades sin `www` traen igualmente nombre,
+  domicilio, coordenadas y a menudo teléfono: son la siguiente veta, empezando
+  por las clases con identidad fuerte (`311513` quesos de Xochimilco y Tláhuac,
+  `312132` pulque, `311340` amaranto de Tulyehualco y Milpa Alta).
+- Mercado el 100 nombra productores de CDMX sin datos de contacto en su listado:
+  El Rústico, Florecer Saludable, Parvati Superalimentos, Microverdes de la
+  Ciudad, Granja Huayatla, Huerto Orgánico Los Cedros (San Nicolás Totoloapan,
+  La Magdalena Contreras) y Vivero Barrera (San Luis Tlaxialtemalco, Xochimilco).
+- La Etiqueta Chinampera de la UNAM certificó 17 chinamperos de Xochimilco; la
+  lista completa no está publicada y habría que pedirla al Instituto de Biología.

@@ -1,11 +1,12 @@
 # Mexico
 
 ## Operating state
-- Phase: opening. The tree covers the 32 federal entities and every area file is
-  still empty. Derive live queues with `npx pnpm check:defects --country mx`.
-- Active lane: first discovery per area in `docs/candidates/mx/<area>.md`,
-  starting with the denominación de origen councils, which publish the only
-  bounded, named and currently dated producer rosters in the country.
+- Phase: opening. The tree covers the 32 federal entities and most area files
+  are still thin. Derive live queues with `npx pnpm check:defects --country mx`.
+- Active lane: first discovery per area in `docs/candidates/mx/<area>.md`. Two
+  source families carry it: the denominación de origen councils, which publish
+  bounded, named and currently dated rosters, and the DENUE state extracts,
+  which cover every entity at once.
 
 ## Country rules
 - `region` is a mesorregión and `area` a federal entity. The five mesorregiones
@@ -40,6 +41,14 @@
   for the city, so write the alcaldía.
 
 ## Source ceilings
+- DENUE, INEGI's national establishment directory, is the one source that covers
+  every entity and publishes the unit's own coordinates, street address, phone,
+  email and website. It proves that a unit of a given SCIAN class exists at that
+  address and it dates the edition, so it settles identity, elaboration class and
+  municipality; it does not show a public producer identity, an own offer or
+  online sales, and its establishment name is an uppercase field that is often
+  the legal wording rather than the brand. On its own it supports `parcial`.
+  Access and triage live in `docs/candidates/mx/README.md`.
 - The Consejo Regulador del Tequila publishes dated XLSX rosters of certified
   companies and of brands bottled inside the appellation — the widest current
   producer list for Jalisco. Two columns do not carry what they appear to: the

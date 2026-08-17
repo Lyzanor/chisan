@@ -4,6 +4,20 @@ Reusable methods only. Per-area state lives in `<area>.md`.
 
 ## What works
 
+- **DENUE is the national producer dragnet.** INEGI publishes the whole
+  Directorio Estadístico Nacional de Unidades Económicas as one open ZIP per
+  state, no key and no quota:
+  `https://www.inegi.org.mx/contenidos/masiva/denue/denue_<ent>_csv.zip` (`09`
+  is Ciudad de México). Every row carries the establishment name, SCIAN class,
+  street address, colonia, postal code, municipality, size band, phone, email,
+  website and the unit's own latitude and longitude — the only Mexican source
+  that hands over location and contact together. Cut it by SCIAN: `311*` is food
+  manufacturing and `312*` beverages, and the last three digits separate
+  chocolate (`311350`) from roasted coffee (`311922`), beer (`312120`), pulque
+  (`312132`), mole and prepared sauces (`311423`) and so on. Triage is the whole
+  job: two classes are almost entirely franchise padding — `311830` is dominated
+  by one tortillería supplier network and `312112` by water-bottling shops — and
+  the appellation classes list corporate offices, not distilleries.
 - **The denominación de origen councils publish files, not pages.** The tequila
   council's rosters are XLSX links on
   <https://www.crt.org.mx/en/brands-and-associates/>, dated in the filename and
@@ -36,6 +50,13 @@ Reusable methods only. Per-area state lives in `<area>.md`.
   distillery is in Tequila or Pénjamo. Resolve the productive unit before
   writing `municipio`, and never open a row in the state the file happens to
   name.
+- **A registry's website column is a transcription, not a link.** DENUE's `www`
+  is typed by hand and often wrong: it drops or invents a letter
+  (`chongoslaherrdura`, `dulceepigui`, `patelerialalcazar`), names a domain the
+  producer has since lost to a parking page or a gambling redirect, or writes a
+  homonym company's site. Resolve every one before publishing it, and expect
+  roughly half of a batch to need the correct domain found another way — the
+  registry still proves identity, activity and place when its URL is dead.
 - **A generated column looks like data.** In the tequila brand file the phone
   increments by one per brand row for the same company. Check a repeating field
   across a company's rows before trusting it.
