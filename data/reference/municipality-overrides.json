@@ -2060,6 +2060,20 @@
         "label": "Earlton (Neosho County, Kansas)",
         "region": "west-north-central"
       }
+    ],
+    "westhampton": [
+      {
+        "lat": 42.30786,
+        "lon": -72.77234,
+        "label": "Westhampton (Hampshire County, Massachusetts)",
+        "region": "new-england"
+      },
+      {
+        "lat": 40.84678,
+        "lon": -72.65992,
+        "label": "Westhampton (Suffolk County, New York)",
+        "region": "middle-atlantic"
+      }
     ]
   }
 }

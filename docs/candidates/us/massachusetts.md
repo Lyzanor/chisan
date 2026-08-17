@@ -51,3 +51,9 @@ Candidatos de apicultores locales, granjas apícolas y elaboradores de miel arte
 
 | Candidato | Municipio candidato | Categoría candidata | Fuente | Señal de encaje | Dudas antes de publicar |
 | --- | --- | --- | --- | --- | --- |
+
+## Barrido de arce (2026-08-17)
+
+Fuente: [Massachusetts Maple Producers Association — Directory](https://massmaple.org/buy-maple-syrup/directory/). El mapa se sirve desde `https://massmaple.org/wp-json/wpgmza/v1/markers`, que devuelve nombre, dirección del sugarhouse y coordenadas; la ficha de detalle añade web, teléfono y calendario de la temporada en curso. Techo: es un padrón de socios de admisión abierta (comercial y aficionado), así que acredita identidad, ubicación y actividad de temporada, no venta online.
+
+26 sugarhouses integrados en el CSV el 2026-08-17. Quedan sin resolver por homónimo de centroide (`shelburne` resuelve a Vermont en el catálogo de referencia): Graves Glen Farm Sugarhouse y Davenport Maple Farm, ambos en Shelburne. Los demás socios del padrón siguen abiertos como candidatos.
