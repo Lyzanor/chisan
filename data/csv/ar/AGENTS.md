@@ -72,6 +72,17 @@
   columns are not clean either: about 13% of the URLs do not resolve, one entry
   carries a bare `-` as its website, one points at an unrelated hotel domain,
   and at least one email is misspelled at the domain.
+- The My Maps of Las Rutas Sanas del Alimento (Red Interregional de Nodos
+  Agroecológicos) is the widest agroecological roster in the country and the one
+  source that reaches Chaco: 1.035 self-registered points, of which the
+  "Unidades productivas" layer holds 307 producers with coordinates, declared
+  activity and, four times out of five, a phone or an email. `agroeco.red/mapa`
+  republishes it point for point but truncates the descriptions to 240
+  characters, so take the data from the KML, not from the mirror. It is
+  self-registration with no date and no review, so it supports identity,
+  approximate location and declared activity, never current trading: a third of
+  the Instagram handles it publishes no longer exist. Its point and its declared
+  address disagree often enough that `municipio` must come from the text.
 - The national open-data portal publishes the INV vitiviniculture and RENAPA
   apiculture registers aggregated to departamento: counts of bodegas, viñedos,
   apiarios and colmenas, never names. Neither can supply a producer.
