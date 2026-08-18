@@ -884,3 +884,72 @@ mismo dominio, y proper.cat sitúa la explotación en **el Saió, CP 08710**, qu
 es Santa Margarida de Montbui — no Sant Martí de Tous. Las coordenadas de la
 fila absorbida caían 3,6 km al oeste. Los dos slugs viejos quedan como
 `merge` en el ledger de evidencia.
+
+## Pasada «padrón RIAAC de la ciudad + gremios urbanos» — 20 altas (2026-08-18)
+
+Continúa el diagnóstico de la pasada anterior: el hueco de la ciudad es urbano, no de
+categoría. Esta vez el eje ha sido **el padrón cruzado con directorios de comercio y
+mercados municipales**, y sí ha dado altas.
+
+**Corte del padrón.** `municipi_establiment='Barcelona'` sobre
+[`p28j-xe65`](https://analisi.transparenciacatalunya.cat/resource/p28j-xe65.json) da
+**310 inscripciones → 184 establecimientos únicos**. Descontando el dragnet de Mercabarna
+(sala d'especejament de boví 41, manipulació de peix 31, hortofructícoles 36, patates 11)
+y la industria (Danone, Cacaolat, Cargill, Frime, Ecoveritas, Continente) quedan **39
+netos**, de los que ~15 pasan el gate. Confirma que en la ciudad el padrón es **la única
+fuente que ve el obrador sin tierra**, pero que hay que trabajarlo 1-a-1.
+
+**Segundo eje, el que más rindió por esfuerzo:** directorios de comercio y de mercados
+municipales, que sí publican teléfono y elaboración propia.
+[botiguesdebarcelona.com/es/tiendas/tostadores-de-cafe](https://www.botiguesdebarcelona.com/es/tiendas/tostadores-de-cafe)
+dio **6 tostadores netos de 6 fichas** (Café tenía 16 filas y aun así ninguno estaba);
+`mercatllibertat.cat/parada/…` y `boqueria.barcelona/…-p-NNN-es` dan ficha por parada con
+teléfono, correo y la frase «elaboració pròpia» cuando toca. **Ojo:** los slugs de
+categoría de botiguesdebarcelona no existen salvo `tostadores-de-cafe`; el resto cae a la
+portada.
+
+**Trampas medidas en esta pasada** (todas del mismo tipo, la dirección no es la unidad):
+- *Torrent de Tapioles* (Cafés La Chapolera) está en **Vallbona, Nou Barris**, no en
+  Gràcia: el buscador infiere mal el distrito, el CP 08033 lo zanja.
+- **Turrones Viar** trasladó el obrador de Olzinelles a **Ripollet**; el padrón conserva la
+  inscripción vieja de Barcelona.
+- **Latorre Punset ya estaba en el CSV** como fila de Llinars del Vallès, donde está la
+  fábrica: lo de Barcelona son la tienda-degustación y una inscripción de semiconservas.
+  Descubierto solo al deduplicar contra toda la provincia, no contra la ciudad.
+- **Assolim** inscribe una sala en Via Trajana 50 pero su web sitúa el almacén central en
+  els Hostalets de Pierola: unidad productiva sin resolver.
+- **Onna Coffee** cerró en 2022 pese a seguir en guías.
+
+Rechazos definitivos con tumba en `data/evidence/es/catalunya/barcelona.jsonl`: Onna
+Coffee (cerrado), Pedro Masana (extinguida), Mielar (envasador), Especias MG (mayorista) y
+Likido & Delikado (franquicia Vom Fass).
+
+### Pistas del padrón que quedan abiertas (no re-investigar desde cero)
+
+Todas tienen actividad elaboradora inscrita y municipio correcto; lo que falta es **oferta
+pública propia** o el nombre comercial:
+
+| pista | dirección | qué falta |
+|---|---|---|
+| Milk Magic, SL | Cristóbal de Moura, 105 | Elabora mozzarella (CNAE 1053) pero no se le encuentra marca, web ni contacto público. |
+| Carenzo, SA | Císter, 7-9 | Platos preparados y pasta; tel. 932231386, sin marca comercial identificada. |
+| Els Tres, SL | Jordi de Sant Jordi, 53 | Productos cárnicos crudos; sin rastro del nombre de la botiga. |
+| Solvic BCN, SL | Cerdanyola, 22 | Ídem. |
+| Novoa Álvarez, Jonathan | Riereta, 1 bis | Patés y conservas cárnicas en el Raval; sin identidad pública. |
+| Ordian Siglo XXI, SL | La Riereta, 15 | Forn; sin nombre comercial. |
+| Pa d'Or, SA | Tamarit, 191 | Forn; sin nombre comercial. |
+| Distribuciones Eucaliptos Montroig | Ptge. Coll, 24 | Marca *La Pirenaica*, pero desde 2019 integrada en Sakai Laboratorios y de canal farmacéutico: decidir encaje antes de nada. |
+| Assolim Alimentaria, SL | Via Trajana, 50 | Marca propia *Bacallà Gardell*; fijar si la sala de salazón de Barcelona es unidad productiva o el centro es Hostalets de Pierola. |
+| Bacallaneries Gomà | Boqueria, parada 737 | Tel. 933187293, `bacalla.com` vivo pero en frames; falta acreditar desalado/elaboración propia. |
+| Xarcuteria Ferran | Pau Claris, 108 | Centenaria y con carta de Mestre Artesà Alimentari, pero su web se presenta como *selección* y no acredita obrador. |
+| Rosendo Milà, SL (El Fornet d'en Rossend) | Provença, 224 | Cadena de +250 empleados; Provença es sede, falta localizar el obrador. |
+
+Cortes del padrón todavía sin explotar en la ciudad: `Elaboració de productes carnis en
+carnisseries xarcuteries` (12 fichas, ~8 son razones sociales de carnicerías de barrio sin
+nombre comercial resuelto) y `Elaboració d'espècies` (5).
+
+### Incidencia para otro municipio del área
+
+**Turrones y Especialidades Viar** (turronero artesano desde 1929, `viar.es`,
++34934214149): obrador hoy en **C/ del Río 22-24, 08291 Ripollet**. Encaja en el CSV como
+fila de Ripollet, no de Barcelona; queda como alta pendiente para un lote de Ripollet.
