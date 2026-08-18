@@ -23,6 +23,13 @@ reglas y los techos de fuente duraderos, en `data/csv/ar/AGENTS.md`.
   guía turística porque publican domicilio y contacto: el Museo de la Vid y el
   Vino de Salta (34 bodegas de la Ruta del Vino), el Ente Autárquico Tucumán
   Turismo (Ruta del Vino de Altura) y Turismo de La Rioja (`/verbodegas/`).
+- **Mapa de las Rutas Sanas del Alimento**, el My Maps de la Red Interregional
+  de Nodos Agroecológicos: `https://www.google.com/maps/d/kml?mid=1e4CanhyiwCYZkQdPa9gAr77goJywFFxf&forcekml=1`
+  devuelve las 1.035 fichas en un GET, sin navegador. Siete capas; solo
+  «Unidades productivas / Quintas /Huertas con venta directa» trae productores.
+  `agroeco.red/mapa` es un espejo: sirve para descubrirlo, pero trunca las
+  descripciones a 240 caracteres y con ellas la mitad de los contactos, así que
+  los datos se toman del KML. Es la única fuente nacional que llega a Chaco.
 - **Georef, la API oficial de datos.gob.ar**
   (`https://apis.datos.gob.ar/georef/api/`): resuelve provincia, departamento,
   municipio y localidad con centroide, sin clave y sin coste. Sirve para

@@ -2,13 +2,13 @@
 
 ## Operating state
 - Phase: opening. The tree covers the 23 provinces and the Ciudad Autónoma de
-  Buenos Aires. Twelve areas now hold twenty or more rows; Chaco, Formosa and
-  Santa Cruz are still empty or near it. Derive live queues with
+  Buenos Aires. Formosa and Santa Cruz still hold nothing and a handful of
+  northern areas stay thin. Derive live queues with
   `npx pnpm check:defects --country ar`.
-- Active lane: the three areas with no material and the nine still under twenty
-  rows, tracked in `docs/candidates/ar/<area>.md`. Every current row rests on a
-  directory plus, where it answers, the producer's own site, so the other
-  standing lane is raising them from `parcial` and resolving `Venta online`.
+- Active lane: the areas with no material or few rows, tracked in
+  `docs/candidates/ar/<area>.md`. Every current row rests on a directory plus,
+  where it answers, the producer's own site, so the other standing lane is
+  raising them from `parcial` and resolving `Venta online`.
 
 ## Country rules
 - `region` is one of the six statistical regions INDEC defined in 1980 and
@@ -71,7 +71,8 @@
   directory; take the municipality from the producer's own site. Its contact
   columns are not clean either: about 13% of the URLs do not resolve, one entry
   carries a bare `-` as its website, one points at an unrelated hotel domain,
-  and at least one email is misspelled at the domain.
+  one publishes a domain the winery no longer holds and which now serves casino
+  spam, and at least one email is misspelled at the domain.
 - The My Maps of Las Rutas Sanas del Alimento (Red Interregional de Nodos
   Agroecológicos) is the widest agroecological roster in the country and the one
   source that reaches Chaco: 1.035 self-registered points, of which the
