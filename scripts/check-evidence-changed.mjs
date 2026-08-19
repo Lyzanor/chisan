@@ -9,8 +9,8 @@
 //
 // It never fails the build. It makes the evidence invariant visible while a
 // ledger is still incomplete, where `check:evidence` alone cannot require a
-// record to exist. Use it while iterating; `verify:data` still checks evidence
-// structure and CSV parity.
+// record to exist. Use it while iterating; `verify:data` still fails on a
+// malformed record.
 
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";

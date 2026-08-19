@@ -48,12 +48,18 @@ test("every check declares a kind", () => {
 });
 
 test("coverage gaps that may stay open forever are señales, not colas", () => {
-  // Empty is a valid end state for all three: images are a 60% target, evidence
-  // is advisory, and docs/GEOLOCATION.md rules that a missing coordinate is a
-  // coverage signal because some rows correctly end with none. Counting them as
-  // workload inflates the union ~6x and buries the real overlap.
+  // Empty is a valid end state for all four: images are a 60% target, evidence
+  // is advisory, docs/GEOLOCATION.md rules that a missing coordinate is a
+  // coverage signal because some rows correctly end with none, and a stale
+  // source date is a re-check invitation, not a defect in the row. Counting
+  // them as workload inflates the union ~6x and buries the real overlap.
   const senales = CHECKS.filter((c) => c.kind === "senal").map((c) => c.id);
-  assert.deepEqual(senales.sort(), ["sin-coordenada", "sin-evidencia", "sin-imagen"]);
+  assert.deepEqual(senales.sort(), [
+    "sin-coordenada",
+    "sin-evidencia",
+    "sin-imagen",
+    "venta-caducada",
+  ]);
 });
 
 test("a row is off the map only when both coordinate cells are empty", () => {

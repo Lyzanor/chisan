@@ -366,21 +366,34 @@ function readAreas({ all = false } = {}) {
   return filterAreas(areaCache, { country: onlyCountry, area: onlyArea });
 }
 
+// slug -> fecha de la fuente más reciente del registro `keep`. La fecha es lo
+// único que la evidencia sabe y el CSV no: cuándo se vio la prueba.
 function readEvidence(country, region, area) {
   const file = path.join(EVIDENCE_ROOT, country, region, `${area}.jsonl`);
-  const keep = new Set();
+  const keep = new Map();
   if (!fs.existsSync(file)) return keep;
   for (const line of fs.readFileSync(file, "utf8").split("\n")) {
     if (!line.trim()) continue;
     try {
       const record = JSON.parse(line);
-      if (record.action === "keep") keep.add(record.slug);
+      if (record.action !== "keep") continue;
+      const checked = (record.sources ?? [])
+        .map((source) => source.checkedAt)
+        .filter(Boolean)
+        .sort()
+        .pop();
+      keep.set(record.slug, checked ?? "");
     } catch {
       // A malformed evidence line is check:evidence's job to report, not ours.
     }
   }
   return keep;
 }
+
+const STALE_DAYS = 365;
+const staleBefore = new Date(Date.now() - STALE_DAYS * 86400000)
+  .toISOString()
+  .slice(0, 10);
 
 // Each check returns the offending rows so --list can name them. The label is
 // what a future agent reads to decide whether the item is worth their session.
@@ -541,6 +554,21 @@ export const CHECKS = [
     run: ({ rows, country, region, area }) => {
       const keep = readEvidence(country, region, area);
       return rows.filter((r) => !keep.has(r.slug));
+    },
+  },
+  {
+    id: "venta-caducada",
+    kind: "senal",
+    label: `\`Venta online=sí\` con la fuente vista hace más de ${STALE_DAYS} días`,
+    hint: "reabre la tienda y actualiza `checkedAt` en el registro `keep`; docs/EVIDENCE_CONTRACT.md",
+    run: ({ rows, country, region, area }) => {
+      const keep = readEvidence(country, region, area);
+      return rows.filter((r) => {
+        if (r["Venta online"] !== "sí") return false;
+        const checked = keep.get(r.slug);
+        // Sin registro no hay fecha: eso lo cuenta `sin-evidencia`, no esto.
+        return Boolean(checked) && checked < staleBefore;
+      });
     },
   },
   {

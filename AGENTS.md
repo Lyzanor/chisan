@@ -17,7 +17,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `data/csv/[country]/[region]/[area].csv`: current producer state, read by the app at request time. The tree is the registry: a folder is a country, a folder inside it a region, a CSV an area. Adding any of them is a data change, never a code change.
 - `data/csv/[country]/country.json`: display labels, level names, ordering and slug aliases for that country. Optional — without it, folder names are title-cased and the order is alphabetical.
 - `data/csv/[country]/AGENTS.md`: minimal country guide for operating phase, country-wide source ceilings and local interpretation rules. It guides work but never overrides the CSV or the global contracts.
-- `data/evidence/[country]/[region]/[area].jsonl`: decision provenance only; never overrides the CSV and is not read by the app.
+- `data/evidence/[country]/[region]/[area].jsonl`: the sources behind a decision and the date they were seen; never repeats the CSV decision, never overrides it and is not read by the app. Tombstones (`reject`/`purge`/`merge`) are its durable half.
 - Candidate notes and Git history: narrative context and work planning, not producer truth.
 
 ## Country-specific material
@@ -47,13 +47,13 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - `lat`/`lon` more than 100 km from the `municipio` centroid is blocking; 15-100 km is a warning. Both centroid files are keyed by country first, so a `municipio` is only ever matched inside its own country and a name shared with another one cannot collide. For homonyms inside a country, fix `data/reference/municipality-overrides.json`, not correct producer coordinates — its second level is region slugs, which are unique inside a country.
 - A `municipio` with no centroid has no geographic gate at all: the audit skips the row and counts it instead of failing. It also counts coordinates copied from municipality centroids as coarse fallbacks. Read both counts before treating a green run as geographically checked or precisely located.
 - Follow `docs/GEOLOCATION.md` when finding coordinates: identify the productive unit before geocoding, inspect candidates, and keep an honest empty or centroid fallback when no exact point is supportable.
-- Evidence is optional to the runtime and non-blocking as catalog coverage, but it is the normal closure artifact for reviewed adds, re-verifications, resolved online sales, rejections, purges, and merges. Do not prune the only source trail for one of those decisions without leaving durable provenance.
+- Evidence coverage is optional and never blocks, but a record is the normal closure artifact for reviewed adds, re-verifications, resolved online sales, rejections, purges, and merges. A record carries sources, not the decision: `verificacion`, `Venta online` and `Canal de venta` live only in the CSV, and who reviewed it only in Git. Malformed records do block. Do not prune the only source trail for one of those decisions without leaving durable provenance.
 - Producer images live under `public/productores/[country]/[region]/[area]/`; follow `docs/IMAGES.md` — inspect candidates first and apply `enrich:images` to one slug with the approved candidate digest.
 
 ## Commands
 - Data/reference/evidence/image-only change: `npx pnpm verify:data`.
 - Code, scripts, validators, policy, or behavior change: `npx pnpm verify:ai`.
-- While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch missing provenance signals.
+- While iterating on CSVs: `npx pnpm check:csv:changed`; add `npx pnpm check:evidence:changed` to catch decisions landing without a source trail.
 - Full CSV contract and integrity warnings: `npx pnpm check:csv`. Its summary always reports rows without coordinates, centroid coverage, skipped municipality lookups and centroid fallbacks.
 - Editorial defects (advisory worklist, never blocking): `npx pnpm check:defects`, scoped with `--country <iso>` or `--area <name>`. Its output is the current worklist; resolve it under the shared workflow instead of copying it into a plan.
 - Producer roster/de-dup for one area: `npx pnpm list:producers [area]` with `--categoria "X"` or `--pendientes` when useful.

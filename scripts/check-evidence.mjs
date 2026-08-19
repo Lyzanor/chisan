@@ -10,16 +10,6 @@ const DEFAULT_CSV_ROOT = "data/csv";
 const DEFAULT_EVIDENCE_ROOT = "data/evidence";
 
 const ACTIONS = new Set(["keep", "reject", "purge", "merge"]);
-const VERIFICATION_VALUES = new Set(["pendiente", "parcial", "verificado"]);
-const ONLINE_SALES_VALUES = new Set(["sí", "no", "no comprobado"]);
-const SALES_CHANNEL_VALUES = new Set([
-  "ecommerce",
-  "whatsapp",
-  "email",
-  "telefono",
-  "suscripcion",
-  "marketplace",
-]);
 const SOURCE_TYPES = new Set([
   "official-site",
   "official-store",
@@ -52,29 +42,14 @@ const EXCLUSION_REASONS = new Set([
   "nonexistent",
   "out-of-scope",
 ]);
-const PRIMARY_SOURCE_TYPES = new Set([
-  "official-site",
-  "official-store",
-  "official-social",
-  "google-maps",
-  "marketplace",
-]);
 
 const TOP_LEVEL_KEYS = new Set([
   "slug",
-  "reviewedAt",
-  "reviewedBy",
   "action",
-  "decision",
-  "targetSlug",
   "reason",
+  "targetSlug",
   "sources",
   "notes",
-]);
-const DECISION_KEYS = new Set([
-  "verification",
-  "onlineSales",
-  "salesChannels",
 ]);
 const SOURCE_KEYS = new Set(["url", "type", "checkedAt", "claims", "note"]);
 
@@ -136,30 +111,6 @@ function todayIso() {
   return new Date().toISOString().slice(0, 10);
 }
 
-function normalizeOnlineSales(value) {
-  return String(value ?? "")
-    .trim()
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLowerCase() === "si"
-    ? "sí"
-    : String(value ?? "").trim();
-}
-
-function parseSalesChannels(value) {
-  return String(value ?? "")
-    .split("|")
-    .map((token) => token.trim())
-    .filter(Boolean);
-}
-
-function sameSet(left, right) {
-  return (
-    left.length === right.length &&
-    [...new Set(left)].sort().join("|") === [...new Set(right)].sort().join("|")
-  );
-}
-
 function readCsvRows(csvPath) {
   const raw = fs.readFileSync(csvPath, "utf8");
   const rows = parse(raw, {
@@ -179,14 +130,14 @@ function validateString(record, key, location, errors) {
   return record[key].trim();
 }
 
-function validateSources(record, reviewedAt, location, errors) {
+// A record proves nothing without sources: this is the only part of the record
+// that is not already answered by the CSV or by Git.
+function validateSources(record, location, errors) {
   if (!Array.isArray(record.sources) || record.sources.length === 0) {
     errors.push(`${location}: 'sources' must be a non-empty array`);
-    return { claims: new Set(), types: new Set() };
+    return;
   }
 
-  const claims = new Set();
-  const types = new Set();
   const urls = new Set();
 
   record.sources.forEach((source, index) => {
@@ -223,22 +174,12 @@ function validateSources(record, reviewedAt, location, errors) {
         `${sourceLocation}: unsupported source type '${type}' (allowed: ${[...SOURCE_TYPES].join(", ")})`,
       );
     }
-    types.add(type);
 
-    const checkedAt = validateString(
-      source,
-      "checkedAt",
-      sourceLocation,
-      errors,
-    );
+    const checkedAt = validateString(source, "checkedAt", sourceLocation, errors);
     if (checkedAt && !isIsoDate(checkedAt)) {
       errors.push(`${sourceLocation}: checkedAt must be YYYY-MM-DD`);
     } else if (checkedAt > todayIso()) {
       errors.push(`${sourceLocation}: checkedAt cannot be in the future`);
-    } else if (reviewedAt && checkedAt > reviewedAt) {
-      errors.push(
-        `${sourceLocation}: checkedAt cannot be after reviewedAt '${reviewedAt}'`,
-      );
     }
 
     if (!Array.isArray(source.claims) || source.claims.length === 0) {
@@ -256,183 +197,59 @@ function validateSources(record, reviewedAt, location, errors) {
         errors.push(`${sourceLocation}: duplicated claim '${claim}'`);
       }
       sourceClaims.add(claim);
-      claims.add(claim);
     }
 
     if (source.note !== undefined && typeof source.note !== "string") {
       errors.push(`${sourceLocation}: note must be a string`);
     }
   });
-
-  return { claims, types };
 }
 
-function requireClaims(claims, required, location, errors) {
-  for (const claim of required) {
-    if (!claims.has(claim)) {
-      errors.push(`${location}: evidence is missing required claim '${claim}'`);
+// Each action states where the slug must be: present for `keep`, gone for the
+// tombstones. That relationship is the only thing the CSV cannot say by itself.
+function validateAction({ record, row, rows, location, errors }) {
+  const action = record.action;
+
+  if (action === "keep") {
+    if (!row) {
+      errors.push(`${location}: keep record slug does not exist in area CSV`);
     }
-  }
-}
-
-function validateKeepRecord({
-  record,
-  row,
-  claims,
-  types,
-  location,
-  errors,
-}) {
-  if (!row) {
-    errors.push(`${location}: keep record slug does not exist in area CSV`);
+    if (record.reason !== undefined || record.targetSlug !== undefined) {
+      errors.push(`${location}: keep record cannot set reason or targetSlug`);
+    }
     return;
   }
 
-  if (!isPlainObject(record.decision)) {
-    errors.push(`${location}: keep record requires a decision object`);
-    return;
-  }
-
-  const unknown = unknownKeys(record.decision, DECISION_KEYS);
-  if (unknown.length) {
-    errors.push(`${location}: decision has unknown field(s): ${unknown.join(", ")}`);
-  }
-
-  const verification = record.decision.verification;
-  const onlineSales = record.decision.onlineSales;
-  const salesChannels = record.decision.salesChannels;
-
-  if (!VERIFICATION_VALUES.has(verification)) {
-    errors.push(`${location}: unsupported verification '${verification}'`);
-  }
-  if (!ONLINE_SALES_VALUES.has(onlineSales)) {
-    errors.push(`${location}: unsupported onlineSales '${onlineSales}'`);
-  }
-  if (!Array.isArray(salesChannels)) {
-    errors.push(`${location}: salesChannels must be an array`);
-  } else {
-    const uniqueChannels = new Set();
-    for (const channel of salesChannels) {
-      if (!SALES_CHANNEL_VALUES.has(channel)) {
-        errors.push(`${location}: unsupported sales channel '${channel}'`);
-      }
-      if (uniqueChannels.has(channel)) {
-        errors.push(`${location}: duplicated sales channel '${channel}'`);
-      }
-      uniqueChannels.add(channel);
+  if (action === "reject" || action === "purge") {
+    if (row) {
+      errors.push(`${location}: ${action} slug still exists in area CSV`);
     }
-  }
-
-  const csvVerification = String(row.verificacion ?? "").trim();
-  const csvOnlineSales = normalizeOnlineSales(row["Venta online"]);
-  const csvSalesChannels = parseSalesChannels(row["Canal de venta"]);
-
-  if (verification !== csvVerification) {
-    errors.push(
-      `${location}: verification '${verification}' does not match CSV '${csvVerification}'`,
-    );
-  }
-  if (onlineSales !== csvOnlineSales) {
-    errors.push(
-      `${location}: onlineSales '${onlineSales}' does not match CSV '${csvOnlineSales}'`,
-    );
-  }
-  if (
-    Array.isArray(salesChannels) &&
-    !sameSet(salesChannels, csvSalesChannels)
-  ) {
-    errors.push(
-      `${location}: salesChannels do not match CSV Canal de venta '${csvSalesChannels.join("|")}'`,
-    );
-  }
-
-  if (
-    Array.isArray(salesChannels) &&
-    onlineSales !== "sí" &&
-    salesChannels.length > 0
-  ) {
-    errors.push(`${location}: salesChannels require onlineSales='sí'`);
-  }
-
-  if (verification === "verificado") {
-    requireClaims(
-      claims,
-      ["identity", "producer-activity", "municipality"],
-      location,
-      errors,
-    );
-    if (![...types].some((type) => PRIMARY_SOURCE_TYPES.has(type))) {
+    if (record.targetSlug !== undefined) {
+      errors.push(`${location}: ${action} record cannot set targetSlug`);
+    }
+    if (!EXCLUSION_REASONS.has(record.reason)) {
       errors.push(
-        `${location}: verificado requires at least one current primary/reliable source type (${[...PRIMARY_SOURCE_TYPES].join(", ")})`,
+        `${location}: unsupported ${action} reason '${record.reason}' (allowed: ${[...EXCLUSION_REASONS].join(", ")})`,
       );
     }
-  } else if (verification === "parcial") {
-    requireClaims(claims, ["identity", "municipality"], location, errors);
-  }
-
-  if (onlineSales === "sí" || onlineSales === "no") {
-    requireClaims(claims, ["online-sales"], location, errors);
-  }
-
-  if (record.targetSlug !== undefined || record.reason !== undefined) {
-    errors.push(`${location}: keep record cannot set targetSlug or reason`);
-  }
-}
-
-function validateExclusionRecord({
-  record,
-  row,
-  claims,
-  location,
-  errors,
-}) {
-  const action = record.action;
-  if (row) {
-    errors.push(`${location}: ${action} slug still exists in area CSV`);
-  }
-  if (record.decision !== undefined || record.targetSlug !== undefined) {
-    errors.push(
-      `${location}: ${action} record cannot set decision or targetSlug`,
-    );
-  }
-  if (!EXCLUSION_REASONS.has(record.reason)) {
-    errors.push(`${location}: unsupported ${action} reason '${record.reason}'`);
     return;
   }
 
-  const claimByReason = {
-    "not-producer": "scope",
-    "other-area": "municipality",
-    closed: "closure",
-    nonexistent: "existence",
-    "out-of-scope": "scope",
-  };
-  requireClaims(claims, [claimByReason[record.reason]], location, errors);
-}
-
-function validateMergeRecord({
-  record,
-  row,
-  rows,
-  claims,
-  location,
-  errors,
-}) {
-  if (row) {
-    errors.push(`${location}: merged source slug still exists in area CSV`);
+  if (action === "merge") {
+    if (row) {
+      errors.push(`${location}: merged source slug still exists in area CSV`);
+    }
+    if (record.reason !== undefined) {
+      errors.push(`${location}: merge record cannot set reason`);
+    }
+    const targetSlug = validateString(record, "targetSlug", location, errors);
+    if (targetSlug && !rows.has(targetSlug)) {
+      errors.push(`${location}: merge target '${targetSlug}' is not in area CSV`);
+    }
+    if (targetSlug === record.slug) {
+      errors.push(`${location}: merge target must differ from source slug`);
+    }
   }
-  if (record.decision !== undefined || record.reason !== undefined) {
-    errors.push(`${location}: merge record cannot set decision or reason`);
-  }
-
-  const targetSlug = validateString(record, "targetSlug", location, errors);
-  if (targetSlug && !rows.has(targetSlug)) {
-    errors.push(`${location}: merge target '${targetSlug}' is not in area CSV`);
-  }
-  if (targetSlug === record.slug) {
-    errors.push(`${location}: merge target must differ from source slug`);
-  }
-  requireClaims(claims, ["duplicate"], location, errors);
 }
 
 function validateEvidenceFile(evidencePath, csvPath, errors) {
@@ -470,15 +287,6 @@ function validateEvidenceFile(evidencePath, csvPath, errors) {
       errors.push(`${location}: duplicated evidence slug '${slug}'`);
     }
 
-    const reviewedAt = validateString(record, "reviewedAt", location, errors);
-    if (reviewedAt && !isIsoDate(reviewedAt)) {
-      errors.push(`${location}: reviewedAt must be YYYY-MM-DD`);
-    } else if (reviewedAt > todayIso()) {
-      errors.push(`${location}: reviewedAt cannot be in the future`);
-    }
-
-    validateString(record, "reviewedBy", location, errors);
-
     const action = validateString(record, "action", location, errors);
     if (action && !ACTIONS.has(action)) {
       errors.push(`${location}: unsupported action '${action}'`);
@@ -488,27 +296,9 @@ function validateEvidenceFile(evidencePath, csvPath, errors) {
       errors.push(`${location}: notes must be a string`);
     }
 
-    const { claims, types } = validateSources(
-      record,
-      reviewedAt,
-      location,
-      errors,
-    );
-    const row = rows.get(slug);
-
-    if (action === "keep") {
-      validateKeepRecord({ record, row, claims, types, location, errors });
-    } else if (action === "reject" || action === "purge") {
-      validateExclusionRecord({ record, row, claims, location, errors });
-    } else if (action === "merge") {
-      validateMergeRecord({
-        record,
-        row,
-        rows,
-        claims,
-        location,
-        errors,
-      });
+    validateSources(record, location, errors);
+    if (ACTIONS.has(action)) {
+      validateAction({ record, row: rows.get(slug), rows, location, errors });
     }
 
     if (slug) {
@@ -550,20 +340,18 @@ export function auditEvidence({
       continue;
     }
 
-    areaResults.set(
-      areaKey,
-      validateEvidenceFile(evidencePath, csvPath, errors),
-    );
+    areaResults.set(areaKey, validateEvidenceFile(evidencePath, csvPath, errors));
   }
 
   let documentedRows = 0;
-  let completeAreas = 0;
+  let tombstones = 0;
   for (const { rows, records } of areaResults.values()) {
-    const keepRows = [...rows.keys()].filter(
+    documentedRows += [...rows.keys()].filter(
       (slug) => records.get(slug)?.action === "keep",
     ).length;
-    documentedRows += keepRows;
-    if (keepRows === rows.size) completeAreas += 1;
+    tombstones += [...records.values()].filter(
+      (record) => record.action !== "keep",
+    ).length;
   }
 
   return {
@@ -575,8 +363,8 @@ export function auditEvidence({
       (sum, result) => sum + result.records.size,
       0,
     ),
-    completeAreas,
     documentedRows,
+    tombstones,
   };
 }
 
@@ -587,11 +375,10 @@ function main() {
   console.log("Evidence contract audit summary");
   console.log(`- catalog areas: ${result.catalogAreas}`);
   console.log(`- evidence ledgers: ${result.files}`);
-  console.log(`- complete ledgers: ${result.completeAreas}`);
+  console.log(`- records: ${result.records} (${result.tombstones} tombstones)`);
   console.log(
-    `- current catalog rows documented: ${result.documentedRows}/${result.catalogRows}`,
+    `- current catalog rows with a keep record: ${result.documentedRows}/${result.catalogRows}`,
   );
-  console.log(`- records: ${result.records}`);
   console.log(`- issues: ${result.errors.length}`);
 
   if (result.errors.length === 0) {
@@ -601,12 +388,13 @@ function main() {
 
   console.log("");
   for (const error of result.errors) {
-    console.log(`WARN ${error}`);
+    console.log(`ERROR ${error}`);
   }
   console.log("");
   console.log(
-    "Evidence is an optional audit layer; the issues above are warnings and never block.",
+    "Coverage is advisory and never fails; the malformed records above do.",
   );
+  process.exitCode = 1;
 }
 
 const isMain =
