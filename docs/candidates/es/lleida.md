@@ -65,3 +65,14 @@ Passada resolta. Les altes i els descarts han quedat documentats a
 | candidat | motiu per mantenir-lo en observació | fonts comprovades |
 |---|---|---|
 | SAT Frutas Vall de Mora | Només s'ha localitzat un registre SAT antic que acredita explotació i comercialització a Seròs; no hi ha una identitat de productor ni una oferta pròpia pública actual suficients. | [registre SAT](https://sac.gencat.cat/sacgencat/AppJava/document.jsp?doc=7_11215.pdf) |
+
+## Passada del llibre «La volta a Catalunya en 50 formatges artesans» (2026-08-20)
+
+De les 50 formatgeries del llibre, 46 ja eren al catàleg i la de Clua ja tenia
+tombstone per cessament. S'ha publicat 30 Cabres (Bellver de Cerdanya) i
+Formatgeria de Tòrrec ja havia entrat el mateix dia per la passada de Lladó.
+Resta una pista en observació:
+
+| candidat | motiu per mantenir-lo en observació | fonts comprovades |
+|---|---|---|
+| Formatgeria Girola (València d'Àneu, Alt Àneu) | Identitat, unitat productiva i contacte estan resolts, però no es pot acreditar oferta pròpia actual: blog aturat el 2021, Instagram i X aturats l'agost i l'octubre del 2023, i ja no consta al padró vigent de venda de proximitat del DAR (33 productors al Pallars Sobirà). El RIAAC hi manté GIROLA SCP, però aquest padró tampoc no prova activitat: encara hi figura Formatgeries de Clua, tancada el desembre del 2025. | [RIAAC](https://analisi.transparenciacatalunya.cat/resource/p28j-xe65.json?$where=upper(establiment)%20like%20%27%25GIROLA%25%27) · [Gastroteca](https://www.gastroteca.cat/en/on-comprar/formatgeria-girola/) · [Instagram](https://www.instagram.com/formatgeriagirola/) · [X](https://x.com/GirolaSCP) · [blog](http://formatgeriagirola.blogspot.com/) |
