@@ -4,8 +4,8 @@ Este documento define el flujo visual: elección de fuente, composición,
 aplicación y revisión. El contrato del campo `imagen` vive en
 `docs/CSV_CONTRACT.md`; `npx pnpm check:images` valida los activos publicados.
 
-Una imagen es opcional. Revisa primero la identidad y el `slug`: dejar la celda
-vacía es preferible a publicar una marca equivocada.
+Una imagen es opcional. Revisa primero la identidad, el `producer_id` y el
+`slug`: dejar la celda vacía es preferible a publicar una marca equivocada.
 
 ## Qué imagen usar
 

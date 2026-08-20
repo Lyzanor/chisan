@@ -25,6 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://km0-nu.vercel.app"),
   title: {
     default: "KM0 Producers",
     template: "%s | KM0",

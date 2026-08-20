@@ -1,57 +1,57 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
-tenzan-shuzo-ogi,Tenzan Shuzo,Ogi,Sake,"Tenzan, Shichida, Iwa no Kura","Ogimachi Iwakura 1520, Ogi","Ogi brewery that in 1875 took over a neighboring kura's trade, from flour through to noodles. Own online shop.",,+81952733141,,https://tenzan.co.jp/,,,,33.273670,130.216810,,verificado,sí,ecommerce,
-mitsutake-shuzojo-kashima,Mitsutake Shuzojo,Kashima,Sake,"Mitsutake, Kinpa, shochu Makai e no Izanai","Hamamachi Otsu 2421, Kashima","Brewery founded in 1688 on the kura street of Hizen Hamashuku, a protected historic ensemble. Makes sake and sweet potato shochu, and sells online.",,+81954623033,,https://www.kinpa.jp/,,,,33.103830,130.098580,,verificado,sí,ecommerce,
-gochoda-shuzo-ureshino,Gochoda Shuzo,Ureshino,Sake,Azumaichi,"Gochoda Ko 2081, Ureshino","Brewery founded in 1922 in Ureshino, growing its own rice and among the first in Saga to bet on ginjo. Own online shop.",,+81954662066,,https://azumaichi.com/,,,,33.128080,130.060080,,verificado,sí,ecommerce,
-koimari-shuzo-imari,Koimari Shuzo,Imari,Sake,"Koimari, Koimari Saki","Shintenmachi 622-13, Imari","Brewery founded in 1909 in Imari, the porcelain town. Sells its Koimari and Saki labels from its own online shop.",,+81955232516,,https://sake-koimari.jp/,,,,33.264750,129.880810,,verificado,sí,ecommerce,
-yano-shuzo-kashima,Yano Shuzo,Kashima,Sake,"Takenosono, Hizen Kurashin",Kashima,"Brewery founded in 1796 in Kashima. Its only own site is the online shop, where it sells Takenosono and Hizen Kurashin.",,,,https://yanoshuzo.base.ec/,,,,33.103830,130.098580,,verificado,sí,ecommerce,
-amabuki-shuzo-miyaki,Amabuki Shuzo,Miyaki,Sake,Amabuki,"Higashio 2894, Miyaki",Miyaki brewery known for fermenting with yeasts isolated from flowers. Own online shop.,,+81942892001,,https://www.amabuki.co.jp/,https://www.facebook.com/amabuki/,,,33.324940,130.454610,,verificado,sí,ecommerce,
-fukuchiyo-shuzo-kashima,Fukuchiyo Shuzo,Kashima,Sake,Nabeshima,"Hamamachi 1244-1, Kashima","Brewery in Hizen Hamashuku, Kashima, maker of Nabeshima. Sells only through appointed distributors, not at the kura or online.",,,info@nabeshima-saga.com,https://nabeshima.biz/,,,,33.103830,130.098580,,verificado,no comprobado,,
-sachihime-shuzo-kashima,Sachihime Shuzo,Kashima,Sake,Sachihime,"Furueda Ko 599, Kashima","Brewery founded in 1934 in Kashima and maker of the ritual sake of the Yutoku Inari shrine. Its site lists distributors, it does not sell direct.",,+81954633708,,https://www.sachihime.co.jp/,,,,33.103830,130.098580,,verificado,no comprobado,,
-baba-shuzojo-kashima,Baba Shuzojo,Kashima,Sake,Nogomi,"Oaza Mikochi Otsu 1365, Kashima","Brewery founded in 1795 in Kashima, facing the Ariake sea, maker of Nogomi. No own shop found.",,+81954633888,,https://www.nogomi.co.jp/,,,,33.103830,130.098580,,verificado,no comprobado,,
-koyanagi-shuzo-ogi,Koyanagi Shuzo,Ogi,Sake,,佐賀県小城市小城町903,,,+81952732003,,,,,,33.299515,130.203857,,parcial,no comprobado,,
-higashitsuru-shuzo-taku,Higashitsuru Shuzo,Taku,Sake,,佐賀県多久市東多久町大字別府3625-1,,,+81952762421,,http://azumatsuru.com/,,,,33.276596,130.144852,,parcial,no comprobado,,
-ide-shuzo-ureshino,Ide Shuzo,Ureshino,Sake,,佐賀県嬉野市嬉野町大字下宿乙806-1,,,+81954430001,,http://www.toranoko.co.jp/,,,,33.096931,129.986221,,parcial,no comprobado,,
-segashira-shuzo-ureshino,Segashira Shuzo,Ureshino,Sake,,佐賀県嬉野市塩田町大字五町田甲3117,,,+81954662014,,http://www.azumacho.co.jp/,,,,33.121944,130.029282,,parcial,no comprobado,,
-kawanami-shuzo-imari,Kawanami Shuzo,Imari,Sake,,佐賀県伊万里市山代町久原1629,,,+81955283110,,,,,,33.308697,129.811859,,parcial,no comprobado,,
-tanaka-shuzo-imari,Tanaka Shuzo,Imari,Sake,,佐賀県伊万里市波多津町辻905,,,+81955250003,,,,,,33.369495,129.873856,,parcial,no comprobado,,
-kiyama-shoten-kiyama,Kiyama Shoten,Kiyama,Sake,,佐賀県三養基郡基山町大字宮浦151,,,+81942922300,,,https://www.facebook.com/KIHOUTURU/,,,33.418377,130.530029,,parcial,no comprobado,,
-saka-shuzo-saga,Saka Shuzo,Saga,Sake,,佐賀県佐賀市久保田町大字新田1833-1640番地,,,+81952682001,,https://sagashuzo.co.jp/,,,,33.223755,130.251083,,parcial,no comprobado,,
-komatsu-shuzo-karatsu,Komatsu Shuzo,Karatsu,Sake,,佐賀県東松浦郡相知町千束1489,,,+81955622408,,http://www.d1.dion.ne.jp/~manrei/,,,,33.406902,129.962692,,parcial,no comprobado,,
-kitano-tea-garden-ureshino,Kitano Tea Garden,Ureshino,Té e infusiones,Ureshino tea,佐賀県嬉野市嬉野町大字下宿丙2231、2333　他,"Kitano Tea Garden produces ureshino tea at its Ureshino unit, which is listed in the national organic JAS operator register.",,+81954422358,,https://kitanochaen.com/,,,,33.106094,129.959747,,verificado,no comprobado,,
-nakashima-farm-ureshino,ナカシマファーム,Ureshino,Lácteos y quesos,"できたてモッツァレラ, 水田のチーズ, ブラウンチーズ",佐賀県嬉野市塩田町真崎1488,Produces cheese and dairy products at its Ureshino unit.,,+81955410020,,https://www.nakashima-farm.com/,,https://www.instagram.com/nonnokotop/,,33.128080,130.060080,,verificado,sí,ecommerce,
-miyajima-soy-karatsu,宮島醤油,Karatsu,Condimentos,蓮華,佐賀県唐津市船宮町2318番地,Produces soy sauce and traditional seasonings at its Karatsu brewery.,,+81955732151,,https://www.miyajima-soy.co.jp/,,,,33.450080,129.968250,,verificado,no comprobado,,
-ariakenori-sodegaura,有明海苔,Sodegaura,Conservas,,,Produces preserved foods at its Sodegaura unit.,,,,https://ariakenori.co.jp/,,,,35.430000,139.954420,,verificado,no comprobado,,
-sannori-saga,サン海苔,Saga,Conservas,,佐賀市光二丁目2番1号,Produces preserved foods at its Saga unit.,,,,https://sannori.com/,,,,33.263500,130.300830,,verificado,no comprobado,,
-hashimanori-ogi,はしま海苔店,Ogi,Conservas,,佐賀県小城市芦刈町下古賀１３７９ー１,Produces preserved foods at its Ogi unit.,,,,https://hashimanori.base.shop/,,,,33.273670,130.216810,,verificado,sí,ecommerce,
-egashira-ichiro-shoten-saga,江頭一郎商店,Saga,Conservas,佐賀海苔,佐賀県佐賀市川副町小々森122-3,Processes and sells Saga nori at its Saga unit.,,,,https://egashiraichiro.com/,,,,33.263500,130.300830,,verificado,sí,ecommerce,
-ariake-no-kaze-saga,有明の風,Saga,Conservas,初摘み佐賀海苔,佐賀県佐賀市西与賀町相応津115,Grows and processes Ariake Sea nori at its Saga unit.,,+81952238779,,https://ariakenokaze.com/,,,,33.263500,130.300830,,verificado,sí,ecommerce,
-noridouraku-saga,三福海苔 (のり道楽),Saga,Conservas,,佐賀県佐賀市川副町犬井道1672,Produces preserved foods at its Saga unit.,,,,https://www.noridouraku.com/,,,,33.263500,130.300830,,verificado,sí,ecommerce,
-tabechoku-22806,はらまき養蜂場,Kanzaki,Miel,,,Produces honey at its Kanzaki unit.,,,,,,,,33.311890,130.371470,,parcial,sí,marketplace,
-tabechoku-28847,ミルン牧場,Saga,Lácteos y quesos,牛乳,,Produces milk at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,
-tabechoku-23834,素ヱコ農園,Imari,Huevos,,,Produces eggs at its Imari unit.,,,,,,,,33.264750,129.880810,,parcial,sí,marketplace,
-tabechoku-20652,本間農園,Kanzaki,Huevos,卵,,Produces eggs at its Kanzaki unit.,,,,,,,,33.311890,130.371470,,parcial,sí,marketplace,
-tabechoku-23452,上田養鶏場,Kashima,Huevos,,,Produces eggs at its Kashima unit.,,,,,,,,33.103830,130.098580,,parcial,sí,marketplace,
-tabechoku-24350,小室 光春,Saga,Setas,しいたけ,,Produces shiitake at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,
-tabechoku-21655,満天きくらげ,Arida,Setas,,,Produces mushrooms at its Arida unit.,,,,,,,,34.082970,135.127750,,parcial,sí,marketplace,
-tabechoku-3078216,はしま海苔,Ogi,Pescado,海苔,,Produces nori at its Ogi unit.,,,,,,,,33.273670,130.216810,,parcial,sí,marketplace,
-tabechoku-3078630,みつせ鶏本舗,Yoshinogari,Carne,鶏肉,,Produces chicken at its Yoshinogari unit.,,,,,,,,33.321220,130.398860,,parcial,sí,marketplace,
-tabechoku-3077373,光吉農産,Saga,Legumbres,"米, 大豆",,Produces rice and soybeans at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,
-tabechoku-23713,小池農園漬物加工所,Kashima,Conservas,漬物,,Produces pickles at its Kashima unit.,,,,,,,,33.103830,130.098580,,parcial,sí,marketplace,
-tabechoku-27438,ジョブクリエイト,Ogi,Dulces y repostería,"レモン, ブルーベリー, 梅",,"Produces lemons, blueberries and ume at its Ogi unit.",,,,,,,,33.273670,130.216810,,parcial,sí,marketplace,Conservas|Fruta y verdura
-tabechoku-8,自然栽培専門店「自然栽培園北村」,Saga,Pan y cereal,,,Produces grain products at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,
-tabechoku-16,白浜農産,Shiroishi-chō,Pan y cereal,米,,Produces rice at its Shiroishi-chō unit.,,,,,,,,33.181060,130.143440,,parcial,sí,marketplace,
-tabechoku-22431,丸尾農園,Imari,Fruta y verdura,梨,,Produces pears at its Imari unit.,,,,,,,,33.264750,129.880810,,parcial,sí,marketplace,
-tabechoku-20436,山和農園,Imari,Fruta y verdura,,,Produces fruit and vegetables at its Imari unit.,,,,,,,,33.264750,129.880810,,parcial,sí,marketplace,
-tabechoku-21650,えがちゃん農園,Saga,Fruta y verdura,野菜,,Produces vegetables at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,
-tabechoku-3077599,トゥルーバファーム佐賀,Karatsu,Fruta y verdura,レモン,,Produces lemons at its Karatsu unit.,,,,,,,,33.450080,129.968250,,parcial,sí,marketplace,
-tabechoku-21819,嬉野茶 池田農園,Ureshino,Fruta y verdura,,,Produces fruit and vegetables at its Ureshino unit.,,,,,,,,33.128080,130.060080,,parcial,sí,marketplace,
-tabechoku-23567,松永緑茶園,Ureshino,Té e infusiones,,,Produces tea at its Ureshino unit.,,,,,,,,33.128080,130.060080,,parcial,sí,marketplace,
-tabechoku-22132,れんこんの家 やました,Shiroishi-chō,Fruta y verdura,,,Produces fruit and vegetables at its Shiroishi-chō unit.,,,,,,,,33.181060,130.143440,,parcial,sí,marketplace,
-tabechoku-3077495,ベリーフォレスト,Tosu,Fruta y verdura,"いちご, ジャム",,Produces strawberries and jam at its Tosu unit.,,,,,,,,33.377830,130.506140,,parcial,sí,marketplace,
-jp-saga-kogaseimen-e8e20b9,㈲古賀製麺,神埼市,Pan y cereal,乾麺,,"Produces dried noodles in 神埼市, saga.",,,,https://kogaseimen.com/,,,,33.311890,130.371470,,verificado,no comprobado,,
-jp-saga-iimen-ac2b7c1,有限会社井上製麺,神埼市,Pan y cereal,乾麺,,"Produces dried noodles in 神埼市, saga.",,,,https://iimen.com/,,,,33.311890,130.371470,,verificado,sí,ecommerce,
-jp-saga-nabeshimahan-cfa141e,川原茶業,嬉野市,Té e infusiones,日本茶,,"Produces Japanese tea in 嬉野市, saga.",,,,https://nabeshimahan.com/,,,,33.128080,130.060080,,verificado,sí,ecommerce,
-jp-saga-japaneseteashop-afd197e,徳永製茶（茶荘徳永）,嬉野市,Té e infusiones,日本茶,,"Produces Japanese tea in 嬉野市, saga.",,,,https://japaneseteashop.com/,,,,33.128080,130.060080,,verificado,sí,ecommerce,
-game-brew,GAME BREW,Yoshinogari,Cerveza,,吉田273-12,Brewery producing beer at its Yoshinogari unit.,,,,https://gamebrew.jp/,,https://www.instagram.com/gamebrew_japan/,,33.32122,130.39886,,parcial,no comprobado,,
-yobuko-manbou-karatsu,呼子萬坊,Karatsu,Pescado,Ika shumai,,Produces its signature squid shumai and other seafood products in Yobuko.,,,,https://www.manbou.co.jp/,,,,33.45008,129.96825,,verificado,sí,ecommerce,
-takezaki-kaisan-tara,竹崎海産,Tara,Pescado,"Oysters, crab",佐賀県藤津郡太良町多良4261-1,Farms oysters and catches seafood in the Ariake Sea from its Tara unit.,,+81954670603,,https://takezaki-kaisan.com/,,,,33.007710,130.123230,,verificado,sí,telefono,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+tenzan-shuzo-ogi,Tenzan Shuzo,Ogi,Sake,"Tenzan, Shichida, Iwa no Kura","Ogimachi Iwakura 1520, Ogi","Ogi brewery that in 1875 took over a neighboring kura's trade, from flour through to noodles. Own online shop.",,+81952733141,,https://tenzan.co.jp/,,,,33.273670,130.216810,,verificado,sí,ecommerce,,1225
+mitsutake-shuzojo-kashima,Mitsutake Shuzojo,Kashima,Sake,"Mitsutake, Kinpa, shochu Makai e no Izanai","Hamamachi Otsu 2421, Kashima","Brewery founded in 1688 on the kura street of Hizen Hamashuku, a protected historic ensemble. Makes sake and sweet potato shochu, and sells online.",,+81954623033,,https://www.kinpa.jp/,,,,33.103830,130.098580,,verificado,sí,ecommerce,,776
+gochoda-shuzo-ureshino,Gochoda Shuzo,Ureshino,Sake,Azumaichi,"Gochoda Ko 2081, Ureshino","Brewery founded in 1922 in Ureshino, growing its own rice and among the first in Saga to bet on ginjo. Own online shop.",,+81954662066,,https://azumaichi.com/,,,,33.128080,130.060080,,verificado,sí,ecommerce,,266
+koimari-shuzo-imari,Koimari Shuzo,Imari,Sake,"Koimari, Koimari Saki","Shintenmachi 622-13, Imari","Brewery founded in 1909 in Imari, the porcelain town. Sells its Koimari and Saki labels from its own online shop.",,+81955232516,,https://sake-koimari.jp/,,,,33.264750,129.880810,,verificado,sí,ecommerce,,626
+yano-shuzo-kashima,Yano Shuzo,Kashima,Sake,"Takenosono, Hizen Kurashin",Kashima,"Brewery founded in 1796 in Kashima. Its only own site is the online shop, where it sells Takenosono and Hizen Kurashin.",,,,https://yanoshuzo.base.ec/,,,,33.103830,130.098580,,verificado,sí,ecommerce,,1366
+amabuki-shuzo-miyaki,Amabuki Shuzo,Miyaki,Sake,Amabuki,"Higashio 2894, Miyaki",Miyaki brewery known for fermenting with yeasts isolated from flowers. Own online shop.,,+81942892001,,https://www.amabuki.co.jp/,https://www.facebook.com/amabuki/,,,33.324940,130.454610,,verificado,sí,ecommerce,,50
+fukuchiyo-shuzo-kashima,Fukuchiyo Shuzo,Kashima,Sake,Nabeshima,"Hamamachi 1244-1, Kashima","Brewery in Hizen Hamashuku, Kashima, maker of Nabeshima. Sells only through appointed distributors, not at the kura or online.",,,info@nabeshima-saga.com,https://nabeshima.biz/,,,,33.103830,130.098580,,verificado,no comprobado,,,234
+sachihime-shuzo-kashima,Sachihime Shuzo,Kashima,Sake,Sachihime,"Furueda Ko 599, Kashima","Brewery founded in 1934 in Kashima and maker of the ritual sake of the Yutoku Inari shrine. Its site lists distributors, it does not sell direct.",,+81954633708,,https://www.sachihime.co.jp/,,,,33.103830,130.098580,,verificado,no comprobado,,,1015
+baba-shuzojo-kashima,Baba Shuzojo,Kashima,Sake,Nogomi,"Oaza Mikochi Otsu 1365, Kashima","Brewery founded in 1795 in Kashima, facing the Ariake sea, maker of Nogomi. No own shop found.",,+81954633888,,https://www.nogomi.co.jp/,,,,33.103830,130.098580,,verificado,no comprobado,,,97
+koyanagi-shuzo-ogi,Koyanagi Shuzo,Ogi,Sake,,佐賀県小城市小城町903,,,+81952732003,,,,,,33.299515,130.203857,,parcial,no comprobado,,,656
+higashitsuru-shuzo-taku,Higashitsuru Shuzo,Taku,Sake,,佐賀県多久市東多久町大字別府3625-1,,,+81952762421,,http://azumatsuru.com/,,,,33.276596,130.144852,,parcial,no comprobado,,,316
+ide-shuzo-ureshino,Ide Shuzo,Ureshino,Sake,,佐賀県嬉野市嬉野町大字下宿乙806-1,,,+81954430001,,http://www.toranoko.co.jp/,,,,33.096931,129.986221,,parcial,no comprobado,,,360
+segashira-shuzo-ureshino,Segashira Shuzo,Ureshino,Sake,,佐賀県嬉野市塩田町大字五町田甲3117,,,+81954662014,,http://www.azumacho.co.jp/,,,,33.121944,130.029282,,parcial,no comprobado,,,1063
+kawanami-shuzo-imari,Kawanami Shuzo,Imari,Sake,,佐賀県伊万里市山代町久原1629,,,+81955283110,,,,,,33.308697,129.811859,,parcial,no comprobado,,,545
+tanaka-shuzo-imari,Tanaka Shuzo,Imari,Sake,,佐賀県伊万里市波多津町辻905,,,+81955250003,,,,,,33.369495,129.873856,,parcial,no comprobado,,,1208
+kiyama-shoten-kiyama,Kiyama Shoten,Kiyama,Sake,,佐賀県三養基郡基山町大字宮浦151,,,+81942922300,,,https://www.facebook.com/KIHOUTURU/,,,33.418377,130.530029,,parcial,no comprobado,,,611
+saka-shuzo,Saka Shuzo,Saga,Sake,,佐賀県佐賀市久保田町大字新田1833-1640番地,,,+81952682001,,https://sagashuzo.co.jp/,,,,33.223755,130.251083,,parcial,no comprobado,,,1023
+komatsu-shuzo-karatsu,Komatsu Shuzo,Karatsu,Sake,,佐賀県東松浦郡相知町千束1489,,,+81955622408,,http://www.d1.dion.ne.jp/~manrei/,,,,33.406902,129.962692,,parcial,no comprobado,,,635
+kitano-tea-garden-ureshino,Kitano Tea Garden,Ureshino,Té e infusiones,Ureshino tea,佐賀県嬉野市嬉野町大字下宿丙2231、2333　他,"Kitano Tea Garden produces ureshino tea at its Ureshino unit, which is listed in the national organic JAS operator register.",,+81954422358,,https://kitanochaen.com/,,,,33.106094,129.959747,,verificado,no comprobado,,,599
+nakashima-farm-ureshino,ナカシマファーム,Ureshino,Lácteos y quesos,"できたてモッツァレラ, 水田のチーズ, ブラウンチーズ",佐賀県嬉野市塩田町真崎1488,Produces cheese and dairy products at its Ureshino unit.,,+81955410020,,https://www.nakashima-farm.com/,,https://www.instagram.com/nonnokotop/,,33.128080,130.060080,,verificado,sí,ecommerce,,1850
+miyajima-soy-karatsu,宮島醤油,Karatsu,Condimentos,蓮華,佐賀県唐津市船宮町2318番地,Produces soy sauce and traditional seasonings at its Karatsu brewery.,,+81955732151,,https://www.miyajima-soy.co.jp/,,,,33.450080,129.968250,,verificado,no comprobado,,,2379
+ariakenori-sodegaura,有明海苔,Sodegaura,Conservas,,,Produces preserved foods at its Sodegaura unit.,,,,https://ariakenori.co.jp/,,,,35.430000,139.954420,,verificado,no comprobado,,,2591
+sannori-saga,サン海苔,Saga,Conservas,,佐賀市光二丁目2番1号,Produces preserved foods at its Saga unit.,,,,https://sannori.com/,,,,33.263500,130.300830,,verificado,no comprobado,,,1798
+hashimanori-ogi,はしま海苔店,Ogi,Conservas,,佐賀県小城市芦刈町下古賀１３７９ー１,Produces preserved foods at its Ogi unit.,,,,https://hashimanori.base.shop/,,,,33.273670,130.216810,,verificado,sí,ecommerce,,1590
+egashira-ichiro-shoten-saga,江頭一郎商店,Saga,Conservas,佐賀海苔,佐賀県佐賀市川副町小々森122-3,Processes and sells Saga nori at its Saga unit.,,,,https://egashiraichiro.com/,,,,33.263500,130.300830,,verificado,sí,ecommerce,,2851
+ariake-no-kaze-saga,有明の風,Saga,Conservas,初摘み佐賀海苔,佐賀県佐賀市西与賀町相応津115,Grows and processes Ariake Sea nori at its Saga unit.,,+81952238779,,https://ariakenokaze.com/,,,,33.263500,130.300830,,verificado,sí,ecommerce,,2590
+noridouraku-saga,三福海苔 (のり道楽),Saga,Conservas,,佐賀県佐賀市川副町犬井道1672,Produces preserved foods at its Saga unit.,,,,https://www.noridouraku.com/,,,,33.263500,130.300830,,verificado,sí,ecommerce,,2018
+tabechoku-22806,はらまき養蜂場,Kanzaki,Miel,,,Produces honey at its Kanzaki unit.,,,,,,,,33.311890,130.371470,,parcial,sí,marketplace,,1594
+tabechoku-28847,ミルン牧場,Saga,Lácteos y quesos,牛乳,,Produces milk at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,,1952
+tabechoku-23834,素ヱコ農園,Imari,Huevos,,,Produces eggs at its Imari unit.,,,,,,,,33.264750,129.880810,,parcial,sí,marketplace,,3050
+tabechoku-20652,本間農園,Kanzaki,Huevos,卵,,Produces eggs at its Kanzaki unit.,,,,,,,,33.311890,130.371470,,parcial,sí,marketplace,,2642
+tabechoku-23452,上田養鶏場,Kashima,Huevos,,,Produces eggs at its Kashima unit.,,,,,,,,33.103830,130.098580,,parcial,sí,marketplace,,2035
+tabechoku-24350,小室 光春,Saga,Setas,しいたけ,,Produces shiitake at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,,2402
+tabechoku-21655,満天きくらげ,Arida,Setas,,,Produces mushrooms at its Arida unit.,,,,,,,,34.082970,135.127750,,parcial,sí,marketplace,,2903
+tabechoku-3078216,はしま海苔,Ogi,Pescado,海苔,,Produces nori at its Ogi unit.,,,,,,,,33.273670,130.216810,,parcial,sí,marketplace,,1589
+tabechoku-3078630,みつせ鶏本舗,Yoshinogari,Carne,鶏肉,,Produces chicken at its Yoshinogari unit.,,,,,,,,33.321220,130.398860,,parcial,sí,marketplace,,1642
+tabechoku-3077373,光吉農産,Saga,Legumbres,"米, 大豆",,Produces rice and soybeans at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,,2169
+tabechoku-23713,小池農園漬物加工所,Kashima,Conservas,漬物,,Produces pickles at its Kashima unit.,,,,,,,,33.103830,130.098580,,parcial,sí,marketplace,,2406
+tabechoku-27438,ジョブクリエイト,Ogi,Dulces y repostería,"レモン, ブルーベリー, 梅",,"Produces lemons, blueberries and ume at its Ogi unit.",,,,,,,,33.273670,130.216810,,parcial,sí,marketplace,Conservas|Fruta y verdura,1810
+tabechoku-8,自然栽培専門店「自然栽培園北村」,Saga,Pan y cereal,,,Produces grain products at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,,3078
+tabechoku-16,白浜農産,Shiroishi-chō,Pan y cereal,米,,Produces rice at its Shiroishi-chō unit.,,,,,,,,33.181060,130.143440,,parcial,sí,marketplace,,2957
+tabechoku-22431,丸尾農園,Imari,Fruta y verdura,梨,,Produces pears at its Imari unit.,,,,,,,,33.264750,129.880810,,parcial,sí,marketplace,,2074
+tabechoku-20436,山和農園,Imari,Fruta y verdura,,,Produces fruit and vegetables at its Imari unit.,,,,,,,,33.264750,129.880810,,parcial,sí,marketplace,,2424
+tabechoku-21650,えがちゃん農園,Saga,Fruta y verdura,野菜,,Produces vegetables at its Saga unit.,,,,,,,,33.263500,130.300830,,parcial,sí,marketplace,,1446
+tabechoku-3077599,トゥルーバファーム佐賀,Karatsu,Fruta y verdura,レモン,,Produces lemons at its Karatsu unit.,,,,,,,,33.450080,129.968250,,parcial,sí,marketplace,,1846
+tabechoku-21819,嬉野茶 池田農園,Ureshino,Fruta y verdura,,,Produces fruit and vegetables at its Ureshino unit.,,,,,,,,33.128080,130.060080,,parcial,sí,marketplace,,2354
+tabechoku-23567,松永緑茶園,Ureshino,Té e infusiones,,,Produces tea at its Ureshino unit.,,,,,,,,33.128080,130.060080,,parcial,sí,marketplace,,2670
+tabechoku-22132,れんこんの家 やました,Shiroishi-chō,Fruta y verdura,,,Produces fruit and vegetables at its Shiroishi-chō unit.,,,,,,,,33.181060,130.143440,,parcial,sí,marketplace,,1692
+tabechoku-3077495,ベリーフォレスト,Tosu,Fruta y verdura,"いちご, ジャム",,Produces strawberries and jam at its Tosu unit.,,,,,,,,33.377830,130.506140,,parcial,sí,marketplace,,1922
+jp-saga-kogaseimen-e8e20b9,㈲古賀製麺,神埼市,Pan y cereal,乾麺,,"Produces dried noodles in 神埼市, saga.",,,,https://kogaseimen.com/,,,,33.311890,130.371470,,verificado,no comprobado,,,2585
+jp-saga-iimen-ac2b7c1,有限会社井上製麺,神埼市,Pan y cereal,乾麺,,"Produces dried noodles in 神埼市, saga.",,,,https://iimen.com/,,,,33.311890,130.371470,,verificado,sí,ecommerce,,2612
+jp-saga-nabeshimahan-cfa141e,川原茶業,嬉野市,Té e infusiones,日本茶,,"Produces Japanese tea in 嬉野市, saga.",,,,https://nabeshimahan.com/,,,,33.128080,130.060080,,verificado,sí,ecommerce,,2471
+jp-saga-japaneseteashop-afd197e,徳永製茶（茶荘徳永）,嬉野市,Té e infusiones,日本茶,,"Produces Japanese tea in 嬉野市, saga.",,,,https://japaneseteashop.com/,,,,33.128080,130.060080,,verificado,sí,ecommerce,,2520
+game-brew,GAME BREW,Yoshinogari,Cerveza,,吉田273-12,Brewery producing beer at its Yoshinogari unit.,,,,https://gamebrew.jp/,,https://www.instagram.com/gamebrew_japan/,,33.32122,130.39886,,parcial,no comprobado,,,257
+yobuko-manbou-karatsu,呼子萬坊,Karatsu,Pescado,Ika shumai,,Produces its signature squid shumai and other seafood products in Yobuko.,,,,https://www.manbou.co.jp/,,,,33.45008,129.96825,,verificado,sí,ecommerce,,2258
+takezaki-kaisan-tara,竹崎海産,Tara,Pescado,"Oysters, crab",佐賀県藤津郡太良町多良4261-1,Farms oysters and catches seafood in the Ariake Sea from its Tara unit.,,+81954670603,,https://takezaki-kaisan.com/,,,,33.007710,130.123230,,verificado,sí,telefono,,3023

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 import { DetailDesktopNav } from "@/components/detail-desktop-nav";
 import {
@@ -11,17 +11,19 @@ import {
   readQueryParam,
 } from "@/lib/catalog-navigation";
 import {
-  CATALOG_UNIT,
+  findCountry,
   findProducerBySlug,
   listCategories,
   normalizeAreaSlug,
 } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
 
-type PageProps = {
-  params: Promise<{ slug: string }>;
+type ProducerPageProps = {
+  params: Promise<{ country: string; area: string; segment: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
+
+export const dynamic = "force-dynamic";
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
@@ -45,70 +47,80 @@ function formatFieldValue(key: string, value: string): string {
     : value;
 }
 
-export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const query = await searchParams;
-  const area = normalizeAreaSlug(readQueryParam(query, "area"));
-  if (!area) {
-    return {
-      title: `Select an ${CATALOG_UNIT.one}`,
-      description: `The profile needs an ${CATALOG_UNIT.one} to resolve the right CSV.`,
-    };
-  }
+export async function generateMetadata({ params }: ProducerPageProps): Promise<Metadata> {
+  const { country: countrySlug, area: rawArea, segment } = await params;
+  const country = findCountry(countrySlug);
+  const area = country ? normalizeAreaSlug(country.slug, rawArea) : "";
+  const producer = country && area
+    ? await findProducerBySlug(segment, country.slug, area)
+    : null;
 
-  const producer = await findProducerBySlug(slug, area);
-
-  if (!producer) {
+  if (!producer || !country) {
     return {
       title: "Producer not found",
-      description: "That producer is not in the CSV.",
+      description: "That producer is not in the CSV catalog.",
     };
   }
 
   return {
     title: producer.name,
     description: `${producer.city} · ${producer.categories.join(" · ")}`,
+    alternates: {
+      canonical: buildProducerHref(producer, { country: country.slug, area }),
+    },
   };
 }
 
-export default async function ProducerPage({ params, searchParams }: PageProps) {
-  const { slug } = await params;
-  const query = await searchParams;
-  const area = normalizeAreaSlug(readQueryParam(query, "area"));
-  if (!area) {
-    redirect("/");
+export default async function ProducerPage({ params, searchParams }: ProducerPageProps) {
+  const [{ country: rawCountry, area: rawArea, segment }, query] = await Promise.all([
+    params,
+    searchParams,
+  ]);
+  const country = findCountry(rawCountry);
+  const area = country ? normalizeAreaSlug(country.slug, rawArea) : "";
+
+  if (!country || !area) {
+    notFound();
   }
 
   const [producer, categories] = await Promise.all([
-    findProducerBySlug(slug, area),
-    listCategories(area),
+    findProducerBySlug(segment, country.slug, area),
+    listCategories(country.slug, area),
   ]);
 
   if (!producer) {
     notFound();
   }
 
-  const municipality = readQueryParam(query, "municipio");
+  const municipality =
+    readQueryParam(query, "municipality") || readQueryParam(query, "municipio");
   const category = readQueryParam(query, "category");
   const highlight = readQueryParam(query, "highlight");
   const lat = readQueryParam(query, "lat");
   const lon = readQueryParam(query, "lon");
   const canonicalSegment = buildProducerPathSegment(producer.slug);
-  const backHref = buildCatalogHref({ area, category, highlight: producer.slug });
+  const backHref = buildCatalogHref({
+    country: country.slug,
+    area,
+    category,
+    highlight: producer.slug,
+  });
 
-  if (slug !== canonicalSegment) {
-    redirect(
-      buildProducerHref(
-        producer,
-        {
-          municipality,
-          category,
-          highlight: highlight ? producer.slug : undefined,
-          lat,
-          lon,
-          area,
-        },
-      ),
+  if (
+    rawCountry !== country.slug ||
+    rawArea !== area ||
+    segment !== canonicalSegment
+  ) {
+    permanentRedirect(
+      buildProducerHref(producer, {
+        country: country.slug,
+        area,
+        municipality,
+        category,
+        highlight: highlight ? producer.slug : undefined,
+        lat,
+        lon,
+      }),
     );
   }
 
@@ -120,6 +132,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
   const facebook = getFieldValue(producer.fields, "Facebook");
   const subcategory = getFieldValue(producer.fields, "subcategoria");
   const phoneHref = buildPhoneHref(phone);
+  const publicFields = Object.entries(producer.fields);
 
   return (
     <main className="detail-page">
@@ -129,7 +142,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
         </Link>
       </div>
       <section className="detail-shell">
-        <DetailDesktopNav categories={categories} area={area} />
+        <DetailDesktopNav categories={categories} country={country.slug} area={area} />
         <Link href={backHref} className="detail-back-link detail-back-link--desktop">
           ← Back to the map
         </Link>
@@ -191,7 +204,7 @@ export default async function ProducerPage({ params, searchParams }: PageProps) 
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(producer.fields).map(([key, value]) => (
+                {publicFields.map(([key, value]) => (
                   <tr key={key}>
                     <td>{getFieldLabel(key)}</td>
                     <td>{formatFieldValue(key, value)}</td>

@@ -8,10 +8,11 @@ import { getCategoryIcon } from "@/lib/get-category-icon";
 
 type DetailDesktopNavProps = {
   categories: string[];
-  area?: string;
+  country: string;
+  area: string;
 };
 
-export function DetailDesktopNav({ categories, area = "" }: DetailDesktopNavProps) {
+export function DetailDesktopNav({ categories, country, area }: DetailDesktopNavProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
 
@@ -35,7 +36,7 @@ export function DetailDesktopNav({ categories, area = "" }: DetailDesktopNavProp
 
   return (
     <nav ref={rootRef} className="detail-desktop-nav" aria-label="Navigation">
-      <Link href={buildCatalogHref({ area })} className="detail-desktop-nav__home">
+      <Link href={buildCatalogHref({ country, area })} className="detail-desktop-nav__home">
         Map
       </Link>
       <div className="nav-dropdown">
@@ -61,7 +62,7 @@ export function DetailDesktopNav({ categories, area = "" }: DetailDesktopNavProp
             className="nav-dropdown__panel"
           >
             <Link
-              href={buildCatalogHref({ area })}
+              href={buildCatalogHref({ country, area })}
               role="menuitem"
               className="nav-dropdown__item"
               onClick={close}
@@ -74,7 +75,7 @@ export function DetailDesktopNav({ categories, area = "" }: DetailDesktopNavProp
             {categories.map((cat) => (
               <Link
                 key={cat}
-                href={buildCatalogHref({ area, category: cat })}
+                href={buildCatalogHref({ country, area, category: cat })}
                 role="menuitem"
                 className="nav-dropdown__item"
                 onClick={close}

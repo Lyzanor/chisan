@@ -64,11 +64,13 @@ const userPinIcon = L.divIcon({
 
 function BoundsAwareMarkers({
   points,
+  country,
   area,
   highlightedSlug,
   userLocation,
 }: {
   points: ProducerMapPoint[];
+  country: string;
   area: string;
   highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
@@ -140,7 +142,7 @@ function BoundsAwareMarkers({
             <br />
             {point.city} · {point.categories.join(" · ")}
             <br />
-            <Link href={buildProducerHref(point, { area })}>Open profile</Link>
+            <Link href={buildProducerHref(point, { country, area })}>Open profile</Link>
           </Popup>
         </Marker>
       ))}
@@ -150,11 +152,13 @@ function BoundsAwareMarkers({
 
 export default function ProducersMapInner({
   points,
+  country,
   area,
   highlightedSlug,
   userLocation,
 }: {
   points: ProducerMapPoint[];
+  country: string;
   area: string;
   highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
@@ -175,6 +179,7 @@ export default function ProducersMapInner({
       />
       <BoundsAwareMarkers
         points={points}
+        country={country}
         area={area}
         highlightedSlug={highlightedSlug}
         userLocation={userLocation}

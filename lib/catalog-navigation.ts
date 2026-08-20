@@ -1,10 +1,16 @@
 export type CatalogNavigationContext = {
+  country?: string;
+  area?: string;
   municipality?: string;
   category?: string;
   highlight?: string | number;
   lat?: string | number;
   lon?: string | number;
-  area?: string;
+};
+
+type ProducerNavigationContext = CatalogNavigationContext & {
+  country: string;
+  area: string;
 };
 
 export function readQueryParam(
@@ -29,7 +35,6 @@ function appendParam(params: URLSearchParams, key: string, value?: string | numb
 function buildContextParams(context: CatalogNavigationContext): URLSearchParams {
   const params = new URLSearchParams();
 
-  appendParam(params, "area", context.area);
   appendParam(params, "municipality", context.municipality);
   appendParam(params, "category", context.category);
   appendParam(params, "highlight", context.highlight);
@@ -42,8 +47,15 @@ function buildContextParams(context: CatalogNavigationContext): URLSearchParams 
 export function buildCatalogHref(context: CatalogNavigationContext): string {
   const params = buildContextParams(context);
   const queryString = params.toString();
+  const country = context.country?.trim();
+  const area = context.area?.trim();
+  const path = country
+    ? area
+      ? `/${encodeURIComponent(country)}/${encodeURIComponent(area)}`
+      : `/${encodeURIComponent(country)}`
+    : "/";
 
-  return queryString ? `/?${queryString}` : "/";
+  return queryString ? `${path}?${queryString}` : path;
 }
 
 export function buildProducerPathSegment(slug: string): string {
@@ -52,11 +64,11 @@ export function buildProducerPathSegment(slug: string): string {
 
 export function buildProducerHref(
   producer: { slug: string },
-  context: CatalogNavigationContext,
+  context: ProducerNavigationContext,
 ): string {
   const params = buildContextParams(context);
   const queryString = params.toString();
-  const path = `/p/${buildProducerPathSegment(producer.slug)}`;
+  const path = `/${encodeURIComponent(context.country)}/${encodeURIComponent(context.area)}/${buildProducerPathSegment(producer.slug)}`;
 
   return queryString ? `${path}?${queryString}` : path;
 }

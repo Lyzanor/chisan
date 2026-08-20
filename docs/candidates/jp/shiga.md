@@ -18,8 +18,8 @@ confirmar contra la web de cada bodega.
 - **喜多酒造 (Higashiomi, Shiga)** no es 喜多の華酒造場 (Kitakata, Fukushima) ni
   北島酒造, que está en esta misma tabla. Y hay un 喜多酒造 más en Kashihara
   (Nara), ya en el CSV como `Kita Shuzo`. ⚠ **Mismo rōmaji propuesto que una fila
-  existente**: al escribirla, el `slug` es único por área, así que no colisiona,
-  pero la confusión humana sí.
+  existente**: el `slug` es único por país, así que al escribirla habrá que
+  añadir un calificador verificable y resolver también la confusión humana.
 - **草津市 (Kusatsu, Shiga)** no es 草津町 (Gunma, el balneario).
 
 ## Qué falta

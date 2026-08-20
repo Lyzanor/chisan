@@ -77,7 +77,7 @@
 {"slug":"kuhler-krug","action":"keep","sources":[{"url":"https://www.brauhaus-kuehler-krug.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"lammbrauerei","action":"merge","targetSlug":"lammbrauerei-untergroningen","sources":[{"url":"https://de.wikipedia.org/wiki/Liste_aktiver_Brauereien_in_Baden-W%C3%BCrttemberg","type":"other","checkedAt":"2026-08-08","claims":["identity","duplicate"]}]}
 {"slug":"lammbrauerei-untergroningen","action":"keep","sources":[{"url":"https://www.lammbrauerei.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
-{"slug":"lowenbrauerei","action":"keep","sources":[{"url":"https://www2.loewenbrauerei-braeunlingen.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"lowenbrauerei-braunlingen","action":"keep","sources":[{"url":"https://www2.loewenbrauerei-braeunlingen.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"lowenbrauerei-wasseralfingen","action":"keep","sources":[{"url":"http://wasseralfinger.de","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"markgrafler-brauwerk","action":"keep","sources":[{"url":"https://www.markgraefler-brauwerk.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"monchwasen","action":"keep","sources":[{"url":"https://www.moenchwasen.com","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
@@ -160,7 +160,7 @@
 {"slug":"kulturbrauerei-heidelberg","action":"keep","sources":[{"url":"https://www.heidelberger-kulturbrauerei.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"landbrauhaus-brauhaus-2-0-gmbh","action":"keep","sources":[{"url":"https://www.landbrauhaus.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"leutkircher-kulturbrauerei","action":"keep","sources":[{"url":"https://www.leutkircher-kulturbrauerei.de","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
-{"slug":"lindenbrau","action":"keep","sources":[{"url":"https://lindenbraeu-waldbronn.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"lindenbrau-waldbronn","action":"keep","sources":[{"url":"https://lindenbraeu-waldbronn.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"lobdengau-brauerei","action":"keep","sources":[{"url":"https://www.lobdengau-brauerei.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"loffler","action":"keep","sources":[{"url":"https://de.wikipedia.org/wiki/Liste_aktiver_Brauereien_in_Baden-W%C3%BCrttemberg","type":"other","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"maiwald-12","action":"keep","sources":[{"url":"https://www.maiwald12.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
@@ -177,7 +177,7 @@
 {"slug":"salzscheuer-brau","action":"keep","sources":[{"url":"http://www.salzscheuer.com","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"schmidener-eintracht","action":"keep","sources":[{"url":"https://www.haemmerle-braeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"schussenrieder-erlebnisbrauerei","action":"merge","targetSlug":"schussenrieder-brauerei-ott-gmbh-und-co-kg","sources":[{"url":"https://www.schussenrieder.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","duplicate"]}]}
-{"slug":"schwanen-brau","action":"keep","sources":[{"url":"https://www.schwanen-braeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"schwanen-brau-filderstadt","action":"keep","sources":[{"url":"https://www.schwanen-braeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"sophies-brauhaus","action":"keep","sources":[{"url":"https://www.sophies-brauhaus.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"stiftsscheuer","action":"keep","sources":[{"url":"http://www.stiftsscheuer.de","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"stoffels-stadtbrau","action":"keep","sources":[{"url":"https://www.stoffels-stadtbraeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}

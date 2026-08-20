@@ -7,7 +7,7 @@ import { parse } from "csv-parse/sync";
 type RawCsvRow = Record<string, string | undefined>;
 
 export type ProducerCsvRow = {
-  id: number;
+  producerId: number;
   slug: string;
   name: string;
   city: string;
@@ -88,6 +88,8 @@ type AreaRegistryEntry = AreaOption & {
   regionSlug: string;
 };
 
+export type AreaLocation = AreaRegistryEntry;
+
 function titleCase(slug: string): string {
   return slug
     .split("-")
@@ -166,9 +168,9 @@ function loadCountries(): Country[] {
   });
 }
 
-function loadAliases(): Map<string, string> {
+function loadAliases(): Map<string, Map<string, string>> {
   const root = path.resolve(process.cwd(), CSV_DATA_DIR);
-  const aliases = new Map<string, string>();
+  const aliases = new Map<string, Map<string, string>>();
 
   for (const countrySlug of fs
     .readdirSync(root, { withFileTypes: true })
@@ -177,9 +179,11 @@ function loadAliases(): Map<string, string> {
     const manifestPath = path.join(root, countrySlug, COUNTRY_MANIFEST);
     if (!fs.existsSync(manifestPath)) continue;
     const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as CountryManifest;
+    const countryAliases = new Map<string, string>();
     for (const [alias, target] of Object.entries(manifest.aliases ?? {})) {
-      aliases.set(alias, target);
+      countryAliases.set(alias, target);
     }
+    aliases.set(countrySlug, countryAliases);
   }
 
   return aliases;
@@ -188,13 +192,17 @@ function loadAliases(): Map<string, string> {
 const COUNTRIES = loadCountries();
 const AREA_ALIASES = loadAliases();
 
+function areaRegistryKey(country: string, area: string): string {
+  return `${country}/${area}`;
+}
+
 const AREA_REGISTRY: Map<string, AreaRegistryEntry> = new Map(
   COUNTRIES.flatMap((country) =>
     country.regions.flatMap((region) =>
       region.areas.map(
         (area) =>
           [
-            area.slug,
+            areaRegistryKey(country.slug, area.slug),
             { ...area, countrySlug: country.slug, regionSlug: region.slug },
           ] as [string, AreaRegistryEntry],
       ),
@@ -202,22 +210,28 @@ const AREA_REGISTRY: Map<string, AreaRegistryEntry> = new Map(
   ),
 );
 
-export function normalizeAreaSlug(area: string): string {
+export function normalizeAreaSlug(country: string, area: string): string {
+  const countrySlug = cleanCell(country).toLowerCase();
   const slug = cleanCell(area)
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase();
-  const normalizedSlug = AREA_ALIASES.get(slug) ?? slug;
+  const normalizedSlug = AREA_ALIASES.get(countrySlug)?.get(slug) ?? slug;
 
-  return AREA_REGISTRY.has(normalizedSlug) ? normalizedSlug : "";
+  return AREA_REGISTRY.has(areaRegistryKey(countrySlug, normalizedSlug)) ? normalizedSlug : "";
 }
 
-function resolveAreaCsvPath(area: string): string {
-  const normalizedArea = normalizeAreaSlug(area);
-  const entry = AREA_REGISTRY.get(normalizedArea);
+export function findArea(country: string, area: string): AreaLocation | null {
+  const countrySlug = cleanCell(country).toLowerCase();
+  const normalizedArea = normalizeAreaSlug(countrySlug, area);
+  return AREA_REGISTRY.get(areaRegistryKey(countrySlug, normalizedArea)) ?? null;
+}
+
+function resolveAreaCsvPath(country: string, area: string): string {
+  const entry = findArea(country, area);
 
   if (!entry) {
-    throw new Error(`Unknown area '${area}'.`);
+    throw new Error(`Unknown area '${country}/${area}'.`);
   }
 
   return path.resolve(
@@ -225,21 +239,25 @@ function resolveAreaCsvPath(area: string): string {
     CSV_DATA_DIR,
     entry.countrySlug,
     entry.regionSlug,
-    `${normalizedArea}.csv`,
+    `${entry.slug}.csv`,
   );
 }
 
-export function getAreaLabel(area: string): string {
-  return AREA_REGISTRY.get(normalizeAreaSlug(area))?.label ?? "";
-}
-
-export function getAreaCountrySlug(area: string): string {
-  return AREA_REGISTRY.get(normalizeAreaSlug(area))?.countrySlug ?? "";
+export function getAreaLabel(country: string, area: string): string {
+  return findArea(country, area)?.label ?? "";
 }
 
 export function listAreas(): AreaOption[] {
   return COUNTRIES.flatMap(({ regions }) =>
     regions.flatMap(({ areas }) => areas.map(({ slug, label }) => ({ slug, label }))),
+  );
+}
+
+export function listCountryAreaParams(): { country: string; area: string }[] {
+  return COUNTRIES.flatMap((country) =>
+    country.regions.flatMap((region) =>
+      region.areas.map((area) => ({ country: country.slug, area: area.slug })),
+    ),
   );
 }
 
@@ -260,6 +278,7 @@ const DEFAULT_PRODUCER_IMAGE_SRC = "/productores/generica.webp";
 const ONLINE_SALES_COLUMN = "Venta online";
 const DEFAULT_ONLINE_SALES_VALUE = "no comprobado";
 const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
+const PRODUCER_ID_COLUMN = "producer_id";
 const CATEGORY_SEPARATOR = "|";
 
 function cleanCell(value: string | undefined): string {
@@ -278,10 +297,16 @@ function normalizeSearch(value: string): string {
 
 function slugifySegment(value: string): string {
   return value
-    .normalize("NFD")
+    .normalize("NFKD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/ß/g, "ss")
+    .replace(/æ/g, "ae")
+    .replace(/ø/g, "o")
+    .replace(/ł/g, "l")
+    .replace(/ð/g, "d")
+    .replace(/þ/g, "th")
+    .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .replace(/-+/g, "-");
 }
@@ -293,6 +318,16 @@ function buildDefaultSlug(name: string, city: string, id: number): string {
 
 function readSlug(fields: Record<string, string>, name: string, city: string, id: number): string {
   return slugifySegment(fields.slug || "") || buildDefaultSlug(name, city, id);
+}
+
+function readProducerId(fields: Record<string, string>): number {
+  const value = cleanCell(fields[PRODUCER_ID_COLUMN]);
+  const parsed = Number.parseInt(value, 10);
+  if (!/^[1-9]\d*$/.test(value) || !Number.isSafeInteger(parsed)) {
+    const rowLabel = fields.slug || fields.nombre || "unknown row";
+    throw new Error(`Invalid producer_id for '${rowLabel}'. Run check:csv for details.`);
+  }
+  return parsed;
 }
 
 function readFeaturedProducts(fields: Record<string, string>): string {
@@ -442,18 +477,20 @@ function calculateDistance(
 
 const csvCache = new Map<string, ProducerCsvRow[]>();
 
-async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
-  const cacheKey = normalizeAreaSlug(area);
-  if (!cacheKey) {
+async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
+  const normalizedArea = normalizeAreaSlug(country, area);
+  const countrySlug = cleanCell(country).toLowerCase();
+  if (!normalizedArea) {
     return [];
   }
+  const cacheKey = areaRegistryKey(countrySlug, normalizedArea);
 
   const cached = csvCache.get(cacheKey);
   if (cached) {
     return cached;
   }
 
-  const csvPath = resolveAreaCsvPath(cacheKey);
+  const csvPath = resolveAreaCsvPath(countrySlug, normalizedArea);
   const csvRaw = await readFile(csvPath, "utf8");
   const parsedRows = parse(csvRaw, {
     columns: true,
@@ -461,15 +498,15 @@ async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
     skip_empty_lines: true,
   }) as RawCsvRow[];
 
-  const rows = parsedRows.map((row, index) => {
+  const rows = parsedRows.map((row) => {
     const fields = Object.fromEntries(
       Object.entries(row).map(([key, value]) => [cleanCell(key), cleanCell(value)]),
     );
     if (!fields[ONLINE_SALES_COLUMN]) {
       fields[ONLINE_SALES_COLUMN] = DEFAULT_ONLINE_SALES_VALUE;
     }
-    const id = index + 1;
-    const name = fields.nombre || `Fila ${id}`;
+    const producerId = readProducerId(fields);
+    const name = fields.nombre || `Fila ${producerId}`;
     const city = fields.municipio || "Sin municipio";
     const category = fields.categoria || "Sin categoría";
     const additionalCategories = readAdditionalCategories(fields).filter(
@@ -478,12 +515,12 @@ async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
     const categories = [category, ...additionalCategories];
     const featuredProducts = readFeaturedProducts(fields);
     const imageSrc = readImageSrc(fields);
-    const slug = readSlug(fields, name, city, id);
+    const slug = readSlug(fields, name, city, producerId);
 
     fields.slug = slug;
 
     return {
-      id,
+      producerId,
       slug,
       name,
       city,
@@ -502,43 +539,35 @@ async function loadCsvRows(area = ""): Promise<ProducerCsvRow[]> {
   return rows;
 }
 
-function parseLegacyProducerId(rawSegment: string): number | null {
-  const candidate = rawSegment.trim();
-  const id = Number.parseInt(candidate ?? "", 10);
-
-  if (!/^\d+$/.test(candidate) || !Number.isInteger(id) || id < 1) {
-    return null;
-  }
-
-  return id;
-}
-
-export async function findProducerBySlug(rawSegment: string, area = ""): Promise<ProducerCsvRow | null> {
+export async function findProducerBySlug(
+  rawSegment: string,
+  country = "",
+  area = "",
+): Promise<ProducerCsvRow | null> {
   const segment = slugifySegment(rawSegment);
   if (!segment) {
     return null;
   }
 
-  const rows = await loadCsvRows(area);
-  const exactMatch = rows.find((row) => row.slug === segment);
-  if (exactMatch) {
-    return exactMatch;
-  }
-
-  const legacySlugMatch = segment.match(/^\d+-(.+)$/);
-  if (legacySlugMatch?.[1]) {
-    const producer = rows.find((row) => row.slug === legacySlugMatch[1]);
-    if (producer) {
-      return producer;
-    }
-  }
-
-  const legacyId = parseLegacyProducerId(segment);
-  return legacyId === null ? null : rows[legacyId - 1] ?? null;
+  const rows = await loadCsvRows(country, area);
+  return rows.find((row) => row.slug === segment) ?? null;
 }
 
-export async function listCategories(area = ""): Promise<string[]> {
-  const rows = await loadCsvRows(area);
+export async function listProducerRouteParams(): Promise<
+  { country: string; area: string; slug: string }[]
+> {
+  const routes: { country: string; area: string; slug: string }[] = [];
+
+  for (const { country, area } of listCountryAreaParams()) {
+    const rows = await loadCsvRows(country, area);
+    routes.push(...rows.map((row) => ({ country, area, slug: row.slug })));
+  }
+
+  return routes;
+}
+
+export async function listCategories(country = "", area = ""): Promise<string[]> {
+  const rows = await loadCsvRows(country, area);
   const counts = new Map<string, number>();
 
   for (const row of rows) {
@@ -557,9 +586,10 @@ export async function listCategories(area = ""): Promise<string[]> {
 export async function listMunicipalitySummaries(
   category = "",
   limit = 12,
+  country = "",
   area = "",
 ): Promise<MunicipalitySummary[]> {
-  const rows = await loadCsvRows(area);
+  const rows = await loadCsvRows(country, area);
   const normalizedCategory = normalizeSearch(category);
   const counts = new Map<string, number>();
 
@@ -623,9 +653,10 @@ export function toProducerMapPoints(rows: ProducerCsvRow[]): ProducerMapPoint[] 
 
 export async function searchProducers(
   filters: ProducerSearchFilters,
+  country = "",
   area = "",
 ): Promise<ProducerCsvRow[]> {
-  const rows = await loadCsvRows(area);
+  const rows = await loadCsvRows(country, area);
   const normalizedMunicipality = normalizeSearch(filters.municipality);
   const normalizedCategory = normalizeSearch(filters.category);
 

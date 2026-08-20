@@ -6,6 +6,9 @@
 // contract expects to be recorded — a new producer, a changed `verificacion` or
 // `Venta online`, or a removed row (purge/merge) — has no matching line touched
 // in the matching area evidence ledger.
+// Rows match by stable `producer_id` when both revisions have it, then by slug.
+// During the one-time ID bootstrap, a unique set of unchanged identity/location
+// fields prevents a pure slug cleanup from looking like an add plus a removal.
 //
 // It never fails the build. It makes the evidence invariant visible while a
 // ledger is still incomplete, where `check:evidence` alone cannot require a
@@ -27,6 +30,7 @@ function git(args) {
   try {
     return execFileSync("git", args, {
       encoding: "utf8",
+      maxBuffer: 20 * 1024 * 1024,
       stdio: ["pipe", "pipe", "ignore"],
     });
   } catch {
@@ -66,17 +70,12 @@ function currentContent(relPath) {
 }
 
 function parseCsvRows(content) {
-  if (!content.trim()) return new Map();
-  const rows = parse(content, {
+  if (!content.trim()) return [];
+  return parse(content, {
     bom: true,
     columns: true,
     skip_empty_lines: true,
   });
-  return new Map(
-    rows
-      .map((row) => [String(row.slug ?? "").trim(), row])
-      .filter(([slug]) => slug),
-  );
 }
 
 function parseJsonlBySlug(content) {
@@ -99,6 +98,12 @@ function value(row, key) {
   return String(row?.[key] ?? "").trim();
 }
 
+function bootstrapIdentity(row) {
+  return ["nombre", "municipio", "direccion", "web", "lat", "lon"]
+    .map((key) => value(row, key))
+    .join("\0");
+}
+
 // Slugs whose evidence line was added or changed in the working tree.
 function touchedEvidenceSlugs(evidencePath) {
   const head = parseJsonlBySlug(headContent(evidencePath));
@@ -112,13 +117,40 @@ function touchedEvidenceSlugs(evidencePath) {
 
 function decisionsNeedingEvidence(headRows, currentRows) {
   const needs = [];
+  const headById = new Map(
+    headRows
+      .map((row) => [value(row, "producer_id"), row])
+      .filter(([producerId]) => producerId),
+  );
+  const headBySlug = new Map(
+    headRows
+      .map((row) => [value(row, "slug"), row])
+      .filter(([slug]) => slug),
+  );
+  const bootstrapOwners = new Map();
+  if (!headRows.some((row) => value(row, "producer_id"))) {
+    for (const row of headRows) {
+      const key = bootstrapIdentity(row);
+      const owners = bootstrapOwners.get(key) ?? [];
+      owners.push(row);
+      bootstrapOwners.set(key, owners);
+    }
+  }
+  const matchedHeadSlugs = new Set();
 
-  for (const [slug, row] of currentRows) {
-    const prev = headRows.get(slug);
+  for (const row of currentRows) {
+    const slug = value(row, "slug");
+    const producerId = value(row, "producer_id");
+    const bootstrapMatches = bootstrapOwners.get(bootstrapIdentity(row)) ?? [];
+    const prev =
+      (producerId ? headById.get(producerId) : undefined) ??
+      headBySlug.get(slug) ??
+      (bootstrapMatches.length === 1 ? bootstrapMatches[0] : undefined);
     if (!prev) {
       needs.push({ slug, reason: "new producer" });
       continue;
     }
+    matchedHeadSlugs.add(value(prev, "slug"));
     const verifChanged =
       value(prev, "verificacion") !== value(row, "verificacion");
     const ventaChanged =
@@ -139,8 +171,9 @@ function decisionsNeedingEvidence(headRows, currentRows) {
     needs.push({ slug, reason: parts.join(", ") });
   }
 
-  for (const slug of headRows.keys()) {
-    if (!currentRows.has(slug)) {
+  for (const row of headRows) {
+    const slug = value(row, "slug");
+    if (!matchedHeadSlugs.has(slug)) {
       needs.push({ slug, reason: "removed (purge/merge)" });
     }
   }

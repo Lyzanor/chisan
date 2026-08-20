@@ -1,61 +1,61 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
-izumibashi-shuzo-ebina,Izumibashi Shuzo,Ebina,Sake,,神奈川県海老名市下今泉5-5-1,,,+81462311338,,http://izumibashi.com/,,,,35.465294,139.390335,,parcial,no comprobado,,
-kumazawa-shuzo-chigasaki,Kumazawa Shuzo,Chigasaki,Sake,,神奈川県茅ヶ崎市香川7-10-7,,,+81467526118,,http://www.kumazawa.jp/,,,,35.3605,139.4021,,parcial,no comprobado,,
-kikkawa-jozo-isehara,Kikkawa Jozo,Isehara,Sake,,神奈川県伊勢原市神戸681,,,+81463953071,,https://kikkawa-jozo.com/,,,,35.398216,139.287399,,parcial,no comprobado,,
-kanai-shuzoten-hadano,Kanai Shuzoten,Hadano,Sake,,神奈川県秦野市堀山下182-1,,,+81463887521,,https://www.kaneishuzo.co.jp/,,,,35.382633,139.196686,,parcial,no comprobado,,
-koganei-shuzo-atsugi,Koganei Shuzo,Atsugi,Sake,,神奈川県厚木市七沢769,,,+81462480124,,http://www.koganeishuzou.com/,,,,35.444031,139.298203,,parcial,no comprobado,,
-oyataka-shuzo-aikawa,Oyataka Shuzo,Aikawa,Sake,,神奈川県愛甲郡愛川町田代521,,,+81462810028,,http://www.hourai.jp/,,,,35.528461,139.289001,,parcial,no comprobado,,
-kubota-shuzo-sagamihara,Kubota Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区根小屋702,,,+81427840045,,http://www.tsukui.ne.jp/kubota/,,,,35.571915,139.279922,,parcial,no comprobado,,
-shimizu-shuzo-sagamihara,Shimizu Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区中野1322,,,+81427840010,,http://www.shimizusyuzo.com/,,,,35.587254,139.250748,,parcial,no comprobado,,
-ishii-jozo-oi,Ishii Jozo,Oi,Sake,,神奈川県足柄上郡大井町上大井954,,,+81465823241,,http://www.ishiijozo.com/,,,,35.320938,139.166962,,parcial,no comprobado,,
-inoue-shuzo-oi,Inoue Shuzo,Oi,Sake,,神奈川県足柄上郡大井町上大井552,,,+81465820325,,http://www.hakoneyama.co.jp,,,,35.322258,139.160767,,parcial,no comprobado,,
-kawanishiya-shuzoten-yamakita,Kawanishiya Shuzoten,Yamakita,Sake,,神奈川県足柄上郡山北町山北250,,,+81465750009,,http://www.kanagawa-jizake.or.jp/kawanishiya/,,,,35.364208,139.095093,,parcial,no comprobado,,
-seto-shuzoten-kaisei,Seto Shuzoten,Kaisei,Sake,,神奈川県足柄上郡開成町金井島17,,,+81465820055,,http://www.kanagawa-jizake.or.jp/seto/,,,,35.342831,139.112106,,parcial,no comprobado,,
-nakazawa-shuzo-matsuda,Nakazawa Shuzo,Matsuda,Sake,,神奈川県足柄上郡松田町松田惣領1875,,,+81465820024,,http://www.matsumidori.jp/,,,,35.346249,139.138565,,parcial,no comprobado,,
-latteria-bebe-kamakura-kamakura,Latteria BeBè Kamakura,Kamakura,Lácteos y quesos,"モッツァレッラ, リコッタ, ブッラータ",神奈川県鎌倉市御成町11-17,Produces cheese and dairy products at its Kamakura unit.,,,,https://latteria-bebe.com/,,,,35.319170,139.547220,,verificado,sí,ecommerce,
-osteria-e-bottega-s-chigasaki,Osteria e Bottega S,Chigasaki,Lácteos y quesos,,神奈川県茅ヶ崎市東海岸北1-5-7,Produces cheese and dairy products at its Chigasaki unit.,,,,https://osteriaebottegas.com/,,,,35.333860,139.404720,,verificado,no comprobado,,
-sanktgallenbrewery-atsugi,サンクトガーレン,Atsugi,Cerveza,,,Brews beer at its Atsugi unit.,,,,https://www.sanktgallenbrewery.com/,,,,35.443060,139.362500,,verificado,no comprobado,,
-yorocco-beer-zushi,ヨロッコビール,Zushi,Cerveza,,,Brews beer at its Zushi unit.,,,,https://yorocco-beer.com/,,,,35.295610,139.580330,,verificado,no comprobado,,
-rainerucheese-aikawa,ライネルチーズ工房,Aikawa,Lácteos y quesos,,神奈川県愛甲郡愛川町中津2647-10,Produces cheese and dairy products at its Aikawa unit.,,,,https://rainerucheese.jp/,,,,35.528810,139.321640,,verificado,no comprobado,,
-yokohamabeer-yokohama,横浜ビール,Yokohama,Cerveza,,,Brews beer at its Yokohama unit.,,,,https://yokohamabeer.com/,,,,35.450330,139.634220,,verificado,sí,ecommerce,
-kamakura-beer-kamakura,鎌倉ビール醸造,Kamakura,Cerveza,,,Brews beer at its Kamakura unit.,,,,https://www.kamakura-beer.co.jp/,,,,35.319170,139.547220,,verificado,sí,ecommerce,
-yokohamawinery-yokohama,横濱ワイナリー 株式会社,Yokohama,Vino,,神奈川県横浜市中区新山下1-3-12鈴木ビル1F,Produces wine at its Yokohama unit.,,+81452289713,,https://yokohamawinery.com/,,,,35.450330,139.634220,,verificado,sí,ecommerce,
-takanashi-milk-yokohama,タカナシ乳業,Yokohama,Lácteos y quesos,"Brise de mer FAISSELLE, 北海道リコッタ, 北海道マスカルポーネ",神奈川県横浜市旭区本宿町５番地,Produces cheese and dairy products at its Yokohama unit.,,,,https://www.takanashi-milk.co.jp/,,,,35.450330,139.634220,,verificado,no comprobado,,
-tabechoku-21387,永島農園,Yokohama,Setas,"しいたけ, きくらげ",,Produces shiitake and wood ear mushrooms at its Yokohama unit.,,,,,,,,35.450330,139.634220,,parcial,sí,marketplace,
-tabechoku-27630,勘網,Yokosuka,Pescado,,,Produces fish and seafood at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,
-tabechoku-27682,鉄釜ひじき 海藻の房丸,Yokosuka,Pescado,,,Produces fish and seafood at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,
-tabechoku-20410,丸良水産,Yokosuka,Pescado,海苔,,Produces nori at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,
-tabechoku-3078438,【ジビエ総本家】小田原貴族ブランド,Odawara,Carne,,,Produces meat at its Odawara unit.,,,,,,,,35.264610,139.152220,,parcial,sí,marketplace,
-tabechoku-22147,みやじ豚,Fujisawa,Carne,,,Produces meat at its Fujisawa unit.,,,,,,,,35.338780,139.490890,,parcial,sí,marketplace,
-tabechoku-26962,霜島農園,Atsugi,Pan y cereal,ぶどう,,Produces grapes at its Atsugi unit.,,,,,,,,35.443060,139.362500,,parcial,sí,marketplace,
-tabechoku-26947,お米農家 曽我,Odawara,Pan y cereal,,,Produces grain products at its Odawara unit.,,,,,,,,35.264610,139.152220,,parcial,sí,marketplace,
-tabechoku-29222,佐野農園,Isehara,Fruta y verdura,"梨, ぶどう, 野菜",,"Produces pears, grapes and vegetables at its Isehara unit.",,,,,,,,35.402940,139.314970,,parcial,sí,marketplace,
-tabechoku-21955,あすなろファーム,Odawara,Fruta y verdura,"梅, 野菜",,Produces ume and vegetables at its Odawara unit.,,,,,,,,35.264610,139.152220,,parcial,sí,marketplace,
-tabechoku-3078860,くだかけ農園,Yamakita,Huevos,野菜,,Produces vegetables at its Yamakita unit.,,,,,,,,35.360580,139.083830,,parcial,sí,marketplace,
-tabechoku-21386,NO-RA ～農楽～,Aikawa,Fruta y verdura,,,Produces fruit and vegetables at its Aikawa unit.,,,,,,,,35.528810,139.321640,,parcial,sí,marketplace,
-tabechoku-23483,有機農園けのひ,Aikawa,Fruta y verdura,野菜,,Produces vegetables at its Aikawa unit.,,,,,,,,35.528810,139.321640,,parcial,sí,marketplace,
-tabechoku-22819,Kururu farm,Yokohama,Fruta y verdura,,,Produces fruit and vegetables at its Yokohama unit.,,,,,,,,35.450330,139.634220,,parcial,sí,marketplace,
-tabechoku-27186,カメーダ農園,Yokohama,Fruta y verdura,野菜,,Produces vegetables at its Yokohama unit.,,,,,,,,35.450330,139.634220,,parcial,sí,marketplace,
-tabechoku-20806,鈴也ファーム,Yokosuka,Fruta y verdura,,,Produces fruit and vegetables at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,
-tabechoku-28446,ニッポンルーバス,Ebina,Fruta y verdura,,,Produces fruit and vegetables at its Ebina unit.,,,,,,,,35.446420,139.390810,,parcial,sí,marketplace,
-tabechoku-23067,榎本農園,Yugawara,Fruta y verdura,柑橘,,Produces citrus fruit at its Yugawara unit.,,,,,,,,35.147890,139.108310,,parcial,sí,marketplace,
-tabechoku-21182,ぶるべの樹,Sagamihara,Fruta y verdura,ブルーベリー,,Produces blueberries at its Sagamihara unit.,,,,,,,,35.571420,139.373140,,parcial,sí,marketplace,
-tabechoku-3078762,さとくら農園,Sagamihara,Fruta y verdura,野菜,,Produces vegetables at its Sagamihara unit.,,,,,,,,35.571420,139.373140,,parcial,sí,marketplace,
-tabechoku-23858,渋谷ファーム,Fujisawa,Fruta y verdura,トマト,,Produces tomatoes at its Fujisawa unit.,,,,,,,,35.338780,139.490890,,parcial,sí,marketplace,
-tabechoku-22165,子どもの野菜湘南藤沢農場,Fujisawa,Fruta y verdura,野菜,,Produces vegetables at its Fujisawa unit.,,,,,,,,35.338780,139.490890,,parcial,sí,marketplace,
-jp-kanagawa-ukyou-8a38ce5,右京,小田原市,Dulces y repostería,和菓子,小田原市本町 4-3-29,"Produces Japanese confectionery in 小田原市, kanagawa.",,,,https://www.ukyou.jp/,,,,35.264610,139.152220,,verificado,no comprobado,,
-jp-kanagawa-suehiroan-co-825bc79,菓子匠　末広庵,川崎市,Dulces y repostería,和菓子,川崎市川崎区東田町 3-16,"Produces Japanese confectionery in 川崎市, kanagawa.",,,,https://www.suehiroan.co.jp/,,,,35.530890,139.703000,,verificado,sí,ecommerce,
-jp-kanagawa-yokohama-bunmeido-co-8e8d34c,文明堂,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 4-114,"Produces Japanese confectionery in 横浜市, kanagawa.",,,,https://yokohama-bunmeido.co.jp/,,,,35.450330,139.634220,,verificado,sí,ecommerce,
-jp-kanagawa-meigetsu-92f751c,御菓子司　名月,横浜市,Dulces y repostería,和菓子,横浜市金沢区六浦町 5-23-29,"Produces Japanese confectionery in 横浜市, kanagawa.",,,,https://meigetsu.org/,,,,35.450330,139.634220,,verificado,sí,ecommerce,
-jp-kanagawa-choshiya-co-a452648,銚子屋,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 7-150,"Produces Japanese confectionery in 横浜市, kanagawa.",,,,http://www.choshiya.co.jp/,,,,35.450330,139.634220,,verificado,sí,ecommerce,
-jp-kanagawa-yumochi-ff440cf,ちもと,箱根町,Dulces y repostería,和菓子,足柄下郡箱根町湯本 509,"Produces Japanese confectionery in 箱根町, kanagawa.",,,,https://www.yumochi.com/,,,,35.232360,139.106940,,verificado,sí,ecommerce,
-jp-kanagawa-atsugimikawaya-8a447e9,合資会社三河屋,厚木市,Aperitivos,米菓,,"Produces rice crackers in 厚木市, kanagawa.",,,,https://atsugimikawaya.com/,,,,35.443060,139.362500,,verificado,sí,ecommerce,
-jp-kanagawa-minoya-arare-001a899,株式会社美濃屋あられ,横浜市,Aperitivos,米菓,,"Produces rice crackers in 横浜市, kanagawa.",,,,https://minoya-arare.jp/,,,,35.450330,139.634220,,verificado,sí,ecommerce,
-jp-kanagawa-mikawaya-co-651ba7d,有限会社三河屋,茅ヶ崎市,Aperitivos,米菓,,"Produces rice crackers in 茅ヶ崎市, kanagawa.",,,,https://www.mikawaya.co.jp/,,,,35.333860,139.404720,,verificado,no comprobado,,
-t-k-brewing,T.K.Brewing,Kawasaki,Cerveza,,小田5-1-30,Brewery producing beer at its Kawasaki unit.,,,r.takabayashi@tkbrewing.com,https://tkbrewing.com/,,https://www.instagram.com/tkbrewing/,,35.53089,139.7030,,parcial,no comprobado,,
-humans-beer,HUMANS BEER,Yugawara,Cerveza,,福浦437-6,Brewery producing beer at its Yugawara unit.,,,,https://humansbeer.com/,,https://www.instagram.com/humansbeer/,,35.14789,139.10831,,parcial,no comprobado,,
-yokohama-bay-brewing,横浜ベイブルーイング (Yokohama Bay Brewing),Yokohama,Cerveza,,上矢部町2006,Brewery producing beer at its Yokohama unit.,,,,,,https://www.instagram.com/yokohamabaybrewing/,,35.45033,139.63422,,parcial,no comprobado,,
-passific-brewing,Passific Brewing,Chigasaki,Cerveza,,萩園2644-3,Brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/passificbrewing/,,35.33386,139.40472,,parcial,no comprobado,,
-barbaric-works,Barbaric WORKS,Chigasaki,Cerveza,,幸町23-16,Brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/barbaric_works/,,35.33386,139.40472,,parcial,no comprobado,,
-suzuhiro-kamaboko-odawara,鈴廣かまぼこ,Odawara,Pescado,Kamaboko,,Produces Odawara kamaboko and other fish-paste products.,,,,https://www.kamaboko.com/,,,,35.26461,139.15222,,verificado,sí,ecommerce,
-misaki-megumi-suisan-miura,三崎恵水産,Miura,Pescado,Tuna,,Processes and markets its branded tuna products from Miura.,,,,https://misaki-megumi.co.jp/,,,,35.14419,139.62072,,verificado,no comprobado,,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+izumibashi-shuzo-ebina,Izumibashi Shuzo,Ebina,Sake,,神奈川県海老名市下今泉5-5-1,,,+81462311338,,http://izumibashi.com/,,,,35.465294,139.390335,,parcial,no comprobado,,,461
+kumazawa-shuzo-chigasaki,Kumazawa Shuzo,Chigasaki,Sake,,神奈川県茅ヶ崎市香川7-10-7,,,+81467526118,,http://www.kumazawa.jp/,,,,35.3605,139.4021,,parcial,no comprobado,,,676
+kikkawa-jozo-isehara,Kikkawa Jozo,Isehara,Sake,,神奈川県伊勢原市神戸681,,,+81463953071,,https://kikkawa-jozo.com/,,,,35.398216,139.287399,,parcial,no comprobado,,,554
+kanai-shuzoten-hadano,Kanai Shuzoten,Hadano,Sake,,神奈川県秦野市堀山下182-1,,,+81463887521,,https://www.kaneishuzo.co.jp/,,,,35.382633,139.196686,,parcial,no comprobado,,,500
+koganei-shuzo-atsugi,Koganei Shuzo,Atsugi,Sake,,神奈川県厚木市七沢769,,,+81462480124,,http://www.koganeishuzou.com/,,,,35.444031,139.298203,,parcial,no comprobado,,,624
+oyataka-shuzo-aikawa,Oyataka Shuzo,Aikawa,Sake,,神奈川県愛甲郡愛川町田代521,,,+81462810028,,http://www.hourai.jp/,,,,35.528461,139.289001,,parcial,no comprobado,,,984
+kubota-shuzo-sagamihara,Kubota Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区根小屋702,,,+81427840045,,http://www.tsukui.ne.jp/kubota/,,,,35.571915,139.279922,,parcial,no comprobado,,,667
+shimizu-shuzo-sagamihara,Shimizu Shuzo,Sagamihara,Sake,,神奈川県相模原市緑区中野1322,,,+81427840010,,http://www.shimizusyuzo.com/,,,,35.587254,139.250748,,parcial,no comprobado,,,1097
+ishii-jozo-oi,Ishii Jozo,Oi,Sake,,神奈川県足柄上郡大井町上大井954,,,+81465823241,,http://www.ishiijozo.com/,,,,35.320938,139.166962,,parcial,no comprobado,,,424
+inoue-shuzo-oi,Inoue Shuzo,Oi,Sake,,神奈川県足柄上郡大井町上大井552,,,+81465820325,,http://www.hakoneyama.co.jp,,,,35.322258,139.160767,,parcial,no comprobado,,,410
+kawanishiya-shuzoten-yamakita,Kawanishiya Shuzoten,Yamakita,Sake,,神奈川県足柄上郡山北町山北250,,,+81465750009,,http://www.kanagawa-jizake.or.jp/kawanishiya/,,,,35.364208,139.095093,,parcial,no comprobado,,,546
+seto-shuzoten-kaisei,Seto Shuzoten,Kaisei,Sake,,神奈川県足柄上郡開成町金井島17,,,+81465820055,,http://www.kanagawa-jizake.or.jp/seto/,,,,35.342831,139.112106,,parcial,no comprobado,,,1080
+nakazawa-shuzo-matsuda,Nakazawa Shuzo,Matsuda,Sake,,神奈川県足柄上郡松田町松田惣領1875,,,+81465820024,,http://www.matsumidori.jp/,,,,35.346249,139.138565,,parcial,no comprobado,,,831
+latteria-bebe-kamakura-kamakura,Latteria BeBè Kamakura,Kamakura,Lácteos y quesos,"モッツァレッラ, リコッタ, ブッラータ",神奈川県鎌倉市御成町11-17,Produces cheese and dairy products at its Kamakura unit.,,,,https://latteria-bebe.com/,,,,35.319170,139.547220,,verificado,sí,ecommerce,,706
+osteria-e-bottega-s-chigasaki,Osteria e Bottega S,Chigasaki,Lácteos y quesos,,神奈川県茅ヶ崎市東海岸北1-5-7,Produces cheese and dairy products at its Chigasaki unit.,,,,https://osteriaebottegas.com/,,,,35.333860,139.404720,,verificado,no comprobado,,,960
+sanktgallenbrewery-atsugi,サンクトガーレン,Atsugi,Cerveza,,,Brews beer at its Atsugi unit.,,,,https://www.sanktgallenbrewery.com/,,,,35.443060,139.362500,,verificado,no comprobado,,,1792
+yorocco-beer-zushi,ヨロッコビール,Zushi,Cerveza,,,Brews beer at its Zushi unit.,,,,https://yorocco-beer.com/,,,,35.295610,139.580330,,verificado,no comprobado,,,1982
+rainerucheese-aikawa,ライネルチーズ工房,Aikawa,Lácteos y quesos,,神奈川県愛甲郡愛川町中津2647-10,Produces cheese and dairy products at its Aikawa unit.,,,,https://rainerucheese.jp/,,,,35.528810,139.321640,,verificado,no comprobado,,,1984
+yokohamabeer-yokohama,横浜ビール,Yokohama,Cerveza,,,Brews beer at its Yokohama unit.,,,,https://yokohamabeer.com/,,,,35.450330,139.634220,,verificado,sí,ecommerce,,2824
+kamakura-beer-kamakura,鎌倉ビール醸造,Kamakura,Cerveza,,,Brews beer at its Kamakura unit.,,,,https://www.kamakura-beer.co.jp/,,,,35.319170,139.547220,,verificado,sí,ecommerce,,3253
+yokohamawinery-yokohama,横濱ワイナリー 株式会社,Yokohama,Vino,,神奈川県横浜市中区新山下1-3-12鈴木ビル1F,Produces wine at its Yokohama unit.,,+81452289713,,https://yokohamawinery.com/,,,,35.450330,139.634220,,verificado,sí,ecommerce,,2826
+takanashi-milk-yokohama,タカナシ乳業,Yokohama,Lácteos y quesos,"Brise de mer FAISSELLE, 北海道リコッタ, 北海道マスカルポーネ",神奈川県横浜市旭区本宿町５番地,Produces cheese and dairy products at its Yokohama unit.,,,,https://www.takanashi-milk.co.jp/,,,,35.450330,139.634220,,verificado,no comprobado,,,1822
+tabechoku-21387,永島農園,Yokohama,Setas,"しいたけ, きくらげ",,Produces shiitake and wood ear mushrooms at its Yokohama unit.,,,,,,,,35.450330,139.634220,,parcial,sí,marketplace,,2847
+tabechoku-27630,勘網,Yokosuka,Pescado,,,Produces fish and seafood at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,,2199
+tabechoku-27682,鉄釜ひじき 海藻の房丸,Yokosuka,Pescado,,,Produces fish and seafood at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,,3245
+tabechoku-20410,丸良水産,Yokosuka,Pescado,海苔,,Produces nori at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,,2082
+tabechoku-3078438,【ジビエ総本家】小田原貴族ブランド,Odawara,Carne,,,Produces meat at its Odawara unit.,,,,,,,,35.264610,139.152220,,parcial,sí,marketplace,,1806
+tabechoku-22147,みやじ豚,Fujisawa,Carne,,,Produces meat at its Fujisawa unit.,,,,,,,,35.338780,139.490890,,parcial,sí,marketplace,,1648
+tabechoku-26962,霜島農園,Atsugi,Pan y cereal,ぶどう,,Produces grapes at its Atsugi unit.,,,,,,,,35.443060,139.362500,,parcial,sí,marketplace,,3282
+tabechoku-26947,お米農家 曽我,Odawara,Pan y cereal,,,Produces grain products at its Odawara unit.,,,,,,,,35.264610,139.152220,,parcial,sí,marketplace,,1464
+tabechoku-29222,佐野農園,Isehara,Fruta y verdura,"梨, ぶどう, 野菜",,"Produces pears, grapes and vegetables at its Isehara unit.",,,,,,,,35.402940,139.314970,,parcial,sí,marketplace,,2154
+tabechoku-21955,あすなろファーム,Odawara,Fruta y verdura,"梅, 野菜",,Produces ume and vegetables at its Odawara unit.,,,,,,,,35.264610,139.152220,,parcial,sí,marketplace,,1417
+tabechoku-3078860,くだかけ農園,Yamakita,Huevos,野菜,,Produces vegetables at its Yamakita unit.,,,,,,,,35.360580,139.083830,,parcial,sí,marketplace,,1491
+tabechoku-21386,NO-RA ～農楽～,Aikawa,Fruta y verdura,,,Produces fruit and vegetables at its Aikawa unit.,,,,,,,,35.528810,139.321640,,parcial,sí,marketplace,,878
+tabechoku-23483,有機農園けのひ,Aikawa,Fruta y verdura,野菜,,Produces vegetables at its Aikawa unit.,,,,,,,,35.528810,139.321640,,parcial,sí,marketplace,,2592
+tabechoku-22819,Kururu farm,Yokohama,Fruta y verdura,,,Produces fruit and vegetables at its Yokohama unit.,,,,,,,,35.450330,139.634220,,parcial,sí,marketplace,,692
+tabechoku-27186,カメーダ農園,Yokohama,Fruta y verdura,野菜,,Produces vegetables at its Yokohama unit.,,,,,,,,35.450330,139.634220,,parcial,sí,marketplace,,1760
+tabechoku-20806,鈴也ファーム,Yokosuka,Fruta y verdura,,,Produces fruit and vegetables at its Yokosuka unit.,,,,,,,,35.281310,139.672080,,parcial,sí,marketplace,,3236
+tabechoku-28446,ニッポンルーバス,Ebina,Fruta y verdura,,,Produces fruit and vegetables at its Ebina unit.,,,,,,,,35.446420,139.390810,,parcial,sí,marketplace,,1858
+tabechoku-23067,榎本農園,Yugawara,Fruta y verdura,柑橘,,Produces citrus fruit at its Yugawara unit.,,,,,,,,35.147890,139.108310,,parcial,sí,marketplace,,2819
+tabechoku-21182,ぶるべの樹,Sagamihara,Fruta y verdura,ブルーベリー,,Produces blueberries at its Sagamihara unit.,,,,,,,,35.571420,139.373140,,parcial,sí,marketplace,,1616
+tabechoku-3078762,さとくら農園,Sagamihara,Fruta y verdura,野菜,,Produces vegetables at its Sagamihara unit.,,,,,,,,35.571420,139.373140,,parcial,sí,marketplace,,1515
+tabechoku-23858,渋谷ファーム,Fujisawa,Fruta y verdura,トマト,,Produces tomatoes at its Fujisawa unit.,,,,,,,,35.338780,139.490890,,parcial,sí,marketplace,,2896
+tabechoku-22165,子どもの野菜湘南藤沢農場,Fujisawa,Fruta y verdura,野菜,,Produces vegetables at its Fujisawa unit.,,,,,,,,35.338780,139.490890,,parcial,sí,marketplace,,2355
+jp-kanagawa-ukyou-8a38ce5,右京,小田原市,Dulces y repostería,和菓子,小田原市本町 4-3-29,"Produces Japanese confectionery in 小田原市, kanagawa.",,,,https://www.ukyou.jp/,,,,35.264610,139.152220,,verificado,no comprobado,,,2235
+jp-kanagawa-suehiroan-co-825bc79,菓子匠　末広庵,川崎市,Dulces y repostería,和菓子,川崎市川崎区東田町 3-16,"Produces Japanese confectionery in 川崎市, kanagawa.",,,,https://www.suehiroan.co.jp/,,,,35.530890,139.703000,,verificado,sí,ecommerce,,3112
+jp-kanagawa-yokohama-bunmeido-co-8e8d34c,文明堂,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 4-114,"Produces Japanese confectionery in 横浜市, kanagawa.",,,,https://yokohama-bunmeido.co.jp/,,,,35.450330,139.634220,,verificado,sí,ecommerce,,2541
+jp-kanagawa-meigetsu-92f751c,御菓子司　名月,横浜市,Dulces y repostería,和菓子,横浜市金沢区六浦町 5-23-29,"Produces Japanese confectionery in 横浜市, kanagawa.",,,,https://meigetsu.org/,,,,35.450330,139.634220,,verificado,sí,ecommerce,,2510
+jp-kanagawa-choshiya-co-a452648,銚子屋,横浜市,Dulces y repostería,和菓子,横浜市中区伊勢佐木町 7-150,"Produces Japanese confectionery in 横浜市, kanagawa.",,,,http://www.choshiya.co.jp/,,,,35.450330,139.634220,,verificado,sí,ecommerce,,3250
+jp-kanagawa-yumochi-ff440cf,ちもと,箱根町,Dulces y repostería,和菓子,足柄下郡箱根町湯本 509,"Produces Japanese confectionery in 箱根町, kanagawa.",,,,https://www.yumochi.com/,,,,35.232360,139.106940,,verificado,sí,ecommerce,,1555
+jp-kanagawa-atsugimikawaya-8a447e9,合資会社三河屋,厚木市,Aperitivos,米菓,,"Produces rice crackers in 厚木市, kanagawa.",,,,https://atsugimikawaya.com/,,,,35.443060,139.362500,,verificado,sí,ecommerce,,2245
+jp-kanagawa-minoya-arare-001a899,株式会社美濃屋あられ,横浜市,Aperitivos,米菓,,"Produces rice crackers in 横浜市, kanagawa.",,,,https://minoya-arare.jp/,,,,35.450330,139.634220,,verificado,sí,ecommerce,,2785
+jp-kanagawa-mikawaya-co-651ba7d,有限会社三河屋,茅ヶ崎市,Aperitivos,米菓,,"Produces rice crackers in 茅ヶ崎市, kanagawa.",,,,https://www.mikawaya.co.jp/,,,,35.333860,139.404720,,verificado,no comprobado,,,2611
+t-k-brewing,T.K.Brewing,Kawasaki,Cerveza,,小田5-1-30,Brewery producing beer at its Kawasaki unit.,,,r.takabayashi@tkbrewing.com,https://tkbrewing.com/,,https://www.instagram.com/tkbrewing/,,35.53089,139.7030,,parcial,no comprobado,,,1155
+humans-beer,HUMANS BEER,Yugawara,Cerveza,,福浦437-6,Brewery producing beer at its Yugawara unit.,,,,https://humansbeer.com/,,https://www.instagram.com/humansbeer/,,35.14789,139.10831,,parcial,no comprobado,,,347
+yokohama-bay-brewing,横浜ベイブルーイング (Yokohama Bay Brewing),Yokohama,Cerveza,,上矢部町2006,Brewery producing beer at its Yokohama unit.,,,,,,https://www.instagram.com/yokohamabaybrewing/,,35.45033,139.63422,,parcial,no comprobado,,,2825
+passific-brewing,Passific Brewing,Chigasaki,Cerveza,,萩園2644-3,Brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/passificbrewing/,,35.33386,139.40472,,parcial,no comprobado,,,995
+barbaric-works,Barbaric WORKS,Chigasaki,Cerveza,,幸町23-16,Brewery producing beer at its Chigasaki unit.,,,,,,https://www.instagram.com/barbaric_works/,,35.33386,139.40472,,parcial,no comprobado,,,100
+suzuhiro-kamaboko-odawara,鈴廣かまぼこ,Odawara,Pescado,Kamaboko,,Produces Odawara kamaboko and other fish-paste products.,,,,https://www.kamaboko.com/,,,,35.26461,139.15222,,verificado,sí,ecommerce,,3239
+misaki-megumi-suisan-miura,三崎恵水産,Miura,Pescado,Tuna,,Processes and markets its branded tuna products from Miura.,,,,https://misaki-megumi.co.jp/,,,,35.14419,139.62072,,verificado,no comprobado,,,2012

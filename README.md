@@ -13,6 +13,9 @@ npx pnpm dev
 
 Open <http://localhost:3000>.
 
+Canonical public routes follow the data tree: `/<country>/<area>` opens an area
+and `/<country>/<area>/<slug>` opens a producer.
+
 ## Data and contribution
 
 - Producer data: `data/csv/<country>/<region>/<area>.csv`

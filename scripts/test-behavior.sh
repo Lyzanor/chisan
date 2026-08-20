@@ -23,6 +23,7 @@ if (!rows.length) {
 
 const first = rows[0];
 const multiCategory = rows.find((row) => (row["categorias adicionales"] || "").trim());
+const last = rows.at(-1);
 const additionalCategories = (multiCategory?.["categorias adicionales"] || "")
   .split("|")
   .map((category) => category.trim())
@@ -31,21 +32,25 @@ const payload = {
   slug: (first.slug || "").trim(),
   name: (first.nombre || "").trim(),
   category: (first.categoria || "").trim(),
+  producerId: (first.producer_id || "").trim(),
   multiSlug: (multiCategory?.slug || "").trim(),
   multiName: (multiCategory?.nombre || "").trim(),
   multiPrimaryCategory: (multiCategory?.categoria || "").trim(),
   multiAdditionalCategory: additionalCategories[0] || "",
   multiSecondAdditionalCategory: additionalCategories[1] || "",
+  lastSlug: (last?.slug || "").trim(),
 };
 if (
   !payload.slug ||
   !payload.name ||
   !payload.category ||
+  !payload.producerId ||
   !payload.multiSlug ||
   !payload.multiName ||
   !payload.multiPrimaryCategory ||
   !payload.multiAdditionalCategory ||
-  !payload.multiSecondAdditionalCategory
+  !payload.multiSecondAdditionalCategory ||
+  !payload.lastSlug
 ) {
   console.error("CSV rows are missing required fields for behavior fixtures.");
   process.exit(1);
@@ -79,11 +84,13 @@ FIXTURE_JSON="$(extract_sample)"
 SLUG="$(node -p "JSON.parse(process.argv[1]).slug" "$FIXTURE_JSON")"
 NAME="$(node -p "JSON.parse(process.argv[1]).name" "$FIXTURE_JSON")"
 CATEGORY="$(node -p "JSON.parse(process.argv[1]).category" "$FIXTURE_JSON")"
+PRODUCER_ID="$(node -p "JSON.parse(process.argv[1]).producerId" "$FIXTURE_JSON")"
 MULTI_SLUG="$(node -p "JSON.parse(process.argv[1]).multiSlug" "$FIXTURE_JSON")"
 MULTI_NAME="$(node -p "JSON.parse(process.argv[1]).multiName" "$FIXTURE_JSON")"
 MULTI_PRIMARY_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiPrimaryCategory" "$FIXTURE_JSON")"
 MULTI_ADDITIONAL_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiAdditionalCategory" "$FIXTURE_JSON")"
 MULTI_SECOND_ADDITIONAL_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiSecondAdditionalCategory" "$FIXTURE_JSON")"
+LAST_SLUG="$(node -p "JSON.parse(process.argv[1]).lastSlug" "$FIXTURE_JSON")"
 
 ./node_modules/.bin/next dev --port "$PORT" >/tmp/km0-test-dev.log 2>&1 &
 DEV_PID=$!
@@ -117,8 +124,14 @@ if [[ "$UNKNOWN_COUNTRY_STATUS" != "404" ]]; then
   exit 1
 fi
 
-HTML_FILTERED="$(curl -fsS --get "$BASE_URL/" \
-  --data-urlencode "area=barcelona" \
+ROOT_QUERY_RESPONSE="$(curl -sS -o /dev/null --write-out '%{http_code}|%{redirect_url}' --get "$BASE_URL/" \
+  --data-urlencode "area=barcelona")"
+if [[ "$ROOT_QUERY_RESPONSE" != "200|" ]]; then
+  echo "Error: the obsolete area query must not redirect, got '$ROOT_QUERY_RESPONSE'." >&2
+  exit 1
+fi
+
+HTML_FILTERED="$(curl -fsS --get "$BASE_URL/es/barcelona" \
   --data-urlencode "category=$CATEGORY")"
 
 if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
@@ -127,8 +140,7 @@ if [[ "$HTML_FILTERED" != *"$NAME"* ]]; then
 fi
 
 for MULTI_FILTER_CATEGORY in "$MULTI_ADDITIONAL_CATEGORY" "$MULTI_SECOND_ADDITIONAL_CATEGORY"; do
-  HTML_FILTERED_ADDITIONAL="$(curl -fsS --get "$BASE_URL/" \
-    --data-urlencode "area=barcelona" \
+  HTML_FILTERED_ADDITIONAL="$(curl -fsS --get "$BASE_URL/es/barcelona" \
     --data-urlencode "category=$MULTI_FILTER_CATEGORY")"
 
   if [[ "$HTML_FILTERED_ADDITIONAL" != *"$MULTI_NAME"* ]]; then
@@ -137,8 +149,7 @@ for MULTI_FILTER_CATEGORY in "$MULTI_ADDITIONAL_CATEGORY" "$MULTI_SECOND_ADDITIO
   fi
 done
 
-HTML_NO_MATCH="$(curl -fsS --get "$BASE_URL/" \
-  --data-urlencode "area=barcelona" \
+HTML_NO_MATCH="$(curl -fsS --get "$BASE_URL/es/barcelona" \
   --data-urlencode "category=__no_such_category__")"
 
 HTML_NO_MATCH_CLEAN="$(printf '%s' "$HTML_NO_MATCH" | sed 's/<!-- -->//g')"
@@ -148,27 +159,15 @@ if [[ "$HTML_NO_MATCH_CLEAN" != *"No producers in this category"* ]]; then
   exit 1
 fi
 
-REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1?area=barcelona")"
-if [[ "$REDIRECT_URL" != "$BASE_URL/p/$SLUG?area=barcelona" ]]; then
-  echo "Error: expected /p/1?area=barcelona to redirect to /p/$SLUG?area=barcelona, got '$REDIRECT_URL'." >&2
-  exit 1
-fi
-
-LEGACY_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/1-$SLUG?area=barcelona")"
-if [[ "$LEGACY_REDIRECT_URL" != "$BASE_URL/p/$SLUG?area=barcelona" ]]; then
-  echo "Error: expected /p/1-$SLUG?area=barcelona to redirect to /p/$SLUG?area=barcelona, got '$LEGACY_REDIRECT_URL'." >&2
-  exit 1
-fi
-
-MISSING_AREA_REDIRECT_URL="$(curl -fsS -o /dev/null --write-out '%{redirect_url}' "$BASE_URL/p/$SLUG")"
-if [[ "$MISSING_AREA_REDIRECT_URL" != "$BASE_URL/" ]]; then
-  echo "Error: expected /p/$SLUG without area to redirect to /, got '$MISSING_AREA_REDIRECT_URL'." >&2
+OBSOLETE_DETAIL_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/p/$SLUG?area=barcelona")"
+if [[ "$OBSOLETE_DETAIL_STATUS" != "404" ]]; then
+  echo "Error: obsolete /p/ producer URLs must return 404, got '$OBSOLETE_DETAIL_STATUS'." >&2
   exit 1
 fi
 
 DETAIL_OK=0
 for _ in {1..20}; do
-  HTML_DETAIL="$(curl -fsS "$BASE_URL/p/$SLUG?area=barcelona")"
+  HTML_DETAIL="$(curl -fsS "$BASE_URL/es/barcelona/$SLUG")"
   HTML_DETAIL_CLEAN="$(printf '%s' "$HTML_DETAIL" | sed 's/<!-- -->//g')"
   if [[ "$HTML_DETAIL_CLEAN" == *"$NAME"* && "$HTML_DETAIL_CLEAN" == *"Details"* ]]; then
     DETAIL_OK=1
@@ -178,11 +177,45 @@ for _ in {1..20}; do
 done
 
 if [[ "$DETAIL_OK" -ne 1 ]]; then
-  echo "Error: detail page /p/$SLUG?area=barcelona does not render expected content." >&2
+  echo "Error: detail page /es/barcelona/$SLUG does not render expected content." >&2
   exit 1
 fi
 
-HTML_MULTI_DETAIL="$(curl -fsS "$BASE_URL/p/$MULTI_SLUG?area=barcelona" | sed 's/<!-- -->//g')"
+if [[ "$HTML_DETAIL_CLEAN" != *"Producer ID"* || "$HTML_DETAIL_CLEAN" != *"$PRODUCER_ID"* ]]; then
+  echo "Error: detail page does not expose the persisted producer_id." >&2
+  exit 1
+fi
+
+if [[ "$HTML_DETAIL" != *"https://km0-nu.vercel.app/es/barcelona/$SLUG"* ]]; then
+  echo "Error: producer metadata does not expose the absolute canonical URL." >&2
+  exit 1
+fi
+
+WRONG_COUNTRY_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/fr/barcelona/$SLUG")"
+if [[ "$WRONG_COUNTRY_STATUS" != "404" ]]; then
+  echo "Error: a country/area mismatch should return 404, got '$WRONG_COUNTRY_STATUS'." >&2
+  exit 1
+fi
+
+EXAMPLE_HTML="$(curl -fsS "$BASE_URL/es/barcelona/granja-la-pasiega-abrera" | sed 's/<!-- -->//g')"
+if [[ "$EXAMPLE_HTML" != *"Granja La Pasiega"* ]]; then
+  echo "Error: requested canonical example /es/barcelona/granja-la-pasiega-abrera does not resolve." >&2
+  exit 1
+fi
+
+BERLIN_HTML="$(curl -fsS "$BASE_URL/de/berlin/hofladen" | sed 's/<!-- -->//g')"
+if [[ "$BERLIN_HTML" != *"Hofladen"* ]]; then
+  echo "Error: requested canonical example /de/berlin/hofladen does not resolve." >&2
+  exit 1
+fi
+
+BERLIN_OLD_SLUG_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/de/berlin/hofladen-berlin")"
+if [[ "$BERLIN_OLD_SLUG_STATUS" != "404" ]]; then
+  echo "Error: removed producer slugs must return 404, got '$BERLIN_OLD_SLUG_STATUS'." >&2
+  exit 1
+fi
+
+HTML_MULTI_DETAIL="$(curl -fsS "$BASE_URL/es/barcelona/$MULTI_SLUG" | sed 's/<!-- -->//g')"
 if [[
   "$HTML_MULTI_DETAIL" != *"$MULTI_NAME"* ||
   "$HTML_MULTI_DETAIL" != *"$MULTI_PRIMARY_CATEGORY"* ||
@@ -190,6 +223,15 @@ if [[
   "$HTML_MULTI_DETAIL" != *"$MULTI_SECOND_ADDITIONAL_CATEGORY"*
 ]]; then
   echo "Error: multi-category detail does not render the producer and both category types." >&2
+  exit 1
+fi
+
+SITEMAP="$(curl -fsS "$BASE_URL/sitemap.xml")"
+if [[
+  "$SITEMAP" != *"https://km0-nu.vercel.app/es/barcelona/$SLUG"* ||
+  "$SITEMAP" != *"https://km0-nu.vercel.app/es/barcelona/$LAST_SLUG"*
+]]; then
+  echo "Error: sitemap does not contain canonical producer URLs beyond the visible list." >&2
   exit 1
 fi
 

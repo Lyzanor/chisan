@@ -4,6 +4,7 @@
  */
 
 const LABELS: Record<string, string> = {
+  producer_id: "Producer ID",
   nombre: "Name",
   municipio: "Municipality",
   categoria: "Category",

@@ -127,6 +127,7 @@ function main() {
 
     lines.push(
       [
+        cleanCell(row.producer_id),
         cleanCell(row.slug),
         cleanCell(row.nombre),
         cleanCell(row.municipio),
@@ -144,7 +145,7 @@ function main() {
       (counts.otro ? ` · otro ${counts.otro}` : ""),
   );
   console.log(
-    "# slug | nombre | municipio | categoria | categorias adicionales | verificacion | Venta online",
+    "# producer_id | slug | nombre | municipio | categoria | categorias adicionales | verificacion | Venta online",
   );
   if (catFilter || onlyPending) {
     console.log(

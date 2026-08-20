@@ -46,6 +46,7 @@ export function AreaSelector({ country, currentArea }: AreaSelectorProps) {
     startTransition(() => {
       router.push(
         buildCatalogHref({
+          country: country.slug,
           area,
           category: searchParams.get("category") ?? "",
         }),

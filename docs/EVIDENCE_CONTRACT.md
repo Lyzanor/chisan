@@ -30,6 +30,8 @@ data/evidence/<country>/<region>/<area>.jsonl
 Each non-empty JSONL line is one object. A ledger contains at most one current
 record per `slug`; Git keeps earlier versions. Tombstones remain after the row
 is gone, while `keep` records describe rows still present in the matching CSV.
+The durable row key `producer_id` lives only in that CSV row and is not copied
+into evidence.
 
 A later review updates that record in place — refreshing `checkedAt` and the
 sources that still apply — instead of appending a second record for the slug.
@@ -64,6 +66,7 @@ Unknown fields are errors. Three of them are deliberate exclusions:
 | Not in the record | Because it already lives in |
 |---|---|
 | `decision` (`verificacion`, `Venta online`, `Canal de venta`) | the CSV row, which is the source of truth |
+| `producer_id` | the CSV row; it identifies the current published unit rather than describe a source decision |
 | `reviewedBy` | `git log` / `git blame` |
 | `reviewedAt` | the sources' `checkedAt`, which is the fact — the date the proof was seen |
 
@@ -87,6 +90,12 @@ and `purge` for a previously published row. Insufficient evidence is neither:
 the candidate stays open in the candidate note. The validator can confirm
 current CSV absence, not historical publication, so editors own this
 distinction.
+
+Use `merge` only when two records were determined to be the same productive
+unit and one row was removed. A pure SEO or spelling rename keeps the same
+`producer_id`: update its `keep.slug` and any `merge.targetSlug` references,
+without manufacturing a duplicate claim or source merely to record the routing
+rename.
 
 ### Exclusion reasons
 

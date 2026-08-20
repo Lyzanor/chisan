@@ -18,8 +18,8 @@ fila que hay que acotar antes de escribirla.
 
 - **Kiuchi son dos filas del listado y una sola empresa** (木内酒造, Naka): sake e
   Hitachino Nest. El propio xlsx lo admite («125 registros / 124 entidades»).
-  La identidad del catálogo es `slug` dentro del área, así que **es una fila**,
-  con `categoria` `Sake` o `Cerveza` según lo que pese, no dos.
+  La unidad productiva conserva una sola fila y `producer_id`, así que **es una
+  fila**, con `categoria` `Sake` o `Cerveza` según lo que pese, no dos.
 - **Ojo con el otro Kiuchi**: 木内醸造 (Kiuchi Jyouzou, marca Hatsuuguisu) está en
   Saku, Nagano, y es una empresa distinta. Casar por municipio, no por apellido.
 - **Tres filas traen «Ibaraki» como localidad**, que es la prefectura, no un

@@ -30,11 +30,10 @@
   the departamento it belongs to — Tupungato, Tunuyán or San Carlos — and keep
   the valley in `direccion`. Gualtallary and the other parajes inside those
   departamentos work the same way.
-- `cordoba-argentina` and `la-rioja-argentina` carry the suffix because Spain
-  already owns `cordoba` and `la-rioja` and the area slug is a global URL key.
-  Do not "fix" this with an alias: `loadAliases` in `lib/csv-catalog.ts` merges
-  every country's aliases into one map and applies it *before* the area
-  registry, so an `ar` alias named `cordoba` would take Spain's area down.
+- `cordoba-argentina` and `la-rioja-argentina` retain their existing suffixes.
+  Areas and aliases are resolved by `(country, area)`, so Spain is no longer a
+  technical collision; renaming either remains a separate data cleanup and is
+  not incidental work.
 - Six regions of four to six provinces each resolve fewer homonyms than a
   country with many regions would. `municipality-overrides.json` is keyed by
   region, so it can separate Maipú in Mendoza from Maipú in Buenos Aires, but

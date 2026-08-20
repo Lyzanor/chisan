@@ -24,6 +24,7 @@ const CANONICAL_HEADER = Object.freeze([
   "Venta online",
   "Canal de venta",
   "categorias adicionales",
+  "producer_id",
 ]);
 
 // Controlled values are matched exactly, not case/diacritic folded: the CSVs are
@@ -50,6 +51,7 @@ const SALES_CHANNEL_VALUES = new Set([
 const SALES_CHANNEL_DISPLAY_VALUES =
   "ecommerce, whatsapp, email, telefono, suscripcion, marketplace";
 const ADDITIONAL_CATEGORIES_COLUMN = "categorias adicionales";
+const PRODUCER_ID_COLUMN = "producer_id";
 const CATEGORY_SEPARATOR = "|";
 const CENTROID_MAX_DISTANCE_KM = 15;
 // Beyond this, the gap is no longer "edge of a large municipal term" but a
@@ -62,10 +64,13 @@ const CENTROID_FALLBACK_TOLERANCE_DEG = 1e-5;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipalities.json";
 const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipality-overrides.json";
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const PRODUCER_ID_PATTERN = /^[1-9]\d*$/;
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
+const RESERVED_AREA_SLUGS = new Set(["events", "retail"]);
 const COUNTRY_GUIDE_HEADINGS = ["## Operating state", "## Country rules", "## Source ceilings"];
 let PREFERRED_CATEGORY_ALIASES = new Map();
 let VALID_CATEGORIES = new Set();
+let RESERVED_PRODUCER_SLUGS = new Set();
 // Labels the 2026-06-21 consolidation folded into another one, mapped to their
 // replacement. A retired label that is still in VALID_CATEGORIES has rows left
 // to migrate; once it reaches zero uses it leaves the valid list and comes back
@@ -127,6 +132,7 @@ function loadCategoryConfig(fs, path) {
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
   PREFERRED_CATEGORY_ALIASES = new Map(Object.entries(config.preferredAliases));
   VALID_CATEGORIES = new Set(config.categories);
+  RESERVED_PRODUCER_SLUGS = new Set(config.categories.map(slugifySegment));
   RETIRED_CATEGORIES = new Map(Object.entries(config.retiredCategories ?? {}));
 }
 
@@ -190,6 +196,25 @@ async function auditAreaRegistry(root = "data/csv") {
       }
     }
 
+    const manifestPath = path.join(countryDir, "country.json");
+    let areaAliases = [];
+    if (fs.existsSync(manifestPath)) {
+      try {
+        const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+        areaAliases = Object.entries(manifest.aliases ?? {});
+        for (const [alias] of areaAliases) {
+          if (!SLUG_PATTERN.test(alias)) {
+            errors.push(`area alias '${country}/${alias}' must be lowercase ASCII kebab-case`);
+          }
+          if (RESERVED_AREA_SLUGS.has(alias)) {
+            errors.push(`area alias '${country}/${alias}' uses reserved route segment '${alias}'`);
+          }
+        }
+      } catch (error) {
+        errors.push(`country manifest '${country}/country.json' is not valid JSON: ${error.message}`);
+      }
+    }
+
     for (const region of directoryNames(fs, countryDir)) {
       if (!SLUG_PATTERN.test(region)) {
         errors.push(`region '${country}/${region}' must be lowercase ASCII kebab-case`);
@@ -204,15 +229,27 @@ async function auditAreaRegistry(root = "data/csv") {
         if (!SLUG_PATTERN.test(area)) {
           errors.push(`area '${relativePath}' must be lowercase ASCII kebab-case`);
         }
+        if (RESERVED_AREA_SLUGS.has(area)) {
+          errors.push(`area '${relativePath}' uses reserved route segment '${area}'`);
+        }
 
-        const previous = areas.get(area);
+        const areaKey = `${country}/${area}`;
+        const previous = areas.get(areaKey);
         if (previous) {
           errors.push(
-            `area slug '${area}' is global and duplicated by '${previous}' and '${relativePath}'`,
+            `area slug '${area}' is duplicated within country '${country}' by '${previous}' and '${relativePath}'`,
           );
         } else {
-          areas.set(area, relativePath);
+          areas.set(areaKey, relativePath);
         }
+      }
+    }
+
+    for (const [alias, target] of areaAliases) {
+      if (!areas.has(`${country}/${target}`)) {
+        errors.push(
+          `area alias '${country}/${alias}' targets '${target}', which is not an area in country '${country}'`,
+        );
       }
     }
   }
@@ -281,6 +318,22 @@ async function resolveCsvFiles(args) {
   return [...new Set(args.targets.flatMap((target) => walkCsvFiles(fs, path, target)))].sort();
 }
 
+async function resolveIdentityCsvFiles(args, auditedFiles) {
+  if (!args.changed || auditedFiles.length === 0) return auditedFiles;
+
+  const { fs, path } = await getDependencies();
+  const csvRoot = path.resolve(__dirname, "..", "data", "csv");
+  const countries = new Set(
+    auditedFiles
+      .map((csvPath) => path.relative(csvRoot, csvPath).split(path.sep)[0])
+      .filter((country) => COUNTRY_PATTERN.test(country)),
+  );
+
+  return [...countries]
+    .flatMap((country) => walkCsvFiles(fs, path, path.join(csvRoot, country)))
+    .sort();
+}
+
 function cleanCell(value) {
   return String(value ?? "").replace(/\s+/g, " ").trim();
 }
@@ -316,10 +369,16 @@ function categoryReplacement(category) {
 
 function slugifySegment(value) {
   return cleanCell(value)
-    .normalize("NFD")
+    .normalize("NFKD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/ß/g, "ss")
+    .replace(/æ/g, "ae")
+    .replace(/ø/g, "o")
+    .replace(/ł/g, "l")
+    .replace(/ð/g, "d")
+    .replace(/þ/g, "th")
+    .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .replace(/-+/g, "-");
 }
@@ -717,13 +776,30 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
 
   for (const [index, fields] of rows.entries()) {
     const line = index + 2;
-    const id = index + 1;
+    const producerId = cleanCell(fields[PRODUCER_ID_COLUMN]);
+    const id = producerId || index + 1;
     const slug = cleanCell(fields.slug);
+
+    if (!producerId) {
+      push("error", line, id, slug, `${PRODUCER_ID_COLUMN} is required`);
+    } else if (!PRODUCER_ID_PATTERN.test(producerId)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `${PRODUCER_ID_COLUMN} must be a positive base-10 integer without leading zeroes`,
+      );
+    } else if (!Number.isSafeInteger(Number(producerId))) {
+      push("error", line, id, slug, `${PRODUCER_ID_COLUMN} must be a safe integer`);
+    }
 
     if (!slug) {
       push("error", line, id, slug, "slug is required");
-    } else if (slugifySegment(slug) !== slug) {
+    } else if (!SLUG_PATTERN.test(slug)) {
       push("error", line, id, slug, "slug must be lowercase ASCII words separated by '-'");
+    } else if (RESERVED_PRODUCER_SLUGS.has(slug)) {
+      push("error", line, id, slug, `slug '${slug}' is reserved for a category route`);
     }
 
     if (slug) {
@@ -1014,6 +1090,7 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
       }
     }
   }
+
 }
 
 function createStats() {
@@ -1034,23 +1111,270 @@ function addStats(total, current) {
 async function auditCsv(csvPath, centroids) {
   const { issues, push } = createIssueCollector();
   const stats = createStats();
+  const scope = inferScope(csvPath);
+  let rows = [];
 
   try {
-    const { raw, headers, rows } = await readCsv(csvPath);
+    const parsed = await readCsv(csvPath);
+    rows = parsed.rows;
     runContractAudit({
-      raw,
-      headers,
+      raw: parsed.raw,
+      headers: parsed.headers,
       rows,
       push,
       centroids,
-      scope: inferScope(csvPath),
+      scope,
       stats,
     });
   } catch (error) {
     push("error", 1, 0, "(file)", `cannot parse CSV: ${error.message}`);
   }
 
-  return { csvPath, issues, stats };
+  return { csvPath, issues, stats, rows, scope };
+}
+
+async function auditCountryIdentities(sources, reportPaths = sources.map((source) => source.csvPath)) {
+  const { path } = await getDependencies();
+  const root = path.resolve(__dirname, "..");
+  const reportSet = new Set(reportPaths.map((csvPath) => path.resolve(csvPath)));
+  const producerIds = new Map();
+  const slugs = new Map();
+
+  const add = (registry, country, value, owner) => {
+    const key = `${country}\0${value}`;
+    const owners = registry.get(key) ?? [];
+    owners.push(owner);
+    registry.set(key, owners);
+  };
+
+  for (const source of sources) {
+    const country = source.scope.country;
+    if (!country) continue;
+    source.rows.forEach((fields, index) => {
+      const producerId = cleanCell(fields[PRODUCER_ID_COLUMN]);
+      const slug = cleanCell(fields.slug);
+      const owner = {
+        csvPath: path.resolve(source.csvPath),
+        line: index + 2,
+        producerId,
+        slug,
+      };
+      if (
+        PRODUCER_ID_PATTERN.test(producerId) &&
+        Number.isSafeInteger(Number(producerId))
+      ) {
+        add(producerIds, country, producerId, owner);
+      }
+      if (SLUG_PATTERN.test(slug)) add(slugs, country, slug, owner);
+    });
+  }
+
+  const issues = [];
+  const collect = (registry, field) => {
+    for (const [key, owners] of registry.entries()) {
+      if (owners.length < 2) continue;
+      const separator = key.indexOf("\0");
+      const country = key.slice(0, separator);
+      const value = key.slice(separator + 1);
+      const locations = owners
+        .map((owner) => `${path.relative(root, owner.csvPath)}:${owner.line}`)
+        .join(", ");
+      for (const owner of owners) {
+        if (!reportSet.has(owner.csvPath)) continue;
+        issues.push({
+          csvPath: owner.csvPath,
+          severity: "error",
+          line: owner.line,
+          id: owner.producerId || owner.line - 1,
+          slug: owner.slug || "(empty)",
+          message: `${field} '${value}' is duplicated within country '${country}' at ${locations}`,
+        });
+      }
+    }
+  };
+
+  collect(producerIds, PRODUCER_ID_COLUMN);
+  collect(slugs, "slug");
+  return issues;
+}
+
+async function loadHeadCountryIdentitySnapshots(countries) {
+  const { path, execFileSync, parse } = await getDependencies();
+  const root = path.resolve(__dirname, "..");
+  const snapshots = new Map();
+
+  for (const country of countries) {
+    let relativeFiles;
+    try {
+      relativeFiles = execFileSync(
+        "git",
+        ["ls-tree", "-r", "--name-only", "HEAD", "--", `data/csv/${country}`],
+        {
+          cwd: root,
+          encoding: "utf8",
+          maxBuffer: 20 * 1024 * 1024,
+          stdio: ["ignore", "pipe", "ignore"],
+        },
+      )
+        .split(/\r?\n/)
+        .filter((relativePath) => relativePath.endsWith(".csv"));
+    } catch {
+      continue;
+    }
+    if (relativeFiles.length === 0) continue;
+
+    const readHeadFile = (relativePath) =>
+      execFileSync("git", ["show", `HEAD:${relativePath}`], {
+        cwd: root,
+        encoding: "utf8",
+        maxBuffer: 20 * 1024 * 1024,
+        stdio: ["ignore", "pipe", "ignore"],
+      });
+    const firstRaw = readHeadFile(relativeFiles[0]);
+    const firstHeaders = firstRaw
+      .split(/\r?\n/, 1)[0]
+      .replace(/^\uFEFF/, "")
+      .split(",")
+      .map((value) => value.trim());
+
+    // The repository-wide bootstrap is intentionally exempt: the HEAD side has
+    // no durable key yet, so there is no historical identity to preserve.
+    if (!firstHeaders.includes(PRODUCER_ID_COLUMN)) continue;
+
+    const owners = [];
+    let completeIdentitySchema = true;
+    for (const relativePath of relativeFiles) {
+      const raw = relativePath === relativeFiles[0] ? firstRaw : readHeadFile(relativePath);
+      const headers = raw
+        .split(/\r?\n/, 1)[0]
+        .replace(/^\uFEFF/, "")
+        .split(",")
+        .map((value) => value.trim());
+      if (!headers.includes(PRODUCER_ID_COLUMN)) {
+        completeIdentitySchema = false;
+        break;
+      }
+
+      const rows = parse(raw, { columns: true, bom: true, skip_empty_lines: true });
+      rows.forEach((row, index) => {
+        const fields = Object.fromEntries(
+          Object.entries(row).map(([key, value]) => [key.trim(), cleanCell(value)]),
+        );
+        owners.push({
+          csvPath: path.resolve(root, relativePath),
+          line: index + 2,
+          producerId: cleanCell(fields[PRODUCER_ID_COLUMN]),
+          slug: cleanCell(fields.slug),
+        });
+      });
+    }
+
+    if (completeIdentitySchema) snapshots.set(country, owners);
+  }
+
+  return snapshots;
+}
+
+async function auditCountryIdentityHistory(
+  sources,
+  reportPaths = sources.map((source) => source.csvPath),
+) {
+  const { path } = await getDependencies();
+  const reportSet = new Set(reportPaths.map((csvPath) => path.resolve(csvPath)));
+  const countries = new Set(
+    reportPaths
+      .map((csvPath) => inferScope(csvPath).country)
+      .filter((country) => COUNTRY_PATTERN.test(country ?? "")),
+  );
+  const snapshots = await loadHeadCountryIdentitySnapshots(countries);
+  const currentByCountry = new Map();
+
+  for (const source of sources) {
+    const country = source.scope.country;
+    if (!snapshots.has(country)) continue;
+    const owners = currentByCountry.get(country) ?? [];
+    source.rows.forEach((fields, index) => {
+      const producerId = cleanCell(fields[PRODUCER_ID_COLUMN]);
+      if (
+        !PRODUCER_ID_PATTERN.test(producerId) ||
+        !Number.isSafeInteger(Number(producerId))
+      ) {
+        return;
+      }
+      owners.push({
+        csvPath: path.resolve(source.csvPath),
+        line: index + 2,
+        producerId,
+        slug: cleanCell(fields.slug),
+      });
+    });
+    currentByCountry.set(country, owners);
+  }
+
+  const issues = [];
+  const push = (owner, message) => {
+    if (!reportSet.has(owner.csvPath)) return;
+    issues.push({
+      csvPath: owner.csvPath,
+      severity: "error",
+      line: owner.line,
+      id: owner.producerId,
+      slug: owner.slug || "(empty)",
+      message,
+    });
+  };
+
+  for (const [country, headOwnersRaw] of snapshots.entries()) {
+    const headOwners = headOwnersRaw.filter(
+      (owner) =>
+        PRODUCER_ID_PATTERN.test(owner.producerId) &&
+        Number.isSafeInteger(Number(owner.producerId)) &&
+        SLUG_PATTERN.test(owner.slug),
+    );
+    const headById = new Map(headOwners.map((owner) => [owner.producerId, owner]));
+    const headBySlug = new Map(headOwners.map((owner) => [owner.slug, owner]));
+    const currentOwners = currentByCountry.get(country) ?? [];
+
+    for (const owner of currentOwners) {
+      const previousByCurrentSlug = headBySlug.get(owner.slug);
+      if (
+        previousByCurrentSlug &&
+        previousByCurrentSlug.producerId !== owner.producerId
+      ) {
+        push(
+          owner,
+          `${PRODUCER_ID_COLUMN} changed for HEAD slug '${owner.slug}': expected '${previousByCurrentSlug.producerId}', found '${owner.producerId}'`,
+        );
+        continue;
+      }
+
+    }
+
+    const headMax = headOwners.reduce(
+      (maximum, owner) => Math.max(maximum, Number(owner.producerId)),
+      0,
+    );
+    const newOwnersById = new Map();
+    for (const owner of currentOwners) {
+      if (!headById.has(owner.producerId) && !newOwnersById.has(owner.producerId)) {
+        newOwnersById.set(owner.producerId, owner);
+      }
+    }
+    const newOwners = [...newOwnersById.values()].sort(
+      (left, right) => Number(left.producerId) - Number(right.producerId),
+    );
+    newOwners.forEach((owner, index) => {
+      const expected = headMax + index + 1;
+      if (Number(owner.producerId) !== expected) {
+        push(
+          owner,
+          `new ${PRODUCER_ID_COLUMN} '${owner.producerId}' must continue country '${country}' sequence at '${expected}'`,
+        );
+      }
+    });
+  }
+
+  return issues;
 }
 
 function printStats(stats) {
@@ -1134,6 +1458,37 @@ async function main() {
   const centroids = files.length ? await loadCentroids() : null;
   const results = [];
   for (const csvPath of files) results.push(await auditCsv(csvPath, centroids));
+
+  const identityFiles = await resolveIdentityCsvFiles(args, files);
+  const resultsByPath = new Map(
+    results.map((result) => [path.resolve(result.csvPath), result]),
+  );
+  const identitySources = [];
+  for (const csvPath of identityFiles) {
+    const resolvedPath = path.resolve(csvPath);
+    const result = resultsByPath.get(resolvedPath);
+    if (result) {
+      identitySources.push(result);
+      continue;
+    }
+    try {
+      const { rows } = await readCsv(resolvedPath);
+      identitySources.push({ csvPath: resolvedPath, rows, scope: inferScope(resolvedPath) });
+    } catch {
+      // The unchanged sibling is loaded only to detect country-wide collisions.
+      // Its own parse/contract errors remain the responsibility of --all.
+    }
+  }
+  const identityIssues = await auditCountryIdentities(identitySources, files);
+  for (const issue of identityIssues) {
+    resultsByPath.get(path.resolve(issue.csvPath))?.issues.push(issue);
+  }
+  if (args.changed) {
+    const historyIssues = await auditCountryIdentityHistory(identitySources, files);
+    for (const issue of historyIssues) {
+      resultsByPath.get(path.resolve(issue.csvPath))?.issues.push(issue);
+    }
+  }
 
   if (!args.all && !args.changed && results.length === 1) {
     printSingleReport(results[0].issues, results[0].stats);

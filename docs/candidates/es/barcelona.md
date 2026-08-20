@@ -106,8 +106,8 @@ anotándolo aquí.
 | Joan Grill (vins) | Aiguamúrcia/Pla de Manlleu = **Tarragona** | fuera de provincia (aunque vinifique en el Viver de Vilafranca) | pasada atípicos 2026-06-24 |
 | Escatafood (garum) · SOLÉS (anxoves) | L'Escala/Empordà = **Girona** | fuera de provincia | pasada atípicos 2026-06-24 |
 | Safrà del Montsec · Caviar Nacarii · harinas de cereal antiguo | Montsec/Vall d'Aran/Garrigues = **Lleida** | fuera de provincia | pasada atípicos 2026-06-24 |
-| Hofmann — centro Badalona | Badalona | infraestructura de producción/I+D, no fila nueva: la marca ya está (`pastisseria-hofmann-barcelona`) | nota candidatos 2026-06-05 (`529e83b`) |
-| Parallelo Gelato — Time Out Market | Barcelona | punto de venta, no productor nuevo: ya está (`parallelo-gelato-barcelona`) | nota candidatos 2026-06-05 (`529e83b`) |
+| Hofmann — centro Badalona | Badalona | infraestructura de producción/I+D, no fila nueva: la marca ya está (`pastisseria-hofmann`) | nota candidatos 2026-06-05 (`529e83b`) |
+| Parallelo Gelato — Time Out Market | Barcelona | punto de venta, no productor nuevo: ya está (`parallelo-gelato`) | nota candidatos 2026-06-05 (`529e83b`) |
 
 **Alias «ya estaba» que el cruce automático NO caza** (falsos negativos por
 nombre corto/slug pegado — no re-añadir):
@@ -214,7 +214,7 @@ El 9 Nou apenas indexan; requeriría navegación cabecera a cabecera).
 | Maset de la Costa (Piera) | `maset-de-la-costa-piera` | parcial | no comprobado | agroturisme + oli marca pròpia L'Oli del Maset (eco CCPAE); activitat oleícola sense datació fresca |
 
 **Mejora (1):** fila-registro `calderon-cabrera-jose-armando-…` renombrada a
-**MielHada** (`mielhada-barcelona`): marca del apicultor (+300
+**MielHada** (`mielhada`): marca del apicultor (+300
 arnes, mateixa adreça/email), botiga WooCommerce vista en viu → verificado,
 VO sí/ecommerce; GMaps aliè «Escalope Armando» blanquejat; coords Nominatim.
 

@@ -27,6 +27,7 @@ const ROW_FIELDS = {
   verificacion: "verificado",
   "Venta online": "sí",
   "Canal de venta": "ecommerce",
+  producer_id: "1",
   [FORWARD_COMPATIBILITY_COLUMN]: "ignored safely",
 };
 
@@ -108,7 +109,7 @@ function createFixture() {
   fs.mkdirSync(path.dirname(csvPath), { recursive: true });
   fs.writeFileSync(
     csvPath,
-    `${HEADER}\n${row()}\n${row({ slug: "productor-dos", nombre: "Productor Dos" })}\n`,
+    `${HEADER}\n${row()}\n${row({ slug: "productor-dos", nombre: "Productor Dos", producer_id: "2" })}\n`,
   );
 
   return { root, csvRoot, evidenceRoot, ledgerPath };
@@ -149,6 +150,14 @@ function main() {
     expectError(
       [{ ...validKeep(), reviewedAt: "2026-06-15" }],
       "unknown field(s): reviewedAt",
+    );
+    expectError(
+      [{ ...validKeep(), producer_id: "1" }],
+      "unknown field(s): producer_id",
+    );
+    expectError(
+      [{ ...validKeep(), slug_aliases: "productor-antiguo" }],
+      "unknown field(s): slug_aliases",
     );
     expectError([{ ...validKeep(), action: "add" }], "unsupported action 'add'");
 

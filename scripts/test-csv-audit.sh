@@ -25,9 +25,46 @@ TMP_DIR="$TMP_ROOT/data/csv/es/catalunya"
 JP_DIR="$TMP_ROOT/data/csv/jp/kanto"
 mkdir -p "$TMP_DIR" "$JP_DIR"
 
+prepare_fixture_identity() {
+  local candidate
+  for candidate in "$@"; do
+    if [[ "$candidate" != *.csv || ! -f "$candidate" ]]; then
+      continue
+    fi
+    node - "$candidate" <<'NODE'
+const crypto = require("node:crypto");
+const fs = require("node:fs");
+const { parse } = require("csv-parse/sync");
+
+const file = process.argv[2];
+const canonical = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER.join(",");
+const raw = fs.readFileSync(file, "utf8");
+const lines = raw.split("\n");
+if (lines[0] !== canonical) process.exit(0);
+
+const base = Number.parseInt(
+  crypto.createHash("sha256").update(file).digest("hex").slice(0, 10),
+  16,
+) * 1000;
+let changed = false;
+for (let index = 1; index < lines.length; index += 1) {
+  if (!lines[index]) continue;
+  const cells = parse(lines[index], { relax_column_count: true })[0];
+  if (cells.length === canonical.split(",").length - 1) {
+    lines[index] += `,${base + index}`;
+    changed = true;
+  }
+}
+if (changed) fs.writeFileSync(file, lines.join("\n"));
+NODE
+  done
+}
+
 run_expect_failure() {
   local output_file="$1"
   shift
+
+  prepare_fixture_identity "$@"
 
   if "$@" >"$output_file" 2>&1; then
     echo "Error: command was expected to fail: $*" >&2
@@ -39,22 +76,50 @@ run_expect_success() {
   local output_file="$1"
   shift
 
+  prepare_fixture_identity "$@"
   "$@" >"$output_file" 2>&1
+}
+
+prepare_git_audit_repo() {
+  local repo_root="$1"
+  mkdir -p "$repo_root/scripts" "$repo_root/data/reference" "$repo_root/data/csv/es/one"
+  cp "$ROOT_DIR/scripts/audit-csv.js" "$repo_root/scripts/audit-csv.js"
+  cp "$ROOT_DIR/data/reference/categories.json" "$repo_root/data/reference/categories.json"
+  ln -s "$ROOT_DIR/node_modules" "$repo_root/node_modules"
+  cat >"$repo_root/data/csv/es/AGENTS.md" <<'GUIDE'
+# Country
+## Operating state
+## Country rules
+## Source ceilings
+GUIDE
+  (
+    cd "$repo_root"
+    git init -q
+    git config user.email test@example.com
+    git config user.name "KM0 Test"
+  )
 }
 
 REGISTRY_OK="$TMP_ROOT/registry-ok"
 REGISTRY_DUPLICATE="$TMP_ROOT/registry-duplicate"
+REGISTRY_RESERVED="$TMP_ROOT/registry-reserved"
+REGISTRY_BAD_ALIAS_TARGET="$TMP_ROOT/registry-bad-alias-target"
 REGISTRY_MISSING_GUIDE="$TMP_ROOT/registry-missing-guide"
 REGISTRY_BAD_GUIDE="$TMP_ROOT/registry-bad-guide"
 mkdir -p "$REGISTRY_OK/es/centro" "$REGISTRY_OK/pt/norte"
-mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/pt/norte"
+mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/es/norte"
+mkdir -p "$REGISTRY_RESERVED/es/centro"
+mkdir -p "$REGISTRY_BAD_ALIAS_TARGET/es/centro"
 mkdir -p "$REGISTRY_MISSING_GUIDE/es/centro" "$REGISTRY_BAD_GUIDE/es/centro"
-touch "$REGISTRY_OK/es/centro/madrid.csv" "$REGISTRY_OK/pt/norte/porto.csv"
-touch "$REGISTRY_DUPLICATE/es/centro/ribera.csv" "$REGISTRY_DUPLICATE/pt/norte/ribera.csv"
+touch "$REGISTRY_OK/es/centro/ribera.csv" "$REGISTRY_OK/pt/norte/ribera.csv"
+touch "$REGISTRY_DUPLICATE/es/centro/ribera.csv" "$REGISTRY_DUPLICATE/es/norte/ribera.csv"
+touch "$REGISTRY_RESERVED/es/centro/events.csv" "$REGISTRY_RESERVED/es/centro/retail.csv"
+touch "$REGISTRY_BAD_ALIAS_TARGET/es/centro/madrid.csv"
 touch "$REGISTRY_MISSING_GUIDE/es/centro/madrid.csv" "$REGISTRY_BAD_GUIDE/es/centro/madrid.csv"
 
 for guide in "$REGISTRY_OK/es/AGENTS.md" "$REGISTRY_OK/pt/AGENTS.md" \
-  "$REGISTRY_DUPLICATE/es/AGENTS.md" "$REGISTRY_DUPLICATE/pt/AGENTS.md"; do
+  "$REGISTRY_DUPLICATE/es/AGENTS.md" "$REGISTRY_RESERVED/es/AGENTS.md" \
+  "$REGISTRY_BAD_ALIAS_TARGET/es/AGENTS.md"; do
   cat >"$guide" <<'GUIDE'
 # Country
 ## Operating state
@@ -62,6 +127,14 @@ for guide in "$REGISTRY_OK/es/AGENTS.md" "$REGISTRY_OK/pt/AGENTS.md" \
 ## Source ceilings
 GUIDE
 done
+
+cat >"$REGISTRY_RESERVED/es/country.json" <<'JSON'
+{"aliases":{"events":"events","retail":"retail"}}
+JSON
+
+cat >"$REGISTRY_BAD_ALIAS_TARGET/es/country.json" <<'JSON'
+{"aliases":{"old-madrid":"missing-area"}}
+JSON
 
 cat >"$REGISTRY_BAD_GUIDE/es/AGENTS.md" <<'GUIDE'
 # Country
@@ -74,7 +147,19 @@ grep -q "Area registry contract OK (2 areas)" "$TMP_ROOT/out-registry-ok.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-duplicate.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_DUPLICATE"
-grep -q "area slug 'ribera' is global and duplicated" "$TMP_ROOT/out-registry-duplicate.txt"
+grep -q "area slug 'ribera' is duplicated within country 'es'" "$TMP_ROOT/out-registry-duplicate.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-reserved.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_RESERVED"
+grep -q "uses reserved route segment 'events'" "$TMP_ROOT/out-registry-reserved.txt"
+grep -q "uses reserved route segment 'retail'" "$TMP_ROOT/out-registry-reserved.txt"
+grep -q "area alias 'es/events' uses reserved route segment 'events'" "$TMP_ROOT/out-registry-reserved.txt"
+grep -q "area alias 'es/retail' uses reserved route segment 'retail'" "$TMP_ROOT/out-registry-reserved.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-bad-alias-target.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_BAD_ALIAS_TARGET"
+grep -q "area alias 'es/old-madrid' targets 'missing-area', which is not an area" \
+  "$TMP_ROOT/out-registry-bad-alias-target.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-missing-guide.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_MISSING_GUIDE"
@@ -126,19 +211,52 @@ fila-1,Uno,Abrera,Vino,Vino,Carrer 1,Descripcion suficientemente larga para vali
 CSV
 
 cat >"$TMP_DIR/sales-channel.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp,
 canal-bad,Masia Bad,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,bad@example.com,https://example.com,https://facebook.com/bad,https://instagram.com/bad,https://www.google.com/maps/place/Bad,41.52,1.91,,verificado,sí,ecommerce|tienda,
 canal-estado,Masia Estado,Abrera,Vino,Vino,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,est@example.com,https://example.com,https://facebook.com/est,https://instagram.com/est,https://www.google.com/maps/place/Est,41.53,1.92,,verificado,no,whatsapp,
 CSV
 
 cat >"$TMP_DIR/canonical-ok.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 canal-ok,Masia Ok,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,sí,ecommerce|whatsapp,Cerveza
 CSV
 
+cat >"$TMP_DIR/identity-format.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+id-empty,ID Empty,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,
+id-zero,ID Zero,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,0
+id-leading,ID Leading,Abrera,Vino,Vino,Carrer 3,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,01
+id-decimal,ID Decimal,Abrera,Vino,Vino,Carrer 4,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,1.5
+id-unsafe,ID Unsafe,Abrera,Vino,Vino,Carrer 5,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,9007199254740992
+CSV
+
+cat >"$TMP_DIR/reserved-producer-route.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+vino,Reserved Category,Abrera,Vino,Vino,Carrer 8,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,108
+CSV
+
+ES_IDENTITY_A="$TMP_ROOT/data/csv/es/identity-a"
+ES_IDENTITY_B="$TMP_ROOT/data/csv/es/identity-b"
+PT_IDENTITY="$TMP_ROOT/data/csv/pt/identity"
+mkdir -p "$ES_IDENTITY_A" "$ES_IDENTITY_B" "$PT_IDENTITY"
+cat >"$ES_IDENTITY_A/a.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+country-shared,Country A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,500
+id-only-a,ID Only A,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,501
+CSV
+cat >"$ES_IDENTITY_B/b.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+country-shared,Country B,Abrera,Vino,Vino,Carrer 3,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,502
+id-only-b,ID Only B,Abrera,Vino,Vino,Carrer 4,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,501
+CSV
+cat >"$PT_IDENTITY/pt.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+country-shared,Country PT,Abrera,Vino,Vino,Carrer 5,Productor de prueba,,,,https://example.com,,,,41.51,1.90,,pendiente,no,,,500
+CSV
+
 cat >"$TMP_DIR/additional-categories.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 multi-ok,Kura Ok,Abrera,Sake,"Sake, cerveza",Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,,,,41.51,1.90,,pendiente,no,,Cerveza
 multi-primary,Kura Primary,Abrera,Sake,Sake,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,primary@example.com,https://example.com,,,,41.52,1.91,,pendiente,no,,Sake
 multi-duplicate,Kura Duplicate,Abrera,Sake,Sake,Carrer Major 3,Descripcion suficientemente larga para validar,,+34600000002,duplicate@example.com,https://example.com,,,,41.53,1.92,,pendiente,no,,Cerveza|Cerveza
@@ -148,29 +266,29 @@ CSV
 
 # Controlled values are matched exactly: folded case and a missing accent are drift.
 cat >"$TMP_DIR/inexact-values.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 valor-acento,Masia Acento,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,verificado,si,,
 valor-mayus,Masia Mayus,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.52,1.91,,Verificado,no,,
 CSV
 
 cat >"$TMP_DIR/identity-required.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 sin-identidad,,Abrera,,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 
 cat >"$TMP_DIR/multi-email.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 dos-correos,Masia Correos,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,uno@example.com; dos@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 
 cat >"$TMP_DIR/junk-social.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 social-basura,Masia Social,Abrera,Vino,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/,https://www.instagram.com/explore/tags/queso/,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 social-pagina,Masia Pagina,Abrera,Vino,Vino,Carrer Major 2,Descripcion suficientemente larga para validar,,+34600000001,ok2@example.com,https://example.com,https://www.facebook.com/p/Masia-Pagina-100063712593417,https://www.instagram.com/masiapagina,https://www.google.com/maps/place/Ok2,41.52,1.91,,pendiente,no,,
 CSV
 
 cat >"$TMP_DIR/google-maps-quality.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 maps-place-id,Masia Place ID,Abrera,Vino,Vino,Carrer Major 1,Productor con una ficha concreta y revisada,,+34600000000,place@example.com,https://example.com,,,https://www.google.com/maps/search/?api=1&query=41.51%2C1.90&query_place_id=abc,41.51,1.90,,pendiente,no,,
 maps-coordinates,Masia Coordenadas,Abrera,Vino,Vino,Carrer Major 2,Productor con un pin exacto sin ficha propia,,+34600000001,coords@example.com,https://example.com,,,https://www.google.com/maps/search/?api=1&query=41.52%2C1.91,41.52,1.91,,pendiente,no,,
 maps-text,Masia Textual,Abrera,Vino,Vino,Carrer Major 3,Productor enlazado mediante una busqueda textual,,+34600000002,text@example.com,https://example.com,,,https://www.google.com/maps/search/?api=1&query=Masia+Textual+Abrera,41.53,1.92,,pendiente,no,,
@@ -180,6 +298,7 @@ maps-interface,Masia Interfaz,Abrera,Vino,Vino,Carrer Major 6,Productor enlazado
 CSV
 
 # A UTF-8 BOM (typical of spreadsheet exports) is a blocking error.
+prepare_fixture_identity "$TMP_DIR/canonical-ok.csv" "$TMP_DIR/sales-channel.csv"
 printf '\xEF\xBB\xBF' >"$TMP_DIR/bom.csv"
 cat "$TMP_DIR/canonical-ok.csv" >>"$TMP_DIR/bom.csv"
 
@@ -221,7 +340,7 @@ CSV
 )
 
 cat >"$TMP_DIR/verificado-suppression.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 verif-sin-contacto,Masia Verif,Abrera,Vino,Vino,Carrer Major 10,Descripcion suficientemente larga para validar,,,,https://example.com,,,https://www.google.com/maps/place/Verif,41.51,1.90,,verificado,no comprobado,,
 verif-geo-malo,Masia Lejos,Abrera,Vino,Vino,Carrer Major 11,Descripcion suficientemente larga para validar,,+34600000000,lejos@example.com,https://example.com,https://facebook.com/lejos,https://instagram.com/lejos,https://www.google.com/maps/place/Lejos,41.0,2.3,,verificado,no comprobado,,
 CSV
@@ -244,6 +363,143 @@ grep -q "header does not match the canonical header (column 12 is 'web' instead 
 # The exact canonical header passes contract mode, regardless of its current length.
 run_expect_success "$TMP_DIR/out-canonical-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/canonical-ok.csv"
+
+run_expect_failure "$TMP_DIR/out-identity-format.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/identity-format.csv"
+grep -q "producer_id is required" "$TMP_DIR/out-identity-format.txt"
+grep -q "producer_id must be a positive base-10 integer without leading zeroes" "$TMP_DIR/out-identity-format.txt"
+grep -q "producer_id must be a safe integer" "$TMP_DIR/out-identity-format.txt"
+
+run_expect_failure "$TMP_DIR/out-reserved-producer-route.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/reserved-producer-route.csv"
+grep -q "slug 'vino' is reserved for a category route" \
+  "$TMP_DIR/out-reserved-producer-route.txt"
+
+# Canonical producer identity is country-scoped.
+run_expect_success "$TMP_DIR/out-identity-cross-country.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$ES_IDENTITY_A/a.csv" "$PT_IDENTITY/pt.csv"
+run_expect_failure "$TMP_DIR/out-identity-same-country.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$ES_IDENTITY_A/a.csv" "$ES_IDENTITY_B/b.csv"
+grep -q "producer_id '501' is duplicated within country 'es'" "$TMP_DIR/out-identity-same-country.txt"
+grep -q "slug 'country-shared' is duplicated within country 'es'" "$TMP_DIR/out-identity-same-country.txt"
+
+# `--changed` audits the changed file's full contract but loads every sibling in
+# the same country for identity collisions. Exercise the actual Git-backed CLI
+# in an isolated miniature repository so unrelated workspace changes cannot
+# influence the result.
+CHANGED_ROOT="$TMP_ROOT/changed-repo"
+mkdir -p "$CHANGED_ROOT/scripts" "$CHANGED_ROOT/data/reference" \
+  "$CHANGED_ROOT/data/csv/es/one" "$CHANGED_ROOT/data/csv/es/two"
+cp "$ROOT_DIR/scripts/audit-csv.js" "$CHANGED_ROOT/scripts/audit-csv.js"
+cp "$ROOT_DIR/data/reference/categories.json" "$CHANGED_ROOT/data/reference/categories.json"
+ln -s "$ROOT_DIR/node_modules" "$CHANGED_ROOT/node_modules"
+cat >"$CHANGED_ROOT/data/csv/es/AGENTS.md" <<'GUIDE'
+# Country
+## Operating state
+## Country rules
+## Source ceilings
+GUIDE
+cat >"$CHANGED_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+stable-producer,Stable Producer,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
+CSV
+cat >"$CHANGED_ROOT/data/csv/es/two/two.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+changed-producer,Changed Producer,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
+CSV
+(
+  cd "$CHANGED_ROOT"
+  git init -q
+  git config user.email test@example.com
+  git config user.name "KM0 Test"
+  git add .
+  git commit -qm baseline
+  node - <<'NODE'
+const fs = require("node:fs");
+const file = "data/csv/es/two/two.csv";
+const raw = fs.readFileSync(file, "utf8");
+fs.writeFileSync(file, raw.replace("changed-producer", "stable-producer").replace(",2\n", ",1\n"));
+NODE
+)
+run_expect_failure "$TMP_DIR/out-changed-country-collision.txt" \
+  bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$CHANGED_ROOT"
+grep -q "producer_id '1' is duplicated within country 'es'" "$TMP_DIR/out-changed-country-collision.txt"
+grep -q "slug 'stable-producer' is duplicated within country 'es'" "$TMP_DIR/out-changed-country-collision.txt"
+
+# The one-time bootstrap has no historical producer_id in HEAD. Any valid,
+# country-unique assignment is accepted instead of being mistaken for a new-row
+# allocation after an existing identity sequence.
+BOOTSTRAP_ROOT="$TMP_ROOT/bootstrap-repo"
+prepare_git_audit_repo "$BOOTSTRAP_ROOT"
+cat >"$BOOTSTRAP_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+bootstrap-producer,Bootstrap Producer,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,
+CSV
+(
+  cd "$BOOTSTRAP_ROOT"
+  git add .
+  git commit -qm baseline
+)
+cat >"$BOOTSTRAP_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+bootstrap-producer,Bootstrap Producer,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,42
+CSV
+run_expect_success "$TMP_DIR/out-changed-bootstrap.txt" \
+  bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$BOOTSTRAP_ROOT"
+
+# Once HEAD contains producer_id, a slug may be renamed without compatibility
+# storage, while genuinely new rows consume the next country ID.
+HISTORY_OK_ROOT="$TMP_ROOT/history-ok-repo"
+prepare_git_audit_repo "$HISTORY_OK_ROOT"
+cat >"$HISTORY_OK_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+stable-a,Stable A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
+stable-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
+CSV
+(
+  cd "$HISTORY_OK_ROOT"
+  git add .
+  git commit -qm baseline
+)
+cat >"$HISTORY_OK_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+stable-a,Stable A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
+renamed-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
+fresh-c,Fresh C,Abrera,Vino,Vino,Carrer 3,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,3
+CSV
+run_expect_success "$TMP_DIR/out-changed-history-ok.txt" \
+  bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$HISTORY_OK_ROOT"
+
+HISTORY_BAD_ROOT="$TMP_ROOT/history-bad-repo"
+prepare_git_audit_repo "$HISTORY_BAD_ROOT"
+mkdir -p "$HISTORY_BAD_ROOT/data/csv/es/two"
+cat >"$HISTORY_BAD_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+stable-a,Stable A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
+stable-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
+CSV
+cat >"$HISTORY_BAD_ROOT/data/csv/es/two/two.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+stable-c,Stable C,Abrera,Vino,Vino,Carrer 3,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,3
+CSV
+(
+  cd "$HISTORY_BAD_ROOT"
+  git add .
+  git commit -qm baseline
+)
+cat >"$HISTORY_BAD_ROOT/data/csv/es/one/one.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+stable-a,Stable A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,4
+renamed-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
+replacement,Replacement,Abrera,Vino,Vino,Carrer 4,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
+fresh-gap,Fresh Gap,Abrera,Vino,Vino,Carrer 5,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,6
+CSV
+run_expect_failure "$TMP_DIR/out-changed-history-bad.txt" \
+  bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$HISTORY_BAD_ROOT"
+grep -q "producer_id changed for HEAD slug 'stable-a': expected '1', found '4'" \
+  "$TMP_DIR/out-changed-history-bad.txt"
+grep -q "new producer_id '6' must continue country 'es' sequence at '5'" \
+  "$TMP_DIR/out-changed-history-bad.txt"
 
 # The consolidated CLI requires an explicit scope and audits several inputs in
 # one process, which is how the full 500-area gate avoids reloading centroids.
@@ -318,7 +574,7 @@ grep -q "ERROR line 2 .* km from Abrera centroid (threshold 100 km)" "$TMP_DIR/o
 # and the order is not stable, so the check tries them all — but only trusts the
 # answer when the halves agree on where the town is.
 cat >"$TMP_DIR/municipio-bilingue.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 bilingue-ok,Masia Bilingue,Ujué / Uxue,Vino,Vino,Carrer Major 1,Descripcion de la primera masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.47981,-1.49709,,pendiente,no,,
 paren-ok,Masia Parentesis,Granollers (Palou),Vino,Vino,Carrer Major 2,Descripcion de la segunda masia con datos propios,,+34600000001,ok2@example.com,https://example.com,https://facebook.com/ok2,https://instagram.com/ok2,https://www.google.com/maps/place/Ok2,41.60833,2.28889,,pendiente,no,,
 CSV
@@ -338,7 +594,7 @@ fi
 # spelling and coordinates 30 km away, the check has to fire. This is what
 # proves the geo-check runs on these rows instead of silently skipping them.
 cat >"$TMP_DIR/municipio-bilingue-lejos.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 bilingue-lejos,Masia Lejos,Puente la Reina / Gares,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,42.90,-1.60,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-bilingue-lejos.txt" \
@@ -349,7 +605,7 @@ grep -q "WARNING line 2 .* km from Puente la Reina centroid" "$TMP_DIR/out-munic
 # district of Sant Cugat, 96 km apart. Taking the first half would invent that
 # gap on a correct row, so a disagreement means the lookup says nothing.
 cat >"$TMP_DIR/municipio-homonimo.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 homonimo,Masia Homonima,La Floresta (Sant Cugat del Vallès),Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.47354,2.08524,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-homonimo.txt" \
@@ -363,7 +619,7 @@ fi
 # A real pedanía the lookup does not cover stays skipped and silent: it is a
 # documented gap, not a defect to report.
 cat >"$TMP_DIR/municipio-pedania.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 pedania,Masia Pedania,Aldea Sintetica de Arriba,Vino,Vino,Carrer Major 1,Descripcion de la masia con datos propios,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_success "$TMP_DIR/out-municipio-pedania.txt" \
@@ -440,7 +696,7 @@ grep -q "ERROR line 4 .* categoria 'Panadería y repostería' was retired; use '
 
 # A label that was never registered keeps the plain rejection.
 cat >"$TMP_DIR/unknown-category.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 cat-inventada,Masia Inventada,Abrera,Categoria Inventada,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-unknown-category.txt" \
@@ -454,7 +710,7 @@ if [[ -z "$RETIRED_GONE" ]]; then
   exit 1
 fi
 cat >"$TMP_DIR/retired-rejected.csv" <<CSV
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 cat-retirada,Masia Retirada,Abrera,$RETIRED_GONE,Vino,Carrer Major 1,Descripcion suficientemente larga para validar,,+34600000000,ok@example.com,https://example.com,https://facebook.com/ok,https://instagram.com/ok,https://www.google.com/maps/place/Ok,41.51,1.90,,pendiente,no,,
 CSV
 run_expect_failure "$TMP_DIR/out-retired-rejected.txt" \
@@ -470,11 +726,11 @@ grep -q "WARNING line 3 .* lat/lon is .* km from Abrera centroid" "$TMP_DIR/out-
 # of Chiva in Valencia, 10.751 km apart. Each row is measured against its own
 # country's catalog, so both pass without anyone curating the collision.
 cat >"$JP_DIR/scoped-jp.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 kura-chiba,Kura Chiba,Chiba,Sake,Sake,1-1 Chuo,Bodega de sake con datos propios en la ciudad,,,,https://example.com,,,,35.60728,140.10636,,pendiente,no comprobado,,
 CSV
 cat >"$TMP_DIR/scoped-es.csv" <<'CSV'
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 celler-chiva,Celler de Chiva,Chiva,Vino,Vino,Carrer Major 1,Bodega con datos propios en el municipio,,,,https://example.com,,,,39.47138,-0.71971,,pendiente,no comprobado,,
 CSV
 run_expect_success "$TMP_DIR/out-scoped-jp.txt" \

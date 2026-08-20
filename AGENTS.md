@@ -8,9 +8,9 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Validators enforce structure; they do not prove editorial truth.
 
 ## Project Shape
-- This app is a map viewer for area CSV files: `/` asks for a country; `/[country]` asks for one of its areas; `/?area=[area]` lists producers; `/p/[slug]?area=[area]` renders one producer row.
+- This app is a map viewer for area CSV files: `/` asks for a country; `/[country]` asks for one of its areas; `/[country]/[area]` lists producers; `/[country]/[area]/[slug]` renders one producer row.
 - Runtime flow stays simple: `data/csv/** -> map/list -> row detail`.
-- Core runtime files: `app/page.tsx`, `app/[country]/page.tsx`, `app/p/[slug]/page.tsx`, `lib/csv-catalog.ts`, `lib/catalog-navigation.ts`, `components/map/`.
+- Core runtime files: `app/page.tsx`, `app/[country]/page.tsx`, `app/[country]/[area]/page.tsx`, `app/[country]/[area]/[segment]/page.tsx`, `lib/csv-catalog.ts`, `lib/catalog-navigation.ts`, `components/map/`.
 - Out of scope: database/ORM/migrations/seeds, producer-search API layers, complex service abstractions, hidden producer sources outside `data/csv/**`, and one-off area generators as source of truth.
 
 ## Sources Of Truth
@@ -37,10 +37,11 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 
 ## Hard Invariants
 - Every area CSV in every country shares one header — the canonical one in `docs/CSV_CONTRACT.md` — with LF line endings. The header may grow when the catalog needs it; what is forbidden is growing it partially. Widening it means updating the contract, the validator and every CSV under `data/csv/**` in one dedicated commit.
-- Every area CSV basename is globally unique: `area` is the only area key in public URLs, and `check:csv` rejects collisions across countries or regions.
-- Keep URL params stable: `area`, `category`, `highlight`. A country route is the first folder under `data/csv`, so the folder name and the public URL move together.
-- Producer identity is `slug` within an area; row order must not affect detail URLs. Keep a correct slug stable; fix a materially wrong one following `docs/CSV_CONTRACT.md` § Producer identity (update CSV, images, docs/evidence, and leave a `merge` record when the old slug existed in Git).
-- Detail URLs use `/p/[slug]` and always carry `area`, because slugs are unique within an area and not globally.
+- Every area CSV basename is unique inside its country. The public area key is `(country, area)`, so two countries may use the same area slug; two regions of one country may not.
+- Keep URL params stable: `category` and `highlight`. Country and area are path segments, and the folder names and public URL move together.
+- Producer identity is `(country, producer_id)`: `producer_id` is immutable, unique within the country and independent of row order. A row represents one productive unit, not necessarily its parent company. Never renumber or reuse an allocated ID.
+- A producer `slug` is lowercase ASCII kebab-case and unique within its country. Keep a correct slug stable; fix a materially wrong or redundant one following `docs/CSV_CONTRACT.md` § Producer identity (update CSV, images and docs/evidence in the same change).
+- Detail URLs use `/[country]/[area]/[slug]`. The pre-public catalogue does not retain historic producer slugs or compatibility redirects.
 - `categoria` is the required primary category. `categorias adicionales` is optional, uses exact registry tokens joined with `|`, and only records other material outputs made by the same productive unit. Filters match both fields; never duplicate a producer row by category or infer categories mechanically from `productos estrella`.
 - `verificacion` is required and must be `pendiente`, `parcial`, or `verificado`.
 - `Venta online` is required and must be `sí`, `no`, or `no comprobado`; use `no comprobado` until reviewed. `Canal de venta` is optional, meaningful only when `Venta online=sí`, and follows `docs/CSV_CONTRACT.md`.

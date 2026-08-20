@@ -1,61 +1,61 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
-coco-farm-winery-ashikaga,Coco Farm & Winery,Ashikaga,Vino,,,,,,,https://cocowine.com/,,,,36.340170,139.449720,,parcial,no comprobado,,
-inoue-seikichi-shoten-utsunomiya,Inoue Seikichi Shoten,Utsunomiya,Sake,,栃木県宇都宮市白沢町1901-1,,,+81286732350,,http://sawahime.co.jp/,,,,36.637108,139.941925,,parcial,no comprobado,,
-utsunomiya-shuzo-utsunomiya,Utsunomiya Shuzo,Utsunomiya,Sake,,栃木県宇都宮市柳田町248,,,+81286610880,,http://www.shikisakura.co.jp/,,,,36.559509,139.957184,,parcial,no comprobado,,
-iinuma-meijo-tochigi,Iinuma Meijo,Tochigi,Sake,,栃木県栃木市西方町元850,,,+81282922005,,http://www.cc9.ne.jp/~suginamiki/,,,,36.464859,139.732178,,parcial,no comprobado,,
-ohira-shuzo-tochigi,Ohira Shuzo,Tochigi,Sake,,栃木県栃木市大平町下皆川747,,,+81282432099,,,,,,36.357899,139.707321,,parcial,no comprobado,,
-sagara-shuzo-tochigi,Sagara Shuzo,Tochigi,Sake,,栃木県下都賀郡岩舟町大字静3624,,,+81282552013,,http://asahisakae.omiki.com/,,,,36.38244,139.73414,,parcial,no comprobado,,
-aizawa-shuzo-sano,Aizawa Shuzo,Sano,Sake,,栃木県佐野市堀米町3954-1,,,+81283220423,,,,,,36.327332,139.57518,,parcial,no comprobado,,
-abe-shuzoten-motegi,Abe Shuzoten,Motegi,Sake,,栃木県芳賀郡茂木町大字茂木１３２,,,+81285630053,,,,,,36.532097,140.187469,,parcial,no comprobado,,
-ikejima-shuzo-otawara,Ikejima Shuzo,Otawara,Sake,,栃木県大田原市下石上1227,,,+81287290011,,http://www.ikenishiki.co.jp/,,,,36.850136,139.949448,,parcial,no comprobado,,
-kikunosato-shuzo-otawara,Kikunosato Shuzo,Otawara,Sake,,栃木県那須郡湯津上村大字片府田302-2,,,+81287983477,,http://daina-sake.net/,,,,36.820583,140.061584,,parcial,no comprobado,,
-katayama-shuzo-nikko,Katayama Shuzo,Nikko,Sake,,栃木県日光市瀬川146-2,,,+81288210039,,http://www.kashiwazakari.com/,,,,36.727783,139.686676,,parcial,no comprobado,,
-kumakubo-shoten-nasushiobara,Kumakubo Shoten,Nasushiobara,Sake,,栃木県那須塩原市高林374,,,+81287680003,,,,,,36.986813,139.937973,,parcial,no comprobado,,
-kojima-shuzoten-shioya,Kojima Shuzoten,Shioya,Sake,,栃木県塩谷郡塩谷町風見1185,,,+81287460903,,,,,,36.734772,139.868591,,parcial,no comprobado,,
-kobayashi-shuzo-oyama,Kobayashi Shuzo,Oyama,Sake,,栃木県小山市大字卒島743,,,+81285370005,,,,,,36.346401,139.768509,,parcial,no comprobado,,
-sanpuku-shuzo-oyama,Sanpuku Shuzo,Oyama,Sake,,栃木県小山市南小林87,,,+81285380003,,,,,,36.32127,139.739288,,parcial,no comprobado,,
-shimazaki-shuzo-nasukarasuyama,Shimazaki Shuzo,Nasukarasuyama,Sake,,栃木県那須烏山市中央1丁目11番18号,,,+81287831221,,http://www.azumarikishi.co.jp/,,,,36.655762,140.153763,,parcial,no comprobado,,
-shiraai-shuzo-nakagawa,Shiraai Shuzo,Nakagawa,Sake,,栃木県那須郡那珂川町小川715-2,,,+81287962015,,,,,,36.765774,140.126801,,parcial,no comprobado,,
-tentaka-shuzo-otawara,Tentaka Shuzo,Ōtawara,Sake,Organic sake,栃木県大田原市蛭畑2166　他,"Tentaka Shuzo produces organic sake at its Ōtawara unit, which is listed in the national organic JAS operator register.",,,,https://www.tentaka.co.jp/,,,,36.804707,140.098709,,verificado,no comprobado,,
-nasunomori-nasushiobara,チーズ工房那須の森,Nasushiobara,Lácteos y quesos,"ブリー・ド・那須, 那須ブラウン, カチョカヴァロ",栃木県那須塩原市戸田738-4,Produces cheese and dairy products at its Nasushiobara unit.,,,,https://nasunomori.jp/,,,,36.961720,140.046060,,verificado,no comprobado,,
-farmersforest-utsunomiya,ファーマーズ・フォレスト,Utsunomiya,Cerveza,,,Brews beer at its Utsunomiya unit.,,,,https://farmersforest.co.jp/,,,,36.555110,139.882560,,verificado,no comprobado,,
-finlandnomori-nasu,フィンランドの森チーズ工房メッツァ・ネイト,Nasu,Lácteos y quesos,ブラウンチーズ Ruska（ルスカ）,栃木県那須郡那須町大字高久乙2730-36,Produces cheese and dairy products at its Nasu unit.,,,,https://www.finlandnomori.net/,,,,37.019750,140.120970,,verificado,sí,ecommerce,
-nasukohgenbeer-nasu,那須高原ビール,Nasu,Cerveza,,,Brews beer at its Nasu unit.,,,,https://nasukohgenbeer.co.jp/,,,,37.019750,140.120970,,verificado,no comprobado,,
-imafarm-nasu,那須高原今牧場チーズ工房,Nasu,Lácteos y quesos,"りんどう, 茶臼岳, みのり",栃木県那須郡那須町高久甲5898,Produces cheese and dairy products at its Nasu unit.,,,,https://imafarm.xsrv.jp/,,,,37.019750,140.120970,,verificado,sí,ecommerce,
-cfa-backyard-winery-shimada,株式会社 マルキョー/Cfa Backyard Winery,Shimada,Vino,,栃木県足利市島田町607-1,Produces wine at its Shimada unit.,,+81284724047,,https://winemaker.jp/,,,,34.836280,138.176060,,parcial,no comprobado,,
-nasu-661-wine-hills-nasu,農業生産法人ロイヤルベリーズファーム 有限会社/NASU 661 WINE HILLS,Nasu,Vino,,栃木県那須郡那須町高久丙4515-13,Produces wine at its Nasu unit.,,+81287730661,,https://www.nasu661winehills.net/,,,,37.019750,140.120970,,verificado,no comprobado,,
-so-boku-nasushiobara,So-boku,Nasushiobara,Lácteos y quesos,,栃木県那須塩原市青木1899,Produces cheese and dairy products at its Nasushiobara unit.,,,,,,https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fso_boku%2F&is_from_rle,,36.961720,140.046060,,parcial,no comprobado,,
-tabechoku-26338,那須高原今牧場,Nasu,Lácteos y quesos,,,Produces dairy products at its Nasu unit.,,,,,,,,37.019750,140.120970,,parcial,sí,marketplace,
-tabechoku-26253,ピノキオホールディングス,Utsunomiya,Huevos,,,Produces eggs at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,
-tabechoku-25554,NANTAIファーム,Nikkō-shi,Huevos,,,Produces eggs at its Nikkō-shi unit.,,,,,,,,36.719830,139.698170,,parcial,sí,marketplace,
-tabechoku-3078175,下野きのこファーム,Shimotsuke,Setas,,,Produces mushrooms at its Shimotsuke unit.,,,,,,,,36.394860,139.851810,,parcial,sí,marketplace,
-tabechoku-21444,君嶋きのこ園,Yaita,Setas,,,Produces mushrooms at its Yaita unit.,,,,,,,,36.806720,139.924110,,parcial,sí,marketplace,
-tabechoku-24398,那須バイオファーム,Takanezawa,Setas,きのこ,,Produces mushrooms at its Takanezawa unit.,,,,,,,,36.630970,139.986530,,parcial,sí,marketplace,
-tabechoku-21364,喜連川水産,さくら市,Pescado,鮎,,Produces ayu at its Sakura unit.,,,,,,,,36.685280,139.966420,,parcial,sí,marketplace,
-tabechoku-24914,明星漁業,さくら市,Pescado,鮎,,Produces ayu at its Sakura unit.,,,,,,,,36.685280,139.966420,,parcial,sí,marketplace,
-tabechoku-3079176,内海ぶどう園,Tochigi,Fruta y verdura,ぶどう,,Produces grapes at its Tochigi unit.,,,,,,,,36.382440,139.734140,,parcial,sí,marketplace,
-tabechoku-20334,薄羽養鶏場,Mashiko,Huevos,,,Produces eggs at its Mashiko unit.,,,,,,,,36.467330,140.093360,,parcial,sí,marketplace,
-tabechoku-3077950,自然養鶏こっこの輪,Nasukarasuyama,Huevos,,,Produces eggs at its Nasukarasuyama unit.,,,,,,,,36.656890,140.151420,,parcial,sí,marketplace,
-tabechoku-24921,大田原 阿久津農園,Ōtawara-shi,Pan y cereal,,,Produces grain products at its Ōtawara-shi unit.,,,,,,,,36.870970,140.015940,,parcial,sí,marketplace,
-tabechoku-3077358,遠藤農園,Nasushiobara,Pan y cereal,,,Produces grain products at its Nasushiobara unit.,,,,,,,,36.961720,140.046060,,parcial,sí,marketplace,
-tabechoku-20533,稲作本店（FARM1739）,Nasu,Pan y cereal,米,,Produces rice at its Nasu unit.,,,,,,,,37.019750,140.120970,,parcial,sí,marketplace,
-tabechoku-28836,那須栗園,Nasukarasuyama,Frutos secos,栗,,Produces chestnuts at its Nasukarasuyama unit.,,,,,,,,36.656890,140.151420,,parcial,sí,marketplace,
-tabechoku-28929,鈴木いちご農園,Utsunomiya,Fruta y verdura,いちご,,Produces strawberries at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,
-tabechoku-21828,大時果樹園,Utsunomiya,Fruta y verdura,梨,,Produces pears at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,
-tabechoku-21114,フジワラアグリコルトゥーラ,Utsunomiya,Fruta y verdura,,,Produces fruit and vegetables at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,
-tabechoku-27633,ブルーベリー南園（みなみえん）,Oyama,Fruta y verdura,野菜,,Produces vegetables at its Oyama unit.,,,,,,,,36.308000,139.801950,,parcial,sí,marketplace,
-tabechoku-21492,青苺農園,Mashiko,Fruta y verdura,,,Produces fruit and vegetables at its Mashiko unit.,,,,,,,,36.467330,140.093360,,parcial,sí,marketplace,
-tabechoku-21883,YB.DRAGON Farm 『🌽トウモロコシ王子👑』,Mooka,Fruta y verdura,,,Produces fruit and vegetables at its Mooka unit.,,,,,,,,36.440420,140.013390,,parcial,sí,marketplace,
-tabechoku-29385,稲田農園,Nasushiobara,Fruta y verdura,,,Produces fruit and vegetables at its Nasushiobara unit.,,,,,,,,36.961720,140.046060,,parcial,sí,marketplace,
-jp-tochigi-usagimonaka-a058c26,うさぎや,宇都宮市,Dulces y repostería,和菓子,宇都宮市伝馬町 4-5,"Produces Japanese confectionery in 宇都宮市, tochigi.",,,,https://www.usagimonaka.com/,,,,36.555110,139.882560,,verificado,no comprobado,,
-jp-tochigi-yamamotokashi-5de6ddd,山本總本店,栃木市,Dulces y repostería,和菓子,栃木市倭町 7-13,"Produces Japanese confectionery in 栃木市, tochigi.",,,,http://www.yamamotokashi.jp/,,,,36.382440,139.734140,,verificado,sí,ecommerce,
-jp-tochigi-kappamanju-1b70c43,黒子松屋,鹿沼市,Dulces y repostería,和菓子,鹿沼市深程 1666,"Produces Japanese confectionery in 鹿沼市, tochigi.",,,,http://www.kappamanju.jp/,,,,36.567080,139.745060,,verificado,no comprobado,,
-jp-tochigi-nissin-seika-co-ce5adce,株式会社日新製菓,宇都宮市,Aperitivos,米菓,,"Produces rice crackers in 宇都宮市, tochigi.",,,,https://www.nissin-seika.co.jp/,,,,36.555110,139.882560,,verificado,no comprobado,,
-jp-tochigi-beika-nagomi-co-5088915,有限会社米菓工房 和,宇都宮市,Aperitivos,米菓,,"Produces rice crackers in 宇都宮市, tochigi.",,,,https://www.beika-nagomi.co.jp/,,,,36.555110,139.882560,,verificado,no comprobado,,
-jp-tochigi-maruhikoseika-co-5fac19a,丸彦製菓株式会社,日光市,Aperitivos,米菓,,"Produces rice crackers in 日光市, tochigi.",,,,https://www.maruhikoseika.co.jp/,,,,36.719830,139.698170,,verificado,no comprobado,,
-jp-tochigi-jingorou-54a2bd4,株式会社石田屋,日光市,Aperitivos,米菓,,"Produces rice crackers in 日光市, tochigi.",,,,http://www.jingorou.com/,,,,36.719830,139.698170,,verificado,no comprobado,,
-jp-tochigi-hizatsuki-f76291b,ひざつき製菓株式会社,栃木市,Aperitivos,米菓,,"Produces rice crackers in 栃木市, tochigi.",,,,https://hizatsuki.com/,,,,36.382440,139.734140,,verificado,no comprobado,,
-jp-tochigi-iinuma-co-db0ceae,株式会社飯沼,栃木市,Aperitivos,米菓,,"Produces rice crackers in 栃木市, tochigi.",,,,https://iinuma.co.jp/,,,,36.382440,139.734140,,verificado,sí,ecommerce,
-nikko-brewing,NIKKO BREWING (日光ブルーイング),Nikko,Cerveza,,木和田島1564-4,Brewery producing beer at its Nikko unit.,,,,https://www.nikko-monkeys.beer/,,https://www.instagram.com/nikko_brewing/,,36.71983,139.69817,,parcial,no comprobado,,
-ushitora-brewery,うしとらブルワリー (Ushitora Brewery),Shimotsuke,Cerveza,,下古山1783-1,Brewery producing beer at its Shimotsuke unit.,,,,,,https://www.instagram.com/ushitorabrewery/,,36.39486,139.85181,,parcial,no comprobado,,
-blue-magic,BLUE MAGIC (ブルマジック),Utsunomiya,Cerveza,,池上町3-8,Brewery producing beer at its Utsunomiya unit.,,,,,,https://www.instagram.com/bluemagic_beer/,,36.55511,139.88256,,parcial,no comprobado,,
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+coco-farm-winery-ashikaga,Coco Farm & Winery,Ashikaga,Vino,,,,,,,https://cocowine.com/,,,,36.340170,139.449720,,parcial,no comprobado,,,149
+inoue-seikichi-shoten-utsunomiya,Inoue Seikichi Shoten,Utsunomiya,Sake,,栃木県宇都宮市白沢町1901-1,,,+81286732350,,http://sawahime.co.jp/,,,,36.637108,139.941925,,parcial,no comprobado,,,408
+utsunomiya-shuzo-utsunomiya,Utsunomiya Shuzo,Utsunomiya,Sake,,栃木県宇都宮市柳田町248,,,+81286610880,,http://www.shikisakura.co.jp/,,,,36.559509,139.957184,,parcial,no comprobado,,,1315
+iinuma-meijo,Iinuma Meijo,Tochigi,Sake,,栃木県栃木市西方町元850,,,+81282922005,,http://www.cc9.ne.jp/~suginamiki/,,,,36.464859,139.732178,,parcial,no comprobado,,,368
+ohira-shuzo,Ohira Shuzo,Tochigi,Sake,,栃木県栃木市大平町下皆川747,,,+81282432099,,,,,,36.357899,139.707321,,parcial,no comprobado,,,904
+sagara-shuzo-tochigi,Sagara Shuzo,Tochigi,Sake,,栃木県下都賀郡岩舟町大字静3624,,,+81282552013,,http://asahisakae.omiki.com/,,,,36.38244,139.73414,,parcial,no comprobado,,,1018
+aizawa-shuzo-sano,Aizawa Shuzo,Sano,Sake,,栃木県佐野市堀米町3954-1,,,+81283220423,,,,,,36.327332,139.57518,,parcial,no comprobado,,,29
+abe-shuzoten-motegi,Abe Shuzoten,Motegi,Sake,,栃木県芳賀郡茂木町大字茂木１３２,,,+81285630053,,,,,,36.532097,140.187469,,parcial,no comprobado,,,13
+ikejima-shuzo-otawara,Ikejima Shuzo,Otawara,Sake,,栃木県大田原市下石上1227,,,+81287290011,,http://www.ikenishiki.co.jp/,,,,36.850136,139.949448,,parcial,no comprobado,,,376
+kikunosato-shuzo-otawara,Kikunosato Shuzo,Otawara,Sake,,栃木県那須郡湯津上村大字片府田302-2,,,+81287983477,,http://daina-sake.net/,,,,36.820583,140.061584,,parcial,no comprobado,,,562
+katayama-shuzo-nikko,Katayama Shuzo,Nikko,Sake,,栃木県日光市瀬川146-2,,,+81288210039,,http://www.kashiwazakari.com/,,,,36.727783,139.686676,,parcial,no comprobado,,,527
+kumakubo-shoten-nasushiobara,Kumakubo Shoten,Nasushiobara,Sake,,栃木県那須塩原市高林374,,,+81287680003,,,,,,36.986813,139.937973,,parcial,no comprobado,,,670
+kojima-shuzoten-shioya,Kojima Shuzoten,Shioya,Sake,,栃木県塩谷郡塩谷町風見1185,,,+81287460903,,,,,,36.734772,139.868591,,parcial,no comprobado,,,627
+kobayashi-shuzo-oyama,Kobayashi Shuzo,Oyama,Sake,,栃木県小山市大字卒島743,,,+81285370005,,,,,,36.346401,139.768509,,parcial,no comprobado,,,618
+sanpuku-shuzo-oyama,Sanpuku Shuzo,Oyama,Sake,,栃木県小山市南小林87,,,+81285380003,,,,,,36.32127,139.739288,,parcial,no comprobado,,,1038
+shimazaki-shuzo-nasukarasuyama,Shimazaki Shuzo,Nasukarasuyama,Sake,,栃木県那須烏山市中央1丁目11番18号,,,+81287831221,,http://www.azumarikishi.co.jp/,,,,36.655762,140.153763,,parcial,no comprobado,,,1096
+shiraai-shuzo-nakagawa,Shiraai Shuzo,Nakagawa,Sake,,栃木県那須郡那珂川町小川715-2,,,+81287962015,,,,,,36.765774,140.126801,,parcial,no comprobado,,,1110
+tentaka-shuzo-otawara,Tentaka Shuzo,Ōtawara,Sake,Organic sake,栃木県大田原市蛭畑2166　他,"Tentaka Shuzo produces organic sake at its Ōtawara unit, which is listed in the national organic JAS operator register.",,,,https://www.tentaka.co.jp/,,,,36.804707,140.098709,,verificado,no comprobado,,,1224
+nasunomori-nasushiobara,チーズ工房那須の森,Nasushiobara,Lácteos y quesos,"ブリー・ド・那須, 那須ブラウン, カチョカヴァロ",栃木県那須塩原市戸田738-4,Produces cheese and dairy products at its Nasushiobara unit.,,,,https://nasunomori.jp/,,,,36.961720,140.046060,,verificado,no comprobado,,,1838
+farmersforest-utsunomiya,ファーマーズ・フォレスト,Utsunomiya,Cerveza,,,Brews beer at its Utsunomiya unit.,,,,https://farmersforest.co.jp/,,,,36.555110,139.882560,,verificado,no comprobado,,,1891
+finlandnomori-nasu,フィンランドの森チーズ工房メッツァ・ネイト,Nasu,Lácteos y quesos,ブラウンチーズ Ruska（ルスカ）,栃木県那須郡那須町大字高久乙2730-36,Produces cheese and dairy products at its Nasu unit.,,,,https://www.finlandnomori.net/,,,,37.019750,140.120970,,verificado,sí,ecommerce,,1898
+nasukohgenbeer-nasu,那須高原ビール,Nasu,Cerveza,,,Brews beer at its Nasu unit.,,,,https://nasukohgenbeer.co.jp/,,,,37.019750,140.120970,,verificado,no comprobado,,,3212
+imafarm-nasu,那須高原今牧場チーズ工房,Nasu,Lácteos y quesos,"りんどう, 茶臼岳, みのり",栃木県那須郡那須町高久甲5898,Produces cheese and dairy products at its Nasu unit.,,,,https://imafarm.xsrv.jp/,,,,37.019750,140.120970,,verificado,sí,ecommerce,,3214
+cfa-backyard-winery-shimada,株式会社 マルキョー/Cfa Backyard Winery,Shimada,Vino,,栃木県足利市島田町607-1,Produces wine at its Shimada unit.,,+81284724047,,https://winemaker.jp/,,,,34.836280,138.176060,,parcial,no comprobado,,,2734
+nasu-661-wine-hills-nasu,農業生産法人ロイヤルベリーズファーム 有限会社/NASU 661 WINE HILLS,Nasu,Vino,,栃木県那須郡那須町高久丙4515-13,Produces wine at its Nasu unit.,,+81287730661,,https://www.nasu661winehills.net/,,,,37.019750,140.120970,,verificado,no comprobado,,,3192
+so-boku-nasushiobara,So-boku,Nasushiobara,Lácteos y quesos,,栃木県那須塩原市青木1899,Produces cheese and dairy products at its Nasushiobara unit.,,,,,,https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fso_boku%2F&is_from_rle,,36.961720,140.046060,,parcial,no comprobado,,,1130
+tabechoku-26338,那須高原今牧場,Nasu,Lácteos y quesos,,,Produces dairy products at its Nasu unit.,,,,,,,,37.019750,140.120970,,parcial,sí,marketplace,,3213
+tabechoku-26253,ピノキオホールディングス,Utsunomiya,Huevos,,,Produces eggs at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,,1884
+tabechoku-25554,NANTAIファーム,Nikkō-shi,Huevos,,,Produces eggs at its Nikkō-shi unit.,,,,,,,,36.719830,139.698170,,parcial,sí,marketplace,,840
+tabechoku-3078175,下野きのこファーム,Shimotsuke,Setas,,,Produces mushrooms at its Shimotsuke unit.,,,,,,,,36.394860,139.851810,,parcial,sí,marketplace,,2041
+tabechoku-21444,君嶋きのこ園,Yaita,Setas,,,Produces mushrooms at its Yaita unit.,,,,,,,,36.806720,139.924110,,parcial,sí,marketplace,,2255
+tabechoku-24398,那須バイオファーム,Takanezawa,Setas,きのこ,,Produces mushrooms at its Takanezawa unit.,,,,,,,,36.630970,139.986530,,parcial,sí,marketplace,,3210
+tabechoku-21364,喜連川水産,さくら市,Pescado,鮎,,Produces ayu at its Sakura unit.,,,,,,,,36.685280,139.966420,,parcial,sí,marketplace,,2267
+tabechoku-24914,明星漁業,さくら市,Pescado,鮎,,Produces ayu at its Sakura unit.,,,,,,,,36.685280,139.966420,,parcial,sí,marketplace,,2575
+tabechoku-3079176,内海ぶどう園,Tochigi,Fruta y verdura,ぶどう,,Produces grapes at its Tochigi unit.,,,,,,,,36.382440,139.734140,,parcial,sí,marketplace,,2186
+tabechoku-20334,薄羽養鶏場,Mashiko,Huevos,,,Produces eggs at its Mashiko unit.,,,,,,,,36.467330,140.093360,,parcial,sí,marketplace,,3131
+tabechoku-3077950,自然養鶏こっこの輪,Nasukarasuyama,Huevos,,,Produces eggs at its Nasukarasuyama unit.,,,,,,,,36.656890,140.151420,,parcial,sí,marketplace,,3087
+tabechoku-24921,大田原 阿久津農園,Ōtawara-shi,Pan y cereal,,,Produces grain products at its Ōtawara-shi unit.,,,,,,,,36.870970,140.015940,,parcial,sí,marketplace,,2321
+tabechoku-3077358,遠藤農園,Nasushiobara,Pan y cereal,,,Produces grain products at its Nasushiobara unit.,,,,,,,,36.961720,140.046060,,parcial,sí,marketplace,,3208
+tabechoku-20533,稲作本店（FARM1739）,Nasu,Pan y cereal,米,,Produces rice at its Nasu unit.,,,,,,,,37.019750,140.120970,,parcial,sí,marketplace,,3012
+tabechoku-28836,那須栗園,Nasukarasuyama,Frutos secos,栗,,Produces chestnuts at its Nasukarasuyama unit.,,,,,,,,36.656890,140.151420,,parcial,sí,marketplace,,3211
+tabechoku-28929,鈴木いちご農園,Utsunomiya,Fruta y verdura,いちご,,Produces strawberries at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,,3240
+tabechoku-21828,大時果樹園,Utsunomiya,Fruta y verdura,梨,,Produces pears at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,,2317
+tabechoku-21114,フジワラアグリコルトゥーラ,Utsunomiya,Fruta y verdura,,,Produces fruit and vegetables at its Utsunomiya unit.,,,,,,,,36.555110,139.882560,,parcial,sí,marketplace,,1904
+tabechoku-27633,ブルーベリー南園（みなみえん）,Oyama,Fruta y verdura,野菜,,Produces vegetables at its Oyama unit.,,,,,,,,36.308000,139.801950,,parcial,sí,marketplace,,1910
+tabechoku-21492,青苺農園,Mashiko,Fruta y verdura,,,Produces fruit and vegetables at its Mashiko unit.,,,,,,,,36.467330,140.093360,,parcial,sí,marketplace,,3287
+tabechoku-21883,YB.DRAGON Farm 『🌽トウモロコシ王子👑』,Mooka,Fruta y verdura,,,Produces fruit and vegetables at its Mooka unit.,,,,,,,,36.440420,140.013390,,parcial,sí,marketplace,,1370
+tabechoku-29385,稲田農園,Nasushiobara,Fruta y verdura,,,Produces fruit and vegetables at its Nasushiobara unit.,,,,,,,,36.961720,140.046060,,parcial,sí,marketplace,,3013
+jp-tochigi-usagimonaka-a058c26,うさぎや,宇都宮市,Dulces y repostería,和菓子,宇都宮市伝馬町 4-5,"Produces Japanese confectionery in 宇都宮市, tochigi.",,,,https://www.usagimonaka.com/,,,,36.555110,139.882560,,verificado,no comprobado,,,1437
+jp-tochigi-yamamotokashi-5de6ddd,山本總本店,栃木市,Dulces y repostería,和菓子,栃木市倭町 7-13,"Produces Japanese confectionery in 栃木市, tochigi.",,,,http://www.yamamotokashi.jp/,,,,36.382440,139.734140,,verificado,sí,ecommerce,,2433
+jp-tochigi-kappamanju-1b70c43,黒子松屋,鹿沼市,Dulces y repostería,和菓子,鹿沼市深程 1666,"Produces Japanese confectionery in 鹿沼市, tochigi.",,,,http://www.kappamanju.jp/,,,,36.567080,139.745060,,verificado,no comprobado,,,3333
+jp-tochigi-nissin-seika-co-ce5adce,株式会社日新製菓,宇都宮市,Aperitivos,米菓,,"Produces rice crackers in 宇都宮市, tochigi.",,,,https://www.nissin-seika.co.jp/,,,,36.555110,139.882560,,verificado,no comprobado,,,2771
+jp-tochigi-beika-nagomi-co-5088915,有限会社米菓工房 和,宇都宮市,Aperitivos,米菓,,"Produces rice crackers in 宇都宮市, tochigi.",,,,https://www.beika-nagomi.co.jp/,,,,36.555110,139.882560,,verificado,no comprobado,,,2621
+jp-tochigi-maruhikoseika-co-5fac19a,丸彦製菓株式会社,日光市,Aperitivos,米菓,,"Produces rice crackers in 日光市, tochigi.",,,,https://www.maruhikoseika.co.jp/,,,,36.719830,139.698170,,verificado,no comprobado,,,2078
+jp-tochigi-jingorou-54a2bd4,株式会社石田屋,日光市,Aperitivos,米菓,,"Produces rice crackers in 日光市, tochigi.",,,,http://www.jingorou.com/,,,,36.719830,139.698170,,verificado,no comprobado,,,2781
+jp-tochigi-hizatsuki-f76291b,ひざつき製菓株式会社,栃木市,Aperitivos,米菓,,"Produces rice crackers in 栃木市, tochigi.",,,,https://hizatsuki.com/,,,,36.382440,139.734140,,verificado,no comprobado,,,1597
+jp-tochigi-iinuma-co-db0ceae,株式会社飯沼,栃木市,Aperitivos,米菓,,"Produces rice crackers in 栃木市, tochigi.",,,,https://iinuma.co.jp/,,,,36.382440,139.734140,,verificado,sí,ecommerce,,2791
+nikko-brewing,NIKKO BREWING (日光ブルーイング),Nikko,Cerveza,,木和田島1564-4,Brewery producing beer at its Nikko unit.,,,,https://www.nikko-monkeys.beer/,,https://www.instagram.com/nikko_brewing/,,36.71983,139.69817,,parcial,no comprobado,,,860
+ushitora-brewery,うしとらブルワリー (Ushitora Brewery),Shimotsuke,Cerveza,,下古山1783-1,Brewery producing beer at its Shimotsuke unit.,,,,,,https://www.instagram.com/ushitorabrewery/,,36.39486,139.85181,,parcial,no comprobado,,,1440
+blue-magic,BLUE MAGIC (ブルマジック),Utsunomiya,Cerveza,,池上町3-8,Brewery producing beer at its Utsunomiya unit.,,,,,,https://www.instagram.com/bluemagic_beer/,,36.55511,139.88256,,parcial,no comprobado,,,111

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
 
 import { AreaSelector } from "@/components/area-selector";
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   return {
     title: `${country.label} · KM0 Producers`,
     description: `Pick a ${country.unit.one} of ${country.label} to browse its local producers.`,
+    alternates: { canonical: `/${country.slug}` },
   };
 }
 
@@ -35,6 +36,10 @@ export default async function CountryPage({ params }: CountryPageProps) {
 
   if (!country) {
     notFound();
+  }
+
+  if (countrySlug !== country.slug) {
+    permanentRedirect(`/${country.slug}`);
   }
 
   return (
@@ -67,7 +72,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
                 {region.areas.map((area) => (
                   <Link
                     key={area.slug}
-                    href={buildCatalogHref({ area: area.slug })}
+                    href={buildCatalogHref({ country: country.slug, area: area.slug })}
                     className="area-link"
                   >
                     {area.label}

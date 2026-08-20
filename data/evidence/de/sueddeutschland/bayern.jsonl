@@ -248,9 +248,9 @@
 {"slug":"lang-brau","action":"keep","sources":[{"url":"http://www.lang-braeu-freyung.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"leikeim","action":"keep","sources":[{"url":"https://www.leikeim.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"leinburger-bier","action":"keep","sources":[{"url":"https://www.leinburger-bier.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
-{"slug":"lindenbrau","action":"keep","sources":[{"url":"https://lindenbraeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"lindenbrau-weissenohe","action":"keep","sources":[{"url":"https://lindenbraeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"lowen-brau-buttenheim","action":"keep","sources":[{"url":"https://www.bayerisches-bier.de/bierfinder/","type":"public-registry","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
-{"slug":"lowenbrauerei","action":"keep","sources":[{"url":"https://www.bayerisches-bier.de/bierfinder/","type":"public-registry","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"lowenbrauerei-passau","action":"keep","sources":[{"url":"https://www.bayerisches-bier.de/bierfinder/","type":"public-registry","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"maierbier","action":"keep","sources":[{"url":"http://www.maierbier.com/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"maierbrau","action":"keep","sources":[{"url":"https://maierbraeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"maischerei-mayr-und-muller","action":"keep","sources":[{"url":"https://www.maischerei-mayr-mueller.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
@@ -622,7 +622,7 @@
 {"slug":"schmittbrau","action":"keep","sources":[{"url":"https://schmitt-braeu.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"schmolzer-dorfbrauerei","action":"keep","sources":[{"url":"https://schmoelzer-dorfbrauerei.jimdofree.com/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"schnupp","action":"keep","sources":[{"url":"http://gasthof-bayreuth-kulmbach.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
-{"slug":"schwanen-brau","action":"keep","sources":[{"url":"http://www.schwanen-braeu-ebing.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
+{"slug":"schwanen-brau-rattelsdorf","action":"keep","sources":[{"url":"http://www.schwanen-braeu-ebing.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"schwanenbrau","action":"keep","sources":[{"url":"https://www.schwanenbraeu.de","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"schwarzer-adler","action":"keep","sources":[{"url":"https://www.brauerei-eichhorn.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}
 {"slug":"servus-wally","action":"keep","sources":[{"url":"https://www.muellerbraeu-braugasthof.de/","type":"official-site","checkedAt":"2026-08-08","claims":["identity","producer-activity","municipality"]}]}

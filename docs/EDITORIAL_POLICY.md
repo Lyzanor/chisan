@@ -94,8 +94,8 @@ and record the other as additional.
 
 Apply these boundaries:
 
-- Keep one row, slug, location and evidence identity for the productive unit;
-  never duplicate it by category.
+- Keep one row, `producer_id`, slug, location and evidence identity for the
+  productive unit; never duplicate it by category.
 - A separately sold product line can support an additional category. A flavour,
   ingredient, raw input, by-product, tasting-menu item or occasional workshop
   output does not do so by itself.

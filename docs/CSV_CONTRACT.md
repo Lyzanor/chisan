@@ -35,8 +35,11 @@ data/csv/<country>/<region>/<area>.csv
   country-specific labels and ordering belong in `country.json`.
 - The folder tree is the registry; adding a country, region or area is a data
   change, not a code change.
-- `<area>` must be globally unique. It is the sole area key in public URLs, so
-  the same slug in two countries would make one CSV unreachable.
+- `<area>` must be unique inside its country. The public area key is
+  `(<country>, <area>)`, so different countries may use the same area slug but
+  two regions of one country may not.
+- `events` and `retail` are reserved country-level namespaces and cannot be
+  area slugs or aliases.
 - Every producer row belongs to the area containing its productive unit. A
   sales outlet, head office or brand origin does not determine placement.
 
@@ -47,7 +50,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 ```
 
 All columns are physically present in every file. “Optional” below means that a
@@ -69,7 +72,7 @@ whitespace.
 
 | Field | Presence | Meaning and representation |
 |---|---|---|
-| `slug` | required | Stable producer identifier within the area; lowercase ASCII kebab-case. |
+| `slug` | required | Current public producer slug; lowercase ASCII kebab-case and unique within the country. |
 | `nombre` | required | Public producer identity or brand, not an invented label. |
 | `municipio` | required | Municipality of the qualifying productive unit, using its public or official local spelling. |
 | `categoria` | required | One exact token from the shared category registry. |
@@ -90,6 +93,7 @@ whitespace.
 | `Venta online` | required | Exact token: `sí`, `no` or `no comprobado`. |
 | `Canal de venta` | conditional | Zero or more allowed channel tokens joined with `|`; only when `Venta online=sí`. |
 | `categorias adicionales` | optional | Zero or more exact category tokens joined with `|`; each represents another material product line of the same productive unit. |
+| `producer_id` | required | Immutable positive decimal safe integer (`1..9007199254740991`) without leading zeroes; unique within the country. |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -275,21 +279,41 @@ duplicate hashes for visual review. Visual sourcing and preparation live in
 
 ## Producer identity
 
-`slug` is unique within its area and, together with `area`, identifies the
-published row. Row order is never identity and may change freely.
+The durable key is `(<country>, producer_id)`. It identifies one published row
+and productive unit, not necessarily the parent company or organisation that
+owns several units. Row order is never identity and may change freely.
+
+The initial catalogue migration assigns `1..N` once per country by normalised
+`nombre`, then normalised `municipio`, `area`, the former `slug`, file path and
+source row as deterministic tie-breakers; it does not reorder the CSVs. After
+that bootstrap, IDs are immutable. A new row receives the country's next
+monotonically increasing number; never renumber existing rows, fill a deleted
+gap or reuse an allocated ID. A merge keeps the target row's ID. Corporate
+grouping, if needed later, is a separate many-to-one identifier.
+
+`slug` is the readable routing identity and is unique within the country. Its
+canonical URL is `/<country>/<area>/<slug>`. A slug should describe the producer
+without mechanically repeating an area that is already present in the path,
+but a municipality or area qualifier stays when it distinguishes homonyms.
+Shared category slugs are reserved so a future `/<country>/<area>/<category>`
+resolver cannot collide with a producer.
 
 Keep a correct slug stable. Change it only when it materially encodes the wrong
-producer, duplicate, municipality or misleading typo. In the same change,
-update the CSV, image path, evidence and affected docs; when the old slug existed
-in Git, preserve continuity with the appropriate `merge` evidence record.
-Routing behavior remains an application concern; its stable identity invariants
-live in `AGENTS.md`.
+producer, duplicate, municipality, misleading typo or a redundant geographic
+suffix covered by the canonical path. In the same change, update the image
+path, the current `keep` evidence slug, existing `merge.targetSlug` references
+and affected docs. The pre-public catalogue does not retain the former slug or
+serve a compatibility redirect. A pure routing rename does not invent a
+`merge` evidence record; `merge` remains an entity de-duplication tombstone.
+When two producer rows are actually merged, preserve that tombstone as required
+by `docs/EVIDENCE_CONTRACT.md`.
 
 ## Validation model
 
 `npx pnpm check:csv` blocks publication for physical-schema errors, missing core
-values, invalid controlled values or formats, duplicate area-local slugs,
-invalid primary or additional categories, incoherent field combinations and
+values, invalid controlled values or formats, duplicate country-local
+`producer_id` or current `slug` values, invalid area aliases, invalid primary or
+additional categories, incoherent field combinations and
 geographic mismatches above `100 km`. The same pass emits non-blocking integrity
 warnings for unusable social-profile links, non-canonical Google Maps links and
 coordinates in the `15–100 km` review band.

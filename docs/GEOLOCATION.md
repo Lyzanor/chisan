@@ -42,7 +42,8 @@ demuestra identidad.
 
 ## Fuente y punto buscado
 
-Estabiliza primero `nombre`, `slug`, `municipio` y la identidad de la unidad.
+Estabiliza primero `nombre`, `producer_id`, `slug`, `municipio` y la identidad
+de la unidad.
 Busca después, por orden, deteniéndote cuando la precisión sea suficiente:
 
 1. Coordenadas o pin publicados por el productor para la unidad productiva.
