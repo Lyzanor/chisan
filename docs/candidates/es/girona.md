@@ -40,3 +40,12 @@ actuals. Oli de Particular ja correspon a `Clos de la Torre` i no es reobre.
 No s'anoten `#somformatgers` (col·lectiu/directori, no unitat productiva) ni
 les fitxes no alimentàries Cécile Ribas, Ceràmica Ley i Taller Ceràmica Ca
 l'Eloi.
+
+## Incidència d'un altre lot (2026-08-19)
+
+En publicar **Formatgeria Mas Roquet** (Maçanet de Cabrenys) surt que el mateix
+mas hi té una segona marca alimentària, **Confitures Mas Roquet**
+([@confituresmasroquet](https://www.instagram.com/confituresmasroquet/)), amb
+alta pròpia al RIAAC per «Preparació i conservació de fruites» a nom de Paula
+Gorgot Batlle. És una unitat i una categoria diferents (Conservas), fora
+d'aquest lot de formatges: queda com a alta pendent d'un lot de conserves.

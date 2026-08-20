@@ -953,3 +953,20 @@ nombre comercial resuelto) y `Elaboració d'espècies` (5).
 **Turrones y Especialidades Viar** (turronero artesano desde 1929, `viar.es`,
 +34934214149): obrador hoy en **C/ del Río 22-24, 08291 Ripollet**. Encaja en el CSV como
 fila de Ripollet, no de Barcelona; queda como alta pendiente para un lote de Ripollet.
+
+## Pista sin resolver — Fira del Formatge de Lladó (2026-08-19)
+
+Barrido del roster de formatgers de la [30a Fira Catalana del Formatge Artesà
+de Lladó](https://firadelformatge.cat/artesans-formatgers/) (20-09-2026): 25
+formatgeries, 22 ya en el CSV. De las 3 restantes, Tòrrec y Mas Roquet se han
+publicado en Lleida y Girona; queda una sin municipio.
+
+| candidato | por qué no se publica | fuentes comprobadas |
+|---|---|---|
+| Formatgeria la Baterola | Productora real y activa (obrador estrenado en 2026, publicaciones de julio de 2026), pero **no publica municipio en ninguna fuente**: la bio solo dice «El Lluçanès», sin web, sin ficha ACREFA, sin alta en RIAAC ni en el registro de venda de proximitat. La comarca es íntegramente de la provincia de Barcelona, así que el área es esta; falta el `municipio`, que es obligatorio y no se puede deducir entre los 13 municipios. | [ficha de la feria](https://firadelformatge.cat/artesans-formatgers/) · [Instagram](https://www.instagram.com/baterola.formatges/) |
+
+Elabora con leche cruda de vaca ecológica de Ecofranch y Can Frigola. Pista
+para reabrir: el obrador podría ser el de instalaciones lácteas compartidas de
+Alpens que usa La Petita Ànima; RIAAC registra allí un alta de formatges
+madurats a nombre particular (C. de Dalt, 2) que habría que identificar 1-a-1
+antes de dar por buena esa ubicación.

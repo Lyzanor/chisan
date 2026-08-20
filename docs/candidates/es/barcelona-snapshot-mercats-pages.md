@@ -94,7 +94,7 @@ fuera de provincia.
 | Montalegre | fuera prov. (Pontils, Conca de Barberà) |
 | Fruits Colomer | fruita genèrica de temporada → no alta |
 | Clot de les Soleres | ja al CSV |
-| Formatgeria De Torrec | fuera prov. (Artesa de Segre, Noguera) |
+| Formatgeria De Torrec | fuera prov. (Vilanova de Meià, Noguera) → publicada a `lleida.csv` el 2026-08-19 |
 | Cal Fusteret | ja al CSV (Sant Fruitós del Bages) |
 | Cal Cols | sin rastro verificable → no alta |
 | Formatgeria Veciana | ja al CSV (`formatges-veciana`) |
