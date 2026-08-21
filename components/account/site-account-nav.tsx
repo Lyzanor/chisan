@@ -19,13 +19,7 @@ function SignedOutAccountLinks() {
 }
 
 export function SiteAccountNav({ authConfigured }: SiteAccountNavProps) {
-  if (!authConfigured) {
-    return (
-      <nav aria-label="Account">
-        <SignedOutAccountLinks />
-      </nav>
-    );
-  }
+  if (!authConfigured) return null;
 
   return (
     <nav aria-label="Account">
