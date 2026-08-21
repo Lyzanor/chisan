@@ -117,3 +117,12 @@ Quedan **66 candidatos nuevos** en este corte: 16 perfiles de explotación, 31 u
 | GAEC DE LA MOLEDE | GAEC DE LA MOLEDE | Thiezac | LA MOLEDE 15800 | actividad | 2026 | [nº Bio 21614](https://annuaire.agencebio.org/operateur/21614) |
 | GAEC DES CLOUS | GAEC DES CLOUS | Vernols | 3 rue de la roche Corbière 15160 | actividad | 2026 | [nº Bio 46921](https://annuaire.agencebio.org/operateur/46921) |
 | LENIK Fabien | FABIEN LENIK EI | Vieillevie | Le pauzat 15120 | actividad | 2026 | [nº Bio 25132](https://annuaire.agencebio.org/operateur/25132) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| La Fleuracoise | La Fleuracoise SARL | Ydes | Fleurac 15210 Ydes | Cerveza | — | Brasserie artisanale cantalienne de Fleurac produisant des bières de fermentation haute. (11.05Z — Fabrication de bière) | [SIREN 499160315](https://annuaire-entreprises.data.gouv.fr/entreprise/499160315) |
+| Les Confitures de Charlus | Les Confitures de Charlus SARL | Bassignac | Charlus 15240 Bassignac | Conservas | — | Confiturerie artisanale cantalienne, confitures de fruits de montagne cuites au chaudron de cuivre. (10.39B — Transformation et conservation de fruits) | [SIREN 394742688](https://annuaire-entreprises.data.gouv.fr/entreprise/394742688) |

@@ -80,3 +80,12 @@ Quedan **25 candidatos nuevos** en este corte: 10 perfiles de explotación, 5 un
 | GAEC DE LA CAILLONNIERE | GAEC DE LA CAILLONNIERE | Paulnay | LD LA CAILLONNIERE 36290 | actividad | 2026 | [nº Bio 57257](https://annuaire.agencebio.org/operateur/57257) |
 | REGRENIL Stéphanie | REGRENIL STEPHANIE ANNIE | Rivarennes | LD LA PILOTERIE 36800 | actividad | 2026 | [nº Bio 14750](https://annuaire.agencebio.org/operateur/14750) |
 | EARL DE FONTERLAND | DE FONTERLAND | Tournon St Martin | FONTERLAND 36220 | actividad | 2025 | [nº Bio 129327](https://annuaire.agencebio.org/operateur/129327) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Distillerie Jean Mathon | Jean Mathon | Buzançais | 59 Rue de la Francherie 36500 Buzançais | Destilados y licores | — | Distillerie artisanale berrichonne, eaux-de-vie et spiritueux de tradition. (11.01Z — Production de boissons alcooliques distillées) | [SIREN 353227473](https://annuaire-entreprises.data.gouv.fr/entreprise/353227473) |
+| Le Monde des Délices | Jean-Christophe Michelet | Ardentes | 25 Rue Calmette et Guérin 36120 Ardentes | Conservas | — | Confiturerie artisanale par le champion du monde des confituriers Jean-Christophe Michelet. (10.39B — Transformation et conservation de fruits) | [SIREN 400348991](https://annuaire-entreprises.data.gouv.fr/entreprise/400348991) |

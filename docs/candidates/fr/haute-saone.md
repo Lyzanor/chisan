@@ -84,3 +84,12 @@ Quedan **32 candidatos nuevos** en este corte: 16 perfiles de explotación, 7 un
 | CABOT Félix - CHEVRERIE DU FAHYS | CABOT FELIX | Saint-Bresson | 601 LE FAHYS 70280 | actividad | 2026 | [nº Bio 56192](https://annuaire.agencebio.org/operateur/56192) |
 | GAEC DU CHATEAU SOUS LE BOIS | GAEC DU CHATEAU SOUS LE BOIS | Saint-Bresson | 360 Les Prés Benons 70280 | actividad | 2026 | [nº Bio 148466](https://annuaire.agencebio.org/operateur/148466) |
 | MARANDET ISABELLE | MARANDET Isabelle EI | Virey | 4 RUE DE L’IMPASSE 70150 | actividad | 2026 | [nº Bio 67002](https://annuaire.agencebio.org/operateur/67002) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Vedi Vidi Vini | Vedi Vidi Vini SAS | Amance | 6 Rue du Grand Pré 70160 Amance | Vino | — | Domaine viticole et vinification artisanale en Haute-Saône (IGP Franche-Comté). (11.02B — Vinification) | [SIREN 918384207](https://annuaire-entreprises.data.gouv.fr/entreprise/918384207) |
+| Les Ateliers G.C. | Les Ateliers G.C. SARL | Marnay | Rue des Garennes 70150 Marnay | Conservas | — | Atelier artisanal de transformation de fruits et légumes régionaux, confitures fines. (10.39B — Transformation et conservation de fruits) | [SIREN 834113888](https://annuaire-entreprises.data.gouv.fr/entreprise/834113888) |

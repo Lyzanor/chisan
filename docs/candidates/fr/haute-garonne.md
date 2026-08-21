@@ -93,3 +93,11 @@ Búsqueda de cervecerías artesanales e independientes con planta de elaboració
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Rucher de Montrabé | Jean Larroque-Daran | Montrabé | 15 Chemin de Saint-Jean 31850 Montrabé | Miel | — | Apiculteur récoltant de Haute-Garonne, miels de garrigue et de fleurs sauvages. (01.49Z — Élevage d autres animaux (Apiculture)) | [SIREN 319765798](https://annuaire-entreprises.data.gouv.fr/entreprise/319765798) |

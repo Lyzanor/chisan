@@ -67,3 +67,12 @@ Quedan **19 candidatos nuevos** en este corte: 4 unidades manufactureras adicion
 | GROSS ALAIN ALBERT | GROSS ALAIN ALBERT | Saint Moreil | La Vialle 23400 | actividad | 2026 | [nº Bio 139242](https://annuaire.agencebio.org/operateur/139242) |
 | DURAND MATTHIEU EMILE AUGUSTE | DURAND MATTHIEU EMILE AUGUSTE | Saint-Yrieix-La-Montagne | 12 SERRE 23460 | actividad | 2026 | [nº Bio 22158](https://annuaire.agencebio.org/operateur/22158) |
 | LOU SENDAROU (GAEC) | GAEC LOU SENDAROU | Soubrebost | LE MASMOUTARD 23250 | actividad | 2026 | [nº Bio 100191](https://annuaire.agencebio.org/operateur/100191) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Rucher d'Ahun | Michel Nebout | Ahun | Sous les Murs 23150 Ahun | Miel | — | Apiculteur récoltant creusois, miels de bruyère et de fleurs sauvages de la Creuse. (01.49Z — Élevage d autres animaux (Apiculture)) | [SIREN 950060616](https://annuaire-entreprises.data.gouv.fr/entreprise/950060616) |
+| Moulin Thévenot | Pierre Thévenot | Saint-Agnant-de-Versillat | Le Moulin 23300 Saint-Agnant-de-Versillat | Pan y cereal | — | Meunerie paysanne et artisanale creusoise produisant des farines sur meule de pierre. (10.61A — Meunerie) | [SIREN 480926013](https://annuaire-entreprises.data.gouv.fr/entreprise/480926013) |

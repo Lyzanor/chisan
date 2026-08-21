@@ -84,3 +84,11 @@ Búsqueda de cervecerías artesanales e independientes con planta de elaboració
 
 | Candidato | Señal / Actividad | Municipio | Contacto / Web / Instagram |
 |---|---|---|---|
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Rucher du Val de Loir | Gérard Marsollier | Loir en Vallée | Ruillé-sur-Loir 72340 Loir en Vallée | Miel | — | Apiculteur récoltant en Vallée du Loir, miels d acacia, tilleul et châtaignier. (01.49Z — Élevage d autres animaux (Apiculture)) | [SIREN 340256213](https://annuaire-entreprises.data.gouv.fr/entreprise/340256213) |

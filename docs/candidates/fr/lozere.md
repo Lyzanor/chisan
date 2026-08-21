@@ -83,3 +83,11 @@ Quedan **30 candidatos nuevos** en este corte: 8 perfiles de explotación, 8 uni
 | GAEC FERME DE NOGARDEL | GAEC FERME DE NOGARDEL | Saint-Martin-De-Lansuscle | NOGARDEL 48110 | actividad | 2026 | [nº Bio 48608](https://annuaire.agencebio.org/operateur/48608) |
 | CLAY Benjamin | CLAY BENJAMIN | Ventalon En Cevennes | LA DESTOURBE 48160 | actividad | 2026 | [nº Bio 32824](https://annuaire.agencebio.org/operateur/32824) |
 | FLORENCE BONIJOL - LA CITADELLE | BONIJOL FLORENCE ANGELE JACQUELINE | Vialas | 342 impasse POLIMIES HAUTES 48220 | actividad | 2025 | [nº Bio 27462](https://annuaire.agencebio.org/operateur/27462) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| L'Alambic Cévenol | Robin Just | Sainte-Croix-Vallée-Française | La Vignette 48110 Sainte-Croix-Vallée-Française | Destilados y licores | — | Distillerie artisanale cévenole, élaboration d eaux-de-vie et de liqueurs de plantes locales. (11.01Z — Production de boissons alcooliques distillées) | [SIREN 938181997](https://annuaire-entreprises.data.gouv.fr/entreprise/938181997) |

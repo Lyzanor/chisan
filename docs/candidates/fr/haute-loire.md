@@ -81,3 +81,11 @@ Quedan **37 candidatos nuevos** en este corte: 5 unidades manufactureras adicion
 | CLAVEL Joël | CLAVEL JOEL | Siaugues-Sainte-Marie | RILHAC 43300 | actividad | 2026 | [nº Bio 149736](https://annuaire.agencebio.org/operateur/149736) |
 | LETEMPLE Hélène | LETEMPLE Hélène | Venteuges | La Jaroussière 43170 | actividad | 2026 | [nº Bio 63452](https://annuaire.agencebio.org/operateur/63452) |
 | BERGERIE DU SUC DES GRIVES (GAEC DE LA) | GAEC DE LA BERGERIE DU SUC DES GRIVES | Vezezoux | MARNAT ROUTE DE JUMEAUX 43390 | actividad | 2026 | [nº Bio 29174](https://annuaire.agencebio.org/operateur/29174) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Belly Wine Experiment | Belly Wine Experiment SAS | Mazerat-Aurouze | Le Bourg 43230 Mazerat-Aurouze | Vino | — | Vigneron indépendant et micro-cuvées de vinification naturelle en Haute-Loire. (11.02B — Vinification) | [SIREN 884498619](https://annuaire-entreprises.data.gouv.fr/entreprise/884498619) |

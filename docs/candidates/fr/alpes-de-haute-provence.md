@@ -97,3 +97,11 @@ Quedan **42 candidatos nuevos** en este corte: 10 perfiles de explotación, 3 un
 | LES P'TITS CAILLOUX LEMAIRE Lise / REYLANDT Thomas | GAEC LES P'TITS CAILLOUX | Ubaye Serre Poncon | Le Forest - La Brède 04340 | actividad | 2026 | [nº Bio 146295](https://annuaire.agencebio.org/operateur/146295) |
 | Les brebis du noutari | GAEC Les brebis du noutari | Ubraye | 6730 route de st pierre 04240 | actividad | 2026 | [nº Bio 60865](https://annuaire.agencebio.org/operateur/60865) |
 | Gaec Les Ferréols | GAEC les ferreols | Valernes | L'ubac Les Ferréols 04200 | actividad | 2026 | [nº Bio 58031](https://annuaire.agencebio.org/operateur/58031) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Délices d'Épicure | Délices d'Épicure SAS | Saint-Martin-de-Brômes | 3 Chemin du Castelleras 04800 Saint-Martin-de-Brômes | Conservas | [web](https://delicesdepicure.com) | Atelier artisanal de confitures, gelées et douceurs du Verdon. (10.39B — Transformation et conservation de fruits) | [SIREN 915358063](https://annuaire-entreprises.data.gouv.fr/entreprise/915358063) |

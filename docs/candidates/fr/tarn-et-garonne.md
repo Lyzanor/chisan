@@ -68,3 +68,11 @@ Quedan **25 candidatos nuevos** en este corte: 8 perfiles de explotación, 2 uni
 | LA RABARIE | LA RABARIE | Parisot | MAS DE CAZES 82160 | actividad | 2026 | [nº Bio 147193](https://annuaire.agencebio.org/operateur/147193) |
 | EI FERTE Suzanne | FERTE SUZANNE RITA GINETTE | Saint Antonin Noble Val | Lésignac 82140 | actividad | 2026 | [nº Bio 41142](https://annuaire.agencebio.org/operateur/41142) |
 | Gaec DE LA VAYSSE | Gaec | Verfeil | LA VAYSSE 82330 | actividad | 2026 | [nº Bio 59963](https://annuaire.agencebio.org/operateur/59963) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Les Biscuits de Valérie | Valérie Vogel | Bardigues | 82340 Bardigues | Dulces y repostería | — | Biscuiterie artisanale en Lomagne, biscuits traditionnels sans conservateurs. (10.72Z — Fabrication de biscuits et pâtisseries de conservation) | [SIREN 802202218](https://annuaire-entreprises.data.gouv.fr/entreprise/802202218) |

@@ -67,3 +67,14 @@ Quedan **16 candidatos nuevos** en este corte: 1 perfiles de explotación, 5 uni
 | Stéphane Moreau | MOREAU STEPHANE THIERRY | Marcay | LA FERME DU CHANT DU BOIS 8 chemin de la ragondilière 86370 | actividad | 2026 | [nº Bio 147806](https://annuaire.agencebio.org/operateur/147806) |
 | SCEA DE LA REVERSAIE | SOCIETE CIVILE D'EXPLOITATION AGRICOLE DE LA REVERSAIE | Romagne | 7 LA REVERSAIE 86700 | actividad | 2026 | [nº Bio 42281](https://annuaire.agencebio.org/operateur/42281) |
 | GAEC LE PRE JOLY | GAEC LE PRE JOLY | Saint Gervais Les Trois Clochers | LA ROBICHONNIERE 86230 | actividad | 2026 | [nº Bio 129102](https://annuaire.agencebio.org/operateur/129102) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Cidrerie Générale | Cidrerie Générale SAS | Verrue | 1 Les Perrières 86420 Verrue | Sidra | — | Cidrerie artisanale poitevine, cidres de terroir et fermentation naturelle. (11.03Z — Fabrication de cidre et de vins de fruits) | [SIREN 977871417](https://annuaire-entreprises.data.gouv.fr/entreprise/977871417) |
+| Biscuiterie Isiris (Logeais Perez) | Biscuiterie Confiserie Logeais Perez SAS | Loudun | Rue de l Éperon 86200 Loudun | Dulces y repostería | [web](https://isiris.fr) | Biscuiterie et confiserie artisanale du Poitou, spécialités de macarons et sablés du Loudunais. (10.72Z — Fabrication de biscuits et pâtisseries de conservation) | [SIREN 848311817](https://annuaire-entreprises.data.gouv.fr/entreprise/848311817) |
+| Rucher du Charbonneau | Morgan Rochais | Fontaine-le-Comte | Le Charbonneau 86240 Fontaine-le-Comte | Miel | — | Apiculteur récoltant et miellerie artisanale de la Vienne. (01.49Z — Élevage d autres animaux (Apiculture)) | [SIREN 888807013](https://annuaire-entreprises.data.gouv.fr/entreprise/888807013) |
+| Distillerie Laurent Tétrault | Laurent Tétrault | Sammarçolles | Le Bourg 86200 Sammarçolles | Destilados y licores | — | Distillateur artisanal poitevin, eaux-de-vie et alcools de fruits. (11.01Z — Production de boissons alcooliques distillées) | [SIREN 389405812](https://annuaire-entreprises.data.gouv.fr/entreprise/389405812) |

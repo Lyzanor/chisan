@@ -93,3 +93,11 @@ Quedan **40 candidatos nuevos** en este corte: 9 perfiles de explotación, 10 un
 | BEUZIT CATHERINE | BEUZIT CATHERINE | Saint-Cyr-En-Pail | LA MERCERIE 53140 | actividad | 2026 | [nº Bio 6786](https://annuaire.agencebio.org/operateur/6786) |
 | GAEC BERGERS DANS L'ÂME | GAEC Bergers dans l'Âme | Saint Denis De Gastines | Launay Bergers dans l'Âme 53500 | actividad | 2026 | [nº Bio 58500](https://annuaire.agencebio.org/operateur/58500) |
 | GAEC DE L HERBE AUX FROMAGES | GAEC DE L HERBE AUX FROMAGES | Saint Fraimbault De Prières | Le Bois 53300 | actividad | 2026 | [nº Bio 149152](https://annuaire.agencebio.org/operateur/149152) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Brasserie La P'tite Mousse | Brasserie La P'tite Mousse SARL | Saint-Berthevin | 120 B Boulevard des Loges 53940 Saint-Berthevin | Cerveza | — | Brasserie artisanale mayennaise, bières authentiques brassées en Mayenne. (11.05Z — Fabrication de bière) | [SIREN 512553595](https://annuaire-entreprises.data.gouv.fr/entreprise/512553595) |

@@ -87,3 +87,12 @@ Quedan **36 candidatos nuevos** en este corte: 8 perfiles de explotación, 17 un
 | FERME LA CHEVROCHERE - IMBERT Claude | E.I. Claude Imbert | Pompaire | SAINTE ANNE 79200 | actividad | 2026 | [nº Bio 58435](https://annuaire.agencebio.org/operateur/58435) |
 | GAEC DE LA ROCHE | GAEC LA ROCHE | Saint Hilaire La Palud | 38 RUE DU PIED BLANC 79210 | actividad | 2025 | [nº Bio 160519](https://annuaire.agencebio.org/operateur/160519) |
 | SCEA les bergers du château | SCEA les bergers du château | Saint-Paul-En-Gatine | LE CHATEAU 79240 | actividad | 2026 | [nº Bio 66459](https://annuaire.agencebio.org/operateur/66459) |
+
+## Candidatos en espera de prueba de admisión (2026-08-21)
+
+Se revisaron estas señales, pero aún no hay una fuente pública actual que confirme conjuntamente la oferta propia y la unidad productiva. Permanecen abiertas; las altas, duplicados y descartes firmes del mismo corte ya se retiraron.
+
+| Nombre público / Marca | Razón social / Responsable | Commune | Dirección | Categoría propuesta | Web / Instagram | Motivo de encaje / Actividad declarada | Fuentes |
+|---|---|---|---|---|---|---|---|
+| Distill' Fruits | Olivier Durdon | Loretz-d'Argenton | 110 Rue de la Brunetière 79290 Loretz-d'Argenton | Destilados y licores | — | Distillerie artisanale du Thouarsais, eaux-de-vie de fruits et spiritueux traditionnels. (11.01Z — Production de boissons alcooliques distillées) | [SIREN 879910180](https://annuaire-entreprises.data.gouv.fr/entreprise/879910180) |
+| Les Gâtais do Marâ | Stéphane Gaillard | Sansais | 23 Rue Porte du Marais 79270 Sansais | Dulces y repostería | — | Pâtisserie et biscuiterie artisanale du Marais Poitevin, fabrication du gâteau traditionnel maraîchin. (10.72Z — Fabrication de biscuits et pâtisseries de conservation) | [SIREN 103791067](https://annuaire-entreprises.data.gouv.fr/entreprise/103791067) |
