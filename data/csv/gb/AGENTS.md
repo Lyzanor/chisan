@@ -1,11 +1,12 @@
 # United Kingdom
 
 ## Operating state
-- Phase: opening. The tree covers all 107 areas; only a first sourced batch is
-  published and most areas are still empty. Derive live queues with
+- Priorities: area-scoped producer discovery from the protected-name register
+  and suitable trade or regulatory directories, followed by review of admitted
+  rows. Derive exact published-row queues with
   `npx pnpm check:defects --country gb`.
-- Active lane: producer discovery per area in `docs/candidates/gb/<area>.md`,
-  starting from the protected-name register and trade directories.
+- Active discovery and its cutoffs live in `docs/candidates/gb/<area>.md`; row
+  decisions belong in `data/evidence/gb/**`.
 
 ## Country rules
 - `region` is the ITL1 statistical level, so England's nine regions sit beside

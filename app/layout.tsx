@@ -5,12 +5,11 @@ import Link from "next/link";
 import "./globals.css";
 
 import { SiteAccountNav } from "@/components/account/site-account-nav";
-import {
-  ACCOUNT_ROUTES,
-  getAppUrl,
-  isAccountAuthConfigured,
-} from "@/lib/accounts/config";
+import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
 import { CATALOG_UNIT } from "@/lib/csv-catalog";
+import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
+
+const SITE_DESCRIPTION = `Map of local, zero-kilometre producers by ${CATALOG_UNIT.one} and category.`;
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -33,12 +32,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(getAppUrl()),
+  metadataBase: new URL(SITE_ORIGIN),
+  applicationName: SITE_NAME,
   title: {
-    default: "KM0 Producers",
-    template: "%s | KM0",
+    default: `${SITE_NAME} Producers`,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: `Map of local, zero-kilometre producers by ${CATALOG_UNIT.one} and category.`,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: `${SITE_NAME} Producers`,
+    description: SITE_DESCRIPTION,
+    url: SITE_ORIGIN,
+    siteName: SITE_NAME,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: `${SITE_NAME} Producers`,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -50,8 +62,8 @@ export default function RootLayout({
   const content = (
     <>
       <header className="site-header">
-        <Link href="/" className="site-header__brand" aria-label="KM0 home">
-          KM0
+        <Link href="/" className="site-header__brand" aria-label={`${SITE_NAME} home`}>
+          {SITE_NAME}
         </Link>
         <SiteAccountNav authConfigured={accountAuthConfigured} />
       </header>

@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
+import { SITE_NAME } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Sign in",
-  description: "Sign in to your KM0 account.",
+  description: `Sign in to your ${SITE_NAME} account.`,
   robots: { index: false, follow: false },
 };
 
@@ -34,7 +35,7 @@ export default function SignInPage() {
     <main className="auth-page">
       <section className="auth-shell">
         <div className="auth-copy">
-          <p className="catalog-kicker">KM0 account</p>
+          <p className="catalog-kicker">{SITE_NAME} account</p>
           <h1>Welcome back</h1>
           <p>Sign in to manage favorites, ownership claims and producer profile changes.</p>
         </div>

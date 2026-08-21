@@ -218,7 +218,7 @@ const GEOREF_API = "https://apis.datos.gob.ar/georef/api";
 // against the total the response repeats, which is what will fail loudly if a
 // layer ever outgrows the cap.
 const GEOREF_LAYERS = ["localidades", "localidades-censales", "municipios", "departamentos"];
-const USER_AGENT = "km0-municipio-centroids/1.0 (https://github.com/Lyzanor/km0)";
+const USER_AGENT = "chisan-municipio-centroids/1.0 (https://chisan.app)";
 const REQUEST_TIMEOUT_MS = 120000;
 
 const langFilter = (langs) => langs.map((l) => `"${l}"`).join(", ");

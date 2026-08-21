@@ -4,6 +4,11 @@
 fuente de verdad y la app no la lee: un productor publicado vive en
 `data/csv/**` y una decisión cerrada, en `data/evidence/**`.
 
+Este árbol es el traspaso entre el nivel 1 (descubrimiento) y el nivel 2
+(admisión) de `docs/EDITORIAL_WORKFLOW.md`. No es una cola de enriquecimiento de
+filas ya publicadas ni almacena reclamaciones de titularidad o solicitudes de
+cambio de perfiles.
+
 ## Responsabilidades
 
 Los README de este árbol son guías, no paneles de estado:
@@ -38,11 +43,12 @@ La cabecera identifica, como mínimo:
 - alcance de la pasada y trabajo pendiente.
 
 Por candidato conserva solo lo necesario para continuar: nombre publicado,
-municipio, categoría principal y posibles categorías adicionales, enlace de
-origen, motivo por el que puede encajar y dudas aún abiertas. Si falta un dato,
-indícalo; no lo completes por intuición. Un candidato anotado se considera
-pendiente, por lo que no necesita
-una tabla de estados.
+municipio o pista geográfica, categoría probable, enlace de origen, motivo por
+el que puede encajar y dudas ya visibles. Añade la web o el perfil oficial si
+aparecen en la misma pasada: son el mejor localizador para la admisión, pero no
+abras una investigación completa solo para encontrarlos. Si falta un dato,
+indícalo; no lo completes por intuición. Un candidato anotado sigue abierto por
+definición, por lo que no necesita una tabla de estados.
 
 ### Hallazgos incidentales
 
@@ -75,32 +81,14 @@ Si el productor ya tiene un `keep`, actualiza ese registro en su línea actual y
 conserva las fuentes que sigan siendo relevantes; no añadas un segundo registro
 para el mismo `slug`.
 
-## Flujo
+## Operación
 
-1. Descubre desde registros, organismos, directorios o fuentes públicas
-   identificables; nunca desde memoria ni nombres plausibles.
-2. Deduplica antes de investigar con `npx pnpm list:producers <area>` y búsquedas
-   dirigidas por nombre, marca, razón social, dominio, dirección o contacto.
-3. Verifica los criterios de `docs/EDITORIAL_POLICY.md` y los datos exigidos por
-   `docs/CSV_CONTRACT.md`. Una fuente sostiene solo lo que realmente publica.
-4. Cierra cada candidato con uno de estos resultados:
-
-   - **Aceptado:** añade la fila al CSV y un registro `keep` en la evidencia.
-   - **Ya presente:** enlázalo con la fila existente y elimina la anotación; no
-     crees otra fila ni un `merge` si el candidato nunca fue un slug publicado.
-   - **Descartado:** crea un registro `reject` con motivo y fuentes en la
-     evidencia del área, y elimina la anotación.
-   - **No resuelto:** déjalo en candidatos, indicando qué falta comprobar y la
-     fecha del último intento.
-
-La cobertura de evidencia no bloquea el catálogo. En una pasada activa procura
-que la procedencia sobreviva al cierre: antes de podar un candidato aceptado o
-descartado, registra su decisión y sus fuentes; si todavía no puedes hacerlo con
-seguridad, conserva la anotación.
-
-No conviertas falta de resultados, una web inaccesible o evidencia insuficiente
-en descarte. `reject` exige una exclusión afirmativamente demostrada; `purge`
-se reserva para una fila que sí estuvo publicada.
+Ejecuta descubrimiento, admisión y sus cuatro resultados exactamente como los
+define `docs/EDITORIAL_WORKFLOW.md`. Este documento solo define el formato y el
+ciclo de vida de la nota temporal. Antes de podar un candidato aceptado o
+descartado, asegúrate de que su procedencia o tombstone duradero ya vive en
+`data/evidence/**`; si no puede cerrarse con seguridad, conserva la anotación y
+su bloqueo concreto.
 
 ## Cierre
 

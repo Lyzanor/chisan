@@ -1,7 +1,8 @@
 # France
 
 ## Operating state
-- Phase: inherited-catalog review. Derive the live queues with `npx pnpm check:defects --country fr`; investigate and record decisions by department.
+- Priorities: review inherited rows and record decisions by department. Derive
+  the exact published-row queues with `npx pnpm check:defects --country fr`.
 - There is no country-wide discovery roster. Open `docs/candidates/fr/<area>.md` only for a concrete source pass and store closed decisions in `data/evidence/fr/**`.
 
 ## Country rules

@@ -1,7 +1,9 @@
 # Japan
 
 ## Operating state
-- Phase: active expansion from initial verified batches and prefectural discovery. Derive the published-row queues with `npx pnpm check:defects --country jp`.
+- Priorities: selective expansion through prefectural discovery and continued
+  review of published rows. Derive exact queues with
+  `npx pnpm check:defects --country jp`.
 - Discovery is open across `docs/candidates/jp/**`; prune resolved candidates and store row decisions in `data/evidence/jp/**`.
 
 ## Country rules

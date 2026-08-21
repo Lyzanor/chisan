@@ -76,6 +76,8 @@ export const users = pgTable(
     locale: varchar("locale", { length: 16 }),
     // UX/onboarding preference only. Authorization comes from memberships and grants.
     profileKind: userProfileKind("profile_kind").notNull().default("user"),
+    // Legacy column name: this is the current review/publication acknowledgement,
+    // not a versioned acceptance of legal terms.
     termsAcceptedAt: timestampWithTimezone("terms_accepted_at"),
     createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
     updatedAt: timestampWithTimezone("updated_at")

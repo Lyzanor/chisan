@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import { hasStaffAccess, requireCurrentAccount } from "@/lib/accounts/auth";
 import { getAccountSystemConfiguration } from "@/lib/accounts/config";
+import { SITE_NAME } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +17,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
     return (
       <main className="page-shell account-page">
         <section className="panel account-setup-panel">
-          <p className="catalog-kicker">KM0 accounts</p>
+          <p className="catalog-kicker">{SITE_NAME} accounts</p>
           <h1>Account system not configured</h1>
           <p>
             The public producer catalog remains available. This environment still needs Clerk
@@ -38,7 +39,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
       <section className="panel account-shell">
         <header className="account-header">
           <div>
-            <p className="catalog-kicker">KM0 account</p>
+            <p className="catalog-kicker">{SITE_NAME} account</p>
             <h1>{account.displayName || "Your account"}</h1>
             <p>{account.email || "Authenticated account"}</p>
           </div>

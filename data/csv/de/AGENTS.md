@@ -1,7 +1,9 @@
 # Germany
 
 ## Operating state
-- Phase: inherited-catalog review plus targeted brewery and farm-dairy discovery. Derive the live queues with `npx pnpm check:defects --country de`.
+- Priorities: inherited-row review plus targeted brewery and farm-dairy
+  discovery. Derive the exact published-row queues with
+  `npx pnpm check:defects --country de`.
 - Area discovery is active in `docs/candidates/de/**`; closed row decisions belong in `data/evidence/de/**`.
 
 ## Country rules

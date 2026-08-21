@@ -13,6 +13,7 @@ import {
   CATEGORY_MARKERS,
   CHECKS,
   filterAreas,
+  filterChecks,
   findCategoryVariants,
   loadCategoryVariants,
   loadCrossTemplate,
@@ -45,6 +46,37 @@ test("every check declares a kind", () => {
       `${check.id} has kind ${JSON.stringify(check.kind)}`,
     );
   }
+});
+
+test("every check belongs to one workflow stage", () => {
+  for (const check of CHECKS) {
+    assert.ok(
+      check.stage === "admission" || check.stage === "verification",
+      `${check.id} has stage ${JSON.stringify(check.stage)}`,
+    );
+  }
+});
+
+test("admission stage contains only debt that failed the current entry gate", () => {
+  assert.deepEqual(
+    filterChecks(CHECKS, { stage: "admission" })
+      .map((check) => check.id)
+      .sort(),
+    ["identidad-duplicada", "pendiente", "sinteticas"],
+  );
+});
+
+test("stage and individual check filters compose", () => {
+  assert.deepEqual(
+    filterChecks(CHECKS, { stage: "verification", check: "venta-sin-resolver" }).map(
+      (check) => check.id,
+    ),
+    ["venta-sin-resolver"],
+  );
+  assert.deepEqual(
+    filterChecks(CHECKS, { stage: "admission", check: "venta-sin-resolver" }),
+    [],
+  );
 });
 
 test("coverage gaps that may stay open forever are señales, not colas", () => {

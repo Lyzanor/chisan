@@ -185,7 +185,7 @@ check(
     raw_csv.replace(",,\"texto, citado\"", ",/productores/xx/region/area/uno.webp,\"texto, citado\""),
 )
 
-with tempfile.TemporaryDirectory(prefix="km0-enrich-") as temp_dir:
+with tempfile.TemporaryDirectory(prefix="chisan-enrich-") as temp_dir:
     temp = Path(temp_dir)
     csv_path = temp / "area.csv"
     image_path = temp / "uno.webp"
@@ -200,7 +200,7 @@ with tempfile.TemporaryDirectory(prefix="km0-enrich-") as temp_dir:
     check("atomic writer keeps surgical CSV output", csv_path.read_text(encoding="utf-8"), updated_csv)
     check("atomic writer creates the reviewed image", image_path.exists(), True)
 
-with tempfile.TemporaryDirectory(prefix="km0-enrich-concurrent-") as temp_dir:
+with tempfile.TemporaryDirectory(prefix="chisan-enrich-concurrent-") as temp_dir:
     temp = Path(temp_dir)
     csv_path = temp / "area.csv"
     image_path = temp / "uno.webp"

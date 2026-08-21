@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { AreaSelector } from "@/components/area-selector";
 import { buildCatalogHref } from "@/lib/catalog-navigation";
 import { findCountry, listCountrySlugs } from "@/lib/csv-catalog";
+import { SITE_NAME } from "@/lib/site";
 
 type CountryPageProps = {
   params: Promise<{ country: string }>;
@@ -20,11 +21,11 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   const country = findCountry(countrySlug);
 
   if (!country) {
-    return { title: "KM0 Producer Map" };
+    return { title: `${SITE_NAME} Producer Map` };
   }
 
   return {
-    title: `${country.label} · KM0 Producers`,
+    title: `${country.label} · ${SITE_NAME} Producers`,
     description: `Pick a ${country.unit.one} of ${country.label} to browse its local producers.`,
     alternates: { canonical: `/${country.slug}` },
   };
@@ -49,7 +50,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
           <div>
             <p className="catalog-kicker">
               <Link href="/" className="country-back-link">
-                KM0
+                {SITE_NAME}
               </Link>{" "}
               · {country.label}
             </p>

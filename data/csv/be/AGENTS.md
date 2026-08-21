@@ -1,7 +1,8 @@
 # Belgium
 
 ## Operating state
-- Phase: inherited-catalog review. Derive the live queues with `npx pnpm check:defects --country be`; investigate and record decisions by area.
+- Priorities: review inherited rows and investigate decisions by area. Derive
+  the exact published-row queues with `npx pnpm check:defects --country be`.
 - There is no country-wide discovery roster. Open `docs/candidates/be/<area>.md` only for a concrete source pass and store closed decisions in `data/evidence/be/**`.
 
 ## Country rules

@@ -164,7 +164,7 @@ Publica el enlace según el resultado aceptado:
 | Resultado de la revisión | Valor de `Google Maps` |
 |---|---|
 | Ficha de Google contrastada con la unidad | URL canónica con nombre/dirección y `query_place_id`. |
-| Sin ficha propia de la unidad, aunque haya coordenadas exactas | Vacío; conserva `lat`/`lon` para el mapa de KM0. |
+| Sin ficha propia de la unidad, aunque haya coordenadas exactas | Vacío; conserva `lat`/`lon` para el mapa de Chisan. |
 | Ficha de una tienda, oficina u otra unidad distinta; rol dudoso o identidad no resuelta | Vacío. |
 
 Usa una [Maps URL](https://developers.google.com/maps/documentation/urls/get-started)
@@ -294,7 +294,7 @@ seguro que `enrich:images`:
 
 Ese límite afecta a la aplicación automática. Durante la revisión humana se
 puede incorporar un dato incidental que la fuente ya abierta confirme de forma
-directa, siguiendo el flujo general de `AGENTS.md` y dejando la procedencia que
+directa, siguiendo `docs/EDITORIAL_WORKFLOW.md` y dejando la procedencia que
 corresponda. El geocodificador no debe recolectar ni aplicar automáticamente
 campos vecinos.
 

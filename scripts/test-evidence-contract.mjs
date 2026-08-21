@@ -99,7 +99,7 @@ function validMerge() {
 }
 
 function createFixture() {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "km0-evidence-"));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "chisan-evidence-"));
   const csvRoot = path.join(root, "csv");
   const evidenceRoot = path.join(root, "evidence");
   const area = path.join("test-country", "test-region", "test-area");

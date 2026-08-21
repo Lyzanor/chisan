@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is the normative contract for the producer data published by KM0. An area
+This is the normative contract for the producer data published by Chisan. An area
 CSV is the current product state: every non-empty cell is a public claim, and an
 empty optional cell is valid incomplete knowledge.
 
@@ -12,12 +12,16 @@ decide which entities qualify or how research is performed:
 
 - `docs/EDITORIAL_POLICY.md` owns eligibility, verification and online-sales
   decisions.
+- `docs/EDITORIAL_WORKFLOW.md` owns the three operating levels and their
+  handoffs.
 - `docs/EVIDENCE_CONTRACT.md` owns decision provenance. Evidence explains a CSV
   decision but never overrides the CSV.
-- `AGENTS.md` owns runtime boundaries, routing invariants, the editing workflow
-  and validation gates.
+- `AGENTS.md` owns runtime boundaries, routing invariants, repository editing
+  rules and validation gates.
 - `docs/GEOLOCATION.md` owns coordinate sourcing, geocoding and review.
 - `docs/IMAGES.md` owns image sourcing and preparation.
+- `docs/ACCOUNT_SYSTEM.md` owns how an authorized producer proposal reaches the
+  editorial workflow; a database request never overrides a row.
 
 Validators prove conformance, not truth. Editorial correctness remains the
 first requirement.
@@ -114,9 +118,9 @@ supported, leave it empty or use the defined unknown state; never complete a row
 by inference.
 
 New candidates must pass the candidate gate in `docs/EDITORIAL_POLICY.md` before
-they enter a CSV. `pendiente` supports progressive review of real producers; it
-is not a holding state for speculative candidates. Legacy unresolved rows may
-remain while they are investigated or purged.
+they enter a CSV and start as `parcial` or `verificado`. `pendiente` is reserved
+for inherited or later-questioned published rows that do not currently meet the
+admission threshold; it is never a holding state for a speculative candidate.
 
 ## Editorial field conventions
 
@@ -298,13 +302,14 @@ but a municipality or area qualifier stays when it distinguishes homonyms.
 Shared category slugs are reserved so a future `/<country>/<area>/<category>`
 resolver cannot collide with a producer.
 
-Keep a correct slug stable. Change it only when it materially encodes the wrong
-producer, duplicate, municipality, misleading typo or a redundant geographic
-suffix covered by the canonical path. In the same change, update the image
-path, the current `keep` evidence slug, existing `merge.targetSlug` references
-and affected docs. The pre-public catalogue does not retain the former slug or
-serve a compatibility redirect. A pure routing rename does not invent a
-`merge` evidence record; `merge` remains an entity de-duplication tombstone.
+Keep a correct slug stable. Chisan is public, so a change is allowed only when it
+materially encodes the wrong producer, duplicate, municipality, misleading typo
+or a redundant geographic suffix covered by the canonical path, and only as a
+dedicated routing migration that preserves the former URL with a compatibility
+redirect. If redirect support is absent, defer the rename. In the same change,
+update the image path, the current `keep` evidence slug, existing
+`merge.targetSlug` references and affected docs. A pure routing rename does not
+invent a `merge` evidence record; `merge` remains an entity de-duplication tombstone.
 When two producer rows are actually merged, preserve that tombstone as required
 by `docs/EVIDENCE_CONTRACT.md`.
 

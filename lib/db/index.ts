@@ -10,7 +10,7 @@ type SqlClient = ReturnType<typeof postgres>;
 type DatabaseState = { client: SqlClient; database: Database };
 
 const globalForDatabase = globalThis as typeof globalThis & {
-  __km0DatabaseState?: DatabaseState;
+  __chisanDatabaseState?: DatabaseState;
 };
 
 function createDatabaseState(): DatabaseState {
@@ -38,17 +38,17 @@ function createDatabaseState(): DatabaseState {
  * build does not read DATABASE_URL or open a database connection.
  */
 export function getDatabase(): Database {
-  const state = globalForDatabase.__km0DatabaseState ?? createDatabaseState();
-  globalForDatabase.__km0DatabaseState = state;
+  const state = globalForDatabase.__chisanDatabaseState ?? createDatabaseState();
+  globalForDatabase.__chisanDatabaseState = state;
   return state.database;
 }
 
 /** Intended for tests and graceful shutdowns, not normal request handling. */
 export async function closeDatabase(): Promise<void> {
-  const state = globalForDatabase.__km0DatabaseState;
+  const state = globalForDatabase.__chisanDatabaseState;
   if (!state) return;
 
-  globalForDatabase.__km0DatabaseState = undefined;
+  globalForDatabase.__chisanDatabaseState = undefined;
   await state.client.end();
 }
 

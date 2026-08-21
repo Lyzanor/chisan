@@ -3,9 +3,9 @@
 ## Purpose
 
 This document defines the stable decision model for catalog eligibility,
-verification and online sales. `AGENTS.md` defines the investigation workflow;
-`docs/CSV_CONTRACT.md` and `docs/EVIDENCE_CONTRACT.md` define how decisions are
-stored.
+verification and online sales. `docs/EDITORIAL_WORKFLOW.md` defines the three
+operating levels and their handoffs; `docs/CSV_CONTRACT.md` and
+`docs/EVIDENCE_CONTRACT.md` define how decisions are stored.
 
 ## Catalog scope
 
@@ -56,6 +56,13 @@ and productive location. If one is unknown, keep investigating or retain it in
 candidate notes; do not import a speculative row as `pendiente`. If one is
 affirmatively false, reject it. Missing search results or a failed fetch prove
 neither.
+
+Admission and full enrichment are deliberately separate. The gate also requires
+a supported primary category, a check for permanent closure and a de-duplication
+decision for the productive unit. It does not require every optional CSV field.
+A candidate that passes has evidence for all three core verification claims, so
+a new row starts as `parcial` or `verificado`, never `pendiente`; the source
+quality and remaining doubt choose between those two states.
 
 Candidate notes are active discovery workspaces, not decision ledgers. Keep
 source sweeps, batch scope, unresolved leads and pending search work in
@@ -156,6 +163,11 @@ supporting sources prove only the claims they actually publish; without a
 current verifying source they cap the row at `parcial`. `parcial` is a valid,
 stable result and must not be promoted merely to clear a queue.
 
+`verificacion` is the current editorial assessment of those three claims, not
+proof that a review was correctly performed and not a terminal workflow state.
+Every later pass reassesses it from the sources; `verificado` may be improved,
+corrected or downgraded when the evidence no longer supports it.
+
 ## Online sales
 
 Online sales is independent of identity verification. It records whether a
@@ -211,12 +223,16 @@ decisions:
   by itself.
 - Registry absence, search failure, timeout, blocking, TLS/DNS error or a
   broken checkout is uncertainty, not proof of nonexistence, closure or no sale.
+- Verified ownership authorizes a person to propose a change; it does not prove
+  the proposed public fact. Apply the same source, currentness and scope tests to
+  owner-submitted changes, and never copy private claim material into evidence.
 - Empty or unresolved is preferable to a plausible invention.
 
 ## Policy maintenance
 
 This document is the single source for editorial decisions. A material criteria
-change belongs here; update `AGENTS.md` only when the workflow changes. Encode a
+change belongs here; update `docs/EDITORIAL_WORKFLOW.md` when a handoff changes
+and `AGENTS.md` only when a repository-wide invariant or gate changes. Encode a
 rule in `check:csv`, `check:evidence` or `check:defects` only when the stored data
 can establish it mechanically, and test that real validator rather than a
 parallel synthetic decision model. Run `npx pnpm verify:ai` for validator or

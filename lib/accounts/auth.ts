@@ -112,7 +112,7 @@ async function ensureBootstrapAdmin(
     .values({
       userId: account.id,
       role: "admin",
-      reason: "Bootstrapped from KM0_ADMIN_EMAILS.",
+      reason: "Bootstrapped from Chisan admin email configuration.",
     })
     .onConflictDoNothing()
     .returning({ id: staffGrants.id });
@@ -213,7 +213,7 @@ export async function syncClerkIdentity(
         .where(eq(authIdentities.id, existing.identity.id))
         .returning();
 
-      // Provider profile data is only an initial seed. Once the KM0 account
+      // Provider profile data is only an initial seed. Once the Chisan account
       // exists, its profile is canonical here and must not be overwritten by
       // a later Clerk webhook or provider-side profile edit.
       account = toAccountUser(existing.user, updatedIdentity);

@@ -1,7 +1,9 @@
 # Italy
 
 ## Operating state
-- Phase: opening-batch review. Derive the live queues with `npx pnpm check:defects --country it`; treat the existing OSM-seeded rows as intake, not as verified producers.
+- Priorities: review OSM-seeded rows as intake rather than verified producers.
+  Derive exact published-row queues with
+  `npx pnpm check:defects --country it`.
 - Record each keep, correction, merge or purge in `data/evidence/it/**`; open `docs/candidates/it/<area>.md` only for a concrete discovery pass.
 
 ## Country rules

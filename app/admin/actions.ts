@@ -22,7 +22,7 @@ import {
 } from "@/lib/db/schema";
 
 function adminRedirect(path: string, kind: "error" | "notice", message: string): never {
-  const url = new URL(path, "https://km0.invalid");
+  const url = new URL(path, "https://chisan.invalid");
   url.searchParams.set(kind, message.slice(0, 300));
   redirect(`${url.pathname}${url.search}`);
 }

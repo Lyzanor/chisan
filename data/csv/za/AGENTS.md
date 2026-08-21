@@ -1,11 +1,9 @@
 # South Africa
 
 ## Operating state
-- Phase: initial national coverage. Every district and metro has a first
-  producer roster; derive the current enrichment and re-verification queues
-  with `npx pnpm check:defects --country za`.
-- Active lane: strengthen partial rows with producer-owned sources, resolve
-  online sales and replace coarse or missing productive-unit details.
+- Priorities: strengthen partial rows with producer-owned sources, resolve
+  online sales and replace coarse or missing productive-unit details. Derive
+  exact published-row queues with `npx pnpm check:defects --country za`.
 
 ## Country rules
 - `region` is a province and `area` a district or metropolitan municipality.

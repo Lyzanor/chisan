@@ -19,7 +19,7 @@ function webp(width, height, marker = 0) {
   return buffer;
 }
 
-const root = fs.mkdtempSync(path.join(os.tmpdir(), "km0-images-"));
+const root = fs.mkdtempSync(path.join(os.tmpdir(), "chisan-images-"));
 try {
   const csvRoot = path.join(root, "data", "csv");
   const publicRoot = path.join(root, "public");

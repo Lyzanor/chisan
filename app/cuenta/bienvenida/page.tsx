@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { completeOnboardingAction } from "@/app/cuenta/actions";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Set up your account",
@@ -25,7 +26,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
     <div className="account-content account-content--narrow">
       <AccountMessage params={params} />
       <section>
-        <h2>How will you use KM0?</h2>
+        <h2>How will you use {SITE_NAME}?</h2>
         <p>
           Both profiles can save favorites. Choosing producer starts the ownership-claim flow;
           it never grants access by itself.
@@ -55,7 +56,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
             </label>
           </fieldset>
           <label className="account-check">
-            <input type="checkbox" name="acceptTerms" value="yes" required />
+            <input type="checkbox" name="acknowledgeReview" value="yes" required />
             <span>
               I understand that producer claims and profile changes are reviewed, and that
               submitted information must be accurate and authorized for publication.

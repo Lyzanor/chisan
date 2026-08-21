@@ -1,8 +1,11 @@
 # United States
 
 ## Operating state
-- Phase: population. The state-level tree has a first national pass from USDA directories and producer-facing sources. Derive live row queues with `npx pnpm check:defects --country us`.
-- Active lane: re-verify sparse directory rows and resolve the candidates whose product or current activity remains unsupported; keep unresolved sweeps in `docs/candidates/us/<area>.md` and closed decisions in `data/evidence/us/**`.
+- Priorities: re-verify directory-seeded rows and resolve candidates whose own
+  product or current activity remains unsupported. Derive exact published-row
+  queues with `npx pnpm check:defects --country us`.
+- Keep active sweeps and their cutoffs in `docs/candidates/us/<area>.md`; closed
+  decisions belong in `data/evidence/us/**`.
 
 ## Country rules
 - `region` is one of the nine U.S. Census Bureau divisions and `area` is a state or the District of Columbia. Puerto Rico and the other U.S. territories are outside this tree because Census assigns them to no region or division.

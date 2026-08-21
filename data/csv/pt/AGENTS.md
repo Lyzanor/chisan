@@ -1,7 +1,7 @@
 # Portugal
 
 ## Operating state
-- Phase: targeted expansion and maintenance after reviewing the current candidate backlog. Derive published-row queues with `npx pnpm check:defects --country pt`.
+- Priorities: resolve the current candidate backlog, expand selectively and keep improving individual published rows. Derive published-row queues with `npx pnpm check:defects --country pt`.
 - Residual candidates without sufficient current evidence remain parked in `docs/candidates/pt/**`; row and exclusion decisions live in `data/evidence/pt/**`.
 
 ## Country rules

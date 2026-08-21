@@ -6,11 +6,10 @@ import {
   listCountrySlugs,
   listProducerRouteParams,
 } from "@/lib/csv-catalog";
-
-const SITE_URL = "https://km0-nu.vercel.app";
+import { SITE_ORIGIN } from "@/lib/site";
 
 function absoluteUrl(pathname: string): string {
-  return new URL(pathname, SITE_URL).toString();
+  return new URL(pathname, SITE_ORIGIN).toString();
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

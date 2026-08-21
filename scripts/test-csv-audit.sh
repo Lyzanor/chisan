@@ -96,7 +96,7 @@ GUIDE
     cd "$repo_root"
     git init -q
     git config user.email test@example.com
-    git config user.name "KM0 Test"
+    git config user.name "Chisan Test"
   )
 }
 
@@ -411,7 +411,7 @@ CSV
   cd "$CHANGED_ROOT"
   git init -q
   git config user.email test@example.com
-  git config user.name "KM0 Test"
+  git config user.name "Chisan Test"
   git add .
   git commit -qm baseline
   node - <<'NODE'

@@ -12,6 +12,7 @@ import {
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
 import { getCategoryIcon } from "@/lib/get-category-icon";
+import { SITE_NAME } from "@/lib/site";
 
 type AreaCatalogProps = {
   country: Country;
@@ -52,7 +53,7 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
         <div>
           <p className="catalog-kicker">
             <Link href="/" className="country-back-link">
-              KM0
+              {SITE_NAME}
             </Link>{" "}
             ·{" "}
             <Link href={`/${countrySlug}`} className="country-back-link">

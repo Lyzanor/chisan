@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ACCOUNT_ROUTES, isAccountAuthConfigured } from "@/lib/accounts/config";
+import { SITE_NAME } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Create account",
-  description: "Create a KM0 user or producer profile.",
+  description: `Create a ${SITE_NAME} user or producer profile.`,
   robots: { index: false, follow: false },
 };
 
@@ -34,9 +35,9 @@ export default function SignUpPage() {
     <main className="auth-page">
       <section className="auth-shell">
         <div className="auth-copy">
-          <p className="catalog-kicker">Join KM0</p>
+          <p className="catalog-kicker">Join {SITE_NAME}</p>
           <h1>One account, two clear profiles</h1>
-          <p>Choose how you use KM0 after creating your secure sign-in.</p>
+          <p>Choose how you use {SITE_NAME} after creating your secure sign-in.</p>
           <div className="auth-profile-list">
             <article>
               <strong>User</strong>

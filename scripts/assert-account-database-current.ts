@@ -22,7 +22,7 @@ async function main(): Promise<void> {
 
   const runtimeConnectionString = process.env.DATABASE_URL?.trim();
   if (!runtimeConnectionString) {
-    throw new Error("DATABASE_URL is required when KM0_ACCOUNTS_ENABLED=true.");
+    throw new Error("DATABASE_URL is required when CHISAN_ACCOUNTS_ENABLED=true.");
   }
 
   const expectedMigrations = readMigrationFiles({ migrationsFolder: "drizzle" });

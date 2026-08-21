@@ -83,7 +83,7 @@ test("the expected state is derived only from baseSnapshot plus the stored patch
 });
 
 test("atomicWriteUtf8 swaps contents and preserves permissions", async (context) => {
-  const directory = await mkdtemp(path.join(tmpdir(), "km0-materializer-atomic-"));
+  const directory = await mkdtemp(path.join(tmpdir(), "chisan-materializer-atomic-"));
   context.after(async () => rm(directory, { recursive: true, force: true }));
   const filePath = path.join(directory, "area.csv");
   await writeFile(filePath, "before\n", { encoding: "utf8", mode: 0o640 });
@@ -97,15 +97,15 @@ test("atomicWriteUtf8 swaps contents and preserves permissions", async (context)
 });
 
 test("finalize validates the exact commit blob and requires it to be in HEAD history", async (context) => {
-  const repository = await mkdtemp(path.join(tmpdir(), "km0-materializer-git-"));
+  const repository = await mkdtemp(path.join(tmpdir(), "chisan-materializer-git-"));
   context.after(async () => rm(repository, { recursive: true, force: true }));
   const relativeCsvPath = "data/csv/es/test/area.csv";
   const csvPath = path.join(repository, relativeCsvPath);
   await mkdir(path.dirname(csvPath), { recursive: true });
 
   git(repository, ["init", "-q"]);
-  git(repository, ["config", "user.name", "KM0 test"]);
-  git(repository, ["config", "user.email", "km0-test@example.invalid"]);
+  git(repository, ["config", "user.name", "Chisan test"]);
+  git(repository, ["config", "user.email", "chisan-test@example.invalid"]);
 
   const baseCsv = "nombre,descripcion,producer_id\nBase,old,7\n";
   const expectedCsv = "nombre,descripcion,producer_id\nBase,new,7\n";

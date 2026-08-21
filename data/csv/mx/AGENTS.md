@@ -1,12 +1,11 @@
 # Mexico
 
 ## Operating state
-- Phase: opening. The tree covers the 32 federal entities and most area files
-  are still thin. Derive live queues with `npx pnpm check:defects --country mx`.
-- Active lane: first discovery per area in `docs/candidates/mx/<area>.md`. Two
-  source families carry it: the denominación de origen councils, which publish
-  bounded, named and currently dated rosters, and the DENUE state extracts,
-  which cover every entity at once.
+- Priorities: area-scoped discovery from denominación de origen councils and
+  DENUE extracts, followed by admission and review of published rows. Derive
+  exact published-row queues with `npx pnpm check:defects --country mx`.
+- Active discovery and its cutoffs live in `docs/candidates/mx/<area>.md`; row
+  decisions belong in `data/evidence/mx/**`.
 
 ## Country rules
 - `region` is a mesorregión and `area` a federal entity. The five mesorregiones

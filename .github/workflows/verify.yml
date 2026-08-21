@@ -22,13 +22,13 @@ jobs:
       postgres:
         image: postgres:16
         env:
-          POSTGRES_DB: km0_test
+          POSTGRES_DB: chisan_test
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U postgres -d km0_test"
+          --health-cmd "pg_isready -U postgres -d chisan_test"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -49,9 +49,9 @@ jobs:
           pnpm db:migrate
           pnpm db:assert-current
         env:
-          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/km0_test
-          DATABASE_MIGRATION_URL: postgresql://postgres:postgres@127.0.0.1:5432/km0_test
-          KM0_ACCOUNTS_ENABLED: "true"
+          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/chisan_test
+          DATABASE_MIGRATION_URL: postgresql://postgres:postgres@127.0.0.1:5432/chisan_test
+          CHISAN_ACCOUNTS_ENABLED: "true"
 
       - uses: actions/setup-python@v7
         with:

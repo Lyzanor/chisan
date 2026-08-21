@@ -1,7 +1,7 @@
 # Spain
 
 ## Operating state
-- Phase: mature-catalog maintenance with targeted area discovery. Derive the live queues with `npx pnpm check:defects --country es` and review the dated link snapshot before opening domains.
+- Priorities: targeted area discovery and ongoing review of individual rows in a mature catalog. Derive the live queues with `npx pnpm check:defects --country es` and review the dated link snapshot before opening domains.
 - Active source passes live in `docs/candidates/es/**`; row decisions and re-verifications belong in `data/evidence/es/**`.
 
 ## Country rules

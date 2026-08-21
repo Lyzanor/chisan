@@ -1,14 +1,11 @@
 # Argentina
 
 ## Operating state
-- Phase: opening. The tree covers the 23 provinces and the Ciudad Autónoma de
-  Buenos Aires. Formosa and Santa Cruz still hold nothing and a handful of
-  northern areas stay thin. Derive live queues with
-  `npx pnpm check:defects --country ar`.
-- Active lane: the areas with no material or few rows, tracked in
-  `docs/candidates/ar/<area>.md`. Every current row rests on a directory plus,
-  where it answers, the producer's own site, so the other standing lane is
-  raising them from `parcial` and resolving `Venta online`.
+- Priorities: targeted area discovery, strengthening directory-seeded rows with
+  producer-owned sources and resolving online sales. Derive the exact published
+  row queues with `npx pnpm check:defects --country ar`.
+- Active discovery and its cutoffs live in `docs/candidates/ar/<area>.md`; row
+  decisions and re-verifications belong in `data/evidence/ar/**`.
 
 ## Country rules
 - `region` is one of the six statistical regions INDEC defined in 1980 and

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { requireStaffAccount } from "@/lib/accounts/auth";
+import { SITE_NAME } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +18,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <section className="panel account-shell">
         <header className="account-header">
           <div>
-            <p className="catalog-kicker">KM0 review</p>
+            <p className="catalog-kicker">{SITE_NAME} review</p>
             <h1>Editorial access</h1>
             <p>{reviewer.displayName || reviewer.email || "Authorized reviewer"}</p>
           </div>

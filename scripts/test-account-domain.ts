@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { getAccountAuthConfiguration } from "../lib/accounts/config";
+import {
+  getAccountAuthConfiguration,
+  getAppUrl,
+  getBootstrapAdminEmails,
+  isAccountFeatureEnabled,
+} from "../lib/accounts/config";
 import {
   PRODUCER_EDITABLE_FIELDS,
   hashProducerFields,
@@ -13,7 +18,7 @@ import { findProducerById, findProducersByIds } from "../lib/csv-catalog";
 
 test("account auth configuration rejects empty and placeholder Clerk keys", () => {
   const configured = getAccountAuthConfiguration({
-    KM0_ACCOUNTS_ENABLED: "true",
+    CHISAN_ACCOUNTS_ENABLED: "true",
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_Y2xlcmsuZXhhbXBsZS50ZXN0JA==",
     CLERK_SECRET_KEY: "sk_test_abcdefghijklmnopqrstuvwxyz012345",
   });
@@ -23,7 +28,7 @@ test("account auth configuration rejects empty and placeholder Clerk keys", () =
   assert.deepEqual(configured.invalidKeys, []);
 
   const placeholders = getAccountAuthConfiguration({
-    KM0_ACCOUNTS_ENABLED: "true",
+    CHISAN_ACCOUNTS_ENABLED: "true",
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_replace_me",
     CLERK_SECRET_KEY: "sk_test_replace_me",
   });
@@ -35,7 +40,7 @@ test("account auth configuration rejects empty and placeholder Clerk keys", () =
   ]);
 
   const empty = getAccountAuthConfiguration({
-    KM0_ACCOUNTS_ENABLED: "true",
+    CHISAN_ACCOUNTS_ENABLED: "true",
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "",
     CLERK_SECRET_KEY: "",
   });
@@ -47,7 +52,7 @@ test("account auth configuration rejects empty and placeholder Clerk keys", () =
   assert.deepEqual(empty.invalidKeys, []);
 
   const disabled = getAccountAuthConfiguration({
-    KM0_ACCOUNTS_ENABLED: "false",
+    CHISAN_ACCOUNTS_ENABLED: "false",
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_Y2xlcmsuZXhhbXBsZS50ZXN0JA==",
     CLERK_SECRET_KEY: "sk_test_abcdefghijklmnopqrstuvwxyz012345",
   });
@@ -60,6 +65,44 @@ test("account auth configuration rejects empty and placeholder Clerk keys", () =
   });
   assert.equal(switchAbsent.featureEnabled, false);
   assert.equal(switchAbsent.configured, false);
+});
+
+test("Chisan account environment names take precedence with a temporary KM0 fallback", () => {
+  assert.equal(isAccountFeatureEnabled({ KM0_ACCOUNTS_ENABLED: "true" }), true);
+  assert.equal(
+    isAccountFeatureEnabled({
+      CHISAN_ACCOUNTS_ENABLED: "false",
+      KM0_ACCOUNTS_ENABLED: "true",
+    }),
+    false,
+  );
+
+  assert.deepEqual(
+    [...getBootstrapAdminEmails({ KM0_ADMIN_EMAILS: "legacy@example.com" })],
+    ["legacy@example.com"],
+  );
+  assert.deepEqual(
+    [
+      ...getBootstrapAdminEmails({
+        CHISAN_ADMIN_EMAILS: "Owner@Example.com",
+        KM0_ADMIN_EMAILS: "legacy@example.com",
+      }),
+    ],
+    ["owner@example.com"],
+  );
+});
+
+test("application origin is canonical and ignores invalid overrides", () => {
+  assert.equal(getAppUrl({}), "https://chisan.app");
+  assert.equal(
+    getAppUrl({ NEXT_PUBLIC_APP_URL: "https://preview.example.test/path" }),
+    "https://preview.example.test",
+  );
+  assert.equal(
+    getAppUrl({ NEXT_PUBLIC_APP_URL: "javascript:alert(1)" }),
+    "https://chisan.app",
+  );
+  assert.equal(getAppUrl({ NEXT_PUBLIC_APP_URL: "not a URL" }), "https://chisan.app");
 });
 
 function validFields(): Record<string, string> {

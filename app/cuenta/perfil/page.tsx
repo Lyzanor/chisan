@@ -7,6 +7,7 @@ import {
   type AccountMessageParams,
 } from "@/components/account/account-message";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Account profile",
@@ -34,7 +35,7 @@ export default async function AccountProfilePage({
           <div>
             <h2 id="account-profile-title">Profile</h2>
             <p>
-              This information belongs to your KM0 account. Sign-in email, password and
+              This information belongs to your {SITE_NAME} account. Sign-in email, password and
               authentication factors are managed securely through Clerk.
             </p>
           </div>

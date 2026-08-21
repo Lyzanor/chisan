@@ -92,7 +92,45 @@ MULTI_ADDITIONAL_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiAdditiona
 MULTI_SECOND_ADDITIONAL_CATEGORY="$(node -p "JSON.parse(process.argv[1]).multiSecondAdditionalCategory" "$FIXTURE_JSON")"
 LAST_SLUG="$(node -p "JSON.parse(process.argv[1]).lastSlug" "$FIXTURE_JSON")"
 
-./node_modules/.bin/next dev --port "$PORT" >/tmp/km0-test-dev.log 2>&1 &
+./node_modules/.bin/tsx -e '
+import robots from "./app/robots";
+
+process.env.VERCEL_ENV = "preview";
+const preview = robots();
+const previewRules = Array.isArray(preview.rules) ? preview.rules : [preview.rules];
+if (
+  previewRules.length !== 1 ||
+  previewRules[0]?.userAgent !== "*" ||
+  previewRules[0]?.disallow !== "/" ||
+  "allow" in previewRules[0]
+) {
+  throw new Error("Preview deployments must disallow all crawlers.");
+}
+
+process.env.VERCEL_ENV = "production";
+const production = robots();
+const productionRules = Array.isArray(production.rules)
+  ? production.rules
+  : [production.rules];
+const productionRule = productionRules[0];
+const disallowed = Array.isArray(productionRule?.disallow)
+  ? productionRule.disallow
+  : [productionRule?.disallow];
+const expectedPrivatePaths = ["/acceso", "/registro", "/cuenta", "/admin", "/api/"];
+if (
+  productionRules.length !== 1 ||
+  productionRule?.userAgent !== "*" ||
+  productionRule?.allow !== "/" ||
+  expectedPrivatePaths.some((path) => !disallowed.includes(path)) ||
+  production.sitemap !== "https://chisan.app/sitemap.xml" ||
+  production.host !== "https://chisan.app"
+) {
+  throw new Error("Production robots policy is incomplete or non-canonical.");
+}
+'
+
+VERCEL_ENV=production NEXT_PUBLIC_APP_URL=https://chisan.app \
+  ./node_modules/.bin/next dev --port "$PORT" >/tmp/chisan-test-dev.log 2>&1 &
 DEV_PID=$!
 
 wait_for_app
@@ -105,10 +143,29 @@ if [[ "$HTML_HOME_CLEAN" != *"Choose a country"* ]]; then
   exit 1
 fi
 
+if [[
+  "$HTML_HOME_CLEAN" != *"<title>Chisan Producer Map</title>"* ||
+  "$HTML_HOME_CLEAN" != *'aria-label="Chisan home"'* ||
+  "$HTML_HOME_CLEAN" != *">Chisan</a>"*
+]]; then
+  echo "Error: home page should expose the Chisan browser title and visible brand header." >&2
+  exit 1
+fi
+
+if [[ "$HTML_HOME_CLEAN" == *"KM0"* ]]; then
+  echo "Error: home page still exposes the former KM0 product brand." >&2
+  exit 1
+fi
+
 # Each country route names its own unit: a prefecture is not a province.
 HTML_ES="$(curl -fsS "$BASE_URL/es" | sed 's/<!-- -->//g')"
 if [[ "$HTML_ES" != *"Choose a province"* || "$HTML_ES" != *"Barcelona"* ]]; then
   echo "Error: /es should list Spanish provinces." >&2
+  exit 1
+fi
+
+if [[ "$HTML_ES" != *"Chisan"* || "$HTML_ES" == *"KM0"* ]]; then
+  echo "Error: sampled public catalogue UI should use only the Chisan product brand." >&2
   exit 1
 fi
 
@@ -186,7 +243,7 @@ if [[ "$HTML_DETAIL_CLEAN" != *"Producer ID"* || "$HTML_DETAIL_CLEAN" != *"$PROD
   exit 1
 fi
 
-if [[ "$HTML_DETAIL" != *"https://km0-nu.vercel.app/es/barcelona/$SLUG"* ]]; then
+if [[ "$HTML_DETAIL" != *"https://chisan.app/es/barcelona/$SLUG"* ]]; then
   echo "Error: producer metadata does not expose the absolute canonical URL." >&2
   exit 1
 fi
@@ -228,11 +285,46 @@ fi
 
 SITEMAP="$(curl -fsS "$BASE_URL/sitemap.xml")"
 if [[
-  "$SITEMAP" != *"https://km0-nu.vercel.app/es/barcelona/$SLUG"* ||
-  "$SITEMAP" != *"https://km0-nu.vercel.app/es/barcelona/$LAST_SLUG"*
+  "$SITEMAP" != *"https://chisan.app/es/barcelona/$SLUG"* ||
+  "$SITEMAP" != *"https://chisan.app/es/barcelona/$LAST_SLUG"*
 ]]; then
   echo "Error: sitemap does not contain canonical producer URLs beyond the visible list." >&2
   exit 1
 fi
+
+NON_CANONICAL_SITEMAP_URL="$(
+  printf '%s' "$SITEMAP" |
+    grep -o '<loc>[^<]*</loc>' |
+    sed -e 's#^<loc>##' -e 's#</loc>$##' |
+    grep -v '^https://chisan\.app/' |
+    head -n 1 || true
+)"
+if [[ -n "$NON_CANONICAL_SITEMAP_URL" || "$SITEMAP" == *"km0-nu.vercel.app"* ]]; then
+  echo "Error: sitemap contains a non-canonical or legacy host." >&2
+  exit 1
+fi
+
+ROBOTS_STATUS="$(curl -sS -o /dev/null --write-out '%{http_code}' "$BASE_URL/robots.txt")"
+if [[ "$ROBOTS_STATUS" != "200" ]]; then
+  echo "Error: robots.txt should return 200, got '$ROBOTS_STATUS'." >&2
+  exit 1
+fi
+
+ROBOTS="$(curl -fsS "$BASE_URL/robots.txt")"
+for ROBOTS_DIRECTIVE in \
+  "User-Agent: *" \
+  "Allow: /" \
+  "Disallow: /acceso" \
+  "Disallow: /registro" \
+  "Disallow: /cuenta" \
+  "Disallow: /admin" \
+  "Disallow: /api/" \
+  "Host: https://chisan.app" \
+  "Sitemap: https://chisan.app/sitemap.xml"; do
+  if [[ "$ROBOTS" != *"$ROBOTS_DIRECTIVE"* ]]; then
+    echo "Error: robots.txt is missing '$ROBOTS_DIRECTIVE'." >&2
+    exit 1
+  fi
+done
 
 echo "Behavior tests OK."

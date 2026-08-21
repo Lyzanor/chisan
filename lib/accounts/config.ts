@@ -1,3 +1,5 @@
+import { SITE_ORIGIN } from "@/lib/site";
+
 export const ACCOUNT_ROUTES = {
   signIn: "/acceso",
   signUp: "/registro",
@@ -13,6 +15,16 @@ const ACCOUNT_AUTH_ENVIRONMENT_KEYS = [
 
 type AccountAuthEnvironmentKey = (typeof ACCOUNT_AUTH_ENVIRONMENT_KEYS)[number];
 type AccountAuthEnvironment = Record<string, string | undefined>;
+
+function preferredEnvironmentValue(
+  environment: AccountAuthEnvironment,
+  canonicalKey: string,
+  legacyKey: string,
+): string {
+  const canonicalValue = environment[canonicalKey];
+  if (canonicalValue !== undefined) return canonicalValue.trim();
+  return environment[legacyKey]?.trim() ?? "";
+}
 
 const CLERK_SECRET_KEY_PATTERN = /^sk_(test|live)_[A-Za-z0-9_-]{20,}$/;
 const CLERK_PUBLISHABLE_KEY_PATTERN = /^pk_(test|live)_([A-Za-z0-9+/]+={0,2})$/;
@@ -59,7 +71,13 @@ export type AccountAuthConfiguration = {
 export function isAccountFeatureEnabled(
   environment: AccountAuthEnvironment = process.env,
 ): boolean {
-  return environment.KM0_ACCOUNTS_ENABLED?.trim() === "true";
+  return (
+    preferredEnvironmentValue(
+      environment,
+      "CHISAN_ACCOUNTS_ENABLED",
+      "KM0_ACCOUNTS_ENABLED",
+    ) === "true"
+  );
 }
 
 export function getAccountAuthConfiguration(
@@ -117,7 +135,7 @@ export function getBootstrapAdminEmails(
   environment: AccountAuthEnvironment = process.env,
 ): ReadonlySet<string> {
   return new Set(
-    (environment.KM0_ADMIN_EMAILS ?? "")
+    preferredEnvironmentValue(environment, "CHISAN_ADMIN_EMAILS", "KM0_ADMIN_EMAILS")
       .split(",")
       .map((email) => email.trim().toLowerCase())
       .filter(Boolean),
@@ -128,11 +146,12 @@ export function getAppUrl(
   environment: AccountAuthEnvironment = process.env,
 ): string {
   const configured = environment.NEXT_PUBLIC_APP_URL?.trim();
-  if (!configured) return "https://km0-nu.vercel.app";
+  if (!configured) return SITE_ORIGIN;
 
   try {
-    return new URL(configured).origin;
+    const url = new URL(configured);
+    return url.protocol === "http:" || url.protocol === "https:" ? url.origin : SITE_ORIGIN;
   } catch {
-    return "https://km0-nu.vercel.app";
+    return SITE_ORIGIN;
   }
 }

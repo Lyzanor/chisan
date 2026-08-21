@@ -1,7 +1,8 @@
 # Netherlands
 
 ## Operating state
-- Phase: inherited-catalog review. Derive the live queues with `npx pnpm check:defects --country nl`; investigate and record decisions by province.
+- Priorities: review inherited rows and record decisions by province. Derive
+  exact published-row queues with `npx pnpm check:defects --country nl`.
 - There is no country-wide discovery roster. Open `docs/candidates/nl/<area>.md` only for a concrete source pass and store closed decisions in `data/evidence/nl/**`.
 
 ## Country rules

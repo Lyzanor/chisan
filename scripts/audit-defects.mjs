@@ -14,6 +14,8 @@
 //   node scripts/audit-defects.mjs                  every province
 //   node scripts/audit-defects.mjs --country it
 //   node scripts/audit-defects.mjs --area soria
+//   node scripts/audit-defects.mjs --stage admission
+//   node scripts/audit-defects.mjs --stage verification
 //   node scripts/audit-defects.mjs --check sinteticas --list
 //   node scripts/audit-defects.mjs --check descripcion-generica --templates
 //   node scripts/audit-defects.mjs --json
@@ -56,6 +58,7 @@ const flag = (name) => {
 const onlyArea = flag("area");
 const onlyCountry = flag("country");
 const onlyCheck = flag("check");
+const onlyStage = flag("stage");
 const wantList = argv.includes("--list");
 const wantJson = argv.includes("--json");
 const wantPlantillas = argv.includes("--templates") || argv.includes("--plantillas");
@@ -405,10 +408,16 @@ const staleBefore = new Date(Date.now() - STALE_DAYS * 86400000)
 //            priority. Counting them there buries the real overlap: with them
 //            in, ~5.000 rows look like they sit in two queues; without them,
 //            it is ~870, and almost all of it is "row already opened for venta".
+//
+// `stage` routes each signal to the next kind of work in
+// docs/EDITORIAL_WORKFLOW.md. It is not a persistent state of the row or area:
+//   admission    -> published debt that should not pass the current entry gate.
+//   verification -> correctness and enrichment work on an admitted row.
 export const CHECKS = [
   {
     id: "sinteticas",
     kind: "cola",
+    stage: "admission",
     label: "filas sin un solo enlace ni contacto (candidatas a fila sintética)",
     hint: "docs/EDITORIAL_POLICY.md § Decision order: cruzar contra la fuente exhaustiva de la region antes de decidir",
     run: ({ rows }) =>
@@ -420,6 +429,7 @@ export const CHECKS = [
   {
     id: "identidad-duplicada",
     kind: "cola",
+    stage: "admission",
     label: "mismo `nombre + municipio` normalizado en varias filas del área",
     hint: "compara unidad productiva, contacto y dominio; fusiona solo si es la misma unidad",
     run: ({ rows }) =>
@@ -432,6 +442,7 @@ export const CHECKS = [
   {
     id: "descripcion-duplicada",
     kind: "cola",
+    stage: "verification",
     label: "misma `descripcion` larga publicada en varias filas del área",
     hint: "una descripción compartida suele ser plantilla; vacíala o escribe solo hechos propios",
     run: ({ rows }) =>
@@ -443,6 +454,7 @@ export const CHECKS = [
   {
     id: "evidencia-prestada",
     kind: "cola",
+    stage: "verification",
     label: "`verificado` cuyo único enlace externo es un pin de Google Maps",
     hint: "un pin es contenido de usuario: prueba que hay un punto, no que el productor esté activo",
     run: ({ rows }) =>
@@ -458,6 +470,7 @@ export const CHECKS = [
   {
     id: "maps-sin-ficha",
     kind: "cola",
+    stage: "verification",
     label: "`Google Maps` abre solo un pin de coordenadas, no una ficha del productor",
     hint: "verifica una ficha de la misma unidad y publica su query_place_id; si no existe, vacía Google Maps y conserva lat/lon",
     run: ({ rows }) => rows.filter((r) => isCoordinateOnlyMapsUrl(r["Google Maps"])),
@@ -465,6 +478,7 @@ export const CHECKS = [
   {
     id: "web-de-tercero",
     kind: "cola",
+    stage: "verification",
     label: `\`web\` compartida por >=${SHARED_DOMAIN_THRESHOLD} filas de la area (consejo, mercado o blog haciendo de web propia)`,
     hint: "el enlace prestado hace pasar el gate de `verificado` sin una fuente del productor",
     run: ({ rows }) => {
@@ -483,6 +497,7 @@ export const CHECKS = [
   {
     id: "descripcion-generica",
     kind: "cola",
+    stage: "verification",
     label: "`descripcion` que no distingue a este productor de otro de su categoría",
     hint: "docs/CSV_CONTRACT.md § Editorial field conventions; se publica tal cual en la ficha",
     run: ({ rows }) =>
@@ -501,6 +516,7 @@ export const CHECKS = [
   {
     id: "sin-coordenada",
     kind: "senal",
+    stage: "verification",
     label: "sin `lat`/`lon`: la fila no aparece en el mapa",
     hint: "docs/GEOLOCATION.md; el punto es la unidad productiva, y una celda vacía es mejor que un punto convincente y equivocado",
     // Both cells: a half-filled pair is a blocking contract error and belongs to
@@ -510,6 +526,7 @@ export const CHECKS = [
   {
     id: "categoria-variante",
     kind: "cola",
+    stage: "verification",
     label: "categoría primaria o adicional retirada del registro, o variante minoritaria de otra en uso",
     hint: "los filtros leen ambas columnas con tokens exactos: corrige la variante en el campo donde aparezca",
     run: ({ rows }, ctx) =>
@@ -520,6 +537,7 @@ export const CHECKS = [
   {
     id: "plantilla-cruzada",
     kind: "cola",
+    stage: "verification",
     label: "`productos estrella` describe una categoría no asignada a la fila",
     hint: "candidatos, no veredictos: decide si sobra el producto o falta/cambia una categoría con evidencia suficiente",
     run: ({ rows, area }, ctx) =>
@@ -528,6 +546,7 @@ export const CHECKS = [
   {
     id: "canal-sin-clasificar",
     kind: "cola",
+    stage: "verification",
     label: "`Venta online=sí` sin `Canal de venta`",
     hint: "sabemos que vende pero no cómo se le pide: el dato que hace accionable la fila",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "sí" && !r["Canal de venta"]),
@@ -535,6 +554,7 @@ export const CHECKS = [
   {
     id: "venta-sin-resolver",
     kind: "cola",
+    stage: "verification",
     label: "`Venta online=no comprobado`",
     hint: "el mayor hueco abierto; el criterio de sí/no/no comprobado está en docs/EDITORIAL_POLICY.md",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "no comprobado"),
@@ -542,6 +562,7 @@ export const CHECKS = [
   {
     id: "sin-imagen",
     kind: "senal",
+    stage: "verification",
     label: "sin `imagen`",
     hint: "docs/IMAGES.md; revisa --contact-sheet y aplica un slug con el --candidate aprobado",
     run: ({ rows }) => rows.filter((r) => !r.imagen),
@@ -549,6 +570,7 @@ export const CHECKS = [
   {
     id: "sin-evidencia",
     kind: "senal",
+    stage: "verification",
     label: "filas sin registro `keep` en el ledger de evidencia",
     hint: "la evidencia es opcional y advisory; falta-keep NO es deuda que haya que backfillear",
     run: ({ rows, country, region, area }) => {
@@ -559,6 +581,7 @@ export const CHECKS = [
   {
     id: "venta-caducada",
     kind: "senal",
+    stage: "verification",
     label: `\`Venta online=sí\` con la fuente vista hace más de ${STALE_DAYS} días`,
     hint: "reabre la tienda y actualiza `checkedAt` en el registro `keep`; docs/EVIDENCE_CONTRACT.md",
     run: ({ rows, country, region, area }) => {
@@ -574,11 +597,20 @@ export const CHECKS = [
   {
     id: "pendiente",
     kind: "cola",
+    stage: "admission",
     label: "`verificacion=pendiente`",
-    hint: "sin revisar: es la única categoría que la app muestra sin ninguna comprobación",
+    hint: "deuda de admisión heredada: confirma, fusiona o retira; las nuevas altas empiezan en parcial o verificado",
     run: ({ rows }) => rows.filter((r) => r.verificacion === "pendiente"),
   },
 ];
+
+export const WORKFLOW_STAGES = new Set(["admission", "verification"]);
+
+export function filterChecks(checks, { check = "", stage = "" } = {}) {
+  return checks.filter(
+    (candidate) => (!check || candidate.id === check) && (!stage || candidate.stage === stage),
+  );
+}
 
 function main() {
   const provinces = readAreas();
@@ -597,9 +629,17 @@ function main() {
     categoryVariants: loadCategoryVariants(),
     crossTemplate: loadCrossTemplate(provinces),
   };
-  const checks = onlyCheck ? CHECKS.filter((c) => c.id === onlyCheck) : CHECKS;
-  if (checks.length === 0) {
+  if (onlyStage && !WORKFLOW_STAGES.has(onlyStage)) {
+    console.error(`Stage desconocido "${onlyStage}". Disponibles: ${[...WORKFLOW_STAGES].join(", ")}`);
+    process.exit(1);
+  }
+  if (onlyCheck && !CHECKS.some((candidate) => candidate.id === onlyCheck)) {
     console.error(`Check desconocido "${onlyCheck}". Disponibles: ${CHECKS.map((c) => c.id).join(", ")}`);
+    process.exit(1);
+  }
+  const checks = filterChecks(CHECKS, { check: onlyCheck || "", stage: onlyStage || "" });
+  if (checks.length === 0) {
+    console.error(`El check "${onlyCheck}" no pertenece al stage "${onlyStage}".`);
     process.exit(1);
   }
 
@@ -642,7 +682,7 @@ function main() {
     console.log(
       JSON.stringify(
         {
-          checks: checks.map((c) => ({ id: c.id, label: c.label, kind: c.kind })),
+          checks: checks.map((c) => ({ id: c.id, label: c.label, kind: c.kind, stage: c.stage })),
           workload,
           provinces: results,
         },
@@ -657,7 +697,10 @@ function main() {
     Array.isArray(entry.checks[id]) ? entry.checks[id].length : entry.checks[id];
   const totalRows = results.reduce((sum, r) => sum + r.filas, 0);
 
-  console.log(`Auditoría de defectos editoriales — ${totalRows} filas en ${results.length} CSV\n`);
+  const stageLabel = onlyStage ? ` · stage ${onlyStage}` : "";
+  console.log(
+    `Auditoría de defectos editoriales${stageLabel} — ${totalRows} filas en ${results.length} CSV\n`,
+  );
 
   for (const check of checks) {
     const affected = results

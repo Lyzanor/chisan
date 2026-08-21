@@ -43,7 +43,7 @@ function redirectWithMessage(
   kind: "error" | "notice",
   message: string,
 ): never {
-  const url = new URL(safeReturnPath(path), "https://km0.invalid");
+  const url = new URL(safeReturnPath(path), "https://chisan.invalid");
   url.searchParams.set(kind, message.slice(0, 300));
   redirect(`${url.pathname}${url.search}`);
 }
@@ -55,17 +55,17 @@ function producerEditPath(country: string, producerId: number): string {
 export async function completeOnboardingAction(formData: FormData): Promise<void> {
   const account = await requireCurrentAccount("/cuenta/bienvenida");
   const profileKind = profileKindSchema.safeParse(formString(formData, "profileKind"));
-  const acceptedTerms = formString(formData, "acceptTerms") === "yes";
+  const acknowledgedReview = formString(formData, "acknowledgeReview") === "yes";
   const displayName = formString(formData, "displayName").replace(/\s+/g, " ");
 
   if (!profileKind.success) {
     redirectWithMessage("/cuenta/bienvenida", "error", "Choose a profile type.");
   }
-  if (!acceptedTerms) {
+  if (!acknowledgedReview) {
     redirectWithMessage(
       "/cuenta/bienvenida",
       "error",
-      "You must accept the account and editorial terms.",
+      "You must confirm the review and publication notice.",
     );
   }
   if (displayName.length > 160) {
