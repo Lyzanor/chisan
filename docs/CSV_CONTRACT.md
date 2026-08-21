@@ -10,10 +10,8 @@ This document owns storage semantics: file shape, field meanings, missing
 values, controlled values, cross-field invariants and validation. It does not
 decide which entities qualify or how research is performed:
 
-- `docs/EDITORIAL_POLICY.md` owns eligibility, verification and online-sales
-  decisions.
-- `docs/EDITORIAL_WORKFLOW.md` owns the three operating levels and their
-  handoffs.
+- `docs/EDITORIAL.md` owns eligibility, verification, online-sales decisions
+  and the three operating levels with their handoffs.
 - `docs/EVIDENCE_CONTRACT.md` owns decision provenance. Evidence explains a CSV
   decision but never overrides the CSV.
 - `AGENTS.md` owns runtime boundaries, routing invariants, repository editing
@@ -117,7 +115,7 @@ hours, contacts and online sales require current support. When a value cannot be
 supported, leave it empty or use the defined unknown state; never complete a row
 by inference.
 
-New candidates must pass the candidate gate in `docs/EDITORIAL_POLICY.md` before
+New candidates must pass the candidate gate in `docs/EDITORIAL.md` before
 they enter a CSV and start as `parcial` or `verificado`. `pendiente` is reserved
 for inherited or later-questioned published rows that do not currently meet the
 admission threshold; it is never a holding state for a speculative candidate.
@@ -174,7 +172,7 @@ additional categories automatically from free text in `productos estrella` or
 Assign an additional category only when suitable public evidence establishes a
 material product line made by the same qualifying productive unit. Resale,
 ingredients, occasional hospitality output, and a product merely stocked in a
-farm shop do not qualify. `docs/EDITORIAL_POLICY.md` owns the decision rule.
+farm shop do not qualify. `docs/EDITORIAL.md` owns the decision rule.
 
 CSV column names are stable schema identifiers and are not translated per
 country. Their historical language is independent of the language used for
@@ -182,7 +180,7 @@ editor-authored prose.
 
 ## Verification and sales states
 
-`docs/EDITORIAL_POLICY.md` defines how to choose these states. This contract
+`docs/EDITORIAL.md` defines how to choose these states. This contract
 only defines their representation and structural floor.
 
 - `verificacion` is required. `verificado` additionally requires both
@@ -287,13 +285,10 @@ The durable key is `(<country>, producer_id)`. It identifies one published row
 and productive unit, not necessarily the parent company or organisation that
 owns several units. Row order is never identity and may change freely.
 
-The initial catalogue migration assigns `1..N` once per country by normalised
-`nombre`, then normalised `municipio`, `area`, the former `slug`, file path and
-source row as deterministic tie-breakers; it does not reorder the CSVs. After
-that bootstrap, IDs are immutable. A new row receives the country's next
-monotonically increasing number; never renumber existing rows, fill a deleted
-gap or reuse an allocated ID. A merge keeps the target row's ID. Corporate
-grouping, if needed later, is a separate many-to-one identifier.
+A new row receives the country's next monotonically increasing number; never
+renumber existing rows, fill a deleted gap or reuse an allocated ID. A merge
+keeps the target row's ID. Corporate grouping, if needed later, is a separate
+many-to-one identifier.
 
 `slug` is the readable routing identity and is unique within the country. Its
 canonical URL is `/<country>/<area>/<slug>`. A slug should describe the producer
@@ -348,15 +343,5 @@ A header change is one atomic migration: update this contract, the validator,
 tests, runtime types/consumers and every CSV under `data/csv/**` in one dedicated
 commit. Never introduce a country-only column or partially migrate the tree.
 Controlled-value changes likewise update their machine-readable registry,
-consumers and regression tests together.
-
-Use:
-
-```bash
-npx pnpm check:csv                 # blocking contract, all CSVs
-npx pnpm check:csv:changed         # same checks, changed CSVs only
-npx pnpm check:defects             # advisory editorial worklist
-npx pnpm check:images              # image field and assets
-npx pnpm verify:data               # data/reference/evidence/image change
-npx pnpm verify:ai                 # contract, validator or behavior change
-```
+consumers and regression tests together. Validation commands and release gates
+live in `AGENTS.md`.

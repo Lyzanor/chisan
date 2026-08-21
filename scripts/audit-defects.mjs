@@ -410,7 +410,7 @@ const staleBefore = new Date(Date.now() - STALE_DAYS * 86400000)
 //            it is ~870, and almost all of it is "row already opened for venta".
 //
 // `stage` routes each signal to the next kind of work in
-// docs/EDITORIAL_WORKFLOW.md. It is not a persistent state of the row or area:
+// docs/EDITORIAL.md. It is not a persistent state of the row or area:
 //   admission    -> published debt that should not pass the current entry gate.
 //   verification -> correctness and enrichment work on an admitted row.
 export const CHECKS = [
@@ -419,7 +419,7 @@ export const CHECKS = [
     kind: "cola",
     stage: "admission",
     label: "filas sin un solo enlace ni contacto (candidatas a fila sintética)",
-    hint: "docs/EDITORIAL_POLICY.md § Decision order: cruzar contra la fuente exhaustiva de la region antes de decidir",
+    hint: "docs/EDITORIAL.md § Decision order: cruzar contra la fuente exhaustiva de la region antes de decidir",
     run: ({ rows }) =>
       rows.filter(
         (r) =>
@@ -556,7 +556,7 @@ export const CHECKS = [
     kind: "cola",
     stage: "verification",
     label: "`Venta online=no comprobado`",
-    hint: "el mayor hueco abierto; el criterio de sí/no/no comprobado está en docs/EDITORIAL_POLICY.md",
+    hint: "el mayor hueco abierto; el criterio de sí/no/no comprobado está en docs/EDITORIAL.md",
     run: ({ rows }) => rows.filter((r) => r["Venta online"] === "no comprobado"),
   },
   {

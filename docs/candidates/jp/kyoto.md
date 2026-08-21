@@ -15,7 +15,7 @@ tiene tres bodegas. Categoría para todas: `Sake`.
 - ⚠ **小山本家酒造** tiene su sede en **さいたま市 (Saitama)** — está en
   `saitama.md` — y en Fushimi opera una planta. Si la unidad de Kioto no tiene
   marca e identidad propias, la fila correcta es la de Saitama, no ésta
-  (`docs/EDITORIAL_POLICY.md`, grupos). **Revisada 2026-08-09:** se retiene por
+  (`docs/EDITORIAL.md`, grupos). **Revisada 2026-08-09:** se retiene por
   esa duda de identidad de planta; no es un descarte definitivo.
 - **伏見 (Fushimi) es un 区 de la ciudad de Kioto**, no un municipio: la fila lleva
   `Kyoto`. Lo mismo que ya se resolvió para Uji y las casas de té del CSV.

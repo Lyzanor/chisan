@@ -1,7 +1,4 @@
 # Gemini Instructions
 
-Read and follow `AGENTS.md` before doing anything. It is the single shared source of truth for this
-repository (data contract, multi-agent coordination, validation gates, deploy). Do not duplicate its
-content here and do not create Gemini-only workflows or private sources of truth.
-
-Details of the CSV schema live in `docs/CSV_CONTRACT.md`.
+Read and follow `AGENTS.md`, the shared agent contract for this repository. Do
+not create Gemini-specific workflows or private sources of truth.

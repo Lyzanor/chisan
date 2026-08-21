@@ -12,7 +12,7 @@
 > fusión o renombre (la marca sigue en el CSV con otro slug, el filtro (b) de
 > dedup lo confirma) o purga por «sin rastro» en 2026-06 (una fuente viva nueva
 > puede justificar reconsiderarlo, anotándolo en el ledger). El motivo exacto:
-> `git show <commit>` o el historial de `docs/verificacion/es/barcelona.md`.
+> `git show <commit>`, el historial del CSV o el ledger de evidencia del área.
 
 | municipio | nombre | slug | quitada en | fecha |
 |---|---|---|---|---|

@@ -2,8 +2,8 @@
 
 Scratch de investigación para el CSV de Segovia. No es una cola de revisión ni
 un registro: lo que se integra o se descarta se borra de aquí en el mismo
-cambio. La pasada de verificación en curso está en `docs/verificacion/es/segovia.md`
-y **no admite altas hasta cerrar la primera pasada**.
+cambio. La primera pasada de verificación sigue abierta en el historial de Git
+y la evidencia del área; **no admite altas hasta cerrarla**.
 
 ## Bodegas de la D.O.P. Valtiendas ausentes del CSV
 

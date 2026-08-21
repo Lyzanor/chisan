@@ -122,12 +122,12 @@ Every proposal stores:
 All fields require editorial review in the first release. Approval does not
 publish the change. Verified ownership proves authority to propose, not the
 truth of any requested public field. Private claim material and author notes do
-not become public evidence; the reviewer applies `docs/EDITORIAL_POLICY.md`, and
+not become public evidence; the reviewer applies `docs/EDITORIAL.md`, and
 records only suitable public sources under `data/evidence/**`.
 
 An owner-submitted change is an input to editorial level 3 in
-`docs/EDITORIAL_WORKFLOW.md`. Approval authorizes the following two-phase
-workflow. The current admin UI approves or rejects a submitted change. If more
+`docs/EDITORIAL.md`. Approval authorizes the following two-phase workflow. The
+current admin UI approves or rejects a submitted change. If more
 information or a corrected patch is required, the reviewer rejects it with a
 clear note or the owner withdraws it, and the owner creates a new proposal; the
 reserved `needs_changes` status is not a launched conversation loop.
@@ -236,23 +236,9 @@ Clerk production requires a custom application domain. Preview/development
 keys can be used before that domain is ready, but production registration must
 not launch on a temporary `*.vercel.app` identity configuration.
 
-## Deployment sequence
-
-`docs/OPERATIONS.md` is the production runbook. The account-specific order is:
-
-1. Provision isolated PostgreSQL databases and Clerk instances. Provisioning
-   is an operator action; repository code never creates billable resources.
-2. Configure secrets with `CHISAN_ACCOUNTS_ENABLED=false` in local, Preview and
-   Production environments.
-3. Run `npx pnpm db:migrate` and `npx pnpm db:assert-current` against the target database.
-4. Run `npx pnpm verify:ai` with accounts disabled to confirm the public fallback.
-5. Only when Preview has isolated account resources, enable accounts there and
-   exercise registration, favorite, claim, review and change-request flows. If
-   it resolves to Production PostgreSQL, keep both canonical and legacy account
-   flags false and test only the public fallback.
-6. Configure the signed Clerk webhook and verify a test event.
-7. Enable Production and promote only after the custom domain and required CI
-   checks are in place. The read-only build assertion blocks an outdated DB.
+Operational deployment procedures, preflight and smoke checks live in
+`docs/OPERATIONS.md`. Repository code never provisions billable resources, and
+a build asserts migration compatibility but never applies DDL.
 
 ## Security invariants
 
@@ -277,11 +263,3 @@ not launch on a temporary `*.vercel.app` identity configuration.
   Infrastructure IP limits, MFA/step-up for sensitive changes and private claim
   artifacts are required before higher-risk evidence uploads or operation at an
   abuse level the current text-only, manually reviewed flow cannot safely absorb.
-
-## Future paid capabilities
-
-Do not add `is_premium` or infer payment from producer ownership. Billing should
-issue capability keys such as `producer_profile_extended` or `custom_maps` into
-`entitlements`, with provider references and validity windows. A future billing
-account may belong to a person or a producer and can have multiple members;
-ownership, moderation and payment remain independent dimensions.

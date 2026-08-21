@@ -4,7 +4,7 @@
 // **clasifica**, sin decidir nada. Solo informe; exit 0 siempre.
 //
 // Un fallo de red es incertidumbre, no prueba de baja
-// (`docs/EDITORIAL_POLICY.md`): contrasta por otra vía antes de tocar el CSV.
+// (`docs/EDITORIAL.md`): contrasta por otra vía antes de tocar el CSV.
 // No forma parte de ningún gate porque depende de la red y de bloqueos
 // anti-bot. Un 403 no es un sitio muerto, y un 200 no es la web del productor.
 //

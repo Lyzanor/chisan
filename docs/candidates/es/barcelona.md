@@ -54,7 +54,7 @@ Frentes: **0** blindaje · **A** nacidos 2024-2026 (eje temporal explícito) ·
 
 | Lote | Frente | Fuente / alcance | Tamaño est. | Estado | Revisados | Altas |
 |---|---|---|---|---|---:|---:|
-| 0 | 0 | Reconstruir descartes históricos desde git (`529e83b`, `d58771d`, pasada atípicos) + purgas de `docs/verificacion/es/barcelona.md` → rellenar «Descartados — no re-evaluar» | — | ✅ 2026-07-14 | 618 slugs + 12 pre-CSV | — |
+| 0 | 0 | Reconstruir descartes históricos desde git (`529e83b`, `d58771d`, pasada atípicos) y purgas de verificación → rellenar «Descartados — no re-evaluar» | — | ✅ 2026-07-14 | 618 slugs + 12 pre-CSV | — |
 | 1 | A | **Cata de rendimiento**: muestra Benvinguts a Pagès 2026 (prov. BCN) + prensa comarcal 2025-26 (Regió7, El 9 Nou) | ~20 sonda | ✅ 2026-07-14 | 31 netos (52 fichas) | 5 + 1 mejora |
 | — | — | **GO/NO-GO**: si el lote 1 rinde ≥ ~1 alta/5-6 revisados, seguir con 2-7; si no, saltar al frente B | — | **GO matizado (2026-07-14)**: 5+1/31 ≈ umbral justo → seguir con 3-6; lote 2 reducido a residual; lote 7 NO-GO (prensa no indexa) | — | — |
 | 2 | A | Benvinguts a Pagès 2026 completo, prov. BCN por comarcas (priorizar Berguedà, Moianès/Lluçanès, Anoia rural) | ~30-50 | pendiente | | |
@@ -609,7 +609,7 @@ integrado, descartado con motivo o marcado reconsiderable-con-señal.**
 
 ## Candidatos DAR pendientes de triaje (2026-06)
 
-Movidos aquí al comprimir `docs/verificacion/es/barcelona.md` (2026-07-18). Lista de junio 2026:
+Movidos aquí al consolidar las notas históricas de verificación (2026-07-18). Lista de junio 2026:
 **deduplicar contra el CSV antes de usar** — la pasada flujo 2026 (julio) ya integró algunos
 (p. ej. Mel Morató, Mels Can Monràs Nou) y otros pueden estar como fila de registro o marca.
 No son cola obligatoria; integrar solo tras verificación (protocolo de AGENTS.md).

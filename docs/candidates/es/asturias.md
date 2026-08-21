@@ -24,7 +24,7 @@ concejo, contacto, actividad certificada y el certificado TRACES vigente.
 - **La Llosa de Fombona** (Gozón), **Campos de Orellana** (Ribadesella) y
   **Trébole de agua** (Villaviciosa) — hortícola y frutales certificados, pero
   la ficha no publica teléfono ni correo, que es el mínimo que pide
-  `docs/EDITORIAL_POLICY.md` para sostener una fila `parcial` apoyada solo en un
+  `docs/EDITORIAL.md` para sostener una fila `parcial` apoyada solo en un
   directorio institucional.
 
 ## Trabajo de descubrimiento pendiente

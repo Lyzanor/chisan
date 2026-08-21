@@ -30,4 +30,4 @@ en `data/evidence/es/illes-balears/baleares.jsonl`.
   Xebel·lins** (Santa Eulària des Riu). Productores certificados con actividad y
   municipio acreditados por el directorio, pero sin teléfono, correo ni web
   publicados: no alcanzan el mínimo de contacto que pide
-  `docs/EDITORIAL_POLICY.md` para un alta `parcial` sin web propia.
+  `docs/EDITORIAL.md` para un alta `parcial` sin web propia.

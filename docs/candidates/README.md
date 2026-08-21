@@ -1,100 +1,79 @@
-# Candidatos
+# Candidate Workspace
 
-`docs/candidates/**` es la bandeja temporal para descubrir productores. No es
-fuente de verdad y la app no la lee: un productor publicado vive en
-`data/csv/**` y una decisión cerrada, en `data/evidence/**`.
+`docs/candidates/**` is temporary discovery workspace. The app never reads it.
+Published producers live in `data/csv/**`; closed decisions and tombstones live
+in `data/evidence/**`.
 
-Este árbol es el traspaso entre el nivel 1 (descubrimiento) y el nivel 2
-(admisión) de `docs/EDITORIAL_WORKFLOW.md`. No es una cola de enriquecimiento de
-filas ya publicadas ni almacena reclamaciones de titularidad o solicitudes de
-cambio de perfiles.
+This tree hands work from discovery to admission under `docs/EDITORIAL.md`. It
+is not a queue for enriching published rows and does not store ownership claims
+or producer profile requests.
 
-## Responsabilidades
+## Document ownership
 
-Los README de este árbol son guías, no paneles de estado:
+- This file defines the common note format and lifecycle.
+- `docs/candidates/<country>/README.md`, when useful, contains only durable,
+  reusable discovery methods for that country.
+- `docs/candidates/<country>/<area>.md` contains the active queue, concrete
+  sources and queries, cutoff date, and unresolved work for one area.
+- `data/csv/<country>/AGENTS.md` contains durable country rules and source
+  ceilings.
+- `data/csv/**` and `data/evidence/**` contain published rows and closed
+  decisions respectively.
 
-- este fichero define el formato y el ciclo de vida comunes;
-- `docs/candidates/<country>/README.md`, cuando exista, solo añade métodos de
-  descubrimiento reutilizables para ese país;
-- `docs/candidates/<country>/<area>.md` contiene la cola activa, las fuentes y
-  consultas concretas, la fecha de corte y el trabajo pendiente del área;
-- `data/csv/<country>/AGENTS.md` contiene las reglas y los techos de fuentes
-  duraderos del país;
-- `data/csv/**` y `data/evidence/**` conservan, respectivamente, las filas
-  publicadas y las decisiones cerradas.
+Never put live counts, completed-area lists, batch results, closure dates,
+current service failures, or pending queues in a README. Do not maintain a
+manual area index; the file tree already is the index.
 
-No pongas en un README recuentos de candidatos, áreas revisadas, resultados de
-un lote, fechas de cierre ni listas de pendientes: son estado derivado y se
-desactualizan en cuanto cambia un fichero de área. Tampoco mantengas un índice
-manual de áreas; el árbol de ficheros ya cumple esa función.
+## Area notes
 
-## Organización de las notas
+Use one file per area: `docs/candidates/<country>/<area>.md`. Add a thematic
+file only when a specific search would make the area note unmanageable. Do not
+copy data already published in the CSV.
 
-Usa un fichero por área:
-`docs/candidates/<country>/<area>.md`. Abre un fichero temático adicional solo
-si una búsqueda concreta haría inmanejable el principal. No mantengas índices,
-recuentos ni copias de datos ya presentes en el CSV.
+Use English for new headings and editor-authored prose, but do not spend a
+standalone cleanup pass translating historical area notes: they are temporary
+and should disappear when their candidates are resolved. Preserve official
+names, verbatim source text, URLs, and controlled CSV or category tokens in
+their canonical form.
 
-La cabecera identifica, como mínimo:
+The note header records the target CSV, discovery source or query, search date,
+scope, cutoff, and remaining work. For each open candidate retain only what the
+next reviewer needs:
 
-- CSV de destino;
-- fuente o consulta de descubrimiento, con URL cuando exista;
-- fecha de la búsqueda;
-- alcance de la pasada y trabajo pendiente.
+- published name;
+- municipality or geographic clue;
+- probable category and concrete reason it may qualify;
+- discovery URL, plus an official site or profile when found in the same pass;
+- visible material doubts.
 
-Por candidato conserva solo lo necesario para continuar: nombre publicado,
-municipio o pista geográfica, categoría probable, enlace de origen, motivo por
-el que puede encajar y dudas ya visibles. Añade la web o el perfil oficial si
-aparecen en la misma pasada: son el mejor localizador para la admisión, pero no
-abras una investigación completa solo para encontrarlos. Si falta un dato,
-indícalo; no lo completes por intuición. Un candidato anotado sigue abierto por
-definición, por lo que no necesita una tabla de estados.
+Do not fill gaps by intuition or open a full verification search during
+discovery. An entry is open by definition and needs no separate status table.
 
-### Hallazgos incidentales
+### Incidental findings
 
-No deseches un productor plausible y bien identificado solo porque aparezca
-fuera de la categoría o del área que acota la búsqueda actual. Tras comprobar
-que no está ya publicado, anótalo en el fichero del área geográfica que le
-corresponde —créalo si no existe— con la fuente, la fecha, su categoría, el
-motivo de encaje y lo que falte verificar. Márcalo como hallazgo incidental para
-que no se confunda con el alcance revisado del lote actual: pasa a un lote
-posterior de su área y no amplía ni bloquea el que está en curso.
+After checking for duplicates, place an out-of-scope but plausible producer in
+the note for its actual area, marked as incidental. It becomes a later batch and
+does not expand or block the current cutoff. If the area is unresolved, retain
+it temporarily where it was found with `location unresolved` and the available
+clues. Use `reject:other-area` only for a specific area attribution that was
+investigated and disproved.
 
-Si ya conoces el área correcta, trasladar allí el hallazgo no es un
-`reject:other-area`: usa ese rechazo solo cuando se haya evaluado y descartado
-una atribución concreta al área de origen. Si todavía falta resolver el área,
-consérvalo temporalmente en la nota donde apareció como `ubicación por
-resolver`, con la fuente y las pistas geográficas disponibles; muévelo cuando
-se aclare y no inventes su destino.
+When an already-open source explicitly confirms another useful field for the
+same matched producer, update the CSV and evidence in the same change. Do not
+branch into adjacent searches merely to fill blanks. Resolve contradictions
+because they affect correctness. Update an existing `keep` record in place;
+never add a second record for the same `slug`.
 
-El mismo criterio se aplica a los datos de una fila. Si una fuente abierta para
-el objetivo del lote confirma directamente otro campo útil del mismo productor
-—por ejemplo web, red social, contacto, dirección, coordenadas, productos,
-categoría o canal de venta—, actualiza el CSV y la evidencia que corresponda en
-el mismo cambio. Hazlo solo cuando la identidad esté bien casada y el dato sea
-explícito, respetando el contrato específico de cada campo. No abras búsquedas
-adicionales solo para completar campos vecinos; el aprovechamiento debe ser
-natural y acotado. Si el dato contradice el catálogo, resuelve la contradicción
-porque sí afecta a la corrección.
+## Resolution and deletion
 
-Si el productor ya tiene un `keep`, actualiza ese registro en su línea actual y
-conserva las fuentes que sigan siendo relevantes; no añadas un segundo registro
-para el mismo `slug`.
+Follow the discovery and admission outcomes in `docs/EDITORIAL.md`. Before
+removing an accepted or rejected candidate, ensure its durable source trail or
+tombstone exists in `data/evidence/**`. Keep an unresolved candidate with one
+specific, actionable blocker.
 
-## Operación
+Update or prune the note with the CSV or evidence change. Delete the area note
+when no unresolved candidates remain: accepted rows are in the CSV, rejections
+are in evidence, and earlier working versions remain in Git.
 
-Ejecuta descubrimiento, admisión y sus cuatro resultados exactamente como los
-define `docs/EDITORIAL_WORKFLOW.md`. Este documento solo define el formato y el
-ciclo de vida de la nota temporal. Antes de podar un candidato aceptado o
-descartado, asegúrate de que su procedencia o tombstone duradero ya vive en
-`data/evidence/**`; si no puede cerrarse con seguridad, conserva la anotación y
-su bloqueo concreto.
-
-## Cierre
-
-Actualiza o poda la nota en el mismo cambio que el CSV o la evidencia. Cuando
-no queden candidatos sin resolver, borra el fichero: los aceptados quedan en el
-CSV, los descartados en evidencia y las versiones anteriores en Git.
-
-Valida los datos tocados mientras trabajas y ejecuta
-`npx pnpm verify:data` antes de cerrar la pasada.
+Run changed-data checks while editing and `npx pnpm verify:data` before closing
+the batch.

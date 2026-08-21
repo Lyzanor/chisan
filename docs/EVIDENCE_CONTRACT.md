@@ -6,7 +6,7 @@
 by the app. `data/evidence/**` records what a decision rested on: which sources
 were opened, what each one proves, and when it was seen. It never repeats what
 the CSV already states, never records what Git already knows, and never
-overrides either. Editorial meaning belongs in `docs/EDITORIAL_POLICY.md`.
+overrides either. Editorial meaning belongs in `docs/EDITORIAL.md`.
 
 Two things live here and nowhere else:
 
@@ -15,8 +15,8 @@ Two things live here and nowhere else:
   get pruned; without a tombstone the next pass rediscovers and re-verifies the
   same name.
 - **The source behind a row.** The CSV publishes the producer's own links; the
-  registry, directory or padrón that actually acredited the row is only here,
-  with the date it was checked.
+  source material that supported the editorial decision is only here, with the
+  date it was checked.
 
 ## Storage
 
@@ -36,8 +36,10 @@ into evidence.
 A later review updates that record in place — refreshing `checkedAt` and the
 sources that still apply — instead of appending a second record for the slug.
 
-Evidence is advisory as coverage: an area or row may have no record, and that is
-not debt to backfill. Structure is not advisory: a malformed record fails
+Historical evidence coverage is advisory: an untouched area or row may have no
+record, and absence alone is not debt to backfill. A newly closed admission,
+rejection, purge or merge normally leaves the record defined by
+`docs/EDITORIAL.md`. Structure is never advisory: a malformed record fails
 `check:evidence`.
 
 ## Record
@@ -61,7 +63,7 @@ Each source:
 | `claims` | Non-empty, duplicate-free array of allowed claims |
 | `note` | Optional fact about this source |
 
-Unknown fields are errors. Three of them are deliberate exclusions:
+Unknown fields are errors. Four of them are deliberate exclusions:
 
 | Not in the record | Because it already lives in |
 |---|---|
@@ -105,7 +107,7 @@ rename.
 | `other-area` | The productive unit belongs in a different area CSV |
 | `closed` | Permanently closed or ceased |
 | `nonexistent` | The named entity does not resolve to a real unit |
-| `out-of-scope` | Real producer, outside the catalog (non-food output, already listed as another row) |
+| `out-of-scope` | Real producer whose output or public identity falls outside the catalog scope |
 
 State the reason a reader could not infer from the sources in `notes`.
 
@@ -136,9 +138,8 @@ Allowed values are `official-site`, `official-store`, `official-social`,
 `google-maps`, `public-registry`, `regulatory-council`,
 `institutional-directory`, `marketplace`, `press`, and `other`.
 
-A type does not make every claim reliable: editors must still confirm what the
-source actually demonstrates. `docs/EDITORIAL_POLICY.md` decides which types can
-carry `verificado`.
+A type does not make every claim reliable or determine `verificacion`: editors
+must still confirm what the source demonstrates and apply `docs/EDITORIAL.md`.
 
 A `google-maps` source is a specific listing that the editor opened and matched
 to the row. A generated text-search URL is a query, not evidence of the result it
@@ -165,7 +166,3 @@ and dates, claims, action invariants, slug uniqueness, CSV presence or absence
 per action, and merge targets. **Malformed records fail the run**; coverage is
 reported and never fails. A green run proves structural consistency, not factual
 truth or complete provenance.
-
-`npx pnpm check:defects --check venta-caducada` lists rows selling online whose
-newest source was checked over a year ago — the one queue that only the evidence
-dates can produce.
