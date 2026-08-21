@@ -11,13 +11,15 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - This app is a map viewer for area CSV files: `/` asks for a country; `/[country]` asks for one of its areas; `/[country]/[area]` lists producers; `/[country]/[area]/[slug]` renders one producer row.
 - Runtime flow stays simple: `data/csv/** -> map/list -> row detail`.
 - Core runtime files: `app/page.tsx`, `app/[country]/page.tsx`, `app/[country]/[area]/page.tsx`, `app/[country]/[area]/[segment]/page.tsx`, `lib/csv-catalog.ts`, `lib/catalog-navigation.ts`, `components/map/`.
-- Out of scope: database/ORM/migrations/seeds, producer-search API layers, complex service abstractions, hidden producer sources outside `data/csv/**`, and one-off area generators as source of truth.
+- The account subsystem is a bounded second domain: Clerk owns credentials/sessions; PostgreSQL owns profiles, preferences, claims, memberships, reviewed change requests, audit and entitlements. It never becomes a producer catalog or runtime overlay.
+- Out of scope: producer-search API layers, complex service abstractions, hidden producer sources outside `data/csv/**`, direct CSV writes from deployed requests, and one-off area generators as source of truth.
 
 ## Sources Of Truth
 - `data/csv/[country]/[region]/[area].csv`: current producer state, read by the app at request time. The tree is the registry: a folder is a country, a folder inside it a region, a CSV an area. Adding any of them is a data change, never a code change.
 - `data/csv/[country]/country.json`: display labels, level names, ordering and slug aliases for that country. Optional — without it, folder names are title-cased and the order is alphabetical.
 - `data/csv/[country]/AGENTS.md`: minimal country guide for operating phase, country-wide source ceilings and local interpretation rules. It guides work but never overrides the CSV or the global contracts.
 - `data/evidence/[country]/[region]/[area].jsonl`: the sources behind a decision and the date they were seen; never repeats the CSV decision, never overrides it and is not read by the app. Tombstones (`reject`/`purge`/`merge`) are its durable half.
+- PostgreSQL: account identities, favorites, producer claims/memberships, change-request workflow, audit and future entitlements only. Producer references always use `(country, producer_id)`; database values never override a CSV row.
 - Candidate notes and Git history: narrative context and work planning, not producer truth.
 
 ## Country-specific material
@@ -40,6 +42,8 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Every area CSV basename is unique inside its country. The public area key is `(country, area)`, so two countries may use the same area slug; two regions of one country may not.
 - Keep URL params stable: `category` and `highlight`. Country and area are path segments, and the folder names and public URL move together.
 - Producer identity is `(country, producer_id)`: `producer_id` is immutable, unique within the country and independent of row order. A row represents one productive unit, not necessarily its parent company. Never renumber or reuse an allocated ID.
+- Account profile type is presentation, never authorization. Producer edits require an active membership for the exact `(country, producer_id)`; staff actions require an active grant; every Server Action checks this itself.
+- A deployed request never writes `data/csv/**`. Owners submit allowlisted, hash-based change requests; an authorized local workflow reviews, materializes and validates the CSV, then records the materializing Git commit.
 - A producer `slug` is lowercase ASCII kebab-case and unique within its country. Keep a correct slug stable; fix a materially wrong or redundant one following `docs/CSV_CONTRACT.md` § Producer identity (update CSV, images and docs/evidence in the same change).
 - Detail URLs use `/[country]/[area]/[slug]`. The pre-public catalogue does not retain historic producer slugs or compatibility redirects.
 - `categoria` is the required primary category. `categorias adicionales` is optional, uses exact registry tokens joined with `|`, and only records other material outputs made by the same productive unit. Filters match both fields; never duplicate a producer row by category or infer categories mechanically from `productos estrella`.
@@ -60,6 +64,7 @@ Shared contract for Codex, Claude, Gemini, Antigravity, Copilot-style agents, an
 - Producer roster/de-dup for one area: `npx pnpm list:producers [area]` with `--categoria "X"` or `--pendientes` when useful.
 - Valid categories live in `data/reference/categories.json`. The registry is shared by every country; a new country maps its products onto it instead of extending it.
 - Images: `npx pnpm check:images`; evidence: `npx pnpm check:evidence`.
+- Accounts: `npx pnpm db:check` validates migration history; `npx pnpm test:accounts` checks producer-key and edit invariants. Apply migrations explicitly with `npx pnpm db:migrate`, then run the read-only `npx pnpm db:assert-current`; a Vercel build asserts but never applies DDL.
 - Dead, parked or hijacked `web` domains: `npx pnpm check:links --offline` reads the dated snapshot in `data/reference/web-status.json` without touching the network — check it before opening domains by hand. Refresh with `npx pnpm check:links --area <name>` or `npx pnpm check:links --all`. Refreshes prune URLs no longer present in the catalog. The command classifies and never decides: a 403 is not a dead site and a 200 is not proof the site belongs to the producer.
 - Municipality centroids: `node scripts/build-municipality-centroids.js` regenerates `data/reference/municipalities.json` from Wikidata. It carries one catalog per country; a country missing from it has no geographic gate.
 

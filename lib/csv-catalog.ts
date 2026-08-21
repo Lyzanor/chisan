@@ -22,6 +22,17 @@ export type ProducerCsvRow = {
   fields: Record<string, string>;
 };
 
+export type ProducerIdentity = {
+  country: string;
+  producerId: number;
+};
+
+export type LocatedProducerCsvRow = ProducerCsvRow & {
+  country: string;
+  region: string;
+  area: string;
+};
+
 export type ProducerMapPoint = {
   slug: string;
   name: string;
@@ -476,6 +487,10 @@ function calculateDistance(
 }
 
 const csvCache = new Map<string, ProducerCsvRow[]>();
+const countryProducerIndexCache = new Map<
+  string,
+  Promise<ReadonlyMap<number, LocatedProducerCsvRow>>
+>();
 
 async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
   const normalizedArea = normalizeAreaSlug(country, area);
@@ -537,6 +552,123 @@ async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
 
   csvCache.set(cacheKey, rows);
   return rows;
+}
+
+function isValidProducerId(producerId: number): boolean {
+  return Number.isSafeInteger(producerId) && producerId > 0;
+}
+
+async function buildCountryProducerIndex(
+  country: Country,
+): Promise<ReadonlyMap<number, LocatedProducerCsvRow>> {
+  const areaRows = await Promise.all(
+    country.regions.flatMap((region) =>
+      region.areas.map(async (area) => ({
+        region: region.slug,
+        area: area.slug,
+        rows: await loadCsvRows(country.slug, area.slug),
+      })),
+    ),
+  );
+  const index = new Map<number, LocatedProducerCsvRow>();
+
+  for (const location of areaRows) {
+    for (const row of location.rows) {
+      if (index.has(row.producerId)) {
+        throw new Error(
+          `Duplicate producer_id '${row.producerId}' in country '${country.slug}'. Run check:csv for details.`,
+        );
+      }
+
+      index.set(row.producerId, {
+        ...row,
+        country: country.slug,
+        region: location.region,
+        area: location.area,
+      });
+    }
+  }
+
+  return index;
+}
+
+function loadCountryProducerIndex(
+  country: Country,
+): Promise<ReadonlyMap<number, LocatedProducerCsvRow>> {
+  const cached = countryProducerIndexCache.get(country.slug);
+  if (cached) {
+    return cached;
+  }
+
+  const pending = buildCountryProducerIndex(country);
+  countryProducerIndexCache.set(country.slug, pending);
+  void pending.catch(() => {
+    if (countryProducerIndexCache.get(country.slug) === pending) {
+      countryProducerIndexCache.delete(country.slug);
+    }
+  });
+  return pending;
+}
+
+export async function findProducerById(
+  country: string,
+  producerId: number,
+): Promise<LocatedProducerCsvRow | null> {
+  if (!isValidProducerId(producerId)) {
+    return null;
+  }
+
+  const catalogCountry = findCountry(country);
+  if (!catalogCountry) {
+    return null;
+  }
+
+  const index = await loadCountryProducerIndex(catalogCountry);
+  return index.get(producerId) ?? null;
+}
+
+export async function findProducersByIds(
+  identities: readonly ProducerIdentity[],
+): Promise<(LocatedProducerCsvRow | null)[]> {
+  const results: (LocatedProducerCsvRow | null)[] = Array.from(
+    { length: identities.length },
+    () => null,
+  );
+  const grouped = new Map<
+    string,
+    { position: number; producerId: number }[]
+  >();
+
+  identities.forEach((identity, position) => {
+    if (!isValidProducerId(identity.producerId)) {
+      return;
+    }
+
+    const country = findCountry(identity.country);
+    if (!country) {
+      return;
+    }
+
+    const entries = grouped.get(country.slug) ?? [];
+    entries.push({ position, producerId: identity.producerId });
+    grouped.set(country.slug, entries);
+  });
+
+  await Promise.all(
+    [...grouped.entries()].map(async ([countrySlug, entries]) => {
+      const country = findCountry(countrySlug);
+      if (!country) {
+        return;
+      }
+
+      const index = await loadCountryProducerIndex(country);
+      for (const { position, producerId } of entries) {
+        results[position] = index.get(producerId) ?? null;
+      }
+    }),
+  );
+
+  return results;
 }
 
 export async function findProducerBySlug(

@@ -1,7 +1,15 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Roboto } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
+import { SiteAccountNav } from "@/components/account/site-account-nav";
+import {
+  ACCOUNT_ROUTES,
+  getAppUrl,
+  isAccountAuthConfigured,
+} from "@/lib/accounts/config";
 import { CATALOG_UNIT } from "@/lib/csv-catalog";
 
 const fraunces = Fraunces({
@@ -25,7 +33,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://km0-nu.vercel.app"),
+  metadataBase: new URL(getAppUrl()),
   title: {
     default: "KM0 Producers",
     template: "%s | KM0",
@@ -38,9 +46,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const accountAuthConfigured = isAccountAuthConfigured();
+  const content = (
+    <>
+      <header className="site-header">
+        <Link href="/" className="site-header__brand" aria-label="KM0 home">
+          KM0
+        </Link>
+        <SiteAccountNav authConfigured={accountAuthConfigured} />
+      </header>
+      {children}
+    </>
+  );
+
   return (
     <html lang="en" className={`${fraunces.variable} ${roboto.variable}`}>
-      <body>{children}</body>
+      <body>
+        {accountAuthConfigured ? (
+          <ClerkProvider
+            signInUrl={ACCOUNT_ROUTES.signIn}
+            signUpUrl={ACCOUNT_ROUTES.signUp}
+            signInFallbackRedirectUrl={ACCOUNT_ROUTES.afterAuthentication}
+            signUpFallbackRedirectUrl={ACCOUNT_ROUTES.afterAuthentication}
+          >
+            {content}
+          </ClerkProvider>
+        ) : (
+          content
+        )}
+      </body>
     </html>
   );
 }

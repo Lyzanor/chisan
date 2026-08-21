@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 
 import { DetailDesktopNav } from "@/components/detail-desktop-nav";
+import { ProducerAccountActions } from "@/components/account/producer-account-actions";
 import {
   buildCatalogHref,
   buildProducerHref,
@@ -179,6 +180,11 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
                 </a>
               ) : null}
             </div>
+            <ProducerAccountActions
+              country={country.slug}
+              producerId={producer.producerId}
+              returnTo={buildProducerHref(producer, { country: country.slug, area })}
+            />
           </div>
           <figure className="detail-hero-media">
             <Image

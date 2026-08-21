@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1787228893850,
+      "tag": "0000_account_system",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1787230432069,
+      "tag": "0001_auth_webhook_hardening",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1787232721007,
+      "tag": "0002_clammy_starhawk",
+      "breakpoints": true
+    }
+  ]
+}

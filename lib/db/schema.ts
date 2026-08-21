@@ -1,0 +1,531 @@
+import { sql } from "drizzle-orm";
+import {
+  bigint,
+  check,
+  index,
+  integer,
+  jsonb,
+  pgEnum,
+  pgTable,
+  primaryKey,
+  text,
+  timestamp,
+  uniqueIndex,
+  uuid,
+  varchar,
+} from "drizzle-orm/pg-core";
+
+const timestampWithTimezone = (name: string) =>
+  timestamp(name, { mode: "date", withTimezone: true });
+
+export const userProfileKind = pgEnum("user_profile_kind", ["user", "producer"]);
+export const userStatus = pgEnum("user_status", ["active", "suspended", "deleted"]);
+export const staffRole = pgEnum("staff_role", ["reviewer", "admin"]);
+export const producerClaimStatus = pgEnum("producer_claim_status", [
+  "draft",
+  "pending",
+  "needs_info",
+  "approved",
+  "rejected",
+  "withdrawn",
+  "revoked",
+]);
+export const producerMembershipRole = pgEnum("producer_membership_role", [
+  "owner",
+  "editor",
+]);
+export const producerMembershipStatus = pgEnum("producer_membership_status", [
+  "active",
+  "revoked",
+]);
+export const producerChangeRequestStatus = pgEnum("producer_change_request_status", [
+  "draft",
+  "submitted",
+  "needs_changes",
+  "approved",
+  "applying",
+  "applied",
+  "rejected",
+  "withdrawn",
+  "conflict",
+  "failed",
+]);
+export const auditActorKind = pgEnum("audit_actor_kind", ["user", "service", "system"]);
+export const webhookReceiptStatus = pgEnum("webhook_receipt_status", [
+  "received",
+  "processing",
+  "processed",
+  "failed",
+]);
+export const entitlementSubjectKind = pgEnum("entitlement_subject_kind", [
+  "user",
+  "producer",
+]);
+export const entitlementStatus = pgEnum("entitlement_status", [
+  "active",
+  "revoked",
+  "expired",
+]);
+
+export const users = pgTable(
+  "users",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    status: userStatus("status").notNull().default("active"),
+    displayName: varchar("display_name", { length: 160 }),
+    locale: varchar("locale", { length: 16 }),
+    // UX/onboarding preference only. Authorization comes from memberships and grants.
+    profileKind: userProfileKind("profile_kind").notNull().default("user"),
+    termsAcceptedAt: timestampWithTimezone("terms_accepted_at"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+    deletedAt: timestampWithTimezone("deleted_at"),
+  },
+  (table) => [
+    index("users_status_idx").on(table.status),
+    check(
+      "users_deleted_state_check",
+      sql`(${table.status} = 'deleted' AND ${table.deletedAt} IS NOT NULL) OR (${table.status} <> 'deleted' AND ${table.deletedAt} IS NULL)`,
+    ),
+  ],
+);
+
+export const authIdentities = pgTable(
+  "auth_identities",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    provider: varchar("provider", { length: 64 }).notNull(),
+    subject: varchar("subject", { length: 255 }).notNull(),
+    email: varchar("email", { length: 320 }),
+    emailVerifiedAt: timestampWithTimezone("email_verified_at"),
+    providerUpdatedAt: timestampWithTimezone("provider_updated_at"),
+    providerEventId: varchar("provider_event_id", { length: 255 }),
+    disabledAt: timestampWithTimezone("disabled_at"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+    lastSeenAt: timestampWithTimezone("last_seen_at"),
+  },
+  (table) => [
+    uniqueIndex("auth_identities_provider_subject_uidx").on(table.provider, table.subject),
+    index("auth_identities_user_id_idx").on(table.userId),
+    check("auth_identities_provider_check", sql`length(btrim(${table.provider})) > 0`),
+    check("auth_identities_subject_check", sql`length(btrim(${table.subject})) > 0`),
+  ],
+);
+
+/**
+ * Provider subjects are not reusable. Keeping deletion tombstones separate from
+ * local users prevents an out-of-order create/update webhook from resurrecting
+ * an identity after its PII has been erased.
+ */
+export const authIdentityTombstones = pgTable(
+  "auth_identity_tombstones",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    provider: varchar("provider", { length: 64 }).notNull(),
+    subject: varchar("subject", { length: 255 }).notNull(),
+    providerDeletedAt: timestampWithTimezone("provider_deleted_at").notNull(),
+    providerEventId: varchar("provider_event_id", { length: 255 }).notNull(),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+  },
+  (table) => [
+    uniqueIndex("auth_identity_tombstones_provider_subject_uidx").on(
+      table.provider,
+      table.subject,
+    ),
+    check(
+      "auth_identity_tombstones_provider_check",
+      sql`length(btrim(${table.provider})) > 0`,
+    ),
+    check(
+      "auth_identity_tombstones_subject_check",
+      sql`length(btrim(${table.subject})) > 0`,
+    ),
+    check(
+      "auth_identity_tombstones_event_id_check",
+      sql`length(btrim(${table.providerEventId})) > 0`,
+    ),
+  ],
+);
+
+export const staffGrants = pgTable(
+  "staff_grants",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id),
+    role: staffRole("role").notNull(),
+    grantedByUserId: uuid("granted_by_user_id").references(() => users.id),
+    grantedAt: timestampWithTimezone("granted_at").notNull().defaultNow(),
+    expiresAt: timestampWithTimezone("expires_at"),
+    revokedAt: timestampWithTimezone("revoked_at"),
+    revokedByUserId: uuid("revoked_by_user_id").references(() => users.id),
+    reason: text("reason"),
+  },
+  (table) => [
+    uniqueIndex("staff_grants_active_user_role_uidx")
+      .on(table.userId, table.role)
+      .where(sql`${table.revokedAt} IS NULL`),
+    index("staff_grants_active_user_idx")
+      .on(table.userId)
+      .where(sql`${table.revokedAt} IS NULL`),
+    check(
+      "staff_grants_expiry_check",
+      sql`${table.expiresAt} IS NULL OR ${table.expiresAt} > ${table.grantedAt}`,
+    ),
+    check(
+      "staff_grants_revocation_check",
+      sql`(${table.revokedAt} IS NULL AND ${table.revokedByUserId} IS NULL) OR (${table.revokedAt} IS NOT NULL AND ${table.revokedByUserId} IS NOT NULL)`,
+    ),
+  ],
+);
+
+export const favorites = pgTable(
+  "favorites",
+  {
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+  },
+  (table) => [
+    primaryKey({ columns: [table.userId, table.country, table.producerId] }),
+    index("favorites_producer_idx").on(table.country, table.producerId),
+    check("favorites_country_check", sql`${table.country} ~ '^[a-z]{2}$'`),
+    check(
+      "favorites_producer_id_check",
+      sql`${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+  ],
+);
+
+export const producerClaims = pgTable(
+  "producer_claims",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    claimantUserId: uuid("claimant_user_id")
+      .notNull()
+      .references(() => users.id),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    status: producerClaimStatus("status").notNull().default("draft"),
+    proofMethod: varchar("proof_method", { length: 64 }),
+    proof: jsonb("proof").$type<Record<string, unknown>>().notNull().default(sql`'{}'::jsonb`),
+    claimantMessage: text("claimant_message"),
+    reviewerUserId: uuid("reviewer_user_id").references(() => users.id),
+    decisionReason: text("decision_reason"),
+    lockVersion: integer("lock_version").notNull().default(1),
+    submittedAt: timestampWithTimezone("submitted_at"),
+    reviewedAt: timestampWithTimezone("reviewed_at"),
+    revokedAt: timestampWithTimezone("revoked_at"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("producer_claims_open_claimant_producer_uidx")
+      .on(table.claimantUserId, table.country, table.producerId)
+      .where(sql`${table.status} IN ('draft', 'pending', 'needs_info', 'approved')`),
+    index("producer_claims_review_queue_idx").on(table.status, table.submittedAt),
+    index("producer_claims_producer_idx").on(table.country, table.producerId),
+    check("producer_claims_country_check", sql`${table.country} ~ '^[a-z]{2}$'`),
+    check(
+      "producer_claims_producer_id_check",
+      sql`${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check("producer_claims_proof_check", sql`jsonb_typeof(${table.proof}) = 'object'`),
+    check("producer_claims_lock_version_check", sql`${table.lockVersion} > 0`),
+    check(
+      "producer_claims_submission_check",
+      sql`${table.status} = 'draft' OR ${table.submittedAt} IS NOT NULL`,
+    ),
+    check(
+      "producer_claims_review_check",
+      sql`${table.status} NOT IN ('approved', 'rejected') OR (${table.reviewerUserId} IS NOT NULL AND ${table.reviewedAt} IS NOT NULL)`,
+    ),
+    check(
+      "producer_claims_revocation_check",
+      sql`(${table.status} = 'revoked' AND ${table.revokedAt} IS NOT NULL) OR (${table.status} <> 'revoked' AND ${table.revokedAt} IS NULL)`,
+    ),
+  ],
+);
+
+export const producerMemberships = pgTable(
+  "producer_memberships",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    role: producerMembershipRole("role").notNull(),
+    status: producerMembershipStatus("status").notNull().default("active"),
+    sourceClaimId: uuid("source_claim_id").references(() => producerClaims.id),
+    grantedByUserId: uuid("granted_by_user_id").references(() => users.id),
+    grantedAt: timestampWithTimezone("granted_at").notNull().defaultNow(),
+    revokedAt: timestampWithTimezone("revoked_at"),
+    revokedByUserId: uuid("revoked_by_user_id").references(() => users.id),
+    revocationReason: text("revocation_reason"),
+  },
+  (table) => [
+    uniqueIndex("producer_memberships_active_user_producer_uidx")
+      .on(table.userId, table.country, table.producerId)
+      .where(sql`${table.status} = 'active'`),
+    uniqueIndex("producer_memberships_active_owner_producer_uidx")
+      .on(table.country, table.producerId)
+      .where(sql`${table.status} = 'active' AND ${table.role} = 'owner'`),
+    uniqueIndex("producer_memberships_source_claim_uidx")
+      .on(table.sourceClaimId)
+      .where(sql`${table.sourceClaimId} IS NOT NULL`),
+    index("producer_memberships_active_producer_idx")
+      .on(table.country, table.producerId)
+      .where(sql`${table.status} = 'active'`),
+    index("producer_memberships_active_user_idx")
+      .on(table.userId)
+      .where(sql`${table.status} = 'active'`),
+    check("producer_memberships_country_check", sql`${table.country} ~ '^[a-z]{2}$'`),
+    check(
+      "producer_memberships_producer_id_check",
+      sql`${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check(
+      "producer_memberships_revocation_check",
+      sql`(${table.status} = 'active' AND ${table.revokedAt} IS NULL AND ${table.revokedByUserId} IS NULL) OR (${table.status} = 'revoked' AND ${table.revokedAt} IS NOT NULL AND ${table.revokedByUserId} IS NOT NULL)`,
+    ),
+  ],
+);
+
+export const producerChangeRequests = pgTable(
+  "producer_change_requests",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    authorUserId: uuid("author_user_id")
+      .notNull()
+      .references(() => users.id),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    status: producerChangeRequestStatus("status").notNull().default("draft"),
+    baseRowHash: varchar("base_row_hash", { length: 64 }).notNull(),
+    baseSnapshot: jsonb("base_snapshot")
+      .$type<Record<string, string>>()
+      .notNull(),
+    patch: jsonb("patch").$type<Record<string, string>>().notNull().default(sql`'{}'::jsonb`),
+    authorNote: text("author_note"),
+    lockVersion: integer("lock_version").notNull().default(1),
+    reviewerUserId: uuid("reviewer_user_id").references(() => users.id),
+    decisionNote: text("decision_note"),
+    failureReason: text("failure_reason"),
+    appliedCommitSha: varchar("applied_commit_sha", { length: 64 }),
+    submittedAt: timestampWithTimezone("submitted_at"),
+    reviewedAt: timestampWithTimezone("reviewed_at"),
+    appliedAt: timestampWithTimezone("applied_at"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("producer_change_requests_open_author_producer_uidx")
+      .on(table.authorUserId, table.country, table.producerId)
+      .where(
+        sql`${table.status} IN ('draft', 'submitted', 'needs_changes', 'approved', 'applying')`,
+      ),
+    index("producer_change_requests_review_queue_idx").on(table.status, table.submittedAt),
+    index("producer_change_requests_producer_idx").on(
+      table.country,
+      table.producerId,
+      table.createdAt,
+    ),
+    check("producer_change_requests_country_check", sql`${table.country} ~ '^[a-z]{2}$'`),
+    check(
+      "producer_change_requests_producer_id_check",
+      sql`${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check(
+      "producer_change_requests_base_hash_check",
+      sql`${table.baseRowHash} ~ '^[0-9a-f]{64}$'`,
+    ),
+    check(
+      "producer_change_requests_snapshot_check",
+      sql`jsonb_typeof(${table.baseSnapshot}) = 'object'`,
+    ),
+    check("producer_change_requests_patch_check", sql`jsonb_typeof(${table.patch}) = 'object'`),
+    check("producer_change_requests_lock_version_check", sql`${table.lockVersion} > 0`),
+    check(
+      "producer_change_requests_submission_check",
+      sql`${table.status} = 'draft' OR (${table.submittedAt} IS NOT NULL AND ${table.patch} <> '{}'::jsonb)`,
+    ),
+    check(
+      "producer_change_requests_review_check",
+      sql`${table.status} NOT IN ('needs_changes', 'approved', 'rejected', 'applying', 'applied') OR (${table.reviewerUserId} IS NOT NULL AND ${table.reviewedAt} IS NOT NULL)`,
+    ),
+    check(
+      "producer_change_requests_applied_check",
+      sql`(${table.status} = 'applied' AND ${table.appliedAt} IS NOT NULL AND ${table.appliedCommitSha} IS NOT NULL) OR (${table.status} <> 'applied' AND ${table.appliedAt} IS NULL)`,
+    ),
+    check(
+      "producer_change_requests_commit_sha_check",
+      sql`${table.appliedCommitSha} IS NULL OR ${table.appliedCommitSha} ~ '^([0-9a-f]{40}|[0-9a-f]{64})$'`,
+    ),
+  ],
+);
+
+export const auditEvents = pgTable(
+  "audit_events",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    actorKind: auditActorKind("actor_kind").notNull(),
+    actorUserId: uuid("actor_user_id").references(() => users.id),
+    actorKey: varchar("actor_key", { length: 160 }),
+    action: varchar("action", { length: 160 }).notNull(),
+    targetType: varchar("target_type", { length: 80 }).notNull(),
+    targetId: varchar("target_id", { length: 255 }).notNull(),
+    requestId: varchar("request_id", { length: 160 }),
+    metadata: jsonb("metadata")
+      .$type<Record<string, unknown>>()
+      .notNull()
+      .default(sql`'{}'::jsonb`),
+    occurredAt: timestampWithTimezone("occurred_at").notNull().defaultNow(),
+  },
+  (table) => [
+    index("audit_events_target_idx").on(table.targetType, table.targetId, table.occurredAt),
+    index("audit_events_actor_user_idx").on(table.actorUserId, table.occurredAt),
+    index("audit_events_actor_action_occurred_idx").on(
+      table.actorUserId,
+      table.action,
+      table.occurredAt,
+    ),
+    index("audit_events_request_id_idx").on(table.requestId),
+    check("audit_events_action_check", sql`length(btrim(${table.action})) > 0`),
+    check("audit_events_target_type_check", sql`length(btrim(${table.targetType})) > 0`),
+    check("audit_events_target_id_check", sql`length(btrim(${table.targetId})) > 0`),
+    check("audit_events_metadata_check", sql`jsonb_typeof(${table.metadata}) = 'object'`),
+    check(
+      "audit_events_actor_check",
+      sql`(${table.actorKind} = 'user' AND ${table.actorUserId} IS NOT NULL AND ${table.actorKey} IS NULL) OR (${table.actorKind} IN ('service', 'system') AND ${table.actorUserId} IS NULL AND ${table.actorKey} IS NOT NULL)`,
+    ),
+  ],
+);
+
+export const webhookReceipts = pgTable(
+  "webhook_receipts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    provider: varchar("provider", { length: 64 }).notNull(),
+    eventId: varchar("event_id", { length: 255 }).notNull(),
+    eventType: varchar("event_type", { length: 160 }).notNull(),
+    subject: varchar("subject", { length: 255 }),
+    eventOccurredAt: timestampWithTimezone("event_occurred_at"),
+    payloadHash: varchar("payload_hash", { length: 64 }).notNull(),
+    status: webhookReceiptStatus("status").notNull().default("received"),
+    attempts: integer("attempts").notNull().default(0),
+    errorMessage: text("error_message"),
+    receivedAt: timestampWithTimezone("received_at").notNull().defaultNow(),
+    processingStartedAt: timestampWithTimezone("processing_started_at"),
+    processingToken: uuid("processing_token"),
+    processedAt: timestampWithTimezone("processed_at"),
+  },
+  (table) => [
+    uniqueIndex("webhook_receipts_provider_event_uidx").on(table.provider, table.eventId),
+    index("webhook_receipts_processing_idx").on(table.status, table.processingStartedAt),
+    index("webhook_receipts_subject_order_idx")
+      .on(table.provider, table.subject, table.eventOccurredAt)
+      .where(sql`${table.subject} IS NOT NULL`),
+    check("webhook_receipts_provider_check", sql`length(btrim(${table.provider})) > 0`),
+    check("webhook_receipts_event_id_check", sql`length(btrim(${table.eventId})) > 0`),
+    check("webhook_receipts_payload_hash_check", sql`${table.payloadHash} ~ '^[0-9a-f]{64}$'`),
+    check("webhook_receipts_attempts_check", sql`${table.attempts} >= 0`),
+    check(
+      "webhook_receipts_processed_check",
+      sql`(${table.status}::text = 'processing' AND ${table.processingStartedAt} IS NOT NULL AND ${table.processingToken} IS NOT NULL AND ${table.processedAt} IS NULL) OR (${table.status}::text = 'processed' AND ${table.processingStartedAt} IS NULL AND ${table.processingToken} IS NULL AND ${table.processedAt} IS NOT NULL) OR (${table.status}::text IN ('received', 'failed') AND ${table.processingStartedAt} IS NULL AND ${table.processingToken} IS NULL AND ${table.processedAt} IS NULL)`,
+    ),
+  ],
+);
+
+export const entitlements = pgTable(
+  "entitlements",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    subjectKind: entitlementSubjectKind("subject_kind").notNull(),
+    userId: uuid("user_id").references(() => users.id),
+    producerCountry: varchar("producer_country", { length: 2 }),
+    producerId: bigint("producer_id", { mode: "number" }),
+    key: varchar("key", { length: 120 }).notNull(),
+    status: entitlementStatus("status").notNull().default("active"),
+    source: varchar("source", { length: 80 }).notNull(),
+    sourceReference: varchar("source_reference", { length: 255 }),
+    metadata: jsonb("metadata")
+      .$type<Record<string, unknown>>()
+      .notNull()
+      .default(sql`'{}'::jsonb`),
+    startsAt: timestampWithTimezone("starts_at").notNull().defaultNow(),
+    expiresAt: timestampWithTimezone("expires_at"),
+    revokedAt: timestampWithTimezone("revoked_at"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("entitlements_active_user_key_uidx")
+      .on(table.userId, table.key)
+      .where(sql`${table.subjectKind} = 'user' AND ${table.status} = 'active'`),
+    uniqueIndex("entitlements_active_producer_key_uidx")
+      .on(table.producerCountry, table.producerId, table.key)
+      .where(sql`${table.subjectKind} = 'producer' AND ${table.status} = 'active'`),
+    index("entitlements_user_idx").on(table.userId, table.status),
+    index("entitlements_producer_idx").on(
+      table.producerCountry,
+      table.producerId,
+      table.status,
+    ),
+    check("entitlements_key_check", sql`length(btrim(${table.key})) > 0`),
+    check("entitlements_source_check", sql`length(btrim(${table.source})) > 0`),
+    check("entitlements_metadata_check", sql`jsonb_typeof(${table.metadata}) = 'object'`),
+    check(
+      "entitlements_subject_check",
+      sql`(${table.subjectKind} = 'user' AND ${table.userId} IS NOT NULL AND ${table.producerCountry} IS NULL AND ${table.producerId} IS NULL) OR (${table.subjectKind} = 'producer' AND ${table.userId} IS NULL AND ${table.producerCountry} IS NOT NULL AND ${table.producerId} IS NOT NULL)`,
+    ),
+    check(
+      "entitlements_producer_country_check",
+      sql`${table.producerCountry} IS NULL OR ${table.producerCountry} ~ '^[a-z]{2}$'`,
+    ),
+    check(
+      "entitlements_producer_id_check",
+      sql`${table.producerId} IS NULL OR ${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check(
+      "entitlements_expiry_check",
+      sql`${table.expiresAt} IS NULL OR ${table.expiresAt} > ${table.startsAt}`,
+    ),
+    check(
+      "entitlements_revocation_check",
+      sql`(${table.status} = 'revoked' AND ${table.revokedAt} IS NOT NULL) OR (${table.status} <> 'revoked' AND ${table.revokedAt} IS NULL)`,
+    ),
+  ],
+);
+
+export type User = typeof users.$inferSelect;
+export type NewUser = typeof users.$inferInsert;
+export type Favorite = typeof favorites.$inferSelect;
+export type ProducerClaim = typeof producerClaims.$inferSelect;
+export type ProducerMembership = typeof producerMemberships.$inferSelect;
+export type ProducerChangeRequest = typeof producerChangeRequests.$inferSelect;
+export type Entitlement = typeof entitlements.$inferSelect;

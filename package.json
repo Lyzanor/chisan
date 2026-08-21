@@ -2,6 +2,10 @@
   "name": "km0-mapa",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,26 +26,41 @@
     "test:evidence-contract": "node scripts/test-evidence-contract.mjs",
     "test:audit-defects": "node scripts/test-audit-defects.mjs",
     "test:check-links": "node scripts/test-check-links.mjs",
+    "test:accounts": "tsx --test scripts/test-account-domain.ts scripts/test-account-migration.ts scripts/test-materialize-producer-change.ts",
     "test:intelligence": "pnpm test:evidence-contract && pnpm test:audit-defects && pnpm test:check-links",
     "test:behavior": "bash scripts/test-behavior.sh",
+    "db:generate": "drizzle-kit generate",
+    "db:check": "drizzle-kit check",
+    "db:migrate": "tsx scripts/migrate-account-database.ts",
+    "db:assert-current": "tsx scripts/assert-account-database-current.ts",
+    "producer:change": "tsx scripts/materialize-producer-change.ts",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence",
-    "verify:ai": "pnpm verify && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:behavior"
+    "verify:ai": "pnpm verify && pnpm db:check && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:behavior"
   },
   "dependencies": {
+    "@clerk/nextjs": "7.7.9",
     "csv-parse": "^6.1.0",
+    "csv-stringify": "6.8.3",
+    "drizzle-orm": "0.45.2",
     "leaflet": "^1.9.4",
     "next": "16.1.6",
+    "postgres": "3.4.7",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-leaflet": "^5.0.0"
+    "react-leaflet": "^5.0.0",
+    "server-only": "0.0.1",
+    "zod": "4.4.3"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.5",
     "@types/leaflet": "^1.9.21",
-    "@types/node": "^20",
+    "@types/node": "^24.13.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "tsx": "4.23.12",
     "typescript": "^5"
   }
 }
