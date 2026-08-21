@@ -1,11 +1,11 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { submitProducerChangeAction } from "@/app/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
-import { requireCurrentAccount, requireProducerAccess } from "@/lib/accounts/auth";
+import { hasProducerAccess, requireCurrentAccount } from "@/lib/accounts/auth";
 import {
   ONLINE_SALES_VALUES,
   PRODUCER_CATEGORIES,
@@ -44,7 +44,11 @@ export default async function EditProducerPage({
     notFound();
   }
 
-  await requireProducerAccess(account, country, producerId);
+  if (!(await hasProducerAccess(account.id, country, producerId))) {
+    redirect(
+      "/cuenta/reclamaciones?error=An%20approved%20producer%20membership%20is%20required%20for%20this%20profile.",
+    );
+  }
   const producer = await findProducerById(country, producerId);
   if (!producer) notFound();
 

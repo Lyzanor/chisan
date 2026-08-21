@@ -5,8 +5,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import {
+  hasProducerAccess,
   requireCurrentAccount,
-  requireProducerAccess,
 } from "@/lib/accounts/auth";
 import {
   claimSubmissionSchema,
@@ -399,7 +399,13 @@ export async function submitProducerChangeAction(formData: FormData): Promise<vo
   }
 
   const editPath = producerEditPath(parsed.data.country, parsed.data.producerId);
-  await requireProducerAccess(account, parsed.data.country, parsed.data.producerId);
+  if (!(await hasProducerAccess(account.id, parsed.data.country, parsed.data.producerId))) {
+    redirectWithMessage(
+      "/cuenta/reclamaciones",
+      "error",
+      "An approved producer membership is required for this profile.",
+    );
+  }
   const producer = await findProducerById(parsed.data.country, parsed.data.producerId);
   if (!producer) {
     redirectWithMessage(editPath, "error", "That producer is no longer in the catalog.");

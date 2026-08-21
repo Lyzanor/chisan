@@ -363,18 +363,6 @@ export async function hasProducerAccess(
   return Boolean(membership);
 }
 
-export async function requireProducerAccess(
-  account: AccountUser,
-  country: string,
-  producerId: number,
-): Promise<void> {
-  if (!(await hasProducerAccess(account.id, country, producerId))) {
-    throw new AccountAuthorizationError(
-      "An approved producer membership is required for this profile.",
-    );
-  }
-}
-
 export async function markClerkIdentityDeleted(
   subject: string,
   providerEvent: { eventId: string; occurredAt: Date },
