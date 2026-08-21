@@ -275,7 +275,9 @@ const crossTemplate = (rows) =>
       })),
     },
   ]);
-const flagged = (rows) => [...crossTemplate(rows).keys()].map((k) => k.replace("test/", ""));
+const named = (map) => [...map.keys()].map((k) => k.replace("test/", ""));
+const flagged = (rows) => named(crossTemplate(rows).cross);
+const echoed = (rows) => named(crossTemplate(rows).echo);
 
 test("star products naming another category's products is flagged", () => {
   assert.deepEqual(
@@ -386,6 +388,84 @@ test("empty star products cannot contradict anything", () => {
     flagged([{ nombre: "Casa Sintética", categoria: "Aceite", "productos estrella": "" }]),
     [],
   );
+});
+
+test("star products repeating the row's own category are an echo", () => {
+  // `Vino,vino`: the cell parses as data and says nothing the row did not
+  // already say. The contract forbids it and check:csv cannot see it.
+  assert.deepEqual(
+    echoed([{ nombre: "Bodega Sintética", categoria: "Vino", "productos estrella": "vino" }]),
+    ["fila-0"],
+  );
+});
+
+test("an additional category echoed back is the same defect", () => {
+  assert.deepEqual(
+    echoed([
+      {
+        nombre: "Kura Sintética",
+        categoria: "Sake",
+        "categorias adicionales": "Cerveza",
+        "productos estrella": "Sake, Cerveza",
+      },
+    ]),
+    ["fila-0"],
+  );
+});
+
+test("a retired label folded into a broader category is specificity, not an echo", () => {
+  // `Hidromiel` and `Licores` were retired into `Otros` and `Destilados y
+  // licores`. Resolving the field through the retired map would read the most
+  // informative cell those rows have as a repetition of their own category.
+  assert.equal(registry.retiredCategories["Hidromiel"], "Otros");
+  assert.equal(registry.retiredCategories["Licores"], "Destilados y licores");
+  assert.deepEqual(
+    echoed([
+      { nombre: "Meadería Sintética", categoria: "Otros", "productos estrella": "Hidromiel" },
+      {
+        nombre: "Destilería Sintética",
+        categoria: "Destilados y licores",
+        "productos estrella": "Licores",
+      },
+    ]),
+    [],
+  );
+});
+
+test("the row's own retired spelling is still an echo", () => {
+  // The guard above is one-directional: a row filed under a retired label whose
+  // field names the replacement is repeating itself, not adding a product.
+  assert.deepEqual(
+    echoed([
+      { nombre: "Casa Sintética", categoria: "Carnes", "productos estrella": "Carne" },
+    ]),
+    ["fila-0"],
+  );
+});
+
+test("concrete products are not an echo of their category", () => {
+  assert.deepEqual(
+    echoed([
+      { nombre: "Bodega Sintética", categoria: "Vino", "productos estrella": "Garnacha, cava brut" },
+    ]),
+    [],
+  );
+});
+
+test("an echo and a cross-template are never the same row", () => {
+  // Own category plus a foreign one: which half is wrong needs a source, so
+  // the row belongs to neither queue instead of to both.
+  const mixed = crossTemplate([
+    { nombre: "Casa Sintética", categoria: "Vino", "productos estrella": "Vino, Aceite" },
+  ]);
+  assert.deepEqual(named(mixed.cross), []);
+  assert.deepEqual(named(mixed.echo), []);
+
+  const foreign = crossTemplate([
+    { nombre: "Heladería Sintética", categoria: "Helados", "productos estrella": "Quesos y lácteos" },
+  ]);
+  assert.deepEqual(named(foreign.cross), ["fila-0"]);
+  assert.deepEqual(named(foreign.echo), []);
 });
 
 test("every marker category is a category the contract accepts", () => {

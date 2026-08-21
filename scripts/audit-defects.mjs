@@ -174,9 +174,12 @@ export const CATEGORY_MARKERS = {
   Helados: ["helado", "helados", "gelat", "gelats", "gelateria", "sorbete", "sorbetes"],
 };
 
-// Rows whose `productos estrella` describes a category not assigned to the
-// row: the 2026-06-21 bulk import copied that field, and the description with
-// it, across category boundaries.
+// One pass over `productos estrella`, two outcomes. `cross` holds rows whose
+// field describes a category not assigned to the row: the 2026-06-21 bulk
+// import copied that field, and the description with it, across category
+// boundaries. `echo` holds rows whose field only names the categories the row
+// already carries, which `docs/CSV_CONTRACT.md` forbids outright — the cell
+// reads as data and carries none.
 //
 // Only `productos estrella` triggers. `descripcion` was measured as a trigger
 // too and rejected: it is prose, so it flags legitimate mentions (a brewery
@@ -219,7 +222,8 @@ export function loadCrossTemplate(rows) {
     return found;
   };
 
-  const hits = new Map(); // `area/slug` -> categories named instead
+  const cross = new Map(); // `area/slug` -> categories named instead
+  const echo = new Map(); // `area/slug` -> own categories named back
   for (const { area, rows: provinceRows } of rows) {
     for (const row of provinceRows) {
       const estrella = (row["productos estrella"] ?? "").trim();
@@ -245,18 +249,34 @@ export function loadCrossTemplate(rows) {
       if (parts.length && parts.every((p) => labels.has(p))) {
         const named = [...new Set(parts.map((p) => labels.get(p)))];
         if (!named.some((category) => assigned.has(category))) {
-          hits.set(`${area}/${row.slug}`, named);
+          cross.set(`${area}/${row.slug}`, named);
           continue;
         }
+      }
+
+      // Every item is a label the row already carries, so the field repeats the
+      // taxonomy instead of naming a product. Compared against the row's own
+      // spellings and their canonical form, never against the retired map in
+      // the other direction: half of those labels were folded into a broader
+      // category, so `Hidromiel` under `Otros` or `Licores` under `Destilados y
+      // licores` is the specificity this field exists for, not an echo. A field
+      // mixing an own category with a foreign one stays out of both maps too:
+      // which half is wrong needs a source, not a rule.
+      const ownLabels = new Set(
+        rowCategories(row).flatMap((c) => [norm(c), norm(canonical(c))]),
+      );
+      if (parts.length && parts.every((part) => ownLabels.has(part))) {
+        echo.set(`${area}/${row.slug}`, [...new Set(parts)]);
+        continue;
       }
 
       if (![...assigned].some((category) => markers.has(category))) continue;
       if ([...categoriesNamedBy(estrella)].some((category) => assigned.has(category))) continue;
       for (const category of assigned) foreign.delete(category);
-      if (foreign.size) hits.set(`${area}/${row.slug}`, [...foreign]);
+      if (foreign.size) cross.set(`${area}/${row.slug}`, [...foreign]);
     }
   }
-  return hits;
+  return { cross, echo };
 }
 
 export function findCategoryVariants(usage, retiredCategories = {}) {
@@ -544,6 +564,14 @@ export const CHECKS = [
       rows.filter((r) => ctx.crossTemplate.has(`${area}/${r.slug}`)),
   },
   {
+    id: "categoria-repetida",
+    kind: "cola",
+    stage: "verification",
+    label: "`productos estrella` solo repite las categorías ya asignadas a la fila",
+    hint: "docs/CSV_CONTRACT.md § Editorial field conventions lo prohíbe: escribe los productos que confirme la fuente o vacía la celda",
+    run: ({ rows, area }, ctx) => rows.filter((r) => ctx.categoryEcho.has(`${area}/${r.slug}`)),
+  },
+  {
     id: "canal-sin-clasificar",
     kind: "cola",
     stage: "verification",
@@ -625,9 +653,11 @@ function main() {
     process.exit(1);
   }
 
+  const template = loadCrossTemplate(provinces);
   const ctx = {
     categoryVariants: loadCategoryVariants(),
-    crossTemplate: loadCrossTemplate(provinces),
+    crossTemplate: template.cross,
+    categoryEcho: template.echo,
   };
   if (onlyStage && !WORKFLOW_STAGES.has(onlyStage)) {
     console.error(`Stage desconocido "${onlyStage}". Disponibles: ${[...WORKFLOW_STAGES].join(", ")}`);
