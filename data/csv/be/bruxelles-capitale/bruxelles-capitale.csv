@@ -1,4 +1,9 @@
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+tiztime,Tiz’time,Anderlecht,Té e infusiones,Brussels herbal infusions,,Artisanal Anderlecht producer of herbal infusions blended in Brussels.,,,,,,,,,,,parcial,no comprobado,,,631
+vert-diris,Vert d’Iris,Anderlecht,Fruta y verdura,"Organic vegetables, fruit and edible flowers",,Cooperative market garden cultivating organic produce and edible flowers on neighbourhood plots in Anderlecht.,,,,,,,,,,,parcial,no comprobado,,,632
+les-paniers-daure,Les Paniers d’Auré,Anderlecht,Fruta y verdura,Seasonal vegetables,,Small market garden growing and selling seasonal vegetables from Neerpede in Anderlecht.,,,,,,,,,,,parcial,no comprobado,,,633
+neerpedehoeve,Neerpedehoeve,Anderlecht,Lácteos y quesos,Raw milk and farm ice cream,,"Animal farm in Neerpede producing raw milk and farm ice cream alongside eggs, potatoes and honey.",,,,,,,,,,,parcial,no comprobado,,Huevos|Miel|Fruta y verdura,634
+original-kefir,Original Kéfir,Schaerbeek,Bebidas sin alcohol,Water kefir,,Schaerbeek workshop producing artisanal water kefir with seasonal ingredients.,,,,,,,,,,,parcial,no comprobado,,,635
 ab-inbev,AB InBev,Anderlecht,Cerveza,,"Industrielaan 21, 1070 Anderlecht",,,,,https://www.ab-inbev.com,,,,50.826960,4.312199,,pendiente,no comprobado,,,9
 brasserie-de-l-ermitage,Brasserie de l'Ermitage,Anderlecht,Cerveza,,"Lambert Crikxstraat 24-26, 1070 Anderlecht",,,,,https://ermitagenanobrasserie.be,,,,50.839170,4.329720,,pendiente,no comprobado,,,132
 brasserie-la-jungle,Brasserie La Jungle,Anderlecht,Cerveza,,"Florimond De Pauwstraat 8, 1070 Anderlecht",,,,,https://www.lajungle.be,,,,50.825986,4.296324,,pendiente,no comprobado,,,168
