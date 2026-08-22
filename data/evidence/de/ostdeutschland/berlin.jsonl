@@ -117,3 +117,4 @@
 {"slug":"teto-tofu","action":"keep","sources":[{"url":"https://teto-tofu.de","type":"official-site","checkedAt":"2026-08-15","claims":["identity","producer-activity","municipality","location"]}]}
 {"slug":"treiber-tofu","action":"keep","sources":[{"url":"https://www.tofu.berlin/","type":"official-site","checkedAt":"2026-08-15","claims":["identity","producer-activity","municipality","contact","location"]}]}
 {"slug":"senfsalon-berlin","action":"reject","reason":"other-area","sources":[{"url":"https://senfsalon.de","type":"official-site","checkedAt":"2026-08-15","claims":["identity","municipality"]}]}
+{"slug":"fugro","action":"keep","sources":[{"url":"https://fugro.store/","type":"official-site","checkedAt":"2026-08-22","claims":["identity","producer-activity","municipality","link-ownership"]}]}
