@@ -15,6 +15,7 @@ type ProducersMapProps = {
   area: string;
   highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
+  singlePointZoom?: number;
 };
 
 export function ProducersMap({
@@ -23,6 +24,7 @@ export function ProducersMap({
   area,
   highlightedSlug,
   userLocation,
+  singlePointZoom,
 }: ProducersMapProps) {
   if (!points.length) {
     return (
@@ -40,6 +42,7 @@ export function ProducersMap({
         area={area}
         highlightedSlug={highlightedSlug}
         userLocation={userLocation}
+        singlePointZoom={singlePointZoom}
       />
     </div>
   );

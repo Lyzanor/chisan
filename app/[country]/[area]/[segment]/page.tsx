@@ -5,6 +5,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 
 import { DetailDesktopNav } from "@/components/detail-desktop-nav";
 import { ProducerAccountActions } from "@/components/account/producer-account-actions";
+import { ProducersMap } from "@/components/map/producers-map";
 import {
   buildCatalogHref,
   buildProducerHref,
@@ -16,6 +17,7 @@ import {
   findProducerBySlug,
   listCategories,
   normalizeAreaSlug,
+  toProducerMapPoints,
 } from "@/lib/csv-catalog";
 import { getFieldLabel } from "@/lib/field-labels";
 
@@ -134,6 +136,7 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
   const subcategory = getFieldValue(producer.fields, "subcategoria");
   const phoneHref = buildPhoneHref(phone);
   const publicFields = Object.entries(producer.fields);
+  const mapPoints = toProducerMapPoints([producer]);
 
   return (
     <main className="detail-page">
@@ -198,6 +201,23 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
             />
           </figure>
         </header>
+
+        <section
+          id="detail-location"
+          className="detail-map-card"
+          aria-labelledby="detail-location-title"
+        >
+          <h2 id="detail-location-title">Location</h2>
+          <div className="detail-producer-map" aria-label={`Map showing ${producer.name}`}>
+            <ProducersMap
+              points={mapPoints}
+              country={country.slug}
+              area={area}
+              highlightedSlug={producer.slug}
+              singlePointZoom={16}
+            />
+          </div>
+        </section>
 
         <section id="detail-info" className="detail-table-card">
           <h2>Details</h2>

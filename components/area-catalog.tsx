@@ -20,12 +20,28 @@ type AreaCatalogProps = {
   searchParams: Record<string, string | string[] | undefined>;
 };
 
+const DESCRIPTION_PREVIEW_MAX_LENGTH = 120;
+
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
     ([field]) => field.toLocaleLowerCase() === key.toLocaleLowerCase(),
   );
 
   return (match?.[1] ?? "").trim();
+}
+
+function getDescriptionPreview(fields: Record<string, string>): string {
+  const description = getFieldValue(fields, "descripcion");
+  const characters = Array.from(description);
+
+  if (characters.length <= DESCRIPTION_PREVIEW_MAX_LENGTH) {
+    return description;
+  }
+
+  return `${characters
+    .slice(0, DESCRIPTION_PREVIEW_MAX_LENGTH - 1)
+    .join("")
+    .trimEnd()}…`;
 }
 
 export async function AreaCatalog({ country, area, searchParams }: AreaCatalogProps) {
@@ -43,6 +59,9 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
     ? items.find((item) => item.slug === highlightedSlug) ??
       items.find((item) => String(item.producerId) === highlightedSlug)
     : undefined;
+  const highlightedDescription = highlightedItem
+    ? getDescriptionPreview(highlightedItem.fields)
+    : "";
   const mapPoints = toProducerMapPoints(items);
   const visibleItems = items.slice(0, 500);
   const areaLabel = getAreaLabel(countrySlug, area);
@@ -106,7 +125,8 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
               <p className="catalog-kicker">Selected</p>
               <h2>{highlightedItem.name}</h2>
               <p>
-                {highlightedItem.city} · {highlightedItem.categories.join(" · ")}
+                {highlightedItem.city}
+                {highlightedDescription ? ` · ${highlightedDescription}` : ""}
               </p>
               <div className="catalog-featured-actions">
                 <Link href={buildCatalogHref({ country: countrySlug, area, category })}>
@@ -132,9 +152,7 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
           {visibleItems.length > 0 ? (
             <ul className="producer-compact-list">
               {visibleItems.map((item) => {
-                const subcategory = getFieldValue(item.fields, "subcategoria");
-                const address = getFieldValue(item.fields, "direccion");
-                const categorySummary = item.categories.join(" · ");
+                const description = getDescriptionPreview(item.fields);
 
                 return (
                   <li
@@ -157,8 +175,8 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
                       <span>
                         <strong>{item.name}</strong>
                         <small>
-                          {item.city} · {subcategory || categorySummary}
-                          {address ? ` · ${address}` : ""}
+                          {item.city}
+                          {description ? ` · ${description}` : ""}
                         </small>
                       </span>
                     </Link>

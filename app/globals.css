@@ -362,6 +362,7 @@ a {
 
 .catalog-featured-producer h2,
 .catalog-viewer-head h2,
+.detail-map-card h2,
 .detail-table-card h2 {
   margin: 0;
   font-size: 1.05rem;
@@ -613,6 +614,24 @@ a {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.8rem;
+}
+
+.detail-map-card {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0;
+}
+
+.detail-producer-map {
+  margin-top: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.detail-producer-map .producers-map-canvas,
+.detail-producer-map .map-placeholder {
+  height: 280px;
+  min-height: 280px;
 }
 
 .detail-table-card {

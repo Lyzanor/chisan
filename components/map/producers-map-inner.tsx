@@ -68,12 +68,14 @@ function BoundsAwareMarkers({
   area,
   highlightedSlug,
   userLocation,
+  singlePointZoom = 13,
 }: {
   points: ProducerMapPoint[];
   country: string;
   area: string;
   highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
+  singlePointZoom?: number;
 }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
@@ -88,7 +90,9 @@ function BoundsAwareMarkers({
     if (points.length === 0) return;
 
     if (points.length === 1) {
-      map.setView([points[0].latitude, points[0].longitude], 13, { animate: false });
+      map.setView([points[0].latitude, points[0].longitude], singlePointZoom, {
+        animate: false,
+      });
     } else if (points.length <= VIEWPORT_THRESHOLD) {
       const bounds = getPointsBounds(points);
       if (!bounds) return;
@@ -102,7 +106,7 @@ function BoundsAwareMarkers({
       map.setView([center.lat, center.lng], 10, { animate: false });
     }
 
-  }, [map, points, userLocation]);
+  }, [map, points, singlePointZoom, userLocation]);
 
   // moveend fires after every pan and after every zoom (Leaflet always fires
   // moveend at the end of a zoom sequence), so zoomend is redundant here.
@@ -156,19 +160,22 @@ export default function ProducersMapInner({
   area,
   highlightedSlug,
   userLocation,
+  singlePointZoom = 13,
 }: {
   points: ProducerMapPoint[];
   country: string;
   area: string;
   highlightedSlug?: string;
   userLocation?: { lat: number; lon: number };
+  singlePointZoom?: number;
 }) {
   const initialCenter = getInitialCenter(points, userLocation);
+  const initialZoom = points.length === 1 && !userLocation ? singlePointZoom : 10;
 
   return (
     <MapContainer
       center={initialCenter}
-      zoom={10}
+      zoom={initialZoom}
       minZoom={5}
       className="producers-map-canvas"
       scrollWheelZoom
@@ -183,6 +190,7 @@ export default function ProducersMapInner({
         area={area}
         highlightedSlug={highlightedSlug}
         userLocation={userLocation}
+        singlePointZoom={singlePointZoom}
       />
     </MapContainer>
   );
