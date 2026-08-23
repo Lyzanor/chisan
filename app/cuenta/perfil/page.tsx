@@ -40,6 +40,15 @@ export default async function AccountProfilePage({
             </p>
           </div>
         </header>
+        <div className="account-callout">
+          <strong>
+            Profile type: {account.profileKind === "producer" ? "Producer" : "User"}
+          </strong>
+          <p>
+            Every account starts as User. Submitting a producer ownership claim changes this
+            automatically to Producer; profile type is not a selectable setting.
+          </p>
+        </div>
         <form action={updateAccountProfileAction} className="account-form">
           <label className="account-field">
             <span>Display name</span>
@@ -51,29 +60,6 @@ export default async function AccountProfilePage({
               autoComplete="name"
             />
           </label>
-          <fieldset className="account-choice-grid">
-            <legend>Profile type</legend>
-            <label className="account-choice-card">
-              <input
-                type="radio"
-                name="profileKind"
-                value="user"
-                defaultChecked={account.profileKind === "user"}
-              />
-              <strong>User</strong>
-              <span>Save producers now and create custom maps in the future.</span>
-            </label>
-            <label className="account-choice-card">
-              <input
-                type="radio"
-                name="profileKind"
-                value="producer"
-                defaultChecked={account.profileKind === "producer"}
-              />
-              <strong>Producer</strong>
-              <span>Claim productive units and propose reviewed catalog updates.</span>
-            </label>
-          </fieldset>
           <button type="submit" className="account-button">
             Save profile
           </button>

@@ -1,3 +1,4 @@
+import { and, eq } from "drizzle-orm";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -7,6 +8,8 @@ import { AccountMessage, type AccountMessageParams } from "@/components/account/
 import { requireCurrentAccount } from "@/lib/accounts/auth";
 import { buildProducerHref } from "@/lib/catalog-navigation";
 import { findProducerById } from "@/lib/csv-catalog";
+import { getDatabase } from "@/lib/db";
+import { producerMemberships } from "@/lib/db/schema";
 
 export const metadata: Metadata = {
   title: "Claim a producer",
@@ -35,10 +38,26 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
 
   const country = first(params.country).trim().toLowerCase();
   const producerId = Number(first(params.producerId));
-  const producer =
-    /^[a-z]{2}$/.test(country) && Number.isSafeInteger(producerId) && producerId > 0
-      ? await findProducerById(country, producerId)
-      : null;
+  const validProducerKey =
+    /^[a-z]{2}$/.test(country) && Number.isSafeInteger(producerId) && producerId > 0;
+  const [producer, ownerRows] = await Promise.all([
+    validProducerKey ? findProducerById(country, producerId) : Promise.resolve(null),
+    validProducerKey
+      ? getDatabase()
+          .select({ userId: producerMemberships.userId })
+          .from(producerMemberships)
+          .where(
+            and(
+              eq(producerMemberships.country, country),
+              eq(producerMemberships.producerId, producerId),
+              eq(producerMemberships.role, "owner"),
+              eq(producerMemberships.status, "active"),
+            ),
+          )
+          .limit(1)
+      : Promise.resolve([]),
+  ]);
+  const activeOwner = ownerRows[0];
 
   if (!producer) {
     return (
@@ -49,6 +68,44 @@ export default async function NewClaimPage({ searchParams }: NewClaimPageProps) 
         <Link href="/" className="account-button">
           Explore producers
         </Link>
+      </div>
+    );
+  }
+
+  if (activeOwner) {
+    const currentAccountOwnsProducer = activeOwner.userId === account.id;
+    return (
+      <div className="account-content account-content--narrow">
+        <AccountMessage params={params} />
+        <section>
+          <p className="catalog-kicker">Ownership verified</p>
+          <h2>
+            {currentAccountOwnsProducer
+              ? `You already manage ${producer.name}`
+              : `${producer.name} already has a verified owner`}
+          </h2>
+          <p>
+            {currentAccountOwnsProducer
+              ? "Use your producer dashboard to manage this profile."
+              : "A producer with an active confirmed owner cannot be claimed again."}
+          </p>
+          <div className="account-inline-actions">
+            <Link
+              href={buildProducerHref(producer, {
+                country: producer.country,
+                area: producer.area,
+              })}
+              className="account-button account-button--secondary"
+            >
+              Public profile
+            </Link>
+            {currentAccountOwnsProducer ? (
+              <Link href="/cuenta/reclamaciones" className="account-button">
+                Managed producers
+              </Link>
+            ) : null}
+          </div>
+        </section>
       </div>
     );
   }

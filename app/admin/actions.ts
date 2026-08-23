@@ -1,6 +1,6 @@
 "use server";
 
-import { and, eq, inArray, sql } from "drizzle-orm";
+import { and, eq, inArray, ne, sql } from "drizzle-orm";
 import { redirect } from "next/navigation";
 
 import { requireStaffAccount } from "@/lib/accounts/auth";
@@ -15,6 +15,7 @@ import { findProducerById } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import {
   auditEvents,
+  producerChangeExecutions,
   producerChangeRequests,
   producerClaims,
   producerMemberships,
@@ -151,7 +152,50 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
           grantedByUserId: reviewer.id,
         })
         .onConflictDoNothing();
+
+      await transaction
+        .update(users)
+        .set({ profileKind: "producer", updatedAt: now })
+        .where(eq(users.id, claim.claimantUserId));
+
+      const competingClaims = await transaction
+        .update(producerClaims)
+        .set({
+          status: "rejected",
+          reviewerUserId: reviewer.id,
+          decisionReason: "Ownership was verified for another account.",
+          reviewedAt: now,
+          lockVersion: sql`${producerClaims.lockVersion} + 1`,
+          updatedAt: now,
+        })
+        .where(
+          and(
+            eq(producerClaims.country, claim.country),
+            eq(producerClaims.producerId, claim.producerId),
+            ne(producerClaims.id, claim.id),
+            inArray(producerClaims.status, ["pending", "needs_info"]),
+          ),
+        )
+        .returning({ id: producerClaims.id });
+
+      if (competingClaims.length > 0) {
+        await transaction.insert(auditEvents).values(
+          competingClaims.map(({ id }) => ({
+            actorKind: "user" as const,
+            actorUserId: reviewer.id,
+            action: "producer_claim.rejected",
+            targetType: "producer_claim",
+            targetId: id,
+            metadata: {
+              country: claim.country,
+              producerId: claim.producerId,
+              supersededByClaimId: claim.id,
+            },
+          })),
+        );
+      }
     } else if (parsed.data.decision === "revoked") {
+      const accessRevocationReason = "Producer access was revoked before publication.";
       await transaction
         .update(producerMemberships)
         .set({
@@ -166,11 +210,11 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
             eq(producerMemberships.status, "active"),
           ),
         );
-      await transaction
+      const conflictedChanges = await transaction
         .update(producerChangeRequests)
         .set({
           status: "conflict",
-          failureReason: "Producer access was revoked before publication.",
+          failureReason: accessRevocationReason,
           lockVersion: sql`${producerChangeRequests.lockVersion} + 1`,
           updatedAt: now,
         })
@@ -180,13 +224,70 @@ export async function reviewProducerClaimAction(formData: FormData): Promise<voi
             eq(producerChangeRequests.country, claim.country),
             eq(producerChangeRequests.producerId, claim.producerId),
             inArray(producerChangeRequests.status, [
+              "draft",
               "submitted",
               "needs_changes",
               "approved",
               "applying",
             ]),
           ),
-        );
+        )
+        .returning({
+          id: producerChangeRequests.id,
+          country: producerChangeRequests.country,
+          producerId: producerChangeRequests.producerId,
+        });
+      if (conflictedChanges.length) {
+        const cancelledExecutions = await transaction
+          .update(producerChangeExecutions)
+          .set({
+            status: "cancelled",
+            finishedAt: now,
+            errorMessage: accessRevocationReason,
+            updatedAt: now,
+          })
+          .where(
+            and(
+              inArray(
+                producerChangeExecutions.changeRequestId,
+                conflictedChanges.map((change) => change.id),
+              ),
+              inArray(producerChangeExecutions.status, ["leased", "materialized"]),
+            ),
+          )
+          .returning({
+            id: producerChangeExecutions.id,
+            changeRequestId: producerChangeExecutions.changeRequestId,
+          });
+
+        await transaction.insert(auditEvents).values([
+          ...conflictedChanges.map((change) => ({
+            actorKind: "user" as const,
+            actorUserId: reviewer.id,
+            action: "producer_change.membership_conflict",
+            targetType: "producer_change_request",
+            targetId: change.id,
+            metadata: {
+              country: change.country,
+              producerId: change.producerId,
+              reason: accessRevocationReason,
+            },
+          })),
+          ...cancelledExecutions.map((execution) => ({
+            actorKind: "user" as const,
+            actorUserId: reviewer.id,
+            action: "producer_change.execution_cancelled",
+            targetType: "producer_change_request",
+            targetId: execution.changeRequestId,
+            metadata: {
+              executionId: execution.id,
+              country: claim.country,
+              producerId: claim.producerId,
+              reason: accessRevocationReason,
+            },
+          })),
+        ]);
+      }
     }
 
     await transaction.insert(auditEvents).values({

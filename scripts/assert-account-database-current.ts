@@ -71,6 +71,43 @@ async function main(): Promise<void> {
           throw new Error(`Account database migration ${index + 1} does not match the repository.`);
         }
       }
+
+      const [runtimeAccess] = await transaction<{ hasExecutionAccess: boolean }[]>`
+        select
+          (
+            select bool_and(
+              has_column_privilege(
+                session_user,
+                'public.producer_change_executions',
+                column_name,
+                'select'
+              )
+            )
+            from unnest(array[
+              'id', 'change_request_id', 'status', 'operator_key', 'worktree_key',
+              'source_head_sha', 'expected_row_hash', 'lease_expires_at', 'csv_path',
+              'materialized_at', 'applied_commit_sha', 'finished_at', 'error_message',
+              'created_at', 'updated_at'
+            ]) as required_columns(column_name)
+          )
+          and has_column_privilege(
+            session_user, 'public.producer_change_executions', 'status', 'update'
+          )
+          and has_column_privilege(
+            session_user, 'public.producer_change_executions', 'finished_at', 'update'
+          )
+          and has_column_privilege(
+            session_user, 'public.producer_change_executions', 'error_message', 'update'
+          )
+          and has_column_privilege(
+            session_user, 'public.producer_change_executions', 'updated_at', 'update'
+          ) as "hasExecutionAccess"
+      `;
+      if (!runtimeAccess?.hasExecutionAccess) {
+        throw new Error(
+          "The application runtime role cannot read producer-change executions and cancel their fences during access revocation.",
+        );
+      }
     });
     process.stdout.write("Account database migration registry matches the repository.\n");
   } finally {

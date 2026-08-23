@@ -22,7 +22,11 @@ import {
   requestedProducerFields,
   resolveProducerChangeStatusSelection,
 } from "../lib/accounts/producer-change-workflow";
-import { normalizeAdminProducerChangeListOptions } from "../lib/admin/producer-change-requests";
+import {
+  normalizeAdminProducerChangeListOptions,
+  serializeProducerChangeDetail,
+  type AdminProducerChangeDetail,
+} from "../lib/admin/producer-change-requests";
 import { findProducerById, findProducersByIds } from "../lib/csv-catalog";
 
 test("account auth configuration rejects empty and placeholder Clerk keys", () => {
@@ -228,6 +232,98 @@ test("producer-change filters normalize views, exact statuses and pagination", (
   assert.equal(normalized.query, "Chisan Barcelona");
   assert.equal(normalized.page, 1);
   assert.equal(normalized.pageSize, 100);
+});
+
+test("producer-change detail exposes a stable durable execution record", () => {
+  const createdAt = new Date("2026-08-23T10:00:00.000Z");
+  const updatedAt = new Date("2026-08-23T10:05:00.000Z");
+  const leaseExpiresAt = new Date("2026-08-23T10:15:00.000Z");
+  const materializedAt = new Date("2026-08-23T10:04:00.000Z");
+  const changeId = "00000000-0000-4000-8000-000000000101";
+  const executionId = "00000000-0000-4000-8000-000000000102";
+  const sourceHeadSha = "1".repeat(40);
+  const expectedRowHash = "2".repeat(64);
+  const baseRowHash = "3".repeat(64);
+  const worktreeKey = "4".repeat(64);
+  const detail: AdminProducerChangeDetail = {
+    change: {
+      id: changeId,
+      authorUserId: "00000000-0000-4000-8000-000000000103",
+      country: "es",
+      producerId: 232,
+      status: "applying",
+      baseRowHash,
+      baseSnapshot: { nombre: "Before" },
+      patch: { nombre: "After" },
+      authorNote: null,
+      lockVersion: 3,
+      reviewerUserId: "00000000-0000-4000-8000-000000000104",
+      decisionNote: "Evidence checked.",
+      failureReason: null,
+      appliedCommitSha: null,
+      submittedAt: createdAt,
+      reviewedAt: createdAt,
+      appliedAt: null,
+      createdAt,
+      updatedAt,
+    },
+    execution: {
+      id: executionId,
+      status: "materialized",
+      operatorKey: "operator:codex-production",
+      worktreeKey,
+      sourceHeadSha,
+      expectedRowHash,
+      leaseExpiresAt,
+      csvPath: "data/csv/es/cataluna/barcelona.csv",
+      materializedAt,
+      appliedCommitSha: null,
+      finishedAt: null,
+      errorMessage: null,
+      createdAt,
+      updatedAt,
+    },
+    producer: null,
+    producerName: "After",
+    publicPath: null,
+    author: {
+      id: "00000000-0000-4000-8000-000000000103",
+      displayName: "Producer",
+    },
+    reviewer: {
+      id: "00000000-0000-4000-8000-000000000104",
+      displayName: "Reviewer",
+    },
+    audit: [],
+    diff: [
+      { key: "nombre", label: "Name", before: "Before", requested: "After", current: null },
+    ],
+    catalog: { state: "missing", currentHash: null, requestedHash: expectedRowHash },
+  };
+
+  const record = serializeProducerChangeDetail(detail);
+
+  assert.deepEqual(record.execution, {
+    id: executionId,
+    status: "materialized",
+    operatorKey: "operator:codex-production",
+    worktreeKey,
+    sourceHeadSha,
+    expectedRowHash,
+    leaseExpiresAt: "2026-08-23T10:15:00.000Z",
+    csvPath: "data/csv/es/cataluna/barcelona.csv",
+    materializedAt: "2026-08-23T10:04:00.000Z",
+    recoveryEligibleAt: "2026-08-24T10:04:00.000Z",
+    appliedCommitSha: null,
+    finishedAt: null,
+    errorMessage: null,
+    createdAt: "2026-08-23T10:00:00.000Z",
+    updatedAt: "2026-08-23T10:05:00.000Z",
+  });
+  assert.equal(
+    record.operatorCommands.recoverTemplate,
+    `npx pnpm producer:change recover ${changeId} ${executionId} --reason "<documented reason>"`,
+  );
 });
 
 test("requested producer state is derived from the stored base plus patch", () => {

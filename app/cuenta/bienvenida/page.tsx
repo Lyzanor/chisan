@@ -26,10 +26,10 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
     <div className="account-content account-content--narrow">
       <AccountMessage params={params} />
       <section>
-        <h2>How will you use {SITE_NAME}?</h2>
+        <h2>Set up your {SITE_NAME} account</h2>
         <p>
-          Both profiles can save favorites. Choosing producer starts the ownership-claim flow;
-          it never grants access by itself.
+          Every account starts with a user profile. If you submit a producer ownership claim,
+          your profile becomes a producer profile automatically.
         </p>
         <form action={completeOnboardingAction} className="account-form">
           <label className="account-field">
@@ -42,19 +42,10 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
               autoComplete="name"
             />
           </label>
-          <fieldset className="account-choice-grid">
-            <legend>Profile type</legend>
-            <label className="account-choice-card">
-              <input type="radio" name="profileKind" value="user" defaultChecked />
-              <strong>User</strong>
-              <span>Save favorite producers now and create custom maps in the future.</span>
-            </label>
-            <label className="account-choice-card">
-              <input type="radio" name="profileKind" value="producer" />
-              <strong>Producer</strong>
-              <span>Claim one or more productive units and propose profile updates.</span>
-            </label>
-          </fieldset>
+          <div className="account-callout">
+            <strong>Profile type: User</strong>
+            <p>Profile type follows your account activity and is not a selectable setting.</p>
+          </div>
           <label className="account-check">
             <input type="checkbox" name="acknowledgeReview" value="yes" required />
             <span>

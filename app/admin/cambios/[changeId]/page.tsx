@@ -12,6 +12,7 @@ import {
   isReviewableProducerChange,
 } from "@/lib/accounts/producer-change-workflow";
 import {
+  producerChangeRecoveryEligibleAt,
   queryAdminProducerChangeById,
   type AdminProducerChangeAuditItem,
   type ProducerChangeCatalogState,
@@ -59,6 +60,8 @@ const AUDIT_ACTION_LABELS: Record<string, string> = {
   "producer_change.materialized": "CSV patch materialized",
   "producer_change.applied": "Canonical commit finalized",
   "producer_change.failed": "Materialization failure recorded",
+  "producer_change.execution_recovered": "Abandoned execution released",
+  "producer_change.execution_cancelled": "Execution cancelled",
 };
 
 function actorLabel(actor: { id: string; displayName: string | null } | null): string {
@@ -204,6 +207,89 @@ export default async function AdminChangeDetailPage({
           </dl>
         </section>
       </div>
+
+      {detail.execution ? (
+        <section className="admin-panel" aria-labelledby="execution-record-title">
+          <div className="admin-section-heading">
+            <div>
+              <h3 id="execution-record-title">Durable CSV execution</h3>
+              <p>
+                The active execution is shown first; otherwise this is the latest recorded attempt.
+              </p>
+            </div>
+          </div>
+          <dl className="admin-definition-list">
+            <div className="admin-definition-list__wide">
+              <dt>Execution ID</dt>
+              <dd><code>{detail.execution.id}</code></dd>
+            </div>
+            <div>
+              <dt>Execution state</dt>
+              <dd>{detail.execution.status}</dd>
+            </div>
+            <div>
+              <dt>Operator</dt>
+              <dd><code>{detail.execution.operatorKey}</code></dd>
+            </div>
+            <div className="admin-definition-list__wide">
+              <dt>CSV</dt>
+              <dd><code>{detail.execution.csvPath}</code></dd>
+            </div>
+            <div className="admin-definition-list__wide">
+              <dt>Source HEAD</dt>
+              <dd><code>{detail.execution.sourceHeadSha}</code></dd>
+            </div>
+            <div className="admin-definition-list__wide">
+              <dt>Expected row hash</dt>
+              <dd><code>{detail.execution.expectedRowHash}</code></dd>
+            </div>
+            <div>
+              <dt>Lease expires</dt>
+              <dd>{formatAdminDate(detail.execution.leaseExpiresAt)}</dd>
+            </div>
+            <div>
+              <dt>Materialized</dt>
+              <dd>{formatAdminDate(detail.execution.materializedAt)}</dd>
+            </div>
+            <div>
+              <dt>Recovery eligible</dt>
+              <dd>
+                {formatAdminDate(
+                  producerChangeRecoveryEligibleAt(detail.execution.materializedAt),
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt>Finished</dt>
+              <dd>{formatAdminDate(detail.execution.finishedAt)}</dd>
+            </div>
+            <div>
+              <dt>Created</dt>
+              <dd>{formatAdminDate(detail.execution.createdAt)}</dd>
+            </div>
+            <div>
+              <dt>Last updated</dt>
+              <dd>{formatAdminDate(detail.execution.updatedAt)}</dd>
+            </div>
+            <div className="admin-definition-list__wide">
+              <dt>Execution commit</dt>
+              <dd>
+                {detail.execution.appliedCommitSha ? (
+                  <code>{detail.execution.appliedCommitSha}</code>
+                ) : (
+                  "Not recorded"
+                )}
+              </dd>
+            </div>
+            {detail.execution.errorMessage ? (
+              <div className="admin-definition-list__wide">
+                <dt>Execution error</dt>
+                <dd>{detail.execution.errorMessage}</dd>
+              </div>
+            ) : null}
+          </dl>
+        </section>
+      ) : null}
 
       <section className="admin-panel" aria-labelledby="requested-diff-title">
         <div className="admin-section-heading">
@@ -357,9 +443,17 @@ export default async function AdminChangeDetailPage({
               <strong>Current operator command</strong>
               <code>npx pnpm producer:change materialize {detail.change.id}</code>
               {detail.change.status === "applying" ? (
-                <code>
-                  npx pnpm producer:change finalize {detail.change.id} &lt;full-commit-sha&gt;
-                </code>
+                <>
+                  <code>
+                    npx pnpm producer:change finalize {detail.change.id} &lt;full-commit-sha&gt;
+                  </code>
+                  {detail.execution?.status === "materialized" ? (
+                    <code>
+                      npx pnpm producer:change recover {detail.change.id} {detail.execution.id}{" "}
+                      --reason &quot;&lt;documented reason&gt;&quot;
+                    </code>
+                  ) : null}
+                </>
               ) : null}
             </>
           ) : null}

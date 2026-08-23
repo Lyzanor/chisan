@@ -4,22 +4,10 @@ import Link from "next/link";
 import { withdrawProducerChangeAction } from "@/app/cuenta/actions";
 import { AccountMessage, type AccountMessageParams } from "@/components/account/account-message";
 import { requireCurrentAccount } from "@/lib/accounts/auth";
+import { getProducerChangeStatusDefinition } from "@/lib/accounts/producer-change-workflow";
 import { findProducersByIds } from "@/lib/csv-catalog";
 import { getDatabase } from "@/lib/db";
 import { producerChangeRequests } from "@/lib/db/schema";
-
-const CHANGE_LABELS: Record<string, string> = {
-  draft: "Draft",
-  submitted: "Pending review",
-  needs_changes: "Needs changes",
-  approved: "Approved for materialization",
-  applying: "Being applied to CSV",
-  applied: "Committed to canonical CSV",
-  rejected: "Rejected",
-  withdrawn: "Withdrawn",
-  conflict: "Catalog conflict",
-  failed: "Materialization failed",
-};
 
 type ChangesPageProps = {
   searchParams: Promise<AccountMessageParams>;
@@ -65,7 +53,7 @@ export default async function ChangesPage({ searchParams }: ChangesPageProps) {
                     </p>
                   </div>
                   <span className={`account-status account-status--${change.status}`}>
-                    {CHANGE_LABELS[change.status] ?? change.status}
+                    {getProducerChangeStatusDefinition(change.status).label}
                   </span>
                 </div>
                 <dl className="account-diff-list">

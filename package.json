@@ -34,6 +34,7 @@
     "db:migrate": "tsx scripts/migrate-account-database.ts",
     "db:assert-current": "tsx scripts/assert-account-database-current.ts",
     "producer:change": "tsx scripts/materialize-producer-change.ts",
+    "producer:access": "tsx scripts/provision-producer-change-access.ts",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence",
     "verify:ai": "pnpm verify && pnpm db:check && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:behavior"
   },

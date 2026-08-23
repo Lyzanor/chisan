@@ -32,28 +32,29 @@ editorial operator materializes into Git.
 
 The production release includes local profiles, favorites, manual ownership
 claims, owner memberships, staff review and reviewed producer-change requests.
-The onboarding profile choice remains presentation only. The schema also
-reserves entitlements and editor memberships for future growth, but there
-is no billing, custom-map purchase, self-service team invitation, private
-document upload or self-service Chisan account-erasure flow yet. Do not describe
-a reserved schema capability as a launched product feature.
+Profile kind is assigned by the account workflow rather than chosen by the
+user. The schema also reserves entitlements and editor memberships for future
+growth, but there is no billing, custom-map purchase, self-service team
+invitation, private document upload or self-service Chisan account-erasure flow
+yet. Do not describe a reserved schema capability as a launched product feature.
 
 ## Profiles and authorization
 
-`users.profile_kind` is the onboarding choice `user` or `producer`. It controls
-copy and navigation only:
+`users.profile_kind` is automatic presentation state. Every account starts as
+`user`; the first successfully submitted producer claim changes it to
+`producer`. It is not a setting and never grants authorization:
 
 - Every active account may save favorites.
-- Choosing `producer` does not grant access to any producer.
+- A `producer` profile does not grant access to any producer.
 - Producer access comes only from an active `producer_membership` for the exact
   `(country, producer_id)`.
 - Reviewer and admin access comes only from an active, unexpired `staff_grant`.
 - Paid capabilities will come from `entitlements`, independently of profile,
   ownership and staff roles.
 
-The user edits the Chisan-owned display name and profile choice at
-`/cuenta/perfil`. Clerk's account UI remains limited to credentials, verified
-sign-in identifiers, sessions and authentication factors.
+The user edits the Chisan-owned display name at `/cuenta/perfil`; profile kind
+is shown there as read-only state. Clerk's account UI remains limited to
+credentials, verified sign-in identifiers, sessions and authentication factors.
 
 The onboarding checkbox acknowledges that claims and public profile changes are
 reviewed. The legacy database field `terms_accepted_at` records that checkpoint;
@@ -91,15 +92,18 @@ The initial flow is deliberately manual:
 
 1. A signed-in account with a verified email opens a public producer profile.
 2. The claimant chooses a verification method and explains the relationship.
-3. The claim enters `pending`; matching a public producer email is only a
-   signal, never sufficient proof.
+3. The claim enters `pending` and the account profile becomes `producer`;
+   matching a public producer email is only a signal, never sufficient proof.
 4. A reviewer approves, rejects or marks the claim as needing more information.
    In the current UI, the claimant withdraws that claim and submits a new one
    with the missing proof; there is no private conversation thread.
 5. Approval creates the producer's single active `owner` membership in the same
-   database transaction. The schema supports explicit `editor` memberships for
-   additional team accounts without weakening ownership verification, but the
-   initial release has no self-service invitation flow.
+   database transaction and rejects any competing claims that were already
+   awaiting review. While that membership is active, the producer cannot be
+   claimed again; public UI and the server mutation both enforce this under the
+   same per-producer transaction lock. The schema supports explicit `editor`
+   memberships for additional team accounts without weakening ownership
+   verification, but the initial release has no self-service invitation flow.
 6. Revocation closes the membership without deleting claim or audit history.
 
 The public evidence ledgers under `data/evidence/**` are not storage for private
@@ -149,12 +153,19 @@ git push origin main
 ```
 
 Materialization refuses stale base hashes, missing producers, revoked ownership,
-non-allowlisted fields, invalid values and a dirty target CSV. It serializes
-changes per producer and file, changes only the target record and publishes the
-local write atomically. Finalization reads the CSV blob from the exact commit,
-verifies its producer-row hash and requires that commit to be reachable from the
-current `HEAD`; it never trusts an uncommitted working tree. The `applied` state
-therefore means committed to the canonical CSV, not yet deployed.
+non-allowlisted fields, invalid values and a dirty target CSV. Before writing,
+it acquires a durable execution lease unique to the request, producer and CSV;
+that lease fences separate agent worktrees, while advisory locks serialize its
+acquisition. The request stays `approved` until the local atomic write and CSV
+audit succeed, then the execution becomes `materialized` and the request becomes
+`applying`. A clean CSV that already contains the exact patch is audited too;
+only the same live execution may resume its own exact dirty post-write snapshot
+after a crash. Finalization proves that the supplied commit shares history with
+the execution's recorded source `HEAD`, that the commit itself introduced the
+approved producer-row hash relative to its first parent, and that the current
+`HEAD` still contains that exact row at the fenced CSV path. It never trusts an
+uncommitted working tree. The `applied` state therefore means committed to the
+canonical CSV and still present at finalization time, not yet deployed.
 
 ### Staff operations workspace and agent reads
 
@@ -178,12 +189,64 @@ npx pnpm producer:change show <change-request-uuid> --json
 ```
 
 List output excludes private notes and full snapshots; `show` includes them for
-an operator with database access. Neither command mutates request state or the
-catalog. A future worker may select only `approved` requests and invoke the
-existing `materialize` and `finalize` commands, but it must run in a controlled
-Git worktree outside the deployed Vercel application. Before concurrent workers
-launch, add durable execution attempts and leases; `applying` alone does not
-identify a worker, run or worktree.
+an operator with database access. The versioned `show --json` schema currently
+uses version `2` and includes the active execution (or latest attempt), its
+durable IDs and timestamps, and the calculated recovery-eligibility time.
+Neither command mutates request state or the catalog. Each capability uses a
+separate Neon identity and never falls back to the application's `DATABASE_URL`
+or the migration owner:
+
+- `CHISAN_ADMIN_READ_DATABASE_URL`, loaded locally from
+  `.env.admin-read.local`, is accepted only for `list`, `show` and read access
+  diagnostics.
+- `CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL`, loaded locally from
+  `.env.producer-change-operator.local`, is accepted only for `materialize`,
+  `finalize` and operator diagnostics.
+- `CHISAN_PRODUCER_CHANGE_RECOVERY_DATABASE_URL`, loaded locally from
+  `.env.producer-change-recovery.local`, is accepted only for supervised
+  recovery and recovery diagnostics.
+- All three files are local secrets, ignored by Git and never configured in the
+  deployed Vercel application.
+
+The reader has explicit column-level `SELECT` grants and sees audit rows only
+through the producer-change-targeted audit view. The operator inherits those
+reads but cannot enumerate memberships or account status directly and has no
+direct `UPDATE`, `INSERT`, `DELETE`, DDL or ownership. It may execute only the
+versioned `SECURITY DEFINER` producer-change functions;
+their `NOLOGIN` owner has the internal table permissions, a fixed safe
+`search_path`, and records `session_user` as the actor. Check the boundary before
+automation runs:
+
+```bash
+npx pnpm producer:change doctor --access read --json
+npx pnpm producer:change doctor --access operator --json
+npx pnpm producer:change doctor --access recovery --json
+```
+
+An agent may select only `approved` requests and invoke `materialize` and
+`finalize`, but it must run in a controlled Git worktree outside the deployed
+Vercel application. Every attempt records its execution UUID, SQL operator,
+opaque worktree key, source `HEAD`, expected row hash, CSV and timestamps.
+Unfinished pre-write leases expire after fifteen minutes and can be superseded;
+a `materialized` execution remains fenced until exact finalization so another
+worktree cannot duplicate a possibly committed change. Recovery of an abandoned
+materialized execution is a separate staff capability, never an operator
+capability or an automatic timeout. PostgreSQL rejects recovery during the first
+24 hours after materialization. After that quarantine, staff must identify the
+exact execution and record a substantive reason from a clean, audited Git state:
+
+```bash
+npx pnpm producer:change recover <change-request-uuid> <execution-uuid> \
+  --reason "Original operator worktree was retired after incident review."
+```
+
+Recovery only cancels that fence and returns the request to `approved`. It never
+adopts, edits or finalizes a CSV; a normal operator credential must run
+`materialize` again, which either reapplies the reviewed patch or validates the
+exact already-present state. The recovery login inherits read access but cannot
+execute the five normal operator functions, and the operator cannot execute
+recovery. Revoking producer access conflicts every unpublished request and
+cancels each live execution in the same producer-locked transaction.
 
 ## Catalog row lifecycle
 
@@ -191,7 +254,8 @@ Area and slug changes are resolved from the current CSV and do not change an
 account reference. A `producer_id` retirement does. Before merging or purging a
 published row, inspect its PostgreSQL references and resolve them explicitly:
 
-- conflict or withdraw every unpublished change request for the retired key;
+- cancel every active materialization execution, then conflict or withdraw every
+  unpublished change request for the retired key in the same transaction;
 - review pending ownership claims and revoke memberships that can no longer
   target a published producer;
 - for a true merge, migrate favorites to the surviving key; never transfer an
@@ -272,8 +336,12 @@ a build asserts migration compatibility but never applies DDL.
 ## Security invariants
 
 - Never authorize by email, profile kind, slug, area or client-supplied user ID.
+- Profile kind is automatic display state: account creation sets `user` and a
+  submitted producer claim promotes it to `producer`; no user mutation may set
+  or downgrade it directly.
 - Re-resolve the producer from CSV and re-check the membership in each mutation.
-- Re-check ownership at submission, approval and materialization. Membership
+- Re-check ownership at claim submission, approval and materialization. An
+  active owner blocks every later claim submission for that producer. Membership
   revocation conflicts every unpublished request under the same producer lock.
   A future internal erasure flow must do the same; a Clerk `user.deleted` event
   alone intentionally does not alter domain resources.

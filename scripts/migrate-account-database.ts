@@ -4,7 +4,7 @@ import { readMigrationFiles } from "drizzle-orm/migrator";
 import postgres from "postgres";
 
 function loadEnvironmentFiles(): void {
-  for (const environmentFile of [".env.local", ".env"]) {
+  for (const environmentFile of [".env.migration.local"]) {
     if (existsSync(environmentFile)) {
       process.loadEnvFile(environmentFile);
     }
@@ -13,10 +13,11 @@ function loadEnvironmentFiles(): void {
 
 async function main(): Promise<void> {
   loadEnvironmentFiles();
-  const connectionString =
-    process.env.DATABASE_MIGRATION_URL?.trim() || process.env.DATABASE_URL?.trim();
+  const connectionString = process.env.DATABASE_MIGRATION_URL?.trim();
   if (!connectionString) {
-    throw new Error("DATABASE_MIGRATION_URL or DATABASE_URL is required to run migrations.");
+    throw new Error(
+      "DATABASE_MIGRATION_URL is required in the process or .env.migration.local; DATABASE_URL is intentionally ignored.",
+    );
   }
 
   const migrations = readMigrationFiles({ migrationsFolder: "drizzle" });

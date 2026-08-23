@@ -13,7 +13,6 @@ import {
   firstValidationMessage,
   formString,
   producerKeySchema,
-  profileKindSchema,
 } from "@/lib/accounts/input";
 import {
   hashProducerFields,
@@ -54,13 +53,9 @@ function producerEditPath(country: string, producerId: number): string {
 
 export async function completeOnboardingAction(formData: FormData): Promise<void> {
   const account = await requireCurrentAccount("/cuenta/bienvenida");
-  const profileKind = profileKindSchema.safeParse(formString(formData, "profileKind"));
   const acknowledgedReview = formString(formData, "acknowledgeReview") === "yes";
   const displayName = formString(formData, "displayName").replace(/\s+/g, " ");
 
-  if (!profileKind.success) {
-    redirectWithMessage("/cuenta/bienvenida", "error", "Choose a profile type.");
-  }
   if (!acknowledgedReview) {
     redirectWithMessage(
       "/cuenta/bienvenida",
@@ -77,7 +72,6 @@ export async function completeOnboardingAction(formData: FormData): Promise<void
     await transaction
       .update(users)
       .set({
-        profileKind: profileKind.data,
         displayName: displayName || account.displayName,
         termsAcceptedAt: account.termsAcceptedAt ?? new Date(),
         updatedAt: new Date(),
@@ -89,7 +83,7 @@ export async function completeOnboardingAction(formData: FormData): Promise<void
       action: "account.onboarding_completed",
       targetType: "user",
       targetId: account.id,
-      metadata: { profileKind: profileKind.data },
+      metadata: { fields: ["displayName", "reviewAcknowledgement"] },
     });
   });
 
@@ -100,12 +94,8 @@ export async function updateAccountProfileAction(formData: FormData): Promise<vo
   const account = await requireCurrentAccount("/cuenta/perfil");
   if (!account.termsAcceptedAt) redirect("/cuenta/bienvenida");
 
-  const profileKind = profileKindSchema.safeParse(formString(formData, "profileKind"));
   const displayName = formString(formData, "displayName").replace(/\s+/g, " ");
 
-  if (!profileKind.success) {
-    redirectWithMessage("/cuenta/perfil", "error", "Choose a profile type.");
-  }
   if (displayName.length > 160) {
     redirectWithMessage("/cuenta/perfil", "error", "The display name is too long.");
   }
@@ -116,7 +106,6 @@ export async function updateAccountProfileAction(formData: FormData): Promise<vo
       .update(users)
       .set({
         displayName: displayName || null,
-        profileKind: profileKind.data,
         updatedAt: now,
       })
       .where(eq(users.id, account.id));
@@ -126,7 +115,7 @@ export async function updateAccountProfileAction(formData: FormData): Promise<vo
       action: "account.profile_updated",
       targetType: "user",
       targetId: account.id,
-      metadata: { profileKind: profileKind.data },
+      metadata: { fields: ["displayName"] },
     });
   });
 
@@ -233,18 +222,21 @@ export async function submitProducerClaimAction(formData: FormData): Promise<voi
   const database = getDatabase();
   const claimResult = await database.transaction(async (transaction) => {
     await transaction.execute(
+      sql`select pg_advisory_xact_lock(hashtext(${`producer:${parsed.data.country}:${parsed.data.producerId}`}))`,
+    );
+    await transaction.execute(
       sql`select pg_advisory_xact_lock(hashtext(${`account-claim:${account.id}`}))`,
     );
 
-    const [[membership], [openCount], [recentCount]] = await Promise.all([
+    const [[activeOwner], [openCount], [recentCount]] = await Promise.all([
       transaction
-        .select({ id: producerMemberships.id })
+        .select({ userId: producerMemberships.userId })
         .from(producerMemberships)
         .where(
           and(
-            eq(producerMemberships.userId, account.id),
             eq(producerMemberships.country, parsed.data.country),
             eq(producerMemberships.producerId, parsed.data.producerId),
+            eq(producerMemberships.role, "owner"),
             eq(producerMemberships.status, "active"),
           ),
         )
@@ -268,10 +260,12 @@ export async function submitProducerClaimAction(formData: FormData): Promise<voi
             eq(auditEvents.action, "producer_claim.submitted"),
             gte(auditEvents.occurredAt, new Date(Date.now() - ONE_DAY_MS)),
           ),
-        ),
+      ),
     ]);
 
-    if (membership) return "already-owner";
+    if (activeOwner) {
+      return activeOwner.userId === account.id ? "already-owner" : "already-claimed";
+    }
     if (openCount.value >= CLAIM_MAX_OPEN_PER_ACCOUNT) return "open-limit";
     if (recentCount.value >= CLAIM_MAX_SUBMISSIONS_PER_DAY) return "daily-limit";
 
@@ -321,6 +315,13 @@ export async function submitProducerClaimAction(formData: FormData): Promise<voi
       "/cuenta/reclamaciones",
       "notice",
       "You already have access to this producer.",
+    );
+  }
+  if (claimResult === "already-claimed") {
+    redirectWithMessage(
+      "/cuenta/reclamaciones",
+      "error",
+      "This producer already has a verified owner and cannot be claimed again.",
     );
   }
   if (claimResult === "open-limit" || claimResult === "daily-limit") {

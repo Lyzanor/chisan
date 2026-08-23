@@ -22,6 +22,20 @@
       "when": 1787232721007,
       "tag": "0002_clammy_starhawk",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1787513392421,
+      "tag": "0003_automatic-profile-and-exclusive-claim",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1787521580485,
+      "tag": "0004_producer_change_operator_access",
+      "breakpoints": true
     }
   ]
 }

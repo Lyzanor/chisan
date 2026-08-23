@@ -4,6 +4,118 @@ import test from "node:test";
 
 import { PGlite } from "@electric-sql/pglite";
 
+test("account migrations run as a non-superuser CREATEROLE schema owner", async () => {
+  const database = new PGlite();
+  try {
+    await database.exec(`
+      create role chisan_test_migration_owner login createrole;
+      grant create on database postgres to chisan_test_migration_owner;
+      alter schema public owner to chisan_test_migration_owner;
+      set role chisan_test_migration_owner;
+      begin;
+    `);
+
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    for (const migrationFile of migrationFiles) {
+      const migration = await readFile(`drizzle/${migrationFile}`, "utf8");
+      for (const statement of migration
+        .split("--> statement-breakpoint")
+        .map((candidate) => candidate.trim())
+        .filter(Boolean)) {
+        await database.exec(statement);
+      }
+    }
+    await database.exec("commit");
+
+    const migrationOwner = await database.query<{
+      rolcreaterole: boolean;
+      rolsuper: boolean;
+    }>(
+      `select rolcreaterole, rolsuper
+         from pg_catalog.pg_roles
+        where rolname = current_user`,
+    );
+    assert.deepEqual(migrationOwner.rows, [{ rolcreaterole: true, rolsuper: false }]);
+
+    const capabilityRoles = await database.query<{
+      rolbypassrls: boolean;
+      rolcanlogin: boolean;
+      rolcreatedb: boolean;
+      rolcreaterole: boolean;
+      rolname: string;
+      rolreplication: boolean;
+      rolsuper: boolean;
+    }>(
+      `select rolname, rolcanlogin, rolsuper, rolcreatedb, rolcreaterole,
+              rolreplication, rolbypassrls
+         from pg_catalog.pg_roles
+        where rolname in (
+          'chisan_admin_read',
+          'chisan_producer_change_operator',
+          'chisan_producer_change_recovery',
+          'chisan_producer_change_api_owner'
+        )
+        order by rolname`,
+    );
+    assert.equal(capabilityRoles.rows.length, 4);
+    for (const role of capabilityRoles.rows) {
+      assert.deepEqual(
+        {
+          rolcanlogin: role.rolcanlogin,
+          rolsuper: role.rolsuper,
+          rolcreatedb: role.rolcreatedb,
+          rolcreaterole: role.rolcreaterole,
+          rolreplication: role.rolreplication,
+          rolbypassrls: role.rolbypassrls,
+        },
+        {
+          rolcanlogin: false,
+          rolsuper: false,
+          rolcreatedb: false,
+          rolcreaterole: false,
+          rolreplication: false,
+          rolbypassrls: false,
+        },
+        `${role.rolname} must retain safe SQL-created role defaults`,
+      );
+    }
+
+    const [ownership] = (
+      await database.query<{
+        api_owner_can_create: boolean;
+        function_owner_count: number;
+        view_owner: string;
+      }>(
+        `select
+          has_schema_privilege(
+            'chisan_producer_change_api_owner', 'public', 'create'
+          ) as api_owner_can_create,
+          (
+            select count(*)::integer
+            from pg_catalog.pg_proc
+            where pronamespace = 'public'::regnamespace
+              and proname like 'chisan_%_producer_change_%_v1'
+              and proowner = 'chisan_producer_change_api_owner'::regrole
+          ) as function_owner_count,
+          (
+            select relowner::regrole::text
+            from pg_catalog.pg_class
+            where oid = 'public.producer_change_request_audit_events'::regclass
+          ) as view_owner`,
+      )
+    ).rows;
+    assert.deepEqual(ownership, {
+      api_owner_can_create: false,
+      function_owner_count: 6,
+      view_owner: "chisan_producer_change_api_owner",
+    });
+  } finally {
+    await database.close();
+  }
+});
+
 test("account migration creates constraints and durable producer keys", async () => {
   const database = new PGlite();
   try {
@@ -31,6 +143,7 @@ test("account migration creates constraints and durable producer keys", async ()
         "auth_identity_tombstones",
         "entitlements",
         "favorites",
+        "producer_change_executions",
         "producer_change_requests",
         "producer_claims",
         "producer_memberships",
@@ -99,10 +212,11 @@ test("account migration creates constraints and durable producer keys", async ()
       { table_name: "staff_grants", column_name: "user_id" },
     ]);
 
-    const created = await database.query<{ id: string }>(
-      "insert into users (display_name) values ('Test account') returning id",
+    const created = await database.query<{ id: string; profile_kind: string }>(
+      "insert into users (display_name) values ('Test account') returning id, profile_kind",
     );
     const userId = created.rows[0].id;
+    assert.equal(created.rows[0].profile_kind, "user");
     const secondUser = await database.query<{ id: string }>(
       "insert into users (display_name) values ('Second account') returning id",
     );
@@ -176,6 +290,24 @@ test("account migration creates constraints and durable producer keys", async ()
     );
 
     await database.query(
+      `insert into producer_claims
+         (claimant_user_id, country, producer_id, status, submitted_at,
+          reviewer_user_id, reviewed_at)
+       values ($1, 'es', 8, 'approved', now(), $1, now())`,
+      [userId],
+    );
+    await assert.rejects(
+      database.query(
+        `insert into producer_claims
+           (claimant_user_id, country, producer_id, status, submitted_at,
+            reviewer_user_id, reviewed_at)
+         values ($1, 'es', 8, 'approved', now(), $1, now())`,
+        [secondUserId],
+      ),
+      /producer_claims_approved_producer_uidx|duplicate key/i,
+    );
+
+    await database.query(
       `insert into webhook_receipts (provider, event_id, event_type, payload_hash)
        values ('clerk', 'evt_1', 'user.updated', repeat('a', 64))`,
     );
@@ -211,6 +343,763 @@ test("account migration creates constraints and durable producer keys", async ()
       ),
       /auth_identity_tombstones_provider_subject_uidx|duplicate key/i,
     );
+  } finally {
+    await database.close();
+  }
+});
+
+test("profile migration derives profile kind from submitted claims", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    const profileMigration = migrationFiles.find((file) => file.startsWith("0003_"));
+    assert.ok(profileMigration, "profile migration is missing");
+
+    for (const migrationFile of migrationFiles) {
+      if (migrationFile === profileMigration) break;
+      await database.exec(await readFile(`drizzle/${migrationFile}`, "utf8"));
+    }
+
+    const accounts = await database.query<{ id: string; display_name: string }>(
+      `insert into users (display_name, profile_kind)
+       values ('Claimant', 'user'), ('Manual producer', 'producer')
+       returning id, display_name`,
+    );
+    const claimantId = accounts.rows.find(
+      ({ display_name }) => display_name === "Claimant",
+    )?.id;
+    assert.ok(claimantId);
+    await database.query(
+      `insert into producer_claims
+         (claimant_user_id, country, producer_id, status, submitted_at)
+       values ($1, 'es', 9, 'pending', now())`,
+      [claimantId],
+    );
+
+    await database.exec(await readFile(`drizzle/${profileMigration}`, "utf8"));
+
+    const reconciled = await database.query<{
+      display_name: string;
+      profile_kind: string;
+    }>(
+      `select display_name, profile_kind
+       from users
+       order by display_name`,
+    );
+    assert.deepEqual(reconciled.rows, [
+      { display_name: "Claimant", profile_kind: "producer" },
+      { display_name: "Manual producer", profile_kind: "user" },
+    ]);
+  } finally {
+    await database.close();
+  }
+});
+
+test("producer-change operator roles expose reads and only the versioned workflow API", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    for (const migrationFile of migrationFiles) {
+      await database.exec(await readFile(`drizzle/${migrationFile}`, "utf8"));
+    }
+
+    const accounts = await database.query<{ id: string; display_name: string }>(
+      `insert into users (display_name)
+       values ('Operator test author'), ('Operator test reviewer')
+       returning id, display_name`,
+    );
+    const authorId = accounts.rows.find(
+      ({ display_name }) => display_name === "Operator test author",
+    )?.id;
+    const reviewerId = accounts.rows.find(
+      ({ display_name }) => display_name === "Operator test reviewer",
+    )?.id;
+    assert.ok(authorId);
+    assert.ok(reviewerId);
+    await database.query(
+      `insert into producer_memberships (user_id, country, producer_id, role)
+       values ($1, 'es', 91, 'owner')`,
+      [authorId],
+    );
+    const [change] = (
+      await database.query<{ id: string }>(
+        `insert into producer_change_requests (
+           author_user_id, country, producer_id, status, base_row_hash,
+           base_snapshot, patch, reviewer_user_id, submitted_at, reviewed_at
+         ) values (
+           $1, 'es', 91, 'approved', repeat('a', 64),
+           '{"nombre":"Base","producer_id":"91"}'::jsonb,
+           '{"nombre":"Updated"}'::jsonb, $2, now(), now()
+         ) returning id`,
+        [authorId, reviewerId],
+      )
+    ).rows;
+    await database.query(
+      `insert into audit_events
+         (actor_kind, actor_key, action, target_type, target_id, metadata)
+       values
+         ('system', 'test', 'producer_change.created', 'producer_change_request', $1, '{}'::jsonb),
+         ('system', 'test', 'webhook.received', 'webhook_receipt', 'private-receipt', '{}'::jsonb)`,
+      [change.id],
+    );
+
+    await database.exec("set role chisan_admin_read");
+    const readable = await database.query<{ id: string }>(
+      "select id from producer_change_requests where id = $1",
+      [change.id],
+    );
+    assert.equal(readable.rows[0]?.id, change.id);
+    const visibleAudit = await database.query<{ target_id: string }>(
+      "select target_id from producer_change_request_audit_events",
+    );
+    assert.deepEqual(visibleAudit.rows, [{ target_id: change.id }]);
+    await assert.rejects(
+      database.query("select id from audit_events"),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query("select id from producer_memberships"),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        "update producer_change_requests set failure_reason = 'forged' where id = $1",
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        "update producer_change_executions set status = 'cancelled' where change_request_id = $1",
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        `select * from public.chisan_begin_producer_change_execution_v1(
+           '00000000-0000-4000-8000-000000000091', $1,
+           repeat('b', 64), 'data/csv/es/test/area.csv', repeat('c', 40),
+           repeat('d', 64), 900
+         )`,
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        `select public.chisan_recover_producer_change_execution_v1(
+           $1, '00000000-0000-4000-8000-000000000091', repeat('b', 64),
+           repeat('c', 40), repeat('a', 64), 'Documented recovery reason for test.'
+         )`,
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await database.exec("reset role");
+
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query("select id from producer_change_requests where id = $1", [
+      change.id,
+    ]);
+    await assert.rejects(
+      database.query("select id from producer_memberships"),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        "update producer_change_requests set status = 'failed' where id = $1",
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        "update producer_change_executions set status = 'cancelled' where change_request_id = $1",
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        `insert into audit_events
+           (actor_kind, actor_key, action, target_type, target_id)
+         values ('service', 'forged', 'forged', 'producer_change_request', $1)`,
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        `select public.chisan_recover_producer_change_execution_v1(
+           $1, '00000000-0000-4000-8000-000000000091', repeat('b', 64),
+           repeat('c', 40), repeat('a', 64), 'Documented recovery reason for test.'
+         )`,
+        [change.id],
+      ),
+      /permission denied/i,
+    );
+
+    const executionId = "00000000-0000-4000-8000-000000000091";
+    const expectedHash = "d".repeat(64);
+    await database.query(
+      `select * from public.chisan_begin_producer_change_execution_v1(
+         $1, $2, repeat('b', 64), 'data/csv/es/test/area.csv', repeat('c', 40),
+         $3, 900
+       )`,
+      [executionId, change.id, expectedHash],
+    );
+    const leased = await database.query<{ request_status: string; execution_status: string }>(
+      `select request.status::text as request_status,
+              execution.status::text as execution_status
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       where request.id = $1`,
+      [change.id],
+    );
+    assert.deepEqual(leased.rows, [
+      { request_status: "approved", execution_status: "leased" },
+    ]);
+    await assert.rejects(
+      database.query(
+        `select * from public.chisan_begin_producer_change_execution_v1(
+           '00000000-0000-4000-8000-000000000092', $1,
+           repeat('e', 64), 'data/csv/es/test/area.csv', repeat('c', 40),
+           $2, 900
+         )`,
+        [change.id, expectedHash],
+      ),
+      /active producer-change execution/i,
+    );
+    await assert.rejects(
+      database.query(
+        `select public.chisan_complete_producer_change_execution_v1(
+           $1, null, array['nombre']::text[], false
+         )`,
+        [executionId],
+      ),
+      /completion inputs are invalid/i,
+    );
+    await assert.rejects(
+      database.query(
+        `select public.chisan_fail_producer_change_preflight_v1(
+           $1, 'failed', 'must preserve live execution'
+         )`,
+        [change.id],
+      ),
+      /active execution already owns/i,
+    );
+    await database.query(
+      `select public.chisan_complete_producer_change_execution_v1(
+         $1, $2, array['nombre']::text[], false
+       )`,
+      [executionId, expectedHash],
+    );
+    await database.query(
+      `select public.chisan_complete_producer_change_execution_v1(
+         $1, $2, array['nombre']::text[], false
+       )`,
+      [executionId, expectedHash],
+    );
+    const materialized = await database.query<{
+      request_status: string;
+      execution_status: string;
+    }>(
+      `select request.status::text as request_status,
+              execution.status::text as execution_status
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       where request.id = $1`,
+      [change.id],
+    );
+    assert.deepEqual(materialized.rows, [
+      { request_status: "applying", execution_status: "materialized" },
+    ]);
+    await assert.rejects(
+      database.query(
+        `select public.chisan_finalize_producer_change_execution_v1(
+           $1, repeat('f', 40), null, null
+         )`,
+        [change.id],
+      ),
+      /expected producer hash is invalid|CSV path is required/i,
+    );
+    await database.query(
+      `select public.chisan_finalize_producer_change_execution_v1(
+         $1, repeat('f', 40), 'data/csv/es/test/area.csv', $2
+       )`,
+      [change.id, expectedHash],
+    );
+    await database.exec("reset role");
+
+    const finalized = await database.query<{
+      request_status: string;
+      execution_status: string;
+      actor_key: string;
+    }>(
+      `select request.status::text as request_status,
+              execution.status::text as execution_status,
+              applied.actor_key
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       join audit_events as applied
+         on applied.target_id = request.id::text
+        and applied.action = 'producer_change.applied'
+       where request.id = $1`,
+      [change.id],
+    );
+    assert.deepEqual(finalized.rows, [
+      {
+        request_status: "applied",
+        execution_status: "finalized",
+        actor_key: "postgres",
+      },
+    ]);
+  } finally {
+    await database.close();
+  }
+});
+
+test("staff recovery is quarantined, reset-only and isolated from operator authority", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    for (const migrationFile of migrationFiles) {
+      await database.exec(await readFile(`drizzle/${migrationFile}`, "utf8"));
+    }
+
+    const accounts = await database.query<{ id: string; display_name: string }>(
+      `insert into users (display_name)
+       values ('Recovery author'), ('Recovery reviewer')
+       returning id, display_name`,
+    );
+    const authorId = accounts.rows.find(({ display_name }) => display_name === "Recovery author")
+      ?.id;
+    const reviewerId = accounts.rows.find(
+      ({ display_name }) => display_name === "Recovery reviewer",
+    )?.id;
+    assert.ok(authorId);
+    assert.ok(reviewerId);
+    await database.query(
+      `insert into producer_memberships (user_id, country, producer_id, role)
+       values ($1, 'es', 205, 'owner')`,
+      [authorId],
+    );
+    const change = await database.query<{ id: string }>(
+      `insert into producer_change_requests (
+         author_user_id, country, producer_id, status, base_row_hash,
+         base_snapshot, patch, reviewer_user_id, submitted_at, reviewed_at
+       ) values (
+         $1, 'es', 205, 'approved', repeat('a', 64),
+         '{"nombre":"Base","producer_id":"205"}'::jsonb,
+         '{"nombre":"Updated"}'::jsonb, $2, now(), now()
+       ) returning id`,
+      [authorId, reviewerId],
+    );
+    const changeId = change.rows[0].id;
+    const executionId = "00000000-0000-4000-8000-000000000205";
+
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select * from public.chisan_begin_producer_change_execution_v1(
+         $1, $2, repeat('b', 64), 'data/csv/es/test/recovery.csv',
+         repeat('c', 40), repeat('d', 64), 900
+       )`,
+      [executionId, changeId],
+    );
+    await database.query(
+      `select public.chisan_complete_producer_change_execution_v1(
+         $1, repeat('d', 64), array['nombre']::text[], false
+       )`,
+      [executionId],
+    );
+    await assert.rejects(
+      database.query(
+        `select public.chisan_recover_producer_change_execution_v1(
+           $1, $2, repeat('e', 64), repeat('f', 40), repeat('a', 64),
+           'The original controlled worktree is abandoned.'
+         )`,
+        [changeId, executionId],
+      ),
+      /permission denied/i,
+    );
+    await database.exec("reset role");
+
+    await database.exec("set role chisan_producer_change_recovery");
+    await database.query("select id from producer_change_requests where id = $1", [changeId]);
+    await assert.rejects(
+      database.query(
+        `select * from public.chisan_begin_producer_change_execution_v1(
+           '00000000-0000-4000-8000-000000000206', $1, repeat('e', 64),
+           'data/csv/es/test/recovery.csv', repeat('f', 40), repeat('d', 64), 900
+         )`,
+        [changeId],
+      ),
+      /permission denied/i,
+    );
+    await assert.rejects(
+      database.query(
+        `select public.chisan_recover_producer_change_execution_v1(
+           $1, $2, repeat('e', 64), repeat('f', 40), repeat('a', 64),
+           'The original controlled worktree is abandoned.'
+         )`,
+        [changeId, executionId],
+      ),
+      /quarantine remains active/i,
+    );
+    await database.exec("reset role");
+
+    const stillFenced = await database.query<{ execution_status: string; request_status: string }>(
+      `select request.status::text as request_status,
+              execution.status::text as execution_status
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       where request.id = $1`,
+      [changeId],
+    );
+    assert.deepEqual(stillFenced.rows, [
+      { request_status: "applying", execution_status: "materialized" },
+    ]);
+
+    await database.query(
+      `update producer_change_executions
+       set materialized_at = now() - interval '25 hours'
+       where id = $1`,
+      [executionId],
+    );
+    await database.exec("set role chisan_producer_change_recovery");
+    await assert.rejects(
+      database.query(
+        `select public.chisan_recover_producer_change_execution_v1(
+           $1, $2, repeat('e', 64), repeat('f', 40), repeat('9', 64),
+           'The original controlled worktree is abandoned.'
+         )`,
+        [changeId, executionId],
+      ),
+      /reviewed base or approved producer hash/i,
+    );
+    const recovered = await database.query<{ execution_id: string }>(
+      `select public.chisan_recover_producer_change_execution_v1(
+         $1, $2, repeat('e', 64), repeat('f', 40), repeat('a', 64),
+         'The original controlled worktree is abandoned.'
+       ) as execution_id`,
+      [changeId, executionId],
+    );
+    assert.equal(recovered.rows[0]?.execution_id, executionId);
+    const repeated = await database.query<{ execution_id: string }>(
+      `select public.chisan_recover_producer_change_execution_v1(
+         $1, $2, repeat('e', 64), repeat('f', 40), repeat('a', 64),
+         'The original controlled worktree is abandoned.'
+       ) as execution_id`,
+      [changeId, executionId],
+    );
+    assert.equal(repeated.rows[0]?.execution_id, executionId);
+    await assert.rejects(
+      database.query(
+        `update producer_change_executions set error_message = 'forged' where id = $1`,
+        [executionId],
+      ),
+      /permission denied/i,
+    );
+    await database.exec("reset role");
+
+    const released = await database.query<{
+      audit_count: number;
+      execution_status: string;
+      request_status: string;
+    }>(
+      `select request.status::text as request_status,
+              execution.status::text as execution_status,
+              count(audit.id)::integer as audit_count
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       left join audit_events as audit
+         on audit.target_id = request.id::text
+        and audit.action = 'producer_change.execution_recovered'
+       where request.id = $1
+       group by request.status, execution.status`,
+      [changeId],
+    );
+    assert.deepEqual(released.rows, [
+      { request_status: "approved", execution_status: "cancelled", audit_count: 1 },
+    ]);
+
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select * from public.chisan_begin_producer_change_execution_v1(
+         '00000000-0000-4000-8000-000000000206', $1, repeat('1', 64),
+         'data/csv/es/test/recovery.csv', repeat('2', 40), repeat('d', 64), 900
+       )`,
+      [changeId],
+    );
+    await database.exec("reset role");
+
+    await database.query(
+      `insert into producer_memberships (user_id, country, producer_id, role)
+       values ($1, 'es', 207, 'owner')`,
+      [authorId],
+    );
+    const inactiveChange = await database.query<{ id: string }>(
+      `insert into producer_change_requests (
+         author_user_id, country, producer_id, status, base_row_hash,
+         base_snapshot, patch, reviewer_user_id, submitted_at, reviewed_at
+       ) values (
+         $1, 'es', 207, 'approved', repeat('a', 64),
+         '{"nombre":"Base","producer_id":"207"}'::jsonb,
+         '{"nombre":"Updated"}'::jsonb, $2, now(), now()
+       ) returning id`,
+      [authorId, reviewerId],
+    );
+    const inactiveExecutionId = "00000000-0000-4000-8000-000000000207";
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select * from public.chisan_begin_producer_change_execution_v1(
+         $1, $2, repeat('3', 64), 'data/csv/es/test/recovery-inactive.csv',
+         repeat('4', 40), repeat('d', 64), 900
+       )`,
+      [inactiveExecutionId, inactiveChange.rows[0].id],
+    );
+    await database.query(
+      `select public.chisan_complete_producer_change_execution_v1(
+         $1, repeat('d', 64), array['nombre']::text[], false
+       )`,
+      [inactiveExecutionId],
+    );
+    await database.exec("reset role");
+    await database.query(
+      `update producer_change_executions
+       set materialized_at = now() - interval '25 hours'
+       where id = $1`,
+      [inactiveExecutionId],
+    );
+    await database.query("update users set status = 'suspended' where id = $1", [authorId]);
+
+    await database.exec("set role chisan_producer_change_recovery");
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const cancelled = await database.query<{ execution_id: string }>(
+        `select public.chisan_recover_producer_change_execution_v1(
+           $1, $2, repeat('5', 64), repeat('6', 40), repeat('a', 64),
+           'Producer access was suspended during incident review.'
+         ) as execution_id`,
+        [inactiveChange.rows[0].id, inactiveExecutionId],
+      );
+      assert.equal(cancelled.rows[0]?.execution_id, inactiveExecutionId);
+    }
+    await database.exec("reset role");
+
+    const inactiveState = await database.query<{
+      audit_count: number;
+      execution_status: string;
+      request_status: string;
+    }>(
+      `select request.status::text as request_status,
+              execution.status::text as execution_status,
+              count(audit.id)::integer as audit_count
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       left join audit_events as audit
+         on audit.target_id = request.id::text
+        and audit.action = 'producer_change.execution_cancelled'
+       where request.id = $1
+       group by request.status, execution.status`,
+      [inactiveChange.rows[0].id],
+    );
+    assert.deepEqual(inactiveState.rows, [
+      { request_status: "conflict", execution_status: "cancelled", audit_count: 1 },
+    ]);
+  } finally {
+    await database.close();
+  }
+});
+
+test("producer-change preflight closes revoked and expired execution fences", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    for (const migrationFile of migrationFiles) {
+      const migration = await readFile(`drizzle/${migrationFile}`, "utf8");
+      assert.doesNotMatch(
+        migration,
+        /hashtextextended\('producer:/,
+        `${migrationFile} must share the application's hashtext advisory-lock key`,
+      );
+      await database.exec(migration);
+    }
+
+    const accounts = await database.query<{ id: string; display_name: string }>(
+      `insert into users (display_name)
+       values ('Lease author'), ('Lease reviewer')
+       returning id, display_name`,
+    );
+    const authorId = accounts.rows.find(({ display_name }) => display_name === "Lease author")
+      ?.id;
+    const reviewerId = accounts.rows.find(
+      ({ display_name }) => display_name === "Lease reviewer",
+    )?.id;
+    assert.ok(authorId);
+    assert.ok(reviewerId);
+
+    async function createApprovedChange(producerId: number): Promise<string> {
+      await database.query(
+        `insert into producer_memberships (user_id, country, producer_id, role)
+         values ($1, 'es', $2, 'owner')`,
+        [authorId, producerId],
+      );
+      const result = await database.query<{ id: string }>(
+        `insert into producer_change_requests (
+           author_user_id, country, producer_id, status, base_row_hash,
+           base_snapshot, patch, reviewer_user_id, submitted_at, reviewed_at
+         ) values (
+           $1, 'es', $2::bigint, 'approved', repeat('a', 64),
+           jsonb_build_object('nombre', 'Base', 'producer_id', ($2::bigint)::text),
+           '{"nombre":"Updated"}'::jsonb, $3, now(), now()
+         ) returning id`,
+        [authorId, producerId, reviewerId],
+      );
+      return result.rows[0].id;
+    }
+
+    async function beginExecution(
+      changeId: string,
+      producerId: number,
+      suffix: number,
+    ): Promise<string> {
+      const executionId = `00000000-0000-4000-8000-${String(suffix).padStart(12, "0")}`;
+      await database.exec("set role chisan_producer_change_operator");
+      await database.query(
+        `select * from public.chisan_begin_producer_change_execution_v1(
+           $1, $2, repeat('b', 64), $3, repeat('c', 40), repeat('d', 64), 900
+         )`,
+        [executionId, changeId, `data/csv/es/test/area-${producerId}.csv`],
+      );
+      await database.exec("reset role");
+      return executionId;
+    }
+
+    const expiredChangeId = await createApprovedChange(201);
+    const expiredExecutionId = await beginExecution(expiredChangeId, 201, 201);
+    await database.query(
+      `update producer_change_executions
+       set created_at = now() - interval '2 hours',
+           lease_expires_at = now() - interval '1 hour'
+       where id = $1`,
+      [expiredExecutionId],
+    );
+    await database.query(
+      `update producer_memberships
+       set status = 'revoked', revoked_at = now(), revoked_by_user_id = $2,
+           revocation_reason = 'test revocation'
+       where user_id = $1 and producer_id = 201`,
+      [authorId, reviewerId],
+    );
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select public.chisan_fail_producer_change_preflight_v1(
+         $1, 'conflict', 'Producer access was revoked before publication.'
+       )`,
+      [expiredChangeId],
+    );
+    await database.exec("reset role");
+
+    const leasedChangeId = await createApprovedChange(202);
+    await beginExecution(leasedChangeId, 202, 202);
+    await database.query(
+      `update producer_memberships
+       set status = 'revoked', revoked_at = now(), revoked_by_user_id = $2,
+           revocation_reason = 'test revocation'
+       where user_id = $1 and producer_id = 202`,
+      [authorId, reviewerId],
+    );
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select public.chisan_fail_producer_change_preflight_v1(
+         $1, 'conflict', 'Producer access was revoked before publication.'
+       )`,
+      [leasedChangeId],
+    );
+    await database.exec("reset role");
+
+    const materializedChangeId = await createApprovedChange(203);
+    const materializedExecutionId = await beginExecution(
+      materializedChangeId,
+      203,
+      203,
+    );
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select public.chisan_complete_producer_change_execution_v1(
+         $1, repeat('d', 64), array['nombre']::text[], false
+       )`,
+      [materializedExecutionId],
+    );
+    await database.exec("reset role");
+    await database.query(
+      `update producer_memberships
+       set status = 'revoked', revoked_at = now(), revoked_by_user_id = $2,
+           revocation_reason = 'test revocation'
+       where user_id = $1 and producer_id = 203`,
+      [authorId, reviewerId],
+    );
+    await database.exec("set role chisan_producer_change_operator");
+    await database.query(
+      `select public.chisan_fail_producer_change_preflight_v1(
+         $1, 'conflict', 'Producer access was revoked before publication.'
+       )`,
+      [materializedChangeId],
+    );
+    await database.exec("reset role");
+
+    const terminalStates = await database.query<{
+      execution_status: string;
+      producer_id: number;
+      request_status: string;
+    }>(
+      `select request.producer_id::integer as producer_id,
+              request.status::text as request_status,
+              execution.status::text as execution_status
+       from producer_change_requests as request
+       join producer_change_executions as execution
+         on execution.change_request_id = request.id
+       where request.producer_id in (201, 202, 203)
+       order by request.producer_id`,
+    );
+    assert.deepEqual(terminalStates.rows, [
+      { producer_id: 201, request_status: "conflict", execution_status: "expired" },
+      { producer_id: 202, request_status: "conflict", execution_status: "cancelled" },
+      { producer_id: 203, request_status: "conflict", execution_status: "cancelled" },
+    ]);
+
+    const draft = await database.query<{ id: string }>(
+      `insert into producer_change_requests (
+         author_user_id, country, producer_id, status, base_row_hash, base_snapshot
+       ) values ($1, 'es', 204, 'draft', repeat('a', 64), '{}'::jsonb)
+       returning id`,
+      [authorId],
+    );
+    await database.query(
+      `update producer_change_requests set status = 'conflict', failure_reason = 'revoked'
+       where id = $1`,
+      [draft.rows[0].id],
+    );
+    const closedDraft = await database.query<{ status: string }>(
+      "select status::text as status from producer_change_requests where id = $1",
+      [draft.rows[0].id],
+    );
+    assert.equal(closedDraft.rows[0]?.status, "conflict");
   } finally {
     await database.close();
   }

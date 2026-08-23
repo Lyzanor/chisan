@@ -2,11 +2,13 @@ import { sql } from "drizzle-orm";
 import {
   bigint,
   check,
+  foreignKey,
   index,
   integer,
   jsonb,
   pgEnum,
   pgTable,
+  pgView,
   primaryKey,
   text,
   timestamp,
@@ -50,6 +52,10 @@ export const producerChangeRequestStatus = pgEnum("producer_change_request_statu
   "conflict",
   "failed",
 ]);
+export const producerChangeExecutionStatus = pgEnum(
+  "producer_change_execution_status",
+  ["leased", "materialized", "finalized", "failed", "expired", "cancelled"],
+);
 export const auditActorKind = pgEnum("audit_actor_kind", ["user", "service", "system"]);
 export const webhookReceiptStatus = pgEnum("webhook_receipt_status", [
   "received",
@@ -74,7 +80,8 @@ export const users = pgTable(
     status: userStatus("status").notNull().default("active"),
     displayName: varchar("display_name", { length: 160 }),
     locale: varchar("locale", { length: 16 }),
-    // UX/onboarding preference only. Authorization comes from memberships and grants.
+    // Automatic UX state: accounts start as user and become producer on first claim.
+    // Authorization still comes only from memberships and grants.
     profileKind: userProfileKind("profile_kind").notNull().default("user"),
     // Legacy column name: this is the current review/publication acknowledgement,
     // not a versioned acceptance of legal terms.
@@ -242,6 +249,9 @@ export const producerClaims = pgTable(
     uniqueIndex("producer_claims_open_claimant_producer_uidx")
       .on(table.claimantUserId, table.country, table.producerId)
       .where(sql`${table.status} IN ('draft', 'pending', 'needs_info', 'approved')`),
+    uniqueIndex("producer_claims_approved_producer_uidx")
+      .on(table.country, table.producerId)
+      .where(sql`${table.status} = 'approved'`),
     index("producer_claims_review_queue_idx").on(table.status, table.submittedAt),
     index("producer_claims_producer_idx").on(table.country, table.producerId),
     check("producer_claims_country_check", sql`${table.country} ~ '^[a-z]{2}$'`),
@@ -348,6 +358,11 @@ export const producerChangeRequests = pgTable(
       .where(
         sql`${table.status} IN ('draft', 'submitted', 'needs_changes', 'approved', 'applying')`,
       ),
+    uniqueIndex("producer_change_requests_execution_identity_uidx").on(
+      table.id,
+      table.country,
+      table.producerId,
+    ),
     index("producer_change_requests_review_queue_idx").on(table.status, table.submittedAt),
     index("producer_change_requests_producer_idx").on(
       table.country,
@@ -371,7 +386,7 @@ export const producerChangeRequests = pgTable(
     check("producer_change_requests_lock_version_check", sql`${table.lockVersion} > 0`),
     check(
       "producer_change_requests_submission_check",
-      sql`${table.status} = 'draft' OR (${table.submittedAt} IS NOT NULL AND ${table.patch} <> '{}'::jsonb)`,
+      sql`${table.status} IN ('draft', 'withdrawn', 'conflict', 'failed') OR (${table.submittedAt} IS NOT NULL AND ${table.patch} <> '{}'::jsonb)`,
     ),
     check(
       "producer_change_requests_review_check",
@@ -384,6 +399,106 @@ export const producerChangeRequests = pgTable(
     check(
       "producer_change_requests_commit_sha_check",
       sql`${table.appliedCommitSha} IS NULL OR ${table.appliedCommitSha} ~ '^([0-9a-f]{40}|[0-9a-f]{64})$'`,
+    ),
+  ],
+);
+
+export const producerChangeExecutions = pgTable(
+  "producer_change_executions",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    changeRequestId: uuid("change_request_id")
+      .notNull()
+      .references(() => producerChangeRequests.id),
+    country: varchar("country", { length: 2 }).notNull(),
+    producerId: bigint("producer_id", { mode: "number" }).notNull(),
+    status: producerChangeExecutionStatus("status").notNull().default("leased"),
+    operatorKey: varchar("operator_key", { length: 160 }).notNull(),
+    worktreeKey: varchar("worktree_key", { length: 64 }).notNull(),
+    sourceHeadSha: varchar("source_head_sha", { length: 40 }).notNull(),
+    expectedRowHash: varchar("expected_row_hash", { length: 64 }).notNull(),
+    leaseExpiresAt: timestampWithTimezone("lease_expires_at").notNull(),
+    csvPath: varchar("csv_path", { length: 512 }).notNull(),
+    materializedAt: timestampWithTimezone("materialized_at"),
+    appliedCommitSha: varchar("applied_commit_sha", { length: 40 }),
+    finishedAt: timestampWithTimezone("finished_at"),
+    errorMessage: text("error_message"),
+    createdAt: timestampWithTimezone("created_at").notNull().defaultNow(),
+    updatedAt: timestampWithTimezone("updated_at")
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    uniqueIndex("producer_change_executions_active_request_uidx")
+      .on(table.changeRequestId)
+      .where(sql`${table.status} IN ('leased', 'materialized')`),
+    uniqueIndex("producer_change_executions_active_producer_uidx")
+      .on(table.country, table.producerId)
+      .where(sql`${table.status} IN ('leased', 'materialized')`),
+    uniqueIndex("producer_change_executions_active_csv_uidx")
+      .on(table.csvPath)
+      .where(sql`${table.status} IN ('leased', 'materialized')`),
+    foreignKey({
+      columns: [table.changeRequestId, table.country, table.producerId],
+      foreignColumns: [
+        producerChangeRequests.id,
+        producerChangeRequests.country,
+        producerChangeRequests.producerId,
+      ],
+      name: "producer_change_executions_request_identity_fk",
+    }),
+    index("producer_change_executions_request_idx").on(
+      table.changeRequestId,
+      table.createdAt,
+    ),
+    index("producer_change_executions_operator_idx").on(
+      table.operatorKey,
+      table.status,
+      table.createdAt,
+    ),
+    index("producer_change_executions_lease_idx")
+      .on(table.leaseExpiresAt)
+      .where(sql`${table.status} = 'leased'`),
+    check(
+      "producer_change_executions_country_check",
+      sql`${table.country} ~ '^[a-z]{2}$'`,
+    ),
+    check(
+      "producer_change_executions_producer_id_check",
+      sql`${table.producerId} BETWEEN 1 AND 9007199254740991`,
+    ),
+    check(
+      "producer_change_executions_operator_key_check",
+      sql`length(btrim(${table.operatorKey})) > 0`,
+    ),
+    check(
+      "producer_change_executions_worktree_key_check",
+      sql`${table.worktreeKey} ~ '^[0-9a-f]{64}$'`,
+    ),
+    check(
+      "producer_change_executions_source_head_check",
+      sql`${table.sourceHeadSha} ~ '^[0-9a-f]{40}$'`,
+    ),
+    check(
+      "producer_change_executions_expected_hash_check",
+      sql`${table.expectedRowHash} ~ '^[0-9a-f]{64}$'`,
+    ),
+    check(
+      "producer_change_executions_commit_sha_check",
+      sql`${table.appliedCommitSha} IS NULL OR ${table.appliedCommitSha} ~ '^[0-9a-f]{40}$'`,
+    ),
+    check(
+      "producer_change_executions_csv_path_check",
+      sql`${table.csvPath} ~ ('^data/csv/' || ${table.country} || '/[^/\\\\]+/[^/\\\\]+\\.csv$') AND position('..' in ${table.csvPath}) = 0`,
+    ),
+    check(
+      "producer_change_executions_lease_window_check",
+      sql`${table.leaseExpiresAt} > ${table.createdAt}`,
+    ),
+    check(
+      "producer_change_executions_lifecycle_check",
+      sql`(${table.status} = 'leased' AND ${table.materializedAt} IS NULL AND ${table.appliedCommitSha} IS NULL AND ${table.finishedAt} IS NULL AND ${table.errorMessage} IS NULL) OR (${table.status} = 'materialized' AND ${table.materializedAt} IS NOT NULL AND ${table.appliedCommitSha} IS NULL AND ${table.finishedAt} IS NULL AND ${table.errorMessage} IS NULL) OR (${table.status} = 'finalized' AND ${table.materializedAt} IS NOT NULL AND ${table.appliedCommitSha} IS NOT NULL AND ${table.finishedAt} IS NOT NULL AND ${table.errorMessage} IS NULL) OR (${table.status} IN ('failed', 'expired', 'cancelled') AND ${table.appliedCommitSha} IS NULL AND ${table.finishedAt} IS NOT NULL AND ${table.errorMessage} IS NOT NULL)`,
     ),
   ],
 );
@@ -423,6 +538,25 @@ export const auditEvents = pgTable(
       sql`(${table.actorKind} = 'user' AND ${table.actorUserId} IS NOT NULL AND ${table.actorKey} IS NULL) OR (${table.actorKind} IN ('service', 'system') AND ${table.actorUserId} IS NULL AND ${table.actorKey} IS NOT NULL)`,
     ),
   ],
+);
+
+export const producerChangeRequestAuditEvents = pgView(
+  "producer_change_request_audit_events",
+).as((query) =>
+  query
+    .select({
+      id: auditEvents.id,
+      actorKind: auditEvents.actorKind,
+      actorUserId: auditEvents.actorUserId,
+      actorKey: auditEvents.actorKey,
+      action: auditEvents.action,
+      targetType: auditEvents.targetType,
+      targetId: auditEvents.targetId,
+      metadata: auditEvents.metadata,
+      occurredAt: auditEvents.occurredAt,
+    })
+    .from(auditEvents)
+    .where(sql`${auditEvents.targetType} = 'producer_change_request'`),
 );
 
 export const webhookReceipts = pgTable(
@@ -530,4 +664,5 @@ export type Favorite = typeof favorites.$inferSelect;
 export type ProducerClaim = typeof producerClaims.$inferSelect;
 export type ProducerMembership = typeof producerMemberships.$inferSelect;
 export type ProducerChangeRequest = typeof producerChangeRequests.$inferSelect;
+export type ProducerChangeExecution = typeof producerChangeExecutions.$inferSelect;
 export type Entitlement = typeof entitlements.$inferSelect;

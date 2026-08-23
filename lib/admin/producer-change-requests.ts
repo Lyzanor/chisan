@@ -30,15 +30,18 @@ import {
 } from "@/lib/csv-catalog";
 import type { Database } from "@/lib/db";
 import {
-  auditEvents,
+  producerChangeRequestAuditEvents,
+  producerChangeExecutions,
   producerChangeRequests,
   users,
+  type ProducerChangeExecution,
   type ProducerChangeRequest,
 } from "@/lib/db/schema";
 
-export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 1;
+export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 2;
 export const ADMIN_PRODUCER_CHANGE_PAGE_SIZE = 25;
 export const ADMIN_PRODUCER_CHANGE_MAX_PAGE_SIZE = 100;
+export const PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS = 24 * 60 * 60 * 1_000;
 
 const authorUsers = alias(users, "producer_change_authors");
 const reviewerUsers = alias(users, "producer_change_reviewers");
@@ -118,6 +121,24 @@ export type AdminProducerChangeFieldDiff = {
   current: string | null;
 };
 
+export type AdminProducerChangeExecution = Pick<
+  ProducerChangeExecution,
+  | "id"
+  | "status"
+  | "operatorKey"
+  | "worktreeKey"
+  | "sourceHeadSha"
+  | "expectedRowHash"
+  | "leaseExpiresAt"
+  | "csvPath"
+  | "materializedAt"
+  | "appliedCommitSha"
+  | "finishedAt"
+  | "errorMessage"
+  | "createdAt"
+  | "updatedAt"
+>;
+
 export type ProducerChangeCatalogState =
   | "missing"
   | "matches_base"
@@ -126,6 +147,7 @@ export type ProducerChangeCatalogState =
 
 export type AdminProducerChangeDetail = {
   change: ProducerChangeRequest;
+  execution: AdminProducerChangeExecution | null;
   producer: LocatedProducerCsvRow | null;
   producerName: string;
   publicPath: string | null;
@@ -326,28 +348,61 @@ export async function queryAdminProducerChangeById(
     .limit(1);
   if (!row) return null;
 
-  const [producer, events] = await Promise.all([
+  const [producer, events, [execution]] = await Promise.all([
     findProducerById(row.change.country, row.change.producerId),
     database
       .select({
-        id: auditEvents.id,
-        actorKind: auditEvents.actorKind,
-        actorUserId: auditEvents.actorUserId,
-        actorKey: auditEvents.actorKey,
+        id: producerChangeRequestAuditEvents.id,
+        actorKind: producerChangeRequestAuditEvents.actorKind,
+        actorUserId: producerChangeRequestAuditEvents.actorUserId,
+        actorKey: producerChangeRequestAuditEvents.actorKey,
         actorDisplayName: auditActorUsers.displayName,
-        action: auditEvents.action,
-        metadata: auditEvents.metadata,
-        occurredAt: auditEvents.occurredAt,
+        action: producerChangeRequestAuditEvents.action,
+        metadata: producerChangeRequestAuditEvents.metadata,
+        occurredAt: producerChangeRequestAuditEvents.occurredAt,
       })
-      .from(auditEvents)
-      .leftJoin(auditActorUsers, eq(auditEvents.actorUserId, auditActorUsers.id))
+      .from(producerChangeRequestAuditEvents)
+      .leftJoin(
+        auditActorUsers,
+        eq(producerChangeRequestAuditEvents.actorUserId, auditActorUsers.id),
+      )
       .where(
         and(
-          eq(auditEvents.targetType, "producer_change_request"),
-          eq(auditEvents.targetId, row.change.id),
+          eq(producerChangeRequestAuditEvents.targetType, "producer_change_request"),
+          eq(producerChangeRequestAuditEvents.targetId, row.change.id),
         ),
       )
-      .orderBy(asc(auditEvents.occurredAt), asc(auditEvents.id)),
+      .orderBy(
+        asc(producerChangeRequestAuditEvents.occurredAt),
+        asc(producerChangeRequestAuditEvents.id),
+      ),
+    database
+      .select({
+        id: producerChangeExecutions.id,
+        status: producerChangeExecutions.status,
+        operatorKey: producerChangeExecutions.operatorKey,
+        worktreeKey: producerChangeExecutions.worktreeKey,
+        sourceHeadSha: producerChangeExecutions.sourceHeadSha,
+        expectedRowHash: producerChangeExecutions.expectedRowHash,
+        leaseExpiresAt: producerChangeExecutions.leaseExpiresAt,
+        csvPath: producerChangeExecutions.csvPath,
+        materializedAt: producerChangeExecutions.materializedAt,
+        appliedCommitSha: producerChangeExecutions.appliedCommitSha,
+        finishedAt: producerChangeExecutions.finishedAt,
+        errorMessage: producerChangeExecutions.errorMessage,
+        createdAt: producerChangeExecutions.createdAt,
+        updatedAt: producerChangeExecutions.updatedAt,
+      })
+      .from(producerChangeExecutions)
+      .where(eq(producerChangeExecutions.changeRequestId, row.change.id))
+      .orderBy(
+        desc(
+          sql<number>`CASE WHEN ${producerChangeExecutions.status} IN ('materialized', 'leased') THEN 1 ELSE 0 END`,
+        ),
+        desc(producerChangeExecutions.createdAt),
+        desc(producerChangeExecutions.id),
+      )
+      .limit(1),
   ]);
   const requestedHash = hashProducerFields(requestedProducerFields(row.change));
   const currentHash = producer ? hashProducerFields(producer.fields) : null;
@@ -361,6 +416,7 @@ export async function queryAdminProducerChangeById(
 
   return {
     change: row.change,
+    execution: execution ?? null,
     producer,
     producerName:
       producer?.name || row.change.baseSnapshot.nombre || `Producer #${row.change.producerId}`,
@@ -377,6 +433,14 @@ export async function queryAdminProducerChangeById(
 
 function iso(value: Date | null): string | null {
   return value?.toISOString() ?? null;
+}
+
+export function producerChangeRecoveryEligibleAt(
+  materializedAt: Date | null,
+): Date | null {
+  return materializedAt
+    ? new Date(materializedAt.getTime() + PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS)
+    : null;
 }
 
 export function serializeProducerChangeListItem(item: AdminProducerChangeListItem) {
@@ -424,10 +488,16 @@ const SAFE_AUDIT_METADATA_KEYS = new Set([
   "commitSha",
   "country",
   "csvPath",
+  "executionId",
   "fields",
+  "observedRowHash",
+  "observedState",
+  "previousExecutionId",
+  "previousOperator",
   "producerHash",
   "producerId",
   "reason",
+  "sourceHeadSha",
 ]);
 
 function safeAuditMetadata(metadata: Record<string, unknown>): Record<string, unknown> {
@@ -473,6 +543,27 @@ export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail)
     },
     diff: detail.diff,
     catalog: detail.catalog,
+    execution: detail.execution
+      ? {
+          id: detail.execution.id,
+          status: detail.execution.status,
+          operatorKey: detail.execution.operatorKey,
+          worktreeKey: detail.execution.worktreeKey,
+          sourceHeadSha: detail.execution.sourceHeadSha,
+          expectedRowHash: detail.execution.expectedRowHash,
+          leaseExpiresAt: iso(detail.execution.leaseExpiresAt),
+          csvPath: detail.execution.csvPath,
+          materializedAt: iso(detail.execution.materializedAt),
+          recoveryEligibleAt: iso(
+            producerChangeRecoveryEligibleAt(detail.execution.materializedAt),
+          ),
+          appliedCommitSha: detail.execution.appliedCommitSha,
+          finishedAt: iso(detail.execution.finishedAt),
+          errorMessage: detail.execution.errorMessage,
+          createdAt: iso(detail.execution.createdAt),
+          updatedAt: iso(detail.execution.updatedAt),
+        }
+      : null,
     audit: detail.audit.map((event) => ({
       id: event.id,
       action: event.action,
@@ -493,6 +584,10 @@ export function serializeProducerChangeDetail(detail: AdminProducerChangeDetail)
       finalizeTemplate:
         detail.change.status === "applying"
           ? `npx pnpm producer:change finalize ${detail.change.id} <full-commit-sha>`
+          : null,
+      recoverTemplate:
+        detail.change.status === "applying" && detail.execution?.status === "materialized"
+          ? `npx pnpm producer:change recover ${detail.change.id} ${detail.execution.id} --reason "<documented reason>"`
           : null,
     },
   };

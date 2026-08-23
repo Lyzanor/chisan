@@ -70,6 +70,89 @@ GitHub triggers the Vercel Production build from `main`; do not create a second
 manual deployment for the same commit. The build asserts migration compatibility
 and fails closed when accounts are enabled against an outdated schema.
 
+The current account runtime and migration URLs may use different pooled/direct
+endpoints, but they must authenticate as the same schema-owning PostgreSQL role.
+`db:assert-current` now also proves that the runtime can select and update the
+execution columns needed to cancel a fence atomically during membership
+revocation. Do not switch `DATABASE_URL` to a distinct SQL identity until a
+dedicated account-runtime role migration covers the full existing account DML;
+the narrow agent roles below are never a runtime substitute.
+
+## Neon access for producer-change agents
+
+Agent access is database authority, not an application environment variable.
+Never add `CHISAN_ADMIN_READ_DATABASE_URL` or
+`CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL` or
+`CHISAN_PRODUCER_CHANGE_RECOVERY_DATABASE_URL` to Vercel. Keep the application
+runtime role and `DATABASE_MIGRATION_URL` separate from all agent identities.
+
+The stable `NOLOGIN` roles, explicit grants, durable execution table and
+versioned workflow functions are installed by the account migrations. Create
+rotating `LOGIN` identities only through SQL: roles created through Neon Console,
+CLI or API receive `neon_superuser` and are unsuitable for least-privilege
+agents. Provision one principal per runner or person after the migration is
+current:
+
+```bash
+# Supply the direct Neon owner URL only to this process or this ignored 0600 file.
+# .env.migration.local
+# DATABASE_MIGRATION_URL=postgresql://...
+
+# Provision only the capability this runner needs.
+npx pnpm producer:access provision read codex_reader_a
+npx pnpm producer:access provision operator codex_operator_a
+npx pnpm producer:change doctor --access read --json
+npx pnpm producer:change doctor --access operator --json
+
+# Recovery is an incident-only staff authority. Provision it to a separate
+# principal and secret context, never to a normal operator runner.
+npx pnpm producer:access provision recovery staff_recovery_a
+npx pnpm producer:change doctor --access recovery --json
+```
+
+Each provisioning command creates or rotates only
+`chisan_agent_<capability>_<principal>`, proves it has no administrative or
+direct table-write privileges, and writes only that capability's ignored env
+file with mode `0600`. The migration file must also be a regular, non-symlink
+file owned by the current operating-system user with no group or world access.
+Provisioning rejects a pre-existing role unless it is already the exact managed
+login, and it never prints a connection string. Remove the migration credential
+from the workstation after the operation unless an approved secret manager
+injects it on demand.
+
+Filesystem separation is part of the permission boundary. A workspace that
+contains `.env.producer-change-operator.local` has operator authority even if an
+agent normally runs only `list` or `show`. Reader-only agents must run in a
+workspace or secret-injection context that does not contain the operator file.
+The recovery file is stronger incident authority and belongs in a separate,
+staff-supervised workspace or one-shot secret-injection context; never colocate
+it with a routine operator agent.
+
+Recovery is eligible only after PostgreSQL's 24-hour quarantine. Use `/admin` or
+a reader context to confirm the exact request and execution, verify that the
+original worktree is abandoned, then inject only the recovery credential into
+the supervised staff workspace and run:
+
+```bash
+npx pnpm producer:change recover <change-request-uuid> <execution-uuid> \
+  --reason "Original operator worktree was retired after incident review."
+```
+
+The command requires a clean, tracked and audited CSV at the current Git `HEAD`.
+It accepts only the exact reviewed base or approved producer hash, cancels the
+old fence and returns the request to `approved`. Remove the recovery secret,
+switch to a normal operator context, and run `materialize` and `finalize`; the
+recovery role cannot perform either operation.
+
+For rotation without interrupting work, provision a new principal suffix for
+one capability, verify its matching doctor, move that runner to the new injected
+secret or env file, confirm no active `producer_change_executions` belongs to an
+old operator login, then revoke and drop only the retired login through the
+migration owner. Stable group roles and workflow functions do not rotate.
+Protect the Neon Production branch before enabling Preview branching; otherwise
+child branches may copy Production role passwords. Every Preview worker still
+requires its own isolated branch and credentials.
+
 ## Production smoke check
 
 Use a real authorized account only where authentication is required. Do not

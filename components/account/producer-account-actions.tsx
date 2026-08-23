@@ -39,20 +39,39 @@ async function renderProducerAccountActions({
   returnTo,
 }: ProducerAccountActionsProps) {
   const safeReturnTo = safeReturnPath(returnTo, "/");
-  const account = await getCurrentAccount();
+  const database = getDatabase();
+  const [account, ownerRows] = await Promise.all([
+    getCurrentAccount(),
+    database
+      .select({ userId: producerMemberships.userId })
+      .from(producerMemberships)
+      .where(
+        and(
+          eq(producerMemberships.country, country),
+          eq(producerMemberships.producerId, producerId),
+          eq(producerMemberships.role, "owner"),
+          eq(producerMemberships.status, "active"),
+        ),
+      )
+      .limit(1),
+  ]);
+  const activeOwner = ownerRows[0];
 
   if (!account) {
     const redirectQuery = encodeURIComponent(safeReturnTo);
     return (
       <div className="producer-account-actions">
-        <span>Save this producer or claim ownership.</span>
+        <span>
+          {activeOwner
+            ? "This producer's ownership is verified."
+            : "Save this producer or claim ownership."}
+        </span>
         <Link href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${redirectQuery}`}>Sign in</Link>
         <Link href={`${ACCOUNT_ROUTES.signUp}?redirect_url=${redirectQuery}`}>Create account</Link>
       </div>
     );
   }
 
-  const database = getDatabase();
   const [[favorite], [membership], [claim]] = await Promise.all([
     database
       .select({ userId: favorites.userId })
@@ -101,6 +120,8 @@ async function renderProducerAccountActions({
       </form>
       {membership ? (
         <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>Edit my profile</Link>
+      ) : activeOwner ? (
+        <span>Ownership verified</span>
       ) : claim ? (
         <Link href="/cuenta/reclamaciones">View ownership claim</Link>
       ) : (

@@ -1,6 +1,16 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
+import {
+  chmod,
+  mkdtemp,
+  mkdir,
+  readFile,
+  readdir,
+  rm,
+  stat,
+  symlink,
+  writeFile,
+} from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -13,13 +23,25 @@ import {
 import {
   applyProducerPatchToCsv,
   assertCommitContainsProducerState,
+  assertFinalizationGitState,
   assertGitPathClean,
   atomicWriteUtf8,
+  canResumeExactDirtyMaterialization,
   findProducerStateInCommit,
   parseProducerChangeCliArguments,
   readProducerFieldsFromCsv,
   resolveExpectedProducerChange,
 } from "./materialize-producer-change";
+import {
+  producerChangeDatabaseSource,
+  producerChangeDatabaseUrlFromEnvironment,
+} from "./producer-change-access";
+import {
+  assertPrivateCredentialFile,
+  parseProducerChangeAccessProvision,
+  producerChangeLoginRoleNames,
+  producerChangeRoleConnectionString,
+} from "./provision-producer-change-access";
 
 function git(cwd: string, args: string[]): string {
   return execFileSync("git", args, { cwd, encoding: "utf8" }).trim();
@@ -58,21 +80,161 @@ test("producer-change CLI parses list filters independently of option order", ()
   });
 });
 
-test("producer-change CLI parses show and preserves materialize/finalize arguments", () => {
+test("producer-change CLI strictly parses show, materialize and finalize", () => {
   const changeId = "a92cc0b4-a726-4dfa-a28a-28f543211887";
+  const executionId = "d67c2404-4c26-45b8-8bb6-0482a8dca6a3";
 
   assert.deepEqual(parseProducerChangeCliArguments(["show", "--json", changeId]), {
     command: "show",
     changeId,
     json: true,
   });
+  assert.deepEqual(parseProducerChangeCliArguments(["materialize", changeId]), {
+    command: "materialize",
+    changeId,
+  });
   assert.deepEqual(
-    parseProducerChangeCliArguments(["materialize", changeId, "ignored-as-before"]),
-    { command: "materialize", changeId },
+    parseProducerChangeCliArguments([
+      "recover",
+      changeId,
+      executionId,
+      "--reason",
+      "The original controlled worktree was retired.",
+    ]),
+    {
+      command: "recover",
+      changeId,
+      executionId,
+      reason: "The original controlled worktree was retired.",
+    },
   );
   assert.deepEqual(
     parseProducerChangeCliArguments(["finalize", changeId, "a".repeat(40)]),
     { command: "finalize", changeId, commitSha: "a".repeat(40) },
+  );
+  assert.deepEqual(
+    parseProducerChangeCliArguments(["doctor", "--json", "--access", "operator"]),
+    { command: "doctor", access: "operator", json: true },
+  );
+  assert.deepEqual(
+    parseProducerChangeCliArguments(["doctor", "--access", "recovery"]),
+    { command: "doctor", access: "recovery", json: false },
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["materialize", changeId, "extra"]),
+    /Usage:/,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["recover", changeId, executionId]),
+    /Usage:/,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["materialize", "not-a-uuid"]),
+    /valid change-request UUID/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["finalize", changeId, "abc123"]),
+    /full 40-character Git commit SHA/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["doctor", "--access", "writer"]),
+    /read.*operator/i,
+  );
+});
+
+test("producer-change commands select isolated credentials with no generic fallback", () => {
+  assert.deepEqual(producerChangeDatabaseSource("list"), {
+    access: "read",
+    environmentFile: ".env.admin-read.local",
+    variable: "CHISAN_ADMIN_READ_DATABASE_URL",
+  });
+  assert.deepEqual(producerChangeDatabaseSource("finalize"), {
+    access: "operator",
+    environmentFile: ".env.producer-change-operator.local",
+    variable: "CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL",
+  });
+  assert.deepEqual(producerChangeDatabaseSource("recover"), {
+    access: "recovery",
+    environmentFile: ".env.producer-change-recovery.local",
+    variable: "CHISAN_PRODUCER_CHANGE_RECOVERY_DATABASE_URL",
+  });
+  assert.equal(
+    producerChangeDatabaseUrlFromEnvironment("show", {
+      CHISAN_ADMIN_READ_DATABASE_URL: "  postgres://reader.example/chisan  ",
+      DATABASE_URL: "postgres://application.example/chisan",
+    }),
+    "postgres://reader.example/chisan",
+  );
+  assert.throws(
+    () =>
+      producerChangeDatabaseUrlFromEnvironment("materialize", {
+        DATABASE_URL: "postgres://application.example/chisan",
+        DATABASE_MIGRATION_URL: "postgres://migration.example/chisan",
+      }),
+    /CHISAN_PRODUCER_CHANGE_OPERATOR_DATABASE_URL.*intentionally ignored/i,
+  );
+});
+
+test("operator access provisioning derives isolated SQL identities and URLs", () => {
+  assert.deepEqual(
+    parseProducerChangeAccessProvision(["provision", "operator", "codex_a"]),
+    { access: "operator", principal: "codex_a" },
+  );
+  assert.deepEqual(producerChangeLoginRoleNames("codex_a"), {
+    read: "chisan_agent_read_codex_a",
+    operator: "chisan_agent_operator_codex_a",
+    recovery: "chisan_agent_recovery_codex_a",
+  });
+  assert.deepEqual(
+    parseProducerChangeAccessProvision(["provision", "recovery", "staff_a"]),
+    { access: "recovery", principal: "staff_a" },
+  );
+  assert.throws(
+    () => parseProducerChangeAccessProvision(["provision", "read", "Codex A"]),
+    /lowercase letters/i,
+  );
+  assert.throws(
+    () => parseProducerChangeAccessProvision(["provision", "codex_a"]),
+    /read\|operator\|recovery/i,
+  );
+
+  const connection = producerChangeRoleConnectionString(
+    new URL("postgres://owner:old@ep-example.eu.neon.tech/neondb?sslmode=require"),
+    "chisan_agent_read_codex_a",
+    "new-secret",
+  );
+  const parsed = new URL(connection);
+  assert.equal(parsed.username, "chisan_agent_read_codex_a");
+  assert.equal(parsed.password, "new-secret");
+  assert.equal(parsed.hostname, "ep-example.eu.neon.tech");
+  assert.equal(parsed.searchParams.get("sslmode"), "require");
+  assert.equal(
+    parsed.searchParams.get("application_name"),
+    "chisan-producer-change-cli",
+  );
+});
+
+test("migration credential files must be private regular files", async (context) => {
+  const directory = await mkdtemp(path.join(tmpdir(), "chisan-access-secret-"));
+  context.after(async () => rm(directory, { recursive: true, force: true }));
+  const credential = path.join(directory, ".env.migration.local");
+  await writeFile(credential, "DATABASE_MIGRATION_URL=postgres://example\n", {
+    mode: 0o600,
+  });
+  assert.equal(await assertPrivateCredentialFile(credential), true);
+
+  await chmod(credential, 0o644);
+  await assert.rejects(() => assertPrivateCredentialFile(credential), /mode 0600/i);
+  await chmod(credential, 0o600);
+  const linkedCredential = path.join(directory, ".env.link.local");
+  await symlink(credential, linkedCredential);
+  await assert.rejects(
+    () => assertPrivateCredentialFile(linkedCredential),
+    /regular file, not a symlink/i,
+  );
+  assert.equal(
+    await assertPrivateCredentialFile(path.join(directory, ".env.missing.local")),
+    false,
   );
 });
 
@@ -177,6 +339,51 @@ test("atomicWriteUtf8 swaps contents and preserves permissions", async (context)
   assert.deepEqual(await readdir(directory), ["area.csv"]);
 });
 
+test("an exact materialized dirty write can recover its completion receipt", () => {
+  const now = Date.now();
+  const execution = {
+    id: "00000000-0000-4000-8000-000000000301",
+    status: "materialized" as const,
+    operatorKey: "chisan_agent_operator_codex_a",
+    sameOperator: true,
+    worktreeKey: "b".repeat(64),
+    sourceHeadSha: "c".repeat(40),
+    expectedRowHash: "d".repeat(64),
+    leaseExpiresAt: new Date(now - 60_000),
+    csvPath: "data/csv/es/test/area.csv",
+  };
+  assert.equal(
+    canResumeExactDirtyMaterialization(
+      execution,
+      { worktreeKey: "b".repeat(64), sourceHeadSha: "c".repeat(40) },
+      "d".repeat(64),
+      "data/csv/es/test/area.csv",
+      now,
+    ),
+    true,
+  );
+  assert.equal(
+    canResumeExactDirtyMaterialization(
+      { ...execution, sameOperator: false },
+      { worktreeKey: "b".repeat(64), sourceHeadSha: "c".repeat(40) },
+      "d".repeat(64),
+      "data/csv/es/test/area.csv",
+      now,
+    ),
+    false,
+  );
+  assert.equal(
+    canResumeExactDirtyMaterialization(
+      { ...execution, status: "leased" },
+      { worktreeKey: "b".repeat(64), sourceHeadSha: "c".repeat(40) },
+      "d".repeat(64),
+      "data/csv/es/test/area.csv",
+      now,
+    ),
+    false,
+  );
+});
+
 test("finalize validates the exact commit blob and requires it to be in HEAD history", async (context) => {
   const repository = await mkdtemp(path.join(tmpdir(), "chisan-materializer-git-"));
   context.after(async () => rm(repository, { recursive: true, force: true }));
@@ -188,8 +395,10 @@ test("finalize validates the exact commit blob and requires it to be in HEAD his
   git(repository, ["config", "user.name", "Chisan test"]);
   git(repository, ["config", "user.email", "chisan-test@example.invalid"]);
 
-  const baseCsv = "nombre,descripcion,producer_id\nBase,old,7\n";
-  const expectedCsv = "nombre,descripcion,producer_id\nBase,new,7\n";
+  const baseCsv =
+    "nombre,descripcion,producer_id\nBase,old,7\nNeighbor,stable,8\n";
+  const expectedCsv =
+    "nombre,descripcion,producer_id\nBase,new,7\nNeighbor,stable,8\n";
   await writeFile(csvPath, baseCsv, "utf8");
   git(repository, ["add", relativeCsvPath]);
   git(repository, ["commit", "-qm", "base"]);
@@ -217,6 +426,17 @@ test("finalize validates the exact commit blob and requires it to be in HEAD his
     repository,
   );
   assert.equal(commitState.fields.descripcion, "new");
+  assert.equal(
+    assertFinalizationGitState(
+      materializingCommit,
+      baseCommit,
+      relativeCsvPath,
+      7,
+      expectedHash,
+      repository,
+    ).headCommit,
+    materializingCommit,
+  );
   const locatedState = findProducerStateInCommit(
     materializingCommit,
     "es",
@@ -264,6 +484,76 @@ test("finalize validates the exact commit blob and requires it to be in HEAD his
     /does not modify the producer CSV/i,
   );
 
+  assert.equal(
+    assertFinalizationGitState(
+      materializingCommit,
+      baseCommit,
+      relativeCsvPath,
+      7,
+      expectedHash,
+      repository,
+    ).headCommit,
+    unrelatedCommit,
+  );
+
+  const unrelatedSameCsv =
+    "nombre,descripcion,producer_id\nBase,new,7\nNeighbor,changed,8\n";
+  await writeFile(csvPath, unrelatedSameCsv, "utf8");
+  git(repository, ["add", relativeCsvPath]);
+  git(repository, ["commit", "-qm", "change neighboring producer"]);
+  const neighboringCommit = git(repository, ["rev-parse", "HEAD"]);
+  assert.doesNotThrow(() =>
+    assertCommitContainsProducerState(
+      neighboringCommit,
+      relativeCsvPath,
+      7,
+      expectedHash,
+      repository,
+    ),
+  );
+  assert.throws(
+    () =>
+      assertFinalizationGitState(
+        neighboringCommit,
+        baseCommit,
+        relativeCsvPath,
+        7,
+        expectedHash,
+        repository,
+      ),
+    /did not introduce the approved producer state/i,
+  );
+
+  await writeFile(csvPath, baseCsv, "utf8");
+  git(repository, ["add", relativeCsvPath]);
+  git(repository, ["commit", "-qm", "revert producer materialization"]);
+  assert.throws(
+    () =>
+      assertFinalizationGitState(
+        materializingCommit,
+        baseCommit,
+        relativeCsvPath,
+        7,
+        expectedHash,
+        repository,
+      ),
+    /does not match the approved patch/i,
+  );
+  await writeFile(csvPath, expectedCsv, "utf8");
+  git(repository, ["add", relativeCsvPath]);
+  git(repository, ["commit", "-qm", "restore producer materialization"]);
+  const recoveredSourceHead = git(repository, ["rev-parse", "HEAD"]);
+  assert.doesNotThrow(() =>
+    assertFinalizationGitState(
+      materializingCommit,
+      recoveredSourceHead,
+      relativeCsvPath,
+      7,
+      expectedHash,
+      repository,
+    ),
+  );
+
   git(repository, ["switch", "-q", "-c", "side", baseCommit]);
   await writeFile(csvPath, expectedCsv, "utf8");
   git(repository, ["add", relativeCsvPath]);
@@ -280,5 +570,17 @@ test("finalize validates the exact commit blob and requires it to be in HEAD his
         repository,
       ),
     /not an ancestor/i,
+  );
+  assert.throws(
+    () =>
+      assertFinalizationGitState(
+        materializingCommit,
+        sideCommit,
+        relativeCsvPath,
+        7,
+        expectedHash,
+        repository,
+      ),
+    /no longer descends from the execution source HEAD/i,
   );
 });

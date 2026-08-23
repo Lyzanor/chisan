@@ -1,6 +1,4 @@
 import { z } from "zod";
-
-export const profileKindSchema = z.enum(["user", "producer"]);
 export const claimMethodSchema = z.enum([
   "business_email",
   "website",
