@@ -24,6 +24,14 @@ import {
   type ProducerPatch,
   validateProducerProposal,
 } from "../lib/accounts/producer-fields";
+import {
+  PRODUCER_CHANGE_AGENT_SCHEMA_VERSION,
+  normalizeAdminProducerChangeListOptions,
+  queryAdminProducerChangeById,
+  queryAdminProducerChanges,
+  serializeProducerChangeDetail,
+  serializeProducerChangeListItem,
+} from "../lib/admin/producer-change-requests";
 import * as databaseSchema from "../lib/db/schema";
 import {
   auditEvents,
@@ -66,6 +74,132 @@ export type ExpectedProducerChange = {
 type MaterializeOutcome =
   | { ok: true; message: string }
   | { ok: false; error: Error };
+
+export type ProducerChangeCliArguments =
+  | {
+      command: "list";
+      status?: string;
+      query?: string;
+      limit?: number;
+      page?: number;
+      json: boolean;
+    }
+  | { command: "show"; changeId: string; json: boolean }
+  | { command: "materialize"; changeId: string }
+  | { command: "finalize"; changeId: string; commitSha?: string };
+
+const CLI_USAGE =
+  "Usage: pnpm producer:change materialize <change-id> | finalize <change-id> <commit-sha>\n" +
+  "       pnpm producer:change list [--status <view-or-status>] [--query <text>] [--limit <n>] [--page <n>] [--json]\n" +
+  "       pnpm producer:change show <change-id> [--json]";
+
+const CHANGE_REQUEST_ID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+function parsePositiveIntegerOption(flag: string, value: string | undefined): number {
+  if (!value || !/^[1-9][0-9]*$/.test(value)) {
+    throw new Error(`${flag} requires a positive integer.`);
+  }
+  const parsed = Number(value);
+  if (!Number.isSafeInteger(parsed)) {
+    throw new Error(`${flag} requires a positive safe integer.`);
+  }
+  return parsed;
+}
+
+/** Parses CLI tokens without reading environment variables or opening external resources. */
+export function parseProducerChangeCliArguments(
+  argv: readonly string[],
+): ProducerChangeCliArguments {
+  const [command, ...tokens] = argv;
+  if (command === "materialize" || command === "finalize") {
+    const [changeId, commitSha] = tokens;
+    if (!changeId) throw new Error(CLI_USAGE);
+    return command === "materialize"
+      ? { command, changeId }
+      : { command, changeId, commitSha };
+  }
+
+  if (command === "show") {
+    let changeId: string | undefined;
+    let json = false;
+    for (const token of tokens) {
+      if (token === "--json") {
+        if (json) throw new Error("--json may only be specified once.");
+        json = true;
+      } else if (token.startsWith("--")) {
+        throw new Error(`Unknown show option '${token}'.`);
+      } else if (changeId) {
+        throw new Error("Show accepts exactly one change-request UUID.");
+      } else {
+        changeId = token;
+      }
+    }
+    if (!changeId) throw new Error(CLI_USAGE);
+    if (!CHANGE_REQUEST_ID_PATTERN.test(changeId)) {
+      throw new Error("Show requires a valid change-request UUID.");
+    }
+    return { command, changeId, json };
+  }
+
+  if (command === "list") {
+    let status: string | undefined;
+    let query: string | undefined;
+    let limit: number | undefined;
+    let page: number | undefined;
+    let json = false;
+    const seen = new Set<string>();
+
+    for (let index = 0; index < tokens.length; index += 1) {
+      const token = tokens[index];
+      if (!token.startsWith("--")) {
+        throw new Error(`Unexpected list argument '${token}'.`);
+      }
+      if (![
+        "--status",
+        "--query",
+        "--limit",
+        "--page",
+        "--json",
+      ].includes(token)) {
+        throw new Error(`Unknown list option '${token}'.`);
+      }
+      if (seen.has(token)) throw new Error(`${token} may only be specified once.`);
+      seen.add(token);
+
+      if (token === "--json") {
+        json = true;
+        continue;
+      }
+
+      const value = tokens[index + 1];
+      if (value === undefined || value.startsWith("--")) {
+        throw new Error(`${token} requires a value.`);
+      }
+      index += 1;
+      if (token === "--status") {
+        const normalized = value.trim().toLowerCase();
+        const selection = normalizeAdminProducerChangeListOptions({
+          status: normalized,
+        }).selection;
+        if (!normalized || selection.key !== normalized) {
+          throw new Error(`Unknown producer-change status or view '${value}'.`);
+        }
+        status = normalized;
+      } else if (token === "--query") {
+        query = value;
+      } else if (token === "--limit") {
+        limit = parsePositiveIntegerOption(token, value);
+      } else {
+        page = parsePositiveIntegerOption(token, value);
+      }
+    }
+
+    return { command, status, query, limit, page, json };
+  }
+
+  throw new Error(CLI_USAGE);
+}
 
 class ProducerCsvRowNotFoundError extends Error {}
 
@@ -632,12 +766,13 @@ async function runCli(): Promise<void> {
     }
   }
 
-  const [command, changeId, commitSha] = process.argv.slice(2);
-  if (!command || !changeId || !["materialize", "finalize"].includes(command)) {
-    throw new Error(
-      "Usage: pnpm producer:change materialize <change-id> | finalize <change-id> <commit-sha>",
-    );
-  }
+  const cliArguments = parseProducerChangeCliArguments(process.argv.slice(2));
+  const { command } = cliArguments;
+  const changeId =
+    command === "show" || command === "materialize" || command === "finalize"
+      ? cliArguments.changeId
+      : "";
+  const commitSha = command === "finalize" ? cliArguments.commitSha : undefined;
 
   const connectionString = process.env.DATABASE_URL?.trim();
   if (!connectionString) {
@@ -661,6 +796,106 @@ async function runCli(): Promise<void> {
       .limit(1);
     if (!change) throw new Error(`Change request '${id}' was not found.`);
     return change;
+  }
+
+  async function list(): Promise<void> {
+    if (cliArguments.command !== "list") {
+      throw new Error("Internal CLI command mismatch.");
+    }
+    const result = await queryAdminProducerChanges(database, {
+      status: cliArguments.status,
+      query: cliArguments.query,
+      page: cliArguments.page,
+      pageSize: cliArguments.limit,
+    });
+    const data = result.items.map(serializeProducerChangeListItem);
+
+    if (cliArguments.json) {
+      process.stdout.write(
+        `${JSON.stringify(
+          {
+            schemaVersion: PRODUCER_CHANGE_AGENT_SCHEMA_VERSION,
+            generatedAt: new Date().toISOString(),
+            filters: {
+              status: result.options.selection.key,
+              query: result.options.query,
+              page: result.options.page,
+              pageSize: result.options.pageSize,
+            },
+            pagination: {
+              total: result.total,
+              totalPages: result.totalPages,
+            },
+            data,
+          },
+          null,
+          2,
+        )}\n`,
+      );
+      return;
+    }
+
+    if (data.length === 0) {
+      process.stdout.write("No producer change requests found.\n");
+      return;
+    }
+    for (const item of data) {
+      process.stdout.write(
+        `${item.id} [${item.status.code}] ${item.producer.name} ` +
+          `(${item.producer.country.toUpperCase()} #${item.producer.producerId})\n`,
+      );
+    }
+    process.stdout.write(
+      `Page ${result.options.page}/${result.totalPages} · ${data.length} of ${result.total} requests\n`,
+    );
+  }
+
+  async function show(): Promise<void> {
+    if (cliArguments.command !== "show") {
+      throw new Error("Internal CLI command mismatch.");
+    }
+    const detail = await queryAdminProducerChangeById(database, cliArguments.changeId);
+    if (!detail) {
+      throw new Error(`Change request '${cliArguments.changeId}' was not found.`);
+    }
+    const data = serializeProducerChangeDetail(detail);
+
+    if (cliArguments.json) {
+      process.stdout.write(
+        `${JSON.stringify(
+          {
+            schemaVersion: PRODUCER_CHANGE_AGENT_SCHEMA_VERSION,
+            generatedAt: new Date().toISOString(),
+            data,
+          },
+          null,
+          2,
+        )}\n`,
+      );
+      return;
+    }
+
+    process.stdout.write(
+      `${data.id} [${data.status.code}] ${data.producer.name} ` +
+        `(${data.producer.country.toUpperCase()} #${data.producer.producerId})\n`,
+    );
+    process.stdout.write(
+      `Catalog: ${data.catalog.state}${data.producer.publicPath ? ` · ${data.producer.publicPath}` : ""}\n`,
+    );
+    for (const field of data.diff) {
+      const current = field.current === null ? "missing" : JSON.stringify(field.current);
+      process.stdout.write(
+        `${field.key}: ${JSON.stringify(field.before)} -> ${JSON.stringify(field.requested)} ` +
+          `(current: ${current})\n`,
+      );
+    }
+    process.stdout.write(`Next: ${data.status.nextAction}\n`);
+    if (data.operatorCommands.materialize) {
+      process.stdout.write(`Command: ${data.operatorCommands.materialize}\n`);
+    }
+    if (data.operatorCommands.finalizeTemplate) {
+      process.stdout.write(`Command: ${data.operatorCommands.finalizeTemplate}\n`);
+    }
   }
 
   async function materialize(): Promise<void> {
@@ -965,7 +1200,9 @@ async function runCli(): Promise<void> {
   }
 
   try {
-    if (command === "materialize") await materialize();
+    if (command === "list") await list();
+    else if (command === "show") await show();
+    else if (command === "materialize") await materialize();
     else await finalize();
   } finally {
     await client.end();

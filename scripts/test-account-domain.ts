@@ -14,6 +14,15 @@ import {
   safeReturnPath,
   validateProducerProposal,
 } from "../lib/accounts/producer-fields";
+import {
+  PRODUCER_CHANGE_STATUSES,
+  PRODUCER_CHANGE_STATUS_DEFINITIONS,
+  PRODUCER_CHANGE_VIEWS,
+  getProducerChangeStatusDefinition,
+  requestedProducerFields,
+  resolveProducerChangeStatusSelection,
+} from "../lib/accounts/producer-change-workflow";
+import { normalizeAdminProducerChangeListOptions } from "../lib/admin/producer-change-requests";
 import { findProducerById, findProducersByIds } from "../lib/csv-catalog";
 
 test("account auth configuration rejects empty and placeholder Clerk keys", () => {
@@ -178,6 +187,60 @@ test("producer row hashes are stable across object key order", () => {
   assert.notEqual(
     hashProducerFields({ nombre: "A", municipio: "B" }),
     hashProducerFields({ nombre: "A", municipio: "C" }),
+  );
+});
+
+test("producer-change workflow covers every durable status exactly once", () => {
+  assert.deepEqual(Object.keys(PRODUCER_CHANGE_STATUS_DEFINITIONS), [
+    ...PRODUCER_CHANGE_STATUSES,
+  ]);
+  for (const status of PRODUCER_CHANGE_STATUSES) {
+    const definition = getProducerChangeStatusDefinition(status);
+    assert.ok(definition.label);
+    assert.ok(definition.nextAction);
+    assert.equal(typeof definition.requiresOperatorAction, "boolean");
+  }
+
+  const groupedStatuses = Object.entries(PRODUCER_CHANGE_VIEWS)
+    .filter(([view]) => view !== "all")
+    .flatMap(([, definition]) => [...definition.statuses]);
+  assert.deepEqual(new Set(groupedStatuses), new Set(PRODUCER_CHANGE_STATUSES));
+  assert.equal(groupedStatuses.length, PRODUCER_CHANGE_STATUSES.length);
+});
+
+test("producer-change filters normalize views, exact statuses and pagination", () => {
+  assert.deepEqual(resolveProducerChangeStatusSelection("CSV"), {
+    key: "csv",
+    label: "CSV workflow",
+    statuses: ["approved", "applying"],
+    kind: "view",
+  });
+  assert.equal(resolveProducerChangeStatusSelection("approved").kind, "status");
+  assert.equal(resolveProducerChangeStatusSelection("unknown").key, "all");
+
+  const normalized = normalizeAdminProducerChangeListOptions({
+    status: "attention",
+    query: "  Chisan   Barcelona  ",
+    page: -10,
+    pageSize: 10_000,
+  });
+  assert.equal(normalized.selection.key, "attention");
+  assert.equal(normalized.query, "Chisan Barcelona");
+  assert.equal(normalized.page, 1);
+  assert.equal(normalized.pageSize, 100);
+});
+
+test("requested producer state is derived from the stored base plus patch", () => {
+  assert.deepEqual(
+    requestedProducerFields({
+      baseSnapshot: { nombre: "Before", municipio: "Barcelona" },
+      patch: { nombre: "After", descripcion: "Updated description" },
+    }),
+    {
+      nombre: "After",
+      municipio: "Barcelona",
+      descripcion: "Updated description",
+    },
   );
 });
 

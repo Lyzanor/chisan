@@ -229,8 +229,9 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
   if (!parsed.success) {
     adminRedirect("/admin/cambios", "error", firstValidationMessage(parsed.error));
   }
+  const detailPath = `/admin/cambios/${parsed.data.changeId}`;
   if (parsed.data.note.length < 10) {
-    adminRedirect("/admin/cambios", "error", "Add a clear editorial review note.");
+    adminRedirect(detailPath, "error", "Add a clear editorial review note.");
   }
 
   const database = getDatabase();
@@ -240,7 +241,7 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
     .where(eq(producerChangeRequests.id, parsed.data.changeId))
     .limit(1);
   if (!change || !["submitted", "needs_changes"].includes(change.status)) {
-    adminRedirect("/admin/cambios", "error", "This change is no longer reviewable.");
+    adminRedirect(detailPath, "error", "This change is no longer reviewable.");
   }
 
   const producer = await findProducerById(change.country, change.producerId);
@@ -282,7 +283,7 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
       return true;
     });
     adminRedirect(
-      "/admin/cambios",
+      detailPath,
       "error",
       conflicted
         ? "The catalog changed after submission; the request was marked as a conflict."
@@ -378,7 +379,7 @@ export async function reviewProducerChangeAction(formData: FormData): Promise<vo
   });
 
   adminRedirect(
-    "/admin/cambios",
+    detailPath,
     result === "saved" ? "notice" : "error",
     result === "saved"
       ? `Change request ${parsed.data.decision}.`

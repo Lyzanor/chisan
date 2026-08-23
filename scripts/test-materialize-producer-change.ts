@@ -16,6 +16,7 @@ import {
   assertGitPathClean,
   atomicWriteUtf8,
   findProducerStateInCommit,
+  parseProducerChangeCliArguments,
   readProducerFieldsFromCsv,
   resolveExpectedProducerChange,
 } from "./materialize-producer-change";
@@ -23,6 +24,86 @@ import {
 function git(cwd: string, args: string[]): string {
   return execFileSync("git", args, { cwd, encoding: "utf8" }).trim();
 }
+
+test("producer-change CLI parses list filters independently of option order", () => {
+  assert.deepEqual(
+    parseProducerChangeCliArguments([
+      "list",
+      "--query",
+      "Chisan Barcelona",
+      "--page",
+      "2",
+      "--json",
+      "--status",
+      "CSV",
+      "--limit",
+      "50",
+    ]),
+    {
+      command: "list",
+      status: "csv",
+      query: "Chisan Barcelona",
+      limit: 50,
+      page: 2,
+      json: true,
+    },
+  );
+  assert.deepEqual(parseProducerChangeCliArguments(["list"]), {
+    command: "list",
+    status: undefined,
+    query: undefined,
+    limit: undefined,
+    page: undefined,
+    json: false,
+  });
+});
+
+test("producer-change CLI parses show and preserves materialize/finalize arguments", () => {
+  const changeId = "a92cc0b4-a726-4dfa-a28a-28f543211887";
+
+  assert.deepEqual(parseProducerChangeCliArguments(["show", "--json", changeId]), {
+    command: "show",
+    changeId,
+    json: true,
+  });
+  assert.deepEqual(
+    parseProducerChangeCliArguments(["materialize", changeId, "ignored-as-before"]),
+    { command: "materialize", changeId },
+  );
+  assert.deepEqual(
+    parseProducerChangeCliArguments(["finalize", changeId, "a".repeat(40)]),
+    { command: "finalize", changeId, commitSha: "a".repeat(40) },
+  );
+});
+
+test("producer-change CLI rejects ambiguous or malformed read-only arguments", () => {
+  const changeId = "a92cc0b4-a726-4dfa-a28a-28f543211887";
+
+  assert.throws(
+    () => parseProducerChangeCliArguments(["list", "--status", "unknown"]),
+    /unknown producer-change status or view/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["list", "--limit", "0"]),
+    /positive integer/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["list", "--page"]),
+    /requires a value/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["list", "--json", "--json"]),
+    /only be specified once/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["show", changeId, "extra"]),
+    /exactly one/i,
+  );
+  assert.throws(
+    () => parseProducerChangeCliArguments(["show", "not-a-uuid"]),
+    /valid change-request UUID/i,
+  );
+});
 
 test("materialization changes exactly one CSV row without reformatting its neighbors", () => {
   const original = [

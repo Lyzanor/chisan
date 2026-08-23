@@ -156,6 +156,35 @@ verifies its producer-row hash and requires that commit to be reachable from the
 current `HEAD`; it never trusts an uncommitted working tree. The `applied` state
 therefore means committed to the canonical CSV, not yet deployed.
 
+### Staff operations workspace and agent reads
+
+`/admin` is the staff operations workspace. Its producer-change registry is a
+durable view over every `producer_change_requests` state, not only the review
+queue. `/admin/cambios/<change-request-uuid>` is the stable operational permalink
+for one request and shows its actors, timestamps, requested diff, current CSV
+comparison, notes, applied commit and targeted audit timeline. The request row is
+the current state; `audit_events` explains recorded transitions and must not be
+used as a reconstructed replacement for that row.
+
+The workspace and local automation share the status vocabulary in
+`lib/accounts/producer-change-workflow.ts` and the read model in
+`lib/admin/producer-change-requests.ts`. Agents read requests through the
+versioned, read-only JSON commands instead of scraping HTML or querying tables
+directly:
+
+```bash
+npx pnpm producer:change list --status approved --json
+npx pnpm producer:change show <change-request-uuid> --json
+```
+
+List output excludes private notes and full snapshots; `show` includes them for
+an operator with database access. Neither command mutates request state or the
+catalog. A future worker may select only `approved` requests and invoke the
+existing `materialize` and `finalize` commands, but it must run in a controlled
+Git worktree outside the deployed Vercel application. Before concurrent workers
+launch, add durable execution attempts and leases; `applying` alone does not
+identify a worker, run or worktree.
+
 ## Catalog row lifecycle
 
 Area and slug changes are resolved from the current CSV and do not change an

@@ -13,7 +13,10 @@ export function AccountMessage({ params }: { params: AccountMessageParams }) {
   if (!error && !notice) return null;
 
   return (
-    <p className={`account-message ${error ? "account-message--error" : ""}`} role="status">
+    <p
+      className={`account-message ${error ? "account-message--error" : ""}`}
+      role={error ? "alert" : "status"}
+    >
       {error || notice}
     </p>
   );
