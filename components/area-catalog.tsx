@@ -124,10 +124,7 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
             <article className="catalog-featured-producer">
               <p className="catalog-kicker">Selected</p>
               <h2>{highlightedItem.name}</h2>
-              <p>
-                {highlightedItem.city}
-                {highlightedDescription ? ` · ${highlightedDescription}` : ""}
-              </p>
+              {highlightedDescription ? <p>{highlightedDescription}</p> : null}
               <div className="catalog-featured-actions">
                 <Link href={buildCatalogHref({ country: countrySlug, area, category })}>
                   See all
@@ -174,10 +171,7 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
                       </span>
                       <span>
                         <strong>{item.name}</strong>
-                        <small>
-                          {item.city}
-                          {description ? ` · ${description}` : ""}
-                        </small>
+                        {description ? <small>{description}</small> : null}
                       </span>
                     </Link>
                     <Link
