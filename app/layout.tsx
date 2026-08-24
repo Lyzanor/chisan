@@ -77,34 +77,14 @@ export default function RootLayout({
       </header>
       {children}
       <footer className="site-footer">
-        <div className="site-footer__grid">
-          <div className="site-footer__brand">
-            <Link href="/">{SITE_NAME}</Link>
-            <strong>{SITE_TAGLINE}</strong>
-            <p>A trusted, open catalog for local food.</p>
-          </div>
-
-          <section aria-labelledby="site-footer-about-title">
-            <h2 id="site-footer-about-title">About us</h2>
-            <p>
-              Chisan is building a shared, trustworthy discovery layer for
-              place-based food and drink producers.
-            </p>
-            <Link href="/#about">Our purpose</Link>
-          </section>
-
-          <nav aria-label="Footer navigation">
-            <h2>Explore</h2>
-            <Link href="/">Producer catalog</Link>
-          </nav>
-
-          <section aria-labelledby="site-footer-contact-title">
-            <h2 id="site-footer-contact-title">Contact</h2>
-            <p>Questions, corrections and collaboration proposals are welcome.</p>
-            <a href={SITE_CONTACT_URL}>Contact us on GitHub</a>
-          </section>
-        </div>
-        <p className="site-footer__copyright">© {SITE_NAME}</p>
+        <nav className="site-footer__links" aria-label="Footer navigation">
+          <Link href="/" className="site-footer__brand-link">
+            {SITE_NAME}
+          </Link>
+          <Link href="/our-purpose">Our purpose</Link>
+          <Link href="/">Producer catalog</Link>
+          <a href={SITE_CONTACT_URL}>Contact us on Github</a>
+        </nav>
       </footer>
     </>
   );

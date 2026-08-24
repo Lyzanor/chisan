@@ -150,11 +150,25 @@ if [[
   "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Local food, unified</span>'* ||
   "$HTML_HOME_CLEAN" != *'id="home-about-title">Local food, unified</h2>'* ||
   "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
-  "$HTML_HOME_CLEAN" != *'>About us</h2>'* ||
-  "$HTML_HOME_CLEAN" != *'href="/#about">Our purpose</a>'* ||
-  "$HTML_HOME_CLEAN" != *'href="https://github.com/Lyzanor/chisan/issues">Contact us on GitHub</a>'*
+  "$HTML_HOME_CLEAN" != *'href="/our-purpose">Our purpose</a>'* ||
+  "$HTML_HOME_CLEAN" != *'>Producer catalog</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="https://github.com/Lyzanor/chisan/issues">Contact us on Github</a>'* ||
+  "$HTML_HOME_CLEAN" == *'>About us</h2>'* ||
+  "$HTML_HOME_CLEAN" == *'class="site-footer__copyright"'*
 ]]; then
-  echo "Error: home page should expose the Chisan tagline, brand, About Chisan and global footer." >&2
+  echo "Error: home page should expose the Chisan brand and links-only global footer." >&2
+  exit 1
+fi
+
+HTML_PURPOSE="$(curl -fsS "$BASE_URL/our-purpose" | sed 's/<!-- -->//g')"
+if [[
+  "$HTML_PURPOSE" != *'<title>Our purpose | Chisan</title>'* ||
+  "$HTML_PURPOSE" != *'id="purpose-title">Our purpose</h1>'* ||
+  "$HTML_PURPOSE" != *'Local food systems are full of value, but too often fragmented.'* ||
+  "$HTML_PURPOSE" != *'<em>chisan-chisho</em>'* ||
+  "$HTML_PURPOSE" != *'Local food, unified.</strong>'*
+]]; then
+  echo "Error: /our-purpose should render the complete purpose statement and metadata." >&2
   exit 1
 fi
 

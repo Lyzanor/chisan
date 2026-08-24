@@ -17,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     { url: absoluteUrl("/") },
+    { url: absoluteUrl("/our-purpose") },
     ...listCountrySlugs().map((country) => ({
       url: absoluteUrl(buildCatalogHref({ country })),
     })),
