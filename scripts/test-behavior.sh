@@ -144,11 +144,17 @@ if [[ "$HTML_HOME_CLEAN" != *"Choose a country"* ]]; then
 fi
 
 if [[
-  "$HTML_HOME_CLEAN" != *"<title>Chisan Producer Map</title>"* ||
-  "$HTML_HOME_CLEAN" != *'aria-label="Chisan home"'* ||
-  "$HTML_HOME_CLEAN" != *">Chisan</a>"*
+  "$HTML_HOME_CLEAN" != *"<title>Chisan · Local food, unified</title>"* ||
+  "$HTML_HOME_CLEAN" != *'aria-label="Chisan — Local food, unified"'* ||
+  "$HTML_HOME_CLEAN" != *'class="site-header__name">Chisan</span>'* ||
+  "$HTML_HOME_CLEAN" != *'class="site-header__tagline">Local food, unified</span>'* ||
+  "$HTML_HOME_CLEAN" != *'id="home-about-title">Local food, unified</h2>'* ||
+  "$HTML_HOME_CLEAN" != *'class="site-footer"'* ||
+  "$HTML_HOME_CLEAN" != *'>About us</h2>'* ||
+  "$HTML_HOME_CLEAN" != *'href="/#about">Our purpose</a>'* ||
+  "$HTML_HOME_CLEAN" != *'href="https://github.com/Lyzanor/chisan/issues">Contact us on GitHub</a>'*
 ]]; then
-  echo "Error: home page should expose the Chisan browser title and visible brand header." >&2
+  echo "Error: home page should expose the Chisan tagline, brand, About Chisan and global footer." >&2
   exit 1
 fi
 

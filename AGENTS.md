@@ -1,22 +1,43 @@
 # Chisan Agent Guide
 
-This is the shared operating map for every AI agent working in Chisan. The
-`README.md` is the human landing page; this file explains how the system fits
-together, which source owns each fact, and how to route work safely.
+Chisan is a startup building the shared discovery layer for local food. Its
+promise is **Local food, unified**: one trustworthy product for discovering and
+understanding place-based food and drink producers across regions and countries.
+
+This is the shared product and engineering context for every AI agent working in
+Chisan. The `README.md` is the human landing page; this file describes the
+direction of the product, how its layers fit together, and which source owns each
+kind of state.
 
 Read this first. For producer-data work, also read the target country's
 `data/csv/<country>/AGENTS.md` and the canonical document that owns the task.
 Scoped guides may narrow local interpretation but never override this file or a
 canonical contract.
 
-## How Chisan works
+## Product direction
+
+Chisan is more than a map and more than a data-maintenance project. It brings
+together three product capabilities:
+
+- **Discovery:** a public web experience for exploring producers by place and
+  category through maps, lists, and durable profiles.
+- **Participation:** accounts, favorites, ownership claims, and structured ways
+  for producers and communities to propose improvements.
+- **Trust:** a reviewed, traceable catalog whose public facts remain portable and
+  inspectable.
+
+Build toward a coherent platform that can expand country by country. Reuse
+shared product primitives, preserve local context, and treat the web experience
+and contribution flows as first-class parts of Chisan rather than utilities
+around a data process.
+
+## System shape
 
 ```text
-candidate note ──> editorial review ──> area CSV ──> map / list / producer page
-                              └───────> evidence ledger
+research + contributions ──> review ──> area CSV catalog ──> public web
+                                └─────> evidence             └─> discovery
 
-Clerk session ──> PostgreSQL account workflow ──> approved change request
-                                                   └─> local review ─> area CSV
+Clerk session ──> PostgreSQL account workflows ──> reviewed proposal ──> CSV
 ```
 
 - The public app reads `data/csv/**` directly. The folder tree defines its
@@ -26,12 +47,13 @@ Clerk session ──> PostgreSQL account workflow ──> approved change reques
 - Clerk owns credentials and sessions. PostgreSQL owns Chisan account state,
   claims, memberships, reviewed requests, and audit; it never owns producer
   catalog state.
-- Local work changes the canonical CSV and passes the relevant gate; deployment
-  procedure belongs to `docs/OPERATIONS.md`.
+- The web, discovery, and account flows may evolve around the catalog, but they
+  must not create a hidden second producer registry.
 
-The CSV is the product. Editorial priority is factual correctness,
-traceability, URL stability, then mechanical consistency. Validators prove
-structure, not truth.
+The CSV catalog is the core of the product, not the whole product. Editorial
+priority is factual correctness, traceability, URL stability, then mechanical
+consistency. Product work should make that trusted core more useful and easier
+to participate in. Validators prove structure, not truth.
 
 Out of scope are producer-catalog API layers, hidden runtime producer sources
 outside `data/csv/**`, direct CSV writes from deployed requests, database
@@ -73,7 +95,7 @@ automatically between countries.
 - Account profile type is presentation, never authorization. Producer actions
   require exact active membership; staff actions require an active grant.
 
-## Route the task
+## Implementation map
 
 | Work | Read | Final gate |
 |---|---|---|
@@ -91,7 +113,7 @@ While iterating on data, use `npx pnpm check:csv:changed` and
 stored state or a publication gate. Use `npx pnpm list:producers <area>` for an
 area-scoped roster and de-duplication pass.
 
-## Standard work loop
+## Working safely
 
 1. Inspect `git status --short`, `git diff --name-status`, and `git diff --stat`.
    Treat a dirty worktree as shared context and preserve unrelated work.
