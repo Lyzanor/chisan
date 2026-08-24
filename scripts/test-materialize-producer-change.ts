@@ -325,6 +325,56 @@ test("the expected state is derived only from baseSnapshot plus the stored patch
   );
 });
 
+test("an open pre-migration request cannot materialize unpaired prose and current requests carry the locale", () => {
+  const legacySnapshot = Object.fromEntries(
+    PRODUCER_EDITABLE_FIELDS.map(({ key }) => [key, ""]),
+  );
+  delete legacySnapshot.descripcion_locale;
+  Object.assign(legacySnapshot, {
+    nombre: "Legacy producer",
+    municipio: "Madrid",
+    categoria: PRODUCER_CATEGORIES[0],
+    descripcion: "Legacy prose without an explicit source language.",
+    "Venta online": "no comprobado",
+  });
+  const legacyHash = hashProducerFields(legacySnapshot);
+  assert.throws(
+    () => resolveExpectedProducerChange(legacySnapshot, legacyHash, { nombre: "Renamed" }),
+    /source language/i,
+  );
+
+  const currentSnapshot = { ...legacySnapshot, descripcion_locale: "en" };
+  const expected = resolveExpectedProducerChange(
+    currentSnapshot,
+    hashProducerFields(currentSnapshot),
+    { descripcion: "Updated canonical prose." },
+  );
+  assert.equal(expected.fields.descripcion, "Updated canonical prose.");
+  assert.equal(expected.fields.descripcion_locale, "en");
+});
+
+test("CSV header widening conflicts every open legacy request even when its new cell is empty", () => {
+  const legacySnapshot = Object.fromEntries(
+    PRODUCER_EDITABLE_FIELDS.filter(({ key }) => key !== "descripcion_locale").map(
+      ({ key }) => [key, ""],
+    ),
+  );
+  Object.assign(legacySnapshot, {
+    nombre: "Legacy producer",
+    municipio: "Madrid",
+    categoria: PRODUCER_CATEGORIES[0],
+    "Venta online": "no comprobado",
+  });
+
+  const submittedHash = hashProducerFields(legacySnapshot);
+  const widenedCurrentRow = { ...legacySnapshot, descripcion_locale: "" };
+  assert.notEqual(
+    hashProducerFields(widenedCurrentRow),
+    submittedHash,
+    "the optimistic-concurrency preflight must reject a request captured before the atomic header migration",
+  );
+});
+
 test("atomicWriteUtf8 swaps contents and preserves permissions", async (context) => {
   const directory = await mkdtemp(path.join(tmpdir(), "chisan-materializer-atomic-"));
   context.after(async () => rm(directory, { recursive: true, force: true }));

@@ -8,8 +8,771 @@
     "one": "autonomous community",
     "many": "autonomous communities"
   },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": [
+      "es"
+    ],
+    "labels": {
+      "en": "Spain",
+      "es": "España",
+      "ca": "Espanya"
+    },
+    "unitLabels": {
+      "en": {
+        "one": "province",
+        "many": "provinces"
+      },
+      "es": {
+        "one": "provincia",
+        "many": "provincias"
+      },
+      "ca": {
+        "one": "província",
+        "many": "províncies"
+      }
+    },
+    "regionUnitLabels": {
+      "en": {
+        "one": "autonomous community",
+        "many": "autonomous communities"
+      },
+      "es": {
+        "one": "comunidad autónoma",
+        "many": "comunidades autónomas"
+      },
+      "ca": {
+        "one": "comunitat autònoma",
+        "many": "comunitats autònomes"
+      }
+    }
+  },
   "aliases": {
     "logrono": "la-rioja"
+  },
+  "producerRouteAliases": {
+    "a-coruna/amasarte-a-coruna": 725,
+    "a-coruna/arca-do-millo-a-coruna": 901,
+    "a-coruna/cafes-siboney-a-coruna": 2741,
+    "a-coruna/carnes-y-embutidos-hercules-a-coruna": 3143,
+    "a-coruna/carnicosa-a-coruna": 3281,
+    "a-coruna/confiteria-berna-a-coruna": 4154,
+    "a-coruna/confiteria-flory-a-coruna": 4170,
+    "a-coruna/dona-barbara-obrador-a-coruna": 4930,
+    "a-coruna/farinarium-a-coruna": 5774,
+    "a-coruna/habaziro-a-coruna": 6674,
+    "a-coruna/heladeria-colon-a-coruna": 6714,
+    "a-coruna/helados-la-ibi-a-coruna": 6744,
+    "a-coruna/late-late-chocolate-a-coruna": 8048,
+    "a-coruna/lume-alimentacion-a-coruna": 8248,
+    "a-coruna/migas-a-coruna": 8840,
+    "a-coruna/o-corrosco-do-pan-a-coruna": 9107,
+    "a-coruna/o-pettit-a-coruna": 9113,
+    "a-coruna/obrador-san-francisco-a-coruna": 9168,
+    "a-coruna/olivella-cakes-a-coruna": 9281,
+    "a-coruna/panaderia-agra-a-coruna": 9444,
+    "a-coruna/panaderia-vazquez-a-coruna": 9670,
+    "a-coruna/pandelino-a-coruna": 9697,
+    "a-coruna/pescados-loureda-a-coruna": 10151,
+    "a-coruna/sadepor-a-coruna": 11294,
+    "a-coruna/tahona-a-coruna": 11736,
+    "a-coruna/the-bio-factory-a-coruna": 11813,
+    "a-coruna/the-vanessa-bakery-a-coruna": 11822,
+    "a-coruna/waco-coffee-a-coruna": 12322,
+    "albacete/cerveza-la-nena-albacete": 3886,
+    "albacete/dehesa-de-los-llanos-albacete": 4771,
+    "albacete/finca-la-cuadra-albacete": 5843,
+    "albacete/la-casa-de-la-miel-albacete": 7593,
+    "alicante/aceitunas-cazorla-alicante": 229,
+    "alicante/better-pan-alicante": 1183,
+    "alicante/cafes-jurado-alicante": 2724,
+    "alicante/cerveza-santa-faz-alicante": 3910,
+    "almeria/huertaiberika-almeria": 7005,
+    "almeria/natural-crunch-vitasnack-almeria": 9044,
+    "almeria/salinas-de-cabo-de-gata-almeria": 11331,
+    "avila/aceitunas-simon-e-hijos-s-l-avila": 265,
+    "avila/alma-dulce-avila-avila": 617,
+    "avila/carnavi-avila": 3127,
+    "avila/carniceria-d-avila-avila": 3211,
+    "avila/carniceria-la-cantera-avila": 3239,
+    "avila/cronoble-avila-s-l-avila": 4688,
+    "avila/dehesa-de-la-serna-avila": 4770,
+    "avila/don-pan-avila": 4927,
+    "avila/dulces-santo-tomas-avila": 4998,
+    "avila/elgorriaga-brands-s-a-avila": 5316,
+    "avila/heladeria-la-flor-valenciana-avila": 6724,
+    "avila/heladeria-topping-avila": 6729,
+    "avila/hermanas-clarisas-de-avila-dulces-artesanos-avila": 6787,
+    "avila/icav-comercializadora-de-vacuno-selecto-avileno-negro-iberico-sociedad-cooperativa-avila": 7088,
+    "avila/panaderia-bolleria-marisol-avila": 9470,
+    "avila/panaderia-flores-y-jimenez-avila": 9521,
+    "avila/pasteleria-obrador-de-angel-luanje-avila": 9857,
+    "avila/porkyavila-avila": 10258,
+    "avila/suenos-de-alba-ganadera-avila": 11718,
+    "avila/tahona-araujo-avila": 11737,
+    "barcelona/22-22-cultura-dulce-barcelona": 14,
+    "barcelona/a27bakehouse-barcelona": 53,
+    "barcelona/abirradero-barcelona": 74,
+    "barcelona/aceitunas-rabadan-barcelona": 260,
+    "barcelona/acero-carns-street-butchers-barcelona": 279,
+    "barcelona/agricola-de-agell-sl-barcelona": 417,
+    "barcelona/alterna-mostrador-barcelona": 707,
+    "barcelona/anma-barcelona": 778,
+    "barcelona/artchur-barcelona": 960,
+    "barcelona/artemis-cosmetica-barcelona": 967,
+    "barcelona/artesano-horneado-en-casa-barcelona": 975,
+    "barcelona/azah-gelateria-libanesa-barcelona": 1059,
+    "barcelona/baboia-gelateria-barcelona": 1068,
+    "barcelona/baluard-barcelona": 1086,
+    "barcelona/baluard-barceloneta-barcelona": 1087,
+    "barcelona/baluard-poblenou-barcelona": 1089,
+    "barcelona/barcelona-chocolate-company-barcelona": 1095,
+    "barcelona/barna-brew-born-barcelona": 1100,
+    "barcelona/be-chocolat-barcelona": 1126,
+    "barcelona/bebelona-barcelona": 1128,
+    "barcelona/bioma-kombucha-barcelona": 1222,
+    "barcelona/birra-08-barcelona": 1240,
+    "barcelona/blackbird-coffee-corner-barcelona": 1251,
+    "barcelona/bodevici-barcelona": 2550,
+    "barcelona/bomboneria-pons-barcelona": 2568,
+    "barcelona/bombons-blasi-barcelona": 2570,
+    "barcelona/bopan-forners-artesans-barcelona": 2583,
+    "barcelona/bragulat-cansaladers-barcelona": 2601,
+    "barcelona/brew-pub-le-sec-barcelona": 2609,
+    "barcelona/cacao-sampaka-barcelona": 2684,
+    "barcelona/cafes-caracas-pi-i-molist-barcelona": 2708,
+    "barcelona/cafes-el-magnifico-barcelona": 2716,
+    "barcelona/cafes-la-chapolera-barcelona": 2725,
+    "barcelona/cafes-mateu-barcelona": 2729,
+    "barcelona/cafes-salvador-barcelona": 2739,
+    "barcelona/cafes-unic-barcelona": 2746,
+    "barcelona/cal-neguit-barcelona": 2806,
+    "barcelona/can-lecomte-formatgeria-barcelona": 2953,
+    "barcelona/cansaladeria-joan-vidal-barcelona": 3058,
+    "barcelona/cansaladeria-puig-barcelona": 3067,
+    "barcelona/cansaladeria-rotllan-barcelona": 3069,
+    "barcelona/cansaladeria-samso-barcelona": 3070,
+    "barcelona/carn-carn-sant-andreu-barcelona": 3124,
+    "barcelona/carns-selectes-pau-i-mar-barcelona": 3356,
+    "barcelona/casa-gispert-barcelona": 3399,
+    "barcelona/casa-vives-barcelona": 3451,
+    "barcelona/caua-cacao-roasters-barcelona": 3518,
+    "barcelona/celia-obrador-sense-gluten-barcelona": 3572,
+    "barcelona/cerveceria-ogham-barcelona": 3807,
+    "barcelona/cerveses-almogaver-barcelona": 3834,
+    "barcelona/chok-bcn-barcelona": 4044,
+    "barcelona/chok-the-chocolate-kitchen-carme-barcelona": 4046,
+    "barcelona/churreria-laietana-barcelona": 4050,
+    "barcelona/coush-armo-barcelona": 4672,
+    "barcelona/cremeria-toscana-barcelona": 4680,
+    "barcelona/cruixent-barcelona": 4695,
+    "barcelona/cukor-barcelona": 4708,
+    "barcelona/cuquia-pasteleria-argentina-barcelona": 4718,
+    "barcelona/cyclic-beer-farm-barcelona": 4722,
+    "barcelona/da-giorgio-sarria-barcelona": 4729,
+    "barcelona/dalston-coffee-barcelona": 4735,
+    "barcelona/daniel-royo-gutierrez-barcelona": 4742,
+    "barcelona/danielle-pacheco-chocolatier-barcelona": 4743,
+    "barcelona/delacrem-barcelona": 4789,
+    "barcelona/delacrem-creativa-barcelona": 4790,
+    "barcelona/demartini-tiramisu-barcelona": 4820,
+    "barcelona/el-noi-del-pa-barcelona": 5221,
+    "barcelona/el-tio-che-barcelona": 5293,
+    "barcelona/elaborats-i-pernils-fondevila-barcelona": 5315,
+    "barcelona/escriba-la-rambla-barcelona": 5621,
+    "barcelona/exotic-sal-barcelona": 5699,
+    "barcelona/fabregas-xarcuters-barcelona": 5730,
+    "barcelona/farina-pasta-fresca-d-autor-barcelona": 5772,
+    "barcelona/farmbrots-barcelona": 5776,
+    "barcelona/ferment-9-barcelona": 5789,
+    "barcelona/fleca-balmes-barcelona": 5896,
+    "barcelona/foix-de-sarria-barcelona": 5937,
+    "barcelona/fonik-cafe-barcelona": 5940,
+    "barcelona/formatgeria-ireneu-barcelona": 5963,
+    "barcelona/formatgeria-subirana-barcelona": 5983,
+    "barcelona/forn-balta-barcelona": 6034,
+    "barcelona/forn-boix-barcelona": 6036,
+    "barcelona/forn-cafeteria-montbau-barcelona": 6037,
+    "barcelona/forn-de-pa-artpa-barcelona": 6079,
+    "barcelona/forn-de-pa-i-pastisseria-gloria-barcelona": 6103,
+    "barcelona/forn-de-pa-l-amic-barcelona": 6114,
+    "barcelona/forn-de-pa-padro-canals-barcelona": 6128,
+    "barcelona/forn-de-pa-santa-rita-barcelona": 6138,
+    "barcelona/forn-de-sant-jaume-barcelona": 6143,
+    "barcelona/forn-de-sant-tirs-barcelona": 6146,
+    "barcelona/forn-del-passeig-fabra-i-puig-barcelona": 6149,
+    "barcelona/forn-del-passeig-pastisseria-barcelona": 6150,
+    "barcelona/forn-elias-barcelona": 6155,
+    "barcelona/forn-fortino-barcelona": 6160,
+    "barcelona/forn-gil-barcelona": 6164,
+    "barcelona/forn-les-corts-barcelona": 6187,
+    "barcelona/forn-mimo-barcelona": 6193,
+    "barcelona/forn-mistral-barcelona": 6195,
+    "barcelona/forn-sant-honorat-barcelona": 6212,
+    "barcelona/forn-sant-josep-barcelona": 6215,
+    "barcelona/forn-vall-d-hebron-puig-1916-barcelona": 6224,
+    "barcelona/forn-vallespir-barcelona": 6225,
+    "barcelona/forn-verges-barcelona": 6226,
+    "barcelona/galactic-bear-brewing-co-barcelona": 6368,
+    "barcelona/galette-pastim-barcelona": 6375,
+    "barcelona/garage-beer-co-barcelona": 6416,
+    "barcelona/gelaaati-di-marco-barcelona": 6445,
+    "barcelona/global-grup-mamabe-67-sl-barcelona": 6480,
+    "barcelona/gocce-di-latte-barcelona": 6483,
+    "barcelona/gotic-ferments-barcelona": 6507,
+    "barcelona/granja-m-viader-barcelona": 6573,
+    "barcelona/grau-xarcuters-barcelona": 6621,
+    "barcelona/hanaivegana-obrador-vega-sense-gluten-barcelona": 6693,
+    "barcelona/hidden-coffee-roasters-hidden-cafe-barcelona": 6807,
+    "barcelona/hidden-coffee-roasters-sant-gervasi-barcelona": 6808,
+    "barcelona/hijos-de-nata-barcelona": 6820,
+    "barcelona/holy-madre-barceloneta-barcelona": 6844,
+    "barcelona/horno-santa-madrona-barcelona": 6902,
+    "barcelona/j-sabate-barcelona": 7174,
+    "barcelona/joan-macau-masachs-barcelona": 7355,
+    "barcelona/jon-cake-poblenou-barcelona": 7367,
+    "barcelona/jon-cake-wines-barcelona": 7368,
+    "barcelona/kina-chocolates-barcelona": 7446,
+    "barcelona/kurimu-barcelona": 7464,
+    "barcelona/l-hort-de-l-erico-jonas-de-abreu-goes-barcelona": 7487,
+    "barcelona/l-obrador-de-l-olga-caus-cakes-barcelona": 7503,
+    "barcelona/l-obrador-dels-15-barcelona": 7506,
+    "barcelona/l-olivera-can-calopa-barcelona": 7510,
+    "barcelona/la-campana-barcelona": 7575,
+    "barcelona/la-cantonada-forn-pastisseria-barcelona": 7586,
+    "barcelona/la-castafiore-barcelona": 7604,
+    "barcelona/la-cervesera-artesana-barcelona": 7609,
+    "barcelona/la-cervesera-del-poblenou-barcelona": 7610,
+    "barcelona/la-fabrique-barcelona": 7663,
+    "barcelona/la-nostra-pasta-barcelona": 7782,
+    "barcelona/la-pasticceria-di-gracia-barcelona": 7799,
+    "barcelona/la-platjeta-cap-a-mar-barcelona": 7815,
+    "barcelona/la-portorriquena-barcelona": 7819,
+    "barcelona/la-selecta-de-churros-barcelona": 7858,
+    "barcelona/la-sitgetana-x-orient-street-barcelona": 7866,
+    "barcelona/la-textil-collective-barcelona": 7889,
+    "barcelona/la-vestale-barcelona": 7917,
+    "barcelona/la-zurra-barcelona": 7932,
+    "barcelona/le-fournil-bcn-barcelona": 8060,
+    "barcelona/lot-roasters-chocolate-lab-barcelona": 8236,
+    "barcelona/lov-ferments-barcelona": 8237,
+    "barcelona/lucas-del-mercat-barcelona": 8240,
+    "barcelona/ma-condimentos-vivos-de-asia-barcelona": 8264,
+    "barcelona/madeleine-by-ferrieres-barcelona": 8273,
+    "barcelona/magma-bakery-lab-barcelona": 8286,
+    "barcelona/mamma-tiramisu-barcelona": 8314,
+    "barcelona/manna-gelats-barcelona": 8326,
+    "barcelona/marea-plateada-barcelona": 8353,
+    "barcelona/mielhada-barcelona": 8835,
+    "barcelona/moja-churreria-conscient-barcelona": 8872,
+    "barcelona/morreig-barcelona": 8988,
+    "barcelona/morrow-coffee-barcelona": 8989,
+    "barcelona/nabucco-tiramisu-barcelona": 9020,
+    "barcelona/nomad-coffee-frutas-selectas-barcelona": 9077,
+    "barcelona/obrador-apamate-barcelona": 9120,
+    "barcelona/obrador-del-croissant-french-barcelona": 9139,
+    "barcelona/obrador-la-nena-barcelona": 9153,
+    "barcelona/obrador-pastrygas-barcelona": 9162,
+    "barcelona/oggi-gelato-barcelona": 9178,
+    "barcelona/ølgod-brewpub-barcelona": 12434,
+    "barcelona/olives-francesc-barcelona": 9291,
+    "barcelona/onyva-coffee-barcelona": 9307,
+    "barcelona/origo-bakery-barcelona": 9319,
+    "barcelona/oriol-balaguer-barcelona": 9322,
+    "barcelona/ous-susana-barcelona": 9368,
+    "barcelona/ous-yemasol-barcelona": 9369,
+    "barcelona/pa-de-kilo-barcelona": 9375,
+    "barcelona/pan-a-ma-boulangerie-barcelona": 9423,
+    "barcelona/panes-creativos-daniel-jorda-barcelona": 9703,
+    "barcelona/papabubble-barcelona": 9721,
+    "barcelona/parallelo-gelato-barcelona": 9729,
+    "barcelona/pasta-luego-barcelona": 9747,
+    "barcelona/pasta-spada-barcelona": 9748,
+    "barcelona/pastebcn-barcelona": 9755,
+    "barcelona/pastisseria-baixas-barcelona": 9917,
+    "barcelona/pastisseria-bareche-navas-barcelona": 9918,
+    "barcelona/pastisseria-brunells-barcelona": 9921,
+    "barcelona/pastisseria-del-passeig-onze-de-setembre-barcelona": 9936,
+    "barcelona/pastisseria-escriba-barcelona": 9942,
+    "barcelona/pastisseria-farga-sant-gervasi-barcelona": 9945,
+    "barcelona/pastisseria-fruben-barcelona": 9951,
+    "barcelona/pastisseria-gual-barcelona": 9957,
+    "barcelona/pastisseria-hofmann-barcelona": 9960,
+    "barcelona/pastisseria-l-exquisita-barcelona": 9966,
+    "barcelona/pastisseria-la-colmena-barcelona": 9969,
+    "barcelona/pastisseria-la-estrella-barcelona": 9971,
+    "barcelona/pastisseria-la-palma-barcelona": 9974,
+    "barcelona/pastisseria-mervier-canal-barcelona": 9986,
+    "barcelona/pastisseria-mont-rodon-barcelona": 9990,
+    "barcelona/pastisseria-morera-navas-barcelona": 9992,
+    "barcelona/pastisseria-natcha-barcelona": 9995,
+    "barcelona/pastisseria-oriol-carrio-barcelona": 9999,
+    "barcelona/pastisseria-ribalta-barcelona": 10004,
+    "barcelona/pastisseria-roquetes-barcelona": 10006,
+    "barcelona/pastisseria-takashi-ochiai-barcelona": 10021,
+    "barcelona/pastisseria-triomf-barcelona": 10026,
+    "barcelona/petit-pastis-barcelona": 10159,
+    "barcelona/petritxol-xocoa-barcelona": 10166,
+    "barcelona/pinullet-barcelona": 10209,
+    "barcelona/prats-espar-joan-barcelona": 10275,
+    "barcelona/prats-fruits-barcelona": 10276,
+    "barcelona/prats-fruits-sl-barcelona": 10277,
+    "barcelona/rawal-gin-barcelona": 11062,
+    "barcelona/rocambolesc-barcelona": 11137,
+    "barcelona/rooftop-smokehouse-barcelona": 11152,
+    "barcelona/salazones-moreno-barcelona": 11323,
+    "barcelona/sana-locura-gluten-free-bakery-barcelona": 11372,
+    "barcelona/sant-croi-barcelona": 11383,
+    "barcelona/shantai-coffee-barcelona": 11510,
+    "barcelona/sirvent-barcelona": 11594,
+    "barcelona/slowmov-barcelona": 11597,
+    "barcelona/somenoya-tofu-catalan-barcelona": 11665,
+    "barcelona/suca-l-barcelona": 11711,
+    "barcelona/sucre-cremat-barcelona": 11717,
+    "barcelona/tartaria-old-bakery-barcelona": 11752,
+    "barcelona/the-coffee-hackers-barcelona": 11814,
+    "barcelona/three-marks-coffee-barcelona": 11823,
+    "barcelona/torrelsa-barcelona": 11879,
+    "barcelona/tostadores-bon-mercat-barcelona": 11905,
+    "barcelona/vacka-queseria-barcelona": 12044,
+    "barcelona/valentina-e-pasqualina-obrador-de-tiramisu-barcelona": 12056,
+    "barcelona/vibra-gelateria-barcelona": 12153,
+    "barcelona/xarcuteria-castello-barcelona": 12345,
+    "barcelona/xarcuteria-sicart-barcelona": 12362,
+    "barcelona/xarcuteria-vila-barcelona": 12365,
+    "barcelona/xarcuteries-bosch-barcelona": 12366,
+    "barcelona/xarcuteries-margarit-barcelona": 12369,
+    "barcelona/xocolates-fargas-barcelona": 12380,
+    "barcelona/xurreria-berlin-barcelona": 12387,
+    "barcelona/xurreria-j-alpuente-barcelona": 12389,
+    "barcelona/xurreria-j-argiles-barcelona": 12390,
+    "barcelona/xurreria-jessy-barcelona": 12391,
+    "barcelona/xurreria-masia-de-sabor-barcelona": 12393,
+    "barcelona/xurreria-sant-andreu-barcelona": 12394,
+    "barcelona/xurreria-trebol-barcelona": 12395,
+    "barcelona/yellow-bakery-barcelona": 12402,
+    "barcelona/zanah-pastissos-barcelona": 12417,
+    "barcelona/zucker-pastisseria-barcelona": 12429,
+    "barcelona/zumocat-barcelona": 12433,
+    "burgos/abeja-burgalesa-burgos": 60,
+    "burgos/ada-muller-honey-burgos": 284,
+    "burgos/ambrosia-bebidas-burgos": 731,
+    "burgos/calnort-burgos": 2866,
+    "burgos/caracoles-arlanza-burgos": 3097,
+    "burgos/caralmeat-burgos": 3104,
+    "burgos/cereales-y-servicios-agricolas-de-burgos-s-l-burgos": 3792,
+    "burgos/cerveceria-bajo-cero-burgos": 3805,
+    "burgos/cerveza-alis-burgos": 3846,
+    "burgos/cerveza-berzaga-burgos": 3858,
+    "burgos/cerveza-dolina-burgos": 3870,
+    "burgos/cerveza-una-rubia-burgos": 3919,
+    "burgos/cerveza-virtus-burgos": 3921,
+    "burgos/demanda-vacuno-burgos": 4819,
+    "burgos/el-horno-de-burgos-burgos": 5180,
+    "burgos/embumer-burgos": 5379,
+    "burgos/embutidos-ignacio-cuevas-burgos": 5462,
+    "burgos/embutidos-rioseras-burgos": 5524,
+    "burgos/embutidos-rojo-burgos": 5526,
+    "burgos/especias-y-herboristeria-campeador-burgos": 5644,
+    "burgos/florbu-burgos": 5932,
+    "burgos/juarrenos-alta-pasteleria-burgos": 7412,
+    "burgos/la-antigua-de-gamonal-burgos": 7534,
+    "burgos/la-rulo-burgos": 7847,
+    "burgos/lamemiel-burgos": 8013,
+    "burgos/licores-casajus-burgos": 8142,
+    "burgos/miel-apilife-burgos": 8664,
+    "burgos/morcillas-lesmes-burgos": 8973,
+    "burgos/opizama-mieles-burgos": 9309,
+    "burgos/pacharan-menesa-burgos": 9384,
+    "burgos/pasteleria-merey-burgos": 9847,
+    "burgos/pasteleria-silma-burgos": 9881,
+    "burgos/patatas-arreba-burgos": 10048,
+    "burgos/patatas-colina-burgos": 10050,
+    "burgos/patatas-fernandez-miguelon-burgos": 10052,
+    "burgos/quesos-la-casona-de-los-pisones-burgos": 10865,
+    "burgos/siesta-brewing-co-burgos": 11581,
+    "burgos/sustrufas-burgos": 11728,
+    "burgos/xocolart-burgos": 12378,
+    "caceres/aceites-la-extremena-caceres": 182,
+    "caceres/carniceria-salchicheria-angel-caceres": 3268,
+    "caceres/cervezas-mangurria-caceres": 3962,
+    "caceres/conservas-jarry-caceres": 4303,
+    "caceres/convento-de-san-pablo-clarisas-caceres": 4381,
+    "caceres/cortijo-apicola-caceres": 4647,
+    "caceres/dulces-artesanos-de-las-madres-jeronimas-caceres": 4972,
+    "caceres/el-horno-de-aymar-caceres": 5178,
+    "caceres/horno-la-tradicion-caceres": 6886,
+    "caceres/ibericos-caceres-caceres": 7053,
+    "caceres/maextre-ibericos-de-extremadura-s-l-u-caceres": 8281,
+    "caceres/panhabla-caceres": 9705,
+    "caceres/queseria-el-castuo-caceres": 10508,
+    "cadiz/algaeca-cadiz": 593,
+    "cadiz/cerveza-maier-cadiz": 3894,
+    "cadiz/conservas-artesanales-contigo-cadiz": 4252,
+    "cadiz/productos-la-sala-cadiz": 10320,
+    "cadiz/vinos-oceanicos-cadiz": 12268,
+    "ciudad-real/ecocolmena-ciudad-real-javier-y-vanesa-ciudad-real": 5029,
+    "ciudad-real/el-obrador-de-ciudad-real-ciudad-real": 5225,
+    "ciudad-real/el-obrador-de-tartypas-ciudad-real": 5231,
+    "ciudad-real/grano-a-grano-bakery-ciudad-real": 6610,
+    "cordoba/bodegas-el-gallo-cordoba": 1978,
+    "cordoba/buonisssimo-gelato-cordoba": 2634,
+    "cordoba/canadu-artesanos-cordoba": 3033,
+    "cordoba/cervezas-califa-cordoba": 3942,
+    "cordoba/corduba-miel-cordoba": 4637,
+    "cordoba/cremeria-di-vaniglia-cordoba": 4679,
+    "cordoba/hacienda-fuencubierta-cordoba": 6682,
+    "cordoba/heladeria-escoda-cordoba": 6720,
+    "cordoba/helados-jijona-de-cordoba-s-l-cordoba": 6742,
+    "cordoba/helados-la-flor-de-levante-1934-cordoba": 6743,
+    "cordoba/horno-de-la-cruz-cordoba": 6866,
+    "cordoba/ibericos-azoche-cordoba": 7049,
+    "cordoba/la-miga-panaderia-y-pasteleria-cordoba": 7765,
+    "cordoba/mielsico-cordoba": 8838,
+    "cordoba/nocciolata-gelateria-cordoba": 9071,
+    "cordoba/obrador-de-pasteleria-dulcisan-cordoba": 9137,
+    "cordoba/olisur-aceites-s-l-cordoba": 9260,
+    "cordoba/pacharan-tia-arantza-cordoba": 9386,
+    "cordoba/panaderia-artesana-de-villarrubia-cordoba": 9453,
+    "cordoba/pastelerias-roldan-obrador-cordoba": 9906,
+    "cordoba/pastrami-artesano-romera-martinez-cordoba": 10040,
+    "cordoba/pena-de-baena-aceite-de-oliva-virgen-extra-cordoba": 10122,
+    "cordoba/perro-flaco-co-beer-factory-cordoba": 10145,
+    "cordoba/piamonte-d-ambrosio-cordoba": 10169,
+    "cordoba/venoor-delices-cordoba": 12102,
+    "cuenca/artesanas-cuenca": 973,
+    "cuenca/carnicas-villa-cuenca-cuenca": 3186,
+    "cuenca/cervezas-dawat-cuenca": 3945,
+    "cuenca/cervezas-tormo-cuenca": 3973,
+    "cuenca/confiteria-marisol-cuenca": 4193,
+    "cuenca/jamones-bermejo-cuenca": 7211,
+    "cuenca/my-cat-s-cake-cuenca": 9016,
+    "cuenca/obrador-del-huecar-cuenca": 9141,
+    "girona/carnisseria-alemany-girona": 3287,
+    "girona/carnisseria-gironell-girona": 3306,
+    "girona/dual-lab-brewery-girona": 4951,
+    "girona/el-xuixo-de-can-castello-girona": 5308,
+    "girona/gro-brewers-girona": 6630,
+    "girona/la-galeta-artesana-girona": 7683,
+    "girona/la-lletera-girona": 7733,
+    "girona/obrador-rocambolesc-girona": 9166,
+    "girona/pastisseria-tornes-girona": 10025,
+    "girona/sweet-virginia-girona": 11731,
+    "granada/aceite-alma-de-luna-granada": 83,
+    "granada/b-olivar-granada": 1066,
+    "granada/bodegas-anchuron-granada": 1787,
+    "granada/by-curro-premium-s-l-granada": 2639,
+    "granada/carnicas-lujan-granada": 3169,
+    "granada/cervezas-la-albayzinera-granada": 3957,
+    "granada/granadajuice-coldpressed-granada": 6517,
+    "granada/granja-maravillas-granada": 6574,
+    "granada/helados-la-perla-granada": 6745,
+    "granada/horno-del-progreso-granada": 6876,
+    "granada/jomail-1973-granada": 7364,
+    "granada/la-tarta-de-la-madre-cris-granada": 7882,
+    "granada/mariscal-delicatessen-granada": 8371,
+    "granada/panaderia-la-gracia-de-dios-granada": 9561,
+    "granada/productos-ruca-granada": 10333,
+    "granada/swiss-agro-sl-granada": 11732,
+    "granada/veggins-granada": 12099,
+    "guadalajara/miel-el-charro-guadalajara": 8713,
+    "huelva/aceitunas-ropero-huelva": 263,
+    "huelva/berryworld-huelva": 1173,
+    "huelva/confiteria-alvarado-huelva": 4150,
+    "huelva/confiteria-guillen-huelva": 4175,
+    "huelva/dulce-pecado-bakery-huelva": 4955,
+    "huelva/dulceria-pasteleria-nova-ruiz-huelva": 4966,
+    "huelva/el-horno-de-ana-huelva": 5176,
+    "huelva/heladeria-italiana-porto-bello-huelva": 6722,
+    "huelva/la-dulceria-de-santa-barbara-huelva": 7654,
+    "huelva/la-reposteria-de-pi-huelva": 7834,
+    "huelva/onubafruit-huelva": 9306,
+    "huelva/panaderia-artesanal-huelva": 9459,
+    "huelva/panaderia-el-olam-huelva": 9514,
+    "huelva/panaderia-pasteleria-la-espiga-huelva": 9621,
+    "huelva/pasteleria-abuela-canalla-huelva": 9757,
+    "huelva/pasteleria-el-buen-gusto-huelva": 9796,
+    "huelva/pasteleria-la-grosera-centro-huelva": 9822,
+    "huelva/pasteleria-yugoslava-emilia-huelva": 9898,
+    "huelva/tarteria-las-alemanas-huelva": 11755,
+    "jaen/aceitunera-jiennense-jaen": 276,
+    "jaen/carnicas-mellado-jaen": 3170,
+    "jaen/confiteria-barranco-jaen": 4153,
+    "jaen/embutidos-y-precocinados-toledano-jaen": 5568,
+    "jaen/family-biscuits-jaen": 5768,
+    "jaen/grupo-apex-patatas-fritas-santo-reino-jaen": 6641,
+    "jaen/la-cremeria-de-jaen-jaen": 7634,
+    "jaen/la-mar-sala-jaen": 7748,
+    "jaen/martinez-premium-jaen": 8403,
+    "jaen/midialser-alimentacion-y-carnicas-s-l-don-verde-vida-jaen": 8652,
+    "jaen/mo-molina-olivares-jaen": 8868,
+    "jaen/obrador-la-panaderia-jaen": 9154,
+    "jaen/olivar-de-castro-jaen": 9266,
+    "jaen/panificadora-bigopan-jaen": 9708,
+    "jaen/salinas-don-diego-jaen": 11338,
+    "leon/bueyes-de-leon-carnes-y-embutidos-luis-leon": 2629,
+    "leon/bunker-distillery-leon": 2633,
+    "leon/carnicas-y-embutidos-panizo-leon": 3187,
+    "leon/confiteria-obrador-san-jose-leon": 4197,
+    "leon/confiteria-santa-cecilia-leon": 4211,
+    "leon/embutidos-natalio-fernandez-leon": 5504,
+    "leon/la-artesa-seleccion-leon": 7537,
+    "leon/obrador-confiterias-leon-leon": 9129,
+    "leon/panaderia-raquel-leon": 9641,
+    "lleida/agro-codi-0-lleida": 437,
+    "lleida/antic-forn-de-pa-j-marti-llaras-lleida": 783,
+    "lleida/balue-fruits-lleida": 1090,
+    "lleida/casa-pons-forners-lleida": 3430,
+    "lleida/celler-de-sanui-lleida": 3640,
+    "lleida/del-tros-a-la-llar-lleida": 4787,
+    "lleida/forn-frias-lleida": 6161,
+    "lleida/forn-la-fleca-lleida": 6184,
+    "lleida/forn-mir-lleida": 6194,
+    "lleida/forn-papanbread-lleida": 6201,
+    "lleida/forn-sant-antoni-lleida": 6211,
+    "lleida/fruita-blanch-lleida": 6263,
+    "lleida/fruites-i-calcots-andreu-lleida": 6270,
+    "lleida/fruitred-lleida": 6282,
+    "lleida/granja-pifarre-lleida": 6583,
+    "lleida/grup-aragones-lleida": 6635,
+    "lleida/grup-garreta-lleida": 6638,
+    "lleida/hortivalls-lleida": 6981,
+    "lleida/l-oliverar-de-sanui-lleida": 7512,
+    "lleida/m-serra-forn-i-pastisseria-lleida": 8262,
+    "lleida/ous-codi-0-lleida": 9356,
+    "lleida/raimat-lleida": 11037,
+    "lleida/sanui-fruits-lleida": 11406,
+    "lugo/bubela-artesa-lugo": 2625,
+    "lugo/cafes-candelas-lugo": 2707,
+    "lugo/cervexa-artesa-aloumina-lugo": 3841,
+    "lugo/torre-de-nunez-lugo": 11873,
+    "malaga/3monos-craft-beer-malaga": 21,
+    "malaga/aceitunas-castillo-malaga": 228,
+    "malaga/aceitunas-roldan-malaga": 262,
+    "malaga/ahumados-skandia-malaga": 512,
+    "malaga/alacena-del-angel-malaga": 558,
+    "malaga/attik-brewing-malaga": 1025,
+    "malaga/bee-garden-malaga-malaga": 1133,
+    "malaga/bertani-cafe-malaga": 1175,
+    "malaga/bizcocheria-lulapai-malaga": 1242,
+    "malaga/bodega-antigua-casa-de-guardia-malaga": 1292,
+    "malaga/bodega-victoria-ordonez-malaga": 1711,
+    "malaga/bodegas-gomara-malaga": 2039,
+    "malaga/bodegas-quitapenas-malaga": 2315,
+    "malaga/bonvivant-beer-malaga": 2582,
+    "malaga/cafes-carambuco-malaga": 2709,
+    "malaga/cafes-mokasol-malaga": 2732,
+    "malaga/campo-de-benamayor-la-competena-malaga": 2882,
+    "malaga/casa-kiki-malaga": 3407,
+    "malaga/cerveza-eukel-malaga": 3873,
+    "malaga/cerveza-savis-malaga": 3911,
+    "malaga/cervezas-victoria-malaga": 3977,
+    "malaga/el-horno-de-lena-martin-malaga": 5185,
+    "malaga/el-reloj-malaga": 5269,
+    "malaga/embrujo-del-sur-malaga": 5377,
+    "malaga/famadesa-malaga": 5754,
+    "malaga/frutos-secos-esteban-malaga": 6338,
+    "malaga/hermanos-montanez-gomez-malaga": 6796,
+    "malaga/hnos-fernandez-malaga": 6833,
+    "malaga/hucarma-malaga": 6987,
+    "malaga/huesal-malaga": 7011,
+    "malaga/huevos-ama-malaga": 7012,
+    "malaga/kima-coffee-malaga": 7444,
+    "malaga/la-artesana-de-la-pasta-malaga": 7538,
+    "malaga/las-delicias-de-mi-noe-malaga": 8032,
+    "malaga/miel-el-matorral-malaga": 8719,
+    "malaga/nanduti-by-dora-ortiz-malaga": 9024,
+    "malaga/obrador-de-confiteria-tejeros-malaga": 9132,
+    "malaga/panaderia-confiteria-cristo-rey-malaga": 9487,
+    "malaga/panaderia-confiteria-el-nino-rivas-malaga": 9488,
+    "malaga/panaderia-ecologica-la-molineta-malaga": 9505,
+    "malaga/panaderia-hermanos-martos-malaga": 9534,
+    "malaga/panaderias-el-mimbre-malaga": 9692,
+    "malaga/panificadora-serrano-malaga": 9716,
+    "malaga/pinchomania-malaga": 10204,
+    "malaga/postres-truffel-malaga": 10267,
+    "malaga/roman-y-martos-malaga": 11148,
+    "malaga/sabor-a-mango-malaga": 11276,
+    "malaga/sanamar-malaga": 11374,
+    "malaga/santa-coffee-malaga": 11393,
+    "malaga/the-coven-obrador-malaga": 11815,
+    "malaga/tres-espigas-malaga": 11921,
+    "malaga/vermu-krauel-malaga": 12133,
+    "murcia/airemar-murcia": 524,
+    "murcia/andres-marmol-murcia": 758,
+    "murcia/behoney-murcia": 1139,
+    "murcia/cafes-jayza-murcia": 2723,
+    "murcia/caprichos-del-paladar-murcia": 3094,
+    "murcia/cervezas-estrella-de-levante-murcia": 3950,
+    "murcia/confiteria-consuegra-murcia": 4159,
+    "murcia/confiteria-espinosa-murcia": 4167,
+    "murcia/confiteria-roses-murcia": 4208,
+    "murcia/conservas-el-raal-murcia": 4281,
+    "murcia/destilerias-belmonte-murcia": 4849,
+    "murcia/destilerias-bernal-murcia": 4850,
+    "murcia/el-pan-de-san-miguel-murcia": 5242,
+    "murcia/grupo-lucas-murcia": 6649,
+    "murcia/j-cano-murcia": 7168,
+    "murcia/la-colegiala-murcia": 7621,
+    "murcia/miel-api-rosa-murcia": 8662,
+    "murcia/miel-monasterio-los-jeronimos-murcia": 8775,
+    "murcia/pimenton-la-pastora-murcia": 10196,
+    "murcia/puro-helado-murcia": 10369,
+    "murcia/sabater-spices-murcia": 11274,
+    "murcia/yakka-murcia": 12399,
+    "ourense/cafes-las-antillas-campos-ourense": 2726,
+    "ourense/cerveza-laza-ourense": 3892,
+    "ourense/chocolateria-candido-ourense": 4013,
+    "ourense/coren-ourense": 4638,
+    "ourense/pazo-casanova-ourense": 10093,
+    "ourense/queixos-angel-ourense": 10389,
+    "palencia/agropal-palencia": 457,
+    "palencia/avicola-melero-palencia": 1039,
+    "palencia/cabo-virgenes-palencia": 2680,
+    "palencia/carnicas-odriozola-palencia": 3175,
+    "palencia/damma-palencia": 4737,
+    "palencia/industrias-carnicas-santa-marina-palencia": 7126,
+    "palencia/la-casa-dulce-palencia": 7599,
+    "palencia/la-reposteria-de-las-monjas-palencia": 7833,
+    "palencia/los-cuatro-hermanos-palencia": 8221,
+    "palencia/merpacifico-palencia": 8637,
+    "palencia/pasteleria-lord-palencia": 9833,
+    "palencia/pasteleria-polo-palencia": 9868,
+    "palencia/pasteleria-rigodon-palencia": 9875,
+    "palencia/penafria-palencia": 10123,
+    "palencia/sabor-de-castilla-palencia": 11277,
+    "palencia/valle-de-san-juan-palencia": 12066,
+    "pontevedra/a-devesa-pontevedra": 38,
+    "pontevedra/cervexa-nasa-pontevedra": 3842,
+    "pontevedra/confiteria-capri-pontevedra": 4158,
+    "pontevedra/confiteria-landin-pontevedra": 4188,
+    "pontevedra/confiteria-solla-pontevedra": 4215,
+    "pontevedra/hifas-da-terra-pontevedra": 6814,
+    "pontevedra/panaderia-acuna-pontevedra": 9443,
+    "salamanca/bodegas-labrador-salamanca-salamanca": 2114,
+    "salamanca/carnicas-mulas-salamanca": 3172,
+    "salamanca/celi-co-gluten-free-bakery-salamanca": 3571,
+    "salamanca/cerveza-bizarra-salamanca": 3861,
+    "salamanca/confiteria-la-industrial-salamanca": 4182,
+    "salamanca/confiteria-santa-lucia-salamanca": 4212,
+    "salamanca/el-carro-de-maria-salamanca": 5124,
+    "salamanca/el-obrador-4-0-salamanca": 5223,
+    "salamanca/huevos-la-campesina-salamanca": 7027,
+    "salamanca/jamones-faustino-prieto-salamanca": 7238,
+    "salamanca/la-abeja-dorada-salamanca": 7517,
+    "salamanca/la-casa-del-pan-iii-salamanca": 7597,
+    "salamanca/miel-y-polen-de-salamanca-salamanca": 8813,
+    "salamanca/pasteleria-garal-salamanca": 9810,
+    "salamanca/pasteleria-y-panaderia-santa-barbara-salamanca": 9897,
+    "salamanca/patatas-fritas-fatima-salamanca": 10059,
+    "salamanca/productos-san-fernando-salamanca": 10334,
+    "salamanca/revisan-ibericos-salamanca-salamanca": 11095,
+    "santa-cruz-de-tenerife/cerveza-aguita-santa-cruz-de-tenerife": 3845,
+    "santa-cruz-de-tenerife/coplaca-santa-cruz-de-tenerife": 4626,
+    "santa-cruz-de-tenerife/molino-de-gofio-la-salud-santa-cruz-de-tenerife": 8900,
+    "santa-cruz-de-tenerife/pasteleria-diaz-santa-cruz-de-tenerife": 9792,
+    "santa-cruz-de-tenerife/queso-de-las-carboneras-sotera-santa-cruz-de-tenerife": 10704,
+    "segovia/agricola-segoviana-de-legumbres-segovia": 429,
+    "segovia/cerveza-sanfrutos-segovia": 3909,
+    "segovia/cochinillos-hermanos-gomez-segovia": 4104,
+    "segovia/dulces-vuelos-segovia": 5001,
+    "segovia/industrias-carnicas-angel-lazaro-segovia": 7114,
+    "segovia/merche-s-galletas-segovia": 8622,
+    "segovia/origen-pasteleria-artesana-segovia": 9316,
+    "segovia/panaderia-masa-con-alma-segovia": 9585,
+    "segovia/panaderia-pasteleria-via-roma-segovia": 9631,
+    "segovia/panaderia-tentaciones-segovia": 9665,
+    "segovia/pasteleria-acueducto-segovia": 9758,
+    "sevilla/cerveza-rancia-sevilla": 3906,
+    "sevilla/cervezas-rio-azul-sevilla": 3970,
+    "sevilla/confiteria-la-campana-sevilla": 4180,
+    "sevilla/confiteria-los-angeles-sevilla": 4189,
+    "sevilla/confiteria-ochoa-sevilla": 4198,
+    "sevilla/d-cabo-chicharrones-sevilla": 4723,
+    "sevilla/miel-egregia-sevilla": 8707,
+    "sevilla/salsas-quietud-sevilla": 11347,
+    "sevilla/setas-y-hongos-del-sur-sevilla": 11504,
+    "soria/caelia-cerveza-artesana-soria": 2686,
+    "soria/canada-real-de-soria-soria": 3032,
+    "soria/carnicas-hermanos-giaquinta-soria": 3162,
+    "soria/d-maria-productos-artesanos-soria": 4725,
+    "soria/dulces-duero-soria": 4983,
+    "soria/el-reino-de-las-abejas-soria": 5268,
+    "soria/espora-gourmet-soria": 5655,
+    "soria/galletas-tejedor-soria": 6380,
+    "soria/la-despensa-soria": 7647,
+    "soria/mantequerias-york-soria": 8338,
+    "soria/miel-cuscurita-soria": 8679,
+    "soria/mykes-gourmet-soria": 9018,
+    "soria/reposteria-de-pinares-soria": 11083,
+    "soria/trufbox-innovation-soria": 11949,
+    "soria/venus-seleccion-soria": 12106,
+    "tarragona/dalmau-hermanos-y-cia-tarragona": 4734,
+    "tarragona/especies-a-ma-tarragona": 5645,
+    "tarragona/la-botiga-del-cafe-tarragona": 7559,
+    "tarragona/twins-craft-beer-tarragona": 11984,
+    "teruel/confiteria-munoz-teruel": 4195,
+    "teruel/horno-sanz-s-l-teruel": 6904,
+    "teruel/jamon-mudejar-elaborados-las-torres-teruel": 7197,
+    "teruel/trufas-la-chaparra-teruel": 11944,
+    "toledo/agropecuaria-dehesa-ardales-s-l-toledo": 460,
+    "toledo/cervezas-domus-toledo": 3946,
+    "toledo/cervezas-speranto-toledo": 3972,
+    "toledo/el-obrador-del-abuelo-toledo": 5234,
+    "toledo/la-balluca-cerveza-artesana-toledo": 7540,
+    "toledo/miel-castiza-toledo": 8673,
+    "toledo/obrador-santo-tome-toledo": 9171,
+    "toledo/oleotoledo-toledo": 9213,
+    "toledo/pan-para-pepe-toledo": 9436,
+    "toledo/panaderia-manzano-toledo": 9582,
+    "toledo/san-telesforo-toledo": 11371,
+    "valencia/arroz-tartana-valencia": 955,
+    "valencia/bluebell-coffee-roasters-valencia": 1260,
+    "valencia/cerveza-emi-valencia": 3872,
+    "valencia/forn-de-manuela-valencia": 6076,
+    "valencia/horchateria-els-sariers-valencia": 6852,
+    "valencia/horchateria-santa-catalina-valencia": 6854,
+    "valencia/horno-san-bartolome-valencia": 6896,
+    "valencia/horno-y-pasteleria-alfonso-martinez-valencia": 6907,
+    "valencia/la-tahona-del-abuelo-valencia": 7880,
+    "valencia/miel-j-regal-valencia": 8744,
+    "valencia/trufas-martinez-valencia": 11946,
+    "valencia/utopick-cacao-valencia": 12035,
+    "valencia/vorasenda-valencia": 12321,
+    "valladolid/carne-t-marcos-valladolid": 3131,
+    "valladolid/el-secreto-del-abad-valladolid": 5279,
+    "valladolid/fadispan-pan-de-valladolid-valladolid": 5751,
+    "valladolid/inea-finca-ecologica-valladolid": 7133,
+    "valladolid/matizes-pasteleria-valladolid": 8523,
+    "valladolid/obrador-al-pan-pan-valladolid": 9119,
+    "valladolid/obrador-balbino-valladolid": 9124,
+    "valladolid/obrador-de-canutillos-ruben-valladolid": 9131,
+    "valladolid/obrador-tahona-coque-valladolid": 9172,
+    "valladolid/pan-pastas-y-reposteria-artesana-valladolid": 9437,
+    "valladolid/pasteleria-cundo-valladolid": 9787,
+    "valladolid/pasteleria-liebana-valladolid": 9830,
+    "valladolid/pasteleria-menta-y-chocolate-valladolid": 9846,
+    "valladolid/queserias-entrepinares-valladolid": 10683,
+    "valladolid/wamba-nuts-valladolid": 12325,
+    "zamora/chocolate-refart-zamora": 4011,
+    "zamora/coperblanc-zamorana-s-a-zamora": 4625,
+    "zamora/hongos-de-zamora-s-l-zamora": 6847,
+    "zamora/horticola-majia-zamora": 6976,
+    "zamora/juan-jose-ledesma-s-a-zamora": 7407,
+    "zamora/morcillas-ramiro-zamora": 8978,
+    "zaragoza/cafes-el-criollo-zaragoza": 2714,
+    "zaragoza/casa-de-ganaderos-zaragoza": 3389,
+    "zaragoza/cervezas-artillera-zaragoza": 3935,
+    "zaragoza/conservas-gardeniers-zaragoza": 4295,
+    "zaragoza/helados-tortosa-zaragoza": 6756,
+    "zaragoza/horno-de-reposteria-ismael-zaragoza": 6873,
+    "zaragoza/onawa-coffee-zaragoza": 9302,
+    "zaragoza/pam-coffee-roasters-zaragoza": 9422,
+    "zaragoza/pasta-libertina-zaragoza": 9746,
+    "zaragoza/pasteleria-fantoba-zaragoza": 9805,
+    "zaragoza/pasteleria-lalmolda-zaragoza": 9828,
+    "zaragoza/pastores-grupo-cooperativo-zaragoza": 10038,
+    "zaragoza/quesos-la-pardina-zaragoza": 10878
   },
   "regions": [
     {
@@ -18,37 +781,64 @@
       "areas": [
         {
           "slug": "almeria",
-          "label": "Almería"
+          "label": "Almería",
+          "labels": {
+            "es": "Almería"
+          }
         },
         {
           "slug": "cadiz",
-          "label": "Cádiz"
+          "label": "Cádiz",
+          "labels": {
+            "es": "Cádiz"
+          }
         },
         {
           "slug": "cordoba",
-          "label": "Córdoba"
+          "label": "Córdoba",
+          "labels": {
+            "es": "Córdoba"
+          }
         },
         {
           "slug": "granada",
-          "label": "Granada"
+          "label": "Granada",
+          "labels": {
+            "es": "Granada"
+          }
         },
         {
           "slug": "huelva",
-          "label": "Huelva"
+          "label": "Huelva",
+          "labels": {
+            "es": "Huelva"
+          }
         },
         {
           "slug": "jaen",
-          "label": "Jaén"
+          "label": "Jaén",
+          "labels": {
+            "es": "Jaén"
+          }
         },
         {
           "slug": "malaga",
-          "label": "Málaga"
+          "label": "Málaga",
+          "labels": {
+            "es": "Málaga"
+          }
         },
         {
           "slug": "sevilla",
-          "label": "Sevilla"
+          "label": "Sevilla",
+          "labels": {
+            "es": "Sevilla"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Andalucía"
+      }
     },
     {
       "slug": "asturias",
@@ -56,9 +846,15 @@
       "areas": [
         {
           "slug": "asturias",
-          "label": "Asturias"
+          "label": "Asturias",
+          "labels": {
+            "es": "Asturias"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Principado de Asturias"
+      }
     },
     {
       "slug": "cantabria",
@@ -66,9 +862,15 @@
       "areas": [
         {
           "slug": "cantabria",
-          "label": "Cantabria"
+          "label": "Cantabria",
+          "labels": {
+            "es": "Cantabria"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Cantabria"
+      }
     },
     {
       "slug": "castilla-y-leon",
@@ -76,41 +878,71 @@
       "areas": [
         {
           "slug": "avila",
-          "label": "Ávila"
+          "label": "Ávila",
+          "labels": {
+            "es": "Ávila"
+          }
         },
         {
           "slug": "burgos",
-          "label": "Burgos"
+          "label": "Burgos",
+          "labels": {
+            "es": "Burgos"
+          }
         },
         {
           "slug": "leon",
-          "label": "León"
+          "label": "León",
+          "labels": {
+            "es": "León"
+          }
         },
         {
           "slug": "palencia",
-          "label": "Palencia"
+          "label": "Palencia",
+          "labels": {
+            "es": "Palencia"
+          }
         },
         {
           "slug": "salamanca",
-          "label": "Salamanca"
+          "label": "Salamanca",
+          "labels": {
+            "es": "Salamanca"
+          }
         },
         {
           "slug": "segovia",
-          "label": "Segovia"
+          "label": "Segovia",
+          "labels": {
+            "es": "Segovia"
+          }
         },
         {
           "slug": "soria",
-          "label": "Soria"
+          "label": "Soria",
+          "labels": {
+            "es": "Soria"
+          }
         },
         {
           "slug": "valladolid",
-          "label": "Valladolid"
+          "label": "Valladolid",
+          "labels": {
+            "es": "Valladolid"
+          }
         },
         {
           "slug": "zamora",
-          "label": "Zamora"
+          "label": "Zamora",
+          "labels": {
+            "es": "Zamora"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Castilla y León"
+      }
     },
     {
       "slug": "castilla-la-mancha",
@@ -118,25 +950,43 @@
       "areas": [
         {
           "slug": "albacete",
-          "label": "Albacete"
+          "label": "Albacete",
+          "labels": {
+            "es": "Albacete"
+          }
         },
         {
           "slug": "ciudad-real",
-          "label": "Ciudad Real"
+          "label": "Ciudad Real",
+          "labels": {
+            "es": "Ciudad Real"
+          }
         },
         {
           "slug": "cuenca",
-          "label": "Cuenca"
+          "label": "Cuenca",
+          "labels": {
+            "es": "Cuenca"
+          }
         },
         {
           "slug": "guadalajara",
-          "label": "Guadalajara"
+          "label": "Guadalajara",
+          "labels": {
+            "es": "Guadalajara"
+          }
         },
         {
           "slug": "toledo",
-          "label": "Toledo"
+          "label": "Toledo",
+          "labels": {
+            "es": "Toledo"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Castilla-La Mancha"
+      }
     },
     {
       "slug": "aragon",
@@ -144,17 +994,29 @@
       "areas": [
         {
           "slug": "huesca",
-          "label": "Huesca"
+          "label": "Huesca",
+          "labels": {
+            "es": "Huesca"
+          }
         },
         {
           "slug": "teruel",
-          "label": "Teruel"
+          "label": "Teruel",
+          "labels": {
+            "es": "Teruel"
+          }
         },
         {
           "slug": "zaragoza",
-          "label": "Zaragoza"
+          "label": "Zaragoza",
+          "labels": {
+            "es": "Zaragoza"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Aragón"
+      }
     },
     {
       "slug": "catalunya",
@@ -162,21 +1024,54 @@
       "areas": [
         {
           "slug": "barcelona",
-          "label": "Barcelona"
+          "label": "Barcelona",
+          "labels": {
+            "en": "Barcelona",
+            "es": "Barcelona",
+            "ca": "Barcelona"
+          }
         },
         {
           "slug": "girona",
-          "label": "Girona"
+          "label": "Girona",
+          "labels": {
+            "en": "Girona",
+            "es": "Girona",
+            "ca": "Girona"
+          }
         },
         {
           "slug": "lleida",
-          "label": "Lleida"
+          "label": "Lleida",
+          "labels": {
+            "en": "Lleida",
+            "es": "Lleida",
+            "ca": "Lleida"
+          }
         },
         {
           "slug": "tarragona",
-          "label": "Tarragona"
+          "label": "Tarragona",
+          "labels": {
+            "en": "Tarragona",
+            "es": "Tarragona",
+            "ca": "Tarragona"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Catalonia",
+        "es": "Cataluña",
+        "ca": "Catalunya"
+      },
+      "i18n": {
+        "preferredLocale": "ca",
+        "publishedLocales": [
+          "ca",
+          "es",
+          "en"
+        ]
+      }
     },
     {
       "slug": "illes-balears",
@@ -184,9 +1079,15 @@
       "areas": [
         {
           "slug": "baleares",
-          "label": "Baleares"
+          "label": "Baleares",
+          "labels": {
+            "es": "Baleares"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Illes Balears"
+      }
     },
     {
       "slug": "canarias",
@@ -194,13 +1095,22 @@
       "areas": [
         {
           "slug": "las-palmas",
-          "label": "Las Palmas"
+          "label": "Las Palmas",
+          "labels": {
+            "es": "Las Palmas"
+          }
         },
         {
           "slug": "santa-cruz-de-tenerife",
-          "label": "Santa Cruz de Tenerife"
+          "label": "Santa Cruz de Tenerife",
+          "labels": {
+            "es": "Santa Cruz de Tenerife"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Canarias"
+      }
     },
     {
       "slug": "comunitat-valenciana",
@@ -208,17 +1118,29 @@
       "areas": [
         {
           "slug": "alicante",
-          "label": "Alicante"
+          "label": "Alicante",
+          "labels": {
+            "es": "Alicante"
+          }
         },
         {
           "slug": "castellon",
-          "label": "Castellón"
+          "label": "Castellón",
+          "labels": {
+            "es": "Castellón"
+          }
         },
         {
           "slug": "valencia",
-          "label": "Valencia"
+          "label": "Valencia",
+          "labels": {
+            "es": "Valencia"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Comunitat Valenciana"
+      }
     },
     {
       "slug": "galicia",
@@ -226,21 +1148,36 @@
       "areas": [
         {
           "slug": "a-coruna",
-          "label": "A Coruña"
+          "label": "A Coruña",
+          "labels": {
+            "es": "A Coruña"
+          }
         },
         {
           "slug": "lugo",
-          "label": "Lugo"
+          "label": "Lugo",
+          "labels": {
+            "es": "Lugo"
+          }
         },
         {
           "slug": "ourense",
-          "label": "Ourense"
+          "label": "Ourense",
+          "labels": {
+            "es": "Ourense"
+          }
         },
         {
           "slug": "pontevedra",
-          "label": "Pontevedra"
+          "label": "Pontevedra",
+          "labels": {
+            "es": "Pontevedra"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Galicia"
+      }
     },
     {
       "slug": "extremadura",
@@ -248,13 +1185,22 @@
       "areas": [
         {
           "slug": "badajoz",
-          "label": "Badajoz"
+          "label": "Badajoz",
+          "labels": {
+            "es": "Badajoz"
+          }
         },
         {
           "slug": "caceres",
-          "label": "Cáceres"
+          "label": "Cáceres",
+          "labels": {
+            "es": "Cáceres"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Extremadura"
+      }
     },
     {
       "slug": "madrid",
@@ -262,9 +1208,15 @@
       "areas": [
         {
           "slug": "madrid",
-          "label": "Madrid"
+          "label": "Madrid",
+          "labels": {
+            "es": "Madrid"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Comunidad de Madrid"
+      }
     },
     {
       "slug": "la-rioja",
@@ -272,9 +1224,15 @@
       "areas": [
         {
           "slug": "la-rioja",
-          "label": "La Rioja"
+          "label": "La Rioja",
+          "labels": {
+            "es": "La Rioja"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "La Rioja"
+      }
     },
     {
       "slug": "murcia",
@@ -282,9 +1240,15 @@
       "areas": [
         {
           "slug": "murcia",
-          "label": "Murcia"
+          "label": "Murcia",
+          "labels": {
+            "es": "Murcia"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Región de Murcia"
+      }
     },
     {
       "slug": "navarra",
@@ -292,9 +1256,15 @@
       "areas": [
         {
           "slug": "navarra",
-          "label": "Navarra"
+          "label": "Navarra",
+          "labels": {
+            "es": "Navarra"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "Navarra"
+      }
     },
     {
       "slug": "pais-vasco",
@@ -302,17 +1272,29 @@
       "areas": [
         {
           "slug": "alava",
-          "label": "Álava"
+          "label": "Álava",
+          "labels": {
+            "es": "Álava"
+          }
         },
         {
           "slug": "guipuzcoa",
-          "label": "Guipúzcoa"
+          "label": "Guipúzcoa",
+          "labels": {
+            "es": "Guipúzcoa"
+          }
         },
         {
           "slug": "vizcaya",
-          "label": "Vizcaya"
+          "label": "Vizcaya",
+          "labels": {
+            "es": "Vizcaya"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "es": "País Vasco"
+      }
     }
   ]
 }

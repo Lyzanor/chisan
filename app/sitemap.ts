@@ -1,31 +1,24 @@
 import type { MetadataRoute } from "next";
 
-import { buildCatalogHref, buildProducerHref } from "@/lib/catalog-navigation";
 import {
-  listCountryAreaParams,
-  listCountrySlugs,
-  listProducerRouteParams,
-} from "@/lib/csv-catalog";
-import { SITE_ORIGIN } from "@/lib/site";
+  getCatalogSitemapShard,
+  listCatalogSitemapDescriptors,
+} from "@/lib/catalog-sitemap";
+import { isPublicDiscoveryEnabled } from "@/lib/site";
 
-function absoluteUrl(pathname: string): string {
-  return new URL(pathname, SITE_ORIGIN).toString();
+// Next.js 16 exposes each generated id at /sitemap/<id>.xml and passes the id
+// to the handler as a Promise. Keep one empty shard addressable before launch
+// so the feature-flag behavior remains directly testable without publishing it.
+export async function generateSitemaps(): Promise<{ id: number }[]> {
+  if (!isPublicDiscoveryEnabled()) return [{ id: 0 }];
+  return listCatalogSitemapDescriptors();
 }
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const producerRoutes = await listProducerRouteParams();
-
-  return [
-    { url: absoluteUrl("/") },
-    { url: absoluteUrl("/our-purpose") },
-    ...listCountrySlugs().map((country) => ({
-      url: absoluteUrl(buildCatalogHref({ country })),
-    })),
-    ...listCountryAreaParams().map(({ country, area }) => ({
-      url: absoluteUrl(buildCatalogHref({ country, area })),
-    })),
-    ...producerRoutes.map(({ country, area, slug }) => ({
-      url: absoluteUrl(buildProducerHref({ slug }, { country, area })),
-    })),
-  ];
+export default async function sitemap({
+  id,
+}: {
+  id: Promise<string>;
+}): Promise<MetadataRoute.Sitemap> {
+  if (!isPublicDiscoveryEnabled()) return [];
+  return getCatalogSitemapShard(await id);
 }

@@ -1,0 +1,32 @@
+{
+  "label": "Spain",
+  "unit": { "one": "province", "many": "provinces" },
+  "regionUnit": { "one": "region", "many": "regions" },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": ["es", "en"],
+    "labels": { "es": "España", "en": "Spain" },
+    "unitLabels": {
+      "es": { "one": "provincia", "many": "provincias" },
+      "en": { "one": "province", "many": "provinces" }
+    },
+    "regionUnitLabels": {
+      "es": { "one": "región", "many": "regiones" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  },
+  "regions": [
+    {
+      "slug": "catalunya",
+      "label": "Catalunya",
+      "labels": { "es": "Cataluña", "en": "Catalonia" },
+      "areas": [
+        {
+          "slug": "barcelona",
+          "label": "Barcelona",
+          "labels": { "es": "Barcelona" }
+        }
+      ]
+    }
+  ]
+}

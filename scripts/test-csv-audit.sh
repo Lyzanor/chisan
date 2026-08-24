@@ -37,21 +37,32 @@ const fs = require("node:fs");
 const { parse } = require("csv-parse/sync");
 
 const file = process.argv[2];
-const canonical = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER.join(",");
+const canonicalColumns = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
+const canonical = canonicalColumns.join(",");
+const legacy = canonicalColumns.slice(0, -1).join(",");
 const raw = fs.readFileSync(file, "utf8");
 const lines = raw.split("\n");
-if (lines[0] !== canonical) process.exit(0);
+if (raw.startsWith("\uFEFF") || raw.includes("\r") || ![canonical, legacy].includes(lines[0])) {
+  process.exit(0);
+}
 
 const base = Number.parseInt(
   crypto.createHash("sha256").update(file).digest("hex").slice(0, 10),
   16,
 ) * 1000;
-let changed = false;
+let changed = lines[0] === legacy;
+lines[0] = canonical;
 for (let index = 1; index < lines.length; index += 1) {
   if (!lines[index]) continue;
   const cells = parse(lines[index], { relax_column_count: true })[0];
-  if (cells.length === canonical.split(",").length - 1) {
+  if (cells.length === canonicalColumns.length - 2) {
     lines[index] += `,${base + index}`;
+    cells.push(String(base + index));
+    changed = true;
+  }
+  if (cells.length === canonicalColumns.length - 1) {
+    const description = String(cells[canonicalColumns.indexOf("descripcion")] ?? "").trim();
+    lines[index] += `,${description ? "es" : ""}`;
     changed = true;
   }
 }
@@ -104,12 +115,22 @@ REGISTRY_OK="$TMP_ROOT/registry-ok"
 REGISTRY_DUPLICATE="$TMP_ROOT/registry-duplicate"
 REGISTRY_RESERVED="$TMP_ROOT/registry-reserved"
 REGISTRY_BAD_ALIAS_TARGET="$TMP_ROOT/registry-bad-alias-target"
+REGISTRY_PRODUCER_ALIAS_VALID="$TMP_ROOT/registry-producer-alias-valid"
+REGISTRY_PRODUCER_ALIAS_INVALID="$TMP_ROOT/registry-producer-alias-invalid"
 REGISTRY_MISSING_GUIDE="$TMP_ROOT/registry-missing-guide"
 REGISTRY_BAD_GUIDE="$TMP_ROOT/registry-bad-guide"
+REGISTRY_I18N_VALID="$TMP_ROOT/registry-i18n-valid"
+REGISTRY_I18N_CATALUNYA="$TMP_ROOT/registry-i18n-catalunya"
+REGISTRY_I18N_INHERITED="$TMP_ROOT/registry-i18n-inherited"
+REGISTRY_I18N_MISSING_LABELS="$TMP_ROOT/registry-i18n-missing-labels"
+REGISTRY_I18N_INVALID_PAIRS="$TMP_ROOT/registry-i18n-invalid-pairs"
+REGISTRY_I18N_EXCLUDED_DEFAULT="$TMP_ROOT/registry-i18n-excluded-default"
 mkdir -p "$REGISTRY_OK/es/centro" "$REGISTRY_OK/pt/norte"
 mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/es/norte"
 mkdir -p "$REGISTRY_RESERVED/es/centro"
 mkdir -p "$REGISTRY_BAD_ALIAS_TARGET/es/centro"
+mkdir -p "$REGISTRY_PRODUCER_ALIAS_VALID/es/centro"
+mkdir -p "$REGISTRY_PRODUCER_ALIAS_INVALID/es/centro"
 mkdir -p "$REGISTRY_MISSING_GUIDE/es/centro" "$REGISTRY_BAD_GUIDE/es/centro"
 touch "$REGISTRY_OK/es/centro/ribera.csv" "$REGISTRY_OK/pt/norte/ribera.csv"
 touch "$REGISTRY_DUPLICATE/es/centro/ribera.csv" "$REGISTRY_DUPLICATE/es/norte/ribera.csv"
@@ -119,7 +140,9 @@ touch "$REGISTRY_MISSING_GUIDE/es/centro/madrid.csv" "$REGISTRY_BAD_GUIDE/es/cen
 
 for guide in "$REGISTRY_OK/es/AGENTS.md" "$REGISTRY_OK/pt/AGENTS.md" \
   "$REGISTRY_DUPLICATE/es/AGENTS.md" "$REGISTRY_RESERVED/es/AGENTS.md" \
-  "$REGISTRY_BAD_ALIAS_TARGET/es/AGENTS.md"; do
+  "$REGISTRY_BAD_ALIAS_TARGET/es/AGENTS.md" \
+  "$REGISTRY_PRODUCER_ALIAS_VALID/es/AGENTS.md" \
+  "$REGISTRY_PRODUCER_ALIAS_INVALID/es/AGENTS.md"; do
   cat >"$guide" <<'GUIDE'
 # Country
 ## Operating state
@@ -135,6 +158,22 @@ JSON
 cat >"$REGISTRY_BAD_ALIAS_TARGET/es/country.json" <<'JSON'
 {"aliases":{"old-madrid":"missing-area"}}
 JSON
+
+cat >"$REGISTRY_PRODUCER_ALIAS_VALID/es/country.json" <<'JSON'
+{"aliases":{"old-area":"current"},"producerRouteAliases":{"old-area/ø-former-producer":1,"current/other-former-producer":1}}
+JSON
+cat >"$REGISTRY_PRODUCER_ALIAS_VALID/es/centro/current.csv" <<'CSV'
+slug,producer_id
+canonical-producer,1
+CSV
+
+cat >"$REGISTRY_PRODUCER_ALIAS_INVALID/es/country.json" <<'JSON'
+{"producerRouteAliases":{"malformed":1,"old/%2F":2,"old/bad?slug":3,"old/bad#slug":4,"old/%00":5,"old/":6,"current/canonical-producer":1,"old/missing":99,"old/string-id":"1","old/unsafe":9007199254740992}}
+JSON
+cat >"$REGISTRY_PRODUCER_ALIAS_INVALID/es/centro/current.csv" <<'CSV'
+slug,producer_id
+canonical-producer,1
+CSV
 
 cat >"$REGISTRY_BAD_GUIDE/es/AGENTS.md" <<'GUIDE'
 # Country
@@ -161,6 +200,28 @@ run_expect_failure "$TMP_ROOT/out-registry-bad-alias-target.txt" \
 grep -q "area alias 'es/old-madrid' targets 'missing-area', which is not an area" \
   "$TMP_ROOT/out-registry-bad-alias-target.txt"
 
+run_expect_success "$TMP_ROOT/out-registry-producer-alias-valid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_PRODUCER_ALIAS_VALID"
+
+run_expect_failure "$TMP_ROOT/out-registry-producer-alias-invalid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_PRODUCER_ALIAS_INVALID"
+grep -q "producer route alias 'es/malformed' must store two non-empty decoded NFC segments" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/old/%2F' must store two non-empty decoded NFC segments" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/old/bad?slug' must store two non-empty decoded NFC segments" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/old/%00' must store two non-empty decoded NFC segments" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/current/canonical-producer' collides with current canonical producer_id '1'" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/old/missing' targets producer_id '99'" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/old/string-id' must target a positive safe-integer producer_id" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+grep -q "producer route alias 'es/old/unsafe' must target a positive safe-integer producer_id" \
+  "$TMP_ROOT/out-registry-producer-alias-invalid.txt"
+
 run_expect_failure "$TMP_ROOT/out-registry-missing-guide.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_MISSING_GUIDE"
 grep -q "country 'es' must contain AGENTS.md" "$TMP_ROOT/out-registry-missing-guide.txt"
@@ -168,6 +229,55 @@ grep -q "country 'es' must contain AGENTS.md" "$TMP_ROOT/out-registry-missing-gu
 run_expect_failure "$TMP_ROOT/out-registry-bad-guide.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_BAD_GUIDE"
 grep -q "country guide 'es/AGENTS.md' must use exactly" "$TMP_ROOT/out-registry-bad-guide.txt"
+
+prepare_i18n_registry() {
+  local registry_root="$1"
+  local fixture="$2"
+  mkdir -p "$registry_root/es/catalunya"
+  touch "$registry_root/es/catalunya/barcelona.csv"
+  cp "$ROOT_DIR/scripts/fixtures/i18n-manifests/$fixture" "$registry_root/es/country.json"
+  cat >"$registry_root/es/AGENTS.md" <<'GUIDE'
+# Country
+## Operating state
+## Country rules
+## Source ceilings
+GUIDE
+}
+
+prepare_i18n_registry "$REGISTRY_I18N_VALID" "valid-defaults.json"
+prepare_i18n_registry "$REGISTRY_I18N_CATALUNYA" "catalunya-overrides.json"
+prepare_i18n_registry "$REGISTRY_I18N_INHERITED" "inherited-locales.json"
+prepare_i18n_registry "$REGISTRY_I18N_MISSING_LABELS" "missing-labels.json"
+prepare_i18n_registry "$REGISTRY_I18N_INVALID_PAIRS" "invalid-locale-pairs.json"
+prepare_i18n_registry "$REGISTRY_I18N_EXCLUDED_DEFAULT" "excluded-default.json"
+
+run_expect_success "$TMP_ROOT/out-registry-i18n-valid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_VALID"
+run_expect_success "$TMP_ROOT/out-registry-i18n-catalunya.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_CATALUNYA"
+run_expect_success "$TMP_ROOT/out-registry-i18n-inherited.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_INHERITED"
+
+run_expect_failure "$TMP_ROOT/out-registry-i18n-missing-labels.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_MISSING_LABELS"
+grep -q "area 'es/catalunya/barcelona' labels.en must be a non-empty string" \
+  "$TMP_ROOT/out-registry-i18n-missing-labels.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_INVALID_PAIRS"
+grep -q "default locale 'es' must appear in i18n.publishedLocales" \
+  "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
+grep -q "i18n.publishedLocales duplicates locale 'en'" \
+  "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
+grep -q "preferred locale 'ca' must appear in its effective published locales" \
+  "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
+grep -q "i18n.publishedLocales entry must be one of: en, es, ca, de, ja" \
+  "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-i18n-excluded-default.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_EXCLUDED_DEFAULT"
+grep -q "effective published locales must include country default locale 'es'" \
+  "$TMP_ROOT/out-registry-i18n-excluded-default.txt"
 
 cat >"$TMP_DIR/missing-column.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,verificacion
@@ -407,6 +517,9 @@ cat >"$CHANGED_ROOT/data/csv/es/two/two.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 changed-producer,Changed Producer,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
 CSV
+prepare_fixture_identity \
+  "$CHANGED_ROOT/data/csv/es/one/one.csv" \
+  "$CHANGED_ROOT/data/csv/es/two/two.csv"
 (
   cd "$CHANGED_ROOT"
   git init -q
@@ -418,7 +531,10 @@ CSV
 const fs = require("node:fs");
 const file = "data/csv/es/two/two.csv";
 const raw = fs.readFileSync(file, "utf8");
-fs.writeFileSync(file, raw.replace("changed-producer", "stable-producer").replace(",2\n", ",1\n"));
+fs.writeFileSync(
+  file,
+  raw.replace("changed-producer", "stable-producer").replace(",2,es\n", ",1,es\n"),
+);
 NODE
 )
 run_expect_failure "$TMP_DIR/out-changed-country-collision.txt" \
@@ -444,6 +560,7 @@ cat >"$BOOTSTRAP_ROOT/data/csv/es/one/one.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 bootstrap-producer,Bootstrap Producer,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,42
 CSV
+prepare_fixture_identity "$BOOTSTRAP_ROOT/data/csv/es/one/one.csv"
 run_expect_success "$TMP_DIR/out-changed-bootstrap.txt" \
   bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$BOOTSTRAP_ROOT"
 
@@ -456,6 +573,7 @@ slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario
 stable-a,Stable A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
 stable-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
 CSV
+prepare_fixture_identity "$HISTORY_OK_ROOT/data/csv/es/one/one.csv"
 (
   cd "$HISTORY_OK_ROOT"
   git add .
@@ -467,6 +585,7 @@ stable-a,Stable A,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://examp
 renamed-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,2
 fresh-c,Fresh C,Abrera,Vino,Vino,Carrer 3,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,3
 CSV
+prepare_fixture_identity "$HISTORY_OK_ROOT/data/csv/es/one/one.csv"
 run_expect_success "$TMP_DIR/out-changed-history-ok.txt" \
   bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$HISTORY_OK_ROOT"
 
@@ -482,6 +601,9 @@ cat >"$HISTORY_BAD_ROOT/data/csv/es/two/two.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 stable-c,Stable C,Abrera,Vino,Vino,Carrer 3,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,3
 CSV
+prepare_fixture_identity \
+  "$HISTORY_BAD_ROOT/data/csv/es/one/one.csv" \
+  "$HISTORY_BAD_ROOT/data/csv/es/two/two.csv"
 (
   cd "$HISTORY_BAD_ROOT"
   git add .
@@ -494,6 +616,7 @@ renamed-b,Stable B,Abrera,Vino,Vino,Carrer 2,Productor de prueba,,,,https://exam
 replacement,Replacement,Abrera,Vino,Vino,Carrer 4,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
 fresh-gap,Fresh Gap,Abrera,Vino,Vino,Carrer 5,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,6
 CSV
+prepare_fixture_identity "$HISTORY_BAD_ROOT/data/csv/es/one/one.csv"
 run_expect_failure "$TMP_DIR/out-changed-history-bad.txt" \
   bash -c 'cd "$1" && node scripts/audit-csv.js --changed' _ "$HISTORY_BAD_ROOT"
 grep -q "producer_id changed for HEAD slug 'stable-a': expected '1', found '4'" \
@@ -744,5 +867,57 @@ for scoped in jp es; do
   fi
   grep -qF -- "- centroid fallback coordinates: 1" "$TMP_DIR/out-scoped-$scoped.txt"
 done
+
+# Canonical descriptions and their source locale are one paired editorial
+# value: neither half may be populated independently and codes are exact.
+node - "$TMP_DIR/description-locale-invalid.csv" "$TMP_DIR/description-locale-empty.csv" "$TMP_DIR/description-locale-source-only.csv" <<'NODE'
+const fs = require("node:fs");
+const { stringify } = require("csv-stringify/sync");
+const header = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
+const makeRow = (producerId, description, locale) => ({
+  slug: `locale-${producerId}`,
+  nombre: `Locale ${producerId}`,
+  municipio: "Abrera",
+  categoria: "Miel",
+  verificacion: "pendiente",
+  "Venta online": "no comprobado",
+  producer_id: String(producerId),
+  descripcion: description,
+  descripcion_locale: locale,
+});
+const record = (row) => header.map((column) => row[column] ?? "");
+fs.writeFileSync(
+  process.argv[2],
+  stringify([
+    header,
+    record(makeRow(91001, "", "es")),
+    record(makeRow(91002, "Descripción con idioma ausente.", "")),
+    record(makeRow(91003, "Descripción con código incorrecto.", "ES")),
+  ]),
+);
+fs.writeFileSync(
+  process.argv[3],
+  stringify([header, record(makeRow(91004, "", ""))]),
+);
+fs.writeFileSync(
+  process.argv[4],
+  stringify([
+    header,
+    record(makeRow(91005, "Produit du miel sur son exploitation.", "fr")),
+  ]),
+);
+NODE
+run_expect_failure "$TMP_DIR/out-description-locale-invalid.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-invalid.csv"
+grep -q "empty descripcion requires empty descripcion_locale" \
+  "$TMP_DIR/out-description-locale-invalid.txt"
+grep -q "non-empty descripcion requires descripcion_locale to be one of: en, es, ca, de, ja, fr, it, nl, pt, gl, eu" \
+  "$TMP_DIR/out-description-locale-invalid.txt"
+run_expect_success "$TMP_DIR/out-description-locale-empty.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-empty.csv"
+run_expect_success "$TMP_DIR/out-description-locale-source-only.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-source-only.csv"
+
+(cd "$ROOT_DIR" && node_modules/.bin/tsx --test scripts/test-i18n.ts)
 
 echo "CSV audit tests OK."

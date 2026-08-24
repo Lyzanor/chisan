@@ -1,0 +1,21 @@
+{
+  "version": "2026-08-24.3",
+  "protectedTerms": [
+    "AOC",
+    "AOP",
+    "DOC",
+    "DOCG",
+    "DOP",
+    "IGP",
+    "PDO",
+    "PGI",
+    "Chisan"
+  ],
+  "localeInstructions": {
+    "ca": "Use standard Catalan and retain source-authored proper names, brands and appellations exactly.",
+    "de": "Use clear standard German and retain source-authored proper names, brands and appellations exactly.",
+    "en": "Use clear international English and retain source-authored proper names, brands and appellations exactly.",
+    "es": "Use clear standard Spanish and retain source-authored proper names, brands and appellations exactly.",
+    "ja": "Use natural standard Japanese and retain source-authored proper names, brands, romanized identities and appellations exactly."
+  }
+}

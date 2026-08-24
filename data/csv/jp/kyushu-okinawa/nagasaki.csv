@@ -1,51 +1,51 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-imazato-shuzo-hasami,Imazato Shuzo,Hasami,Sake,,長崎県東彼杵郡波佐見町宿郷596,,,+81956852002,,http://www.64sake.com/,,,,33.136646,129.89621,,parcial,no comprobado,,,394
-umegae-shuzo-sasebo,Umegae Shuzo,Sasebo,Sake,,長崎県佐世保市城間町317,,,+81956592311,,http://umegae-shuzo.com/,,,,33.089893,129.815125,,parcial,no comprobado,,,1299
-senryu-shuzo-sasebo,Senryu Shuzo,Sasebo,Sake,,長崎県佐世保市江迎町長坂209,,,+81956652209,,http://www.sake-honjin.com/,,,,33.310886,129.625961,,parcial,no comprobado,,,1077
-nishimuta-shuzo-sasebo,Nishimuta Shuzo,Sasebo,Sake,,長崎県佐世保市中里町129,,,+81956472569,,,,,,33.202251,129.680222,,parcial,no comprobado,,,869
-fukuda-shuzo-hirado,Fukuda Shuzo,Hirado,Sake,,長崎県平戸市志々伎町1475,,,+81950271111,,http://www.fukuda-shuzo.com/,,,,33.200535,129.40773,,parcial,no comprobado,,,235
-mori-shuzojo-hirado,Mori Shuzojo,Hirado,Sake,,長崎県平戸市新町31-2,,,+81950233131,,http://mori-shuzou.jp/,,,,33.366306,129.553955,,parcial,no comprobado,,,789
-omoya-shuzo-iki,Omoya Shuzo,Iki,Sake,,長崎県壱岐市石田町印通寺浦200番地,,,+81920445002,,http://www.omoyashuzo.com/,,,,33.743286,129.759689,,parcial,no comprobado,,,939
-kawachi-shuzo-tsushima,Kawachi Shuzo,Tsushima,Sake,,長崎県対馬市美津島町鶏知甲490-1,,,+81920542010,,http://www.kawachi-shop.jp/,,,,34.271004,129.310349,,parcial,no comprobado,,,536
-kinokawa-isahaya,Kinokawa,Isahaya,Sake,,長崎県諫早市土師野尾町17-4,,,+81957225600,,,,,,32.821297,130.029144,,parcial,no comprobado,,,579
-urakawa-shuzo-minamishimabara,Urakawa Shuzo,Minamishimabara,Sake,,長崎県南島原市有家町山川1123,,,+81957822030,,http://sake-ikkaku.com/,,,,32.670837,130.301041,,parcial,no comprobado,,,1308
-aimusume-shuzo-unzen,Aimusume Shuzo,Unzen,Sake,,長崎県雲仙市愛野町甲1378,,,+81957360025,,,,,,32.817947,130.162933,,parcial,no comprobado,,,26
-ito-shuzojo-unzen,Ito Shuzojo,Unzen,Sake,,長崎県雲仙市吾妻町241,,,+81957382035,,,,,,32.822609,130.175812,,parcial,no comprobado,,,449
-kato-shuzojo-shimabara,Kato Shuzojo,Shimabara,Sake,,長崎県南高来郡有明町大三東戊1216-1,,,+81957680001,,,,,,32.828056,130.318695,,parcial,no comprobado,,,531
-houryokuen-saza,Houryokuen,Saza,Té e infusiones,Organic green tea,長崎県北松浦郡佐々町八口免350他,"Houryokuen produces organic green tea at its Saza unit, which is listed in the national organic JAS operator register.",,+81956632709,info@houryokuen.com,https://houryokuen.com/inquiry.html,,,,33.253727,129.682617,,verificado,no comprobado,,,345
-goto-winery-otsu,株式会社 五島ワイナリー,Otsu,Vino,,長崎県五島市上大津町2414-2,Produces wine at its Otsu unit.,,+81959745277,,https://www.goto-winery.net/,,,,35.017790,135.854810,,verificado,sí,ecommerce,,2735
-fiore-sasebo,チーズ工房 Fiore (里村ファーム),Sasebo,Lácteos y quesos,Fiore レジーナ,長崎県佐世保市里美町1598,Produces cheese and dairy products at its Sasebo unit.,,,,http://satomurafarm.com/,,,,33.180000,129.715000,,verificado,no comprobado,,,1829
-tabechoku-24770,藤田製茶,Higashisonogi,Té e infusiones,,,Produces tea at its Higashisonogi unit.,,,,,,,,33.036970,129.917140,,parcial,sí,marketplace,,3134
-tabechoku-22332,NaturalEggLab,Hirado,Huevos,,,Produces eggs at its Hirado unit.,,,,,,,,33.315830,129.486940,,parcial,sí,marketplace,,848
-tabechoku-28904,楓帆,Sasebo,Pescado,,,Produces fish and seafood at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,2817
-tabechoku-24171,中田水産,Shimabara,Pescado,,,Produces fish and seafood at its Shimabara unit.,,,,,,,,32.788140,130.370250,,parcial,sí,marketplace,,2059
-tabechoku-24202,長崎のイケメン漁師 坂野水産,Hirado,Pescado,,,Produces fish and seafood at its Hirado unit.,,,,,,,,33.315830,129.486940,,parcial,sí,marketplace,,3260
-tabechoku-26553,百旬館,Hirado,Pescado,,,Produces fish and seafood at its Hirado unit.,,,,,,,,33.315830,129.486940,,parcial,sí,marketplace,,2965
-tabechoku-24753,あごだしのはたした,Shinkamigoto,Condimentos,,,Produces seasonings at its Shinkamigoto unit.,,,,,,,,32.984440,129.073330,,parcial,sí,marketplace,,1412
-tabechoku-27498,アースカンパニー,Sasebo,Pan y cereal,,,Produces grain products at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,1711
-tabechoku-25458,本村製麺工場,Minamishimabara,Pan y cereal,"小麦, 素麺",,Produces wheat and somen at its Minamishimabara unit.,,,,,,,,32.659810,130.297780,,parcial,sí,marketplace,,2639
-tabechoku-20934,花野果,Shinkamigoto,Dulces y repostería,菓子,,Produces confectionery at its Shinkamigoto unit.,,,,,,,,32.984440,129.073330,,parcial,sí,marketplace,,3093
-tabechoku-24893,諫美豚 土井農場,Isahaya,Pan y cereal,,,Produces grain products at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,3158
-tabechoku-26332,ヨシダファーム,Isahaya,Pan y cereal,,,Produces grain products at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,1981
-tabechoku-3078259,やまびこ農苑えぼし,Sasebo,Frutos secos,,,Produces nuts at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,1677
-tabechoku-27895,彩海ファームＭＡＳＡＫＡＺＵ,Sasebo,Fruta y verdura,"柑橘, 野菜",,Produces citrus fruit and vegetables at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,2505
-tabechoku-48,薄田自然農法ファーム,Sasebo,Fruta y verdura,,,Produces fruit and vegetables at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,3130
-tabechoku-25699,うーぞの農園,Minamishimabara,Fruta y verdura,野菜,,Produces vegetables at its Minamishimabara unit.,,,,,,,,32.659810,130.297780,,parcial,sí,marketplace,,1445
-tabechoku-25128,たぬき池自然農園,Ōmura-shi,Fruta y verdura,野菜,,Produces vegetables at its Ōmura-shi unit.,,,,,,,,32.900000,129.958330,,parcial,sí,marketplace,,1549
-tabechoku-29558,薬味屋人作,Shimabara,Fruta y verdura,,,Produces fruit and vegetables at its Shimabara unit.,,,,,,,,32.788140,130.370250,,parcial,sí,marketplace,,3132
-tabechoku-25519,宮下農園,Isahaya,Fruta y verdura,,,Produces fruit and vegetables at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,2371
-tabechoku-25225,ファーム中島,Isahaya,Fruta y verdura,,,Produces fruit and vegetables at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,1896
-tabechoku-20243,のんびり山,Isahaya,Fruta y verdura,生姜,,Produces ginger at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,1586
-tabechoku-20159,はまちゃんファーム,Unzen,Fruta y verdura,,,Produces fruit and vegetables at its Unzen unit.,,,,,,,,32.835190,130.187530,,parcial,sí,marketplace,,1592
-jp-nagasaki-mennoyamaichi-co-11275c4,㈱山一,南島原市,Pan y cereal,乾麺,,"Produces dried noodles in 南島原市, nagasaki.",,,,https://www.mennoyamaichi.co.jp/,,,,32.659810,130.297780,,verificado,sí,ecommerce,,2701
-jp-nagasaki-jin-men-851ec8d,㈲手のべ陣川,南島原市,Pan y cereal,乾麺,,"Produces dried noodles in 南島原市, nagasaki.",,,,https://www.jin-men.com/,,,,32.659810,130.297780,,verificado,no comprobado,,,2587
-jp-nagasaki-kobayashijin-affd6aa,㈱小林甚製麺,南島原市,Pan y cereal,乾麺,,"Produces dried noodles in 南島原市, nagasaki.",,,,https://www.kobayashijin.com/,,,,32.659810,130.297780,,verificado,no comprobado,,,2700
-island-brewery,ISLAND BREWERY (原田酒造),Iki,Cerveza,,勝本町勝本浦249,Brewery producing beer at its Iki unit.,,,,https://iki-island.co.jp/,,https://www.instagram.com/islandbrewery/,,33.74992,129.69133,,parcial,no comprobado,,,435
-hamaguchi-suisan-goto,濵口水産,Gotō,Pescado,Goto kamaboko,,Produces fish-paste products from Goto seafood.,,,,https://www.goto-maki.net/,,,,32.69556,128.84081,,verificado,sí,ecommerce,,2911
-tsushima-suisan-tsushima,対馬水産,Tsushima,Pescado,"Conger eel, frozen seafood",長崎県対馬市美津島町雞知乙290番地,Processes conger eel and other high-quality frozen seafood at its Tsushima factory.,,+81920543677,,https://www.tsushimasuisan.com/,,,,34.271004,129.310349,,verificado,sí,ecommerce,,2398
-sakano-suisan-hirado,坂野水産,Hirado,Pescado,"Yellowtail, karasumi",長崎県平戸市鏡川町1296-7,Farms branded yellowtail and produces seafood products in Hirado.,,,,https://www.rakuten.co.jp/sakano-suisan/info.html,,,,33.375046,129.536713,,parcial,sí,ecommerce,,2280
-shofuken,松翁軒 (Shofuken),長崎市,Dulces y repostería,,,松翁軒 (Shofuken) makes its own baked goods and confectionery in 長崎市.,,,,https://www.shooken.com/,,https://www.instagram.com/shooken_castella/,,32.74953,129.87964,,parcial,sí,ecommerce,,3359
-chayu,茶友 (Chayu),東彼杵町,Té e infusiones,,,茶友 (Chayu) produces its own food products in 東彼杵町.,,,,http://chayou.jp/,,https://www.instagram.com/chayou_sonogicha/,,33.03697,129.91714,,parcial,no comprobado,,,3360
-iwasaki-honpo,岩崎本舗 (Iwasaki Honpo),時津町,Carne,,,岩崎本舗 (Iwasaki Honpo) produces its own food products in 時津町.,,,,https://0806.jp/,,https://www.instagram.com/iwasakihonpo/,,32.82886,129.84856,,parcial,sí,ecommerce,,3361
-ikinokura-shuzo,壱岐の蔵酒造 (Ikinokura Shuzo),壱岐市,Destilados y licores,,,壱岐の蔵酒造 (Ikinokura Shuzo) produces its own spirits in 壱岐市.,,,,https://ikinokura.co.jp/,,https://www.instagram.com/ikinokura/,,33.74992,129.69133,,parcial,no comprobado,,,3362
-o-a-nagasaki-craft-beer,O/A NAGASAKI CRAFT BEER,長崎市,Cerveza,,,O/A NAGASAKI CRAFT BEER brews its own beer in 長崎市.,,,,https://o-a-nagasaki.com/,,https://www.instagram.com/oanagasaki/,,32.74953,129.87964,,parcial,no comprobado,,,3363
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+imazato-shuzo-hasami,Imazato Shuzo,Hasami,Sake,,長崎県東彼杵郡波佐見町宿郷596,,,+81956852002,,http://www.64sake.com/,,,,33.136646,129.89621,,parcial,no comprobado,,,394,
+umegae-shuzo-sasebo,Umegae Shuzo,Sasebo,Sake,,長崎県佐世保市城間町317,,,+81956592311,,http://umegae-shuzo.com/,,,,33.089893,129.815125,,parcial,no comprobado,,,1299,
+senryu-shuzo-sasebo,Senryu Shuzo,Sasebo,Sake,,長崎県佐世保市江迎町長坂209,,,+81956652209,,http://www.sake-honjin.com/,,,,33.310886,129.625961,,parcial,no comprobado,,,1077,
+nishimuta-shuzo-sasebo,Nishimuta Shuzo,Sasebo,Sake,,長崎県佐世保市中里町129,,,+81956472569,,,,,,33.202251,129.680222,,parcial,no comprobado,,,869,
+fukuda-shuzo-hirado,Fukuda Shuzo,Hirado,Sake,,長崎県平戸市志々伎町1475,,,+81950271111,,http://www.fukuda-shuzo.com/,,,,33.200535,129.40773,,parcial,no comprobado,,,235,
+mori-shuzojo-hirado,Mori Shuzojo,Hirado,Sake,,長崎県平戸市新町31-2,,,+81950233131,,http://mori-shuzou.jp/,,,,33.366306,129.553955,,parcial,no comprobado,,,789,
+omoya-shuzo-iki,Omoya Shuzo,Iki,Sake,,長崎県壱岐市石田町印通寺浦200番地,,,+81920445002,,http://www.omoyashuzo.com/,,,,33.743286,129.759689,,parcial,no comprobado,,,939,
+kawachi-shuzo-tsushima,Kawachi Shuzo,Tsushima,Sake,,長崎県対馬市美津島町鶏知甲490-1,,,+81920542010,,http://www.kawachi-shop.jp/,,,,34.271004,129.310349,,parcial,no comprobado,,,536,
+kinokawa-isahaya,Kinokawa,Isahaya,Sake,,長崎県諫早市土師野尾町17-4,,,+81957225600,,,,,,32.821297,130.029144,,parcial,no comprobado,,,579,
+urakawa-shuzo-minamishimabara,Urakawa Shuzo,Minamishimabara,Sake,,長崎県南島原市有家町山川1123,,,+81957822030,,http://sake-ikkaku.com/,,,,32.670837,130.301041,,parcial,no comprobado,,,1308,
+aimusume-shuzo-unzen,Aimusume Shuzo,Unzen,Sake,,長崎県雲仙市愛野町甲1378,,,+81957360025,,,,,,32.817947,130.162933,,parcial,no comprobado,,,26,
+ito-shuzojo-unzen,Ito Shuzojo,Unzen,Sake,,長崎県雲仙市吾妻町241,,,+81957382035,,,,,,32.822609,130.175812,,parcial,no comprobado,,,449,
+kato-shuzojo-shimabara,Kato Shuzojo,Shimabara,Sake,,長崎県南高来郡有明町大三東戊1216-1,,,+81957680001,,,,,,32.828056,130.318695,,parcial,no comprobado,,,531,
+houryokuen-saza,Houryokuen,Saza,Té e infusiones,Organic green tea,長崎県北松浦郡佐々町八口免350他,Houryokuen produces organic green tea at its Saza unit.,,+81956632709,info@houryokuen.com,https://houryokuen.com/inquiry.html,,,,33.253727,129.682617,,verificado,no comprobado,,,345,en
+goto-winery-otsu,株式会社 五島ワイナリー,Otsu,Vino,,長崎県五島市上大津町2414-2,Produces wine at its Otsu unit.,,+81959745277,,https://www.goto-winery.net/,,,,35.017790,135.854810,,verificado,sí,ecommerce,,2735,en
+fiore-sasebo,チーズ工房 Fiore (里村ファーム),Sasebo,Lácteos y quesos,Fiore レジーナ,長崎県佐世保市里美町1598,Produces cheese and dairy products at its Sasebo unit.,,,,http://satomurafarm.com/,,,,33.180000,129.715000,,verificado,no comprobado,,,1829,en
+tabechoku-24770,藤田製茶,Higashisonogi,Té e infusiones,,,Produces tea at its Higashisonogi unit.,,,,,,,,33.036970,129.917140,,parcial,sí,marketplace,,3134,en
+tabechoku-22332,NaturalEggLab,Hirado,Huevos,,,Produces eggs at its Hirado unit.,,,,,,,,33.315830,129.486940,,parcial,sí,marketplace,,848,en
+tabechoku-28904,楓帆,Sasebo,Pescado,,,Produces fish and seafood at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,2817,en
+tabechoku-24171,中田水産,Shimabara,Pescado,,,Produces fish and seafood at its Shimabara unit.,,,,,,,,32.788140,130.370250,,parcial,sí,marketplace,,2059,en
+tabechoku-24202,長崎のイケメン漁師 坂野水産,Hirado,Pescado,,,長崎のイケメン漁師 坂野水産 produces fish and seafood at its Hirado unit.,,,,,,,,33.315830,129.486940,,parcial,sí,marketplace,,3260,en
+tabechoku-26553,百旬館,Hirado,Pescado,,,百旬館 produces fish and seafood at its Hirado unit.,,,,,,,,33.315830,129.486940,,parcial,sí,marketplace,,2965,en
+tabechoku-24753,あごだしのはたした,Shinkamigoto,Condimentos,,,Produces seasonings at its Shinkamigoto unit.,,,,,,,,32.984440,129.073330,,parcial,sí,marketplace,,1412,en
+tabechoku-27498,アースカンパニー,Sasebo,Pan y cereal,,,Produces grain products at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,1711,en
+tabechoku-25458,本村製麺工場,Minamishimabara,Pan y cereal,"小麦, 素麺",,Produces wheat and somen at its Minamishimabara unit.,,,,,,,,32.659810,130.297780,,parcial,sí,marketplace,,2639,en
+tabechoku-20934,花野果,Shinkamigoto,Dulces y repostería,菓子,,Produces confectionery at its Shinkamigoto unit.,,,,,,,,32.984440,129.073330,,parcial,sí,marketplace,,3093,en
+tabechoku-24893,諫美豚 土井農場,Isahaya,Pan y cereal,,,諫美豚 土井農場 produces grain products at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,3158,en
+tabechoku-26332,ヨシダファーム,Isahaya,Pan y cereal,,,ヨシダファーム produces grain products at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,1981,en
+tabechoku-3078259,やまびこ農苑えぼし,Sasebo,Frutos secos,,,Produces nuts at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,1677,en
+tabechoku-27895,彩海ファームＭＡＳＡＫＡＺＵ,Sasebo,Fruta y verdura,"柑橘, 野菜",,Produces citrus fruit and vegetables at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,2505,en
+tabechoku-48,薄田自然農法ファーム,Sasebo,Fruta y verdura,,,Produces fruit and vegetables at its Sasebo unit.,,,,,,,,33.180000,129.715000,,parcial,sí,marketplace,,3130,en
+tabechoku-25699,うーぞの農園,Minamishimabara,Fruta y verdura,野菜,,Produces vegetables at its Minamishimabara unit.,,,,,,,,32.659810,130.297780,,parcial,sí,marketplace,,1445,en
+tabechoku-25128,たぬき池自然農園,Ōmura-shi,Fruta y verdura,野菜,,Produces vegetables at its Ōmura-shi unit.,,,,,,,,32.900000,129.958330,,parcial,sí,marketplace,,1549,en
+tabechoku-29558,薬味屋人作,Shimabara,Fruta y verdura,,,Produces fruit and vegetables at its Shimabara unit.,,,,,,,,32.788140,130.370250,,parcial,sí,marketplace,,3132,en
+tabechoku-25519,宮下農園,Isahaya,Fruta y verdura,,,宮下農園 produces fruit and vegetables at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,2371,en
+tabechoku-25225,ファーム中島,Isahaya,Fruta y verdura,,,ファーム中島 produces fruit and vegetables at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,1896,en
+tabechoku-20243,のんびり山,Isahaya,Fruta y verdura,生姜,,Produces ginger at its Isahaya unit.,,,,,,,,32.843390,130.053140,,parcial,sí,marketplace,,1586,en
+tabechoku-20159,はまちゃんファーム,Unzen,Fruta y verdura,,,Produces fruit and vegetables at its Unzen unit.,,,,,,,,32.835190,130.187530,,parcial,sí,marketplace,,1592,en
+jp-nagasaki-mennoyamaichi-co-11275c4,㈱山一,南島原市,Pan y cereal,乾麺,,"㈱山一 produces dried noodles in 南島原市, nagasaki.",,,,https://www.mennoyamaichi.co.jp/,,,,32.659810,130.297780,,verificado,sí,ecommerce,,2701,en
+jp-nagasaki-jin-men-851ec8d,㈲手のべ陣川,南島原市,Pan y cereal,乾麺,,"㈲手のべ陣川 produces dried noodles in 南島原市, nagasaki.",,,,https://www.jin-men.com/,,,,32.659810,130.297780,,verificado,no comprobado,,,2587,en
+jp-nagasaki-kobayashijin-affd6aa,㈱小林甚製麺,南島原市,Pan y cereal,乾麺,,"㈱小林甚製麺 produces dried noodles in 南島原市, nagasaki.",,,,https://www.kobayashijin.com/,,,,32.659810,130.297780,,verificado,no comprobado,,,2700,en
+island-brewery,ISLAND BREWERY (原田酒造),Iki,Cerveza,,勝本町勝本浦249,Brewery producing beer at its Iki unit.,,,,https://iki-island.co.jp/,,https://www.instagram.com/islandbrewery/,,33.74992,129.69133,,parcial,no comprobado,,,435,en
+hamaguchi-suisan-goto,濵口水産,Gotō,Pescado,Goto kamaboko,,Produces fish-paste products from Goto seafood.,,,,https://www.goto-maki.net/,,,,32.69556,128.84081,,verificado,sí,ecommerce,,2911,en
+tsushima-suisan-tsushima,対馬水産,Tsushima,Pescado,"Conger eel, frozen seafood",長崎県対馬市美津島町雞知乙290番地,Processes conger eel and other frozen seafood at its Tsushima factory.,,+81920543677,,https://www.tsushimasuisan.com/,,,,34.271004,129.310349,,verificado,sí,ecommerce,,2398,en
+sakano-suisan-hirado,坂野水産,Hirado,Pescado,"Yellowtail, karasumi",長崎県平戸市鏡川町1296-7,Farms branded yellowtail and produces seafood products in Hirado.,,,,https://www.rakuten.co.jp/sakano-suisan/info.html,,,,33.375046,129.536713,,parcial,sí,ecommerce,,2280,en
+shofuken,松翁軒 (Shofuken),長崎市,Dulces y repostería,,,松翁軒 (Shofuken) makes its own baked goods and confectionery in 長崎市.,,,,https://www.shooken.com/,,https://www.instagram.com/shooken_castella/,,32.74953,129.87964,,parcial,sí,ecommerce,,3359,en
+chayu,茶友 (Chayu),東彼杵町,Té e infusiones,,,茶友 (Chayu) produces its own food products in 東彼杵町.,,,,http://chayou.jp/,,https://www.instagram.com/chayou_sonogicha/,,33.03697,129.91714,,parcial,no comprobado,,,3360,en
+iwasaki-honpo,岩崎本舗 (Iwasaki Honpo),時津町,Carne,,,岩崎本舗 (Iwasaki Honpo) produces its own food products in 時津町.,,,,https://0806.jp/,,https://www.instagram.com/iwasakihonpo/,,32.82886,129.84856,,parcial,sí,ecommerce,,3361,en
+ikinokura-shuzo,壱岐の蔵酒造 (Ikinokura Shuzo),壱岐市,Destilados y licores,,,壱岐の蔵酒造 (Ikinokura Shuzo) produces its own spirits in 壱岐市.,,,,https://ikinokura.co.jp/,,https://www.instagram.com/ikinokura/,,33.74992,129.69133,,parcial,no comprobado,,,3362,en
+o-a-nagasaki-craft-beer,O/A NAGASAKI CRAFT BEER,長崎市,Cerveza,,,O/A NAGASAKI CRAFT BEER brews its own beer in 長崎市.,,,,https://o-a-nagasaki.com/,,https://www.instagram.com/oanagasaki/,,32.74953,129.87964,,parcial,no comprobado,,,3363,en

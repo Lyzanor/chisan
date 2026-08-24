@@ -32,6 +32,31 @@
     "thuringen": "thueringen",
     "turingia": "thueringen"
   },
+  "producerRouteAliases": {
+    "baden-wuerttemberg/lindenbrau": 1641,
+    "baden-wuerttemberg/lowenbrauerei": 1662,
+    "baden-wuerttemberg/schwanen-brau": 2055,
+    "bayern/lindenbrau": 1642,
+    "bayern/lowenbrauerei": 1663,
+    "bayern/schwanen-brau": 2056,
+    "berlin/exobee-imkerei-berlin": 884,
+    "berlin/hofladen-berlin": 1269,
+    "berlin/imkerei-oertel-an-der-dammheide-berlin": 1414,
+    "berlin/lehmanns-bauernmarkt-berlin": 1625,
+    "berlin/mosaik-hofladen-berlin": 1744,
+    "berlin/muggelseefischerei-andreas-thamm-berlin": 1747,
+    "bremen/bienengarten-bremen": 191,
+    "bremen/gemeinschaftsgarten-bremen": 1056,
+    "bremen/hemmlisch-bremen": 1175,
+    "bremen/imkereibedarf-berndt-bremen": 1433,
+    "hamburg/ackerperlen-hamburg": 16,
+    "hamburg/der-seehof-hamburg": 777,
+    "hamburg/die-raucherei-hamburg": 794,
+    "hamburg/imkerei-elbgelb-hamburg": 1396,
+    "hamburg/kattendorfer-hofladen-hamburg": 1490,
+    "hamburg/lachs-und-aalraucherei-burmeister-hamburg": 1589,
+    "hamburg/obsthof-thies-harms-hamburg": 1799
+  },
   "regions": [
     {
       "slug": "norddeutschland",
@@ -39,25 +64,49 @@
       "areas": [
         {
           "slug": "schleswig-holstein",
-          "label": "Schleswig-Holstein"
+          "label": "Schleswig-Holstein",
+          "labels": {
+            "de": "Schleswig-Holstein",
+            "en": "Schleswig-Holstein"
+          }
         },
         {
           "slug": "hamburg",
-          "label": "Hamburg"
+          "label": "Hamburg",
+          "labels": {
+            "de": "Hamburg",
+            "en": "Hamburg"
+          }
         },
         {
           "slug": "bremen",
-          "label": "Bremen"
+          "label": "Bremen",
+          "labels": {
+            "de": "Bremen",
+            "en": "Bremen"
+          }
         },
         {
           "slug": "niedersachsen",
-          "label": "Niedersachsen"
+          "label": "Niedersachsen",
+          "labels": {
+            "de": "Niedersachsen",
+            "en": "Lower Saxony"
+          }
         },
         {
           "slug": "mecklenburg-vorpommern",
-          "label": "Mecklenburg-Vorpommern"
+          "label": "Mecklenburg-Vorpommern",
+          "labels": {
+            "de": "Mecklenburg-Vorpommern",
+            "en": "Mecklenburg-Western Pomerania"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "de": "Norddeutschland",
+        "en": "Northern Germany"
+      }
     },
     {
       "slug": "ostdeutschland",
@@ -65,25 +114,49 @@
       "areas": [
         {
           "slug": "berlin",
-          "label": "Berlin"
+          "label": "Berlin",
+          "labels": {
+            "de": "Berlin",
+            "en": "Berlin"
+          }
         },
         {
           "slug": "brandenburg",
-          "label": "Brandenburg"
+          "label": "Brandenburg",
+          "labels": {
+            "de": "Brandenburg",
+            "en": "Brandenburg"
+          }
         },
         {
           "slug": "sachsen-anhalt",
-          "label": "Sachsen-Anhalt"
+          "label": "Sachsen-Anhalt",
+          "labels": {
+            "de": "Sachsen-Anhalt",
+            "en": "Saxony-Anhalt"
+          }
         },
         {
           "slug": "sachsen",
-          "label": "Sachsen"
+          "label": "Sachsen",
+          "labels": {
+            "de": "Sachsen",
+            "en": "Saxony"
+          }
         },
         {
           "slug": "thueringen",
-          "label": "Thüringen"
+          "label": "Thüringen",
+          "labels": {
+            "de": "Thüringen",
+            "en": "Thuringia"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "de": "Ostdeutschland",
+        "en": "Eastern Germany"
+      }
     },
     {
       "slug": "westdeutschland",
@@ -91,21 +164,41 @@
       "areas": [
         {
           "slug": "nordrhein-westfalen",
-          "label": "Nordrhein-Westfalen"
+          "label": "Nordrhein-Westfalen",
+          "labels": {
+            "de": "Nordrhein-Westfalen",
+            "en": "North Rhine-Westphalia"
+          }
         },
         {
           "slug": "hessen",
-          "label": "Hessen"
+          "label": "Hessen",
+          "labels": {
+            "de": "Hessen",
+            "en": "Hesse"
+          }
         },
         {
           "slug": "rheinland-pfalz",
-          "label": "Rheinland-Pfalz"
+          "label": "Rheinland-Pfalz",
+          "labels": {
+            "de": "Rheinland-Pfalz",
+            "en": "Rhineland-Palatinate"
+          }
         },
         {
           "slug": "saarland",
-          "label": "Saarland"
+          "label": "Saarland",
+          "labels": {
+            "de": "Saarland",
+            "en": "Saarland"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "de": "Westdeutschland",
+        "en": "Western Germany"
+      }
     },
     {
       "slug": "sueddeutschland",
@@ -113,13 +206,56 @@
       "areas": [
         {
           "slug": "baden-wuerttemberg",
-          "label": "Baden-Württemberg"
+          "label": "Baden-Württemberg",
+          "labels": {
+            "de": "Baden-Württemberg",
+            "en": "Baden-Württemberg"
+          }
         },
         {
           "slug": "bayern",
-          "label": "Bayern"
+          "label": "Bayern",
+          "labels": {
+            "de": "Bayern",
+            "en": "Bavaria"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "de": "Süddeutschland",
+        "en": "Southern Germany"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "de",
+    "publishedLocales": [
+      "de",
+      "en"
+    ],
+    "labels": {
+      "de": "Deutschland",
+      "en": "Germany"
+    },
+    "unitLabels": {
+      "de": {
+        "one": "Bundesland",
+        "many": "Bundesländer"
+      },
+      "en": {
+        "one": "federal state",
+        "many": "federal states"
+      }
+    },
+    "regionUnitLabels": {
+      "de": {
+        "one": "Region",
+        "many": "Regionen"
+      },
+      "en": {
+        "one": "region",
+        "many": "regions"
+      }
+    }
+  }
 }

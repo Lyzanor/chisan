@@ -24,6 +24,21 @@ Every database reference to a producer uses the durable pair
 `(country, producer_id)`. Area and slug are resolved from the current CSV when
 rendering a link, so favorites and permissions survive a routing change.
 
+Catalog scope and locale are presentation only. A short default route such as
+`/jp/tokyo/<slug>` and an alternate route such as
+`/en-jp/tokyo/<slug>` resolve through the same canonical country and row and
+must pass the same `(jp, producer_id)` to every account action. Locale, composite
+catalog scope, area, slug and public path are never added to a favorite, claim,
+membership, change-request or authorization key. Opening or acting on two
+language variants therefore finds one existing account-domain record and cannot
+create locale duplicates.
+
+A localized path may be carried only as validated same-site `returnTo`
+navigation state. It grants no authority and is not persisted as producer
+identity. A language preference remains presentation state outside PostgreSQL;
+changing it cannot change claim status, membership, staff grants or producer
+edit access. No database migration is required merely to publish a locale.
+
 The deployed Vercel filesystem is immutable. A Server Action therefore cannot
 edit a CSV durably. Producer edits are reviewed change requests that an
 editorial operator materializes into Git.
@@ -251,8 +266,10 @@ cancels each live execution in the same producer-locked transaction.
 ## Catalog row lifecycle
 
 Area and slug changes are resolved from the current CSV and do not change an
-account reference. A `producer_id` retirement does. Before merging or purging a
-published row, inspect its PostgreSQL references and resolve them explicitly:
+account reference. A locale activation, withdrawal or catalog-scope routing
+change likewise does not retire a row. A `producer_id` retirement does. Before
+merging or purging a published row, inspect its PostgreSQL references and
+resolve them explicitly:
 
 - cancel every active materialization execution, then conflict or withdraw every
   unpublished change request for the retired key in the same transaction;
@@ -335,7 +352,8 @@ a build asserts migration compatibility but never applies DDL.
 
 ## Security invariants
 
-- Never authorize by email, profile kind, slug, area or client-supplied user ID.
+- Never authorize by email, profile kind, locale, catalog scope, public path,
+  slug, area or client-supplied user ID.
 - Profile kind is automatic display state: account creation sets `user` and a
   submitted producer claim promotes it to `producer`; no user mutation may set
   or downgrade it directly.

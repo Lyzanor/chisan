@@ -31,9 +31,9 @@ without flattening what makes each local ecosystem distinct.
 ## CSV at the core
 
 Area CSV files remain the canonical catalog and the portable foundation of the
-product. The website reads them directly; editorial evidence, accounts and
-reviewed contribution workflows surround them without becoming a second source
-of producer truth.
+product. The website reads them directly; editorial evidence, translations,
+accounts and reviewed contribution workflows surround them without becoming a
+second source of producer truth.
 
 This keeps the core inspectable and independent while allowing the product
 experience and operating workflows to evolve around it.
@@ -51,12 +51,26 @@ The public discovery experience works without environment variables. Accounts
 and contribution flows are optional in local development; see
 `docs/ACCOUNT_SYSTEM.md` and `docs/OPERATIONS.md` when working on them.
 
-Canonical public routes follow the data tree: `/<country>/<area>` opens an area
-and `/<country>/<area>/<slug>` opens a producer.
+Canonical public routes follow the data tree. The short country scope serves
+that country's configured default language:
+
+```text
+/<country>/<area>
+/<country>/<area>/<slug>
+```
+
+An alternate published language uses the composite scope
+`/<language>-<country>`, for example `/ca-es/barcelona`, `/en-de/berlin` or
+`/en-jp/tokyo`. Country, area and producer slugs remain stable routing
+identifiers; every language variant resolves to the same canonical producer row
+and `(country, producer_id)`. The global `/` remains the neutral country and
+area selector.
 
 ## Project map
 
 - Producer data: `data/csv/<country>/<region>/<area>.csv`
+- Materialized localized descriptions:
+  `data/csv/<country>/translations.<locale>.csv`
 - Product and engineering context for agents: `AGENTS.md`
 - Account, claim and producer-edit workflow: `docs/ACCOUNT_SYSTEM.md`
 - Operations, deployment and recovery: `docs/OPERATIONS.md`
@@ -65,6 +79,7 @@ and `/<country>/<area>/<slug>` opens a producer.
 - Published-row contract: `docs/CSV_CONTRACT.md`
 - Decision provenance: `docs/EVIDENCE_CONTRACT.md`
 - Producer coordinates: `docs/GEOLOCATION.md`
+- Optional device-location area routing: `docs/LOCATION_ROUTING.md`
 - Producer images: `docs/IMAGES.md`
 
 Run `npx pnpm verify:data` for data-only changes and `npx pnpm verify:ai` for

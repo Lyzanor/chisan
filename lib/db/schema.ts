@@ -79,7 +79,6 @@ export const users = pgTable(
     id: uuid("id").primaryKey().defaultRandom(),
     status: userStatus("status").notNull().default("active"),
     displayName: varchar("display_name", { length: 160 }),
-    locale: varchar("locale", { length: 16 }),
     // Automatic UX state: accounts start as user and become producer on first claim.
     // Authorization still comes only from memberships and grants.
     profileKind: userProfileKind("profile_kind").notNull().default("user"),

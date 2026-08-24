@@ -1,13 +1,12 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
-
-import { buildCatalogHref } from "@/lib/catalog-navigation";
 
 type AreaOption = {
   slug: string;
   label: string;
+  href: string;
 };
 
 type Region = {
@@ -17,57 +16,54 @@ type Region = {
 };
 
 type Country = {
-  slug: string;
-  label: string;
-  unit: { one: string; many: string };
   regions: Region[];
 };
 
 type AreaSelectorProps = {
   country: Country;
   currentArea: string;
+  messages: {
+    label: string;
+    placeholder: string;
+    submit: string;
+  };
 };
 
-function capitalize(value: string): string {
-  return value.charAt(0).toUpperCase() + value.slice(1);
-}
-
-export function AreaSelector({ country, currentArea }: AreaSelectorProps) {
+export function AreaSelector({ country, currentArea, messages }: AreaSelectorProps) {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
-  function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    const area = e.target.value;
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const area = String(new FormData(event.currentTarget).get("area") ?? "");
     if (!area) {
       return;
     }
+    const destination = country.regions
+      .flatMap((region) => region.areas)
+      .find((option) => option.slug === area);
+    if (!destination) return;
 
     startTransition(() => {
-      router.push(
-        buildCatalogHref({
-          country: country.slug,
-          area,
-          category: searchParams.get("category") ?? "",
-        }),
-      );
+      router.push(destination.href);
     });
   }
 
   return (
-    <div className="area-selector">
+    <form className="area-selector" onSubmit={handleSubmit}>
       <label htmlFor="area-select" className="area-selector-label">
-        {capitalize(country.unit.one)}
+        {messages.label}
       </label>
       <select
         id="area-select"
-        value={currentArea}
-        onChange={handleChange}
+        name="area"
+        defaultValue={currentArea}
+        required
         disabled={isPending}
         className="area-selector-select"
       >
         <option value="" disabled>
-          Select a {country.unit.one}
+          {messages.placeholder}
         </option>
         {country.regions.map((region) => (
           <optgroup key={region.slug} label={region.label}>
@@ -79,6 +75,9 @@ export function AreaSelector({ country, currentArea }: AreaSelectorProps) {
           </optgroup>
         ))}
       </select>
-    </div>
+      <button type="submit" className="area-selector-submit" disabled={isPending}>
+        {messages.submit}
+      </button>
+    </form>
   );
 }

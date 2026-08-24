@@ -32,6 +32,9 @@
     "luxemburgo": "luxembourg",
     "namen": "namur"
   },
+  "producerRouteAliases": {
+    "liege/sodial-liege": 530
+  },
   "regions": [
     {
       "slug": "vlaanderen",

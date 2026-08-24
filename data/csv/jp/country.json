@@ -12,6 +12,117 @@
     "kioto": "kyoto",
     "tokio": "tokyo"
   },
+  "producerRouteAliases": {
+    "akita/akita-jozo-akita": 43,
+    "akita/akita-shurui-seizo-akita": 46,
+    "akita/akita-shuzo-akita": 47,
+    "akita/aramasa-shuzo-akita": 66,
+    "akita/nawa-shoten-akita": 849,
+    "aomori/nishida-shuzoten-aomori": 866,
+    "fukui/goru-do-fukui": 271,
+    "fukui/ikeda-shuzo-fukui": 370,
+    "fukui/ito-shuzo-fukui": 446,
+    "fukui/kikukatsura-shuzo-fukui": 558,
+    "fukui/koshi-no-iso-fukui": 644,
+    "fukui/kunimi-enoki-fukui": 680,
+    "fukuoka/ayasugi-shuzojo-fukuoka": 92,
+    "fukuoka/ishikura-shuzo-fukuoka": 429,
+    "gifu/adachi-shuzo-gifu": 20,
+    "hiroshima/kyokuho-shuzo-hiroshima": 701,
+    "hiroshima/umeda-shuzojo-hiroshima": 1298,
+    "ibaraki/ibaraki-mogitate-factory-ibaraki": 351,
+    "kagoshima/azuma-shuzo-kagoshima": 94,
+    "kagoshima/hombo-shuzo-kagoshima": 335,
+    "kagoshima/satsuma-muso-kagoshima": 1056,
+    "kochi/suigei-shuzo-kochi": 1144,
+    "kumamoto/kumamoto-ken-shuzo-kenkyujo-kumamoto": 671,
+    "kumamoto/sugi-bee-garden-kumamoto": 1142,
+    "kumamoto/zuiyo-kumamoto": 1401,
+    "kyoto/heroes-kyoto": 311,
+    "kyoto/honda-miso-honten-kyoto": 336,
+    "kyoto/kaneshichi-hatakeyama-seicha-kyoto": 509,
+    "kyoto/kinshi-masamune-kyoto": 584,
+    "kyoto/kitagawa-honke-kyoto": 594,
+    "kyoto/kizakura-kyoto": 616,
+    "kyoto/kyodo-shuzo-kyoto": 697,
+    "kyoto/kyohime-shuzo-kyoto": 699,
+    "kyoto/nishiri-kyoto": 875,
+    "kyoto/saito-shuzo-kyoto": 1020,
+    "kyoto/sasaki-shuzo-kyoto": 1048,
+    "kyoto/sawai-shoyu-honten-kyoto": 1061,
+    "kyoto/shotoku-shuzo-kyoto": 1122,
+    "kyoto/takahashi-shokuhin-kogyo-kyoto": 1179,
+    "kyoto/tamanohikari-shuzo-kyoto": 1206,
+    "kyoto/tsuruya-yoshinobu-kyoto": 1283,
+    "miyazaki/kawagoe-shuzojo-miyazaki": 538,
+    "miyazaki/ochiai-shuzojo-miyazaki": 895,
+    "miyazaki/watanabe-shuzojo-miyazaki": 1330,
+    "nagano/higashiiida-shuzoten-nagano": 315,
+    "nagano/imai-shuzoten-nagano": 387,
+    "nagano/nishiiida-shuzoten-nagano": 868,
+    "nagano/ozawa-shuzojo-nagano": 989,
+    "nagano/shusen-kurano-nagano": 1126,
+    "nara/imanishi-seibee-shoten-nara": 391,
+    "nara/kuramoto-shuzo-nara": 685,
+    "nara/nara-toyosawa-shuzo-nara": 841,
+    "niigata/asazuma-shuzo-niigata": 84,
+    "niigata/dhc-shuzo-niigata": 174,
+    "niigata/echigo-beer-niigata": 185,
+    "niigata/echigo-denemon-niigata": 186,
+    "niigata/echigo-shuzojo-niigata": 187,
+    "niigata/echigo-tsurukame-niigata": 188,
+    "niigata/higi-shuzo-niigata": 318,
+    "niigata/imayotsukasa-shuzo-niigata": 393,
+    "niigata/ishimoto-shuzo-niigata": 430,
+    "niigata/lagoon-brewery-niigata": 705,
+    "niigata/mine-no-hakubai-shuzo-niigata": 768,
+    "niigata/murayu-shuzo-niigata": 805,
+    "niigata/sasaiwai-shuzo-niigata": 1047,
+    "niigata/shiokawa-shuzo-niigata": 1109,
+    "niigata/takahashi-farm-niigata": 1176,
+    "niigata/takano-shuzo-niigata": 1187,
+    "niigata/takarayama-shuzo-niigata": 1189,
+    "okayama/itano-shuzo-honten-okayama": 444,
+    "okayama/itano-shuzojo-okayama": 445,
+    "okinawa/cheeseanista-okinawa": 130,
+    "okinawa/shinzato-shuzo-okinawa": 1108,
+    "osaka/aoma-coffee-osaka": 61,
+    "osaka/lilo-coffee-factory-osaka": 713,
+    "osaka/marca-brewing-osaka": 729,
+    "osaka/mel-coffee-roasters-osaka": 765,
+    "osaka/mukai-chinmido-osaka": 802,
+    "osaka/one-s-brewery-osaka": 943,
+    "osaka/takamura-coffee-roasters-osaka": 1186,
+    "saga/saka-shuzo-saga": 1023,
+    "saitama/koyama-honke-shuzo-saitama": 653,
+    "shizuoka/eikun-shuzo-shizuoka": 196,
+    "shizuoka/garcia-cheese-shizuoka": 259,
+    "shizuoka/kanzawagawa-shuzojo-shizuoka": 516,
+    "shizuoka/kunpai-shuzo-shizuoka": 682,
+    "shizuoka/shizuoka-hiraki-shuzo-shizuoka": 1116,
+    "shizuoka/suruga-shuzojo-shizuoka": 1150,
+    "shizuoka/west-coast-brewing-shizuoka": 1333,
+    "tochigi/iinuma-meijo-tochigi": 368,
+    "tochigi/ohira-shuzo-tochigi": 904,
+    "tokushima/kondo-matsutaro-shoten-tokushima": 637,
+    "tokushima/saito-shuzojo-tokushima": 1021,
+    "tokushima/seitama-tokushima": 1065,
+    "tottori/kunshi-shuzo-tottori": 684,
+    "toyama/doyuuno-toyama": 182,
+    "toyama/fukutsuru-shuzo-toyama": 244,
+    "toyama/fumigiku-shuzo-toyama": 247,
+    "toyama/masuda-shuzoten-toyama": 747,
+    "toyama/tamaasahi-shuzo-toyama": 1203,
+    "wakayama/sekaiitto-wakayama": 1067,
+    "wakayama/shuho-shuzo-wakayama": 1124,
+    "wakayama/tabata-shuzo-wakayama": 1157,
+    "wakayama/tencho-shimamura-shuzo-wakayama": 1220,
+    "yamagata/kotobuki-toraya-shuzo-yamagata": 650,
+    "yamagata/otokoyama-shuzo-yamagata": 973,
+    "yamagata/shuho-shuzojo-yamagata": 1125,
+    "yamaguchi/kanemitsu-shuzo-yamaguchi": 507,
+    "yamanashi/yoro-shuzo-yamanashi": 1380
+  },
   "regions": [
     {
       "slug": "hokkaido",
@@ -19,9 +130,17 @@
       "areas": [
         {
           "slug": "hokkaido",
-          "label": "Hokkaido"
+          "label": "Hokkaido",
+          "labels": {
+            "ja": "北海道",
+            "en": "Hokkaido"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "北海道",
+        "en": "Hokkaido"
+      }
     },
     {
       "slug": "tohoku",
@@ -29,29 +148,57 @@
       "areas": [
         {
           "slug": "aomori",
-          "label": "Aomori"
+          "label": "Aomori",
+          "labels": {
+            "ja": "青森県",
+            "en": "Aomori"
+          }
         },
         {
           "slug": "iwate",
-          "label": "Iwate"
+          "label": "Iwate",
+          "labels": {
+            "ja": "岩手県",
+            "en": "Iwate"
+          }
         },
         {
           "slug": "miyagi",
-          "label": "Miyagi"
+          "label": "Miyagi",
+          "labels": {
+            "ja": "宮城県",
+            "en": "Miyagi"
+          }
         },
         {
           "slug": "akita",
-          "label": "Akita"
+          "label": "Akita",
+          "labels": {
+            "ja": "秋田県",
+            "en": "Akita"
+          }
         },
         {
           "slug": "yamagata",
-          "label": "Yamagata"
+          "label": "Yamagata",
+          "labels": {
+            "ja": "山形県",
+            "en": "Yamagata"
+          }
         },
         {
           "slug": "fukushima",
-          "label": "Fukushima"
+          "label": "Fukushima",
+          "labels": {
+            "ja": "福島県",
+            "en": "Fukushima"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "東北地方",
+        "en": "Tohoku"
+      }
     },
     {
       "slug": "kanto",
@@ -59,33 +206,65 @@
       "areas": [
         {
           "slug": "ibaraki",
-          "label": "Ibaraki"
+          "label": "Ibaraki",
+          "labels": {
+            "ja": "茨城県",
+            "en": "Ibaraki"
+          }
         },
         {
           "slug": "tochigi",
-          "label": "Tochigi"
+          "label": "Tochigi",
+          "labels": {
+            "ja": "栃木県",
+            "en": "Tochigi"
+          }
         },
         {
           "slug": "gunma",
-          "label": "Gunma"
+          "label": "Gunma",
+          "labels": {
+            "ja": "群馬県",
+            "en": "Gunma"
+          }
         },
         {
           "slug": "saitama",
-          "label": "Saitama"
+          "label": "Saitama",
+          "labels": {
+            "ja": "埼玉県",
+            "en": "Saitama"
+          }
         },
         {
           "slug": "chiba",
-          "label": "Chiba"
+          "label": "Chiba",
+          "labels": {
+            "ja": "千葉県",
+            "en": "Chiba"
+          }
         },
         {
           "slug": "tokyo",
-          "label": "Tokyo"
+          "label": "Tokyo",
+          "labels": {
+            "ja": "東京都",
+            "en": "Tokyo"
+          }
         },
         {
           "slug": "kanagawa",
-          "label": "Kanagawa"
+          "label": "Kanagawa",
+          "labels": {
+            "ja": "神奈川県",
+            "en": "Kanagawa"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "関東地方",
+        "en": "Kanto"
+      }
     },
     {
       "slug": "chubu",
@@ -93,41 +272,81 @@
       "areas": [
         {
           "slug": "niigata",
-          "label": "Niigata"
+          "label": "Niigata",
+          "labels": {
+            "ja": "新潟県",
+            "en": "Niigata"
+          }
         },
         {
           "slug": "toyama",
-          "label": "Toyama"
+          "label": "Toyama",
+          "labels": {
+            "ja": "富山県",
+            "en": "Toyama"
+          }
         },
         {
           "slug": "ishikawa",
-          "label": "Ishikawa"
+          "label": "Ishikawa",
+          "labels": {
+            "ja": "石川県",
+            "en": "Ishikawa"
+          }
         },
         {
           "slug": "fukui",
-          "label": "Fukui"
+          "label": "Fukui",
+          "labels": {
+            "ja": "福井県",
+            "en": "Fukui"
+          }
         },
         {
           "slug": "yamanashi",
-          "label": "Yamanashi"
+          "label": "Yamanashi",
+          "labels": {
+            "ja": "山梨県",
+            "en": "Yamanashi"
+          }
         },
         {
           "slug": "nagano",
-          "label": "Nagano"
+          "label": "Nagano",
+          "labels": {
+            "ja": "長野県",
+            "en": "Nagano"
+          }
         },
         {
           "slug": "gifu",
-          "label": "Gifu"
+          "label": "Gifu",
+          "labels": {
+            "ja": "岐阜県",
+            "en": "Gifu"
+          }
         },
         {
           "slug": "shizuoka",
-          "label": "Shizuoka"
+          "label": "Shizuoka",
+          "labels": {
+            "ja": "静岡県",
+            "en": "Shizuoka"
+          }
         },
         {
           "slug": "aichi",
-          "label": "Aichi"
+          "label": "Aichi",
+          "labels": {
+            "ja": "愛知県",
+            "en": "Aichi"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "中部地方",
+        "en": "Chubu"
+      }
     },
     {
       "slug": "kansai",
@@ -135,33 +354,65 @@
       "areas": [
         {
           "slug": "mie",
-          "label": "Mie"
+          "label": "Mie",
+          "labels": {
+            "ja": "三重県",
+            "en": "Mie"
+          }
         },
         {
           "slug": "shiga",
-          "label": "Shiga"
+          "label": "Shiga",
+          "labels": {
+            "ja": "滋賀県",
+            "en": "Shiga"
+          }
         },
         {
           "slug": "kyoto",
-          "label": "Kyoto"
+          "label": "Kyoto",
+          "labels": {
+            "ja": "京都府",
+            "en": "Kyoto"
+          }
         },
         {
           "slug": "osaka",
-          "label": "Osaka"
+          "label": "Osaka",
+          "labels": {
+            "ja": "大阪府",
+            "en": "Osaka"
+          }
         },
         {
           "slug": "hyogo",
-          "label": "Hyogo"
+          "label": "Hyogo",
+          "labels": {
+            "ja": "兵庫県",
+            "en": "Hyogo"
+          }
         },
         {
           "slug": "nara",
-          "label": "Nara"
+          "label": "Nara",
+          "labels": {
+            "ja": "奈良県",
+            "en": "Nara"
+          }
         },
         {
           "slug": "wakayama",
-          "label": "Wakayama"
+          "label": "Wakayama",
+          "labels": {
+            "ja": "和歌山県",
+            "en": "Wakayama"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "関西地方",
+        "en": "Kansai"
+      }
     },
     {
       "slug": "chugoku",
@@ -169,25 +420,49 @@
       "areas": [
         {
           "slug": "tottori",
-          "label": "Tottori"
+          "label": "Tottori",
+          "labels": {
+            "ja": "鳥取県",
+            "en": "Tottori"
+          }
         },
         {
           "slug": "shimane",
-          "label": "Shimane"
+          "label": "Shimane",
+          "labels": {
+            "ja": "島根県",
+            "en": "Shimane"
+          }
         },
         {
           "slug": "okayama",
-          "label": "Okayama"
+          "label": "Okayama",
+          "labels": {
+            "ja": "岡山県",
+            "en": "Okayama"
+          }
         },
         {
           "slug": "hiroshima",
-          "label": "Hiroshima"
+          "label": "Hiroshima",
+          "labels": {
+            "ja": "広島県",
+            "en": "Hiroshima"
+          }
         },
         {
           "slug": "yamaguchi",
-          "label": "Yamaguchi"
+          "label": "Yamaguchi",
+          "labels": {
+            "ja": "山口県",
+            "en": "Yamaguchi"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "中国地方",
+        "en": "Chugoku"
+      }
     },
     {
       "slug": "shikoku",
@@ -195,21 +470,41 @@
       "areas": [
         {
           "slug": "tokushima",
-          "label": "Tokushima"
+          "label": "Tokushima",
+          "labels": {
+            "ja": "徳島県",
+            "en": "Tokushima"
+          }
         },
         {
           "slug": "kagawa",
-          "label": "Kagawa"
+          "label": "Kagawa",
+          "labels": {
+            "ja": "香川県",
+            "en": "Kagawa"
+          }
         },
         {
           "slug": "ehime",
-          "label": "Ehime"
+          "label": "Ehime",
+          "labels": {
+            "ja": "愛媛県",
+            "en": "Ehime"
+          }
         },
         {
           "slug": "kochi",
-          "label": "Kochi"
+          "label": "Kochi",
+          "labels": {
+            "ja": "高知県",
+            "en": "Kochi"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "四国地方",
+        "en": "Shikoku"
+      }
     },
     {
       "slug": "kyushu-okinawa",
@@ -217,37 +512,104 @@
       "areas": [
         {
           "slug": "fukuoka",
-          "label": "Fukuoka"
+          "label": "Fukuoka",
+          "labels": {
+            "ja": "福岡県",
+            "en": "Fukuoka"
+          }
         },
         {
           "slug": "saga",
-          "label": "Saga"
+          "label": "Saga",
+          "labels": {
+            "ja": "佐賀県",
+            "en": "Saga"
+          }
         },
         {
           "slug": "nagasaki",
-          "label": "Nagasaki"
+          "label": "Nagasaki",
+          "labels": {
+            "ja": "長崎県",
+            "en": "Nagasaki"
+          }
         },
         {
           "slug": "kumamoto",
-          "label": "Kumamoto"
+          "label": "Kumamoto",
+          "labels": {
+            "ja": "熊本県",
+            "en": "Kumamoto"
+          }
         },
         {
           "slug": "oita",
-          "label": "Oita"
+          "label": "Oita",
+          "labels": {
+            "ja": "大分県",
+            "en": "Oita"
+          }
         },
         {
           "slug": "miyazaki",
-          "label": "Miyazaki"
+          "label": "Miyazaki",
+          "labels": {
+            "ja": "宮崎県",
+            "en": "Miyazaki"
+          }
         },
         {
           "slug": "kagoshima",
-          "label": "Kagoshima"
+          "label": "Kagoshima",
+          "labels": {
+            "ja": "鹿児島県",
+            "en": "Kagoshima"
+          }
         },
         {
           "slug": "okinawa",
-          "label": "Okinawa"
+          "label": "Okinawa",
+          "labels": {
+            "ja": "沖縄県",
+            "en": "Okinawa"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "ja": "九州・沖縄地方",
+        "en": "Kyushu and Okinawa"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "ja",
+    "publishedLocales": [
+      "ja",
+      "en"
+    ],
+    "labels": {
+      "ja": "日本",
+      "en": "Japan"
+    },
+    "unitLabels": {
+      "ja": {
+        "one": "都道府県",
+        "many": "都道府県"
+      },
+      "en": {
+        "one": "prefecture",
+        "many": "prefectures"
+      }
+    },
+    "regionUnitLabels": {
+      "ja": {
+        "one": "地方",
+        "many": "地方"
+      },
+      "en": {
+        "one": "region",
+        "many": "regions"
+      }
+    }
+  }
 }

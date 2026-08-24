@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "registry_version": "2026-08-24.4",
+  "approved_engines": [
+    {
+      "engine": "codex-subagent",
+      "model": "gpt-5.6-sol",
+      "engine_version": "gpt-5.6-sol-2026-08-24",
+      "prompt_version": "chisan-description-v10",
+      "glossary_version": "2026-08-24.3",
+      "benchmark_version": "2026-08-24.3",
+      "benchmark_plan_hash": "628a6d2896e12df6e663c717510dd27aaa4d8b67f76d735b140a8b01010ecc97",
+      "target_locales": [
+        "en",
+        "es",
+        "ca",
+        "de",
+        "ja"
+      ],
+      "review": {
+        "reviewed_on": "2026-08-24",
+        "initial_candidates": 250,
+        "editorial_pass": 244,
+        "semantic_exceptions": 6,
+        "benchmark_initial_quantitative_integrity_failures": 0,
+        "automatic_quantitative_repairs": 0,
+        "supplemental_benchmark_version": "2026-08-24.en-es.1",
+        "supplemental_benchmark_plan_hash": "c89ef7def09f4403ba6172973fb90dc711888ecde66d5387fee9b0a232261131",
+        "late_canonical_delta_candidates": 8,
+        "late_canonical_delta_editorial_pass": 8,
+        "late_canonical_delta_quantitative_integrity_failures": 0
+      }
+    }
+  ]
+}

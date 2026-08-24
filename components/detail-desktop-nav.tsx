@@ -3,16 +3,28 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { buildCatalogHref } from "@/lib/catalog-navigation";
-import { getCategoryIcon } from "@/lib/get-category-icon";
+import { buildCatalogHref, type CatalogNavigationScope } from "@/lib/catalog-navigation";
+import type { CategoryPresentation } from "@/lib/i18n/categories";
 
 type DetailDesktopNavProps = {
-  categories: string[];
-  country: string;
+  categories: CategoryPresentation[];
+  scope: CatalogNavigationScope;
   area: string;
+  messages: {
+    navigation: string;
+    map: string;
+    categories: string;
+    allCategories: string;
+    information: string;
+  };
 };
 
-export function DetailDesktopNav({ categories, country, area }: DetailDesktopNavProps) {
+export function DetailDesktopNav({
+  categories,
+  scope,
+  area,
+  messages,
+}: DetailDesktopNavProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
 
@@ -35,9 +47,9 @@ export function DetailDesktopNav({ categories, country, area }: DetailDesktopNav
   }, [open, close]);
 
   return (
-    <nav ref={rootRef} className="detail-desktop-nav" aria-label="Navigation">
-      <Link href={buildCatalogHref({ country, area })} className="detail-desktop-nav__home">
-        Map
+    <nav ref={rootRef} className="detail-desktop-nav" aria-label={messages.navigation}>
+      <Link href={buildCatalogHref({ scope, area })} className="detail-desktop-nav__home">
+        {messages.map}
       </Link>
       <div className="nav-dropdown">
         <button
@@ -49,7 +61,7 @@ export function DetailDesktopNav({ categories, country, area }: DetailDesktopNav
           id="btn-detail-categories"
           onClick={() => setOpen((v) => !v)}
         >
-          Categories
+          {messages.categories}
           <span className="nav-dropdown__chevron" aria-hidden="true">
             ▾
           </span>
@@ -62,7 +74,7 @@ export function DetailDesktopNav({ categories, country, area }: DetailDesktopNav
             className="nav-dropdown__panel"
           >
             <Link
-              href={buildCatalogHref({ country, area })}
+              href={buildCatalogHref({ scope, area })}
               role="menuitem"
               className="nav-dropdown__item"
               onClick={close}
@@ -70,27 +82,27 @@ export function DetailDesktopNav({ categories, country, area }: DetailDesktopNav
               <span className="nav-dropdown__emoji" aria-hidden="true">
                 🌍
               </span>
-              Tots
+              {messages.allCategories}
             </Link>
-            {categories.map((cat) => (
+            {categories.map((category) => (
               <Link
-                key={cat}
-                href={buildCatalogHref({ country, area, category: cat })}
+                key={category.token}
+                href={buildCatalogHref({ scope, area, category: category.token })}
                 role="menuitem"
                 className="nav-dropdown__item"
                 onClick={close}
               >
                 <span className="nav-dropdown__emoji" aria-hidden="true">
-                  {getCategoryIcon(cat)}
+                  {category.icon}
                 </span>
-                {cat}
+                {category.label}
               </Link>
             ))}
           </div>
         ) : null}
       </div>
       <a href="#detail-info" className="detail-desktop-nav__anchor">
-        Información
+        {messages.information}
       </a>
     </nav>
   );

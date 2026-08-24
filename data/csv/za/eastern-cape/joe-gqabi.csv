@@ -1,21 +1,21 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-aliwal-villa-baking-studio,Aliwal Villa Baking Studio,Aliwal North,Pan y cereal,pan y productos de cereal,"SAPS - Aliwal North, 15 Barkly St",,,,,,https://www.facebook.com/547910605076263,,,-30.6877,26.71108,,parcial,no comprobado,,,26
-barberque-brits-abattoir,Barberque Brits Abattoir,Maclear,Carne,carne roja,"Waterbron Farm, Maclear, 5480",,,+27834590991,,,,,,,,,parcial,no comprobado,,,74
-barkly-east-butchery,Barkly East Butchery,Barkly East,Carne,,3 De Villers St,,,+27459710292,,,https://www.facebook.com/881503811995784,,,-30.9692971,27.5942081,,pendiente,no comprobado,,,75
-birkhall-grassfed-meat,Birkhall Grassfed Meat,Barkly East,Carne,carne roja,"Birkhall Farm, Barkly East",,,+27834590991,,,,,,,,,parcial,no comprobado,,,102
-eduan-braunvieh-cattle,Eduan Braunvieh Cattle,Rhodes,Carne,,Buttermead,,,+27828979555,wnaude80@gmail.com,http://www.eduan.co.za/,https://www.facebook.com/161239894068794,,,-30.8112409,27.913214,,parcial,no comprobado,,,287
-geduldsfontein-merino,Geduldsfontein Merino,Steynsburg,Otros,,Geduldsfontein Farm,,,+27722117931,geduldsfontein.plaas@gmail.com,,https://www.facebook.com/678922038631915,,,-31.3,25.8167,,parcial,no comprobado,,,357
-lunqu-farming-enterprise,Lunqu Farming Enterprise,KuNtabankulu,Otros,,Bonxa,,,+27638437603,,,https://www.facebook.com/1046672148537945,,,-30.45508,28.57277,,parcial,no comprobado,,,535
-maclear-butchery,Maclear Butchery,Nqanqarhu,Carne,,R56,,,+27459321039,,,https://www.facebook.com/256492011163436,,,-31.0682838,28.3483759,,pendiente,no comprobado,,,544
-olemi-bakery,Olemi Bakery,Senqu,Pan y cereal,pan y productos de cereal,Best Buy Complex,,,+27769844291,,http://www.olemibakery.co.za/,https://www.facebook.com/445004199026151,,,-30.5333,27.3667,,parcial,no comprobado,,,673
-ons-wawiel,Ons Wawiel,Aliwal North,Pan y cereal,pan y productos de cereal,17 Grey St,,,+27797322571,wawielcakes@gmail.com,,https://www.facebook.com/185429777995121,,,-30.6899448,26.7066438,,parcial,no comprobado,,,679
-orange-valley,Orange Valley,Ravensworth (2),Otros,,,,,,,,https://www.facebook.com/475837043223837,,,-30.6544367,26.5298431,,parcial,no comprobado,,,686
-plaas-sterkfontein,Plaas Sterkfontein,Walter Sisulu,Otros,,Plaas Sterkfontein,,,,,,https://www.facebook.com/2791660277780078,,,-31.13108,26.8043,,parcial,no comprobado,,,709
-rearema-poultry-farm,Rearema Poultry Farm,Mount Fletcher,Carne,,Mahemeng Village,,,,,,https://www.facebook.com/115542174838230,,,-30.7087812,28.4985352,,parcial,no comprobado,,,733
-rusda-hampshire-down-el-dorado-farm,RUSDA Hampshire Down El Dorado Farm,Aliwal North,Otros,,El Dorado Farm,,,,,,https://www.facebook.com/844460962081689,,,-30.68792,26.70888,,parcial,no comprobado,,,769
-shalom-sweet-treats-international-baker,Shalom Sweet Treats International Baker,Senqu,Pan y cereal,pan y productos de cereal,Mountain View Sterkspruit,,,,,,https://www.facebook.com/833405406519678,,,-30.52985,27.37217,,parcial,no comprobado,,,801
-shisa-bakery,SHISA Bakery,Senqu,Pan y cereal,pan y productos de cereal,148 Don Tsembeyi Street,,,+27714649481,chef29mm@gmail.com,,https://www.facebook.com/692681530839121,,,-30.5257399,27.3660965,,parcial,no comprobado,,,806
-steynsburg-butchery,Steynsburg Butchery,Steynsburg,Carne,,11 Van Riebeeck St,,,+27488840078,chris@nokwi.co.za,https://hoorah.co.za/store/steynsburg-butchery/,https://www.facebook.com/1049184061919313,,,-31.29375,25.82286,,pendiente,no comprobado,,,855
-stormberg-farm,Stormberg Farm,Merino,Otros,,,,,,,,https://www.facebook.com/169605456964888,,,-31.332891,26.8456034,,parcial,no comprobado,,,857
-the-pantry,The Pantry,Aliwal North,Pan y cereal,pan y productos de cereal,73 Somerset St,,,+27871507041,,,https://www.facebook.com/1642302859344437,,,-30.6933521,26.7091258,,parcial,no comprobado,,,913
-zinlith-confectionery-bakery,Zinlith Confectionery Bakery,Aliwal North,Pan y cereal,pan y productos de cereal,,,,+27722893557,zinlith.pcl@gmail.com,,https://www.facebook.com/105769207457309,,,-30.68613,26.70766,,parcial,no comprobado,,,1032
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+aliwal-villa-baking-studio,Aliwal Villa Baking Studio,Aliwal North,Pan y cereal,pan y productos de cereal,"SAPS - Aliwal North, 15 Barkly St",,,,,,https://www.facebook.com/547910605076263,,,-30.6877,26.71108,,parcial,no comprobado,,,26,
+barberque-brits-abattoir,Barberque Brits Abattoir,Maclear,Carne,carne roja,"Waterbron Farm, Maclear, 5480",,,+27834590991,,,,,,,,,parcial,no comprobado,,,74,
+barkly-east-butchery,Barkly East Butchery,Barkly East,Carne,,3 De Villers St,,,+27459710292,,,https://www.facebook.com/881503811995784,,,-30.9692971,27.5942081,,pendiente,no comprobado,,,75,
+birkhall-grassfed-meat,Birkhall Grassfed Meat,Barkly East,Carne,carne roja,"Birkhall Farm, Barkly East",,,+27834590991,,,,,,,,,parcial,no comprobado,,,102,
+eduan-braunvieh-cattle,Eduan Braunvieh Cattle,Rhodes,Carne,,Buttermead,,,+27828979555,wnaude80@gmail.com,http://www.eduan.co.za/,https://www.facebook.com/161239894068794,,,-30.8112409,27.913214,,parcial,no comprobado,,,287,
+geduldsfontein-merino,Geduldsfontein Merino,Steynsburg,Otros,,Geduldsfontein Farm,,,+27722117931,geduldsfontein.plaas@gmail.com,,https://www.facebook.com/678922038631915,,,-31.3,25.8167,,parcial,no comprobado,,,357,
+lunqu-farming-enterprise,Lunqu Farming Enterprise,KuNtabankulu,Otros,,Bonxa,,,+27638437603,,,https://www.facebook.com/1046672148537945,,,-30.45508,28.57277,,parcial,no comprobado,,,535,
+maclear-butchery,Maclear Butchery,Nqanqarhu,Carne,,R56,,,+27459321039,,,https://www.facebook.com/256492011163436,,,-31.0682838,28.3483759,,pendiente,no comprobado,,,544,
+olemi-bakery,Olemi Bakery,Senqu,Pan y cereal,pan y productos de cereal,Best Buy Complex,,,+27769844291,,http://www.olemibakery.co.za/,https://www.facebook.com/445004199026151,,,-30.5333,27.3667,,parcial,no comprobado,,,673,
+ons-wawiel,Ons Wawiel,Aliwal North,Pan y cereal,pan y productos de cereal,17 Grey St,,,+27797322571,wawielcakes@gmail.com,,https://www.facebook.com/185429777995121,,,-30.6899448,26.7066438,,parcial,no comprobado,,,679,
+orange-valley,Orange Valley,Ravensworth (2),Otros,,,,,,,,https://www.facebook.com/475837043223837,,,-30.6544367,26.5298431,,parcial,no comprobado,,,686,
+plaas-sterkfontein,Plaas Sterkfontein,Walter Sisulu,Otros,,Plaas Sterkfontein,,,,,,https://www.facebook.com/2791660277780078,,,-31.13108,26.8043,,parcial,no comprobado,,,709,
+rearema-poultry-farm,Rearema Poultry Farm,Mount Fletcher,Carne,,Mahemeng Village,,,,,,https://www.facebook.com/115542174838230,,,-30.7087812,28.4985352,,parcial,no comprobado,,,733,
+rusda-hampshire-down-el-dorado-farm,RUSDA Hampshire Down El Dorado Farm,Aliwal North,Otros,,El Dorado Farm,,,,,,https://www.facebook.com/844460962081689,,,-30.68792,26.70888,,parcial,no comprobado,,,769,
+shalom-sweet-treats-international-baker,Shalom Sweet Treats International Baker,Senqu,Pan y cereal,pan y productos de cereal,Mountain View Sterkspruit,,,,,,https://www.facebook.com/833405406519678,,,-30.52985,27.37217,,parcial,no comprobado,,,801,
+shisa-bakery,SHISA Bakery,Senqu,Pan y cereal,pan y productos de cereal,148 Don Tsembeyi Street,,,+27714649481,chef29mm@gmail.com,,https://www.facebook.com/692681530839121,,,-30.5257399,27.3660965,,parcial,no comprobado,,,806,
+steynsburg-butchery,Steynsburg Butchery,Steynsburg,Carne,,11 Van Riebeeck St,,,+27488840078,chris@nokwi.co.za,https://hoorah.co.za/store/steynsburg-butchery/,https://www.facebook.com/1049184061919313,,,-31.29375,25.82286,,pendiente,no comprobado,,,855,
+stormberg-farm,Stormberg Farm,Merino,Otros,,,,,,,,https://www.facebook.com/169605456964888,,,-31.332891,26.8456034,,parcial,no comprobado,,,857,
+the-pantry,The Pantry,Aliwal North,Pan y cereal,pan y productos de cereal,73 Somerset St,,,+27871507041,,,https://www.facebook.com/1642302859344437,,,-30.6933521,26.7091258,,parcial,no comprobado,,,913,
+zinlith-confectionery-bakery,Zinlith Confectionery Bakery,Aliwal North,Pan y cereal,pan y productos de cereal,,,,+27722893557,zinlith.pcl@gmail.com,,https://www.facebook.com/105769207457309,,,-30.68613,26.70766,,parcial,no comprobado,,,1032,

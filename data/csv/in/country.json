@@ -31,6 +31,10 @@
     "islas-andaman-y-nicobar": "andaman-nicobar-islands",
     "cachemira": "jammu-kashmir"
   },
+  "producerRouteAliases": {
+    "karnataka/grover-zampa-vineyards": 65,
+    "maharashtra/grover-zampa-vineyards": 64
+  },
   "regions": [
     {
       "slug": "northern",

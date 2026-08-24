@@ -6,6 +6,8 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "csv-parse/sync";
 
+import { classifyCatalogCsvPath } from "./lib/catalog-translations.mjs";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const DEFAULT_CSV_ROOT = path.join(ROOT, "data", "csv");
@@ -181,7 +183,9 @@ export function auditImages({
   const warnings = [];
   const references = new Map();
   const existingReferences = new Map();
-  const csvPaths = walk(csvRoot, (file) => file.endsWith(".csv"));
+  const csvPaths = walk(csvRoot, (file) => file.endsWith(".csv")).filter(
+    (file) => classifyCatalogCsvPath(csvRoot, file).kind === "area",
+  );
   let catalogRows = 0;
   let imageReferences = 0;
 

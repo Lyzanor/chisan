@@ -1,53 +1,53 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-kokuryu-shuzo-eiheiji,Kokuryu Shuzo,Eiheiji,Sake,,福井県吉田郡永平寺町松岡春日1-38,,,+81776616110,,http://www.kokuryu.co.jp/,,,,36.091564,136.298996,,parcial,no comprobado,,,632
-kato-kichibee-shoten-sabae,Kato Kichibee Shoten,Sabae,Sake,,福井県鯖江市吉江町1-11,,,+81778511507,,http://www.born.co.jp,,,,35.986141,136.17009,,parcial,no comprobado,,,529
-inami-shuzo-sabae,Inami Shuzo,Sabae,Sake,,福井県鯖江市有定町1-1-22,,,+81778510020,,,,,,35.947231,136.178177,,parcial,no comprobado,,,403
-ippongi-kubohonten-katsuyama,Ippongi Kubohonten,Katsuyama,Sake,,福井県勝山市沢町1丁目3-1,,,+81779872500,,http://www.ippongi.co.jp/,,,,36.063202,136.499496,,parcial,no comprobado,,,414
-uno-shuzojo-ono,Uno Shuzojo,Ono,Sake,,福井県大野市本町3-4,,,+81779662236,,http://www.itinotani.co.jp/,,,,35.986931,136.488037,,parcial,no comprobado,,,1306
-genpei-shuzo-ono,Genpei Shuzo,Ono,Sake,,福井県大野市要町1-33,,,+81779665712,,http://www.genpeishuzo.co.jp/,,,,35.989193,136.488693,,parcial,no comprobado,,,261
-kubota-shuzo-sakai,Kubota Shuzo,Sakai,Sake,,福井県坂井市丸岡町山久保27-45,,,+81776660123,,http://www.fukukoma.co.jp/,,,,36.171692,136.289246,,parcial,no comprobado,,,668
-ikeda-shuzo,Ikeda Shuzo,Fukui,Sake,,福井県福井市本堂町70-1,,,+81776371005,,,,,,36.060551,136.132339,,parcial,no comprobado,,,370
-ito-shuzo,Ito Shuzo,Fukui,Sake,,福井県福井市江上町44-65,,,+81776591018,,http://koshinotaka.jp/,,,,36.126575,136.170792,,parcial,no comprobado,,,446
-kikukatsura-shuzo,Kikukatsura Shuzo,Fukui,Sake,,福井県福井市照手2-2-19,,,+81776241370,,,,,,36.066135,136.209579,,parcial,no comprobado,,,558
-koshi-no-iso,Koshi no Iso,Fukui,Sake,,福井県福井市大宮5-8-25,,,+81776227711,,http://www.j-brewery.com/,,,,36.080914,136.205536,,parcial,no comprobado,,,644
-asahi-shuzo-echizen,Asahi Shuzo,Echizen,Sake,,福井県丹生郡越前町西田中11-53,,,+81778340020,,,,,,35.976349,136.128128,,parcial,no comprobado,,,73
-katayama-shuzo-echizen,Katayama Shuzo,Echizen,Sake,,福井県越前市余田町51-18,,,+81778220209,,http://sake-kansai.com/,,,,35.929188,136.155548,,parcial,no comprobado,,,526
-kitazen-shoten-minamiechizen,Kitazen Shoten,Minamiechizen,Sake,,福井県南条郡南越前町今庄81-3,,,+81778450016,,http://zen-roku.com/index.html,,,,35.769863,136.213043,,parcial,no comprobado,,,604
-kunimi-enoki,Kunimi Enoki,Fukui,Setas,"Enoki mushrooms, dried enoki",福井県福井市鮎川町92-1,"Kunimi Enoki produces enoki mushrooms, dried enoki at its Fukui unit, which is listed in the national organic JAS operator register.",,,,https://www.kunimienoki.com/?mode=sk,,,,36.090977,136.038864,,verificado,sí,ecommerce,,680
-yoshimura-farm-wakasa,Yoshimura Farm,Wakasa,Fruta y verdura,Organic vegetables,福井県三方上中郡若狭町相田35-51 他,"Yoshimura Farm produces organic vegetables at its Wakasa unit, which is listed in the national organic JAS operator register.",,+81770451070,,https://hiko3.com/products/,,,,35.524330,135.908615,,verificado,no comprobado,,,1386
-goru-do,Goru-do,Fukui,Legumbres,"Soy milk, gojiru, soybean products",福井県福井市畠中町28-6,"Goru-do produces soy milk, gojiru, soybean products at its Fukui unit, which is listed in the national organic JAS operator register.",,+81776972125,,https://www.gojiru.jp/?mode=f2,,,,36.044792,136.048203,,verificado,sí,ecommerce,,271
-nomura-syouyu-ono-shi,野村醤油,Ōno-shi,Condimentos,大野のおしょうゆ,福井県大野市日吉町10-1,Produces soy sauce and traditional seasonings at its Ōno-shi brewery.,,+81779662072,,https://nomura-syouyu.jp/,,https://www.instagram.com/wakasaji/,,35.979720,136.487500,,verificado,no comprobado,,,3228
-tabechoku-20837,テトテヲ,Sakai,Huevos,"卵, 鶏肉",,Produces eggs and chicken at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,1842
-tabechoku-21269,昇竜,Ōno-shi,Setas,,,Produces mushrooms at its Ōno-shi unit.,,,,,,,,35.979720,136.487500,,parcial,sí,marketplace,,2573
-tabechoku-23132,こころファーム,Fukui,Setas,しいたけ,,Produces shiitake at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1496
-tabechoku-27295,瀬越水産 新盛丸,Sakai,Pescado,海老,,Produces shrimp at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,2917
-tabechoku-23694,魚屋の喰い処まつ田,Fukui,Pescado,海老,,Produces shrimp at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,3314
-tabechoku-27409,あまちゃん,Fukui,Pescado,,,Produces fish and seafood at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1421
-tabechoku-22562,鯖江スマイルファーム,Sabae,Pescado,,,Produces fish and seafood at its Sabae unit.,,,,,,,,35.956470,136.184280,,parcial,sí,marketplace,,3318
-tabechoku-3078574,サンビーフ齊藤牧場,Sakai,Carne,牛肉,,Produces beef at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,1795
-tabechoku-26490,グリーンファームすみや,Awara,Legumbres,"大豆, 味噌",,Produces soybeans and miso at its Awara unit.,,,,,,,,36.211310,136.228970,,parcial,sí,marketplace,,1777
-tabechoku-25557,滝本米 農園,Katsuyama,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Katsuyama unit.,,,,,,,,36.060860,136.500640,,parcial,sí,marketplace,,2905
-tabechoku-23859,シマダ農園,Obama,Pan y cereal,米,,Produces rice at its Obama unit.,,,,,,,,35.495610,135.746610,,parcial,sí,marketplace,,1807
-tabechoku-3078493,ヤスノ農園,Fukui,Pan y cereal,,,Produces grain products at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1965
-tabechoku-27469,米農房そまねこ,Wakasa,Pan y cereal,,,Produces grain products at its Wakasa unit.,,,,,,,,35.548940,135.908170,,parcial,sí,marketplace,,3041
-tabechoku-29269,茂右衛門農場,Sabae,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Sabae unit.,,,,,,,,35.956470,136.184280,,parcial,sí,marketplace,,3096
-tabechoku-23857,徳橋農場,Sabae,Pan y cereal,そば,,Produces soba at its Sabae unit.,,,,,,,,35.956470,136.184280,,parcial,sí,marketplace,,2519
-tabechoku-22998,本多農園,Katsuyama,Pan y cereal,"米, そば, 大豆",,"Produces rice, soba and soybeans at its Katsuyama unit.",,,,,,,,36.060860,136.500640,,parcial,sí,marketplace,,2637
-tabechoku-29409,西農園,Sakai,Fruta y verdura,梨,,Produces pears at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,3153
-tabechoku-29572,ゆみたか農園,Sakai,Fruta y verdura,,,Produces fruit and vegetables at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,1685
-tabechoku-29342,晴レハレ農園｜走るコケ子の健康卵,Eiheiji,Fruta y verdura,レモン,,Produces lemons at its Eiheiji unit.,,,,,,,,36.092190,136.298720,,parcial,sí,marketplace,,2578
-tabechoku-28017,もんちゃん農園,Fukui,Fruta y verdura,野菜,,Produces vegetables at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1667
-tabechoku-29444,ターナーズファーム,Fukui,Fruta y verdura,メロン,,Produces melons at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1827
-tabechoku-23979,農園たや,Fukui,Fruta y verdura,,,Produces fruit and vegetables at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,3185
-jp-fukui-seimido-1a5cade,有限会社杉本清味堂,大野市,Aperitivos,米菓,,"Produces rice crackers in 大野市, fukui.",,,,https://seimido.com/,,,,35.979720,136.487500,,verificado,no comprobado,,,2618
-jp-fukui-yoshimuraokaki-1c13b47,株式会社吉村甘露堂,大野市,Aperitivos,米菓,,"Produces rice crackers in 大野市, fukui.",,,,https://yoshimuraokaki.jp/,,,,35.979720,136.487500,,verificado,sí,ecommerce,,2766
-jp-fukui-kameya-s-30b09e9,亀屋製菓株式会社,福井市,Aperitivos,米菓,,"Produces rice crackers in 福井市, fukui.",,,,https://kameya-s.com/,,,,36.064060,136.219580,,verificado,sí,ecommerce,,2111
-our-brewing,OUR BREWING (アワーブルーイング),Fukui,Cerveza,,中央1-10-9,Brewery producing beer at its Fukui unit.,,,contact@ourbrewing.com,https://ourbrewing.com/,,https://www.instagram.com/ourbrewing/,,36.06406,136.21958,,parcial,no comprobado,,,982
-tamuracho-obama,田村長,Obama,Pescado,"Heshiko, sasazuke, canned mackerel",,"Makes Wakasa-style heshiko, sasazuke and canned seafood in Obama.",,,,https://www.tamuracho.co.jp/,,,,35.49561,135.74661,,verificado,sí,ecommerce,,2944
-marukai-obama,丸海,Obama,Pescado,"Sasazuke, heshiko, grilled mackerel",福井県小浜市川崎2-1-1,"Produces sasazuke, heshiko, grilled mackerel and other Wakasa seafood products in Obama.",,+81770521600,,https://obamakaisanbutsu.jp/,,,,35.501743,135.739151,,verificado,sí,ecommerce,,2081
-narimae-fukui,越前かに成前,Fukui,Pescado,Echizen crab,福井県福井市順化1-14-15,Cooks and sells Echizen crab and prepared crab products at its Fukui unit.,,+81776636927,yudetate@echizenkani.tv,https://echizenkani.tv/,,,,36.06406,136.21958,,parcial,sí,ecommerce,,3176
-marukawa-miso,マルカワみそ (Marukawa Miso),越前市,Condimentos,,,マルカワみそ (Marukawa Miso) makes its own condiments in 越前市.,,,,https://marukawamiso.com/,,https://www.instagram.com/marukawamiso/,,35.90350,136.16875,,parcial,no comprobado,,,3344
-okui-kaiseido,奥井海生堂 (Okui Kaiseido),敦賀市,Condimentos,,,奥井海生堂 (Okui Kaiseido) makes its own condiments in 敦賀市.,,,,https://www.konbu.co.jp/,,https://www.instagram.com/okuikaiseido_insta/,,35.64519,136.05550,,parcial,no comprobado,,,3345
-taniguchiya,谷口屋 (Taniguchiya),坂井市,Legumbres,,,谷口屋 (Taniguchiya) prepares its own legume products in 坂井市.,,,,https://taniguchiya.co.jp/,,https://www.instagram.com/taniguchiya/,,36.16694,136.23144,,parcial,no comprobado,,,3346
-muranaka-kansendo,村中甘泉堂 (Muranaka Kansendo),福井市,Dulces y repostería,,,村中甘泉堂 (Muranaka Kansendo) makes its own baked goods and confectionery in 福井市.,,,,https://www.kansendo.com/,,https://www.instagram.com/muranaka_kansendo/,,36.06406,136.21958,,parcial,no comprobado,,,3347
-benichu-eco-farm-mikata,エコファームみかた / BENICHU (Eco Farm Mikata),若狭町,Destilados y licores,,,エコファームみかた / BENICHU (Eco Farm Mikata) produces its own spirits in 若狭町.,,,,https://benichu.net/,,https://www.instagram.com/benichu_official/,,35.54894,135.90817,,parcial,no comprobado,,,3348
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+kokuryu-shuzo-eiheiji,Kokuryu Shuzo,Eiheiji,Sake,,福井県吉田郡永平寺町松岡春日1-38,,,+81776616110,,http://www.kokuryu.co.jp/,,,,36.091564,136.298996,,parcial,no comprobado,,,632,
+kato-kichibee-shoten-sabae,Kato Kichibee Shoten,Sabae,Sake,,福井県鯖江市吉江町1-11,,,+81778511507,,http://www.born.co.jp,,,,35.986141,136.17009,,parcial,no comprobado,,,529,
+inami-shuzo-sabae,Inami Shuzo,Sabae,Sake,,福井県鯖江市有定町1-1-22,,,+81778510020,,,,,,35.947231,136.178177,,parcial,no comprobado,,,403,
+ippongi-kubohonten-katsuyama,Ippongi Kubohonten,Katsuyama,Sake,,福井県勝山市沢町1丁目3-1,,,+81779872500,,http://www.ippongi.co.jp/,,,,36.063202,136.499496,,parcial,no comprobado,,,414,
+uno-shuzojo-ono,Uno Shuzojo,Ono,Sake,,福井県大野市本町3-4,,,+81779662236,,http://www.itinotani.co.jp/,,,,35.986931,136.488037,,parcial,no comprobado,,,1306,
+genpei-shuzo-ono,Genpei Shuzo,Ono,Sake,,福井県大野市要町1-33,,,+81779665712,,http://www.genpeishuzo.co.jp/,,,,35.989193,136.488693,,parcial,no comprobado,,,261,
+kubota-shuzo-sakai,Kubota Shuzo,Sakai,Sake,,福井県坂井市丸岡町山久保27-45,,,+81776660123,,http://www.fukukoma.co.jp/,,,,36.171692,136.289246,,parcial,no comprobado,,,668,
+ikeda-shuzo,Ikeda Shuzo,Fukui,Sake,,福井県福井市本堂町70-1,,,+81776371005,,,,,,36.060551,136.132339,,parcial,no comprobado,,,370,
+ito-shuzo,Ito Shuzo,Fukui,Sake,,福井県福井市江上町44-65,,,+81776591018,,http://koshinotaka.jp/,,,,36.126575,136.170792,,parcial,no comprobado,,,446,
+kikukatsura-shuzo,Kikukatsura Shuzo,Fukui,Sake,,福井県福井市照手2-2-19,,,+81776241370,,,,,,36.066135,136.209579,,parcial,no comprobado,,,558,
+koshi-no-iso,Koshi no Iso,Fukui,Sake,,福井県福井市大宮5-8-25,,,+81776227711,,http://www.j-brewery.com/,,,,36.080914,136.205536,,parcial,no comprobado,,,644,
+asahi-shuzo-echizen,Asahi Shuzo,Echizen,Sake,,福井県丹生郡越前町西田中11-53,,,+81778340020,,,,,,35.976349,136.128128,,parcial,no comprobado,,,73,
+katayama-shuzo-echizen,Katayama Shuzo,Echizen,Sake,,福井県越前市余田町51-18,,,+81778220209,,http://sake-kansai.com/,,,,35.929188,136.155548,,parcial,no comprobado,,,526,
+kitazen-shoten-minamiechizen,Kitazen Shoten,Minamiechizen,Sake,,福井県南条郡南越前町今庄81-3,,,+81778450016,,http://zen-roku.com/index.html,,,,35.769863,136.213043,,parcial,no comprobado,,,604,
+kunimi-enoki,Kunimi Enoki,Fukui,Setas,"Enoki mushrooms, dried enoki",福井県福井市鮎川町92-1,"Kunimi Enoki produces enoki mushrooms, dried enoki at its Fukui unit.",,,,https://www.kunimienoki.com/?mode=sk,,,,36.090977,136.038864,,verificado,sí,ecommerce,,680,en
+yoshimura-farm-wakasa,Yoshimura Farm,Wakasa,Fruta y verdura,Organic vegetables,福井県三方上中郡若狭町相田35-51 他,Yoshimura Farm produces organic vegetables at its Wakasa unit.,,+81770451070,,https://hiko3.com/products/,,,,35.524330,135.908615,,verificado,no comprobado,,,1386,en
+goru-do,Goru-do,Fukui,Legumbres,"Soy milk, gojiru, soybean products",福井県福井市畠中町28-6,"Goru-do produces soy milk, gojiru, soybean products at its Fukui unit.",,+81776972125,,https://www.gojiru.jp/?mode=f2,,,,36.044792,136.048203,,verificado,sí,ecommerce,,271,en
+nomura-syouyu-ono-shi,野村醤油,Ōno-shi,Condimentos,大野のおしょうゆ,福井県大野市日吉町10-1,Produces soy sauce and traditional seasonings at its Ōno-shi brewery.,,+81779662072,,https://nomura-syouyu.jp/,,https://www.instagram.com/wakasaji/,,35.979720,136.487500,,verificado,no comprobado,,,3228,en
+tabechoku-20837,テトテヲ,Sakai,Huevos,"卵, 鶏肉",,Produces eggs and chicken at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,1842,en
+tabechoku-21269,昇竜,Ōno-shi,Setas,,,Produces mushrooms at its Ōno-shi unit.,,,,,,,,35.979720,136.487500,,parcial,sí,marketplace,,2573,en
+tabechoku-23132,こころファーム,Fukui,Setas,しいたけ,,Produces shiitake at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1496,en
+tabechoku-27295,瀬越水産 新盛丸,Sakai,Pescado,海老,,Produces shrimp at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,2917,en
+tabechoku-23694,魚屋の喰い処まつ田,Fukui,Pescado,海老,,Produces shrimp at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,3314,en
+tabechoku-27409,あまちゃん,Fukui,Pescado,,,Produces fish and seafood at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1421,en
+tabechoku-22562,鯖江スマイルファーム,Sabae,Pescado,,,Produces fish and seafood at its Sabae unit.,,,,,,,,35.956470,136.184280,,parcial,sí,marketplace,,3318,en
+tabechoku-3078574,サンビーフ齊藤牧場,Sakai,Carne,牛肉,,Produces beef at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,1795,en
+tabechoku-26490,グリーンファームすみや,Awara,Legumbres,"大豆, 味噌",,Produces soybeans and miso at its Awara unit.,,,,,,,,36.211310,136.228970,,parcial,sí,marketplace,,1777,en
+tabechoku-25557,滝本米 農園,Katsuyama,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Katsuyama unit.,,,,,,,,36.060860,136.500640,,parcial,sí,marketplace,,2905,en
+tabechoku-23859,シマダ農園,Obama,Pan y cereal,米,,Produces rice at its Obama unit.,,,,,,,,35.495610,135.746610,,parcial,sí,marketplace,,1807,en
+tabechoku-3078493,ヤスノ農園,Fukui,Pan y cereal,,,Produces grain products at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1965,en
+tabechoku-27469,米農房そまねこ,Wakasa,Pan y cereal,,,Produces grain products at its Wakasa unit.,,,,,,,,35.548940,135.908170,,parcial,sí,marketplace,,3041,en
+tabechoku-29269,茂右衛門農場,Sabae,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Sabae unit.,,,,,,,,35.956470,136.184280,,parcial,sí,marketplace,,3096,en
+tabechoku-23857,徳橋農場,Sabae,Pan y cereal,そば,,Produces soba at its Sabae unit.,,,,,,,,35.956470,136.184280,,parcial,sí,marketplace,,2519,en
+tabechoku-22998,本多農園,Katsuyama,Pan y cereal,"米, そば, 大豆",,"Produces rice, soba and soybeans at its Katsuyama unit.",,,,,,,,36.060860,136.500640,,parcial,sí,marketplace,,2637,en
+tabechoku-29409,西農園,Sakai,Fruta y verdura,梨,,Produces pears at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,3153,en
+tabechoku-29572,ゆみたか農園,Sakai,Fruta y verdura,,,Produces fruit and vegetables at its Sakai unit.,,,,,,,,36.166940,136.231440,,parcial,sí,marketplace,,1685,en
+tabechoku-29342,晴レハレ農園｜走るコケ子の健康卵,Eiheiji,Fruta y verdura,レモン,,Produces lemons at its Eiheiji unit.,,,,,,,,36.092190,136.298720,,parcial,sí,marketplace,,2578,en
+tabechoku-28017,もんちゃん農園,Fukui,Fruta y verdura,野菜,,Produces vegetables at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1667,en
+tabechoku-29444,ターナーズファーム,Fukui,Fruta y verdura,メロン,,Produces melons at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,1827,en
+tabechoku-23979,農園たや,Fukui,Fruta y verdura,,,Produces fruit and vegetables at its Fukui unit.,,,,,,,,36.064060,136.219580,,parcial,sí,marketplace,,3185,en
+jp-fukui-seimido-1a5cade,有限会社杉本清味堂,大野市,Aperitivos,米菓,,"有限会社杉本清味堂 produces rice crackers in 大野市, fukui.",,,,https://seimido.com/,,,,35.979720,136.487500,,verificado,no comprobado,,,2618,en
+jp-fukui-yoshimuraokaki-1c13b47,株式会社吉村甘露堂,大野市,Aperitivos,米菓,,"株式会社吉村甘露堂 produces rice crackers in 大野市, fukui.",,,,https://yoshimuraokaki.jp/,,,,35.979720,136.487500,,verificado,sí,ecommerce,,2766,en
+jp-fukui-kameya-s-30b09e9,亀屋製菓株式会社,福井市,Aperitivos,米菓,,"Produces rice crackers in 福井市, fukui.",,,,https://kameya-s.com/,,,,36.064060,136.219580,,verificado,sí,ecommerce,,2111,en
+our-brewing,OUR BREWING (アワーブルーイング),Fukui,Cerveza,,中央1-10-9,Brewery producing beer at its Fukui unit.,,,contact@ourbrewing.com,https://ourbrewing.com/,,https://www.instagram.com/ourbrewing/,,36.06406,136.21958,,parcial,no comprobado,,,982,en
+tamuracho-obama,田村長,Obama,Pescado,"Heshiko, sasazuke, canned mackerel",,"Makes Wakasa-style heshiko, sasazuke and canned seafood in Obama.",,,,https://www.tamuracho.co.jp/,,,,35.49561,135.74661,,verificado,sí,ecommerce,,2944,en
+marukai-obama,丸海,Obama,Pescado,"Sasazuke, heshiko, grilled mackerel",福井県小浜市川崎2-1-1,"Produces sasazuke, heshiko, grilled mackerel and other Wakasa seafood products in Obama.",,+81770521600,,https://obamakaisanbutsu.jp/,,,,35.501743,135.739151,,verificado,sí,ecommerce,,2081,en
+narimae-fukui,越前かに成前,Fukui,Pescado,Echizen crab,福井県福井市順化1-14-15,Cooks and sells Echizen crab and prepared crab products at its Fukui unit.,,+81776636927,yudetate@echizenkani.tv,https://echizenkani.tv/,,,,36.06406,136.21958,,parcial,sí,ecommerce,,3176,en
+marukawa-miso,マルカワみそ (Marukawa Miso),越前市,Condimentos,,,マルカワみそ (Marukawa Miso) makes its own condiments in 越前市.,,,,https://marukawamiso.com/,,https://www.instagram.com/marukawamiso/,,35.90350,136.16875,,parcial,no comprobado,,,3344,en
+okui-kaiseido,奥井海生堂 (Okui Kaiseido),敦賀市,Condimentos,,,奥井海生堂 (Okui Kaiseido) makes its own condiments in 敦賀市.,,,,https://www.konbu.co.jp/,,https://www.instagram.com/okuikaiseido_insta/,,35.64519,136.05550,,parcial,no comprobado,,,3345,en
+taniguchiya,谷口屋 (Taniguchiya),坂井市,Legumbres,,,谷口屋 (Taniguchiya) prepares its own legume products in 坂井市.,,,,https://taniguchiya.co.jp/,,https://www.instagram.com/taniguchiya/,,36.16694,136.23144,,parcial,no comprobado,,,3346,en
+muranaka-kansendo,村中甘泉堂 (Muranaka Kansendo),福井市,Dulces y repostería,,,村中甘泉堂 (Muranaka Kansendo) makes its own baked goods and confectionery in 福井市.,,,,https://www.kansendo.com/,,https://www.instagram.com/muranaka_kansendo/,,36.06406,136.21958,,parcial,no comprobado,,,3347,en
+benichu-eco-farm-mikata,エコファームみかた / BENICHU (Eco Farm Mikata),若狭町,Destilados y licores,,,エコファームみかた / BENICHU (Eco Farm Mikata) produces its own spirits in 若狭町.,,,,https://benichu.net/,,https://www.instagram.com/benichu_official/,,35.54894,135.90817,,parcial,no comprobado,,,3348,en

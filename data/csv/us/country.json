@@ -26,6 +26,18 @@
     "pensilvania": "pennsylvania",
     "hawai": "hawaii"
   },
+  "producerRouteAliases": {
+    "illinois/eckert-s-orchards": 1149,
+    "kansas/blue-barn-farm": 464,
+    "louisiana/blueberry-hill": 491,
+    "louisiana/galpin-honey-farms": 1392,
+    "mississippi/galpin-honey-farms": 1391,
+    "missouri/eckert-s-orchards": 1150,
+    "north-dakota/family-roots-farm": 1224,
+    "pennsylvania/blue-barn-farm": 465,
+    "south-carolina/blueberry-hill": 490,
+    "west-virginia/family-roots-farm": 1225
+  },
   "regions": [
     {
       "slug": "new-england",

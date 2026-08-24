@@ -10,6 +10,7 @@ import {
   getBootstrapAdminEmails,
   isAccountSystemConfigured,
 } from "@/lib/accounts/config";
+import { buildActiveProducerAccessLookup } from "@/lib/accounts/producer-access";
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
 import { getDatabase, type Database } from "@/lib/db";
 import {
@@ -347,15 +348,16 @@ export async function hasProducerAccess(
   country: string,
   producerId: number,
 ): Promise<boolean> {
+  const lookup = buildActiveProducerAccessLookup(userId, { country, producerId });
   const [membership] = await getDatabase()
     .select({ id: producerMemberships.id })
     .from(producerMemberships)
     .where(
       and(
-        eq(producerMemberships.userId, userId),
-        eq(producerMemberships.country, country),
-        eq(producerMemberships.producerId, producerId),
-        eq(producerMemberships.status, "active"),
+        eq(producerMemberships.userId, lookup.userId),
+        eq(producerMemberships.country, lookup.country),
+        eq(producerMemberships.producerId, lookup.producerId),
+        eq(producerMemberships.status, lookup.status),
       ),
     )
     .limit(1);

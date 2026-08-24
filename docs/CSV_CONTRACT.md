@@ -20,6 +20,9 @@ decide which entities qualify or how research is performed:
 - `docs/IMAGES.md` owns image sourcing and preparation.
 - `docs/ACCOUNT_SYSTEM.md` owns how an authorized producer proposal reaches the
   editorial workflow; a database request never overrides a row.
+- Country-level `translations.<locale>.csv` files are materialized presentation
+  caches for explicitly translatable canonical prose. They are governed here,
+  but are not producer-data overlays and never override an area row.
 
 Validators prove conformance, not truth. Editorial correctness remains the
 first requirement.
@@ -32,6 +35,11 @@ The only runtime producer source is:
 data/csv/<country>/<region>/<area>.csv
 ```
 
+Files named `data/csv/<country>/translations.<target-locale>.csv` are a
+separate file class. They may localize canonical prose for rendering, but they
+do not register countries, regions, areas or producers and are never read as
+area CSVs.
+
 - `<country>` is a lowercase ISO 3166-1 alpha-2 code.
 - `<region>` and `<area>` are stable lowercase ASCII kebab-case slugs. Their
   country-specific labels and ordering belong in `country.json`.
@@ -40,10 +48,88 @@ data/csv/<country>/<region>/<area>.csv
 - `<area>` must be unique inside its country. The public area key is
   `(<country>, <area>)`, so different countries may use the same area slug but
   two regions of one country may not.
+- Every effective region and area locale policy must retain the country's
+  default locale. This guarantees that the stable short `/<country>/<area>`
+  route remains publishable and gives private account links a valid fallback.
 - `events` and `retail` are reserved country-level namespaces and cannot be
   area slugs or aliases.
 - Every producer row belongs to the area containing its productive unit. A
   sales outlet, head office or brand origin does not determine placement.
+
+## Country manifest and locale policy
+
+`data/csv/<country>/country.json` supplies presentation, ordering and routing
+policy for the catalog tree. It does not register data: country and region
+directories and area CSV filenames remain authoritative for what exists. A
+manifest entry may label or order a real node, but cannot create a country,
+region, area or producer.
+
+The localized manifest schema is:
+
+| Path | Type and meaning |
+|---|---|
+| `label` | Existing non-empty country fallback label. |
+| `unit` | Existing `{ "one": string, "many": string }` fallback for the area level. |
+| `regionUnit` | Existing `{ "one": string, "many": string }` fallback for the region level. |
+| `i18n.defaultLocale` | Required supported presentation locale for an explicit localized manifest; it owns the short `/<country>` scope. |
+| `i18n.publishedLocales` | Required non-empty, duplicate-free list of locales published at country depth and inherited by descendants without an override. It must include `defaultLocale`. |
+| `i18n.labels` | Country display label by supported presentation locale. |
+| `i18n.unitLabels` | Area-level `{ one, many }` display names by supported presentation locale. |
+| `i18n.regionUnitLabels` | Region-level `{ one, many }` display names by supported presentation locale. |
+| `regions[].slug` | Exact region directory slug; the array also controls display order. |
+| `regions[].label` | Existing non-empty region fallback label. |
+| `regions[].labels` | Region display label by supported presentation locale. |
+| `regions[].i18n.publishedLocales` | Optional replacement for the inherited country list below this region. |
+| `regions[].i18n.preferredLocale` | Optional territorial preference; it must be in the region's effective published list. |
+| `regions[].areas[].slug` | Exact area CSV stem; the array also controls display order. |
+| `regions[].areas[].label` | Existing non-empty area fallback label. |
+| `regions[].areas[].labels` | Area display label by supported presentation locale. |
+| `regions[].areas[].i18n.publishedLocales` | Optional replacement for the inherited region list for this area. |
+| `regions[].areas[].i18n.preferredLocale` | Optional territorial preference; it must be in the area's effective published list. |
+
+`aliases` and `producerRouteAliases` are compatibility registries, not locale
+policy. Their routing rules are defined under **Producer identity** below.
+
+Presentation locales are the exact codes in the maintained presentation
+registry: `en`, `es`, `ca`, `de` and `ja` today. A code accepted only by the
+description-source registry is not valid in manifest locale policy. Country
+codes, browser language, source prose or territorial geometry never infer a
+default or publish a locale.
+
+Locale policy resolves from country to region to area:
+
+1. The country declares one `defaultLocale`; descendants cannot replace it.
+2. Country `publishedLocales` applies to the country landing and is inherited
+   by every region without an explicit list.
+3. A region list replaces, rather than extends, its inherited list and is
+   inherited by its areas.
+4. An area list replaces its inherited region list for that area and its
+   producer pages.
+5. Every effective list must retain the country default so the stable short
+   route remains complete.
+6. The effective preferred locale starts as the country default, may be
+   replaced at region depth and then at area depth, and must always be
+   published at that depth. It may prioritize that locale only when the browser
+   actually accepts it among the published matches; it never overrides an
+   explicit choice, becomes a fallback without a visitor-language signal, or
+   changes or redirects a valid locale URL.
+
+Labels do not publish a route by themselves and may be prepared for a supported
+locale before activation. Before a locale is published at an area, that area
+must have its own non-empty label for the locale. Its ancestors must also have
+the country label, region label and both unit-name pairs required to render the
+descendant. This is why country and region label maps cover the union of locales
+published below them, even when the country landing does not publish every one
+of those locales.
+
+Existing `label`, `unit` and `regionUnit` remain the default-language fallback
+values during migration. A manifest with no localized fields retains the
+temporary legacy English runtime policy; that compatibility fallback is not an
+explicit publication declaration and must not be used for new or converted
+manifests. Once any localized manifest field is introduced, the country
+`i18n.defaultLocale` and `i18n.publishedLocales` policy and all effective labels
+must be complete. Live rollout counts and batch progress never belong in this
+manifest or a country `AGENTS.md`.
 
 ## Canonical header
 
@@ -52,7 +138,7 @@ The column count is not a stable part of the contract: new columns may be
 appended so existing field positions remain stable.
 
 ```text
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
 ```
 
 All columns are physically present in every file. “Optional” below means that a
@@ -96,6 +182,7 @@ whitespace.
 | `Canal de venta` | conditional | Zero or more allowed channel tokens joined with `|`; only when `Venta online=sí`. |
 | `categorias adicionales` | optional | Zero or more exact category tokens joined with `|`; each represents another material product line of the same productive unit. |
 | `producer_id` | required | Immutable positive decimal safe integer (`1..9007199254740991`) without leading zeroes; unique within the country. |
+| `descripcion_locale` | paired | Supported lowercase source-language code for a non-empty `descripcion`; empty exactly when `descripcion` is empty. |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -125,10 +212,10 @@ admission threshold; it is never a holding state for a speculative candidate.
 - Source-authored identity and location data retain the producer's or competent
   authority's spelling: `nombre`, `municipio`, `direccion`, published hours,
   product names, brands and appellations. Do not translate proper names.
-- Editor-authored prose uses one editorial language consistently per country.
-  It is Spanish for `es` and English for the current remaining catalogs; a new
-  country defaults to English. Language choice never changes field meaning or
-  evidentiary standards.
+- The source language of editor-authored `descripcion` is recorded per row in
+  `descripcion_locale`; it may differ between rows in one country. Editorial
+  language should suit the local catalog and available evidence, but language
+  choice never changes field meaning or evidentiary standards.
 - `nombre` is the identity under which the producer is publicly presented. Use
   a legal name only when no distinct public identity exists; omit legal suffixes
   unless they are part of the public name.
@@ -140,6 +227,212 @@ admission threshold; it is never a holding state for a speculative candidate.
   source commentary and shared templates.
 - `horario` is copied only when the source makes its meaning and currency clear.
   Empty is preferable to an old or ambiguous schedule.
+
+## Description source locale
+
+`descripcion_locale` is the source-language identifier for the canonical
+`descripcion`, not the locale of the producer, country or current request:
+
+- empty `descripcion` requires empty `descripcion_locale`;
+- non-empty `descripcion` requires one lowercase code from the description
+  source registry: `en`, `es`, `ca`, `de`, `ja`, `fr`, `it`, `nl`, `pt`, `gl`
+  or `eu`;
+- the value is a base language from the locale registry, never a catalog scope
+  such as `en-jp` or a language-region display tag;
+- description-source support is not presentation support: source-only codes do
+  not activate routes, cookies, manifests, dictionaries, sidecar targets or
+  `hreflang` entries;
+- the language is assessed from the actual row prose and may vary per row;
+- editors set it when writing or materially replacing a description and never
+  infer it from the country code.
+
+A language correction that leaves the prose unchanged still invalidates any
+translation whose recorded `source_locale` no longer matches. A factual or
+editorial correction belongs in the canonical area row; it is not made only in
+a generated translation.
+
+## Materialized translation sidecars
+
+Localized descriptions are stored by country and target locale:
+
+```text
+data/csv/<country>/translations.<target-locale>.csv
+```
+
+Every sidecar uses this exact header:
+
+```text
+producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version
+```
+
+The sidecar rules are:
+
+- `<target-locale>` is a supported presentation-locale code (`en`, `es`, `ca`,
+  `de` or `ja` today) and is the target language of every `text` in that file.
+  It is not stored as a duplicate column. A supported sidecar may be prepared
+  before its target locale is published in a manifest. A source-only locale is
+  not a valid sidecar filename until it separately enters the presentation
+  registry.
+- `producer_id` must resolve to one current area row in the same country.
+  `(producer_id, field)` is unique within a target file; row order is canonical
+  by numeric `producer_id` and then `field`.
+- Initially, the only allowed `field` is `descripcion`. Its `source_locale`
+  must equal that row's current non-empty `descripcion_locale`, and a
+  source-equals-target row is not stored because the canonical prose already
+  supplies that variant.
+- `source_hash` is the lowercase hexadecimal SHA-256 digest of the parsed
+  canonical source text after Unicode NFC normalization and conversion of CRLF
+  or CR line endings to LF. No trimming, case folding or whitespace collapsing
+  is performed. A source text or source-locale change makes the translation
+  stale.
+- A literal spreadsheet carriage-return escape (`_x000d_`) may be converted to
+  an LF only in the provider prompt. It remains part of the canonical source
+  hash, is not a number or protected term, and must not leak into localized
+  presentation.
+- `text` is non-empty localized presentation. It must preserve the source's
+  facts, numbers, URLs and protected terms and must not add claims or
+  promotional language. Numeric literals are compared exactly. The ordered
+  quantitative-fact fingerprint also covers an adjacent sign, percentage or
+  currency marker, and registered abbreviated unit, so changes such as
+  `100%` to `100`, `€12` to `$12`, or `4.000 kg` to `4.000 g` are invalid
+  even when the digits remain present. An adjacent English decade suffix such
+  as `80s` or `1990s` is not classified as the seconds unit; `s` is treated as
+  seconds only when separated from the number. The exact numeric token remains
+  mandatory while the decade marker may be rendered in the target language.
+  Generated output is never repaired by silently reinserting a source quantity.
+- `origin` is exactly `machine` or `reviewed`. `engine`, `engine_version`,
+  `prompt_version` and `glossary_version` record the reproducible generation
+  context; review changes only the origin and reviewed text, not the source to
+  which the row is tied.
+- A `machine` row is valid only when that exact engine/version, prompt,
+  glossary and target locale resolve to one approved model in
+  `data/reference/translation-engines.json`. Each approval cites the reviewed
+  benchmark version and plan hash. An empty registry blocks every machine row;
+  adding or changing an approval is the explicit provider-selection step. An
+  approval may also retain the supplemental benchmark hash, reviewed counts,
+  semantic-exception count and initial quantitative-integrity result so the
+  publication decision is auditable without claiming that mechanical checks
+  prove linguistic quality. A `reviewed` row keeps its historical generation
+  metadata but does not depend on a current machine approval.
+- A generator may replace or prune an obsolete `machine` row. It never
+  overwrites or automatically deletes a `reviewed` row. A reviewed row with a
+  stale source hash or locale is reported for renewed review and blocks
+  publication just as a stale machine row does.
+
+For a requested locale, description resolution is deterministic:
+
+1. use canonical `descripcion` when `descripcion_locale` equals the request;
+2. otherwise use a current `reviewed` sidecar row;
+3. otherwise use a current `machine` sidecar row;
+4. otherwise expose no localized description variant.
+
+A locale variant is not published in a sitemap or `hreflang` until every
+non-empty description it renders resolves currently. An indexed localized page
+must not silently fall back to canonical prose in another language.
+
+An explicit effective `i18n.publishedLocales` policy is also the publication
+gate for description data. For each area and each published locale, every row
+whose `descripcion_locale` differs must have a current row in that locale's
+country sidecar. Missing or stale rows block that area/locale scope. A valid
+preparatory sidecar for a supported locale may remain partial while the locale
+is not published. The temporary `en` fallback of a legacy manifest is not an
+explicit publication declaration and does not create a sidecar obligation.
+
+Sidecars are checked-in, regenerable presentation artifacts. They are not
+editorial evidence, do not establish or correct producer facts, and must not
+contain contact, address, coordinate, verification, sales, ownership,
+authorization or account state. Validation treats them as a dedicated schema,
+recomputes source hashes from area rows and rejects stale, orphaned, duplicate
+or cross-language entries before locale publication.
+
+## Localized routes, metadata and indexing
+
+The first public path segment is a catalog presentation scope:
+
+```text
+/<country>/...                    country default locale
+/<language>-<country>/...         published alternate locale
+```
+
+The short form is the only canonical scope for `defaultLocale`. A redundant
+default composite such as `/es-es`, `/de-de` or `/ja-jp` permanently redirects
+to the corresponding short scope while preserving only safe public query
+context. An alternate composite is valid at a page only when its locale appears
+in that page's effective policy. Scope parsing may recognize a locale used by a
+descendant while the country landing itself returns 404; publishing an area
+does not implicitly publish the country landing in that locale.
+
+Country, region, area and current producer slugs are routing identifiers and
+are not translated. `category` and `highlight` names and values likewise remain
+canonical tokens. A language switch preserves the resolved country, area and
+producer plus those safe filters; it changes only the catalog scope. Every
+short and composite variant still resolves to the same CSV row and durable
+`(<country>, producer_id)`. Area and producer compatibility redirects retain
+the resolved locale and preserve only `category` and `highlight` query state.
+
+A selected public URL owns its requested language. It must return one stable
+language in initial HTML, including `<html lang>`, navigation, visible
+description, title and metadata. `Accept-Language`, a preference cookie, device
+location and IP location may help choose a destination link only from a neutral
+or private application page; none may vary or redirect an already valid public
+locale URL. Destination selection uses this order:
+
+1. an explicit supported preference published for the target area;
+2. the effective territorial preference, only when it is published and appears
+   among the visitor's accepted browser languages;
+3. otherwise the first matching browser preference published for that area;
+4. generic English when it is published and no visitor language matched;
+5. the country default.
+
+Publication is one completeness decision, not a routing-only switch. A locale
+is added to an effective `publishedLocales` list only after its dictionaries,
+territorial and unit labels, controlled-value labels, metadata templates and
+current description variants are complete for that exact scope. The manifest
+policy drives routes, selectors, alternates and sitemap enumeration; do not
+maintain a second release list in code.
+
+Each real published page has localized title, description, Open Graph and
+Twitter metadata and a self-referential canonical URL without `category` or
+`highlight`. Producer images and source-authored facts remain shared. Its
+`hreflang` set is reciprocal, contains itself and contains exactly the complete
+published variants for the same country, area and optional producer. Current
+locale-to-`hreflang` mappings are explicit rather than copied from URL tokens:
+
+| Locale | `hreflang` |
+|---|---|
+| `en` | `en` |
+| `es` | `es-ES` |
+| `ca` | `ca-ES` |
+| `de` | `de-DE` |
+| `ja` | `ja-JP` |
+
+Generic English is intentional because the English variants are not tied to
+one English-speaking territory. The global `/` country-and-area selector is
+the only `x-default` URL. Area and producer pages do not invent an `x-default`;
+English, when published, is an ordinary explicit alternate.
+
+The sitemap uses the same canonical/alternate builder as HTML metadata and
+contains only `/`, canonical short defaults and complete published composite
+variants. It excludes redundant default composites, filtered/highlight URLs,
+unpublished or incomplete variants and application, account and admin routes.
+Shards keep a safety margin below the 50,000-URL protocol limit; the maintained
+ceiling is currently 40,000 entries. The public-discovery flag applies
+consistently to every locale's robots, indexing metadata and sitemap exposure.
+
+## Values that remain untranslated
+
+Language variants preserve source-authored public facts rather than generating
+localized replacements for them:
+
+- `nombre`, `municipio` and `direccion`;
+- official product, brand and appellation names in `productos estrella`;
+- published `horario` text;
+- URLs, email, phone, coordinates and image paths.
+
+The interface localizes labels for those fields. Category, verification,
+online-sales and sales-channel tokens also remain exact storage identifiers;
+their visible labels are localized separately. A future source-backed official
+name variant is an editorial identity feature, not an automatic translation.
 
 ## Categories
 
@@ -308,12 +601,25 @@ invent a `merge` evidence record; `merge` remains an entity de-duplication tombs
 When two producer rows are actually merged, preserve that tombstone as required
 by `docs/EVIDENCE_CONTRACT.md`.
 
+Compatibility routes live in the country's `country.json` under
+`producerRouteAliases`. Each key is the exact former `<area>/<slug>` path and its
+numeric value is the row's durable `producer_id`; the redirect destination is
+always derived from that producer's current area and slug in the CSV. Never store
+a destination path or an alias chain, never shadow a current canonical route, and
+never remove a demonstrated former route. Historical segments are stored decoded
+and NFC-normalized; unlike current slugs, they may retain demonstrated Unicode,
+but never `/`, `?`, `#`, an empty segment, or a control character. Redirects retain
+the resolved catalog locale and only the public `category` and `highlight` query
+context.
+
 ## Validation model
 
 `npx pnpm check:csv` blocks publication for physical-schema errors, missing core
 values, invalid controlled values or formats, duplicate country-local
 `producer_id` or current `slug` values, invalid area aliases, invalid primary or
-additional categories, incoherent field combinations and
+additional categories, malformed producer-route aliases, aliases without a
+current country-local `producer_id` destination, canonical-route collisions,
+incoherent field combinations and
 geographic mismatches above `100 km`. The same pass emits non-blocking integrity
 warnings for unusable social-profile links, non-canonical Google Maps links and
 coordinates in the `15–100 km` review band.

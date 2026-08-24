@@ -102,7 +102,7 @@ function createFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "chisan-evidence-"));
   const csvRoot = path.join(root, "csv");
   const evidenceRoot = path.join(root, "evidence");
-  const area = path.join("test-country", "test-region", "test-area");
+  const area = path.join("xx", "test-region", "test-area");
   const csvPath = path.join(csvRoot, `${area}.csv`);
   const ledgerPath = path.join(evidenceRoot, `${area}.jsonl`);
 
@@ -110,6 +110,14 @@ function createFixture() {
   fs.writeFileSync(
     csvPath,
     `${HEADER}\n${row()}\n${row({ slug: "productor-dos", nombre: "Productor Dos", producer_id: "2" })}\n`,
+  );
+  fs.writeFileSync(
+    path.join(csvRoot, "xx", "translations.en.csv"),
+    [
+      "producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version",
+      "1,descripcion,es,hash,Translated text,machine,test,test,test,test",
+      "",
+    ].join("\n"),
   );
 
   return { root, csvRoot, evidenceRoot, ledgerPath };

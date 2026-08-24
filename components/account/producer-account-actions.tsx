@@ -1,28 +1,31 @@
 import { and, eq, inArray } from "drizzle-orm";
 import Link from "next/link";
 
-import { toggleFavoriteAction } from "@/app/cuenta/actions";
+import { toggleFavoriteAction } from "@/app/(application)/cuenta/actions";
 import { getCurrentAccount } from "@/lib/accounts/auth";
 import { ACCOUNT_ROUTES, isAccountSystemConfigured } from "@/lib/accounts/config";
 import { safeReturnPath } from "@/lib/accounts/producer-fields";
 import { getDatabase } from "@/lib/db";
 import { favorites, producerClaims, producerMemberships } from "@/lib/db/schema";
+import type { Messages } from "@/lib/i18n/messages";
 
 type ProducerAccountActionsProps = {
   country: string;
   producerId: number;
   returnTo: string;
+  messages: Messages["accountActions"];
 };
 
 export async function ProducerAccountActions({
   country,
   producerId,
   returnTo,
+  messages,
 }: ProducerAccountActionsProps) {
   if (!isAccountSystemConfigured()) return null;
 
   try {
-    return await renderProducerAccountActions({ country, producerId, returnTo });
+    return await renderProducerAccountActions({ country, producerId, returnTo, messages });
   } catch (error) {
     // Account storage is deliberately optional for the public CSV catalog.
     // A provider or database incident must not make a producer page unavailable.
@@ -37,6 +40,7 @@ async function renderProducerAccountActions({
   country,
   producerId,
   returnTo,
+  messages,
 }: ProducerAccountActionsProps) {
   const safeReturnTo = safeReturnPath(returnTo, "/");
   const database = getDatabase();
@@ -63,11 +67,15 @@ async function renderProducerAccountActions({
       <div className="producer-account-actions">
         <span>
           {activeOwner
-            ? "This producer's ownership is verified."
-            : "Save this producer or claim ownership."}
+            ? messages.ownershipVerifiedDescription
+            : messages.saveOrClaimPrompt}
         </span>
-        <Link href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${redirectQuery}`}>Sign in</Link>
-        <Link href={`${ACCOUNT_ROUTES.signUp}?redirect_url=${redirectQuery}`}>Create account</Link>
+        <Link href={`${ACCOUNT_ROUTES.signIn}?redirect_url=${redirectQuery}`}>
+          {messages.signIn}
+        </Link>
+        <Link href={`${ACCOUNT_ROUTES.signUp}?redirect_url=${redirectQuery}`}>
+          {messages.createAccount}
+        </Link>
       </div>
     );
   }
@@ -116,19 +124,23 @@ async function renderProducerAccountActions({
         <input type="hidden" name="country" value={country} />
         <input type="hidden" name="producerId" value={producerId} />
         <input type="hidden" name="returnTo" value={safeReturnTo} />
-        <button type="submit">{favorite ? "Remove favorite" : "Save favorite"}</button>
+        <button type="submit">
+          {favorite ? messages.removeFavorite : messages.saveFavorite}
+        </button>
       </form>
       {membership ? (
-        <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>Edit my profile</Link>
+        <Link href={`/cuenta/productores/${country}/${producerId}/editar`}>
+          {messages.editMyProfile}
+        </Link>
       ) : activeOwner ? (
-        <span>Ownership verified</span>
+        <span>{messages.ownershipVerified}</span>
       ) : claim ? (
-        <Link href="/cuenta/reclamaciones">View ownership claim</Link>
+        <Link href="/cuenta/reclamaciones">{messages.viewOwnershipClaim}</Link>
       ) : (
         <Link
           href={`/cuenta/reclamaciones/nueva?country=${encodeURIComponent(country)}&producerId=${producerId}`}
         >
-          Claim this producer
+          {messages.claimProducer}
         </Link>
       )}
     </div>

@@ -1,21 +1,21 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-angus-butchery,Angus Butchery,Kuruman,Carne,,Main St,,,+27773702466,info@angusbutchery.co.za,,https://www.facebook.com/1817744585109329,,,-27.4655133,23.4266303,,pendiente,no comprobado,,,44
-angus-slaghuis,Angus Slaghuis,Kathu,Carne,,14B Rietbokstr,,,+27537231471,anguskathu@telkomsa.net,,https://www.facebook.com/1374637499220496,,,-27.6985022,23.0440061,,pendiente,no comprobado,,,45
-baruteng-temothuo-farming,Baruteng Temothuo Farming,Kathu,Otros,,"1056, Khosis",,,+27753812437,baruteng.temothuo@gmail.com,,https://www.facebook.com/115117371555907,,,-27.8802373,23.2353377,,parcial,no comprobado,,,76
-batsha-ba-temo,Batsha Ba Temo,Kuruman,Otros,,"kagung , kuruman 8460",,,+27712829677,lesedi1592@gmail.com,,https://www.facebook.com/602745123517509,,,-27.46258,23.43713,,parcial,no comprobado,,,78
-butterfield-bakery,Butterfield Bakery,Kuruman,Pan y cereal,pan y productos de cereal,Voortrekker St,,,+27537122453,jesckevents@gmail.com,,https://www.facebook.com/1077378998993240,,,-27.4573224,23.4331976,,parcial,no comprobado,,,152
-eco-livestock-farm,Eco Livestock Farm,Kuruman,Carne,ganado,34 Poolman St,,,+27638123101,sales@ecolivestockfarm.co.za,https://www.ecolivestockfarm.co.za/,https://www.facebook.com/858920010649093,,,-27.43387,23.44066,,parcial,no comprobado,,,285
-excelsior-abattoir,Excelsior Abattoir,Kuruman,Carne,carne roja,"Tsening Weg 4, Industria, Kuruman",,,+27538397870,,,,,,,,,parcial,no comprobado,,,315
-heyns-bakers,Heyns Bakers,Kuruman,Pan y cereal,pan y productos de cereal,Mothibistad,,,+27818327917,oloratoheyns@gmail.com,,https://www.facebook.com/101249641719796,,,-27.46263,23.43689,,parcial,no comprobado,,,403
-kalahari-butchery-kathu,Kalahari Butchery Kathu,Kathu,Carne,,01,,,+27820878476,info@kalahaributchery.co.za,,https://www.facebook.com/235601486294260,,,-27.69911,23.04428,,pendiente,no comprobado,,,448
-kalahari-local-butchery,Kalahari Local Butchery,Kuruman,Carne,,14 Poolman St,,,+27662453878,kalaharilocalbutchery@gmail.com,,https://www.facebook.com/101386832722056,,,-27.4380555,23.4315404,,pendiente,no comprobado,,,449
-kuruman-roots-butchery,Kuruman roots butchery,Kuruman,Carne,,10 Livingstone St,,,+27537120683,,,https://www.facebook.com/377114242152754,,,-27.4607699,23.4353723,,pendiente,no comprobado,,,490
-langberg-abattoir,Langberg Abattoir,Olifantshoek,Carne,carne roja,"N14, Olifantshoek",,,+27538397870,,,,,,,,,parcial,no comprobado,,,499
-manzini-farms,Manzini Farms,Kuruman,Otros,,Barnard Ave,,,+27710217740,info@manzinifarmss.co.za,https://manzinifarmss.co.za/,https://www.facebook.com/110197005464908,,,-27.4483701,23.4368401,,parcial,no comprobado,,,556
-mokala-vleis,Mokala Vleis,Kuruman,Carne,,Mokala vleis,,,+27834060422,mokalavleis@gmail.com,,https://www.facebook.com/101832642280563,,,-27.4511269,23.4309914,,parcial,no comprobado,,,608
-olienfontein-abattoir,Olienfontein Abattoir,Postmasburg,Carne,carne roja,"Erf 475, Postmasburg",,,+27538397870,,,,,,,,,parcial,no comprobado,,,674
-olifantshoek-abattoir,Olifantshoek Abattoir,Olifantshoek,Carne,carne roja,"Erf 511, Olifantshoek",,,+27538397870,,,,,,,,,parcial,no comprobado,,,675
-partylikeus,Partylikeus,Kathu,Pan y cereal,pan y productos de cereal,4781 Jasmyn St,,,,info@partylikeus.co.za,,https://www.facebook.com/1455191208098941,,,-27.6901256,23.0360077,,parcial,no comprobado,,,696
-postmasburg-abattoir,Postmasburg Abattoir,Postmasburg,Carne,carne roja,"Meent 1, Postmasburg",,,+27538397870,,,,,,,,,parcial,no comprobado,,,714
-smitties-quality-meat-suppliers,Smitties Quality Meat Suppliers,Kuruman,Carne,,25 Main St,,,+27713462882,smittiesslaghuis@gmail.com,http://webcards.yellowpages.co.za/smitties-quality-meat-suppliers,https://www.facebook.com/734302230075690,,,-27.4621354,23.4378449,,parcial,no comprobado,,,823
-travis-bakery,Travis Bakery,Kuruman,Pan y cereal,pan y productos de panadería,Livingstone St,,,+27537121331,,,https://www.facebook.com/1701313626812567,,,-27.4594153,23.435003,,parcial,no comprobado,,,936
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+angus-butchery,Angus Butchery,Kuruman,Carne,,Main St,,,+27773702466,info@angusbutchery.co.za,,https://www.facebook.com/1817744585109329,,,-27.4655133,23.4266303,,pendiente,no comprobado,,,44,
+angus-slaghuis,Angus Slaghuis,Kathu,Carne,,14B Rietbokstr,,,+27537231471,anguskathu@telkomsa.net,,https://www.facebook.com/1374637499220496,,,-27.6985022,23.0440061,,pendiente,no comprobado,,,45,
+baruteng-temothuo-farming,Baruteng Temothuo Farming,Kathu,Otros,,"1056, Khosis",,,+27753812437,baruteng.temothuo@gmail.com,,https://www.facebook.com/115117371555907,,,-27.8802373,23.2353377,,parcial,no comprobado,,,76,
+batsha-ba-temo,Batsha Ba Temo,Kuruman,Otros,,"kagung , kuruman 8460",,,+27712829677,lesedi1592@gmail.com,,https://www.facebook.com/602745123517509,,,-27.46258,23.43713,,parcial,no comprobado,,,78,
+butterfield-bakery,Butterfield Bakery,Kuruman,Pan y cereal,pan y productos de cereal,Voortrekker St,,,+27537122453,jesckevents@gmail.com,,https://www.facebook.com/1077378998993240,,,-27.4573224,23.4331976,,parcial,no comprobado,,,152,
+eco-livestock-farm,Eco Livestock Farm,Kuruman,Carne,ganado,34 Poolman St,,,+27638123101,sales@ecolivestockfarm.co.za,https://www.ecolivestockfarm.co.za/,https://www.facebook.com/858920010649093,,,-27.43387,23.44066,,parcial,no comprobado,,,285,
+excelsior-abattoir,Excelsior Abattoir,Kuruman,Carne,carne roja,"Tsening Weg 4, Industria, Kuruman",,,+27538397870,,,,,,,,,parcial,no comprobado,,,315,
+heyns-bakers,Heyns Bakers,Kuruman,Pan y cereal,pan y productos de cereal,Mothibistad,,,+27818327917,oloratoheyns@gmail.com,,https://www.facebook.com/101249641719796,,,-27.46263,23.43689,,parcial,no comprobado,,,403,
+kalahari-butchery-kathu,Kalahari Butchery Kathu,Kathu,Carne,,01,,,+27820878476,info@kalahaributchery.co.za,,https://www.facebook.com/235601486294260,,,-27.69911,23.04428,,pendiente,no comprobado,,,448,
+kalahari-local-butchery,Kalahari Local Butchery,Kuruman,Carne,,14 Poolman St,,,+27662453878,kalaharilocalbutchery@gmail.com,,https://www.facebook.com/101386832722056,,,-27.4380555,23.4315404,,pendiente,no comprobado,,,449,
+kuruman-roots-butchery,Kuruman roots butchery,Kuruman,Carne,,10 Livingstone St,,,+27537120683,,,https://www.facebook.com/377114242152754,,,-27.4607699,23.4353723,,pendiente,no comprobado,,,490,
+langberg-abattoir,Langberg Abattoir,Olifantshoek,Carne,carne roja,"N14, Olifantshoek",,,+27538397870,,,,,,,,,parcial,no comprobado,,,499,
+manzini-farms,Manzini Farms,Kuruman,Otros,,Barnard Ave,,,+27710217740,info@manzinifarmss.co.za,https://manzinifarmss.co.za/,https://www.facebook.com/110197005464908,,,-27.4483701,23.4368401,,parcial,no comprobado,,,556,
+mokala-vleis,Mokala Vleis,Kuruman,Carne,,Mokala vleis,,,+27834060422,mokalavleis@gmail.com,,https://www.facebook.com/101832642280563,,,-27.4511269,23.4309914,,parcial,no comprobado,,,608,
+olienfontein-abattoir,Olienfontein Abattoir,Postmasburg,Carne,carne roja,"Erf 475, Postmasburg",,,+27538397870,,,,,,,,,parcial,no comprobado,,,674,
+olifantshoek-abattoir,Olifantshoek Abattoir,Olifantshoek,Carne,carne roja,"Erf 511, Olifantshoek",,,+27538397870,,,,,,,,,parcial,no comprobado,,,675,
+partylikeus,Partylikeus,Kathu,Pan y cereal,pan y productos de cereal,4781 Jasmyn St,,,,info@partylikeus.co.za,,https://www.facebook.com/1455191208098941,,,-27.6901256,23.0360077,,parcial,no comprobado,,,696,
+postmasburg-abattoir,Postmasburg Abattoir,Postmasburg,Carne,carne roja,"Meent 1, Postmasburg",,,+27538397870,,,,,,,,,parcial,no comprobado,,,714,
+smitties-quality-meat-suppliers,Smitties Quality Meat Suppliers,Kuruman,Carne,,25 Main St,,,+27713462882,smittiesslaghuis@gmail.com,http://webcards.yellowpages.co.za/smitties-quality-meat-suppliers,https://www.facebook.com/734302230075690,,,-27.4621354,23.4378449,,parcial,no comprobado,,,823,
+travis-bakery,Travis Bakery,Kuruman,Pan y cereal,pan y productos de panadería,Livingstone St,,,+27537121331,,,https://www.facebook.com/1701313626812567,,,-27.4594153,23.435003,,parcial,no comprobado,,,936,

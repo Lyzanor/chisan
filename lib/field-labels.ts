@@ -1,29 +1,34 @@
-/**
- * Etiquetas legibles para las columnas del CSV (mayúscula inicial y acentos).
- * Clave = nombre de columna en minúscula sin acentos para búsqueda insensible.
- */
+import type { Locale } from "./i18n/locales";
+import type { Messages } from "./i18n/messages";
 
-const LABELS: Record<string, string> = {
-  producer_id: "Producer ID",
-  nombre: "Name",
-  municipio: "Municipality",
-  categoria: "Category",
-  "categorias adicionales": "Additional categories",
-  subcategoria: "Subcategory",
-  direccion: "Address",
-  descripcion: "Description",
-  horario: "Opening hours",
-  telefono: "Phone",
-  correo: "Email",
-  web: "Web",
-  "venta online": "Online sales",
-  "canal de venta": "Sales channel",
-  facebook: "Facebook",
-  instagram: "Instagram",
-  "google maps": "Google Maps",
-  lat: "Latitude",
-  lon: "Longitude",
-  revisado: "Reviewed",
+type FieldLabelKey = keyof Messages["fieldLabels"];
+
+const FIELD_LABEL_KEYS: Record<string, FieldLabelKey> = {
+  slug: "slug",
+  producer_id: "producerId",
+  nombre: "name",
+  municipio: "municipality",
+  categoria: "category",
+  "categorias adicionales": "additionalCategories",
+  subcategoria: "subcategory",
+  "productos estrella": "featuredProducts",
+  direccion: "address",
+  descripcion: "description",
+  descripcion_locale: "descriptionLocale",
+  horario: "openingHours",
+  telefono: "phone",
+  correo: "email",
+  web: "website",
+  imagen: "image",
+  "venta online": "onlineSales",
+  "canal de venta": "salesChannels",
+  facebook: "facebook",
+  instagram: "instagram",
+  "google maps": "googleMaps",
+  lat: "latitude",
+  lon: "longitude",
+  verificacion: "verification",
+  revisado: "reviewed",
 };
 
 function normalizeKey(key: string): string {
@@ -34,15 +39,19 @@ function normalizeKey(key: string): string {
     .replace(/\p{Diacritic}/gu, "");
 }
 
-/**
- * Devuelve la etiqueta legible para un nombre de columna del CSV.
- * Si no hay entrada en el mapa, devuelve el nombre con mayúscula inicial.
- */
-export function getFieldLabel(csvColumnName: string): string {
+export function getFieldLabel(
+  csvColumnName: string,
+  labels: Messages["fieldLabels"],
+  locale: Locale,
+): string {
   const normalized = normalizeKey(csvColumnName);
-  if (LABELS[normalized] !== undefined) {
-    return LABELS[normalized];
+  const labelKey = FIELD_LABEL_KEYS[normalized];
+  if (labelKey) {
+    return labels[labelKey];
   }
   if (!csvColumnName) return csvColumnName;
-  return csvColumnName.charAt(0).toUpperCase() + csvColumnName.slice(1).toLowerCase();
+  return (
+    csvColumnName.charAt(0).toLocaleUpperCase(locale) +
+    csvColumnName.slice(1).toLocaleLowerCase(locale)
+  );
 }

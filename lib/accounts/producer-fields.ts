@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 
 import categoriesRegistry from "@/data/reference/categories.json";
+import { DESCRIPTION_SOURCE_LOCALES } from "@/lib/i18n/locales";
 
 export const PRODUCER_CATEGORIES = categoriesRegistry.categories as readonly string[];
 
@@ -13,6 +14,7 @@ export const SALES_CHANNEL_VALUES = [
   "suscripcion",
   "marketplace",
 ] as const;
+export const PRODUCER_DESCRIPTION_LOCALES = DESCRIPTION_SOURCE_LOCALES;
 
 export const PRODUCER_EDITABLE_FIELDS = [
   {
@@ -62,6 +64,14 @@ export const PRODUCER_EDITABLE_FIELDS = [
     required: false,
     maxLength: 2_000,
     help: "Factual producer-specific information, without promotional claims.",
+  },
+  {
+    key: "descripcion_locale",
+    label: "Description language",
+    kind: "description-locale",
+    required: false,
+    maxLength: 2,
+    help: "The source language of the canonical description; leave empty only with an empty description.",
   },
   {
     key: "direccion",
@@ -176,6 +186,7 @@ const EDITABLE_FIELD_KEYS = new Set<string>(
 const CATEGORY_SET = new Set<string>(PRODUCER_CATEGORIES);
 const ONLINE_SALES_SET = new Set<string>(ONLINE_SALES_VALUES);
 const SALES_CHANNEL_SET = new Set<string>(SALES_CHANNEL_VALUES);
+const DESCRIPTION_LOCALE_SET = new Set<string>(PRODUCER_DESCRIPTION_LOCALES);
 
 function normalizeText(value: unknown): string {
   return String(value ?? "")
@@ -324,13 +335,31 @@ export function validateProducerProposal(
     errors["Canal de venta"] = "Sales channels are only valid when online sales is yes.";
   }
 
+  if (!candidate.descripcion && candidate.descripcion_locale) {
+    errors.descripcion_locale = "Leave the description language empty when the description is empty.";
+  } else if (
+    candidate.descripcion &&
+    !DESCRIPTION_LOCALE_SET.has(candidate.descripcion_locale)
+  ) {
+    errors.descripcion_locale = "Choose the source language of the description.";
+  }
+
   if (Object.keys(errors).length > 0) {
     return { ok: false, errors };
   }
 
+  const descriptionPairChanged = ["descripcion", "descripcion_locale"].some(
+    (key) => candidate[key as ProducerEditableFieldKey] !== normalizeText(currentFields[key] ?? ""),
+  );
   const patch = Object.fromEntries(
     PRODUCER_EDITABLE_FIELDS.flatMap(({ key }) => {
       const currentValue = normalizeText(currentFields[key] ?? "");
+      if (
+        descriptionPairChanged &&
+        (key === "descripcion" || key === "descripcion_locale")
+      ) {
+        return [[key, candidate[key]]];
+      }
       return candidate[key] === currentValue ? [] : [[key, candidate[key]]];
     }),
   ) as ProducerPatch;

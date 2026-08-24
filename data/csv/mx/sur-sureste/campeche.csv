@@ -1,2 +1,2 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-fuego-mexicano,Fuego Mexicano,Campeche,Condimentos,,,Salsas gourmet y aderezos artesanales a base de chile habanero campechano,,+529811670039,ventas@fuegomexicano.com.mx,https://fuegomexicano.com.mx,,,,19.71667,-90.26667,,verificado,sí,ecommerce,,77
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+fuego-mexicano,Fuego Mexicano,Campeche,Condimentos,,,Salsas gourmet y aderezos artesanales a base de chile habanero campechano,,+529811670039,ventas@fuegomexicano.com.mx,https://fuegomexicano.com.mx,,,,19.71667,-90.26667,,verificado,sí,ecommerce,,77,en

@@ -26,6 +26,21 @@
     "elephant-coast": "umkhanyakude",
     "o-r-tambo": "or-tambo"
   },
+  "producerRouteAliases": {
+    "chris-hani/united-national-breweries": 952,
+    "ehlanzeni/united-national-breweries": 953,
+    "ekurhuleni/the-south-african-breweries": 918,
+    "gert-sibande/south-african-breweries": 835,
+    "gert-sibande/united-national-breweries": 954,
+    "gert-sibande/united-national-breweries-sa": 956,
+    "ilembe/united-national-breweries-sa": 955,
+    "johannesburg/south-african-breweries": 834,
+    "lejweleputswa/the-south-african-breweries-ltd": 921,
+    "mopani/south-african-breweries": 836,
+    "nelson-mandela-bay/the-south-african-breweries-ltd": 920,
+    "sekhukhune/the-south-african-breweries": 919,
+    "thabo-mofutsanyana/south-african-breweries": 833
+  },
   "regions": [
     {
       "slug": "eastern-cape",

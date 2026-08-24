@@ -31,6 +31,250 @@
     "Vermut",
     "Vino"
   ],
+  "labels": {
+    "Aceite": {
+      "en": "Oil",
+      "es": "Aceite",
+      "ca": "Oli",
+      "de": "Öl",
+      "ja": "食用油"
+    },
+    "Aperitivos": {
+      "en": "Snacks",
+      "es": "Aperitivos",
+      "ca": "Aperitius",
+      "de": "Snacks",
+      "ja": "スナック"
+    },
+    "Bebidas sin alcohol": {
+      "en": "Non-alcoholic drinks",
+      "es": "Bebidas sin alcohol",
+      "ca": "Begudes sense alcohol",
+      "de": "Alkoholfreie Getränke",
+      "ja": "ノンアルコール飲料"
+    },
+    "Café": {
+      "en": "Coffee",
+      "es": "Café",
+      "ca": "Cafè",
+      "de": "Kaffee",
+      "ja": "コーヒー"
+    },
+    "Carne": {
+      "en": "Meat",
+      "es": "Carne",
+      "ca": "Carn",
+      "de": "Fleisch",
+      "ja": "肉"
+    },
+    "Cerveza": {
+      "en": "Beer",
+      "es": "Cerveza",
+      "ca": "Cervesa",
+      "de": "Bier",
+      "ja": "ビール"
+    },
+    "Chocolate": {
+      "en": "Chocolate",
+      "es": "Chocolate",
+      "ca": "Xocolata",
+      "de": "Schokolade",
+      "ja": "チョコレート"
+    },
+    "Comida preparada": {
+      "en": "Prepared food",
+      "es": "Comida preparada",
+      "ca": "Menjar preparat",
+      "de": "Zubereitete Speisen",
+      "ja": "惣菜"
+    },
+    "Condimentos": {
+      "en": "Condiments",
+      "es": "Condimentos",
+      "ca": "Condiments",
+      "de": "Gewürze",
+      "ja": "調味料"
+    },
+    "Conservas": {
+      "en": "Preserves",
+      "es": "Conservas",
+      "ca": "Conserves",
+      "de": "Konserven",
+      "ja": "保存食品"
+    },
+    "Despensa artesanal": {
+      "en": "Artisan pantry",
+      "es": "Despensa artesanal",
+      "ca": "Rebost artesanal",
+      "de": "Handwerkliche Vorräte",
+      "ja": "手作り保存食品"
+    },
+    "Destilados y licores": {
+      "en": "Spirits and liqueurs",
+      "es": "Destilados y licores",
+      "ca": "Destil·lats i licors",
+      "de": "Spirituosen und Liköre",
+      "ja": "蒸留酒・リキュール"
+    },
+    "Dulces y repostería": {
+      "en": "Sweets and pastries",
+      "es": "Dulces y repostería",
+      "ca": "Dolços i pastisseria",
+      "de": "Süßwaren und Gebäck",
+      "ja": "菓子・焼き菓子"
+    },
+    "Fruta y verdura": {
+      "en": "Fruit and vegetables",
+      "es": "Fruta y verdura",
+      "ca": "Fruita i verdura",
+      "de": "Obst und Gemüse",
+      "ja": "果物・野菜"
+    },
+    "Frutos secos": {
+      "en": "Nuts",
+      "es": "Frutos secos",
+      "ca": "Fruits secs",
+      "de": "Nüsse",
+      "ja": "ナッツ"
+    },
+    "Helados": {
+      "en": "Ice cream",
+      "es": "Helados",
+      "ca": "Gelats",
+      "de": "Eis",
+      "ja": "アイスクリーム"
+    },
+    "Huevos": {
+      "en": "Eggs",
+      "es": "Huevos",
+      "ca": "Ous",
+      "de": "Eier",
+      "ja": "卵"
+    },
+    "Legumbres": {
+      "en": "Pulses",
+      "es": "Legumbres",
+      "ca": "Llegums",
+      "de": "Hülsenfrüchte",
+      "ja": "豆類"
+    },
+    "Legumbres y cereales": {
+      "en": "Pulses and grains",
+      "es": "Legumbres y cereales",
+      "ca": "Llegums i cereals",
+      "de": "Hülsenfrüchte und Getreide",
+      "ja": "豆類・穀物"
+    },
+    "Lácteos y quesos": {
+      "en": "Dairy and cheese",
+      "es": "Lácteos y quesos",
+      "ca": "Làctics i formatges",
+      "de": "Milchprodukte und Käse",
+      "ja": "乳製品・チーズ"
+    },
+    "Miel": {
+      "en": "Honey",
+      "es": "Miel",
+      "ca": "Mel",
+      "de": "Honig",
+      "ja": "はちみつ"
+    },
+    "Otros": {
+      "en": "Other",
+      "es": "Otros",
+      "ca": "Altres",
+      "de": "Sonstiges",
+      "ja": "その他"
+    },
+    "Pan y cereal": {
+      "en": "Bread and grains",
+      "es": "Pan y cereal",
+      "ca": "Pa i cereals",
+      "de": "Brot und Getreide",
+      "ja": "パン・穀物"
+    },
+    "Pescado": {
+      "en": "Fish",
+      "es": "Pescado",
+      "ca": "Peix",
+      "de": "Fisch",
+      "ja": "魚"
+    },
+    "Sake": {
+      "en": "Sake",
+      "es": "Sake",
+      "ca": "Sake",
+      "de": "Sake",
+      "ja": "日本酒"
+    },
+    "Setas": {
+      "en": "Mushrooms",
+      "es": "Setas",
+      "ca": "Bolets",
+      "de": "Pilze",
+      "ja": "きのこ"
+    },
+    "Sidra": {
+      "en": "Cider",
+      "es": "Sidra",
+      "ca": "Sidra",
+      "de": "Apfelwein",
+      "ja": "シードル"
+    },
+    "Té e infusiones": {
+      "en": "Tea and infusions",
+      "es": "Té e infusiones",
+      "ca": "Te i infusions",
+      "de": "Tee und Kräuteraufgüsse",
+      "ja": "お茶・ハーブティー"
+    },
+    "Vermut": {
+      "en": "Vermouth",
+      "es": "Vermut",
+      "ca": "Vermut",
+      "de": "Wermut",
+      "ja": "ベルムット"
+    },
+    "Vino": {
+      "en": "Wine",
+      "es": "Vino",
+      "ca": "Vi",
+      "de": "Wein",
+      "ja": "ワイン"
+    }
+  },
+  "icons": {
+    "Aceite": "🫒",
+    "Aperitivos": "🥨",
+    "Bebidas sin alcohol": "🧃",
+    "Café": "☕",
+    "Carne": "🥩",
+    "Cerveza": "🍺",
+    "Chocolate": "🍫",
+    "Comida preparada": "🍲",
+    "Condimentos": "🧂",
+    "Conservas": "🥫",
+    "Despensa artesanal": "🧺",
+    "Destilados y licores": "🥃",
+    "Dulces y repostería": "🍰",
+    "Fruta y verdura": "🍎",
+    "Frutos secos": "🌰",
+    "Helados": "🍨",
+    "Huevos": "🥚",
+    "Legumbres": "🫘",
+    "Legumbres y cereales": "🫘",
+    "Lácteos y quesos": "🧀",
+    "Miel": "🍯",
+    "Otros": "🧺",
+    "Pan y cereal": "🍞",
+    "Pescado": "🐟",
+    "Sake": "🍶",
+    "Setas": "🍄",
+    "Sidra": "🍏",
+    "Té e infusiones": "🍵",
+    "Vermut": "🍸",
+    "Vino": "🍷"
+  },
   "preferredAliases": {
     "quesos y lacteos": "Lácteos y quesos",
     "lacteos": "Lácteos y quesos",

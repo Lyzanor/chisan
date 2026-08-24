@@ -200,6 +200,79 @@ proves neither `no` nor closure.
 `Canal de venta` records the demonstrated mechanism and is filled only when
 `Venta online=sí`, using the values in `docs/CSV_CONTRACT.md`.
 
+## Canonical language and localized presentation
+
+The canonical `descripcion` is editor-authored producer prose and has an
+explicit per-row source language in `descripcion_locale`. There is no
+one-language-per-country editorial rule: neighboring rows may legitimately
+have different source locales. Choose a suitable local language when authoring
+new prose, but prefer a precise, supportable description over a weaker text
+written merely to satisfy a language target.
+
+The description-source registry is deliberately broader than Chisan's public
+presentation locales. `fr`, `it`, `nl`, `pt`, `gl` and `eu` may identify
+canonical prose without creating a route, cookie, dictionary, manifest locale,
+sidecar target or `hreflang`. Public activation remains a separate reviewed
+decision.
+
+The canonical area row remains the factual decision. When a description is
+wrong, incomplete or misleading, correct it there and record its actual source
+locale. Do not repair a factual problem only in a translation. A source edit or
+source-locale correction invalidates its generated variants until they are
+regenerated or reviewed against the new source.
+
+Use the advisory source-locale audit to plan a narrow review when a mechanical
+backfill, import or mixed-language area may have recorded the wrong locale:
+
+```bash
+npx pnpm audit:description-locales --country es --declared-locale es \
+  --candidate-locale ca --output /tmp/chisan-es-ca-locale-review.json
+```
+
+The report is deterministic, includes the canonical source hash and can be
+limited by area. It is deliberately kept outside `data/csv/**` and has no apply
+mode. Detection is always unrestricted before any `--candidate-locale` filter,
+so French prose cannot be forced into a Catalan candidate merely because the
+review asks for Catalan. An unregistered detected language is still only a
+review lead, and a registered source-only language still cannot authorize a
+public locale. Scores are relative rankings rather than confidence, and
+low-margin results remain in the report as `ambiguous`.
+
+For exhaustive review, emit a separate roster instead of treating classifier
+agreement or absence from the candidate report as confirmation:
+
+```bash
+npx pnpm audit:description-locales --country es --area barcelona \
+  --full-review-roster --output /tmp/chisan-barcelona-locale-roster.json
+```
+
+The classifier is unreliable on some short or mixed catalog prose, so every
+result is only a candidate for an editor to read. Record any reviewed correction
+in the canonical row and refresh or re-review affected sidecars normally.
+
+Automatic translation is allowed only as versioned, materialized presentation
+under the sidecar contract in `docs/CSV_CONTRACT.md`. It is not evidence and
+does not independently establish producer identity, activity, location,
+products, verification or sales. Generation and review must preserve every
+supported fact, number, URL, proper name, brand and appellation; they must not
+add claims, omit qualifications or turn factual prose into promotion.
+
+The initial automatically translatable field is only `descripcion`.
+Source-authored names, municipality, address, official product names, published
+hours, contacts and links remain unchanged on every language variant; localize
+their interface labels rather than their values. Category and controlled-value
+tokens likewise remain stable storage identifiers with separate display
+labels.
+
+An ordinary generated translation may remain `origin=machine` after the
+language's benchmark and publication sample have been approved. An editor may
+replace exceptional wording and mark that sidecar row `origin=reviewed`.
+Automatic generation never overwrites reviewed text, but reviewed text is still
+tied to the current canonical source and requires renewed review when stale.
+Missing or stale translations are honest incomplete presentation: hold that
+locale variant from indexed publication instead of mixing in prose from a
+different language.
+
 ## Evidence principles
 
 - Evidence is claim-specific: a source does not inherit authority over facts it
@@ -348,6 +421,7 @@ supportable, review:
 - address, coordinates and the exact Google Maps listing for the same unit;
 - contacts and links with a sufficiently matched owner identity;
 - current products, categories, description and hours;
+- the description's actual source locale when a description is present;
 - online sales and their mechanism;
 - an admissible image.
 
@@ -380,6 +454,10 @@ the storage contracts only when representation changes, and `AGENTS.md` only for
 repository-wide invariants or gates. Encode a rule in `check:csv`,
 `check:evidence` or `check:defects` only when stored data can establish it
 mechanically. Validator or behavior changes require `npx pnpm verify:ai`.
+
+Translation rollout order and completion counts are temporary execution state;
+do not copy them into this policy, country guides or evidence. Durable sidecar
+representation and freshness rules belong in `docs/CSV_CONTRACT.md`.
 
 For dead, parked, or hijacked producer domains, inspect the dated offline
 snapshot before browsing:

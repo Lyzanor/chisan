@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "ign-bdlje-2026-08-10",
+      "country": "es",
+      "title": "Base de Datos de Límites Jurisdiccionales de España",
+      "publisher": "Instituto Geográfico Nacional / Centro Nacional de Información Geográfica",
+      "feedUrl": "https://www.ign.es/atom/dataset_feeds/lin_lim_mun.es.xml",
+      "downloadUrl": "https://api-features.ign.es/collections/administrativeunit/items?f=json&nationalcode=34090800000&limit=1",
+      "archiveUrl": "https://centrodedescargas.cnig.es/CentroDescargas/documentos/atom/au/lineas_limite_gml.zip",
+      "sourceVersion": "2026-08-10T15:00:00Z",
+      "retrievedAt": "2026-08-24",
+      "sourceSha256": "3c89d648134cb1438604e96447f6b021f556c23e0b91b533ca137532aebb1261",
+      "archiveSha256": "5bd73c530af995c05da8d9ff4e3d293f62d0dc91c5e48ee773fe881716c108a6",
+      "referenceSha256": "eb411ec295a82e7ab4227bded1203350893e568617813220f3497ccebece10b0",
+      "sourceFeatureIds": [
+        "AU_ADMINISTRATIVEUNIT_34090800000"
+      ],
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+      "attribution": "Obra derivada de BDLJE 2026-08-10 CC-BY 4.0 ign.es",
+      "boundaryUncertaintyMeters": 40,
+      "countryIndex": {
+        "kind": "coarse-country-extent",
+        "bbox": [
+          -19,
+          27,
+          5,
+          44
+        ],
+        "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+        "sourceUrl": "https://api-features.ign.es/collections/administrativeunit?f=json",
+        "sourcePath": "extent.spatial.bbox[0]",
+        "retrievedAt": "2026-08-24",
+        "sourceSha256": "8ae89b34391bc561dd9a1a9dcb067d831b415054213a4b69f6633f6a2012080f"
+      },
+      "validationFixtures": {
+        "inside": [
+          {
+            "id": "barcelona-main-part",
+            "area": "barcelona",
+            "point": [
+              2.1686,
+              41.3874
+            ],
+            "polygonIndex": 0
+          },
+          {
+            "id": "barcelona-disjoint-part-1",
+            "area": "barcelona",
+            "point": [
+              1.6890369694375,
+              42.101969567895836
+            ],
+            "polygonIndex": 1
+          },
+          {
+            "id": "barcelona-disjoint-part-2",
+            "area": "barcelona",
+            "point": [
+              1.6791435921750002,
+              42.10867662428334
+            ],
+            "polygonIndex": 2
+          },
+          {
+            "id": "barcelona-disjoint-part-3",
+            "area": "barcelona",
+            "point": [
+              2.6397460067750003,
+              41.604854648395836
+            ],
+            "polygonIndex": 3
+          }
+        ],
+        "holes": [
+          {
+            "id": "barcelona-hole-1",
+            "area": "barcelona",
+            "point": [
+              1.7179871388125,
+              41.888666877275
+            ],
+            "polygonIndex": 0,
+            "ringIndex": 1,
+            "expectedArea": null
+          },
+          {
+            "id": "barcelona-hole-2",
+            "area": "barcelona",
+            "point": [
+              1.6354592799208334,
+              41.31135631316667
+            ],
+            "polygonIndex": 0,
+            "ringIndex": 2,
+            "expectedArea": null
+          },
+          {
+            "id": "barcelona-hole-3",
+            "area": "barcelona",
+            "point": [
+              2.0123606093625,
+              42.11866734820417
+            ],
+            "polygonIndex": 0,
+            "ringIndex": 3,
+            "expectedArea": null
+          }
+        ],
+        "borders": [
+          {
+            "id": "barcelona-main-west-border",
+            "area": "barcelona",
+            "point": [
+              1.3603969310000001,
+              41.613611806
+            ],
+            "polygonIndex": 0,
+            "ringIndex": 0
+          },
+          {
+            "id": "barcelona-disjoint-part-1-border",
+            "area": "barcelona",
+            "point": [
+              1.688943386,
+              42.101936965
+            ],
+            "polygonIndex": 1,
+            "ringIndex": 0
+          },
+          {
+            "id": "barcelona-disjoint-part-2-border",
+            "area": "barcelona",
+            "point": [
+              1.644495379,
+              42.111473218
+            ],
+            "polygonIndex": 2,
+            "ringIndex": 0
+          },
+          {
+            "id": "barcelona-disjoint-part-3-border",
+            "area": "barcelona",
+            "point": [
+              2.639611205,
+              41.604878140000004
+            ],
+            "polygonIndex": 3,
+            "ringIndex": 0
+          }
+        ],
+        "islands": [],
+        "enclaves": []
+      }
+    }
+  ]
+}

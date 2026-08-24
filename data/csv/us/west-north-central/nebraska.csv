@@ -1,11 +1,11 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-naber-s-produce-farm,Naber's Produce Farm,York,Fruta y verdura,,"1008 Road R, York, NE, 68467",strawberries;,,,,,,,,40.83414900621128,-97.48396200010737,,parcial,no comprobado,,,2338
-bloom-where-you-re-planted-farm-and-pumpkin-patch,Bloom Where You're Planted Farm and Pumpkin Patch,Avoca,Fruta y verdura,,"911-108th St., Avoca, Nebraska 68307",,,,,,,,,40.823423,-96.083143,,pendiente,no comprobado,,,462
-chisholm-family-farm-s-orchard-hill-creamery,Chisholm Family Farm's Orchard Hill Creamery,Unadilla,Lácteos y quesos,,"1875 D Road, Unadilla, Nebraska 68454",,,,,,,,,40.7406126,-96.286320,,pendiente,no comprobado,,,806
-country-lane-gardens,Country Lane Gardens,Columbus,Fruta y verdura,,"5132 E. 8th Street, Columbus, Nebraska 68601",,,,,,,,,41.423775,-97.262156,,pendiente,no comprobado,,,923
-gifford-ranch-beef-and-eggs,Gifford Ranch Beef and Eggs,Gering,Carne,,"3793 County Road 34, Gering, NE 69341",,,,,,,,,41.626410053944085,-103.67865492569827,,pendiente,no comprobado,,,1414
-klooz-farm-market,Klooz Farm Market,McCook,Fruta y verdura,,"RF 1, Box 101, McCook, NE 69001",,,,,,,,,40.2052145,-100.6342319,,pendiente,no comprobado,,,1922
-nelson-produce-farm,Nelson Produce Farm,Valley,Fruta y verdura,,,,,,info@nelsonproduce.com,https://nelsonproducefarm.com/,https://www.facebook.com/tr,https://www.instagram.com/nelsonproduce/,,41.317001,-96.362256,,parcial,sí,ecommerce,,2359
-pekarek-s-produce,Pekarek's Produce,Dwight,Fruta y verdura,,,,,,,https://pekareksproduce.com/,https://www.facebook.com/PekareksProduce/,,,41.082747,-97.019096,,parcial,sí,ecommerce,,2565
-prairie-river-honey-farm,Prairie River Honey Farm,Grand Island,Miel,,,,,,,https://prairieriverhoneyfarm.com/,,,,40.92135,-98.35856,,pendiente,no comprobado,,,2652
-pine-ridge-apiaries,Pine Ridge Apiaries,Chadron,Miel,,,,,+13086655445,,https://pineridgeapiaries.com/,,,,42.82597,-103.00248,,pendiente,no comprobado,,,2603
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+naber-s-produce-farm,Naber's Produce Farm,York,Fruta y verdura,,"1008 Road R, York, NE, 68467",strawberries;,,,,,,,,40.83414900621128,-97.48396200010737,,parcial,no comprobado,,,2338,en
+bloom-where-you-re-planted-farm-and-pumpkin-patch,Bloom Where You're Planted Farm and Pumpkin Patch,Avoca,Fruta y verdura,,"911-108th St., Avoca, Nebraska 68307",,,,,,,,,40.823423,-96.083143,,pendiente,no comprobado,,,462,
+chisholm-family-farm-s-orchard-hill-creamery,Chisholm Family Farm's Orchard Hill Creamery,Unadilla,Lácteos y quesos,,"1875 D Road, Unadilla, Nebraska 68454",,,,,,,,,40.7406126,-96.286320,,pendiente,no comprobado,,,806,
+country-lane-gardens,Country Lane Gardens,Columbus,Fruta y verdura,,"5132 E. 8th Street, Columbus, Nebraska 68601",,,,,,,,,41.423775,-97.262156,,pendiente,no comprobado,,,923,
+gifford-ranch-beef-and-eggs,Gifford Ranch Beef and Eggs,Gering,Carne,,"3793 County Road 34, Gering, NE 69341",,,,,,,,,41.626410053944085,-103.67865492569827,,pendiente,no comprobado,,,1414,
+klooz-farm-market,Klooz Farm Market,McCook,Fruta y verdura,,"RF 1, Box 101, McCook, NE 69001",,,,,,,,,40.2052145,-100.6342319,,pendiente,no comprobado,,,1922,
+nelson-produce-farm,Nelson Produce Farm,Valley,Fruta y verdura,,,,,,info@nelsonproduce.com,https://nelsonproducefarm.com/,https://www.facebook.com/tr,https://www.instagram.com/nelsonproduce/,,41.317001,-96.362256,,parcial,sí,ecommerce,,2359,
+pekarek-s-produce,Pekarek's Produce,Dwight,Fruta y verdura,,,,,,,https://pekareksproduce.com/,https://www.facebook.com/PekareksProduce/,,,41.082747,-97.019096,,parcial,sí,ecommerce,,2565,
+prairie-river-honey-farm,Prairie River Honey Farm,Grand Island,Miel,,,,,,,https://prairieriverhoneyfarm.com/,,,,40.92135,-98.35856,,pendiente,no comprobado,,,2652,
+pine-ridge-apiaries,Pine Ridge Apiaries,Chadron,Miel,,,,,+13086655445,,https://pineridgeapiaries.com/,,,,42.82597,-103.00248,,pendiente,no comprobado,,,2603,

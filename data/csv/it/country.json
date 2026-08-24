@@ -17,6 +17,21 @@
     "padua": "padova",
     "mantua": "mantova"
   },
+  "producerRouteAliases": {
+    "arezzo/panificio-f-lli-grassi-arezzo": 2807,
+    "catania/sole-catania": 3204,
+    "chieti/caseificio-dolce-latte": 1093,
+    "firenze/forno-moderno-firenze": 1902,
+    "grosseto/dolce-forno": 1674,
+    "lecce/caseificio-del-sole": 1069,
+    "lecce/caseificio-dolce-latte": 1094,
+    "livorno/panificio-nencioni": 2871,
+    "novara/caseificio-la-perla-novara": 1200,
+    "pistoia/dolce-forno": 1673,
+    "pistoia/panificio-nencioni": 2870,
+    "rimini/caseificio-de-martino-rimini": 1058,
+    "vibo-valentia/caseificio-del-sole": 1070
+  },
   "regions": [
     {
       "slug": "valle-daosta",

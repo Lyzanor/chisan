@@ -6,7 +6,7 @@ import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import { buildProducerHref } from "@/lib/catalog-navigation";
+import { buildProducerHref, type CatalogNavigationScope } from "@/lib/catalog-navigation";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 // Below this threshold, show all points regardless of viewport.
@@ -24,14 +24,7 @@ function getPointsBounds(points: ProducerMapPoint[]): L.LatLngBounds | null {
   );
 }
 
-function getInitialCenter(
-  points: ProducerMapPoint[],
-  userLocation?: { lat: number; lon: number },
-): [number, number] {
-  if (userLocation) {
-    return [userLocation.lat, userLocation.lon];
-  }
-
+function getInitialCenter(points: ProducerMapPoint[]): [number, number] {
   const bounds = getPointsBounds(points);
   if (!bounds) {
     return DEFAULT_MAP_CENTER;
@@ -55,38 +48,28 @@ const producerPinHighlightedIcon = L.divIcon({
   iconAnchor: [11, 11],
 });
 
-const userPinIcon = L.divIcon({
-  className: "producer-map-pin user-map-pin",
-  html: '<span class="producer-map-pin-dot user-map-pin-dot"></span>',
-  iconSize: [18, 18],
-  iconAnchor: [9, 9],
-});
-
 function BoundsAwareMarkers({
   points,
-  country,
+  scope,
   area,
   highlightedSlug,
-  userLocation,
   singlePointZoom = 13,
+  messages,
 }: {
   points: ProducerMapPoint[];
-  country: string;
+  scope: CatalogNavigationScope;
   area: string;
   highlightedSlug?: string;
-  userLocation?: { lat: number; lon: number };
   singlePointZoom?: number;
+  messages: {
+    openProfile: string;
+  };
 }) {
   const map = useMap();
   const [viewBounds, setViewBounds] = useState<L.LatLngBounds>(() => map.getBounds());
 
   // Fit map to all points whenever the point set changes
   useEffect(() => {
-    if (userLocation) {
-      map.setView([userLocation.lat, userLocation.lon], 11, { animate: false });
-      return;
-    }
-
     if (points.length === 0) return;
 
     if (points.length === 1) {
@@ -105,8 +88,7 @@ function BoundsAwareMarkers({
       const center = bounds.getCenter();
       map.setView([center.lat, center.lng], 10, { animate: false });
     }
-
-  }, [map, points, singlePointZoom, userLocation]);
+  }, [map, points, singlePointZoom]);
 
   // moveend fires after every pan and after every zoom (Leaflet always fires
   // moveend at the end of a zoom sequence), so zoomend is redundant here.
@@ -124,17 +106,6 @@ function BoundsAwareMarkers({
 
   return (
     <>
-      {userLocation && (
-        <Marker
-          position={[userLocation.lat, userLocation.lon]}
-          icon={userPinIcon}
-          zIndexOffset={1000}
-        >
-          <Popup>
-            <strong>Your location</strong>
-          </Popup>
-        </Marker>
-      )}
       {visible.map((point) => (
         <Marker
           key={point.slug}
@@ -146,7 +117,9 @@ function BoundsAwareMarkers({
             <br />
             {point.city} · {point.categories.join(" · ")}
             <br />
-            <Link href={buildProducerHref(point, { country, area })}>Open profile</Link>
+            <Link href={buildProducerHref(point, { scope, area })}>
+              {messages.openProfile}
+            </Link>
           </Popup>
         </Marker>
       ))}
@@ -156,21 +129,25 @@ function BoundsAwareMarkers({
 
 export default function ProducersMapInner({
   points,
-  country,
+  scope,
   area,
   highlightedSlug,
-  userLocation,
   singlePointZoom = 13,
+  messages,
+  onReady,
 }: {
   points: ProducerMapPoint[];
-  country: string;
+  scope: CatalogNavigationScope;
   area: string;
   highlightedSlug?: string;
-  userLocation?: { lat: number; lon: number };
   singlePointZoom?: number;
+  messages: {
+    openProfile: string;
+  };
+  onReady: () => void;
 }) {
-  const initialCenter = getInitialCenter(points, userLocation);
-  const initialZoom = points.length === 1 && !userLocation ? singlePointZoom : 10;
+  const initialCenter = getInitialCenter(points);
+  const initialZoom = points.length === 1 ? singlePointZoom : 10;
 
   return (
     <MapContainer
@@ -179,6 +156,7 @@ export default function ProducersMapInner({
       minZoom={5}
       className="producers-map-canvas"
       scrollWheelZoom
+      whenReady={onReady}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -186,11 +164,11 @@ export default function ProducersMapInner({
       />
       <BoundsAwareMarkers
         points={points}
-        country={country}
+        scope={scope}
         area={area}
         highlightedSlug={highlightedSlug}
-        userLocation={userLocation}
         singlePointZoom={singlePointZoom}
+        messages={messages}
       />
     </MapContainer>
   );

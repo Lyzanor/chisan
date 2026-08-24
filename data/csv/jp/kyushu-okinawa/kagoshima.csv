@@ -1,63 +1,63 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-hombo-shuzo,Hombo Shuzo,Kagoshima,Destilados y licores,"Shochu, Mars Whisky",,,,,,https://www.hombo.co.jp/,,,,31.596810,130.557140,,parcial,no comprobado,,,335
-kanosuke-distillery-hioki,Kanosuke Distillery,Hioki,Destilados y licores,Kanosuke,,,,,,https://kanosuke.com/,,,,31.633720,130.402440,,parcial,no comprobado,,,515
-nishihira-shuzo-amami,Nishihira Shuzo,Amami,Destilados y licores,,鹿児島県奄美市名瀬小俣町11-21,,,+81997520171,,https://www.nishihira-shuzo.com/,,,,28.370523,129.501190,,parcial,no comprobado,,,867
-komasa-jozo-hioki,Komasa Jozo,Hioki,Destilados y licores,,〒899-3101 鹿児島県日置市日吉町日置3314,,,+81992923535,,https://komasa.co.jp/,,,,31.603041,130.36264,,parcial,no comprobado,,,634
-hamada-shuzo-denzoin-ichikikushikino,Hamada Shuzo (Denzoin),Ichikikushikino,Destilados y licores,,,,,,,https://www.hamadasyuzou.co.jp/denzouin/about,,,,31.728224,130.253265,,parcial,no comprobado,,,294
-satsuma-kinzangura-ichikikushikino,Satsuma Kinzangura,Ichikikushikino,Destilados y licores,,〒896-0073 鹿児島県いちき串木野市野下13665,,,+81996212110,,https://hamadasyuzou.co.jp/kinzan/,,,,31.75046,130.281937,,parcial,no comprobado,,,1055
-shirakawa-shuzo-hioki,Shirakawa Shuzo,Hioki,Destilados y licores,,〒899-2101 鹿児島県いちき串木野市湊町1-342,,,+81996362058,,,,,,31.691236,130.292755,,parcial,no comprobado,,,1114
-wakamatsu-shuzo-hioki,Wakamatsu Shuzo,Hioki,Destilados y licores,,〒899-2101 鹿児島県いちき串木野市湊町1-182,,,+81996365008,,http://wakamatsusyuzo.co.jp/,,,,31.693016,130.291168,,parcial,no comprobado,,,1325
-yamatozakura-shuzo-hioki,Yamatozakura Shuzo,Hioki,Destilados y licores,,〒899-2101 鹿児島県いちき串木野市湊町3-125,,,+81996362032,,https://yamatozakura.com/,,,,31.692553,130.293823,,parcial,no comprobado,,,1361
-tasaki-shuzo-ichikikushikino,Tasaki Shuzo,Ichikikushikino,Destilados y licores,,〒899-2103 鹿児島県いちき串木野市大里696,,,+81996363000,,https://tasaki-shuzo.jp/,,,,31.671921,130.30481,,parcial,no comprobado,,,1214
-matsuzaki-shuzo-hioki,Matsuzaki Shuzo,Hioki,Destilados y licores,,〒899-2103 鹿児島県いちき串木野市大里232,,,+81996363151,,,,,,31.677633,130.321472,,parcial,no comprobado,,,760
-nangoku-shuzo-hioki,Nangoku Shuzo,Hioki,Destilados y licores,,〒899-3304 鹿児島県日置市吹上町入来652,,,+81992962069,,,,,,31.496984,130.333832,,parcial,no comprobado,,,838
-satsuma-hamadaya-denbee-ichikikushikino,Satsuma Hamadaya Denbee,Ichikikushikino,Destilados y licores,,,,,,,https://www.hamadasyuzou.co.jp/denbee/,,,,31.691851,130.293976,,parcial,no comprobado,,,1054
-sata-souji-shoten-minamikyushu,Sata Souji Shoten,Minamikyushu,Destilados y licores,,〒891-0704 鹿児島県南九州市頴娃町別府4910,,,+81993381121,,http://satasouji-shouten.co.jp/,,,,31.256094,130.429443,,parcial,no comprobado,,,1051
-sakurai-shuzo-minamikyushu,Sakurai Shuzo,Minamikyushu,Destilados y licores,,〒899-3405 鹿児島県南さつま市金峰町池辺295,,,+81993771332,,,,,,31.469437,130.327377,,parcial,no comprobado,,,1036
-satsuma-shuzo-ei-minamikyushu,Satsuma Shuzo (Ei),Minamikyushu,Destilados y licores,,,,,+81993361171,,https://www.satsuma.co.jp/,,,,31.247595,130.478363,,parcial,no comprobado,,,1057
-satsuma-muso,Satsuma Muso,Kagoshima,Destilados y licores,,〒891-0132 鹿児島県鹿児島市七ツ島1-1-17,,,+81992618555,,https://satsumamusou.co.jp/,,,,31.474815,130.513474,,parcial,no comprobado,,,1056
-azuma-shuzo,Azuma Shuzo,Kagoshima,Destilados y licores,,〒891-0114 鹿児島県鹿児島市小松原1-37-1,,,+81992682020,,https://higashi-sz.com/,,,,31.53499,130.531296,,parcial,no comprobado,,,94
-sanwa-shuzo-kagoshima,Sanwa Shuzo,Kagoshima,Destilados y licores,,〒891-0132 鹿児島県鹿児島市七ツ島1-1-17,,,+81992842180,,https://sanwashuzo.com/,,,,31.474815,130.513474,,parcial,no comprobado,,,1040
-sagara-shuzo-kagoshima,Sagara Shuzo,Kagoshima,Destilados y licores,,〒892-0819 鹿児島県鹿児島市柳町5-6,,,+81992220534,,https://sagarasyuzou.com/,,,,31.603485,130.562546,,parcial,no comprobado,,,1017
-utsuguchi-seicha-kirishima,Utsuguchi Seicha,Kirishima,Té e infusiones,Organic green tea,鹿児島県霧島市牧園町三体堂1761-1,"Utsuguchi Seicha produces organic green tea at its Kirishima unit, which is listed in the national organic JAS operator register.",,+81995761164,,https://www.oishii-ocha.com/,,,,31.894760,130.790634,,verificado,no comprobado,,,1313
-furuichi-seicha-minamikyushu,Furuichi Seicha,Minamikyushu,Té e infusiones,"Chiran tea, Kagoshima tea",鹿児島県南九州市川辺町永田1296-1,"Furuichi Seicha produces chiran tea, kagoshima tea at its Minamikyushu unit, which is listed in the national organic JAS operator register.",,,,https://www.furuichiseicha.jp/,,,,31.393066,130.372299,,verificado,no comprobado,,,251
-fukuyama-komezu-kirishima,Fukuyama Komezu,Kirishima,Condimentos,Black rice vinegar,鹿児島県霧島市福山町福山4115-1,"Fukuyama Komezu produces black rice vinegar at its Kirishima unit, which is listed in the national organic JAS operator register.",,+81995553051,,https://www.komezu.com/company/,,,,31.656927,130.844055,,verificado,no comprobado,,,245
-orita-tea-garden-minamikyushu,Orita Tea Garden,Minamikyushu,Té e infusiones,Chiran tea,鹿児島県南九州市知覧町塩屋15712番地,"Orita Tea Garden produces chiran tea at its Minamikyushu unit, which is listed in the national organic JAS operator register.",,+81993853107,,https://www.orita.co.jp/about/,,,,31.282543,130.381577,,verificado,no comprobado,,,954
-classicbudou-kinko,クラシックブドウ浜田農園/花瀬ワイナリー,Kinko,Vino,,鹿児島県肝属郡錦江町田代川原4232-5,Produces wine at its Kinko unit.,,,,https://classicbudou.net/,,,,31.243470,130.787640,,parcial,no comprobado,,,1774
-kotobuki-cheese-kanoya,kotobuki cheese,Kanoya,Lácteos y quesos,"カノヤホワイト-熟成白カビチーズ, カノヤウォッシュ-芋焼酎熟成, MEGUMI-鹿屋の恵み",鹿児島県鹿屋市北田町5-5 ファクトリー内kotobuki cheese,Produces cheese and dairy products at its Kanoya unit.,,,,http://kotobukicheese.com/,,,,31.378220,130.852220,,verificado,no comprobado,,,648
-soleilsmile-tatsugo-cho,それいゆふぁ〜むチーズ工房,Tatsugō-chō,Lácteos y quesos,"山羊乳のクリームチーズ, 山羊乳のゴーダチーズ",鹿児島県大島郡龍郷町赤尾木1346-1,Produces cheese and dairy products at its Tatsugō-chō unit.,,,,http://soleilsmile.com/,,,,28.413110,129.589330,,verificado,no comprobado,,,1541
-tsubomizu-marui-kanoya,坪水醸造,Kanoya,Condimentos,,鹿児島県鹿屋市古前城町5-7,Produces soy sauce and traditional seasonings at its Kanoya brewery.,,+81994423177,,https://www.tsubomizu-marui.com/,,,,31.378220,130.852220,,verificado,sí,ecommerce,,2281
-kubojyozo-kanoya,久保醸造,Kanoya,Condimentos,さしみ醤油,鹿児島県鹿屋市共栄町11-3,Produces soy sauce and traditional seasonings at its Kanoya brewery.,,+81994443636,,https://www.kubojyozo.com/,,,,31.378220,130.852220,,verificado,sí,ecommerce,,2100
-sakurakaneyo-ichikikushikino,吉村醸造,Ichikikushikino,Condimentos,こいくち 甘露,鹿児島県いちき串木野市大里3868,Produces soy sauce and traditional seasonings at its Ichikikushikino brewery.,,+81996363121,,https://sakurakaneyo.com/,,,,31.714560,130.271940,,verificado,no comprobado,,,2250
-yoshibishi-kagoshima,吉永醸造店,Kagoshima,Condimentos,天龍,鹿児島県鹿児島市西田2-2-3,Produces soy sauce and traditional seasonings at its Kagoshima brewery.,,+81992542663,,https://www.yoshibishi.com/,,,,31.596810,130.557140,,verificado,sí,ecommerce,,2252
-tabechoku-23582,みしま焼酎 無垢の蔵,三島村,Destilados y licores,焼酎,,Produces shochu at its Mishima unit.,,,,,,,,31.594500,130.560720,,parcial,sí,marketplace,,1639
-tabechoku-26038,田口 純弘,Minamikyushu,Café,ブルーベリー,,Produces blueberries at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,2940
-tabechoku-20842,鶴田養蜂場 (鶴田農園),Ibusuki,Miel,,,Produces honey at its Ibusuki unit.,,,,,,,,31.252780,130.633060,,parcial,sí,marketplace,,3327
-tabechoku-20327,高野養蜂場,Kagoshima,Miel,,,Produces honey at its Kagoshima unit.,,,,,,,,31.596810,130.557140,,parcial,sí,marketplace,,3312
-tabechoku-23780,【 村岡製茶 】知覧後岳銘茶,Minamikyushu,Té e infusiones,,,Produces tea at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,2647
-tabechoku-20087,知覧心茶堂,Minamikyushu,Té e infusiones,,,Produces tea at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,2972
-tabechoku-20160,自然放牧場 お多福たまご,Kirishima,Huevos,,,Produces eggs at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,3077
-tabechoku-29105,上場高原ビーフ,出水市,Pescado,,,Produces fish and seafood at its Izumi unit.,,,,,,,,32.064170,130.360830,,parcial,sí,marketplace,,2031
-tabechoku-29410,昌徳丸,Kimotsuki,Pescado,,,Produces fish and seafood at its Kimotsuki unit.,,,,,,,,31.344440,130.945220,,parcial,sí,marketplace,,2574
-tabechoku-3077554,【8000万年の叡智】幻の甑島鮮魚,Satsumasendai,Pescado,,,Produces fish and seafood at its Satsumasendai unit.,,,,,,,,31.813470,130.303970,,parcial,sí,marketplace,,9
-tabechoku-22470,きくなが養鶏場,Minamikyushu,Huevos,,,Produces eggs at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,1476
-tabechoku-22642,さかうえ,Shibushi,Carne,,,Produces meat at its Shibushi unit.,,,,,,,,31.477170,131.099890,,parcial,sí,marketplace,,1508
-tabechoku-25842,種子島夢まるGaRDeN,Nishinoomote,Carne,,,Produces meat at its Nishinoomote unit.,,,,,,,,30.732440,130.997030,,parcial,sí,marketplace,,3011
-tabechoku-62,マルマメン工房,Kirishima,Legumbres,大豆,,Produces soybeans at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,1943
-tabechoku-26087,南九州ルバーブ農園 Red Sticks,Aira,Fruta y verdura,,,Produces fruit and vegetables at its Aira unit.,,,,,,,,31.728220,130.627810,,parcial,sí,marketplace,,2221
-tabechoku-3078353,中園ファーム,Nishinoomote,Frutos secos,,,Produces nuts at its Nishinoomote unit.,,,,,,,,30.732440,130.997030,,parcial,sí,marketplace,,2050
-tabechoku-23732,トカラnanairo,十島村,Fruta y verdura,,鹿児島県鹿児島郡十島村中之島,Produces fruit and vegetables on Nakanoshima in the Tokara Islands.,,,,,,,,29.849651,129.866074,,parcial,sí,marketplace,,1847
-tabechoku-29333,さつまゆうすい農場 そのやま農園,Yūsui-chō,Fruta y verdura,栗,,Produces chestnuts at its Yūsui-chō unit.,,,,,,,,31.951670,130.721060,,parcial,sí,marketplace,,1513
-tabechoku-23676,うとさんち,Akune,Fruta y verdura,,,Produces fruit and vegetables at its Akune unit.,,,,,,,,32.014530,130.192670,,parcial,sí,marketplace,,1442
-tabechoku-3078799,三輪ファーム,Kirishima,Fruta y verdura,野菜,,Produces vegetables at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,2024
-tabechoku-3078723,久米村農園,Kirishima,Fruta y verdura,柑橘,,Produces citrus fruit at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,2104
-tabechoku-21342,中尾農園,Kagoshima,Fruta y verdura,,,Produces fruit and vegetables at its Kagoshima unit.,,,,,,,,31.596810,130.557140,,parcial,sí,marketplace,,2052
-jp-kagoshima-chiran-cha-5c0cd88,枦川製茶,南九州市,Té e infusiones,日本茶,,"Produces Japanese tea in 南九州市, kagoshima.",,,,https://chiran-cha.jp/,,,,31.378280,130.441670,,verificado,no comprobado,,,2679
-jp-kagoshima-chirancha-71ea93e,仁田尾の知覧茶園,南九州市,Té e infusiones,日本茶,,"Produces Japanese tea in 南九州市, kagoshima.",,,,https://chirancha.jp/,,,,31.378280,130.441670,,verificado,no comprobado,,,2132
-jp-kagoshima-birouen-db513db,美老園,鹿児島市,Té e infusiones,日本茶,,"Produces Japanese tea in 鹿児島市, kagoshima.",,,,https://birouen.com/,,,,31.596810,130.557140,,verificado,sí,ecommerce,,3061
-shiroyama-hotel-kagoshima,城山ブルワリー (SHIROYAMA HOTEL kagoshima),Kagoshima,Cerveza,,新照院町41-1,Brewery producing beer at its Kagoshima unit.,,,,https://www.shiroyama-g.co.jp/feature/charm/brewery,,https://www.instagram.com/shiroyamahotelkagoshima/,,31.59681,130.55714,,parcial,no comprobado,,,2284
-amami-brewery,奄美ビール (AMAMI BREWERY),Amami,Cerveza,,名瀬港町1-2,Brewery producing beer at its Amami unit.,,,,https://amamibeer.com/,,https://www.instagram.com/amamibeer/,,28.34556,129.50222,,parcial,no comprobado,,,2344
-catch-the-beer,Catch the Beer (屋久島キャッチザビール),Yakushima,Cerveza,,安房2411-137,Brewery producing beer at its Yakushima unit.,,,,,,https://www.instagram.com/catchthebeer/,,30.39025,130.6515,,parcial,no comprobado,,,125
-matoba-suisan-makurazaki,的場水産,Makurazaki,Pescado,Katsuobushi,,Produces fermented and dried katsuobushi in Makurazaki.,,,,https://katsuoya.jp/,,,,31.27292,130.29692,,verificado,sí,ecommerce,,2967
-marumo-makurazaki,マルモ,Makurazaki,Pescado,"Katsuobushi, shaved bonito",鹿児島県枕崎市泉町35番地,Produces katsuobushi from raw bonito through final shaving at its Makurazaki factory.,,+81993721325,info@kk-marumo.co.jp,https://kk-marumo.co.jp/,,,,31.268229,130.302338,,verificado,no comprobado,,,1944
-satomaru-suisan-tarumizu,さと丸水産,Tarumizu,Pescado,"Yellowtail, sea bream, striped jack",鹿児島県垂水市中俣142,"Farms yellowtail, sea bream and striped jack in Tarumizu.",,,,https://www.sancyokutarumizu.com/blank-9,,,,31.516428,130.698288,,parcial,no comprobado,,,1517
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+hombo-shuzo,Hombo Shuzo,Kagoshima,Destilados y licores,"Shochu, Mars Whisky",,,,,,https://www.hombo.co.jp/,,,,31.596810,130.557140,,parcial,no comprobado,,,335,
+kanosuke-distillery-hioki,Kanosuke Distillery,Hioki,Destilados y licores,Kanosuke,,,,,,https://kanosuke.com/,,,,31.633720,130.402440,,parcial,no comprobado,,,515,
+nishihira-shuzo-amami,Nishihira Shuzo,Amami,Destilados y licores,,鹿児島県奄美市名瀬小俣町11-21,,,+81997520171,,https://www.nishihira-shuzo.com/,,,,28.370523,129.501190,,parcial,no comprobado,,,867,
+komasa-jozo-hioki,Komasa Jozo,Hioki,Destilados y licores,,〒899-3101 鹿児島県日置市日吉町日置3314,,,+81992923535,,https://komasa.co.jp/,,,,31.603041,130.36264,,parcial,no comprobado,,,634,
+hamada-shuzo-denzoin-ichikikushikino,Hamada Shuzo (Denzoin),Ichikikushikino,Destilados y licores,,,,,,,https://www.hamadasyuzou.co.jp/denzouin/about,,,,31.728224,130.253265,,parcial,no comprobado,,,294,
+satsuma-kinzangura-ichikikushikino,Satsuma Kinzangura,Ichikikushikino,Destilados y licores,,〒896-0073 鹿児島県いちき串木野市野下13665,,,+81996212110,,https://hamadasyuzou.co.jp/kinzan/,,,,31.75046,130.281937,,parcial,no comprobado,,,1055,
+shirakawa-shuzo-hioki,Shirakawa Shuzo,Hioki,Destilados y licores,,〒899-2101 鹿児島県いちき串木野市湊町1-342,,,+81996362058,,,,,,31.691236,130.292755,,parcial,no comprobado,,,1114,
+wakamatsu-shuzo-hioki,Wakamatsu Shuzo,Hioki,Destilados y licores,,〒899-2101 鹿児島県いちき串木野市湊町1-182,,,+81996365008,,http://wakamatsusyuzo.co.jp/,,,,31.693016,130.291168,,parcial,no comprobado,,,1325,
+yamatozakura-shuzo-hioki,Yamatozakura Shuzo,Hioki,Destilados y licores,,〒899-2101 鹿児島県いちき串木野市湊町3-125,,,+81996362032,,https://yamatozakura.com/,,,,31.692553,130.293823,,parcial,no comprobado,,,1361,
+tasaki-shuzo-ichikikushikino,Tasaki Shuzo,Ichikikushikino,Destilados y licores,,〒899-2103 鹿児島県いちき串木野市大里696,,,+81996363000,,https://tasaki-shuzo.jp/,,,,31.671921,130.30481,,parcial,no comprobado,,,1214,
+matsuzaki-shuzo-hioki,Matsuzaki Shuzo,Hioki,Destilados y licores,,〒899-2103 鹿児島県いちき串木野市大里232,,,+81996363151,,,,,,31.677633,130.321472,,parcial,no comprobado,,,760,
+nangoku-shuzo-hioki,Nangoku Shuzo,Hioki,Destilados y licores,,〒899-3304 鹿児島県日置市吹上町入来652,,,+81992962069,,,,,,31.496984,130.333832,,parcial,no comprobado,,,838,
+satsuma-hamadaya-denbee-ichikikushikino,Satsuma Hamadaya Denbee,Ichikikushikino,Destilados y licores,,,,,,,https://www.hamadasyuzou.co.jp/denbee/,,,,31.691851,130.293976,,parcial,no comprobado,,,1054,
+sata-souji-shoten-minamikyushu,Sata Souji Shoten,Minamikyushu,Destilados y licores,,〒891-0704 鹿児島県南九州市頴娃町別府4910,,,+81993381121,,http://satasouji-shouten.co.jp/,,,,31.256094,130.429443,,parcial,no comprobado,,,1051,
+sakurai-shuzo-minamikyushu,Sakurai Shuzo,Minamikyushu,Destilados y licores,,〒899-3405 鹿児島県南さつま市金峰町池辺295,,,+81993771332,,,,,,31.469437,130.327377,,parcial,no comprobado,,,1036,
+satsuma-shuzo-ei-minamikyushu,Satsuma Shuzo (Ei),Minamikyushu,Destilados y licores,,,,,+81993361171,,https://www.satsuma.co.jp/,,,,31.247595,130.478363,,parcial,no comprobado,,,1057,
+satsuma-muso,Satsuma Muso,Kagoshima,Destilados y licores,,〒891-0132 鹿児島県鹿児島市七ツ島1-1-17,,,+81992618555,,https://satsumamusou.co.jp/,,,,31.474815,130.513474,,parcial,no comprobado,,,1056,
+azuma-shuzo,Azuma Shuzo,Kagoshima,Destilados y licores,,〒891-0114 鹿児島県鹿児島市小松原1-37-1,,,+81992682020,,https://higashi-sz.com/,,,,31.53499,130.531296,,parcial,no comprobado,,,94,
+sanwa-shuzo-kagoshima,Sanwa Shuzo,Kagoshima,Destilados y licores,,〒891-0132 鹿児島県鹿児島市七ツ島1-1-17,,,+81992842180,,https://sanwashuzo.com/,,,,31.474815,130.513474,,parcial,no comprobado,,,1040,
+sagara-shuzo-kagoshima,Sagara Shuzo,Kagoshima,Destilados y licores,,〒892-0819 鹿児島県鹿児島市柳町5-6,,,+81992220534,,https://sagarasyuzou.com/,,,,31.603485,130.562546,,parcial,no comprobado,,,1017,
+utsuguchi-seicha-kirishima,Utsuguchi Seicha,Kirishima,Té e infusiones,Organic green tea,鹿児島県霧島市牧園町三体堂1761-1,Utsuguchi Seicha produces organic green tea at its Kirishima unit.,,+81995761164,,https://www.oishii-ocha.com/,,,,31.894760,130.790634,,verificado,no comprobado,,,1313,en
+furuichi-seicha-minamikyushu,Furuichi Seicha,Minamikyushu,Té e infusiones,"Chiran tea, Kagoshima tea",鹿児島県南九州市川辺町永田1296-1,"Furuichi Seicha produces chiran tea, kagoshima tea at its Minamikyushu unit.",,,,https://www.furuichiseicha.jp/,,,,31.393066,130.372299,,verificado,no comprobado,,,251,en
+fukuyama-komezu-kirishima,Fukuyama Komezu,Kirishima,Condimentos,Black rice vinegar,鹿児島県霧島市福山町福山4115-1,Fukuyama Komezu produces black rice vinegar at its Kirishima unit.,,+81995553051,,https://www.komezu.com/company/,,,,31.656927,130.844055,,verificado,no comprobado,,,245,en
+orita-tea-garden-minamikyushu,Orita Tea Garden,Minamikyushu,Té e infusiones,Chiran tea,鹿児島県南九州市知覧町塩屋15712番地,Orita Tea Garden produces chiran tea at its Minamikyushu unit.,,+81993853107,,https://www.orita.co.jp/about/,,,,31.282543,130.381577,,verificado,no comprobado,,,954,en
+classicbudou-kinko,クラシックブドウ浜田農園/花瀬ワイナリー,Kinko,Vino,,鹿児島県肝属郡錦江町田代川原4232-5,Produces wine at its Kinko unit.,,,,https://classicbudou.net/,,,,31.243470,130.787640,,parcial,no comprobado,,,1774,en
+kotobuki-cheese-kanoya,kotobuki cheese,Kanoya,Lácteos y quesos,"カノヤホワイト-熟成白カビチーズ, カノヤウォッシュ-芋焼酎熟成, MEGUMI-鹿屋の恵み",鹿児島県鹿屋市北田町5-5 ファクトリー内kotobuki cheese,Produces cheese and dairy products at its Kanoya unit.,,,,http://kotobukicheese.com/,,,,31.378220,130.852220,,verificado,no comprobado,,,648,en
+soleilsmile-tatsugo-cho,それいゆふぁ〜むチーズ工房,Tatsugō-chō,Lácteos y quesos,"山羊乳のクリームチーズ, 山羊乳のゴーダチーズ",鹿児島県大島郡龍郷町赤尾木1346-1,Produces cheese and dairy products at its Tatsugō-chō unit.,,,,http://soleilsmile.com/,,,,28.413110,129.589330,,verificado,no comprobado,,,1541,en
+tsubomizu-marui-kanoya,坪水醸造,Kanoya,Condimentos,,鹿児島県鹿屋市古前城町5-7,坪水醸造 produces soy sauce and traditional seasonings at its Kanoya brewery.,,+81994423177,,https://www.tsubomizu-marui.com/,,,,31.378220,130.852220,,verificado,sí,ecommerce,,2281,en
+kubojyozo-kanoya,久保醸造,Kanoya,Condimentos,さしみ醤油,鹿児島県鹿屋市共栄町11-3,久保醸造 produces soy sauce and traditional seasonings at its Kanoya brewery.,,+81994443636,,https://www.kubojyozo.com/,,,,31.378220,130.852220,,verificado,sí,ecommerce,,2100,en
+sakurakaneyo-ichikikushikino,吉村醸造,Ichikikushikino,Condimentos,こいくち 甘露,鹿児島県いちき串木野市大里3868,Produces soy sauce and traditional seasonings at its Ichikikushikino brewery.,,+81996363121,,https://sakurakaneyo.com/,,,,31.714560,130.271940,,verificado,no comprobado,,,2250,en
+yoshibishi-kagoshima,吉永醸造店,Kagoshima,Condimentos,天龍,鹿児島県鹿児島市西田2-2-3,Produces soy sauce and traditional seasonings at its Kagoshima brewery.,,+81992542663,,https://www.yoshibishi.com/,,,,31.596810,130.557140,,verificado,sí,ecommerce,,2252,en
+tabechoku-23582,みしま焼酎 無垢の蔵,三島村,Destilados y licores,焼酎,,Produces shochu at its Mishima unit.,,,,,,,,31.594500,130.560720,,parcial,sí,marketplace,,1639,en
+tabechoku-26038,田口 純弘,Minamikyushu,Café,ブルーベリー,,Produces blueberries at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,2940,en
+tabechoku-20842,鶴田養蜂場 (鶴田農園),Ibusuki,Miel,,,Produces honey at its Ibusuki unit.,,,,,,,,31.252780,130.633060,,parcial,sí,marketplace,,3327,en
+tabechoku-20327,高野養蜂場,Kagoshima,Miel,,,Produces honey at its Kagoshima unit.,,,,,,,,31.596810,130.557140,,parcial,sí,marketplace,,3312,en
+tabechoku-23780,【 村岡製茶 】知覧後岳銘茶,Minamikyushu,Té e infusiones,,,【 村岡製茶 】知覧後岳銘茶 produces tea at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,2647,en
+tabechoku-20087,知覧心茶堂,Minamikyushu,Té e infusiones,,,知覧心茶堂 produces tea at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,2972,en
+tabechoku-20160,自然放牧場 お多福たまご,Kirishima,Huevos,,,Produces eggs at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,3077,en
+tabechoku-29105,上場高原ビーフ,出水市,Pescado,,,Produces fish and seafood at its Izumi unit.,,,,,,,,32.064170,130.360830,,parcial,sí,marketplace,,2031,en
+tabechoku-29410,昌徳丸,Kimotsuki,Pescado,,,Produces fish and seafood at its Kimotsuki unit.,,,,,,,,31.344440,130.945220,,parcial,sí,marketplace,,2574,en
+tabechoku-3077554,【8000万年の叡智】幻の甑島鮮魚,Satsumasendai,Pescado,,,Produces fish and seafood at its Satsumasendai unit.,,,,,,,,31.813470,130.303970,,parcial,sí,marketplace,,9,en
+tabechoku-22470,きくなが養鶏場,Minamikyushu,Huevos,,,Produces eggs at its Minamikyushu unit.,,,,,,,,31.378280,130.441670,,parcial,sí,marketplace,,1476,en
+tabechoku-22642,さかうえ,Shibushi,Carne,,,Produces meat at its Shibushi unit.,,,,,,,,31.477170,131.099890,,parcial,sí,marketplace,,1508,en
+tabechoku-25842,種子島夢まるGaRDeN,Nishinoomote,Carne,,,Produces meat at its Nishinoomote unit.,,,,,,,,30.732440,130.997030,,parcial,sí,marketplace,,3011,en
+tabechoku-62,マルマメン工房,Kirishima,Legumbres,大豆,,Produces soybeans at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,1943,en
+tabechoku-26087,南九州ルバーブ農園 Red Sticks,Aira,Fruta y verdura,,,Produces fruit and vegetables at its Aira unit.,,,,,,,,31.728220,130.627810,,parcial,sí,marketplace,,2221,en
+tabechoku-3078353,中園ファーム,Nishinoomote,Frutos secos,,,Produces nuts at its Nishinoomote unit.,,,,,,,,30.732440,130.997030,,parcial,sí,marketplace,,2050,en
+tabechoku-23732,トカラnanairo,十島村,Fruta y verdura,,鹿児島県鹿児島郡十島村中之島,Produces fruit and vegetables on Nakanoshima in the Tokara Islands.,,,,,,,,29.849651,129.866074,,parcial,sí,marketplace,,1847,en
+tabechoku-29333,さつまゆうすい農場 そのやま農園,Yūsui-chō,Fruta y verdura,栗,,Produces chestnuts at its Yūsui-chō unit.,,,,,,,,31.951670,130.721060,,parcial,sí,marketplace,,1513,en
+tabechoku-23676,うとさんち,Akune,Fruta y verdura,,,Produces fruit and vegetables at its Akune unit.,,,,,,,,32.014530,130.192670,,parcial,sí,marketplace,,1442,en
+tabechoku-3078799,三輪ファーム,Kirishima,Fruta y verdura,野菜,,Produces vegetables at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,2024,en
+tabechoku-3078723,久米村農園,Kirishima,Fruta y verdura,柑橘,,Produces citrus fruit at its Kirishima unit.,,,,,,,,31.741000,130.763220,,parcial,sí,marketplace,,2104,en
+tabechoku-21342,中尾農園,Kagoshima,Fruta y verdura,,,Produces fruit and vegetables at its Kagoshima unit.,,,,,,,,31.596810,130.557140,,parcial,sí,marketplace,,2052,en
+jp-kagoshima-chiran-cha-5c0cd88,枦川製茶,南九州市,Té e infusiones,日本茶,,"枦川製茶 produces Japanese tea in 南九州市, kagoshima.",,,,https://chiran-cha.jp/,,,,31.378280,130.441670,,verificado,no comprobado,,,2679,en
+jp-kagoshima-chirancha-71ea93e,仁田尾の知覧茶園,南九州市,Té e infusiones,日本茶,,"仁田尾の知覧茶園 produces Japanese tea in 南九州市, kagoshima.",,,,https://chirancha.jp/,,,,31.378280,130.441670,,verificado,no comprobado,,,2132,en
+jp-kagoshima-birouen-db513db,美老園,鹿児島市,Té e infusiones,日本茶,,"Produces Japanese tea in 鹿児島市, kagoshima.",,,,https://birouen.com/,,,,31.596810,130.557140,,verificado,sí,ecommerce,,3061,en
+shiroyama-hotel-kagoshima,城山ブルワリー (SHIROYAMA HOTEL kagoshima),Kagoshima,Cerveza,,新照院町41-1,Brewery producing beer at its Kagoshima unit.,,,,https://www.shiroyama-g.co.jp/feature/charm/brewery,,https://www.instagram.com/shiroyamahotelkagoshima/,,31.59681,130.55714,,parcial,no comprobado,,,2284,en
+amami-brewery,奄美ビール (AMAMI BREWERY),Amami,Cerveza,,名瀬港町1-2,Brewery producing beer at its Amami unit.,,,,https://amamibeer.com/,,https://www.instagram.com/amamibeer/,,28.34556,129.50222,,parcial,no comprobado,,,2344,en
+catch-the-beer,Catch the Beer (屋久島キャッチザビール),Yakushima,Cerveza,,安房2411-137,Brewery producing beer at its Yakushima unit.,,,,,,https://www.instagram.com/catchthebeer/,,30.39025,130.6515,,parcial,no comprobado,,,125,en
+matoba-suisan-makurazaki,的場水産,Makurazaki,Pescado,Katsuobushi,,Produces fermented and dried katsuobushi in Makurazaki.,,,,https://katsuoya.jp/,,,,31.27292,130.29692,,verificado,sí,ecommerce,,2967,en
+marumo-makurazaki,マルモ,Makurazaki,Pescado,"Katsuobushi, shaved bonito",鹿児島県枕崎市泉町35番地,Produces katsuobushi from raw bonito through final shaving at its Makurazaki factory.,,+81993721325,info@kk-marumo.co.jp,https://kk-marumo.co.jp/,,,,31.268229,130.302338,,verificado,no comprobado,,,1944,en
+satomaru-suisan-tarumizu,さと丸水産,Tarumizu,Pescado,"Yellowtail, sea bream, striped jack",鹿児島県垂水市中俣142,"Farms yellowtail, sea bream and striped jack in Tarumizu.",,,,https://www.sancyokutarumizu.com/blank-9,,,,31.516428,130.698288,,parcial,no comprobado,,,1517,en

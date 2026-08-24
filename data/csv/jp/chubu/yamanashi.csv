@@ -1,54 +1,54 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-grace-wine-koshu,Grace Wine,Koshu,Vino,Koshu,,,,,,https://www.grace-wine.com/,,,,35.704330,138.729420,,parcial,no comprobado,,,273
-marufuji-winery-koshu,Marufuji Winery,Koshu,Vino,Rubaiyat,,,,,,https://www.rubaiyat.jp/,,,,35.704330,138.729420,,parcial,no comprobado,,,731
-uchu-brewing-hokuto,Uchu Brewing,Hokuto,Cerveza,,,,,,,https://uchubrewing.com/,,,,35.776470,138.423640,,parcial,no comprobado,,,1292
-chuo-budoshu-grace-wine-koshu-katsunuma,Chuo Budoshu / Grace Wine,Koshu (Katsunuma),Vino,,,,,,,https://grace-wine.com,,,,35.665806,138.714874,,parcial,no comprobado,,,144
-marufuji-winery-rubaiyat-koshu-katsunuma,Marufuji Winery / Rubaiyat,Koshu (Katsunuma),Vino,,,,,,,https://rubaiyat.jp,,,,35.649761,138.715164,,parcial,no comprobado,,,732
-yamanashi-meijo-hokuto,Yamanashi Meijo,Hokuto,Sake,,山梨県北杜市白州町台ケ原2283,,,+81551352236,,http://www.sake-shichiken.co.jp/,,,,35.803627,138.342529,,parcial,no comprobado,,,1353
-takenoi-shuzo-hokuto,Takenoi Shuzo,Hokuto,Sake,,山梨県北杜市高根町箕輪1450,,,+81551472277,,http://www008.upp.so-net.ne.jp/takenoi/,,,,35.819832,138.42688,,parcial,no comprobado,,,1197
-yamaki-shuzoten-hokuto,Yamaki Shuzoten,Hokuto,Sake,,山梨県北斗市高根町下黒澤950,,,+81551473130,,http://yamakishuzou.com/,,,,35.7765,138.4236,,parcial,no comprobado,,,1350
-tanizakura-shuzo-hokuto,Tanizakura Shuzo,Hokuto,Sake,,山梨県北杜市大泉町谷戸2037,,,+81551382008,,http://www.tanizakura.co.jp/,,,,35.894646,138.371689,,parcial,no comprobado,,,1213
-sasaichi-shuzo-otsuki,Sasaichi Shuzo,Otsuki,Sake,,山梨県大月市笹子町吉久保26,,,+81554252111,,http://www.sasaichi.co.jp/,,,,35.598862,138.834488,,parcial,no comprobado,,,1046
-ide-jozoten-fujikawaguchiko,Ide Jozoten,Fujikawaguchiko,Sake,,山梨県南都留郡富士河口湖町船津3837,,,+81555720008,,http://www.kainokaiun.jp/,,,,35.501644,138.766876,,parcial,no comprobado,,,359
-yorozuya-jozoten-fujikawa,Yorozuya Jozoten,Fujikawa,Sake,,山梨県南巨摩郡富士川町青柳町1202-1,,,+81556222103,,http://www.shunnoten.co.jp/,,,,35.560413,138.466934,,parcial,no comprobado,,,1381
-okubo-shuzoten-fujikawa,Okubo Shuzoten,Fujikawa,Sake,,山梨県南巨摩郡富士川町大久保341,,,+81556220227,,,,,,35.564438,138.448288,,parcial,no comprobado,,,926
-yoro-shuzo,Yoro Shuzo,Yamanashi,Sake,,山梨県山梨市北567,,,+81553224047,,http://fruits.jp/~omoshiro-sakaya/,,,,35.704872,138.691483,,parcial,no comprobado,,,1380
-taikan-shuzo-minami-alps,Taikan Shuzo,Minami-Alps,Sake,,山梨県南アルプス市上宮地57,,,+81552821116,,http://www.taikan-y.co.jp/,,,,35.61948,138.448013,,parcial,no comprobado,,,1162
-yokouchi-shuzoten-minami-alps,Yokouchi Shuzoten,Minami-Alps,Sake,,山梨県南アルプス市上宮地57,,,+81552820038,,,,,,35.61948,138.448013,,parcial,no comprobado,,,1375
-yokoyama-shuzoten-nanbu,Yokoyama Shuzoten,Nanbu,Sake,,山梨県南巨摩郡南部町南部8255,,,+81556643211,,,,,,35.289764,138.447525,,parcial,no comprobado,,,1376
-udezumo-shuzo-fuefuki,Udezumo Shuzo,Fuefuki,Sake,,山梨県笛吹市御坂町夏目原1374,,,+81552623010,,http://www.udezumou.co.jp/,,,,35.629948,138.661438,,parcial,no comprobado,,,1293
-sun-foods-koshu,Sun Foods,Koshu,Sake,,〒404-0036 山梨県甲州市塩山熊野1205-1,,,+81553323343,,https://www.sanfoodskumano.jp/,,,,35.690823,138.725616,,parcial,no comprobado,,,1148
-hakushugo-farm-hokuto,Hakushugo Farm,Hokuto,Huevos,"Free-range eggs, organic vegetables",山梨県北杜市白州町横手4807　他,"Hakushugo Farm produces free-range eggs, organic vegetables at its Hokuto unit, which is listed in the national organic JAS operator register.",,,,http://www.hakusyu.jp/,,,,35.773617,138.287430,,verificado,no comprobado,,,289
-kurofuji-farm-kai,Kurofuji Farm,Kai,Huevos,Organic eggs,山梨県甲斐市上芦沢1316,"Kurofuji Farm produces organic eggs at its Kai unit, which is listed in the national organic JAS operator register.",,+81120804105,,http://www.kurofuji.com/,,,,35.790558,138.540497,,verificado,sí,ecommerce,,688
-forest-farm-fujiyoshida,Forest Farm,Fujiyoshida,Fruta y verdura,Watercress,山梨県富士吉田市上吉田3095、3094、3162、3163、3164、3165　他,"Forest Farm produces watercress at its Fujiyoshida unit, which is listed in the national organic JAS operator register.",,+81583850267,,https://forestfarm.jp/,,,,35.426395,138.753159,,verificado,no comprobado,,,221
-fujikanko-fujikawaguchiko,富士観光開発 (富士桜高原麦酒),Fujikawaguchiko,Cerveza,,,Brews beer at its Fujikawaguchiko unit.,,,,https://www.fujikanko.co.jp/,,,,35.497250,138.754940,,verificado,no comprobado,,,2392
-kawaguchiko-cheese-fujikawaguchiko,河口湖チーズ工房,Fujikawaguchiko,Lácteos y quesos,"リコッタ, 酒粕ゴーダ, カチョカバロ",山梨県南都留郡富士河口湖町富士ヶ嶺856-3,Produces cheese and dairy products at its Fujikawaguchiko unit.,,,,https://www.kawaguchiko-cheese.com/,,,,35.497250,138.754940,,verificado,no comprobado,,,2859
-meg-snow-hokuto,雪印メグミルク 小淵沢チーズ工房,Hokuto,Lácteos y quesos,"ブルー, 淡雪",山梨県北杜市小淵沢町6897,Produces cheese and dairy products at its Hokuto unit.,,,,https://www.meg-snow.com/,,,,35.776470,138.423640,,verificado,no comprobado,,,3280
-yatsugatake-beer-hokuto,萌木の村 (八ヶ岳タッチダウンビール),Hokuto,Cerveza,,,Brews beer at its Hokuto unit.,,,,https://www.yatsugatake-beer.com/,,,,35.776470,138.423640,,verificado,sí,ecommerce,,3119
-tabechoku-23601,丹波山倶楽部,Tabayama,Setas,野菜,,Produces vegetables at its Tabayama unit.,,,,,,,,35.789690,138.922250,,parcial,sí,marketplace,,2092
-tabechoku-25092,甲州きくらげ,Koshu,Setas,,,Produces mushrooms at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,2950
-tabechoku-28389,結理苑,Hokuto,Pescado,,,Produces fish and seafood at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,3053
-tabechoku-3078481,大月のびのびファーム,Ōtsuki-shi,Carne,,,Produces meat at its Ōtsuki-shi unit.,,,,,,,,35.610560,138.940000,,parcial,sí,marketplace,,2318
-tabechoku-23678,大和ファーム,Hokuto,Fruta y verdura,,,Produces fruit and vegetables at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,2308
-tabechoku-22275,こぴっと,Hokuto,Pan y cereal,"梨, 米",,Produces pears and rice at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,1500
-tabechoku-28680,Fairy Valley（フェアリーバレー）,Hokuto,Fruta y verdura,,,Produces fruit and vegetables at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,209
-tabechoku-28390,and farm,Minami-Alps,Fruta y verdura,"桃, すもも",,Produces peaches and plums at its Minami-Alps unit.,,,,https://andfarm.jp/,,,,35.608310,138.465030,,verificado,sí,marketplace,,54
-tabechoku-22231,もぐもぐ農園,Minami-Alps,Fruta y verdura,"ぶどう, 桃, すもも",,"Produces grapes, peaches and plums at its Minami-Alps unit.",,,,,,,,35.608310,138.465030,,parcial,sí,marketplace,,1660
-tabechoku-26893,【富士信玄とうもろこし】大澤園,Fujikawaguchiko,Fruta y verdura,,,Produces fruit and vegetables at its Fujikawaguchiko unit.,,,,,,,,35.497250,138.754940,,parcial,sí,marketplace,,2391
-tabechoku-3077819,For Farm,Yamanashi,Fruta y verdura,"梨, ぶどう",,Produces pears and grapes at its Yamanashi unit.,,,,,,,,35.693440,138.686890,,parcial,sí,marketplace,,220
-tabechoku-23008,まるいち農産加工所,Ichikawamisato,Fruta y verdura,梨,,Produces pears at its Ichikawamisato unit.,,,,,,,,35.565170,138.502390,,parcial,sí,marketplace,,1634
-tabechoku-3077591,HARU FARM,Koshu,Fruta y verdura,"桃, 梨",,Produces peaches and pears at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,303
-tabechoku-22215,ぶどうの樹,Koshu,Fruta y verdura,"梨, ぶどう",,Produces pears and grapes at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,1611
-tabechoku-3077465,自然農菜園 はたけや,Koshu,Fruta y verdura,"梨, 野菜",,Produces pears and vegetables at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,3085
-tabechoku-20719,前田龍珠園,Koshu,Fruta y verdura,"梨, ワイン",,Produces pears and wine at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,2194
-tabechoku-23585,赤白園,Koshu,Fruta y verdura,"梨, ぶどう",,Produces pears and grapes at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,3173
-tabechoku-3078147,百笑 有田農園,Tsuru,Fruta y verdura,"梨, 野菜",,Produces pears and vegetables at its Tsuru unit.,,,,,,,,35.551530,138.905440,,parcial,sí,marketplace,,2966
-tabechoku-28620,山の幸ファーム,Fuefuki,Fruta y verdura,"桃, 梨, ぶどう",,"Produces peaches, pears and grapes at its Fuefuki unit.",,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,2418
-tabechoku-29231,アーリーファーム,Fuefuki,Fruta y verdura,,,Produces fruit and vegetables at its Fuefuki unit.,,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,1713
-tabechoku-24250,HOPE園,Fuefuki,Fruta y verdura,"桃, ぶどう",,Produces peaches and grapes at its Fuefuki unit.,,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,341
-tabechoku-24945,星野果樹園,Fuefuki,Fruta y verdura,,,Produces fruit and vegetables at its Fuefuki unit.,,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,2577
-jp-yamanashi-kikyouya-co-f5e8467,桔梗屋,笛吹市,Dulces y repostería,和菓子,笛吹市一宮町坪井 1928,"Produces Japanese confectionery in 笛吹市, yamanashi.",,,,https://kikyouya.co.jp/,,,,35.647310,138.639720,,verificado,no comprobado,,,2799
-jp-yamanashi-hattan-9e64ae8,御菓子司すがや,都留市,Dulces y repostería,和菓子,都留市中央 3-4-3,"Produces Japanese confectionery in 都留市, yamanashi.",,,,https://hattan.jp/,,,,35.551530,138.905440,,verificado,no comprobado,,,2516
-far-yeast-brewing-kosuge,Far Yeast Brewing,Kosuge,Cerveza,"Far Yeast White, Far Yeast IPA, Far Yeast Blonde",小菅村4341-1,"Makes Far Yeast craft beer at the Genryu Brewery in Kosuge, its brewery and headquarters since 2020.",,,,https://faryeast.com/,,,,35.760190,138.940220,,verificado,sí,ecommerce,,210
-98beers,98BEERS,Koshu,Cerveza,,塩山福生里250-1,Brewery producing beer at its Koshu unit.,,,,,,https://www.instagram.com/98beers/,,35.70433,138.72942,,parcial,no comprobado,,,10
-outsider-brewing,Outsider Brewing,Kofu,Cerveza,,中央1-1-5,Brewery producing beer at its Kofu unit.,,,,,,https://www.instagram.com/outsider_brewing/,,35.66214,138.56822,,parcial,no comprobado,,,983
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+grace-wine-koshu,Grace Wine,Koshu,Vino,Koshu,,,,,,https://www.grace-wine.com/,,,,35.704330,138.729420,,parcial,no comprobado,,,273,
+marufuji-winery-koshu,Marufuji Winery,Koshu,Vino,Rubaiyat,,,,,,https://www.rubaiyat.jp/,,,,35.704330,138.729420,,parcial,no comprobado,,,731,
+uchu-brewing-hokuto,Uchu Brewing,Hokuto,Cerveza,,,,,,,https://uchubrewing.com/,,,,35.776470,138.423640,,parcial,no comprobado,,,1292,
+chuo-budoshu-grace-wine-koshu-katsunuma,Chuo Budoshu / Grace Wine,Koshu (Katsunuma),Vino,,,,,,,https://grace-wine.com,,,,35.665806,138.714874,,parcial,no comprobado,,,144,
+marufuji-winery-rubaiyat-koshu-katsunuma,Marufuji Winery / Rubaiyat,Koshu (Katsunuma),Vino,,,,,,,https://rubaiyat.jp,,,,35.649761,138.715164,,parcial,no comprobado,,,732,
+yamanashi-meijo-hokuto,Yamanashi Meijo,Hokuto,Sake,,山梨県北杜市白州町台ケ原2283,,,+81551352236,,http://www.sake-shichiken.co.jp/,,,,35.803627,138.342529,,parcial,no comprobado,,,1353,
+takenoi-shuzo-hokuto,Takenoi Shuzo,Hokuto,Sake,,山梨県北杜市高根町箕輪1450,,,+81551472277,,http://www008.upp.so-net.ne.jp/takenoi/,,,,35.819832,138.42688,,parcial,no comprobado,,,1197,
+yamaki-shuzoten-hokuto,Yamaki Shuzoten,Hokuto,Sake,,山梨県北斗市高根町下黒澤950,,,+81551473130,,http://yamakishuzou.com/,,,,35.7765,138.4236,,parcial,no comprobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizakura Shuzo,Hokuto,Sake,,山梨県北杜市大泉町谷戸2037,,,+81551382008,,http://www.tanizakura.co.jp/,,,,35.894646,138.371689,,parcial,no comprobado,,,1213,
+sasaichi-shuzo-otsuki,Sasaichi Shuzo,Otsuki,Sake,,山梨県大月市笹子町吉久保26,,,+81554252111,,http://www.sasaichi.co.jp/,,,,35.598862,138.834488,,parcial,no comprobado,,,1046,
+ide-jozoten-fujikawaguchiko,Ide Jozoten,Fujikawaguchiko,Sake,,山梨県南都留郡富士河口湖町船津3837,,,+81555720008,,http://www.kainokaiun.jp/,,,,35.501644,138.766876,,parcial,no comprobado,,,359,
+yorozuya-jozoten-fujikawa,Yorozuya Jozoten,Fujikawa,Sake,,山梨県南巨摩郡富士川町青柳町1202-1,,,+81556222103,,http://www.shunnoten.co.jp/,,,,35.560413,138.466934,,parcial,no comprobado,,,1381,
+okubo-shuzoten-fujikawa,Okubo Shuzoten,Fujikawa,Sake,,山梨県南巨摩郡富士川町大久保341,,,+81556220227,,,,,,35.564438,138.448288,,parcial,no comprobado,,,926,
+yoro-shuzo,Yoro Shuzo,Yamanashi,Sake,,山梨県山梨市北567,,,+81553224047,,http://fruits.jp/~omoshiro-sakaya/,,,,35.704872,138.691483,,parcial,no comprobado,,,1380,
+taikan-shuzo-minami-alps,Taikan Shuzo,Minami-Alps,Sake,,山梨県南アルプス市上宮地57,,,+81552821116,,http://www.taikan-y.co.jp/,,,,35.61948,138.448013,,parcial,no comprobado,,,1162,
+yokouchi-shuzoten-minami-alps,Yokouchi Shuzoten,Minami-Alps,Sake,,山梨県南アルプス市上宮地57,,,+81552820038,,,,,,35.61948,138.448013,,parcial,no comprobado,,,1375,
+yokoyama-shuzoten-nanbu,Yokoyama Shuzoten,Nanbu,Sake,,山梨県南巨摩郡南部町南部8255,,,+81556643211,,,,,,35.289764,138.447525,,parcial,no comprobado,,,1376,
+udezumo-shuzo-fuefuki,Udezumo Shuzo,Fuefuki,Sake,,山梨県笛吹市御坂町夏目原1374,,,+81552623010,,http://www.udezumou.co.jp/,,,,35.629948,138.661438,,parcial,no comprobado,,,1293,
+sun-foods-koshu,Sun Foods,Koshu,Sake,,〒404-0036 山梨県甲州市塩山熊野1205-1,,,+81553323343,,https://www.sanfoodskumano.jp/,,,,35.690823,138.725616,,parcial,no comprobado,,,1148,
+hakushugo-farm-hokuto,Hakushugo Farm,Hokuto,Huevos,"Free-range eggs, organic vegetables",山梨県北杜市白州町横手4807　他,"Hakushugo Farm produces free-range eggs, organic vegetables at its Hokuto unit.",,,,http://www.hakusyu.jp/,,,,35.773617,138.287430,,verificado,no comprobado,,,289,en
+kurofuji-farm-kai,Kurofuji Farm,Kai,Huevos,Organic eggs,山梨県甲斐市上芦沢1316,Kurofuji Farm produces organic eggs at its Kai unit.,,+81120804105,,http://www.kurofuji.com/,,,,35.790558,138.540497,,verificado,sí,ecommerce,,688,en
+forest-farm-fujiyoshida,Forest Farm,Fujiyoshida,Fruta y verdura,Watercress,山梨県富士吉田市上吉田3095、3094、3162、3163、3164、3165　他,Forest Farm produces watercress at its Fujiyoshida unit.,,+81583850267,,https://forestfarm.jp/,,,,35.426395,138.753159,,verificado,no comprobado,,,221,en
+fujikanko-fujikawaguchiko,富士観光開発 (富士桜高原麦酒),Fujikawaguchiko,Cerveza,,,Brews beer at its Fujikawaguchiko unit.,,,,https://www.fujikanko.co.jp/,,,,35.497250,138.754940,,verificado,no comprobado,,,2392,en
+kawaguchiko-cheese-fujikawaguchiko,河口湖チーズ工房,Fujikawaguchiko,Lácteos y quesos,"リコッタ, 酒粕ゴーダ, カチョカバロ",山梨県南都留郡富士河口湖町富士ヶ嶺856-3,Produces cheese and dairy products at its Fujikawaguchiko unit.,,,,https://www.kawaguchiko-cheese.com/,,,,35.497250,138.754940,,verificado,no comprobado,,,2859,en
+meg-snow-hokuto,雪印メグミルク 小淵沢チーズ工房,Hokuto,Lácteos y quesos,"ブルー, 淡雪",山梨県北杜市小淵沢町6897,Produces cheese and dairy products at its Hokuto unit.,,,,https://www.meg-snow.com/,,,,35.776470,138.423640,,verificado,no comprobado,,,3280,en
+yatsugatake-beer-hokuto,萌木の村 (八ヶ岳タッチダウンビール),Hokuto,Cerveza,,,Brews beer at its Hokuto unit.,,,,https://www.yatsugatake-beer.com/,,,,35.776470,138.423640,,verificado,sí,ecommerce,,3119,en
+tabechoku-23601,丹波山倶楽部,Tabayama,Setas,野菜,,Produces vegetables at its Tabayama unit.,,,,,,,,35.789690,138.922250,,parcial,sí,marketplace,,2092,en
+tabechoku-25092,甲州きくらげ,Koshu,Setas,,,Produces mushrooms at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,2950,en
+tabechoku-28389,結理苑,Hokuto,Pescado,,,Produces fish and seafood at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,3053,en
+tabechoku-3078481,大月のびのびファーム,Ōtsuki-shi,Carne,,,Produces meat at its Ōtsuki-shi unit.,,,,,,,,35.610560,138.940000,,parcial,sí,marketplace,,2318,en
+tabechoku-23678,大和ファーム,Hokuto,Fruta y verdura,,,大和ファーム produces fruit and vegetables at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,2308,en
+tabechoku-22275,こぴっと,Hokuto,Pan y cereal,"梨, 米",,Produces pears and rice at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,1500,en
+tabechoku-28680,Fairy Valley（フェアリーバレー）,Hokuto,Fruta y verdura,,,Fairy Valley（フェアリーバレー） produces fruit and vegetables at its Hokuto unit.,,,,,,,,35.776470,138.423640,,parcial,sí,marketplace,,209,en
+tabechoku-28390,and farm,Minami-Alps,Fruta y verdura,"桃, すもも",,Produces peaches and plums at its Minami-Alps unit.,,,,https://andfarm.jp/,,,,35.608310,138.465030,,verificado,sí,marketplace,,54,en
+tabechoku-22231,もぐもぐ農園,Minami-Alps,Fruta y verdura,"ぶどう, 桃, すもも",,"Produces grapes, peaches and plums at its Minami-Alps unit.",,,,,,,,35.608310,138.465030,,parcial,sí,marketplace,,1660,en
+tabechoku-26893,【富士信玄とうもろこし】大澤園,Fujikawaguchiko,Fruta y verdura,,,Produces fruit and vegetables at its Fujikawaguchiko unit.,,,,,,,,35.497250,138.754940,,parcial,sí,marketplace,,2391,en
+tabechoku-3077819,For Farm,Yamanashi,Fruta y verdura,"梨, ぶどう",,Produces pears and grapes at its Yamanashi unit.,,,,,,,,35.693440,138.686890,,parcial,sí,marketplace,,220,en
+tabechoku-23008,まるいち農産加工所,Ichikawamisato,Fruta y verdura,梨,,Produces pears at its Ichikawamisato unit.,,,,,,,,35.565170,138.502390,,parcial,sí,marketplace,,1634,en
+tabechoku-3077591,HARU FARM,Koshu,Fruta y verdura,"桃, 梨",,Produces peaches and pears at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,303,en
+tabechoku-22215,ぶどうの樹,Koshu,Fruta y verdura,"梨, ぶどう",,ぶどうの樹 produces pears and grapes at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,1611,en
+tabechoku-3077465,自然農菜園 はたけや,Koshu,Fruta y verdura,"梨, 野菜",,Produces pears and vegetables at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,3085,en
+tabechoku-20719,前田龍珠園,Koshu,Fruta y verdura,"梨, ワイン",,Produces pears and wine at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,2194,en
+tabechoku-23585,赤白園,Koshu,Fruta y verdura,"梨, ぶどう",,赤白園 produces pears and grapes at its Koshu unit.,,,,,,,,35.704330,138.729420,,parcial,sí,marketplace,,3173,en
+tabechoku-3078147,百笑 有田農園,Tsuru,Fruta y verdura,"梨, 野菜",,Produces pears and vegetables at its Tsuru unit.,,,,,,,,35.551530,138.905440,,parcial,sí,marketplace,,2966,en
+tabechoku-28620,山の幸ファーム,Fuefuki,Fruta y verdura,"桃, 梨, ぶどう",,"Produces peaches, pears and grapes at its Fuefuki unit.",,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,2418,en
+tabechoku-29231,アーリーファーム,Fuefuki,Fruta y verdura,,,アーリーファーム produces fruit and vegetables at its Fuefuki unit.,,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,1713,en
+tabechoku-24250,HOPE園,Fuefuki,Fruta y verdura,"桃, ぶどう",,Produces peaches and grapes at its Fuefuki unit.,,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,341,en
+tabechoku-24945,星野果樹園,Fuefuki,Fruta y verdura,,,星野果樹園 produces fruit and vegetables at its Fuefuki unit.,,,,,,,,35.647310,138.639720,,parcial,sí,marketplace,,2577,en
+jp-yamanashi-kikyouya-co-f5e8467,桔梗屋,笛吹市,Dulces y repostería,和菓子,笛吹市一宮町坪井 1928,"Produces Japanese confectionery in 笛吹市, yamanashi.",,,,https://kikyouya.co.jp/,,,,35.647310,138.639720,,verificado,no comprobado,,,2799,en
+jp-yamanashi-hattan-9e64ae8,御菓子司すがや,都留市,Dulces y repostería,和菓子,都留市中央 3-4-3,"Produces Japanese confectionery in 都留市, yamanashi.",,,,https://hattan.jp/,,,,35.551530,138.905440,,verificado,no comprobado,,,2516,en
+far-yeast-brewing-kosuge,Far Yeast Brewing,Kosuge,Cerveza,"Far Yeast White, Far Yeast IPA, Far Yeast Blonde",小菅村4341-1,"Makes Far Yeast craft beer at the Genryu Brewery in Kosuge, its brewery and headquarters since 2020.",,,,https://faryeast.com/,,,,35.760190,138.940220,,verificado,sí,ecommerce,,210,en
+98beers,98BEERS,Koshu,Cerveza,,塩山福生里250-1,Brewery producing beer at its Koshu unit.,,,,,,https://www.instagram.com/98beers/,,35.70433,138.72942,,parcial,no comprobado,,,10,en
+outsider-brewing,Outsider Brewing,Kofu,Cerveza,,中央1-1-5,Brewery producing beer at its Kofu unit.,,,,,,https://www.instagram.com/outsider_brewing/,,35.66214,138.56822,,parcial,no comprobado,,,983,en

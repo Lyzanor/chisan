@@ -1,57 +1,57 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-akita-shurui-seizo,Akita Shurui Seizo,Akita,Sake,Takashimizu,Akita,"Maker of Takashimizu, the prefecture's best-selling label, with its own online shop and a direct sales room at the kura.",,,,https://www.takashimizu.co.jp/,,,,39.719890,140.102580,,verificado,sí,ecommerce,,46
-kimura-shuzo-yuzawa,Kimura Shuzo,Yuzawa,Sake,Fukukomachi,Yuzawa,"Brewery founded in 1615, the second oldest in Akita, maker of Fukukomachi. Own online shop.",,,,https://www.fukukomachi.com/,,https://www.instagram.com/fukukomachi1615/,,39.164440,140.495830,,verificado,sí,ecommerce,,572
-hiraizumi-honpo-nikaho,Hiraizumi Honpo,Nikaho,Sake,Hiraizumi,Nikaho,"Founded in 1487 and among the oldest breweries in Japan, now in its twenty-seventh generation. Closed kura sales in 2024.",,,,https://www.hiraizumi.co.jp/,,,,39.203000,139.907720,,verificado,no comprobado,,,323
-saiya-shuzoten-yurihonjo,Saiya Shuzoten,Yurihonjo,Sake,Yuki no Bosha,"Ishiwaki 53, Yurihonjo","Maker of Yuki no Bosha, in a kura built on a slope. States explicitly that it does not ship retail: buy at a specialist shop or at its Hakko Koji Taya premises.",,+81184220536,,https://www.yukinobosha.jp/,,,,39.385860,140.048830,,verificado,no,,,1022
-aramasa-shuzo,Aramasa Shuzo,Akita,Sake,"Aramasa, Colors series","Omachi 6-2-35, Akita","Brewery founded in 1852 in central Akita, source of kyokai yeast number 6, the oldest still in use. Brews only with its own yeast and prefecture rice. No domain found.",,+81188236407,,,,,,39.719890,140.102580,,parcial,no comprobado,,,66
-hinomaru-jozo-yokote,Hinomaru Jozo,Yokote,Sake,Mansaku no Hana,Yokote,"Brewery founded in 1689 in Masuda, Yokote, with an interior warehouse listed as cultural property. Its only own presence found is Instagram.",,,,,,https://www.instagram.com/hinomarusake/,,39.313720,140.566610,,parcial,no comprobado,,,322
-akita-jozo,Akita Jozo,Akita,Sake,,秋田県秋田市新屋元町23-28,,,+81188281311,,http://www.akitabare.jp/,,,,39.683716,140.083557,,parcial,no comprobado,,,43
-akita-shuzo,Akita Shuzo,Akita,Sake,,秋田県秋田市新屋元町23-28,,,+81188281311,,http://www.akitabare.jp/,,,,39.683716,140.083557,,parcial,no comprobado,,,47
-nawa-shoten,Nawa Shoten,Akita,Sake,,秋田県秋田市土崎港中央1-16-41,,,+81188451260,,http://jizakemonogatari.net/index.html,,,,39.753426,140.067566,,parcial,no comprobado,,,849
-akita-seishu-daisen,Akita Seishu,Daisen,Sake,,秋田県大仙市戸地谷字天ケ沢83-1,,,+81187631224,,http://www.igeta.jp,,,,39.463902,140.496338,,parcial,no comprobado,,,45
-kariho-shuzo-daisen,Kariho Shuzo,Daisen,Sake,,秋田県大仙市神宮寺字神宮寺275,,,+81187722311,,http://www.igeta.jp/about-kariho/,,,,39.488171,140.427246,,parcial,no comprobado,,,518
-dewatsuru-shuzo-daisen,Dewatsuru Shuzo,Daisen,Sake,,秋田県大仙市南外悪戸野81,,,+81187631224,,,,,,39.446205,140.350235,,parcial,no comprobado,,,172
-fukunotomo-shuzo-daisen,Fukunotomo Shuzo,Daisen,Sake,,秋田県大仙市神宮寺字本郷野82-6,,,+81187724141,,http://www.fukunotomo.co.jp/,,,,39.493828,140.424896,,parcial,no comprobado,,,240
-suzuki-shuzoten-daisen,Suzuki Shuzoten,Daisen,Sake,,秋田県大仙市長野字二日町9,,,+81187562121,,http://www.hideyoshi.co.jp/,,,,39.540977,140.532776,,parcial,no comprobado,,,1153
-azakura-shuzo-yokote,Azakura Shuzo,Yokote,Sake,,秋田県横手市大沢字西野67-2,,,+81182320126,,http://www.azakura.co.jp/,,,,39.304848,140.580994,,parcial,no comprobado,,,93
-asamai-shuzo-yokote,Asamai Shuzo,Yokote,Sake,,秋田県横手市平鹿町浅舞字浅舞388,,,+81182241030,,http://www.amanoto.co.jp/index.html,,,,39.263699,140.487778,,parcial,no comprobado,,,83
-ryozeki-shuzo-yuzawa,Ryozeki Shuzo,Yuzawa,Sake,,秋田県湯沢市前森4-3-18,,,+81183733143,,http://www.ryozeki.co.jp/index.html,,,,39.170914,140.493195,,parcial,no comprobado,,,1013
-akita-meijo-yuzawa,Akita Meijo,Yuzawa,Sake,,秋田県湯沢市大工町4-23,,,+81183733161,,http://www.ranman.co.jp/ranman/,,,,39.16787,140.49411,,parcial,no comprobado,,,44
-tenju-shuzo-yurihonjo,Tenju Shuzo,Yurihonjo,Sake,,秋田県由利本荘市矢島町城内字八森下117,,,+81184553165,,https://tenju.co.jp/,,,,39.23111,140.136734,,parcial,no comprobado,,,1221
-fukurokuju-shuzo-gojome,Fukurokuju Shuzo,Gojome,Sake,,秋田県南秋田郡五城目町字下タ町48,,,+81188524130,,http://www.fukurokuju.jp/index.html,,,,39.944656,140.119095,,parcial,no comprobado,,,242
-yamamoto-shuzoten-happo,Yamamoto Shuzoten,Happo,Sake,,秋田県山本郡八峰町八森字八森269,,,+81185772311,,https://www.yamamoto-brewery.com/,,,,40.396355,140.038696,,parcial,no comprobado,,,1352
-kodama-jozo-katagami,Kodama Jozo,Katagami,Sake,,秋田県潟上市飯田川飯塚字飯塚34-1,,,+81188772100,,http://www.kodamajozo.co.jp/,,,,39.897377,140.076614,,parcial,no comprobado,,,621
-mkpaso-kazuno,株式会社 MKpaso/ワイナリーこのはな,Kazuno,Vino,,秋田県鹿角市花輪下花輪2-1,Produces wine at its Kazuno unit.,,+81186222388,,https://www.mkpaso.jp/,,,,40.215780,140.788500,,verificado,no comprobado,,,2711
-ishimago-yuzawa,石孫本店,Yuzawa,Condimentos,百寿,秋田県湯沢市岩崎字岩崎162,Produces soy sauce and traditional seasonings at its Yuzawa brewery.,,+81183732901,,https://ishimago.jp/,,,,39.164440,140.495830,,verificado,no comprobado,,,2976
-tabechoku-24424,瀧田養鶏場 たまごの樹,Akita,Huevos,卵,,Produces eggs at its Akita unit.,,,,,,,,39.719890,140.102580,,parcial,sí,marketplace,,2912
-tabechoku-27719,レンチナス奥羽伊勢,Happō-chō,Setas,"しいたけ, きのこ",,Produces shiitake and mushrooms at its Happō-chō unit.,,,,,,,,40.318890,140.038560,,parcial,sí,marketplace,,1997
-tabechoku-3077504,間木しいたけハウス@東成瀬テックソリューションズ,Higashinaruse,Setas,,,Produces mushrooms at its Higashinaruse unit.,,,,,,,,39.179080,140.648860,,parcial,sí,marketplace,,3272
-tabechoku-3078920,秋田しいたけ農園,Yuzawa,Setas,しいたけ,,Produces shiitake at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,3008
-tabechoku-29177,能延通商,Noshiro,Setas,"野菜, しいたけ",,Produces vegetables and shiitake at its Noshiro unit.,,,,,,,,40.211780,140.027080,,parcial,sí,marketplace,,3075
-tabechoku-28005,フジノ果,Yokote,Fruta y verdura,"りんご, スイカ",,Produces apples and watermelons at its Yokote unit.,,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,1903
-tabechoku-20062,果実庵とざわ,Kazuno,Fruta y verdura,りんご,,Produces apples at its Kazuno unit.,,,,,,,,40.215780,140.788500,,parcial,sí,marketplace,,2678
-tabechoku-3077240,ヒロファーム,Ugo,Legumbres,枝豆,,Produces edamame at its Ugo unit.,,,,,,,,39.199310,140.412940,,parcial,sí,marketplace,,1886
-tabechoku-22867,農園晴晴（はればれ）,Noshiro,Fruta y verdura,"にんにく, 野菜, 漬物",,"Produces garlic, vegetables and pickles at its Noshiro unit.",,,,,,,,40.211780,140.027080,,parcial,sí,marketplace,,3187
-tabechoku-21571,がっこ,Semboku,Conservas,漬物,,Produces pickles at its Semboku unit.,,,,,,,,39.700080,140.730580,,parcial,sí,marketplace,,1470
-tabechoku-26581,佐藤農園,Ōdate,Pan y cereal,,,Produces grain products at its Ōdate unit.,,,,,,,,40.271610,140.565310,,parcial,sí,marketplace,,2153
-tabechoku-3078060,nohmask農園,Yokote,Fruta y verdura,"トマト, にんにく, 野菜",,"Produces tomatoes, garlic and vegetables at its Yokote unit.",,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,881
-tabechoku-3077992,🌾こまちの田園,Yokote,Pan y cereal,米,,Produces rice at its Yokote unit.,,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,1503
-tabechoku-3078346,オヤマダファーム,Oga,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Oga unit.,,,,,,,,39.886750,139.847560,,parcial,sí,marketplace,,1735
-tabechoku-26747,白神産物まなぶ,Noshiro,Pan y cereal,"メロン, そば",,Produces melons and soba at its Noshiro unit.,,,,,,,,40.211780,140.027080,,parcial,sí,marketplace,,2960
-tabechoku-3077874,十和田アクアポニックス農場,Kosaka,Frutos secos,"野菜, 栗",,Produces vegetables and chestnuts at its Kosaka unit.,,,,,,,,40.333060,140.736110,,parcial,sí,marketplace,,2211
-tabechoku-28868,ひない渡辺農園しどけ村,Ōdate,Fruta y verdura,"スイカ, トマト, 野菜",,"Produces watermelons, tomatoes and vegetables at its Ōdate unit.",,,,,,,,40.271610,140.565310,,parcial,sí,marketplace,,1601
-tabechoku-3077761,OLAHO / おらほ,Ōdate,Fruta y verdura,にんにく,,Produces garlic at its Ōdate unit.,,,,,,,,40.271610,140.565310,,parcial,sí,marketplace,,936
-tabechoku-23827,きずな,Yokote,Fruta y verdura,スイカ,,Produces watermelons at its Yokote unit.,,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,1480
-tabechoku-3078606,Snow Field Market,Yuzawa,Fruta y verdura,"桃, トマト",,Produces peaches and tomatoes at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,1129
-tabechoku-23071,吉村,Yuzawa,Fruta y verdura,"スイカ, 野菜",,Produces watermelons and vegetables at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,2249
-tabechoku-24716,鮎乃家,Yuzawa,Pescado,鮎,,Produces ayu at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,3316
-jp-akita-chuokai-akita-or-a6986b2,三松堂,秋田市,Dulces y repostería,和菓子,秋田市中通 5-7-8,"Produces Japanese confectionery in 秋田市, akita.",,,,https://www2.chuokai-akita.or.jp/okasi/sansyoudo/,,,,39.719890,140.102580,,verificado,no comprobado,,,2015
-jp-akita-chuokai-akita-or-07a4a35,勝月,秋田市,Dulces y repostería,和菓子,秋田市保戸野通町 2-1,"Produces Japanese confectionery in 秋田市, akita.",,,,https://www2.chuokai-akita.or.jp/okasi/syougetu/,,,,39.719890,140.102580,,verificado,no comprobado,,,2200
-jp-akita-okashiyasan-co-aeba0a1,旭南高砂堂,秋田市,Dulces y repostería,和菓子,秋田市旭南 1-18-25,"Produces Japanese confectionery in 秋田市, akita.",,,,https://www.okashiyasan.co.jp/,,,,39.719890,140.102580,,verificado,sí,ecommerce,,2569
-jp-akita-kaorudo-1231560,かおる堂,秋田市,Dulces y repostería,和菓子,秋田市川尻町字大川反 170,"Produces Japanese confectionery in 秋田市, akita.",,,,http://www.kaorudo.jp/,,,,39.719890,140.102580,,verificado,no comprobado,,,1469
-jp-akita-eitaro-5da42e1,菓子舗榮太楼,秋田市,Dulces y repostería,和菓子,秋田市高陽幸町 9-11,"Produces Japanese confectionery in 秋田市, akita.",,,,https://www.eitaro.net/,,,,39.719890,140.102580,,verificado,no comprobado,,,3114
-jp-akita-akitainafuku-co-fbe24bd,秋田いなふく米菓株式会社,秋田市,Aperitivos,米菓,,"Produces rice crackers in 秋田市, akita.",,,,https://www.akitainafuku.co.jp/,,,,39.719890,140.102580,,verificado,no comprobado,,,3007
-tazawako-beer,わらび座 (田沢湖ビール / Tazawako Beer),Semboku,Cerveza,,田沢湖卒田字早稲田430,Brewery producing beer at its Semboku unit.,,,,,,https://www.instagram.com/tazawakobeer/,,39.70008,140.73058,,parcial,no comprobado,,,1695
-ugo-bakushu,羽後麦酒 (Ugo Bakushu),Ugo,Cerveza,,西馬音内字中町13,Brewery producing beer at its Ugo unit.,,,,,,https://www.instagram.com/ugobakushu/,,39.19931,140.41294,,parcial,no comprobado,,,3064
-moroi-jozo-oga,諸井醸造,Oga,Pescado,Fish sauce,秋田県男鹿市船川港船川字化世沢176,"Produces traditional shottsuru fish sauce from hatahata and salt, matured for several years.",,+81185243597,,https://www.shottsuru.jp/,,,,39.878757,139.845856,,verificado,sí,ecommerce,,3159
-suzuki-suisan-happo,鈴木水産,Happō,Pescado,"Hatahata-zushi, salted fish",秋田県山本郡八峰町八森磯村72-3,"Processes hatahata into traditional sushi, pickles and salted seafood at its Happō unit.",,+81185772217,suzuki@suzuki-suisan.co.jp,https://suzuki-suisan.co.jp/,,,,40.396355,140.038696,,verificado,sí,ecommerce,,3241
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+akita-shurui-seizo,Akita Shurui Seizo,Akita,Sake,Takashimizu,Akita,"Maker of Takashimizu, with its own online shop and a direct sales room at the kura.",,,,https://www.takashimizu.co.jp/,,,,39.719890,140.102580,,verificado,sí,ecommerce,,46,en
+kimura-shuzo-yuzawa,Kimura Shuzo,Yuzawa,Sake,Fukukomachi,Yuzawa,"Brewery founded in 1615 in Akita, maker of Fukukomachi. Own online shop.",,,,https://www.fukukomachi.com/,,https://www.instagram.com/fukukomachi1615/,,39.164440,140.495830,,verificado,sí,ecommerce,,572,en
+hiraizumi-honpo-nikaho,Hiraizumi Honpo,Nikaho,Sake,Hiraizumi,Nikaho,"Founded in 1487, now in its twenty-seventh generation. Closed kura sales in 2024.",,,,https://www.hiraizumi.co.jp/,,,,39.203000,139.907720,,verificado,no comprobado,,,323,en
+saiya-shuzoten-yurihonjo,Saiya Shuzoten,Yurihonjo,Sake,Yuki no Bosha,"Ishiwaki 53, Yurihonjo","Maker of Yuki no Bosha, in a kura built on a slope. States explicitly that it does not ship retail: buy at a specialist shop or at its Hakko Koji Taya premises.",,+81184220536,,https://www.yukinobosha.jp/,,,,39.385860,140.048830,,verificado,no,,,1022,en
+aramasa-shuzo,Aramasa Shuzo,Akita,Sake,"Aramasa, Colors series","Omachi 6-2-35, Akita","Brewery founded in 1852 in central Akita, source of kyokai yeast number 6. Brews only with its own yeast and prefecture rice.",,+81188236407,,,,,,39.719890,140.102580,,parcial,no comprobado,,,66,en
+hinomaru-jozo-yokote,Hinomaru Jozo,Yokote,Sake,Mansaku no Hana,Yokote,"Brewery founded in 1689 in Masuda, Yokote, with an interior warehouse listed as cultural property.",,,,,,https://www.instagram.com/hinomarusake/,,39.313720,140.566610,,parcial,no comprobado,,,322,en
+akita-jozo,Akita Jozo,Akita,Sake,,秋田県秋田市新屋元町23-28,,,+81188281311,,http://www.akitabare.jp/,,,,39.683716,140.083557,,parcial,no comprobado,,,43,
+akita-shuzo,Akita Shuzo,Akita,Sake,,秋田県秋田市新屋元町23-28,,,+81188281311,,http://www.akitabare.jp/,,,,39.683716,140.083557,,parcial,no comprobado,,,47,
+nawa-shoten,Nawa Shoten,Akita,Sake,,秋田県秋田市土崎港中央1-16-41,,,+81188451260,,http://jizakemonogatari.net/index.html,,,,39.753426,140.067566,,parcial,no comprobado,,,849,
+akita-seishu-daisen,Akita Seishu,Daisen,Sake,,秋田県大仙市戸地谷字天ケ沢83-1,,,+81187631224,,http://www.igeta.jp,,,,39.463902,140.496338,,parcial,no comprobado,,,45,
+kariho-shuzo-daisen,Kariho Shuzo,Daisen,Sake,,秋田県大仙市神宮寺字神宮寺275,,,+81187722311,,http://www.igeta.jp/about-kariho/,,,,39.488171,140.427246,,parcial,no comprobado,,,518,
+dewatsuru-shuzo-daisen,Dewatsuru Shuzo,Daisen,Sake,,秋田県大仙市南外悪戸野81,,,+81187631224,,,,,,39.446205,140.350235,,parcial,no comprobado,,,172,
+fukunotomo-shuzo-daisen,Fukunotomo Shuzo,Daisen,Sake,,秋田県大仙市神宮寺字本郷野82-6,,,+81187724141,,http://www.fukunotomo.co.jp/,,,,39.493828,140.424896,,parcial,no comprobado,,,240,
+suzuki-shuzoten-daisen,Suzuki Shuzoten,Daisen,Sake,,秋田県大仙市長野字二日町9,,,+81187562121,,http://www.hideyoshi.co.jp/,,,,39.540977,140.532776,,parcial,no comprobado,,,1153,
+azakura-shuzo-yokote,Azakura Shuzo,Yokote,Sake,,秋田県横手市大沢字西野67-2,,,+81182320126,,http://www.azakura.co.jp/,,,,39.304848,140.580994,,parcial,no comprobado,,,93,
+asamai-shuzo-yokote,Asamai Shuzo,Yokote,Sake,,秋田県横手市平鹿町浅舞字浅舞388,,,+81182241030,,http://www.amanoto.co.jp/index.html,,,,39.263699,140.487778,,parcial,no comprobado,,,83,
+ryozeki-shuzo-yuzawa,Ryozeki Shuzo,Yuzawa,Sake,,秋田県湯沢市前森4-3-18,,,+81183733143,,http://www.ryozeki.co.jp/index.html,,,,39.170914,140.493195,,parcial,no comprobado,,,1013,
+akita-meijo-yuzawa,Akita Meijo,Yuzawa,Sake,,秋田県湯沢市大工町4-23,,,+81183733161,,http://www.ranman.co.jp/ranman/,,,,39.16787,140.49411,,parcial,no comprobado,,,44,
+tenju-shuzo-yurihonjo,Tenju Shuzo,Yurihonjo,Sake,,秋田県由利本荘市矢島町城内字八森下117,,,+81184553165,,https://tenju.co.jp/,,,,39.23111,140.136734,,parcial,no comprobado,,,1221,
+fukurokuju-shuzo-gojome,Fukurokuju Shuzo,Gojome,Sake,,秋田県南秋田郡五城目町字下タ町48,,,+81188524130,,http://www.fukurokuju.jp/index.html,,,,39.944656,140.119095,,parcial,no comprobado,,,242,
+yamamoto-shuzoten-happo,Yamamoto Shuzoten,Happo,Sake,,秋田県山本郡八峰町八森字八森269,,,+81185772311,,https://www.yamamoto-brewery.com/,,,,40.396355,140.038696,,parcial,no comprobado,,,1352,
+kodama-jozo-katagami,Kodama Jozo,Katagami,Sake,,秋田県潟上市飯田川飯塚字飯塚34-1,,,+81188772100,,http://www.kodamajozo.co.jp/,,,,39.897377,140.076614,,parcial,no comprobado,,,621,
+mkpaso-kazuno,株式会社 MKpaso/ワイナリーこのはな,Kazuno,Vino,,秋田県鹿角市花輪下花輪2-1,Produces wine at its Kazuno unit.,,+81186222388,,https://www.mkpaso.jp/,,,,40.215780,140.788500,,verificado,no comprobado,,,2711,en
+ishimago-yuzawa,石孫本店,Yuzawa,Condimentos,百寿,秋田県湯沢市岩崎字岩崎162,Produces soy sauce and traditional seasonings at its Yuzawa brewery.,,+81183732901,,https://ishimago.jp/,,,,39.164440,140.495830,,verificado,no comprobado,,,2976,en
+tabechoku-24424,瀧田養鶏場 たまごの樹,Akita,Huevos,卵,,Produces eggs at its Akita unit.,,,,,,,,39.719890,140.102580,,parcial,sí,marketplace,,2912,en
+tabechoku-27719,レンチナス奥羽伊勢,Happō-chō,Setas,"しいたけ, きのこ",,Produces shiitake and mushrooms at its Happō-chō unit.,,,,,,,,40.318890,140.038560,,parcial,sí,marketplace,,1997,en
+tabechoku-3077504,間木しいたけハウス@東成瀬テックソリューションズ,Higashinaruse,Setas,,,Produces mushrooms at its Higashinaruse unit.,,,,,,,,39.179080,140.648860,,parcial,sí,marketplace,,3272,en
+tabechoku-3078920,秋田しいたけ農園,Yuzawa,Setas,しいたけ,,Produces shiitake at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,3008,en
+tabechoku-29177,能延通商,Noshiro,Setas,"野菜, しいたけ",,Produces vegetables and shiitake at its Noshiro unit.,,,,,,,,40.211780,140.027080,,parcial,sí,marketplace,,3075,en
+tabechoku-28005,フジノ果,Yokote,Fruta y verdura,"りんご, スイカ",,Produces apples and watermelons at its Yokote unit.,,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,1903,en
+tabechoku-20062,果実庵とざわ,Kazuno,Fruta y verdura,りんご,,Produces apples at its Kazuno unit.,,,,,,,,40.215780,140.788500,,parcial,sí,marketplace,,2678,en
+tabechoku-3077240,ヒロファーム,Ugo,Legumbres,枝豆,,Produces edamame at its Ugo unit.,,,,,,,,39.199310,140.412940,,parcial,sí,marketplace,,1886,en
+tabechoku-22867,農園晴晴（はればれ）,Noshiro,Fruta y verdura,"にんにく, 野菜, 漬物",,"Produces garlic, vegetables and pickles at its Noshiro unit.",,,,,,,,40.211780,140.027080,,parcial,sí,marketplace,,3187,en
+tabechoku-21571,がっこ,Semboku,Conservas,漬物,,Produces pickles at its Semboku unit.,,,,,,,,39.700080,140.730580,,parcial,sí,marketplace,,1470,en
+tabechoku-26581,佐藤農園,Ōdate,Pan y cereal,,,Produces grain products at its Ōdate unit.,,,,,,,,40.271610,140.565310,,parcial,sí,marketplace,,2153,en
+tabechoku-3078060,nohmask農園,Yokote,Fruta y verdura,"トマト, にんにく, 野菜",,"Produces tomatoes, garlic and vegetables at its Yokote unit.",,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,881,en
+tabechoku-3077992,🌾こまちの田園,Yokote,Pan y cereal,米,,Produces rice at its Yokote unit.,,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,1503,en
+tabechoku-3078346,オヤマダファーム,Oga,Pan y cereal,"玄米, 米",,Produces brown rice and rice at its Oga unit.,,,,,,,,39.886750,139.847560,,parcial,sí,marketplace,,1735,en
+tabechoku-26747,白神産物まなぶ,Noshiro,Pan y cereal,"メロン, そば",,Produces melons and soba at its Noshiro unit.,,,,,,,,40.211780,140.027080,,parcial,sí,marketplace,,2960,en
+tabechoku-3077874,十和田アクアポニックス農場,Kosaka,Frutos secos,"野菜, 栗",,Produces vegetables and chestnuts at its Kosaka unit.,,,,,,,,40.333060,140.736110,,parcial,sí,marketplace,,2211,en
+tabechoku-28868,ひない渡辺農園しどけ村,Ōdate,Fruta y verdura,"スイカ, トマト, 野菜",,"Produces watermelons, tomatoes and vegetables at its Ōdate unit.",,,,,,,,40.271610,140.565310,,parcial,sí,marketplace,,1601,en
+tabechoku-3077761,OLAHO / おらほ,Ōdate,Fruta y verdura,にんにく,,Produces garlic at its Ōdate unit.,,,,,,,,40.271610,140.565310,,parcial,sí,marketplace,,936,en
+tabechoku-23827,きずな,Yokote,Fruta y verdura,スイカ,,Produces watermelons at its Yokote unit.,,,,,,,,39.313720,140.566610,,parcial,sí,marketplace,,1480,en
+tabechoku-3078606,Snow Field Market,Yuzawa,Fruta y verdura,"桃, トマト",,Produces peaches and tomatoes at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,1129,en
+tabechoku-23071,吉村,Yuzawa,Fruta y verdura,"スイカ, 野菜",,Produces watermelons and vegetables at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,2249,en
+tabechoku-24716,鮎乃家,Yuzawa,Pescado,鮎,,Produces ayu at its Yuzawa unit.,,,,,,,,39.164440,140.495830,,parcial,sí,marketplace,,3316,en
+jp-akita-chuokai-akita-or-a6986b2,三松堂,秋田市,Dulces y repostería,和菓子,秋田市中通 5-7-8,"三松堂 produces Japanese confectionery in 秋田市, akita.",,,,https://www2.chuokai-akita.or.jp/okasi/sansyoudo/,,,,39.719890,140.102580,,verificado,no comprobado,,,2015,en
+jp-akita-chuokai-akita-or-07a4a35,勝月,秋田市,Dulces y repostería,和菓子,秋田市保戸野通町 2-1,"勝月 produces Japanese confectionery in 秋田市, akita.",,,,https://www2.chuokai-akita.or.jp/okasi/syougetu/,,,,39.719890,140.102580,,verificado,no comprobado,,,2200,en
+jp-akita-okashiyasan-co-aeba0a1,旭南高砂堂,秋田市,Dulces y repostería,和菓子,秋田市旭南 1-18-25,"旭南高砂堂 produces Japanese confectionery in 秋田市, akita.",,,,https://www.okashiyasan.co.jp/,,,,39.719890,140.102580,,verificado,sí,ecommerce,,2569,en
+jp-akita-kaorudo-1231560,かおる堂,秋田市,Dulces y repostería,和菓子,秋田市川尻町字大川反 170,"かおる堂 produces Japanese confectionery in 秋田市, akita.",,,,http://www.kaorudo.jp/,,,,39.719890,140.102580,,verificado,no comprobado,,,1469,en
+jp-akita-eitaro-5da42e1,菓子舗榮太楼,秋田市,Dulces y repostería,和菓子,秋田市高陽幸町 9-11,"菓子舗榮太楼 produces Japanese confectionery in 秋田市, akita.",,,,https://www.eitaro.net/,,,,39.719890,140.102580,,verificado,no comprobado,,,3114,en
+jp-akita-akitainafuku-co-fbe24bd,秋田いなふく米菓株式会社,秋田市,Aperitivos,米菓,,"Produces rice crackers in 秋田市, akita.",,,,https://www.akitainafuku.co.jp/,,,,39.719890,140.102580,,verificado,no comprobado,,,3007,en
+tazawako-beer,わらび座 (田沢湖ビール / Tazawako Beer),Semboku,Cerveza,,田沢湖卒田字早稲田430,Brewery producing beer at its Semboku unit.,,,,,,https://www.instagram.com/tazawakobeer/,,39.70008,140.73058,,parcial,no comprobado,,,1695,en
+ugo-bakushu,羽後麦酒 (Ugo Bakushu),Ugo,Cerveza,,西馬音内字中町13,Brewery producing beer at its Ugo unit.,,,,,,https://www.instagram.com/ugobakushu/,,39.19931,140.41294,,parcial,no comprobado,,,3064,en
+moroi-jozo-oga,諸井醸造,Oga,Pescado,Fish sauce,秋田県男鹿市船川港船川字化世沢176,"Produces traditional shottsuru fish sauce from hatahata and salt, matured for several years.",,+81185243597,,https://www.shottsuru.jp/,,,,39.878757,139.845856,,verificado,sí,ecommerce,,3159,en
+suzuki-suisan-happo,鈴木水産,Happō,Pescado,"Hatahata-zushi, salted fish",秋田県山本郡八峰町八森磯村72-3,"Processes hatahata into traditional sushi, pickles and salted seafood at its Happō unit.",,+81185772217,suzuki@suzuki-suisan.co.jp,https://suzuki-suisan.co.jp/,,,,40.396355,140.038696,,verificado,sí,ecommerce,,3241,en

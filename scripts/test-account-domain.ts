@@ -6,6 +6,7 @@ import {
   getAppUrl,
   getBootstrapAdminEmails,
   isAccountFeatureEnabled,
+  isProducerChangeSubmissionEnabled,
 } from "../lib/accounts/config";
 import {
   PRODUCER_EDITABLE_FIELDS,
@@ -105,6 +106,22 @@ test("Chisan account environment names take precedence with a temporary KM0 fall
   );
 });
 
+test("producer change submissions can be frozen without disabling account review", () => {
+  assert.equal(isProducerChangeSubmissionEnabled({}), true);
+  assert.equal(
+    isProducerChangeSubmissionEnabled({ CHISAN_PRODUCER_CHANGES_ENABLED: "true" }),
+    true,
+  );
+  assert.equal(
+    isProducerChangeSubmissionEnabled({ CHISAN_PRODUCER_CHANGES_ENABLED: "false" }),
+    false,
+  );
+  assert.equal(
+    isProducerChangeSubmissionEnabled({ CHISAN_PRODUCER_CHANGES_ENABLED: "typo" }),
+    false,
+  );
+});
+
 test("application origin is canonical and ignores invalid overrides", () => {
   assert.equal(getAppUrl({}), "https://chisan.app");
   assert.equal(
@@ -130,17 +147,76 @@ function validFields(): Record<string, string> {
 
 test("producer proposals return only changed allowlisted fields", () => {
   const current = validFields();
-  const proposal = { ...current, descripcion: "Keeps bees on its productive unit." };
+  const proposal = {
+    ...current,
+    descripcion: "Keeps bees on its productive unit.",
+    descripcion_locale: "en",
+  };
   const result = validateProducerProposal(proposal, current);
 
   assert.equal(result.ok, true);
   if (!result.ok) return;
   assert.deepEqual(result.patch, {
     descripcion: "Keeps bees on its productive unit.",
+    descripcion_locale: "en",
   });
   assert.equal(isProducerPatch(result.patch), true);
   assert.equal(isProducerPatch({ producer_id: "999" }), false);
   assert.equal(isProducerPatch({ verificacion: "verificado" }), false);
+});
+
+test("description and source locale are validated and proposed as one pair", () => {
+  const current = validFields();
+  const missingLocale = validateProducerProposal(
+    { ...current, descripcion: "Produces honey." },
+    current,
+  );
+  assert.equal(missingLocale.ok, false);
+  if (!missingLocale.ok) {
+    assert.match(missingLocale.errors.descripcion_locale, /source language/i);
+  }
+
+  const localeWithoutDescription = validateProducerProposal(
+    { ...current, descripcion_locale: "en" },
+    current,
+  );
+  assert.equal(localeWithoutDescription.ok, false);
+  if (!localeWithoutDescription.ok) {
+    assert.match(localeWithoutDescription.errors.descripcion_locale, /description is empty/i);
+  }
+
+  const existing = {
+    ...current,
+    descripcion: "Produces honey.",
+    descripcion_locale: "en",
+  };
+  const changedDescription = validateProducerProposal(
+    { ...existing, descripcion: "Produces honey and beeswax." },
+    existing,
+  );
+  assert.equal(changedDescription.ok, true);
+  if (changedDescription.ok) {
+    assert.deepEqual(changedDescription.patch, {
+      descripcion: "Produces honey and beeswax.",
+      descripcion_locale: "en",
+    });
+  }
+
+  const frenchSource = validateProducerProposal(
+    {
+      ...current,
+      descripcion: "Produit du miel sur son exploitation.",
+      descripcion_locale: "fr",
+    },
+    current,
+  );
+  assert.equal(frenchSource.ok, true);
+  if (frenchSource.ok) {
+    assert.deepEqual(frenchSource.patch, {
+      descripcion: "Produit du miel sur son exploitation.",
+      descripcion_locale: "fr",
+    });
+  }
 });
 
 test("producer proposals enforce cross-field and format invariants", () => {
@@ -191,6 +267,10 @@ test("producer row hashes are stable across object key order", () => {
   assert.notEqual(
     hashProducerFields({ nombre: "A", municipio: "B" }),
     hashProducerFields({ nombre: "A", municipio: "C" }),
+  );
+  assert.notEqual(
+    hashProducerFields({ descripcion: "Same prose", descripcion_locale: "en" }),
+    hashProducerFields({ descripcion: "Same prose", descripcion_locale: "es" }),
   );
 });
 

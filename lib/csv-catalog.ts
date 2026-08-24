@@ -4,6 +4,24 @@ import path from "node:path";
 
 import { parse } from "csv-parse/sync";
 
+import {
+  LEGACY_DEFAULT_LOCALE,
+  hasDescriptionSourceLocale,
+  hasLocale,
+  type Locale,
+} from "./i18n/locales";
+import {
+  TRANSLATION_SIDECAR_HEADER,
+  parseDescriptionTranslations,
+  resolveLocalizedDescription,
+  type DescriptionTranslation,
+  type RawDescriptionTranslation,
+} from "./i18n/translations";
+import {
+  normalizeProducerRouteAliasKey,
+  normalizeStoredProducerRouteAliasKey,
+} from "./producer-route-aliases";
+
 type RawCsvRow = Record<string, string | undefined>;
 
 export type ProducerCsvRow = {
@@ -18,7 +36,6 @@ export type ProducerCsvRow = {
   imageSrc: string;
   latitude: number | null;
   longitude: number | null;
-  distanceKm?: number;
   fields: Record<string, string>;
 };
 
@@ -55,14 +72,24 @@ const COUNTRY_MANIFEST = "country.json";
 // vocabulary: country -> region -> area. `area` is the catalog unit and the one
 // that appears in URLs; each country says what it calls it (province, prefecture,
 // …) in its manifest, and that word is what the interface shows.
-export type AreaOption = {
-  slug: string;
-  label: string;
+export type LocalizedLabels = Partial<Record<Locale, string>>;
+
+export type EffectiveLocalePolicy = {
+  defaultLocale: Locale;
+  publishedLocales: Locale[];
+  preferredLocale: Locale;
 };
 
-export type Region = {
+export type AreaOption = EffectiveLocalePolicy & {
   slug: string;
   label: string;
+  labels: LocalizedLabels;
+};
+
+export type Region = EffectiveLocalePolicy & {
+  slug: string;
+  label: string;
+  labels: LocalizedLabels;
   areas: AreaOption[];
 };
 
@@ -71,11 +98,14 @@ export type UnitName = {
   many: string;
 };
 
-export type Country = {
+export type Country = EffectiveLocalePolicy & {
   slug: string;
   label: string;
+  labels: LocalizedLabels;
   unit: UnitName;
+  unitLabels: Partial<Record<Locale, UnitName>>;
   regionUnit: UnitName;
+  regionUnitLabels: Partial<Record<Locale, UnitName>>;
   regions: Region[];
 };
 
@@ -87,12 +117,40 @@ type CountryManifest = {
   unit?: Partial<UnitName>;
   regionUnit?: Partial<UnitName>;
   aliases?: Record<string, string>;
+  producerRouteAliases?: Record<string, number>;
+  i18n?: {
+    defaultLocale?: string;
+    publishedLocales?: string[];
+    labels?: Record<string, string>;
+    unitLabels?: Record<string, Partial<UnitName>>;
+    regionUnitLabels?: Record<string, Partial<UnitName>>;
+  };
   regions?: {
     slug: string;
     label?: string;
-    areas?: { slug: string; label?: string }[];
+    labels?: Record<string, string>;
+    i18n?: {
+      preferredLocale?: string;
+      publishedLocales?: string[];
+    };
+    areas?: {
+      slug: string;
+      label?: string;
+      labels?: Record<string, string>;
+      i18n?: {
+        preferredLocale?: string;
+        publishedLocales?: string[];
+      };
+    }[];
   }[];
 };
+
+export function hasExplicitCatalogLocalePolicy(manifest: unknown): boolean {
+  if (!manifest || typeof manifest !== "object" || Array.isArray(manifest)) return false;
+  const i18n = (manifest as { i18n?: unknown }).i18n;
+  if (!i18n || typeof i18n !== "object" || Array.isArray(i18n)) return false;
+  return Array.isArray((i18n as { publishedLocales?: unknown }).publishedLocales);
+}
 
 type AreaRegistryEntry = AreaOption & {
   countrySlug: string;
@@ -108,14 +166,69 @@ function titleCase(slug: string): string {
     .join(" ");
 }
 
+function supportedLocales(value: string[] | undefined, fallback: readonly Locale[]): Locale[] {
+  if (!Array.isArray(value)) return [...fallback];
+
+  const locales = value.filter(hasLocale);
+  return locales.length > 0 ? [...new Set(locales)] : [...fallback];
+}
+
+function localizedLabels(
+  value: Record<string, string> | undefined,
+  defaultLocale: Locale,
+  fallback: string,
+): LocalizedLabels {
+  const labels: LocalizedLabels = {};
+
+  for (const [locale, label] of Object.entries(value ?? {})) {
+    if (hasLocale(locale) && typeof label === "string" && label.trim()) {
+      labels[locale] = label;
+    }
+  }
+
+  labels[defaultLocale] ??= fallback;
+  return labels;
+}
+
+function localizedUnitNames(
+  value: Record<string, Partial<UnitName>> | undefined,
+  defaultLocale: Locale,
+  fallback: UnitName,
+): Partial<Record<Locale, UnitName>> {
+  const labels: Partial<Record<Locale, UnitName>> = {};
+
+  for (const [locale, unit] of Object.entries(value ?? {})) {
+    if (!hasLocale(locale) || !unit || typeof unit !== "object") continue;
+    const one = typeof unit.one === "string" && unit.one.trim() ? unit.one : fallback.one;
+    const many = typeof unit.many === "string" && unit.many.trim() ? unit.many : fallback.many;
+    labels[locale] = { one, many };
+  }
+
+  labels[defaultLocale] ??= fallback;
+  return labels;
+}
+
+function effectivePreferredLocale(
+  value: string | undefined,
+  inherited: Locale,
+  defaultLocale: Locale,
+  publishedLocales: readonly Locale[],
+): Locale {
+  if (hasLocale(value) && publishedLocales.includes(value)) return value;
+  if (publishedLocales.includes(inherited)) return inherited;
+  if (publishedLocales.includes(defaultLocale)) return defaultLocale;
+  return publishedLocales[0] ?? defaultLocale;
+}
+
 // The tree is the source of truth for *what exists*: a country is a folder under
 // data/csv, a region is a folder inside it and an area is a CSV inside that. The
 // optional country.json only supplies what a folder name cannot carry — the
 // display labels, what the country calls its two levels, and the order they are
 // listed in. Dropping a new CSV in is therefore enough to publish it, and adding
 // a country is a folder plus a manifest, never a code change.
-function loadCountries(): Country[] {
-  const root = path.resolve(process.cwd(), CSV_DATA_DIR);
+export function loadCountries(
+  root: string = path.resolve(process.cwd(), CSV_DATA_DIR),
+): Country[] {
   const directories = (parent: string) =>
     fs
       .readdirSync(parent, { withFileTypes: true })
@@ -130,6 +243,26 @@ function loadCountries(): Country[] {
       ? (JSON.parse(fs.readFileSync(manifestPath, "utf8")) as CountryManifest)
       : {};
 
+    const defaultLocale = hasLocale(manifest.i18n?.defaultLocale)
+      ? manifest.i18n.defaultLocale
+      : LEGACY_DEFAULT_LOCALE;
+    const configuredCountryLocales = supportedLocales(manifest.i18n?.publishedLocales, [
+      defaultLocale,
+    ]);
+    const publishedLocales = configuredCountryLocales.includes(defaultLocale)
+      ? configuredCountryLocales
+      : [defaultLocale, ...configuredCountryLocales];
+    const preferredLocale = defaultLocale;
+    const countryLabel = manifest.label ?? countrySlug.toUpperCase();
+    const unit = {
+      one: manifest.unit?.one ?? CATALOG_UNIT.one,
+      many: manifest.unit?.many ?? CATALOG_UNIT.many,
+    };
+    const regionUnit = {
+      one: manifest.regionUnit?.one ?? "region",
+      many: manifest.regionUnit?.many ?? "regions",
+    };
+
     const declaredRegions = manifest.regions ?? [];
     const regionOrder = new Map(declaredRegions.map((region, index) => [region.slug, index]));
     const regionSlugs = directories(countryDir).sort((a, b) => {
@@ -141,6 +274,17 @@ function loadCountries(): Country[] {
     const regions = regionSlugs.map((regionSlug) => {
       const declared = declaredRegions.find((region) => region.slug === regionSlug);
       const declaredAreas = declared?.areas ?? [];
+      const regionPublishedLocales = supportedLocales(
+        declared?.i18n?.publishedLocales,
+        publishedLocales,
+      );
+      const regionPreferredLocale = effectivePreferredLocale(
+        declared?.i18n?.preferredLocale,
+        preferredLocale,
+        defaultLocale,
+        regionPublishedLocales,
+      );
+      const regionLabel = declared?.label ?? titleCase(regionSlug);
       const areaOrder = new Map(declaredAreas.map((area, index) => [area.slug, index]));
       const areaSlugs = fs
         .readdirSync(path.join(countryDir, regionSlug))
@@ -154,26 +298,52 @@ function loadCountries(): Country[] {
 
       return {
         slug: regionSlug,
-        label: declared?.label ?? titleCase(regionSlug),
-        areas: areaSlugs.map((areaSlug) => ({
-          slug: areaSlug,
-          label:
-            declaredAreas.find((area) => area.slug === areaSlug)?.label ?? titleCase(areaSlug),
-        })),
+        label: regionLabel,
+        labels: localizedLabels(declared?.labels, defaultLocale, regionLabel),
+        defaultLocale,
+        publishedLocales: regionPublishedLocales,
+        preferredLocale: regionPreferredLocale,
+        areas: areaSlugs.map((areaSlug) => {
+          const declaredArea = declaredAreas.find((area) => area.slug === areaSlug);
+          const areaPublishedLocales = supportedLocales(
+            declaredArea?.i18n?.publishedLocales,
+            regionPublishedLocales,
+          );
+          const areaPreferredLocale = effectivePreferredLocale(
+            declaredArea?.i18n?.preferredLocale,
+            regionPreferredLocale,
+            defaultLocale,
+            areaPublishedLocales,
+          );
+          const areaLabel = declaredArea?.label ?? titleCase(areaSlug);
+
+          return {
+            slug: areaSlug,
+            label: areaLabel,
+            labels: localizedLabels(declaredArea?.labels, defaultLocale, areaLabel),
+            defaultLocale,
+            publishedLocales: areaPublishedLocales,
+            preferredLocale: areaPreferredLocale,
+          };
+        }),
       };
     });
 
     return {
       slug: countrySlug,
-      label: manifest.label ?? countrySlug.toUpperCase(),
-      unit: {
-        one: manifest.unit?.one ?? CATALOG_UNIT.one,
-        many: manifest.unit?.many ?? CATALOG_UNIT.many,
-      },
-      regionUnit: {
-        one: manifest.regionUnit?.one ?? "region",
-        many: manifest.regionUnit?.many ?? "regions",
-      },
+      label: countryLabel,
+      labels: localizedLabels(manifest.i18n?.labels, defaultLocale, countryLabel),
+      unit,
+      unitLabels: localizedUnitNames(manifest.i18n?.unitLabels, defaultLocale, unit),
+      regionUnit,
+      regionUnitLabels: localizedUnitNames(
+        manifest.i18n?.regionUnitLabels,
+        defaultLocale,
+        regionUnit,
+      ),
+      defaultLocale,
+      publishedLocales,
+      preferredLocale,
       regions,
     };
   });
@@ -202,6 +372,56 @@ function loadAliases(): Map<string, Map<string, string>> {
 
 const COUNTRIES = loadCountries();
 const AREA_ALIASES = loadAliases();
+
+function loadProducerRouteAliases(): Map<string, number> {
+  const root = path.resolve(process.cwd(), CSV_DATA_DIR);
+  const aliases = new Map<string, number>();
+
+  for (const countrySlug of fs
+    .readdirSync(root, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)) {
+    const manifestPath = path.join(root, countrySlug, COUNTRY_MANIFEST);
+    if (!fs.existsSync(manifestPath)) continue;
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as CountryManifest;
+    const configuredAliases: unknown = manifest.producerRouteAliases;
+    if (
+      configuredAliases !== undefined &&
+      (!configuredAliases || typeof configuredAliases !== "object" || Array.isArray(configuredAliases))
+    ) {
+      throw new Error(
+        `Invalid producerRouteAliases in '${countrySlug}/country.json'. Run check:csv for details.`,
+      );
+    }
+
+    for (const [formerRoute, producerId] of Object.entries(
+      (configuredAliases ?? {}) as Record<string, number>,
+    )) {
+      const normalizedRoute = normalizeStoredProducerRouteAliasKey(formerRoute);
+      if (
+        !normalizedRoute ||
+        normalizedRoute !== formerRoute ||
+        !Number.isSafeInteger(producerId) ||
+        producerId <= 0
+      ) {
+        throw new Error(
+          `Invalid producer route alias '${countrySlug}/${formerRoute}'. Run check:csv for details.`,
+        );
+      }
+      const routeKey = `${countrySlug}/${normalizedRoute}`;
+      if (aliases.has(routeKey)) {
+        throw new Error(
+          `Duplicate producer route alias '${routeKey}'. Run check:csv for details.`,
+        );
+      }
+      aliases.set(routeKey, producerId);
+    }
+  }
+
+  return aliases;
+}
+
+const PRODUCER_ROUTE_ALIASES = loadProducerRouteAliases();
 
 function areaRegistryKey(country: string, area: string): string {
   return `${country}/${area}`;
@@ -232,6 +452,17 @@ export function normalizeAreaSlug(country: string, area: string): string {
   return AREA_REGISTRY.has(areaRegistryKey(countrySlug, normalizedSlug)) ? normalizedSlug : "";
 }
 
+export function findProducerRouteAlias(
+  country: string,
+  rawArea: string,
+  rawSlug: string,
+): number | null {
+  const countrySlug = cleanCell(country).toLowerCase();
+  const formerRoute = normalizeProducerRouteAliasKey(rawArea, rawSlug);
+  if (!formerRoute) return null;
+  return PRODUCER_ROUTE_ALIASES.get(`${countrySlug}/${formerRoute}`) ?? null;
+}
+
 export function findArea(country: string, area: string): AreaLocation | null {
   const countrySlug = cleanCell(country).toLowerCase();
   const normalizedArea = normalizeAreaSlug(countrySlug, area);
@@ -260,7 +491,7 @@ export function getAreaLabel(country: string, area: string): string {
 
 export function listAreas(): AreaOption[] {
   return COUNTRIES.flatMap(({ regions }) =>
-    regions.flatMap(({ areas }) => areas.map(({ slug, label }) => ({ slug, label }))),
+    regions.flatMap(({ areas }) => areas.map((area) => ({ ...area }))),
   );
 }
 
@@ -455,38 +686,11 @@ function readLongitude(fields: Record<string, string>): number | null {
 export type ProducerSearchFilters = {
   municipality: string;
   category: string;
-  lat?: number;
-  lon?: number;
 };
 
-function hasValidCoordinates(
-  lat: number | undefined,
-  lon: number | undefined,
-): boolean {
-  return Number.isFinite(lat) && Number.isFinite(lon);
-}
-
-// Haversine formula
-function calculateDistance(
-  lat1: number,
-  lon1: number,
-  lat2: number,
-  lon2: number,
-): number {
-  const R = 6371; // Earth radius in km
-  const dLat = (lat2 - lat1) * (Math.PI / 180);
-  const dLon = (lon2 - lon1) * (Math.PI / 180);
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(lat1 * (Math.PI / 180)) *
-      Math.cos(lat2 * (Math.PI / 180)) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
 const csvCache = new Map<string, ProducerCsvRow[]>();
+const translationCache = new Map<string, Promise<DescriptionTranslation[]>>();
+const explicitLocalePolicyCache = new Map<string, boolean>();
 const countryProducerIndexCache = new Map<
   string,
   Promise<ReadonlyMap<number, LocatedProducerCsvRow>>
@@ -515,7 +719,12 @@ async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
 
   const rows = parsedRows.map((row) => {
     const fields = Object.fromEntries(
-      Object.entries(row).map(([key, value]) => [cleanCell(key), cleanCell(value)]),
+      Object.entries(row).map(([key, value]) => {
+        const field = cleanCell(key);
+        // Translation hashes intentionally preserve source whitespace. Other
+        // catalog fields retain the historical presentation cleanup.
+        return [field, field === "descripcion" ? String(value ?? "") : cleanCell(value)];
+      }),
     );
     if (!fields[ONLINE_SALES_COLUMN]) {
       fields[ONLINE_SALES_COLUMN] = DEFAULT_ONLINE_SALES_VALUE;
@@ -552,6 +761,126 @@ async function loadCsvRows(country = "", area = ""): Promise<ProducerCsvRow[]> {
 
   csvCache.set(cacheKey, rows);
   return rows;
+}
+
+async function loadCountryTranslations(
+  country: string,
+  targetLocale: Locale,
+): Promise<DescriptionTranslation[]> {
+  const countrySlug = cleanCell(country).toLowerCase();
+  const cacheKey = `${countrySlug}/${targetLocale}`;
+  const cached = translationCache.get(cacheKey);
+  if (cached) return cached;
+
+  const pending = (async () => {
+    const sidecarPath = path.resolve(
+      process.cwd(),
+      CSV_DATA_DIR,
+      countrySlug,
+      `translations.${targetLocale}.csv`,
+    );
+    let raw: string;
+    try {
+      raw = await readFile(sidecarPath, "utf8");
+    } catch (error) {
+      if (
+        error &&
+        typeof error === "object" &&
+        "code" in error &&
+        error.code === "ENOENT"
+      ) {
+        return [];
+      }
+      throw error;
+    }
+    if (raw.startsWith("\uFEFF")) throw new Error(`${sidecarPath}: UTF-8 BOM is not allowed`);
+    if (raw.includes("\r")) throw new Error(`${sidecarPath}: only LF line endings are allowed`);
+    const records = parse(raw, {
+      bom: false,
+      skip_empty_lines: true,
+    }) as string[][];
+    const header = records[0] ?? [];
+    if (
+      header.length !== TRANSLATION_SIDECAR_HEADER.length ||
+      header.some((column, index) => column !== TRANSLATION_SIDECAR_HEADER[index])
+    ) {
+      throw new Error(
+        `${sidecarPath}: expected exact translation header '${TRANSLATION_SIDECAR_HEADER.join(",")}'`,
+      );
+    }
+    const rows = records.slice(1).map((record, index) => {
+      if (record.length !== TRANSLATION_SIDECAR_HEADER.length) {
+        throw new Error(
+          `${sidecarPath}: record ${index + 2} has ${record.length} columns instead of ${TRANSLATION_SIDECAR_HEADER.length}`,
+        );
+      }
+      return Object.fromEntries(
+        TRANSLATION_SIDECAR_HEADER.map((column, columnIndex) => [
+          column,
+          record[columnIndex] ?? "",
+        ]),
+      ) as RawDescriptionTranslation;
+    });
+    return parseDescriptionTranslations(rows, targetLocale);
+  })();
+  translationCache.set(cacheKey, pending);
+  void pending.catch(() => {
+    if (translationCache.get(cacheKey) === pending) translationCache.delete(cacheKey);
+  });
+  return pending;
+}
+
+export function localizeProducerDescriptions(
+  rows: readonly ProducerCsvRow[],
+  requestedLocale: Locale,
+  translations: readonly DescriptionTranslation[],
+): ProducerCsvRow[] {
+  return rows.map((row) => {
+    const text = row.fields.descripcion ?? "";
+    const sourceLocale = row.fields.descripcion_locale;
+    if (!text) return row;
+    if (!hasDescriptionSourceLocale(sourceLocale)) {
+      return { ...row, fields: { ...row.fields, descripcion: "" } };
+    }
+
+    const resolved = resolveLocalizedDescription(
+      { producerId: String(row.producerId), text, locale: sourceLocale },
+      requestedLocale,
+      translations,
+    );
+    const localizedText = resolved?.text ?? "";
+    if (localizedText === text) return row;
+    return { ...row, fields: { ...row.fields, descripcion: localizedText } };
+  });
+}
+
+function hasExplicitCountryLocalePolicy(country: string): boolean {
+  const countrySlug = cleanCell(country).toLowerCase();
+  const cached = explicitLocalePolicyCache.get(countrySlug);
+  if (cached !== undefined) return cached;
+  const manifestPath = path.resolve(process.cwd(), CSV_DATA_DIR, countrySlug, COUNTRY_MANIFEST);
+  let explicit = false;
+  if (fs.existsSync(manifestPath)) {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as CountryManifest;
+    explicit = hasExplicitCatalogLocalePolicy(manifest);
+  }
+  explicitLocalePolicyCache.set(countrySlug, explicit);
+  return explicit;
+}
+
+async function loadLocalizedCsvRows(
+  country: string,
+  area: string,
+  locale: Locale,
+): Promise<ProducerCsvRow[]> {
+  if (!hasExplicitCountryLocalePolicy(country)) {
+    return loadCsvRows(country, area);
+  }
+  const [rows, translations] = await Promise.all([
+    loadCsvRows(country, area),
+    loadCountryTranslations(country, locale),
+  ]);
+  return localizeProducerDescriptions(rows, locale, translations);
 }
 
 function isValidProducerId(producerId: number): boolean {
@@ -675,13 +1004,16 @@ export async function findProducerBySlug(
   rawSegment: string,
   country = "",
   area = "",
+  locale?: Locale,
 ): Promise<ProducerCsvRow | null> {
   const segment = slugifySegment(rawSegment);
   if (!segment) {
     return null;
   }
 
-  const rows = await loadCsvRows(country, area);
+  const rows = locale
+    ? await loadLocalizedCsvRows(country, area, locale)
+    : await loadCsvRows(country, area);
   return rows.find((row) => row.slug === segment) ?? null;
 }
 
@@ -787,12 +1119,15 @@ export async function searchProducers(
   filters: ProducerSearchFilters,
   country = "",
   area = "",
+  locale?: Locale,
 ): Promise<ProducerCsvRow[]> {
-  const rows = await loadCsvRows(country, area);
+  const rows = locale
+    ? await loadLocalizedCsvRows(country, area, locale)
+    : await loadCsvRows(country, area);
   const normalizedMunicipality = normalizeSearch(filters.municipality);
   const normalizedCategory = normalizeSearch(filters.category);
 
-  let results = rows.filter((row) => {
+  return rows.filter((row) => {
     const byMunicipality =
       !normalizedMunicipality ||
       normalizeSearch(row.city).includes(normalizedMunicipality);
@@ -805,33 +1140,4 @@ export async function searchProducers(
     return byMunicipality && byCategory;
   });
 
-  if (hasValidCoordinates(filters.lat, filters.lon)) {
-    const userLat = filters.lat as number;
-    const userLon = filters.lon as number;
-
-    results = results.map((row) => {
-      if (hasProducerMapPoint(row)) {
-        return {
-          ...row,
-          distanceKm: calculateDistance(
-            userLat,
-            userLon,
-            row.latitude,
-            row.longitude,
-          ),
-        };
-      }
-      return row;
-    });
-
-    results.sort((a, b) => {
-      // Items without coordinates go to the bottom when sorting by distance
-      if (a.distanceKm === undefined && b.distanceKm === undefined) return 0;
-      if (a.distanceKm === undefined) return 1;
-      if (b.distanceKm === undefined) return -1;
-      return a.distanceKm - b.distanceKm;
-    });
-  }
-
-  return results;
 }

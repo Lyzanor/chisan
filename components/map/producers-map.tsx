@@ -1,48 +1,59 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useCallback, useState } from "react";
 
+import type { CatalogNavigationScope } from "@/lib/catalog-navigation";
 import type { ProducerMapPoint } from "@/lib/csv-catalog";
 
 const ProducersMapInner = dynamic(() => import("./producers-map-inner"), {
   ssr: false,
-  loading: () => <div className="map-placeholder">Loading map…</div>,
+  loading: () => null,
 });
+
+export type MapMessages = {
+  loading: string;
+  emptyCoordinates: string;
+  openProfile: string;
+};
 
 type ProducersMapProps = {
   points: ProducerMapPoint[];
-  country: string;
+  scope: CatalogNavigationScope;
   area: string;
   highlightedSlug?: string;
-  userLocation?: { lat: number; lon: number };
   singlePointZoom?: number;
+  messages: MapMessages;
 };
 
 export function ProducersMap({
   points,
-  country,
+  scope,
   area,
   highlightedSlug,
-  userLocation,
   singlePointZoom,
+  messages,
 }: ProducersMapProps) {
+  const [isReady, setIsReady] = useState(false);
+  const handleReady = useCallback(() => setIsReady(true), []);
+
   if (!points.length) {
-    return (
-      <div className="map-placeholder">
-        No hay coordenadas válidas en esta selección.
-      </div>
-    );
+    return <div className="map-placeholder">{messages.emptyCoordinates}</div>;
   }
 
   return (
     <div className="map-shell">
+      {!isReady ? <div className="map-placeholder">{messages.loading}</div> : null}
       <ProducersMapInner
         points={points}
-        country={country}
+        scope={scope}
         area={area}
         highlightedSlug={highlightedSlug}
-        userLocation={userLocation}
         singlePointZoom={singlePointZoom}
+        messages={{
+          openProfile: messages.openProfile,
+        }}
+        onReady={handleReady}
       />
     </div>
   );

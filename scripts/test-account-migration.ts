@@ -177,6 +177,61 @@ test("account migration creates constraints and durable producer keys", async ()
       { table_name: "webhook_receipts", column_name: "subject" },
     ]);
 
+    const forbiddenPresentationColumns = await database.query<{
+      column_name: string;
+      table_name: string;
+    }>(
+      `select table_name, column_name
+         from information_schema.columns
+        where table_schema = 'public'
+          and column_name in (
+            'locale', 'catalog', 'catalog_scope', 'catalog_path',
+            'public_path', 'path', 'area', 'slug'
+          )
+        order by table_name, column_name`,
+    );
+    assert.deepEqual(
+      forbiddenPresentationColumns.rows,
+      [],
+      "presentation routing state must stay outside account tables",
+    );
+
+    const forbiddenPresentationIndexes = await database.query<{
+      index_definition: string;
+      index_name: string;
+    }>(
+      `select indexname as index_name, indexdef as index_definition
+         from pg_catalog.pg_indexes
+        where schemaname = 'public'
+          and lower(indexdef) ~
+            '(^|[^a-z0-9_])(locale|catalog|catalog_scope|catalog_path|public_path|path|area|slug)([^a-z0-9_]|$)'
+        order by indexname`,
+    );
+    assert.deepEqual(
+      forbiddenPresentationIndexes.rows,
+      [],
+      "account indexes must use durable account and producer keys only",
+    );
+
+    const forbiddenAuthorizationFunctionState = await database.query<{
+      routine_name: string;
+    }>(
+      `select proc.proname as routine_name
+         from pg_catalog.pg_proc as proc
+         join pg_catalog.pg_namespace as namespace
+           on namespace.oid = proc.pronamespace
+        where namespace.nspname = 'public'
+          and proc.prosecdef
+          and lower(proc.prosrc) ~
+            '(^|[^a-z0-9_])(locale|catalog|catalog_scope|catalog_path|public_path|area|slug)([^a-z0-9_]|$)'
+        order by proc.proname`,
+    );
+    assert.deepEqual(
+      forbiddenAuthorizationFunctionState.rows,
+      [],
+      "security-definer authorization must not depend on presentation routing state",
+    );
+
     const internalUserReferences = await database.query<{
       table_name: string;
       column_name: string;
@@ -343,6 +398,130 @@ test("account migration creates constraints and durable producer keys", async ()
       ),
       /auth_identity_tombstones_provider_subject_uidx|duplicate key/i,
     );
+  } finally {
+    await database.close();
+  }
+});
+
+test("locale removal preserves existing account-domain records", async () => {
+  const database = new PGlite();
+  try {
+    const migrationFiles = (await readdir("drizzle"))
+      .filter((file) => /^\d{4}_.+\.sql$/.test(file))
+      .sort();
+    let localeRemovalMigration: string | undefined;
+    for (const migrationFile of migrationFiles) {
+      const migration = await readFile(`drizzle/${migrationFile}`, "utf8");
+      if (/drop column "locale"/i.test(migration)) {
+        localeRemovalMigration = migrationFile;
+        break;
+      }
+    }
+    assert.ok(localeRemovalMigration, "locale removal migration is missing");
+
+    for (const migrationFile of migrationFiles) {
+      if (migrationFile === localeRemovalMigration) break;
+      await database.exec(await readFile(`drizzle/${migrationFile}`, "utf8"));
+    }
+
+    const [account] = (
+      await database.query<{ id: string }>(
+        `insert into users (display_name, locale)
+         values ('Legacy locale account', 'ja-JP')
+         returning id`,
+      )
+    ).rows;
+    await database.query(
+      `insert into favorites (user_id, country, producer_id)
+       values ($1, 'jp', 42)`,
+      [account.id],
+    );
+    await database.query(
+      `insert into producer_claims (
+         claimant_user_id, country, producer_id, proof_method,
+         proof, claimant_message, status, submitted_at
+       )
+       values ($1, 'jp', 42, 'website',
+               '{"url":"https://owner.example.test"}'::jsonb,
+               'Legacy ownership evidence', 'pending', now())`,
+      [account.id],
+    );
+    await database.query(
+      `insert into producer_memberships (user_id, country, producer_id, role)
+       values ($1, 'jp', 42, 'owner')`,
+      [account.id],
+    );
+    const [changeRequest] = (
+      await database.query<{ id: string }>(
+        `insert into producer_change_requests (
+           author_user_id, country, producer_id, status, base_row_hash,
+           base_snapshot, patch, submitted_at
+         )
+         values ($1, 'jp', 42, 'submitted', repeat('a', 64),
+                 '{"nombre":"Legacy producer"}'::jsonb,
+                 '{"nombre":"Updated producer"}'::jsonb, now())
+         returning id`,
+        [account.id],
+      )
+    ).rows;
+    await database.query(
+      `insert into audit_events (
+         actor_kind, actor_user_id, action, target_type, target_id, metadata
+       )
+       values ('user', $1, 'producer_change.submitted',
+               'producer_change_request', $2,
+               '{"country":"jp","producerId":42}'::jsonb)`,
+      [account.id, changeRequest.id],
+    );
+
+    await database.exec(await readFile(`drizzle/${localeRemovalMigration}`, "utf8"));
+
+    const localeColumns = await database.query<{ column_name: string }>(
+      `select column_name
+         from information_schema.columns
+        where table_schema = 'public'
+          and table_name = 'users'
+          and column_name = 'locale'`,
+    );
+    assert.deepEqual(localeColumns.rows, []);
+
+    const preserved = await database.query<{
+      audit_count: number;
+      change_request_count: number;
+      claim_count: number;
+      display_name: string;
+      favorite_count: number;
+      membership_count: number;
+    }>(
+      `select users.display_name,
+              count(distinct favorites.producer_id)::integer as favorite_count,
+              count(distinct producer_claims.id)::integer as claim_count,
+              count(distinct producer_memberships.id)::integer as membership_count,
+              count(distinct producer_change_requests.id)::integer
+                as change_request_count,
+              count(distinct audit_events.id)::integer as audit_count
+         from users
+         left join favorites on favorites.user_id = users.id
+         left join producer_claims
+           on producer_claims.claimant_user_id = users.id
+         left join producer_memberships on producer_memberships.user_id = users.id
+         left join producer_change_requests
+           on producer_change_requests.author_user_id = users.id
+         left join audit_events on audit_events.actor_user_id = users.id
+        where users.id = $1
+        group by users.id`,
+      [account.id],
+    );
+    assert.deepEqual(preserved.rows, [
+      {
+        display_name: "Legacy locale account",
+        favorite_count: 1,
+        claim_count: 1,
+        membership_count: 1,
+        change_request_count: 1,
+        audit_count: 1,
+      },
+    ]);
   } finally {
     await database.close();
   }

@@ -1,26 +1,49 @@
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { AreaSelector } from "@/components/area-selector";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProducersMap } from "@/components/map/producers-map";
-import { buildCatalogHref, buildProducerHref, readQueryParam } from "@/lib/catalog-navigation";
+import {
+  buildCatalogHref,
+  buildProducerHref,
+  readCatalogQueryContext,
+  readQueryParam,
+} from "@/lib/catalog-navigation";
 import {
   type Country,
-  getAreaLabel,
   listCategories,
   searchProducers,
   toProducerMapPoints,
 } from "@/lib/csv-catalog";
-import { getCategoryIcon } from "@/lib/get-category-icon";
+import {
+  getCategoryIcon,
+  getCategoryLabel,
+  getCategoryPresentation,
+} from "@/lib/i18n/categories";
+import {
+  buildCatalogScope,
+  resolveDestinationLocale,
+  type CatalogScope,
+} from "@/lib/i18n/catalog-scope";
+import type { Locale } from "@/lib/i18n/locales";
+import {
+  formatMessage,
+  formatNumber,
+  formatPluralMessage,
+  loadMessages,
+} from "@/lib/i18n/messages";
 import { SITE_NAME } from "@/lib/site";
 
 type AreaCatalogProps = {
   country: Country;
   area: string;
+  locale: Locale;
+  scope: CatalogScope;
   searchParams: Record<string, string | string[] | undefined>;
 };
 
 const DESCRIPTION_PREVIEW_MAX_LENGTH = 120;
+const VISIBLE_PRODUCER_LIMIT = 400;
 
 function getFieldValue(fields: Record<string, string>, key: string): string {
   const match = Object.entries(fields).find(
@@ -44,15 +67,21 @@ function getDescriptionPreview(fields: Record<string, string>): string {
     .trimEnd()}…`;
 }
 
-export async function AreaCatalog({ country, area, searchParams }: AreaCatalogProps) {
+function capitalizeLabel(value: string, locale: Locale): string {
+  return value.charAt(0).toLocaleUpperCase(locale) + value.slice(1);
+}
+
+export async function AreaCatalog({ country, area, locale, scope, searchParams }: AreaCatalogProps) {
   const category = readQueryParam(searchParams, "category");
   const highlightedSlug = readQueryParam(searchParams, "highlight");
-  const countrySlug = country.slug;
+  const catalogQuery = readCatalogQueryContext(searchParams);
+  const countrySlug = scope.country;
 
-  const [items, categories, allRows] = await Promise.all([
-    searchProducers({ municipality: "", category }, countrySlug, area),
+  const [messages, items, categories, allRows] = await Promise.all([
+    loadMessages(locale),
+    searchProducers({ municipality: "", category }, countrySlug, area, locale),
     listCategories(countrySlug, area),
-    searchProducers({ municipality: "", category: "" }, countrySlug, area),
+    searchProducers({ municipality: "", category: "" }, countrySlug, area, locale),
   ]);
 
   const highlightedItem = highlightedSlug
@@ -62,9 +91,69 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
   const highlightedDescription = highlightedItem
     ? getDescriptionPreview(highlightedItem.fields)
     : "";
-  const mapPoints = toProducerMapPoints(items);
-  const visibleItems = items.slice(0, 500);
-  const areaLabel = getAreaLabel(countrySlug, area);
+  const mapPoints = toProducerMapPoints(items).map((point) => ({
+    ...point,
+    categories: point.categories.map((pointCategory) =>
+      getCategoryLabel(pointCategory, locale),
+    ),
+  }));
+  const visibleItems = items.slice(0, VISIBLE_PRODUCER_LIMIT);
+  const areaOption = country.regions
+    .flatMap((region) => region.areas)
+    .find((candidate) => candidate.slug === area);
+  const areaLabel = areaOption?.labels[locale] ?? areaOption?.label ?? area;
+  const countryLabel = country.labels[locale] ?? country.label;
+  const unit = country.unitLabels[locale] ?? country.unit;
+  const categoryPresentations = categories.map((item) =>
+    getCategoryPresentation(item, locale),
+  );
+  const localizedRegions = country.regions.map((region) => ({
+    slug: region.slug,
+    label: region.labels[locale] ?? region.label,
+    areas: region.areas.map((regionArea) => ({
+      slug: regionArea.slug,
+      label: regionArea.labels[locale] ?? regionArea.label,
+      href: buildCatalogHref({
+        scope: buildCatalogScope(
+          country,
+          resolveDestinationLocale(regionArea, { explicitLocale: scope.locale }),
+        ),
+        area: regionArea.slug,
+        category,
+      }),
+    })),
+  }));
+  const selectorMessages = {
+    label: capitalizeLabel(
+      formatMessage(messages.areaSelector.label, { unit: unit.one }),
+      locale,
+    ),
+    placeholder: formatMessage(messages.areaSelector.placeholder, { unit: unit.one }),
+    submit: messages.areaSelector.submit,
+  };
+  const mapMessages = {
+    loading: messages.map.loading,
+    emptyCoordinates: messages.map.emptyCoordinates,
+    openProfile: messages.map.openProfile,
+  };
+  const countryScope = buildCatalogScope(
+    country,
+    resolveDestinationLocale(country, { explicitLocale: scope.locale }),
+  );
+  const languageOptions = await Promise.all(
+    (areaOption?.publishedLocales ?? [country.defaultLocale]).map(async (targetLocale) => ({
+      locale: targetLocale,
+      label:
+        targetLocale === locale
+          ? messages.languageName
+          : (await loadMessages(targetLocale)).languageName,
+      href: buildCatalogHref({
+        scope: buildCatalogScope(country, targetLocale),
+        area,
+        ...catalogQuery,
+      }),
+    })),
+  );
 
   return (
     <main className="catalog-page catalog-page--simple">
@@ -75,74 +164,108 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
               {SITE_NAME}
             </Link>{" "}
             ·{" "}
-            <Link href={`/${countrySlug}`} className="country-back-link">
-              {country.label}
+            <Link href={buildCatalogHref({ scope: countryScope })} className="country-back-link">
+              {countryLabel}
             </Link>
           </p>
-          <h1>Producer map</h1>
+          <h1>{messages.catalog.title}</h1>
           <p>
-            {areaLabel} · {items.length} producers found · {mapPoints.length} on the map
+            {formatMessage(messages.catalog.summary, {
+              area: areaLabel,
+              producers: formatPluralMessage(
+                locale,
+                items.length,
+                messages.catalog.producersFound,
+              ),
+              mapped: formatPluralMessage(locale, mapPoints.length, messages.catalog.mapped),
+            })}
           </p>
         </div>
 
-        <Suspense fallback={<div className="area-selector--loading">{country.label}…</div>}>
-          <AreaSelector country={country} currentArea={area} />
-        </Suspense>
+        <div className="catalog-header-controls">
+          <LanguageSwitcher
+            currentLocale={locale}
+            label={messages.languageSwitcher.label}
+            options={languageOptions}
+          />
+          <AreaSelector
+            country={{ regions: localizedRegions }}
+            currentArea={area}
+            messages={selectorMessages}
+          />
+        </div>
       </header>
 
-      <nav className="catalog-simple-categories" aria-label="Categories">
+      <nav className="catalog-simple-categories" aria-label={messages.catalog.categories}>
         <Link
-          href={buildCatalogHref({ country: countrySlug, area })}
+          href={buildCatalogHref({ scope, area })}
           className={`catalog-chip ${!category ? "is-active" : ""}`}
         >
-          All
+          {messages.catalog.allCategories}
         </Link>
-        {categories.map((cat) => (
+        {categoryPresentations.map((categoryPresentation) => (
           <Link
-            key={cat}
-            href={buildCatalogHref({ country: countrySlug, area, category: cat })}
-            className={`catalog-chip ${category === cat ? "is-active" : ""}`}
+            key={categoryPresentation.token}
+            href={buildCatalogHref({
+              scope,
+              area,
+              category: categoryPresentation.token,
+            })}
+            className={`catalog-chip ${
+              category === categoryPresentation.token ? "is-active" : ""
+            }`}
           >
-            <span aria-hidden="true">{getCategoryIcon(cat)}</span>
-            {cat}
+            <span aria-hidden="true">{categoryPresentation.icon}</span>
+            {categoryPresentation.label}
           </Link>
         ))}
       </nav>
 
       <section className="catalog-simple-layout">
-        <div className="catalog-simple-map" aria-label="Producer map">
+        <div className="catalog-simple-map" aria-label={messages.map.producerMap}>
           <ProducersMap
             points={mapPoints}
-            country={countrySlug}
+            scope={scope}
             area={area}
             highlightedSlug={highlightedItem?.slug}
+            messages={mapMessages}
           />
         </div>
 
-        <aside className="catalog-viewer" aria-label="Producers">
+        <aside className="catalog-viewer" aria-label={messages.map.producers}>
           {highlightedItem ? (
             <article className="catalog-featured-producer">
-              <p className="catalog-kicker">Selected</p>
+              <p className="catalog-kicker">{messages.catalog.selected}</p>
               <h2>{highlightedItem.name}</h2>
               {highlightedDescription ? <p>{highlightedDescription}</p> : null}
               <div className="catalog-featured-actions">
-                <Link href={buildCatalogHref({ country: countrySlug, area, category })}>
-                  See all
+                <Link href={buildCatalogHref({ scope, area, category })}>
+                  {messages.catalog.seeAll}
                 </Link>
                 <Link
-                  href={buildProducerHref(highlightedItem, { country: countrySlug, area })}
+                  href={buildProducerHref(highlightedItem, { scope, area })}
                 >
-                  Open profile
+                  {messages.catalog.openProfile}
                 </Link>
               </div>
             </article>
           ) : null}
 
           <div className="catalog-viewer-head">
-            <h2>Producers</h2>
+            <h2>{messages.catalog.producers}</h2>
             <p>
-              Showing {visibleItems.length} of {items.length}
-              {allRows.length !== items.length ? ` · ${allRows.length} total in ${areaLabel}` : ""}
+              {formatMessage(messages.catalog.showing, {
+                visible: formatNumber(locale, visibleItems.length),
+                total: formatNumber(locale, items.length),
+              })}
+              {allRows.length !== items.length
+                ? ` · ${formatPluralMessage(
+                    locale,
+                    allRows.length,
+                    messages.catalog.totalInArea,
+                    { area: areaLabel },
+                  )}`
+                : ""}
             </p>
           </div>
 
@@ -158,7 +281,7 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
                   >
                     <Link
                       href={buildCatalogHref({
-                        country: countrySlug,
+                        scope,
                         area,
                         category,
                         highlight: item.slug,
@@ -175,17 +298,19 @@ export async function AreaCatalog({ country, area, searchParams }: AreaCatalogPr
                       </span>
                     </Link>
                     <Link
-                      href={buildProducerHref(item, { country: countrySlug, area })}
+                      href={buildProducerHref(item, { scope, area })}
                       className="producer-compact-detail"
                     >
-                      Details
+                      {messages.catalog.details}
                     </Link>
                   </li>
                 );
               })}
             </ul>
           ) : (
-            <p className="catalog-empty">No producers in this category for {areaLabel}.</p>
+            <p className="catalog-empty">
+              {formatMessage(messages.catalog.emptyCategory, { area: areaLabel })}
+            </p>
           )}
         </aside>
       </section>

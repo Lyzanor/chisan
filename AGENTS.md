@@ -40,15 +40,17 @@ research + contributions ──> review ──> area CSV catalog ──> public 
 Clerk session ──> PostgreSQL account workflows ──> reviewed proposal ──> CSV
 ```
 
-- The public app reads `data/csv/**` directly. The folder tree defines its
+- The public app reads producer facts from area files under `data/csv/**`.
+  Checked-in country translation sidecars may supply localized presentation,
+  but never replace or override an area row. The folder tree defines the
   countries, regions, areas, and producer pages.
 - Candidate notes are temporary research. Evidence records the sources behind
   closed decisions. Neither is a runtime producer overlay.
 - Clerk owns credentials and sessions. PostgreSQL owns Chisan account state,
   claims, memberships, reviewed requests, and audit; it never owns producer
   catalog state.
-- The web, discovery, and account flows may evolve around the catalog, but they
-  must not create a hidden second producer registry.
+- The web, localization, discovery, and account flows may evolve around the
+  catalog, but they must not create a hidden second producer registry.
 
 The CSV catalog is the core of the product, not the whole product. Editorial
 priority is factual correctness, traceability, URL stability, then mechanical
@@ -64,10 +66,13 @@ overlays, and one-off generators that become an alternative source of truth.
 | Layer | Owns | Never owns |
 |---|---|---|
 | `data/csv/<country>/<region>/<area>.csv` | Published producer state and the catalog registry | Research provenance or account state |
+| `data/csv/<country>/translations.<locale>.csv` | Materialized localized presentation of translatable canonical fields | Producer facts, evidence, routing identity, or account state |
 | `data/csv/<country>/country.json` | Country labels, level names, ordering, and aliases | Producer or editorial decisions |
 | `data/csv/<country>/AGENTS.md` | Local priorities, durable country rules, and source ceilings | General workflow or live area queues |
 | `data/evidence/<country>/<region>/<area>.jsonl` | Decision sources and `reject`/`purge`/`merge` tombstones | Published field values or review authorship |
 | `docs/candidates/<country>/<area>.md` | Temporary unresolved discovery work | Durable producer state or decisions |
+| `data/reference/catalog-area-boundaries/**` | Reviewed source geometry and licence metadata for optional client-side area resolution | Producer coordinates, catalog membership, language choice, or device position |
+| `public/generated/catalog-geography/**` | Deterministic deployable output built from the reviewed boundary source | Editable boundary authority or stored user location |
 | PostgreSQL | Accounts, favorites, claims, memberships, requests, and audit | Producer catalog state |
 | Git | Authorship and previous states | Current producer state |
 
@@ -85,6 +90,15 @@ automatically between countries.
   `/<country>/<area>/<slug>`.
 - The public area key is `(<country>, <area>)`. Folder names and public paths
   move together; stable query parameters are `category` and `highlight`.
+- A catalog scope and locale are presentation state. Short default routes and
+  composite alternate-language routes resolve to the same country, area, row,
+  and durable producer key; no account-domain key contains a locale or path.
+- Canonical prose remains in the area row with its source locale. A translation
+  sidecar is a versioned presentation cache tied to that prose, not a second
+  producer record or source of editorial facts.
+- Device position is transient browser input for optional area routing. It is
+  never catalog data or account state, and only a derived catalog area may be
+  retained as described by `docs/LOCATION_ROUTING.md`.
 - A deployed request never writes `data/csv/**`. Ownership authorizes a
   proposal, not its facts; only reviewed local materialization changes the CSV.
 - The CSV stores public decisions, evidence stores sources, and Git stores who
@@ -104,6 +118,8 @@ automatically between countries.
 | Evidence records or actions | `docs/EVIDENCE_CONTRACT.md` | `npx pnpm verify:data` |
 | Coordinates or Google Maps | `docs/GEOLOCATION.md` | `npx pnpm verify:data` |
 | Producer images | `docs/IMAGES.md` | `npx pnpm verify:data` |
+| Localized descriptions, translation sidecars, locale labels, or catalog scopes | `docs/CSV_CONTRACT.md`, `docs/EDITORIAL.md` and the affected routing contract | `npx pnpm verify:ai`; data-only translation batches may use `verify:data` once supported |
+| Device-location onboarding or catalog-area boundaries | `docs/LOCATION_ROUTING.md` | `npx pnpm verify:ai` |
 | Accounts, ownership, memberships, or producer changes | `docs/ACCOUNT_SYSTEM.md` | `npx pnpm verify:ai` |
 | Environment, secrets, deploy, rollback, or backups | `docs/OPERATIONS.md` | Follow its preflight and smoke checks |
 | Code, scripts, documentation, policy, or behavior | Owning contract | `npx pnpm verify:ai` |

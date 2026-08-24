@@ -28,6 +28,7 @@ import {
   findProducersByIds,
   type LocatedProducerCsvRow,
 } from "@/lib/csv-catalog";
+import { buildProducerHref } from "@/lib/catalog-navigation";
 import type { Database } from "@/lib/db";
 import {
   producerChangeRequestAuditEvents,
@@ -42,6 +43,15 @@ export const PRODUCER_CHANGE_AGENT_SCHEMA_VERSION = 2;
 export const ADMIN_PRODUCER_CHANGE_PAGE_SIZE = 25;
 export const ADMIN_PRODUCER_CHANGE_MAX_PAGE_SIZE = 100;
 export const PRODUCER_CHANGE_RECOVERY_QUARANTINE_MS = 24 * 60 * 60 * 1_000;
+
+export function buildAdminProducerPublicPath(
+  producer: Pick<LocatedProducerCsvRow, "area" | "country" | "slug">,
+): string {
+  return buildProducerHref(producer, {
+    country: producer.country,
+    area: producer.area,
+  });
+}
 
 const authorUsers = alias(users, "producer_change_authors");
 const reviewerUsers = alias(users, "producer_change_reviewers");
@@ -278,7 +288,7 @@ export async function queryAdminProducerChanges(
       changedFields: Object.keys(row.patch).sort((left, right) => left.localeCompare(right)),
       producerName:
         producer?.name || row.historicProducerName || `Producer #${row.producerId}`,
-      publicPath: producer ? `/${producer.country}/${producer.area}/${producer.slug}` : null,
+      publicPath: producer ? buildAdminProducerPublicPath(producer) : null,
     };
   });
   const total = Number(totalRow?.value ?? 0);
@@ -420,7 +430,7 @@ export async function queryAdminProducerChangeById(
     producer,
     producerName:
       producer?.name || row.change.baseSnapshot.nombre || `Producer #${row.change.producerId}`,
-    publicPath: producer ? `/${producer.country}/${producer.area}/${producer.slug}` : null,
+    publicPath: producer ? buildAdminProducerPublicPath(producer) : null,
     author: { id: row.change.authorUserId, displayName: row.authorDisplayName },
     reviewer: row.change.reviewerUserId
       ? { id: row.change.reviewerUserId, displayName: row.reviewerDisplayName }

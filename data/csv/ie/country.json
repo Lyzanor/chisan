@@ -39,6 +39,9 @@
     "tir-chonaill": "donegal",
     "muineachan": "monaghan"
   },
+  "producerRouteAliases": {
+    "galway/truffle-galway": 223
+  },
   "regions": [
     {
       "slug": "leinster",

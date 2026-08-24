@@ -6,6 +6,8 @@ import { pathToFileURL } from "node:url";
 
 import { parse } from "csv-parse/sync";
 
+import { classifyCatalogCsvPath } from "./lib/catalog-translations.mjs";
+
 const DEFAULT_CSV_ROOT = "data/csv";
 const DEFAULT_EVIDENCE_ROOT = "data/evidence";
 
@@ -316,7 +318,9 @@ export function auditEvidence({
   const resolvedCsvRoot = path.resolve(csvRoot);
   const resolvedEvidenceRoot = path.resolve(evidenceRoot);
   const errors = [];
-  const catalogFiles = listFiles(resolvedCsvRoot, ".csv");
+  const catalogFiles = listFiles(resolvedCsvRoot, ".csv").filter(
+    (file) => classifyCatalogCsvPath(resolvedCsvRoot, file).kind === "area",
+  );
   const catalogRows = catalogFiles.reduce(
     (sum, csvPath) => sum + readCsvRows(csvPath).size,
     0,

@@ -1,0 +1,186 @@
+import type { Metadata } from "next";
+import { cookies, headers } from "next/headers";
+import Link from "next/link";
+
+import { LocationOnboarding } from "@/components/location-onboarding";
+import { ManualCatalogSelector } from "@/components/manual-catalog-selector";
+import {
+  buildHomeAlternateSet,
+  buildLocalizedMetadata,
+} from "@/lib/catalog-metadata";
+import { buildCatalogHref } from "@/lib/catalog-navigation";
+import { CATALOG_UNIT, listCountries } from "@/lib/csv-catalog";
+import {
+  buildCatalogScope,
+  EXPLICIT_LOCALE_COOKIE,
+  parseAcceptLanguage,
+  parseExplicitLocale,
+  resolveDestinationLocale,
+} from "@/lib/i18n/catalog-scope";
+import type { Locale } from "@/lib/i18n/locales";
+import { buildManualCatalogSelection } from "@/lib/i18n/manual-catalog-selection";
+import {
+  formatMessage,
+  formatUnitCount,
+  loadMessages,
+  type Messages,
+} from "@/lib/i18n/messages";
+import { listEnabledLocationAreas } from "@/lib/location/enabled-location-areas.server";
+import type { LocationOnboardingArea } from "@/lib/location/location-onboarding";
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+
+const HOME_LOCALE = "en" as const;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const messages = await loadMessages(HOME_LOCALE);
+  const title = formatMessage(messages.metadata.homeTitle, { site: SITE_NAME });
+  const description = formatMessage(messages.metadata.homeDescription, {
+    unit: CATALOG_UNIT.one,
+  });
+
+  return buildLocalizedMetadata({
+    title,
+    description,
+    locale: HOME_LOCALE,
+    alternates: buildHomeAlternateSet(),
+  });
+}
+
+type Countries = ReturnType<typeof listCountries>;
+
+function CountryStart({
+  countries,
+  messages,
+  locationAreas,
+  explicitLocale,
+  browserLocales,
+}: {
+  countries: Countries;
+  messages: Messages;
+  locationAreas: readonly LocationOnboardingArea[];
+  explicitLocale: Locale | null;
+  browserLocales: Locale[];
+}) {
+  const localePreferences = { explicitLocale, browserLocales };
+  const manualCountries = buildManualCatalogSelection(
+    countries,
+    HOME_LOCALE,
+    localePreferences,
+  );
+
+  return (
+    <main className="catalog-start-page">
+      <section className="catalog-start-shell" aria-labelledby="country-start-title">
+        <LocationOnboarding
+          areas={locationAreas}
+          messages={messages.locationOnboarding}
+          explicitLocale={explicitLocale}
+          browserLocales={browserLocales}
+          manualSelectionHref="#manual-area-selection"
+        />
+        <div className="catalog-start-head">
+          <div>
+            <p className="catalog-kicker">{SITE_NAME}</p>
+            <h1 id="country-start-title">{messages.home.chooseCountry}</h1>
+          </div>
+        </div>
+
+        <ManualCatalogSelector
+          countries={manualCountries}
+          messages={{
+            title: messages.locationOnboarding.chooseManually,
+            countryLabel: messages.locationOnboarding.manualCountryLabel,
+            countryPlaceholder: messages.locationOnboarding.manualCountryPlaceholder,
+            areaLabel: messages.locationOnboarding.manualAreaLabel,
+            areaPlaceholder: messages.locationOnboarding.manualAreaPlaceholder,
+            submit: messages.areaSelector.submit,
+          }}
+        />
+
+        <div className="country-card-list">
+          {countries.map((country) => {
+            const places = country.regions.reduce(
+              (total, region) => total + region.areas.length,
+              0,
+            );
+            const countryLabel = country.labels[HOME_LOCALE] ?? country.label;
+            const areaUnit = country.unitLabels[HOME_LOCALE] ?? country.unit;
+            const regionUnit = country.regionUnitLabels[HOME_LOCALE] ?? country.regionUnit;
+            const areaCount = formatUnitCount(
+              HOME_LOCALE,
+              places,
+              areaUnit,
+              messages.common.unitCount,
+            );
+            const regionCount = formatUnitCount(
+              HOME_LOCALE,
+              country.regions.length,
+              regionUnit,
+              messages.common.unitCount,
+            );
+            const destinationLocale = resolveDestinationLocale(country, localePreferences);
+
+            return (
+              <Link
+                key={country.slug}
+                href={buildCatalogHref({
+                  scope: buildCatalogScope(country, destinationLocale),
+                })}
+                className="country-card"
+              >
+                <strong>{countryLabel}</strong>
+                <small>
+                  {formatMessage(messages.home.countrySummary, {
+                    areas: areaCount,
+                    regions: regionCount,
+                  })}
+                </small>
+              </Link>
+            );
+          })}
+        </div>
+
+        <section id="about" className="home-about" aria-labelledby="home-about-title">
+          <div>
+            <p className="catalog-kicker">About Chisan</p>
+            <h2 id="home-about-title">{SITE_TAGLINE}</h2>
+          </div>
+          <div className="home-about__copy">
+            <p>
+              Chisan is building a shared discovery layer for local food: one place
+              to find, understand and connect with food and drink producers rooted
+              in their communities.
+            </p>
+            <p>
+              A transparent CSV catalog remains the source of truth. The web,
+              accounts and reviewed contribution flows grow around it so that the
+              catalog can stay useful, trustworthy and open as Chisan expands.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+  );
+}
+
+export default async function HomePage() {
+  const countries = listCountries();
+  const locationAreas = listEnabledLocationAreas({
+    countries,
+    locale: HOME_LOCALE,
+  });
+  const [messages, cookieStore, requestHeaders] = await Promise.all([
+    loadMessages(HOME_LOCALE),
+    cookies(),
+    headers(),
+  ]);
+  return (
+    <CountryStart
+      countries={countries}
+      messages={messages}
+      locationAreas={locationAreas}
+      explicitLocale={parseExplicitLocale(cookieStore.get(EXPLICIT_LOCALE_COOKIE)?.value)}
+      browserLocales={parseAcceptLanguage(requestHeaders.get("accept-language"))}
+    />
+  );
+}

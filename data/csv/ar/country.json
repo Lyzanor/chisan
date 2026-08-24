@@ -17,6 +17,12 @@
     "la-rioja-ar": "la-rioja-argentina",
     "tierra-del-fuego-antartida-e-islas-del-atlantico-sur": "tierra-del-fuego"
   },
+  "producerRouteAliases": {
+    "buenos-aires/la-pacha": 704,
+    "buenos-aires/plante-alimentos": 885,
+    "ciudad-de-buenos-aires/plante-alimentos": 884,
+    "misiones/la-pacha": 703
+  },
   "regions": [
     {
       "slug": "noroeste",

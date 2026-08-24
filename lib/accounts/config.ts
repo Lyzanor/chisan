@@ -80,6 +80,17 @@ export function isAccountFeatureEnabled(
   );
 }
 
+// This operational switch freezes only new producer profile proposals while
+// staff drain the existing queue for a catalog schema migration. Missing keeps
+// the established behavior enabled; any configured value other than the exact
+// string "true" fails closed.
+export function isProducerChangeSubmissionEnabled(
+  environment: AccountAuthEnvironment = process.env,
+): boolean {
+  const configured = environment.CHISAN_PRODUCER_CHANGES_ENABLED;
+  return configured === undefined ? true : configured.trim() === "true";
+}
+
 export function getAccountAuthConfiguration(
   environment: AccountAuthEnvironment = process.env,
 ): AccountAuthConfiguration {

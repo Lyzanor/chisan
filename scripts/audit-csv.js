@@ -25,6 +25,7 @@ const CANONICAL_HEADER = Object.freeze([
   "Canal de venta",
   "categorias adicionales",
   "producer_id",
+  "descripcion_locale",
 ]);
 
 // Controlled values are matched exactly, not case/diacritic folded: the CSVs are
@@ -66,8 +67,26 @@ const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipality-overrides
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const PRODUCER_ID_PATTERN = /^[1-9]\d*$/;
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
+const TRANSLATION_SIDECAR_PATTERN = /^translations\.[a-z]{2}\.csv$/;
 const RESERVED_AREA_SLUGS = new Set(["events", "retail"]);
 const COUNTRY_GUIDE_HEADINGS = ["## Operating state", "## Country rules", "## Source ceilings"];
+// Keep these sets aligned with lib/i18n/locales.ts. Presentation locales can
+// activate routes and manifest requirements; source-only locales can describe
+// canonical prose without doing so. The audit is plain Node.js so it keeps an
+// explicit mirror instead of requiring a TypeScript runtime.
+const SUPPORTED_LOCALES = new Set(["en", "es", "ca", "de", "ja"]);
+const SUPPORTED_LOCALE_DISPLAY = [...SUPPORTED_LOCALES].join(", ");
+const DESCRIPTION_SOURCE_LOCALES = new Set([
+  ...SUPPORTED_LOCALES,
+  "fr",
+  "it",
+  "nl",
+  "pt",
+  "gl",
+  "eu",
+]);
+const DESCRIPTION_SOURCE_LOCALE_DISPLAY = [...DESCRIPTION_SOURCE_LOCALES].join(", ");
+const LEGACY_DEFAULT_LOCALE = "en";
 let PREFERRED_CATEGORY_ALIASES = new Map();
 let VALID_CATEGORIES = new Set();
 let RESERVED_PRODUCER_SLUGS = new Set();
@@ -85,7 +104,8 @@ function usage() {
 
 Scopes:
   --all       Audit every area CSV and the country/region/area registry.
-  --changed   Audit CSVs changed against HEAD and the current registry.
+              Translation sidecars are checked by check-catalog-translations.mjs.
+  --changed   Audit area CSVs changed against HEAD and the current registry.
   --registry  Audit only a country/region/area registry (mainly useful for tests).
   -h, --help  Show this help.`);
 }
@@ -165,8 +185,263 @@ function directoryNames(fs, parent) {
     .sort();
 }
 
+function isRecord(value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function normalizeProducerRouteAliasSegment(value) {
+  if (typeof value !== "string") return null;
+  let decoded;
+  try {
+    decoded = decodeURIComponent(value);
+  } catch {
+    return null;
+  }
+  const normalized = decoded.normalize("NFC");
+  return normalized && !/[\/?#\p{Cc}]/u.test(normalized) ? normalized : null;
+}
+
+function normalizeStoredProducerRouteAlias(formerRoute) {
+  if (typeof formerRoute !== "string") return null;
+  const segments = formerRoute.split("/");
+  if (segments.length !== 2) return null;
+  const area = normalizeProducerRouteAliasSegment(segments[0]);
+  const slug = normalizeProducerRouteAliasSegment(segments[1]);
+  return area && slug ? `${area}/${slug}` : null;
+}
+
+function manifestOwner(country, region, area) {
+  if (area) return `area '${country}/${region}/${area}'`;
+  if (region) return `region '${country}/${region}'`;
+  return `country manifest '${country}/country.json'`;
+}
+
+function validateLocaleCode(value, field, owner, errors) {
+  if (typeof value !== "string" || !SUPPORTED_LOCALES.has(value)) {
+    errors.push(`${owner} ${field} must be one of: ${SUPPORTED_LOCALE_DISPLAY}`);
+    return null;
+  }
+  return value;
+}
+
+function resolvePublishedLocales(i18n, inherited, owner, errors, required = false) {
+  if (!isRecord(i18n)) {
+    if (i18n !== undefined) errors.push(`${owner} i18n must be an object`);
+    return [...inherited];
+  }
+
+  const value = i18n.publishedLocales;
+  if (value === undefined && !required) return [...inherited];
+  if (!Array.isArray(value) || value.length === 0) {
+    errors.push(`${owner} i18n.publishedLocales must be a non-empty array`);
+    return [...inherited];
+  }
+
+  const locales = [];
+  const seen = new Set();
+  for (const locale of value) {
+    const validLocale = validateLocaleCode(locale, "i18n.publishedLocales entry", owner, errors);
+    if (!validLocale) continue;
+    if (seen.has(validLocale)) {
+      errors.push(`${owner} i18n.publishedLocales duplicates locale '${validLocale}'`);
+      continue;
+    }
+    seen.add(validLocale);
+    locales.push(validLocale);
+  }
+
+  return locales.length > 0 ? locales : [...inherited];
+}
+
+function validateLocalizedLabels(value, locales, field, owner, errors) {
+  if (!isRecord(value)) {
+    errors.push(`${owner} ${field} must be an object with every effective locale`);
+    return;
+  }
+
+  for (const locale of Object.keys(value)) {
+    if (!SUPPORTED_LOCALES.has(locale)) {
+      errors.push(`${owner} ${field} uses unsupported locale '${locale}'`);
+    }
+  }
+
+  for (const locale of locales) {
+    if (typeof value[locale] !== "string" || !value[locale].trim()) {
+      errors.push(`${owner} ${field}.${locale} must be a non-empty string`);
+    }
+  }
+}
+
+function validateLocalizedUnits(value, locales, field, owner, errors) {
+  if (!isRecord(value)) {
+    errors.push(`${owner} ${field} must be an object with every effective locale`);
+    return;
+  }
+
+  for (const locale of Object.keys(value)) {
+    if (!SUPPORTED_LOCALES.has(locale)) {
+      errors.push(`${owner} ${field} uses unsupported locale '${locale}'`);
+    }
+  }
+
+  for (const locale of locales) {
+    const unit = value[locale];
+    if (!isRecord(unit)) {
+      errors.push(`${owner} ${field}.${locale} must define non-empty 'one' and 'many' labels`);
+      continue;
+    }
+    for (const form of ["one", "many"]) {
+      if (typeof unit[form] !== "string" || !unit[form].trim()) {
+        errors.push(`${owner} ${field}.${locale}.${form} must be a non-empty string`);
+      }
+    }
+  }
+}
+
+function hasLocalizedManifestFields(manifest) {
+  if (manifest.i18n !== undefined) return true;
+  if (!Array.isArray(manifest.regions)) return false;
+
+  return manifest.regions.some(
+    (region) =>
+      isRecord(region) &&
+      (region.labels !== undefined ||
+        region.i18n !== undefined ||
+        (Array.isArray(region.areas) &&
+          region.areas.some(
+            (area) => isRecord(area) && (area.labels !== undefined || area.i18n !== undefined),
+          ))),
+  );
+}
+
+function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
+  if (!isRecord(manifest) || !hasLocalizedManifestFields(manifest)) return;
+
+  const countryOwner = manifestOwner(country);
+  const countryI18n = manifest.i18n;
+  if (!isRecord(countryI18n)) {
+    errors.push(`${countryOwner} must define an i18n object before localized descendants`);
+  }
+
+  const configuredDefault = isRecord(countryI18n) ? countryI18n.defaultLocale : undefined;
+  const defaultLocale =
+    validateLocaleCode(configuredDefault, "i18n.defaultLocale", countryOwner, errors) ??
+    LEGACY_DEFAULT_LOCALE;
+  const countryLocales = resolvePublishedLocales(
+    countryI18n,
+    [defaultLocale],
+    countryOwner,
+    errors,
+    true,
+  );
+  if (!countryLocales.includes(defaultLocale)) {
+    errors.push(
+      `${countryOwner} default locale '${defaultLocale}' must appear in i18n.publishedLocales`,
+    );
+  }
+
+  const declaredRegions = Array.isArray(manifest.regions) ? manifest.regions : [];
+  const requiredCountryLocales = new Set(countryLocales);
+
+  for (const [regionSlug, areaSlugs] of actualRegions) {
+    const region = declaredRegions.find(
+      (candidate) => isRecord(candidate) && candidate.slug === regionSlug,
+    );
+    const regionOwner = manifestOwner(country, regionSlug);
+    const regionLocales = resolvePublishedLocales(
+      region?.i18n,
+      countryLocales,
+      regionOwner,
+      errors,
+    );
+    if (!regionLocales.includes(defaultLocale)) {
+      errors.push(
+        `${regionOwner} effective published locales must include country default locale '${defaultLocale}'`,
+      );
+    }
+    const requiredRegionLocales = new Set(regionLocales);
+    const preferredLocale = isRecord(region?.i18n) && region.i18n.preferredLocale !== undefined
+      ? validateLocaleCode(
+          region.i18n.preferredLocale,
+          "i18n.preferredLocale",
+          regionOwner,
+          errors,
+        )
+      : null;
+    if (preferredLocale && !regionLocales.includes(preferredLocale)) {
+      errors.push(
+        `${regionOwner} preferred locale '${preferredLocale}' must appear in its effective published locales`,
+      );
+    }
+
+    const declaredAreas = Array.isArray(region?.areas) ? region.areas : [];
+    for (const areaSlug of areaSlugs) {
+      const area = declaredAreas.find(
+        (candidate) => isRecord(candidate) && candidate.slug === areaSlug,
+      );
+      const areaOwner = manifestOwner(country, regionSlug, areaSlug);
+      const areaLocales = resolvePublishedLocales(area?.i18n, regionLocales, areaOwner, errors);
+      if (!areaLocales.includes(defaultLocale)) {
+        errors.push(
+          `${areaOwner} effective published locales must include country default locale '${defaultLocale}'`,
+        );
+      }
+      const areaPreferredLocale = isRecord(area?.i18n) && area.i18n.preferredLocale !== undefined
+        ? validateLocaleCode(
+            area.i18n.preferredLocale,
+            "i18n.preferredLocale",
+            areaOwner,
+            errors,
+          )
+        : null;
+      if (areaPreferredLocale && !areaLocales.includes(areaPreferredLocale)) {
+        errors.push(
+          `${areaOwner} preferred locale '${areaPreferredLocale}' must appear in its effective published locales`,
+        );
+      }
+
+      validateLocalizedLabels(area?.labels, areaLocales, "labels", areaOwner, errors);
+      for (const locale of areaLocales) {
+        requiredRegionLocales.add(locale);
+        requiredCountryLocales.add(locale);
+      }
+    }
+
+    validateLocalizedLabels(
+      region?.labels,
+      requiredRegionLocales,
+      "labels",
+      regionOwner,
+      errors,
+    );
+    for (const locale of requiredRegionLocales) requiredCountryLocales.add(locale);
+  }
+
+  validateLocalizedLabels(
+    isRecord(countryI18n) ? countryI18n.labels : undefined,
+    requiredCountryLocales,
+    "i18n.labels",
+    countryOwner,
+    errors,
+  );
+  validateLocalizedUnits(
+    isRecord(countryI18n) ? countryI18n.unitLabels : undefined,
+    requiredCountryLocales,
+    "i18n.unitLabels",
+    countryOwner,
+    errors,
+  );
+  validateLocalizedUnits(
+    isRecord(countryI18n) ? countryI18n.regionUnitLabels : undefined,
+    requiredCountryLocales,
+    "i18n.regionUnitLabels",
+    countryOwner,
+    errors,
+  );
+}
+
 async function auditAreaRegistry(root = "data/csv") {
-  const { fs, path } = await getDependencies();
+  const { fs, path, parse } = await getDependencies();
   const registryRoot = path.resolve(root);
   const errors = [];
   const areas = new Map();
@@ -198,9 +473,11 @@ async function auditAreaRegistry(root = "data/csv") {
 
     const manifestPath = path.join(countryDir, "country.json");
     let areaAliases = [];
+    let producerRouteAliases = [];
+    let manifest = null;
     if (fs.existsSync(manifestPath)) {
       try {
-        const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+        manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
         areaAliases = Object.entries(manifest.aliases ?? {});
         for (const [alias] of areaAliases) {
           if (!SLUG_PATTERN.test(alias)) {
@@ -210,21 +487,49 @@ async function auditAreaRegistry(root = "data/csv") {
             errors.push(`area alias '${country}/${alias}' uses reserved route segment '${alias}'`);
           }
         }
+        if (
+          manifest.producerRouteAliases !== undefined &&
+          !isRecord(manifest.producerRouteAliases)
+        ) {
+          errors.push(
+            `country manifest '${country}/country.json' producerRouteAliases must be an object`,
+          );
+        } else {
+          producerRouteAliases = Object.entries(manifest.producerRouteAliases ?? {});
+          for (const [formerRoute, producerId] of producerRouteAliases) {
+            const normalizedRoute = normalizeStoredProducerRouteAlias(formerRoute);
+            if (!normalizedRoute || normalizedRoute !== formerRoute) {
+              errors.push(
+                `producer route alias '${country}/${formerRoute}' must store two non-empty decoded NFC segments without '/', '?', '#', or control characters`,
+              );
+            }
+            if (!Number.isSafeInteger(producerId) || producerId <= 0) {
+              errors.push(
+                `producer route alias '${country}/${formerRoute}' must target a positive safe-integer producer_id`,
+              );
+            }
+          }
+        }
       } catch (error) {
         errors.push(`country manifest '${country}/country.json' is not valid JSON: ${error.message}`);
       }
     }
 
+    const actualRegions = new Map();
+    const producerIds = new Map();
+    const producerRoutes = new Map();
     for (const region of directoryNames(fs, countryDir)) {
       if (!SLUG_PATTERN.test(region)) {
         errors.push(`region '${country}/${region}' must be lowercase ASCII kebab-case`);
       }
 
       const regionDir = path.join(countryDir, region);
+      const areaSlugs = [];
       for (const file of fs.readdirSync(regionDir).sort()) {
         if (!file.endsWith(".csv")) continue;
 
         const area = file.slice(0, -4);
+        areaSlugs.push(area);
         const relativePath = path.join(country, region, file);
         if (!SLUG_PATTERN.test(area)) {
           errors.push(`area '${relativePath}' must be lowercase ASCII kebab-case`);
@@ -242,13 +547,74 @@ async function auditAreaRegistry(root = "data/csv") {
         } else {
           areas.set(areaKey, relativePath);
         }
+
+        if (producerRouteAliases.length > 0) {
+          const csvPath = path.join(regionDir, file);
+          const raw = fs.readFileSync(csvPath, "utf8");
+          if (raw.trim()) {
+            try {
+              const rows = parse(raw, {
+                columns: true,
+                skip_empty_lines: true,
+                bom: true,
+                relax_column_count: true,
+              });
+              for (const row of rows) {
+                const producerId = cleanCell(row[PRODUCER_ID_COLUMN]);
+                const slug = cleanCell(row.slug);
+                if (
+                  !PRODUCER_ID_PATTERN.test(producerId) ||
+                  !Number.isSafeInteger(Number(producerId)) ||
+                  !SLUG_PATTERN.test(slug)
+                ) {
+                  continue;
+                }
+                const target = {
+                  producerId: Number(producerId),
+                  route: `${area}/${slug}`,
+                  relativePath,
+                };
+                producerIds.set(target.producerId, target);
+                producerRoutes.set(target.route, target);
+              }
+            } catch (error) {
+              errors.push(
+                `cannot validate producer route aliases against '${relativePath}': ${error.message}`,
+              );
+            }
+          }
+        }
       }
+      actualRegions.set(region, areaSlugs);
     }
+
+    if (manifest) validateCountryManifestI18n(manifest, country, actualRegions, errors);
 
     for (const [alias, target] of areaAliases) {
       if (!areas.has(`${country}/${target}`)) {
         errors.push(
           `area alias '${country}/${alias}' targets '${target}', which is not an area in country '${country}'`,
+        );
+      }
+    }
+
+    for (const [formerRoute, producerId] of producerRouteAliases) {
+      if (!Number.isSafeInteger(producerId) || producerId <= 0) continue;
+      const canonicalCollision = producerRoutes.get(formerRoute);
+      if (canonicalCollision) {
+        errors.push(
+          `producer route alias '${country}/${formerRoute}' collides with current canonical producer_id '${canonicalCollision.producerId}'`,
+        );
+      }
+
+      const target = producerIds.get(producerId);
+      if (!target) {
+        errors.push(
+          `producer route alias '${country}/${formerRoute}' targets producer_id '${producerId}', which is not a current row in country '${country}'`,
+        );
+      } else if (target.route === formerRoute) {
+        errors.push(
+          `producer route alias '${country}/${formerRoute}' duplicates its current canonical route`,
         );
       }
     }
@@ -272,6 +638,11 @@ function walkCsvFiles(fs, path, target) {
   const stat = fs.statSync(target);
   if (stat.isFile()) {
     if (!target.endsWith(".csv")) throw new Error(`not a CSV file: ${target}`);
+    if (TRANSLATION_SIDECAR_PATTERN.test(path.basename(target))) {
+      throw new Error(
+        `translation sidecar requires scripts/check-catalog-translations.mjs: ${target}`,
+      );
+    }
     return [target];
   }
   if (!stat.isDirectory()) throw new Error(`unsupported path: ${target}`);
@@ -280,7 +651,11 @@ function walkCsvFiles(fs, path, target) {
   for (const entry of fs.readdirSync(target, { withFileTypes: true })) {
     const child = path.join(target, entry.name);
     if (entry.isDirectory()) files.push(...walkCsvFiles(fs, path, child));
-    else if (entry.isFile() && entry.name.endsWith(".csv")) files.push(child);
+    else if (
+      entry.isFile() &&
+      entry.name.endsWith(".csv") &&
+      !TRANSLATION_SIDECAR_PATTERN.test(entry.name)
+    ) files.push(child);
   }
   return files.sort();
 }
@@ -300,7 +675,11 @@ function changedCsvFiles(fs, path, execFileSync, root) {
     }
     for (const relative of output.split(/\r?\n/).filter(Boolean)) {
       const absolute = path.join(root, relative);
-      if (relative.endsWith(".csv") && fs.existsSync(absolute)) files.add(absolute);
+      if (
+        relative.endsWith(".csv") &&
+        !TRANSLATION_SIDECAR_PATTERN.test(path.basename(relative)) &&
+        fs.existsSync(absolute)
+      ) files.add(absolute);
     }
   };
 
@@ -816,6 +1195,26 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
       }
     }
 
+    const description = cleanCell(fields.descripcion);
+    const descriptionLocale = cleanCell(fields.descripcion_locale);
+    if (!description && descriptionLocale) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "empty descripcion requires empty descripcion_locale",
+      );
+    } else if (description && !DESCRIPTION_SOURCE_LOCALES.has(descriptionLocale)) {
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `non-empty descripcion requires descripcion_locale to be one of: ${DESCRIPTION_SOURCE_LOCALE_DISPLAY}`,
+      );
+    }
+
     const latRaw = cleanCell(fields.lat);
     const lonRaw = cleanCell(fields.lon);
     const lat = parseCoordinate(latRaw, 90, [2, 1, 3]);
@@ -1217,7 +1616,11 @@ async function loadHeadCountryIdentitySnapshots(countries) {
         },
       )
         .split(/\r?\n/)
-        .filter((relativePath) => relativePath.endsWith(".csv"));
+        .filter(
+          (relativePath) =>
+            relativePath.endsWith(".csv") &&
+            !TRANSLATION_SIDECAR_PATTERN.test(path.basename(relativePath)),
+        );
     } catch {
       continue;
     }

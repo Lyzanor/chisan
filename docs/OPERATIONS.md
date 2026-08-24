@@ -26,9 +26,24 @@ uses `NEXT_PUBLIC_APP_URL=https://chisan.app`. `CHISAN_ACCOUNTS_ENABLED` and
 value wins when both exist. Migrate one environment at a time, verify it, then
 remove the legacy record.
 
+Public discovery is an explicit Production capability. Unless
+`CHISAN_PUBLIC_DISCOVERY_ENABLED=true` is set in Production, Chisan emits global
+`noindex, nofollow` metadata, serves `robots.txt` with `Disallow: /` and no
+sitemap announcement, and serves an empty sitemap. Preview remains closed even
+if the flag is set. At public launch, enable the flag only in Production and
+review the Vercel Firewall AI Bots policy in the same release so the crawler
+policy and edge enforcement change together. This discovery policy is not
+access control: anyone with a URL can still open the public catalog.
+
 `CHISAN_ADMIN_EMAILS` is bootstrap provisioning, not request-time authorization.
 Remove it after the permanent admin grant exists; a staff grant in PostgreSQL is
 the durable authority.
+
+Translation-provider credentials belong only to the local editorial generation
+process. They are never `NEXT_PUBLIC_*` values, are not configured in the
+deployed Next.js runtime and must not be required for a build or page request.
+Production renders only checked-in, validated translation sidecars; it never
+calls a translation provider at request time.
 
 ## Preflight
 
@@ -50,6 +65,90 @@ the durable authority.
    account writes there only after proving its resources are isolated from
    Production; otherwise use a purpose-built isolated test environment.
 
+### Localized catalog release preflight
+
+Before publishing or changing one locale:
+
+1. Generate with an explicit country, target locale and bounded area or batch.
+   Record the selected engine, engine version, prompt version and glossary
+   version, and inspect the resulting sidecar diff without printing credentials.
+2. Run the translation checks for the changed scope and then the repository
+   gate. Every non-empty description rendered by the locale must have either
+   canonical prose in that locale or a current sidecar row whose source locale
+   and source hash match. Stale reviewed rows block release and are never
+   replaced automatically. The gate reapplies exact numeric-token, ordered
+   quantitative-fact, URL, protected-term, length and unchanged-source
+   invariants to current machine and reviewed rows; a current machine row that
+   fails them is never reused by the generator.
+3. Review every changed row containing a quantitative fact, including its
+   association with the surrounding translated claim. Review a stratified
+   language sample of the remaining rows, including proper names,
+   appellations, URLs and atypical length. A successful validator proves
+   structure and freshness, not faithful translation.
+4. Confirm the locale has complete dictionaries, territory labels, category and
+   controlled-value labels, metadata templates and effective manifest labels
+   for the exact country, region and areas being activated.
+5. Enable the locale in `country.json` only after those inputs are complete.
+   Confirm selector, `hreflang` and sitemap enumeration derive from that same
+   effective manifest policy rather than a manual release list.
+6. Run `npx pnpm verify:ai` for manifest, routing, contract or behavior changes.
+   Once translation checks are part of the data gate, a sidecar-only batch may
+   close with `npx pnpm verify:data`; use changed-only translation checks while
+   iterating.
+
+Before selecting or changing the automatic translation engine, build a fresh
+source-only benchmark plan and generate candidates into an ignored local path:
+
+```bash
+npx pnpm benchmark:translations --plan --output /tmp/chisan-translation-plan.json
+CHISAN_TRANSLATION_MODEL=model-id \
+CHISAN_TRANSLATION_ENGINE_VERSION=reproducible-version \
+npx pnpm benchmark:translations --run /tmp/chisan-translation-plan.json \
+  --output /tmp/chisan-translation-candidates.json
+```
+
+The candidate file stays `review_status=unreviewed` and every
+`human_review=null` until a qualified reviewer compares it with the matching
+plan. `repair_attempted=true` identifies an output that first failed a
+mechanical invariant and passed one isolated singleton repair; a second failure
+aborts without writing a sidecar. Numeric-token and ordered quantitative-fact
+failures are stricter: they abort on the initial response without a repair
+request, produce no sidecar and disqualify that engine from approval for the
+target locale. Unchanged source text is rejected when source and target locales
+differ. Neither rule proves that the result is actually fluent or in the
+requested language. Review all 50 or more stratified samples for each of
+Catalan, German and Japanese, recording factual
+additions/omissions, terminology, fluency and identity preservation. Automated
+validation cannot select the engine. Only after the three language assessments
+approve the same locked engine, prompt and glossary versions may those
+identifiers be used to materialize sidecars.
+
+Location-boundary activation is a separate release decision. When included,
+confirm the source date and redistribution licence, validate the reference
+geometry and deterministic browser assets, exercise ambiguity fixtures, and
+follow `docs/LOCATION_ROUTING.md`. Locale completeness never compensates for
+missing geometry, and geometry never authorizes a new locale.
+
+### Producer-change freeze for an atomic CSV schema migration
+
+Adding a universal CSV column changes every producer row hash. Before that
+commit, set `CHISAN_PRODUCER_CHANGES_ENABLED=false` in the Production
+configuration while leaving accounts enabled, then create and verify a new
+Production deployment from the currently approved commit. Changing a Vercel
+environment variable does not alter the deployment already serving traffic.
+Confirm that new profile-change submissions are blocked before continuing;
+existing requests and staff review remain available. Then use the dedicated
+read-only command to inventory every page of `draft`, `submitted`,
+`needs_changes`, `approved` and `applying` requests. Drain or explicitly resolve
+each one, and do not widen the CSV while any `applying` execution remains.
+
+Keep the switch false through the CSV migration, application deployment and
+new-form smoke check. Re-enable it in the Production configuration only after
+new requests capture and validate the widened row schema, then create and verify
+a new Production deployment before accepting submissions again. The switch is
+an operational barrier, not durable queue state, and never authorizes rewriting
+claims, memberships or historical closed requests.
+
 ## Database and deployment order
 
 For a release with committed migrations:
@@ -66,9 +165,25 @@ For a release with committed migrations:
 6. repeat the migration assertion for Production, then push the verified commit
    to `main` once.
 
-GitHub triggers the Vercel Production build from `main`; do not create a second
-manual deployment for the same commit. The build asserts migration compatibility
-and fails closed when accounts are enabled against an outdated schema.
+That migration-first order remains canonical for additive, backward-compatible
+changes. Migration `0005` is a deliberate contraction exception and requires a
+disabled-account release window because the Vercel build asserts the exact
+committed migration count. Set `CHISAN_ACCOUNTS_ENABLED=false` in the Production
+configuration, create and verify a new Production deployment of the binary that
+no longer selects `users.locale`, apply the `DROP COLUMN` with
+`npx pnpm db:migrate`, and run `npx pnpm db:assert-current` from an explicitly
+enabled operator environment. Then set `CHISAN_ACCOUNTS_ENABLED=true`, create a
+second Production deployment of that same compatible commit and complete the
+account smoke check. Accounts are not active again until that second deployment
+is serving traffic. Do not attempt a binary-first deploy with accounts enabled:
+its build must fail closed while `0005` is unapplied.
+
+GitHub triggers the initial Vercel Production build from `main`; do not duplicate
+that initial deployment manually. A verified configuration change is the
+exception: Vercel environment changes apply only to new deployments, so each
+freeze or reactivation above requires a subsequent deployment even when the
+commit is unchanged. The build asserts migration compatibility and fails closed
+when accounts are enabled against an outdated schema.
 
 The current account runtime and migration URLs may use different pooled/direct
 endpoints, but they must authenticate as the same schema-owning PostgreSQL role.
@@ -158,8 +273,13 @@ requires its own isolated branch and credentials.
 Use a real authorized account only where authentication is required. Do not
 submit a fictitious ownership claim or producer change merely to test a form.
 
-- Open `/`, one area and one producer detail; confirm canonical links and the
-  sitemap use `https://chisan.app`.
+- Open `/`, one area and one producer detail; confirm canonical links use
+  `https://chisan.app`.
+- While public discovery is disabled, confirm pages emit `noindex, nofollow`,
+  `robots.txt` contains only the catch-all `Disallow: /` rule and the sitemap is
+  empty. When public discovery is enabled, confirm those directives are removed,
+  the intended private paths remain disallowed and the sitemap contains only
+  canonical `https://chisan.app` URLs.
 - Signed out, confirm `/cuenta` and `/admin` follow the expected authentication
   or authorization path and public catalog pages remain usable.
 - Signed in, confirm the internal profile loads, add and remove one favorite,
@@ -173,6 +293,33 @@ submit a fictitious ownership claim or producer change merely to test a form.
   event.
 - Inspect runtime logs for new 5xx responses, authorization exceptions, database
   errors or repeated webhook failures.
+
+### Localized catalog smoke check
+
+For every locale activated by the release:
+
+- Open a country-default short URL and an alternate composite URL at area and
+  producer depth. Confirm a redundant default composite redirects permanently
+  to the short form and preserves safe query parameters.
+- Inspect raw HTML before client JavaScript: `lang`, visible navigation,
+  description, title and metadata must agree. Each real variant is
+  self-canonical and its reciprocal language alternates resolve to the same
+  country, area and producer.
+- Confirm no indexed variant falls back to a description in another language.
+  Names, municipality, address, official products, published hours, contacts
+  and URLs must remain the canonical source-authored values.
+- Use the language switcher on the same producer and verify it preserves the
+  producer and safe filter state. Signed in with a real account, confirm both
+  variants expose the same favorite, claim and producer-edit authorization;
+  do not create a fictitious claim to test this.
+- Confirm the sitemap includes only complete, canonical published variants and
+  the existing public-discovery flag still controls indexing, robots and
+  sitemap exposure for every locale.
+- On `/`, confirm the manual selector works without granting location. The
+  native prompt must appear only after **Use my location**. Exercise success in
+  a controlled Preview fixture and denial, timeout or ambiguous-border fallback;
+  inspect requests, storage and telemetry to ensure no raw coordinate leaves
+  ephemeral browser memory.
 
 ## Rollback and containment
 
@@ -194,6 +341,29 @@ for events received after the backup.
 Rotate a Clerk, database or webhook secret immediately if it appears in a log,
 screenshot, chat, shell history or repository. Update the affected environment,
 redeploy, verify, and revoke the exposed value only after the replacement works.
+
+To withdraw a localized catalog variant without touching producer or account
+state:
+
+1. Remove the affected locale from the effective `country.json` manifest
+   policy so selectors, language alternates and sitemap generation stop
+   publishing it from the same source.
+2. Keep its checked-in translation sidecar for diagnosis and later recovery;
+   do not delete reviewed text as incident cleanup.
+3. If the composite route was not indexed, redirect it in a controlled way to
+   the country's short default route. If it may already be indexed, use the
+   incident's reviewed redirect or temporary `noindex` response rather than
+   serving incomplete mixed-language content.
+4. Redeploy the known-good application and repeat the default-route, indexing
+   and account-identity smoke checks.
+5. Do not migrate, delete or rewrite favorites, claims, memberships, change
+   requests or producer keys. The short `/<country>` routes and their durable
+   `(country, producer_id)` references remain valid throughout rollout and
+   rollback.
+
+Disable location onboarding or the affected boundary independently when its
+geometry or privacy behavior fails. Keep manual selection available and do not
+substitute IP geolocation, a nearest-area guess or producer coordinates.
 
 ## Backup, restore and provider exit
 

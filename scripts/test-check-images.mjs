@@ -40,6 +40,14 @@ try {
       "",
     ].join("\n"),
   );
+  fs.writeFileSync(
+    path.join(csvRoot, "xx", "translations.en.csv"),
+    [
+      "producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version",
+      "1,descripcion,es,hash,Translated text,machine,test,test,test,test",
+      "",
+    ].join("\n"),
+  );
 
   const shared = webp(1600, 1200);
   fs.writeFileSync(path.join(areaDir, "good-a.webp"), shared);

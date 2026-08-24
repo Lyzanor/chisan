@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "countries": [
+    {
+      "country": "es",
+      "bbox": [
+        -19,
+        27,
+        5,
+        44
+      ],
+      "href": "/generated/catalog-geography/es.json",
+      "sha256": "f27ea076d6f756efe5c11af8cc44574e772a2c5e9d3db3e38f1f66e2b82299bd"
+    }
+  ]
+}

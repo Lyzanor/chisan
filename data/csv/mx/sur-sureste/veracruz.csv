@@ -1,2 +1,2 @@
-slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
-cafe-don-justo,Café Don Justo,Coatepec,Café,,,Empresa cafetalera fundada en 1891 con fincas en Coatepec; café de especialidad arábica de altura con DO Café Veracruz,,,,https://cafedonjusto.com.mx,,,,,,,parcial,no comprobado,,,21
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+cafe-don-justo,Café Don Justo,Coatepec,Café,,,Empresa cafetalera fundada en 1891 con fincas en Coatepec; café de especialidad arábica de altura con DO Café Veracruz,,,,https://cafedonjusto.com.mx,,,,,,,parcial,no comprobado,,,21,en
