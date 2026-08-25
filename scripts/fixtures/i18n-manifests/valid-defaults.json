@@ -5,20 +5,26 @@
   "i18n": {
     "defaultLocale": "es",
     "publishedLocales": ["es"],
-    "labels": { "es": "España" },
-    "unitLabels": { "es": { "one": "provincia", "many": "provincias" } },
-    "regionUnitLabels": { "es": { "one": "región", "many": "regiones" } }
+    "labels": { "es": "España", "en": "Spain" },
+    "unitLabels": {
+      "es": { "one": "provincia", "many": "provincias" },
+      "en": { "one": "province", "many": "provinces" }
+    },
+    "regionUnitLabels": {
+      "es": { "one": "región", "many": "regiones" },
+      "en": { "one": "region", "many": "regions" }
+    }
   },
   "regions": [
     {
       "slug": "catalunya",
       "label": "Catalunya",
-      "labels": { "es": "Cataluña" },
+      "labels": { "es": "Cataluña", "en": "Catalonia" },
       "areas": [
         {
           "slug": "barcelona",
           "label": "Barcelona",
-          "labels": { "es": "Barcelona" }
+          "labels": { "es": "Barcelona", "en": "Barcelona" }
         }
       ]
     }

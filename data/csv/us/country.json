@@ -43,106 +43,504 @@
       "slug": "new-england",
       "label": "New England",
       "areas": [
-        { "slug": "connecticut", "label": "Connecticut" },
-        { "slug": "maine", "label": "Maine" },
-        { "slug": "massachusetts", "label": "Massachusetts" },
-        { "slug": "new-hampshire", "label": "New Hampshire" },
-        { "slug": "rhode-island", "label": "Rhode Island" },
-        { "slug": "vermont", "label": "Vermont" }
-      ]
+        {
+          "slug": "connecticut",
+          "label": "Connecticut",
+          "labels": {
+            "en": "Connecticut"
+          }
+        },
+        {
+          "slug": "maine",
+          "label": "Maine",
+          "labels": {
+            "en": "Maine"
+          }
+        },
+        {
+          "slug": "massachusetts",
+          "label": "Massachusetts",
+          "labels": {
+            "en": "Massachusetts"
+          }
+        },
+        {
+          "slug": "new-hampshire",
+          "label": "New Hampshire",
+          "labels": {
+            "en": "New Hampshire"
+          }
+        },
+        {
+          "slug": "rhode-island",
+          "label": "Rhode Island",
+          "labels": {
+            "en": "Rhode Island"
+          }
+        },
+        {
+          "slug": "vermont",
+          "label": "Vermont",
+          "labels": {
+            "en": "Vermont"
+          }
+        }
+      ],
+      "labels": {
+        "en": "New England",
+        "es": "Nueva Inglaterra"
+      }
     },
     {
       "slug": "middle-atlantic",
       "label": "Middle Atlantic",
       "areas": [
-        { "slug": "new-jersey", "label": "New Jersey" },
-        { "slug": "new-york", "label": "New York" },
-        { "slug": "pennsylvania", "label": "Pennsylvania" }
-      ]
+        {
+          "slug": "new-jersey",
+          "label": "New Jersey",
+          "labels": {
+            "en": "New Jersey"
+          }
+        },
+        {
+          "slug": "new-york",
+          "label": "New York",
+          "labels": {
+            "en": "New York"
+          }
+        },
+        {
+          "slug": "pennsylvania",
+          "label": "Pennsylvania",
+          "labels": {
+            "en": "Pennsylvania"
+          }
+        }
+      ],
+      "labels": {
+        "en": "Middle Atlantic",
+        "es": "Atlántico Medio"
+      }
     },
     {
       "slug": "east-north-central",
       "label": "East North Central",
       "areas": [
-        { "slug": "illinois", "label": "Illinois" },
-        { "slug": "indiana", "label": "Indiana" },
-        { "slug": "michigan", "label": "Michigan" },
-        { "slug": "ohio", "label": "Ohio" },
-        { "slug": "wisconsin", "label": "Wisconsin" }
-      ]
+        {
+          "slug": "illinois",
+          "label": "Illinois",
+          "labels": {
+            "en": "Illinois"
+          }
+        },
+        {
+          "slug": "indiana",
+          "label": "Indiana",
+          "labels": {
+            "en": "Indiana"
+          }
+        },
+        {
+          "slug": "michigan",
+          "label": "Michigan",
+          "labels": {
+            "en": "Michigan"
+          }
+        },
+        {
+          "slug": "ohio",
+          "label": "Ohio",
+          "labels": {
+            "en": "Ohio"
+          }
+        },
+        {
+          "slug": "wisconsin",
+          "label": "Wisconsin",
+          "labels": {
+            "en": "Wisconsin"
+          }
+        }
+      ],
+      "labels": {
+        "en": "East North Central",
+        "es": "Centro Noreste"
+      }
     },
     {
       "slug": "west-north-central",
       "label": "West North Central",
       "areas": [
-        { "slug": "iowa", "label": "Iowa" },
-        { "slug": "kansas", "label": "Kansas" },
-        { "slug": "minnesota", "label": "Minnesota" },
-        { "slug": "missouri", "label": "Missouri" },
-        { "slug": "nebraska", "label": "Nebraska" },
-        { "slug": "north-dakota", "label": "North Dakota" },
-        { "slug": "south-dakota", "label": "South Dakota" }
-      ]
+        {
+          "slug": "iowa",
+          "label": "Iowa",
+          "labels": {
+            "en": "Iowa"
+          }
+        },
+        {
+          "slug": "kansas",
+          "label": "Kansas",
+          "labels": {
+            "en": "Kansas"
+          }
+        },
+        {
+          "slug": "minnesota",
+          "label": "Minnesota",
+          "labels": {
+            "en": "Minnesota"
+          }
+        },
+        {
+          "slug": "missouri",
+          "label": "Missouri",
+          "labels": {
+            "en": "Missouri"
+          }
+        },
+        {
+          "slug": "nebraska",
+          "label": "Nebraska",
+          "labels": {
+            "en": "Nebraska"
+          }
+        },
+        {
+          "slug": "north-dakota",
+          "label": "North Dakota",
+          "labels": {
+            "en": "North Dakota"
+          }
+        },
+        {
+          "slug": "south-dakota",
+          "label": "South Dakota",
+          "labels": {
+            "en": "South Dakota"
+          }
+        }
+      ],
+      "labels": {
+        "en": "West North Central",
+        "es": "Centro Noroeste"
+      }
     },
     {
       "slug": "south-atlantic",
       "label": "South Atlantic",
       "areas": [
-        { "slug": "delaware", "label": "Delaware" },
-        { "slug": "district-of-columbia", "label": "District of Columbia" },
-        { "slug": "florida", "label": "Florida" },
-        { "slug": "georgia", "label": "Georgia" },
-        { "slug": "maryland", "label": "Maryland" },
-        { "slug": "north-carolina", "label": "North Carolina" },
-        { "slug": "south-carolina", "label": "South Carolina" },
-        { "slug": "virginia", "label": "Virginia" },
-        { "slug": "west-virginia", "label": "West Virginia" }
-      ]
+        {
+          "slug": "delaware",
+          "label": "Delaware",
+          "labels": {
+            "en": "Delaware"
+          }
+        },
+        {
+          "slug": "district-of-columbia",
+          "label": "District of Columbia",
+          "labels": {
+            "en": "District of Columbia"
+          }
+        },
+        {
+          "slug": "florida",
+          "label": "Florida",
+          "labels": {
+            "en": "Florida"
+          }
+        },
+        {
+          "slug": "georgia",
+          "label": "Georgia",
+          "labels": {
+            "en": "Georgia"
+          }
+        },
+        {
+          "slug": "maryland",
+          "label": "Maryland",
+          "labels": {
+            "en": "Maryland"
+          }
+        },
+        {
+          "slug": "north-carolina",
+          "label": "North Carolina",
+          "labels": {
+            "en": "North Carolina"
+          }
+        },
+        {
+          "slug": "south-carolina",
+          "label": "South Carolina",
+          "labels": {
+            "en": "South Carolina"
+          }
+        },
+        {
+          "slug": "virginia",
+          "label": "Virginia",
+          "labels": {
+            "en": "Virginia"
+          }
+        },
+        {
+          "slug": "west-virginia",
+          "label": "West Virginia",
+          "labels": {
+            "en": "West Virginia"
+          }
+        }
+      ],
+      "labels": {
+        "en": "South Atlantic",
+        "es": "Atlántico Sur"
+      }
     },
     {
       "slug": "east-south-central",
       "label": "East South Central",
       "areas": [
-        { "slug": "alabama", "label": "Alabama" },
-        { "slug": "kentucky", "label": "Kentucky" },
-        { "slug": "mississippi", "label": "Mississippi" },
-        { "slug": "tennessee", "label": "Tennessee" }
-      ]
+        {
+          "slug": "alabama",
+          "label": "Alabama",
+          "labels": {
+            "en": "Alabama"
+          }
+        },
+        {
+          "slug": "kentucky",
+          "label": "Kentucky",
+          "labels": {
+            "en": "Kentucky"
+          }
+        },
+        {
+          "slug": "mississippi",
+          "label": "Mississippi",
+          "labels": {
+            "en": "Mississippi"
+          }
+        },
+        {
+          "slug": "tennessee",
+          "label": "Tennessee",
+          "labels": {
+            "en": "Tennessee"
+          }
+        }
+      ],
+      "labels": {
+        "en": "East South Central",
+        "es": "Centro Sureste"
+      }
     },
     {
       "slug": "west-south-central",
       "label": "West South Central",
       "areas": [
-        { "slug": "arkansas", "label": "Arkansas" },
-        { "slug": "louisiana", "label": "Louisiana" },
-        { "slug": "oklahoma", "label": "Oklahoma" },
-        { "slug": "texas", "label": "Texas" }
-      ]
+        {
+          "slug": "arkansas",
+          "label": "Arkansas",
+          "labels": {
+            "en": "Arkansas"
+          }
+        },
+        {
+          "slug": "louisiana",
+          "label": "Louisiana",
+          "labels": {
+            "en": "Louisiana"
+          }
+        },
+        {
+          "slug": "oklahoma",
+          "label": "Oklahoma",
+          "labels": {
+            "en": "Oklahoma"
+          }
+        },
+        {
+          "slug": "texas",
+          "label": "Texas",
+          "labels": {
+            "en": "Texas"
+          }
+        }
+      ],
+      "labels": {
+        "en": "West South Central",
+        "es": "Centro Suroeste"
+      }
     },
     {
       "slug": "mountain",
       "label": "Mountain",
       "areas": [
-        { "slug": "arizona", "label": "Arizona" },
-        { "slug": "colorado", "label": "Colorado" },
-        { "slug": "idaho", "label": "Idaho" },
-        { "slug": "montana", "label": "Montana" },
-        { "slug": "nevada", "label": "Nevada" },
-        { "slug": "new-mexico", "label": "New Mexico" },
-        { "slug": "utah", "label": "Utah" },
-        { "slug": "wyoming", "label": "Wyoming" }
-      ]
+        {
+          "slug": "arizona",
+          "label": "Arizona",
+          "labels": {
+            "en": "Arizona"
+          }
+        },
+        {
+          "slug": "colorado",
+          "label": "Colorado",
+          "labels": {
+            "en": "Colorado"
+          }
+        },
+        {
+          "slug": "idaho",
+          "label": "Idaho",
+          "labels": {
+            "en": "Idaho"
+          }
+        },
+        {
+          "slug": "montana",
+          "label": "Montana",
+          "labels": {
+            "en": "Montana"
+          }
+        },
+        {
+          "slug": "nevada",
+          "label": "Nevada",
+          "labels": {
+            "en": "Nevada"
+          }
+        },
+        {
+          "slug": "new-mexico",
+          "label": "New Mexico",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "es"
+            ],
+            "preferredLocale": "es"
+          },
+          "labels": {
+            "en": "New Mexico",
+            "es": "Nuevo México"
+          }
+        },
+        {
+          "slug": "utah",
+          "label": "Utah",
+          "labels": {
+            "en": "Utah"
+          }
+        },
+        {
+          "slug": "wyoming",
+          "label": "Wyoming",
+          "labels": {
+            "en": "Wyoming"
+          }
+        }
+      ],
+      "labels": {
+        "en": "Mountain",
+        "es": "Montaña"
+      }
     },
     {
       "slug": "pacific",
       "label": "Pacific",
       "areas": [
-        { "slug": "alaska", "label": "Alaska" },
-        { "slug": "california", "label": "California" },
-        { "slug": "hawaii", "label": "Hawaii" },
-        { "slug": "oregon", "label": "Oregon" },
-        { "slug": "washington", "label": "Washington" }
-      ]
+        {
+          "slug": "alaska",
+          "label": "Alaska",
+          "labels": {
+            "en": "Alaska"
+          }
+        },
+        {
+          "slug": "california",
+          "label": "California",
+          "labels": {
+            "en": "California"
+          }
+        },
+        {
+          "slug": "hawaii",
+          "label": "Hawaii",
+          "i18n": {
+            "publishedLocales": [
+              "haw",
+              "en"
+            ],
+            "preferredLocale": "haw"
+          },
+          "labels": {
+            "en": "Hawaii",
+            "haw": "Hawaiʻi"
+          }
+        },
+        {
+          "slug": "oregon",
+          "label": "Oregon",
+          "labels": {
+            "en": "Oregon"
+          }
+        },
+        {
+          "slug": "washington",
+          "label": "Washington",
+          "labels": {
+            "en": "Washington"
+          }
+        }
+      ],
+      "labels": {
+        "en": "Pacific",
+        "es": "Pacífico",
+        "haw": "Pākīpika"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "en",
+    "publishedLocales": [
+      "en"
+    ],
+    "labels": {
+      "en": "United States",
+      "es": "Estados Unidos",
+      "haw": "ʻAmelika Hui Pū ʻIa"
+    },
+    "unitLabels": {
+      "en": {
+        "one": "state or federal district",
+        "many": "states and federal district"
+      },
+      "es": {
+        "one": "estado o distrito federal",
+        "many": "estados y distrito federal"
+      },
+      "haw": {
+        "one": "mokuʻāina a i ʻole ʻāpana aupuni pekelala",
+        "many": "nā mokuʻāina a me ka ʻāpana aupuni pekelala"
+      }
+    },
+    "regionUnitLabels": {
+      "en": {
+        "one": "census division",
+        "many": "census divisions"
+      },
+      "es": {
+        "one": "división censal",
+        "many": "divisiones censales"
+      },
+      "haw": {
+        "one": "mahele helu kanaka",
+        "many": "nā mahele helu kanaka"
+      }
+    }
+  }
 }

@@ -10,7 +10,6 @@ const FIELD_LABEL_KEYS: Record<string, FieldLabelKey> = {
   municipio: "municipality",
   categoria: "category",
   "categorias adicionales": "additionalCategories",
-  subcategoria: "subcategory",
   "productos estrella": "featuredProducts",
   direccion: "address",
   descripcion: "description",
@@ -28,7 +27,6 @@ const FIELD_LABEL_KEYS: Record<string, FieldLabelKey> = {
   lat: "latitude",
   lon: "longitude",
   verificacion: "verification",
-  revisado: "reviewed",
 };
 
 function normalizeKey(key: string): string {

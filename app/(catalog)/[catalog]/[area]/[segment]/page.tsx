@@ -55,7 +55,9 @@ function buildPhoneHref(phone: string): string {
   return phone ? `tel:${phone}` : "";
 }
 
-export async function generateMetadata({ params }: ProducerPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProducerPageProps): Promise<Metadata> {
   const { catalog, area: rawArea, segment } = await params;
   const resolved = await resolveProducerCatalog(catalog, rawArea, segment);
   const producer = resolved
@@ -69,7 +71,9 @@ export async function generateMetadata({ params }: ProducerPageProps): Promise<M
 
   if (!producer || !resolved) {
     const locale =
-      resolved?.scope.locale ?? resolveKnownCatalogScope(catalog)?.scope.locale ?? "en";
+      resolved?.scope.locale ??
+      resolveKnownCatalogScope(catalog)?.scope.locale ??
+      "en";
     const messages = await loadMessages(locale);
     return {
       title: messages.metadata.producerNotFoundTitle,
@@ -96,12 +100,17 @@ export async function generateMetadata({ params }: ProducerPageProps): Promise<M
     ),
     image: {
       url: producer.imageSrc,
-      alt: formatMessage(messages.producer.imageAlt, { producer: producer.name }),
+      alt: formatMessage(messages.producer.imageAlt, {
+        producer: producer.name,
+      }),
     },
   });
 }
 
-export default async function ProducerPage({ params, searchParams }: ProducerPageProps) {
+export default async function ProducerPage({
+  params,
+  searchParams,
+}: ProducerPageProps) {
   const [{ catalog, area: rawArea, segment }, query] = await Promise.all([
     params,
     searchParams,
@@ -153,9 +162,12 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
   const phone = getFieldValue(producer.fields, "telefono");
   const instagram = getFieldValue(producer.fields, "Instagram");
   const facebook = getFieldValue(producer.fields, "Facebook");
-  const subcategory = getFieldValue(producer.fields, "subcategoria");
   const phoneHref = buildPhoneHref(phone);
-  const publicFields = presentPublicProducerFields(producer.fields, locale, messages);
+  const publicFields = presentPublicProducerFields(
+    producer.fields,
+    locale,
+    messages,
+  );
   const localizedCategories = producer.categories.map((producerCategory) =>
     getCategoryLabel(producerCategory, locale),
   );
@@ -214,7 +226,10 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
           label={messages.languageSwitcher.label}
           options={languageOptions}
         />
-        <Link href={backHref} className="detail-back-link detail-back-link--desktop">
+        <Link
+          href={backHref}
+          className="detail-back-link detail-back-link--desktop"
+        >
           ← {messages.producer.backToMap}
         </Link>
 
@@ -224,7 +239,6 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
             <h1>{producer.name}</h1>
             <p className="detail-subtitle">
               {producer.city} · {localizedCategories.join(" · ")}
-              {subcategory ? ` · ${subcategory}` : ""}
             </p>
             <div className="detail-links">
               {website ? (
@@ -237,8 +251,12 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
                   {messages.producer.googleMaps}
                 </a>
               ) : null}
-              {phone && phoneHref ? <a href={phoneHref}>{messages.producer.phone}</a> : null}
-              {email ? <a href={`mailto:${email}`}>{messages.producer.email}</a> : null}
+              {phone && phoneHref ? (
+                <a href={phoneHref}>{messages.producer.phone}</a>
+              ) : null}
+              {email ? (
+                <a href={`mailto:${email}`}>{messages.producer.email}</a>
+              ) : null}
               {instagram ? (
                 <a href={instagram} target="_blank" rel="noreferrer">
                   {messages.fieldLabels.instagram}
@@ -264,7 +282,9 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
           <figure className="detail-hero-media">
             <Image
               src={producer.imageSrc}
-              alt={formatMessage(messages.producer.imageAlt, { producer: producer.name })}
+              alt={formatMessage(messages.producer.imageAlt, {
+                producer: producer.name,
+              })}
               width={640}
               height={480}
               sizes="(max-width: 980px) calc(100vw - 2.75rem), 330px"
@@ -283,7 +303,9 @@ export default async function ProducerPage({ params, searchParams }: ProducerPag
           <h2 id="detail-location-title">{messages.producer.location}</h2>
           <div
             className="detail-producer-map"
-            aria-label={formatMessage(messages.producer.mapAria, { producer: producer.name })}
+            aria-label={formatMessage(messages.producer.mapAria, {
+              producer: producer.name,
+            })}
           >
             <ProducersMap
               points={mapPoints}

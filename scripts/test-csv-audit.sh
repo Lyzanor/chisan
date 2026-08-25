@@ -39,10 +39,10 @@ const { parse } = require("csv-parse/sync");
 const file = process.argv[2];
 const canonicalColumns = require(process.cwd() + "/scripts/audit-csv.js").CANONICAL_HEADER;
 const canonical = canonicalColumns.join(",");
-const legacy = canonicalColumns.slice(0, -1).join(",");
+const shortHeader = canonicalColumns.slice(0, -1).join(",");
 const raw = fs.readFileSync(file, "utf8");
 const lines = raw.split("\n");
-if (raw.startsWith("\uFEFF") || raw.includes("\r") || ![canonical, legacy].includes(lines[0])) {
+if (raw.startsWith("\uFEFF") || raw.includes("\r") || ![canonical, shortHeader].includes(lines[0])) {
   process.exit(0);
 }
 
@@ -50,7 +50,7 @@ const base = Number.parseInt(
   crypto.createHash("sha256").update(file).digest("hex").slice(0, 10),
   16,
 ) * 1000;
-let changed = lines[0] === legacy;
+let changed = lines[0] === shortHeader;
 lines[0] = canonical;
 for (let index = 1; index < lines.length; index += 1) {
   if (!lines[index]) continue;
@@ -93,7 +93,8 @@ run_expect_success() {
 
 prepare_git_audit_repo() {
   local repo_root="$1"
-  mkdir -p "$repo_root/scripts" "$repo_root/data/reference" "$repo_root/data/csv/es/one"
+  mkdir -p "$repo_root/scripts" "$repo_root/data/reference" \
+    "$repo_root/data/csv/es/one" "$repo_root/data/csv/es/two"
   cp "$ROOT_DIR/scripts/audit-csv.js" "$repo_root/scripts/audit-csv.js"
   cp "$ROOT_DIR/data/reference/categories.json" "$repo_root/data/reference/categories.json"
   ln -s "$ROOT_DIR/node_modules" "$repo_root/node_modules"
@@ -103,6 +104,43 @@ prepare_git_audit_repo() {
 ## Country rules
 ## Source ceilings
 GUIDE
+  cat >"$repo_root/data/csv/es/country.json" <<'JSON'
+{
+  "label": "Spain",
+  "unit": { "one": "area", "many": "areas" },
+  "regionUnit": { "one": "region", "many": "regions" },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": ["es"],
+    "labels": { "es": "España", "en": "Spain" },
+    "unitLabels": {
+      "es": { "one": "área", "many": "áreas" },
+      "en": { "one": "area", "many": "areas" }
+    },
+    "regionUnitLabels": {
+      "es": { "one": "región", "many": "regiones" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  },
+  "regions": [
+    {
+      "slug": "one",
+      "label": "One",
+      "labels": { "es": "Uno", "en": "One" },
+      "areas": [{ "slug": "one", "label": "One", "labels": { "es": "Uno", "en": "One" } }]
+    },
+    {
+      "slug": "two",
+      "label": "Two",
+      "labels": { "es": "Dos", "en": "Two" },
+      "areas": [{ "slug": "two", "label": "Two", "labels": { "es": "Dos", "en": "Two" } }]
+    }
+  ]
+}
+JSON
+  cat >"$repo_root/data/csv/es/two/two.csv" <<'CSV'
+slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id,descripcion_locale
+CSV
   (
     cd "$repo_root"
     git init -q
@@ -125,6 +163,8 @@ REGISTRY_I18N_INHERITED="$TMP_ROOT/registry-i18n-inherited"
 REGISTRY_I18N_MISSING_LABELS="$TMP_ROOT/registry-i18n-missing-labels"
 REGISTRY_I18N_INVALID_PAIRS="$TMP_ROOT/registry-i18n-invalid-pairs"
 REGISTRY_I18N_EXCLUDED_DEFAULT="$TMP_ROOT/registry-i18n-excluded-default"
+REGISTRY_I18N_ORPHAN_REGION="$TMP_ROOT/registry-i18n-orphan-region"
+REGISTRY_I18N_ORPHAN_AREA="$TMP_ROOT/registry-i18n-orphan-area"
 mkdir -p "$REGISTRY_OK/es/centro" "$REGISTRY_OK/pt/norte"
 mkdir -p "$REGISTRY_DUPLICATE/es/centro" "$REGISTRY_DUPLICATE/es/norte"
 mkdir -p "$REGISTRY_RESERVED/es/centro"
@@ -151,6 +191,60 @@ for guide in "$REGISTRY_OK/es/AGENTS.md" "$REGISTRY_OK/pt/AGENTS.md" \
 GUIDE
 done
 
+cat >"$REGISTRY_OK/es/country.json" <<'JSON'
+{
+  "label": "Spain",
+  "unit": { "one": "province", "many": "provinces" },
+  "regionUnit": { "one": "region", "many": "regions" },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": ["es"],
+    "labels": { "es": "España", "en": "Spain" },
+    "unitLabels": {
+      "es": { "one": "provincia", "many": "provincias" },
+      "en": { "one": "province", "many": "provinces" }
+    },
+    "regionUnitLabels": {
+      "es": { "one": "región", "many": "regiones" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  },
+  "regions": [{
+    "slug": "centro",
+    "label": "Centro",
+    "labels": { "es": "Centro", "en": "Central" },
+    "areas": [{ "slug": "ribera", "label": "Ribera", "labels": { "es": "Ribera", "en": "Riverbank" } }]
+  }]
+}
+JSON
+
+cat >"$REGISTRY_OK/pt/country.json" <<'JSON'
+{
+  "label": "Portugal",
+  "unit": { "one": "district", "many": "districts" },
+  "regionUnit": { "one": "region", "many": "regions" },
+  "i18n": {
+    "defaultLocale": "pt",
+    "publishedLocales": ["pt"],
+    "labels": { "pt": "Portugal", "en": "Portugal" },
+    "unitLabels": {
+      "pt": { "one": "distrito", "many": "distritos" },
+      "en": { "one": "district", "many": "districts" }
+    },
+    "regionUnitLabels": {
+      "pt": { "one": "região", "many": "regiões" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  },
+  "regions": [{
+    "slug": "norte",
+    "label": "Norte",
+    "labels": { "pt": "Norte", "en": "North" },
+    "areas": [{ "slug": "ribera", "label": "Ribera", "labels": { "pt": "Ribera", "en": "Riverbank" } }]
+  }]
+}
+JSON
+
 cat >"$REGISTRY_RESERVED/es/country.json" <<'JSON'
 {"aliases":{"events":"events","retail":"retail"}}
 JSON
@@ -160,7 +254,35 @@ cat >"$REGISTRY_BAD_ALIAS_TARGET/es/country.json" <<'JSON'
 JSON
 
 cat >"$REGISTRY_PRODUCER_ALIAS_VALID/es/country.json" <<'JSON'
-{"aliases":{"old-area":"current"},"producerRouteAliases":{"old-area/ø-former-producer":1,"current/other-former-producer":1}}
+{
+  "label": "Spain",
+  "unit": { "one": "province", "many": "provinces" },
+  "regionUnit": { "one": "region", "many": "regions" },
+  "aliases": { "old-area": "current" },
+  "producerRouteAliases": {
+    "old-area/ø-former-producer": 1,
+    "current/other-former-producer": 1
+  },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": ["es"],
+    "labels": { "es": "España", "en": "Spain" },
+    "unitLabels": {
+      "es": { "one": "provincia", "many": "provincias" },
+      "en": { "one": "province", "many": "provinces" }
+    },
+    "regionUnitLabels": {
+      "es": { "one": "región", "many": "regiones" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  },
+  "regions": [{
+    "slug": "centro",
+    "label": "Centro",
+    "labels": { "es": "Centro", "en": "Central" },
+    "areas": [{ "slug": "current", "label": "Current", "labels": { "es": "Actual", "en": "Current" } }]
+  }]
+}
 JSON
 cat >"$REGISTRY_PRODUCER_ALIAS_VALID/es/centro/current.csv" <<'CSV'
 slug,producer_id
@@ -250,6 +372,8 @@ prepare_i18n_registry "$REGISTRY_I18N_INHERITED" "inherited-locales.json"
 prepare_i18n_registry "$REGISTRY_I18N_MISSING_LABELS" "missing-labels.json"
 prepare_i18n_registry "$REGISTRY_I18N_INVALID_PAIRS" "invalid-locale-pairs.json"
 prepare_i18n_registry "$REGISTRY_I18N_EXCLUDED_DEFAULT" "excluded-default.json"
+prepare_i18n_registry "$REGISTRY_I18N_ORPHAN_REGION" "orphan-region.json"
+prepare_i18n_registry "$REGISTRY_I18N_ORPHAN_AREA" "orphan-area.json"
 
 run_expect_success "$TMP_ROOT/out-registry-i18n-valid.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_VALID"
@@ -271,13 +395,23 @@ grep -q "i18n.publishedLocales duplicates locale 'en'" \
   "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
 grep -q "preferred locale 'ca' must appear in its effective published locales" \
   "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
-grep -q "i18n.publishedLocales entry must be one of: en, es, ca, de, ja, fr, it, nl, pt" \
+grep -q "i18n.publishedLocales entry must be one of: en, es, ca, de, ja, fr, it, nl, pt, af" \
   "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-i18n-excluded-default.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_EXCLUDED_DEFAULT"
 grep -q "effective published locales must include country default locale 'es'" \
   "$TMP_ROOT/out-registry-i18n-excluded-default.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-i18n-orphan-region.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_ORPHAN_REGION"
+grep -q "declares region 'invented-region' outside the CSV tree" \
+  "$TMP_ROOT/out-registry-i18n-orphan-region.txt"
+
+run_expect_failure "$TMP_ROOT/out-registry-i18n-orphan-area.txt" \
+  node "$ROOT_DIR/scripts/audit-csv.js" --registry "$REGISTRY_I18N_ORPHAN_AREA"
+grep -q "declares area 'invented-area' outside the CSV tree" \
+  "$TMP_ROOT/out-registry-i18n-orphan-area.txt"
 
 cat >"$TMP_DIR/missing-column.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,verificacion
@@ -509,6 +643,40 @@ cat >"$CHANGED_ROOT/data/csv/es/AGENTS.md" <<'GUIDE'
 ## Country rules
 ## Source ceilings
 GUIDE
+cat >"$CHANGED_ROOT/data/csv/es/country.json" <<'JSON'
+{
+  "label": "Spain",
+  "unit": { "one": "area", "many": "areas" },
+  "regionUnit": { "one": "region", "many": "regions" },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": ["es"],
+    "labels": { "es": "España", "en": "Spain" },
+    "unitLabels": {
+      "es": { "one": "área", "many": "áreas" },
+      "en": { "one": "area", "many": "areas" }
+    },
+    "regionUnitLabels": {
+      "es": { "one": "región", "many": "regiones" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  },
+  "regions": [
+    {
+      "slug": "one",
+      "label": "One",
+      "labels": { "es": "Uno", "en": "One" },
+      "areas": [{ "slug": "one", "label": "One", "labels": { "es": "Uno", "en": "One" } }]
+    },
+    {
+      "slug": "two",
+      "label": "Two",
+      "labels": { "es": "Dos", "en": "Two" },
+      "areas": [{ "slug": "two", "label": "Two", "labels": { "es": "Dos", "en": "Two" } }]
+    }
+  ]
+}
+JSON
 cat >"$CHANGED_ROOT/data/csv/es/one/one.csv" <<'CSV'
 slug,nombre,municipio,categoria,productos estrella,direccion,descripcion,horario,telefono,correo,web,Facebook,Instagram,Google Maps,lat,lon,imagen,verificacion,Venta online,Canal de venta,categorias adicionales,producer_id
 stable-producer,Stable Producer,Abrera,Vino,Vino,Carrer 1,Productor de prueba,,,,https://example.com,,,,,,,pendiente,no,,,1
@@ -642,7 +810,7 @@ run_expect_success "$TMP_DIR/out-list-additional.txt" \
   node "$ROOT_DIR/scripts/list-producers.mjs" "$TMP_DIR/canonical-ok.csv" --categoria Cerveza
 grep -q "canal-ok .* Vino .* Cerveza" "$TMP_DIR/out-list-additional.txt"
 
-# All legacy columns present but out of order is a blocking error.
+# All canonical columns present but out of order is a blocking error.
 run_expect_failure "$TMP_DIR/out-wrong-order-header.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/wrong-order-header.csv"
 grep -q "header does not match the canonical header (column 12 is 'Instagram' instead of 'Facebook')" "$TMP_DIR/out-wrong-order-header.txt"
@@ -911,8 +1079,9 @@ run_expect_failure "$TMP_DIR/out-description-locale-invalid.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-invalid.csv"
 grep -q "empty descripcion requires empty descripcion_locale" \
   "$TMP_DIR/out-description-locale-invalid.txt"
-grep -q "non-empty descripcion requires descripcion_locale to be one of: en, es, ca, de, ja, fr, it, nl, pt, gl, eu" \
+grep -q "non-empty descripcion requires descripcion_locale to be one of: en, es, ca, de, ja, fr, it, nl, pt, af" \
   "$TMP_DIR/out-description-locale-invalid.txt"
+grep -q "xh, zu, gl, eu" "$TMP_DIR/out-description-locale-invalid.txt"
 run_expect_success "$TMP_DIR/out-description-locale-empty.txt" \
   node "$ROOT_DIR/scripts/audit-csv.js" "$TMP_DIR/description-locale-empty.csv"
 run_expect_success "$TMP_DIR/out-description-locale-source-only.txt" \

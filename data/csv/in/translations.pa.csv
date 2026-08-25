@@ -1,0 +1,2 @@
+producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version
+157,descripcion,en,ec1571b097a6fbfefe9859cd6aed76c7ccc624cb09fb20bbb8442b04ea0a5cd9,"Sukhjit ਆਪਣੀ ਫਗਵਾੜਾ ਇਕਾਈ ਵਿੱਚ ਮੱਕੀ ਤੋਂ ਭੋਜਨ ਲਈ ਸਟਾਰਚ, ਮਿੱਠਾਸ ਦੇਣ ਵਾਲੇ ਪਦਾਰਥ ਅਤੇ ਸੰਬੰਧਿਤ ਅਨਾਜ ਸਮੱਗਰੀ ਤਿਆਰ ਕਰਦਾ ਹੈ।",reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3

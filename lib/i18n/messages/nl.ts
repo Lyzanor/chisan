@@ -9,12 +9,8 @@ const messages = {
     myAccount: "Mijn account", signOut: "Uitloggen",
   },
   siteFooter: {
-    navigation: "Navigatie in de voettekst", aboutTitle: "Over ons",
-    aboutDescription: "Chisan bouwt aan een gedeeld, betrouwbaar platform om lokale producenten van eten en drinken te ontdekken.",
-    aboutLink: "Ons doel", exploreTitle: "Ontdekken", catalogLink: "Producentencatalogus",
-    contactTitle: "Contact", contactDescription: "Vragen, correcties en voorstellen voor samenwerking zijn welkom.",
-    contactLink: "Neem contact met ons op via GitHub", closingLine: "Een open, betrouwbare catalogus voor lokaal eten.",
-  },
+    navigation: "Navigatie in de voettekst", aboutLink: "Ons doel", catalogLink: "Producentencatalogus",
+    contactLink: "Neem contact met ons op via GitHub", },
   accountActions: {
     ownershipVerifiedDescription: "Het eigenaarschap van deze producent is geverifieerd.",
     saveOrClaimPrompt: "Sla deze producent op of claim het eigenaarschap.",
@@ -59,7 +55,13 @@ const messages = {
     areaDescription: "Bekijk lokale producenten in {area}, {country}.", producerNotFoundTitle: "Producent niet gevonden",
     producerNotFoundDescription: "Deze producent staat niet in de CSV-catalogus.", producerDescription: "{producer} in {city}. Lokale producten: {categories}.",
   },
-  home: { chooseCountry: "Kies een land", countrySummary: "{areas} in {regions}" },
+  home: {
+    chooseCountry: "Kies een land",
+    countrySummary: "{areas} in {regions}",
+    aboutKicker: "Over Chisan",
+    aboutDescription: "Chisan bouwt aan een gedeelde ontdekkingslaag voor lokaal eten: één plek om voedsel- en drankproducenten te vinden die diep in hun gemeenschappen geworteld zijn, hen te begrijpen en met hen in contact te komen.",
+    aboutCatalogDescription: "Een transparante CSV-catalogus blijft de bron van waarheid. Het web, accounts en beoordeelde bijdrageprocessen groeien eromheen, zodat de catalogus nuttig, betrouwbaar en open kan blijven terwijl Chisan uitbreidt.",
+  },
   locationOnboarding: {
     title: "Vind je catalogusgebied", description: "Met jouw toestemming controleert Chisan je locatie in deze browser om een gedekt gebied te vinden. Je locatie wordt niet verstuurd of opgeslagen.",
     useLocation: "Mijn locatie gebruiken", chooseManually: "Handmatig kiezen", manualCountryLabel: "Land",
@@ -86,8 +88,7 @@ const messages = {
   },
   map: {
     loading: "Kaart wordt geladen…", emptyCoordinates: "Geen geldige coördinaten in deze selectie.",
-    producerMap: "Producentenkaart", producers: "Producenten", openProfile: "Profiel openen", showingProducer: "Kaart met {producer}",
-  },
+    producerMap: "Producentenkaart", producers: "Producenten", openProfile: "Profiel openen", },
   producer: {
     backToMap: "Terug naar de kaart", profile: "Producentenprofiel", website: "Website", googleMaps: "Google Maps",
     phone: "Telefoon", email: "E-mail", imageAlt: "Afbeelding van {producer}", location: "Locatie", mapAria: "Kaart met {producer}",
@@ -95,11 +96,10 @@ const messages = {
   },
   fieldLabels: {
     slug: "Slug", producerId: "Producent-ID", name: "Naam", municipality: "Gemeente", category: "Categorie",
-    additionalCategories: "Aanvullende categorieën", subcategory: "Subcategorie", featuredProducts: "Uitgelichte producten",
+    additionalCategories: "Aanvullende categorieën", featuredProducts: "Uitgelichte producten",
     address: "Adres", description: "Beschrijving", descriptionLocale: "Taal van de beschrijving", openingHours: "Openingstijden",
     phone: "Telefoon", email: "E-mail", website: "Web", image: "Afbeelding", onlineSales: "Online verkoop", salesChannels: "Verkoopkanalen",
-    facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Breedtegraad", longitude: "Lengtegraad", verification: "Verificatie", reviewed: "Gecontroleerd",
-  },
+    facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Breedtegraad", longitude: "Lengtegraad", verification: "Verificatie", },
   controlledValues: {
     verification: { pendiente: "In afwachting", parcial: "Gedeeltelijk geverifieerd", verificado: "Geverifieerd" },
     onlineSales: { "sí": "Ja", no: "Nee", "no comprobado": "Niet gecontroleerd" },

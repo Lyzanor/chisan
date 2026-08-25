@@ -1,0 +1,5 @@
+producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version
+59,descripcion,en,d1be5973d907ab4750d1357f36d3a5e5a3d2bb6114e1b212b8d938931dc6f821,Ipulazi likaphayinaphu laseHluhluwe elinemveliso yalo.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+305,descripcion,en,c5eb58866080610059ee11cc708b6a6d054a1f3be22ca19440b86b00f7b16c43,Ipulazi lemifino nezinkukhu ngaphandle kwaseMtubatuba.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+383,descripcion,en,47e6b0c608a90d054310d939473d611e41dba48e01b841c9052189c679154f62,Umlimi wamaphayinaphu eHluhluwe onophawu lwakhe.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+428,descripcion,en,a3c97ad8a065cf5997ae705d0735b33f267defcda97d77bdf0c12ceaf8fa3e32,Umlimi nomqhubekisi wezinkukhu eManguzi.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3

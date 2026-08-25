@@ -12,6 +12,11 @@
   supports that relationship.
 - An Eircode identifies one address. Its routing key does not establish the
   county or productive municipality.
+- English is the country default. Donegal, Galway, Mayo, Kerry, Cork, Waterford
+  and Meath publish Irish and English because they contain statutory Gaeltacht
+  areas; Irish is the territorial preference only when the visitor accepts it.
+  This county-level publication policy does not assert that every place in
+  those counties is inside the Gaeltacht.
 
 ## Source ceilings
 - IrishCraftBeer.ie is a third-party brewery directory. Its county, URL and
@@ -23,3 +28,7 @@
   activity columns they publish. Review role and processing type carefully:
   traders, cold stores, slaughterhouses and non-processing purchasers are not
   automatically qualifying producers.
+- The Constitution establishes Irish as the first official language and
+  English as a second official language. Department of the Gaeltacht language-
+  planning maps own the reviewed territorial scope; they support language
+  publication policy, not producer eligibility or location.

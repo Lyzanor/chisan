@@ -15,16 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "フッターナビゲーション",
-    aboutTitle: "Chisanについて",
-    aboutDescription:
-      "Chisanは、地域に根ざした食品・飲料の生産者を見つけるための、信頼できる共通基盤を構築しています。",
     aboutLink: "私たちの目的",
-    exploreTitle: "探す",
     catalogLink: "生産者カタログ",
-    contactTitle: "お問い合わせ",
-    contactDescription: "ご質問、訂正、協業のご提案を歓迎します。",
     contactLink: "GitHubでお問い合わせ",
-    closingLine: "地域の食のための、信頼できるオープンなカタログ。",
   },
   accountActions: {
     ownershipVerifiedDescription: "この生産者の所有権は確認済みです。",
@@ -100,6 +93,9 @@ const messages = {
   home: {
     chooseCountry: "国を選択",
     countrySummary: "{regions}内の{areas}",
+    aboutKicker: "Chisanについて",
+    aboutDescription: "Chisanは地域の食のための共有発見レイヤーを構築しています。地域に根ざした食品・飲料の生産者を見つけ、理解し、つながるためのひとつの場所です。",
+    aboutCatalogDescription: "透明性のあるCSVカタログが正確な情報源であり続けます。Chisanの拡大に合わせてカタログが有用で信頼でき、開かれたものであり続けられるよう、ウェブ、アカウント、審査済みの貢献フローがその周りに発展します。",
   },
   locationOnboarding: {
     title: "カタログの対象地域を探す",
@@ -166,7 +162,6 @@ const messages = {
     producerMap: "生産者マップ",
     producers: "生産者",
     openProfile: "プロフィールを開く",
-    showingProducer: "{producer}を示す地図",
   },
   producer: {
     backToMap: "地図に戻る",
@@ -194,7 +189,6 @@ const messages = {
     municipality: "市区町村",
     category: "カテゴリー",
     additionalCategories: "追加カテゴリー",
-    subcategory: "サブカテゴリー",
     featuredProducts: "主な商品",
     address: "住所",
     description: "説明",
@@ -212,7 +206,6 @@ const messages = {
     latitude: "緯度",
     longitude: "経度",
     verification: "確認状況",
-    reviewed: "確認済み",
   },
   controlledValues: {
     verification: {

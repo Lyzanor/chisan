@@ -32,6 +32,30 @@ const FRANC_CODE_BY_LOCALE = Object.freeze({
   it: "ita",
   nl: "nld",
   pt: "por",
+  af: "afr",
+  as: "asm",
+  bn: "ben",
+  cy: "cym",
+  ga: "gle",
+  gd: "gla",
+  gu: "guj",
+  haw: "haw",
+  hi: "hin",
+  kn: "kan",
+  kok: "kok",
+  ml: "mal",
+  mr: "mar",
+  ne: "nep",
+  nso: "nso",
+  or: "ori",
+  pa: "pan",
+  ss: "ssw",
+  st: "sot",
+  ta: "tam",
+  te: "tel",
+  tn: "tsn",
+  xh: "xho",
+  zu: "zul",
   gl: "glg",
   eu: "eus",
 });
@@ -234,12 +258,6 @@ export function auditDescriptionLocales({
   if (canonical.errors.length > 0) {
     throw new Error(`Canonical catalog is invalid:\n- ${canonical.errors.join("\n- ")}`);
   }
-  if (canonical.legacyFiles.length > 0) {
-    throw new Error(
-      `Description-locale migration is incomplete for ${canonical.legacyFiles.length} area CSV file(s)`,
-    );
-  }
-
   const knownAreas = new Set(canonical.rows.map((row) => row.area));
   for (const area of selectedAreas) {
     if (!knownAreas.has(area)) throw new Error(`Unknown area '${country}/${area}'`);

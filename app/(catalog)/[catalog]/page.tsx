@@ -14,7 +14,11 @@ import {
   resolveCountryCatalog,
   resolveKnownCatalogScope,
 } from "@/lib/catalog-routing";
-import { listCountrySlugs } from "@/lib/csv-catalog";
+import {
+  getLocalizedCatalogLabel,
+  getLocalizedCatalogUnit,
+  listCountrySlugs,
+} from "@/lib/csv-catalog";
 import { buildCatalogScope, resolveDestinationLocale } from "@/lib/i18n/catalog-scope";
 import type { Locale } from "@/lib/i18n/locales";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
@@ -48,8 +52,8 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   const { country, scope } = resolved;
   const locale = scope.locale;
   const messages = await loadMessages(locale);
-  const countryLabel = country.labels[locale] ?? country.label;
-  const unit = country.unitLabels[locale] ?? country.unit;
+  const countryLabel = getLocalizedCatalogLabel(country, locale);
+  const unit = getLocalizedCatalogUnit(country, locale);
   const title = formatMessage(messages.metadata.countryTitle, {
     country: countryLabel,
     site: SITE_NAME,
@@ -85,24 +89,31 @@ export default async function CountryPage({ params, searchParams }: CountryPageP
 
   const locale = scope.locale;
   const messages = await loadMessages(locale);
-  const countryLabel = country.labels[locale] ?? country.label;
-  const unit = country.unitLabels[locale] ?? country.unit;
-  const localizedRegions = country.regions.map((region) => ({
-    slug: region.slug,
-    label: region.labels[locale] ?? region.label,
-    areas: region.areas.map((area) => ({
-      slug: area.slug,
-      label: area.labels[locale] ?? area.label,
-      href: buildCatalogHref({
-        scope: buildCatalogScope(
-          country,
-          resolveDestinationLocale(area, { explicitLocale: scope.locale }),
-        ),
-        area: area.slug,
-        category: catalogQuery.category,
+  const countryLabel = getLocalizedCatalogLabel(country, locale);
+  const unit = getLocalizedCatalogUnit(country, locale);
+  const localizedRegions = country.regions.map((region) => {
+    const regionLocale = resolveDestinationLocale(region, {
+      explicitLocale: scope.locale,
+    });
+    return {
+      slug: region.slug,
+      label: getLocalizedCatalogLabel(region, regionLocale),
+      areas: region.areas.map((area) => {
+        const destinationLocale = resolveDestinationLocale(area, {
+          explicitLocale: scope.locale,
+        });
+        return {
+          slug: area.slug,
+          label: getLocalizedCatalogLabel(area, destinationLocale),
+          href: buildCatalogHref({
+            scope: buildCatalogScope(country, destinationLocale),
+            area: area.slug,
+            category: catalogQuery.category,
+          }),
+        };
       }),
-    })),
-  }));
+    };
+  });
   const languageOptions = await Promise.all(
     country.publishedLocales.map(async (targetLocale) => ({
       locale: targetLocale,

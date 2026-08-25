@@ -48,37 +48,80 @@
       "areas": [
         {
           "slug": "alfred-nzo",
-          "label": "Alfred Nzo"
+          "label": "Alfred Nzo",
+          "labels": {
+            "xh": "Alfred Nzo",
+            "en": "Alfred Nzo"
+          }
         },
         {
           "slug": "amathole",
-          "label": "Amathole"
+          "label": "Amathole",
+          "labels": {
+            "xh": "Amathole",
+            "en": "Amathole"
+          }
         },
         {
           "slug": "buffalo-city",
-          "label": "Buffalo City"
+          "label": "Buffalo City",
+          "labels": {
+            "xh": "Buffalo City",
+            "en": "Buffalo City"
+          }
         },
         {
           "slug": "chris-hani",
-          "label": "Chris Hani"
+          "label": "Chris Hani",
+          "labels": {
+            "xh": "Chris Hani",
+            "en": "Chris Hani"
+          }
         },
         {
           "slug": "joe-gqabi",
-          "label": "Joe Gqabi"
+          "label": "Joe Gqabi",
+          "labels": {
+            "xh": "Joe Gqabi",
+            "en": "Joe Gqabi"
+          }
         },
         {
           "slug": "nelson-mandela-bay",
-          "label": "Nelson Mandela Bay"
+          "label": "Nelson Mandela Bay",
+          "labels": {
+            "xh": "Nelson Mandela Bay",
+            "en": "Nelson Mandela Bay"
+          }
         },
         {
           "slug": "or-tambo",
-          "label": "O.R. Tambo"
+          "label": "O.R. Tambo",
+          "labels": {
+            "xh": "O.R. Tambo",
+            "en": "O.R. Tambo"
+          }
         },
         {
           "slug": "sarah-baartman",
-          "label": "Sarah Baartman"
+          "label": "Sarah Baartman",
+          "labels": {
+            "xh": "Sarah Baartman",
+            "en": "Sarah Baartman"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "xh",
+        "publishedLocales": [
+          "xh",
+          "en"
+        ]
+      },
+      "labels": {
+        "xh": "Mpuma-Koloni",
+        "en": "Eastern Cape"
+      }
     },
     {
       "slug": "free-state",
@@ -86,25 +129,56 @@
       "areas": [
         {
           "slug": "fezile-dabi",
-          "label": "Fezile Dabi"
+          "label": "Fezile Dabi",
+          "labels": {
+            "st": "Fezile Dabi",
+            "en": "Fezile Dabi"
+          }
         },
         {
           "slug": "lejweleputswa",
-          "label": "Lejweleputswa"
+          "label": "Lejweleputswa",
+          "labels": {
+            "st": "Lejweleputswa",
+            "en": "Lejweleputswa"
+          }
         },
         {
           "slug": "mangaung",
-          "label": "Mangaung"
+          "label": "Mangaung",
+          "labels": {
+            "st": "Mangaung",
+            "en": "Mangaung"
+          }
         },
         {
           "slug": "thabo-mofutsanyana",
-          "label": "Thabo Mofutsanyana"
+          "label": "Thabo Mofutsanyana",
+          "labels": {
+            "st": "Thabo Mofutsanyana",
+            "en": "Thabo Mofutsanyana"
+          }
         },
         {
           "slug": "xhariep",
-          "label": "Xhariep"
+          "label": "Xhariep",
+          "labels": {
+            "st": "Xhariep",
+            "en": "Xhariep"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "st",
+        "publishedLocales": [
+          "st",
+          "en"
+        ]
+      },
+      "labels": {
+        "st": "Freistata",
+        "en": "Free State"
+      }
     },
     {
       "slug": "gauteng",
@@ -112,25 +186,56 @@
       "areas": [
         {
           "slug": "ekurhuleni",
-          "label": "City of Ekurhuleni"
+          "label": "City of Ekurhuleni",
+          "labels": {
+            "zu": "iDolobha lase-Ekurhuleni",
+            "en": "City of Ekurhuleni"
+          }
         },
         {
           "slug": "johannesburg",
-          "label": "City of Johannesburg"
+          "label": "City of Johannesburg",
+          "labels": {
+            "zu": "iDolobha laseJohannesburg",
+            "en": "City of Johannesburg"
+          }
         },
         {
           "slug": "sedibeng",
-          "label": "Sedibeng"
+          "label": "Sedibeng",
+          "labels": {
+            "zu": "Sedibeng",
+            "en": "Sedibeng"
+          }
         },
         {
           "slug": "tshwane",
-          "label": "City of Tshwane"
+          "label": "City of Tshwane",
+          "labels": {
+            "zu": "iDolobha laseTshwane",
+            "en": "City of Tshwane"
+          }
         },
         {
           "slug": "west-rand",
-          "label": "West Rand"
+          "label": "West Rand",
+          "labels": {
+            "zu": "West Rand",
+            "en": "West Rand"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "zu",
+        "publishedLocales": [
+          "zu",
+          "en"
+        ]
+      },
+      "labels": {
+        "zu": "Gauteng",
+        "en": "Gauteng"
+      }
     },
     {
       "slug": "kwazulu-natal",
@@ -138,49 +243,104 @@
       "areas": [
         {
           "slug": "amajuba",
-          "label": "Amajuba"
+          "label": "Amajuba",
+          "labels": {
+            "zu": "Amajuba",
+            "en": "Amajuba"
+          }
         },
         {
           "slug": "ethekwini",
-          "label": "eThekwini"
+          "label": "eThekwini",
+          "labels": {
+            "zu": "eThekwini",
+            "en": "eThekwini"
+          }
         },
         {
           "slug": "harry-gwala",
-          "label": "Harry Gwala"
+          "label": "Harry Gwala",
+          "labels": {
+            "zu": "Harry Gwala",
+            "en": "Harry Gwala"
+          }
         },
         {
           "slug": "ilembe",
-          "label": "iLembe"
+          "label": "iLembe",
+          "labels": {
+            "zu": "iLembe",
+            "en": "iLembe"
+          }
         },
         {
           "slug": "king-cetshwayo",
-          "label": "King Cetshwayo"
+          "label": "King Cetshwayo",
+          "labels": {
+            "zu": "King Cetshwayo",
+            "en": "King Cetshwayo"
+          }
         },
         {
           "slug": "ugu",
-          "label": "Ugu"
+          "label": "Ugu",
+          "labels": {
+            "zu": "Ugu",
+            "en": "Ugu"
+          }
         },
         {
           "slug": "umgungundlovu",
-          "label": "uMgungundlovu"
+          "label": "uMgungundlovu",
+          "labels": {
+            "zu": "uMgungundlovu",
+            "en": "uMgungundlovu"
+          }
         },
         {
           "slug": "umkhanyakude",
-          "label": "uMkhanyakude"
+          "label": "uMkhanyakude",
+          "labels": {
+            "zu": "uMkhanyakude",
+            "en": "uMkhanyakude"
+          }
         },
         {
           "slug": "umzinyathi",
-          "label": "uMzinyathi"
+          "label": "uMzinyathi",
+          "labels": {
+            "zu": "uMzinyathi",
+            "en": "uMzinyathi"
+          }
         },
         {
           "slug": "uthukela",
-          "label": "uThukela"
+          "label": "uThukela",
+          "labels": {
+            "zu": "uThukela",
+            "en": "uThukela"
+          }
         },
         {
           "slug": "zululand",
-          "label": "Zululand"
+          "label": "Zululand",
+          "labels": {
+            "zu": "Zululand",
+            "en": "Zululand"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "zu",
+        "publishedLocales": [
+          "zu",
+          "en"
+        ]
+      },
+      "labels": {
+        "zu": "KwaZulu-Natal",
+        "en": "KwaZulu-Natal"
+      }
     },
     {
       "slug": "limpopo",
@@ -188,25 +348,56 @@
       "areas": [
         {
           "slug": "capricorn",
-          "label": "Capricorn"
+          "label": "Capricorn",
+          "labels": {
+            "nso": "Capricorn",
+            "en": "Capricorn"
+          }
         },
         {
           "slug": "mopani",
-          "label": "Mopani"
+          "label": "Mopani",
+          "labels": {
+            "nso": "Mopani",
+            "en": "Mopani"
+          }
         },
         {
           "slug": "sekhukhune",
-          "label": "Sekhukhune"
+          "label": "Sekhukhune",
+          "labels": {
+            "nso": "Sekhukhune",
+            "en": "Sekhukhune"
+          }
         },
         {
           "slug": "vhembe",
-          "label": "Vhembe"
+          "label": "Vhembe",
+          "labels": {
+            "nso": "Vhembe",
+            "en": "Vhembe"
+          }
         },
         {
           "slug": "waterberg",
-          "label": "Waterberg"
+          "label": "Waterberg",
+          "labels": {
+            "nso": "Waterberg",
+            "en": "Waterberg"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "nso",
+        "publishedLocales": [
+          "nso",
+          "en"
+        ]
+      },
+      "labels": {
+        "nso": "Limpopo",
+        "en": "Limpopo"
+      }
     },
     {
       "slug": "mpumalanga",
@@ -214,17 +405,40 @@
       "areas": [
         {
           "slug": "ehlanzeni",
-          "label": "Ehlanzeni"
+          "label": "Ehlanzeni",
+          "labels": {
+            "ss": "Ehlanzeni",
+            "en": "Ehlanzeni"
+          }
         },
         {
           "slug": "gert-sibande",
-          "label": "Gert Sibande"
+          "label": "Gert Sibande",
+          "labels": {
+            "ss": "Gert Sibande",
+            "en": "Gert Sibande"
+          }
         },
         {
           "slug": "nkangala",
-          "label": "Nkangala"
+          "label": "Nkangala",
+          "labels": {
+            "ss": "Nkangala",
+            "en": "Nkangala"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "ss",
+        "publishedLocales": [
+          "ss",
+          "en"
+        ]
+      },
+      "labels": {
+        "ss": "Mpumalanga",
+        "en": "Mpumalanga"
+      }
     },
     {
       "slug": "north-west",
@@ -232,21 +446,48 @@
       "areas": [
         {
           "slug": "bojanala-platinum",
-          "label": "Bojanala Platinum"
+          "label": "Bojanala Platinum",
+          "labels": {
+            "tn": "Bojanala Platinum",
+            "en": "Bojanala Platinum"
+          }
         },
         {
           "slug": "dr-kenneth-kaunda",
-          "label": "Dr Kenneth Kaunda"
+          "label": "Dr Kenneth Kaunda",
+          "labels": {
+            "tn": "Dr Kenneth Kaunda",
+            "en": "Dr Kenneth Kaunda"
+          }
         },
         {
           "slug": "dr-ruth-segomotsi-mompati",
-          "label": "Dr Ruth Segomotsi Mompati"
+          "label": "Dr Ruth Segomotsi Mompati",
+          "labels": {
+            "tn": "Dr Ruth Segomotsi Mompati",
+            "en": "Dr Ruth Segomotsi Mompati"
+          }
         },
         {
           "slug": "ngaka-modiri-molema",
-          "label": "Ngaka Modiri Molema"
+          "label": "Ngaka Modiri Molema",
+          "labels": {
+            "tn": "Ngaka Modiri Molema",
+            "en": "Ngaka Modiri Molema"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "tn",
+        "publishedLocales": [
+          "tn",
+          "en"
+        ]
+      },
+      "labels": {
+        "tn": "Bokone Bophirima",
+        "en": "North West"
+      }
     },
     {
       "slug": "northern-cape",
@@ -254,25 +495,56 @@
       "areas": [
         {
           "slug": "frances-baard",
-          "label": "Frances Baard"
+          "label": "Frances Baard",
+          "labels": {
+            "af": "Frances Baard",
+            "en": "Frances Baard"
+          }
         },
         {
           "slug": "john-taolo-gaetsewe",
-          "label": "John Taolo Gaetsewe"
+          "label": "John Taolo Gaetsewe",
+          "labels": {
+            "af": "John Taolo Gaetsewe",
+            "en": "John Taolo Gaetsewe"
+          }
         },
         {
           "slug": "namakwa",
-          "label": "Namakwa"
+          "label": "Namakwa",
+          "labels": {
+            "af": "Namakwa",
+            "en": "Namakwa"
+          }
         },
         {
           "slug": "pixley-ka-seme",
-          "label": "Pixley ka Seme"
+          "label": "Pixley ka Seme",
+          "labels": {
+            "af": "Pixley ka Seme",
+            "en": "Pixley ka Seme"
+          }
         },
         {
           "slug": "zf-mgcawu",
-          "label": "ZF Mgcawu"
+          "label": "ZF Mgcawu",
+          "labels": {
+            "af": "ZF Mgcawu",
+            "en": "ZF Mgcawu"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "af",
+        "publishedLocales": [
+          "af",
+          "en"
+        ]
+      },
+      "labels": {
+        "af": "Noord-Kaap",
+        "en": "Northern Cape"
+      }
     },
     {
       "slug": "western-cape",
@@ -280,29 +552,148 @@
       "areas": [
         {
           "slug": "cape-town",
-          "label": "City of Cape Town"
+          "label": "City of Cape Town",
+          "labels": {
+            "af": "Stad Kaapstad",
+            "en": "City of Cape Town"
+          }
         },
         {
           "slug": "cape-winelands",
-          "label": "Cape Winelands"
+          "label": "Cape Winelands",
+          "labels": {
+            "af": "Kaapse Wynland",
+            "en": "Cape Winelands"
+          }
         },
         {
           "slug": "central-karoo",
-          "label": "Central Karoo"
+          "label": "Central Karoo",
+          "labels": {
+            "af": "Sentraal-Karoo",
+            "en": "Central Karoo"
+          }
         },
         {
           "slug": "garden-route",
-          "label": "Garden Route"
+          "label": "Garden Route",
+          "labels": {
+            "af": "Tuinroete",
+            "en": "Garden Route"
+          }
         },
         {
           "slug": "overberg",
-          "label": "Overberg"
+          "label": "Overberg",
+          "labels": {
+            "af": "Overberg",
+            "en": "Overberg"
+          }
         },
         {
           "slug": "west-coast",
-          "label": "West Coast"
+          "label": "West Coast",
+          "labels": {
+            "af": "Weskus",
+            "en": "West Coast"
+          }
         }
-      ]
+      ],
+      "i18n": {
+        "preferredLocale": "af",
+        "publishedLocales": [
+          "af",
+          "en"
+        ]
+      },
+      "labels": {
+        "af": "Wes-Kaap",
+        "en": "Western Cape"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "en",
+    "publishedLocales": [
+      "en"
+    ],
+    "labels": {
+      "en": "South Africa",
+      "xh": "Mzantsi Afrika",
+      "st": "Afrika Borwa",
+      "zu": "iNingizimu Afrika",
+      "nso": "Afrika Borwa",
+      "ss": "eNingizimu Afrika",
+      "tn": "Aforika Borwa",
+      "af": "Suid-Afrika"
+    },
+    "unitLabels": {
+      "en": {
+        "one": "district",
+        "many": "districts"
+      },
+      "xh": {
+        "one": "isithili",
+        "many": "izithili"
+      },
+      "st": {
+        "one": "setereke",
+        "many": "ditereke"
+      },
+      "zu": {
+        "one": "isifunda",
+        "many": "izifunda"
+      },
+      "nso": {
+        "one": "selete",
+        "many": "dilete"
+      },
+      "ss": {
+        "one": "sifundza",
+        "many": "tifundza"
+      },
+      "tn": {
+        "one": "kgaolo",
+        "many": "dikgaolo"
+      },
+      "af": {
+        "one": "distrik",
+        "many": "distrikte"
+      }
+    },
+    "regionUnitLabels": {
+      "en": {
+        "one": "province",
+        "many": "provinces"
+      },
+      "xh": {
+        "one": "iphondo",
+        "many": "amaphondo"
+      },
+      "st": {
+        "one": "porofense",
+        "many": "diporofense"
+      },
+      "zu": {
+        "one": "isifundazwe",
+        "many": "izifundazwe"
+      },
+      "nso": {
+        "one": "profense",
+        "many": "diprofense"
+      },
+      "ss": {
+        "one": "sifundza",
+        "many": "tifundza"
+      },
+      "tn": {
+        "one": "porofense",
+        "many": "diporofense"
+      },
+      "af": {
+        "one": "provinsie",
+        "many": "provinsies"
+      }
+    }
+  }
 }

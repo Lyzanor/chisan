@@ -180,6 +180,7 @@ export function validateTranslationBatchResponse({ entries, response, targetLoca
         text,
         targetLocale,
         protectedTerms: glossary.protectedTerms,
+        producerName: entry.producerName,
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
@@ -315,6 +316,7 @@ function machineRowIsReusable(row, source, targetLocale, adapter, glossary) {
       text: row.text,
       targetLocale,
       protectedTerms: glossary.protectedTerms,
+      producerName: source.producerName,
     });
     return true;
   } catch {
@@ -415,11 +417,6 @@ export async function generateCatalogTranslations({
   if (canonical.errors.length > 0) {
     throw new Error(`Canonical catalog is invalid:\n- ${canonical.errors.join("\n- ")}`);
   }
-  if (canonical.legacyFiles.length > 0) {
-    throw new Error(
-      `Phase 4 prerequisite missing: ${canonical.legacyFiles.length} area CSV file(s) in '${country}' do not have descripcion_locale. No provider was called and no file was changed.`,
-    );
-  }
   if (area && !canonical.rows.some((row) => row.area === area)) {
     throw new Error(`Unknown area '${country}/${area}'`);
   }
@@ -495,6 +492,7 @@ export async function generateCatalogTranslations({
     pending.push({
       id: `${source.producerId}:${TRANSLATION_FIELD}`,
       producerId: source.producerId,
+      producerName: source.producerName,
       sourceLocale: source.sourceLocale,
       sourceText: source.text,
       text: prepareTranslationPromptText(source.text),
@@ -559,6 +557,7 @@ export async function generateCatalogTranslations({
           text: row.text,
           targetLocale,
           protectedTerms: glossary.protectedTerms,
+          producerName: source.producerName,
         });
       } catch (error) {
         throw new Error(

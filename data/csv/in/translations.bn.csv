@@ -1,0 +1,6 @@
+producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version
+18,descripcion,en,86cc44a794e1dc69919533aca8d5b8925ae439a51f2bc8ee238efb6dcb90b5b3,Balaram Mullick & Radharaman Mullick কলকাতায় ঐতিহ্যবাহী মিষ্টি ও মিষ্টান্ন তৈরি করে।,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+51,descripcion,en,dd2a4d069cdb9f25be2b014e349bee387243638304e35b41e82e09208f9157de,Felu Modak রিষড়ায় ঐতিহ্যবাহী মিষ্টি ও মিষ্টান্ন তৈরি করে।,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+54,descripcion,en,917427d515cb4c3479d456926a603d215057b72c93e8d09ce28c09621fa8382e,Ganguram Sweets কলকাতায় ঐতিহ্যবাহী মিষ্টি ও মিষ্টান্ন তৈরি করে।,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+57,descripcion,en,4cc69326e927052386f970c8565be6e90e8a94399ee147a28edba430d23bc1a8,Glenburn Tea Estate দার্জিলিংয়ে চা উৎপাদক হিসেবে চা তৈরি করে।,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+89,descripcion,en,37275ff19fbfd91eaebe8d90ff03e5f07658dd6e0eb56af9356fa1201da197ca,"দার্জিলিংয়ের কার্শিয়াংয়ে নিজস্ব ফ্লাশ চা, উলং চা ও সাদা চা সরাসরি বিক্রি করা একটি চা-বাগান।",reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3

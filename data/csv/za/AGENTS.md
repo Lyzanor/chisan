@@ -13,6 +13,12 @@
   may belong to a Stellenbosch association while lying inside the metro.
 - Port Elizabeth and Gqeberha refer to the same place; preserve the producer's
   current public wording while matching both names.
+- English is the country default and remains published everywhere. Each
+  province also publishes the leading local language selected from the 2022
+  Census home-language results: isiXhosa in Eastern Cape, Sesotho in Free
+  State, isiZulu in Gauteng and KwaZulu-Natal, Sepedi in Limpopo, siSwati in
+  Mpumalanga, Setswana in North West, and Afrikaans in Northern Cape and
+  Western Cape. This presentation policy does not infer a producer's language.
 
 ## Source ceilings
 - The WOSA member index supports a listed member name and submitted website. It
@@ -29,3 +35,7 @@
   sales.
 - Historical Department of Agriculture establishment lists support the dated
   registration, address and activity they record, not ongoing activity.
+- The Constitution establishes the official-language framework and Statistics
+  South Africa's 2022 Census supports the province-level presentation choice.
+  Neither source establishes producer facts or a language preference for an
+  individual visitor.

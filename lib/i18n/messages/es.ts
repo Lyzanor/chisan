@@ -15,17 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Navegación del pie de página",
-    aboutTitle: "Sobre nosotros",
-    aboutDescription:
-      "Chisan está construyendo una capa compartida y fiable para descubrir productores locales de alimentos y bebidas.",
     aboutLink: "Nuestro propósito",
-    exploreTitle: "Explorar",
     catalogLink: "Catálogo de productores",
-    contactTitle: "Contacto",
-    contactDescription:
-      "Las preguntas, correcciones y propuestas de colaboración son bienvenidas.",
     contactLink: "Contacta con nosotros en GitHub",
-    closingLine: "Un catálogo abierto y fiable para la alimentación local.",
   },
   accountActions: {
     ownershipVerifiedDescription: "La propiedad de este productor está verificada.",
@@ -105,6 +97,9 @@ const messages = {
   home: {
     chooseCountry: "Elige un país",
     countrySummary: "{areas} en {regions}",
+    aboutKicker: "Sobre Chisan",
+    aboutDescription: "Chisan está creando una capa compartida de descubrimiento para la alimentación local: un lugar para encontrar, entender y conectar con productores de alimentos y bebidas arraigados en sus comunidades.",
+    aboutCatalogDescription: "Un catálogo CSV transparente sigue siendo la fuente de verdad. La web, las cuentas y los flujos de contribuciones revisadas crecen a su alrededor para que el catálogo pueda seguir siendo útil, fiable y abierto a medida que Chisan se expande.",
   },
   locationOnboarding: {
     title: "Encuentra tu zona del catálogo",
@@ -172,7 +167,6 @@ const messages = {
     producerMap: "Mapa de productores",
     producers: "Productores",
     openProfile: "Abrir perfil",
-    showingProducer: "Mapa que muestra {producer}",
   },
   producer: {
     backToMap: "Volver al mapa",
@@ -200,7 +194,6 @@ const messages = {
     municipality: "Municipio",
     category: "Categoría",
     additionalCategories: "Categorías adicionales",
-    subcategory: "Subcategoría",
     featuredProducts: "Productos destacados",
     address: "Dirección",
     description: "Descripción",
@@ -218,7 +211,6 @@ const messages = {
     latitude: "Latitud",
     longitude: "Longitud",
     verification: "Verificación",
-    reviewed: "Revisado",
   },
   controlledValues: {
     verification: {

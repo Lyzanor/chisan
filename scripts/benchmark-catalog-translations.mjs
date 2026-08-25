@@ -6,6 +6,8 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 import {
+  SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET,
+  SUPPORTED_TRANSLATION_TARGET_LOCALES,
   TRANSLATION_FIELD,
   TRANSLATION_PROMPT_VERSION,
   hashTranslationSource,
@@ -47,16 +49,9 @@ export const REQUIRED_BENCHMARK_STRATA = Object.freeze([
   "japanese-script",
   "romanized-identity",
 ]);
-const REQUIRED_BENCHMARK_TARGETS = Object.freeze([
-  "es",
-  "ca",
-  "de",
-  "ja",
-  "fr",
-  "it",
-  "nl",
-  "pt",
-]);
+const REQUIRED_BENCHMARK_TARGETS = Object.freeze(
+  SUPPORTED_TRANSLATION_TARGET_LOCALES.filter((locale) => locale !== "en"),
+);
 const VERSION_TOKEN_PATTERN = /^[^\s\u0000-\u001f\u007f]+$/u;
 const DATE_PATTERN = /\b(?:1[5-9]\d{2}|20\d{2})\b|\b\d{1,2}[/.\-]\d{1,2}[/.\-]\d{2,4}\b/u;
 const LATIN_IDENTITY_PATTERN = /^[\p{Script=Latin}\p{M}\p{N} &'’.()\/-]+$/u;
@@ -437,20 +432,13 @@ export function loadBenchmarkSources(csvRoot = DEFAULT_CSV_ROOT) {
     ),
   ].sort();
   const sources = [];
-  const legacyFiles = [];
   const errors = [];
   for (const country of countries) {
     const canonical = readCanonicalCountry(csvRoot, country);
     sources.push(...canonical.rows);
-    legacyFiles.push(...canonical.legacyFiles);
     errors.push(...canonical.errors);
   }
   if (errors.length > 0) throw new Error(`Canonical catalog is invalid:\n- ${errors.join("\n- ")}`);
-  if (legacyFiles.length > 0) {
-    throw new Error(
-      `Phase 4 prerequisite missing: ${legacyFiles.length} area CSV file(s) do not have descripcion_locale; no benchmark plan was written.`,
-    );
-  }
   return sources;
 }
 
@@ -498,7 +486,7 @@ export function assertBenchmarkPlan(plan, spec) {
         !/^[a-z]{2}$/.test(sample.country ?? "") ||
         !/^[1-9]\d*$/.test(sample.producer_id ?? "") ||
         typeof sample.producer_name !== "string" ||
-        !/^[a-z]{2}$/.test(sample.source_locale ?? "") ||
+        !SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET.has(sample.source_locale) ||
         sample.benchmark_id !== expectedId ||
         sample.field !== TRANSLATION_FIELD ||
         sample.target_locale !== target ||

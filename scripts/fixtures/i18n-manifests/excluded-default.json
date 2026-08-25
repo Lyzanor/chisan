@@ -22,7 +22,7 @@
       "slug": "catalunya",
       "label": "Catalunya",
       "labels": { "es": "Cataluña", "en": "Catalonia", "ca": "Catalunya" },
-      "i18n": { "publishedLocales": ["ca", "en"] },
+      "i18n": { "publishedLocales": ["ca", "en"], "preferredLocale": "ca" },
       "areas": [
         {
           "slug": "barcelona",

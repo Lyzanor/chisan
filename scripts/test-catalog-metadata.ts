@@ -61,10 +61,7 @@ test("incomplete locale routes are excluded instead of being invented", () => {
 
   assert.deepEqual(Object.keys(alternates.languages).sort(), ["en", "es"]);
   assert.equal(alternates.languages["ca-ES"], undefined);
-  assert.throws(
-    () => buildCatalogAlternateSet(target, "ca"),
-    /not published/,
-  );
+  assert.throws(() => buildCatalogAlternateSet(target, "ca"), /not published/);
 });
 
 test("default variants stay short and x-default belongs only to the global selector", () => {
@@ -115,6 +112,7 @@ test("localized metadata shares canonical and alternate state with social cards"
   assert.ok(metadata.openGraph && "url" in metadata.openGraph);
   assert.equal(metadata.openGraph.url, alternates.canonical);
   assert.equal(metadata.openGraph.locale, "es_ES");
+  assert.deepEqual(metadata.openGraph.alternateLocale, ["en_US"]);
   assert.ok(metadata.twitter && "title" in metadata.twitter);
   assert.equal(metadata.twitter.title, "Productor Uno");
 });
@@ -123,7 +121,9 @@ function listAreaPolicies(): Map<string, AreaOption> {
   return new Map(
     listCountries().flatMap((country) =>
       country.regions.flatMap((region) =>
-        region.areas.map((area) => [`${country.slug}/${area.slug}`, area] as const),
+        region.areas.map(
+          (area) => [`${country.slug}/${area.slug}`, area] as const,
+        ),
       ),
     ),
   );
@@ -173,7 +173,10 @@ test("sitemap count matches effective locale policies and every alternate is rec
         assert.fail(`Alternate for ${entry.url} is not a URL string.`);
       }
       const reciprocal = entryByUrl.get(alternateUrl);
-      assert.ok(reciprocal, `Alternate ${alternateUrl} is absent from the sitemap.`);
+      assert.ok(
+        reciprocal,
+        `Alternate ${alternateUrl} is absent from the sitemap.`,
+      );
       assert.deepEqual(reciprocal.alternates?.languages, languages);
     }
   }
@@ -209,7 +212,9 @@ test("sitemap count matches effective locale policies and every alternate is rec
     actualShards.flat().map(({ url }) => url),
     entries.map(({ url }) => url),
   );
-  assert.ok(actualShards.every((shard) => shard.length <= SITEMAP_SHARD_URL_LIMIT));
+  assert.ok(
+    actualShards.every((shard) => shard.length <= SITEMAP_SHARD_URL_LIMIT),
+  );
 });
 
 test("sitemap sharding keeps a growth margin below the protocol limit", () => {
@@ -221,9 +226,13 @@ test("sitemap sharding keeps a growth margin below the protocol limit", () => {
   );
   const shards = shardCatalogSitemapEntries(syntheticEntries);
 
-  assert.deepEqual(shards.map((shard) => shard.length), [SITEMAP_SHARD_URL_LIMIT, 17]);
+  assert.deepEqual(
+    shards.map((shard) => shard.length),
+    [SITEMAP_SHARD_URL_LIMIT, 17],
+  );
   assert.throws(
-    () => shardCatalogSitemapEntries(syntheticEntries, SITEMAP_GOOGLE_URL_LIMIT),
+    () =>
+      shardCatalogSitemapEntries(syntheticEntries, SITEMAP_GOOGLE_URL_LIMIT),
     /below 50000/,
   );
 });

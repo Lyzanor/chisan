@@ -15,6 +15,30 @@ export const SUPPORTED_TRANSLATION_TARGET_LOCALES = Object.freeze([
   "it",
   "nl",
   "pt",
+  "af",
+  "as",
+  "bn",
+  "cy",
+  "ga",
+  "gd",
+  "gu",
+  "haw",
+  "hi",
+  "kn",
+  "kok",
+  "ml",
+  "mr",
+  "ne",
+  "nso",
+  "or",
+  "pa",
+  "ss",
+  "st",
+  "ta",
+  "te",
+  "tn",
+  "xh",
+  "zu",
 ]);
 export const SUPPORTED_TRANSLATION_TARGET_LOCALE_SET = new Set(
   SUPPORTED_TRANSLATION_TARGET_LOCALES,
@@ -177,7 +201,7 @@ Return exactly one output for the one trusted input id. The same preservation an
 
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
 const POSITIVE_ID_PATTERN = /^[1-9]\d*$/;
-const TRANSLATION_FILE_PATTERN = /^translations\.([a-z]{2})\.csv$/;
+const TRANSLATION_FILE_PATTERN = /^translations\.([a-z]{2,3})\.csv$/;
 const TRANSLATION_LIKE_PATTERN = /^translations\..*\.csv$/i;
 
 export function normalizeTranslationSource(value) {
@@ -378,12 +402,58 @@ function comparableTranslationText(value) {
   return normalizeTranslationSource(String(value)).replace(/\s+/gu, " ").trim();
 }
 
+const TARGET_SCRIPT_PATTERN = Object.freeze({
+  as: /\p{Script=Bengali}/u,
+  bn: /\p{Script=Bengali}/u,
+  gu: /\p{Script=Gujarati}/u,
+  hi: /\p{Script=Devanagari}/u,
+  kn: /\p{Script=Kannada}/u,
+  kok: /\p{Script=Devanagari}/u,
+  ml: /\p{Script=Malayalam}/u,
+  mr: /\p{Script=Devanagari}/u,
+  ne: /\p{Script=Devanagari}/u,
+  or: /\p{Script=Oriya}/u,
+  pa: /\p{Script=Gurmukhi}/u,
+  ta: /\p{Script=Tamil}/u,
+  te: /\p{Script=Telugu}/u,
+});
+
+function validateTargetScript(text, targetLocale, producerName = "") {
+  const expectedScript = TARGET_SCRIPT_PATTERN[targetLocale];
+  if (!expectedScript) return;
+  const textWithoutProducerName = producerName
+    ? text.split(producerName).join(" ")
+    : text;
+  const letters = Array.from(textWithoutProducerName).filter((character) =>
+    /\p{L}/u.test(character),
+  );
+  if (letters.length < 12) return;
+  const expectedLetters = letters.filter((character) => expectedScript.test(character)).length;
+  const ratio = expectedLetters / letters.length;
+  if (ratio < 0.4) {
+    throw new Error(
+      `translation for '${targetLocale}' has suspicious native-script coverage ${ratio.toFixed(2)}`,
+    );
+  }
+}
+
+/**
+ * @param {{
+ *   source: string,
+ *   sourceLocale?: string | null,
+ *   text: string,
+ *   targetLocale: string,
+ *   protectedTerms: readonly string[],
+ *   producerName?: string,
+ * }} options
+ */
 export function validateTranslationOutput({
   source,
   sourceLocale = null,
   text,
   targetLocale,
   protectedTerms,
+  producerName = "",
 }) {
   const preparedSource = prepareTranslationPromptText(source);
   if (typeof text !== "string" || !text.trim()) {
@@ -398,12 +468,6 @@ export function validateTranslationOutput({
     throw new Error(
       "translation must not reproduce source text when source and target locales differ",
     );
-  }
-  if (
-    JSON.stringify(multiset(urls(preparedSource))) !==
-    JSON.stringify(multiset(urls(text)))
-  ) {
-    throw new Error("translation must preserve every URL exactly");
   }
   const expectedNumbers = multiset(numbers(preparedSource));
   const receivedNumbers = multiset(numbers(text));
@@ -422,12 +486,19 @@ export function validateTranslationOutput({
       `translation must preserve ordered quantitative facts exactly under registry '${TRANSLATION_QUANTITATIVE_FACT_REGISTRY.version}'; expected ordered quantitative fingerprint ${JSON.stringify(expectedQuantitativeFingerprint)}; received ordered quantitative fingerprint ${JSON.stringify(receivedQuantitativeFingerprint)}`,
     );
   }
+  if (
+    JSON.stringify(multiset(urls(preparedSource))) !==
+    JSON.stringify(multiset(urls(text)))
+  ) {
+    throw new Error("translation must preserve every URL exactly");
+  }
   for (const term of protectedTerms) {
     const sourceCount = occurrences(preparedSource, term);
     if (sourceCount > 0 && occurrences(text, term) !== sourceCount) {
       throw new Error(`translation must preserve protected term '${term}' exactly`);
     }
   }
+  validateTargetScript(text, targetLocale, producerName);
 
   const sourceLength = significantLength(preparedSource);
   const textLength = significantLength(text);
@@ -521,26 +592,34 @@ export function listCatalogCsvFiles(csvRoot) {
 }
 
 function configuredLocaleList(value, inherited) {
-  if (!Array.isArray(value)) return [...inherited];
-  const supported = value.filter((locale) =>
-    SUPPORTED_TRANSLATION_TARGET_LOCALE_SET.has(locale),
-  );
-  return supported.length > 0 ? [...new Set(supported)] : [...inherited];
+  if (value === undefined) return [...inherited];
+  if (!Array.isArray(value) || value.length === 0) {
+    throw new Error("i18n.publishedLocales must be a non-empty array");
+  }
+  const locales = [];
+  for (const locale of value) {
+    if (!SUPPORTED_TRANSLATION_TARGET_LOCALE_SET.has(locale)) {
+      throw new Error(`unsupported published locale '${locale}'`);
+    }
+    if (locales.includes(locale)) throw new Error(`duplicate published locale '${locale}'`);
+    locales.push(locale);
+  }
+  return locales;
 }
 
-// Only an explicit manifest policy activates a publication obligation. Legacy
-// manifests intentionally keep their historical runtime fallback without
-// claiming that English descriptions have already been materialized.
-export function readExplicitPublishedAreaLocales(csvRoot, country) {
+// Every country manifest declares the publication policy consumed here.
+export function readPublishedAreaLocales(csvRoot, country) {
   const manifestPath = path.join(csvRoot, country, "country.json");
-  if (!fs.existsSync(manifestPath)) return [];
+  if (!fs.existsSync(manifestPath)) throw new Error(`${manifestPath}: country manifest is required`);
   let manifest;
   try {
     manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
   } catch (error) {
     throw new Error(`${manifestPath}: ${error.message}`);
   }
-  if (!Array.isArray(manifest?.i18n?.publishedLocales)) return [];
+  if (!Array.isArray(manifest?.i18n?.publishedLocales)) {
+    throw new Error(`${manifestPath}: i18n.publishedLocales is required`);
+  }
 
   const countryLocales = configuredLocaleList(manifest.i18n.publishedLocales, []);
   const declaredRegions = Array.isArray(manifest.regions) ? manifest.regions : [];
@@ -597,7 +676,6 @@ export function readCanonicalCountry(csvRoot, country) {
   const rows = [];
   const byId = new Map();
   const errors = [];
-  const legacyFiles = [];
 
   for (const filePath of areaFiles) {
     const classification = classifyCatalogCsvPath(csvRoot, filePath);
@@ -618,7 +696,10 @@ export function readCanonicalCountry(csvRoot, country) {
       errors.push(`${filePath}: area header must contain producer_id and descripcion`);
       continue;
     }
-    if (sourceLocaleIndex === -1) legacyFiles.push(filePath);
+    if (sourceLocaleIndex === -1) {
+      errors.push(`${filePath}: area header must contain descripcion_locale`);
+      continue;
+    }
 
     for (let index = 1; index < records.length; index += 1) {
       const record = records[index];
@@ -626,7 +707,7 @@ export function readCanonicalCountry(csvRoot, country) {
       const producerName =
         producerNameIndex === -1 ? "" : String(record[producerNameIndex] ?? "");
       const text = String(record[descriptionIndex] ?? "");
-      const sourceLocale = sourceLocaleIndex === -1 ? "" : String(record[sourceLocaleIndex] ?? "");
+      const sourceLocale = String(record[sourceLocaleIndex] ?? "");
       const label = `${filePath}: record ${index + 1}`;
       if (!POSITIVE_ID_PATTERN.test(producerId)) {
         errors.push(`${label}: producer_id must be a positive decimal integer`);
@@ -637,7 +718,6 @@ export function readCanonicalCountry(csvRoot, country) {
       }
       if (
         text &&
-        sourceLocaleIndex !== -1 &&
         !SUPPORTED_DESCRIPTION_SOURCE_LOCALE_SET.has(sourceLocale)
       ) {
         errors.push(
@@ -667,7 +747,7 @@ export function readCanonicalCountry(csvRoot, country) {
     }
   }
 
-  return { country, areaFiles, rows, byId, errors, legacyFiles };
+  return { country, areaFiles, rows, byId, errors };
 }
 
 export function readTranslationGlossary(glossaryPath) {

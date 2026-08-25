@@ -14,6 +14,17 @@
   match identities with the native name, address and product where possible.
 - A tea brand may aggregate several gardens, and a brewery taproom may be
   separate from the plant. The row represents the productive unit.
+- English is the country default. Area variants follow the reviewed state or
+  union-territory policy: Hindi for Chandigarh, Delhi, Haryana, Himachal
+  Pradesh, Rajasthan, Chhattisgarh, Madhya Pradesh, Uttar Pradesh, Uttarakhand,
+  Andaman and Nicobar Islands, Bihar and Jharkhand; Punjabi for Punjab; Odia for
+  Odisha; Bengali for West Bengal and Tripura; Assamese for Assam; Nepali for
+  Sikkim; Telugu for Andhra Pradesh and Telangana; Kannada for Karnataka;
+  Malayalam for Kerala and Lakshadweep; Tamil for Tamil Nadu; Konkani for Goa;
+  Gujarati for Gujarat and Dadra and Nagar Haveli and Daman and Diu; and Marathi
+  for Maharashtra. Keep multilingual or territorially divided areas, including
+  Puducherry, Jammu and Kashmir and the north-eastern states not listed above,
+  English-only until a non-misleading catalog-area policy is reviewed.
 
 ## Source ceilings
 - APEDA exporter and organic directories enumerate registered exporters and
@@ -24,3 +35,7 @@
   trading or online sales.
 - OpenStreetMap can help locate an already identified producer but is not a
   reliable national producer roster.
+- The Constitution's Eighth Schedule and the applicable state or union-
+  territory official-language rules support language-route policy only. They
+  do not prove that an individual producer uses that language or that a
+  multilingual territory has one uniform preferred language.

@@ -783,6 +783,7 @@
           "slug": "almeria",
           "label": "Almería",
           "labels": {
+            "en": "Almería",
             "es": "Almería"
           }
         },
@@ -790,6 +791,7 @@
           "slug": "cadiz",
           "label": "Cádiz",
           "labels": {
+            "en": "Cádiz",
             "es": "Cádiz"
           }
         },
@@ -797,6 +799,7 @@
           "slug": "cordoba",
           "label": "Córdoba",
           "labels": {
+            "en": "Córdoba",
             "es": "Córdoba"
           }
         },
@@ -804,6 +807,7 @@
           "slug": "granada",
           "label": "Granada",
           "labels": {
+            "en": "Granada",
             "es": "Granada"
           }
         },
@@ -811,6 +815,7 @@
           "slug": "huelva",
           "label": "Huelva",
           "labels": {
+            "en": "Huelva",
             "es": "Huelva"
           }
         },
@@ -818,6 +823,7 @@
           "slug": "jaen",
           "label": "Jaén",
           "labels": {
+            "en": "Jaén",
             "es": "Jaén"
           }
         },
@@ -825,6 +831,7 @@
           "slug": "malaga",
           "label": "Málaga",
           "labels": {
+            "en": "Málaga",
             "es": "Málaga"
           }
         },
@@ -832,11 +839,13 @@
           "slug": "sevilla",
           "label": "Sevilla",
           "labels": {
+            "en": "Seville",
             "es": "Sevilla"
           }
         }
       ],
       "labels": {
+        "en": "Andalusia",
         "es": "Andalucía"
       }
     },
@@ -848,11 +857,13 @@
           "slug": "asturias",
           "label": "Asturias",
           "labels": {
+            "en": "Asturias",
             "es": "Asturias"
           }
         }
       ],
       "labels": {
+        "en": "Principality of Asturias",
         "es": "Principado de Asturias"
       }
     },
@@ -864,11 +875,13 @@
           "slug": "cantabria",
           "label": "Cantabria",
           "labels": {
+            "en": "Cantabria",
             "es": "Cantabria"
           }
         }
       ],
       "labels": {
+        "en": "Cantabria",
         "es": "Cantabria"
       }
     },
@@ -880,6 +893,7 @@
           "slug": "avila",
           "label": "Ávila",
           "labels": {
+            "en": "Ávila",
             "es": "Ávila"
           }
         },
@@ -887,6 +901,7 @@
           "slug": "burgos",
           "label": "Burgos",
           "labels": {
+            "en": "Burgos",
             "es": "Burgos"
           }
         },
@@ -894,6 +909,7 @@
           "slug": "leon",
           "label": "León",
           "labels": {
+            "en": "León",
             "es": "León"
           }
         },
@@ -901,6 +917,7 @@
           "slug": "palencia",
           "label": "Palencia",
           "labels": {
+            "en": "Palencia",
             "es": "Palencia"
           }
         },
@@ -908,6 +925,7 @@
           "slug": "salamanca",
           "label": "Salamanca",
           "labels": {
+            "en": "Salamanca",
             "es": "Salamanca"
           }
         },
@@ -915,6 +933,7 @@
           "slug": "segovia",
           "label": "Segovia",
           "labels": {
+            "en": "Segovia",
             "es": "Segovia"
           }
         },
@@ -922,6 +941,7 @@
           "slug": "soria",
           "label": "Soria",
           "labels": {
+            "en": "Soria",
             "es": "Soria"
           }
         },
@@ -929,6 +949,7 @@
           "slug": "valladolid",
           "label": "Valladolid",
           "labels": {
+            "en": "Valladolid",
             "es": "Valladolid"
           }
         },
@@ -936,11 +957,13 @@
           "slug": "zamora",
           "label": "Zamora",
           "labels": {
+            "en": "Zamora",
             "es": "Zamora"
           }
         }
       ],
       "labels": {
+        "en": "Castile and León",
         "es": "Castilla y León"
       }
     },
@@ -952,6 +975,7 @@
           "slug": "albacete",
           "label": "Albacete",
           "labels": {
+            "en": "Albacete",
             "es": "Albacete"
           }
         },
@@ -959,6 +983,7 @@
           "slug": "ciudad-real",
           "label": "Ciudad Real",
           "labels": {
+            "en": "Ciudad Real",
             "es": "Ciudad Real"
           }
         },
@@ -966,6 +991,7 @@
           "slug": "cuenca",
           "label": "Cuenca",
           "labels": {
+            "en": "Cuenca",
             "es": "Cuenca"
           }
         },
@@ -973,6 +999,7 @@
           "slug": "guadalajara",
           "label": "Guadalajara",
           "labels": {
+            "en": "Guadalajara",
             "es": "Guadalajara"
           }
         },
@@ -980,11 +1007,13 @@
           "slug": "toledo",
           "label": "Toledo",
           "labels": {
+            "en": "Toledo",
             "es": "Toledo"
           }
         }
       ],
       "labels": {
+        "en": "Castile-La Mancha",
         "es": "Castilla-La Mancha"
       }
     },
@@ -996,6 +1025,7 @@
           "slug": "huesca",
           "label": "Huesca",
           "labels": {
+            "en": "Huesca",
             "es": "Huesca"
           }
         },
@@ -1003,6 +1033,7 @@
           "slug": "teruel",
           "label": "Teruel",
           "labels": {
+            "en": "Teruel",
             "es": "Teruel"
           }
         },
@@ -1010,11 +1041,13 @@
           "slug": "zaragoza",
           "label": "Zaragoza",
           "labels": {
+            "en": "Zaragoza",
             "es": "Zaragoza"
           }
         }
       ],
       "labels": {
+        "en": "Aragon",
         "es": "Aragón"
       }
     },
@@ -1081,11 +1114,13 @@
           "slug": "baleares",
           "label": "Baleares",
           "labels": {
+            "en": "Balearic Islands",
             "es": "Baleares"
           }
         }
       ],
       "labels": {
+        "en": "Balearic Islands",
         "es": "Illes Balears"
       }
     },
@@ -1097,6 +1132,7 @@
           "slug": "las-palmas",
           "label": "Las Palmas",
           "labels": {
+            "en": "Las Palmas",
             "es": "Las Palmas"
           }
         },
@@ -1104,11 +1140,13 @@
           "slug": "santa-cruz-de-tenerife",
           "label": "Santa Cruz de Tenerife",
           "labels": {
+            "en": "Santa Cruz de Tenerife",
             "es": "Santa Cruz de Tenerife"
           }
         }
       ],
       "labels": {
+        "en": "Canary Islands",
         "es": "Canarias"
       }
     },
@@ -1120,6 +1158,7 @@
           "slug": "alicante",
           "label": "Alicante",
           "labels": {
+            "en": "Alicante",
             "es": "Alicante"
           }
         },
@@ -1127,6 +1166,7 @@
           "slug": "castellon",
           "label": "Castellón",
           "labels": {
+            "en": "Castellón",
             "es": "Castellón"
           }
         },
@@ -1134,11 +1174,13 @@
           "slug": "valencia",
           "label": "Valencia",
           "labels": {
+            "en": "Valencia",
             "es": "Valencia"
           }
         }
       ],
       "labels": {
+        "en": "Valencian Community",
         "es": "Comunitat Valenciana"
       }
     },
@@ -1150,6 +1192,7 @@
           "slug": "a-coruna",
           "label": "A Coruña",
           "labels": {
+            "en": "A Coruña",
             "es": "A Coruña"
           }
         },
@@ -1157,6 +1200,7 @@
           "slug": "lugo",
           "label": "Lugo",
           "labels": {
+            "en": "Lugo",
             "es": "Lugo"
           }
         },
@@ -1164,6 +1208,7 @@
           "slug": "ourense",
           "label": "Ourense",
           "labels": {
+            "en": "Ourense",
             "es": "Ourense"
           }
         },
@@ -1171,11 +1216,13 @@
           "slug": "pontevedra",
           "label": "Pontevedra",
           "labels": {
+            "en": "Pontevedra",
             "es": "Pontevedra"
           }
         }
       ],
       "labels": {
+        "en": "Galicia",
         "es": "Galicia"
       }
     },
@@ -1187,6 +1234,7 @@
           "slug": "badajoz",
           "label": "Badajoz",
           "labels": {
+            "en": "Badajoz",
             "es": "Badajoz"
           }
         },
@@ -1194,11 +1242,13 @@
           "slug": "caceres",
           "label": "Cáceres",
           "labels": {
+            "en": "Cáceres",
             "es": "Cáceres"
           }
         }
       ],
       "labels": {
+        "en": "Extremadura",
         "es": "Extremadura"
       }
     },
@@ -1210,11 +1260,13 @@
           "slug": "madrid",
           "label": "Madrid",
           "labels": {
+            "en": "Madrid",
             "es": "Madrid"
           }
         }
       ],
       "labels": {
+        "en": "Community of Madrid",
         "es": "Comunidad de Madrid"
       }
     },
@@ -1226,11 +1278,13 @@
           "slug": "la-rioja",
           "label": "La Rioja",
           "labels": {
+            "en": "La Rioja",
             "es": "La Rioja"
           }
         }
       ],
       "labels": {
+        "en": "La Rioja",
         "es": "La Rioja"
       }
     },
@@ -1242,11 +1296,13 @@
           "slug": "murcia",
           "label": "Murcia",
           "labels": {
+            "en": "Murcia",
             "es": "Murcia"
           }
         }
       ],
       "labels": {
+        "en": "Region of Murcia",
         "es": "Región de Murcia"
       }
     },
@@ -1258,11 +1314,13 @@
           "slug": "navarra",
           "label": "Navarra",
           "labels": {
+            "en": "Navarre",
             "es": "Navarra"
           }
         }
       ],
       "labels": {
+        "en": "Navarre",
         "es": "Navarra"
       }
     },
@@ -1274,6 +1332,7 @@
           "slug": "alava",
           "label": "Álava",
           "labels": {
+            "en": "Álava",
             "es": "Álava"
           }
         },
@@ -1281,6 +1340,7 @@
           "slug": "guipuzcoa",
           "label": "Guipúzcoa",
           "labels": {
+            "en": "Gipuzkoa",
             "es": "Guipúzcoa"
           }
         },
@@ -1288,11 +1348,13 @@
           "slug": "vizcaya",
           "label": "Vizcaya",
           "labels": {
+            "en": "Biscay",
             "es": "Vizcaya"
           }
         }
       ],
       "labels": {
+        "en": "Basque Country",
         "es": "País Vasco"
       }
     }

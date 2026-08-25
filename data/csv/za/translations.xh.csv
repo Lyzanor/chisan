@@ -1,0 +1,5 @@
+producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version
+429,descripcion,en,e461e05bd1ac9fe7021845f8bddd3c37e7a273f408ab91d1457f531cd3fbe869,"Ifama ekhulisa izityalo zeengcambu nemifuno, iqokelela imveliso kumafama asakhasayo.",reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+564,descripcion,en,2899bb8502e2b1c59d27d6241d7d78184dca4b45b05885db140e650d670e4da3,"Ifama yasekuhlaleni yeenkukhu ezikhuliswa ngokukhululekileyo namaqanda, ethengisa neebhokisi zemifuno.",reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+732,descripcion,en,20c328599de298b91f5226872eeb4016f18968e40cabe33dc4eac092a6371174,Umvelisi nomthengisi wamaqanda wasekuhlaleni eBlakely Farm.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+1030,descripcion,en,bffdc4766f1ded5a39fc39ba1fe969b1108ac5d710c95dcec8bfac0ebced8943,Isigayo sasekuhlaleni esivelisa kwaye sithengisa umgubo wombona.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3

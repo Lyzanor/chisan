@@ -49,53 +49,112 @@
       "areas": [
         {
           "slug": "carlow",
-          "label": "Carlow"
+          "label": "Carlow",
+          "labels": {
+            "en": "Carlow",
+            "ga": "Ceatharlach"
+          }
         },
         {
           "slug": "dublin",
-          "label": "Dublin"
+          "label": "Dublin",
+          "labels": {
+            "en": "Dublin",
+            "ga": "Baile Átha Cliath"
+          }
         },
         {
           "slug": "kildare",
-          "label": "Kildare"
+          "label": "Kildare",
+          "labels": {
+            "en": "Kildare",
+            "ga": "Cill Dara"
+          }
         },
         {
           "slug": "kilkenny",
-          "label": "Kilkenny"
+          "label": "Kilkenny",
+          "labels": {
+            "en": "Kilkenny",
+            "ga": "Cill Chainnigh"
+          }
         },
         {
           "slug": "laois",
-          "label": "Laois"
+          "label": "Laois",
+          "labels": {
+            "en": "Laois",
+            "ga": "Laois"
+          }
         },
         {
           "slug": "longford",
-          "label": "Longford"
+          "label": "Longford",
+          "labels": {
+            "en": "Longford",
+            "ga": "Longfort"
+          }
         },
         {
           "slug": "louth",
-          "label": "Louth"
+          "label": "Louth",
+          "labels": {
+            "en": "Louth",
+            "ga": "Lú"
+          }
         },
         {
           "slug": "meath",
-          "label": "Meath"
+          "label": "Meath",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Meath",
+            "ga": "An Mhí"
+          }
         },
         {
           "slug": "offaly",
-          "label": "Offaly"
+          "label": "Offaly",
+          "labels": {
+            "en": "Offaly",
+            "ga": "Uíbh Fhailí"
+          }
         },
         {
           "slug": "westmeath",
-          "label": "Westmeath"
+          "label": "Westmeath",
+          "labels": {
+            "en": "Westmeath",
+            "ga": "An Iarmhí"
+          }
         },
         {
           "slug": "wexford",
-          "label": "Wexford"
+          "label": "Wexford",
+          "labels": {
+            "en": "Wexford",
+            "ga": "Loch Garman"
+          }
         },
         {
           "slug": "wicklow",
-          "label": "Wicklow"
+          "label": "Wicklow",
+          "labels": {
+            "en": "Wicklow",
+            "ga": "Cill Mhantáin"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Leinster",
+        "ga": "Laighin"
+      }
     },
     {
       "slug": "munster",
@@ -103,29 +162,78 @@
       "areas": [
         {
           "slug": "clare",
-          "label": "Clare"
+          "label": "Clare",
+          "labels": {
+            "en": "Clare",
+            "ga": "An Clár"
+          }
         },
         {
           "slug": "cork",
-          "label": "Cork"
+          "label": "Cork",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Cork",
+            "ga": "Corcaigh"
+          }
         },
         {
           "slug": "kerry",
-          "label": "Kerry"
+          "label": "Kerry",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Kerry",
+            "ga": "Ciarraí"
+          }
         },
         {
           "slug": "limerick",
-          "label": "Limerick"
+          "label": "Limerick",
+          "labels": {
+            "en": "Limerick",
+            "ga": "Luimneach"
+          }
         },
         {
           "slug": "tipperary",
-          "label": "Tipperary"
+          "label": "Tipperary",
+          "labels": {
+            "en": "Tipperary",
+            "ga": "Tiobraid Árann"
+          }
         },
         {
           "slug": "waterford",
-          "label": "Waterford"
+          "label": "Waterford",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Waterford",
+            "ga": "Port Láirge"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Munster",
+        "ga": "Mumhan"
+      }
     },
     {
       "slug": "connacht",
@@ -133,25 +241,63 @@
       "areas": [
         {
           "slug": "galway",
-          "label": "Galway"
+          "label": "Galway",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Galway",
+            "ga": "Gaillimh"
+          }
         },
         {
           "slug": "leitrim",
-          "label": "Leitrim"
+          "label": "Leitrim",
+          "labels": {
+            "en": "Leitrim",
+            "ga": "Liatroim"
+          }
         },
         {
           "slug": "mayo",
-          "label": "Mayo"
+          "label": "Mayo",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Mayo",
+            "ga": "Maigh Eo"
+          }
         },
         {
           "slug": "roscommon",
-          "label": "Roscommon"
+          "label": "Roscommon",
+          "labels": {
+            "en": "Roscommon",
+            "ga": "Ros Comáin"
+          }
         },
         {
           "slug": "sligo",
-          "label": "Sligo"
+          "label": "Sligo",
+          "labels": {
+            "en": "Sligo",
+            "ga": "Sligeach"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Connacht",
+        "ga": "Connacht"
+      }
     },
     {
       "slug": "ulster",
@@ -159,17 +305,70 @@
       "areas": [
         {
           "slug": "cavan",
-          "label": "Cavan"
+          "label": "Cavan",
+          "labels": {
+            "en": "Cavan",
+            "ga": "An Cabhán"
+          }
         },
         {
           "slug": "donegal",
-          "label": "Donegal"
+          "label": "Donegal",
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ga"
+            ],
+            "preferredLocale": "ga"
+          },
+          "labels": {
+            "en": "Donegal",
+            "ga": "Dún na nGall"
+          }
         },
         {
           "slug": "monaghan",
-          "label": "Monaghan"
+          "label": "Monaghan",
+          "labels": {
+            "en": "Monaghan",
+            "ga": "Muineachán"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Ulster",
+        "ga": "Ulaidh"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "en",
+    "publishedLocales": [
+      "en"
+    ],
+    "labels": {
+      "en": "Ireland",
+      "ga": "Éire"
+    },
+    "unitLabels": {
+      "en": {
+        "one": "county",
+        "many": "counties"
+      },
+      "ga": {
+        "one": "contae",
+        "many": "contaetha"
+      }
+    },
+    "regionUnitLabels": {
+      "en": {
+        "one": "province",
+        "many": "provinces"
+      },
+      "ga": {
+        "one": "cúige",
+        "many": "cúigí"
+      }
+    }
+  }
 }

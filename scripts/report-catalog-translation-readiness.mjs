@@ -13,7 +13,7 @@ import {
   hashTranslationSource,
   listCatalogCsvFiles,
   readCanonicalCountry,
-  readExplicitPublishedAreaLocales,
+  readPublishedAreaLocales,
   readTranslationEngineRegistry,
   readTranslationGlossary,
   readTranslationSidecar,
@@ -50,7 +50,7 @@ function usage() {
 Options:
   --country <cc>          Limit the report to one country.
   --area <area>           Limit the report to one area (requires --country).
-  --target-locale <code>  Limit the report to one presentation locale (en/es/ca/de/ja/fr/it/nl/pt).
+  --target-locale <code>  Limit the report to one maintained presentation locale.
   --output <path>         Write deterministic JSON; no catalog file is changed.
   --root <csv-root>       Override data/csv (primarily for isolated tests).
   --glossary <path>       Override the versioned glossary.
@@ -131,7 +131,7 @@ function approvedContexts(registry, targetLocale, glossaryVersion) {
 
 function areaPublicationMap(csvRoot, country) {
   return new Map(
-    readExplicitPublishedAreaLocales(csvRoot, country).map((scope) => [
+    readPublishedAreaLocales(csvRoot, country).map((scope) => [
       `${scope.region}/${scope.area}`,
       new Set(scope.locales),
     ]),
@@ -139,7 +139,6 @@ function areaPublicationMap(csvRoot, country) {
 }
 
 function readinessStatus(record) {
-  if (!record.phase4_ready) return "phase4_pending";
   if (record.stale_reviewed > 0) return "human_review_required";
   if (record.unapproved_machine > 0) return "unapproved_machine_rows";
   if (record.stale_machine > 0 || record.missing > 0) {
@@ -196,7 +195,6 @@ export function buildCatalogTranslationReadiness({
     if (canonical.errors.length > 0) {
       throw new Error(`Canonical catalog is invalid:\n- ${canonical.errors.join("\n- ")}`);
     }
-    const phase4Ready = canonical.legacyFiles.length === 0;
     const publication = areaPublicationMap(csvRoot, countryCode);
     const areas = canonical.areaFiles
       .map((filePath) => classifyCatalogCsvPath(csvRoot, filePath))
@@ -223,7 +221,6 @@ export function buildCatalogTranslationReadiness({
           region: areaEntry.region,
           area: areaEntry.area,
           target_locale: locale,
-          phase4_ready: phase4Ready,
           manifest_published:
             publication.get(`${areaEntry.region}/${areaEntry.area}`)?.has(locale) ?? false,
           approved_engine_contexts: approvals.length,
@@ -242,44 +239,39 @@ export function buildCatalogTranslationReadiness({
           status: "",
         };
 
-        if (phase4Ready) {
-          for (const source of sources) {
-            if (!source.text || source.sourceLocale === locale) continue;
-            record.required_sidecar_rows += 1;
-            const row = sidecarByKey.get(
-              translationPairKey(source.producerId),
-            );
-            if (!row) {
-              record.missing += 1;
-              continue;
-            }
-            const sourceAndContentCurrent =
-              currentSource(row, source) && validContent(row, source, locale, glossary);
-            if (row.origin === "reviewed") {
-              if (sourceAndContentCurrent) record.current_reviewed += 1;
-              else record.stale_reviewed += 1;
-              continue;
-            }
-            const approved = Boolean(
-              findApprovedTranslationEngine(registry, {
-                engine: row.engine,
-                engineVersion: row.engine_version,
-                promptVersion: row.prompt_version,
-                glossaryVersion: row.glossary_version,
-                targetLocale: locale,
-              }),
-            );
-            const versionCurrent =
-              row.prompt_version === TRANSLATION_PROMPT_VERSION &&
-              row.glossary_version === glossary.version;
-            if (!approved) record.unapproved_machine += 1;
-            if (!sourceAndContentCurrent || !versionCurrent) record.stale_machine += 1;
-            else if (approved) record.current_machine += 1;
+        for (const source of sources) {
+          if (!source.text || source.sourceLocale === locale) continue;
+          record.required_sidecar_rows += 1;
+          const row = sidecarByKey.get(translationPairKey(source.producerId));
+          if (!row) {
+            record.missing += 1;
+            continue;
           }
+          const sourceAndContentCurrent =
+            currentSource(row, source) && validContent(row, source, locale, glossary);
+          if (row.origin === "reviewed") {
+            if (sourceAndContentCurrent) record.current_reviewed += 1;
+            else record.stale_reviewed += 1;
+            continue;
+          }
+          const approved = Boolean(
+            findApprovedTranslationEngine(registry, {
+              engine: row.engine,
+              engineVersion: row.engine_version,
+              promptVersion: row.prompt_version,
+              glossaryVersion: row.glossary_version,
+              targetLocale: locale,
+            }),
+          );
+          const versionCurrent =
+            row.prompt_version === TRANSLATION_PROMPT_VERSION &&
+            row.glossary_version === glossary.version;
+          if (!approved) record.unapproved_machine += 1;
+          if (!sourceAndContentCurrent || !versionCurrent) record.stale_machine += 1;
+          else if (approved) record.current_machine += 1;
         }
 
         record.translation_ready =
-          phase4Ready &&
           record.current_reviewed + record.current_machine === record.required_sidecar_rows;
         record.status = readinessStatus(record);
         records.push(record);

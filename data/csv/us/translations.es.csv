@@ -1,0 +1,4 @@
+producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,prompt_version,glossary_version
+456,descripcion,en,b116b9f9c597ba37458433b7cb961f5d4b14c8bb2614c327cde1e7cbd8b96b14,"Cultiva pepinos, pacanas, pimientos, calabazas de verano y de invierno, tomates, col rizada y perejil.",reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+910,descripcion,en,4f30994aa00bcb8a73c31ead4a570fbb2d6fd5996578df0a86250e8a0090fa2d,Puesto y mercado agrícola con visitas escolares.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3
+2300,descripcion,en,c70ff9bbfe210d07a9c8b2faa25752197cb27ed8d002f4f3a362680db0130ce2,Venta en carretera de manzanas y cerezas.,reviewed,codex-subagent,gpt-5.6-luna-2026-08-25,chisan-description-v10,2026-08-24.3

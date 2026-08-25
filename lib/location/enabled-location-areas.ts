@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import type { Country } from "../csv-catalog";
+import { getLocalizedCatalogLabel, type Country } from "../csv-catalog";
 import type { Locale } from "../i18n/locales";
 import type { LocationOnboardingArea } from "./location-onboarding";
 
@@ -155,7 +155,7 @@ export function listEnabledLocationAreas({
       enabled.push({
         country: entry.country,
         area: area.slug,
-        label: area.labels[locale] ?? area.label,
+        label: getLocalizedCatalogLabel(area, locale),
         defaultLocale: area.defaultLocale,
         publishedLocales: [...area.publishedLocales],
         preferredLocale: area.preferredLocale,

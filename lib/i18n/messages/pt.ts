@@ -13,17 +13,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Navegação do rodapé",
-    aboutTitle: "Sobre nós",
-    aboutDescription:
-      "A Chisan está a criar uma plataforma partilhada e fiável para descobrir produtores de alimentos e bebidas ligados ao território.",
     aboutLink: "O nosso propósito",
-    exploreTitle: "Explorar",
     catalogLink: "Catálogo de produtores",
-    contactTitle: "Contactos",
-    contactDescription:
-      "Perguntas, correções e propostas de colaboração são bem-vindas.",
     contactLink: "Contacte-nos no GitHub",
-    closingLine: "Um catálogo aberto e fiável para a comida local.",
   },
   accountActions: {
     ownershipVerifiedDescription: "A propriedade deste produtor está verificada.",
@@ -97,6 +89,9 @@ const messages = {
   home: {
     chooseCountry: "Escolha um país",
     countrySummary: "{areas} em {regions}",
+    aboutKicker: "Sobre a Chisan",
+    aboutDescription: "A Chisan está a construir uma camada partilhada de descoberta para a alimentação local: um só lugar para encontrar, compreender e contactar produtores de alimentos e bebidas enraizados nas suas comunidades.",
+    aboutCatalogDescription: "Um catálogo CSV transparente continua a ser a fonte de verdade. A web, as contas e os fluxos de contribuições revistas crescem à sua volta para que o catálogo possa continuar útil, fiável e aberto à medida que a Chisan se expande.",
   },
   locationOnboarding: {
     title: "Encontre a sua área de catálogo",
@@ -152,7 +147,6 @@ const messages = {
     producerMap: "Mapa de produtores",
     producers: "Produtores",
     openProfile: "Abrir perfil",
-    showingProducer: "Mapa a mostrar {producer}",
   },
   producer: {
     backToMap: "Voltar ao mapa",
@@ -180,7 +174,6 @@ const messages = {
     municipality: "Município",
     category: "Categoria",
     additionalCategories: "Categorias adicionais",
-    subcategory: "Subcategoria",
     featuredProducts: "Produtos em destaque",
     address: "Morada",
     description: "Descrição",
@@ -198,7 +191,6 @@ const messages = {
     latitude: "Latitude",
     longitude: "Longitude",
     verification: "Verificação",
-    reviewed: "Revisto",
   },
   controlledValues: {
     verification: { pendiente: "Pendente", parcial: "Parcialmente verificado", verificado: "Verificado" },

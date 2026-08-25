@@ -26,9 +26,13 @@ export type CatalogScope = {
 };
 
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
-const COMPOSITE_SCOPE_PATTERN = /^([a-z]{2})-([a-z]{2})$/;
+const COMPOSITE_SCOPE_PATTERN = /^([a-z]{2,3})-([a-z]{2})$/;
 
 export const EXPLICIT_LOCALE_COOKIE = "chisan_locale";
+
+export function isCatalogScopeSegment(value: string): boolean {
+  return COUNTRY_PATTERN.test(value) || COMPOSITE_SCOPE_PATTERN.test(value);
+}
 
 export function buildCatalogScope(
   country: CatalogCountryPolicy,
@@ -136,5 +140,7 @@ export function resolveDestinationLocale(
   if (published.has("en")) return "en";
   if (published.has(policy.defaultLocale)) return policy.defaultLocale;
 
-  return policy.publishedLocales[0] ?? policy.defaultLocale;
+  throw new Error(
+    `Catalog locale policy must publish its default locale '${policy.defaultLocale}'`,
+  );
 }

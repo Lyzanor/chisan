@@ -15,17 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Navegació del peu de pàgina",
-    aboutTitle: "Sobre nosaltres",
-    aboutDescription:
-      "Chisan està construint una capa compartida i fiable per descobrir productors locals d'aliments i begudes.",
     aboutLink: "El nostre propòsit",
-    exploreTitle: "Explora",
     catalogLink: "Catàleg de productors",
-    contactTitle: "Contacte",
-    contactDescription:
-      "Les preguntes, correccions i propostes de col·laboració són benvingudes.",
     contactLink: "Contacta amb nosaltres a GitHub",
-    closingLine: "Un catàleg obert i fiable per a l'alimentació local.",
   },
   accountActions: {
     ownershipVerifiedDescription: "La propietat d'aquest productor està verificada.",
@@ -104,6 +96,9 @@ const messages = {
   home: {
     chooseCountry: "Tria un país",
     countrySummary: "{areas} en {regions}",
+    aboutKicker: "Sobre Chisan",
+    aboutDescription: "Chisan està construint una capa compartida de descoberta per al menjar local: un sol lloc per trobar, entendre i connectar amb productors d'aliments i begudes arrelats a les seves comunitats.",
+    aboutCatalogDescription: "Un catàleg CSV transparent continua sent la font de veritat. El web, els comptes i els fluxos de contribucions revisades creixen al seu voltant perquè el catàleg pugui continuar sent útil, fiable i obert a mesura que Chisan s'expandeix.",
   },
   locationOnboarding: {
     title: "Troba la teva àrea del catàleg",
@@ -171,7 +166,6 @@ const messages = {
     producerMap: "Mapa de productors",
     producers: "Productors",
     openProfile: "Obre el perfil",
-    showingProducer: "Mapa que mostra {producer}",
   },
   producer: {
     backToMap: "Torna al mapa",
@@ -199,7 +193,6 @@ const messages = {
     municipality: "Municipi",
     category: "Categoria",
     additionalCategories: "Categories addicionals",
-    subcategory: "Subcategoria",
     featuredProducts: "Productes destacats",
     address: "Adreça",
     description: "Descripció",
@@ -217,7 +210,6 @@ const messages = {
     latitude: "Latitud",
     longitude: "Longitud",
     verification: "Verificació",
-    reviewed: "Revisat",
   },
   controlledValues: {
     verification: {

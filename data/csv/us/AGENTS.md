@@ -14,6 +14,10 @@
 - State registrations and license labels vary. Resolve the public producer
   identity and productive address rather than treating an LLC, permit holder,
   co-packer or mailing office as the unit.
+- English is the country default. New Mexico publishes Spanish and English and
+  prefers Spanish when the visitor accepts it. Hawaii publishes Hawaiian and
+  English and prefers Hawaiian when the visitor accepts it. No other state
+  receives a territorial language solely from demographic inference.
 
 ## Source ceilings
 - USDA Local Food Directories describe market outlets. An on-farm market or
@@ -28,3 +32,6 @@
 - State agriculture and commodity directories vary from regulated lists to
   self-submitted marketing rosters. Establish each source's claims in the active
   area note.
+- New Mexico's Constitution and Hawaii's Constitution support their respective
+  territorial language policies. They do not establish a producer's language,
+  identity, products or current activity.

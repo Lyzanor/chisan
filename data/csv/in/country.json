@@ -42,37 +42,114 @@
       "areas": [
         {
           "slug": "chandigarh",
-          "label": "Chandigarh"
+          "label": "Chandigarh",
+          "labels": {
+            "en": "Chandigarh",
+            "hi": "चंडीगढ़"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "delhi",
-          "label": "Delhi"
+          "label": "Delhi",
+          "labels": {
+            "en": "Delhi",
+            "hi": "दिल्ली"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "haryana",
-          "label": "Haryana"
+          "label": "Haryana",
+          "labels": {
+            "en": "Haryana",
+            "hi": "हरियाणा"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "himachal-pradesh",
-          "label": "Himachal Pradesh"
+          "label": "Himachal Pradesh",
+          "labels": {
+            "en": "Himachal Pradesh",
+            "hi": "हिमाचल प्रदेश"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "jammu-kashmir",
-          "label": "Jammu and Kashmir"
+          "label": "Jammu and Kashmir",
+          "labels": {
+            "en": "Jammu and Kashmir"
+          }
         },
         {
           "slug": "ladakh",
-          "label": "Ladakh"
+          "label": "Ladakh",
+          "labels": {
+            "en": "Ladakh"
+          }
         },
         {
           "slug": "punjab",
-          "label": "Punjab"
+          "label": "Punjab",
+          "labels": {
+            "en": "Punjab",
+            "pa": "ਪੰਜਾਬ"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "pa"
+            ],
+            "preferredLocale": "pa"
+          }
         },
         {
           "slug": "rajasthan",
-          "label": "Rajasthan"
+          "label": "Rajasthan",
+          "labels": {
+            "en": "Rajasthan",
+            "hi": "राजस्थान"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Northern India",
+        "hi": "उत्तरी भारत",
+        "pa": "ਉੱਤਰੀ ਭਾਰਤ"
+      }
     },
     {
       "slug": "central",
@@ -80,21 +157,69 @@
       "areas": [
         {
           "slug": "chhattisgarh",
-          "label": "Chhattisgarh"
+          "label": "Chhattisgarh",
+          "labels": {
+            "en": "Chhattisgarh",
+            "hi": "छत्तीसगढ़"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "madhya-pradesh",
-          "label": "Madhya Pradesh"
+          "label": "Madhya Pradesh",
+          "labels": {
+            "en": "Madhya Pradesh",
+            "hi": "मध्य प्रदेश"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "uttar-pradesh",
-          "label": "Uttar Pradesh"
+          "label": "Uttar Pradesh",
+          "labels": {
+            "en": "Uttar Pradesh",
+            "hi": "उत्तर प्रदेश"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "uttarakhand",
-          "label": "Uttarakhand"
+          "label": "Uttarakhand",
+          "labels": {
+            "en": "Uttarakhand",
+            "hi": "उत्तराखंड"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Central India",
+        "hi": "मध्य भारत"
+      }
     },
     {
       "slug": "eastern",
@@ -102,25 +227,86 @@
       "areas": [
         {
           "slug": "andaman-nicobar-islands",
-          "label": "Andaman and Nicobar Islands"
+          "label": "Andaman and Nicobar Islands",
+          "labels": {
+            "en": "Andaman and Nicobar Islands",
+            "hi": "अंडमान और निकोबार द्वीपसमूह"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "bihar",
-          "label": "Bihar"
+          "label": "Bihar",
+          "labels": {
+            "en": "Bihar",
+            "hi": "बिहार"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "jharkhand",
-          "label": "Jharkhand"
+          "label": "Jharkhand",
+          "labels": {
+            "en": "Jharkhand",
+            "hi": "झारखंड"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "hi"
+            ],
+            "preferredLocale": "hi"
+          }
         },
         {
           "slug": "odisha",
-          "label": "Odisha"
+          "label": "Odisha",
+          "labels": {
+            "en": "Odisha",
+            "or": "ଓଡ଼ିଶା"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "or"
+            ],
+            "preferredLocale": "or"
+          }
         },
         {
           "slug": "west-bengal",
-          "label": "West Bengal"
+          "label": "West Bengal",
+          "labels": {
+            "en": "West Bengal",
+            "bn": "পশ্চিমবঙ্গ"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "bn"
+            ],
+            "preferredLocale": "bn"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Eastern India",
+        "hi": "पूर्वी भारत",
+        "or": "ପୂର୍ବ ଭାରତ",
+        "bn": "পূর্ব ভারত"
+      }
     },
     {
       "slug": "north-eastern",
@@ -128,37 +314,91 @@
       "areas": [
         {
           "slug": "arunachal-pradesh",
-          "label": "Arunachal Pradesh"
+          "label": "Arunachal Pradesh",
+          "labels": {
+            "en": "Arunachal Pradesh"
+          }
         },
         {
           "slug": "assam",
-          "label": "Assam"
+          "label": "Assam",
+          "labels": {
+            "en": "Assam",
+            "as": "অসম"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "as"
+            ],
+            "preferredLocale": "as"
+          }
         },
         {
           "slug": "manipur",
-          "label": "Manipur"
+          "label": "Manipur",
+          "labels": {
+            "en": "Manipur"
+          }
         },
         {
           "slug": "meghalaya",
-          "label": "Meghalaya"
+          "label": "Meghalaya",
+          "labels": {
+            "en": "Meghalaya"
+          }
         },
         {
           "slug": "mizoram",
-          "label": "Mizoram"
+          "label": "Mizoram",
+          "labels": {
+            "en": "Mizoram"
+          }
         },
         {
           "slug": "nagaland",
-          "label": "Nagaland"
+          "label": "Nagaland",
+          "labels": {
+            "en": "Nagaland"
+          }
         },
         {
           "slug": "sikkim",
-          "label": "Sikkim"
+          "label": "Sikkim",
+          "labels": {
+            "en": "Sikkim",
+            "ne": "सिक्किम"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ne"
+            ],
+            "preferredLocale": "ne"
+          }
         },
         {
           "slug": "tripura",
-          "label": "Tripura"
+          "label": "Tripura",
+          "labels": {
+            "en": "Tripura",
+            "bn": "ত্রিপুরা"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "bn"
+            ],
+            "preferredLocale": "bn"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "North Eastern India",
+        "as": "উত্তৰ-পূব ভাৰত",
+        "ne": "उत्तरपूर्व भारत",
+        "bn": "উত্তর-পূর্ব ভারত"
+      }
     },
     {
       "slug": "western",
@@ -166,21 +406,71 @@
       "areas": [
         {
           "slug": "dadra-nagar-haveli-daman-diu",
-          "label": "Dadra and Nagar Haveli and Daman and Diu"
+          "label": "Dadra and Nagar Haveli and Daman and Diu",
+          "labels": {
+            "en": "Dadra and Nagar Haveli and Daman and Diu",
+            "gu": "દાદરા અને નગર હવેલી અને દમણ અને દીવ"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "gu"
+            ],
+            "preferredLocale": "gu"
+          }
         },
         {
           "slug": "goa",
-          "label": "Goa"
+          "label": "Goa",
+          "labels": {
+            "en": "Goa",
+            "kok": "गोवा"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "kok"
+            ],
+            "preferredLocale": "kok"
+          }
         },
         {
           "slug": "gujarat",
-          "label": "Gujarat"
+          "label": "Gujarat",
+          "labels": {
+            "en": "Gujarat",
+            "gu": "ગુજરાત"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "gu"
+            ],
+            "preferredLocale": "gu"
+          }
         },
         {
           "slug": "maharashtra",
-          "label": "Maharashtra"
+          "label": "Maharashtra",
+          "labels": {
+            "en": "Maharashtra",
+            "mr": "महाराष्ट्र"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "mr"
+            ],
+            "preferredLocale": "mr"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Western India",
+        "gu": "પશ્ચિમ ભારત",
+        "kok": "पश्चिम भारत",
+        "mr": "पश्चिम भारत"
+      }
     },
     {
       "slug": "southern",
@@ -188,33 +478,247 @@
       "areas": [
         {
           "slug": "andhra-pradesh",
-          "label": "Andhra Pradesh"
+          "label": "Andhra Pradesh",
+          "labels": {
+            "en": "Andhra Pradesh",
+            "te": "ఆంధ్ర ప్రదేశ్"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "te"
+            ],
+            "preferredLocale": "te"
+          }
         },
         {
           "slug": "karnataka",
-          "label": "Karnataka"
+          "label": "Karnataka",
+          "labels": {
+            "en": "Karnataka",
+            "kn": "ಕರ್ನಾಟಕ"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "kn"
+            ],
+            "preferredLocale": "kn"
+          }
         },
         {
           "slug": "kerala",
-          "label": "Kerala"
+          "label": "Kerala",
+          "labels": {
+            "en": "Kerala",
+            "ml": "കേരളം"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ml"
+            ],
+            "preferredLocale": "ml"
+          }
         },
         {
           "slug": "lakshadweep",
-          "label": "Lakshadweep"
+          "label": "Lakshadweep",
+          "labels": {
+            "en": "Lakshadweep",
+            "ml": "ലക്ഷദ്വീപ്"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ml"
+            ],
+            "preferredLocale": "ml"
+          }
         },
         {
           "slug": "puducherry",
-          "label": "Puducherry"
+          "label": "Puducherry",
+          "labels": {
+            "en": "Puducherry"
+          }
         },
         {
           "slug": "tamil-nadu",
-          "label": "Tamil Nadu"
+          "label": "Tamil Nadu",
+          "labels": {
+            "en": "Tamil Nadu",
+            "ta": "தமிழ்நாடு"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "ta"
+            ],
+            "preferredLocale": "ta"
+          }
         },
         {
           "slug": "telangana",
-          "label": "Telangana"
+          "label": "Telangana",
+          "labels": {
+            "en": "Telangana",
+            "te": "తెలంగాణ"
+          },
+          "i18n": {
+            "publishedLocales": [
+              "en",
+              "te"
+            ],
+            "preferredLocale": "te"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "en": "Southern India",
+        "te": "దక్షిణ భారతదేశం",
+        "kn": "ದಕ್ಷಿಣ ಭಾರತ",
+        "ml": "തെക്കേ ഇന്ത്യ",
+        "ta": "தென் இந்தியா"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "en",
+    "publishedLocales": [
+      "en"
+    ],
+    "labels": {
+      "en": "India",
+      "hi": "भारत",
+      "pa": "ਭਾਰਤ",
+      "or": "ଭାରତ",
+      "bn": "ভারত",
+      "as": "ভাৰত",
+      "ne": "भारत",
+      "te": "భారతదేశం",
+      "kn": "ಭಾರತ",
+      "ml": "ഇന്ത്യ",
+      "ta": "இந்தியா",
+      "kok": "भारत",
+      "gu": "ભારત",
+      "mr": "भारत"
+    },
+    "unitLabels": {
+      "en": {
+        "one": "state or union territory",
+        "many": "states and union territories"
+      },
+      "hi": {
+        "one": "राज्य या केंद्रशासित प्रदेश",
+        "many": "राज्य और केंद्रशासित प्रदेश"
+      },
+      "pa": {
+        "one": "ਰਾਜ ਜਾਂ ਕੇਂਦਰ ਸ਼ਾਸਿਤ ਪ੍ਰਦੇਸ਼",
+        "many": "ਰਾਜ ਅਤੇ ਕੇਂਦਰ ਸ਼ਾਸਿਤ ਪ੍ਰਦੇਸ਼"
+      },
+      "or": {
+        "one": "ରାଜ୍ୟ କିମ୍ବା କେନ୍ଦ୍ରଶାସିତ ଅଞ୍ଚଳ",
+        "many": "ରାଜ୍ୟ ଏବଂ କେନ୍ଦ୍ରଶାସିତ ଅଞ୍ଚଳ"
+      },
+      "bn": {
+        "one": "রাজ্য বা কেন্দ্রশাসিত অঞ্চল",
+        "many": "রাজ্য ও কেন্দ্রশাসিত অঞ্চল"
+      },
+      "as": {
+        "one": "ৰাজ্য বা কেন্দ্ৰীয় শাসিত অঞ্চল",
+        "many": "ৰাজ্য আৰু কেন্দ্ৰীয় শাসিত অঞ্চল"
+      },
+      "ne": {
+        "one": "राज्य वा केन्द्रशासित प्रदेश",
+        "many": "राज्य र केन्द्रशासित प्रदेश"
+      },
+      "te": {
+        "one": "రాష్ట్రం లేదా కేంద్రపాలిత ప్రాంతం",
+        "many": "రాష్ట్రాలు మరియు కేంద్రపాలిత ప్రాంతాలు"
+      },
+      "kn": {
+        "one": "ರಾಜ್ಯ ಅಥವಾ ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶ",
+        "many": "ರಾಜ್ಯಗಳು ಮತ್ತು ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶಗಳು"
+      },
+      "ml": {
+        "one": "സംസ്ഥാനം അല്ലെങ്കിൽ കേന്ദ്രഭരണ പ്രദേശം",
+        "many": "സംസ്ഥാനങ്ങളും കേന്ദ്രഭരണ പ്രദേശങ്ങളും"
+      },
+      "ta": {
+        "one": "மாநிலம் அல்லது யூனியன் பிரதேசம்",
+        "many": "மாநிலங்களும் யூனியன் பிரதேசங்களும்"
+      },
+      "kok": {
+        "one": "राज्य वा केंद्रशासित प्रदेश",
+        "many": "राज्यां आनी केंद्रशासित प्रदेशां"
+      },
+      "gu": {
+        "one": "રાજ્ય અથવા કેન્દ્રશાસિત પ્રદેશ",
+        "many": "રાજ્યો અને કેન્દ્રશાસિત પ્રદેશો"
+      },
+      "mr": {
+        "one": "राज्य किंवा केंद्रशासित प्रदेश",
+        "many": "राज्ये आणि केंद्रशासित प्रदेश"
+      }
+    },
+    "regionUnitLabels": {
+      "en": {
+        "one": "zone",
+        "many": "zones"
+      },
+      "hi": {
+        "one": "क्षेत्र",
+        "many": "क्षेत्रे"
+      },
+      "pa": {
+        "one": "ਜ਼ੋਨ",
+        "many": "ਜ਼ੋਨ"
+      },
+      "or": {
+        "one": "ଜୋନ୍",
+        "many": "ଜୋନ୍‌ଗୁଡ଼ିਕ"
+      },
+      "bn": {
+        "one": "অঞ্চল",
+        "many": "অঞ্চলগুলি"
+      },
+      "as": {
+        "one": "মণ্ডল",
+        "many": "মণ্ডলসমূহ"
+      },
+      "ne": {
+        "one": "क्षेत्र",
+        "many": "क्षेत्रहरू"
+      },
+      "te": {
+        "one": "జోన్",
+        "many": "జోన్లు"
+      },
+      "kn": {
+        "one": "ವಲಯ",
+        "many": "ವಲಯಗಳು"
+      },
+      "ml": {
+        "one": "മേഖല",
+        "many": "മേഖലകൾ"
+      },
+      "ta": {
+        "one": "மண்டலம்",
+        "many": "மண்டலங்கள்"
+      },
+      "kok": {
+        "one": "विभाग",
+        "many": "विभाग"
+      },
+      "gu": {
+        "one": "ઝોન",
+        "many": "ઝોનો"
+      },
+      "mr": {
+        "one": "विभाग",
+        "many": "विभाग"
+      }
+    }
+  }
 }

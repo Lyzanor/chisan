@@ -1,4 +1,5 @@
 import { buildCatalogHref } from "../catalog-navigation";
+import { getLocalizedCatalogLabel } from "../csv-catalog";
 import {
   buildCatalogScope,
   resolveDestinationLocale,
@@ -57,13 +58,13 @@ export function buildManualCatalogSelection(
 ): ManualCatalogSelectionCountry[] {
   return countries.map((country) => ({
     slug: country.slug,
-    label: country.labels[displayLocale] ?? country.label,
+    label: getLocalizedCatalogLabel(country, displayLocale),
     regions: country.regions.map((region) => ({
       slug: region.slug,
-      label: region.labels[displayLocale] ?? region.label,
+      label: getLocalizedCatalogLabel(region, displayLocale),
       areas: region.areas.map((area) => ({
         slug: area.slug,
-        label: area.labels[displayLocale] ?? area.label,
+        label: getLocalizedCatalogLabel(area, displayLocale),
         href: buildCatalogHref({
           scope: buildCatalogScope(
             country,

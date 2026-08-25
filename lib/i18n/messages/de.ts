@@ -15,17 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Fußzeilennavigation",
-    aboutTitle: "Über uns",
-    aboutDescription:
-      "Chisan schafft eine gemeinsame, verlässliche Entdeckungsebene für lokale Lebensmittel- und Getränkehersteller.",
     aboutLink: "Unser Ziel",
-    exploreTitle: "Entdecken",
     catalogLink: "Erzeugerkatalog",
-    contactTitle: "Kontakt",
-    contactDescription:
-      "Fragen, Korrekturen und Vorschläge zur Zusammenarbeit sind willkommen.",
     contactLink: "Auf GitHub Kontakt aufnehmen",
-    closingLine: "Ein offener, verlässlicher Katalog für lokale Lebensmittel.",
   },
   accountActions: {
     ownershipVerifiedDescription: "Die Eigentümerschaft dieses Erzeugers ist verifiziert.",
@@ -104,6 +96,9 @@ const messages = {
   home: {
     chooseCountry: "Land auswählen",
     countrySummary: "{areas} in {regions}",
+    aboutKicker: "Über Chisan",
+    aboutDescription: "Chisan entwickelt eine gemeinsame Entdeckungsebene für lokale Lebensmittel: einen Ort, an dem man in ihren Gemeinschaften verwurzelte Produzenten von Lebensmitteln und Getränken finden, verstehen und mit ihnen in Kontakt treten kann.",
+    aboutCatalogDescription: "Ein transparenter CSV-Katalog bleibt die Quelle der Wahrheit. Das Web, Konten und geprüfte Beitragsabläufe wachsen darum herum, damit der Katalog mit der Erweiterung von Chisan nützlich, vertrauenswürdig und offen bleiben kann.",
   },
   locationOnboarding: {
     title: "Kataloggebiet finden",
@@ -171,7 +166,6 @@ const messages = {
     producerMap: "Erzeugerkarte",
     producers: "Erzeuger",
     openProfile: "Profil öffnen",
-    showingProducer: "Karte mit {producer}",
   },
   producer: {
     backToMap: "Zurück zur Karte",
@@ -199,7 +193,6 @@ const messages = {
     municipality: "Gemeinde",
     category: "Kategorie",
     additionalCategories: "Weitere Kategorien",
-    subcategory: "Unterkategorie",
     featuredProducts: "Ausgewählte Produkte",
     address: "Adresse",
     description: "Beschreibung",
@@ -217,7 +210,6 @@ const messages = {
     latitude: "Breitengrad",
     longitude: "Längengrad",
     verification: "Verifizierung",
-    reviewed: "Geprüft",
   },
   controlledValues: {
     verification: {

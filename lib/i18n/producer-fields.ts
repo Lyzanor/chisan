@@ -6,7 +6,9 @@ import {
   formatVerification,
 } from "./controlled-values";
 import {
+  APPLICATION_DEFAULT_LOCALE,
   DESCRIPTION_SOURCE_LOCALES,
+  getLocaleDisplayTag,
   hasDescriptionSourceLocale,
   type DescriptionSourceLocale,
   type Locale,
@@ -43,22 +45,28 @@ function pipeTokens(value: string): string[] {
 export function formatDescriptionLocale(
   value: string,
   messages: Messages,
+  displayLocale: Locale = APPLICATION_DEFAULT_LOCALE,
 ): string {
   const token = value.trim();
   if (!token) return messages.accountActions.descriptionLanguage.none;
-  return hasDescriptionSourceLocale(token)
-    ? messages.accountActions.descriptionLanguage.names[token]
-    : value;
+  if (!hasDescriptionSourceLocale(token)) return value;
+
+  return (
+    messages.accountActions.descriptionLanguage.names[token] ??
+    new Intl.DisplayNames([getLocaleDisplayTag(displayLocale)], { type: "language" }).of(token) ??
+    token
+  );
 }
 
 export function getDescriptionLocaleOptions(
   messages: Messages,
+  displayLocale: Locale = APPLICATION_DEFAULT_LOCALE,
 ): DescriptionLocaleOption[] {
   return [
     { value: "", label: messages.accountActions.descriptionLanguage.none },
     ...DESCRIPTION_SOURCE_LOCALES.map((locale) => ({
       value: locale,
-      label: messages.accountActions.descriptionLanguage.names[locale],
+      label: formatDescriptionLocale(locale, messages, displayLocale),
     })),
   ];
 }
@@ -79,7 +87,7 @@ export function formatProducerFieldValue(
 ): string {
   const normalizedKey = normalizeFieldKey(key);
   if (normalizedKey === "descripcion_locale") {
-    return formatDescriptionLocale(value, messages);
+    return formatDescriptionLocale(value, messages, locale);
   }
   if (!value) return messages.common.unavailable;
 

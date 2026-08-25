@@ -66,35 +66,35 @@ region, area or producer.
 
 The localized manifest schema is:
 
-| Path | Type and meaning |
-|---|---|
-| `label` | Existing non-empty country fallback label. |
-| `unit` | Existing `{ "one": string, "many": string }` fallback for the area level. |
-| `regionUnit` | Existing `{ "one": string, "many": string }` fallback for the region level. |
-| `i18n.defaultLocale` | Required supported presentation locale for an explicit localized manifest; it owns the short `/<country>` scope. |
-| `i18n.publishedLocales` | Required non-empty, duplicate-free list of locales published at country depth and inherited by descendants without an override. It must include `defaultLocale`. |
-| `i18n.labels` | Country display label by supported presentation locale. |
-| `i18n.unitLabels` | Area-level `{ one, many }` display names by supported presentation locale. |
-| `i18n.regionUnitLabels` | Region-level `{ one, many }` display names by supported presentation locale. |
-| `regions[].slug` | Exact region directory slug; the array also controls display order. |
-| `regions[].label` | Existing non-empty region fallback label. |
-| `regions[].labels` | Region display label by supported presentation locale. |
-| `regions[].i18n.publishedLocales` | Optional replacement for the inherited country list below this region. |
-| `regions[].i18n.preferredLocale` | Optional territorial preference; it must be in the region's effective published list. |
-| `regions[].areas[].slug` | Exact area CSV stem; the array also controls display order. |
-| `regions[].areas[].label` | Existing non-empty area fallback label. |
-| `regions[].areas[].labels` | Area display label by supported presentation locale. |
-| `regions[].areas[].i18n.publishedLocales` | Optional replacement for the inherited region list for this area. |
-| `regions[].areas[].i18n.preferredLocale` | Optional territorial preference; it must be in the area's effective published list. |
+| Path                                      | Type and meaning                                                                                                                                                 |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`                                   | Required non-empty canonical country label.                                                                                                                      |
+| `unit`                                    | Required `{ "one": string, "many": string }` base names for the area level.                                                                                      |
+| `regionUnit`                              | Required `{ "one": string, "many": string }` base names for the region level.                                                                                    |
+| `i18n.defaultLocale`                      | Required supported presentation locale; it owns the short `/<country>` scope.                                                                                    |
+| `i18n.publishedLocales`                   | Required non-empty, duplicate-free list of locales published at country depth and inherited by descendants without an override. It must include `defaultLocale`. |
+| `i18n.labels`                             | Country display label by supported presentation locale.                                                                                                          |
+| `i18n.unitLabels`                         | Area-level `{ one, many }` display names by supported presentation locale.                                                                                       |
+| `i18n.regionUnitLabels`                   | Region-level `{ one, many }` display names by supported presentation locale.                                                                                     |
+| `regions[].slug`                          | Exact region directory slug; the array also controls display order.                                                                                              |
+| `regions[].label`                         | Required non-empty canonical region label.                                                                                                                       |
+| `regions[].labels`                        | Region display label by supported presentation locale.                                                                                                           |
+| `regions[].i18n.publishedLocales`         | Optional replacement for the inherited country list below this region.                                                                                           |
+| `regions[].i18n.preferredLocale`          | Optional territorial preference; it must be in the region's effective published list.                                                                            |
+| `regions[].areas[].slug`                  | Exact area CSV stem; the array also controls display order.                                                                                                      |
+| `regions[].areas[].label`                 | Required non-empty canonical area label.                                                                                                                         |
+| `regions[].areas[].labels`                | Area display label by supported presentation locale.                                                                                                             |
+| `regions[].areas[].i18n.publishedLocales` | Optional replacement for the inherited region list for this area.                                                                                                |
+| `regions[].areas[].i18n.preferredLocale`  | Optional territorial preference; it must be in the area's effective published list.                                                                              |
 
 `aliases` and `producerRouteAliases` are compatibility registries, not locale
 policy. Their routing rules are defined under **Producer identity** below.
 
 Presentation locales are the exact codes in the maintained presentation
-registry: `en`, `es`, `ca`, `de`, `ja`, `fr`, `it`, `nl` and `pt` today. A code
-accepted only by the description-source registry is not valid in manifest
-locale policy. Country codes, browser language, source prose or territorial
-geometry never infer a default or publish a locale.
+registry in `lib/i18n/locales.ts`; two- and three-letter locale tokens are both
+supported. A code accepted only by the description-source registry is not valid
+in manifest locale policy. Country codes, browser language, source prose or
+territorial geometry never infer a default or publish a locale.
 
 Locale policy resolves from country to region to area:
 
@@ -122,13 +122,22 @@ descendant. This is why country and region label maps cover the union of locales
 published below them, even when the country landing does not publish every one
 of those locales.
 
-Existing `label`, `unit` and `regionUnit` remain the default-language fallback
-values during migration. A manifest with no localized fields retains the
-temporary legacy English runtime policy; that compatibility fallback is not an
-explicit publication declaration and must not be used for new or converted
-manifests. Once any localized manifest field is introduced, the country
-`i18n.defaultLocale` and `i18n.publishedLocales` policy and all effective labels
-must be complete. Live rollout counts and batch progress never belong in this
+The neutral application shell uses `APPLICATION_DEFAULT_LOCALE` while it lists
+every country, region and area. Consequently that locale's country, region and
+area labels and both country unit-name pairs are mandatory throughout the tree,
+even where the locale is not published as a catalog route. This is an explicit
+consumer requirement, not a fallback to the legacy single `label` fields.
+
+When a selector lists sibling regions or areas that do not publish the current
+page locale, each destination is labelled in the locale that its link will
+open. The renderer never invents a missing sibling translation from the legacy
+single `label` field.
+
+Every country manifest must declare `i18n.defaultLocale`,
+`i18n.publishedLocales`, all effective country/region/area labels and both unit
+label maps. The loader does not infer locale policy, labels or units from legacy
+fields. A missing manifest or incomplete locale policy is a direct catalog
+contract error. Live rollout counts and batch progress never belong in this
 manifest or a country `AGENTS.md`.
 
 ## Canonical header
@@ -158,31 +167,31 @@ whitespace.
 
 ## Row schema
 
-| Field | Presence | Meaning and representation |
-|---|---|---|
-| `slug` | required | Current public producer slug; lowercase ASCII kebab-case and unique within the country. |
-| `nombre` | required | Public producer identity or brand, not an invented label. |
-| `municipio` | required | Municipality of the qualifying productive unit, using its public or official local spelling. |
-| `categoria` | required | One exact token from the shared category registry. |
-| `productos estrella` | optional | Short comma-separated list of confirmed producer products, brands or appellations. |
-| `direccion` | optional | Published address of the productive unit or its producer-facing premises; never substitute an unrelated shop or head office. |
-| `descripcion` | optional | Concise synthesis of producer-specific, verifiable facts. |
-| `horario` | optional | Current published visiting, collection or public-opening hours whose purpose is clear. |
-| `telefono` | optional | One public producer contact in strict E.164 form, for example `+34600112233`. |
-| `correo` | optional | One valid public producer email address. |
-| `web` | optional | Official producer HTTP(S) URL. |
-| `Facebook` | optional | Official producer Facebook profile/page HTTP(S) URL. |
-| `Instagram` | optional | Official producer Instagram profile HTTP(S) URL. |
-| `Google Maps` | optional | Canonical HTTP(S) Google Maps listing, anchored by a reviewed Place ID, for the producer or productive unit. |
-| `lat` | paired | WGS84 latitude in decimal degrees, between `-90` and `90`. |
-| `lon` | paired | WGS84 longitude in decimal degrees, between `-180` and `180`. |
-| `imagen` | optional | Root-relative path to a local public image asset. |
-| `verificacion` | required | Exact token: `pendiente`, `parcial` or `verificado`. |
-| `Venta online` | required | Exact token: `sí`, `no` or `no comprobado`. |
-| `Canal de venta` | conditional | Zero or more allowed channel tokens joined with `|`; only when `Venta online=sí`. |
-| `categorias adicionales` | optional | Zero or more exact category tokens joined with `|`; each represents another material product line of the same productive unit. |
-| `producer_id` | required | Immutable positive decimal safe integer (`1..9007199254740991`) without leading zeroes; unique within the country. |
-| `descripcion_locale` | paired | Supported lowercase source-language code for a non-empty `descripcion`; empty exactly when `descripcion` is empty. |
+| Field                    | Presence    | Meaning and representation                                                                                                      |
+| ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `slug`                   | required    | Current public producer slug; lowercase ASCII kebab-case and unique within the country.                                         |
+| `nombre`                 | required    | Public producer identity or brand, not an invented label.                                                                       |
+| `municipio`              | required    | Municipality of the qualifying productive unit, using its public or official local spelling.                                    |
+| `categoria`              | required    | One exact token from the shared category registry.                                                                              |
+| `productos estrella`     | optional    | Short comma-separated list of confirmed producer products, brands or appellations.                                              |
+| `direccion`              | optional    | Published address of the productive unit or its producer-facing premises; never substitute an unrelated shop or head office.    |
+| `descripcion`            | optional    | Concise synthesis of producer-specific, verifiable facts.                                                                       |
+| `horario`                | optional    | Current published visiting, collection or public-opening hours whose purpose is clear.                                          |
+| `telefono`               | optional    | One public producer contact in strict E.164 form, for example `+34600112233`.                                                   |
+| `correo`                 | optional    | One valid public producer email address.                                                                                        |
+| `web`                    | optional    | Official producer HTTP(S) URL.                                                                                                  |
+| `Facebook`               | optional    | Official producer Facebook profile/page HTTP(S) URL.                                                                            |
+| `Instagram`              | optional    | Official producer Instagram profile HTTP(S) URL.                                                                                |
+| `Google Maps`            | optional    | Canonical HTTP(S) Google Maps listing, anchored by a reviewed Place ID, for the producer or productive unit.                    |
+| `lat`                    | paired      | WGS84 latitude in decimal degrees, between `-90` and `90`.                                                                      |
+| `lon`                    | paired      | WGS84 longitude in decimal degrees, between `-180` and `180`.                                                                   |
+| `imagen`                 | optional    | Root-relative path to a local public image asset.                                                                               |
+| `verificacion`           | required    | Exact token: `pendiente`, `parcial` or `verificado`.                                                                            |
+| `Venta online`           | required    | Exact token: `sí`, `no` or `no comprobado`.                                                                                     |
+| `Canal de venta`         | conditional | Zero or more allowed channel tokens joined with `\|`; only when `Venta online=sí`.                                              |
+| `categorias adicionales` | optional    | Zero or more exact category tokens joined with `\|`; each represents another material product line of the same productive unit. |
+| `producer_id`            | required    | Immutable positive decimal safe integer (`1..9007199254740991`) without leading zeroes; unique within the country.              |
+| `descripcion_locale`     | paired      | Supported lowercase source-language code for a non-empty `descripcion`; empty exactly when `descripcion` is empty.              |
 
 Controlled values are exact and case-sensitive. Accents are significant.
 
@@ -234,9 +243,9 @@ admission threshold; it is never a holding state for a speculative candidate.
 `descripcion`, not the locale of the producer, country or current request:
 
 - empty `descripcion` requires empty `descripcion_locale`;
-- non-empty `descripcion` requires one lowercase code from the description
-  source registry: `en`, `es`, `ca`, `de`, `ja`, `fr`, `it`, `nl`, `pt`, `gl`
-  or `eu`;
+- non-empty `descripcion` requires one lowercase code from the maintained
+  description-source registry: every presentation locale plus the source-only
+  `gl` and `eu` codes;
 - the value is a base language from the locale registry, never a catalog scope
   such as `en-jp` or a language-region display tag;
 - description-source support is not presentation support: source-only codes do
@@ -267,9 +276,8 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 
 The sidecar rules are:
 
-- `<target-locale>` is a supported presentation-locale code (`en`, `es`, `ca`,
-  `de`, `ja`, `fr`, `it`, `nl` or `pt` today) and is the target language of
-  every `text` in that file.
+- `<target-locale>` is a supported presentation-locale code from the maintained
+  registry and is the target language of every `text` in that file.
   It is not stored as a duplicate column. A supported sidecar may be prepared
   before its target locale is published in a manifest. A source-only locale is
   not a valid sidecar filename until it separately enters the presentation
@@ -319,6 +327,14 @@ The sidecar rules are:
   overwrites or automatically deletes a `reviewed` row. A reviewed row with a
   stale source hash or locale is reported for renewed review and blocks
   publication just as a stale machine row does.
+- Mechanical validation is necessary but never proves linguistic fidelity.
+  The first published batch for a language requires semantic review by someone
+  other than the row's generator, including every digit-bearing, quantitative
+  or written-number row and a deterministic stratified sample of ordinary
+  rows. A native-script coverage alarm is a contamination diagnostic, not a
+  score to game: transliterate ordinary target-language words and place names
+  naturally, preserve legitimate brands, and never add repetitive padding or
+  new facts merely to raise the ratio.
 
 For a requested locale, description resolution is deterministic:
 
@@ -331,13 +347,12 @@ A locale variant is not published in a sitemap or `hreflang` until every
 non-empty description it renders resolves currently. An indexed localized page
 must not silently fall back to canonical prose in another language.
 
-An explicit effective `i18n.publishedLocales` policy is also the publication
-gate for description data. For each area and each published locale, every row
+The effective `i18n.publishedLocales` policy is the publication gate for
+description data. For each area and each published locale, every row
 whose `descripcion_locale` differs must have a current row in that locale's
 country sidecar. Missing or stale rows block that area/locale scope. A valid
 preparatory sidecar for a supported locale may remain partial while the locale
-is not published. The temporary `en` fallback of a legacy manifest is not an
-explicit publication declaration and does not create a sidecar obligation.
+is not published.
 
 Sidecars are checked-in, regenerable presentation artifacts. They are not
 editorial evidence, do not establish or correct producer facts, and must not
@@ -400,21 +415,44 @@ published variants for the same country, area and optional producer. Current
 locale-to-`hreflang` mappings are explicit rather than copied from URL tokens:
 
 | Locale | `hreflang` |
-|---|---|
-| `en` | `en` |
-| `es` | `es` |
-| `ca` | `ca-ES` |
-| `de` | `de` |
-| `ja` | `ja-JP` |
-| `fr` | `fr` |
-| `it` | `it-IT` |
-| `nl` | `nl` |
-| `pt` | `pt-PT` |
+| ------ | ---------- |
+| `en`   | `en`       |
+| `es`   | `es`       |
+| `ca`   | `ca-ES`    |
+| `de`   | `de`       |
+| `ja`   | `ja-JP`    |
+| `fr`   | `fr`       |
+| `it`   | `it-IT`    |
+| `nl`   | `nl`       |
+| `pt`   | `pt-PT`    |
+| `af`   | `af-ZA`    |
+| `as`   | `as-IN`    |
+| `bn`   | `bn-IN`    |
+| `cy`   | `cy-GB`    |
+| `ga`   | `ga`       |
+| `gd`   | `gd-GB`    |
+| `gu`   | `gu-IN`    |
+| `haw`  | `haw-US`   |
+| `hi`   | `hi-IN`    |
+| `kn`   | `kn-IN`    |
+| `kok`  | `kok-IN`   |
+| `ml`   | `ml-IN`    |
+| `mr`   | `mr-IN`    |
+| `ne`   | `ne-IN`    |
+| `nso`  | `nso-ZA`   |
+| `or`   | `or-IN`    |
+| `pa`   | `pa-IN`    |
+| `ss`   | `ss-ZA`    |
+| `st`   | `st-ZA`    |
+| `ta`   | `ta-IN`    |
+| `te`   | `te-IN`    |
+| `tn`   | `tn-ZA`    |
+| `xh`   | `xh-ZA`    |
+| `zu`   | `zu-ZA`    |
 
-Generic English, Spanish, German, French and Dutch are intentional because
-those presentation locales span more than one catalog territory. Italian and
-European Portuguese retain territorial tags for their current single-country
-activation. The global `/` country-and-area selector is
+Generic tags remain intentional for languages that span more than one catalog
+territory. Other entries retain an explicit territory where that identifies the
+maintained presentation variant. The global `/` country-and-area selector is
 the only `x-default` URL. Area and producer pages do not invent an `x-default`;
 English, when published, is an ordinary explicit alternate.
 
@@ -496,13 +534,13 @@ only defines their representation and structural floor.
 
 Allowed channel tokens:
 
-| Token | Demonstrated order mechanism |
-|---|---|
-| `ecommerce` | Online checkout or payment flow. |
-| `whatsapp` | Orders explicitly accepted through WhatsApp. |
-| `email` | Orders explicitly accepted by email. |
-| `telefono` | Orders explicitly accepted by phone. |
-| `suscripcion` | Recurring subscription or box. |
+| Token         | Demonstrated order mechanism                                        |
+| ------------- | ------------------------------------------------------------------- |
+| `ecommerce`   | Online checkout or payment flow.                                    |
+| `whatsapp`    | Orders explicitly accepted through WhatsApp.                        |
+| `email`       | Orders explicitly accepted by email.                                |
+| `telefono`    | Orders explicitly accepted by phone.                                |
+| `suscripcion` | Recurring subscription or box.                                      |
 | `marketplace` | Producer or official collective storefront; not independent resale. |
 
 Multiple tokens use `|`, for example `ecommerce|whatsapp`; order has no meaning.

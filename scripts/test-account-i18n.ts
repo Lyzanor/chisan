@@ -97,13 +97,14 @@ test("account links honor only an explicitly published area locale", () => {
     }),
     "/jp/tokyo/sample-producer",
   );
-  assert.equal(
-    buildAccountProducerHrefForPolicy(producer, {
-      country: japan,
-      localePolicy: { slug: "tokyo", publishedLocales: ["en"] },
-      explicitLocale: null,
-    }),
-    "/en-jp/tokyo/sample-producer",
+  assert.throws(
+    () =>
+      buildAccountProducerHrefForPolicy(producer, {
+        country: japan,
+        localePolicy: { slug: "tokyo", publishedLocales: ["en"] },
+        explicitLocale: null,
+      }),
+    /must publish the country default locale 'ja'/i,
   );
   assert.throws(
     () =>
@@ -112,7 +113,7 @@ test("account links honor only an explicitly published area locale", () => {
         localePolicy: { slug: "tokyo", publishedLocales: [] },
         explicitLocale: null,
       }),
-    /no published catalog locale/i,
+    /must publish the country default locale 'ja'/i,
   );
   assert.equal(
     buildAccountProducerHrefForPolicy(producer, {

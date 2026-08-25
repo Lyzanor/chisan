@@ -21,11 +21,7 @@ function publishedParentHref(pathname: string, catalog: string) {
   const policy = areaOption ?? country;
   const locale = policy.publishedLocales.includes(scope.locale)
     ? scope.locale
-    : policy.publishedLocales.includes(country.defaultLocale)
-      ? country.defaultLocale
-      : policy.publishedLocales[0];
-
-  if (!locale) return "/";
+    : country.defaultLocale;
 
   return buildCatalogHref({
     scope: buildCatalogScope(country, locale),

@@ -15,17 +15,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Footer navigation",
-    aboutTitle: "About us",
-    aboutDescription:
-      "Chisan is building a shared, trustworthy discovery layer for place-based food and drink producers.",
     aboutLink: "Our purpose",
-    exploreTitle: "Explore",
     catalogLink: "Producer catalog",
-    contactTitle: "Contact",
-    contactDescription:
-      "Questions, corrections and collaboration proposals are welcome.",
     contactLink: "Contact us on GitHub",
-    closingLine: "A trusted, open catalog for local food.",
   },
   accountActions: {
     ownershipVerifiedDescription: "This producer's ownership is verified.",
@@ -102,6 +94,9 @@ const messages = {
   home: {
     chooseCountry: "Choose a country",
     countrySummary: "{areas} in {regions}",
+    aboutKicker: "About Chisan",
+    aboutDescription: "Chisan is building a shared discovery layer for local food: one place to find, understand and connect with food and drink producers rooted in their communities.",
+    aboutCatalogDescription: "A transparent CSV catalog remains the source of truth. The web, accounts and reviewed contribution flows grow around it so that the catalog can stay useful, trustworthy and open as Chisan expands.",
   },
   locationOnboarding: {
     title: "Find your catalog area",
@@ -169,7 +164,6 @@ const messages = {
     producerMap: "Producer map",
     producers: "Producers",
     openProfile: "Open profile",
-    showingProducer: "Map showing {producer}",
   },
   producer: {
     backToMap: "Back to the map",
@@ -197,7 +191,6 @@ const messages = {
     municipality: "Municipality",
     category: "Category",
     additionalCategories: "Additional categories",
-    subcategory: "Subcategory",
     featuredProducts: "Featured products",
     address: "Address",
     description: "Description",
@@ -215,7 +208,6 @@ const messages = {
     latitude: "Latitude",
     longitude: "Longitude",
     verification: "Verification",
-    reviewed: "Reviewed",
   },
   controlledValues: {
     verification: {

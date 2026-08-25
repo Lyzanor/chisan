@@ -12,7 +12,10 @@ import {
   resolveAreaCatalog,
   resolveKnownCatalogScope,
 } from "@/lib/catalog-routing";
-import { type Country, getAreaLabel } from "@/lib/csv-catalog";
+import {
+  type Country,
+  getLocalizedCatalogLabel,
+} from "@/lib/csv-catalog";
 import type { Locale } from "@/lib/i18n/locales";
 import { formatMessage, loadMessages } from "@/lib/i18n/messages";
 
@@ -28,7 +31,10 @@ function localizedAreaLabel(country: Country, area: string, locale: Locale): str
     .flatMap((region) => region.areas)
     .find((candidate) => candidate.slug === area);
 
-  return areaOption?.labels[locale] ?? areaOption?.label ?? getAreaLabel(country.slug, area);
+  if (!areaOption) {
+    throw new Error(`Catalog area '${country.slug}/${area}' is missing from its manifest`);
+  }
+  return getLocalizedCatalogLabel(areaOption, locale);
 }
 
 export async function generateMetadata({ params }: AreaPageProps): Promise<Metadata> {
@@ -45,7 +51,7 @@ export async function generateMetadata({ params }: AreaPageProps): Promise<Metad
   const locale = scope.locale;
   const messages = await loadMessages(locale);
   const areaLabel = localizedAreaLabel(country, area, locale);
-  const countryLabel = country.labels[locale] ?? country.label;
+  const countryLabel = getLocalizedCatalogLabel(country, locale);
   const title = formatMessage(messages.metadata.areaTitle, { area: areaLabel });
   const description = formatMessage(messages.metadata.areaDescription, {
     area: areaLabel,

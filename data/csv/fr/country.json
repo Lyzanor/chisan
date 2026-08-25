@@ -28,53 +28,105 @@
       "areas": [
         {
           "slug": "ain",
-          "label": "Ain"
+          "label": "Ain",
+          "labels": {
+            "fr": "Ain",
+            "en": "Ain"
+          }
         },
         {
           "slug": "allier",
-          "label": "Allier"
+          "label": "Allier",
+          "labels": {
+            "fr": "Allier",
+            "en": "Allier"
+          }
         },
         {
           "slug": "ardeche",
-          "label": "Ardèche"
+          "label": "Ardèche",
+          "labels": {
+            "fr": "Ardèche",
+            "en": "Ardèche"
+          }
         },
         {
           "slug": "cantal",
-          "label": "Cantal"
+          "label": "Cantal",
+          "labels": {
+            "fr": "Cantal",
+            "en": "Cantal"
+          }
         },
         {
           "slug": "drome",
-          "label": "Drôme"
+          "label": "Drôme",
+          "labels": {
+            "fr": "Drôme",
+            "en": "Drôme"
+          }
         },
         {
           "slug": "isere",
-          "label": "Isère"
+          "label": "Isère",
+          "labels": {
+            "fr": "Isère",
+            "en": "Isère"
+          }
         },
         {
           "slug": "loire",
-          "label": "Loire"
+          "label": "Loire",
+          "labels": {
+            "fr": "Loire",
+            "en": "Loire"
+          }
         },
         {
           "slug": "haute-loire",
-          "label": "Haute-Loire"
+          "label": "Haute-Loire",
+          "labels": {
+            "fr": "Haute-Loire",
+            "en": "Haute-Loire"
+          }
         },
         {
           "slug": "puy-de-dome",
-          "label": "Puy-de-Dôme"
+          "label": "Puy-de-Dôme",
+          "labels": {
+            "fr": "Puy-de-Dôme",
+            "en": "Puy-de-Dôme"
+          }
         },
         {
           "slug": "rhone",
-          "label": "Rhône"
+          "label": "Rhône",
+          "labels": {
+            "fr": "Rhône",
+            "en": "Rhône"
+          }
         },
         {
           "slug": "savoie",
-          "label": "Savoie"
+          "label": "Savoie",
+          "labels": {
+            "fr": "Savoie",
+            "en": "Savoie"
+          }
         },
         {
           "slug": "haute-savoie",
-          "label": "Haute-Savoie"
+          "label": "Haute-Savoie",
+          "labels": {
+            "fr": "Haute-Savoie",
+            "en": "Haute-Savoie"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Auvergne-Rhône-Alpes",
+        "en": "Auvergne-Rhône-Alpes"
+      }
     },
     {
       "slug": "bourgogne-franche-comte",
@@ -82,37 +134,73 @@
       "areas": [
         {
           "slug": "cote-dor",
-          "label": "Côte-d'Or"
+          "label": "Côte-d'Or",
+          "labels": {
+            "fr": "Côte-d'Or",
+            "en": "Côte-d'Or"
+          }
         },
         {
           "slug": "doubs",
-          "label": "Doubs"
+          "label": "Doubs",
+          "labels": {
+            "fr": "Doubs",
+            "en": "Doubs"
+          }
         },
         {
           "slug": "jura",
-          "label": "Jura"
+          "label": "Jura",
+          "labels": {
+            "fr": "Jura",
+            "en": "Jura"
+          }
         },
         {
           "slug": "nievre",
-          "label": "Nièvre"
+          "label": "Nièvre",
+          "labels": {
+            "fr": "Nièvre",
+            "en": "Nièvre"
+          }
         },
         {
           "slug": "haute-saone",
-          "label": "Haute-Saône"
+          "label": "Haute-Saône",
+          "labels": {
+            "fr": "Haute-Saône",
+            "en": "Haute-Saône"
+          }
         },
         {
           "slug": "saone-et-loire",
-          "label": "Saône-et-Loire"
+          "label": "Saône-et-Loire",
+          "labels": {
+            "fr": "Saône-et-Loire",
+            "en": "Saône-et-Loire"
+          }
         },
         {
           "slug": "yonne",
-          "label": "Yonne"
+          "label": "Yonne",
+          "labels": {
+            "fr": "Yonne",
+            "en": "Yonne"
+          }
         },
         {
           "slug": "territoire-de-belfort",
-          "label": "Territoire de Belfort"
+          "label": "Territoire de Belfort",
+          "labels": {
+            "fr": "Territoire de Belfort",
+            "en": "Territoire de Belfort"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Bourgogne-Franche-Comté",
+        "en": "Bourgogne-Franche-Comté"
+      }
     },
     {
       "slug": "bretagne",
@@ -120,21 +208,41 @@
       "areas": [
         {
           "slug": "cotes-darmor",
-          "label": "Côtes-d'Armor"
+          "label": "Côtes-d'Armor",
+          "labels": {
+            "fr": "Côtes-d'Armor",
+            "en": "Côtes-d'Armor"
+          }
         },
         {
           "slug": "finistere",
-          "label": "Finistère"
+          "label": "Finistère",
+          "labels": {
+            "fr": "Finistère",
+            "en": "Finistère"
+          }
         },
         {
           "slug": "ille-et-vilaine",
-          "label": "Ille-et-Vilaine"
+          "label": "Ille-et-Vilaine",
+          "labels": {
+            "fr": "Ille-et-Vilaine",
+            "en": "Ille-et-Vilaine"
+          }
         },
         {
           "slug": "morbihan",
-          "label": "Morbihan"
+          "label": "Morbihan",
+          "labels": {
+            "fr": "Morbihan",
+            "en": "Morbihan"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Bretagne",
+        "en": "Bretagne"
+      }
     },
     {
       "slug": "centre-val-de-loire",
@@ -142,29 +250,57 @@
       "areas": [
         {
           "slug": "cher",
-          "label": "Cher"
+          "label": "Cher",
+          "labels": {
+            "fr": "Cher",
+            "en": "Cher"
+          }
         },
         {
           "slug": "eure-et-loir",
-          "label": "Eure-et-Loir"
+          "label": "Eure-et-Loir",
+          "labels": {
+            "fr": "Eure-et-Loir",
+            "en": "Eure-et-Loir"
+          }
         },
         {
           "slug": "indre",
-          "label": "Indre"
+          "label": "Indre",
+          "labels": {
+            "fr": "Indre",
+            "en": "Indre"
+          }
         },
         {
           "slug": "indre-et-loire",
-          "label": "Indre-et-Loire"
+          "label": "Indre-et-Loire",
+          "labels": {
+            "fr": "Indre-et-Loire",
+            "en": "Indre-et-Loire"
+          }
         },
         {
           "slug": "loir-et-cher",
-          "label": "Loir-et-Cher"
+          "label": "Loir-et-Cher",
+          "labels": {
+            "fr": "Loir-et-Cher",
+            "en": "Loir-et-Cher"
+          }
         },
         {
           "slug": "loiret",
-          "label": "Loiret"
+          "label": "Loiret",
+          "labels": {
+            "fr": "Loiret",
+            "en": "Loiret"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Centre-Val de Loire",
+        "en": "Centre-Val de Loire"
+      }
     },
     {
       "slug": "corse",
@@ -172,13 +308,25 @@
       "areas": [
         {
           "slug": "corse-du-sud",
-          "label": "Corse-du-Sud"
+          "label": "Corse-du-Sud",
+          "labels": {
+            "fr": "Corse-du-Sud",
+            "en": "Corse-du-Sud"
+          }
         },
         {
           "slug": "haute-corse",
-          "label": "Haute-Corse"
+          "label": "Haute-Corse",
+          "labels": {
+            "fr": "Haute-Corse",
+            "en": "Haute-Corse"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Corse",
+        "en": "Corse"
+      }
     },
     {
       "slug": "grand-est",
@@ -186,45 +334,89 @@
       "areas": [
         {
           "slug": "ardennes",
-          "label": "Ardennes"
+          "label": "Ardennes",
+          "labels": {
+            "fr": "Ardennes",
+            "en": "Ardennes"
+          }
         },
         {
           "slug": "aube",
-          "label": "Aube"
+          "label": "Aube",
+          "labels": {
+            "fr": "Aube",
+            "en": "Aube"
+          }
         },
         {
           "slug": "marne",
-          "label": "Marne"
+          "label": "Marne",
+          "labels": {
+            "fr": "Marne",
+            "en": "Marne"
+          }
         },
         {
           "slug": "haute-marne",
-          "label": "Haute-Marne"
+          "label": "Haute-Marne",
+          "labels": {
+            "fr": "Haute-Marne",
+            "en": "Haute-Marne"
+          }
         },
         {
           "slug": "meurthe-et-moselle",
-          "label": "Meurthe-et-Moselle"
+          "label": "Meurthe-et-Moselle",
+          "labels": {
+            "fr": "Meurthe-et-Moselle",
+            "en": "Meurthe-et-Moselle"
+          }
         },
         {
           "slug": "meuse",
-          "label": "Meuse"
+          "label": "Meuse",
+          "labels": {
+            "fr": "Meuse",
+            "en": "Meuse"
+          }
         },
         {
           "slug": "moselle",
-          "label": "Moselle"
+          "label": "Moselle",
+          "labels": {
+            "fr": "Moselle",
+            "en": "Moselle"
+          }
         },
         {
           "slug": "bas-rhin",
-          "label": "Bas-Rhin"
+          "label": "Bas-Rhin",
+          "labels": {
+            "fr": "Bas-Rhin",
+            "en": "Bas-Rhin"
+          }
         },
         {
           "slug": "haut-rhin",
-          "label": "Haut-Rhin"
+          "label": "Haut-Rhin",
+          "labels": {
+            "fr": "Haut-Rhin",
+            "en": "Haut-Rhin"
+          }
         },
         {
           "slug": "vosges",
-          "label": "Vosges"
+          "label": "Vosges",
+          "labels": {
+            "fr": "Vosges",
+            "en": "Vosges"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Grand Est",
+        "en": "Grand Est"
+      }
     },
     {
       "slug": "hauts-de-france",
@@ -232,25 +424,49 @@
       "areas": [
         {
           "slug": "aisne",
-          "label": "Aisne"
+          "label": "Aisne",
+          "labels": {
+            "fr": "Aisne",
+            "en": "Aisne"
+          }
         },
         {
           "slug": "nord",
-          "label": "Nord"
+          "label": "Nord",
+          "labels": {
+            "fr": "Nord",
+            "en": "Nord"
+          }
         },
         {
           "slug": "oise",
-          "label": "Oise"
+          "label": "Oise",
+          "labels": {
+            "fr": "Oise",
+            "en": "Oise"
+          }
         },
         {
           "slug": "pas-de-calais",
-          "label": "Pas-de-Calais"
+          "label": "Pas-de-Calais",
+          "labels": {
+            "fr": "Pas-de-Calais",
+            "en": "Pas-de-Calais"
+          }
         },
         {
           "slug": "somme",
-          "label": "Somme"
+          "label": "Somme",
+          "labels": {
+            "fr": "Somme",
+            "en": "Somme"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Hauts-de-France",
+        "en": "Hauts-de-France"
+      }
     },
     {
       "slug": "ile-de-france",
@@ -258,37 +474,73 @@
       "areas": [
         {
           "slug": "paris",
-          "label": "Paris"
+          "label": "Paris",
+          "labels": {
+            "fr": "Paris",
+            "en": "Paris"
+          }
         },
         {
           "slug": "seine-et-marne",
-          "label": "Seine-et-Marne"
+          "label": "Seine-et-Marne",
+          "labels": {
+            "fr": "Seine-et-Marne",
+            "en": "Seine-et-Marne"
+          }
         },
         {
           "slug": "yvelines",
-          "label": "Yvelines"
+          "label": "Yvelines",
+          "labels": {
+            "fr": "Yvelines",
+            "en": "Yvelines"
+          }
         },
         {
           "slug": "essonne",
-          "label": "Essonne"
+          "label": "Essonne",
+          "labels": {
+            "fr": "Essonne",
+            "en": "Essonne"
+          }
         },
         {
           "slug": "hauts-de-seine",
-          "label": "Hauts-de-Seine"
+          "label": "Hauts-de-Seine",
+          "labels": {
+            "fr": "Hauts-de-Seine",
+            "en": "Hauts-de-Seine"
+          }
         },
         {
           "slug": "seine-saint-denis",
-          "label": "Seine-Saint-Denis"
+          "label": "Seine-Saint-Denis",
+          "labels": {
+            "fr": "Seine-Saint-Denis",
+            "en": "Seine-Saint-Denis"
+          }
         },
         {
           "slug": "val-de-marne",
-          "label": "Val-de-Marne"
+          "label": "Val-de-Marne",
+          "labels": {
+            "fr": "Val-de-Marne",
+            "en": "Val-de-Marne"
+          }
         },
         {
           "slug": "val-doise",
-          "label": "Val-d'Oise"
+          "label": "Val-d'Oise",
+          "labels": {
+            "fr": "Val-d'Oise",
+            "en": "Val-d'Oise"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Île-de-France",
+        "en": "Île-de-France"
+      }
     },
     {
       "slug": "normandie",
@@ -296,25 +548,49 @@
       "areas": [
         {
           "slug": "calvados",
-          "label": "Calvados"
+          "label": "Calvados",
+          "labels": {
+            "fr": "Calvados",
+            "en": "Calvados"
+          }
         },
         {
           "slug": "eure",
-          "label": "Eure"
+          "label": "Eure",
+          "labels": {
+            "fr": "Eure",
+            "en": "Eure"
+          }
         },
         {
           "slug": "manche",
-          "label": "Manche"
+          "label": "Manche",
+          "labels": {
+            "fr": "Manche",
+            "en": "Manche"
+          }
         },
         {
           "slug": "orne",
-          "label": "Orne"
+          "label": "Orne",
+          "labels": {
+            "fr": "Orne",
+            "en": "Orne"
+          }
         },
         {
           "slug": "seine-maritime",
-          "label": "Seine-Maritime"
+          "label": "Seine-Maritime",
+          "labels": {
+            "fr": "Seine-Maritime",
+            "en": "Seine-Maritime"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Normandie",
+        "en": "Normandie"
+      }
     },
     {
       "slug": "nouvelle-aquitaine",
@@ -322,53 +598,105 @@
       "areas": [
         {
           "slug": "charente",
-          "label": "Charente"
+          "label": "Charente",
+          "labels": {
+            "fr": "Charente",
+            "en": "Charente"
+          }
         },
         {
           "slug": "charente-maritime",
-          "label": "Charente-Maritime"
+          "label": "Charente-Maritime",
+          "labels": {
+            "fr": "Charente-Maritime",
+            "en": "Charente-Maritime"
+          }
         },
         {
           "slug": "correze",
-          "label": "Corrèze"
+          "label": "Corrèze",
+          "labels": {
+            "fr": "Corrèze",
+            "en": "Corrèze"
+          }
         },
         {
           "slug": "creuse",
-          "label": "Creuse"
+          "label": "Creuse",
+          "labels": {
+            "fr": "Creuse",
+            "en": "Creuse"
+          }
         },
         {
           "slug": "dordogne",
-          "label": "Dordogne"
+          "label": "Dordogne",
+          "labels": {
+            "fr": "Dordogne",
+            "en": "Dordogne"
+          }
         },
         {
           "slug": "gironde",
-          "label": "Gironde"
+          "label": "Gironde",
+          "labels": {
+            "fr": "Gironde",
+            "en": "Gironde"
+          }
         },
         {
           "slug": "landes",
-          "label": "Landes"
+          "label": "Landes",
+          "labels": {
+            "fr": "Landes",
+            "en": "Landes"
+          }
         },
         {
           "slug": "lot-et-garonne",
-          "label": "Lot-et-Garonne"
+          "label": "Lot-et-Garonne",
+          "labels": {
+            "fr": "Lot-et-Garonne",
+            "en": "Lot-et-Garonne"
+          }
         },
         {
           "slug": "pyrenees-atlantiques",
-          "label": "Pyrénées-Atlantiques"
+          "label": "Pyrénées-Atlantiques",
+          "labels": {
+            "fr": "Pyrénées-Atlantiques",
+            "en": "Pyrénées-Atlantiques"
+          }
         },
         {
           "slug": "deux-sevres",
-          "label": "Deux-Sèvres"
+          "label": "Deux-Sèvres",
+          "labels": {
+            "fr": "Deux-Sèvres",
+            "en": "Deux-Sèvres"
+          }
         },
         {
           "slug": "vienne",
-          "label": "Vienne"
+          "label": "Vienne",
+          "labels": {
+            "fr": "Vienne",
+            "en": "Vienne"
+          }
         },
         {
           "slug": "haute-vienne",
-          "label": "Haute-Vienne"
+          "label": "Haute-Vienne",
+          "labels": {
+            "fr": "Haute-Vienne",
+            "en": "Haute-Vienne"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Nouvelle-Aquitaine",
+        "en": "Nouvelle-Aquitaine"
+      }
     },
     {
       "slug": "occitanie",
@@ -376,57 +704,113 @@
       "areas": [
         {
           "slug": "ariege",
-          "label": "Ariège"
+          "label": "Ariège",
+          "labels": {
+            "fr": "Ariège",
+            "en": "Ariège"
+          }
         },
         {
           "slug": "aude",
-          "label": "Aude"
+          "label": "Aude",
+          "labels": {
+            "fr": "Aude",
+            "en": "Aude"
+          }
         },
         {
           "slug": "aveyron",
-          "label": "Aveyron"
+          "label": "Aveyron",
+          "labels": {
+            "fr": "Aveyron",
+            "en": "Aveyron"
+          }
         },
         {
           "slug": "gard",
-          "label": "Gard"
+          "label": "Gard",
+          "labels": {
+            "fr": "Gard",
+            "en": "Gard"
+          }
         },
         {
           "slug": "haute-garonne",
-          "label": "Haute-Garonne"
+          "label": "Haute-Garonne",
+          "labels": {
+            "fr": "Haute-Garonne",
+            "en": "Haute-Garonne"
+          }
         },
         {
           "slug": "gers",
-          "label": "Gers"
+          "label": "Gers",
+          "labels": {
+            "fr": "Gers",
+            "en": "Gers"
+          }
         },
         {
           "slug": "herault",
-          "label": "Hérault"
+          "label": "Hérault",
+          "labels": {
+            "fr": "Hérault",
+            "en": "Hérault"
+          }
         },
         {
           "slug": "lot",
-          "label": "Lot"
+          "label": "Lot",
+          "labels": {
+            "fr": "Lot",
+            "en": "Lot"
+          }
         },
         {
           "slug": "lozere",
-          "label": "Lozère"
+          "label": "Lozère",
+          "labels": {
+            "fr": "Lozère",
+            "en": "Lozère"
+          }
         },
         {
           "slug": "hautes-pyrenees",
-          "label": "Hautes-Pyrénées"
+          "label": "Hautes-Pyrénées",
+          "labels": {
+            "fr": "Hautes-Pyrénées",
+            "en": "Hautes-Pyrénées"
+          }
         },
         {
           "slug": "pyrenees-orientales",
-          "label": "Pyrénées-Orientales"
+          "label": "Pyrénées-Orientales",
+          "labels": {
+            "fr": "Pyrénées-Orientales",
+            "en": "Pyrénées-Orientales"
+          }
         },
         {
           "slug": "tarn",
-          "label": "Tarn"
+          "label": "Tarn",
+          "labels": {
+            "fr": "Tarn",
+            "en": "Tarn"
+          }
         },
         {
           "slug": "tarn-et-garonne",
-          "label": "Tarn-et-Garonne"
+          "label": "Tarn-et-Garonne",
+          "labels": {
+            "fr": "Tarn-et-Garonne",
+            "en": "Tarn-et-Garonne"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Occitanie",
+        "en": "Occitanie"
+      }
     },
     {
       "slug": "pays-de-la-loire",
@@ -434,25 +818,49 @@
       "areas": [
         {
           "slug": "loire-atlantique",
-          "label": "Loire-Atlantique"
+          "label": "Loire-Atlantique",
+          "labels": {
+            "fr": "Loire-Atlantique",
+            "en": "Loire-Atlantique"
+          }
         },
         {
           "slug": "maine-et-loire",
-          "label": "Maine-et-Loire"
+          "label": "Maine-et-Loire",
+          "labels": {
+            "fr": "Maine-et-Loire",
+            "en": "Maine-et-Loire"
+          }
         },
         {
           "slug": "mayenne",
-          "label": "Mayenne"
+          "label": "Mayenne",
+          "labels": {
+            "fr": "Mayenne",
+            "en": "Mayenne"
+          }
         },
         {
           "slug": "sarthe",
-          "label": "Sarthe"
+          "label": "Sarthe",
+          "labels": {
+            "fr": "Sarthe",
+            "en": "Sarthe"
+          }
         },
         {
           "slug": "vendee",
-          "label": "Vendée"
+          "label": "Vendée",
+          "labels": {
+            "fr": "Vendée",
+            "en": "Vendée"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Pays de la Loire",
+        "en": "Pays de la Loire"
+      }
     },
     {
       "slug": "provence-alpes-cote-dazur",
@@ -460,29 +868,57 @@
       "areas": [
         {
           "slug": "alpes-de-haute-provence",
-          "label": "Alpes-de-Haute-Provence"
+          "label": "Alpes-de-Haute-Provence",
+          "labels": {
+            "fr": "Alpes-de-Haute-Provence",
+            "en": "Alpes-de-Haute-Provence"
+          }
         },
         {
           "slug": "hautes-alpes",
-          "label": "Hautes-Alpes"
+          "label": "Hautes-Alpes",
+          "labels": {
+            "fr": "Hautes-Alpes",
+            "en": "Hautes-Alpes"
+          }
         },
         {
           "slug": "alpes-maritimes",
-          "label": "Alpes-Maritimes"
+          "label": "Alpes-Maritimes",
+          "labels": {
+            "fr": "Alpes-Maritimes",
+            "en": "Alpes-Maritimes"
+          }
         },
         {
           "slug": "bouches-du-rhone",
-          "label": "Bouches-du-Rhône"
+          "label": "Bouches-du-Rhône",
+          "labels": {
+            "fr": "Bouches-du-Rhône",
+            "en": "Bouches-du-Rhône"
+          }
         },
         {
           "slug": "var",
-          "label": "Var"
+          "label": "Var",
+          "labels": {
+            "fr": "Var",
+            "en": "Var"
+          }
         },
         {
           "slug": "vaucluse",
-          "label": "Vaucluse"
+          "label": "Vaucluse",
+          "labels": {
+            "fr": "Vaucluse",
+            "en": "Vaucluse"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Provence-Alpes-Côte d'Azur",
+        "en": "Provence-Alpes-Côte d'Azur"
+      }
     },
     {
       "slug": "guadeloupe",
@@ -490,9 +926,17 @@
       "areas": [
         {
           "slug": "guadeloupe",
-          "label": "Guadeloupe"
+          "label": "Guadeloupe",
+          "labels": {
+            "fr": "Guadeloupe",
+            "en": "Guadeloupe"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Guadeloupe",
+        "en": "Guadeloupe"
+      }
     },
     {
       "slug": "martinique",
@@ -500,9 +944,17 @@
       "areas": [
         {
           "slug": "martinique",
-          "label": "Martinique"
+          "label": "Martinique",
+          "labels": {
+            "fr": "Martinique",
+            "en": "Martinique"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Martinique",
+        "en": "Martinique"
+      }
     },
     {
       "slug": "guyane",
@@ -510,9 +962,17 @@
       "areas": [
         {
           "slug": "guyane",
-          "label": "Guyane"
+          "label": "Guyane",
+          "labels": {
+            "fr": "Guyane",
+            "en": "Guyane"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Guyane",
+        "en": "Guyane"
+      }
     },
     {
       "slug": "la-reunion",
@@ -520,9 +980,17 @@
       "areas": [
         {
           "slug": "la-reunion",
-          "label": "La Réunion"
+          "label": "La Réunion",
+          "labels": {
+            "fr": "La Réunion",
+            "en": "La Réunion"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "La Réunion",
+        "en": "La Réunion"
+      }
     },
     {
       "slug": "mayotte",
@@ -530,9 +998,48 @@
       "areas": [
         {
           "slug": "mayotte",
-          "label": "Mayotte"
+          "label": "Mayotte",
+          "labels": {
+            "fr": "Mayotte",
+            "en": "Mayotte"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "fr": "Mayotte",
+        "en": "Mayotte"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "fr",
+    "publishedLocales": [
+      "fr",
+      "en"
+    ],
+    "labels": {
+      "fr": "France",
+      "en": "France"
+    },
+    "unitLabels": {
+      "fr": {
+        "one": "département",
+        "many": "départements"
+      },
+      "en": {
+        "one": "department",
+        "many": "departments"
+      }
+    },
+    "regionUnitLabels": {
+      "fr": {
+        "one": "région",
+        "many": "régions"
+      },
+      "en": {
+        "one": "region",
+        "many": "regions"
+      }
+    }
+  }
 }

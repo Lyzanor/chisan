@@ -63,13 +63,19 @@ const CENTROID_BLOCKING_DISTANCE_KM = 100;
 // warning per row; the full audit summary keeps the limitation visible.
 const CENTROID_FALLBACK_TOLERANCE_DEG = 1e-5;
 const CENTROIDS_RELATIVE_PATH = "data/reference/municipalities.json";
-const CENTROIDS_OVERRIDES_RELATIVE_PATH = "data/reference/municipality-overrides.json";
+const CENTROIDS_OVERRIDES_RELATIVE_PATH =
+  "data/reference/municipality-overrides.json";
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const PRODUCER_ID_PATTERN = /^[1-9]\d*$/;
 const COUNTRY_PATTERN = /^[a-z]{2}$/;
-const TRANSLATION_SIDECAR_PATTERN = /^translations\.[a-z]{2}\.csv$/;
+const APPLICATION_DEFAULT_LOCALE = "en";
+const TRANSLATION_SIDECAR_PATTERN = /^translations\.[a-z]{2,3}\.csv$/;
 const RESERVED_AREA_SLUGS = new Set(["events", "retail"]);
-const COUNTRY_GUIDE_HEADINGS = ["## Operating state", "## Country rules", "## Source ceilings"];
+const COUNTRY_GUIDE_HEADINGS = [
+  "## Operating state",
+  "## Country rules",
+  "## Source ceilings",
+];
 // Keep these sets aligned with lib/i18n/locales.ts. Presentation locales can
 // activate routes and manifest requirements; source-only locales can describe
 // canonical prose without doing so. The audit is plain Node.js so it keeps an
@@ -84,15 +90,36 @@ const SUPPORTED_LOCALES = new Set([
   "it",
   "nl",
   "pt",
+  "af",
+  "as",
+  "bn",
+  "cy",
+  "ga",
+  "gd",
+  "gu",
+  "haw",
+  "hi",
+  "kn",
+  "kok",
+  "ml",
+  "mr",
+  "ne",
+  "nso",
+  "or",
+  "pa",
+  "ss",
+  "st",
+  "ta",
+  "te",
+  "tn",
+  "xh",
+  "zu",
 ]);
 const SUPPORTED_LOCALE_DISPLAY = [...SUPPORTED_LOCALES].join(", ");
-const DESCRIPTION_SOURCE_LOCALES = new Set([
-  ...SUPPORTED_LOCALES,
-  "gl",
-  "eu",
-]);
-const DESCRIPTION_SOURCE_LOCALE_DISPLAY = [...DESCRIPTION_SOURCE_LOCALES].join(", ");
-const LEGACY_DEFAULT_LOCALE = "en";
+const DESCRIPTION_SOURCE_LOCALES = new Set([...SUPPORTED_LOCALES, "gl", "eu"]);
+const DESCRIPTION_SOURCE_LOCALE_DISPLAY = [...DESCRIPTION_SOURCE_LOCALES].join(
+  ", ",
+);
 let PREFERRED_CATEGORY_ALIASES = new Map();
 let VALID_CATEGORIES = new Set();
 let RESERVED_PRODUCER_SLUGS = new Set();
@@ -143,9 +170,15 @@ function parseArgs(argv, resolvePath) {
     }
   }
 
-  const scopes = Number(all) + Number(changed) + Number(Boolean(registry)) + Number(targets.length > 0);
+  const scopes =
+    Number(all) +
+    Number(changed) +
+    Number(Boolean(registry)) +
+    Number(targets.length > 0);
   if (!help && scopes !== 1) {
-    throw new Error("choose exactly one scope: --all, --changed, or one or more paths");
+    throw new Error(
+      "choose exactly one scope: --all, --changed, or one or more paths",
+    );
   }
 
   return { all, changed, registry, help, targets };
@@ -154,7 +187,10 @@ function parseArgs(argv, resolvePath) {
 let dependenciesPromise;
 
 function loadCategoryConfig(fs, path) {
-  const configPath = path.resolve(__dirname, "../data/reference/categories.json");
+  const configPath = path.resolve(
+    __dirname,
+    "../data/reference/categories.json",
+  );
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
   PREFERRED_CATEGORY_ALIASES = new Map(Object.entries(config.preferredAliases));
   VALID_CATEGORIES = new Set(config.categories);
@@ -224,13 +260,21 @@ function manifestOwner(country, region, area) {
 
 function validateLocaleCode(value, field, owner, errors) {
   if (typeof value !== "string" || !SUPPORTED_LOCALES.has(value)) {
-    errors.push(`${owner} ${field} must be one of: ${SUPPORTED_LOCALE_DISPLAY}`);
+    errors.push(
+      `${owner} ${field} must be one of: ${SUPPORTED_LOCALE_DISPLAY}`,
+    );
     return null;
   }
   return value;
 }
 
-function resolvePublishedLocales(i18n, inherited, owner, errors, required = false) {
+function resolvePublishedLocales(
+  i18n,
+  inherited,
+  owner,
+  errors,
+  required = false,
+) {
   if (!isRecord(i18n)) {
     if (i18n !== undefined) errors.push(`${owner} i18n must be an object`);
     return [...inherited];
@@ -246,10 +290,17 @@ function resolvePublishedLocales(i18n, inherited, owner, errors, required = fals
   const locales = [];
   const seen = new Set();
   for (const locale of value) {
-    const validLocale = validateLocaleCode(locale, "i18n.publishedLocales entry", owner, errors);
+    const validLocale = validateLocaleCode(
+      locale,
+      "i18n.publishedLocales entry",
+      owner,
+      errors,
+    );
     if (!validLocale) continue;
     if (seen.has(validLocale)) {
-      errors.push(`${owner} i18n.publishedLocales duplicates locale '${validLocale}'`);
+      errors.push(
+        `${owner} i18n.publishedLocales duplicates locale '${validLocale}'`,
+      );
       continue;
     }
     seen.add(validLocale);
@@ -261,7 +312,9 @@ function resolvePublishedLocales(i18n, inherited, owner, errors, required = fals
 
 function validateLocalizedLabels(value, locales, field, owner, errors) {
   if (!isRecord(value)) {
-    errors.push(`${owner} ${field} must be an object with every effective locale`);
+    errors.push(
+      `${owner} ${field} must be an object with every effective locale`,
+    );
     return;
   }
 
@@ -280,7 +333,9 @@ function validateLocalizedLabels(value, locales, field, owner, errors) {
 
 function validateLocalizedUnits(value, locales, field, owner, errors) {
   if (!isRecord(value)) {
-    errors.push(`${owner} ${field} must be an object with every effective locale`);
+    errors.push(
+      `${owner} ${field} must be an object with every effective locale`,
+    );
     return;
   }
 
@@ -293,46 +348,95 @@ function validateLocalizedUnits(value, locales, field, owner, errors) {
   for (const locale of locales) {
     const unit = value[locale];
     if (!isRecord(unit)) {
-      errors.push(`${owner} ${field}.${locale} must define non-empty 'one' and 'many' labels`);
+      errors.push(
+        `${owner} ${field}.${locale} must define non-empty 'one' and 'many' labels`,
+      );
       continue;
     }
     for (const form of ["one", "many"]) {
       if (typeof unit[form] !== "string" || !unit[form].trim()) {
-        errors.push(`${owner} ${field}.${locale}.${form} must be a non-empty string`);
+        errors.push(
+          `${owner} ${field}.${locale}.${form} must be a non-empty string`,
+        );
       }
     }
   }
 }
 
-function hasLocalizedManifestFields(manifest) {
-  if (manifest.i18n !== undefined) return true;
-  if (!Array.isArray(manifest.regions)) return false;
+function validateBaseUnit(value, field, owner, errors) {
+  if (!isRecord(value)) {
+    errors.push(
+      `${owner} ${field} must define non-empty 'one' and 'many' values`,
+    );
+    return;
+  }
+  for (const form of ["one", "many"]) {
+    if (typeof value[form] !== "string" || !value[form].trim()) {
+      errors.push(`${owner} ${field}.${form} must be a non-empty string`);
+    }
+  }
+}
 
-  return manifest.regions.some(
-    (region) =>
-      isRecord(region) &&
-      (region.labels !== undefined ||
-        region.i18n !== undefined ||
-        (Array.isArray(region.areas) &&
-          region.areas.some(
-            (area) => isRecord(area) && (area.labels !== undefined || area.i18n !== undefined),
-          ))),
-  );
+function validateDeclaredCatalogNodes(
+  entries,
+  actualSlugs,
+  nodeType,
+  owner,
+  errors,
+) {
+  const actual = new Set(actualSlugs);
+  const seen = new Set();
+  for (const entry of entries) {
+    const slug =
+      isRecord(entry) && typeof entry.slug === "string" ? entry.slug : "";
+    if (!slug) {
+      errors.push(
+        `${owner} declared ${nodeType} slug must be a non-empty string`,
+      );
+      continue;
+    }
+    if (seen.has(slug)) {
+      errors.push(`${owner} duplicates declared ${nodeType} '${slug}'`);
+      continue;
+    }
+    seen.add(slug);
+    if (!actual.has(slug)) {
+      errors.push(
+        `${owner} declares ${nodeType} '${slug}' outside the CSV tree`,
+      );
+    }
+  }
 }
 
 function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
-  if (!isRecord(manifest) || !hasLocalizedManifestFields(manifest)) return;
-
   const countryOwner = manifestOwner(country);
+  if (!isRecord(manifest)) {
+    errors.push(
+      `${countryOwner} must define country.json with an explicit i18n policy`,
+    );
+    return;
+  }
+  if (typeof manifest.label !== "string" || !manifest.label.trim()) {
+    errors.push(`${countryOwner} label must be a non-empty string`);
+  }
+  validateBaseUnit(manifest.unit, "unit", countryOwner, errors);
+  validateBaseUnit(manifest.regionUnit, "regionUnit", countryOwner, errors);
   const countryI18n = manifest.i18n;
   if (!isRecord(countryI18n)) {
-    errors.push(`${countryOwner} must define an i18n object before localized descendants`);
+    errors.push(`${countryOwner} must define an i18n object`);
+    return;
   }
 
-  const configuredDefault = isRecord(countryI18n) ? countryI18n.defaultLocale : undefined;
-  const defaultLocale =
-    validateLocaleCode(configuredDefault, "i18n.defaultLocale", countryOwner, errors) ??
-    LEGACY_DEFAULT_LOCALE;
+  const configuredDefault = isRecord(countryI18n)
+    ? countryI18n.defaultLocale
+    : undefined;
+  const defaultLocale = validateLocaleCode(
+    configuredDefault,
+    "i18n.defaultLocale",
+    countryOwner,
+    errors,
+  );
+  if (!defaultLocale) return;
   const countryLocales = resolvePublishedLocales(
     countryI18n,
     [defaultLocale],
@@ -346,14 +450,31 @@ function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
     );
   }
 
-  const declaredRegions = Array.isArray(manifest.regions) ? manifest.regions : [];
-  const requiredCountryLocales = new Set(countryLocales);
+  const declaredRegions = Array.isArray(manifest.regions)
+    ? manifest.regions
+    : [];
+  validateDeclaredCatalogNodes(
+    declaredRegions,
+    actualRegions.keys(),
+    "region",
+    countryOwner,
+    errors,
+  );
+  const requiredCountryLocales = new Set([
+    ...countryLocales,
+    APPLICATION_DEFAULT_LOCALE,
+  ]);
 
   for (const [regionSlug, areaSlugs] of actualRegions) {
     const region = declaredRegions.find(
       (candidate) => isRecord(candidate) && candidate.slug === regionSlug,
     );
     const regionOwner = manifestOwner(country, regionSlug);
+    if (!isRecord(region)) {
+      errors.push(`${regionOwner} must be declared in country.json`);
+    } else if (typeof region.label !== "string" || !region.label.trim()) {
+      errors.push(`${regionOwner} label must be a non-empty string`);
+    }
     const regionLocales = resolvePublishedLocales(
       region?.i18n,
       countryLocales,
@@ -365,15 +486,19 @@ function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
         `${regionOwner} effective published locales must include country default locale '${defaultLocale}'`,
       );
     }
-    const requiredRegionLocales = new Set(regionLocales);
-    const preferredLocale = isRecord(region?.i18n) && region.i18n.preferredLocale !== undefined
-      ? validateLocaleCode(
-          region.i18n.preferredLocale,
-          "i18n.preferredLocale",
-          regionOwner,
-          errors,
-        )
-      : null;
+    const requiredRegionLocales = new Set([
+      ...regionLocales,
+      APPLICATION_DEFAULT_LOCALE,
+    ]);
+    const preferredLocale =
+      isRecord(region?.i18n) && region.i18n.preferredLocale !== undefined
+        ? validateLocaleCode(
+            region.i18n.preferredLocale,
+            "i18n.preferredLocale",
+            regionOwner,
+            errors,
+          )
+        : null;
     if (preferredLocale && !regionLocales.includes(preferredLocale)) {
       errors.push(
         `${regionOwner} preferred locale '${preferredLocale}' must appear in its effective published locales`,
@@ -381,32 +506,56 @@ function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
     }
 
     const declaredAreas = Array.isArray(region?.areas) ? region.areas : [];
+    validateDeclaredCatalogNodes(
+      declaredAreas,
+      areaSlugs,
+      "area",
+      regionOwner,
+      errors,
+    );
     for (const areaSlug of areaSlugs) {
       const area = declaredAreas.find(
         (candidate) => isRecord(candidate) && candidate.slug === areaSlug,
       );
       const areaOwner = manifestOwner(country, regionSlug, areaSlug);
-      const areaLocales = resolvePublishedLocales(area?.i18n, regionLocales, areaOwner, errors);
+      if (!isRecord(area)) {
+        errors.push(`${areaOwner} must be declared in country.json`);
+      } else if (typeof area.label !== "string" || !area.label.trim()) {
+        errors.push(`${areaOwner} label must be a non-empty string`);
+      }
+      const areaLocales = resolvePublishedLocales(
+        area?.i18n,
+        regionLocales,
+        areaOwner,
+        errors,
+      );
       if (!areaLocales.includes(defaultLocale)) {
         errors.push(
           `${areaOwner} effective published locales must include country default locale '${defaultLocale}'`,
         );
       }
-      const areaPreferredLocale = isRecord(area?.i18n) && area.i18n.preferredLocale !== undefined
-        ? validateLocaleCode(
-            area.i18n.preferredLocale,
-            "i18n.preferredLocale",
-            areaOwner,
-            errors,
-          )
-        : null;
+      const areaPreferredLocale =
+        isRecord(area?.i18n) && area.i18n.preferredLocale !== undefined
+          ? validateLocaleCode(
+              area.i18n.preferredLocale,
+              "i18n.preferredLocale",
+              areaOwner,
+              errors,
+            )
+          : null;
       if (areaPreferredLocale && !areaLocales.includes(areaPreferredLocale)) {
         errors.push(
           `${areaOwner} preferred locale '${areaPreferredLocale}' must appear in its effective published locales`,
         );
       }
 
-      validateLocalizedLabels(area?.labels, areaLocales, "labels", areaOwner, errors);
+      validateLocalizedLabels(
+        area?.labels,
+        new Set([...areaLocales, APPLICATION_DEFAULT_LOCALE]),
+        "labels",
+        areaOwner,
+        errors,
+      );
       for (const locale of areaLocales) {
         requiredRegionLocales.add(locale);
         requiredCountryLocales.add(locale);
@@ -420,7 +569,8 @@ function validateCountryManifestI18n(manifest, country, actualRegions, errors) {
       regionOwner,
       errors,
     );
-    for (const locale of requiredRegionLocales) requiredCountryLocales.add(locale);
+    for (const locale of requiredRegionLocales)
+      requiredCountryLocales.add(locale);
   }
 
   validateLocalizedLabels(
@@ -453,7 +603,11 @@ async function auditAreaRegistry(root = "data/csv") {
   const areas = new Map();
 
   if (!fs.existsSync(registryRoot)) {
-    return { registryRoot, areas: 0, errors: [`Area registry not found: ${registryRoot}`] };
+    return {
+      registryRoot,
+      areas: 0,
+      errors: [`Area registry not found: ${registryRoot}`],
+    };
   }
 
   for (const country of directoryNames(fs, registryRoot)) {
@@ -487,10 +641,14 @@ async function auditAreaRegistry(root = "data/csv") {
         areaAliases = Object.entries(manifest.aliases ?? {});
         for (const [alias] of areaAliases) {
           if (!SLUG_PATTERN.test(alias)) {
-            errors.push(`area alias '${country}/${alias}' must be lowercase ASCII kebab-case`);
+            errors.push(
+              `area alias '${country}/${alias}' must be lowercase ASCII kebab-case`,
+            );
           }
           if (RESERVED_AREA_SLUGS.has(alias)) {
-            errors.push(`area alias '${country}/${alias}' uses reserved route segment '${alias}'`);
+            errors.push(
+              `area alias '${country}/${alias}' uses reserved route segment '${alias}'`,
+            );
           }
         }
         if (
@@ -501,9 +659,12 @@ async function auditAreaRegistry(root = "data/csv") {
             `country manifest '${country}/country.json' producerRouteAliases must be an object`,
           );
         } else {
-          producerRouteAliases = Object.entries(manifest.producerRouteAliases ?? {});
+          producerRouteAliases = Object.entries(
+            manifest.producerRouteAliases ?? {},
+          );
           for (const [formerRoute, producerId] of producerRouteAliases) {
-            const normalizedRoute = normalizeStoredProducerRouteAlias(formerRoute);
+            const normalizedRoute =
+              normalizeStoredProducerRouteAlias(formerRoute);
             if (!normalizedRoute || normalizedRoute !== formerRoute) {
               errors.push(
                 `producer route alias '${country}/${formerRoute}' must store two non-empty decoded NFC segments without '/', '?', '#', or control characters`,
@@ -517,8 +678,12 @@ async function auditAreaRegistry(root = "data/csv") {
           }
         }
       } catch (error) {
-        errors.push(`country manifest '${country}/country.json' is not valid JSON: ${error.message}`);
+        errors.push(
+          `country manifest '${country}/country.json' is not valid JSON: ${error.message}`,
+        );
       }
+    } else {
+      errors.push(`country manifest '${country}/country.json' is required`);
     }
 
     const actualRegions = new Map();
@@ -526,7 +691,9 @@ async function auditAreaRegistry(root = "data/csv") {
     const producerRoutes = new Map();
     for (const region of directoryNames(fs, countryDir)) {
       if (!SLUG_PATTERN.test(region)) {
-        errors.push(`region '${country}/${region}' must be lowercase ASCII kebab-case`);
+        errors.push(
+          `region '${country}/${region}' must be lowercase ASCII kebab-case`,
+        );
       }
 
       const regionDir = path.join(countryDir, region);
@@ -538,10 +705,14 @@ async function auditAreaRegistry(root = "data/csv") {
         areaSlugs.push(area);
         const relativePath = path.join(country, region, file);
         if (!SLUG_PATTERN.test(area)) {
-          errors.push(`area '${relativePath}' must be lowercase ASCII kebab-case`);
+          errors.push(
+            `area '${relativePath}' must be lowercase ASCII kebab-case`,
+          );
         }
         if (RESERVED_AREA_SLUGS.has(area)) {
-          errors.push(`area '${relativePath}' uses reserved route segment '${area}'`);
+          errors.push(
+            `area '${relativePath}' uses reserved route segment '${area}'`,
+          );
         }
 
         const areaKey = `${country}/${area}`;
@@ -594,7 +765,7 @@ async function auditAreaRegistry(root = "data/csv") {
       actualRegions.set(region, areaSlugs);
     }
 
-    if (manifest) validateCountryManifestI18n(manifest, country, actualRegions, errors);
+    validateCountryManifestI18n(manifest, country, actualRegions, errors);
 
     for (const [alias, target] of areaAliases) {
       if (!areas.has(`${country}/${target}`)) {
@@ -661,7 +832,8 @@ function walkCsvFiles(fs, path, target) {
       entry.isFile() &&
       entry.name.endsWith(".csv") &&
       !TRANSLATION_SIDECAR_PATTERN.test(entry.name)
-    ) files.push(child);
+    )
+      files.push(child);
   }
   return files.sort();
 }
@@ -685,12 +857,20 @@ function changedCsvFiles(fs, path, execFileSync, root) {
         relative.endsWith(".csv") &&
         !TRANSLATION_SIDECAR_PATTERN.test(path.basename(relative)) &&
         fs.existsSync(absolute)
-      ) files.add(absolute);
+      )
+        files.add(absolute);
     }
   };
 
   collect(["diff", "--name-only", "--diff-filter=ACMR", "--", "data/csv"]);
-  collect(["diff", "--name-only", "--diff-filter=ACMR", "--cached", "--", "data/csv"]);
+  collect([
+    "diff",
+    "--name-only",
+    "--diff-filter=ACMR",
+    "--cached",
+    "--",
+    "data/csv",
+  ]);
   collect(["ls-files", "--others", "--exclude-standard", "--", "data/csv"]);
   return [...files].sort();
 }
@@ -700,7 +880,11 @@ async function resolveCsvFiles(args) {
   const root = path.resolve(__dirname, "..");
   if (args.all) return walkCsvFiles(fs, path, path.join(root, "data", "csv"));
   if (args.changed) return changedCsvFiles(fs, path, execFileSync, root);
-  return [...new Set(args.targets.flatMap((target) => walkCsvFiles(fs, path, target)))].sort();
+  return [
+    ...new Set(
+      args.targets.flatMap((target) => walkCsvFiles(fs, path, target)),
+    ),
+  ].sort();
 }
 
 async function resolveIdentityCsvFiles(args, auditedFiles) {
@@ -720,7 +904,9 @@ async function resolveIdentityCsvFiles(args, auditedFiles) {
 }
 
 function cleanCell(value) {
-  return String(value ?? "").replace(/\s+/g, " ").trim();
+  return String(value ?? "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 // `œ` and `æ` are single letters with no Unicode decomposition, so NFD leaves
@@ -779,7 +965,8 @@ function parseCoordinate(rawValue, maxAbs, integerDigits) {
 
   const digits = cleaned.replace(/[^\d]/g, "");
   const sign = cleaned.startsWith("-") ? -1 : 1;
-  const looksLikeGroupedCoordinate = /^-?\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?$/.test(cleaned);
+  const looksLikeGroupedCoordinate =
+    /^-?\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?$/.test(cleaned);
 
   if (!looksLikeGroupedCoordinate || !digits) {
     return Number.isFinite(parsed) ? parsed : Number.NaN;
@@ -790,9 +977,11 @@ function parseCoordinate(rawValue, maxAbs, integerDigits) {
       continue;
     }
 
-    const inferred = sign * Number.parseFloat(
-      `${digits.slice(0, wholeDigits)}.${digits.slice(wholeDigits)}`,
-    );
+    const inferred =
+      sign *
+      Number.parseFloat(
+        `${digits.slice(0, wholeDigits)}.${digits.slice(wholeDigits)}`,
+      );
 
     if (Number.isFinite(inferred) && Math.abs(inferred) <= maxAbs) {
       return inferred;
@@ -829,7 +1018,8 @@ function matchesHost(hostname, matcher) {
 function validateGoogleMapsUrl(url) {
   const host = url.hostname.toLowerCase();
   const isGoogleMapsHost =
-    /^([a-z0-9-]+\.)*google\.[a-z.]+$/i.test(host) && url.pathname.startsWith("/maps");
+    /^([a-z0-9-]+\.)*google\.[a-z.]+$/i.test(host) &&
+    url.pathname.startsWith("/maps");
   const isGoogleMapsShortUrl = host === "maps.app.goo.gl";
 
   if (!isGoogleMapsHost && !isGoogleMapsShortUrl) {
@@ -951,7 +1141,11 @@ async function loadCentroids() {
   const mainPath = path.join(__dirname, "..", CENTROIDS_RELATIVE_PATH);
   if (!fs.existsSync(mainPath)) return null;
   const main = JSON.parse(fs.readFileSync(mainPath, "utf8"));
-  const overridesPath = path.join(__dirname, "..", CENTROIDS_OVERRIDES_RELATIVE_PATH);
+  const overridesPath = path.join(
+    __dirname,
+    "..",
+    CENTROIDS_OVERRIDES_RELATIVE_PATH,
+  );
   const overrides = fs.existsSync(overridesPath)
     ? JSON.parse(fs.readFileSync(overridesPath, "utf8"))
     : {};
@@ -966,7 +1160,9 @@ async function loadCentroids() {
 function inferScope(csvPath) {
   const normalized = String(csvPath ?? "").replace(/\\/g, "/");
   const match = /(?:^|\/)data\/csv\/([^/]+)\/([^/]+)\//.exec(normalized);
-  return match ? { country: match[1], region: match[2] } : { country: null, region: null };
+  return match
+    ? { country: match[1], region: match[2] }
+    : { country: null, region: null };
 }
 
 function pickCandidate(entry, scope) {
@@ -1024,7 +1220,8 @@ function lookupCentroid(centroids, municipio, scope) {
   const [first, ...rest] = resolved;
   const disagrees = rest.some(
     (candidate) =>
-      haversineKm(first.lat, first.lon, candidate.lat, candidate.lon) > CENTROID_MAX_DISTANCE_KM,
+      haversineKm(first.lat, first.lon, candidate.lat, candidate.lon) >
+      CENTROID_MAX_DISTANCE_KM,
   );
   return disagrees ? null : first;
 }
@@ -1035,7 +1232,10 @@ function lookupCentroid(centroids, municipio, scope) {
 function flattenCentroids(centroids, country) {
   if (!centroids || !country) return [];
   if (!centroids._flat) {
-    Object.defineProperty(centroids, "_flat", { value: new Map(), enumerable: false });
+    Object.defineProperty(centroids, "_flat", {
+      value: new Map(),
+      enumerable: false,
+    });
   }
   const cached = centroids._flat.get(country);
   if (cached) return cached;
@@ -1044,14 +1244,17 @@ function flattenCentroids(centroids, country) {
     if (!entry) return;
     if (Array.isArray(entry)) {
       for (const candidate of entry) {
-        if (candidate && typeof candidate.lat === "number") flat.push(candidate);
+        if (candidate && typeof candidate.lat === "number")
+          flat.push(candidate);
       }
     } else if (typeof entry.lat === "number") {
       flat.push(entry);
     }
   };
-  for (const value of Object.values(centroids.main?.[country] || {})) collect(value);
-  for (const value of Object.values(centroids.overrides?.[country] || {})) collect(value);
+  for (const value of Object.values(centroids.main?.[country] || {}))
+    collect(value);
+  for (const value of Object.values(centroids.overrides?.[country] || {}))
+    collect(value);
   centroids._flat.set(country, flat);
   return flat;
 }
@@ -1074,10 +1277,19 @@ function findNearestCentroid(centroids, country, lat, lon) {
 // Shared message for the "coords far from the declared municipio" checks. Adds
 // the closest municipio centroid when it differs, so an editor can tell which
 // field (municipio or lat/lon) is wrong.
-function describeCentroidGap(centroids, scope, lat, lon, declared, distance, limitKm) {
+function describeCentroidGap(
+  centroids,
+  scope,
+  lat,
+  lon,
+  declared,
+  distance,
+  limitKm,
+) {
   const nearest = findNearestCentroid(centroids, scope.country, lat, lon);
   const nearestNote =
-    nearest && normalizeSearch(nearest.centroid.label) !== normalizeSearch(declared.label)
+    nearest &&
+    normalizeSearch(nearest.centroid.label) !== normalizeSearch(declared.label)
       ? `; closest centroid is ${nearest.centroid.label} (${nearest.distance.toFixed(1)} km) — check whether municipio or lat/lon is wrong`
       : "";
   return `lat/lon is ${distance.toFixed(1)} km from ${declared.label} centroid (threshold ${limitKm} km)${nearestNote}`;
@@ -1098,7 +1310,9 @@ async function readCsv(csvPath) {
     bom: true,
     skip_empty_lines: true,
   }).map((row) =>
-    Object.fromEntries(Object.entries(row).map(([key, value]) => [key.trim(), cleanCell(value)])),
+    Object.fromEntries(
+      Object.entries(row).map(([key, value]) => [key.trim(), cleanCell(value)]),
+    ),
   );
 
   return { raw, headers, rows };
@@ -1120,14 +1334,24 @@ function createIssueCollector() {
   return { issues, push };
 }
 
-function runContractAudit({ raw, headers, rows, push, centroids, scope, stats }) {
+function runContractAudit({
+  raw,
+  headers,
+  rows,
+  push,
+  centroids,
+  scope,
+  stats,
+}) {
   const slugLines = new Map();
   stats.rows += rows.length;
 
   // The canonical-header comparison below is positional, so it already covers a
   // missing, duplicated, extra or reordered column, with a message naming the
   // exact position.
-  const mismatchIndex = CANONICAL_HEADER.findIndex((column, index) => headers[index] !== column);
+  const mismatchIndex = CANONICAL_HEADER.findIndex(
+    (column, index) => headers[index] !== column,
+  );
   if (mismatchIndex !== -1 || headers.length !== CANONICAL_HEADER.length) {
     const detail =
       mismatchIndex === -1
@@ -1143,19 +1367,35 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
   }
 
   if (/\r/.test(raw ?? "")) {
-    push("error", 1, 0, "(file)", "line endings must be LF, found CR/CRLF (see .gitattributes)");
+    push(
+      "error",
+      1,
+      0,
+      "(file)",
+      "line endings must be LF, found CR/CRLF (see .gitattributes)",
+    );
   }
 
   if ((raw ?? "").charCodeAt(0) === 0xfeff) {
-    push("error", 1, 0, "(file)", "file must not start with a UTF-8 BOM (usually a spreadsheet export)");
+    push(
+      "error",
+      1,
+      0,
+      "(file)",
+      "file must not start with a UTF-8 BOM (usually a spreadsheet export)",
+    );
   }
 
   const validators = {
     web: () => null,
     Facebook: (url) =>
-      matchesHost(url.hostname, "facebook.com") ? null : "must point to facebook.com",
+      matchesHost(url.hostname, "facebook.com")
+        ? null
+        : "must point to facebook.com",
     Instagram: (url) =>
-      matchesHost(url.hostname, "instagram.com") ? null : "must point to instagram.com",
+      matchesHost(url.hostname, "instagram.com")
+        ? null
+        : "must point to instagram.com",
     "Google Maps": (url) => validateGoogleMapsUrl(url),
   };
 
@@ -1176,15 +1416,33 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
         `${PRODUCER_ID_COLUMN} must be a positive base-10 integer without leading zeroes`,
       );
     } else if (!Number.isSafeInteger(Number(producerId))) {
-      push("error", line, id, slug, `${PRODUCER_ID_COLUMN} must be a safe integer`);
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `${PRODUCER_ID_COLUMN} must be a safe integer`,
+      );
     }
 
     if (!slug) {
       push("error", line, id, slug, "slug is required");
     } else if (!SLUG_PATTERN.test(slug)) {
-      push("error", line, id, slug, "slug must be lowercase ASCII words separated by '-'");
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "slug must be lowercase ASCII words separated by '-'",
+      );
     } else if (RESERVED_PRODUCER_SLUGS.has(slug)) {
-      push("error", line, id, slug, `slug '${slug}' is reserved for a category route`);
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        `slug '${slug}' is reserved for a category route`,
+      );
     }
 
     if (slug) {
@@ -1211,7 +1469,10 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
         slug,
         "empty descripcion requires empty descripcion_locale",
       );
-    } else if (description && !DESCRIPTION_SOURCE_LOCALES.has(descriptionLocale)) {
+    } else if (
+      description &&
+      !DESCRIPTION_SOURCE_LOCALES.has(descriptionLocale)
+    ) {
       push(
         "error",
         line,
@@ -1234,7 +1495,13 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
     else if (hasValidCoordinates) stats.withCoordinates += 1;
 
     if ((latRaw && !lonRaw) || (!latRaw && lonRaw)) {
-      push("error", line, id, slug, "lat and lon must both be present or both be empty");
+      push(
+        "error",
+        line,
+        id,
+        slug,
+        "lat and lon must both be present or both be empty",
+      );
     }
 
     if (latRaw) {
@@ -1256,7 +1523,11 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
     // Coordinates so far from the declared municipio that they belong to a
     // different town: almost always a swapped/wrong lat/lon or a wrong municipio.
     if (centroids && hasValidCoordinates) {
-      const centroid = lookupCentroid(centroids, cleanCell(fields.municipio), scope);
+      const centroid = lookupCentroid(
+        centroids,
+        cleanCell(fields.municipio),
+        scope,
+      );
       if (!centroid) {
         // No centroid for this municipio (pedanía, or a spelling the lookup does
         // not carry): the row silently escapes every geography check, so count it
@@ -1277,7 +1548,15 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
             line,
             id,
             slug,
-            describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_BLOCKING_DISTANCE_KM),
+            describeCentroidGap(
+              centroids,
+              scope,
+              lat,
+              lon,
+              centroid,
+              distance,
+              CENTROID_BLOCKING_DISTANCE_KM,
+            ),
           );
         } else if (distance > CENTROID_MAX_DISTANCE_KM) {
           push(
@@ -1285,7 +1564,15 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
             line,
             id,
             slug,
-            describeCentroidGap(centroids, scope, lat, lon, centroid, distance, CENTROID_MAX_DISTANCE_KM),
+            describeCentroidGap(
+              centroids,
+              scope,
+              lat,
+              lon,
+              centroid,
+              distance,
+              CENTROID_MAX_DISTANCE_KM,
+            ),
           );
         }
       }
@@ -1311,7 +1598,8 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
 
       if (column === "Facebook" || column === "Instagram") {
         const profileError = socialProfileError(parsedUrl.url);
-        if (profileError) push("warning", line, id, slug, `${column}: ${profileError}`);
+        if (profileError)
+          push("warning", line, id, slug, `${column}: ${profileError}`);
       }
 
       if (column === "Google Maps") {
@@ -1338,14 +1626,12 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
       );
     } else if (verificationRaw === "verificado") {
       const hasCoords =
-        !Number.isNaN(lat) &&
-        !Number.isNaN(lon) &&
-        Boolean(latRaw || lonRaw);
+        !Number.isNaN(lat) && !Number.isNaN(lon) && Boolean(latRaw || lonRaw);
       const hasExternalLink = Boolean(
         cleanCell(fields.web) ||
-          cleanCell(fields["Google Maps"]) ||
-          cleanCell(fields.Facebook) ||
-          cleanCell(fields.Instagram),
+        cleanCell(fields["Google Maps"]) ||
+        cleanCell(fields.Facebook) ||
+        cleanCell(fields.Instagram),
       );
       if (!hasCoords || !hasExternalLink) {
         push(
@@ -1394,7 +1680,13 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
       }
 
       if (onlineSalesRaw !== "sí") {
-        push("error", line, id, slug, "Canal de venta is set but Venta online is not 'sí'");
+        push(
+          "error",
+          line,
+          id,
+          slug,
+          "Canal de venta is set but Venta online is not 'sí'",
+        );
       }
     }
 
@@ -1491,11 +1783,16 @@ function runContractAudit({ raw, headers, rows, push, centroids, scope, stats })
   for (const [slug, lines] of slugLines.entries()) {
     if (lines.length > 1) {
       for (const line of lines) {
-        push("error", line, line - 1, slug, `slug is duplicated on lines ${lines.join(", ")}`);
+        push(
+          "error",
+          line,
+          line - 1,
+          slug,
+          `slug is duplicated on lines ${lines.join(", ")}`,
+        );
       }
     }
   }
-
 }
 
 function createStats() {
@@ -1538,10 +1835,15 @@ async function auditCsv(csvPath, centroids) {
   return { csvPath, issues, stats, rows, scope };
 }
 
-async function auditCountryIdentities(sources, reportPaths = sources.map((source) => source.csvPath)) {
+async function auditCountryIdentities(
+  sources,
+  reportPaths = sources.map((source) => source.csvPath),
+) {
   const { path } = await getDependencies();
   const root = path.resolve(__dirname, "..");
-  const reportSet = new Set(reportPaths.map((csvPath) => path.resolve(csvPath)));
+  const reportSet = new Set(
+    reportPaths.map((csvPath) => path.resolve(csvPath)),
+  );
   const producerIds = new Map();
   const slugs = new Map();
 
@@ -1653,7 +1955,10 @@ async function loadHeadCountryIdentitySnapshots(countries) {
     const owners = [];
     let completeIdentitySchema = true;
     for (const relativePath of relativeFiles) {
-      const raw = relativePath === relativeFiles[0] ? firstRaw : readHeadFile(relativePath);
+      const raw =
+        relativePath === relativeFiles[0]
+          ? firstRaw
+          : readHeadFile(relativePath);
       const headers = raw
         .split(/\r?\n/, 1)[0]
         .replace(/^\uFEFF/, "")
@@ -1664,10 +1969,17 @@ async function loadHeadCountryIdentitySnapshots(countries) {
         break;
       }
 
-      const rows = parse(raw, { columns: true, bom: true, skip_empty_lines: true });
+      const rows = parse(raw, {
+        columns: true,
+        bom: true,
+        skip_empty_lines: true,
+      });
       rows.forEach((row, index) => {
         const fields = Object.fromEntries(
-          Object.entries(row).map(([key, value]) => [key.trim(), cleanCell(value)]),
+          Object.entries(row).map(([key, value]) => [
+            key.trim(),
+            cleanCell(value),
+          ]),
         );
         owners.push({
           csvPath: path.resolve(root, relativePath),
@@ -1689,7 +2001,9 @@ async function auditCountryIdentityHistory(
   reportPaths = sources.map((source) => source.csvPath),
 ) {
   const { path } = await getDependencies();
-  const reportSet = new Set(reportPaths.map((csvPath) => path.resolve(csvPath)));
+  const reportSet = new Set(
+    reportPaths.map((csvPath) => path.resolve(csvPath)),
+  );
   const countries = new Set(
     reportPaths
       .map((csvPath) => inferScope(csvPath).country)
@@ -1740,7 +2054,9 @@ async function auditCountryIdentityHistory(
         Number.isSafeInteger(Number(owner.producerId)) &&
         SLUG_PATTERN.test(owner.slug),
     );
-    const headById = new Map(headOwners.map((owner) => [owner.producerId, owner]));
+    const headById = new Map(
+      headOwners.map((owner) => [owner.producerId, owner]),
+    );
     const headBySlug = new Map(headOwners.map((owner) => [owner.slug, owner]));
     const currentOwners = currentByCountry.get(country) ?? [];
 
@@ -1756,7 +2072,6 @@ async function auditCountryIdentityHistory(
         );
         continue;
       }
-
     }
 
     const headMax = headOwners.reduce(
@@ -1765,7 +2080,10 @@ async function auditCountryIdentityHistory(
     );
     const newOwnersById = new Map();
     for (const owner of currentOwners) {
-      if (!headById.has(owner.producerId) && !newOwnersById.has(owner.producerId)) {
+      if (
+        !headById.has(owner.producerId) &&
+        !newOwnersById.has(owner.producerId)
+      ) {
         newOwnersById.set(owner.producerId, owner);
       }
     }
@@ -1790,7 +2108,9 @@ function printStats(stats) {
   console.log(`- rows: ${stats.rows}`);
   console.log(`- rows with coordinates: ${stats.withCoordinates}`);
   console.log(`- rows without coordinates: ${stats.withoutCoordinates}`);
-  console.log(`- rows checked against a municipio centroid: ${stats.geoChecked}`);
+  console.log(
+    `- rows checked against a municipio centroid: ${stats.geoChecked}`,
+  );
   console.log(
     `- geo-check skipped (municipio centroid not uniquely resolved): ${stats.geoSkipped} rows`,
   );
@@ -1828,7 +2148,9 @@ async function main() {
   const { path } = await getDependencies();
   let args;
   try {
-    args = parseArgs(process.argv.slice(2), (targetPath) => path.resolve(process.cwd(), targetPath));
+    args = parseArgs(process.argv.slice(2), (targetPath) =>
+      path.resolve(process.cwd(), targetPath),
+    );
   } catch (error) {
     console.error(`Error: ${error.message}`);
     usage();
@@ -1882,7 +2204,11 @@ async function main() {
     }
     try {
       const { rows } = await readCsv(resolvedPath);
-      identitySources.push({ csvPath: resolvedPath, rows, scope: inferScope(resolvedPath) });
+      identitySources.push({
+        csvPath: resolvedPath,
+        rows,
+        scope: inferScope(resolvedPath),
+      });
     } catch {
       // The unchanged sibling is loaded only to detect country-wide collisions.
       // Its own parse/contract errors remain the responsibility of --all.
@@ -1893,7 +2219,10 @@ async function main() {
     resultsByPath.get(path.resolve(issue.csvPath))?.issues.push(issue);
   }
   if (args.changed) {
-    const historyIssues = await auditCountryIdentityHistory(identitySources, files);
+    const historyIssues = await auditCountryIdentityHistory(
+      identitySources,
+      files,
+    );
     for (const issue of historyIssues) {
       resultsByPath.get(path.resolve(issue.csvPath))?.issues.push(issue);
     }
@@ -1901,7 +2230,11 @@ async function main() {
 
   if (!args.all && !args.changed && results.length === 1) {
     printSingleReport(results[0].issues, results[0].stats);
-    process.exitCode = results[0].issues.some((issue) => issue.severity === "error") ? 1 : 0;
+    process.exitCode = results[0].issues.some(
+      (issue) => issue.severity === "error",
+    )
+      ? 1
+      : 0;
     return;
   }
 
@@ -1920,8 +2253,12 @@ async function main() {
 
   for (const result of results) {
     addStats(totalStats, result.stats);
-    const fileErrors = result.issues.filter((issue) => issue.severity === "error");
-    const fileWarnings = result.issues.filter((issue) => issue.severity === "warning");
+    const fileErrors = result.issues.filter(
+      (issue) => issue.severity === "error",
+    );
+    const fileWarnings = result.issues.filter(
+      (issue) => issue.severity === "warning",
+    );
     errors += fileErrors.length;
     warnings += fileWarnings.length;
     for (const issue of fileWarnings) {
@@ -1938,24 +2275,32 @@ async function main() {
       }
       console.log("");
     } else if (fileWarnings.length) {
-      warningFiles.push([path.relative(root, result.csvPath), fileWarnings.length]);
+      warningFiles.push([
+        path.relative(root, result.csvPath),
+        fileWarnings.length,
+      ]);
     }
   }
 
   if (args.all && warningKinds.size) {
     console.log("CSV audit warning summary");
-    for (const [kind, count] of [...warningKinds].sort((left, right) => right[1] - left[1])) {
+    for (const [kind, count] of [...warningKinds].sort(
+      (left, right) => right[1] - left[1],
+    )) {
       console.log(`- ${kind}: ${count}`);
     }
     console.log("");
   } else if (warningFiles.length) {
     console.log("CSV audit warnings by file");
-    for (const [file, count] of warningFiles) console.log(`- ${file}: ${count}`);
+    for (const [file, count] of warningFiles)
+      console.log(`- ${file}: ${count}`);
     console.log("");
   }
 
   console.log("CSV audit summary");
-  console.log(`- registry: ${registry ? `${registry.areas} areas` : "not checked"}`);
+  console.log(
+    `- registry: ${registry ? `${registry.areas} areas` : "not checked"}`,
+  );
   console.log(`- files: ${results.length}`);
   console.log(`- failed files: ${failedFiles}`);
   console.log(`- errors: ${errors}`);

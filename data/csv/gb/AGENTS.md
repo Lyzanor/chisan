@@ -13,6 +13,13 @@
   `direccion`.
 - A tasting room, brand office or market-specific storefront does not establish
   where production occurs or where remote ordering is available.
+- English is the country default. Every Welsh area publishes Welsh and English;
+  Gwynedd, Isle of Anglesey, Ceredigion and Carmarthenshire prefer Welsh when
+  the visitor accepts it. Highland, Argyll and Bute and Na h-Eileanan Siar
+  publish Scottish Gaelic and English, with Gaelic preferred only in Na
+  h-Eileanan Siar. The six Northern Ireland areas publish Irish and English
+  without an Irish territorial preference. Cornwall remains English-only until
+  a separately reviewed Cornish policy and complete coverage exist.
 
 ## Source ceilings
 - The Defra protected food and drink register is authoritative for protected
@@ -21,3 +28,8 @@
   trading name, address and business type it publishes. Its
   `Manufacturers/packers` and `Farmers/growers` types are production
   signals, but a retail registration does not prove production at that address.
+- Welsh publication scope follows the Welsh Language Standards and the 2021
+  Census language results; Scottish Gaelic scope follows the Scottish Languages
+  Act 2025 and Scotland's 2022 Census; Northern Ireland scope follows the
+  Identity and Language (Northern Ireland) Act 2022 and NISRA's 2021 Census.
+  These sources support language policy, not producer facts.

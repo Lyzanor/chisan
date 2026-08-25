@@ -11,6 +11,10 @@
   from a legal surname, holding name or acronym.
 - Place the row at the productive unit, not at the legal seat, certification
   holder's office or appellation named by the product.
+- French is the country default and French and English are published
+  nationwide. Do not infer a regional-language route from a region name;
+  activate one only after a separate area-level policy and complete catalog
+  coverage have been reviewed.
 
 ## Source ceilings
 - The inherited catalog came from the HVE certified-holding register. It proves

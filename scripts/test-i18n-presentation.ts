@@ -20,6 +20,9 @@ import {
 
 test("account presentation messages cover both account action surfaces in every locale", async () => {
   const dictionaries = await Promise.all(SUPPORTED_LOCALES.map(loadMessages));
+  const establishedDescriptionLocales = [
+    "en", "es", "ca", "de", "ja", "fr", "it", "nl", "pt", "gl", "eu",
+  ] as const;
   const expectedLanguageNames = {
     en: [
       "English", "Spanish", "Catalan", "German", "Japanese", "French",
@@ -62,20 +65,28 @@ test("account presentation messages cover both account action surfaces in every 
       "Italiano", "Neerlandês", "Português", "Galego", "Basco",
     ],
   } as const;
-  const expectedTaglines = [
-    "Local food, unified",
-    "Alimentación local, unificada",
-    "Alimentació local, unificada",
-    "Lokale Lebensmittel, vereint",
-    "地域の食を、ひとつに",
-    "L’alimentation locale, réunie",
-    "Cibo locale, insieme",
-    "Lokaal eten, verbonden",
-    "Comida local, num só lugar",
-  ] as const;
+  const expectedTaglines = {
+    en: "Local food, unified",
+    es: "Alimentación local, unificada",
+    ca: "Alimentació local, unificada",
+    de: "Lokale Lebensmittel, vereint",
+    ja: "地域の食を、ひとつに",
+    fr: "L’alimentation locale, réunie",
+    it: "Cibo locale, insieme",
+    nl: "Lokaal eten, verbonden",
+    pt: "Comida local, num só lugar",
+  } as const;
 
   for (const [index, messages] of dictionaries.entries()) {
-    assert.equal(messages.siteHeader.tagline, expectedTaglines[index]);
+    const locale = SUPPORTED_LOCALES[index];
+    if (locale in expectedTaglines) {
+      assert.equal(
+        messages.siteHeader.tagline,
+        expectedTaglines[locale as keyof typeof expectedTaglines],
+      );
+    } else {
+      assert.ok(messages.siteHeader.tagline.length > 0);
+    }
     assert.ok(Object.values(messages.siteHeader).every((value) => value.length > 0));
     assert.ok(Object.values(messages.siteFooter).every((value) => value.length > 0));
     const accountText = Object.entries(messages.accountActions)
@@ -83,12 +94,20 @@ test("account presentation messages cover both account action surfaces in every 
       .map(([, value]) => value);
     assert.ok(accountText.every((value) => typeof value === "string" && value.length > 0));
     assert.ok(messages.accountActions.descriptionLanguage.none.length > 0);
+    const options = getDescriptionLocaleOptions(messages, locale);
     assert.deepEqual(
-      DESCRIPTION_SOURCE_LOCALES.map(
-        (locale) => messages.accountActions.descriptionLanguage.names[locale],
-      ),
-      expectedLanguageNames[SUPPORTED_LOCALES[index]],
+      options.map(({ value }) => value),
+      ["", ...DESCRIPTION_SOURCE_LOCALES],
     );
+    assert.ok(options.every(({ label }) => label.length > 0));
+    if (locale in expectedLanguageNames) {
+      assert.deepEqual(
+        establishedDescriptionLocales.map((sourceLocale) =>
+          formatDescriptionLocale(sourceLocale, messages, locale),
+        ),
+        expectedLanguageNames[locale as keyof typeof expectedLanguageNames],
+      );
+    }
   }
 
   assert.equal(
@@ -151,20 +170,19 @@ test("producer field presentation localizes display values while retaining CSV t
 
 test("owner description-language options are stable, localized and include the empty state", async () => {
   const japanese = await loadMessages("ja");
-  assert.deepEqual(getDescriptionLocaleOptions(japanese), [
-    { value: "", label: "説明文の言語なし" },
-    { value: "en", label: "英語" },
-    { value: "es", label: "スペイン語" },
-    { value: "ca", label: "カタルーニャ語" },
-    { value: "de", label: "ドイツ語" },
-    { value: "ja", label: "日本語" },
-    { value: "fr", label: "フランス語" },
-    { value: "it", label: "イタリア語" },
-    { value: "nl", label: "オランダ語" },
-    { value: "pt", label: "ポルトガル語" },
-    { value: "gl", label: "ガリシア語" },
-    { value: "eu", label: "バスク語" },
-  ]);
+  const options = getDescriptionLocaleOptions(japanese, "ja");
+  assert.deepEqual(
+    options.map(({ value }) => value),
+    ["", ...DESCRIPTION_SOURCE_LOCALES],
+  );
+  const labels = new Map(options.map(({ value, label }) => [value, label]));
+  assert.equal(labels.get(""), "説明文の言語なし");
+  assert.equal(labels.get("en"), "英語");
+  assert.equal(labels.get("ja"), "日本語");
+  assert.equal(labels.get("gl"), "ガリシア語");
+  assert.equal(labels.get("eu"), "バスク語");
+  assert.match(labels.get("hi") ?? "", /[ぁ-龯]/u);
+  assert.ok(options.every(({ label }) => label.length > 0));
 });
 
 test("owner field help is complete and localized without changing staff definitions", async () => {

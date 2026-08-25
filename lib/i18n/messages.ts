@@ -21,15 +21,9 @@ export type Messages = {
   };
   siteFooter: {
     navigation: string;
-    aboutTitle: string;
-    aboutDescription: string;
     aboutLink: string;
-    exploreTitle: string;
     catalogLink: string;
-    contactTitle: string;
-    contactDescription: string;
     contactLink: string;
-    closingLine: string;
   };
   accountActions: {
     ownershipVerifiedDescription: string;
@@ -44,7 +38,7 @@ export type Messages = {
     claimProducer: string;
     descriptionLanguage: {
       none: string;
-      names: Record<DescriptionSourceLocale, string>;
+      names: Partial<Record<DescriptionSourceLocale, string>>;
     };
   };
   ownerProducerFieldHelp: {
@@ -92,6 +86,9 @@ export type Messages = {
   home: {
     chooseCountry: string;
     countrySummary: string;
+    aboutKicker: string;
+    aboutDescription: string;
+    aboutCatalogDescription: string;
   };
   locationOnboarding: {
     title: string;
@@ -148,7 +145,6 @@ export type Messages = {
     producerMap: string;
     producers: string;
     openProfile: string;
-    showingProducer: string;
   };
   producer: {
     backToMap: string;
@@ -176,7 +172,6 @@ export type Messages = {
     municipality: string;
     category: string;
     additionalCategories: string;
-    subcategory: string;
     featuredProducts: string;
     address: string;
     description: string;
@@ -194,7 +189,6 @@ export type Messages = {
     latitude: string;
     longitude: string;
     verification: string;
-    reviewed: string;
   };
   controlledValues: {
     verification: {
@@ -203,7 +197,7 @@ export type Messages = {
       verificado: string;
     };
     onlineSales: {
-      "sí": string;
+      sí: string;
       no: string;
       "no comprobado": string;
     };
@@ -228,6 +222,30 @@ const MESSAGE_LOADERS = {
   it: () => import("./messages/it"),
   nl: () => import("./messages/nl"),
   pt: () => import("./messages/pt"),
+  af: () => import("./messages/af"),
+  as: () => import("./messages/as"),
+  bn: () => import("./messages/bn"),
+  cy: () => import("./messages/cy"),
+  ga: () => import("./messages/ga"),
+  gd: () => import("./messages/gd"),
+  gu: () => import("./messages/gu"),
+  haw: () => import("./messages/haw"),
+  hi: () => import("./messages/hi"),
+  kn: () => import("./messages/kn"),
+  kok: () => import("./messages/kok"),
+  ml: () => import("./messages/ml"),
+  mr: () => import("./messages/mr"),
+  ne: () => import("./messages/ne"),
+  nso: () => import("./messages/nso"),
+  or: () => import("./messages/or"),
+  pa: () => import("./messages/pa"),
+  ss: () => import("./messages/ss"),
+  st: () => import("./messages/st"),
+  ta: () => import("./messages/ta"),
+  te: () => import("./messages/te"),
+  tn: () => import("./messages/tn"),
+  xh: () => import("./messages/xh"),
+  zu: () => import("./messages/zu"),
 } satisfies Record<Locale, () => Promise<{ default: Messages }>>;
 
 export async function loadMessages(locale: Locale): Promise<Messages> {
@@ -240,8 +258,10 @@ export function formatMessage(
   template: string,
   values: Readonly<Record<string, TemplateValue>>,
 ): string {
-  return template.replace(/\{([a-zA-Z][a-zA-Z0-9]*)\}/g, (placeholder, key: string) =>
-    Object.hasOwn(values, key) ? String(values[key]) : placeholder,
+  return template.replace(
+    /\{([a-zA-Z][a-zA-Z0-9]*)\}/g,
+    (placeholder, key: string) =>
+      Object.hasOwn(values, key) ? String(values[key]) : placeholder,
   );
 }
 
@@ -255,7 +275,9 @@ export function formatPluralMessage(
   message: PluralMessage,
   values: Readonly<Record<string, TemplateValue>> = {},
 ): string {
-  const pluralCategory = new Intl.PluralRules(getLocaleDisplayTag(locale)).select(value);
+  const pluralCategory = new Intl.PluralRules(
+    getLocaleDisplayTag(locale),
+  ).select(value);
   const template = pluralCategory === "one" ? message.one : message.other;
 
   return formatMessage(template, {
@@ -270,7 +292,9 @@ export function formatUnitCount(
   unit: { one: string; many: string },
   template: string,
 ): string {
-  const pluralCategory = new Intl.PluralRules(getLocaleDisplayTag(locale)).select(value);
+  const pluralCategory = new Intl.PluralRules(
+    getLocaleDisplayTag(locale),
+  ).select(value);
 
   return formatMessage(template, {
     count: formatNumber(locale, value),

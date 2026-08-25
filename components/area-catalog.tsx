@@ -11,6 +11,8 @@ import {
 } from "@/lib/catalog-navigation";
 import {
   type Country,
+  getLocalizedCatalogLabel,
+  getLocalizedCatalogUnit,
   listCategories,
   searchProducers,
   toProducerMapPoints,
@@ -101,28 +103,38 @@ export async function AreaCatalog({ country, area, locale, scope, searchParams }
   const areaOption = country.regions
     .flatMap((region) => region.areas)
     .find((candidate) => candidate.slug === area);
-  const areaLabel = areaOption?.labels[locale] ?? areaOption?.label ?? area;
-  const countryLabel = country.labels[locale] ?? country.label;
-  const unit = country.unitLabels[locale] ?? country.unit;
+  if (!areaOption) {
+    throw new Error(`Catalog area '${country.slug}/${area}' is missing from its manifest`);
+  }
+  const areaLabel = getLocalizedCatalogLabel(areaOption, locale);
+  const countryLabel = getLocalizedCatalogLabel(country, locale);
+  const unit = getLocalizedCatalogUnit(country, locale);
   const categoryPresentations = categories.map((item) =>
     getCategoryPresentation(item, locale),
   );
-  const localizedRegions = country.regions.map((region) => ({
-    slug: region.slug,
-    label: region.labels[locale] ?? region.label,
-    areas: region.areas.map((regionArea) => ({
-      slug: regionArea.slug,
-      label: regionArea.labels[locale] ?? regionArea.label,
-      href: buildCatalogHref({
-        scope: buildCatalogScope(
-          country,
-          resolveDestinationLocale(regionArea, { explicitLocale: scope.locale }),
-        ),
-        area: regionArea.slug,
-        category,
+  const localizedRegions = country.regions.map((region) => {
+    const regionLocale = resolveDestinationLocale(region, {
+      explicitLocale: scope.locale,
+    });
+    return {
+      slug: region.slug,
+      label: getLocalizedCatalogLabel(region, regionLocale),
+      areas: region.areas.map((regionArea) => {
+        const destinationLocale = resolveDestinationLocale(regionArea, {
+          explicitLocale: scope.locale,
+        });
+        return {
+          slug: regionArea.slug,
+          label: getLocalizedCatalogLabel(regionArea, destinationLocale),
+          href: buildCatalogHref({
+            scope: buildCatalogScope(country, destinationLocale),
+            area: regionArea.slug,
+            category,
+          }),
+        };
       }),
-    })),
-  }));
+    };
+  });
   const selectorMessages = {
     label: capitalizeLabel(
       formatMessage(messages.areaSelector.label, { unit: unit.one }),
@@ -141,7 +153,7 @@ export async function AreaCatalog({ country, area, locale, scope, searchParams }
     resolveDestinationLocale(country, { explicitLocale: scope.locale }),
   );
   const languageOptions = await Promise.all(
-    (areaOption?.publishedLocales ?? [country.defaultLocale]).map(async (targetLocale) => ({
+    areaOption.publishedLocales.map(async (targetLocale) => ({
       locale: targetLocale,
       label:
         targetLocale === locale

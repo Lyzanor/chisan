@@ -17,7 +17,7 @@ import {
   isPositiveProducerId,
   listCatalogCsvFiles,
   readCanonicalCountry,
-  readExplicitPublishedAreaLocales,
+  readPublishedAreaLocales,
   readTranslationEngineRegistry,
   readTranslationGlossary,
   readTranslationSidecar,
@@ -286,6 +286,7 @@ function buildPublicationRequirements({
   engineRegistryPath,
   repositoryRoot,
   canonicalByCountry,
+  errors,
 }) {
   const filters = publicationRequestFilters(
     mode,
@@ -298,11 +299,16 @@ function buildPublicationRequirements({
   const requirements = new Map();
 
   for (const [country, canonical] of canonicalByCountry) {
-    // Source locale is not trustworthy until Phase 4 is physically complete.
-    if (canonical.legacyFiles.length > 0) continue;
     const countryFilter = filters?.get(country);
     if (filters && !countryFilter) continue;
-    const scopes = readExplicitPublishedAreaLocales(csvRoot, country);
+    let scopes;
+    try {
+      scopes = readPublishedAreaLocales(csvRoot, country);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      errors.push(message.replace(`${repositoryRoot}${path.sep}`, ""));
+      continue;
+    }
     for (const areaScope of scopes) {
       const areaSelected =
         !filters || countryFilter.all || countryFilter.areas.has(path.resolve(areaScope.filePath));
@@ -443,7 +449,6 @@ function validateSidecar({
       );
     }
 
-    if (canonical.legacyFiles.length > 0) continue;
     const source = canonical.byId.get(row.producer_id);
     if (!source || !source.text || source.sourceLocale === classification.targetLocale) {
       const origin = row.origin === "reviewed" ? "reviewed (retained for human review)" : "machine";
@@ -479,6 +484,7 @@ function validateSidecar({
         text: row.text,
         targetLocale: classification.targetLocale,
         protectedTerms: glossary.protectedTerms,
+        producerName: source.producerName,
       });
     } catch (error) {
       pushError(
@@ -492,16 +498,6 @@ function validateSidecar({
     result.stats.current += 1;
     if (row.origin === "reviewed") result.stats.reviewed += 1;
     else result.stats.machine += 1;
-  }
-
-  if (canonical.legacyFiles.length > 0) {
-    pushError(
-      result,
-      displayPath,
-      null,
-      `Phase 4 is incomplete for '${classification.country}'; source locale/hash checks cannot run and no file was changed`,
-    );
-    return;
   }
 
   for (const source of publicationRequirement?.sources.values() ?? []) {
@@ -563,7 +559,6 @@ export function auditCatalogTranslations({
       missing: 0,
       obsolete: 0,
       unapproved: 0,
-      phase4PendingFiles: 0,
     },
   };
 
@@ -573,12 +568,6 @@ export function auditCatalogTranslations({
     canonicalByCountry.set(country, canonical);
     result.errors.push(
       ...canonical.errors.map((error) => error.replace(`${repositoryRoot}${path.sep}`, "")),
-    );
-    result.stats.phase4PendingFiles += canonical.legacyFiles.length;
-  }
-  if (result.stats.phase4PendingFiles > 0) {
-    result.notices.push(
-      `Phase 4 description-locale migration is still pending for ${result.stats.phase4PendingFiles} area CSV file(s); translation checks are diagnostic only and do not mutate them.`,
     );
   }
 
@@ -590,6 +579,7 @@ export function auditCatalogTranslations({
     engineRegistryPath,
     repositoryRoot,
     canonicalByCountry,
+    errors: result.errors,
   });
   const selectedSidecarKeys = new Set(
     scope.selectedSidecars.map((filePath) => {

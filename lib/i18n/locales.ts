@@ -8,6 +8,30 @@ export const SUPPORTED_LOCALES = [
   "it",
   "nl",
   "pt",
+  "af",
+  "as",
+  "bn",
+  "cy",
+  "ga",
+  "gd",
+  "gu",
+  "haw",
+  "hi",
+  "kn",
+  "kok",
+  "ml",
+  "mr",
+  "ne",
+  "nso",
+  "or",
+  "pa",
+  "ss",
+  "st",
+  "ta",
+  "te",
+  "tn",
+  "xh",
+  "zu",
 ] as const;
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
@@ -17,24 +41,16 @@ export type Locale = (typeof SUPPORTED_LOCALES)[number];
 // separate so accepting source prose never activates a route, cookie, manifest
 // label requirement or message dictionary.
 export const DESCRIPTION_SOURCE_LOCALES = [
-  "en",
-  "es",
-  "ca",
-  "de",
-  "ja",
-  "fr",
-  "it",
-  "nl",
-  "pt",
+  ...SUPPORTED_LOCALES,
   "gl",
   "eu",
 ] as const;
 
 export type DescriptionSourceLocale = (typeof DESCRIPTION_SOURCE_LOCALES)[number];
 
-// Legacy manifests predate explicit locale policy. English preserves their
-// current interface language until a country opts in through country.json.
-export const LEGACY_DEFAULT_LOCALE: Locale = "en";
+// The neutral selector and private application shell remain English. Catalog
+// defaults are always declared explicitly in each country manifest.
+export const APPLICATION_DEFAULT_LOCALE: Locale = "en";
 
 // Keep the public locale token separate from the BCP-47 tag used by HTML and
 // Intl APIs. A locale may use a more specific display tag without changing its
@@ -49,6 +65,30 @@ export const LOCALE_DISPLAY_TAGS = {
   it: "it",
   nl: "nl",
   pt: "pt-PT",
+  af: "af-ZA",
+  as: "as-IN",
+  bn: "bn-IN",
+  cy: "cy-GB",
+  ga: "ga",
+  gd: "gd-GB",
+  gu: "gu-IN",
+  haw: "haw-US",
+  hi: "hi-IN",
+  kn: "kn-IN",
+  kok: "kok-IN",
+  ml: "ml-IN",
+  mr: "mr-IN",
+  ne: "ne-IN",
+  nso: "nso-ZA",
+  or: "or-IN",
+  pa: "pa-IN",
+  ss: "ss-ZA",
+  st: "st-ZA",
+  ta: "ta-IN",
+  te: "te-IN",
+  tn: "tn-ZA",
+  xh: "xh-ZA",
+  zu: "zu-ZA",
 } as const satisfies Record<Locale, string>;
 
 // Public locale tokens stay compact, while hreflang explicitly identifies
@@ -64,6 +104,30 @@ export const CATALOG_HREFLANG_BY_LOCALE = {
   it: "it-IT",
   nl: "nl",
   pt: "pt-PT",
+  af: "af-ZA",
+  as: "as-IN",
+  bn: "bn-IN",
+  cy: "cy-GB",
+  ga: "ga",
+  gd: "gd-GB",
+  gu: "gu-IN",
+  haw: "haw-US",
+  hi: "hi-IN",
+  kn: "kn-IN",
+  kok: "kok-IN",
+  ml: "ml-IN",
+  mr: "mr-IN",
+  ne: "ne-IN",
+  nso: "nso-ZA",
+  or: "or-IN",
+  pa: "pa-IN",
+  ss: "ss-ZA",
+  st: "st-ZA",
+  ta: "ta-IN",
+  te: "te-IN",
+  tn: "tn-ZA",
+  xh: "xh-ZA",
+  zu: "zu-ZA",
 } as const satisfies Record<Locale, string>;
 
 const LOCALE_SET: ReadonlySet<string> = new Set(SUPPORTED_LOCALES);

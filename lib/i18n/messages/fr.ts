@@ -13,17 +13,9 @@ const messages = {
   },
   siteFooter: {
     navigation: "Navigation du pied de page",
-    aboutTitle: "À propos",
-    aboutDescription:
-      "Chisan construit une plateforme commune et fiable pour découvrir les producteurs locaux de produits alimentaires et de boissons.",
     aboutLink: "Notre objectif",
-    exploreTitle: "Explorer",
     catalogLink: "Catalogue des producteurs",
-    contactTitle: "Contact",
-    contactDescription:
-      "Vos questions, corrections et propositions de collaboration sont les bienvenues.",
     contactLink: "Nous contacter sur GitHub",
-    closingLine: "Un catalogue ouvert et fiable pour l’alimentation locale.",
   },
   accountActions: {
     ownershipVerifiedDescription: "La propriété de ce producteur est vérifiée.",
@@ -84,7 +76,13 @@ const messages = {
     producerNotFoundDescription: "Ce producteur ne figure pas dans le catalogue CSV.",
     producerDescription: "{producer} à {city}. Produits locaux : {categories}.",
   },
-  home: { chooseCountry: "Choisir un pays", countrySummary: "{areas} dans {regions}" },
+  home: {
+    chooseCountry: "Choisir un pays",
+    countrySummary: "{areas} dans {regions}",
+    aboutKicker: "À propos de Chisan",
+    aboutDescription: "Chisan construit une couche commune de découverte pour l’alimentation locale : un seul endroit pour trouver, comprendre et contacter les producteurs de produits alimentaires et de boissons ancrés dans leurs communautés.",
+    aboutCatalogDescription: "Un catalogue CSV transparent reste la source de vérité. Le web, les comptes et les flux de contributions examinées se développent autour de lui afin que le catalogue reste utile, fiable et ouvert à mesure que Chisan s’étend.",
+  },
   locationOnboarding: {
     title: "Trouver votre zone du catalogue",
     description: "Avec votre autorisation, Chisan vérifie votre position dans ce navigateur pour trouver une zone couverte. Votre position n’est ni envoyée ni enregistrée.",
@@ -127,8 +125,7 @@ const messages = {
     loading: "Chargement de la carte…",
     emptyCoordinates: "Aucune coordonnée valide dans cette sélection.",
     producerMap: "Carte des producteurs", producers: "Producteurs",
-    openProfile: "Ouvrir le profil", showingProducer: "Carte affichant {producer}",
-  },
+    openProfile: "Ouvrir le profil", },
   producer: {
     backToMap: "Retour à la carte", profile: "Profil du producteur", website: "Site web",
     googleMaps: "Google Maps", phone: "Téléphone", email: "E-mail", imageAlt: "Image de {producer}",
@@ -138,13 +135,11 @@ const messages = {
   },
   fieldLabels: {
     slug: "Slug", producerId: "ID du producteur", name: "Nom", municipality: "Commune",
-    category: "Catégorie", additionalCategories: "Catégories supplémentaires", subcategory: "Sous-catégorie",
-    featuredProducts: "Produits mis en avant", address: "Adresse", description: "Description",
+    category: "Catégorie", additionalCategories: "Catégories supplémentaires", featuredProducts: "Produits mis en avant", address: "Adresse", description: "Description",
     descriptionLocale: "Langue de la description", openingHours: "Horaires d’ouverture", phone: "Téléphone",
     email: "E-mail", website: "Web", image: "Image", onlineSales: "Vente en ligne", salesChannels: "Canaux de vente",
     facebook: "Facebook", instagram: "Instagram", googleMaps: "Google Maps", latitude: "Latitude",
-    longitude: "Longitude", verification: "Vérification", reviewed: "Révisé",
-  },
+    longitude: "Longitude", verification: "Vérification", },
   controlledValues: {
     verification: { pendiente: "En attente", parcial: "Partiellement vérifié", verificado: "Vérifié" },
     onlineSales: { "sí": "Oui", no: "Non", "no comprobado": "Non vérifié" },

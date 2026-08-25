@@ -1,5 +1,6 @@
 import {
   buildCatalogScope,
+  isCatalogScopeSegment,
   type CatalogCountryPolicy,
   type CatalogLocalePolicy,
   type CatalogScope,
@@ -76,11 +77,10 @@ function catalogPathPrefix(context: CatalogNavigationContext): string {
     if (country && country !== context.scope.country) {
       throw new Error("Catalog navigation country does not match its resolved scope.");
     }
-    if (!/^\/(?:[a-z]{2}|[a-z]{2}-[a-z]{2})$/.test(context.scope.pathPrefix)) {
+    const segment = context.scope.pathPrefix.slice(1);
+    if (!context.scope.pathPrefix.startsWith("/") || !isCatalogScopeSegment(segment)) {
       throw new Error("Catalog navigation scope has an invalid path prefix.");
     }
-
-    const segment = context.scope.pathPrefix.slice(1);
     if (
       segment !== context.scope.country &&
       !segment.endsWith(`-${context.scope.country}`)
@@ -138,18 +138,17 @@ export function buildApplicationProducerHref(
   if (producer.area !== context.localePolicy.slug) {
     throw new Error("Application producer area does not match its locale policy.");
   }
+  if (!context.localePolicy.publishedLocales.includes(context.country.defaultLocale)) {
+    throw new Error(
+      `Application producer area must publish the country default locale '${context.country.defaultLocale}'.`,
+    );
+  }
 
   const locale =
     context.explicitLocale &&
     context.localePolicy.publishedLocales.includes(context.explicitLocale)
       ? context.explicitLocale
-      : context.localePolicy.publishedLocales.includes(context.country.defaultLocale)
-        ? context.country.defaultLocale
-        : context.localePolicy.publishedLocales[0];
-
-  if (!locale) {
-    throw new Error("Application producer area has no published catalog locale.");
-  }
+      : context.country.defaultLocale;
 
   return buildProducerHref(producer, {
     scope: buildCatalogScope(context.country, locale),

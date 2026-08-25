@@ -9,7 +9,12 @@ import {
   buildLocalizedMetadata,
 } from "@/lib/catalog-metadata";
 import { buildCatalogHref } from "@/lib/catalog-navigation";
-import { CATALOG_UNIT, listCountries } from "@/lib/csv-catalog";
+import {
+  CATALOG_UNIT,
+  getLocalizedCatalogLabel,
+  getLocalizedCatalogUnit,
+  listCountries,
+} from "@/lib/csv-catalog";
 import {
   buildCatalogScope,
   EXPLICIT_LOCALE_COOKIE,
@@ -27,7 +32,7 @@ import {
 } from "@/lib/i18n/messages";
 import { listEnabledLocationAreas } from "@/lib/location/enabled-location-areas.server";
 import type { LocationOnboardingArea } from "@/lib/location/location-onboarding";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { SITE_NAME } from "@/lib/site";
 
 const HOME_LOCALE = "en" as const;
 
@@ -70,7 +75,10 @@ function CountryStart({
 
   return (
     <main className="catalog-start-page">
-      <section className="catalog-start-shell" aria-labelledby="country-start-title">
+      <section
+        className="catalog-start-shell"
+        aria-labelledby="country-start-title"
+      >
         <LocationOnboarding
           areas={locationAreas}
           messages={messages.locationOnboarding}
@@ -90,7 +98,8 @@ function CountryStart({
           messages={{
             title: messages.locationOnboarding.chooseManually,
             countryLabel: messages.locationOnboarding.manualCountryLabel,
-            countryPlaceholder: messages.locationOnboarding.manualCountryPlaceholder,
+            countryPlaceholder:
+              messages.locationOnboarding.manualCountryPlaceholder,
             areaLabel: messages.locationOnboarding.manualAreaLabel,
             areaPlaceholder: messages.locationOnboarding.manualAreaPlaceholder,
             submit: messages.areaSelector.submit,
@@ -103,9 +112,13 @@ function CountryStart({
               (total, region) => total + region.areas.length,
               0,
             );
-            const countryLabel = country.labels[HOME_LOCALE] ?? country.label;
-            const areaUnit = country.unitLabels[HOME_LOCALE] ?? country.unit;
-            const regionUnit = country.regionUnitLabels[HOME_LOCALE] ?? country.regionUnit;
+            const countryLabel = getLocalizedCatalogLabel(country, HOME_LOCALE);
+            const areaUnit = getLocalizedCatalogUnit(country, HOME_LOCALE);
+            const regionUnit = getLocalizedCatalogUnit(
+              country,
+              HOME_LOCALE,
+              "region",
+            );
             const areaCount = formatUnitCount(
               HOME_LOCALE,
               places,
@@ -118,7 +131,10 @@ function CountryStart({
               regionUnit,
               messages.common.unitCount,
             );
-            const destinationLocale = resolveDestinationLocale(country, localePreferences);
+            const destinationLocale = resolveDestinationLocale(
+              country,
+              localePreferences,
+            );
 
             return (
               <Link
@@ -140,22 +156,18 @@ function CountryStart({
           })}
         </div>
 
-        <section id="about" className="home-about" aria-labelledby="home-about-title">
+        <section
+          id="about"
+          className="home-about"
+          aria-labelledby="home-about-title"
+        >
           <div>
-            <p className="catalog-kicker">About Chisan</p>
-            <h2 id="home-about-title">{SITE_TAGLINE}</h2>
+            <p className="catalog-kicker">{messages.home.aboutKicker}</p>
+            <h2 id="home-about-title">{messages.siteHeader.tagline}</h2>
           </div>
           <div className="home-about__copy">
-            <p>
-              Chisan is building a shared discovery layer for local food: one place
-              to find, understand and connect with food and drink producers rooted
-              in their communities.
-            </p>
-            <p>
-              A transparent CSV catalog remains the source of truth. The web,
-              accounts and reviewed contribution flows grow around it so that the
-              catalog can stay useful, trustworthy and open as Chisan expands.
-            </p>
+            <p>{messages.home.aboutDescription}</p>
+            <p>{messages.home.aboutCatalogDescription}</p>
           </div>
         </section>
       </section>
@@ -179,8 +191,12 @@ export default async function HomePage() {
       countries={countries}
       messages={messages}
       locationAreas={locationAreas}
-      explicitLocale={parseExplicitLocale(cookieStore.get(EXPLICIT_LOCALE_COOKIE)?.value)}
-      browserLocales={parseAcceptLanguage(requestHeaders.get("accept-language"))}
+      explicitLocale={parseExplicitLocale(
+        cookieStore.get(EXPLICIT_LOCALE_COOKIE)?.value,
+      )}
+      browserLocales={parseAcceptLanguage(
+        requestHeaders.get("accept-language"),
+      )}
     />
   );
 }

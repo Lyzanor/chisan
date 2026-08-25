@@ -8,9 +8,9 @@ import {
   resolveKnownCatalogScope,
   resolveProducerCatalog,
 } from "@/lib/catalog-routing";
+import { isCatalogScopeSegment } from "@/lib/i18n/catalog-scope";
 import { CHISAN_REQUEST_PATH_HEADER } from "@/lib/request-path";
 
-const CATALOG_SEGMENT = /^[a-z]{2}(?:-[a-z]{2})?$/;
 const GLOBAL_NOT_FOUND_TARGET = "/__chisan_not_found__/route/terminal/404";
 
 function requestHeadersWithPath(request: NextRequest): Headers {
@@ -34,7 +34,7 @@ async function continueWithRequestPath(request: NextRequest) {
 
   const segments = request.nextUrl.pathname.split("/").filter(Boolean);
   const catalog = segments[0] ?? "";
-  if (!CATALOG_SEGMENT.test(catalog) || segments.length > 3) {
+  if (!isCatalogScopeSegment(catalog) || segments.length > 3) {
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
 

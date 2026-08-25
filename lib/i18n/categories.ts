@@ -19,7 +19,10 @@ export type CategoryPresentation = {
 
 export function getCategoryLabel(token: string, locale: Locale): string {
   const labels = registry.labels[token];
-  return labels?.[locale] ?? labels?.en ?? token;
+  if (!labels) throw new Error(`Unknown category token '${token}'`);
+  const label = labels[locale];
+  if (!label) throw new Error(`Category '${token}' has no label for locale '${locale}'`);
+  return label;
 }
 
 export function getCategoryIcon(token: string): string {

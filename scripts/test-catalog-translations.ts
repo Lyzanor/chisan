@@ -6,7 +6,6 @@ import path from "node:path";
 import test from "node:test";
 
 import {
-  hasExplicitCatalogLocalePolicy,
   localizeProducerDescriptions,
   type ProducerCsvRow,
 } from "../lib/csv-catalog";
@@ -111,7 +110,22 @@ function fixture(context: test.TestContext, country = "xx"): Fixture {
   fs.writeFileSync(
     path.join(csvRoot, country, "country.json"),
     `${JSON.stringify({
-      i18n: { defaultLocale: "ca", publishedLocales: ["ca"] },
+      label: "Fixture",
+      unit: { one: "area", many: "areas" },
+      regionUnit: { one: "region", many: "regions" },
+      i18n: {
+        defaultLocale: "ca",
+        publishedLocales: ["ca"],
+        labels: { ca: "Fixture" },
+        unitLabels: { ca: { one: "àrea", many: "àrees" } },
+        regionUnitLabels: { ca: { one: "regió", many: "regions" } },
+      },
+      regions: [{
+        slug: "region",
+        label: "Region",
+        labels: { ca: "Regió" },
+        areas: [{ slug: "area", label: "Area", labels: { ca: "Àrea" } }],
+      }],
     }, null, 2)}\n`,
   );
   return {
@@ -142,15 +156,15 @@ function writeEngineRegistry(
 function writeArea(
   target: Fixture,
   rows: Array<{ producerId: string; text: string; locale?: string }>,
-  { legacy = false } = {},
+  { omitDescriptionLocale = false } = {},
 ) {
-  const header = legacy
+  const header = omitDescriptionLocale
     ? ["producer_id", "descripcion"]
     : ["producer_id", "descripcion", "descripcion_locale"];
   const records = [header];
   for (const row of rows) {
     records.push(
-      legacy
+      omitDescriptionLocale
         ? [row.producerId, row.text]
         : [row.producerId, row.text, row.locale ?? "es"],
     );
@@ -308,6 +322,39 @@ test("numeric validation reports exact expected and received tokens for actionab
     assert.match(countError, /expected token multiset \[\["12",2\],\["24\/08\/2026",1\]\]/);
     assert.ok(countError.includes(`received token multiset [["12",${receivedCount}]`));
   }
+});
+
+test("Indic targets reject Latin-dominated output before publication", () => {
+  assert.doesNotThrow(() =>
+    validateTranslationOutput({
+      source: "Family farm growing vegetables.",
+      sourceLocale: "en",
+      text: "सब्ज़ियाँ उगाने वाला पारिवारिक खेत।",
+      targetLocale: "hi",
+      protectedTerms: [],
+    }),
+  );
+  assert.throws(
+    () =>
+      validateTranslationOutput({
+        source: "Family farm growing vegetables.",
+        sourceLocale: "en",
+        text: "Family farm growing fresh vegetables in Delhi.",
+        targetLocale: "hi",
+        protectedTerms: [],
+      }),
+    /suspicious native-script coverage/,
+  );
+  assert.doesNotThrow(() =>
+    validateTranslationOutput({
+      source: "Lotus Harvest grows vegetables in Delhi.",
+      sourceLocale: "en",
+      text: "Lotus Harvest दिल्ली में सब्ज़ियाँ उगाता है।",
+      targetLocale: "hi",
+      protectedTerms: [],
+      producerName: "Lotus Harvest",
+    }),
+  );
 });
 
 test("ordered quantitative fingerprints reject changed markers, units and fact order", () => {
@@ -624,11 +671,6 @@ test("runtime parses the dedicated sidecar schema and never mixes canonical pros
     )[0].fields.descripcion,
     "",
   );
-  assert.equal(hasExplicitCatalogLocalePolicy({}), false);
-  assert.equal(
-    hasExplicitCatalogLocalePolicy({ i18n: { publishedLocales: ["es", "ca"] } }),
-    true,
-  );
 });
 
 test("source-only locales resolve through sidecars without becoming translation targets", (context) => {
@@ -684,14 +726,13 @@ test("source-only locales resolve through sidecars without becoming translation 
   assert.ok(result.errors.some((error) => error.includes("unsupported target locale 'gl'")));
 });
 
-test("legacy manifest fallback does not create a translation publication obligation", (context) => {
+test("missing country manifest is rejected by the mandatory locale contract", (context) => {
   const target = fixture(context);
   fs.rmSync(path.join(target.csvRoot, target.country, "country.json"));
   writeArea(target, [{ producerId: "1", text: "Descripción ya migrada.", locale: "es" }]);
 
   const result = audit(target);
-  assert.deepEqual(result.errors, []);
-  assert.equal(result.stats.missing, 0);
+  assert.ok(result.errors.some((error) => error.includes("country.json")));
 });
 
 test("checker accepts a complete current sidecar and detects only the edited source variant", (context) => {
@@ -986,14 +1027,14 @@ test("engine registry forbids ambiguous model mappings for a machine row context
   );
 });
 
-test("legacy Phase 4 state is explained without mutation and generation stops before the adapter", async (context) => {
+test("omitted descripcion_locale is a direct canonical contract error", async (context) => {
   const target = fixture(context);
-  writeArea(target, [{ producerId: "1", text: "Descripción legacy." }], { legacy: true });
+  writeArea(target, [{ producerId: "1", text: "Descripción sin locale." }], {
+    omitDescriptionLocale: true,
+  });
   const before = fs.readFileSync(target.areaPath, "utf8");
   const result = audit(target);
-  assert.deepEqual(result.errors, []);
-  assert.equal(result.stats.phase4PendingFiles, 1);
-  assert.ok(result.notices.some((notice) => notice.includes("Phase 4")));
+  assert.ok(result.errors.some((error) => error.includes("descripcion_locale")));
   assert.equal(fs.readFileSync(target.areaPath, "utf8"), before);
 
   const adapter = createFixtureTranslationAdapter({ translations: {} });
@@ -1006,7 +1047,7 @@ test("legacy Phase 4 state is explained without mutation and generation stops be
       glossaryPath: target.glossaryPath,
       engineRegistryPath: target.engineRegistryPath,
     }),
-    /Phase 4 prerequisite missing[\s\S]*No provider was called and no file was changed/,
+    /Canonical catalog is invalid[\s\S]*descripcion_locale/,
   );
   assert.equal(adapter.calls.length, 0);
   assert.equal(fs.existsSync(target.sidecarPath), false);
@@ -1114,19 +1155,11 @@ test("readiness covers every presentation locale, including canonical English an
   });
 
   assert.deepEqual(report.presentation_locales, [
-    "en",
-    "es",
-    "ca",
-    "de",
-    "ja",
-    "fr",
-    "it",
-    "nl",
-    "pt",
+    ...SUPPORTED_TRANSLATION_TARGET_LOCALES,
   ]);
   assert.deepEqual(
     report.records.map((record) => record.target_locale),
-    ["en", "es", "ca", "de", "ja", "fr", "it", "nl", "pt"],
+    [...SUPPORTED_TRANSLATION_TARGET_LOCALES],
   );
   const english = report.records.find((record) => record.target_locale === "en");
   const spanish = report.records.find((record) => record.target_locale === "es");
@@ -1138,7 +1171,7 @@ test("readiness covers every presentation locale, including canonical English an
   assert.equal(spanish.required_sidecar_rows, 0);
   assert.equal(spanish.translation_ready, true);
   assert.equal(spanish.manifest_published, false);
-  assert.equal(report.summary.records, 9);
+  assert.equal(report.summary.records, SUPPORTED_TRANSLATION_TARGET_LOCALES.length);
   assert.equal(report.summary.translation_ready, 1);
 });
 
@@ -1331,6 +1364,42 @@ test("numeric separator changes abort without repair or sidecar writes", async (
   assert.equal(adapter.calls.length, 1);
   assert.equal(
     fs.existsSync(path.join(target.csvRoot, target.country, "translations.ja.csv")),
+    false,
+  );
+});
+
+test("numeric corruption takes priority over native-script repair alarms", async (context) => {
+  const target = fixture(context);
+  const source = "Family farm founded in 2020 near Delhi.";
+  writeArea(target, [{ producerId: "7", text: source, locale: "en" }]);
+  const adapter = createFixtureTranslationAdapter({
+    handler: (request: {
+      repair?: { previousText: string | null; validationError: string };
+    }) => {
+      assert.equal(request.repair, undefined);
+      return {
+        translations: [
+          { id: "7:descripcion", text: "Family farm founded in 2021 near Delhi." },
+        ],
+      };
+    },
+  });
+
+  await assert.rejects(
+    generateCatalogTranslations({
+      country: target.country,
+      targetLocale: "hi",
+      adapter,
+      csvRoot: target.csvRoot,
+      glossaryPath: target.glossaryPath,
+      engineRegistryPath: target.engineRegistryPath,
+    }),
+    /preserve every number exactly/,
+  );
+
+  assert.equal(adapter.calls.length, 1);
+  assert.equal(
+    fs.existsSync(path.join(target.csvRoot, target.country, "translations.hi.csv")),
     false,
   );
 });
@@ -1723,7 +1792,7 @@ test("benchmark spec requires unique non-empty written number phrases", (context
     "data/reference/translation-benchmark.json",
   );
   const canonical = JSON.parse(fs.readFileSync(canonicalPath, "utf8"));
-  assert.equal(canonical.version, "2026-08-24.4");
+  assert.equal(canonical.version, "2026-08-25.5");
   assert.deepEqual(canonical.writtenNumberOrOrdinalPhrases, [
     "tercera generación",
     "third generation",
@@ -1806,7 +1875,8 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
   assert.deepEqual(second, first);
   assert.equal(first.review_status, "not_started");
   assert.match(first.plan_hash, /^[a-f0-9]{64}$/);
-  for (const target of ["es", "ca", "de", "ja", "fr", "it", "nl", "pt"]) {
+  const benchmarkTargets = Object.keys(spec.targets);
+  for (const target of benchmarkTargets) {
     assert.equal(first.targets[target].length, 50);
     assert.equal(new Set(first.targets[target].map((sample) => sample.benchmark_id)).size, 50);
     for (const [stratum, minimum] of Object.entries(first.stratum_requirements)) {
@@ -1838,10 +1908,30 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
       repair?: { previousText: string | null; validationError: string };
     }) => {
       assert.equal(repair, undefined);
+      const nativeScriptCharacter: Record<string, string> = {
+        as: "ক",
+        bn: "ক",
+        gu: "ક",
+        hi: "क",
+        kn: "ಕ",
+        kok: "क",
+        ml: "ക",
+        mr: "क",
+        ne: "क",
+        or: "କ",
+        pa: "ਕ",
+        ta: "க",
+        te: "క",
+      };
       return {
         translations: entries.map((entry) => ({
           id: entry.id,
-          text: `${targetLocale}: ${entry.text}`,
+          text: nativeScriptCharacter[targetLocale]
+            ? entry.text
+                .replaceAll("DOP", "\u0000\u0001\u0000")
+                .replace(/[A-Za-z]/g, nativeScriptCharacter[targetLocale])
+                .replaceAll("\u0000\u0001\u0000", "DOP")
+            : `${targetLocale}: ${entry.text}`,
         })),
       };
     },
@@ -1857,7 +1947,7 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
   });
   assert.equal(candidates.review_status, "unreviewed");
   assert.equal(candidates.model, "fixture-model");
-  assert.equal(adapter.calls.length, 8);
+  assert.equal(adapter.calls.length, benchmarkTargets.length);
   assert.equal(
     Object.values(candidates.targets)
       .flat()
@@ -1868,7 +1958,7 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
     candidates.targets.ja.find(({ benchmark_id }) => benchmark_id === ordinalBenchmarkId)?.text ?? "",
     /^ja: /,
   );
-  for (const target of ["es", "ca", "de", "ja", "fr", "it", "nl", "pt"]) {
+  for (const target of benchmarkTargets) {
     assert.equal(candidates.targets[target].length, 50);
     assert.ok(candidates.targets[target].every((candidate) => candidate.human_review === null));
   }

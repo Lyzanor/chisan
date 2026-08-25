@@ -135,7 +135,10 @@ export default async function EditProducerPage({
 
   const additionalCategories = valueSet(producer.fields["categorias adicionales"] ?? "");
   const salesChannels = valueSet(producer.fields["Canal de venta"] ?? "");
-  const descriptionLocaleOptions = getDescriptionLocaleOptions(presentation.messages);
+  const descriptionLocaleOptions = getDescriptionLocaleOptions(
+    presentation.messages,
+    presentation.locale,
+  );
 
   return (
     <div className="account-content">
