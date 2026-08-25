@@ -16,16 +16,6 @@ const ACCOUNT_AUTH_ENVIRONMENT_KEYS = [
 type AccountAuthEnvironmentKey = (typeof ACCOUNT_AUTH_ENVIRONMENT_KEYS)[number];
 type AccountAuthEnvironment = Record<string, string | undefined>;
 
-function preferredEnvironmentValue(
-  environment: AccountAuthEnvironment,
-  canonicalKey: string,
-  legacyKey: string,
-): string {
-  const canonicalValue = environment[canonicalKey];
-  if (canonicalValue !== undefined) return canonicalValue.trim();
-  return environment[legacyKey]?.trim() ?? "";
-}
-
 const CLERK_SECRET_KEY_PATTERN = /^sk_(test|live)_[A-Za-z0-9_-]{20,}$/;
 const CLERK_PUBLISHABLE_KEY_PATTERN = /^pk_(test|live)_([A-Za-z0-9+/]+={0,2})$/;
 
@@ -71,13 +61,7 @@ export type AccountAuthConfiguration = {
 export function isAccountFeatureEnabled(
   environment: AccountAuthEnvironment = process.env,
 ): boolean {
-  return (
-    preferredEnvironmentValue(
-      environment,
-      "CHISAN_ACCOUNTS_ENABLED",
-      "KM0_ACCOUNTS_ENABLED",
-    ) === "true"
-  );
+  return environment.CHISAN_ACCOUNTS_ENABLED?.trim() === "true";
 }
 
 // This operational switch freezes only new producer profile proposals while
@@ -146,7 +130,7 @@ export function getBootstrapAdminEmails(
   environment: AccountAuthEnvironment = process.env,
 ): ReadonlySet<string> {
   return new Set(
-    preferredEnvironmentValue(environment, "CHISAN_ADMIN_EMAILS", "KM0_ADMIN_EMAILS")
+    (environment.CHISAN_ADMIN_EMAILS ?? "")
       .split(",")
       .map((email) => email.trim().toLowerCase())
       .filter(Boolean),

@@ -14,17 +14,14 @@ Production uses its dedicated Clerk instance and PostgreSQL database. Local and
 Preview must never write account data through Production credentials. Preview
 may enable accounts only when both its Clerk credentials and database are
 non-Production and its database is isolated. If Vercel exposes the Production
-database integration to Preview, keep `CHISAN_ACCOUNTS_ENABLED=false` and
-`KM0_ACCOUNTS_ENABLED=false` there: Preview may test the public catalog and the
-disabled-account fallback, but not registration, favorites, claims, reviews or
-producer changes.
+database integration to Preview, keep `CHISAN_ACCOUNTS_ENABLED=false` there:
+Preview may test the public catalog and the disabled-account fallback, but not
+registration, favorites, claims, reviews or producer changes.
 
 When accounts are enabled, configure the variables in `.env.example`. Production
 uses `NEXT_PUBLIC_APP_URL=https://chisan.app`. `CHISAN_ACCOUNTS_ENABLED` and
-`CHISAN_ADMIN_EMAILS` are canonical; `KM0_ACCOUNTS_ENABLED` and
-`KM0_ADMIN_EMAILS` are temporary legacy fallbacks during the rename. A canonical
-value wins when both exist. Migrate one environment at a time, verify it, then
-remove the legacy record.
+`CHISAN_ADMIN_EMAILS` are the only supported account variable names. Configure
+one environment at a time and verify it before proceeding to the next.
 
 Public discovery is an explicit Production capability. Unless
 `CHISAN_PUBLIC_DISCOVERY_ENABLED=true` is set in Production, Chisan emits global

@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
-"""Network-free regression tests for the pure parts of enrich:images."""
+"""Regression tests for enrich:images that never leave this machine.
+
+Everything is either pure or served by a loopback HTTP server, so the suite
+never depends on a producer website staying up or unchanged.
+"""
 
 from __future__ import annotations
 
 import importlib.util
+import json
 import subprocess
 import sys
 import tempfile
+import threading
+from contextlib import redirect_stdout
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from io import BytesIO, StringIO
 from pathlib import Path
 
 SCRIPT = Path(__file__).resolve().parent / "enrich-producer-images.py"
@@ -218,6 +227,151 @@ with tempfile.TemporaryDirectory(prefix="chisan-enrich-concurrent-") as temp_dir
     else:
         failures.append("concurrent CSV changes abort the write\n    expected RuntimeError")
     check("concurrent abort leaves no image", image_path.exists(), False)
+
+# --- a dead icon family must not starve the page's real logo ----------------
+# Le Cave del Ceppo declared fifteen <link rel="icon"> entries (score 65) that
+# all 404, ahead of a 3438px logo.png the markup labels nothing (score 35).
+# While the cap counted candidates that resolve to nothing, --max-candidates 5
+# reported no acceptable candidate on a site that publishes a usable logo.
+ICON_FAMILY = [
+    "apple-icon-57x57.png",
+    "apple-icon-60x60.png",
+    "apple-icon-72x72.png",
+    "apple-icon-76x76.png",
+    "apple-icon-114x114.png",
+    "apple-icon-120x120.png",
+    "apple-icon-144x144.png",
+    "apple-icon-152x152.png",
+    "apple-icon-180x180.png",
+    "android-icon-192x192.png",
+    "favicon-16x16.png",
+    "favicon-32x32.png",
+    "favicon-96x96.png",
+    "ms-icon-144x144.png",
+]
+LOGO_PATH = "/template/images/logo.png"
+TINY_PATH = "/template/images/favicon.png"
+
+
+def png_bytes(size: int) -> bytes:
+    buffer = BytesIO()
+    Image.new("RGB", (size, size), (40, 80, 60)).save(buffer, format="PNG")
+    return buffer.getvalue()
+
+
+def home_page(icons: list[str]) -> bytes:
+    # The logo carries no logo-ish class, id, alt or title, exactly like the
+    # reported page: that is what leaves it a low-scoring page-img.
+    return (
+        "<html><head>"
+        + "".join(f'<link rel="icon" href="/icons/{icon}">' for icon in icons)
+        + f'<link rel="icon" href="{TINY_PATH}">'
+        + f"</head><body><img src=\"{LOGO_PATH}\"></body></html>"
+    ).encode("utf-8")
+
+
+class BrokenIconSite(BaseHTTPRequestHandler):
+    """Serves a real logo behind a family of icons that are all dead."""
+
+    icons = ICON_FAMILY
+
+    def do_GET(self) -> None:  # noqa: N802
+        if self.path in {"", "/"}:
+            body, content_type = home_page(self.icons), "text/html; charset=utf-8"
+        elif self.path == LOGO_PATH:
+            body, content_type = png_bytes(900), "image/png"
+        elif self.path == TINY_PATH:
+            # Downloads fine and is still nothing to look at.
+            body, content_type = png_bytes(64), "image/png"
+        else:
+            self.send_error(404)
+            return
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def log_message(self, *_args) -> None:
+        pass
+
+
+def discovery_report(temp: Path, base_url: str, *extra_args: str) -> dict:
+    """Run the real discovery loop against a local site and return its report."""
+    csv_path = temp / "data" / "csv" / "zz" / "region" / "area.csv"
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    csv_path.write_text(f"slug,nombre,web,imagen\nuno,Uno,{base_url},\n", encoding="utf-8", newline="")
+    report_path = temp / "report.json"
+    report_path.unlink(missing_ok=True)
+
+    original_repo_root = enrich.repo_root
+    original_argv = sys.argv
+    enrich.repo_root = lambda: temp
+    sys.argv = [
+        "enrich-producer-images.py",
+        "--area", "area",
+        "--delay", "0",
+        "--timeout", "5",
+        "--report", str(report_path),
+        *extra_args,
+    ]
+    try:
+        with redirect_stdout(StringIO()):
+            enrich.main()
+    finally:
+        enrich.repo_root = original_repo_root
+        sys.argv = original_argv
+    return json.loads(report_path.read_text(encoding="utf-8"))[0]
+
+
+def readable(report: dict) -> list[str]:
+    return [candidate["resolved_url"] for candidate in report["candidates"] if candidate.get("ok")]
+
+
+server = ThreadingHTTPServer(("127.0.0.1", 0), BrokenIconSite)
+threading.Thread(target=server.serve_forever, daemon=True).start()
+try:
+    site = f"http://127.0.0.1:{server.server_address[1]}/"
+    with tempfile.TemporaryDirectory(prefix="chisan-enrich-cap-") as temp_dir:
+        temp = Path(temp_dir)
+
+        # The premise, stated independently of what the run manages to inspect:
+        # a declared icon ranks above an <img> the markup says nothing about.
+        icon_score = enrich.make_candidate("icon", site, "/icons/favicon-32x32.png", "icon", "Uno").score
+        logo_score = enrich.make_candidate("page-img", site, LOGO_PATH, "", "Uno").score
+        check("a declared icon outranks an unlabelled page image", icon_score > logo_score, True)
+
+        default_run = discovery_report(temp, site)
+        check(
+            "a dead icon family does not spend the review budget",
+            [url.endswith(LOGO_PATH) for url in readable(default_run)],
+            [True],
+        )
+        check("a reviewable candidate is reported as one", default_run["status"], "candidates")
+
+        capped = discovery_report(temp, site, "--max-candidates", "1")
+        check("the cap still limits what is rendered for review", len(readable(capped)), 1)
+
+        # The budget only bounds wasted requests; it never renders more.
+        BrokenIconSite.icons = [f"icon-{index}.png" for index in range(enrich.MAX_UNREADABLE_CANDIDATES + 20)]
+        starved = discovery_report(temp, site)
+        check("unreadable candidates stay bounded", readable(starved), [])
+        check(
+            "the run stops at the unreadable budget",
+            len(starved["candidates"]) <= enrich.MAX_UNREADABLE_CANDIDATES,
+            True,
+        )
+        check("a page with nothing to review says so", starved["status"], "no-acceptable-candidates")
+finally:
+    BrokenIconSite.icons = ICON_FAMILY
+    server.shutdown()
+    server.server_close()
+
+check(
+    "the budget covers a full apple-touch/favicon family",
+    enrich.MAX_UNREADABLE_CANDIDATES > len(ICON_FAMILY) + 1,
+    True,
+)
 
 # --- apply is impossible without an explicit slug and candidate -------------
 missing_slug = subprocess.run(

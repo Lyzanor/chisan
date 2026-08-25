@@ -81,28 +81,15 @@ test("account auth configuration rejects empty and placeholder Clerk keys", () =
   assert.equal(switchAbsent.configured, false);
 });
 
-test("Chisan account environment names take precedence with a temporary KM0 fallback", () => {
-  assert.equal(isAccountFeatureEnabled({ KM0_ACCOUNTS_ENABLED: "true" }), true);
-  assert.equal(
-    isAccountFeatureEnabled({
-      CHISAN_ACCOUNTS_ENABLED: "false",
-      KM0_ACCOUNTS_ENABLED: "true",
-    }),
-    false,
-  );
-
-  assert.deepEqual(
-    [...getBootstrapAdminEmails({ KM0_ADMIN_EMAILS: "legacy@example.com" })],
-    ["legacy@example.com"],
-  );
+test("Chisan account environment names own feature and bootstrap configuration", () => {
+  assert.equal(isAccountFeatureEnabled({ CHISAN_ACCOUNTS_ENABLED: " true " }), true);
   assert.deepEqual(
     [
       ...getBootstrapAdminEmails({
-        CHISAN_ADMIN_EMAILS: "Owner@Example.com",
-        KM0_ADMIN_EMAILS: "legacy@example.com",
+        CHISAN_ADMIN_EMAILS: "Owner@Example.com, staff@example.com ",
       }),
     ],
-    ["owner@example.com"],
+    ["owner@example.com", "staff@example.com"],
   );
 });
 

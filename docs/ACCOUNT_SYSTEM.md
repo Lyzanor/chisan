@@ -330,10 +330,9 @@ before the normal repository gate.
 7. Set `CHISAN_ACCOUNTS_ENABLED=true` only after the database assertion, webhook
    and end-to-end Preview checks pass.
 
-During the project rename, `KM0_ADMIN_EMAILS` and `KM0_ACCOUNTS_ENABLED` are
-legacy fallbacks. The `CHISAN_*` value wins when both names are present. Migrate
-each Vercel environment deliberately, verify it, and then remove the legacy
-record; never leave conflicting values configured indefinitely.
+Only the canonical `CHISAN_*` account variable names are supported. Configure
+each Vercel environment deliberately and never introduce aliases for retired
+project names.
 
 Account creation is synchronous on first authenticated use; the webhook
 reconciles identity changes and deletion. Webhook signatures are verified,

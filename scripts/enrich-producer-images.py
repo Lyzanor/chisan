@@ -55,6 +55,14 @@ MAX_IMAGE_UPSCALE = 3.0
 MIN_ACCEPTED_LONG_EDGE = 200
 WEBP_QUALITY = 90
 
+# --max-candidates budgets what the reviewer gets to look at, so a candidate
+# that resolves to nothing must not spend it. Le Cave del Ceppo shipped the
+# usual apple-touch/favicon family — fifteen <link rel="icon"> entries, every
+# one a 404 — ahead of the page's own 3438px logo.png; counting the dead ones
+# hid the logo behind a cap of five. Unreadable candidates draw on this budget
+# instead, which only bounds the requests wasted on a broken icon directory.
+MAX_UNREADABLE_CANDIDATES = 24
+
 # Ink at or above this luminance is indistinguishable from the canvas.
 PALE_LUMINANCE = 225
 FLOOD_SENTINEL = (255, 0, 255)
@@ -1046,7 +1054,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--slug", action="append", default=[], help="Limit work to a producer slug. Repeatable.")
     parser.add_argument("--limit", type=int, help="Maximum number of eligible producers to inspect.")
     parser.add_argument("--threshold", type=int, default=15, help="Minimum candidate score to try.")
-    parser.add_argument("--max-candidates", type=int, default=5, help="Maximum candidates inspected per producer.")
+    parser.add_argument(
+        "--max-candidates",
+        type=int,
+        default=5,
+        help="Maximum readable candidates rendered for review per producer. "
+        "Candidates that fail to download or are below the minimum size are not counted.",
+    )
     parser.add_argument("--delay", type=float, default=1.0, help="Delay between producer websites.")
     parser.add_argument("--timeout", type=float, default=10.0, help="HTTP timeout in seconds.")
     parser.add_argument("--report", help="Optional JSON report path.")
@@ -1186,23 +1200,31 @@ def main() -> int:
             continue
 
         matching_candidates: list[tuple[dict[str, object], Image.Image]] = []
-        candidate_count = 0
+        reviewable_count = 0
+        unreadable_count = 0
         for candidate in candidates:
             if candidate.score < args.threshold:
                 continue
             if candidate.subject == "photo" and not args.allow_photos:
                 continue
 
-            candidate_count += 1
-            if candidate_count > args.max_candidates:
+            if reviewable_count >= args.max_candidates:
+                break
+            if unreadable_count >= MAX_UNREADABLE_CANDIDATES:
+                print(f"  stopped after {unreadable_count} unreadable candidates")
                 break
 
             candidate_info, preview = inspect_candidate(candidate, args.timeout, page)
             row_report["candidates"].append(candidate_info)
             print_candidate_summary(candidate_info)
+            if preview is None:
+                unreadable_count += 1
+                continue
+
+            reviewable_count += 1
             digest = clean_cell(candidate_info.get("digest"))
 
-            if args.contact_sheet and preview is not None:
+            if args.contact_sheet:
                 sheet_entries.append(
                     (
                         f"{name} ({slug})",
@@ -1212,7 +1234,7 @@ def main() -> int:
                     )
                 )
 
-            if args.apply and preview is not None and digest.startswith(args.candidate.lower()):
+            if args.apply and digest.startswith(args.candidate.lower()):
                 matching_candidates.append((candidate_info, preview))
 
         selected = None
@@ -1245,7 +1267,7 @@ def main() -> int:
                     row_report["selected"] = selected
                     print(f"  selected {selected['digest'][:12]} -> {image_path}")
 
-        if not row_report["candidates"]:
+        if not reviewable_count:
             print("  no acceptable candidates after filtering")
             row_report["status"] = "no-acceptable-candidates"
 

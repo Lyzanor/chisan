@@ -68,6 +68,12 @@ in scope. Use an empty output directory so runs cannot mix. The command does not
 change the catalog; it writes contact sheets and `candidates.json` with the URL,
 score, dimensions, and full SHA-256 digest of each displayed composition.
 
+`--max-candidates` (default 5) budgets what reaches the sheet: it counts only
+candidates that download and clear the minimum size, so a template that
+declares a dead icon family cannot hide the page's own logo behind the cap.
+Unreadable candidates draw on a separate fixed budget that bounds wasted
+requests and never renders anything.
+
 Inspect the sheet and confirm that the image belongs to the producer rather
 than its parent, web agency, plugin, certification body, directory, or funding
 programme. The short identifier on the sheet is the start of the full
