@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "registry_version": "2026-08-24.4",
+  "registry_version": "2026-08-25.1",
   "approved_engines": [
     {
       "engine": "codex-subagent",

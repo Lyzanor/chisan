@@ -1,10 +1,15 @@
 {
   "schema_version": 1,
-  "version": "2026-08-24.3",
+  "version": "2026-08-24.4",
   "targets": {
+    "es": { "sampleSize": 50 },
     "ca": { "sampleSize": 50 },
     "de": { "sampleSize": 50 },
-    "ja": { "sampleSize": 50 }
+    "ja": { "sampleSize": 50 },
+    "fr": { "sampleSize": 50 },
+    "it": { "sampleSize": 50 },
+    "nl": { "sampleSize": 50 },
+    "pt": { "sampleSize": 50 }
   },
   "stratumOrder": [
     "proper-name-or-brand",

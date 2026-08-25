@@ -50,7 +50,7 @@ function usage() {
 Options:
   --country <cc>          Limit the report to one country.
   --area <area>           Limit the report to one area (requires --country).
-  --target-locale <code>  Limit the report to one presentation locale (en/es/ca/de/ja).
+  --target-locale <code>  Limit the report to one presentation locale (en/es/ca/de/ja/fr/it/nl/pt).
   --output <path>         Write deterministic JSON; no catalog file is changed.
   --root <csv-root>       Override data/csv (primarily for isolated tests).
   --glossary <path>       Override the versioned glossary.

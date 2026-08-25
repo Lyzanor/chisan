@@ -121,6 +121,6 @@ test("the catalog root derives document language only from the async URL scope",
     assert.equal(parseCatalogScope(segment, countries)?.htmlLang, expectedHtmlLang);
   }
 
-  assert.equal(parseCatalogScope("fr-es", countries), null);
+  assert.equal(parseCatalogScope("xx-es", countries), null);
   assert.equal(parseCatalogScope("es-zz", countries), null);
 });

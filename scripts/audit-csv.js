@@ -74,14 +74,20 @@ const COUNTRY_GUIDE_HEADINGS = ["## Operating state", "## Country rules", "## So
 // activate routes and manifest requirements; source-only locales can describe
 // canonical prose without doing so. The audit is plain Node.js so it keeps an
 // explicit mirror instead of requiring a TypeScript runtime.
-const SUPPORTED_LOCALES = new Set(["en", "es", "ca", "de", "ja"]);
-const SUPPORTED_LOCALE_DISPLAY = [...SUPPORTED_LOCALES].join(", ");
-const DESCRIPTION_SOURCE_LOCALES = new Set([
-  ...SUPPORTED_LOCALES,
+const SUPPORTED_LOCALES = new Set([
+  "en",
+  "es",
+  "ca",
+  "de",
+  "ja",
   "fr",
   "it",
   "nl",
   "pt",
+]);
+const SUPPORTED_LOCALE_DISPLAY = [...SUPPORTED_LOCALES].join(", ");
+const DESCRIPTION_SOURCE_LOCALES = new Set([
+  ...SUPPORTED_LOCALES,
   "gl",
   "eu",
 ]);

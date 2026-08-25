@@ -228,7 +228,9 @@ test("script and runtime locale registries keep source languages separate from t
   assert.deepEqual(SUPPORTED_TRANSLATION_TARGET_LOCALES, SUPPORTED_LOCALES);
   assert.deepEqual(SUPPORTED_DESCRIPTION_SOURCE_LOCALES, DESCRIPTION_SOURCE_LOCALES);
   assert.equal(SUPPORTED_DESCRIPTION_SOURCE_LOCALES.includes("fr"), true);
-  assert.equal(new Set<string>(SUPPORTED_TRANSLATION_TARGET_LOCALES).has("fr"), false);
+  assert.equal(new Set<string>(SUPPORTED_TRANSLATION_TARGET_LOCALES).has("fr"), true);
+  assert.equal(SUPPORTED_DESCRIPTION_SOURCE_LOCALES.includes("gl"), true);
+  assert.equal(new Set<string>(SUPPORTED_TRANSLATION_TARGET_LOCALES).has("gl"), false);
 });
 
 test("spreadsheet carriage-return escapes are prompt formatting, not source identity", async (context) => {
@@ -630,13 +632,13 @@ test("runtime parses the dedicated sidecar schema and never mixes canonical pros
 });
 
 test("source-only locales resolve through sidecars without becoming translation targets", (context) => {
-  const source = "Produit du miel sur son exploitation.";
+  const source = "Produce mel na súa explotación.";
   const parsed = parseDescriptionTranslations(
     [
       sidecarRow({
         producerId: "7",
         source,
-        sourceLocale: "fr",
+        sourceLocale: "gl",
         text: "Produeix mel a la seva explotació.",
       }),
     ],
@@ -654,7 +656,7 @@ test("source-only locales resolve through sidecars without becoming translation 
     imageSrc: "",
     latitude: null,
     longitude: null,
-    fields: { descripcion: source, descripcion_locale: "fr" },
+    fields: { descripcion: source, descripcion_locale: "gl" },
   };
 
   assert.equal(
@@ -664,22 +666,22 @@ test("source-only locales resolve through sidecars without becoming translation 
   assert.equal(localizeProducerDescriptions([row], "es", [])[0].fields.descripcion, "");
 
   const target = fixture(context);
-  writeArea(target, [{ producerId: "1", text: source, locale: "fr" }]);
+  writeArea(target, [{ producerId: "1", text: source, locale: "gl" }]);
   writeSidecar(target, [
     sidecarRow({
       producerId: "1",
       source,
-      sourceLocale: "fr",
+      sourceLocale: "gl",
       text: "Produeix mel a la seva explotació.",
     }),
   ]);
   assert.deepEqual(audit(target).errors, []);
 
   fs.rmSync(target.sidecarPath);
-  target.sidecarPath = path.join(target.csvRoot, target.country, "translations.fr.csv");
+  target.sidecarPath = path.join(target.csvRoot, target.country, "translations.gl.csv");
   writeSidecar(target, []);
   const result = audit(target);
-  assert.ok(result.errors.some((error) => error.includes("unsupported target locale 'fr'")));
+  assert.ok(result.errors.some((error) => error.includes("unsupported target locale 'gl'")));
 });
 
 test("legacy manifest fallback does not create a translation publication obligation", (context) => {
@@ -885,7 +887,7 @@ test("checker enforces the exact dedicated header and path classification", (con
   );
 });
 
-test("the checked-in engine registry records the reviewed Sol v10 context", () => {
+test("the checked-in engine registry contains only production-approved contexts", () => {
   const registry = readTranslationEngineRegistry(
     path.resolve(process.cwd(), "data/reference/translation-engines.json"),
   );
@@ -1111,10 +1113,20 @@ test("readiness covers every presentation locale, including canonical English an
     specPath: path.resolve(process.cwd(), "data/reference/translation-benchmark.json"),
   });
 
-  assert.deepEqual(report.presentation_locales, ["en", "es", "ca", "de", "ja"]);
+  assert.deepEqual(report.presentation_locales, [
+    "en",
+    "es",
+    "ca",
+    "de",
+    "ja",
+    "fr",
+    "it",
+    "nl",
+    "pt",
+  ]);
   assert.deepEqual(
     report.records.map((record) => record.target_locale),
-    ["en", "es", "ca", "de", "ja"],
+    ["en", "es", "ca", "de", "ja", "fr", "it", "nl", "pt"],
   );
   const english = report.records.find((record) => record.target_locale === "en");
   const spanish = report.records.find((record) => record.target_locale === "es");
@@ -1126,7 +1138,7 @@ test("readiness covers every presentation locale, including canonical English an
   assert.equal(spanish.required_sidecar_rows, 0);
   assert.equal(spanish.translation_ready, true);
   assert.equal(spanish.manifest_published, false);
-  assert.equal(report.summary.records, 5);
+  assert.equal(report.summary.records, 9);
   assert.equal(report.summary.translation_ready, 1);
 });
 
@@ -1711,7 +1723,7 @@ test("benchmark spec requires unique non-empty written number phrases", (context
     "data/reference/translation-benchmark.json",
   );
   const canonical = JSON.parse(fs.readFileSync(canonicalPath, "utf8"));
-  assert.equal(canonical.version, "2026-08-24.3");
+  assert.equal(canonical.version, "2026-08-24.4");
   assert.deepEqual(canonical.writtenNumberOrOrdinalPhrases, [
     "tercera generación",
     "third generation",
@@ -1765,27 +1777,27 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
       country: "us",
       producerName: "山田酒造",
       producerId: "1",
-      sourceLocale: "fr",
+      sourceLocale: "gl",
       text: "山田酒造 elabora matcha de tercera generación amb calçot i façana für Straße.",
     },
     {
       country: "us",
       producerName: "Third Valley Dairy",
       producerId: "62",
-      sourceLocale: "fr",
+      sourceLocale: "gl",
       text: "Third generation family dairy producing cheese.",
     },
     {
       country: "us",
       producerName: "Third Valley Orchard",
       producerId: "63",
-      sourceLocale: "fr",
+      sourceLocale: "gl",
       text: "Third-generation family orchard growing apples.",
     },
     ...Array.from({ length: 60 }, (_, index) => ({
       ...representativeCorpus[index % representativeCorpus.length],
       producerId: String(index + 2),
-      sourceLocale: "fr",
+      sourceLocale: "gl",
       text: `${representativeCorpus[index % representativeCorpus.length].text} Lot ${index + 1}.`,
     })),
   ];
@@ -1794,7 +1806,7 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
   assert.deepEqual(second, first);
   assert.equal(first.review_status, "not_started");
   assert.match(first.plan_hash, /^[a-f0-9]{64}$/);
-  for (const target of ["ca", "de", "ja"]) {
+  for (const target of ["es", "ca", "de", "ja", "fr", "it", "nl", "pt"]) {
     assert.equal(first.targets[target].length, 50);
     assert.equal(new Set(first.targets[target].map((sample) => sample.benchmark_id)).size, 50);
     for (const [stratum, minimum] of Object.entries(first.stratum_requirements)) {
@@ -1845,7 +1857,7 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
   });
   assert.equal(candidates.review_status, "unreviewed");
   assert.equal(candidates.model, "fixture-model");
-  assert.equal(adapter.calls.length, 3);
+  assert.equal(adapter.calls.length, 8);
   assert.equal(
     Object.values(candidates.targets)
       .flat()
@@ -1856,7 +1868,7 @@ test("translation benchmark is deterministic, enforces 50 samples per target and
     candidates.targets.ja.find(({ benchmark_id }) => benchmark_id === ordinalBenchmarkId)?.text ?? "",
     /^ja: /,
   );
-  for (const target of ["ca", "de", "ja"]) {
+  for (const target of ["es", "ca", "de", "ja", "fr", "it", "nl", "pt"]) {
     assert.equal(candidates.targets[target].length, 50);
     assert.ok(candidates.targets[target].every((candidate) => candidate.human_review === null));
   }

@@ -116,12 +116,11 @@ failures are stricter: they abort on the initial response without a repair
 request, produce no sidecar and disqualify that engine from approval for the
 target locale. Unchanged source text is rejected when source and target locales
 differ. Neither rule proves that the result is actually fluent or in the
-requested language. Review all 50 or more stratified samples for each of
-Catalan, German and Japanese, recording factual
-additions/omissions, terminology, fluency and identity preservation. Automated
-validation cannot select the engine. Only after the three language assessments
-approve the same locked engine, prompt and glossary versions may those
-identifiers be used to materialize sidecars.
+requested language. Review all 50 or more stratified samples for every target
+in the benchmark, recording factual additions/omissions, terminology, fluency
+and identity preservation. Automated validation cannot select the engine. Only
+after every target-language assessment approves the same locked engine, prompt
+and glossary versions may those identifiers be used to materialize sidecars.
 
 Location-boundary activation is a separate release decision. When included,
 confirm the source date and redistribution licence, validate the reference

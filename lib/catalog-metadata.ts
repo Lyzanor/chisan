@@ -23,6 +23,10 @@ const OPEN_GRAPH_LOCALE_BY_LOCALE = {
   ca: "ca_ES",
   de: "de_DE",
   ja: "ja_JP",
+  fr: "fr_FR",
+  it: "it_IT",
+  nl: "nl_NL",
+  pt: "pt_PT",
 } as const satisfies Record<Locale, string>;
 
 type CatalogMetadataTargetBase = {

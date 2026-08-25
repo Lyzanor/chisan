@@ -65,15 +65,19 @@ function fixtureRegistry(fixture: string): string {
 test("supported locale tokens expose stable BCP-47 display tags", () => {
   assert.equal(hasLocale("ca"), true);
   assert.equal(hasLocale("CA"), false);
-  assert.equal(hasLocale("fr"), false);
-  assert.equal(hasDescriptionSourceLocale("fr"), true);
-  assert.equal(hasDescriptionSourceLocale("FR"), false);
+  assert.equal(hasLocale("fr"), true);
+  assert.equal(hasDescriptionSourceLocale("gl"), true);
+  assert.equal(hasDescriptionSourceLocale("GL"), false);
   assert.deepEqual(LOCALE_DISPLAY_TAGS, {
     en: "en",
     es: "es",
     ca: "ca",
     de: "de",
     ja: "ja",
+    fr: "fr",
+    it: "it",
+    nl: "nl",
+    pt: "pt-PT",
   });
 });
 
@@ -104,7 +108,7 @@ test("catalog scopes build canonical short and alternate prefixes", () => {
     isDefault: true,
     htmlLang: "es",
   });
-  assert.equal(parseCatalogScope("fr-es", countries), null);
+  assert.equal(parseCatalogScope("gl-es", countries), null);
   assert.equal(parseCatalogScope("en-zz", countries), null);
   assert.equal(buildCatalogScope(countries[1]).pathPrefix, "/jp");
 
@@ -359,6 +363,59 @@ test("Spain keeps Spanish as default while Catalunya publishes three locales", (
   assert.ok(andalucia.areas.every((area) => area.publishedLocales[0] === "es"));
 });
 
+test("new country policies publish their local language and Belgium narrows Dutch and German", () => {
+  const countries = new Map(loadCountries().map((country) => [country.slug, country]));
+
+  for (const [countrySlug, defaultLocale] of [
+    ["ar", "es"],
+    ["it", "it"],
+    ["nl", "nl"],
+    ["mx", "es"],
+    ["pt", "pt"],
+  ] as const) {
+    const country = countries.get(countrySlug);
+    assert.ok(country);
+    assert.equal(country.defaultLocale, defaultLocale);
+    assert.deepEqual(country.publishedLocales, [defaultLocale, "en"]);
+    assert.ok(
+      country.regions.every(
+        (region) =>
+          region.publishedLocales[0] === defaultLocale &&
+          region.areas.every(
+            (area) =>
+              area.publishedLocales[0] === defaultLocale &&
+              area.publishedLocales.includes("en"),
+          ),
+      ),
+    );
+  }
+
+  const belgium = countries.get("be");
+  assert.ok(belgium);
+  assert.equal(belgium.defaultLocale, "fr");
+  assert.deepEqual(belgium.publishedLocales, ["fr", "en"]);
+
+  const flanders = belgium.regions.find(({ slug }) => slug === "vlaanderen");
+  const wallonia = belgium.regions.find(({ slug }) => slug === "wallonie");
+  const brussels = belgium.regions.find(({ slug }) => slug === "bruxelles-capitale");
+  assert.ok(flanders);
+  assert.ok(wallonia);
+  assert.ok(brussels);
+  assert.equal(flanders.preferredLocale, "nl");
+  assert.deepEqual(flanders.publishedLocales, ["nl", "fr", "en"]);
+  assert.ok(flanders.areas.every((area) => area.publishedLocales.includes("nl")));
+  assert.deepEqual(wallonia.publishedLocales, ["fr", "en"]);
+  assert.ok(
+    wallonia.areas
+      .filter(({ slug }) => slug !== "liege")
+      .every((area) => !area.publishedLocales.includes("de")),
+  );
+  const liege = wallonia.areas.find(({ slug }) => slug === "liege");
+  assert.ok(liege);
+  assert.deepEqual(liege.publishedLocales, ["fr", "de", "en"]);
+  assert.deepEqual(brussels.publishedLocales, ["fr", "nl", "en"]);
+});
+
 test("runtime policies inherit country locales and honor Catalunya overrides", (context) => {
   const inheritedRoot = fixtureRegistry("inherited-locales.json");
   const catalunyaRoot = fixtureRegistry("catalunya-overrides.json");
@@ -380,7 +437,17 @@ test("message dictionaries load one locale at a time through a shared schema", a
   const dictionaries = await Promise.all(SUPPORTED_LOCALES.map(loadMessages));
   assert.deepEqual(
     dictionaries.map(({ languageName }) => languageName),
-    ["English", "Español", "Català", "Deutsch", "日本語"],
+    [
+      "English",
+      "Español",
+      "Català",
+      "Deutsch",
+      "日本語",
+      "Français",
+      "Italiano",
+      "Nederlands",
+      "Português",
+    ],
   );
 
   const englishKeys = Object.keys(dictionaries[0]).sort();
@@ -412,7 +479,7 @@ test("message helpers use locale-aware numbers, plurals and word order", async (
   );
 });
 
-test("every category has five labels and a registry-backed icon", () => {
+test("every category has every presentation-locale label and a registry-backed icon", () => {
   const registry = categoriesRegistry as {
     categories: string[];
     labels: Record<string, Record<string, string>>;

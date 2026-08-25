@@ -1,12 +1,43 @@
 {
-  "label": "Mexico",
+  "label": "México",
   "unit": {
-    "one": "federal entity",
-    "many": "federal entities"
+    "one": "entidad federativa",
+    "many": "entidades federativas"
   },
   "regionUnit": {
-    "one": "mesoregion",
-    "many": "mesoregions"
+    "one": "mesorregión",
+    "many": "mesorregiones"
+  },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": [
+      "es",
+      "en"
+    ],
+    "labels": {
+      "es": "México",
+      "en": "Mexico"
+    },
+    "unitLabels": {
+      "es": {
+        "one": "entidad federativa",
+        "many": "entidades federativas"
+      },
+      "en": {
+        "one": "federal entity",
+        "many": "federal entities"
+      }
+    },
+    "regionUnitLabels": {
+      "es": {
+        "one": "mesorregión",
+        "many": "mesorregiones"
+      },
+      "en": {
+        "one": "mesoregion",
+        "many": "mesoregions"
+      }
+    }
   },
   "aliases": {
     "cdmx": "ciudad-de-mexico",
@@ -29,158 +60,306 @@
     {
       "slug": "noroeste",
       "label": "Noroeste",
+      "labels": {
+        "es": "Noroeste",
+        "en": "Northwest"
+      },
       "areas": [
         {
           "slug": "baja-california",
-          "label": "Baja California"
+          "label": "Baja California",
+          "labels": {
+            "es": "Baja California",
+            "en": "Baja California"
+          }
         },
         {
           "slug": "baja-california-sur",
-          "label": "Baja California Sur"
+          "label": "Baja California Sur",
+          "labels": {
+            "es": "Baja California Sur",
+            "en": "Baja California Sur"
+          }
         },
         {
           "slug": "sinaloa",
-          "label": "Sinaloa"
+          "label": "Sinaloa",
+          "labels": {
+            "es": "Sinaloa",
+            "en": "Sinaloa"
+          }
         },
         {
           "slug": "sonora",
-          "label": "Sonora"
+          "label": "Sonora",
+          "labels": {
+            "es": "Sonora",
+            "en": "Sonora"
+          }
         }
       ]
     },
     {
       "slug": "noreste",
       "label": "Noreste",
+      "labels": {
+        "es": "Noreste",
+        "en": "Northeast"
+      },
       "areas": [
         {
           "slug": "chihuahua",
-          "label": "Chihuahua"
+          "label": "Chihuahua",
+          "labels": {
+            "es": "Chihuahua",
+            "en": "Chihuahua"
+          }
         },
         {
           "slug": "coahuila",
-          "label": "Coahuila"
+          "label": "Coahuila",
+          "labels": {
+            "es": "Coahuila",
+            "en": "Coahuila"
+          }
         },
         {
           "slug": "durango",
-          "label": "Durango"
+          "label": "Durango",
+          "labels": {
+            "es": "Durango",
+            "en": "Durango"
+          }
         },
         {
           "slug": "nuevo-leon",
-          "label": "Nuevo León"
+          "label": "Nuevo León",
+          "labels": {
+            "es": "Nuevo León",
+            "en": "Nuevo León"
+          }
         },
         {
           "slug": "tamaulipas",
-          "label": "Tamaulipas"
+          "label": "Tamaulipas",
+          "labels": {
+            "es": "Tamaulipas",
+            "en": "Tamaulipas"
+          }
         }
       ]
     },
     {
       "slug": "centro-occidente",
       "label": "Centro-Occidente",
+      "labels": {
+        "es": "Centro-Occidente",
+        "en": "West-Central"
+      },
       "areas": [
         {
           "slug": "aguascalientes",
-          "label": "Aguascalientes"
+          "label": "Aguascalientes",
+          "labels": {
+            "es": "Aguascalientes",
+            "en": "Aguascalientes"
+          }
         },
         {
           "slug": "colima",
-          "label": "Colima"
+          "label": "Colima",
+          "labels": {
+            "es": "Colima",
+            "en": "Colima"
+          }
         },
         {
           "slug": "guanajuato",
-          "label": "Guanajuato"
+          "label": "Guanajuato",
+          "labels": {
+            "es": "Guanajuato",
+            "en": "Guanajuato"
+          }
         },
         {
           "slug": "jalisco",
-          "label": "Jalisco"
+          "label": "Jalisco",
+          "labels": {
+            "es": "Jalisco",
+            "en": "Jalisco"
+          }
         },
         {
           "slug": "michoacan",
-          "label": "Michoacán"
+          "label": "Michoacán",
+          "labels": {
+            "es": "Michoacán",
+            "en": "Michoacán"
+          }
         },
         {
           "slug": "nayarit",
-          "label": "Nayarit"
+          "label": "Nayarit",
+          "labels": {
+            "es": "Nayarit",
+            "en": "Nayarit"
+          }
         },
         {
           "slug": "queretaro",
-          "label": "Querétaro"
+          "label": "Querétaro",
+          "labels": {
+            "es": "Querétaro",
+            "en": "Querétaro"
+          }
         },
         {
           "slug": "san-luis-potosi",
-          "label": "San Luis Potosí"
+          "label": "San Luis Potosí",
+          "labels": {
+            "es": "San Luis Potosí",
+            "en": "San Luis Potosí"
+          }
         },
         {
           "slug": "zacatecas",
-          "label": "Zacatecas"
+          "label": "Zacatecas",
+          "labels": {
+            "es": "Zacatecas",
+            "en": "Zacatecas"
+          }
         }
       ]
     },
     {
       "slug": "centro",
       "label": "Centro",
+      "labels": {
+        "es": "Centro",
+        "en": "Central"
+      },
       "areas": [
         {
           "slug": "ciudad-de-mexico",
-          "label": "Ciudad de México"
+          "label": "Ciudad de México",
+          "labels": {
+            "es": "Ciudad de México",
+            "en": "Mexico City"
+          }
         },
         {
           "slug": "estado-de-mexico",
-          "label": "Estado de México"
+          "label": "Estado de México",
+          "labels": {
+            "es": "Estado de México",
+            "en": "State of Mexico"
+          }
         },
         {
           "slug": "hidalgo",
-          "label": "Hidalgo"
+          "label": "Hidalgo",
+          "labels": {
+            "es": "Hidalgo",
+            "en": "Hidalgo"
+          }
         },
         {
           "slug": "morelos",
-          "label": "Morelos"
+          "label": "Morelos",
+          "labels": {
+            "es": "Morelos",
+            "en": "Morelos"
+          }
         },
         {
           "slug": "tlaxcala",
-          "label": "Tlaxcala"
+          "label": "Tlaxcala",
+          "labels": {
+            "es": "Tlaxcala",
+            "en": "Tlaxcala"
+          }
         }
       ]
     },
     {
       "slug": "sur-sureste",
       "label": "Sur-Sureste",
+      "labels": {
+        "es": "Sur-Sureste",
+        "en": "South-Southeast"
+      },
       "areas": [
         {
           "slug": "campeche",
-          "label": "Campeche"
+          "label": "Campeche",
+          "labels": {
+            "es": "Campeche",
+            "en": "Campeche"
+          }
         },
         {
           "slug": "chiapas",
-          "label": "Chiapas"
+          "label": "Chiapas",
+          "labels": {
+            "es": "Chiapas",
+            "en": "Chiapas"
+          }
         },
         {
           "slug": "guerrero",
-          "label": "Guerrero"
+          "label": "Guerrero",
+          "labels": {
+            "es": "Guerrero",
+            "en": "Guerrero"
+          }
         },
         {
           "slug": "oaxaca",
-          "label": "Oaxaca"
+          "label": "Oaxaca",
+          "labels": {
+            "es": "Oaxaca",
+            "en": "Oaxaca"
+          }
         },
         {
           "slug": "puebla",
-          "label": "Puebla"
+          "label": "Puebla",
+          "labels": {
+            "es": "Puebla",
+            "en": "Puebla"
+          }
         },
         {
           "slug": "quintana-roo",
-          "label": "Quintana Roo"
+          "label": "Quintana Roo",
+          "labels": {
+            "es": "Quintana Roo",
+            "en": "Quintana Roo"
+          }
         },
         {
           "slug": "tabasco",
-          "label": "Tabasco"
+          "label": "Tabasco",
+          "labels": {
+            "es": "Tabasco",
+            "en": "Tabasco"
+          }
         },
         {
           "slug": "veracruz",
-          "label": "Veracruz"
+          "label": "Veracruz",
+          "labels": {
+            "es": "Veracruz",
+            "en": "Veracruz"
+          }
         },
         {
           "slug": "yucatan",
-          "label": "Yucatán"
+          "label": "Yucatán",
+          "labels": {
+            "es": "Yucatán",
+            "en": "Yucatán"
+          }
         }
       ]
     }

@@ -7,6 +7,7 @@ import path from "node:path";
 
 import csvAudit from "./audit-csv.js";
 import { auditEvidence } from "./check-evidence.mjs";
+import { isEvidenceAreaCsvPath } from "./check-evidence-changed.mjs";
 
 const { CANONICAL_HEADER } = csvAudit;
 const FORWARD_COMPATIBILITY_COLUMN = "future optional field";
@@ -124,6 +125,19 @@ function createFixture() {
 }
 
 function main() {
+  assert.equal(
+    isEvidenceAreaCsvPath("data/csv/es/catalunya/barcelona.csv"),
+    true,
+  );
+  assert.equal(
+    isEvidenceAreaCsvPath("data/csv/es/translations.en.csv"),
+    false,
+  );
+  assert.equal(
+    isEvidenceAreaCsvPath("data/csv/es/country.csv"),
+    false,
+  );
+
   const fixture = createFixture();
   const expectError = (records, fragment) => {
     writeLedger(fixture.ledgerPath, records);

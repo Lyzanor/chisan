@@ -1,12 +1,43 @@
 {
   "label": "Argentina",
   "unit": {
-    "one": "province",
-    "many": "provinces"
+    "one": "provincia",
+    "many": "provincias"
   },
   "regionUnit": {
-    "one": "region",
-    "many": "regions"
+    "one": "región",
+    "many": "regiones"
+  },
+  "i18n": {
+    "defaultLocale": "es",
+    "publishedLocales": [
+      "es",
+      "en"
+    ],
+    "labels": {
+      "es": "Argentina",
+      "en": "Argentina"
+    },
+    "unitLabels": {
+      "es": {
+        "one": "provincia",
+        "many": "provincias"
+      },
+      "en": {
+        "one": "province",
+        "many": "provinces"
+      }
+    },
+    "regionUnitLabels": {
+      "es": {
+        "one": "región",
+        "many": "regiones"
+      },
+      "en": {
+        "one": "region",
+        "many": "regions"
+      }
+    }
   },
   "aliases": {
     "caba": "ciudad-de-buenos-aires",
@@ -27,132 +58,252 @@
     {
       "slug": "noroeste",
       "label": "Noroeste",
+      "labels": {
+        "es": "Noroeste",
+        "en": "Northwest"
+      },
       "areas": [
         {
           "slug": "catamarca",
-          "label": "Catamarca"
+          "label": "Catamarca",
+          "labels": {
+            "es": "Catamarca",
+            "en": "Catamarca"
+          }
         },
         {
           "slug": "jujuy",
-          "label": "Jujuy"
+          "label": "Jujuy",
+          "labels": {
+            "es": "Jujuy",
+            "en": "Jujuy"
+          }
         },
         {
           "slug": "la-rioja-argentina",
-          "label": "La Rioja"
+          "label": "La Rioja",
+          "labels": {
+            "es": "La Rioja",
+            "en": "La Rioja"
+          }
         },
         {
           "slug": "salta",
-          "label": "Salta"
+          "label": "Salta",
+          "labels": {
+            "es": "Salta",
+            "en": "Salta"
+          }
         },
         {
           "slug": "santiago-del-estero",
-          "label": "Santiago del Estero"
+          "label": "Santiago del Estero",
+          "labels": {
+            "es": "Santiago del Estero",
+            "en": "Santiago del Estero"
+          }
         },
         {
           "slug": "tucuman",
-          "label": "Tucumán"
+          "label": "Tucumán",
+          "labels": {
+            "es": "Tucumán",
+            "en": "Tucumán"
+          }
         }
       ]
     },
     {
       "slug": "nordeste",
       "label": "Nordeste",
+      "labels": {
+        "es": "Nordeste",
+        "en": "Northeast"
+      },
       "areas": [
         {
           "slug": "chaco",
-          "label": "Chaco"
+          "label": "Chaco",
+          "labels": {
+            "es": "Chaco",
+            "en": "Chaco"
+          }
         },
         {
           "slug": "corrientes",
-          "label": "Corrientes"
+          "label": "Corrientes",
+          "labels": {
+            "es": "Corrientes",
+            "en": "Corrientes"
+          }
         },
         {
           "slug": "formosa",
-          "label": "Formosa"
+          "label": "Formosa",
+          "labels": {
+            "es": "Formosa",
+            "en": "Formosa"
+          }
         },
         {
           "slug": "misiones",
-          "label": "Misiones"
+          "label": "Misiones",
+          "labels": {
+            "es": "Misiones",
+            "en": "Misiones"
+          }
         }
       ]
     },
     {
       "slug": "cuyo",
       "label": "Cuyo",
+      "labels": {
+        "es": "Cuyo",
+        "en": "Cuyo"
+      },
       "areas": [
         {
           "slug": "mendoza",
-          "label": "Mendoza"
+          "label": "Mendoza",
+          "labels": {
+            "es": "Mendoza",
+            "en": "Mendoza"
+          }
         },
         {
           "slug": "san-juan",
-          "label": "San Juan"
+          "label": "San Juan",
+          "labels": {
+            "es": "San Juan",
+            "en": "San Juan"
+          }
         },
         {
           "slug": "san-luis",
-          "label": "San Luis"
+          "label": "San Luis",
+          "labels": {
+            "es": "San Luis",
+            "en": "San Luis"
+          }
         }
       ]
     },
     {
       "slug": "pampeana",
       "label": "Pampeana",
+      "labels": {
+        "es": "Pampeana",
+        "en": "Pampas"
+      },
       "areas": [
         {
           "slug": "buenos-aires",
-          "label": "Buenos Aires"
+          "label": "Buenos Aires",
+          "labels": {
+            "es": "Buenos Aires",
+            "en": "Buenos Aires"
+          }
         },
         {
           "slug": "cordoba-argentina",
-          "label": "Córdoba"
+          "label": "Córdoba",
+          "labels": {
+            "es": "Córdoba",
+            "en": "Córdoba"
+          }
         },
         {
           "slug": "entre-rios",
-          "label": "Entre Ríos"
+          "label": "Entre Ríos",
+          "labels": {
+            "es": "Entre Ríos",
+            "en": "Entre Ríos"
+          }
         },
         {
           "slug": "la-pampa",
-          "label": "La Pampa"
+          "label": "La Pampa",
+          "labels": {
+            "es": "La Pampa",
+            "en": "La Pampa"
+          }
         },
         {
           "slug": "santa-fe",
-          "label": "Santa Fe"
+          "label": "Santa Fe",
+          "labels": {
+            "es": "Santa Fe",
+            "en": "Santa Fe"
+          }
         }
       ]
     },
     {
       "slug": "metropolitana",
       "label": "Metropolitana",
+      "labels": {
+        "es": "Metropolitana",
+        "en": "Metropolitan"
+      },
       "areas": [
         {
           "slug": "ciudad-de-buenos-aires",
-          "label": "Ciudad Autónoma de Buenos Aires"
+          "label": "Ciudad Autónoma de Buenos Aires",
+          "labels": {
+            "es": "Ciudad Autónoma de Buenos Aires",
+            "en": "Autonomous City of Buenos Aires"
+          }
         }
       ]
     },
     {
       "slug": "patagonia",
       "label": "Patagonia",
+      "labels": {
+        "es": "Patagonia",
+        "en": "Patagonia"
+      },
       "areas": [
         {
           "slug": "chubut",
-          "label": "Chubut"
+          "label": "Chubut",
+          "labels": {
+            "es": "Chubut",
+            "en": "Chubut"
+          }
         },
         {
           "slug": "neuquen",
-          "label": "Neuquén"
+          "label": "Neuquén",
+          "labels": {
+            "es": "Neuquén",
+            "en": "Neuquén"
+          }
         },
         {
           "slug": "rio-negro",
-          "label": "Río Negro"
+          "label": "Río Negro",
+          "labels": {
+            "es": "Río Negro",
+            "en": "Río Negro"
+          }
         },
         {
           "slug": "santa-cruz",
-          "label": "Santa Cruz"
+          "label": "Santa Cruz",
+          "labels": {
+            "es": "Santa Cruz",
+            "en": "Santa Cruz"
+          }
         },
         {
           "slug": "tierra-del-fuego",
-          "label": "Tierra del Fuego"
+          "label": "Tierra del Fuego",
+          "labels": {
+            "es": "Tierra del Fuego",
+            "en": "Tierra del Fuego"
+          }
         }
       ]
     }

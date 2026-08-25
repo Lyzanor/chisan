@@ -91,10 +91,10 @@ The localized manifest schema is:
 policy. Their routing rules are defined under **Producer identity** below.
 
 Presentation locales are the exact codes in the maintained presentation
-registry: `en`, `es`, `ca`, `de` and `ja` today. A code accepted only by the
-description-source registry is not valid in manifest locale policy. Country
-codes, browser language, source prose or territorial geometry never infer a
-default or publish a locale.
+registry: `en`, `es`, `ca`, `de`, `ja`, `fr`, `it`, `nl` and `pt` today. A code
+accepted only by the description-source registry is not valid in manifest
+locale policy. Country codes, browser language, source prose or territorial
+geometry never infer a default or publish a locale.
 
 Locale policy resolves from country to region to area:
 
@@ -268,7 +268,8 @@ producer_id,field,source_locale,source_hash,text,origin,engine,engine_version,pr
 The sidecar rules are:
 
 - `<target-locale>` is a supported presentation-locale code (`en`, `es`, `ca`,
-  `de` or `ja` today) and is the target language of every `text` in that file.
+  `de`, `ja`, `fr`, `it`, `nl` or `pt` today) and is the target language of
+  every `text` in that file.
   It is not stored as a duplicate column. A supported sidecar may be prepared
   before its target locale is published in a manifest. A source-only locale is
   not a valid sidecar filename until it separately enters the presentation
@@ -401,13 +402,19 @@ locale-to-`hreflang` mappings are explicit rather than copied from URL tokens:
 | Locale | `hreflang` |
 |---|---|
 | `en` | `en` |
-| `es` | `es-ES` |
+| `es` | `es` |
 | `ca` | `ca-ES` |
-| `de` | `de-DE` |
+| `de` | `de` |
 | `ja` | `ja-JP` |
+| `fr` | `fr` |
+| `it` | `it-IT` |
+| `nl` | `nl` |
+| `pt` | `pt-PT` |
 
-Generic English is intentional because the English variants are not tied to
-one English-speaking territory. The global `/` country-and-area selector is
+Generic English, Spanish, German, French and Dutch are intentional because
+those presentation locales span more than one catalog territory. Italian and
+European Portuguese retain territorial tags for their current single-country
+activation. The global `/` country-and-area selector is
 the only `x-default` URL. Area and producer pages do not invent an `x-default`;
 English, when published, is an ordinary explicit alternate.
 

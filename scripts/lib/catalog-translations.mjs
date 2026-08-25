@@ -11,16 +11,16 @@ export const SUPPORTED_TRANSLATION_TARGET_LOCALES = Object.freeze([
   "ca",
   "de",
   "ja",
+  "fr",
+  "it",
+  "nl",
+  "pt",
 ]);
 export const SUPPORTED_TRANSLATION_TARGET_LOCALE_SET = new Set(
   SUPPORTED_TRANSLATION_TARGET_LOCALES,
 );
 export const SUPPORTED_DESCRIPTION_SOURCE_LOCALES = Object.freeze([
   ...SUPPORTED_TRANSLATION_TARGET_LOCALES,
-  "fr",
-  "it",
-  "nl",
-  "pt",
   "gl",
   "eu",
 ]);

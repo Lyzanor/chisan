@@ -24,7 +24,7 @@ import {
 
 const SPAIN = { slug: "es", defaultLocale: "es" as const };
 
-test("catalog metadata alternates are reciprocal, territorial and self-canonical", () => {
+test("catalog metadata alternates are reciprocal, explicit and self-canonical", () => {
   const target = {
     kind: "producer" as const,
     country: SPAIN,
@@ -34,7 +34,7 @@ test("catalog metadata alternates are reciprocal, territorial and self-canonical
   };
   const expectedLanguages = {
     "ca-ES": "https://chisan.app/ca-es/barcelona/producer-one",
-    "es-ES": "https://chisan.app/es/barcelona/producer-one",
+    es: "https://chisan.app/es/barcelona/producer-one",
     en: "https://chisan.app/en-es/barcelona/producer-one",
   };
 
@@ -59,7 +59,7 @@ test("incomplete locale routes are excluded instead of being invented", () => {
   };
   const alternates = buildCatalogAlternateSet(target, "es");
 
-  assert.deepEqual(Object.keys(alternates.languages).sort(), ["en", "es-ES"]);
+  assert.deepEqual(Object.keys(alternates.languages).sort(), ["en", "es"]);
   assert.equal(alternates.languages["ca-ES"], undefined);
   assert.throws(
     () => buildCatalogAlternateSet(target, "ca"),

@@ -22,7 +22,10 @@ import { pathToFileURL } from "node:url";
 
 import { parse } from "csv-parse/sync";
 
+import { classifyCatalogCsvPath } from "./lib/catalog-translations.mjs";
+
 const CSV_PREFIX = "data/csv/";
+const CSV_ROOT = CSV_PREFIX.slice(0, -1);
 const EVIDENCE_PREFIX = "data/evidence/";
 const MAX_LINES_PER_FILE = 15;
 
@@ -36,6 +39,10 @@ function git(args) {
   } catch {
     return "";
   }
+}
+
+export function isEvidenceAreaCsvPath(csvPath, csvRoot = CSV_ROOT) {
+  return classifyCatalogCsvPath(csvRoot, csvPath).kind === "area";
 }
 
 function changedCsvFiles() {
@@ -58,7 +65,7 @@ function changedCsvFiles() {
     `${CSV_PREFIX}*.csv`,
   ]);
 
-  return [...files].sort();
+  return [...files].filter((file) => isEvidenceAreaCsvPath(file)).sort();
 }
 
 function headContent(relPath) {

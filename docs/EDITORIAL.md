@@ -210,10 +210,9 @@ new prose, but prefer a precise, supportable description over a weaker text
 written merely to satisfy a language target.
 
 The description-source registry is deliberately broader than Chisan's public
-presentation locales. `fr`, `it`, `nl`, `pt`, `gl` and `eu` may identify
-canonical prose without creating a route, cookie, dictionary, manifest locale,
-sidecar target or `hreflang`. Public activation remains a separate reviewed
-decision.
+presentation locales. `gl` and `eu` may identify canonical prose without
+creating a route, cookie, dictionary, manifest locale, sidecar target or
+`hreflang`. Public activation remains a separate reviewed decision.
 
 The canonical area row remains the factual decision. When a description is
 wrong, incomplete or misleading, correct it there and record its actual source

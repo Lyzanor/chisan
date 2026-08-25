@@ -1,4 +1,14 @@
-export const SUPPORTED_LOCALES = ["en", "es", "ca", "de", "ja"] as const;
+export const SUPPORTED_LOCALES = [
+  "en",
+  "es",
+  "ca",
+  "de",
+  "ja",
+  "fr",
+  "it",
+  "nl",
+  "pt",
+] as const;
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
@@ -27,25 +37,33 @@ export type DescriptionSourceLocale = (typeof DESCRIPTION_SOURCE_LOCALES)[number
 export const LEGACY_DEFAULT_LOCALE: Locale = "en";
 
 // Keep the public locale token separate from the BCP-47 tag used by HTML and
-// Intl APIs. They are deliberately identical today, but the distinction lets a
-// future locale use a more specific display tag without changing its URL token.
+// Intl APIs. A locale may use a more specific display tag without changing its
+// compact URL token.
 export const LOCALE_DISPLAY_TAGS = {
   en: "en",
   es: "es",
   ca: "ca",
   de: "de",
   ja: "ja",
+  fr: "fr",
+  it: "it",
+  nl: "nl",
+  pt: "pt-PT",
 } as const satisfies Record<Locale, string>;
 
-// Public locale tokens stay compact, while hreflang identifies territorial
-// local variants explicitly. Keep this one registry shared by HTML metadata,
-// sitemap alternates and ordinary navigation links.
+// Public locale tokens stay compact, while hreflang explicitly identifies
+// either a generic cross-territory language or a territorial variant. Keep
+// this registry shared by HTML metadata, sitemap alternates and navigation.
 export const CATALOG_HREFLANG_BY_LOCALE = {
   en: "en",
-  es: "es-ES",
+  es: "es",
   ca: "ca-ES",
-  de: "de-DE",
+  de: "de",
   ja: "ja-JP",
+  fr: "fr",
+  it: "it-IT",
+  nl: "nl",
+  pt: "pt-PT",
 } as const satisfies Record<Locale, string>;
 
 const LOCALE_SET: ReadonlySet<string> = new Set(SUPPORTED_LOCALES);

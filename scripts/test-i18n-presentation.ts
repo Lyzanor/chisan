@@ -43,6 +43,24 @@ test("account presentation messages cover both account action surfaces in every 
       "フランス語", "イタリア語", "オランダ語", "ポルトガル語",
       "ガリシア語", "バスク語",
     ],
+    fr: [
+      "Anglais", "Espagnol", "Catalan", "Allemand", "Japonais",
+      "Français", "Italien", "Néerlandais", "Portugais", "Galicien",
+      "Basque",
+    ],
+    it: [
+      "Inglese", "Spagnolo", "Catalano", "Tedesco", "Giapponese",
+      "Francese", "Italiano", "Olandese", "Portoghese", "Galiziano",
+      "Basco",
+    ],
+    nl: [
+      "Engels", "Spaans", "Catalaans", "Duits", "Japans", "Frans",
+      "Italiaans", "Nederlands", "Portugees", "Galicisch", "Baskisch",
+    ],
+    pt: [
+      "Inglês", "Espanhol", "Catalão", "Alemão", "Japonês", "Francês",
+      "Italiano", "Neerlandês", "Português", "Galego", "Basco",
+    ],
   } as const;
   const expectedTaglines = [
     "Local food, unified",
@@ -50,6 +68,10 @@ test("account presentation messages cover both account action surfaces in every 
     "Alimentació local, unificada",
     "Lokale Lebensmittel, vereint",
     "地域の食を、ひとつに",
+    "L’alimentation locale, réunie",
+    "Cibo locale, insieme",
+    "Lokaal eten, verbonden",
+    "Comida local, num só lugar",
   ] as const;
 
   for (const [index, messages] of dictionaries.entries()) {

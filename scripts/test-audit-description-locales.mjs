@@ -101,7 +101,7 @@ test("source-locale audit is deterministic and emits candidates without decision
   assert.equal(fs.readFileSync(filePath, "utf8"), before);
 });
 
-test("unrestricted detection recognizes source-only languages without activating UI locales", (context) => {
+test("unrestricted detection recognizes source languages without inferring UI activation", (context) => {
   const root = fixtureRoot(context);
   writeArea(root, "barcelona", [
     row(

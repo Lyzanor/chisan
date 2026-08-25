@@ -39,9 +39,17 @@
       "areas": [
         {
           "slug": "aosta",
-          "label": "Aosta"
+          "label": "Aosta",
+          "labels": {
+            "it": "Aosta",
+            "en": "Aosta"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Valle d'Aosta",
+        "en": "Aosta Valley"
+      }
     },
     {
       "slug": "piemonte",
@@ -49,37 +57,73 @@
       "areas": [
         {
           "slug": "torino",
-          "label": "Torino"
+          "label": "Torino",
+          "labels": {
+            "it": "Torino",
+            "en": "Turin"
+          }
         },
         {
           "slug": "vercelli",
-          "label": "Vercelli"
+          "label": "Vercelli",
+          "labels": {
+            "it": "Vercelli",
+            "en": "Vercelli"
+          }
         },
         {
           "slug": "biella",
-          "label": "Biella"
+          "label": "Biella",
+          "labels": {
+            "it": "Biella",
+            "en": "Biella"
+          }
         },
         {
           "slug": "verbano-cusio-ossola",
-          "label": "Verbano-Cusio-Ossola"
+          "label": "Verbano-Cusio-Ossola",
+          "labels": {
+            "it": "Verbano-Cusio-Ossola",
+            "en": "Verbano-Cusio-Ossola"
+          }
         },
         {
           "slug": "novara",
-          "label": "Novara"
+          "label": "Novara",
+          "labels": {
+            "it": "Novara",
+            "en": "Novara"
+          }
         },
         {
           "slug": "cuneo",
-          "label": "Cuneo"
+          "label": "Cuneo",
+          "labels": {
+            "it": "Cuneo",
+            "en": "Cuneo"
+          }
         },
         {
           "slug": "asti",
-          "label": "Asti"
+          "label": "Asti",
+          "labels": {
+            "it": "Asti",
+            "en": "Asti"
+          }
         },
         {
           "slug": "alessandria",
-          "label": "Alessandria"
+          "label": "Alessandria",
+          "labels": {
+            "it": "Alessandria",
+            "en": "Alessandria"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Piemonte",
+        "en": "Piedmont"
+      }
     },
     {
       "slug": "liguria",
@@ -87,21 +131,41 @@
       "areas": [
         {
           "slug": "imperia",
-          "label": "Imperia"
+          "label": "Imperia",
+          "labels": {
+            "it": "Imperia",
+            "en": "Imperia"
+          }
         },
         {
           "slug": "savona",
-          "label": "Savona"
+          "label": "Savona",
+          "labels": {
+            "it": "Savona",
+            "en": "Savona"
+          }
         },
         {
           "slug": "genova",
-          "label": "Genova"
+          "label": "Genova",
+          "labels": {
+            "it": "Genova",
+            "en": "Genoa"
+          }
         },
         {
           "slug": "la-spezia",
-          "label": "La Spezia"
+          "label": "La Spezia",
+          "labels": {
+            "it": "La Spezia",
+            "en": "La Spezia"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Liguria",
+        "en": "Liguria"
+      }
     },
     {
       "slug": "lombardia",
@@ -109,53 +173,105 @@
       "areas": [
         {
           "slug": "varese",
-          "label": "Varese"
+          "label": "Varese",
+          "labels": {
+            "it": "Varese",
+            "en": "Varese"
+          }
         },
         {
           "slug": "como",
-          "label": "Como"
+          "label": "Como",
+          "labels": {
+            "it": "Como",
+            "en": "Como"
+          }
         },
         {
           "slug": "lecco",
-          "label": "Lecco"
+          "label": "Lecco",
+          "labels": {
+            "it": "Lecco",
+            "en": "Lecco"
+          }
         },
         {
           "slug": "sondrio",
-          "label": "Sondrio"
+          "label": "Sondrio",
+          "labels": {
+            "it": "Sondrio",
+            "en": "Sondrio"
+          }
         },
         {
           "slug": "milano",
-          "label": "Milano"
+          "label": "Milano",
+          "labels": {
+            "it": "Milano",
+            "en": "Milan"
+          }
         },
         {
           "slug": "monza-e-brianza",
-          "label": "Monza e Brianza"
+          "label": "Monza e Brianza",
+          "labels": {
+            "it": "Monza e Brianza",
+            "en": "Monza and Brianza"
+          }
         },
         {
           "slug": "bergamo",
-          "label": "Bergamo"
+          "label": "Bergamo",
+          "labels": {
+            "it": "Bergamo",
+            "en": "Bergamo"
+          }
         },
         {
           "slug": "brescia",
-          "label": "Brescia"
+          "label": "Brescia",
+          "labels": {
+            "it": "Brescia",
+            "en": "Brescia"
+          }
         },
         {
           "slug": "pavia",
-          "label": "Pavia"
+          "label": "Pavia",
+          "labels": {
+            "it": "Pavia",
+            "en": "Pavia"
+          }
         },
         {
           "slug": "lodi",
-          "label": "Lodi"
+          "label": "Lodi",
+          "labels": {
+            "it": "Lodi",
+            "en": "Lodi"
+          }
         },
         {
           "slug": "cremona",
-          "label": "Cremona"
+          "label": "Cremona",
+          "labels": {
+            "it": "Cremona",
+            "en": "Cremona"
+          }
         },
         {
           "slug": "mantova",
-          "label": "Mantova"
+          "label": "Mantova",
+          "labels": {
+            "it": "Mantova",
+            "en": "Mantova"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Lombardia",
+        "en": "Lombardy"
+      }
     },
     {
       "slug": "trentino-alto-adige",
@@ -163,13 +279,25 @@
       "areas": [
         {
           "slug": "bolzano",
-          "label": "Bolzano"
+          "label": "Bolzano",
+          "labels": {
+            "it": "Bolzano",
+            "en": "Bolzano"
+          }
         },
         {
           "slug": "trento",
-          "label": "Trento"
+          "label": "Trento",
+          "labels": {
+            "it": "Trento",
+            "en": "Trento"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Trentino-Alto Adige",
+        "en": "Trentino-Alto Adige"
+      }
     },
     {
       "slug": "veneto",
@@ -177,33 +305,65 @@
       "areas": [
         {
           "slug": "verona",
-          "label": "Verona"
+          "label": "Verona",
+          "labels": {
+            "it": "Verona",
+            "en": "Verona"
+          }
         },
         {
           "slug": "vicenza",
-          "label": "Vicenza"
+          "label": "Vicenza",
+          "labels": {
+            "it": "Vicenza",
+            "en": "Vicenza"
+          }
         },
         {
           "slug": "belluno",
-          "label": "Belluno"
+          "label": "Belluno",
+          "labels": {
+            "it": "Belluno",
+            "en": "Belluno"
+          }
         },
         {
           "slug": "treviso",
-          "label": "Treviso"
+          "label": "Treviso",
+          "labels": {
+            "it": "Treviso",
+            "en": "Treviso"
+          }
         },
         {
           "slug": "venezia",
-          "label": "Venezia"
+          "label": "Venezia",
+          "labels": {
+            "it": "Venezia",
+            "en": "Venice"
+          }
         },
         {
           "slug": "padova",
-          "label": "Padova"
+          "label": "Padova",
+          "labels": {
+            "it": "Padova",
+            "en": "Padua"
+          }
         },
         {
           "slug": "rovigo",
-          "label": "Rovigo"
+          "label": "Rovigo",
+          "labels": {
+            "it": "Rovigo",
+            "en": "Rovigo"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Veneto",
+        "en": "Veneto"
+      }
     },
     {
       "slug": "friuli-venezia-giulia",
@@ -211,21 +371,41 @@
       "areas": [
         {
           "slug": "pordenone",
-          "label": "Pordenone"
+          "label": "Pordenone",
+          "labels": {
+            "it": "Pordenone",
+            "en": "Pordenone"
+          }
         },
         {
           "slug": "udine",
-          "label": "Udine"
+          "label": "Udine",
+          "labels": {
+            "it": "Udine",
+            "en": "Udine"
+          }
         },
         {
           "slug": "gorizia",
-          "label": "Gorizia"
+          "label": "Gorizia",
+          "labels": {
+            "it": "Gorizia",
+            "en": "Gorizia"
+          }
         },
         {
           "slug": "trieste",
-          "label": "Trieste"
+          "label": "Trieste",
+          "labels": {
+            "it": "Trieste",
+            "en": "Trieste"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Friuli-Venezia Giulia",
+        "en": "Friuli-Venezia Giulia"
+      }
     },
     {
       "slug": "emilia-romagna",
@@ -233,41 +413,81 @@
       "areas": [
         {
           "slug": "piacenza",
-          "label": "Piacenza"
+          "label": "Piacenza",
+          "labels": {
+            "it": "Piacenza",
+            "en": "Piacenza"
+          }
         },
         {
           "slug": "parma",
-          "label": "Parma"
+          "label": "Parma",
+          "labels": {
+            "it": "Parma",
+            "en": "Parma"
+          }
         },
         {
           "slug": "reggio-emilia",
-          "label": "Reggio Emilia"
+          "label": "Reggio Emilia",
+          "labels": {
+            "it": "Reggio Emilia",
+            "en": "Reggio Emilia"
+          }
         },
         {
           "slug": "modena",
-          "label": "Modena"
+          "label": "Modena",
+          "labels": {
+            "it": "Modena",
+            "en": "Modena"
+          }
         },
         {
           "slug": "bologna",
-          "label": "Bologna"
+          "label": "Bologna",
+          "labels": {
+            "it": "Bologna",
+            "en": "Bologna"
+          }
         },
         {
           "slug": "ferrara",
-          "label": "Ferrara"
+          "label": "Ferrara",
+          "labels": {
+            "it": "Ferrara",
+            "en": "Ferrara"
+          }
         },
         {
           "slug": "ravenna",
-          "label": "Ravenna"
+          "label": "Ravenna",
+          "labels": {
+            "it": "Ravenna",
+            "en": "Ravenna"
+          }
         },
         {
           "slug": "forli-cesena",
-          "label": "Forlì-Cesena"
+          "label": "Forlì-Cesena",
+          "labels": {
+            "it": "Forlì-Cesena",
+            "en": "Forlì-Cesena"
+          }
         },
         {
           "slug": "rimini",
-          "label": "Rimini"
+          "label": "Rimini",
+          "labels": {
+            "it": "Rimini",
+            "en": "Rimini"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Emilia-Romagna",
+        "en": "Emilia-Romagna"
+      }
     },
     {
       "slug": "toscana",
@@ -275,45 +495,89 @@
       "areas": [
         {
           "slug": "massa-carrara",
-          "label": "Massa-Carrara"
+          "label": "Massa-Carrara",
+          "labels": {
+            "it": "Massa-Carrara",
+            "en": "Massa-Carrara"
+          }
         },
         {
           "slug": "lucca",
-          "label": "Lucca"
+          "label": "Lucca",
+          "labels": {
+            "it": "Lucca",
+            "en": "Lucca"
+          }
         },
         {
           "slug": "pistoia",
-          "label": "Pistoia"
+          "label": "Pistoia",
+          "labels": {
+            "it": "Pistoia",
+            "en": "Pistoia"
+          }
         },
         {
           "slug": "firenze",
-          "label": "Firenze"
+          "label": "Firenze",
+          "labels": {
+            "it": "Firenze",
+            "en": "Florence"
+          }
         },
         {
           "slug": "prato",
-          "label": "Prato"
+          "label": "Prato",
+          "labels": {
+            "it": "Prato",
+            "en": "Prato"
+          }
         },
         {
           "slug": "livorno",
-          "label": "Livorno"
+          "label": "Livorno",
+          "labels": {
+            "it": "Livorno",
+            "en": "Livorno"
+          }
         },
         {
           "slug": "pisa",
-          "label": "Pisa"
+          "label": "Pisa",
+          "labels": {
+            "it": "Pisa",
+            "en": "Pisa"
+          }
         },
         {
           "slug": "arezzo",
-          "label": "Arezzo"
+          "label": "Arezzo",
+          "labels": {
+            "it": "Arezzo",
+            "en": "Arezzo"
+          }
         },
         {
           "slug": "siena",
-          "label": "Siena"
+          "label": "Siena",
+          "labels": {
+            "it": "Siena",
+            "en": "Siena"
+          }
         },
         {
           "slug": "grosseto",
-          "label": "Grosseto"
+          "label": "Grosseto",
+          "labels": {
+            "it": "Grosseto",
+            "en": "Grosseto"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Toscana",
+        "en": "Tuscany"
+      }
     },
     {
       "slug": "umbria",
@@ -321,13 +585,25 @@
       "areas": [
         {
           "slug": "perugia",
-          "label": "Perugia"
+          "label": "Perugia",
+          "labels": {
+            "it": "Perugia",
+            "en": "Perugia"
+          }
         },
         {
           "slug": "terni",
-          "label": "Terni"
+          "label": "Terni",
+          "labels": {
+            "it": "Terni",
+            "en": "Terni"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Umbria",
+        "en": "Umbria"
+      }
     },
     {
       "slug": "marche",
@@ -335,25 +611,49 @@
       "areas": [
         {
           "slug": "pesaro-e-urbino",
-          "label": "Pesaro e Urbino"
+          "label": "Pesaro e Urbino",
+          "labels": {
+            "it": "Pesaro e Urbino",
+            "en": "Pesaro e Urbino"
+          }
         },
         {
           "slug": "ancona",
-          "label": "Ancona"
+          "label": "Ancona",
+          "labels": {
+            "it": "Ancona",
+            "en": "Ancona"
+          }
         },
         {
           "slug": "macerata",
-          "label": "Macerata"
+          "label": "Macerata",
+          "labels": {
+            "it": "Macerata",
+            "en": "Macerata"
+          }
         },
         {
           "slug": "fermo",
-          "label": "Fermo"
+          "label": "Fermo",
+          "labels": {
+            "it": "Fermo",
+            "en": "Fermo"
+          }
         },
         {
           "slug": "ascoli-piceno",
-          "label": "Ascoli Piceno"
+          "label": "Ascoli Piceno",
+          "labels": {
+            "it": "Ascoli Piceno",
+            "en": "Ascoli Piceno"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Marche",
+        "en": "Marche"
+      }
     },
     {
       "slug": "lazio",
@@ -361,25 +661,49 @@
       "areas": [
         {
           "slug": "viterbo",
-          "label": "Viterbo"
+          "label": "Viterbo",
+          "labels": {
+            "it": "Viterbo",
+            "en": "Viterbo"
+          }
         },
         {
           "slug": "rieti",
-          "label": "Rieti"
+          "label": "Rieti",
+          "labels": {
+            "it": "Rieti",
+            "en": "Rieti"
+          }
         },
         {
           "slug": "roma",
-          "label": "Roma"
+          "label": "Roma",
+          "labels": {
+            "it": "Roma",
+            "en": "Roma"
+          }
         },
         {
           "slug": "latina",
-          "label": "Latina"
+          "label": "Latina",
+          "labels": {
+            "it": "Latina",
+            "en": "Latina"
+          }
         },
         {
           "slug": "frosinone",
-          "label": "Frosinone"
+          "label": "Frosinone",
+          "labels": {
+            "it": "Frosinone",
+            "en": "Frosinone"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Lazio",
+        "en": "Lazio"
+      }
     },
     {
       "slug": "abruzzo",
@@ -387,21 +711,41 @@
       "areas": [
         {
           "slug": "l-aquila",
-          "label": "L'Aquila"
+          "label": "L'Aquila",
+          "labels": {
+            "it": "L'Aquila",
+            "en": "L'Aquila"
+          }
         },
         {
           "slug": "teramo",
-          "label": "Teramo"
+          "label": "Teramo",
+          "labels": {
+            "it": "Teramo",
+            "en": "Teramo"
+          }
         },
         {
           "slug": "pescara",
-          "label": "Pescara"
+          "label": "Pescara",
+          "labels": {
+            "it": "Pescara",
+            "en": "Pescara"
+          }
         },
         {
           "slug": "chieti",
-          "label": "Chieti"
+          "label": "Chieti",
+          "labels": {
+            "it": "Chieti",
+            "en": "Chieti"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Abruzzo",
+        "en": "Abruzzo"
+      }
     },
     {
       "slug": "molise",
@@ -409,13 +753,25 @@
       "areas": [
         {
           "slug": "isernia",
-          "label": "Isernia"
+          "label": "Isernia",
+          "labels": {
+            "it": "Isernia",
+            "en": "Isernia"
+          }
         },
         {
           "slug": "campobasso",
-          "label": "Campobasso"
+          "label": "Campobasso",
+          "labels": {
+            "it": "Campobasso",
+            "en": "Campobasso"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Molise",
+        "en": "Molise"
+      }
     },
     {
       "slug": "campania",
@@ -423,25 +779,49 @@
       "areas": [
         {
           "slug": "caserta",
-          "label": "Caserta"
+          "label": "Caserta",
+          "labels": {
+            "it": "Caserta",
+            "en": "Caserta"
+          }
         },
         {
           "slug": "benevento",
-          "label": "Benevento"
+          "label": "Benevento",
+          "labels": {
+            "it": "Benevento",
+            "en": "Benevento"
+          }
         },
         {
           "slug": "napoli",
-          "label": "Napoli"
+          "label": "Napoli",
+          "labels": {
+            "it": "Napoli",
+            "en": "Naples"
+          }
         },
         {
           "slug": "avellino",
-          "label": "Avellino"
+          "label": "Avellino",
+          "labels": {
+            "it": "Avellino",
+            "en": "Avellino"
+          }
         },
         {
           "slug": "salerno",
-          "label": "Salerno"
+          "label": "Salerno",
+          "labels": {
+            "it": "Salerno",
+            "en": "Salerno"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Campania",
+        "en": "Campania"
+      }
     },
     {
       "slug": "puglia",
@@ -449,29 +829,57 @@
       "areas": [
         {
           "slug": "foggia",
-          "label": "Foggia"
+          "label": "Foggia",
+          "labels": {
+            "it": "Foggia",
+            "en": "Foggia"
+          }
         },
         {
           "slug": "barletta-andria-trani",
-          "label": "Barletta-Andria-Trani"
+          "label": "Barletta-Andria-Trani",
+          "labels": {
+            "it": "Barletta-Andria-Trani",
+            "en": "Barletta-Andria-Trani"
+          }
         },
         {
           "slug": "bari",
-          "label": "Bari"
+          "label": "Bari",
+          "labels": {
+            "it": "Bari",
+            "en": "Bari"
+          }
         },
         {
           "slug": "taranto",
-          "label": "Taranto"
+          "label": "Taranto",
+          "labels": {
+            "it": "Taranto",
+            "en": "Taranto"
+          }
         },
         {
           "slug": "brindisi",
-          "label": "Brindisi"
+          "label": "Brindisi",
+          "labels": {
+            "it": "Brindisi",
+            "en": "Brindisi"
+          }
         },
         {
           "slug": "lecce",
-          "label": "Lecce"
+          "label": "Lecce",
+          "labels": {
+            "it": "Lecce",
+            "en": "Lecce"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Puglia",
+        "en": "Apulia"
+      }
     },
     {
       "slug": "basilicata",
@@ -479,13 +887,25 @@
       "areas": [
         {
           "slug": "potenza",
-          "label": "Potenza"
+          "label": "Potenza",
+          "labels": {
+            "it": "Potenza",
+            "en": "Potenza"
+          }
         },
         {
           "slug": "matera",
-          "label": "Matera"
+          "label": "Matera",
+          "labels": {
+            "it": "Matera",
+            "en": "Matera"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Basilicata",
+        "en": "Basilicata"
+      }
     },
     {
       "slug": "calabria",
@@ -493,25 +913,49 @@
       "areas": [
         {
           "slug": "cosenza",
-          "label": "Cosenza"
+          "label": "Cosenza",
+          "labels": {
+            "it": "Cosenza",
+            "en": "Cosenza"
+          }
         },
         {
           "slug": "crotone",
-          "label": "Crotone"
+          "label": "Crotone",
+          "labels": {
+            "it": "Crotone",
+            "en": "Crotone"
+          }
         },
         {
           "slug": "catanzaro",
-          "label": "Catanzaro"
+          "label": "Catanzaro",
+          "labels": {
+            "it": "Catanzaro",
+            "en": "Catanzaro"
+          }
         },
         {
           "slug": "vibo-valentia",
-          "label": "Vibo Valentia"
+          "label": "Vibo Valentia",
+          "labels": {
+            "it": "Vibo Valentia",
+            "en": "Vibo Valentia"
+          }
         },
         {
           "slug": "reggio-calabria",
-          "label": "Reggio Calabria"
+          "label": "Reggio Calabria",
+          "labels": {
+            "it": "Reggio Calabria",
+            "en": "Reggio Calabria"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Calabria",
+        "en": "Calabria"
+      }
     },
     {
       "slug": "sicilia",
@@ -519,41 +963,81 @@
       "areas": [
         {
           "slug": "trapani",
-          "label": "Trapani"
+          "label": "Trapani",
+          "labels": {
+            "it": "Trapani",
+            "en": "Trapani"
+          }
         },
         {
           "slug": "palermo",
-          "label": "Palermo"
+          "label": "Palermo",
+          "labels": {
+            "it": "Palermo",
+            "en": "Palermo"
+          }
         },
         {
           "slug": "messina",
-          "label": "Messina"
+          "label": "Messina",
+          "labels": {
+            "it": "Messina",
+            "en": "Messina"
+          }
         },
         {
           "slug": "agrigento",
-          "label": "Agrigento"
+          "label": "Agrigento",
+          "labels": {
+            "it": "Agrigento",
+            "en": "Agrigento"
+          }
         },
         {
           "slug": "caltanissetta",
-          "label": "Caltanissetta"
+          "label": "Caltanissetta",
+          "labels": {
+            "it": "Caltanissetta",
+            "en": "Caltanissetta"
+          }
         },
         {
           "slug": "enna",
-          "label": "Enna"
+          "label": "Enna",
+          "labels": {
+            "it": "Enna",
+            "en": "Enna"
+          }
         },
         {
           "slug": "catania",
-          "label": "Catania"
+          "label": "Catania",
+          "labels": {
+            "it": "Catania",
+            "en": "Catania"
+          }
         },
         {
           "slug": "ragusa",
-          "label": "Ragusa"
+          "label": "Ragusa",
+          "labels": {
+            "it": "Ragusa",
+            "en": "Ragusa"
+          }
         },
         {
           "slug": "siracusa",
-          "label": "Siracusa"
+          "label": "Siracusa",
+          "labels": {
+            "it": "Siracusa",
+            "en": "Siracusa"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Sicilia",
+        "en": "Sicily"
+      }
     },
     {
       "slug": "sardegna",
@@ -561,37 +1045,104 @@
       "areas": [
         {
           "slug": "sassari",
-          "label": "Sassari"
+          "label": "Sassari",
+          "labels": {
+            "it": "Sassari",
+            "en": "Sassari"
+          }
         },
         {
           "slug": "gallura-nord-est-sardegna",
-          "label": "Gallura Nord-Est Sardegna"
+          "label": "Gallura Nord-Est Sardegna",
+          "labels": {
+            "it": "Gallura Nord-Est Sardegna",
+            "en": "Gallura North-East Sardinia"
+          }
         },
         {
           "slug": "nuoro",
-          "label": "Nuoro"
+          "label": "Nuoro",
+          "labels": {
+            "it": "Nuoro",
+            "en": "Nuoro"
+          }
         },
         {
           "slug": "ogliastra",
-          "label": "Ogliastra"
+          "label": "Ogliastra",
+          "labels": {
+            "it": "Ogliastra",
+            "en": "Ogliastra"
+          }
         },
         {
           "slug": "oristano",
-          "label": "Oristano"
+          "label": "Oristano",
+          "labels": {
+            "it": "Oristano",
+            "en": "Oristano"
+          }
         },
         {
           "slug": "medio-campidano",
-          "label": "Medio Campidano"
+          "label": "Medio Campidano",
+          "labels": {
+            "it": "Medio Campidano",
+            "en": "Medio Campidano"
+          }
         },
         {
           "slug": "cagliari",
-          "label": "Cagliari"
+          "label": "Cagliari",
+          "labels": {
+            "it": "Cagliari",
+            "en": "Cagliari"
+          }
         },
         {
           "slug": "sulcis-iglesiente",
-          "label": "Sulcis Iglesiente"
+          "label": "Sulcis Iglesiente",
+          "labels": {
+            "it": "Sulcis Iglesiente",
+            "en": "Sulcis-Iglesiente"
+          }
         }
-      ]
+      ],
+      "labels": {
+        "it": "Sardegna",
+        "en": "Sardinia"
+      }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "it",
+    "publishedLocales": [
+      "it",
+      "en"
+    ],
+    "labels": {
+      "it": "Italia",
+      "en": "Italy"
+    },
+    "unitLabels": {
+      "it": {
+        "one": "provincia",
+        "many": "province"
+      },
+      "en": {
+        "one": "province",
+        "many": "provinces"
+      }
+    },
+    "regionUnitLabels": {
+      "it": {
+        "one": "regione",
+        "many": "regioni"
+      },
+      "en": {
+        "one": "region",
+        "many": "regions"
+      }
+    }
+  }
 }

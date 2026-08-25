@@ -20,7 +20,7 @@
           "slug": "barcelona",
           "label": "Barcelona",
           "labels": { "en": "Barcelona" },
-          "i18n": { "publishedLocales": ["en", "fr"] }
+          "i18n": { "publishedLocales": ["en", "xx"] }
         }
       ]
     }

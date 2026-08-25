@@ -47,7 +47,16 @@ export const REQUIRED_BENCHMARK_STRATA = Object.freeze([
   "japanese-script",
   "romanized-identity",
 ]);
-const REQUIRED_BENCHMARK_TARGETS = Object.freeze(["ca", "de", "ja"]);
+const REQUIRED_BENCHMARK_TARGETS = Object.freeze([
+  "es",
+  "ca",
+  "de",
+  "ja",
+  "fr",
+  "it",
+  "nl",
+  "pt",
+]);
 const VERSION_TOKEN_PATTERN = /^[^\s\u0000-\u001f\u007f]+$/u;
 const DATE_PATTERN = /\b(?:1[5-9]\d{2}|20\d{2})\b|\b\d{1,2}[/.\-]\d{1,2}[/.\-]\d{2,4}\b/u;
 const LATIN_IDENTITY_PATTERN = /^[\p{Script=Latin}\p{M}\p{N} &'’.()\/-]+$/u;
@@ -157,7 +166,9 @@ export function readTranslationBenchmarkSpec(specPath = DEFAULT_SPEC_PATH) {
     JSON.stringify(Object.keys(spec.targets).sort()) !==
     JSON.stringify([...REQUIRED_BENCHMARK_TARGETS].sort())
   ) {
-    throw new Error(`${specPath}: targets must be exactly ca, de and ja`);
+    throw new Error(
+      `${specPath}: targets must be exactly ${REQUIRED_BENCHMARK_TARGETS.join(", ")}`,
+    );
   }
   for (const target of REQUIRED_BENCHMARK_TARGETS) {
     const sampleSize = spec.targets[target]?.sampleSize;
@@ -466,7 +477,9 @@ export function assertBenchmarkPlan(plan, spec) {
     JSON.stringify(Object.keys(plan.coverage ?? {}).sort()) !==
       JSON.stringify([...REQUIRED_BENCHMARK_TARGETS].sort())
   ) {
-    throw new Error("Benchmark plan targets and coverage must be exactly ca, de and ja");
+    throw new Error(
+      `Benchmark plan targets and coverage must be exactly ${REQUIRED_BENCHMARK_TARGETS.join(", ")}`,
+    );
   }
 
   for (const target of REQUIRED_BENCHMARK_TARGETS) {

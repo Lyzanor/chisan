@@ -224,6 +224,10 @@ const MESSAGE_LOADERS = {
   ca: () => import("./messages/ca"),
   de: () => import("./messages/de"),
   ja: () => import("./messages/ja"),
+  fr: () => import("./messages/fr"),
+  it: () => import("./messages/it"),
+  nl: () => import("./messages/nl"),
+  pt: () => import("./messages/pt"),
 } satisfies Record<Locale, () => Promise<{ default: Messages }>>;
 
 export async function loadMessages(locale: Locale): Promise<Messages> {

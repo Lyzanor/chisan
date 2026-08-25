@@ -1,103 +1,64 @@
 {
-  "label": "Netherlands",
-  "unit": {
-    "one": "province",
-    "many": "provinces"
-  },
-  "regionUnit": {
-    "one": "region",
-    "many": "regions"
-  },
+  "label": "Nederland",
+  "unit": { "one": "provincie", "many": "provincies" },
+  "regionUnit": { "one": "regio", "many": "regio's" },
   "aliases": {
-    "friesland": "fryslan",
-    "frisia": "fryslan",
-    "groninga": "groningen",
-    "drente": "drenthe",
-    "overijsel": "overijssel",
-    "gueldres": "gelderland",
-    "guelders": "gelderland",
-    "holanda-septentrional": "noord-holland",
-    "north-holland": "noord-holland",
-    "holanda-meridional": "zuid-holland",
-    "south-holland": "zuid-holland",
-    "zelanda": "zeeland",
-    "brabante-septentrional": "noord-brabant",
-    "north-brabant": "noord-brabant",
-    "limburgo-neerlandes": "nederlands-limburg",
-    "limburg-nl": "nederlands-limburg"
+    "friesland": "fryslan", "frisia": "fryslan", "groninga": "groningen", "drente": "drenthe",
+    "overijsel": "overijssel", "gueldres": "gelderland", "guelders": "gelderland",
+    "holanda-septentrional": "noord-holland", "north-holland": "noord-holland",
+    "holanda-meridional": "zuid-holland", "south-holland": "zuid-holland", "zelanda": "zeeland",
+    "brabante-septentrional": "noord-brabant", "north-brabant": "noord-brabant",
+    "limburgo-neerlandes": "nederlands-limburg", "limburg-nl": "nederlands-limburg"
   },
   "regions": [
     {
-      "slug": "noord-nederland",
-      "label": "Noord-Nederland",
+      "slug": "noord-nederland", "label": "Noord-Nederland",
       "areas": [
-        {
-          "slug": "groningen",
-          "label": "Groningen"
-        },
-        {
-          "slug": "fryslan",
-          "label": "Fryslân"
-        },
-        {
-          "slug": "drenthe",
-          "label": "Drenthe"
-        }
-      ]
+        { "slug": "groningen", "label": "Groningen", "labels": { "nl": "Groningen", "en": "Groningen" } },
+        { "slug": "fryslan", "label": "Fryslân", "labels": { "nl": "Fryslân", "en": "Friesland" } },
+        { "slug": "drenthe", "label": "Drenthe", "labels": { "nl": "Drenthe", "en": "Drenthe" } }
+      ],
+      "labels": { "nl": "Noord-Nederland", "en": "Northern Netherlands" }
     },
     {
-      "slug": "oost-nederland",
-      "label": "Oost-Nederland",
+      "slug": "oost-nederland", "label": "Oost-Nederland",
       "areas": [
-        {
-          "slug": "overijssel",
-          "label": "Overijssel"
-        },
-        {
-          "slug": "gelderland",
-          "label": "Gelderland"
-        },
-        {
-          "slug": "flevoland",
-          "label": "Flevoland"
-        }
-      ]
+        { "slug": "overijssel", "label": "Overijssel", "labels": { "nl": "Overijssel", "en": "Overijssel" } },
+        { "slug": "gelderland", "label": "Gelderland", "labels": { "nl": "Gelderland", "en": "Gelderland" } },
+        { "slug": "flevoland", "label": "Flevoland", "labels": { "nl": "Flevoland", "en": "Flevoland" } }
+      ],
+      "labels": { "nl": "Oost-Nederland", "en": "Eastern Netherlands" }
     },
     {
-      "slug": "west-nederland",
-      "label": "West-Nederland",
+      "slug": "west-nederland", "label": "West-Nederland",
       "areas": [
-        {
-          "slug": "utrecht",
-          "label": "Utrecht"
-        },
-        {
-          "slug": "noord-holland",
-          "label": "Noord-Holland"
-        },
-        {
-          "slug": "zuid-holland",
-          "label": "Zuid-Holland"
-        },
-        {
-          "slug": "zeeland",
-          "label": "Zeeland"
-        }
-      ]
+        { "slug": "utrecht", "label": "Utrecht", "labels": { "nl": "Utrecht", "en": "Utrecht" } },
+        { "slug": "noord-holland", "label": "Noord-Holland", "labels": { "nl": "Noord-Holland", "en": "North Holland" } },
+        { "slug": "zuid-holland", "label": "Zuid-Holland", "labels": { "nl": "Zuid-Holland", "en": "South Holland" } },
+        { "slug": "zeeland", "label": "Zeeland", "labels": { "nl": "Zeeland", "en": "Zeeland" } }
+      ],
+      "labels": { "nl": "West-Nederland", "en": "Western Netherlands" }
     },
     {
-      "slug": "zuid-nederland",
-      "label": "Zuid-Nederland",
+      "slug": "zuid-nederland", "label": "Zuid-Nederland",
       "areas": [
-        {
-          "slug": "noord-brabant",
-          "label": "Noord-Brabant"
-        },
-        {
-          "slug": "nederlands-limburg",
-          "label": "Limburg"
-        }
-      ]
+        { "slug": "noord-brabant", "label": "Noord-Brabant", "labels": { "nl": "Noord-Brabant", "en": "North Brabant" } },
+        { "slug": "nederlands-limburg", "label": "Limburg", "labels": { "nl": "Limburg", "en": "Limburg" } }
+      ],
+      "labels": { "nl": "Zuid-Nederland", "en": "Southern Netherlands" }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "nl",
+    "publishedLocales": ["nl", "en"],
+    "labels": { "nl": "Nederland", "en": "Netherlands" },
+    "unitLabels": {
+      "nl": { "one": "provincie", "many": "provincies" },
+      "en": { "one": "province", "many": "provinces" }
+    },
+    "regionUnitLabels": {
+      "nl": { "one": "regio", "many": "regio's" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  }
 }

@@ -264,7 +264,7 @@ fi
 HTML_ES="$(curl -fsS "$BASE_URL/es" | sed 's/<!-- -->//g')"
 assert_html_lang "/es" "es" "$HTML_ES"
 if [[
-  "$HTML_ES" != *"Elige provincia"* ||
+  "$HTML_ES" != *"Elige una provincia"* ||
   "$HTML_ES" != *"Barcelona"* ||
   "$HTML_ES" != *"Abrir zona"*
 ]]; then

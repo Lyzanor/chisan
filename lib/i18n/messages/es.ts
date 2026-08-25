@@ -90,10 +90,11 @@ const messages = {
     backToCatalog: "Volver al catálogo",
   },
   metadata: {
-    homeTitle: "Mapa de productores de {site}",
-    homeDescription: "Mapa y directorio de productores locales por {unit}.",
+    homeTitle: "{site} · Alimentación local, unificada",
+    homeDescription:
+      "Alimentación local, unificada. Descubre productores locales de alimentos y bebidas en un catálogo fiable, organizados por {unit}.",
     countryTitle: "{country} · Productores en {site}",
-    countryDescription: "Elige {unit} de {country} para explorar sus productores locales.",
+    countryDescription: "Elige una {unit} de {country} para explorar sus productores locales.",
     areaNotFoundTitle: "Zona no encontrada",
     areaTitle: "Productores de {area}",
     areaDescription: "Explora los productores locales de {area}, {country}.",
@@ -133,11 +134,11 @@ const messages = {
     },
   },
   country: {
-    chooseUnit: "Elige {unit}",
+    chooseUnit: "Elige una {unit}",
   },
   areaSelector: {
     label: "{unit}",
-    placeholder: "Selecciona {unit}",
+    placeholder: "Selecciona una {unit}",
     submit: "Abrir zona",
   },
   catalog: {

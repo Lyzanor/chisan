@@ -271,7 +271,7 @@ grep -q "i18n.publishedLocales duplicates locale 'en'" \
   "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
 grep -q "preferred locale 'ca' must appear in its effective published locales" \
   "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
-grep -q "i18n.publishedLocales entry must be one of: en, es, ca, de, ja" \
+grep -q "i18n.publishedLocales entry must be one of: en, es, ca, de, ja, fr, it, nl, pt" \
   "$TMP_ROOT/out-registry-i18n-invalid-pairs.txt"
 
 run_expect_failure "$TMP_ROOT/out-registry-i18n-excluded-default.txt" \

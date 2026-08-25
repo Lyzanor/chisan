@@ -320,7 +320,7 @@ test("storage v1 rejects extra position fields and forget removes only its own k
   assert.equal(storage.values.get("chisan_locale"), "ca");
 });
 
-test("five dictionaries provide the complete typed onboarding message set", async () => {
+test("every presentation dictionary provides the complete typed onboarding message set", async () => {
   const dictionaries = await Promise.all(SUPPORTED_LOCALES.map(loadMessages));
   const expectedErrors = [
     "ambiguous",

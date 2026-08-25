@@ -33,7 +33,7 @@ function restoreGlobal(name: "window" | "document", descriptor?: PropertyDescrip
   }
 }
 
-test("language switcher uses territorial hreflang and stores an explicit click preference", () => {
+test("language switcher uses explicit hreflang and stores a click preference", () => {
   const rendered = LanguageSwitcher({
     currentLocale: "es",
     label: "Idioma",
@@ -61,7 +61,7 @@ test("language switcher uses territorial hreflang and stores an explicit click p
   );
   assert.ok(spanish);
   assert.ok(catalan);
-  assert.equal(spanish.props.hrefLang, "es-ES");
+  assert.equal(spanish.props.hrefLang, "es");
   assert.equal(spanish.props.lang, "es");
   assert.equal(spanish.props["aria-current"], "page");
   assert.equal(catalan.props.hrefLang, "ca-ES");

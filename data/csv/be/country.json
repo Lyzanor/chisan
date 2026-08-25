@@ -1,102 +1,63 @@
 {
-  "label": "Belgium",
-  "unit": {
-    "one": "province",
-    "many": "provinces"
-  },
-  "regionUnit": {
-    "one": "region",
-    "many": "regions"
-  },
+  "label": "Belgique",
+  "unit": { "one": "province", "many": "provinces" },
+  "regionUnit": { "one": "région", "many": "régions" },
   "aliases": {
-    "bruselas": "bruxelles-capitale",
-    "brussel": "bruxelles-capitale",
-    "brussels": "bruxelles-capitale",
-    "bruxelles": "bruxelles-capitale",
-    "amberes": "antwerpen",
-    "anvers": "antwerpen",
-    "antwerp": "antwerpen",
-    "limburgo": "limburg",
-    "flandes-oriental": "oost-vlaanderen",
-    "flandre-orientale": "oost-vlaanderen",
-    "flandes-occidental": "west-vlaanderen",
-    "flandre-occidentale": "west-vlaanderen",
-    "brabante-flamenco": "vlaams-brabant",
-    "brabant-flamand": "vlaams-brabant",
-    "brabante-valon": "brabant-wallon",
-    "waals-brabant": "brabant-wallon",
-    "henao": "hainaut",
-    "henegouwen": "hainaut",
-    "lieja": "liege",
-    "luik": "liege",
-    "luxemburgo": "luxembourg",
-    "namen": "namur"
+    "bruselas": "bruxelles-capitale", "brussel": "bruxelles-capitale", "brussels": "bruxelles-capitale", "bruxelles": "bruxelles-capitale",
+    "amberes": "antwerpen", "anvers": "antwerpen", "antwerp": "antwerpen", "limburgo": "limburg",
+    "flandes-oriental": "oost-vlaanderen", "flandre-orientale": "oost-vlaanderen", "flandes-occidental": "west-vlaanderen", "flandre-occidentale": "west-vlaanderen",
+    "brabante-flamenco": "vlaams-brabant", "brabant-flamand": "vlaams-brabant", "brabante-valon": "brabant-wallon", "waals-brabant": "brabant-wallon",
+    "henao": "hainaut", "henegouwen": "hainaut", "lieja": "liege", "luik": "liege", "luxemburgo": "luxembourg", "namen": "namur"
   },
-  "producerRouteAliases": {
-    "liege/sodial-liege": 530
-  },
+  "producerRouteAliases": { "liege/sodial-liege": 530 },
   "regions": [
     {
-      "slug": "vlaanderen",
-      "label": "Vlaanderen",
+      "slug": "vlaanderen", "label": "Flandre",
       "areas": [
-        {
-          "slug": "antwerpen",
-          "label": "Antwerpen"
-        },
-        {
-          "slug": "limburg",
-          "label": "Limburg"
-        },
-        {
-          "slug": "oost-vlaanderen",
-          "label": "Oost-Vlaanderen"
-        },
-        {
-          "slug": "vlaams-brabant",
-          "label": "Vlaams-Brabant"
-        },
-        {
-          "slug": "west-vlaanderen",
-          "label": "West-Vlaanderen"
-        }
-      ]
+        { "slug": "antwerpen", "label": "Anvers", "labels": { "fr": "Anvers", "nl": "Antwerpen", "en": "Antwerp" } },
+        { "slug": "limburg", "label": "Limbourg", "labels": { "fr": "Limbourg", "nl": "Limburg", "en": "Limburg" } },
+        { "slug": "oost-vlaanderen", "label": "Flandre-Orientale", "labels": { "fr": "Flandre-Orientale", "nl": "Oost-Vlaanderen", "en": "East Flanders" } },
+        { "slug": "vlaams-brabant", "label": "Brabant flamand", "labels": { "fr": "Brabant flamand", "nl": "Vlaams-Brabant", "en": "Flemish Brabant" } },
+        { "slug": "west-vlaanderen", "label": "Flandre-Occidentale", "labels": { "fr": "Flandre-Occidentale", "nl": "West-Vlaanderen", "en": "West Flanders" } }
+      ],
+      "labels": { "fr": "Flandre", "nl": "Vlaanderen", "en": "Flanders" },
+      "i18n": { "preferredLocale": "nl", "publishedLocales": ["nl", "fr", "en"] }
     },
     {
-      "slug": "wallonie",
-      "label": "Wallonie",
+      "slug": "wallonie", "label": "Wallonie",
       "areas": [
-        {
-          "slug": "brabant-wallon",
-          "label": "Brabant wallon"
-        },
-        {
-          "slug": "hainaut",
-          "label": "Hainaut"
-        },
-        {
-          "slug": "liege",
-          "label": "Liège"
-        },
-        {
-          "slug": "luxembourg",
-          "label": "Luxembourg"
-        },
-        {
-          "slug": "namur",
-          "label": "Namur"
-        }
-      ]
+        { "slug": "brabant-wallon", "label": "Brabant wallon", "labels": { "fr": "Brabant wallon", "nl": "Waals-Brabant", "en": "Walloon Brabant" } },
+        { "slug": "hainaut", "label": "Hainaut", "labels": { "fr": "Hainaut", "nl": "Henegouwen", "en": "Hainaut" } },
+        { "slug": "liege", "label": "Liège", "labels": { "fr": "Liège", "nl": "Luik", "de": "Lüttich", "en": "Liège" }, "i18n": { "preferredLocale": "fr", "publishedLocales": ["fr", "de", "en"] } },
+        { "slug": "luxembourg", "label": "Luxembourg", "labels": { "fr": "Luxembourg", "nl": "Luxemburg", "en": "Luxembourg" } },
+        { "slug": "namur", "label": "Namur", "labels": { "fr": "Namur", "nl": "Namen", "en": "Namur" } }
+      ],
+      "labels": { "fr": "Wallonie", "nl": "Wallonië", "de": "Wallonien", "en": "Wallonia" }
     },
     {
-      "slug": "bruxelles-capitale",
-      "label": "Bruxelles-Capitale",
+      "slug": "bruxelles-capitale", "label": "Bruxelles-Capitale",
       "areas": [
-        {
-          "slug": "bruxelles-capitale",
-          "label": "Bruxelles-Capitale"
-        }
-      ]
+        { "slug": "bruxelles-capitale", "label": "Bruxelles-Capitale", "labels": { "fr": "Bruxelles-Capitale", "nl": "Brussels Hoofdstedelijk Gewest", "en": "Brussels-Capital Region" }, "i18n": { "preferredLocale": "fr", "publishedLocales": ["fr", "nl", "en"] } }
+      ],
+      "labels": { "fr": "Bruxelles-Capitale", "nl": "Brussels Hoofdstedelijk Gewest", "en": "Brussels-Capital Region" },
+      "i18n": { "preferredLocale": "fr", "publishedLocales": ["fr", "nl", "en"] }
     }
-  ]
+  ],
+  "i18n": {
+    "defaultLocale": "fr",
+    "publishedLocales": ["fr", "en"],
+    "labels": { "fr": "Belgique", "nl": "België", "de": "Belgien", "en": "Belgium" },
+    "unitLabels": {
+      "fr": { "one": "province", "many": "provinces" },
+      "nl": { "one": "provincie", "many": "provincies" },
+      "de": { "one": "Provinz", "many": "Provinzen" },
+      "en": { "one": "province", "many": "provinces" }
+    },
+    "regionUnitLabels": {
+      "fr": { "one": "région", "many": "régions" },
+      "nl": { "one": "regio", "many": "regio's" },
+      "de": { "one": "Region", "many": "Regionen" },
+      "en": { "one": "region", "many": "regions" }
+    }
+  }
 }
