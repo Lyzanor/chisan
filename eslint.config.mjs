@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     // Untracked workspace artefacts; see .gitignore.
+    ".tmp/**",
+    "output/**",
     "scratch/**",
     "tmp/**",
   ]),
