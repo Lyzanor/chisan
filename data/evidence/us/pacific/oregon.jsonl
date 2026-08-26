@@ -41,3 +41,4 @@
 {"slug":"our-biz-is-bees","action":"keep","sources":[{"url":"https://ourbizisbees.com/","type":"official-site","checkedAt":"2026-08-15","claims":["identity","producer-activity","link-ownership"]}]}
 {"slug":"flying-bee-ranch","action":"keep","sources":[{"url":"https://flyingbeeranch.net/","type":"official-site","checkedAt":"2026-08-15","claims":["identity","producer-activity","link-ownership"]}]}
 {"slug":"bryant-family-farm","action":"keep","sources":[{"url":"https://www.usdalocalfoodportal.com/fe/datasharing/","type":"public-registry","checkedAt":"2026-08-15","claims":["identity","municipality","location","producer-activity"],"note":"On-Farm Market listing 704078, updated without published update date."}]}
+{"slug":"stahlbush-island-farms","action":"keep","sources":[{"url":"https://www.stahlbush.com/","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","link-ownership","contact","online-sales"]}]}

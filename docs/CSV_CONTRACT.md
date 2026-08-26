@@ -628,6 +628,14 @@ renumber existing rows, fill a deleted gap or reuse an allocated ID. A merge
 keeps the target row's ID. Corporate grouping, if needed later, is a separate
 many-to-one identifier.
 
+Multi-agent materialization must serialize the complete read-allocate-write
+operation per country. Run the materializer through
+`pnpm producer:ids:locked --countries es,it -- <command>` and calculate the next
+ID inside that command, after the lock is acquired. The lock lives in Git's
+shared common directory, so sibling worktrees coordinate without creating a
+second catalog registry. A command that only reserves or prints IDs is unsafe:
+the lock must remain held until every affected CSV write is complete.
+
 `slug` is the readable routing identity and is unique within the country. Its
 canonical URL is `/<country>/<area>/<slug>`. A slug should describe the producer
 without mechanically repeating an area that is already present in the path,

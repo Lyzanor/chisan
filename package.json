@@ -46,8 +46,10 @@
     "db:assert-current": "tsx scripts/assert-account-database-current.ts",
     "producer:change": "tsx scripts/materialize-producer-change.ts",
     "producer:access": "tsx scripts/provision-producer-change-access.ts",
+    "producer:ids:locked": "node scripts/with-producer-id-lock.mjs",
+    "test:producer-id-lock": "node --test scripts/test-producer-id-lock.mjs",
     "verify:data": "pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations",
-    "verify:ai": "pnpm verify && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm test:translations && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:behavior"
+    "verify:ai": "pnpm verify && pnpm db:check && pnpm test:i18n && pnpm test:accounts && pnpm check:csv && pnpm check:images && pnpm check:evidence && pnpm check:translations && pnpm test:translations && pnpm check:catalog-geography && pnpm test:catalog-geography && pnpm test:csv-audit && pnpm test:images && pnpm test:intelligence && pnpm test:producer-id-lock && pnpm test:behavior"
   },
   "dependencies": {
     "@clerk/nextjs": "7.7.9",
@@ -61,6 +63,7 @@
     "react-dom": "19.2.3",
     "react-leaflet": "^5.0.0",
     "server-only": "0.0.1",
+    "stripe": "22.5.0",
     "zod": "4.4.3"
   },
   "devDependencies": {

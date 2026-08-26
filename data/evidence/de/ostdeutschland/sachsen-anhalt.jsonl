@@ -128,3 +128,4 @@
 {"slug":"fischereibetrieb-reinhard-riedel","action":"keep","sources":[{"url":"https://www.fischereibetrieb-riedel.de","type":"official-store","checkedAt":"2026-08-15","claims":["identity","producer-activity","municipality","contact","location","online-sales"]}]}
 {"slug":"biohof-paulsen","action":"reject","reason":"other-area","sources":[{"url":"https://biohof-paulsen.de","type":"official-site","checkedAt":"2026-08-15","claims":["identity","municipality"]}]}
 {"slug":"gut-zichtau","action":"reject","reason":"not-producer","sources":[{"url":"https://www.gut-zichtau.de","type":"official-site","checkedAt":"2026-08-15","claims":["identity","scope"]}]}
+{"slug":"christina-siemke","action":"keep","sources":[{"url":"https://www.lieblingsmais.de","type":"official-site","checkedAt":"2026-08-26","claims":["identity","producer-activity","municipality","scope","location","link-ownership","online-sales","contact"]}]}
